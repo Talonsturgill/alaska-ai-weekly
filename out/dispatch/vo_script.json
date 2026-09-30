@@ -158,5 +158,8 @@
    "idx": 19,
    "claims": []
   }
- ]
+ ],
+ "caption_fixups": {
+  "A I": "AI"
+ }
 }

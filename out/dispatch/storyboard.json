@@ -42,7 +42,7 @@
  "shots": [
   {
    "id": 1,
-   "vo_line": null,
+   "vo_line": 0,
    "t": 0.0,
    "dur": 8.3,
    "stage": "phone glass in Kodiak fog",
@@ -67,7 +67,7 @@
   },
   {
    "id": 2,
-   "vo_line": null,
+   "vo_line": 2,
    "t": 8.3,
    "dur": 4.2,
    "stage": "Kodiak marsh edge at first light",
@@ -92,7 +92,7 @@
   },
   {
    "id": 3,
-   "vo_line": null,
+   "vo_line": 3,
    "t": 12.5,
    "dur": 9.7,
    "stage": "lamp-lit kitchen table at home",
@@ -117,7 +117,7 @@
   },
   {
    "id": 4,
-   "vo_line": null,
+   "vo_line": 4,
    "t": 22.2,
    "dur": 10.8,
    "stage": "the trooper's report on a steel desk",
@@ -142,7 +142,7 @@
   },
   {
    "id": 5,
-   "vo_line": null,
+   "vo_line": 6,
    "t": 33.0,
    "dur": 6.6,
    "stage": "the trooper's truck cab dash",
@@ -167,7 +167,7 @@
   },
   {
    "id": 6,
-   "vo_line": null,
+   "vo_line": 7,
    "t": 39.6,
    "dur": 5.4,
    "stage": "the district court counter",
@@ -192,7 +192,7 @@
   },
   {
    "id": 7,
-   "vo_line": null,
+   "vo_line": 8,
    "t": 45.0,
    "dur": 13.0,
    "stage": "a fogged window at Kodiak dusk",
@@ -217,7 +217,7 @@
   },
   {
    "id": 8,
-   "vo_line": null,
+   "vo_line": 10,
    "t": 58.0,
    "dur": 11.6,
    "stage": "the stack",
@@ -242,7 +242,7 @@
   },
   {
    "id": 9,
-   "vo_line": null,
+   "vo_line": 12,
    "t": 69.6,
    "dur": 11.9,
    "stage": "the stack",
@@ -267,7 +267,7 @@
   },
   {
    "id": 10,
-   "vo_line": null,
+   "vo_line": 14,
    "t": 81.5,
    "dur": 11.4,
    "stage": "the stack",
@@ -292,7 +292,7 @@
   },
   {
    "id": 11,
-   "vo_line": null,
+   "vo_line": 16,
    "t": 92.9,
    "dur": 9.4,
    "stage": "the stack",
@@ -317,7 +317,7 @@
   },
   {
    "id": 12,
-   "vo_line": null,
+   "vo_line": 18,
    "t": 102.3,
    "dur": 7.9,
    "stage": "the binder at the base",
@@ -342,7 +342,7 @@
   },
   {
    "id": 13,
-   "vo_line": null,
+   "vo_line": 19,
    "t": 110.2,
    "dur": 3.8,
    "stage": "phone glass in Kodiak fog",
@@ -387,7 +387,9 @@
    },
    "shows": "the question she asked",
    "at_s": 0.3,
-   "why": "the ordinary act everything hangs on"
+   "why": "the ordinary act everything hangs on",
+   "vo_line": 0,
+   "offset": 0.3
   },
   {
    "id": 2,
@@ -409,7 +411,9 @@
    },
    "shows": "what the answer said",
    "at_s": 4.6,
-   "why": "the wrong answer arrives sounding sure"
+   "why": "the wrong answer arrives sounding sure",
+   "vo_line": 1,
+   "offset": 0.0
   },
   {
    "id": 3,
@@ -431,7 +435,9 @@
    },
    "shows": "what she did that morning",
    "at_s": 8.3,
-   "why": "the act the answer led to"
+   "why": "the act the answer led to",
+   "vo_line": 2,
+   "offset": 0.0
   },
   {
    "id": 4,
@@ -453,7 +459,9 @@
    },
    "shows": "the loop planted: a closed binder",
    "at_s": 12.5,
-   "why": "where she went to check, and the page we don't yet see"
+   "why": "where she went to check, and the page we don't yet see",
+   "vo_line": 3,
+   "offset": 0.0
   },
   {
    "id": 5,
@@ -475,7 +483,9 @@
    },
    "shows": "the choice she made",
    "at_s": 17.0,
-   "why": "she reported herself"
+   "why": "she reported herself",
+   "vo_line": 3,
+   "offset": 4.5
   },
   {
    "id": 6,
@@ -497,7 +507,9 @@
    },
    "shows": "the answer losing its shine",
    "at_s": 19.9,
-   "why": "the tag's first state change"
+   "why": "the tag's first state change",
+   "vo_line": 3,
+   "offset": 7.4
   },
   {
    "id": 7,
@@ -519,7 +531,9 @@
    },
    "shows": "what the report says",
    "at_s": 22.2,
-   "why": "the report's date"
+   "why": "the report's date",
+   "vo_line": 4,
+   "offset": 0.0
   },
   {
    "id": 8,
@@ -541,7 +555,9 @@
    },
    "shows": "the date the report sets",
    "at_s": 25.2,
-   "why": "the second date lands"
+   "why": "the second date lands",
+   "vo_line": 4,
+   "offset": 3.0
   },
   {
    "id": 9,
@@ -564,6 +580,8 @@
    "shows": "the question the film asks",
    "at_s": 27.2,
    "why": "the film's story question",
+   "vo_line": 5,
+   "offset": 0.0,
    "rehook": "two sheets with clashing dates and the question of which page to trust"
   },
   {
@@ -586,7 +604,9 @@
    },
    "shows": "the disagreement held for a beat",
    "at_s": 30.6,
-   "why": "the disagreement held"
+   "why": "the disagreement held",
+   "vo_line": 5,
+   "offset": 3.4
   },
   {
    "id": 11,
@@ -608,7 +628,9 @@
    },
    "shows": "the answer came back twice",
    "at_s": 33.0,
-   "why": "the answer repeated for someone else"
+   "why": "the answer repeated for someone else",
+   "vo_line": 6,
+   "offset": 0.0
   },
   {
    "id": 12,
@@ -630,7 +652,9 @@
    },
    "shows": "the sync held",
    "at_s": 36.0,
-   "why": "the sync is the point"
+   "why": "the sync is the point",
+   "vo_line": 6,
+   "offset": 3.0
   },
   {
    "id": 13,
@@ -652,7 +676,9 @@
    },
    "shows": "what it cost her",
    "at_s": 39.6,
-   "why": "the consequence"
+   "why": "the consequence",
+   "vo_line": 7,
+   "offset": 0.0
   },
   {
    "id": 14,
@@ -674,7 +700,9 @@
    },
    "shows": "the fine sits on the paper",
    "at_s": 42.9,
-   "why": "the amount settles"
+   "why": "the amount settles",
+   "vo_line": 7,
+   "offset": 3.3
   },
   {
    "id": 15,
@@ -696,7 +724,9 @@
    },
    "shows": "what she said",
    "at_s": 45.0,
-   "why": "her own words, quietly"
+   "why": "her own words, quietly",
+   "vo_line": 8,
+   "offset": 0.0
   },
   {
    "id": 16,
@@ -718,7 +748,9 @@
    },
    "shows": "what the spokesman said",
    "at_s": 49.2,
-   "why": "the state's read on it"
+   "why": "the state's read on it",
+   "vo_line": 9,
+   "offset": 0.0
   },
   {
    "id": 17,
@@ -740,7 +772,9 @@
    },
    "shows": "what he expects",
    "at_s": 54.0,
-   "why": "what he expects next"
+   "why": "what he expects next",
+   "vo_line": 9,
+   "offset": 4.8
   },
   {
    "id": 18,
@@ -763,6 +797,8 @@
    "shows": "the loop 2 plant: the warnings",
    "at_s": 58.0,
    "why": "the stack of summaries appears",
+   "vo_line": 10,
+   "offset": 0.0,
    "rehook": "Weren't there warnings? The stack assembles and heavy plates descend"
   },
   {
@@ -785,7 +821,9 @@
    },
    "shows": "Google's warning",
    "at_s": 61.9,
-   "why": "Google's own warning"
+   "why": "Google's own warning",
+   "vo_line": 11,
+   "offset": 0.3
   },
   {
    "id": 20,
@@ -807,7 +845,9 @@
    },
    "shows": "the second warning",
    "at_s": 66.4,
-   "why": "the fair counter-case at full weight"
+   "why": "the fair counter-case at full weight",
+   "vo_line": 11,
+   "offset": 4.8
   },
   {
    "id": 21,
@@ -829,7 +869,9 @@
    },
    "shows": "who didn't answer",
    "at_s": 69.6,
-   "why": "the empty slot, not a pile-on"
+   "why": "the empty slot, not a pile-on",
+   "vo_line": 12,
+   "offset": 0.0
   },
   {
    "id": 22,
@@ -851,7 +893,9 @@
    },
    "shows": "the state's source of truth",
    "at_s": 74.3,
-   "why": "the state's answer to where to look"
+   "why": "the state's answer to where to look",
+   "vo_line": 13,
+   "offset": 0.0
   },
   {
    "id": 23,
@@ -873,7 +917,9 @@
    },
    "shows": "the catch is coming",
    "at_s": 77.3,
-   "why": "something under the flap"
+   "why": "something under the flap",
+   "vo_line": 13,
+   "offset": 3.0
   },
   {
    "id": 24,
@@ -895,7 +941,9 @@
    },
    "shows": "the loop 2 pay begins",
    "at_s": 81.5,
-   "why": "the catch appears"
+   "why": "the catch appears",
+   "vo_line": 14,
+   "offset": 0.0
   },
   {
    "id": 25,
@@ -917,7 +965,9 @@
    },
    "shows": "the catch, drawn",
    "at_s": 85.4,
-   "why": "the state's own page calls itself simplified"
+   "why": "the state's own page calls itself simplified",
+   "vo_line": 15,
+   "offset": 0.6
   },
   {
    "id": 26,
@@ -939,7 +989,9 @@
    },
    "shows": "the layers below",
    "at_s": 90.0,
-   "why": "the layers go further down"
+   "why": "the layers go further down",
+   "vo_line": 15,
+   "offset": 5.2
   },
   {
    "id": 27,
@@ -962,6 +1014,8 @@
    "shows": "every layer a summary",
    "at_s": 92.9,
    "why": "the picture of the thesis",
+   "vo_line": 16,
+   "offset": 0.0,
    "rehook": "the pull-back reveals the whole tower on one thick binder"
   },
   {
@@ -984,7 +1038,9 @@
    },
    "shows": "what counts sits underneath",
    "at_s": 97.0,
-   "why": "the tag's descent"
+   "why": "the tag's descent",
+   "vo_line": 17,
+   "offset": 0.0
   },
   {
    "id": 29,
@@ -1006,7 +1062,9 @@
    },
    "shows": "the thick still thing",
    "at_s": 99.6,
-   "why": "the still thing under the wobbling"
+   "why": "the still thing under the wobbling",
+   "vo_line": 17,
+   "offset": 2.6
   },
   {
    "id": 30,
@@ -1028,7 +1086,9 @@
    },
    "shows": "the real date on the real page",
    "at_s": 102.3,
-   "why": "the loop 1 pays: the page she opened"
+   "why": "the loop 1 pays: the page she opened",
+   "vo_line": 18,
+   "offset": 0.0
   },
   {
    "id": 31,
@@ -1050,7 +1110,9 @@
    },
    "shows": "how to get it",
    "at_s": 106.0,
-   "why": "the way to get the text"
+   "why": "the way to get the text",
+   "vo_line": 18,
+   "offset": 3.7
   },
   {
    "id": 32,
@@ -1072,7 +1134,9 @@
    },
    "shows": "what will you check",
    "at_s": 110.2,
-   "why": "the loop closes on the question"
+   "why": "the loop closes on the question",
+   "vo_line": 19,
+   "offset": 0.0
   }
  ],
  "hook": {

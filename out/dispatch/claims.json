@@ -173,6 +173,9 @@
    "source_label": "Google Search Help (primary)",
    "requires": [
     "quote Google's page; do not say Google admitted this snipe answer was wrong"
+   ],
+   "on_screen_also": [
+    "CHECK MORE THAN ONE PLACE"
    ]
   }
  ],
