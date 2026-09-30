@@ -29,14 +29,14 @@
    "report desk (S4), court counter (S6), newsroom (S10)": "flat grey counter or fluorescent light from above",
    "window (S7)": "dusk slate through fogged glass",
    "Public Safety wall (S8)": "flat grey fluorescent with a desk lamp edge",
-   "stack dive (S12)": "overcast from above onto a declared slate-to-ink ground (#56636C to #141A1F), planes at least 15 L above the ground behind them, peat underlight rising as the camera descends"
+   "stack dive (S12)": "overcast from above onto a declared slate ground ramp from #56636C at the top to #3E4A53 (about L30) at the bottom behind the binder, so the peat binder (L15) sits 15 L below its ground and separates by its cool-white #EDF1F3 rim and hard contact shadow; every sheet plane sits at least 15 L above the ground behind it"
   }
  },
  "shape_language": {
   "grammar": "THE THIN, LIGHT SUMMARY AGAINST THE THICK, DARK BINDING TEXT.",
   "why_this_story": "The argument is about layers. So every summary is a thin translucent pale rectangle that floats and wobbles, and the binding regulation is a thick, matte, peat-dark block with a spine and page edge, heavy and still. Natural forms (marsh grass, fog, snipe silhouettes) are irregular. The stack never blends with them, it lies over the land like a document does.",
   "the_deliberate_contrast": "Thin pale floaty rectangles against one thick dark still block. Not a document layout: the camera travels through the sheets like a core sample.",
-  "binder_wins_at_feed_scale": "The binder carries a SECOND contrast axis beyond value: a rounded spine, a stitched head band, a page-block edge and a hard contact shadow, all at the 3/4 camera tilt, where sheets get only a soft float shadow. A 0.28-scale legibility strip is run on S11 before any other scene is authored."
+  "binder_wins_at_feed_scale": "The binder carries a SECOND contrast axis beyond value: a rounded spine, a stitched head band, a page-block edge and a hard contact shadow, all at the 3/4 camera tilt, where sheets get only a soft float shadow. A 0.28-scale legibility strip is run on S1 and S12 before any other scene is authored."
  },
  "casting": {
   "hero": "Binder",
@@ -54,7 +54,7 @@
   "cast_freshness": "hero Binder differs from the last two heroes."
  },
  "motion_language": {
-  "how_the_world_moves": "Everything thin wobbles on a spring. The binder is still. The camera makes one continuous descent, the S11 dive; every other shot is its own composed world.",
+  "how_the_world_moves": "Everything thin wobbles on a spring. The binder is still. The camera makes one continuous descent, the S12 dive; every other shot is its own composed world.",
   "key_hero_moves": [
    "the orange answer card slams onto the phone glass with overshoot",
    "the twin card clacks down in perfect sync with the first, a mirrored bounce",
@@ -75,14 +75,14 @@
   "how": "lib/focus.ts: blurAt(z, focusZ, aperture, sharp, max, pinned), valueLadder, passAlpha and perspScale as pure functions with a node self-test (scripts/focus_check.mjs), so a layered scene derives per-plane blur and value from its Z distance to a focal plane that can animate, with a pinned plane (the binder) always in focus. Registered under Engine systems in ASSET_MANIFEST.md."
  },
  "fingerprint": {
-  "pov": "eye-level-immersive",
-  "layout": "centered-hero-lowerthird",
-  "motion_vector": "push-in-only",
+  "pov": "top-down-map",
+  "layout": "single-object-void",
+  "motion_vector": "horizontal-traverse",
   "hero_treatment": "instrument-as-subject",
   "register": "tactile-collage",
   "camera_strategy": "locked-drift",
   "light_story": "night-practical",
-  "note": "honest dominant per-shot distribution; one cross-section dive shot (S12); macro-closeup single-object-void shots are the phone bookends and the stamp"
+  "note": "computed from the storyboard shot table BY SCREEN TIME: single-object-void (S1, S3, S10, S13, S14) leads layout; top-down-map, macro-closeup and eye-level-immersive are close on pov and top-down-map leads by time; horizontal-traverse leads motion by time. This film SHARES the single-object-void layout with 2026-09-19 and differs from it on pov, motion, hero, register, camera and light."
  },
- "dead_space_guard": "0.28-scale legibility strip for S1 (binder vs glass, at least 10 L) and S12 (each plane at least 15 L above the ground behind it) before authoring the remaining scenes."
+ "dead_space_guard": "0.28-scale legibility strip for S1 (binder vs glass, at least 10 L) and S12 (each plane at least 15 L above the ground behind it; the binder is the one plane BELOW its ground, so it is checked as a rim-plus-contact-shadow pair against the L30 ground)."
 }

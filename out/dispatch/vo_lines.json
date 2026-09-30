@@ -1,5 +1,5 @@
 {
-  "total": 104.0,
+  "total": 120.02,
   "voice": "Sulafat",
   "model": "gemini-3.1-flash-tts-preview",
   "lines": [
@@ -7,121 +7,127 @@
       "idx": 0,
       "text": "A Kodiak woman asked Google when snipe season opens.",
       "start": 0.0,
-      "end": 3.74
+      "end": 4.0
     },
     {
       "idx": 1,
-      "text": "Its A I answer said September first.",
-      "start": 4.74,
-      "end": 7.48
+      "text": "She told troopers its A I answer said September first.",
+      "start": 5.3,
+      "end": 9.22
     },
     {
       "idx": 2,
       "text": "So on September fifth she shot three snipe.",
-      "start": 8.16,
-      "end": 11.46
+      "start": 10.02,
+      "end": 13.46
     },
     {
       "idx": 3,
-      "text": "At home she looked up the state regulations and saw her mistake. She called troopers and turned herself in.",
-      "start": 12.44,
-      "end": 19.7
+      "text": "At home she opened the state regulations and saw her mistake. She called troopers and turned herself in.",
+      "start": 14.54,
+      "end": 23.28
     },
     {
       "idx": 4,
       "text": "The trooper's report says the general season opened October eighth.",
-      "start": 20.9,
-      "end": 25.44
+      "start": 25.18,
+      "end": 30.26
     },
     {
       "idx": 5,
-      "text": "So two pages disagreed. Which one can a hunter trust?",
-      "start": 26.06,
-      "end": 30.58
+      "text": "So the answer and the report disagreed.",
+      "start": 30.6,
+      "end": 33.66
     },
     {
       "idx": 6,
       "text": "That trooper ran her exact search. He got the same wrong answer.",
-      "start": 31.72,
-      "end": 37.0
+      "start": 34.52,
+      "end": 40.16
     },
     {
       "idx": 7,
-      "text": "She still pleaded no contest and paid a hundred fifty dollars.",
-      "start": 38.18,
-      "end": 41.8
+      "text": "So which page can a hunter trust?",
+      "start": 41.28,
+      "end": 43.34
     },
     {
       "idx": 8,
-      "text": "She told the Alaska Beacon, I feel terrible.",
-      "start": 42.54,
-      "end": 46.16
+      "text": "She pleaded no contest and paid a hundred fifty dollars.",
+      "start": 44.32,
+      "end": 47.68
     },
     {
       "idx": 9,
-      "text": "State spokesman Austin McDaniel thinks it's the first time A I has been cited. He expects more.",
-      "start": 47.7,
-      "end": 54.26
+      "text": "She told the Alaska Beacon, I feel terrible.",
+      "start": 49.04,
+      "end": 53.44
     },
     {
       "idx": 10,
-      "text": "Weren't there warnings? There were.",
-      "start": 55.26,
-      "end": 57.54
+      "text": "State spokesman Austin McDaniel says he thinks it's the first time A I has been cited. He expects more.",
+      "start": 55.74,
+      "end": 62.92
     },
     {
       "idx": 11,
-      "text": "Google's help page says A I answers may include mistakes, and to check more than one place.",
-      "start": 58.46,
-      "end": 64.3
+      "text": "Weren't there warnings? There were.",
+      "start": 64.54,
+      "end": 67.04
     },
     {
       "idx": 12,
-      "text": "Google didn't respond to the Beacon's request for comment.",
-      "start": 65.14,
-      "end": 67.82
+      "text": "Google's help page says A I answers may include mistakes, and to check more than one place.",
+      "start": 68.34,
+      "end": 74.1
     },
     {
       "idx": 13,
-      "text": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
-      "start": 69.12,
-      "end": 74.5
+      "text": "Google didn't respond to the Beacon's request for comment on the wrong answer.",
+      "start": 75.26,
+      "end": 79.22
     },
     {
       "idx": 14,
-      "text": "But that source has a catch.",
-      "start": 75.12,
-      "end": 77.1
+      "text": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
+      "start": 80.78,
+      "end": 86.1
     },
     {
       "idx": 15,
-      "text": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
-      "start": 78.02,
-      "end": 84.9
+      "text": "But that source has a catch.",
+      "start": 86.96,
+      "end": 88.64
     },
     {
       "idx": 16,
-      "text": "So even the official page is a summary.",
-      "start": 84.9,
-      "end": 88.32
+      "text": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
+      "start": 89.9,
+      "end": 96.62
     },
     {
       "idx": 17,
-      "text": "The answer was on top. What counts sits underneath.",
-      "start": 89.72,
-      "end": 94.04
+      "text": "So even the official page is a simplified summary of state law.",
+      "start": 97.4,
+      "end": 101.58
     },
     {
       "idx": 18,
-      "text": "Check the regulations and any emergency order. Fish and Game will mail you a copy.",
-      "start": 95.0,
-      "end": 100.28
+      "text": "The answer was on top. What counts sits underneath, the regulations and any emergency order.",
+      "start": 102.88,
+      "end": 110.42
     },
     {
       "idx": 19,
+      "text": "Check them first. Fish and Game will mail you the regulations, or you can call the office.",
+      "start": 111.3,
+      "end": 116.62
+    },
+    {
+      "idx": 20,
       "text": "Before you hunt, what do you check?",
-      "start": 101.48,
-      "end": 104.0
+      "start": 117.44,
+      "end": 120.02
     }
   ]
 }
