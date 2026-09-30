@@ -79,9 +79,11 @@ B=[
 B=[(ln,off,(12 if ln==16 else (sh+1 if sh>=12 else sh)),*rest) for (ln,off,sh,*rest) in B]
 BI=sorted(enumerate(B,1),key=lambda r:(r[1][0],r[1][1]))
 beats=[]
-for k,(ln,off,sh,subj,act,emo,ann,sfx,means,pri,rea,amb,shows) in BI:
+IDMAP={}
+for new,(k,(ln,off,sh,subj,act,emo,ann,sfx,means,pri,rea,amb,shows)) in enumerate(BI,1):
+    IDMAP[k]=new
     tt=at(ln,off)
-    beats.append({"id":k,"t":tt,"shot":sh,"draw":{"subject":subj,"action":act,"emotion":emo,"annotation":ann},"vo":lines[ln]['text'],"sfx":sfx,"means":means,"choreo":{"primary":pri,"reaction":rea,"ambient":amb},"shows":shows,"at_s":tt,"vo_line":ln,"offset":off})
+    beats.append({"id":new,"t":tt,"shot":sh,"draw":{"subject":subj,"action":act,"emotion":emo,"annotation":ann},"vo":lines[ln]['text'],"sfx":sfx,"means":means,"choreo":{"primary":pri,"reaction":rea,"ambient":amb},"shows":shows,"at_s":tt,"vo_line":ln,"offset":off})
 RH={(6,0.0):"the trooper taps send and the same card drops beside the hunter's",(11,0.0):"Weren't there warnings? The thumb opens Google's help page and the warnings slide out",(17,0.0):"four labelled sheets fall over the binder and the camera dives"}
 for b in beats:
     if (b['vo_line'],b['offset']) in RH: b['rehook']=RH[(b['vo_line'],b['offset'])]
@@ -96,7 +98,7 @@ sb={
 "shots":shots,"beats":beats,
 "hook":{"pattern":"anomaly-question","frame1":"a thumb over black phone glass on a fog-lit slate surface types GOOGLED · SNIPE SEASON while a thick peat binder with a strip of paper sticking out of it sits half under the phone's edge","headline":"GOOGLED · SNIPE SEASON","motion_by_s":0.3,"loopback":"the button returns to the same phone and thumb, the search bar empty and blinking, the binder under the phone's edge now with its title strip up and a blank paper tag on it","pattern_note":"an ordinary search plus an object that does not belong in the frame, a closed binder. The question it raises is what is in the binder."},
 "audio_arc":{"build_steps":[0.3,T_(4,0),T_(11,0),T_(16,0)],"dip_at":T_(9,0),"riser_at":T_(17,4.0),"silence_at":round(T_(18,0)-0.6,2),"payoff_at":T_(18,0),"button_pattern":"question"},
-"reveals":[{"beat_id":3,"t":T_(2,0),"type":"scale-pullback","what":"the orange card's rectangle dissolves into the fog band and the frame pulls back to a wide slate marsh","hold_s":0.6},{"beat_id":13,"t":T_(7,0),"type":"scale-pullback","what":"the seam dissolves and the camera pulls back to show both phones in one light, the same answer and not a one-off","hold_s":0.6},{"beat_id":18,"t":T_(10,0),"type":"scale-pullback","what":"the camera pulls back from one pinned quote card to the whole Public Safety office wall","hold_s":0.6},{"beat_id":32,"t":T_(17,0),"type":"build-on","what":"four labelled sheets fall over the binder and the tower assembles before the dive","hold_s":0.7}],
+"reveals":[{"beat_id":IDMAP[3],"t":T_(2,0),"type":"scale-pullback","what":"the orange card's rectangle dissolves into the fog band and the frame pulls back to a wide slate marsh","hold_s":0.6},{"beat_id":IDMAP[13],"t":T_(7,0),"type":"scale-pullback","what":"the seam dissolves and the camera pulls back to show both phones in one light, the same answer and not a one-off","hold_s":0.6},{"beat_id":IDMAP[18],"t":T_(10,0),"type":"scale-pullback","what":"the camera pulls back from one pinned quote card to the whole Public Safety office wall","hold_s":0.6},{"beat_id":IDMAP[32],"t":T_(17,0),"type":"build-on","what":"four labelled sheets fall over the binder and the tower assembles before the dive","hold_s":0.7}],
 "rehooks":[{"t":T_(6,0),"what":"the trooper taps send and the same card drops beside the hunter's"},{"t":T_(11,0),"what":"the thumb opens Google's help page and the warnings slide out"},{"t":T_(17,0),"what":"the tower assembles and the camera dives"}],
 "open_loop":{"plant_t":T_(3,0),"pay_t":T_(19,0),"what":"a thick peat binder is opened at the kitchen table with its page turned away and nothing printed on it. The film refuses to show that page until the viewer's hands, at the same overhead angle, turn it toward camera and its title strip reads REGULATIONS AND EMERGENCY ORDERS."},
 "open_loop_2":{"plant_t":T_(7,0),"pay_t":T_(14,0),"what":"So which page can a hunter trust? Asked after the answer repeats for the trooper, paid by McDaniel's own answer (the one source of truth is ADF&G's regulations and emergency orders) and then reopened by 'But that source has a catch.'"},
@@ -104,4 +106,5 @@ sb={
 "divergence_note":"Against 2026-09-23 (frontal document, split-compare, divide-and-settle, document-as-subject, dusk violet and copper) and 2026-09-19 (macro-closeup, single-object-void, radial-emanate, structure-as-subject, powerhouse green and amber) this film changes worlds nearly every shot: marsh, kitchen, trooper desk, truck cab, court counter, fogged window, Public Safety wall, Google's help page, newsroom desk, laptop, one four-layer dive, and the kitchen again. Computed by screen time its dominant staging is single-object-void with top-down and horizontal-traverse shots, by lamp and screen light, in a tactile-collage register, with one cross-section climax. It SHARES the single-object-void layout with 2026-09-19 and differs from it on pov, motion, hero treatment, register, camera and light. Its palette shares no colour role with either film and none with recent films including 2026-08-05: slate fog, hunter orange, wet peat umber, cool grey-white paper."
 }
 json.dump(sb,open('out/dispatch/storyboard.json','w'),indent=1)
+json.dump(IDMAP,open('out/dispatch/_gen/idmap.json','w'))
 print(len(shots),len(beats),[round(x,1) for x in LS])

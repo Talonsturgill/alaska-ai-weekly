@@ -189,12 +189,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     // HOOK: an ordinary search, and a binder that does not belong in the frame.
     const typed = q(1, 44);
     const query = 'snipe season'.slice(0, Math.floor(typed * 12));
-    const slam = pop(2, 14);
-    const wob = f >= bAt(2) ? Math.sin((f - bAt(2)) / 2.6) * Math.exp(-(f - bAt(2)) / 16) * 3 : 0;
-    const shim = ease(f, bAt(40), 48);
+    const slam = pop(3, 14);
+    const wob = f >= bAt(3) ? Math.sin((f - bAt(3)) / 2.6) * Math.exp(-(f - bAt(3)) / 16) * 3 : 0;
+    const shim = ease(f, bAt(2), 48);
     const thumbDip = interpolate(since(1), [0, 6, 14], [0, 16, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
     const thumbIn = 1 - ease(f, 0, 16);
-    const thumbOut = ease(f, bAt(2) - 30, 24);
+    const thumbOut = ease(f, bAt(3) - 30, 24);
     picture = (
       <SVG><Defs />
         <SlateSurface f={f} />
@@ -245,10 +245,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           return <path key={i} d={`M${x},${y} q${lean * 0.4},-30 ${lean},-64`} stroke={P.lichenLo} strokeWidth={4 + (h % 3)} fill="none" strokeLinecap="round" opacity={0.7} />;
         })}
         {[0, 1, 2].map((i) => {
-          const t = clamp01((f - bAt(3) - tickAt[i]) / 26);
+          const t = clamp01((f - bAt(4) - tickAt[i]) / 26);
           const bx = 300 + i * 240 + t * 90, by = 1010 - t * 210 + i * 30;
           const gone = clamp01((t - 0.55) / 0.3);
-          const tk = clamp01((f - bAt(3) - tickAt[i] - 10) / 16);
+          const tk = clamp01((f - bAt(4) - tickAt[i] - 10) / 16);
           return (
             <g key={i}>
               <g transform={`translate(${bx},${by}) rotate(${-24 + t * 10})`} opacity={1 - gone}>
@@ -266,18 +266,18 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g opacity={1 - dis}>
           <rect x={540 - 210} y={900 - 110} width={420} height={220} rx={16} fill={P.orange} transform={`scale(${1 + dis * 1.8},${1 - dis * 0.8}) translate(0,0)`} style={{transformOrigin: '540px 900px'}} />
         </g>
-        <Plate text="SEPT 5 · 3 SNIPE" y={520} size={32} p={ease(f, bAt(3) + 18, 14)} />
+        <Plate text="SEPT 5 · 3 SNIPE" y={520} size={32} p={ease(f, bAt(4) + 18, 14)} />
         <Dust f={f} color={P.paper} />
       </SVG>
     );
     zoom = 1.12 - 0.08 * ease(f, 0, 40) + 0.03 * (f / dur);
   } else if (n === 3) {
     // HER TABLE, OVERHEAD. The page stays turned away in shadow, nothing printed on it.
-    const open = ease(f, bAt(4) + 8, 34);
-    const pull = ease(f, bAt(5), 20);
-    const raise = ease(f, bAt(6), 26);
-    const slide = ease(f, bAt(7), 34);
-    const ring = clamp01(since(6) / 60);
+    const open = ease(f, bAt(5) + 8, 34);
+    const pull = ease(f, bAt(6), 20);
+    const raise = ease(f, bAt(7), 26);
+    const slide = ease(f, bAt(8), 34);
+    const ring = clamp01(since(7) / 60);
     const phoneX = 250 + 40 * pull + 230 * raise + 700 * slide;
     const phoneY = 640 - 40 * pull - 130 * raise;
     const phoneS = 1 + 0.35 * raise;
@@ -308,7 +308,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
         {/* the tag, creased on the table beside the phone, and its torn corner staying behind */}
         <g transform={`translate(${190 + 1000 * slide},${880}) rotate(-8)`}>
-          <DateTag x={0} y={0} s={0.9} text="" crease={ease(f, bAt(4) + 10, 24)} tear={ease(f, bAt(7), 20)} />
+          <DateTag x={0} y={0} s={0.9} text="" crease={ease(f, bAt(5) + 10, 24)} tear={ease(f, bAt(8), 20)} />
         </g>
         {slide > 0.15 && <path d="M170,915 l40,-4 l-6,30 z" fill={P.orange} stroke={P.orangeLo} strokeWidth={3} />}
         {/* the phone */}
@@ -321,19 +321,19 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             strokeWidth={4} opacity={0.5 * (1 - ((ring * 3 + i * 0.3) % 1))} />
         ))}
         {/* her hands, silhouettes, no face */}
-        <HandSil x={430 - 110 * open + 40 * pull} y={1600 - 470 * ease(f, bAt(4) - 6, 24) + 260 * ease(f, bAt(5) + 6, 18)} rot={-8} s={1.05} curl={0.3 * open} />
-        <HandSil x={840 - 330 * raise + 600 * slide} y={1640 - 380 * ease(f, bAt(5) - 4, 22) - 100 * raise + 300 * slide} rot={14} s={1.0} flip curl={0.2 + 0.4 * raise} />
-        <Plate text="SHE CALLED TROOPERS" y={1250} size={30} p={ease(f, bAt(6) + 8, 12)} />
+        <HandSil x={430 - 110 * open + 40 * pull} y={1600 - 470 * ease(f, bAt(5) - 6, 24) + 260 * ease(f, bAt(6) + 6, 18)} rot={-8} s={1.05} curl={0.3 * open} />
+        <HandSil x={840 - 330 * raise + 600 * slide} y={1640 - 380 * ease(f, bAt(6) - 4, 22) - 100 * raise + 300 * slide} rot={14} s={1.0} flip curl={0.2 + 0.4 * raise} />
+        <Plate text="SHE CALLED TROOPERS" y={1250} size={30} p={ease(f, bAt(7) + 8, 12)} />
         <Dust f={f} color={P.lamp} op={0.28} />
       </SVG>
     );
     zoom = 1 + 0.06 * (f / dur);
   } else if (n === 4) {
     // THE TROOPER'S REPORT. The dates disagree, and the binder edges in between them.
-    const sweep = ease(f, bAt(8), 40);
-    const drop = pop(9, 16);
-    const clash = ease(f, bAt(10), 28);
-    const binderIn = ease(f, bAt(10) + 20, 40);
+    const sweep = ease(f, bAt(9), 40);
+    const drop = pop(10, 16);
+    const clash = ease(f, bAt(11), 28);
+    const binderIn = ease(f, bAt(11) + 20, 40);
     const sheetX = 540 - 210 * clash;
     const dayX = (d: number) => -290 + (d / 37) * 580;
     picture = (
@@ -383,12 +383,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     );
   } else if (n === 5) {
     // TWO PHONES, ONE ANSWER. The hunter's replay on the left, the trooper's cab on the right.
-    const tap = ease(f, bAt(11), 12);
-    const c1 = spring(f, bAt(11) + 14, 14);
-    const c2 = spring(f, bAt(12), 12);
-    const qm = spring(f, bAt(13), 20);
-    const one = ease(f, bAt(13) + 12, 40);
-    const both = f >= bAt(12) ? Math.sin((f - bAt(12)) / 2.4) * Math.exp(-(f - bAt(12)) / 16) * 3 : 0;
+    const tap = ease(f, bAt(12), 12);
+    const c1 = spring(f, bAt(12) + 14, 14);
+    const c2 = spring(f, bAt(13), 12);
+    const qm = spring(f, bAt(14), 20);
+    const one = ease(f, bAt(14) + 12, 40);
+    const both = f >= bAt(13) ? Math.sin((f - bAt(13)) / 2.4) * Math.exp(-(f - bAt(13)) / 16) * 3 : 0;
     zoom = 1.16 - 0.16 * one;
     picture = (
       <SVG><Defs />
@@ -419,18 +419,18 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <rect x={536} y={0} width={8} height={H} fill={P.cream} opacity={0.5 * (1 - one)} />
         <text x={540} y={840 + 50 * (1 - qm)} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={240}
           fill={P.cream} stroke={P.ink} strokeWidth={14} paintOrder="stroke" opacity={clamp01(qm * 2)}>?</text>
-        <Plate text="SAME SEARCH · SAME ANSWER" y={470} size={30} p={ease(f, bAt(12), 10)} />
+        <Plate text="SAME SEARCH · SAME ANSWER" y={470} size={30} p={ease(f, bAt(13), 10)} />
         <Dust f={f} color={P.paper} op={0.16} />
       </SVG>
     );
   } else if (n === 6) {
     // THE COUNTER. The stamp is the event, and its lift becomes the window frame rising.
-    const slamAt = Math.max(14, bAt(14) + 12);
+    const slamAt = Math.max(14, bAt(15) + 12);
     const slam = spring(f, slamAt, 12);
     const stampY = interpolate(f, [0, slamAt - 8, slamAt + 2], [420, 470, 830], {extrapolateRight: 'clamp', extrapolateLeft: 'clamp', easing: Easing.in(Easing.quad)});
-    const lift = ease(f, bAt(15), 30);
+    const lift = ease(f, bAt(16), 30);
     const ink = ease(f, slamAt + 2, 40);
-    const rise = ease(f, bAt(15) + 24, 40);
+    const rise = ease(f, bAt(16) + 24, 40);
     picture = (
       <SVG><Defs />
         <rect width={W} height={H} fill="#6E777D" />
@@ -463,9 +463,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   } else if (n === 7) {
     // A FOGGED WINDOW. She is upright, in profile, and had already made the call.
     const breathe = 0.5 + 0.5 * Math.sin(f / 26);
-    const plateY = 560 + 170 * ease(f, bAt(16), 40);
-    const down = ease(f, bAt(17), 22);
-    const face = ease(f, bAt(17) + 8, 16);
+    const plateY = 560 + 170 * ease(f, bAt(17), 40);
+    const down = ease(f, bAt(18), 22);
+    const face = ease(f, bAt(18) + 8, 16);
     zoom = 1 + 0.07 * (f / dur);
     picture = (
       <SVG><Defs />
@@ -500,16 +500,16 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <rect x={-56} y={-104} width={112} height={196} rx={16} fill="#10171B" stroke={P.ink} strokeWidth={3} transform={`rotate(${-8 * (1 - down)}) scale(1,${1 - 0.9 * down + 0.02})`} style={{transformOrigin: '0px 0px'}} />
           <rect x={-46} y={-94} width={92} height={176} rx={10} fill="#7FA4B8" opacity={0.85 * (1 - face)} transform={`scale(1,${1 - 0.9 * down + 0.02})`} />
         </g>
-        <HandSil x={880 - 170 * ease(f, bAt(17) - 24, 26) + 120 * ease(f, bAt(17) + 14, 20)} y={1500 - 200 * ease(f, bAt(17) - 24, 26) + 100 * ease(f, bAt(17) + 14, 20)} rot={22} s={0.7} flip curl={0.3} />
-        <Plate text={'"I FEEL TERRIBLE"'} y={plateY} size={34} p={ease(f, bAt(16), 14)} />
+        <HandSil x={880 - 170 * ease(f, bAt(18) - 24, 26) + 120 * ease(f, bAt(18) + 14, 20)} y={1500 - 200 * ease(f, bAt(18) - 24, 26) + 100 * ease(f, bAt(18) + 14, 20)} rot={22} s={0.7} flip curl={0.3} />
+        <Plate text={'"I FEEL TERRIBLE"'} y={plateY} size={34} p={ease(f, bAt(17), 14)} />
         <Dust f={f} color={P.paper} op={0.2} />
       </SVG>
     );
   } else if (n === 8) {
     // THE PUBLIC SAFETY WALL. The camera pulls back from one card to the whole board.
-    const pin1 = pop(18, 12);
-    const back = ease(f, bAt(19) - 4, 60);
-    const pin2 = pop(20, 12);
+    const pin1 = pop(19, 12);
+    const back = ease(f, bAt(20) - 4, 60);
+    const pin2 = pop(21, 12);
     zoom = 1.42 - 0.42 * back;
     const blanks = [[190, 660], [160, 940], [330, 1150], [930, 800], [900, 1120]];
     const Pin: React.FC<{x: number; y: number; k?: number}> = ({x, y, k = 1}) => (
@@ -528,7 +528,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         })}
         <rect x={0} y={0} width={W} height={H} fill={P.paper} opacity={0.06 + 0.04 * Math.sin(f / 3.1)} />
         <rect x={0} y={460} width={W} height={10} fill={P.paper} opacity={0.5} filter="url(#soft6)" />
-        <g transform={`translate(540,760) rotate(${-2 + 1.6 * Math.sin(since(18) / 5) * Math.exp(-Math.max(0, since(18)) / 20)})`}>
+        <g transform={`translate(540,760) rotate(${-2 + 1.6 * Math.sin(since(19) / 5) * Math.exp(-Math.max(0, since(19)) / 20)})`}>
           <rect x={-272} y={-118} width={560} height={270} fill={P.ink} opacity={0.32} />
           <rect x={-280} y={-130} width={560} height={270} fill={P.paper} stroke={P.ink} strokeWidth={3} />
           <text x={0} y={-36} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={38} fill={P.peat}>"THE FIRST TIME I THINK</text>
@@ -543,7 +543,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Pin x={0} y={-104} k={pin2} />
         </g>
         {blanks.map(([bx, by], i) => {
-          const k = spring(f, bAt(20) + 14 + i * 7, 12);
+          const k = spring(f, bAt(21) + 14 + i * 7, 12);
           return (
             <g key={i} transform={`translate(${bx},${by}) rotate(${(i % 2 ? 4 : -3)})`} opacity={clamp01(k * 3)}>
               <rect x={-96} y={-70} width={200} height={150} fill={P.ink} opacity={0.3} />
@@ -554,18 +554,18 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           );
         })}
         <g transform="translate(150,520)"><DateTag x={0} y={0} s={0.55} rot={-6} crease={0.6} fade={0.6} /></g>
-        <Pin x={860} y={560} k={pop(19, 14)} />
-        <Plate text="AUSTIN McDANIEL · PUBLIC SAFETY SPOKESMAN" y={960} size={20} tone="paper" p={ease(f, bAt(18) + 10, 12)} />
+        <Pin x={860} y={560} k={pop(20, 14)} />
+        <Plate text="AUSTIN McDANIEL · PUBLIC SAFETY SPOKESMAN" y={960} size={20} tone="paper" p={ease(f, bAt(19) + 10, 12)} />
         <Dust f={f} color={P.paper} op={0.16} />
       </SVG>
     );
   } else if (n === 9) {
     // GOOGLE'S OWN HELP PAGE, a new tab, clearly not the results page.
-    const swipe = ease(f, bAt(21), 22);
-    const scroll = ease(f, bAt(22), 40);
-    const hl = ease(f, bAt(22) + 12, 34);
-    const s1 = spring(f, bAt(23), 22);
-    const s2 = spring(f, bAt(24), 22);
+    const swipe = ease(f, bAt(22), 22);
+    const scroll = ease(f, bAt(23), 40);
+    const hl = ease(f, bAt(23) + 12, 34);
+    const s1 = spring(f, bAt(24), 22);
+    const s2 = spring(f, bAt(25), 22);
     const wob = (k: number, ph: number) => Math.sin(f / 9 + ph) * 3 * k;
     picture = (
       <SVG><Defs />
@@ -600,9 +600,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     );
   } else if (n === 10) {
     // A NEWSROOM DESK. The email is sent and delivered, and no reply arrives.
-    const send = ease(f, bAt(25), 22);
-    const tickK = spring(f, bAt(25) + 30, 14);
-    const cross = ease(f, bAt(26) - 30, 60);
+    const send = ease(f, bAt(26), 22);
+    const tickK = spring(f, bAt(26) + 30, 14);
+    const cross = ease(f, bAt(27) - 30, 60);
     const flick = 0.05 * Math.sin(f / 2.3);
     picture = (
       <SVG><Defs />
@@ -632,15 +632,15 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           ))}
         </g>
         <path d="M120,1310 H960" stroke={P.paper5} strokeWidth={4} opacity={0.5} />
-        <Plate text="GOOGLE DID NOT RESPOND" y={1234} size={32} p={ease(f, bAt(25) + 26, 12)} />
+        <Plate text="GOOGLE DID NOT RESPOND" y={1234} size={32} p={ease(f, bAt(26) + 26, 12)} />
         <Dust f={f} color={P.paper} op={0.14} />
       </SVG>
     );
   } else if (n === 11) {
     // THE KITCHEN TABLE AGAIN, a laptop, and ADF&G's page. The tag rides the bezel unlit.
-    const lid = ease(f, bAt(27), 26);
-    const tab = ease(f, bAt(28), 20);
-    const fold = ease(f, bAt(29), 26);
+    const lid = ease(f, bAt(28), 26);
+    const tab = ease(f, bAt(29), 20);
+    const fold = ease(f, bAt(30), 26);
     picture = (
       <SVG><Defs />
         <rect width={W} height={H} fill="url(#wood)" />
@@ -666,17 +666,17 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
         <g opacity={lid}>
           <Plate text="ONE SOURCE OF TRUTH · ADF&G REGULATIONS" y={520} size={26} p={lid} />
-          <Plate text="AUSTIN McDANIEL · PUBLIC SAFETY SPOKESMAN" y={1250} size={20} tone="paper" p={ease(f, bAt(27) + 10, 12)} />
+          <Plate text="AUSTIN McDANIEL · PUBLIC SAFETY SPOKESMAN" y={1250} size={20} tone="paper" p={ease(f, bAt(28) + 10, 12)} />
         </g>
         <Dust f={f} color={P.lamp} op={0.26} />
       </SVG>
     );
   } else if (n === 12) {
     // MACRO: THE FINE PRINT. The page calls itself simplified, and an emergency order lands on it.
-    const type = ease(f, bAt(30), 110);
-    const stamp = spring(f, bAt(30) + 70, 14);
-    const slip = spring(f, bAt(31), 16);
-    const sag = ease(f, bAt(31) + 10, 30);
+    const type = ease(f, bAt(31), 110);
+    const stamp = spring(f, bAt(31) + 70, 14);
+    const slip = spring(f, bAt(32), 16);
+    const sag = ease(f, bAt(32) + 10, 30);
     zoom = 1.06 + 0.06 * (f / dur);
     picture = (
       <SVG><Defs />
@@ -701,16 +701,16 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <text x={-10} y={-82} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={36} letterSpacing={2} fill={P.cream}>EMERGENCY ORDER</text>
           <Glyphs x={-200} y={-30} w={420} lines={3} gap={34} seed={50} />
         </g>
-        <Plate text="REGULATIONS ARE SIMPLIFIED · EMERGENCY ORDERS CAN OVERRIDE" y={1240} size={20} p={ease(f, bAt(30), 12)} />
+        <Plate text="REGULATIONS ARE SIMPLIFIED · EMERGENCY ORDERS CAN OVERRIDE" y={1240} size={20} p={ease(f, bAt(31), 12)} />
         <Dust f={f} color={P.lamp} op={0.26} />
       </SVG>
     );
   } else if (n === 13) {
     // THE DIVE. Four layers, each a miniature of a world we have already been in, and the one
     // thick still binder underneath. The camera makes its single continuous descent here.
-    const fall = (i: number) => spring(f, bAt(32) + i * 7, 20);
-    const hold = ease(f, bAt(33), 40);
-    const diveT = clamp01((f - bAt(34)) / Math.max(1, bAt(35) - bAt(34)));
+    const fall = (i: number) => spring(f, bAt(33) + i * 7, 20);
+    const hold = ease(f, bAt(35), 40);
+    const diveT = clamp01((f - bAt(36)) / Math.max(1, bAt(37) - bAt(36)));
     const wp = [-0.55, 0.65, 1.65, 2.65, 3.55];
     const seg = Math.min(3, Math.floor(diveT * 4));
     const s = clamp01(diveT * 4 - seg);
@@ -718,12 +718,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const inOut = (x: number) => x * x * (3 - 2 * x);
     const uDive = diveT >= 1 ? wp[4] : wp[seg] + (wp[seg + 1] - wp[seg]) * inOut(clamp01(s * 2));
     const uPre = -1.15 + 0.6 * hold;
-    const u = f < bAt(34) ? uPre : uDive;
-    const landed = ease(f, bAt(35), 20);
-    const slipK = spring(f, bAt(35) + 6, 18);
-    const tagFall = clamp01((f - bAt(34) - 6) / 60);
+    const u = f < bAt(36) ? uPre : uDive;
+    const landed = ease(f, bAt(37), 20);
+    const slipK = spring(f, bAt(37) + 6, 18);
+    const tagFall = clamp01((f - bAt(36) - 6) / 60);
     const wob = (i: number) => Math.sin(f / 11 + i * 1.7) * 1.3 * (1 - landed);
-    const corner = f >= bAt(41) ? Math.sin(Math.min(1, since(41) / 20) * Math.PI) : 0;
+    const corner = f >= bAt(34) ? Math.sin(Math.min(1, since(34) / 20) * Math.PI) : 0;
     const fills = [P.paper, P.paper2, P.paper3, P.paper4];
     const planeXY = (d: number) => {
       const sc = perspScale(d, 0.34) * 1.3;
@@ -812,7 +812,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {tagFall > 0 && tagFall < 1 && (
           <DateTag x={620 - 40 * tagFall} y={470 + 1000 * tagFall * tagFall} s={0.8} rot={6 + 240 * tagFall} text="" crease={0.6} />
         )}
-        <Plate text="A SUMMARY" y={520} size={30} p={ease(f, bAt(32) + 26, 12) * (1 - ease(f, bAt(34), 14))} />
+        <Plate text="A SUMMARY" y={520} size={30} p={ease(f, bAt(33) + 26, 12) * (1 - ease(f, bAt(36), 14))} />
         <Dust f={f} color={P.paper} op={0.16} />
       </SVG>
     );
@@ -820,12 +820,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   } else if (n === 14) {
     // BACK AT HER TABLE, from the same overhead angle and the same lamp. The viewer's hands turn
     // the page TOWARD camera where hers was turned away.
-    const turn = ease(f, bAt(36) + 4, 40);
+    const turn = ease(f, bAt(38) + 4, 40);
     const ang = Math.PI * (1 - turn);
     const sx = Math.cos(ang);
-    const mail = ease(f, bAt(37), 30);
-    const tab = ease(f, bAt(38), 26);
-    const slip = ease(f, bAt(38) + 8, 30);
+    const mail = ease(f, bAt(39), 30);
+    const tab = ease(f, bAt(40), 26);
+    const slip = ease(f, bAt(40) + 8, 30);
     picture = (
       <SVG><Defs />
         <rect width={W} height={H} fill="url(#wood)" />
@@ -867,9 +867,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <rect x={-150} y={-88} width={300} height={54} fill={P.peat} />
           <text x={0} y={-50} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={1} fill={P.cream}>EMERGENCY ORDER</text>
         </g>
-        <HandSil x={330 + 40 * turn} y={1690 - 470 * ease(f, bAt(36) - 10, 26) + 150 * turn} rot={-8} s={1.05} curl={0.4 * turn} />
-        <HandSil x={800} y={1720 - 280 * ease(f, bAt(37) - 10, 26) + 200 * ease(f, bAt(37) + 26, 24)} rot={14} s={0.95} flip curl={0.3} />
-        <Plate text="CALL ADF&G · 907-465-4190" y={1250} size={28} p={ease(f, bAt(37) + 10, 12)} />
+        <HandSil x={330 + 40 * turn} y={1690 - 470 * ease(f, bAt(38) - 10, 26) + 150 * turn} rot={-8} s={1.05} curl={0.4 * turn} />
+        <HandSil x={800} y={1720 - 280 * ease(f, bAt(39) - 10, 26) + 200 * ease(f, bAt(39) + 26, 24)} rot={14} s={0.95} flip curl={0.3} />
+        <Plate text="CALL ADF&G · 907-465-4190" y={1250} size={28} p={ease(f, bAt(39) + 10, 12)} />
         <Dust f={f} color={P.lamp} op={0.28} />
       </SVG>
     );
