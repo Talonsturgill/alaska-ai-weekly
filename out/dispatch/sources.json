@@ -1,76 +1,47 @@
 {
-  "run_date": "2026-09-23",
-  "sources": [
-    {
-      "id": "s1",
-      "title": "Forget jets and helicopters. Data centers could be Alaska military towns' next noisy neighbors",
-      "outlet": "Alaska Public Media / American Homefront Project",
-      "date": "2026-09-15",
-      "url": "https://alaskapublic.org/news/alaska-desk/2026-09-15/forget-jets-and-helicopters-data-centers-could-be-alaska-military-towns-next-noisy-neighbors",
-      "claims": [
-        "c1",
-        "c5",
-        "c6",
-        "c10",
-        "c11"
-      ]
-    },
-    {
-      "id": "s2",
-      "title": "Military data centers are sparking opposition, but local leaders may be powerless to stop them",
-      "outlet": "American Homefront Project / WUNC",
-      "date": "2026-09-22",
-      "url": "https://americanhomefront.wunc.org/news/2026-09-22/military-data-centers-are-sparking-opposition-but-local-leaders-may-be-powerless-to-stop-them",
-      "claims": [
-        "c8",
-        "c9",
-        "c12",
-        "c15"
-      ]
-    },
-    {
-      "id": "s3",
-      "title": "Air Force offers land at three Alaska bases for AI data centers",
-      "outlet": "Air and Space Forces Magazine",
-      "date": "2026-04-11",
-      "url": "https://www.airandspaceforces.com/usaf-land-ai-data-centers-three-alaska-bases/",
-      "claims": [
-        "c1",
-        "c2",
-        "c13",
-        "c14"
-      ]
-    },
-    {
-      "id": "s4",
-      "title": "RFLP Artificial Intelligence (AI) Data Center Development at JBER, Eielson AFB and Clear SFS",
-      "outlet": "Department of the Air Force, SAM.gov",
-      "date": "2026-04-10",
-      "url": "https://sam.gov/opp/e1f00a73b56e493eaa84ba281e9db695/view",
-      "claims": [
-        "c3"
-      ]
-    },
-    {
-      "id": "s5",
-      "title": "In legislative priorities, Fairbanks North Star Borough Assembly doubles up on AI data center moratorium request",
-      "outlet": "KUAC",
-      "date": "2026-08-31",
-      "url": "https://fm.kuac.org/2026-08-31/in-legislative-priorities-fairbanks-north-star-borough-assembly-doubles-up-on-ai-data-center-moratorium-request",
-      "claims": [
-        "c7"
-      ]
-    },
-    {
-      "id": "s6",
-      "title": "The military wants to host data centers in Alaska, raising questions about whether there's enough gas to power them",
-      "outlet": "Anchorage Daily News",
-      "date": "2026-05-05",
-      "url": "https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
-      "claims": [
-        "c16",
-        "c17"
-      ]
-    }
-  ]
+ "run_date": "2026-09-30",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Misleading Google AI instructions cause Kodiak woman to be cited for illegal snipe hunt",
+   "outlet": "Alaska Beacon (James Brooks), via KTOO",
+   "date": "2026-09-28",
+   "url": "https://www.ktoo.org/2026/09/28/misleading-google-ai-instructions-cause-kodiak-woman-to-be-cited-for-illegal-snipe-hunt/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12"
+   ]
+  },
+  {
+   "id": "s2",
+   "title": "Alaska Hunting Regulations (ADF&G hunting regulations page)",
+   "outlet": "Alaska Department of Fish and Game",
+   "date": "2026-09-30",
+   "url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildliferegulations.hunting",
+   "claims": [
+    "c13",
+    "c14"
+   ]
+  },
+  {
+   "id": "s3",
+   "title": "AI Overviews and your search (Google Search Help)",
+   "outlet": "Google Search Help",
+   "date": "2026-09-30",
+   "url": "https://support.google.com/websearch/answer/14901683",
+   "claims": [
+    "c15"
+   ]
+  }
+ ]
 }
