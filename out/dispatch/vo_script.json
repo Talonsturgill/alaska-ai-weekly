@@ -36,83 +36,95 @@
    "display": "So on September 5th she shot three snipe."
   },
   {
-   "text": "But the trooper's report says the general season didn't open until October eighth.",
+   "text": "But the wildlife trooper's report says the general season didn't open until October eighth.",
    "idx": 3,
    "claims": [
     "c4"
    ],
-   "display": "But the trooper's report says the general season didn't open until October 8th."
+   "display": "But the wildlife trooper's report says the general season didn't open until October 8th."
   },
   {
-   "text": "At home she checked one more place. Then she called troopers and turned herself in.",
+   "text": "So which page can a hunter trust?",
    "idx": 4,
+   "claims": []
+  },
+  {
+   "text": "At home she looked up the rules, saw her mistake, and called troopers to turn herself in.",
+   "idx": 5,
    "claims": [
     "c5"
    ]
   },
   {
-   "text": "The trooper ran her exact search. He got the same wrong answer.",
-   "idx": 5,
-   "claims": [
-    "c6"
-   ]
-  },
-  {
-   "text": "So it wasn't a one time slip.",
+   "text": "That trooper ran her exact search. He got the same wrong answer.",
    "idx": 6,
    "claims": [
     "c6"
    ]
   },
   {
-   "text": "She pleaded no contest and paid a hundred fifty dollars.",
+   "text": "So the wrong answer came back twice.",
    "idx": 7,
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "text": "She pleaded no contest and paid a hundred fifty dollars.",
+   "idx": 8,
    "claims": [
     "c7"
    ],
    "display": "She pleaded no contest and paid $150."
   },
   {
-   "text": "She told the Beacon, I feel terrible.",
-   "idx": 8,
+   "text": "She told a reporter, I feel terrible.",
+   "idx": 9,
    "claims": [
     "c8"
    ]
   },
   {
-   "text": "Spokesman Austin McDaniel thinks it's the first time A I has been cited. He expects more.",
-   "idx": 9,
+   "text": "Public Safety spokesman Austin McDaniel thinks it's the first time A I has been cited. He expects more.",
+   "idx": 10,
    "claims": [
     "c9",
     "c11"
    ],
-   "display": "Spokesman Austin McDaniel thinks it's the first time AI has been cited. He expects more."
+   "display": "Public Safety spokesman Austin McDaniel thinks it's the first time AI has been cited. He expects more."
   },
   {
    "text": "Weren't there warnings? There were.",
-   "idx": 10,
+   "idx": 11,
    "claims": [
     "c15"
    ]
   },
   {
    "text": "Google's help page says A I answers may include mistakes. Check more than one place.",
-   "idx": 11,
+   "idx": 12,
    "claims": [
     "c15"
    ],
    "display": "Google's help page says AI answers may include mistakes. Check more than one place."
   },
   {
+   "text": "Google didn't respond to the Alaska Beacon's request for comment.",
+   "idx": 13,
+   "claims": [
+    "c12"
+   ]
+  },
+  {
    "text": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
-   "idx": 12,
+   "idx": 14,
    "claims": [
     "c10"
    ]
   },
   {
-   "text": "So she paid. But look at that source.",
-   "idx": 13,
+   "text": "So she still paid. But that source has a catch.",
+   "idx": 15,
    "claims": [
     "c7",
     "c13"
@@ -120,42 +132,28 @@
   },
   {
    "text": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
-   "idx": 14,
-   "claims": [
-    "c13"
-   ]
-  },
-  {
-   "text": "So it's a stack of summaries over one binding text.",
-   "idx": 15,
-   "claims": [
-    "c13"
-   ]
-  },
-  {
-   "text": "Google didn't respond to a request for comment.",
    "idx": 16,
    "claims": [
-    "c12"
+    "c13"
    ]
   },
   {
-   "text": "She dug past every summary to the regulations. That's the one move that worked.",
+   "text": "So it's summaries stacked on the law itself.",
    "idx": 17,
    "claims": [
-    "c4",
-    "c5"
+    "c13"
    ]
   },
   {
-   "text": "The answer was on top. The date was at the bottom.",
+   "text": "The answer was on top. What counts sits underneath.",
    "idx": 18,
    "claims": [
-    "c4"
+    "c4",
+    "c10"
    ]
   },
   {
-   "text": "Fish and Game will mail you a copy.",
+   "text": "Fish and Game will mail you the regulations.",
    "idx": 19,
    "claims": [
     "c14"
