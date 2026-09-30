@@ -1,0 +1,92 @@
+{
+  "schema": 2,
+  "kind": "chunk-cache",
+  "state": "complete",
+  "cache_key": "19cc6806f8ab2a4ce2f1ec0b1c6affe5f8cc5569d9c2c0505c577fb142140de2",
+  "chunks": {
+    "c0.mp4": {
+      "sha256": "111cfdbdcbe5cf70e3de40e91dae4916ba3360cf0fc4fe0af451dc9dd8e5e615",
+      "frames": [
+        0,
+        333
+      ]
+    },
+    "c1.mp4": {
+      "sha256": "92786fc424d19356dadb36ebd4a08d0d52771389264fcd9596bba58c09d6e538",
+      "frames": [
+        334,
+        667
+      ]
+    },
+    "c2.mp4": {
+      "sha256": "2345c299f83aa5270bc5eb3651eab54745a1779ea79cda9b35c0fcc0f124b67b",
+      "frames": [
+        668,
+        1001
+      ]
+    },
+    "c3.mp4": {
+      "sha256": "ee57f68ad97605ae6e5ba37f9464cf9acec30e13201a044c090cac66a82bb139",
+      "frames": [
+        1002,
+        1335
+      ]
+    },
+    "c4.mp4": {
+      "sha256": "e3d345fa6f14207307617accb0cbe0c5125310f6be9345ae9dd0d2e6a2b161d0",
+      "frames": [
+        1336,
+        1669
+      ]
+    },
+    "c5.mp4": {
+      "sha256": "ae208cd4dd0731837410c5e6aaacacbc9b769caa628cd7f0b00b86b05a3b7f02",
+      "frames": [
+        1670,
+        2003
+      ]
+    },
+    "c6.mp4": {
+      "sha256": "f715cdee04f94bd9f4907fc549d3e555cc4910b1bf6cd601d34f0e300a1dd21a",
+      "frames": [
+        2004,
+        2337
+      ]
+    },
+    "c7.mp4": {
+      "sha256": "438b7e38e2f401903b01a88b6ec091fc5a3b5587bfaa5268c1a4757e66418110",
+      "frames": [
+        2338,
+        2671
+      ]
+    },
+    "c8.mp4": {
+      "sha256": "00b13a65b31f49d76ed3d7cc0304d4a16230f0ed97a7c428428058ae7d686ae1",
+      "frames": [
+        2672,
+        3005
+      ]
+    },
+    "c9.mp4": {
+      "sha256": "4a50fd78d14b09f8e80700196452d718cb260e316cc9c59b49c3438017315cbc",
+      "frames": [
+        3006,
+        3339
+      ]
+    },
+    "c10.mp4": {
+      "sha256": "768c8d9cdc6eead1dd4acd772e6f737587d61c6d7c3f2c1a4e307a3ab9977490",
+      "frames": [
+        3340,
+        3673
+      ]
+    },
+    "c11.mp4": {
+      "sha256": "db20240863094b3a6dd1d038c0246bf33a057a024b309668d942b3f7b653789a",
+      "frames": [
+        3674,
+        3999
+      ]
+    }
+  }
+}

@@ -1,76 +1,88 @@
 {
-  "run_date": "2026-09-23",
-  "title": "One Variable",
-  "thesis_this_serves": "Whether a data center on offered Air Force land makes a Fairbanks power bill smaller or bigger turns on one number, the load, and nobody has published it. The look has to make an ABSENCE the most visible thing in the film.",
-  "palette": {
-    "roles": {
-      "sky": "#3E3852  Interior dusk violet, late September, the hour after the sun leaves the ridge",
-      "ground": "#C9A227  birch gold, the Tanana valley in the last week of September",
-      "hero": "#C87137  copper, literally the colour of wire, and the film's WIRES half",
-      "accent": "#1F3A5F  carbon blue, the ink of a printed form, and the film's FUEL half",
-      "paper": "#EDE7DB  statement stock, warm off-white, never pure white",
-      "shadow": "#141A22  spruce ink"
-    },
-    "mood": "A cold, clear, ordinary evening in a working town. Not ominous. The film is not about dread, it is about a blank line on a form, so the world is legible and calm and the only unsettled thing in it is the one slot that will not resolve.",
-    "divergence": "2026-09-14 was bright ultramarine, mango, alabaster and sea-glass. 2026-09-19 was powerhouse green, sodium amber and model cyan. This has NO cyan, NO green, NO amber and NO ultramarine. Copper against carbon blue over dusk violet has not been run. The gold is the only warm note carried over from any recent film and it is doing different work here, as autumn ground rather than as a light source."
+ "run_date": "2026-09-30",
+ "title": "The Answer Was on Top",
+ "thesis_this_serves": "An answer that repeats for every searcher sat on top of a stack of summaries, and the one binding text was underneath. The look has to make DEPTH the argument: top is bright and easy, bottom is dark and binding, and the camera earns the descent.",
+ "palette": {
+  "roles": {
+   "sky": "#A9B7C0  Kodiak slate fog, cold blue-grey overcast, the marsh at 7am",
+   "ground": "#2B211A  wet peat umber, the binder and the marsh floor, the dark anchor",
+   "hero": "#E8590C  hunter orange, ONE MEANING ONLY: the repeated wrong answer (the answer card and its twin). It never marks the binder",
+   "accent": "#8C9A86  lichen grey-green, desaturated sedge on the marsh only",
+   "paper": "#ECEEEA  cool grey-white summary stock, never warm bone",
+   "shadow": "#141A1F  cold ink",
+   "rim": "#EDF1F3  cool white, the rim on every sheet edge, hand silhouette and the corrected/blank tag"
   },
-  "light": {
-    "time_of_day": "19:40, late September, Interior Alaska. Sun already behind the ridge.",
-    "direction": "low and raking from frame LEFT, about 8 degrees above the horizon line",
-    "key": "birch gold, warm, narrow, catching only the top third of standing forms and the upper edge of every ruled card",
-    "fill": "dusk violet, cold and broad, from the open sky above",
-    "rim": "copper rim on the right edge of every hero form, which is the light that says an object is REAL and built, and which the absence grammar deliberately does not get",
-    "depth_approach": "Three declared planes everywhere there is a world: a far ridge and spruce band at 18 percent contrast with atmospheric lift, a mid plane carrying the subject at full contrast, and a near foreground of alder and a cut bank at 130 percent contrast and slight blur. Stage3D planes with a composed camera move on every exterior. Forms read dimensional by a three-tone ladder plus contact shadow, never by a flat fill."
-  },
-  "shape_language": {
-    "grammar": "THE RULED FORM AGAINST THE UNRULED LAND.",
-    "why_this_story": "The film's argument is literally that a rectangle is being drawn over ground that is not rectangular, and that one row on the rectangle is blank. So every human-made element is hard rectilinear, ruled, gridded, right-angled and repeating: statement rows, parcel boundaries, the cost stack, nameplates, a section grid. Every natural element is irregular and non-repeating: spruce crowns, a ridge, alder, the cut bank, a river bend. The two never blend. Where they meet, the ruled thing sits ON TOP of the land and casts a shadow onto it, so the viewer sees an imposition rather than a fit.",
-    "the_deliberate_contrast": "Rectilinear institution against organic land is the shelf's established opposition (ServerMachine and MachineShadow against Sourdough). This film uses it but INVERTS the sympathy: the ruled form is not a villain here, it is a DOCUMENT, and the film's complaint is not that it exists but that one of its rows is empty."
-  },
-  "casting": {
-    "hero": "Statement",
-    "hero_is_net_new": true,
-    "hero_reason": "The throughline object and the hero are the same thing, which is correct for a film about a missing value. It is a ruled utility statement with line items, a total, and one row whose value slot never fills. It must differ from the last two heroes and it does: 2026-09-14 was GearLever and 2026-09-19 was RunOfRiver.",
-    "from_the_shelf": [
-      "Unnamed and UnnamedField (lib/absence.tsx) for every NOT DISCLOSED slot. The shelf already solved drawing a thing that is not there, with a dashed crawling contour, a true void interior, a slow drift so it never reads as unrendered, and a REQUIRED label. It is exactly right and it is not being rebuilt.",
-      "Nameplate and StatCard (lib/props.tsx), form-shaded by default since 2026-07-30, for Hollister, Murkowski and Hopkins and for every figure",
-      "BoundaryReveal (lib/props.tsx) traces the offered parcel as a closed path over the land",
-      "MeasuringChain and SurveyStake (lib/props.tsx) for the land being measured to the acre",
-      "Character rig for the Fairbanks household, the trail walker and the figures at the testimony beats, with boxed name labels per the scene recipe book",
-      "DawnForestBG (boreal birch and spruce) for the land plane, re-tinted to dusk",
-      "MainStreetBG for the town beat, dusk raised",
-      "materials.tsx paper substance under every ruled card so no surface is a flat fill"
-    ],
-    "why_the_shelf_covers_so_much": "Checked against ASSET_MANIFEST.md in full before deciding. The shelf carries thirteen biomes, a props kit whose copy is all parameters, a full absence grammar and an evidence-state grammar. The only genuine gap this story finds is a BILL, which is the one thing it needs most."
-  },
-  "motion_language": {
-    "world": "Slow, settled, domestic. The camera pushes about 1.00 to 1.08 across every held shot with a lateral drift on an irrational period, and every exterior has a far plane drifting against the push. Nothing whips except the two act transitions.",
-    "hero_moves_named": [
-      "ROWS FILLING. The statement's rows populate left to right with a typed tick per row, anticipation and a small overshoot on each value as it lands. This is the film's signature motion and it is designed to build an expectation the blank row then breaks.",
-      "THE ROW THAT REFUSES. Every other row lands with a hit. One row's value slot arrives and does not fill. Its dashed rule crawls, its interior drifts, and it never resolves for the rest of the film.",
-      "THE STACK SPLITTING. The single cost bar over the house divides into two named halves, wires and fuel, with a real seam and a physical shove apart.",
-      "THE HALF THAT THINS. The wires half compresses smoothly and settles, once, and stays settled. It is the only thing in the film that gets ANSWERED.",
-      "THE HALF THAT REACHES. The fuel half decays toward a stop, and each time it nears rest it reaches down for the slot that would settle it, finds nothing there, and is kicked back up. REVISED at Gate 0B: the plan first said a spring that never damps, and the critic was right that a constant undamped flutter is indistinguishable from an animation that failed to reach its keyframe. A decaying reach that keeps getting kicked reads as an argument on first viewing and never as a render fault."
-    ],
-    "earns_180_blur": "the two act whips and the stack shove apart. Nothing else."
-  },
-  "composition": {
-    "approach": "Focal hierarchy is absolute: in every shot the best-finished, highest-contrast, most-detailed object is the one the viewer is meant to read, and the statement card is never out-detailed by its own furniture.",
-    "safe_area_intent": "THE 9:16 MASTER IS THE GRADED CUT AND IS COMPOSED FOR. The square is derived at crop=1080:1080:0:420, so the STORY lives inside master y 420 to 1500 and nothing load-bearing crosses those lines. The canvas outside that band is used rather than padded: ridge, sky and drifting cloud above y=420, and a near foreground of alder, cut bank and the corner of a porch rail below y=1500. This is the defect that dominated the back half of 2026-09-19 and it is being designed for up front instead of repaired at delivery.",
-    "signature_shot": "THE DIAGRAM THAT WILL NOT RESOLVE. One tall cost bar standing over a thin row of small houses. It splits into a copper WIRES half and a carbon-blue FUEL half. The wires half thins and settles. The fuel half swings between two heights and will not stop. Between them, where the number that would settle it belongs, sits a dashed void slot labelled NOT DISCLOSED. One frame that contains the whole argument, including the part the film honestly can't answer."
-  },
-  "craft_advance": {
-    "system": "lib/absence.tsx, the absence grammar",
-    "what": "It draws a missing OBJECT, a silhouette that is not filled. This film needs a missing VALUE, which is type in a ruled slot rather than a shape, and that is a different problem: a dashed outline around empty space reads as a box, not as an unanswered field. Extending it with a ruled data row whose value slot is a true void with a crawling dashed BASELINE and a required label makes every future rate case, budget, permit, docket and disclosure story able to draw what was not filled in.",
-    "why_it_belongs_to_this_film": "The single most important image in this Dispatch is a blank line on a form. If the shelf can only draw missing OBJECTS, that image has to be improvised inline, which is exactly how the 2026-07-26 capped-pipe weakness stayed open for four days and two panels."
-  },
-  "net_new_asset": {
-    "file": "video-engine/src/lib/tariff.tsx",
-    "components": [
-      "Statement, the ruled utility statement: a card on paper stock with a masthead, N line items each with a label and a value slot, a rule above the total, and a total row. Every string is a parameter. Rows can be filled, filling, or ABSENT, and an absent row composes with the absence grammar rather than reimplementing it.",
-      "CostStack, a single cost bar that can divide into named halves, be re-divided across a row of customers, and animate each half independently, so the two-way arithmetic is one component run twice rather than two hand-built diagrams."
-    ],
-    "why_it_is_a_real_gap": "Checked against ASSET_MANIFEST.md in full. The shelf has StatCard for one stat, Sheet for paper body, PaperOfficeBG for a records room, and the evidence-state grammar for epistemic status. NOTHING draws a BILL, and nothing draws a cost that divides. Alaska's news is rate cases, tariffs, PCE, budgets, dividends and utility filings almost every week, and every one of them has wanted this."
-  },
-  "binding_note": "This plan is an INPUT the build executes against, not a description written afterward. If a build decision contradicts it, either fix the build or consciously revise this file and say why in the retrospective."
+  "mood": "Cold, quiet, damp and fair. Nobody is scolded. The only warm saturated thing in a slate world is the wrong answer, so orange reads as a warning without a red alarm. A dim desaturated lamp pool (#D9B37A at 30 percent) lights the kitchen table but NEVER lights an orange object directly. When the tag reaches the binder it turns blank paper on peat so the move reads as the answer being corrected, never as the binder being marked wrong.",
+  "divergence": "Measured against the last ten films. 2026-09-23 was dusk violet #3E3852, birch gold #C9A227, copper #C87137 and carbon #1F3A5F. 2026-09-19 was powerhouse green with sodium amber and cyan. 2026-08-05 was cabinet green #1E332C, bone #EDE7DA and brass #C9963F. This film has no green ground, no violet, no gold, no brass, no copper, no cyan, and no warm-bone paper: slate fog #A9B7C0, peat umber #2B211A, cool paper #ECEEEA. Its only warm role is hunter orange, which none of the last ten used as a hero role. Orange has one semantic job."
+ },
+ "light": {
+  "time_of_day": "07:10, September 5th and after, Kodiak. Sun not yet over the ridge, then indoor lamp and phone glow for the rest.",
+  "direction": "soft overcast from above for the marsh; a single warm lamp from frame RIGHT on the kitchen table; the phone glass lights hands from below",
+  "key": "per setup; nothing is lit by an unnamed source",
+  "fill": "broad overcast slate #A9B7C0",
+  "rim": "cool white #EDF1F3 on every sheet edge and hand silhouette",
+  "depth_approach": "Four summary layers plus one binder in the S12 dive, at a declared 3/4 oblique camera (yaw 18, pitch 24). t=0 table (focusZ on plane 1, then focusZ animates to the binder, which is pinned in focus): plane 1 the orange AnswerCard on a paper backer #ECEEEA L93 blur 0 shadow +6/+10; plane 2 Google's help page #DCE0E1 L88 blur 0.6 shadow +5/+8; plane 3 the ADF&G page #C8CED1 L82 blur 1.4 shadow +4/+6; plane 4 the Public Safety card #B0B8BD L74 blur 2.4 shadow +3/+5; binder #2B211A L15 pinned blur 0 with a hard 1px contact shadow, rounded spine, stitched head band and page-block edge. Sheets are 8 to 12 percent translucent over a paper underlay. Exterior table: far ridge #8797A1 at 18 percent contrast, mid marsh #6F7C6C at 100, near alder #2B211A at 130 with slight blur. Blur is derived from lib/focus.ts blurAt(z, focusZ, aperture, sharp, max, pinned).",
+  "setups": {
+   "marsh (S2)": "key overcast fog from above, fill slate, rim cool white on bird backs",
+   "kitchen (S3, S11, S13)": "key dim desaturated lamp from frame RIGHT (lamp pool #D9B37A at 30 percent, never on an orange object), fill slate, rim cool white on hands",
+   "phone/cab (S1, S5, S9, S14)": "key screen glow from below via ScreenLit/ScreenKey, fill fog, phone lying on a fog-lit slate surface",
+   "report desk (S4), court counter (S6), newsroom (S10)": "flat grey counter or fluorescent light from above",
+   "window (S7)": "dusk slate through fogged glass",
+   "Public Safety wall (S8)": "flat grey fluorescent with a desk lamp edge",
+   "stack dive (S12)": "overcast from above onto a declared slate ground ramp from #56636C at the top to #3E4A53 (about L30) at the bottom behind the binder, so the peat binder (L15) sits 15 L below its ground and separates by its cool-white #EDF1F3 rim and hard contact shadow; every sheet plane sits at least 15 L above the ground behind it"
+  }
+ },
+ "shape_language": {
+  "grammar": "THE THIN, LIGHT SUMMARY AGAINST THE THICK, DARK BINDING TEXT.",
+  "why_this_story": "The argument is about layers. So every summary is a thin translucent pale rectangle that floats and wobbles, and the binding regulation is a thick, matte, peat-dark block with a spine and page edge, heavy and still. Natural forms (marsh grass, fog, snipe silhouettes) are irregular. The stack never blends with them, it lies over the land like a document does.",
+  "the_deliberate_contrast": "Thin pale floaty rectangles against one thick dark still block. Not a document layout: the camera travels through the sheets like a core sample.",
+  "binder_wins_at_feed_scale": "The binder carries a SECOND contrast axis beyond value: a rounded spine, a stitched head band, a page-block edge and a hard contact shadow, all at the 3/4 camera tilt, where sheets get only a soft float shadow. A 0.28-scale legibility strip is run on S1 and S12 before any other scene is authored."
+ },
+ "casting": {
+  "hero": "Binder",
+  "hero_is_net_new": true,
+  "hero_reason": "The story's real subject is the one thick still text underneath, and no bound thick block exists on the shelf. NET-NEW in lib/stack.tsx: Binder (thick peat umber block with rounded spine, stitched head band, page-block edge, hard contact shadow, opens via open 0..1 to a page), DateTag (the orange throughline tab with state orange or blank paper, tear and crease), AnswerCard (the orange card and its lockstep twin), LabelSheet (a thin summary sheet) and HandSil (silhouette hands, Weaver is never drawn with a face). The stack of summaries is a THIN composite of LabelSheets and is not the hero. It appears in ONE shot only (S12, the dive). Hero differs from the last two, Statement and RunOfRiver.",
+  "from_the_shelf": [
+   "paper.tsx PaperFiber and the Sheet body/shadow contract as the reference for LabelSheet",
+   "lighting.tsx tones, FormGradient, GradeLayer",
+   "lib/focus.ts (net-new helper, see craft_advance)",
+   "credentials.tsx QuestionToken as the engraving pattern reference for DateTag",
+   "voice.tsx VoiceProvider for accents",
+   "EndCredits",
+   "Plate/Head/Captions patterns from Ep0923"
+  ],
+  "cast_freshness": "hero Binder differs from the last two heroes."
+ },
+ "motion_language": {
+  "how_the_world_moves": "Everything thin wobbles on a spring. The binder is still. The camera makes one continuous descent, the S12 dive; every other shot is its own composed world.",
+  "key_hero_moves": [
+   "the orange answer card slams onto the phone glass with overshoot",
+   "the twin card clacks down in perfect sync with the first, a mirrored bounce",
+   "the tag tears at its crease and slides away with the phone, leaving its torn corner",
+   "the S12 dive: the camera passes four layers about a second each, each a miniature of an earlier world, while the tag falls away and lands blank on the binder",
+   "the viewer's hands turn the binder page toward camera at the kitchen table"
+  ],
+  "blur_anticipation": "180 degree shutter on the slam and the peel; anticipation of about 3 frames before every stamp"
+ },
+ "composition": {
+  "staging": "9:16 master graded; the square is derived at y 420 to 1500. Story band 500 to 1300, captions own 1336 to 1472. Sheets fill above and below the crop.",
+  "focal_hierarchy": "one card or tag at frame center at every key moment; the stack is the background structure",
+  "negative_space": "fog above the marsh; black phone glass in the hook",
+  "signature_shot": "S12: four summary sheets, each a miniature of an earlier world (the orange AI answer card, Google's help page, the ADF&G page stamped A SUMMARY, the Public Safety card), fall over one thick still peat binder at a 3/4 camera. The orange card holds on top as the VO says the answer was on top, then the camera DIVES down through the layers at about a second each while the tag falls off the top and lands blank on the binder cover, where the emergency-order slip lies in the binder's own family. The dive is the film's one continuous descent."
+ },
+ "craft_advance": {
+  "system": "focal-plane depth of field",
+  "how": "lib/focus.ts: blurAt(z, focusZ, aperture, sharp, max, pinned), valueLadder, passAlpha and perspScale as pure functions with a node self-test (scripts/focus_check.mjs), so a layered scene derives per-plane blur and value from its Z distance to a focal plane that can animate, with a pinned plane (the binder) always in focus. Registered under Engine systems in ASSET_MANIFEST.md."
+ },
+ "fingerprint": {
+  "pov": "top-down-map",
+  "layout": "single-object-void",
+  "motion_vector": "horizontal-traverse",
+  "hero_treatment": "instrument-as-subject",
+  "register": "tactile-collage",
+  "camera_strategy": "locked-drift",
+  "light_story": "night-practical",
+  "note": "computed from the storyboard shot table BY SCREEN TIME: single-object-void (S1, S3, S10, S13, S14) leads layout; top-down-map, macro-closeup and eye-level-immersive are close on pov and top-down-map leads by time; horizontal-traverse leads motion by time. This film SHARES the single-object-void layout with 2026-09-19 and differs from it on pov, motion, hero, register, camera and light."
+ },
+ "dead_space_guard": "0.28-scale legibility strip for S1 (binder vs glass, at least 10 L) and S12 (each plane at least 15 L above the ground behind it; the binder is the one plane BELOW its ground, so it is checked as a rim-plus-contact-shadow pair against the L30 ground)."
 }

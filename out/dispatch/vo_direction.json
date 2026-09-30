@@ -1,241 +1,291 @@
 {
-  "run_date": "2026-09-23",
-  "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
-  "script_words": 245,
-  "script_lines": 19,
-  "target_seconds": 120,
-  "accepted_band_seconds": [112, 130],
-  "planned_seconds": 124,
-  "planned_rate_wps": 1.98,
-  "pace_basis": "2026-09-19 delivered stem: 217 words in 113.8 seconds equals 1.907 words per second with the runtime-anchored pace paragraph verbatim. 245 words at that rate is 128.5 seconds, too near the ceiling, so this plan keeps the paragraph untouched and rations beats harder than the previous draft: only TWO [short pause] tags in the whole film, no [slow] tag at all, one weightless [wry]. Everything else that needs air is directed in the notes, which costs no seconds. Predicted 124 seconds.",
-  "notes": "Style: warm grounded Alaska public radio, curious rather than alarmed, because nothing has been awarded and the film is about a process with a third option in it. Dry half smile on the open, real respect on the quoted Alaskans, a plain dry civic note on the Fairbanks pause line, genuine respect and zero irony on the Air Force partnership line, kitchen-table working-it-out in the arithmetic, warmth on the Fairbanks credit, hope on the button. Emotion lives here in the notes, never in an emotion tag. Energy ladder 3 2 4 3 2 4 2 3 1 3 2 4 3 2 4 3 2 4 3, no two neighbours equal, floor at the hinge on line eight, tops at the hook, Hollister's peak, either way, the Fairbanks credit and the ask.",
-  "pronunciations": {
-    "A I": "ay-eye, the two letters",
-    "Eielson": "EEL-son",
-    "Salcha": "SAL-chuh",
-    "Murkowski": "mer-KOW-skee",
-    "Grier": "GREER",
-    "F thirty fives": "eff thirty fives"
+ "run_date": "2026-09-30",
+ "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+ "script_words": 242,
+ "script_lines": 21,
+ "target_seconds": 120,
+ "accepted_band_seconds": [
+  112,
+  130
+ ],
+ "planned_seconds": 124,
+ "planned_rate_wps": 1.907,
+ "pace_basis": "2026-09-19 delivered stem measured 1.907 words per second with the runtime-anchored pace paragraph verbatim, so 239 words projects to about 125 seconds. But the previous synth of the 219 word version ran only 93 to 105 seconds (2.1 to 2.35 wps), so this plan deliberately slows the performance: the Step 7 pace paragraph verbatim, a Style line that asks for an unhurried storyteller with silence at every period, five mid-line [short pause] beats at the sentence ends that earn them (the self report, the replicated search, the warnings concession, the thesis, the practical ask), and one vetted mid-line [slow] on her own words. Even at the fast 2.1 wps rate seen last time, 239 words plus about 5 seconds of planned beats is about 119 seconds, inside the band and above the 114 second floor.",
+ "notes": "Style: warm, grounded Alaska public radio telling a neighbour's story with sympathy and fairness, unhurried like someone with nowhere else to be. She acted in good faith, caught her own mistake and turned herself in, and the read respects that without pity. Google gets a straight, even read on its own warning and on not commenting, never an edge, never a pile-on. The one dry half smile is on even the official page being a simplified summary, gentle and knowing, not a gotcha. The close is practical and warm, a friend reminding you to check. Emotion lives in the notes, never in an emotion tag. Energy ladder 4 2 3 2 4 3 4 3 2 1 3 4 2 3 2 4 2 3 2 4 3, no two neighbours equal. Peaks at the hook, the October date, the replicated search, the warnings question, the catch and the practical ask. The floor is I feel terrible (line 9). The line to land is 18, low and deliberate with a real beat after top.",
+ "pronunciations": {
+  "A I": "ay-eye, the two letters"
+ },
+ "arc": [
+  {
+   "act": "THE STORY (0 to 3)",
+   "shape": "curious, bright hook, then plain dates the viewer can hold, then warm quiet credit on her opening the regulations and turning herself in"
   },
-  "arc": [
-    {"act": "OPEN (0 to 3)", "shape": "flat factual wry on an enormous number, settle into the bills line, lift into a real question, cold drop on the offering, wry button on the positions"},
-    {"act": "TESTIMONY (4 to 8)", "shape": "respect and weight on Hollister, peak on lost our way, then the driest and plainest line in the block on the borough's pause, level reporting on Murkowski, then the quietest and most deliberate line in the piece"},
-    {"act": "THE COUNTER (9)", "shape": "the institution's own case, read straight and with genuine respect. If this line sounds sardonic the film reads as a hit piece and the thesis dies"},
-    {"act": "ARITHMETIC (10 to 13)", "shape": "kitchen table with a pencil, never a recitation, either way carries the logic, bites is the turn, the reveal slows"},
-    {"act": "RECONTEXT (14 to 15)", "shape": "warmest moment, genuine credit to a town that bet right once, then the best line in the script with real air between its halves"},
-    {"act": "ASK AND BUTTON (16 to 18)", "shape": "concession not scold, then the most direct level delivery in the film, then hope: an opening, not a defeat"}
-  ],
-  "style_prompt": "Style: Warm, grounded Alaska public radio. Curious rather than alarmed, because nothing has been decided yet and this is an investigation, not a verdict. Plain spoken, a dry half smile on the opening lines, real respect on every person and institution quoted, someone working out a bill at a kitchen table through the middle, and genuine hope on the final sentence. Never sour, never a sales pitch, and never sardonic about anyone.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean on the one key word in each line and let the numbers land. The question near the top is a real question a person is asking, not a setup. The line about Fairbanks asking for a pause is a plain civic note, the driest line in that stretch. The line about a partnership supporting Airmen and Guardians is the other side's honest case and is read straight, with respect and no irony at all. The two sentences about the land and the power are the quietest in the piece, with a real beat between them. The fighter wing line and the data center line are two separate thoughts, not one breath. The last sentence is hopeful, an opening and not a defeat.\nPronunciation: A I is the two letters, ay-eye. Eielson is EEL-son. Salcha is SAL-chuh. Murkowski is mer-KOW-skee. Grier is GREER. F thirty fives is eff thirty fives.",
-  "lines": [
-    {
-      "idx": 0,
-      "text": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
-      "intent": "hook",
-      "emphasis": "acres",
-      "energy": 3,
-      "pace": "baseline, a small settle on the number",
-      "tags": [],
-      "pause_before": false,
-      "why": "The number is enormous and the read does not sell it. Flat and factual with a half smile is what makes it land, and it leaves the ladder room to move both ways from here."
-    },
-    {
-      "idx": 1,
-      "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
-      "intent": "setup",
-      "emphasis": "highest",
-      "energy": 2,
-      "pace": "baseline, slight weight on the last clause",
-      "tags": [],
-      "pause_before": false,
-      "why": "Drop under line zero so the lift into the question has somewhere to come from. The stake for a Fairbanks household arrives quietly, which is how a stake earns belief."
-    },
-    {
-      "idx": 2,
-      "text": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
-      "intent": "hook",
-      "emphasis": "decides",
-      "energy": 4,
-      "pace": "forward and genuinely asking, then a full stop and a hard, level landing on the last sentence",
-      "tags": [],
-      "pause_before": false,
-      "why": "This is the film's one question and it has to sound genuinely asked, so the lift is real. The cold drop on the offering doesn't say is directed in the notes rather than tagged, because the period plus a level landing does the job and costs no runtime."
-    },
-    {
-      "idx": 3,
-      "text": "Nothing's awarded. [wry] Alaskans took positions anyway.",
-      "intent": "wry",
-      "emphasis": "anyway",
-      "energy": 3,
-      "pace": "slightly quicker throwaway",
-      "tags": ["[wry]"],
-      "pause_before": false,
-      "why": "The half smile is earned here and nowhere else in the open. Dropping off the hook's four keeps the contrast and hands the testimony block a clean floor to start from. The tag is mid-line after a period, never line-initial."
-    },
-    {
-      "idx": 4,
-      "text": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
-      "intent": "setup",
-      "emphasis": "sacrifice",
-      "energy": 2,
-      "pace": "unhurried, warm, no irony",
-      "tags": [],
-      "pause_before": false,
-      "why": "A quoted Alaskan gets respect, not a jeer. Sitting low here makes the next line's rise read as her feeling rather than as the narrator's opinion."
-    },
-    {
-      "idx": 5,
-      "text": "Swap that for a data center's hum, she said, and we've lost our way.",
-      "intent": "stakes",
-      "emphasis": "lost",
-      "energy": 4,
-      "pace": "a touch slower on the last clause, weight not volume",
-      "tags": [],
-      "pause_before": false,
-      "why": "The emotional peak of the first half. Weight rather than heat, because the film is carrying her conviction, not endorsing or mocking it."
-    },
-    {
-      "idx": 6,
-      "text": "Fairbanks asked for a pause, on both its state and federal lists.",
-      "intent": "stat",
-      "emphasis": "pause",
-      "energy": 2,
-      "pace": "plain, dry, matter of fact, no colour at all",
-      "tags": [],
-      "pause_before": false,
-      "why": "The third testimony voice is an institution filing paperwork, and the flatness is the point: a town's formal ask sounds nothing like a neighbour on a trail, and the contrast right after the emotional peak is what makes both read as true."
-    },
-    {
-      "idx": 7,
-      "text": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
-      "intent": "stat",
-      "emphasis": "insecure",
-      "energy": 3,
-      "pace": "even, let the full name land clean",
-      "tags": [],
-      "pause_before": false,
-      "why": "Level and reportorial, lifting just off the civic note. Insecure is the load-bearing word because it names the input, which is exactly what the hinge is about to point at."
-    },
-    {
-      "idx": 8,
-      "text": "She didn't say the land. [short pause] She said the power.",
-      "intent": "reveal",
-      "emphasis": "power",
-      "energy": 1,
-      "pace": "slow, deliberate, the quietest line in the film",
-      "tags": ["[short pause]"],
-      "pause_before": true,
-      "why": "The hinge of the whole piece. Dropping from three to one is the biggest move on the ladder, and a real beat between the two sentences is what turns a sentence into a realisation. This is one of only two pause tags in the film, because this is where a beat is worth its seconds."
-    },
-    {
-      "idx": 9,
-      "text": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
-      "intent": "setup",
-      "emphasis": "partnership",
-      "energy": 3,
-      "pace": "straight, even, generous, absolutely no lift of the eyebrow",
-      "tags": [],
-      "pause_before": false,
-      "why": "This is the other side's honest case and the film means it. Read with irony it makes the whole piece a hit and the thesis dies, so the delivery here is the plainest kind of respect: state it as the institution states it, and let the audience weigh it."
-    },
-    {
-      "idx": 10,
-      "text": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
-      "intent": "setup",
-      "emphasis": "tall",
-      "energy": 2,
-      "pace": "conversational and close, a person explaining at a kitchen table",
-      "tags": [],
-      "pause_before": false,
-      "why": "Coming down and in changes the room from testimony to arithmetic. Tall is the picture the viewer is watching get drawn, so the voice hands it over rather than announcing it."
-    },
-    {
-      "idx": 11,
-      "text": "A giant customer helps pay for them either way. That half thins.",
-      "intent": "reveal",
-      "emphasis": "either way",
-      "energy": 4,
-      "pace": "lift on either way, then settle onto thins",
-      "tags": [],
-      "pause_before": false,
-      "why": "Either way carries the entire logical load of the film, because it is the one thing in the bill that does not depend on the missing number. The jump from two to four is what marks it without a tag."
-    },
-    {
-      "idx": 12,
-      "text": "The fuel bites. A big load either brings its own power, or competes for what's here.",
-      "intent": "stakes",
-      "emphasis": "bites",
-      "energy": 3,
-      "pace": "even, hold the fork level in the second sentence, do not favour either branch",
-      "tags": [],
-      "pause_before": false,
-      "why": "Bites is the turn from settled to unsettled. Dropping back off four keeps the fork neutral, which the angle requires: the film never narrates which branch is likelier."
-    },
-    {
-      "idx": 13,
-      "text": "So it turns on how big. And how big is what nobody has published.",
-      "intent": "reveal",
-      "emphasis": "published",
-      "energy": 2,
-      "pace": "noticeably slower through the second sentence, quiet rather than loud",
-      "tags": [],
-      "pause_before": true,
-      "why": "The reveal the whole diagram was built for. It is slowed by direction rather than by a tag this time, to keep the runtime off the ceiling, and quiet beats loud here anyway because the subject of the sentence is an absence."
-    },
-    {
-      "idx": 14,
-      "text": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
-      "intent": "setup",
-      "emphasis": "buoyed",
-      "energy": 4,
-      "pace": "warmer and more open than anything before it",
-      "tags": [],
-      "pause_before": false,
-      "why": "The warmest moment in the film and genuine credit to a town that made a good bet once. The lift from two is what tells the audience this is not the setup for a dunk."
-    },
-    {
-      "idx": 15,
-      "text": "But a fighter wing comes with a budget. [short pause] A data center comes with an appetite.",
-      "intent": "reveal",
-      "emphasis": "appetite",
-      "energy": 3,
-      "pace": "slow and separated, two thoughts and not one breath",
-      "tags": ["[short pause]"],
-      "pause_before": true,
-      "why": "The best line in the script, and it only works if the halves are not rushed together. Settling under the warmth of fourteen lets the last word do the work. The second and last pause tag in the film."
-    },
-    {
-      "idx": 16,
-      "text": "So the ask isn't megawatts. Nobody can publish those yet.",
-      "intent": "stakes",
-      "emphasis": "Nobody",
-      "energy": 2,
-      "pace": "even and fair, no edge",
-      "tags": [],
-      "pause_before": false,
-      "why": "This is the concession the angle insists on, so it has to sound like the film conceding rather than the film scolding. Low and generous, which also clears the runway for the ask."
-    },
-    {
-      "idx": 17,
-      "text": "Ask for the date. Does that number go public before the land is leased?",
-      "intent": "button",
-      "emphasis": "date",
-      "energy": 4,
-      "pace": "direct and level, the plainest delivery in the piece, a real question mark at the end without singsong",
-      "tags": [],
-      "pause_before": false,
-      "why": "The film's actual instruction. Level and direct to camera, because an instruction that sounds performed sounds optional."
-    },
-    {
-      "idx": 18,
-      "text": "The terms aren't written. That's the opening.",
-      "intent": "button",
-      "emphasis": "opening",
-      "energy": 3,
-      "pace": "settle, warm lift on the final word",
-      "tags": [],
-      "pause_before": true,
-      "why": "The whole film turns on that last word sounding hopeful rather than grim. Unwritten terms are the good news, so the tone rises into opening instead of falling off it."
-    }
-  ],
-  "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Warm, grounded Alaska public radio. Curious rather than alarmed, because nothing has been decided yet and this is an investigation, not a verdict. Plain spoken, a dry half smile on the opening lines, real respect on every person and institution quoted, someone working out a bill at a kitchen table through the middle, and genuine hope on the final sentence. Never sour, never a sales pitch, and never sardonic about anyone.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean on the one key word in each line and let the numbers land. The question near the top is a real question a person is asking, not a setup. The line about Fairbanks asking for a pause is a plain civic note, the driest line in that stretch. The line about a partnership supporting Airmen and Guardians is the other side's honest case and is read straight, with respect and no irony at all. The two sentences about the land and the power are the quietest in the piece, with a real beat between them. The fighter wing line and the data center line are two separate thoughts, not one breath. The last sentence is hopeful, an opening and not a defeat.\nPronunciation: A I is the two letters, ay-eye. Eielson is EEL-son. Salcha is SAL-chuh. Murkowski is mer-KOW-skee. Grier is GREER. F thirty fives is eff thirty fives.\nTranscript:\nThe Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.\nSome sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.\nDoes that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.\nNothing's awarded. [wry] Alaskans took positions anyway.\nSalcha resident Sarah Hollister told reporters the jets always meant sacrifice.\nSwap that for a data center's hum, she said, and we've lost our way.\nFairbanks asked for a pause, on both its state and federal lists.\nSenator Lisa Murkowski says Alaska can't support them on an insecure energy base.\nShe didn't say the land. [short pause] She said the power.\nThe Air Force calls it a partnership supporting its Airmen and Guardians.\nYour bill is wires and fuel. The wires split across everyone, so that half is tall.\nA giant customer helps pay for them either way. That half thins.\nThe fuel bites. A big load either brings its own power, or competes for what's here.\nSo it turns on how big. And how big is what nobody has published.\nMayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.\nBut a fighter wing comes with a budget. [short pause] A data center comes with an appetite.\nSo the ask isn't megawatts. Nobody can publish those yet.\nAsk for the date. Does that number go public before the land is leased?\nThe terms aren't written. That's the opening."
+  {
+   "act": "THE FLIP (4 to 7)",
+   "shape": "October lands with a clear lift, a plain statement that the two disagreed, the replicated search as proof with a breath before it, then a genuinely open question about which page to trust"
+  },
+  {
+   "act": "THE COST (8 to 10)",
+   "shape": "gentle on the fine, the quietest moment on I feel terrible with no performed pity, then level reporting that widens to everyone on he expects more"
+  },
+  {
+   "act": "FAIRNESS (11 to 13)",
+   "shape": "honest concession that warnings existed, Google's own advice read straight and generous, the no comment line plain as weather"
+  },
+  {
+   "act": "SECOND MOVEMENT (14 to 17)",
+   "shape": "respect for the one source of truth, a lift on the catch, even and clear on simplified and override, then the only half smile on a simplified summary of state law"
+  },
+  {
+   "act": "THESIS AND BUTTON (18 to 20)",
+   "shape": "the line to land: low, deliberate, a real beat after top, underneath carrying the weight; then practical brightness on check them first and the mailed regulations; then a warm, genuinely asked question"
+  }
+ ],
+ "style_prompt": "Style: Warm, grounded Alaska public radio, telling a neighbour's story with sympathy and fairness, unhurried, like a storyteller with nowhere else to be who lets a little silence sit after every sentence. The hunter acted in good faith, caught her own mistake and turned herself in, so she gets respect, never pity and never judgment. Google is treated fairly: its warning and its no comment are read straight and even, with no edge at all. Curious on the questions, calm and clear on the facts, one gentle half smile when even the official page turns out to be a simplified summary, and practical warmth at the close, like a friend reminding you to check before you go out. Never a scold, never sour, never a pile-on.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean on the one key word in each line and let the numbers and dates land, especially September first, September fifth and October eighth. Turned herself in is said with quiet credit. The trooper getting the same wrong answer is proof, not a punchline. Which page can a hunter trust is a real question. I feel terrible is her words, the softest and slowest moment in the piece, simple and unperformed. The warnings question is an honest concession, not an accusation. The line saying Google didn't respond is plain fact. The answer was on top, then a real beat, then what counts sits underneath, low and deliberate, the line that must land. The last question is warm and genuinely asked.\nPronunciation: A I is the two letters, ay-eye.",
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A Kodiak woman asked Google when snipe season opens.",
+   "intent": "hook",
+   "emphasis": "snipe",
+   "energy": 4,
+   "pace": "a touch brighter, forward lean, unhurried",
+   "tags": [],
+   "pause_before": false,
+   "why": "An ordinary question anyone has typed, so the hook is curiosity, not alarm; snipe is the specific word that makes it a story. No tag, because a tag cannot open a line."
+  },
+  {
+   "idx": 1,
+   "text": "She told troopers its A I answer said September first.",
+   "intent": "stat",
+   "emphasis": "first",
+   "energy": 2,
+   "pace": "settle on the date",
+   "tags": [],
+   "pause_before": false,
+   "why": "Drops under the hook so the date registers cleanly; the whole film turns on the viewer remembering it."
+  },
+  {
+   "idx": 2,
+   "text": "So on September fifth she shot three snipe.",
+   "intent": "stat",
+   "emphasis": "fifth",
+   "energy": 3,
+   "pace": "even, let the date land",
+   "tags": [],
+   "pause_before": false,
+   "why": "Matter of fact: she did the reasonable thing with the answer she was given. A small lift keeps the ladder moving without implying wrongdoing."
+  },
+  {
+   "idx": 3,
+   "text": "At home she opened the state regulations and saw her mistake. [short pause] She called troopers and turned herself in.",
+   "intent": "setup",
+   "emphasis": "herself",
+   "energy": 2,
+   "pace": "unhurried, warm, a real beat at the first period",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "The angle's respect for her lives here. The beat gives her decision room and spends runtime where it is earned; quiet credit on turned herself in."
+  },
+  {
+   "idx": 4,
+   "text": "The trooper's report says the general season opened October eighth.",
+   "intent": "reveal",
+   "emphasis": "October",
+   "energy": 4,
+   "pace": "a breath before, then let October eighth land fully",
+   "tags": [],
+   "pause_before": true,
+   "why": "The flip. Rising two levels off the warm setup marks the surprise; the period before it gives the beat without spending a tag."
+  },
+  {
+   "idx": 5,
+   "text": "So the answer and the report disagreed.",
+   "intent": "setup",
+   "emphasis": "disagreed",
+   "energy": 3,
+   "pace": "plain and even, a settle after the date",
+   "tags": [],
+   "pause_before": false,
+   "why": "States the conflict simply so the viewer can hold it, a step down from the reveal before the proof lifts again."
+  },
+  {
+   "idx": 6,
+   "text": "That trooper ran her exact search. [short pause] He got the same wrong answer.",
+   "intent": "reveal",
+   "emphasis": "same",
+   "energy": 4,
+   "pace": "level first sentence, a real breath, then land same",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "Evidence this is not one hunter's slip. The beat makes it land as proof rather than a punchline. Reused from the prior plan unchanged."
+  },
+  {
+   "idx": 7,
+   "text": "So which page can a hunter trust?",
+   "intent": "hook",
+   "emphasis": "trust",
+   "energy": 3,
+   "pace": "genuinely open question, unhurried, let it hang",
+   "tags": [],
+   "pause_before": false,
+   "why": "The film's real question, asked as a person wondering. The [curious] tag from the prior plan is dropped because on this line it could only sit after So, which is awkward; the curiosity is directed in the notes instead."
+  },
+  {
+   "idx": 8,
+   "text": "She pleaded no contest and paid a hundred fifty dollars.",
+   "intent": "stakes",
+   "emphasis": "fifty",
+   "energy": 2,
+   "pace": "a little slower, gentle, let the amount land",
+   "tags": [],
+   "pause_before": false,
+   "why": "The cost, read human rather than outraged. Settling off the question and letting the number land keeps it fair to her."
+  },
+  {
+   "idx": 9,
+   "text": "She told the Alaska Beacon, [slow] I feel terrible.",
+   "intent": "stakes",
+   "emphasis": "terrible",
+   "energy": 1,
+   "pace": "the quietest and slowest line, soft and simple",
+   "tags": [
+    "[slow]"
+   ],
+   "pause_before": false,
+   "why": "Her own words, so the narrator steps back. The vetted mid-line [slow] marks the real change of cadence into her voice and buys runtime on the one line that should be the floor; any colour would read as pity."
+  },
+  {
+   "idx": 10,
+   "text": "State spokesman Austin McDaniel says he thinks it's the first time A I has been cited. He expects more.",
+   "intent": "stat",
+   "emphasis": "more",
+   "energy": 3,
+   "pace": "level reporting, full name clean, small forward lean on the last sentence",
+   "tags": [],
+   "pause_before": false,
+   "why": "Lifts off the floor into reporting and widens the story from one hunter to everyone. More is stated plainly, not as a siren."
+  },
+  {
+   "idx": 11,
+   "text": "Weren't there warnings? [short pause] There were.",
+   "intent": "reveal",
+   "emphasis": "were",
+   "energy": 4,
+   "pace": "a lively real question, a beat, then a short honest answer",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "The film conceding the counterpoint out loud. The beat lets the question breathe and makes the answer candid, not accusing her and not defending anyone."
+  },
+  {
+   "idx": 12,
+   "text": "Google's help page says A I answers may include mistakes, and to check more than one place.",
+   "intent": "setup",
+   "emphasis": "mistakes",
+   "energy": 2,
+   "pace": "straight and generous, read as Google states it",
+   "tags": [],
+   "pause_before": false,
+   "why": "Google's honest advice read with respect. Any edge here turns the film into a pile-on, which the angle forbids."
+  },
+  {
+   "idx": 13,
+   "text": "Google didn't respond to the Beacon's request for comment on the wrong answer.",
+   "intent": "setup",
+   "emphasis": "respond",
+   "energy": 3,
+   "pace": "plain, matter of fact",
+   "tags": [],
+   "pause_before": false,
+   "why": "A routine reporting note read as plainly as weather; the slight lift keeps it from sounding ominous and keeps the ladder moving."
+  },
+  {
+   "idx": 14,
+   "text": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
+   "intent": "stakes",
+   "emphasis": "one",
+   "energy": 2,
+   "pace": "grounded, unhurried",
+   "tags": [],
+   "pause_before": false,
+   "why": "The state's answer read with respect. Settling low sets up the catch."
+  },
+  {
+   "idx": 15,
+   "text": "But that source has a catch.",
+   "intent": "reveal",
+   "emphasis": "catch",
+   "energy": 4,
+   "pace": "a breath before, then a lift",
+   "tags": [],
+   "pause_before": true,
+   "why": "The turn into the second movement. A clear lift tells the audience the story is not AI bad, official page good."
+  },
+  {
+   "idx": 16,
+   "text": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
+   "intent": "setup",
+   "emphasis": "simplified",
+   "energy": 2,
+   "pace": "even and clear, give the long line room",
+   "tags": [],
+   "pause_before": false,
+   "why": "The agency's own honest admission, read straight; the viewer needs both simplified and override."
+  },
+  {
+   "idx": 17,
+   "text": "So even the official page is a simplified summary of state law.",
+   "intent": "wry",
+   "emphasis": "summary",
+   "energy": 3,
+   "pace": "a touch lighter, gentle half smile",
+   "tags": [],
+   "pause_before": true,
+   "why": "The only dry moment in the film, directed in the notes rather than tagged so it stays knowing and kind, never a gotcha at Fish and Game."
+  },
+  {
+   "idx": 18,
+   "text": "The answer was on top. [short pause] What counts sits underneath, the regulations and any emergency order.",
+   "intent": "reveal",
+   "emphasis": "underneath",
+   "energy": 2,
+   "pace": "slow, deliberate, a real beat after top, then let underneath carry the weight",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": true,
+   "why": "THE line to land: the thesis. Dropping under the wry line and the beat after top turn a sentence into a realisation. Held at 2, not 1, so line 9 stays the quietest and the list after the comma stays clear."
+  },
+  {
+   "idx": 19,
+   "text": "Check them first. [short pause] Fish and Game will mail you the regulations, or you can call the office.",
+   "intent": "button",
+   "emphasis": "first",
+   "energy": 4,
+   "pace": "direct and practical, a beat, then brighter helpful news",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "Constructive, not a scold. The lift off the thesis makes it sound like help, and the beat lets check them first stand on its own before the good news."
+  },
+  {
+   "idx": 20,
+   "text": "Before you hunt, what do you check?",
+   "intent": "button",
+   "emphasis": "check",
+   "energy": 3,
+   "pace": "warm, settle, a real question without singsong",
+   "tags": [],
+   "pause_before": true,
+   "why": "Direct to camera and genuinely asked, a neighbour's question rather than a lecture, so the film ends in conversation."
+  }
+ ],
+ "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty\n### DIRECTOR'S NOTES\nStyle: Warm, grounded Alaska public radio, telling a neighbour's story with sympathy and fairness, unhurried, like a storyteller with nowhere else to be who lets a little silence sit after every sentence. The hunter acted in good faith, caught her own mistake and turned herself in, so she gets respect, never pity and never judgment. Google is treated fairly: its warning and its no comment are read straight and even, with no edge at all. Curious on the questions, calm and clear on the facts, one gentle half smile when even the official page turns out to be a simplified summary, and practical warmth at the close, like a friend reminding you to check before you go out. Never a scold, never sour, never a pile-on.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: Lean on the one key word in each line and let the numbers and dates land, especially September first, September fifth and October eighth. Turned herself in is said with quiet credit. The trooper getting the same wrong answer is proof, not a punchline. Which page can a hunter trust is a real question. I feel terrible is her words, the softest and slowest moment in the piece, simple and unperformed. The warnings question is an honest concession, not an accusation. The line saying Google didn't respond is plain fact. The answer was on top, then a real beat, then what counts sits underneath, low and deliberate, the line that must land. The last question is warm and genuinely asked.\nPronunciation: A I is the two letters, ay-eye.\nTranscript:\nA Kodiak woman asked Google when snipe season opens.\nShe told troopers its A I answer said September first.\nSo on September fifth she shot three snipe.\nAt home she opened the state regulations and saw her mistake. [short pause] She called troopers and turned herself in.\nThe trooper's report says the general season opened October eighth.\nSo the answer and the report disagreed.\nThat trooper ran her exact search. [short pause] He got the same wrong answer.\nSo which page can a hunter trust?\nShe pleaded no contest and paid a hundred fifty dollars.\nShe told the Alaska Beacon, [slow] I feel terrible.\nState spokesman Austin McDaniel says he thinks it's the first time A I has been cited. He expects more.\nWeren't there warnings? [short pause] There were.\nGoogle's help page says A I answers may include mistakes, and to check more than one place.\nGoogle didn't respond to the Beacon's request for comment on the wrong answer.\nMcDaniel says the one source of truth is Fish and Game's regulations and emergency orders.\nBut that source has a catch.\nFish and Game's own page says its online regulations are simplified, and emergency orders can override them.\nSo even the official page is a simplified summary of state law.\nThe answer was on top. [short pause] What counts sits underneath, the regulations and any emergency order.\nCheck them first. [short pause] Fish and Game will mail you the regulations, or you can call the office.\nBefore you hunt, what do you check?"
 }

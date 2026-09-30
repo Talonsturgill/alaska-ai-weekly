@@ -3,19 +3,19 @@
   "problems": [],
   "scope": "Rendered credit rows sampled every half second over the full 10-second window; pixel OCR at its start, middle and end. Not a full-film visual review.",
   "input_sha256": {
-    "video": "4937c6af609e0958d152341ed48b687e1291ab76a85409fa28321fdf600e3963",
+    "video": "d0285384e9b5d1b2d4886bb2008955a7d1a4580c6d748bc2f239ff22ba6261a4",
     "renderer": "b7690e55711c92528a7598d61c1a6b36f2a18b3a7d84393b504df4209bca5c73",
-    "credit_timeline_and_data": "752813e2ae636e220ecb95b77f3b65c21577da6e7ab559fb4a5643ef6e533896"
+    "credit_timeline_and_data": "872e729558304255b2a3ddc0c511e945244c15a4dfdd81d3858a88b755114b63"
   },
   "window": [
-    110.46666666666667,
-    120.46666666666667
+    121.36666666666667,
+    131.36666666666667
   ],
   "readable_seconds": 10.0,
-  "full_opacity_seconds": 10.066666666666663,
+  "full_opacity_seconds": 10.066666666666677,
   "samples": [
     {
-      "seconds": 110.466667,
+      "seconds": 121.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -26,828 +26,356 @@
             756
           ],
           "background_median": 18.0,
-          "bright_fraction": 0.0866
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0281
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0478
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0387
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0116
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0179
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.1135
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0579
-        }
-      ]
-    },
-    {
-      "seconds": 110.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 19.0,
           "bright_fraction": 0.0865
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
             1044,
             923
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0281
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0477
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0387
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0117
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0178
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.1137
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.058
-        }
-      ]
-    },
-    {
-      "seconds": 111.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0866
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0281
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0477
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0389
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0117
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0178
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.012
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1136
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.058
-        }
-      ]
-    },
-    {
-      "seconds": 111.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0867
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0281
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0476
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0389
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0117
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0178
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.012
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1136
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0581
-        }
-      ]
-    },
-    {
-      "seconds": 112.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0867
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0281
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0476
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0389
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0117
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0178
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.012
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.1135
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.058
-        }
-      ]
-    },
-    {
-      "seconds": 112.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0866
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0281
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0477
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0389
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0116
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.0178
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 20.0,
-          "bright_fraction": 0.012
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.1134
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
-        }
-      ]
-    },
-    {
-      "seconds": 113.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0866
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0282
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0476
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0387
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0117
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.0179
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 19.0,
-          "bright_fraction": 0.012
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1132
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
-        }
-      ]
-    },
-    {
-      "seconds": 113.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
           ],
           "background_median": 18.0,
+          "bright_fraction": 0.0139
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0247
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0306
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0997
+        }
+      ]
+    },
+    {
+      "seconds": 121.866667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0866
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0139
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0247
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0306
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 19.0,
+          "bright_fraction": 0.0997
+        }
+      ]
+    },
+    {
+      "seconds": 122.366667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0866
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0139
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0247
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0306
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0997
+        }
+      ]
+    },
+    {
+      "seconds": 122.866667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0865
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.014
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0246
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0306
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0993
+        }
+      ]
+    },
+    {
+      "seconds": 123.366667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0865
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.014
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0246
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0306
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 20.0,
+          "bright_fraction": 0.0994
+        }
+      ]
+    },
+    {
+      "seconds": 123.866667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 20.0,
           "bright_fraction": 0.0864
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 18.0,
-          "bright_fraction": 0.028
+          "background_median": 20.0,
+          "bright_fraction": 0.0139
         },
         {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
+          "text": "ADFG.ALASKA.GOV",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0477
+          "background_median": 20.0,
+          "bright_fraction": 0.0245
         },
         {
-          "text": "AIRANDSPACEFORCES.COM",
+          "text": "SUPPORT.GOOGLE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0386
+          "background_median": 20.0,
+          "bright_fraction": 0.0306
         },
         {
-          "text": "SAM.GOV",
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
           "box": [
             36,
-            1014,
+            1062,
             1044,
-            1049
+            1102
           ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0116
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 18.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
+          "background_median": 20.0,
+          "bright_fraction": 0.0993
         }
       ]
     },
     {
-      "seconds": 114.466667,
+      "seconds": 124.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -857,829 +385,57 @@
             1044,
             756
           ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0862
+          "background_median": 19.0,
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 17.0,
-          "bright_fraction": 0.028
+          "background_median": 19.0,
+          "bright_fraction": 0.0139
         },
         {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
+          "text": "ADFG.ALASKA.GOV",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0477
+          "background_median": 19.0,
+          "bright_fraction": 0.0243
         },
         {
-          "text": "AIRANDSPACEFORCES.COM",
+          "text": "SUPPORT.GOOGLE.COM",
           "box": [
             36,
             972,
             1044,
             1007
           ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0384
+          "background_median": 19.0,
+          "bright_fraction": 0.0305
         },
         {
-          "text": "SAM.GOV",
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
           "box": [
             36,
-            1014,
+            1062,
             1044,
-            1049
+            1102
           ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0116
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
+          "background_median": 19.0,
+          "bright_fraction": 0.0991
         }
       ]
     },
     {
-      "seconds": 114.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0861
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.028
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0476
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0385
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0116
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
-        }
-      ]
-    },
-    {
-      "seconds": 115.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0861
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.028
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0476
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0385
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
-        }
-      ]
-    },
-    {
-      "seconds": 115.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 16.0,
-          "bright_fraction": 0.0861
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 16.0,
-          "bright_fraction": 0.028
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 16.0,
-          "bright_fraction": 0.0475
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0382
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
-        }
-      ]
-    },
-    {
-      "seconds": 116.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 16.0,
-          "bright_fraction": 0.0861
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 16.0,
-          "bright_fraction": 0.028
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0475
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0384
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
-        }
-      ]
-    },
-    {
-      "seconds": 116.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 16.0,
-          "bright_fraction": 0.0861
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0281
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0474
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0384
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
-        }
-      ]
-    },
-    {
-      "seconds": 117.466667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 16.0,
-          "bright_fraction": 0.0861
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0279
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0474
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0384
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0579
-        }
-      ]
-    },
-    {
-      "seconds": 117.966667,
-      "rows": [
-        {
-          "text": "VISIT US AT ALASKAAIHQ.COM",
-          "box": [
-            36,
-            694,
-            1044,
-            756
-          ],
-          "background_median": 17.0,
-          "bright_fraction": 0.0862
-        },
-        {
-          "text": "ALASKAPUBLIC.ORG",
-          "box": [
-            36,
-            888,
-            1044,
-            923
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.028
-        },
-        {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
-          "box": [
-            36,
-            930,
-            1044,
-            965
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0474
-        },
-        {
-          "text": "AIRANDSPACEFORCES.COM",
-          "box": [
-            36,
-            972,
-            1044,
-            1007
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0384
-        },
-        {
-          "text": "SAM.GOV",
-          "box": [
-            36,
-            1014,
-            1044,
-            1049
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0579
-        }
-      ]
-    },
-    {
-      "seconds": 118.466667,
+      "seconds": 124.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1693,29 +449,269 @@
           "bright_fraction": 0.0863
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
             1044,
             923
           ],
-          "background_median": 13.0,
-          "bright_fraction": 0.028
+          "background_median": 18.0,
+          "bright_fraction": 0.0139
         },
         {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
+          "text": "ADFG.ALASKA.GOV",
           "box": [
             36,
             930,
             1044,
             965
           ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0474
+          "background_median": 18.0,
+          "bright_fraction": 0.0243
         },
         {
-          "text": "AIRANDSPACEFORCES.COM",
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.099
+        }
+      ]
+    },
+    {
+      "seconds": 125.366667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0861
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0138
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0243
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0989
+        }
+      ]
+    },
+    {
+      "seconds": 125.866667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.014
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0244
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0986
+        }
+      ]
+    },
+    {
+      "seconds": 126.366667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0863
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0139
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0243
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0985
+        }
+      ]
+    },
+    {
+      "seconds": 126.866667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0139
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0243
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
           "box": [
             36,
             972,
@@ -1723,67 +719,323 @@
             1007
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0384
+          "bright_fraction": 0.0304
         },
         {
-          "text": "SAM.GOV",
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
           "box": [
             36,
-            1014,
+            1062,
             1044,
-            1049
+            1102
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0177
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1131
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0578
+          "bright_fraction": 0.0984
         }
       ]
     },
     {
-      "seconds": 118.966667,
+      "seconds": 127.366667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0861
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0138
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0243
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0984
+        }
+      ]
+    },
+    {
+      "seconds": 127.866667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0861
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0138
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0241
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0984
+        }
+      ]
+    },
+    {
+      "seconds": 128.366667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 16.0,
+          "bright_fraction": 0.0861
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0138
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0241
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0984
+        }
+      ]
+    },
+    {
+      "seconds": 128.866667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 17.0,
+          "bright_fraction": 0.0862
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0138
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0241
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0984
+        }
+      ]
+    },
+    {
+      "seconds": 129.366667,
+      "rows": [
+        {
+          "text": "VISIT US AT ALASKAAIHQ.COM",
+          "box": [
+            36,
+            694,
+            1044,
+            756
+          ],
+          "background_median": 18.0,
+          "bright_fraction": 0.0863
+        },
+        {
+          "text": "KTOO.ORG",
+          "box": [
+            36,
+            888,
+            1044,
+            923
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0138
+        },
+        {
+          "text": "ADFG.ALASKA.GOV",
+          "box": [
+            36,
+            930,
+            1044,
+            965
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0241
+        },
+        {
+          "text": "SUPPORT.GOOGLE.COM",
+          "box": [
+            36,
+            972,
+            1044,
+            1007
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0304
+        },
+        {
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
+          "box": [
+            36,
+            1062,
+            1044,
+            1102
+          ],
+          "background_median": 13.0,
+          "bright_fraction": 0.0984
+        }
+      ]
+    },
+    {
+      "seconds": 129.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1797,7 +1049,7 @@
           "bright_fraction": 0.0862
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
@@ -1805,10 +1057,10 @@
             923
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.028
+          "bright_fraction": 0.0138
         },
         {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
+          "text": "ADFG.ALASKA.GOV",
           "box": [
             36,
             930,
@@ -1816,10 +1068,10 @@
             965
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0475
+          "bright_fraction": 0.0241
         },
         {
-          "text": "AIRANDSPACEFORCES.COM",
+          "text": "SUPPORT.GOOGLE.COM",
           "box": [
             36,
             972,
@@ -1827,67 +1079,23 @@
             1007
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0383
+          "bright_fraction": 0.0304
         },
         {
-          "text": "SAM.GOV",
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
           "box": [
             36,
-            1014,
+            1062,
             1044,
-            1049
+            1102
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0179
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1132
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0577
+          "bright_fraction": 0.0984
         }
       ]
     },
     {
-      "seconds": 119.466667,
+      "seconds": 130.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -1898,10 +1106,10 @@
             756
           ],
           "background_median": 19.0,
-          "bright_fraction": 0.0864
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
@@ -1909,10 +1117,10 @@
             923
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.028
+          "bright_fraction": 0.0138
         },
         {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
+          "text": "ADFG.ALASKA.GOV",
           "box": [
             36,
             930,
@@ -1920,10 +1128,10 @@
             965
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0475
+          "bright_fraction": 0.0241
         },
         {
-          "text": "AIRANDSPACEFORCES.COM",
+          "text": "SUPPORT.GOOGLE.COM",
           "box": [
             36,
             972,
@@ -1931,67 +1139,23 @@
             1007
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0383
+          "bright_fraction": 0.0304
         },
         {
-          "text": "SAM.GOV",
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
           "box": [
             36,
-            1014,
+            1062,
             1044,
-            1049
+            1102
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0179
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1132
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0577
+          "bright_fraction": 0.0984
         }
       ]
     },
     {
-      "seconds": 119.966667,
+      "seconds": 130.866667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -2005,7 +1169,7 @@
           "bright_fraction": 0.0863
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
@@ -2013,10 +1177,10 @@
             923
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.028
+          "bright_fraction": 0.0138
         },
         {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
+          "text": "ADFG.ALASKA.GOV",
           "box": [
             36,
             930,
@@ -2024,10 +1188,10 @@
             965
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0475
+          "bright_fraction": 0.0244
         },
         {
-          "text": "AIRANDSPACEFORCES.COM",
+          "text": "SUPPORT.GOOGLE.COM",
           "box": [
             36,
             972,
@@ -2035,67 +1199,23 @@
             1007
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0383
+          "bright_fraction": 0.0303
         },
         {
-          "text": "SAM.GOV",
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
           "box": [
             36,
-            1014,
+            1062,
             1044,
-            1049
+            1102
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0179
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1132
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0577
+          "bright_fraction": 0.0989
         }
       ]
     },
     {
-      "seconds": 120.466667,
+      "seconds": 131.366667,
       "rows": [
         {
           "text": "VISIT US AT ALASKAAIHQ.COM",
@@ -2106,10 +1226,10 @@
             756
           ],
           "background_median": 20.0,
-          "bright_fraction": 0.0862
+          "bright_fraction": 0.0863
         },
         {
-          "text": "ALASKAPUBLIC.ORG",
+          "text": "KTOO.ORG",
           "box": [
             36,
             888,
@@ -2117,10 +1237,10 @@
             923
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.028
+          "bright_fraction": 0.0138
         },
         {
-          "text": "AMERICANHOMEFRONT.WUNC.ORG",
+          "text": "ADFG.ALASKA.GOV",
           "box": [
             36,
             930,
@@ -2128,10 +1248,10 @@
             965
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0475
+          "bright_fraction": 0.0244
         },
         {
-          "text": "AIRANDSPACEFORCES.COM",
+          "text": "SUPPORT.GOOGLE.COM",
           "box": [
             36,
             972,
@@ -2139,112 +1259,56 @@
             1007
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0383
+          "bright_fraction": 0.0303
         },
         {
-          "text": "SAM.GOV",
+          "text": "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0",
           "box": [
             36,
-            1014,
+            1062,
             1044,
-            1049
+            1102
           ],
           "background_median": 13.0,
-          "bright_fraction": 0.0115
-        },
-        {
-          "text": "FM.KUAC.ORG",
-          "box": [
-            36,
-            1055,
-            1044,
-            1090
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0179
-        },
-        {
-          "text": "ADN.COM",
-          "box": [
-            36,
-            1097,
-            1044,
-            1132
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0119
-        },
-        {
-          "text": "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-          "box": [
-            36,
-            1180,
-            1044,
-            1230
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.1132
-        },
-        {
-          "text": "LICENSED UNDER CC BY 4.0",
-          "box": [
-            36,
-            1228,
-            1044,
-            1278
-          ],
-          "background_median": 13.0,
-          "bright_fraction": 0.0577
+          "bright_fraction": 0.0989
         }
       ]
     }
   ],
   "ocr": [
     {
-      "seconds": 110.466667,
+      "seconds": 121.366667,
       "recognized": [
         "VISIT US AT ALASKAATHQ.COM",
         "SOURCES",
-        "ALASKAPUBLIC. ORG",
-        "AMERICANHOMEFRONT .WUNC. ORG",
-        "AIRANDSPACEFORCES. COM",
-        "SAM. GOV",
-        "FM.KUAC. ORG",
-        "ADN.COM",
-        "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED UNDER CC BY 4.0"
+        "KTOO.ORG",
+        "ADFG.ALASKA.GOV",
+        "SUPPORT.GOOGLE.COM",
+        "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 115.466667,
+      "seconds": 126.366667,
       "recognized": [
         "VISIT US AT ALASKAATHQ.COM",
         "SOURCES",
-        "ALASKAPUBLIC. ORG",
-        "AMERICANHOMEFRONT .WUNC. ORG",
-        "AIRANDSPACEFORCES.COM",
-        "SAM. GOV",
-        "FM.KUAC. ORG",
-        "ADN.COM",
-        "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED UNDER CC BY 4.0"
+        "KTOO.ORG",
+        "ADFG.ALASKA.GOV",
+        "SUPPORT.GOOGLE.COM",
+        "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0"
       ],
       "missing": []
     },
     {
-      "seconds": 120.466667,
+      "seconds": 131.366667,
       "recognized": [
         "VISIT US AT ALASKAATHQ.COM",
         "SOURCES",
-        "ALASKAPUBLIC. ORG",
-        "AMERICANHOMEFRONT .WUNC. ORG",
-        "AIRANDSPACEFORCES.COM",
-        "SAM. GOV",
-        "FM.KUAC. ORG",
-        "ADN.COM",
-        "\"FROST WALTZ\" KEVIN MACLEOD (INCOMPETECH.COM)",
-        "LICENSED UNDER CC BY 4.0"
+        "KTOO.ORG",
+        "ADFG.ALASKA.GOV",
+        "SUPPORT.GOOGLE.COM",
+        "\"LONG NOTE TWO\" KEVIN MACLEOD (INCOMPETECH.COM) - CC BY 4.0"
       ],
       "missing": []
     }

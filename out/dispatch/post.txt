@@ -1,15 +1,23 @@
-The Air Force is offering about 4,700 acres of Alaska for AI data centers. Nothing public says what they would draw.
+A Google AI answer gave a Kodiak hunter the wrong snipe season, according to a trooper's affidavit. It cost her $150.
 
-Air and Space Forces Magazine counts twelve parcels across Joint Base Elmendorf-Richardson, Eielson and Clear. The land has a public number on it. No public document carries the power draw, the water draw or the project size. As of mid September no projects had been awarded.
+She turned herself in. Then the trooper ran her exact search and got the same wrong answer.
 
-That gap is doing real work. Salcha resident Sarah Hollister told reporters the jets always meant sacrifice. She said a data center's hum would show her we had lost our way. Per KUAC the Fairbanks North Star Borough Assembly put a pause request on both its state and its federal legislative lists. Senator Lisa Murkowski says she is not a proponent at JBER or the Interior installations because Alaska can't support them on an insecure energy base. She didn't name the land. She named the power.
+A search box shouldn't outrank the state's own regulation as the first answer a hunter sees.
 
-Start with the bill itself. Fairbanks already carries some of the nation's highest utility costs. The fuel is the half that bites, and its size is the whole question. Golden Valley, the Fairbanks utility, said in May it can't presently support a large data center. Chugach, down in Anchorage on a different system, put the general rule on the record the same month. It doesn't have the gas for a large one. It does have generation capacity. And the answer depends on the size of the project and the contract.
+She searched "snipe season" on her phone, and Google told her it began September 1st. She shot three snipe on September 5th. That is per the affidavit, as the Alaska Beacon reported it.
 
-Whoever wins the lease carries the financing, the permitting and the construction, so the build is not the taxpayer's risk. So the useful ask is not megawatts. Nobody can publish those before there is a project. A lease solicitation comes before a project by design. The useful ask is a date. At what stage does the load figure become public, and is the land leased before or after that stage? That is answerable today.
+The affidavit says snipe weren't legal to take under the general season until October 8th. At home she dug into the state regulations, learned the season hadn't opened and called troopers.
 
-Nothing had been awarded as of mid September. That's the opening, not the loss.
+Austin McDaniel, a Department of Public Safety spokesman, told the Beacon it's the first time he thinks they've seen AI cited. He expects more of it.
 
-Should the load figure be public before the land is leased, or is asking for that the same as asking for nothing?
+Google's own help page says AI responses may include mistakes and tells users to check important info in more than one place. Google didn't respond to the Beacon.
 
-#Alaska #AI #DataCenters #Eielson #Fairbanks
+McDaniel put it plainly. The one source of truth for a hunt is Fish and Game's regulations and emergency orders.
+
+Yet Fish and Game's own online page says its regulations are simplified and that emergency orders can take precedence. Printed copies are available by phone, email or the nearest office.
+
+I want AI answers that work for Alaskans out on the land. Until they show the regulation and emergency order they came from, treat the answer on top as a lead and not as the rule.
+
+Hunters, what is the last thing you double-checked in the field because a phone answer looked off, and where did you check it?
+
+#ArtificialIntelligence #Alaska #Kodiak #AIOverviews #AlaskaHunting

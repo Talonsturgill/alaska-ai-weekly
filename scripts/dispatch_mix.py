@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-23"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-09-30"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -92,46 +92,47 @@ _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # Research controls, glazed bays and a harbor test bench carry the physical sounds.
 # No sound implies an approval, measured result or operational winner.
 _PERFORMANCE = [
-    ('tick', 'standard', -0.18, 'paper-slam then a fast run of typed ticks, ending abruptly'),
-    ('creak', 'hero', 0.0, 'the tick that does not land, and the room going half a stop quie'),
-    ('paw', 'texture', 0.0, 'boundary-trace whisper + corner lock'),
-    ('whoosh', 'standard', 0.09, 'wind-through-spruce swell'),
-    ('ding', 'standard', 0.18, 'low copper tone rising'),
-    ('stamp', 'texture', -0.18, 'boot-scuff on the boards'),
-    ('paper', 'standard', -0.09, 'a single clean shear, then nothing'),
-    ('tick', 'standard', 0.0, 'the tick that does not land, a soft miss'),
-    ('whoosh', 'texture', 0.09, 'air-rush pullback'),
-    ('ding', 'standard', 0.18, 'stamp-swing that never strikes, room tone drops out'),
-    ('paper', 'standard', -0.18, 'boot crunch on frozen gravel'),
-    ('whoosh', 'texture', -0.09, 'distant afterburner roll'),
-    ('pop', 'standard', 0.0, 'the roll flattening into a dead sixty-cycle hum'),
-    ('tick', 'standard', 0.09, 'typewriter reveal, one key per word'),
-    ('paper', 'texture', 0.18, 'paper-rustle per item'),
-    ('clank', 'standard', -0.18, 'double lock, two clicks'),
-    ('whoosh', 'standard', -0.09, 'room settle, a chair creak'),
-    ('ding', 'texture', 0.0, 'a low plate sliding away from the mic, then a copper strike'),
-    ('tick', 'standard', 0.09, 'near silence, one low copper breath'),
-    ('chain', 'standard', 0.18, "the plate's rim seating with a low metal set-down, over apron fl"),
-    ('tick', 'texture', -0.18, 'a rolling door, then two plates meeting and seating'),
-    ('ding', 'hero', 0.0, 'paper unfolding into a low tone'),
-    ('pop', 'standard', 0.0, 'a seam tearing, two settled thuds'),
-    ('tick', 'texture', 0.09, 'division ticks, one per house'),
-    ('thud', 'standard', 0.18, 'a heavy seat, then a smooth compress'),
-    ('ding', 'standard', -0.18, 'a strained rising tone'),
-    ('clank', 'texture', -0.09, 'a solid slot-in, tone falling'),
-    ('tick', 'standard', 0.0, 'a strained pull, tone rising'),
-    ('chime', 'hero', 0.0, 'two-tone slam, then a held unresolved chord'),
-    ('whoosh', 'texture', 0.18, 'the town coming on window by window, a distant traffic hum risin'),
-    ('thud', 'hero', 0.0, 'a turbine spooling down, then gear touching concrete'),
-    ('clank', 'standard', -0.09, 'crate latches opening and the lid swinging back'),
-    ('paw', 'texture', 0.0, 'a hollow set-down, no latch'),
-    ('chain', 'standard', 0.09, "the empty plate's rim grinding as it tips, and the fuel half's e"),
-    ('snap', 'standard', 0.18, 'a pen tip skidding, then a chip spinning down onto wood'),
-    ('creak', 'texture', -0.18, 'a clean pen-tap on a solid rule'),
-    ('thud', 'standard', -0.09, 'two slides and a soft unresolved stop'),
-    ('snap', 'texture', 0.0, 'a single soft seat, and nothing after it'),
-    ('ding', 'hero', 0.0, 'the card settling a half millimetre on the rail, under a single '),
-    ('boom', 'hero', 0.0, 'the tone resolving upward, not down'),
+    ('tick', 'standard', 0.10, 'thumb tap then the typed query ticking in'),
+    ('pop', 'standard', 0.00, 'three soft dots pulsing under the search bar'),
+    ('snap', 'hero', 0.10, 'the answer card slamming onto the glass, a tag clack'),
+    ('paper', 'texture', 0.00, 'three cut-short wing flutters, then three soft ticks in the sedge'),
+    ('thud', 'standard', -0.20, 'a chair scrape and the binder cover set down'),
+    ('creak', 'texture', 0.10, 'a quick breath and a phone scraping the table'),
+    ('ding', 'standard', 0.20, 'dial tones then one long ring'),
+    ('paper', 'texture', 0.20, 'a paper tear and the phone sliding off'),
+    ('clank', 'standard', -0.10, 'a ratchet sweep and a lock click on the calendar'),
+    ('thud', 'hero', 0.00, 'the OCT 8 marker landing with a low wooden thud'),
+    ('chain', 'standard', 0.10, 'two paper slides and the binder edge scraping in over the desk'),
+    ('tick', 'standard', 0.20, 'the trooper typing, then a card drop'),
+    ('snap', 'standard', 0.00, 'the twin card clack in lockstep'),
+    ('pop', 'texture', 0.00, 'one last clack into a low room tone'),
+    ('stamp', 'hero', 0.00, 'the stamp thunk and a register ding'),
+    ('paper', 'texture', 0.00, 'ink hissing and a receipt rustling'),
+    ('whoosh', 'texture', 0.00, 'room tone and a breath on glass'),
+    ('thud', 'standard', 0.20, 'a phone set face down on the sill'),
+    ('pop', 'standard', -0.10, 'a pin pressing into cork'),
+    ('tick', 'standard', 0.30, 'a stray pin dropping and rolling'),
+    ('pop', 'standard', -0.30, 'a run of pins pressing in'),
+    ('whoosh', 'standard', 0.00, 'a swipe and a tab click'),
+    ('snap', 'standard', 0.00, 'a scroll and a highlighter squeak'),
+    ('paper', 'standard', 0.00, 'a thin sheet sliding out and a tiny tick'),
+    ('whoosh', 'texture', 0.00, 'the second sheet sliding over the first'),
+    ('tick', 'standard', 0.00, 'a mail send then wall clock ticks'),
+    ('creak', 'texture', 0.10, 'a clock tick and a chair creak'),
+    ('snap', 'standard', 0.00, 'a laptop lid and a page-load click'),
+    ('pop', 'standard', 0.10, 'a soft key click'),
+    ('ding', 'texture', 0.00, 'a paper lift and a tiny metal tick'),
+    ('stamp', 'standard', 0.00, 'typewriter ticks then a stamp thud'),
+    ('whoosh', 'standard', 0.10, 'a slip whoosh, an ink hiss and a paper sag'),
+    ('paper', 'standard', 0.00, 'a paper cascade over the binder'),
+    ('thud', 'texture', -0.10, 'the tower settling'),
+    ('paper', 'texture', 0.00, 'a soft paper settle on top'),
+    ('riser', 'hero', 0.00, 'a rush of air through fanned paper, a paper sound as each layer passes'),
+    ('boom', 'hero', 0.00, 'the binder cover landing with a wood knock, dust falling'),
+    ('paper', 'standard', -0.20, 'a heavy binder page turning'),
+    ('whoosh', 'standard', 0.30, 'a mailer sliding across the table and a soft thud'),
+    ('snap', 'standard', 0.20, 'a tab sliding out and a soft click'),
+    ('chime', 'standard', 0.00, 'a thumb tap and a phone keyboard blink tick'),
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
@@ -184,37 +185,32 @@ def event_timing(index, t):
 # lives in one place in the graph.
 BED_ARC = [
     (L[0], 0.74),
-    (L[1], 0.86),
-    (L[2], 0.8),
-    (L[3], 0.62),
-    (L[4], 0.88),
-    (L[5], 0.95),
-    (L[6], 0.83),
-    (L[7], 0.44),
-    (L[8], 0.7),
-    (L[9], 0.58),
-    (L[10], 0.66),
-    (L[11], 0.78),
-    (L[12], 0.9),
-    (L[13], 0.52),
-    (L[14], 0.84),
-    (L[15], 0.92),
-    (L[16], 0.68),
-    (L[17], 0.88),
-    # THE PRE-BUTTON DIP, AUTHORED IN THE BED (2026-09-23). The dip helper looks
-    # for a VO gap wide enough to drop into and this stem has none: edge-tts
-    # assembled every line with the same 0.42s breath, so the back half has no
-    # 0.5s hole. Re-synthesising to open one would shift every downstream timing
-    # and invalidate a render already in flight. A dip is a LEVEL event, not a
-    # silence event, so it is authored here instead: the bed swells into the last
-    # beat, drops to near nothing for a third of a second, and comes back under
-    # the button at half weight.
-    (L[18] - 1.30, 0.90),
-    (L[18] - 0.34, 0.04),
+    (L[1], 0.84),
+    (L[2], 0.78),
+    (L[3], 0.66),
+    (L[4], 0.86),
+    (L[5], 0.90),
+    (L[6], 0.80),
+    (L[7], 0.62),
+    (L[8], 0.78),
+    (L[9] - 0.2, 0.30),     # she told the Beacon, I feel terrible: the bed thins to almost nothing
+    (L[9] + 3.0, 0.32),
+    (L[10], 0.68),
+    (L[11], 0.84),
+    (L[12], 0.72),
+    (L[13], 0.62),
+    (L[14], 0.66),
+    (L[15], 0.90),          # but that source has a catch
+    (L[16], 0.60),
+    (L[17], 0.72),
+    # THE PRE-PAYOFF DIP, authored in the bed: swell into the last beat, drop to near nothing
+    # for a third of a second before "The answer was on top", and come back under it.
+    (L[18] - 1.30, 0.92),
+    (L[18] - 0.40, 0.04),
     (L[18] + 0.12, 0.30),
-    (L[18] + 0.9, 0.76),
-    # the credits tail. The bed has to keep automating past the last VO line or
-    # the sign-off plays under a frozen level, which is the flat-mix note.
+    (L[18] + 2.4, 0.66),
+    (L[19], 0.70),
+    (L[20], 0.62),
     (VIDEO_SECS - 12.0, 0.70),
     (VIDEO_SECS - 6.0, 0.52),
     (VIDEO_SECS - 0.4, 0.0),
