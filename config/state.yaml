@@ -2060,3 +2060,34 @@ dispatch_history:
     light_story: dusk-raking-left
     palette: Interior dusk violet, birch gold, copper wire, carbon blue
     metaphor: a ruled form filling in row by row, with one row that never does
+- date: '2026-09-30'
+  topic: A Google AI answer gave a Kodiak hunter the wrong snipe season and she was
+    cited
+  slug: dispatch-2026-09-30-the-answer-on-top
+  key_entities:
+  - Google
+  - Alaska Department of Fish and Game
+  - Alaska Department of Public Safety
+  - Kodiak
+  - snipe
+  archetype: the answer on top of the stack
+  palette: slate fog, peat, cool paper, hunter orange for the wrong answer only
+  voice: Sulafat
+  stance: mixed
+  angle: The wrong answer sat on a stack of summaries, and the binding text is what
+    she opened, so treat the answer on top as a lead and not as the rule.
+  hero: Binder
+  cast:
+  - Binder
+  - AnswerCard
+  - DateTag
+  - LabelSheet
+  - HandSil
+  composition:
+    pov: top-down-map
+    layout: single-object-void
+    motion_vector: horizontal-traverse
+    hero_treatment: instrument-as-subject
+    register: tactile-collage
+    camera_strategy: locked-drift
+    light_story: night-practical
