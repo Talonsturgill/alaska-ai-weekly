@@ -25,7 +25,12 @@
    "marsh (S2)": "key overcast fog from above, fill broad slate, rim cool white on bird backs",
    "kitchen (S3)": "key warm lamp from frame RIGHT (a lamp pool #D9B37A at 30 percent, the only warm source), fill slate, rim cream on hands",
    "phone/cab (S1,S5,S13)": "key screen glow from below via screenlight.tsx ScreenLit/ScreenKey, fill fog, rim none",
-   "stack (S8-S12)": "key overcast from above, fill slate, rim cool white on each sheet edge"
+   "stack (S8-S12)": "key overcast from above, fill slate, rim cool white on each sheet edge",
+   "stack (S11)": "key overcast from above, fill slate, rim cool white on each sheet edge, peat underlight rising as the camera descends",
+   "Public Safety wall (S8)": "flat grey fluorescent from above with a desk lamp edge",
+   "report desk (S4)": "flat grey counter light",
+   "court counter (S6)": "flat grey counter light",
+   "window (S7)": "dusk slate through fogged glass"
   }
  },
  "shape_language": {
@@ -37,7 +42,7 @@
  "casting": {
   "hero": "Binder",
   "hero_is_net_new": true,
-  "hero_reason": "The story's real subject is the one thick still text underneath, and no bound thick block exists on the shelf. NET-NEW in lib/stack.tsx: Binder (thick spruce-dark... peat umber, spine, head band, page-block edge, contact shadow, opens via peel 0..1 to a printed page), DateTag (the orange throughline tab with a state param orange/cream and an engraving), AnswerCard (the orange card and its lockstep twin). The stack of summaries is a THIN composite explicitly built on evidence.tsx FrameStack plus paper.tsx Sheet: it is not the net-new hero. Hero differs from the last two, Statement and RunOfRiver.",
+  "hero_reason": "The story's real subject is the one thick still text underneath, and no bound thick block exists on the shelf. NET-NEW in lib/stack.tsx: Binder (thick spruce-dark... peat umber, spine, head band, page-block edge, contact shadow, opens via peel 0..1 to a printed page), DateTag (the orange throughline tab with a state param orange/cream and an engraving), AnswerCard (the orange card and its lockstep twin). The stack of summaries is a THIN composite explicitly built on evidence.tsx FrameStack plus paper.tsx Sheet: it is not the net-new hero. Hero differs from the last two, Statement and RunOfRiver. The stack of summaries appears in ONE shot only (S11); the warnings play on the phone results page, the source-of-truth line on the Public Safety wall, and the catch on a laptop at the kitchen table, so paper is confined to the dive and the film travels through real worlds.",
   "from_the_shelf": [
    "paper.tsx Sheet and PaperFiber for every summary sheet and the affidavit",
    "evidence.tsx FrameStack as the base of the summary stack (extended with ladder, blur and wobble params, registered as an upgrade)",
@@ -50,7 +55,7 @@
   "cast_freshness": "hero Binder differs from the last two heroes."
  },
  "motion_language": {
-  "how_the_world_moves": "Everything thin wobbles on a spring. The binder is still. The camera descends through the stack and makes exactly one licensed upward move, the S11 pull-back.",
+  "how_the_world_moves": "Everything thin wobbles on a spring. The binder is still. The camera makes one continuous descent, the S11 dive; every other shot is its own composed world.",
   "key_hero_moves": [
    "the orange answer card slams onto the phone glass with overshoot at 0.5s",
    "the twin card clacks down in perfect sync with the first, a mirrored bounce",
@@ -63,7 +68,7 @@
   "staging": "9:16 master graded; the square is derived at y 420 to 1500. Story band 500 to 1300, captions own 1336 to 1472. Sheets fill above and below the crop.",
   "focal_hierarchy": "one card or tag at frame center at every key moment; the stack is the background structure",
   "negative_space": "fog above the marsh; black phone glass in the hook",
-  "signature_shot": "S11: the camera, which has only descended until now, licenses ONE upward move, a pull-back that reveals the whole tower of five summaries on the one thick still binder, with the tag torn off the top and sliding down to rest on the binder as cream on peat. The pull-back is the payoff of the descent and the single exception to 'the camera only goes down'."
+  "signature_shot": "S11: five labelled summary sheets (the orange AI answer card, the phone results page, Google's warning sheet, the ADF&G page stamped SIMPLIFIED, the emergency-order slip) fall over one thick still peat binder at a 3/4 camera, and the camera then DIVES down through each sheet in turn to land on the binder while the orange tag falls off the top and lands on the cover blank. The dive is the film's one continuous descent and the payoff of the metaphor."
  },
  "craft_advance": {
   "system": "focal-plane depth of field",

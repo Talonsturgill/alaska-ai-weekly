@@ -1,121 +1,127 @@
 {
-  "total": 109.14,
+  "total": 104.0,
   "voice": "Sulafat",
   "model": "gemini-3.1-flash-tts-preview",
   "lines": [
     {
       "idx": 0,
-      "text": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
+      "text": "A Kodiak woman asked Google when snipe season opens.",
       "start": 0.0,
-      "end": 6.5
+      "end": 3.74
     },
     {
       "idx": 1,
-      "text": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
-      "start": 7.3,
-      "end": 13.36
+      "text": "Its A I answer said September first.",
+      "start": 4.74,
+      "end": 7.48
     },
     {
       "idx": 2,
-      "text": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
-      "start": 14.36,
-      "end": 21.24
+      "text": "So on September fifth she shot three snipe.",
+      "start": 8.16,
+      "end": 11.46
     },
     {
       "idx": 3,
-      "text": "Nothing's awarded. Alaskans took positions anyway.",
-      "start": 22.28,
-      "end": 25.8
+      "text": "At home she looked up the state regulations and saw her mistake. She called troopers and turned herself in.",
+      "start": 12.44,
+      "end": 19.7
     },
     {
       "idx": 4,
-      "text": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
-      "start": 26.74,
-      "end": 31.72
+      "text": "The trooper's report says the general season opened October eighth.",
+      "start": 20.9,
+      "end": 25.44
     },
     {
       "idx": 5,
-      "text": "Swap that for a data center's hum, she said, and we've lost our way.",
-      "start": 32.54,
-      "end": 37.44
+      "text": "So two pages disagreed. Which one can a hunter trust?",
+      "start": 26.06,
+      "end": 30.58
     },
     {
       "idx": 6,
-      "text": "Fairbanks asked for a pause, on both its state and federal lists.",
-      "start": 38.56,
-      "end": 42.96
+      "text": "That trooper ran her exact search. He got the same wrong answer.",
+      "start": 31.72,
+      "end": 37.0
     },
     {
       "idx": 7,
-      "text": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
-      "start": 44.06,
-      "end": 48.9
+      "text": "She still pleaded no contest and paid a hundred fifty dollars.",
+      "start": 38.18,
+      "end": 41.8
     },
     {
       "idx": 8,
-      "text": "She didn't say the land. She said the power.",
-      "start": 49.76,
-      "end": 52.92
+      "text": "She told the Alaska Beacon, I feel terrible.",
+      "start": 42.54,
+      "end": 46.16
     },
     {
       "idx": 9,
-      "text": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
-      "start": 53.82,
-      "end": 57.94
+      "text": "State spokesman Austin McDaniel thinks it's the first time A I has been cited. He expects more.",
+      "start": 47.7,
+      "end": 54.26
     },
     {
       "idx": 10,
-      "text": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
-      "start": 59.04,
-      "end": 65.52
+      "text": "Weren't there warnings? There were.",
+      "start": 55.26,
+      "end": 57.54
     },
     {
       "idx": 11,
-      "text": "A giant customer helps pay for them either way. That half thins.",
-      "start": 66.52,
-      "end": 70.86
+      "text": "Google's help page says A I answers may include mistakes, and to check more than one place.",
+      "start": 58.46,
+      "end": 64.3
     },
     {
       "idx": 12,
-      "text": "The fuel bites. A big load either brings its own power, or competes for what's here.",
-      "start": 71.84,
-      "end": 78.1
+      "text": "Google didn't respond to the Beacon's request for comment.",
+      "start": 65.14,
+      "end": 67.82
     },
     {
       "idx": 13,
-      "text": "So it turns on how big. And how big is what nobody has published.",
-      "start": 78.76,
-      "end": 83.52
+      "text": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
+      "start": 69.12,
+      "end": 74.5
     },
     {
       "idx": 14,
-      "text": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
-      "start": 84.68,
-      "end": 89.32
+      "text": "But that source has a catch.",
+      "start": 75.12,
+      "end": 77.1
     },
     {
       "idx": 15,
-      "text": "But a fighter wing comes with a budget. A data center comes with an appetite.",
-      "start": 90.3,
-      "end": 94.8
+      "text": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
+      "start": 78.02,
+      "end": 84.9
     },
     {
       "idx": 16,
-      "text": "So the ask isn't megawatts. Nobody can publish those yet.",
-      "start": 95.78,
-      "end": 99.8
+      "text": "So even the official page is a summary.",
+      "start": 84.9,
+      "end": 88.32
     },
     {
       "idx": 17,
-      "text": "Ask for the date. Does that number go public before the land is leased?",
-      "start": 100.74,
-      "end": 105.12
+      "text": "The answer was on top. What counts sits underneath.",
+      "start": 89.72,
+      "end": 94.04
     },
     {
       "idx": 18,
-      "text": "The terms aren't written. That's the opening.",
-      "start": 106.02,
-      "end": 109.14
+      "text": "Check the regulations and any emergency order. Fish and Game will mail you a copy.",
+      "start": 95.0,
+      "end": 100.28
+    },
+    {
+      "idx": 19,
+      "text": "Before you hunt, what do you check?",
+      "start": 101.48,
+      "end": 104.0
     }
   ]
 }

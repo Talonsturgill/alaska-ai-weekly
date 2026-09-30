@@ -23,7 +23,7 @@
    "id": "c1",
    "status": "VERIFIED",
    "spoken": "A Kodiak woman searched Google for snipe season on her phone.",
-   "on_screen": "GOOGLED: SNIPE SEASON",
+   "on_screen": "GOOGLED \u00b7 SNIPE SEASON",
    "verbatim_source": "\"Christina stated that she Googled 'Snipe season' on her phone and that, according to Google, snipe season began on September 1st.\"",
    "source_url": "https://www.ktoo.org/2026/09/28/misleading-google-ai-instructions-cause-kodiak-woman-to-be-cited-for-illegal-snipe-hunt/",
    "source_label": "Alaska Beacon (James Brooks), via KTOO, September 28th, quoting Trooper Alex Wick's affidavit"
@@ -38,6 +38,9 @@
    "source_label": "Alaska Beacon (James Brooks), via KTOO, September 28th, quoting the trooper's affidavit",
    "requires": [
     "attribute to the trooper's affidavit as the Beacon relays it; never state the Sept 1 claim as ADF&G's or Google's published text"
+   ],
+   "on_screen_also": [
+    "AI ANSWER"
    ]
   },
   {
@@ -53,7 +56,7 @@
    "id": "c4",
    "status": "VERIFIED",
    "spoken": "Under the general season, snipe weren't legal to take until October eighth.",
-   "on_screen": "GENERAL SEASON: OCT 8",
+   "on_screen": "GENERAL SEASON \u00b7 OCT 8",
    "verbatim_source": "\"After conducting her own research, she learned that snipes are not legal to take under the general season until October 8th.\"",
    "source_url": "https://www.ktoo.org/2026/09/28/misleading-google-ai-instructions-cause-kodiak-woman-to-be-cited-for-illegal-snipe-hunt/",
    "source_label": "Alaska Beacon (James Brooks), via KTOO, September 28th, quoting the affidavit",
@@ -119,12 +122,15 @@
    "id": "c10",
    "status": "VERIFIED",
    "spoken": "He said the one source of truth is Fish and Game's regulations and emergency orders.",
-   "on_screen": "ONE SOURCE OF TRUTH: ADF&G REGULATIONS",
+   "on_screen": "ONE SOURCE OF TRUTH \u00b7 ADF&G REGULATIONS",
    "verbatim_source": "\"The one source of truth when it comes to hunts is the Alaska Department of Fish and Game's regulations and emergency orders.\"",
    "source_url": "https://www.ktoo.org/2026/09/28/misleading-google-ai-instructions-cause-kodiak-woman-to-be-cited-for-illegal-snipe-hunt/",
    "source_label": "Austin McDaniel, DPS, Alaska Beacon (James Brooks), via KTOO, September 28th",
    "requires": [
     "McDaniel's line, DPS, not an ADF&G statement"
+   ],
+   "on_screen_also": [
+    "REGULATIONS AND EMERGENCY ORDERS"
    ]
   },
   {
@@ -152,7 +158,11 @@
    "on_screen": "REGULATIONS ARE SIMPLIFIED \u00b7 EMERGENCY ORDERS CAN OVERRIDE",
    "verbatim_source": "\"These regulations are not quoted verbatim from state law. They have been simplified for your convenience. In addition, be aware that issued emergency orders may contain hunting and trapping season information which may take precedence over information in the Hunting and Trapping Regulation booklets found below.\"",
    "source_url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildliferegulations.hunting",
-   "source_label": "ADF&G hunting regulations page (primary)"
+   "source_label": "ADF&G hunting regulations page (primary)",
+   "on_screen_also": [
+    "A SUMMARY",
+    "EMERGENCY ORDER"
+   ]
   },
   {
    "id": "c14",

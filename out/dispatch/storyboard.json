@@ -1,13 +1,13 @@
 {
  "run_date": "2026-09-30",
- "concept": "The answer that cost a Kodiak hunter $150 sat on top of a stack of summaries. The camera descends through the stack to the one thick still text underneath, and the film ends by asking what you check before you hunt.",
+ "concept": "The answer that cost a Kodiak hunter $150 sat on top of a stack of summaries. Each layer of the stack plays in its own real world, and one continuous dive through the labelled sheets lands on the thick, still regulations and emergency orders underneath.",
  "title": "The Answer Was on Top",
  "engine": "infographic-2.5d",
  "derived_from": "scratch",
  "total_seconds": 114.0,
  "treatment": {
-  "winner": "dramatist 'The Top of the Stack'",
-  "judge_reasoning": "All four lenses converged on a stack of summaries. The dramatist's descent through depth gives the argument a body: bright and easy on top, dark and binding underneath, and the camera earns the trip. Grafts: the enthusiast's admiration beats (she called troopers, the trooper ran the search himself, ADF&G prints its number) and the comedian's physical spruce binder as the bottom text, which turns the abstract 'source' into an object. Comedy is confined to objects (the tag, the twin cards), never Weaver or Google's people."
+  "winner": "dramatist 'The Top of the Stack' revised after Gate 0B",
+  "judge_reasoning": "All four lenses converged on a stack of summaries. The dramatist's descent gives the argument a body. Grafts: the enthusiast's admiration beats (she called troopers, the trooper ran the search himself, ADF&G prints its number) and the comedian's physical binder as the bottom text. Gate 0B rejected a back half spent entirely on one paper world, so the stack now appears in one shot only, the dive; the warnings play on a phone, the source-of-truth line in the Public Safety office, and the catch on a laptop at the kitchen table. Comedy is confined to objects, never Weaver or Google's people."
  },
  "angle": {
   "thesis": "The answer that cost a Kodiak hunter $150 sat on top of a stack of summaries, and the one binding text, the state's regulation, is what she opened to find the right date and turn herself in.",
@@ -28,6 +28,10 @@
   "why_runner_ups_lost": "each is a sub-beat of the chosen thesis; the provenance ask overreaches the evidence (nothing says what the AI cited)"
  },
  "palette": "Kodiak slate fog, hunter orange, wet peat umber, cool grey-white paper",
+ "light": {
+  "sun": "first-light fog on the marsh, then one warm lamp at night for the reckoning, then flat grey counter light for procedure",
+  "mood": "pale top light descending to dark peat underlight in the stack"
+ },
  "fingerprint": {
   "palette": "Kodiak slate fog, hunter orange, wet peat umber, cool grey-white paper",
   "pov": "cross-section-cutaway",
@@ -37,14 +41,14 @@
   "register": "tactile-collage",
   "camera_strategy": "dolly-through",
   "light_story": "overcast-diffuse",
-  "metaphor": "a tower of thin summaries wobbling on one thick still binder, with the camera descending through it"
+  "metaphor": "a tower of thin labelled summaries wobbling on one thick still binder, with the camera diving through it"
  },
  "shots": [
   {
    "id": 1,
    "vo_line": 0,
    "t": 0.0,
-   "dur": 8.3,
+   "dur": 7.76,
    "stage": "phone glass in Kodiak fog",
    "framing": "macro-closeup",
    "scale": "insert",
@@ -57,69 +61,69 @@
    "layout": "single-object-void",
    "motion_vector": "assemble-build",
    "hero_treatment": "instrument-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the search bar and the orange answer card on the glass",
    "hero": {
-    "name": "the phone glass with a closed spruce binder under its edge",
+    "name": "the phone glass with a thumb and a closed peat binder under its edge",
     "parts": 6,
     "zones": 3,
-    "detail_note": "black glass with a cream rim highlight, a search bar that types itself, a thumb silhouette, and under the phone edge the spine of a thick spruce binder with a blurred label"
+    "detail_note": "black glass lit by ScreenLit from below, a search bar that types itself, a thumb silhouette with cream rim, the peat binder spine half hidden under the phone edge"
    }
   },
   {
    "id": 2,
    "vo_line": 2,
-   "t": 8.3,
-   "dur": 4.2,
+   "t": 7.76,
+   "dur": 3.87,
    "stage": "Kodiak marsh edge at first light",
    "framing": "wide-establish",
    "scale": "extreme-wide",
    "height": "high",
-   "transition_in": "match-action",
+   "transition_in": "graphic-match",
    "thread": "match",
-   "camera": "craneDown+dollyThrough",
+   "camera": "dollyThrough",
    "stage3d": "planes",
    "pov": "eye-level-immersive",
    "layout": "centered-hero-lowerthird",
    "motion_vector": "vertical-rise",
    "hero_treatment": "landscape-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the three snipe silhouettes lifting from the sedge at frame centre",
    "hero": {
-    "name": "the fog-green marsh with three snipe silhouettes",
+    "name": "the slate-fog marsh with three snipe silhouettes",
     "parts": 7,
     "zones": 3,
-    "detail_note": "sedge tufts in ochre, a far spruce band at 18 percent contrast, fog planes, three small bird silhouettes rising, three orange ticks"
+    "detail_note": "lichen sedge tufts, a far ridge at 18 percent contrast, fog planes, three small bird silhouettes rising, three orange ticks that carry the card's rectangle"
    }
   },
   {
    "id": 3,
    "vo_line": 3,
-   "t": 12.5,
-   "dur": 9.7,
+   "t": 11.63,
+   "dur": 8.57,
    "stage": "lamp-lit kitchen table at home",
    "framing": "alt-vantage",
    "scale": "medium",
    "height": "overhead",
-   "transition_in": "graphic-match",
-   "thread": "match",
-   "camera": "static:overhead push-in only",
-   "stage3d": "flat:overhead push-in only",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "camera": "static:an overhead push-in so the closed page stays withheld",
+   "stage3d": "flat:an overhead push-in so the closed page stays withheld",
    "pov": "top-down-map",
    "layout": "single-object-void",
    "motion_vector": "push-in-only",
    "hero_treatment": "single-organic-hero",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the hands opening the thick binder with its page turned away",
    "hero": {
-    "name": "two hands over a table with a phone and a thick closed binder",
+    "name": "two hands over a table with a phone and a thick binder",
     "parts": 8,
     "zones": 3,
-    "detail_note": "a wood table, a warm lamp pool from frame right, hand silhouettes with cream rim light, a phone, the spruce binder with page edge and spine"
+    "detail_note": "a wood table, a warm lamp pool from frame right (the only warm source), hand silhouettes with cream rim, a phone, the peat binder with rounded spine, stitched head band and page-block edge"
    }
   },
   {
    "id": 4,
    "vo_line": 4,
-   "t": 22.2,
-   "dur": 10.8,
+   "t": 20.2,
+   "dur": 8.16,
    "stage": "the trooper's report on a steel desk",
    "framing": "data-panel",
    "scale": "medium",
@@ -132,44 +136,44 @@
    "layout": "grid-modular",
    "motion_vector": "scroll-data",
    "hero_treatment": "data-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the bracket sweeping between SEPT 1 and OCT 8 on the calendar strip",
    "hero": {
-    "name": "the report page with a two-month calendar strip",
+    "name": "the report page with a calendar strip",
     "parts": 7,
     "zones": 3,
-    "detail_note": "a ruled report sheet on cream stock, a calendar strip Sept to Oct, an orange SEPT 1 marker, a spruce OCT 8 marker, a bracket that sweeps between them"
+    "detail_note": "a ruled report sheet on cool paper, a calendar strip Sept to Oct, an orange SEPT 1 marker, a peat OCT 8 marker, a sweeping bracket"
    }
   },
   {
    "id": 5,
    "vo_line": 6,
-   "t": 33.0,
-   "dur": 6.6,
-   "stage": "the trooper's truck cab dash",
+   "t": 28.36,
+   "dur": 9.62,
+   "stage": "the trooper's truck cab beside a replay of the hunter's phone",
    "framing": "two-up",
    "scale": "close",
    "height": "eye",
-   "transition_in": "whip-pan",
-   "thread": "travel",
-   "camera": "static:two-up split and the sync is the picture",
-   "stage3d": "flat:two-up split and the sync is the picture",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "camera": "static:a locked two-up so the sync is the picture",
+   "stage3d": "flat:a locked two-up so the sync is the picture",
    "pov": "eye-level-immersive",
    "layout": "fullbleed-split",
    "motion_vector": "horizontal-traverse",
    "hero_treatment": "instrument-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the twin orange answer cards clacking down in sync at the seam",
    "hero": {
-    "name": "two identical phones side by side, one in a hunter's hands, one in a trooper's",
+    "name": "two phone glasses side by side",
     "parts": 8,
     "zones": 3,
-    "detail_note": "a split of two phone glasses, silhouette hands each side, a steering wheel arc and a dash edge, two identical orange answer cards"
+    "detail_note": "left half a replay of the S1 glass and thumb, right half a trooper's hands (silhouette) on a phone in a truck cab, a dash edge, two identical orange cards, a glowing seam"
    }
   },
   {
    "id": 6,
-   "vo_line": 7,
-   "t": 39.6,
-   "dur": 5.4,
+   "vo_line": 8,
+   "t": 37.98,
+   "dur": 4.68,
    "stage": "the district court counter",
    "framing": "subject-portrait",
    "scale": "insert",
@@ -182,46 +186,121 @@
    "layout": "single-object-void",
    "motion_vector": "vertical-descent",
    "hero_treatment": "structure-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the stamp slamming onto the receipt",
    "hero": {
     "name": "a rubber stamp over a receipt on a counter",
     "parts": 6,
     "zones": 3,
-    "detail_note": "a wooden-handled stamp, an ink pad, a receipt slip with a printed line, a counter edge with a contact shadow"
+    "detail_note": "a wood-handled stamp, an ink pad, a receipt slip, a counter edge with a hard contact shadow, the orange tag corner under the receipt"
    }
   },
   {
    "id": 7,
-   "vo_line": 8,
-   "t": 45.0,
-   "dur": 13.0,
+   "vo_line": 9,
+   "t": 42.66,
+   "dur": 3.88,
    "stage": "a fogged window at Kodiak dusk",
    "framing": "subject-portrait",
    "scale": "medium",
    "height": "eye",
-   "transition_in": "crossfade",
-   "thread": "match",
+   "transition_in": "match-cut",
+   "thread": "build",
    "camera": "static:a slow push and the stillness is the beat",
    "stage3d": "flat:a slow push and the stillness is the beat",
    "pov": "eye-level-immersive",
    "layout": "centered-hero-lowerthird",
    "motion_vector": "push-in-only",
    "hero_treatment": "single-organic-hero",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the bowed silhouette breathing on the fogged glass",
    "hero": {
     "name": "a head-and-shoulders silhouette behind fogged glass",
-    "parts": 7,
+    "parts": 6,
     "zones": 3,
-    "detail_note": "a window frame, condensation, a bowed silhouette, quote plates, and drifting quote cards falling through the fog"
+    "detail_note": "a window frame, condensation, a bowed silhouette, a quote plate, a sill with a phone and the faded creased tag"
    }
   },
   {
    "id": 8,
    "vo_line": 10,
-   "t": 58.0,
-   "dur": 11.6,
+   "t": 46.54,
+   "dur": 8.97,
+   "stage": "the Public Safety office wall",
+   "framing": "data-panel",
+   "scale": "wide",
+   "height": "eye",
+   "transition_in": "hard-cut",
+   "thread": "travel",
+   "camera": "truckacross",
+   "stage3d": "planes",
+   "pov": "instrument-screen",
+   "layout": "grid-modular",
+   "motion_vector": "scroll-data",
+   "hero_treatment": "data-as-subject",
+   "centered": "the spokesman's quote card pinning onto the wall",
+   "hero": {
+    "name": "a cork wall with pinned quote cards and an attribution plate",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "a cork wall, pinned cards with hard contact shadows, an attribution strip, a desk lamp edge, the tag pinned in a corner"
+   }
+  },
+  {
+   "id": 9,
+   "vo_line": 11,
+   "t": 55.51,
+   "dur": 16.72,
+   "stage": "phone glass in Kodiak fog",
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "overhead",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "camera": "static:a locked macro on the phone results page",
+   "stage3d": "flat:a locked macro on the phone results page",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "instrument-as-subject",
+   "centered": "the two thin warning sheets sliding onto the results page",
+   "hero": {
+    "name": "the phone glass scrolled to a results page",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "black glass with a results page, an answer box, the orange card on top, two thin warning sheets that wobble, a reporter's email outbox with a clock"
+   }
+  },
+  {
+   "id": 10,
+   "vo_line": 14,
+   "t": 72.23,
+   "dur": 17.29,
+   "stage": "lamp-lit kitchen table at home",
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "eye",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "pov": "top-down-map",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "instrument-as-subject",
+   "centered": "the fine print typing itself onto the laptop's ADF&G page",
+   "hero": {
+    "name": "a laptop on the kitchen table showing the ADF&G page",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "the lamp-lit table from S3, a laptop with a rounded bezel, a page with an asterisk and fine print, a SIMPLIFIED stamp band, an emergency-order slip, the tag on the laptop corner"
+   }
+  },
+  {
+   "id": 11,
+   "vo_line": 17,
+   "t": 89.52,
+   "dur": 12.85,
    "stage": "the stack",
-   "framing": "wide-establish",
+   "framing": "map-territory",
    "scale": "wide",
    "height": "high",
    "transition_in": "assemble",
@@ -232,119 +311,44 @@
    "layout": "stacked-layers",
    "motion_vector": "vertical-descent",
    "hero_treatment": "structure-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the camera diving down through the labelled summary sheets to the binder",
    "hero": {
-    "name": "the SummaryStack of thin pale sheets with the orange tag on top",
+    "name": "the SummaryStack of five labelled sheets over the peat binder",
     "parts": 10,
     "zones": 4,
-    "detail_note": "seven translucent sheets on a value ladder with cream rim edges, a wobble, the orange DateTag pinned, two heavy warning plates descending from either side"
-   }
-  },
-  {
-   "id": 9,
-   "vo_line": 12,
-   "t": 69.6,
-   "dur": 11.9,
-   "stage": "the stack",
-   "framing": "alt-vantage",
-   "scale": "medium",
-   "height": "eye",
-   "transition_in": "carried-element",
-   "thread": "carry",
-   "camera": "static:a slow dolly across the tower's face",
-   "stage3d": "flat:a slow dolly across the tower's face",
-   "pov": "exploded-diagram",
-   "layout": "fullbleed-split",
-   "motion_vector": "horizontal-traverse",
-   "hero_treatment": "instrument-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
-   "hero": {
-    "name": "a dashed empty slot beside a sealed spruce envelope",
-    "parts": 7,
-    "zones": 3,
-    "detail_note": "a dashed crawling contour for the empty slot, a sealed envelope with a wax-like stamp and a printed source line, the stack edge behind"
-   }
-  },
-  {
-   "id": 10,
-   "vo_line": 14,
-   "t": 81.5,
-   "dur": 11.4,
-   "stage": "the stack",
-   "framing": "push-detail",
-   "scale": "insert",
-   "height": "overhead",
-   "transition_in": "focus-pull",
-   "thread": "travel",
-   "camera": "static:macro push into the fine print",
-   "stage3d": "flat:macro push into the fine print",
-   "pov": "macro-closeup",
-   "layout": "single-object-void",
-   "motion_vector": "push-in-only",
-   "hero_treatment": "data-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
-   "hero": {
-    "name": "the envelope's inner sheet with the fine print",
-    "parts": 6,
-    "zones": 3,
-    "detail_note": "a cream sheet with dense printed lines, a small asterisk, a stamped SIMPLIFIED band that types on, a corner flap lifting"
-   }
-  },
-  {
-   "id": 11,
-   "vo_line": 16,
-   "t": 92.9,
-   "dur": 9.4,
-   "stage": "the stack",
-   "framing": "map-territory",
-   "scale": "extreme-wide",
-   "height": "high",
-   "transition_in": "pull-out",
-   "thread": "travel",
-   "camera": "risewith",
-   "stage3d": "planes",
-   "pov": "cross-section-cutaway",
-   "layout": "stacked-layers",
-   "motion_vector": "vertical-rise",
-   "hero_treatment": "structure-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
-   "hero": {
-    "name": "the whole tower of summaries seen over the spruce binder",
-    "parts": 10,
-    "zones": 4,
-    "detail_note": "the full tower on a value ladder, wobbling, the one thick still binder at the base with spine and page edge, the orange tag torn off the top and sliding down the tower side"
+    "detail_note": "five sheets on a value ladder (the orange AI answer card, the results page, the warning sheet, the ADF&G page stamped SIMPLIFIED, the emergency-order slip) over one thick still binder at a 3/4 camera, the tag falling to blank"
    }
   },
   {
    "id": 12,
-   "vo_line": 18,
-   "t": 102.3,
-   "dur": 7.9,
-   "stage": "the binder at the base",
+   "vo_line": 19,
+   "t": 102.37,
+   "dur": 8.16,
+   "stage": "the binder in the viewer's hands",
    "framing": "subject-portrait",
    "scale": "close",
    "height": "low",
    "transition_in": "match-action",
    "thread": "match",
-   "camera": "craneDown",
-   "stage3d": "planes",
+   "camera": "static:a slow push into the binder as the hands open it",
+   "stage3d": "flat:a slow push into the binder as the hands open it",
    "pov": "eye-level-immersive",
    "layout": "centered-hero-lowerthird",
-   "motion_vector": "vertical-descent",
+   "motion_vector": "push-in-only",
    "hero_treatment": "single-organic-hero",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the hands opening the binder to its printed title strip",
    "hero": {
-    "name": "two hands peeling the summaries away to open the binder",
-    "parts": 8,
+    "name": "two hands opening the peat binder",
+    "parts": 7,
     "zones": 3,
-    "detail_note": "hand silhouettes with cream rim light, peeled sheets fluttering away, the thick spruce binder opening to a printed page, a tab reading CALL ADF&G"
+    "detail_note": "hand silhouettes with cream rim light (the viewer's), the thick binder opening to a page with a title strip, a tab reading the ADF&G number, an emergency-order slip tucked in the cover"
    }
   },
   {
    "id": 13,
-   "vo_line": 19,
-   "t": 110.2,
-   "dur": 3.8,
+   "vo_line": 20,
+   "t": 110.53,
+   "dur": 3.47,
    "stage": "phone glass in Kodiak fog",
    "framing": "macro-closeup",
    "scale": "insert",
@@ -357,12 +361,12 @@
    "layout": "single-object-void",
    "motion_vector": "assemble-build",
    "hero_treatment": "instrument-as-subject",
-   "centered": "the one card, tag, hand or plate that carries the line",
+   "centered": "the blank search bar and the blank tag",
    "hero": {
-    "name": "the phone glass again with the blank orange tag on top of a fresh stack",
+    "name": "the phone glass again with the blank tag",
     "parts": 6,
     "zones": 3,
-    "detail_note": "the same black glass, the same thumb, the search bar empty and blinking, a blank orange tag, a fresh thin stack under the phone"
+    "detail_note": "the same black glass, the same thumb, the search bar empty and blinking, a blank cream tag on a fresh thin stack"
    }
   }
  ],
@@ -375,290 +379,278 @@
     "subject": "a thumb silhouette over black phone glass in fog",
     "action": "taps the search bar and the query types itself, letter by letter",
     "emotion": "casual, unguarded",
-    "annotation": "GOOGLED: SNIPE SEASON"
+    "annotation": "GOOGLED \u00b7 SNIPE SEASON"
    },
    "vo": "A Kodiak woman asked Google when snipe season opens.",
-   "sfx": "thumb tap then a run of keyboard ticks",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "sfx": "thumb tap then keyboard ticks",
+   "means": "GripHand thumb + ScreenLit glass",
    "choreo": {
     "primary": "the query typing itself",
     "reaction": "the glass glow pulsing on each letter",
-    "ambient": "fog drifting behind the phone"
+    "ambient": "fog drifting behind the phone and the binder spine under its edge"
    },
    "shows": "the question she asked",
    "at_s": 0.3,
-   "why": "the ordinary act everything hangs on",
    "vo_line": 0,
    "offset": 0.3
   },
   {
    "id": 2,
-   "t": 4.6,
+   "t": 4.28,
    "shot": 1,
    "draw": {
     "subject": "a hunter-orange answer card",
-    "action": "slams onto the glass with overshoot and holds, wobbling",
+    "action": "slams onto the glass with overshoot and wobbles",
     "emotion": "confident, smug",
     "annotation": "SEASON BEGAN SEPT 1"
    },
    "vo": "Its A I answer said September first.",
    "sfx": "hard paper slam with a tag clack",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "means": "AnswerCard (net-new)",
    "choreo": {
     "primary": "the card slam and settle",
     "reaction": "the phone shuddering",
     "ambient": "the closed binder spine under the phone edge"
    },
    "shows": "what the answer said",
-   "at_s": 4.6,
-   "why": "the wrong answer arrives sounding sure",
+   "at_s": 4.28,
    "vo_line": 1,
    "offset": 0.0
   },
   {
    "id": 3,
-   "t": 8.3,
+   "t": 7.76,
    "shot": 2,
    "draw": {
-    "subject": "three snipe silhouettes over a fog-green marsh",
-    "action": "lift off one by one as three orange ticks drop onto the sedge",
-    "emotion": "quiet, early morning",
+    "subject": "three snipe silhouettes over a slate-fog marsh",
+    "action": "lift off one by one as the orange card's rectangle dissolves into the fog band and three ticks drop onto the sedge",
+    "emotion": "quiet, early",
     "annotation": "SEPT 5 \u00b7 3 SNIPE"
    },
    "vo": "So on September fifth she shot three snipe.",
    "sfx": "three wing flutters and three soft ticks",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "means": "fauna silhouettes + DayGrade",
    "choreo": {
     "primary": "the three lifts and ticks",
     "reaction": "the sedge bending",
-    "ambient": "far spruce band drifting against the push"
+    "ambient": "far ridge drifting against the push"
    },
    "shows": "what she did that morning",
-   "at_s": 8.3,
-   "why": "the act the answer led to",
+   "at_s": 7.76,
    "vo_line": 2,
    "offset": 0.0
   },
   {
    "id": 4,
-   "t": 12.5,
+   "t": 11.63,
    "shot": 3,
    "draw": {
     "subject": "two hand silhouettes over a lamp-lit table",
-    "action": "the phone is pushed aside and a hand hovers over a thick spruce binder without opening it",
+    "action": "open the thick binder with its page turned away in shadow while the tag on the phone creases",
     "emotion": "sinking",
-    "annotation": "HOLD: the loop planted: a closed binder"
+    "annotation": "THE BINDER \u00b7 PAGE WITHHELD"
    },
-   "vo": "At home she looked up the state regulations and saw her mistake.",
-   "sfx": "chair scrape and a lamp hum",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "At home she opened the state regulations and saw her mistake. She called troopers and turned herself in.",
+   "sfx": "chair scrape and a binder cover thud",
+   "means": "GripHand + Binder (net-new) + DateTag",
    "choreo": {
-    "primary": "the hand hovering and withdrawing",
-    "reaction": "the orange tag on the phone creasing",
+    "primary": "the hands opening the cover",
+    "reaction": "the tag creasing on the phone",
     "ambient": "lamp pool breathing"
    },
-   "shows": "the loop planted: a closed binder",
-   "at_s": 12.5,
-   "why": "where she went to check, and the page we don't yet see",
+   "shows": "she went and looked it up, and we don't see the page",
+   "at_s": 11.63,
    "vo_line": 3,
    "offset": 0.0
   },
   {
    "id": 5,
-   "t": 17.0,
+   "t": 16.63,
    "shot": 3,
    "draw": {
     "subject": "a hand silhouette raising a phone to an ear",
-    "action": "dials and waits while the binder sits closed in the lamp pool",
+    "action": "dials and waits",
     "emotion": "resolved, steady",
     "annotation": "SHE CALLED TROOPERS"
    },
-   "vo": "She called troopers and turned herself in.",
+   "vo": "At home she opened the state regulations and saw her mistake. She called troopers and turned herself in.",
    "sfx": "dial tones then one long ring",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "means": "GripHand + phone",
    "choreo": {
     "primary": "the raise and dial",
     "reaction": "the lamp flickering once",
     "ambient": "dust in the lamp cone"
    },
    "shows": "the choice she made",
-   "at_s": 17.0,
-   "why": "she reported herself",
+   "at_s": 16.63,
    "vo_line": 3,
-   "offset": 4.5
+   "offset": 5.0
   },
   {
    "id": 6,
-   "t": 19.9,
+   "t": 19.83,
    "shot": 3,
    "draw": {
     "subject": "the orange tag on the table edge",
-    "action": "tears a little at its crease and its corner drops onto the table",
+    "action": "tears at its crease and its corner drops onto the table",
     "emotion": "deflated",
-    "annotation": "HOLD: the answer losing its shine"
+    "annotation": "SHE CALLED TROOPERS"
    },
-   "vo": "She called troopers and turned herself in.",
-   "sfx": "a soft paper curl",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "At home she opened the state regulations and saw her mistake. She called troopers and turned herself in.",
+   "sfx": "a soft paper tear",
+   "means": "DateTag",
    "choreo": {
-    "primary": "the curl",
-    "reaction": "the lamp shadow lengthening",
-    "ambient": "the phone screen dimming"
+    "primary": "the corner tearing",
+    "reaction": "the phone screen dimming",
+    "ambient": "the lamp shadow lengthening"
    },
    "shows": "the answer losing its shine",
-   "at_s": 19.9,
-   "why": "the tag's first state change",
+   "at_s": 19.83,
    "vo_line": 3,
-   "offset": 7.4
+   "offset": 8.2
   },
   {
    "id": 7,
-   "t": 22.2,
+   "t": 20.2,
    "shot": 4,
    "draw": {
     "subject": "a bracket over a calendar strip on the trooper's report",
     "action": "sweeps from SEPT 1 across to OCT 8 and locks with a click",
     "emotion": "clinical",
-    "annotation": "GENERAL SEASON: OCT 8"
+    "annotation": "GENERAL SEASON \u00b7 OCT 8"
    },
    "vo": "The trooper's report says the general season opened October eighth.",
    "sfx": "ratchet sweep and a lock click",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "means": "Sheet + calendar strip",
    "choreo": {
     "primary": "the bracket sweep",
     "reaction": "the SEPT 1 marker dimming",
     "ambient": "ruled lines scrolling upward"
    },
    "shows": "what the report says",
-   "at_s": 22.2,
-   "why": "the report's date",
+   "at_s": 20.2,
    "vo_line": 4,
    "offset": 0.0
   },
   {
    "id": 8,
-   "t": 25.2,
+   "t": 23.6,
    "shot": 4,
    "draw": {
     "subject": "the OCT 8 marker on the calendar",
-    "action": "drops into place with a heavy spruce thud",
+    "action": "drops into place with a heavy thud",
     "emotion": "final",
-    "annotation": "HOLD: the date the report sets"
+    "annotation": "GENERAL SEASON \u00b7 OCT 8"
    },
    "vo": "The trooper's report says the general season opened October eighth.",
    "sfx": "low wooden thud",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "means": "Sheet + marker",
    "choreo": {
     "primary": "the marker drop",
     "reaction": "the strip settling",
-    "ambient": "paper fibre texture drifting"
+    "ambient": "paper fibre drifting"
    },
    "shows": "the date the report sets",
-   "at_s": 25.2,
-   "why": "the second date lands",
+   "at_s": 23.6,
    "vo_line": 4,
-   "offset": 3.0
-  },
-  {
-   "id": 9,
-   "t": 27.2,
-   "shot": 4,
-   "draw": {
-    "subject": "two sheets, the orange answer and the report",
-    "action": "slide together side by side and the dates clash, a spruce binder edging between them",
-    "emotion": "tension, a question",
-    "annotation": "SEASON BEGAN SEPT 1 / GENERAL SEASON: OCT 8"
-   },
-   "vo": "So two pages disagreed. Which one can a hunter trust?",
-   "sfx": "two paper slides and a dissonant hum",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
-   "choreo": {
-    "primary": "the sheets sliding together",
-    "reaction": "the binder edge inching in",
-    "ambient": "a faint tick from the calendar"
-   },
-   "shows": "the question the film asks",
-   "at_s": 27.2,
-   "why": "the film's story question",
-   "vo_line": 5,
-   "offset": 0.0,
-   "rehook": "two sheets with clashing dates and the question of which page to trust"
-  },
-  {
-   "id": 10,
-   "t": 30.6,
-   "shot": 4,
-   "draw": {
-    "subject": "the dates on the two sheets",
-    "action": "pulse in turn, orange then spruce, as the binder edges in and stalls",
-    "emotion": "suspended",
-    "annotation": "HOLD: the disagreement held for a beat"
-   },
-   "vo": "So two pages disagreed. Which one can a hunter trust?",
-   "sfx": "alternating soft pulses",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
-   "choreo": {
-    "primary": "the pulses",
-    "reaction": "the binder stalling at the seam",
-    "ambient": "dust drifting"
-   },
-   "shows": "the disagreement held for a beat",
-   "at_s": 30.6,
-   "why": "the disagreement held",
-   "vo_line": 5,
    "offset": 3.4
   },
   {
-   "id": 11,
-   "t": 33.0,
+   "id": 9,
+   "t": 24.88,
+   "shot": 4,
+   "draw": {
+    "subject": "two sheets, the orange answer and the trooper's report",
+    "action": "slide together side by side and the dates clash while the peat binder edges in",
+    "emotion": "tension",
+    "annotation": "SEASON BEGAN SEPT 1"
+   },
+   "vo": "So the answer and the report disagreed.",
+   "sfx": "two paper slides and a binder scrape",
+   "means": "Sheet x2 + Binder edge",
+   "choreo": {
+    "primary": "the sheets sliding together",
+    "reaction": "the binder edge inching in",
+    "ambient": "a wall clock ticking"
+   },
+   "shows": "the answer and the report disagree",
+   "at_s": 24.88,
+   "vo_line": 5,
+   "offset": 0.0
+  },
+  {
+   "id": 10,
+   "t": 28.36,
    "shot": 5,
    "draw": {
-    "subject": "two identical phones, a hunter's and a trooper's",
-    "action": "the trooper's hands type the same search and the identical answer card clacks down in sync with the first",
-    "emotion": "uncanny sameness",
+    "subject": "two phone glasses, the hunter's replay and a trooper's",
+    "action": "the trooper's thumb taps send and an orange card drops onto the right half while the hunter's card sits already down on the left",
+    "emotion": "uncanny",
     "annotation": "SAME SEARCH \u00b7 SAME ANSWER"
    },
    "vo": "That trooper ran her exact search. He got the same wrong answer.",
-   "sfx": "twin card clacks in perfect sync",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "sfx": "keyboard clacks",
+   "means": "GripHand + ScreenLit x2",
+   "choreo": {
+    "primary": "the trooper typing",
+    "reaction": "the seam glowing",
+    "ambient": "a wiper arc outside the cab glass"
+   },
+   "shows": "he ran her search",
+   "at_s": 28.36,
+   "vo_line": 6,
+   "offset": 0.0,
+   "rehook": "the trooper taps send and the same card drops beside the hunter's"
+  },
+  {
+   "id": 11,
+   "t": 31.66,
+   "shot": 5,
+   "draw": {
+    "subject": "the twin orange answer card",
+    "action": "clacks down on the right in lockstep with the left",
+    "emotion": "eerie, still",
+    "annotation": "SAME SEARCH \u00b7 SAME ANSWER"
+   },
+   "vo": "That trooper ran her exact search. He got the same wrong answer.",
+   "sfx": "mirrored card clack",
+   "means": "AnswerCard x2",
    "choreo": {
     "primary": "the mirrored clack",
     "reaction": "both cards bouncing together",
     "ambient": "dash lights blinking"
    },
    "shows": "the answer came back twice",
-   "at_s": 33.0,
-   "why": "the answer repeated for someone else",
+   "at_s": 31.66,
    "vo_line": 6,
-   "offset": 0.0
+   "offset": 3.3
   },
   {
    "id": 12,
-   "t": 36.0,
+   "t": 34.5,
    "shot": 5,
    "draw": {
-    "subject": "the two orange cards",
-    "action": "wobble in perfect lockstep and a hairline seam splits the frame",
-    "emotion": "eerie, still",
-    "annotation": "HOLD: the sync held"
+    "subject": "a grid of identical orange answer cards",
+    "action": "the two cards widen into a wall of identical cards that clack in sync",
+    "emotion": "the question of trust",
+    "annotation": "SAME SEARCH \u00b7 SAME ANSWER"
    },
-   "vo": "He got the same wrong answer.",
-   "sfx": "paired hums",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "So which page can a hunter trust?",
+   "sfx": "a fan of paper clacks",
+   "means": "AnswerCard field",
    "choreo": {
-    "primary": "the lockstep wobble",
-    "reaction": "the split seam glowing",
-    "ambient": "a wiper arc passing outside the glass"
+    "primary": "the two-up widening to a grid",
+    "reaction": "the seam dissolving",
+    "ambient": "a slow camera pull"
    },
-   "shows": "the sync held",
-   "at_s": 36.0,
-   "why": "the sync is the point",
-   "vo_line": 6,
-   "offset": 3.0
+   "shows": "so which page can a hunter trust",
+   "at_s": 34.5,
+   "vo_line": 7,
+   "offset": 0.0
   },
   {
    "id": 13,
-   "t": 39.6,
+   "t": 37.98,
    "shot": 6,
    "draw": {
     "subject": "a rubber stamp over a receipt",
@@ -668,45 +660,43 @@
    },
    "vo": "She pleaded no contest and paid a hundred fifty dollars.",
    "sfx": "stamp thunk then a register ding",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "means": "stamp + receipt",
    "choreo": {
     "primary": "the stamp slam",
     "reaction": "the receipt jumping",
     "ambient": "ink pad breathing"
    },
    "shows": "what it cost her",
-   "at_s": 39.6,
-   "why": "the consequence",
-   "vo_line": 7,
+   "at_s": 37.98,
+   "vo_line": 8,
    "offset": 0.0
   },
   {
    "id": 14,
-   "t": 42.9,
+   "t": 40.98,
    "shot": 6,
    "draw": {
     "subject": "the printed receipt line",
-    "action": "the ink spreads and dries while the stamp lifts away",
+    "action": "the ink spreads and dries while the stamp lifts away and the window frame begins to rise",
     "emotion": "final",
-    "annotation": "HOLD: the fine sits on the paper"
+    "annotation": "NO CONTEST \u00b7 $150 FINE"
    },
-   "vo": "She still pleaded no contest and paid a hundred fifty dollars.",
-   "sfx": "ink hiss and a slow paper rustle",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "She pleaded no contest and paid a hundred fifty dollars.",
+   "sfx": "ink hiss and a paper rustle",
+   "means": "receipt + tag corner",
    "choreo": {
     "primary": "the ink spreading",
     "reaction": "the receipt settling flat",
     "ambient": "counter light drifting"
    },
    "shows": "the fine sits on the paper",
-   "at_s": 42.9,
-   "why": "the amount settles",
-   "vo_line": 7,
-   "offset": 3.3
+   "at_s": 40.98,
+   "vo_line": 8,
+   "offset": 3.0
   },
   {
    "id": 15,
-   "t": 45.0,
+   "t": 42.66,
    "shot": 7,
    "draw": {
     "subject": "a bowed silhouette behind a fogged window",
@@ -715,532 +705,641 @@
     "annotation": "\"I FEEL TERRIBLE\""
    },
    "vo": "She told the Alaska Beacon, I feel terrible.",
-   "sfx": "music drops out, a single low bell",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "sfx": "music drops to room tone and a breath on glass",
+   "means": "silhouette + plate",
    "choreo": {
     "primary": "the breath fog spreading",
-    "reaction": "the plate typing",
+    "reaction": "the plate sliding",
     "ambient": "condensation running down the glass"
    },
    "shows": "what she said",
-   "at_s": 45.0,
-   "why": "her own words, quietly",
-   "vo_line": 8,
+   "at_s": 42.66,
+   "vo_line": 9,
    "offset": 0.0
   },
   {
    "id": 16,
-   "t": 49.2,
+   "t": 45.16,
    "shot": 7,
    "draw": {
-    "subject": "a quote card falling through the fog",
-    "action": "drifts down and lands beside the window with a soft settle",
-    "emotion": "measured",
-    "annotation": "THE FIRST TIME I THINK WE HAVE SEEN AI CITED"
+    "subject": "her hand on the sill",
+    "action": "sets the phone face down beside the faded tag",
+    "emotion": "chosen stillness",
+    "annotation": "\"I FEEL TERRIBLE\""
    },
-   "vo": "State spokesman Austin McDaniel thinks it's the first time A I has been cited.",
-   "sfx": "soft card landing",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "She told the Alaska Beacon, I feel terrible.",
+   "sfx": "a phone set-down knock",
+   "means": "GripHand + tag",
    "choreo": {
-    "primary": "the card drift and land",
-    "reaction": "the fog parting around it",
-    "ambient": "the silhouette turning toward it"
+    "primary": "the phone going face down",
+    "reaction": "the fog closing back in",
+    "ambient": "the tag faded on the sill"
    },
-   "shows": "what the spokesman said",
-   "at_s": 49.2,
-   "why": "the state's read on it",
+   "shows": "she had already made the call",
+   "at_s": 45.16,
    "vo_line": 9,
-   "offset": 0.0
+   "offset": 2.5
   },
   {
    "id": 17,
-   "t": 54.0,
-   "shot": 7,
+   "t": 46.54,
+   "shot": 8,
    "draw": {
-    "subject": "a second quote card",
-    "action": "lands on the first, slightly askew",
-    "emotion": "matter-of-fact",
-    "annotation": "I EXPECT WE'LL SEE MORE OF THIS"
+    "subject": "a quote card pinned to a cork wall in the Public Safety office",
+    "action": "pins on with a thud and swings once",
+    "emotion": "measured",
+    "annotation": "\"THE FIRST TIME I THINK WE HAVE SEEN AI CITED\""
    },
-   "vo": "He expects more.",
-   "sfx": "second soft landing",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "State spokesman Austin McDaniel says he thinks it's the first time A I has been cited. He expects more.",
+   "sfx": "pin thunk",
+   "means": "cork wall + card + attribution strip",
    "choreo": {
-    "primary": "the second landing",
-    "reaction": "the first card shifting",
-    "ambient": "fog closing back in"
+    "primary": "the pin and swing",
+    "reaction": "the wall lamp flicker",
+    "ambient": "the tag pinned in a corner"
    },
-   "shows": "what he expects",
-   "at_s": 54.0,
-   "why": "what he expects next",
-   "vo_line": 9,
-   "offset": 4.8
+   "shows": "what the spokesman said",
+   "at_s": 46.54,
+   "vo_line": 10,
+   "offset": 0.0
   },
   {
    "id": 18,
-   "t": 58.0,
+   "t": 49.84,
    "shot": 8,
    "draw": {
-    "subject": "the stack assembling out of the fog",
-    "action": "seven thin sheets fall into place one by one with the orange tag pinned on top",
-    "emotion": "curious, tense",
-    "annotation": "HOLD: the loop 2 plant: the warnings"
+    "subject": "a stray pin",
+    "action": "drops from the cork wall and rolls across the desk edge",
+    "emotion": "idle, procedural",
+    "annotation": "\"I EXPECT WE'LL SEE MORE OF THIS\""
    },
-   "vo": "Weren't there warnings? There were.",
-   "sfx": "seven paper flutters rising to a soft chord",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "State spokesman Austin McDaniel says he thinks it's the first time A I has been cited. He expects more.",
+   "sfx": "a pin drop and a roll",
+   "means": "cork wall + pin",
    "choreo": {
-    "primary": "the sheets settling",
-    "reaction": "the tag wobbling on top",
-    "ambient": "the far sheets blurred by rack focus"
+    "primary": "the pin dropping",
+    "reaction": "the second card swinging",
+    "ambient": "the wall lamp"
    },
-   "shows": "the loop 2 plant: the warnings",
-   "at_s": 58.0,
-   "why": "the stack of summaries appears",
+   "shows": "the office keeps going",
+   "at_s": 49.84,
    "vo_line": 10,
-   "offset": 0.0,
-   "rehook": "Weren't there warnings? The stack assembles and heavy plates descend"
+   "offset": 3.3
   },
   {
    "id": 19,
-   "t": 61.9,
+   "t": 52.54,
    "shot": 8,
    "draw": {
-    "subject": "a heavy plate descending from the left",
-    "action": "lands on the stack and the whole tower dips",
-    "emotion": "weighty, fair",
-    "annotation": "AI RESPONSES MAY INCLUDE MISTAKES"
+    "subject": "a second quote card",
+    "action": "pins beside the first and the first swings against it",
+    "emotion": "matter-of-fact",
+    "annotation": "\"I EXPECT WE'LL SEE MORE OF THIS\""
    },
-   "vo": "Google's help page says A I answers may include mistakes.",
-   "sfx": "heavy plate thud and a tower creak",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "State spokesman Austin McDaniel says he thinks it's the first time A I has been cited. He expects more.",
+   "sfx": "second pin thunk and a paper swing",
+   "means": "card + attribution",
    "choreo": {
-    "primary": "the plate landing",
-    "reaction": "the tower dipping and recovering",
-    "ambient": "the tag pinned under it"
+    "primary": "the second pin",
+    "reaction": "the first card swinging",
+    "ambient": "the wall lamp"
    },
-   "shows": "Google's warning",
-   "at_s": 61.9,
-   "why": "Google's own warning",
-   "vo_line": 11,
-   "offset": 0.3
+   "shows": "what he expects",
+   "at_s": 52.54,
+   "vo_line": 10,
+   "offset": 6.0
   },
   {
    "id": 20,
-   "t": 66.4,
-   "shot": 8,
+   "t": 55.51,
+   "shot": 9,
    "draw": {
-    "subject": "a second heavy plate from the right",
-    "action": "lands opposite and the tower steadies between the two",
-    "emotion": "balanced",
-    "annotation": "CHECK MORE THAN ONE PLACE"
+    "subject": "a phone results page",
+    "action": "scrolls up as an answer box slides in under the orange card",
+    "emotion": "curious",
+    "annotation": "AI RESPONSES MAY INCLUDE MISTAKES"
    },
-   "vo": "and to check more than one place.",
-   "sfx": "second plate thud and a settling creak",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "Weren't there warnings? There were.",
+   "sfx": "scroll swipes and a thumb flick",
+   "means": "ScreenLit results page",
    "choreo": {
-    "primary": "the plate landing",
-    "reaction": "the tower steadying",
-    "ambient": "dust from the sheets"
+    "primary": "the scroll",
+    "reaction": "the answer box sliding in",
+    "ambient": "fog behind the glass"
    },
-   "shows": "the second warning",
-   "at_s": 66.4,
-   "why": "the fair counter-case at full weight",
+   "shows": "warnings existed",
+   "at_s": 55.51,
    "vo_line": 11,
-   "offset": 4.8
+   "offset": 0.0,
+   "rehook": "Weren't there warnings? The glass scrolls to a results page and thin warnings slide on"
   },
   {
    "id": 21,
-   "t": 69.6,
+   "t": 60.22,
    "shot": 9,
    "draw": {
-    "subject": "a dashed empty slot beside the stack",
-    "action": "holds its outline and stays empty while the dust moves through it",
-    "emotion": "quiet, fair",
-    "annotation": "GOOGLE DID NOT RESPOND"
+    "subject": "a thin warning sheet",
+    "action": "slides onto the results page and wobbles",
+    "emotion": "fair",
+    "annotation": "AI RESPONSES MAY INCLUDE MISTAKES"
    },
-   "vo": "Google didn't respond to the Alaska Beacon's request for comment.",
-   "sfx": "a soft wind and a single low tone",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "Google's help page says A I answers may include mistakes, and to check more than one place.",
+   "sfx": "paper slide and a tiny tick",
+   "means": "Sheet (thin)",
    "choreo": {
-    "primary": "the dashed contour crawling",
-    "reaction": "dust drifting through the slot",
-    "ambient": "the tower behind wobbling faintly"
+    "primary": "the sheet sliding on",
+    "reaction": "the results shrinking under it",
+    "ambient": "dust in the glass glow"
    },
-   "shows": "who didn't answer",
-   "at_s": 69.6,
-   "why": "the empty slot, not a pile-on",
+   "shows": "Google's own warning",
+   "at_s": 60.22,
    "vo_line": 12,
-   "offset": 0.0
+   "offset": 1.4
   },
   {
    "id": 22,
-   "t": 74.3,
+   "t": 63.82,
    "shot": 9,
    "draw": {
-    "subject": "a sealed spruce envelope",
-    "action": "drops onto the stack with a stamped printed source line",
-    "emotion": "official, calm",
-    "annotation": "ONE SOURCE OF TRUTH: ADF&G REGULATIONS"
+    "subject": "a second thin warning sheet",
+    "action": "slides over the first and both wobble as the answer box shrinks",
+    "emotion": "balanced",
+    "annotation": "CHECK MORE THAN ONE PLACE"
    },
-   "vo": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
-   "sfx": "envelope thud and a wax-stamp press",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "Google's help page says A I answers may include mistakes, and to check more than one place.",
+   "sfx": "second paper slide",
+   "means": "Sheet (thin) x2",
    "choreo": {
-    "primary": "the envelope drop",
-    "reaction": "the tower steadying under it",
-    "ambient": "the slot fading"
+    "primary": "the second slide",
+    "reaction": "the answer box shrinking",
+    "ambient": "the first sheet shifting"
    },
-   "shows": "the state's source of truth",
-   "at_s": 74.3,
-   "why": "the state's answer to where to look",
+   "shows": "the second warning",
+   "at_s": 63.82,
+   "vo_line": 12,
+   "offset": 5.0
+  },
+  {
+   "id": 23,
+   "t": 66.33,
+   "shot": 9,
+   "draw": {
+    "subject": "a reporter's email in a phone outbox",
+    "action": "sits with no reply arriving while the clock advances",
+    "emotion": "quiet, fair",
+    "annotation": "GOOGLE DID NOT RESPOND"
+   },
+   "vo": "Google didn't respond to the Beacon's request for comment on the wrong answer.",
+   "sfx": "mail whoosh then clock ticks",
+   "means": "phone outbox + clock",
+   "choreo": {
+    "primary": "the email sitting",
+    "reaction": "the clock hands moving",
+    "ambient": "the glass glow dimming"
+   },
+   "shows": "who didn't answer",
+   "at_s": 66.33,
    "vo_line": 13,
    "offset": 0.0
   },
   {
-   "id": 23,
-   "t": 77.3,
+   "id": 24,
+   "t": 70.03,
    "shot": 9,
    "draw": {
-    "subject": "the envelope's seal",
-    "action": "holds, then a tiny crack of light shows under one corner",
-    "emotion": "expectant",
-    "annotation": "HOLD: the catch is coming"
+    "subject": "the outbox clock",
+    "action": "ticks past while the send spinner stops with no reply",
+    "emotion": "waiting",
+    "annotation": "GOOGLE DID NOT RESPOND"
    },
-   "vo": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
-   "sfx": "a faint paper creak",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "Google didn't respond to the Beacon's request for comment on the wrong answer.",
+   "sfx": "clock ticks and a spinner click",
+   "means": "phone outbox + clock",
    "choreo": {
-    "primary": "the crack of light",
-    "reaction": "the seal trembling",
-    "ambient": "dust catching the light"
+    "primary": "the spinner stopping",
+    "reaction": "the clock hands moving",
+    "ambient": "the glass glow dimming"
    },
-   "shows": "the catch is coming",
-   "at_s": 77.3,
-   "why": "something under the flap",
+   "shows": "still no reply",
+   "at_s": 70.03,
    "vo_line": 13,
-   "offset": 3.0
+   "offset": 3.7
   },
   {
-   "id": 24,
-   "t": 81.5,
+   "id": 25,
+   "t": 72.23,
    "shot": 10,
    "draw": {
-    "subject": "the envelope's corner flap",
-    "action": "lifts and a small asterisk glints on the inner sheet",
-    "emotion": "suspicious",
-    "annotation": "HOLD: the loop 2 pay begins"
+    "subject": "a laptop lit on the kitchen table",
+    "action": "opens to the ADF&G page with the attribution strip above it",
+    "emotion": "official, calm",
+    "annotation": "ONE SOURCE OF TRUTH \u00b7 ADF&G REGULATIONS"
    },
-   "vo": "But that source has a catch.",
-   "sfx": "a paper lift and a small glint chime",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
+   "sfx": "laptop lid and a page-load click",
+   "means": "laptop + page + tag carried to the bezel",
    "choreo": {
-    "primary": "the flap lifting",
-    "reaction": "the asterisk glinting",
-    "ambient": "fibres swaying"
+    "primary": "the lid opening",
+    "reaction": "the page loading in",
+    "ambient": "lamp light warming the table"
    },
-   "shows": "the loop 2 pay begins",
-   "at_s": 81.5,
-   "why": "the catch appears",
+   "shows": "the state's source of truth",
+   "at_s": 72.23,
    "vo_line": 14,
    "offset": 0.0
   },
   {
-   "id": 25,
-   "t": 85.4,
+   "id": 26,
+   "t": 76.83,
    "shot": 10,
    "draw": {
-    "subject": "the inner sheet's fine print",
+    "subject": "the page's Regulations tab",
+    "action": "slides open and the tag slides along the laptop corner",
+    "emotion": "expectant",
+    "annotation": "ONE SOURCE OF TRUTH \u00b7 ADF&G REGULATIONS"
+   },
+   "vo": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
+   "sfx": "a soft key click",
+   "means": "laptop page + tag",
+   "choreo": {
+    "primary": "the tab lighting",
+    "reaction": "the tag riding the corner",
+    "ambient": "the lamp pool breathing"
+   },
+   "shows": "where a hunter looks",
+   "at_s": 76.83,
+   "vo_line": 14,
+   "offset": 4.6
+  },
+  {
+   "id": 27,
+   "t": 78.94,
+   "shot": 10,
+   "draw": {
+    "subject": "the page's footer",
+    "action": "folds up and a small asterisk glints",
+    "emotion": "suspicious",
+    "annotation": "REGULATIONS ARE SIMPLIFIED \u00b7 EMERGENCY ORDERS CAN OVERRIDE"
+   },
+   "vo": "But that source has a catch.",
+   "sfx": "paper lift and a tiny metal tick",
+   "means": "laptop page",
+   "choreo": {
+    "primary": "the footer folding",
+    "reaction": "the asterisk glinting",
+    "ambient": "fibres swaying"
+   },
+   "shows": "the catch appears",
+   "at_s": 78.94,
+   "vo_line": 15,
+   "offset": 0.0
+  },
+  {
+   "id": 28,
+   "t": 82.01,
+   "shot": 10,
+   "draw": {
+    "subject": "the page's fine print",
     "action": "types itself line by line and a SIMPLIFIED band stamps across it",
-    "emotion": "matter-of-fact reveal",
+    "emotion": "matter-of-fact",
     "annotation": "REGULATIONS ARE SIMPLIFIED \u00b7 EMERGENCY ORDERS CAN OVERRIDE"
    },
    "vo": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
    "sfx": "typewriter ticks and a stamp thud",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "means": "laptop page + stamp",
    "choreo": {
     "primary": "the typing and stamp",
     "reaction": "the asterisk brightening",
     "ambient": "paper fibres drifting"
    },
    "shows": "the catch, drawn",
-   "at_s": 85.4,
-   "why": "the state's own page calls itself simplified",
-   "vo_line": 15,
-   "offset": 0.6
-  },
-  {
-   "id": 26,
-   "t": 90.0,
-   "shot": 10,
-   "draw": {
-    "subject": "the SIMPLIFIED band",
-    "action": "settles and the sheet beneath it shows another sheet underneath",
-    "emotion": "the floor drops",
-    "annotation": "HOLD: the layers below"
-   },
-   "vo": "emergency orders can override them.",
-   "sfx": "a low settling tone",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
-   "choreo": {
-    "primary": "the band settling",
-    "reaction": "the lower sheet showing through",
-    "ambient": "the corner flap trembling"
-   },
-   "shows": "the layers below",
-   "at_s": 90.0,
-   "why": "the layers go further down",
-   "vo_line": 15,
-   "offset": 5.2
-  },
-  {
-   "id": 27,
-   "t": 92.9,
-   "shot": 11,
-   "draw": {
-    "subject": "the whole tower of summaries over a thick spruce binder",
-    "action": "the camera pulls back to reveal every sheet wobbling on the still binder",
-    "emotion": "revelation, calm",
-    "annotation": "HOLD: every layer a summary"
-   },
-   "vo": "So even the official page is a summary.",
-   "sfx": "a rising pull-back swell",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
-   "choreo": {
-    "primary": "the pull-back",
-    "reaction": "the tower wobbling",
-    "ambient": "the far sheets blurring"
-   },
-   "shows": "every layer a summary",
-   "at_s": 92.9,
-   "why": "the picture of the thesis",
+   "at_s": 82.01,
    "vo_line": 16,
-   "offset": 0.0,
-   "rehook": "the pull-back reveals the whole tower on one thick binder"
-  },
-  {
-   "id": 28,
-   "t": 97.0,
-   "shot": 11,
-   "draw": {
-    "subject": "the orange tag",
-    "action": "tears off the top sheet and slides down the tower's side to the binder",
-    "emotion": "decisive",
-    "annotation": "HOLD: what counts sits underneath"
-   },
-   "vo": "The answer was on top. What counts sits underneath.",
-   "sfx": "a paper tear and a long slide",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
-   "choreo": {
-    "primary": "the tear and slide",
-    "reaction": "the tower's wobble stopping",
-    "ambient": "spruce binder catching light"
-   },
-   "shows": "what counts sits underneath",
-   "at_s": 97.0,
-   "why": "the tag's descent",
-   "vo_line": 17,
    "offset": 0.0
   },
   {
    "id": 29,
-   "t": 99.6,
+   "t": 85.31,
+   "shot": 10,
+   "draw": {
+    "subject": "a highlighter line",
+    "action": "drags across the fine print and the asterisk it lands on flares",
+    "emotion": "noticing",
+    "annotation": "REGULATIONS ARE SIMPLIFIED \u00b7 EMERGENCY ORDERS CAN OVERRIDE"
+   },
+   "vo": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
+   "sfx": "a highlighter squeak",
+   "means": "laptop page",
+   "choreo": {
+    "primary": "the highlight dragging",
+    "reaction": "the asterisk flaring",
+    "ambient": "paper fibres drifting"
+   },
+   "shows": "the catch is on the page",
+   "at_s": 85.31,
+   "vo_line": 16,
+   "offset": 3.3
+  },
+  {
+   "id": 30,
+   "t": 87.31,
+   "shot": 10,
+   "draw": {
+    "subject": "an emergency-order slip",
+    "action": "drops over the page and the page sags",
+    "emotion": "the floor drops",
+    "annotation": "EMERGENCY ORDERS CAN OVERRIDE"
+   },
+   "vo": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
+   "sfx": "a slip whoosh then ink hiss and a paper sag",
+   "means": "slip + page",
+   "choreo": {
+    "primary": "the slip landing",
+    "reaction": "the page sagging",
+    "ambient": "the lamp dimming a touch"
+   },
+   "shows": "emergency orders can override",
+   "at_s": 87.31,
+   "vo_line": 16,
+   "offset": 5.3
+  },
+  {
+   "id": 31,
+   "t": 89.52,
    "shot": 11,
    "draw": {
-    "subject": "the binder at the base",
-    "action": "is lit from above as the tag comes to rest on its cover",
-    "emotion": "settled",
-    "annotation": "HOLD: the thick still thing"
+    "subject": "five labelled summary sheets",
+    "action": "fall into place over a thick peat binder and wobble",
+    "emotion": "revelation, calm",
+    "annotation": "A SUMMARY"
    },
-   "vo": "What counts sits underneath.",
-   "sfx": "a low resonant tone",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "So even the official page is a simplified summary of state law.",
+   "sfx": "a paper cascade",
+   "means": "SummaryStack + Binder",
    "choreo": {
-    "primary": "the tag coming to rest",
+    "primary": "the cascade",
+    "reaction": "the tower wobbling",
+    "ambient": "the far sheets blurring"
+   },
+   "shows": "the stack of summaries",
+   "at_s": 89.52,
+   "vo_line": 17,
+   "offset": 0.0,
+   "rehook": "five labelled sheets fall over the binder and the camera dives"
+  },
+  {
+   "id": 32,
+   "t": 93.42,
+   "shot": 11,
+   "draw": {
+    "subject": "the whole tower",
+    "action": "the camera dives down through each labelled sheet in turn, the tag falling away off the top",
+    "emotion": "decisive",
+    "annotation": "AI ANSWER"
+   },
+   "vo": "So even the official page is a simplified summary of state law.",
+   "sfx": "a rush of air through fanned paper then a paper tear",
+   "means": "stage3d dive + blurAt",
+   "choreo": {
+    "primary": "the dive",
+    "reaction": "the tower wobbling past",
+    "ambient": "spruce... peat binder catching light"
+   },
+   "shows": "what counts sits underneath",
+   "at_s": 93.42,
+   "vo_line": 17,
+   "offset": 3.9
+  },
+  {
+   "id": 33,
+   "t": 95.01,
+   "shot": 11,
+   "draw": {
+    "subject": "the peat binder at the base",
+    "action": "is lit from above as the emergency-order slip settles on its cover and the tag goes blank",
+    "emotion": "settled",
+    "annotation": "REGULATIONS AND EMERGENCY ORDERS"
+   },
+   "vo": "The answer was on top. What counts sits underneath, the regulations and any emergency order.",
+   "sfx": "binder cover settling with a wood knock",
+   "means": "Binder + slip + tag",
+   "choreo": {
+    "primary": "the settle",
     "reaction": "the tower fading to blur",
     "ambient": "dust falling"
    },
    "shows": "the thick still thing",
-   "at_s": 99.6,
-   "why": "the still thing under the wobbling",
-   "vo_line": 17,
-   "offset": 2.6
-  },
-  {
-   "id": 30,
-   "t": 102.3,
-   "shot": 12,
-   "draw": {
-    "subject": "two hand silhouettes",
-    "action": "peel the summary sheets away one by one and open the spruce binder",
-    "emotion": "determined",
-    "annotation": "GENERAL SEASON: OCT 8"
-   },
-   "vo": "Check the regulations and any emergency order.",
-   "sfx": "paper peels in a run and a heavy binder open",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
-   "choreo": {
-    "primary": "the peel",
-    "reaction": "the sheets fluttering off",
-    "ambient": "the tag stamping onto the page"
-   },
-   "shows": "the real date on the real page",
-   "at_s": 102.3,
-   "why": "the loop 1 pays: the page she opened",
+   "at_s": 95.01,
    "vo_line": 18,
    "offset": 0.0
   },
   {
-   "id": 31,
-   "t": 106.0,
+   "id": 34,
+   "t": 98.61,
+   "shot": 11,
+   "draw": {
+    "subject": "dust on the binder cover",
+    "action": "falls away as the blank tag comes to rest and the lamp light warms it",
+    "emotion": "settled",
+    "annotation": "REGULATIONS AND EMERGENCY ORDERS"
+   },
+   "vo": "The answer was on top. What counts sits underneath, the regulations and any emergency order.",
+   "sfx": "dust falling and a soft cover pat",
+   "means": "Binder + tag",
+   "choreo": {
+    "primary": "the dust falling",
+    "reaction": "the tag lying blank",
+    "ambient": "the tower fading to blur"
+   },
+   "shows": "the thick still thing",
+   "at_s": 98.61,
+   "vo_line": 18,
+   "offset": 3.6
+  },
+  {
+   "id": 35,
+   "t": 102.37,
    "shot": 12,
    "draw": {
-    "subject": "a binder tab",
-    "action": "slides out from the page edge with a printed number",
-    "emotion": "helpful, plain",
-    "annotation": "CALL ADF&G \u00b7 907-465-4190"
+    "subject": "the viewer's two hand silhouettes",
+    "action": "open the peat binder to a page with a printed title strip",
+    "emotion": "determined",
+    "annotation": "REGULATIONS AND EMERGENCY ORDERS"
    },
-   "vo": "Fish and Game will mail you a copy.",
-   "sfx": "a tab slide and a soft click",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "vo": "Check them first. Fish and Game will mail you the regulations, or you can call the office.",
+   "sfx": "a heavy binder opening",
+   "means": "GripHand + Binder",
    "choreo": {
-    "primary": "the tab slide",
+    "primary": "the opening",
     "reaction": "the page settling",
     "ambient": "lamp light warming"
    },
-   "shows": "how to get it",
-   "at_s": 106.0,
-   "why": "the way to get the text",
-   "vo_line": 18,
-   "offset": 3.7
+   "shows": "the page, opened",
+   "at_s": 102.37,
+   "vo_line": 19,
+   "offset": 0.0
   },
   {
-   "id": 32,
-   "t": 110.2,
+   "id": 36,
+   "t": 106.97,
+   "shot": 12,
+   "draw": {
+    "subject": "a binder tab",
+    "action": "slides out from the page edge with a printed number and an emergency-order slip tucks in the cover",
+    "emotion": "helpful, plain",
+    "annotation": "CALL ADF&G \u00b7 907-465-4190"
+   },
+   "vo": "Check them first. Fish and Game will mail you the regulations, or you can call the office.",
+   "sfx": "a tab slide and a soft click",
+   "means": "Binder tab + slip",
+   "choreo": {
+    "primary": "the tab slide",
+    "reaction": "the slip tucking in",
+    "ambient": "lamp light warming"
+   },
+   "shows": "how to reach the office",
+   "at_s": 106.97,
+   "vo_line": 19,
+   "offset": 4.6
+  },
+  {
+   "id": 37,
+   "t": 110.53,
    "shot": 13,
    "draw": {
     "subject": "the phone glass again under a thumb",
-    "action": "the search bar blinks empty and the blank orange tag lies on a fresh stack",
+    "action": "the search bar blinks empty and the blank tag lies on a fresh thin stack",
     "emotion": "open, inviting",
-    "annotation": "HOLD: what will you check"
+    "annotation": "GOOGLED \u00b7 SNIPE SEASON"
    },
    "vo": "Before you hunt, what do you check?",
-   "sfx": "thumb tap and a soft chime",
-   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "sfx": "thumb tap and a phone keyboard blink tick",
+   "means": "GripHand + ScreenLit",
    "choreo": {
     "primary": "the blinking bar",
-    "reaction": "the tag turning blank",
+    "reaction": "the tag lying blank",
     "ambient": "fog drifting"
    },
    "shows": "what will you check",
-   "at_s": 110.2,
-   "why": "the loop closes on the question",
-   "vo_line": 19,
+   "at_s": 110.53,
+   "vo_line": 20,
    "offset": 0.0
   }
  ],
  "hook": {
   "pattern": "anomaly-question",
-  "frame1": "a thumb over black phone glass in fog types SNIPE SEASON while a thick closed spruce binder sits half-hidden under the phone's edge",
-  "headline": "SHE ASKED GOOGLE. IT SAID SEPT 1.",
+  "frame1": "a thumb over black phone glass in fog types GOOGLED \u00b7 SNIPE SEASON while a thick closed peat binder sits half-hidden under the phone's edge",
+  "headline": "GOOGLED \u00b7 SNIPE SEASON",
   "motion_by_s": 0.3,
-  "loopback": "the button returns to the same phone glass and thumb, the search bar empty and blinking, with the blank orange tag on a fresh stack",
-  "pattern_note": "an ordinary search plus an object that doesn't belong in the frame: a closed binder. The question it raises is what is in the binder."
+  "loopback": "the button returns to the same phone glass and thumb with the search bar empty and blinking and a blank tag on a fresh stack",
+  "pattern_note": "an ordinary search plus an object that does not belong in the frame, a closed binder. The question it raises is what is in the binder."
  },
  "audio_arc": {
   "build_steps": [
    0.3,
-   22.2,
-   58.0,
-   84.8
+   20.2,
+   55.51,
+   82.01
   ],
-  "dip_at": 45.0,
-  "riser_at": 92.9,
-  "silence_at": 36.3,
-  "payoff_at": 102.3,
+  "dip_at": 42.66,
+  "riser_at": 89.52,
+  "silence_at": 94.41000000000001,
+  "payoff_at": 95.01,
   "button_pattern": "question"
  },
  "reveals": [
   {
-   "t": 8.3,
+   "t": 7.76,
    "type": "scale-pullback",
-   "what": "the phone glass pulls back to a wide fog-green marsh with the three snipe",
+   "what": "the orange card's rectangle dissolves into the fog band and the frame pulls back to a wide slate marsh",
    "hold_s": 0.6
   },
   {
-   "t": 61.6,
+   "t": 46.54,
+   "type": "scale-pullback",
+   "what": "the camera pulls back from one pinned quote card to the whole Public Safety office wall",
+   "hold_s": 0.6
+  },
+  {
+   "t": 89.52,
    "type": "build-on",
-   "what": "the second warning plate lands opposite the first and the tower steadies between them",
-   "hold_s": 0.6
-  },
-  {
-   "t": 92.9,
-   "type": "scale-pullback",
-   "what": "the camera pulls back and the whole tower of summaries is revealed on the one thick still binder",
+   "what": "five labelled sheets fall over the binder and the tower assembles before the dive",
    "hold_s": 0.7
   }
  ],
  "rehooks": [
   {
-   "t": 27.2,
-   "what": "two sheets with clashing dates and the question of which page to trust"
+   "t": 24.88,
+   "what": "two sheets with clashing dates and the binder edging in"
   },
   {
-   "t": 58.0,
-   "what": "Weren't there warnings? The stack assembles and heavy plates descend"
+   "t": 55.51,
+   "what": "the results page scrolls and thin warnings slide on"
   },
   {
-   "t": 92.9,
-   "what": "the pull-back reveals the whole tower on one thick binder"
+   "t": 89.52,
+   "what": "the tower assembles and the camera dives"
   }
  ],
  "open_loop": {
-  "plant_t": 14.0,
-  "pay_t": 102.3,
-  "what": "a thick spruce binder sits closed by the phone on the kitchen table and its page is never shown. The film refuses to open it until the hands peel the summaries away and the page reads GENERAL SEASON: OCT 8."
+  "plant_t": 11.63,
+  "pay_t": 106.97,
+  "what": "a thick peat binder is opened at the kitchen table with its page turned away. The film refuses to show that page until the viewer's hands open the binder and its title strip reads REGULATIONS AND EMERGENCY ORDERS."
  },
  "open_loop_2": {
-  "plant_t": 58.0,
-  "pay_t": 84.8,
-  "what": "Weren't there warnings? There were, and the film concedes them at full weight, then withholds the catch in the state's own source until the envelope's fine print types on."
+  "plant_t": 35.5,
+  "pay_t": 95.01,
+  "what": "So which page can a hunter trust? The question is asked after the answer repeats for the trooper and is withheld until the dive lands on the binder that holds regulations and emergency orders."
  },
  "throughline": {
   "object": "the orange date tag",
   "states": [
    {
-    "at_s": 0.5,
+    "at_s": 4.28,
     "state": "slams onto the phone glass as SEASON BEGAN SEPT 1, glossy and confident"
    },
    {
-    "at_s": 8.3,
-    "state": "stamped SEPT 5 \u00b7 3 SNIPE with three orange ticks and creased"
+    "at_s": 7.76,
+    "state": "carried as three orange ticks over the marsh"
    },
    {
-    "at_s": 22.2,
-    "state": "set beside a spruce OCT 8 marker so two dates disagree"
+    "at_s": 19.83,
+    "state": "tears at its crease at the kitchen table"
    },
    {
-    "at_s": 33.0,
-    "state": "doubled into a twin for the trooper"
+    "at_s": 20.2,
+    "state": "sits beside the peat OCT 8 marker so two dates disagree"
    },
    {
-    "at_s": 58.0,
-    "state": "pinned on top of the thin stack between two heavy warning plates"
+    "at_s": 31.66,
+    "state": "doubled into a lockstep twin for the trooper"
    },
    {
-    "at_s": 97.0,
-    "state": "torn off the top and slid down the tower to rest on the binder"
+    "at_s": 45.16,
+    "state": "faded and creased on the window sill"
    },
    {
-    "at_s": 102.3,
-    "state": "stamped onto the binder page as GENERAL SEASON: OCT 8"
+    "at_s": 46.54,
+    "state": "pinned in the corner of the Public Safety wall"
    },
    {
-    "at_s": 110.2,
-    "state": "blank on a fresh stack beside the phone, the loop restarting"
+    "at_s": 76.03,
+    "state": "riding the laptop corner"
+   },
+   {
+    "at_s": 93.92,
+    "state": "falling off the top of the tower during the dive"
+   },
+   {
+    "at_s": 95.01,
+    "state": "goes blank and lies on the binder cover"
+   },
+   {
+    "at_s": 110.53,
+    "state": "blank on a fresh thin stack beside the phone, the loop restarting"
    }
   ],
   "lands_in_button": true
  },
- "divergence_note": "Against 2026-09-23 (frontal document, split-compare, divide-and-settle, document-as-subject, dusk violet and copper) and 2026-09-19 (macro-closeup, single-object-void, radial-emanate, structure-as-subject, powerhouse green and amber) this film is a vertical CROSS-SECTION DESCENT through a stack in STACKED-LAYERS with a VERTICAL-DESCENT motion vector, a triple none of the last four films used. Its register is tactile collage, its camera strategy dolly-through, its light overcast-diffuse. Its palette shares no colour role with either and none with the last ten: slate fog, hunter orange, wet peat umber, cool grey-white paper."
+ "divergence_note": "Against 2026-09-23 (frontal document, split-compare, divide-and-settle, document-as-subject, dusk violet and copper) and 2026-09-19 (macro-closeup, single-object-void, radial-emanate, structure-as-subject, powerhouse green and amber) this film changes worlds every shot: marsh, kitchen, trooper desk, truck cab, court counter, fogged window, Public Safety wall, phone results, laptop, one stack dive, hands. Paper appears as one continuous vertical CROSS-SECTION DIVE in STACKED-LAYERS, a triple none of the last four films used. Its register is tactile collage, its camera strategy dolly-through, its light overcast-diffuse. Its palette shares no colour role with either and none with the last ten films: slate fog, hunter orange, wet peat umber, cool grey-white paper."
 }
