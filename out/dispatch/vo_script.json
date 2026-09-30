@@ -20,12 +20,12 @@
    ]
   },
   {
-   "text": "It said September first.",
+   "text": "Its A I answer said September first.",
    "idx": 1,
    "claims": [
     "c2"
    ],
-   "display": "It said September 1st."
+   "display": "Its AI answer said September 1st."
   },
   {
    "text": "So on September fifth she shot three snipe.",
@@ -36,24 +36,25 @@
    "display": "So on September 5th she shot three snipe."
   },
   {
-   "text": "But the wildlife trooper's report says the general season didn't open until October eighth.",
+   "text": "At home she looked up the state regulations and saw her mistake. She called troopers and turned herself in.",
    "idx": 3,
+   "claims": [
+    "c5",
+    "c8"
+   ]
+  },
+  {
+   "text": "The trooper's report says the general season opened October eighth.",
+   "idx": 4,
    "claims": [
     "c4"
    ],
-   "display": "But the wildlife trooper's report says the general season didn't open until October 8th."
+   "display": "The trooper's report says the general season opened October 8th."
   },
   {
-   "text": "So which page can a hunter trust?",
-   "idx": 4,
-   "claims": []
-  },
-  {
-   "text": "At home she looked up the rules, saw her mistake, and called troopers to turn herself in.",
+   "text": "So two pages disagreed. Which one can a hunter trust?",
    "idx": 5,
-   "claims": [
-    "c5"
-   ]
+   "claims": []
   },
   {
    "text": "That trooper ran her exact search. He got the same wrong answer.",
@@ -63,105 +64,98 @@
    ]
   },
   {
-   "text": "So the wrong answer came back twice.",
+   "text": "She still pleaded no contest and paid a hundred fifty dollars.",
    "idx": 7,
-   "claims": [
-    "c6"
-   ]
-  },
-  {
-   "text": "She pleaded no contest and paid a hundred fifty dollars.",
-   "idx": 8,
    "claims": [
     "c7"
    ],
-   "display": "She pleaded no contest and paid $150."
+   "display": "She still pleaded no contest and paid $150."
   },
   {
-   "text": "She told a reporter, I feel terrible.",
-   "idx": 9,
+   "text": "She told the Alaska Beacon, I feel terrible.",
+   "idx": 8,
    "claims": [
     "c8"
    ]
   },
   {
-   "text": "Public Safety spokesman Austin McDaniel thinks it's the first time A I has been cited. He expects more.",
-   "idx": 10,
+   "text": "State spokesman Austin McDaniel thinks it's the first time A I has been cited. He expects more.",
+   "idx": 9,
    "claims": [
     "c9",
     "c11"
    ],
-   "display": "Public Safety spokesman Austin McDaniel thinks it's the first time AI has been cited. He expects more."
+   "display": "State spokesman Austin McDaniel thinks it's the first time AI has been cited. He expects more."
   },
   {
    "text": "Weren't there warnings? There were.",
-   "idx": 11,
+   "idx": 10,
    "claims": [
     "c15"
    ]
   },
   {
-   "text": "Google's help page says A I answers may include mistakes. Check more than one place.",
-   "idx": 12,
+   "text": "Google's help page says A I answers may include mistakes, and to check more than one place.",
+   "idx": 11,
    "claims": [
     "c15"
    ],
-   "display": "Google's help page says AI answers may include mistakes. Check more than one place."
+   "display": "Google's help page says AI answers may include mistakes, and to check more than one place."
   },
   {
-   "text": "Google didn't respond to the Alaska Beacon's request for comment.",
-   "idx": 13,
+   "text": "Google didn't respond to the Beacon's request for comment.",
+   "idx": 12,
    "claims": [
     "c12"
    ]
   },
   {
    "text": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
-   "idx": 14,
+   "idx": 13,
    "claims": [
     "c10"
    ]
   },
   {
-   "text": "So she still paid. But that source has a catch.",
-   "idx": 15,
+   "text": "But that source has a catch.",
+   "idx": 14,
    "claims": [
-    "c7",
     "c13"
    ]
   },
   {
    "text": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
+   "idx": 15,
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "text": "So even the official page is a summary.",
    "idx": 16,
    "claims": [
     "c13"
    ]
   },
   {
-   "text": "So it's summaries stacked on the law itself.",
-   "idx": 17,
-   "claims": [
-    "c13"
-   ]
-  },
-  {
    "text": "The answer was on top. What counts sits underneath.",
-   "idx": 18,
+   "idx": 17,
    "claims": [
     "c4",
     "c10"
    ]
   },
   {
-   "text": "Fish and Game will mail you the regulations.",
-   "idx": 19,
+   "text": "Check the regulations and any emergency order. Fish and Game will mail you a copy.",
+   "idx": 18,
    "claims": [
-    "c14"
+    "c14",
+    "c10"
    ]
   },
   {
-   "text": "Before you hunt, which page do you trust?",
-   "idx": 20,
+   "text": "Before you hunt, what do you check?",
+   "idx": 19,
    "claims": []
   }
  ]
