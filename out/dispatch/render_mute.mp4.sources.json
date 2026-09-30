@@ -49,7 +49,7 @@
       "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
       "video-engine/src/Ep0919.tsx": "ef9a9007726f37d8a13bc6669fe62ef0beb48c44a0cbbede80e4b4a08edce12b",
       "video-engine/src/Ep0923.tsx": "39399b6feda141218a4a22e1217fd4277cdce2b6d54853924cc379d8c0e0cbfb",
-      "video-engine/src/Ep0930.tsx": "92ba677d3d93d595e16bcf2398849dd751bd72d41445879cddae5cfb69e90c31",
+      "video-engine/src/Ep0930.tsx": "511ed3df142327f39e0d667d8c0f598447cd0fa7f37d6f620791a409b0e03ee0",
       "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
       "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
       "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
@@ -121,12 +121,12 @@
     },
     "props": {
       "path": "/home/user/alaska-ai-weekly/out/dispatch/episode_props.json",
-      "sha256": "50b271655dd689028f7cdab53bcdf22dc717388c325322edef0e6106980b27ca"
+      "sha256": "34788cf4ca1450713fbc6722b927f59817e3cce964ac09e32990d0fe53b24370"
     },
     "composition": "Dispatch0930",
     "total": 4000,
     "chunks": 12,
     "browser_override": null
   },
-  "cache_key": "184baf9bc804fb4b41cd918355db7e6b3d81501fa71bb5fdfb915f2b34792efc"
+  "cache_key": "e43ce8a5d19b70e96f135c654a326791b443f6b4a882c3983699e7cdb42213cc"
 }
