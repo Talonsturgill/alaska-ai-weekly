@@ -1,100 +1,69 @@
 {
-  "run_date": "2026-09-23",
-  "window_reported_by_gate": 10,
-  "window_note": "last shipped dispatch 2026-09-19, four days ago. story_gate reports the audience has seen nothing in that time, so the skipped days are unspent inventory. Widened, not narrowed.",
-  "locked_story": {
-    "headline": "Alaska is having its biggest land-and-power argument in a generation about a thing whose size nobody has published",
-    "subject": "The Air Force is offering about 4,700 acres of Alaska federal land for commercial AI data center development, and no megawatt, water or project-size figure for those parcels exists in any readable public source.",
-    "found_at_rung": "in_window_sweep",
-    "locked_at": "2026-09-23",
-    "dedupe_check": "FRESH on entities Eielson Air Force Base, Salcha, Fairbanks North Star Borough, JBER, Clear Space Force Station, AI data center land lease, Air Force Installation Contracting Agency, Lisa Murkowski"
+ "run_date": "2026-09-30",
+ "locked_story": {
+  "headline": "A Google AI answer gave a Kodiak hunter the wrong snipe season and she was cited",
+  "found_at_rung": "in_window_sweep"
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 12
   },
-  "rungs": [
-    {
-      "rung": "in_window_sweep",
-      "attempted": true,
-      "found": true,
-      "note": "Four researchers across energy/grid/data-centers, science/environment, aviation/defense/policy and a community/business wildcard. Each capped at 20 WebSearch calls; all four reported the cap fully spent, with uncapped WebFetch on outlet indexes on top. The window was NORMAL to strong. This rung produced the locked story and four other viable candidates."
-    },
-    {
-      "rung": "outlet_index_sweep",
-      "attempted": true,
-      "found": true,
-      "note": "The wildcard researcher swept Alaska outlet front pages by WebFetch and read headlines: adn.com, alaskapublic.org, ktoo.org, kyuk.org, kucb.org, thecordovatimes.com, juneauempire.com, newsminer.com, peninsulaclarion.com, homernews.com, alaskajournal.com, anchoragepress.com, matsusentinel.com, plus the Alaska Native corporation newsrooms. BLOCKED, and recorded rather than hidden: alaskabeacon.com 403 on every URL (read through KTOO and Yahoo republications instead), newsminer.com 429, sitkasentinel.com 403, alaskajournal.com 503, every .af.mil host 403, sam.gov renders as a JavaScript shell. This rung surfaced the Mat-Su licence-plate-reader ban and the Walter story."
-    },
-    {
-      "rung": "widened_window",
-      "attempted": true,
-      "found": true,
-      "note": "Widened to 30 days on the science and energy beats. Surfaced the Permafrost Discovery Gateway lake-drainage work (Aug 29 / Sep 1), the boreal wildfire projection (Sep 2) and the NOAA/Microsoft Cook Inlet beluga acoustic models (Jun-Jul). Not needed, since the 10-day window produced a stronger story, but worked rather than skipped."
-    },
-    {
-      "rung": "carried_leads",
-      "attempted": true,
-      "found": false,
-      "note": "The 2026-09-19 worklog carried one forward item and it was a GATE defect, not a story lead: strip_name_check and say_it_show_it_check deadlocked on beat[\"shot\"]. Worked and fixed this run as the first commit, before any research returned. No story leads were carried."
-    },
-    {
-      "rung": "primary_source_mining",
-      "attempted": true,
-      "found": true,
-      "note": "SAM.gov solicitation AFCEC-26-R-0006 (reached through HigherGov's mirror; sam.gov itself would not render), NSF award search, DOE science.osti.gov, USAspending, federalregister.gov searched for Alaska, the akleg.gov bill tracker for SB 250, DNR's own preliminary decision, and the UAF/ACEP and ITA primary releases. This rung produced the solicitation number and the confirmed ABSENCE of any published load or water figure, which became the spine of the film."
-    },
-    {
-      "rung": "follow_up",
-      "attempted": true,
-      "found": true,
-      "note": "Checked for genuinely new developments on covered stories. DeepGreen has one (FERC accepted the full application September 4th, comments close November 2nd, intervenors now include the Kenai Peninsula Borough) and it was DELIBERATELY NOT USED, because a viewer would feel shown the DeepGreen story again. The Rainmaker cloud-seeding follow-up and the UA Regents AI policy follow-up were likewise checked and declined as repeats."
-    },
-    {
-      "rung": "pegged_explainer",
-      "attempted": true,
-      "found": true,
-      "note": "The floor rung, never reached in anger this run but worked so the ladder is honest: an evergreen explainer on what a data center actually needs from a grid, pegged to the Alaska AI Symposium at UAA on September 25th to 27th and the AI in Alaska Leadership Summit on the 28th. Held in reserve and not used."
-    }
-  ],
-  "candidates": [
-    {
-      "headline": "Air Force offers about 4,700 acres at JBER, Eielson and Clear for commercial AI data centers, and no load or water figure is public",
-      "published": "2026-09-15",
-      "verdict": "LOCKED",
-      "why": "In window, distinct from everything in thirty days, two independent outlets plus a near-primary solicitation record, a named resident with a verified quote, a senator on record, a filmable geography, a real two-sided argument, and a fact-checked ABSENCE that turned out to be the story."
-    },
-    {
-      "headline": "DNR proposes conveying nearly 20,000 acres near Houston to AIDEA for a district marketed for data centers",
-      "published": "2026-09-16",
-      "verdict": "FOLDED IN as the second map, pending its own validator",
-      "why": "Same argument on state ground rather than federal. Four local bodies unanimously opposed, five senators questioning legality, Houston votes October 8th. It escalates the locked story rather than competing with it."
-    },
-    {
-      "headline": "UAF ACUASI flew Olympic anti-doping blood samples 1,000 km out of Nenana, 8 hours 47 minutes",
-      "published": "2026-09-16",
-      "verdict": "DECLINED, held as a strong near-future lead",
-      "why": "dedupe.py returns FRESH and the organizations and events are entirely different from anything covered. But the payoff image, a village nurse sending samples out and medications flying back, is the payoff the September 11th Ryan Air rural-health-aviation dispatch already paid, twelve days ago. The mechanical check passes and the viewer's question does not. Declined on the viewer's question, which is the one that governs."
-    },
-    {
-      "headline": "An AI agent named Walter has written 4,500+ AlaskaNews.com stories with no human reporters, and Anchorage Press interviewed it",
-      "published": "2026-09-17",
-      "verdict": "DECLINED, queued as a strong lead",
-      "why": "Excellent, completely distinct, and the most Alaskan conversation of the week. Declined only because the land-and-power story is bigger this week and has a date a viewer can act on. This is the leading candidate for a near-future run."
-    },
-    {
-      "headline": "Mat-Su Borough Assembly unanimously bans borough use of AI licence plate readers it has never owned",
-      "published": "2026-09-21",
-      "verdict": "DECLINED, used as texture",
-      "why": "Striking and fresh. It lands in this film only as context, that the same Assembly voted unanimously on two AI questions within about a week."
-    },
-    {
-      "headline": "UAF IARC shows Indigenous observations materially improve an Arctic Ocean and sea-ice model",
-      "published": "2026-09-18",
-      "verdict": "DECLINED",
-      "why": "Not on any exclusion list, but the SIBLING LinkedIn carousel channel shipped this story on 2026-09-19. A viewer following both channels would be shown it twice. Also the AI angle is a numerical ocean-ice model rather than machine learning, and overstating it would be the disrespectful version of a story that deserves care."
-    },
-    {
-      "headline": "Chugach Electric opens Alaska's first time-of-use pricing pilot, 10.8 cents overnight against 21.6 by day",
-      "published": "2026-09-18",
-      "verdict": "DECLINED",
-      "why": "No AI or automation angle. Chugach's own description is behavioral, not algorithmic, and no smart-meter or automation claim appears anywhere in the coverage. Manufacturing one would be dishonest."
-    }
-  ]
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "candidates_found": 6
+  },
+  {
+   "rung": "widened_window",
+   "attempted": true,
+   "candidates_found": 5
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": true,
+   "candidates_found": 2
+  }
+ ],
+ "search_budget_exhausted": true,
+ "uncapped_sweep_done": true,
+ "candidates": [
+  {
+   "name": "Kodiak snipe AI citation (KTOO/Beacon 9-28)"
+  },
+  {
+   "name": "UAF ACUASI 1000km blood drone"
+  },
+  {
+   "name": "Petersburg data center moratorium 3-3"
+  },
+  {
+   "name": "Governor candidates on data centers"
+  },
+  {
+   "name": "FNSB assembly candidates data centers"
+  },
+  {
+   "name": "Walter AI news reporter"
+  },
+  {
+   "name": "NSF $4.7M UAA/UAF AI bio-refinery"
+  },
+  {
+   "name": "NSF I-Corps AI bathymetry Trochim"
+  },
+  {
+   "name": "Permafrost lakes AI Liljedahl"
+  },
+  {
+   "name": "Penn State digital twin Utqiagvik permafrost"
+  },
+  {
+   "name": "E-Rate rural schools"
+  },
+  {
+   "name": "UA AI symposium"
+  }
+ ]
 }
