@@ -114,6 +114,22 @@ const SlateSurface: React.FC<{f: number}> = ({f}) => (
       const h = hash(i + 9);
       return <circle key={i} cx={h % 1080} cy={(h >>> 8) % 1920} r={1.2 + (h % 3)} fill={P.paper4} opacity={0.18} />;
     })}
+    {/* the table's own objects, so the fog is never the whole story: a notepad, a pen, a charging cable, a cup ring */}
+    <g transform="translate(150,640) rotate(-8)">
+      <rect x={-6} y={8} width={290} height={380} fill={P.ink} opacity={0.25} />
+      <rect x={0} y={0} width={290} height={380} fill={P.paper} stroke={P.ink} strokeWidth={3} />
+      <rect x={0} y={0} width={290} height={46} fill={P.slate} />
+      <Glyphs x={26} y={84} w={230} lines={8} gap={34} seed={71} opacity={0.32} />
+    </g>
+    <g transform="translate(930,1230) rotate(58)">
+      <rect x={-6} y={6} width={330} height={26} rx={13} fill={P.ink} opacity={0.25} />
+      <rect x={0} y={0} width={330} height={26} rx={13} fill={P.peat} stroke={P.ink} strokeWidth={3} />
+      <rect x={20} y={5} width={220} height={4} rx={2} fill={P.cream} opacity={0.5} />
+    </g>
+    <path d="M900,1400 C820,1300 760,1260 700,1180" fill="none" stroke={P.ink} strokeWidth={9} opacity={0.75} strokeLinecap="round" />
+    <path d="M900,1400 C820,1300 760,1260 700,1180" fill="none" stroke={P.paper4} strokeWidth={2} opacity={0.5} strokeLinecap="round" />
+    <circle cx={930} cy={560} r={92} fill="none" stroke={P.paper5} strokeWidth={9} opacity={0.32} />
+    <circle cx={930} cy={560} r={86} fill="none" stroke={P.fogHi} strokeWidth={3} opacity={0.4} />
   </g>
 );
 
@@ -238,7 +254,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <rect x={0} y={900} width={W} height={1020} fill="url(#ground)" opacity={0.0} />
         <rect x={0} y={880} width={W} height={1040} fill="#6F7C6C" />
         <rect x={0} y={880} width={W} height={1040} fill="url(#slate)" opacity={0.28} />
-        {Array.from({length: 90}, (_, i) => {
+        {[0, 1, 2, 3].map((i) => (
+          <ellipse key={`pool${i}`} cx={180 + i * 260 + (hash(i) % 60)} cy={1240 + (i % 2) * 130} rx={130 + (hash(i + 4) % 50)} ry={28} fill={P.fogHi} opacity={0.55} />
+        ))}
+        {Array.from({length: 150}, (_, i) => {
           const h = hash(i + 41);
           const x = (h % 1180) - 50 + Math.sin(f / 40 + i) * 3, y = 930 + ((h >>> 9) % 700);
           const lean = ((h >>> 3) % 30) - 15;
@@ -441,16 +460,19 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <rect x={-195} y={-385} width={390} height={780} fill={P.paper} stroke={P.ink} strokeWidth={3} />
           <Glyphs x={-160} y={-330} w={310} lines={8} gap={34} seed={5} />
           <g opacity={ink} transform="translate(0,150)">
-            <rect x={-180} y={-32} width={360} height={64} fill="none" stroke={P.slate} strokeWidth={4} opacity={0.9} />
-            <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={P.slate}>NO CONTEST · $150 FINE</text>
+            <rect x={-180} y={-32} width={360} height={64} fill="none" stroke={P.peat} strokeWidth={6} opacity={1} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={P.peat}>NO CONTEST · $150 FINE</text>
           </g>
         </g>
         <path d="M345,1310 l60,-8 l-8,44 z" fill={P.orange} stroke={P.orangeLo} strokeWidth={3} />
         <ellipse cx={540} cy={1058} rx={210 * slam} ry={26 * slam} fill={P.ink} opacity={0.4 * slam * (1 - lift)} />
         <g transform={`translate(540,${stampY - 720 * lift}) `}>
-          <rect x={-40} y={-260} width={80} height={230} rx={30} fill={P.peat} stroke={P.ink} strokeWidth={4} />
-          <path d="M-30,-250 V-40" stroke={P.cream} strokeWidth={3} opacity={0.5} />
-          <rect x={-150} y={-34} width={300} height={70} rx={10} fill={P.ink} stroke={P.cream} strokeWidth={2} />
+          <circle cx={0} cy={-250} r={46} fill={P.peat} stroke={P.ink} strokeWidth={4} />
+          <rect x={-34} y={-250} width={68} height={210} rx={24} fill={P.peatHi} stroke={P.ink} strokeWidth={4} />
+          <path d="M-22,-240 V-50" stroke={P.cream} strokeWidth={3} opacity={0.5} />
+          <rect x={-170} y={-40} width={340} height={82} rx={12} fill={P.peat} stroke={P.ink} strokeWidth={4} />
+          <rect x={-170} y={20} width={340} height={22} rx={8} fill={P.ink} />
+          <path d="M-160,-34 H160" stroke={P.cream} strokeWidth={3} opacity={0.6} />
         </g>
         <g opacity={rise}>
           <path d={`M0,${1500 - 420 * rise} H1080 V1920 H0 Z`} fill={P.peat} />
@@ -511,7 +533,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const back = ease(f, bAt(20) - 4, 60);
     const pin2 = pop(21, 12);
     zoom = 1.42 - 0.42 * back;
-    const blanks = [[190, 660], [160, 940], [330, 1150], [930, 800], [900, 1120]];
+    const blanks = [[170, 640], [150, 900], [170, 1170], [930, 660], [940, 930], [930, 1200]];
     const Pin: React.FC<{x: number; y: number; k?: number}> = ({x, y, k = 1}) => (
       <g transform={`translate(${x},${y - 30 * (1 - k)})`} opacity={clamp01(k * 3)}>
         <ellipse cx={5} cy={7} rx={11} ry={5} fill={P.ink} opacity={0.4} />
@@ -535,7 +557,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <text x={0} y={30} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={38} fill={P.peat}>WE HAVE SEEN AI CITED"</text>
           <Pin x={0} y={-120} k={pin1} />
         </g>
-        <g transform={`translate(760,${1030}) rotate(${3})`} opacity={clamp01(pin2 * 2)}>
+        <g transform={`translate(540,${1110}) rotate(${3})`} opacity={clamp01(pin2 * 2)}>
           <rect x={-252} y={-100} width={520} height={230} fill={P.ink} opacity={0.3} />
           <rect x={-260} y={-112} width={520} height={230} fill={P.paper} stroke={P.ink} strokeWidth={3} />
           <text x={0} y={-22} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={42} fill={P.peat}>"I EXPECT WE'LL SEE</text>
@@ -856,13 +878,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <text x={22} y={9} fontFamily={MONO} fontWeight={800} fontSize={25} fill={P.peat}>CALL ADF&G · 907-465-4190</text>
           </g>
         </g>
-        <g transform={`translate(${1300 - 700 * mail},${880 - 60 * mail}) rotate(${-6 + 6 * mail})`} opacity={clamp01(mail * 3)}>
+        <g transform={`translate(${1300 - 500 * mail},${1190 - 20 * mail}) rotate(${-6 + 6 * mail})`} opacity={clamp01(mail * 3)}>
           <rect x={-156} y={-96} width={340} height={210} fill={P.ink} opacity={0.35} />
           <rect x={-160} y={-104} width={340} height={210} fill={P.paper} stroke={P.ink} strokeWidth={4} />
           <rect x={-160} y={-104} width={340} height={44} fill={P.peat} />
           <Glyphs x={-130} y={-30} w={250} lines={3} gap={30} seed={33} />
         </g>
-        <g transform={`translate(${-150 + 330 * slip},${1130}) rotate(${-4 + 4 * slip})`} opacity={clamp01(slip * 3)}>
+        <g transform={`translate(${-150 + 300 * slip},${1010}) rotate(${-4 + 4 * slip}) scale(0.8)`} opacity={clamp01(slip * 3)}>
           <rect x={-146} y={-80} width={300} height={170} fill={P.ink} opacity={0.35} />
           <rect x={-150} y={-88} width={300} height={170} fill={P.paper} stroke={P.peat} strokeWidth={5} />
           <rect x={-150} y={-88} width={300} height={54} fill={P.peat} />

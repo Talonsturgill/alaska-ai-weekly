@@ -43,7 +43,8 @@ export const HandSil: React.FC<{
   );
   return (
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${flip ? -s : s},${s})`}>
-      {sleeve && <path d="M-70,-6 L-84,420 L84,420 L70,-6 Z" fill={fill} />}
+      {sleeve && <path d="M-68,-6 L-100,300 L100,300 L68,-6 Z" fill={fill} />}
+      {sleeve && <path d="M-66,60 L-96,300 L-70,300 L-52,60 Z" fill={P.cream} opacity={0.18} />}
       <g transform="translate(-4,-4)" opacity={0.85}>{hand(P.cream)}</g>
       {hand(fill)}
     </g>
