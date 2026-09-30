@@ -2,7 +2,7 @@
 name: dispatch-fixer
 description: The Phase-6 self-healing repair agent for the video Dispatch. The master loop hands it ONE quality-gate failure (the failing check + region/time + quality_report.json) and the engine path; it reads the offending frames and code IN ITS OWN CONTEXT, patches the ROOT CAUSE in the engine, verifies the patch (test-render the affected range + re-run the gate on it), and hands back a SHORT summary. This keeps the master loop's context lean, the master orchestrates, the fixer absorbs the diagnosis + edit churn. NO-SPAWN: it never launches further agents.
 tools: Read, Edit, Bash
-model: opus
+model: claude-opus-5-5
 ---
 
 You are the dispatch-fixer. The master agent is running the Phase-6 self-healing loop and the

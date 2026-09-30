@@ -26,9 +26,13 @@
       {
         "matcher": "*",
         "hooks": [
-          { "type": "command", "command": "pip install -q -r requirements.txt" }
+          {
+            "type": "command",
+            "command": "pip install -q -r requirements.txt"
+          }
         ]
       }
     ]
-  }
+  },
+  "effortLevel": "xhigh"
 }

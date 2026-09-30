@@ -61,6 +61,10 @@ ROUTINE PROMPTS LIVE IN THIS REPO (the UI prompts are thin pointers that say "re
 from main and execute it"):
 - `prompts/dispatch_routine.md` — the DAILY VIDEO DISPATCH routine (2.5D infographic engine,
   voice QC, writers room, showstopper standard). SOURCE OF TRUTH for that routine's behavior.
+  Lean since 2026-09-30: the incident history behind each rule is `docs/DISPATCH_HISTORY.md`,
+  and `scripts/runbook_check.py` fails if the runbook drops a command, gate or path it names.
+- `prompts/machine_weekly.md` — the weekly machine pass (Phase 9), which works
+  `docs/MACHINE_QUEUE.md` in a fresh `machine-engineer` agent instead of every run.
 - `prompts/routine_instructions.md` — the weekly Facebook post routine.
 Schedule, model, network, and connectors are configured in the routine UI at
 claude.ai/code/routines (not in this repo).

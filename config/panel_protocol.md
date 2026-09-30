@@ -60,6 +60,25 @@ and ruinous for a stable score.
 - Never re-grade a cut that has not been re-rendered. A re-grade of identical bytes measures
   the panel, and this run did it repeatedly.
 
+## How many judges, and when (owner, 2026-09-30)
+
+The owner's call: "one judge for early rounds", with three judges still deciding the ship. The
+reason is cost. A three-judge round is the most expensive thing a run does, and most rounds were
+spent on films nowhere near the bar, where one careful judge finds the same named defects.
+
+- **Early rounds use ONE standing seat.** The same seat grades every early round and carries its
+  own previous card, so the re-grade rule above applies to it round to round. It grades from the
+  evidence pack alone, with the anchors, against the bar read from the rubric.
+- **When that seat's score clears the bar with no hard blocker, convene all three.** The standing
+  seat plus two more, every one scoring from the pack before seeing the change list. The MEDIAN of
+  the three is the only verdict `ship_gate.py record` accepts, exactly as before.
+- **If the three-judge panel fails, stay at three.** Fix the union of the named defects and
+  re-grade with all three seats carrying their cards until the median clears. A film that has
+  reached the ship decision is decided by the panel, not handed back to one judge.
+- One judge is noisier than a median of three, which is why a single judge never ships a film. The
+  0.4 drop rule above applies to the median; a single seat that drops more than 1.0 on a cut with
+  no reverted change is re-run once before it is acted on.
+
 ## The rule this protocol does NOT contain
 
 Nothing here permits a run to stop, to ship below bar, or to decide a score is "really"

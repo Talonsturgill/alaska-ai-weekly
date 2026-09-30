@@ -291,7 +291,7 @@ ALASKAIHQ_LI = ('<li><b>Every Alaska + AI decision and update we track, in one p
 
 
 def render(post, poster_html, vids, voice, music, sources, score, note, temporary, date_str, title, upgrades,
-           sourcing_note="", voice_scorecard=""):
+           sourcing_note="", voice_scorecard="", cost_line=""):
     def esc(x):
         return (x or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     src = "\n".join(
@@ -391,6 +391,11 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
             f'<ul style="margin:5px 0 0;padding-left:19px;font-size:12.5px;line-height:1.45;">'
             f'{up_items}</ul>'
         )
+    if cost_line:
+        run_notes_parts.append(
+            f'<div style="font-size:12.5px;line-height:1.5;color:#344957;'
+            f'margin-top:{"10px" if run_notes_parts else "0"};"><b>Run cost</b> &middot; {esc(cost_line)}</div>'
+        )
     run_notes_html = (
         f'<h2 style="{S["h2"]}">Run notes</h2>'
         f'<div style="{S["score"]}">{"".join(run_notes_parts)}</div>'
@@ -419,6 +424,16 @@ def render(post, poster_html, vids, voice, music, sources, score, note, temporar
   {run_notes_html}
   <div class="foot" style="{S['foot']}">Draft only &middot; not sent or posted. {esc(note)}</div>
 </div></body></html>"""
+
+def load_cost_line(path):
+    """The cost report's own sentence. A missing or unreadable report costs the line, never the draft."""
+    if not path:
+        return ""
+    try:
+        return (json.loads(Path(path).read_text()).get("line") or "").strip()
+    except (OSError, ValueError):
+        return ""
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -455,6 +470,9 @@ def main():
                     help="what Phase 8 actually FIXED/upgraded this run, one item per line (not "
                          "suggestions -- changes committed this run). Rendered as the 'Upgrades "
                          "shipped this run' section so the owner sees what self-improved.")
+    ap.add_argument("--cost-json", default="",
+                    help="this run's runs/<date>/cost.json from scripts/run_cost.py report. Its line "
+                         "goes in Run notes, so the owner sees what each run cost and where it went.")
     ap.add_argument("--temporary", action="store_true", help="flag download links as temporary (~1h)")
     ap.add_argument("--date", default=dt.date.today().isoformat()); ap.add_argument("--title", default="")
     ap.add_argument("--to", required=True, help="Actual email address from the connected Gmail profile")
@@ -502,7 +520,7 @@ def main():
                  "must list every source inline (no 'see the repo' pointers). Fix sources.json.")
     html = render(post, poster_html, {"vertical": a.video_url_vertical, "square": a.video_url_square},
                   a.voice or "(unset)", a.music or "(unset)", sources, a.score, a.note, a.temporary, a.date, a.title,
-                  a.upgrades, sourcing_note, voice_scorecard)
+                  a.upgrades, sourcing_note, voice_scorecard, load_cost_line(a.cost_json))
     # Gate the complete decoded draft copy too, not only post.txt. Template labels
     # and caller-supplied notes are reader-visible prose under the same house rules.
     from visible_copy_check import check_email_copy
