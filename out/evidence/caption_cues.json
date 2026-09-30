@@ -1,106 +1,201 @@
 {
  "note": "every open-caption cue in the delivered cut, in order, as built into episode_props.json and rendered by the episode. Times are seconds from the first frame. Grade caption text against THIS, not against the 14 contact stills, which sample only a fraction of the runtime.",
- "count": 20,
+ "count": 39,
  "cues": [
   {
    "start": 0.0,
-   "end": 6.5,
-   "text": "The Air Force is offering about 4,700 acres of Alaska for AI data centers."
+   "end": 2.69,
+   "text": "A Kodiak woman asked Google when"
   },
   {
-   "start": 7.3,
-   "end": 10.7,
-   "text": "Some sits at Eielson Air Force Base, outside Fairbanks,"
+   "start": 2.72,
+   "end": 4.0,
+   "text": "snipe season opens."
   },
   {
-   "start": 11.18,
-   "end": 13.36,
-   "text": "where bills are among the nation's highest."
+   "start": 5.3,
+   "end": 6.99,
+   "text": "She told troopers its AI"
   },
   {
-   "start": 14.36,
-   "end": 21.24,
-   "text": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say."
+   "start": 7.02,
+   "end": 9.22,
+   "text": "answer said September first."
   },
   {
-   "start": 22.28,
-   "end": 25.8,
-   "text": "Nothing's awarded. Alaskans took positions anyway."
+   "start": 10.02,
+   "end": 13.46,
+   "text": "So on September fifth she shot three snipe."
   },
   {
-   "start": 26.74,
-   "end": 31.72,
-   "text": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice."
+   "start": 14.54,
+   "end": 16.53,
+   "text": "At home she opened the state"
   },
   {
-   "start": 32.54,
-   "end": 37.44,
-   "text": "Swap that for a data center's hum, she said, and we've lost our way."
+   "start": 16.56,
+   "end": 19.24,
+   "text": "regulations and saw her mistake."
   },
   {
-   "start": 38.56,
-   "end": 42.96,
-   "text": "Fairbanks asked for a pause, on both its state and federal lists."
+   "start": 20.42,
+   "end": 23.34,
+   "text": "She called troopers and turned herself in."
   },
   {
-   "start": 44.06,
-   "end": 48.9,
-   "text": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base."
+   "start": 25.18,
+   "end": 27.91,
+   "text": "The trooper's report says the general"
   },
   {
-   "start": 49.76,
-   "end": 52.92,
-   "text": "She didn't say the land. She said the power."
+   "start": 27.94,
+   "end": 30.26,
+   "text": "season opened October eighth."
   },
   {
-   "start": 53.82,
-   "end": 57.94,
-   "text": "The Air Force calls it a partnership supporting its Airmen and Guardians."
+   "start": 30.6,
+   "end": 33.66,
+   "text": "So the answer and the report disagreed."
   },
   {
-   "start": 59.04,
-   "end": 65.52,
-   "text": "Your bill is wires and fuel. The wires split across everyone, so that half is tall."
+   "start": 34.52,
+   "end": 37.16,
+   "text": "That trooper ran her exact search."
   },
   {
-   "start": 66.52,
-   "end": 70.86,
-   "text": "A giant customer helps pay for them either way. That half thins."
+   "start": 38.32,
+   "end": 40.16,
+   "text": "He got the same wrong answer."
   },
   {
-   "start": 71.84,
-   "end": 78.1,
-   "text": "The fuel bites. A big load either brings its own power, or competes for what's here."
+   "start": 41.28,
+   "end": 43.6,
+   "text": "So which page can a hunter trust?"
   },
   {
-   "start": 78.76,
-   "end": 83.52,
-   "text": "So it turns on how big. And how big is what nobody has published."
+   "start": 44.32,
+   "end": 46.93,
+   "text": "She pleaded no contest and paid"
   },
   {
-   "start": 84.68,
-   "end": 89.32,
-   "text": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F-35s came."
+   "start": 46.96,
+   "end": 47.68,
+   "text": "a hundred fifty dollars."
   },
   {
-   "start": 90.3,
-   "end": 94.8,
-   "text": "But a fighter wing comes with a budget. A data center comes with an appetite."
+   "start": 49.04,
+   "end": 53.44,
+   "text": "She told the Alaska Beacon, I feel terrible."
   },
   {
-   "start": 95.78,
-   "end": 99.8,
-   "text": "So the ask isn't megawatts. Nobody can publish those yet."
+   "start": 55.74,
+   "end": 57.83,
+   "text": "State spokesman Austin McDaniel"
   },
   {
-   "start": 100.74,
-   "end": 105.12,
-   "text": "Ask for the date. Does that number go public before the land is leased?"
+   "start": 57.86,
+   "end": 59.53,
+   "text": "says he thinks it's the first"
   },
   {
-   "start": 106.02,
-   "end": 109.14,
-   "text": "The terms aren't written. That's the opening."
+   "start": 59.56,
+   "end": 61.14,
+   "text": "time AI has been cited."
+  },
+  {
+   "start": 61.98,
+   "end": 62.92,
+   "text": "He expects more."
+  },
+  {
+   "start": 64.54,
+   "end": 65.6,
+   "text": "Weren't there warnings?"
+  },
+  {
+   "start": 66.54,
+   "end": 67.24,
+   "text": "There were."
+  },
+  {
+   "start": 68.34,
+   "end": 71.96,
+   "text": "Google's help page says AI answers may include mistakes,"
+  },
+  {
+   "start": 71.96,
+   "end": 74.1,
+   "text": "and to check more than one place."
+  },
+  {
+   "start": 75.26,
+   "end": 77.39,
+   "text": "Google didn't respond to the Beacon's"
+  },
+  {
+   "start": 77.42,
+   "end": 79.56,
+   "text": "request for comment on the wrong answer."
+  },
+  {
+   "start": 80.78,
+   "end": 84.84,
+   "text": "McDaniel says the one source of truth is Fish and Game's regulations"
+  },
+  {
+   "start": 84.84,
+   "end": 86.1,
+   "text": "and emergency orders."
+  },
+  {
+   "start": 86.96,
+   "end": 88.64,
+   "text": "But that source has a catch."
+  },
+  {
+   "start": 89.9,
+   "end": 91.91,
+   "text": "Fish and Game's own page says"
+  },
+  {
+   "start": 91.94,
+   "end": 93.93,
+   "text": "its online regulations are simplified,"
+  },
+  {
+   "start": 93.96,
+   "end": 96.98,
+   "text": "and emergency orders can override them."
+  },
+  {
+   "start": 97.4,
+   "end": 101.58,
+   "text": "So even the official page is a simplified summary of state law."
+  },
+  {
+   "start": 102.88,
+   "end": 108.43,
+   "text": "The answer was on top. What counts sits underneath, the regulations"
+  },
+  {
+   "start": 108.43,
+   "end": 110.42,
+   "text": "and any emergency order."
+  },
+  {
+   "start": 111.3,
+   "end": 115.2,
+   "text": "Check them first. Fish and Game will mail you the regulations,"
+  },
+  {
+   "start": 115.2,
+   "end": 116.9,
+   "text": "or you can call the office."
+  },
+  {
+   "start": 117.44,
+   "end": 120.48,
+   "text": "Before you hunt, what do you check?"
   }
  ]
 }

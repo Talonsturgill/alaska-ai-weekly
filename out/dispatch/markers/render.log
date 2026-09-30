@@ -1,0 +1,16 @@
+parse_engine: 97 source file(s), 0 failure(s), 0.432s (syntax only; no files written)
+  validated chunk cache: out/dispatch/chunkcache/19cc6806f8ab2a4ce2f1ec0b1c6affe5f8cc5569d9c2c0505c577fb142140de2
+parallel render: Dispatch0930  4000 frames  12 chunks, 4 at a time
+  chunk 0: frames 0-333
+  chunk 1: frames 334-667
+  chunk 2: frames 668-1001
+  chunk 3: frames 1002-1335
+  chunk 4: frames 1336-1669
+  chunk 5: frames 1670-2003
+  chunk 6: frames 2004-2337
+  chunk 7: frames 2338-2671
+  chunk 8: frames 2672-3005
+  chunk 9: frames 3006-3339
+  chunk 10: frames 3340-3673
+  chunk 11: frames 3674-3999
+  OK  /home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4  4000 frames  33M

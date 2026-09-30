@@ -3,21 +3,22 @@
   "fails": [],
   "warns": [],
   "metrics": {
-    "chars": 1717,
-    "hook": "A Google AI answer told a Kodiak hunter snipe season had already started. It hadn't, and it cost her $150.",
-    "hook_len": 106,
+    "chars": 1676,
+    "hook": "A Google AI answer gave a Kodiak hunter the wrong snipe season, according to a trooper's affidavit. It cost her $150.",
+    "hook_len": 117,
     "hashtags": [
+      "#ArtificialIntelligence",
       "#Alaska",
-      "#AI",
-      "#Hunting",
-      "#AlaskaAI"
+      "#Kodiak",
+      "#AIOverviews",
+      "#AlaskaHunting"
     ],
-    "n_hashtags": 4,
+    "n_hashtags": 5,
     "emoji": 0,
     "unicode_bold": 0,
     "bullet_lines": 0,
     "sentence_initial_but": 0,
-    "commas_per_100w": 1.97,
+    "commas_per_100w": 3.56,
     "passes": true
   }
 }

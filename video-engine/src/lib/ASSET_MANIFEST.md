@@ -856,3 +856,9 @@ flow high, gate open and spill high, and the picture says it without a caption.
   silhouette used by the absence or simulation grammar must carry the WHOLE
   subject. The twin's first pass was a rounded dome and read as an egg. It now
   carries cap, shoulders, chest window, both arms and both boots.
+
+### Grown 2026-09-30 ("The Answer on Top")
+- `lib/stack.tsx`: `P` palette, `HandSil` (faceless hand and sleeve silhouette, used so a private
+  individual is never drawn with a face), `AnswerCard`, `DateTag`, `LabelSheet`, `Binder`.
+- `lib/focus.ts`: `blurAt`, `valueLadder`, `passAlpha`, `perspScale`; self test
+  `scripts/focus_check.mjs`.

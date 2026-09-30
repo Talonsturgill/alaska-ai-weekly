@@ -315,6 +315,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <rect x={0} y={0} width={540} height={680} fill={P.ink} opacity={0.62 * open} />
           <g filter="url(#soft6)" opacity={0.6 * open}>
             <rect x={40} y={50} width={460} height={580} fill={P.paper3} />
+            <path d="M40,330 L500,120 V240 L40,470 Z" fill={P.lamp} opacity={0.22} />
           </g>
           <path d={`M540,0 L${540 - 40 * open},${10} L${540 - 40 * open},${670} L540,680 Z`} fill={P.paper4} opacity={0.6} />
           <rect x={0} y={0} width={540} height={680} rx={8} fill="none" />
@@ -461,7 +462,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <Glyphs x={-160} y={-330} w={310} lines={8} gap={34} seed={5} />
           <g opacity={ink} transform="translate(0,150)">
             <rect x={-180} y={-32} width={360} height={64} fill="none" stroke={P.peat} strokeWidth={6} opacity={1} />
-            <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={P.peat}>NO CONTEST · $150 FINE</text>
+            <path d="M-140,-8 H140 M-140,14 H70" stroke={P.peat} strokeWidth={9} strokeLinecap="round" opacity={0.85} />
           </g>
         </g>
         <path d="M345,1310 l60,-8 l-8,44 z" fill={P.orange} stroke={P.orangeLo} strokeWidth={3} />
@@ -499,9 +500,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g transform="translate(420,1000)">
           <path d="M-190,340 Q-180,120 -70,70 L-30,50 Q-42,20 -44,-20 Q-70,-24 -74,-46 Q-96,-140 0,-176 Q92,-170 96,-92 Q112,-72 118,-56 L96,-40 Q100,-22 92,0 Q84,30 62,46 L70,90 Q210,110 250,340 Z" fill={P.ink} />
           <path d="M96,-92 Q112,-72 118,-56 L96,-40 Q100,-22 92,0 Q84,30 62,46" fill="none" stroke={P.cream} strokeWidth={4} opacity={0.75} />
+          <path d="M-190,340 Q-180,120 -70,70 L-30,50 M62,46 L70,90 Q210,110 250,340" fill="none" stroke={P.cream} strokeWidth={5} opacity={0.6} />
         </g>
         <ellipse cx={540 + 6 * breathe} cy={960} rx={70 + 30 * breathe} ry={44 + 16 * breathe} fill={P.paper} opacity={0.14 + 0.1 * breathe} />
-        <rect x={150} y={380} width={780} height={960} fill={P.paper} opacity={0.2} />
+        <rect x={150} y={380} width={780} height={960} fill={P.paper} opacity={0.34} />
         {Array.from({length: 18}, (_, i) => {
           const h = hash(i + 61);
           const x = 190 + (h % 700), y0 = 420 + ((h >>> 8) % 500);
@@ -875,7 +877,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <path d="M-12,14 V666" stroke={P.cream} strokeWidth={2.5} opacity={0.55} />
           <g transform={`translate(${540 - 250 * tab + 40},${400})`} opacity={clamp01(tab * 3)}>
             <rect x={0} y={-28} width={440} height={56} rx={6} fill={P.paper} stroke={P.ink} strokeWidth={3} />
-            <text x={22} y={9} fontFamily={MONO} fontWeight={800} fontSize={25} fill={P.peat}>CALL ADF&G · 907-465-4190</text>
+            <path d="M22,0 H330 M22,16 H240" stroke={P.peat} strokeWidth={7} strokeLinecap="round" opacity={0.8} />
           </g>
         </g>
         <g transform={`translate(${1300 - 500 * mail},${1190 - 20 * mail}) rotate(${-6 + 6 * mail})`} opacity={clamp01(mail * 3)}>

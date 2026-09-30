@@ -1,17 +1,23 @@
-A Google AI answer told a Kodiak hunter snipe season had already started. It hadn't, and it cost her $150.
+A Google AI answer gave a Kodiak hunter the wrong snipe season, according to a trooper's affidavit. It cost her $150.
 
-The Alaska Beacon reported it this week. She asked Google when snipe season opens, and according to the trooper's report the answer said September 1st. She shot three snipe on September 5th. The report says the general season didn't open until October 8th. At home she read the state regulations, saw her mistake and called troopers herself.
+She turned herself in. Then the trooper ran her exact search and got the same wrong answer.
 
-Then the trooper ran her exact search and got the same wrong answer.
+A search box shouldn't outrank the state's own regulation as the first answer a hunter sees.
 
-I think she's the most useful person in this story. Her self-report is why we can see a wrong AI answer repeat instead of guessing that it does. A state spokesman told the Beacon he thinks it's the first time AI has been cited in a case like this. He expects more.
+She searched "snipe season" on her phone, and Google told her it began September 1st. She shot three snipe on September 5th. That is per the affidavit, as the Alaska Beacon reported it.
 
-Weren't there warnings? There were. Google's own help page says AI answers may include mistakes and to check more than one place. Google didn't respond to the Beacon. The state's line is just as clear. The one source of truth is Fish and Game's regulations and emergency orders.
+The affidavit says snipe weren't legal to take under the general season until October 8th. At home she dug into the state regulations, learned the season hadn't opened and called troopers.
 
-Here is the part I keep coming back to. Fish and Game's own online page says its regulations are simplified and that emergency orders can override them. So even the official page is a summary. What counts sits underneath. Read the regulations and any emergency order before you go out. Fish and Game will mail you the regulations, and its office takes calls.
+Austin McDaniel, a Department of Public Safety spokesman, told the Beacon it's the first time he thinks they've seen AI cited. He expects more of it.
 
-I'm not against AI answers. I want Alaskans to win with them. A good answer to a hunting question would name its source and point to the emergency orders. Until then, treat the answer on top as a lead and not as the rule.
+Google's own help page says AI responses may include mistakes and tells users to check important info in more than one place. Google didn't respond to the Beacon.
 
-Before you hunt, what do you check?
+McDaniel put it plainly. The one source of truth for a hunt is Fish and Game's regulations and emergency orders.
 
-#Alaska #AI #Hunting #AlaskaAI
+Yet Fish and Game's own online page says its regulations are simplified and that emergency orders can take precedence. Printed copies are available by phone, email or the nearest office.
+
+I want AI answers that work for Alaskans out on the land. Until they show the regulation and emergency order they came from, treat the answer on top as a lead and not as the rule.
+
+Hunters, what is the last thing you double-checked in the field because a phone answer looked off, and where did you check it?
+
+#ArtificialIntelligence #Alaska #Kodiak #AIOverviews #AlaskaHunting

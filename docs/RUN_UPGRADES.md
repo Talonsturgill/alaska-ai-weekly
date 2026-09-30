@@ -3724,3 +3724,26 @@ in the historical `Episode.tsx` and none in this run's episode. They are real an
 else's film. The fix is to measure those four plates against their strings and widen them, which
 needs the episode opened and re-rendered to verify, and re-rendering a shipped historical episode
 is not this run's business.
+
+## 2026-09-30 ("The Answer on Top")
+
+**`caption_band_check.py` was grading the wrong film.** `default_targets` globbed
+`Ep*.tsx`-style names that also matched `Episode.tsx`, so on this run the gate silently graded a
+July film and reported clean while never opening the current episode. The glob is now
+`Ep[0-9][0-9][0-9][0-9].tsx`. Repeat-offender class: a gate pointed at the other file.
+
+**`lib/focus.ts` (new) and `lib/stack.tsx` (new).** `focus.ts` holds depth-of-field helpers
+(`blurAt`, `valueLadder`, `passAlpha`, `perspScale`) with a hermetic self test in
+`scripts/focus_check.mjs`. `stack.tsx` holds the tabletop kit this film needed: `HandSil`,
+`AnswerCard`, `DateTag`, `LabelSheet`, `Binder`, plus the palette. Registered in ASSET_MANIFEST.
+
+**Per-run mix and evidence data.** `dispatch_mix.py` (`_PERFORMANCE`, `BED_ARC`) and
+`build_evidence.py` (`MOVES`) carry one film's event list each. They must be rewritten per run;
+both now carry this run's date so a stale list is visible.
+
+**Measured, not fixed.** The narration paced at about 2.0 words per second against the routine's
+200 to 220 words per minute band, so a 219-word script synthesized to 93 to 105s and had to be
+lengthened to 242 words for a 120s film. Write to the pace, not the band.
+
+**Known limits, disclosed.** Single-source story (Alaska Beacon via KTOO, built on a trooper's
+affidavit). Dead space runs advisory-over ceiling on the tabletop shots.
