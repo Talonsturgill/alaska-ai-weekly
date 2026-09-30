@@ -1,1271 +1,1182 @@
 {
-  "run_date": "2026-09-23",
-  "concept": "The land is measured to the acre and the power draw is not measured at all, so the one number that decides whether a Fairbanks bill goes up or down is the one nobody has published. Ask for the date it will be, not for the number.",
-  "title": "One Variable",
-  "engine": "infographic-2.5d",
-  "derived_from": "scratch",
-  "palette": "Interior dusk violet, birch gold, copper wire, carbon blue, statement paper",
-  "fingerprint": {
-    "palette": "Interior dusk violet, birch gold, copper wire, carbon blue",
-    "pov": "frontal-document",
-    "layout": "split-compare",
-    "motion_vector": "divide-and-settle",
-    "hero_treatment": "document-as-subject",
-    "register": "ruled-statement",
-    "camera_strategy": "crane-down-then-hold",
-    "light_story": "dusk-raking-left",
-    "metaphor": "a ruled form filling in row by row, with one row that never does"
-  },
-  "shots": [
-    {
-      "id": 1,
-      "vo_line": 0,
-      "t": 0.0,
-      "dur": 7.3,
-      "stage": "birch-gold ground under dusk violet",
-      "framing": "macro-closeup",
-      "scale": "insert",
-      "height": "eye",
-      "transition_in": "",
-      "thread": "",
-      "camera": "craneDown",
-      "stage3d": "planes",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "document-as-subject",
-      "hero": {
-        "name": "the ruled offer card",
-        "parts": 7,
-        "zones": 3,
-        "detail_note": "masthead bar, six ruled line-item rows each with a label field and a value field, a rule above the total, a total row, a copper edge rim, a paper-fiber tooth, and a drop shadow with a curled lower corner"
-      }
-    },
-    {
-      "id": 2,
-      "vo_line": 1,
-      "t": 7.3,
-      "dur": 7.06,
-      "stage": "Eielson edge, spruce band, one lit house",
-      "framing": "wide-establish",
-      "scale": "wide",
-      "height": "high",
-      "transition_in": "whip-pan",
-      "thread": "travel",
-      "camera": "craneDown+dollyThrough",
-      "stage3d": "planes",
-      "pov": "aerial-to-ground",
-      "layout": "stacked-layers",
-      "motion_vector": "vertical-descent",
-      "hero_treatment": "structure-as-subject",
-      "hero": {
-        "name": "the copper cost bar over the house",
-        "parts": 5,
-        "zones": 3,
-        "detail_note": "a segmented copper column with visible tier seams, a cap plate, a base shoe seated on the porch rail, a value tag on its flank that carries NO NUMERAL, only the word BILL, and an interior gradient from lit left face to shade right face"
-      }
-    },
-    {
-      "id": 3,
-      "vo_line": 2,
-      "t": 14.36,
-      "dur": 7.92,
-      "stage": "the porch rail and the bar above it",
-      "framing": "two-up",
-      "scale": "medium",
-      "height": "eye",
-      "transition_in": "match-cut",
-      "thread": "match",
-      "camera": "truckAcross",
-      "stage3d": "planes",
-      "pov": "eye-level-street",
-      "layout": "split-compare",
-      "motion_vector": "oscillate",
-      "hero_treatment": "data-as-subject",
-      "hero": {
-        "name": "the bar with a split, ghosted tip",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "the same column plus two ghosted alternate caps above it, a flicker gap between them, a question tag carrying NO NUMERAL, tier seams, and the dashed POWER DEMAND row floating beside it"
-      }
-    },
-    {
-      "id": 4,
-      "vo_line": 3,
-      "t": 22.28,
-      "dur": 10.26,
-      "stage": "a neighbourhood trail toward a pond",
-      "framing": "subject-portrait",
-      "scale": "medium",
-      "height": "eye",
-      "transition_in": "mask-wipe",
-      "thread": "travel",
-      "camera": "dollyThrough",
-      "stage3d": "planes",
-      "pov": "over-shoulder",
-      "layout": "figure-in-landscape",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "figure-as-subject",
-      "hero": {
-        "name": "the walking figure with her name label",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "parka with hood band, breath cloud, boots with contact shadow, a boxed two-line name label with its own drop shadow, a trail underfoot, alder in the near plane"
-      }
-    },
-    {
-      "id": 5,
-      "vo_line": 5,
-      "t": 32.54,
-      "dur": 6.02,
-      "stage": "the same trail, sky above",
-      "framing": "alt-vantage",
-      "scale": "close",
-      "height": "low",
-      "transition_in": "push-in",
-      "thread": "carry",
-      "camera": "riseWith",
-      "stage3d": "planes",
-      "pov": "low-hero",
-      "layout": "single-figure-sky",
-      "motion_vector": "vertical-rise",
-      "hero_treatment": "figure-as-subject",
-      "hero": {
-        "name": "the contrail flattening to a hum-line",
-        "parts": 4,
-        "zones": 2,
-        "detail_note": "two jet specks, a spreading contrail with soft edges, the flattened grey rule it becomes, and a thin vibration halo along the rule"
-      }
-    },
-    {
-      "id": 6,
-      "vo_line": 6,
-      "t": 38.56,
-      "dur": 5.5,
-      "stage": "a borough chamber wall of ruled lists",
-      "framing": "data-panel",
-      "scale": "medium",
-      "height": "eye",
-      "transition_in": "whip-pan",
-      "thread": "build",
-      "camera": "static:two ruled lists are being compared face-on and any camera move would fight the comparison the shot exists to make",
-      "stage3d": "flat:two ruled lists compared face-on",
-      "pov": "frontal-document",
-      "layout": "grid-modular",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "document-as-subject",
-      "hero": {
-        "name": "the two lists and the unsigned lease",
-        "parts": 7,
-        "zones": 3,
-        "detail_note": "a STATE column and a FEDERAL column with header plates and ruled scribble items, one legible PAUSE chip, a double-lock bracket, and a second thicker unsigned document lying open beside them with a blank ruled terms page and an empty signature line"
-      }
-    },
-    {
-      "id": 7,
-      "vo_line": 7,
-      "t": 44.06,
-      "dur": 9.76,
-      "stage": "a lectern and a lit copper column",
-      "framing": "subject-portrait",
-      "scale": "close",
-      "height": "eye",
-      "transition_in": "graphic-match",
-      "thread": "match",
-      "camera": "dollyThrough",
-      "stage3d": "planes",
-      "pov": "three-quarter",
-      "layout": "single-object-void",
-      "motion_vector": "radial-emanate",
-      "hero_treatment": "figure-as-subject",
-      "hero": {
-        "name": "the lectern and the copper column",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "a lectern with a front panel and a reading edge, a figure behind it, a boxed name label, a quoted plate, the land rectangle, and the lit copper column stepping forward"
-      }
-    },
-    {
-      "id": 8,
-      "vo_line": 9,
-      "t": 53.82,
-      "dur": 5.22,
-      "stage": "a hangar apron at dusk, rim-lit",
-      "framing": "wide-establish",
-      "scale": "wide",
-      "height": "low",
-      "transition_in": "whip-pan",
-      "thread": "travel",
-      "camera": "craneDown",
-      "stage3d": "planes",
-      "pov": "low-hero",
-      "layout": "open-apron",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "institution-as-subject",
-      "hero": {
-        "name": "the Air Force plate on the apron",
-        "parts": 5,
-        "zones": 3,
-        "detail_note": "a wide ruled plate with a seam, its own rim light, an apron ground plane with haze, a rim-lit figure, and hangar lights behind"
-      }
-    },
-    {
-      "id": 9,
-      "vo_line": 10,
-      "t": 59.04,
-      "dur": 12.8,
-      "stage": "the cost stack over a row of houses",
-      "framing": "data-panel",
-      "scale": "medium",
-      "height": "eye",
-      "transition_in": "morph",
-      "thread": "build",
-      "camera": "truckAcross",
-      "stage3d": "flat:the arithmetic is the subject and depth would fight it",
-      "pov": "frontal-diagram",
-      "layout": "split-compare",
-      "motion_vector": "divide-and-settle",
-      "hero_treatment": "data-as-subject",
-      "hero": {
-        "name": "the cost stack over the row of houses",
-        "parts": 8,
-        "zones": 3,
-        "detail_note": "a tall stack with a hard seam, a copper wires half and a carbon-blue fuel half, a row of small houses beneath with individual roofs and lit windows, per-house share bars, a giant customer block, division ticks, and a base rule"
-      }
-    },
-    {
-      "id": 10,
-      "vo_line": 12,
-      "t": 71.84,
-      "dur": 12.84,
-      "stage": "the same diagram, both halves live",
-      "framing": "two-up",
-      "scale": "wide",
-      "height": "eye",
-      "transition_in": "assemble",
-      "thread": "build",
-      "camera": "static:the signature diagram has to hold its own frame while it fails to resolve and a moving camera would let a viewer blame the camera for that instability instead of the missing number",
-      "stage3d": "flat:the signature diagram holds its own frame",
-      "pov": "branch-compare",
-      "layout": "mirrored-branches",
-      "motion_vector": "oscillate",
-      "hero_treatment": "data-as-subject",
-      "hero": {
-        "name": "the diagram that will not resolve",
-        "parts": 8,
-        "zones": 3,
-        "detail_note": "the settled copper wires half, the reaching carbon-blue fuel half, the generation block on the left branch, contention arrows on the right branch, a shared supply pool, the dashed NOT DISCLOSED slot between them, and the row of lit houses held in the lower third with one share bar tracking the swing"
-      }
-    },
-    {
-      "id": 11,
-      "vo_line": 14,
-      "t": 84.68,
-      "dur": 11.1,
-      "stage": "the town, warm, and the apron beyond it",
-      "framing": "map-territory",
-      "scale": "wide",
-      "height": "eye",
-      "transition_in": "mask-wipe",
-      "thread": "travel",
-      "camera": "dollyThrough+riseWith",
-      "stage3d": "planes",
-      "pov": "aerial-oblique",
-      "layout": "stacked-layers",
-      "motion_vector": "horizontal-traverse",
-      "hero_treatment": "structure-as-subject",
-      "hero": {
-        "name": "the town and the two arrivals",
-        "parts": 7,
-        "zones": 3,
-        "detail_note": "warm-windowed houses with chimney smoke, an apron beyond, a crate marked BUDGET with latches and spill light, a ruled data center block, an empty plate with a catching rim, and the fuel half leaning at the edge of frame"
-      }
-    },
-    {
-      "id": 12,
-      "vo_line": 16,
-      "t": 95.78,
-      "dur": 10.24,
-      "stage": "the statement card, close, on the rail",
-      "framing": "macro-closeup",
-      "scale": "insert",
-      "height": "eye",
-      "transition_in": "push-in",
-      "thread": "match",
-      "camera": "dollyThrough",
-      "stage3d": "planes",
-      "pov": "macro-closeup",
-      "layout": "single-object-void",
-      "motion_vector": "assemble-build",
-      "hero_treatment": "document-as-subject",
-      "hero": {
-        "name": "the statement card in macro",
-        "parts": 7,
-        "zones": 3,
-        "detail_note": "the MEGAWATTS row dashing away, the solid DATE PUBLISHED row below it, a hand, a short rail with two sliding tokens, paper tooth, the copper edge rim, and the card's drop shadow"
-      }
-    },
-    {
-      "id": 13,
-      "vo_line": 18,
-      "t": 106.02,
-      "dur": 3.12,
-      "stage": "the same card, pulled back one step",
-      "framing": "push-detail",
-      "scale": "medium",
-      "height": "eye",
-      "transition_in": "pull-out",
-      "thread": "carry",
-      "camera": "riseWith",
-      "stage3d": "planes",
-      "pov": "pulled-back-object",
-      "layout": "object-in-dusk",
-      "motion_vector": "settle-and-hold",
-      "hero_treatment": "document-as-subject",
-      "hero": {
-        "name": "the card at the button",
-        "parts": 6,
-        "zones": 3,
-        "detail_note": "every row solid but one, the lit blank DATE row, a hovering pen with a highlight along its barrel, the copper rim, drifting birch leaves, and the rail beneath"
-      }
-    }
+ "run_date": "2026-09-30",
+ "concept": "The answer that cost a Kodiak hunter $150 sat on top of a stack of summaries. The camera descends through the stack to the one thick still text underneath, and the film ends by asking what you check before you hunt.",
+ "title": "The Answer Was on Top",
+ "engine": "infographic-2.5d",
+ "derived_from": "scratch",
+ "total_seconds": 114.0,
+ "treatment": {
+  "winner": "dramatist 'The Top of the Stack'",
+  "judge_reasoning": "All four lenses converged on a stack of summaries. The dramatist's descent through depth gives the argument a body: bright and easy on top, dark and binding underneath, and the camera earns the trip. Grafts: the enthusiast's admiration beats (she called troopers, the trooper ran the search himself, ADF&G prints its number) and the comedian's physical spruce binder as the bottom text, which turns the abstract 'source' into an object. Comedy is confined to objects (the tag, the twin cards), never Weaver or Google's people."
+ },
+ "angle": {
+  "thesis": "The answer that cost a Kodiak hunter $150 sat on top of a stack of summaries, and the one binding text, the state's regulation, is what she opened to find the right date and turn herself in.",
+  "supporting_facts": [
+   "c4/c5/c8: opening the regs is how she found Oct 8 and self-reported",
+   "c6: the trooper ran the identical search and got the identical wrong answer, so the error repeats for every searcher",
+   "c13+c15: even ADF&G calls its online regs simplified, and Google's own page says check more than one place"
   ],
-  "beats": [
-    {
-      "id": 1,
-      "t": 0.252,
-      "shot": 1,
-      "draw": {
-        "subject": "a ruled offer card on paper stock, copper-rimmed",
-        "action": "slams onto birch-gold ground and every row fills in one hard cascade, done inside a second, so the form completing reads as competence",
-        "emotion": "brisk, official",
-        "annotation": "U.S. AIR FORCE"
-      },
-      "vo": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
-      "sfx": "paper-slam then a fast run of typed ticks, ending abruptly",
-      "means": "net-new tariff.Statement, rows filling",
-      "choreo": {
-        "primary": "the whole column of rows cascading in at once",
-        "reaction": "dust kicked from the ground at the slam",
-        "ambient": "birch leaves drifting across the card"
-      },
-      "shows": "the offer, arriving as a document that works",
-      "at_s": 0.252
-    },
-    {
-      "id": 2,
-      "t": 1.177,
-      "shot": 1,
-      "draw": {
-        "subject": "the POWER DEMAND row, alone among solid rows",
-        "action": "does not fill. Its value slot stays a true void with a crawling dashed baseline while every row above and below sits solid, and the light drops half a stop on everything except that row",
-        "emotion": "the first wrong note",
-        "annotation": "ONE ROW IS BLANK"
-      },
-      "vo": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
-      "sfx": "the tick that does not land, and the room going half a stop quieter",
-      "means": "craft advance, absence.tsx UnnamedValue inside net-new tariff.Statement",
-      "choreo": {
-        "primary": "the dashed baseline crawling while the solid rules hold still",
-        "reaction": "the light dropping half a stop everywhere but that row",
-        "ambient": "the card's curled lower corner relaxing flat"
-      },
-      "shows": "the anomaly, at second one and a half",
-      "at_s": 1.177
-    },
-    {
-      "id": 3,
-      "t": 2.523,
-      "shot": 1,
-      "draw": {
-        "subject": "the ACREAGE row and the land under the card",
-        "action": "the acreage counter runs up and locks while a boundary closes around a parcel below, and an unlit ruled block with a server-rack face lowers into the traced ground and sits there",
-        "emotion": "matter-of-fact",
-        "annotation": "ABOUT 4,700 ACRES"
-      },
-      "vo": "The Air Force is offering about four thousand seven hundred acres of Alaska for A I data centers.",
-      "sfx": "boundary-trace whisper + corner lock",
-      "means": "shelf props.BoundaryReveal + a ruled block, unlit and unlabelled",
-      "choreo": {
-        "primary": "the counter hitting its stop and the block settling into the parcel",
-        "reaction": "the boundary locking at its corners",
-        "ambient": "birch leaves drifting across the card"
-      },
-      "shows": "what is offered, and to what",
-      "at_s": 2.523
-    },
-    {
-      "id": 4,
-      "t": 7.4,
-      "shot": 2,
-      "draw": {
-        "subject": "the Interior at dusk, a spruce band and a ridge",
-        "action": "the camera cranes down through the treeline toward one lit house at the edge of the base road",
-        "emotion": "calm, ordinary",
-        "annotation": "EIELSON AIR FORCE BASE"
-      },
-      "vo": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
-      "sfx": "wind-through-spruce swell",
-      "means": "shelf DawnForestBG re-tinted dusk + Nameplate",
-      "choreo": {
-        "primary": "the crane descending past the treeline",
-        "reaction": "the house window brightening as we near it",
-        "ambient": "far ridge drifting against the push"
-      },
-      "shows": "where this actually is",
-      "at_s": 7.4
-    },
-    {
-      "id": 5,
-      "t": 9.018,
-      "shot": 2,
-      "draw": {
-        "subject": "a copper cost bar standing over the lit house",
-        "action": "rises off the porch rail to full height and stops, taller than the house",
-        "emotion": "heavy, matter-of-fact",
-        "annotation": "FAIRBANKS"
-      },
-      "vo": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
-      "sfx": "low copper tone rising",
-      "means": "net-new tariff.CostStack",
-      "choreo": {
-        "primary": "the bar rising to its stop",
-        "reaction": "the house shadow lengthening under it",
-        "ambient": "porch light flickering once"
-      },
-      "shows": "what a bill already looks like here",
-      "at_s": 9.018
-    },
-    {
-      "id": 6,
-      "t": 13.134,
-      "shot": 2,
-      "draw": {
-        "subject": "a figure on the porch, parka, breath visible",
-        "action": "tips their head back to look up the full height of the bar",
-        "emotion": "tired, unsurprised",
-        "annotation": "AMONG THE NATION'S HIGHEST"
-      },
-      "vo": "Some sits at Eielson Air Force Base, outside Fairbanks, where bills are among the nation's highest.",
-      "sfx": "boot-scuff on the boards",
-      "means": "shelf Character rig, parka, neutral",
-      "choreo": {
-        "primary": "the head tilting up",
-        "reaction": "breath clouding and drifting",
-        "ambient": "snow sifting off the rail"
-      },
-      "shows": "a person under the number",
-      "at_s": 13.134
-    },
-    {
-      "id": 7,
-      "t": 15.905,
-      "shot": 3,
-      "draw": {
-        "subject": "the copper bar",
-        "action": "its tip is SHEARED OFF flat at a dashed rule and holds there, the missing height simply absent above the cut",
-        "emotion": "cut short",
-        "annotation": "HOW TALL?"
-      },
-      "vo": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
-      "sfx": "a single clean shear, then nothing",
-      "means": "net-new tariff.CostStack with a dashed top rule, no oscillation here",
-      "choreo": {
-        "primary": "the shear landing and the tip holding, stopped",
-        "reaction": "the figure's eyes going to the cut and staying there",
-        "ambient": "dusk haze moving slowly behind the bar"
-      },
-      "shows": "the answer is missing, stated once and not yet swung",
-      "at_s": 15.905
-    },
-    {
-      "id": 8,
-      "t": 17.85,
-      "shot": 3,
-      "draw": {
-        "subject": "the offer card POWER DEMAND row",
-        "action": "arrives like every other row and then does NOT fill, its baseline going dashed and crawling",
-        "emotion": "blank",
-        "annotation": "POWER DEMAND"
-      },
-      "vo": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
-      "sfx": "the tick that does not land, a soft miss",
-      "means": "craft advance, absence.tsx extended to a missing VALUE",
-      "choreo": {
-        "primary": "the dashed baseline crawling",
-        "reaction": "every other row sitting solid beside it",
-        "ambient": "a slow sparse drift inside the empty slot"
-      },
-      "shows": "the one row that refuses",
-      "at_s": 17.85
-    },
-    {
-      "id": 9,
-      "t": 21.902,
-      "shot": 3,
-      "draw": {
-        "subject": "the parcel rectangle and the town together",
-        "action": "the camera pulls back until the traced parcel is seen against the whole town, to scale",
-        "emotion": "sobering",
-        "annotation": "THE OFFER, AGAINST THE TOWN"
-      },
-      "vo": "Does that shrink a Fairbanks bill or grow it? One number decides. The offering doesn't say.",
-      "sfx": "air-rush pullback",
-      "means": "shelf BoundaryReveal + MainStreetBG at distance",
-      "choreo": {
-        "primary": "the pullback revealing relative size",
-        "reaction": "the town lights coming up as we widen",
-        "ambient": "the town lights coming up as we widen"
-      },
-      "shows": "how big the land is, felt",
-      "at_s": 21.902,
-      "reveal": "scale-pullback"
-    },
-    {
-      "id": 10,
-      "t": 23.495,
-      "shot": 4,
-      "draw": {
-        "subject": "a NO AWARD stamp",
-        "action": "swings down toward the card, stops short, and hangs there, its cast shadow creeping across the rows as it refuses to land",
-        "emotion": "suspended",
-        "annotation": "NOTHING AWARDED YET"
-      },
-      "vo": "Nothing's awarded. Alaskans took positions anyway.",
-      "sfx": "stamp-swing that never strikes, room tone drops out",
-      "means": "shelf kit.Stamp onPaper",
-      "choreo": {
-        "primary": "the stamp hanging unlanded",
-        "reaction": "the rows going still beneath it",
-        "ambient": "the stamp's shadow creeping across the rows"
-      },
-      "shows": "nothing is decided",
-      "at_s": 23.495,
-      "rehook": "the rows stop filling and the sound drops out under a stamp that never lands"
-    },
-    {
-      "id": 11,
-      "t": 26.998,
-      "shot": 4,
-      "draw": {
-        "subject": "a figure walking a neighbourhood trail toward a pond",
-        "action": "walks into frame in three-quarter, boots crunching, a boxed name label settling beside her",
-        "emotion": "thoughtful",
-        "annotation": "SARAH HOLLISTER, SALCHA"
-      },
-      "vo": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
-      "sfx": "boot crunch on frozen gravel",
-      "means": "shelf Character rig + props.Nameplate",
-      "choreo": {
-        "primary": "the walking figure",
-        "reaction": "the name label settling with a small overshoot",
-        "ambient": "alder branches passing in the near foreground"
-      },
-      "shows": "who is speaking",
-      "at_s": 26.998,
-      "rehook": "the film turns from the document to a person, a named Salcha resident walking into frame under her own name plate, right after the institution's row refuses to fill"
-    },
-    {
-      "id": 12,
-      "t": 29.207,
-      "shot": 4,
-      "draw": {
-        "subject": "two jets high above the trail",
-        "action": "cross the top of frame trailing contrail, and she tips her head to follow them",
-        "emotion": "familiar, almost fond",
-        "annotation": "ALWAYS MEANT SACRIFICE"
-      },
-      "vo": "Salcha resident Sarah Hollister told reporters the jets always meant sacrifice.",
-      "sfx": "distant afterburner roll",
-      "means": "shelf high-altitude silhouettes, no airframe detail claimed",
-      "choreo": {
-        "primary": "the jets crossing",
-        "reaction": "her head turning to follow",
-        "ambient": "the contrail spreading and softening"
-      },
-      "shows": "the sound she is used to",
-      "at_s": 29.207
-    },
-    {
-      "id": 13,
-      "t": 32.64,
-      "shot": 5,
-      "draw": {
-        "subject": "the contrail overhead",
-        "action": "flattens and drains of colour into a single flat grey hum-line that holds and does not move",
-        "emotion": "the warmth going out of it",
-        "annotation": "THE HUM"
-      },
-      "vo": "Swap that for a data center's hum, she said, and we've lost our way.",
-      "sfx": "the roll flattening into a dead sixty-cycle hum",
-      "means": "craft, the contrail path morphing to a flat rule",
-      "choreo": {
-        "primary": "the contrail flattening to a line",
-        "reaction": "her shoulders dropping",
-        "ambient": "cold air shimmer along the flattened rule"
-      },
-      "shows": "the swap she is describing",
-      "at_s": 32.64
-    },
-    {
-      "id": 14,
-      "t": 34.215,
-      "shot": 5,
-      "draw": {
-        "subject": "a speech plate beside her",
-        "action": "types her sentence out, word by word, and holds it",
-        "emotion": "plain, resolute",
-        "annotation": "Swap that for a data center's hum and we've lost our way"
-      },
-      "vo": "Swap that for a data center's hum, she said, and we've lost our way.",
-      "sfx": "typewriter reveal, one key per word",
-      "means": "shelf props plate + typewriter reveal",
-      "choreo": {
-        "primary": "the words typing in",
-        "reaction": "her breath clouding between phrases",
-        "ambient": "her breath clouding between phrases"
-      },
-      "shows": "her own words",
-      "at_s": 34.215
-    },
-    {
-      "id": 15,
-      "t": 38.66,
-      "shot": 6,
-      "draw": {
-        "subject": "two ruled lists on a chamber wall, STATE and FEDERAL",
-        "action": "build downward side by side, item by item, every item an illegible ruled scribble except one",
-        "emotion": "procedural",
-        "annotation": "STATE / FEDERAL"
-      },
-      "vo": "Fairbanks asked for a pause, on both its state and federal lists.",
-      "sfx": "paper-rustle per item",
-      "means": "shelf props kit ruled plates",
-      "choreo": {
-        "primary": "the two lists building",
-        "reaction": "one chip among twenty resolving into readable type",
-        "ambient": "dust turning in the chamber light"
-      },
-      "shows": "how a borough asks",
-      "at_s": 38.66
-    },
-    {
-      "id": 16,
-      "t": 40.355,
-      "shot": 6,
-      "draw": {
-        "subject": "the double-locked PAUSE chip and a second, thicker, unsigned document",
-        "action": "the chip slides onto BOTH lists at once and double-locks, then slides toward an unsigned lease lying beside them and STOPS SHORT of its blank signature line",
-        "emotion": "pointed",
-        "annotation": "PAUSE"
-      },
-      "vo": "Fairbanks asked for a pause, on both its state and federal lists.",
-      "sfx": "double lock, two clicks",
-      "means": "shelf ruled plate + lock",
-      "choreo": {
-        "primary": "the chip sliding toward the lease and stopping short",
-        "reaction": "the lease's blank terms page sitting open and unsigned",
-        "ambient": "paper edges lifting in the room draft"
-      },
-      "shows": "a borough plat can't reach a federal lease, and the lease page is blank because nothing has been decided yet",
-      "at_s": 40.355
-    },
-    {
-      "id": 17,
-      "t": 44.16,
-      "shot": 7,
-      "draw": {
-        "subject": "a lectern with a boxed name label",
-        "action": "a figure steps to it and a plate rises beside her carrying her sourced line, set as reported speech with no quotation marks",
-        "emotion": "measured",
-        "annotation": "SEN. LISA MURKOWSKI"
-      },
-      "vo": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
-      "sfx": "room settle, a chair creak",
-      "means": "shelf Character rig + Nameplate",
-      "choreo": {
-        "primary": "the plate rising",
-        "reaction": "the figure settling at the lectern",
-        "ambient": "the room settling behind her"
-      },
-      "shows": "who says the next thing",
-      "at_s": 44.16,
-      "plate_text": "NOT A PROPONENT AT JBER OR THE INTERIOR INSTALLATIONS",
-      "plate_note": "c6. Reported speech, NO quotation marks, because the full sentence does not fit a plate and a trimmed quotation would misrepresent a named senator."
-    },
-    {
-      "id": 18,
-      "t": 46.235,
-      "shot": 7,
-      "draw": {
-        "subject": "the senator at the lectern, the land rectangle and the copper column",
-        "action": "she sets a page down on the reading edge, pushes the LAND rectangle aside with two fingers so it dims and recedes, then taps the copper column once and leaves her hand on it",
-        "emotion": "clarifying",
-        "annotation": "LAND / POWER"
-      },
-      "vo": "Senator Lisa Murkowski says Alaska can't support them on an insecure energy base.",
-      "sfx": "a low plate sliding away from the mic, then a copper strike",
-      "means": "net-new tariff.CostStack single column",
-      "choreo": {
-        "primary": "her two fingers pushing the land rectangle away",
-        "reaction": "the column lighting under her hand as she taps it",
-        "ambient": "the page settling on the reading edge"
-      },
-      "shows": "she didn't say the land, she said the power, as a thing a person does",
-      "at_s": 46.235
-    },
-    {
-      "id": 19,
-      "t": 49.419,
-      "shot": 7,
-      "draw": {
-        "subject": "the copper column alone in the frame",
-        "action": "she steps out of frame and the copper column is left alone, standing and breathing, lit from the left",
-        "emotion": "quiet, deliberate",
-        "annotation": "POWER"
-      },
-      "vo": "She didn't say the land. She said the power.",
-      "sfx": "near silence, one low copper breath",
-      "means": "net-new tariff.CostStack",
-      "choreo": {
-        "primary": "the raking key travelling along the column so one tier seam after another catches and releases",
-        "reaction": "her shadow leaving the column as she clears frame",
-        "ambient": "the last plate sliding out of frame, long and late"
-      },
-      "shows": "the hinge of the film",
-      "at_s": 49.419
-    },
-    {
-      "id": 20,
-      "t": 53.92,
-      "shot": 8,
-      "draw": {
-        "subject": "a figure walking out of the dark onto the hangar apron",
-        "action": "walks in from the dark and the widening floodlight finds them as the hangar door rolls back",
-        "emotion": "straight, respectful",
-        "annotation": "A PARTNERSHIP"
-      },
-      "vo": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
-      "sfx": "the plate's rim seating with a low metal set-down, over apron floodlights striking on in banks",
-      "means": "shelf Character rig + ruled plate",
-      "choreo": {
-        "primary": "the figure walking into the widening light",
-        "reaction": "the door rolling back behind them",
-        "ambient": "ground haze drifting across the apron"
-      },
-      "shows": "the other side, at full volume",
-      "at_s": 53.92
-    },
-    {
-      "id": 21,
-      "t": 55.827,
-      "shot": 8,
-      "draw": {
-        "subject": "two ruled plates",
-        "action": "the ruled plate rises UNDER THEIR FEET rather than beside them, so the ground they are standing on is the thing the lease paid for",
-        "emotion": "even-handed",
-        "annotation": "SUPPORTING AIRMEN AND GUARDIANS"
-      },
-      "vo": "The Air Force calls it a partnership supporting its Airmen and Guardians.",
-      "sfx": "a rolling door, then two plates meeting and seating",
-      "means": "shelf props ruled plates",
-      "choreo": {
-        "primary": "the plate rising under the figure's feet and taking their weight",
-        "reaction": "the two plates seating together in the new light",
-        "ambient": "apron lights pulsing slowly behind the seam"
-      },
-      "shows": "a person standing in light the lease paid for, which is the argument",
-      "at_s": 55.827
-    },
-    {
-      "id": 22,
-      "t": 59.22,
-      "shot": 9,
-      "draw": {
-        "subject": "the statement card",
-        "action": "turns edge-on and unfolds into a single tall cost stack standing over a row of small houses",
-        "emotion": "revelatory",
-        "annotation": "YOUR BILL, WIRES AND FUEL"
-      },
-      "vo": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
-      "sfx": "paper unfolding into a low tone",
-      "means": "net-new tariff.Statement morphing to tariff.CostStack",
-      "choreo": {
-        "primary": "the card unfolding into the stack",
-        "reaction": "the row of houses sliding in beneath it",
-        "ambient": "the houses' window lights flickering as they slide in"
-      },
-      "shows": "the bill, made physical",
-      "at_s": 59.22,
-      "rehook": "the document becomes a diagram in one continuous move",
-      "reveal": "morph-to-chart"
-    },
-    {
-      "id": 23,
-      "t": 62.525,
-      "shot": 9,
-      "draw": {
-        "subject": "the stack",
-        "action": "splits along a hard seam into a copper WIRES half and a carbon-blue FUEL half, shoved apart",
-        "emotion": "clear",
-        "annotation": "WIRES / FUEL"
-      },
-      "vo": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
-      "sfx": "a seam tearing, two settled thuds",
-      "means": "net-new tariff.CostStack split",
-      "choreo": {
-        "primary": "the two halves shoving apart",
-        "reaction": "the houses beneath flinching once",
-        "ambient": "dust shaken loose along the seam"
-      },
-      "shows": "the two things you pay for",
-      "at_s": 62.525
-    },
-    {
-      "id": 24,
-      "t": 66.694,
-      "shot": 9,
-      "draw": {
-        "subject": "the WIRES half and the row of houses",
-        "action": "divides itself across the row, and with few houses each share stands tall",
-        "emotion": "explanatory",
-        "annotation": "SPLIT ACROSS EVERYONE"
-      },
-      "vo": "Your bill is wires and fuel. The wires split across everyone, so that half is tall.",
-      "sfx": "division ticks, one per house",
-      "means": "net-new tariff.CostStack divide",
-      "choreo": {
-        "primary": "the share bars standing up over each house",
-        "reaction": "the houses settling under them",
-        "ambient": "chimney smoke rising from the little roofs"
-      },
-      "shows": "why it is tall here",
-      "at_s": 66.694
-    },
-    {
-      "id": 25,
-      "t": 69.309,
-      "shot": 9,
-      "draw": {
-        "subject": "a giant customer block",
-        "action": "lands at the end of the row and the wires share over every house visibly compresses and settles",
-        "emotion": "relief, once",
-        "annotation": "THAT HALF THINS"
-      },
-      "vo": "A giant customer helps pay for them either way. That half thins.",
-      "sfx": "a heavy seat, then a smooth compress",
-      "means": "net-new tariff.CostStack redivide",
-      "choreo": {
-        "primary": "the shares compressing together",
-        "reaction": "the giant block settling into the row",
-        "ambient": "the row of houses settling under the new weight"
-      },
-      "shows": "the half that is answered",
-      "at_s": 69.309
-    },
-    {
-      "id": 26,
-      "t": 72.292,
-      "shot": 10,
-      "draw": {
-        "subject": "the FUEL half",
-        "action": "lights carbon blue and strains upward, and beneath it the row of lit houses holds frame while ONE share bar lifts off ONE roof as the half strains",
-        "emotion": "tense",
-        "annotation": "THE FUEL"
-      },
-      "vo": "The fuel bites. A big load either brings its own power, or competes for what's here.",
-      "sfx": "a strained rising tone",
-      "means": "net-new tariff.CostStack oscillate",
-      "choreo": {
-        "primary": "the fuel half straining up",
-        "reaction": "a single share bar rising off one roof in the lower third",
-        "ambient": "heat shimmer coming off the straining half"
-      },
-      "shows": "a household's bill moving, not a bar moving",
-      "at_s": 72.292
-    },
-    {
-      "id": 27,
-      "t": 74.685,
-      "shot": 10,
-      "draw": {
-        "subject": "branch A, drawn to the left",
-        "action": "the giant block grows its own generation stack and slots it in, and the fuel half drops",
-        "emotion": "hopeful",
-        "annotation": "BRINGS ITS OWN"
-      },
-      "vo": "The fuel bites. A big load either brings its own power, or competes for what's here.",
-      "sfx": "a solid slot-in, tone falling",
-      "means": "net-new tariff.CostStack supply block",
-      "choreo": {
-        "primary": "the generation block slotting in",
-        "reaction": "the fuel half dropping and easing",
-        "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
-      },
-      "shows": "one way it goes",
-      "at_s": 74.685
-    },
-    {
-      "id": 28,
-      "t": 77.616,
-      "shot": 10,
-      "draw": {
-        "subject": "branch B, drawn to the right",
-        "action": "the same block brings nothing and pulls on the existing supply, and the fuel half climbs",
-        "emotion": "tense",
-        "annotation": "COMPETES FOR WHAT'S HERE"
-      },
-      "vo": "The fuel bites. A big load either brings its own power, or competes for what's here.",
-      "sfx": "a strained pull, tone rising",
-      "means": "net-new tariff.CostStack contend",
-      "choreo": {
-        "primary": "the fuel half climbing",
-        "reaction": "arrows pulling from the shared pool",
-        "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
-      },
-      "shows": "the other way it goes",
-      "at_s": 77.616
-    },
-    {
-      "id": 29,
-      "t": 80.274,
-      "shot": 10,
-      "draw": {
-        "subject": "both branches at once, superimposed",
-        "action": "the fuel half decays toward a stop, and each time it nears rest it reaches down for the dashed slot, finds nothing in it, and is kicked back up",
-        "emotion": "unresolved, honest",
-        "annotation": "NOT DISCLOSED"
-      },
-      "vo": "So it turns on how big. And how big is what nobody has published.",
-      "sfx": "two-tone slam, then a held unresolved chord",
-      "means": "craft advance, absence.tsx missing VALUE in the deciding slot",
-      "choreo": {
-        "primary": "the half reaching for the empty slot and being kicked back each time it nearly settles",
-        "reaction": "the wires half sitting still and settled beside it, answered",
-        "ambient": "the row of lit houses holding the lower third, one share bar tracking the fuel half"
-      },
-      "shows": "THE SIGNATURE FRAME. It is trying to settle and the empty slot will not let it",
-      "at_s": 80.274,
-      "rehook": "the diagram refuses to settle in front of you"
-    },
-    {
-      "id": 30,
-      "t": 84.78,
-      "shot": 11,
-      "draw": {
-        "subject": "a figure at the edge of the street at dusk, and the town behind them",
-        "action": "looks toward the apron and turns a porch light on, and the town builds up behind them window by window, street by street, until the apron's light reaches the treeline",
-        "emotion": "warm, genuine credit",
-        "annotation": "MAYOR GRIER HOPKINS"
-      },
-      "vo": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
-      "sfx": "the town coming on window by window, a distant traffic hum rising",
-      "means": "shelf MainStreetBG dusk + Nameplate",
-      "choreo": {
-        "primary": "windows coming on street by street across the whole window",
-        "reaction": "the town lights lifting with it",
-        "ambient": "chimney smoke drifting"
-      },
-      "shows": "the town's yes, given a body, the way the trail gave the doubt a body",
-      "at_s": 84.78
-    },
-    {
-      "id": 31,
-      "t": 86.769,
-      "shot": 11,
-      "draw": {
-        "subject": "two rim-lit airframe silhouettes over the apron",
-        "action": "come in low over the treeline and set down on the apron, and the crate is what they set down",
-        "emotion": "workmanlike, welcome",
-        "annotation": "THE F-35s"
-      },
-      "vo": "But a fighter wing comes with a budget. A data center comes with an appetite.",
-      "sfx": "a turbine spooling down, then gear touching concrete",
-      "means": "shelf high-altitude silhouettes, no airframe detail claimed, same discipline as beat 12",
-      "choreo": {
-        "primary": "the two silhouettes settling onto the apron",
-        "reaction": "the crate lowering out from under them",
-        "ambient": "heat shimmer off the apron behind them"
-      },
-      "shows": "the jets, drawn at the moment they are named",
-      "at_s": 86.769
-    },
-    {
-      "id": 32,
-      "t": 87.419,
-      "shot": 11,
-      "draw": {
-        "subject": "a crate marked BUDGET arriving over the town",
-        "action": "lowers onto the apron, opens, and warm light spills out across the houses",
-        "emotion": "generous",
-        "annotation": "BUDGET"
-      },
-      "vo": "Mayor Grier Hopkins says defense spending buoyed Fairbanks when the F thirty fives came.",
-      "sfx": "crate latches opening and the lid swinging back",
-      "means": "shelf props crate + light spill",
-      "choreo": {
-        "primary": "the crate opening",
-        "reaction": "light spreading across the roofs",
-        "ambient": "warm light rippling across the roofs"
-      },
-      "shows": "what a fighter wing brought",
-      "at_s": 87.419
-    },
-    {
-      "id": 33,
-      "t": 88.928,
-      "shot": 11,
-      "draw": {
-        "subject": "a data center block arriving the same way",
-        "action": "lowers onto the same apron carrying an empty plate instead of a crate, and the plate tips",
-        "emotion": "hungry, not evil",
-        "annotation": "AN APPETITE"
-      },
-      "vo": "But a fighter wing comes with a budget. A data center comes with an appetite.",
-      "sfx": "a hollow set-down, no latch",
-      "means": "shelf ruled block + props plate",
-      "choreo": {
-        "primary": "the empty plate tipping",
-        "reaction": "the town lights dimming a half stop, not going out",
-        "ambient": "the plate rim catching and losing the light"
-      },
-      "shows": "what this one brings instead",
-      "at_s": 88.928,
-      "rehook": "the second arrival lands carrying an empty plate instead of a crate, and the town dims a half stop"
-    },
-    {
-      "id": 34,
-      "t": 91.7,
-      "shot": 11,
-      "draw": {
-        "subject": "the empty plate and the FUEL half",
-        "action": "the plate tips toward the carbon-blue half and the half leans with it",
-        "emotion": "consequential",
-        "annotation": "FED FROM WHERE?"
-      },
-      "vo": "But a fighter wing comes with a budget. A data center comes with an appetite.",
-      "sfx": "the empty plate's rim grinding as it tips, and the fuel half's edge ticking as it takes the weight",
-      "means": "net-new tariff.CostStack",
-      "choreo": {
-        "primary": "the plate rim grinding round as it tips",
-        "reaction": "the plate rim catching copper light",
-        "ambient": "the fuel half's edge trembling"
-      },
-      "shows": "where the appetite feeds",
-      "at_s": 91.7
-    },
-    {
-      "id": 35,
-      "t": 95.88,
-      "shot": 12,
-      "draw": {
-        "subject": "a hand reaching for the MEGAWATTS row",
-        "action": "a gloved hand comes down over the card and the row dashes away under the fingers, the pen tip skidding off the rule and knocking a chip off the rail",
-        "emotion": "frustrated, then accepting",
-        "annotation": "MEGAWATTS"
-      },
-      "vo": "So the ask isn't megawatts. Nobody can publish those yet.",
-      "sfx": "a pen tip skidding, then a chip spinning down onto wood",
-      "means": "craft advance, absence.tsx missing VALUE",
-      "choreo": {
-        "primary": "the hand coming down and the pen tip skidding off the rule",
-        "reaction": "a chip knocked off the rail and spinning on the boards",
-        "ambient": "paper tooth catching the raking light"
-      },
-      "shows": "the thing that cannot be asked for yet",
-      "at_s": 95.88
-    },
-    {
-      "id": 36,
-      "t": 97.215,
-      "shot": 12,
-      "draw": {
-        "subject": "the hand and a different row",
-        "action": "moves down one row to DATE PUBLISHED, which is blank, ruled, solid and waiting",
-        "emotion": "resolved",
-        "annotation": "DATE PUBLISHED"
-      },
-      "vo": "Ask for the date. Does that number go public before the land is leased?",
-      "sfx": "a clean pen-tap on a solid rule",
-      "means": "net-new tariff.Statement fillable row",
-      "choreo": {
-        "primary": "the hand settling on the solid row",
-        "reaction": "the dashed row above going quiet",
-        "ambient": "the dashed row above still drifting"
-      },
-      "shows": "the thing that CAN",
-      "at_s": 97.215,
-      "reveal": "build-on"
-    },
-    {
-      "id": 37,
-      "t": 100.215,
-      "shot": 12,
-      "draw": {
-        "subject": "two tokens on a short rail",
-        "action": "NUMBER GOES PUBLIC and LAND LEASED slide along the rail and swap places, twice, unresolved",
-        "emotion": "the real question",
-        "annotation": "BEFORE? AFTER?"
-      },
-      "vo": "Ask for the date. Does that number go public before the land is leased?",
-      "sfx": "two slides and a soft unresolved stop",
-      "means": "shelf ruled rail + props tokens",
-      "choreo": {
-        "primary": "the two tokens swapping order",
-        "reaction": "the rail flexing under them",
-        "ambient": "the raking dusk light drifting slowly across the frame"
-      },
-      "shows": "the whole ask, in one picture",
-      "at_s": 100.215
-    },
-    {
-      "id": 38,
-      "t": 103.55,
-      "shot": 12,
-      "draw": {
-        "subject": "the two tokens, done sliding",
-        "action": "settle the wrong way round, LAND LEASED ahead of NUMBER GOES PUBLIC, and hold there without resolving",
-        "emotion": "the question left standing",
-        "annotation": "BEFORE?"
-      },
-      "vo": "Ask for the date. Does that number go public before the land is leased?",
-      "sfx": "a single soft seat, and nothing after it",
-      "means": "shelf ruled rail + props tokens, the same pair",
-      "choreo": {
-        "primary": "the pair coming to rest in the order the question is about",
-        "reaction": "the rail steadying under them",
-        "ambient": "the raking dusk light drifting slowly across the frame"
-      },
-      "shows": "which order the reader should be asking about",
-      "at_s": 103.55
-    },
-    {
-      "id": 39,
-      "t": 106.12,
-      "shot": 13,
-      "draw": {
-        "subject": "the statement card, one step back",
-        "action": "sits on the rail beside the same unsigned lease, every row solid except one, and a pen hovers over the blank DATE row",
-        "emotion": "open, hopeful",
-        "annotation": "ONE ROW STILL BLANK"
-      },
-      "vo": "The terms aren't written. That's the opening.",
-      "sfx": "the card settling a half millimetre on the rail, under a single held copper tone",
-      "means": "net-new tariff.Statement + shelf PenAndDocument",
-      "choreo": {
-        "primary": "the pen hovering, never landing",
-        "reaction": "the lease's empty signature line catching the last of the light",
-        "ambient": "birch leaves crossing the frame on a visible path"
-      },
-      "shows": "the button, and the hook inverted",
-      "at_s": 106.12
-    },
-    {
-      "id": 40,
-      "t": 107.364,
-      "shot": 13,
-      "draw": {
-        "subject": "the blank DATE row",
-        "action": "lifts a half stop and holds, the only lit thing left as the rest of the card falls to dusk",
-        "emotion": "an opening, not a defeat",
-        "annotation": "THE TERMS AREN'T WRITTEN"
-      },
-      "vo": "The terms aren't written. That's the opening.",
-      "sfx": "the tone resolving upward, not down",
-      "means": "net-new tariff.Statement",
-      "choreo": {
-        "primary": "the row lifting and holding",
-        "reaction": "the card falling to dusk around it",
-        "ambient": "the raking dusk light drifting slowly across the frame"
-      },
-      "shows": "what the film is asking for",
-      "at_s": 107.364
-    }
+  "counterpoint_to_honor": "Google's warning and the state's rule both existed and she still paid $150; but a wrong answer that replicates for every searcher (c6) and that DPS expects to see again (c9,c11) is not one hunter's slip. Nothing in the file says what the AI cited, so no claim about Google's sourcing.",
+  "falsifiability": "False if the trooper's identical search had returned a correct date, or if ADF&G's own published listing said Sept 1 (the booklet did not load, so this is disclosed as unverified).",
+  "second_movement": "c13 recontextualizes the 'one source of truth' line: it is itself a simplified convenience over the statute, so the honest lesson is a stack of summaries over one binding text, not AI bad and the official page good.",
+  "valence": "mixed, respectful of Weaver, constructive, no scold, no pile-on at Google",
+  "runner_ups": [
+   "Honesty as the working safeguard (self-report + replication)",
+   "Provenance ask: AI answers that name the ADF&G source (booklet did not load so the falsifier is open)",
+   "First of many (c9,c11)"
   ],
-  "hook": {
-    "pattern": "anomaly-question",
-    "frame1": "a copper-rimmed ruled offer card slamming onto birch-gold ground, every row cascading in at once, and by 1.4s one row alone left a crawling dashed void",
-    "headline": "ONE ROW IS BLANK",
-    "motion_by_s": 0.252,
-    "loopback": "the button returns to the same card with the same birch leaves drifting past it, every row solid except the one that started the film blank, and the pen hovering over it",
-    "pattern_note": "a ruled form fills in row by row exactly as expected, and then one row does not, which is the anomaly, and the question it raises is what belonged in it. Gate 0B found the board had withheld that row until 19.8s, three or four scroll decisions past the one that mattered, so it now lands at 1.4s."
+  "why_runner_ups_lost": "each is a sub-beat of the chosen thesis; the provenance ask overreaches the evidence (nothing says what the AI cited)"
+ },
+ "palette": "Kodiak fog green, hunter orange, spruce, cream summary paper",
+ "fingerprint": {
+  "palette": "Kodiak fog green, hunter orange, spruce, cream summary paper",
+  "pov": "cross-section-cutaway",
+  "layout": "stacked-layers",
+  "motion_vector": "vertical-descent",
+  "hero_treatment": "structure-as-subject",
+  "register": "tactile-collage",
+  "camera_strategy": "dolly-through",
+  "light_story": "overcast-diffuse",
+  "metaphor": "a tower of thin summaries wobbling on one thick still binder, with the camera descending through it"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "vo_line": null,
+   "t": 0.0,
+   "dur": 8.3,
+   "stage": "phone glass in Kodiak fog",
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "overhead",
+   "transition_in": "",
+   "thread": "",
+   "camera": "static:the hook holds a locked macro so the slam lands",
+   "stage3d": "flat:the hook holds a locked macro so the slam lands",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "instrument-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "the phone glass with a closed spruce binder under its edge",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "black glass with a cream rim highlight, a search bar that types itself, a thumb silhouette, and under the phone edge the spine of a thick spruce binder with a blurred label"
+   }
   },
-  "audio_arc": {
-    "build_steps": [
-      0.3,
-      25.15,
-      63.35,
-      86.79
-    ],
-    "dip_at": 49.419,
-    "riser_at": 97.215,
-    "silence_at": 23.495,
-    "payoff_at": 104.472,
-    "button_pattern": "question"
+  {
+   "id": 2,
+   "vo_line": null,
+   "t": 8.3,
+   "dur": 4.2,
+   "stage": "Kodiak marsh edge at first light",
+   "framing": "wide-establish",
+   "scale": "extreme-wide",
+   "height": "high",
+   "transition_in": "match-action",
+   "thread": "match",
+   "camera": "craneDown+dollyThrough",
+   "stage3d": "planes",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "landscape-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "the fog-green marsh with three snipe silhouettes",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "sedge tufts in ochre, a far spruce band at 18 percent contrast, fog planes, three small bird silhouettes rising, three orange ticks"
+   }
   },
-  "reveals": [
-    {
-      "t": 21.902,
-      "type": "scale-pullback",
-      "what": "the traced parcel seen against the whole town, to scale",
-      "hold_s": 0.7
-    },
-    {
-      "t": 58.662,
-      "type": "morph-to-chart",
-      "what": "the statement card unfolds into the cost stack in one continuous move",
-      "hold_s": 0.6
-    },
-    {
-      "t": 97.215,
-      "type": "build-on",
-      "what": "the fillable DATE PUBLISHED row appears under the unfillable MEGAWATTS row",
-      "hold_s": 0.5
-    }
+  {
+   "id": 3,
+   "vo_line": null,
+   "t": 12.5,
+   "dur": 9.7,
+   "stage": "lamp-lit kitchen table at home",
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "overhead",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "camera": "static:overhead push-in only",
+   "stage3d": "flat:overhead push-in only",
+   "pov": "top-down-map",
+   "layout": "single-object-void",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "single-organic-hero",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "two hands over a table with a phone and a thick closed binder",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "a wood table, a warm lamp pool from frame right, hand silhouettes with cream rim light, a phone, the spruce binder with page edge and spine"
+   }
+  },
+  {
+   "id": 4,
+   "vo_line": null,
+   "t": 22.2,
+   "dur": 10.8,
+   "stage": "the trooper's report on a steel desk",
+   "framing": "data-panel",
+   "scale": "medium",
+   "height": "eye",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "pov": "instrument-screen",
+   "layout": "grid-modular",
+   "motion_vector": "scroll-data",
+   "hero_treatment": "data-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "the report page with a two-month calendar strip",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "a ruled report sheet on cream stock, a calendar strip Sept to Oct, an orange SEPT 1 marker, a spruce OCT 8 marker, a bracket that sweeps between them"
+   }
+  },
+  {
+   "id": 5,
+   "vo_line": null,
+   "t": 33.0,
+   "dur": 6.6,
+   "stage": "the trooper's truck cab dash",
+   "framing": "two-up",
+   "scale": "close",
+   "height": "eye",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "camera": "static:two-up split and the sync is the picture",
+   "stage3d": "flat:two-up split and the sync is the picture",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "instrument-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "two identical phones side by side, one in a hunter's hands, one in a trooper's",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "a split of two phone glasses, silhouette hands each side, a steering wheel arc and a dash edge, two identical orange answer cards"
+   }
+  },
+  {
+   "id": 6,
+   "vo_line": null,
+   "t": 39.6,
+   "dur": 5.4,
+   "stage": "the district court counter",
+   "framing": "subject-portrait",
+   "scale": "insert",
+   "height": "low",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "camera": "static:a locked insert so the stamp is the event",
+   "stage3d": "flat:a locked insert so the stamp is the event",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "structure-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "a rubber stamp over a receipt on a counter",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "a wooden-handled stamp, an ink pad, a receipt slip with a printed line, a counter edge with a contact shadow"
+   }
+  },
+  {
+   "id": 7,
+   "vo_line": null,
+   "t": 45.0,
+   "dur": 13.0,
+   "stage": "a fogged window at Kodiak dusk",
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "eye",
+   "transition_in": "crossfade",
+   "thread": "match",
+   "camera": "static:a slow push and the stillness is the beat",
+   "stage3d": "flat:a slow push and the stillness is the beat",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "single-organic-hero",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "a head-and-shoulders silhouette behind fogged glass",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "a window frame, condensation, a bowed silhouette, quote plates, and drifting quote cards falling through the fog"
+   }
+  },
+  {
+   "id": 8,
+   "vo_line": null,
+   "t": 58.0,
+   "dur": 11.6,
+   "stage": "the stack",
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "high",
+   "transition_in": "assemble",
+   "thread": "build",
+   "camera": "craneDown+dollyThrough",
+   "stage3d": "planes",
+   "pov": "cross-section-cutaway",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "structure-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "the SummaryStack of thin pale sheets with the orange tag on top",
+    "parts": 10,
+    "zones": 4,
+    "detail_note": "seven translucent sheets on a value ladder with cream rim edges, a wobble, the orange DateTag pinned, two heavy warning plates descending from either side"
+   }
+  },
+  {
+   "id": 9,
+   "vo_line": null,
+   "t": 69.6,
+   "dur": 11.9,
+   "stage": "the stack",
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "eye",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "camera": "static:a slow dolly across the tower's face",
+   "stage3d": "flat:a slow dolly across the tower's face",
+   "pov": "exploded-diagram",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "instrument-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "a dashed empty slot beside a sealed spruce envelope",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "a dashed crawling contour for the empty slot, a sealed envelope with a wax-like stamp and a printed source line, the stack edge behind"
+   }
+  },
+  {
+   "id": 10,
+   "vo_line": null,
+   "t": 81.5,
+   "dur": 11.4,
+   "stage": "the stack",
+   "framing": "push-detail",
+   "scale": "insert",
+   "height": "overhead",
+   "transition_in": "focus-pull",
+   "thread": "travel",
+   "camera": "static:macro push into the fine print",
+   "stage3d": "flat:macro push into the fine print",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "data-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "the envelope's inner sheet with the fine print",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "a cream sheet with dense printed lines, a small asterisk, a stamped SIMPLIFIED band that types on, a corner flap lifting"
+   }
+  },
+  {
+   "id": 11,
+   "vo_line": null,
+   "t": 92.9,
+   "dur": 9.4,
+   "stage": "the stack",
+   "framing": "map-territory",
+   "scale": "extreme-wide",
+   "height": "high",
+   "transition_in": "pull-out",
+   "thread": "travel",
+   "camera": "risewith",
+   "stage3d": "planes",
+   "pov": "cross-section-cutaway",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "structure-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "the whole tower of summaries seen over the spruce binder",
+    "parts": 10,
+    "zones": 4,
+    "detail_note": "the full tower on a value ladder, wobbling, the one thick still binder at the base with spine and page edge, the orange tag torn off the top and sliding down the tower side"
+   }
+  },
+  {
+   "id": 12,
+   "vo_line": null,
+   "t": 102.3,
+   "dur": 7.9,
+   "stage": "the binder at the base",
+   "framing": "subject-portrait",
+   "scale": "close",
+   "height": "low",
+   "transition_in": "match-action",
+   "thread": "match",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "single-organic-hero",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "two hands peeling the summaries away to open the binder",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "hand silhouettes with cream rim light, peeled sheets fluttering away, the thick spruce binder opening to a printed page, a tab reading CALL ADF&G"
+   }
+  },
+  {
+   "id": 13,
+   "vo_line": null,
+   "t": 110.2,
+   "dur": 3.8,
+   "stage": "phone glass in Kodiak fog",
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "overhead",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "camera": "static:the bookend holds the hook's exact frame",
+   "stage3d": "flat:the bookend holds the hook's exact frame",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "instrument-as-subject",
+   "centered": "the one card, tag, hand or plate that carries the line",
+   "hero": {
+    "name": "the phone glass again with the blank orange tag on top of a fresh stack",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "the same black glass, the same thumb, the search bar empty and blinking, a blank orange tag, a fresh thin stack under the phone"
+   }
+  }
+ ],
+ "beats": [
+  {
+   "id": 1,
+   "t": 0.3,
+   "shot": 1,
+   "draw": {
+    "subject": "a thumb silhouette over black phone glass in fog",
+    "action": "taps the search bar and the query types itself, letter by letter",
+    "emotion": "casual, unguarded",
+    "annotation": "GOOGLED: SNIPE SEASON"
+   },
+   "vo": "A Kodiak woman asked Google when snipe season opens.",
+   "sfx": "thumb tap then a run of keyboard ticks",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the query typing itself",
+    "reaction": "the glass glow pulsing on each letter",
+    "ambient": "fog drifting behind the phone"
+   },
+   "shows": "the question she asked",
+   "at_s": 0.3,
+   "why": "the ordinary act everything hangs on"
+  },
+  {
+   "id": 2,
+   "t": 4.6,
+   "shot": 1,
+   "draw": {
+    "subject": "a hunter-orange answer card",
+    "action": "slams onto the glass with overshoot and holds, wobbling",
+    "emotion": "confident, smug",
+    "annotation": "SEASON BEGAN SEPT 1"
+   },
+   "vo": "Its A I answer said September first.",
+   "sfx": "hard paper slam with a tag clack",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the card slam and settle",
+    "reaction": "the phone shuddering",
+    "ambient": "the closed binder spine under the phone edge"
+   },
+   "shows": "what the answer said",
+   "at_s": 4.6,
+   "why": "the wrong answer arrives sounding sure"
+  },
+  {
+   "id": 3,
+   "t": 8.3,
+   "shot": 2,
+   "draw": {
+    "subject": "three snipe silhouettes over a fog-green marsh",
+    "action": "lift off one by one as three orange ticks drop onto the sedge",
+    "emotion": "quiet, early morning",
+    "annotation": "SEPT 5 \u00b7 3 SNIPE"
+   },
+   "vo": "So on September fifth she shot three snipe.",
+   "sfx": "three wing flutters and three soft ticks",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the three lifts and ticks",
+    "reaction": "the sedge bending",
+    "ambient": "far spruce band drifting against the push"
+   },
+   "shows": "what she did that morning",
+   "at_s": 8.3,
+   "why": "the act the answer led to"
+  },
+  {
+   "id": 4,
+   "t": 12.5,
+   "shot": 3,
+   "draw": {
+    "subject": "two hand silhouettes over a lamp-lit table",
+    "action": "the phone is pushed aside and a hand hovers over a thick spruce binder without opening it",
+    "emotion": "sinking",
+    "annotation": "HOLD: the loop planted: a closed binder"
+   },
+   "vo": "At home she looked up the state regulations and saw her mistake.",
+   "sfx": "chair scrape and a lamp hum",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the hand hovering and withdrawing",
+    "reaction": "the orange tag on the phone creasing",
+    "ambient": "lamp pool breathing"
+   },
+   "shows": "the loop planted: a closed binder",
+   "at_s": 12.5,
+   "why": "where she went to check, and the page we don't yet see"
+  },
+  {
+   "id": 5,
+   "t": 17.0,
+   "shot": 3,
+   "draw": {
+    "subject": "a hand silhouette raising a phone to an ear",
+    "action": "dials and waits while the binder sits closed in the lamp pool",
+    "emotion": "resolved, steady",
+    "annotation": "SHE CALLED TROOPERS"
+   },
+   "vo": "She called troopers and turned herself in.",
+   "sfx": "dial tones then one long ring",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the raise and dial",
+    "reaction": "the lamp flickering once",
+    "ambient": "dust in the lamp cone"
+   },
+   "shows": "the choice she made",
+   "at_s": 17.0,
+   "why": "she reported herself"
+  },
+  {
+   "id": 6,
+   "t": 19.9,
+   "shot": 3,
+   "draw": {
+    "subject": "the orange tag on the table edge",
+    "action": "tears a little at its crease and its corner drops onto the table",
+    "emotion": "deflated",
+    "annotation": "HOLD: the answer losing its shine"
+   },
+   "vo": "She called troopers and turned herself in.",
+   "sfx": "a soft paper curl",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the curl",
+    "reaction": "the lamp shadow lengthening",
+    "ambient": "the phone screen dimming"
+   },
+   "shows": "the answer losing its shine",
+   "at_s": 19.9,
+   "why": "the tag's first state change"
+  },
+  {
+   "id": 7,
+   "t": 22.2,
+   "shot": 4,
+   "draw": {
+    "subject": "a bracket over a calendar strip on the trooper's report",
+    "action": "sweeps from SEPT 1 across to OCT 8 and locks with a click",
+    "emotion": "clinical",
+    "annotation": "GENERAL SEASON: OCT 8"
+   },
+   "vo": "The trooper's report says the general season opened October eighth.",
+   "sfx": "ratchet sweep and a lock click",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the bracket sweep",
+    "reaction": "the SEPT 1 marker dimming",
+    "ambient": "ruled lines scrolling upward"
+   },
+   "shows": "what the report says",
+   "at_s": 22.2,
+   "why": "the report's date"
+  },
+  {
+   "id": 8,
+   "t": 25.2,
+   "shot": 4,
+   "draw": {
+    "subject": "the OCT 8 marker on the calendar",
+    "action": "drops into place with a heavy spruce thud",
+    "emotion": "final",
+    "annotation": "HOLD: the date the report sets"
+   },
+   "vo": "The trooper's report says the general season opened October eighth.",
+   "sfx": "low wooden thud",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the marker drop",
+    "reaction": "the strip settling",
+    "ambient": "paper fibre texture drifting"
+   },
+   "shows": "the date the report sets",
+   "at_s": 25.2,
+   "why": "the second date lands"
+  },
+  {
+   "id": 9,
+   "t": 27.2,
+   "shot": 4,
+   "draw": {
+    "subject": "two sheets, the orange answer and the report",
+    "action": "slide together side by side and the dates clash, a spruce binder edging between them",
+    "emotion": "tension, a question",
+    "annotation": "SEASON BEGAN SEPT 1 / GENERAL SEASON: OCT 8"
+   },
+   "vo": "So two pages disagreed. Which one can a hunter trust?",
+   "sfx": "two paper slides and a dissonant hum",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the sheets sliding together",
+    "reaction": "the binder edge inching in",
+    "ambient": "a faint tick from the calendar"
+   },
+   "shows": "the question the film asks",
+   "at_s": 27.2,
+   "why": "the film's story question",
+   "rehook": "two sheets with clashing dates and the question of which page to trust"
+  },
+  {
+   "id": 10,
+   "t": 30.6,
+   "shot": 4,
+   "draw": {
+    "subject": "the dates on the two sheets",
+    "action": "pulse in turn, orange then spruce, as the binder edges in and stalls",
+    "emotion": "suspended",
+    "annotation": "HOLD: the disagreement held for a beat"
+   },
+   "vo": "So two pages disagreed. Which one can a hunter trust?",
+   "sfx": "alternating soft pulses",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the pulses",
+    "reaction": "the binder stalling at the seam",
+    "ambient": "dust drifting"
+   },
+   "shows": "the disagreement held for a beat",
+   "at_s": 30.6,
+   "why": "the disagreement held"
+  },
+  {
+   "id": 11,
+   "t": 33.0,
+   "shot": 5,
+   "draw": {
+    "subject": "two identical phones, a hunter's and a trooper's",
+    "action": "the trooper's hands type the same search and the identical answer card clacks down in sync with the first",
+    "emotion": "uncanny sameness",
+    "annotation": "SAME SEARCH \u00b7 SAME ANSWER"
+   },
+   "vo": "That trooper ran her exact search. He got the same wrong answer.",
+   "sfx": "twin card clacks in perfect sync",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the mirrored clack",
+    "reaction": "both cards bouncing together",
+    "ambient": "dash lights blinking"
+   },
+   "shows": "the answer came back twice",
+   "at_s": 33.0,
+   "why": "the answer repeated for someone else"
+  },
+  {
+   "id": 12,
+   "t": 36.0,
+   "shot": 5,
+   "draw": {
+    "subject": "the two orange cards",
+    "action": "wobble in perfect lockstep and a hairline seam splits the frame",
+    "emotion": "eerie, still",
+    "annotation": "HOLD: the sync held"
+   },
+   "vo": "He got the same wrong answer.",
+   "sfx": "paired hums",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the lockstep wobble",
+    "reaction": "the split seam glowing",
+    "ambient": "a wiper arc passing outside the glass"
+   },
+   "shows": "the sync held",
+   "at_s": 36.0,
+   "why": "the sync is the point"
+  },
+  {
+   "id": 13,
+   "t": 39.6,
+   "shot": 6,
+   "draw": {
+    "subject": "a rubber stamp over a receipt",
+    "action": "lifts, hangs, and slams down",
+    "emotion": "flat, procedural",
+    "annotation": "NO CONTEST \u00b7 $150 FINE"
+   },
+   "vo": "She pleaded no contest and paid a hundred fifty dollars.",
+   "sfx": "stamp thunk then a register ding",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the stamp slam",
+    "reaction": "the receipt jumping",
+    "ambient": "ink pad breathing"
+   },
+   "shows": "what it cost her",
+   "at_s": 39.6,
+   "why": "the consequence"
+  },
+  {
+   "id": 14,
+   "t": 42.9,
+   "shot": 6,
+   "draw": {
+    "subject": "the printed receipt line",
+    "action": "the ink spreads and dries while the stamp lifts away",
+    "emotion": "final",
+    "annotation": "HOLD: the fine sits on the paper"
+   },
+   "vo": "She still pleaded no contest and paid a hundred fifty dollars.",
+   "sfx": "ink hiss and a slow paper rustle",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the ink spreading",
+    "reaction": "the receipt settling flat",
+    "ambient": "counter light drifting"
+   },
+   "shows": "the fine sits on the paper",
+   "at_s": 42.9,
+   "why": "the amount settles"
+  },
+  {
+   "id": 15,
+   "t": 45.0,
+   "shot": 7,
+   "draw": {
+    "subject": "a bowed silhouette behind a fogged window",
+    "action": "breathes as a quote plate slides down the glass and lands on the sill",
+    "emotion": "shame, quiet",
+    "annotation": "\"I FEEL TERRIBLE\""
+   },
+   "vo": "She told the Alaska Beacon, I feel terrible.",
+   "sfx": "music drops out, a single low bell",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the breath fog spreading",
+    "reaction": "the plate typing",
+    "ambient": "condensation running down the glass"
+   },
+   "shows": "what she said",
+   "at_s": 45.0,
+   "why": "her own words, quietly"
+  },
+  {
+   "id": 16,
+   "t": 49.2,
+   "shot": 7,
+   "draw": {
+    "subject": "a quote card falling through the fog",
+    "action": "drifts down and lands beside the window with a soft settle",
+    "emotion": "measured",
+    "annotation": "THE FIRST TIME I THINK WE HAVE SEEN AI CITED"
+   },
+   "vo": "State spokesman Austin McDaniel thinks it's the first time A I has been cited.",
+   "sfx": "soft card landing",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the card drift and land",
+    "reaction": "the fog parting around it",
+    "ambient": "the silhouette turning toward it"
+   },
+   "shows": "what the spokesman said",
+   "at_s": 49.2,
+   "why": "the state's read on it"
+  },
+  {
+   "id": 17,
+   "t": 54.0,
+   "shot": 7,
+   "draw": {
+    "subject": "a second quote card",
+    "action": "lands on the first, slightly askew",
+    "emotion": "matter-of-fact",
+    "annotation": "I EXPECT WE'LL SEE MORE OF THIS"
+   },
+   "vo": "He expects more.",
+   "sfx": "second soft landing",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the second landing",
+    "reaction": "the first card shifting",
+    "ambient": "fog closing back in"
+   },
+   "shows": "what he expects",
+   "at_s": 54.0,
+   "why": "what he expects next"
+  },
+  {
+   "id": 18,
+   "t": 58.0,
+   "shot": 8,
+   "draw": {
+    "subject": "the stack assembling out of the fog",
+    "action": "seven thin sheets fall into place one by one with the orange tag pinned on top",
+    "emotion": "curious, tense",
+    "annotation": "HOLD: the loop 2 plant: the warnings"
+   },
+   "vo": "Weren't there warnings? There were.",
+   "sfx": "seven paper flutters rising to a soft chord",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the sheets settling",
+    "reaction": "the tag wobbling on top",
+    "ambient": "the far sheets blurred by rack focus"
+   },
+   "shows": "the loop 2 plant: the warnings",
+   "at_s": 58.0,
+   "why": "the stack of summaries appears",
+   "rehook": "Weren't there warnings? The stack assembles and heavy plates descend"
+  },
+  {
+   "id": 19,
+   "t": 61.9,
+   "shot": 8,
+   "draw": {
+    "subject": "a heavy plate descending from the left",
+    "action": "lands on the stack and the whole tower dips",
+    "emotion": "weighty, fair",
+    "annotation": "AI RESPONSES MAY INCLUDE MISTAKES"
+   },
+   "vo": "Google's help page says A I answers may include mistakes.",
+   "sfx": "heavy plate thud and a tower creak",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the plate landing",
+    "reaction": "the tower dipping and recovering",
+    "ambient": "the tag pinned under it"
+   },
+   "shows": "Google's warning",
+   "at_s": 61.9,
+   "why": "Google's own warning"
+  },
+  {
+   "id": 20,
+   "t": 66.4,
+   "shot": 8,
+   "draw": {
+    "subject": "a second heavy plate from the right",
+    "action": "lands opposite and the tower steadies between the two",
+    "emotion": "balanced",
+    "annotation": "CHECK MORE THAN ONE PLACE"
+   },
+   "vo": "and to check more than one place.",
+   "sfx": "second plate thud and a settling creak",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the plate landing",
+    "reaction": "the tower steadying",
+    "ambient": "dust from the sheets"
+   },
+   "shows": "the second warning",
+   "at_s": 66.4,
+   "why": "the fair counter-case at full weight"
+  },
+  {
+   "id": 21,
+   "t": 69.6,
+   "shot": 9,
+   "draw": {
+    "subject": "a dashed empty slot beside the stack",
+    "action": "holds its outline and stays empty while the dust moves through it",
+    "emotion": "quiet, fair",
+    "annotation": "GOOGLE DID NOT RESPOND"
+   },
+   "vo": "Google didn't respond to the Alaska Beacon's request for comment.",
+   "sfx": "a soft wind and a single low tone",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the dashed contour crawling",
+    "reaction": "dust drifting through the slot",
+    "ambient": "the tower behind wobbling faintly"
+   },
+   "shows": "who didn't answer",
+   "at_s": 69.6,
+   "why": "the empty slot, not a pile-on"
+  },
+  {
+   "id": 22,
+   "t": 74.3,
+   "shot": 9,
+   "draw": {
+    "subject": "a sealed spruce envelope",
+    "action": "drops onto the stack with a stamped printed source line",
+    "emotion": "official, calm",
+    "annotation": "ONE SOURCE OF TRUTH: ADF&G REGULATIONS"
+   },
+   "vo": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
+   "sfx": "envelope thud and a wax-stamp press",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the envelope drop",
+    "reaction": "the tower steadying under it",
+    "ambient": "the slot fading"
+   },
+   "shows": "the state's source of truth",
+   "at_s": 74.3,
+   "why": "the state's answer to where to look"
+  },
+  {
+   "id": 23,
+   "t": 77.3,
+   "shot": 9,
+   "draw": {
+    "subject": "the envelope's seal",
+    "action": "holds, then a tiny crack of light shows under one corner",
+    "emotion": "expectant",
+    "annotation": "HOLD: the catch is coming"
+   },
+   "vo": "McDaniel says the one source of truth is Fish and Game's regulations and emergency orders.",
+   "sfx": "a faint paper creak",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the crack of light",
+    "reaction": "the seal trembling",
+    "ambient": "dust catching the light"
+   },
+   "shows": "the catch is coming",
+   "at_s": 77.3,
+   "why": "something under the flap"
+  },
+  {
+   "id": 24,
+   "t": 81.5,
+   "shot": 10,
+   "draw": {
+    "subject": "the envelope's corner flap",
+    "action": "lifts and a small asterisk glints on the inner sheet",
+    "emotion": "suspicious",
+    "annotation": "HOLD: the loop 2 pay begins"
+   },
+   "vo": "But that source has a catch.",
+   "sfx": "a paper lift and a small glint chime",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the flap lifting",
+    "reaction": "the asterisk glinting",
+    "ambient": "fibres swaying"
+   },
+   "shows": "the loop 2 pay begins",
+   "at_s": 81.5,
+   "why": "the catch appears"
+  },
+  {
+   "id": 25,
+   "t": 85.4,
+   "shot": 10,
+   "draw": {
+    "subject": "the inner sheet's fine print",
+    "action": "types itself line by line and a SIMPLIFIED band stamps across it",
+    "emotion": "matter-of-fact reveal",
+    "annotation": "REGULATIONS ARE SIMPLIFIED \u00b7 EMERGENCY ORDERS CAN OVERRIDE"
+   },
+   "vo": "Fish and Game's own page says its online regulations are simplified, and emergency orders can override them.",
+   "sfx": "typewriter ticks and a stamp thud",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the typing and stamp",
+    "reaction": "the asterisk brightening",
+    "ambient": "paper fibres drifting"
+   },
+   "shows": "the catch, drawn",
+   "at_s": 85.4,
+   "why": "the state's own page calls itself simplified"
+  },
+  {
+   "id": 26,
+   "t": 90.0,
+   "shot": 10,
+   "draw": {
+    "subject": "the SIMPLIFIED band",
+    "action": "settles and the sheet beneath it shows another sheet underneath",
+    "emotion": "the floor drops",
+    "annotation": "HOLD: the layers below"
+   },
+   "vo": "emergency orders can override them.",
+   "sfx": "a low settling tone",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the band settling",
+    "reaction": "the lower sheet showing through",
+    "ambient": "the corner flap trembling"
+   },
+   "shows": "the layers below",
+   "at_s": 90.0,
+   "why": "the layers go further down"
+  },
+  {
+   "id": 27,
+   "t": 92.9,
+   "shot": 11,
+   "draw": {
+    "subject": "the whole tower of summaries over a thick spruce binder",
+    "action": "the camera pulls back to reveal every sheet wobbling on the still binder",
+    "emotion": "revelation, calm",
+    "annotation": "HOLD: every layer a summary"
+   },
+   "vo": "So even the official page is a summary.",
+   "sfx": "a rising pull-back swell",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the pull-back",
+    "reaction": "the tower wobbling",
+    "ambient": "the far sheets blurring"
+   },
+   "shows": "every layer a summary",
+   "at_s": 92.9,
+   "why": "the picture of the thesis",
+   "rehook": "the pull-back reveals the whole tower on one thick binder"
+  },
+  {
+   "id": 28,
+   "t": 97.0,
+   "shot": 11,
+   "draw": {
+    "subject": "the orange tag",
+    "action": "tears off the top sheet and slides down the tower's side to the binder",
+    "emotion": "decisive",
+    "annotation": "HOLD: what counts sits underneath"
+   },
+   "vo": "The answer was on top. What counts sits underneath.",
+   "sfx": "a paper tear and a long slide",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the tear and slide",
+    "reaction": "the tower's wobble stopping",
+    "ambient": "spruce binder catching light"
+   },
+   "shows": "what counts sits underneath",
+   "at_s": 97.0,
+   "why": "the tag's descent"
+  },
+  {
+   "id": 29,
+   "t": 99.6,
+   "shot": 11,
+   "draw": {
+    "subject": "the binder at the base",
+    "action": "is lit from above as the tag comes to rest on its cover",
+    "emotion": "settled",
+    "annotation": "HOLD: the thick still thing"
+   },
+   "vo": "What counts sits underneath.",
+   "sfx": "a low resonant tone",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the tag coming to rest",
+    "reaction": "the tower fading to blur",
+    "ambient": "dust falling"
+   },
+   "shows": "the thick still thing",
+   "at_s": 99.6,
+   "why": "the still thing under the wobbling"
+  },
+  {
+   "id": 30,
+   "t": 102.3,
+   "shot": 12,
+   "draw": {
+    "subject": "two hand silhouettes",
+    "action": "peel the summary sheets away one by one and open the spruce binder",
+    "emotion": "determined",
+    "annotation": "GENERAL SEASON: OCT 8"
+   },
+   "vo": "Check the regulations and any emergency order.",
+   "sfx": "paper peels in a run and a heavy binder open",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the peel",
+    "reaction": "the sheets fluttering off",
+    "ambient": "the tag stamping onto the page"
+   },
+   "shows": "the real date on the real page",
+   "at_s": 102.3,
+   "why": "the loop 1 pays: the page she opened"
+  },
+  {
+   "id": 31,
+   "t": 106.0,
+   "shot": 12,
+   "draw": {
+    "subject": "a binder tab",
+    "action": "slides out from the page edge with a printed number",
+    "emotion": "helpful, plain",
+    "annotation": "CALL ADF&G \u00b7 907-465-4190"
+   },
+   "vo": "Fish and Game will mail you a copy.",
+   "sfx": "a tab slide and a soft click",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the tab slide",
+    "reaction": "the page settling",
+    "ambient": "lamp light warming"
+   },
+   "shows": "how to get it",
+   "at_s": 106.0,
+   "why": "the way to get the text"
+  },
+  {
+   "id": 32,
+   "t": 110.2,
+   "shot": 13,
+   "draw": {
+    "subject": "the phone glass again under a thumb",
+    "action": "the search bar blinks empty and the blank orange tag lies on a fresh stack",
+    "emotion": "open, inviting",
+    "annotation": "HOLD: what will you check"
+   },
+   "vo": "Before you hunt, what do you check?",
+   "sfx": "thumb tap and a soft chime",
+   "means": "shelf Sheet + PaperFiber + GripHand + new SummaryStack",
+   "choreo": {
+    "primary": "the blinking bar",
+    "reaction": "the tag turning blank",
+    "ambient": "fog drifting"
+   },
+   "shows": "what will you check",
+   "at_s": 110.2,
+   "why": "the loop closes on the question"
+  }
+ ],
+ "hook": {
+  "pattern": "anomaly-question",
+  "frame1": "a thumb over black phone glass in fog types SNIPE SEASON while a thick closed spruce binder sits half-hidden under the phone's edge",
+  "headline": "SHE ASKED GOOGLE. IT SAID SEPT 1.",
+  "motion_by_s": 0.3,
+  "loopback": "the button returns to the same phone glass and thumb, the search bar empty and blinking, with the blank orange tag on a fresh stack",
+  "pattern_note": "an ordinary search plus an object that doesn't belong in the frame: a closed binder. The question it raises is what is in the binder."
+ },
+ "audio_arc": {
+  "build_steps": [
+   0.3,
+   22.2,
+   58.0,
+   84.8
   ],
-  "open_loop": {
-    "plant_t": 1.177,
-    "pay_t": 80.952,
-    "what": "the POWER DEMAND row arrives and does not fill, and the film refuses to resolve it until the diagram that needs it slams between two answers"
+  "dip_at": 45.0,
+  "riser_at": 92.9,
+  "silence_at": 36.3,
+  "payoff_at": 102.3,
+  "button_pattern": "question"
+ },
+ "reveals": [
+  {
+   "t": 8.3,
+   "type": "scale-pullback",
+   "what": "the phone glass pulls back to a wide fog-green marsh with the three snipe",
+   "hold_s": 0.6
   },
-  "open_loop_2": {
-    "plant_t": 46.235,
-    "pay_t": 88.928,
-    "what": "Murkowski names POWER rather than LAND, and the film withholds what power actually costs a town until the data center arrives carrying an empty plate"
+  {
+   "t": 61.6,
+   "type": "build-on",
+   "what": "the second warning plate lands opposite the first and the tower steadies between them",
+   "hold_s": 0.6
   },
-  "throughline": {
-    "object": "the ruled statement card",
-    "states": [
-      {
-        "at_s": 0.252,
-        "state": "slams down and every row cascades in"
-      },
-      {
-        "at_s": 1.177,
-        "state": "one row alone refuses to fill"
-      },
-      {
-        "at_s": 23.495,
-        "state": "a NO AWARD stamp hangs over it without landing, so not one row on it is final"
-      },
-      {
-        "at_s": 40.355,
-        "state": "an unsigned lease lies open beside it with a blank terms page, and the borough's PAUSE chip stops short of the signature line"
-      },
-      {
-        "at_s": 58.662,
-        "state": "unfolds into the cost stack and splits into wires and fuel"
-      },
-      {
-        "at_s": 80.952,
-        "state": "the fuel half reaches for the deciding slot and is kicked back, and the slot reads NOT DISCLOSED"
-      },
-      {
-        "at_s": 104.472,
-        "state": "back to a card beside that same unsigned lease, every row solid but one, and the blank row now labelled with a DATE a person could actually ask for"
-      }
-    ],
-    "lands_in_button": true
+  {
+   "t": 92.9,
+   "type": "scale-pullback",
+   "what": "the camera pulls back and the whole tower of summaries is revealed on the one thick still binder",
+   "hold_s": 0.7
+  }
+ ],
+ "rehooks": [
+  {
+   "t": 27.2,
+   "what": "two sheets with clashing dates and the question of which page to trust"
   },
-  "divergence_note": "Against 2026-09-14 (bright ultramarine and mango, orbital-aerial, vertical-descent, instrument-as-subject) and 2026-09-19 (powerhouse green and sodium amber, macro-closeup, single-object-void, radial-emanate, structure-as-subject) this film is a FRONTAL DOCUMENT in split-compare, its motion vector is DIVIDE-AND-SETTLE which no recent film has used, its hero treatment is DOCUMENT-AS-SUBJECT which is new, and its palette shares no colour role with either. The shape grammar is ruled form against unruled land, which is the argument drawn rather than a style note."
+  {
+   "t": 58.0,
+   "what": "Weren't there warnings? The stack assembles and heavy plates descend"
+  },
+  {
+   "t": 92.9,
+   "what": "the pull-back reveals the whole tower on one thick binder"
+  }
+ ],
+ "open_loop": {
+  "plant_t": 14.0,
+  "pay_t": 102.3,
+  "what": "a thick spruce binder sits closed by the phone on the kitchen table and its page is never shown. The film refuses to open it until the hands peel the summaries away and the page reads GENERAL SEASON: OCT 8."
+ },
+ "open_loop_2": {
+  "plant_t": 58.0,
+  "pay_t": 84.8,
+  "what": "Weren't there warnings? There were, and the film concedes them at full weight, then withholds the catch in the state's own source until the envelope's fine print types on."
+ },
+ "throughline": {
+  "object": "the orange date tag",
+  "states": [
+   {
+    "at_s": 0.5,
+    "state": "slams onto the phone glass as SEASON BEGAN SEPT 1, glossy and confident"
+   },
+   {
+    "at_s": 8.3,
+    "state": "stamped SEPT 5 \u00b7 3 SNIPE with three orange ticks and creased"
+   },
+   {
+    "at_s": 22.2,
+    "state": "set beside a spruce OCT 8 marker so two dates disagree"
+   },
+   {
+    "at_s": 33.0,
+    "state": "doubled into a twin for the trooper"
+   },
+   {
+    "at_s": 58.0,
+    "state": "pinned on top of the thin stack between two heavy warning plates"
+   },
+   {
+    "at_s": 97.0,
+    "state": "torn off the top and slid down the tower to rest on the binder"
+   },
+   {
+    "at_s": 102.3,
+    "state": "stamped onto the binder page as GENERAL SEASON: OCT 8"
+   },
+   {
+    "at_s": 110.2,
+    "state": "blank on a fresh stack beside the phone, the loop restarting"
+   }
+  ],
+  "lands_in_button": true
+ },
+ "divergence_note": "Against 2026-09-23 (frontal document, split-compare, divide-and-settle, document-as-subject, dusk violet and copper) and 2026-09-19 (macro-closeup, single-object-void, radial-emanate, structure-as-subject, powerhouse green and amber) this film is a vertical CROSS-SECTION DESCENT through a stack in STACKED-LAYERS with a VERTICAL-DESCENT motion vector, a triple none of the last four films used. Its register is tactile collage, its camera strategy dolly-through, its light overcast-diffuse. Its palette shares no colour role with either: fog green, hunter orange, spruce, cream."
 }
