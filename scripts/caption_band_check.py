@@ -201,7 +201,7 @@ def default_targets():
                 mi = re.search(r"import\s*\{[^}]*\b" + m.group(1) + r"\b[^}]*\}\s*from\s*'\./(\w+)'", r)
                 if mi and os.path.exists(os.path.join(src, mi.group(1) + ".tsx")):
                     return [os.path.join(src, mi.group(1) + ".tsx")]
-    return sorted(glob.glob(os.path.join(src, "Ep*.tsx")))[-1:]
+    return sorted(glob.glob(os.path.join(src, "Ep[0-9][0-9][0-9][0-9].tsx")))[-1:]
 
 
 def main():

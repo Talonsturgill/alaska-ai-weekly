@@ -245,13 +245,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           return <path key={i} d={`M${x},${y} q${lean * 0.4},-30 ${lean},-64`} stroke={P.lichenLo} strokeWidth={4 + (h % 3)} fill="none" strokeLinecap="round" opacity={0.7} />;
         })}
         {[0, 1, 2].map((i) => {
-          const t = clamp01((f - bAt(4) - tickAt[i]) / 26);
-          const bx = 300 + i * 240 + t * 90, by = 1010 - t * 210 + i * 30;
+          const t = clamp01((f - bAt(4) - tickAt[i]) / 44);
+          const bx = 260 + i * 250 + t * 120, by = 1040 - t * 330 + i * 24;
           const gone = clamp01((t - 0.55) / 0.3);
           const tk = clamp01((f - bAt(4) - tickAt[i] - 10) / 16);
           return (
             <g key={i}>
-              <g transform={`translate(${bx},${by}) rotate(${-24 + t * 10})`} opacity={1 - gone}>
+              <g transform={`translate(${bx},${by}) rotate(${-24 + t * 10}) scale(1.7)`} opacity={1 - gone}>
                 <ellipse cx={0} cy={0} rx={34} ry={13} fill={P.ink} />
                 <path d="M32,-2 l52,-16" stroke={P.ink} strokeWidth={5} strokeLinecap="round" />
                 <path d="M-6,-8 q-22,-40 -58,-46 q22,18 26,44 z" fill={P.ink} />
@@ -288,7 +288,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <path key={i} d={`M-20,${i * 66 + (hash(i) % 20)} Q540,${i * 66 + 14 + (hash(i + 3) % 24)} 1100,${i * 66 + (hash(i + 5) % 20)}`}
             stroke="#150F0B" strokeWidth={2} fill="none" opacity={0.5} />
         ))}
-        <ellipse cx={830} cy={760} rx={520} ry={600} fill="url(#lamp)" opacity={0.9 + 0.1 * Math.sin(f / 30)} />
+        <ellipse cx={830} cy={760} rx={560} ry={640} fill="url(#lamp)" opacity={1.0} />
         {/* binder from above: cover swings about the spine on its left */}
         <g transform="translate(300,590)">
           <rect x={-6} y={8} width={560} height={690} fill={P.ink} opacity={0.5} />
@@ -376,8 +376,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           {Array.from({length: 12}, (_, i) => <path key={i} d={`M0,-54 v8`} transform={`rotate(${i * 30})`} stroke={P.ink} strokeWidth={3} />)}
           <path d="M0,0 V-46" stroke={P.ink} strokeWidth={4} strokeLinecap="round" transform={`rotate(${(f / 30) * 6})`} />
         </g>
-        <Plate text="GENERAL SEASON · OCT 8" y={1200} size={34} tone="paper" p={sweep > 0.85 ? 1 : 0} x={540 - 140 * clash} />
-        <Plate text="SEASON BEGAN SEPT 1" x={800} y={1180} size={26} p={clash} />
+        <Plate text="GENERAL SEASON · OCT 8" y={1200} size={30} tone="paper" p={sweep > 0.85 ? 1 : 0} x={300} />
+        <Plate text="SEASON BEGAN SEPT 1" x={800} y={1200} size={26} p={clash} />
         <Dust f={f} color={P.paper} op={0.18} />
       </SVG>
     );
@@ -435,14 +435,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       <SVG><Defs />
         <rect width={W} height={H} fill="#6E777D" />
         {Array.from({length: 40}, (_, i) => <path key={i} d={`M0,${i * 50}H1080`} stroke={P.paper5} strokeWidth={1.3} opacity={0.2} />)}
-        <g transform="translate(1000,1120)"><rect x={-110} y={-40} width={200} height={110} rx={14} fill={P.ink} stroke={P.cream} strokeWidth={2} opacity={0.9} /><rect x={-92} y={-24} width={164} height={72} rx={8} fill="#22303A" /></g>
+        <g transform="translate(900,1120)"><rect x={-110} y={-40} width={200} height={110} rx={14} fill={P.ink} stroke={P.cream} strokeWidth={2} opacity={0.9} /><rect x={-92} y={-24} width={164} height={72} rx={8} fill="#22303A" /></g>
         <g transform="translate(540,900) rotate(-2)">
           <rect x={-190} y={-380} width={390} height={780} fill={P.ink} opacity={0.3} />
           <rect x={-195} y={-385} width={390} height={780} fill={P.paper} stroke={P.ink} strokeWidth={3} />
           <Glyphs x={-160} y={-330} w={310} lines={8} gap={34} seed={5} />
           <g opacity={ink} transform="translate(0,150)">
-            <rect x={-170} y={-32} width={340} height={64} fill="none" stroke={P.slate} strokeWidth={4} opacity={0.9} />
-            <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={1} fill={P.slate}>NO CONTEST · $150 FINE</text>
+            <rect x={-180} y={-32} width={360} height={64} fill="none" stroke={P.slate} strokeWidth={4} opacity={0.9} />
+            <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={P.slate}>NO CONTEST · $150 FINE</text>
           </g>
         </g>
         <path d="M345,1310 l60,-8 l-8,44 z" fill={P.orange} stroke={P.orangeLo} strokeWidth={3} />
@@ -701,7 +701,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <text x={-10} y={-82} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={36} letterSpacing={2} fill={P.cream}>EMERGENCY ORDER</text>
           <Glyphs x={-200} y={-30} w={420} lines={3} gap={34} seed={50} />
         </g>
-        <Plate text="REGULATIONS ARE SIMPLIFIED · EMERGENCY ORDERS CAN OVERRIDE" y={1240} size={20} p={ease(f, bAt(31), 12)} />
+        <Plate text="REGULATIONS ARE SIMPLIFIED" y={1200} size={28} p={ease(f, bAt(31), 12)} />
+        <Plate text="EMERGENCY ORDERS CAN OVERRIDE" y={1262} size={28} p={ease(f, bAt(31) + 22, 12)} />
         <Dust f={f} color={P.lamp} op={0.26} />
       </SVG>
     );
@@ -766,7 +767,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g>
           <Head13 fill={P.slate} text="ONE SOURCE OF TRUTH · ADF&G REGULATIONS" size={24} />
           <Glyphs x={-350} y={-130} w={640} lines={4} gap={34} seed={44} />
-          <text x={0} y={120} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={24} fill={P.slate}>AUSTIN McDANIEL · PUBLIC SAFETY SPOKESMAN</text>
+          <Glyphs x={-350} y={30} w={560} lines={3} gap={34} seed={45} />
         </g>
       );
     };
@@ -830,7 +831,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       <SVG><Defs />
         <rect width={W} height={H} fill="url(#wood)" />
         {Array.from({length: 30}, (_, i) => <path key={i} d={`M-20,${i * 66 + (hash(i) % 20)} Q540,${i * 66 + 14 + (hash(i + 3) % 24)} 1100,${i * 66 + (hash(i + 5) % 20)}`} stroke="#150F0B" strokeWidth={2} fill="none" opacity={0.5} />)}
-        <ellipse cx={830} cy={760} rx={520} ry={600} fill="url(#lamp)" opacity={0.9 + 0.1 * Math.sin(f / 30)} />
+        <ellipse cx={830} cy={760} rx={560} ry={640} fill="url(#lamp)" opacity={1.0} />
         <g transform="translate(300,590)">
           <rect x={-6} y={8} width={560} height={690} fill={P.ink} opacity={0.5} />
           <rect x={0} y={0} width={540} height={680} fill={P.paper2} stroke={P.ink} strokeWidth={4} />
@@ -852,7 +853,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <path d="M-12,14 V666" stroke={P.cream} strokeWidth={2.5} opacity={0.55} />
           <g transform={`translate(${540 - 250 * tab + 40},${400})`} opacity={clamp01(tab * 3)}>
             <rect x={0} y={-28} width={440} height={56} rx={6} fill={P.paper} stroke={P.ink} strokeWidth={3} />
-            <text x={16} y={9} fontFamily={MONO} fontWeight={800} fontSize={25} fill={P.peat}>CALL ADF&G · 907-465-4190</text>
+            <text x={22} y={9} fontFamily={MONO} fontWeight={800} fontSize={25} fill={P.peat}>CALL ADF&G · 907-465-4190</text>
           </g>
         </g>
         <g transform={`translate(${1300 - 700 * mail},${880 - 60 * mail}) rotate(${-6 + 6 * mail})`} opacity={clamp01(mail * 3)}>
@@ -874,7 +875,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       </SVG>
     );
     zoom = 1 + 0.06 * (f / dur);
-  } else {
+  } else if (n === 15) {
     // THE BOOKEND. The same phone, the same thumb, the search bar empty, and now the binder's
     // title strip faces up with the blank tag lying on it.
     const blink = f % 30 < 16;
