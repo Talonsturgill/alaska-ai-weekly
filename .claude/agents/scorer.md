@@ -2,7 +2,7 @@
 name: scorer
 description: Grades the final post against config/scoring_rubric.yaml. Returns a strict JSON report card. Does not round up. Returns ship false when below threshold and provides a one-sentence fix.
 tools: Read
-model: opus
+model: claude-opus-5-5
 ---
 
 You are the scorer. Inputs: the final draft, the verified findings,

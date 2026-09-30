@@ -26,9 +26,17 @@
       {
         "matcher": "*",
         "hooks": [
-          { "type": "command", "command": "pip install -q -r requirements.txt" }
+          {
+            "type": "command",
+            "command": "pip install -q -r requirements.txt"
+          }
         ]
       }
     ]
+  },
+  "effortLevel": "xhigh",
+  "autoCompactWindow": 250000,
+  "env": {
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "250000"
   }
 }
