@@ -929,13 +929,18 @@ Machine upgrades are weekly now (owner, 2026-09-30). The daily run still closes 
 ## PHASE 9: THE WEEKLY MACHINE PASS (only when due, after the film is delivered)  (`run_cost.py phase machine`)
 
 `python3 scripts/machine_due.py` exits 0 when a pass is due (six days or more since the last one
-recorded in `config/machine_pass.json`, or a repeat offender waiting in the queue) and 1 when not.
-When it is due, and only after Phase 7's draft is read back and the film PR is merged:
+recorded in `config/machine_pass.json`, even with nothing queued, or the day after a pass when a
+repeat offender waits in the queue) and 1 when not. When it is due, and only after Phase 7's draft
+is read back and the film PR is merged:
 
-1. Branch `claude/machine-<date>` off the fresh main.
-2. Spawn ONE `machine-engineer` agent with the brief in `prompts/machine_weekly.md` (plus the
-   no-spawn line). It works in its own fresh context, so the film's context is never billed for
-   engine work. It takes the queue in order (repeat offenders first), makes and verifies each fix,
+1. Branch `claude/machine-<date>` off the fresh main, then write the digest of what the panel kept
+   saying (owner, 2026-10-02: upgrades "based on the recurring themes that it saw during the week
+   ... based on actual output"):
+   `python3 scripts/week_digest.py --date <date> --out out/dispatch/week_digest.md`
+2. Spawn ONE `machine-engineer` agent with the brief in `prompts/machine_weekly.md` and the digest
+   (plus the no-spawn line). It works in its own fresh context, so the film's context is never billed
+   for engine work. It takes the recurring axes and defects first, then the queue (repeat offenders
+   first), makes and verifies each fix,
    advances at most one engine system, and returns a short JSON report of what it changed and the
    exact commands that verify it.
 3. Verify its claims yourself by running the commands it listed (Guardrail 4). Anything that fails

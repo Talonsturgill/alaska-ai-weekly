@@ -9,9 +9,10 @@ offenders. That work ran in the main loop, at the end of the run, when the conve
 its largest, so each of its calls re-read several hundred thousand tokens. Now the run queues
 what it finds in docs/MACHINE_QUEUE.md, and once a week a pass works the queue in a fresh agent.
 
-The pass is due when there is something to do and either no pass has run yet, six or more days
-have passed since the last one, or an open item is a repeat offender (it has bitten two or more
-runs), because a repeat offender waiting a week is a week of runs paying for it again.
+The pass is due when no pass has run yet, when six or more days have passed since the last one
+(even with nothing queued, since 2026-10-02, because scripts/week_digest.py reads the panel's own
+verdicts for the themes), or the day after a pass when an open item is a repeat offender (it has
+bitten two or more runs), because a repeat offender waiting a week is a week of runs paying for it.
 
   python3 scripts/machine_due.py [--date YYYY-MM-DD]
   python3 scripts/machine_due.py --self-test
@@ -42,18 +43,20 @@ def open_items(text):
 
 
 def verdict(state, queue_text, today):
+    # DUE ON SCHEDULE EVEN WITH AN EMPTY QUEUE (owner, 2026-10-02: upgrades "based on the recurring
+    # themes that it saw during the week ... based on actual output"). The themes come from the
+    # panel's own verdicts through scripts/week_digest.py, not only from what a run queued, so an
+    # empty queue no longer means there is nothing to do.
     items = open_items(queue_text)
-    if not items:
-        return False, "nothing is queued"
     last = state.get("last_pass")
     repeats = [i for i in items if i["repeat"] >= 2]
-    if repeats:
-        return True, f"{len(repeats)} repeat offender(s) queued"
     if not last:
-        return True, f"no pass has run yet and {len(items)} item(s) are queued"
+        return True, f"no pass has run yet ({len(items)} item(s) queued)"
     age = (today - dt.date.fromisoformat(last)).days
     if age >= DAYS:
         return True, f"last pass {last}, {age} days ago, {len(items)} item(s) queued"
+    if repeats and age >= 1:
+        return True, f"{len(repeats)} repeat offender(s) queued, last pass {last}"
     return False, f"last pass {last}, {age} days ago (due at {DAYS}), {len(items)} queued"
 
 
@@ -78,8 +81,10 @@ def self_test():
     q0 = ("    - [ ] <date found> | repeat: <n> | the format example\n"
           "## Open\n(none)\n## Done\n- [x] 2026-10-01 | repeat: 3 | old\n")
     checks = [
-        (not verdict({}, q0, d)[0], "an empty queue is never due, and closed items and the indented example don't count"),
-        (verdict({}, q1, d)[0], "the first pass is due as soon as anything is queued"),
+        (open_items(q0) == [], "closed items and the indented example are not open items"),
+        (verdict({}, q0, d)[0], "the first pass is due even with nothing queued"),
+        (verdict({"last_pass": "2026-10-04"}, q0, d)[0], "six days after a pass is due with nothing queued"),
+        (not verdict({"last_pass": "2026-10-10"}, q2, d)[0], "never twice on one day"),
         (not verdict({"last_pass": "2026-10-06"}, q1, d)[0], "four days after a pass is not due"),
         (verdict({"last_pass": "2026-10-04"}, q1, d)[0], "six days after a pass is due"),
         (verdict({"last_pass": "2026-10-09"}, q2, d)[0], "a repeat offender is due at once"),
