@@ -27,7 +27,8 @@
    "bench": "warm lamp key upper left, teal fill, magenta rim only on the beam",
    "machine-interior": "magenta beam as the only key, the slot rimmed in brass, the question mark lit pearl",
    "archive and hangar": "one hanging lamp pool at centre, cool falloff to the far drawers, drawer pulls catch glints",
-   "staircase": "the reader's lamp across the hall keys the stairs warm from the left, teal fill, the manager's pen catches the lamp"
+   "staircase": "the reader's lamp across the hall keys the stairs warm from the left, teal fill, the manager's pen catches the lamp",
+   "cutaway-diagram": "flat cool diagram key, the pearl stones and the tree rings rimmed warm"
   }
  },
  "shape_language": {
@@ -104,7 +105,7 @@
     "source": "net-new BenchScope: the shelf has no microscope (bench.tsx is ash instruments, calipers and cores)"
    }
   ],
-  "net_new": "Otolith, TallyCounter, NIRReader, BenchScope, ArchiveDrawers (lib/otolith.tsx) and Rockfish (fauna.tsx). Registered in ASSET_MANIFEST.md, index regenerated.",
+  "net_new": "Otolith, TreeRings, TallyCounter, NIRReader, BenchScope, ArchiveDrawers, AgeTag, SpectralLine (lib/otolith.tsx) and Groundfish rockfish/pollock (fauna.tsx). Registered in ASSET_MANIFEST.md, index regenerated.",
   "continuity": "Character rig, BrassPlate, BoxLabel, StatBurst, Stamp, FatArrow, ImpactStar, SpeedLines, PaperStorm, GradeLayer, ContactShadow, Stage3D."
  },
  "motion_language": {
@@ -113,14 +114,14 @@
    "the otolith pop out of the rockfish with anticipation, 180 degree motion blur and spin settle",
    "the NIR spectrometer sliding in on rails with overshoot and a brass clank",
    "the machine tag bouncing off the sealed NEXT STEP slot with squash and an ImpactStar",
-   "the spectral line peeling off and resolving into tally ticks"
+   "the spectral line tearing into tally ticks that curve and settle as concentric rings around an otolith core, magenta turning pearl"
   ]
  },
  "composition": {
   "focal": "The shot's named hero is always the brightest, best-finished object at the frame centre. The magenta beam never outshines the pearl stone.",
   "negative_space": "the archive dark and the water carry the negative space, the lamp pool frames the subject",
   "safe_area": "hero action and plates inside y 420 to 1500 for the square, atmosphere above and bench foreground below",
-  "signature_shot": "Inside the 1930s timber hangar: a propeller on a beam where planes should be, drawers glinting to a vanishing point like a starfield (held 0.7s), an archivist in a lamp pool carrying a tray of drawers, and an archive otolith pair tagged 1960s rising from one drawer under the brass Chamberlin plate. The 1878 stone is NOT in the hangar (it was collected in 2022)."
+  "signature_shot": "Inside the 1930s timber hangar in Seattle: a propeller on a beam where planes should be, drawers glinting to a vanishing point like a starfield (held 0.7s), no person; an unlabeled archive stone rises from one drawer under the brass plate reading \"A PERFECT LITTLE TIME CAPSULE\" \u00b7 DEREK CHAMBERLIN \u00b7 NOAA FISHERIES, while crates stamp shut MOVED \u00b7 2012."
  },
  "craft_advance": "none needed beyond the net-new otolith family"
 }

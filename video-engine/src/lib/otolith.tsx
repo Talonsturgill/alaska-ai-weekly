@@ -477,3 +477,52 @@ export const ArchiveDrawers: React.FC<{
   }
   return <g>{out}</g>;
 };
+
+// ---------------------------------------------------------------------------------------------
+// TREE RINGS: a sawn tree cross-section that counts the same way the Otolith does, so a film can
+// light stone rings and tree rings one for one. `counted` 0..1 travels core outward exactly like
+// Otolith.counted. Bark, a radial check (crack), saw marks. Anchor (x, y) is the pith.
+// ---------------------------------------------------------------------------------------------
+export const TreeRings: React.FC<{x: number; y: number; scale?: number; rings?: number; counted?: number; pulse?: number; f?: number}> = ({
+  x, y, scale = 1, rings = 14, counted = 1, pulse = 0, f = 0,
+}) => {
+  const id = uid(`tr${x}${y}${scale}`);
+  const wood = tones('#C99A62');
+  const R = 190;
+  const wob = (k: number, a: number) => R * k * (1 + 0.035 * Math.sin(a * 3 + 1.3) + 0.02 * Math.sin(a * 7));
+  const ring = (k: number) => {
+    const pts: string[] = [];
+    for (let i = 0; i < 60; i++) {
+      const a = (i / 60) * Math.PI * 2;
+      pts.push(`${(Math.cos(a) * wob(k, a)).toFixed(1)},${(Math.sin(a) * wob(k, a) * 0.92).toFixed(1)}`);
+    }
+    return `M${pts.join(' L')} Z`;
+  };
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <defs><FormGradient id={id} t={wood} softness={0.9} /></defs>
+      <ContactShadow cx={0} cy={R * 0.95} rx={R * 0.95} ry={20} opacity={0.4} />
+      <path d={ring(1.1)} fill="#5A3A22" stroke={INK} strokeWidth={7} />
+      {Array.from({length: 16}, (_, i) => {
+        const a = (i / 16) * Math.PI * 2;
+        return <path key={i} d={`M${Math.cos(a) * R * 1.02},${Math.sin(a) * R * 0.94} L${Math.cos(a) * R * 1.09},${Math.sin(a) * R * 1.0}`} stroke="#3A2414" strokeWidth={5} />;
+      })}
+      <path d={ring(1)} fill={`url(#${id})`} stroke={INK} strokeWidth={4} />
+      {Array.from({length: rings}, (_, i) => {
+        const k = 1 - (i + 1) / (rings + 1.2);
+        const at = 1 - k;
+        const lit = counted >= at - 0.02;
+        return <path key={i} d={ring(k)} fill="none" stroke={lit ? '#7A4A22' : wood.core} strokeWidth={lit ? 3.4 : 2} opacity={lit ? 0.9 : 0.45} />;
+      })}
+      {pulse > 0 && pulse < 1 && (
+        <path d={ring(Math.max(0.05, pulse))} fill="none" stroke={LAMP} strokeWidth={7 * (1 - pulse) + 2} opacity={0.85 * (1 - pulse * 0.6)} style={{mixBlendMode: 'screen'} as any} />
+      )}
+      {/* saw marks and a radial check */}
+      {Array.from({length: 7}, (_, i) => <path key={i} d={`M${-R * 0.9},${-R * 0.6 + i * 34} q${R * 0.9},-10 ${R * 1.8},0`} fill="none" stroke="#FFFFFF" strokeWidth={2} opacity={0.08} />)}
+      <path d={`M${R * 0.15},${-R * 0.1} L${R * 0.55},${-R * 0.42} L${R * 0.62},${-R * 0.5}`} fill="none" stroke="#3A2414" strokeWidth={4} />
+      <circle cx={0} cy={0} r={6} fill="#7A4A22" />
+      <path d={ring(1)} fill="none" stroke={INK} strokeWidth={6} />
+      <RimLight d={`M${-R * 0.7},${-R * 0.72} Q0,${-R * 1.02} ${R * 0.7},${-R * 0.72}`} w={4} color={LAMP} opacity={0.5} />
+    </g>
+  );
+};

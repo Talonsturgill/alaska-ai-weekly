@@ -1,0 +1,68 @@
+{
+ "run_date": "2026-10-02",
+ "title": "Who Counted",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "2.5 Million Perfect Little Time Capsules of Ocean Chemistry, September 28th, 2026",
+   "outlet": "NOAA Fisheries",
+   "url": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c12",
+    "c13",
+    "c16",
+    "c18"
+   ],
+   "used_in_film": true,
+   "note": "Primary feature on the AFSC otolith archive and near-infrared machine-learning ageing."
+  },
+  {
+   "id": "s2",
+   "title": "Scientists identify more efficient means to determine age of fish using AI and near-infrared, 2023",
+   "outlet": "NOAA Fisheries",
+   "url": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared",
+   "claims": [
+    "c10",
+    "c11",
+    "c14",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "2023 pollock FT-NIR study; next step named as stock assessment use."
+  },
+  {
+   "id": "s3",
+   "title": "Age and Growth Research in Alaska",
+   "outlet": "NOAA Fisheries",
+   "url": "https://www.fisheries.noaa.gov/alaska/science-data/age-and-growth-research-alaska",
+   "claims": [
+    "c3",
+    "c4",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Second source for annual ageing volume, tree-ring analogy and catch limits."
+  },
+  {
+   "id": "s4",
+   "title": "Innovative technologies expand research capabilities in Alaska marine ecosystems",
+   "outlet": "NOAA Fisheries",
+   "url": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "claims": [
+    "c7",
+    "c11",
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "Hub page, last updated September 25th, 2026; AI and near-infrared ageing of Alaska pollock."
+  }
+ ]
+}

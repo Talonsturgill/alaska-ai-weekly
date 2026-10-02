@@ -119,7 +119,7 @@
   {
    "t": 100.24,
    "type": "build-on",
-   "what": "machine and reader share the bench as the signature builds back into tally ticks",
+   "what": "the reader feeds a tray of hand-tagged stones to the machine and its signature builds back into rings",
    "hold_s": 0.6
   }
  ],
@@ -337,9 +337,9 @@
    "vo_line": 10,
    "framing": "push-detail",
    "scale": "medium",
-   "height": "high",
+   "height": "eye",
    "stage": "tagging-table",
-   "pov": "top-down-map",
+   "pov": "eye-level-immersive",
    "layout": "grid-modular",
    "motion_vector": "horizontal-traverse",
    "hero_treatment": "multiplicity-swarm",
@@ -984,7 +984,7 @@
    },
    "choreo": {
     "primary": "600 slams across the seam as the frame splits, eyepiece left and spectrum right",
-    "reaction": "the reader keeps clicking without looking",
+    "reaction": "the thumb on the counter never pauses",
     "ambient": "the lamp flickers softly"
    }
   },
@@ -1002,11 +1002,11 @@
     "subject": "800 percent",
     "action": "slams beside it and the badge settles",
     "emotion": "impressed",
-    "annotation": "600 TO 800% MORE EFFICIENT"
+    "annotation": "600 TO 800% MORE EFFICIENT \u00b7 PER NOAA"
    },
    "choreo": {
     "primary": "800 percent slams beside it and the badge settles",
-    "reaction": "the reader keeps clicking without looking",
+    "reaction": "the thumb on the counter never pauses",
     "ambient": "the lamp flickers softly"
    }
   },
@@ -1028,7 +1028,7 @@
    },
    "choreo": {
     "primary": "eyepiece side keeps ticking rings off as a small tag drops on it",
-    "reaction": "the reader keeps clicking without looking",
+    "reaction": "the thumb on the counter never pauses",
     "ambient": "the lamp flickers softly"
    }
   },
@@ -1288,7 +1288,7 @@
     "subject": "timber hangar",
     "action": "swings its doors open around the drawers, a propeller hanging from a beam",
     "emotion": "nostalgic",
-    "annotation": "AROUND 2 MILLION"
+    "annotation": "AROUND 2 MILLION \u00b7 SEATTLE \u00b7 1930s HANGAR"
    },
    "choreo": {
     "primary": "timber hangar swings its doors open around the drawers, a propeller hanging from a beam",
@@ -1310,7 +1310,7 @@
     "subject": "archive stone",
     "action": "rises from a drawer under a brass name plate",
     "emotion": "reverent",
-    "annotation": "SEATTLE \u00b7 1930s HANGAR"
+    "annotation": "\"A PERFECT LITTLE TIME CAPSULE\" \u00b7 DEREK CHAMBERLIN \u00b7 NOAA FISHERIES"
    },
    "choreo": {
     "primary": "archive stone rises from a drawer under a brass name plate",
@@ -1434,18 +1434,18 @@
    "at_s": 88.2,
    "vo_line": 16,
    "vo": "NOAA called getting these ages into stock assessments the next step.",
-   "shows": "age tag climbs toward the dashed step",
+   "shows": "age tag reaches up for the dashed step and slips through where no surface is",
    "sfx": "tick",
    "means": "",
    "rehook": "will it make the step",
    "draw": {
     "subject": "age tag",
-    "action": "climbs toward the dashed step",
+    "action": "reaches up for the dashed step and slips through where no surface is",
     "emotion": "hopeful",
     "annotation": "NOAA, 2023"
    },
    "choreo": {
-    "primary": "age tag climbs toward the dashed step",
+    "primary": "age tag reaches up for the dashed step and slips through where no surface is",
     "reaction": "the stamp ink spatters",
     "ambient": "the dashed step flickers"
    }
@@ -1566,18 +1566,18 @@
    "at_s": 103.8,
    "vo_line": 18,
    "vo": "So the win today is speed and method. That's real.",
-   "shows": "trophy glints as the lamp and the magenta brighten together",
+   "shows": "lamp and beam brighten together as the hopper swallows the tray",
    "sfx": "chime",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "trophy",
-    "action": "glints as the lamp and the magenta brighten together",
+    "subject": "lamp and beam",
+    "action": "brighten together as the hopper swallows the tray",
     "emotion": "proud",
     "annotation": "THAT'S REAL"
    },
    "choreo": {
-    "primary": "trophy glints as the lamp and the magenta brighten together",
+    "primary": "lamp and beam brighten together as the hopper swallows the tray",
     "reaction": "the lamp and the machine glow brighten together",
     "ambient": "tally ticks drift like snow"
    }
@@ -1628,24 +1628,24 @@
   },
   {
    "id": 51,
-   "t": "108.60",
-   "at_s": 108.6,
-   "vo_line": 20,
-   "vo": "Every age it gives back started as a ring somebody counted.",
-   "shows": "cloth is pulled off the name plate",
+   "t": "108.00",
+   "at_s": 108.0,
+   "vo_line": 19,
+   "vo": "But look where the speed came from.",
+   "shows": "cloth is pulled off the machine name plate",
    "sfx": "whoosh",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "cloth",
-    "action": "is pulled off the name plate",
+    "action": "is pulled off the machine name plate",
     "emotion": "proud",
     "annotation": "TRAINED ON THE ARCHIVE"
    },
    "choreo": {
-    "primary": "cloth is pulled off the name plate",
-    "reaction": "the rings ripple outward",
-    "ambient": "water particles drift as the loop begins"
+    "primary": "cloth is pulled off the machine name plate",
+    "reaction": "the counter digits roll",
+    "ambient": "tally ticks drift like snow"
    }
   },
   {
