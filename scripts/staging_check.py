@@ -61,7 +61,7 @@ GESTURE_POSES = {"point", "raise", "panic", "carry"}
 # A figure, as opposed to a hand, an object, or a room.
 FIGURE = re.compile(r"\b(technician|official|attorney|attorneys|chief|person|people|figure|"
                     r"figures|clerk|resident|residents|worker|workers|member|members|crowd|"
-                    r"staffer|analyst|officer|assembly)\b", re.I)
+                    r"staffer|analyst|officer|assembly|manager|managers|scientist|scientists|archivist)\b", re.I)
 # Verbs that denote an ACT. Deliberate stillness is acting too and must not fire rule B.
 ACT = re.compile(r"\b(looks?|glances?|turns?|signs?|sets? down|slides?|slid|reaches?|"
                  r"points?|hands?|stamps?|taps?|lifts?|pushes?|pulls?|opens?|closes?|"

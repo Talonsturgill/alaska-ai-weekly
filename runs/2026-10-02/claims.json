@@ -307,6 +307,23 @@
     "must_ship": false,
     "on_screen_verbatim": false
    }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary-abstract",
+   "claim": "The pollock FT-NIR model's age predictions were comparable to microscope-based ages; the NIR approach is a predictive model that is calibrated and validated.",
+   "verbatim_source": "\"MMCNN's age predictions were comparable to microscope-based ages yielding as good or slightly better precision.\"",
+   "source": "https://api.openalex.org/works/doi:10.1139/cjfas-2023-0045",
+   "second_source": "https://doi.org/10.1139/cjfas-2018-0112 (Helser et al. 2019 abstract: \"This approach is based on a predictive model between near infrared spectra in the otolith and fish age, which is calibrated and validated.\")",
+   "on_screen": "CHECKED AGAINST MICROSCOPE AGES",
+   "label": "BENSON ET AL. 2023",
+   "requires": [
+    "never claim the training labels were microscope ages as a sourced fact; the film's 'the count came first' is labelled synthesis"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
   }
  ],
  "cut": [

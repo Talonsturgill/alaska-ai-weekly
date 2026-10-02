@@ -65,7 +65,7 @@
  },
  "open_loop": {
   "plant_t": 11.72,
-  "pay_t": 106.4,
+  "pay_t": 105.9,
   "what": "Who counted? The machine AGE OUT slot answer flips to the reader handwritten tag."
  },
  "open_loop_2": {
@@ -522,12 +522,15 @@
     "parts": 6,
     "zones": 3,
     "detail_note": "70 stone, 20 thumb and counter, 10 plate"
-   }
+   },
+   "cut_offset_s": 0.5,
+   "cut_reason": "Hold the machine slot through THE COUNT CAME FIRST; cut on the breath after from, before every."
   }
  ],
  "beats": [
   {
    "id": 1,
+   "shot": 1,
    "t": "0.00",
    "at_s": 0.0,
    "vo_line": 0,
@@ -550,12 +553,13 @@
   },
   {
    "id": 2,
+   "shot": 1,
    "t": "1.30",
    "at_s": 1.3,
    "vo_line": 0,
    "vo": "This rockfish was caught in the Aleutians in twenty twenty-two.",
    "shows": "x-ray wipe sweeps across the head and the ear stone glows inside",
-   "sfx": "riser",
+   "sfx": "chime",
    "means": "",
    "rehook": "",
    "draw": {
@@ -572,6 +576,7 @@
   },
   {
    "id": 3,
+   "shot": 1,
    "t": "3.00",
    "at_s": 3.0,
    "vo_line": 0,
@@ -594,6 +599,7 @@
   },
   {
    "id": 4,
+   "shot": 2,
    "t": "5.82",
    "at_s": 5.82,
    "vo_line": 1,
@@ -616,6 +622,7 @@
   },
   {
    "id": 5,
+   "shot": 2,
    "t": "7.20",
    "at_s": 7.2,
    "vo_line": 1,
@@ -638,6 +645,7 @@
   },
   {
    "id": 6,
+   "shot": 2,
    "t": "9.40",
    "at_s": 9.4,
    "vo_line": 1,
@@ -660,12 +668,13 @@
   },
   {
    "id": 7,
+   "shot": 2,
    "t": "11.72",
    "at_s": 11.72,
    "vo_line": 2,
    "vo": "So who counted?",
    "shows": "brass plate drops beside the stone and rocks",
-   "sfx": "stamp",
+   "sfx": "clank",
    "means": "",
    "rehook": "",
    "draw": {
@@ -682,6 +691,7 @@
   },
   {
    "id": 8,
+   "shot": 3,
    "t": "14.66",
    "at_s": 14.66,
    "vo_line": 3,
@@ -704,6 +714,7 @@
   },
   {
    "id": 9,
+   "shot": 3,
    "t": "19.40",
    "at_s": 19.4,
    "vo_line": 3,
@@ -726,6 +737,7 @@
   },
   {
    "id": 10,
+   "shot": 3,
    "t": "21.40",
    "at_s": 21.4,
    "vo_line": 4,
@@ -748,6 +760,7 @@
   },
   {
    "id": 11,
+   "shot": 3,
    "t": "23.20",
    "at_s": 23.2,
    "vo_line": 4,
@@ -770,6 +783,7 @@
   },
   {
    "id": 12,
+   "shot": 4,
    "t": "24.54",
    "at_s": 24.54,
    "vo_line": 5,
@@ -792,6 +806,7 @@
   },
   {
    "id": 13,
+   "shot": 4,
    "t": "26.40",
    "at_s": 26.4,
    "vo_line": 5,
@@ -814,6 +829,7 @@
   },
   {
    "id": 14,
+   "shot": 4,
    "t": "29.20",
    "at_s": 29.2,
    "vo_line": 5,
@@ -836,6 +852,7 @@
   },
   {
    "id": 15,
+   "shot": 4,
    "t": "30.80",
    "at_s": 30.8,
    "vo_line": 5,
@@ -858,6 +875,7 @@
   },
   {
    "id": 16,
+   "shot": 5,
    "t": "32.00",
    "at_s": 32.0,
    "vo_line": 6,
@@ -880,6 +898,7 @@
   },
   {
    "id": 17,
+   "shot": 5,
    "t": "34.00",
    "at_s": 34.0,
    "vo_line": 6,
@@ -902,6 +921,7 @@
   },
   {
    "id": 18,
+   "shot": 5,
    "t": "35.10",
    "at_s": 35.1,
    "vo_line": 7,
@@ -924,6 +944,7 @@
   },
   {
    "id": 19,
+   "shot": 5,
    "t": "38.40",
    "at_s": 38.4,
    "vo_line": 7,
@@ -946,6 +967,7 @@
   },
   {
    "id": 20,
+   "shot": 5,
    "t": "40.80",
    "at_s": 40.8,
    "vo_line": 7,
@@ -968,6 +990,7 @@
   },
   {
    "id": 21,
+   "shot": 6,
    "t": "43.40",
    "at_s": 43.4,
    "vo_line": 8,
@@ -990,12 +1013,13 @@
   },
   {
    "id": 22,
+   "shot": 6,
    "t": "44.90",
    "at_s": 44.9,
    "vo_line": 8,
    "vo": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
    "shows": "800 percent slams beside it and the badge settles",
-   "sfx": "boom",
+   "sfx": "clank",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1012,6 +1036,7 @@
   },
   {
    "id": 23,
+   "shot": 6,
    "t": "46.90",
    "at_s": 46.9,
    "vo_line": 8,
@@ -1034,6 +1059,7 @@
   },
   {
    "id": 24,
+   "shot": 7,
    "t": "48.00",
    "at_s": 48.0,
    "vo_line": 9,
@@ -1056,6 +1082,7 @@
   },
   {
    "id": 25,
+   "shot": 7,
    "t": "51.60",
    "at_s": 51.6,
    "vo_line": 9,
@@ -1078,6 +1105,7 @@
   },
   {
    "id": 26,
+   "shot": 8,
    "t": "52.78",
    "at_s": 52.78,
    "vo_line": 10,
@@ -1100,6 +1128,7 @@
   },
   {
    "id": 27,
+   "shot": 8,
    "t": "54.60",
    "at_s": 54.6,
    "vo_line": 10,
@@ -1122,12 +1151,13 @@
   },
   {
    "id": 28,
+   "shot": 8,
    "t": "55.90",
    "at_s": 55.9,
    "vo_line": 10,
    "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
    "shows": "far door swings open a crack at the end of the room and light spills out",
-   "sfx": "creak",
+   "sfx": "caw",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1144,19 +1174,20 @@
   },
   {
    "id": 29,
+   "shot": 8,
    "t": "57.00",
    "at_s": 57.0,
    "vo_line": 10,
    "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
    "shows": "tagged stones march single file into the hopper",
-   "sfx": "tick",
+   "sfx": "chain",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "tagged stones",
     "action": "march single file into the hopper",
     "emotion": "orderly",
-    "annotation": "TAGGED BY HAND"
+    "annotation": "TAGGED WITH AGES"
    },
    "choreo": {
     "primary": "tagged stones march single file into the hopper",
@@ -1166,6 +1197,7 @@
   },
   {
    "id": 30,
+   "shot": 8,
    "t": "59.00",
    "at_s": 59.0,
    "vo_line": 10,
@@ -1188,12 +1220,13 @@
   },
   {
    "id": 31,
+   "shot": 9,
    "t": "63.02",
    "at_s": 63.02,
    "vo_line": 11,
    "vo": "They came from NOAA's archive, built ring by ring.",
    "shows": "bench wall falls away and drawers run to a vanishing point",
-   "sfx": "creak",
+   "sfx": "clank",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1210,6 +1243,7 @@
   },
   {
    "id": 32,
+   "shot": 9,
    "t": "65.40",
    "at_s": 65.4,
    "vo_line": 11,
@@ -1232,6 +1266,7 @@
   },
   {
    "id": 33,
+   "shot": 9,
    "t": "67.30",
    "at_s": 67.3,
    "vo_line": 12,
@@ -1254,6 +1289,7 @@
   },
   {
    "id": 34,
+   "shot": 9,
    "t": "71.30",
    "at_s": 71.3,
    "vo_line": 12,
@@ -1276,6 +1312,7 @@
   },
   {
    "id": 35,
+   "shot": 10,
    "t": "73.18",
    "at_s": 73.18,
    "vo_line": 13,
@@ -1298,12 +1335,13 @@
   },
   {
    "id": 36,
+   "shot": 10,
    "t": "75.90",
    "at_s": 75.9,
    "vo_line": 13,
    "vo": "Around two million once sat in an old airplane hangar in Seattle.",
    "shows": "archive stone rises from a drawer under a brass name plate",
-   "sfx": "riser",
+   "sfx": "caw",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1320,12 +1358,13 @@
   },
   {
    "id": 37,
+   "shot": 10,
    "t": "77.20",
    "at_s": 77.2,
    "vo_line": 13,
    "vo": "Around two million once sat in an old airplane hangar in Seattle.",
    "shows": "crates stamp shut one after another",
-   "sfx": "stamp",
+   "sfx": "snap",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1342,6 +1381,7 @@
   },
   {
    "id": 38,
+   "shot": 11,
    "t": "79.08",
    "at_s": 79.08,
    "vo_line": 14,
@@ -1364,6 +1404,7 @@
   },
   {
    "id": 39,
+   "shot": 11,
    "t": "80.30",
    "at_s": 80.3,
    "vo_line": 14,
@@ -1386,12 +1427,13 @@
   },
   {
    "id": 40,
+   "shot": 11,
    "t": "82.60",
    "at_s": 82.6,
    "vo_line": 15,
    "vo": "A faster age only helps if it changes what fishery managers use.",
    "shows": "age tag climbs onto the first brass step",
-   "sfx": "tick",
+   "sfx": "paw",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1408,6 +1450,7 @@
   },
   {
    "id": 41,
+   "shot": 11,
    "t": "86.40",
    "at_s": 86.4,
    "vo_line": 15,
@@ -1430,6 +1473,7 @@
   },
   {
    "id": 42,
+   "shot": 11,
    "t": "88.20",
    "at_s": 88.2,
    "vo_line": 16,
@@ -1446,12 +1490,13 @@
    },
    "choreo": {
     "primary": "age tag reaches up for the dashed step and slips through where no surface is",
-    "reaction": "the stamp ink spatters",
+    "reaction": "the manager looks down at the tag",
     "ambient": "the dashed step flickers"
    }
   },
   {
    "id": 43,
+   "shot": 11,
    "t": "90.60",
    "at_s": 90.6,
    "vo_line": 16,
@@ -1468,34 +1513,36 @@
    },
    "choreo": {
     "primary": "door lights its lettering above the dashed step",
-    "reaction": "the stamp ink spatters",
+    "reaction": "the manager looks down at the tag",
     "ambient": "the dashed step flickers"
    }
   },
   {
    "id": 44,
+   "shot": 11,
    "t": "92.00",
    "at_s": 92.0,
    "vo_line": 16,
    "vo": "NOAA called getting these ages into stock assessments the next step.",
-   "shows": "stamp thuds onto the dashed step and the tag bounces off",
+   "shows": "stamp thuds into the empty dashed outline while the tag, back on AGE, looks up at it",
    "sfx": "stamp",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "stamp",
-    "action": "thuds onto the dashed step and the tag bounces off",
+    "action": "thuds into the empty dashed outline while the tag, back on AGE, looks up at it",
     "emotion": "stopped",
     "annotation": "NEXT STEP"
    },
    "choreo": {
-    "primary": "stamp thuds onto the dashed step and the tag bounces off",
-    "reaction": "the stamp ink spatters",
+    "primary": "stamp thuds into the empty dashed outline while the tag, back on AGE, looks up at it",
+    "reaction": "the manager looks down at the tag",
     "ambient": "the dashed step flickers"
    }
   },
   {
    "id": 45,
+   "shot": 12,
    "t": "93.50",
    "at_s": 93.5,
    "vo_line": 17,
@@ -1518,6 +1565,7 @@
   },
   {
    "id": 46,
+   "shot": 12,
    "t": "97.40",
    "at_s": 97.4,
    "vo_line": 17,
@@ -1540,6 +1588,7 @@
   },
   {
    "id": 47,
+   "shot": 13,
    "t": "100.24",
    "at_s": 100.24,
    "vo_line": 18,
@@ -1562,30 +1611,32 @@
   },
   {
    "id": 48,
+   "shot": 13,
    "t": "103.80",
    "at_s": 103.8,
    "vo_line": 18,
    "vo": "So the win today is speed and method. That's real.",
-   "shows": "lamp and beam brighten together as the hopper swallows the tray",
-   "sfx": "chime",
+   "shows": "cloth is pulled off the machine name plate as the hopper swallows the tray",
+   "sfx": "whoosh",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "lamp and beam",
-    "action": "brighten together as the hopper swallows the tray",
+    "subject": "cloth",
+    "action": "is pulled off the machine name plate as the hopper swallows the tray",
     "emotion": "proud",
-    "annotation": "THAT'S REAL"
+    "annotation": "TRAINED ON THE ARCHIVE"
    },
    "choreo": {
-    "primary": "lamp and beam brighten together as the hopper swallows the tray",
+    "primary": "cloth is pulled off the machine name plate as the hopper swallows the tray",
     "reaction": "the lamp and the machine glow brighten together",
     "ambient": "tally ticks drift like snow"
    }
   },
   {
    "id": 49,
-   "t": "106.40",
-   "at_s": 106.4,
+   "shot": 13,
+   "t": "105.90",
+   "at_s": 105.9,
    "vo_line": 19,
    "vo": "But look where the speed came from.",
    "shows": "question mark spins like a split-flap and lands as a handwritten age tag",
@@ -1596,7 +1647,7 @@
     "subject": "question mark",
     "action": "spins like a split-flap and lands as a handwritten age tag",
     "emotion": "revealed",
-    "annotation": "AGED AT A MICROSCOPE"
+    "annotation": "CHECKED AGAINST MICROSCOPE AGES"
    },
    "choreo": {
     "primary": "question mark spins like a split-flap and lands as a handwritten age tag",
@@ -1606,6 +1657,7 @@
   },
   {
    "id": 50,
+   "shot": 13,
    "t": "107.40",
    "at_s": 107.4,
    "vo_line": 19,
@@ -1618,7 +1670,7 @@
     "subject": "signature line",
     "action": "tears off the screen into tally ticks that curve and land as rings around a core, magenta turning pearl",
     "emotion": "moved",
-    "annotation": "TAUGHT BY COUNTED RINGS"
+    "annotation": "THE COUNT CAME FIRST"
    },
    "choreo": {
     "primary": "signature line tears off the screen into tally ticks that curve and land as rings around a core, magenta turning pearl",
@@ -1628,28 +1680,7 @@
   },
   {
    "id": 51,
-   "t": "108.00",
-   "at_s": 108.0,
-   "vo_line": 19,
-   "vo": "But look where the speed came from.",
-   "shows": "cloth is pulled off the machine name plate",
-   "sfx": "whoosh",
-   "means": "",
-   "rehook": "",
-   "draw": {
-    "subject": "cloth",
-    "action": "is pulled off the machine name plate",
-    "emotion": "proud",
-    "annotation": "TRAINED ON THE ARCHIVE"
-   },
-   "choreo": {
-    "primary": "cloth is pulled off the machine name plate",
-    "reaction": "the counter digits roll",
-    "ambient": "tally ticks drift like snow"
-   }
-  },
-  {
-   "id": 52,
+   "shot": 14,
    "t": "110.60",
    "at_s": 110.6,
    "vo_line": 20,
@@ -1671,7 +1702,8 @@
    }
   },
   {
-   "id": 53,
+   "id": 52,
+   "shot": 14,
    "t": "113.00",
    "at_s": 113.0,
    "vo_line": 20,
@@ -1693,7 +1725,8 @@
    }
   },
   {
-   "id": 54,
+   "id": 53,
+   "shot": 14,
    "t": "113.60",
    "at_s": 113.6,
    "vo_line": 20,

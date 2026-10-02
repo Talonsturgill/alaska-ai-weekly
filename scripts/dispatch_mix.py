@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-09-30"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-10-02"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -89,50 +89,62 @@ VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props)
 # Times are conformed from actual VO line anchors before mixing.
 _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # One authored bank performance per approved beat: kind, class, prop pan, role.
-# Research controls, glazed bays and a harbor test bench carry the physical sounds.
-# No sound implies an approval, measured result or operational winner.
+# 2026-10-02 Who Counted: water, a brass bench, a counter, a spectrometer, an archive and a hangar
+# carry the physical sounds. No sound implies a machine aged the 1878 fish.
 _PERFORMANCE = [
-    ('tick', 'standard', 0.10, 'thumb tap then the typed query ticking in'),
-    ('pop', 'standard', 0.00, 'three soft dots pulsing under the search bar'),
-    ('snap', 'hero', 0.10, 'the answer card slamming onto the glass, a tag clack'),
-    ('paper', 'texture', 0.00, 'three cut-short wing flutters, then three soft ticks in the sedge'),
-    ('thud', 'standard', -0.20, 'a chair scrape and the binder cover set down'),
-    ('creak', 'texture', 0.10, 'a quick breath and a phone scraping the table'),
-    ('ding', 'standard', 0.20, 'dial tones then one long ring'),
-    ('paper', 'texture', 0.20, 'a paper tear and the phone sliding off'),
-    ('clank', 'standard', -0.10, 'a ratchet sweep and a lock click on the calendar'),
-    ('thud', 'hero', 0.00, 'the OCT 8 marker landing with a low wooden thud'),
-    ('chain', 'standard', 0.10, 'two paper slides and the binder edge scraping in over the desk'),
-    ('tick', 'standard', 0.20, 'the trooper typing, then a card drop'),
-    ('snap', 'standard', 0.00, 'the twin card clack in lockstep'),
-    ('pop', 'texture', 0.00, 'one last clack into a low room tone'),
-    ('stamp', 'hero', 0.00, 'the stamp thunk and a register ding'),
-    ('paper', 'texture', 0.00, 'ink hissing and a receipt rustling'),
-    ('whoosh', 'texture', 0.00, 'room tone and a breath on glass'),
-    ('thud', 'standard', 0.20, 'a phone set face down on the sill'),
-    ('pop', 'standard', -0.10, 'a pin pressing into cork'),
-    ('tick', 'standard', 0.30, 'a stray pin dropping and rolling'),
-    ('pop', 'standard', -0.30, 'a run of pins pressing in'),
-    ('whoosh', 'standard', 0.00, 'a swipe and a tab click'),
-    ('snap', 'standard', 0.00, 'a scroll and a highlighter squeak'),
-    ('paper', 'standard', 0.00, 'a thin sheet sliding out and a tiny tick'),
-    ('whoosh', 'texture', 0.00, 'the second sheet sliding over the first'),
-    ('tick', 'standard', 0.00, 'a mail send then wall clock ticks'),
-    ('creak', 'texture', 0.10, 'a clock tick and a chair creak'),
-    ('snap', 'standard', 0.00, 'a laptop lid and a page-load click'),
-    ('pop', 'standard', 0.10, 'a soft key click'),
-    ('ding', 'texture', 0.00, 'a paper lift and a tiny metal tick'),
-    ('stamp', 'standard', 0.00, 'typewriter ticks then a stamp thud'),
-    ('whoosh', 'standard', 0.10, 'a slip whoosh, an ink hiss and a paper sag'),
-    ('paper', 'standard', 0.00, 'a paper cascade over the binder'),
-    ('thud', 'texture', -0.10, 'the tower settling'),
-    ('paper', 'texture', 0.00, 'a soft paper settle on top'),
-    ('riser', 'hero', 0.00, 'a rush of air through fanned paper, a paper sound as each layer passes'),
-    ('boom', 'hero', 0.00, 'the binder cover landing with a wood knock, dust falling'),
-    ('paper', 'standard', -0.20, 'a heavy binder page turning'),
-    ('whoosh', 'standard', 0.30, 'a mailer sliding across the table and a soft thud'),
-    ('snap', 'standard', 0.20, 'a tab sliding out and a soft click'),
-    ('chime', 'standard', 0.00, 'a thumb tap and a phone keyboard blink tick'),
+    ('whoosh', 'texture', 0.0, 'rockfish glides in from the left through dark water, head turning to '),
+    ('chime', 'standard', 0.0, 'x-ray wipe sweeps across the head and the ear stone glows inside'),
+    ('pop', 'standard', 0.0, 'otolith pops out of the skull toward camera, spinning'),
+    ('clank', 'standard', 0.0, 'otolith lands on black velvet as the brass objective drops with a cl'),
+    ('tick', 'standard', 0.0, 'tally counter a thumb clicks it and the first ring pulses out from the cor'),
+    ('thud', 'hero', 0.0, 'date wheel slams on 1878 on seventy-eight'),
+    ('clank', 'standard', 0.0, 'brass plate drops beside the stone and rocks'),
+    ('paper', 'texture', 0.0, 'fish head cutaway unfolds like a diagram and shows a PAIR of ear stones'),
+    ('snap', 'standard', 0.0, 'label snaps onto the stones on otoliths'),
+    ('chime', 'standard', 0.0, 'otolith rings pulse outward one per year on ring every year'),
+    ('creak', 'texture', 0.0, 'sawn tree cross-section slides in and its rings light one for one with the stone'),
+    ('tick', 'standard', 0.0, 'NOAA reader bends to the microscope and clicks the counter, ring by ring'),
+    ('clank', 'standard', 0.0, 'trays of stones slide in faster and stack up behind the reader'),
+    ('thud', 'hero', 0.0, 'tray stack hits the ceiling with a thud as the count lands'),
+    ('paper', 'texture', 0.0, 'tally counter steams from the pace and the reader fans it with a card'),
+    ('clank', 'standard', 0.0, 'NIR reader slides in on brass rails and clanks to a stop beside the ben'),
+    ('paper', 'texture', 0.0, 'cloth falls over the machine name plate, hiding it'),
+    ('riser', 'standard', 0.0, 'magenta beam hits a small tagged pollock stone in the sample port'),
+    ('ding', 'standard', 0.0, 'model block lights up inside the machine body and a signature line draws'),
+    ('snap', 'standard', 0.0, 'AGE OUT slot snaps out a machine-type age tag'),
+    ('boom', 'standard', 0.0, '600 slams across the seam as the frame splits, eyepiece left and'),
+    ('clank', 'hero', 0.0, '800 percent slams beside it and the badge settles'),
+    ('tick', 'standard', 0.0, 'eyepiece side keeps ticking rings off as a small tag drops on it'),
+    ('whoosh', 'texture', 0.0, 'machine tag drains out of the slot and the line runs into an empty slot '),
+    ('snap', 'standard', 0.0, 'signature line recoils from the empty slot'),
+    ('pop', 'standard', 0.0, 'pollock drops its stone onto the first paper tag'),
+    ('paper', 'texture', 0.0, 'reader hand writes an age on the tag, copied from the counter digits'),
+    ('caw', 'standard', 0.0, 'far door swings open a crack at the end of the room and light spills '),
+    ('chain', 'texture', 0.0, 'tagged stones march single file into the hopper'),
+    ('boom', 'hero', 0.0, 'brass count climbs and lands on 8,617 as seventeen ends'),
+    ('clank', 'standard', 0.0, 'bench wall falls away and drawers run to a vanishing point'),
+    ('tick', 'standard', 0.0, 'drawers light one by one on ring by ring'),
+    ('boom', 'hero', 0.0, 'drawer wall rises past the camera as the count lands'),
+    ('snap', 'standard', 0.0, 'date card flips onto the nearest drawer'),
+    ('creak', 'texture', 0.0, 'timber hangar swings its doors open around the drawers, a propeller hangin'),
+    ('caw', 'standard', 0.0, 'archive stone rises from a drawer under a brass name plate'),
+    ('snap', 'standard', 0.0, 'crates stamp shut one after another'),
+    ('boom', 'hero', 0.0, 'title plate slams down at the foot of the staircase'),
+    ('clank', 'standard', 0.0, 'trophy drops onto the NIR reader with a brass clank'),
+    ('paw', 'standard', 0.0, 'age tag climbs onto the first brass step'),
+    ('chime', 'standard', 0.0, 'manager steps into the light at the top of the stairs beside a dashe'),
+    ('tick', 'standard', 0.0, 'age tag reaches up for the dashed step and slips through where no su'),
+    ('ding', 'standard', 0.0, 'door lights its lettering above the dashed step'),
+    ('stamp', 'hero', 0.0, 'stamp thuds into the empty dashed outline while the tag, back on A'),
+    ('paper', 'texture', 0.0, 'manager grips the pen, glances at the tag on the AGE step and drags '),
+    ('tick', 'standard', 0.0, 'NOAA reader comes into focus across the hall, still clicking under the l'),
+    ('clank', 'standard', 0.0, 'reader pushes a tray of hand-tagged stones into the hopper'),
+    ('whoosh', 'texture', 0.0, 'cloth is pulled off the machine name plate as the hopper swallows '),
+    ('tick', 'standard', 0.0, 'question mark spins like a split-flap and lands as a handwritten age tag'),
+    ('paper', 'texture', 0.0, 'signature line tears off the screen into tally ticks that curve and land as'),
+    ('snap', 'standard', 0.0, 'brass plate swings up and lands under the 1878 stone'),
+    ('tick', 'hero', 0.0, 'tally counter clicks one last time on counted and the rings ripple out fro'),
+    ('whoosh', 'texture', 0.0, 'rockfish glides back in from the left, frame one again'),
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
@@ -184,35 +196,30 @@ def event_timing(index, t):
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (L[0], 0.74),
-    (L[1], 0.84),
-    (L[2], 0.78),
-    (L[3], 0.66),
-    (L[4], 0.86),
-    (L[5], 0.90),
-    (L[6], 0.80),
-    (L[7], 0.62),
-    (L[8], 0.78),
-    (L[9] - 0.2, 0.30),     # she told the Beacon, I feel terrible: the bed thins to almost nothing
-    (L[9] + 3.0, 0.32),
-    (L[10], 0.68),
-    (L[11], 0.84),
-    (L[12], 0.72),
-    (L[13], 0.62),
-    (L[14], 0.66),
-    (L[15], 0.90),          # but that source has a catch
-    (L[16], 0.60),
-    (L[17], 0.72),
-    # THE PRE-PAYOFF DIP, authored in the bed: swell into the last beat, drop to near nothing
-    # for a third of a second before "The answer was on top", and come back under it.
-    (L[18] - 1.30, 0.92),
-    (L[18] - 0.40, 0.04),
-    (L[18] + 0.12, 0.30),
-    (L[18] + 2.4, 0.66),
-    (L[19], 0.70),
-    (L[20], 0.62),
-    (VIDEO_SECS - 12.0, 0.70),
-    (VIDEO_SECS - 6.0, 0.52),
+    (L[0], 0.70),           # wonder: the old fish
+    (L[1], 0.80),
+    (L[2], 0.60),           # who counted? the bed leans back for the question
+    (L[3], 0.78),
+    (L[5], 0.86),
+    (L[6], 0.92),           # a faster reader: the lift
+    (L[8], 0.96),
+    (L[9], 0.62),           # but: you need the age first
+    (L[10], 0.80),
+    (L[11], 0.74),
+    (L[12], 0.90),          # the archive opens up
+    (L[13], 0.70),
+    (L[14] - 0.2, 0.34),    # the fair case against: the bed thins under the concession
+    (L[15], 0.40),
+    (L[17], 0.46),
+    (L[18], 0.82),          # that's real
+    # THE PRE-PAYOFF DIP: swell into "look where the speed came from", drop to near nothing
+    # before the button line, and come back under it.
+    (L[20] - 1.30, 0.94),
+    (L[20] - 0.40, 0.04),
+    (L[20] + 0.12, 0.30),
+    (L[20] + 2.4, 0.62),
+    (VIDEO_SECS - 9.0, 0.70),
+    (VIDEO_SECS - 4.0, 0.50),
     (VIDEO_SECS - 0.4, 0.0),
 ]
 
@@ -367,7 +374,7 @@ def _fit_silence_dip(lines, after_frac=0.5):
 # Episode-local: fit the breath ONLY in the real gap before line15's final question.
 # The shared helper and its minimum/margins remain unchanged. If the natural take
 # has no usable final gap, warn rather than invent a pause or attenuate spoken words.
-_BUTTON_LINE = 15
+_BUTTON_LINE = 20
 SILENCE_DIP_AT, DIP_LEN = _fit_silence_dip(
     _lines, after_frac=(L[_BUTTON_LINE] - 0.000001) / max(x["end"] for x in _lines))
 if SILENCE_DIP_AT is None:
