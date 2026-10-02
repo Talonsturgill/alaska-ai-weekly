@@ -7,7 +7,7 @@ import {EndCredits} from './lib/EndCredits';
 import {assertCropSafe} from './lib/cropsafe';
 import {HandSil} from './lib/stack';
 import {Character} from './lib/Character';
-import {Groundfish} from './lib/fauna';
+import {Groundfish, Raven} from './lib/fauna';
 import {BrassPlate} from './lib/bench';
 import {StatBurst, Stamp} from './lib/kit';
 import {ImpactStar, SpeedLines} from './lib/FX';
@@ -194,7 +194,7 @@ const MachineInside: React.FC<{f: number}> = ({f}) => (
 );
 
 /** A small brass microscope, side view, for the reader's bench. Anchor is the foot centre. */
-const Scope: React.FC<{x: number; y: number; s?: number}> = ({x, y, s = 1}) => {
+const Microscope: React.FC<{x: number; y: number; s?: number}> = ({x, y, s = 1}) => {
   const b = tones(C.brass);
   return (
     <g transform={`translate(${x},${y}) scale(${s})`}>
@@ -285,6 +285,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   let picture: React.ReactNode = null;
   let zoom = push;
   let dy = 0;
+  // IMPACT JUICE: every beat contact in this shot kicks the camera (a 2 to 4 px shake and a small
+  // zoom punch that decays in about 6 frames), so each event reads in the frame as well as the plate.
+  const kick = Math.min(1, beats.reduce((acc, b) => {
+    const d = f - (b.at * 30 - from);
+    return d >= 0 && d < 22 && b.at * 30 >= from && b.at * 30 < from + dur ? acc + Math.exp(-d / 6) : acc;
+  }, 0));
 
   if (n === 1) {
     // HOOK. A rockfish glides in, an x-ray finds the ear stone, the stone pops toward camera.
@@ -369,8 +375,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <Otolith x={lerp(440, 760, lift)} y={lerp(740, 900, lift)} scale={lerp(0.12, 0.62 * (1 - treeIn), lift)} f={f} mode="pearl" rot={186} counted={ringK} pulse={pulse} />
         {treeIn > 0.01 && <TreeRings x={lerp(1300, 760, treeIn)} y={950} scale={0.95} counted={ringK} pulse={pulse} f={f} />}
         {since(9) >= 0 && lift < 0.5 && <ellipse cx={440} cy={740} rx={60 + 30 * q(9, 10)} ry={36} fill="none" stroke={C.lamp} strokeWidth={5} opacity={0.8 * (1 - q(10, 12))} />}
-        <Plate text="A PAIR OF EAR STONES" y={500} size={32} p={q(8, 12) * (1 - q(10, 10))} />
-        <Plate text="OTOLITH · EAR STONE" y={500} size={32} p={q(10, 12) * (1 - q(11, 10))} />
+        <Plate text="A PAIR OF EAR STONES" y={500} size={32} p={q(8, 12) * (1 - q(10, 10))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="OTOLITH · EAR STONE" y={500} size={32} p={q(10, 12) * (1 - q(11, 10))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="ONE RING A YEAR" x={300} y={1250} size={28} p={q(11, 12)} />
         <Plate text="LIKE A TREE" x={770} y={1250} size={28} p={q(12, 12)} />
         <Motes f={f} color="#BFEFF7" op={0.16} />
@@ -398,14 +404,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           );
         })}
         {hit > 0.02 && since(15) < 14 && <ImpactStar cx={780} cy={420} r={150 * hit} color={C.lamp} />}
-        <Scope x={480} y={1200} s={1.1} />
+        <Microscope x={480} y={1200} s={1.1} />
         <Character frame={from + f} x={250} y={1270} scale={1.05} facing={1} pose="carry" gesture={0.6 + 0.4 * clamp01(1 - click * 3)} emotion="neutral" outfit="flannel"
           hairStyle="long" glasses headgear="bare" idleGain={0.6} />
         <TallyCounter x={392} y={1050} scale={0.32} count={40 + clickN + click} press={clamp01(1 - click * 3)} steam={q(16, 20)} f={f} worn={0.4} />
-        <Plate text="NOAA SCIENTISTS" y={500} size={32} p={q(13, 12) * (1 - q(15, 8))} />
+        <Plate text="NOAA SCIENTISTS" y={500} size={32} p={q(13, 12) * (1 - q(15, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="UNDER MICROSCOPES" x={480} y={760} size={26} p={q(14, 10) * (1 - q(15, 8))} />
         {hit > 0.02 && <StatBurst cx={780} cy={760} scale={0.95 * hit} big="30,000+" lines={['A YEAR']} fill={C.lamp} big_fs={66} />}
-        <Plate text="30,000+ A YEAR · PER NOAA" y={500} size={30} p={q(15, 10)} />
+        <Plate text="30,000+ A YEAR · PER NOAA" y={500} size={30} p={q(15, 10)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="COUNTED BY HAND" x={330} y={1250} size={26} p={q(16, 10)} />
       </SVG>
     );
@@ -424,7 +430,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
       <SVG>
         <g transform={`translate(${-whip},0)`}>
           <Bench f={f} id="s5" velvet={false} lampX={160} lampY={980} />
-          <Scope x={120} y={1260} s={0.85} />
+          <Microscope x={120} y={1260} s={0.85} />
           <NIRReader x={mx} y={1250} scale={1.0} f={f} beam={beam} spectrum={spec} seed={3} plate="TRAINED ON THE ARCHIVE" cloth={q(18, 16)}
             slot={tagOut > 0.01 ? <MachineTag x={0} y={60 * (1 - tagOut)} s={0.9} /> : null} />
           {/* the small tagged pollock stone in the sample port */}
@@ -441,10 +447,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
           {since(17) >= 0 && since(17) < 12 && <ImpactStar cx={mx - 300} cy={1250} r={90} color={C.brass} />}
         </g>
-        <Plate text="A FASTER READER" y={500} size={34} p={q(17, 12) * (1 - q(19, 8))} />
+        <Plate text="A FASTER READER" y={500} size={34} p={q(17, 12) * (1 - q(19, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="?" x={mx} y={1150} size={26} p={q(18, 10) * (1 - q(19, 6))} />
-        <Plate text="NEAR-INFRARED LIGHT" y={500} size={32} tone="nir" p={q(19, 10) * (1 - q(20, 8))} />
-        <Plate text="MACHINE LEARNING" y={500} size={32} tone="nir" p={q(20, 10) * (1 - q(21, 8))} />
+        <Plate text="NEAR-INFRARED LIGHT" y={500} size={32} tone="nir" p={q(19, 10) * (1 - q(20, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="MACHINE LEARNING" y={500} size={32} tone="nir" p={q(20, 10) * (1 - q(21, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="AGE" x={mx + 205} y={760} size={28} tone="nir" p={q(21, 10)} />
       </SVG>
     );
@@ -472,8 +478,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d="M540,640 V1300" stroke={C.cream} strokeWidth={4} opacity={0.6} />
         {s600 > 0.02 && since(23) < 0 && <StatBurst cx={540} cy={620} scale={0.8 * s600} big="600%" lines={['PER NOAA']} fill={C.lamp} big_fs={84} />}
         {s800 > 0.02 && <StatBurst cx={540} cy={620} scale={1.25 * s800} big="600 TO 800%" lines={['MORE EFFICIENT', 'PER NOAA']} fill={C.lamp} big_fs={40} />}
-        <Plate text="PER NOAA" y={500} size={28} p={ease(f, 0, 10) * (1 - q(23, 6))} />
-        <Plate text="600 TO 800% MORE EFFICIENT · PER NOAA" y={500} size={22} p={q(23, 12)} />
+        <Plate text="PER NOAA" y={500} size={28} p={ease(f, 0, 10) * (1 - q(23, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="600 TO 800% MORE EFFICIENT · PER NOAA" y={500} size={22} p={q(23, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="MICROSCOPE STILL IN THE PROCESS" x={540} y={1250} size={24} p={q(24, 12)} />
       </SVG>
     );
@@ -497,8 +503,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g transform={`translate(${recoil},0)`}>
           <SpectralLine x={-40} y={760} w={lerp(80, 480, run)} h={260} seed={3} progress={1} width={7} />
         </g>
-        <Plate text="WHO COUNTED?" y={500} size={34} p={q(25, 10) * (1 - q(26, 8))} />
-        <Plate text="NEED THE AGE FIRST" y={500} size={34} p={q(26, 12)} />
+        <Plate text="WHO COUNTED?" y={500} size={34} p={q(25, 10) * (1 - q(26, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="NEED THE AGE FIRST" y={500} size={34} p={q(26, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Motes f={f} color={C.nir} op={0.2} />
       </SVG>
     );
@@ -572,9 +578,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <Groundfish x={lerp(-360, 250, fishK) + 300 * ease(f, bAt(27) + 6, 30)} y={760} scale={1.8} f={f} kind="pollock" swim={0.8} caustics={false} />
           </g>
         </g>
-        <Plate text="POLLOCK" y={500} size={30} p={q(27, 10) * (1 - q(28, 8))} />
-        <Plate text="2023 · TRAINED AND TESTED" y={500} size={30} p={q(28, 10) * (1 - q(30, 8))} />
-        <Plate text="TAGGED WITH AGES" y={500} size={30} p={q(30, 10) * (1 - ease(f, bAt(31) + LAND, 8))} />
+        <Plate text="POLLOCK" y={500} size={30} p={q(27, 10) * (1 - q(28, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="2023 · TRAINED AND TESTED" y={500} size={30} p={q(28, 10) * (1 - q(30, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="TAGGED WITH AGES" y={500} size={30} p={q(30, 10) * (1 - ease(f, bAt(31) + LAND, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="8,617 POLLOCK STONES · 2023" y={1250} size={30} p={ease(f, bAt(31) + LAND, 10)} />
         <Motes f={f} color={C.lamp} op={0.14} />
       </SVG>
@@ -592,13 +598,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* the bench wall falling away */}
         {fall < 1 && <g transform={`translate(0,${1400 * fall}) rotate(${10 * fall} 540 1920)`}>
           <rect width={W} height={H} fill="#2A1C14" />
-          <Scope x={300} y={1200} s={1} />
+          <Microscope x={300} y={1200} s={1} />
         </g>}
         {burst > 0.02 && <StatBurst cx={540} cy={800} scale={1.25 * burst} big="2.5 MILLION" lines={['OTOLITH PAIRS', 'PER NOAA']} fill={C.lamp} big_fs={44} />}
-        <Plate text="NOAA ARCHIVE" y={500} size={34} p={q(32, 12) * (1 - q(34, 8))} />
-        <Plate text="BUILT RING BY RING" y={1250} size={30} p={q(33, 12) * (1 - q(34, 8))} />
-        <Plate text="2.5 MILLION OTOLITH PAIRS · PER NOAA" y={500} size={26} p={q(34, 10)} />
-        <Plate text="SINCE THE 1960s" y={1250} size={32} tone="brass" p={q(35, 12)} />
+        <Plate text="NOAA ARCHIVE" y={500} size={34} p={q(32, 12) * (1 - q(34, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="BUILT RING BY RING" y={1250} size={30} p={q(33, 12) * (1 - q(34, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="2.5 MILLION OTOLITH PAIRS · PER NOAA" y={500} size={26} p={q(34, 10)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="SINCE THE 1960s" y={1250} size={32} tone="brass" p={q(35, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Motes f={f} color={C.lamp} op={0.18} rise={0.15} />
       </SVG>
     );
@@ -624,6 +630,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <path d="M-260,8 C-180,-24 -40,-14 0,0 C40,-14 180,-24 260,8 C180,20 40,14 0,4 C-40,14 -180,20 -260,8 Z" fill="#6A4628" stroke={C.ink} strokeWidth={6} />
           <circle r={22} fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} />
         </g>
+        {(() => {
+          const lift = ease(f, bAt(36) + 6, 50);
+          return <Raven x={lerp(860, 1180, lift)} y={lerp(612, 420, lift) - Math.sin(lift * Math.PI) * 40} scale={0.9} f={f} facing={1} mode={lift > 0.02 ? 'fly' : 'perch'} />;
+        })()}
         <g opacity={fadeIn}>
           <g transform="translate(140,700) scale(0.75)">
             <ArchiveDrawers w={1080} h={1000} vx={540} vy={560} f={f} rows={8} cols={7} depth={4} glint={1.2} />
@@ -696,13 +706,13 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g transform={`rotate(${teeter} ${tagX} ${tagY + 30})`}><MachineTag x={tagX} y={tagY} s={1.2} /></g>
         {since(45) >= 0 && since(45) < 12 && <ImpactStar cx={590} cy={1050} r={90} color={C.cream} />}
         {since(45) >= 0 && <Stamp cx={590} cy={1050} s={0.42 * spring(f, bAt(45), 12)} text="NEXT STEP" rot={-8} color={C.lamp} />}
-        <Plate text="THE FAIR CASE AGAINST" y={520} size={40} p={pop(39, 14) * (1 - q(40, 8))} />
-        <Plate text="CREDIT TO THE ENGINEERS" y={520} size={32} p={q(40, 10) * (1 - q(41, 8))} />
+        <Plate text="THE FAIR CASE AGAINST" y={520} size={40} p={pop(39, 14) * (1 - q(40, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="CREDIT TO THE ENGINEERS" y={520} size={32} p={q(40, 10) * (1 - q(41, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="AGE" x={330} y={1060} size={26} p={q(41, 10) * (1 - q(42, 8))} />
-        <Plate text="FISHERY MANAGERS" y={520} size={32} p={q(42, 10) * (1 - q(43, 8))} />
-        <Plate text="NOAA, 2023" y={520} size={32} p={q(43, 10) * (1 - q(44, 8))} />
-        <Plate text="STOCK ASSESSMENT" y={520} size={32} p={q(44, 10) * (1 - q(45, 8))} />
-        <Plate text="NEXT STEP" y={520} size={40} tone="brass" p={q(45, 10)} />
+        <Plate text="FISHERY MANAGERS" y={520} size={32} p={q(42, 10) * (1 - q(43, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="NOAA, 2023" y={520} size={32} p={q(43, 10) * (1 - q(44, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="STOCK ASSESSMENT" y={520} size={32} p={q(44, 10) * (1 - q(45, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="NEXT STEP" y={520} size={40} tone="brass" p={q(45, 10)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Motes f={f} color={C.lamp} op={0.16} />
       </SVG>
     );
@@ -724,7 +734,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g filter="url(#s12bg)">
           <radialGradient id="s12l" cx="0.5" cy="0.5" r="0.5"><stop stopColor={C.lamp} stopOpacity={0.5} /><stop offset="1" stopColor={C.lamp} stopOpacity={0} /></radialGradient>
           <ellipse cx={760} cy={760} rx={300} ry={240} fill="url(#s12l)" />
-          <Scope x={820} y={900} s={0.6} />
+          <Microscope x={820} y={900} s={0.6} />
           <Character frame={from + f} x={660} y={920} scale={0.5} facing={1} pose="carry" gesture={0.55 + 0.45 * Math.abs(Math.sin(f / 6))} outfit="flannel" hairStyle="long" glasses />
           <TallyCounter x={720} y={800} scale={0.16} count={300 + f / 10} press={clamp01(1 - click * 3)} />
         </g>
@@ -741,9 +751,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
           <g transform="translate(860,1230)"><MachineTag x={0} y={0} s={0.9} /></g>
         </g>
-        <Plate text="MANAGERS SET LIMITS" y={500} size={36} p={q(46, 12) * (1 - q(47, 8))} />
+        <Plate text="MANAGERS SET LIMITS" y={500} size={36} p={q(46, 12) * (1 - q(47, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="NOT MACHINES" x={860} y={1140} size={26} p={ease(f, bAt(46) + 70, 12)} />
-        <Plate text="MICROSCOPE STAYS IN THE PROCESS" y={500} size={28} p={q(47, 12)} />
+        <Plate text="MICROSCOPE STAYS IN THE PROCESS" y={500} size={28} p={q(47, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
       </SVG>
     );
     zoom = 1 + 0.05 * (f / dur);
@@ -811,9 +821,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>TRAINED ON THE ARCHIVE</text>
           {cloth > 0.01 && <rect x={-210 + 500 * (1 - cloth)} y={-44 - 80 * (1 - cloth)} width={420} height={88} fill="#7B2B3C" stroke={C.ink} strokeWidth={4} opacity={cloth} />}
         </g>
-        <Plate text="SPEED · METHOD" y={500} size={34} p={q(48, 12) * (1 - q(49, 8))} />
-        <Plate text="TRAINED ON THE ARCHIVE" y={500} size={32} tone="brass" p={q(49, 12) * (1 - ease(f, bAt(50) - 24, 8))} />
-        <Plate text="CHECKED AGAINST MICROSCOPE AGES" y={500} size={28} p={q(50, 10) * (1 - q(51, 8))} />
+        <Plate text="SPEED · METHOD" y={500} size={34} p={q(48, 12) * (1 - q(49, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="TRAINED ON THE ARCHIVE" y={500} size={32} tone="brass" p={q(49, 12) * (1 - ease(f, bAt(50) - 24, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="CHECKED AGAINST MICROSCOPE AGES" y={500} size={28} p={q(50, 10) * (1 - q(51, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="THE COUNT CAME FIRST" y={1250} size={30} p={q(51, 12)} />
       </SVG>
     );
@@ -826,7 +836,6 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const press = click && since(53) - CLICK < 8 ? 1 - (since(53) - CLICK) / 8 : 0;
     const ripple = click ? clamp01((since(53) - CLICK) / 24) : 0;
     const flipK = ease(f, bAt(53), 10);
-    const loop = ease(f, bAt(54), 8);
     picture = (
       <SVG>
         <Bench f={f} id="s14" />
@@ -838,10 +847,6 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <BrassPlate x={540} y={1250} lines={[flipK < 0.5 ? 'WHO COUNTED?' : 'SOMEBODY COUNTED']} set={q(52, 16)} scale={0.9} w={560} size={44} />
         </g>
         <Plate text="0144" x={820} y={960} size={26} p={ease(f, bAt(53) + CLICK, 8)} />
-        {loop > 0.01 && <g opacity={loop}>
-          <Water f={f} id="s14w" />
-          <Groundfish x={-260 + 4 * since(54)} y={900} scale={2.6} f={f} kind="rockfish" swim={0.8} />
-        </g>}
       </SVG>
     );
     zoom = 1 + 0.04 * (f / dur);
@@ -849,7 +854,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
 
   return (
     <AbsoluteFill>
-      <div style={{position: 'absolute', inset: 0, transform: `translateY(${dy}px) scale(${zoom}) translateX(${drift * 5}px)`}}>
+      <div style={{position: 'absolute', inset: 0, transform: `translate(${drift * 5 + Math.sin(f * 2.3) * 3.5 * kick}px, ${dy + Math.cos(f * 1.9) * 2.5 * kick}px) scale(${zoom * (1 + 0.022 * kick)})`}}>
         {picture}
       </div>
       <GradeLayer f={f} bloom={0.06 + acc * 0.08} vignette={0.34} grain={0.05} warmth={0.04} />

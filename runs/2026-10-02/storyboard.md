@@ -1,4 +1,4 @@
-# Who Counted, storyboard 2026-10-02 (rev 2)
+# Who Counted, storyboard 2026-10-02 (rev 4)
 
 A machine now reads a fish ear stone with light, and the film opens it up to find that every answer it gives was taught by people counting rings at microscopes, one ring at a time.
 
@@ -10,7 +10,7 @@ A machine now reads a fish ear stone with light, and the film opens it up to fin
 - S5 32.00-42.20s A faster reader (reader-bench, alt-vantage, medium/low, in: whip-pan): The NIR reader slides in on rails, a cloth falls over its plate, the beam hits a small tagged POLLOCK stone (never the 1878 stone), a model block lights, a signature draws, a machine-type age tag snaps out. FOCAL: the magenta beam hits the pollock stone, at frame centre near x540 y900. TIERS: 70 NIR reader, 20 beam and screen, 10 cloth
 - S6 42.20-48.00s What each one sees (instrument-views, two-up, medium/eye, in: hard-cut): Left the eyepiece circle, rings ticked off and a thumb on the counter. Right the spectrum screen. 600 then 800 slam across the seam, per NOAA. FOCAL: the stat builds across the seam, at frame centre near x540 y900. TIERS: 70 stat across seam, 20 two views, 10 still-in-process tag
 - S7 48.00-52.78s You need the age first (machine-interior, macro-closeup, close/eye, in: push-in): Inside: the machine tag drains away, the signature runs into the AGE OUT slot and finds only a wobbling question mark. FOCAL: the line hits an empty slot and recoils, at frame centre near x540 y900. TIERS: 70 slot and question mark, 20 line, 10 machine interior
-- S8 52.78-63.02s The tagging table (tagging-table, push-detail, medium/high, in: hard-cut): A pollock drops its stone on the first tag; the reader hand writes an age, the counter digits copied onto the tag; tagged stones march to the hopper; the brass count lands on 8,617 as the word seventeen ends. A lit door at the far end reads STOCK ASSESSMENT. FOCAL: the hand writes an age on a tag, at frame centre near x540 y900. TIERS: 70 hand and tag, 20 marching stones and count, 10 far door
+- S8 52.78-63.02s The tagging table (tagging-table, push-detail, medium/eye, in: hard-cut): A pollock drops its stone on the first tag; the reader hand writes an age, the counter digits copied onto the tag; tagged stones march to the hopper; the brass count lands on 8,617 as the word seventeen ends. A lit door at the far end reads STOCK ASSESSMENT. FOCAL: the hand writes an age on a tag, at frame centre near x540 y900. TIERS: 70 hand and tag, 20 marching stones and count, 10 far door
 - S9 63.02-73.18s The archive (archive, wide-establish, extreme-wide/low, in: mask-wipe): The wall falls away: drawers to a vanishing point light one by one on ring by ring, 2.5 million pairs per NOAA, since the 1960s. FOCAL: drawers light up one by one, at frame centre near x540 y900. TIERS: 70 drawer wall, 20 rising camera, 10 date card
 - S10 73.18-79.08s The hangar (hangar, subject-portrait, wide/eye, in: crossfade): A 1930s wooden hangar in Seattle, a propeller on a beam, drawers glinting like stars. An archive stone rises under the Chamberlin plate; crates stamp shut MOVED 2012. FOCAL: an archive stone rises under the brass plate, at frame centre near x540 y900. TIERS: 70 hangar and rising stone, 20 propeller, 10 crates
 - S11 79.08-93.46s THE NEXT STEP (staircase, wide-establish, wide/low, in: hard-cut): The fair case: a trophy drops on the machine at the foot of the stairs for its engineers; the age tag climbs to AGE; a dashed second step leads to the same lit STOCK ASSESSMENT door; a NEXT STEP stamp thuds and the tag bounces back. FOCAL: the tag bounces off the dashed step, at frame centre near x540 y900. TIERS: 70 tag and dashed step, 20 door and manager, 10 trophy
@@ -20,56 +20,56 @@ A machine now reads a fish ear stone with light, and the film opens it up to fin
 
 ## Beats
 - 0.00s [whoosh] rockfish glides in from the left through dark water, head turning to camera (calm, ancient) / ROCKFISH
-- 1.30s [riser] x-ray wipe sweeps across the head and the ear stone glows inside (curious) / ALEUTIANS · 2022
+- 1.30s [chime] x-ray wipe sweeps across the head and the ear stone glows inside (curious) / ALEUTIANS · 2022
 - 3.00s [pop] otolith pops out of the skull toward camera, spinning (surprised) / ALEUTIANS · 2022
 - 5.82s [clank] otolith lands on black velvet as the brass objective drops with a clunk (still) / EAR STONE
 - 7.20s [tick] tally counter a thumb clicks it and the first ring pulses out from the core (focused) / 0001
 - 9.40s [thud] date wheel slams on 1878 on seventy-eight (shocked) / EST. 144 YEARS OLD · BORN 1878
-- 11.72s [stamp] brass plate drops beside the stone and rocks (quizzical) / WHO COUNTED?
+- 11.72s [clank] brass plate drops beside the stone and rocks (quizzical) / WHO COUNTED?
 - 14.66s [paper] fish head cutaway unfolds like a diagram and shows a PAIR of ear stones (revealing) / A PAIR OF EAR STONES
+- 16.90s [pop] the pair of stones light up side by side on the word pair (neat) / EAR STONES
 - 19.40s [snap] label snaps onto the stones on otoliths (clear) / OTOLITH · EAR STONE
 - 21.40s [chime] otolith rings pulse outward one per year on ring every year (patient) / ONE RING A YEAR
 - 23.20s [creak] sawn tree cross-section slides in and its rings light one for one with the stone (patient) / LIKE A TREE
 - 24.54s [tick] NOAA reader bends to the microscope and clicks the counter, ring by ring (absorbed) / NOAA SCIENTISTS
-- 26.40s [clank] trays of stones slide in faster and stack up behind the reader (overwhelmed) / MICROSCOPES
+- 26.40s [clank] trays of stones slide in faster and stack up behind the reader (overwhelmed) / UNDER MICROSCOPES
 - 29.20s [thud] tray stack hits the ceiling with a thud as the count lands (overwhelmed) / 30,000+ A YEAR · PER NOAA
 - 30.80s [paper] tally counter steams from the pace and the reader fans it with a card (weary) / COUNTED BY HAND
 - 32.00s [clank] NIR reader slides in on brass rails and clanks to a stop beside the bench (confident) / A FASTER READER
 - 34.00s [paper] cloth falls over the machine name plate, hiding it (secretive) / ?
-- 35.10s [riser] magenta beam hits a small tagged pollock stone in the sample port (precise) / NEAR-INFRARED LIGHT
+- 35.10s [whoosh] magenta beam hits a small tagged pollock stone in the sample port (precise) / NEAR-INFRARED LIGHT
 - 38.40s [ding] model block lights up inside the machine body and a signature line draws across the screen (precise) / MACHINE LEARNING
 - 40.80s [snap] AGE OUT slot snaps out a machine-type age tag (proud) / AGE
-- 43.40s [boom] 600 slams across the seam as the frame splits, eyepiece left and spectrum right (impressed) / 600
-- 44.90s [boom] 800 percent slams beside it and the badge settles (impressed) / 600 TO 800% MORE EFFICIENT
+- 43.92s [pop] 600 slams onto the split frame on six, eyepiece left and spectrum right (impressed) / 600
+- 44.90s [boom] 800 percent slams beside it and the badge settles (impressed) / 600 TO 800% MORE EFFICIENT · PER NOAA
 - 46.90s [tick] eyepiece side keeps ticking rings off as a small tag drops on it (steady) / MICROSCOPE STILL IN THE PROCESS
-- 48.00s [whoosh] machine tag drains out of the slot and the line runs into an empty slot holding a wobbling question mark (puzzled) / ?
+- 48.00s [whoosh] machine tag drains out of the slot and the line runs into an empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now (puzzled) / WHO COUNTED?
 - 51.60s [snap] signature line recoils from the empty slot (stuck) / NEED THE AGE FIRST
-- 52.78s [pop] pollock drops its stone onto the first paper tag (busy) / POLLOCK
+- 52.78s [paw] pollock drops its stone onto the first paper tag (busy) / POLLOCK
 - 54.60s [paper] reader hand writes an age on the tag, copied from the counter digits (careful) / 2023 · TRAINED AND TESTED
-- 55.90s [creak] far door swings open a crack at the end of the room and light spills out (distant) / STOCK ASSESSMENT
-- 57.00s [tick] tagged stones march single file into the hopper (orderly) / TAGGED BY HAND
-- 59.00s [boom] brass count climbs and lands on 8,617 as seventeen ends (satisfied) / 8,617 POLLOCK STONES · 2023
+- 55.90s [caw] far door swings open a crack at the end of the room and light spills out (distant) / STOCK ASSESSMENT
+- 56.60s [chain] tagged stones march single file into the hopper (orderly) / TAGGED WITH AGES
+- 58.50s [boom] brass count climbs from eight and lands on 8,617 as seventeen ends (satisfied) / 8,617 POLLOCK STONES · 2023
 - 63.02s [creak] bench wall falls away and drawers run to a vanishing point (awed) / NOAA ARCHIVE
 - 65.40s [tick] drawers light one by one on ring by ring (patient) / BUILT RING BY RING
 - 67.30s [boom] drawer wall rises past the camera as the count lands (vast) / 2.5 MILLION OTOLITH PAIRS · PER NOAA
 - 71.30s [snap] date card flips onto the nearest drawer (calm) / SINCE THE 1960s
-- 73.18s [creak] timber hangar swings its doors open around the drawers, a propeller hanging from a beam (nostalgic) / AROUND 2 MILLION
-- 75.90s [riser] archive stone rises from a drawer under a brass name plate (reverent) / SEATTLE · 1930s HANGAR
-- 77.20s [stamp] crates stamp shut one after another (decisive) / MOVED · 2012
+- 73.18s [caw] timber hangar swings its doors open around the drawers, a propeller hanging from a beam (nostalgic) / AROUND 2 MILLION · SEATTLE · 1930s HANGAR
+- 74.90s [ding] archive stone rises from a drawer under a brass name plate (reverent) / "A PERFECT LITTLE TIME CAPSULE" · DEREK CHAMBERLIN · NOAA FISHERIES
+- 77.50s [snap] crates stamp shut one after another (decisive) / MOVED · 2012
 - 79.08s [boom] title plate slams down at the foot of the staircase (serious) / THE FAIR CASE AGAINST
-- 80.30s [clank] trophy drops onto the NIR reader with a brass clank (generous) / CREDIT: THE ENGINEERS
+- 80.30s [clank] trophy drops onto the NIR reader with a brass clank (generous) / CREDIT TO THE ENGINEERS
 - 82.60s [tick] age tag climbs onto the first brass step (hopeful) / AGE
 - 86.40s [chime] manager steps into the light at the top of the stairs beside a dashed step (patient) / FISHERY MANAGERS
-- 88.20s [tick] age tag climbs toward the dashed step (hopeful) / NOAA, 2023
+- 88.20s [tick] age tag reaches up for the dashed step and teeters on its edge where no surface is (hopeful) / NOAA, 2023
 - 90.60s [ding] door lights its lettering above the dashed step (distant) / STOCK ASSESSMENT
-- 92.00s [stamp] stamp thuds onto the dashed step and the tag bounces off (stopped) / NEXT STEP
+- 92.00s [stamp] stamp thuds into the empty dashed outline and the tag tumbles back down to AGE (stopped) / NEXT STEP
 - 93.50s [paper] manager grips the pen, glances at the tag on the AGE step and drags a limit line across the page (resolute) / MANAGERS SET LIMITS
 - 97.40s [tick] NOAA reader comes into focus across the hall, still clicking under the lamp (steady) / MICROSCOPE STAYS IN THE PROCESS
-- 100.24s [clank] reader pushes a tray of hand-tagged stones into the hopper (warm) / SPEED · METHOD
-- 103.80s [chime] trophy glints as the lamp and the magenta brighten together (proud) / THAT'S REAL
-- 106.40s [tick] question mark spins like a split-flap and lands as a handwritten age tag (revealed) / AGED AT A MICROSCOPE
-- 107.40s [paper] signature line tears off the screen into tally ticks that curve and land as rings around a core, magenta turning pearl (moved) / TAUGHT BY COUNTED RINGS
-- 108.60s [whoosh] cloth is pulled off the name plate (proud) / TRAINED ON THE ARCHIVE
-- 110.60s [snap] brass plate swings up and lands under the 1878 stone (warm) / SOMEBODY COUNTED
-- 113.00s [tick] tally counter clicks one last time on counted and the rings ripple out from the core (tender) / 0144
+- 100.24s [riser] reader pushes a tray of hand-tagged stones into the hopper (warm) / SPEED · METHOD
+- 103.80s [paper] cloth is pulled off the machine name plate as the hopper swallows the tray (proud) / TRAINED ON THE ARCHIVE
+- 105.90s [tick] the slot plate spins like a split-flap and lands as a handwritten age tag (revealed) / CHECKED AGAINST MICROSCOPE AGES
+- 107.40s [paper] signature line tears off the screen into tally ticks that curve and land as rings around a core, magenta turning pearl (moved) / THE COUNT CAME FIRST
+- 110.60s [snap] brass plate swings up and lands under the 1878 stone, still asking (warm) / WHO COUNTED?
+- 112.46s [tick] brass plate flips WHO to SOMEBODY on somebody, and the counter clicks one last time on counted, 0144, the rings rippling out (tender) / SOMEBODY COUNTED
 - 113.60s [whoosh] rockfish glides back in from the left, frame one again (calm, ancient) / ROCKFISH
