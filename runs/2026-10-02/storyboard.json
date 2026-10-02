@@ -66,11 +66,11 @@
  "open_loop": {
   "plant_t": 11.72,
   "pay_t": 105.9,
-  "what": "Who counted? The machine AGE OUT slot answer flips to the reader handwritten tag."
+  "what": "The brass WHO COUNTED? plate. Asked of people at 11.72, asked again of the machine when the same plate swings into its AGE OUT slot at 48.0, paid when that plate flips to the reader handwritten tag at 105.9."
  },
  "open_loop_2": {
   "plant_t": 55.9,
-  "pay_t": 92.0,
+  "pay_t": 90.6,
   "what": "The lit door at the end of the tagging room labelled STOCK ASSESSMENT. The same door waits above the dashed step, stamped NEXT STEP."
  },
  "throughline": {
@@ -86,7 +86,7 @@
     "state": "steaming at the 30,000 a year pace"
    },
    {
-    "at_s": 54.3,
+    "at_s": 54.6,
     "state": "its digits copied onto the paper age tags that ride into the hopper"
    },
    {
@@ -98,7 +98,7 @@
     "state": "still clicking across the hall from the staircase"
    },
    {
-    "at_s": 113.0,
+    "at_s": 112.46,
     "state": "final click on counted reads 0144, the rings ripple, the loop"
    }
   ]
@@ -117,15 +117,15 @@
    "hold_s": 0.7
   },
   {
-   "t": 100.24,
+   "t": 107.4,
    "type": "build-on",
-   "what": "the reader feeds a tray of hand-tagged stones to the machine and its signature builds back into rings",
-   "hold_s": 0.6
+   "what": "the signature tears into tally ticks that build into concentric rings around a core",
+   "hold_s": 0.8
   }
  ],
  "audio_arc": {
   "build_steps": 4,
-  "dip_at": 99.3,
+  "dip_at": 108.0,
   "riser_at": 100.24,
   "silence_at": 108.0,
   "payoff_at": 113.0,
@@ -715,6 +715,29 @@
   {
    "id": 9,
    "shot": 3,
+   "t": "16.90",
+   "at_s": 16.9,
+   "vo_line": 3,
+   "vo": "Every fish carries a pair of tiny ear stones, called otoliths.",
+   "shows": "the pair of stones light up side by side on the word pair",
+   "sfx": "pop",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "the pair of stones",
+    "action": "light up side by side on the word pair",
+    "emotion": "neat",
+    "annotation": "EAR STONES"
+   },
+   "choreo": {
+    "primary": "the pair of stones light up side by side on the word pair",
+    "reaction": "the cutaway labels slide in to name the parts",
+    "ambient": "a slow diagram grid drifts behind the cutaway"
+   }
+  },
+  {
+   "id": 10,
+   "shot": 3,
    "t": "19.40",
    "at_s": 19.4,
    "vo_line": 3,
@@ -736,7 +759,7 @@
    }
   },
   {
-   "id": 10,
+   "id": 11,
    "shot": 3,
    "t": "21.40",
    "at_s": 21.4,
@@ -759,7 +782,7 @@
    }
   },
   {
-   "id": 11,
+   "id": 12,
    "shot": 3,
    "t": "23.20",
    "at_s": 23.2,
@@ -782,7 +805,7 @@
    }
   },
   {
-   "id": 12,
+   "id": 13,
    "shot": 4,
    "t": "24.54",
    "at_s": 24.54,
@@ -805,7 +828,7 @@
    }
   },
   {
-   "id": 13,
+   "id": 14,
    "shot": 4,
    "t": "26.40",
    "at_s": 26.4,
@@ -819,7 +842,7 @@
     "subject": "trays of stones",
     "action": "slide in faster and stack up behind the reader",
     "emotion": "overwhelmed",
-    "annotation": "MICROSCOPES"
+    "annotation": "UNDER MICROSCOPES"
    },
    "choreo": {
     "primary": "trays of stones slide in faster and stack up behind the reader",
@@ -828,7 +851,7 @@
    }
   },
   {
-   "id": 14,
+   "id": 15,
    "shot": 4,
    "t": "29.20",
    "at_s": 29.2,
@@ -851,7 +874,7 @@
    }
   },
   {
-   "id": 15,
+   "id": 16,
    "shot": 4,
    "t": "30.80",
    "at_s": 30.8,
@@ -874,7 +897,7 @@
    }
   },
   {
-   "id": 16,
+   "id": 17,
    "shot": 5,
    "t": "32.00",
    "at_s": 32.0,
@@ -897,7 +920,7 @@
    }
   },
   {
-   "id": 17,
+   "id": 18,
    "shot": 5,
    "t": "34.00",
    "at_s": 34.0,
@@ -920,14 +943,14 @@
    }
   },
   {
-   "id": 18,
+   "id": 19,
    "shot": 5,
    "t": "35.10",
    "at_s": 35.1,
    "vo_line": 7,
    "vo": "Near-infrared light hits the stone, and machine learning turns its signature into an age.",
    "shows": "magenta beam hits a small tagged pollock stone in the sample port",
-   "sfx": "riser",
+   "sfx": "whoosh",
    "means": "",
    "rehook": "",
    "draw": {
@@ -943,7 +966,7 @@
    }
   },
   {
-   "id": 19,
+   "id": 20,
    "shot": 5,
    "t": "38.40",
    "at_s": 38.4,
@@ -966,7 +989,7 @@
    }
   },
   {
-   "id": 20,
+   "id": 21,
    "shot": 5,
    "t": "40.80",
    "at_s": 40.8,
@@ -989,37 +1012,37 @@
    }
   },
   {
-   "id": 21,
+   "id": 22,
    "shot": 6,
-   "t": "43.40",
-   "at_s": 43.4,
+   "t": "43.92",
+   "at_s": 43.92,
    "vo_line": 8,
    "vo": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
-   "shows": "600 slams across the seam as the frame splits, eyepiece left and spectrum right",
-   "sfx": "boom",
+   "shows": "600 slams onto the split frame on six, eyepiece left and spectrum right",
+   "sfx": "pop",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "600",
-    "action": "slams across the seam as the frame splits, eyepiece left and spectrum right",
+    "action": "slams onto the split frame on six, eyepiece left and spectrum right",
     "emotion": "impressed",
     "annotation": "600"
    },
    "choreo": {
-    "primary": "600 slams across the seam as the frame splits, eyepiece left and spectrum right",
+    "primary": "600 slams onto the split frame on six, eyepiece left and spectrum right",
     "reaction": "the thumb on the counter never pauses",
     "ambient": "the lamp flickers softly"
    }
   },
   {
-   "id": 22,
+   "id": 23,
    "shot": 6,
    "t": "44.90",
    "at_s": 44.9,
    "vo_line": 8,
    "vo": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
    "shows": "800 percent slams beside it and the badge settles",
-   "sfx": "clank",
+   "sfx": "boom",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1035,7 +1058,7 @@
    }
   },
   {
-   "id": 23,
+   "id": 24,
    "shot": 6,
    "t": "46.90",
    "at_s": 46.9,
@@ -1058,30 +1081,30 @@
    }
   },
   {
-   "id": 24,
+   "id": 25,
    "shot": 7,
    "t": "48.00",
    "at_s": 48.0,
    "vo_line": 9,
    "vo": "But to tie a signature to an age, you need the age first.",
-   "shows": "machine tag drains out of the slot and the line runs into an empty slot holding a wobbling question mark",
+   "shows": "machine tag drains out of the slot and the line runs into an empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
    "sfx": "whoosh",
    "means": "",
    "rehook": "the answer drains away",
    "draw": {
     "subject": "machine tag",
-    "action": "drains out of the slot and the line runs into an empty slot holding a wobbling question mark",
+    "action": "drains out of the slot and the line runs into an empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
     "emotion": "puzzled",
-    "annotation": "?"
+    "annotation": "WHO COUNTED?"
    },
    "choreo": {
-    "primary": "machine tag drains out of the slot and the line runs into an empty slot holding a wobbling question mark",
+    "primary": "machine tag drains out of the slot and the line runs into an empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
     "reaction": "the slot recoils",
     "ambient": "the beam hums with a moving magenta shimmer"
    }
   },
   {
-   "id": 25,
+   "id": 26,
    "shot": 7,
    "t": "51.60",
    "at_s": 51.6,
@@ -1104,14 +1127,14 @@
    }
   },
   {
-   "id": 26,
+   "id": 27,
    "shot": 8,
    "t": "52.78",
    "at_s": 52.78,
    "vo_line": 10,
    "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
    "shows": "pollock drops its stone onto the first paper tag",
-   "sfx": "pop",
+   "sfx": "paw",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1127,7 +1150,7 @@
    }
   },
   {
-   "id": 27,
+   "id": 28,
    "shot": 8,
    "t": "54.60",
    "at_s": 54.6,
@@ -1150,7 +1173,7 @@
    }
   },
   {
-   "id": 28,
+   "id": 29,
    "shot": 8,
    "t": "55.90",
    "at_s": 55.9,
@@ -1159,7 +1182,7 @@
    "shows": "far door swings open a crack at the end of the room and light spills out",
    "sfx": "caw",
    "means": "",
-   "rehook": "",
+   "rehook": "a lit door with a name on it, where do the ages go",
    "draw": {
     "subject": "far door",
     "action": "swings open a crack at the end of the room and light spills out",
@@ -1173,10 +1196,10 @@
    }
   },
   {
-   "id": 29,
+   "id": 30,
    "shot": 8,
-   "t": "57.00",
-   "at_s": 57.0,
+   "t": "56.60",
+   "at_s": 56.6,
    "vo_line": 10,
    "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
    "shows": "tagged stones march single file into the hopper",
@@ -1196,37 +1219,37 @@
    }
   },
   {
-   "id": 30,
+   "id": 31,
    "shot": 8,
-   "t": "59.00",
-   "at_s": 59.0,
+   "t": "58.50",
+   "at_s": 58.5,
    "vo_line": 10,
    "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
-   "shows": "brass count climbs and lands on 8,617 as seventeen ends",
+   "shows": "brass count climbs from eight and lands on 8,617 as seventeen ends",
    "sfx": "boom",
    "means": "",
-   "rehook": "the count lands",
+   "rehook": "",
    "draw": {
     "subject": "brass count",
-    "action": "climbs and lands on 8,617 as seventeen ends",
+    "action": "climbs from eight and lands on 8,617 as seventeen ends",
     "emotion": "satisfied",
     "annotation": "8,617 POLLOCK STONES \u00b7 2023"
    },
    "choreo": {
-    "primary": "brass count climbs and lands on 8,617 as seventeen ends",
+    "primary": "brass count climbs from eight and lands on 8,617 as seventeen ends",
     "reaction": "each tag swings as its stone steps in",
     "ambient": "the hopper conveyor rolls continuously"
    }
   },
   {
-   "id": 31,
+   "id": 32,
    "shot": 9,
    "t": "63.02",
    "at_s": 63.02,
    "vo_line": 11,
    "vo": "They came from NOAA's archive, built ring by ring.",
    "shows": "bench wall falls away and drawers run to a vanishing point",
-   "sfx": "clank",
+   "sfx": "creak",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1242,7 +1265,7 @@
    }
   },
   {
-   "id": 32,
+   "id": 33,
    "shot": 9,
    "t": "65.40",
    "at_s": 65.4,
@@ -1265,7 +1288,7 @@
    }
   },
   {
-   "id": 33,
+   "id": 34,
    "shot": 9,
    "t": "67.30",
    "at_s": 67.3,
@@ -1288,7 +1311,7 @@
    }
   },
   {
-   "id": 34,
+   "id": 35,
    "shot": 9,
    "t": "71.30",
    "at_s": 71.3,
@@ -1311,14 +1334,14 @@
    }
   },
   {
-   "id": 35,
+   "id": 36,
    "shot": 10,
    "t": "73.18",
    "at_s": 73.18,
    "vo_line": 13,
    "vo": "Around two million once sat in an old airplane hangar in Seattle.",
    "shows": "timber hangar swings its doors open around the drawers, a propeller hanging from a beam",
-   "sfx": "creak",
+   "sfx": "caw",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1334,14 +1357,14 @@
    }
   },
   {
-   "id": 36,
+   "id": 37,
    "shot": 10,
-   "t": "75.90",
-   "at_s": 75.9,
+   "t": "74.90",
+   "at_s": 74.9,
    "vo_line": 13,
    "vo": "Around two million once sat in an old airplane hangar in Seattle.",
    "shows": "archive stone rises from a drawer under a brass name plate",
-   "sfx": "caw",
+   "sfx": "ding",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1357,10 +1380,10 @@
    }
   },
   {
-   "id": 37,
+   "id": 38,
    "shot": 10,
-   "t": "77.20",
-   "at_s": 77.2,
+   "t": "77.50",
+   "at_s": 77.5,
    "vo_line": 13,
    "vo": "Around two million once sat in an old airplane hangar in Seattle.",
    "shows": "crates stamp shut one after another",
@@ -1380,7 +1403,7 @@
    }
   },
   {
-   "id": 38,
+   "id": 39,
    "shot": 11,
    "t": "79.08",
    "at_s": 79.08,
@@ -1403,7 +1426,7 @@
    }
   },
   {
-   "id": 39,
+   "id": 40,
    "shot": 11,
    "t": "80.30",
    "at_s": 80.3,
@@ -1417,7 +1440,7 @@
     "subject": "trophy",
     "action": "drops onto the NIR reader with a brass clank",
     "emotion": "generous",
-    "annotation": "CREDIT: THE ENGINEERS"
+    "annotation": "CREDIT TO THE ENGINEERS"
    },
    "choreo": {
     "primary": "trophy drops onto the NIR reader with a brass clank",
@@ -1426,14 +1449,14 @@
    }
   },
   {
-   "id": 40,
+   "id": 41,
    "shot": 11,
    "t": "82.60",
    "at_s": 82.6,
    "vo_line": 15,
    "vo": "A faster age only helps if it changes what fishery managers use.",
    "shows": "age tag climbs onto the first brass step",
-   "sfx": "paw",
+   "sfx": "tick",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1449,7 +1472,7 @@
    }
   },
   {
-   "id": 41,
+   "id": 42,
    "shot": 11,
    "t": "86.40",
    "at_s": 86.4,
@@ -1472,30 +1495,30 @@
    }
   },
   {
-   "id": 42,
+   "id": 43,
    "shot": 11,
    "t": "88.20",
    "at_s": 88.2,
    "vo_line": 16,
    "vo": "NOAA called getting these ages into stock assessments the next step.",
-   "shows": "age tag reaches up for the dashed step and slips through where no surface is",
+   "shows": "age tag reaches up for the dashed step and teeters on its edge where no surface is",
    "sfx": "tick",
    "means": "",
    "rehook": "will it make the step",
    "draw": {
     "subject": "age tag",
-    "action": "reaches up for the dashed step and slips through where no surface is",
+    "action": "reaches up for the dashed step and teeters on its edge where no surface is",
     "emotion": "hopeful",
     "annotation": "NOAA, 2023"
    },
    "choreo": {
-    "primary": "age tag reaches up for the dashed step and slips through where no surface is",
+    "primary": "age tag reaches up for the dashed step and teeters on its edge where no surface is",
     "reaction": "the manager looks down at the tag",
     "ambient": "the dashed step flickers"
    }
   },
   {
-   "id": 43,
+   "id": 44,
    "shot": 11,
    "t": "90.60",
    "at_s": 90.6,
@@ -1518,30 +1541,30 @@
    }
   },
   {
-   "id": 44,
+   "id": 45,
    "shot": 11,
    "t": "92.00",
    "at_s": 92.0,
    "vo_line": 16,
    "vo": "NOAA called getting these ages into stock assessments the next step.",
-   "shows": "stamp thuds into the empty dashed outline while the tag, back on AGE, looks up at it",
+   "shows": "stamp thuds into the empty dashed outline and the tag tumbles back down to AGE",
    "sfx": "stamp",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "stamp",
-    "action": "thuds into the empty dashed outline while the tag, back on AGE, looks up at it",
+    "action": "thuds into the empty dashed outline and the tag tumbles back down to AGE",
     "emotion": "stopped",
     "annotation": "NEXT STEP"
    },
    "choreo": {
-    "primary": "stamp thuds into the empty dashed outline while the tag, back on AGE, looks up at it",
+    "primary": "stamp thuds into the empty dashed outline and the tag tumbles back down to AGE",
     "reaction": "the manager looks down at the tag",
     "ambient": "the dashed step flickers"
    }
   },
   {
-   "id": 45,
+   "id": 46,
    "shot": 12,
    "t": "93.50",
    "at_s": 93.5,
@@ -1564,7 +1587,7 @@
    }
   },
   {
-   "id": 46,
+   "id": 47,
    "shot": 12,
    "t": "97.40",
    "at_s": 97.4,
@@ -1587,14 +1610,14 @@
    }
   },
   {
-   "id": 47,
+   "id": 48,
    "shot": 13,
    "t": "100.24",
    "at_s": 100.24,
    "vo_line": 18,
    "vo": "So the win today is speed and method. That's real.",
    "shows": "reader pushes a tray of hand-tagged stones into the hopper",
-   "sfx": "clank",
+   "sfx": "riser",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1610,14 +1633,14 @@
    }
   },
   {
-   "id": 48,
+   "id": 49,
    "shot": 13,
    "t": "103.80",
    "at_s": 103.8,
    "vo_line": 18,
    "vo": "So the win today is speed and method. That's real.",
    "shows": "cloth is pulled off the machine name plate as the hopper swallows the tray",
-   "sfx": "whoosh",
+   "sfx": "paper",
    "means": "",
    "rehook": "",
    "draw": {
@@ -1633,30 +1656,30 @@
    }
   },
   {
-   "id": 49,
+   "id": 50,
    "shot": 13,
    "t": "105.90",
    "at_s": 105.9,
    "vo_line": 19,
    "vo": "But look where the speed came from.",
-   "shows": "question mark spins like a split-flap and lands as a handwritten age tag",
+   "shows": "the slot plate spins like a split-flap and lands as a handwritten age tag",
    "sfx": "tick",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "question mark",
+    "subject": "the slot plate",
     "action": "spins like a split-flap and lands as a handwritten age tag",
     "emotion": "revealed",
     "annotation": "CHECKED AGAINST MICROSCOPE AGES"
    },
    "choreo": {
-    "primary": "question mark spins like a split-flap and lands as a handwritten age tag",
+    "primary": "the slot plate spins like a split-flap and lands as a handwritten age tag",
     "reaction": "the counter digits roll",
     "ambient": "tally ticks drift like snow"
    }
   },
   {
-   "id": 50,
+   "id": 51,
    "shot": 13,
    "t": "107.40",
    "at_s": 107.4,
@@ -1679,53 +1702,55 @@
    }
   },
   {
-   "id": 51,
+   "id": 52,
    "shot": 14,
    "t": "110.60",
    "at_s": 110.6,
    "vo_line": 20,
    "vo": "Every age it gives back started as a ring somebody counted.",
-   "shows": "brass plate swings up and lands under the 1878 stone",
+   "shows": "brass plate swings up and lands under the 1878 stone, still asking",
    "sfx": "snap",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "brass plate",
-    "action": "swings up and lands under the 1878 stone",
+    "action": "swings up and lands under the 1878 stone, still asking",
     "emotion": "warm",
-    "annotation": "SOMEBODY COUNTED"
+    "annotation": "WHO COUNTED?"
    },
    "choreo": {
-    "primary": "brass plate swings up and lands under the 1878 stone",
-    "reaction": "the rings ripple outward",
-    "ambient": "water particles drift as the loop begins"
-   }
-  },
-  {
-   "id": 52,
-   "shot": 14,
-   "t": "113.00",
-   "at_s": 113.0,
-   "vo_line": 20,
-   "vo": "Every age it gives back started as a ring somebody counted.",
-   "shows": "tally counter clicks one last time on counted and the rings ripple out from the core",
-   "sfx": "tick",
-   "means": "",
-   "rehook": "",
-   "draw": {
-    "subject": "tally counter",
-    "action": "clicks one last time on counted and the rings ripple out from the core",
-    "emotion": "tender",
-    "annotation": "0144"
-   },
-   "choreo": {
-    "primary": "tally counter clicks one last time on counted and the rings ripple out from the core",
+    "primary": "brass plate swings up and lands under the 1878 stone, still asking",
     "reaction": "the rings ripple outward",
     "ambient": "water particles drift as the loop begins"
    }
   },
   {
    "id": 53,
+   "shot": 14,
+   "t": "112.46",
+   "at_s": 112.46,
+   "vo_line": 20,
+   "vo": "Every age it gives back started as a ring somebody counted.",
+   "shows": "brass plate flips WHO to SOMEBODY on somebody, and the counter clicks one last time on counted, 0144, the rings rippling out",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "sfx_offset_frames": 16,
+   "sfx_offset_reason": "the counter click lands on the word counted at 113.0, the plate flips on somebody",
+   "draw": {
+    "subject": "brass plate",
+    "action": "flips WHO to SOMEBODY on somebody, and the counter clicks one last time on counted, 0144, the rings rippling out",
+    "emotion": "tender",
+    "annotation": "SOMEBODY COUNTED"
+   },
+   "choreo": {
+    "primary": "brass plate flips WHO to SOMEBODY on somebody, and the counter clicks one last time on counted, 0144, the rings rippling out",
+    "reaction": "the rings ripple outward",
+    "ambient": "water particles drift as the loop begins"
+   }
+  },
+  {
+   "id": 54,
    "shot": 14,
    "t": "113.60",
    "at_s": 113.6,
