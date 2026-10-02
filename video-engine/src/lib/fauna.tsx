@@ -2185,7 +2185,8 @@ export const Groundfish: React.FC<{
         {R && <path d={`M${eye.x - 20},${eye.y - 18} l6,-8 l6,8 M${eye.x - 6},${eye.y - 20} l6,-9 l6,9`} fill="none" stroke={FINK} strokeWidth={3} />}
         {!R && <path d={`M${NOSE + 2},${10} q-8,6 -12,14`} fill="none" stroke={FINK} strokeWidth={2.5} />}
       </g>
-      <FinMembrane x={sp.sx(0.26) + 6} y={sp.sway(0.26) + 4} rot={30 + sp.pecAngle} f={f}
+      {/* pectoral fin BEHIND the gill cover, not under the eye */}
+      <FinMembrane x={sp.sx(0.37)} y={sp.sway(0.37) + 10} rot={30 + sp.pecAngle} f={f}
         length={R ? 40 : 30} depth={R ? 34 : 22} color={finC} dark={finD} rays={R ? 6 : 4} phase={0.2} />
     </g>
   );

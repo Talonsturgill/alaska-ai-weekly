@@ -38,8 +38,8 @@
   },
   {
    "idx": 3,
-   "text": "Every fish carries a pair of tiny ear stones, called otoliths.",
-   "t": "Every fish carries a pair of tiny ear stones, called otoliths.",
+   "text": "Fish like this one carry tiny ear stones, called otoliths.",
+   "t": "Fish like this one carry tiny ear stones, called otoliths.",
    "claims": [
     "c17"
    ]
@@ -100,8 +100,8 @@
   },
   {
    "idx": 11,
-   "text": "They came from NOAA's archive, built ring by ring.",
-   "t": "They came from NOAA's archive, built ring by ring.",
+   "text": "NOAA says the models learned from its archive.",
+   "t": "NOAA says the models learned from its archive.",
    "claims": [
     "c18"
    ]
@@ -147,8 +147,8 @@
   },
   {
    "idx": 17,
-   "text": "Catch limits are set by managers, not machines, and the microscope stays in the process.",
-   "t": "Catch limits are set by managers, not machines, and the microscope stays in the process.",
+   "text": "Catch limits are set by managers, not machines, and the microscope is still in the process.",
+   "t": "Catch limits are set by managers, not machines, and the microscope is still in the process.",
    "claims": [
     "c15",
     "c9"

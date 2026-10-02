@@ -452,7 +452,7 @@ def _source_labels(srcs):
     rows pushed real sources off the card behind an "AND 4 MORE". Grouping by KIND is what a
     credit roll actually wants: every NSF award on one line, every indexed paper on the next.
     """
-    awards, papers, other, seen = [], [], [], set()
+    awards, papers, dois, other, seen = [], [], [], [], set()
     for e in srcs:
         url = (e.get("url") or "").strip()
         m = re.search(r"/awards/(\d+)\.json", url) or re.search(r"AWD_ID=(\d+)", url)
@@ -471,6 +471,14 @@ def _source_labels(srcs):
         if m:
             if m.group(1) not in papers:
                 papers.append(m.group(1))
+            continue
+        # A DOI IS THE CITATION, NOT ITS RESOLVER (2026-10-02). A paper cited by doi.org rendered
+        # as "DOI.ORG" on the end card, which names the redirect service and not the paper, so a
+        # viewer could not find it. The identifier itself is what a credit roll should carry.
+        m = re.search(r"doi\.org/(10\.\d{4,9}/[^\s?#]+)", url)
+        if m:
+            if m.group(1) not in dois:
+                dois.append(m.group(1))
             continue
         if "eutils.ncbi" in url or "esearch.fcgi" in url:
             lab = "PUBMED QUERY"
@@ -492,6 +500,8 @@ def _source_labels(srcs):
         labels.append(("NSF AWARDS " if len(awards) > 1 else "NSF AWARD ") + ", ".join(awards))
     if papers:
         labels.append(("PUBMED " if len(papers) > 1 else "PUBMED ") + ", ".join(papers))
+    if dois:
+        labels.append("DOI " + ", ".join(d.upper() for d in dois))
     labels.extend(other)
     return labels
 

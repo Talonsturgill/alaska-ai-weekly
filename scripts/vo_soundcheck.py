@@ -209,7 +209,10 @@ def _norm_words(s):
     # all three takes. Map the spoken form back to the written one, symmetrically, so only
     # the acronym's own reading is forgiven. A genuine mishearing of anything else still
     # counts. Extend with each acronym the pronunciation map respells.
-    _SPOKEN = {"noah": "noaa", "noah's": "noaa's", "noahs": "noaa's"}
+    # A flapped American t in "otolith" (OH-toh-lith) is heard by Whisper as a d. Same class:
+    # the word was said as directed and only its spelling in the transcript differs.
+    _SPOKEN = {"noah": "noaa", "noah's": "noaa's", "noahs": "noaa's",
+               "odolith": "otolith", "odoliths": "otoliths"}
     out = [_SPOKEN.get(w, w) for w in out]
     joined, i = [], 0
     while i < len(out):

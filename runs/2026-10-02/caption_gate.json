@@ -1,0 +1,6 @@
+{"gate_a": "caption_check.py PASS (1489 chars, hook 103c, 5 hashtags)",
+ "gate_b_editor": "revise -> two edits applied (hook question, mechanism pronoun)",
+ "gate_b_scorer_rounds": [{"round": 1, "weighted_total": 6.9, "hard_fails": ["unsupported 'a decade ... tens of thousands' sentence"]},
+                          {"round": 2, "weighted_total": 7.90, "hard_fails": []},
+                          {"round": 3, "weighted_total": 8.60, "hard_fails": [], "ship": true}],
+ "threshold": 8.5}

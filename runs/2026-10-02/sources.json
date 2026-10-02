@@ -63,6 +63,17 @@
    ],
    "used_in_film": true,
    "note": "Hub page, last updated September 25th, 2026; AI and near-infrared ageing of Alaska pollock."
+  },
+  {
+   "id": "s5",
+   "title": "The future of fish age estimation: deep machine learning coupled with Fourier transform near-infrared spectroscopy of otoliths (Benson et al. 2023)",
+   "outlet": "Canadian Journal of Fisheries and Aquatic Sciences",
+   "url": "https://doi.org/10.1139/cjfas-2023-0045",
+   "claims": [
+    "c19"
+   ],
+   "used_in_film": true,
+   "note": "Peer-reviewed pollock FT-NIR study; model ages comparable to microscope-based ages."
   }
  ]
 }

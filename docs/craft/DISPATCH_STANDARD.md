@@ -230,3 +230,39 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
   carry that beat had opacity 0 for the first five seconds of its own shot, so the newspaper
   was the entire frame and nothing in it moved. Before animating a scene, list what is
   visible at the timecode in question.
+
+## 9. Things the 2026-10-02 panel found that were knowable in advance
+
+- **A plate inside a LIBRARY component sizes itself to its string, by arithmetic, like an
+  episode Plate does.** The NIR reader's nameplate was a fixed 340px rect, so TRAINED ON THE
+  ARCHIVE rendered as "RAINED ON THE ARCHIV" in two shots and was the round's hard blocker.
+  `plateW` exists for exactly this. Any lib component that paints a caller's string (a
+  nameplate, a counter label, a drum label) computes its width from the string's length.
+- **One recurring sign is one component.** WHO COUNTED? appeared on three different plate
+  treatments, so the loop object did not read as the same object when it paid off. Draw the
+  film's question, its section title and its quote plaques with ONE sign component, and let
+  the payoff flip the sign the viewer already knows.
+- **A hand at hero scale is inked and form-shaded, and a pen's tip sits on the mark it
+  makes.** A flat skin-colour silhouette read as clip art next to modelled brass. When a hand
+  holds a pen, place it FROM the tip: compute the pinch point from where the line ends, never
+  the reverse, or the pen points away from its own line.
+- **A reader at a microscope has an eye at the eyepiece.** Derive the scope's position from
+  the rig's face (feet minus about 400 times scale), and keep that offset when the same pair
+  reappears at background scale.
+- **A figure lands once.** A stat shown as a burst, a chip and a plate in the same frame is
+  stated three times and read zero times. One hero treatment per figure, with its attribution
+  riding on it.
+- **A hedged figure carries its hedge every time it is drawn.** The 1878 birth year is an
+  estimate (claim c6), so EST., ESTIMATED or ABOUT goes on every surface that shows it.
+- **Caption cards break by sense.** One card per sentence or clause, rows split at a comma or
+  before a preposition, never after an article, a possessive or a number, never inside a
+  range ("600 to" / "800"), and the card holds across a sub-0.15s gap instead of blinking.
+- **A set fills the frame top to bottom.** Walls run to the top edge and floors or tables to
+  the bottom edge under the caption card. A wall that starts at y 380 leaves a third of the
+  frame as dead space, and dead space is a whole-film ratchet.
+- **Things entering a machine pass behind its front face.** Draw order is part of the story:
+  stones marching into a hopper that are painted over its front read as floating.
+- **A match cut shares exact geometry and a camera at rest.** The finale's ticks land on the
+  growth bands of the next shot's stone because both use the same centre, scale and rotation
+  (single-sourced through `otolithPoint`), and the outgoing shot returns to zoom 1 with no
+  drift before the cut.

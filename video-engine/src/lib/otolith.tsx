@@ -32,22 +32,31 @@ const hash = (i: number) => Math.imul(i + 911, 2654435761) >>> 0;
 // ---------------------------------------------------------------------------------------------
 const CORE = {x: 18, y: 10};
 
+/** One point of the outline at scale k and polar angle a (radians), in stone-local coordinates.
+ *  The single source of the stone's geometry: otolithPath samples it, and a scene that needs to
+ *  land something exactly on a growth band (the finale's ticks) asks it for the band's points. */
+export function otolithPoint(k: number, a: number, crenul = 1, seed = 3): [number, number] {
+  const ca = Math.cos(a), sa = Math.sin(a);
+  // base ellipse 160 x 96 half-axes, rostrum pull toward +x, flatter ventral side
+  const rx = 160 + (ca > 0 ? 36 * Math.pow(ca, 6) : 0);
+  const ry = sa < 0 ? 98 : 84;
+  // dorsal scallops (lobes), stronger on the outer bands
+  const lobe = sa < -0.15 ? 7 * crenul * Math.pow(Math.abs(Math.sin(a * 9 + seed)), 2.2) : 0;
+  const vent = sa > 0.2 ? 3 * crenul * Math.sin(a * 13 + seed) : 0;
+  const r = 1 + (lobe + vent) / 100;
+  return [CORE.x + ca * rx * k * r - CORE.x * k, CORE.y + sa * ry * k * r - CORE.y * k];
+}
+
+/** The band scales an Otolith with `rings` rings draws, outermost first, and each band's scallop. */
+export const ringScales = (rings: number) => Array.from({length: rings}, (_, i) => 1 - (i + 1) / (rings + 1.4));
+export const bandCrenul = (k: number) => 0.4 + 0.6 * (1 - k);
+
 /** Outline sampled in polar form around CORE, scale k (1 = full stone). */
 export function otolithPath(k = 1, crenul = 1, seed = 3): string {
   const n = 72;
   const pts: string[] = [];
   for (let i = 0; i < n; i++) {
-    const a = (i / n) * Math.PI * 2;
-    const ca = Math.cos(a), sa = Math.sin(a);
-    // base ellipse 160 x 96 half-axes, rostrum pull toward +x, flatter ventral side
-    let rx = 160 + (ca > 0 ? 36 * Math.pow(ca, 6) : 0);
-    let ry = sa < 0 ? 98 : 84;
-    // dorsal scallops (lobes), stronger on the outer bands
-    const lobe = sa < -0.15 ? 7 * crenul * Math.pow(Math.abs(Math.sin(a * 9 + seed)), 2.2) : 0;
-    const vent = sa > 0.2 ? 3 * crenul * Math.sin(a * 13 + seed) : 0;
-    const r = 1 + (lobe + vent) / 100;
-    const x = CORE.x + ca * rx * k * r - CORE.x * k;
-    const y = CORE.y + sa * ry * k * r - CORE.y * k;
+    const [x, y] = otolithPoint(k, (i / n) * Math.PI * 2, crenul, seed);
     pts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
   }
   return `M${pts.join(' L')} Z`;
@@ -80,8 +89,7 @@ export const Otolith: React.FC<OtolithProps> = ({
   const breathe = 1 + 0.006 * Math.sin(f / 23);
   const glow = mode === 'xray' ? 0.85 : mode === 'nir' ? 0.6 : 0.25;
   // ring list from the outside in, so inner bands paint over outer ones
-  const bands = Array.from({length: rings}, (_, i) => {
-    const k = 1 - (i + 1) / (rings + 1.4);
+  const bands = ringScales(rings).map((k, i) => {
     const at = 1 - k; // how far out this band is (0 core .. 1 edge)
     return {i, k, at};
   });
@@ -106,7 +114,7 @@ export const Otolith: React.FC<OtolithProps> = ({
           const lit = counted >= at - 0.02;
           const winter = i % 2 === 0;
           return (
-            <path key={i} d={otolithPath(k, 0.4 + 0.6 * (1 - k))}
+            <path key={i} d={otolithPath(k, bandCrenul(k))}
               fill={winter ? (mode === 'nir' ? '#B8566F' : t.core) : 'none'}
               fillOpacity={winter ? (lit ? 0.42 : 0.16) : 0}
               stroke={lit ? (mode === 'nir' ? '#FF9DB8' : '#8C7A5C') : t.core}
@@ -239,7 +247,7 @@ export const TallyCounter: React.FC<{
       <rect x={-86} y={-32} width={172} height={10} rx={5} fill="#FFFFFF" opacity={0.12} />
       {plate && (
         <g transform="translate(0,62)">
-          <rect x={-70} y={-13} width={140} height={26} rx={5} fill={b.core} stroke={INK} strokeWidth={3} />
+          <rect x={-Math.max(70, plate.length * 15 * 0.602 / 2 + 14)} y={-13} width={Math.max(140, plate.length * 15 * 0.602 + 28)} height={26} rx={5} fill={b.core} stroke={INK} strokeWidth={3} />
           <text x={0} y={7} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={15} fill={INK}>{plate}</text>
         </g>
       )}
@@ -307,12 +315,16 @@ export const SpectralLine: React.FC<{
 export const NIRReader: React.FC<{
   x: number; y: number; scale?: number; f: number; beam?: number; spectrum?: number; seed?: number;
   plate?: string; cloth?: number; slot?: React.ReactNode; rails?: boolean; trophy?: number; screenTicks?: number;
-}> = ({x, y, scale = 1, f, beam = 0, spectrum = 0, seed = 2, plate = '', cloth = 1, slot, rails = true, trophy = 0, screenTicks = 0}) => {
+  /** size of the engineers' trophy relative to the machine (a credit can be drawn large) */
+  trophyScale?: number;
+}> = ({x, y, scale = 1, f, beam = 0, spectrum = 0, seed = 2, plate = '', cloth = 1, slot, rails = true, trophy = 0, screenTicks = 0, trophyScale = 1}) => {
   const id = uid(`nir${x}${y}${scale}`);
   const b = tones(BRASS);
   const e = tones(ENAMEL);
   const cl = clamp01(cloth);
   const hum = 0.5 + 0.5 * Math.sin(f / 7);
+  // plate width from the string: 20px mono at 0.602em plus 1px tracking, 24px clear each side
+  const pw = Math.max(200, plate.length * 20 * 0.602 + Math.max(0, plate.length - 1) + 48);
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`}>
       <defs>
@@ -355,12 +367,13 @@ export const NIRReader: React.FC<{
         <text x={0} y={-74} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={22} fill={b.key}>AGE OUT</text>
         {slot}
       </g>
-      {/* name plate, with the cloth */}
+      {/* name plate, sized to its own string by arithmetic, with the cloth */}
       <g transform="translate(0,-60)">
-        <rect x={-150} y={-22} width={300} height={44} rx={7} fill={`url(#${id}b)`} stroke={INK} strokeWidth={4} />
-        <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={22} fill={INK} letterSpacing={1}>{plate}</text>
+        <rect x={-pw / 2} y={-22} width={pw} height={44} rx={7} fill={`url(#${id}b)`} stroke={INK} strokeWidth={4} />
+        <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={20} fill={INK} letterSpacing={1}>{plate}</text>
         {cl > 0.01 && (
-          <g transform={`translate(${-170 + 600 * (1 - cl)},${-40 - 120 * (1 - cl)}) rotate(${-30 * (1 - cl)})`} opacity={Math.min(1, cl * 2)}>
+          // pulled UP and off, fading as it lifts, so it never exits past the frame edge as a stray shape
+          <g transform={`translate(${-pw / 2 - 20 + 140 * (1 - cl)},${-40 - 260 * (1 - cl)}) rotate(${-18 * (1 - cl)}) scale(${(pw + 40) / 340},1)`} opacity={Math.min(1, cl * 1.6)}>
             <path d="M0,0 C80,-8 260,-8 340,0 L350,70 C300,86 260,66 220,84 C170,98 120,72 70,88 C40,96 14,80 -8,74 Z"
               fill="#7B2B3C" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
             <path d="M40,8 C50,40 46,60 60,82 M150,6 C160,40 150,60 166,88 M260,6 C270,36 262,56 276,76" fill="none" stroke="#4E1625" strokeWidth={5} opacity={0.6} />
@@ -377,7 +390,7 @@ export const NIRReader: React.FC<{
       )}
       {/* engineers' trophy (a sincere concession, not a gag) */}
       {trophy > 0.01 && (
-        <g transform={`translate(150,${-360 - 40 * (1 - smooth(trophy))})`} opacity={clamp01(trophy * 2)}>
+        <g transform={`translate(150,${-360 - 40 * (1 - smooth(clamp01(trophy)))}) scale(${trophyScale})`} opacity={clamp01(trophy * 2)}>
           <ContactShadow cx={0} cy={0} rx={50} ry={8} opacity={0.4} />
           <rect x={-34} y={-24} width={68} height={24} rx={4} fill={b.core} stroke={INK} strokeWidth={4} />
           <rect x={-10} y={-62} width={20} height={40} fill={b.base} stroke={INK} strokeWidth={4} />
@@ -424,7 +437,6 @@ export const BenchScope: React.FC<{x: number; y: number; scale?: number; drop?: 
         <ellipse cx={0} cy={70} rx={46} ry={12} fill="#0B1418" stroke={INK} strokeWidth={4} />
         <ellipse cx={-6} cy={67} rx={18} ry={4} fill="#BFE6FF" opacity={0.7} />
         <rect x={-58} y={-150} width={20} height={130} fill="#FFF3D0" opacity={0.35} />
-        <text x={0} y={-90} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={24} fill={INK} opacity={0.75}>10x</text>
       </g>
       {/* the light ring on the stage */}
       <ellipse cx={0} cy={0} rx={250} ry={180} fill="none" stroke="#FFF4D6" strokeWidth={4} opacity={0.35 * lamp * (0.85 + 0.15 * Math.sin(f / 11))} />
@@ -448,11 +460,11 @@ export const ArchiveDrawers: React.FC<{
     const k = Math.pow(0.62, s);
     const cw = (w * 1.3 * k) / cols, ch = (h * 0.9 * k) / rows;
     const x0 = vx - (cols * cw) / 2, y0 = vy - (rows * ch) / 2;
-    const fade = 0.35 + 0.65 * (1 - s / depth);
+    const fade = 0.25 + 0.75 * Math.pow(1 - s / depth, 1.3);
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
         // keep a corridor down the middle so the far wall reads as depth
-        if (s > 0 && c > 1 && c < cols - 2 && r > 1 && r < rows - 2) continue;
+        if (c > 1 && c < cols - 2 && r > 1 && r < rows - 2) continue;
         const hx = hash(s * 997 + r * 31 + c);
         const x = x0 + c * cw, y = y0 + r * ch;
         const isOpen = open && s === 0 && open.row === r && open.col === c;
@@ -523,6 +535,59 @@ export const TreeRings: React.FC<{x: number; y: number; scale?: number; rings?: 
       <circle cx={0} cy={0} r={6} fill="#7A4A22" />
       <path d={ring(1)} fill="none" stroke={INK} strokeWidth={6} />
       <RimLight d={`M${-R * 0.7},${-R * 0.72} Q0,${-R * 1.02} ${R * 0.7},${-R * 0.72}`} w={4} color={LAMP} opacity={0.5} />
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------------------------------------
+// YEAR DRUM: a horizontal brass calendar drum that shows a YEAR, deliberately a different shape
+// from the round TallyCounter so a film can show a date and a count side by side without the two
+// reading as one instrument. `year` may be fractional; the units drum rolls between integers.
+// ---------------------------------------------------------------------------------------------
+export const YearDrum: React.FC<{x: number; y: number; scale?: number; year: number; label?: string}> = ({x, y, scale = 1, year, label}) => {
+  const id = uid(`yd${x}${y}${scale}`);
+  const b = tones(BRASS);
+  const yr = Math.max(0, year);
+  const digits = [1000, 100, 10, 1].map((p) => {
+    const whole = Math.floor(yr / p) % 10;
+    const below = yr % p;
+    const roll = p === 1 ? yr - Math.floor(yr) : below > p - 1 ? below - (p - 1) : 0;
+    return {whole, roll};
+  });
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <defs>
+        <linearGradient id={`${id}c`} x1="0" y1="0" x2="0" y2="1">
+          <stop stopColor={b.shade} /><stop offset="0.3" stopColor={b.key} /><stop offset="0.55" stopColor={b.base} /><stop offset="1" stopColor={b.shade} />
+        </linearGradient>
+        <clipPath id={`${id}w`}><rect x={-104} y={-30} width={208} height={60} rx={4} /></clipPath>
+      </defs>
+      <ContactShadow cx={0} cy={86} rx={150} ry={12} opacity={0.4} />
+      <rect x={-170} y={-62} width={26} height={124} rx={10} fill={b.core} stroke={INK} strokeWidth={5} />
+      <rect x={144} y={-62} width={26} height={124} rx={10} fill={b.core} stroke={INK} strokeWidth={5} />
+      <rect x={-150} y={-56} width={300} height={112} rx={20} fill={`url(#${id}c)`} stroke={INK} strokeWidth={6} />
+      {Array.from({length: 9}, (_, i) => <path key={i} d={`M${-130 + i * 32},-56 v112`} stroke={INK} strokeWidth={2} opacity={0.18} />)}
+      <rect x={-112} y={-38} width={224} height={76} rx={8} fill="#0E1418" stroke={INK} strokeWidth={5} />
+      <g clipPath={`url(#${id}w)`}>
+        {digits.map((d, i) => (
+          <g key={i} transform={`translate(${-78 + i * 52},${-d.roll * 58})`}>
+            {[0, 1].map((k) => (
+              <g key={k} transform={`translate(0,${k * 58})`}>
+                <rect x={-22} y={-26} width={44} height={52} rx={3} fill="#F2EBDA" />
+                <text x={0} y={16} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={44} fill={INK}>{(d.whole + k) % 10}</text>
+              </g>
+            ))}
+          </g>
+        ))}
+        <rect x={-104} y={-30} width={208} height={14} fill="#000" opacity={0.35} />
+        <rect x={-104} y={16} width={208} height={14} fill="#000" opacity={0.35} />
+      </g>
+      {label && (
+        <g transform="translate(0,96)">
+          <rect x={-(label.length * 26 * 0.602 / 2 + 20)} y={-22} width={label.length * 26 * 0.602 + 40} height={44} rx={6} fill={b.core} stroke={INK} strokeWidth={4} />
+          <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={26} fill={INK}>{label}</text>
+        </g>
+      )}
     </g>
   );
 };

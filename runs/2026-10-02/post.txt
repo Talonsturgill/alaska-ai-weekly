@@ -1,0 +1,19 @@
+A rockfish caught in the Aleutians in 2022 was born in 1878, by NOAA's estimate. Who counted its rings?
+
+NOAA's Alaska Fisheries Science Center ages fish by their ear stones, called otoliths. Each one grows a ring every year like a tree. The Center's readers count the rings on more than 30,000 of them a year under microscopes. Those ages help managers set catch limits.
+
+Now there's a faster reader. Near-infrared light hits a pollock otolith and produces a spectral signature. Machine learning ties that signature to an age. NOAA puts the efficiency gain at 600 to 800 percent. The microscope is still part of the process.
+
+A model can only learn to read an age from stones whose ages have already been read.
+
+NOAA's archive holds 2.5 million otolith pairs going back to the 1960s. Around 2 million of them once sat in a 1930s wooden airplane hangar in Seattle. NOAA says scientists trained these models on samples from that archive.
+
+So the speed is real. It's also the payout on decades of patient human work that nobody called AI at the time.
+
+In 2023 NOAA called getting machine-read ages into stock assessments the next step. Managers still set the limits. Machines don't.
+
+For Alaska, the scarce input to useful AI is often a careful record somebody kept for decades. You can buy a spectrometer. You can't buy an archive that goes back to the 1960s.
+
+Which Alaska record kept by hand deserves a model next, and who kept it?
+
+#Alaska #Fisheries #MachineLearning #NOAA #Spectroscopy
