@@ -230,6 +230,7 @@ class Compiler:
         self.plate_boxes = []     # (shot, start_s, end_s, box, text, path)
         self.snaps = 0
         self.palette_used = set()
+        self.segments = {}        # (shot, claim string) -> middot segments painted
 
     # ---- errors
     def err(self, path, msg):
@@ -373,6 +374,10 @@ class Compiler:
             if preset not in ("pop", "snap", "settle"):
                 self.err(path, "settle preset is pop, snap or settle")
             return f"settle(f, {a}, '{preset}', {self.value(A(2, 0), si, path)}, {self.value(A(3, 1), si, path)})"
+        if op == "lin":
+            _, a = self.anchor(A(0), si, f"{path}.lin[0]")
+            _, b = self.anchor(A(1), si, f"{path}.lin[1]")
+            return f"lin(f, {a}, {b}, {self.value(A(2, 0), si, path)}, {self.value(A(3, 1), si, path)})"
         if op == "ramp":
             _, a = self.anchor(A(0), si, f"{path}.ramp[0]")
             _, b = self.anchor(A(1), si, f"{path}.ramp[1]")
@@ -402,9 +407,18 @@ class Compiler:
         return "0"
 
     # ---- JSX
+    def visible(self, v, path):
+        """A string prop that reads as words a viewer sees is held to the house rules."""
+        vals = v if isinstance(v, list) else [v]
+        for x in vals:
+            if isinstance(x, str) and not x.startswith("#") and (" " in x or re.search(r"[A-Z]{3}", x)):
+                for why in house_rules(x):
+                    self.err(path, f"visible text {x!r} has {why}")
+
     def attr(self, name, v, si, path):
         if not re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", name):
             self.err(path, f"prop name {name!r} is not a valid identifier")
+        self.visible(v, f"{path}.{name}")
         if isinstance(v, str) and '"' not in v and "\\" not in v and "\n" not in v and "{" not in v:
             return f'{name}="{v}"'
         return f"{name}={{{self.value(v, si, f'{path}.{name}')}}}"
@@ -547,8 +561,14 @@ class Compiler:
         else:
             text = P.get("text", "")
             if text not in self.claim_texts:
-                self.err(path, f"plate text {text!r} is not a claims.json on_screen string. Every painted "
-                               f"string traces to the fact-check-safe set. Use {{\"claim\": \"cN\"}}.")
+                whole = next((full for full in self.claim_texts if " \u00b7 " in full and text in full.split(" \u00b7 ")), None)
+                if whole:
+                    # one middot segment of a claim, which is legal only if every segment of that
+                    # claim is painted in the same shot, so the whole claim is on screen
+                    self.segments.setdefault((si, whole), set()).add(text)
+                else:
+                    self.err(path, f"plate text {text!r} is not a claims.json on_screen string. Every painted "
+                                   f"string traces to the fact-check-safe set. Use {{\"claim\": \"cN\"}}.")
         for why in house_rules(text):
             self.err(path, f"plate text {text!r} has {why}")
         size = P.get("size", 34)
@@ -695,6 +715,14 @@ class Compiler:
                                          f"action timed to it. Anchor the layer, plate, effect or camera move "
                                          f"that performs it to \"b:{b}\".")
 
+    def check_segments(self):
+        for (si, whole), have in self.segments.items():
+            parts = whole.split(" \u00b7 ")
+            missing = [p for p in parts if p not in have]
+            if missing:
+                self.err(f"shots[{si}].plates", f"plates show part of the claim {whole!r} without {missing}. "
+                                                f"A claim split across plates must be painted whole in its shot.")
+
     def check_plates(self):
         for i, (si, a0, a1, b, t, p) in enumerate(self.plate_boxes):
             for sj, c0, c1, c, u, q in self.plate_boxes[i + 1:]:
@@ -781,6 +809,7 @@ class Compiler:
             branches.append(self.shot(S, si))
         self.check_beats()
         self.check_plates()
+        self.check_segments()
         if self.snaps > 2:
             self.warn("camera", f"{self.snaps} snap-zooms. The craft rule is one or two per episode, at the "
                                 f"moments that matter most.")
@@ -829,7 +858,7 @@ import {{GradeLayer}} from './lib/lighting';
 import {{VoiceProvider, useVoice}} from './lib/voice';
 import {{EndCredits}} from './lib/EndCredits';
 import {{assertCropSafe}} from './lib/cropsafe';
-import {{CameraRig, Fx, Layer, Snap, Shake, TransitionIn, TransitionKind, bump, ease, osc, ramp, settle, spring, steps, typed, wobble}} from './lib/scene';
+import {{CameraRig, Fx, Layer, Snap, Shake, TransitionIn, TransitionKind, bump, ease, lin, osc, ramp, settle, spring, steps, typed, wobble}} from './lib/scene';
 {chr(10).join(imports)}
 
 const W = 1080, H = 1920;
@@ -838,7 +867,7 @@ type Beat = {{id: number; at: number; label: string}};
 const PAL = {{
   {pal},
 }};
-void [bump, osc, ramp, settle, spring, steps, typed, wobble, H];
+void [bump, lin, osc, ramp, settle, spring, steps, typed, wobble, H];
 
 const SVG: React.FC<{{children: React.ReactNode}}> = ({{children}}) => (
   <svg width={{W}} height={{H}} viewBox="0 0 1080 1920" style={{{{position: 'absolute', inset: 0, overflow: 'visible'}}}}>{{children}}</svg>
@@ -1114,6 +1143,10 @@ def self_test():
                        "sound and evidence moves are written for the mixer and the evidence pack"))
         code, out = run(good)
         checks.append((main(["--out-dir", str(d), "--src-dir", str(d / "src"), "--check"]) == 0, "--check passes on a fresh compile"))
+        split = json.loads(json.dumps(good))
+        split["shots"][1]["plates"] = [{"text": "SAME SEARCH", "y": 1100, "at": "w:answer"}, {"text": "SAME ANSWER", "y": 1200, "at": "w:answer"}]
+        code, out = run(split)
+        checks.append((code == 0, "a claim split at its middot is legal when the whole claim is painted"))
 
         def broken(mut):
             s = json.loads(json.dumps(good))
@@ -1134,6 +1167,9 @@ def self_test():
             (lambda s: s["sound"].update({"2": {"kind": "tick"}}), "two consecutive beats", "the same sound twice in a row"),
             (lambda s: s["sound"].update({"2": {"kind": "kazoo"}}), "not in the foley bank", "a sound the bank lacks"),
             (lambda s: s["shots"][0]["layers"].append({"use": "svg:text", "content": "Note: this"}), "a colon", "visible text with a colon"),
+            (lambda s: s["shots"][1]["plates"].__setitem__(0, {"text": "SAME SEARCH", "y": 1200}), "without ['SAME ANSWER']", "half a claim split across plates"),
+            (lambda s: s["shots"][0]["layers"].append({"use": "svg:g", "props": {"aria-label": 1}}), "not a valid identifier", "a prop name that is not an identifier"),
+            (lambda s: s["shots"][0]["layers"][1]["props"].update(title="WE CANNOT SAY"), "cannot", "visible prop text with cannot"),
         ]
         for mut, needle, what in cases:
             code, out = broken(mut)
