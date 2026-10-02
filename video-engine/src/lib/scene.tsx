@@ -62,12 +62,6 @@ export const ramp = (f: number, a: number, b: number, from = 0, to = 1): number 
   return from + (to - from) * t;
 };
 
-/** Straight-line travel from `a` to `b`, clamped. A path a bird or a falling tag follows. */
-export const lin = (f: number, a: number, b: number, from = 0, to = 1): number => {
-  if (b <= a) return f >= a ? to : from;
-  return from + (to - from) * interpolate(f, [a, b], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-};
-
 /** Held states: the value of the last step whose frame has been reached. */
 export function steps<T>(f: number, init: T, pts: Array<[number, T]>): T {
   let v = init;
