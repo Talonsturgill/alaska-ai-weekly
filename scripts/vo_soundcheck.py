@@ -200,7 +200,17 @@ def _norm_words(s):
     _COMPOUNDS = {("air", "strip"): "airstrip", ("mega", "fire"): "megafire",
                   ("wild", "fire"): "wildfire", ("data", "center"): "datacenter",
                   ("data", "centers"): "datacenters", ("grid", "lock"): "gridlock",
-                  ("air", "base"): "airbase"}
+                  ("air", "base"): "airbase", ("ear", "stone"): "earstone",
+                  ("ear", "stones"): "earstones"}
+    # DIRECTED PRONUNCIATIONS (2026-10-02). The VO plan tells the voice to say NOAA as
+    # "Noah", the voice obeys, and Whisper writes the word it heard: "Noah". Scored raw,
+    # every NOAA in the script was a word error for doing exactly what it was told, which
+    # on the 10-02 script (eight NOAAs in 220 words) was 0.036 of a 0.08 ceiling and failed
+    # all three takes. Map the spoken form back to the written one, symmetrically, so only
+    # the acronym's own reading is forgiven. A genuine mishearing of anything else still
+    # counts. Extend with each acronym the pronunciation map respells.
+    _SPOKEN = {"noah": "noaa", "noah's": "noaa's", "noahs": "noaa's"}
+    out = [_SPOKEN.get(w, w) for w in out]
     joined, i = [], 0
     while i < len(out):
         if i + 1 < len(out) and (out[i], out[i + 1]) in _COMPOUNDS:

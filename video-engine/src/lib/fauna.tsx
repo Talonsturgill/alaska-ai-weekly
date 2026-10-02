@@ -2060,3 +2060,133 @@ export const Beluga: React.FC<{
     </g>
   );
 };
+
+// ---------------------------------------------------------------- GROUNDFISH (rockfish + pollock)
+// NET-NEW 2026-10-02 ("Who Counted"). Two North Pacific groundfish on the fishcraft engine, one
+// component, `kind` selects the anatomy:
+//   rockfish  deep-bodied, big-eyed, a spiny dorsal with a notch before the soft rays, orange-red
+//             back fading to a rose-pink belly, dusky saddles. Species-neutral on purpose: the
+//             film's 144-year-old fish is "a rockfish" in the record, never a named species.
+//   pollock   walleye pollock: slender, THREE separate dorsal fins and two anal fins (the gadid
+//             tell), olive-brown back, mottled shoulder, silver flank, big walleye.
+// `xray` 0..1 washes the head to a cool translucent blue and reveals the sagittal otolith sitting
+// behind the eye (drawn with lib/otolith's outline, so the stone that pops out matches the one
+// inside). Convention as the rest of the bestiary: belly near y=0, faces right, pass the frame.
+export const Groundfish: React.FC<{
+  x: number; y: number; scale?: number; f: number; facing?: 1 | -1; kind?: 'rockfish' | 'pollock';
+  swim?: number; caustics?: boolean; xray?: number; stoneOut?: number;
+}> = ({x, y, scale = 1, f, facing = 1, kind = 'rockfish', swim = 1, caustics = true, xray = 0, stoneOut = 0}) => {
+  const R = kind === 'rockfish';
+  const id = uid(`gf${kind}${x}${y}${swim}${caustics ? 'c' : ''}`);
+  const LEN = R ? 230 : 250;
+  const NOSE = 120;
+  const sp = makeSpine(f, {len: LEN, nose: NOSE, T: R ? 0.7 : 0.55, swim, ampBL: R ? 0.06 : 0.08});
+  const dTop = R
+    ? (u: number) => Math.max(10, 8 + 46 * Math.sin(Math.PI * Math.min(1, u * 1.08)))
+    : (u: number) => Math.max(8, 5 + 28 * Math.sin(Math.PI * Math.min(1, u * 1.05)));
+  const dBot = R
+    ? (u: number) => Math.max(9, 6 + 38 * Math.sin(Math.PI * Math.min(1, u * 1.05)))
+    : (u: number) => Math.max(7, 4 + 24 * Math.sin(Math.PI * Math.min(1, u * 1.02)));
+  const skin: FishSkin = R
+    ? {back: '#8a2a1c', shoulder: '#c2452a', flank: '#e26a3e', preBelly: '#ef9a76', belly: '#f6c6b0',
+       irid1: '#ffb36a', irid2: '#e26a3e', irid3: '#c25a8a', scaleEdge: '#4a1208', sheenGain: 0.3, scaleAmp: 0.5}
+    : {back: '#4a4a2c', shoulder: '#7b7a52', flank: '#c9ccc2', preBelly: '#e6e8e2', belly: '#f6f7f3',
+       irid1: '#c9b46a', irid2: '#8fb0a8', irid3: '#b09ac2', scaleEdge: '#1c1c10', sheenGain: 0.7, scaleAmp: 0.45};
+  const finC = R ? '#d4552e' : '#8a8760';
+  const finD = R ? '#7a2414' : '#4c4a30';
+  const tailB = {X: sp.sx(1), Y: sp.sway(1)};
+  const xr = Math.max(0, Math.min(1, xray));
+  const eye = {x: NOSE - (R ? 30 : 24), y: R ? -12 : -6};
+  // the sagittal otolith sits behind and below the eye
+  const stone = {x: eye.x - 34, y: eye.y + 14};
+  return (
+    <g transform={`translate(${x},${y + sp.bobY}) scale(${scale * facing},${scale}) rotate(${sp.yaw + sp.roll * 0.4} ${NOSE - LEN * 0.35} 0)`}>
+      {/* caudal */}
+      <g transform={`translate(${tailB.X},${tailB.Y}) rotate(${sp.tailAngle})`}>
+        <path d={R ? 'M2,0 q-20,-30 -46,-36 q6,18 4,36 q2,18 -4,36 q26,-6 46,-36 Z' : 'M2,0 q-22,-26 -48,-32 q8,14 6,32 q2,18 -6,32 q26,-6 48,-32 Z'}
+          fill={finC} stroke={FINK} strokeWidth={5.5} strokeLinejoin="round" />
+        {[-24, -10, 10, 24].map((ry, i) => <path key={i} d={`M0,${ry * 0.2} L-40,${ry}`} stroke={finD} strokeWidth={2} opacity={0.5} />)}
+      </g>
+      {/* pelvic + anal fins */}
+      <FinMembrane x={sp.sx(0.32)} y={sp.sway(0.32) + dBot(0.32) - 4} rot={14 + sp.slope(0.32)} f={f}
+        length={30} depth={R ? 30 : 18} color={finC} dark={finD} rays={R ? 5 : 3} phase={0.5} />
+      {R ? (
+        <FinMembrane x={sp.sx(0.66)} y={sp.sway(0.66) + dBot(0.66) - 3} rot={24 + sp.slope(0.66)} f={f}
+          length={46} depth={30} color={finC} dark={finD} rays={6} phase={1.3} />
+      ) : (
+        <>
+          <FinMembrane x={sp.sx(0.5)} y={sp.sway(0.5) + dBot(0.5) - 2} rot={10 + sp.slope(0.5)} f={f}
+            length={58} depth={14} color={finC} dark={finD} rays={7} phase={1.1} sweep={0.3} />
+          <FinMembrane x={sp.sx(0.76)} y={sp.sway(0.76) + dBot(0.76) - 2} rot={16 + sp.slope(0.76)} f={f}
+            length={40} depth={12} color={finC} dark={finD} rays={5} phase={1.7} sweep={0.3} />
+        </>
+      )}
+      <FishSurface uid={id} sp={sp} dTop={dTop} dBot={dBot} skin={skin} caustics={caustics} outlineW={6.5}>
+        {R
+          ? [0.3, 0.5, 0.7].map((u, i) => (
+              <path key={i} d={`M${sp.sx(u) + 14},${sp.sway(u) - dTop(u) + 4} q-10,${dTop(u) * 0.6} -2,${dTop(u) * 0.9}`}
+                fill="none" stroke="#5a1408" strokeWidth={14} opacity={0.28} strokeLinecap="round" />
+            ))
+          : Array.from({length: 18}, (_, i) => {
+              const u = 0.2 + (i % 9) * 0.07;
+              return <circle key={i} cx={sp.sx(u) + (i > 8 ? 4 : 0)} cy={sp.sway(u) - dTop(u) * (i > 8 ? 0.35 : 0.62)} r={3.2}
+                fill="#2c2c18" opacity={0.32} />;
+            })}
+        <path d={smoothPath(Array.from({length: 13}, (_, i) => {
+          const u = 0.12 + i / 14; return [sp.sx(u), sp.sway(u) - dTop(u) * (R ? 0.3 : 0.2)] as [number, number];
+        }))} fill="none" stroke={skin.back} strokeWidth={1.6} opacity={0.4} />
+      </FishSurface>
+      {/* dorsal fins */}
+      {R ? (
+        <g>
+          {/* spiny dorsal: 12 spines with membrane, notch, then soft rays */}
+          <path d={(() => {
+            const pts: string[] = [];
+            for (let i = 0; i <= 12; i++) {
+              const u = 0.22 + i * 0.03;
+              const bx = sp.sx(u), by = sp.sway(u) - dTop(u) + 4;
+              const sh = 30 + 10 * Math.sin((i / 12) * Math.PI);
+              pts.push(`${bx},${by}`, `${bx - 3},${by - sh}`, `${bx - 8},${by - sh * 0.62}`);
+            }
+            return `M${pts.join(' L')} L${sp.sx(0.58)},${sp.sway(0.58) - dTop(0.58) + 4} Z`;
+          })()} fill={finC} stroke={FINK} strokeWidth={4} strokeLinejoin="round" />
+          <path d={`M${sp.sx(0.6)},${sp.sway(0.6) - dTop(0.6) + 4} q-6,-34 -40,-30 q-6,16 -6,${dTop(0.74) * 0.4}`}
+            fill={finC} stroke={FINK} strokeWidth={4} strokeLinejoin="round" />
+        </g>
+      ) : (
+        [[0.28, 32, 24], [0.48, 40, 22], [0.68, 34, 18]].map(([u, w, hgt], i) => (
+          <path key={i} d={`M${sp.sx(u)},${sp.sway(u) - dTop(u) + 3} q${-w * 0.2},${-hgt} ${-w * 0.7},${-hgt * 0.9} q${-w * 0.2},${hgt * 0.4} ${-w * 0.3},${hgt * 0.9} Z`}
+            fill={finC} stroke={FINK} strokeWidth={4} strokeLinejoin="round" />
+        ))
+      )}
+      {/* head: x-ray wash and the stone */}
+      <g transform={`translate(0,${sp.sway(0.08)})`}>
+        <path d={`M${NOSE - 70},${-dTop(0.2) * 0.9} q40,-6 70,10 q10,8 8,18 q-4,10 -14,14 q-30,14 -64,8`}
+          fill="none" stroke={FINK} strokeWidth={5.5} strokeLinecap="round" opacity={0.85} />
+        <path d={`M${NOSE + 6},${R ? 8 : 4} q-20,8 -40,6`} fill="none" stroke={FINK} strokeWidth={4} strokeLinecap="round" />
+        <path d={`M${NOSE - 66},${-dTop(0.24) + 10} q14,26 2,48`} fill="none" stroke={FINK} strokeWidth={3.5} opacity={0.55} />
+        {xr > 0.01 && (
+          <g opacity={xr}>
+            <ellipse cx={NOSE - 46} cy={2} rx={60} ry={R ? 46 : 32} fill="#9fdcf0" opacity={0.55} style={{mixBlendMode: 'screen'} as any} />
+            <path d={`M${NOSE - 98},${-30} q30,-14 70,-4`} fill="none" stroke="#E6FAFF" strokeWidth={3} opacity={0.6} />
+            <path d={`M${NOSE - 90},${30} q30,10 62,-4`} fill="none" stroke="#E6FAFF" strokeWidth={3} opacity={0.6} />
+          </g>
+        )}
+        {xr > 0.01 && stoneOut < 0.99 && (
+          <g transform={`translate(${stone.x},${stone.y}) scale(0.1)`} opacity={xr * (1 - stoneOut)}>
+            <ellipse cx={0} cy={0} rx={260} ry={190} fill="#BFF4FF" opacity={0.5} />
+            <path d="M-160,10 C-160,-80 -60,-98 30,-98 C120,-98 196,-50 196,10 C180,60 100,84 18,84 C-80,84 -160,70 -160,10 Z"
+              fill="#E8F8FF" stroke={FINK} strokeWidth={24} />
+          </g>
+        )}
+        <circle cx={eye.x} cy={eye.y} r={R ? 15 : 13} fill={R ? '#f2c25c' : '#d8d2a0'} stroke={FINK} strokeWidth={3.5} />
+        <circle cx={eye.x + 1} cy={eye.y} r={R ? 9 : 8} fill={FINK} />
+        <circle cx={eye.x - 3} cy={eye.y - 4} r={3} fill="#fff" opacity={0.9} />
+        {R && <path d={`M${eye.x - 20},${eye.y - 18} l6,-8 l6,8 M${eye.x - 6},${eye.y - 20} l6,-9 l6,9`} fill="none" stroke={FINK} strokeWidth={3} />}
+        {!R && <path d={`M${NOSE + 2},${10} q-8,6 -12,14`} fill="none" stroke={FINK} strokeWidth={2.5} />}
+      </g>
+      <FinMembrane x={sp.sx(0.26) + 6} y={sp.sway(0.26) + 4} rot={30 + sp.pecAngle} f={f}
+        length={R ? 40 : 30} depth={R ? 34 : 22} color={finC} dark={finD} rays={R ? 6 : 4} phase={0.2} />
+    </g>
+  );
+};

@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.975,
+    "heard": "This rockfish was caught in the allusions in 2022. Its earstones say it was born in 1878. So who counted? Every fish carries a pair of tiny earstones called odoliths. They grow a ring every year like a tree. Noah scientists count the rings under microscopes. More than 30,000 a year. Now there's a faster reader. Near infrared light hits the stone and machine learning turns its signature into an age. Per Noah, that's 600 to 800% more efficient. But to tie a signature to an age, you need the age first. In 2023 Noah trained and tested its models on 8,617 polystones. They came from Noah's archive, built ring by ring. Two and a half million odolith pairs back to the 1960s. Around two million once sat in an old airplane hanger in Seattle. Now the fair case against a faster age only helps if it changes what fishery managers use. Noah called getting these ages into stock assessments the next step. Catch limits are set by managers, not machines and the microscope stays in the process. So the wind today is speed and method. That's real. But look where the speed came from. Every age it gives back started as a wing, somebody counted.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.05,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.07,
+        "voiced_frac": 0.44,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 114.04,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 114.04,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (5 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.975,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.977,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.971,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}
