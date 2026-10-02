@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# SCRATCH NEVER ENTERS GIT (2026-10-02).
+# WHY THIS EXISTS: out/ is gitignored per-run scratch, but `git add -f` walks straight past
+# .gitignore, and four Dispatch runs did exactly that (09-12, 09-13, 09-14, 09-30), putting
+# 441 MB of mp4s, render chunks, SHIP_NOW, panel_verdict.json and .run_stamp.json on main.
+# The cost was not only size: the next routine container cloned that lock fresh WITHOUT the
+# private Gmail receipt that proves delivery, so scripts/run_guard.py init refused and the
+# 10-02 run shipped no film. Shipped evidence belongs in archive/ or runs/, never out/.
+#
+# Refuses any ADDED, COPIED, MODIFIED or RENAMED-INTO path under out/. Deleting tracked
+# scratch from the index is always allowed, so the cleanup itself can be committed.
+set -uo pipefail
+bad="$(git diff --cached --name-only --diff-filter=ACMR -- 'out/' 2>/dev/null)"
+if [ -n "$bad" ]; then
+  echo "pre-commit: REFUSED. out/ is per-run scratch and never enters git:" >&2
+  echo "$bad" | head -20 | sed 's/^/  /' >&2
+  n="$(echo "$bad" | wc -l)"
+  [ "$n" -gt 20 ] && echo "  ... and $((n - 20)) more" >&2
+  echo "Unstage with: git restore --staged out/   (shipped evidence goes in archive/ or runs/)" >&2
+  exit 1
+fi
+exit 0
