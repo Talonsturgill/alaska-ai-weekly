@@ -63,8 +63,10 @@ from main and execute it"):
   voice QC, writers room, showstopper standard). SOURCE OF TRUTH for that routine's behavior.
   Lean since 2026-09-30: the incident history behind each rule is `docs/DISPATCH_HISTORY.md`,
   and `scripts/runbook_check.py` fails if the runbook drops a command, gate or path it names.
-- `prompts/machine_weekly.md` — the weekly machine pass (Phase 9), which works
-  `docs/MACHINE_QUEUE.md` in a fresh `machine-engineer` agent instead of every run.
+- `prompts/machine_weekly.md` — the weekly machine pass (Phase 9), which works the recurring
+  axes and defects in `scripts/week_digest.py`'s count of the panel's own verdicts, then
+  `docs/MACHINE_QUEUE.md`, in a fresh `machine-engineer` agent instead of every run. Due weekly even
+  with nothing queued (owner, 2026-10-02: upgrades "based on actual output").
 - `prompts/routine_instructions.md` — the weekly Facebook post routine.
 Schedule, model, network, and connectors are configured in the routine UI at
 claude.ai/code/routines (not in this repo).

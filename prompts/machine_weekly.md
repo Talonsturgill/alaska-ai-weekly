@@ -12,9 +12,16 @@ film better is not a fix.
 
 ## Inputs
 
+- `out/dispatch/week_digest.md`, written by `scripts/week_digest.py` from the git history of the
+  panel's verdicts and judge cards over the last 14 days: which axis each judge scored lowest,
+  counted, the axes the verdict notes name, and every concrete defect and hard blocker verbatim. The
+  owner wants each pass "based on the recurring themes that it saw during the week ... based on
+  actual output" (2026-10-02), so **the most recurring axis and defects come first**, ahead of the
+  queue, and a pass with an empty queue still has this to work.
 - `docs/MACHINE_QUEUE.md`, the open items. Repeat offenders (`repeat: 2` or more) first, then
   oldest first.
-- `docs/EVAL_REPEAT_OFFENDERS.md` and `config/eval_ledger.yaml`, for signatures that recur.
+- `docs/EVAL_REPEAT_OFFENDERS.md` and `config/eval_ledger.yaml`, for signatures that recur. The
+  ledger's last entry is 2026-09-03, so the digest is the current record.
 - The newest entries of `docs/RUN_UPGRADES.md`, by `tail` or `grep` only. It is 285 KB and you do
   not need the rest.
 - `docs/UPGRADE_BACKLOG.md` lists the large initiatives. Take one of those only when it is small
