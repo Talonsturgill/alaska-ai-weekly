@@ -904,7 +904,10 @@ hard_fails). Loop until both pass. dispatch_email.py also lints the exact string
    frames), `runs/<date>/cost.json`, the ledger (`scripts/dedupe.py add ... --composition
    '<fingerprint JSON>' --stance <celebratory|cautionary|curious|mixed> --angle "<the Phase 3.5
    thesis>" --hero <Asset> --cast "<featured assets>"`, ALWAYS) and the Phase 8 entries. Push, open
-   the PR (ready, not draft), MERGE to main. No dangling or draft PRs.
+   the PR (ready, not draft), MERGE to main. No dangling or draft PRs. NOTHING UNDER `out/` IS EVER
+   COMMITTED, and never `git add -f` it (2026-10-02: four runs force-added scratch, and the 09-30
+   lock arrived in the next clone without its receipt, so run_guard refused and no film shipped).
+   Evidence that must survive goes in `archive/` or `runs/<date>/`. `.githooks/pre-commit` refuses it.
 
 ## PHASE 8: RETRO (every run, short)  (`run_cost.py phase retro`, before step 3 of Phase 7)
 
