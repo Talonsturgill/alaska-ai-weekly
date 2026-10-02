@@ -1,0 +1,25 @@
+{
+ "run_date": "2026-10-02",
+ "stance": "celebratory",
+ "thesis": "NOAA's machine reader for Alaska groundfish ages is a real win, and it works because people at microscopes spent years counting annual growth rings on an archive of 2.5 million otolith pairs going back to the 1960s, so the human readers didn't get replaced by the model, they're what taught it.",
+ "falsifiability": "Wrong if a NOAA source shows the NIR models learned age with no human-aged otoliths behind them, the gain came from the spectrometer alone, or conventional ageing dropped out of the process.",
+ "supporting_facts": [
+  "c2+c9 30,000+ aged a year by counting annual growth rings like tree rings",
+  "c3+c4 NIR signatures tied to age by ML, 600 to 800 percent more efficient, conventional ageing still part of the process",
+  "c1+c8 2.5 million pairs since the 1960s; 2023 models trained and tested on 8,617 pollock otoliths 2014 to 2018"
+ ],
+ "counter_point": "The spectroscopy and ML made the archive pay (c3,c4), engineers get full credit. Stock assessment use is the next step (c8), no machine age has set a catch limit, managers set limits (c10).",
+ "second_movement": "c6 around 2 million pairs sat in a 1930s wooden airplane hangar, moved 2012 on an NSF grant. Act 1 sells speed; the hangar shows speed is a payout on slow careful storage and counting.",
+ "test_scene": "THE NEXT STEP: a faster age only matters once it changes the numbers managers use, and NOAA puts assessment use ahead (c8); the microscope reader stays (c3); limits stay a human decision (c10). Concede, then: the win is real today as capacity and method.",
+ "story_question": "Where did the machine that ages Alaska's fish get its intelligence?",
+ "runner_ups": [
+  {
+   "angle": "The Bottleneck",
+   "why_lost": "implies a downstream result c8 doesn't show; lives on as Act 1 capacity beat"
+  },
+  {
+   "angle": "The Honest Limit",
+   "why_lost": "undersells a real win; becomes the Act 3 test scene"
+  }
+ ]
+}

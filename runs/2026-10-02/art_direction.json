@@ -1,0 +1,82 @@
+{
+ "run_date": "2026-10-02",
+ "story_id": "noaa-otolith-nir-ml",
+ "palette": {
+  "roles": {
+   "sky": "#0A1B24",
+   "ground": "#13262E",
+   "water": "#0F3340",
+   "hero": "#EDE3CC",
+   "brass": "#C8963E",
+   "lamp": "#FFD58A",
+   "accent": "#E0336B",
+   "shadow": "#050C10",
+   "ink": "#0B1418",
+   "paper": "#F2EBDA"
+  },
+  "mood": "Lamplit deep-sea study. Bering teal-black water and a dark bench, one warm brass lamp, a pearl otolith that is the brightest object in every frame, and a single near-infrared magenta that means ONLY the machine's light and its signature.",
+  "divergence": "September 30th was fog slate, peat and a warning orange on a phone and a binder. September 23rd was Air Force paper and statements. This film has no document pile at all, it lives in water, under a microscope lamp and in a timber hangar, and its accent is NIR magenta, used on nothing human."
+ },
+ "light": {
+  "time": "Night at the bench, a single warm lamp",
+  "direction": "Key from the microscope lamp upper left (warm #FFD58A), cool teal fill from the water and archive dark, magenta rim ONLY on the spectrometer beam and spectral line",
+  "depth": "Three planes per set: dark archive or water behind, the bench or stone in the middle, the reader's hands and the counter foreground. GradeLayer warm bloom on the lamp, NightGrade style vignette. lib/lighting tones() ramps on brass."
+ },
+ "shape_language": {
+  "grammar": "Concentric rings (organic, counted, human) against straight lines and rails (the machine, the spectrum, the staircase). The otolith is an irregular rounded bean with rings; the spectrometer is rectilinear brass on straight rails; the spectral line is a jagged straight-segment polyline.",
+  "why": "The turn is the straight line resolving back into ring ticks, so the contrast has to be legible from frame 1."
+ },
+ "casting": {
+  "hero": "Otolith (net-new, lib/otolith.tsx): pearl bean-shaped ear stone with animatable annual ring bands that pulse core outward, an x-ray glow state and a NIR pass-through state, plus a small paper age tag.",
+  "inventory": [
+   {
+    "beats": "open and button",
+    "subject": "rockfish gliding, x-ray head",
+    "source": "net-new Rockfish in fauna.tsx on lib/fishcraft.tsx (fish engine), reused for pollock by params"
+   },
+   {
+    "beats": "throughline",
+    "subject": "brass tally counter with rolling digits",
+    "source": "net-new TallyCounter in lib/otolith.tsx"
+   },
+   {
+    "beats": "bench",
+    "subject": "brass microscope objective and NIR spectrometer on rails",
+    "source": "net-new BenchScope and NIRReader in lib/otolith.tsx, built to the bench.tsx brass bar, BrassPlate from bench.tsx for the name plates"
+   },
+   {
+    "beats": "reader and manager",
+    "subject": "unnamed human reader in glasses, manager silhouette",
+    "source": "Character rig (glasses, hairStyle long), arms-crossed and carry poses"
+   },
+   {
+    "beats": "archive and hangar",
+    "subject": "drawer wall to vanishing point, timber hangar",
+    "source": "net-new ArchiveDrawers in lib/otolith.tsx, stage3d planes"
+   },
+   {
+    "beats": "test",
+    "subject": "three-step brass staircase",
+    "source": "composed from Extrude/Plane in stage3d plus BoxLabel and Stamp from kit.tsx"
+   }
+  ],
+  "net_new": "Otolith, TallyCounter, NIRReader, BenchScope, ArchiveDrawers (lib/otolith.tsx) and Rockfish (fauna.tsx). Registered in ASSET_MANIFEST.md, index regenerated.",
+  "continuity": "Character rig, BrassPlate, BoxLabel, StatBurst, Stamp, FatArrow, ImpactStar, SpeedLines, PaperStorm, GradeLayer, ContactShadow, Stage3D."
+ },
+ "motion_language": {
+  "world": "Water drifts with suspended particles, the lamp breathes, archive drawers parallax. Rings pulse core outward on every click, the tally digits roll with overshoot.",
+  "hero_moves": [
+   "the otolith pop out of the rockfish with anticipation, 180 degree motion blur and spin settle",
+   "the NIR spectrometer sliding in on rails with overshoot and a brass clank",
+   "the machine tag bouncing off the sealed NEXT STEP slot with squash and an ImpactStar",
+   "the spectral line peeling off and resolving into tally ticks"
+  ]
+ },
+ "composition": {
+  "focal": "the otolith or the counter is always the brightest, best finished object at the frame center (x 540, y 600 to 1300)",
+  "negative_space": "the archive dark and the water carry the negative space, the lamp pool frames the subject",
+  "safe_area": "hero action and plates inside y 420 to 1500 for the square, atmosphere above and bench foreground below",
+  "signature_shot": "Inside the 1930s timber hangar: a propeller on a beam where planes should be, drawers glinting to a vanishing point like a starfield, one reader in a pool of lamp light clicking, and the 1878 rockfish stone rising under a brass name plate."
+ },
+ "craft_advance": "none needed beyond the net-new otolith family"
+}

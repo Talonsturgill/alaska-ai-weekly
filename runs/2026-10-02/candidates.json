@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-10-02",
+  "window_days": 10,
+  "rungs": [
+    {"rung": "in_window_sweep", "attempted": true, "candidates_found": 7, "note": "4 researchers, beats science/gov, fisheries+energy, defense+rural+Native+policy, wildcard+primary"},
+    {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 3, "note": "uaf.edu/news, gi.alaska.edu, alaskapublic, adn, ktoo, kdll, kdlg, kyuk, kuac, alaskasnewssource, akbizmag, fisheries.noaa.gov swept by WebFetch"},
+    {"rung": "primary_source_mining", "attempted": true, "candidates_found": 1, "note": "NSF api awardeeStateCode=AK since 2026-08-15 (2630206 explainable AI bathymetry), CORDIS LIVE-TSUNAMI"}
+  ],
+  "candidates": [
+    {"headline": "NOAA machine learning ages Alaska fish from near-infrared light, trained on a 2.5 million otolith archive", "date": "2026-09-28", "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry", "verdict": "LOCKED: primary federal source, in window, a working capability, fresh subject, rotates stance to celebratory"},
+    {"headline": "XPRIZE Wildfire autonomous response awards after Nenana finals with UAF ACUASI", "date": "2026-09-23", "verdict": "runner-up: Alaska is the venue not the beneficiary, XPRIZE pages undated, test was June"},
+    {"headline": "Alaska Business: small businesses put AI chatbots on the front desk", "date": "2026-09-28", "verdict": "single outlet, one owner's unquantified revenue claim"},
+    {"headline": "Walter, the AI agent writing Alaska News", "date": "2026-09-25", "verdict": "ownership facts conflict across sources; hold"},
+    {"headline": "Fairbanks assembly candidates split on data centers", "date": "2026-09-29", "verdict": "too close to 09-23 Air Force leases story"},
+    {"headline": "UAF ACUASI ice tower for drones", "date": "2026-09-30", "verdict": "no AI angle"},
+    {"headline": "Rural Health Transformation round two, AI line in state plan", "date": "2026-09-26", "verdict": "AI only planned, not delivered"}
+  ],
+  "locked_story": {
+    "headline": "NOAA machine learning reads a fish's age from near-infrared light, trained on a 2.5 million otolith archive built from Alaska waters",
+    "found_at_rung": "in_window_sweep",
+    "primary_url": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+    "background_url": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared"
+  }
+}

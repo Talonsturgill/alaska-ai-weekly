@@ -1,0 +1,318 @@
+{
+ "run_date": "2026-10-02",
+ "fact_check_verdict": "PASS WITH CUTS (rockfish species, FT-NIR ages already in a stock assessment, paper details, the word annuli). Atomic claims, one fact each, every one re-read on the cited NOAA page by the validator.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "claim": "The archive holds 2.5 million otolith pairs.",
+   "verbatim_source": "\"an enormous archive of 2.5 million otolith pairs dating back to the 1960s.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "2.5 MILLION OTOLITH PAIRS",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "say per NOAA on screen",
+    "never say every sample is from Alaska waters (surveys run California to Alaska)"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "claim": "The archive dates back to the 1960s.",
+   "verbatim_source": "\"an enormous archive of 2.5 million otolith pairs dating back to the 1960s.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "SINCE THE 1960s",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "never stack with 'four decades'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-two-source",
+   "claim": "Center researchers age more than 30,000 otoliths a year under microscopes.",
+   "verbatim_source": "\"Back in Seattle, Alaska Fisheries Science Center researchers analyze more than 30,000 under microscopes to count annual growth rings.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": "https://www.fisheries.noaa.gov/alaska/science-data/age-and-growth-research-alaska",
+   "on_screen": "30,000+ A YEAR",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "never mix with the 2023 'up to 40,000' figure"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-two-source",
+   "claim": "Age is read by counting annual growth rings, like tree rings.",
+   "verbatim_source": "\"Counting otolith growth zones to estimate fish age is analogous to counting tree rings.\"",
+   "source": "https://www.fisheries.noaa.gov/alaska/science-data/age-and-growth-research-alaska",
+   "second_source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "on_screen": "COUNT THE RINGS",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "say annual growth rings, never annuli"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "claim": "The oldest-aged rockfish's otolith was collected in 2022 during an Aleutian Islands survey.",
+   "verbatim_source": "\"Collected in 2022 during a survey in the Aleutian Islands, this fish was born in 1878.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "ALEUTIANS \u00b7 2022",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "say a rockfish, never a species"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "claim": "That rockfish is estimated at 144 years old, born in 1878, the oldest aged at the Center.",
+   "verbatim_source": "\"An otolith collected from a rockfish (the oldest to be aged at the Center), estimated to be 144 years old.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "EST. 144 YEARS OLD",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "say estimated",
+    "oldest aged at the Center, never oldest fish",
+    "never imply this fish was machine-aged"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "claim": "Near-infrared light makes a spectral signature that machine learning correlates to age.",
+   "verbatim_source": "\"Near-infrared light generates spectral signatures from otoliths that machine-learning algorithms correlate directly to age.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "on_screen": "LIGHT IN \u00b7 AGE OUT",
+   "label": "PER NOAA FISHERIES",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "claim": "FT-NIR increases efficiency 600 to 800 percent.",
+   "verbatim_source": "\"Fourier Transform Near-Infrared Spectroscopy increases efficiency 600 - 800 percent for examining otoliths to determine fish age.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "600 TO 800% MORE EFFICIENT",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "say per NOAA",
+    "pair with c9 on screen or in VO nearby",
+    "never combine with the 2023 10x figure"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "claim": "Conventional ageing is still part of the process.",
+   "verbatim_source": "\"While conventional ageing is still part of the process\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "MICROSCOPE STILL IN THE PROCESS",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "never say AI replaced human readers"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-two-source",
+   "claim": "In 2023 NOAA reported models trained and tested on 8,617 walleye pollock otoliths collected 2014 to 2018.",
+   "verbatim_source": "\"8,617 walleye pollock otoliths collected during 2014\u20132018\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared",
+   "second_source": null,
+   "on_screen": "8,617 POLLOCK OTOLITHS",
+   "label": "PER NOAA FISHERIES (2023)",
+   "requires": [
+    "label 2023"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-two-source",
+   "claim": "2023: 30 to 50 seconds per otolith.",
+   "verbatim_source": "\"It takes just 30\u201350 seconds per otolith to estimate the age of the fish.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared",
+   "second_source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "on_screen": "30 TO 50 SECONDS EACH",
+   "label": "PER NOAA FISHERIES (2023)",
+   "requires": [
+    "label 2023",
+    "never with the 600 to 800 percent as one measurement"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "claim": "Around 2 million pairs once sat in a 1930s wooden airplane hangar in Seattle, now part of NOAA's Western Regional Center.",
+   "verbatim_source": "\"Around 2 million pairs of otoliths once sat inside a 1930s wooden airplane hangar that's now part of NOAA's Western Regional Center in Seattle.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "AROUND 2 MILLION \u00b7 1930s HANGAR",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "around 2 million, never 2.5 for the hangar"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "claim": "In 2012 an NSF grant let NOAA and the Burke Museum relocate them to the UW Fish Collection.",
+   "verbatim_source": "\"In 2012, a National Science Foundation grant allowed NOAA and the Burke Museum of Natural History and Culture to relocate them.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "MOVED \u00b7 2012",
+   "label": "PER NOAA FISHERIES",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-two-source",
+   "claim": "In 2023 NOAA named use of these ages in stock assessment models as the next step.",
+   "verbatim_source": "\"The next step is to use these new age data products in stock assessment models.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared",
+   "second_source": null,
+   "on_screen": "STOCK ASSESSMENT \u00b7 NEXT STEP",
+   "label": "PER NOAA FISHERIES (2023)",
+   "requires": [
+    "never claim machine ages are already in an assessment"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-two-source",
+   "claim": "Age composition is used to set sustainable catch limits each year, by resource managers.",
+   "verbatim_source": "\"Knowing the age composition of commercially exploited fish populations is critical to determine fish population size and set sustainable catch limits each year.\"",
+   "source": "https://www.fisheries.noaa.gov/alaska/science-data/age-and-growth-research-alaska",
+   "second_source": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared",
+   "on_screen": "MANAGERS SET LIMITS",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "managers set limits, never the AI"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "claim": "Derek Chamberlin, supervisory research fisheries biologist, AFSC Age and Growth Program: otoliths are a perfect little time capsule.",
+   "verbatim_source": "\"Otoliths are a perfect little time capsule.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "\"A PERFECT LITTLE TIME CAPSULE\"",
+   "label": "DEREK CHAMBERLIN \u00b7 NOAA FISHERIES",
+   "requires": [
+    "attribute on screen to Chamberlin, plate only, no face"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-two-source",
+   "claim": "Otoliths are fish ear stones, collected in pairs.",
+   "verbatim_source": "\"We are using AI and near-Infrared analysis of otoliths (ear stones) to age Alaska pollock\"",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "second_source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "on_screen": "OTOLITH \u00b7 EAR STONE",
+   "label": "PER NOAA FISHERIES",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "claim": "Scientists spent a decade analyzing tens of thousands of archive samples to train the AI models.",
+   "verbatim_source": "\"Scientists spent a decade analyzing tens of thousands of physical samples from the archive to train these AI models.\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/25-million-perfect-little-time-capsules-ocean-chemistry",
+   "second_source": null,
+   "on_screen": "TRAINED ON THE ARCHIVE",
+   "label": "PER NOAA FISHERIES",
+   "requires": [
+    "single-page source, keep the wording general"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  "rockfish species",
+  "FT-NIR ages already used in a stock assessment",
+  "paper details beyond NOAA reporting",
+  "annuli"
+ ]
+}

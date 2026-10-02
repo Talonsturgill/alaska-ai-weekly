@@ -1,0 +1,21 @@
+This rockfish was caught in the Aleutians in twenty twenty-two.
+Its ear stones say it was born in eighteen seventy-eight.
+So who counted?
+Every fish carries a pair of tiny ear stones, called otoliths.
+They grow a ring every year, like a tree.
+NOAA scientists count the rings under microscopes, more than thirty thousand a year.
+Now there's a faster reader.
+Near-infrared light hits the stone, and machine learning turns its signature into an age.
+Per NOAA, that's six hundred to eight hundred percent more efficient.
+But to tie a signature to an age, you need the age first.
+In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.
+They came from NOAA's archive, built ring by ring.
+Two and a half million otolith pairs, back to the nineteen sixties.
+Around two million once sat in an old airplane hangar in Seattle.
+Now, the fair case against.
+A faster age only helps if it changes what fishery managers use.
+NOAA called getting these ages into stock assessments the next step.
+Catch limits are set by managers, not machines, and the microscope stays in the process.
+So the win today is speed and method. That's real.
+But look where the speed came from.
+Every age it gives back started as a ring somebody counted.

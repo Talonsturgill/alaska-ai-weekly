@@ -1,0 +1,178 @@
+{
+ "run_date": "2026-10-02",
+ "title": "WHO COUNTED",
+ "note": "On-screen numbers are from NOAA Fisheries pages; illustrations are editorial.",
+ "caption_fixups": {
+  "twenty twenty-two": "2022",
+  "eighteen seventy-eight": "1878",
+  "thirty thousand": "30,000",
+  "six hundred to eight hundred percent": "600 to 800 percent",
+  "twenty twenty-three": "2023",
+  "eight thousand six hundred seventeen": "8,617",
+  "Two and a half million": "2.5 million",
+  "nineteen sixties": "1960s",
+  "two million": "2 million"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "This rockfish was caught in the Aleutians in twenty twenty-two.",
+   "t": "This rockfish was caught in the Aleutians in twenty twenty-two.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "Its ear stones say it was born in eighteen seventy-eight.",
+   "t": "Its ear stones say it was born in eighteen seventy-eight.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "So who counted?",
+   "t": "So who counted?",
+   "claims": []
+  },
+  {
+   "idx": 3,
+   "text": "Every fish carries a pair of tiny ear stones, called otoliths.",
+   "t": "Every fish carries a pair of tiny ear stones, called otoliths.",
+   "claims": [
+    "c17"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "They grow a ring every year, like a tree.",
+   "t": "They grow a ring every year, like a tree.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "NOAA scientists count the rings under microscopes, more than thirty thousand a year.",
+   "t": "NOAA scientists count the rings under microscopes, more than thirty thousand a year.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "Now there's a faster reader.",
+   "t": "Now there's a faster reader.",
+   "claims": []
+  },
+  {
+   "idx": 7,
+   "text": "Near-infrared light hits the stone, and machine learning turns its signature into an age.",
+   "t": "Near-infrared light hits the stone, and machine learning turns its signature into an age.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
+   "t": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "But to tie a signature to an age, you need the age first.",
+   "t": "But to tie a signature to an age, you need the age first.",
+   "claims": [
+    "c18"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
+   "t": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
+   "claims": [
+    "c10"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "They came from NOAA's archive, built ring by ring.",
+   "t": "They came from NOAA's archive, built ring by ring.",
+   "claims": [
+    "c18"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "Two and a half million otolith pairs, back to the nineteen sixties.",
+   "t": "Two and a half million otolith pairs, back to the nineteen sixties.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "Around two million once sat in an old airplane hangar in Seattle.",
+   "t": "Around two million once sat in an old airplane hangar in Seattle.",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "Now, the fair case against.",
+   "t": "Now, the fair case against.",
+   "claims": []
+  },
+  {
+   "idx": 15,
+   "text": "A faster age only helps if it changes what fishery managers use.",
+   "t": "A faster age only helps if it changes what fishery managers use.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 16,
+   "text": "NOAA called getting these ages into stock assessments the next step.",
+   "t": "NOAA called getting these ages into stock assessments the next step.",
+   "claims": [
+    "c14"
+   ]
+  },
+  {
+   "idx": 17,
+   "text": "Catch limits are set by managers, not machines, and the microscope stays in the process.",
+   "t": "Catch limits are set by managers, not machines, and the microscope stays in the process.",
+   "claims": [
+    "c15",
+    "c9"
+   ]
+  },
+  {
+   "idx": 18,
+   "text": "So the win today is speed and method. That's real.",
+   "t": "So the win today is speed and method. That's real.",
+   "claims": []
+  },
+  {
+   "idx": 19,
+   "text": "But look where the speed came from.",
+   "t": "But look where the speed came from.",
+   "claims": []
+  },
+  {
+   "idx": 20,
+   "text": "Every age it gives back started as a ring somebody counted.",
+   "t": "Every age it gives back started as a ring somebody counted.",
+   "claims": [
+    "c18"
+   ]
+  }
+ ]
+}
