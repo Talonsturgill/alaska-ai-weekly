@@ -149,8 +149,8 @@ export const Otolith: React.FC<OtolithProps> = ({
 // AGE TAG: a small manila tag on a string, the number written by hand. Anchored at its string
 // knot (x, y) so it can hang from anything.
 // ---------------------------------------------------------------------------------------------
-export const AgeTag: React.FC<{x: number; y: number; text: string; swing?: number; f: number; scale?: number; flip?: number}> = ({
-  x, y, text, swing = 0, f, scale = 1, flip = 0,
+export const AgeTag: React.FC<{x: number; y: number; text: string; swing?: number; f: number; scale?: number; flip?: number; fs?: number}> = ({
+  x, y, text, swing = 0, f, scale = 1, flip = 0, fs = 34,
 }) => {
   const a = swing + 4 * Math.sin(f / 19);
   const t = tones('#E3C98F');
@@ -165,8 +165,8 @@ export const AgeTag: React.FC<{x: number; y: number; text: string; swing?: numbe
         <path d="M-6,-18 L96,-18 L96,26 L-6,26 L-24,4 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
         <circle cx={-10} cy={4} r={5} fill="none" stroke={INK} strokeWidth={3} />
         {Math.abs(sx) > 0.15 && (
-          <text x={44} y={14} textAnchor="middle" fontFamily="'Caveat', 'Comic Sans MS', cursive" fontWeight={700}
-            fontSize={34} fill="#1E2A6B" transform={`scale(${sx < 0 ? -1 : 1},1)`}>{text}</text>
+          <text x={44} y={4 + fs * 0.3} textAnchor="middle" fontFamily="'Caveat', 'Comic Sans MS', cursive" fontWeight={700}
+            fontSize={fs} fill="#1E2A6B" transform={`scale(${sx < 0 ? -1 : 1},1)`}>{text}</text>
         )}
       </g>
     </g>
@@ -246,9 +246,9 @@ export const TallyCounter: React.FC<{
       </g>
       <rect x={-86} y={-32} width={172} height={10} rx={5} fill="#FFFFFF" opacity={0.12} />
       {plate && (
-        <g transform="translate(0,62)">
-          <rect x={-Math.max(70, plate.length * 15 * 0.602 / 2 + 14)} y={-13} width={Math.max(140, plate.length * 15 * 0.602 + 28)} height={26} rx={5} fill={b.core} stroke={INK} strokeWidth={3} />
-          <text x={0} y={7} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={15} fill={INK}>{plate}</text>
+        <g transform="translate(0,66)">
+          <rect x={-Math.max(70, plate.length * 26 * 0.602 / 2 + 16)} y={-19} width={Math.max(140, plate.length * 26 * 0.602 + 32)} height={38} rx={6} fill={b.core} stroke={INK} strokeWidth={3} />
+          <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={26} fill={INK}>{plate}</text>
         </g>
       )}
       {/* steam (the 30,000 a year pace) */}
@@ -361,10 +361,10 @@ export const NIRReader: React.FC<{
         <SpectralLine x={-140} y={-290} w={280} h={110} seed={seed} progress={spectrum} width={4} ticks={screenTicks} />
       </g>
       {/* AGE OUT slot, right */}
-      <g transform="translate(205,-215)">
+      <g transform="translate(212,-215)">
         <rect x={-64} y={-62} width={128} height={124} rx={10} fill="#081014" stroke={INK} strokeWidth={6} />
         <rect x={-64} y={-62} width={128} height={124} rx={10} fill="none" stroke={b.base} strokeWidth={8} />
-        <text x={0} y={-74} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={22} fill={b.key}>AGE OUT</text>
+        <text x={8} y={-74} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={19} fill={b.key}>AGE OUT</text>
         {slot}
       </g>
       {/* name plate, sized to its own string by arithmetic, with the cloth */}
@@ -372,8 +372,9 @@ export const NIRReader: React.FC<{
         <rect x={-pw / 2} y={-22} width={pw} height={44} rx={7} fill={`url(#${id}b)`} stroke={INK} strokeWidth={4} />
         <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={20} fill={INK} letterSpacing={1}>{plate}</text>
         {cl > 0.01 && (
-          // pulled UP and off, fading as it lifts, so it never exits past the frame edge as a stray shape
-          <g transform={`translate(${-pw / 2 - 20 + 140 * (1 - cl)},${-40 - 260 * (1 - cl)}) rotate(${-18 * (1 - cl)}) scale(${(pw + 40) / 340},1)`} opacity={Math.min(1, cl * 1.6)}>
+          // PULLED UP AND AWAY, OPAQUE (2026-10-02 round 2): a fading cloth read as a translucent ghost
+          // box over the screen. It stays a solid draped cloth, flutters, and leaves off the top.
+          <g transform={`translate(${-pw / 2 - 20 + 120 * (1 - cl)},${-40 - 1500 * Math.pow(1 - cl, 1.7)}) rotate(${-14 * (1 - cl) + 7 * Math.sin((1 - cl) * 14) * clamp01((0.9 - cl) / 0.15)}) scale(${(pw + 40) / 340},${1 - 0.25 * Math.abs(Math.sin((1 - cl) * 9)) * clamp01((0.9 - cl) / 0.15)})`}>
             <path d="M0,0 C80,-8 260,-8 340,0 L350,70 C300,86 260,66 220,84 C170,98 120,72 70,88 C40,96 14,80 -8,74 Z"
               fill="#7B2B3C" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
             <path d="M40,8 C50,40 46,60 60,82 M150,6 C160,40 150,60 166,88 M260,6 C270,36 262,56 276,76" fill="none" stroke="#4E1625" strokeWidth={5} opacity={0.6} />
@@ -381,11 +382,18 @@ export const NIRReader: React.FC<{
           </g>
         )}
       </g>
-      {/* beam: from the port down through the stone stage */}
+      {/* the emitter above the sample port */}
+      <g transform="translate(-200,-338)">
+        <rect x={-26} y={-14} width={52} height={30} rx={6} fill={b.core} stroke={INK} strokeWidth={4} />
+        <rect x={-12} y={14} width={24} height={16} rx={3} fill={b.shade} stroke={INK} strokeWidth={3} />
+        <circle cx={0} cy={32} r={6} fill={NIR} opacity={0.4 + 0.6 * beam} />
+      </g>
+      {/* beam: from the emitter DOWN onto the stone in the port, ending in a glow on the stone */}
       {beam > 0.01 && (
         <g opacity={beam} style={{mixBlendMode: 'screen'} as any}>
-          <path d="M-200,-152 L-226,40 L-174,40 Z" fill={NIR} opacity={0.35 + 0.15 * hum} />
-          <path d="M-200,-152 L-200,40" stroke="#FFC2D4" strokeWidth={4} opacity={0.8} />
+          <path d="M-200,-304 L-224,-214 L-176,-214 Z" fill={NIR} opacity={0.35 + 0.15 * hum} />
+          <path d="M-200,-304 L-200,-214" stroke="#FFC2D4" strokeWidth={4} opacity={0.85} />
+          <ellipse cx={-200} cy={-212} rx={34} ry={22} fill="#FFC2D4" opacity={0.35 + 0.25 * hum} />
         </g>
       )}
       {/* engineers' trophy (a sincere concession, not a gag) */}

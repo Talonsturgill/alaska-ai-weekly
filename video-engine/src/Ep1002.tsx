@@ -139,6 +139,31 @@ const Bench: React.FC<{f: number; id: string; velvet?: boolean; lampX?: number; 
   </g>
 );
 
+/** The bench's near edge in the lower third: a wooden lip, a tray of tagged stones and a pencil,
+ *  so the frame under the caption card carries the world instead of plain wood. */
+const BenchLip: React.FC<{f: number; y?: number; tags?: string[]}> = ({f, y = 1560, tags = ['4', '6', '9']}) => (
+  <g>
+    <rect x={-20} y={y} width={W + 40} height={H - y + 20} fill="#2E1F15" stroke={C.ink} strokeWidth={5} /> {/* caption-band-ok */}
+    <rect x={-20} y={y} width={W + 40} height={16} fill="#4A3324" />
+    {Array.from({length: 5}, (_, i) => <path key={i} d={`M0,${y + 60 + i * 64} C320,${y + 52 + i * 64} 760,${y + 70 + i * 64} 1080,${y + 58 + i * 64}`} fill="none" stroke="#1A100A" strokeWidth={3} opacity={0.5} />)}
+    <g transform={`translate(330,${y + 120})`}>
+      <ContactShadow cx={0} cy={44} rx={210} ry={14} opacity={0.5} />
+      <rect x={-200} y={-30} width={400} height={74} rx={8} fill="#4A3020" stroke={C.ink} strokeWidth={5} />
+      <rect x={-192} y={-24} width={384} height={12} rx={5} fill="#6A4A30" opacity={0.7} />
+      {tags.map((tg, k) => <g key={k}>
+        <Otolith x={-120 + k * 120} y={8} scale={0.2} rings={7} f={0} counted={1} shadow={false} rot={-6 + k * 5} />
+        <AgeTag x={-96 + k * 120} y={-4} text={tg} f={f + k * 11} scale={0.52} />
+      </g>)}
+    </g>
+    <g transform={`translate(780,${y + 150}) rotate(-12)`}>
+      <rect x={-140} y={-9} width={280} height={18} rx={9} fill={C.teal} stroke={C.ink} strokeWidth={4} />
+      <path d="M-140,-9 L-176,0 L-140,9 Z" fill="#E8C9A0" stroke={C.ink} strokeWidth={3} strokeLinejoin="round" />
+      <path d="M-176,0 L-164,-3 L-164,3 Z" fill={C.ink} />
+      <path d="M-130,-4 L130,-4" stroke="#FFFFFF" strokeWidth={2} opacity={0.3} />
+    </g>
+  </g>
+);
+
 /** A lamplit room: paneled back wall, a board floor from `floorY` down, one warm pool. */
 const Room: React.FC<{f: number; id: string; floorY?: number; lampX?: number; lampY?: number}> = ({f, id, floorY = 1300, lampX = 260, lampY = 900}) => (
   <g>
@@ -254,40 +279,59 @@ const BrassSign: React.FC<{x: number; y: number; lines: string[]; size?: number;
   );
 };
 
-/** An inked, form-shaded hand (palm, four fingers, thumb, nails, knuckle creases, rim light),
- *  optionally gripping a pen. Anchor is the fingertip pinch point; `rot` turns the whole hand. */
-const InkHand: React.FC<{x: number; y: number; rot?: number; s?: number; pen?: boolean; press?: number}> = ({x, y, rot = 0, s = 1, pen = false, press = 0}) => {
+/** An inked, form-shaded hand gripping (optionally) a pen: ONE outline for the back of the hand,
+ *  the index finger and the three curled fingers, a separate thumb over the pen, nails, knuckle
+ *  highlights, curl creases, a rim light, and a cuffed sleeve in the wearer's colour. Anchor is the
+ *  pinch point; the pen tip sits at (-195, 77) from it at rot 0 and scale 1. */
+const InkHand: React.FC<{x: number; y: number; rot?: number; s?: number; pen?: boolean; press?: number; sleeve?: string}> =
+({x, y, rot = 0, s = 1, pen = false, press = 0, sleeve = C.teal}) => {
   const skin = tones('#C99A72');
+  const sl = tones(sleeve);
+  const gid = `ih${Math.round(x)}x${Math.round(y)}r${Math.round(rot)}`;
   return (
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${s})`}>
-      <ellipse cx={20} cy={30} rx={90} ry={22} fill="#000" opacity={0.18} />
-      {/* forearm and cuff */}
-      <path d="M60,40 L230,120 L210,175 L40,95 Z" fill={C.teal} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
-      <path d="M58,42 L78,95" stroke={C.ink} strokeWidth={4} />
-      {/* palm */}
-      <path d="M-10,-6 C20,-40 70,-30 80,10 C88,48 60,82 20,80 C-14,78 -30,40 -10,-6 Z" fill={skin.base} stroke={C.ink} strokeWidth={5} />
-      <path d="M40,60 C60,52 70,30 66,10" fill="none" stroke={skin.shade} strokeWidth={8} opacity={0.6} strokeLinecap="round" />
-      {/* curled fingers, knuckle creases and nails */}
-      {[0, 1, 2, 3].map((i) => (
-        <g key={i} transform={`translate(${-24 + i * 4},${-2 + i * 20}) rotate(${-8 + i * 6})`}>
-          <rect x={-46} y={-10} width={54} height={20} rx={10} fill={skin.base} stroke={C.ink} strokeWidth={4} />
-          <path d="M-20,-8 v16" stroke={skin.shade} strokeWidth={2.5} />
-          <rect x={-44} y={-6} width={12} height={10} rx={4} fill="#EAD3C0" stroke={C.ink} strokeWidth={1.5} />
-        </g>
+      <defs>
+        <linearGradient id={`${gid}k`} x1="0" y1="0" x2="0.25" y2="1">
+          <stop stopColor={skin.key} /><stop offset="0.45" stopColor={skin.base} /><stop offset="1" stopColor={skin.shade} />
+        </linearGradient>
+        <linearGradient id={`${gid}s`} x1="0" y1="0" x2="0" y2="1">
+          <stop stopColor={sl.key} /><stop offset="0.5" stopColor={sl.base} /><stop offset="1" stopColor={sl.shade} />
+        </linearGradient>
+      </defs>
+      <ellipse cx={30} cy={44} rx={96} ry={22} fill="#000" opacity={0.16} />
+      {/* sleeve and cuff */}
+      <path d="M58,26 L232,108 L208,184 L34,104 Z" fill={`url(#${gid}s)`} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
+      <path d="M58,26 L84,38 L60,116 L34,104 Z" fill={sl.shade} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+      <path d="M86,40 L64,116" stroke={C.ink} strokeWidth={2.5} opacity={0.6} />
+      <circle cx={72} cy={66} r={5} fill={sl.key} stroke={C.ink} strokeWidth={2} />
+      <path d="M100,50 L226,110" stroke="#FFFFFF" strokeWidth={4} opacity={0.18} strokeLinecap="round" />
+      {/* back of the hand, index finger and the three curled fingers, one outline */}
+      <path d={'M64,22 C48,-6 18,-18 -8,-13 C-20,-11 -30,-4 -33,4 C-35,11 -29,16 -22,14 '
+        + 'C-14,12 -8,14 -5,20 C-11,28 -11,36 -3,40 C-9,47 -7,55 3,58 C-1,65 3,72 13,72 C30,80 46,88 58,94 Z'}
+        fill={`url(#${gid}k)`} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
+      {/* curl creases and the knuckle line */}
+      <path d="M-5,20 C2,23 8,25 14,24 M-3,40 C4,42 10,43 16,41 M3,58 C9,59 14,59 19,57" fill="none" stroke={skin.shade} strokeWidth={3} strokeLinecap="round" />
+      {[[-6, -10], [8, -12], [22, -10]].map(([kx, ky], i) => (
+        <ellipse key={i} cx={kx} cy={ky + 4} rx={6} ry={3.5} fill="#FFF0DE" opacity={0.45} />
       ))}
-      {/* thumb, pressing on `press` */}
-      <g transform={`translate(${-6 + 6 * press},${-26 + 8 * press}) rotate(-30)`}>
-        <rect x={-58} y={-12} width={64} height={24} rx={12} fill={skin.key} stroke={C.ink} strokeWidth={4} />
-        <rect x={-56} y={-7} width={14} height={12} rx={4} fill="#EAD3C0" stroke={C.ink} strokeWidth={1.5} />
-      </g>
-      <path d="M-4,-20 C20,-34 52,-30 70,-6" fill="none" stroke="#FFE8D2" strokeWidth={3} opacity={0.7} style={{mixBlendMode: 'screen'} as any} />
+      <path d="M-30,1 C-27,-2 -23,-3 -20,-1" fill="none" stroke={skin.shade} strokeWidth={2.5} />
+      <rect x={-34} y={0} width={10} height={8} rx={3} fill="#F1DCCB" stroke={C.ink} strokeWidth={1.5} transform="rotate(-24 -29 4)" />
+      {/* rim light along the top of the hand */}
+      <path d="M60,16 C44,-6 18,-14 -6,-9" fill="none" stroke="#FFE8D2" strokeWidth={3.5} opacity={0.75} strokeLinecap="round" style={{mixBlendMode: 'screen'} as any} />
       {pen && (
         <g transform="translate(-40,-6) rotate(-28)">
           <rect x={-150} y={-7} width={190} height={14} rx={7} fill={C.teal} stroke={C.ink} strokeWidth={4} />
           <path d="M-150,-7 L-176,0 L-150,7 Z" fill={C.brass} stroke={C.ink} strokeWidth={3} strokeLinejoin="round" />
           <rect x={10} y={-9} width={8} height={18} fill={C.brass} stroke={C.ink} strokeWidth={2} />
+          <path d="M-140,-4 L30,-4" stroke="#FFFFFF" strokeWidth={2} opacity={0.3} />
         </g>
       )}
+      {/* the thumb, over the pen, pressing on `press` */}
+      <g transform={`translate(${6 * press},${8 * press})`}>
+        <path d="M48,30 C32,16 16,6 4,0 C-3,-3 -7,3 -3,7 C8,14 24,24 40,44 Z" fill={`url(#${gid}k)`} stroke={C.ink} strokeWidth={4.5} strokeLinejoin="round" />
+        <rect x={-4} y={-1} width={10} height={7} rx={3} fill="#F1DCCB" stroke={C.ink} strokeWidth={1.5} transform="rotate(28 1 2)" />
+        <path d="M44,28 C30,17 18,9 8,4" fill="none" stroke="#FFE8D2" strokeWidth={2.5} opacity={0.6} />
+      </g>
     </g>
   );
 };
@@ -312,7 +356,7 @@ const MachineTag: React.FC<{x: number; y: number; s?: number; op?: number; value
 // rotation, so the cut to the bench lands on rings the ticks already drew. Inner bands fill first,
 // the way the stone grew; each band gets ticks in proportion to its length.
 const STONE = {x: 540, y: 860, s: 1.55, rot: -8, rings: 14};
-const LINE = {x: 190, y: 960, w: 700, h: 180, seed: 3};
+const LINE = {x: -40, y: 760, w: 480, h: 260, seed: 3}; // S7's line: S13 re-enters the same slot
 const TICK_N = 144;
 type Tick = {sx: number; sy: number; tx: number; ty: number; ang: number; len: number; outer: boolean};
 const TICKS: Tick[] = (() => {
@@ -389,6 +433,7 @@ const DANGLE = new Set(['a', 'an', 'the', 'and', 'or', 'but', 'of', 'to', 'in', 
   'no', 'into', 'about', 'over', 'under', 'each', 'every', 'more', 'most', 'only', 'next', 'very', 'so', 'what', 'where',
   'who', 'tiny', 'old', 'one', 'two', 'six', 'eight', 'hundred', 'thousand', 'million']);
 const PREP = new Set(['in', 'on', 'at', 'into', 'onto', 'from', 'with', 'by', 'under', 'over', 'as', 'like', 'to', 'for', 'of']);
+const WH = new Set(['where', 'what', 'when', 'who', 'which', 'how', 'why', 'if', 'because', 'while']);
 const captionRows = (text: string, max = 34): string[] => {
   if (text.length <= max) return [text];
   const w = text.split(' ');
@@ -402,8 +447,10 @@ const captionRows = (text: string, max = 34): string[] => {
     if (/^[\d.,]+$/.test(last)) cost += 80; else if (DANGLE.has(last)) cost += 40;
     // nor is a range torn at its joint ("600 to" / "800 percent")
     if (/^[\d.,]+%?$/.test(w[k]) && ['to', 'and', 'or', 'of'].includes(last)) cost += 80;
-    if (/[,;:]$/.test(w[k - 1])) cost -= 20;
-    if (PREP.has(w[k].toLowerCase())) cost -= 15;
+    if (/[,;:]$/.test(w[k - 1])) cost -= 30;
+    if (PREP.has(w[k].toLowerCase()) || WH.has(w[k].toLowerCase())) cost -= 15;
+    // a verb is never parted from its object at a possessive ("turns" / "its signature")
+    if (['its', 'their', 'his', 'her'].includes(w[k].toLowerCase())) cost += 12;
     if (cost < bestCost) { bestCost = cost; best = k; }
   }
   if (best > 0) return [w.slice(0, best).join(' '), w.slice(best).join(' ')];
@@ -495,7 +542,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
         )}
         <Plate text="A FISH BORN ABOUT 1878." y={500} size={42} p={1} />
-        <Plate text="WHO COUNTED?" y={575} size={42} p={1} />
+        <BrassSign x={540} y={598} lines={['WHO COUNTED?']} size={40} rot={1.5 * Math.sin(f / 22)} />
         <Plate text="ALEUTIANS · 2022" y={1250} size={30} p={q(2, 12)} />
       </SVG>
     );
@@ -512,20 +559,21 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const shake = since(6) >= 0 && since(6) < 10 ? Math.sin(since(6) * 3) * (10 - since(6)) * 0.8 : 0;
     const press = since(5) >= 0 && nClicks < 6 ? clamp01(1 - clickPhase * 3) : 0;
     const signDrop = pop(7, 18);
+    const tuck = ease(f, bAt(7) - 14, 16);
+    const drumS = lerp(1.0 * (0.9 + 0.1 * slam), 0.62, tuck);
     picture = (
       <SVG>
         <g transform={`translate(${shake},0)`}>
           <Bench f={f} id="s2" />
+          <BenchLip f={f} />
           <BenchScope x={540} y={860} scale={1.05} drop={ease(f, 0, 12)} lamp={1} f={f} />
           <Otolith x={540} y={860 - 200 * (1 - land)} scale={1.55} f={f} rings={14} counted={nClicks / 14 + (since(6) > 0 ? 0.6 * ease(f, bAt(6), 40) : 0)}
             pulse={since(5) >= 0 && nClicks < 6 ? clickPhase : 0} rot={-8} />
-          <YearDrum x={265} y={1110} scale={0.62} year={2022 - 144 * yearK} label="BORN · EST." />
           <TallyCounter x={830} y={1105} scale={0.62} count={nClicks + 0.0} press={press} plate="RINGS" />
-          <InkHand x={858} y={1030} rot={-150} s={0.62} press={press} />
-          {slam > 0.02 && <g>
-            <StatBurst cx={540} cy={600} scale={0.85 * slam} big="1878" lines={['ESTIMATED']} fill={C.lamp} big_fs={92} />
-            <Plate text="EST. 144 YEARS OLD · BORN 1878" y={1260} size={30} p={slam * (1 - q(7, 8))} /> {/* plate-overlap-ok: sequenced, EAR STONE is gone before this one slams in on q(6) */}
-          </g>}
+          <InkHand x={828 + 60 * (1 - q(5, 8))} y={1000 + 6 * press - 50 * (1 - q(5, 8))} rot={-45} s={0.62} press={press} sleeve="#b23a3a" />
+          {since(6) >= 0 && since(6) < 12 && <ImpactStar cx={540} cy={560} r={190} color={C.lamp} />}
+          <YearDrum x={lerp(540, 265, tuck)} y={lerp(560, 1110, tuck)} scale={drumS} year={2022 - 144 * yearK} label="BORN · EST." />
+          {slam > 0.02 && <Plate text="EST. 144 YEARS OLD · PER NOAA" y={1260} size={30} p={slam * (1 - ease(f, bAt(7) - 6, 6))} />} {/* plate-overlap-ok: sequenced, EAR STONE is gone before this one slams in on q(6) */}
           {signDrop > 0.01 && <BrassSign x={540} y={lerp(1060, 1240, Math.min(1, signDrop))} lines={['WHO COUNTED?']} size={40} s={0.95} rot={4 * Math.sin(since(7) / 4) * Math.exp(-since(7) / 14)} />}
           <Plate text="EAR STONE" y={1265} size={30} p={q(4, 12) * (1 - ease(f, bAt(6) - 8, 8))} /> {/* plate-overlap-ok: sequenced, it retires fully before q(6) lands the next plate */}
         </g>
@@ -540,25 +588,25 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const ringK = interpolate(f, [bAt(11), dur - 10], [0.05, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
     const pulse = since(11) >= 0 ? ((since(11) % 18) / 18) : 0;
     const treeIn = spring(f, bAt(12), 20);
-    const fx = lerp(560, 600, lift), fy = lerp(760, 610, lift), fs = lerp(3.2 * open + 0.4, 1.8, lift);
+    const fx = lerp(560, 600, lift), fy = lerp(835, 680, lift), fs = lerp(3.2 * open + 0.4, 1.8, lift);
     // the pair behind the eye, in fish-local units scaled by fs
-    const sA = {x: fx + 56 * fs, y: fy + 2 * fs}, sB = {x: fx + 50 * fs, y: fy + 12 * fs};
+    const sA = {x: fx + 58 * fs, y: fy - 2 * fs}, sB = {x: fx + 46 * fs, y: fy + 12 * fs};
     picture = (
       <SVG>
         <rect width={W} height={H} fill="#0C2028" />
-        {Array.from({length: 24}, (_, i) => <path key={i} d={`M${i * 48 + (f * 0.3) % 48},380 V1320`} stroke="#14343F" strokeWidth={1.5} />)}
-        {Array.from({length: 20}, (_, i) => <path key={i} d={`M0,${380 + i * 48} H1080`} stroke="#14343F" strokeWidth={1.5} />)}
+        {Array.from({length: 24}, (_, i) => <path key={i} d={`M${i * 48 + (f * 0.3) % 48},0 V1920`} stroke="#14343F" strokeWidth={1.5} />)} {/* caption-band-ok */}
+        {Array.from({length: 40}, (_, i) => <path key={i} d={`M0,${i * 48} H1080`} stroke="#14343F" strokeWidth={1.5} />)} {/* caption-band-ok */}
         <g opacity={1 - 0.45 * lift}>
           <Groundfish x={fx} y={fy} scale={fs} f={f} kind="rockfish" swim={0.15} xray={open} stoneOut={lift} caustics={false} />
         </g>
         {since(9) >= 0 && lift < 0.6 && <ellipse cx={(sA.x + sB.x) / 2} cy={(sA.y + sB.y) / 2} rx={34 + 22 * q(9, 10)} ry={24 + 10 * q(9, 10)} fill="none" stroke={C.lamp} strokeWidth={5} opacity={0.85 * (1 - lift)} />}
         {/* dotted leaders from the head to where the pair lands */}
         {lift > 0.05 && <path d={`M${sA.x},${sA.y} Q${(sA.x + 260) / 2},${sA.y + 200} 260,1000`} fill="none" stroke={C.pearl} strokeWidth={3} strokeDasharray="6 10" opacity={0.5 * lift} />}
-        <Otolith x={lerp(sA.x, 300, lift)} y={lerp(sA.y, 960, lift)} scale={lerp(0.05, 0.6, lift)} f={f} mode="pearl" rot={-6} counted={ringK} pulse={pulse} />
-        <Otolith x={lerp(sB.x, 300, lift)} y={lerp(sB.y, 1170, lift)} scale={lerp(0.05, 0.45, lift)} f={f} mode="pearl" rot={174} counted={ringK} pulse={pulse} />
+        <Otolith x={lerp(sA.x, 300, lift)} y={lerp(sA.y, 960, lift)} scale={lerp(0.042 * fs, 0.6, lift)} f={f} mode="xray" rot={-6} counted={ringK} pulse={pulse} />
+        <Otolith x={lerp(sB.x, 300, lift)} y={lerp(sB.y, 1170, lift)} scale={lerp(0.036 * fs, 0.45, lift)} f={f} mode="xray" rot={174} counted={ringK} pulse={pulse} />
         {treeIn > 0.01 && <TreeRings x={lerp(1300, 790, treeIn)} y={1040} scale={0.95} counted={ringK} pulse={pulse} f={f} />}
-        <Plate text="A PAIR OF EAR STONES" y={500} size={32} p={q(8, 12) * (1 - q(10, 10))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="OTOLITH · EAR STONE" y={500} size={32} p={q(10, 12) * (1 - q(11, 10))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="A PAIR OF EAR STONES" y={495} size={32} p={q(8, 12) * (1 - ease(f, bAt(10) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="OTOLITH · EAR STONE" y={495} size={32} p={q(10, 12) * (1 - ease(f, bAt(11) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="ONE RING A YEAR" x={300} y={1265} size={28} p={q(11, 12)} />
         <Plate text="LIKE A TREE" x={790} y={1265} size={28} p={q(12, 12)} />
         <Motes f={f} color="#BFEFF7" op={0.16} />
@@ -570,14 +618,16 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const crane = 1 - ease(f, 0, 40);
     const clickN = Math.floor(f / 11);
     const click = (f % 11) / 11;
-    const trays = Math.max(0, Math.floor(interpolate(f, [bAt(14), bAt(15)], [0, 9], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})));
+    const trayStart = (i: number) => bAt(14) - 6 + (i * (bAt(15) - 10 - (bAt(14) - 6))) / 8;
+    const trays = Array.from({length: 9}, (_, i) => i).filter((i) => f >= trayStart(i)).length;
     const hit = pop(15, 16);
     picture = (
       <SVG>
         <Bench f={f} id="s4" velvet={false} lampX={360} lampY={900} />
+        <BenchLip f={f} tags={['3', '5', '8']} />
         {/* the tray stack behind, sliding in and piling to the ceiling */}
         {Array.from({length: trays}, (_, i) => {
-          const sl = ease(f, bAt(14) + i * 5, 10);
+          const sl = spring(f, trayStart(i), 12);
           const y = 1080 - i * 74;
           return (
             <g key={i} transform={`translate(${lerp(1200, 0, sl)},0)`}>
@@ -589,14 +639,16 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         })}
         {hit > 0.02 && since(15) < 14 && <ImpactStar cx={780} cy={420} r={150 * hit} color={C.lamp} />}
         {/* she stands behind the scope with her eye at the eyepiece (rig face at feet - 400 x scale) */}
-        <Character frame={from + f} x={250} y={1270} scale={1.05} facing={1} pose="carry" gesture={0.6 + 0.4 * clamp01(1 - click * 3)} emotion="neutral" outfit="flannel"
-          hairStyle="long" glasses headgear="bare" idleGain={0.6} />
+        <g transform={`translate(0,${5 * clamp01(1 - click * 3)}) translate(250,1270) scale(1,${1 + 0.015 * Math.sin((f / 75) * Math.PI * 2)}) translate(-250,-1270)`}>
+          <Character frame={from + f} x={250} y={1270} scale={1.05} facing={1} pose="carry" gesture={0.6 + 0.4 * clamp01(1 - click * 3)} emotion="neutral" outfit="flannel"
+            hairStyle="long" glasses headgear="bare" idleGain={1.2} />
+        </g>
         <Microscope x={358} y={1285} s={1.1} />
         <TallyCounter x={384} y={1078} scale={0.45} count={40 + clickN + click} press={clamp01(1 - click * 3)} steam={q(16, 20)} f={f} worn={0.4} />
-        <Plate text="NOAA ALASKA FISHERIES SCIENCE CENTER" y={500} size={28} p={q(13, 12) * (1 - q(15, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="UNDER MICROSCOPES" x={640} y={1250} size={26} p={q(14, 10) * (1 - q(15, 8))} />
-        {hit > 0.02 && <StatBurst cx={780} cy={760} scale={1.0 * hit} big="30,000+" lines={['A YEAR', 'PER NOAA']} fill={C.lamp} big_fs={62} />}
-        <Plate text="COUNTED BY HAND" y={500} size={30} p={q(16, 10)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="NOAA ALASKA FISHERIES SCIENCE CENTER" y={500} size={28} p={q(13, 12) * (1 - ease(f, bAt(15) - 14, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="UNDER MICROSCOPES" x={640} y={1250} size={26} p={q(14, 10) * (1 - ease(f, bAt(15) - 6, 6))} />
+        {hit > 0.02 && <StatBurst cx={780} cy={760} scale={1.0 * hit} big="30,000+" lines={['STONES A YEAR', 'PER NOAA']} fill={C.lamp} big_fs={58} fontBig={SERIF} fontSub={MONO} />}
+        <Plate text="COUNTED BY HAND" x={300} y={500} size={30} p={q(16, 10)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
       </SVG>
     );
     dy = -120 * crane;
@@ -618,9 +670,20 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g transform={`translate(${-whip},0)`}>
           <rect x={W - 20} width={500} height={H} fill={C.bench} />
           <Bench f={f} id="s5" velvet={false} lampX={160} lampY={980} />
-          <Microscope x={250} y={1270} s={0.7} />
-          <Character frame={from + f} x={95} y={1290} scale={0.95} facing={1} pose="carry" gesture={0.6 + 0.4 * (1 - q(17, 20))}
-            emotion={since(17) > 6 && since(17) < 60 ? 'shock' : 'neutral'} outfit="flannel" hairStyle="long" glasses />
+          {[260, 760].map((lx, i) => (
+            <g key={lx} transform={`translate(${lx},0) rotate(${Math.sin(f / 47 + i * 1.7) * 1.5} 0 0)`}>
+              <path d="M0,0 L0,300" stroke={C.ink} strokeWidth={5} />
+              <path d="M-70,368 L-30,300 L30,300 L70,368 Z" fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
+              <ellipse cx={0} cy={369} rx={72} ry={14} fill={C.lamp} stroke={C.ink} strokeWidth={3} />
+              <path d="M-70,376 L-210,780 L210,780 L70,376 Z" fill={C.lamp} opacity={0.06} />
+            </g>
+          ))}
+          <BenchLip f={f} tags={['5', '7', '9']} />
+          <Microscope x={262} y={1280} s={0.62} />
+          <g transform={`translate(150,1290) rotate(${3.5 * q(17, 24)}) scale(1,${1 + 0.015 * Math.sin((f / 75) * Math.PI * 2)}) translate(-150,-1290)`}>
+            <Character frame={from + f} x={150} y={1290} scale={0.9} facing={1} pose="carry" gesture={0.6 + 0.4 * (1 - q(17, 20))}
+              emotion={since(17) > 6 && since(17) < 60 ? 'shock' : 'neutral'} outfit="flannel" hairStyle="long" glasses idleGain={1.2} />
+          </g>
           <NIRReader x={mx + 60} y={1290} scale={1.18} f={f} beam={beam} spectrum={spec} seed={3} plate="TRAINED ON THE ARCHIVE" cloth={ripple}
             slot={tagOut > 0.01 ? <MachineTag x={0} y={60 * (1 - tagOut)} s={0.9} /> : null} />
           {/* the small pollock stone in the sample port, a blank specimen label */}
@@ -637,11 +700,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
           {since(17) >= 0 && since(17) < 12 && <ImpactStar cx={mx - 300} cy={1250} r={90} color={C.brass} />}
         </g>
-        <Plate text="A FASTER READER" y={500} size={34} p={q(17, 12) * (1 - q(19, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="?" x={mx + 60} y={1170} size={26} p={q(18, 10) * (1 - q(19, 6))} />
-        <Plate text="NEAR-INFRARED LIGHT" y={500} size={32} tone="nir" p={q(19, 10) * (1 - q(20, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="MACHINE LEARNING" y={500} size={32} tone="nir" p={q(20, 10) * (1 - q(21, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="AGE" x={mx + 302} y={720} size={28} tone="nir" p={q(21, 10)} />
+        <Plate text="A FASTER READER" y={790} size={34} p={q(17, 12) * (1 - ease(f, bAt(19) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="?" x={mx + 60} y={1170} size={26} p={q(18, 10) * (1 - ease(f, bAt(19) - 6, 6))} />
+        <Plate text="NEAR-INFRARED LIGHT" y={790} size={32} tone="nir" p={q(19, 10) * (1 - ease(f, bAt(20) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="MACHINE LEARNING" y={790} size={32} tone="nir" p={q(20, 10) * (1 - ease(f, bAt(21) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="AGE" x={mx + 310} y={826} size={28} tone="nir" p={q(21, 10)} />
       </SVG>
     );
   } else if (n === 6) {
@@ -653,7 +716,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const needle = Math.sin(f / 9) * 0.5 + 0.5;
     picture = (
       <SVG>
-        <rect width={W} height={H} fill={C.seaLo} />
+        <Bench f={f} id="s6" velvet={false} lampX={540} lampY={880} />
+        <BenchLip f={f} tags={['2', '6', '8']} />
         {/* LEFT: the eyepiece */}
         <defs><clipPath id="s6eye"><circle cx={280} cy={930} r={230} /></clipPath></defs>
         <circle cx={280} cy={930} r={248} fill="#000" stroke={C.brass} strokeWidth={14} />
@@ -669,9 +733,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <SpectralLine x={600} y={760} w={410} h={340} seed={3} progress={ease(f, 0, 50)} width={6} />
         <rect x={590 + 400 * needle} y={720} width={4} height={420} fill={C.nir} opacity={0.5} />
         <path d="M540,640 V1300" stroke={C.cream} strokeWidth={4} opacity={0.6} />
-        {s600 > 0.02 && since(23) < 0 && <StatBurst cx={540} cy={620} scale={0.8 * s600} big="600%" lines={['PER NOAA']} fill={C.lamp} big_fs={84} />}
-        {s800 > 0.02 && <StatBurst cx={540} cy={620} scale={1.25 * s800} big="600 TO 800%" lines={['MORE EFFICIENT', 'PER NOAA']} fill={C.lamp} big_fs={40} />}
-        <Plate text="PER NOAA" y={500} size={28} p={ease(f, 0, 10) * (1 - q(22, 6))} />
+        {s600 > 0.02 && since(23) < 0 && <StatBurst cx={540} cy={620} scale={0.8 * s600} big="600%" lines={['PER NOAA']} fill={C.lamp} big_fs={80} fontBig={SERIF} fontSub={MONO} />}
+        {s800 > 0.02 && <StatBurst cx={540} cy={620} scale={1.25 * s800} big="600 TO 800%" lines={['MORE EFFICIENT', 'PER NOAA']} fill={C.lamp} big_fs={40} fontBig={SERIF} fontSub={MONO} />}
+        <Plate text="PER NOAA" y={500} size={28} p={ease(f, 0, 10) * (1 - ease(f, bAt(22) - 6, 6))} />
         <Plate text="MICROSCOPE STILL IN THE PROCESS" x={540} y={1255} size={24} p={q(24, 12)} />
       </SVG>
     );
@@ -679,7 +743,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   } else if (n === 7) {
     // YOU NEED THE AGE FIRST. Inside: the machine's 7 drains away, the line runs into an empty slot,
     // and the same WHO COUNTED? sign swings down into it, asked of the machine this time.
-    const drain = ease(f, bAt(25), 18);
+    const drain = q(25, 18);
     const run = ease(f, bAt(25) + 6, 30);
     const recoil = since(26) >= 0 ? Math.sin(since(26) / 3) * Math.exp(-since(26) / 10) * 40 : 0;
     const wob = Math.sin(f / 5) * 12;
@@ -690,7 +754,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <rect x={-64} y={-62} width={128} height={124} rx={10} fill="#081014" stroke={C.ink} strokeWidth={6} />
           <rect x={-64} y={-62} width={128} height={124} rx={10} fill="none" stroke={C.brass} strokeWidth={8} />
           <text x={0} y={-76} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.brass}>AGE OUT</text>
-          <MachineTag x={0} y={140 * drain} s={0.85} op={1 - drain} />
+          <clipPath id="s7slot"><rect x={-60} y={-58} width={120} height={116} rx={8} /></clipPath>
+          <g clipPath="url(#s7slot)"><MachineTag x={0} y={190 * drain * drain} s={0.85} /></g>
           {drain > 0.6 && <SlotPlate x={0} y={-60 + 60 * spring(f, bAt(25) + 14, 16)} s={1} wob={wob * 0.5} />}
         </g>
         <g transform={`translate(${recoil},0)`}>
@@ -715,8 +780,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const countK = q(31, LAND);
     const cnt = since(31) >= LAND ? 8617 : Math.floor(8617 * countK * countK);
     const handIn = ease(f, bAt(28) - 18, 16) * (1 - ease(f, bAt(30) - 14, 14));
-    const scrib = write > 0 && write < 1 ? Math.sin(f * 1.7) * 8 : 0;
-    const copy = ease(f, bAt(28) + 4, 20);
+    const tug = write > 0 && write < 1 ? Math.sin(f * 1.3) * 6 : 0;
+    const flare = since(29) >= 0 ? Math.exp(-since(29) / 14) : 0;
     picture = (
       <SVG>
         <g transform={`translate(${truck},0)`}>
@@ -733,20 +798,21 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
               <path d="M-70,338 L-230,1000 L230,1000 L70,338 Z" fill={C.lamp} opacity={0.06} />
             </g>
           ))}
-          {/* the far door, CLOSED, light leaking under it, its name on the transom */}
-          <g transform="translate(240,975)">
-            <rect x={-96} y={-330} width={192} height={52} fill="#2A1C14" stroke={C.ink} strokeWidth={5} />
-            <text x={0} y={-312} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.lamp} opacity={0.4 + 0.6 * door}>STOCK</text>
-            <text x={0} y={-292} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.lamp} opacity={0.4 + 0.6 * door}>ASSESSMENT</text>
-            <rect x={-84} y={-276} width={168} height={276} fill="#3A2A1E" stroke={C.ink} strokeWidth={6} />
-            {[0, 1].map((k) => <rect key={k} x={-66} y={-256 + k * 130} width={132} height={110} fill="none" stroke="#2A1C14" strokeWidth={4} />)}
-            <circle cx={58} cy={-130} r={7} fill={C.brass} stroke={C.ink} strokeWidth={2} />
-            <rect x={-84} y={-6} width={168} height={8} fill={C.lamp} opacity={0.3 + 0.6 * door} />
-            <path d="M-84,2 L-170,60 L170,60 L84,2 Z" fill={C.lamp} opacity={0.1 * door} />
+          {/* the far door, CLOSED, light leaking under it, its name on a wide transom sign */}
+          <g transform="translate(220,975)">
+            <rect x={-136} y={-372} width={272} height={92} rx={6} fill="#2A1C14" stroke={C.ink} strokeWidth={5} />
+            <text x={0} y={-334} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.lamp} opacity={0.45 + 0.55 * door}>STOCK</text>
+            <text x={0} y={-298} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.lamp} opacity={0.45 + 0.55 * door}>ASSESSMENT</text>
+            <rect x={-96} y={-276} width={192} height={276} fill="#3A2A1E" stroke={C.ink} strokeWidth={6} />
+            {[0, 1].map((k) => <rect key={k} x={-76} y={-256 + k * 130} width={152} height={110} fill="none" stroke="#2A1C14" strokeWidth={4} />)}
+            <circle cx={66} cy={-130} r={8} fill={C.brass} stroke={C.ink} strokeWidth={2} />
+            <rect x={-96} y={-8} width={192} height={10} fill={C.lamp} opacity={0.3 + 0.6 * door + 0.4 * flare} />
+            <path d="M-96,2 L-200,70 L200,70 L96,2 Z" fill={C.lamp} opacity={0.1 * door + 0.25 * flare} />
+            {flare > 0.05 && <path d="M-60,-4 L60,-4" stroke="#FFF6DC" strokeWidth={4} opacity={flare} />}
           </g>
           {/* the training count, the same brass counter, large; its hit star sits BEHIND it */}
           {since(31) >= LAND && since(31) < LAND + 12 && <ImpactStar cx={640} cy={640} r={170} color={C.lamp} />}
-          <TallyCounter x={640} y={640} scale={0.95} count={cnt} plate="TRAINED AND TESTED" />
+          <TallyCounter x={640} y={640} scale={0.95} count={cnt} plate="POLLOCK STONES" />
           {/* the table first, so the marching stones can pass BEHIND the hopper into it */}
           <rect x={-200} y={1000} width={1480} height={920} fill="#3E2A1D" stroke={C.ink} strokeWidth={6} /> {/* caption-band-ok */}
           <rect x={-200} y={1000} width={1480} height={22} fill="#5A3E2A" />
@@ -769,29 +835,20 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <rect x={-70} y={-80} width={140} height={80} fill={tones(C.brass).core} stroke={C.ink} strokeWidth={6} />
             {Array.from({length: 4}, (_, i) => <circle key={i} cx={-48 + i * 32} cy={-40} r={5} fill={tones(C.brass).key} stroke={C.ink} strokeWidth={2} />)}
           </g>
-          {/* her RINGS counter beside the tag, reading 0007, and the 7 copied along a dotted path */}
-          <TallyCounter x={150} y={890} scale={0.5} count={7} plate="RINGS" />
-          {copy > 0.01 && copy < 1 && <g>
-            <path d="M190,860 Q300,760 400,900" fill="none" stroke={C.lamp} strokeWidth={4} strokeDasharray="6 10" opacity={0.8} />
-            <text x={lerp(190, 400, copy)} y={lerp(860, 900, copy) - Math.sin(copy * Math.PI) * 90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={40} fill={C.lamp}>7</text>
-          </g>}
           {/* the first tag and stone, center stage */}
           <g transform="translate(420,960)">
-            <AgeTag x={-30} y={-40} text={write > 0.75 ? '7' : ''} f={f} scale={2.0} />
+            <AgeTag x={-30} y={-40} text="7" f={f} scale={2.0} swing={tug} />
             <Otolith x={10} y={-10 - 260 * (1 - drop)} scale={0.5} rings={8} f={f} counted={0.6} />
           </g>
-          {/* the reader's inked hand with a pen, writing, then leaving before the march */}
-          <g opacity={handIn} transform={`translate(${scrib},${0.3 * scrib})`}>
-            {/* the pen tip sits on the tag's writing line; InkHand's tip is (-195, 77) from its pinch at rot 0 */}
-            <InkHand x={lerp(900, 560 + 195 * 0.6, handIn)} y={1005 - 77 * 0.6} rot={0} s={0.6} pen />
-          </g>
+          {/* the reader's inked hand ties the marked tag on at its knot, tugs it, and withdraws off frame right */}
+          <InkHand x={lerp(1260, 400, handIn) + tug} y={928 + 0.5 * tug} rot={-10} s={0.62} sleeve="#b23a3a" />
           {/* the Alaska pollock, swimming in to drop its stone, then leaving */}
           <g opacity={1 - ease(f, bAt(27) + 26, 20)}>
             <Groundfish x={lerp(-360, 250, fishK) + 300 * ease(f, bAt(27) + 6, 30)} y={760} scale={1.8} f={f} kind="pollock" swim={0.8} caustics={false} />
           </g>
         </g>
-        <Plate text="ALASKA POLLOCK" y={500} size={30} p={q(27, 10) * (1 - q(28, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="2023 · TRAINED AND TESTED" y={500} size={30} p={q(28, 10) * (1 - q(30, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="ALASKA POLLOCK" y={500} size={30} p={q(27, 10) * (1 - ease(f, bAt(28) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="2023 REPORT · TRAINED AND TESTED" y={500} size={30} p={q(28, 10) * (1 - ease(f, bAt(30) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="TAGGED WITH AGES" y={500} size={30} p={q(30, 10) * (1 - ease(f, bAt(31) + LAND, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="8,617 POLLOCK STONES · 2023" y={1250} size={30} p={ease(f, bAt(31) + LAND, 10)} />
         <Motes f={f} color={C.lamp} op={0.14} />
@@ -811,7 +868,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           open={{row: 6, col: 1, t: ease(f, bAt(35), 22)}} />
         <ellipse cx={540} cy={880} rx={260} ry={300} fill="url(#s9fog)" />
         {/* the lighting wave runs down the corridor */}
-        {lit > 0 && lit < 1 && <ellipse cx={540} cy={880} rx={520 * (1 - lit) + 40} ry={600 * (1 - lit) + 46} fill="none" stroke={C.lamp} strokeWidth={6} opacity={0.5} />}
+        {lit > 0 && lit < 1 && <ellipse cx={540} cy={880} rx={520 * (1 - lit) + 40} ry={600 * (1 - lit) + 46} fill="none" stroke={C.lamp} strokeWidth={6} opacity={0.5 * q(33, 12)} />}
         {/* the bench wall falling away */}
         {fall < 1 && <g transform={`translate(0,${1400 * fall}) rotate(${10 * fall} 540 1920)`}>
           <rect width={W} height={H} fill="#2A1C14" />
@@ -821,9 +878,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <path d={`M440,380 L440,${lerp(380, 640, Math.min(1, signIn))} M640,380 L640,${lerp(380, 640, Math.min(1, signIn))}`} stroke={C.ink} strokeWidth={4} />
           <BrassSign x={540} y={lerp(560, 700, Math.min(1, signIn))} lines={['2.5 MILLION OTOLITH PAIRS', 'PER NOAA']} size={30} s={1} rot={2 * Math.sin(f / 20)} />
         </g>}
-        <Plate text="NOAA ARCHIVE" y={500} size={34} p={q(32, 12) * (1 - q(34, 8))} />
-        <Plate text="THE MODELS LEARNED FROM IT · PER NOAA" y={1250} size={26} p={q(33, 12) * (1 - q(35, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="SINCE THE 1960s" y={1250} size={32} tone="brass" p={q(35, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="NOAA ARCHIVE" y={500} size={34} p={q(32, 12) * (1 - ease(f, bAt(34) - 6, 6))} />
+        <Plate text="SINCE THE 1960s" y={1205} size={32} tone="brass" p={q(35, 12)} />
         <Motes f={f} color={C.lamp} op={0.18} rise={0.15} />
       </SVG>
     );
@@ -860,13 +916,27 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <path d="M-40,620 L540,380 L1120,620" fill="none" stroke={C.ink} strokeWidth={6} />
         {[160, 360, 720, 920].map((x, i) => <path key={i} d={`M${x},620 L540,380`} stroke="#4A3020" strokeWidth={12} />)}
         <rect x={-20} y={610} width={1120} height={24} fill="#5A3A22" stroke={C.ink} strokeWidth={5} />
-        <g transform={`translate(540,640) rotate(${prop})`}>
-          <path d="M-260,8 C-180,-24 -40,-14 0,0 C40,-14 180,-24 260,8 C180,20 40,14 0,4 C-40,14 -180,20 -260,8 Z" fill="#6A4628" stroke={C.ink} strokeWidth={6} />
-          <circle r={22} fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} />
+        {/* a band of hangar windows under the eaves */}
+        {Array.from({length: 9}, (_, i) => (
+          <g key={i}>
+            <rect x={64 + i * 108} y={392} width={84} height={46} fill="#1C2A30" stroke={C.ink} strokeWidth={4} />
+            <path d={`M${106 + i * 108},392 V438 M${64 + i * 108},415 H${148 + i * 108}`} stroke={C.ink} strokeWidth={3} />
+            <rect x={68 + i * 108} y={396} width={36} height={16} fill="#8FB7C2" opacity={0.18} />
+          </g>
+        ))}
+        {/* the propeller hangs on the back wall, two twisted blades and a spinner cone */}
+        <g transform={`translate(150,560) rotate(${90 + prop}) scale(0.62)`}>
+          <path d="M-250,10 C-170,-26 -46,-18 0,0 C46,-18 170,-26 250,10 C170,22 46,16 0,6 C-46,16 -170,22 -250,10 Z" fill="#6A4628" stroke={C.ink} strokeWidth={6} />
+          <path d="M-240,6 C-170,-12 -60,-10 -12,-2 M240,6 C170,-12 60,-10 12,-2" fill="none" stroke="#9A7048" strokeWidth={4} opacity={0.7} />
         </g>
+        <path d="M133,560 C133,542 167,542 167,560 L150,590 Z" fill={tones(C.brass).core} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
         {(() => {
           const lift = ease(f, bAt(36) + 6, 50);
-          return <Raven x={lerp(990, 1260, lift)} y={lerp(628, 380, lift)} scale={0.9} f={f} facing={1} mode={lift > 0.02 ? 'fly' : 'perch'} />;
+          return <g>
+            <radialGradient id="s10rv" cx="0.5" cy="0.5" r="0.5"><stop stopColor={C.lamp} stopOpacity={0.5} /><stop offset="1" stopColor={C.lamp} stopOpacity={0} /></radialGradient>
+            <ellipse cx={lerp(990, 1200, lift)} cy={lerp(600, 420, lift)} rx={150} ry={120} fill="url(#s10rv)" />
+            <Raven x={lerp(990, 1260, lift)} y={lerp(628, 380, lift)} scale={0.9} f={f} facing={1} mode={lift > 0.02 ? 'fly' : 'perch'} />
+          </g>;
         })()}
         {/* open shelving under the trusses, trays of stones glinting */}
         <g opacity={fadeIn}>
@@ -902,41 +972,46 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>;
         })}
         <Plate text="AROUND 2 MILLION · SEATTLE · 1930s HANGAR" y={500} size={26} p={q(36, 12)} />
-        {since(38) >= 0 && <Stamp cx={540} cy={1245} s={0.42 * spring(f, bAt(38) + 12, 12)} text="MOVED · 2012" rot={-6} color="#E8402F" />}
+        {since(38) >= 0 && <g transform="translate(540,1245) scale(0.4)"><Stamp cx={0} cy={0} s={spring(f, bAt(38) + 12, 12)} text="MOVED · 2012" rot={-6} color="#E8402F" /></g>}
         <Motes f={f} color={C.lamp} op={0.25} rise={0.12} />
       </SVG>
     );
   } else if (n === 11) {
-    // THE FAIR CASE AGAINST. A brass sign drops on its chains; credit first (a big trophy bounces onto
-    // the NIR reader); the machine's tag hops onto the AGE plinth; a fishery manager on the CATCH LIMITS
-    // plinth points at it; the tag reaches for the dashed STOCK ASSESSMENT step, where the same closed
-    // door from the tagging room stands, its light comes on, the tag slips back, NEXT STEP stamps in.
+    // THE FAIR CASE AGAINST. A brass sign drops on its chains; the AGE and CATCH LIMITS plinths rise
+    // out of the floor around a dashed step where the same closed STOCK ASSESSMENT door stands; the
+    // machine's tag hops onto AGE; a fishery manager on CATCH LIMITS points at it; the camera pushes
+    // in as the tag reaches for the dashed step and the door lights; NEXT STEP, PER NOAA, 2023 stamps
+    // into the dashed step, the camera whips back, the tag slips and the manager nods.
     const b = tones(C.brass);
     const sign = pop(39, 14);
     const swing = since(39) >= 0 ? 7 * Math.sin(since(39) / 6) * Math.exp(-since(39) / 22) : 0;
-    const trophy = pop(40, 14);
-    const hop = ease(f, bAt(41), 22);
-    const reach = ease(f, bAt(43), 18);
+    const rise = pop(40, 18);
+    const hop = q(41, 22);
+    const reach = q(43, 18);
     const slip = ease(f, bAt(45), 16);
     const teeter = since(43) > 18 && since(45) < 0 ? Math.sin(f / 3) * 9 : 0;
     const doorLit = q(44, 16);
     const flick = 0.6 + 0.4 * Math.abs(Math.sin(f / 4));
     const up = reach * (1 - slip);
     // AGE OUT slot of the reader (scale .36 at x 125) -> top of the AGE plinth -> up toward the door
-    const tagX = lerp(lerp(199, 365, hop), 560, up);
+    const tagX = lerp(lerp(201, 380, hop), 600, up);
     const tagY = lerp(lerp(1223, 1104, hop), 935, up) - Math.sin(hop * Math.PI) * 120 * (1 - up) - Math.sin(slip * Math.PI) * 40;
     const point = ease(f, bAt(42) + 26, 14);
-    const nod = since(45) >= 0 ? 5 * Math.sin(clamp01(since(45) / 14) * Math.PI) : 0;
-    const plinth = (x0: number, x1: number, top: number, label: string[], solid: boolean, fs: number) => {
+    const nodT = clamp01(since(45) / 18);
+    const nod = since(45) >= 0 ? 12 * Math.sin(nodT * Math.PI) * (1 - 0.35 * nodT) : 0;
+    const manX = lerp(1060, 880, ease(f, bAt(42), 30));
+    // the camera: a push toward the tag and the door from "NOAA called", a whip back on the stamp
+    const push = 0.3 * ease(f, bAt(43), 60) * (1 - ease(f, bAt(45) - 3, 8));
+    const cam = `translate(600,1010) scale(${1 + push}) translate(-600,-1010)`;
+    const plinth = (x0: number, x1: number, top: number, label: string[], solid: boolean, fs: number, lift = 0) => {
       const dx = 26, dz = 18;
       return solid ? (
-        <g>
+        <g clipPath="url(#s11floor)"><g transform={`translate(0,${lift * (1300 - top + 30)})`}>
           <ContactShadow cx={(x0 + x1) / 2 + 10} cy={1300} rx={(x1 - x0) / 2 + 30} ry={14} opacity={0.5} />
           <path d={`M${x1},${top} L${x1 + dx},${top - dz} L${x1 + dx},${1300 - dz} L${x1},1300 Z`} fill={b.shade} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
           <path d={`M${x0},${top} L${x0 + dx},${top - dz} L${x1 + dx},${top - dz} L${x1},${top} Z`} fill={b.key} stroke={C.ink} strokeWidth={5} strokeLinejoin="round" />
           <rect x={x0} y={top} width={x1 - x0} height={1300 - top} fill="url(#s11face)" stroke={C.ink} strokeWidth={6} />
           <rect x={x0 + 6} y={top + 6} width={x1 - x0 - 12} height={10} fill={b.key} opacity={0.6} />
-          {/* riveted bands and a worn kick plate */}
           {Array.from({length: Math.floor((1300 - top - 60) / 120)}, (_, i) => (
             <g key={i}>
               <path d={`M${x0 + 6},${top + 170 + i * 120} H${x1 - 6}`} stroke={b.shade} strokeWidth={4} opacity={0.7} />
@@ -948,7 +1023,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <rect x={x0 + 18} y={top + 26} width={x1 - x0 - 36} height={Math.min(120, 1300 - top - 52)} rx={6} fill="none" stroke={b.shade} strokeWidth={3} />
           {label.map((l, i) => <text key={i} x={(x0 + x1) / 2} y={top + 70 + i * (fs + 8)} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={fs} fill={C.ink}>{l}</text>)}
           <path d={`M${x0 + 4},${1300 - 8} L${x1 - 4},${1300 - 8}`} stroke={b.shade} strokeWidth={6} opacity={0.6} />
-        </g>
+        </g></g>
       ) : (
         <g opacity={lerp(0.55, flick, q(42, 10))}>
           <path d={`M${x0},${top} L${x0 + dx},${top - dz} L${x1 + dx},${top - dz} L${x1},${top} Z M${x1},${top} L${x1 + dx},${top - dz} L${x1 + dx},${1300 - dz}`}
@@ -959,56 +1034,57 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     };
     picture = (
       <SVG>
-        <Room f={f} id="s11" floorY={1300} lampX={150} lampY={1060} />
         <defs>
           <linearGradient id="s11face" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor={b.key} /><stop offset="0.35" stopColor={b.base} /><stop offset="1" stopColor={b.shade} />
           </linearGradient>
+          <clipPath id="s11floor"><rect x={-200} y={-200} width={1480} height={1502} /></clipPath>
         </defs>
-        {/* the hanging lamp over the reader */}
-        <g transform={`translate(120,0) rotate(${Math.sin(f / 50) * 2} 0 0)`}>
-          <path d="M0,0 L0,560" stroke={C.ink} strokeWidth={6} />
-          <path d="M-90,640 L-40,560 L40,560 L90,640 Z" fill={b.core} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
-          <ellipse cx={0} cy={642} rx={92} ry={18} fill={C.lamp} stroke={C.ink} strokeWidth={4} />
-          <path d="M-90,650 L-200,1300 L200,1300 L90,650 Z" fill={C.lamp} opacity={0.07} />
+        <g transform={cam}>
+          <Room f={f} id="s11" floorY={1300} lampX={150} lampY={1060} />
+          {/* the hanging lamp over the reader */}
+          <g transform={`translate(120,0) rotate(${Math.sin(f / 50) * 2} 0 0)`}>
+            <path d="M0,0 L0,560" stroke={C.ink} strokeWidth={6} />
+            <path d="M-90,640 L-40,560 L40,560 L90,640 Z" fill={b.core} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
+            <ellipse cx={0} cy={642} rx={92} ry={18} fill={C.lamp} stroke={C.ink} strokeWidth={4} />
+            <path d="M-90,650 L-200,1300 L200,1300 L90,650 Z" fill={C.lamp} opacity={0.07} />
+          </g>
+          {/* the dashed step first, so the AGE plinth's side face sits in front of it */}
+          {plinth(506, 720, 1010, [], false, 30)}
+          {plinth(250, 480, 1170, ['AGE'], true, 46, 1 - rise)}
+          {plinth(720, 1000, 850, ['CATCH', 'LIMITS'], true, 34, 1 - rise)}
+          {/* the SAME closed door from the tagging room, standing on the dashed step */}
+          <g transform="translate(613,992)">
+            <rect x={-136} y={-368} width={272} height={88} rx={6} fill="#2A1C14" stroke={C.ink} strokeWidth={5} />
+            <text x={0} y={-332} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.lamp} opacity={0.45 + 0.55 * doorLit}>STOCK</text>
+            <text x={0} y={-296} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.lamp} opacity={0.45 + 0.55 * doorLit}>ASSESSMENT</text>
+            <rect x={-84} y={-276} width={168} height={276} fill="#3A2A1E" stroke={C.ink} strokeWidth={6} />
+            {[0, 1].map((k) => <rect key={k} x={-66} y={-256 + k * 130} width={132} height={110} fill="none" stroke="#2A1C14" strokeWidth={4} />)}
+            <circle cx={58} cy={-130} r={7} fill={C.brass} stroke={C.ink} strokeWidth={2} />
+            <rect x={-84} y={-8} width={168} height={10} fill={C.lamp} opacity={0.25 + 0.7 * doorLit} />
+            <path d="M-84,2 L-150,40 L150,40 L84,2 Z" fill={C.lamp} opacity={0.18 * doorLit} />
+          </g>
+          {/* the fishery manager on the CATCH LIMITS plinth: walks in, points at the tag, nods at the stamp */}
+          <g opacity={q(42, 16)} transform={`translate(0,${0.5 * nod}) rotate(${nod} ${manX} 850)`}>
+            <Character frame={from + f} x={manX} y={850} scale={0.62} facing={-1}
+              pose={since(42) < 26 ? 'stand' : 'point'} gesture={point} walking={since(42) >= 0 && since(42) < 26}
+              emotion="neutral" outfit="vest" glasses headgear="cap" idleGain={1.4} />
+          </g>
+          {/* the NIR reader on the floor, fully in frame: the tag's source */}
+          <NIRReader x={125} y={1300} scale={0.36} f={f} beam={0.4} spectrum={1} seed={3} plate="" cloth={0} rails={false} />
+          <g transform={`rotate(${teeter} ${tagX} ${tagY + 30})`}><MachineTag x={tagX} y={tagY} s={1.1} op={ease(f, bAt(41) - 2, 6)} /></g>
+          {since(45) >= 0 && since(45) < 12 && <ImpactStar cx={613} cy={1150} r={90} color={C.cream} />}
+          {since(45) >= 0 && <g transform="translate(613,1150) scale(0.32)"><Stamp cx={0} cy={0} s={spring(f, bAt(45), 12)} text="NEXT STEP" rot={-8} color={C.lamp} /></g>}
         </g>
-        {plinth(250, 480, 1170, ['AGE'], true, 46)}
-        {plinth(480, 720, 1010, [], false, 30)}
-        {plinth(720, 1000, 850, ['CATCH', 'LIMITS'], true, 34)}
-        {/* the SAME closed door from the tagging room, standing on the dashed step */}
-        <g transform="translate(613,992)">
-          <rect x={-96} y={-330} width={192} height={52} fill="#2A1C14" stroke={C.ink} strokeWidth={5} />
-          <text x={0} y={-312} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.lamp} opacity={0.4 + 0.6 * doorLit}>STOCK</text>
-          <text x={0} y={-292} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.lamp} opacity={0.4 + 0.6 * doorLit}>ASSESSMENT</text>
-          <rect x={-84} y={-276} width={168} height={276} fill="#3A2A1E" stroke={C.ink} strokeWidth={6} />
-          {[0, 1].map((k) => <rect key={k} x={-66} y={-256 + k * 130} width={132} height={110} fill="none" stroke="#2A1C14" strokeWidth={4} />)}
-          <circle cx={58} cy={-130} r={7} fill={C.brass} stroke={C.ink} strokeWidth={2} />
-          <rect x={-84} y={-6} width={168} height={8} fill={C.lamp} opacity={0.25 + 0.7 * doorLit} />
-          <path d="M-84,2 L-150,40 L150,40 L84,2 Z" fill={C.lamp} opacity={0.14 * doorLit} />
-        </g>
-        {/* the fishery manager on the CATCH LIMITS plinth: walks in, points at the tag, nods at the stamp */}
-        <g opacity={q(42, 16)} transform={`rotate(${nod} ${lerp(1060, 880, ease(f, bAt(42), 30))} 850)`}>
-          <Character frame={from + f} x={lerp(1060, 880, ease(f, bAt(42), 30))} y={850} scale={0.62} facing={-1}
-            pose={since(42) < 26 ? 'stand' : 'point'} gesture={point} walking={since(42) >= 0 && since(42) < 26}
-            emotion="neutral" outfit="vest" glasses headgear="cap" />
-        </g>
-        {/* the NIR reader on the floor, fully in frame, with the engineers' trophy */}
-        {since(40) >= 0 && since(40) < 12 && <ImpactStar cx={180} cy={1060} r={110} color={C.lamp} />}
-        <NIRReader x={125} y={1300} scale={0.36} f={f} beam={0.4} spectrum={1} seed={3} plate="" cloth={0} trophy={trophy} trophyScale={3} rails={false} />
-        <g transform={`rotate(${teeter} ${tagX} ${tagY + 30})`}><MachineTag x={tagX} y={tagY} s={1.1} op={ease(f, bAt(41) - 2, 6)} /></g>
-        {since(45) >= 0 && since(45) < 12 && <ImpactStar cx={600} cy={1150} r={90} color={C.cream} />}
-        {since(45) >= 0 && <Stamp cx={600} cy={1150} s={0.42 * spring(f, bAt(45), 12)} text="NEXT STEP" rot={-8} color={C.lamp} />}
         {sign > 0.01 && <g>
-          <path d={`M330,0 L330,${lerp(-120, 440, Math.min(1, sign)) - 40} M750,0 L750,${lerp(-120, 440, Math.min(1, sign)) - 40}`} stroke={C.ink} strokeWidth={5} strokeDasharray="10 6" />
-          <BrassSign x={540} y={lerp(-120, 440, sign)} lines={['THE FAIR CASE AGAINST']} size={40} rot={swing} />
+          <path d={`M330,0 L330,${lerp(-120, 500, Math.min(1, sign)) - 40} M750,0 L750,${lerp(-120, 500, Math.min(1, sign)) - 40}`} stroke={C.ink} strokeWidth={5} strokeDasharray="10 6" />
+          <BrassSign x={540} y={lerp(-120, 500, sign)} lines={['THE FAIR CASE AGAINST']} size={40} rot={swing} />
         </g>}
-        <Plate text="CREDIT TO THE ENGINEERS" y={560} size={32} p={q(40, 10) * (1 - q(41, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="FISHERY MANAGERS" y={560} size={32} p={q(42, 10) * (1 - q(43, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="PER NOAA, 2023" y={560} size={32} tone="brass" p={q(43, 10)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="FISHERY MANAGERS" y={610} size={32} p={q(42, 10) * (1 - ease(f, bAt(43) - 6, 6))} />
+        <Plate text="PER NOAA, 2023" x={613} y={1252} size={22} tone="brass" p={q(45, 8)} />
         <Motes f={f} color={C.lamp} op={0.16} />
       </SVG>
     );
-    dy = interpolate(f, [0, dur], [30, -20]);
   } else if (n === 12) {
     // MANAGERS SET LIMITS, NOT MACHINES. An inked hand drags a numberless line across the manager's
     // clipboard; focus racks across the hall to the reader, eye at the microscope, still clicking.
@@ -1028,9 +1104,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <g filter="url(#s12bg)">
           <radialGradient id="s12l" cx="0.5" cy="0.5" r="0.5"><stop stopColor={C.lamp} stopOpacity={0.5} /><stop offset="1" stopColor={C.lamp} stopOpacity={0} /></radialGradient>
           <ellipse cx={740} cy={800} rx={300} ry={240} fill="url(#s12l)" />
-          <Character frame={from + f} x={rx} y={ry} scale={0.5} facing={1} pose="carry" gesture={0.6 + 0.4 * clamp01(1 - click * 3)} outfit="flannel" hairStyle="long" glasses headgear="bare" idleGain={0.6} />
+          <Character frame={from + f} x={rx} y={ry + 3 * clamp01(1 - click * 3)} scale={0.5} facing={1} pose="carry" gesture={0.6 + 0.4 * clamp01(1 - click * 3)} outfit="flannel" hairStyle="long" glasses headgear="bare" idleGain={1.2} />
           <Microscope x={rx + 108 * R} y={ry + 15 * R} s={1.1 * R} />
-          <TallyCounter x={rx + 134 * R} y={ry - 192 * R} scale={0.45 * R} count={300 + Math.floor(f / 11) + click} press={clamp01(1 - click * 3)} f={f} worn={0.4} />
+          {click < 0.25 && <circle cx={850} cy={846} r={70 * (1 - click * 4)} fill={C.lamp} opacity={0.35 * (1 - click * 4)} />}
+          <TallyCounter x={850} y={846} scale={0.42} count={300 + Math.floor(f / 11) + click} press={clamp01(1 - click * 3)} f={f} worn={0.4} />
         </g>
         {/* foreground: the clipboard, a numberless limit line, the inked hand with the pen */}
         <g filter="url(#s12fg)">
@@ -1039,30 +1116,33 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <rect x={300} y={840} width={260} height={50} rx={10} fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} />
             {Array.from({length: 4}, (_, i) => <rect key={i} x={180} y={960 + i * 34} width={300 - i * 40} height={10} rx={5} fill="#8A8476" opacity={0.5} />)}
             <path d={`M180,1160 L${180 + 460 * line},1152`} stroke={C.ink} strokeWidth={8} strokeLinecap="round" />
-            <InkHand x={180 + 460 * line + 195 * 0.62} y={1152 - 77 * 0.62} rot={0} s={0.62} pen />
+            <InkHand x={180 + 460 * line + 195 * 0.62} y={1152 - 77 * 0.62} rot={0} s={0.62} pen sleeve="#c98a2a" />
           </g>
           <g transform="translate(870,1220)"><MachineTag x={0} y={0} s={0.9} /></g>
         </g>
-        <Plate text="MANAGERS SET LIMITS · NOT MACHINES" y={500} size={28} p={q(46, 12) * (1 - q(47, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="MANAGERS SET LIMITS · NOT MACHINES" y={500} size={28} p={q(46, 12) * (1 - ease(f, bAt(47) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="MICROSCOPE STILL IN THE PROCESS" y={500} size={28} p={q(47, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Motes f={f} color={C.lamp} op={0.12} />
       </SVG>
     );
     zoom = 1 + 0.05 * (f / dur);
   } else if (n === 13) {
-    // LOOK WHERE THE SPEED CAME FROM. An inked hand feeds hand-tagged stones to the reader; on THAT'S
-    // REAL the cloth comes off its plate, TRAINED ON THE ARCHIVE. Then inside: the AGE OUT slot's
-    // question flips to a handwritten tag, and the spectral line tears into 144 ticks that curve onto
-    // the growth bands of the 1878 stone, exactly where the next shot's stone sits.
+    // LOOK WHERE THE SPEED CAME FROM. The win is real: a trophy bounces onto the machine, CREDIT · NOAA
+    // SCIENTISTS, while an inked hand feeds hand-tagged stones to it; on THAT'S REAL the cloth comes off
+    // its plate, TRAINED ON THE ARCHIVE. Then inside, at S7's framing: the AGE OUT slot's WHO COUNTED?
+    // flips to a handwritten 7, the sourced check holds, and the same spectral line tears into 144
+    // ticks that curve onto the growth bands of the 1878 stone, exactly where the next shot's stone sits.
     const feed = ease(f, bAt(48), 40);
+    const trophy = pop(48, 14);
     const glow = q(49, 30);
     const cloth = 1 - ease(f, bAt(49), 18);
     const dive = ease(f, bAt(50) - 6, 18);
-    const flip = ease(f, bAt(50) + 6, 14);
+    const flip = ease(f, bAt(50) + 6, 12);
     const grow = ease(f, bAt(51) - 8, 10);
-    const fly = ease(f, bAt(51) + 2, 32);
-    const body = ease(f, bAt(51) + 28, 14);
+    const fly = ease(f, bAt(51) + 2, 22);
+    const body = ease(f, bAt(51) + 22, 12);
     const glint = clamp01((f - bAt(49) - 18) / 16);
+    const dolly = 1 + 0.25 * ease(f, bAt(50) - 6, 30) * (1 - ease(f, bAt(51) - 8, 22));
     const benchView = (
       <g opacity={1 - dive}>
         <Bench f={f} id="s13" velvet={false} lampX={240} lampY={900} />
@@ -1074,7 +1154,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <path d="M-70,376 L-210,720 L210,720 L70,376 Z" fill={C.lamp} opacity={0.06 + 0.04 * glow} />
           </g>
         ))}
-        <NIRReader x={540} y={1240} scale={1.45} f={f} beam={0.5 + 0.5 * glow} spectrum={1} seed={3} plate="TRAINED ON THE ARCHIVE" cloth={cloth} />
+        <BenchLip f={f} tags={['4', '6', '7']} />
+        {since(48) >= 0 && since(48) < 12 && <ImpactStar cx={757} cy={600} r={150} color={C.lamp} />}
+        <NIRReader x={540} y={1240} scale={1.45} f={f} beam={0.5 + 0.5 * glow} spectrum={1} seed={3} plate="TRAINED ON THE ARCHIVE" cloth={cloth}
+          trophy={trophy} trophyScale={1.25} />
+        {trophy > 0.05 && <BrassSign x={330} y={688} lines={['CREDIT · NOAA SCIENTISTS']} size={22} s={Math.min(1, trophy)} rot={-2} />}
         {glint > 0 && glint < 1 && <g>
           <clipPath id="s13pl"><rect x={298} y={1121} width={484} height={64} rx={10} /></clipPath>
           <rect x={lerp(240, 800, glint)} y={1100} width={40} height={110} fill="#FFF6DC" opacity={0.7} transform={`skewX(-24)`} clipPath="url(#s13pl)" />
@@ -1086,7 +1170,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <ellipse cx={-46 + k * 44} cy={-16} rx={16} ry={11} fill={C.pearl} stroke={C.ink} strokeWidth={2} />
             <AgeTag x={-40 + k * 44} y={-24} text={String(5 + k)} f={f + k * 5} scale={0.38} />
           </g>)}
-          <InkHand x={-80} y={-14} rot={180} s={0.62} />
+          <InkHand x={-80} y={-14} rot={180} s={0.62} sleeve="#b23a3a" />
         </g>
         <ellipse cx={540} cy={900} rx={500} ry={400} fill={C.lamp} opacity={0.1 * glow} />
       </g>
@@ -1097,23 +1181,26 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {dive > 0.01 && (
           <g opacity={dive}>
             <MachineInside f={f} />
-            <g transform={`translate(540,690) scale(${1.3 * (1 - 0.3 * grow)})`} opacity={1 - grow}>
-              <rect x={-64} y={-62} width={128} height={124} rx={10} fill="#081014" stroke={C.ink} strokeWidth={6} />
-              <rect x={-64} y={-62} width={128} height={124} rx={10} fill="none" stroke={C.brass} strokeWidth={8} />
-              <text x={0} y={-76} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.brass}>AGE OUT</text>
-              {flip < 0.5
-                ? <g transform={`scale(1,${1 - 2 * flip})`}><SlotPlate x={0} y={0} s={1} wob={Math.sin(f / 5) * 4} /></g>
-                : <g transform={`scale(1,${2 * flip - 1})`}><AgeTag x={-40} y={-50} text="7" f={f} scale={1.0} flip={0} /></g>}
+            <g transform={`translate(540,900) scale(${dolly}) translate(-540,-900)`}>
+              {/* the same slot as S7, at S7's size, its question flipping to the reader's handwritten 7 */}
+              <g transform={`translate(540,900) scale(${2.2 * (1 - 0.6 * grow) * (0.94 + 0.06 * pop(50, 12))})`} opacity={1 - grow}>
+                <rect x={-64} y={-62} width={128} height={124} rx={10} fill="#081014" stroke={C.ink} strokeWidth={6} />
+                <rect x={-64} y={-62} width={128} height={124} rx={10} fill="none" stroke={C.brass} strokeWidth={8} />
+                <text x={0} y={-76} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.brass}>AGE OUT</text>
+                {flip < 0.5
+                  ? <g transform={`scale(1,${1 - 2 * flip})`}><SlotPlate x={0} y={0} s={1} wob={Math.sin(f / 5) * 4} /></g>
+                  : <g transform={`scale(1,${2 * flip - 1})`}><AgeTag x={-62} y={-60} text="7" f={f} scale={1.0} flip={0} fs={64} /></g>}
+                {since(50) >= 18 && since(50) < 26 && <rect x={-64} y={-62} width={128} height={124} rx={10} fill="#FFF6DC" opacity={0.4 * (1 - (since(50) - 18) / 8)} />}
+              </g>
+              {grow < 0.98 && <g opacity={1 - grow}><SpectralLine x={LINE.x} y={LINE.y} w={LINE.w} h={LINE.h} seed={LINE.seed} progress={1} width={7} /></g>}
             </g>
-            {grow < 0.98 && <g opacity={1 - grow}><SpectralLine x={LINE.x} y={LINE.y} w={LINE.w} h={LINE.h} seed={LINE.seed} progress={1} width={6} /></g>}
             {body > 0 && <Otolith x={STONE.x} y={STONE.y} scale={STONE.s} f={0} rings={STONE.rings} counted={1} rot={STONE.rot} shadow={false} />}
             {grow > 0 && <TickRings grow={grow} fly={fly} op={1} />}
           </g>
         )}
-        <Plate text="SPEED · METHOD" y={500} size={34} p={q(48, 12) * (1 - q(49, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="CHECKED AGAINST MICROSCOPE AGES" y={500} size={28} p={q(50, 10) * (1 - q(51, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="BENSON ET AL. 2023" y={566} size={22} p={q(50, 10) * (1 - q(51, 8))} />
-        <Plate text="OUR READ · THE COUNT CAME FIRST" y={500} size={28} tone="brass" p={q(51, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="CHECKED AGAINST MICROSCOPE AGES" y={495} size={28} p={ease(f, bAt(50) - 6, 10)} />
+        <Plate text="BENSON ET AL. 2023" y={557} size={22} p={ease(f, bAt(50) - 6, 10)} />
+        <Plate text="OUR READ · THE COUNT CAME FIRST" y={629} size={26} tone="brass" p={q(51, 12)} />
       </SVG>
     );
     // the match cut: camera back to rest (zoom 1, no drift) by the time the rings land
@@ -1133,15 +1220,24 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <SVG>
         <Bench f={f} id="s14" />
+        <BenchLip f={f} tags={['3', '7', '9']} />
         <BenchScope x={STONE.x} y={STONE.y} scale={1.05} drop={ease(f, 0, 14)} lamp={1} f={f} />
         <Otolith x={STONE.x} y={STONE.y} scale={STONE.s} f={0} rings={STONE.rings} counted={1} pulse={pulse} rot={STONE.rot} />
         {f < 14 && <TickRings grow={1} fly={1} op={1 - ease(f, 0, 12)} />}
         <YearDrum x={250} y={1110} scale={0.62} year={1878} label="BORN · EST." />
         <TallyCounter x={820} y={1110} scale={0.62} count={click ? 144 : 143} press={press} plate="RINGS" />
-        <InkHand x={828} y={1000 + 6 * press} rot={-45} s={0.62} press={press} />
+        <InkHand x={828} y={1000 + 6 * press} rot={-45} s={0.62} press={press} sleeve="#b23a3a" />
         {set > 0.01 && (
           <BrassSign x={540} y={1245} s={set} lines={[flipK < 0.5 ? 'WHO COUNTED?' : 'SOMEBODY COUNTED']} size={42} rot={swing} flip={flipK} minW={16 * 42 * 0.602 + 15 * 1.5 + 124} />
         )}
+        {/* the specimen label: where this stone came from, back on it for the close */}
+        <path d="M282,822 C250,790 236,760 232,724" fill="none" stroke="#6B5A3C" strokeWidth={3} />
+        <g transform="translate(232,706) rotate(-4)">
+          <rect x={-142} y={-26} width={284} height={52} rx={6} fill="#E8DDBF" stroke={C.ink} strokeWidth={4} />
+          <circle cx={0} cy={-16} r={4} fill="none" stroke={C.ink} strokeWidth={2} />
+          <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.ink}>ALEUTIANS · 2022</text>
+        </g>
+        <Plate text="OUR READ · THE COUNT CAME FIRST" y={500} size={22} tone="brass" p={1 - ease(f, dur - 8, 8)} />
         <Plate text="EST. 144 YEARS OLD" y={580} size={32} tone="brass" p={ease(f, bAt(53) + CLICK, 8)} />
       </SVG>
     );
