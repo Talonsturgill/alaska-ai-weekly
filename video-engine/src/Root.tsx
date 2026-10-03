@@ -52,6 +52,7 @@ import {Ep1002, ep1002Schema} from './Ep1002';
 import {ResearchAssetLook0912} from './ResearchAssetLook0912';
 import {FlightCrateLook} from './FlightCrateLook';
 import { EvidenceLook } from './EvidenceLook';
+import {RigLook, RigHoldLook, RigLightLook} from './RigLook';
 
 const standoffSchema = z.object({
   yesCount: z.number(),
@@ -68,6 +69,10 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition id="TariffLook" component={TariffLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
+      {/* the cast rig against a brass prop, and a dead-held point for scripts/rig_life_check.py; frames are global film frames */}
+      <Composition id="RigLook" component={RigLook} durationInFrames={3900} fps={30} width={1080} height={1920}/>
+      <Composition id="RigHoldLook" component={RigHoldLook} durationInFrames={3900} fps={30} width={1080} height={1920}/>
+      <Composition id="RigLightLook" component={RigLightLook} durationInFrames={120} fps={30} width={1080} height={1920}/>
       <Composition id="FlightCrateLook" component={FlightCrateLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="ResearchAssetLook0912" component={ResearchAssetLook0912} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="Dispatch0912"

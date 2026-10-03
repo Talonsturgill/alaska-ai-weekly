@@ -3776,3 +3776,7 @@ plate-hold-time-gate, location-ambience-beds, held-gesture-idle, machine-interio
 character-finish-lags-props (repeat 1), with vo-wer-canonicalizer (repeat 3) and
 caption-chunk-by-sense (repeat 6) still first in line.
 
+## 2026-10-02 machine pass
+
+Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face, hands and hair, and world-space lighting so mirrored figures are lit from the same side as the props (closes character-finish-lags-props and rig-light-follows-facing). Verified by tsc and the new `scripts/rig_check.py` (lit side leads by +15 on both facings). The held-gesture idle item was stopped mid-work; its unverified commit was reverted and it stays queued.
+

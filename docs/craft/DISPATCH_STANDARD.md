@@ -282,10 +282,13 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **An entrance is a walk, not a fade.** A figure arriving in a shot starts off frame, its
   stride is driven by the distance it travels so the feet do not skate, it settles with a
   small overshoot, and only then gestures. A fade-in reads as a ghost.
-- **A mirrored figure takes its rim from the scene's lamp.** The rig's rim and sheen are drawn
-  for a key at the figure's own upper left, so `facing={-1}` puts them on the side away from a
-  left-hand lamp, where a judge read them as a ghosted duplicate. Turn them down with
-  `lightWrap` when the lamp disagrees.
+- **A mirrored figure takes its rim from the scene's lamp.** The rig's rim and sheen were drawn
+  for a key at the figure's own upper left, so `facing={-1}` put them on the side away from a
+  left-hand lamp, where a judge read them as a ghosted duplicate. Since the 2026-10-02 machine
+  pass the rig draws ALL its shading in world space (key at the screen's upper left, like every
+  prop), so a mirrored figure needs no override; `lightWrap` is only a dimmer for a figure in
+  shadow. Judge the cast against the brass on `RigLook` (`npx remotion still src/index.ts
+  RigLook out.png --frame=N` from video-engine/) before a rig change reaches a film.
 - **Motion the square crop cannot see did not happen on LinkedIn.** The 1:1 cut keeps y 420
   to 1500. A hero move (a bird's flight, a sign's drop) is staged inside that band, and a
   plate that would share the band waits for the move to clear.
