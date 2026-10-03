@@ -179,6 +179,55 @@ def stages_a_figure(subject):
     return o is None or f.start() < o.start()
 
 
+# CLIP IN THE PARENT'S SPACE (machine pass 2026-10-03, transform-with-clippath-lint). In SVG
+# a clip-path is resolved in the element's OWN user space, after its transform, so a clip on
+# a skewed or rotated element skews and rotates with it. 10-02's S13 glint carried both
+# transform={skewX(-24)} and clipPath, and the glint escaped the TRAINED ON THE ARCHIVE plate
+# for ten frames in every round until round 4. The fix is always the same: put the clipPath
+# on a parent <g> and the transform on the child.
+_CLIP_TRANSFORM = r"""
+const ts=require(process.argv[1]), fs=require('fs');
+const sf=ts.createSourceFile('x.tsx',fs.readFileSync(0,'utf8'),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
+const rows=[];
+function visit(n){
+  if(ts.isJsxSelfClosingElement(n)||ts.isJsxOpeningElement(n)){
+    const tag=n.tagName.getText(sf);
+    // an attribute set to {undefined} is not set
+    const names=n.attributes.properties.filter(ts.isJsxAttribute)
+      .filter(a=>!(a.initializer&&ts.isJsxExpression(a.initializer)&&a.initializer.expression&&a.initializer.expression.getText(sf)==='undefined'))
+      .map(a=>a.name.getText(sf));
+    if(/^[a-z]/.test(tag)&&names.includes('transform')&&(names.includes('clipPath')||names.includes('clip-path')))
+      rows.push({line:sf.getLineAndCharacterOfPosition(n.getStart(sf)).line+1,tag});
+  }
+  ts.forEachChild(n,visit);
+}
+visit(sf);process.stdout.write(JSON.stringify(rows));
+"""
+
+
+def scan_clip_transform(source):
+    """[{line, tag}] for every intrinsic JSX element carrying both transform and clipPath."""
+    result = subprocess.run(
+        ["node", "-e", _CLIP_TRANSFORM, os.path.join(REPO, "video-engine", "node_modules", "typescript")],
+        input=source, text=True, capture_output=True, timeout=30)
+    if result.returncode:
+        raise ValueError(f"cannot parse for clip/transform: {result.stderr.strip()[:300]}")
+    return json.loads(result.stdout)
+
+
+def _self_test():
+    bad = '<g><rect transform={`skewX(-24)`} clipPath="url(#p)" x={0} /></g>'
+    good = '<g clipPath="url(#p)"><rect transform={`skewX(-24)`} x={0} /></g>'
+    comp = '<Plate transform="x" clipPath="y" />'
+    unset = '<g transform="translate(1,2)" clipPath={undefined} />'
+    r = [scan_clip_transform(x) for x in (bad, good, comp, unset)]
+    ok = len(r[0]) == 1 and not r[1] and not r[2] and not r[3]
+    print(f"  [{'x' if ok else ' '}] transform+clipPath on one element caught, clip on the parent "
+          f"passes, a component prop and an unset clip are ignored: {r}")
+    print("SELF-TEST", "PASS" if ok else "FAIL")
+    return 0 if ok else 1
+
+
 def read_json(p):
     return json.load(open(p)) if os.path.exists(p) else None
 
@@ -203,7 +252,10 @@ def main():
     ap.add_argument("--props", default=os.path.join(REPO, "out", "dispatch", "episode_props.json"))
     ap.add_argument("--storyboard", default=os.path.join(REPO, "out", "dispatch", "storyboard.json"))
     ap.add_argument("--stand-seconds", type=float, default=4.0)
+    ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
+    if a.self_test:
+        return _self_test()
 
     targets = a.targets
     if not targets:
@@ -236,6 +288,14 @@ def main():
     problems, checked, unmapped = [], 0, 0
     for path in targets:
         rel = os.path.relpath(path, REPO)
+        try:
+            for hit in scan_clip_transform(open(path).read()):
+                problems.append(
+                    f"{rel}:{hit['line']}  <{hit['tag']}> carries both transform and clipPath, so "
+                    f"the clip is transformed with it and the art escapes its plate. Clip a "
+                    f"parent group: <g clipPath=...><{hit['tag']} transform=... /></g>.")
+        except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
+            problems.append(f"{rel}: clip/transform source could not be checked ({exc})")
         try:
             characters = scan_engine(path)
         except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
