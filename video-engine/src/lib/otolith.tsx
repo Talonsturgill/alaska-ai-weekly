@@ -317,7 +317,9 @@ export const NIRReader: React.FC<{
   plate?: string; cloth?: number; slot?: React.ReactNode; rails?: boolean; trophy?: number; screenTicks?: number;
   /** size of the engineers' trophy relative to the machine (a credit can be drawn large) */
   trophyScale?: number;
-}> = ({x, y, scale = 1, f, beam = 0, spectrum = 0, seed = 2, plate = '', cloth = 1, slot, rails = true, trophy = 0, screenTicks = 0, trophyScale = 1}) => {
+  /** an engraved plinth under the trophy, so a credit travels with the trophy it belongs to */
+  trophyPlate?: string;
+}> = ({x, y, scale = 1, f, beam = 0, spectrum = 0, seed = 2, plate = '', cloth = 1, slot, rails = true, trophy = 0, screenTicks = 0, trophyScale = 1, trophyPlate = ''}) => {
   const id = uid(`nir${x}${y}${scale}`);
   const b = tones(BRASS);
   const e = tones(ENAMEL);
@@ -398,7 +400,15 @@ export const NIRReader: React.FC<{
       )}
       {/* engineers' trophy (a sincere concession, not a gag) */}
       {trophy > 0.01 && (
-        <g transform={`translate(150,${-360 - 40 * (1 - smooth(clamp01(trophy)))}) scale(${trophyScale})`} opacity={clamp01(trophy * 2)}>
+        <g transform={`translate(150,${-360 - (trophyPlate ? 30 * trophyScale : 0) - 40 * (1 - smooth(clamp01(trophy)))}) scale(${trophyScale})`} opacity={clamp01(trophy * 2)}>
+          {trophyPlate && (() => {
+            const tw = trophyPlate.length * 13 * 0.602 + Math.max(0, trophyPlate.length - 1) * 0.8 + 28;
+            return <g>
+              <rect x={-tw / 2} y={0} width={tw} height={30} rx={4} fill={b.base} stroke={INK} strokeWidth={3} />
+              <rect x={-tw / 2 + 3} y={3} width={tw - 6} height={8} rx={3} fill={b.key} opacity={0.5} />
+              <text x={0} y={20} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={13} letterSpacing={0.8} fill={INK}>{trophyPlate}</text>
+            </g>;
+          })()}
           <ContactShadow cx={0} cy={0} rx={50} ry={8} opacity={0.4} />
           <rect x={-34} y={-24} width={68} height={24} rx={4} fill={b.core} stroke={INK} strokeWidth={4} />
           <rect x={-10} y={-62} width={20} height={40} fill={b.base} stroke={INK} strokeWidth={4} />
@@ -476,20 +486,40 @@ export const ArchiveDrawers: React.FC<{
         const hx = hash(s * 997 + r * 31 + c);
         const x = x0 + c * cw, y = y0 + r * ch;
         const isOpen = open && s === 0 && open.row === r && open.col === c;
-        const slide = isOpen ? smooth(open!.t) * ch * 0.9 : 0;
+        const ot = isOpen ? smooth(open!.t) : 0;
+        const slide = ot * ch * 0.9;
         const tw = 0.5 + 0.5 * Math.sin(f / (20 + (hx % 30)) + (hx % 100));
         out.push(
           <g key={`${s}-${r}-${c}`} opacity={fade}>
             <rect x={x + 2} y={y + 2} width={cw - 4} height={ch - 4} fill={s === 0 ? wt.base : wt.core} stroke={INK} strokeWidth={Math.max(1, 4 * k)} />
-            <g transform={`translate(0,${slide})`}>
+            {isOpen && ot > 0.02 && (() => {
+              // THE OPEN DRAWER HAS A BODY (2026-10-02): it comes out toward camera, so the cell is a
+              // dark mouth, the drawer's side walls run from that mouth to its grown front, and a
+              // tray of stones rides on top of it, instead of a flat black hole above a sliding face.
+              const g = 1 + 0.35 * ot, fx0 = x + cw * 0.08, fy0 = y + ch * 0.1 + slide, fw = cw * 0.84, fh = ch * 0.8;
+              const gx = fx0 - (fw * (g - 1)) / 2, gw = fw * g;
+              return <g>
+                <rect x={x + cw * 0.08} y={y + ch * 0.1} width={fw} height={fh} fill="#0B0705" />
+                <path d={`M${x + cw * 0.08},${y + ch * 0.1} L${gx},${fy0} L${gx},${fy0 + fh * g} L${x + cw * 0.08},${y + ch * 0.9} Z`} fill={wt.shade} stroke={INK} strokeWidth={3} />
+                <path d={`M${x + cw * 0.92},${y + ch * 0.1} L${gx + gw},${fy0} L${gx + gw},${fy0 + fh * g} L${x + cw * 0.92},${y + ch * 0.9} Z`} fill={wt.core} stroke={INK} strokeWidth={3} />
+                <path d={`M${x + cw * 0.08},${y + ch * 0.1} L${x + cw * 0.92},${y + ch * 0.1} L${gx + gw},${fy0} L${gx},${fy0} Z`} fill="#2A1A10" stroke={INK} strokeWidth={3} />
+                {Array.from({length: 5}, (_, i) => (
+                  <ellipse key={i} cx={gx + gw * (0.16 + i * 0.17)} cy={fy0 - 6 * g} rx={gw * 0.06} ry={gw * 0.035} fill={PEARL} stroke={INK} strokeWidth={1.5} />
+                ))}
+              </g>;
+            })()}
+            <g transform={isOpen ? `translate(${(x + cw / 2) * (1 - (1 + 0.35 * ot))},${slide + (y + ch / 2) * (1 - (1 + 0.35 * ot))}) scale(${1 + 0.35 * ot})` : 'translate(0,0)'}>
               <rect x={x + cw * 0.08} y={y + ch * 0.1} width={cw * 0.84} height={ch * 0.8} fill={s === 0 ? wt.key : wt.base} stroke={INK} strokeWidth={Math.max(1, 3 * k)} />
               <rect x={x + cw * 0.3} y={y + ch * 0.2} width={cw * 0.4} height={ch * 0.22} fill="#EFE6CF" opacity={0.85} />
               <rect x={x + cw * 0.34} y={y + ch * 0.27} width={cw * 0.3 * ((hx % 60) / 100 + 0.4)} height={Math.max(1, ch * 0.05)} fill="#5A5040" opacity={0.6} />
               <rect x={x + cw * 0.42} y={y + ch * 0.58} width={cw * 0.16} height={ch * 0.1} rx={2} fill={BRASS} stroke={INK} strokeWidth={Math.max(1, 2 * k)} />
             </g>
-            {glint > 0 && hx % 7 === 0 && (
-              <circle cx={x + cw * 0.5} cy={y + ch * 0.62} r={(3 + 5 * k) * (0.6 + tw)} fill="#FFF4D6" opacity={glint * tw * 0.9} />
-            )}
+            {glint > 0 && hx % 7 === 0 && (() => {
+              // a small four-point sparkle that fades, never an opaque disc
+              const sx = x + cw * 0.5, sy = y + ch * 0.62, sr = (5 + 9 * k) * (0.5 + tw);
+              return <path d={`M${sx},${sy - sr} L${sx + sr * 0.18},${sy - sr * 0.18} L${sx + sr},${sy} L${sx + sr * 0.18},${sy + sr * 0.18} L${sx},${sy + sr} L${sx - sr * 0.18},${sy + sr * 0.18} L${sx - sr},${sy} L${sx - sr * 0.18},${sy - sr * 0.18} Z`}
+                fill="#FFF4D6" opacity={glint * tw * tw * 0.85} />;
+            })()}
           </g>
         );
       }
@@ -591,9 +621,9 @@ export const YearDrum: React.FC<{x: number; y: number; scale?: number; year: num
         <rect x={-104} y={16} width={208} height={14} fill="#000" opacity={0.35} />
       </g>
       {label && (
-        <g transform="translate(0,96)">
-          <rect x={-(label.length * 26 * 0.602 / 2 + 20)} y={-22} width={label.length * 26 * 0.602 + 40} height={44} rx={6} fill={b.core} stroke={INK} strokeWidth={4} />
-          <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={26} fill={INK}>{label}</text>
+        <g transform="translate(0,100)">
+          <rect x={-(label.length * 34 * 0.602 / 2 + 22)} y={-27} width={label.length * 34 * 0.602 + 44} height={54} rx={7} fill={b.core} stroke={INK} strokeWidth={4} />
+          <text x={0} y={12} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={34} fill={INK}>{label}</text>
         </g>
       )}
     </g>

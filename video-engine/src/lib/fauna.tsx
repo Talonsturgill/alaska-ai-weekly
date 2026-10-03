@@ -2159,19 +2159,35 @@ export const Groundfish: React.FC<{
             fill={finC} stroke={FINK} strokeWidth={4} strokeLinejoin="round" />
         ))
       )}
-      {/* head: x-ray wash and the stone */}
+      {/* head: x-ray wash, CLIPPED TO THE HEAD (2026-10-02): an unclipped ellipse ran past the head
+          outline and read as a fishbowl helmet. The wash now fills only the head's own silhouette. */}
+      {xr > 0.01 && (() => {
+        const top: string[] = [], bot: string[] = [];
+        for (let i = 0; i <= 12; i++) {
+          const u = (i / 12) * 0.34;
+          top.push(`${sp.sx(u)},${sp.sway(u) - dTop(u)}`);
+          bot.push(`${sp.sx(u)},${sp.sway(u) + dBot(u)}`);
+        }
+        const headD = 'M' + top.join(' L') + ' L' + bot.reverse().join(' L') + ' Z';
+        return (
+          <g opacity={xr}>
+            <defs><clipPath id={`${id}hx`}><path d={headD} /></clipPath></defs>
+            <g clipPath={`url(#${id}hx)`}>
+              <g transform={`translate(0,${sp.sway(0.08)})`}>
+                <ellipse cx={NOSE - 46} cy={2} rx={70} ry={R ? 52 : 36} fill="#9fdcf0" opacity={0.55} style={{mixBlendMode: 'screen'} as any} />
+                <path d={`M${NOSE - 98},${-30} q30,-14 70,-4`} fill="none" stroke="#E6FAFF" strokeWidth={3} opacity={0.6} />
+                <path d={`M${NOSE - 90},${30} q30,10 62,-4`} fill="none" stroke="#E6FAFF" strokeWidth={3} opacity={0.6} />
+              </g>
+            </g>
+          </g>
+        );
+      })()}
       <g transform={`translate(0,${sp.sway(0.08)})`}>
         <path d={`M${NOSE - 70},${-dTop(0.2) * 0.9} q40,-6 70,10 q10,8 8,18 q-4,10 -14,14 q-30,14 -64,8`}
           fill="none" stroke={FINK} strokeWidth={5.5} strokeLinecap="round" opacity={0.85} />
         <path d={`M${NOSE + 6},${R ? 8 : 4} q-20,8 -40,6`} fill="none" stroke={FINK} strokeWidth={4} strokeLinecap="round" />
         <path d={`M${NOSE - 66},${-dTop(0.24) + 10} q14,26 2,48`} fill="none" stroke={FINK} strokeWidth={3.5} opacity={0.55} />
-        {xr > 0.01 && (
-          <g opacity={xr}>
-            <ellipse cx={NOSE - 46} cy={2} rx={60} ry={R ? 46 : 32} fill="#9fdcf0" opacity={0.55} style={{mixBlendMode: 'screen'} as any} />
-            <path d={`M${NOSE - 98},${-30} q30,-14 70,-4`} fill="none" stroke="#E6FAFF" strokeWidth={3} opacity={0.6} />
-            <path d={`M${NOSE - 90},${30} q30,10 62,-4`} fill="none" stroke="#E6FAFF" strokeWidth={3} opacity={0.6} />
-          </g>
-        )}
+
         {xr > 0.01 && stoneOut < 0.99 && (
           <g transform={`translate(${stone.x},${stone.y}) scale(0.1)`} opacity={xr * (1 - stoneOut)}>
             <ellipse cx={0} cy={0} rx={260} ry={190} fill="#BFF4FF" opacity={0.5} />

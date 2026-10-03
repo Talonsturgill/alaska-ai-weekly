@@ -514,7 +514,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     // HOOK. A rockfish glides in, an x-ray finds the ear stone behind its eye, the stone pops out
     // toward camera, rings showing, and keeps spinning while it drifts closer.
     const swimX = lerp(90, 470, q(1, 70));
-    const xr = q(2, 18);
+    const xr = q(2, 18) * (1 - ease(f, bAt(3) + 10, 12));
     const popK = pop(3, 22);
     const out = clamp01(since(3) / 4);
     // the sagittal stone sits behind and below the eye: eye at +90 local, stone 34 behind it
@@ -572,7 +572,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <TallyCounter x={830} y={1105} scale={0.62} count={nClicks + 0.0} press={press} plate="RINGS" />
           <InkHand x={828 + 60 * (1 - q(5, 8))} y={1000 + 6 * press - 50 * (1 - q(5, 8))} rot={-45} s={0.62} press={press} sleeve="#b23a3a" />
           {since(6) >= 0 && since(6) < 12 && <ImpactStar cx={540} cy={560} r={190} color={C.lamp} />}
-          <YearDrum x={lerp(540, 265, tuck)} y={lerp(560, 1110, tuck)} scale={drumS} year={2022 - 144 * yearK} label="BORN · EST." />
+          <YearDrum x={lerp(540, 265, tuck)} y={lerp(560, 1110, tuck)} scale={drumS} year={2022 - 144 * yearK} label={since(6) >= 0 ? 'BORN · EST.' : 'CAUGHT'} />
           {slam > 0.02 && <Plate text="EST. 144 YEARS OLD · PER NOAA" y={1260} size={30} p={slam * (1 - ease(f, bAt(7) - 6, 6))} />} {/* plate-overlap-ok: sequenced, EAR STONE is gone before this one slams in on q(6) */}
           {signDrop > 0.01 && <BrassSign x={540} y={lerp(1060, 1240, Math.min(1, signDrop))} lines={['WHO COUNTED?']} size={40} s={0.95} rot={4 * Math.sin(since(7) / 4) * Math.exp(-since(7) / 14)} />}
           <Plate text="EAR STONE" y={1265} size={30} p={q(4, 12) * (1 - ease(f, bAt(6) - 8, 8))} /> {/* plate-overlap-ok: sequenced, it retires fully before q(6) lands the next plate */}
@@ -624,7 +624,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <SVG>
         <Bench f={f} id="s4" velvet={false} lampX={360} lampY={900} />
-        <BenchLip f={f} tags={['3', '5', '8']} />
+        <BenchLip f={f} />
         {/* the tray stack behind, sliding in and piling to the ceiling */}
         {Array.from({length: trays}, (_, i) => {
           const sl = spring(f, trayStart(i), 12);
@@ -639,7 +639,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         })}
         {hit > 0.02 && since(15) < 14 && <ImpactStar cx={780} cy={420} r={150 * hit} color={C.lamp} />}
         {/* she stands behind the scope with her eye at the eyepiece (rig face at feet - 400 x scale) */}
-        <g transform={`translate(0,${5 * clamp01(1 - click * 3)}) translate(250,1270) scale(1,${1 + 0.015 * Math.sin((f / 75) * Math.PI * 2)}) translate(-250,-1270)`}>
+        <g transform={`translate(0,${9 * clamp01(1 - click * 3)}) translate(250,1270) scale(1,${1 + 0.025 * Math.sin((f / 60) * Math.PI * 2)}) translate(-250,-1270)`}>
           <Character frame={from + f} x={250} y={1270} scale={1.05} facing={1} pose="carry" gesture={0.6 + 0.4 * clamp01(1 - click * 3)} emotion="neutral" outfit="flannel"
             hairStyle="long" glasses headgear="bare" idleGain={1.2} />
         </g>
@@ -678,9 +678,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
               <path d="M-70,376 L-210,780 L210,780 L70,376 Z" fill={C.lamp} opacity={0.06} />
             </g>
           ))}
-          <BenchLip f={f} tags={['5', '7', '9']} />
+          <BenchLip f={f} />
           <Microscope x={262} y={1280} s={0.62} />
-          <g transform={`translate(150,1290) rotate(${3.5 * q(17, 24)}) scale(1,${1 + 0.015 * Math.sin((f / 75) * Math.PI * 2)}) translate(-150,-1290)`}>
+          <g transform={`translate(${150 + 6 * Math.sin(f / 38)},${1290 - 12 * Math.sin(Math.PI * clamp01(since(19) / 12)) * (since(19) >= 0 ? 1 : 0) - 9 * Math.sin(Math.PI * clamp01(since(21) / 10)) * (since(21) >= 0 ? 1 : 0)}) rotate(${3.5 * q(17, 24) + 3 * q(19, 14)}) scale(1,${1 + 0.025 * Math.sin((f / 60) * Math.PI * 2)}) translate(-150,-1290)`}>
             <Character frame={from + f} x={150} y={1290} scale={0.9} facing={1} pose="carry" gesture={0.6 + 0.4 * (1 - q(17, 20))}
               emotion={since(17) > 6 && since(17) < 60 ? 'shock' : 'neutral'} outfit="flannel" hairStyle="long" glasses idleGain={1.2} />
           </g>
@@ -717,7 +717,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <SVG>
         <Bench f={f} id="s6" velvet={false} lampX={540} lampY={880} />
-        <BenchLip f={f} tags={['2', '6', '8']} />
+        <BenchLip f={f} />
         {/* LEFT: the eyepiece */}
         <defs><clipPath id="s6eye"><circle cx={280} cy={930} r={230} /></clipPath></defs>
         <circle cx={280} cy={930} r={248} fill="#000" stroke={C.brass} strokeWidth={14} />
@@ -732,9 +732,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {Array.from({length: 7}, (_, i) => <path key={i} d={`M${590 + i * 70},720 V1140`} stroke="#18343C" strokeWidth={2} />)}
         <SpectralLine x={600} y={760} w={410} h={340} seed={3} progress={ease(f, 0, 50)} width={6} />
         <rect x={590 + 400 * needle} y={720} width={4} height={420} fill={C.nir} opacity={0.5} />
-        <path d="M540,640 V1300" stroke={C.cream} strokeWidth={4} opacity={0.6} />
+        <path d="M540,640 V1222" stroke={C.cream} strokeWidth={4} opacity={0.6} />
         {s600 > 0.02 && since(23) < 0 && <StatBurst cx={540} cy={620} scale={0.8 * s600} big="600%" lines={['PER NOAA']} fill={C.lamp} big_fs={80} fontBig={SERIF} fontSub={MONO} />}
-        {s800 > 0.02 && <StatBurst cx={540} cy={620} scale={1.25 * s800} big="600 TO 800%" lines={['MORE EFFICIENT', 'PER NOAA']} fill={C.lamp} big_fs={40} fontBig={SERIF} fontSub={MONO} />}
+        {since(23) >= 0 && since(23) < 10 && <ImpactStar cx={540} cy={620} r={260} color={C.lamp} />}
+        {s800 > 0.02 && <StatBurst cx={540} cy={620} scale={1.25 * s800} big="600 TO 800%" lines={['MORE EFFICIENT', 'PER NOAA']} fill={C.lamp} big_fs={34} fontBig={SERIF} fontSub={MONO} />}
         <Plate text="PER NOAA" y={500} size={28} p={ease(f, 0, 10) * (1 - ease(f, bAt(22) - 6, 6))} />
         <Plate text="MICROSCOPE STILL IN THE PROCESS" x={540} y={1255} size={24} p={q(24, 12)} />
       </SVG>
@@ -755,17 +756,20 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <rect x={-64} y={-62} width={128} height={124} rx={10} fill="none" stroke={C.brass} strokeWidth={8} />
           <text x={0} y={-76} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.brass}>AGE OUT</text>
           <clipPath id="s7slot"><rect x={-60} y={-58} width={120} height={116} rx={8} /></clipPath>
-          <g clipPath="url(#s7slot)"><MachineTag x={0} y={190 * drain * drain} s={0.85} /></g>
+          <g clipPath="url(#s7slot)">
+            {[0.5, 0.3].map((gk, i) => <MachineTag key={i} x={0} y={110 * Math.pow(clamp01((since(25) - 1 - i) / 10), 2)} s={0.85} op={gk * (since(25) > 1 ? 1 : 0)} />)}
+            <MachineTag x={0} y={110 * Math.pow(clamp01(since(25) / 10), 2) * (drain > 0 ? 1 : 0)} s={0.85} />
+          </g>
           {drain > 0.6 && <SlotPlate x={0} y={-60 + 60 * spring(f, bAt(25) + 14, 16)} s={1} wob={wob * 0.5} />}
         </g>
         <g transform={`translate(${recoil},0)`}>
           <SpectralLine x={-40} y={760} w={lerp(80, 480, run)} h={260} seed={3} progress={1} width={7} />
         </g>
-        <Plate text="NEED THE AGE FIRST" y={500} size={34} p={q(26, 12)} />
+        <Plate text="NEED THE AGE FIRST" y={1095} size={34} p={q(26, 12)} />
         <Motes f={f} color={C.nir} op={0.2} />
       </SVG>
     );
-    zoom = 1.04 + 0.05 * (f / dur);
+    zoom = 1.08 + 0.4 * ease(f, 0, dur);
   } else if (n === 8) {
     // THE TAGGING TABLE. An Alaska pollock drops its stone on the first tag; the reader's inked hand
     // writes the age, copied off her RINGS counter along a dotted path; the hand leaves; tagged stones
@@ -776,7 +780,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const write = ease(f, bAt(28), 34);
     const door = q(29, 30);
     const march = clamp01((f - bAt(30)) / 110);
-    const LAND = 75; // the count climbs from "eight" and lands as "seventeen" ends
+    const LAND = 56; // the count climbs from "thousand" (58.22) and lands as "seventeen" ends (about 60.1, just before "pollock" at 60.22)
     const countK = q(31, LAND);
     const cnt = since(31) >= LAND ? 8617 : Math.floor(8617 * countK * countK);
     const handIn = ease(f, bAt(28) - 18, 16) * (1 - ease(f, bAt(30) - 14, 14));
@@ -828,20 +832,35 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             </g>;
           })}
           {/* hopper on the right */}
-          <g transform="translate(930,1010)">
+          <g transform="translate(860,1010)">
+            <defs><linearGradient id="s8hop" x1="0" y1="0" x2="1" y2="0.3">
+              <stop stopColor={tones(C.teal).key} /><stop offset="0.45" stopColor={tones(C.teal).base} /><stop offset="1" stopColor={tones(C.teal).shade} />
+            </linearGradient></defs>
             <ContactShadow cx={0} cy={0} rx={150} ry={14} opacity={0.5} />
-            <path d="M-140,-330 L140,-330 L60,-80 L-60,-80 Z" fill={C.teal} stroke={C.ink} strokeWidth={7} strokeLinejoin="round" />
+            <path d="M-140,-330 L140,-330 L60,-80 L-60,-80 Z" fill="url(#s8hop)" stroke={C.ink} strokeWidth={7} strokeLinejoin="round" />
+            <path d="M-128,-318 L-56,-92" stroke="#FFFFFF" strokeWidth={5} opacity={0.22} strokeLinecap="round" />
+            {[-100, -40, 20, 80].map((rx, i) => <circle key={i} cx={rx * (1 - 0.0) } cy={-300} r={5} fill={tones(C.brass).key} stroke={C.ink} strokeWidth={2} />)}
             <path d="M-120,-318 L120,-318" stroke={C.nir} strokeWidth={5} opacity={0.7} />
             <rect x={-70} y={-80} width={140} height={80} fill={tones(C.brass).core} stroke={C.ink} strokeWidth={6} />
             {Array.from({length: 4}, (_, i) => <circle key={i} cx={-48 + i * 32} cy={-40} r={5} fill={tones(C.brass).key} stroke={C.ink} strokeWidth={2} />)}
           </g>
+          {/* the training set has a body: rows of tagged stones fill the near table as the count climbs */}
+          {Array.from({length: 36}, (_, i) => {
+            const r = Math.floor(i / 9), c = i % 9;
+            if (i >= Math.round(36 * countK * countK)) return null;
+            const sx = 110 + c * 104 + (r % 2) * 40, sy = 1110 + r * 52, sc = 0.15 + r * 0.02;
+            return <g key={i}>
+              <Otolith x={sx} y={sy} scale={sc} rings={6} f={0} counted={1} shadow={false} rot={-8 + (i % 5) * 4} />
+              <AgeTag x={sx + 14} y={sy - 6} text={String(2 + (hash(i) % 8))} f={f + i * 3} scale={0.34} />
+            </g>;
+          })}
           {/* the first tag and stone, center stage */}
           <g transform="translate(420,960)">
             <AgeTag x={-30} y={-40} text="7" f={f} scale={2.0} swing={tug} />
             <Otolith x={10} y={-10 - 260 * (1 - drop)} scale={0.5} rings={8} f={f} counted={0.6} />
           </g>
           {/* the reader's inked hand ties the marked tag on at its knot, tugs it, and withdraws off frame right */}
-          <InkHand x={lerp(1260, 400, handIn) + tug} y={928 + 0.5 * tug} rot={-10} s={0.62} sleeve="#b23a3a" />
+          <InkHand x={lerp(1260, 400, handIn) + tug} y={928 + 0.5 * tug} rot={-10} s={0.62} sleeve="#5A6B78" />
           {/* the Alaska pollock, swimming in to drop its stone, then leaving */}
           <g opacity={1 - ease(f, bAt(27) + 26, 20)}>
             <Groundfish x={lerp(-360, 250, fishK) + 300 * ease(f, bAt(27) + 6, 30)} y={760} scale={1.8} f={f} kind="pollock" swim={0.8} caustics={false} />
@@ -849,7 +868,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
         <Plate text="ALASKA POLLOCK" y={500} size={30} p={q(27, 10) * (1 - ease(f, bAt(28) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="2023 REPORT · TRAINED AND TESTED" y={500} size={30} p={q(28, 10) * (1 - ease(f, bAt(30) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="TAGGED WITH AGES" y={500} size={30} p={q(30, 10) * (1 - ease(f, bAt(31) + LAND, 8))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="TAGGED WITH AGES" y={500} size={30} p={q(30, 10) * (1 - ease(f, bAt(31) + LAND - 10, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="8,617 POLLOCK STONES · 2023" y={1250} size={30} p={ease(f, bAt(31) + LAND, 10)} />
         <Motes f={f} color={C.lamp} op={0.14} />
       </SVG>
@@ -872,6 +891,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* the bench wall falling away */}
         {fall < 1 && <g transform={`translate(0,${1400 * fall}) rotate(${10 * fall} 540 1920)`}>
           <rect width={W} height={H} fill="#2A1C14" />
+          {Array.from({length: 14}, (_, i) => <rect key={i} x={i * 80} y={0} width={78} height={H} fill={i % 2 ? '#33221A' : '#2C1D14'} stroke="#1A100A" strokeWidth={3} />)}
+          <rect x={0} y={0} width={W} height={14} fill={C.lamp} opacity={0.35} />
           <Microscope x={300} y={1200} s={1} />
         </g>}
         {signIn > 0.01 && <g>
@@ -925,11 +946,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
         ))}
         {/* the propeller hangs on the back wall, two twisted blades and a spinner cone */}
-        <g transform={`translate(150,560) rotate(${90 + prop}) scale(0.62)`}>
+        <g transform={`translate(540,664) rotate(${prop}) scale(0.92)`}>
           <path d="M-250,10 C-170,-26 -46,-18 0,0 C46,-18 170,-26 250,10 C170,22 46,16 0,6 C-46,16 -170,22 -250,10 Z" fill="#6A4628" stroke={C.ink} strokeWidth={6} />
           <path d="M-240,6 C-170,-12 -60,-10 -12,-2 M240,6 C170,-12 60,-10 12,-2" fill="none" stroke="#9A7048" strokeWidth={4} opacity={0.7} />
         </g>
-        <path d="M133,560 C133,542 167,542 167,560 L150,590 Z" fill={tones(C.brass).core} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+        <path d="M540,664 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} />
+        <path d="M528,656 L540,640 L552,656 Z" fill={tones(C.brass).key} stroke={C.ink} strokeWidth={3} />
         {(() => {
           const lift = ease(f, bAt(36) + 6, 50);
           return <g>
@@ -971,7 +993,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             {[-70, 70].map((lx) => <rect key={lx} x={lx - 9} y={-58 + 10 * (1 - k)} width={18} height={20} rx={3} fill={tones(C.brass).base} stroke={C.ink} strokeWidth={2.5} />)}
           </g>;
         })}
-        <Plate text="AROUND 2 MILLION · SEATTLE · 1930s HANGAR" y={500} size={26} p={q(36, 12)} />
+        <Plate text="1930s HANGAR · SEATTLE · AROUND 2 MILLION" y={500} size={26} p={q(36, 12)} />
         {since(38) >= 0 && <g transform="translate(540,1245) scale(0.4)"><Stamp cx={0} cy={0} s={spring(f, bAt(38) + 12, 12)} text="MOVED · 2012" rot={-6} color="#E8402F" /></g>}
         <Motes f={f} color={C.lamp} op={0.25} rise={0.12} />
       </SVG>
@@ -989,16 +1011,22 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const hop = q(41, 22);
     const reach = q(43, 18);
     const slip = ease(f, bAt(45), 16);
-    const teeter = since(43) > 18 && since(45) < 0 ? Math.sin(f / 3) * 9 : 0;
+    const teeter = since(43) > 32 && since(45) < 0 ? Math.sin(f / 3) * 11 : 0;
     const doorLit = q(44, 16);
     const flick = 0.6 + 0.4 * Math.abs(Math.sin(f / 4));
-    const up = reach * (1 - slip);
-    // AGE OUT slot of the reader (scale .36 at x 125) -> top of the AGE plinth -> up toward the door
-    const tagX = lerp(lerp(201, 380, hop), 600, up);
-    const tagY = lerp(lerp(1223, 1104, hop), 935, up) - Math.sin(hop * Math.PI) * 120 * (1 - up) - Math.sin(slip * Math.PI) * 40;
+    // the tag pops out of the reader's slot as the shot opens, hops onto AGE, JUMPS for the dashed step,
+    // falls short onto AGE's edge and teeters there, then tumbles back to the middle on NEXT STEP
+    const popOut = spring(f, 6, 14);
+    const fallback = ease(f, bAt(43) + 20, 12);
+    const up = reach * (1 - fallback);
+    const edge = fallback * (1 - slip);
+    const baseX = lerp(201, 380, hop), baseY = lerp(1223 - 46 * popOut, 1104, hop) - Math.sin(hop * Math.PI) * 120;
+    const tagX = lerp(lerp(baseX, 600, up), 468, edge);
+    const tagY = lerp(lerp(baseY, 935, up), 1104, edge) - Math.sin(fallback * Math.PI) * 30 * (1 - slip) - Math.sin(slip * Math.PI) * 40;
     const point = ease(f, bAt(42) + 26, 14);
-    const nodT = clamp01(since(45) / 18);
-    const nod = since(45) >= 0 ? 12 * Math.sin(nodT * Math.PI) * (1 - 0.35 * nodT) : 0;
+    const nod = since(45) >= 0 ? 15 * Math.sin(Math.PI * clamp01(since(45) / 10)) - 4 * Math.sin(Math.PI * clamp01((since(45) - 10) / 10)) : 0;
+    const bob = since(42) > 26 ? 3 * Math.sin(f / 9) : 0;
+    const signOut = ease(f, bAt(43) - 18, 16);
     const manX = lerp(1060, 880, ease(f, bAt(42), 30));
     // the camera: a push toward the tag and the door from "NOAA called", a whip back on the stamp
     const push = 0.3 * ease(f, bAt(43), 60) * (1 - ease(f, bAt(45) - 3, 8));
@@ -1065,23 +1093,22 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <path d="M-84,2 L-150,40 L150,40 L84,2 Z" fill={C.lamp} opacity={0.18 * doorLit} />
           </g>
           {/* the fishery manager on the CATCH LIMITS plinth: walks in, points at the tag, nods at the stamp */}
-          <g opacity={q(42, 16)} transform={`translate(0,${0.5 * nod}) rotate(${nod} ${manX} 850)`}>
+          <g opacity={q(42, 16)} transform={`translate(0,${0.6 * nod + bob}) rotate(${nod} ${manX} 850)`}>
             <Character frame={from + f} x={manX} y={850} scale={0.62} facing={-1}
               pose={since(42) < 26 ? 'stand' : 'point'} gesture={point} walking={since(42) >= 0 && since(42) < 26}
               emotion="neutral" outfit="vest" glasses headgear="cap" idleGain={1.4} />
           </g>
           {/* the NIR reader on the floor, fully in frame: the tag's source */}
           <NIRReader x={125} y={1300} scale={0.36} f={f} beam={0.4} spectrum={1} seed={3} plate="" cloth={0} rails={false} />
-          <g transform={`rotate(${teeter} ${tagX} ${tagY + 30})`}><MachineTag x={tagX} y={tagY} s={1.1} op={ease(f, bAt(41) - 2, 6)} /></g>
+          <g transform={`rotate(${teeter} ${tagX} ${tagY + 30})`}><MachineTag x={tagX} y={tagY} s={1.1} op={ease(f, 4, 6)} /></g>
           {since(45) >= 0 && since(45) < 12 && <ImpactStar cx={613} cy={1150} r={90} color={C.cream} />}
           {since(45) >= 0 && <g transform="translate(613,1150) scale(0.32)"><Stamp cx={0} cy={0} s={spring(f, bAt(45), 12)} text="NEXT STEP" rot={-8} color={C.lamp} /></g>}
         </g>
-        {sign > 0.01 && <g>
+        {sign > 0.01 && signOut < 0.99 && <g transform={`translate(0,${-760 * signOut})`}>
           <path d={`M330,0 L330,${lerp(-120, 500, Math.min(1, sign)) - 40} M750,0 L750,${lerp(-120, 500, Math.min(1, sign)) - 40}`} stroke={C.ink} strokeWidth={5} strokeDasharray="10 6" />
           <BrassSign x={540} y={lerp(-120, 500, sign)} lines={['THE FAIR CASE AGAINST']} size={40} rot={swing} />
         </g>}
-        <Plate text="FISHERY MANAGERS" y={610} size={32} p={q(42, 10) * (1 - ease(f, bAt(43) - 6, 6))} />
-        <Plate text="PER NOAA, 2023" x={613} y={1252} size={22} tone="brass" p={q(45, 8)} />
+        <Plate text="PER NOAA · 2023" x={613} y={1252} size={22} tone="brass" p={q(45, 8)} />
         <Motes f={f} color={C.lamp} op={0.16} />
       </SVG>
     );
@@ -1106,19 +1133,26 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <ellipse cx={740} cy={800} rx={300} ry={240} fill="url(#s12l)" />
           <Character frame={from + f} x={rx} y={ry + 3 * clamp01(1 - click * 3)} scale={0.5} facing={1} pose="carry" gesture={0.6 + 0.4 * clamp01(1 - click * 3)} outfit="flannel" hairStyle="long" glasses headgear="bare" idleGain={1.2} />
           <Microscope x={rx + 108 * R} y={ry + 15 * R} s={1.1 * R} />
-          {click < 0.25 && <circle cx={850} cy={846} r={70 * (1 - click * 4)} fill={C.lamp} opacity={0.35 * (1 - click * 4)} />}
-          <TallyCounter x={850} y={846} scale={0.42} count={300 + Math.floor(f / 11) + click} press={clamp01(1 - click * 3)} f={f} worn={0.4} />
+          {click < 0.25 && <circle cx={732} cy={858} r={60 * (1 - click * 4)} fill={C.lamp} opacity={0.35 * (1 - click * 4)} />}
+          <TallyCounter x={732} y={858} scale={0.36} count={125 + Math.floor(f / 11) + click} press={clamp01(1 - click * 3)} f={f} worn={0.4} />
         </g>
         {/* foreground: the clipboard, a numberless limit line, the inked hand with the pen */}
         <g filter="url(#s12fg)">
-          <g transform="rotate(-4 430 1070)">
-            <rect x={120} y={860} width={620} height={420} rx={16} fill={C.paper} stroke={C.ink} strokeWidth={6} />
-            <rect x={300} y={840} width={260} height={50} rx={10} fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} />
-            {Array.from({length: 4}, (_, i) => <rect key={i} x={180} y={960 + i * 34} width={300 - i * 40} height={10} rx={5} fill="#8A8476" opacity={0.5} />)}
+          <g transform={`translate(0,${340 * rack}) rotate(-4 430 1070)`}>
+            <rect x={132} y={876} width={620} height={420} rx={16} fill="#000" opacity={0.3} />
+            <rect x={110} y={850} width={640} height={440} rx={18} fill="#6A4A30" stroke={C.ink} strokeWidth={6} />
+            <rect x={120} y={860} width={620} height={420} rx={14} fill={C.paper} stroke={C.ink} strokeWidth={5} />
+            {Array.from({length: 7}, (_, i) => <path key={i} d={`M150,${930 + i * 46} H710`} stroke="#B9B2A0" strokeWidth={2} />)}
+            {[330, 470, 600].map((cx) => <path key={cx} d={`M${cx},910 V1250`} stroke="#B9B2A0" strokeWidth={2} />)}
+            <rect x={470} y={1114} width={130} height={46} fill="#FFF7E2" stroke="#8A8476" strokeWidth={2} strokeDasharray="6 4" />
+            {Array.from({length: 4}, (_, i) => <rect key={i} x={160} y={942 + i * 46} width={150 - i * 18} height={9} rx={4} fill="#8A8476" opacity={0.45} />)}
+            <rect x={300} y={826} width={260} height={56} rx={12} fill="#8E949A" stroke={C.ink} strokeWidth={5} />
+            <rect x={312} y={834} width={236} height={12} rx={6} fill="#FFFFFF" opacity={0.45} />
+            <circle cx={430} cy={866} r={9} fill="#5A6066" stroke={C.ink} strokeWidth={3} />
             <path d={`M180,1160 L${180 + 460 * line},1152`} stroke={C.ink} strokeWidth={8} strokeLinecap="round" />
             <InkHand x={180 + 460 * line + 195 * 0.62} y={1152 - 77 * 0.62} rot={0} s={0.62} pen sleeve="#c98a2a" />
           </g>
-          <g transform="translate(870,1220)"><MachineTag x={0} y={0} s={0.9} /></g>
+          <AgeTag x={800} y={1150} text="7" f={f} scale={1.3} />
         </g>
         <Plate text="MANAGERS SET LIMITS · NOT MACHINES" y={500} size={28} p={q(46, 12) * (1 - ease(f, bAt(47) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="MICROSCOPE STILL IN THE PROCESS" y={500} size={28} p={q(47, 12)} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
@@ -1135,7 +1169,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const feed = ease(f, bAt(48), 40);
     const trophy = pop(48, 14);
     const glow = q(49, 30);
-    const cloth = 1 - ease(f, bAt(49), 18);
+    const cloth = 1 - clamp01((f - bAt(49)) / 16) * (q(49, 4) > 0 ? 1 : 0);
     const dive = ease(f, bAt(50) - 6, 18);
     const flip = ease(f, bAt(50) + 6, 12);
     const grow = ease(f, bAt(51) - 8, 10);
@@ -1154,11 +1188,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             <path d="M-70,376 L-210,720 L210,720 L70,376 Z" fill={C.lamp} opacity={0.06 + 0.04 * glow} />
           </g>
         ))}
-        <BenchLip f={f} tags={['4', '6', '7']} />
+        <BenchLip f={f} />
         {since(48) >= 0 && since(48) < 12 && <ImpactStar cx={757} cy={600} r={150} color={C.lamp} />}
         <NIRReader x={540} y={1240} scale={1.45} f={f} beam={0.5 + 0.5 * glow} spectrum={1} seed={3} plate="TRAINED ON THE ARCHIVE" cloth={cloth}
-          trophy={trophy} trophyScale={1.25} />
-        {trophy > 0.05 && <BrassSign x={330} y={688} lines={['CREDIT · NOAA SCIENTISTS']} size={22} s={Math.min(1, trophy)} rot={-2} />}
+          trophy={trophy} trophyScale={1.25} trophyPlate="CREDIT · NOAA SCIENTISTS" />
         {glint > 0 && glint < 1 && <g>
           <clipPath id="s13pl"><rect x={298} y={1121} width={484} height={64} rx={10} /></clipPath>
           <rect x={lerp(240, 800, glint)} y={1100} width={40} height={110} fill="#FFF6DC" opacity={0.7} transform={`skewX(-24)`} clipPath="url(#s13pl)" />
@@ -1220,7 +1253,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     picture = (
       <SVG>
         <Bench f={f} id="s14" />
-        <BenchLip f={f} tags={['3', '7', '9']} />
+        <BenchLip f={f} />
         <BenchScope x={STONE.x} y={STONE.y} scale={1.05} drop={ease(f, 0, 14)} lamp={1} f={f} />
         <Otolith x={STONE.x} y={STONE.y} scale={STONE.s} f={0} rings={STONE.rings} counted={1} pulse={pulse} rot={STONE.rot} />
         {f < 14 && <TickRings grow={1} fly={1} op={1 - ease(f, 0, 12)} />}
@@ -1231,14 +1264,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <BrassSign x={540} y={1245} s={set} lines={[flipK < 0.5 ? 'WHO COUNTED?' : 'SOMEBODY COUNTED']} size={42} rot={swing} flip={flipK} minW={16 * 42 * 0.602 + 15 * 1.5 + 124} />
         )}
         {/* the specimen label: where this stone came from, back on it for the close */}
-        <path d="M282,822 C250,790 236,760 232,724" fill="none" stroke="#6B5A3C" strokeWidth={3} />
+        <path d="M282,822 C200,800 120,760 104,712" fill="none" stroke="#6B5A3C" strokeWidth={3} />
         <g transform="translate(232,706) rotate(-4)">
           <rect x={-142} y={-26} width={284} height={52} rx={6} fill="#E8DDBF" stroke={C.ink} strokeWidth={4} />
-          <circle cx={0} cy={-16} r={4} fill="none" stroke={C.ink} strokeWidth={2} />
-          <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.ink}>ALEUTIANS · 2022</text>
+          <circle cx={-128} cy={0} r={5} fill="none" stroke={C.ink} strokeWidth={2.5} />
+          <text x={8} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.ink}>ALEUTIANS · 2022</text>
         </g>
-        <Plate text="OUR READ · THE COUNT CAME FIRST" y={500} size={22} tone="brass" p={1 - ease(f, dur - 8, 8)} />
-        <Plate text="EST. 144 YEARS OLD" y={580} size={32} tone="brass" p={ease(f, bAt(53) + CLICK, 8)} />
+        <Plate text="OUR READ · THE COUNT CAME FIRST" x={848} y={540} size={18} tone="brass" p={1 - ease(f, dur - 8, 8)} />
+        <Plate text="EST. 144 YEARS OLD" y={632} size={32} tone="brass" p={ease(f, bAt(53) + CLICK, 8)} />
       </SVG>
     );
     zoom = 1 + 0.04 * (f / dur);
