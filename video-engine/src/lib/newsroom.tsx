@@ -335,7 +335,7 @@ export const LeadSlot: React.FC<{
       </g>
       {/* the PENDING seal */}
       {seal > 0.01 && (
-        <g transform={`translate(${W / 2 - 70},${-H / 2 + 52}) rotate(-12) scale(${1 + 0.35 * (1 - clamp01(seal))})`} opacity={clamp01(seal * 2)}>
+        <g transform={`translate(${W / 2 + 6},${-H / 2 - 8}) rotate(-12) scale(${1 + 1.1 * (1 - clamp01(seal))})`} opacity={clamp01(seal * 3)}>
           <circle r={56} fill="none" stroke={NEWS.oxblood} strokeWidth={6} />
           <circle r={46} fill="none" stroke={NEWS.oxblood} strokeWidth={2.5} />
           <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={NEWS.oxblood}>PENDING</text>
@@ -349,7 +349,7 @@ export const LeadSlot: React.FC<{
             strokeDashoffset={-f * 1.2} />
           {box === 'empty' && <text x={0} y={16} textAnchor="middle" fontFamily="Fraunces, Georgia, serif" fontWeight={900} fontSize={46} fill={NEWS.oxblood} opacity={0.75 + 0.25 * boxPulse}>?</text>}
           {box === 'filled' && question.length > 0 && (
-            <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={INK} opacity={clamp01(fill)}>{question.join(' ')}</text>
+            <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={Math.min(30, (W - 68 - 40) / Math.max(1, question.join(' ').length) / 0.602)} fill={INK} opacity={clamp01(fill)}>{question.join(' ')}</text>
           )}
         </g>
       )}

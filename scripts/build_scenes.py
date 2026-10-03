@@ -304,6 +304,108 @@ def _resplit_bad_breaks(caps, dangling, numbers, limit=68):
     return out
 
 
+
+def _merge_by_sense(caps, max_chars=68):
+    """One card per clause, held long enough to read (2026-10-03, editor finding).
+
+    Alignment chunks cues at about 34 characters, so a 70-character sentence arrived as three
+    cards of under two seconds each, under the chars/15 s read floor, and torn mid-phrase
+    ("takes" / "effect Sunday"). Within one spoken line, a cue that does not end a sentence
+    absorbs the next while the pair still fits two caption rows (2 x 34), unless it already ends
+    on a comma and the line has more to say, in which case the comma is the break. Then each
+    card's HOLD extends into the silence after it, never past the next card, toward the read
+    floor (characters / 15 seconds). Start times are untouched, so sync is exactly as aligned.
+    """
+    out = []
+    for c in caps:
+        if out:
+            prev = out[-1]
+            same_line = prev.get("seg") == c.get("seg")
+            t = prev["text"].rstrip()
+            joined = t + " " + c["text"].lstrip()
+            if same_line and not t.endswith((".", "?", "!")) and len(joined) <= max_chars \
+                    and not (t.endswith(",") and len(t) >= 24):
+                prev["text"] = joined
+                prev["end"] = c["end"]
+                continue
+        out.append(dict(c))
+    for i, c in enumerate(out):
+        need = len(c["text"]) / 15.0
+        nxt = out[i + 1]["start"] - 0.04 if i + 1 < len(out) else c["end"] + 1.0
+        if c["end"] - c["start"] < need:
+            c["end"] = round(max(c["end"], min(nxt, c["start"] + need)), 3)
+    return out
+
+
+
+_SPLIT_BAD_END = {"a", "an", "the", "and", "or", "of", "to", "in", "on", "at", "for", "from", "with", "by",
+                  "as", "that", "its", "his", "her", "their", "is", "was", "are", "who", "whether", "more",
+                  "than", "conservative", "competing", "says", "discount", "include", "lists"}
+_SPLIT_GOOD_START = {"and", "but", "so", "because", "while", "whether", "which", "who", "a", "with", "in",
+                     "on", "at", "for", "from", "are", "more", "still"}
+
+
+def _cards_from_words(caps, max_chars=68):
+    """Rebuild each spoken line as one card, or two split at the best clause boundary
+    (2026-10-03, panel finding: aligner chunk edges tore "conservative / pollster" and left
+    "said it should have." as an orphan). Times come from the forced-alignment WORDS, never
+    from proportion. Display text is the spoken half with the caption fixups applied, and no
+    split may fall inside a fixup phrase."""
+    wpath = os.path.join(OUT, "audio", "words.json")
+    if not os.path.exists(wpath):
+        return caps
+    words = json.load(open(wpath)).get("words") or []
+    by_seg = {}
+    for w in words:
+        by_seg.setdefault(w.get("seg"), []).append(w)
+    fix = {}
+    sp = os.path.join(OUT, "vo_script.json")
+    if os.path.exists(sp):
+        fix = json.load(open(sp)).get("caption_fixups", {}) or {}
+    def show(ws):
+        t = " ".join(x["w"] for x in ws)
+        for k, v in fix.items():
+            t = re.sub(r"\b" + re.escape(k) + r"\b", v, t, flags=re.I)
+        return t
+    def inside_fix(ws, k):
+        left = " ".join(x["w"] for x in ws[:k]).lower()
+        right = " ".join(x["w"] for x in ws[k:]).lower()
+        whole = (left + " " + right)
+        for ph in fix:
+            ph = ph.lower()
+            for m in re.finditer(re.escape(ph), whole):
+                if m.start() < len(left) < m.end():
+                    return True
+        return False
+    out = []
+    for seg in sorted(k for k in by_seg if k is not None):
+        ws = by_seg[seg]
+        full = show(ws)
+        if len(full) <= max_chars:
+            out.append({"text": full, "start": ws[0]["s"], "end": ws[-1]["e"], "seg": seg})
+            continue
+        best, cost = None, 1e9
+        for k in range(2, len(ws) - 1):
+            a, b = show(ws[:k]), show(ws[k:])
+            if len(a) > max_chars or len(b) > max_chars or inside_fix(ws, k):
+                continue
+            last = ws[k - 1]["w"].lower().strip(",.?!")
+            c = abs(len(a) - len(b)) * 0.5
+            if ws[k - 1]["w"].endswith((",", ".", "?")):
+                c -= 40
+            if ws[k]["w"].lower() in _SPLIT_GOOD_START:
+                c -= 12
+            if last in _SPLIT_BAD_END:
+                c += 60
+            if c < cost:
+                best, cost = k, c
+        if best is None:
+            out.extend(c for c in caps if c.get("seg") == seg)
+            continue
+        out.append({"text": show(ws[:best]), "start": ws[0]["s"], "end": ws[best - 1]["e"], "seg": seg})
+        out.append({"text": show(ws[best:]), "start": ws[best]["s"], "end": ws[-1]["e"], "seg": seg})
+    return out
+
 def _rebalance_cues(caps):
     """Never break a caption between a number and its unit, or inside a proper noun.
 
@@ -552,7 +654,7 @@ def main():
     # Apply on the way in AND on the way out; the inbound pass still helps rebalance split
     # on corrected text.
     caps = _rebalance_cues(_apply_caption_fixups(json.load(open(os.path.join(OUT, "captions.json")))))
-    caps = _apply_caption_fixups(caps)
+    caps = _merge_by_sense(_cards_from_words(_apply_caption_fixups(caps)))
     start = {L["idx"]: L["start"] for L in lines}
     last_end = max(L["end"] for L in lines)
     total_s = last_end + TAIL

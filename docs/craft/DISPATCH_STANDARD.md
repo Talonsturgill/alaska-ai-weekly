@@ -314,3 +314,30 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
   the 2.5 million pair archive as the training set once the archive was introduced by that
   number. Where two true figures sit near each other, the plate names the smaller one (archive
   SAMPLES) so the viewer can't merge them.
+
+## 10. Things the 2026-10-03 panel found that were knowable in advance
+
+- **A serif quote plate is wider than a mono one.** Fraunces at weight 900 runs about 0.68 em per
+  character in caps, not the 0.56 the first QuotePlate assumed, and five quote plates overflowed
+  their borders in round 1. Size a serif plate at 0.68 em plus 90 px, or measure it.
+- **An impact must land inside the window it is graded in.** Filmstrips are eight frames centred on
+  the beat plus its peak offset. A slam that completes in six frames before the window opens reads
+  as a static plate (2 to 3 percent motion). Put the contact about 0.3 s after the beat and keep
+  the settle, the desk jolt and the shake running through the window.
+- **A flip that pays a loop is mid-flip on its beat, not finished.** A 24-frame flip that started on
+  the beat read as "already flipped" in the sampled window.
+- **The lower third of the 9:16 is a stage, not padding.** Below the caption card (y 1475 to 1920)
+  every exterior or room shot needs a near plane: a curb and kit bag, a front row of seats, a
+  second belt lane, a grass ridge. An empty floor there was named in every round.
+- **A light event has to change the room.** A screen-blended shaft over cream paper is invisible.
+  Dim everything except the subject (about 40 percent), then draw the shaft opaque with its own
+  dust, and keep the slot itself out of the dim.
+- **One set and one character carry a contact sheet only so far.** The newsroom wall and the same
+  front-on Walter drawing carried nine and five shots; the flow critic counts that. Vary the
+  vantage (low angle on the masthead, a close-up on the screen) before adding a set.
+- **A 13-second shot that carries two VO lines is two shots.** Split it at the line boundary and
+  flip at least two heavy axes, rather than adding motion to one setup.
+- **A sequenced plate still needs its own position.** plate_overlap_check reads geometry, not
+  timing, and accepts no comment exemptions: give the second plate of a pair a different y.
+- **An inset opening over a plate retires the plate first.** A cross-fade under a new inset leaves
+  ghosted type for the frames they share.
