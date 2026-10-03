@@ -1,14 +1,15 @@
 {
   "last_pass": {
-    "date": "2026-10-02",
+    "date": "2026-10-03",
     "shipped": [
-      "character-finish-lags-props",
-      "rig-light-follows-facing"
+      "vo-wer-canonicalizer",
+      "caption-chunk-by-sense",
+      "caption-check-banned-words",
+      "strip-name-driver-vocabulary",
+      "transform-with-clippath-lint"
     ],
-    "commit": "937bb99",
-    "escalated": [
-      "held-gesture-idle: stopped mid-item, unverified work reverted, rerun next pass"
-    ]
+    "engine_advance": "lib/captionrows.ts + lib/captions.tsx shared caption row breaker (unrendered until Ep1004 imports it)",
+    "escalated": []
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
 }

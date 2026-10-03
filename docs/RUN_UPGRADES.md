@@ -3787,3 +3787,8 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - In-run fixes: machine_due.py read the dict-shaped last_pass; build_scenes rebuilds caption cards from word timings, splitting at sentences and clauses with a read-floor hold (_cards_from_words, _merge_by_sense); per-run tables rewritten in dispatch_mix and build_evidence (slam strips centred on contact); git identity set to the owner and the run's commits re-authored.
 - VO: 220 words ran 95 to 112 s; vo-director pause tags at the act turns gave a 113.1 s take; four lines patched in-slot for source fidelity (vo_patch_lines).
 - DISPATCH_STANDARD §10 added (9 findings). Queued: per-run-tables-from-board, caption-check-banned-words, vo-words-band-vs-runtime, moose-off-model, git-identity-at-setup; caption-chunk-by-sense now repeat 7.
+
+## 2026-10-03 — weekly machine pass
+- Shipped, each verified by its own self-test: vo-wer-canonicalizer (WER aliases derived from the run's pronunciations, compound joins, t/d flaps; the curated lists are deleted), caption-chunk-by-sense (shared lib/captionrows.ts and CaptionBar, and caption_render_check fails dangling rows), caption-check-banned-words (brand.yaml banned_vocabulary, word_ban.py, wired into caption_check and vo_claims_check), strip-name-driver-vocabulary (bAt/since drivers), transform-with-clippath-lint (staging_check AST lint).
+- Engine advance: the shared caption component, proven in node and tsc only. Ep1004 is its first render, and it needs a caption-band probe strip.
+- Escalated: none. 18 items stay open and none is a repeat offender.

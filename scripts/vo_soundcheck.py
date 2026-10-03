@@ -143,7 +143,7 @@ def _canon_token(tok):
     return [tok]
 
 
-def _norm_words(s):
+def _norm_words(s, aliases=None):
     s = s.lower()
     # currency/percent SYMBOLS carry a spoken word that a bare regex strip would
     # silently drop ("$50,000" -> heard has no "dollars"; "60%" -> no "percent"),
@@ -188,43 +188,89 @@ def _norm_words(s):
             out.append(w)
     if run:
         out.append("".join(run))
-    # COMPOUND JOIN (2026-07-20): Whisper transcribes closed compounds as two words
-    # ("airstrip" -> "air strip", "megafire" -> "mega fire", "wildfire" -> "wild fire"),
-    # so a script using the closed form scored 2 word-errors PER compound and inflated
-    # WER above threshold on every take of a compound-heavy script (the Nenana/wildfire
-    # run: all 4 takes 0.09-0.10 vs 0.08 max, purely from air/strip + mega/fire). Same
-    # canonicalizer-precision class as the earlier $/% fix. Join a curated set of common
-    # closed compounds SYMMETRICALLY (applied to ref AND hyp), so it can only cancel a
-    # tokenization mismatch, never invent a missing word: if the hyp truly dropped a
-    # word, the bigram won't be present to join. Extend the set as new compounds recur.
-    _COMPOUNDS = {("air", "strip"): "airstrip", ("mega", "fire"): "megafire",
-                  ("wild", "fire"): "wildfire", ("data", "center"): "datacenter",
-                  ("data", "centers"): "datacenters", ("grid", "lock"): "gridlock",
-                  ("air", "base"): "airbase", ("ear", "stone"): "earstone",
-                  ("ear", "stones"): "earstones"}
-    # DIRECTED PRONUNCIATIONS (2026-10-02). The VO plan tells the voice to say NOAA as
-    # "Noah", the voice obeys, and Whisper writes the word it heard: "Noah". Scored raw,
-    # every NOAA in the script was a word error for doing exactly what it was told, which
-    # on the 10-02 script (eight NOAAs in 220 words) was 0.036 of a 0.08 ceiling and failed
-    # all three takes. Map the spoken form back to the written one, symmetrically, so only
-    # the acronym's own reading is forgiven. A genuine mishearing of anything else still
-    # counts. Extend with each acronym the pronunciation map respells.
-    # A flapped American t in "otolith" (OH-toh-lith) is heard by Whisper as a d. Same class:
-    # the word was said as directed and only its spelling in the transcript differs.
-    _SPOKEN = {"noah": "noaa", "noah's": "noaa's", "noahs": "noaa's",
-               "odolith": "otolith", "odoliths": "otoliths"}
-    out = [_SPOKEN.get(w, w) for w in out]
-    joined, i = [], 0
-    while i < len(out):
-        if i + 1 < len(out) and (out[i], out[i + 1]) in _COMPOUNDS:
-            joined.append(_COMPOUNDS[(out[i], out[i + 1])]); i += 2
+    # SPOKEN ALIASES ARE DERIVED, NOT CURATED (machine pass 2026-10-03). Until today
+    # this held a hand-written _SPOKEN map ("noah" -> "noaa", "odolith" -> "otolith") and
+    # a curated _COMPOUNDS pair list, each grown one entry per run after every take of
+    # that run had already failed (07-18, 07-19, 07-20, 10-02). The three shapes are now
+    # general: aliases come from the run's own pronunciation map (spoken_aliases), split
+    # compounds are joined against the other side's vocabulary (_join_compounds), and a
+    # flapped t heard as d is a match inside a long word (_flap_equal). See _wer.
+    if aliases is None:
+        aliases = _default_aliases()
+    return [aliases.get(w, w) for w in out]
+
+
+# THE RUN'S PRONUNCIATION MAP IS THE ALIAS LIST. vo_direction.json tells the voice to
+# say NOAA as "Noah"; the voice obeys and Whisper writes "Noah". The written word and
+# its directed reading are therefore one word for scoring, on BOTH sides, so a script
+# that happens to contain the spoken form is treated identically and nothing else is
+# forgiven. A syllable respelling ("OH-toh-lith") has a different token count from its
+# word and is skipped: Whisper never writes syllables, and the flap rule covers what it
+# does write for those.
+_DIRECTION = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "out", "dispatch",
+                          "vo_direction.json")
+
+
+def spoken_aliases(pronunciations):
+    """{spoken token: written token} from a vo_direction `pronunciations` map."""
+    out = {}
+    for written, spoken in (pronunciations or {}).items():
+        w = _norm_words(str(written), aliases={})
+        sp = _norm_words(str(spoken), aliases={})
+        if not w or len(w) != len(sp):
+            continue
+        for a, b in zip(sp, w):
+            if a != b:
+                out[a] = b
+                if a.endswith("'s"):
+                    out[a[:-2] + "s"] = b       # Whisper drops the apostrophe: "Noahs"
+    return out
+
+
+def _default_aliases():
+    try:
+        return spoken_aliases(json.load(open(_DIRECTION)).get("pronunciations"))
+    except Exception:
+        return {}
+
+
+def _join_compounds(words, vocab):
+    """Join a split pair wherever its concatenation is a word in `vocab`.
+
+    Whisper writes "ear stones" as "earstones" and "airstrip" as "air strip". _wer passes
+    the UNION of both sides' words and applies the same join to both, so it can only
+    cancel a tokenization mismatch, never invent a word: a pair is joined everywhere or
+    nowhere, and a dropped word leaves nothing to join."""
+    out, i = [], 0
+    while i < len(words):
+        if i + 1 < len(words) and words[i] + words[i + 1] in vocab:
+            out.append(words[i] + words[i + 1]); i += 2
         else:
-            joined.append(out[i]); i += 1
-    return joined
+            out.append(words[i]); i += 1
+    return out
 
 
-def _wer(ref, hyp):
-    r, h = _norm_words(ref), _norm_words(hyp)
+_VOWELS = set("aeiouy")
+
+
+def _flap_equal(a, b):
+    """An American flapped t reads to Whisper as a d ("otoliths" -> "odoliths"). Accept a
+    t/d swap only between vowels, never at either end, and only in a word longer than five
+    letters, so "ten"/"den" and "bat"/"bad" still count as errors."""
+    if a == b:
+        return True
+    if len(a) != len(b) or len(a) <= 5:
+        return False
+    diff = [i for i in range(len(a)) if a[i] != b[i]]
+    return bool(diff) and all(
+        {a[i], b[i]} == {"t", "d"} and 0 < i < len(a) - 1
+        and a[i - 1] in _VOWELS and a[i + 1] in _VOWELS for i in diff)
+
+
+def _wer(ref, hyp, aliases=None):
+    r, h = _norm_words(ref, aliases), _norm_words(hyp, aliases)
+    vocab = set(r) | set(h)
+    r, h = _join_compounds(r, vocab), _join_compounds(h, vocab)
     if not r:
         return 0.0
     # Levenshtein over word lists
@@ -233,7 +279,7 @@ def _wer(ref, hyp):
         prev, dp[0] = dp[0], i
         for j in range(1, len(h) + 1):
             cur = dp[j]
-            dp[j] = min(dp[j] + 1, dp[j - 1] + 1, prev + (r[i - 1] != h[j - 1]))
+            dp[j] = min(dp[j] + 1, dp[j - 1] + 1, prev + (not _flap_equal(r[i - 1], h[j - 1])))
             prev = cur
     return dp[len(h)] / len(r)
 
@@ -276,7 +322,7 @@ def _lufs(wav):
     return float(meter.integrated_loudness(data))
 
 
-def check(wav, spoken_text, tags=None, dur_lo=None, dur_hi=None):
+def check(wav, spoken_text, tags=None, dur_lo=None, dur_hi=None, aliases=None):
     dur_lo = DUR_LO if dur_lo is None else dur_lo
     dur_hi = DUR_HI if dur_hi is None else dur_hi
     tags = tags or []
@@ -284,7 +330,7 @@ def check(wav, spoken_text, tags=None, dur_lo=None, dur_hi=None):
     print(f"soundcheck {os.path.basename(wav)}: transcribing", file=sys.stderr, flush=True)
     heard = _transcribe(wav)
     print(f"soundcheck {os.path.basename(wav)}: ASR complete after {time.monotonic()-started:.1f}s; pitch analysis", file=sys.stderr, flush=True)
-    wer = _wer(spoken_text, heard)
+    wer = _wer(spoken_text, heard, aliases)
     # A LEAK IS AN EXCESS, NOT A PRESENCE (2026-09-23). This was a set intersection of
     # tag words against heard words, with no reference to the script, so any tag word that
     # is ALSO a real word in the writing failed the take no matter how the model read it.
@@ -294,8 +340,8 @@ def check(wav, spoken_text, tags=None, dur_lo=None, dur_hi=None):
     # was 3.7 percent. A spoken tag ADDS occurrences, so counting is what separates the two,
     # and the gate keeps its teeth: say "[short pause]" aloud and "pause" exceeds the
     # script's own count immediately.
-    heard_counts = Counter(_norm_words(heard))
-    script_counts = Counter(_norm_words(spoken_text))
+    heard_counts = Counter(_norm_words(heard, aliases))
+    script_counts = Counter(_norm_words(spoken_text, aliases))
     tag_words = set(w for t in tags for w in _norm_words(t))
     leaked = sorted(w for w in (tag_words | NOTE_WORDS)
                     if heard_counts[w] > script_counts.get(w, 0))
@@ -336,7 +382,7 @@ def _diagnose(c):
     return "clean"
 
 
-def pick_best(wavs, spoken_text, tags=None):
+def pick_best(wavs, spoken_text, tags=None, aliases=None):
     """Choose the take to ship: quality first, but RUNTIME IS A SELECTION CRITERION.
 
     WHY (2026-08-05, measured during the 90s -> 120s upgrade). Take-to-take duration
@@ -355,7 +401,7 @@ def pick_best(wavs, spoken_text, tags=None):
     Quality is never traded away. A failing take is still never preferred to a passing
     one, and the in-band set is still ranked by the same score as before.
     """
-    reports = [check(w, spoken_text, tags) for w in wavs]
+    reports = [check(w, spoken_text, tags, aliases=aliases) for w in wavs]
     for r, w in zip(reports, wavs):
         r["seconds"] = r["checks"]["duration"]["seconds"]
     passing = [i for i, r in enumerate(reports) if r["pass"]]
@@ -379,15 +425,82 @@ def pick_best(wavs, spoken_text, tags=None):
     return best, reports
 
 
+def _self_test():
+    """Each case is a defect this canonicalizer once had, or a mishearing it must still
+    count. Then the 10-02 shipped take is re-scored from the archive with aliases derived
+    from that run's own vo_direction.json, which is the proof the curated lists are gone
+    without the takes failing again."""
+    fails = []
+
+    def eq(name, got, want):
+        ok = got == want if not isinstance(want, tuple) else want[0] <= got <= want[1]
+        print(f"  [{'x' if ok else ' '}] {name}: {got!r}")
+        if not ok:
+            fails.append(f"{name}: got {got!r}, want {want!r}")
+
+    noaa = spoken_aliases({"NOAA": "Noah", "NOAA's": "Noah's", "otolith": "OH-toh-lith",
+                           "Herz": "hurts"})
+    eq("pronunciation map -> aliases", noaa,
+       {"noah": "noaa", "noah's": "noaa's", "noahs": "noaa's", "hurts": "herz"})
+    eq("directed NOAA heard as Noah is no error",
+       _wer("NOAA scientists count the rings", "Noah scientists count the rings", noaa), 0.0)
+    eq("without the map it is one error",
+       _wer("NOAA scientists count the rings", "Noah scientists count the rings", {}), 0.2)
+    eq("a real mishearing still counts with the map",
+       _wer("NOAA scientists count the rings", "Noah scientists count the wings", noaa), 0.2)
+    eq("split compound joined against the other side",
+       _wer("its ear stones say", "its earstones say", {}), 0.0)
+    eq("closed compound heard split", _wer("a remote airstrip", "a remote air strip", {}), 0.0)
+    eq("a dropped word is not joined away", _wer("its ear stones say", "its ear say", {}), 0.25)
+    eq("flapped t inside a long word", _wer("tiny otoliths", "tiny odoliths", {}), 0.0)
+    eq("t/d at a word edge still counts", _wer("the bat", "the bad", {}), 0.5)
+    eq("t/d in a short word still counts", _wer("the metal", "the medal", {}), 0.5)
+    eq("money and percent still canonical",
+       _wer("$1.6 million, 60%", "1.6 million dollars 60 percent", {}), 0.0)
+    eq("no curated alias survives: noah is a word without a map",
+       _norm_words("Noah", aliases={}), ["noah"])
+
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+    try:
+        heard = json.load(open(os.path.join(root, "runs/2026-10-02/vo_report.json")))["soundcheck"]["heard"]
+        pron = json.load(open(os.path.join(root, "runs/2026-10-02/vo_direction.json")))["pronunciations"]
+        import subprocess
+        script = subprocess.run(["git", "-C", root, "show", "28b9d93:runs/2026-10-02/vo_script.txt"],
+                                capture_output=True, text=True, check=True).stdout.replace("\n", " ")
+        w_map = _wer(script, heard, spoken_aliases(pron))
+        w_raw = _wer(script, heard, {})
+        print(f"  10-02 shipped take vs its synth script: WER {w_map:.3f} with the run's map, "
+              f"{w_raw:.3f} without (ceiling {WER_MAX})")
+        eq("10-02 take passes on derived aliases", w_map <= WER_MAX, True)
+    except Exception as e:                       # archive or git object absent: report, don't fake
+        print(f"  [-] 10-02 re-score skipped: {e}")
+    print("SELF-TEST", "FAIL" if fails else "PASS")
+    for f in fails:
+        print("  FAIL", f)
+    return 1 if fails else 0
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--audio", required=True)
-    ap.add_argument("--script", required=True, help="the intended SPOKEN words (no tags/notes)")
+    ap.add_argument("--audio")
+    ap.add_argument("--script", help="the intended SPOKEN words (no tags/notes)")
+    ap.add_argument("--self-test", action="store_true",
+                    help="hermetic WER canonicalizer tests, plus a re-score of the 10-02 take")
     ap.add_argument("--tags", default="", help="comma-sep inline tags used, e.g. '[curious],[wry]'")
+    ap.add_argument("--direction", default=None,
+                    help="vo_direction.json whose pronunciations map is scored as aliases "
+                         "(default out/dispatch/vo_direction.json when present)")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
+    if a.self_test:
+        sys.exit(_self_test())
+    if not (a.audio and a.script):
+        ap.error("--audio and --script are required")
     tags = [t.strip() for t in a.tags.split(",") if t.strip()]
-    rep = check(a.audio, a.script, tags)
+    aliases = None
+    if a.direction:
+        aliases = spoken_aliases(json.load(open(a.direction)).get("pronunciations"))
+    rep = check(a.audio, a.script, tags, aliases=aliases)
     if a.json:
         print(json.dumps(rep, indent=2))
     else:

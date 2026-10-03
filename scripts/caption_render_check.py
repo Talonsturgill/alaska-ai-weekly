@@ -151,12 +151,85 @@ def crop_band(video, t, dest):
     return os.path.exists(dest) and os.path.getsize(dest) > 0
 
 
+# ROWS BY SENSE (machine pass 2026-10-03, caption-chunk-by-sense, repeat 7). The breaker is
+# video-engine/src/lib/captionrows.ts, shared by every episode through lib/captions. This runs
+# THAT function, in node, over the run's own cues, so the lint and the film can never disagree
+# about where a row breaks, and fails any row that ends on a word pointing at the next row:
+# "caught in the" / "Aleutians", "600 to" / "800 percent", "first." alone was the cue builder's.
+ROWS_TS = os.path.join(REPO, "video-engine", "src", "lib", "captionrows.ts")
+ESBUILD = os.path.join(REPO, "video-engine", "node_modules", ".bin", "esbuild")
+ROW_MAX = 37
+
+
+def caption_rows(texts, max_chars=ROW_MAX):
+    """[(rows, [dangling reason or None per row])] for each text, from the engine's own code."""
+    tmp = tempfile.mkdtemp(prefix="caprows_")
+    js = os.path.join(tmp, "captionrows.cjs")
+    subprocess.run([ESBUILD, ROWS_TS, "--format=cjs", "--platform=node", f"--outfile={js}",
+                    "--log-level=error"], check=True)
+    prog = ("const m=require(process.argv[1]);let s='';process.stdin.on('data',d=>s+=d);"
+            "process.stdin.on('end',()=>{const a=JSON.parse(s);process.stdout.write(JSON.stringify("
+            "a.texts.map(t=>{const r=m.captionRows(t,a.max);return [r,r.map(m.danglingEnd)];})));});")
+    out = subprocess.run(["node", "-e", prog, js], input=json.dumps({"texts": texts, "max": max_chars}),
+                         capture_output=True, text=True, check=True).stdout
+    return json.loads(out)
+
+
+def row_lint(cues, max_chars=ROW_MAX):
+    """Failure lines for every caption row that ends on a dangling word."""
+    texts = [c["text"] for c in cues]
+    fails = []
+    for c, (rows, why) in zip(cues, caption_rows(texts, max_chars)):
+        for i, (r, y) in enumerate(zip(rows, why)):
+            if y:
+                where = "card" if i == len(rows) - 1 else f"row {i + 1}"
+                fails.append(f"t={c['t']:.2f}s {where} {r!r}: {y}")
+    return fails
+
+
+def _self_test():
+    bad = [{"t": 0.0, "d": 3, "text": "Fish carry tiny ear stones, and NOAA counts the"},
+           {"t": 3.0, "d": 3, "text": "Per NOAA, that's 600 to"},
+           {"t": 6.0, "d": 3, "text": "The Press reports Alaska News's"}]
+    good = [{"t": 0.0, "d": 3, "text": "This rockfish was caught in the Aleutians in twenty twenty-two."},
+            {"t": 3.0, "d": 3, "text": "Per NOAA, that's six hundred to eight hundred percent more efficient."},
+            {"t": 6.0, "d": 3, "text": "He told Walter it's not very good"}]
+    fails = []
+    got_bad = row_lint(bad)
+    for c in bad:
+        hit = any(f.startswith(f"t={c['t']:.2f}s") for f in got_bad)
+        print(f"  [{'x' if hit else ' '}] dangling card caught: {c['text']!r}")
+        if not hit:
+            fails.append(c["text"])
+    got_good = row_lint(good)
+    for (rows, _), c in zip(caption_rows([c["text"] for c in good]), good):
+        print(f"  rows {rows}")
+    print(f"  [{'x' if not got_good else ' '}] sense breaks pass clean: {got_good or 'no dangling row'}")
+    if got_good:
+        fails += got_good
+    print("SELF-TEST", "FAIL" if fails else "PASS")
+    return 1 if fails else 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--video", default=os.path.join(REPO, "out/dispatch/dispatch_master.mp4"))
     ap.add_argument("--props", default=os.path.join(REPO, "out/dispatch/episode_props.json"))
     ap.add_argument("--samples", type=int, default=8)
+    ap.add_argument("--rows-only", action="store_true",
+                    help="lint the cue rows with the engine's breaker and stop; no video needed")
+    ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
+    if a.self_test:
+        return _self_test()
+    if a.rows_only:
+        cues = (json.load(open(a.props)).get("captions") or [])
+        fails = row_lint(cues)
+        for f in fails:
+            print("  - " + f)
+        print(f"{'FAIL' if fails else 'PASS'} [caption_render_check rows] {len(fails)} dangling "
+              f"row(s) in {len(cues)} cues")
+        return 1 if fails else 0
 
     if not os.path.exists(a.video):
         print(f"caption_render_check: SKIP, no delivered cut at {a.video}")
@@ -184,6 +257,16 @@ def main():
               f"shape compares against undefined on every frame, matches nothing, and renders an "
               f"empty caption band for the whole film. Convert at the boundary in "
               f"scripts/build_scenes.py.")
+        return 1
+
+    dangling = row_lint(cues)
+    if dangling:
+        print(f"FAIL [caption_render_check] {len(dangling)} caption row(s) end on a word that "
+              f"points at the next row, as lib/captionrows.ts breaks them:")
+        for f in dangling:
+            print("  - " + f)
+        print("Re-cue the line at a clause boundary in scripts/build_scenes.py (_cards_from_words) "
+              "or reword it; never pad a row to move the break.")
         return 1
 
     good = [c for c in cues if c["d"] > 0.35 and c["text"].strip()]

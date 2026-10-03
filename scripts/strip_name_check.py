@@ -17,7 +17,7 @@ and misrepresented the film, and the cost is the most expensive kind, because it
 judge attention and in a score that then reads as a craft verdict.
 
 WHAT THIS CHECKS. For every entry in build_evidence.MOVES it finds which `n === k` branch of
-the episode animates that beat, through q(), pop() or at(), and compares the beat's own
+the episode animates that beat, through q(), pop(), at(), since() or bAt(), and compares the beat's own
 storyboard `shot` field against it. A mismatch means the strip is named from a beat sheet
 that no longer describes the picture. A beat no shot animates at all is worse: the pack will
 photograph a moment the film never stages.
@@ -49,6 +49,14 @@ def episode_path(board_date):
     return os.path.join(REPO, "video-engine", "src", guess)
 
 
+# A beat is animated in a shot when the shot keys anything to that beat's time: the helpers
+# q(N), pop(N), at(N), since(N), or bAt(N) itself as the start of ease/spring/land/interpolate
+# or a state switch (machine pass 2026-10-03). Until then only the three helpers counted, so
+# 10-02 had six beats driven by ease(f, bAt(N)) reported unanimated and rewrote the FILM to
+# satisfy the checker, twice in one run.
+DRIVER = re.compile(r"\b(?:q|pop|at|since|bAt)\((\d+)")
+
+
 def shot_of_beat(src):
     """beat id -> the first `n === k` branch that animates it."""
     body = src[src.index("let picture: React.ReactNode"):]
@@ -57,16 +65,36 @@ def shot_of_beat(src):
     out = {}
     for i, (n, a) in enumerate(marks):
         b = marks[i + 1][1] if i + 1 < len(marks) else len(body)
-        for m in re.finditer(r"\b(?:q|pop|at)\((\d+)", body[a:b]):
+        for m in DRIVER.finditer(body[a:b]):
             out.setdefault(int(m.group(1)), n)
     return out
+
+
+def _self_test():
+    src = """
+  let picture: React.ReactNode = null;
+  if (n === 1) { const k = q(3); }
+  else if (n === 2) { const drop = ease(f, bAt(4), 9); const s = spring(f, bAt(5) + 6, 18); }
+  else if (n === 3) { const t = interpolate(f, [bAt(6), bAt(6) + 20], [0, 1]); const w = since(7); }
+  else if (n === 4) { const d = 12; }
+"""
+    got = shot_of_beat(src)
+    want = {3: 1, 4: 2, 5: 2, 6: 3, 7: 3}
+    ok = got == want
+    print(f"  [{'x' if ok else ' '}] q(N), ease/spring(f, bAt(N)), interpolate([bAt(N)]) and since(N) "
+          f"all count: {got}")
+    print("SELF-TEST", "PASS" if ok else "FAIL")
+    return 0 if ok else 1
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--board", default=os.path.join(REPO, "out", "dispatch", "storyboard.json"))
     ap.add_argument("--episode")
+    ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
+    if a.self_test:
+        return _self_test()
 
     board = json.load(open(a.board))
     src = open(a.episode or episode_path(board.get("run_date"))).read()
