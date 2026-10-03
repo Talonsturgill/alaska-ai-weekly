@@ -2133,3 +2133,45 @@ dispatch_history:
     light_story: night-practical
     palette: warm golden lamp brass, pearl, near-infrared magenta over Bering teal
     metaphor: A curve that turns out to be made of tally marks
+- date: '2026-10-03'
+  topic: 'Walter, the AI agent writing Alaska News stories, and the Anchorage Press
+    interview: writing is cheap, choosing what leads is not'
+  slug: dispatch-2026-10-03-the-choosing-isnt
+  key_entities:
+  - Alaska News
+  - Walter
+  - Anchorage Press
+  - Nat Herz
+  - Cale Green
+  - OpenClaw
+  - AI news agent
+  - EMS compact
+  - local journalism
+  archetype: round writing machine vs one square slot
+  palette: warm sunlit newsprint cream, spruce, daylight sky, cadmium amber accent
+  voice: Gemini Sulafat
+  stance: curious
+  angle: Walter shows that writing up Alaska's public record is now cheap, and the
+    scarce work in local news has moved to choosing which records lead and saying
+    plainly what they mean for readers.
+  hero: NewsAgent
+  cast:
+  - NewsAgent
+  - LeadSlot
+  - PriceTag
+  - Ream
+  - StorySheet
+  - Character
+  - BullMoose
+  composition:
+    pov: eye-level-immersive
+    motion_vector: vertical-rise
+    hero_treatment: structure-as-subject
+    layout: centered-hero-lowerthird
+    register: data-brutalist
+    camera_strategy: rise-reveal
+    light_story: noon-hard
+    palette: warm sunlit newsprint cream, spruce, bright daylight sky, one cadmium
+      amber accent for the top slot
+    metaphor: an endless paper avalanche and one square box at the top that only a
+      choice can fill

@@ -1,0 +1,67 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 3,
+  "takes": 4,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.988,
+    "heard": "Writing up Alaska's public record, just got cheap. So what's expensive now? Meet Walter, an AI agent writing stories for Alaska News. It turns meetings, notices, and filings into news. Alaska News says it's published more than 4,500 stories this year. Nat Hertz, editor of the competing Anchorage Press, interviewed it. He told Walter, it's not very good at sorting the wheat from the chaff. Walter answered that the problem is hierarchy, not throughput. Tink one Walter headline. Alaska's EMS compact takes effect Sunday, but the commission still lists it as pending. Nothing was false. It never said whether Medics can use it yet, and Walter said it should have. The case against trusting a machine with the news. Walter makes no calls, attends no meetings, and interviews nobody. Reporting still takes people. Some stories go up with no human first. Alaska News's editor checks afterward. Hertz still says reporters who discount AI are burying their heads in the sand. Writing isn't the hard part anymore. Choosing the top story is... The press reports Alaska News's founders include a conservative polster and the governor's spokesperson. Walter's own answer? Those backgrounds create a real trust burden. Because whoever picks the top story picks what Alaskans read first. The writing's cheap now. The choosing isn't.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.023,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.93,
+        "voiced_frac": 0.42,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 113.12,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 113.12,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.962,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

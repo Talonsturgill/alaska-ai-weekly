@@ -3780,3 +3780,10 @@ caption-chunk-by-sense (repeat 6) still first in line.
 
 Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face, hands and hair, and world-space lighting so mirrored figures are lit from the same side as the props (closes character-finish-lags-props and rig-light-follows-facing). Verified by tsc and the new `scripts/rig_check.py` (lit side leads by +15 on both facings). The held-gesture idle item was stopped mid-work; its unverified commit was reverted and it stays queued.
 
+
+## 2026-10-03 — The Choosing Isn't (Walter, the Alaska News AI agent)
+- Shipped: 14 shots, 113.7 s plus credits. Panel median 7.11 (J1 7.35, J2 7.11, J3 6.95) against the 7.0 bar, no hard blockers. J1 rounds 6.34, 6.79, 7.04 (one type-on-type blocker), 7.35. Caption Gate B 8.59 after four rounds.
+- Net-new library: lib/newsroom.tsx (NewsAgent, LeadSlot, PriceTag, Ream, StorySheet). An in-episode BullMoose replaced the shelf Moose, which three judges read as a bison.
+- In-run fixes: machine_due.py read the dict-shaped last_pass; build_scenes rebuilds caption cards from word timings, splitting at sentences and clauses with a read-floor hold (_cards_from_words, _merge_by_sense); per-run tables rewritten in dispatch_mix and build_evidence (slam strips centred on contact); git identity set to the owner and the run's commits re-authored.
+- VO: 220 words ran 95 to 112 s; vo-director pause tags at the act turns gave a 113.1 s take; four lines patched in-slot for source fidelity (vo_patch_lines).
+- DISPATCH_STANDARD §10 added (9 findings). Queued: per-run-tables-from-board, caption-check-banned-words, vo-words-band-vs-runtime, moose-off-model, git-identity-at-setup; caption-chunk-by-sense now repeat 7.

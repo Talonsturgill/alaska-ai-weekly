@@ -1,0 +1,40 @@
+{
+ "j1": {
+  "judge_id": "J1",
+  "round": 4,
+  "weighted_total": 7.35,
+  "hard_blockers": [],
+  "ship": true,
+  "history": [
+   6.34,
+   6.79,
+   7.04,
+   7.35
+  ]
+ },
+ "j2": {
+  "judge_id": "J2",
+  "round": 1,
+  "weighted_total": 7.11,
+  "hard_blockers": [],
+  "ship": true
+ },
+ "j3": {
+  "judge_id": "J3",
+  "round": 1,
+  "weighted_total": 6.95,
+  "hard_blockers": [],
+  "ship": false
+ },
+ "median": 7.11,
+ "bar_from_rubric": 7.0,
+ "named_open_defects": [
+  "S8 reporter never sits; handset and notebook staging",
+  "S7 shrug reads as hands-up; medic outfit reads police",
+  "S10 moose finish lags (drawn this run; shelf redraw queued); desert-like dune",
+  "S11 arrow swing weak, tag edge crop",
+  "S14 medic pose static on the fill",
+  "Sound: no location ambience beds (queued since 10-02)",
+  "Open hook slow (first 1.5 s)"
+ ]
+}

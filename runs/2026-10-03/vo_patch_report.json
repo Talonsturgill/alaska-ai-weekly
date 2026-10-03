@@ -1,0 +1,46 @@
+{
+  "patches": [
+    {
+      "line": 9,
+      "text": "Nothing was false. It didn't say plainly whether medics can use it yet, and Walter said it should have.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 47.84,
+      "end": 54.68,
+      "slot_end": 55.06,
+      "cues": 4
+    },
+    {
+      "line": 13,
+      "text": "Herz still says reporters who discount AI's value are burying their heads in the sand.",
+      "wer": 0.067,
+      "pace": 1.0,
+      "start": 75.98,
+      "end": 81.83,
+      "slot_end": 82.78,
+      "cues": 3
+    },
+    {
+      "line": 15,
+      "text": "The Press reports Alaska News's founders include a conservative pollster and a spokesperson for the governor.",
+      "wer": 0.062,
+      "pace": 1.0,
+      "start": 90.1,
+      "end": 96.95,
+      "slot_end": 97.48,
+      "cues": 4
+    },
+    {
+      "line": 17,
+      "text": "Whoever picks the top story picks what Alaskans read first.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 103.2,
+      "end": 107.3,
+      "slot_end": 108.84,
+      "cues": 2
+    }
+  ],
+  "splice_verified": true,
+  "note": "Per-line ASR verification plus a sample-exact check that everything outside the patched slots is unchanged. The whole-file ASR score was removed on 2026-07-31 after it measured 0.018/0.378/0.037 on three runs over identical input."
+}

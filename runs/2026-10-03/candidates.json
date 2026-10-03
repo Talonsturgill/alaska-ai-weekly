@@ -1,0 +1,78 @@
+{
+ "run_id": "2026-10-03",
+ "window_days": 10,
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 14,
+   "note": "4 researchers: gov/edu science, energy/defense/data, fisheries/wildlife/rural, wildcard+primary. Each used its 20 WebSearch cap."
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "candidates_found": 5,
+   "note": "uaf.edu/news, gi.alaska.edu, alaskapublic, adn, ktoo, kdll, kdlg, knba, alaskasnewssource, anchoragepress swept by WebFetch; alaskabeacon 403"
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": true,
+   "candidates_found": 2,
+   "note": "NSF api awardeeStateCode=AK (AI critical minerals 2614749, out of window), Anchorage AO 2026-108 ordinance text, Federal Register (nothing)"
+  }
+ ],
+ "search_budget_exhausted": true,
+ "uncapped_sweep_done": true,
+ "candidates": [
+  {
+   "headline": "Walter, the AI agent writing most Alaska News stories, interviewed by the Anchorage Press",
+   "date": "2026-09-25",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "verdict": "LOCKED: a genuine AI system working in Alaska now, two independent outlets, rich verbatim exchange, fresh subject, curious stance rotates off yesterday's celebratory"
+  },
+  {
+   "headline": "Bristol Bay 45.7M sockeye run and a Dillingham AI drone counting pilot",
+   "date": "2026-10-02",
+   "verdict": "runner-up: AI half is a July story and yesterday shipped a fisheries ML film"
+  },
+  {
+   "headline": "Fairbanks Assembly candidates split on data center moratorium before Oct 6",
+   "date": "2026-09-29",
+   "verdict": "overlaps the 09-23 Air Force data center film"
+  },
+  {
+   "headline": "Mat-Su 20,000 acre AIDEA transfer that could include data centers",
+   "date": "2026-09-16",
+   "verdict": "no AI deployed, third data-center story in a month"
+  },
+  {
+   "headline": "UAF Windracers ULTRA 1,000 km blood sample flight from Nenana",
+   "date": "2026-09-16",
+   "verdict": "autonomy undocumented, close to 09-11 Ryan Air film"
+  },
+  {
+   "headline": "Cook Inlet beluga death and NOAA acoustic ML",
+   "date": "2026-09-30",
+   "verdict": "AI half is 2020 background"
+  },
+  {
+   "headline": "Anchorage police surveillance ordinance delayed to October 20th",
+   "date": "2026-09-16",
+   "verdict": "better pegged to the Oct 20 vote"
+  },
+  {
+   "headline": "UA regents draft AI policy",
+   "date": "2026-09-18",
+   "verdict": "single source, no primary"
+  }
+ ],
+ "locked_story": {
+  "headline": "Walter, the AI agent writing Alaska News stories, and the Anchorage Press interview",
+  "found_at_rung": "in_window_sweep",
+  "date": "2026-09-25",
+  "sources": [
+   "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "https://alaskapublic.org/2026-09-25/this-alaska-journalist-interviewed-an-ai-news-reporter-and-he-didnt-run-away-screaming"
+  ]
+ }
+}
