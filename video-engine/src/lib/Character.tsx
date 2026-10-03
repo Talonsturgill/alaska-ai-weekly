@@ -1,5 +1,5 @@
 import React from 'react';
-import {tones, FormGradient, RimLight, ContactShadow, LIGHT} from './lighting';
+import {tones, RimLight, ContactShadow, LIGHT, Tones} from './lighting';
 import {TalkMouth, ambientMouth} from './voice';
 import {humanIdle} from './motion';
 
@@ -21,6 +21,35 @@ import {humanIdle} from './motion';
 // =============================================================================
 
 export const INK = '#101423';
+
+/** lighting.FormGradient with the light UN-MIRRORED. The rig draws inside a group that `facing`
+ *  flips, so a gradient authored for the house key (screen upper left) lands on the screen's
+ *  right for a figure facing left unless its x axis is flipped back. Same stops and softness. */
+const LitGradient: React.FC<{id: string; t: Tones; softness: number; flip: boolean}> = ({id, t, softness, flip}) => {
+  const dx = LIGHT.dir.x * (flip ? -1 : 1), dy = LIGHT.dir.y;
+  return (
+    <linearGradient id={id} x1={`${(0.5 - dx * 0.5 * softness) * 100}%`} y1={`${(0.5 + dy * 0.5 * softness) * 100}%`}
+      x2={`${(0.5 + dx * 0.5 * softness) * 100}%`} y2={`${(0.5 - dy * 0.5 * softness) * 100}%`}>
+      <stop offset="0%" stopColor={t.key} />
+      <stop offset="42%" stopColor={t.base} />
+      <stop offset="78%" stopColor={t.core} />
+      <stop offset="100%" stopColor={t.shade} />
+    </linearGradient>
+  );
+};
+
+/** THE COAT, 2026-10-02 finish pass. It was a rounded slab, 184 px across the shoulders and 204
+ *  at the hem, its top edge level with the ears, so it flared PAST the hips and the arms hung
+ *  inside it like stickers on a door; all three 10-02 judges wrote "a slab jacket that juts past
+ *  the hips". A garment has a shoulder line, a waist and a hip: the shoulders now slope down
+ *  from beside the head to a shoulder point (168 px across), the side comes in under the arm to
+ *  a waist (132), and the hem (140) turns under at rounded corners, so the hanging arms sit ON
+ *  the silhouette's edge. Torso space, (0,0) on the hip line. Every overlay is clipped to it. */
+const BODY =
+  'M0,-192 C22,-192 42,-190 56,-184 C70,-178 82,-168 84,-150 C86,-132 82,-112 78,-98 ' +
+  'C74,-82 66,-66 66,-50 C66,-34 70,-18 70,-6 Q70,8 56,9 Q0,15 -56,9 Q-70,8 -70,-6 ' +
+  'C-70,-18 -66,-34 -66,-50 C-66,-66 -74,-82 -78,-98 C-82,-112 -86,-132 -84,-150 ' +
+  'C-82,-168 -70,-178 -56,-184 C-42,-190 -22,-192 0,-192 Z';
 
 /** Overshooting arrival: leaves the old value fast, passes the target once, and lands
  *  EXACTLY on 1 at u=1. Same curve as motion.tsx's settle(); inlined because that one is
@@ -180,6 +209,18 @@ export const Character: React.FC<CharacterProps> = ({
   look = 0,
 }) => {
   const c = {...OUTFITS[outfit], ...(trim ? {trim} : {})};
+  // ---- WORLD-SPACE LIGHT (2026-10-02 finish pass) ------------------------------------------
+  // Everything below is drawn in a space `facing` mirrors, so shading authored on the rig's left
+  // landed on the screen's RIGHT for a figure facing left: the 10-02 manager, under a left-hand
+  // lamp, wore his rim and sheen on the far side and a judge read it as "a ghosted duplicate
+  // layer" (fixed in-run by switching it off with lightWrap). Side-specific shading is now
+  // authored once for the house key (screen upper left) and un-mirrored here, so a figure facing
+  // either way is lit from the same side as the props around it.
+  const flipLight = facing === -1;
+  /** transform for a group of shading authored with the key at the rig's -x */
+  const litFlip = flipLight ? 'scale(-1,1)' : undefined;
+  /** the lit side's sign in rig space */
+  const LS = flipLight ? 1 : -1;
   // breathing: a visible chest rise+fall. Bumped round 10 — the panel kept reading standers as
   // "frozen sprites" partly because the old amplitude was too small to register in a ~0.5s review
   // strip; a clearer breath (plus the weight-shift below) means any half-second window shows life.
@@ -375,11 +416,15 @@ export const Character: React.FC<CharacterProps> = ({
     live * (0.85 * Math.sin(T * RATE(3.8) + ph * 0.6) + 0.55 * Math.sin(T * RATE(2.15) + ph * 1.9))
     - chestRot * 0.45 + look;
 
-  const skinShade = '#c99268';
   // per-instance ids so each figure's form-shading gradients stay unique in the doc
   const uid = `ch${Math.round(x)}_${Math.round(y)}_${outfit}_${facing}`;
   const tMain = tones(c.main);
   const tSkin = tones(skin);
+  // The skin's shade is DERIVED from the skin. It was a constant #c99268, which is darker than
+  // the default skin and LIGHTER than a deep one, so every "shadow" on a dark-skinned face
+  // painted a pale patch and the face read as lit from inside.
+  const skinShade = tSkin.shade;
+  const tHair = tones(hair);
 
   // ---- face per emotion --------------------------------------------------
   const face = () => {
@@ -398,16 +443,20 @@ export const Character: React.FC<CharacterProps> = ({
             <ellipse cx={19} cy={-14} rx={emotion === 'shock' ? 13 : 9.5} ry={emotion === 'smug' ? 6 : emotion === 'shock' ? 15 : 11} fill="#fff" stroke={INK} strokeWidth={4.5} />
             {/* iris (2026-07-21 parity pass): a colored ring under the pupil so the eyes read as
                 designed EYES, not ink dots — the single cheapest "finish parity" win on the face */}
-            <circle cx={-15 + 2 * facing} cy={-13} r={emotion === 'shock' ? 5.2 : 6.6} fill={eyes} opacity={0.95} />
-            <circle cx={21 + 2 * facing} cy={-13} r={emotion === 'shock' ? 5.2 : 6.6} fill={eyes} opacity={0.95} />
-            <circle cx={-15 + 2 * facing} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
-            <circle cx={21 + 2 * facing} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
+            {/* WHERE THE EYES LOOK. Rig space is already mirrored by `facing`, so +x is the way the
+                figure faces. This was 2 + 2 * facing, a second mirror: a figure facing right looked
+                ahead and a mirrored one stared into the lens. Both now look the way they face. */}
+            <circle cx={-13} cy={-13} r={emotion === 'shock' ? 5.2 : 6.6} fill={eyes} opacity={0.95} />
+            <circle cx={23} cy={-13} r={emotion === 'shock' ? 5.2 : 6.6} fill={eyes} opacity={0.95} />
+            <circle cx={-13} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
+            <circle cx={23} cy={-13} r={emotion === 'shock' ? 3.4 : 4.4} fill={INK} />
             {/* upper eyelid line — the eye sits under a lid, not floating on the face */}
             <path d="M-26,-22 q9,-6 18,-2" stroke={INK} strokeWidth={2.8} opacity={0.35} fill="none" strokeLinecap="round" />
             <path d="M10,-24 q9,-4 18,0" stroke={INK} strokeWidth={2.8} opacity={0.35} fill="none" strokeLinecap="round" />
             {/* catchlight: a tiny lit-side highlight on each pupil so the eyes read as wet/alive, not flat dots */}
-            <circle cx={-17 + 2 * facing} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
-            <circle cx={21 + 2 * facing} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
+            {/* the catchlight sits on the KEY side of each pupil, in world space */}
+            <circle cx={-13 + 2 * LS} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
+            <circle cx={23 + 2 * LS} cy={-16} r={1.7} fill="#fff" opacity={0.9} />
           </g>
         )}
         {/* brows */}
@@ -444,8 +493,14 @@ export const Character: React.FC<CharacterProps> = ({
         {/* nose (2026-07-21 parity pass): a small drawn nose over the round-9 plane shading, so the
             face has actual features between the eyes and mouth — kept light so the friendly house
             face survives, but no longer a featureless oval */}
-        <path d={`M${1 + facing},-6 q5,9 1,16 q-2,2 -6,1`} stroke={INK} strokeWidth={3.2} opacity={0.5} fill="none" strokeLinecap="round" />
-        <path d={`M${-2 + facing},-4 q-2,8 0,14`} stroke={skinShade} strokeWidth={4} opacity={0.5} fill="none" strokeLinecap="round" />
+        <path d="M2,-6 q5,9 1,16 q-2,2 -6,1" stroke={INK} strokeWidth={3.4} opacity={0.6} fill="none" strokeLinecap="round" />
+        {/* the nose as a FORM: a crisp cast shadow under it on the side away from the key, a lit
+            bridge and a lit tip on the key side (un-mirrored, like every plane on this face) */}
+        <g transform={litFlip}>
+          <path d="M2,11 q7,1 9,-5 q0,7 -9,9 Z" fill={skinShade} opacity={0.75} />
+          <path d="M-2,-5 q-2,7 -1,12" stroke="#fff" strokeWidth={2.6} opacity={0.32} fill="none" strokeLinecap="round" />
+          <circle cx={-1} cy={9} r={2.3} fill="#fff" opacity={0.32} />
+        </g>
         {/* cheek blush — warmth so the skin reads as skin, not a flat swatch */}
         <ellipse cx={-29} cy={7} rx={7.5} ry={4.5} fill="#c96f4a" opacity={0.17} />
         <ellipse cx={33} cy={7} rx={7.5} ry={4.5} fill="#c96f4a" opacity={0.17} />
@@ -502,36 +557,56 @@ export const Character: React.FC<CharacterProps> = ({
     );
   };
 
-  // ---- hand (2026-07-21 parity pass) --------------------------------------
-  // A real cartoon hand — form-shaded palm + thumb + finger grooves + a trim-colored sleeve cuff —
-  // replacing the featureless mitten circle (a judge-cited "amateur tell"). `rot` aims the cuff at
-  // the arm it hangs from (0 = arm above the hand); grooves/thumb ride the rotation. Pure shapes,
-  // no filters, so the render cost is unchanged.
-  const hand = (hx: number, hy: number, rot = 0, r = 15) => (
-    <g transform={`translate(${hx},${hy}) rotate(${rot})`}>
-      {/* sleeve cuff at the wrist (toward the arm) */}
-      <rect x={-r * 0.85} y={-r * 1.55} width={r * 1.7} height={r * 0.8} rx={r * 0.32} fill={c.trim} stroke={INK} strokeWidth={3.5} />
-      {/* palm (form-shaded, not a flat disc) */}
-      <circle r={r} fill={`url(#${uid}_skin)`} stroke={INK} strokeWidth={5} />
-      {/* thumb */}
-      <ellipse cx={-r * 0.72} cy={r * 0.24} rx={r * 0.4} ry={r * 0.55} fill={skin} stroke={INK} strokeWidth={3.5} />
-      {/* finger grooves */}
-      <path d={`M${-r * 0.12},${r * 0.1} v${r * 0.72}`} stroke={INK} strokeWidth={2.2} opacity={0.4} strokeLinecap="round" fill="none" />
-      <path d={`M${r * 0.38},${r * 0.05} v${r * 0.66}`} stroke={INK} strokeWidth={2.2} opacity={0.4} strokeLinecap="round" fill="none" />
-      {/* knuckle highlight (key light from upper-left) */}
-      <path d={`M${-r * 0.5},${-r * 0.45} q${r * 0.5},${-r * 0.3} ${r},0`} stroke="#fff" strokeWidth={2.5} opacity={0.24} fill="none" strokeLinecap="round" />
-      {/* FINISH PARITY WITH THE PROPS. On a 15px palm a bounding-box gradient spans too
-          few pixels to read, so the hand went out flat next to a drip torch carrying a
-          gradient, a rim light, rivets and a fuel window. A core-shade crescent on the
-          away side and a cast tick under the cuff are what actually turn the disc into
-          a form at this size. */}
-      <path d={`M${r * 0.28},${-r * 0.86} a${r},${r} 0 0 1 0,${r * 1.72} a${r * 0.72},${r} 0 0 0 0,${-r * 1.72} Z`}
-            fill={INK} opacity={0.17} />
-      <path d={`M${-r * 0.72},${-r * 0.5} a${r * 0.86},${r * 0.86} 0 0 1 ${r * 0.9},${-r * 0.24}`}
-            fill="none" stroke="#fff" strokeWidth={2} opacity={0.3} strokeLinecap="round" />
-      <ellipse cx={0} cy={-r * 1.1} rx={r * 0.78} ry={r * 0.24} fill={INK} opacity={0.16} />
-    </g>
-  );
+  // ---- hand (2026-10-02 finish pass; first built 2026-07-21) ----------------
+  // ALL THREE 10-02 JUDGES: "plain oval hands". It was a stroked disc with a stroked thumb
+  // ellipse laid on it and two grooves, so at phone size it read as a ball in a cuff, next to
+  // brass that carries a hard shadow step. It is now ONE closed silhouette (palm into four
+  // finger ends, a thumb that leaves the palm at its own angle), ink outside and grooves
+  // inside, with a CEL STEP: a crisp shadow region on the side away from the key and a hard
+  // knuckle highlight toward it. The key's direction is taken into the hand's OWN rotated
+  // frame (and un-mirrored for `facing`), so the step is right at every arm angle.
+  // `rot` aims the cuff at the arm (0 = arm above the hand); the thumb is on local +x.
+  /** the house key's direction in a frame rotated by `rotDeg` inside this (mirrored) rig */
+  const keyIn = (rotDeg: number): [number, number] => {
+    const a = (rotDeg * Math.PI) / 180;
+    const kx = LIGHT.dir.x * (flipLight ? -1 : 1), ky = LIGHT.dir.y;
+    return [kx * Math.cos(a) + ky * Math.sin(a), -kx * Math.sin(a) + ky * Math.cos(a)];
+  };
+  /** a half-plane polygon covering everything past a terminator `d0` toward the far side */
+  const shadowSide = (lx: number, ly: number, d0: number, R: number) => {
+    const px = -ly, py = lx;
+    const T = (u: number, v: number) => `${(lx * u + px * v).toFixed(2)},${(ly * u + py * v).toFixed(2)}`;
+    return `M${T(d0, -R)} L${T(d0, R)} L${T(-R, R)} L${T(-R, -R)} Z`;
+  };
+  const hand = (hx: number, hy: number, rot = 0, r = 15) => {
+    const [lx, ly] = keyIn(rot);
+    const id = `${uid}_hd${Math.round(hx)}_${Math.round(hy)}_${Math.round(rot)}`;
+    const P = `M${-0.82 * r},${-0.72 * r} C${-1.02 * r},${-0.2 * r} ${-1.04 * r},${0.46 * r} ${-0.86 * r},${0.8 * r} `
+      + `C${-0.7 * r},${1.12 * r} ${-0.34 * r},${1.2 * r} ${-0.08 * r},${1.13 * r} `
+      + `C${0.18 * r},${1.2 * r} ${0.52 * r},${1.12 * r} ${0.72 * r},${0.88 * r} `
+      + `C${0.88 * r},${0.68 * r} ${0.94 * r},${0.38 * r} ${0.9 * r},${0.16 * r} `
+      + `C${1.2 * r},${0.1 * r} ${1.34 * r},${-0.14 * r} ${1.2 * r},${-0.38 * r} `
+      + `C${1.06 * r},${-0.6 * r} ${0.84 * r},${-0.62 * r} ${0.76 * r},${-0.72 * r} Z`;
+    return (
+      <g transform={`translate(${hx},${hy}) rotate(${rot})`}>
+        <clipPath id={id}><path d={P} /></clipPath>
+        {/* sleeve cuff at the wrist (toward the arm) */}
+        <rect x={-r * 0.85} y={-r * 1.55} width={r * 1.7} height={r * 0.8} rx={r * 0.32} fill={c.trim} stroke={INK} strokeWidth={3.5} />
+        <path d={P} fill={skin} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <g clipPath={`url(#${id})`}>
+          <path d={shadowSide(lx, ly, -0.12 * r, 3 * r)} fill={skinShade} opacity={0.75} />
+          <ellipse cx={lx * 0.5 * r} cy={ly * 0.5 * r} rx={0.36 * r} ry={0.22 * r} fill="#fff" opacity={0.3} />
+          {/* the cuff's cast shadow across the back of the hand */}
+          <ellipse cx={0} cy={-r * 0.8} rx={r * 0.9} ry={r * 0.26} fill={INK} opacity={0.2} />
+        </g>
+        {/* finger ends and the thumb crease */}
+        <path d={`M${-0.42 * r},${1.12 * r} v${-0.42 * r}`} stroke={INK} strokeWidth={2.3} opacity={0.5} strokeLinecap="round" />
+        <path d={`M${-0.06 * r},${1.16 * r} v${-0.48 * r}`} stroke={INK} strokeWidth={2.3} opacity={0.5} strokeLinecap="round" />
+        <path d={`M${0.32 * r},${1.12 * r} v${-0.4 * r}`} stroke={INK} strokeWidth={2.3} opacity={0.5} strokeLinecap="round" />
+        <path d={`M${0.62 * r},${0.12 * r} q${0.16 * r},${0.16 * r} ${0.32 * r},${0.1 * r}`} stroke={INK} strokeWidth={2.2} opacity={0.45} fill="none" strokeLinecap="round" />
+      </g>
+    );
+  };
 
   // ---- articulated sleeve, drawn FROM a solved joint chain -----------------
   // Ink silhouette, garment inside it, a lit edge down the sun-facing side, and a soft
@@ -573,9 +648,13 @@ export const Character: React.FC<CharacterProps> = ({
         <path d={fore} fill="none" stroke={INK} strokeWidth={29} strokeLinecap="round" />
         <path d={up} fill="none" stroke={col} strokeWidth={22} strokeLinecap="round" />
         <path d={fore} fill="none" stroke={col} strokeWidth={18} strokeLinecap="round" />
-        {/* lit edge down the sun-facing side of the tube */}
-        <path d={`M${ch.sx - 3},${ch.sy + 5} L${ch.ex - 3},${ch.ey + 2} L${cx - 3},${cy - 4}`}
-              fill="none" stroke="#ffffff" strokeWidth={5} opacity={0.2 * lit}
+        {/* lit edge down the sun-facing side of the tube (world space, see LS), and the core
+            shadow down the far side, so the sleeve is a cylinder and not a flat ribbon */}
+        <path d={`M${ch.sx - 6 * LS},${ch.sy + 5} L${ch.ex - 6 * LS},${ch.ey + 2} L${cx - 5 * LS},${cy - 4}`}
+              fill="none" stroke={INK} strokeWidth={7} opacity={0.2}
+              strokeLinecap="round" strokeLinejoin="round" />
+        <path d={`M${ch.sx + 3 * LS},${ch.sy + 5} L${ch.ex + 3 * LS},${ch.ey + 2} L${cx + 3 * LS},${cy - 4}`}
+              fill="none" stroke="#ffffff" strokeWidth={5} opacity={0.24 * lit}
               strokeLinecap="round" strokeLinejoin="round" />
         {/* elbow crease on the inside of the joint — the bend reads as a bend */}
         <path d={`M${ch.ex + 9},${ch.ey - 5} q-4,6 -1,12`} fill="none" stroke={INK}
@@ -677,6 +756,7 @@ export const Character: React.FC<CharacterProps> = ({
           // part of a standing body, and it is what keeps a 0.27s window from being
           // pose-identical when the slower channels happen to be at their extremes.
           const wristLive = live * 1.2 * Math.sin(T * RATE(0.62) + ph * 3.1);
+          const PT = 'M-16,-15 q16,-9 30,-5 l30,3 q11,1 11,8 q0,7 -11,8 l-29,3 q4,10 -3,15 q-9,6 -18,1 q-12,-7 -13,-17 q-1,-11 3,-16 Z';
           return (
             <g>
               {offArm(
@@ -699,16 +779,20 @@ export const Character: React.FC<CharacterProps> = ({
                         inside the silhouette and the sleeve stroke dead-ended in the
                         middle of the palm. Every other hand in the film is a single closed
                         form with INTERNAL lines, which is what this is now. */}
-                    <path d="M-16,-15 q16,-9 30,-5 l30,3 q11,1 11,8 q0,7 -11,8 l-29,3
-                             q4,10 -3,15 q-9,6 -18,1 q-12,-7 -13,-17 q-1,-11 3,-16 Z"
+                    <path d={PT}
                           fill={skin} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+                    {/* the same cel step every other hand carries, in this hand's own frame */}
+                    <clipPath id={`${uid}_pt`}><path d={PT} /></clipPath>
+                    <g clipPath={`url(#${uid}_pt)`}>
+                      <path d={shadowSide(...keyIn(hRot + wristLive), -3, 60)} fill={skinShade} opacity={0.72} />
+                    </g>
                     {/* the cuff, on the arm axis by construction rather than 20 degrees off it */}
                     <rect x={-30} y={-14} width={16} height={28} rx={6} fill={c.trim}
                           stroke={INK} strokeWidth={4} />
                     {/* internal lines: the knuckle break and the thumb crease */}
-                    <path d="M2,-9 q3,9 0,17" fill="none" stroke={INK} strokeWidth={2.6} opacity={0.45} strokeLinecap="round" />
-                    <path d="M-9,6 q7,4 13,3" fill="none" stroke={INK} strokeWidth={2.4} opacity={0.4} strokeLinecap="round" />
-                    <path d="M-14,-11 q13,-6 26,-3" fill="none" stroke="#fff" strokeWidth={2.4} opacity={0.26} strokeLinecap="round" />
+                    <path d="M2,-9 q3,9 0,17" fill="none" stroke={INK} strokeWidth={2.6} opacity={0.5} strokeLinecap="round" />
+                    <path d="M-9,6 q7,4 13,3" fill="none" stroke={INK} strokeWidth={2.4} opacity={0.45} strokeLinecap="round" />
+                    <path d="M-14,-11 q13,-6 26,-3" fill="none" stroke="#fff" strokeWidth={2.4} opacity={0.3} strokeLinecap="round" />
                   </g>
                 </g>
               )}
@@ -735,7 +819,7 @@ export const Character: React.FC<CharacterProps> = ({
               <g>
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-                <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.07} />
+                <path d={`M${-46 + 3 * LS},270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.07} />
                 {hand(-52, 358, 0, 14)}
               </g>
             )}
@@ -751,7 +835,7 @@ export const Character: React.FC<CharacterProps> = ({
                 stiff: it is loaded. The free arm and the whole upper body still move. */}
             <path d={`M46,264 q46,20 74,${64 + 1.5 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
             <path d={`M46,264 q46,20 74,${64 + 1.5 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-            <path d={`M44,258 q44,18 70,${58 + 1.5 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.2} />
+            <path d={`M${46 + 2 * LS},258 q44,18 70,${58 + 1.5 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.2} />
             {hand(120, 330 + 1.5 * Math.sin(f / 13), -22, 14)}
           </g>
         );
@@ -819,7 +903,7 @@ export const Character: React.FC<CharacterProps> = ({
               <g>
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
                 <path d={`M-46,266 q-14,46 -6,${88 + 2 * Math.sin(f / 13)}`} fill="none" stroke={c.main} strokeWidth={22} strokeLinecap="round" />
-                <path d={`M-49,270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.07} />
+                <path d={`M${-46 + 3 * LS},270 q-13,42 -6,${80 + 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" opacity={0.07} />
                 {hand(-52, 358, 0, 14)}
               </g>
             )}
@@ -827,7 +911,7 @@ export const Character: React.FC<CharacterProps> = ({
               <g>
                 <path d={`M46,266 q14,46 6,${88 - 2 * Math.sin(f / 13)}`} fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" />
                 <path d={`M46,266 q14,46 6,${88 - 2 * Math.sin(f / 13)}`} fill="none" stroke={c.shade} strokeWidth={22} strokeLinecap="round" />
-                <path d={`M43,270 q13,42 6,${80 - 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={4} strokeLinecap="round" opacity={0.11} />
+                <path d={`M${46 + 3 * LS},270 q13,42 6,${80 - 2 * Math.sin(f / 13)}`} fill="none" stroke="#ffffff" strokeWidth={4} strokeLinecap="round" opacity={0.11} />
                 {hand(52, 356, 0, 14)}
               </g>
             )}
@@ -908,10 +992,10 @@ export const Character: React.FC<CharacterProps> = ({
         <ContactShadow cx={A.x + 8} cy={20} rx={30} ry={7} opacity={0.34} blur={5} />
         <path d={legOutline(H, K, A, wH, wK, wA)} fill={`url(#${uid}_pants)`}
               stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-        <path d={inner(wH - 24)} fill="none" stroke="#fff" strokeWidth={8} opacity={0.13} strokeLinecap="round" />
-        <path d={inner(wH - 8)} fill="none" stroke={INK} strokeWidth={10} opacity={0.24} strokeLinecap="round" />
-        {/* rim on the sun-facing (screen-left) contour, same cue the coat carries */}
-        <RimLight d={`M${H.x - wH},${H.y + 14} C${H.x - wH},${m1} ${K.x - wK},${m1} ${K.x - wK},${K.y}`}
+        {/* lit strip, core strip and rim, all on the KEY's side in world space (LS) */}
+        <path d={inner(5 * LS)} fill="none" stroke="#fff" strokeWidth={8} opacity={0.13} strokeLinecap="round" />
+        <path d={inner(-11 * LS)} fill="none" stroke={INK} strokeWidth={10} opacity={0.24} strokeLinecap="round" />
+        <RimLight d={`M${H.x + LS * wH},${H.y + 14} C${H.x + LS * wH},${m1} ${K.x + LS * wK},${m1} ${K.x + LS * wK},${K.y}`}
                   w={4} opacity={0.5} />
         {/* THE KNEE BREAK, read the way a trouser actually shows one: a lit kneecap over
             the joint and the fabric bunching in two creases just under it. On a dark
@@ -958,9 +1042,11 @@ export const Character: React.FC<CharacterProps> = ({
           stops fall mostly OUTSIDE the shape's own bounds, so only a sliver of the key-to-shade
           range is ever visible and every character read as flat clip-art next to harder-lit props
           (2026-07-21 panel, 4 straight rounds citing the same "flat vector fill" defect). */}
-      <FormGradient id={`${uid}_body`} t={tMain} softness={0.62} />
-      <FormGradient id={`${uid}_skin`} t={tSkin} softness={0.6} />
-      <FormGradient id={`${uid}_pants`} t={tones(c.pants)} softness={0.55} />
+      <LitGradient id={`${uid}_body`} t={tMain} softness={0.62} flip={flipLight} />
+      <LitGradient id={`${uid}_skin`} t={tSkin} softness={0.6} flip={flipLight} />
+      <LitGradient id={`${uid}_pants`} t={tones(c.pants)} softness={0.55} flip={flipLight} />
+      {/* hair stops at its CORE tone: tones() takes dark hair to black at the shade stop */}
+      <LitGradient id={`${uid}_hair`} t={{...tHair, shade: tHair.core}} softness={0.7} flip={flipLight} />
       <g transform="translate(150,500)">
         {/* soft, light-direction contact shadow (AO) grounding the figure */}
         <ContactShadow cx={0} cy={4} rx={96} ry={18} opacity={0.42} blur={10} />
@@ -981,22 +1067,7 @@ export const Character: React.FC<CharacterProps> = ({
               motion of the upper body AGAINST the lower one rather than a translate of
               the whole figure, which is the thing a judge correctly reads as camera. */}
           <g transform={`translate(0,-160) rotate(${chestRot})`}>
-            <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" fill={`url(#${uid}_body)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-            {/* core shade on the shadow side + rim light on the sun-facing (left) contour */}
-            <path d="M34,-200 q52,10 58,50 l10,144 q2,16 -16,16 h-52 Z" fill={tMain.shade} opacity={0.88} />
-            {lightWrap > 0.01 && <RimLight d="M-92,-150 q6,-56 92,-56" w={6} opacity={0.85 * lightWrap} />}
-            <path d="M-78,-178 q12,-14 34,-18 l-6,70 q-20,-4 -32,-14 Z" fill="#ffffff" opacity={0.24 * lightWrap} />
-            {/* fabric sheen band + under-shade so the jacket reads as material, not a fill */}
-            <path d="M-60,-120 q60,18 120,4 l0,26 q-60,14 -120,-4 Z" fill="#ffffff" opacity={0.08} />
-            <path d="M-88,-30 q88,26 176,0 l0,30 q-88,22 -176,0 Z" fill={tMain.shade} opacity={0.45} />
-            {/* VOLUMETRIC COAT MODELING (2026-07-21 panel: coats read "flat plain-fill" next to the
-                depth-lit props). The right already carries the core shadow; add the three cues that
-                turn a flat panel into a rounded FORM: a soft central light column offset toward the
-                upper-left key, a far-LEFT turn-shade so the lit edge rolls off instead of ending in a
-                hard flat line, and a hem ambient-occlusion band where the coat belly turns under. */}
-            <ellipse cx={-14} cy={-124} rx={30} ry={86} fill="#ffffff" opacity={0.08} />
-            <path d="M-92,-150 q6,-56 30,-58 l-3,22 q-22,7 -25,42 l-5,66 q-4,-40 3,-72 Z" fill={tMain.shade} opacity={0.24} />
-            <path d="M-84,-16 q84,26 168,0 l3,22 q-86,24 -174,0 Z" fill={INK} opacity={0.15} />
+            <path d={BODY} fill={`url(#${uid}_body)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
             {/* EVERY GARMENT OVERLAY IS CLIPPED TO THE BODY (2026-08-04). Plaid, quilting
                 and stripes are all authored at fixed widths (the flannel plaid runs a flat
                 180px, the referee stripes 200px tall) while the torso silhouette tapers, so
@@ -1004,11 +1075,28 @@ export const Character: React.FC<CharacterProps> = ({
                 reported the same defect in three different shots: "an orphaned thin red arc
                 crosses outside the character silhouette", which is the flannel's #8a2a2a
                 plaid hanging past the coat. Clipping is the fix that holds for every outfit
-                rather than nudging one path until that one frame looks right. */}
+                rather than nudging one path until that one frame looks right. Since the
+                2026-10-02 finish pass the coat's own shading is clipped to it too. */}
             <clipPath id={`${uid}_garment`}>
-              <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" />
+              <path d={BODY} />
             </clipPath>
             <g clipPath={`url(#${uid}_garment)`}>
+            {/* COAT FINISH (2026-10-02). The props beside this figure carry CEL STEPS, a shadow
+                with a crisp terminator and hard-edged highlights, and the coat carried a soft
+                gradient plus washes at 8 percent, which is exactly "less finished than the brass".
+                Now: a core shadow with a hard terminator down the far side, a bounce light just
+                inside that edge, a hard key plane on the lit shoulder and a fainter one on the
+                chest, a turn shade rolling the lit edge off, the waist gathering, and the hem
+                turning under. Authored for the house key and un-mirrored by litFlip. */}
+            <g transform={litFlip}>
+              <path d="M24,-200 C44,-176 50,-128 44,-74 C40,-36 36,-8 32,20 L100,20 L100,-206 Z" fill={tMain.shade} opacity={0.72} />
+              <path d="M79,-146 C81,-118 73,-86 66,-58 C63,-36 66,-18 66,-4" fill="none" stroke={LIGHT.fill} strokeWidth={6} opacity={0.2} />
+              <path d="M-80,-158 C-72,-174 -52,-184 -28,-188 L-30,-176 C-52,-172 -68,-164 -74,-148 Z" fill="#ffffff" opacity={0.3 * lightWrap} />
+              <path d="M-62,-136 C-48,-146 -28,-148 -12,-146 L-16,-86 C-34,-90 -50,-98 -60,-108 Z" fill="#ffffff" opacity={0.1} />
+              <path d="M-90,-160 C-84,-120 -78,-84 -72,-40 L-61,-40 C-67,-84 -73,-122 -79,-160 Z" fill={tMain.shade} opacity={0.24} />
+            </g>
+            <path d="M-80,-62 Q0,-42 80,-62 L80,-46 Q0,-28 -80,-46 Z" fill={tMain.shade} opacity={0.2} />
+            <path d="M-80,-14 Q0,10 80,-14 L80,24 L-80,24 Z" fill={INK} opacity={0.17} />
             {outfit === 'parka' && (
               <g>
                 <path d="M0,-196 L0,4" stroke={INK} strokeWidth={5} />
@@ -1125,7 +1213,20 @@ export const Character: React.FC<CharacterProps> = ({
                 <circle cx={0} cy={-108} r={4.5} fill="#c9cfd8" stroke={INK} strokeWidth={2.5} />
               </g>
             )}
+            {/* the same terminator once more over the overlays, as a plain darkening, so a pocket
+                or a stripe on the shadow side sits in the shadow instead of glowing */}
+            <g transform={litFlip}>
+              <path d="M24,-200 C44,-176 50,-128 44,-74 C40,-36 36,-8 32,20 L100,20 L100,-206 Z" fill={INK} opacity={0.12} />
             </g>
+            {/* tension folds from the armpits to the waist: the coat is cut, it hangs */}
+            <path d="M-58,-104 q10,24 4,50" fill="none" stroke={INK} strokeWidth={2.5} opacity={0.24} strokeLinecap="round" />
+            <path d="M58,-104 q-10,24 -4,50" fill="none" stroke={INK} strokeWidth={2.5} opacity={0.24} strokeLinecap="round" />
+            </g>
+            {/* THE SHOULDER BREAK. The sleeve is set into the coat at a seam that runs from beside
+                the neck, round the shoulder point and down to the arm, so the top of the figure
+                reads as shoulders carrying arms instead of the rounded corners of a box. */}
+            <path d="M-54,-184 C-66,-164 -70,-130 -63,-106" fill="none" stroke={INK} strokeWidth={3} opacity={0.42} strokeLinecap="round" />
+            <path d="M54,-184 C66,-164 70,-130 63,-106" fill="none" stroke={INK} strokeWidth={3} opacity={0.42} strokeLinecap="round" />
             {/* LIGHT-WRAP + GROUNDING (2026-07-21 parity pass): the three cues that marry the
                 garment to the light and the head to the body — a left-contour rim on the lit edge,
                 the head's cast shadow on the chest (under-chin AO), and a stitched hem. Drawn over
@@ -1136,9 +1237,13 @@ export const Character: React.FC<CharacterProps> = ({
                 "a light grey slab behind his left shoulder ... an unresolved flat plate" and
                 "a light grey slab rather than a designed backpack", which is exactly what a
                 rim light reads as once it leaves the edge it is supposed to be lighting. */}
-            <RimLight d="M-86,-146 q-2,70 -3,116" w={2.5} opacity={0.15} />
-            <ellipse cx={0} cy={-146} rx={42} ry={10} fill={INK} opacity={0.14} />
-            <path d="M-84,-2 q84,22 168,0" fill="none" stroke={INK} strokeWidth={2.5} strokeDasharray="7 6" opacity={0.3} />
+            <g transform={litFlip}>
+              {lightWrap > 0.01 && <RimLight d="M-56,-183 C-70,-177 -81,-167 -83,-150 C-85,-132 -81,-112 -77,-98" w={5} opacity={0.8 * lightWrap} />}
+              <RimLight d="M-73,-86 C-67,-72 -65,-60 -65,-50" w={2.5} opacity={0.2} />
+              {/* the head's cast shadow on the collar, falling away from the key */}
+              <ellipse cx={8} cy={-150} rx={44} ry={11} fill={INK} opacity={0.2} />
+            </g>
+            <path d="M-58,1 Q0,11 58,1" fill="none" stroke={INK} strokeWidth={2.5} strokeDasharray="7 6" opacity={0.3} />
             {/* arms attach at shoulder height inside torso group (pose coords are authored
                 around y~260-360; shift them up to chest height in torso space). During a walk the
                 whole arm mass counter-swings the legs for upper-body follow-through. */}
@@ -1169,47 +1274,57 @@ export const Character: React.FC<CharacterProps> = ({
             const capCol = c.shade;
             return (
               <g>
-                {/* hood (plain, behind head) */}
+                {/* HOOD, behind the head. It was drawn as an arc and two quadratics that BOTH ran over
+                    the top, so it filled only the thin crescent between them and read as a halo
+                    wire around a bald head. A hood is a filled shell the face sits inside. */}
                 {hg === 'hood' && (
-                  <path d="M-78,20 a78,86 0 0 1 156,0 q0,-96 -78,-96 q-78,0 -78,96 Z" fill={c.shade} stroke={INK} strokeWidth={6} />
+                  <g>
+                    <path d="M-80,26 C-86,-42 -50,-92 0,-92 C50,-92 86,-42 80,26 Q0,44 -80,26 Z" fill={c.shade} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+                    <g transform={litFlip}>
+                      <path d="M-70,-30 C-62,-70 -34,-84 -8,-86" fill="none" stroke="#fff" strokeWidth={6} opacity={0.18} strokeLinecap="round" />
+                      <path d="M40,-76 C66,-60 78,-28 76,18 L60,18 C62,-20 54,-50 34,-66 Z" fill={INK} opacity={0.2} />
+                    </g>
+                    {/* the opening's own shadow ring, so the face sits IN the hood */}
+                    <circle r={62} fill="none" stroke={INK} strokeWidth={9} opacity={0.32} />
+                  </g>
                 )}
-                {/* skin — radial form light makes the head read spherical, not a flat disc */}
-                <radialGradient id={`${uid}_headlit`} cx={`${50 + LIGHT.dir.x * 26}%`} cy={`${50 - LIGHT.dir.y * -26}%`} r="72%">
+                {/* skin — radial form light makes the head read spherical, not a flat disc. Its centre
+                    is un-mirrored so a figure facing left is still lit from the screen's left. */}
+                <radialGradient id={`${uid}_headlit`} cx={`${50 + LIGHT.dir.x * 26 * (flipLight ? -1 : 1)}%`} cy={`${50 + LIGHT.dir.y * 26}%`} r="72%">
                   <stop offset="0%" stopColor={tSkin.key} />
                   <stop offset="58%" stopColor={skin} />
                   <stop offset="100%" stopColor={tSkin.shade} />
                 </radialGradient>
                 {/* ears (2026-07-21 parity pass): drawn UNDER the head circle so they poke out the
-                    sides — the head reads as a head, not a ball. Inner-ear shade for depth. */}
+                    sides — the head reads as a head, not a ball. Inner-ear shade for depth, and the
+                    ear on the far side of the key sits in shadow. */}
                 <ellipse cx={-56} cy={2} rx={10} ry={13} fill={skin} stroke={INK} strokeWidth={5} />
                 <ellipse cx={56} cy={2} rx={10} ry={13} fill={skin} stroke={INK} strokeWidth={5} />
-                <path d="M-58,-2 q4,4 3,9" stroke={skinShade} strokeWidth={3} opacity={0.6} fill="none" strokeLinecap="round" />
-                <path d="M58,-2 q-4,4 -3,9" stroke={skinShade} strokeWidth={3} opacity={0.6} fill="none" strokeLinecap="round" />
+                <g transform={litFlip}><ellipse cx={57} cy={3} rx={8} ry={11} fill={skinShade} opacity={0.55} /></g>
+                <path d="M-58,-2 q4,4 3,9" stroke={skinShade} strokeWidth={3} opacity={0.8} fill="none" strokeLinecap="round" />
+                <path d="M58,-2 q-4,4 -3,9" stroke={skinShade} strokeWidth={3} opacity={0.8} fill="none" strokeLinecap="round" />
                 <circle r={56} fill={`url(#${uid}_headlit)`} stroke={INK} strokeWidth={6} />
-                {/* whole shadow-side cheek falls into core shade — the single biggest read of a lit
-                    face, strengthened round 9 (2 judges still read the face as a flat disc through
-                    round 8; the prior planes were too faint to register at phone scale). */}
-                <path d="M12,-52 a56,56 0 0 1 44,52 a56,56 0 0 1 -30,50 q-18,-6 -20,-30 l4,-40 Z" fill={skinShade} opacity={0.42} />
-                {/* facial-plane shading (round 6, deepened round 9): the three planes a real face has,
-                    as SHADING only (no new outlined features, so the minimal IGS house-face style is
-                    kept): a soft key highlight on the sun-facing cheek + nose-bridge, a nose shadow on
-                    the shadow side, a brow/eye-socket shadow the eyes sit under, and a jaw/chin
-                    under-shadow. Lit from upper-screen-left; shadows fall right and under. */}
-                <ellipse cx={-22} cy={-14} rx={18} ry={26} fill={LIGHT.key} opacity={0.22} style={{mixBlendMode: 'screen'}} />
-                <g>
-                  {/* nose plane: a soft shadow down the shadow side of the bridge + a lit edge */}
-                  <path d="M3,-8 q6,11 2,21 q-5,4 -9,2" fill="none" stroke={skinShade} strokeWidth={5} opacity={0.42} strokeLinecap="round" />
-                  <path d="M-2,-8 q-3,11 -1,20" fill="none" stroke={LIGHT.key} strokeWidth={3} opacity={0.4} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
-                  {/* brow/eye-socket shadow the eyes sit beneath, giving the upper face a plane break */}
-                  <path d="M-34,-26 q34,-12 66,-2 l0,9 q-33,-9 -66,3 Z" fill={skinShade} opacity={0.24} />
-                  {/* jaw / chin under-shadow (form turning away at the bottom of the face) */}
-                  <path d="M-30,30 q30,20 60,2 q-8,24 -30,26 q-22,-1 -30,-28 Z" fill={skinShade} opacity={0.34} />
+                {/* FACE FINISH (2026-10-02). Three panels running read the face as a flat disc next
+                    to brass that carries hard-edged light. A gradient alone never reads at phone
+                    size; what the props do, and the face now does, is CEL STEPS: a core shadow with
+                    a crisp terminator, a jaw plane turning under, hard-edged key highlights on the
+                    forehead and the cheekbone, a bounce light inside the shadow edge, and a rim on
+                    the lit cheek. All authored for the house key and un-mirrored by litFlip. */}
+                <g transform={litFlip}>
+                  <path d="M8,-55 A56,56 0 0 1 40,39 Q20,40 14,22 Q21,-2 19,-24 Q16,-44 8,-55 Z" fill={skinShade} opacity={0.7} />
+                  <path d="M50,-16 A51,51 0 0 1 34,37" fill="none" stroke={LIGHT.fill} strokeWidth={4} opacity={0.24} strokeLinecap="round" />
+                  <ellipse cx={-22} cy={-35} rx={15} ry={6.5} transform="rotate(-24 -22 -35)" fill="#fff" opacity={0.38} />
+                  <ellipse cx={-33} cy={5} rx={8} ry={5.5} transform="rotate(-12 -33 5)" fill="#fff" opacity={0.3} />
+                  <path d="M-40,-40 a56,56 0 0 0 -14,44" fill="none" stroke={LIGHT.rim} strokeWidth={3.5} opacity={0.6} strokeLinecap="round" />
                 </g>
-                {/* rim on the sun-facing cheek */}
-                <path d="M-40,-40 a56,56 0 0 0 -14,44" fill="none" stroke={LIGHT.rim} strokeWidth={3.5} opacity={0.5} strokeLinecap="round" style={{mixBlendMode: 'screen'}} />
+                {/* brow/eye-socket plane, and the jaw plane turning under the chin */}
+                <path d="M-34,-26 q34,-12 66,-2 l0,9 q-33,-9 -66,3 Z" fill={skinShade} opacity={0.24} />
+                <path d="M-38,41 A56,56 0 0 0 38,41 Q0,51 -38,41 Z" fill={skinShade} opacity={0.42} />
                 {/* hair (visible under bare/cap/hood) */}
                 {(hg === 'bare' || hg === 'cap' || hg === 'hood') && (
                   <g>
+                    {/* the hair is a MASS above the skin, so it casts a band of shadow on the forehead */}
+                    <path d="M-56,-4 Q-38,-40 0,-40 Q38,-40 56,-4 L56,5 Q38,-31 0,-31 Q-38,-31 -56,5 Z" fill={skinShade} opacity={0.3} />
                     {/* long: two locks falling either side of the face, drawn OUTSIDE the
                         56px face radius so they frame it instead of covering it, plus the
                         same crown over the top. Together they change the silhouette at
@@ -1218,60 +1333,82 @@ export const Character: React.FC<CharacterProps> = ({
                     {hairStyle === 'long' && (
                       <g>
                         <path d="M-54,-22 q-22,44 -14,98 q4,16 20,18 q12,2 16,-8 q-16,-52 -6,-106 Z"
-                              fill={hair} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+                              fill={`url(#${uid}_hair)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
                         <path d="M54,-22 q22,44 14,98 q-4,16 -20,18 q-12,2 -16,-8 q16,-52 6,-106 Z"
-                              fill={hair} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+                              fill={`url(#${uid}_hair)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
                         <path d="M-50,10 q-10,42 -6,74" stroke={INK} strokeWidth={2.4} opacity={0.3} fill="none" strokeLinecap="round" />
                         <path d="M50,10 q10,42 6,74" stroke={INK} strokeWidth={2.4} opacity={0.3} fill="none" strokeLinecap="round" />
+                        {/* a lock catches the key down its outer edge; the far lock sits in shadow */}
+                        <g transform={litFlip}>
+                          <path d="M-62,-8 q-12,40 -8,82" stroke={tHair.key} strokeWidth={5} opacity={0.75} fill="none" strokeLinecap="round" />
+                          <path d="M-63,-6 q-10,30 -8,52" stroke="#fff" strokeWidth={2} opacity={0.28} fill="none" strokeLinecap="round" />
+                          <path d="M52,-14 q16,44 10,92 q-6,8 -14,6 q12,-48 4,-98 Z" fill={INK} opacity={0.22} />
+                        </g>
                       </g>
                     )}
-                    <path d="M-56,-4 a56,56 0 0 1 112,0 q-18,-36 -56,-36 q-38,0 -56,36 Z" fill={hair} stroke={INK} strokeWidth={5} />
-                    {/* hair shine + part line — hair as a lit material, not a flat cap */}
-                    <path d="M-34,-32 q16,-12 40,-9" stroke="#fff" strokeWidth={5} opacity={0.22} fill="none" strokeLinecap="round" />
-                    <path d={`M${-10 * facing},-46 q${6 * facing},14 ${4 * facing},24`} stroke={INK} strokeWidth={2.4} opacity={0.35} fill="none" strokeLinecap="round" />
+                    <path d="M-56,-4 a56,56 0 0 1 112,0 q-18,-36 -56,-36 q-38,0 -56,36 Z" fill={`url(#${uid}_hair)`} stroke={INK} strokeWidth={5} />
+                    {/* HAIR AS A LIT MATERIAL, NOT A FLAT CAP: a darker underside along the hairline,
+                        a hard-edged sheen band riding the crown on the key side with a specular glint
+                        in it, and strand lines that follow the flow. */}
+                    <path d="M56,-4 Q38,-40 0,-40 Q-38,-40 -56,-4 L-52,-12 Q-36,-44 0,-45 Q36,-44 52,-12 Z" fill={tHair.shade} opacity={0.7} />
+                    <g transform={litFlip}>
+                      <path d="M-47,-26 Q-32,-47 -6,-51 L-6,-45.5 Q-29,-41.5 -42,-23 Z" fill={tHair.key} opacity={0.95} />
+                      <path d="M-38,-36 Q-28,-45 -16,-48" stroke="#fff" strokeWidth={2.2} opacity={0.4} fill="none" strokeLinecap="round" />
+                    </g>
+                    <path d="M-10,-46 q6,14 4,24" stroke={INK} strokeWidth={2.4} opacity={0.35} fill="none" strokeLinecap="round" />
+                    <path d="M8,-52 q10,6 14,16" stroke={INK} strokeWidth={2.2} opacity={0.3} fill="none" strokeLinecap="round" />
+                    <path d="M26,-48 q9,8 10,18" stroke={INK} strokeWidth={2.2} opacity={0.28} fill="none" strokeLinecap="round" />
+                    <path d="M-26,-48 q-9,8 -12,18" stroke={INK} strokeWidth={2.2} opacity={0.28} fill="none" strokeLinecap="round" />
                   </g>
                 )}
-                {/* beanie: knit cap + fold band + pom */}
+                {/* BEANIE: a filled knit dome down to a cuff ABOVE the brows, + pom. It too was two
+                    curves over the top filling only a crescent, so it drew as a wire arc over a
+                    bald crown with the cuff across the eyebrows like goggles. */}
                 {hg === 'beanie' && (
                   <g>
-                    <path d="M-58,-30 a58,52 0 0 1 116,0 q0,-58 -58,-58 q-58,0 -58,58 Z" fill={beanieCol} stroke={INK} strokeWidth={6} />
-                    <rect x={-60} y={-40} width={120} height={20} rx={10} fill={c.shade} stroke={INK} strokeWidth={5} />
-                    <circle cx={0} cy={-86} r={12} fill={c.trim} stroke={INK} strokeWidth={5} />
-                    {[0,1,2].map((i)=>(<path key={i} d={`M${-40+i*40},-64 q0,-26 8,-34`} stroke={INK} strokeWidth={2.5} fill="none" opacity={0.3} />))}
+                    <path d="M-60,-36 C-60,-76 -34,-96 0,-96 C34,-96 60,-76 60,-36 Z" fill={beanieCol} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+                    <g transform={litFlip}>
+                      <path d="M24,-90 C46,-80 58,-62 59,-38 L40,-38 C40,-58 34,-74 18,-86 Z" fill={c.shade} opacity={0.8} />
+                      <path d="M-48,-52 C-44,-72 -28,-86 -8,-90" fill="none" stroke="#fff" strokeWidth={6} opacity={0.22} strokeLinecap="round" />
+                    </g>
+                    {[0, 1, 2].map((i) => (<path key={i} d={`M${-36 + i * 36},-44 q${2 - i * 2},-22 ${4 - i * 4},-44`} stroke={INK} strokeWidth={2.5} fill="none" opacity={0.3} />))}
+                    <rect x={-62} y={-56} width={124} height={22} rx={10} fill={c.shade} stroke={INK} strokeWidth={5} />
+                    {[-44, -22, 0, 22, 44].map((xx) => (<path key={xx} d={`M${xx},-52 v14`} stroke={INK} strokeWidth={2.2} opacity={0.3} />))}
+                    <circle cx={0} cy={-100} r={12} fill={c.trim} stroke={INK} strokeWidth={5} />
                   </g>
                 )}
-                {/* trapper hat: crown + fur band + ear flaps (a HAT, generic winter) */}
+                {/* trapper hat: a filled crown, a fur band above the brows and ear flaps (a HAT,
+                    generic winter). Same crescent bug as the beanie, same fix. */}
                 {hg === 'trapper' && (
                   <g>
-                    <path d="M-58,-28 a58,52 0 0 1 116,0 q0,-56 -58,-56 q-58,0 -58,56 Z" fill={c.main} stroke={INK} strokeWidth={6} />
-                    <rect x={-62} y={-40} width={124} height={24} rx={12} fill="#c9bfa8" stroke={INK} strokeWidth={5} />
-                    <path d="M-56,-18 q-14,42 2,64 q16,-6 16,-30 l-2,-36 Z" fill={c.main} stroke={INK} strokeWidth={5} />
-                    <path d="M56,-18 q14,42 -2,64 q-16,-6 -16,-30 l2,-36 Z" fill={c.shade} stroke={INK} strokeWidth={5} />
+                    <path d="M-60,-38 C-60,-74 -34,-94 0,-94 C34,-94 60,-74 60,-38 Z" fill={c.main} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+                    <g transform={litFlip}><path d="M24,-88 C46,-78 58,-60 59,-40 L40,-40 C40,-58 34,-72 18,-84 Z" fill={c.shade} opacity={0.8} /></g>
+                    <path d="M-56,-36 q-14,42 2,64 q16,-6 16,-30 l-2,-36 Z" fill={c.main} stroke={INK} strokeWidth={5} />
+                    <path d="M56,-36 q14,42 -2,64 q-16,-6 -16,-30 l2,-36 Z" fill={c.shade} stroke={INK} strokeWidth={5} />
+                    <rect x={-63} y={-58} width={126} height={24} rx={12} fill="#c9bfa8" stroke={INK} strokeWidth={5} />
+                    {[-46, -26, -6, 14, 34, 52].map((xx) => (<path key={xx} d={`M${xx},-54 l3,12`} stroke={INK} strokeWidth={2} opacity={0.25} />))}
                   </g>
                 )}
-                {/* cap: ball cap with brim (brim points by facing) */}
+                {/* cap: ball cap with brim (brim points the way the figure faces), lifted 6px so
+                    its band sits on the forehead rather than on the brows */}
                 {hg === 'cap' && (
-                  <g>
+                  <g transform="translate(0,-6)">
                     <path d="M-54,-34 a54,42 0 0 1 108,0 l-6,8 h-96 Z" fill={capCol} stroke={INK} strokeWidth={6} />
+                    <g transform={litFlip}>
+                      <path d="M22,-72 C40,-66 52,-52 54,-34 L38,-34 C36,-50 30,-60 16,-68 Z" fill={INK} opacity={0.2} />
+                      <path d="M-42,-44 C-38,-58 -24,-70 -6,-74" fill="none" stroke="#fff" strokeWidth={5} opacity={0.22} strokeLinecap="round" />
+                    </g>
                     <rect x={-60} y={-36} width={120} height={13} rx={6.5} fill={capCol} stroke={INK} strokeWidth={5} />
                     <path d="M38,-34 q50,0 58,15 l-2,8 q-38,-12 -56,-8 Z" fill={c.main} stroke={INK} strokeWidth={5} />
+                    <path d="M44,-29 q36,0 46,10" stroke={INK} strokeWidth={2.4} opacity={0.3} fill="none" />
                     <circle cx={0} cy={-70} r={6} fill={c.main} stroke={INK} strokeWidth={3} />
                   </g>
                 )}
-                {/* worker hardhat retained */}
-                {outfit === 'worker' && hg === 'bare' && (
-                  <g>
-                    <path d="M-60,-22 a60,42 0 0 1 120,0 l-8,6 h-104 Z" fill="#f2c230" stroke={INK} strokeWidth={6} />
-                    <rect x={-70} y={-20} width={140} height={14} rx={7} fill="#f2c230" stroke={INK} strokeWidth={5} />
-                  </g>
-                )}
-                {/* WILDLAND HARD HAT. The full brim, the comb ridge down the crown and
-                    the chin strap are the three things that separate it from a bike
-                    helmet at a glance, and a fire crew without one reads as hikers.
-                    Reachable as a headgear in its own right: the old hat could only be
-                    summoned by pairing outfit 'worker' with headgear 'bare', so no scene
-                    could put a hard hat on anything else. */}
-                {hg === 'hardhat' && (
+                {/* WILDLAND / WORKER HARD HAT. The full brim, the comb ridge down the crown and
+                    the dome shading. `worker` with no headgear wears it too: that combination drew
+                    an older hat whose brim sat at the eyes and read as a visor, the defect the
+                    hardhat already fixed once by sitting 20px higher. */}
+                {(hg === 'hardhat' || (outfit === 'worker' && hg === 'bare')) && (
                   <g>
                     {/* THE BRIM SAT ON THE EYES. Authored at cy=-18 with ry=15 it spanned
                         y -33..-3 and the eyes are at y=-13, so the first render put a hard
@@ -1282,8 +1419,10 @@ export const Character: React.FC<CharacterProps> = ({
                     <path d="M-56,-40 a56,46 0 0 1 112,0 Z" fill="#f2c230" stroke={INK} strokeWidth={6} />
                     {/* comb ridge + the shading that makes the crown a dome */}
                     <path d="M0,-86 q-3,26 -2,46" stroke={INK} strokeWidth={5} opacity={0.55} fill="none" strokeLinecap="round" />
-                    <path d="M-40,-54 a44,38 0 0 1 30,-30 l6,4 a38,34 0 0 0 -26,28 Z" fill="#fff" opacity={0.26} />
-                    <path d="M28,-78 a52,44 0 0 1 28,38 l-22,0 a42,36 0 0 0 -18,-32 Z" fill={INK} opacity={0.16} />
+                    <g transform={litFlip}>
+                      <path d="M-40,-54 a44,38 0 0 1 30,-30 l6,4 a38,34 0 0 0 -26,28 Z" fill="#fff" opacity={0.3} />
+                      <path d="M28,-78 a52,44 0 0 1 28,38 l-22,0 a42,36 0 0 0 -18,-32 Z" fill={INK} opacity={0.2} />
+                    </g>
                     {/* NO CHIN STRAP. It was drawn before face(), so the head fill covered
                         everything below the brim and all that survived were two dark stubs
                         sitting exactly where eyebrows go, on a face that already has
