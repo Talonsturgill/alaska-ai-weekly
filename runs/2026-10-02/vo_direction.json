@@ -1,0 +1,274 @@
+{
+ "run_date": "2026-10-02",
+ "narrator": "Nora, an Alaska public-radio host: warm, grounded, quietly witty",
+ "voice": "Sulafat",
+ "target_seconds": 120,
+ "band_seconds": [
+  112,
+  130
+ ],
+ "word_count": 220,
+ "predicted_runtime_s": 116,
+ "predicted_runtime_basis": "220 words in 22 sentences, the top of the format's 200 to 220 word band that is sized for the 112 to 130 second window, read under the verbatim runtime-naming Pace paragraph with a real breath at every period, plus one vetted [slow] on the 8,617 figure and four sparse [short pause] beats. Risk stated honestly: the 2026-08-05 probe measured 142 to 144 wpm on a 288 word script, and at that rate 220 words is about 92 seconds, so if takes come back short the fix is in the plan (more motivated beats), never a time-stretch.",
+ "pronunciations": {
+  "NOAA": "Noah",
+  "NOAA's": "Noah's",
+  "otoliths": "OH-toh-liths",
+  "otolith": "OH-toh-lith",
+  "Aleutians": "uh-LOO-shuns"
+ },
+ "notes": "Style: celebratory and honest, the warmth of someone genuinely delighted by a clever piece of science and by the people who made it possible. Cold open is quiet wonder at a fish born in 1878. The middle is clear, friendly explanation that rises with the 600 to 800 percent win and the scale of the archive, with a dry half-smile on the airplane hangar. Line 14 is a real gear change, the smile drops and the voice goes plain and level for the fair case. The last line lands warm, quiet and close. Pace: the Step 7 paragraph verbatim, measured and unhurried to fill about 120 seconds. Pronunciation is carried as data in the pronunciations map (NOAA said Noah, otoliths said OH-toh-liths), never respelled in the transcript, per VO_DIRECTION.md, because the synth requires the transcript to match vo_script.json exactly.",
+ "style_prompt": "Style: Warm, natural and conversational, an honest celebration. Open in quiet wonder, as if holding a very old fish in your hands. Explain the middle clearly and kindly, letting the energy rise with the efficiency numbers and the size of the archive, with a dry half-smile on the airplane hangar in Seattle. At \"Now, the fair case against.\" change gear for real: drop the smile, go plain, level and fair. Then come back up, firm on \"managers, not machines\", generous on \"That's real.\", leaning in on \"look where the speed came from\", and land the final sentence warm, quiet and close, almost to one listener.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. The years and counts are the heart of it, so say each one cleanly and let it settle before moving on.",
+ "lines": [
+  {
+   "idx": 0,
+   "text": "This rockfish was caught in the Aleutians in twenty twenty-two.",
+   "intent": "hook",
+   "emphasis": "rockfish",
+   "energy": 3,
+   "pace": "measured",
+   "tags": [],
+   "pause_before": false,
+   "why": "Plain, curious setup of an ordinary fact so the next line can turn it into wonder; no tag on the opener (never line-initial)."
+  },
+  {
+   "idx": 1,
+   "text": "Its ear stones say [short pause] it was born in eighteen seventy-eight.",
+   "intent": "reveal",
+   "emphasis": "eighteen seventy-eight",
+   "energy": 4,
+   "pace": "slower on the year",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "The cold-open reveal; a beat before the year lets 1878 land as genuine wonder, a lift from line 0."
+  },
+  {
+   "idx": 2,
+   "text": "So [curious] who counted?",
+   "intent": "hook",
+   "emphasis": "who",
+   "energy": 2,
+   "pace": "unhurried, a held beat after",
+   "tags": [
+    "[curious]"
+   ],
+   "pause_before": true,
+   "why": "The story question, asked softly after the reveal's lift; quiet curiosity pulls the viewer in and sets up the human answer."
+  },
+  {
+   "idx": 3,
+   "text": "Every fish carries a pair of tiny ear stones, called otoliths.",
+   "intent": "setup",
+   "emphasis": "otoliths",
+   "energy": 3,
+   "pace": "measured",
+   "tags": [],
+   "pause_before": false,
+   "why": "Clear explainer voice begins; name the word cleanly so the viewer owns it for the rest of the piece."
+  },
+  {
+   "idx": 4,
+   "text": "They grow a ring every year, like a tree.",
+   "intent": "setup",
+   "emphasis": "tree",
+   "energy": 2,
+   "pace": "measured, light",
+   "tags": [],
+   "pause_before": false,
+   "why": "A warm, simple image delivered gently; the dip keeps it from sounding like a lecture."
+  },
+  {
+   "idx": 5,
+   "text": "NOAA scientists count the rings under microscopes, [short pause] more than thirty thousand a year.",
+   "intent": "stat",
+   "emphasis": "thousand",
+   "energy": 4,
+   "pace": "slower on the number",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "First credit to the human readers; let thirty thousand land with admiration, since the angle is that they taught the machine."
+  },
+  {
+   "idx": 6,
+   "text": "Now there's a faster reader.",
+   "intent": "reveal",
+   "emphasis": "faster",
+   "energy": 5,
+   "pace": "brighter, a touch quicker",
+   "tags": [],
+   "pause_before": true,
+   "why": "The celebratory turn into the technology; the brightest line of Act 1, a clear energy jump."
+  },
+  {
+   "idx": 7,
+   "text": "Near-infrared light hits the stone, and machine learning turns its signature into an age.",
+   "intent": "setup",
+   "emphasis": "signature",
+   "energy": 3,
+   "pace": "measured, clear",
+   "tags": [],
+   "pause_before": false,
+   "why": "Plain explanation of the method; settle down from the peak so the mechanism is easy to follow."
+  },
+  {
+   "idx": 8,
+   "text": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
+   "intent": "stat",
+   "emphasis": "percent",
+   "energy": 4,
+   "pace": "slower on the figure",
+   "tags": [],
+   "pause_before": false,
+   "why": "The headline win; deliver it with real pleasure and room, celebrating plainly as the brand asks."
+  },
+  {
+   "idx": 9,
+   "text": "But to tie a signature to an age, [short pause] you need the age first.",
+   "intent": "reveal",
+   "emphasis": "first",
+   "energy": 2,
+   "pace": "slower, deliberate",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": true,
+   "why": "The hinge of the whole angle; drop the energy and take a beat so 'the age first' quietly reframes the win."
+  },
+  {
+   "idx": 10,
+   "text": "In twenty twenty-three, NOAA trained and tested its models on [slow] eight thousand six hundred seventeen pollock stones.",
+   "intent": "stat",
+   "emphasis": "seventeen",
+   "energy": 4,
+   "pace": "slow on the count",
+   "tags": [
+    "[slow]"
+   ],
+   "pause_before": false,
+   "why": "A precise, almost proud count; the vetted mid-line [slow] gives a long number room and helps fill the runtime."
+  },
+  {
+   "idx": 11,
+   "text": "They came from NOAA's archive, built ring by ring.",
+   "intent": "stakes",
+   "emphasis": "ring",
+   "energy": 2,
+   "pace": "slower, warm",
+   "tags": [],
+   "pause_before": false,
+   "why": "The thesis in miniature; warm and unhurried, honoring the patient human work behind the data."
+  },
+  {
+   "idx": 12,
+   "text": "Two and a half million otolith pairs, back to the nineteen sixties.",
+   "intent": "stat",
+   "emphasis": "million",
+   "energy": 3,
+   "pace": "measured, let the scale land",
+   "tags": [],
+   "pause_before": false,
+   "why": "Wonder at the scale of the archive; a lift from the warm line before without breaking the spell."
+  },
+  {
+   "idx": 13,
+   "text": "Around two million once sat in an old [wry] airplane hangar in Seattle.",
+   "intent": "wry",
+   "emphasis": "hangar",
+   "energy": 4,
+   "pace": "lighter, slightly quicker",
+   "tags": [
+    "[wry]"
+   ],
+   "pause_before": false,
+   "why": "The one earned smile in the piece; a dry, delighted aside that sets up the clean drop into line 14."
+  },
+  {
+   "idx": 14,
+   "text": "Now, the fair case against.",
+   "intent": "reveal",
+   "emphasis": "fair",
+   "energy": 2,
+   "pace": "deliberate, level",
+   "tags": [],
+   "pause_before": true,
+   "why": "The gear change; the smile goes, the voice goes plain and even, signalling honest counterargument rather than doom."
+  },
+  {
+   "idx": 15,
+   "text": "A faster age only helps if it changes what fishery managers use.",
+   "intent": "stakes",
+   "emphasis": "changes",
+   "energy": 3,
+   "pace": "measured, clear",
+   "tags": [],
+   "pause_before": false,
+   "why": "States the test in a reasonable, even voice; fair, not sour."
+  },
+  {
+   "idx": 16,
+   "text": "NOAA called getting these ages into stock assessments the next step.",
+   "intent": "setup",
+   "emphasis": "next",
+   "energy": 2,
+   "pace": "measured",
+   "tags": [],
+   "pause_before": false,
+   "why": "A sourced, factual concession delivered flat and honest; the dip lets the following line stand up."
+  },
+  {
+   "idx": 17,
+   "text": "Catch limits are set by managers, not machines, [short pause] and the microscope stays in the process.",
+   "intent": "stakes",
+   "emphasis": "managers",
+   "energy": 4,
+   "pace": "firm, a touch slower on 'not machines'",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "Firm and grounded; the line that keeps humans in charge, given weight without alarm."
+  },
+  {
+   "idx": 18,
+   "text": "So the win today is speed and method. [short pause] That's real.",
+   "intent": "stakes",
+   "emphasis": "real",
+   "energy": 3,
+   "pace": "measured, warm on the last two words",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "The concession back to celebration; generous and sincere, the period alone gives 'That's real.' its beat."
+  },
+  {
+   "idx": 19,
+   "text": "But look where the speed came from.",
+   "intent": "reveal",
+   "emphasis": "look",
+   "energy": 4,
+   "pace": "leaning in",
+   "tags": [],
+   "pause_before": true,
+   "why": "A forward lean into the payoff, lifting the energy one last time before the landing."
+  },
+  {
+   "idx": 20,
+   "text": "Every age it gives back started as a ring [short pause] somebody counted.",
+   "intent": "button",
+   "emphasis": "somebody",
+   "energy": 1,
+   "pace": "slow, warm, quiet",
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": true,
+   "why": "THE line to land: warm and quiet, a small beat before 'somebody counted' so the answer to 'who counted?' arrives as gratitude."
+  }
+ ],
+ "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, an Alaska public-radio host: warm, grounded, quietly witty. Neutral American accent, light and natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: Warm, natural and conversational, an honest celebration. Open in quiet wonder, as if holding a very old fish in your hands. Explain the middle clearly and kindly, letting the energy rise with the efficiency numbers and the size of the archive, with a dry half-smile on the airplane hangar in Seattle. At \"Now, the fair case against.\" change gear for real: drop the smile, go plain, level and fair. Then come back up, firm on \"managers, not machines\", generous on \"That's real.\", leaning in on \"look where the speed came from\", and land the final sentence warm, quiet and close, almost to one listener.\nPace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and the read must FILL it, so give every sentence room to land and take a real breath at every period. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land. The years and counts are the heart of it, so say each one cleanly and let it settle before moving on.\nTranscript:\nThis rockfish was caught in the Aleutians in twenty twenty-two.\nIts ear stones say [short pause] it was born in eighteen seventy-eight.\nSo [curious] who counted?\nEvery fish carries a pair of tiny ear stones, called otoliths.\nThey grow a ring every year, like a tree.\nNOAA scientists count the rings under microscopes, [short pause] more than thirty thousand a year.\nNow there's a faster reader.\nNear-infrared light hits the stone, and machine learning turns its signature into an age.\nPer NOAA, that's six hundred to eight hundred percent more efficient.\nBut to tie a signature to an age, [short pause] you need the age first.\nIn twenty twenty-three, NOAA trained and tested its models on [slow] eight thousand six hundred seventeen pollock stones.\nThey came from NOAA's archive, built ring by ring.\nTwo and a half million otolith pairs, back to the nineteen sixties.\nAround two million once sat in an old [wry] airplane hangar in Seattle.\nNow, the fair case against.\nA faster age only helps if it changes what fishery managers use.\nNOAA called getting these ages into stock assessments the next step.\nCatch limits are set by managers, not machines, [short pause] and the microscope stays in the process.\nSo the win today is speed and method. [short pause] That's real.\nBut look where the speed came from.\nEvery age it gives back started as a ring [short pause] somebody counted."
+}

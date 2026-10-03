@@ -147,7 +147,9 @@ def main():
         print("not valid audio / convert failed: " + track["url"], file=sys.stderr); sys.exit(1)
     credit = track["credit"] or " ".join(x for x in [
         f'"{track["title"]}"' if track["title"] else "", track["composer"],
-        f'({track["source"]})' if track["source"] else "", f'- {track["license"]}' if track["license"] else ""] if x).strip()
+        f'({track["source"]})' if track["source"] else "",
+        # a middle dot, never " - ": the credit is painted in the end card and the house bans dashes
+        f'· {track["license"]}' if track["license"] else ""] if x).strip()
     json.dump({**track, "credit": credit, "wav": a.out, "duration": round(dur(a.out), 1)},
               open(os.path.join(os.path.dirname(os.path.abspath(a.out)), "music_credit.json"), "w"), indent=2)
     print("CREDIT: " + credit)

@@ -129,6 +129,15 @@ export interface CharacterProps {
    *  in the whole piece cannot spend one on a necktie. An override beats editing the
    *  shared palette: every other episode keeps the tie it was graded with. */
   trim?: string;
+  /** 0..1 multiplier on the torso's key-side rim and white sheen patch (default 1). Those are
+   *  authored for a key light from the figure's own upper left, so a figure mirrored with
+   *  facing -1 carries them on the side AWAY from a left-hand lamp, where a judge read them as
+   *  "a pale translucent shape around his shoulders and back ... a ghosted duplicate layer"
+   *  (2026-10-02). A scene whose lamp disagrees with the mirrored rim turns it down here. */
+  lightWrap?: number;
+  /** extra head rotation in degrees about the neck, added to the idle drift (default 0): a scene
+   *  can turn a head toward what the figure is looking at without a new pose. */
+  look?: number;
 }
 
 const OUTFITS: Record<Outfit, {main: string; shade: string; trim: string; pants: string}> = {
@@ -167,6 +176,8 @@ export const Character: React.FC<CharacterProps> = ({
   idleGain = 1,
   gesture = 1,
   trim,
+  lightWrap = 1,
+  look = 0,
 }) => {
   const c = {...OUTFITS[outfit], ...(trim ? {trim} : {})};
   // breathing: a visible chest rise+fall. Bumped round 10 — the panel kept reading standers as
@@ -362,7 +373,7 @@ export const Character: React.FC<CharacterProps> = ({
   // the head settles LATE: its own slow drift, minus a partial delayed copy of the chest
   const headRot =
     live * (0.85 * Math.sin(T * RATE(3.8) + ph * 0.6) + 0.55 * Math.sin(T * RATE(2.15) + ph * 1.9))
-    - chestRot * 0.45;
+    - chestRot * 0.45 + look;
 
   const skinShade = '#c99268';
   // per-instance ids so each figure's form-shading gradients stay unique in the doc
@@ -973,8 +984,8 @@ export const Character: React.FC<CharacterProps> = ({
             <path d="M-92,-150 q6,-56 92,-56 q86,0 92,56 l10,144 q2,16 -16,16 h-172 q-18,0 -16,-16 Z" fill={`url(#${uid}_body)`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
             {/* core shade on the shadow side + rim light on the sun-facing (left) contour */}
             <path d="M34,-200 q52,10 58,50 l10,144 q2,16 -16,16 h-52 Z" fill={tMain.shade} opacity={0.88} />
-            <RimLight d="M-92,-150 q6,-56 92,-56" w={6} opacity={0.85} />
-            <path d="M-78,-178 q12,-14 34,-18 l-6,70 q-20,-4 -32,-14 Z" fill="#ffffff" opacity={0.24} />
+            {lightWrap > 0.01 && <RimLight d="M-92,-150 q6,-56 92,-56" w={6} opacity={0.85 * lightWrap} />}
+            <path d="M-78,-178 q12,-14 34,-18 l-6,70 q-20,-4 -32,-14 Z" fill="#ffffff" opacity={0.24 * lightWrap} />
             {/* fabric sheen band + under-shade so the jacket reads as material, not a fill */}
             <path d="M-60,-120 q60,18 120,4 l0,26 q-60,14 -120,-4 Z" fill="#ffffff" opacity={0.08} />
             <path d="M-88,-30 q88,26 176,0 l0,30 q-88,22 -176,0 Z" fill={tMain.shade} opacity={0.45} />

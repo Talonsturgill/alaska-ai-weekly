@@ -2091,3 +2091,45 @@ dispatch_history:
     register: tactile-collage
     camera_strategy: locked-drift
     light_story: night-practical
+- date: '2026-10-02'
+  topic: NOAA near-infrared machine learning fish ageing, and the human-counted otolith
+    archive it learned from
+  slug: dispatch-2026-10-02-who-counted
+  key_entities:
+  - NOAA
+  - Alaska Fisheries Science Center
+  - otoliths
+  - near-infrared
+  - machine learning
+  - walleye pollock
+  - rockfish
+  - Aleutians
+  - stock assessment
+  archetype: the count behind the model
+  palette: warm golden lamp brass, pearl, near-infrared magenta over Bering teal
+  voice: Sulafat
+  stance: celebratory
+  angle: NOAA's machine reader for Alaska groundfish ages is a real win, and it works
+    because people at microscopes spent years counting annual growth rings on an archive
+    of 2.5 million otolith pairs going back to the 1960s, so the human readers didn't
+    get replaced by the model, they're what taught it.
+  hero: Otolith
+  cast:
+  - Otolith
+  - NIRReader
+  - TallyCounter
+  - BrassSign
+  - Groundfish
+  - Character
+  - ArchiveDrawers
+  - YearDrum
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: radial-emanate
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: editorial-schematic
+    camera_strategy: rack-focus-macro
+    light_story: night-practical
+    palette: warm golden lamp brass, pearl, near-infrared magenta over Bering teal
+    metaphor: A curve that turns out to be made of tally marks

@@ -1,0 +1,1808 @@
+{
+ "run_date": "2026-10-02",
+ "slug": "who-counted",
+ "title": "Who Counted",
+ "concept": "A machine now reads a fish ear stone with light, and the film opens it up to find that every answer it gives was taught by people counting rings at microscopes, one ring at a time.",
+ "derived_from": "scratch",
+ "engine": "infographic-2.5d",
+ "total_seconds": 114.46,
+ "fingerprint": {
+  "pov": "cross-section-cutaway",
+  "motion_vector": "radial-emanate",
+  "hero_treatment": "single-organic-hero",
+  "layout": "stacked-layers",
+  "register": "editorial-schematic",
+  "camera_strategy": "rack-focus-macro",
+  "light_story": "night-practical",
+  "palette": "warm golden lamp brass, pearl, near-infrared magenta over Bering teal",
+  "metaphor": "A curve that turns out to be made of tally marks"
+ },
+ "palette": "warm golden lamp brass, pearl, near-infrared magenta over Bering teal",
+ "divergence_note": "September 30th was a fog slate table with a phone and a binder, and September 23rd was a ruled government statement at dusk. This film has no document pile. It lives in dark water, under one brass microscope lamp, inside a cutaway machine and in a 1930s timber hangar, and its hero is an organic stone with rings rather than a sheet of paper. The accent is a near-infrared magenta used only on the machine.",
+ "angle": {
+  "run_date": "2026-10-02",
+  "stance": "celebratory",
+  "thesis": "NOAA's machine reader for Alaska groundfish ages is a real win, and it works because people at microscopes spent years counting annual growth rings on an archive of 2.5 million otolith pairs going back to the 1960s, so the human readers didn't get replaced by the model, they're what taught it.",
+  "falsifiability": "Wrong if a NOAA source shows the NIR models learned age with no human-aged otoliths behind them, the gain came from the spectrometer alone, or conventional ageing dropped out of the process.",
+  "supporting_facts": [
+   "c3+c4 30,000+ aged a year by counting annual growth rings like tree rings",
+   "c7+c8+c9 NIR signatures tied to age by ML, 600 to 800 percent more efficient, conventional ageing still part of the process",
+   "c1+c2+c10+c18 2.5 million pairs since the 1960s; models trained on archive samples, 2023 trained and tested on 8,617 pollock otoliths"
+  ],
+  "counter_point": "The spectroscopy and ML made the archive pay (c7,c8), engineers get full credit. Stock assessment use is the next step (c14), no machine age has set a catch limit, managers set limits (c15).",
+  "second_movement": "c12+c13 around 2 million pairs sat in a 1930s wooden airplane hangar, moved 2012 on an NSF grant. Act 1 sells speed; the hangar shows speed is a payout on slow careful storage and counting.",
+  "test_scene": "THE NEXT STEP: a faster age only helps once it changes the numbers managers use, and NOAA puts assessment use ahead (c14); the microscope reader stays (c9); limits stay a human decision (c15). Concede, then: the win is real today as capacity and method.",
+  "story_question": "Where did the machine that ages Alaska's fish get its intelligence?",
+  "runner_ups": [
+   {
+    "angle": "The Bottleneck",
+    "why_lost": "implies a downstream result c8 doesn't show; lives on as Act 1 capacity beat"
+   },
+   {
+    "angle": "The Honest Limit",
+    "why_lost": "undersells a real win; becomes the Act 3 test scene"
+   }
+  ]
+ },
+ "treatment": {
+  "winner": "DRAMATIST",
+  "why": "Strongest arc and the only turn that shows the thesis: the machine signature resolves into tally ticks. Fewest sets.",
+  "grafts": [
+   "EXPLAINER rockfish cold open compressed to move by 1.3s",
+   "EXPLAINER staircase test scene",
+   "EXPLAINER question mark in the AGE OUT slot",
+   "COMEDIAN engineers trophy played sincere",
+   "EXPLAINER button line"
+  ],
+  "judge_reasoning": "Scorer: DRAMATIST 45, EXPLAINER 44, COMEDIAN 39, ENTHUSIAST 35. The Dramatist pitch had the strongest emotional arc and the most buildable set list; its static cold open is replaced by the Explainer moving rockfish."
+ },
+ "hook": {
+  "pattern": "anomaly-question",
+  "frame1": "A rockfish glides through dark Aleutian water toward camera.",
+  "headline": "A FISH BORN ABOUT 1878. WHO COUNTED?",
+  "motion_by_s": 0.2,
+  "loopback": "The button ends on the same ear stone under the same brass objective as shot 2, its rings rippling, a rhyme with the hook rather than a cut back to frame 1 (the credits follow)."
+ },
+ "open_loop": {
+  "plant_t": 11.72,
+  "pay_t": 105.9,
+  "what": "The brass WHO COUNTED? plate. Asked of people at 11.72, asked again of the machine when the same plate swings into its AGE OUT slot at 48.0, paid when that plate flips to the reader handwritten tag at 105.9."
+ },
+ "open_loop_2": {
+  "plant_t": 55.9,
+  "pay_t": 90.6,
+  "what": "The closed door at the end of the tagging room, STOCK ASSESSMENT on its transom and light under it. The same door stands on the dashed step, which is stamped NEXT STEP."
+ },
+ "throughline": {
+  "object": "the reader brass tally counter",
+  "lands_in_button": true,
+  "states": [
+   {
+    "at_s": 7.2,
+    "state": "first click 0001, locked to the first ring pulse"
+   },
+   {
+    "at_s": 30.8,
+    "state": "steaming at the 30,000 a year pace"
+   },
+   {
+    "at_s": 54.6,
+    "state": "its brass twin waits over the tagging table while marked tags ride into the hopper"
+   },
+   {
+    "at_s": 59.0,
+    "state": "the training count lands on a readout styled as the same brass counter, 8,617"
+   },
+   {
+    "at_s": 97.4,
+    "state": "still clicking across the hall from the staircase"
+   },
+   {
+    "at_s": 112.46,
+    "state": "final click on counted reads 0144, the rings pulse, the loop"
+   }
+  ]
+ },
+ "reveals": [
+  {
+   "t": 26.4,
+   "type": "scale-pullback",
+   "what": "one stone becomes trays piling up behind the reader, 30,000+ a year",
+   "hold_s": 0.6
+  },
+  {
+   "t": 63.02,
+   "type": "scale-pullback",
+   "what": "the bench wall falls away to a corridor of 2.5 million pairs",
+   "hold_s": 0.7
+  },
+  {
+   "t": 107.4,
+   "type": "build-on",
+   "what": "the signature tears into 144 tally ticks that land on the growth rings of the 1878 stone",
+   "hold_s": 0.8
+  }
+ ],
+ "audio_arc": {
+  "build_steps": 4,
+  "dip_at": 108.0,
+  "riser_at": 100.24,
+  "silence_at": 108.0,
+  "payoff_at": 113.0,
+  "button_pattern": "callback"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "title": "The 1878 fish",
+   "t": "0.00-5.82",
+   "start_s": 0.0,
+   "end_s": 5.82,
+   "vo_line": 0,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "aleutian-water",
+   "pov": "eye-level-immersive",
+   "layout": "single-object-void",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "single-organic-hero",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "",
+   "thread": "match",
+   "centered": "the stone pops out of the skull toward camera, at frame centre near x540 y900",
+   "means": "Hook: under A FISH BORN ABOUT 1878. WHO COUNTED? a rockfish glides in, an x-ray finds the ear stone behind its eye, and it pops toward camera, spinning.",
+   "hero": {
+    "name": "Groundfish rockfish + Otolith",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 rockfish and glowing stone, 20 caustic water, 10 ALEUTIANS 2022 chip"
+   }
+  },
+  {
+   "id": 2,
+   "title": "Born 1878",
+   "t": "5.82-14.66",
+   "start_s": 5.82,
+   "end_s": 14.66,
+   "vo_line": 1,
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "overhead",
+   "stage": "bench-macro",
+   "pov": "macro-closeup",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "single-organic-hero",
+   "camera": "static:the date wheel whirs back on its own to 1878 while each counter click pulses one ring",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "a ring pulses out of the stone on each click, at frame centre near x540 y900",
+   "means": "The stone lands under the objective; each counter click pulses one ring while the brass year drum whirs back at centre from 2022 and slams on 1878, then tucks into its corner, the counter holding low. WHO COUNTED?",
+   "hero": {
+    "name": "Otolith + BenchScope + TallyCounter",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 stone and rings, 20 date wheel, 10 thumb on counter"
+   }
+  },
+  {
+   "id": 3,
+   "title": "Ear stones, like a tree",
+   "t": "14.66-24.54",
+   "start_s": 14.66,
+   "end_s": 24.54,
+   "vo_line": 3,
+   "framing": "two-up",
+   "scale": "close",
+   "height": "eye",
+   "stage": "cutaway-diagram",
+   "pov": "cross-section-cutaway",
+   "layout": "fullbleed-split",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "structure-as-subject",
+   "camera": "static:split diagram with ring-by-ring build",
+   "stage3d": "planes",
+   "transition_in": "morph",
+   "thread": "match",
+   "centered": "stone rings and tree rings light together, at frame centre near x540 y900",
+   "means": "A pair of ear stones inside the fish head, then a sawn tree cross-section whose rings answer the stone one for one.",
+   "hero": {
+    "name": "Groundfish xray + Otolith + TreeRings",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 stone and tree rings, 20 fish head cutaway, 10 labels"
+   }
+  },
+  {
+   "id": 4,
+   "title": "The reader",
+   "t": "24.54-32.00",
+   "start_s": 24.54,
+   "end_s": 32.0,
+   "vo_line": 5,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "high",
+   "stage": "reader-bench",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "single-organic-hero",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "pull-out",
+   "thread": "carry",
+   "centered": "the reader bends to the eyepiece and clicks, at frame centre near x540 y900",
+   "means": "A NOAA reader at a brass microscope clicks a counter; trays pile up; 30,000+ a year lands on the words.",
+   "hero": {
+    "name": "Character reader + TallyCounter + trays",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 reader at scope, 20 tray stack, 10 counter steam"
+   }
+  },
+  {
+   "id": 5,
+   "title": "A faster reader",
+   "t": "32.00-42.20",
+   "start_s": 32.0,
+   "end_s": 42.2,
+   "vo_line": 6,
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "low",
+   "stage": "reader-bench",
+   "pov": "instrument-screen",
+   "layout": "hud-instrument-frame",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "carry",
+   "centered": "the magenta beam hits the pollock stone, at frame centre near x540 y900",
+   "means": "The NIR reader slides in on rails with a cloth already rippling over its plate, the beam hits a small tagged POLLOCK stone (never the 1878 stone), a model block lights, a signature draws, a machine-type age tag snaps out.",
+   "hero": {
+    "name": "NIRReader",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 NIR reader, 20 beam and screen, 10 cloth"
+   }
+  },
+  {
+   "id": 6,
+   "title": "What each one sees",
+   "t": "42.20-48.00",
+   "start_s": 42.2,
+   "end_s": 48.0,
+   "vo_line": 8,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "instrument-views",
+   "pov": "macro-closeup",
+   "layout": "fullbleed-split",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "data-as-subject",
+   "camera": "static:both halves animate; the stat builds across the seam",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "match",
+   "centered": "the stat builds across the seam, at frame centre near x540 y900",
+   "means": "A PER NOAA source tab lands with the hard cut. Left the eyepiece circle, rings ticked off and a thumb on the counter. Right the spectrum screen. 600 pops on six, then 800 slams across the seam.",
+   "hero": {
+    "name": "eyepiece view + spectrum screen + StatBurst",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 stat across seam, 20 two views, 10 still-in-process tag"
+   }
+  },
+  {
+   "id": 7,
+   "title": "You need the age first",
+   "t": "48.00-52.78",
+   "start_s": 48.0,
+   "end_s": 52.78,
+   "vo_line": 9,
+   "framing": "macro-closeup",
+   "scale": "close",
+   "height": "eye",
+   "stage": "machine-interior",
+   "pov": "cross-section-cutaway",
+   "layout": "single-object-void",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "data-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "push-in",
+   "thread": "match",
+   "centered": "the line hits an empty slot and recoils, at frame centre near x540 y900",
+   "means": "Inside: the machine tag falls out through the slot floor, the signature runs into the AGE OUT slot and the brass WHO COUNTED? plate swings down into it as the camera pushes in, the question now asked of the machine.",
+   "hero": {
+    "name": "SpectralLine + AGE OUT slot",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 slot and question mark, 20 line, 10 machine interior"
+   }
+  },
+  {
+   "id": 8,
+   "title": "The tagging table",
+   "t": "52.78-63.02",
+   "start_s": 52.78,
+   "end_s": 63.02,
+   "vo_line": 10,
+   "framing": "push-detail",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "tagging-table",
+   "pov": "eye-level-immersive",
+   "layout": "grid-modular",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "carry",
+   "centered": "the hand writes an age on a tag, at frame centre near x540 y900",
+   "means": "An Alaska pollock drops its stone beside a marked tag; the reader inked hand ties the tag on and withdraws off frame; tagged stones march into the hopper; the brass count of POLLOCK STONES lands on 8,617 as seventeen ends. A closed door at the far end, STOCK ASSESSMENT on its transom, flares light under it.",
+   "hero": {
+    "name": "Groundfish pollock + AgeTag + TallyCounter + hopper + door",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 hand and tag, 20 marching stones and count, 10 far door"
+   }
+  },
+  {
+   "id": 9,
+   "title": "The archive",
+   "t": "63.02-73.18",
+   "start_s": 63.02,
+   "end_s": 73.18,
+   "vo_line": 11,
+   "framing": "wide-establish",
+   "scale": "extreme-wide",
+   "height": "low",
+   "stage": "archive",
+   "pov": "eye-level-immersive",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "mask-wipe",
+   "thread": "travel",
+   "centered": "drawers light up one by one, at frame centre near x540 y900",
+   "means": "The wall falls away to a corridor of drawers; the camera dollies forward as they light in a wave; a brass sign drops on chains, 2.5 million pairs per NOAA, since the 1960s.",
+   "hero": {
+    "name": "ArchiveDrawers",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 drawer wall, 20 rising camera, 10 date card"
+   }
+  },
+  {
+   "id": 10,
+   "title": "The hangar",
+   "t": "73.18-79.08",
+   "start_s": 73.18,
+   "end_s": 79.08,
+   "vo_line": 13,
+   "framing": "subject-portrait",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "hangar",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "landscape-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "crossfade",
+   "thread": "travel",
+   "centered": "an archive stone rises under the brass plate, at frame centre near x540 y900",
+   "means": "A 1930s wooden hangar in Seattle, a propeller on a beam, open shelves of glinting trays, a raven lifting off a rafter. An archive stone rises under the Chamberlin sign; crate lids slam and latches snap, MOVED 2012.",
+   "hero": {
+    "name": "hangar shelves + BrassSign + Otolith + crates",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 hangar and rising stone, 20 propeller, 10 crates"
+   }
+  },
+  {
+   "id": 11,
+   "title": "THE NEXT STEP",
+   "t": "79.08-93.46",
+   "start_s": 79.08,
+   "end_s": 93.46,
+   "vo_line": 14,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "low",
+   "stage": "staircase",
+   "pov": "exploded-diagram",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "structure-as-subject",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "build",
+   "centered": "the tag bounces off the dashed step, at frame centre near x540 y900",
+   "means": "The fair case: a brass sign drops on chains; the AGE and CATCH LIMITS plinths rise around a dashed step where the same closed STOCK ASSESSMENT door stands; the age tag pops out of the reader and hops onto AGE; a manager on CATCH LIMITS points at it; the sign lifts away and the camera pushes in as the tag jumps for the dashed step, falls short and teeters while the door lights; NEXT STEP, PER NOAA \u00b7 2023 stamps into the dashed step, the camera whips back and the manager nods.",
+   "hero": {
+    "name": "plinths + dashed step + door + MachineTag + Stamp + manager",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 tag and dashed step, 20 door and manager, 10 trophy"
+   }
+  },
+  {
+   "id": 12,
+   "title": "Managers set limits",
+   "t": "93.46-100.24",
+   "start_s": 93.46,
+   "end_s": 100.24,
+   "vo_line": 17,
+   "framing": "push-detail",
+   "scale": "close",
+   "height": "eye",
+   "stage": "staircase",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "single-organic-hero",
+   "camera": "static:a rack focus hands attention from the pen to the reader across the hall",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the pen writes the limit line, at frame centre near x540 y900",
+   "means": "An inked hand in the manager mustard drags a numberless limit line into a blank cell of the catch form beside a handwritten 7 tag; the clipboard slides away as focus racks across the hall to the reader, eye at the microscope, her counter still climbing.",
+   "hero": {
+    "name": "Character manager + Character reader + TallyCounter",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 pen hand, 20 tag on step, 10 reader lamp"
+   }
+  },
+  {
+   "id": 13,
+   "title": "Look where the speed came from",
+   "t": "100.24-108.60",
+   "start_s": 100.24,
+   "end_s": 108.6,
+   "vo_line": 18,
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "eye",
+   "stage": "bench-to-slot",
+   "pov": "instrument-screen",
+   "layout": "single-object-void",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "data-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "push-in",
+   "thread": "match",
+   "centered": "the line becomes rings, at frame centre near x540 y900",
+   "means": "The win is real: a trophy bounces onto the machine, CREDIT \u00b7 NOAA SCIENTISTS, as an inked hand feeds it hand-tagged stones, and the cloth lifts off its plate, TRAINED ON THE ARCHIVE; inside, at S7 framing, the AGE OUT slot WHO COUNTED? flips to a handwritten 7 under CHECKED AGAINST MICROSCOPE AGES, BENSON ET AL. 2023; the same line tears into 144 ticks that curve onto the growth rings of the 1878 stone, exactly where the next shot holds it, labelled OUR READ.",
+   "hero": {
+    "name": "NIRReader + AgeTag + SpectralLine ticks",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 rings forming, 20 handwritten tag, 10 plate"
+   }
+  },
+  {
+   "id": 14,
+   "title": "Somebody counted",
+   "t": "108.60-114.46",
+   "start_s": 108.6,
+   "end_s": 114.46,
+   "vo_line": 20,
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "overhead",
+   "stage": "bench-macro",
+   "pov": "macro-closeup",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "single-organic-hero",
+   "camera": "static:the final click and ripple carry the motion",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the final click ripples the rings, at frame centre near x540 y900",
+   "means": "Human only: the 1878 stone under the objective beside the BORN drum, the counter at 0143 under an inked thumb; a brass sign pops up reading WHO COUNTED?, flips to SOMEBODY COUNTED on somebody, and the final click on counted is the first time 0144 is ever seen, EST. 144 YEARS OLD, the rings pulsing every half second to the end.",
+   "hero": {
+    "name": "Otolith + TallyCounter + YearDrum + BrassSign",
+    "parts": 6,
+    "zones": 3,
+    "detail_note": "70 stone, 20 thumb and counter, 10 plate"
+   },
+   "cut_offset_s": 0.5,
+   "cut_reason": "Hold the machine slot through THE COUNT CAME FIRST; the cut lands just before the word age."
+  }
+ ],
+ "beats": [
+  {
+   "id": 1,
+   "shot": 1,
+   "t": "0.00",
+   "at_s": 0.0,
+   "vo_line": 0,
+   "offset": 0.0,
+   "vo": "This rockfish was caught in the Aleutians in twenty twenty-two.",
+   "shows": "rockfish glides in from the left through dark water under the question, head turning to camera",
+   "sfx": "whoosh",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "rockfish",
+    "action": "glides in from the left through dark water under the question, head turning to camera",
+    "emotion": "calm, ancient",
+    "annotation": "A FISH BORN ABOUT 1878. WHO COUNTED?"
+   },
+   "choreo": {
+    "primary": "rockfish glides in from the left through dark water under the question, head turning to camera",
+    "reaction": "the rockfish fins flare and its eye tracks the stone",
+    "ambient": "particles drift in the dark water and caustics cross the fish"
+   }
+  },
+  {
+   "id": 2,
+   "shot": 1,
+   "t": "1.30",
+   "at_s": 1.3,
+   "vo_line": 0,
+   "offset": 1.3,
+   "vo": "This rockfish was caught in the Aleutians in twenty twenty-two.",
+   "shows": "x-ray wipe sweeps across the head and the ear stone glows inside",
+   "sfx": "chime",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "x-ray wipe",
+    "action": "sweeps across the head and the ear stone glows inside",
+    "emotion": "curious",
+    "annotation": "ALEUTIANS \u00b7 2022"
+   },
+   "choreo": {
+    "primary": "x-ray wipe sweeps across the head and the ear stone glows inside",
+    "reaction": "the rockfish fins flare and its eye tracks the stone",
+    "ambient": "particles drift in the dark water and caustics cross the fish"
+   }
+  },
+  {
+   "id": 3,
+   "shot": 1,
+   "t": "3.00",
+   "at_s": 3.0,
+   "vo_line": 0,
+   "offset": 3.0,
+   "vo": "This rockfish was caught in the Aleutians in twenty twenty-two.",
+   "shows": "otolith pops out of the skull toward camera, spinning",
+   "sfx": "pop",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "otolith",
+    "action": "pops out of the skull toward camera, spinning",
+    "emotion": "surprised",
+    "annotation": "ALEUTIANS \u00b7 2022"
+   },
+   "choreo": {
+    "primary": "otolith pops out of the skull toward camera, spinning",
+    "reaction": "the rockfish fins flare and its eye tracks the stone",
+    "ambient": "particles drift in the dark water and caustics cross the fish"
+   }
+  },
+  {
+   "id": 4,
+   "shot": 2,
+   "t": "5.82",
+   "at_s": 5.82,
+   "vo_line": 1,
+   "offset": 0.0,
+   "vo": "Its ear stones say it was born in eighteen seventy-eight.",
+   "shows": "otolith lands on black velvet as the brass objective drops with a clunk",
+   "sfx": "clank",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "otolith",
+    "action": "lands on black velvet as the brass objective drops with a clunk",
+    "emotion": "still",
+    "annotation": "EAR STONE"
+   },
+   "choreo": {
+    "primary": "otolith lands on black velvet as the brass objective drops with a clunk",
+    "reaction": "the objective shudders on its overshoot and settles",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 5,
+   "shot": 2,
+   "t": "7.20",
+   "at_s": 7.2,
+   "vo_line": 1,
+   "offset": 1.38,
+   "vo": "Its ear stones say it was born in eighteen seventy-eight.",
+   "shows": "tally counter a thumb clicks it and the first ring pulses out from the core",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "tally counter",
+    "action": "a thumb clicks it and the first ring pulses out from the core",
+    "emotion": "focused",
+    "annotation": "0001"
+   },
+   "choreo": {
+    "primary": "tally counter a thumb clicks it and the first ring pulses out from the core",
+    "reaction": "the objective shudders on its overshoot and settles",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 6,
+   "shot": 2,
+   "t": "9.40",
+   "at_s": 9.4,
+   "vo_line": 1,
+   "offset": 3.58,
+   "vo": "Its ear stones say it was born in eighteen seventy-eight.",
+   "shows": "year drum whirs back on its own at centre, slams on 1878 on seventy-eight, then tucks into its corner while the counter holds low",
+   "sfx": "thud",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "year drum",
+    "action": "whirs back on its own at centre, slams on 1878 on seventy-eight, then tucks into its corner while the counter holds low",
+    "emotion": "shocked",
+    "annotation": "EST. 144 YEARS OLD \u00b7 PER NOAA"
+   },
+   "choreo": {
+    "primary": "year drum whirs back on its own at centre, slams on 1878 on seventy-eight, then tucks into its corner while the counter holds low",
+    "reaction": "the objective shudders on its overshoot and settles",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 7,
+   "shot": 2,
+   "t": "11.72",
+   "at_s": 11.72,
+   "vo_line": 2,
+   "offset": 0.0,
+   "vo": "So who counted?",
+   "shows": "brass plate drops beside the stone and rocks",
+   "sfx": "clank",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "brass plate",
+    "action": "drops beside the stone and rocks",
+    "emotion": "quizzical",
+    "annotation": "WHO COUNTED?"
+   },
+   "choreo": {
+    "primary": "brass plate drops beside the stone and rocks",
+    "reaction": "the stone rocks once under the plate",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 8,
+   "shot": 3,
+   "t": "14.66",
+   "at_s": 14.66,
+   "vo_line": 3,
+   "offset": 0.0,
+   "vo": "Fish like this one carry tiny ear stones, called otoliths.",
+   "shows": "fish head cutaway unfolds like a diagram and shows a PAIR of ear stones",
+   "sfx": "paper",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "fish head cutaway",
+    "action": "unfolds like a diagram and shows a PAIR of ear stones",
+    "emotion": "revealing",
+    "annotation": "A PAIR OF EAR STONES"
+   },
+   "choreo": {
+    "primary": "fish head cutaway unfolds like a diagram and shows a PAIR of ear stones",
+    "reaction": "the cutaway labels slide in to name the parts",
+    "ambient": "a slow diagram grid drifts behind the cutaway"
+   }
+  },
+  {
+   "id": 9,
+   "shot": 3,
+   "t": "16.90",
+   "at_s": 16.9,
+   "vo_line": 3,
+   "offset": 2.24,
+   "vo": "Fish like this one carry tiny ear stones, called otoliths.",
+   "shows": "the pair of stones light up side by side on the word pair",
+   "sfx": "pop",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "the pair of stones",
+    "action": "light up side by side on the word pair",
+    "emotion": "neat",
+    "annotation": "EAR STONES"
+   },
+   "choreo": {
+    "primary": "the pair of stones light up side by side on the word pair",
+    "reaction": "the cutaway labels slide in to name the parts",
+    "ambient": "a slow diagram grid drifts behind the cutaway"
+   }
+  },
+  {
+   "id": 10,
+   "shot": 3,
+   "t": "19.40",
+   "at_s": 19.4,
+   "vo_line": 3,
+   "offset": 4.74,
+   "vo": "Fish like this one carry tiny ear stones, called otoliths.",
+   "shows": "label snaps onto the stones on otoliths",
+   "sfx": "snap",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "label",
+    "action": "snaps onto the stones on otoliths",
+    "emotion": "clear",
+    "annotation": "OTOLITH \u00b7 EAR STONE"
+   },
+   "choreo": {
+    "primary": "label snaps onto the stones on otoliths",
+    "reaction": "the cutaway labels slide in to name the parts",
+    "ambient": "a slow diagram grid drifts behind the cutaway"
+   }
+  },
+  {
+   "id": 11,
+   "shot": 3,
+   "t": "21.40",
+   "at_s": 21.4,
+   "vo_line": 4,
+   "offset": 0.84,
+   "vo": "They grow a ring every year, like a tree.",
+   "shows": "otolith rings pulse outward one per year on ring every year",
+   "sfx": "chime",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "otolith rings",
+    "action": "pulse outward one per year on ring every year",
+    "emotion": "patient",
+    "annotation": "ONE RING A YEAR"
+   },
+   "choreo": {
+    "primary": "otolith rings pulse outward one per year on ring every year",
+    "reaction": "the tree stump rings answer one for one",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 12,
+   "shot": 3,
+   "t": "23.20",
+   "at_s": 23.2,
+   "vo_line": 4,
+   "offset": 2.64,
+   "vo": "They grow a ring every year, like a tree.",
+   "shows": "sawn tree cross-section slides in and its rings light one for one with the stone",
+   "sfx": "creak",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "sawn tree cross-section",
+    "action": "slides in and its rings light one for one with the stone",
+    "emotion": "patient",
+    "annotation": "LIKE A TREE"
+   },
+   "choreo": {
+    "primary": "sawn tree cross-section slides in and its rings light one for one with the stone",
+    "reaction": "the tree stump rings answer one for one",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 13,
+   "shot": 4,
+   "t": "24.54",
+   "at_s": 24.54,
+   "vo_line": 5,
+   "offset": 0.0,
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
+   "shows": "NOAA reader bends to the microscope and clicks the counter, ring by ring",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "NOAA reader",
+    "action": "bends to the microscope and clicks the counter, ring by ring",
+    "emotion": "absorbed",
+    "annotation": "NOAA ALASKA FISHERIES SCIENCE CENTER"
+   },
+   "choreo": {
+    "primary": "NOAA reader bends to the microscope and clicks the counter, ring by ring",
+    "reaction": "the reader shoulders drop then square again",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 14,
+   "shot": 4,
+   "t": "26.40",
+   "at_s": 26.4,
+   "vo_line": 5,
+   "offset": 1.86,
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
+   "shows": "trays of stones slide in faster and stack up behind the reader",
+   "sfx": "clank",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "trays of stones",
+    "action": "slide in faster and stack up behind the reader",
+    "emotion": "overwhelmed",
+    "annotation": "UNDER MICROSCOPES"
+   },
+   "choreo": {
+    "primary": "trays of stones slide in faster and stack up behind the reader",
+    "reaction": "the reader shoulders drop then square again",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 15,
+   "shot": 4,
+   "t": "29.20",
+   "at_s": 29.2,
+   "vo_line": 5,
+   "offset": 4.66,
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
+   "shows": "tray stack hits the ceiling with a thud as the count lands",
+   "sfx": "thud",
+   "means": "",
+   "rehook": "the pile hits the ceiling",
+   "draw": {
+    "subject": "tray stack",
+    "action": "hits the ceiling with a thud as the count lands",
+    "emotion": "overwhelmed",
+    "annotation": "30,000+ STONES A YEAR \u00b7 PER NOAA"
+   },
+   "choreo": {
+    "primary": "tray stack hits the ceiling with a thud as the count lands",
+    "reaction": "the reader shoulders drop then square again",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 16,
+   "shot": 4,
+   "t": "30.80",
+   "at_s": 30.8,
+   "vo_line": 5,
+   "offset": 6.26,
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
+   "shows": "tally counter steams in fat puffs from the pace while her thumb keeps clicking",
+   "sfx": "paper",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "tally counter",
+    "action": "steams in fat puffs from the pace while her thumb keeps clicking",
+    "emotion": "weary",
+    "annotation": "COUNTED BY HAND"
+   },
+   "choreo": {
+    "primary": "tally counter steams in fat puffs from the pace while her thumb keeps clicking",
+    "reaction": "the reader shoulders drop then square again",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 17,
+   "shot": 5,
+   "t": "32.00",
+   "at_s": 32.0,
+   "vo_line": 6,
+   "offset": 0.0,
+   "vo": "Now there's a faster reader.",
+   "shows": "NIR reader slides in on brass rails and clanks to a stop beside the bench",
+   "sfx": "clank",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "NIR reader",
+    "action": "slides in on brass rails and clanks to a stop beside the bench",
+    "emotion": "confident",
+    "annotation": "A FASTER READER"
+   },
+   "choreo": {
+    "primary": "NIR reader slides in on brass rails and clanks to a stop beside the bench",
+    "reaction": "the reader glances up from the eyepiece",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 18,
+   "shot": 5,
+   "t": "34.00",
+   "at_s": 34.0,
+   "vo_line": 6,
+   "offset": 2.0,
+   "vo": "Now there's a faster reader.",
+   "shows": "cloth slides an inch and settles back over the machine name plate it already hides",
+   "sfx": "paper",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "cloth",
+    "action": "slides an inch and settles back over the machine name plate it already hides",
+    "emotion": "secretive",
+    "annotation": "?"
+   },
+   "choreo": {
+    "primary": "cloth slides an inch and settles back over the machine name plate it already hides",
+    "reaction": "the reader glances up from the eyepiece",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 19,
+   "shot": 5,
+   "t": "35.10",
+   "at_s": 35.1,
+   "vo_line": 7,
+   "offset": 0.06,
+   "vo": "Near-infrared light hits the stone, and machine learning turns its signature into an age.",
+   "shows": "magenta beam hits a small tagged pollock stone in the sample port",
+   "sfx": "whoosh",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "magenta beam",
+    "action": "hits a small tagged pollock stone in the sample port",
+    "emotion": "precise",
+    "annotation": "NEAR-INFRARED LIGHT"
+   },
+   "choreo": {
+    "primary": "magenta beam hits a small tagged pollock stone in the sample port",
+    "reaction": "the spectrum screen flickers and settles",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 20,
+   "shot": 5,
+   "t": "38.40",
+   "at_s": 38.4,
+   "vo_line": 7,
+   "offset": 3.36,
+   "vo": "Near-infrared light hits the stone, and machine learning turns its signature into an age.",
+   "shows": "model block lights up inside the machine body and a signature line draws across the screen",
+   "sfx": "ding",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "model block",
+    "action": "lights up inside the machine body and a signature line draws across the screen",
+    "emotion": "precise",
+    "annotation": "MACHINE LEARNING"
+   },
+   "choreo": {
+    "primary": "model block lights up inside the machine body and a signature line draws across the screen",
+    "reaction": "the spectrum screen flickers and settles",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 21,
+   "shot": 5,
+   "t": "40.80",
+   "at_s": 40.8,
+   "vo_line": 7,
+   "offset": 5.76,
+   "vo": "Near-infrared light hits the stone, and machine learning turns its signature into an age.",
+   "shows": "AGE OUT slot snaps out a machine-type age tag",
+   "sfx": "snap",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "AGE OUT slot",
+    "action": "snaps out a machine-type age tag",
+    "emotion": "proud",
+    "annotation": "AGE"
+   },
+   "choreo": {
+    "primary": "AGE OUT slot snaps out a machine-type age tag",
+    "reaction": "the spectrum screen flickers and settles",
+    "ambient": "dust motes drift through the lamp light"
+   }
+  },
+  {
+   "id": 22,
+   "shot": 6,
+   "t": "43.92",
+   "at_s": 43.92,
+   "vo_line": 8,
+   "offset": 1.72,
+   "vo": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
+   "shows": "600 pops onto the split frame on six, eyepiece left and spectrum right",
+   "sfx": "pop",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "600",
+    "action": "pops onto the split frame on six, eyepiece left and spectrum right",
+    "emotion": "impressed",
+    "annotation": "600% \u00b7 PER NOAA"
+   },
+   "choreo": {
+    "primary": "600 pops onto the split frame on six, eyepiece left and spectrum right",
+    "reaction": "the thumb on the counter never pauses",
+    "ambient": "the lamp flickers softly"
+   }
+  },
+  {
+   "id": 23,
+   "shot": 6,
+   "t": "44.90",
+   "at_s": 44.9,
+   "vo_line": 8,
+   "offset": 2.7,
+   "vo": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
+   "shows": "800 percent slams beside it and the badge settles",
+   "sfx": "boom",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "800 percent",
+    "action": "slams beside it and the badge settles",
+    "emotion": "impressed",
+    "annotation": "600 TO 800% MORE EFFICIENT \u00b7 PER NOAA"
+   },
+   "choreo": {
+    "primary": "800 percent slams beside it and the badge settles",
+    "reaction": "the thumb on the counter never pauses",
+    "ambient": "the lamp flickers softly"
+   }
+  },
+  {
+   "id": 24,
+   "shot": 6,
+   "t": "46.90",
+   "at_s": 46.9,
+   "vo_line": 8,
+   "offset": 4.7,
+   "vo": "Per NOAA, that's six hundred to eight hundred percent more efficient.",
+   "shows": "eyepiece side keeps ticking rings off as a small tag drops on it",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "eyepiece side",
+    "action": "keeps ticking rings off as a small tag drops on it",
+    "emotion": "steady",
+    "annotation": "MICROSCOPE STILL IN THE PROCESS"
+   },
+   "choreo": {
+    "primary": "eyepiece side keeps ticking rings off as a small tag drops on it",
+    "reaction": "the thumb on the counter never pauses",
+    "ambient": "the lamp flickers softly"
+   }
+  },
+  {
+   "id": 25,
+   "shot": 7,
+   "t": "48.00",
+   "at_s": 48.0,
+   "vo_line": 9,
+   "offset": 0.0,
+   "vo": "But to tie a signature to an age, you need the age first.",
+   "shows": "machine tag drops out through the slot floor and the line runs into the empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
+   "sfx": "whoosh",
+   "means": "",
+   "rehook": "the answer drains away",
+   "draw": {
+    "subject": "machine tag",
+    "action": "drops out through the slot floor and the line runs into the empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
+    "emotion": "puzzled",
+    "annotation": "WHO COUNTED?"
+   },
+   "choreo": {
+    "primary": "machine tag drops out through the slot floor and the line runs into the empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
+    "reaction": "the slot recoils",
+    "ambient": "the beam hums with a moving magenta shimmer"
+   }
+  },
+  {
+   "id": 26,
+   "shot": 7,
+   "t": "51.60",
+   "at_s": 51.6,
+   "vo_line": 9,
+   "offset": 3.6,
+   "vo": "But to tie a signature to an age, you need the age first.",
+   "shows": "signature line recoils from the empty slot",
+   "sfx": "snap",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "signature line",
+    "action": "recoils from the empty slot",
+    "emotion": "stuck",
+    "annotation": "NEED THE AGE FIRST"
+   },
+   "choreo": {
+    "primary": "signature line recoils from the empty slot",
+    "reaction": "the slot recoils",
+    "ambient": "the beam hums with a moving magenta shimmer"
+   }
+  },
+  {
+   "id": 27,
+   "shot": 8,
+   "t": "52.78",
+   "at_s": 52.78,
+   "vo_line": 10,
+   "offset": 0.0,
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
+   "shows": "Alaska pollock swims in and drops its stone onto the first paper tag",
+   "sfx": "paw",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "Alaska pollock",
+    "action": "swims in and drops its stone onto the first paper tag",
+    "emotion": "busy",
+    "annotation": "ALASKA POLLOCK"
+   },
+   "choreo": {
+    "primary": "Alaska pollock swims in and drops its stone onto the first paper tag",
+    "reaction": "each tag swings as its stone steps in",
+    "ambient": "the hopper conveyor rolls continuously"
+   }
+  },
+  {
+   "id": 28,
+   "shot": 8,
+   "t": "54.60",
+   "at_s": 54.6,
+   "vo_line": 10,
+   "offset": 1.82,
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
+   "shows": "lab inked hand ties a marked age tag onto the stone, tugs it tight and withdraws",
+   "sfx": "paper",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "lab inked hand",
+    "action": "ties a marked age tag onto the stone, tugs it tight and withdraws",
+    "emotion": "careful",
+    "annotation": "2023 REPORT \u00b7 TRAINED AND TESTED"
+   },
+   "choreo": {
+    "primary": "lab inked hand ties a marked age tag onto the stone, tugs it tight and withdraws",
+    "reaction": "each tag swings as its stone steps in",
+    "ambient": "the hopper conveyor rolls continuously"
+   }
+  },
+  {
+   "id": 29,
+   "shot": 8,
+   "t": "55.90",
+   "at_s": 55.9,
+   "vo_line": 10,
+   "offset": 3.12,
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
+   "shows": "far door stays closed at the end of the room while light leaks under it and its transom lettering lights",
+   "sfx": "chime",
+   "means": "",
+   "rehook": "a lit door with a name on it, where do the ages go",
+   "draw": {
+    "subject": "far door",
+    "action": "stays closed at the end of the room while light leaks under it and its transom lettering lights",
+    "emotion": "distant",
+    "annotation": "STOCK ASSESSMENT"
+   },
+   "choreo": {
+    "primary": "far door stays closed at the end of the room while light leaks under it and its transom lettering lights",
+    "reaction": "each tag swings as its stone steps in",
+    "ambient": "the hopper conveyor rolls continuously"
+   }
+  },
+  {
+   "id": 30,
+   "shot": 8,
+   "t": "56.60",
+   "at_s": 56.6,
+   "vo_line": 10,
+   "offset": 3.82,
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
+   "shows": "tagged stones march single file into the hopper",
+   "sfx": "chain",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "tagged stones",
+    "action": "march single file into the hopper",
+    "emotion": "orderly",
+    "annotation": "TAGGED WITH AGES"
+   },
+   "choreo": {
+    "primary": "tagged stones march single file into the hopper",
+    "reaction": "each tag swings as its stone steps in",
+    "ambient": "the hopper conveyor rolls continuously"
+   }
+  },
+  {
+   "id": 31,
+   "shot": 8,
+   "t": "58.22",
+   "at_s": 58.22,
+   "vo_line": 10,
+   "offset": 5.44,
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
+   "shows": "brass count climbs on thousand and lands on 8,617 as seventeen ends while rows of tagged stones fill the table",
+   "sfx": "boom",
+   "means": "",
+   "rehook": "",
+   "sfx_offset_frames": 56,
+   "sfx_offset_reason": "the boom lands with 8,617 as seventeen ends, just before pollock",
+   "draw": {
+    "subject": "brass count",
+    "action": "climbs on thousand and lands on 8,617 as seventeen ends while rows of tagged stones fill the table",
+    "emotion": "satisfied",
+    "annotation": "8,617 POLLOCK STONES \u00b7 2023"
+   },
+   "choreo": {
+    "primary": "brass count climbs on thousand and lands on 8,617 as seventeen ends while rows of tagged stones fill the table",
+    "reaction": "each tag swings as its stone steps in",
+    "ambient": "the hopper conveyor rolls continuously"
+   }
+  },
+  {
+   "id": 32,
+   "shot": 9,
+   "t": "63.02",
+   "at_s": 63.02,
+   "vo_line": 11,
+   "offset": 0.0,
+   "vo": "NOAA says the models learned from its archive.",
+   "shows": "bench wall falls away and a corridor of drawers runs to a vanishing point",
+   "sfx": "creak",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "bench wall",
+    "action": "falls away and a corridor of drawers runs to a vanishing point",
+    "emotion": "awed",
+    "annotation": "NOAA ARCHIVE"
+   },
+   "choreo": {
+    "primary": "bench wall falls away and a corridor of drawers runs to a vanishing point",
+    "reaction": "the camera rises with the dust",
+    "ambient": "drawers parallax against the push"
+   }
+  },
+  {
+   "id": 33,
+   "shot": 9,
+   "t": "65.40",
+   "at_s": 65.4,
+   "vo_line": 11,
+   "offset": 2.38,
+   "vo": "NOAA says the models learned from its archive.",
+   "shows": "drawers light in a wave down the corridor as the camera dollies forward",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "drawers",
+    "action": "light in a wave down the corridor as the camera dollies forward",
+    "emotion": "patient",
+    "annotation": "NOAA ARCHIVE"
+   },
+   "choreo": {
+    "primary": "drawers light in a wave down the corridor as the camera dollies forward",
+    "reaction": "the camera rises with the dust",
+    "ambient": "drawers parallax against the push"
+   }
+  },
+  {
+   "id": 34,
+   "shot": 9,
+   "t": "67.32",
+   "at_s": 67.32,
+   "vo_line": 12,
+   "offset": 0.0,
+   "vo": "Two and a half million otolith pairs, back to the nineteen sixties.",
+   "shows": "brass sign drops on two chains into the corridor as the count lands",
+   "sfx": "boom",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "brass sign",
+    "action": "drops on two chains into the corridor as the count lands",
+    "emotion": "vast",
+    "annotation": "2.5 MILLION OTOLITH PAIRS \u00b7 PER NOAA"
+   },
+   "choreo": {
+    "primary": "brass sign drops on two chains into the corridor as the count lands",
+    "reaction": "drawer pulls catch the light in sequence",
+    "ambient": "starfield glints twinkle across the drawer wall"
+   }
+  },
+  {
+   "id": 35,
+   "shot": 9,
+   "t": "71.30",
+   "at_s": 71.3,
+   "vo_line": 12,
+   "offset": 3.98,
+   "vo": "Two and a half million otolith pairs, back to the nineteen sixties.",
+   "shows": "a deep drawer slides open in the corridor as the date lands",
+   "sfx": "snap",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "a deep drawer",
+    "action": "slides open in the corridor as the date lands",
+    "emotion": "calm",
+    "annotation": "SINCE THE 1960s"
+   },
+   "choreo": {
+    "primary": "a deep drawer slides open in the corridor as the date lands",
+    "reaction": "drawer pulls catch the light in sequence",
+    "ambient": "starfield glints twinkle across the drawer wall"
+   }
+  },
+  {
+   "id": 36,
+   "shot": 10,
+   "t": "73.18",
+   "at_s": 73.18,
+   "vo_line": 13,
+   "offset": 0.0,
+   "vo": "Around two million once sat in an old airplane hangar in Seattle.",
+   "shows": "timber hangar opens on shelves of glinting specimen trays under a propeller hung across the beam, and a raven lifts off a rafter",
+   "sfx": "caw",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "timber hangar",
+    "action": "opens on shelves of glinting specimen trays under a propeller hung across the beam, and a raven lifts off a rafter",
+    "emotion": "nostalgic",
+    "annotation": "1930s HANGAR \u00b7 SEATTLE \u00b7 AROUND 2 MILLION"
+   },
+   "choreo": {
+    "primary": "timber hangar opens on shelves of glinting specimen trays under a propeller hung across the beam, and a raven lifts off a rafter",
+    "reaction": "the propeller turns a quarter in a draft",
+    "ambient": "dust drifts through the hangar lamp beam"
+   }
+  },
+  {
+   "id": 37,
+   "shot": 10,
+   "t": "74.90",
+   "at_s": 74.9,
+   "vo_line": 13,
+   "offset": 1.72,
+   "vo": "Around two million once sat in an old airplane hangar in Seattle.",
+   "shows": "archive stone rises under a brass sign carrying the quote",
+   "sfx": "ding",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "archive stone",
+    "action": "rises under a brass sign carrying the quote",
+    "emotion": "reverent",
+    "annotation": "\"A PERFECT LITTLE TIME CAPSULE\" \u00b7 DEREK CHAMBERLIN \u00b7 NOAA FISHERIES"
+   },
+   "choreo": {
+    "primary": "archive stone rises under a brass sign carrying the quote",
+    "reaction": "the propeller turns a quarter in a draft",
+    "ambient": "dust drifts through the hangar lamp beam"
+   }
+  },
+  {
+   "id": 38,
+   "shot": 10,
+   "t": "77.50",
+   "at_s": 77.5,
+   "vo_line": 13,
+   "offset": 4.32,
+   "vo": "Around two million once sat in an old airplane hangar in Seattle.",
+   "shows": "crate lids slam and their brass latches snap shut one after another",
+   "sfx": "snap",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "crate lids",
+    "action": "slam and their brass latches snap shut one after another",
+    "emotion": "decisive",
+    "annotation": "MOVED \u00b7 2012"
+   },
+   "choreo": {
+    "primary": "crate lids slam and their brass latches snap shut one after another",
+    "reaction": "the propeller turns a quarter in a draft",
+    "ambient": "dust drifts through the hangar lamp beam"
+   }
+  },
+  {
+   "id": 39,
+   "shot": 11,
+   "t": "79.08",
+   "at_s": 79.08,
+   "vo_line": 14,
+   "offset": 0.0,
+   "vo": "Now, the fair case against.",
+   "shows": "brass sign drops on its chains over the staircase and swings",
+   "sfx": "boom",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "brass sign",
+    "action": "drops on its chains over the staircase and swings",
+    "emotion": "serious",
+    "annotation": "THE FAIR CASE AGAINST"
+   },
+   "choreo": {
+    "primary": "brass sign drops on its chains over the staircase and swings",
+    "reaction": "the trophy rocks and settles",
+    "ambient": "the staircase brass glints as the camera rises"
+   }
+  },
+  {
+   "id": 40,
+   "shot": 11,
+   "t": "80.30",
+   "at_s": 80.3,
+   "vo_line": 14,
+   "offset": 1.22,
+   "vo": "Now, the fair case against.",
+   "shows": "AGE and CATCH LIMITS plinths rise out of the floor on either side of the dashed step",
+   "sfx": "clank",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "AGE and CATCH LIMITS plinths",
+    "action": "rise out of the floor on either side of the dashed step",
+    "emotion": "expectant",
+    "annotation": "AGE \u00b7 CATCH LIMITS"
+   },
+   "choreo": {
+    "primary": "AGE and CATCH LIMITS plinths rise out of the floor on either side of the dashed step",
+    "reaction": "the trophy rocks and settles",
+    "ambient": "the staircase brass glints as the camera rises"
+   }
+  },
+  {
+   "id": 41,
+   "shot": 11,
+   "t": "82.60",
+   "at_s": 82.6,
+   "vo_line": 15,
+   "offset": 0.02,
+   "vo": "A faster age only helps if it changes what fishery managers use.",
+   "shows": "age tag hops out of the reader slot onto the AGE plinth",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "age tag",
+    "action": "hops out of the reader slot onto the AGE plinth",
+    "emotion": "hopeful",
+    "annotation": "AGE"
+   },
+   "choreo": {
+    "primary": "age tag hops out of the reader slot onto the AGE plinth",
+    "reaction": "the tag teeters on the step edge",
+    "ambient": "the dashed step flickers"
+   }
+  },
+  {
+   "id": 42,
+   "shot": 11,
+   "t": "86.40",
+   "at_s": 86.4,
+   "vo_line": 15,
+   "offset": 3.82,
+   "vo": "A faster age only helps if it changes what fishery managers use.",
+   "shows": "manager walks onto the CATCH LIMITS plinth and points at the tag",
+   "sfx": "chime",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "manager",
+    "action": "walks onto the CATCH LIMITS plinth and points at the tag",
+    "emotion": "patient",
+    "annotation": "CATCH LIMITS"
+   },
+   "choreo": {
+    "primary": "manager walks onto the CATCH LIMITS plinth and points at the tag",
+    "reaction": "the tag teeters on the step edge",
+    "ambient": "the dashed step flickers"
+   }
+  },
+  {
+   "id": 43,
+   "shot": 11,
+   "t": "88.20",
+   "at_s": 88.2,
+   "vo_line": 16,
+   "offset": 0.04,
+   "vo": "NOAA called getting these ages into stock assessments the next step.",
+   "shows": "age tag jumps for the dashed step, falls short onto the edge of AGE and teeters there",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "will it make the step",
+   "draw": {
+    "subject": "age tag",
+    "action": "jumps for the dashed step, falls short onto the edge of AGE and teeters there",
+    "emotion": "hopeful",
+    "annotation": "AGE"
+   },
+   "choreo": {
+    "primary": "age tag jumps for the dashed step, falls short onto the edge of AGE and teeters there",
+    "reaction": "the manager looks down at the tag",
+    "ambient": "the dashed step flickers"
+   }
+  },
+  {
+   "id": 44,
+   "shot": 11,
+   "t": "90.60",
+   "at_s": 90.6,
+   "vo_line": 16,
+   "offset": 2.44,
+   "vo": "NOAA called getting these ages into stock assessments the next step.",
+   "shows": "the same closed door standing on the dashed step lights its transom and the light under it",
+   "sfx": "ding",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "the same closed door",
+    "action": "standing on the dashed step lights its transom and the light under it",
+    "emotion": "distant",
+    "annotation": "STOCK ASSESSMENT"
+   },
+   "choreo": {
+    "primary": "the same closed door standing on the dashed step lights its transom and the light under it",
+    "reaction": "the manager looks down at the tag",
+    "ambient": "the dashed step flickers"
+   }
+  },
+  {
+   "id": 45,
+   "shot": 11,
+   "t": "92.00",
+   "at_s": 92.0,
+   "vo_line": 16,
+   "offset": 3.84,
+   "vo": "NOAA called getting these ages into stock assessments the next step.",
+   "shows": "stamp thuds into the dashed step as the camera whips back, the tag tumbles to AGE and the manager nods",
+   "sfx": "stamp",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "stamp",
+    "action": "thuds into the dashed step as the camera whips back, the tag tumbles to AGE and the manager nods",
+    "emotion": "stopped",
+    "annotation": "NEXT STEP \u00b7 PER NOAA \u00b7 2023"
+   },
+   "choreo": {
+    "primary": "stamp thuds into the dashed step as the camera whips back, the tag tumbles to AGE and the manager nods",
+    "reaction": "the manager looks down at the tag",
+    "ambient": "the dashed step flickers"
+   }
+  },
+  {
+   "id": 46,
+   "shot": 12,
+   "t": "93.50",
+   "at_s": 93.5,
+   "vo_line": 17,
+   "offset": 0.04,
+   "vo": "Catch limits are set by managers, not machines, and the microscope is still in the process.",
+   "shows": "manager inked hand drags a numberless limit line across the clipboard beside the machine tag",
+   "sfx": "paper",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "manager inked hand",
+    "action": "drags a numberless limit line across the clipboard beside the machine tag",
+    "emotion": "resolute",
+    "annotation": "MANAGERS SET LIMITS \u00b7 NOT MACHINES"
+   },
+   "choreo": {
+    "primary": "manager inked hand drags a numberless limit line across the clipboard beside the machine tag",
+    "reaction": "the manager pen pauses then writes",
+    "ambient": "the lamp pool breathes"
+   }
+  },
+  {
+   "id": 47,
+   "shot": 12,
+   "t": "97.40",
+   "at_s": 97.4,
+   "vo_line": 17,
+   "offset": 3.94,
+   "vo": "Catch limits are set by managers, not machines, and the microscope is still in the process.",
+   "shows": "NOAA reader comes into focus across the hall as the clipboard slides away, eye at the microscope, her counter still clicking",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "NOAA reader",
+    "action": "comes into focus across the hall as the clipboard slides away, eye at the microscope, her counter still clicking",
+    "emotion": "steady",
+    "annotation": "MICROSCOPE STILL IN THE PROCESS"
+   },
+   "choreo": {
+    "primary": "NOAA reader comes into focus across the hall as the clipboard slides away, eye at the microscope, her counter still clicking",
+    "reaction": "the manager pen pauses then writes",
+    "ambient": "the lamp pool breathes"
+   }
+  },
+  {
+   "id": 48,
+   "shot": 13,
+   "t": "100.24",
+   "at_s": 100.24,
+   "vo_line": 18,
+   "offset": 0.0,
+   "vo": "So the win today is speed and method. That's real.",
+   "shows": "trophy bounces onto the machine while the reader inked hand pushes a tray of hand-tagged stones into its port",
+   "sfx": "riser",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "trophy",
+    "action": "bounces onto the machine while the reader inked hand pushes a tray of hand-tagged stones into its port",
+    "emotion": "warm",
+    "annotation": "CREDIT \u00b7 NOAA SCIENTISTS"
+   },
+   "choreo": {
+    "primary": "trophy bounces onto the machine while the reader inked hand pushes a tray of hand-tagged stones into its port",
+    "reaction": "the lamp and the machine glow brighten together",
+    "ambient": "tally ticks drift like snow"
+   }
+  },
+  {
+   "id": 49,
+   "shot": 13,
+   "t": "103.80",
+   "at_s": 103.8,
+   "vo_line": 18,
+   "offset": 3.56,
+   "vo": "So the win today is speed and method. That's real.",
+   "shows": "cloth lifts off the machine name plate and a glint crosses it",
+   "sfx": "paper",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "cloth",
+    "action": "lifts off the machine name plate and a glint crosses it",
+    "emotion": "proud",
+    "annotation": "TRAINED ON THE ARCHIVE"
+   },
+   "choreo": {
+    "primary": "cloth lifts off the machine name plate and a glint crosses it",
+    "reaction": "the lamp and the machine glow brighten together",
+    "ambient": "tally ticks drift like snow"
+   }
+  },
+  {
+   "id": 50,
+   "shot": 13,
+   "t": "105.90",
+   "at_s": 105.9,
+   "vo_line": 19,
+   "offset": 0.26,
+   "vo": "But look where the speed came from.",
+   "shows": "the AGE OUT slot fills the frame and its WHO COUNTED? plate spins like a split-flap and lands as a handwritten 7",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "the AGE OUT slot",
+    "action": "fills the frame and its WHO COUNTED? plate spins like a split-flap and lands as a handwritten 7",
+    "emotion": "revealed",
+    "annotation": "CHECKED AGAINST MICROSCOPE AGES \u00b7 BENSON ET AL. 2023"
+   },
+   "choreo": {
+    "primary": "the AGE OUT slot fills the frame and its WHO COUNTED? plate spins like a split-flap and lands as a handwritten 7",
+    "reaction": "the counter digits roll",
+    "ambient": "tally ticks drift like snow"
+   }
+  },
+  {
+   "id": 51,
+   "shot": 13,
+   "t": "107.40",
+   "at_s": 107.4,
+   "vo_line": 19,
+   "offset": 1.76,
+   "vo": "But look where the speed came from.",
+   "shows": "signature line tears into 144 tally ticks that curve onto the growth rings of the 1878 stone, magenta turning pearl",
+   "sfx": "paper",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "signature line",
+    "action": "tears into 144 tally ticks that curve onto the growth rings of the 1878 stone, magenta turning pearl",
+    "emotion": "moved",
+    "annotation": "OUR READ \u00b7 THE COUNT CAME FIRST"
+   },
+   "choreo": {
+    "primary": "signature line tears into 144 tally ticks that curve onto the growth rings of the 1878 stone, magenta turning pearl",
+    "reaction": "the counter digits roll",
+    "ambient": "tally ticks drift like snow"
+   }
+  },
+  {
+   "id": 52,
+   "shot": 14,
+   "t": "110.60",
+   "at_s": 110.6,
+   "vo_line": 20,
+   "offset": 2.0,
+   "vo": "Every age it gives back started as a ring somebody counted.",
+   "shows": "brass sign springs up and swings to a stop under the 1878 stone beside the BORN drum, still asking",
+   "sfx": "snap",
+   "means": "",
+   "rehook": "",
+   "draw": {
+    "subject": "brass sign",
+    "action": "springs up and swings to a stop under the 1878 stone beside the BORN drum, still asking",
+    "emotion": "warm",
+    "annotation": "WHO COUNTED?"
+   },
+   "choreo": {
+    "primary": "brass sign springs up and swings to a stop under the 1878 stone beside the BORN drum, still asking",
+    "reaction": "the rings ripple outward",
+    "ambient": "water particles drift as the loop begins"
+   }
+  },
+  {
+   "id": 53,
+   "shot": 14,
+   "t": "112.46",
+   "at_s": 112.46,
+   "vo_line": 20,
+   "offset": 3.86,
+   "vo": "Every age it gives back started as a ring somebody counted.",
+   "shows": "brass sign flips WHO to SOMEBODY on somebody, the counter clicks to 0144 on counted, EST. 144 YEARS OLD lands and the rings pulse",
+   "sfx": "tick",
+   "means": "",
+   "rehook": "",
+   "sfx_offset_frames": 16,
+   "sfx_offset_reason": "the counter click lands on the word counted at 113.0, the plate flips on somebody",
+   "draw": {
+    "subject": "brass sign",
+    "action": "flips WHO to SOMEBODY on somebody, the counter clicks to 0144 on counted, EST. 144 YEARS OLD lands and the rings pulse",
+    "emotion": "tender",
+    "annotation": "SOMEBODY COUNTED"
+   },
+   "choreo": {
+    "primary": "brass sign flips WHO to SOMEBODY on somebody, the counter clicks to 0144 on counted, EST. 144 YEARS OLD lands and the rings pulse",
+    "reaction": "the rings ripple outward",
+    "ambient": "water particles drift as the loop begins"
+   }
+  }
+ ]
+}

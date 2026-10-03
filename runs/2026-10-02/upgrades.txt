@@ -1,0 +1,7 @@
+Character rig gained lightWrap, so a mirrored figure's rim no longer floats on the side away from the lamp
+Character rig gained look, a head turn without a new pose
+NIR reader cloth now sags, ripples and leaves up and left, clear of the trophy plate
+Archive drawers sit on opaque bases, and the open drawer is drawn last, lit inside, with glinting vials
+Evidence strips renamed for the film's actions, and the beat 49 strip now samples the on-screen citation
+DISPATCH_STANDARD section 9 gained 20 rules this panel found that were knowable in advance
+Queued for the machine pass, 18 open, with repeat offenders caption-chunk-by-sense (6), vo-wer-canonicalizer (3) and character-finish-lags-props (1) first

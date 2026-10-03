@@ -76,17 +76,20 @@ export const BoxLabel: React.FC<{
 export const StatBurst: React.FC<{
   cx: number; cy: number; scale?: number; big: string; lines?: string[];
   fill?: string; rot?: number; big_fs?: number;
-}> = ({cx, cy, scale = 1, big, lines = [], fill = AMBER, rot = 0, big_fs = 88}) => (
+  /** type families for the numeral and the sublines; default to the original grotesque so
+   *  existing episodes render unchanged, while a film with a type system passes its own */
+  fontBig?: string; fontSub?: string;
+}> = ({cx, cy, scale = 1, big, lines = [], fill = AMBER, rot = 0, big_fs = 88, fontBig = BOLD, fontSub = BOLD}) => (
   <g transform={`translate(${cx},${cy}) scale(${scale}) rotate(${rot})`}>
     {/* CRAFT ADVANCE 2026-07-24: drop shadow so the badge sits IN the lit scene, not on top */}
     <ellipse cx={0} cy={16} rx={150} ry={26} fill={INK} opacity={0.22} style={{filter: 'blur(7px)'}} />
     <polygon points={burst(0, 0, 14, 172, 132)} fill={fill} stroke={INK} strokeWidth={8} strokeLinejoin="round" />
     <polygon points={burst(0, 0, 14, 146, 112)} fill="none" stroke={AMBER_D} strokeWidth={5} opacity={0.7} />
-    <text x={0} y={lines.length ? -6 : big_fs * 0.34} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={big_fs} fill={INK}>
+    <text x={0} y={lines.length ? -6 : big_fs * 0.34} textAnchor="middle" fontFamily={fontBig} fontWeight={900} fontSize={big_fs} fill={INK}>
       {big}
     </text>
     {lines.map((t, i) => (
-      <text key={i} x={0} y={34 + i * 34} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={28} fill={INK} letterSpacing={0.5}>
+      <text key={i} x={0} y={34 + i * 34} textAnchor="middle" fontFamily={fontSub} fontWeight={fontSub === BOLD ? 900 : 800} fontSize={fontSub === BOLD ? 28 : 24} fill={INK} letterSpacing={0.5}>
         {t}
       </text>
     ))}
@@ -119,6 +122,10 @@ export const Stamp: React.FC<{cx: number; cy: number; s: number; text: string; r
 }) => {
   const paperTones = tones('#f4efe0');
   const gid = `stampPaper_${cx}_${cy}`;
+  // THE RING FITS ITS STRING (2026-10-02). A fixed 600px ring let "MOVED · 2012" run its M and
+  // last 2 into the border. Width only grows past 600 when the text needs it, so every stamp
+  // that fit before renders exactly as before.
+  const half = Math.max(300, (text.length * 82 * 0.66 + Math.max(0, text.length - 1) * 6) / 2 + 36);
   return (
     <g transform={`translate(${cx},${cy})`} opacity={Math.min(1, s * 1.4)}>
       {onPaper && (
@@ -129,10 +136,10 @@ export const Stamp: React.FC<{cx: number; cy: number; s: number; text: string; r
         </>
       )}
       <g transform={`rotate(${rot}) scale(${s})`}>
-        <rect x={-300} y={-70} width={600} height={140} rx={12} fill="none" stroke={color} strokeWidth={12} />
-        <rect x={-300} y={-70} width={600} height={140} rx={12} fill="none" stroke={color} strokeWidth={3} opacity={0.5} transform="rotate(0.6)" />
+        <rect x={-half} y={-70} width={2 * half} height={140} rx={12} fill="none" stroke={color} strokeWidth={12} />
+        <rect x={-half} y={-70} width={2 * half} height={140} rx={12} fill="none" stroke={color} strokeWidth={3} opacity={0.5} transform="rotate(0.6)" />
         {/* ink-bleed edge irregularity, a real rubber-stamp impression is never a clean vector ring */}
-        <rect x={-296} y={-66} width={592} height={132} rx={10} fill="none" stroke={color} strokeWidth={2} opacity={0.35} transform="rotate(-0.8) translate(2,-3)" />
+        <rect x={-half + 4} y={-66} width={2 * half - 8} height={132} rx={10} fill="none" stroke={color} strokeWidth={2} opacity={0.35} transform="rotate(-0.8) translate(2,-3)" />
         <text x={0} y={26} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={82} fill={color} letterSpacing={6}>
           {text}
         </text>

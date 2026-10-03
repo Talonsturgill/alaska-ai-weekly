@@ -230,3 +230,84 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
   carry that beat had opacity 0 for the first five seconds of its own shot, so the newspaper
   was the entire frame and nothing in it moved. Before animating a scene, list what is
   visible at the timecode in question.
+
+## 9. Things the 2026-10-02 panel found that were knowable in advance
+
+- **A plate inside a LIBRARY component sizes itself to its string, by arithmetic, like an
+  episode Plate does.** The NIR reader's nameplate was a fixed 340px rect, so TRAINED ON THE
+  ARCHIVE rendered as "RAINED ON THE ARCHIV" in two shots and was the round's hard blocker.
+  `plateW` exists for exactly this. Any lib component that paints a caller's string (a
+  nameplate, a counter label, a drum label) computes its width from the string's length.
+- **One recurring sign is one component.** WHO COUNTED? appeared on three different plate
+  treatments, so the loop object did not read as the same object when it paid off. Draw the
+  film's question, its section title and its quote plaques with ONE sign component, and let
+  the payoff flip the sign the viewer already knows.
+- **A hand at hero scale is inked and form-shaded, and a pen's tip sits on the mark it
+  makes.** A flat skin-colour silhouette read as clip art next to modelled brass. When a hand
+  holds a pen, place it FROM the tip: compute the pinch point from where the line ends, never
+  the reverse, or the pen points away from its own line.
+- **A reader at a microscope has an eye at the eyepiece.** Derive the scope's position from
+  the rig's face (feet minus about 400 times scale), and keep that offset when the same pair
+  reappears at background scale.
+- **A figure lands once.** A stat shown as a burst, a chip and a plate in the same frame is
+  stated three times and read zero times. One hero treatment per figure, with its attribution
+  riding on it.
+- **A hedged figure carries its hedge every time it is drawn.** The 1878 birth year is an
+  estimate (claim c6), so EST., ESTIMATED or ABOUT goes on every surface that shows it.
+- **Caption cards break by sense.** One card per sentence or clause, rows split at a comma or
+  before a preposition, never after an article, a possessive or a number, never inside a
+  range ("600 to" / "800"), and the card holds across a sub-0.15s gap instead of blinking.
+- **A set fills the frame top to bottom.** Walls run to the top edge and floors or tables to
+  the bottom edge under the caption card. A wall that starts at y 380 leaves a third of the
+  frame as dead space, and dead space is a whole-film ratchet.
+- **Things entering a machine pass behind its front face.** Draw order is part of the story:
+  stones marching into a hopper that are painted over its front read as floating.
+- **A match cut shares exact geometry and a camera at rest.** The finale's ticks land on the
+  growth bands of the next shot's stone because both use the same centre, scale and rotation
+  (single-sourced through `otolithPoint`), and the outgoing shot returns to zoom 1 with no
+  drift before the cut.
+- **A label on a prop is type, and a prop drawn after it can hide it.** Round 4's only hard
+  blocker was POLLOCK STONES losing its final S behind a hopper that had been moved 70 px to
+  fix a different note. The geometry gates model plate against plate and the frame edge, not
+  a label against art painted later. When a prop moves, probe every label within its reach.
+- **A chip adds to the caption, it never repeats it.** A chip that says what the caption says
+  is read twice and doubles the load over the caption band. Give the chip the source, the
+  year or the figure instead (LIMITS SET EACH YEAR · PER NOAA under "set by managers").
+- **The citation and the film's own read never share a frame.** The sourced comparison
+  (CHECKED AGAINST MICROSCOPE AGES · BENSON ET AL. 2023) rides its own line and leaves on the
+  frame the film's synthesis (OUR READ) lands, so the read is never captioned by the citation.
+- **spring() is for pops and settles, not for travel.** Its ring frequency is fixed per frame,
+  so with a long duration it overshot a 900 px slide by 31 percent inside a whip and read as a
+  positional pop. Move things with an ease and add a small decaying settle at the end.
+- **An entrance is a walk, not a fade.** A figure arriving in a shot starts off frame, its
+  stride is driven by the distance it travels so the feet do not skate, it settles with a
+  small overshoot, and only then gestures. A fade-in reads as a ghost.
+- **A mirrored figure takes its rim from the scene's lamp.** The rig's rim and sheen are drawn
+  for a key at the figure's own upper left, so `facing={-1}` puts them on the side away from a
+  left-hand lamp, where a judge read them as a ghosted duplicate. Turn them down with
+  `lightWrap` when the lamp disagrees.
+- **Motion the square crop cannot see did not happen on LinkedIn.** The 1:1 cut keeps y 420
+  to 1500. A hero move (a bird's flight, a sign's drop) is staged inside that band, and a
+  plate that would share the band waits for the move to clear.
+- **Clip in the parent's space.** A transform on an element that also carries a clipPath
+  transforms the clip with it: a skewed glint escaped its plate for ten frames in every
+  round. Put the clip on a parent group and skew the shape inside it.
+- **A promised gag is drawn or cut from the board.** A judge reads the board's action line as
+  a promise. "The reader fans it with a card" was never drawn, and a disembodied hand would
+  have been worse than the promise, so the line was cut and the steam was made legible.
+- **A claim and its citation are one plate.** CHECKED AGAINST MICROSCOPE AGES set as three
+  boxes of three widths (claim, claim, citation) was flagged by all three judges, the flow
+  critic and the editor in the same round. One plate, one width, one left edge: the claim's
+  lines over a smaller citation line.
+- **A label holds for its own length.** A plate carrying a fact or an attribution is on screen
+  at full opacity for at least its characters divided by 15 seconds, and it lands when nothing
+  else is landing. The c9 qualifier and the 2023 under NEXT STEP each held about 0.9 s at 22 to
+  24 px in round 4, and the editor read them as fine print hiding the honest part.
+- **A held gesture still breathes.** A figure pointing for five seconds is a figure frozen for
+  five seconds unless breath, a weight shift and a late head turn run under the pose. All three
+  judges read the manager on CATCH LIMITS as a still image through 88 to 93 s.
+- **The film's own plates use the sourced wording that blocks the wrong reading.** The machine's
+  nameplate TRAINED ON THE ARCHIVE was c18's approved string, and it still let the editor read
+  the 2.5 million pair archive as the training set once the archive was introduced by that
+  number. Where two true figures sit near each other, the plate names the smaller one (archive
+  SAMPLES) so the viewer can't merge them.

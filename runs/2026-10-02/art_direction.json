@@ -1,0 +1,127 @@
+{
+ "run_date": "2026-10-02",
+ "story_id": "noaa-otolith-nir-ml",
+ "palette": {
+  "roles": {
+   "sky": "#0A1B24",
+   "ground": "#13262E",
+   "water": "#0F3340",
+   "hero": "#EDE3CC",
+   "brass": "#C8963E",
+   "lamp": "#FFD58A",
+   "accent": "#E0336B",
+   "shadow": "#050C10",
+   "ink": "#0B1418",
+   "paper": "#F2EBDA"
+  },
+  "mood": "Lamplit deep-sea study. Bering teal-black water and a dark bench, one warm brass lamp, a pearl otolith that is the brightest object in every frame, and a single near-infrared magenta that means ONLY the machine's light and its signature.",
+  "divergence": "September 30th was fog slate, peat and a warning orange on a phone and a binder. September 23rd was Air Force paper and statements. This film has no document pile at all, it lives in water, under a microscope lamp and in a timber hangar, and its accent is NIR magenta, used on nothing human.",
+  "brass_rule": "Brass #C8963E only on small hard-edged parts (rails, objective, plates, counter, trophy), never a background wash, so teal-black stays the dominant field. The engineers' trophy is brass, never magenta."
+ },
+ "light": {
+  "time": "Night at the bench, a single warm lamp",
+  "direction": "Key from the microscope lamp upper left (warm #FFD58A), cool teal fill from the water and archive dark, magenta rim ONLY on the spectrometer beam and spectral line",
+  "depth": "Three planes per set: dark archive or water behind, the bench or stone in the middle, the reader's hands and the counter foreground. GradeLayer warm bloom on the lamp, NightGrade style vignette. lib/lighting tones() ramps on brass.",
+  "per_set": {
+   "aleutian-water": "cool caustic key from above, teal fill, a pearl rim on the otolith so the stone is the brightest object when it pops",
+   "bench": "warm lamp key upper left, teal fill, magenta rim only on the beam",
+   "machine-interior": "magenta beam as the only key, the slot rimmed in brass, the question mark lit pearl",
+   "archive and hangar": "one hanging lamp pool at centre, cool falloff to the far drawers, drawer pulls catch glints",
+   "staircase": "the reader's lamp across the hall keys the stairs warm from the left, teal fill, the manager's pen catches the lamp",
+   "cutaway-diagram": "flat cool diagram key, the pearl stones and the tree rings rimmed warm"
+  }
+ },
+ "shape_language": {
+  "grammar": "Concentric rings (organic, counted, human) against straight lines and rails (the machine, the spectrum, the staircase). The otolith is an irregular rounded bean with rings; the spectrometer is rectilinear brass on straight rails; the spectral line is a jagged straight-segment polyline.",
+  "why": "The turn is the straight line resolving back into ring ticks, so the contrast has to be legible from frame 1.",
+  "turn": "At the turn the straight magenta spectral line tears into tally ticks, and the ticks CURVE as they fall and settle as concentric arcs around an otolith core, so the line literally becomes rings. Each tick shifts colour from accent #E0336B to hero pearl #EDE3CC as it lands, and the outermost ring lands in lamp #FFD58A on the final click. After that the only magenta left in the button is the rim of the NIRReader plate."
+ },
+ "casting": {
+  "hero": "Otolith (net-new, lib/otolith.tsx): pearl bean-shaped ear stone with animatable annual ring bands that pulse core outward, an x-ray glow state and a NIR pass-through state, plus a small paper age tag.",
+  "inventory": [
+   {
+    "beats": "open and button",
+    "subject": "rockfish gliding, x-ray head",
+    "source": "net-new Rockfish in fauna.tsx on lib/fishcraft.tsx (fish engine), reused for pollock by params"
+   },
+   {
+    "beats": "throughline",
+    "subject": "brass tally counter with rolling digits",
+    "source": "net-new TallyCounter in lib/otolith.tsx"
+   },
+   {
+    "beats": "bench",
+    "subject": "brass microscope objective and NIR spectrometer on rails",
+    "source": "net-new BenchScope and NIRReader in lib/otolith.tsx, built to the bench.tsx brass bar, BrassPlate from bench.tsx for the name plates"
+   },
+   {
+    "beats": "reader and manager",
+    "subject": "unnamed human reader in glasses, manager silhouette",
+    "source": "Character rig (glasses, hairStyle long), arms-crossed and carry poses"
+   },
+   {
+    "beats": "archive and hangar",
+    "subject": "drawer wall to vanishing point, timber hangar",
+    "source": "net-new ArchiveDrawers in lib/otolith.tsx, stage3d planes"
+   },
+   {
+    "beats": "test",
+    "subject": "three-step brass staircase",
+    "source": "composed from Extrude/Plane in stage3d plus BoxLabel and Stamp from kit.tsx"
+   },
+   {
+    "beats": "shot 3",
+    "subject": "tree stump cross-section",
+    "source": "net-new TreeRings in lib/otolith.tsx, reusing the Otolith ring-band renderer so the rings match one for one"
+   },
+   {
+    "beats": "shot 11",
+    "subject": "engineers' trophy",
+    "source": "a state of NIRReader (trophy prop), brass tones() ramp"
+   },
+   {
+    "beats": "shots 5, 7, 8, 13, 14",
+    "subject": "hopper, AGE OUT slot, cloth and name plate",
+    "source": "states of NIRReader"
+   },
+   {
+    "beats": "shot 8",
+    "subject": "STOCK ASSESSMENT door",
+    "source": "stage3d-style plane door plus BoxLabel from kit.tsx"
+   },
+   {
+    "beats": "shot 2",
+    "subject": "date counter 2022 to 1878",
+    "source": "TallyCounter digit-roll variant (count prop)"
+   },
+   {
+    "beats": "shot 2",
+    "subject": "WHO COUNTED? plate",
+    "source": "BrassPlate from bench.tsx"
+   },
+   {
+    "beats": "shots 2 and 14",
+    "subject": "microscope objective",
+    "source": "net-new BenchScope: the shelf has no microscope (bench.tsx is ash instruments, calipers and cores)"
+   }
+  ],
+  "net_new": "Otolith, TreeRings, TallyCounter, NIRReader, BenchScope, ArchiveDrawers, AgeTag, SpectralLine (lib/otolith.tsx) and Groundfish rockfish/pollock (fauna.tsx). Registered in ASSET_MANIFEST.md, index regenerated.",
+  "continuity": "Character rig, BrassPlate, BoxLabel, StatBurst, Stamp, FatArrow, ImpactStar, SpeedLines, PaperStorm, GradeLayer, ContactShadow, Stage3D."
+ },
+ "motion_language": {
+  "world": "Water drifts with suspended particles, the lamp breathes, archive drawers parallax. Rings pulse core outward on every click, the tally digits roll with overshoot.",
+  "hero_moves": [
+   "the otolith pop out of the rockfish with anticipation, 180 degree motion blur and spin settle",
+   "the NIR spectrometer sliding in on rails with overshoot and a brass clank",
+   "the machine tag bouncing off the sealed NEXT STEP slot with squash and an ImpactStar",
+   "the spectral line tearing into tally ticks that curve and settle as concentric rings around an otolith core, magenta turning pearl"
+  ]
+ },
+ "composition": {
+  "focal": "The shot's named hero is always the brightest, best-finished object at the frame centre. The magenta beam never outshines the pearl stone.",
+  "negative_space": "the archive dark and the water carry the negative space, the lamp pool frames the subject",
+  "safe_area": "hero action and plates inside y 420 to 1500 for the square, atmosphere above and bench foreground below",
+  "signature_shot": "Inside the 1930s timber hangar in Seattle: a propeller on a beam where planes should be, drawers glinting to a vanishing point like a starfield (held 0.7s), no person; an unlabeled archive stone rises from one drawer under the brass plate reading \"A PERFECT LITTLE TIME CAPSULE\" \u00b7 DEREK CHAMBERLIN \u00b7 NOAA FISHERIES, while crates stamp shut MOVED \u00b7 2012."
+ },
+ "craft_advance": "none needed beyond the net-new otolith family"
+}
