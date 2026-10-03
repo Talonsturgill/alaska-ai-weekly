@@ -64,7 +64,7 @@ MOVES = [
     ('noaa_reader_at_the_microscope_clicks_the_counter', 13, 0.2),
     ('trays_of_stones_slide_in_faster_and_stack', 14, 0.45),
     ('tray_stack_hits_the_ceiling_with_a', 15, 0.2),
-    ('tally_counter_steams_from_the_pace_and', 16, 0.2),
+    ('tally_counter_steams_in_fat_puffs_from_the_pace', 16, 0.2),
     ('nir_reader_slides_in_on_brass_rails', 17, 0.2),
     ('cloth_slides_and_settles_over_the_name_plate', 18, 0.2),
     ('magenta_beam_hits_a_small_tagged_pollock', 19, 0.2),

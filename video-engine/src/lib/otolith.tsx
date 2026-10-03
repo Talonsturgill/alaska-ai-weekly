@@ -373,16 +373,32 @@ export const NIRReader: React.FC<{
       <g transform="translate(0,-60)">
         <rect x={-pw / 2} y={-22} width={pw} height={44} rx={7} fill={`url(#${id}b)`} stroke={INK} strokeWidth={4} />
         <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={20} fill={INK} letterSpacing={1}>{plate}</text>
-        {cl > 0.01 && (
+        {cl > 0.01 && (() => {
           // PULLED UP AND AWAY, OPAQUE (2026-10-02 round 2): a fading cloth read as a translucent ghost
           // box over the screen. It stays a solid draped cloth, flutters, and leaves off the top.
-          <g transform={`translate(${-pw / 2 - 20 + 120 * (1 - cl)},${-40 - 1500 * Math.pow(1 - cl, 1.7)}) rotate(${-14 * (1 - cl) + 7 * Math.sin((1 - cl) * 14) * clamp01((0.9 - cl) / 0.15)}) scale(${(pw + 40) / 340},${1 - 0.25 * Math.abs(Math.sin((1 - cl) * 9)) * clamp01((0.9 - cl) / 0.15)})`}>
-            <path d="M0,0 C80,-8 260,-8 340,0 L350,70 C300,86 260,66 220,84 C170,98 120,72 70,88 C40,96 14,80 -8,74 Z"
-              fill="#7B2B3C" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-            <path d="M40,8 C50,40 46,60 60,82 M150,6 C160,40 150,60 166,88 M260,6 C270,36 262,56 276,76" fill="none" stroke="#4E1625" strokeWidth={5} opacity={0.6} />
-            <path d="M6,6 C90,0 250,0 334,6" fill="none" stroke="#B5546A" strokeWidth={4} opacity={0.7} />
-          </g>
-        )}
+          // CLOTH, NOT A CARD (round 4): lifted from the middle, its corners SAG and its hem ripples
+          // at mid-flight; a fold-shadow gradient and a lit top edge give it a body; and it leaves
+          // UP AND LEFT, away from the trophy and its CREDIT plate, which sit right of centre.
+          const u = 1 - cl;
+          const fl = clamp01((0.9 - cl) / 0.15);
+          const sag = Math.sin(Math.PI * clamp01(u * 2.2)) * fl;
+          const rip = Math.sin(u * 16) * fl;
+          const top = `M0,${34 * sag} C80,${-8 - 26 * sag} 260,${-8 - 26 * sag} 340,${34 * sag}`;
+          const hem = `L${350 - 6 * sag},${70 + 54 * sag} C${300},${86 + 30 * sag + 12 * rip} ${260},${66 + 22 * sag - 10 * rip} 220,${84 + 18 * sag + 8 * rip} `
+            + `C170,${98 + 10 * sag - 10 * rip} 120,${72 + 18 * sag + 10 * rip} 70,${88 + 30 * sag - 8 * rip} C40,${96 + 40 * sag} 14,${80 + 50 * sag} ${-8 + 6 * sag},${74 + 54 * sag} Z`;
+          return (
+            <g transform={`translate(${-pw / 2 - 20 - 560 * u},${-40 - 1500 * Math.pow(u, 1.7)}) rotate(${-16 * u + 6 * Math.sin(u * 14) * fl}) scale(${(pw + 40) / 340},1)`}>
+              <defs>
+                <linearGradient id={`${id}cl`} x1="0" y1="0" x2="0.15" y2="1">
+                  <stop offset="0" stopColor="#A2475C" /><stop offset="0.35" stopColor="#7B2B3C" /><stop offset="1" stopColor="#4E1625" />
+                </linearGradient>
+              </defs>
+              <path d={top + ' ' + hem} fill={`url(#${id}cl)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+              <path d={`M40,${8 + 20 * sag} C50,40 46,60 60,${82 + 26 * sag} M150,${6 - 10 * sag} C160,40 150,60 166,${88 + 12 * sag} M260,${6 - 10 * sag} C270,36 262,56 276,${76 + 22 * sag}`} fill="none" stroke="#3E0F1C" strokeWidth={6} opacity={0.55} />
+              <path d={`M8,${6 + 30 * sag} C90,${-4 - 22 * sag} 250,${-4 - 22 * sag} 332,${6 + 30 * sag}`} fill="none" stroke="#E08AA0" strokeWidth={4.5} opacity={0.8} />
+            </g>
+          );
+        })()}
       </g>
       {/* the emitter above the sample port */}
       <g transform="translate(-200,-338)">
@@ -473,6 +489,9 @@ export const ArchiveDrawers: React.FC<{
 }> = ({w = 1080, h = 1920, vx = 540, vy = 860, f, rows = 9, cols = 7, depth = 6, open, glint = 1, wood = '#5A3A22'}) => {
   const wt = tones(wood);
   const out: React.ReactNode[] = [];
+  // the open drawer is drawn LAST (round 4): it slides down over the cell below it, which the row
+  // order would otherwise paint on top of its front
+  const late: React.ReactNode[] = [];
   // depth slices from far (k small) to near
   for (let s = depth - 1; s >= 0; s--) {
     const k = Math.pow(0.62, s);
@@ -489,9 +508,8 @@ export const ArchiveDrawers: React.FC<{
         const ot = isOpen ? smooth(open!.t) : 0;
         const slide = ot * ch * 0.9;
         const tw = 0.5 + 0.5 * Math.sin(f / (20 + (hx % 30)) + (hx % 100));
-        out.push(
-          <g key={`${s}-${r}-${c}`} opacity={fade}>
-            <rect x={x + 2} y={y + 2} width={cw - 4} height={ch - 4} fill={s === 0 ? wt.base : wt.core} stroke={INK} strokeWidth={Math.max(1, 4 * k)} />
+        const body = (
+          <>
             {isOpen && ot > 0.02 && (() => {
               // THE OPEN DRAWER HAS A BODY (2026-10-02): it comes out toward camera, so the cell is a
               // dark mouth, the drawer's side walls run from that mouth to its grown front, and a
@@ -502,10 +520,29 @@ export const ArchiveDrawers: React.FC<{
                 <rect x={x + cw * 0.08} y={y + ch * 0.1} width={fw} height={fh} fill="#0B0705" />
                 <path d={`M${x + cw * 0.08},${y + ch * 0.1} L${gx},${fy0} L${gx},${fy0 + fh * g} L${x + cw * 0.08},${y + ch * 0.9} Z`} fill={wt.shade} stroke={INK} strokeWidth={3} />
                 <path d={`M${x + cw * 0.92},${y + ch * 0.1} L${gx + gw},${fy0} L${gx + gw},${fy0 + fh * g} L${x + cw * 0.92},${y + ch * 0.9} Z`} fill={wt.core} stroke={INK} strokeWidth={3} />
-                <path d={`M${x + cw * 0.08},${y + ch * 0.1} L${x + cw * 0.92},${y + ch * 0.1} L${gx + gw},${fy0} L${gx},${fy0} Z`} fill="#2A1A10" stroke={INK} strokeWidth={3} />
-                {Array.from({length: 5}, (_, i) => (
-                  <ellipse key={i} cx={gx + gw * (0.16 + i * 0.17)} cy={fy0 - 6 * g} rx={gw * 0.06} ry={gw * 0.035} fill={PEARL} stroke={INK} strokeWidth={1.5} />
-                ))}
+                {/* the interior is LIT (round 4): a warm lamp gradient, and a row of glass vials, each
+                    holding a pearl stone, standing in it with a glint, so the payoff reads at phone size */}
+                <defs>
+                  <linearGradient id={`adr${r}${c}in`} x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="#3A2414" /><stop offset="0.55" stopColor="#8A5A2A" /><stop offset="1" stopColor={LAMP} />
+                  </linearGradient>
+                </defs>
+                <path d={`M${x + cw * 0.08},${y + ch * 0.1} L${x + cw * 0.92},${y + ch * 0.1} L${gx + gw},${fy0} L${gx},${fy0} Z`} fill={`url(#adr${r}${c}in)`} stroke={INK} strokeWidth={3} />
+                {Array.from({length: 7}, (_, i) => {
+                  const vx = gx + gw * (0.11 + i * 0.13), vw = gw * 0.085, vh = gw * 0.2 * ot, vy = fy0 - 4 * g;
+                  const gl = 0.5 + 0.5 * Math.sin(f / 9 + i * 1.7);
+                  return <g key={i}>
+                    <rect x={vx - vw / 2} y={vy - vh} width={vw} height={vh} rx={vw * 0.3} fill="#CFE6EE" fillOpacity={0.35} stroke={INK} strokeWidth={2} />
+                    <rect x={vx - vw / 2 - 1} y={vy - vh - vw * 0.35} width={vw + 2} height={vw * 0.45} rx={2} fill="#8A6A44" stroke={INK} strokeWidth={1.5} />
+                    <ellipse cx={vx} cy={vy - vh * 0.3} rx={vw * 0.3} ry={vw * 0.22} fill={PEARL} stroke={INK} strokeWidth={1.2} />
+                    <rect x={vx - vw * 0.32} y={vy - vh * 0.9} width={vw * 0.14} height={vh * 0.6} rx={1} fill="#FFFFFF" opacity={0.55} />
+                    {i % 3 === 1 && ot > 0.6 && (() => {
+                      const sx = vx + vw * 0.2, sy = vy - vh * 0.75, sr = vw * 0.55 * (0.5 + gl);
+                      return <path d={`M${sx},${sy - sr} L${sx + sr * 0.18},${sy - sr * 0.18} L${sx + sr},${sy} L${sx + sr * 0.18},${sy + sr * 0.18} L${sx},${sy + sr} L${sx - sr * 0.18},${sy + sr * 0.18} L${sx - sr},${sy} L${sx - sr * 0.18},${sy - sr * 0.18} Z`}
+                        fill="#FFF4D6" opacity={0.9 * gl} />;
+                    })()}
+                  </g>;
+                })}
               </g>;
             })()}
             <g transform={isOpen ? `translate(${(x + cw / 2) * (1 - (1 + 0.35 * ot))},${slide + (y + ch / 2) * (1 - (1 + 0.35 * ot))}) scale(${1 + 0.35 * ot})` : 'translate(0,0)'}>
@@ -514,6 +551,12 @@ export const ArchiveDrawers: React.FC<{
               <rect x={x + cw * 0.34} y={y + ch * 0.27} width={cw * 0.3 * ((hx % 60) / 100 + 0.4)} height={Math.max(1, ch * 0.05)} fill="#5A5040" opacity={0.6} />
               <rect x={x + cw * 0.42} y={y + ch * 0.58} width={cw * 0.16} height={ch * 0.1} rx={2} fill={BRASS} stroke={INK} strokeWidth={Math.max(1, 2 * k)} />
             </g>
+          </>
+        );
+        out.push(
+          <g key={`${s}-${r}-${c}`} opacity={fade}>
+            <rect x={x + 2} y={y + 2} width={cw - 4} height={ch - 4} fill={s === 0 ? wt.base : wt.core} stroke={INK} strokeWidth={Math.max(1, 4 * k)} />
+            {!isOpen && body}
             {glint > 0 && hx % 7 === 0 && (() => {
               // a small four-point sparkle that fades, never an opaque disc
               const sx = x + cw * 0.5, sy = y + ch * 0.62, sr = (5 + 9 * k) * (0.5 + tw);
@@ -522,10 +565,11 @@ export const ArchiveDrawers: React.FC<{
             })()}
           </g>
         );
+        if (isOpen) late.push(<g key={`open-${r}-${c}`} opacity={fade}>{body}</g>);
       }
     }
   }
-  return <g>{out}</g>;
+  return <g>{out}{late}</g>;
 };
 
 // ---------------------------------------------------------------------------------------------
