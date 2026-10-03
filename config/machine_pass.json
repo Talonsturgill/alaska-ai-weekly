@@ -1,4 +1,14 @@
 {
-  "last_pass": null,
+  "last_pass": {
+    "date": "2026-10-02",
+    "shipped": [
+      "character-finish-lags-props",
+      "rig-light-follows-facing"
+    ],
+    "commit": "937bb99",
+    "escalated": [
+      "held-gesture-idle: stopped mid-item, unverified work reverted, rerun next pass"
+    ]
+  },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
 }
