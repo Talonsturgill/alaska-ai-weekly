@@ -49,6 +49,9 @@ def verdict(state, queue_text, today):
     # empty queue no longer means there is nothing to do.
     items = open_items(queue_text)
     last = state.get("last_pass")
+    # Phase 9 records the pass as an object ({"date": ..., "shipped": [...]}) since 2026-10-02.
+    if isinstance(last, dict):
+        last = last.get("date")
     repeats = [i for i in items if i["repeat"] >= 2]
     if not last:
         return True, f"no pass has run yet ({len(items)} item(s) queued)"
