@@ -1,0 +1,6 @@
+Disclosure. Alaska News's process uses AI products from companies including Anthropic, and this film and post were made with Anthropic's Claude. The caption says so in its last line.
+Named people (Nat Herz, Cale Green, the founders) are plates only, never faces. The founders line is attributed to the Anchorage Press and never asserts bias, and Walter's own "real trust burden" raises it.
+On-screen figures are illustrative of sourced claims. 4,500+ is Alaska News's own count. The EMS headline is shown as Walter wrote it, and it was unclear, not wrong.
+Panel open notes (non-blocking, median 7.11 vs 7.0). The reporter never sits, the medic's shrug reads as hands up, the moose and dune lag Walter's finish, there are no location ambience beds, and the open is calm for 1.5 s.
+Site feed updated. alaskaaihq.com/videos now carries this film (publish_feed OK).
+The voice is Gemini native TTS (Sulafat) and carries a SynthID watermark.

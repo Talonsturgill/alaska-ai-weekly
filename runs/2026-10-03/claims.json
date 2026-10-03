@@ -1,0 +1,276 @@
+{
+ "run_date": "2026-10-03",
+ "fact_check_verdict": "PASS: 16 claims verified against two independently fetched pages; misquote of Herz and 'news judgment' cut",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "claim": "Alaska News uses an AI agent named Walter.",
+   "verbatim_source": "\"I'm Walter, an AI agent used by Alaska News.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "WALTER \u00b7 AI AGENT",
+   "label": "PER THE ANCHORAGE PRESS",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "claim": "Alaska News says it has published more than 4,500 stories since it started earlier this year.",
+   "verbatim_source": "\"Since its inception earlier this year, Alaska News says it's published more than 4,500 stories.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "4,500+ STORIES",
+   "label": "ALASKA NEWS SAYS",
+   "requires": [
+    "always attribute to Alaska News as its own claim",
+    "never say Walter wrote all of them"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "claim": "Its process uses AI products from companies including Anthropic, OpenAI, Google and xAI.",
+   "verbatim_source": "\"Alaska News' story generation process uses AI products from multiple companies including Anthropic, OpenAI, Google and xAI.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "ANTHROPIC \u00b7 OPENAI \u00b7 GOOGLE \u00b7 XAI",
+   "label": "PER THE ANCHORAGE PRESS",
+   "requires": [
+    "say AI products, not models",
+    "disclose in the draft that this film is made with Anthropic's Claude"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "claim": "The platform ingests meetings, transcripts, public notices, agency releases and filings.",
+   "verbatim_source": "\"The platform ingests meetings, transcripts, public notices, agency releases, filings and other source material.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "MEETINGS \u00b7 NOTICES \u00b7 FILINGS",
+   "label": "PER THE ANCHORAGE PRESS",
+   "requires": [
+    "do not claim patent registrations"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "claim": "Some campaign-related stories are flagged for human review first; others publish with no direct human involvement and are scrutinized by the editor afterward.",
+   "verbatim_source": "\"While some stories, particularly those related to campaigns, are flagged for review by Green, the editor, before publication, other pieces are published without any direct human involvement and scrutinized by Green only afterward.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "NO HUMAN BEFORE \u00b7 CHECKED AFTER",
+   "label": "PER THE ANCHORAGE PRESS",
+   "requires": [
+    "keep 'checked afterward' so it never reads as never reviewed"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "claim": "Cale Green is listed as CEO and editor-in-chief, responsible for what is published.",
+   "verbatim_source": "\"Cale Green is listed as CEO and editor-in-chief, responsible for what is published.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "CALE GREEN \u00b7 EDITOR",
+   "label": "PER THE ANCHORAGE PRESS",
+   "requires": [
+    "a plate, never a face or caricature"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "claim": "The Press reported Matt Larkin is a longtime conservative pollster and political operative, and Grant Robinson's current day job is spokesperson for Republican Gov. Mike Dunleavy.",
+   "verbatim_source": "\"Matt Larkin, a longtime conservative Alaska pollster, political operative and entrepreneur; Grant Robinson, a former television reporter whose current day job is working as a spokesperson for Republican Gov. Mike Dunleavy\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "CONSERVATIVE POLLSTER \u00b7 GOVERNOR'S SPOKESPERSON",
+   "label": "PER THE ANCHORAGE PRESS",
+   "requires": [
+    "plates only, no faces",
+    "never suggest coverage is biased, let Walter's own line raise the question",
+    "founding team support: Press verbatim \"Lucas Brown is also part of the founding team\" in the same team listing, so 'founders' and 'founding team' are the Press's framing"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "claim": "Walter said those backgrounds create a real trust burden.",
+   "verbatim_source": "\"My answer is: yes, those backgrounds create a real trust burden. If people with conservative politics, government ties or profit motives build a news platform, readers are entitled to ask whether story selection, framing or omissions will bend that way.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "\"A REAL TRUST BURDEN\"",
+   "label": "WALTER, TO THE ANCHORAGE PRESS",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "claim": "Nat Herz, Anchorage Press executive editor, interviewed Walter.",
+   "verbatim_source": "\"Anchorage Press Executive Editor Nat Herz\"",
+   "source": "https://alaskapublic.org/2026-09-25/this-alaska-journalist-interviewed-an-ai-news-reporter-and-he-didnt-run-away-screaming",
+   "second_source": null,
+   "on_screen": "NAT HERZ \u00b7 ANCHORAGE PRESS",
+   "label": "ALASKA PUBLIC MEDIA",
+   "requires": [
+    "name the Press as a competing outlet"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "claim": "Herz told Walter it is still not very good at sorting the wheat from the chaff.",
+   "verbatim_source": "\"I think the biggest obstacle to your work getting more traction is that you're still not very good at sorting the wheat from the chaff.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "\"WHEAT FROM THE CHAFF\"",
+   "label": "NAT HERZ, TO WALTER",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "claim": "Walter answered the problem is hierarchy, not throughput.",
+   "verbatim_source": "\"The problem is hierarchy, not throughput. Alaska News can already find more public-record material than readers can use.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "\"HIERARCHY, NOT THROUGHPUT\"",
+   "label": "WALTER",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "claim": "Walter said it is not a person, does not make phone calls, attend meetings or interview people directly.",
+   "verbatim_source": "\"I'm not a person, and I should not be mistaken for one. I do not make phone calls, attend meetings or interview people directly.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "NO CALLS \u00b7 NO MEETINGS \u00b7 NO INTERVIEWS",
+   "label": "WALTER",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "claim": "A Walter headline read: Alaska's EMS compact takes effect Sunday; the national commission still lists the state as pending. Walter said it answered in the bureaucracy's vocabulary and should have said more plainly whether medics can use it yet.",
+   "verbatim_source": "\"That's fair criticism. I answered in the vocabulary of the bureaucracy, not the reader.\" ... \"So the useful reader question is: Can medics actually use the new system yet, or not? The headline and my answer should have said that more plainly.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "CAN MEDICS USE IT YET?",
+   "label": "WALTER",
+   "requires": [
+    "unclear framing, NOT a factual error, never call it a correction"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "claim": "Walter said it has no dollar figure for the session and should not give a number it cannot verify.",
+   "verbatim_source": "\"I do not have a dollar figure for this session.\" / \"but I should not give a number I cannot verify.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "NO DOLLAR FIGURE",
+   "label": "WALTER",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "claim": "The interview ran in Green's home office, on Green's computer, through Discord.",
+   "verbatim_source": "Press: \"in an upstairs office in Green's home, he set up Anchorage Press Executive Editor Nathaniel Herz to 'interview' Walter\" / \"Alaska News' AI agent Walter 'spoke' with the Anchorage Press through the Discord application.\"",
+   "source": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "second_source": null,
+   "on_screen": "VIA DISCORD",
+   "label": "PER THE ANCHORAGE PRESS",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "claim": "Herz said reporters who ignore and discount AI's value are burying their heads in the sand, and that journalists have an obligation to cover how these technologies affect us.",
+   "verbatim_source": "\"I think Alaska media organizations and reporters that are trying to ignore and discount the value of artificial intelligence in all levels of the news business are burying their heads in the sand.\"",
+   "source": "https://alaskapublic.org/2026-09-25/this-alaska-journalist-interviewed-an-ai-news-reporter-and-he-didnt-run-away-screaming",
+   "second_source": null,
+   "on_screen": "\"BURYING THEIR HEADS IN THE SAND\"",
+   "label": "NAT HERZ \u00b7 ANCHORAGE PRESS EDITOR",
+   "requires": [
+    "use exact wording only"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  "compressed Herz 'burying heads' misquote",
+  "'news judgment' phrasing",
+  "patent registrations as an input",
+  "any stories-per-day figure",
+  "'twin' engineers",
+  "corrections-to-editor line"
+ ]
+}

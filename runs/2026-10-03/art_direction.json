@@ -1,0 +1,74 @@
+{
+ "run_date": "2026-10-03",
+ "palette": {
+  "sky": "#A9CFE6",
+  "ground": "#F2EAD8",
+  "hero": "#2F5D50",
+  "accent": "#F7A21B",
+  "shadow": "#1C2321",
+  "support": {
+   "kraft": "#C79F63",
+   "ink": "#16130F",
+   "newsprint_gray": "#CFC6B2",
+   "red_ink": "#7A2A1E"
+  },
+  "mood": "a bright, busy daytime newsroom, curious and a little comic, never ominous",
+  "why": "The story is about paper and the choice of what goes on top, so the world is newsprint cream with spruce machinery under daylight. ONE cadmium-amber accent means only THE TOP SLOT and the act of choosing, so a muted viewer can follow the thesis by colour alone. Diverges from 10-02 (night lamp brass, pearl, NIR magenta over Bering teal) and 09-30 (night practical collage): first daylight film in three, no teal, no brass, no magenta. Revised at Gate 0D: the accent moved from safety orange (09-30's warning orange) to cadmium amber #F7A21B, and red ink to oxblood #7A2A1E so no stamp competes with the accent. Stamps print in ink or oxblood on kraft. The ambulance light bar is sky blue and oxblood."
+ },
+ "light": {
+  "time_of_day": "late morning",
+  "direction": "high soft key from upper left through tall newsroom windows",
+  "key": "overcast-diffuse daylight, warm-neutral",
+  "fill": "cream bounce off paper stacks, strong",
+  "rim": "cool sky rim on Walter's spruce housing",
+  "depth": "three planes per set (window wall and hanging paper, the working desk or slot, a near foreground lip of stacked paper), haze between planes, lib/lighting DayGrade",
+  "why": "Daylight is the honest register for a story about the public record, which is boring paper made in daylight. Night would make Walter sinister and the brand lens rules out ominous.",
+  "argument": "Flat even daylight while the film is about abundant writing. On the turn (the price tag flip) ONE hard sun shaft lands on the LEAD slot alone, choosing as the lit act, and holds through the button. S1 to S10 stay soft and nearly shadowless so the shaft reads as an event.",
+  "per_set": {
+   "newsroom-wall": "soft window key upper left, cream bounce, cool sky rim; from the turn a hard warm shaft on the slot",
+   "walter-desk": "same window key, a cool rim on the spruce dome, paper bounce from below",
+   "paper-column": "window key raking the ream edges so each curl casts",
+   "home-office": "daylight from a side window plus the monitor's cool glow as fill on the desk",
+   "ambulance-bay": "open overcast sky key, the light bar sweeping sky blue and oxblood as a moving rim",
+   "council-room": "tall high windows, soft top key, the empty chair in a pool",
+   "conveyor": "top-down even light, belt in mid value, floor darker, a hanging-paper foreground plane out of focus",
+   "dune": "hard high sun from upper right, short warm shadows, sky gradient, heat haze",
+   "masthead-wall": "window key upper left, the masthead plates casting hard little shadows"
+  }
+ },
+ "shape_language": {
+  "contrast": "Walter is ROUND and SOFT (a rounded typewriter-press with a CRT screen face, platen roller cheeks, no arms) against the RECTILINEAR hard-edged LEAD slot frame and the soft, curling reams. Round means the cheap, tireless writing. Square means the one hard choice.",
+  "why": "The thesis is a contrast between writing (abundant, soft, flowing) and choosing (scarce, one box). The shapes carry it.",
+  "reams": "The reams stay SOFT: rounded corners, bowed and fanned edges, a lean and curl on the column. Only the LEAD slot has hard 90-degree corners and a thick square frame."
+ },
+ "casting": {
+  "hero": "NewsAgent (NET-NEW, lib/newsroom.tsx): Walter as a characterized typewriter-press with a screen face, a records hopper on top, a paper-feed mouth that prints sheets, platen-knob cheeks, NO ARMS (it can't call, attend or interview). Emotions happy, focused, sheepish, earnest. Reason: the shelf's AI bodies are a server box, a satellite, drones and a classifier, none of which writes; an LLM news agent ingests documents and emits prose, so the hero is a writing machine.",
+  "net_new_support": "LeadSlot (NET-NEW, lib/newsroom.tsx): a front-page frame with a hinged hatch above, a boxed LEAD window, a hang tag, states empty, jammed, headline, question. The film's throughline object.",
+  "shelf": [
+   "Sheet / PaperStorm (paper.tsx, FX.tsx) for the avalanche and falling stories",
+   "Character rig for an unnamed medic and an unnamed reporter (generic, never a named person)",
+   "Moose (fauna.tsx) for the head-in-the-sand gag",
+   "Stamp / StatBurst / FatArrow (kit.tsx)",
+   "Raven (fauna.tsx) as a window-ledge ambient"
+  ],
+  "named_people_rule": "Nat Herz, Cale Green, Matt Larkin, Grant Robinson and Gov. Dunleavy are plates only. No faces, no caricature. No hands or bodies stand in for them either. Herz is a chat-window title bar and an attribution line, Green an EDITOR plate under a stamp that drops from off frame, the founders two plates on the ALASKA NEWS masthead, never on the LEAD slot.",
+  "silhouette_spec": "NewsAgent must not read as a box: a domed, rounded-trapezoid body; a full-width platen cylinder across the top sticking out past the body sides with round knob cheeks; a funnel hopper above; a paper tongue from the mouth; no straight vertical side longer than about 30 percent of body height. Filled solid at 120px it must not be confusable with ServerMachine."
+ },
+ "motion_language": {
+  "world": "paper is always falling or settling somewhere: a slow ambient flutter in every newsroom shot, sheets drift past the windows",
+  "hero_moves": [
+   "the hatch slam and the stub dropping into the LEAD slot (open and button, motion blur on the drop)",
+   "the 4,500 avalanche rising into nine reams (crane rise, overshoot settle)",
+   "Walter's carriage return slam, the printed sheet whipping out of its mouth (180-degree blur)",
+   "the slot's tag flip on the payoff"
+  ],
+  "principles": "anticipation before every drop, overshoot and decaying settle on landings, eases for travel, springs only for pops, secondary flutter on every sheet edge"
+ },
+ "composition": {
+  "focal_hierarchy": "the LEAD slot or Walter's face is always the brightest, most finished thing in frame; plates sit in the upper third clear of the hero",
+  "negative_space": "the empty LEAD window itself is the negative-space beat in the open and the 96.8 s turn",
+  "safe_area": "hero action and every plate inside y 420 to 1500 for the 1:1 square; hanging paper and window light above, the foreground paper lip below, captions from y 1330",
+  "signature_shot": "S3, one tall plane stack: Walter's mouth at the base (y about 1400 at start), nine soft reams rising with overshoot settles, riseWith tracking the top ream, the column ending flush under the jammed LEAD slot at y about 520, ALASKA NEWS SAYS stamped on the top ream, the jammed slot held at least 0.6 s before the cut."
+ },
+ "craft_advance": "none required beyond the two net-new library assets"
+}

@@ -1,0 +1,167 @@
+{
+ "run_date": "2026-10-03",
+ "title": "THE TOP STORY",
+ "note": "On-screen figures and quotes are from the Anchorage Press (2026-09-17) and Alaska Public Media (2026-09-25); illustrations are editorial.",
+ "caption_fixups": {
+  "four thousand five hundred": "4,500",
+  "A I": "AI",
+  "E M S": "EMS"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Writing up Alaska's public record just got cheap.",
+   "t": "Writing up Alaska's public record just got cheap.",
+   "claims": [
+    "c2",
+    "c4"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "So what's expensive now?",
+   "t": "So what's expensive now?",
+   "claims": [
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "Meet Walter, an A I agent writing stories for Alaska News.",
+   "t": "Meet Walter, an A I agent writing stories for Alaska News.",
+   "claims": [
+    "c1"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "It turns meetings, notices and filings into news.",
+   "t": "It turns meetings, notices and filings into news.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Alaska News says it's published more than four thousand five hundred stories this year.",
+   "t": "Alaska News says it's published more than four thousand five hundred stories this year.",
+   "claims": [
+    "c2"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "Nat Herz, editor of the competing Anchorage Press, interviewed it.",
+   "t": "Nat Herz, editor of the competing Anchorage Press, interviewed it.",
+   "claims": [
+    "c9",
+    "c15"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "He told Walter it's not very good at sorting the wheat from the chaff.",
+   "t": "He told Walter it's not very good at sorting the wheat from the chaff.",
+   "claims": [
+    "c10"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Walter answered that the problem is hierarchy, not throughput.",
+   "t": "Walter answered that the problem is hierarchy, not throughput.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Take one Walter headline. Alaska's E M S compact takes effect Sunday, but the commission still lists it as pending.",
+   "t": "Take one Walter headline. Alaska's E M S compact takes effect Sunday, but the commission still lists it as pending.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "Nothing was false. It didn't say plainly whether medics can use it yet, and Walter said it should have.",
+   "t": "Nothing was false. It didn't say plainly whether medics can use it yet, and Walter said it should have.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "The case against trusting a machine with the news?",
+   "t": "The case against trusting a machine with the news?",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Walter makes no calls, attends no meetings, and interviews nobody. Reporting still takes people.",
+   "t": "Walter makes no calls, attends no meetings, and interviews nobody. Reporting still takes people.",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "Some stories go up with no human first. Alaska News's editor checks afterward.",
+   "t": "Some stories go up with no human first. Alaska News's editor checks afterward.",
+   "claims": [
+    "c5",
+    "c6"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "Herz still says reporters who discount AI's value are burying their heads in the sand.",
+   "t": "Herz still says reporters who discount AI's value are burying their heads in the sand.",
+   "claims": [
+    "c16"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "Writing isn't the hard part anymore. Choosing the top story is.",
+   "t": "Writing isn't the hard part anymore. Choosing the top story is.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "The Press reports Alaska News's founders include a conservative pollster and a spokesperson for the governor.",
+   "t": "The Press reports Alaska News's founders include a conservative pollster and a spokesperson for the governor.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 16,
+   "text": "Walter's own answer? Those backgrounds create a real trust burden.",
+   "t": "Walter's own answer? Those backgrounds create a real trust burden.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 17,
+   "text": "Whoever picks the top story picks what Alaskans read first.",
+   "t": "Whoever picks the top story picks what Alaskans read first.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 18,
+   "text": "The writing's cheap now. The choosing isn't.",
+   "t": "The writing's cheap now. The choosing isn't.",
+   "claims": [
+    "c11"
+   ]
+  }
+ ]
+}

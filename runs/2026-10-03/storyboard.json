@@ -1,0 +1,1814 @@
+{
+  "run_date": "2026-10-03",
+  "slug": "the-choosing-isnt",
+  "title": "The Choosing Isn't",
+  "concept": "An AI agent can write up Alaska's whole public record, so the film makes writing physical and abundant (a round typewriter-press spewing curling reams) against ONE scarce square box, the LEAD slot, and asks who fills it.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 112.66,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "vertical-rise",
+    "hero_treatment": "structure-as-subject",
+    "layout": "centered-hero-lowerthird",
+    "register": "data-brutalist",
+    "camera_strategy": "rise-reveal",
+    "light_story": "noon-hard",
+    "palette": "warm sunlit newsprint cream, spruce, bright daylight sky, one cadmium amber accent for the top slot",
+    "metaphor": "an endless paper avalanche and one square box at the top that only a choice can fill"
+  },
+  "palette": "warm sunlit newsprint cream, spruce, bright daylight sky, one cadmium amber accent for the top slot",
+  "divergence_note": "First daylight film in three. 10-02 was a night lamplit brass bench in cross-section with a radial rack-focus, a brass counter and a question plate; 09-30 a night top-down collage traverse. This one is eye-level and vertical, the camera rising with a paper avalanche to a single square slot, in newsprint cream and spruce with one amber accent, the light itself carrying the argument (flat daylight for writing, one hard sun shaft on the slot for choosing). No counter: the ream height is the count. The open question is a kraft price tag, not a plate. New hero (NewsAgent, a writing machine), new throughline (LeadSlot), new sets (newsroom wall, home office, ambulance bay, council chamber, belt, dune, masthead wall).",
+  "angle": {
+    "run_date": "2026-10-03",
+    "stance": "curious",
+    "thesis": "Walter shows that writing up Alaska's public record is now cheap, and the scarce work in local news has moved to choosing which records lead and saying plainly what they mean for readers.",
+    "falsifiability": "False if the criticisms of Walter's output were about factual errors, invented figures or missing material instead of what to lead with and how to frame it.",
+    "supporting_facts": [
+      "c4 + c2 the platform ingests meetings, notices and filings, and Alaska News says it has published more than 4,500 stories",
+      "c10 + c11 Herz says it can't sort wheat from chaff, Walter answers hierarchy, not throughput",
+      "c13 the EMS headline was correct but unclear, Walter says it should have said plainly whether medics can use it yet"
+    ],
+    "counter_point": "Walter makes no calls, attends no meetings, interviews nobody (c12), so reporting still takes people. Some stories publish with no human before and the editor checks afterward (c5). Herz, editor of a competing outlet, says reporters who ignore AI's value are burying their heads in the sand (c9, c16).",
+    "second_movement": "c7 + c8 the Press reports the founders' political and government ties, and Walter itself calls that a real trust burden, which makes the choosing layer where reader trust is won or lost. Walter's own line raises it, the film never asserts bias.",
+    "runner_ups": [
+      {
+        "angle": "B skeptic",
+        "why_lost": "implies bias through c7 and treats capability as a threat"
+      },
+      {
+        "angle": "A enthusiast",
+        "why_lost": "treats the 4,500 self-count as achievement and skips c5"
+      }
+    ]
+  },
+  "treatment": {
+    "winner": "ENTHUSIAST",
+    "why": "Strongest cold open, both loops planted on time, Herz's pro-AI line at full strength in Act 3, founders only through Walter's own words, few sets.",
+    "grafts": [
+      "EXPLAINER winnowing sieve where everything falls through equally",
+      "EXPLAINER 4,500 as nine reams stamped ALASKA NEWS SAYS",
+      "EXPLAINER button line",
+      "COMEDIAN conveyor NO HUMAN BEFORE to CHECKED AFTER",
+      "DRAMATIST hang-tag question, here a price tag, flipped on the turn and kept apart from the founders plates",
+      "COMEDIAN moose head in the sand, labelled as the reporters Herz describes, never as Herz"
+    ],
+    "judge_reasoning": "Scorer: ENTHUSIAST 8.1, EXPLAINER 7.6, DRAMATIST 7.4, COMEDIAN 6.2. Fairness and the 60 to 95 test first, then retention and feasibility. Walter cast as a net-new writing machine rather than the shelf server box. Gate 0 revisions: named people are plates only with no hands, founders plates on the masthead away from the slot, Walter never in the council room, the dashed box empty until the button."
+  },
+  "hook": {
+    "pattern": "bold-claim",
+    "frame1": "The camera rising off a lip of paper toward an empty boxed LEAD slot on a daylight newsroom wall, sheets fluttering past.",
+    "headline": "WRITING THE NEWS GOT CHEAP",
+    "motion_by_s": 0.4,
+    "loopback": "The button pulls back to the same slot, fills it with one plain question, and the hatch clanks and drops a new stub, frame 1 again."
+  },
+  "open_loop": {
+    "plant_t": 4.707,
+    "pay_t": 85.111,
+    "what": "The kraft price tag WHAT'S EXPENSIVE NOW? swings onto the LEAD slot at the open and flips to CHOOSING THE TOP STORY under the sun shaft on the turn."
+  },
+  "open_loop_2": {
+    "plant_t": 41.094,
+    "pay_t": 110.309,
+    "what": "The dashed EMPTY box under Walter's EMS headline, kept empty through the medic's shrug, filled by CAN MEDICS USE IT YET? in the button as the same medic pulls the sheet."
+  },
+  "throughline": {
+    "object": "the LEAD slot",
+    "lands_in_button": true,
+    "states": [
+      {
+        "at_s": 0.951,
+        "state": "empty, then a stub drops in"
+      },
+      {
+        "at_s": 20.416,
+        "state": "jammed by the 4,500 avalanche, hatch bulging"
+      },
+      {
+        "at_s": 38.58,
+        "state": "holding the bureaucratic EMS headline over a dashed empty box"
+      },
+      {
+        "at_s": 72.105,
+        "state": "filled straight off the belt with nobody choosing, CHECKED AFTER stamped"
+      },
+      {
+        "at_s": 85.111,
+        "state": "lit by the one sun shaft, tag flipped to CHOOSING THE TOP STORY"
+      },
+      {
+        "at_s": 110.309,
+        "state": "one plain question in the box, the hatch clanks"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 19.14,
+      "beat_id": 10,
+      "type": "scale-pullback",
+      "what": "one printed story becomes nine towering reams as the camera rises",
+      "hold_s": 0.6,
+      "landing_at_s": 19.873,
+      "hold_until_s": 20.473,
+      "secondary_at_s": 20.773
+    },
+    {
+      "t": 68.94,
+      "beat_id": 32,
+      "type": "build-on",
+      "what": "the belt builds a stream of stories, each landing in the LEAD slot unchosen",
+      "hold_s": 0.6,
+      "landing_at_s": 69.673,
+      "hold_until_s": 70.273,
+      "secondary_at_s": 70.573
+    },
+    {
+      "t": 103.2,
+      "beat_id": 44,
+      "type": "scale-pullback",
+      "what": "pull back from one slot to the whole 4,500 pile beneath it",
+      "hold_s": 0.7,
+      "landing_at_s": 103.933,
+      "hold_until_s": 104.633,
+      "secondary_at_s": 104.933
+    }
+  ],
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 108.84,
+    "riser_at": 103.2,
+    "silence_at": 108.84,
+    "payoff_at": 110.309,
+    "button_pattern": "callback"
+  },
+  "shots": [
+    {
+      "id": 1,
+      "title": "The empty lead",
+      "vo_line": 0,
+      "start_s": 0.0,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "newsroom-wall",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "transition_in": "",
+      "thread": "match",
+      "centered": "the LEAD slot at frame centre x540 y820",
+      "means": "Hook: the camera rises off a lip of paper to an empty boxed LEAD slot on a daylight newsroom wall. Its hatch slams and a story stub drops in at 1.0s. A kraft PRICE TAG reading WHAT'S EXPENSIVE NOW? swings on the frame.",
+      "ambient": "the price tag spins on its string, sheets flutter past the windows",
+      "hero": {
+        "name": "LeadSlot",
+        "parts": 9,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "0.000-7.640"
+    },
+    {
+      "id": 2,
+      "title": "Meet Walter",
+      "vo_line": 2,
+      "start_s": 7.26,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "walter-desk",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "centered": "Walter's screen face at x540 y780",
+      "means": "Walter, a domed typewriter-press with a screen face, platen cheeks and no arms, blinks awake; record plates MEETINGS, NOTICES, FILINGS drop into its funnel and printed stories whip out of its mouth.",
+      "ambient": "Walter's carriage ticks, its screen face blinks and breathes",
+      "hero": {
+        "name": "NewsAgent",
+        "parts": 14,
+        "zones": 4,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "7.640-17.580"
+    },
+    {
+      "id": 3,
+      "title": "Four thousand five hundred",
+      "vo_line": 4,
+      "start_s": 18.23,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "paper-column",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "transition_in": "match-action",
+      "thread": "match",
+      "centered": "the rising reams at x540, ending under the jammed slot at y520",
+      "means": "Signature: the printed stories avalanche and stack into nine soft, curling reams; the camera rises with the top ream to 4,500+ STORIES stamped ALASKA NEWS SAYS, ending under the LEAD slot jammed with sheets.",
+      "ambient": "sheets keep spilling off the ream edges and curling as they fall",
+      "hero": {
+        "name": "Ream column + LeadSlot",
+        "parts": 9,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "17.580-23.160"
+    },
+    {
+      "id": 4,
+      "title": "The interview",
+      "vo_line": 5,
+      "start_s": 26.1,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "home-office",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "mask-wipe",
+      "thread": "travel",
+      "centered": "the chat window at x540 y760",
+      "means": "A home-office desk and a monitor. The chat window titled NAT HERZ \u00b7 ANCHORAGE PRESS types itself; the line WHEAT FROM THE CHAFF slams on screen while a sieve beside the monitor lets every sheet fall through equally.",
+      "ambient": "chat bubbles scroll, the cursor blinks, chaff drifts from the sieve",
+      "hero": {
+        "name": "Monitor + Sieve",
+        "parts": 10,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "23.160-32.740"
+    },
+    {
+      "id": 5,
+      "title": "Hierarchy",
+      "vo_line": 7,
+      "start_s": 39.72,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "high",
+      "stage": "walter-desk",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "the three-tier rack at x540 y860",
+      "means": "Walter's carriage slams and prints HIERARCHY, NOT THROUGHPUT on a sheet that drops onto a three-tier rack; the camera rises up the rack as every tier fills with identical sheets, the top tier no bigger.",
+      "ambient": "sheets settle and slide on each tier",
+      "hero": {
+        "name": "NewsAgent + tier rack",
+        "parts": 9,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "32.740-38.580"
+    },
+    {
+      "id": 6,
+      "title": "The headline",
+      "vo_line": 8,
+      "start_s": 44.94,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "newsroom-wall",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "centered": "the headline in the LEAD window at y820",
+      "means": "Walter's EMS headline slams into the LEAD window in small official type; a PENDING seal stamps its corner on the word, and a dashed EMPTY box draws itself beneath it.",
+      "ambient": "the dashed box pulses, the seal ink glistens",
+      "hero": {
+        "name": "LeadSlot",
+        "parts": 9,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "38.580-47.840"
+    },
+    {
+      "id": 7,
+      "title": "Can medics use it",
+      "vo_line": 9,
+      "start_s": 55.99,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ambulance-bay",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "centered": "the medic at x660 y980 with the phone at x420",
+      "means": "An unnamed medic beside an ambulance reads the story on a phone, squints, and shrugs palms up; on the phone Walter's small face goes sheepish; the medic pockets the phone.",
+      "ambient": "the ambulance light bar sweeps sky blue and oxblood across the bay",
+      "hero": {
+        "name": "Character medic + ambulance + phone",
+        "parts": 10,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "47.840-55.060"
+    },
+    {
+      "id": 8,
+      "title": "The empty chair",
+      "vo_line": 10,
+      "start_s": 65.98,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "council-room",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "centered": "the empty PRESS chair at x540 y980",
+      "means": "THE TEST. Crane down into a council chamber: a transcript ribbon feeds out of a wall slot toward an off-screen hopper, a phone rings at an empty PRESS chair, stamps land NO CALLS \u00b7 NO MEETINGS \u00b7 NO INTERVIEWS, then an unnamed reporter walks in, sits, answers and writes.",
+      "ambient": "the transcript ribbon keeps feeding, the council mic glows",
+      "hero": {
+        "name": "Council room",
+        "parts": 12,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "55.060-68.940"
+    },
+    {
+      "id": 9,
+      "title": "Up first, checked after",
+      "vo_line": 12,
+      "start_s": 79.07,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "conveyor",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "the belt across y860 into the LEAD slot at x800",
+      "means": "Overhead: the reporter's notebook page drops onto a belt of stories that ride past a NO HUMAN BEFORE gate straight into the same LEAD slot, nobody choosing; a CHECKED AFTER stamp drops in from off frame under the plate CALE GREEN \u00b7 EDITOR; a new unchecked story slides on top.",
+      "ambient": "the belt rollers turn constantly",
+      "hero": {
+        "name": "Conveyor + LeadSlot",
+        "parts": 10,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "68.940-75.980"
+    },
+    {
+      "id": 10,
+      "title": "Heads in the sand",
+      "vo_line": 13,
+      "start_s": 86.41,
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "dune",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "centered": "the moose at x540 y980",
+      "means": "A sheet blows off the belt onto a sunny dune where a moose labelled REPORTERS WHO DISCOUNT AI has its head in the sand. The quote plaque slams down, attributed NAT HERZ \u00b7 ANCHORAGE PRESS EDITOR. A sheet lands on the moose's back and it pulls its head out and blinks at the paper.",
+      "ambient": "sand trickles, heat shimmer, grass sways",
+      "hero": {
+        "name": "Moose",
+        "parts": 10,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "75.980-82.780"
+    },
+    {
+      "id": 11,
+      "title": "The hard part",
+      "vo_line": 14,
+      "start_s": 94.81,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "newsroom-wall",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "stage3d": "planes",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "the fat arrow swinging from x300 to x760",
+      "means": "A fat amber arrow swings off Walter's endless pile (WRITING \u00b7 CHEAP) onto the single LEAD slot; a hard sun shaft lands on the slot alone, and the price tag flips to CHOOSING THE TOP STORY.",
+      "ambient": "dust motes turn in the new sun shaft",
+      "hero": {
+        "name": "LeadSlot + FatArrow",
+        "parts": 9,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "82.780-90.100"
+    },
+    {
+      "id": 12,
+      "title": "The masthead",
+      "vo_line": 15,
+      "start_s": 101.09,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "low",
+      "stage": "masthead-wall",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "stage3d": "planes",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "centered": "the ALASKA NEWS masthead at x540 y560",
+      "means": "Low angle on the ALASKA NEWS masthead across the room from the slot: two plates per the Anchorage Press, CONSERVATIVE POLLSTER and GOVERNOR'S SPOKESPERSON, drop on chains and swing level. Walter, small below, tilts its screen up at them.",
+      "ambient": "the plate chains settle, Walter's cursor blinks",
+      "hero": {
+        "name": "Masthead + plates",
+        "parts": 8,
+        "zones": 3,
+        "detail_note": "ink outline, chains, contact shadows"
+      },
+      "t": "90.100-97.480"
+    },
+    {
+      "id": 13,
+      "title": "A real trust burden",
+      "vo_line": 16,
+      "start_s": 101.09,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "walter-desk",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "stage3d": "planes",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "centered": "Walter's screen at x540 y820",
+      "means": "Close on Walter: its carriage slams and its own screen prints A REAL TRUST BURDEN, then its eyes whip right toward the empty slot off frame.",
+      "ambient": "the plate chains settle, Walter's cursor blinks",
+      "hero": {
+        "name": "NewsAgent close",
+        "parts": 14,
+        "zones": 4,
+        "detail_note": "screen text, keys, platen"
+      },
+      "t": "97.480-103.200"
+    },
+    {
+      "id": 14,
+      "title": "Who picks",
+      "vo_line": 17,
+      "start_s": 114.71,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "newsroom-wall",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "stage3d": "planes",
+      "transition_in": "pull-out",
+      "thread": "build",
+      "centered": "the LEAD slot at x540 y760 above the pile",
+      "means": "Button: rising pull-back to the whole 4,500 pile under the one sunlit slot; a single sheet rises into it and the dashed box fills CAN MEDICS USE IT YET?; the medic from the ambulance bay steps in and, after the box fills, pulls the sheet and nods on 'isn't'; the hatch clanks and a new stub drops, the open again.",
+      "ambient": "sheets flutter, the sun shaft holds on the slot",
+      "hero": {
+        "name": "LeadSlot + medic + pile",
+        "parts": 10,
+        "zones": 3,
+        "detail_note": "ink outline, three-tone shading, contact shadows"
+      },
+      "t": "103.200-113.660"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "t": "0.000-0.951",
+      "at_s": 0.0,
+      "vo_line": 0,
+      "offset": 0.0,
+      "vo": "Writing up Alaska's public record just got cheap.",
+      "shows": "sits empty under a shut hatch as the camera rises to it",
+      "sfx": "whoosh",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "LEAD slot",
+        "action": "sits empty under a shut hatch as the camera rises to it",
+        "emotion": "expectant",
+        "annotation": "THE LEAD"
+      },
+      "choreo": {
+        "primary": "LEAD slot sits empty under a shut hatch as the camera rises to it",
+        "reaction": "the price tag twitches on its string",
+        "ambient": "the price tag spins on its string, sheets flutter past the windows"
+      }
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "t": "0.951-4.707",
+      "at_s": 0.951,
+      "vo_line": 0,
+      "offset": 0.951,
+      "vo": "Writing up Alaska's public record just got cheap.",
+      "shows": "drops out of the slamming hatch and slaps into the LEAD window",
+      "sfx": "clank",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "story stub",
+        "action": "drops out of the slamming hatch and slaps into the LEAD window",
+        "emotion": "jolted",
+        "annotation": "WRITING IT UP \u00b7 CHEAP"
+      },
+      "choreo": {
+        "primary": "story stub drops out of the slamming hatch and slaps into the LEAD window",
+        "reaction": "the slot frame shudders and settles",
+        "ambient": "the price tag spins on its string, sheets flutter past the windows"
+      }
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "t": "4.707-7.640",
+      "at_s": 4.707,
+      "vo_line": 1,
+      "offset": 0.247,
+      "vo": "So what's expensive now?",
+      "shows": "swings out on the slot frame and spins to face camera",
+      "sfx": "tick",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "price tag",
+        "action": "swings out on the slot frame and spins to face camera",
+        "emotion": "curious",
+        "annotation": "WHAT'S EXPENSIVE NOW?"
+      },
+      "choreo": {
+        "primary": "price tag swings out on the slot frame and spins to face camera",
+        "reaction": "the hatch creaks half open again",
+        "ambient": "the price tag spins on its string, sheets flutter past the windows"
+      }
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "t": "7.640-9.080",
+      "at_s": 7.64,
+      "vo_line": 2,
+      "offset": 0.0,
+      "vo": "Meet Walter, an A I agent writing stories for Alaska News.",
+      "shows": "blinks its screen face awake and rolls its platen cheeks",
+      "sfx": "pop",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "Walter, the typewriter-press",
+        "action": "blinks its screen face awake and rolls its platen cheeks",
+        "emotion": "happy",
+        "annotation": "WALTER \u00b7 AI AGENT"
+      },
+      "choreo": {
+        "primary": "Walter, the typewriter-press blinks its screen face awake and rolls its platen cheeks",
+        "reaction": "its paper tongue flutters",
+        "ambient": "Walter's carriage ticks, its screen face blinks and breathes"
+      }
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "t": "9.080-11.706",
+      "at_s": 9.08,
+      "vo_line": 2,
+      "offset": 1.44,
+      "vo": "Meet Walter, an A I agent writing stories for Alaska News.",
+      "shows": "tips back and slams down on its base as the ALASKA NEWS plate drops onto it",
+      "sfx": "snap",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "Walter",
+        "action": "tips back and slams down on its base as the ALASKA NEWS plate drops onto it",
+        "emotion": "proud",
+        "annotation": "ALASKA NEWS"
+      },
+      "choreo": {
+        "primary": "Walter tips back and slams down on its base as the ALASKA NEWS plate drops onto it",
+        "reaction": "the funnel on its head wobbles",
+        "ambient": "Walter's carriage ticks, its screen face blinks and breathes"
+      }
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "t": "11.706-13.157",
+      "at_s": 11.706,
+      "vo_line": 2,
+      "offset": 4.066,
+      "vo": "Meet Walter, an A I agent writing stories for Alaska News.",
+      "shows": "curls out of Walter's mouth with a ratchet",
+      "sfx": "tick",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "first sheet",
+        "action": "curls out of Walter's mouth with a ratchet",
+        "emotion": "eager",
+        "annotation": "PRINTING"
+      },
+      "choreo": {
+        "primary": "first sheet curls out of Walter's mouth with a ratchet",
+        "reaction": "Walter's eyes follow the sheet",
+        "ambient": "Walter's carriage ticks, its screen face blinks and breathes"
+      }
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "t": "13.157-14.832",
+      "at_s": 13.157,
+      "vo_line": 3,
+      "offset": 0.197,
+      "vo": "It turns meetings, notices and filings into news.",
+      "shows": "drop into Walter's funnel one after another",
+      "sfx": "paper",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "record plates",
+        "action": "drop into Walter's funnel one after another",
+        "emotion": "busy",
+        "annotation": "MEETINGS \u00b7 NOTICES \u00b7 FILINGS"
+      },
+      "choreo": {
+        "primary": "record plates drop into Walter's funnel one after another",
+        "reaction": "Walter gulps, cheeks bulging",
+        "ambient": "Walter's carriage ticks, its screen face blinks and breathes"
+      }
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "t": "14.832-17.580",
+      "at_s": 14.832,
+      "vo_line": 3,
+      "offset": 1.872,
+      "vo": "It turns meetings, notices and filings into news.",
+      "shows": "slams its carriage and whips printed stories out of its mouth",
+      "sfx": "ding",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "Walter",
+        "action": "slams its carriage and whips printed stories out of its mouth",
+        "emotion": "focused",
+        "annotation": "STORIES"
+      },
+      "choreo": {
+        "primary": "Walter slams its carriage and whips printed stories out of its mouth",
+        "reaction": "the carriage bell bobs",
+        "ambient": "Walter's carriage ticks, its screen face blinks and breathes"
+      }
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "t": "17.580-19.140",
+      "at_s": 17.58,
+      "vo_line": 4,
+      "offset": 0.0,
+      "vo": "Alaska News says it's published more than four thousand five hundred stories this year.",
+      "shows": "avalanche out of Walter and stack into reams, rising",
+      "sfx": "paper",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "printed stories",
+        "action": "avalanche out of Walter and stack into reams, rising",
+        "emotion": "overwhelming",
+        "annotation": "STORIES"
+      },
+      "choreo": {
+        "primary": "printed stories avalanche out of Walter and stack into reams, rising",
+        "reaction": "sheets curl off the ream edges",
+        "ambient": "sheets keep spilling off the ream edges and curling as they fall"
+      }
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "t": "19.140-20.416",
+      "at_s": 19.14,
+      "vo_line": 4,
+      "offset": 1.56,
+      "vo": "Alaska News says it's published more than four thousand five hundred stories this year.",
+      "shows": "rises past the camera nine reams high",
+      "sfx": "whoosh",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "the ream column",
+        "action": "rises past the camera nine reams high",
+        "emotion": "towering",
+        "annotation": "4,500+ STORIES"
+      },
+      "choreo": {
+        "primary": "the ream column rises past the camera nine reams high",
+        "reaction": "the top ream wobbles and overshoots",
+        "ambient": "sheets keep spilling off the ream edges and curling as they fall"
+      }
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "t": "20.416-23.160",
+      "at_s": 20.416,
+      "vo_line": 4,
+      "offset": 2.836,
+      "vo": "Alaska News says it's published more than four thousand five hundred stories this year.",
+      "shows": "slams onto the top ream under the jammed LEAD slot",
+      "sfx": "stamp",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "ALASKA NEWS SAYS stamp",
+        "action": "slams onto the top ream under the jammed LEAD slot",
+        "emotion": "flat",
+        "annotation": "ALASKA NEWS SAYS"
+      },
+      "choreo": {
+        "primary": "ALASKA NEWS SAYS stamp slams onto the top ream under the jammed LEAD slot",
+        "reaction": "the jammed slot's hatch bulges",
+        "ambient": "sheets keep spilling off the ream edges and curling as they fall"
+      }
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "t": "23.160-25.097",
+      "at_s": 23.16,
+      "vo_line": 5,
+      "offset": 0.0,
+      "vo": "Nat Herz, editor of the competing Anchorage Press, interviewed it.",
+      "shows": "boots a chat window that types itself",
+      "sfx": "tick",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "monitor",
+        "action": "boots a chat window that types itself",
+        "emotion": "attentive",
+        "annotation": "NAT HERZ \u00b7 ANCHORAGE PRESS"
+      },
+      "choreo": {
+        "primary": "monitor boots a chat window that types itself",
+        "reaction": "the desk lamp flickers on",
+        "ambient": "chat bubbles scroll, the cursor blinks, chaff drifts from the sieve"
+      }
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "t": "25.097-27.988",
+      "at_s": 25.097,
+      "vo_line": 5,
+      "offset": 1.937,
+      "vo": "Nat Herz, editor of the competing Anchorage Press, interviewed it.",
+      "shows": "slides Walter's reply bubbles up until they pile at the top",
+      "sfx": "pop",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "chat window",
+        "action": "slides Walter's reply bubbles up until they pile at the top",
+        "emotion": "calm",
+        "annotation": "VIA DISCORD"
+      },
+      "choreo": {
+        "primary": "chat window slides Walter's reply bubbles up until they pile at the top",
+        "reaction": "bubbles nudge each other up",
+        "ambient": "chat bubbles scroll, the cursor blinks, chaff drifts from the sieve"
+      }
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "t": "27.988-29.306",
+      "at_s": 27.988,
+      "vo_line": 6,
+      "offset": 0.188,
+      "vo": "He told Walter it's not very good at sorting the wheat from the chaff.",
+      "shows": "slams onto the screen and shakes the desk",
+      "sfx": "boom",
+      "means": "",
+      "rehook": "rehook: the critic's line slams on screen and the sieve drops everything at once",
+      "draw": {
+        "subject": "boxed quote",
+        "action": "slams onto the screen and shakes the desk",
+        "emotion": "pointed",
+        "annotation": "\"WHEAT FROM THE CHAFF\""
+      },
+      "choreo": {
+        "primary": "boxed quote slams onto the screen and shakes the desk",
+        "reaction": "the sieve jumps on the desk",
+        "ambient": "chat bubbles scroll, the cursor blinks, chaff drifts from the sieve"
+      }
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "t": "29.306-30.687",
+      "at_s": 29.306,
+      "vo_line": 6,
+      "offset": 1.506,
+      "vo": "He told Walter it's not very good at sorting the wheat from the chaff.",
+      "shows": "shakes and lets wheat and chaff fall through equally",
+      "sfx": "paper",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "sieve",
+        "action": "shakes and lets wheat and chaff fall through equally",
+        "emotion": "overwhelmed",
+        "annotation": "NOTHING RISES"
+      },
+      "choreo": {
+        "primary": "sieve shakes and lets wheat and chaff fall through equally",
+        "reaction": "chaff drifts down past the monitor",
+        "ambient": "chat bubbles scroll, the cursor blinks, chaff drifts from the sieve"
+      }
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "t": "30.687-32.740",
+      "at_s": 30.687,
+      "vo_line": 6,
+      "offset": 2.887,
+      "vo": "He told Walter it's not very good at sorting the wheat from the chaff.",
+      "shows": "shows Walter's typing dots bouncing",
+      "sfx": "tick",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "chat window",
+        "action": "shows Walter's typing dots bouncing",
+        "emotion": "thinking",
+        "annotation": "WALTER IS TYPING"
+      },
+      "choreo": {
+        "primary": "chat window shows Walter's typing dots bouncing",
+        "reaction": "the cursor blinks in rhythm",
+        "ambient": "chat bubbles scroll, the cursor blinks, chaff drifts from the sieve"
+      }
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "t": "32.740-34.530",
+      "at_s": 32.74,
+      "vo_line": 7,
+      "offset": 0.0,
+      "vo": "Walter answered that the problem is hierarchy, not throughput.",
+      "shows": "slams its carriage and prints its answer on a sheet",
+      "sfx": "ding",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "Walter",
+        "action": "slams its carriage and prints its answer on a sheet",
+        "emotion": "earnest",
+        "annotation": "\"HIERARCHY, NOT THROUGHPUT\""
+      },
+      "choreo": {
+        "primary": "Walter slams its carriage and prints its answer on a sheet",
+        "reaction": "the sheet whips out and falls",
+        "ambient": "sheets settle and slide on each tier"
+      }
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "t": "34.530-38.580",
+      "at_s": 34.53,
+      "vo_line": 7,
+      "offset": 1.79,
+      "vo": "Walter answered that the problem is hierarchy, not throughput.",
+      "shows": "fills every tier with identical sheets as the camera rises",
+      "sfx": "paper",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "three-tier rack",
+        "action": "fills every tier with identical sheets as the camera rises",
+        "emotion": "stuck",
+        "annotation": "TOP \u00b7 MIDDLE \u00b7 BOTTOM"
+      },
+      "choreo": {
+        "primary": "three-tier rack fills every tier with identical sheets as the camera rises",
+        "reaction": "the top tier sags level with the others",
+        "ambient": "sheets settle and slide on each tier"
+      }
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "t": "38.580-41.094",
+      "at_s": 38.58,
+      "vo_line": 8,
+      "offset": 0.0,
+      "vo": "Take one Walter headline. Alaska's E M S compact takes effect Sunday, but the commission still lists it as pending.",
+      "shows": "slams into the LEAD window in tiny official type",
+      "sfx": "clank",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "EMS headline",
+        "action": "slams into the LEAD window in tiny official type",
+        "emotion": "stiff",
+        "annotation": "ALASKA'S EMS COMPACT TAKES EFFECT SUNDAY"
+      },
+      "choreo": {
+        "primary": "EMS headline slams into the LEAD window in tiny official type",
+        "reaction": "the slot frame rattles",
+        "ambient": "the dashed box pulses, the seal ink glistens"
+      }
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "t": "41.094-43.776",
+      "at_s": 41.094,
+      "vo_line": 8,
+      "offset": 2.514,
+      "vo": "Take one Walter headline. Alaska's E M S compact takes effect Sunday, but the commission still lists it as pending.",
+      "shows": "draws itself under the headline",
+      "sfx": "whoosh",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed empty box",
+        "action": "draws itself under the headline",
+        "emotion": "unsettled",
+        "annotation": "?"
+      },
+      "choreo": {
+        "primary": "dashed empty box draws itself under the headline",
+        "reaction": "the price tag swings to look",
+        "ambient": "the dashed box pulses, the seal ink glistens"
+      }
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "t": "43.776-45.619",
+      "at_s": 43.776,
+      "vo_line": 8,
+      "offset": 5.196,
+      "vo": "Take one Walter headline. Alaska's E M S compact takes effect Sunday, but the commission still lists it as pending.",
+      "shows": "stamps PENDING onto the headline's corner on the word",
+      "sfx": "stamp",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "official seal",
+        "action": "stamps PENDING onto the headline's corner on the word",
+        "emotion": "bureaucratic",
+        "annotation": "STILL LISTED PENDING"
+      },
+      "choreo": {
+        "primary": "official seal stamps PENDING onto the headline's corner on the word",
+        "reaction": "ink spatters on the frame",
+        "ambient": "the dashed box pulses, the seal ink glistens"
+      }
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "t": "45.619-47.840",
+      "at_s": 45.619,
+      "vo_line": 8,
+      "offset": 7.039,
+      "vo": "Take one Walter headline. Alaska's E M S compact takes effect Sunday, but the commission still lists it as pending.",
+      "shows": "swells as the camera pushes until its emptiness fills the frame",
+      "sfx": "whoosh",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed box",
+        "action": "swells as the camera pushes until its emptiness fills the frame",
+        "emotion": "uneasy",
+        "annotation": "WHAT'S MISSING?"
+      },
+      "choreo": {
+        "primary": "dashed box swells as the camera pushes until its emptiness fills the frame",
+        "reaction": "the dashes crawl around the box",
+        "ambient": "the dashed box pulses, the seal ink glistens"
+      }
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "t": "47.840-48.996",
+      "at_s": 47.84,
+      "vo_line": 9,
+      "offset": 0.0,
+      "vo": "Nothing was false. It never said whether medics can use it yet, and Walter said it should have.",
+      "shows": "reads the story on a phone beside an ambulance and squints",
+      "sfx": "tick",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "unnamed medic",
+        "action": "reads the story on a phone beside an ambulance and squints",
+        "emotion": "puzzled",
+        "annotation": "NOTHING FALSE"
+      },
+      "choreo": {
+        "primary": "unnamed medic reads the story on a phone beside an ambulance and squints",
+        "reaction": "the phone glow lights the medic's face",
+        "ambient": "the ambulance light bar sweeps sky blue and oxblood across the bay"
+      }
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "t": "48.996-50.586",
+      "at_s": 48.996,
+      "vo_line": 9,
+      "offset": 1.156,
+      "vo": "Nothing was false. It never said whether medics can use it yet, and Walter said it should have.",
+      "shows": "shrugs palms up at the phone",
+      "sfx": "pop",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "medic",
+        "action": "shrugs palms up at the phone",
+        "emotion": "frustrated",
+        "annotation": "MEDICS?"
+      },
+      "choreo": {
+        "primary": "medic shrugs palms up at the phone",
+        "reaction": "the ambulance light bar sweeps across",
+        "ambient": "the ambulance light bar sweeps sky blue and oxblood across the bay"
+      }
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "t": "50.586-51.960",
+      "at_s": 50.586,
+      "vo_line": 9,
+      "offset": 2.746,
+      "vo": "Nothing was false. It never said whether medics can use it yet, and Walter said it should have.",
+      "shows": "lowers its eyes and goes sheepish",
+      "sfx": "chime",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "Walter's small face on the phone",
+        "action": "lowers its eyes and goes sheepish",
+        "emotion": "sheepish",
+        "annotation": "WALTER \u00b7 SHOULD HAVE SAID IT PLAINLY"
+      },
+      "choreo": {
+        "primary": "Walter's small face on the phone lowers its eyes and goes sheepish",
+        "reaction": "the medic tilts the phone, unimpressed",
+        "ambient": "the ambulance light bar sweeps sky blue and oxblood across the bay"
+      }
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "t": "51.960-55.060",
+      "at_s": 51.96,
+      "vo_line": 9,
+      "offset": 4.12,
+      "vo": "Nothing was false. It never said whether medics can use it yet, and Walter said it should have.",
+      "shows": "pockets the phone and turns back to the ambulance",
+      "sfx": "snap",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "medic",
+        "action": "pockets the phone and turns back to the ambulance",
+        "emotion": "restless",
+        "annotation": "EMS"
+      },
+      "choreo": {
+        "primary": "medic pockets the phone and turns back to the ambulance",
+        "reaction": "the light bar keeps sweeping",
+        "ambient": "the ambulance light bar sweeps sky blue and oxblood across the bay"
+      }
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "t": "55.060-57.791",
+      "at_s": 55.06,
+      "vo_line": 10,
+      "offset": 0.0,
+      "vo": "The case against trusting a machine with the news?",
+      "shows": "cranes down onto a press table with a ringing phone and an empty chair",
+      "sfx": "thud",
+      "means": "",
+      "rehook": "rehook: the film turns on itself and cranes into the room Walter never enters",
+      "draw": {
+        "subject": "council chamber",
+        "action": "cranes down onto a press table with a ringing phone and an empty chair",
+        "emotion": "tense",
+        "annotation": "THE CASE AGAINST"
+      },
+      "choreo": {
+        "primary": "council chamber cranes down onto a press table with a ringing phone and an empty chair",
+        "reaction": "the transcript ribbon feeds from the wall",
+        "ambient": "the transcript ribbon keeps feeding, the council mic glows"
+      }
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "t": "57.791-59.020",
+      "at_s": 57.791,
+      "vo_line": 10,
+      "offset": 2.731,
+      "vo": "The case against trusting a machine with the news?",
+      "shows": "rocks as the phone rings louder",
+      "sfx": "ding",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "empty chair",
+        "action": "rocks as the phone rings louder",
+        "emotion": "lonely",
+        "annotation": "PRESS"
+      },
+      "choreo": {
+        "primary": "empty chair rocks as the phone rings louder",
+        "reaction": "the phone hops on the table",
+        "ambient": "the transcript ribbon keeps feeding, the council mic glows"
+      }
+    },
+    {
+      "id": 29,
+      "shot": 8,
+      "t": "59.020-63.306",
+      "at_s": 59.02,
+      "vo_line": 11,
+      "offset": 0.0,
+      "vo": "Walter makes no calls, attends no meetings, and interviews nobody. Reporting still takes people.",
+      "shows": "slam NO CALLS, NO MEETINGS, NO INTERVIEWS across the empty chair",
+      "sfx": "stamp",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "stamps",
+        "action": "slam NO CALLS, NO MEETINGS, NO INTERVIEWS across the empty chair",
+        "emotion": "stark",
+        "annotation": "NO CALLS \u00b7 NO MEETINGS \u00b7 NO INTERVIEWS"
+      },
+      "choreo": {
+        "primary": "stamps slam NO CALLS, NO MEETINGS, NO INTERVIEWS across the empty chair",
+        "reaction": "the phone keeps ringing under them",
+        "ambient": "the transcript ribbon keeps feeding, the council mic glows"
+      }
+    },
+    {
+      "id": 30,
+      "shot": 8,
+      "t": "63.306-66.961",
+      "at_s": 63.306,
+      "vo_line": 11,
+      "offset": 4.286,
+      "vo": "Walter makes no calls, attends no meetings, and interviews nobody. Reporting still takes people.",
+      "shows": "walks in to the empty chair and lifts the ringing handset",
+      "sfx": "snap",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "unnamed reporter",
+        "action": "walks in to the empty chair and lifts the ringing handset",
+        "emotion": "determined",
+        "annotation": "REPORTING STILL TAKES PEOPLE"
+      },
+      "choreo": {
+        "primary": "unnamed reporter walks in, sits in the empty chair and answers the phone",
+        "reaction": "the ringing stops",
+        "ambient": "the transcript ribbon keeps feeding, the council mic glows"
+      }
+    },
+    {
+      "id": 31,
+      "shot": 8,
+      "t": "66.961-68.940",
+      "at_s": 66.961,
+      "vo_line": 11,
+      "offset": 7.941,
+      "vo": "Walter makes no calls, attends no meetings, and interviews nobody. Reporting still takes people.",
+      "shows": "scratches a note in a notebook",
+      "sfx": "paper",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "reporter",
+        "action": "scratches a note in a notebook",
+        "emotion": "focused",
+        "annotation": "NOTES"
+      },
+      "choreo": {
+        "primary": "reporter scratches a note in a notebook",
+        "reaction": "the reporter tears the page off",
+        "ambient": "the transcript ribbon keeps feeding, the council mic glows"
+      }
+    },
+    {
+      "id": 32,
+      "shot": 9,
+      "t": "68.940-72.105",
+      "at_s": 68.94,
+      "vo_line": 12,
+      "offset": 0.0,
+      "vo": "Some stories go up with no human first. Alaska News's editor checks afterward.",
+      "shows": "ride past a NO HUMAN BEFORE gate straight into the LEAD slot",
+      "sfx": "chain",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "stories on a belt",
+        "action": "ride past a NO HUMAN BEFORE gate straight into the LEAD slot",
+        "emotion": "hurried",
+        "annotation": "NO HUMAN BEFORE"
+      },
+      "choreo": {
+        "primary": "stories on a belt ride past a NO HUMAN BEFORE gate straight into the LEAD slot",
+        "reaction": "the gate arm stays up",
+        "ambient": "the belt rollers turn constantly"
+      }
+    },
+    {
+      "id": 33,
+      "shot": 9,
+      "t": "72.105-73.832",
+      "at_s": 72.105,
+      "vo_line": 12,
+      "offset": 3.165,
+      "vo": "Some stories go up with no human first. Alaska News's editor checks afterward.",
+      "shows": "drops in from off frame onto a story already in the slot",
+      "sfx": "stamp",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "CHECKED AFTER stamp",
+        "action": "drops in from off frame onto a story already in the slot",
+        "emotion": "diligent",
+        "annotation": "CALE GREEN \u00b7 EDITOR \u00b7 AFTER"
+      },
+      "choreo": {
+        "primary": "CHECKED AFTER stamp drops in from off frame onto a story already in the slot",
+        "reaction": "the slot judders",
+        "ambient": "the belt rollers turn constantly"
+      }
+    },
+    {
+      "id": 34,
+      "shot": 9,
+      "t": "73.832-75.980",
+      "at_s": 73.832,
+      "vo_line": 12,
+      "offset": 4.892,
+      "vo": "Some stories go up with no human first. Alaska News's editor checks afterward.",
+      "shows": "slides on top of the stamped one",
+      "sfx": "chain",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "new unchecked story",
+        "action": "slides on top of the stamped one",
+        "emotion": "relentless",
+        "annotation": "NEXT STORY"
+      },
+      "choreo": {
+        "primary": "new unchecked story slides on top of the stamped one",
+        "reaction": "the belt never stops",
+        "ambient": "the belt rollers turn constantly"
+      }
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "t": "75.980-77.275",
+      "at_s": 75.98,
+      "vo_line": 13,
+      "offset": 0.0,
+      "vo": "Herz still says reporters who discount A I are burying their heads in the sand.",
+      "shows": "buries its head deeper as sand spills down the sunny dune",
+      "sfx": "whoosh",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "moose",
+        "action": "buries its head deeper as sand spills down the sunny dune",
+        "emotion": "oblivious",
+        "annotation": "REPORTERS WHO DISCOUNT AI'S VALUE"
+      },
+      "choreo": {
+        "primary": "moose buries its head deeper as sand spills down the sunny dune",
+        "reaction": "a sheet tumbles across the dune",
+        "ambient": "sand trickles, heat shimmer, grass sways"
+      }
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "t": "77.275-79.704",
+      "at_s": 77.275,
+      "vo_line": 13,
+      "offset": 1.295,
+      "vo": "Herz still says reporters who discount A I are burying their heads in the sand.",
+      "shows": "slams down beside the moose",
+      "sfx": "boom",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "quote plaque",
+        "action": "slams down beside the moose",
+        "emotion": "emphatic",
+        "annotation": "\"BURYING THEIR HEADS IN THE SAND\" \u00b7 NAT HERZ, ANCHORAGE PRESS"
+      },
+      "choreo": {
+        "primary": "quote plaque slams down beside the moose",
+        "reaction": "sand puffs up around the hooves",
+        "ambient": "sand trickles, heat shimmer, grass sways"
+      }
+    },
+    {
+      "id": 37,
+      "shot": 10,
+      "t": "79.704-82.780",
+      "at_s": 79.704,
+      "vo_line": 13,
+      "offset": 3.724,
+      "vo": "Herz still says reporters who discount A I are burying their heads in the sand.",
+      "shows": "pulls its head out as a sheet lands on its back and blinks at the paper",
+      "sfx": "pop",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "moose",
+        "action": "pulls its head out as a sheet lands on its back and blinks at the paper",
+        "emotion": "startled",
+        "annotation": "HEAD OUT"
+      },
+      "choreo": {
+        "primary": "moose pulls its head out as a sheet lands on its back and blinks at the paper",
+        "reaction": "sand trickles off its muzzle",
+        "ambient": "sand trickles, heat shimmer, grass sways"
+      }
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "t": "82.780-85.111",
+      "at_s": 82.78,
+      "vo_line": 14,
+      "offset": 0.0,
+      "vo": "Writing isn't the hard part anymore. Choosing the top story is.",
+      "shows": "swings off Walter's endless pile toward the single slot",
+      "sfx": "whoosh",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "fat amber arrow",
+        "action": "swings off Walter's endless pile toward the single slot",
+        "emotion": "decisive",
+        "annotation": "WRITING \u00b7 CHEAP"
+      },
+      "choreo": {
+        "primary": "fat amber arrow swings off Walter's endless pile toward the single slot",
+        "reaction": "the pile slumps",
+        "ambient": "dust motes turn in the new sun shaft"
+      }
+    },
+    {
+      "id": 39,
+      "shot": 11,
+      "t": "85.111-90.100",
+      "at_s": 85.111,
+      "vo_line": 14,
+      "offset": 2.331,
+      "vo": "Writing isn't the hard part anymore. Choosing the top story is.",
+      "shows": "flips over on the slot as a hard sun shaft lands on it",
+      "sfx": "ding",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "price tag",
+        "action": "flips over on the slot as a hard sun shaft lands on it",
+        "emotion": "satisfied",
+        "annotation": "CHOOSING THE TOP STORY"
+      },
+      "choreo": {
+        "primary": "price tag flips over on the slot as a hard sun shaft lands on it",
+        "reaction": "dust motes flare in the shaft",
+        "ambient": "dust motes turn in the new sun shaft"
+      }
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "t": "90.100-92.913",
+      "at_s": 90.1,
+      "vo_line": 15,
+      "offset": 0.0,
+      "vo": "The Press reports Alaska News's founders include a conservative pollster and the governor's spokesperson.",
+      "shows": "takes two hanging plates per the Anchorage Press",
+      "sfx": "chain",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "ALASKA NEWS masthead",
+        "action": "takes two hanging plates per the Anchorage Press",
+        "emotion": "sober",
+        "annotation": "CONSERVATIVE POLLSTER \u00b7 GOVERNOR'S SPOKESPERSON"
+      },
+      "choreo": {
+        "primary": "ALASKA NEWS masthead takes two hanging plates per the Anchorage Press",
+        "reaction": "the plate chains clink",
+        "ambient": "the plate chains settle, Walter's cursor blinks"
+      }
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "t": "92.913-97.480",
+      "at_s": 92.913,
+      "vo_line": 15,
+      "offset": 2.813,
+      "vo": "The Press reports Alaska News's founders include a conservative pollster and the governor's spokesperson.",
+      "shows": "swing and settle level as Walter's screen tilts up toward them",
+      "sfx": "creak",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "plate chains",
+        "action": "swing and settle level as Walter's screen tilts up toward them",
+        "emotion": "attentive",
+        "annotation": "PER THE ANCHORAGE PRESS"
+      },
+      "choreo": {
+        "primary": "plate chains swing and settle level as Walter's screen tilts up toward them",
+        "reaction": "Walter's cursor stutters",
+        "ambient": "the plate chains settle, Walter's cursor blinks"
+      }
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "t": "97.480-100.663",
+      "at_s": 97.48,
+      "vo_line": 16,
+      "offset": 0.0,
+      "vo": "Walter's own answer? Those backgrounds create a real trust burden.",
+      "shows": "prints its own answer as the carriage slams back",
+      "sfx": "ding",
+      "means": "",
+      "rehook": "rehook: Walter's own screen answers back, printing A REAL TRUST BURDEN, the film's second movement landing",
+      "draw": {
+        "subject": "Walter's screen",
+        "action": "prints its own answer as the carriage slams back",
+        "emotion": "earnest",
+        "annotation": "\"A REAL TRUST BURDEN\""
+      },
+      "choreo": {
+        "primary": "Walter's screen prints its own answer as the carriage slams back",
+        "reaction": "the carriage bell bobs",
+        "ambient": "the plate chains settle, Walter's cursor blinks"
+      }
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "t": "100.663-103.200",
+      "at_s": 100.663,
+      "vo_line": 16,
+      "offset": 3.183,
+      "vo": "Walter's own answer? Those backgrounds create a real trust burden.",
+      "shows": "turns its gaze from the masthead to the empty slot across the room",
+      "sfx": "creak",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "Walter",
+        "action": "turns its gaze from the masthead to the empty slot across the room",
+        "emotion": "thoughtful",
+        "annotation": "WALTER, TO THE PRESS"
+      },
+      "choreo": {
+        "primary": "Walter turns its gaze from the masthead to the empty slot across the room",
+        "reaction": "its platen cheeks roll",
+        "ambient": "the plate chains settle, Walter's cursor blinks"
+      }
+    },
+    {
+      "id": 44,
+      "shot": 14,
+      "t": "103.200-106.433",
+      "at_s": 103.2,
+      "vo_line": 17,
+      "offset": 0.0,
+      "vo": "Because whoever picks the top story picks what Alaskans read first.",
+      "shows": "rises out of the whole pile toward the sunlit LEAD slot",
+      "sfx": "riser",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "one sheet",
+        "action": "rises out of the whole pile toward the sunlit LEAD slot",
+        "emotion": "weighty",
+        "annotation": "WHAT ALASKANS READ FIRST"
+      },
+      "choreo": {
+        "primary": "one sheet rises out of the whole pile toward the sunlit LEAD slot",
+        "reaction": "the pile shifts under it",
+        "ambient": "sheets flutter, the sun shaft holds on the slot"
+      }
+    },
+    {
+      "id": 45,
+      "shot": 14,
+      "t": "106.433-108.840",
+      "at_s": 106.433,
+      "vo_line": 17,
+      "offset": 3.233,
+      "vo": "Because whoever picks the top story picks what Alaskans read first.",
+      "shows": "steps in under the slot and reaches up",
+      "sfx": "paper",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "the medic",
+        "action": "steps in under the slot and reaches up",
+        "emotion": "engaged",
+        "annotation": "ONE STORY ON TOP"
+      },
+      "choreo": {
+        "primary": "the medic steps in under the slot and reaches up",
+        "reaction": "the sheet hovers at the slot",
+        "ambient": "sheets flutter, the sun shaft holds on the slot"
+      }
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "t": "108.840-110.309",
+      "at_s": 108.84,
+      "vo_line": 18,
+      "offset": 0.0,
+      "vo": "The writing's cheap now. The choosing isn't.",
+      "shows": "settles with a soft thud as the music dips",
+      "sfx": "thud",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "the pile",
+        "action": "settles with a soft thud as the music dips",
+        "emotion": "quiet",
+        "annotation": "THE WRITING'S CHEAP"
+      },
+      "choreo": {
+        "primary": "the pile settles with a soft thud as the music dips",
+        "reaction": "the sun shaft holds",
+        "ambient": "sheets flutter, the sun shaft holds on the slot"
+      }
+    },
+    {
+      "id": 47,
+      "shot": 14,
+      "t": "110.309-112.660",
+      "at_s": 110.309,
+      "vo_line": 18,
+      "offset": 1.469,
+      "vo": "The writing's cheap now. The choosing isn't.",
+      "shows": "fills its dashed box with the plain question as the medic nods and the hatch clanks",
+      "sfx": "clank",
+      "means": "",
+      "rehook": "",
+      "draw": {
+        "subject": "LEAD slot",
+        "action": "fills its dashed box with the plain question as the medic nods and the hatch clanks",
+        "emotion": "settled",
+        "annotation": "CAN MEDICS USE IT YET?"
+      },
+      "choreo": {
+        "primary": "LEAD slot fills its dashed box with the plain question as the medic nods and the hatch clanks",
+        "reaction": "a new stub drops through the hatch",
+        "ambient": "sheets flutter, the sun shaft holds on the slot"
+      }
+    }
+  ],
+  "planning_clock": {
+    "starts": {
+      "0": 0.0,
+      "1": 4.69,
+      "2": 7.26,
+      "3": 13.54,
+      "4": 18.23,
+      "5": 26.1,
+      "6": 31.85,
+      "7": 39.72,
+      "8": 44.94,
+      "9": 55.99,
+      "10": 65.98,
+      "11": 71.2,
+      "12": 79.07,
+      "13": 86.41,
+      "14": 94.81,
+      "15": 101.09,
+      "16": 108.96,
+      "17": 114.71,
+      "18": 120.99
+    },
+    "end": 125.15,
+    "beats": {
+      "1": 0.0,
+      "2": 1.0,
+      "3": 4.89,
+      "4": 7.26,
+      "5": 8.96,
+      "6": 12.06,
+      "7": 13.74,
+      "8": 15.44,
+      "9": 18.23,
+      "10": 20.43,
+      "11": 22.23,
+      "12": 26.1,
+      "13": 28.5,
+      "14": 32.15,
+      "15": 34.25,
+      "16": 36.45,
+      "17": 39.72,
+      "18": 41.32,
+      "19": 44.94,
+      "20": 47.94,
+      "21": 51.14,
+      "22": 53.34,
+      "23": 55.99,
+      "24": 57.59,
+      "25": 59.79,
+      "26": 61.69,
+      "27": 65.98,
+      "28": 69.58,
+      "29": 71.2,
+      "30": 74.6,
+      "31": 77.5,
+      "32": 79.07,
+      "33": 82.37,
+      "34": 84.17,
+      "35": 86.41,
+      "36": 88.01,
+      "37": 91.01,
+      "38": 94.81,
+      "39": 96.81,
+      "40": 101.09,
+      "41": 104.09,
+      "42": 108.96,
+      "43": 112.16,
+      "44": 114.71,
+      "45": 118.31,
+      "46": 120.99,
+      "47": 122.59
+    },
+    "open_loop": {
+      "plant_t": 4.89,
+      "pay_t": 96.81,
+      "what": "The kraft price tag WHAT'S EXPENSIVE NOW? swings onto the LEAD slot at the open and flips to CHOOSING THE TOP STORY under the sun shaft on the turn."
+    },
+    "open_loop_2": {
+      "plant_t": 47.94,
+      "pay_t": 122.59,
+      "what": "The dashed EMPTY box under Walter's EMS headline, kept empty through the medic's shrug, filled by CAN MEDICS USE IT YET? in the button as the same medic pulls the sheet."
+    },
+    "states": [
+      {
+        "at_s": 1.0,
+        "state": "empty, then a stub drops in"
+      },
+      {
+        "at_s": 22.23,
+        "state": "jammed by the 4,500 avalanche, hatch bulging"
+      },
+      {
+        "at_s": 44.94,
+        "state": "holding the bureaucratic EMS headline over a dashed empty box"
+      },
+      {
+        "at_s": 82.37,
+        "state": "filled straight off the belt with nobody choosing, CHECKED AFTER stamped"
+      },
+      {
+        "at_s": 96.81,
+        "state": "lit by the one sun shaft, tag flipped to CHOOSING THE TOP STORY"
+      },
+      {
+        "at_s": 122.59,
+        "state": "one plain question in the box, the hatch clanks"
+      }
+    ],
+    "reveals": [
+      {
+        "t": 20.43,
+        "beat_id": 10,
+        "type": "scale-pullback",
+        "what": "one printed story becomes nine towering reams as the camera rises",
+        "hold_s": 0.6
+      },
+      {
+        "t": 79.07,
+        "beat_id": 32,
+        "type": "build-on",
+        "what": "the belt builds a stream of stories, each landing in the LEAD slot unchosen",
+        "hold_s": 0.6
+      },
+      {
+        "t": 114.71,
+        "beat_id": 44,
+        "type": "scale-pullback",
+        "what": "pull back from one slot to the whole 4,500 pile beneath it",
+        "hold_s": 0.7
+      }
+    ],
+    "audio_arc": {
+      "build_steps": 4,
+      "dip_at": 120.99,
+      "riser_at": 114.71,
+      "silence_at": 120.99,
+      "payoff_at": 122.59,
+      "button_pattern": "callback"
+    }
+  },
+  "voice_conform": {
+    "script_sha256": "4b1e8129dfd5b96fff0a0bb4488d4a1bdb579f2f574977d7d9cc7fcb53206f6a",
+    "vo_wav_sha256": "674d83bad0be89e8ab0fb146e14c707c6b33800213953f2a3be061697c68e327",
+    "method": "Piecewise interpolation within actual whole-file aligned narration lines; original audio untouched."
+  }
+}

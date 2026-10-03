@@ -1,0 +1,7 @@
+Captions now come from the aligned word timings, one card per sentence or clause, held toward the read floor (build_scenes, _cards_from_words and _merge_by_sense)
+machine_due.py fixed, it crashed on the object-shaped last pass and couldn't say when the weekly pass was due
+Evidence filmstrips for slams and stamps now sample the moment of contact
+New library family in lib/newsroom.tsx (NewsAgent, LeadSlot, PriceTag, Ream, StorySheet), registered and indexed
+Git identity set to the owner, and the run's early commits re-authored before merge
+DISPATCH_STANDARD section 10 added with nine findings the panel made that were knowable in advance
+Queued for the machine pass, 5 new (per-run tables from the board, banned words in caption_check, VO words band vs runtime, moose redraw, git identity at setup). Repeat offender caption-chunk-by-sense is at repeat 7, partly fixed this run

@@ -862,3 +862,11 @@ flow high, gate open and spill high, and the picture says it without a caption.
   individual is never drawn with a face), `AnswerCard`, `DateTag`, `LabelSheet`, `Binder`.
 - `lib/focus.ts`: `blurAt`, `valueLadder`, `passAlpha`, `perspScale`; self test
   `scripts/focus_check.mjs`.
+
+## Grown 2026-10-03 ("The Choosing Isn't") — the NEWSROOM family, lib/newsroom.tsx
+- `NewsAgent` (lib/newsroom.tsx) THE RUN'S HERO, the shelf's first WRITING machine: a domed typewriter-press with a screen face, a platen cylinder overhanging both flanks with knob cheeks, a funnel hopper, a key apron and a paper tongue from its mouth slot. NO ARMS by design (it can't call, attend or interview). Origin base centre; props emotion (happy/focused/sheepish/earnest/thoughtful/helpless), blink, look/lookY, carriage (slam), roll, gulp, tongue, screenText + typed (prints its own words on the screen), nameplate. Distinct silhouette from ServerMachine (no straight side over 30 percent of body height). ACTIVE.
+- `LeadSlot` (lib/newsroom.tsx) the top slot of a front page, the film's throughline: the only hard-cornered, cadmium-amber object in the family. Origin window centre; states empty/stub/jammed/headline/question, hatch, drop, jam, PENDING seal, a dashed box (empty/filled) whose question types on, accent (greys out when jammed), optional page. ACTIVE.
+- `PriceTag` (lib/newsroom.tsx) a kraft tag on a string with a front and a back that flips through edge-on; sized to its strings by arithmetic. ACTIVE.
+- `Ream` / `StorySheet` (lib/newsroom.tsx) soft, bowed, curling reams with a kraft band, and a loose printed story with an optional CHECKED AFTER stamp. ACTIVE.
+- `monoW`, `NEWS` (lib/newsroom.tsx) the mono width rule and the family palette (newsprint cream, spruce, sky, cadmium amber, oxblood).
+- Episode-local in Ep1003.tsx, candidates for promotion: `BullMoose` (a moose drawn from reference with a head-down pose, after the shelf Moose read as a bison), `SunShaft` + `RoomDim` (one hard shaft on the subject while the room dims), `DeskPhone`, `Chair`, `Ambulance`.

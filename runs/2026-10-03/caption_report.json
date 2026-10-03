@@ -1,0 +1,15 @@
+{
+ "gate_a": "PASS",
+ "gate_b": {
+  "rounds": 4,
+  "weighted_total": 8.59,
+  "hard_fails": [],
+  "ship": true,
+  "history": [
+   7.84,
+   8.21,
+   8.37,
+   8.59
+  ]
+ }
+}

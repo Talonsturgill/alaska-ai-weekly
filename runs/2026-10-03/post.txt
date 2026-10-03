@@ -1,0 +1,27 @@
+Alaska News uses an AI agent named Walter to write stories. It says it has published more than 4,500 this year.
+
+Walter's own read on its biggest problem is "hierarchy, not throughput."
+
+Nat Herz, editor of the competing Anchorage Press, interviewed Walter.
+
+The platform reads meetings, notices and filings and turns them into stories, using AI products from companies including Anthropic, OpenAI, Google and xAI. Herz told it plainly that it still isn't very good at sorting the wheat from the chaff.
+
+Look at one of its headlines about the EMS compact. It wasn't wrong, just unclear. It never answered the question a medic would ask first, which is whether they can use it yet. Walter agreed the headline should have said that more plainly.
+
+There's a fair case against leaning on a machine for news. Walter makes no calls and goes to no meetings.
+
+Some stories go up with no human first, and editor Cale Green checks them afterward. Reporting still takes people.
+
+There's a fair case the other way too. Herz himself says Alaska reporters "trying to ignore and discount the value of artificial intelligence" are "burying their heads in the sand."
+
+Both are true, and they point at the same job. Writing is the cheap part now. Choosing what goes on top and saying plainly what it means for readers is the hard part.
+
+The Press also reports the founding team includes a longtime conservative pollster and a spokesperson for Gov. Mike Dunleavy.
+
+Walter itself called that a real trust burden. That's why whoever sets the top of the page deserves scrutiny.
+
+Who should decide what Alaskans read first, and what would earn your trust?
+
+Full disclosure. This post and its video were made with help from Anthropic's Claude.
+
+#Alaska #AIinJournalism #LocalNews #NewsAutomation

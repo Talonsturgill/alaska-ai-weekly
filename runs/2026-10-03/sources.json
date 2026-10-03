@@ -1,0 +1,42 @@
+{
+ "run_date": "2026-10-03",
+ "title": "The Choosing Isn't",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "This AI agent has written thousands of Alaska news articles. We interviewed it., September 17th, 2026",
+   "outlet": "Anchorage Press",
+   "url": "https://anchoragepress.com/this-ai-agent-has-written-thousands-of-alaska-news-articles-we-interviewed-it/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Primary: Nat Herz's interview with Walter, the outlet's figures, the team listing and Walter's own answers."
+  },
+  {
+   "id": "s2",
+   "title": "This Alaska journalist interviewed an AI news reporter, and he didn't run away screaming, September 25th, 2026",
+   "outlet": "Alaska Public Media",
+   "url": "https://alaskapublic.org/2026-09-25/this-alaska-journalist-interviewed-an-ai-news-reporter-and-he-didnt-run-away-screaming",
+   "claims": [
+    "c9",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "Second source: Herz on Alaska News Nightly, his title and his view that newsrooms should not discount AI."
+  }
+ ]
+}
