@@ -652,14 +652,19 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   a pin, match cut on shape). Parallax on every diorama.
 - ANIMATION: nothing moves linearly. Every entrance has anticipation, overshoot and settle
   (springs). Secondary motion on everything attached; idle life everywhere; numbers count up with
-  easing and land with a hit; impacts spawn juice (star, dust puff, 2 to 4px screen-shake).
+  easing and land with a hit; impacts land IN THE OBJECT (squash, overshoot, a star, a dust puff).
+- THE CAMERA DOES NOT PUNCTUATE BEATS (owner, 2026-10-03, on a whole-frame kick every 2.8 s: "it's
+  just kind of overstimulating"). The whole frame jolts only on a beat the board flags `kick: true`,
+  at most 3 a film and 20 s apart, through `lib/camera.ts` fed `props.kicks`; never from `beats`, and
+  VO accents move bodies, never the frame or the grade. `python3 scripts/jolt_check.py` measures the
+  master and preflight fails a film over budget. A judge asking for camera shake gets the object.
 - PALETTE: a fresh saturated 3-color world + 1 accent per episode, never the last 2 (ledger).
 
 ## PHASE 4.5: GATE 0 (before any scene code)  (`run_cost.py phase gate0`)
 
 - Write `out/dispatch/storyboard.json`: concept, treatment (+ judge reasoning), engine:
   infographic-2.5d, derived_from: scratch, fingerprint (palette, metaphor, layout axes), beats[]
-  with draw + t + vo + sfx + means, shots[] (framing, transition_in, thread, camera: composed stage3d
+  with draw + t + vo + sfx + means (+ `kick: true` on at most 3, §4.6), shots[] (framing, transition_in, thread, camera: composed stage3d
   CameraMoves ('craneDown+dollyThrough' or 'static:<reason>'), stage3d: 'planes' | 'flat:<reason>'),
   hook block (pattern, frame1, headline 3 to 8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern), divergence_note. Plus
@@ -747,7 +752,7 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
    2026-07-21): pass `talking={useVoice().opennessAt(globalFrame)}`, which routes through
    `ambientMouth()` (a slow conversational cycle), and never drive TalkMouth openness directly.
    `useVoice().accentAt` drives flinches, chip pops and gesture kicks, so the picture REACTS with its
-   BODY on the emphasized words. USE THE MOTION LAYER (lib/motion.tsx): entrance() (anticipation,
+   BODY on the emphasized words (never the camera or the grade, §4.6). USE THE MOTION LAYER (lib/motion.tsx): entrance() (anticipation,
    overshoot, squash/stretch, feed .vy into MotionBlur), followThrough() on every attached part,
    ChipShadow under HUD chips. A linear scale-in is below the bar.
 5. **THE TASTE LOOP** (mandatory per scene; 3 to 5 iterations is normal). Probe cheaply: 

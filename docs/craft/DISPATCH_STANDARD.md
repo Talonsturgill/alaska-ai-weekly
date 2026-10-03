@@ -70,6 +70,16 @@ document, not of the judge.
   the same value that brings the object in.
 - **No shot may go quiet.** Anything held longer than ~6s needs a continuous animation that
   spans the WHOLE hold, not one that completes in the first third and then sits.
+- **The camera does not punctuate beats** (owner, 2026-10-03: "every like five seconds ... the
+  screen is shaking slightly ... It's happening so frequently that it's just kind of
+  overstimulating"). The 10-02 and 10-03 films kicked the whole frame, a 3 px jitter and a 2
+  percent zoom punch, on every board beat: 41 jolts in a 114 s story, one every 2.8 s. An impact
+  lands in the OBJECT: squash, overshoot, a star, a dust puff, the desk under it jumping. The
+  whole frame kicks only on a beat the board flags `"kick": true`, at most three a film and 20 s
+  apart, through `lib/camera.ts`. VO accents move bodies, never the frame, and never the grade's
+  bloom. `scripts/jolt_check.py` measures the master and preflight fails a film over budget. A
+  judge who asks for camera shake on an impact is asking for this defect back: answer with the
+  object.
 
 ## 3. Composition and staging (weight 0.08 — historically the lowest-scoring axis)
 
@@ -327,7 +337,8 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **An impact must land inside the window it is graded in.** Filmstrips are eight frames centred on
   the beat plus its peak offset. A slam that completes in six frames before the window opens reads
   as a static plate (2 to 3 percent motion). Put the contact about 0.3 s after the beat and keep
-  the settle, the desk jolt and the shake running through the window.
+  the settle and the object's own jolt running through the window, never a whole-frame shake
+  (section 2).
 - **A flip that pays a loop is mid-flip on its beat, not finished.** A 24-frame flip that started on
   the beat read as "already flipped" in the sampled window.
 - **The lower third of the 9:16 is a stage, not padding.** Below the caption card (y 1475 to 1920)

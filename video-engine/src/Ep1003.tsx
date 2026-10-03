@@ -2,7 +2,8 @@ import React from 'react';
 import {AbsoluteFill, Easing, interpolate, Sequence, staticFile, useCurrentFrame} from 'remotion';
 import {z} from 'zod';
 import {GradeLayer, DayGrade, ContactShadow, tones} from './lib/lighting';
-import {VoiceProvider, useVoice} from './lib/voice';
+import {VoiceProvider} from './lib/voice';
+import {cameraKick, kickTransform} from './lib/camera';
 import {EndCredits} from './lib/EndCredits';
 import {assertCropSafe} from './lib/cropsafe';
 import {Character} from './lib/Character';
@@ -405,9 +406,8 @@ const BullMoose: React.FC<{x: number; y: number; s?: number; f: number; headDown
 const INKC = '#16130F';
 
 // ------------------------------------------------------------------------------------------
-const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({n, from, dur, beats}) => {
+const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
   const f = useCurrentFrame();
-  const voice = useVoice();
   const bAt = (id: number) => {
     const b = beats.find((x) => x.id === id);
     return b ? b.at * 30 - from : 0;
@@ -416,7 +416,6 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   const pop = (id: number, d = 18) => spring(f, bAt(id), d);
   const since = (id: number) => f - bAt(id);
   const drift = Math.sin(f / 71.3);
-  const acc = voice.accentAt ? voice.accentAt(from + f) : 0;
   const blink = (seed: number) => {
     const p = (f + seed * 37) % 97;
     return p < 4 ? Math.sin((p / 4) * Math.PI) : 0;
@@ -425,10 +424,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
   let zoom = interpolate(f, [0, dur], [1.0, 1.06], {extrapolateRight: 'clamp'});
   let dy = 0;
   let shaft = 0;
-  const kick = Math.min(1, beats.reduce((a, b) => {
-    const d = f - (b.at * 30 - from);
-    return d >= 0 && d < 22 && b.at * 30 >= from && b.at * 30 < from + dur ? a + Math.exp(-d / 6) : a;
-  }, 0));
+  // THE CAMERA DOES NOT PUNCTUATE BEATS (owner, 2026-10-03). This kicked the whole frame on all
+  // 47 beats, one jolt every 2.8 s, and the owner called it overstimulating. It now kicks only on
+  // the beats the board flags `"kick": true` (at most three a film, 20 s apart), through
+  // lib/camera.ts. Every other impact lands in the object.
+  const jolt = kickTransform(f, cameraKick(f, from, dur, kicks));
 
   if (n === 1) {
     // HOOK. Rise off the paper lip to the empty LEAD slot; the hatch slams and a stub drops in at
@@ -1097,11 +1097,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
 
   return (
     <AbsoluteFill>
-      <div style={{position: 'absolute', inset: 0, transform: `translate(${drift * 6 + Math.sin(f * 2.3) * 3 * kick}px, ${dy + Math.cos(f * 1.9) * 2.4 * kick}px) scale(${zoom * (1 + 0.02 * kick)})`}}>
+      <div style={{position: 'absolute', inset: 0, transform: `translate(${drift * 6 + jolt.x}px, ${dy + jolt.y}px) scale(${zoom * jolt.scale})`}}>
         {picture}
       </div>
       <DayGrade f={f} amount={0.85} haze={0.2} sunX={shaft > 0 ? 760 : undefined} sunY={shaft > 0 ? 300 : undefined} sunIntensity={0.25 + 0.35 * shaft} />
-      <GradeLayer f={f} bloom={0.05 + acc * 0.06 + shaft * 0.05} vignette={0.24} grain={0.04} warmth={0.05} />
+      {/* The grade holds still under the voice (owner, 2026-10-03): no bloom on VO accents. */}
+      <GradeLayer f={f} bloom={0.05 + shaft * 0.05} vignette={0.24} grain={0.04} warmth={0.05} />
     </AbsoluteFill>
   );
 };
@@ -1113,6 +1114,7 @@ export const ep1003Schema = z.object({
   scenes: z.array(z.object({from: z.number(), dur: z.number()})).optional(),
   total: z.number().optional(),
   beats: z.array(z.object({id: z.number(), at: z.number(), label: z.string()})).optional(),
+  kicks: z.array(z.number()).optional(),
   mouth: z.array(z.number()).optional(),
   accents: z.array(z.object({frame: z.number(), word: z.string(), energy: z.number().optional(), lineIdx: z.number().optional()})).optional(),
   credits: z.object({music: z.string(), sources: z.array(z.string()), site: z.string(), seconds: z.number(), frames: z.number()}).optional(),
@@ -1123,7 +1125,7 @@ const FontStyles = () => (
   <style>{`@font-face{font-family:Fraunces;src:url('${staticFile('fonts/Fraunces-Var.ttf')}') format('truetype');font-weight:100 900;font-display:block;}@font-face{font-family:'JetBrains Mono';src:url('${staticFile('fonts/JetBrainsMono-Bold.ttf')}') format('truetype');font-weight:100 900;font-display:block;}`}</style>
 );
 
-export const Ep1003: React.FC<Props> = ({captions: cues = [], scenes, beats, credits, mouth = [], accents = []}) => {
+export const Ep1003: React.FC<Props> = ({captions: cues = [], scenes, beats, kicks = [], credits, mouth = [], accents = []}) => {
   const fallback = [0, 7.64, 17.58, 23.16, 32.74, 38.58, 47.84, 55.06, 68.94, 75.98, 82.78, 90.1, 95.94, 103.2, 125.0]
     .map((x) => Math.round(x * 30));
   const slots = scenes ?? fallback.slice(0, -1).map((from, i) => ({from, dur: fallback[i + 1] - from}));
@@ -1136,7 +1138,7 @@ export const Ep1003: React.FC<Props> = ({captions: cues = [], scenes, beats, cre
         <FontStyles />
         {slots.map((s, i) => (
           <Sequence key={i} from={s.from} durationInFrames={s.dur} name={`S${i + 1}`}>
-            <Shot n={i + 1} from={s.from} dur={s.dur} beats={bs} />
+            <Shot n={i + 1} from={s.from} dur={s.dur} beats={bs} kicks={kicks} />
           </Sequence>
         ))}
         <Sequence from={0} durationInFrames={end}><Captions cues={cues} /></Sequence>

@@ -149,6 +149,14 @@ CHECKS = [
      [sys.executable, "scripts/content_sag_check.py"], False),
     ("dead space within ceilings",
      [sys.executable, "scripts/dead_space_check.py", "--every", "30"], False),
+    # THE CAMERA DOES NOT PUNCTUATE BEATS (owner, 2026-10-03: "every like five seconds ...
+    # the screen is shaking slightly ... it's just kind of overstimulating"). The 10-03 and
+    # 10-02 films kicked the whole frame on every beat, 41 and 49 jolts. REQUIRED from the
+    # start, against the advisory-first rule above, because it has already been seen green
+    # on seven shipped films (09-06, 09-10, 09-12, 09-14, 09-19, 09-23, 09-30: none over one)
+    # and red on exactly the two that shook, so it has never failed a film the owner liked.
+    ("the camera does not jolt on every beat",
+     [sys.executable, "scripts/jolt_check.py"], True),
 ]
 
 

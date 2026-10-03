@@ -86,7 +86,9 @@ In POST, ALSO verify the choreography doctrine on the evidence: arrivals show an
 overshoot + settle (grade from the strips, never lone stills); primaries visibly provoke reactions;
 2-3 ambient loops + an atmosphere bed run under every hold; the world's end state differs from its
 start; panels tick/breathe/react rather than sit. A window where only ONE region of the frame moves
-is a slide — name its timestamp and the missing channels.
+is a slide — name its timestamp and the missing channels. Never prescribe camera shake or a zoom
+punch for an impact (owner, 2026-10-03: a whole-frame kick on every beat was "overstimulating"; the
+board may flag at most three). Prescribe the object's own reaction: squash, overshoot, a star, dust.
 
 THE TWO-MINUTE SEQUENCE PROBLEM (docs/craft/ENGAGEMENT.md 2.7). A 120-second piece is not a
 90-second piece with more in it; it is a piece whose second half has to earn its own attention.

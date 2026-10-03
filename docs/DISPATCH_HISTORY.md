@@ -1844,3 +1844,16 @@ palette, voice summary, render wall-time, panel result, and this run's upgrade.
       so the drift gets caught while it is still being written rather than after.
   Compounding it: the run spent real effort making its planning artifacts legible and its stop
   well-documented. Building more infrastructure for stopping than the stop was worth IS the tell.
+- 2026-10-03: the camera punctuated every beat. Ep1002 grew an "impact juice" block at Gate 0C that
+  kicked the WHOLE frame on every board beat (a 3 px jitter and a 2 percent zoom punch over 22
+  frames), Ep1003 copied it, and the grade's bloom also swelled on each VO accent. Judges had been
+  asking for "a 2 to 3 frame camera shake" on impacts and the runbook itself prescribed "2 to 4px
+  screen-shake", so nothing pushed back. The owner, watching "The Choosing Isn't": "every like five
+  seconds or something ... there's like this pulse ... the screen is shaking slightly ... It's
+  happening so frequently that it's just kind of overstimulating." Measured by
+  scripts/jolt_check.py: 41 whole-frame jolts in the 113.7 s story of the 10-03 master and 49 on
+  10-02, against 0 or 1 on the seven earlier films it was run on. FIX: impacts land in the object;
+  the whole frame kicks only on a beat the board flags `kick: true`, at most 3 a film and 20 s
+  apart, held by scripts/build_scenes.py and drawn by lib/camera.ts; preflight runs
+  `python3 scripts/jolt_check.py` on the master as a required row; the rubric's Motion axis and the
+  flow critic were told never to ask for camera shake.

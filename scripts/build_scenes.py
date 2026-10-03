@@ -10,6 +10,8 @@ import os
 import re
 from urllib.parse import urlparse
 
+from jolt_check import kick_budget
+
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(REPO, "out", "dispatch")
 FPS = 30
@@ -762,6 +764,11 @@ def main():
 
     props["beats"] = [{"id": b["id"], "at": _beat_start(b),
                        "label": b["draw"]["annotation"]} for b in board["beats"]]
+    # THE CAMERA DOES NOT PUNCTUATE BEATS (owner, 2026-10-03: a whole-frame kick on every beat,
+    # one every 2.8 s, was "overstimulating"). A beat kicks the camera only when the board flags
+    # it "kick": true, and the board is held to jolt_check's budget here, before a frame renders.
+    # lib/camera.ts reads `kicks` and nothing else.
+    props["kicks"] = kick_budget(_beat_start(b) for b in board["beats"] if b.get("kick"))
     json.dump(props, open(os.path.join(OUT, "episode_props.json"), "w"))
     gate_shots = []
     for i, (scene, shot) in enumerate(zip(scenes, board_shots), start=1):

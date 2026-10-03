@@ -52,6 +52,7 @@ MUST_KEEP = [
     "ALASKAAIHQ.COM", "data-band=\"ok\"", "talking={useVoice().opennessAt(globalFrame)}",
     "ambientMouth()", "entrance()", "followThrough()", "ChipShadow", "`scene_start_line`",
     "1.00 to ~1.07", "~2.5x", "piece_end /\n5", "config/owner_release.json",
+    "at most 3 a film and 20 s apart", "`kick: true`",
 ]
 
 # Commands the history tells a run to type; each must appear in the runbook in the same form.
