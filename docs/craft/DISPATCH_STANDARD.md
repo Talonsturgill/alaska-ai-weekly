@@ -107,6 +107,10 @@ document, not of the judge.
 
 ## 5. Captions and audio (weight 0.10 sound, plus caption blockers)
 
+- **Captions render through `lib/captions` (`CaptionBar`, or `captionRows` + `activeCue`), never
+  an episode-local copy of the breaker.** Eight runs re-learned "caught in the / Aleutians" in
+  their own copy. `scripts/caption_render_check.py` runs the lib breaker over the cues and fails
+  a row or card that ends on a dangling word; re-cue or reword, never pad.
 - **Caption text comes from the SCRIPT. Caption timing comes from the AUDIO. Both must
   match the DELIVERED stem.** ASR transcripts are for placing words in time and nothing
   else.
