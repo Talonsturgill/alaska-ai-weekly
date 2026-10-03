@@ -291,7 +291,7 @@ const Ambulance: React.FC<{x: number; y: number; f: number}> = ({x, y, f}) => {
 };
 
 /** A desk phone with a ring that visibly hops on its own clock. Origin at its base. */
-const DeskPhone: React.FC<{x: number; y: number; f: number; ringing: boolean; lifted?: number}> = ({x, y, f, ringing, lifted = 0}) => {
+const DeskPhone: React.FC<{x: number; y: number; f: number; ringing: boolean; lifted?: number; cradleEmpty?: boolean}> = ({x, y, f, ringing, lifted = 0, cradleEmpty = false}) => {
   const hop = ringing ? Math.abs(Math.sin(f * 0.9)) * 8 : 0;
   const shake = ringing ? Math.sin(f * 2.1) * 4 : 0;
   const t = tones('#2F5D50');
@@ -300,9 +300,9 @@ const DeskPhone: React.FC<{x: number; y: number; f: number; ringing: boolean; li
       <ContactShadow cx={0} cy={hop + 4} rx={80} ry={10} opacity={0.3} />
       <path d="M-74,0 L-58,-60 L58,-60 L74,0 Z" fill={t.base} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
       <circle cx={0} cy={-32} r={18} fill={C.cream} stroke={C.ink} strokeWidth={4} />
-      <g transform={`translate(0,${-74 - lifted * 140}) rotate(${-lifted * 30})`}>
+      {!cradleEmpty && <g transform={`translate(0,${-74 - lifted * 140}) rotate(${-lifted * 30})`}>
         <path d="M-80,0 Q-80,-24 -56,-24 L56,-24 Q80,-24 80,0 L60,6 L-60,6 Z" fill={t.key} stroke={C.ink} strokeWidth={6} />
-      </g>
+      </g>}
       {ringing && [0, 1, 2].map((i) => (
         <path key={i} d={`M${-100 - i * 22},${-90 - i * 8} q-14,24 0,48 M${100 + i * 22},${-90 - i * 8} q14,24 0,48`} fill="none" stroke={C.ink} strokeWidth={5} opacity={0.6 + 0.4 * Math.sin(f / 2 + i)} />
       ))}
@@ -350,6 +350,59 @@ const SunShaft: React.FC<{x: number; y: number; w: number; k: number; f: number}
     </g>
   );
 };
+
+/** An Alaska bull moose drawn for this film (the shelf Moose read as a bison to the panel; its
+ *  redraw is queued for the machine pass). Long legs, a high shoulder hump, a long overhanging
+ *  muzzle, a dewlap bell and broad palmate antlers. Origin on the ground between the legs, facing
+ *  right; headDown 0..1 lowers the neck and head into whatever the scene puts in front of it. */
+const BullMoose: React.FC<{x: number; y: number; s?: number; f: number; headDown?: number; blinkK?: number}> = ({x, y, s = 1, f, headDown = 0, blinkK = 0}) => {
+  const fur = tones('#4A3326');
+  const leg = tones('#B8A587');
+  const ant = tones('#D9C9A2');
+  const breathe = Math.sin(f / 18) * 2;
+  const tail = Math.sin(f / 7) * 6;
+  const pv = {x: 150, y: -262};
+  const rot = 62 * clamp01(headDown);
+  return (
+    <g transform={`translate(${x},${y}) scale(${s})`}>
+      <ContactShadow cx={0} cy={4} rx={210} ry={20} opacity={0.4} />
+      {/* far legs, darker */}
+      {[-118, 70].map((lx) => <path key={lx} d={`M${lx},-160 L${lx - 6},-60 L${lx - 2},0 L${lx + 20},0 L${lx + 16},-60 L${lx + 22},-160 Z`} fill={leg.shade} stroke={INKC} strokeWidth={5} strokeLinejoin="round" />)}
+      {/* body with the high shoulder hump */}
+      <g transform={`translate(0,${breathe * 0.5})`}>
+        <path d="M-182,-196 C-200,-250 -140,-282 -60,-286 C-10,-318 60,-336 108,-312 C150,-292 168,-250 160,-196 C150,-160 120,-148 60,-150 L-120,-150 C-160,-152 -176,-170 -182,-196 Z"
+          fill={fur.base} stroke={INKC} strokeWidth={7} strokeLinejoin="round" />
+        <path d="M-160,-200 C-150,-250 -80,-272 -20,-276 C40,-306 90,-312 110,-296 C70,-298 20,-276 -30,-262 C-90,-252 -140,-236 -160,-200 Z" fill={fur.key} opacity={0.55} />
+        <path d="M-150,-160 C-60,-150 80,-150 150,-170 L150,-160 C80,-142 -60,-140 -150,-150 Z" fill={fur.shade} />
+        <path d={`M-182,-200 q-18,${10 + tail} -10,40`} fill="none" stroke={INKC} strokeWidth={8} strokeLinecap="round" />
+      </g>
+      {/* near legs */}
+      {[-150, 104].map((lx) => <path key={lx} d={`M${lx},-160 L${lx - 6},-62 L${lx - 2},0 L${lx + 22},0 L${lx + 18},-62 L${lx + 26},-160 Z`} fill={leg.base} stroke={INKC} strokeWidth={5} strokeLinejoin="round" />)}
+      {[-150, 104].map((lx) => <path key={`h${lx}`} d={`M${lx - 4},-14 L${lx + 24},-14 L${lx + 26},0 L${lx - 4},0 Z`} fill="#2A2018" />)}
+      {/* neck and head, pivoting down at the shoulder */}
+      <g transform={`rotate(${rot} ${pv.x - 30} ${pv.y + 10})`}>
+        <path d={`M100,-300 C130,-300 ${pv.x + 10},-286 ${pv.x + 20},${pv.y} L${pv.x + 10},${pv.y + 50} C120,-200 100,-210 90,-230 Z`} fill={fur.base} stroke={INKC} strokeWidth={6} strokeLinejoin="round" />
+        <g transform={`translate(${pv.x},${pv.y})`}>
+          {/* far antler */}
+          <path d="M18,-34 C0,-86 40,-118 92,-112 L100,-130 L108,-110 L120,-124 L124,-102 L138,-108 C130,-78 84,-58 36,-44 Z" fill={ant.shade} stroke={INKC} strokeWidth={5} strokeLinejoin="round" transform="translate(-26,6) scale(0.92)" />
+          {/* head: long, drooping, bulbous overhanging muzzle */}
+          <path d="M-6,-26 C30,-44 84,-36 120,-6 C138,10 140,44 116,56 C96,64 70,48 50,44 C30,40 6,36 -6,26 Z" fill={fur.base} stroke={INKC} strokeWidth={6} strokeLinejoin="round" />
+          <path d="M60,-30 C90,-26 116,-10 124,8 C110,-2 84,-14 56,-18 Z" fill={fur.key} opacity={0.6} />
+          <ellipse cx={118} cy={26} rx={6} ry={4} fill="#1A120C" />
+          {/* the bell under the jaw */}
+          <path d={`M20,34 C26,64 18,96 28,${110 + Math.sin(f / 9) * 4} C40,96 38,62 40,38 Z`} fill={fur.shade} stroke={INKC} strokeWidth={5} />
+          <ellipse cx={4} cy={-30} rx={10} ry={20} fill={fur.base} stroke={INKC} strokeWidth={5} transform="rotate(-30 4 -30)" />
+          <ellipse cx={46} cy={-10} rx={5} ry={5 * (1 - blinkK)} fill="#1A120C" />
+          <circle cx={44} cy={-12} r={1.6} fill="#FFFFFF" />
+          {/* near antler: a broad palm with tines along its edge */}
+          <path d="M18,-34 C0,-86 40,-118 92,-112 L100,-130 L108,-110 L120,-124 L124,-102 L138,-108 C130,-78 84,-58 36,-44 Z" fill={ant.base} stroke={INKC} strokeWidth={6} strokeLinejoin="round" />
+          <path d="M30,-48 C40,-80 70,-96 100,-96" fill="none" stroke={ant.shade} strokeWidth={5} />
+        </g>
+      </g>
+    </g>
+  );
+};
+const INKC = '#16130F';
 
 // ------------------------------------------------------------------------------------------
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({n, from, dur, beats}) => {
@@ -491,8 +544,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     // THE INTERVIEW. A chat window titled with Herz's name types itself (no hands, no face); his
     // line slams on screen; the sieve beside the monitor lets everything fall through equally.
     const boot = ease(f, bAt(12), 14);
-    const quote = land(f, bAt(14), 9);
-    const hop = since(14) >= 9 && since(14) < 21 ? Math.sin(((since(14) - 9) / 12) * Math.PI) * 26 : 0;
+    const quote = land(f, bAt(14) + 2, 10);
+    const hop = since(14) >= 12 && since(14) < 24 ? Math.sin(((since(14) - 12) / 12) * Math.PI) * 26 : 0;
     const sieveShake = since(15) >= 0 ? Math.sin(f * 1.4) * 10 * Math.exp(-Math.max(0, since(15) - 30) / 40) : Math.sin(f / 9) * 2;
     const bubbles = [
       {who: 'P', text: 'WHAT DO YOU DO?', at: bAt(12) + 18},
@@ -613,9 +666,18 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           headline={["ALASKA'S EMS COMPACT TAKES", 'EFFECT SUNDAY; THE NATIONAL', 'COMMISSION STILL LISTS THE', 'STATE AS PENDING']}
           seal={ease(f, bAt(21), 9)} box={f >= bAt(20) ? 'empty' : 'none'} boxPulse={0.5 + 0.5 * Math.sin(f / 6)} />
         {head < 1 && <rect x={0} y={0} width={W} height={H} fill={C.paper} opacity={1 - head} />}
-        <PriceTag x={780} y={540} f={f} front={['WHAT\'S', 'EXPENSIVE', 'NOW?']} back={['CHOOSING']} size={24} swing={since(20) >= 0 ? 12 * Math.sin(since(20) / 4) * Math.exp(-since(20) / 20) : 0} />
+        <PriceTag x={140} y={700} f={f} front={['WHAT\'S', 'EXPENSIVE', 'NOW?']} back={['CHOOSING']} size={24} swing={since(20) >= 0 ? 12 * Math.sin(since(20) / 4) * Math.exp(-since(20) / 20) : 0} />
         <Plate text="WALTER'S HEADLINE" y={500} size={28} p={ease(f, bAt(19) + 6, 10) * (1 - ease(f, bAt(21), 8))} tone="ink" />
         <Plate text="STILL LISTED PENDING" y={570} size={28} p={ease(f, bAt(21) + 6, 10)} tone="oxblood" />
+        <DeskTop y={1560} />
+        <Ream x={220} y={1640} w={260} h={110} lean={-3} seed={41} />
+        <g transform="translate(820,1620)">
+          <ContactShadow cx={0} cy={4} rx={70} ry={10} opacity={0.4} />
+          <path d="M-50,0 L-56,-120 L56,-120 L50,0 Z" fill={C.spruce} stroke={C.ink} strokeWidth={6} />
+          <path d="M56,-96 C100,-96 100,-36 52,-36" fill="none" stroke={C.ink} strokeWidth={10} />
+          <ellipse cx={0} cy={-120} rx={56} ry={10} fill="#3A2416" stroke={C.ink} strokeWidth={4} />
+          <path d={`M-10,-140 q${8 + Math.sin(f / 9) * 6},-30 0,-60`} fill="none" stroke="#FFFFFF" strokeWidth={5} opacity={0.5} />
+        </g>
         <Plate text="WHAT'S MISSING?" y={1220} size={34} p={ease(f, bAt(22), 12)} tone="cream" />
         <Motes f={f} />
       </SVG>
@@ -734,7 +796,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <rect x={320} y={1040} width={20} height={170} fill={panel.shade} />
         <rect x={820} y={1040} width={20} height={170} fill={panel.shade} />
         <Chair x={560} y={1290} rock={answered > 0.5 ? 0 : Math.sin(f / 4) * 2 * (ringing ? 1 : 0)} />
-        <DeskPhone x={430} y={1010} f={f} ringing={ringing} lifted={0} />
+        <DeskPhone x={430} y={1010} f={f} ringing={ringing} lifted={0} cradleEmpty={answered > 0.01} />
         {/* carpet runner and the front row of public seats, backs to camera, in the near plane */}
         <rect data-band="ok" x={0} y={1300} width={W} height={620} fill="#7A3E36" />
         {Array.from({length: 12}, (_, i) => <path key={i} d={`M0,${1320 + i * 52} L1080,${1320 + i * 52}`} stroke="#6A332C" strokeWidth={6} strokeDasharray="22 18" />)}
@@ -771,7 +833,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {[0, 1, 2].map((i) => {
           const k = pop(29, 12);
           const kk = clamp01(spring(f, bAt(29) + i * 8, 14));
-          return kk > 0.01 ? <g key={i} transform={`translate(540,${560 + i * 92}) rotate(${-8 + i * 5}) scale(${1.5 - 0.5 * kk})`} opacity={clamp01(kk * 2) * (k > -1 ? 1 : 1)}>
+          return kk > 0.01 ? <g key={i} transform={`translate(540,${560 + i * 92}) rotate(${-8 + i * 5}) scale(${1.5 - 0.5 * kk})`} opacity={clamp01(kk * 2) * (1 - ease(f, bAt(30) + 4, 8)) * (k > -1 ? 1 : 1)}>
             {(() => { const t = ['NO CALLS', 'NO MEETINGS', 'NO INTERVIEWS'][i]; const w = monoW(t, 40) + 50; return <g>
               <rect x={-w / 2} y={-32} width={w} height={64} fill={C.paper} stroke={C.oxblood} strokeWidth={7} />
               <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={40} letterSpacing={2} fill={C.oxblood}>{t}</text></g>; })()}
@@ -868,24 +930,23 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* grass tufts swaying */}
         {[120, 940, 1000].map((gx, i) => <path key={gx} d={`M${gx},1180 q${8 + Math.sin(f / 9 + i) * 8},-60 ${20 + Math.sin(f / 9 + i) * 10},-90 M${gx + 10},1180 q${-6 + Math.sin(f / 10 + i) * 6},-50 ${-14},-70`} fill="none" stroke="#6F8A4A" strokeWidth={6} strokeLinecap="round" />)}
         <g transform={`translate(0,${-out * 40})`}>
-          <ContactShadow cx={460} cy={1430} rx={260} ry={26} opacity={0.4} />
-          <Moose x={420} y={1420} scale={1.7} f={f} facing={1} emotion={out > 0.5 ? 'wary' : 'calm'} alert={out} />
+          <BullMoose x={360} y={1290} s={1.15} f={f} headDown={1 - out} blinkK={out > 0.5 && (f % 60) < 4 ? 1 : 0} />
         </g>
-        {/* the sand mound over the head until it comes out */}
-        <g opacity={1 - out} transform="translate(780,1257) scale(1.36) translate(-735,-1130)">
-          <path d="M600,1182 C630,1040 830,1030 870,1182 Z" fill={C.sandLo} stroke={C.ink} strokeWidth={6} />
-          <path d="M620,1180 C650,1070 760,1052 800,1100 C770,1110 700,1140 690,1180 Z" fill={C.sand} />
-          {Array.from({length: 9}, (_, i) => <path key={`mr${i}`} d={`M${630 + i * 25},${1170 - (i % 3) * 30} q10,-8 20,0`} fill="none" stroke="#B48E55" strokeWidth={3} />)}
-          {Array.from({length: 5}, (_, i) => <circle key={i} cx={650 + i * 45} cy={1170 - ((f * 2 + i * 13) % 60)} r={4} fill={C.sandLo} />)}
+        {/* the sand mound over the lowered head, until it comes out */}
+        <g opacity={1 - out} transform="translate(560,1290)">
+          <path d="M-70,2 C-60,-150 150,-190 230,2 Z" fill={C.sandLo} stroke={C.ink} strokeWidth={6} />
+          <path d="M-40,0 C-30,-120 90,-150 150,-90 C110,-80 60,-40 50,0 Z" fill={C.sand} />
+          {Array.from({length: 9}, (_, i) => <path key={`mr${i}`} d={`M${-30 + i * 26},${-20 - (i % 3) * 34} q10,-8 20,0`} fill="none" stroke="#B48E55" strokeWidth={3} />)}
+          {Array.from({length: 6}, (_, i) => <circle key={`sp${i}`} cx={-60 + i * 50} cy={-((f * 3 + i * 17) % 80)} r={4} fill={C.sandLo} />)}
         </g>
-        {out > 0.01 && Array.from({length: 8}, (_, i) => <circle key={i} cx={760 + i * 14} cy={1200 + out * 120 + i * 9} r={5} fill={C.sandLo} opacity={1 - out * 0.6} />)}
+        {out > 0.01 && Array.from({length: 8}, (_, i) => <circle key={i} cx={560 + i * 14} cy={1040 + out * 120 + i * 9} r={5} fill={C.sandLo} opacity={1 - out * 0.6} />)}
         {/* the sheet blown off the belt, landing on the moose's back */}
-        <StorySheet x={lerp(-80, 400, sheetK)} y={lerp(700, 1150, sheetK) - Math.sin(sheetK * Math.PI) * 120} rot={lerp(-60, 8, sheetK)} s={0.8} />
+        <StorySheet x={lerp(-80, 300, sheetK)} y={lerp(700, 930, sheetK) - Math.sin(sheetK * Math.PI) * 120} rot={lerp(-60, 8, sheetK)} s={0.8} />
         {/* a grass ridge and trickling sand in the near plane */}
         <path d="M-50,1700 C200,1620 520,1660 760,1610 C900,1580 1020,1620 1130,1600 L1130,1920 L-50,1920 Z" fill="#D7B575" stroke={C.ink} strokeWidth={6} />
         {[80, 260, 700, 960].map((gx, i) => <path key={`fg${gx}`} d={`M${gx},1680 q${10 + Math.sin(f / 8 + i) * 10},-110 ${30 + Math.sin(f / 8 + i) * 14},-170 M${gx + 16},1680 q${-8 + Math.sin(f / 9 + i) * 8},-90 ${-24},-130`} fill="none" stroke="#6F8A4A" strokeWidth={9} strokeLinecap="round" />)}
         {Array.from({length: 18}, (_, i) => <circle key={`ts${i}`} cx={300 + (i % 6) * 90} cy={1620 + ((f * 2 + i * 23) % 260)} r={4} fill={C.sandLo} />)}
-        <Plate text="REPORTERS WHO DISCOUNT AI'S VALUE" x={400} y={880} size={24} p={ease(f, bAt(35) + 4, 10)} tone="cream" />
+        <Plate text="REPORTERS WHO DISCOUNT AI'S VALUE" x={330} y={1090} size={22} p={ease(f, bAt(35) + 4, 10)} tone="cream" />
         <QuotePlate lines={['"BURYING THEIR HEADS', 'IN THE SAND"']} by="NAT HERZ, ANCHORAGE PRESS EDITOR" y={560} size={48} p={pop(36, 16)} rot={2} />
         <Plate text="HEAD OUT" x={830} y={880} size={26} p={ease(f, bAt(37) + 8, 10)} tone="kraft" />
         <Motes f={f} color="#FFF0C0" />
@@ -897,7 +958,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     // THE HARD PART. A fat amber arrow swings off Walter's endless pile onto the single LEAD slot;
     // the one hard sun shaft lands on the slot alone, and the price tag flips to CHOOSING.
     const sw = land(f, bAt(38), 26);
-    const flip = ease(f, bAt(39), 16);
+    const flip = ease(f, bAt(39) + 4, 18);
     shaft = ease(f, bAt(39) - 6, 20);
     const ang = lerp(-60, 0, sw);
     picture = (
@@ -916,7 +977,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <path d="M10,-22 L290,-22" stroke="#FFFFFF" strokeWidth={8} opacity={0.4} />
         </g>
         <Plate text="WRITING · CHEAP" x={240} y={1200} size={26} p={ease(f, bAt(38), 10)} tone="cream" />
-        <Plate text="CHOOSING THE TOP STORY" x={640} y={1210} size={30} p={ease(f, bAt(39) + 10, 12)} tone="amber" />
+        <Plate text="CHOOSING THE TOP STORY" x={640} y={1210} size={30} p={ease(f, bAt(39) + 24, 12)} tone="amber" />
         <Motes f={f} n={40} op={0.4 + 0.4 * shaft} />
       </SVG>
     );
@@ -961,6 +1022,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         </g>
         <Plate text="PER THE ANCHORAGE PRESS" y={830} size={26} p={ease(f, bAt(41), 10)} tone="kraft" />
         <DeskTop y={1250} />
+        {Array.from({length: 7}, (_, i) => <StorySheet key={`sp${i}`} x={140 + i * 130} y={1560 + (i % 2) * 70} rot={(i * 37) % 50 - 25} s={1.1} />)}
         <NewsAgent x={540} y={1280} scale={0.62} f={f} emotion="thoughtful" blink={blink(12)} lookY={-tilt} look={0.1}
           carriage={0} tongue={0.3} />
         <Motes f={f} />
@@ -1015,7 +1077,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           headline={["ALASKA'S EMS COMPACT TAKES", 'EFFECT SUNDAY; THE NATIONAL', 'COMMISSION STILL LISTS THE', 'STATE AS PENDING']}
           box={fillK > 0.01 ? 'filled' : 'empty'} question={['CAN MEDICS USE IT YET?'.slice(0, Math.ceil(22 * fillK))]} fill={1} hatch={hatch}
           boxPulse={0.5 + 0.5 * Math.sin(f / 6)} />
-        {stub > 0.01 && <StorySheet x={540} y={lerp(470, 600, stub)} s={0.85} rot={(1 - stub) * 10} />}
+        {stub > 0.01 && <StorySheet x={540} y={lerp(420, 520, stub)} s={0.7} rot={(1 - stub) * 10} />}
         {/* the one sheet flying up out of the pile into the slot */}
         {sheetUp > 0.01 && sheetUp < 1 && <StorySheet x={lerp(540, 540, sheetUp)} y={lerp(1150, 860, sheetUp)} s={lerp(1.3, 0.6, sheetUp)} rot={Math.sin(f / 5) * 8} />}
         {walk > 0 && (

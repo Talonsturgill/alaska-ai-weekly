@@ -350,7 +350,8 @@ def _cards_from_words(caps, max_chars=68):
     (2026-10-03, panel finding: aligner chunk edges tore "conservative / pollster" and left
     "said it should have." as an orphan). Times come from the forced-alignment WORDS, never
     from proportion. Display text is the spoken half with the caption fixups applied, and no
-    split may fall inside a fixup phrase."""
+    split may fall inside a fixup phrase. Sentences inside one line are cards of their own, so
+    the button's second sentence arrives on its word, not two seconds early."""
     wpath = os.path.join(OUT, "audio", "words.json")
     if not os.path.exists(wpath):
         return caps
@@ -378,8 +379,16 @@ def _cards_from_words(caps, max_chars=68):
                     return True
         return False
     out = []
+    units = []
     for seg in sorted(k for k in by_seg if k is not None):
-        ws = by_seg[seg]
+        cur = []
+        for w in by_seg[seg]:
+            cur.append(w)
+            if w["w"].endswith((".", "?", "!")):
+                units.append((seg, cur)); cur = []
+        if cur:
+            units.append((seg, cur))
+    for seg, ws in units:
         full = show(ws)
         if len(full) <= max_chars:
             out.append({"text": full, "start": ws[0]["s"], "end": ws[-1]["e"], "seg": seg})
@@ -400,7 +409,7 @@ def _cards_from_words(caps, max_chars=68):
             if c < cost:
                 best, cost = k, c
         if best is None:
-            out.extend(c for c in caps if c.get("seg") == seg)
+            out.append({"text": full, "start": ws[0]["s"], "end": ws[-1]["e"], "seg": seg})
             continue
         out.append({"text": show(ws[:best]), "start": ws[0]["s"], "end": ws[best - 1]["e"], "seg": seg})
         out.append({"text": show(ws[best:]), "start": ws[best]["s"], "end": ws[-1]["e"], "seg": seg})
