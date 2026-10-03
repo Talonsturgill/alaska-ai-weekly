@@ -625,7 +625,9 @@ def main():
         takes.append((p, used))
         print(f"take {n}: {len(pcm)/24000:.1f}s ({used})")
 
-    best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
+    # The pronunciation map is the WER alias list: a word said as directed is not an error.
+    _aliases = sc.spoken_aliases(_pron)
+    best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags, aliases=_aliases)
 
     # ---- RUNTIME: RE-ROLL, THEN RETAIN A WORKING TAKE. ----------------------------
     # Soundcheck's broad duration window does not grant format approval. If the extra
@@ -657,7 +659,7 @@ def main():
                 _save_24k(pcm, q)
                 takes.append((q, used))
                 print(f"re-roll take {n}: {len(pcm)/24000:.1f}s ({used})")
-            best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags)
+            best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags, aliases=_aliases)
         secs = reports[best_i]["checks"]["duration"]["seconds"]
         # Keep the original performance. The Dispatch routine forbids time-stretching
         # narration; a runtime miss must be corrected in direction or the locked script
