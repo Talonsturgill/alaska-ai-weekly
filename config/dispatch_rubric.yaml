@@ -82,9 +82,9 @@ rubric:
       4:  "Flat clip-art feel; no lighting/texture/depth."
     - name: "Motion & animation craft"
       weight: 0.12
-      10: "Everything eased (no linear); anticipation + overshoot/settle; motion blur on fast moves; articulated character motion (real walk/gesture cycles) and visible idle life (weight-shift + breath) on every held figure; layered secondary animation. Judged WITHIN the 2D rig (style_charter): 3D camera realism is out of scope."
+      10: "Everything eased (no linear); anticipation + overshoot/settle; motion blur on fast moves; articulated character motion (real walk/gesture cycles) and visible idle life (weight-shift + breath) on every held figure; layered secondary animation. Judged WITHIN the 2D rig (style_charter): 3D camera realism is out of scope. Impacts land IN THE OBJECT: the whole frame kicks on at most three board-flagged beats a film (owner, 2026-10-03), so never ask for camera shake and never mark its absence down."
       7:  "Mostly eased with real life; one held figure or fast move missing its cycle/blur."
-      4:  "Linear/robotic, static sprites, pops."
+      4:  "Linear/robotic, static sprites, pops, or a camera that jolts on every beat."
     - name: "Composition & staging"
       weight: 0.08
       10: "Clear focal hierarchy, hero reads in silhouette, intentional negative space, safe areas honored in 9:16 AND 4:5."
