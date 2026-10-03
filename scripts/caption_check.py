@@ -161,6 +161,19 @@ def lint(text):
             fails.append(f"REGISTER: '{mm.group(0)}' is banned, write \"{good}\" (owner rule, "
                          f"contractions keep the voice human, not institutional)")
             break
+    # BANNED WORDS (owner rule 2026-09-27, "on both automations ban the words"). The list is
+    # config/brand.yaml banned_vocabulary, read by scripts/word_ban.py as whole words. A post
+    # with "matters" passed this linter on 2026-10-03 and was caught by hand.
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import word_ban
+        banned = word_ban.hits(t)
+    except Exception as e:                     # a missing list is a failure, never a pass
+        banned = None
+        fails.append(f"BANNED WORDS: could not read the list ({e})")
+    if banned:
+        fails.append(f"BANNED WORDS: {', '.join(banned)} (owner rule 2026-09-27, both "
+                     f"automations). Say the specific thing instead.")
     # DATE FORM. Hard fail, same reasoning as the contraction law: a style rule nobody
     # checks drifts back within a few runs.
     for rx, what, fix in DATE_FORMS:

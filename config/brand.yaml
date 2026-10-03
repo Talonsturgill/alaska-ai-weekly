@@ -54,6 +54,17 @@ brand:
     # Formal-register words with a mandatory contraction. Enforced in code by
     # scripts/caption_check.py > BANNED_FORMAL, not just documented here.
     cannot: "can't"
+  banned_vocabulary:
+    # OWNER RULE 2026-09-27, "on both automations ban the words": never "gap", "matters" or
+    # "pattern", with their plurals. Same list as banned_words in the carousel repo's
+    # config/brand.yaml. Whole words only, so "Singapore" and "no matter" are fine; a
+    # straight-quoted verbatim passage and a URL keep their words. Enforced by
+    # scripts/word_ban.py, called from caption_check.py (post) and vo_claims_check.py (VO).
+    - "gap"
+    - "gaps"
+    - "matters"
+    - "pattern"
+    - "patterns"
   banned_phrases:
     - "game-changer"
     - "revolutionize"

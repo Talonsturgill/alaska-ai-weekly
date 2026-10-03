@@ -39,6 +39,8 @@ Usage:
 It reads the SCRIPT, so it runs BEFORE a second of TTS is spent, which is the whole point.
 """
 import json, re, sys, os, math
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import word_ban
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -163,6 +165,9 @@ def main():
         for pat, why in BANNED:
             if re.search(pat, text, re.I):
                 problems.append(f"L{idx}: {why}\n      {text}")
+        # The owner's banned words (2026-09-27), from config/brand.yaml via word_ban.py.
+        for w in word_ban.hits(text):
+            problems.append(f"L{idx}: '{w}' is a banned word (owner rule 2026-09-27)\n      {text}")
 
         # Obligations are satisfied across the CLAIM'S SPAN, not line by line. The
         # first build of this gate checked each line alone and fired on "Mina read the
