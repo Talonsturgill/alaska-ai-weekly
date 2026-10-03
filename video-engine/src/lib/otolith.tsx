@@ -485,8 +485,8 @@ export const BenchScope: React.FC<{x: number; y: number; scale?: number; drop?: 
 // ---------------------------------------------------------------------------------------------
 export const ArchiveDrawers: React.FC<{
   w?: number; h?: number; vx?: number; vy?: number; f: number; rows?: number; cols?: number; depth?: number;
-  open?: {row: number; col: number; t: number}; glint?: number; wood?: string;
-}> = ({w = 1080, h = 1920, vx = 540, vy = 860, f, rows = 9, cols = 7, depth = 6, open, glint = 1, wood = '#5A3A22'}) => {
+  open?: {row: number; col: number; t: number}; glint?: number; wood?: string; bg?: string;
+}> = ({w = 1080, h = 1920, vx = 540, vy = 860, f, rows = 9, cols = 7, depth = 6, open, glint = 1, wood = '#5A3A22', bg = '#081216'}) => {
   const wt = tones(wood);
   const out: React.ReactNode[] = [];
   // the open drawer is drawn LAST (round 4): it slides down over the cell below it, which the row
@@ -553,6 +553,9 @@ export const ArchiveDrawers: React.FC<{
             </g>
           </>
         );
+        // the fade is a mix toward the background, never a see-through: each cell first lays an opaque
+        // base, so where a far ring overlaps a nearer one no drawer is double-exposed (round 5)
+        out.push(<rect key={`b${s}-${r}-${c}`} x={x} y={y} width={cw} height={ch} fill={bg} />);
         out.push(
           <g key={`${s}-${r}-${c}`} opacity={fade}>
             <rect x={x + 2} y={y + 2} width={cw - 4} height={ch - 4} fill={s === 0 ? wt.base : wt.core} stroke={INK} strokeWidth={Math.max(1, 4 * k)} />

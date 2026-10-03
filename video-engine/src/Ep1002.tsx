@@ -571,8 +571,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
             pulse={since(5) >= 0 && nClicks < 6 ? clickPhase : 0} rot={-8} />
           <TallyCounter x={830} y={1105} scale={0.62} count={nClicks + 0.0} press={press} plate="RINGS" />
           <InkHand x={828 + 60 * (1 - q(5, 8))} y={1000 + 6 * press - 50 * (1 - q(5, 8))} rot={-45} s={0.62} press={press} sleeve="#b23a3a" />
-          {since(6) >= 0 && since(6) < 12 && <ImpactStar cx={540} cy={560} r={190} color={C.lamp} />}
-          <YearDrum x={lerp(540, 265, tuck)} y={lerp(560, 1110, tuck)} scale={drumS} year={2022 - 144 * yearK} label={since(6) >= 0 ? 'BORN · EST.' : 'CAUGHT'} />
+          {since(6) >= 0 && since(6) < 12 && <ImpactStar cx={280} cy={560} r={190} color={C.lamp} />}
+          {/* the drum whirs upper LEFT, clear of the objective's nose, then tucks straight down to its corner */}
+          <YearDrum x={lerp(280, 265, tuck)} y={lerp(560, 1110, tuck)} scale={drumS} year={2022 - 144 * yearK} label={since(6) >= 0 ? 'BORN · EST.' : 'CAUGHT'} />
           {slam > 0.02 && <Plate text="EST. 144 YEARS OLD · PER NOAA" y={1260} size={30} p={slam * (1 - ease(f, bAt(7) - 6, 6))} />} {/* plate-overlap-ok: sequenced, EAR STONE is gone before this one slams in on q(6) */}
           {signDrop > 0.01 && <BrassSign x={540} y={lerp(1060, 1240, Math.min(1, signDrop))} lines={['WHO COUNTED?']} size={40} s={0.95} rot={4 * Math.sin(since(7) / 4) * Math.exp(-since(7) / 14)} />}
           <Plate text="EAR STONE" y={1265} size={30} p={q(4, 12) * (1 - ease(f, bAt(6) - 8, 8))} /> {/* plate-overlap-ok: sequenced, it retires fully before q(6) lands the next plate */}
@@ -720,7 +721,6 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <Plate text="?" x={mx + 60} y={1170} size={26} p={q(18, 10) * (1 - ease(f, bAt(19) - 6, 6))} />
         <Plate text="NEAR-INFRARED LIGHT" y={790} size={32} tone="nir" p={q(19, 10) * (1 - ease(f, bAt(20) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="MACHINE LEARNING" y={790} size={32} tone="nir" p={q(20, 10) * (1 - ease(f, bAt(21) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="AGE" x={mx + 310} y={826} size={28} tone="nir" p={q(21, 10)} />
       </SVG>
     );
   } else if (n === 6) {
@@ -741,7 +741,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         <circle cx={280} cy={930} r={248} fill="#000" stroke={C.brass} strokeWidth={14} />
         <g clipPath="url(#s6eye)">
           <rect x={30} y={680} width={500} height={500} fill="#2A1A12" />
-          <ellipse cx={280} cy={930} rx={240} ry={240} fill={C.lamp} opacity={0.18} />
+          <ellipse cx={280} cy={930} rx={240} ry={240} fill={C.lamp} opacity={0.18 + 0.12 * q(24, 10)} />
           <Otolith x={280} y={930} scale={1.0} rings={8} f={f} counted={ring} pulse={pulse} rot={14} shadow={false} />
         </g>
         <TallyCounter x={150} y={1150} scale={0.58} count={88 + Math.floor(f / 16) + (f % 16) / 16} press={clamp01(1 - pulse * 3)} />
@@ -756,7 +756,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {since(23) >= 0 && since(23) < 10 && <ImpactStar cx={540} cy={620} r={260} color={C.lamp} />}
         {s800 > 0.02 && <StatBurst cx={540} cy={620} scale={1.25 * s800} big="600 TO 800%" lines={['MORE EFFICIENT', 'PER NOAA']} fill={C.lamp} big_fs={34} fontBig={SERIF} fontSub={MONO} />}
         <Plate text="PER NOAA" y={500} size={28} p={ease(f, 0, 10) * (1 - ease(f, bAt(22) - 6, 6))} />
-        <Plate text="MICROSCOPE STILL IN THE PROCESS" x={540} y={1212} size={24} p={q(24, 12)} />
+        {/* c8 is never shown without c9: the qualifier lands 0.4 s after the 800 and holds to the cut */}
+        <Plate text="MICROSCOPE STILL IN THE PROCESS" x={540} y={1250} size={28} p={ease(f, bAt(23) + 12, 10)} />
       </SVG>
     );
     zoom = 1 + 0.03 * (f / dur);
@@ -883,17 +884,17 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           {/* the first tag and stone, center stage */}
           <g transform="translate(420,960)">
             <AgeTag x={-30} y={-40} text="7" f={f} scale={2.0} swing={tug} />
-            <Otolith x={10} y={-10 - 260 * (1 - drop)} scale={0.5} rings={8} f={f} counted={0.6} />
+            <Otolith x={10} y={-10 - 160 * (1 - drop)} scale={0.5} rings={8} f={f} counted={0.6} />
           </g>
           {/* the reader's inked hand ties the marked tag on at its knot, tugs it, and withdraws off frame right */}
           <InkHand x={lerp(1260, 400, handIn) + tug} y={928 + 0.5 * tug} rot={-10} s={0.62} sleeve="#5A6B78" />
           {/* the Alaska pollock, swimming in to drop its stone, then leaving */}
           <g opacity={1 - ease(f, bAt(27) + 26, 20)}>
-            <Groundfish x={lerp(-360, 250, fishK) + 300 * ease(f, bAt(27) + 6, 30)} y={760} scale={1.8} f={f} kind="pollock" swim={0.8} caustics={false} />
+            <Groundfish x={lerp(-360, 250, fishK) + 300 * ease(f, bAt(27) + 6, 30)} y={862} scale={1.8} f={f} kind="pollock" swim={0.8} caustics={false} />
           </g>
         </g>
         <Plate text="ALASKA POLLOCK" y={500} size={30} p={q(27, 10) * (1 - ease(f, bAt(28) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
-        <Plate text="2023 REPORT · TRAINED AND TESTED" y={500} size={30} p={q(28, 10) * (1 - ease(f, bAt(30) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
+        <Plate text="COLLECTED 2014 TO 2018 · PER NOAA" y={500} size={30} p={q(28, 10) * (1 - ease(f, bAt(30) - 6, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="TAGGED WITH AGES" y={500} size={30} p={q(30, 10) * (1 - ease(f, bAt(31) + LAND - 10, 6))} /> {/* plate-overlap-ok: sequenced, it retires on q(N) as the next plate lands */}
         <Plate text="8,617 POLLOCK STONES · 2023" y={500} size={30} p={ease(f, bAt(31) + LAND, 8)} /> {/* plate-overlap-ok: sequenced, TAGGED WITH AGES retires at LAND - 4 and this one lands at LAND */}
         <Motes f={f} color={C.lamp} op={0.14} />
@@ -932,7 +933,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           <path d={`M440,380 L440,${lerp(380, 640, Math.min(1, signIn))} M640,380 L640,${lerp(380, 640, Math.min(1, signIn))}`} stroke={C.ink} strokeWidth={4} />
           <BrassSign x={540} y={lerp(560, 700, Math.min(1, signIn))} lines={['2.5 MILLION OTOLITH PAIRS', 'PER NOAA']} size={30} s={1} rot={2 * Math.sin(f / 20)} />
         </g>}
-        <Plate text="NOAA ARCHIVE" y={500} size={34} p={q(32, 12) * (1 - ease(f, bAt(34) - 6, 6))} />
+        <Plate text="TRAINED ON ARCHIVE SAMPLES · PER NOAA" y={500} size={26} p={q(32, 12) * (1 - ease(f, bAt(34) - 6, 6))} />
         <Plate text="SINCE THE 1960s" x={720} y={1150} size={32} tone="brass" p={q(35, 12)} />
         <Motes f={f} color={C.lamp} op={0.18} rise={0.15} />
       </SVG>
@@ -944,7 +945,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     // unlabeled archive stone rising under the Chamberlin sign, and crate latches snapping shut below.
     const fadeIn = ease(f, 0, 14);
     const rise = ease(f, bAt(37), 30);
-    const prop = Math.sin(f / 40) * 6;
+    const prop = Math.sin(f / 40) * 3;
     picture = (
       <SVG>
         <rect width={W} height={H} fill="#140E0A" />
@@ -980,12 +981,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
         ))}
         {/* the propeller hangs on the back wall, two twisted blades and a spinner cone */}
-        <g transform={`translate(540,664) rotate(${prop}) scale(0.92)`}>
+        <g transform={`translate(540,575) rotate(${prop}) scale(1.2)`}>
           <path d="M-250,10 C-170,-26 -46,-18 0,0 C46,-18 170,-26 250,10 C170,22 46,16 0,6 C-46,16 -170,22 -250,10 Z" fill="#6A4628" stroke={C.ink} strokeWidth={6} />
           <path d="M-240,6 C-170,-12 -60,-10 -12,-2 M240,6 C170,-12 60,-10 12,-2" fill="none" stroke="#9A7048" strokeWidth={4} opacity={0.7} />
         </g>
-        <path d="M540,664 m-22,0 a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0" fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} />
-        <path d="M528,656 L540,640 L552,656 Z" fill={tones(C.brass).key} stroke={C.ink} strokeWidth={3} />
+        <path d="M540,575 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0" fill={tones(C.brass).core} stroke={C.ink} strokeWidth={5} />
+        <path d="M526,566 L540,547 L554,566 Z" fill={tones(C.brass).key} stroke={C.ink} strokeWidth={3} />
         {(() => {
           // ROUND 4: the raven was a speck that left in three frames. It is twice the size now, perched
           // on the truss for the caw, then it climbs under the lit window band and flies the width of the
@@ -1059,19 +1060,23 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
     const fallback = ease(f, bAt(43) + 20, 12);
     const up = reach * (1 - fallback);
     const edge = fallback * (1 - slip);
-    const baseX = lerp(201, 380, hop), baseY = lerp(1223 - 46 * popOut, 1104, hop) - Math.sin(hop * Math.PI) * 120;
+    // two small anticipation hops on AGE while the manager arrives, so the jump at 88.2 is telegraphed
+    const idleHop = [50, 78].reduce((acc, t0) => acc + (since(41) >= t0 && since(41) < t0 + 10 && since(43) < 0 ? 22 * Math.sin(Math.PI * (since(41) - t0) / 10) : 0), 0);
+    const baseX = lerp(201, 380, hop), baseY = lerp(1223 - 46 * popOut, 1104, hop) - Math.sin(hop * Math.PI) * 120 - idleHop;
     const tagX = lerp(lerp(baseX, 600, up), 468, edge);
     const tagY = lerp(lerp(baseY, 935, up), 1104, edge) - Math.sin(fallback * Math.PI) * 30 * (1 - slip) - Math.sin(slip * Math.PI) * 40;
-    const point = ease(f, bAt(42) + 38, 12);
+    const point = ease(f, bAt(42) + 34, 12) * (1 - 0.3 * Math.sin(Math.PI * clamp01((f - bAt(45) + 6) / 8)));
     const nod = since(45) >= 0 ? 15 * Math.sin(Math.PI * clamp01(since(45) / 10)) - 4 * Math.sin(Math.PI * clamp01((since(45) - 10) / 10)) : 0;
-    const bob = since(42) > 40 ? 3 * Math.sin(f / 9) : 0;
+    const bob = since(42) > 36 ? 3 * Math.sin(f / 9) : 0;
     const signOut = ease(f, bAt(43) - 18, 16);
-    const WALK = 34;
+    // he steps in from the frame edge (half of him visible on the first frame), two strides on screen
+    const WALK = 30;
     const walkT = clamp01(since(42) / WALK);
-    const manX = lerp(1150, 868, walkT) + (since(42) >= WALK ? -10 * Math.sin((since(42) - WALK) * 0.5) * Math.exp(-(since(42) - WALK) / 6) : 0);
+    const manX = lerp(1060, 868, walkT) + (since(42) >= WALK ? -10 * Math.sin((since(42) - WALK) * 0.5) * Math.exp(-(since(42) - WALK) / 6) : 0);
     // the camera: a push toward the tag and the door from "NOAA called", a whip back on the stamp
     const push = 0.3 * ease(f, bAt(43), 60) * (1 - ease(f, bAt(45) - 3, 8));
-    const cam = `translate(600,1010) scale(${1 + push}) translate(-600,-1010)`;
+    // pushed about a point LOW in the set, so the AGE plinth and its label stay above the caption band
+    const cam = `translate(600,1200) scale(${1 + push}) translate(-600,-1200)`;
     const plinth = (x0: number, x1: number, top: number, label: string[], solid: boolean, fs: number, lift = 0) => {
       const dx = 26, dz = 18;
       return solid ? (
@@ -1120,6 +1125,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           </g>
           {/* the dashed step first, so the AGE plinth's side face sits in front of it */}
           {plinth(506, 720, 1010, [], false, 30)}
+          {/* when the door lights, its light spills down the dashed step and across the floor */}
+          {doorLit > 0.01 && <g opacity={doorLit}>
+            <linearGradient id="s11spill" x1="0" y1="0" x2="0" y2="1"><stop stopColor={C.lamp} stopOpacity={0.4} /><stop offset="1" stopColor={C.lamp} stopOpacity={0} /></linearGradient>
+            <path d="M529,1000 L697,1000 L880,1720 L346,1720 Z" fill="url(#s11spill)" />
+          </g>}
           {plinth(250, 480, 1170, ['AGE'], true, 46, 1 - rise)}
           {plinth(720, 1000, 850, ['CATCH', 'LIMITS'], true, 34, 1 - rise)}
           {/* the SAME closed door from the tagging room, standing on the dashed step */}
@@ -1136,20 +1146,21 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
           {/* the fishery manager on the CATCH LIMITS plinth: walks in, points at the tag, nods at the stamp */}
           {since(42) >= 0 && <g transform={`translate(0,${0.6 * nod + bob}) rotate(${nod} ${manX} 850)`}>
             <Character frame={from + f} x={manX} y={850} scale={0.62} facing={-1}
-              pose={since(42) < 38 ? 'stand' : 'point'} gesture={point} walking={since(42) < WALK} walkPhase={((1150 - manX) * Math.PI) / 46}
-              emotion="neutral" outfit="vest" glasses headgear="cap" idleGain={1.4} lightWrap={0} />
+              pose={since(42) < 34 ? 'stand' : 'point'} gesture={point} walking={since(42) < WALK} walkPhase={((1060 - manX) * Math.PI) / 46}
+              emotion="neutral" outfit="vest" glasses headgear="cap" idleGain={1.4} lightWrap={0} look={-12 * q(44, 10)} />
           </g>}
           {/* the NIR reader on the floor, fully in frame: the tag's source */}
           <NIRReader x={125} y={1300} scale={0.36} f={f} beam={0.4} spectrum={1} seed={3} plate="" cloth={0} rails={false} />
           <g transform={`rotate(${teeter} ${tagX} ${tagY + 30})`}><MachineTag x={tagX} y={tagY} s={1.1} op={ease(f, 4, 6)} /></g>
           {since(45) >= 0 && since(45) < 12 && <ImpactStar cx={613} cy={1150} r={90} color={C.cream} />}
-          {since(45) >= 0 && <g transform="translate(613,1150) scale(0.32)"><Stamp cx={0} cy={0} s={spring(f, bAt(45), 12)} text="NEXT STEP" rot={-8} color={C.lamp} /></g>}
+          {since(45) >= 0 && <g transform="translate(613,1150) scale(0.32)"><Stamp cx={0} cy={0} s={pop(45, 12)} text="NEXT STEP" rot={-8} color={C.lamp} /></g>}
         </g>
         {sign > 0.01 && signOut < 0.99 && <g transform={`translate(0,${-760 * signOut})`}>
           <path d={`M330,0 L330,${lerp(-120, 500, Math.min(1, sign)) - 40} M750,0 L750,${lerp(-120, 500, Math.min(1, sign)) - 40}`} stroke={C.ink} strokeWidth={5} strokeDasharray="10 6" />
           <BrassSign x={540} y={lerp(-120, 500, sign)} lines={['THE FAIR CASE AGAINST']} size={40} rot={swing} />
         </g>}
-        <Plate text="PER NOAA · 2023" x={613} y={1252} size={22} tone="brass" p={q(45, 8)} />
+        {/* the year that dates NEXT STEP lands with the lit door ("into stock assessments") and holds to the cut */}
+        <Plate text="PER NOAA · 2023" x={600} y={1252} size={24} tone="brass" p={ease(f, bAt(44) - 2, 8)} />
         <Motes f={f} color={C.lamp} op={0.16} />
       </SVG>
     );
@@ -1280,8 +1291,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]}> = ({
         {/* ROUND 4 (c19): the SOURCED comparison rides "That's real." over the machine, top left, clear of the
             trophy, and leaves as the slot turns; OUR READ lands on the very frames the slot turns to the
             handwritten 7, so the 7 is never captioned by the citation, and only OUR READ rides into the cut */}
-        <Plate text="CHECKED AGAINST MICROSCOPE AGES" x={350} y={495} size={22} p={ease(f, bAt(49) + 18, 10) * (1 - ease(f, bAt(50) + 6, 6))} />
-        <Plate text="BENSON ET AL. 2023" x={350} y={552} size={20} p={ease(f, bAt(49) + 20, 10) * (1 - ease(f, bAt(50) + 6, 6))} />
+        {/* plate-overlap-ok: one label in three stacked rows, the attribution as large as the claim */}
+        <Plate text="CHECKED AGAINST" x={300} y={492} size={26} p={ease(f, bAt(49), 10) * (1 - ease(f, bAt(50) + 6, 6))} />
+        <Plate text="MICROSCOPE AGES" x={300} y={554} size={26} p={ease(f, bAt(49) + 2, 10) * (1 - ease(f, bAt(50) + 6, 6))} />
+        <Plate text="BENSON ET AL. 2023" x={300} y={616} size={26} p={ease(f, bAt(49) + 4, 10) * (1 - ease(f, bAt(50) + 6, 6))} />
         <Plate text="OUR READ · THE COUNT CAME FIRST" y={614} size={26} tone="brass" p={ease(f, bAt(50) + 12, 8)} /> {/* plate-overlap-ok: sequenced, the sourced pair is gone by bAt(50) + 12 when this one lands */}
       </SVG>
     );

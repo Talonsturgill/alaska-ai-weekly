@@ -97,7 +97,7 @@ MOVES = [
     ('inked_hand_drags_a_limit_line_across_the_clipboard', 46, 0.2),
     ('noaa_reader_comes_into_focus_across_the', 47, 0.2),
     ('trophy_bounces_onto_the_machine_as_the_tray_goes_in', 48, 0.2),
-    ('cloth_lifts_off_the_name_plate', 49, 0.2),
+    ('cloth_flies_off_as_checked_against_microscope_ages_lands', 49, 0.3),
     ('slot_fills_the_frame_and_flips_to_a_handwritten_7', 50, 0.45),
     ('signature_line_tears_into_ticks_that_land_on_rings', 51, 0.6),
     ('brass_sign_springs_up_under_the_1878_stone', 52, 0.2),

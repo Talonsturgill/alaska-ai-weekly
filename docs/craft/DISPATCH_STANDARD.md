@@ -266,3 +266,32 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
   growth bands of the next shot's stone because both use the same centre, scale and rotation
   (single-sourced through `otolithPoint`), and the outgoing shot returns to zoom 1 with no
   drift before the cut.
+- **A label on a prop is type, and a prop drawn after it can hide it.** Round 4's only hard
+  blocker was POLLOCK STONES losing its final S behind a hopper that had been moved 70 px to
+  fix a different note. The geometry gates model plate against plate and the frame edge, not
+  a label against art painted later. When a prop moves, probe every label within its reach.
+- **A chip adds to the caption, it never repeats it.** A chip that says what the caption says
+  is read twice and doubles the load over the caption band. Give the chip the source, the
+  year or the figure instead (LIMITS SET EACH YEAR · PER NOAA under "set by managers").
+- **The citation and the film's own read never share a frame.** The sourced comparison
+  (CHECKED AGAINST MICROSCOPE AGES · BENSON ET AL. 2023) rides its own line and leaves on the
+  frame the film's synthesis (OUR READ) lands, so the read is never captioned by the citation.
+- **spring() is for pops and settles, not for travel.** Its ring frequency is fixed per frame,
+  so with a long duration it overshot a 900 px slide by 31 percent inside a whip and read as a
+  positional pop. Move things with an ease and add a small decaying settle at the end.
+- **An entrance is a walk, not a fade.** A figure arriving in a shot starts off frame, its
+  stride is driven by the distance it travels so the feet do not skate, it settles with a
+  small overshoot, and only then gestures. A fade-in reads as a ghost.
+- **A mirrored figure takes its rim from the scene's lamp.** The rig's rim and sheen are drawn
+  for a key at the figure's own upper left, so `facing={-1}` puts them on the side away from a
+  left-hand lamp, where a judge read them as a ghosted duplicate. Turn them down with
+  `lightWrap` when the lamp disagrees.
+- **Motion the square crop cannot see did not happen on LinkedIn.** The 1:1 cut keeps y 420
+  to 1500. A hero move (a bird's flight, a sign's drop) is staged inside that band, and a
+  plate that would share the band waits for the move to clear.
+- **Clip in the parent's space.** A transform on an element that also carries a clipPath
+  transforms the clip with it: a skewed glint escaped its plate for ten frames in every
+  round. Put the clip on a parent group and skew the shape inside it.
+- **A promised gag is drawn or cut from the board.** A judge reads the board's action line as
+  a promise. "The reader fans it with a card" was never drawn, and a disembodied hand would
+  have been worse than the promise, so the line was cut and the steam was made legible.
