@@ -3747,3 +3747,32 @@ lengthened to 242 words for a 120s film. Write to the pace, not the band.
 
 **Known limits, disclosed.** Single-source story (Alaska Beacon via KTOO, built on a trooper's
 affidavit). Dead space runs advisory-over ceiling on the tabletop shots.
+
+## 2026-10-02 ("Who Counted")
+
+**Shipped** a 114 s film on NOAA's near-infrared age reader and the hand-counted otolith archive it
+learned from, after six panel rounds. The standing seat went 7.36, 7.36, 7.44, 7.46 (each with one
+hard blocker: a clipped NIR nameplate, plates under the caption card, type on type in S11, a
+counter label hidden behind a hopper), then 7.67 clear, and the full panel graded cut9 at 7.72,
+7.99 and 8.00 (median 7.99, bar 7.0, no blocker from any seat). Flow critic ship. Editor revise
+on hold times and one plate's wording, every string inside its claims contract.
+
+**In-run fixes, all in the film's PR.** `lib/Character.tsx` gained `lightWrap` (a mirrored figure's
+rim and sheen sat on the side away from the lamp and read as a ghost) and `look` (a head turn
+without a new pose). `lib/otolith.tsx`: the NIR cloth sags, ripples and leaves up and left; the
+open archive drawer is drawn last, lit inside, with glinting vials; every drawer cell sits on an
+opaque base so the far rings never double-expose. `scripts/build_evidence.py` MOVES name the
+film's actions, and the beat 49 strip samples the c19 citation.
+
+**What the panel taught, now in DISPATCH_STANDARD section 9.** A label on a prop is type that later
+art can hide; a chip adds to the caption and never repeats it; the citation and OUR READ never
+share a frame; spring() is for pops, not travel; an entrance is a walk; motion the square crop
+can't see did not happen on LinkedIn; clip in the parent's space; a claim and its citation are one
+plate; a label holds for its own length; a held gesture still breathes.
+
+**Queued for the machine pass:** label-occluded-by-later-art, spring-driving-travel,
+rig-light-follows-facing, transform-with-clippath-lint, multi-line-claim-plate,
+plate-hold-time-gate, location-ambience-beds, held-gesture-idle, machine-interior-hairline,
+character-finish-lags-props (repeat 1), with vo-wer-canonicalizer (repeat 3) and
+caption-chunk-by-sense (repeat 6) still first in line.
+

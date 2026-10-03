@@ -160,7 +160,7 @@
   },
   {
    "id": "c10",
-   "status": "verified-two-source",
+   "status": "verified-primary",
    "claim": "In 2023 NOAA reported models trained and tested on 8,617 walleye pollock otoliths collected 2014 to 2018.",
    "verbatim_source": "\"8,617 walleye pollock otoliths collected during 2014\u20132018\"",
    "source": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared",
@@ -173,7 +173,9 @@
    "contract": {
     "must_ship": false,
     "on_screen_verbatim": false
-   }
+   },
+   "notes": "",
+   "status_note": "relabelled 2026-10-02 after the full panel noted second_source was null; the claim rests on one NOAA page"
   },
   {
    "id": "c11",
@@ -227,7 +229,7 @@
   },
   {
    "id": "c14",
-   "status": "verified-two-source",
+   "status": "verified-primary",
    "claim": "In 2023 NOAA named use of these ages in stock assessment models as the next step.",
    "verbatim_source": "\"The next step is to use these new age data products in stock assessment models.\"",
    "source": "https://www.fisheries.noaa.gov/feature-story/scientists-identify-more-efficient-means-determine-age-fish-using-ai-and-near-infrared",
@@ -240,7 +242,9 @@
    "contract": {
     "must_ship": false,
     "on_screen_verbatim": false
-   }
+   },
+   "notes": "",
+   "status_note": "relabelled 2026-10-02 after the full panel noted second_source was null; the claim rests on one NOAA page"
   },
   {
    "id": "c15",

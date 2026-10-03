@@ -295,3 +295,19 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A promised gag is drawn or cut from the board.** A judge reads the board's action line as
   a promise. "The reader fans it with a card" was never drawn, and a disembodied hand would
   have been worse than the promise, so the line was cut and the steam was made legible.
+- **A claim and its citation are one plate.** CHECKED AGAINST MICROSCOPE AGES set as three
+  boxes of three widths (claim, claim, citation) was flagged by all three judges, the flow
+  critic and the editor in the same round. One plate, one width, one left edge: the claim's
+  lines over a smaller citation line.
+- **A label holds for its own length.** A plate carrying a fact or an attribution is on screen
+  at full opacity for at least its characters divided by 15 seconds, and it lands when nothing
+  else is landing. The c9 qualifier and the 2023 under NEXT STEP each held about 0.9 s at 22 to
+  24 px in round 4, and the editor read them as fine print hiding the honest part.
+- **A held gesture still breathes.** A figure pointing for five seconds is a figure frozen for
+  five seconds unless breath, a weight shift and a late head turn run under the pose. All three
+  judges read the manager on CATCH LIMITS as a still image through 88 to 93 s.
+- **The film's own plates use the sourced wording that blocks the wrong reading.** The machine's
+  nameplate TRAINED ON THE ARCHIVE was c18's approved string, and it still let the editor read
+  the 2.5 million pair archive as the training set once the archive was introduced by that
+  number. Where two true figures sit near each other, the plate names the smaller one (archive
+  SAMPLES) so the viewer can't merge them.

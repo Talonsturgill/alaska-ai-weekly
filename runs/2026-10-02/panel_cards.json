@@ -1,0 +1,79 @@
+{
+ "j1": {
+  "judge_id": "J1",
+  "round": 6,
+  "axes": {
+   "Hook & retention": 8.0,
+   "Illustration craft & detail": 7.8,
+   "Motion & animation craft": 7.4,
+   "Composition & staging": 7.5,
+   "Color & grade": 7.8,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.2,
+   "VO\u2013illustration sync & entertainment": 8.1,
+   "Accuracy & sourcing": 8.1,
+   "Alaska authenticity & cultural respect": 7.3,
+   "Writing & post quality": 8.3
+  },
+  "weighted_total": 7.72,
+  "recomputed": 7.718,
+  "hard_blockers": [],
+  "ship": true
+ },
+ "j2": {
+  "judge_id": "J2",
+  "round": 6,
+  "axes": {
+   "Hook & retention": 8.3,
+   "Illustration craft & detail": 8.0,
+   "Motion & animation craft": 7.6,
+   "Composition & staging": 7.8,
+   "Color & grade": 8.1,
+   "Typography & captions": 8.2,
+   "Sound design & mix": 7.3,
+   "VO\u2013illustration sync & entertainment": 8.1,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.8,
+   "Writing & post quality": 8.5
+  },
+  "weighted_total": 7.99,
+  "recomputed": 7.988,
+  "hard_blockers": [],
+  "ship": true
+ },
+ "j3": {
+  "judge_id": "J3",
+  "round": 6,
+  "axes": {
+   "Hook & retention": 8.1,
+   "Illustration craft & detail": 8.0,
+   "Motion & animation craft": 7.8,
+   "Composition & staging": 7.9,
+   "Color & grade": 8.1,
+   "Typography & captions": 8.1,
+   "Sound design & mix": 7.4,
+   "VO\u2013illustration sync & entertainment": 8.0,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.9,
+   "Writing & post quality": 8.5
+  },
+  "weighted_total": 8.0,
+  "recomputed": 7.998,
+  "hard_blockers": [],
+  "ship": true
+ },
+ "history": {
+  "j1_rounds": [
+   7.36,
+   7.36,
+   7.44,
+   7.46,
+   7.67,
+   7.72
+  ],
+  "full_panel_round": 6,
+  "median": 7.99,
+  "flow_critic": "ship",
+  "editor": "revise (hold times, machine plate wording, OUR READ coverage); every string inside its claims contract"
+ }
+}

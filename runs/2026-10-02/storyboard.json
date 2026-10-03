@@ -87,7 +87,7 @@
    },
    {
     "at_s": 54.6,
-    "state": "its 7 copied along a dotted path onto the paper age tag that rides into the hopper"
+    "state": "its brass twin waits over the tagging table while marked tags ride into the hopper"
    },
    {
     "at_s": 59.0,
@@ -180,7 +180,7 @@
    "transition_in": "graphic-match",
    "thread": "match",
    "centered": "a ring pulses out of the stone on each click, at frame centre near x540 y900",
-   "means": "The stone lands under the objective; each counter click pulses one ring while the date wheel whirs back on its own from 2022 to 1878, the counter holding low. WHO COUNTED?",
+   "means": "The stone lands under the objective; each counter click pulses one ring while the brass year drum whirs back at centre from 2022 and slams on 1878, then tucks into its corner, the counter holding low. WHO COUNTED?",
    "hero": {
     "name": "Otolith + BenchScope + TallyCounter",
     "parts": 6,
@@ -320,7 +320,7 @@
    "transition_in": "push-in",
    "thread": "match",
    "centered": "the line hits an empty slot and recoils, at frame centre near x540 y900",
-   "means": "Inside: the machine tag drains away, the signature runs into the AGE OUT slot and the brass WHO COUNTED? plate swings down into it, the question now asked of the machine.",
+   "means": "Inside: the machine tag falls out through the slot floor, the signature runs into the AGE OUT slot and the brass WHO COUNTED? plate swings down into it as the camera pushes in, the question now asked of the machine.",
    "hero": {
     "name": "SpectralLine + AGE OUT slot",
     "parts": 6,
@@ -348,7 +348,7 @@
    "transition_in": "hard-cut",
    "thread": "carry",
    "centered": "the hand writes an age on a tag, at frame centre near x540 y900",
-   "means": "An Alaska pollock drops its stone on the first tag; the reader inked hand copies the 7 off her RINGS counter onto the tag and withdraws; tagged stones march to the hopper; the brass count, TRAINED AND TESTED, lands on 8,617 as seventeen ends. A closed door at the far end, STOCK ASSESSMENT on its transom, leaks light.",
+   "means": "An Alaska pollock drops its stone beside a marked tag; the reader inked hand ties the tag on and withdraws off frame; tagged stones march into the hopper; the brass count of POLLOCK STONES lands on 8,617 as seventeen ends. A closed door at the far end, STOCK ASSESSMENT on its transom, flares light under it.",
    "hero": {
     "name": "Groundfish pollock + AgeTag + TallyCounter + hopper + door",
     "parts": 6,
@@ -432,9 +432,9 @@
    "transition_in": "hard-cut",
    "thread": "build",
    "centered": "the tag bounces off the dashed step, at frame centre near x540 y900",
-   "means": "The fair case: a brass sign drops on chains; a big trophy bounces onto the machine at the foot of the stairs for its engineers; the age tag hops onto AGE; a manager on CATCH LIMITS points at it; the same closed STOCK ASSESSMENT door stands on the dashed step and lights; a NEXT STEP stamp thuds, the tag bounces back and the manager nods.",
+   "means": "The fair case: a brass sign drops on chains; the AGE and CATCH LIMITS plinths rise around a dashed step where the same closed STOCK ASSESSMENT door stands; the age tag pops out of the reader and hops onto AGE; a manager on CATCH LIMITS points at it; the sign lifts away and the camera pushes in as the tag jumps for the dashed step, falls short and teeters while the door lights; NEXT STEP, PER NOAA \u00b7 2023 stamps into the dashed step, the camera whips back and the manager nods.",
    "hero": {
-    "name": "NIRReader trophy + staircase + AgeTag + door + Stamp",
+    "name": "plinths + dashed step + door + MachineTag + Stamp + manager",
     "parts": 6,
     "zones": 3,
     "detail_note": "70 tag and dashed step, 20 door and manager, 10 trophy"
@@ -460,7 +460,7 @@
    "transition_in": "carried-element",
    "thread": "carry",
    "centered": "the pen writes the limit line, at frame centre near x540 y900",
-   "means": "An inked hand drags a numberless limit line across the manager clipboard beside the machine tag; focus racks across the hall to the reader, eye at the microscope, still clicking.",
+   "means": "An inked hand in the manager mustard drags a numberless limit line into a blank cell of the catch form beside a handwritten 7 tag; the clipboard slides away as focus racks across the hall to the reader, eye at the microscope, her counter still climbing.",
    "hero": {
     "name": "Character manager + Character reader + TallyCounter",
     "parts": 6,
@@ -488,7 +488,7 @@
    "transition_in": "push-in",
    "thread": "match",
    "centered": "the line becomes rings, at frame centre near x540 y900",
-   "means": "An inked hand pushes a tray of hand-tagged stones to the machine and the cloth lifts off its plate, TRAINED ON THE ARCHIVE; inside, the AGE OUT slot WHO COUNTED? flips to a handwritten tag; the line tears into 144 ticks that curve onto the growth rings of the 1878 stone, exactly where the next shot holds it.",
+   "means": "The win is real: a trophy bounces onto the machine, CREDIT \u00b7 NOAA SCIENTISTS, as an inked hand feeds it hand-tagged stones, and the cloth lifts off its plate, TRAINED ON THE ARCHIVE; inside, at S7 framing, the AGE OUT slot WHO COUNTED? flips to a handwritten 7 under CHECKED AGAINST MICROSCOPE AGES, BENSON ET AL. 2023; the same line tears into 144 ticks that curve onto the growth rings of the 1878 stone, exactly where the next shot holds it, labelled OUR READ.",
    "hero": {
     "name": "NIRReader + AgeTag + SpectralLine ticks",
     "parts": 6,
@@ -656,18 +656,18 @@
    "vo_line": 1,
    "offset": 3.58,
    "vo": "Its ear stones say it was born in eighteen seventy-eight.",
-   "shows": "date wheel whirs back on its own and slams on 1878 on seventy-eight while the counter holds low",
+   "shows": "year drum whirs back on its own at centre, slams on 1878 on seventy-eight, then tucks into its corner while the counter holds low",
    "sfx": "thud",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "date wheel",
-    "action": "whirs back on its own and slams on 1878 on seventy-eight while the counter holds low",
+    "subject": "year drum",
+    "action": "whirs back on its own at centre, slams on 1878 on seventy-eight, then tucks into its corner while the counter holds low",
     "emotion": "shocked",
-    "annotation": "EST. 144 YEARS OLD \u00b7 BORN 1878"
+    "annotation": "EST. 144 YEARS OLD \u00b7 PER NOAA"
    },
    "choreo": {
-    "primary": "date wheel whirs back on its own and slams on 1878 on seventy-eight while the counter holds low",
+    "primary": "year drum whirs back on its own at centre, slams on 1878 on seventy-eight, then tucks into its corner while the counter holds low",
     "reaction": "the objective shudders on its overshoot and settles",
     "ambient": "dust motes drift through the lamp light"
    }
@@ -823,7 +823,7 @@
    "at_s": 24.54,
    "vo_line": 5,
    "offset": 0.0,
-   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand a year.",
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
    "shows": "NOAA reader bends to the microscope and clicks the counter, ring by ring",
    "sfx": "tick",
    "means": "",
@@ -847,7 +847,7 @@
    "at_s": 26.4,
    "vo_line": 5,
    "offset": 1.86,
-   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand a year.",
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
    "shows": "trays of stones slide in faster and stack up behind the reader",
    "sfx": "clank",
    "means": "",
@@ -871,7 +871,7 @@
    "at_s": 29.2,
    "vo_line": 5,
    "offset": 4.66,
-   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand a year.",
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
    "shows": "tray stack hits the ceiling with a thud as the count lands",
    "sfx": "thud",
    "means": "",
@@ -880,7 +880,7 @@
     "subject": "tray stack",
     "action": "hits the ceiling with a thud as the count lands",
     "emotion": "overwhelmed",
-    "annotation": "30,000+ A YEAR \u00b7 PER NOAA"
+    "annotation": "30,000+ STONES A YEAR \u00b7 PER NOAA"
    },
    "choreo": {
     "primary": "tray stack hits the ceiling with a thud as the count lands",
@@ -895,19 +895,19 @@
    "at_s": 30.8,
    "vo_line": 5,
    "offset": 6.26,
-   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand a year.",
-   "shows": "tally counter steams from the pace and the reader fans it with a card",
+   "vo": "NOAA scientists count the rings under microscopes, more than thirty thousand stones a year.",
+   "shows": "tally counter steams in fat puffs from the pace while her thumb keeps clicking",
    "sfx": "paper",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "tally counter",
-    "action": "steams from the pace and the reader fans it with a card",
+    "action": "steams in fat puffs from the pace while her thumb keeps clicking",
     "emotion": "weary",
     "annotation": "COUNTED BY HAND"
    },
    "choreo": {
-    "primary": "tally counter steams from the pace and the reader fans it with a card",
+    "primary": "tally counter steams in fat puffs from the pace while her thumb keeps clicking",
     "reaction": "the reader shoulders drop then square again",
     "ambient": "dust motes drift through the lamp light"
    }
@@ -1112,18 +1112,18 @@
    "vo_line": 9,
    "offset": 0.0,
    "vo": "But to tie a signature to an age, you need the age first.",
-   "shows": "machine tag drains out of the slot and the line runs into an empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
+   "shows": "machine tag drops out through the slot floor and the line runs into the empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
    "sfx": "whoosh",
    "means": "",
    "rehook": "the answer drains away",
    "draw": {
     "subject": "machine tag",
-    "action": "drains out of the slot and the line runs into an empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
+    "action": "drops out through the slot floor and the line runs into the empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
     "emotion": "puzzled",
     "annotation": "WHO COUNTED?"
    },
    "choreo": {
-    "primary": "machine tag drains out of the slot and the line runs into an empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
+    "primary": "machine tag drops out through the slot floor and the line runs into the empty slot where the brass WHO COUNTED? plate swings down, asked of the machine now",
     "reaction": "the slot recoils",
     "ambient": "the beam hums with a moving magenta shimmer"
    }
@@ -1159,7 +1159,7 @@
    "at_s": 52.78,
    "vo_line": 10,
    "offset": 0.0,
-   "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
    "shows": "Alaska pollock swims in and drops its stone onto the first paper tag",
    "sfx": "paw",
    "means": "",
@@ -1183,19 +1183,19 @@
    "at_s": 54.6,
    "vo_line": 10,
    "offset": 1.82,
-   "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
-   "shows": "reader inked hand copies the 7 off her RINGS counter along a dotted path and writes it on the tag",
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
+   "shows": "lab inked hand ties a marked age tag onto the stone, tugs it tight and withdraws",
    "sfx": "paper",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "reader inked hand",
-    "action": "copies the 7 off her RINGS counter along a dotted path and writes it on the tag",
+    "subject": "lab inked hand",
+    "action": "ties a marked age tag onto the stone, tugs it tight and withdraws",
     "emotion": "careful",
-    "annotation": "2023 \u00b7 TRAINED AND TESTED"
+    "annotation": "2023 REPORT \u00b7 TRAINED AND TESTED"
    },
    "choreo": {
-    "primary": "reader inked hand copies the 7 off her RINGS counter along a dotted path and writes it on the tag",
+    "primary": "lab inked hand ties a marked age tag onto the stone, tugs it tight and withdraws",
     "reaction": "each tag swings as its stone steps in",
     "ambient": "the hopper conveyor rolls continuously"
    }
@@ -1207,7 +1207,7 @@
    "at_s": 55.9,
    "vo_line": 10,
    "offset": 3.12,
-   "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
    "shows": "far door stays closed at the end of the room while light leaks under it and its transom lettering lights",
    "sfx": "chime",
    "means": "",
@@ -1231,7 +1231,7 @@
    "at_s": 56.6,
    "vo_line": 10,
    "offset": 3.82,
-   "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
    "shows": "tagged stones march single file into the hopper",
    "sfx": "chain",
    "means": "",
@@ -1251,25 +1251,25 @@
   {
    "id": 31,
    "shot": 8,
-   "t": "58.50",
-   "at_s": 58.5,
+   "t": "58.22",
+   "at_s": 58.22,
    "vo_line": 10,
-   "offset": 5.72,
-   "vo": "In twenty twenty-three, NOAA trained and tested its models on eight thousand six hundred seventeen pollock stones.",
-   "shows": "brass count climbs from eight and lands on 8,617 as seventeen ends",
+   "offset": 5.44,
+   "vo": "In twenty twenty-three, NOAA reported models trained and tested on eight thousand six hundred seventeen pollock ear stones.",
+   "shows": "brass count climbs on thousand and lands on 8,617 as seventeen ends while rows of tagged stones fill the table",
    "sfx": "boom",
    "means": "",
    "rehook": "",
-   "sfx_offset_frames": 77,
-   "sfx_offset_reason": "the boom lands with 8,617 as seventeen ends",
+   "sfx_offset_frames": 56,
+   "sfx_offset_reason": "the boom lands with 8,617 as seventeen ends, just before pollock",
    "draw": {
     "subject": "brass count",
-    "action": "climbs from eight and lands on 8,617 as seventeen ends",
+    "action": "climbs on thousand and lands on 8,617 as seventeen ends while rows of tagged stones fill the table",
     "emotion": "satisfied",
     "annotation": "8,617 POLLOCK STONES \u00b7 2023"
    },
    "choreo": {
-    "primary": "brass count climbs from eight and lands on 8,617 as seventeen ends",
+    "primary": "brass count climbs on thousand and lands on 8,617 as seventeen ends while rows of tagged stones fill the table",
     "reaction": "each tag swings as its stone steps in",
     "ambient": "the hopper conveyor rolls continuously"
    }
@@ -1314,7 +1314,7 @@
     "subject": "drawers",
     "action": "light in a wave down the corridor as the camera dollies forward",
     "emotion": "patient",
-    "annotation": "THE MODELS LEARNED FROM IT \u00b7 PER NOAA"
+    "annotation": "NOAA ARCHIVE"
    },
    "choreo": {
     "primary": "drawers light in a wave down the corridor as the camera dollies forward",
@@ -1378,18 +1378,18 @@
    "vo_line": 13,
    "offset": 0.0,
    "vo": "Around two million once sat in an old airplane hangar in Seattle.",
-   "shows": "timber hangar opens on shelves of glinting specimen trays under a propeller on a beam, and a raven lifts off a rafter",
+   "shows": "timber hangar opens on shelves of glinting specimen trays under a propeller hung across the beam, and a raven lifts off a rafter",
    "sfx": "caw",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "timber hangar",
-    "action": "opens on shelves of glinting specimen trays under a propeller on a beam, and a raven lifts off a rafter",
+    "action": "opens on shelves of glinting specimen trays under a propeller hung across the beam, and a raven lifts off a rafter",
     "emotion": "nostalgic",
-    "annotation": "AROUND 2 MILLION \u00b7 SEATTLE \u00b7 1930s HANGAR"
+    "annotation": "1930s HANGAR \u00b7 SEATTLE \u00b7 AROUND 2 MILLION"
    },
    "choreo": {
-    "primary": "timber hangar opens on shelves of glinting specimen trays under a propeller on a beam, and a raven lifts off a rafter",
+    "primary": "timber hangar opens on shelves of glinting specimen trays under a propeller hung across the beam, and a raven lifts off a rafter",
     "reaction": "the propeller turns a quarter in a draft",
     "ambient": "dust drifts through the hangar lamp beam"
    }
@@ -1474,18 +1474,18 @@
    "vo_line": 14,
    "offset": 1.22,
    "vo": "Now, the fair case against.",
-   "shows": "big trophy bounces onto the NIR reader at the foot of the stairs",
+   "shows": "AGE and CATCH LIMITS plinths rise out of the floor on either side of the dashed step",
    "sfx": "clank",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "big trophy",
-    "action": "bounces onto the NIR reader at the foot of the stairs",
-    "emotion": "generous",
-    "annotation": "CREDIT TO THE ENGINEERS"
+    "subject": "AGE and CATCH LIMITS plinths",
+    "action": "rise out of the floor on either side of the dashed step",
+    "emotion": "expectant",
+    "annotation": "AGE \u00b7 CATCH LIMITS"
    },
    "choreo": {
-    "primary": "big trophy bounces onto the NIR reader at the foot of the stairs",
+    "primary": "AGE and CATCH LIMITS plinths rise out of the floor on either side of the dashed step",
     "reaction": "the trophy rocks and settles",
     "ambient": "the staircase brass glints as the camera rises"
    }
@@ -1530,7 +1530,7 @@
     "subject": "manager",
     "action": "walks onto the CATCH LIMITS plinth and points at the tag",
     "emotion": "patient",
-    "annotation": "FISHERY MANAGERS"
+    "annotation": "CATCH LIMITS"
    },
    "choreo": {
     "primary": "manager walks onto the CATCH LIMITS plinth and points at the tag",
@@ -1546,18 +1546,18 @@
    "vo_line": 16,
    "offset": 0.04,
    "vo": "NOAA called getting these ages into stock assessments the next step.",
-   "shows": "age tag reaches up for the dashed step and teeters on its edge where no surface is",
+   "shows": "age tag jumps for the dashed step, falls short onto the edge of AGE and teeters there",
    "sfx": "tick",
    "means": "",
    "rehook": "will it make the step",
    "draw": {
     "subject": "age tag",
-    "action": "reaches up for the dashed step and teeters on its edge where no surface is",
+    "action": "jumps for the dashed step, falls short onto the edge of AGE and teeters there",
     "emotion": "hopeful",
-    "annotation": "PER NOAA, 2023"
+    "annotation": "AGE"
    },
    "choreo": {
-    "primary": "age tag reaches up for the dashed step and teeters on its edge where no surface is",
+    "primary": "age tag jumps for the dashed step, falls short onto the edge of AGE and teeters there",
     "reaction": "the manager looks down at the tag",
     "ambient": "the dashed step flickers"
    }
@@ -1594,18 +1594,18 @@
    "vo_line": 16,
    "offset": 3.84,
    "vo": "NOAA called getting these ages into stock assessments the next step.",
-   "shows": "stamp thuds into the dashed outline, the tag tumbles back to AGE and the manager nods",
+   "shows": "stamp thuds into the dashed step as the camera whips back, the tag tumbles to AGE and the manager nods",
    "sfx": "stamp",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "stamp",
-    "action": "thuds into the dashed outline, the tag tumbles back to AGE and the manager nods",
+    "action": "thuds into the dashed step as the camera whips back, the tag tumbles to AGE and the manager nods",
     "emotion": "stopped",
-    "annotation": "NEXT STEP"
+    "annotation": "NEXT STEP \u00b7 PER NOAA \u00b7 2023"
    },
    "choreo": {
-    "primary": "stamp thuds into the dashed outline, the tag tumbles back to AGE and the manager nods",
+    "primary": "stamp thuds into the dashed step as the camera whips back, the tag tumbles to AGE and the manager nods",
     "reaction": "the manager looks down at the tag",
     "ambient": "the dashed step flickers"
    }
@@ -1642,18 +1642,18 @@
    "vo_line": 17,
    "offset": 3.94,
    "vo": "Catch limits are set by managers, not machines, and the microscope is still in the process.",
-   "shows": "NOAA reader comes into focus across the hall, eye at the microscope, still clicking",
+   "shows": "NOAA reader comes into focus across the hall as the clipboard slides away, eye at the microscope, her counter still clicking",
    "sfx": "tick",
    "means": "",
    "rehook": "",
    "draw": {
     "subject": "NOAA reader",
-    "action": "comes into focus across the hall, eye at the microscope, still clicking",
+    "action": "comes into focus across the hall as the clipboard slides away, eye at the microscope, her counter still clicking",
     "emotion": "steady",
     "annotation": "MICROSCOPE STILL IN THE PROCESS"
    },
    "choreo": {
-    "primary": "NOAA reader comes into focus across the hall, eye at the microscope, still clicking",
+    "primary": "NOAA reader comes into focus across the hall as the clipboard slides away, eye at the microscope, her counter still clicking",
     "reaction": "the manager pen pauses then writes",
     "ambient": "the lamp pool breathes"
    }
@@ -1666,18 +1666,18 @@
    "vo_line": 18,
    "offset": 0.0,
    "vo": "So the win today is speed and method. That's real.",
-   "shows": "reader inked hand pushes a tray of hand-tagged stones toward the machine port",
+   "shows": "trophy bounces onto the machine while the reader inked hand pushes a tray of hand-tagged stones into its port",
    "sfx": "riser",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "reader inked hand",
-    "action": "pushes a tray of hand-tagged stones toward the machine port",
+    "subject": "trophy",
+    "action": "bounces onto the machine while the reader inked hand pushes a tray of hand-tagged stones into its port",
     "emotion": "warm",
-    "annotation": "SPEED \u00b7 METHOD"
+    "annotation": "CREDIT \u00b7 NOAA SCIENTISTS"
    },
    "choreo": {
-    "primary": "reader inked hand pushes a tray of hand-tagged stones toward the machine port",
+    "primary": "trophy bounces onto the machine while the reader inked hand pushes a tray of hand-tagged stones into its port",
     "reaction": "the lamp and the machine glow brighten together",
     "ambient": "tally ticks drift like snow"
    }
@@ -1714,18 +1714,18 @@
    "vo_line": 19,
    "offset": 0.26,
    "vo": "But look where the speed came from.",
-   "shows": "the slot plate spins like a split-flap and lands as a handwritten age tag",
+   "shows": "the AGE OUT slot fills the frame and its WHO COUNTED? plate spins like a split-flap and lands as a handwritten 7",
    "sfx": "tick",
    "means": "",
    "rehook": "",
    "draw": {
-    "subject": "the slot plate",
-    "action": "spins like a split-flap and lands as a handwritten age tag",
+    "subject": "the AGE OUT slot",
+    "action": "fills the frame and its WHO COUNTED? plate spins like a split-flap and lands as a handwritten 7",
     "emotion": "revealed",
     "annotation": "CHECKED AGAINST MICROSCOPE AGES \u00b7 BENSON ET AL. 2023"
    },
    "choreo": {
-    "primary": "the slot plate spins like a split-flap and lands as a handwritten age tag",
+    "primary": "the AGE OUT slot fills the frame and its WHO COUNTED? plate spins like a split-flap and lands as a handwritten 7",
     "reaction": "the counter digits roll",
     "ambient": "tally ticks drift like snow"
    }
