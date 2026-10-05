@@ -296,7 +296,27 @@ export const HallWall: React.FC<{f: number; cam?: number; floorY?: number; tubes
       {/* clerestory windows, a cool wash at the far end */}
       {win && [0, 1, 2].map((i) => {
         const wx = 60 + i * 340 - (par % 340);
-        return <rect key={i} x={wx} y={190} width={240} height={160} fill={COR.glass} stroke={INK} strokeWidth={6} opacity={0.9} />;
+        // an Alaskan window: a snow-capped range, spruce, and snow falling through the glass
+        return (
+          <g key={i}>
+            <clipPath id={`${id}wc${i}`}><rect x={wx} y={190} width={240} height={160} /></clipPath>
+            <rect x={wx} y={190} width={240} height={160} fill="#CFE3EE" />
+            <g clipPath={`url(#${id}wc${i})`}>
+              <path d={`M${wx},300 L${wx + 50},238 L${wx + 90},270 L${wx + 150},214 L${wx + 205},262 L${wx + 240},240 L${wx + 240},350 L${wx},350 Z`} fill="#8EA6BA" />
+              <path d={`M${wx + 150},214 L${wx + 128},242 L${wx + 150},236 L${wx + 168},244 Z`} fill="#F4FAFD" />
+              <path d={`M${wx + 50},238 L${wx + 34},258 L${wx + 50},254 L${wx + 64},262 Z`} fill="#F4FAFD" />
+              {[28, 98, 176, 214].map((sx, k) => (
+                <path key={k} d={`M${wx + sx},${352} L${wx + sx - 20},${352} L${wx + sx - 8},${318 - (k % 2) * 8} L${wx + sx - 16},${318 - (k % 2) * 8} L${wx + sx - 4},${290 - (k % 2) * 8} L${wx + sx + 8},${318 - (k % 2) * 8} L${wx + sx},${318 - (k % 2) * 8} L${wx + sx + 12},${352} Z`} fill="#2F5B54" />
+              ))}
+              {Array.from({length: 10}, (_, k) => {
+                const hh = hash(k * 5 + i);
+                return <circle key={k} cx={wx + (hh % 240) + Math.sin(f / 18 + k) * 6} cy={190 + ((hh >>> 7) % 160 + f * (0.8 + (k % 3) * 0.3)) % 160} r={2.4} fill="#FFFFFF" opacity={0.9} />;
+              })}
+            </g>
+            <rect x={wx} y={190} width={240} height={160} fill="none" stroke={INK} strokeWidth={6} />
+            <line x1={wx + 120} y1={190} x2={wx + 120} y2={350} stroke={INK} strokeWidth={4} />
+          </g>
+        );
       })}
       {/* bulletin-board strip on the back wall, far parallax */}
       {Array.from({length: 5}, (_, i) => {

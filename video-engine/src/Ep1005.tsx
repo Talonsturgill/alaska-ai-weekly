@@ -230,7 +230,7 @@ const Folder: React.FC<{x: number; y: number; s?: number; tape?: number; open?: 
       <rect x={-250} y={-180} width={500} height={360} fill={C.slip} stroke={C.navy} strokeWidth={8} />
       <rect x={-230} y={-160} width={460} height={320} fill={C.paper} stroke={C.navy} strokeWidth={3} opacity={o} />
       {/* the cover, hinged on the left, foreshortening as it opens */}
-      <g transform={`translate(-250,0) scale(${1 - 1.8 * o},1)`}>
+      <g transform={`translate(-250,0) scale(${1 - 1.3 * o},1)`}>
         <rect x={0} y={-180} width={500} height={360} fill="#EAD98C" stroke={C.navy} strokeWidth={8} />
         <rect x={0} y={-180} width={500} height={34} fill="#F6E7A1" opacity={0.9} />
         <rect x={20} y={-120} width={420} height={6} fill={C.navy} opacity={0.25} />
@@ -295,7 +295,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
             <text x={0} y={16} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={40} letterSpacing={1.5} fill={C.navy}>NO SYSTEMWIDE AI RULE</text>
           </g>
         </g>
-        <Plate text="PER ADN" y={760} size={26} p={ease(f, bAt(5), 10)} tone="slip" />
+        <Plate text="PER ADN" y={760} size={26} p={ease(f, bAt(4) + 10, 10)} tone="slip" />
         <NearBench cam={cam} />
         <Motes f={f} />
       </SVG>
@@ -364,7 +364,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
       <SVG>
         <HallWall f={f} cam={cam} floorY={FLOOR} id="s3" window flicker={1} />
         <DoorRow f={f} cam={cam} k={k} floorY={FLOOR} n={8} opts={(i, sx) => (i === 7
-          ? {glyph: 'none', flip: 0, state: 'dark', lamp: since(13) > 40 ? 0.0 : 0, sign: false}
+          ? {glyph: 'none', flip: 0, state: 'dark', lamp: since(13) > 30 && Math.floor(f / 6) % 5 === 0 ? 1 : 0, sign: false}
           : {glyph: VERDICTS[i], flip: f < 56 ? 1 : spring(Math.round(flipOf(sx) * 14), 6, 8) * clamp01(flipOf(sx) * 4), lamp: 1})} />
         {/* the coral arrow over the far dark door, in world space */}
         <g transform={`translate(540,${FLOOR}) scale(${k}) translate(${-cam},0)`}>
@@ -407,35 +407,42 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
         <g transform="translate(0,0)" opacity={ease(f, bAt(16) - 6, 10)}>
           <FlipBoard x={540} y={1100} s={0.8} value={count} clack={clack} />
         </g>
-        <Plate text="150 STUDENTS CITED" y={600} size={34} p={ease(f, bAt(14), 10) * (1 - ease(f, bAt(16), 10))} tone="slip" />
-        <Plate text="119 OF 150" y={525} size={44} p={ease(f, bAt(16) + 18, 10)} tone="coral" />
+        <Plate text="150 STUDENTS CITED" y={600} size={34} p={ease(f, bAt(14), 10) * (1 - ease(f, bAt(17), 8))} tone="slip" />
+        <Plate text="119 OF 150" y={525} size={44} p={ease(f, bAt(17), 8)} tone="coral" />
         <Plate text="PER ADN, FROM A UAA DEAN OF STUDENTS REPORT" y={1262} size={24} p={ease(f, bAt(17), 10)} tone="slip" />
         <Motes f={f} y0={380} y1={1300} op={0.2} />
       </SVG>
     );
     zoom = 1.0 + 0.03 * (f / dur);
   } else if (n === 5) {
-    // THE REPORT. A folder skids onto a bare desk, a rubber stamp slams, and a plain block on the
-    // wall grows by three quarters of its own height with a coral delta.
+    // THE REPORT. A folder skids onto a bare desk, a real rubber stamp lifts, slams and leaves its
+    // ink, and a plain block on the wall grows by three quarters of its own height with a coral delta.
     const slide = ease(f, 0, 18);
-    const stampDown = since(19) >= 0 ? clamp01(since(19) / 7) : clamp01((f - 40) / 40) * 0.25;
-    const stampHit = since(19) > 5 ? 1 : 0;
-    const pad = since(19) > 5 && since(19) < 16 ? 10 * Math.sin(((since(19) - 5) / 11) * Math.PI) : 0;
-    const grow = ease(f, bAt(20), 40);
+    const sd = since(19);
+    // anticipation (a lift), the slam, a squash and a settle
+    const stampY = sd < -24 ? 470 : sd < 0 ? lerp(470, 400, ease(f, bAt(19) - 24, 24)) : sd < 7 ? lerp(400, 1010, clamp01(sd / 7) ** 2) : 1010 - 6 * Math.sin((sd - 7) / 2.4) * Math.exp(-(sd - 7) / 8);
+    const squash = sd >= 7 && sd < 14 ? 1 - 0.1 * Math.sin(((sd - 7) / 7) * Math.PI) : 1;
+    const stampHit = sd > 6 ? 1 : 0;
+    const pad = sd > 6 && sd < 18 ? 10 * Math.sin(((sd - 6) / 12) * Math.PI) : 0;
+    const grow = ease(f, bAt(20), 44);
+    const BW = 240, BH = 230;
     picture = (
       <SVG>
         <rect width={W} height={H} fill={C.wall} />
         <rect x={0} y={0} width={W} height={150} fill={tones(C.wall).shade} stroke={C.navy} strokeWidth={6} />
-        {/* the wall block that grows */}
-        <g transform="translate(250,860)">
-          <rect x={-120} y={-230} width={240} height={230} fill={C.locker} stroke={C.navy} strokeWidth={7} />
-          <rect x={-120} y={-230 - 230 * 0.73 * grow} width={240} height={230 * 0.73 * grow} fill={C.coral} stroke={C.navy} strokeWidth={7} />
-          {grow > 0.02 && <line x1={-120} y1={-230} x2={150} y2={-230} stroke={C.navy} strokeWidth={4} strokeDasharray="10 8" />}
+        {/* the wall block that grows: an unlabeled base, then the same block's own height times 0.73 on top */}
+        <g transform="translate(220,870)">
+          <ContactShadow cx={0} cy={6} rx={170} ry={14} opacity={0.35} blur={9} />
+          <rect x={-BW / 2} y={-BH} width={BW} height={BH} fill={C.locker} stroke={C.navy} strokeWidth={8} />
+          <rect x={-BW / 2 + 10} y={-BH + 10} width={22} height={BH - 20} fill="#FFFFFF" opacity={0.18} />
+          <rect x={-BW / 2} y={-BH - BH * 0.73 * grow} width={BW} height={BH * 0.73 * grow} fill={C.coral} stroke={C.navy} strokeWidth={8} />
+          {grow > 0.02 && <line x1={-BW / 2 - 30} y1={-BH} x2={BW / 2 + 30} y2={-BH} stroke={C.navy} strokeWidth={4} strokeDasharray="10 8" />}
         </g>
         {/* the desk */}
         <rect data-band="ok" x={-20} y={880} width={W + 40} height={1040} fill={C.wood} />
-        <rect x={-20} y={880} width={W + 40} height={46} fill={C.woodHi} stroke={C.navy} strokeWidth={7} />
-        <g transform={`translate(${lerp(1400, 640, slide)},${1070 + pad})`}>
+        <rect data-band="ok" x={-20} y={880} width={W + 40} height={46} fill={C.woodHi} stroke={C.navy} strokeWidth={7} />
+        {Array.from({length: 6}, (_, i) => <path key={i} d={`M0,${960 + i * 120} C300,${950 + i * 120} 700,${975 + i * 120} 1080,${962 + i * 120}`} fill="none" stroke={C.woodHi} strokeWidth={3} opacity={0.5} />)}
+        <g transform={`translate(${lerp(1400, 660, slide)},${1070 + pad})`}>
           <ContactShadow cx={0} cy={190} rx={330} ry={26} opacity={0.4} blur={11} />
           <rect x={-300 + 12} y={-190 + 16} width={600} height={380} fill="#000" opacity={0.25} />
           <rect x={-300} y={-190} width={600} height={380} fill="#EAD98C" stroke={C.navy} strokeWidth={9} />
@@ -451,63 +458,73 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
             </g>
           )}
         </g>
-        {/* the rubber stamp coming down */}
-        <g transform={`translate(700,${lerp(420, 1030, stampDown)})`}>
-          <rect x={-70} y={-120} width={140} height={90} rx={12} fill={C.oak} stroke={C.navy} strokeWidth={7} />
-          <rect x={-100} y={-34} width={200} height={34} rx={6} fill={C.navy} stroke={C.navy} strokeWidth={6} />
+        {/* the rubber stamp: a turned wooden handle and knob, a plate and a rubber face, squashing on impact */}
+        <g transform={`translate(700,${stampY}) scale(1,${squash})`}>
+          <ContactShadow cx={0} cy={22} rx={120} ry={12} opacity={0.3} blur={8} />
+          <rect x={-20} y={-300} width={40} height={140} rx={14} fill={C.oak} stroke={C.navy} strokeWidth={7} />
+          <circle cx={0} cy={-320} r={44} fill={C.oak} stroke={C.navy} strokeWidth={7} />
+          <circle cx={-12} cy={-332} r={12} fill="#FFFFFF" opacity={0.3} />
+          <rect x={-110} y={-164} width={220} height={52} rx={10} fill={C.brass} stroke={C.navy} strokeWidth={7} />
+          <rect x={-100} y={-112} width={200} height={44} rx={6} fill={C.navy} stroke={C.navy} strokeWidth={6} />
+          <rect x={-96} y={-160} width={60} height={10} fill="#FFFFFF" opacity={0.5} />
         </g>
-        {stampHit > 0 && since(19) < 14 && <ImpactStar cx={700} cy={1080} r={60 + since(19) * 8} color={C.coral} />}
-        <Plate text="UAA DEAN OF STUDENTS REPORT, VIA ADN" y={505} size={26} p={ease(f, bAt(18) + 6, 10)} tone="slip" />
-        <Plate text="AI PLAGIARISM +73%" x={250} y={600} size={28} p={ease(f, bAt(20) + 24, 10)} tone="coral" />
+        {stampHit > 0 && sd < 16 && <ImpactStar cx={700} cy={1110} r={50 + sd * 7} color={C.coral} />}
+        {stampHit > 0 && Array.from({length: 7}, (_, i) => <circle key={i} cx={560 + i * 40 + Math.sin(i) * 20} cy={1080 + Math.sin(i * 3) * 30 + Math.min(40, sd * 3)} r={4} fill={C.coralDk} opacity={0.8 * (1 - clamp01((sd - 6) / 20))} />)}
+        <Plate text="UAA DEAN OF STUDENTS REPORT, VIA ADN" x={650} y={505} size={24} p={ease(f, bAt(18) + 6, 10)} tone="slip" />
+        <Plate text="AI PLAGIARISM +73%" x={560} y={640} size={28} p={ease(f, bAt(20) + 30, 10)} tone="coral" />
         <Motes f={f} y0={200} y1={1000} op={0.2} />
       </SVG>
     );
     zoom = 1.0 + 0.04 * (f / dur);
   } else if (n === 6) {
-    // THE FIELD. 119 coral slips on a patch of lockers while the 31 others fall away; the camera
-    // pulls back to a field of 10,500 hollow student dots where they are a sliver, and the sparks
-    // go hollow too.
+    // THE FIELD, TO SCALE. 10,500 students are one dot each at 11.5 px spacing over a 1000 x 1400
+    // field; the 119 are a 15 x 8 patch of that same grid, so 119 of 10,500 is a true 1.1% sliver.
+    // The 31 slips that aren't in the 119 fall away first; the other dots stay hollow rings, so the
+    // field reads unknown, not innocent; the coral dots go dashed (counted, not proven) at the end.
+    const CELL = 11.5;
     const away = ease(f, 0, 30);
-    const pull = easeIO(f, bAt(22) - 20, 120);
-    const kk = lerp(3.2, 0.55, pull);
+    const pull = easeIO(f, 6, 64);
+    const kk = lerp(7.5, 1.0, pull);
     const hollow = ease(f, bAt(23), 40);
+    const slipsK = clamp01((kk - 3) / 2);
+    const OX = 540 - (15 * CELL) / 2, OY = 900 - (10 * CELL) / 2;
     picture = (
       <SVG>
         <defs>
-          <pattern id="dotfield" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
-            <circle cx={11} cy={11} r={6} fill="none" stroke={C.locker} strokeWidth={2.6} />
+          <pattern id="dotfield" x="40" y="250" width={CELL} height={CELL} patternUnits="userSpaceOnUse">
+            <circle cx={CELL / 2} cy={CELL / 2} r={3.1} fill="none" stroke={C.locker} strokeWidth={1.3} />
           </pattern>
         </defs>
         <rect width={W} height={H} fill={C.wall} />
         <g transform={`translate(540,900) scale(${kk}) translate(-540,-900)`}>
-          <rect data-band="ok" x={-6000} y={-4000} width={14000} height={12000} fill="url(#dotfield)" opacity={ease(f, bAt(22) - 20, 60)} />
-          {/* the lockers patch the slips sit on */}
-          <g opacity={1 - ease(f, bAt(22) - 10, 50)}>
-            <LockerBank x={330} y={790} w={420} h={220} cols={6} rows={3} />
-          </g>
-          {/* 119 coral slips */}
+          <rect data-band="ok" x={40} y={250} width={1000} height={1400} fill="url(#dotfield)" opacity={ease(f, 0, 8)} />
+          <rect data-band="ok" x={40} y={250} width={1000} height={1400} fill="none" stroke={C.locker} strokeWidth={2.5 / kk} opacity={clamp01((1.9 - kk) * 1.2)} />
           {Array.from({length: 150}, (_, i) => {
-            const c = i % 15, r = Math.floor(i / 15);
-            const x = 340 + c * 28, y = 800 + r * 22;
+            const cc = i % 15, rr = Math.floor(i / 15);
+            const x = OX + cc * CELL + CELL / 2, y = OY + rr * CELL + CELL / 2;
             const keep = i < 119;
             if (!keep) {
               const dd = hash(i);
-              return <g key={i} transform={`translate(${x},${y + away * (400 + (dd % 200))}) rotate(${away * ((dd % 90) - 45)})`} opacity={1 - away}>
-                <Slip x={0} y={0} s={0.24} />
-              </g>;
+              return (
+                <g key={i} transform={`translate(${x},${y + away * (500 + (dd % 300))}) rotate(${away * ((dd % 90) - 45)}) scale(${0.12})`} opacity={1 - away}>
+                  <Slip x={0} y={0} />
+                </g>
+              );
             }
-            const coralK = 1 - hollow;
             return (
-              <g key={i} opacity={ease(f, 0, 6)}>
-                <circle cx={x} cy={y} r={7.5} fill={C.coral} opacity={coralK} stroke={C.navy} strokeWidth={1.4} />
-                <circle cx={x} cy={y} r={7} fill="none" stroke={C.coral} strokeWidth={2.4} strokeDasharray="4 3" opacity={hollow * 0.9} />
+              <g key={i}>
+                <g opacity={slipsK * (1 - hollow)} transform={`translate(${x},${y}) scale(0.19)`}><Slip x={0} y={0} hit={1} /></g>
+                <circle cx={x} cy={y} r={3.9} fill={C.coral} stroke={C.navy} strokeWidth={0.8} opacity={(1 - slipsK) * (1 - hollow)} />
+                <circle cx={x} cy={y} r={4.4} fill="none" stroke={C.coral} strokeWidth={1.5} strokeDasharray="2.4 1.6" opacity={hollow} />
               </g>
             );
           })}
         </g>
-        <Plate text="119 OF 150" y={525} size={40} p={ease(f, 0, 8) * (1 - ease(f, bAt(22) - 20, 10))} tone="coral" />
-        <Plate text="1.1% OF 10,500+ STUDENTS" y={600} size={40} p={ease(f, bAt(22) + 40, 12)} tone="ink" />
-        <Plate text="PER ADN" y={680} size={26} p={ease(f, bAt(22) + 46, 10)} tone="slip" />
+        <Plate text="119 OF 150" y={525} size={40} p={ease(f, 0, 8) * (1 - ease(f, 34, 10))} tone="coral" />
+        <Plate text="1.1% OF 10,500+ STUDENTS" y={600} size={40} p={ease(f, bAt(22) + 8, 12)} tone="ink" />
+        <Plate text="PER ADN" y={680} size={26} p={ease(f, bAt(22) + 14, 10)} tone="slip" />
+        <line x1={540} y1={712} x2={540} y2={840} stroke={C.navy} strokeWidth={4} strokeDasharray="8 6" opacity={ease(f, bAt(22) + 16, 12)} />
+        <g opacity={0.16} transform={`translate(${lerp(-500, 1500, (f % 190) / 190)},0) skewX(-18)`}><rect data-band="ok" x={0} y={0} width={160} height={H} fill="#F4FFF8" /></g>
         <Motes f={f} op={0.15} />
       </SVG>
     );
@@ -598,10 +615,11 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
         {/* left half: the wall and the big sign */}
         <rect x={0} y={0} width={540} height={H} fill={C.wallLo} />
         <rect data-band="ok" x={0} y={1250} width={540} height={670} fill={C.lino} />
-        <g transform={`translate(270,820) rotate(${Math.sin(f / 26) * 0.8})`}>
-          <rect x={-190 + 12} y={-250 + 16} width={380} height={500} rx={26} fill="#000" opacity={0.25} />
-          <rect x={-190} y={-250} width={380} height={500} rx={26} fill={C.paper} stroke={C.navy} strokeWidth={10} />
-          <g transform="translate(0,-20)"><Glyph kind="ban" s={3.0} f={f} pop={spring(f, 8, 16)} /></g>
+        <g transform={`translate(270,800) rotate(${Math.sin(f / 26) * 0.8})`}>
+          <rect x={-150 + 12} y={-190 + 16} width={300} height={380} rx={22} fill="#000" opacity={0.25} />
+          <rect x={-150} y={-190} width={300} height={380} rx={22} fill={C.paper} stroke={C.navy} strokeWidth={9} />
+          <rect x={-26} y={-208} width={52} height={22} fill="#FFFFFF" opacity={0.75} stroke={C.navy} strokeWidth={3} />
+          <g transform="translate(0,-10)"><Glyph kind="ban" s={2.3} f={f} pop={spring(f, 8, 16)} /></g>
         </g>
         {/* right half: the open writing door onto a classroom, drawn big so the room reads */}
         <rect x={540} y={0} width={540} height={1300} fill="#D6E7EC" />
@@ -620,7 +638,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
             } />
         </g>
         {/* the desk, essay sheet and idle pencil in front of the door */}
-        <g transform="translate(780,1420)">
+        <g transform="translate(780,1270)">
           <ContactShadow cx={0} cy={200} rx={260} ry={20} opacity={0.35} blur={10} />
           <rect x={-240} y={0} width={480} height={34} fill={C.woodHi} stroke={C.navy} strokeWidth={7} />
           <rect x={-210} y={34} width={22} height={150} fill={C.brass} stroke={C.navy} strokeWidth={5} />
@@ -639,13 +657,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
           </g>
         </g>
         {/* the AI glyph hovering over the page, writing */}
-        <g transform={`translate(${750 + Math.sin(f / 9) * 6},${1000 + Math.sin(f / 7) * 5})`} opacity={ease(f, bAt(30) - 8, 10)}>
+        <g transform={`translate(${750 + Math.sin(f / 9) * 6},${860 + Math.sin(f / 7) * 5})`} opacity={ease(f, bAt(30) - 8, 10)}>
           <Glyph kind="none" s={1.2} f={f} />
           <path d={`M10,40 Q${30 + Math.sin(f / 4) * 10},${80} ${40},${120}`} fill="none" stroke={C.navy} strokeWidth={6} strokeLinecap="round" />
         </g>
         {/* the hard seam */}
         <rect x={536} y={0} width={8} height={H} fill={C.navy} />
         <Plate text="RULES SET COURSE BY COURSE" y={505} size={30} p={ease(f, 6, 10)} tone="enamel" />
+        <Plate text="PER ADN" y={585} size={24} p={ease(f, 10, 10)} tone="slip" />
         <Motes f={f} op={0.2} />
       </SVG>
     );
@@ -688,7 +707,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
           <rect x={-280} y={-34} width={560} height={64} fill={C.paper} stroke={C.navy} strokeWidth={6} />
           <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={0.5} fill={C.navy}>UAA M.S. IN AI, DATA SCIENCE AND ENGINEERING</text>
         </g>
-        {/* the flood */}
+        {/* the flood: the whole hall goes peach-white, never amber */}
+        <rect data-band="ok" width={W} height={H} fill={C.peach} opacity={flood * 0.3 * (1 - through)} style={{mixBlendMode: 'screen'}} />
         <g opacity={flood * (1 - through * 0.6)} style={{mixBlendMode: 'screen'}}>
           <path d={`M${540 - 80 * k},${FLOOR - 400 * k} L${-200},${H} L${1280},${H} L${540 + 80 * k},${FLOOR - 400 * k} Z`} fill={C.peach} opacity={0.5} />
           <ellipse cx={540} cy={FLOOR - 200 * k} rx={300 * k} ry={420 * k} fill={C.peachDk} opacity={0.28} />
@@ -734,8 +754,8 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
           <circle cx={200} cy={0} r={42} fill="none" stroke={C.navy} strokeWidth={22} />
           <circle cx={200} cy={0} r={42} fill="none" stroke={C.brass} strokeWidth={11} />
         </g>
-        <Plate text="RULES SET COURSE BY COURSE" y={540} size={30} p={ease(f, 8, 10) * (1 - ease(f, bAt(37), 8))} tone="enamel" />
-        <Plate text="ONE RULE" x={540} y={760} size={44} p={ease(f, bAt(37) + 6, 10)} tone="ink" />
+        <Plate text="RULES SET COURSE BY COURSE" y={540} size={30} p={ease(f, 8, 10)} tone="enamel" />
+        <Plate text="PER ADN" y={620} size={24} p={ease(f, 12, 10)} tone="slip" />
         {keyL > 0.9 && keyBack < 0.1 && <ImpactStar cx={340} cy={1110} r={34} color="#FFFFFF" />}
         <NearBench cam={f * 0.3} y={1590} />
         <Motes f={f} />
@@ -789,9 +809,9 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
         <rect x={0} y={0} width={W} height={H} fill={C.wood} />
         {Array.from({length: 9}, (_, i) => <path key={i} d={`M0,${i * 230 + 60} C300,${i * 230 + 40} 700,${i * 230 + 90} 1080,${i * 230 + 70}`} fill="none" stroke={C.woodHi} strokeWidth={3} opacity={0.5} />)}
         <path d={`M0,0 L${W},0 L${W},${H} L0,${H} Z`} fill="#F4FFF8" opacity={0.06} />
-        <g transform={`translate(540,900)`}>
+        <g transform={`translate(640,900)`}>
           <ContactShadow cx={0} cy={200} rx={330} ry={26} opacity={0.4} blur={12} />
-          <Folder x={0} y={0} s={1.15} tape={0} open={open} glyph />
+          <Folder x={0} y={0} s={1.0} tape={0} open={open} glyph />
         </g>
         {/* the REGENTS · NOVEMBER plate laid on the table */}
         <g transform={`translate(540,${lerp(1500, 540, ease(f, bAt(40), 16))})`} opacity={ease(f, bAt(40), 8)}>
@@ -800,6 +820,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
           <rect x={-288} y={-30} width={576} height={60} fill={C.paper} stroke={C.navy} strokeWidth={2.5} />
           <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={2} fill={C.navy}>REGENTS · NOVEMBER</text>
         </g>
+        <Plate text="PER ADN" x={540} y={640} size={24} p={ease(f, bAt(40) + 12, 10)} tone="slip" />
         {/* the scroll with the coral glyph, landing unrolled across the folder */}
         {scroll > 0.02 && (
           <g transform="translate(540,900)">
@@ -848,15 +869,17 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
         <DoorRow f={f} cam={cam} k={k} floorY={FLOOR} n={8} opts={(i) => ({glyph: VERDICTS[i], flip: 1, state: 'ajar', swing: 0.1 + 0.03 * Math.sin(f / 20 + i), lamp: 1})} />
         <HandbookPlate x={540} y={520} f={f} lines={['DEVICES NOT AUTHORIZED', 'BY THE FACULTY MEMBER']} size={30} tab="UAA STUDENT HANDBOOK" dashed={0.6 + 0.4 * Math.abs(Math.sin(f / 9))} p={1} drop={1} />
         {/* the wide banner glyph and the row of small signs, lowered on chains */}
-        <g opacity={opts}>
-          <g transform={`translate(300,${lerp(-200, 740, land(f, bAt(45), 30))})`}>
-            {[-90, 90].map((rx) => <line key={rx} x1={rx} y1={-900} x2={rx} y2={-50} stroke={C.navy} strokeWidth={6} />)}
+        <g opacity={opts * (1 - clamp01((f - bAt(47) + 10) / 14))}>
+          <g transform={`translate(300,${lerp(-200, 860, land(f, bAt(45), 30))})`}>
+            {[-90, 90].map((rx) => <line key={rx} x1={rx} y1={-220} x2={rx} y2={-50} stroke={C.navy} strokeWidth={6} />)}
+            <rect x={-130} y={-236} width={260} height={18} rx={6} fill={C.brass} stroke={C.navy} strokeWidth={5} />
             <rect x={-190 + 8} y={-60 + 10} width={380} height={140} fill="#000" opacity={0.22} />
             <rect x={-190} y={-60} width={380} height={140} rx={12} fill={C.paper} stroke={C.navy} strokeWidth={8} />
             <g transform="translate(0,10)"><Glyph kind="none" s={1.5} f={f} /></g>
           </g>
-          <g transform={`translate(780,${lerp(-200, 740, land(f, bAt(45) + 6, 30))})`}>
-            {[-130, 130].map((rx) => <line key={rx} x1={rx} y1={-900} x2={rx} y2={-50} stroke={C.navy} strokeWidth={6} />)}
+          <g transform={`translate(780,${lerp(-200, 860, land(f, bAt(45) + 6, 30))})`}>
+            {[-130, 130].map((rx) => <line key={rx} x1={rx} y1={-220} x2={rx} y2={-50} stroke={C.navy} strokeWidth={6} />)}
+            <rect x={-190} y={-236} width={380} height={18} rx={6} fill={C.brass} stroke={C.navy} strokeWidth={5} />
             {[-130, -43, 43, 130].map((sx, i) => (
               <g key={i} transform={`translate(${sx},0) rotate(${Math.sin(f / 13 + i) * 2})`}>
                 <rect x={-36} y={-50} width={72} height={100} rx={10} fill={C.paper} stroke={C.navy} strokeWidth={5} />
@@ -865,10 +888,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
             ))}
           </g>
         </g>
-        <Plate text="ONE DEFAULT" x={300} y={900} size={30} p={ease(f, bAt(45) + 18, 10)} tone="ink" />
-        <Plate text="EACH FACULTY MEMBER" x={780} y={900} size={26} p={ease(f, bAt(46), 10)} tone="ink" />
+        <Plate text="ONE DEFAULT" x={300} y={1010} size={30} p={ease(f, bAt(45) + 18, 10)} tone="ink" />
+        <Plate text="EACH FACULTY MEMBER" x={780} y={1010} size={26} p={ease(f, bAt(46), 10)} tone="ink" />
         {f >= bAt(46) - 6 && (
-          <g transform={`translate(${540 + 160 * Math.sin((f - bAt(46)) / 14)},${1000})`} opacity={ease(f, bAt(46) - 6, 10)}>
+          <g transform={`translate(${540 + 160 * Math.sin((f - bAt(46)) / 14)},${1100})`} opacity={ease(f, bAt(46) - 6, 10)}>
             <Hand x={0} y={160} rot={-8} s={0.7} curl={0.4} />
             <rect x={-6} y={-50} width={12} height={150} rx={5} fill={C.navy} stroke={C.paper} strokeWidth={2} transform="rotate(8)" />
           </g>
@@ -879,6 +902,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
             <rect x={470} y={470} width={140} height={60} rx={8} fill="none" stroke={C.paper} strokeWidth={6} strokeDasharray="14 9" />
           </g>
         )}
+        {/* the Raven, a second appearance: it settles on the plate's top edge and watches the empty box */}
+        <g transform={`translate(${lerp(1250, 870, ease(f, 20, 40))},${lerp(300, 410, ease(f, 20, 40))})`} opacity={1 - off}>
+          <Raven x={0} y={0} scale={0.7} f={f} facing={-1} mode={ease(f, 20, 40) < 0.95 ? 'fly' : 'perch'} />
+        </g>
         <NearBench cam={cam} />
         <Motes f={f} />
       </SVG>
