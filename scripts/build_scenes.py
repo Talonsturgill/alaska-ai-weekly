@@ -319,9 +319,14 @@ def _merge_by_sense(caps, max_chars=68):
     floor (characters / 15 seconds). Start times are untouched, so sync is exactly as aligned.
     """
     out = []
+    _sp = os.path.join(OUT, "vo_script.json")
+    _force = [x.lower() for x in ((json.load(open(_sp)).get("caption_split_after") or []) if os.path.exists(_sp) else [])]
     for c in caps:
         if out:
             prev = out[-1]
+            if any(prev["text"].lower().rstrip().endswith(f) for f in _force):
+                out.append(dict(c))
+                continue
             same_line = prev.get("seg") == c.get("seg")
             t = prev["text"].rstrip()
             joined = t + " " + c["text"].lstrip()
@@ -362,9 +367,14 @@ def _cards_from_words(caps, max_chars=68):
     for w in words:
         by_seg.setdefault(w.get("seg"), []).append(w)
     fix = {}
+    force = []
     sp = os.path.join(OUT, "vo_script.json")
     if os.path.exists(sp):
-        fix = json.load(open(sp)).get("caption_fixups", {}) or {}
+        _vs = json.load(open(sp))
+        fix = _vs.get("caption_fixups", {}) or {}
+        # a run may name a phrase a card MUST break after (2026-10-05: a 130-character sentence
+        # whose only clause boundary sat past the 68-character half limit)
+        force = [x.lower() for x in (_vs.get("caption_split_after") or [])]
     def show(ws):
         t = " ".join(x["w"] for x in ws)
         for k, v in fix.items():
@@ -392,13 +402,14 @@ def _cards_from_words(caps, max_chars=68):
             units.append((seg, cur))
     for seg, ws in units:
         full = show(ws)
-        if len(full) <= max_chars:
+        if len(full) <= max_chars and not any(f in full.lower() for f in force):
             out.append({"text": full, "start": ws[0]["s"], "end": ws[-1]["e"], "seg": seg})
             continue
         best, cost = None, 1e9
         for k in range(2, len(ws) - 1):
             a, b = show(ws[:k]), show(ws[k:])
-            if len(a) > max_chars or len(b) > max_chars or inside_fix(ws, k):
+            _forced = any(a.lower().endswith(f) for f in force)
+            if (not _forced and (len(a) > max_chars or len(b) > max_chars)) or inside_fix(ws, k):
                 continue
             last = ws[k - 1]["w"].lower().strip(",.?!")
             c = abs(len(a) - len(b)) * 0.5
@@ -408,6 +419,8 @@ def _cards_from_words(caps, max_chars=68):
                 c -= 12
             if last in _SPLIT_BAD_END:
                 c += 60
+            if any(show(ws[:k]).lower().endswith(f) for f in force):
+                c -= 500
             if c < cost:
                 best, cost = k, c
         if best is None:

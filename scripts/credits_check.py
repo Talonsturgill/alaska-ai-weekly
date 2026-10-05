@@ -237,7 +237,13 @@ def _ocr_frames(paths):
 # all, and no normalization turns nothing into something. It only stops the gate reporting a
 # credit as absent when the recognizer, not the film, is what failed. Widening this set
 # requires the same bisection, written down here next to the rest.
-_OCR_CONFUSIONS = (('IH', 'TH'),)
+#
+# SECOND DIGRAPH (measured 2026-10-05). Tesseract returned 'LICENSED UNDER CC BY 4.8' for the
+# cropped credit frame at 114.7s and 119.7s of the 10-05 film and the correct '4.0' at 124.7s,
+# while a full-frame pass on the same pixels read '4.0' every time. The film's mono face draws a
+# dotted zero that this engine reads as an 8 at the crop's scale. The fold is the licence digits
+# only (CC BY 4.0 / 4.8), so it cannot excuse a missing or truncated licence line.
+_OCR_CONFUSIONS = (('IH', 'TH'), ('CCBY48', 'CCBY40'))
 
 
 def _fold(s):

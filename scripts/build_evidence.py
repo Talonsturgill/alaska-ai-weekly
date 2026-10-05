@@ -44,59 +44,28 @@ EV = os.path.join(REPO, "out", "evidence")
 # the FILM: "the named signature move does not execute", on a shove that executes fine
 # 1.5s before the strip was taken. An anchor that photographs the wrong moment does not
 # produce a softer score, it produces a false finding, which is more expensive.
-MOVE_RUN_DATE = "2026-10-03"
+MOVE_RUN_DATE = "2026-10-05"
 LINE_START_ACTIONS = {}
 # 2026-10-03 "The Choosing Isn't": one sample per board beat. Slams and stamps are sampled at their contact (+0.35 s). Contacts at +0.2s, scale reveals and camera
 # moves at +0.45s, settles after an overshoot (stamps, slams, the count landing) at +0.6s.
-MOVES = [
-    ('lead_slot_sits_empty_under_a_shut_hatch', 1, 0.45),
-    ('story_stub_drops_out_of_the_slamming_hat', 2, 0.35),
-    ('price_tag_swings_out_on_the_slot_frame_a', 3, 0.45),
-    ('walter_the_typewriter_press_blinks_its_s', 4, 0.2),
-    ('walter_tips_back_and_slams_down_on_its_b', 5, 0.35),
-    ('first_sheet_curls_out_of_walter_s_mouth', 6, 0.2),
-    ('record_plates_drop_into_walter_s_funnel', 7, 0.2),
-    ('walter_slams_its_carriage_and_whips_prin', 8, 0.35),
-    ('printed_stories_avalanche_out_of_walter', 9, 0.2),
-    ('the_ream_column_rises_past_the_camera_ni', 10, 0.45),
-    ('alaska_news_says_stamp_slams_onto_the_to', 11, 0.35),
-    ('monitor_boots_a_chat_window_that_types_i', 12, 0.2),
-    ('chat_window_slides_walter_s_reply_bubble', 13, 0.2),
-    ('boxed_quote_slams_onto_the_screen_and_sh', 14, 0.35),
-    ('sieve_shakes_and_lets_wheat_and_chaff_fa', 15, 0.2),
-    ('chat_window_shows_walter_s_typing_dots_b', 16, 0.2),
-    ('walter_slams_its_carriage_and_prints_its', 17, 0.35),
-    ('three_tier_rack_fills_every_tier_with_id', 18, 0.45),
-    ('ems_headline_slams_into_the_lead_window', 19, 0.35),
-    ('dashed_empty_box_draws_itself_under_the', 20, 0.2),
-    ('official_seal_stamps_pending_onto_the_he', 21, 0.35),
-    ('dashed_box_swells_as_the_camera_pushes_u', 22, 0.45),
-    ('unnamed_medic_reads_the_story_on_a_phone', 23, 0.2),
-    ('medic_shrugs_palms_up_at_the_phone', 24, 0.2),
-    ('walter_s_small_face_on_the_phone_lowers', 25, 0.2),
-    ('medic_pockets_the_phone_and_turns_back_t', 26, 0.2),
-    ('council_chamber_cranes_down_onto_a_press', 27, 0.45),
-    ('empty_chair_rocks_as_the_phone_rings_lou', 28, 0.2),
-    ('stamps_slam_no_calls_no_meetings_no_inte', 29, 0.35),
-    ('unnamed_reporter_walks_in_sits_in_the_em', 30, 0.2),
-    ('reporter_scratches_a_note_in_a_notebook', 31, 0.2),
-    ('stories_on_a_belt_ride_past_a_no_human_b', 32, 0.2),
-    ('checked_after_stamp_drops_in_from_off_fr', 33, 0.2),
-    ('new_unchecked_story_slides_on_top_of_the', 34, 0.35),
-    ('moose_buries_its_head_deeper_as_sand_spi', 35, 0.2),
-    ('quote_plaque_slams_down_beside_the_moose', 36, 0.35),
-    ('moose_pulls_its_head_out_as_a_sheet_land', 37, 0.35),
-    ('fat_amber_arrow_swings_off_walter_s_endl', 38, 0.45),
-    ('price_tag_flips_over_on_the_slot_as_a_ha', 39, 0.35),
-    ('alaska_news_masthead_takes_two_hanging_p', 40, 0.2),
-    ('plate_chains_swing_and_settle_level_as_w', 41, 0.45),
-    ('walter_s_screen_prints_its_own_answer_as', 42, 0.35),
-    ('walter_turns_its_gaze_from_the_masthead', 43, 0.2),
-    ('one_sheet_rises_out_of_the_whole_pile_to', 44, 0.45),
-    ('the_medic_steps_in_under_the_slot_and_re', 45, 0.2),
-    ('the_pile_settles_with_a_soft_thud_as_the', 46, 0.2),
-    ('lead_slot_fills_its_dashed_box_with_the', 47, 0.35),
-]
+# 2026-10-05 "Every Door": one sample per board beat, DERIVED from the board so the names can't
+# go stale (slug of the beat's own subject, with its id to keep it unique). Slams and stamps are
+# sampled at their contact (+0.35 s), camera moves and reveals at +0.45 s, the rest at +0.2 s.
+def _slug(text, n=36):
+    import re as _re
+    return _re.sub(r"[^a-z0-9]+", "_", text.lower()).strip("_")[:n].strip("_")
+
+
+def _derive_moves():
+    _b = json.load(open(os.path.join(OUT, "storyboard.json")))
+    out = []
+    for beat in _b["beats"]:
+        peak = 0.35 if beat["sfx"] in ("boom", "stamp", "clank", "thud") else 0.45 if beat["sfx"] in ("whoosh", "riser", "chain") else 0.2
+        out.append((f"{_slug(beat['draw']['subject'])}_{beat['id']}", beat["id"], peak))
+    return out
+
+
+MOVES = _derive_moves()
 
 
 def _spans(rows, film_end):
