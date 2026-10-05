@@ -216,15 +216,18 @@ const FlipBoard: React.FC<{x: number; y: number; s?: number; value: number; clac
 };
 
 /** A faceless hand (stack.tsx HandSil, navy sleeve) used for the tape, the pen and the chalk. */
-const Hand: React.FC<{x: number; y: number; rot?: number; s?: number; curl?: number}> = ({x, y, rot = 0, s = 0.8, curl = 0}) => (
-  <HandSil x={x} y={y} rot={rot} s={s} curl={curl} fill={C.navy} />
-);
+const Hand: React.FC<{x: number; y: number; rot?: number; s?: number; curl?: number}> = ({x, y, rot = 0, s = 0.8, curl = 0}) => {
+  // a held hand still breathes: a slow weight shift, a micro-press and a finger settle
+  const hf = useCurrentFrame();
+  return <HandSil x={x + Math.sin(hf / 21) * 4} y={y + Math.sin(hf / 15) * 5} rot={rot + Math.sin(hf / 19) * 2.2} s={s} curl={clamp01(curl + Math.sin(hf / 13) * 0.07)} fill={C.navy} />;
+};
 
 // --- the regents folder, one object used in S7, S8 and S13 -------------------------------------
 const Folder: React.FC<{x: number; y: number; s?: number; tape?: number; open?: number; glyph?: boolean; rot?: number}> = ({x, y, s = 1, tape = 1, open = 0, glyph = true, rot = 0}) => {
+  const ff = useCurrentFrame();
   const o = clamp01(open);
   return (
-    <g transform={`translate(${x},${y}) rotate(${rot}) scale(${s})`}>
+    <g transform={`translate(${x},${y}) rotate(${rot + Math.sin(ff / 40) * 0.5}) scale(${s * (1 + Math.sin(ff / 28) * 0.006)})`}>
       <rect x={-250 + 14} y={-180 + 18} width={500} height={360} fill="#000" opacity={0.28} />
       {/* the inside leaf */}
       <rect x={-250} y={-180} width={500} height={360} fill={C.slip} stroke={C.navy} strokeWidth={8} />
@@ -314,7 +317,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
     picture = (
       <SVG>
         <HallWall f={f} cam={f * 0.5} floorY={1560} id="s2" tubes />
-        <HandbookPlate x={540} y={760} f={f} lines={['DEVICES NOT AUTHORIZED', 'BY THE FACULTY MEMBER']} tab="UAA STUDENT HANDBOOK" size={50}
+        <HandbookPlate x={540} y={760} f={f} lines={['"DEVICES NOT AUTHORIZED', 'BY THE FACULTY MEMBER"']} tab="UAA STUDENT HANDBOOK" size={48}
           p={ease(f, 0, 6)} drop={land(f, 0, 22)} dashed={ease(f, 0, 12)} />
         {/* the first door's sign rectangle, growing out into the plate's box (match cut from S1) */}
         {grow < 0.98 && (
@@ -492,13 +495,14 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
       <SVG>
         <defs>
           <pattern id="dotfield" x="40" y="250" width={CELL} height={CELL} patternUnits="userSpaceOnUse">
-            <circle cx={CELL / 2} cy={CELL / 2} r={3.1} fill="none" stroke={C.locker} strokeWidth={1.3} />
+            <circle cx={CELL / 2} cy={CELL / 2} r={3.3} fill="none" stroke={C.lockerDk} strokeWidth={1.5} />
           </pattern>
         </defs>
         <rect width={W} height={H} fill={C.wall} />
         <g transform={`translate(540,900) scale(${kk}) translate(-540,-900)`}>
           <rect data-band="ok" x={40} y={250} width={1000} height={1400} fill="url(#dotfield)" opacity={ease(f, 0, 8)} />
           <rect data-band="ok" x={40} y={250} width={1000} height={1400} fill="none" stroke={C.locker} strokeWidth={2.5 / kk} opacity={clamp01((1.9 - kk) * 1.2)} />
+          <rect x={OX - 10} y={OY - 10} width={15 * CELL + 20} height={10 * CELL + 20} rx={6} fill="none" stroke={C.coral} strokeWidth={3 / kk} opacity={clamp01((2.4 - kk) * 1.5)} />
           {Array.from({length: 150}, (_, i) => {
             const cc = i % 15, rr = Math.floor(i / 15);
             const x = OX + cc * CELL + CELL / 2, y = OY + rr * CELL + CELL / 2;
@@ -524,7 +528,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
         <Plate text="1.1% OF 10,500+ STUDENTS" y={600} size={40} p={ease(f, bAt(22) + 8, 12)} tone="ink" />
         <Plate text="PER ADN" y={680} size={26} p={ease(f, bAt(22) + 14, 10)} tone="slip" />
         <line x1={540} y1={712} x2={540} y2={840} stroke={C.navy} strokeWidth={4} strokeDasharray="8 6" opacity={ease(f, bAt(22) + 16, 12)} />
-        <g opacity={0.16} transform={`translate(${lerp(-500, 1500, (f % 190) / 190)},0) skewX(-18)`}><rect data-band="ok" x={0} y={0} width={160} height={H} fill="#F4FFF8" /></g>
+        <g opacity={0.3} transform={`translate(${lerp(-500, 1500, (f % 190) / 190)},0) skewX(-18)`}><rect data-band="ok" x={0} y={0} width={200} height={H} fill="#F4FFF8" /></g>
         <Motes f={f} op={0.15} />
       </SVG>
     );
@@ -607,7 +611,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
   } else if (n === 9) {
     // THE WRITING DOOR. Split frame: a big ban sign on the left wall and the open writing door on
     // the right where the AI glyph fills a blank essay while the pencil lies idle.
-    const writing = clamp01((f - bAt(30)) / 100);
+    const writing = clamp01((f - bAt(30)) / 70);
     const sw = ease(f, 0, 24);
     picture = (
       <SVG>
@@ -647,7 +651,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
             <rect x={-150 + 8} y={10} width={300} height={240} fill="#000" opacity={0.2} />
             <rect x={-150} y={0} width={300} height={240} fill={C.paper} stroke={C.navy} strokeWidth={5} />
             {Array.from({length: 7}, (_, i) => (
-              <rect key={i} x={-120} y={26 + i * 30} width={Math.max(0, Math.min(240, (writing * 7 - i) * 240))} height={7} fill={C.navy} opacity={0.7} />
+              <rect key={i} x={-120} y={26 + i * 30} width={Math.max(0, Math.min(240, (writing * 7 - i) * 240))} height={10} fill={C.navy} opacity={0.9} />
             ))}
           </g>
           <g transform={`translate(160,-6) rotate(${-14 + Math.sin(f / 30) * 3})`}>
@@ -673,10 +677,10 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
     // THE LAST DOOR. The camera pushes down the hall to the far door, its plate hangs, the door
     // cracks and peach light widens line by line, and at "There, AI is the subject" it swings open
     // and the camera pushes through to the lecture board.
-    const push = easeIO(f, 0, 90);
+    const push = easeIO(f, 0, 56);
     const k = lerp(1.25, 2.3, push);
     const cam = lerp(2200, doorX(7), push);
-    const crack = f >= bAt(33) ? 0.18 + 0.22 * ease(f, bAt(33), 100) : 0;
+    const crack = f >= bAt(32) + 26 ? 0.14 + 0.3 * ease(f, bAt(32) + 26, 120) : 0;
     const open = f >= bAt(34) ? 0.4 + 0.6 * easeIO(f, bAt(34), 20) : crack;
     flood = clamp01(open * 1.3);
     const through = easeIO(f, bAt(34) + 30, 50);
@@ -700,12 +704,12 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
             </g>
           ),
         } : {glyph: VERDICTS[i], flip: 1, lamp: 1})} />
-        {/* the master's program plate, hung on two chains over the far door */}
-        <g transform={`translate(540,${FLOOR - 560 * k})`} opacity={ease(f, bAt(33) - 6, 12) * (1 - through)}>
-          {[-230, 230].map((rx) => <line key={rx} x1={rx} y1={-400} x2={rx} y2={-30} stroke={C.navy} strokeWidth={6} />)}
-          <rect x={-280 + 8} y={-34 + 10} width={560} height={64} fill="#000" opacity={0.22} />
-          <rect x={-280} y={-34} width={560} height={64} fill={C.paper} stroke={C.navy} strokeWidth={6} />
-          <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={0.5} fill={C.navy}>UAA M.S. IN AI, DATA SCIENCE AND ENGINEERING</text>
+        {/* the master's program plate, held in the safe area on two chains (c14) */}
+        <g transform="translate(540,520)" opacity={ease(f, bAt(33) - 6, 12) * (1 - through)}>
+          {[-250, 250].map((rx) => <line key={rx} x1={rx} y1={-520} x2={rx} y2={-30} stroke={C.navy} strokeWidth={6} />)}
+          <rect x={-310 + 8} y={-34 + 10} width={620} height={64} fill="#000" opacity={0.22} />
+          <rect x={-310} y={-34} width={620} height={64} fill={C.paper} stroke={C.navy} strokeWidth={6} />
+          <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={0.5} fill={C.navy}>UAA M.S. IN AI, DATA SCIENCE AND ENGINEERING</text>
         </g>
         {/* the flood: the whole hall goes peach-white, never amber */}
         <rect data-band="ok" width={W} height={H} fill={C.peach} opacity={flood * 0.3 * (1 - through)} style={{mixBlendMode: 'screen'}} />
@@ -867,7 +871,7 @@ const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks
       <SVG>
         <HallWall f={f} cam={cam} floorY={FLOOR} id="s14" window flicker={1} />
         <DoorRow f={f} cam={cam} k={k} floorY={FLOOR} n={8} opts={(i) => ({glyph: VERDICTS[i], flip: 1, state: 'ajar', swing: 0.1 + 0.03 * Math.sin(f / 20 + i), lamp: 1})} />
-        <HandbookPlate x={540} y={520} f={f} lines={['DEVICES NOT AUTHORIZED', 'BY THE FACULTY MEMBER']} size={30} tab="UAA STUDENT HANDBOOK" dashed={0.6 + 0.4 * Math.abs(Math.sin(f / 9))} p={1} drop={1} />
+        <HandbookPlate x={540} y={520} f={f} lines={['"DEVICES NOT AUTHORIZED', 'BY THE FACULTY MEMBER"']} size={30} tab="UAA STUDENT HANDBOOK" dashed={0.6 + 0.4 * Math.abs(Math.sin(f / 9))} p={1} drop={1} />
         {/* the wide banner glyph and the row of small signs, lowered on chains */}
         <g opacity={opts * (1 - clamp01((f - bAt(47) + 10) / 14))}>
           <g transform={`translate(300,${lerp(-200, 860, land(f, bAt(45), 30))})`}>

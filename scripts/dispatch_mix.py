@@ -187,7 +187,7 @@ BED_ARC = [
 # October 3rd: newsroom room tone, a soft daylight air. The filtered noise stays
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
-AMB_LEVEL = 0.010
+AMB_LEVEL = 0.018
 
 
 def _assert_per_run_data_covers_the_film():
