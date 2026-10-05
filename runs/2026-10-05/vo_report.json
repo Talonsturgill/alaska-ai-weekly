@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.981,
+    "heard": "At the University of Alaska, there's no single AI rule. It hangs on the classroom door. UAA, its Anchorage campus, bars devices not authorized by the faculty member. It never says AI. So, faculty set rules course by course, the Daily News reports. Watch the last door. A UAA report via the Daily News says 119 of 150 students cited for academic misconduct used AI. It says AI cases have taken over the majority of the conduct offices work and AI plagiarism rose 73% last year. Those 119 are 1.1% of more than 10,500 students. The citation isn't a count of use. The Regents, the governing board, have a draft of AI principles. Stephanie Erickson presented that draft. She told the Daily News, we need to be deliberate with how we want to engage with AI. The best case for the doors? In a writing course, AI can let students skip the learning. The last door, UAA's master's program in AI, data science and engineering. There, AI is the subject. Same tool, two doors, opposite answers. One rule would fit in either. Students still need to know which door they're at. In November, Regents will consider guiding principles. That's a place to start, not a rule. Should the university set one default for authorized AI use or leave it to each faculty member?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.038,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 6.46,
+        "voiced_frac": 0.47,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 114.04,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 114.04,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (2 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.981,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.989,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.987,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

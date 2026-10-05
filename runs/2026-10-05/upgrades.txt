@@ -1,0 +1,6 @@
+dispatch_mix, build_evidence and build_scenes now derive per-run sfx, evidence moves and caption splits from the board
+vo_claims_check cadence no longer counts an outlet name as a repeated attribution
+credits_check folds the known OCR digit misread
+New library family lib/corridor.tsx (ClassroomDoor, Glyph, HandbookPlate, HallWall), registered and indexed
+DISPATCH_STANDARD gained four findings that were knowable in advance (crop-safe plates, single-outlet attribution, outlet name is not a cadence, board-derived tables)
+Queued for the machine pass, 3 items (per-run-tables-from-board is a repeat offender, repeat 1)

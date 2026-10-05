@@ -1,0 +1,81 @@
+{
+ "run_date": "2026-10-05",
+ "palette": {
+  "sky": "#BFE3D0",
+  "ground": "#9AA79C",
+  "hero": "#5B4B7A",
+  "accent": "#FF5C4D",
+  "shadow": "#1B2133",
+  "support": {
+   "locker_blue": "#6F8FA8",
+   "door_plum": "#5B4B7A",
+   "door_plum_dark": "#3E3257",
+   "ink": "#1B2133",
+   "slip_butter": "#F6E7A1",
+   "floor_vct": "#9AA79C",
+   "nickel": "#A9B3B8",
+   "nickel_hi": "#E6ECEE",
+   "enamel": "#F7F7F2",
+   "flood_key": "#FFE2C8",
+   "flood_falloff": "#FFB9A0",
+   "wood_plum_brown": "#4A3A44",
+   "lab_board": "#2B3A4A"
+  },
+  "mood": "a fluorescent institutional hallway at mid-day, humming, a little comic, never ominous",
+  "why": "The story is about a rule that lives on doors in a university hallway, so the world is seafoam corridor walls, dusty-blue lockers and painted PLUM doors under cool tube light, over a speckled gray-green VCT floor that carries reflections. Hero color is the door plum. ONE hot coral accent has ONE meaning: an AI rule being applied or counted (a glyph on a sign, a citation slip under one, the +73% AI bar, the coral sparks). Sign plates are neutral enamel #F7F7F2 so the coral glyph reads at 0.28 scale, and nothing else in the film is coral. Diverges from 10-03 (newsprint cream, spruce, kraft, amber accent) and 10-02 (night brass, pearl, magenta): no cream, no kraft, no brass, no amber. Hardware is brushed nickel. The one lit event, the last door opening, floods the hall with pale peach-white #FFE2C8 falling off to #FFB9A0, tied to the coral family, never amber and never more saturated than the coral glyph."
+ },
+ "light": {
+  "time_of_day": "mid-day, interior",
+  "direction": "overhead fluorescent troughs straight down plus a cool clerestory window wash at the far end",
+  "key": "cool-white overhead tube light with a slight flicker on one panel per shot",
+  "fill": "seafoam wall bounce",
+  "rim": "pale mint rim on door edges from the tube line",
+  "depth": "one-point-perspective corridor in four planes (ceiling tubes, wall and locker band, door row, linoleum floor with reflections), haze toward the far end, lib/lighting DayGrade cool. One-point perspective is used only in the establishing and closing corridor views if at all; S3 is a PARALLEL TRUCK along one wall, the far door is reached by the truck, not a vanishing point.",
+  "why": "A university hallway is lit by tubes, not sun. Flat cool light keeps the film clinical and fair and lets the one warm event read as an event.",
+  "argument": "Every door is lit the same, because the rule differs, not the light. The far door is dark and an invitation, not a threat, until it opens at 85.3 s and floods the hall peach-white (#FFE2C8 to #FFB9A0). No other shot has a warm pool. The regents table has a COOL pendant lamp.",
+  "per_set": {
+   "corridor": "overhead tube troughs key straight down, window wash fill from the clerestory, mint rim on door edges. Planes (slowest to fastest): far wall and bulletin boards 0.55, locker band 0.55, door row 1.0, floor reflections 1.0, near bench or foreground frame 1.35",
+   "handbook-plate": "key from the upper left through a tube trough, fill is seafoam wall bounce, rim is a nickel edge highlight on the plate. Planes: ceiling and rods, the plate, a blurred door row behind",
+   "locker-grid": "even front light on the locker faces, slips cast tiny drop shadows to the lower right, fill from the wall. Planes: locker faces, falling slips, a near row of slips out of focus",
+   "report-desk": "cool desk key from upper left, hard soft-edge shadow of the stamp on the folder, fill from the wall. Planes: wall bar chart, desk with folder, near stamp arm",
+   "locker-field": "top-down even light, dots in a dusty-blue field, the coral patch the only saturation. Planes: dot field, the coral patch, a tube trough passing overhead",
+   "regents-table": "a COOL pendant lamp key from above in a cone, fill from the dark wood, no warm pool. Planes: far wall, table with folder and nameplate, near lamp cord and chair back",
+   "classroom": "window light from the right, a tube trough overhead, fill from the wall. Planes: window wall, desk and sheet, near chair back",
+   "lab": "warm flood #FFE2C8 spilling from behind the door as the one key, cool tube fill, mint rim lost to the glow. Planes: far lab wall with the board, bench, doorway spill on the floor"
+  }
+ },
+ "shape_language": {
+  "contrast": "ONE long horizontal bar against many vertical slabs. The HandbookPlate is the single hard horizontal bar across the top of the hall, a rule that is the same everywhere. The DOORS are tall vertical slabs, many, each with the same round coral glyph and a different navy verdict mark on its sign. The corridor is native to the idea: one bar over, many slabs under.",
+  "why": "The thesis is a contrast between one written sentence (hard, the same everywhere) and many door rules (soft, different at every door).",
+  "doors": "Doors stay slabs with hard corners; only the glyph slot is rounded."
+ },
+ "casting": {
+  "hero": "ClassroomDoor (NET-NEW, lib/corridor.tsx): a hinged slab door with states shut, ajar (a crack of spill), open (foreshortened swing), dark and glow, a transom that becomes a pair of eyes, a sign slot with secondary sway and a slap-on flip, and a lamp. Why not compose it from the shelf: the 10-02 STOCK ASSESSMENT door was a stage3d plane plus BoxLabel with no hinge, no spill state and no sign slot, and this film repeats the door 20+ times with a different sign each, so the door has to be one parametric object. The transom eyes state is friendly only (round, blinking, tube light in them) and never appears on the dark far door before it opens.",
+  "net_new_support": "All in lib/corridor.tsx: HandbookPlate (the long bar with the dashed empty box, S2 S14), Glyph (ONE coral ai glyph: a ROUND head with two eyes, no antenna, never a robot cliche, no brain, no sparkle, plus four NAVY verdict marks beside it: strike, tick, question, blank), HallWall (the corridor with parallax planes, S1 S3 S8 S11 S12 S14), plus episode-local pieces in Ep1005.tsx that are NOT shelf candidates unless reused: LockerBank (S4 S6), FlipBoard (a wall-mounted flip-number tally with a hard mechanical clack, replacing the 10-02 brass TallyCounter), Magnifier, ChainBanner, BigKey, ManilaFolder with tape, BoardroomTable, LectureBoard, ReportBar, DotField, ChalkLine, FloorArrows.",
+  "shelf": [
+   "Raven (fauna.tsx) pokes through the dashed box in S2",
+   "Character rig (Character.tsx) for ONE generic unnamed student in S8 and S12, never mocked",
+   "StatBurst, Stamp (kit.tsx) for 119 OF 150, 1.1% and the report stamp",
+   "HandSil (stack.tsx) as the faceless hand that smooths the tape and holds the pen"
+  ],
+  "named_people_rule": "Stephanie Erickson is a nameplate only, no face, no body. Students are generic and never mocked, and no slip is ever drawn as a person. The Moose and the instructor silhouette are CUT. The AI is a round pictogram glyph on a sign, never a server box, never Otolith or NewsAgent.",
+  "silhouette_spec": "A door must read as a door at 0.28 scale: a tall plum slab with a pale transom, an enamel #F7F7F2 sign plate at eye height carrying the SAME coral round glyph on every door (only the navy verdict mark beside it differs), and a lit nickel lamp over the frame. The HandbookPlate must read as ONE long horizontal bar across the top third with a visibly empty dashed rectangle in it. The ai glyph is a round head with two eyes and no antenna: not a robot, not a brain, not a sparkle."
+ },
+ "motion_language": {
+  "world": "ceiling tubes flicker, a faint hum shimmer crosses the linoleum reflections, dust motes cross the transoms; one door always creaks",
+  "hero_moves": [
+   "the door row's sign pictograms slap on with a thunk as the camera dollies past, each a different navy verdict mark beside the same coral glyph",
+   "the HandbookPlate drops with a settle and the magnifier slides the sentence",
+   "119 of 150 slips flip coral as the counter clicks and then the counter sweats at 119",
+   "the far door opens and warm light floods the hall"
+  ],
+  "principles": "anticipation before every slap, overshoot and decaying settle on landings, eases for travel, springs only for pops, secondary sway on every hanging sign, the whole frame never kicks except a flagged beat. Mood is never ominous: the dark far door is an invitation, expectant."
+ },
+ "composition": {
+  "focal_hierarchy": "the door sign glyph or the HandbookPlate is always the brightest, best finished thing in frame; plates sit upper third clear of the doors",
+  "negative_space": "the dashed empty box in the handbook plate is the negative-space beat at the open and at the button",
+  "safe_area": "hero action and every plate inside y 420 to 1500 for the 1:1 square; ceiling tubes above, a near plane of lockers and floor below, captions from y 1330",
+  "signature_shot": "S3, the Door Dolly, 8.6 s (16.88 to 25.48): a PARALLEL TRUCK along one wall (not one-point perspective), the camera sliding right past eight doors, planes at relative speeds far wall 0.55, door row 1.0, floor reflections 1.0, near bench 1.35. Each sign flips as its door crosses x 900. The row ends on one dark shut door that the truck settles on and holds 0.6 s, so the far door is reached by the truck itself, not a vanishing point."
+ },
+ "craft_advance": "Two small named techniques, both local: (1) floor reflections, tube reflections sliding on the VCT at the floor's own speed with one flickering tube; (2) the S6 pullback from 119 coral slips to a 10,500-dot field through a single SVG pattern fill so the 10,500 are one fill and not 10,500 elements. Neither is an engine system."
+}

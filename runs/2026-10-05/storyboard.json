@@ -1,0 +1,1683 @@
+{
+ "run_date": "2026-10-05",
+ "slug": "every-door",
+ "title": "Every Door",
+ "concept": "At UAA the AI rule hangs on each classroom door behind one handbook sentence that never says AI, so the film makes the rule a row of doors that all carry the SAME coral AI glyph with a different navy verdict mark at every one, and asks whether November's guiding principles should add one shared default.",
+ "derived_from": "scratch",
+ "engine": "infographic-2.5d",
+ "total_seconds": 114.4,
+ "fingerprint": {
+  "pov": "eye-level-immersive",
+  "motion_vector": "horizontal-traverse",
+  "hero_treatment": "multiplicity-swarm",
+  "layout": "stacked-layers",
+  "register": "editorial-schematic",
+  "camera_strategy": "track-follow",
+  "light_story": "noon-hard",
+  "palette": "friendly fluorescent seafoam corridor, dusty-blue lockers, plum doors, navy ink, a single coral glyph mark that only ever means an AI rule applied or counted, playful and saturated",
+  "metaphor": "a hallway of identical doors where the same AI sign carries a different verdict at every one"
+ },
+ "palette": "friendly fluorescent seafoam corridor, dusty-blue lockers, plum doors, navy ink, a single coral glyph mark that only ever means an AI rule applied or counted, playful and saturated",
+ "divergence_note": "First fluorescent interior in three. 10-03 was daylight newsprint cream and spruce in a newsroom with a vertical rise and an amber accent, 10-02 a night lamplit brass bench in cross-section. This one is a cool seafoam hallway under tube light with plum doors, dusty-blue lockers and nickel hardware, one coral accent that only ever means an AI rule applied or counted, and a camera that travels sideways in parallax past a row of doors instead of rising. The desk and plate inserts of 10-02 are not reused: the report desk, regents table and syllabus page are lit by cool tube and pendant light with no brass, no tally counter and no lamp pool. New hero (ClassroomDoor), new throughline (the coral glyph and its verdict marks), new sets (corridor, handbook plate wall, locker wall and dot field, report desk, boardroom table, writing classroom, lab, syllabus page).",
+ "angle": {
+  "run_date": "2026-10-05",
+  "stance": "curious",
+  "thesis": "At UAA the AI rule lives in each instructor's syllabus, behind one handbook sentence about devices that never mentions AI, so a count of 119 AI cases of 150 measures how often the rule was invoked more than how much students use AI, and November's guiding principles can at best give every syllabus a shared starting point.",
+  "falsifiability": "False if the November document turns out to be a binding systemwide AI conduct rule, if UAA has a separate written AI conduct rule outside the handbook section, or if ADN or the report shows the 119 cases were decided under one named AI standard.",
+  "supporting_facts": [
+   "c6 + c7 no single UA-wide AI rule, the handbook bars devices not authorized by the faculty member and never mentions AI",
+   "c1 + c2 + c8 119 of 150 cited used AI, 1.1% of 10,500+ students, the report says AI cases have taken over the majority",
+   "c4 + c5 regents will consider guiding principles in November, draft language went to them in September"
+  ],
+  "counter_point": "Course by course may be the right design, since AI use that's cheating in a composition course is the assignment in UAA's own graduate AI program (c12). And the numbers are real: AI plagiarism rose 73% last year (c3), and waiting for perfect definitions is the 'just happen to us' failure Erickson names (c9).",
+  "second_movement": "c12 recontextualises the first: the same university teaches AI as a graduate discipline, so the mismatch is inside one institution. The principles will be a shared starting point and still not a rule, and the honest question is whether one default helps or the course-by-course door fits better.",
+  "runner_ups": [
+   {
+    "angle": "Enthusiast: November is the Alaska win",
+    "why_lost": "the facts don't say what the principles contain, so the win is a hope, not a finding; folded in as the counter-point"
+   },
+   {
+    "angle": "Skeptic: the number measures enforcement not use",
+    "why_lost": "strongest on the numbers but implies doubt about a report we can't see; folded in as the 1.1% turn with attribution"
+   }
+  ],
+  "close_question": "When regents take up AI principles in November, should UA set one default for authorized AI use or keep the call with each faculty member?",
+  "challenge_round": "Three proposals converged on the same facts. Challenges: enthusiast's 'Alaska win' asserts what the principles say (unsupported, demoted); skeptic's 'measures enforcement' reads the report's intent (unsupported, softened to 'counts citations'); explainer is the most falsifiable and gives the film a picture (doors and signs). Synthesis: explainer thesis, skeptic's 1.1% turn, enthusiast's graduate-program counterpoint."
+ },
+ "treatment": {
+  "winner": "EXPLAINER",
+  "why": "Cleanest mechanism picture (one sentence over a row of doors, the same glyph with a different verdict at each), a locker-field pullback that makes 1.1% felt without implying innocence, and the fairest Test (two doors, one tool, opposite answers, a key that jams in both).",
+  "grafts": [
+   "COMEDIAN Raven cocking its head at the empty dashed box",
+   "DRAMATIST the slips as the real pressure at full volume and the unnailed hook for the not-a-rule line",
+   "ENTHUSIAST the last door opening onto warm light as the loop payoff"
+  ]
+ },
+ "hook": {
+  "pattern": "bold-claim",
+  "frame1": "A dark hallway of shut doors, one tube ticking, then the tubes clang on and each door lamp blinks.",
+  "headline": "NO SYSTEMWIDE AI RULE",
+  "motion_by_s": 0.9,
+  "loopback": "The tubes click off to the single ticking tube of frame 1, the dashed box is the last thing lit, and the film ends where it began."
+ },
+ "open_loop": {
+  "plant_t": 16.9,
+  "pay_t": 85.3,
+  "what": "The dark shut door at the far end of the row, shown with a coral arrow in the opening wide view at 17 s and held centered at 22 s, opens at 85 s onto UAA's master's program in AI where AI is the subject."
+ },
+ "open_loop_2": {
+  "plant_t": 57.4,
+  "pay_t": 100.1,
+  "what": "The taped folder with the coral glyph on its cover, planted at 57 s with a draft inside, is opened at 100 s to a REGENTS \u00b7 NOVEMBER plate and a guiding principles scroll."
+ },
+ "throughline": {
+  "object": "the coral AI glyph and its navy verdict marks",
+  "lands_in_button": true,
+  "states": [
+   {
+    "at_s": 1.6,
+    "state": "the same coral glyph slapped onto every door sign, a different navy mark beside each"
+   },
+   {
+    "at_s": 29.4,
+    "state": "a coral mark on each of 119 of 150 citation slips"
+   },
+   {
+    "at_s": 53.3,
+    "state": "a sliver of coral sparks in a field of 10,500 hollow dots, a citation not a count of use"
+   },
+   {
+    "at_s": 72.1,
+    "state": "struck through on the writing door's sign and, at 85.3, ticked on the master's program door"
+   },
+   {
+    "at_s": 100.1,
+    "state": "stamped on the regents folder and its guiding principles scroll"
+   },
+   {
+    "at_s": 109.5,
+    "state": "one wide banner glyph or a row of small signs, the question left open"
+   }
+  ]
+ },
+ "reveals": [
+  {
+   "t": 29.4,
+   "type": "build-on",
+   "what": "119 of 150 slips flip coral under the flip-board",
+   "hold_s": 0.6,
+   "landing_at_s": 30.13,
+   "hold_until_s": 30.73,
+   "secondary_at_s": 31.03,
+   "beat_id": 16
+  },
+  {
+   "t": 48.8,
+   "type": "scale-pullback",
+   "what": "a coral patch becomes a sliver of a field of 10,500 hollow student dots",
+   "hold_s": 0.7,
+   "landing_at_s": 49.53,
+   "hold_until_s": 50.23,
+   "secondary_at_s": 50.53,
+   "beat_id": 22
+  },
+  {
+   "t": 85.3,
+   "type": "build-on",
+   "what": "the last door swings open and the hall floods with peach-white light",
+   "hold_s": 0.6,
+   "landing_at_s": 86.03,
+   "hold_until_s": 86.63,
+   "secondary_at_s": 86.93,
+   "beat_id": 34
+  },
+  {
+   "t": 107.3,
+   "type": "scale-pullback",
+   "what": "the whole hall of doors ajar shrinks to a single row",
+   "hold_s": 0.6,
+   "landing_at_s": 108.03,
+   "hold_until_s": 108.63,
+   "secondary_at_s": 108.93,
+   "beat_id": 44
+  }
+ ],
+ "audio_arc": {
+  "build_steps": 4,
+  "dip_at": 106.9,
+  "riser_at": 102.2,
+  "silence_at": 107.0,
+  "payoff_at": 107.3,
+  "button_pattern": "callback"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "title": "The doors",
+   "vo_line": 0,
+   "start_s": 0.0,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "corridor",
+   "pov": "eye-level-immersive",
+   "layout": "stacked-layers",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "",
+   "thread": "",
+   "centered": "a door sign at x540 y820",
+   "means": "Hook. A dark hallway, the tubes clang on and each door lamp blinks, the same coral glyph slaps onto every sign with a different navy mark beside it, a NO SYSTEMWIDE AI RULE banner drops on its chain.",
+   "ambient": "tubes hum, one flickers, dust crosses the transoms, a sign sways on its tape",
+   "hero": {
+    "name": "ClassroomDoor",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% slab, sign holder with enamel plate and the coral glyph; 20% navy verdict mark and lamp; 10% hinge, knob and kick plate"
+   },
+   "t": "0.000-7.560"
+  },
+  {
+   "id": 2,
+   "title": "The one sentence",
+   "vo_line": 1,
+   "start_s": 7.56,
+   "framing": "macro-closeup",
+   "scale": "close",
+   "height": "low",
+   "stage": "handbook-plate",
+   "pov": "macro-closeup",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "structure-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the plate at x540 y700",
+   "means": "The first door's sign rectangle grows into the dashed box on the handbook plate. A magnifier reads DEVICES NOT AUTHORIZED BY THE FACULTY MEMBER and finds the dashed box where AI would be empty while a Raven cocks its head at it.",
+   "ambient": "brass-free nickel rivets glint, the dashed box crawls, tube light slides on the plate",
+   "hero": {
+    "name": "HandbookPlate",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% the bar with its sentence; 20% nickel rods, rivets and tab; 10% the dashed box and lens fog"
+   },
+   "t": "7.560-16.880"
+  },
+  {
+   "id": 3,
+   "title": "The door dolly",
+   "vo_line": 2,
+   "start_s": 16.88,
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "corridor",
+   "pov": "eye-level-immersive",
+   "layout": "stacked-layers",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "travel",
+   "centered": "the moving sign wave at y800",
+   "means": "A wide view of the whole row with one dark door at the far end, then a parallel truck past eight doors, each sign flipping as it crosses x 900, ending on the dark door held for 0.6 s.",
+   "ambient": "floor reflections slide at floor speed, the far-wall boards drift at 0.55, a door creaks",
+   "hero": {
+    "name": "ClassroomDoor",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% door slabs in parallax; 20% flipping signs with coral glyph and navy marks; 10% far dark door and its coral arrow"
+   },
+   "t": "16.880-25.480"
+  },
+  {
+   "id": 4,
+   "title": "The slips",
+   "vo_line": 3,
+   "start_s": 25.48,
+   "framing": "data-panel",
+   "scale": "medium",
+   "height": "overhead",
+   "stage": "locker-grid",
+   "pov": "top-down-map",
+   "layout": "grid-modular",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "data-as-subject",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "mask-wipe",
+   "thread": "build",
+   "centered": "the slip grid at x540 y760",
+   "means": "150 butter slips rain onto a locker wall, 119 flip coral one by one while a wall flip-board counts up and locks at 119 with a hard clack.",
+   "ambient": "slips flutter and settle, locker faces catch tube light, the flip-board cards tick",
+   "hero": {
+    "name": "Sheet",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% the slip grid; 20% the flip-board; 10% coral dots and locker drop shadows"
+   },
+   "t": "25.480-36.780"
+  },
+  {
+   "id": 5,
+   "title": "The report",
+   "vo_line": 4,
+   "start_s": 36.78,
+   "framing": "push-detail",
+   "scale": "insert",
+   "height": "eye",
+   "stage": "report-desk",
+   "pov": "macro-closeup",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "static:rack focus on a desk close-up",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the folder at x540 y800",
+   "means": "A report folder on a desk takes a TAKEN OVER THE MAJORITY stamp, then a plain block on the wall grows by three quarters of its height with a coral delta, +73%.",
+   "ambient": "cool desk light hum, ink shimmer on the pad, paper dust drifts across the wall bar",
+   "hero": {
+    "name": "Stamp",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% folder and stamp; 20% desk pad and wall block; 10% ink spatter and delta"
+   },
+   "t": "36.780-46.640"
+  },
+  {
+   "id": 6,
+   "title": "The field",
+   "vo_line": 5,
+   "start_s": 46.64,
+   "framing": "map-territory",
+   "scale": "extreme-wide",
+   "height": "high",
+   "stage": "locker-field",
+   "pov": "orbital-aerial",
+   "layout": "map-territory",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "mask-wipe",
+   "thread": "build",
+   "centered": "the coral patch at x540 y760",
+   "means": "119 coral slips on a patch of lockers while the 31 others fall away, then the camera pulls back to a field of 10,500 hollow student dots where they are a sliver, and the sparks go hollow too.",
+   "ambient": "dots shimmer in a slow wave, a tube trough crosses overhead",
+   "hero": {
+    "name": "StatBurst",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% the dot field; 20% the coral patch; 10% the burst and hollow rings"
+   },
+   "t": "46.640-57.340"
+  },
+  {
+   "id": 7,
+   "title": "The folder",
+   "vo_line": 6,
+   "start_s": 57.34,
+   "framing": "subject-portrait",
+   "scale": "close",
+   "height": "eye",
+   "stage": "regents-table",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "structure-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "match",
+   "centered": "the folder at x540 y820",
+   "means": "A taped folder with the coral glyph on its cover on a boardroom table under a cool pendant, a faceless hand smooths the tape, a plate says it was presented in September.",
+   "ambient": "a cool pendant sways, dust turns in its cone, paper curls at the folder edge",
+   "hero": {
+    "name": "ManilaFolder",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% folder and tape; 20% table and pendant cone; 10% faceless hand"
+   },
+   "t": "57.340-62.860"
+  },
+  {
+   "id": 8,
+   "title": "The nameplate",
+   "vo_line": 7,
+   "start_s": 62.86,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "low",
+   "stage": "regents-table",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "single-organic-hero",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the nameplate at x540 y900",
+   "means": "The same table from the side: a STEPHANIE ERICKSON nameplate at a chair, the faceless hand resting on the taped folder, and the DELIBERATE quote slams down while the hand lifts the tape edge.",
+   "ambient": "the pendant sways, the chair creaks, dust turns over the table",
+   "hero": {
+    "name": "ManilaFolder",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% table, chair and nickel nameplate; 20% quote plate; 10% hand and tape edge"
+   },
+   "t": "62.860-72.020"
+  },
+  {
+   "id": 9,
+   "title": "The writing door",
+   "vo_line": 8,
+   "start_s": 72.02,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "classroom",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "match",
+   "centered": "the sheet at x760 y900",
+   "means": "Split frame. A big ban sign on the left wall and the open writing door on the right where the AI glyph fills a blank essay while the pencil lies idle.",
+   "ambient": "window motes drift across the desk, a page corner curls",
+   "hero": {
+    "name": "Sheet",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% desk, essay and open door; 20% big sign with strike; 10% pencil and window motes"
+   },
+   "t": "72.020-78.480"
+  },
+  {
+   "id": 10,
+   "title": "The last door",
+   "vo_line": 9,
+   "start_s": 78.48,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "low",
+   "stage": "lab",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "structure-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "match-action",
+   "thread": "travel",
+   "centered": "the far door at x540 y820",
+   "means": "The camera pushes down the hall to the far door, its plate hangs, the door cracks and peach light widens line by line, and at There, AI is the subject it swings open and the camera pushes through to the lecture board.",
+   "ambient": "floor reflections slide, the far lamp pulses, dust crosses the transoms",
+   "hero": {
+    "name": "ClassroomDoor",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% door and flood; 20% plate and lecture board; 10% lamp flare and motes"
+   },
+   "t": "78.480-88.700"
+  },
+  {
+   "id": 11,
+   "title": "Two doors",
+   "vo_line": 10,
+   "start_s": 88.7,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "corridor",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "static:locked frame with a slow drift",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "match",
+   "centered": "the key at x540 y800",
+   "means": "Two doors side by side with the same coral glyph on both signs, a navy strike on one and a tick on the other, a big nickel key jams in both locks.",
+   "ambient": "tubes flicker together, the knobs glint, the floor shines",
+   "hero": {
+    "name": "ClassroomDoor",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% two doors; 20% the key; 10% knobs and sign marks"
+   },
+   "t": "88.700-96.380"
+  },
+  {
+   "id": 12,
+   "title": "Which door",
+   "vo_line": 11,
+   "start_s": 96.38,
+   "framing": "push-detail",
+   "scale": "close",
+   "height": "overhead",
+   "stage": "syllabus-page",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "scroll-data",
+   "hero_treatment": "data-as-subject",
+   "camera": "static:locked frame with a slow drift",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the page at x540 y820",
+   "means": "A syllabus page with the coral glyph and three rows of navy marks, strike, tick and a blank, and a faceless hand traces the rows and stops on the blank one with a pen above it.",
+   "ambient": "paper dust drifts over the page, the faceless hand breathes",
+   "hero": {
+    "name": "Sheet",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% page and rows; 20% faceless hand; 10% pen and blank row"
+   },
+   "t": "96.380-100.100"
+  },
+  {
+   "id": 13,
+   "title": "November",
+   "vo_line": 12,
+   "start_s": 100.1,
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "high",
+   "stage": "regents-table",
+   "pov": "top-down-map",
+   "layout": "single-object-void",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "structure-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the folder at x540 y800",
+   "means": "From above, the same folder opens and a REGENTS \u00b7 NOVEMBER plate and a GUIDING PRINCIPLES scroll with the coral glyph unroll, a chalk starting line draws, and a plate hangs from an unnailed hook that wobbles.",
+   "ambient": "chalk dust drifts, the scroll ends curl, the pendant sways",
+   "hero": {
+    "name": "ManilaFolder",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% folder, scroll and nickel plate; 20% chalk line; 10% hook and wobble"
+   },
+   "t": "100.100-107.260"
+  },
+  {
+   "id": 14,
+   "title": "The question",
+   "vo_line": 13,
+   "start_s": 107.26,
+   "framing": "wide-establish",
+   "scale": "extreme-wide",
+   "height": "eye",
+   "stage": "corridor",
+   "pov": "eye-level-immersive",
+   "layout": "stacked-layers",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the dashed box at x540 y480",
+   "means": "A reverse dolly out down the whole corridor with every door ajar, the hook's chain becomes the chain a banner glyph and a row of small door signs lower on, a faceless hand holds a pen between them, and the tubes click off to the one ticking tube of frame 1 with the dashed box the last thing lit.",
+   "ambient": "tubes hum and click off, doors ajar sway, a coral lamp-free hall settles",
+   "hero": {
+    "name": "ClassroomDoor",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% corridor and doors; 20% banner and sign row; 10% pen, dashed box and tubes"
+   },
+   "t": "107.260-114.400"
+  }
+ ],
+ "beats": [
+  {
+   "id": 1,
+   "shot": 1,
+   "t": "0.000-0.900",
+   "at_s": 0.0,
+   "vo_line": 0,
+   "offset": 0.0,
+   "vo": "At the University of Alaska, there's no single A I rule. It hangs on the classroom door.",
+   "shows": "sits dark with one tube ticking and a row of shut doors",
+   "sfx": "tick",
+   "means": "a place with many doors",
+   "rehook": "",
+   "draw": {
+    "subject": "dark corridor",
+    "action": "sits dark with one tube ticking and a row of shut doors",
+    "emotion": "expectant",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "dark corridor sits dark with one tube ticking and a row of shut doors",
+    "reaction": "the single tube ticks twice and its light stutters across the linoleum",
+    "ambient": "tubes hum, one flickers, dust crosses the transoms, a sign sways on its tape"
+   }
+  },
+  {
+   "id": 2,
+   "shot": 1,
+   "t": "0.900-1.600",
+   "at_s": 0.9,
+   "vo_line": 0,
+   "offset": 0.9,
+   "vo": "At the University of Alaska, there's no single A I rule. It hangs on the classroom door.",
+   "shows": "clang on one after another and each door lamp blinks on in turn",
+   "sfx": "clank",
+   "means": "the hall is a row of rooms",
+   "rehook": "",
+   "draw": {
+    "subject": "ceiling tubes",
+    "action": "clang on one after another and each door lamp blinks on in turn",
+    "emotion": "alert",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "ceiling tubes clang on one after another and each door lamp blinks on in turn",
+    "reaction": "each door lamp blinks as the tube passes over it",
+    "ambient": "tubes hum, one flickers, dust crosses the transoms, a sign sways on its tape"
+   }
+  },
+  {
+   "id": 3,
+   "shot": 1,
+   "t": "1.600-2.700",
+   "at_s": 1.6,
+   "vo_line": 0,
+   "offset": 1.6,
+   "vo": "At the University of Alaska, there's no single A I rule. It hangs on the classroom door.",
+   "shows": "the same coral AI glyph slaps onto every sign, each with a different navy mark beside it",
+   "sfx": "thud",
+   "means": "one tool, a different verdict at each door",
+   "rehook": "",
+   "draw": {
+    "subject": "door signs",
+    "action": "the same coral AI glyph slaps onto every sign, each with a different navy mark beside it",
+    "emotion": "smug",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "door signs the same coral AI glyph slaps onto every sign, each with a different navy mark beside it",
+    "reaction": "the signs rattle on their tape and the nearest one drops a hair of dust",
+    "ambient": "tubes hum, one flickers, dust crosses the transoms, a sign sways on its tape"
+   }
+  },
+  {
+   "id": 4,
+   "shot": 1,
+   "t": "2.700-5.200",
+   "at_s": 2.7,
+   "vo_line": 0,
+   "offset": 2.7,
+   "vo": "At the University of Alaska, there's no single A I rule. It hangs on the classroom door.",
+   "shows": "NO SYSTEMWIDE AI RULE drops on a chain over the hall and swings level",
+   "sfx": "chain",
+   "means": "the thesis in four words",
+   "rehook": "",
+   "draw": {
+    "subject": "banner",
+    "action": "NO SYSTEMWIDE AI RULE drops on a chain over the hall and swings level",
+    "emotion": "assertive",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "banner NO SYSTEMWIDE AI RULE drops on a chain over the hall and swings level",
+    "reaction": "the chain links shiver and the lamps under it sway",
+    "ambient": "tubes hum, one flickers, dust crosses the transoms, a sign sways on its tape"
+   }
+  },
+  {
+   "id": 5,
+   "shot": 1,
+   "t": "5.200-7.600",
+   "at_s": 5.2,
+   "vo_line": 0,
+   "offset": 5.2,
+   "vo": "At the University of Alaska, there's no single A I rule. It hangs on the classroom door.",
+   "shows": "swings on its tape as the sentence says the rule hangs on the door",
+   "sfx": "creak",
+   "means": "the rule is on the door",
+   "rehook": "",
+   "draw": {
+    "subject": "first door sign",
+    "action": "swings on its tape as the sentence says the rule hangs on the door",
+    "emotion": "curious",
+    "annotation": "PER ADN"
+   },
+   "choreo": {
+    "primary": "first door sign swings on its tape as the sentence says the rule hangs on the door",
+    "reaction": "the sign tilts and settles under its own weight",
+    "ambient": "tubes hum, one flickers, dust crosses the transoms, a sign sways on its tape"
+   }
+  },
+  {
+   "id": 6,
+   "shot": 2,
+   "t": "7.600-9.400",
+   "at_s": 7.6,
+   "vo_line": 1,
+   "offset": 0.04,
+   "vo": "UAA's student handbook bars devices not authorized by the faculty member. That section never says A I.",
+   "shows": "drops from the ceiling on two rods and settles with a wobble",
+   "sfx": "thud",
+   "means": "one sentence over every door",
+   "rehook": "",
+   "draw": {
+    "subject": "handbook plate",
+    "action": "drops from the ceiling on two rods and settles with a wobble",
+    "emotion": "solemn",
+    "annotation": "UAA STUDENT HANDBOOK"
+   },
+   "choreo": {
+    "primary": "handbook plate drops from the ceiling on two rods and settles with a wobble",
+    "reaction": "the rods bounce and the nickel edge flashes once",
+    "ambient": "brass-free nickel rivets glint, the dashed box crawls, tube light slides on the plate"
+   }
+  },
+  {
+   "id": 7,
+   "shot": 2,
+   "t": "9.400-12.600",
+   "at_s": 9.4,
+   "vo_line": 1,
+   "offset": 1.84,
+   "vo": "UAA's student handbook bars devices not authorized by the faculty member. That section never says A I.",
+   "shows": "slides along DEVICES NOT AUTHORIZED",
+   "sfx": "snap",
+   "means": "what the sentence says",
+   "rehook": "",
+   "draw": {
+    "subject": "magnifier",
+    "action": "slides along DEVICES NOT AUTHORIZED",
+    "emotion": "probing",
+    "annotation": "DEVICES NOT AUTHORIZED BY THE FACULTY MEMBER"
+   },
+   "choreo": {
+    "primary": "magnifier slides along DEVICES NOT AUTHORIZED",
+    "reaction": "the lens enlarges each word it crosses and fogs at the edges",
+    "ambient": "brass-free nickel rivets glint, the dashed box crawls, tube light slides on the plate"
+   }
+  },
+  {
+   "id": 8,
+   "shot": 2,
+   "t": "12.600-14.300",
+   "at_s": 12.6,
+   "vo_line": 1,
+   "offset": 5.04,
+   "vo": "UAA's student handbook bars devices not authorized by the faculty member. That section never says A I.",
+   "shows": "settles on FACULTY MEMBER as the lens clears",
+   "sfx": "pop",
+   "means": "the faculty member decides",
+   "rehook": "",
+   "draw": {
+    "subject": "nickel pointer",
+    "action": "settles on FACULTY MEMBER as the lens clears",
+    "emotion": "certain",
+    "annotation": "DEVICES NOT AUTHORIZED BY THE FACULTY MEMBER"
+   },
+   "choreo": {
+    "primary": "nickel pointer settles on FACULTY MEMBER as the lens clears",
+    "reaction": "the lens clears with a small wipe as the pointer lands",
+    "ambient": "brass-free nickel rivets glint, the dashed box crawls, tube light slides on the plate"
+   }
+  },
+  {
+   "id": 9,
+   "shot": 2,
+   "t": "14.300-16.900",
+   "at_s": 14.3,
+   "vo_line": 1,
+   "offset": 6.74,
+   "vo": "UAA's student handbook bars devices not authorized by the faculty member. That section never says A I.",
+   "shows": "reaches the dashed empty box while a Raven lands beside it and cocks its head at nothing",
+   "sfx": "caw",
+   "means": "the sentence never says AI",
+   "rehook": "",
+   "draw": {
+    "subject": "magnifier and Raven",
+    "action": "reaches the dashed empty box while a Raven lands beside it and cocks its head at nothing",
+    "emotion": "baffled",
+    "annotation": "NO MENTION OF AI"
+   },
+   "choreo": {
+    "primary": "magnifier and Raven reaches the dashed empty box while a Raven lands beside it and cocks its head at nothing",
+    "reaction": "the lens fogs over the empty box and the Raven tilts its head",
+    "ambient": "brass-free nickel rivets glint, the dashed box crawls, tube light slides on the plate"
+   }
+  },
+  {
+   "id": 10,
+   "shot": 3,
+   "t": "16.900-18.900",
+   "at_s": 16.9,
+   "vo_line": 2,
+   "offset": 0.02,
+   "vo": "Faculty set A I rules course by course, the Daily News reports. Watch the last door.",
+   "shows": "opens wide on the whole row of doors with a dark one at the far end, a small coral arrow over it",
+   "sfx": "whoosh",
+   "means": "a row of doors with one set apart",
+   "rehook": "",
+   "draw": {
+    "subject": "camera",
+    "action": "opens wide on the whole row of doors with a dark one at the far end, a small coral arrow over it",
+    "emotion": "expectant",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "camera opens wide on the whole row of doors with a dark one at the far end, a small coral arrow over it",
+    "reaction": "the arrow bobs over the far dark door",
+    "ambient": "floor reflections slide at floor speed, the far-wall boards drift at 0.55, a door creaks"
+   }
+  },
+  {
+   "id": 11,
+   "shot": 3,
+   "t": "18.900-21.000",
+   "at_s": 18.9,
+   "vo_line": 2,
+   "offset": 2.02,
+   "vo": "Faculty set A I rules course by course, the Daily News reports. Watch the last door.",
+   "shows": "push in on the first door and truck past a row of signs that flip one after another",
+   "sfx": "snap",
+   "means": "faculty set the rule door by door",
+   "rehook": "",
+   "draw": {
+    "subject": "door signs",
+    "action": "push in on the first door and truck past a row of signs that flip one after another",
+    "emotion": "playful",
+    "annotation": "RULES SET COURSE BY COURSE"
+   },
+   "choreo": {
+    "primary": "door signs push in on the first door and truck past a row of signs that flip one after another",
+    "reaction": "each sign flips with a small bounce as the camera passes",
+    "ambient": "floor reflections slide at floor speed, the far-wall boards drift at 0.55, a door creaks"
+   }
+  },
+  {
+   "id": 12,
+   "shot": 3,
+   "t": "21.000-22.100",
+   "at_s": 21.0,
+   "vo_line": 2,
+   "offset": 4.12,
+   "vo": "Faculty set A I rules course by course, the Daily News reports. Watch the last door.",
+   "shows": "slides in under the passing doors",
+   "sfx": "paper",
+   "means": "this is ADN reporting",
+   "rehook": "",
+   "draw": {
+    "subject": "attribution plate",
+    "action": "slides in under the passing doors",
+    "emotion": "plain",
+    "annotation": "PER ADN"
+   },
+   "choreo": {
+    "primary": "attribution plate slides in under the passing doors",
+    "reaction": "the plate drifts with the parallax and one sign behind it flips",
+    "ambient": "floor reflections slide at floor speed, the far-wall boards drift at 0.55, a door creaks"
+   }
+  },
+  {
+   "id": 13,
+   "shot": 3,
+   "t": "22.100-25.500",
+   "at_s": 22.1,
+   "vo_line": 2,
+   "offset": 5.22,
+   "vo": "Faculty set A I rules course by course, the Daily News reports. Watch the last door.",
+   "shows": "arrives centered, shut, frosted, its lamp off, and holds",
+   "sfx": "whoosh",
+   "means": "watch the last door",
+   "rehook": "",
+   "draw": {
+    "subject": "far dark door",
+    "action": "arrives centered, shut, frosted, its lamp off, and holds",
+    "emotion": "expectant",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "far dark door arrives centered, shut, frosted, its lamp off, and holds",
+    "reaction": "a thin line of light creeps along its frame and goes out",
+    "ambient": "floor reflections slide at floor speed, the far-wall boards drift at 0.55, a door creaks"
+   }
+  },
+  {
+   "id": 14,
+   "shot": 4,
+   "t": "25.500-27.400",
+   "at_s": 25.5,
+   "vo_line": 3,
+   "offset": 0.02,
+   "vo": "A UAA report, via the Daily News, says a hundred nineteen of a hundred fifty students cited for academic misconduct used A I.",
+   "shows": "150 butter slips rain down over a wall of lockers",
+   "sfx": "paper",
+   "means": "a large set of citation slips",
+   "rehook": "",
+   "draw": {
+    "subject": "citation slips",
+    "action": "150 butter slips rain down over a wall of lockers",
+    "emotion": "busy",
+    "annotation": "150 STUDENTS CITED"
+   },
+   "choreo": {
+    "primary": "citation slips 150 butter slips rain down over a wall of lockers",
+    "reaction": "slips flutter and pile unevenly against the lockers",
+    "ambient": "slips flutter and settle, locker faces catch tube light, the flip-board cards tick"
+   }
+  },
+  {
+   "id": 15,
+   "shot": 4,
+   "t": "27.400-29.400",
+   "at_s": 27.4,
+   "vo_line": 3,
+   "offset": 1.92,
+   "vo": "A UAA report, via the Daily News, says a hundred nineteen of a hundred fifty students cited for academic misconduct used A I.",
+   "shows": "lands flat on a locker and a coral dot stamps itself onto it",
+   "sfx": "pop",
+   "means": "a coral dot means a citation under the AI rule",
+   "rehook": "",
+   "draw": {
+    "subject": "first slip",
+    "action": "lands flat on a locker and a coral dot stamps itself onto it",
+    "emotion": "curious",
+    "annotation": "150 STUDENTS CITED"
+   },
+   "choreo": {
+    "primary": "first slip lands flat on a locker and a coral dot stamps itself onto it",
+    "reaction": "the neighbouring slips shuffle aside to make room",
+    "ambient": "slips flutter and settle, locker faces catch tube light, the flip-board cards tick"
+   }
+  },
+  {
+   "id": 16,
+   "shot": 4,
+   "t": "29.400-33.000",
+   "at_s": 29.4,
+   "vo_line": 3,
+   "offset": 3.92,
+   "vo": "A UAA report, via the Daily News, says a hundred nineteen of a hundred fifty students cited for academic misconduct used A I.",
+   "shows": "flip coral one by one as the wall flip-board counts up and locks at 119",
+   "sfx": "tick",
+   "means": "119 of the 150 involved AI",
+   "rehook": "25 to 38s rehook: the count lands on the spoken number",
+   "draw": {
+    "subject": "119 slips",
+    "action": "flip coral one by one as the wall flip-board counts up and locks at 119",
+    "emotion": "decisive",
+    "annotation": "119 OF 150"
+   },
+   "choreo": {
+    "primary": "119 slips flip coral one by one as the wall flip-board counts up and locks at 119",
+    "reaction": "the butter slips shuffle aside as each coral one flips",
+    "ambient": "slips flutter and settle, locker faces catch tube light, the flip-board cards tick"
+   }
+  },
+  {
+   "id": 17,
+   "shot": 4,
+   "t": "33.000-36.800",
+   "at_s": 33.0,
+   "vo_line": 3,
+   "offset": 7.52,
+   "vo": "A UAA report, via the Daily News, says a hundred nineteen of a hundred fifty students cited for academic misconduct used A I.",
+   "shows": "stops dead on 119 with a hard mechanical clack",
+   "sfx": "clank",
+   "means": "the number is the report's, not ours",
+   "rehook": "",
+   "draw": {
+    "subject": "flip-board",
+    "action": "stops dead on 119 with a hard mechanical clack",
+    "emotion": "weighty",
+    "annotation": "PER ADN, FROM A UAA DEAN OF STUDENTS REPORT"
+   },
+   "choreo": {
+    "primary": "flip-board stops dead on 119 with a hard mechanical clack",
+    "reaction": "the last digit card rocks once and the slips below go still",
+    "ambient": "slips flutter and settle, locker faces catch tube light, the flip-board cards tick"
+   }
+  },
+  {
+   "id": 18,
+   "shot": 5,
+   "t": "36.800-39.400",
+   "at_s": 36.8,
+   "vo_line": 4,
+   "offset": 0.02,
+   "vo": "It says A I cases are most of what the conduct office handles, and A I use for plagiarism rose seventy three percent last year.",
+   "shows": "slides onto a bare desk under tube light and a rubber stamp hovers over it",
+   "sfx": "paper",
+   "means": "the report is the source",
+   "rehook": "",
+   "draw": {
+    "subject": "report folder",
+    "action": "slides onto a bare desk under tube light and a rubber stamp hovers over it",
+    "emotion": "weighty",
+    "annotation": "UAA DEAN OF STUDENTS REPORT, VIA ADN"
+   },
+   "choreo": {
+    "primary": "report folder slides onto a bare desk under tube light and a rubber stamp hovers over it",
+    "reaction": "the folder skids and the stamp pad slides to meet it",
+    "ambient": "cool desk light hum, ink shimmer on the pad, paper dust drifts across the wall bar"
+   }
+  },
+  {
+   "id": 19,
+   "shot": 5,
+   "t": "39.400-43.600",
+   "at_s": 39.4,
+   "vo_line": 4,
+   "offset": 2.62,
+   "vo": "It says A I cases are most of what the conduct office handles, and A I use for plagiarism rose seventy three percent last year.",
+   "shows": "slams TAKEN OVER THE MAJORITY across the folder",
+   "sfx": "stamp",
+   "means": "the report says AI now fills most of its docket",
+   "rehook": "",
+   "draw": {
+    "subject": "rubber stamp",
+    "action": "slams TAKEN OVER THE MAJORITY across the folder",
+    "emotion": "emphatic",
+    "annotation": "\"TAKEN OVER THE MAJORITY\""
+   },
+   "choreo": {
+    "primary": "rubber stamp slams TAKEN OVER THE MAJORITY across the folder",
+    "reaction": "the desk pad jumps under the stamp and ink spatters",
+    "ambient": "cool desk light hum, ink shimmer on the pad, paper dust drifts across the wall bar"
+   }
+  },
+  {
+   "id": 20,
+   "shot": 5,
+   "t": "43.600-46.800",
+   "at_s": 43.6,
+   "vo_line": 4,
+   "offset": 6.82,
+   "vo": "It says A I cases are most of what the conduct office handles, and A I use for plagiarism rose seventy three percent last year.",
+   "shows": "a plain block on the wall grows by three quarters of its own height with the coral delta on top",
+   "sfx": "ding",
+   "means": "AI plagiarism rose, no year printed",
+   "rehook": "",
+   "draw": {
+    "subject": "bar block",
+    "action": "a plain block on the wall grows by three quarters of its own height with the coral delta on top",
+    "emotion": "rising",
+    "annotation": "AI PLAGIARISM +73%"
+   },
+   "choreo": {
+    "primary": "bar block a plain block on the wall grows by three quarters of its own height with the coral delta on top",
+    "reaction": "the base block stays put while the new top slides up",
+    "ambient": "cool desk light hum, ink shimmer on the pad, paper dust drifts across the wall bar"
+   }
+  },
+  {
+   "id": 21,
+   "shot": 6,
+   "t": "46.800-48.800",
+   "at_s": 46.8,
+   "vo_line": 5,
+   "offset": 0.16,
+   "vo": "Those hundred nineteen are one point one percent of more than ten thousand five hundred students. But a citation isn't a count of use.",
+   "shows": "the 31 butter slips fall away and only 119 coral slips are left on a small patch",
+   "sfx": "snap",
+   "means": "only the 119 remain",
+   "rehook": "",
+   "draw": {
+    "subject": "locker patch",
+    "action": "the 31 butter slips fall away and only 119 coral slips are left on a small patch",
+    "emotion": "measured",
+    "annotation": "119 OF 150"
+   },
+   "choreo": {
+    "primary": "locker patch the 31 butter slips fall away and only 119 coral slips are left on a small patch",
+    "reaction": "the butter slips drop off the lockers and flutter out of frame",
+    "ambient": "dots shimmer in a slow wave, a tube trough crosses overhead"
+   }
+  },
+  {
+   "id": 22,
+   "shot": 6,
+   "t": "48.800-53.300",
+   "at_s": 48.8,
+   "vo_line": 5,
+   "offset": 2.16,
+   "vo": "Those hundred nineteen are one point one percent of more than ten thousand five hundred students. But a citation isn't a count of use.",
+   "shows": "pulls back from the patch to a field of 10,500 student dots",
+   "sfx": "whoosh",
+   "means": "the 119 are a sliver of the field",
+   "rehook": "",
+   "draw": {
+    "subject": "camera",
+    "action": "pulls back from the patch to a field of 10,500 student dots",
+    "emotion": "awed",
+    "annotation": "1.1% OF 10,500+ STUDENTS"
+   },
+   "choreo": {
+    "primary": "camera pulls back from the patch to a field of 10,500 student dots",
+    "reaction": "the patch shrinks to a coral sliver as the dots multiply and stay hollow",
+    "ambient": "dots shimmer in a slow wave, a tube trough crosses overhead"
+   },
+   "sfx_offset_frames": 22,
+   "sfx_offset_reason": "the pullback lands 0.73 s after the beat starts"
+  },
+  {
+   "id": 23,
+   "shot": 6,
+   "t": "53.300-57.400",
+   "at_s": 53.3,
+   "vo_line": 5,
+   "offset": 6.66,
+   "vo": "Those hundred nineteen are one point one percent of more than ten thousand five hundred students. But a citation isn't a count of use.",
+   "shows": "fade to hollow rings with the rest of the field",
+   "sfx": "creak",
+   "means": "a citation is not a count of use",
+   "rehook": "",
+   "draw": {
+    "subject": "coral sparks",
+    "action": "fade to hollow rings with the rest of the field",
+    "emotion": "fair",
+    "annotation": "PER ADN"
+   },
+   "choreo": {
+    "primary": "coral sparks fade to hollow rings with the rest of the field",
+    "reaction": "the sparks go hollow so the whole field reads unknown, not innocent",
+    "ambient": "dots shimmer in a slow wave, a tube trough crosses overhead"
+   }
+  },
+  {
+   "id": 24,
+   "shot": 7,
+   "t": "57.400-60.400",
+   "at_s": 57.4,
+   "vo_line": 6,
+   "offset": 0.06,
+   "vo": "The regents, the governing board, have a draft of A I principles.",
+   "shows": "sits on a boardroom table under a cool pendant, taped shut, a coral glyph on its cover",
+   "sfx": "thud",
+   "means": "the regents have a draft",
+   "rehook": "55 to 72s rehook: the regents have a draft",
+   "draw": {
+    "subject": "manila folder",
+    "action": "sits on a boardroom table under a cool pendant, taped shut, a coral glyph on its cover",
+    "emotion": "guarded",
+    "annotation": "PER ADN"
+   },
+   "choreo": {
+    "primary": "manila folder sits on a boardroom table under a cool pendant, taped shut, a coral glyph on its cover",
+    "reaction": "the pendant swings a few degrees and the tape shines",
+    "ambient": "a cool pendant sways, dust turns in its cone, paper curls at the folder edge"
+   }
+  },
+  {
+   "id": 25,
+   "shot": 7,
+   "t": "60.400-62.900",
+   "at_s": 60.4,
+   "vo_line": 6,
+   "offset": 3.06,
+   "vo": "The regents, the governing board, have a draft of A I principles.",
+   "shows": "a faceless hand smooths the tape as a plate says DRAFT PRESENTED IN SEPTEMBER",
+   "sfx": "paper",
+   "means": "a draft is already on the table",
+   "rehook": "",
+   "draw": {
+    "subject": "tape seal",
+    "action": "a faceless hand smooths the tape as a plate says DRAFT PRESENTED IN SEPTEMBER",
+    "emotion": "careful",
+    "annotation": "DRAFT PRESENTED IN SEPTEMBER"
+   },
+   "choreo": {
+    "primary": "tape seal a faceless hand smooths the tape as a plate says DRAFT PRESENTED IN SEPTEMBER",
+    "reaction": "the tape corner lifts and falls under the thumb",
+    "ambient": "a cool pendant sways, dust turns in its cone, paper curls at the folder edge"
+   }
+  },
+  {
+   "id": 26,
+   "shot": 8,
+   "t": "62.900-66.400",
+   "at_s": 62.9,
+   "vo_line": 7,
+   "offset": 0.04,
+   "vo": "Stephanie Erickson presented that draft. She said, per the Daily News, we need to be deliberate with how we want to engage with A I.",
+   "shows": "STEPHANIE ERICKSON stands on the table at a chair, no face, no body",
+   "sfx": "thud",
+   "means": "the draft has a presenter",
+   "rehook": "",
+   "draw": {
+    "subject": "nameplate",
+    "action": "STEPHANIE ERICKSON stands on the table at a chair, no face, no body",
+    "emotion": "steady",
+    "annotation": "STEPHANIE ERICKSON \u00b7 PER ADN"
+   },
+   "choreo": {
+    "primary": "nameplate STEPHANIE ERICKSON stands on the table at a chair, no face, no body",
+    "reaction": "the chair back creaks and turns a few degrees",
+    "ambient": "the pendant sways, the chair creaks, dust turns over the table"
+   }
+  },
+  {
+   "id": 27,
+   "shot": 8,
+   "t": "66.400-68.100",
+   "at_s": 66.4,
+   "vo_line": 7,
+   "offset": 3.54,
+   "vo": "Stephanie Erickson presented that draft. She said, per the Daily News, we need to be deliberate with how we want to engage with A I.",
+   "shows": "enters and rests flat on the taped folder and presses",
+   "sfx": "pop",
+   "means": "the draft is held shut",
+   "rehook": "",
+   "draw": {
+    "subject": "faceless hand",
+    "action": "enters and rests flat on the taped folder and presses",
+    "emotion": "patient",
+    "annotation": "PER ADN"
+   },
+   "choreo": {
+    "primary": "faceless hand enters and rests flat on the taped folder and presses",
+    "reaction": "the folder pad shifts under the palm",
+    "ambient": "the pendant sways, the chair creaks, dust turns over the table"
+   }
+  },
+  {
+   "id": 28,
+   "shot": 8,
+   "t": "68.100-72.100",
+   "at_s": 68.1,
+   "vo_line": 7,
+   "offset": 5.24,
+   "vo": "Stephanie Erickson presented that draft. She said, per the Daily News, we need to be deliberate with how we want to engage with A I.",
+   "shows": "DELIBERATE slams down beside the nameplate as she is quoted",
+   "sfx": "stamp",
+   "means": "the quoted view on acting",
+   "rehook": "",
+   "draw": {
+    "subject": "quote plate",
+    "action": "DELIBERATE slams down beside the nameplate as she is quoted",
+    "emotion": "earnest",
+    "annotation": "\"DELIBERATE ... INSTEAD OF LETTING IT JUST HAPPEN TO US\""
+   },
+   "choreo": {
+    "primary": "quote plate DELIBERATE slams down beside the nameplate as she is quoted",
+    "reaction": "the plate settles and the hand lifts the tape edge on just happen to us",
+    "ambient": "the pendant sways, the chair creaks, dust turns over the table"
+   }
+  },
+  {
+   "id": 29,
+   "shot": 9,
+   "t": "72.100-74.900",
+   "at_s": 72.1,
+   "vo_line": 8,
+   "offset": 0.08,
+   "vo": "The best case for the doors? In a writing course, A I can let students skip the learning.",
+   "shows": "a big ban sign on the left wall and the open writing door on the right, a hard seam between",
+   "sfx": "whoosh",
+   "means": "a writing door, a ban mark",
+   "rehook": "",
+   "draw": {
+    "subject": "two panels",
+    "action": "a big ban sign on the left wall and the open writing door on the right, a hard seam between",
+    "emotion": "neutral",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "two panels a big ban sign on the left wall and the open writing door on the right, a hard seam between",
+    "reaction": "the seam line stays hard as the door swings against it",
+    "ambient": "window motes drift across the desk, a page corner curls"
+   }
+  },
+  {
+   "id": 30,
+   "shot": 9,
+   "t": "74.900-77.200",
+   "at_s": 74.9,
+   "vo_line": 8,
+   "offset": 2.88,
+   "vo": "The best case for the doors? In a writing course, A I can let students skip the learning.",
+   "shows": "writes the essay sheet line by line while the pencil lies idle",
+   "sfx": "paper",
+   "means": "the glyph does the work",
+   "rehook": "",
+   "draw": {
+    "subject": "AI glyph",
+    "action": "writes the essay sheet line by line while the pencil lies idle",
+    "emotion": "eager",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "AI glyph writes the essay sheet line by line while the pencil lies idle",
+    "reaction": "the pencil rolls a few degrees on the desk and stops",
+    "ambient": "window motes drift across the desk, a page corner curls"
+   }
+  },
+  {
+   "id": 31,
+   "shot": 9,
+   "t": "77.200-78.500",
+   "at_s": 77.2,
+   "vo_line": 8,
+   "offset": 5.18,
+   "vo": "The best case for the doors? In a writing course, A I can let students skip the learning.",
+   "shows": "fills to the bottom with no pencil mark on it",
+   "sfx": "pop",
+   "means": "the learning was skipped",
+   "rehook": "",
+   "draw": {
+    "subject": "essay sheet",
+    "action": "fills to the bottom with no pencil mark on it",
+    "emotion": "hollow",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "essay sheet fills to the bottom with no pencil mark on it",
+    "reaction": "the page corner curls as the last line lands",
+    "ambient": "window motes drift across the desk, a page corner curls"
+   }
+  },
+  {
+   "id": 32,
+   "shot": 10,
+   "t": "78.500-80.600",
+   "at_s": 78.5,
+   "vo_line": 9,
+   "offset": 0.02,
+   "vo": "The last door? UAA's master's program in A I, data science and engineering. There, A I is the subject.",
+   "shows": "pushes down the hall to the far dark door, its lamp now on",
+   "sfx": "whoosh",
+   "means": "the last door",
+   "rehook": "",
+   "draw": {
+    "subject": "camera",
+    "action": "pushes down the hall to the far dark door, its lamp now on",
+    "emotion": "anticipating",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "camera pushes down the hall to the far dark door, its lamp now on",
+    "reaction": "the far lamp warms up and the door frame glows at the seam",
+    "ambient": "floor reflections slide, the far lamp pulses, dust crosses the transoms"
+   }
+  },
+  {
+   "id": 33,
+   "shot": 10,
+   "t": "80.600-85.300",
+   "at_s": 80.6,
+   "vo_line": 9,
+   "offset": 2.12,
+   "vo": "The last door? UAA's master's program in A I, data science and engineering. There, A I is the subject.",
+   "shows": "cracks open a hand width and warm peach light widens under its plate line by line",
+   "sfx": "creak",
+   "means": "UAA's master's program",
+   "rehook": "",
+   "draw": {
+    "subject": "far door",
+    "action": "cracks open a hand width and warm peach light widens under its plate line by line",
+    "emotion": "proud",
+    "annotation": "UAA M.S. IN AI, DATA SCIENCE AND ENGINEERING"
+   },
+   "choreo": {
+    "primary": "far door cracks open a hand width and warm peach light widens under its plate line by line",
+    "reaction": "the door edge swings and dust crosses the first spill",
+    "ambient": "floor reflections slide, the far lamp pulses, dust crosses the transoms"
+   }
+  },
+  {
+   "id": 34,
+   "shot": 10,
+   "t": "85.300-88.700",
+   "at_s": 85.3,
+   "vo_line": 9,
+   "offset": 6.82,
+   "vo": "The last door? UAA's master's program in A I, data science and engineering. There, A I is the subject.",
+   "shows": "swings fully open, the hall floods peach-white and the camera pushes through to a lecture board with the glyph as its subject",
+   "sfx": "boom",
+   "means": "there, AI is the subject",
+   "rehook": "88 to 104s rehook: the last door opens",
+   "draw": {
+    "subject": "far door",
+    "action": "swings fully open, the hall floods peach-white and the camera pushes through to a lecture board with the glyph as its subject",
+    "emotion": "delighted",
+    "annotation": "UAA M.S. IN AI, DATA SCIENCE AND ENGINEERING"
+   },
+   "choreo": {
+    "primary": "far door swings fully open, the hall floods peach-white and the camera pushes through to a lecture board with the glyph as its subject",
+    "reaction": "the flood climbs the wall and the lamp over the door flares",
+    "ambient": "floor reflections slide, the far lamp pulses, dust crosses the transoms"
+   },
+   "sfx_offset_frames": 21,
+   "sfx_offset_reason": "the door finishes swinging 0.7 s after the beat starts"
+  },
+  {
+   "id": 35,
+   "shot": 11,
+   "t": "88.700-90.600",
+   "at_s": 88.7,
+   "vo_line": 10,
+   "offset": 0.0,
+   "vo": "Same tool, two doors, opposite answers. One rule would fit neither.",
+   "shows": "stand side by side under one tube light, the same coral glyph on both signs",
+   "sfx": "tick",
+   "means": "same tool at two doors",
+   "rehook": "",
+   "draw": {
+    "subject": "two doors",
+    "action": "stand side by side under one tube light, the same coral glyph on both signs",
+    "emotion": "wry",
+    "annotation": "RULES SET COURSE BY COURSE"
+   },
+   "choreo": {
+    "primary": "two doors stand side by side under one tube light, the same coral glyph on both signs",
+    "reaction": "the shared tube flickers across both signs together",
+    "ambient": "tubes flicker together, the knobs glint, the floor shines"
+   }
+  },
+  {
+   "id": 36,
+   "shot": 11,
+   "t": "90.600-93.600",
+   "at_s": 90.6,
+   "vo_line": 10,
+   "offset": 1.9,
+   "vo": "Same tool, two doors, opposite answers. One rule would fit neither.",
+   "shows": "a navy strike appears on the left sign and a tick on the right",
+   "sfx": "snap",
+   "means": "opposite answers",
+   "rehook": "",
+   "draw": {
+    "subject": "verdict marks",
+    "action": "a navy strike appears on the left sign and a tick on the right",
+    "emotion": "playful",
+    "annotation": "RULES SET COURSE BY COURSE"
+   },
+   "choreo": {
+    "primary": "verdict marks a navy strike appears on the left sign and a tick on the right",
+    "reaction": "the left sign shudders at the strike and the right one brightens",
+    "ambient": "tubes flicker together, the knobs glint, the floor shines"
+   }
+  },
+  {
+   "id": 37,
+   "shot": 11,
+   "t": "93.600-96.400",
+   "at_s": 93.6,
+   "vo_line": 10,
+   "offset": 4.9,
+   "vo": "Same tool, two doors, opposite answers. One rule would fit neither.",
+   "shows": "jams in the left lock, then jams in the right",
+   "sfx": "clank",
+   "means": "one rule would fit neither",
+   "rehook": "88 to 104s rehook: one rule fits neither",
+   "draw": {
+    "subject": "one big key",
+    "action": "jams in the left lock, then jams in the right",
+    "emotion": "frustrated",
+    "annotation": "RULES SET COURSE BY COURSE"
+   },
+   "choreo": {
+    "primary": "one big key jams in the left lock, then jams in the right",
+    "reaction": "each knob rattles when the key bites and refuses to turn",
+    "ambient": "tubes flicker together, the knobs glint, the floor shines"
+   }
+  },
+  {
+   "id": 38,
+   "shot": 12,
+   "t": "96.400-98.500",
+   "at_s": 96.4,
+   "vo_line": 11,
+   "offset": 0.02,
+   "vo": "Students still need to know which door they're at.",
+   "shows": "a page with the coral glyph and three rows of navy marks, a faceless hand finger traces the rows",
+   "sfx": "pop",
+   "means": "the marks differ course to course",
+   "rehook": "",
+   "draw": {
+    "subject": "syllabus page",
+    "action": "a page with the coral glyph and three rows of navy marks, a faceless hand finger traces the rows",
+    "emotion": "puzzled",
+    "annotation": "RULES SET COURSE BY COURSE"
+   },
+   "choreo": {
+    "primary": "syllabus page a page with the coral glyph and three rows of navy marks, a faceless hand finger traces the rows",
+    "reaction": "the page tilts under the finger and the marks wobble",
+    "ambient": "paper dust drifts over the page, the faceless hand breathes"
+   }
+  },
+  {
+   "id": 39,
+   "shot": 12,
+   "t": "98.500-100.100",
+   "at_s": 98.5,
+   "vo_line": 11,
+   "offset": 2.12,
+   "vo": "Students still need to know which door they're at.",
+   "shows": "stops on a blank row and the pen hovers over it",
+   "sfx": "ding",
+   "means": "a student has to know which row they are in",
+   "rehook": "",
+   "draw": {
+    "subject": "faceless hand",
+    "action": "stops on a blank row and the pen hovers over it",
+    "emotion": "uncertain",
+    "annotation": "RULES SET COURSE BY COURSE"
+   },
+   "choreo": {
+    "primary": "faceless hand stops on a blank row and the pen hovers over it",
+    "reaction": "the pen tip trembles above the blank row",
+    "ambient": "paper dust drifts over the page, the faceless hand breathes"
+   }
+  },
+  {
+   "id": 40,
+   "shot": 13,
+   "t": "100.100-102.200",
+   "at_s": 100.1,
+   "vo_line": 12,
+   "offset": 0.0,
+   "vo": "In November, regents will consider guiding principles. That's a place to start, not a rule.",
+   "shows": "opens from above on the table and a plate unrolls from it",
+   "sfx": "paper",
+   "means": "the regents will consider it in November",
+   "rehook": "",
+   "draw": {
+    "subject": "folder",
+    "action": "opens from above on the table and a plate unrolls from it",
+    "emotion": "hopeful",
+    "annotation": "REGENTS \u00b7 NOVEMBER"
+   },
+   "choreo": {
+    "primary": "folder opens from above on the table and a plate unrolls from it",
+    "reaction": "the cover flips and a paper curl follows the plate out",
+    "ambient": "chalk dust drifts, the scroll ends curl, the pendant sways"
+   }
+  },
+  {
+   "id": 41,
+   "shot": 13,
+   "t": "102.200-104.900",
+   "at_s": 102.2,
+   "vo_line": 12,
+   "offset": 2.1,
+   "vo": "In November, regents will consider guiding principles. That's a place to start, not a rule.",
+   "shows": "a scroll with the coral glyph drops out of the folder and lands unrolled across it",
+   "sfx": "riser",
+   "means": "guiding principles",
+   "rehook": "",
+   "draw": {
+    "subject": "sign scroll",
+    "action": "a scroll with the coral glyph drops out of the folder and lands unrolled across it",
+    "emotion": "measured",
+    "annotation": "REGENTS \u00b7 NOVEMBER"
+   },
+   "choreo": {
+    "primary": "sign scroll a scroll with the coral glyph drops out of the folder and lands unrolled across it",
+    "reaction": "the scroll ends curl up after the unroll",
+    "ambient": "chalk dust drifts, the scroll ends curl, the pendant sways"
+   }
+  },
+  {
+   "id": 42,
+   "shot": 13,
+   "t": "104.900-106.000",
+   "at_s": 104.9,
+   "vo_line": 12,
+   "offset": 4.8,
+   "vo": "In November, regents will consider guiding principles. That's a place to start, not a rule.",
+   "shows": "a faceless hand enters and drags a chalk starting line across the table, wordless",
+   "sfx": "paper",
+   "means": "a place to start",
+   "rehook": "",
+   "draw": {
+    "subject": "chalk line",
+    "action": "a faceless hand enters and drags a chalk starting line across the table, wordless",
+    "emotion": "gentle",
+    "annotation": "REGENTS \u00b7 NOVEMBER"
+   },
+   "choreo": {
+    "primary": "chalk line a faceless hand enters and drags a chalk starting line across the table, wordless",
+    "reaction": "chalk dust puffs along the line",
+    "ambient": "chalk dust drifts, the scroll ends curl, the pendant sways"
+   }
+  },
+  {
+   "id": 43,
+   "shot": 13,
+   "t": "106.000-107.300",
+   "at_s": 106.0,
+   "vo_line": 12,
+   "offset": 5.9,
+   "vo": "In November, regents will consider guiding principles. That's a place to start, not a rule.",
+   "shows": "a plate on the folder hangs from a hook that wobbles, wordless",
+   "sfx": "clank",
+   "means": "not a rule, nothing is nailed",
+   "rehook": "",
+   "draw": {
+    "subject": "unnailed hook",
+    "action": "a plate on the folder hangs from a hook that wobbles, wordless",
+    "emotion": "candid",
+    "annotation": "REGENTS \u00b7 NOVEMBER"
+   },
+   "choreo": {
+    "primary": "unnailed hook a plate on the folder hangs from a hook that wobbles, wordless",
+    "reaction": "the hook slips a few degrees and the plate swings back",
+    "ambient": "chalk dust drifts, the scroll ends curl, the pendant sways"
+   }
+  },
+  {
+   "id": 44,
+   "shot": 14,
+   "t": "107.300-109.500",
+   "at_s": 107.3,
+   "vo_line": 13,
+   "offset": 0.04,
+   "vo": "Should the university set one default for authorized A I use, or leave it to each faculty member?",
+   "shows": "reverses down the whole corridor, every door ajar, the hall shrinks to one row",
+   "sfx": "boom",
+   "means": "the whole hall",
+   "rehook": "",
+   "draw": {
+    "subject": "camera",
+    "action": "reverses down the whole corridor, every door ajar, the hall shrinks to one row",
+    "emotion": "reflective",
+    "annotation": "NO SYSTEMWIDE AI RULE"
+   },
+   "choreo": {
+    "primary": "camera reverses down the whole corridor, every door ajar, the hall shrinks to one row",
+    "reaction": "the lamps recede in a line and the doors ajar sway",
+    "ambient": "tubes hum and click off, doors ajar sway, a coral lamp-free hall settles"
+   },
+   "sfx_offset_frames": 22,
+   "sfx_offset_reason": "the whole hall has shrunk to one row 0.73 s after the beat starts"
+  },
+  {
+   "id": 45,
+   "shot": 14,
+   "t": "109.500-112.000",
+   "at_s": 109.5,
+   "vo_line": 13,
+   "offset": 2.24,
+   "vo": "Should the university set one default for authorized A I use, or leave it to each faculty member?",
+   "shows": "a wide banner glyph and a row of small door signs lower into frame on chains",
+   "sfx": "chain",
+   "means": "one default or many signs",
+   "rehook": "",
+   "draw": {
+    "subject": "two options",
+    "action": "a wide banner glyph and a row of small door signs lower into frame on chains",
+    "emotion": "balanced",
+    "annotation": "ONE DEFAULT"
+   },
+   "choreo": {
+    "primary": "two options a wide banner glyph and a row of small door signs lower into frame on chains",
+    "reaction": "both chains settle at different speeds",
+    "ambient": "tubes hum and click off, doors ajar sway, a coral lamp-free hall settles"
+   }
+  },
+  {
+   "id": 46,
+   "shot": 14,
+   "t": "112.000-113.400",
+   "at_s": 112.0,
+   "vo_line": 13,
+   "offset": 4.74,
+   "vo": "Should the university set one default for authorized A I use, or leave it to each faculty member?",
+   "shows": "holds a pen between the banner and the row of signs",
+   "sfx": "pop",
+   "means": "leave it to each faculty member",
+   "rehook": "",
+   "draw": {
+    "subject": "faceless hand",
+    "action": "holds a pen between the banner and the row of signs",
+    "emotion": "undecided",
+    "annotation": "EACH FACULTY MEMBER"
+   },
+   "choreo": {
+    "primary": "faceless hand holds a pen between the banner and the row of signs",
+    "reaction": "the pen drifts from one option to the other",
+    "ambient": "tubes hum and click off, doors ajar sway, a coral lamp-free hall settles"
+   }
+  },
+  {
+   "id": 47,
+   "shot": 14,
+   "t": "113.400-114.400",
+   "at_s": 113.4,
+   "vo_line": 13,
+   "offset": 6.14,
+   "vo": "Should the university set one default for authorized A I use, or leave it to each faculty member?",
+   "shows": "pulses once over the hall as the tubes click off to one ticking tube",
+   "sfx": "tick",
+   "means": "the box is still empty",
+   "rehook": "",
+   "draw": {
+    "subject": "dashed box",
+    "action": "pulses once over the hall as the tubes click off to one ticking tube",
+    "emotion": "open",
+    "annotation": "UAA STUDENT HANDBOOK"
+   },
+   "choreo": {
+    "primary": "dashed box pulses once over the hall as the tubes click off to one ticking tube",
+    "reaction": "the tubes go out one by one and the last tick lingers",
+    "ambient": "tubes hum and click off, doors ajar sway, a coral lamp-free hall settles"
+   }
+  }
+ ]
+}

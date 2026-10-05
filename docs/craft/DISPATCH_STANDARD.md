@@ -356,3 +356,15 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
   timing, and accepts no comment exemptions: give the second plate of a pair a different y.
 - **An inset opening over a plate retires the plate first.** A cross-fade under a new inset leaves
   ghosted type for the frames they share.
+- **Plates must clear y 490 and stay off y 420 and 1500.** The LinkedIn square crops
+  `1080:1080:0:420`, and a push-in moves a plate toward the frame centre, so a plate that sits at
+  the crop edge or inside the caption band at rest straddles it mid-push. Put full-bleed rects in
+  `data-band="ok"` from the start.
+- **A single-outlet story is attributed on screen as well as in the VO.** Put a PER <OUTLET> plate
+  on the shot that carries each figure, and never put a proportion beside the count it divides
+  (the 1.1 percent only ever pairs with the 119). Draw a proportion to true scale or don't draw it.
+- **An outlet's name isn't a cadence.** Say "per the Daily News" once per figure group, not once per
+  sentence, or the cadence gate counts the film as a list of attributions.
+- **Mix, evidence and caption data come from the board.** Derive sfx kinds, moves and caption splits
+  from `storyboard.json` before the first render, and re-run `dispatch_mix.py` after any
+  `build_scenes.py` change. Editing sources during a render invalidates its provenance receipt.

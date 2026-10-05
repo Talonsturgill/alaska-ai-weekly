@@ -1,0 +1,274 @@
+{
+ "run_date": "2026-10-05",
+ "fact_check_verdict": "PASS WITH ATTRIBUTION: ADN is the single outlet for every figure; handbook and catalog verified primary; student quotes and Shier/Dotson quotes CUT",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-single-source",
+   "claim": "150 UAA students were cited for academic misconduct.",
+   "verbatim_source": "Of the 150 students cited for academic misconduct, 119 used AI, accounting for 1.1% of the more than 10,500 students who attended UAA last semester.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "150 STUDENTS CITED",
+   "label": "PER ADN, FROM A UAA DEAN OF STUDENTS REPORT",
+   "note": "ADN only. No time span for the 150 is given, never state one. Never share a frame with 1.1%.",
+   "requires": {
+    "attribution_on_screen": "ADN"
+   },
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-single-source",
+   "claim": "119 of those students used AI.",
+   "verbatim_source": "Of the 150 students cited for academic misconduct, 119 used AI, accounting for 1.1% of the more than 10,500 students who attended UAA last semester.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "119 OF 150",
+   "label": "PER ADN, FROM A UAA DEAN OF STUDENTS REPORT",
+   "note": "About four in five is our arithmetic.",
+   "requires": {
+    "attribution_on_screen": "ADN",
+    "must_ship": true
+   },
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-single-source",
+   "claim": "The 119 AI cases are 1.1% of UAA students who attended last semester.",
+   "verbatim_source": "Of the 150 students cited for academic misconduct, 119 used AI, accounting for 1.1% of the more than 10,500 students who attended UAA last semester.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "1.1% OF 10,500+ STUDENTS",
+   "label": "PER ADN",
+   "note": "1.1% belongs to the 119, never to the 150.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-single-source",
+   "claim": "The report shows a 73% increase in AI use for plagiarism last year.",
+   "verbatim_source": "The report shows a 73% increase in AI use for plagiarism last year and a 56% increase in academic misconduct overall.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "AI PLAGIARISM +73%",
+   "label": "PER ADN, UAA DEAN OF STUDENTS REPORT",
+   "note": "Last year is undefined, never print a calendar year. 56% is overall misconduct, not AI.",
+   "requires": {
+    "attribution_on_screen": "ADN"
+   },
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-single-source",
+   "claim": "The report says cases involving AI use have taken over the majority of cases addressed by the conduct office.",
+   "verbatim_source": "cases involving AI use have taken over the majority of cases addressed by the conduct office.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "\"TAKEN OVER THE MAJORITY\"",
+   "label": "UAA DEAN OF STUDENTS REPORT, VIA ADN",
+   "note": "Speaker is the REPORT, not a person.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-single-source",
+   "claim": "UA has no single systemwide AI rule today.",
+   "verbatim_source": "(ADN reports no single UA-wide AI policy)",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "NO SYSTEMWIDE AI RULE",
+   "label": "PER ADN",
+   "note": "ADN only. Attribute. Paraphrase only, never a verbatim quote.",
+   "requires": {
+    "attribution_on_screen": "ADN",
+    "must_ship": true
+   },
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-single-source",
+   "claim": "Faculty set AI rules course by course.",
+   "verbatim_source": "(ADN reports faculty set AI rules in syllabi)",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "RULES SET COURSE BY COURSE",
+   "label": "PER ADN",
+   "note": "Paraphrase only.",
+   "requires": {
+    "attribution_on_screen": "ADN"
+   },
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "claim": "The UAA student handbook's academic integrity section bars utilizing devices not authorized by the faculty member.",
+   "verbatim_source": "utilizing devices not authorized by the faculty member;",
+   "source": "https://catalog.uaa.alaska.edu/handbook/student-freedoms-rights-and-responsibilities/academic-integrity/",
+   "second_source": null,
+   "on_screen": "\"DEVICES NOT AUTHORIZED BY THE FACULTY MEMBER\"",
+   "label": "UAA STUDENT HANDBOOK",
+   "note": "Handbook wording is 'faculty member' singular.",
+   "requires": {
+    "on_screen_verbatim": true
+   },
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "claim": "That handbook section does not mention AI.",
+   "verbatim_source": "(the academic integrity page contains no mention of AI)",
+   "source": "https://catalog.uaa.alaska.edu/handbook/student-freedoms-rights-and-responsibilities/academic-integrity/",
+   "second_source": null,
+   "on_screen": "NO MENTION OF AI",
+   "label": "UAA STUDENT HANDBOOK",
+   "note": "Say it doesn't mention AI, never that AI is banned.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-single-source",
+   "claim": "The UA regents have a draft of AI principles.",
+   "verbatim_source": "presented the draft language to regents in September",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "DRAFT PRESENTED IN SEPTEMBER",
+   "label": "PER ADN",
+   "note": "Do not say what the draft contains.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-single-source",
+   "claim": "Stephanie Erickson, a special projects lead, presented the draft to regents in September.",
+   "verbatim_source": "a special projects lead who presented the draft language to regents in September alongside Chief Information Technology Officer Ben Shier.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "STEPHANIE ERICKSON",
+   "label": "PER ADN",
+   "note": "Nameplate only, never drawn. Her office is not named by ADN.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-single-source",
+   "claim": "Erickson: we need to be deliberate with how we want to engage with AI instead of letting it just happen to us.",
+   "verbatim_source": "We need to be deliberate with how we want to engage with AI instead of letting it just happen to us.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "\"DELIBERATE ... INSTEAD OF LETTING IT JUST HAPPEN TO US\"",
+   "label": "STEPHANIE ERICKSON \u00b7 PER ADN",
+   "note": "Exact wording; the VO may quote the first clause only.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-single-source",
+   "claim": "Regents will consider guiding principles for integrating AI throughout the UA system in November.",
+   "verbatim_source": "Regents will consider guiding principles for integrating AI throughout the UA system in November.",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "REGENTS \u00b7 NOVEMBER",
+   "label": "PER ADN",
+   "note": "'Will consider', never 'will adopt'. Guiding principles are not a binding rule.",
+   "requires": {
+    "attribution_on_screen": "ADN",
+    "must_ship": true
+   },
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "on_screen_extra": [
+    "GUIDING PRINCIPLES"
+   ]
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "claim": "UAA lists a Master of Science in Artificial Intelligence, Data Science, and Engineering.",
+   "verbatim_source": "Master of Science in Artificial Intelligence, Data Science, and Engineering (MS)",
+   "source": "https://catalog.uaa.alaska.edu/search/?P=artificial+intelligence",
+   "second_source": null,
+   "on_screen": "UAA M.S. IN AI, DATA SCIENCE AND ENGINEERING",
+   "label": "UAA CATALOG",
+   "note": "Graduate program only, never undergraduate.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-single-source",
+   "claim": "More than 10,500 students attended UAA last semester.",
+   "verbatim_source": "the more than 10,500 students who attended UAA last semester",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "second_source": null,
+   "on_screen": "10,500+ STUDENTS",
+   "label": "PER ADN",
+   "note": "Do not pair with 150 as a rate.",
+   "requires": {},
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  "student quotes (Feign, Taaga)",
+  "Shier and Dotson quotes (not used)",
+  "UAA undergraduate AI degrees",
+  "AI@UAA initiative",
+  "any time span for the 150",
+  "any calendar year for last year"
+ ]
+}

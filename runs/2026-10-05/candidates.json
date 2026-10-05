@@ -1,0 +1,55 @@
+{
+ "window_days": 10,
+ "search_budget_exhausted": false,
+ "uncapped_sweep_done": true,
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 5
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "candidates_found": 5
+  }
+ ],
+ "candidates": [
+  {
+   "headline": "UA systemwide AI policy, AI is 79% of UAA conduct cases",
+   "verdict": "LOCKED"
+  },
+  {
+   "headline": "Fairbanks borough election data-center moratorium",
+   "verdict": "runner-up, overlaps data center coverage, election is tomorrow"
+  },
+  {
+   "headline": "NPFMC fishery monitoring machine learning",
+   "verdict": "fisheries ML covered twice in 30 days"
+  },
+  {
+   "headline": "UAF ice tower drones",
+   "verdict": "no AI"
+  },
+  {
+   "headline": "UAF blood sample drone",
+   "verdict": "not AI, near Ryan Air"
+  },
+  {
+   "headline": "Kenai cloud seeding drones",
+   "verdict": "covered by sibling deck"
+  },
+  {
+   "headline": "Alaska small business AI chatbots",
+   "verdict": "single source"
+  },
+  {
+   "headline": "Governor candidates on data centers",
+   "verdict": "background"
+  }
+ ],
+ "locked_story": {
+  "headline": "University of Alaska has no single AI rule while AI is now most of UAA's cheating cases",
+  "found_at_rung": "outlet_index_sweep"
+ }
+}

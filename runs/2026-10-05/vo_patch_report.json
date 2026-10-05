@@ -1,0 +1,46 @@
+{
+  "patches": [
+    {
+      "line": 1,
+      "text": "UAA's student handbook bars devices not authorized by the faculty member. That section never says A I.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 7.56,
+      "end": 15.59,
+      "slot_end": 16.88,
+      "cues": 3
+    },
+    {
+      "line": 2,
+      "text": "Faculty set A I rules course by course, the Daily News reports. Watch the last door.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 16.88,
+      "end": 24.13,
+      "slot_end": 25.48,
+      "cues": 3
+    },
+    {
+      "line": 4,
+      "text": "It says A I cases are most of what the conduct office handles, and A I use for plagiarism rose seventy three percent last year.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 36.78,
+      "end": 45.61,
+      "slot_end": 46.64,
+      "cues": 5
+    },
+    {
+      "line": 7,
+      "text": "Stephanie Erickson presented that draft. She said, per the Daily News, we need to be deliberate with how we want to engage with A I.",
+      "wer": 0.0,
+      "pace": 1.0,
+      "start": 62.86,
+      "end": 71.6,
+      "slot_end": 72.02,
+      "cues": 6
+    }
+  ],
+  "splice_verified": true,
+  "note": "Per-line ASR verification plus a sample-exact check that everything outside the patched slots is unchanged. The whole-file ASR score was removed on 2026-07-31 after it measured 0.018/0.378/0.037 on three runs over identical input."
+}

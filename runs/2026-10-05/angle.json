@@ -1,0 +1,25 @@
+{
+ "run_date": "2026-10-05",
+ "stance": "curious",
+ "thesis": "At UAA the AI rule lives in each instructor's syllabus, behind one handbook sentence about devices that never mentions AI, so a count of 119 AI cases of 150 measures how often the rule was invoked more than how much students use AI, and November's guiding principles can at best give every syllabus a shared starting point.",
+ "falsifiability": "False if the November document turns out to be a binding systemwide AI conduct rule, if UAA has a separate written AI conduct rule outside the handbook section, or if ADN or the report shows the 119 cases were decided under one named AI standard.",
+ "supporting_facts": [
+  "c6 + c7 no single UA-wide AI rule, the handbook bars devices not authorized by the faculty member and never mentions AI",
+  "c1 + c2 + c8 119 of 150 cited used AI, 1.1% of 10,500+ students, the report says AI cases have taken over the majority",
+  "c4 + c5 regents will consider guiding principles in November, draft language went to them in September"
+ ],
+ "counter_point": "Course by course may be the right design, since AI use that's cheating in a composition course is the assignment in UAA's own graduate AI program (c12). And the numbers are real: AI plagiarism rose 73% last year (c3), and waiting for perfect definitions is the 'just happen to us' failure Erickson names (c9).",
+ "second_movement": "c12 recontextualises the first: the same university teaches AI as a graduate discipline, so the mismatch is inside one institution. The principles will be a shared starting point and still not a rule, and the honest question is whether one default helps or the course-by-course door fits better.",
+ "runner_ups": [
+  {
+   "angle": "Enthusiast: November is the Alaska win",
+   "why_lost": "the facts don't say what the principles contain, so the win is a hope, not a finding; folded in as the counter-point"
+  },
+  {
+   "angle": "Skeptic: the number measures enforcement not use",
+   "why_lost": "strongest on the numbers but implies doubt about a report we can't see; folded in as the 1.1% turn with attribution"
+  }
+ ],
+ "close_question": "When regents take up AI principles in November, should UA set one default for authorized AI use or keep the call with each faculty member?",
+ "challenge_round": "Three proposals converged on the same facts. Challenges: enthusiast's 'Alaska win' asserts what the principles say (unsupported, demoted); skeptic's 'measures enforcement' reads the report's intent (unsupported, softened to 'counts citations'); explainer is the most falsifiable and gives the film a picture (doors and signs). Synthesis: explainer thesis, skeptic's 1.1% turn, enthusiast's graduate-program counterpoint."
+}

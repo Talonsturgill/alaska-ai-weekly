@@ -1,0 +1,37 @@
+{
+ "judge_id": "J1",
+ "round": 3,
+ "axes": {
+  "Hook & retention": 7.5,
+  "Illustration craft & detail": 7.5,
+  "Motion & animation craft": 7.2,
+  "Composition & staging": 7.7,
+  "Color & grade": 7.5,
+  "Typography & captions": 7.8,
+  "Sound design & mix": 7.9,
+  "VO\u2013illustration sync & entertainment": 7.3,
+  "Accuracy & sourcing": 8.0,
+  "Alaska authenticity & cultural respect": 7.0,
+  "Writing & post quality": 8.0
+ },
+ "weights": {
+  "Hook & retention": 0.12,
+  "Illustration craft & detail": 0.16,
+  "Motion & animation craft": 0.12,
+  "Composition & staging": 0.08,
+  "Color & grade": 0.08,
+  "Typography & captions": 0.06,
+  "Sound design & mix": 0.1,
+  "VO\u2013illustration sync & entertainment": 0.08,
+  "Accuracy & sourcing": 0.1,
+  "Alaska authenticity & cultural respect": 0.06,
+  "Writing & post quality": 0.04
+ },
+ "weighted_total": 7.562,
+ "hard_blockers": [],
+ "concrete_defects": [
+  {
+   "finding": "Motion held windows near 1 to 3 percent; hands finish lag; hook quiet"
+  }
+ ]
+}

@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-10-03"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-10-05"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -91,54 +91,14 @@ _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # One authored bank performance per approved beat: kind, class, prop pan, role.
 # 2026-10-03 The Choosing Isn't: a typewriter-press, paper, a slot frame, stamps, a phone,
 # a belt, a dune and a masthead carry the physical sounds.
+# 2026-10-05 Every Door: the sound map is DERIVED from the approved board (kind = the beat's own
+# `sfx`, class by what the sound is, pan 0 because the doors are centered), so it cannot go stale
+# against the board the way a hand-listed map did. Impacts are hero, wet textures are texture.
+_HERO = {"boom", "stamp"}
+_TEXTURE = {"whoosh", "paper", "chain", "creak", "riser"}
 _PERFORMANCE = [
-    ('whoosh', 'texture', 0.0, 'LEAD slot sits empty under a shut hatch as the camera rises to it'),
-    ('clank', 'hero', 0.0, 'story stub drops out of the slamming hatch and slaps into the LEAD win'),
-    ('tick', 'standard', 0.0, 'price tag swings out on the slot frame and spins to face camera'),
-    ('pop', 'standard', 0.0, 'Walter, the typewriter-press blinks its screen face awake and rolls it'),
-    ('snap', 'standard', 0.0, 'Walter tips back and slams down on its base as the ALASKA NEWS plate d'),
-    ('tick', 'standard', 0.0, 'first sheet curls out of Walters mouth with a ratchet'),
-    ('paper', 'texture', 0.0, 'record plates drop into Walters funnel one after another'),
-    ('ding', 'standard', 0.0, 'Walter slams its carriage and whips printed stories out of its mouth'),
-    ('paper', 'texture', 0.0, 'printed stories avalanche out of Walter and stack into reams, rising'),
-    ('whoosh', 'texture', 0.0, 'the ream column rises past the camera nine reams high'),
-    ('stamp', 'hero', 0.0, 'ALASKA NEWS SAYS stamp slams onto the top ream under the jammed LEAD s'),
-    ('tick', 'standard', 0.0, 'monitor boots a chat window that types itself'),
-    ('pop', 'standard', 0.0, 'chat window slides Walters reply bubbles up until they pile at the to'),
-    ('boom', 'hero', 0.0, 'boxed quote slams onto the screen and shakes the desk'),
-    ('paper', 'texture', 0.0, 'sieve shakes and lets wheat and chaff fall through equally'),
-    ('tick', 'standard', 0.0, 'chat window shows Walters typing dots bouncing'),
-    ('ding', 'standard', 0.0, 'Walter slams its carriage and prints its answer on a sheet'),
-    ('paper', 'texture', 0.0, 'three-tier rack fills every tier with identical sheets as the camera r'),
-    ('clank', 'standard', 0.0, 'EMS headline slams into the LEAD window in tiny official type'),
-    ('whoosh', 'texture', 0.0, 'dashed empty box draws itself under the headline'),
-    ('stamp', 'standard', 0.0, 'official seal stamps PENDING onto the headlines corner on the word'),
-    ('whoosh', 'texture', 0.0, 'dashed box swells as the camera pushes until its emptiness fills the f'),
-    ('tick', 'standard', 0.0, 'unnamed medic reads the story on a phone beside an ambulance and squin'),
-    ('pop', 'standard', 0.0, 'medic shrugs palms up at the phone'),
-    ('chime', 'standard', 0.0, 'Walters small face on the phone lowers its eyes and goes sheepish'),
-    ('snap', 'standard', 0.0, 'medic pockets the phone and turns back to the ambulance'),
-    ('thud', 'standard', 0.0, 'council chamber cranes down onto a press table with a ringing phone an'),
-    ('ding', 'standard', 0.0, 'empty chair rocks as the phone rings louder'),
-    ('stamp', 'hero', 0.0, 'stamps slam NO CALLS, NO MEETINGS, NO INTERVIEWS across the empty chai'),
-    ('snap', 'standard', 0.0, 'unnamed reporter walks in, sits in the empty chair and answers the pho'),
-    ('paper', 'texture', 0.0, 'reporter scratches a note in a notebook'),
-    ('chain', 'texture', 0.0, 'stories on a belt ride past a NO HUMAN BEFORE gate straight into the L'),
-    ('stamp', 'standard', 0.0, 'CHECKED AFTER stamp drops in from off frame onto a story already in th'),
-    ('chain', 'texture', 0.0, 'new unchecked story slides on top of the stamped one'),
-    ('whoosh', 'texture', 0.0, 'moose buries its head deeper as sand spills down the sunny dune'),
-    ('boom', 'hero', 0.0, 'quote plaque slams down beside the moose'),
-    ('pop', 'standard', 0.0, 'moose pulls its head out as a sheet lands on its back and blinks at th'),
-    ('whoosh', 'texture', 0.0, 'fat amber arrow swings off Walters endless pile toward the single slo'),
-    ('ding', 'hero', 0.0, 'price tag flips over on the slot as a hard sun shaft lands on it'),
-    ('chain', 'texture', 0.0, 'ALASKA NEWS masthead takes two hanging plates per the Anchorage Press'),
-    ('creak', 'texture', 0.0, 'plate chains swing and settle level as Walters screen tilts up toward'),
-    ('ding', 'hero', 0.0, 'Walters screen prints its own answer as the carriage slams back'),
-    ('creak', 'texture', 0.0, 'Walter turns its gaze from the masthead to the empty slot across the r'),
-    ('riser', 'texture', 0.0, 'one sheet rises out of the whole pile toward the sunlit LEAD slot'),
-    ('paper', 'texture', 0.0, 'the medic steps in under the slot and reaches up'),
-    ('thud', 'standard', 0.0, 'the pile settles with a soft thud as the music dips'),
-    ('clank', 'hero', 0.0, 'LEAD slot fills its dashed box with the plain question as the medic no'),
+    (b["sfx"], "hero" if b["sfx"] in _HERO else "texture" if b["sfx"] in _TEXTURE else "standard", 0.0, b["shows"][:70])
+    for b in _board["beats"]
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
@@ -190,25 +150,23 @@ def event_timing(index, t):
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (L[0], 0.74),           # a bright open: writing got cheap
-    (L[1], 0.58),           # the question leans back
-    (L[2], 0.86),           # meet Walter: the bed lifts with the machine
-    (L[4], 0.96),           # the avalanche
-    (L[5], 0.70),           # the interview
-    (L[7], 0.82),
-    (L[8], 0.66),           # the headline
-    (L[9], 0.56),
-    (L[10] - 0.2, 0.34),    # the case against: thin under the concession
-    (L[11], 0.38),
-    (L[13], 0.62),          # Herz's counter lifts it again
-    (L[14], 0.80),          # the turn
-    (L[15], 0.46),          # the founders line, read flat over a thin bed
-    (L[16], 0.52),
-    (L[17] - 0.3, 0.88),
-    (L[18] - 0.60, 0.04),   # THE PRE-BUTTON DIP
-    (L[18] + 0.12, 0.30),
-    (L[18] + 2.4, 0.62),
-    (VIDEO_SECS - 4.0, 0.50),
+    (L[0], 0.74),           # a bright open: the rule is on the door
+    (L[1], 0.58),           # the one sentence leans back
+    (L[2], 0.86),           # faculty set rules, watch the last door
+    (L[3], 0.92),           # the count lands
+    (L[4], 0.70),
+    (L[5], 0.50),           # a citation is not a count of use, thin and fair
+    (L[6], 0.56),
+    (L[7], 0.44),           # the quoted line, read plainly
+    (L[8], 0.62),           # the best case for the doors
+    (L[9], 0.96),           # the last door opens
+    (L[10], 0.74),
+    (L[11], 0.46),
+    (L[12], 0.66),          # November, a place to start
+    (L[13] - 0.60, 0.04),   # THE PRE-BUTTON DIP
+    (L[13] + 0.12, 0.30),
+    (L[13] + 2.4, 0.56),
+    (VIDEO_SECS - 4.0, 0.48),
     (VIDEO_SECS - 0.4, 0.0),
 ]
 
@@ -229,7 +187,7 @@ BED_ARC = [
 # October 3rd: newsroom room tone, a soft daylight air. The filtered noise stays
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
-AMB_LEVEL = 0.010
+AMB_LEVEL = 0.018
 
 
 def _assert_per_run_data_covers_the_film():
@@ -363,7 +321,7 @@ def _fit_silence_dip(lines, after_frac=0.5):
 # Episode-local: fit the breath ONLY in the real gap before line15's final question.
 # The shared helper and its minimum/margins remain unchanged. If the natural take
 # has no usable final gap, warn rather than invent a pause or attenuate spoken words.
-_BUTTON_LINE = 18
+_BUTTON_LINE = 13
 SILENCE_DIP_AT, DIP_LEN = _fit_silence_dip(
     _lines, after_frac=(L[_BUTTON_LINE] - 0.000001) / max(x["end"] for x in _lines))
 if SILENCE_DIP_AT is None:

@@ -191,7 +191,9 @@ def main():
         # the citation has to actually CONTAIN the rate: the cadence words, or an equivalent, must
         # appear in the claim's own verbatim_source. Anything else is the film borrowing a claim's
         # credibility for an assertion the claim never made.
-        m = CADENCE.search(text)
+        # an OUTLET NAME is not a rate: "Daily News" (2026-10-05) tripped the 'daily' cadence on
+        # three lines that were only naming the Anchorage Daily News.
+        m = CADENCE.search(re.sub(r"\bDaily News\b", "", text))
         if m:
             word = m.group(0).lower()
             backing = " ".join(

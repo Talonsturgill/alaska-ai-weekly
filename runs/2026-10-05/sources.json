@@ -1,0 +1,51 @@
+{
+ "run_date": "2026-10-05",
+ "title": "",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "AI policy coming to University of Alaska as student misuse increases, October 4th",
+   "outlet": "Anchorage Daily News",
+   "url": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Single outlet. Tim Rockey. Figures attributed on screen."
+  },
+  {
+   "id": "s2",
+   "title": "UAA Student Handbook, Academic Integrity",
+   "outlet": "UAA",
+   "url": "https://catalog.uaa.alaska.edu/handbook/student-freedoms-rights-and-responsibilities/academic-integrity/",
+   "claims": [
+    "c8",
+    "c9"
+   ],
+   "used_in_film": true,
+   "note": "Primary"
+  },
+  {
+   "id": "s3",
+   "title": "UAA catalog search, artificial intelligence",
+   "outlet": "UAA",
+   "url": "https://catalog.uaa.alaska.edu/search/?P=artificial+intelligence",
+   "claims": [
+    "c14"
+   ],
+   "used_in_film": true,
+   "note": "Primary"
+  }
+ ]
+}
