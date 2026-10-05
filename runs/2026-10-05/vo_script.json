@@ -1,0 +1,127 @@
+{
+ "run_date": "2026-10-05",
+ "title": "EVERY DOOR",
+ "note": "Figures and quotes are from the Anchorage Daily News (October 4th), the UAA Student Handbook and the UAA catalog; illustrations are editorial and the doors are illustrative.",
+ "caption_fixups": {
+  "A I": "AI",
+  "a hundred nineteen": "119",
+  "a hundred fifty": "150",
+  "one point one percent": "1.1 percent",
+  "ten thousand five hundred": "10,500",
+  "hundred nineteen": "119"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "At the University of Alaska, there's no single A I rule. It hangs on the classroom door.",
+   "t": "At the University of Alaska, there's no single A I rule. It hangs on the classroom door.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "UAA's student handbook bars devices not authorized by the faculty member. That section never says A I.",
+   "t": "UAA's student handbook bars devices not authorized by the faculty member. That section never says A I.",
+   "claims": [
+    "c8",
+    "c9"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "Faculty set A I rules course by course, the Daily News reports. Watch the last door.",
+   "t": "Faculty set A I rules course by course, the Daily News reports. Watch the last door.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "A UAA report, via the Daily News, says a hundred nineteen of a hundred fifty students cited for academic misconduct used A I.",
+   "t": "A UAA report, via the Daily News, says a hundred nineteen of a hundred fifty students cited for academic misconduct used A I.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "It says A I cases are most of what the conduct office handles, and A I use for plagiarism rose seventy three percent last year.",
+   "t": "It says A I cases are most of what the conduct office handles, and A I use for plagiarism rose seventy three percent last year.",
+   "claims": [
+    "c5",
+    "c4"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "Those hundred nineteen are one point one percent of more than ten thousand five hundred students. But a citation isn't a count of use.",
+   "t": "Those hundred nineteen are one point one percent of more than ten thousand five hundred students. But a citation isn't a count of use.",
+   "claims": [
+    "c3",
+    "c15"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "The regents, the governing board, have a draft of A I principles.",
+   "t": "The regents, the governing board, have a draft of A I principles.",
+   "claims": [
+    "c10"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Stephanie Erickson presented that draft. She said, per the Daily News, we need to be deliberate with how we want to engage with A I.",
+   "t": "Stephanie Erickson presented that draft. She said, per the Daily News, we need to be deliberate with how we want to engage with A I.",
+   "claims": [
+    "c11",
+    "c12"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "The best case for the doors? In a writing course, A I can let students skip the learning.",
+   "t": "The best case for the doors? In a writing course, A I can let students skip the learning.",
+   "claims": []
+  },
+  {
+   "idx": 9,
+   "text": "The last door? UAA's master's program in A I, data science and engineering. There, A I is the subject.",
+   "t": "The last door? UAA's master's program in A I, data science and engineering. There, A I is the subject.",
+   "claims": [
+    "c14"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "Same tool, two doors, opposite answers. One rule would fit neither.",
+   "t": "Same tool, two doors, opposite answers. One rule would fit neither.",
+   "claims": []
+  },
+  {
+   "idx": 11,
+   "text": "Students still need to know which door they're at.",
+   "t": "Students still need to know which door they're at.",
+   "claims": []
+  },
+  {
+   "idx": 12,
+   "text": "In November, regents will consider guiding principles. That's a place to start, not a rule.",
+   "t": "In November, regents will consider guiding principles. That's a place to start, not a rule.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "Should the university set one default for authorized A I use, or leave it to each faculty member?",
+   "t": "Should the university set one default for authorized A I use, or leave it to each faculty member?",
+   "claims": []
+  }
+ ],
+ "caption_split_after": [
+  "conduct office's work,"
+ ]
+}

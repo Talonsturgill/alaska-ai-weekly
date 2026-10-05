@@ -2175,3 +2175,42 @@ dispatch_history:
       amber accent for the top slot
     metaphor: an endless paper avalanche and one square box at the top that only a
       choice can fill
+- date: '2026-10-05'
+  topic: 'UAA has no single AI rule: 119 of 150 misconduct citations used AI, per
+    a UAA report via the Anchorage Daily News'
+  slug: every-door
+  key_entities:
+  - UAA
+  - University of Alaska
+  - Anchorage Daily News
+  - Board of Regents
+  - Stephanie Erickson
+  - student handbook
+  - academic misconduct
+  - AI policy
+  archetype: hallway of doors
+  palette: seafoam corridor, plum doors, navy ink, coral glyph
+  voice: Sulafat
+  stance: curious
+  angle: A 119 of 150 AI citation count shows how often a rule was enforced more than
+    how much students use AI, and November's guiding principles can at best give every
+    syllabus a shared default.
+  hero: ClassroomDoor
+  cast:
+  - ClassroomDoor
+  - HandbookPlate
+  - Glyph
+  - HallWall
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: multiplicity-swarm
+    layout: stacked-layers
+    register: editorial-schematic
+    camera_strategy: track-follow
+    light_story: noon-hard
+    palette: friendly fluorescent seafoam corridor, dusty-blue lockers, plum doors,
+      navy ink, a single coral glyph mark that only ever means an AI rule applied
+      or counted, playful and saturated
+    metaphor: a hallway of identical doors where the same AI sign carries a different
+      verdict at every one

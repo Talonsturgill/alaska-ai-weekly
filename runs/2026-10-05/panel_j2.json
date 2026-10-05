@@ -1,0 +1,37 @@
+{
+ "judge_id": "J2",
+ "round": 2,
+ "axes": {
+  "Hook & retention": 7.0,
+  "Illustration craft & detail": 7.3,
+  "Motion & animation craft": 7.0,
+  "Composition & staging": 7.1,
+  "Color & grade": 7.5,
+  "Typography & captions": 7.3,
+  "Sound design & mix": 7.5,
+  "VO\u2013illustration sync & entertainment": 7.1,
+  "Accuracy & sourcing": 7.8,
+  "Alaska authenticity & cultural respect": 7.5,
+  "Writing & post quality": 7.3
+ },
+ "weights": {
+  "Hook & retention": 0.12,
+  "Illustration craft & detail": 0.16,
+  "Motion & animation craft": 0.12,
+  "Composition & staging": 0.08,
+  "Color & grade": 0.08,
+  "Typography & captions": 0.06,
+  "Sound design & mix": 0.1,
+  "VO\u2013illustration sync & entertainment": 0.08,
+  "Accuracy & sourcing": 0.1,
+  "Alaska authenticity & cultural respect": 0.06,
+  "Writing & post quality": 0.04
+ },
+ "weighted_total": 7.294,
+ "hard_blockers": [],
+ "concrete_defects": [
+  {
+   "finding": "held beats near frozen; flat table frames; S6 field subtle"
+  }
+ ]
+}

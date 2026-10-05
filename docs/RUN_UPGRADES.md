@@ -3798,3 +3798,8 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - New gate scripts/jolt_check.py, a required preflight row: phase-correlates consecutive frames of the master and counts whole-frame jitter (direction reversals of 0.6 to 8 half-res px, at least 3 together, clear of cuts). 10-03 master 41, 10-02 master 49; seven earlier films 0 or 1. Budget 3 a film.
 - New lib/camera.ts (cameraKick, kickTransform): the whole frame moves only on beats the board flags `kick: true`, at most 3 a film and 20 s apart. build_scenes.py holds the board to that budget and writes props.kicks. Ep1003, the template the next episode copies, is rewired to it and its accent-driven bloom is gone.
 - Doctrine: runbook §4.6 and the Gate 0 beat spec, DISPATCH_STANDARD §2 (and the §10 line that kept "the shake" running), the rubric's Motion axis and the flow critic now say impacts land in the object and never ask for camera shake.
+
+## 2026-10-05 — Every Door (UAA has no single AI rule)
+- Shipped: 114 s film on the corridor and ClassroomDoor family (new lib/corridor.tsx). Panel median 7.29 against 7.0 (7.56, 7.29, 7.22). Caption gate B cleared after four rounds.
+- In-run fixes (wip(2026-10-05) commits): dispatch_mix, build_evidence, build_scenes now derive their per-run tables from the board, vo_claims_check cadence ignores an outlet name, credits_check folds an OCR digit misread, caption forced splits.
+- Queued: per-run-tables-from-board (repeat 1), crop-safe-plates-at-gate0, caption-hook-length-first.
