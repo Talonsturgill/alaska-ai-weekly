@@ -3803,3 +3803,9 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - Shipped: 114 s film on the corridor and ClassroomDoor family (new lib/corridor.tsx). Panel median 7.29 against 7.0 (7.56, 7.29, 7.22). Caption gate B cleared after four rounds.
 - In-run fixes (wip(2026-10-05) commits): dispatch_mix, build_evidence, build_scenes now derive their per-run tables from the board, vo_claims_check cadence ignores an outlet name, credits_check folds an OCR digit misread, caption forced splits.
 - Queued: per-run-tables-from-board (repeat 1), crop-safe-plates-at-gate0, caption-hook-length-first.
+
+## 2026-10-06 — A Desk That Never Sleeps (Web 907 AI front desks)
+- Shipped: 13 shots, 131 s plus credits. Panel median 7.28 against 7.0 (7.28, 7.11, 7.33), no hard blockers. Seat 1 rounds 7.04 (type on type), 7.12 (crates under the caption), 7.28. Flow critic said revise (flat dark middle, crate grid), recorded below.
+- New library: lib/frontdesk.tsx (BrassBell, CallSheet, CardboardBell, RotaryPhone, Handset, Walker, IconCard, ShadedHand). Walker gained shade, stride, breath, tall and lean props.
+- In-run fixes: build_evidence _spans reads start_s shot boards, zoom_clip_check measures a Plate by its longest displayLine, vo_soundcheck normalises glued brand digits and possessives.
+- Queued: preflight-source-gates-assume-compact-plate, vo-soundcheck-brand-number-normaliser, setup-env-wrong-python, storyboard-check-vs-say-it-show-it-beat-vo, middle-act-tonal-flat.

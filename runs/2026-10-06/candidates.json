@@ -1,0 +1,46 @@
+{
+ "locked_story": {
+  "headline": "Alaska small businesses are buying AI front desks (a North Pole guide's chatbot, an after-hours vet voice agent) and the owners say where a human has to stay",
+  "found_at_rung": "in_window_sweep"
+ },
+ "candidates": [
+  {
+   "title": "NSF critical minerals microbes + AI (UAA lead, UAF)",
+   "verdict": "DROPPED: 2026-08-09 dispatch already covered this NSF award (outside 30d, but same angle); runner-up locked"
+  },
+  {
+   "title": "Flock camera cut down Anchorage Lowe's",
+   "verdict": "single source, AI thin"
+  },
+  {
+   "title": "Fairbanks Assembly candidates on data centers",
+   "verdict": "too close to excluded Eielson story"
+  },
+  {
+   "title": "Alaska small business AI chatbots (Alaska Business)",
+   "verdict": "feature, runner-up"
+  },
+  {
+   "title": "UAF SWEAT ice tower",
+   "verdict": "no AI"
+  },
+  {
+   "title": "DOE Beluga-Healy $150M",
+   "verdict": "no AI"
+  },
+  {
+   "title": "NSF UAF ML fire weather toolkit",
+   "verdict": "award outside window, lead"
+  }
+ ],
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true
+  }
+ ]
+}

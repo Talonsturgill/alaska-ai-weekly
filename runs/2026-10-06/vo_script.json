@@ -1,0 +1,123 @@
+{
+ "run_date": "2026-10-06",
+ "title": "A DESK THAT NEVER SLEEPS",
+ "note": "Figures and quotes are from the Alaska Business feature A Front Desk That Never Sleeps (September 28th). The trading post, the bell and the Auditor are illustrations, not real businesses or people.",
+ "caption_fixups": {
+  "A I": "AI",
+  "Web nine oh seven": "Web 907",
+  "five to ten percent": "5 to 10 percent",
+  "calm voiced": "calm-voiced",
+  "hyper local": "hyper-local"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "It's two in the morning. Somebody rings the front desk, and nobody's there.",
+   "t": "It's two in the morning. Somebody rings the front desk, and nobody's there.",
+   "claims": []
+  },
+  {
+   "idx": 1,
+   "text": "Alaska Business magazine says small businesses are buying A I front desks. Steve Vick's Fairbanks firm, Web nine oh seven, builds them. He calls it a desk that never sleeps.",
+   "t": "Alaska Business magazine says small businesses are buying A I front desks. Steve Vick's Fairbanks firm, Web nine oh seven, builds them. He calls it a desk that never sleeps.",
+   "claims": [
+    "c1",
+    "c22",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "North Pole guide Rod Pangborn, a Web nine oh seven client, calls his chatbot scary good. He estimates five to ten percent of customers use it.",
+   "t": "North Pole guide Rod Pangborn, a Web nine oh seven client, calls his chatbot scary good. He estimates five to ten percent of customers use it.",
+   "claims": [
+    "c3",
+    "c4",
+    "c20",
+    "c24"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "Another Web nine oh seven job, an emergency vet service. At midnight, a worried owner calls one number, and a calm voiced A I says who's on call.",
+   "t": "Another Web nine oh seven job, an emergency vet service. At midnight, a worried owner calls one number, and a calm voiced A I says who's on call.",
+   "claims": [
+    "c5",
+    "c20"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Vick says it's just reading a spreadsheet. To the caller, it's panic turning to relief.",
+   "t": "Vick says it's just reading a spreadsheet. To the caller, it's panic turning to relief.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "But Carlos Machuca, of the Alaska Small Business Development Center, calls the common mistake accidental adoption. A free chatbot, turned on, with no plan.",
+   "t": "But Carlos Machuca, of the Alaska Small Business Development Center, calls the common mistake accidental adoption. A free chatbot, turned on, with no plan.",
+   "claims": [
+    "c12",
+    "c23"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "Out of the box, Vick says, a model will confidently make up an answer.",
+   "t": "Out of the box, Vick says, a model will confidently make up an answer.",
+   "claims": [
+    "c9"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.",
+   "t": "So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.",
+   "claims": [
+    "c19",
+    "c20",
+    "c4"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "The article says Web nine oh seven tests with awkward, hyper local questions.",
+   "t": "The article says Web nine oh seven tests with awkward, hyper local questions.",
+   "claims": [
+    "c21"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "But Machuca says the owner with no plan is the one he commonly sees.",
+   "t": "But Machuca says the owner with no plan is the one he commonly sees.",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.",
+   "t": "So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.",
+   "t": "Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "Which question would you never let a bot answer alone, and which is just a spreadsheet?",
+   "t": "Which question would you never let a bot answer alone, and which is just a spreadsheet?",
+   "claims": []
+  }
+ ]
+}

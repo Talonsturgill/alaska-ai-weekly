@@ -2214,3 +2214,38 @@ dispatch_history:
       or counted, playful and saturated
     metaphor: a hallway of identical doors where the same AI sign carries a different
       verdict at every one
+- date: '2026-10-06'
+  topic: Alaska small business AI front desks (Alaska Business, Sept 28)
+  slug: a-desk-that-never-sleeps
+  key_entities:
+  - Web 907
+  - Steve Vick
+  - Rod Pangborn
+  - Carlos Machuca
+  - Alaska SBDC
+  archetype: comedian
+  palette: warm pine, brass, midnight teal, mint, alarm red
+  voice: Gemini Sulafat
+  stance: celebratory
+  angle: An Alaska AI front desk is only as good as the page of facts behind it, and
+    the line it must not cross is the answer nobody wrote down.
+  hero: BrassBell
+  cast:
+  - BrassBell
+  - CallSheet
+  - CardboardBell
+  - RotaryPhone
+  - Walker
+  - IconCard
+  composition:
+    pov: counter-level-intimate
+    motion_vector: assemble-build
+    hero_treatment: single-organic-hero
+    layout: single-object-void
+    register: naturalistic-scene
+    camera_strategy: push-through-reveal
+    light_story: night-practical
+    palette: warm pine plank wood, golden stove glow, friendly brass bell, midnight
+      window teal, mint signal, alarm red
+    metaphor: a heavy polished brass front desk that can only read the one page of
+      facts it was given, set against flat cardboard with nothing behind it

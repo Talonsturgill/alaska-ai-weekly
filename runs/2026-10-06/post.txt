@@ -1,0 +1,15 @@
+A vet line that answers at midnight is, in its builder's own words, just reading a spreadsheet.
+
+Alaska Business ran a September 28th feature on small businesses buying an AI front desk. Steve Vick's Fairbanks firm, Web 907, builds them. At an emergency vet service, a worried owner calls one number after hours and a calm-voiced AI says who's on call. Vick says under the hood it's just reading a spreadsheet and to the caller it's the difference between panic and relief.
+
+Guide Rod Pangborn of North Pole is a Web 907 client. He put a chatbot on his site and calls it "scary-good." He says about 5 to 10 percent of his customers use it and that it's increased his revenue.
+
+The same feature carries the warning. Carlos Machuca, who directs the AI Resource Program at the Alaska Small Business Development Center, says what he commonly sees is accidental adoption. An owner turns on a free chatbot with no plan. Vick himself says a model out of the box with no clear boundaries will confidently make up an answer.
+
+So is this a trend or one firm's showcase? Both success stories are Web 907 jobs. That 5 to 10 percent is Pangborn's own estimate, and his revenue gain comes with no number. The feature reports no count of wrong answers. None of that makes the tools bad. It means one feature can't tell you how often they get it right.
+
+My read is that the win and the warning are one rule. A bot shines where somebody wrote the answer down. Where nobody did, Machuca's rule applies. If getting it wrong would cost you a customer permanently, keep a human in that loop.
+
+Which question would you never let a bot answer without a person checking first, and which one is just a spreadsheet?
+
+#Alaska #AI #SmallBusiness #Chatbots

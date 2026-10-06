@@ -1,0 +1,222 @@
+{
+ "run_date": "2026-10-06",
+ "fact_check_verdict": "Publish as one magazine feature's account of how Alaska small businesses use AI front desks, with named owners speaking for their own results. No usage figure is independent: 5 to 10 percent is the guide owner's estimate, prices are the article's reported ranges, the vet service is unnamed and its limits are not stated. Never state ROI, never name the clinic, never call any bot flawless.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary-feature",
+   "spoken": "Alaska Business magazine ran a September twenty eighth feature on small businesses buying AI front desks.",
+   "on_screen": "ALASKA BUSINESS \u00b7 SEPT 28TH \u00b7 TRACY BARBOUR",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Single outlet (Alaska Business feature, named sources). Attribute on screen with PER ALASKA BUSINESS where a figure rides. 'Last October' for the chatbot launch is relative, year not stated, do not state a year."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-quote",
+   "spoken": "He calls it a desk that never sleeps.",
+   "on_screen": "\"A FRONT DESK THAT NEVER SLEEPS\" \u00b7 STEVE VICK",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Verbatim phrase 'front desk that never sleeps', speaker Steve Vick of Web 907. Attribute on screen. The VO says 'a desk that never sleeps' (paraphrase), the screen carries the verbatim."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": true
+   },
+   "label": "VICK"
+  },
+  {
+   "id": "c3",
+   "status": "verified-quote",
+   "spoken": "In North Pole, hunting and tour guide Rod Pangborn put a chatbot on his website. He says it's scary good.",
+   "on_screen": "\"SCARY-GOOD\" \u00b7 ROD PANGBORN",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Verbatim: \"It's scary-good,\" Pangborn says. \"It answers questions like a human would.\" Rod Pangborn, owner of Rod's Alaskan Guide Service, North Pole, a Web 907 client. Describe the business as a guide and tour service, per article 'tour business' and 'authentic adventures'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": true
+   },
+   "label": "PANGBORN"
+  },
+  {
+   "id": "c4",
+   "status": "verified-quote",
+   "spoken": "He says about five to ten percent of his customers use it, and that it's increased his revenue.",
+   "on_screen": "ABOUT 5 TO 10% OF CUSTOMERS USE IT \u00b7 PANGBORN'S ESTIMATE \u00b7 PER ALASKA BUSINESS",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Verbatim: \"About 5 to 10 percent of our total volume of customers use the chatbot,\" ... \"At the end of the day, it's increased our revenue.\" It's Pangborn's own estimate. The revenue gain is his claim, no number given. Never say the chatbot 'earns' a figure."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-article-voice",
+   "spoken": "For an emergency veterinary service, a calm voiced A I answers one number at midnight and says who's on call.",
+   "on_screen": "EMERGENCY VET SERVICE \u00b7 AFTER HOURS",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Article: 'Web 907 deployed one to help an emergency veterinary service manage its rotating after-hours, on-call schedule. Instead of worried pet owners searching through social media posts at midnight to find the open clinic, they call one number and receive an immediate answer from a calm-voiced AI.' CLINIC NOT NAMED, no city, no hours beyond after-hours, and the article states no limits of the agent. Never name a clinic or invent a limit."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-quote",
+   "spoken": "Vick says under the hood it's just reading a spreadsheet, but to the caller it's the difference between panic and relief.",
+   "on_screen": "\"JUST READING A SPREADSHEET\" \u00b7 STEVE VICK",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Verbatim: \"Under the hood, the AI is just reading a spreadsheet, but to the caller, it is the difference between panic and immediate relief,\" Vick says. Attribute to Vick. Speaker line must ride."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "label": "VICK"
+  },
+  {
+   "id": "c9",
+   "status": "verified-quote",
+   "spoken": "Vick says out of the box a model doesn't know what it's not supposed to say, and it will confidently make up an answer.",
+   "on_screen": "\"CONFIDENTLY MAKE UP AN ANSWER\" \u00b7 STEVE VICK",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Verbatim: \"Out of the box, an AI model does not know what it's not supposed to say ... If you don't set clear boundaries, it will happily pull random data from the open internet, write three-paragraph essays nobody wants to read, or confidently make up an answer.\" Vick."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "label": "VICK"
+  },
+  {
+   "id": "c12",
+   "status": "verified-quote",
+   "spoken": "Carlos Machuca at the Alaska Small Business Development Center calls the common mistake accidental adoption. An owner installs the free chatbot widget their website offers, with no plan.",
+   "on_screen": "\"ACCIDENTAL ADOPTION\" \u00b7 CARLOS MACHUCA",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Verbatim: \"What we commonly see is what I call 'accidental adoption,'\" ... \"A business owner installs a chatbot widget because their website platform offers it for free, with no clear plan for how it represents their brand or handles edge cases.\" Machuca, director of the AI Resource Program, Alaska Small Business Development Center."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "label": "MACHUCA"
+  },
+  {
+   "id": "c13",
+   "status": "verified-quote",
+   "spoken": "His rule is, if getting it wrong would cost you a customer permanently, keep a human in that loop.",
+   "on_screen": "\"KEEP A HUMAN IN THAT LOOP\" \u00b7 CARLOS MACHUCA",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Verbatim: \"If getting it wrong would cost you a customer permanently, keep a human in that loop.\" Machuca. Exact wording, attribute."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": true
+   },
+   "label": "MACHUCA"
+  },
+  {
+   "id": "c19",
+   "status": "verified-absence",
+   "spoken": "The feature reports no count of wrong answers.",
+   "on_screen": "NO COUNT OF WRONG ANSWERS REPORTED",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "BOUNDED ABSENCE about the article only: the Alaska Business feature gives no count, rate or tally of wrong, failed or handed-off answers for any bot it describes (validator read the full text twice). Never say nobody measures it. Say 'the feature reports no count'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-article",
+   "spoken": "Both stories are Web nine oh seven jobs.",
+   "on_screen": "BOTH STORIES \u00b7 WEB 907 WORK",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Article: 'Web 907 client Rod Pangborn' and 'Web 907 deployed one to help an emergency veterinary service'. The guide's chatbot is described as a Web 907 client's; the article does not say in so many words that Web 907 built it. Say 'jobs' or 'work', not 'built'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-article-voice",
+   "spoken": "The article says Web nine oh seven tests with awkward, hyper local questions.",
+   "on_screen": "TESTED WITH AWKWARD, HYPER-LOCAL QUESTIONS \u00b7 PER THE ARTICLE",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Article's own narration, NOT a quote from Vick. Never say flawless."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-article-and-site",
+   "spoken": "Steve Vick's Fairbanks firm, Web nine oh seven, builds them.",
+   "on_screen": "WEB 907 \u00b7 FAIRBANKS",
+   "source": "https://web907.com/",
+   "requires": [
+    "Web 907 site: 'Based in Fairbanks. Serving all of Alaska', lists AI Chatbots and AI Voice Agents as services. Article calls it a website design team. Say a Fairbanks firm that builds them, never name it as owner-operated by Vick beyond 'Steve Vick's'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-article-and-site",
+   "spoken": "But Carlos Machuca, of the Alaska Small Business Development Center",
+   "on_screen": "CARLOS MACHUCA \u00b7 AI RESOURCE PROGRAM DIRECTOR \u00b7 ALASKA SBDC",
+   "source": "https://aksbdc.org/services/ai-resource-center/",
+   "requires": [
+    "Title as printed in the article attribution: AI Resource Program Director, Alaska Small Business Development Center. The VO uses the shorter 'of the Alaska Small Business Development Center'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-article",
+   "spoken": "North Pole guide Rod Pangborn, a Web nine oh seven client",
+   "on_screen": "ROD'S ALASKAN GUIDE SERVICE \u00b7 NORTH POLE",
+   "source": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "requires": [
+    "Article: 'Web 907 client Rod Pangborn uses AI to support various functions for his North Pole tour business, Rod's Alaskan Guide Service ... placed a chatbot on its website'. Describe the business as a guide and tour service in North Pole. Do not give a launch year."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

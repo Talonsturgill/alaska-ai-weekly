@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-10-05"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-10-06"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -96,8 +96,18 @@ _board = json.load(open(os.path.join(OUT, "storyboard.json")))
 # against the board the way a hand-listed map did. Impacts are hero, wet textures are texture.
 _HERO = {"boom", "stamp"}
 _TEXTURE = {"whoosh", "paper", "chain", "creak", "riser"}
+# 2026-10-06 A Desk That Never Sleeps: the board's `sfx` field carries a DESCRIPTIVE name per beat ("ding-ring",
+# "silence-pop-pop"), which is for the film's author. The bank only knows its own 17 kinds, so this run maps each
+# beat id to ONE bank kind, chosen so no two adjacent beats share a spectral family and no kind carries the film.
+_KIND_BY_BEAT = {
+    1: "tick", 2: "ding", 3: "thud", 4: "creak", 5: "whoosh", 6: "tick", 7: "clank", 8: "snap", 9: "whoosh",
+    10: "pop", 11: "stamp", 12: "pop", 13: "chime", 14: "paw", 15: "tick", 16: "chime", 17: "riser", 18: "clank",
+    19: "ding", 20: "boom", 21: "paper", 22: "stamp", 23: "snap", 24: "whoosh", 25: "creak", 26: "thud", 27: "tick",
+    28: "pop", 29: "paper", 30: "whoosh", 31: "tick", 32: "boom", 33: "clank", 34: "pop", 35: "stamp", 36: "ding",
+    37: "whoosh", 38: "creak", 39: "thud", 40: "snap", 41: "whoosh", 42: "ding", 43: "tick",
+}
 _PERFORMANCE = [
-    (b["sfx"], "hero" if b["sfx"] in _HERO else "texture" if b["sfx"] in _TEXTURE else "standard", 0.0, b["shows"][:70])
+    (_KIND_BY_BEAT[b["id"]], "hero" if _KIND_BY_BEAT[b["id"]] in _HERO else "texture" if _KIND_BY_BEAT[b["id"]] in _TEXTURE else "standard", 0.0, b["shows"][:70])
     for b in _board["beats"]
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
@@ -150,23 +160,25 @@ def event_timing(index, t):
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (L[0], 0.74),           # a bright open: the rule is on the door
-    (L[1], 0.58),           # the one sentence leans back
-    (L[2], 0.86),           # faculty set rules, watch the last door
-    (L[3], 0.92),           # the count lands
-    (L[4], 0.70),
-    (L[5], 0.50),           # a citation is not a count of use, thin and fair
-    (L[6], 0.56),
-    (L[7], 0.44),           # the quoted line, read plainly
-    (L[8], 0.62),           # the best case for the doors
-    (L[9], 0.96),           # the last door opens
-    (L[10], 0.74),
-    (L[11], 0.46),
-    (L[12], 0.66),          # November, a place to start
-    (L[13] - 0.60, 0.04),   # THE PRE-BUTTON DIP
-    (L[13] + 0.12, 0.30),
-    (L[13] + 2.4, 0.56),
-    (VIDEO_SECS - 4.0, 0.48),
+    (L[0], 0.60),           # a quiet 2 a.m., the stove ticking
+    (L[0] + 2.2, 0.80),     # the bell wakes
+    (L[1], 0.66),           # the magazine and the name
+    (L[2], 0.80),           # the guide, the side door
+    (27.0, 0.05),           # THE INTERRUPT: the room drops to silence in the VO breath so the walker pops land clean
+    (27.84, 0.74),
+    (L[3], 0.72),           # the vet line at midnight
+    (L[4], 0.84),           # just reading a spreadsheet, the relief
+    (L[5], 0.52),           # accidental adoption, thin and fair
+    (L[6], 0.70),           # the confident ink
+    (L[7], 0.46),           # the Auditor asks the fair question, nearly bare
+    (L[8], 0.56),
+    (L[9], 0.74),           # hard cut to the crate wall
+    (L[10], 0.62),          # the one rule
+    (L[11], 0.40),          # Machuca's rule, plain
+    (L[12] - 0.60, 0.04),   # THE PRE-BUTTON DIP
+    (L[12] + 0.12, 0.32),
+    (L[12] + 2.4, 0.58),
+    (VIDEO_SECS - 4.0, 0.46),
     (VIDEO_SECS - 0.4, 0.0),
 ]
 
@@ -184,7 +196,7 @@ BED_ARC = [
 # hundred and ten bare. A room that is visibly a working plant should hum for its whole runtime,
 # so the bed now runs the full film at a lower level, where it reads as air rather than as an
 # event. Still synthesised, still deterministic, still no attribution owed.
-# October 3rd: newsroom room tone, a soft daylight air. The filtered noise stays
+# October 6th: a trading-post room, stove tick and soft air. The filtered noise stays
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
 AMB_LEVEL = 0.018
@@ -321,7 +333,7 @@ def _fit_silence_dip(lines, after_frac=0.5):
 # Episode-local: fit the breath ONLY in the real gap before line15's final question.
 # The shared helper and its minimum/margins remain unchanged. If the natural take
 # has no usable final gap, warn rather than invent a pause or attenuate spoken words.
-_BUTTON_LINE = 13
+_BUTTON_LINE = 12
 SILENCE_DIP_AT, DIP_LEN = _fit_silence_dip(
     _lines, after_frac=(L[_BUTTON_LINE] - 0.000001) / max(x["end"] for x in _lines))
 if SILENCE_DIP_AT is None:

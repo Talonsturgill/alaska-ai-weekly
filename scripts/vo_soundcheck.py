@@ -173,6 +173,16 @@ def _norm_words(s, aliases=None):
     # value); stripped by the general regex below they'd split into "50" + "000"
     # and canonicalize as "fifty" + "zero" instead of "fifty thousand".
     s = re.sub(r"(?<=\d),(?=\d{3}\b)", "", s)
+    # GLUED NAME+DIGITS ("web907", "mp3"): Whisper writes a brand as one alphanumeric token while
+    # the script speaks "web nine oh seven". Read the digits one at a time (0 as "oh"), the way a
+    # brand's number is said, on BOTH sides, so a correct read of "Web nine oh seven" is not a WER
+    # error (2026-10-06, a Web 907 film failed every take on this alone). A possessive and its bare
+    # plural ("vick's" / "vicks") are the same ASR-dropped apostrophe, so both normalize to one form.
+    _DIG = {"0": "oh", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five",
+            "6": "six", "7": "seven", "8": "eight", "9": "nine"}
+    s = re.sub(r"\b([a-z]{2,})(\d{2,4})\b",
+               lambda m: m.group(1) + " " + " ".join(_DIG[d] for d in m.group(2)), s)
+    s = re.sub(r"(?<=[a-z])'s\b", "s", s)
     raw = [w for w in re.sub(r"[^a-z0-9' ]", " ", s).split() if w]
     expanded = []
     for w in raw:
