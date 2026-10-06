@@ -430,6 +430,14 @@ def check(path: str):
             size = float(sm.group(1)) if sm else DEFAULT_SIZE[kind]
             wm = re.search(r"\bwidth=\{(" + NUM + r")\}", a)
             w = float(wm.group(1)) if wm else (820.0 if centered_contract else mono_w(label, size) + 56)
+            # A Plate with displayLines draws those lines stacked and sizes its box to the LONGEST
+            # of them (Ep1006 Plate: `Math.max(...ls.map(monoW)) + 56`), not to the joined `text`.
+            # Measuring `text` as one line reported a 278px three-line plate as 641px wide.
+            dl = re.search(r"\bdisplayLines=\{\[(.*?)\]\}", a, re.S)
+            if dl and not wm and not centered_contract:
+                parts = [p1 or p2 for p1, p2 in re.findall(r"'([^']*)'|\"([^\"]*)\"", dl.group(1))]
+                if parts:
+                    w = max(mono_w(t, size) for t in parts) + 56
             sub = re.search(r'sub="([^"]*)"', a)
             if sub:
                 w = max(w, mono_w(sub.group(1), size * 0.54, 1.2) + 56)

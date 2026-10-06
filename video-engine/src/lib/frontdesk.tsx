@@ -143,7 +143,10 @@ export type RowState = 'lit' | 'dim' | 'blank' | 'filled' | 'bad' | 'human';
 export const CallSheet: React.FC<{
   x: number; y: number; scale?: number; f: number; rows: RowState[]; w?: number; rowH?: number; rot?: number;
   glow?: number; nail?: boolean; fillT?: number; fillRow?: number; pulse?: number;
-}> = ({x, y, scale = 1, f, rows, w = 360, rowH = 64, rot = 0, glow = 1, nail = false, fillT = 0, fillRow = -1, pulse = 1}) => {
+  /** per-row 0..1 mint wipe for `lit`/`filled` rows (undefined = fully lit). A row below 1 reads as a written row
+   *  with mint sweeping across it, left to right, or right to left where `mintRtl[i]` is true. */
+  mintT?: number[]; mintRtl?: boolean[];
+}> = ({x, y, scale = 1, f, rows, w = 360, rowH = 64, rot = 0, glow = 1, nail = false, fillT = 0, fillRow = -1, pulse = 1, mintT, mintRtl}) => {
   const h = rows.length * rowH + 130;
   const sw = nail ? Math.sin(f / 44) * 1.4 : 0;
   return (
@@ -164,7 +167,12 @@ export const CallSheet: React.FC<{
         const fillRowNow = i === fillRow;
         const eff: RowState = fillRowNow && fillT > 0.5 ? 'human' : s;
         const bp = 0.55 + 0.45 * Math.abs(Math.sin(f / 14)) * pulse;
-        const lit = eff === 'lit' || eff === 'filled';
+        const mt = mintT ? clamp01(mintT[i] ?? 1) : 1;
+        const lit = (eff === 'lit' || eff === 'filled') && mt >= 1;
+        const wiping = (eff === 'lit' || eff === 'filled') && mt < 1;
+        const ww = (w - 28) * mt;
+        const wx = mintRtl?.[i] ? -w / 2 + 14 + (w - 28) - ww : -w / 2 + 14;
+        const edge = mintRtl?.[i] ? wx : wx + ww;
         return (
           <g key={i}>
             <rect x={-w / 2 + 14} y={ry} width={w - 28} height={rowH - 14} rx={8}
@@ -172,6 +180,12 @@ export const CallSheet: React.FC<{
               stroke={eff === 'blank' ? FD.red : FD.ink} strokeWidth={eff === 'blank' ? 6 : 4}
               strokeDasharray={eff === 'blank' ? '14 9' : undefined}
               opacity={eff === 'blank' ? bp : 1} />
+            {wiping && mt > 0.005 && (
+              <g>
+                <rect x={wx} y={ry} width={ww} height={rowH - 14} rx={8} fill={FD.mint} stroke={FD.ink} strokeWidth={4} />
+                <rect x={edge - 4} y={ry + 4} width={8} height={rowH - 22} rx={4} fill="#FFFFFF" opacity={0.75 * Math.sin(Math.PI * mt)} />
+              </g>
+            )}
             {lit && <rect x={-w / 2 + 14} y={ry} width={w - 28} height={rowH - 14} rx={8} fill="#FFFFFF" opacity={0.18 * glow} />}
             {eff === 'blank' && <rect x={-w / 2 + 40} y={ry + 16} width={w - 120} height={rowH - 46} rx={6} fill={FD.red} opacity={0.35 * bp} />}
             {eff === 'human' && (
@@ -183,7 +197,7 @@ export const CallSheet: React.FC<{
             )}
             {eff !== 'blank' && eff !== 'human' && [0, 1].map((l) => (
               <rect key={l} x={-w / 2 + 34} y={ry + 12 + l * 20} width={(w - 130) * (l ? 0.55 : 0.85)} height={9} rx={4}
-                fill={eff === 'bad' ? '#7C93A8' : FD.ink} opacity={lit ? 0.7 : 0.35} />
+                fill={eff === 'bad' ? '#7C93A8' : FD.ink} opacity={lit ? 0.7 : wiping ? 0.35 + 0.35 * mt : 0.35} />
             ))}
             {fillRowNow && s === 'blank' && fillT > 0 && (
               <rect x={-w / 2 + 34} y={ry + 12} width={(w - 130) * clamp01(fillT * 1.6)} height={9} rx={4} fill={FD.ink} opacity={0.75} />
@@ -235,8 +249,21 @@ export const CardboardBell: React.FC<{x: number; y: number; scale?: number; f: n
 };
 
 /** A rotary phone that rings: the whole body wobbles, the handset jitters on its cradle. */
-export const RotaryPhone: React.FC<{x: number; y: number; scale?: number; f: number; ring?: number; glow?: number}> = ({
-  x, y, scale = 1, f, ring = 1, glow = 0,
+/** The rotary phone's receiver on its own, so a scene can lift it off the cradle to a caller's ear. Origin is the
+ *  centre of the bar; `rot` turns it, the two cups face local +y. Same art as the cradled handset. */
+export const Handset: React.FC<{x: number; y: number; rot?: number; s?: number}> = ({x, y, rot = 0, s = 1}) => (
+  <g transform={`translate(${x},${y}) rotate(${rot}) scale(${s})`}>
+    <g transform="translate(0,7)">
+      <rect x={-100} y={-24} width={200} height={34} rx={17} fill="#3A322C" stroke={FD.ink} strokeWidth={7} />
+      <rect x={-110} y={-14} width={42} height={42} rx={14} fill="#3A322C" stroke={FD.ink} strokeWidth={6} />
+      <rect x={68} y={-14} width={42} height={42} rx={14} fill="#3A322C" stroke={FD.ink} strokeWidth={6} />
+      <rect x={-84} y={-19} width={150} height={6} rx={3} fill="#FFFFFF" opacity={0.16} />
+    </g>
+  </g>
+);
+
+export const RotaryPhone: React.FC<{x: number; y: number; scale?: number; f: number; ring?: number; glow?: number; lifted?: boolean}> = ({
+  x, y, scale = 1, f, ring = 1, glow = 0, lifted = false,
 }) => {
   const j = ring > 0 ? Math.sin(f * 1.7) * 3 * ring : 0;
   return (
@@ -249,11 +276,18 @@ export const RotaryPhone: React.FC<{x: number; y: number; scale?: number; f: num
         const a = (i / 8) * Math.PI * 1.6 + 0.5;
         return <circle key={i} cx={Math.cos(a) * 34} cy={-46 + Math.sin(a) * 34} r={7} fill="#2C2622" />;
       })}
-      <g transform={`translate(0,${-100 + j * 0.6}) rotate(${j})`}>
-        <rect x={-100} y={-24} width={200} height={34} rx={17} fill="#3A322C" stroke={FD.ink} strokeWidth={7} />
-        <rect x={-110} y={-14} width={42} height={42} rx={14} fill="#3A322C" stroke={FD.ink} strokeWidth={6} />
-        <rect x={68} y={-14} width={42} height={42} rx={14} fill="#3A322C" stroke={FD.ink} strokeWidth={6} />
-      </g>
+      {lifted ? (
+        <g>
+          {/* the bare cradle prongs once the receiver is off */}
+          {[-78, 78].map((px) => <rect key={px} x={px - 10} y={-112} width={20} height={22} rx={6} fill="#2C2622" stroke={FD.ink} strokeWidth={5} />)}
+        </g>
+      ) : (
+        <g transform={`translate(0,${-100 + j * 0.6}) rotate(${j})`}>
+          <rect x={-100} y={-24} width={200} height={34} rx={17} fill="#3A322C" stroke={FD.ink} strokeWidth={7} />
+          <rect x={-110} y={-14} width={42} height={42} rx={14} fill="#3A322C" stroke={FD.ink} strokeWidth={6} />
+          <rect x={68} y={-14} width={42} height={42} rx={14} fill="#3A322C" stroke={FD.ink} strokeWidth={6} />
+        </g>
+      )}
     </g>
   );
 };
@@ -292,3 +326,89 @@ export const IconCard: React.FC<{x: number; y: number; s?: number; rot?: number;
     {icon === 'qmark' && <text x={0} y={46} textAnchor="middle" fontFamily="Fraunces, Georgia, serif" fontWeight={900} fontSize={110} fill={FD.red}>?</text>}
   </g>
 );
+
+/** THE SHADED HAND (2026-10-06 fix round). Same contract as stack.tsx HandSil (wrist at (0,0), fingers up (-y),
+ *  `curl` closes the fingers, `fill` is the SLEEVE), but finished like the brass bell instead of a flat cut-out:
+ *  an ink outline at the bell's weight, a key-to-shade form gradient whose axis is the WORLD light (it is
+ *  counter-rotated through `rot`/`flip`, so a hand turned upside down is still lit from above-left), a warm rim on
+ *  the lit contour, a cool bounce fill on the shadow contour, a sheen, finger creases, a cuffed sleeve, and a
+ *  soft cast shadow offset away from the light. `contact` adds a ContactShadow in world space where the hand
+ *  rests on something. The hand itself is skin (`skin`), never the sleeve colour, so it never reads as a glove. */
+export const ShadedHand: React.FC<{
+  x: number; y: number; rot?: number; s?: number; curl?: number; flip?: boolean; sleeve?: boolean;
+  fill?: string; skin?: string; contact?: {x: number; y: number; rx: number}; reach?: number;
+}> = ({x, y, rot = 0, s = 1, curl = 0, flip = false, sleeve = true, fill = '#3A4452', skin = '#B9805E', contact, reach = 300}) => {
+  const uid = React.useId().replace(/:/g, '');
+  const LX = -0.42, LY = -0.91; // toward the light, world space (lighting.tsx LIGHT.dir)
+  const a = (-rot * Math.PI) / 180;
+  let lx = LX * Math.cos(a) - LY * Math.sin(a);
+  const ly = LX * Math.sin(a) + LY * Math.cos(a);
+  if (flip) lx = -lx;
+  const ht = tones(skin), st = tones(fill);
+  const fingers = [
+    {x: -44, len: 104, w: 27}, {x: -14, len: 122, w: 28}, {x: 16, len: 116, w: 28}, {x: 45, len: 92, w: 26},
+  ];
+  const hand = (col: string, extra: React.SVGProps<SVGRectElement> = {}) => [
+    <rect key="p" x={-64} y={-128} width={128} height={132} rx={40} fill={col} {...extra} />,
+    ...fingers.map((g, i) => (
+      <rect key={i} x={g.x - g.w / 2} y={-128 - g.len * (1 - 0.55 * curl)} width={g.w}
+        height={g.len * (1 - 0.35 * curl) + 40} rx={g.w / 2} fill={col} {...extra} />
+    )),
+    <rect key="t" x={-96} y={-96} width={34} height={92} rx={17} fill={col} {...extra} transform={`rotate(${-34 + 18 * curl} -78 -20)`} />,
+  ];
+  // `reach` lengthens the sleeve (local units past the wrist) so an arm entering from a frame edge is never cut short
+  const sl = reach > 300 ? `M-68,-6 L-100,300 L-100,${reach} L100,${reach} L100,300 L68,-6 Z` : 'M-68,-6 L-100,300 L100,300 L68,-6 Z';
+  const litLeft = lx < 0;
+  const body = (inkOnly: boolean) => (
+    <>
+      {sleeve && <path d={sl} fill={inkOnly ? FD.ink : `url(#${uid}s)`} stroke={FD.ink} strokeWidth={inkOnly ? 0 : 12} strokeLinejoin="round" />}
+      {hand(FD.ink, inkOnly ? {} : {stroke: FD.ink, strokeWidth: 14})}
+    </>
+  );
+  return (
+    <g>
+      <defs>
+        <linearGradient id={`${uid}h`} gradientUnits="userSpaceOnUse" x1={lx * 150} y1={-110 + ly * 150} x2={-lx * 150} y2={-110 - ly * 150}>
+          <stop offset="0" stopColor={ht.key} /><stop offset="0.42" stopColor={ht.base} />
+          <stop offset="0.78" stopColor={ht.core} /><stop offset="1" stopColor={ht.shade} />
+        </linearGradient>
+        <linearGradient id={`${uid}s`} gradientUnits="userSpaceOnUse" x1={lx * 110} y1={150 + ly * 110} x2={-lx * 110} y2={150 - ly * 110}>
+          <stop offset="0" stopColor={st.key} /><stop offset="0.45" stopColor={st.base} />
+          <stop offset="1" stopColor={st.shade} />
+        </linearGradient>
+        <mask id={`${uid}r`} maskUnits="userSpaceOnUse" x={-400} y={-500} width={800} height={1000}>
+          {hand('#FFFFFF')}<g transform={`translate(${-lx * 7},${-ly * 7})`}>{hand('#000000')}</g>
+        </mask>
+        <mask id={`${uid}b`} maskUnits="userSpaceOnUse" x={-400} y={-500} width={800} height={1000}>
+          {hand('#FFFFFF')}<g transform={`translate(${lx * 6},${ly * 6})`}>{hand('#000000')}</g>
+        </mask>
+        <filter id={`${uid}f`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation={6} /></filter>
+      </defs>
+      {contact && <ContactShadow cx={contact.x} cy={contact.y} rx={contact.rx} opacity={0.45} blur={6} />}
+      {/* the cast shadow, offset away from the light in world space */}
+      <g transform={`translate(${x + 9},${y + 18}) rotate(${rot}) scale(${flip ? -s : s},${s})`} opacity={0.34} filter={`url(#${uid}f)`}>
+        {body(true)}
+      </g>
+      <g transform={`translate(${x},${y}) rotate(${rot}) scale(${flip ? -s : s},${s})`}>
+        {sleeve && (
+          <>
+            {body(false)}
+            <path d={litLeft ? 'M-74,40 L-96,292' : 'M74,40 L96,292'} stroke="#fff4de" strokeWidth={9} strokeLinecap="round" opacity={0.5} style={{mixBlendMode: 'screen'}} />
+            <path d={litLeft ? 'M74,40 L96,292' : 'M-74,40 L-96,292'} stroke="#9fb1c4" strokeWidth={8} strokeLinecap="round" opacity={0.35} />
+            <path d="M-30,120 Q-6,150 -20,200 M26,160 Q40,200 30,250" fill="none" stroke={st.shade} strokeWidth={7} strokeLinecap="round" opacity={0.7} />
+            <rect x={-74} y={-4} width={148} height={34} rx={10} fill={st.core} stroke={FD.ink} strokeWidth={9} />
+          </>
+        )}
+        {!sleeve && hand(FD.ink, {stroke: FD.ink, strokeWidth: 14})}
+        {hand(`url(#${uid}h)`)}
+        <g mask={`url(#${uid}b)`}>{hand('#9fb1c4', {opacity: 0.55})}</g>
+        <g mask={`url(#${uid}r)`}>{hand('#fff4de', {opacity: 0.9})}</g>
+        {[-29, 1, 31].map((cx) => (
+          <path key={cx} d={`M${cx},-126 L${cx},${-126 - 34 * (1 - 0.55 * curl)}`} stroke={ht.shade} strokeWidth={4} strokeLinecap="round" opacity={0.6} />
+        ))}
+        <path d="M-40,-118 Q0,-110 40,-118" fill="none" stroke={ht.core} strokeWidth={4} strokeLinecap="round" opacity={0.55} />
+        <ellipse cx={lx * 26} cy={-70 + ly * 26} rx={24} ry={34} fill="#FFFFFF" opacity={0.22} />
+      </g>
+    </g>
+  );
+};
