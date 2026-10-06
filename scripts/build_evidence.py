@@ -82,15 +82,18 @@ def _spans(rows, film_end):
     A float row's end is the next row's onset, and the last row's end is the film's end,
     which is the same arithmetic the board's own range strings encode.
     """
-    out, ordered = {}, sorted(rows, key=lambda r: float(r.get("at_s", r["t"]))
-                              if not isinstance(r["t"], str) else float(r["t"].split("-", 1)[0]))
+    def _on(r):
+        v = r.get("at_s", r.get("start_s", r.get("t")))
+        return float(v.split("-", 1)[0]) if isinstance(v, str) else float(v)
+
+    out, ordered = {}, sorted(rows, key=_on)
     for i, row in enumerate(ordered):
-        if isinstance(row["t"], str) and "-" in row["t"]:
-            lo, hi = map(float, row["t"].split("-"))
+        t = row.get("t")
+        if isinstance(t, str) and "-" in t:
+            lo, hi = map(float, t.split("-"))
         else:
-            lo = float(row.get("at_s", row["t"]))
-            hi = (float(ordered[i + 1].get("at_s", ordered[i + 1]["t"]))
-                  if i + 1 < len(ordered) else film_end)
+            lo = _on(row)
+            hi = _on(ordered[i + 1]) if i + 1 < len(ordered) else film_end
         out[row["id"]] = (lo, hi)
     return out
 
