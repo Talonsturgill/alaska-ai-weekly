@@ -44,7 +44,7 @@ EV = os.path.join(REPO, "out", "evidence")
 # the FILM: "the named signature move does not execute", on a shove that executes fine
 # 1.5s before the strip was taken. An anchor that photographs the wrong moment does not
 # produce a softer score, it produces a false finding, which is more expensive.
-MOVE_RUN_DATE = "2026-10-05"
+MOVE_RUN_DATE = "2026-10-06"
 LINE_START_ACTIONS = {}
 # 2026-10-03 "The Choosing Isn't": one sample per board beat. Slams and stamps are sampled at their contact (+0.35 s). Contacts at +0.2s, scale reveals and camera
 # moves at +0.45s, settles after an overshoot (stamps, slams, the count landing) at +0.6s.

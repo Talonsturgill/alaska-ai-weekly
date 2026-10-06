@@ -68,9 +68,9 @@ const TONES: Record<Tone, {fill: string; fg: string}> = {
 
 /** THE NAMEPLATE. A mono plate sized to its string by arithmetic, ink or enamel and never brass, kept inside the
  *  plate band and clear of the square crop lines and the caption band. `lines` stack, longest line sets the width. */
-const Plate: React.FC<{lines: string | string[]; x?: number; y: number; size?: number; tone?: Tone; p?: number; rot?: number; drop?: number}> =
-({lines, x = 540, y, size = 30, tone = 'ink', p = 1, rot = 0, drop = 0}) => {
-  const ls = Array.isArray(lines) ? lines : [lines];
+const Plate: React.FC<{text: string; displayLines?: string[]; x?: number; y: number; size?: number; tone?: Tone; p?: number; rot?: number; drop?: number}> =
+({text, displayLines, x = 540, y, size = 30, tone = 'ink', p = 1, rot = 0, drop = 0}) => {
+  const ls = displayLines ?? [text];
   const w = Math.min(1000, Math.max(...ls.map((l) => monoW(l, size))) + 56);
   const h = ls.length * (size + 16) + 14;
   const yy = Math.min(y, CAP_GUARD - h / 2);
@@ -92,8 +92,11 @@ const Plate: React.FC<{lines: string | string[]; x?: number; y: number; size?: n
 };
 
 /** A boxed quote, serif on paper with the attribution UNDER it as one plate (DISPATCH_STANDARD 9). Serif caps run 0.68 em. */
-const QuotePlate: React.FC<{lines: string[]; by?: string; x?: number; y: number; size?: number; p?: number; rot?: number}> =
-({lines, by, x = 540, y, size = 40, p = 1, rot = 0}) => {
+const QuotePlate: React.FC<{text: string; x?: number; y: number; size?: number; p?: number; rot?: number}> =
+({text, x = 540, y, size = 40, p = 1, rot = 0}) => {
+  const parts = text.split(' · ');
+  const lines = [parts[0]];
+  const by = parts.length > 1 ? parts.slice(1).join(' · ') : undefined;
   const k = clamp01(p);
   if (k <= 0.01) return null;
   const tw = Math.min(1000, Math.max(...lines.map((l) => l.length * size * 0.68), by ? monoW(by, 22) : 0) + 80);
@@ -157,7 +160,7 @@ const CoatPeg: React.FC<{x: number; y: number; coat?: number; f: number; s?: num
     <g transform={`translate(${x},${y}) scale(${s})`}>
       <rect x={-64} y={-30} width={128} height={34} rx={8} fill={C.plankHi} stroke={C.ink} strokeWidth={6} />
       <circle cx={0} cy={4} r={9} fill="#8C8A84" stroke={C.ink} strokeWidth={4} />
-      <rect x={-52} y={-26} width={74} height={22} rx={5} fill={C.brass} stroke={C.ink} strokeWidth={3} />
+      <rect x={-60} y={-26} width={90} height={22} rx={5} fill={C.brass} stroke={C.ink} strokeWidth={3} />
       <text x={-15} y={-9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} letterSpacing={1} fill={C.ink}>OWNER</text>
       {coat > 0.01 && (
         <g transform={`rotate(${sw} 0 8) translate(0,${(1 - clamp01(coat)) * -30})`} opacity={clamp01(coat * 3)}>
@@ -294,6 +297,7 @@ const Dim: React.FC<{amount: number; cx?: number; cy?: number; r?: number; id?: 
 
 // ---- the shot frame: push, kick, grade ---------------------------------------------------------
 type SP = {f: number; from: number; dur: number; b: (id: number) => number; kicks: number[]};
+type SceneProps = {p: SP};
 const Frame: React.FC<{p: SP; z0?: number; z1?: number; dy?: number; night?: number; sources?: {x: number; y: number; r: number; color?: string; intensity?: number}[]; bloom?: number; vignette?: number; children: React.ReactNode}> =
 ({p, z0 = 1, z1 = 1.05, dy = 0, night = 0.5, sources = [], bloom = 0.05, vignette = 0.3, children}) => {
   const jolt = kickTransform(p.f, cameraKick(p.f, p.from, p.dur, p.kicks));
@@ -313,7 +317,7 @@ const LAMP_SRC = [{x: 420, y: 380, r: 640, color: '#FFF1D2', intensity: 0.5}, {x
 // ============================================================================================================
 // S1  THE BELL AT 2 A.M. A dim lamp-pool counter, the bell asleep under a nightcap, an empty coat peg, the clipboard
 // with one mint row and one red-rimmed blank row. The Mosquito rams the plunger and the bell wakes.
-const S1: React.FC<{p: SP}> = ({p}) => {
+const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const hit = b(2), wake = b(3), clip = b(4);
   const awake = f >= hit;
@@ -336,7 +340,7 @@ const S1: React.FC<{p: SP}> = ({p}) => {
       <SVG>
         <CounterRoom f={f} lamp={lamp} moose={f >= clip ? ease(f, clip, 70) : 0} coat={0} />
         <CallSheet x={700} y={950} scale={0.6} f={f} rows={['lit', 'blank'] as RowState[]} nail />
-        {f >= clip && <Plate lines="NOT WRITTEN DOWN" x={700} y={1068} size={19} tone="slip" p={ease(f, clip, 10)} rot={-2} />}
+        {f >= clip && <Plate text="NOT WRITTEN DOWN" x={700} y={1068} size={19} tone="slip" p={ease(f, clip, 10)} rot={-2} />}
         <BrassBell x={420} y={1160} scale={1.12} f={f} emotion={emotion as 'asleep'} ring={ring} cap={cap ? 1 : 0} lamp={lamp} />
         {!awake && [0, 1, 2].map((i) => {
           const t = ((f / 40 + i / 3) % 1);
@@ -350,7 +354,7 @@ const S1: React.FC<{p: SP}> = ({p}) => {
         <Dust f={f} cx={420} cy={1010} />
         <Dim amount={lerp(1.0, 0.5, lamp)} cx={420} cy={1000} r={860} id="d1" />
         {flash > 0.01 && <rect data-band="ok" width={W} height={H} fill="#FFE9A8" opacity={flash} style={{mixBlendMode: 'screen'}} />}
-        <Plate lines="NOBODY AT THE FRONT DESK" y={590} size={40} tone="ink" p={1} rot={f >= wake && f < wake + 14 ? Math.sin((f - wake) * 1.1) * 2.5 : 0} />
+        <Plate text="NOBODY AT THE FRONT DESK" y={590} size={40} tone="ink" p={1} rot={f >= wake && f < wake + 14 ? Math.sin((f - wake) * 1.1) * 2.5 : 0} />
       </SVG>
     </Frame>
   );
@@ -359,14 +363,15 @@ const S1: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S2  THE TRADING POST. A crane down on the post at night. Four small shops flip to OPEN, the masthead drops on
 // chains, the Web 907 plate hooks on, the neon spells the sign.
-const S2: React.FC<{p: SP}> = ({p}) => {
+const S2: React.FC<SceneProps> = ({p}) => {
   const {f, b, dur} = p;
   const cr = easeIO(f, 0, dur);
   const off = (d: number) => (1 - cr) * 150 * d;
   const msIn = land(f, b(5), 26);
   const webIn = land(f, b(7), 22);
   const neon = Math.floor(clamp01((f - b(8)) / 70) * 30);
-  const SIGN = '"A FRONT DESK THAT NEVER SLEEPS"';
+  const SIGN_FULL = '"A FRONT DESK THAT NEVER SLEEPS" · STEVE VICK';
+  const SIGN = SIGN_FULL.split(' · ')[0];
   const shops = [{x: 30, w: 170}, {x: 205, w: 150}, {x: 735, w: 150}, {x: 890, w: 170}];
   const smoke = Array.from({length: 7}, (_, i) => ((f / 90 + i / 7) % 1));
   return (
@@ -449,9 +454,9 @@ const S2: React.FC<{p: SP}> = ({p}) => {
         <Snow f={f} n={14} d={1.7} op={0.9} wind={0.5} />
         {/* the masthead on two chains, the Web 907 plate on a bracket */}
         {[-300, 300].map((rx) => <line key={rx} x1={540 + rx} y1={-20} x2={540 + rx} y2={lerp(-60, 540, clamp01(msIn))} stroke={C.ink} strokeWidth={6} opacity={clamp01(msIn * 4)} />)}
-        <Plate lines="ALASKA BUSINESS · SEPT 28TH · TRACY BARBOUR" y={560} size={24} tone="enamel" p={clamp01(msIn)} drop={460} rot={Math.sin((f - b(5)) / 6) * 1.5 * Math.exp(-(f - b(5)) / 30)} />
-        <Plate lines={['STEVE VICK', 'WEB 907 · FAIRBANKS']} x={lerp(1400, 540, clamp01(webIn))} y={690} size={26} tone="ink" p={clamp01(webIn * 4)} rot={Math.sin((f - b(7)) / 5) * 2 * Math.exp(-(f - b(7)) / 24)} />
-        <Plate lines="STEVE VICK" x={540} y={830} size={20} tone="slip" p={ease(f, b(8) + 40, 12)} />
+        <Plate text="ALASKA BUSINESS · SEPT 28TH · TRACY BARBOUR" y={560} size={24} tone="enamel" p={clamp01(msIn)} drop={460} rot={Math.sin((f - b(5)) / 6) * 1.5 * Math.exp(-(f - b(5)) / 30)} />
+        <Plate text="STEVE VICK WEB 907 · FAIRBANKS" displayLines={['STEVE VICK', 'WEB 907 · FAIRBANKS']} x={lerp(1400, 540, clamp01(webIn))} y={690} size={26} tone="ink" p={clamp01(webIn * 4)} rot={Math.sin((f - b(7)) / 5) * 2 * Math.exp(-(f - b(7)) / 24)} />
+        <Plate text="STEVE VICK" x={540} y={830} size={20} tone="slip" p={ease(f, b(8) + 40, 12)} />
         <Dim amount={0.35} cx={540} cy={1000} r={1100} id="d2" />
       </SVG>
     </Frame>
@@ -461,7 +466,7 @@ const S2: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S3  THE GUIDE CABIN. Tight on the tiny side door, then at the estimate the camera pulls back and the whole hundred
 // arrive: about seven take the side door, drawn at true scale.
-const S3: React.FC<{p: SP}> = ({p}) => {
+const S3: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const zoom = lerp(1.9, 1.0, easeIO(f, b(12) - 12, 74));
   const cx = 815, cy = 1200;
@@ -493,7 +498,7 @@ const S3: React.FC<{p: SP}> = ({p}) => {
             {[-1, 1].map((sd) => <path key={sd} d={`M${sd * 20},-6 C${sd * 60},-50 ${sd * 90},-40 ${sd * 110},-90 M${sd * 60},-34 L${sd * 80},-80 M${sd * 85},-44 L${sd * 118},-52`} fill="none" stroke="#D9CBB0" strokeWidth={10} strokeLinecap="round" />)}
           </g>
           <g transform="translate(540,930)">
-            <rect x={-130} y={-24} width={260} height={52} rx={6} fill={C.plankHi} stroke={C.ink} strokeWidth={6} />
+            <rect x={-150} y={-24} width={300} height={52} rx={6} fill={C.plankHi} stroke={C.ink} strokeWidth={6} />
             <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={27} letterSpacing={1.5} fill={C.ink}>GUIDE SERVICE</text>
           </g>
           {/* the big plain door and the tiny side door */}
@@ -504,7 +509,7 @@ const S3: React.FC<{p: SP}> = ({p}) => {
           <g transform="translate(265,960)"><rect x={-110} y={-22} width={220} height={44} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={21} letterSpacing={1.2} fill={C.ink}>EVERYONE ELSE</text></g>
           <rect x={770} y={1105} width={90} height={195} fill="#2E2018" stroke={C.ink} strokeWidth={7} />
           <rect x={782} y={1117} width={66} height={175} fill="#E39A45" opacity={0.7} />
-          <g transform="translate(815,1070)"><rect x={-58} y={-20} width={116} height={38} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={1} fill={C.ink}>CHATBOT</text></g>
+          <g transform="translate(815,1070)"><rect x={-66} y={-20} width={132} height={38} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={1} fill={C.ink}>CHATBOT</text></g>
           {/* porch lamps; the side door's lamp holds the bell */}
           <circle cx={265} cy={965} r={0} />
           <g transform="translate(815,1030)">
@@ -547,10 +552,10 @@ const S3: React.FC<{p: SP}> = ({p}) => {
           })}
         </g>
         <Snow f={f} n={40} d={0.8} op={0.7} />
-        <Plate lines="ROD PANGBORN · NORTH POLE" y={560} size={28} tone="enamel" p={ease(f, b(9), 14) * (1 - ease(f, b(12) - 4, 8))} />
-        <Plate lines="WEB 907 CLIENT" y={634} size={22} tone="slip" p={tag * (1 - ease(f, b(12) - 4, 8))} rot={Math.sin((f - b(10)) / 5) * 3 * Math.exp(-(f - b(10)) / 20)} />
-        <QuotePlate lines={['"SCARY-GOOD"']} by="ROD PANGBORN" y={738} size={38} p={quote * (1 - ease(f, b(12) - 4, 8))} rot={-1.5} />
-        <Plate lines={['ABOUT 5 TO 10% OF CUSTOMERS USE IT', "PANGBORN'S ESTIMATE · PER ALASKA BUSINESS"]} y={610} size={22} tone="enamel" p={est} />
+        <Plate text="ROD PANGBORN · NORTH POLE" y={560} size={28} tone="enamel" p={ease(f, b(9), 14) * (1 - ease(f, b(12) - 4, 8))} />
+        <Plate text="WEB 907 CLIENT" y={634} size={22} tone="slip" p={tag * (1 - ease(f, b(12) - 4, 8))} rot={Math.sin((f - b(10)) / 5) * 3 * Math.exp(-(f - b(10)) / 20)} />
+        <QuotePlate text={'"SCARY-GOOD" · ROD PANGBORN'} y={738} size={38} p={quote * (1 - ease(f, b(12) - 4, 8))} rot={-1.5} />
+        <Plate text="ABOUT 5 TO 10% OF CUSTOMERS USE IT · PANGBORN'S ESTIMATE · PER ALASKA BUSINESS" displayLines={['ABOUT 5 TO 10% OF CUSTOMERS USE IT', "PANGBORN'S ESTIMATE · PER ALASKA BUSINESS"]} y={730} size={22} tone="enamel" p={est} />
         <Dim amount={0.3} cx={540} cy={1100} r={1100} id="d3" />
       </SVG>
     </Frame>
@@ -560,8 +565,9 @@ const S3: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S4  ONE NUMBER AT MIDNIGHT. A dark kitchen, a sick dog that doesn't lift its head, a worried owner and a ringing
 // rotary phone. The frost-blue alarm settles to white when the call is answered and one row on the fridge lights mint.
-const S4: React.FC<{p: SP}> = ({p}) => {
+const S4: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
+  const fr = useCurrentFrame();
   const answered = b(16);
   const ringing = f < answered;
   const relief = ease(f, answered, 30);
@@ -589,7 +595,7 @@ const S4: React.FC<{p: SP}> = ({p}) => {
         <rect x={50} y={470} width={250} height={14} fill="#E4EAF0" opacity={0.6} />
         <line x1={50} y1={760} x2={300} y2={760} stroke={C.ink} strokeWidth={5} />
         <CallSheet x={175} y={640} scale={0.4} f={f} rows={rowState} glow={relief} />
-        <Plate lines="ON CALL TONIGHT" x={175} y={820} size={18} tone="slip" p={ease(f, answered + 6, 12)} />
+        <Plate text="ON CALL TONIGHT" x={175} y={820} size={18} tone="slip" p={ease(f, answered + 6, 12)} />
         <g transform="translate(640,930)">
           <circle r={7} fill="#8C8A84" stroke={C.ink} strokeWidth={3} />
           <g transform={`rotate(${Math.sin(f / 20) * 3 + (f > answered ? Math.sin((f - answered) / 4) * 6 * Math.exp(-(f - answered) / 40) : 0)} 0 0)`}>
@@ -623,7 +629,7 @@ const S4: React.FC<{p: SP}> = ({p}) => {
         </g>
         {/* the worried owner walks in, points at the phone and dials; relief turns the head toward the dog */}
         <Character frame={f} x={ox} y={1296} scale={1.2} facing={f < answered + 26 ? -1 : 1} outfit="puffer" headgear="beanie"
-          pose={f < b(15) - 30 ? 'stand' : f < answered ? 'point' : 'stand'} gesture={f < answered ? dial : 1} emotion={f < answered ? 'worried' : 'neutral'}
+          pose={f < b(15) - 30 ? 'stand' : f < answered ? 'point' : 'stand'} gesture={f < answered ? interpolate(fr, [b(15) - 16, b(15) - 2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1} emotion={f < answered ? 'worried' : 'neutral'}
           walking={walkP < 1} walkPhase={walkP * 8} look={f >= answered ? 12 : 0} />
         {f >= answered + 10 && (
           <HandSil x={lerp(660, 800, ease(f, answered + 10, 30))} y={lerp(1050, 1236, ease(f, answered + 10, 30)) + Math.sin(f / 5) * 5 * stroke} rot={lerp(-60, 70, ease(f, answered + 10, 30))} s={0.5} curl={0.2} fill={C.puffer} />
@@ -632,9 +638,9 @@ const S4: React.FC<{p: SP}> = ({p}) => {
         {ringing && rings.map((r, i) => <circle key={i} cx={400} cy={1060} r={40 + r * 520} fill="none" stroke={C.alarm} strokeWidth={10 * (1 - r)} opacity={0.7 * (1 - r)} />)}
         <rect data-band="ok" width={W} height={H} fill={C.alarm} opacity={0.12 * alarm} style={{mixBlendMode: 'screen'}} />
         {white.map((r, i) => r > 0.01 && r < 0.99 && <circle key={i} cx={400} cy={1060} r={40 + r * 600} fill="none" stroke="#FFFFFF" strokeWidth={8 * (1 - r)} opacity={0.65 * (1 - r)} />)}
-        <Plate lines="WEB 907 JOB" y={566} size={28} tone="ink" p={ease(f, b(13), 12) * (1 - ease(f, b(15) + 20, 10))} />
-        <Plate lines="EMERGENCY VET SERVICE · AFTER HOURS" y={640} size={24} tone="enamel" p={ease(f, b(14), 12) * (1 - ease(f, answered + 40, 10))} />
-        <Plate lines="ONE NUMBER" y={714} size={30} tone="slip" p={ease(f, b(15), 12) * (1 - ease(f, answered + 40, 10))} />
+        <Plate text="WEB 907 JOB" y={566} size={28} tone="ink" p={ease(f, b(13), 12) * (1 - ease(f, b(15) + 20, 10))} />
+        <Plate text="EMERGENCY VET SERVICE · AFTER HOURS" y={640} size={24} tone="enamel" p={ease(f, b(14), 12) * (1 - ease(f, answered + 40, 10))} />
+        <Plate text="ONE NUMBER" y={714} size={30} tone="slip" p={ease(f, b(15), 12) * (1 - ease(f, answered + 40, 10))} />
         <Dim amount={0.55} cx={420} cy={1050} r={1000} id="d4" />
       </SVG>
     </Frame>
@@ -644,7 +650,7 @@ const S4: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S5  INSIDE THE BELL (the signature shot). The lit mint row from the fridge fills the frame and becomes the one lit
 // row inside the bell, the camera dollies into the brass, the metal goes translucent amber, and there are no circuits.
-const S5: React.FC<{p: SP}> = ({p}) => {
+const S5: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const zz = lerp(1.0, 1.32, easeIO(f, 6, 230));
   const cut = ease(f, 20, 44);
@@ -672,12 +678,12 @@ const S5: React.FC<{p: SP}> = ({p}) => {
         </g>
         <rect data-band="ok" width={W} height={H} fill="#FFB347" opacity={0.2 * cut} style={{mixBlendMode: 'screen'}} />
         <Dust f={f} cx={540} cy={1060} rx={420} ry={260} n={30} op={0.5} color="#FFE7B0" />
-        <QuotePlate lines={['"JUST READING A SPREADSHEET"']} by="STEVE VICK" y={560} size={36} p={ease(f, b(18), 12)} rot={-1} />
+        <QuotePlate text={'"JUST READING A SPREADSHEET" · STEVE VICK'} y={560} size={36} p={ease(f, b(18), 12)} rot={-1} />
         {f >= b(19) && (
           <g>
             <circle cx={880} cy={730} r={64} fill="none" stroke={relief > 0.5 ? '#FFFFFF' : C.alarm} strokeWidth={10 - 5 * relief} opacity={0.9} />
             <circle cx={880} cy={730} r={64 - 24 * relief} fill={relief > 0.5 ? '#FFFFFF' : C.alarm} opacity={0.35} />
-            <Plate lines="PANIC TO RELIEF" x={880} y={826} size={20} tone="slip" p={ease(f, b(19), 10)} />
+            <Plate text="PANIC TO RELIEF" x={880} y={826} size={20} tone="slip" p={ease(f, b(19), 10)} />
           </g>
         )}
       </SVG>
@@ -688,7 +694,7 @@ const S5: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S6  THE FREE BELL. The camera has pulled out of the dome to the counter. A flat cardboard FREE bell wedges in beside
 // the polished brass one with nothing behind it, the moose leans with a big question mark, and a hand lifts the sheet.
-const S6: React.FC<{p: SP}> = ({p}) => {
+const S6: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const cin = land(f, b(20) + 4, 26);
   const cx = lerp(1380, 770, clamp01(cin));
@@ -716,10 +722,10 @@ const S6: React.FC<{p: SP}> = ({p}) => {
         {blank && <HandSil x={600} y={800 - 96} rot={180} s={0.45} curl={0.7} />}
         <Dust f={f} cx={545} cy={1010} />
         <Dim amount={0.5} cx={545} cy={1000} r={900} id="d6" />
-        <Plate lines="CARLOS MACHUCA" y={540} size={34} tone="enamel" p={mach} />
-        <Plate lines="AI RESOURCE PROGRAM DIRECTOR · ALASKA SBDC" y={604} size={19} tone="slip" p={mach} />
-        <QuotePlate lines={['"ACCIDENTAL ADOPTION"']} by="CARLOS MACHUCA" y={600} size={38} p={fade(f, b(22), b(23) - 4, 10)} rot={1.2} />
-        <Plate lines="FREE · NO PLAN" y={ 560} size={30} tone="alarm" p={ease(f, b(23) + 8, 12)} rot={-2} />
+        <Plate text="CARLOS MACHUCA" y={540} size={34} tone="enamel" p={mach} />
+        <Plate text="AI RESOURCE PROGRAM DIRECTOR · ALASKA SBDC" y={604} size={19} tone="slip" p={mach} />
+        <QuotePlate text={'"ACCIDENTAL ADOPTION" · CARLOS MACHUCA'} y={600} size={38} p={fade(f, b(22), b(23) - 4, 10)} rot={1.2} />
+        <Plate text="FREE · NO PLAN" y={ 560} size={30} tone="alarm" p={ease(f, b(23) + 8, 12)} rot={-2} />
       </SVG>
     </Frame>
   );
@@ -749,7 +755,7 @@ const Ribbon: React.FC<{x0: number; y0: number; g: number; dir: 1 | -1; seed: nu
     </g>
   );
 };
-const S7: React.FC<{p: SP}> = ({p}) => {
+const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = easeIO(f, 6, 120);
   const talk = Math.abs(Math.sin(f / 4)) * (f > 6 ? 1 : 0);
@@ -766,7 +772,7 @@ const S7: React.FC<{p: SP}> = ({p}) => {
         <Ribbon x0={810} y0={1190} g={clamp01(g * 1.05 - 0.02)} dir={-1} seed={2} f={f} />
         <BrassBell x={270} y={1240} scale={0.8} f={f} emotion="happy" talk={talk} lamp={0.8} />
         <CardboardBell x={810} y={1250} scale={0.82} f={f} answer={0} rot={-7} />
-        <QuotePlate lines={['"CONFIDENTLY MAKE UP AN ANSWER"']} by="STEVE VICK" y={560} size={34} p={ease(f, b(25), 12)} rot={-1} />
+        <QuotePlate text={'"CONFIDENTLY MAKE UP AN ANSWER" · STEVE VICK'} y={560} size={34} p={ease(f, b(25), 12)} rot={-1} />
       </SVG>
     </Frame>
   );
@@ -775,8 +781,9 @@ const S7: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S8  THE AUDITOR'S DESK. A back room, a banker's lamp, a plain clerk with a clipboard. He sets down the sheet, pins two
 // tags from the earlier stories onto one clipboard, lifts the estimate plate to a single slip, and turns an empty column.
-const S8: React.FC<{p: SP}> = ({p}) => {
+const S8: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
+  const fr = useCurrentFrame();
   const sheetIn = land(f, b(26) - 4, 24);
   const tags = easeIO(f, b(27) - 4, 26);
   const lift = easeIO(f, b(28), 30);
@@ -810,7 +817,7 @@ const S8: React.FC<{p: SP}> = ({p}) => {
         {f >= b(26) - 14 && f < b(26) + 40 && <HandSil x={520} y={lerp(420, 760, clamp01(sheetIn))} rot={180} s={0.4} curl={0.6} />}
         {/* the Auditor and his clipboard */}
         <Character frame={f} x={150} y={1290} scale={1.5} facing={1} outfit="suit" glasses pose={f >= b(29) - 8 ? 'point' : 'carry'}
-          gesture={f >= b(29) - 8 ? ptr : 1} emotion={f >= b(27) ? 'neutral' : 'worried'} />
+          gesture={f >= b(29) - 8 ? interpolate(fr, [b(29) - 8, b(29) + 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1} emotion={f >= b(27) ? 'neutral' : 'worried'} />
         <g transform={`translate(${clipX},${clipY}) rotate(${-6 + Math.sin(f / 30) * 1.2 + (f >= b(27) ? 3 * Math.sin((f - b(27)) / 5) * Math.exp(-(f - b(27)) / 30) : 0)})`}>
           <rect x={-52} y={-70} width={104} height={140} rx={8} fill={C.plankHi} stroke={C.ink} strokeWidth={6} />
           <rect x={-40} y={-52} width={80} height={110} fill={C.paper} stroke={C.ink} strokeWidth={3} />
@@ -821,10 +828,10 @@ const S8: React.FC<{p: SP}> = ({p}) => {
         {f >= b(27) - 4 && (
           <g>
             <g transform={`translate(${lerp(120, clipX - 30, tags)},${lerp(520, clipY - 30, tags)}) rotate(${(1 - tags) * -30})`}>
-              <rect x={-60} y={-16} width={120} height={32} rx={5} fill={C.slip} stroke={C.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.ink}>WEB 907 CLIENT</text>
+              <rect x={-80} y={-16} width={160} height={32} rx={5} fill={C.slip} stroke={C.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.ink}>WEB 907 CLIENT</text>
             </g>
             <g transform={`translate(${lerp(1000, clipX + 20, tags)},${lerp(480, clipY + 20, tags)}) rotate(${(1 - tags) * 28})`}>
-              <rect x={-52} y={-16} width={104} height={32} rx={5} fill="#1B2A38" stroke={C.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.paper}>WEB 907 JOB</text>
+              <rect x={-66} y={-16} width={132} height={32} rx={5} fill="#1B2A38" stroke={C.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.paper}>WEB 907 JOB</text>
             </g>
           </g>
         )}
@@ -854,9 +861,9 @@ const S8: React.FC<{p: SP}> = ({p}) => {
         )}
         <Dust f={f} cx={330} cy={1010} rx={300} ry={280} op={0.4} color="#FFF8E0" />
         <Dim amount={0.6} cx={330} cy={1000} r={900} id="d8" />
-        <Plate lines="TREND OR ONE FIRM'S SHOWCASE?" y={540} size={30} tone="enamel" p={q} />
-        <Plate lines="BOTH STORIES · WEB 907 WORK" y={600} size={32} tone="ink" p={both} />
-        <Plate lines="NO COUNT OF WRONG ANSWERS REPORTED" y={560} size={26} tone="ink" p={ease(f, b(29) + 6, 12)} />
+        <Plate text="TREND OR ONE FIRM'S SHOWCASE?" y={540} size={30} tone="enamel" p={q} />
+        <Plate text="BOTH STORIES · WEB 907 WORK" y={600} size={32} tone="ink" p={both} />
+        <Plate text="NO COUNT OF WRONG ANSWERS REPORTED" y={770} size={26} tone="ink" p={ease(f, b(29) + 6, 12)} />
       </SVG>
     </Frame>
   );
@@ -865,7 +872,7 @@ const S8: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S9  AWKWARD QUESTIONS. From overhead on the same back-room desk, a vendor's hand feeds awkward cards to the bell, which
 // reads each one. No outcome is shown, and the WRONG ANSWERS column stays empty in frame.
-const S9: React.FC<{p: SP}> = ({p}) => {
+const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const icons: ('boot' | 'fish' | 'plane')[] = ['boot', 'fish', 'plane'];
   const t0 = [0, 58, 112];
@@ -915,7 +922,7 @@ const S9: React.FC<{p: SP}> = ({p}) => {
         })}
         <Dust f={f} cx={540} cy={1000} rx={440} ry={330} op={0.3} color="#FFF8E0" />
         <Dim amount={0.45} cx={540} cy={1000} r={1000} id="d9" />
-        <Plate lines={['TESTED WITH AWKWARD, HYPER-LOCAL QUESTIONS', 'PER THE ARTICLE']} y={590} size={22} tone="enamel" p={ease(f, 4, 12)} />
+        <Plate text="TESTED WITH AWKWARD, HYPER-LOCAL QUESTIONS · PER THE ARTICLE" displayLines={['TESTED WITH AWKWARD, HYPER-LOCAL QUESTIONS', 'PER THE ARTICLE']} y={590} size={22} tone="enamel" p={ease(f, 4, 12)} />
       </SVG>
     </Frame>
   );
@@ -925,7 +932,7 @@ const S9: React.FC<{p: SP}> = ({p}) => {
 // S10  THE CROWD OF FREE BELLS. A hard cut to a wall of crates. Crate after crate stacks up, each holding cardboard FREE bells,
 // the real bell small among them. Another owner's hand takes a free bell off the top and the moose's question card
 // slides into it, and it answers with a confident ribbon of invented ink.
-const S10: React.FC<{p: SP}> = ({p}) => {
+const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const rise = lerp(100, 0, easeIO(f, 0, 150));
   const CW = 250, CH = 190;
@@ -986,7 +993,7 @@ const S10: React.FC<{p: SP}> = ({p}) => {
         )}
         <Dust f={f} cx={540} cy={900} rx={480} ry={420} op={0.3} />
         <Dim amount={0.4} cx={540} cy={900} r={1000} id="d10" />
-        <Plate lines="COMMONLY SEES · NO PLAN · MACHUCA" y={540} size={26} tone="enamel" p={ease(f, b(33), 12)} rot={-1} />
+        <Plate text="COMMONLY SEES · NO PLAN · MACHUCA" y={540} size={26} tone="enamel" p={ease(f, b(33), 12)} rot={-1} />
       </SVG>
     </Frame>
   );
@@ -995,7 +1002,7 @@ const S10: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S11  ONE RULE. From overhead, the lit call sheet beside the bare nail board from the free bell, one bracket tying them
 // as one rule, then the rows light mint one by one and the red cell stays unlit with its pulsing rim.
-const S11: React.FC<{p: SP}> = ({p}) => {
+const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const brace = easeIO(f, b(36) - 4, 40);
   const rowsLit = (i: number) => f >= b(37) + i * 16;
@@ -1019,9 +1026,9 @@ const S11: React.FC<{p: SP}> = ({p}) => {
         <path d={BD} pathLength={1} fill="none" stroke={C.brassHi} strokeWidth={10} strokeLinecap="round" strokeDasharray={`${brace} 2`} />
         <Dust f={f} cx={540} cy={1000} rx={460} ry={360} op={0.3} />
         <Dim amount={0.4} cx={540} cy={1000} r={1000} id="d11" />
-        <Plate lines="TREND · UNPROVEN" y={540} size={32} tone="enamel" p={ease(f, b(35), 10) * (1 - ease(f, b(36) + 24, 10))} />
-        <Plate lines="ONE RULE" y={540} size={44} tone="ink" p={ease(f, b(36) + 28, 10) * (1 - ease(f, b(37) + 8, 10))} />
-        <Plate lines="WRITTEN DOWN = ANSWERED" y={600} size={30} tone="enamel" p={ease(f, b(37), 12)} />
+        <Plate text="TREND · UNPROVEN" y={540} size={32} tone="enamel" p={ease(f, b(35), 10) * (1 - ease(f, b(36) + 24, 10))} />
+        <Plate text="ONE RULE" y={620} size={44} tone="ink" p={ease(f, b(36) + 28, 10) * (1 - ease(f, b(37) + 8, 10))} />
+        <Plate text="WRITTEN DOWN = ANSWERED" y={700} size={30} tone="enamel" p={ease(f, b(37), 12)} />
       </SVG>
     </Frame>
   );
@@ -1031,7 +1038,7 @@ const S11: React.FC<{p: SP}> = ({p}) => {
 // S12  THE OWNER RETURNS. At counter height from the side. The owner hangs the flannel coat on the empty peg, the
 // sleeve brings a pencil to the red cell, a customer walks out and the door closes, the pencil hesitates, and presses a
 // person into the cell. It turns to plain paper with a pencilled figure, never mint.
-const S12: React.FC<{p: SP}> = ({p}) => {
+const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const hang = easeIO(f, 12, 40);
   const toCell = easeIO(f, 56, 40);
@@ -1082,7 +1089,7 @@ const S12: React.FC<{p: SP}> = ({p}) => {
         {f >= b(40) && f < b(40) + 8 && <ImpactStar cx={tipX} cy={tipY} r={30} color="#FFFFFF" />}
         <Dust f={f} cx={640} cy={1000} rx={360} ry={300} op={0.3} />
         <Dim amount={0.45} cx={640} cy={1000} r={900} id="d12" />
-        <QuotePlate lines={['"KEEP A HUMAN IN THAT LOOP"']} by="CARLOS MACHUCA" y={580} size={34} p={q} rot={-1} />
+        <QuotePlate text={'"KEEP A HUMAN IN THAT LOOP" · CARLOS MACHUCA'} y={580} size={34} p={q} rot={-1} />
       </SVG>
     </Frame>
   );
@@ -1091,7 +1098,7 @@ const S12: React.FC<{p: SP}> = ({p}) => {
 // ============================================================================================================
 // S13  THE BUTTON. A hard cut to the counter: the owner's hand rests on the bell, the coat is back on its peg, two bins
 // wait, a card goes in each, the Mosquito dings, the lamp clicks off and the sheet glows alone with its one pencilled figure.
-const S13: React.FC<{p: SP}> = ({p}) => {
+const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const off = f >= b(43) ? 0 : 1;
   const lampT = f >= b(43) + 6 ? 0 : f >= b(43) ? 0.35 : 1;
@@ -1150,14 +1157,14 @@ const S13: React.FC<{p: SP}> = ({p}) => {
           </g>
         )}
         <Dim amount={lerp(0.5, 0.94, 1 - lamp)} cx={lamp > 0.5 ? 420 : 690} cy={lamp > 0.5 ? 1000 : 900} r={lamp > 0.5 ? 900 : 520} id="d13" />
-        <Plate lines="HUMAN CHECKS · JUST A SPREADSHEET" y={560} size={28} tone="enamel" p={ease(f, 8, 12) * (1 - ease(f, b(43) - 8, 10))} />
+        <Plate text="HUMAN CHECKS · JUST A SPREADSHEET" y={560} size={28} tone="enamel" p={ease(f, 8, 12) * (1 - ease(f, b(43) - 8, 10))} />
       </SVG>
     </Frame>
   );
 };
 
 // ---- the shot router and the composition ------------------------------------------------------------------------
-const SHOTS: Record<number, React.FC<{p: SP}>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13};
+const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13};
 
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
   const f = useCurrentFrame();
