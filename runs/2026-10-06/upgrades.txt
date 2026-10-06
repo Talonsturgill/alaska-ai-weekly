@@ -1,0 +1,4 @@
+build_evidence.py now reads start_s shot boards (it crashed on any board without a t field)
+zoom_clip_check.py measures a Plate by its longest displayLine, as the Plate component sizes its box
+vo_soundcheck.py normalises glued brand-name digits and possessives before alignment
+New ShadedHand and shaded Walker in frontdesk.tsx so characters match the hero finish

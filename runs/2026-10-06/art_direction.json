@@ -1,0 +1,108 @@
+{
+ "run_date": "2026-10-06",
+ "palette": {
+  "sky": "#0F1E2A",
+  "ground": "#4A3426",
+  "hero": "#C9972F",
+  "accent": "#6FE0B8",
+  "shadow": "#07101A",
+  "support": {
+   "warning_red": "#D9482B",
+   "pine_plank": "#8A5E3B",
+   "brass": "#C9972F",
+   "brass_hi": "#F4D58A",
+   "ink": "#14100D",
+   "frost_blue": "#9FB7D9",
+   "cardboard": "#B58B5A",
+   "stove_ember": "#E39A45",
+   "paper_grey": "#E7E5DA",
+   "teal_night": "#0F1E2A",
+   "alarm_frost": "#6FC0FF",
+   "plank_dark": "#4A3426",
+   "lamp_key": "#FFF1D2",
+   "row_mint": "#6FE0B8",
+   "aurora_violet": "#7B6FD0",
+   "kitchen_moon": "#5B6B7C"
+  },
+  "mood": "a one-room trading post at 2 a.m., stove-warm inside and cold outside, a little comic, never ominous",
+  "why": "The story is a front desk that works at night, so the world is a bush trading post counter lit by one hanging lamp and a woodstove, over a teal-night window. Hero color is polished brass (the bell). COLOUR LICENCE (each colour has ONE meaning): row mint #6FE0B8 means ONLY a row somebody wrote down (the lit rows of the call sheet, nothing else in the film is mint). Alarm red #D9482B means ONLY the cell nobody wrote (the red-rimmed blank row and the invented ink). The kitchen's panic is a cold frost-blue alarm #6FC0FF and the receiver's calm is a plain white ripple, so mint is never spent on a mood. Lamp light and stove ember #E39A45 are LIGHT ONLY, never a meaning colour. Diverges from 10-05 (seafoam fluorescent, plum, coral), 10-03 (daylight newsprint cream, spruce, cadmium amber) and 10-02 (night brass bench, pearl, magenta): warm pine and ember against teal night, a cooler grey paper so the sheet never reads as 10-03's newsprint, and brass kept to the hero alone. 2026-10-06 audit fixes: stove ember is now a yellow-orange #E39A45 (lower chroma, never within 120 px of the red cell) so it can't merge with warning red #D9482B, the neon sign stays below red's saturation, the storefront aurora is a desaturated VIOLET #7B6FD0 (no mint appears in S2), the kitchen's moonlight is a neutral blue-grey #5B6B7C so the alarm #6FC0FF is the ONLY bright blue in the kitchen, and the hanging lamp is a whiter kerosene #FFF1D2 with the stove as the low side key, which separates this frame from 10-02's overhead golden lamp on brass (that film was brass under a golden lamp, this one is pine under a low ember side key with a white lamp, and the brass highlights run warmer than the key)."
+ },
+ "light": {
+  "time_of_day": "2 a.m., interior, winter",
+  "direction": "one hanging lamp over the counter (soft-edged pool), woodstove ember fill, cold window spill",
+  "key": "a whiter kerosene hanging lamp #FFF1D2 from above, soft-edged pool, plus the woodstove as a LOW SIDE key from frame left (ember #E39A45)",
+  "fill": "stove glow bounce, warm",
+  "rim": "cold frost-blue rim on the bell dome from the window",
+  "depth": "counter-height 2.5D room in five planes (window and shelves far 0.5, stove and wall mid 0.8, the counter and bell 1.0, the clipboard and near props 1.2, a near plank edge 1.4), NightGrade, lamp pool and stove flicker",
+  "why": "A trading post at 2 a.m. is lit by a stove and one lamp. The pool only says where to look. Meaning is carried by mint (a written row) and red (the unwritten cell) and by nothing else.",
+  "argument": "The lamp shows what the bell can see. Meaning lives only in mint (a row somebody wrote down) and red (the cell nobody wrote). Light and dark carry no meaning.",
+  "per_stage": {
+   "counter": "KEY: the hanging lamp, a whiter kerosene #FFF1D2 from above, SOFT-edged pool. LOW SIDE KEY: the woodstove, ember #E39A45 from frame left. FILL: warm bounce off the pine. SPILL AND RIM: the window's frost-blue #9FB7D9 on the bell's left edge. Planes: window and shelves 0.5, stove and back wall 0.8, counter and bell 1.0, clipboard and near props 1.2, plank edge 1.4.",
+   "storefront-night": "key: the lit window and the open door, warm. Fill: frost-blue moon. A desaturated VIOLET aurora far in the sky, NO mint anywhere in this shot. Neon: brass-ember, saturation kept below warning red. Snow in three planes (far 0.4, building 1.0, foreground 1.5).",
+   "owner-kitchen": "one practical, the phone's dial light and a nightlight, the rest a NEUTRAL BLUE-GREY moonlight #5B6B7C through the window so the alarm #6FC0FF pulse is the only bright blue. The alarm pulses with the ring, then settles neutral white when the call is answered. Planes: window and fridge 0.7, table and phone 1.0, owner 1.0, foreground chair 1.3",
+   "dome-interior": "the whole frame is amber, lit from inside the dome, a soft glow with floating dust. Planes: back of the dome 0.8, the sheet and nail 1.0, the near brass rim 1.4",
+   "crate-wall": "the lamp pool and stove ember on stacked crates of cardboard, soft warm key, cardboard reads matte against the bell's brass. Planes: crate wall 0.7, counter 1.0, real bell 1.0",
+   "callsheet-overhead": "straight down under the lamp, a SOFT-edged round pool falling off to the dark plank edges, the sheet's rows light mint from within. Planes: plank table 0.9, sheet and bracket 1.0, hand and pencil 1.2",
+   "guide-cabin": "blue hour at a guide-service cabin, two porch lamps at the doors (soft warm pools), cold sky fill, breath puffs read against the dark. Planes: sky 0.4, cabin wall and doors 1.0, walkers 1.0 to 1.2, ground snow 1.3",
+   "back-room": "the SAME hanging-lamp family as the counter pulled low over the Auditor's ledger desk as a banker's lamp, a HARD-edged cone with the room falling to dark around it, motivated by the set. Cool frost fill from a small high window. Planes: dark filing room 0.6, desk and Auditor 1.0, tags and plates 1.15",
+   "paper-void": "flat paper world lit evenly by a soft warm lamp from upper left, paper fibres and ink read at macro. Planes: paper ground 0.8, ink ribbons 1.0 to 1.3",
+   "counter-side": "the counter lamp from above-left, door spill of cold frost light from the right when the door opens, stove ember on the left. Planes: door and window far 0.5, counter 1.0, owner's sleeve and sheet 1.2"
+  }
+ },
+ "shape_language": {
+  "contrast": "MATERIAL AGAINST MATERIAL, and WEIGHT AGAINST WEIGHTLESSNESS. The BrassBell is polished solid brass, low, wide and anchored (about 1.6:1 wide to tall including its felt base), the heaviest thing in the film. Its opposite is flat, matte, collapsing CARDBOARD (the free widget) and curling paper ribbon (the invented answer). The written page, the CallSheet, is the ruled, rectilinear middle term.",
+  "why": "The thesis is that a solid front desk is only as good as the page of facts it was given, and the free bell is the same shape with nothing behind it, so the film makes the difference one of substance, not of outline. This is NOT round-versus-square, which 10-03 (round NewsAgent against a square slot) and 10-05 (round glyph against slab doors) already spent.",
+  "bell": "Low wide service bell, 1.6:1, felt base and brass plate, plunger on top, a face painted on the dome with a hinged clapper jaw, no screen. Distinct from NewsAgent (a taller domed machine with a screen) and Sourdough (a blocky plant), and QuestionToken is not cast, so there is only one brass hero object."
+ },
+ "casting": {
+  "hero": "BrassBell (NET-NEW, lib/frontdesk.tsx), silhouette as above.",
+  "net_new": {
+   "BrassBell": "the hero, nothing on the shelf is a front desk",
+   "CallSheet": "the throughline clipboard page, rows lit mint or red-rimmed blank",
+   "CardboardBell": "the free widget, flat matte cardboard twin",
+   "RotaryPhone": "the midnight call, a ringing prop",
+   "Walker": "a 100-resident crowd needs a tiny walker, not 100 Character rigs",
+   "IconCard": "awkward-question cards with icons and no text",
+   "GuideCabin, BackRoom, PaperVoid, CounterSide, KitchenSet, CounterRoom, TradingPost, CrateWall": "episode-local one-use set pieces in Ep1006.tsx",
+   "InkRibbon": "S7 ribbons of invented ink, ink #14100D with only a thin warning-red edge, under 10 percent red",
+   "OwnerHand": "HandSil plus a flannel sleeve variant (the business owner's coat colour), enters in S12 and rests in S13",
+   "QuestionCards": "the IconCard component, cards with icons and no text",
+   "Dog": "a simple sleeping-dog silhouette in the kitchen set",
+   "Customer": "a large Walker silhouette in S12",
+   "Bins": "two wooden bins with plates in S13",
+   "Nameplate": "the episode's ink and enamel plate component, never brass, so plates don't read as hero material",
+   "Nightcap, CoatPeg, NailBoard, Bracket": "small episode-local props"
+  },
+  "shelf": {
+   "Character (lib/Character.tsx)": "the worried owner and the Auditor, with a clipboard drawn at the carry-pose fist anchor",
+   "Mosquito, Moose (lib/fauna.tsx)": "the bell-ringer gag and the window loop",
+   "HandSil (lib/stack.tsx)": "the faceless hand and pencil",
+   "ImpactStar, ContactShadow, NightGrade, GradeLayer": "juice and grade"
+  },
+  "dropped": "Raven is not cast.",
+  "why_each": "The Mosquito rings the bell at the open and the close. The moose carries the second open loop. The Auditor is a plain clerk with a clipboard, never a villain."
+ },
+ "motion_language": {
+  "world": "stove flicker on the planks, frost shimmer on the window, snow outside, dust in the lamp pool, the nightcap sways on its nail",
+  "hero_moves": [
+   "the bell wakes with a blink and a ding, the clapper-jaw talks with ambientMouth only",
+   "the Mosquito rams the plunger with anticipation, impact squash in the bell body",
+   "the dome goes translucent and the camera pushes through to the CallSheet",
+   "the free cardboard bell answers and a made-up spiral curls up and unrolls off the counter",
+   "the Auditor's stamp cards slam with overshoot and a dust puff, the bell flinches with its body",
+   "the bell slides the sheet toward the human hand and the hand writes in the blank cell, the red cell flips mint"
+  ],
+  "principles": "anticipation before every ring and stamp, overshoot and decaying settle on landings, eases for travel, springs only for pops, secondary sway on every hanging thing, no whole-frame jolts except two flagged kicks"
+ },
+ "composition": {
+  "focal_hierarchy": "the bell or the call sheet is the brightest, best finished thing in frame, inside the lamp pool; plates sit in the 500 to 760 band clear of it",
+  "negative_space": "the dark beyond the lamp pool is just dark. The ONE saturated alarm is the red-rimmed cell.",
+  "safe_area": "hero action and every plate inside y 490..1300 for the square and the caption band (captions from y 1336). PLATE BAND is y 500 to 760.",
+  "signature_shot": "S5, the Dome Push-Through, 44.12 to 52.34 s: the camera dollies into the bell's brass dome, the metal goes translucent amber, and inside there are no circuits, only a clipboard on a nail with one mint row. The ONLY dollyThrough in the film, so it lands once.",
+  "human_state": "The red blank cell has a THIRD, human state: plain paper with a pencilled person, never mint. Mint is a row the bell reads. The cell the owner writes routes to a person, so the final sheet is every row mint but one.",
+  "red_cell_spec": "THE RED CELL, defined once: an UNLIT interior (paper_grey at low value) with a pulsing warning-red #D9482B RIM. 'Stays dark' means the interior never lights mint. It appears in S1, S6, S8, S11 and S12 up to 114.6 s. From 114.6 s (end of S12 and all of S13) it is in its HUMAN state: plain paper_grey with a pencilled figure and no rim. S5 and S9 show no red cell (S5 is the vet dome, S9 is the outcome-free test).",
+  "final_frame": "Lamp-off button: the stove ember stays on as the only warm light and rakes across the plain paper cell, tinted toward #E39A45, so the cell's light is the ember rake and not a separate key. Two contrast floors, both 3:1 or better under the ember-only light: the graphite figure against the cell's paper interior, and the cell against the dark counter. The mint rows glow from within. The person must survive the blackout.",
+  "room_layout": "Counter room: bell at x 420 (low, wide, scale 1.1), clipboard on the wall at x 700 y 950, the window in a SIDE column x 820 to 1060, y 770 to 980 (below the plate band), shelves at the far left above the bell, the flannel coat on a peg at the far left. The moose and its big question mark live inside that window and never sit under a plate. Plates use the band y 500 to 760. PRECEDENCE: this room_layout overrides any 'centered' coordinates in the storyboard for the counter stage (S1, S6, S13): the bell sits at x 420 and the call sheet hangs on the wall at x 700, y 950 in all three, including the final frame, where the sheet stays on the wall inside the ember rake and glows from within."
+ },
+ "craft_advance": "None required by this film beyond the net-new asset family. A translucent-dome cutaway (a clipPath reveal over a brass body) is local to lib/frontdesk."
+}

@@ -1,0 +1,58 @@
+{
+ "run_date": "2026-10-06",
+ "title": "",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "A Front Desk That Never Sleeps",
+   "outlet": "Alaska Business",
+   "url": "https://www.akbizmag.com/industry/small-business/deskneversleeps/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18"
+   ],
+   "used_in_film": true,
+   "note": "Magazine feature, Sept 28 2026, by Tracy Barbour. Single outlet. Web 907 and Alaska SBDC existence cross-checked on their own sites."
+  },
+  {
+   "id": "s2",
+   "title": "Web 907",
+   "outlet": "web907.com",
+   "url": "https://web907.com/",
+   "claims": [
+    "c2",
+    "c3"
+   ],
+   "used_in_film": true,
+   "note": "Confirms Web 907 is Fairbanks based and lists chatbots and voice agents; lists no prices."
+  },
+  {
+   "id": "s3",
+   "title": "AI Resource Center",
+   "outlet": "Alaska SBDC",
+   "url": "https://aksbdc.org/services/ai-resource-center/",
+   "claims": [
+    "c12",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": "Confirms Carlos Machuca as AI Resource Program Director."
+  }
+ ]
+}

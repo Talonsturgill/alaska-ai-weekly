@@ -1,0 +1,73 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.996,
+    "heard": "It's two in the morning. Somebody rings the front desk, and nobody's there. Alaska Business Magazine says small businesses are buying AI front desks. Steve Vicks Fairbanks firm Web907 builds them. He calls it a desk that never sleeps. North Pole Guide Rod Pangborn, a Web907 client, calls his chatbot Scary Good. He estimates five to ten percent of customers use it. Another Web907 job, an emergency vet service. At midnight, a worried owner calls one number and a calm voiced AI says who's on call. Vicks says it's just reading a spreadsheet to the caller, it's panic, turning to relief. But Carlos Machuca of the Alaska Small Business Development Center calls the Common Mistake Accidental Adoption. A free chatbot turned on with no plan. Out of the box Vicks says a model will confidently make up an answer. So, a trend or one firm's showcase. Both stories are Web907 jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers. The article says Web907 tests with awkward, hyper-local questions. But Machuca says the owner with no plan is the one he commonly sees. So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down. Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop. Which question would you never let a bot answer alone? And which is just a spreadsheet?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.008,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 8.05,
+        "voiced_frac": 0.54,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 124.44,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 124.44,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "VO PLAN IS STALE. vo_direction.json does not match vo_script.txt.",
+    "  script lines: 13    plan lines: 11",
+    "  line 6:\n    script: Out of the box, Vick says, a model will confidently make up an answer.\n    plan:   So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.",
+    "  line 7:\n    script: So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.\n    plan:   The article says Web nine oh seven tests with awkward, hyper local questions. But Machuca says the owner with no plan is the one he commonly sees.",
+    "  line 8:\n    script: The article says Web nine oh seven tests with awkward, hyper local questions.\n    plan:   So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.",
+    "  line 9:\n    script: But Machuca says the owner with no plan is the one he commonly sees.\n    plan:   Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.",
+    "  line 10:\n    script: So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.\n    plan:   Which question would you never let a bot answer alone, and which is just a spreadsheet?",
+    "  line 11:\n    script: Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.\n    plan:   <missing from plan>",
+    "  line 12:\n    script: Which question would you never let a bot answer alone, and which is just a spreadsheet?\n    plan:   <missing from plan>",
+    "REPAIRING: the SCRIPT is the source of truth (it is the locked copy the fact-check and the caption both key off), so the plan is rebuilt from it. Per-line direction is preserved for every line whose spoken text is unchanged; changed or new lines carry no inline tags, which is the safe default because an unvetted tag risks being read aloud.",
+    "pronunciation guide injected into the notes (1 entries)",
+    "the prompt's transcript was shorter than the plan (260 words vs 274); the synth sends the PROMPT, so content was going missing"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 1.0,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.996,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.992,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

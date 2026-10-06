@@ -1,0 +1,1558 @@
+{
+ "run_date": "2026-10-06",
+ "slug": "a-desk-that-never-sleeps",
+ "title": "A Desk That Never Sleeps",
+ "concept": "A brass desk bell on a trading post counter at 2 a.m. answers by reading one clipboard page, and the film follows what that page holds and what it doesn't, down to the one red cell that has to route to a person.",
+ "derived_from": "scratch",
+ "engine": "infographic-2.5d",
+ "total_seconds": 131.2,
+ "fingerprint": {
+  "pov": "counter-level-intimate",
+  "motion_vector": "assemble-build",
+  "hero_treatment": "single-organic-hero",
+  "layout": "single-object-void",
+  "register": "naturalistic-scene",
+  "camera_strategy": "push-through-reveal",
+  "light_story": "night-practical",
+  "palette": "warm pine plank wood, golden stove glow, friendly brass bell, midnight window teal, mint signal, alarm red",
+  "metaphor": "a heavy polished brass front desk that can only read the one page of facts it was given, set against flat cardboard with nothing behind it"
+ },
+ "palette": "warm pine plank wood, golden stove glow, friendly brass bell, midnight window teal, mint signal, alarm red",
+ "divergence_note": "First warm night interior at counter height in four films. 10-05 was a seafoam fluorescent hallway at noon with a coral accent, 10-03 a daylight newsprint newsroom rising vertically, 10-02 a night bench in cross-section. This one is a stove-lit pine trading post at 2 a.m. seen from the counter, with a heavy polished brass hero against flat cardboard (material against material, not round against square), a mint signal that only ever means a row somebody wrote down, an alarm red that only ever means the cell nobody wrote, and an ending where that cell routes to a person, not into the bot.",
+ "angle": {
+  "thesis": "An Alaska AI front desk is only as good as the page of facts behind it. The vet line wins because it reads one row of a spreadsheet, and the line it must not cross is the answer nobody wrote down.",
+  "falsifiable_by": "An Alaska business in the feature winning with a free, unscoped widget, or the vet line's value coming from the model's own knowledge instead of the on-call schedule it reads.",
+  "supporting_facts": [
+   "c5 emergency vet service: one number at midnight, calm-voiced AI says who's on call",
+   "c6 Vick: the AI is just reading a spreadsheet, the difference between panic and immediate relief",
+   "c12 Machuca: accidental adoption, a free widget with no plan",
+   "c13 Machuca: if getting it wrong would cost you a customer permanently, keep a human in that loop",
+   "c4 Pangborn: about 5 to 10 percent of customers use the chatbot (his estimate)"
+  ],
+  "fair_counterpoint": "Both success stories are one vendor's (Web 907) clients and every figure is self-reported. Only about 5 to 10 percent of the guide's customers use the bot by his own estimate. The feature reports no count of wrong answers. A careful local vendor tests with awkward hyper-local questions (c10). Demanding audit numbers from a $150 to $300 a month tool is a big-company standard. The counter-scene gets its own beat at full strength, then c12 and c15-c18 answer it: the careful version isn't the common one, per the SBDC, and the winners kept humans.",
+  "second_movement": "c6 lands after scary-good: the magic is a lookup. The wins and the human line are the same rule from two sides, since the trouble starts where nobody wrote the answer down (c16 no road to every town, c11 weather day, c9 confidently make up an answer).",
+  "stance": "celebratory",
+  "valence": "upbeat with a condition earned from the owners and experts in the feature, not manufactured",
+  "runner_ups": [
+   "narrow on purpose (builder): same thesis, weaker picture",
+   "nobody measures wrong answers (skeptic): kept as the counter-scene's last line, not the thesis, since 'nobody anywhere' is unprovable",
+   "the spreadsheet is the product (explainer): merged into the thesis"
+  ],
+  "cross_challenge": "All three analysts converged. Challenges applied by synthesis: (1) skeptic's thesis was a list, not a claim, so folded into the counter-scene. (2) explainer's 'only 5 to 10 percent use it' reads as a mark against, so it is drawn at true scale as a side door, not a failure. (3) builder's 'narrow on purpose' overreaches because the article never says the vet agent is narrow, so the film says 'reads a spreadsheet' only. (4) no claim about what the setup fee buys.",
+  "closing_question": "Which question would you never let a bot answer without a person checking first, and which one is just a spreadsheet?"
+ },
+ "treatment": {
+  "winner": "COMEDIAN",
+  "why": "Only pitch that makes the AI a warm personified front desk (a brass bell) with a Mosquito book-end gag and a clipboard throughline that carries the thesis. Grafts: the Explainer's reading sheet and overhead for the mechanism and turn, the Enthusiast's 100-walker side door for the true-scale 5 to 10 percent, the Dramatist's skeptical Auditor for the Test, kept fair. The board-critic's round added a new back-room world for the test, a crate-wall hard cut, and an ending where the red cell routes to a person."
+ },
+ "hook": {
+  "pattern": "in-medias-res",
+  "frame1": "A dim lamp-pool counter with a brass bell asleep under a nightcap, snow in the window and the headline already up.",
+  "headline": "NOBODY AT THE FRONT DESK",
+  "motion_by_s": 1.3,
+  "loopback": "The last frame is the same counter, the lamp clicks off and the filled sheet glows alone while the bell blinks once and sleeps, answering the first frame."
+ },
+ "open_loop": {
+  "plant_t": 4.2,
+  "pay_t": 114.6,
+  "what": "The clipboard beside the bell shows one mint row and one red-rimmed blank row tagged NOT WRITTEN DOWN at 4.2 s. What goes in the blank row is paid at 114.6 s when the owner's pencil draws a person in it, so the unwritten answer routes to a human."
+ },
+ "open_loop_2": {
+  "plant_t": 56.9,
+  "pay_t": 95.6,
+  "what": "At 56.9 s the moose appears at the window with a big question mark and leans at the cardboard bell, which says nothing. At 95.6 s the moose's question card reaches a free cardboard bell on the crate wall and it scrawls a confident ribbon of invented ink."
+ },
+ "throughline": {
+  "object": "the call sheet clipboard",
+  "lands_in_button": "the sheet glowing alone on the dark counter, every row mint except one that holds a pencilled person",
+  "states": [
+   {
+    "at_s": 4.2,
+    "state": "on its nail beside the bell with one mint row and one red-rimmed blank row tagged NOT WRITTEN DOWN"
+   },
+   {
+    "at_s": 17.3,
+    "state": "glowing in the bell's window under the neon sign"
+   },
+   {
+    "at_s": 46.1,
+    "state": "inside the translucent dome, one lit mint row"
+   },
+   {
+    "at_s": 60.9,
+    "state": "lifted off the nail, the real bell blank-eyed beside the cardboard one"
+   },
+   {
+    "at_s": 82.4,
+    "state": "carried to the Auditor's desk, the empty WRONG ANSWERS column beside the red row"
+   },
+   {
+    "at_s": 101.6,
+    "state": "overhead, mint rows and one dark red cell tied by a bracket beside the bare board"
+   },
+   {
+    "at_s": 114.6,
+    "state": "the red cell turned to plain paper with a pencilled person, the rest mint"
+   }
+  ]
+ },
+ "reveals": [
+  {
+   "t": 28.2,
+   "type": "scale-pullback",
+   "what": "the camera pulls back from the side door to the whole hundred residents at true scale, about seven using it",
+   "hold_s": 0.6
+  },
+  {
+   "t": 52.34,
+   "type": "build-on",
+   "what": "a flat cardboard FREE bell wedges in beside the real brass one as the camera pulls out of the dome",
+   "hold_s": 0.6
+  },
+  {
+   "t": 94.1,
+   "type": "build-on",
+   "what": "crate after crate of cardboard FREE bells stacks up the wall, the real bell small among them",
+   "hold_s": 0.6
+  }
+ ],
+ "audio_arc": {
+  "build_steps": 4,
+  "dip_at": 114.2,
+  "riser_at": 111.5,
+  "silence_at": 114.3,
+  "payoff_at": 114.6,
+  "button_pattern": "question",
+  "interrupt_at": 27.0
+ },
+ "shots": [
+  {
+   "id": 1,
+   "title": "The bell at 2 a.m.",
+   "vo_line": 0,
+   "start_s": 0.0,
+   "framing": "subject-portrait",
+   "scale": "close",
+   "height": "eye",
+   "stage": "counter",
+   "pov": "counter-level-intimate",
+   "layout": "single-object-void",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "single-organic-hero",
+   "camera": "static:locked lamp-pool close so the bell waking is the move",
+   "stage3d": "planes",
+   "transition_in": "",
+   "thread": "",
+   "centered": "the bell at x540 y1000",
+   "means": "Hook. Frame 1 is already the film: a dim lamp-pool counter, the bell asleep under a nightcap, snow in the window, an EMPTY coat peg under a small OWNER tag and the clipboard on its nail with one mint row and one red-rimmed blank row. The Mosquito rams the plunger and the bell wakes.",
+   "ambient": "stove flicker on the planks, snow past the window, dust in the lamp pool, the clipboard sways on its nail",
+   "hero": {
+    "name": "BrassBell",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% dome and face, 20% plunger, felt base and brass plate, 10% nightcap and ring squash"
+   }
+  },
+  {
+   "id": 2,
+   "title": "The trading post",
+   "vo_line": 1,
+   "start_s": 6.78,
+   "framing": "wide-establish",
+   "scale": "extreme-wide",
+   "height": "high",
+   "stage": "storefront-night",
+   "pov": "orbital-aerial",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "structure-as-subject",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the lit window at x540 y900",
+   "means": "The camera cranes down on the trading post at night. Snow falls, four storefront signs along the street flip to OPEN, the masthead drops on chains, the Web 907 plate hooks on and the neon sign spells A FRONT DESK THAT NEVER SLEEPS.",
+   "ambient": "snow falls in three depths, the stovepipe smokes, the neon flickers, the window glow breathes",
+   "hero": {
+    "name": "TradingPost",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "60% log wall and roof, 25% lit window and door, 15% neon sign and chimney smoke"
+   }
+  },
+  {
+   "id": 3,
+   "title": "The guide cabin",
+   "vo_line": 2,
+   "start_s": 20.7,
+   "framing": "two-up",
+   "scale": "wide",
+   "height": "ground",
+   "stage": "guide-cabin",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "centered": "the side door at x760 y1020",
+   "means": "A whip-pan to a guide-service cabin with an antler rack and a GUIDE SERVICE shingle. One big plain door labeled EVERYONE ELSE, one tiny side door labeled CHATBOT with a bell in its lamp. The camera starts tight on the side door, then at the estimate pulls back to show a hundred residents arriving and about seven taking it.",
+   "ambient": "the crowd keeps arriving, breath puffs rise, the big door's lamp sways",
+   "hero": {
+    "name": "GuideCabin",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "50% cabin wall and doors, 40% crowd of 100 walkers, 10% signs and breath"
+   }
+  },
+  {
+   "id": 4,
+   "title": "One number at midnight",
+   "vo_line": 3,
+   "start_s": 32.04,
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "low",
+   "stage": "owner-kitchen",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "single-organic-hero",
+   "camera": "orbitReveal",
+   "stage3d": "planes",
+   "transition_in": "match-action",
+   "thread": "carry",
+   "centered": "the phone at x540 y1050",
+   "means": "A dark kitchen at midnight. The rotary phone rings, the worried owner grabs it and dials one number while the dog lies head down in its bed, a plain white ripple cools the frost-blue alarm, the owner's free hand goes to the dog and one row of a sheet on the fridge lights mint.",
+   "ambient": "the clock ticks, the dog breathes slowly, alarm rings pulse then settle",
+   "hero": {
+    "name": "RotaryPhone",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "50% body and dial, 30% handset, 20% glow rings"
+   }
+  },
+  {
+   "id": 5,
+   "title": "Inside the bell",
+   "vo_line": 4,
+   "start_s": 44.12,
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "eye",
+   "stage": "dome-interior",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the dome at x540 y960",
+   "means": "The lit mint row from the fridge sheet fills the frame and becomes the lit row inside the bell. The camera dollies into the brass dome, the metal goes translucent amber, and there are no circuits, only a clipboard on a nail with the one lit mint row.",
+   "ambient": "dust turns in the amber light, the clipboard sways on its nail",
+   "hero": {
+    "name": "BrassBell",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "dome cutaway with the call sheet inside, plunger and rim"
+   }
+  },
+  {
+   "id": 6,
+   "title": "The free bell",
+   "vo_line": 5,
+   "start_s": 52.34,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "counter",
+   "pov": "counter-level-intimate",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "single-organic-hero",
+   "camera": "static:the pull-out from the dome is the transition and the shot then holds",
+   "stage3d": "planes",
+   "transition_in": "pull-out",
+   "thread": "travel",
+   "centered": "the two bells at x540 y1010",
+   "means": "The camera pulls out of the dome to the counter. A flat matte cardboard FREE bell wedges in beside the polished brass one with nothing behind it, the moose leans at the window with a big question mark, and a hand lifts the sheet, now showing its red-rimmed blank row again, off the real bell's nail so its eyes go blank.",
+   "ambient": "stove flicker, the FREE tag swings, the moose breathes at the window",
+   "hero": {
+    "name": "CardboardBell",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "60% cardboard dome, 25% FREE tag, 15% crooked base and counter"
+   }
+  },
+  {
+   "id": 7,
+   "title": "The invented answer",
+   "vo_line": 6,
+   "start_s": 65.46,
+   "framing": "push-detail",
+   "scale": "close",
+   "height": "low",
+   "stage": "paper-void",
+   "pov": "macro-closeup",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "data-as-subject",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "carry",
+   "centered": "the ribbons at x540 y1000",
+   "means": "Both bells, with nothing behind them, answer with total confidence. Two ribbons of invented ink curl up out of them and fill a flat paper world, scrawling confident squiggles.",
+   "ambient": "ink ribbons sway and scrawl, paper fibres drift",
+   "hero": {
+    "name": "InkRibbon",
+    "parts": 7,
+    "zones": 2,
+    "detail_note": "two ribbons, scrawl lines, paper fibre ground"
+   }
+  },
+  {
+   "id": 8,
+   "title": "The Auditor's desk",
+   "vo_line": 7,
+   "start_s": 71.38,
+   "framing": "two-up",
+   "scale": "wide",
+   "height": "low",
+   "stage": "back-room",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "single-organic-hero",
+   "camera": "orbitReveal",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the Auditor at x330 y1180",
+   "means": "In a back room the Auditor, a plain clerk, sets down the call sheet he carried in and asks the fair question. He pins two tags from the earlier stories onto one clipboard, lifts the estimate plate to show a single handwritten slip with one name under it, then opens the WRONG ANSWERS column and turns it to camera, empty.",
+   "ambient": "a banker's lamp hums, dust turns in the cone, the empty column pulses",
+   "hero": {
+    "name": "Auditor",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "clerk figure and clipboard, tags, estimate plate, banker's lamp"
+   }
+  },
+  {
+   "id": 9,
+   "title": "Awkward questions",
+   "vo_line": 8,
+   "start_s": 86.32,
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "overhead",
+   "stage": "back-room",
+   "pov": "top-down-map",
+   "layout": "grid-modular",
+   "motion_vector": "scroll-data",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "build",
+   "centered": "the cards at x540 y1000",
+   "means": "From overhead on the same back-room desk, a vendor's hand feeds awkward question cards (a boot, a fish tag, a plane) to the bell, which reads them. The WRONG ANSWERS column stays empty in frame and no outcome is shown.",
+   "ambient": "cards stream in, the banker's lamp hums, the empty column pulses",
+   "hero": {
+    "name": "QuestionCards",
+    "parts": 7,
+    "zones": 2,
+    "detail_note": "cards and icons, the sheet, the empty column"
+   }
+  },
+  {
+   "id": 10,
+   "title": "The crate wall",
+   "vo_line": 9,
+   "start_s": 92.12,
+   "framing": "wide-establish",
+   "scale": "extreme-wide",
+   "height": "ground",
+   "stage": "crate-wall",
+   "pov": "eye-level-immersive",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "travel",
+   "centered": "the crate wall at x540 y1000",
+   "means": "A hard cut to a wall of crates. Crate after crate stacks up, each holding cardboard FREE bells, the real bell small among them, and another shop owner's hand takes a free bell off the top while the moose's question card slides to it.",
+   "ambient": "dust drifts, crates settle with small bounces",
+   "hero": {
+    "name": "CrateWall",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "60% crates, 30% cardboard FREE bells, 10% the real bell"
+   }
+  },
+  {
+   "id": 11,
+   "title": "One rule",
+   "vo_line": 10,
+   "start_s": 98.52,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "overhead",
+   "stage": "callsheet-overhead",
+   "pov": "top-down-map",
+   "layout": "fullbleed-split",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the sheet at x540 y960",
+   "means": "From overhead the lit call sheet sits beside the bare nail board from the free bell, a single bracket ties them as one rule, then the rows light mint one by one under the lamp and the red cell stays dark.",
+   "ambient": "the lamp pool breathes, rows glow, the red cell pulses",
+   "hero": {
+    "name": "CallSheet",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "clipboard, ruled rows, red cell, bare nail board, bracket"
+   }
+  },
+  {
+   "id": 12,
+   "title": "The owner returns",
+   "vo_line": 11,
+   "start_s": 109.64,
+   "framing": "alt-vantage",
+   "scale": "medium",
+   "height": "low",
+   "stage": "counter-side",
+   "pov": "counter-level-intimate",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "single-organic-hero",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the red cell at x540 y1000",
+   "means": "At counter height from the side, the owner comes in and hangs the flannel coat on the empty peg, then the owner's sleeve brings a pencil to the red cell. A customer silhouette walks out and the door closes, the pencil hesitates, then draws a person in the cell, which turns to plain paper and a pencilled figure, not mint.",
+   "ambient": "pencil dust, the lamp breathes, the door's bell rings once",
+   "hero": {
+    "name": "OwnerHand",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "flannel sleeve, hand and pencil, the cell and its glyph, door and customer"
+   }
+  },
+  {
+   "id": 13,
+   "title": "The button",
+   "vo_line": 12,
+   "start_s": 117.9,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "counter",
+   "pov": "counter-level-intimate",
+   "layout": "single-object-void",
+   "motion_vector": "pull-out",
+   "hero_treatment": "single-organic-hero",
+   "camera": "static:locked through the sorting then a slow ease back as the lamp clicks off",
+   "stage3d": "planes",
+   "transition_in": "hard-cut",
+   "thread": "match",
+   "centered": "the bell at x540 y1010",
+   "means": "A hard cut on a matched pencil tip and plunger to the counter. Back at the counter the owner's hand rests on the bell and the coat is back on the peg. Two bins labeled HUMAN CHECKS and JUST A SPREADSHEET sit on the counter, a card goes in each, the Mosquito dings, the lamp clicks off and the sheet glows alone.",
+   "ambient": "stove ember glow, snow past the window, the sheet breathes",
+   "hero": {
+    "name": "BrassBell",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "bell with a hand resting on it, two bins, the glowing sheet, the lamp"
+   }
+  }
+ ],
+ "beats": [
+  {
+   "id": 1,
+   "shot": 1,
+   "t": "0.000-1.300",
+   "at_s": 0.0,
+   "vo_line": 0,
+   "offset": 0.0,
+   "vo": "It's two in the morning. Somebody rings the front desk, and nobody's there.",
+   "phrase": "It's two in the morning",
+   "shows": "frame 1 is already the film: a dim lamp-pool counter, the bell asleep under a nightcap, snow in the window, an empty coat peg under an OWNER tag, the plate NOBODY AT THE FRONT DESK up",
+   "sfx": "snore-tick",
+   "means": "hook: a front desk asleep at 2 a.m.",
+   "rehook": "",
+   "draw": {
+    "subject": "brass desk bell",
+    "action": "sleeps under a nightcap",
+    "emotion": "asleep",
+    "annotation": "NOBODY AT THE FRONT DESK"
+   },
+   "choreo": {
+    "primary": "the bell sleeps with a slow breath",
+    "reaction": "the plunger wobbles and a ZZ drifts up",
+    "ambient": "stove flicker on the planks, snow past the window, dust in the lamp pool, the clipboard sways on its nail"
+   }
+  },
+  {
+   "id": 2,
+   "shot": 1,
+   "t": "1.300-2.200",
+   "at_s": 1.3,
+   "vo_line": 0,
+   "offset": 1.3,
+   "vo": "It's two in the morning. Somebody rings the front desk, and nobody's there.",
+   "phrase": "It's two in the morning",
+   "shows": "the Mosquito dives and rams the plunger, the bell rings, the nightcap flies off and a brass DING flashes across the counter",
+   "sfx": "ding-ring",
+   "means": "motion by 1.3s: someone rings the bell",
+   "rehook": "",
+   "draw": {
+    "subject": "Mosquito",
+    "action": "rams the plunger",
+    "emotion": "gleeful",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the Mosquito hits the plunger",
+    "reaction": "the dome squashes and the nightcap flies off",
+    "ambient": "stove flicker on the planks, snow past the window, dust in the lamp pool, the clipboard sways on its nail"
+   }
+  },
+  {
+   "id": 3,
+   "shot": 1,
+   "t": "2.200-4.200",
+   "at_s": 2.2,
+   "vo_line": 0,
+   "offset": 2.2,
+   "vo": "It's two in the morning. Somebody rings the front desk, and nobody's there.",
+   "phrase": "Somebody rings the front desk",
+   "shows": "the bell snaps awake, blinks at the viewer and rings of lamp light pulse outward while the headline plate settles with a thunk",
+   "sfx": "thunk",
+   "means": "the stake: a desk that answers when nobody is there",
+   "rehook": "",
+   "draw": {
+    "subject": "brass desk bell",
+    "action": "snaps awake and blinks",
+    "emotion": "alert",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the bell snaps awake",
+    "reaction": "rings of light pulse out and the plate settles",
+    "ambient": "stove flicker on the planks, snow past the window, dust in the lamp pool, the clipboard sways on its nail"
+   }
+  },
+  {
+   "id": 4,
+   "shot": 1,
+   "t": "4.200-6.800",
+   "at_s": 4.2,
+   "vo_line": 0,
+   "offset": 4.2,
+   "vo": "It's two in the morning. Somebody rings the front desk, and nobody's there.",
+   "phrase": "and nobody's there",
+   "shows": "the clipboard on its nail swings into the lamp with one mint row and one red-rimmed blank row tagged NOT WRITTEN DOWN, the moose silhouette passes the window",
+   "sfx": "creak",
+   "means": "plant the blank row and say what it means",
+   "rehook": "",
+   "draw": {
+    "subject": "clipboard",
+    "action": "swings into the light",
+    "emotion": "curious",
+    "annotation": "NOT WRITTEN DOWN"
+   },
+   "choreo": {
+    "primary": "the clipboard steadies in the lamp pool",
+    "reaction": "the blank row pulses red",
+    "ambient": "stove flicker on the planks, snow past the window, dust in the lamp pool, the clipboard sways on its nail"
+   }
+  },
+  {
+   "id": 5,
+   "shot": 2,
+   "t": "6.800-10.800",
+   "at_s": 6.8,
+   "vo_line": 1,
+   "offset": 0.02,
+   "vo": "Alaska Business magazine says small businesses are buying A I front desks. Steve Vick's Fairbanks firm, Web nine oh seven, builds them. He calls it a desk that never sleeps.",
+   "phrase": "Alaska Business magazine says",
+   "shows": "the trading post at night from above, snow falling, the masthead plate ALASKA BUSINESS drops on two chains",
+   "sfx": "whoosh-thunk",
+   "means": "source named as a magazine on screen",
+   "rehook": "",
+   "draw": {
+    "subject": "masthead plate",
+    "action": "drops on chains and settles",
+    "emotion": "neutral",
+    "annotation": "ALASKA BUSINESS \u00b7 SEPT 28TH \u00b7 TRACY BARBOUR"
+   },
+   "choreo": {
+    "primary": "the camera cranes down toward the lit window",
+    "reaction": "the plate swings and settles",
+    "ambient": "snow falls in three depths, the stovepipe smokes, the neon flickers, the window glow breathes"
+   }
+  },
+  {
+   "id": 6,
+   "shot": 2,
+   "t": "10.800-13.000",
+   "at_s": 10.8,
+   "vo_line": 1,
+   "offset": 4.02,
+   "vo": "Alaska Business magazine says small businesses are buying A I front desks. Steve Vick's Fairbanks firm, Web nine oh seven, builds them. He calls it a desk that never sleeps.",
+   "phrase": "buying A I front desks",
+   "shows": "four small storefront signs along the street flip to OPEN one after another, each window glowing with a bell",
+   "sfx": "click-click-click",
+   "means": "small businesses buying front desks, drawn",
+   "rehook": "",
+   "draw": {
+    "subject": "storefront signs",
+    "action": "flip to open one after another",
+    "emotion": "bright",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the signs flip in a row",
+    "reaction": "each window blooms with light",
+    "ambient": "snow falls in three depths, the stovepipe smokes, the neon flickers, the window glow breathes"
+   }
+  },
+  {
+   "id": 7,
+   "shot": 2,
+   "t": "13.000-17.300",
+   "at_s": 13.0,
+   "vo_line": 1,
+   "offset": 6.22,
+   "vo": "Alaska Business magazine says small businesses are buying A I front desks. Steve Vick's Fairbanks firm, Web nine oh seven, builds them. He calls it a desk that never sleeps.",
+   "phrase": "Steve Vick's Fairbanks firm, Web 907",
+   "shows": "the plate STEVE VICK \u00b7 WEB 907 \u00b7 FAIRBANKS hooks onto the door post",
+   "sfx": "clank",
+   "means": "name the builder and where",
+   "rehook": "",
+   "draw": {
+    "subject": "name plate",
+    "action": "hooks on and swings",
+    "emotion": "proud",
+    "annotation": "STEVE VICK \u00b7 WEB 907 \u00b7 FAIRBANKS"
+   },
+   "choreo": {
+    "primary": "the plate hooks onto the post",
+    "reaction": "its chain settles",
+    "ambient": "snow falls in three depths, the stovepipe smokes, the neon flickers, the window glow breathes"
+   }
+  },
+  {
+   "id": 8,
+   "shot": 2,
+   "t": "17.300-20.700",
+   "at_s": 17.3,
+   "vo_line": 1,
+   "offset": 10.52,
+   "vo": "Alaska Business magazine says small businesses are buying A I front desks. Steve Vick's Fairbanks firm, Web nine oh seven, builds them. He calls it a desk that never sleeps.",
+   "phrase": "He calls it a desk that never sleeps",
+   "shows": "the neon sign over the door spells A FRONT DESK THAT NEVER SLEEPS letter by letter",
+   "sfx": "buzz-flick",
+   "means": "Vick's own phrase, built on",
+   "rehook": "",
+   "draw": {
+    "subject": "neon sign",
+    "action": "lights letter by letter",
+    "emotion": "smug",
+    "annotation": "\"A FRONT DESK THAT NEVER SLEEPS\" \u00b7 STEVE VICK"
+   },
+   "choreo": {
+    "primary": "the sign builds across the door",
+    "reaction": "the window glow pulses with each letter",
+    "ambient": "snow falls in three depths, the stovepipe smokes, the neon flickers, the window glow breathes"
+   }
+  },
+  {
+   "id": 9,
+   "shot": 3,
+   "t": "20.700-23.200",
+   "at_s": 20.7,
+   "vo_line": 2,
+   "offset": 0.0,
+   "vo": "North Pole guide Rod Pangborn, a Web nine oh seven client, calls his chatbot scary good. He estimates five to ten percent of customers use it.",
+   "phrase": "North Pole guide Rod Pangborn",
+   "shows": "a whip-pan to a guide cabin, tight on a side door labeled CHATBOT with a bell in its lamp, the plate ROD PANGBORN \u00b7 NORTH POLE rides the wall",
+   "sfx": "whoosh",
+   "means": "a new person and place, the side door is the chatbot",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "rides in on the pan",
+    "emotion": "friendly",
+    "annotation": "ROD PANGBORN \u00b7 NORTH POLE"
+   },
+   "choreo": {
+    "primary": "the camera whips across to the cabin",
+    "reaction": "a few residents walk to the side door",
+    "ambient": "the crowd keeps arriving, breath puffs rise, the big door's lamp sways"
+   }
+  },
+  {
+   "id": 10,
+   "shot": 3,
+   "t": "23.200-25.200",
+   "at_s": 23.2,
+   "vo_line": 2,
+   "offset": 2.5,
+   "vo": "North Pole guide Rod Pangborn, a Web nine oh seven client, calls his chatbot scary good. He estimates five to ten percent of customers use it.",
+   "phrase": "a Web 907 client",
+   "shows": "a tag WEB 907 CLIENT clips to the Pangborn plate",
+   "sfx": "clip",
+   "means": "who he is to the vendor",
+   "rehook": "",
+   "draw": {
+    "subject": "tag",
+    "action": "clips onto the plate",
+    "emotion": "neutral",
+    "annotation": "WEB 907 CLIENT"
+   },
+   "choreo": {
+    "primary": "the tag clips to the plate",
+    "reaction": "the plate sways",
+    "ambient": "the crowd keeps arriving, breath puffs rise, the big door's lamp sways"
+   }
+  },
+  {
+   "id": 11,
+   "shot": 3,
+   "t": "25.200-28.200",
+   "at_s": 25.2,
+   "vo_line": 2,
+   "offset": 4.5,
+   "vo": "North Pole guide Rod Pangborn, a Web nine oh seven client, calls his chatbot scary good. He estimates five to ten percent of customers use it.",
+   "phrase": "scary good",
+   "shows": "the plate \"SCARY-GOOD\" stamps beside the side door and the bell in the door's lamp flares",
+   "sfx": "stamp",
+   "means": "his word on his chatbot",
+   "rehook": "",
+   "draw": {
+    "subject": "quote plate",
+    "action": "stamps down",
+    "emotion": "impressed",
+    "annotation": "\"SCARY-GOOD\" \u00b7 ROD PANGBORN"
+   },
+   "choreo": {
+    "primary": "the plate stamps in",
+    "reaction": "dust puffs and the lamp flares",
+    "ambient": "the crowd keeps arriving, breath puffs rise, the big door's lamp sways"
+   }
+  },
+  {
+   "id": 12,
+   "shot": 3,
+   "t": "28.200-32.040",
+   "at_s": 28.2,
+   "vo_line": 2,
+   "offset": 7.5,
+   "vo": "North Pole guide Rod Pangborn, a Web nine oh seven client, calls his chatbot scary good. He estimates five to ten percent of customers use it.",
+   "phrase": "He estimates five to ten percent",
+   "shows": "the camera pulls back from the side door and the whole hundred residents arrive in view, about seven peel off through the side door while the plate builds",
+   "sfx": "pop-pop",
+   "means": "the true-scale reveal: a side door, not the whole desk",
+   "rehook": "interrupt: the room cuts to silence at 27.0 so the walker pops land clean in the VO breath, then the world returns at 32 s",
+   "draw": {
+    "subject": "walkers",
+    "action": "peel off to the side door",
+    "emotion": "calm",
+    "annotation": "ABOUT 5 TO 10% OF CUSTOMERS USE IT \u00b7 PANGBORN'S ESTIMATE \u00b7 PER ALASKA BUSINESS"
+   },
+   "choreo": {
+    "primary": "seven walkers take the side door",
+    "reaction": "the pullback shows the whole crowd",
+    "ambient": "the crowd keeps arriving, breath puffs rise, the big door's lamp sways"
+   }
+  },
+  {
+   "id": 13,
+   "shot": 4,
+   "t": "32.040-34.300",
+   "at_s": 32.04,
+   "vo_line": 3,
+   "offset": 0.0,
+   "vo": "Another Web nine oh seven job, an emergency vet service. At midnight, a worried owner calls one number, and a calm voiced A I says who's on call.",
+   "phrase": "Another Web 907 job",
+   "shows": "a dark kitchen at midnight, the rotary phone rings with a frost-blue alarm glow, a dog lies head down in its bed, the plate WEB 907 JOB hooks above the phone",
+   "sfx": "ring-ring",
+   "means": "same vendor, a second story",
+   "rehook": "",
+   "draw": {
+    "subject": "rotary phone",
+    "action": "rings and jitters",
+    "emotion": "alarmed",
+    "annotation": "WEB 907 JOB"
+   },
+   "choreo": {
+    "primary": "the phone rings in the dark",
+    "reaction": "frost-blue rings pulse from it",
+    "ambient": "the clock ticks, the dog breathes slowly, alarm rings pulse then settle"
+   }
+  },
+  {
+   "id": 14,
+   "shot": 4,
+   "t": "34.300-36.600",
+   "at_s": 34.3,
+   "vo_line": 3,
+   "offset": 2.26,
+   "vo": "Another Web nine oh seven job, an emergency vet service. At midnight, a worried owner calls one number, and a calm voiced A I says who's on call.",
+   "phrase": "an emergency vet service",
+   "shows": "the worried owner grabs the phone and the plate EMERGENCY VET SERVICE \u00b7 AFTER HOURS lands",
+   "sfx": "thunk",
+   "means": "what the call is for",
+   "rehook": "",
+   "draw": {
+    "subject": "owner",
+    "action": "grabs the phone",
+    "emotion": "worried",
+    "annotation": "EMERGENCY VET SERVICE \u00b7 AFTER HOURS"
+   },
+   "choreo": {
+    "primary": "the owner reaches for the phone",
+    "reaction": "the dog doesn't lift its head",
+    "ambient": "the clock ticks, the dog breathes slowly, alarm rings pulse then settle"
+   }
+  },
+  {
+   "id": 15,
+   "shot": 4,
+   "t": "36.600-40.100",
+   "at_s": 36.6,
+   "vo_line": 3,
+   "offset": 4.56,
+   "vo": "Another Web nine oh seven job, an emergency vet service. At midnight, a worried owner calls one number, and a calm voiced A I says who's on call.",
+   "phrase": "At midnight, a worried owner calls one number",
+   "shows": "the wall clock clicks to 12:00 and the owner dials one number, the frost-blue alarm rings widen",
+   "sfx": "tick-clunk",
+   "means": "the single number",
+   "rehook": "",
+   "draw": {
+    "subject": "owner",
+    "action": "dials one number",
+    "emotion": "panicked",
+    "annotation": "ONE NUMBER"
+   },
+   "choreo": {
+    "primary": "the dial whirrs and returns",
+    "reaction": "the frost-blue rings widen",
+    "ambient": "the clock ticks, the dog breathes slowly, alarm rings pulse then settle"
+   }
+  },
+  {
+   "id": 16,
+   "shot": 4,
+   "t": "40.100-44.120",
+   "at_s": 40.1,
+   "vo_line": 3,
+   "offset": 8.06,
+   "vo": "Another Web nine oh seven job, an emergency vet service. At midnight, a worried owner calls one number, and a calm voiced A I says who's on call.",
+   "phrase": "a calm voiced A I says who's on call",
+   "shows": "a plain white sound ripple pours from the receiver, the alarm settles neutral, one row of the sheet on the fridge lights mint under an ON CALL TONIGHT card and the owner's free hand goes to the dog and reaches for the car keys",
+   "sfx": "chime",
+   "means": "the calm answer: who is on call, drawn as a lit row, and somewhere to go",
+   "rehook": "",
+   "draw": {
+    "subject": "receiver",
+    "action": "pours out a white ripple",
+    "emotion": "relieved",
+    "annotation": "ON CALL TONIGHT"
+   },
+   "choreo": {
+    "primary": "the ripple cools the room",
+    "reaction": "the owner strokes the dog and reaches for the keys",
+    "ambient": "the clock ticks, the dog breathes slowly, alarm rings pulse then settle"
+   }
+  },
+  {
+   "id": 17,
+   "shot": 5,
+   "t": "44.120-46.100",
+   "at_s": 44.12,
+   "vo_line": 4,
+   "offset": 0.0,
+   "vo": "Vick says it's just reading a spreadsheet. To the caller, it's panic turning to relief.",
+   "phrase": "Vick says it's just reading a spreadsheet",
+   "shows": "the lit mint row from the fridge sheet fills the frame and becomes the lit row in the bell, the camera dollies into the brass dome and the metal goes translucent amber",
+   "sfx": "whoosh-hum",
+   "means": "push into the machine",
+   "rehook": "",
+   "draw": {
+    "subject": "dome",
+    "action": "goes translucent",
+    "emotion": "curious",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the camera pushes through the brass",
+    "reaction": "the amber floods in",
+    "ambient": "dust turns in the amber light, the clipboard sways on its nail"
+   }
+  },
+  {
+   "id": 18,
+   "shot": 5,
+   "t": "46.100-48.600",
+   "at_s": 46.1,
+   "vo_line": 4,
+   "offset": 1.98,
+   "vo": "Vick says it's just reading a spreadsheet. To the caller, it's panic turning to relief.",
+   "phrase": "just reading a spreadsheet",
+   "shows": "inside the dome a clipboard on a nail with the one lit mint row, the quote plate \"JUST READING A SPREADSHEET\" \u00b7 VICK builds",
+   "sfx": "chime-lock",
+   "means": "the reveal: the brain is one lit row",
+   "rehook": "",
+   "draw": {
+    "subject": "call sheet",
+    "action": "its one row glows mint",
+    "emotion": "calm",
+    "annotation": "\"JUST READING A SPREADSHEET\" \u00b7 VICK"
+   },
+   "choreo": {
+    "primary": "the sheet glows in the amber",
+    "reaction": "dust turns in the light",
+    "ambient": "dust turns in the amber light, the clipboard sways on its nail"
+   }
+  },
+  {
+   "id": 19,
+   "shot": 5,
+   "t": "48.600-52.340",
+   "at_s": 48.6,
+   "vo_line": 4,
+   "offset": 4.48,
+   "vo": "Vick says it's just reading a spreadsheet. To the caller, it's panic turning to relief.",
+   "phrase": "panic turning to relief",
+   "shows": "a small inset of the alarm ring settles from blue to white while the reading bar locks onto the lit row",
+   "sfx": "exhale-chime",
+   "means": "the caller's side",
+   "rehook": "",
+   "draw": {
+    "subject": "inset ring",
+    "action": "settles to white",
+    "emotion": "relieved",
+    "annotation": "PANIC TO RELIEF"
+   },
+   "choreo": {
+    "primary": "the ring settles",
+    "reaction": "the reading bar locks onto the lit row",
+    "ambient": "dust turns in the amber light, the clipboard sways on its nail"
+   }
+  },
+  {
+   "id": 20,
+   "shot": 6,
+   "t": "52.340-56.900",
+   "at_s": 52.34,
+   "vo_line": 5,
+   "offset": 0.0,
+   "vo": "But Carlos Machuca, of the Alaska Small Business Development Center, calls the common mistake accidental adoption. A free chatbot, turned on, with no plan.",
+   "phrase": "But Carlos Machuca",
+   "shows": "the camera pulls out of the dome to the counter and a flat cardboard FREE bell wedges in beside the real one, the plate CARLOS MACHUCA lands with his title under it",
+   "sfx": "thunk",
+   "means": "a new voice, a different bell",
+   "rehook": "",
+   "draw": {
+    "subject": "cardboard bell",
+    "action": "wedges in beside the real bell",
+    "emotion": "blank",
+    "annotation": "CARLOS MACHUCA \u00b7 AI RESOURCE PROGRAM DIRECTOR \u00b7 ALASKA SBDC"
+   },
+   "choreo": {
+    "primary": "the camera pulls back to the counter",
+    "reaction": "the real bell leans to look",
+    "ambient": "stove flicker, the FREE tag swings, the moose breathes at the window"
+   }
+  },
+  {
+   "id": 21,
+   "shot": 6,
+   "t": "56.900-58.600",
+   "at_s": 56.9,
+   "vo_line": 5,
+   "offset": 4.56,
+   "vo": "But Carlos Machuca, of the Alaska Small Business Development Center, calls the common mistake accidental adoption. A free chatbot, turned on, with no plan.",
+   "phrase": "calls the common mistake",
+   "shows": "the moose appears at the window with a big question mark and leans toward the cardboard bell, which says nothing",
+   "sfx": "clop",
+   "means": "plant the second loop: what does the cardboard bell say to the moose",
+   "rehook": "",
+   "draw": {
+    "subject": "moose",
+    "action": "raises a big question mark",
+    "emotion": "hopeful",
+    "annotation": "?"
+   },
+   "choreo": {
+    "primary": "the moose steps into the window",
+    "reaction": "the question mark swings",
+    "ambient": "stove flicker, the FREE tag swings, the moose breathes at the window"
+   }
+  },
+  {
+   "id": 22,
+   "shot": 6,
+   "t": "58.600-60.900",
+   "at_s": 58.6,
+   "vo_line": 5,
+   "offset": 6.26,
+   "vo": "But Carlos Machuca, of the Alaska Small Business Development Center, calls the common mistake accidental adoption. A free chatbot, turned on, with no plan.",
+   "phrase": "accidental adoption",
+   "shows": "the plate \"ACCIDENTAL ADOPTION\" \u00b7 MACHUCA stamps down and the real bell turns to face the cardboard one deadpan",
+   "sfx": "stamp",
+   "means": "the common mistake named",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "stamps down",
+    "emotion": "deadpan",
+    "annotation": "\"ACCIDENTAL ADOPTION\" \u00b7 MACHUCA"
+   },
+   "choreo": {
+    "primary": "the plate stamps in",
+    "reaction": "the real bell turns to look",
+    "ambient": "stove flicker, the FREE tag swings, the moose breathes at the window"
+   }
+  },
+  {
+   "id": 23,
+   "shot": 6,
+   "t": "60.900-65.460",
+   "at_s": 60.9,
+   "vo_line": 5,
+   "offset": 8.56,
+   "vo": "But Carlos Machuca, of the Alaska Small Business Development Center, calls the common mistake accidental adoption. A free chatbot, turned on, with no plan.",
+   "phrase": "A free chatbot, turned on, with no plan",
+   "shows": "a hand lifts the sheet off the nail behind the real bell and it turns to camera showing its one mint row and the red-rimmed blank row tagged NOT WRITTEN DOWN, both bells go blank-eyed, the FREE tag swings, the plate FREE \u00b7 NO PLAN lands",
+   "sfx": "tick-rip",
+   "means": "the sheet, not the brand: a bell without its page",
+   "rehook": "",
+   "draw": {
+    "subject": "hand",
+    "action": "lifts the sheet off the nail",
+    "emotion": "blank",
+    "annotation": "FREE \u00b7 NO PLAN"
+   },
+   "choreo": {
+    "primary": "the sheet leaves the nail",
+    "reaction": "both bells go blank-eyed",
+    "ambient": "stove flicker, the FREE tag swings, the moose breathes at the window"
+   }
+  },
+  {
+   "id": 24,
+   "shot": 7,
+   "t": "65.460-67.700",
+   "at_s": 65.46,
+   "vo_line": 6,
+   "offset": 0.0,
+   "vo": "Out of the box, Vick says, a model will confidently make up an answer.",
+   "phrase": "Out of the box, Vick says",
+   "shows": "both bells answer with total confidence and two ribbons of invented ink curl up and fill a flat paper world",
+   "sfx": "boing-rustle",
+   "means": "rehook: confident and invented, on either bell",
+   "rehook": "rehook: any bell with nothing behind it makes things up with total confidence",
+   "draw": {
+    "subject": "ink ribbons",
+    "action": "curl up and scrawl",
+    "emotion": "smug",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the ribbons curl up",
+    "reaction": "scrawl fills the paper",
+    "ambient": "ink ribbons sway and scrawl, paper fibres drift"
+   }
+  },
+  {
+   "id": 25,
+   "shot": 7,
+   "t": "67.700-71.400",
+   "at_s": 67.7,
+   "vo_line": 6,
+   "offset": 2.24,
+   "vo": "Out of the box, Vick says, a model will confidently make up an answer.",
+   "phrase": "will confidently make up an answer",
+   "shows": "the plate \"CONFIDENTLY MAKE UP AN ANSWER\" \u00b7 VICK lands and the ribbons unroll down the page",
+   "sfx": "stamp-rustle",
+   "means": "Vick's own warning",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "lands as the ribbons unroll",
+    "emotion": "alarmed",
+    "annotation": "\"CONFIDENTLY MAKE UP AN ANSWER\" \u00b7 VICK"
+   },
+   "choreo": {
+    "primary": "the ribbons unroll",
+    "reaction": "the scrawl keeps going",
+    "ambient": "ink ribbons sway and scrawl, paper fibres drift"
+   }
+  },
+  {
+   "id": 26,
+   "shot": 8,
+   "t": "71.400-76.300",
+   "at_s": 71.4,
+   "vo_line": 7,
+   "offset": 0.02,
+   "vo": "So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.",
+   "phrase": "So, a trend or one firm's showcase",
+   "shows": "in a back room the Auditor's hand sets the carried call sheet into frame under a banker's lamp, the plate TREND OR ONE FIRM'S SHOWCASE? lands",
+   "sfx": "thud",
+   "means": "the fair question asked on screen",
+   "rehook": "",
+   "draw": {
+    "subject": "Auditor",
+    "action": "sets down the sheet and steps up",
+    "emotion": "skeptical",
+    "annotation": "TREND OR ONE FIRM'S SHOWCASE?"
+   },
+   "choreo": {
+    "primary": "the sheet is set into frame",
+    "reaction": "the bell on the desk sits up straight",
+    "ambient": "a banker's lamp hums, dust turns in the cone, the empty column pulses"
+   }
+  },
+  {
+   "id": 27,
+   "shot": 8,
+   "t": "76.300-79.200",
+   "at_s": 76.3,
+   "vo_line": 7,
+   "offset": 4.92,
+   "vo": "So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.",
+   "phrase": "Both stories are Web 907 jobs",
+   "shows": "the Auditor pins the WEB 907 CLIENT tag and the WEB 907 JOB plate from the earlier stories onto one clipboard and they click into one plate BOTH STORIES \u00b7 WEB 907 WORK",
+   "sfx": "clip-click",
+   "means": "evidence one, one firm",
+   "rehook": "",
+   "draw": {
+    "subject": "Auditor",
+    "action": "pins two tags to one clipboard",
+    "emotion": "stern",
+    "annotation": "BOTH STORIES \u00b7 WEB 907 WORK"
+   },
+   "choreo": {
+    "primary": "the tags click together",
+    "reaction": "the clipboard tilts under the weight",
+    "ambient": "a banker's lamp hums, dust turns in the cone, the empty column pulses"
+   }
+  },
+  {
+   "id": 28,
+   "shot": 8,
+   "t": "79.200-82.400",
+   "at_s": 79.2,
+   "vo_line": 7,
+   "offset": 7.82,
+   "vo": "So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.",
+   "phrase": "The five to ten percent is one owner's estimate",
+   "shows": "the Auditor lifts the 5 TO 10 plate and under it is a single handwritten slip with one name on it, PANGBORN, and no other source",
+   "sfx": "lift-tick",
+   "means": "evidence two, one owner's estimate and one source",
+   "rehook": "",
+   "draw": {
+    "subject": "Auditor",
+    "action": "lifts the plate off the slip",
+    "emotion": "stern",
+    "annotation": "ABOUT 5 TO 10% \u00b7 ONE NAME \u00b7 PANGBORN \u00b7 PER ALASKA BUSINESS"
+   },
+   "choreo": {
+    "primary": "the plate lifts off the slip",
+    "reaction": "the slip trembles",
+    "ambient": "a banker's lamp hums, dust turns in the cone, the empty column pulses"
+   }
+  },
+  {
+   "id": 29,
+   "shot": 8,
+   "t": "82.400-86.300",
+   "at_s": 82.4,
+   "vo_line": 7,
+   "offset": 11.02,
+   "vo": "So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.",
+   "phrase": "The feature reports no count of wrong answers",
+   "shows": "the Auditor opens the WRONG ANSWERS COUNTED column, turns it to camera and it is empty, the red row beside it, the plate NO COUNT OF WRONG ANSWERS REPORTED",
+   "sfx": "tear-tap",
+   "means": "evidence three, the test at full strength",
+   "rehook": "",
+   "draw": {
+    "subject": "Auditor",
+    "action": "turns the empty column to camera",
+    "emotion": "unconvinced",
+    "annotation": "NO COUNT OF WRONG ANSWERS REPORTED"
+   },
+   "choreo": {
+    "primary": "the column turns to camera",
+    "reaction": "the empty column pulses",
+    "ambient": "a banker's lamp hums, dust turns in the cone, the empty column pulses"
+   }
+  },
+  {
+   "id": 30,
+   "shot": 9,
+   "t": "86.300-89.400",
+   "at_s": 86.3,
+   "vo_line": 8,
+   "offset": -0.02,
+   "vo": "The article says Web nine oh seven tests with awkward, hyper local questions.",
+   "phrase": "The article says Web 907 tests",
+   "shows": "from overhead on the back-room desk a vendor's hand feeds awkward question cards, a boot, a fish tag, a plane, to the bell which reads each one, the WRONG ANSWERS column staying empty in frame",
+   "sfx": "slide-tick",
+   "means": "the fair defense, the act of testing with no outcome shown",
+   "rehook": "",
+   "draw": {
+    "subject": "question cards",
+    "action": "slide in one by one",
+    "emotion": "busy",
+    "annotation": "TESTED WITH AWKWARD, HYPER-LOCAL QUESTIONS \u00b7 PER THE ARTICLE"
+   },
+   "choreo": {
+    "primary": "the cards slide across the desk",
+    "reaction": "the bell reads each one",
+    "ambient": "cards stream in, the banker's lamp hums, the empty column pulses"
+   }
+  },
+  {
+   "id": 31,
+   "shot": 9,
+   "t": "89.400-92.120",
+   "at_s": 89.4,
+   "vo_line": 8,
+   "offset": 3.08,
+   "vo": "The article says Web nine oh seven tests with awkward, hyper local questions.",
+   "phrase": "awkward, hyper local questions",
+   "shows": "a fish tag card and a plane card slide in behind the boot and the bell reads them one after another, the WRONG ANSWERS column still empty",
+   "sfx": "slide-tick",
+   "means": "the act of testing, no outcome shown",
+   "rehook": "",
+   "draw": {
+    "subject": "question cards",
+    "action": "slide in behind each other",
+    "emotion": "busy",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the cards slide in one after another",
+    "reaction": "the empty column pulses",
+    "ambient": "cards stream in, the banker's lamp hums, the empty column pulses"
+   }
+  },
+  {
+   "id": 32,
+   "shot": 10,
+   "t": "92.120-94.100",
+   "at_s": 92.12,
+   "vo_line": 9,
+   "offset": 0.0,
+   "vo": "But Machuca says the owner with no plan is the one he commonly sees.",
+   "phrase": "But Machuca says",
+   "shows": "a hard cut to a wall of crates and the first crates slide into place with a stinger",
+   "sfx": "stinger-slide",
+   "means": "rehook: cut to the common case",
+   "rehook": "rehook: the careful build is the exception, the crates of free bells stack up",
+   "draw": {
+    "subject": "crates",
+    "action": "slide into place",
+    "emotion": "wry",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the crate wall cuts in",
+    "reaction": "dust drifts",
+    "ambient": "dust drifts, crates settle with small bounces"
+   }
+  },
+  {
+   "id": 33,
+   "shot": 10,
+   "t": "94.100-95.600",
+   "at_s": 94.1,
+   "vo_line": 9,
+   "offset": 1.98,
+   "vo": "But Machuca says the owner with no plan is the one he commonly sees.",
+   "phrase": "the owner with no plan is the one he commonly sees",
+   "shows": "crate after crate stacks up the wall, each holding cardboard FREE bells, the real bell small among them, the plate COMMONLY SEES \u00b7 NO PLAN \u00b7 MACHUCA lands on the top crate",
+   "sfx": "thud-thud-thud",
+   "means": "reveal: the common case is the free bell with no plan",
+   "rehook": "",
+   "draw": {
+    "subject": "crate wall",
+    "action": "stacks up crate by crate",
+    "emotion": "knowing",
+    "annotation": "COMMONLY SEES \u00b7 NO PLAN \u00b7 MACHUCA"
+   },
+   "choreo": {
+    "primary": "the crates stack up",
+    "reaction": "another owner's hand takes a free bell off the top",
+    "ambient": "dust drifts, crates settle with small bounces"
+   }
+  },
+  {
+   "id": 34,
+   "shot": 10,
+   "t": "95.600-98.500",
+   "at_s": 95.6,
+   "vo_line": 9,
+   "offset": 3.48,
+   "vo": "But Machuca says the owner with no plan is the one he commonly sees.",
+   "phrase": "with no plan",
+   "shows": "the moose's question card, carrying the same big ? and a moose-head silhouette, slides into the free bell in that hand and the bell answers by scrawling a confident ribbon of invented ink, a callback to the paper world",
+   "sfx": "boing-rustle",
+   "means": "pays the second loop: the question the cardboard bell answers with confident ink",
+   "rehook": "",
+   "draw": {
+    "subject": "moose card",
+    "action": "slides into the free bell",
+    "emotion": "smug",
+    "annotation": "?"
+   },
+   "choreo": {
+    "primary": "the moose card slides into the free bell",
+    "reaction": "the bell scrawls a ribbon of invented ink",
+    "ambient": "dust drifts, crates settle with small bounces"
+   }
+  },
+  {
+   "id": 35,
+   "shot": 11,
+   "t": "98.500-102.100",
+   "at_s": 98.5,
+   "vo_line": 10,
+   "offset": -0.02,
+   "vo": "So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.",
+   "phrase": "So the trend is unproven",
+   "shows": "from overhead the lit call sheet sits beside the bare nail board and the plate TREND \u00b7 UNPROVEN lands",
+   "sfx": "flicker-thunk",
+   "means": "answer the opening question",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "lands between the sheet and the board",
+    "emotion": "honest",
+    "annotation": "TREND \u00b7 UNPROVEN"
+   },
+   "choreo": {
+    "primary": "the sheet flickers under the lamp",
+    "reaction": "the red cell pulses",
+    "ambient": "the lamp pool breathes, rows glow, the red cell pulses"
+   }
+  },
+  {
+   "id": 36,
+   "shot": 11,
+   "t": "102.100-104.900",
+   "at_s": 102.1,
+   "vo_line": 10,
+   "offset": 3.58,
+   "vo": "So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.",
+   "phrase": "The win and the warning are one rule",
+   "shows": "a single bracket closes around the lit sheet and the bare board as one frame",
+   "sfx": "bracket-clink",
+   "means": "the turn: win and warning are the same rule",
+   "rehook": "rehook: win and warning are one rule",
+   "draw": {
+    "subject": "bracket",
+    "action": "closes around both",
+    "emotion": "resolved",
+    "annotation": "ONE RULE"
+   },
+   "choreo": {
+    "primary": "the bracket ties them together",
+    "reaction": "the lamp pool tightens",
+    "ambient": "the lamp pool breathes, rows glow, the red cell pulses"
+   }
+  },
+  {
+   "id": 37,
+   "shot": 11,
+   "t": "104.900-109.640",
+   "at_s": 104.9,
+   "vo_line": 10,
+   "offset": 6.38,
+   "vo": "So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.",
+   "phrase": "The bot shines where somebody wrote the answer down",
+   "shows": "the rows light mint one by one under a lamp sweep and the red cell stays dark",
+   "sfx": "rise-slide",
+   "means": "thesis drawn",
+   "rehook": "",
+   "draw": {
+    "subject": "lamp",
+    "action": "sweeps and the rows light",
+    "emotion": "warm",
+    "annotation": "WRITTEN DOWN = ANSWERED"
+   },
+   "choreo": {
+    "primary": "the lamp sweeps and the rows light",
+    "reaction": "the red cell stays dark",
+    "ambient": "the lamp pool breathes, rows glow, the red cell pulses"
+   }
+  },
+  {
+   "id": 38,
+   "shot": 12,
+   "t": "109.640-112.900",
+   "at_s": 109.64,
+   "vo_line": 11,
+   "offset": 0.0,
+   "vo": "Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.",
+   "phrase": "Machuca's rule",
+   "shows": "the owner hangs the flannel coat on the empty peg and the owner's sleeve brings a pencil to the red cell",
+   "sfx": "creak",
+   "means": "the rule starts, and the owner returns",
+   "rehook": "",
+   "draw": {
+    "subject": "owner",
+    "action": "hangs the coat on the peg and reaches in with a pencil",
+    "emotion": "steady",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the coat lands on the peg",
+    "reaction": "the pencil lowers toward the red cell",
+    "ambient": "pencil dust, the lamp breathes, the door's bell rings once"
+   }
+  },
+  {
+   "id": 39,
+   "shot": 12,
+   "t": "112.900-114.600",
+   "at_s": 112.9,
+   "vo_line": 11,
+   "offset": 3.26,
+   "vo": "Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.",
+   "phrase": "would cost you a customer permanently",
+   "shows": "a customer silhouette walks out of the shop door and the door closes behind them, the pencil hovers over the red cell",
+   "sfx": "door-close",
+   "means": "the stake drawn: a customer lost for good",
+   "rehook": "",
+   "draw": {
+    "subject": "customer",
+    "action": "walks out and the door closes",
+    "emotion": "hurt",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the door swings shut",
+    "reaction": "the pencil hesitates and the red cell pulses faster",
+    "ambient": "pencil dust, the lamp breathes, the door's bell rings once"
+   }
+  },
+  {
+   "id": 40,
+   "shot": 12,
+   "t": "114.600-117.900",
+   "at_s": 114.6,
+   "vo_line": 11,
+   "offset": 4.96,
+   "vo": "Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.",
+   "phrase": "keep a human in that loop",
+   "shows": "the plate \"KEEP A HUMAN IN THAT LOOP\" \u00b7 MACHUCA builds as the pencil draws a person in the red cell and it turns to plain paper with a pencilled figure, not mint",
+   "sfx": "pencil-click",
+   "means": "loop A pays: the blank row routes to a person",
+   "rehook": "",
+   "draw": {
+    "subject": "pencil",
+    "action": "presses a person into the cell",
+    "emotion": "decided",
+    "annotation": "\"KEEP A HUMAN IN THAT LOOP\" \u00b7 MACHUCA"
+   },
+   "choreo": {
+    "primary": "the pencil presses the figure in and the cell turns to plain paper",
+    "reaction": "the cell turns to plain paper",
+    "ambient": "pencil dust, the lamp breathes, the door's bell rings once"
+   }
+  },
+  {
+   "id": 41,
+   "shot": 13,
+   "t": "117.900-121.900",
+   "at_s": 117.9,
+   "vo_line": 12,
+   "offset": 0.0,
+   "vo": "Which question would you never let a bot answer alone, and which is just a spreadsheet?",
+   "phrase": "Which question would you never let a bot answer alone",
+   "shows": "a hard cut to the counter where the owner's hand rests on the bell and two bins sit labeled HUMAN CHECKS and JUST A SPREADSHEET, the first card goes into HUMAN CHECKS",
+   "sfx": "whoosh",
+   "means": "the closing question drawn as a sorting choice",
+   "rehook": "",
+   "draw": {
+    "subject": "hand",
+    "action": "drops a card into the HUMAN CHECKS bin",
+    "emotion": "thinking",
+    "annotation": "HUMAN CHECKS \u00b7 JUST A SPREADSHEET"
+   },
+   "choreo": {
+    "primary": "the owner's hand rests on the bell",
+    "reaction": "the first card lands in its bin",
+    "ambient": "stove ember glow, snow past the window, the sheet breathes"
+   }
+  },
+  {
+   "id": 42,
+   "shot": 13,
+   "t": "121.900-123.300",
+   "at_s": 121.9,
+   "vo_line": 12,
+   "offset": 4.0,
+   "vo": "Which question would you never let a bot answer alone, and which is just a spreadsheet?",
+   "phrase": "and which is just a spreadsheet",
+   "shows": "a second card drops into the JUST A SPREADSHEET bin with a click and the Mosquito dings the bell",
+   "sfx": "click-ding",
+   "means": "payoff sound: the card lands",
+   "rehook": "",
+   "draw": {
+    "subject": "hand",
+    "action": "drops a card in the other bin",
+    "emotion": "trusting",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the card lands in its bin",
+    "reaction": "the Mosquito dings the bell",
+    "ambient": "stove ember glow, snow past the window, the sheet breathes"
+   }
+  },
+  {
+   "id": 43,
+   "shot": 13,
+   "t": "123.300-124.740",
+   "at_s": 123.3,
+   "vo_line": 12,
+   "offset": 5.4,
+   "vo": "Which question would you never let a bot answer alone, and which is just a spreadsheet?",
+   "phrase": "and which is just a spreadsheet",
+   "shows": "the lamp clicks off and the camera eases back about fifteen percent so the dark counter opens around the sheet, every row mint but one pencilled figure, glowing alone, the bell blinks once and sleeps",
+   "sfx": "click-hum",
+   "means": "button loops to the open",
+   "rehook": "",
+   "draw": {
+    "subject": "lamp",
+    "action": "clicks off",
+    "emotion": "calm",
+    "annotation": "NO TEXT"
+   },
+   "choreo": {
+    "primary": "the lamp goes out",
+    "reaction": "the sheet glows alone",
+    "ambient": "stove ember glow, snow past the window, the sheet breathes"
+   }
+  }
+ ]
+}

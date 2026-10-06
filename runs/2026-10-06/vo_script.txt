@@ -1,0 +1,13 @@
+It's two in the morning. Somebody rings the front desk, and nobody's there.
+Alaska Business magazine says small businesses are buying A I front desks. Steve Vick's Fairbanks firm, Web nine oh seven, builds them. He calls it a desk that never sleeps.
+North Pole guide Rod Pangborn, a Web nine oh seven client, calls his chatbot scary good. He estimates five to ten percent of customers use it.
+Another Web nine oh seven job, an emergency vet service. At midnight, a worried owner calls one number, and a calm voiced A I says who's on call.
+Vick says it's just reading a spreadsheet. To the caller, it's panic turning to relief.
+But Carlos Machuca, of the Alaska Small Business Development Center, calls the common mistake accidental adoption. A free chatbot, turned on, with no plan.
+Out of the box, Vick says, a model will confidently make up an answer.
+So, a trend or one firm's showcase? Both stories are Web nine oh seven jobs. The five to ten percent is one owner's estimate. The feature reports no count of wrong answers.
+The article says Web nine oh seven tests with awkward, hyper local questions.
+But Machuca says the owner with no plan is the one he commonly sees.
+So the trend is unproven. The win and the warning are one rule. The bot shines where somebody wrote the answer down.
+Machuca's rule, if getting it wrong would cost you a customer permanently, keep a human in that loop.
+Which question would you never let a bot answer alone, and which is just a spreadsheet?
