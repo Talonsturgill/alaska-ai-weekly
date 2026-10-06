@@ -558,7 +558,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <Plate text="ROD PANGBORN · NORTH POLE" y={560} size={28} tone="enamel" p={ease(f, b(9), 14) * (1 - ease(f, b(12) - 4, 8))} />
         <Plate text="WEB 907 CLIENT" y={634} size={22} tone="slip" p={tag * (1 - ease(f, b(12) - 4, 8))} rot={Math.sin((f - b(10)) / 5) * 3 * Math.exp(-(f - b(10)) / 20)} />
         <QuotePlate text={'"SCARY-GOOD" · ROD PANGBORN'} y={738} size={38} p={quote * (1 - ease(f, b(12) - 4, 8))} rot={-1.5} />
-        <Plate text="ABOUT 5 TO 10% OF CUSTOMERS USE IT · PANGBORN'S ESTIMATE · PER ALASKA BUSINESS" displayLines={['ABOUT 5 TO 10% OF CUSTOMERS USE IT', "PANGBORN'S ESTIMATE · PER ALASKA BUSINESS"]} y={476} size={22} tone="enamel" p={est} />
+        <Plate text="ABOUT 5 TO 10% OF CUSTOMERS USE IT · PANGBORN'S ESTIMATE · PER ALASKA BUSINESS" displayLines={['ABOUT 5 TO 10% OF CUSTOMERS USE IT', "PANGBORN'S ESTIMATE · PER ALASKA BUSINESS"]} y={492} size={22} tone="enamel" p={est} />
         <Dim amount={0.3} cx={540} cy={1100} r={1100} id="d3" />
       </SVG>
     </Frame>
@@ -1047,7 +1047,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         )}
         <Dust f={f} cx={540} cy={900} rx={480} ry={420} op={0.3} />
         <Dim amount={0.4} cx={540} cy={900} r={1000} id="d10" />
-        <Plate text="COMMONLY SEES · NO PLAN · MACHUCA" y={470} size={26} tone="enamel" p={ease(f, b(33), 12)} rot={-1} />
+        <Plate text="COMMONLY SEES · NO PLAN · MACHUCA" y={494} size={26} tone="enamel" p={ease(f, b(33), 12)} rot={-1} />
       </SVG>
     </Frame>
   );
