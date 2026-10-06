@@ -586,7 +586,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const lifted = f >= 84;
   const liftT = easeIO(f, 84, 10);
   const hsX = lerp(400, ox + fc * 1.2 * 62, liftT);
-  const hsY = lerp(1023 - 6 * ease(f, 78, 6), 888 + Math.sin(f / 9) * 1.5, liftT) - 70 * Math.sin(Math.PI * liftT);
+  const hsY = lerp(1023, 888 + Math.sin(f / 9) * 1.5, liftT) - 70 * Math.sin(Math.PI * liftT);
   const hsR = lerp(0, fc * 80, liftT), hsS = lerp(1, 0.65, liftT);
   const hsEnds = [-95, 95].map((u) => ({x: hsX + u * hsS * Math.cos((hsR * Math.PI) / 180), y: hsY + u * hsS * Math.sin((hsR * Math.PI) / 180)}));
   const hsLow = hsEnds[0].y > hsEnds[1].y ? hsEnds[0] : hsEnds[1];
@@ -663,7 +663,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <Character frame={f} x={ox} y={1296} scale={1.2} facing={fc} outfit="puffer" headgear="beanie"
           pose={f < 58 ? 'stand' : !lifted ? 'point' : 'raise'} gesture={reach} emotion={f < answered ? 'worried' : 'neutral'}
           walking={walkP < 1} walkPhase={walkP * 8} look={f >= answered ? 12 : 0} idleGain={1.6} />
-        <Handset x={hsX} y={hsY} rot={hsR} s={hsS} />
+        {lifted && <Handset x={hsX} y={hsY} rot={hsR} s={hsS} />}
         {/* (fix round 2026-10-06) the separate puffer-sleeve hand that floated over the dog is gone: it rose out of the
             owner's knees as a third arm. Relief reads on the owner's own body (head turns, look=12) and the dog's tail. */}
         {/* the frost-blue alarm: rings and a pulsing wash while it rings, white when answered */}
