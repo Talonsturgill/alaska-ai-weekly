@@ -562,8 +562,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
           })}
         </g>
         <Snow f={f} n={40} d={0.8} op={0.7} />
-        <Plate text="ROD PANGBORN · NORTH POLE" x={790} y={560} size={28} tone="enamel" p={ease(f, b(9), 14) * (1 - ease(f, b(12) - 4, 8))} />
-        <Plate text="WEB 907 CLIENT" x={790} y={634} size={22} tone="slip" p={tag * (1 - ease(f, b(12) - 4, 8))} rot={Math.sin((f - b(10)) / 5) * 3 * Math.exp(-(f - b(10)) / 20)} />
+        <Plate text="ROD PANGBORN · NORTH POLE" displayLines={['ROD PANGBORN', 'NORTH POLE']} x={790} y={545} size={28} tone="enamel" p={ease(f, b(9), 14) * (1 - ease(f, b(12) - 4, 8))} />
+        <Plate text="WEB 907 CLIENT" x={790} y={640} size={22} tone="slip" p={tag * (1 - ease(f, b(12) - 4, 8))} rot={Math.sin((f - b(10)) / 5) * 3 * Math.exp(-(f - b(10)) / 20)} />
         <QuotePlate text={'"SCARY-GOOD" · ROD PANGBORN'} y={738} size={38} p={quote * (1 - ease(f, b(12) - 4, 8))} rot={-1.5} />
         <Plate text="ABOUT 5 TO 10% OF CUSTOMERS USE IT · PANGBORN'S ESTIMATE · PER ALASKA BUSINESS" displayLines={['ABOUT 5 TO 10% OF CUSTOMERS USE IT', "PANGBORN'S ESTIMATE · PER ALASKA BUSINESS"]} y={492} size={22} tone="enamel" p={est} />
         <Dim amount={0.3} cx={540} cy={1100} r={1100} id="d3" />
@@ -637,7 +637,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           {f > answered && <circle cx={0} cy={54} r={10 + 26 * Math.abs(Math.sin((f - answered) / 6))} fill="none" stroke="#FFF1D2" strokeWidth={3} opacity={0.5} />}
         </g>
         {/* the wall clock */}
-        <g transform="translate(560,540)">
+        <g transform="translate(500,740) scale(0.88)">
           <circle r={64} fill="#E7E5DA" stroke={C.ink} strokeWidth={8} />
           <line x1={0} y1={0} x2={0} y2={-44} stroke={C.ink} strokeWidth={7} strokeLinecap="round" />
           <line x1={0} y1={0} x2={Math.sin((clockMin / 60) * Math.PI * 2) * 52} y2={-Math.cos((clockMin / 60) * Math.PI * 2) * 52} stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
@@ -677,9 +677,10 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {ringing && rings.map((r, i) => <circle key={i} cx={srcX} cy={srcY} r={40 + r * 520} fill="none" stroke={C.alarm} strokeWidth={10 * (1 - r)} opacity={0.7 * (1 - r)} />)}
         <rect data-band="ok" width={W} height={H} fill={C.alarm} opacity={0.12 * alarm} style={{mixBlendMode: 'screen'}} />
         {white.map((r, i) => r > 0.01 && r < 0.99 && <circle key={i} cx={srcX} cy={srcY} r={40 + r * 600} fill="none" stroke="#FFFFFF" strokeWidth={8 * (1 - r)} opacity={0.65 * (1 - r)} />)}
-        {/* one plate in the empty band above the clock (clock 476..604), y 260..400, each line arrives with its VO beat */}
-        <Plate text="WEB 907 JOB · EMERGENCY VET SERVICE · AFTER HOURS · ONE NUMBER" displayLines={['WEB 907 JOB', 'EMERGENCY VET SERVICE · AFTER HOURS', 'ONE NUMBER']}
-          y={330} size={26} tone="ink" p={ease(f, b(13), 12) * (1 - ease(f, answered + 40, 10))} reveal={[1, ease(f, b(14), 10), ease(f, b(15), 10)]} />
+        {/* ONE plate in the open wall between the fridge (x<=300) and the window (x>=740), x 325..714 y 493..667, inside
+            the square crop; the clock sits below it at 684..796. Each line arrives with its VO beat. */}
+        <Plate text="WEB 907 JOB · EMERGENCY VET SERVICE · AFTER HOURS · ONE NUMBER" displayLines={['WEB 907 JOB', 'EMERGENCY VET SERVICE', 'AFTER HOURS', 'ONE NUMBER']}
+          x={520} y={580} size={24} tone="ink" p={ease(f, b(13), 12) * (1 - ease(f, answered + 40, 10))} reveal={[1, ease(f, b(14), 10), ease(f, b(14), 10), ease(f, b(15), 10)]} />
         <Dim amount={0.55} cx={420} cy={1050} r={1000} id="d4" />
       </SVG>
     </Frame>
