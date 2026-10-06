@@ -294,18 +294,50 @@ export const RotaryPhone: React.FC<{x: number; y: number; scale?: number; f: num
 
 /** A tiny walking resident for the true-scale crowd: a coat, a hat, a head, a stride. Not the Character rig,
  *  because 100 of the rig would be 100 rigs. `go` 0..1 slides it toward its door. */
-export const Walker: React.FC<{x: number; y: number; s?: number; f: number; coat?: string; hat?: string; phase?: number; facing?: 1 | -1}> = ({
-  x, y, s = 1, f, coat = '#2F7D6B', hat = '#C98A2A', phase = 0, facing = 1,
+export const Walker: React.FC<{x: number; y: number; s?: number; f: number; coat?: string; hat?: string; phase?: number; facing?: 1 | -1;
+  shade?: boolean; stride?: number; breath?: number; tall?: number; lean?: number}> = ({
+  x, y, s = 1, f, coat = '#2F7D6B', hat = '#C98A2A', phase = 0, facing = 1, shade = false, stride = 1, breath = 0, tall = 1, lean = 0,
 }) => {
-  const st = Math.sin(f / 5 + phase) * 7;
+  const uid = React.useId().replace(/:/g, '');
+  const st = Math.sin(f / 5 + phase) * 7 * stride;
+  // `breath` 0..1: an idle chest rise and head bob (a standing figure is never a statue); `tall` stretches the coat
+  const br = Math.sin(f / 22 + phase) * breath;
+  const ch = 36 * tall + br * 1.6;
+  const top = -20 - ch;
+  // `shade`: the same key/fill/rim finish as ShadedHand. World light is above-left; the figure is mirrored by
+  // `facing`, so the lit side flips with it in local units.
+  const litX = facing > 0 ? -1 : 1;
+  const ct = tones(coat), sk = tones('#E8B48C');
+  const coatFill = shade ? `url(#${uid}c)` : coat;
   return (
     <g transform={`translate(${x},${y}) scale(${s * facing},${s})`}>
-      <ellipse cx={0} cy={2} rx={15} ry={4} fill="#000" opacity={0.35} />
+      {shade && (
+        <defs>
+          <linearGradient id={`${uid}c`} gradientUnits="userSpaceOnUse" x1={litX * 12} y1={top} x2={-litX * 12} y2={-18}>
+            <stop offset="0" stopColor={ct.key} /><stop offset="0.45" stopColor={ct.base} /><stop offset="1" stopColor={ct.shade} />
+          </linearGradient>
+          <radialGradient id={`${uid}h`} gradientUnits="userSpaceOnUse" cx={litX * 3} cy={top - 13} r={12}>
+            <stop offset="0" stopColor={sk.key} /><stop offset="0.6" stopColor={sk.base} /><stop offset="1" stopColor={sk.shade} />
+          </radialGradient>
+        </defs>
+      )}
+      <ellipse cx={shade ? -litX * 4 : 0} cy={2} rx={shade ? 18 : 15} ry={4} fill="#000" opacity={shade ? 0.45 : 0.35} />
       <rect x={-6} y={-22 + Math.abs(st) * 0.2} width={5} height={24} rx={2} fill="#2A2F3A" transform={`rotate(${st} -3 -22)`} />
       <rect x={1} y={-22 + Math.abs(st) * 0.2} width={5} height={24} rx={2} fill="#2A2F3A" transform={`rotate(${-st} 3 -22)`} />
-      <rect x={-10} y={-56} width={20} height={36} rx={8} fill={coat} stroke={FD.ink} strokeWidth={2.5} />
-      <circle cx={0} cy={-66} r={9} fill="#E8B48C" stroke={FD.ink} strokeWidth={2.5} />
-      <path d="M-10,-70 Q0,-84 10,-70 Z" fill={hat} stroke={FD.ink} strokeWidth={2.5} />
+      <g transform={`rotate(${lean} 0 -20)`}>
+        <rect x={-10} y={top} width={20} height={ch} rx={8} fill={coatFill} stroke={FD.ink} strokeWidth={2.5} />
+        {shade && (
+          <>
+            <path d={`M${litX * 8},${top + 4} L${litX * 8},${-24}`} stroke="#fff4de" strokeWidth={2} strokeLinecap="round" opacity={0.55} />
+            <path d={`M${-litX * 8},${top + 6} L${-litX * 8},${-24}`} stroke="#9fb1c4" strokeWidth={1.8} strokeLinecap="round" opacity={0.45} />
+          </>
+        )}
+        <g transform={`translate(0,${top + 56 + br * 0.8})`}>
+          <circle cx={0} cy={-66} r={9} fill={shade ? `url(#${uid}h)` : '#E8B48C'} stroke={FD.ink} strokeWidth={2.5} />
+          {shade && <path d={`M${litX * 7},-71 A9,9 0 0 ${litX > 0 ? 1 : 0} ${litX * 3},-74.5`} fill="none" stroke="#fff4de" strokeWidth={1.6} opacity={0.6} />}
+          <path d="M-10,-70 Q0,-84 10,-70 Z" fill={hat} stroke={FD.ink} strokeWidth={2.5} />
+        </g>
+      </g>
     </g>
   );
 };

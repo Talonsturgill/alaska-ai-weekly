@@ -69,8 +69,8 @@ const TONES: Record<Tone, {fill: string; fg: string}> = {
 
 /** THE NAMEPLATE. A mono plate sized to its string by arithmetic, ink or enamel and never brass, kept inside the
  *  plate band and clear of the square crop lines and the caption band. `lines` stack, longest line sets the width. */
-const Plate: React.FC<{text: string; displayLines?: string[]; x?: number; y: number; size?: number; tone?: Tone; p?: number; rot?: number; drop?: number}> =
-({text, displayLines, x = 540, y, size = 30, tone = 'ink', p = 1, rot = 0, drop = 0}) => {
+const Plate: React.FC<{text: string; displayLines?: string[]; x?: number; y: number; size?: number; tone?: Tone; p?: number; rot?: number; drop?: number; reveal?: number[]}> =
+({text, displayLines, x = 540, y, size = 30, tone = 'ink', p = 1, rot = 0, drop = 0, reveal}) => {
   const ls = displayLines ?? [text];
   const w = Math.min(1000, Math.max(...ls.map((l) => monoW(l, size))) + 56);
   const h = ls.length * (size + 16) + 14;
@@ -86,7 +86,7 @@ const Plate: React.FC<{text: string; displayLines?: string[]; x?: number; y: num
       <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={6} fill={t.fill} stroke={C.ink} strokeWidth={4} />
       {ls.map((l, i) => (
         <text key={i} x={0} y={-h / 2 + 7 + (size + 16) * (i + 0.5) + size * 0.36} textAnchor="middle" fontFamily={MONO} fontWeight={800}
-          fontSize={size} letterSpacing={1.5} fill={t.fg}>{l}</text>
+          fontSize={size} letterSpacing={1.5} fill={t.fg} opacity={reveal ? clamp01(reveal[i] ?? 1) : 1}>{l}</text>
       ))}
     </g>
   );
@@ -329,7 +329,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const dive = easeIO(f, 4, hit - 4);
   const away = ease(f, hit + 2, 40);
   const mx = f < hit ? lerp(1260, 440, dive) : lerp(440, 760, away);
-  const my = f < hit ? lerp(430, 842, dive) + Math.sin(f / 4) * 10 * (1 - dive) : lerp(842, 640, away) + Math.sin(f / 5) * 8 * away;
+  const my = f < hit ? lerp(430, 842, dive) + Math.sin(f / 4) * 10 * (1 - dive) : lerp(842, 712, away) + Math.sin(f / 5) * 8 * away;
   // the flung nightcap
   const ct = clamp01((f - hit) / 36);
   const cap = !awake;
@@ -522,22 +522,29 @@ const S3: React.FC<SceneProps> = ({p}) => {
             <path d="M-13,5 C-13,-8 -6,-14 0,-14 C6,-14 13,-8 13,5 Z" fill={C.brass} stroke={C.ink} strokeWidth={3} />
           </g>
           <rect data-band="ok" x={-20} y={1290} width={W + 40} height={H - 1290} fill="#DCE6F0" />
-          {/* the queue at the big door: 93 residents in three loose rows */}
-          {Array.from({length: 93}, (_, k) => {
-            const row = k % 4, col = Math.floor(k / 4);
-            const h = hash(k * 3 + 1);
-            const x = 50 + col * 19.5 + (h % 9) + Math.sin(f / 38 + k) * 2.5;
-            const y = 1205 + row * 33 + ((h >>> 5) % 6);
-            const coats = ['#2F7D6B', '#B23A3A', '#C98A2A', '#3E5C86', '#6B4A7C', '#7A7A52'];
-            return <Walker key={k} x={x} y={y + 14} s={2.1 + row * 0.22} f={f} coat={coats[h % 6]} hat={['#C98A2A', '#3E5C86', '#8A3B2E', '#2F4F3E'][(h >>> 3) % 4]} phase={k} facing={x < 265 ? 1 : -1} />;
-          })}
+          {/* the queue at the big door: a stylised SAMPLE of everyone else, eight spaced, shaded residents of varied
+              height and pose (2026-10-06 fix round: 93 flat clones read as a striped mass), the line running off the
+              left edge so it reads as continuing past the frame */}
+          {[
+            {x: 30, dy: 10, s: 2.7, tall: 1.05, coat: '#3E5C86', hat: '#C98A2A', lean: -3, fc: 1},
+            {x: 92, dy: -4, s: 2.45, tall: 0.92, coat: '#B23A3A', hat: '#2F4F3E', lean: 2, fc: 1},
+            {x: 150, dy: 14, s: 2.85, tall: 1.12, coat: '#7A7A52', hat: '#3E5C86', lean: 0, fc: 1},
+            {x: 212, dy: 0, s: 2.35, tall: 0.86, coat: '#C98A2A', hat: '#8A3B2E', lean: -4, fc: 1},
+            {x: 268, dy: 12, s: 2.6, tall: 1.0, coat: '#2F7D6B', hat: '#C98A2A', lean: 3, fc: -1},
+            {x: 330, dy: -2, s: 2.5, tall: 1.08, coat: '#6B4A7C', hat: '#2F4F3E', lean: 0, fc: 1},
+            {x: 392, dy: 16, s: 2.75, tall: 0.95, coat: '#3E5C86', hat: '#8A3B2E', lean: -2, fc: -1},
+            {x: 456, dy: 4, s: 2.4, tall: 1.02, coat: '#B23A3A', hat: '#3E5C86', lean: 4, fc: -1},
+          ].map((w, k) => (
+            <Walker key={k} x={w.x + Math.sin(f / 38 + k) * 2.5} y={1290 + w.dy} s={w.s} tall={w.tall} lean={w.lean + Math.sin(f / 31 + k * 1.7) * 1.5}
+              f={f} coat={w.coat} hat={w.hat} phase={k * 1.3} facing={w.fc as 1 | -1} shade stride={0.25} breath={1} />
+          ))}
           {/* the seven who take the side door */}
           {Array.from({length: 7}, (_, i) => {
             const x0 = 815 + 4 * (30 + i * 40);
             const x = Math.max(815, x0 - 4 * f);
             const arrived = x <= 815;
             const sink = arrived ? clamp01((f - (x0 - 815) / 4) / 14) : 0;
-            return <Walker key={i} x={x} y={1300 - sink * 6} s={2.5 * (1 - 0.5 * sink)} f={f} coat={['#E39A45', '#6FC0FF', '#B23A3A', '#2F7D6B', '#C98A2A', '#7B6FD0', '#B23A3A'][i]} hat="#2A2F3A" phase={i * 2} facing={-1} />;
+            return <Walker key={i} x={x} y={1300 - sink * 6} s={2.5 * (1 - 0.5 * sink)} f={f} coat={['#E39A45', '#6FC0FF', '#B23A3A', '#2F7D6B', '#C98A2A', '#7B6FD0', '#B23A3A'][i]} hat="#2A2F3A" phase={i * 2} facing={-1} shade />;
           }).concat([])}
           {Array.from({length: 9}, (_, i) => (
             <g key={i} transform={`translate(${40 + i * 130},1440)`}>
@@ -555,8 +562,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
           })}
         </g>
         <Snow f={f} n={40} d={0.8} op={0.7} />
-        <Plate text="ROD PANGBORN · NORTH POLE" y={560} size={28} tone="enamel" p={ease(f, b(9), 14) * (1 - ease(f, b(12) - 4, 8))} />
-        <Plate text="WEB 907 CLIENT" y={634} size={22} tone="slip" p={tag * (1 - ease(f, b(12) - 4, 8))} rot={Math.sin((f - b(10)) / 5) * 3 * Math.exp(-(f - b(10)) / 20)} />
+        <Plate text="ROD PANGBORN · NORTH POLE" x={790} y={560} size={28} tone="enamel" p={ease(f, b(9), 14) * (1 - ease(f, b(12) - 4, 8))} />
+        <Plate text="WEB 907 CLIENT" x={790} y={634} size={22} tone="slip" p={tag * (1 - ease(f, b(12) - 4, 8))} rot={Math.sin((f - b(10)) / 5) * 3 * Math.exp(-(f - b(10)) / 20)} />
         <QuotePlate text={'"SCARY-GOOD" · ROD PANGBORN'} y={738} size={38} p={quote * (1 - ease(f, b(12) - 4, 8))} rot={-1.5} />
         <Plate text="ABOUT 5 TO 10% OF CUSTOMERS USE IT · PANGBORN'S ESTIMATE · PER ALASKA BUSINESS" displayLines={['ABOUT 5 TO 10% OF CUSTOMERS USE IT', "PANGBORN'S ESTIMATE · PER ALASKA BUSINESS"]} y={492} size={22} tone="enamel" p={est} />
         <Dim amount={0.3} cx={540} cy={1100} r={1100} id="d3" />
@@ -670,9 +677,9 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {ringing && rings.map((r, i) => <circle key={i} cx={srcX} cy={srcY} r={40 + r * 520} fill="none" stroke={C.alarm} strokeWidth={10 * (1 - r)} opacity={0.7 * (1 - r)} />)}
         <rect data-band="ok" width={W} height={H} fill={C.alarm} opacity={0.12 * alarm} style={{mixBlendMode: 'screen'}} />
         {white.map((r, i) => r > 0.01 && r < 0.99 && <circle key={i} cx={srcX} cy={srcY} r={40 + r * 600} fill="none" stroke="#FFFFFF" strokeWidth={8 * (1 - r)} opacity={0.65 * (1 - r)} />)}
-        <Plate text="WEB 907 JOB" y={566} size={28} tone="ink" p={ease(f, b(13), 12) * (1 - ease(f, b(15) + 20, 10))} />
-        <Plate text="EMERGENCY VET SERVICE · AFTER HOURS" y={640} size={24} tone="enamel" p={ease(f, b(14), 12) * (1 - ease(f, answered + 40, 10))} />
-        <Plate text="ONE NUMBER" y={714} size={30} tone="slip" p={ease(f, b(15), 12) * (1 - ease(f, answered + 40, 10))} />
+        {/* one plate in the empty band above the clock (clock 476..604), y 260..400, each line arrives with its VO beat */}
+        <Plate text="WEB 907 JOB · EMERGENCY VET SERVICE · AFTER HOURS · ONE NUMBER" displayLines={['WEB 907 JOB', 'EMERGENCY VET SERVICE · AFTER HOURS', 'ONE NUMBER']}
+          y={330} size={26} tone="ink" p={ease(f, b(13), 12) * (1 - ease(f, answered + 40, 10))} reveal={[1, ease(f, b(14), 10), ease(f, b(15), 10)]} />
         <Dim amount={0.55} cx={420} cy={1050} r={1000} id="d4" />
       </SVG>
     </Frame>
@@ -809,10 +816,13 @@ const S7: React.FC<SceneProps> = ({p}) => {
             the margin is NOT red, warning red is reserved for the cell nobody wrote) */}
         {Array.from({length: 11}, (_, i) => <line key={i} data-band="ok" x1={0} y1={1340 + i * 54} x2={W} y2={1340 + i * 54} stroke="#9FB7C9" strokeWidth={3} opacity={0.6} />)}
         <line data-band="ok" x1={120} y1={1286} x2={120} y2={H} stroke="#7F98AB" strokeWidth={4} opacity={0.5} />
-        <g transform={`translate(0,${rise})`}>
+        {/* the ribbons are clipped to start above the bell bases (plate top ~y1213): during the rise (rise=240 at f0)
+            their tails sat at y1420 and poked out under the bells toward the caption */}
+        <defs><clipPath id="ribclip7"><rect x={-200} y={-400} width={W + 400} height={1590} /></clipPath></defs>
+        <g clipPath="url(#ribclip7)"><g transform={`translate(0,${rise})`}>
           <Ribbon x0={270} y0={1180} g={g} dir={1} seed={1} f={f} />
           <Ribbon x0={810} y0={1190} g={clamp01(g * 1.05 - 0.02)} dir={-1} seed={2} f={f} />
-        </g>
+        </g></g>
         <BrassBell x={270} y={1240} scale={0.8} f={f} emotion="happy" talk={talk} lamp={0.8} />
         <CardboardBell x={810} y={1250} scale={0.82} f={f} answer={0} rot={-7} />
         <QuotePlate text={'"CONFIDENTLY MAKE UP AN ANSWER" · STEVE VICK'} y={560} size={34} p={ease(f, b(25), 12)} rot={-1} />
@@ -850,14 +860,21 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-20} y={1214} width={W + 40} height={H - 1214} fill="#2A1D14" />
         {/* 9:16 bottom third: the desk's two drawer pedestals, lit from the lamp at x330 and falling off to the right,
             so the floor under the caption card is a piece of furniture and not a blank field (set dressing only) */}
-        {[{x: 60, lit: 1}, {x: 700, lit: 0.45}].map((pd) => [0, 1, 2, 3].map((r) => (
-          <g key={`${pd.x}-${r}`}>
-            <rect data-band="ok" x={pd.x} y={1250 + r * 172} width={320} height={150} rx={6} fill="#3A2919" stroke={C.ink} strokeWidth={6} />
-            <rect data-band="ok" x={pd.x + 8} y={1256 + r * 172} width={304} height={10} fill="#6E4F33" opacity={0.55 * pd.lit} />
-            <rect data-band="ok" x={pd.x + 120} y={1312 + r * 172} width={80} height={20} rx={9} fill={C.brass} stroke={C.ink} strokeWidth={4} opacity={0.55 + 0.4 * pd.lit} />
-            <rect data-band="ok" x={pd.x + 128} y={1314 + r * 172} width={40} height={5} rx={2} fill="#FFF4CC" opacity={0.5 * pd.lit} />
+        {[{x: 60, lit: 1}, {x: 700, lit: 0.45}].map((pd) => (
+          <g key={pd.x}>
+            <rect data-band="ok" x={pd.x} y={1218} width={320} height={50} rx={6} fill="#3A2919" stroke={C.ink} strokeWidth={6} />
+            <rect data-band="ok" x={pd.x + 8} y={1224} width={304} height={8} fill="#6E4F33" opacity={0.55 * pd.lit} />
+            <rect data-band="ok" x={pd.x + 120} y={1236} width={80} height={18} rx={8} fill={C.brass} stroke={C.ink} strokeWidth={4} opacity={0.55 + 0.4 * pd.lit} />
           </g>
-        )))}
+        ))}
+        {/* kick plate, then the floor plane in perspective: the Auditor's feet (y1290) land on boards, not drawer faces */}
+        <rect data-band="ok" x={-20} y={1268} width={W + 40} height={22} fill="#1A120C" stroke={C.ink} strokeWidth={5} />
+        <rect data-band="ok" x={-20} y={1290} width={W + 40} height={H - 1290} fill="#3B2C20" />
+        {Array.from({length: 13}, (_, i) => (
+          <line key={i} data-band="ok" x1={i * 90} y1={1290} x2={540 + (i * 90 - 540) * 1.9} y2={H} stroke="#251A12" strokeWidth={5} />
+        ))}
+        {[1380, 1520, 1720].map((ly) => <line key={ly} data-band="ok" x1={0} y1={ly} x2={W} y2={ly} stroke="#251A12" strokeWidth={4} opacity={0.7} />)}
+        <ContactShadow cx={160} cy={1294} rx={120} ry={16} opacity={0.5} blur={8} />
         <g transform="translate(330,0)">
           <line x1={0} y1={0} x2={0} y2={760} stroke={C.ink} strokeWidth={6} />
           <path d="M-90,860 L-34,760 L34,760 L90,860 Z" fill="#1F6B4A" stroke={C.ink} strokeWidth={6} />
@@ -904,7 +921,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         )}
         {/* the WRONG ANSWERS column, opened and turned to camera, empty, with the red-rimmed row beside it */}
         {f >= b(29) && (
-          <g transform={`translate(860,900) scale(${open},1)`} opacity={clamp01(open * 3)}>
+          <g transform={`translate(905,866) scale(${open * 0.85},0.85)`} opacity={clamp01(open * 3)}>
             <rect x={-150} y={-190} width={300} height={380} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
             <text x={0} y={-150} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>WRONG ANSWERS</text>
             <text x={0} y={-126} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>COUNTED</text>
@@ -944,13 +961,17 @@ const S9: React.FC<SceneProps> = ({p}) => {
           {[0, 1, 2, 3, 4].map((r) => <rect key={r} x={-120} y={-100 + r * 54} width={240} height={40} fill="none" stroke={C.ink} strokeWidth={3} opacity={0.5} />)}
         </g>
         {/* the bell seen from above: a brass disc with a plunger, and two eyes on its near rim reading the cards */}
-        <g transform="translate(540,1240)">
+        {/* raised to 1205 so the disc (1087..1323) clears the caption band and sits below the card path (bottom ~1062);
+            the face is painted on the disc, eyes either side of the plunger and a mouth under it */}
+        <g transform="translate(540,1205)">
           <ContactShadow cx={0} cy={10} rx={150} ry={26} opacity={0.4} blur={9} />
           <circle r={118} fill={C.brass} stroke={C.ink} strokeWidth={8} />
           <circle r={86} fill="none" stroke={C.brassDk} strokeWidth={6} />
           <circle r={34} fill={C.brassHi} stroke={C.ink} strokeWidth={6} />
-          <circle cx={-34} cy={-96} r={11} fill={C.paper} stroke={C.ink} strokeWidth={4} /><circle cx={34} cy={-96} r={11} fill={C.paper} stroke={C.ink} strokeWidth={4} />
-          <circle cx={-34 + Math.sin(f / 9) * 3} cy={-98} r={5} fill={C.ink} /><circle cx={34 + Math.sin(f / 9) * 3} cy={-98} r={5} fill={C.ink} />
+          <circle cx={-56} cy={-40} r={17} fill={C.paper} stroke={C.ink} strokeWidth={5} /><circle cx={56} cy={-40} r={17} fill={C.paper} stroke={C.ink} strokeWidth={5} />
+          <circle cx={-56 + Math.sin(f / 9) * 4} cy={-44} r={8} fill={C.ink} /><circle cx={56 + Math.sin(f / 9) * 4} cy={-44} r={8} fill={C.ink} />
+          <path d="M-66,-68 L-44,-64 M44,-64 L66,-68" stroke={C.ink} strokeWidth={6} strokeLinecap="round" />
+          <path d="M-30,56 Q0,70 30,56" fill="none" stroke={C.ink} strokeWidth={6} strokeLinecap="round" />
         </g>
         {icons.map((ic, i) => {
           const t = f - t0[i];
@@ -958,7 +979,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           const inn = easeIO(t, 0, 28);
           const out = easeIO(t, 40, 24);
           const x = lerp(1250, 620, inn) - out * 520;
-          const y = 1000 + out * 130;
+          const y = 950 + out * 130;
           const scan = clamp01((t - 24) / 18);
           return (
             <g key={i}>
@@ -972,7 +993,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           const t = f - t0[i];
           if (t < 0 || t > 40) return null;
           const inn = easeIO(t, 0, 28);
-          return <HandSil key={i} x={lerp(1330, 700, inn)} y={1090} rot={-90} s={0.55} curl={0.5} fill="#3E5C86" reach={1100} />;
+          return <HandSil key={i} x={lerp(1330, 700, inn)} y={1040} rot={-90} s={0.55} curl={0.5} fill="#3E5C86" reach={1100} />;
         })}
         <Dust f={f} cx={540} cy={1000} rx={440} ry={330} op={0.3} color="#FFF8E0" />
         <Dim amount={0.45} cx={540} cy={1000} r={1000} id="d9" />
@@ -988,7 +1009,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
 // slides into it, and it answers with a confident ribbon of invented ink.
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const rise = lerp(100, 0, easeIO(f, 0, 150));
+  // (fix round) the grid used to rise from +100, which parked the bottom row of FREE crates (1135..1290 + rise) in the
+  // caption band (1336..) for the first seconds; it now holds at its resting height and the crates drop in to it
+  const rise = 0;
   // CH 155 puts the wall top at y515, leaving a clear band 420..510 inside the square for the plate above the wall
   const CW = 250, CH = 155;
   // another owner's hand comes down, takes the second free bell off the top-right crate and lifts it out of frame
@@ -1124,10 +1147,11 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const hang = easeIO(f, 12, 40);
   const toCell = easeIO(f, 56, 40);
   const press = ease(f, b(40), 36);
-  const walk = easeIO(f, b(39) - 10, 60);
+  const step = easeIO(f, b(39) - 34, 14);
+  const walk = easeIO(f, b(39) - 14, 50);
   const doorShut = easeIO(f, b(39) + 40, 22);
   const tipX = 489, tipY = 1032;
-  const hx = f < 56 ? lerp(1100, 970, hang) : lerp(970, tipX + 110, toCell);
+  const hx = f < 56 ? lerp(1170, 1040, hang) : lerp(1040, tipX + 110, toCell);
   const hy = f < 56 ? lerp(760, 740, hang) : lerp(740, tipY + 160, toCell);
   const hov = f > b(39) ? Math.sin(f / 3) * 3 * (1 - press) : 0;
   const q = ease(f, b(40), 14);
@@ -1156,9 +1180,9 @@ const S12: React.FC<SceneProps> = ({p}) => {
         </g>
         {/* the coat peg on the right: the owner hangs the flannel coat */}
         <g transform={`translate(${(1 - hang) * 280},${(1 - hang) * -60})`} opacity={clamp01(1)}>
-          <CoatPeg x={930} y={640} coat={f > 20 ? 1 : 0.0} f={f} />
+          <CoatPeg x={1000} y={640} coat={f > 20 ? 1 : 0.0} f={f} />
         </g>
-        <CoatPeg x={930} y={640} coat={0} f={f} />
+        <CoatPeg x={1000} y={640} coat={0} f={f} />
         {/* the counter and the standing sheet */}
         <rect x={-20} y={1130} width={W + 40} height={84} fill={C.plankHi} stroke={C.ink} strokeWidth={7} />
         <rect data-band="ok" x={-20} y={1214} width={W + 40} height={H - 1214} fill={C.plankDk} />
@@ -1175,9 +1199,13 @@ const S12: React.FC<SceneProps> = ({p}) => {
         {/* the customer, a large dark silhouette, walks to the door and out */}
         {/* staged in the open doorway (x 40..310, threshold y1120) at door scale, clear of the sheet (x>=377); it used to
             start at x640 in front of the sheet and read as standing on the clipboard face */}
+        {/* 2026-10-06 fix round: shaded like the hand (key/fill/rim, cast shadow), breathing while it waits, a
+            visible half step toward the door at ~b(39)-34, then the walk out into the snow, shrinking with distance,
+            gone (faded) before doorShut starts at b(39)+40 so the exit is seen before the door closes */}
         {walk < 1 && (
-          <g transform={`translate(${lerp(290, 150, walk)},1120) scale(${lerp(1, 0.9, walk)})`} opacity={1 - clamp01((walk - 0.75) / 0.25)}>
-            <Walker x={0} y={0} s={4.2} f={f} coat="#12171D" hat="#12171D" phase={0} facing={-1} />
+          <g transform={`translate(${lerp(300, 290, step) - 150 * walk},1120) scale(${lerp(1, 0.55, walk)})`} opacity={1 - clamp01((walk - 0.7) / 0.3)}>
+            <Walker x={0} y={0} s={4.2} f={f} coat="#4A5868" hat="#2A3440" phase={0} facing={-1} shade
+              stride={clamp01(step * (1 - step) * 4 + Math.min(walk * 8, 1) * (1 - walk))} breath={1 - walk} lean={4 * walk + 2 * step} />
           </g>
         )}
         {/* the owner's sleeve and pencil */}
@@ -1208,12 +1236,21 @@ const S13: React.FC<SceneProps> = ({p}) => {
   // THE RESTING HAND PLAYS THE PLUNGER. It settles onto the bell after the cut (0..22) with a small answering squash,
   // winds up off the plunger (92..110), presses it home on the ding at b(42) (113..120) and lets it spring back
   // (124..138). Nothing moves the hand after that, so the lamp-off button hold from b(43) stays still and readable.
-  const settleIn = ease(f, 0, 22);
-  const windUp = easeIO(f, 92, 18) * (1 - easeIO(f, 110, 4));
-  const plunge = easeIO(f, 113, 7) * (1 - ease(f, 124, 14));
-  const handDy = -30 * (1 - settleIn) - 16 * windUp + 28 * plunge;
-  const landBump = f >= 18 && f < 34 ? 0.25 * Math.sin((Math.PI * (f - 18)) / 16) : 0;
-  const ring = Math.max(f >= 158 ? Math.max(0, 1 - (f - 158) / 10) : 0, plunge, landBump);
+  // 2026-10-06 fix round: two PRESS-AND-RELEASE strokes timed to the evidence windows (hand_41 local 10..17, hand_42
+  // local 122..129). Press 1: wound up at 10, plunger home by 15 (bell squash + ring flash at 14), release 19..31 with an
+  // upward overshoot. Press 2: wind 110..117, home ON the ding at b(42)=120, held to 123, release with an overshoot that
+  // peaks at 129 and is still by 135, so the hand is motionless long before the b(43) lamp-off button hold.
+  const settleIn = ease(f, 0, 8);
+  const wind1 = easeIO(f, 4, 6) * (1 - easeIO(f, 11, 4));
+  const p1 = easeIO(f, 11, 4) * (1 - ease(f, 19, 8));
+  const wind2 = easeIO(f, 110, 7) * (1 - easeIO(f, 117, 3));
+  const p2 = easeIO(f, 117, 3) * (1 - ease(f, 123, 8));
+  const over = (a: number) => (f >= a && f < a + 12 ? Math.sin((Math.PI * (f - a)) / 12) : 0);
+  const plunge = Math.max(p1, p2);
+  const handDy = -30 * (1 - settleIn) - 16 * (wind1 + wind2) + 28 * plunge - 12 * (over(19) + over(123));
+  const flashAt = (a: number) => (f >= a && f < a + 10 ? 1 - (f - a) / 10 : 0);
+  const flashes = [14, 120].map((a) => ({a, k: flashAt(a)})).filter((x) => x.k > 0);
+  const ring = Math.max(f >= 158 ? Math.max(0, 1 - (f - 158) / 10) : 0, plunge);
   const asleep = f >= b(43) + 20;
   const sheetGlow = off ? 0.6 : 1;
   const rake = ease(f, b(43), 20);
@@ -1235,6 +1272,16 @@ const S13: React.FC<SceneProps> = ({p}) => {
             </g>
           ))}
           <BrassBell x={420} y={1160} scale={0.95} f={f} emotion={asleep ? 'asleep' : 'calm'} ring={ring} lamp={lamp} />
+          {/* the ring flash off the plunger on each press: a burst and two expanding brass rings */}
+          {flashes.map(({a, k}) => (
+            <g key={a} style={{mixBlendMode: 'screen'}}>
+              {f - a < 4 && <ImpactStar cx={428} cy={936} r={54} color="#FFF1C8" />}
+              {[0, 1].map((j) => (
+                <ellipse key={j} cx={428} cy={1000} rx={150 + (f - a) * 22 + j * 46} ry={(150 + (f - a) * 22 + j * 46) * 0.62}
+                  fill="none" stroke="#FFE9B0" strokeWidth={7 - j * 2} opacity={0.75 * k * (1 - j * 0.35)} />
+              ))}
+            </g>
+          ))}
           {/* the owner's hand comes in from the LEFT at counter height and rests on the bell's crown (plunger top ~y926),
               palm and fingers above the dome, never across the painted face (eyes ~y990-1040). Sleeve runs off-frame left. */}
           <HandSil x={372} y={890 + handDy} rot={96} s={0.55} curl={0.35} fill={C.flannel} reach={1000} contact={{x: 428, y: 932 + 28 * plunge, rx: 44}} />
