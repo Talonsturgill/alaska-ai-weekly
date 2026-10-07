@@ -1,0 +1,109 @@
+{
+ "run_date": "2026-10-07",
+ "palette": {
+  "sky": "#B9C3CA",
+  "ground": "#9C9684",
+  "hero": "#1B1F2A",
+  "accent": "#F2EDE4",
+  "shadow": "#0E1118",
+  "support": {
+   "ink": "#1B1F2A",
+   "cranberry": "#8E1B3A",
+   "tundra_ochre": "#D9A441",
+   "ptarmigan_bone": "#F2EDE4",
+   "gravel_grey": "#8A8577",
+   "spruce_dark": "#26352C",
+   "duct_tape": "#9DA3A8",
+   "stage_white": "#EAF0F4",
+   "heather_wool": "#8E8A94",
+   "glacier_cyan": "#7FB5C9",
+   "river_gravel": "#9C9684",
+   "overcast_slate": "#B9C3CA",
+   "warm_rift": "#F4D9A0",
+   "tag_kraft": "#B79B6B",
+   "raven_feather": "#2B3446",
+   "stage_rim": "#EAF0F4",
+   "rift_pale": "#EBDDBF",
+   "label_warm": "#F4D9A0",
+   "gravel_bounce": "#B8A98C",
+   "kraft_card": "#B79B6B"
+  },
+  "mood": "an early-October tundra afternoon under pale overcast, curious and a little comic, never ominous. A battered fortune ball asked a decade-sized question on a plank table standing on a river-gravel bar.",
+  "why": "The story is a forecast that declines to guess, so the hero is the toy every Alaskan has shaken for an answer, drawn dented, taped and mended (it has been asked too much). VALUE PLAN: the sky is a pale overcast slate #B9C3CA and the ground a river-gravel grey-ochre #9C9684, so the obsidian ball #1B1F2A is the DARKEST value in every daylight frame and keeps a silhouette against sky at every camera height. COLOUR LICENCE, each colour has ONE meaning: CRANBERRY #8E1B3A means ONLY the finance and insurance sector (its pebble row and its flag cloth), and palette.accent (the slot the engine uses for flashes and chrome) is bone, never cranberry. GLACIER CYAN #7FB5C9 means ONLY what the real ball says (window, die faces, the labeled blank), so nothing else is cyan, including any stake, tag or stamp. TUNDRA OCHRE #D9A441 is report data (pebbles, rows, health care glow, the survey flag cloth in ochre and gravel grey, never pink or red). BONE is paper, the ptarmigan and the stamps. STAMPS (NOT CALLED AN AI NUMBER, MADE UP) are ink on bone, never red. The mitten and sleeve are HEATHER-GREY wool #8E8A94, off the red axis entirely. The invented-number stakes are plain cardboard kraft with ink numerals. Diverges from 09-30 (slate fog, peat, hunter orange): lighter river gravel instead of peat, no orange anywhere, cranberry instead of hunter orange, a tactile gravel world instead of a paper stack. Diverges from 10-06 (warm pine, brass, stove, mint, red), 10-05 (seafoam, plum, coral), 10-03 (newsprint cream, spruce, cadmium), 10-02 (brass lamp, near-IR magenta, teal). WARM LICENCE: #F4D9A0 (label_warm) means ONLY the labeled blank, the label and the labeled stake, nothing else. The ball's answer is cyan until 88.9 s and WARM after: that change from cyan to warm IS the payoff, an exception stated once. The cloud rift in S13 and S14 is a paler desaturated #EBDDBF at 0.5 so it never spends the label's warm. The raven's feathers are #2B3446 with a stage-white #EAF0F4 rim so the bird reads in the ink. The invented-number stakes are kraft card with crossed-out ink scrawl (-?,???) and never a plausible figure."
+ },
+ "light": {
+  "time_of_day": "early October, mid afternoon, overcast",
+  "direction": "soft overcast key from above and frame left, a low warm bounce off the ochre tundra, cold sky fill",
+  "key": "overcast diffuse #EAF0F4 from above left, soft shadows, no hard sun",
+  "fill": "neutral warm gravel bounce #B8A98C (never #D9A441, which is report data)",
+  "rim": "glacier-blue rim from the window glow on the ball's face side only",
+  "depth": "ONE plane table for the film: far hills and river 0.45, tundra mid 0.7, gravel bed 0.9, table, ball, flags, pebble rows and report pages 1.0, plates and tags 1.15, near mitten and foreground gravel and grass 1.4. Per-stage notes only vary what is in each plane.",
+  "why": "Overcast means no hard shadows to compete with plates, and the glass window is the only thing that glows. THE LIGHT STORY ARGUES: pale overcast (S1 to S9), the same table killed to ink under one cool-white spot for THE TEST (S10 to S12), then a RIFT in the cloud (S13, S14) that rakes a pale #EBDDBF break across the gravel, so the last frame is lit differently from frame 1 and the loopback rhymes rather than repeats.",
+  "argument": "Light shows where to look. Meaning lives only in cranberry (the named sector) and glacier blue (what the ball says).",
+  "per_stage": {
+   "gravel-table": "overcast key, neutral warm gravel bounce, the ball's window glows cyan and rim-lights the nearest gravel. The table is FLAG-FREE in S1 and S4 (stakes are planted from S8). Planes follow the one table.",
+   "die-interior": "inside the window, lit from within, glacier blue liquid, a slow swirl, bubbles, the die's faces catch a bone key from above. Planes: back glass 0.8, die 1.0, bubbles 1.2, near glass 1.5",
+   "report-overhead": "straight down, overcast soft key, the creased report page casts a short soft shadow on gravel. Planes: gravel 0.9, report and pebble grid 1.0, counter and plates 1.15, near blades of grass at the frame edge 1.4",
+   "flag-field": "low overcast over a tundra bar with stake flags in rows; far hills 0.45, flags 1.0, ptarmigan 1.0, foreground stakes 1.4",
+   "test-stage": "ink ground #0E1118 with ONE cool-white spot #EAF0F4 from above, widened to an ellipse that takes in the table top and a strip of the report's pebble rows at its near edge. The raven's perch stands INSIDE the pool's rim (feathers #2B3446 lifted by a stage-white #EAF0F4 top rim), the boulder lands fully inside the pool with a ContactShadow, the bucket sits at the pool's lower right on the gravel (plane 1.05), the table and ball 1.0. The ball has a cool-white top rim so it separates from the void. The invented stakes and the boulder catch the key fully.",
+   "pebble-field": "overhead overcast #B9C3CA soft key, a warm gravel bounce, pebbles carry tiny contact shadows, the cranberry row is lit from within by nothing, only by contrast. Planes: gravel bed 0.9, pebble rows 1.0, row plates 1.15, cloud-shadow 1.3",
+   "river-edge": "ground level, pale overcast, the river is a slate mirror with ripples, the bar's edge is a ragged gravel shelf in front. Planes: far bank 0.45, river 0.7, bar edge and pebbles 1.0, plates 1.15, near gravel 1.4",
+   "die-interior-in-ink": "the window glows cyan from within under the cool spot, and the PAYOFF source is a warm #F4D9A0 glow that lights the label, the only warm light in the ink. The strokes are drawn on the OUTSIDE of the glass, registered over the blank die face.",
+   "rift": "S13 and S14: a thin rift in the overcast lets a pale low break (#EBDDBF at 0.5) rake from frame right across the gravel, stakes and ball. #F4D9A0 stays reserved for the labeled blank only."
+  }
+ },
+ "shape_language": {
+  "contrast": "ROUND AND MENDED AGAINST FACETED AND CREASED. One dented, taped, mended sphere against a faceted icosahedral die (AnswerDie), survey stakes with cut angular tips, creased report pages and angular ochre pebbles. The ball is the only soft curve in the film, everything it is asked about has an edge.",
+  "why": "The thesis is that the honest answer is a labeled blank. A round, battered, over-asked object is the picture of a forecast; the facts it is asked about are hard-edged records. This is a real axis 10-06 did not use (10-06 was heavy brass against flat limp cardboard), NOT round-versus-square (10-03, 10-05) and NOT a heavy-versus-flimsy decoy. There is no look-alike decoy of the hero: the invented numbers are written on cardboard stakes the raven plants.",
+  "ball": "A near-sphere with dents, a patch of duct tape, thumb smudges, a round window on its face (glacier cyan), a tiny face living in the window (eyes and mouth are the window's contents, never outside it), no arms. Distinct from NewsAgent (domed machine with a screen), BrassBell and Otolith."
+ },
+ "casting": {
+  "hero": "FortuneBall (NET-NEW, lib/fortune.tsx): dented matte-black sphere, window with a face, the answer die inside, NO arms, NO variants and no decoy copy.",
+  "net_new": {
+   "FortuneBall": "the hero, nothing on the shelf is a sphere with a face",
+   "AnswerDie": "the throughline: a faceted die in liquid carrying real report phrases. Not QuestionToken (a flat scalloped brass token): AnswerDie is a 3D faceted solid that rolls and tumbles inside a glass window and is read through liquid.",
+   "StakeFlag": "the survey stake with cloth flag, angular cut tip, reason tags hung from PriceTag-style kraft tags",
+   "PebbleRow": "report rows as faceted angular pebbles with a row plate (a bound set, one component)",
+   "ReportBooklet": "a bound composition OF the shelf Sheet and PaperFiber with creased edges, not a new paper material",
+   "BoulderDrop": "one faceted boulder prop for the raven's objection",
+   "InventedStake": "a plain kraft cardboard stake with ink numerals, MADE UP in the shelf Stamp",
+   "Bucket": "NOBODY COULD DEFEND THIS bucket"
+  },
+  "shelf": {
+   "Ptarmigan (lib/fauna.tsx)": "the REASON-BRINGER: it ties each kraft reason tag to its pole before the percentage unfurls (S8), carries the labeled AI stake upright beside the cranberry flag (S13) and settles at its foot, and stays there in the far plane in S14. It has no appearance in S1 to S7",
+   "Raven (lib/fauna.tsx)": "the objection's sketch artist (perch mode, feathers #2B3446 with a stage-white rim, a held grease pencil and a sketch board are EPISODE-LOCAL props on the shelf bird), who drags the pebble row, draws the projection line, concedes by writing the label from frame right in S11, plants the bare AI stake and the invented-number stakes in S12 and ends with its pencil lowered",
+   "HandSil / GripHand (lib/stack.tsx, props.tsx)": "the mitten is a heather wool-texture VARIANT of the shelf hand, not net-new. It is the viewer's hand, and appears only in S1, S4 and S14",
+   "ForecastTrace (lib/forecast.tsx)": "the raven's dashed projection line out of the past rows is the shelf ForecastTrace, an observed run continuing into a predicted run",
+   "Unnamed (lib/absence.tsx)": "the blank die face and the blank AI stake are drawn through the absence grammar as a STATED absence",
+   "PriceTag (lib/newsroom.tsx)": "the reason tags on the flag poles",
+   "Stamp (lib/kit.tsx)": "NOT CALLED AN AI NUMBER and MADE UP",
+   "TundraBG (lib/biomes.tsx)": "the far plane",
+   "DayGrade, ContactShadow, ImpactStar, SpeedLines": "grade and juice"
+  },
+  "why_each": "The mitten is the viewer's hand shaking the future. The ptarmigan is the Alaskan witness who ties each report reason to the stake it belongs to. The raven draws the fair case against, then bowls the made-up numbers in, in character as courtroom sketch artist, never a villain."
+ },
+ "motion_language": {
+  "world": "overcast cloud drift, tundra grass sway, river shimmer, flags flutter on an irrational period, the ball's liquid swirls, the ptarmigan pecks and shuffles",
+  "hero_moves": [
+   "the mitten slams the ball down and the numbers slosh in the window",
+   "the ball squints, fogs at the word AI, sweats at the sidebar",
+   "the die floats up with a blank face and the ball goes mortified in THE TEST",
+   "the label peels off the glass onto the raven's bare stake, then the raven's MADE UP stakes topple into the bucket while the ball watches",
+   "the mitten sets the ball down gently on the table and the window settles on ASK AGAIN NEXT FORECAST"
+  ],
+  "principles": "anticipation before every shake and slam, overshoot and decaying settle on landings, eases for travel, springs only for pops, secondary sway on every hanging thing, ambientMouth only for the ball's mouth (never lip-sync), whole-frame kicks only on beats flagged kick:true"
+ },
+ "composition": {
+  "focal_hierarchy": "the ball (or its window) is the best-finished thing in frame; plates sit in the y 500 to 760 band clear of it; the report rows ride the lower half of the square",
+  "negative_space": "overcast sky above, the empty table to one side in THE TEST; ONE saturated accent per frame (cranberry on finance only, blue only in the window)",
+  "safe_area": "hero action and every plate inside y 490..1300 for the square; captions from y 1336; plates avoid y 420 and 1500",
+  "signature_shot": "S11, THE LABELED BLANK, about 84.5 to 92 s: inside the window under the cool spot the die floats up blank and then holds still, square to the glass. The raven's grease-pencil tip reaches in from frame right and writes the label on the OUTSIDE of the glass over the blank face, and the label lights warm #F4D9A0, the only warm lit thing in the ink and the film's one cyan-to-warm change. No mitten in the spot.",
+  "final_frame": "The ball set down on the table in a break of light, the window reading ASK AGAIN NEXT FORECAST, the report's fine print EXCLUDES SELF-EMPLOYED + FISHERMEN in bone below, and far behind it the labeled stake beside the cranberry flag with the ptarmigan settled at its foot, the film's watch post.",
+  "opens_with": "a mitten slams the ball onto the gravel and the window sloshes +8,577 JOBS before a letter of VO.",
+  "the_test": "S10 to S12 (not S9 to S11).",
+  "camera_note": "S3's entry is an IRIS GRAPHIC MATCH from the round +2.6% stamp to the round window, not a push through glass (10-06's push-through-reveal).",
+  "label_text": "AI \u00b7 TOO EARLY TO PREDICT THE MAGNITUDE \u00b7 P. 6 (short form, legible at phone size)"
+ },
+ "craft_advance": "None required. The net-new asset family lives in lib/fortune.tsx.",
+ "geography": "ONE PLACE: a plank table stands on a river-gravel bar. The pebble rows lie on the gravel beside the table, the survey stakes are planted around the table from S8, the river runs off the bar's far end, and THE TEST is the same table with the overcast killed to ink and one widened spot. The ball stays on the table. The mitten lifts it to shake it (S1, S4) and sets it back on the table (S14)."
+}

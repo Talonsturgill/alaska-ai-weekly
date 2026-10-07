@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.993,
+    "heard": "Alaska's 10-year jobs forecast is a fortune-ball. Shake it. The State Labor Department says Alaska adds 8,577 jobs by 2034, up 2.6%. Healthcare adds almost 6,000. The fastest growing job runs a grinding machine, up 23%. But the report has a sidebar on the effects of AI. It's economists say AI will touch much of Alaska's labor force, but no current shift can be pinned on it. What number does the ball give AI? The report names one sector most vulnerable to automation, finance and insurance. It's projected to lose 489 jobs, and the report doesn't call that an AI number. On insurance, it says AI losses are too uncertain to project this year. Which row is the AI row? The scary rows, reporters and journalists, down 27.9%. Broadcasters, 27.7, services are going remote, work is going freelance. They look like AI numbers, but the report claims other causes. Information, down 11.7, has no AI cause either. A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big AI gets, there's a blank. But the economists wrote that it's too early to predict the magnitude, so they leabold the blank, not guessed. A made up number nobody could defend is worse. The scary rows aren't the AI rows. The AI row is the leabold blank, next to the one sector the report names. The ball's answer is ask again next forecast. Which row would you watch next year?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.014,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.27,
+        "voiced_frac": 0.46,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 125.56,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 125.56,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

@@ -1,0 +1,1748 @@
+{
+ "run_date": "2026-10-07",
+ "slug": "ask-again",
+ "title": "Ask Again",
+ "concept": "A dented, duct-taped fortune ball is shaken with the state's ten-year jobs forecast. Asked for an AI number it gives none, and the film follows what the report actually says about AI, down to the one honest labeled blank, planted beside the one sector the report names.",
+ "derived_from": "scratch",
+ "engine": "infographic-2.5d",
+ "total_seconds": 131.4,
+ "fingerprint": {
+  "pov": "macro-closeup",
+  "motion_vector": "radial-emanate",
+  "hero_treatment": "single-organic-hero",
+  "layout": "centered-hero-lowerthird",
+  "register": "tactile-collage",
+  "camera_strategy": "orbit-reveal",
+  "light_story": "overcast-diffuse",
+  "palette": "obsidian black, cranberry, tundra ochre, ptarmigan bone, glacier cyan window, pale overcast slate and river gravel",
+  "metaphor": "a dented fortune ball asked to predict a decade, answering with a labeled blank instead of a made-up number"
+ },
+ "palette": "obsidian black, cranberry, tundra ochre, ptarmigan bone, glacier cyan window, pale overcast slate and river gravel",
+ "divergence_note": "A mostly exterior film: a gravel bar of pebble rows, a river edge, a stake-flag field and an ink test stage on the same table, in a pale overcast that goes to one cool spot and then a rift of light. 10-06 was a warm pine stove-lit night interior at counter height with a polished brass bell, 10-05 a seafoam fluorescent hallway at noon, 10-03 a newsprint cream newsroom. The hero is a dented matte-black sphere that is the darkest value in frame, ROUND AND MENDED against FACETED AND CREASED (a faceted die, cut stakes, creased pages, angular pebbles), with no look-alike decoy of the hero and the ball's face kept off the data shots (S2, S5, S6, S8, S9, S13 never show it, S12 and S13 are staged on the gravel). An overcast tundra palette has run before (07-14, 07-31 pale arctic overcast with tundra ochre), so the divergence here is the cranberry-only-for-the-named-sector licence, the cyan-only-for-what-the-ball-says licence, the sphere against stakes, and an ending where the AI row is a labeled blank stake with no number, carried by a ptarmigan and planted beside the sector the report names.",
+ "angle": {
+  "thesis": "Alaska's economists put AI in the ten-year jobs forecast and refused to invent its size, so the scary rows (journalists, broadcasters) are not the AI rows, and the one sector they name, finance and insurance, is the place to watch.",
+  "falsifiable_by": "The report crediting the journalist, broadcaster or information declines to AI, printing an AI job number, or finance and insurance not being the sector its sidebar names as most vulnerable. Next year's edition putting a number on insurance AI losses closes the window.",
+  "supporting_facts": [
+   "c4 sidebar: AI will touch much of the labor force but no current broad shift can be attributed to it",
+   "c5 finance and insurance named most vulnerable to automation near term",
+   "c8/c9 journalists -27.9 and broadcasters -27.7 with the report's own non-AI reasons (remote services, freelance, small numbers)",
+   "c7 insurance AI losses 'too uncertain to project this year'",
+   "c2/c10 the forecast still adds 8,577 jobs, health care +5,954"
+  ],
+  "fair_counterpoint": "A forecast built from history can't see a break from history, which is what AI would be, and it excludes the self-employed and fishermen (c14, c15). A blank spot where AI should be is a real limit and the reader could fairly call it evasion. It gets its own scene (THE TEST) at full strength, then the film lands that a labeled blank beats a number nobody could defend, and the state's own 'this year' (c7) sets the next test.",
+  "second_movement": "c8/c9: the biggest shrink numbers look like an AI story and the report says they aren't. The AI flag sits in a quieter row (c5, c6), and its number is never tied to AI.",
+  "stance": "curious",
+  "valence": "even-handed and constructive, crediting the economists' discipline, with the caution kept in",
+  "runner_ups": [
+   "Builder: early warning not obituary (merged as the close, lead time to act)",
+   "Skeptic: the sidebar can't be tested against its own forecast (kept as the counter-scene, since 'untestable' alone is a description not a call to action)",
+   "Explainer: the most useful number is the one they refused to write (merged into the thesis)"
+  ],
+  "cross_challenge": "All three converged. Synthesis applied: (1) skeptic's thesis stated a limitation, not a claim, so it became the scene THE TEST. (2) builder's 'early warning Alaska can act on' overreaches since the report recommends nothing, so it is the question at the button, not the thesis. (3) explainer's derived ratios (12x, 69 percent) are NOT approved facts and stay off screen. Hard guardrail from all three: never put -27.9 or -27.7 beside AI without the report's non-AI reason in the same beat.",
+  "claim_ids": [
+   "c1",
+   "c2",
+   "c4",
+   "c5",
+   "c6",
+   "c7",
+   "c8",
+   "c9",
+   "c10",
+   "c12",
+   "c13",
+   "c14",
+   "c15"
+  ]
+ },
+ "treatment": {
+  "winner": "COMEDIAN",
+  "why": "Only pitch that gives the forecast a face. A battered fortune ball that sweats at the sidebar, flinches at the scary rows and goes mortified in The Test carries emotion in every act, and the toy's own vocabulary (ask again) is the button. Grafts: the Dramatist's survey stakes with each row's reason tied on at planting and the labeled-blank transfer, the Enthusiast's labeled blank as something Alaska can plan around, the Explainer's pebble rows making the numbers physical, and the Test restaged as a raven's projection line missed by a boulder. The ice-survey and lighthouse pitches were sound but faceless in their middles."
+ },
+ "hook": {
+  "pattern": "in-medias-res",
+  "frame1": "A heather-wool mitten has just slammed a dented, duct-taped fortune ball onto a gravel table, the window sloshing +8,577 JOBS, pale overcast tundra behind.",
+  "headline": "ASK THE FORECAST ABOUT AI",
+  "motion_by_s": 1.1,
+  "loopback": "The last frame is the same table in a break of light, the ball set down gently with ASK AGAIN NEXT FORECAST in the window, answering the slam of the first."
+ },
+ "open_loop": {
+  "plant_t": 2.52,
+  "pay_t": 100.16,
+  "what": "The hook headline ASK THE FORECAST ABOUT AI and the window's AI JOBS ? / ??? pose what number the ball gives AI. It is paid when the ball gives no number, only the report's own words as a label on the blank."
+ },
+ "open_loop_2": {
+  "plant_t": 57.82,
+  "pay_t": 110.9,
+  "what": "The die tumbles to WHICH ROW IS THE AI ROW and the VO asks it. It is paid when the labeled blank stake is planted beside the sector the report names, not the scary rows and not the cranberry row."
+ },
+ "throughline": {
+  "object": "the answer die",
+  "lands_in_button": "the die settled under the window reading ASK AGAIN NEXT FORECAST",
+  "states": [
+   {
+    "at_s": 2.52,
+    "state": "a plain faceted die rattling in the window, face +8,577 JOBS"
+   },
+   {
+    "at_s": 26.9,
+    "state": "flipped to the sidebar tab's face, then AI JOBS ?"
+   },
+   {
+    "at_s": 36.1,
+    "state": "AI JOBS ??? as the ball is shaken"
+   },
+   {
+    "at_s": 52.34,
+    "state": "TOO UNCERTAIN TO PROJECT THIS YEAR"
+   },
+   {
+    "at_s": 57.82,
+    "state": "tumbled to WHICH ROW IS THE AI ROW"
+   },
+   {
+    "at_s": 75.16,
+    "state": "the far ball's cyan window pinpoint flips to a new face as the reason tags cover the percentages"
+   },
+   {
+    "at_s": 91.34,
+    "state": "floating blank face in the window"
+   },
+   {
+    "at_s": 100.16,
+    "state": "the blank labeled in the report's own words and lit warm"
+   },
+   {
+    "at_s": 104.1,
+    "state": "the label carried onto a bare survey stake"
+   },
+   {
+    "at_s": 117.7,
+    "state": "settled under ASK AGAIN NEXT FORECAST"
+   }
+  ]
+ },
+ "reveals": [
+  {
+   "t": 7.8,
+   "type": "scale-pullback",
+   "what": "the camera pulls back from one pebble to the whole jobs grid as the rows tumble out of the report",
+   "hold_s": 0.6
+  },
+  {
+   "t": 45.74,
+   "type": "morph-to-chart",
+   "what": "the row's end pebbles roll off the bar and pile into a falling bar in the river",
+   "hold_s": 0.6
+  },
+  {
+   "t": 60.6,
+   "type": "scale-pullback",
+   "what": "the camera rises to show the whole tundra bar as the scary stakes drop in",
+   "hold_s": 0.6
+  },
+  {
+   "t": 108.42,
+   "type": "scale-pullback",
+   "what": "pull up and back from the labeled stake to the whole bar as a rift opens in the cloud",
+   "hold_s": 0.6
+  }
+ ],
+ "audio_arc": {
+  "build_steps": 4,
+  "dip_at": 116.6,
+  "riser_at": 114.62,
+  "silence_at": 116.9,
+  "payoff_at": 117.7,
+  "button_pattern": "question",
+  "interrupt_at": 35.7,
+  "extra_dips": [
+   45.34,
+   108.02
+  ]
+ },
+ "shots": [
+  {
+   "id": 1,
+   "title": "The ball slams down",
+   "vo_line": 0,
+   "start_s": 0.0,
+   "framing": "subject-portrait",
+   "scale": "close",
+   "height": "eye",
+   "stage": "gravel-table",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "single-organic-hero",
+   "camera": "orbitReveal",
+   "stage3d": "planes",
+   "transition_in": "",
+   "thread": "",
+   "centered": "the ball at x540 y960",
+   "means": "Hook. Frame 1 is already the film: a heather-wool mitten has just slammed a dented, duct-taped fortune ball onto a gravel-bar table, the window already sloshing +8,577 JOBS. Pale overcast tundra behind. The ball squints and the mitten shakes it again.",
+   "ambient": "grass sway, cloud drift, river shimmer behind, the liquid keeps swirling, wool fibres on the mitten sway",
+   "hero": {
+    "name": "FortuneBall",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "70% ball body, tape, dents and window face, 20% mitten and table, 10% tundra"
+   }
+  },
+  {
+   "id": 2,
+   "title": "The report lands",
+   "vo_line": 1,
+   "start_s": 6.18,
+   "framing": "data-panel",
+   "scale": "medium",
+   "height": "overhead",
+   "stage": "report-overhead",
+   "pov": "top-down-map",
+   "layout": "grid-modular",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "data-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "match-action",
+   "thread": "carry",
+   "centered": "the report cover at x540 y900",
+   "means": "Cut to straight down. The creased report booklet slaps onto the gravel, ALASKA DEPT. OF LABOR, ECONOMIC TRENDS, OCTOBER 2026. Faceted ochre pebble rows tumble out of its pages and settle into the grid, the counter climbing 335,157 to 343,733. The camera pulls back from one pebble to the whole grid and a round +2.6% stamp thumps down.",
+   "ambient": "pebbles keep settling, grass blades tremble at the frame edge, the page corner lifts in the wind",
+   "hero": {
+    "name": "ReportBooklet",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "45% report and pebble grid, 35% gravel, 20% plates and counter"
+   }
+  },
+  {
+   "id": 15,
+   "title": "The health care row and the grinder",
+   "vo_line": 2,
+   "start_s": 15.12,
+   "framing": "push-detail",
+   "scale": "insert",
+   "height": "overhead",
+   "stage": "report-overhead",
+   "pov": "macro-closeup",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the grid at x540 y960",
+   "means": "Push in on the grid. The health care row swells and glows ochre, then the top-growth row climbs the page edge beside a spinning grinder wheel throwing sparks, the fastest growing job.",
+   "ambient": "pebbles bounce aside as the rows climb, a grinder wheel spins and throws sparks, grass blades tremble at the frame edge",
+   "hero": {
+    "name": "PebbleRow",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "60% rows and pebbles, 25% grinder wheel and plates, 15% gravel"
+   }
+  },
+  {
+   "id": 3,
+   "title": "Inside the window",
+   "vo_line": 3,
+   "start_s": 24.17,
+   "framing": "macro-closeup",
+   "scale": "close",
+   "height": "eye",
+   "stage": "die-interior",
+   "pov": "macro-closeup",
+   "layout": "hud-instrument-frame",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "orbitReveal",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the die at x540 y900",
+   "means": "The round +2.6% stamp becomes the round window: an iris match opens on the glacier liquid inside the ball. The faceted answer die floats among bubbles. A cardboard tab rises, the die flips to its face, the ball's face sweats at the glass, and the quote prints on the die.",
+   "ambient": "liquid swirl, bubbles rising, the die turns slowly, light caustics crawl on the glass",
+   "hero": {
+    "name": "AnswerDie",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "50% die, 30% liquid and bubbles, 20% glass and plates"
+   }
+  },
+  {
+   "id": 4,
+   "title": "So what number?",
+   "vo_line": 4,
+   "start_s": 36.1,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "low",
+   "stage": "gravel-table",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "single-organic-hero",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "centered": "the ball at x540 y980",
+   "means": "Back out on the table, low angle. The mitten shakes the ball hard, the window shows AI JOBS ??? and the ball sweats, eyes darting at the sidebar tab sticking out of its window rim before the mitten yanks it free.",
+   "ambient": "tundra sway, the mitten's wool fibres sway, cloud drift",
+   "hero": {
+    "name": "FortuneBall",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "60% ball, 25% mitten and tab, 15% table and tundra"
+   }
+  },
+  {
+   "id": 5,
+   "title": "The sector the report names",
+   "vo_line": 5,
+   "start_s": 39.36,
+   "framing": "map-territory",
+   "scale": "extreme-wide",
+   "height": "overhead",
+   "stage": "pebble-field",
+   "pov": "top-down-map",
+   "layout": "stacked-layers",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "mask-wipe",
+   "thread": "build",
+   "centered": "the cranberry row at x540 y860",
+   "means": "Wide overhead of a gravel bar laid out as the report's rows, faceted ochre pebbles by sector. One row lights cranberry, FINANCE + INSURANCE, and the quote tag from the sidebar sticks beside it. The row's far end runs off the bar toward a river. The cut is a cloud shadow sweeping across (mask-wipe).",
+   "ambient": "pebbles shiver, the far river glints, cloud shadow crosses the bar",
+   "hero": {
+    "name": "PebbleRow",
+    "parts": 10,
+    "zones": 3,
+    "detail_note": "60% pebble rows, 30% gravel, 10% plates"
+   }
+  },
+  {
+   "id": 6,
+   "title": "Four hundred eighty nine",
+   "vo_line": 6,
+   "start_s": 45.74,
+   "framing": "wide-establish",
+   "scale": "medium",
+   "height": "ground",
+   "stage": "river-edge",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "landscape-as-subject",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the row's end at x700 y1050",
+   "means": "Ground level at the river end of the gravel bar. The cranberry row's end pebbles roll off the bar edge into the water, 489 of them, the counter falling 6,027 to 5,538. The bottom chunk goes first, BANKING + RELATED SERVICES, and a stamp thumps on the pile, NOT CALLED AN AI NUMBER.",
+   "ambient": "river ripples, rolling pebbles plop, the far bank glints, cloud drift",
+   "hero": {
+    "name": "PebbleRow",
+    "parts": 8,
+    "zones": 3,
+    "detail_note": "40% bar edge and pebbles, 40% river, 20% plates"
+   }
+  },
+  {
+   "id": 7,
+   "title": "Too uncertain, which row",
+   "vo_line": 7,
+   "start_s": 52.34,
+   "framing": "macro-closeup",
+   "scale": "close",
+   "height": "eye",
+   "stage": "die-interior",
+   "pov": "macro-closeup",
+   "layout": "hud-instrument-frame",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the die at x540 y900",
+   "means": "The camera goes back into the window. The die rolls and lands on a face reading TOO UNCERTAIN TO PROJECT THIS YEAR, the ball's pupils stuck on it, then it tumbles to a new face, WHICH ROW IS THE AI ROW. It opens as the last river ripple ring irises into the window's rim (graphic-match).",
+   "ambient": "liquid swirl, bubbles, caustics, the die rocks gently",
+   "hero": {
+    "name": "AnswerDie",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "50% die, 30% liquid, 20% plates"
+   }
+  },
+  {
+   "id": 8,
+   "title": "The scary rows",
+   "vo_line": 9,
+   "start_s": 60.6,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "high",
+   "stage": "flag-field",
+   "pov": "orbital-aerial",
+   "layout": "stacked-layers",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "centered": "the first flag at x420 y1000",
+   "means": "High and wide over the tundra bar. Survey stakes drop into the gravel one by one. The ptarmigan carries each reason tag in its beak and ties it to the pole as the stake lands, REPORTERS + JOURNALISTS -27.9% with SERVICES GOING REMOTE and FREELANCE WORK, then BROADCASTERS -27.7% with the same tags. The camera rises to show the whole bar.",
+   "ambient": "flags flutter on irrational periods, tundra sway, river shimmer, the ptarmigan pecks between stakes",
+   "hero": {
+    "name": "StakeFlag",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "50% flags and stakes, 30% tundra, 20% ptarmigan"
+   }
+  },
+  {
+   "id": 9,
+   "title": "Through the flags",
+   "vo_line": 10,
+   "start_s": 73.42,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "ground",
+   "stage": "flag-field",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "data-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the flags at x540 y1000",
+   "means": "Ground level through the two flags. The huge percentages fill the foreground and loom as the camera dollies in, then the reason tags swing across and cover them. The ball is only a small dark silhouette on the table far behind, a cyan pinpoint for a window, its face not visible.",
+   "ambient": "flags flutter, tag cloth ripples, tundra sway, the ptarmigan pecks beside the far stake, a cyan pinpoint pulses in the far ball",
+   "hero": {
+    "name": "StakeFlag",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "50% flags and percentages, 30% tags, 20% tundra"
+   }
+  },
+  {
+   "id": 10,
+   "title": "The fair objection",
+   "vo_line": 11,
+   "start_s": 83.22,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "low",
+   "stage": "test-stage",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "data-as-subject",
+   "camera": "orbitReveal",
+   "stage3d": "planes",
+   "transition_in": "mask-wipe",
+   "thread": "build",
+   "centered": "the ball at x540 y980",
+   "means": "The overcast goes to ink on the same table as a cool-white spot drops. The raven (feathers lifted to a rimmed blue-grey, perched inside the spot's rim) drags a short row of pebbles out of the open report onto the table, then draws a dashed projection line out of that lit row across the planks past a METHOD stake, then a boulder drops inside the spot onto the planks where the line never pointed. The EXCLUDES SELF-EMPLOYED + FISHERMEN stake marks a roped-off empty patch with no pebbles that the line runs straight over. The die floats up blank in the window and the ball goes mortified. The cut is the spot's iris closing on the table (mask-wipe).",
+   "ambient": "spot dust drifts, the raven's pencil scratches, the dashed line crawls, the ball breathes",
+   "hero": {
+    "name": "ForecastTrace",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "40% ball and spot, 30% raven and projection line, 30% ink"
+   }
+  },
+  {
+   "id": 11,
+   "title": "The limit, and the label",
+   "vo_line": 12,
+   "start_s": 95.38,
+   "framing": "macro-closeup",
+   "scale": "close",
+   "height": "eye",
+   "stage": "die-interior",
+   "pov": "macro-closeup",
+   "layout": "hud-instrument-frame",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the die at x540 y900",
+   "means": "Inside the window under the cool spot, opening on the die floating up with a blank face. The raven's grease-pencil tip reaches in from frame right and writes, on the OUTSIDE of the glass registered over the blank, the report's own words as a short label, conceding. The die holds still square to the glass. The label lights warm #F4D9A0, the only warm lit thing in the ink and the film's one cyan-to-warm change.",
+   "ambient": "bubbles rise past the glass, the glow breathes, the die holds still square to the glass",
+   "hero": {
+    "name": "AnswerDie",
+    "parts": 7,
+    "zones": 3,
+    "detail_note": "50% die, 30% label, 20% liquid"
+   }
+  },
+  {
+   "id": 12,
+   "title": "Nobody could defend",
+   "vo_line": 13,
+   "start_s": 103.98,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "high",
+   "stage": "test-stage",
+   "pov": "orbital-aerial",
+   "layout": "grid-modular",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "centered": "the ball at x540 y1000",
+   "means": "Wide on the spot, the same table on the gravel bar. The conceding raven plants a bare survey stake in the gravel at the table's foot and the labeled die face slides out of the window onto it, the AI stake. Then the raven plants two kraft-cardboard stakes with crossed-out scrawl stamped MADE UP in the gravel, they topple off and drop into a bucket marked NOBODY COULD DEFEND THIS. The raven lowers its pencil.",
+   "ambient": "spot dust, the cardboard stakes wobble, the bucket rocks, the ball breathes",
+   "hero": {
+    "name": "StakeFlag",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "40% stakes and bucket, 30% ball, 30% spot and ink"
+   }
+  },
+  {
+   "id": 13,
+   "title": "The AI row",
+   "vo_line": 14,
+   "start_s": 108.42,
+   "framing": "map-territory",
+   "scale": "extreme-wide",
+   "height": "high",
+   "stage": "flag-field",
+   "pov": "orbital-aerial",
+   "layout": "map-territory",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "landscape-as-subject",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the cranberry flag at x640 y900",
+   "means": "Pull back and up over the whole bar as a rift opens in the cloud. The two scary flags go grey under their reasons. The ptarmigan tugs the labeled AI stake upright in the gravel beside the cranberry finance flag (its row visibly shorter), no number on it, then walks to its foot and settles facing the cranberry flag. Rift light rakes pale across the bar, the label alone glowing warm. The cut carries the dragged labeled stake from the ink into the daylight (carried-element).",
+   "ambient": "flags flutter, tundra sway, the ptarmigan shuffles and settles, the river glints, the light rift widens",
+   "hero": {
+    "name": "StakeFlag",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "40% field, 30% flags, 30% ptarmigan and sky"
+   }
+  },
+  {
+   "id": 14,
+   "title": "Ask again",
+   "vo_line": 15,
+   "start_s": 117.7,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "ground",
+   "stage": "gravel-table",
+   "pov": "eye-level-immersive",
+   "layout": "single-object-void",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "single-organic-hero",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the ball at x540 y980",
+   "means": "The mitten sets the ball down gently on the table in a break of light (the table is the same table). The window settles on ASK AGAIN NEXT FORECAST. The report's fine print rises in bone below. Far behind the ball the ptarmigan stays at the foot of the labeled stake, the film's watch post, and the ball blinks once.",
+   "ambient": "tundra sway, rift light drifts across the bar, the ptarmigan breathes at the far stake, the liquid settles",
+   "hero": {
+    "name": "FortuneBall",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "60% ball, 20% ptarmigan and stake, 20% table and tundra"
+   }
+  }
+ ],
+ "beats": [
+  {
+   "id": 1,
+   "shot": 1,
+   "t": "0.000-2.520",
+   "at_s": 0.0,
+   "vo_line": 0,
+   "offset": 0.0,
+   "vo": "Alaska's ten-year jobs forecast is a fortune ball. Shake it.",
+   "phrase": "Alaska's ten-year jobs forecast",
+   "shows": "a mitten slams the ball onto the gravel and the window sloshes +8,577 JOBS",
+   "sfx": "slam",
+   "means": "hook: the forecast as a shaken fortune ball",
+   "rehook": "",
+   "draw": {
+    "subject": "dented fortune ball",
+    "action": "drops hard and sloshes",
+    "emotion": "startled",
+    "annotation": "+8,577 JOBS \u00b7 +2.6%"
+   },
+   "choreo": {
+    "primary": "the mitten slams the ball down on the gravel",
+    "reaction": "gravel jumps and the liquid slops against the glass",
+    "ambient": "grass sway, cloud drift, river shimmer behind, the liquid keeps swirling, wool fibres on the mitten sway"
+   }
+  },
+  {
+   "id": 2,
+   "shot": 1,
+   "t": "2.520-4.920",
+   "at_s": 2.52,
+   "vo_line": 0,
+   "offset": 2.52,
+   "vo": "Alaska's ten-year jobs forecast is a fortune ball. Shake it.",
+   "phrase": "is a fortune ball",
+   "shows": "the ball squints and tilts, the die rolls inside the window",
+   "sfx": "rattle",
+   "means": "the metaphor, drawn",
+   "rehook": "",
+   "draw": {
+    "subject": "fortune ball",
+    "action": "squints and tilts while the die rolls",
+    "emotion": "wary",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the ball tilts and squints at the viewer",
+    "reaction": "the die rolls and the bubbles rise",
+    "ambient": "grass sway, cloud drift, river shimmer behind, the liquid keeps swirling, wool fibres on the mitten sway"
+   }
+  },
+  {
+   "id": 3,
+   "shot": 1,
+   "t": "4.920-6.180",
+   "at_s": 4.92,
+   "vo_line": 0,
+   "offset": 4.92,
+   "vo": "Alaska's ten-year jobs forecast is a fortune ball. Shake it.",
+   "phrase": "Shake it",
+   "shows": "the mitten winds up and shakes the ball hard",
+   "sfx": "shake-rattle",
+   "means": "the shake",
+   "rehook": "",
+   "draw": {
+    "subject": "mitten",
+    "action": "shakes the ball",
+    "emotion": "eager",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the mitten shakes the ball hard",
+    "reaction": "liquid slops and the die tumbles inside",
+    "ambient": "grass sway, cloud drift, river shimmer behind, the liquid keeps swirling, wool fibres on the mitten sway"
+   }
+  },
+  {
+   "id": 4,
+   "shot": 2,
+   "t": "6.180-7.800",
+   "at_s": 6.18,
+   "vo_line": 1,
+   "offset": 0.0,
+   "vo": "The state Labor Department says Alaska adds eight thousand five hundred seventy seven jobs by twenty thirty four, up two point six percent.",
+   "phrase": "and the state Labor Department says",
+   "shows": "straight down, the report booklet slaps onto the gravel",
+   "sfx": "paper-slap",
+   "means": "who is speaking, drawn",
+   "rehook": "",
+   "draw": {
+    "subject": "report booklet",
+    "action": "slaps down",
+    "emotion": "official",
+    "annotation": "ALASKA DEPT. OF LABOR \u00b7 ECONOMIC TRENDS \u00b7 OCTOBER 2026"
+   },
+   "choreo": {
+    "primary": "the creased booklet slaps onto the gravel",
+    "reaction": "pebbles bounce off the booklet edge and the pages lift",
+    "ambient": "pebbles keep settling, grass blades tremble at the frame edge, the page corner lifts in the wind"
+   }
+  },
+  {
+   "id": 5,
+   "shot": 2,
+   "t": "7.800-11.920",
+   "at_s": 7.8,
+   "vo_line": 1,
+   "offset": 1.62,
+   "vo": "The state Labor Department says Alaska adds eight thousand five hundred seventy seven jobs by twenty thirty four, up two point six percent.",
+   "phrase": "Alaska adds eight thousand five hundred seventy seven jobs",
+   "shows": "ochre pebble rows tumble out of the pages and settle into a grid while the camera pulls back from one pebble",
+   "sfx": "pebble-clatter",
+   "means": "the number made physical",
+   "rehook": "",
+   "draw": {
+    "subject": "pebble rows",
+    "action": "tumble out of the pages and settle",
+    "emotion": "neutral",
+    "annotation": "335,157 \u2192 343,733 \u00b7 +8,577"
+   },
+   "choreo": {
+    "primary": "faceted pebbles tumble out of the pages and settle into rows",
+    "reaction": "the counter digits roll up and the camera pulls back from one pebble to the grid",
+    "ambient": "pebbles keep settling, grass blades tremble at the frame edge, the page corner lifts in the wind"
+   }
+  },
+  {
+   "id": 6,
+   "shot": 2,
+   "t": "11.920-13.420",
+   "at_s": 11.92,
+   "vo_line": 1,
+   "offset": 5.74,
+   "vo": "The state Labor Department says Alaska adds eight thousand five hundred seventy seven jobs by twenty thirty four, up two point six percent.",
+   "phrase": "by twenty thirty four",
+   "shows": "a year ribbon 2024 to 2034 draws along the page edge",
+   "sfx": "tick",
+   "means": "the ten-year span",
+   "rehook": "",
+   "draw": {
+    "subject": "year ribbon",
+    "action": "draws across the page",
+    "emotion": "neutral",
+    "annotation": "2024 \u2192 2034"
+   },
+   "choreo": {
+    "primary": "the year ribbon draws along the page edge",
+    "reaction": "the end pebbles of the grid brighten and pulse",
+    "ambient": "pebbles keep settling, grass blades tremble at the frame edge, the page corner lifts in the wind"
+   }
+  },
+  {
+   "id": 7,
+   "shot": 2,
+   "t": "13.420-15.120",
+   "at_s": 13.42,
+   "vo_line": 1,
+   "offset": 7.24,
+   "vo": "The state Labor Department says Alaska adds eight thousand five hundred seventy seven jobs by twenty thirty four, up two point six percent.",
+   "phrase": "up two point six percent",
+   "shows": "a round +2.6% stamp thumps onto the grid",
+   "sfx": "stamp",
+   "means": "the percent, stamped",
+   "rehook": "",
+   "draw": {
+    "subject": "round stamp",
+    "action": "thumps down",
+    "emotion": "neutral",
+    "annotation": "+2.6%"
+   },
+   "choreo": {
+    "primary": "the round stamp drops and thumps onto the grid",
+    "reaction": "pebbles jump and settle around the stamp",
+    "ambient": "pebbles keep settling, grass blades tremble at the frame edge, the page corner lifts in the wind"
+   }
+  },
+  {
+   "id": 8,
+   "shot": 15,
+   "t": "15.120-18.060",
+   "at_s": 15.12,
+   "vo_line": 2,
+   "offset": 0.0,
+   "vo": "Health care adds almost six thousand. The fastest growing job runs a grinding machine, up twenty three percent.",
+   "phrase": "Health care adds almost six thousand",
+   "shows": "one pebble row glows ochre and swells by almost six thousand pebbles",
+   "sfx": "glow-tick",
+   "means": "the health care row, drawn",
+   "rehook": "",
+   "draw": {
+    "subject": "health care row",
+    "action": "glows and swells",
+    "emotion": "neutral",
+    "annotation": "HEALTH CARE + SOCIAL ASSISTANCE \u00b7 +5,954 \u00b7 +11.4%"
+   },
+   "choreo": {
+    "primary": "the health care row swells and glows ochre",
+    "reaction": "neighbouring rows shift aside and pebbles bounce off its edge",
+    "ambient": "pebbles bounce aside as the rows climb, a grinder wheel spins and throws sparks, grass blades tremble at the frame edge"
+   }
+  },
+  {
+   "id": 45,
+   "shot": 15,
+   "t": "18.060-21.920",
+   "at_s": 18.06,
+   "vo_line": 2,
+   "offset": 2.94,
+   "vo": "Health care adds almost six thousand. The fastest growing job runs a grinding machine, up twenty three percent.",
+   "phrase": "The fastest growing job",
+   "shows": "the top-growth pebble row climbs and glows ochre beside a spinning grinder wheel",
+   "sfx": "chain",
+   "means": "the fastest growing job, drawn",
+   "rehook": "",
+   "draw": {
+    "subject": "machine operator row",
+    "action": "climbs and glows beside a spinning grinder wheel",
+    "emotion": "neutral",
+    "annotation": "CRUSHING, GRINDING + POLISHING MACHINE OPERATORS \u00b7 +23.1%"
+   },
+   "choreo": {
+    "primary": "the top row climbs the page edge while a grinder wheel spins and throws sparks",
+    "reaction": "neighbouring pebbles bounce aside as the row rises",
+    "ambient": "pebbles bounce aside as the rows climb, a grinder wheel spins and throws sparks, grass blades tremble at the frame edge"
+   }
+  },
+  {
+   "id": 47,
+   "shot": 15,
+   "t": "21.920-24.170",
+   "at_s": 21.92,
+   "vo_line": 2,
+   "offset": 6.8,
+   "vo": "Health care adds almost six thousand. The fastest growing job runs a grinding machine, up twenty three percent.",
+   "phrase": "up twenty three percent",
+   "shows": "the grinder wheel throws a burst of sparks as the climbing row lands at the top of the page",
+   "sfx": "clank",
+   "means": "the growth landing",
+   "rehook": "",
+   "draw": {
+    "subject": "machine operator row",
+    "action": "lands at the top of the page as sparks burst from the grinder wheel",
+    "emotion": "neutral",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the climbing row lands at the top of the page and the grinder wheel bursts sparks",
+    "reaction": "neighbouring pebbles jump and settle",
+    "ambient": "pebbles bounce aside as the rows climb, a grinder wheel spins and throws sparks, grass blades tremble at the frame edge"
+   }
+  },
+  {
+   "id": 9,
+   "shot": 3,
+   "t": "24.170-26.900",
+   "at_s": 24.17,
+   "vo_line": 3,
+   "offset": 0.0,
+   "vo": "But the report has a sidebar on the effects of A I. Its economists say A I will touch much of Alaska's labor force, but no current shift can be pinned on it.",
+   "phrase": "But the report has a sidebar",
+   "shows": "the round stamp becomes the round window and a cardboard tab rises beside the die",
+   "sfx": "bubble-whoosh",
+   "means": "into the ball, the sidebar arrives",
+   "rehook": "",
+   "draw": {
+    "subject": "cardboard tab",
+    "action": "rises through the liquid",
+    "emotion": "neutral",
+    "annotation": "ABOUT THE EFFECTS OF AI"
+   },
+   "choreo": {
+    "primary": "the cardboard tab rises through the liquid",
+    "reaction": "bubbles scatter and the die turns toward the tab",
+    "ambient": "liquid swirl, bubbles rising, the die turns slowly, light caustics crawl on the glass"
+   }
+  },
+  {
+   "id": 10,
+   "shot": 3,
+   "t": "26.900-28.200",
+   "at_s": 26.9,
+   "vo_line": 3,
+   "offset": 2.73,
+   "vo": "But the report has a sidebar on the effects of A I. Its economists say A I will touch much of Alaska's labor force, but no current shift can be pinned on it.",
+   "phrase": "on the effects of A I",
+   "shows": "the die flips to the tab's face and the window flickers AI JOBS ?",
+   "sfx": "click-flip",
+   "means": "the AI question planted",
+   "rehook": "",
+   "draw": {
+    "subject": "answer die",
+    "action": "flips to a new face",
+    "emotion": "uneasy",
+    "annotation": "AI JOBS ?"
+   },
+   "choreo": {
+    "primary": "the die flips to the tab's face",
+    "reaction": "the ball's eyes widen and a bead of sweat slides down the glass",
+    "ambient": "liquid swirl, bubbles rising, the die turns slowly, light caustics crawl on the glass"
+   }
+  },
+  {
+   "id": 11,
+   "shot": 3,
+   "t": "28.200-32.800",
+   "at_s": 28.2,
+   "vo_line": 3,
+   "offset": 4.03,
+   "vo": "But the report has a sidebar on the effects of A I. Its economists say A I will touch much of Alaska's labor force, but no current shift can be pinned on it.",
+   "phrase": "Its economists say A I will touch much of Alaska's labor force",
+   "shows": "the die's faces flash tiny pebble-row icons, many rows at once, and a cyan shimmer crosses each one",
+   "sfx": "tick-tick",
+   "means": "much of the labor force touched, drawn as many rows",
+   "rehook": "",
+   "draw": {
+    "subject": "answer die",
+    "action": "faces flash through many row icons and the ball sweats",
+    "emotion": "nervous",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the die turns through faces that each show a different row icon",
+    "reaction": "a cyan shimmer crosses each face and the ball's sweat beads grow",
+    "ambient": "liquid swirl, bubbles rising, the die turns slowly, light caustics crawl on the glass"
+   }
+  },
+  {
+   "id": 12,
+   "shot": 3,
+   "t": "32.800-36.100",
+   "at_s": 32.8,
+   "vo_line": 3,
+   "offset": 8.63,
+   "vo": "But the report has a sidebar on the effects of A I. Its economists say A I will touch much of Alaska's labor force, but no current shift can be pinned on it.",
+   "phrase": "but no current shift can be pinned on it",
+   "shows": "the verbatim quote prints onto the die letter by letter",
+   "sfx": "typewriter",
+   "means": "the sidebar's second half",
+   "rehook": "",
+   "draw": {
+    "subject": "quote plate",
+    "action": "prints onto the die",
+    "emotion": "neutral",
+    "annotation": "\"AI will touch much of Alaska's labor force over the next decade, but we can't accurately attribute any current broad shifts to AI.\" \u00b7 P. 6"
+   },
+   "choreo": {
+    "primary": "the die turns and the quote prints across it",
+    "reaction": "the ball's pupils settle on the printed words and its brow drops",
+    "ambient": "liquid swirl, bubbles rising, the die turns slowly, light caustics crawl on the glass"
+   }
+  },
+  {
+   "id": 13,
+   "shot": 4,
+   "t": "36.100-39.360",
+   "at_s": 36.1,
+   "vo_line": 4,
+   "offset": 0.0,
+   "vo": "What number does the ball give A I?",
+   "phrase": "What number does the ball give A I?",
+   "shows": "low angle, the mitten pulls the tab out of the window and shakes the ball hard, the window showing AI JOBS ???",
+   "sfx": "rattle",
+   "means": "the question, asked of the ball",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "fortune ball",
+    "action": "is shaken hard, window flashing",
+    "emotion": "anxious",
+    "annotation": "AI JOBS ???"
+   },
+   "choreo": {
+    "primary": "the mitten yanks the cardboard tab free of the window rim and shakes the ball hard",
+    "reaction": "the ball sweats and the die rolls to a question mark",
+    "ambient": "tundra sway, the mitten's wool fibres sway, cloud drift"
+   }
+  },
+  {
+   "id": 14,
+   "shot": 5,
+   "t": "39.360-43.600",
+   "at_s": 39.36,
+   "vo_line": 5,
+   "offset": 0.0,
+   "vo": "The report names one sector most vulnerable to automation, finance and insurance.",
+   "phrase": "The report names one sector most vulnerable to automation",
+   "shows": "one pebble row lights cranberry, FINANCE + INSURANCE",
+   "sfx": "pebble-click-run",
+   "means": "the one named sector, lit",
+   "rehook": "",
+   "draw": {
+    "subject": "pebble row",
+    "action": "lights up cranberry",
+    "emotion": "neutral",
+    "annotation": "FINANCE + INSURANCE"
+   },
+   "choreo": {
+    "primary": "the row lights up cranberry from one end to the other",
+    "reaction": "neighbouring rows dim and the pebbles shiver",
+    "ambient": "pebbles shiver, the far river glints, cloud shadow crosses the bar"
+   }
+  },
+  {
+   "id": 15,
+   "shot": 5,
+   "t": "43.600-45.740",
+   "at_s": 43.6,
+   "vo_line": 5,
+   "offset": 4.24,
+   "vo": "The report names one sector most vulnerable to automation, finance and insurance.",
+   "phrase": "finance and insurance",
+   "shows": "the sidebar's quote tag sticks beside the lit row and a cranberry-cloth stake drops at the head of the row",
+   "sfx": "tag-stick",
+   "means": "the named sector with its quote",
+   "rehook": "",
+   "draw": {
+    "subject": "quote tag",
+    "action": "sticks beside the row",
+    "emotion": "neutral",
+    "annotation": "\"...most vulnerable to automation in the near term, particularly finance and insurance.\" \u00b7 P. 6"
+   },
+   "choreo": {
+    "primary": "the quote tag drops beside the row and a cranberry-cloth stake drops into the gravel at its head",
+    "reaction": "the row's pebbles shiver and the cranberry cloth unfurls in the wind",
+    "ambient": "pebbles shiver, the far river glints, cloud shadow crosses the bar"
+   }
+  },
+  {
+   "id": 16,
+   "shot": 6,
+   "t": "45.740-48.940",
+   "at_s": 45.74,
+   "vo_line": 6,
+   "offset": 0.0,
+   "vo": "It's projected to lose four hundred eighty nine jobs, and the report doesn't call that an A I number.",
+   "phrase": "It's projected to lose four hundred eighty nine jobs",
+   "shows": "at ground level the end pebbles of the cranberry row roll off the bar into the river, the finance row visibly shorter",
+   "sfx": "pebble-fall",
+   "means": "the loss made physical",
+   "rehook": "",
+   "draw": {
+    "subject": "end pebbles",
+    "action": "roll off the bar into the river",
+    "emotion": "neutral",
+    "annotation": "6,027 \u2192 5,538 \u00b7 \u2212489 \u00b7 \u22128.1% \u00b7 NOT CALLED AN AI NUMBER"
+   },
+   "choreo": {
+    "primary": "the end pebbles roll off the bar edge and drop into the river",
+    "reaction": "the water splashes and rings spread across the river",
+    "ambient": "river ripples, rolling pebbles plop, the far bank glints, cloud drift"
+   }
+  },
+  {
+   "id": 17,
+   "shot": 6,
+   "t": "48.940-52.340",
+   "at_s": 48.94,
+   "vo_line": 6,
+   "offset": 3.2,
+   "vo": "It's projected to lose four hundred eighty nine jobs, and the report doesn't call that an A I number.",
+   "phrase": "and the report doesn't call that an A I number",
+   "shows": "three quarters of the fallen pebbles are the bottom chunk, a plate names it, and a stamp thumps on the pile",
+   "sfx": "stamp",
+   "means": "the honest limit, stamped",
+   "rehook": "",
+   "draw": {
+    "subject": "stamp",
+    "action": "thumps on the pile",
+    "emotion": "neutral",
+    "annotation": "75% OF IT \u00b7 BANKING + RELATED SERVICES \u00b7 P. 9"
+   },
+   "choreo": {
+    "primary": "the bottom chunk of pebbles rolls off first and the stamp thumps on the pile",
+    "reaction": "the pile jumps and a last pebble rolls off the edge",
+    "ambient": "river ripples, rolling pebbles plop, the far bank glints, cloud drift"
+   }
+  },
+  {
+   "id": 18,
+   "shot": 7,
+   "t": "52.340-54.840",
+   "at_s": 52.34,
+   "vo_line": 7,
+   "offset": 0.0,
+   "vo": "On insurance, it says A I losses are too uncertain to project this year.",
+   "phrase": "On insurance",
+   "shows": "back in the window the die rolls and lands on TOO UNCERTAIN",
+   "sfx": "click-flip",
+   "means": "insurance AI losses unsized",
+   "rehook": "",
+   "draw": {
+    "subject": "answer die",
+    "action": "rolls and lands on a new face",
+    "emotion": "uneasy",
+    "annotation": "TOO UNCERTAIN TO PROJECT THIS YEAR"
+   },
+   "choreo": {
+    "primary": "the die rolls across the liquid and lands face up",
+    "reaction": "bubbles burst and the ball's pupils lock on the face",
+    "ambient": "liquid swirl, bubbles, caustics, the die rocks gently"
+   }
+  },
+  {
+   "id": 19,
+   "shot": 7,
+   "t": "54.840-57.820",
+   "at_s": 54.84,
+   "vo_line": 7,
+   "offset": 2.5,
+   "vo": "On insurance, it says A I losses are too uncertain to project this year.",
+   "phrase": "A I losses are too uncertain to project this year",
+   "shows": "the face glows and the page cite appears",
+   "sfx": "glass-hum",
+   "means": "the report's own words, cited",
+   "rehook": "",
+   "draw": {
+    "subject": "quote plate",
+    "action": "glows on the die",
+    "emotion": "neutral",
+    "annotation": "\"...too uncertain to project this year.\" \u00b7 P. 9"
+   },
+   "choreo": {
+    "primary": "the face glows steadily on the die",
+    "reaction": "caustics brighten across the glass",
+    "ambient": "liquid swirl, bubbles, caustics, the die rocks gently"
+   }
+  },
+  {
+   "id": 20,
+   "shot": 7,
+   "t": "57.820-60.600",
+   "at_s": 57.82,
+   "vo_line": 8,
+   "offset": 0.0,
+   "vo": "Which row is the A I row?",
+   "phrase": "Which row is the A I row?",
+   "shows": "the die tumbles to a new face, WHICH ROW IS THE AI ROW",
+   "sfx": "pop",
+   "means": "the second question, planted",
+   "rehook": "",
+   "draw": {
+    "subject": "answer die",
+    "action": "tumbles to a new face",
+    "emotion": "puzzled",
+    "annotation": "WHICH ROW IS THE AI ROW?"
+   },
+   "choreo": {
+    "primary": "the die tumbles to a new face",
+    "reaction": "the ball's pupils sweep from side to side",
+    "ambient": "liquid swirl, bubbles, caustics, the die rocks gently"
+   }
+  },
+  {
+   "id": 21,
+   "shot": 8,
+   "t": "60.600-62.200",
+   "at_s": 60.6,
+   "vo_line": 9,
+   "offset": 0.0,
+   "vo": "The scary rows. Reporters and journalists, down twenty seven point nine percent. Broadcasters, twenty seven point seven. Services are going remote, work is going freelance.",
+   "phrase": "The scary rows",
+   "shows": "high and wide, survey stakes drop into the gravel one by one",
+   "sfx": "thump",
+   "means": "the scary rows, planted",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "stakes",
+    "action": "drop into the gravel",
+    "emotion": "neutral",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "stakes drop into the gravel one by one",
+    "reaction": "gravel puffs and the ptarmigan hops aside",
+    "ambient": "flags flutter on irrational periods, tundra sway, river shimmer, the ptarmigan pecks between stakes"
+   }
+  },
+  {
+   "id": 22,
+   "shot": 8,
+   "t": "62.200-66.040",
+   "at_s": 62.2,
+   "vo_line": 9,
+   "offset": 1.6,
+   "vo": "The scary rows. Reporters and journalists, down twenty seven point nine percent. Broadcasters, twenty seven point seven. Services are going remote, work is going freelance.",
+   "phrase": "Reporters and journalists, down twenty seven point nine percent",
+   "shows": "the ptarmigan arrives with a kraft reason tag in its beak and ties it to the pole, then the first flag unfurls, -27.9% already wearing its reasons",
+   "sfx": "flag-snap",
+   "means": "the biggest drop, with its reasons beside it",
+   "rehook": "",
+   "draw": {
+    "subject": "cloth flag",
+    "action": "unfurls on its stake",
+    "emotion": "neutral",
+    "annotation": "NEWS ANALYSTS, REPORTERS + JOURNALISTS \u00b7 \u221227.9% \u00b7 SERVICES GOING REMOTE \u00b7 FREELANCE WORK \u00b7 SMALL NUMBERS, BIG PERCENTS"
+   },
+   "choreo": {
+    "primary": "the ptarmigan ties the kraft reason tags to the pole and the flag unfurls above them",
+    "reaction": "the tags swing on their strings and the pole shivers",
+    "ambient": "flags flutter on irrational periods, tundra sway, river shimmer, the ptarmigan pecks between stakes"
+   }
+  },
+  {
+   "id": 23,
+   "shot": 8,
+   "t": "66.040-69.220",
+   "at_s": 66.04,
+   "vo_line": 9,
+   "offset": 5.44,
+   "vo": "The scary rows. Reporters and journalists, down twenty seven point nine percent. Broadcasters, twenty seven point seven. Services are going remote, work is going freelance.",
+   "phrase": "Services are going remote, work is going freelance",
+   "shows": "the reason tags on both poles swing together as the camera finishes rising over the bar",
+   "sfx": "thump",
+   "means": "the second drop, with its reasons",
+   "rehook": "",
+   "draw": {
+    "subject": "cloth flag",
+    "action": "drops in and unfurls",
+    "emotion": "neutral",
+    "annotation": "SERVICES GOING REMOTE \u00b7 FREELANCE WORK"
+   },
+   "choreo": {
+    "primary": "the tags on both poles swing together and the camera rises over the bar",
+    "reaction": "the ptarmigan hops between the stakes and the cloth ripples",
+    "ambient": "flags flutter on irrational periods, tundra sway, river shimmer, the ptarmigan pecks between stakes"
+   }
+  },
+  {
+   "id": 24,
+   "shot": 8,
+   "t": "69.220-73.420",
+   "at_s": 69.22,
+   "vo_line": 9,
+   "offset": 8.62,
+   "vo": "The scary rows. Reporters and journalists, down twenty seven point nine percent. Broadcasters, twenty seven point seven. Services are going remote, work is going freelance.",
+   "phrase": "Broadcasters, down twenty seven point seven",
+   "shows": "the ptarmigan ties the same reason tags to the second pole before the broadcasters flag unfurls",
+   "sfx": "flag-snap",
+   "means": "the second drop, with its reasons",
+   "rehook": "",
+   "draw": {
+    "subject": "cloth flag",
+    "action": "drops into the gravel and unfurls",
+    "emotion": "neutral",
+    "annotation": "BROADCAST ANNOUNCERS + RADIO DJS \u00b7 \u221227.7% \u00b7 SERVICES GOING REMOTE \u00b7 FREELANCE WORK"
+   },
+   "choreo": {
+    "primary": "the ptarmigan ties the tags to the second stake and the flag unfurls",
+    "reaction": "the first flag's tags swing as the second pole shivers",
+    "ambient": "flags flutter on irrational periods, tundra sway, river shimmer, the ptarmigan pecks between stakes"
+   }
+  },
+  {
+   "id": 25,
+   "shot": 9,
+   "t": "73.420-75.160",
+   "at_s": 73.42,
+   "vo_line": 10,
+   "offset": 0.0,
+   "vo": "They look like A I numbers, but the report blames other causes. Information, down eleven point seven, has no A I cause either.",
+   "phrase": "They look like A I numbers",
+   "shows": "ground level, the huge percentages loom in the foreground as the camera dollies in",
+   "sfx": "gasp-whoosh",
+   "means": "the fear, drawn from the viewer's eye line",
+   "rehook": "",
+   "draw": {
+    "subject": "percentage flags",
+    "action": "loom large as the camera dollies in",
+    "emotion": "menacing",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the camera dollies in on the two percentage flags as they loom",
+    "reaction": "the cloth snaps in the wind and the tags hang still",
+    "ambient": "flags flutter, tag cloth ripples, tundra sway, the ptarmigan pecks beside the far stake, a cyan pinpoint pulses in the far ball"
+   }
+  },
+  {
+   "id": 26,
+   "shot": 9,
+   "t": "75.160-78.600",
+   "at_s": 75.16,
+   "vo_line": 10,
+   "offset": 1.74,
+   "vo": "They look like A I numbers, but the report blames other causes. Information, down eleven point seven, has no A I cause either.",
+   "phrase": "but the report blames other causes",
+   "shows": "the reason tags swing across and cover the percentages",
+   "sfx": "tag-flutter",
+   "means": "the report's own reasons, drawn over the scary numbers",
+   "rehook": "",
+   "draw": {
+    "subject": "reason tags",
+    "action": "swing across and cover the percentages",
+    "emotion": "calm",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the reason tags swing across and settle over the percentages",
+    "reaction": "the percentages dim behind the tags and the far ball's cyan pinpoint flips to a new face",
+    "ambient": "flags flutter, tag cloth ripples, tundra sway, the ptarmigan pecks beside the far stake, a cyan pinpoint pulses in the far ball"
+   }
+  },
+  {
+   "id": 46,
+   "shot": 9,
+   "t": "78.600-83.220",
+   "at_s": 78.6,
+   "vo_line": 10,
+   "offset": 5.18,
+   "vo": "They look like A I numbers, but the report blames other causes. Information, down eleven point seven, has no A I cause either.",
+   "phrase": "Information down eleven point seven",
+   "shows": "a third small flag drops in at the far right with its percentage and a plate",
+   "sfx": "ding",
+   "means": "the information sector, with no AI cause given",
+   "rehook": "",
+   "draw": {
+    "subject": "information flag",
+    "action": "drops in at the far right and unfurls",
+    "emotion": "neutral",
+    "annotation": "INFORMATION \u00b7 4,541 \u2192 4,011 \u00b7 \u221211.7%"
+   },
+   "choreo": {
+    "primary": "a third flag drops into the gravel at the far right and unfurls",
+    "reaction": "the two big flags sway and the tags beside them settle",
+    "ambient": "flags flutter, tag cloth ripples, tundra sway, the ptarmigan pecks beside the far stake, a cyan pinpoint pulses in the far ball"
+   }
+  },
+  {
+   "id": 27,
+   "shot": 10,
+   "t": "83.220-85.300",
+   "at_s": 83.22,
+   "vo_line": 11,
+   "offset": 0.0,
+   "vo": "A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big A I gets, there's a blank.",
+   "phrase": "A forecast built from history",
+   "shows": "the overcast goes to ink, one cool spot drops on the table, a raven inside the rim drags a short row of pebbles out of the open report",
+   "sfx": "spot-clunk",
+   "means": "the objection gets a stage",
+   "rehook": "",
+   "draw": {
+    "subject": "raven",
+    "action": "lifts its pencil and turns toward the ball",
+    "emotion": "skeptical",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the spot drops and the raven drags a row of pebbles out of the open report onto the table",
+    "reaction": "spot dust drifts and the ball turns toward the raven",
+    "ambient": "spot dust drifts, the raven's pencil scratches, the dashed line crawls, the ball breathes"
+   }
+  },
+  {
+   "id": 28,
+   "shot": 10,
+   "t": "85.300-86.440",
+   "at_s": 85.3,
+   "vo_line": 11,
+   "offset": 2.08,
+   "vo": "A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big A I gets, there's a blank.",
+   "phrase": "can't see",
+   "shows": "the raven draws a dashed projection line out of the lit pebble row across the planks past a METHOD stake",
+   "sfx": "pencil-scratch",
+   "means": "the case against, at full strength",
+   "rehook": "",
+   "draw": {
+    "subject": "projection line",
+    "action": "runs confidently out of the past rows",
+    "emotion": "neutral",
+    "annotation": "METHOD \u00b7 HISTORICAL TRENDS + POPULATION + KNOWN PROJECTS \u00b7 P. 11"
+   },
+   "choreo": {
+    "primary": "the raven draws the dashed line straight out of the lit row across the planks",
+    "reaction": "the line crawls past the METHOD stake and the ball follows it with its eyes",
+    "ambient": "spot dust drifts, the raven's pencil scratches, the dashed line crawls, the ball breathes"
+   }
+  },
+  {
+   "id": 29,
+   "shot": 10,
+   "t": "86.440-88.020",
+   "at_s": 86.44,
+   "vo_line": 11,
+   "offset": 3.22,
+   "vo": "A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big A I gets, there's a blank.",
+   "phrase": "a break from history",
+   "shows": "a boulder drops onto the planks inside the spot where the line never pointed",
+   "sfx": "boulder-thud",
+   "means": "the break the line never saw",
+   "rehook": "",
+   "draw": {
+    "subject": "boulder",
+    "action": "drops onto the bar",
+    "emotion": "neutral",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "a boulder drops onto the planks off to the side of the line",
+    "reaction": "dust bursts, pebbles scatter and the line keeps crawling past it",
+    "ambient": "spot dust drifts, the raven's pencil scratches, the dashed line crawls, the ball breathes"
+   }
+  },
+  {
+   "id": 30,
+   "shot": 10,
+   "t": "88.020-91.340",
+   "at_s": 88.02,
+   "vo_line": 11,
+   "offset": 4.8,
+   "vo": "A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big A I gets, there's a blank.",
+   "phrase": "and it leaves out the self-employed and fishermen",
+   "shows": "the line runs straight over a roped-off empty patch with no pebbles, marked by the EXCLUDES stake",
+   "sfx": "stake-tick",
+   "means": "the second limit, stated",
+   "rehook": "",
+   "draw": {
+    "subject": "second stake",
+    "action": "stands beside the line",
+    "emotion": "neutral",
+    "annotation": "EXCLUDES SELF-EMPLOYED + FISHERMEN"
+   },
+   "choreo": {
+    "primary": "the dashed line runs over the roped-off empty patch and the stake leans over it",
+    "reaction": "the rope sags and the ball's eyes follow the line across the empty patch",
+    "ambient": "spot dust drifts, the raven's pencil scratches, the dashed line crawls, the ball breathes"
+   }
+  },
+  {
+   "id": 31,
+   "shot": 10,
+   "t": "91.340-95.380",
+   "at_s": 91.34,
+   "vo_line": 11,
+   "offset": 8.12,
+   "vo": "A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big A I gets, there's a blank.",
+   "phrase": "On how big A I gets, there's a blank",
+   "shows": "the line crosses the empty patch, the ball's window face goes blank and the ball goes mortified",
+   "sfx": "riser-thin",
+   "means": "the blank on how big AI gets",
+   "rehook": "",
+   "draw": {
+    "subject": "answer die",
+    "action": "sinks and tilts as the face wipes blank",
+    "emotion": "mortified",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the window's face wipes blank and the ball sinks and tilts",
+    "reaction": "the line crawls on and the liquid goes still",
+    "ambient": "spot dust drifts, the raven's pencil scratches, the dashed line crawls, the ball breathes"
+   }
+  },
+  {
+   "id": 32,
+   "shot": 11,
+   "t": "95.380-100.160",
+   "at_s": 95.38,
+   "vo_line": 12,
+   "offset": 0.0,
+   "vo": "But the economists wrote that it's too early to predict the magnitude, so they labeled the blank, not guessed.",
+   "phrase": "But the economists wrote that it's too early to predict the magnitude",
+   "shows": "the raven's grease-pencil tip reaches in from frame right and writes on the outside of the glass over the blank face",
+   "sfx": "pencil-write",
+   "means": "the economists' own words",
+   "rehook": "",
+   "draw": {
+    "subject": "grease strokes",
+    "action": "draw themselves on the glass",
+    "emotion": "neutral",
+    "annotation": "AI \u00b7 TOO EARLY TO PREDICT THE MAGNITUDE \u00b7 P. 6"
+   },
+   "choreo": {
+    "primary": "the pencil tip reaches in and writes across the glass over the blank face",
+    "reaction": "bubbles rise past the strokes and the die holds still behind them",
+    "ambient": "bubbles rise past the glass, the glow breathes, the die holds still square to the glass"
+   }
+  },
+  {
+   "id": 33,
+   "shot": 11,
+   "t": "100.160-104.100",
+   "at_s": 100.16,
+   "vo_line": 12,
+   "offset": 4.78,
+   "vo": "But the economists wrote that it's too early to predict the magnitude, so they labeled the blank, not guessed.",
+   "phrase": "so they labeled the blank",
+   "shows": "the label lights warm in the ink, the only warm light, the cyan answer changing to warm as the payoff",
+   "sfx": "glass-tone",
+   "means": "THE LABELED BLANK",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "label",
+    "action": "lights warm",
+    "emotion": "calm",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the label lights up warm on the glass over the blank face",
+    "reaction": "the label's warm holds on the glass while the cyan liquid stays cyan behind it and the ball's face softens",
+    "ambient": "bubbles rise past the glass, the glow breathes, the die holds still square to the glass"
+   }
+  },
+  {
+   "id": 34,
+   "shot": 12,
+   "t": "104.100-105.100",
+   "at_s": 104.1,
+   "vo_line": 13,
+   "offset": 0.12,
+   "vo": "A made-up number nobody could defend is worse.",
+   "phrase": "not guessed",
+   "shows": "the conceding raven plants a bare stake in the gravel at the table's foot and the grease label peels off the glass and slides down onto it",
+   "sfx": "wood-slide",
+   "means": "the label as something to plan around",
+   "rehook": "",
+   "draw": {
+    "subject": "survey stake",
+    "action": "takes the label from the die face",
+    "emotion": "content",
+    "annotation": "AI \u00b7 TOO EARLY TO PREDICT THE MAGNITUDE \u00b7 P. 6"
+   },
+   "choreo": {
+    "primary": "the raven drops a bare stake into the gravel and the label slides down off the glass onto it",
+    "reaction": "the stake lights warm as the label leaves the glass, the window stays cyan and the die holds still",
+    "ambient": "spot dust, the cardboard stakes wobble, the bucket rocks, the ball breathes"
+   }
+  },
+  {
+   "id": 35,
+   "shot": 12,
+   "t": "105.100-106.700",
+   "at_s": 105.1,
+   "vo_line": 13,
+   "offset": 1.12,
+   "vo": "A made-up number nobody could defend is worse.",
+   "phrase": "A made-up number nobody could defend is worse",
+   "shows": "the raven plants two cardboard stakes with crossed-out scrawl stamped MADE UP and they topple into a bucket",
+   "sfx": "clank",
+   "means": "the invented number, rejected",
+   "rehook": "",
+   "draw": {
+    "subject": "cardboard stakes",
+    "action": "topple out of the gravel into the bucket",
+    "emotion": "embarrassed",
+    "annotation": "MADE UP \u00b7 \u2212?,??? \u00b7 NOBODY COULD DEFEND THIS"
+   },
+   "choreo": {
+    "primary": "the raven plants two cardboard stakes in the gravel and they topple into the bucket",
+    "reaction": "the bucket rocks and the raven lowers its pencil",
+    "ambient": "spot dust, the cardboard stakes wobble, the bucket rocks, the ball breathes"
+   }
+  },
+  {
+   "id": 36,
+   "shot": 12,
+   "t": "106.700-108.420",
+   "at_s": 106.7,
+   "vo_line": 13,
+   "offset": 2.72,
+   "vo": "A made-up number nobody could defend is worse.",
+   "phrase": "is worse",
+   "shows": "the ptarmigan walks into the spot's rim and drags the labeled stake out toward the dark bar",
+   "sfx": "drag-scrape",
+   "means": "the labeled stake leaves the test and travels to the bar",
+   "rehook": "",
+   "draw": {
+    "subject": "ptarmigan",
+    "action": "drags the labeled stake out of the spot",
+    "emotion": "determined",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the ptarmigan walks into the spot and drags the labeled stake out of the light",
+    "reaction": "the stake's warm glow trails across the gravel and the raven lowers its pencil",
+    "ambient": "spot dust, the cardboard stakes wobble, the bucket rocks, the ball breathes"
+   }
+  },
+  {
+   "id": 37,
+   "shot": 13,
+   "t": "108.420-110.900",
+   "at_s": 108.42,
+   "vo_line": 14,
+   "offset": 0.0,
+   "vo": "The scary rows aren't the A I rows. The A I row is the labeled blank, next to the one sector the report names.",
+   "phrase": "The scary rows aren't the A I rows",
+   "shows": "pull up and back, the two scary flags go grey under their reasons as a rift opens in the cloud",
+   "sfx": "whoosh",
+   "means": "the scary rows, answered",
+   "rehook": "",
+   "draw": {
+    "subject": "scary flags",
+    "action": "go grey under their reasons",
+    "emotion": "neutral",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the camera rises and the two scary flags go grey",
+    "reaction": "a rift opens in the cloud and light spills across the bar",
+    "ambient": "flags flutter, tundra sway, the ptarmigan shuffles and settles, the river glints, the light rift widens"
+   }
+  },
+  {
+   "id": 38,
+   "shot": 13,
+   "t": "110.900-114.620",
+   "at_s": 110.9,
+   "vo_line": 14,
+   "offset": 2.48,
+   "vo": "The scary rows aren't the A I rows. The A I row is the labeled blank, next to the one sector the report names.",
+   "phrase": "The A I row is the labeled blank",
+   "shows": "the ptarmigan plants the labeled stake upright in the gravel beside the cranberry flag, no number on it",
+   "sfx": "stake-thump",
+   "means": "the AI row, with no number yet",
+   "rehook": "",
+   "draw": {
+    "subject": "ptarmigan",
+    "action": "plants the labeled stake upright",
+    "emotion": "determined",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the ptarmigan plants the labeled stake upright beside the cranberry flag",
+    "reaction": "gravel puffs and both stakes lean toward each other",
+    "ambient": "flags flutter, tundra sway, the ptarmigan shuffles and settles, the river glints, the light rift widens"
+   }
+  },
+  {
+   "id": 39,
+   "shot": 13,
+   "t": "114.620-115.880",
+   "at_s": 114.62,
+   "vo_line": 14,
+   "offset": 6.2,
+   "vo": "The scary rows aren't the A I rows. The A I row is the labeled blank, next to the one sector the report names.",
+   "phrase": "next to the one sector the report names",
+   "shows": "the ptarmigan settles at the foot of the labeled stake facing the stake, and the cranberry flag's tag stamps",
+   "sfx": "riser-soft",
+   "means": "the turn: the one to watch",
+   "rehook": "",
+   "draw": {
+    "subject": "ptarmigan",
+    "action": "walks over and settles at the stake's foot",
+    "emotion": "content",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the ptarmigan settles at the stake's foot and the cranberry tag stamps down",
+    "reaction": "the cranberry flag lights up and the pale rift widens",
+    "ambient": "flags flutter, tundra sway, the ptarmigan shuffles and settles, the river glints, the light rift widens"
+   }
+  },
+  {
+   "id": 40,
+   "shot": 13,
+   "t": "115.880-117.700",
+   "at_s": 115.88,
+   "vo_line": 14,
+   "offset": 7.46,
+   "vo": "The scary rows aren't the A I rows. The A I row is the labeled blank, next to the one sector the report names.",
+   "phrase": "the one sector the report names",
+   "shows": "the cranberry flag lifts its tag, MOST VULNERABLE TO AUTOMATION",
+   "sfx": "tag-stick",
+   "means": "the named sector, tagged with the report's own words",
+   "rehook": "",
+   "draw": {
+    "subject": "cranberry flag",
+    "action": "lifts its tag in the wind",
+    "emotion": "neutral",
+    "annotation": "MOST VULNERABLE TO AUTOMATION \u00b7 P. 6"
+   },
+   "choreo": {
+    "primary": "the cranberry flag lifts its kraft tag in the wind and the tag stamps down",
+    "reaction": "the labeled stake's glow brightens beside it",
+    "ambient": "flags flutter, tundra sway, the ptarmigan shuffles and settles, the river glints, the light rift widens"
+   }
+  },
+  {
+   "id": 41,
+   "shot": 14,
+   "t": "117.700-121.980",
+   "at_s": 117.7,
+   "vo_line": 15,
+   "offset": 0.0,
+   "vo": "The ball's answer is ask again next forecast.",
+   "phrase": "The ball's answer is ask again next forecast",
+   "shows": "the mitten sets the ball down gently, the die returns to the window and lands on ASK AGAIN NEXT FORECAST",
+   "sfx": "soft-set",
+   "means": "the button",
+   "rehook": "",
+   "draw": {
+    "subject": "fortune ball",
+    "action": "is set down gently on the gravel",
+    "emotion": "calm",
+    "annotation": "ASK AGAIN NEXT FORECAST"
+   },
+   "choreo": {
+    "primary": "the mitten lowers the ball onto the table and lets go",
+    "reaction": "the die tumbles into the window and lands on the face and the labeled stake glows far behind",
+    "ambient": "tundra sway, rift light drifts across the bar, the ptarmigan breathes at the far stake, the liquid settles"
+   }
+  },
+  {
+   "id": 42,
+   "shot": 14,
+   "t": "121.980-125.120",
+   "at_s": 121.98,
+   "vo_line": 16,
+   "offset": 0.0,
+   "vo": "Which row would you watch next year?",
+   "phrase": "Which row would you watch next year?",
+   "shows": "fine print rises in bone and the ball blinks once",
+   "sfx": "paper-slide",
+   "means": "the question to the viewer",
+   "rehook": "",
+   "draw": {
+    "subject": "fine print",
+    "action": "rises beside the ball",
+    "emotion": "neutral",
+    "annotation": "EXCLUDES SELF-EMPLOYED + FISHERMEN \u00b7 ALASKA DEPT. OF LABOR"
+   },
+   "choreo": {
+    "primary": "the fine print rises into place and the ball blinks",
+    "reaction": "the ptarmigan shifts at the far stake and the rift light drifts",
+    "ambient": "tundra sway, rift light drifts across the bar, the ptarmigan breathes at the far stake, the liquid settles"
+   }
+  },
+  {
+   "id": 43,
+   "shot": 14,
+   "t": "125.120-127.920",
+   "at_s": 125.12,
+   "vo_line": 16,
+   "offset": 3.14,
+   "vo": "Which row would you watch next year?",
+   "phrase": "",
+   "shows": "the ptarmigan turns from the labeled stake to look at the cranberry flag while credits roll",
+   "sfx": "blink-tick",
+   "means": "sign-off",
+   "rehook": "",
+   "draw": {
+    "subject": "ptarmigan",
+    "action": "turns from the stake to look at the cranberry flag",
+    "emotion": "calm",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the ptarmigan turns its head from the labeled stake to the cranberry flag",
+    "reaction": "the cranberry tag flips in the wind and the ball blinks",
+    "ambient": "tundra sway, rift light drifts across the bar, the ptarmigan breathes at the far stake, the liquid settles"
+   }
+  },
+  {
+   "id": 44,
+   "shot": 14,
+   "t": "127.920-131.400",
+   "at_s": 127.92,
+   "vo_line": 16,
+   "offset": 5.94,
+   "vo": "Which row would you watch next year?",
+   "phrase": "",
+   "shows": "the rift widens until the labeled stake and the cranberry flag stand in one frame behind the ball",
+   "sfx": "glass-tone",
+   "means": "the loopback frame",
+   "rehook": "",
+   "draw": {
+    "subject": "labeled stake",
+    "action": "pulses warm once",
+    "emotion": "calm",
+    "annotation": "none"
+   },
+   "choreo": {
+    "primary": "the rift widens and the labeled stake pulses warm once beside the cranberry flag",
+    "reaction": "the ball blinks and the ptarmigan lifts its head",
+    "ambient": "tundra sway, rift light drifts across the bar, the ptarmigan breathes at the far stake, the liquid settles"
+   }
+  }
+ ]
+}

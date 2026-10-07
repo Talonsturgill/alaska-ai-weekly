@@ -59,8 +59,10 @@ const fitSize = (s: string, maxW: number, ideal: number, floor = 13, track = 0) 
   Math.max(floor, Math.min(ideal,
     (maxW - track * Math.max(0, s.length - 1)) / (s.length * 0.602 + 0.001)));
 
-export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; paperDesk?: boolean}> = ({
-  data, durationInFrames, paperDesk = false,
+// srcMax / musicMax: optional ceilings for the source and licence lines. Defaults are the historical 22 / 32, so every
+// episode that does not pass them renders exactly as before. Both stay fitted to MAXW, so a larger ceiling can never overflow.
+export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; paperDesk?: boolean; srcMax?: number; musicMax?: number}> = ({
+  data, durationInFrames, paperDesk = false, srcMax = 22, musicMax = 32,
 }) => {
   const f = useCurrentFrame();
   // TWO FADES, because the mark is a SIGN-OFF and not a header (owner, 2026-08-09).
@@ -93,12 +95,12 @@ export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; 
   const musicLines = mSplit > 0
     ? [musicRaw.slice(0, mSplit), musicRaw.slice(mSplit + 2)]
     : [musicRaw];
-  const musicSize = musicLines.reduce((acc, l) => Math.min(acc, fitSize(l, MAXW, 32, 13, 0.6)), 32);
+  const musicSize = musicLines.reduce((acc, l) => Math.min(acc, fitSize(l, MAXW, musicMax, 13, 0.6)), musicMax);
 
   // sources are laid one per line, each shrunk to fit rather than truncated: a source you
   // cannot read is the same as a source you did not cite
   const srcSize = data.sources.reduce(
-    (acc, s) => Math.min(acc, fitSize(s.toUpperCase(), MAXW, 22, 13, 0.8)), 22);
+    (acc, s) => Math.min(acc, fitSize(s.toUpperCase(), MAXW, srcMax, 13, 0.8)), srcMax);
 
   // 620, not 470: at 470 the block sat in the upper half and left a third of a 1920 frame
   // empty under it, which is the single most repeated composition note this film has had.

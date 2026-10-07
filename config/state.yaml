@@ -2249,3 +2249,43 @@ dispatch_history:
       window teal, mint signal, alarm red
     metaphor: a heavy polished brass front desk that can only read the one page of
       facts it was given, set against flat cardboard with nothing behind it
+- date: '2026-10-07'
+  topic: Alaska October jobs forecast  AI sidebar, finance and insurance, and the
+    labeled blank (Alaska Dept. of Labor, Alaska Economic Trends Oct 2026)
+  slug: fortune-ball-ai-jobs-2026-10-07
+  key_entities:
+  - Alaska Department of Labor
+  - Alaska Economic Trends
+  - finance and insurance
+  - banking and related services
+  - reporters and journalists
+  - AI sidebar
+  - ten-year jobs forecast
+  archetype: ''
+  palette: obsidian black, cranberry, tundra ochre, ptarmigan bone, glacier cyan window,
+    pale overcast slate and river gravel
+  voice: ''
+  stance: curious
+  angle: Alaska's economists put AI in the ten-year jobs forecast and refused to invent
+    its size, so the scary rows (journalists, broadcasters) are not the AI rows, and
+    the one sector they name, finance and insurance, is the place to watch.
+  hero: FortuneBall
+  cast:
+  - FortuneBall
+  - AnswerDie
+  - PebbleRow
+  - ReportBooklet
+  - StakeFlag
+  - Boulder
+  composition:
+    pov: macro-closeup
+    motion_vector: radial-emanate
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: tactile-collage
+    camera_strategy: orbit-reveal
+    light_story: overcast-diffuse
+    palette: obsidian black, cranberry, tundra ochre, ptarmigan bone, glacier cyan
+      window, pale overcast slate and river gravel
+    metaphor: a dented fortune ball asked to predict a decade, answering with a labeled
+      blank instead of a made-up number

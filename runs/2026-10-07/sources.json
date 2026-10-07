@@ -1,0 +1,45 @@
+{
+ "run_date": "2026-10-07",
+ "title": "",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Alaska Economic Trends, October 2026 (Vol 46 No 10)",
+   "outlet": "Alaska Dept. of Labor and Workforce Development, Research and Analysis",
+   "url": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "Primary state agency publication, read page by page by a validator. Independent corroboration of occupation figures: Juneau Independent (Mark Sabbatini, October 2026)."
+  },
+  {
+   "id": "s2",
+   "title": "State study, machine operators to see highest job growth, journalists biggest job drop by 2034",
+   "outlet": "Juneau Independent",
+   "url": "https://www.juneauindependent.com/post/state-study-machine-operators-to-see-highest-job-growth-journalists-biggest-job-drop-by-2034",
+   "claims": [
+    "c8",
+    "c9",
+    "c11"
+   ],
+   "used_in_film": false,
+   "note": "Corroborates occupation figures. Does not tie them to AI."
+  }
+ ]
+}
