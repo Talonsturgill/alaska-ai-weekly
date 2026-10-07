@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-10-06"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-10-07"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -100,11 +100,7 @@ _TEXTURE = {"whoosh", "paper", "chain", "creak", "riser"}
 # "silence-pop-pop"), which is for the film's author. The bank only knows its own 17 kinds, so this run maps each
 # beat id to ONE bank kind, chosen so no two adjacent beats share a spectral family and no kind carries the film.
 _KIND_BY_BEAT = {
-    1: "tick", 2: "ding", 3: "thud", 4: "creak", 5: "whoosh", 6: "tick", 7: "clank", 8: "snap", 9: "whoosh",
-    10: "pop", 11: "stamp", 12: "pop", 13: "chime", 14: "paw", 15: "tick", 16: "chime", 17: "riser", 18: "clank",
-    19: "ding", 20: "boom", 21: "paper", 22: "stamp", 23: "snap", 24: "whoosh", 25: "creak", 26: "thud", 27: "tick",
-    28: "pop", 29: "paper", 30: "whoosh", 31: "tick", 32: "boom", 33: "clank", 34: "pop", 35: "stamp", 36: "ding",
-    37: "whoosh", 38: "creak", 39: "thud", 40: "snap", 41: "whoosh", 42: "ding", 43: "tick",
+    1: "boom", 2: "clank", 3: "snap", 4: "paper", 5: "clank", 6: "tick", 7: "stamp", 8: "chime", 9: "whoosh", 10: "pop", 11: "tick", 12: "snap", 13: "chain", 14: "paw", 15: "pop", 16: "clank", 17: "stamp", 18: "ding", 19: "creak", 20: "pop", 21: "thud", 22: "snap", 23: "paper", 24: "tick", 25: "whoosh", 26: "paper", 27: "clank", 28: "creak", 29: "boom", 30: "tick", 31: "whoosh", 32: "paper", 33: "chime", 34: "creak", 35: "clank", 36: "paper", 37: "whoosh", 38: "thud", 39: "riser", 40: "pop", 41: "paw", 42: "paper", 43: "tick", 44: "chime", 45: "chain", 46: "ding", 47: "stamp",
 }
 _PERFORMANCE = [
     (_KIND_BY_BEAT[b["id"]], "hero" if _KIND_BY_BEAT[b["id"]] in _HERO else "texture" if _KIND_BY_BEAT[b["id"]] in _TEXTURE else "standard", 0.0, b["shows"][:70])
@@ -112,7 +108,7 @@ _PERFORMANCE = [
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
 if (_board.get("run_date") != DATE or
-        [b["id"] for b in _board["beats"]] != list(range(1, len(_PERFORMANCE) + 1)) or
+        sorted(b["id"] for b in _board["beats"]) != list(range(1, len(_PERFORMANCE) + 1)) or
         len(_PERFORMANCE_KINDS) != len(_board["beats"])):
     raise SystemExit("dispatch_mix: per-run sound map does not cover every approved beat")
 EVENTS = [
@@ -160,24 +156,26 @@ def event_timing(index, t):
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
 BED_ARC = [
-    (L[0], 0.60),           # a quiet 2 a.m., the stove ticking
-    (L[0] + 2.2, 0.80),     # the bell wakes
-    (L[1], 0.66),           # the magazine and the name
-    (L[2], 0.80),           # the guide, the side door
-    (27.0, 0.05),           # THE INTERRUPT: the room drops to silence in the VO breath so the walker pops land clean
-    (27.84, 0.74),
-    (L[3], 0.72),           # the vet line at midnight
-    (L[4], 0.84),           # just reading a spreadsheet, the relief
-    (L[5], 0.52),           # accidental adoption, thin and fair
-    (L[6], 0.70),           # the confident ink
-    (L[7], 0.46),           # the Auditor asks the fair question, nearly bare
-    (L[8], 0.56),
-    (L[9], 0.74),           # hard cut to the crate wall
-    (L[10], 0.62),          # the one rule
-    (L[11], 0.40),          # Machuca's rule, plain
-    (L[12] - 0.60, 0.04),   # THE PRE-BUTTON DIP
-    (L[12] + 0.12, 0.32),
-    (L[12] + 2.4, 0.58),
+    (L[0], 0.55),           # the overcast, the slam
+    (L[0] + 2.5, 0.80),     # the shake
+    (L[1], 0.66),           # the state Labor Department says
+    (L[2], 0.74),           # the sidebar
+    (28.3, 0.05),           # THE INTERRUPT: silence in the breath so the shake slam lands clean
+    (29.2, 0.74),
+    (L[4], 0.72),           # the named sector
+    (L[5], 0.70),
+    (L[6], 0.62),           # too uncertain, thin
+    (L[7], 0.76),           # which row is the AI row
+    (L[8], 0.58),           # the scary rows
+    (L[9], 0.70),
+    (L[10], 0.44),          # the fair objection, nearly bare
+    (L[11] - 0.4, 0.30),
+    (L[11] + 4.2, 0.62),    # the label lights warm
+    (L[12], 0.52),
+    (L[13], 0.76),          # the AI row is the labeled blank
+    (L[14] - 0.7, 0.04),    # THE PRE-BUTTON DIP
+    (L[14] + 0.1, 0.34),
+    (L[14] + 3.0, 0.58),
     (VIDEO_SECS - 4.0, 0.46),
     (VIDEO_SECS - 0.4, 0.0),
 ]

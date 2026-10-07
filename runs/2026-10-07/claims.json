@@ -1,0 +1,231 @@
+{
+ "run_date": "2026-10-07",
+ "fact_check_verdict": "Publish as the state labor economists' own on-record caution. The report says AI will touch much of the labor force but no current broad shift can be attributed to it, flags finance and insurance as most vulnerable, and declines to project AI losses this year. The journalist and broadcaster declines are NOT attributed to AI by the report (it cites remote services and freelancing). Never claim AI causes any projected loss, never say the projections include or exclude AI, say banking AND related services, cite table values.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "Alaska's Department of Labor just published its ten year jobs forecast.",
+   "on_screen": "ALASKA DEPT. OF LABOR \u00b7 ECONOMIC TRENDS \u00b7 OCTOBER 2026",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Report is Alaska Economic Trends, October 2026, Vol 46 No 10, Research and Analysis. Forecast covers 2024 to 2034. No day-level release date, so say October, never a day."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "It says Alaska adds about eight thousand six hundred jobs, up two point six percent.",
+   "on_screen": "335,157 \u2192 343,733 \u00b7 +8,577",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Table p5. Text p12 says 8,576 (rounding). Use 8,577 from the table. Excludes self-employed, fishermen, domestic and unpaid family workers (footnote 4)."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-quote",
+   "spoken": "Then there's a sidebar called About the effects of AI.",
+   "on_screen": "ABOUT THE EFFECTS OF AI",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Sidebar heading p6, verbatim 'About the effects of AI'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": true
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-quote",
+   "spoken": "Quote, AI will touch much of Alaska's labor force over the next decade, but we can't accurately attribute any current broad shifts to AI.",
+   "on_screen": "\"AI will touch much of Alaska's labor force over the next decade, but we can't accurately attribute any current broad shifts to AI.\" \u00b7 P. 6",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Verbatim p6 sidebar. On screen must be exactly the verbatim sentence (straight quotes). Attribute to the Alaska Department of Labor report."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": true
+   },
+   "label": "SIDEBAR"
+  },
+  {
+   "id": "c5",
+   "status": "verified-quote",
+   "spoken": "The state's economists say finance and insurance are the most vulnerable to automation in the near term.",
+   "on_screen": "\"...most vulnerable to automation in the near term, particularly finance and insurance.\" \u00b7 P. 6",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Verbatim p6: 'We do expect industries that have transitioned to online services over the last couple of decades to be the most vulnerable to automation in the near term, particularly finance and insurance.' Do not shorten to imply certainty about AI."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "Finance and insurance are projected to lose four hundred eighty nine jobs, eight point one percent.",
+   "on_screen": "6,027 \u2192 5,538 \u00b7 \u2212489 \u00b7 \u22128.1%",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Table p5. p9: 'banking and related services' make up 75 percent of that projected loss. Say 'banking and related services', not 'banking'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-quote",
+   "spoken": "On insurance, the report says AI losses are too uncertain to project this year.",
+   "on_screen": "\"...too uncertain to project this year.\" \u00b7 P. 9",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Verbatim p9: 'Like banking, insurance is also susceptible to AI-induced losses, but it's too uncertain to project this year.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "Reporters and journalists top the shrinking list, down twenty seven point nine percent.",
+   "on_screen": "NEWS ANALYSTS, REPORTERS + JOURNALISTS \u00b7 \u221227.9%",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Table p17: largest percent decline among occupations with 50+ workers; footnote warns small numbers create large percents. The report does NOT attribute this to AI (p13 says legal and media jobs have been decreasing for years as services become easier to obtain remotely, and others moved to freelance). NEVER link the -27.9% to AI."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "Broadcasters are right behind at twenty seven point seven.",
+   "on_screen": "BROADCAST ANNOUNCERS + RADIO DJS \u00b7 \u221227.7%",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Table p17. Same non-AI attribution caveat as c8."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "Health care adds almost six thousand jobs, up eleven point four percent.",
+   "on_screen": "HEALTH CARE + SOCIAL ASSISTANCE \u00b7 +5,954 \u00b7 +11.4%",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Table p5, text p9. Row is 'Health Care and Social Assistance'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "The fastest growing job is running a crushing, grinding or polishing machine, up twenty three percent.",
+   "on_screen": "CRUSHING, GRINDING + POLISHING MACHINE OPERATORS \u00b7 +23.1%",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Table p17, 25 highest-growth list (needs 50+ workers and 20+ projected jobs)."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "Information, the sector with the software and the media, falls eleven point seven percent.",
+   "on_screen": "INFORMATION \u00b7 4,541 \u2192 4,011 \u00b7 \u221211.7%",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Table p5. Largest percentage industry decline in the p7 chart. Report gives no AI cause for it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-quote",
+   "spoken": "It's too early to predict the size of the change.",
+   "on_screen": "\"...too early to predict the magnitude of the change over the next decade.\" \u00b7 P. 6",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Verbatim p6: 'While technology is improving rapidly and AI is being adopted at an increasing rate, it's still too early to predict the magnitude of the change over the next decade.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-method",
+   "spoken": "The forecast is built mostly from history, population projections and known projects.",
+   "on_screen": "METHOD \u00b7 HISTORICAL TRENDS + POPULATION + KNOWN PROJECTS",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "p11: 'based primarily on historical trends, Alaska and U.S. population projections, and other industry-specific variables ... knowledge of specific projects, if certain'. Staffing ratio 'change factors' include technology. The report never says flatly that AI is or is not in the projections. Do NOT claim either."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "Jobs can't be counted for fishermen or the self-employed here.",
+   "on_screen": "EXCLUDES SELF-EMPLOYED + FISHERMEN",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Footnote 4 p5: excludes self-employed workers, fishermen, domestic workers, unpaid family workers, nonprofit volunteers."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-quote",
+   "spoken": "The report doesn't call that an AI number.",
+   "on_screen": "NOT CALLED AN AI NUMBER",
+   "source": "https://live.laborstats.alaska.gov/sites/default/files/trends-mag-file/oct26.pdf",
+   "requires": [
+    "Verbatim p9: 'Banking online will continue to cut jobs, but it isn't clear how much AI will accelerate this trend.' The section head is 'Online services will continue to shrink finance and insurance'. The report ties the finance and insurance loss to online services and says how much AI adds is unclear. It does NOT call the -489 an AI number. Never say AI causes it, never say AI is excluded from it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

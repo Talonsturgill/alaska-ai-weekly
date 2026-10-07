@@ -51,3 +51,11 @@ the pass can't fix safely stays open with ` | escalated <date>: <why>` and goes 
 - storyboard-check-vs-say-it-show-it-beat-vo: storyboard_check and say_it_show_it disagree on whether a beat vo must hold the whole line.
 - middle-act-tonal-flat (flow critic, cause e): five consecutive dark brown interiors from 71 to 118 s with no late lift or wide shot. Plan one bright or colour shifting peak in the middle act at Gate 0.
 - long-vo-gaps: 38 VO gaps of 0.35 s or more (32.8 s of silence), flagged by all three judges. Tighten gaps over 1.2 s or fill them with room tone.
+
+
+## 2026-10-07 queue additions
+- Caption scorer plateau. 25 rounds, scores 8.0 to 8.42, never 8.5. The scorer re-anchors on hook and hashtags each round and the revision cap of 5 is not enforced anywhere. Needs a calibration anchor set for the caption rubric and a stop rule.
+- The upload_video.py default name is undated and overwrites the previous undated alias. The runbook requires dispatch-<date>-<basename>. Make the date prefix the default.
+- dispatch_email.py colon and semicolon lint trips on source titles and note strings. Normalise them before lint.
+- No Gmail profile tool. The connected address was read from the create_draft viewUrl of a throwaway draft. Add a documented way to resolve it.
+- Panel judges can't list the evidence directory and guess filenames. Put an index of evidence files in the prompt template.

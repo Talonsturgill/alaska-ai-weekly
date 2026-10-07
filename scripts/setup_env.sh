@@ -30,7 +30,7 @@ python3 -c "import PIL,numpy,scipy,matplotlib,edge_tts,soundfile,yaml" >/dev/nul
 # 2026-07-20 AFTER paying for 4 Gemini takes. Same silent-missing-dep class as the 07-18
 # faster_whisper/resemblyzer gap. Idempotent top-up so it never recurs:
 python3 -c "import librosa, faster_whisper" >/dev/null 2>&1 \
-  || pip install --break-system-packages -q librosa faster_whisper \
+  || python3 -m pip install --break-system-packages -q librosa faster_whisper \
   || echo "setup_env: WARN librosa/faster_whisper install failed (Gemini VO soundcheck/align will break)"
 # num2words: vo_soundcheck.py's WER canonicalizer converts digit tokens (heard: "4,700",
 # "50") to their spelled-out word form (reference script: "four thousand seven hundred",
@@ -45,7 +45,7 @@ python3 -c "import librosa, faster_whisper" >/dev/null 2>&1 \
 # install below); --no-deps skips it since num2words' core `num2words()` function does
 # not need docopt at import or call time (only its bundled CLI script does).
 python3 -c "import num2words" >/dev/null 2>&1 \
-  || pip install --break-system-packages -q --no-deps num2words \
+  || python3 -m pip install --break-system-packages -q --no-deps num2words \
   || echo "setup_env: WARN num2words install failed (WER canonicalizer will under-count digit tokens, inflating WER on number-heavy scripts)"
 # Gemini and Remotion are the current production path. Retired renderers and
 # local voice fallbacks are opt-in; installing them on every Mac run repeatedly

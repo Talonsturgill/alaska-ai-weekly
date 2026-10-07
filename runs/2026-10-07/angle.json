@@ -1,0 +1,36 @@
+{
+ "thesis": "Alaska's economists put AI in the ten-year jobs forecast and refused to invent its size, so the scary rows (journalists, broadcasters) are not the AI rows, and the one sector they name, finance and insurance, is the place to watch.",
+ "falsifiable_by": "The report crediting the journalist, broadcaster or information declines to AI, printing an AI job number, or finance and insurance not being the sector its sidebar names as most vulnerable. Next year's edition putting a number on insurance AI losses closes the window.",
+ "supporting_facts": [
+  "c4 sidebar: AI will touch much of the labor force but no current broad shift can be attributed to it",
+  "c5 finance and insurance named most vulnerable to automation near term",
+  "c8/c9 journalists -27.9 and broadcasters -27.7 with the report's own non-AI reasons (remote services, freelance, small numbers)",
+  "c7 insurance AI losses 'too uncertain to project this year'",
+  "c2/c10 the forecast still adds 8,577 jobs, health care +5,954"
+ ],
+ "fair_counterpoint": "A forecast built from history can't see a break from history, which is what AI would be, and it excludes the self-employed and fishermen (c14, c15). A blank spot where AI should be is a real limit and the reader could fairly call it evasion. It gets its own scene (THE TEST) at full strength, then the film lands that a labeled blank beats a number nobody could defend, and the state's own 'this year' (c7) sets the next test.",
+ "second_movement": "c8/c9: the biggest shrink numbers look like an AI story and the report says they aren't. The AI flag sits in a quieter row (c5, c6), and its number is never tied to AI.",
+ "stance": "curious",
+ "valence": "even-handed and constructive, crediting the economists' discipline, with the caution kept in",
+ "runner_ups": [
+  "Builder: early warning not obituary (merged as the close, lead time to act)",
+  "Skeptic: the sidebar can't be tested against its own forecast (kept as the counter-scene, since 'untestable' alone is a description not a call to action)",
+  "Explainer: the most useful number is the one they refused to write (merged into the thesis)"
+ ],
+ "cross_challenge": "All three converged. Synthesis applied: (1) skeptic's thesis stated a limitation, not a claim, so it became the scene THE TEST. (2) builder's 'early warning Alaska can act on' overreaches since the report recommends nothing, so it is the question at the button, not the thesis. (3) explainer's derived ratios (12x, 69 percent) are NOT approved facts and stay off screen. Hard guardrail from all three: never put -27.9 or -27.7 beside AI without the report's non-AI reason in the same beat.",
+ "claim_ids": [
+  "c1",
+  "c2",
+  "c4",
+  "c5",
+  "c6",
+  "c7",
+  "c8",
+  "c9",
+  "c10",
+  "c12",
+  "c13",
+  "c14",
+  "c15"
+ ]
+}

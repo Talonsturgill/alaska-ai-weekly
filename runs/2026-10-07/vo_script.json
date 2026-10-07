@@ -1,0 +1,152 @@
+{
+ "run_date": "2026-10-07",
+ "title": "ASK AGAIN",
+ "note": "Figures and quotes are from the Alaska Department of Labor and Workforce Development's Alaska Economic Trends, October 2026. The ball, the flags and the ptarmigan are illustrations, not real people or objects.",
+ "caption_fixups": {
+  "A I": "AI",
+  "eight thousand five hundred seventy seven": "8,577",
+  "twenty thirty four": "2034",
+  "two point six percent": "2.6 percent",
+  "almost six thousand": "almost 6,000",
+  "four hundred eighty nine": "489",
+  "twenty seven point nine percent": "27.9 percent",
+  "twenty seven point seven": "27.7",
+  "twenty three percent": "23 percent",
+  "eleven point seven": "11.7"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Alaska's ten-year jobs forecast is a fortune ball. Shake it.",
+   "t": "Alaska's ten-year jobs forecast is a fortune ball. Shake it.",
+   "claims": [
+    "c1"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "The state Labor Department says Alaska adds eight thousand five hundred seventy seven jobs by twenty thirty four, up two point six percent.",
+   "t": "The state Labor Department says Alaska adds eight thousand five hundred seventy seven jobs by twenty thirty four, up two point six percent.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "Health care adds almost six thousand. The fastest growing job runs a grinding machine, up twenty three percent.",
+   "t": "Health care adds almost six thousand. The fastest growing job runs a grinding machine, up twenty three percent.",
+   "claims": [
+    "c10",
+    "c11"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "But the report has a sidebar on the effects of A I. Its economists say A I will touch much of Alaska's labor force, but no current shift can be pinned on it.",
+   "t": "But the report has a sidebar on the effects of A I. Its economists say A I will touch much of Alaska's labor force, but no current shift can be pinned on it.",
+   "claims": [
+    "c3",
+    "c4"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "What number does the ball give A I?",
+   "t": "What number does the ball give A I?",
+   "claims": []
+  },
+  {
+   "idx": 5,
+   "text": "The report names one sector most vulnerable to automation, finance and insurance.",
+   "t": "The report names one sector most vulnerable to automation, finance and insurance.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "It's projected to lose four hundred eighty nine jobs, and the report doesn't call that an A I number.",
+   "t": "It's projected to lose four hundred eighty nine jobs, and the report doesn't call that an A I number.",
+   "claims": [
+    "c6",
+    "c16"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "On insurance, it says A I losses are too uncertain to project this year.",
+   "t": "On insurance, it says A I losses are too uncertain to project this year.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Which row is the A I row?",
+   "t": "Which row is the A I row?",
+   "claims": []
+  },
+  {
+   "idx": 9,
+   "text": "The scary rows. Reporters and journalists, down twenty seven point nine percent. Broadcasters, twenty seven point seven. Services are going remote, work is going freelance.",
+   "t": "The scary rows. Reporters and journalists, down twenty seven point nine percent. Broadcasters, twenty seven point seven. Services are going remote, work is going freelance.",
+   "claims": [
+    "c8",
+    "c9"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "They look like A I numbers, but the report blames other causes. Information, down eleven point seven, has no A I cause either.",
+   "t": "They look like A I numbers, but the report blames other causes. Information, down eleven point seven, has no A I cause either.",
+   "claims": [
+    "c8",
+    "c12"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big A I gets, there's a blank.",
+   "t": "A forecast built from history can't see a break from history, and it leaves out the self-employed and fishermen. On how big A I gets, there's a blank.",
+   "claims": [
+    "c14",
+    "c15"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "But the economists wrote that it's too early to predict the magnitude, so they labeled the blank, not guessed.",
+   "t": "But the economists wrote that it's too early to predict the magnitude, so they labeled the blank, not guessed.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "A made-up number nobody could defend is worse.",
+   "t": "A made-up number nobody could defend is worse.",
+   "claims": []
+  },
+  {
+   "idx": 14,
+   "text": "The scary rows aren't the A I rows. The A I row is the labeled blank, next to the one sector the report names.",
+   "t": "The scary rows aren't the A I rows. The A I row is the labeled blank, next to the one sector the report names.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "The ball's answer is ask again next forecast.",
+   "t": "The ball's answer is ask again next forecast.",
+   "claims": []
+  },
+  {
+   "idx": 16,
+   "text": "Which row would you watch next year?",
+   "t": "Which row would you watch next year?",
+   "claims": []
+  }
+ ]
+}

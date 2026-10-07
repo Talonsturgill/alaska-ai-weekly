@@ -1,0 +1,67 @@
+# Ask Again (2026-10-07)
+
+A dented, duct-taped fortune ball is shaken with the state's ten-year jobs forecast. Asked for an AI number it gives none, and the film follows what the report actually says about AI, down to the one honest labeled blank, planted beside the one sector the report names.
+
+## Angle
+Alaska's economists put AI in the ten-year jobs forecast and refused to invent its size, so the scary rows (journalists, broadcasters) are not the AI rows, and the one sector they name, finance and insurance, is the place to watch.
+
+## Shots
+- S1 0.0s The ball slams down [gravel-table, close, eye, orbitReveal, in: open/-]: Hook. Frame 1 is already the film: a heather-wool mitten has just slammed a dented, duct-taped fortune ball onto a gravel-bar table, the window already sloshing +8,577 JOBS. Pale overcast tundra behind. The ball squints and the mitten shakes it again.
+- S2 4.7s The report lands [report-overhead, medium, overhead, dollyThrough, in: match-action/carry]: Cut to straight down. The creased report booklet slaps onto the gravel, ALASKA DEPT. OF LABOR, ECONOMIC TRENDS, OCTOBER 2026. Faceted ochre pebble rows tumble out of its pages and settle into the grid, the counter climbing 335,157 to 343,733. The camera pulls back from one pebble to the whole grid and a round +2.6% stamp thumps down.
+- S3 14.6s Inside the window [die-interior, close, eye, orbitReveal, in: graphic-match/match]: The round +2.6% stamp becomes the round window: an iris match opens on the glacier liquid inside the ball. The faceted answer die floats among bubbles. A cardboard tab rises, the die flips to its face, the ball's face sweats at the glass, and the quote prints on the die.
+- S4 28.8s So what number? [gravel-table, medium, low, truckAcross, in: whip-pan/travel]: Back out on the table, low angle. The mitten shakes the ball hard, the window shows AI JOBS ??? and the ball sweats, eyes darting at the sidebar tab sticking out of its window rim before the mitten yanks it free.
+- S5 33.0s The sector the report names [pebble-field, extreme-wide, overhead, craneDown, in: mask-wipe/build]: Wide overhead of a gravel bar laid out as the report's rows, faceted ochre pebbles by sector. One row lights cranberry, FINANCE + INSURANCE, and the quote tag from the sidebar sticks beside it. The row's far end runs off the bar toward a river. The cut is a cloud shadow sweeping across (mask-wipe).
+- S6 40.0s Four hundred eighty nine [river-edge, medium, ground, truckAcross, in: carried-element/carry]: Ground level at the river end of the gravel bar. The cranberry row's end pebbles roll off the bar edge into the water, 489 of them, the counter falling 6,027 to 5,538. The bottom chunk goes first, BANKING + RELATED SERVICES, and a stamp thumps on the pile, NOT CALLED AN AI NUMBER.
+- S7 46.5s Too uncertain, which row [die-interior, close, eye, dollyThrough, in: graphic-match/match]: The camera goes back into the window. The die rolls and lands on a face reading TOO UNCERTAIN TO PROJECT THIS YEAR, the ball's pupils stuck on it, then it tumbles to a new face, WHICH ROW IS THE AI ROW. It opens as the last river ripple ring irises into the window's rim (graphic-match).
+- S8 56.4s The scary rows [flag-field, wide, high, riseWith, in: whip-pan/travel]: High and wide over the tundra bar. Survey stakes drop into the gravel one by one. The ptarmigan carries each reason tag in its beak and ties it to the pole as the stake lands, REPORTERS + JOURNALISTS -27.9% with SERVICES GOING REMOTE and FREELANCE WORK, then BROADCASTERS -27.7% with the same tags. The camera rises to show the whole bar.
+- S9 66.2s Through the flags [flag-field, medium, ground, dollyThrough, in: carried-element/carry]: Ground level through the two flags. The huge percentages fill the foreground and loom as the camera dollies in, then the reason tags swing across and cover them. The ball is only a small dark silhouette on the table far behind, a cyan pinpoint for a window, its face not visible.
+- S10 70.8s The fair objection [test-stage, medium, low, orbitReveal, in: mask-wipe/build]: The overcast goes to ink on the same table as a cool-white spot drops. The raven (feathers lifted to a rimmed blue-grey, perched inside the spot's rim) drags a short row of pebbles out of the open report onto the table, then draws a dashed projection line out of that lit row across the planks past a METHOD stake, then a boulder drops inside the spot onto the planks where the line never pointed. The EXCLUDES SELF-EMPLOYED + FISHERMEN stake marks a roped-off empty patch with no pebbles that the line runs straight over. The die floats up blank in the window and the ball goes mortified. The cut is the spot's iris closing on the table (mask-wipe).
+- S11 84.5s The limit, and the label [die-interior, close, eye, dollyThrough, in: match-cut/match]: Inside the window under the cool spot, opening on the die floating up with a blank face. The raven's grease-pencil tip reaches in from frame right and writes, on the OUTSIDE of the glass registered over the blank, the report's own words as a short label, conceding. The die holds still square to the glass. The label lights warm #F4D9A0, the only warm lit thing in the ink and the film's one cyan-to-warm change.
+- S12 92.0s Nobody could defend [test-stage, wide, high, truckAcross, in: whip-pan/travel]: Wide on the spot, the same table on the gravel bar. The conceding raven plants a bare survey stake in the gravel at the table's foot and the labeled die face slides out of the window onto it, the AI stake. Then the raven plants two kraft-cardboard stakes with crossed-out scrawl stamped MADE UP in the gravel, they topple off and drop into a bucket marked NOBODY COULD DEFEND THIS. The raven lowers its pencil.
+- S13 99.0s The AI row [flag-field, extreme-wide, high, riseWith, in: carried-element/carry]: Pull back and up over the whole bar as a rift opens in the cloud. The two scary flags go grey under their reasons. The ptarmigan tugs the labeled AI stake upright in the gravel beside the cranberry finance flag (its row visibly shorter), no number on it, then walks to its foot and settles facing the cranberry flag. Rift light rakes pale across the bar, the label alone glowing warm. The cut carries the dragged labeled stake from the ink into the daylight (carried-element).
+- S14 110.5s Ask again [gravel-table, medium, ground, craneDown, in: carried-element/carry]: The mitten sets the ball down gently on the table in a break of light (the table is the same table). The window settles on ASK AGAIN NEXT FORECAST. The report's fine print rises in bone below. Far behind the ball the ptarmigan stays at the foot of the labeled stake, the film's watch post, and the ball blinks once.
+
+## Beats
+- 0.0s S1 "Alaska's ten-year jobs forecast": a mitten slams the ball onto the gravel and the window sloshes +8,577 JOBS (sfx slam)
+- 1.1s S1 "is a fortune ball": the ball squints and tilts, the die rolls inside the window (sfx rattle)
+- 3.3s S1 "Shake it": the mitten winds up and shakes the ball hard (sfx shake-rattle)
+- 4.7s S2 "and the state Labor Department says": straight down, the report booklet slaps onto the gravel (sfx paper-slap)
+- 7.0s S2 "Alaska adds eight thousand five hundred seventy seven jobs": ochre pebble rows tumble out of the pages and settle into a grid while the camera pulls back from one pebble (sfx pebble-clatter)
+- 10.2s S2 "by twenty thirty four": a year ribbon 2024 to 2034 draws along the page edge (sfx tick)
+- 12.0s S2 "up two point six percent": a round +2.6% stamp thumps onto the grid (sfx stamp)
+- 13.8s S2 "Health care adds almost six thousand": one pebble row glows ochre and swells by almost six thousand pebbles (sfx glow-tick)
+- 14.6s S3 "But the report has a sidebar": the round stamp becomes the round window and a cardboard tab rises beside the die (sfx bubble-whoosh)
+- 17.6s S3 "on the effects of A I": the die flips to the tab's face and the window flickers AI JOBS ? (sfx click-flip)
+- 21.9s S3 "Its economists say A I will touch much of Alaska's labor force": the die's faces flash tiny pebble-row icons, many rows at once, and a cyan shimmer crosses each one (sfx tick-tick)
+- 24.7s S3 "but no current shift can be pinned on it": the verbatim quote prints onto the die letter by letter (sfx typewriter)
+- 28.8s S4 "What number does the ball give A I?": low angle, the mitten pulls the tab out of the window and shakes the ball hard, the window showing AI JOBS ??? (sfx rattle) REHOOK
+- 33.0s S5 "The report names one sector most vulnerable to automation": one pebble row lights cranberry, FINANCE + INSURANCE (sfx pebble-click-run)
+- 35.4s S5 "finance and insurance": the sidebar's quote tag sticks beside the lit row and a cranberry-cloth stake drops at the head of the row (sfx tag-stick)
+- 40.0s S6 "It's projected to lose four hundred eighty nine jobs": at ground level the end pebbles of the cranberry row roll off the bar into the river, the finance row visibly shorter (sfx pebble-fall)
+- 42.9s S6 "and the report doesn't call that an A I number": three quarters of the fallen pebbles are the bottom chunk, a plate names it, and a stamp thumps on the pile (sfx stamp)
+- 46.5s S7 "On insurance": back in the window the die rolls and lands on TOO UNCERTAIN (sfx click-flip)
+- 50.2s S7 "A I losses are too uncertain to project this year": the face glows and the page cite appears (sfx glass-hum)
+- 52.2s S7 "Which row is the A I row?": the die tumbles to a new face, WHICH ROW IS THE AI ROW (sfx pop)
+- 56.4s S8 "The scary rows": high and wide, survey stakes drop into the gravel one by one (sfx thump) REHOOK
+- 59.4s S8 "Reporters and journalists, down twenty seven point nine percent": the ptarmigan arrives with a kraft reason tag in its beak and ties it to the pole, then the first flag unfurls, -27.9% already wearing its reasons (sfx flag-snap)
+- 62.0s S8 "Services are going remote, work is going freelance": the ptarmigan ties the same reason tags to the second pole before the broadcasters flag unfurls, and the camera rises over the bar (sfx thump)
+- 66.2s S9 "They look like A I numbers": ground level, the huge percentages loom in the foreground as the camera dollies in (sfx gasp-whoosh)
+- 68.6s S9 "but the report blames other causes": the reason tags swing across and cover the percentages (sfx tag-flutter)
+- 70.8s S10 "A forecast built from history": the overcast goes to ink, one cool spot drops on the table, a raven inside the rim drags a short row of pebbles out of the open report (sfx spot-clunk)
+- 74.9s S10 "can't see": the raven draws a dashed projection line out of the lit pebble row across the planks past a METHOD stake (sfx pencil-scratch)
+- 77.9s S10 "a break from history": a boulder drops onto the planks inside the spot where the line never pointed (sfx boulder-thud)
+- 79.8s S10 "and it leaves out the self-employed and fishermen": the line runs straight over a roped-off empty patch with no pebbles, marked by the EXCLUDES stake (sfx stake-tick)
+- 82.4s S10 "On how big A I gets, there's a blank": the line crosses the empty patch, the ball's window face goes blank and the ball goes mortified (sfx riser-thin)
+- 84.5s S11 "But the economists wrote that it's too early to predict the magnitude": the raven's grease-pencil tip reaches in from frame right and writes on the outside of the glass over the blank face (sfx pencil-write)
+- 88.9s S11 "so they labeled the blank": the label lights warm in the ink, the only warm light, the cyan answer changing to warm as the payoff (sfx glass-tone) REHOOK
+- 92.0s S12 "not guessed": the conceding raven plants a bare stake in the gravel at the table's foot and the grease label peels off the glass and slides down onto it (sfx wood-slide)
+- 94.6s S12 "A made-up number nobody could defend is worse": the raven plants two cardboard stakes with crossed-out scrawl stamped MADE UP and they topple into a bucket (sfx clank)
+- 97.2s S12 "is worse": the ptarmigan walks into the spot's rim and drags the labeled stake out toward the dark bar (sfx drag-scrape)
+- 99.0s S13 "The scary rows aren't the A I rows": pull up and back, the two scary flags go grey under their reasons as a rift opens in the cloud (sfx whoosh)
+- 102.8s S13 "The A I row is the labeled blank": the ptarmigan plants the labeled stake upright in the gravel beside the cranberry flag, no number on it (sfx stake-thump)
+- 105.2s S13 "next to the one sector the report names": the ptarmigan settles at the foot of the labeled stake facing the stake, and the cranberry flag's tag stamps (sfx riser-soft)
+- 108.6s S13 "the one sector the report names": the cranberry flag lifts its tag, MOST VULNERABLE TO AUTOMATION (sfx tag-stick)
+- 110.5s S14 "The ball's answer is ask again next forecast": the mitten sets the ball down gently, the die returns to the window and lands on ASK AGAIN NEXT FORECAST (sfx soft-set)
+- 113.6s S14 "Which row would you watch next year?": fine print rises in bone and the ball blinks once (sfx paper-slide)
+- 118.2s S14 "": the ptarmigan turns from the labeled stake to look at the cranberry flag while credits roll (sfx blink-tick)
+- 120.6s S14 "": the rift widens until the labeled stake and the cranberry flag stand in one frame behind the ball (sfx glass-tone)

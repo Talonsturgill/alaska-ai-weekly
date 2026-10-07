@@ -7,6 +7,18 @@ back on if a later run regresses. Newest first.
 
 ---
 
+## 2026-10-07 - "The Fortune Ball Has No AI Number" (Alaska Dept. of Labor October jobs forecast) - SHIPPED
+
+**Status: SHIPPED.** Panel of 3 judges 7.03, 7.2, 7.2, median 7.2 against the 7.0 bar, ship gate PASS. Flow critic still said revise (late-film energy, repeated die interior). The LinkedIn caption scored 8.0 to 8.42 across 25 rounds and never cleared its 8.5 threshold, disclosed in the email.
+
+- New Ep1007 scenes and lib/fortune.tsx (FortuneBall, AnswerDie, DieWorld variants, stakes, pebble rows).
+- Jolt gate. Whole-frame translational shake in S1 and S4 produced 5 jolts, replaced with a slow 2.5px oscillation.
+- EndCredits gained optional srcMax and musicMax props. Passing 34 and 38 broke the CC BY OCR check, left at defaults.
+- setup_env.sh uses python3 -m pip.
+- Deferred. Beat 46 delivered static in the last seconds, S14 end card still static about 7s, S10 and S12 dark stage frames have large empty bands, die interiors share one drawing across S3 S7 S11.
+
+---
+
 ## 2026-08-13 — "The Machine Nobody Wrote Down" (NSF 2626692, UAF, the generator model that was never written down) — DID NOT SHIP
 
 **Status: NOT SHIPPED. Five panel rounds, no merge, no upload, no Gmail draft.**
