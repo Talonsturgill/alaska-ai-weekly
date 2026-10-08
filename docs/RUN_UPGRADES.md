@@ -3821,3 +3821,8 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - New library: lib/frontdesk.tsx (BrassBell, CallSheet, CardboardBell, RotaryPhone, Handset, Walker, IconCard, ShadedHand). Walker gained shade, stride, breath, tall and lean props.
 - In-run fixes: build_evidence _spans reads start_s shot boards, zoom_clip_check measures a Plate by its longest displayLine, vo_soundcheck normalises glued brand digits and possessives.
 - Queued: preflight-source-gates-assume-compact-plate, vo-soundcheck-brand-number-normaliser, setup-env-wrong-python, storyboard-check-vs-say-it-show-it-beat-vo, middle-act-tonal-flat.
+
+## 2026-10-08 — Who Writes the Study (DeepGreen Cook Inlet intervenors)
+- Shipped: 128 s film, new StudyLens burning-glass hero (lib/scope.tsx) and PierDawn/StudySheet (lib/pier.tsx). Panel median 7.38 against 7.0 (7.49, 7.38, 7.34), no hard blockers. Caption gate B edits applied to the final text.
+- In-run fixes (wip(2026-10-08) commits): build_scenes splits long sentences recursively into caption cards, dispatch_mix and build_evidence per-run tables derived from the board, vo_claims_check density, preflight git identity.
+- Recurring cause: panel round 2 asked for motion on held beats (boat, borough cuff, closing lens move 1 percent changed). A render provenance failure came from editing ASSET_*.md during a render. Queued in docs/MACHINE_QUEUE.md.
