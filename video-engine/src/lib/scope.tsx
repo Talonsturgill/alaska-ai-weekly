@@ -82,7 +82,7 @@ export const StudyLens: React.FC<{
   ring?: number;
 }> = ({
   f, x, y, s = 1, rot = 0, R = 300, handleDeg = 62, HL = 560, glass, mag = 1.18, rimText, clock, clockLabel,
-  hands = [], rimChildren, glint = 0.5, handScale = 0.8, armDeg = 40, wedge = 0, ring = 1,
+  hands = [], rimChildren, glint = 0.5, handScale = 0.92, armDeg = 40, wedge = 0, ring = 1,
 }) => {
   const id = `lens${React.useId().replace(/:/g, '')}`;
   const rimT = tones(LENS.rim);
@@ -196,7 +196,7 @@ export const StudyLens: React.FC<{
                     <path d="M60,0 L640,0" />
                   </g>
                 ) : (
-                  <g><path d="M630,-56 L2000,-56 L2000,64 L630,64 Z" fill={HAND_CUFF[h.kind]} stroke={INK} strokeWidth={5} /><GripHand x={0} y={0} reach={1} scale={1} cuffColor={HAND_CUFF[h.kind]} skin={h.kind === 'alliance' ? '#D9742B' : undefined} /></g>
+                  <g><path d="M630,-56 L2000,-56 L2000,64 L630,64 Z" fill={HAND_CUFF[h.kind]} stroke={INK} strokeWidth={5} />{[700, 820, 960, 1120].map((fx) => <path key={fx} d={`M${fx},-54 q22,56 0,116`} fill="none" stroke="#000" strokeWidth={4} opacity={0.22} />)}<path d="M640,-44 H1500" stroke="#fff" strokeWidth={5} opacity={0.18} /><ellipse cx={300} cy={74} rx={150} ry={12} fill="#000" opacity={0.22} /><GripHand x={0} y={0} reach={1} scale={1} cuffColor={HAND_CUFF[h.kind]} skin={h.kind === 'alliance' ? '#D9742B' : undefined} /></g>
                 )}
                 {h.tag && !h.dotted && (
                   <g transform="translate(250,-4)">

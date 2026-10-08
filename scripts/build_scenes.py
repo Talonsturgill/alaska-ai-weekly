@@ -347,7 +347,7 @@ def _merge_by_sense(caps, max_chars=68):
 
 _SPLIT_BAD_END = {"a", "an", "the", "and", "or", "of", "to", "in", "on", "at", "for", "from", "with", "by",
                   "as", "that", "its", "his", "her", "their", "is", "was", "are", "who", "whether", "more",
-                  "than", "conservative", "competing", "says", "discount", "include", "lists", "up", "about", "across", "it", "puts"}
+                  "than", "conservative", "competing", "says", "discount", "include", "lists", "up", "about", "across", "it", "puts", "sixty-six", "hundred", "thirteen", "nearly", "ten", "million", "never"}
 _SPLIT_GOOD_START = {"and", "but", "so", "because", "while", "whether", "which", "who", "a", "with", "in",
                      "on", "at", "for", "from", "are", "more", "still"}
 

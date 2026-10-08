@@ -204,7 +204,7 @@ const PierShot: React.FC<PierProps> = ({f, view = 'front', lens, handleDeg = 24,
       )}
       {spot && beam > 0 && <BurnBeam f={f} lens={{x: lens.x, y: lens.y, R: Reff}} spot={spot} intensity={beam} jitter={jitter} wisp={beam} />}
       <g opacity={lensOpacity}>
-        <StudyLens f={f} x={lens.x} y={lens.y} s={lens.s} rot={lens.rot} R={R0} handleDeg={handleDeg} HL={520} hands={hands}
+        <StudyLens f={f} x={lens.x} y={lens.y + 3 * Math.sin(f / 23)} s={lens.s} rot={lens.rot + 0.8 * Math.sin(f / 37)} R={R0} handleDeg={handleDeg} HL={520} hands={hands}
           glass={glass ?? <GlassInlet f={f} />} clock={clock} rimText={rimText} wedge={wedge} ring={ring} />
       </g>
       {children}
@@ -228,6 +228,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <PierShot f={f} lens={lens} spot={f > t2 - 10 ? spot : {x: 330, y: 1190}} beam={beam}
           hands={[{kind: 'dev', at: 0.3, side: -1, reach: ease(f, 0, 26), tag: 'DEEPGREEN'}]}
           sheet={{x: 250, y: 1030, w: 560, h: 300, rot: -2, lines: []}} />
+        <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#FFF4DA" opacity={0.55 * Math.max(0, Math.sin(clamp01((f - 3) / 12) * Math.PI))} />
         <Plate text="WHO WRITES THE STUDY" y={520} size={40} tone="paper" p={plate} drop={80} />
       </SVG>
     </Frame>
@@ -488,7 +489,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
 // ---- pier shared state: the sheet keeps its lines from shot to shot ---------------------------------------------------
 const LENS_Y = 830;
 const LENS_FRONT: Pose = {x: 520, y: LENS_Y, s: 0.8, rot: 0};
-const SHEET_FRONT = {x: 230, y: 1020, w: 620, h: 310, rot: -2};
+const SHEET_FRONT = {x: 230, y: 1062, w: 620, h: 272, rot: -2};
 const lineY = (n: number) => SHEET_FRONT.y + 86 + n * ((SHEET_FRONT.h - 120) / 4) + 32;
 const SLOT_AT = 1.0;
 /** the sheet's lines at global frame g: line one burned by the CBD tilt, line two by the orange glove, line three pencilled */
@@ -637,8 +638,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const grip = ease(f, 0, 8);
   const shake = Math.sin(f * 1.7) * 2.4 * (1 - ease(f, 30, 40));
   const slide = easeIO(f, b(34) + 22, 60);
-  const lens: Pose = {x: 500, y: 640, s: 0.92, rot: shake};
-  const sx = 250, sy = lerp(900, 1130, slide);
+  const lens: Pose = {x: 500, y: 790, s: 0.92, rot: shake};
+  const sx = 250, sy = lerp(1020, 1160, slide);
   const pin = ease(f, b(35), 16);
   const lines = sheetLines(g, bt);
   return (
@@ -648,7 +649,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
           sheet={{x: sx, y: sy, w: 580, h: 330, rot: lerp(-1, 7, slide), lines, hang: slide * 0.4}} spot={{x: 330 + 12 * Math.sin(f * 2.1), y: 960 + 14 * Math.cos(f * 1.7)}} beam={0.7} jitter={1}
           under={<g><rect data-band="ok" x={-40} y={1250} width={1160} height={720} fill={C.water} /><rect x={-40} y={1236} width={1160} height={20} fill={C.pierDk} />{Array.from({length: 8}, (_, i) => <rect key={i} x={40 + i * 140} y={1300 + (i % 3) * 40} width={80} height={4} fill={C.peach} opacity={0.35} />)}</g>} />
         <Pins x={800} y={560} w={230} h={170} dim={pin} />
-        <Plate text="PUSH IN TOO EARLY · DEVELOPERS MAY SKIP ALASKA" y={502} size={22} tone="paper" p={pin} drop={30} />
+        <Plate text="PUSH IN TOO EARLY · DEVELOPERS MAY SKIP ALASKA" y={496} size={22} tone="paper" p={pin} drop={30} />
       </SVG>
     </Frame>
   );
@@ -751,7 +752,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const g = f + from;
   const pour = b(20);
   const zoom = lerp(1.5, 0.5, easeIO(f, pour + 22, 90));
-  const crane = easeIO(f, b(22) - 12, 52);
+  const crane = easeIO(f, b(22) - 6, 26);
   const cards = Array.from({length: 120}, (_, i) => i);
   const rows = [0, 1, 2, 3, 4];
   const tilt = ease(f, b(22) + 2, 22);
@@ -760,6 +761,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.03} day={0.3}>
       <SVG>
+        <g style={{filter: `blur(${9 * Math.sin(Math.PI * crane)}px)`}}>
         <g transform={`translate(0,${-1250 * crane})`}>
           <SeaOnly f={f} />
           <g transform={`translate(540,1060) scale(${zoom}) translate(-540,-1060)`}>
@@ -789,6 +791,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         </g>
         <g transform={`translate(0,${1250 * (1 - crane)})`}>
           <PierShot f={g} lens={lens} hands={filers([1, 1, 1])} sheet={{...SHEET_FRONT, lines: sheetLines(g, bt)}} spot={{x: spotX, y: lineY(1) - 10}} beam={tilt > 0.1 ? 1 : 0} />
+        </g>
         </g>
         {crane < 0.4 && <Plate text="" displayLines={['1,300+ ACTIVE PERMITS NOT ASSESSED', 'THE ALLIANCE SAYS']} y={520} size={27} tone="paper" p={ease(f, pour + 8, 12) * (1 - ease(f, b(21) - 6, 8))} drop={40} />}
         {crane < 0.4 && <Plate text="" displayLines={['NEARLY $10 MILLION IN REGIONAL REVENUE', "THE ALLIANCE'S MOTION"]} y={660} size={26} tone="ink" p={ease(f, b(21), 12)} drop={40} />}
@@ -836,7 +839,9 @@ const Table: React.FC<{y?: number}> = ({y = 1000}) => (
   <g>
     <ellipse cx={540} cy={y + 340} rx={500} ry={22} fill="#000" opacity={0.3} />
     <path d={`M-20,${y} H1100 V${y + 40} H-20 Z`} fill="url(#crTable)" stroke={C.ink} strokeWidth={6} />
-    <rect x={-20} y={y + 40} width={1120} height={320} fill="#5A402A" stroke={C.ink} strokeWidth={6} />
+    <rect data-band="ok" x={-20} y={y + 40} width={1120} height={1000} fill="#5A402A" stroke={C.ink} strokeWidth={6} />
+    {Array.from({length: 7}, (_, i) => <path key={`g${i}`} d={`M-10,${y + 140 + i * 70} H1090`} stroke="#3A2A1B" strokeWidth={3} opacity={0.35} />)}
+    <ellipse cx={540} cy={y + 190} rx={460} ry={60} fill="#FFD9A8" opacity={0.1} />
     <path d={`M-10,${y + 6} H1090`} stroke="#B58F5C" strokeWidth={5} opacity={0.7} />
     {Array.from({length: 10}, (_, i) => <path key={i} d={`M${rnd(i) * 1000},${y + 12} l${60 + rnd(i + 3) * 90},${rnd(i + 5) * 6}`} stroke="#3C2A1B" strokeWidth={2.5} opacity={0.35} />)}
   </g>
@@ -981,7 +986,8 @@ const S13: React.FC<SceneProps> = ({p}) => {
             <g>
               <rect x={-R0} y={-R0} width={2 * R0} height={2 * R0} fill="#4D5232" />
               <polygon points={`-60,-${R0} 60,-${R0} 140,${R0} -140,${R0}`} fill={C.peach} opacity={0.22} />
-              <g transform="translate(-30,30) scale(1.6)"><Beluga x={0} y={0} f={f} facing={1} mode="cruise" swim={0.4} /></g>
+              <g transform={`translate(-20,40) rotate(${-6 + 4 * Math.sin(f / 15)})`}><FishSil x={0} y={0} s={2.6} rot={0} /></g>
+              <g transform="translate(-150,150)"><FleetBoat x={0} y={0} s={0.4} f={f} /></g>
               <g transform={`translate(110,-140) rotate(${10 * Math.sin(f / 18)})`}><PermitCard x={0} y={0} s={1.5} /></g>
               <g transform={`translate(${60 + 20 * q},${-40 - 160 * q})`} opacity={q}>
                 <circle r={40} fill={C.phoneGlow} fillOpacity={0.35} stroke={C.phoneGlow} strokeWidth={5} />
@@ -1019,10 +1025,6 @@ const S14: React.FC<SceneProps> = ({p}) => {
           <text x={0} y={-8} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={C.ink}>MEETING</text>
           <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={C.ink}>SCHEDULED</text>
         </g>
-        <g transform={`translate(${lerp(1320, 920, ease(f, 4, 30))},1180) rotate(180) scale(0.7)`} opacity={f < b(39) - 6 ? 1 : 1 - ease(f, b(39) - 6, 8)}>
-          <path d="M630,-56 L2000,-56 L2000,64 L630,64 Z" fill={C.cuffBor} stroke={C.ink} strokeWidth={5} />
-          <GripHand x={0} y={0} reach={1} scale={1} cuffColor={C.cuffBor} />
-        </g>
         <Plate text="" displayLines={['DEEPGREEN REACHED OUT', 'MEETING SCHEDULED · PER ADN']} y={520} size={28} tone="paper" p={ease(f, b(39) + 4, 12)} drop={40} />
       </SVG>
     </Frame>
@@ -1051,7 +1053,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(540,0)"><path d="M0,0 V480" stroke={C.ink} strokeWidth={6} opacity={0.0} /></g>
         <rect x={110} y={1100} width={820} height={230} fill="#E4DFCD" stroke={C.ink} strokeWidth={5} />
         {tones.map((tn, i) => {
-          const t0 = b(43) + i * 18;
+          const t0 = b(43) - 8 + i * 9;
           const k = f < t0 ? 0 : spring(f, t0, 16);
           const yy = lerp(-300, 1220 - i * 32, clamp01(k)) + (f >= t0 && f < t0 + 18 ? 0 : 0);
           return (
@@ -1066,7 +1068,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
           <rect x={-120} y={0} width={240} height={50} fill={C.paper} stroke={C.ink} strokeWidth={4} />
           <text x={0} y={33} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={C.ink}>FERCONLINE.FERC.GOV</text>
         </g>
-        <Plate text="" displayLines={['DUE NOVEMBER 2ND', '5 PM EASTERN']} y={830} size={34} tone="stamp" p={ease(f, 8, 12)} drop={40} />
+        <Plate text="" displayLines={['DUE NOVEMBER 2ND', '5 PM EASTERN']} y={870} size={34} tone="stamp" p={ease(f, 0, 6)} drop={20} />
       </SVG>
     </Frame>
   );
