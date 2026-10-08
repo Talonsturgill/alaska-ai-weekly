@@ -368,3 +368,16 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **Mix, evidence and caption data come from the board.** Derive sfx kinds, moves and caption splits
   from `storyboard.json` before the first render, and re-run `dispatch_mix.py` after any
   `build_scenes.py` change. Editing sources during a render invalidates its provenance receipt.
+
+## 11. Things the 2026-10-08 panel found that were knowable in advance
+
+- **A beat's descriptive prop is a claim about the record.** "Did DeepGreen call the borough back?" and a desk phone beside MEETING SCHEDULED stated a medium (a phone call) that ADN never reported, and c15's own `requires` said to draw a chair and a calendar. The editor caught it on the first graded cut. Before drawing a prop that carries a relationship (a phone, a letter, a handshake), read the claim's `requires` for the medium.
+- **The word "permit" is a claim.** FERC accepted an APPLICATION for a preliminary permit, and no permit has issued. "It's a permit to study" and a plate reading STUDY PERMIT said otherwise. Write APPLICATION FOR, or IF ISSUED, on every surface, VO and post included.
+- **A banned phrase in the caption rubric binds the VO and the plates too.** "Disrupt" is on the brand's banned list and ran in the VO, a plate and the post until the editor named it. Grep the VO script, claims on_screen strings and post against `config/brand.yaml` banned phrases BEFORE synth.
+- **Two parties' arguments are never drawn with one party's animal.** The fishery's case was drawn over a beluga, which is CBD's claim (c9). Put the fishery's picture on salmon, a boat and permit cards.
+- **A plate must be opaque before its line is spoken.** The deadline plate was mid fade-in behind the wall clock when "Filings are due" played, so the film's most important fact was hard to read. Fade in over 6 frames at most and keep the plate above every prop in draw order.
+- **A stack that arrives one folder at a time reads as one filer.** Three motions were drawn as one CBD folder first. Bring all of a group in together when the line is plural.
+- **Arms leave along the way they came.** `translate(-dist)` in GripHand space moved withdrawing hands THROUGH the handle and parked 120px sleeves across the final frame. A sleeve extends along +x of its hand frame, so retreat is `translate(+dist)` and `dist` must exceed the frame.
+- **A lens covers its own sheet.** The yellow ring's bottom edge ran over the sheet header in every pier shot. Set the sheet's top below lens bottom plus the ring width before placing text.
+- **Caption cards.** A 180 character sentence has no two-way split under the limit, so the old splitter drew it as one four-row card at phone-unreadable size. `_cards_from_words` now splits recursively, and a card never ends on a number word or a dangling quantity.
+- **Held beats under 2 percent change read as a still with a caption.** Boats, empty chairs, a phone, a pencil and the closing lens all measured under 2. Every hold needs one continuous idle cycle (a lamp sway, a boat bob, a lens bob of 3 px, a sleeve breath).

@@ -2289,3 +2289,40 @@ dispatch_history:
       window, pale overcast slate and river gravel
     metaphor: a dented fortune ball asked to predict a decade, answering with a labeled
       blank instead of a made-up number
+- date: '2026-10-08'
+  topic: DeepGreen Cook Inlet subsea data center, FERC preliminary permit, intervention
+    deadline
+  slug: dispatch-2026-10-08
+  key_entities:
+  - DeepGreen
+  - FERC
+  - Kenai Peninsula Borough
+  - Peter Micciche
+  - Center for Biological Diversity
+  - Alaska Energy Authority
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: mixed
+  angle: A FERC study permit decides which questions a project must answer, so the
+    November 2nd deadline is where Cook Inlet's fishery either helps write the study
+    or gets studied.
+  hero: StudyLens
+  cast:
+  - StudyLens
+  - GripHand
+  - PierDawn
+  - StudySheet
+  - BurnBeam
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: instrument-as-subject
+    layout: single-object-void
+    register: naturalistic-scene
+    camera_strategy: dolly-through
+    light_story: dawn-backlight
+    palette: khaki-olive glacial silt water, driftwood umber pier planks, harbor-buoy
+      yellow lens enamel, cool violet stamp ink, cold white paper, dawn peach backlight
+    metaphor: a hand lens that is a burning glass, focusing the dawn on a blank study
+      sheet so that whoever tilts it writes their question into the study

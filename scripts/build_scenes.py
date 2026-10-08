@@ -347,7 +347,7 @@ def _merge_by_sense(caps, max_chars=68):
 
 _SPLIT_BAD_END = {"a", "an", "the", "and", "or", "of", "to", "in", "on", "at", "for", "from", "with", "by",
                   "as", "that", "its", "his", "her", "their", "is", "was", "are", "who", "whether", "more",
-                  "than", "conservative", "competing", "says", "discount", "include", "lists"}
+                  "than", "conservative", "competing", "says", "discount", "include", "lists", "up", "about", "across", "it", "puts", "sixty-six", "hundred", "thirteen", "nearly", "ten", "million", "never"}
 _SPLIT_GOOD_START = {"and", "but", "so", "because", "while", "whether", "which", "who", "a", "with", "in",
                      "on", "at", "for", "from", "are", "more", "still"}
 
@@ -400,34 +400,44 @@ def _cards_from_words(caps, max_chars=68):
                 units.append((seg, cur)); cur = []
         if cur:
             units.append((seg, cur))
-    for seg, ws in units:
+    def split_unit(ws, depth=0):
+        """One card if it fits, else the best clause split, recursively (2026-10-08: a 180
+        character sentence has no two-way split with both halves under the limit, and the old
+        fall-through drew the whole sentence as ONE card of four tiny rows)."""
         full = show(ws)
         if len(full) <= max_chars and not any(f in full.lower() for f in force):
-            out.append({"text": full, "start": ws[0]["s"], "end": ws[-1]["e"], "seg": seg})
-            continue
+            return [ws]
         best, cost = None, 1e9
-        for k in range(2, len(ws) - 1):
-            a, b = show(ws[:k]), show(ws[k:])
-            _forced = any(a.lower().endswith(f) for f in force)
-            if (not _forced and (len(a) > max_chars or len(b) > max_chars)) or inside_fix(ws, k):
-                continue
-            last = ws[k - 1]["w"].lower().strip(",.?!")
-            c = abs(len(a) - len(b)) * 0.5
-            if ws[k - 1]["w"].endswith((",", ".", "?")):
-                c -= 40
-            if ws[k]["w"].lower() in _SPLIT_GOOD_START:
-                c -= 12
-            if last in _SPLIT_BAD_END:
-                c += 60
-            if any(show(ws[:k]).lower().endswith(f) for f in force):
-                c -= 500
-            if c < cost:
-                best, cost = k, c
-        if best is None:
-            out.append({"text": full, "start": ws[0]["s"], "end": ws[-1]["e"], "seg": seg})
-            continue
-        out.append({"text": show(ws[:best]), "start": ws[0]["s"], "end": ws[best - 1]["e"], "seg": seg})
-        out.append({"text": show(ws[best:]), "start": ws[best]["s"], "end": ws[-1]["e"], "seg": seg})
+        for strict in (True, False):
+            for k in range(2, len(ws) - 1):
+                a, b = show(ws[:k]), show(ws[k:])
+                _forced = any(a.lower().endswith(f) for f in force)
+                if inside_fix(ws, k):
+                    continue
+                if strict and not _forced and (len(a) > max_chars or len(b) > max_chars):
+                    continue
+                last = ws[k - 1]["w"].lower().strip(",.?!")
+                c = abs(len(a) - len(b)) * 0.5
+                if not strict:
+                    c += 0.8 * (max(0, len(a) - max_chars) + max(0, len(b) - max_chars))
+                if ws[k - 1]["w"].endswith((",", ".", "?")):
+                    c -= 40
+                if ws[k]["w"].lower() in _SPLIT_GOOD_START:
+                    c -= 12
+                if last in _SPLIT_BAD_END:
+                    c += 60
+                if any(show(ws[:k]).lower().endswith(f) for f in force):
+                    c -= 500
+                if c < cost:
+                    best, cost = k, c
+            if best is not None:
+                break
+        if best is None or depth > 4:
+            return [ws]
+        return split_unit(ws[:best], depth + 1) + split_unit(ws[best:], depth + 1)
+    for seg, ws in units:
+        for piece in split_unit(ws):
+            out.append({"text": show(piece), "start": piece[0]["s"], "end": piece[-1]["e"], "seg": seg})
     return out
 
 def _rebalance_cues(caps):

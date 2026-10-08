@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-10-07"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-10-08"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -99,9 +99,37 @@ _TEXTURE = {"whoosh", "paper", "chain", "creak", "riser"}
 # 2026-10-06 A Desk That Never Sleeps: the board's `sfx` field carries a DESCRIPTIVE name per beat ("ding-ring",
 # "silence-pop-pop"), which is for the film's author. The bank only knows its own 17 kinds, so this run maps each
 # beat id to ONE bank kind, chosen so no two adjacent beats share a spectral family and no kind carries the film.
-_KIND_BY_BEAT = {
-    1: "boom", 2: "clank", 3: "snap", 4: "paper", 5: "clank", 6: "tick", 7: "stamp", 8: "chime", 9: "whoosh", 10: "pop", 11: "tick", 12: "snap", 13: "chain", 14: "paw", 15: "pop", 16: "clank", 17: "stamp", 18: "ding", 19: "creak", 20: "pop", 21: "thud", 22: "snap", 23: "paper", 24: "tick", 25: "whoosh", 26: "paper", 27: "clank", 28: "creak", 29: "boom", 30: "tick", 31: "whoosh", 32: "paper", 33: "chime", 34: "creak", 35: "clank", 36: "paper", 37: "whoosh", 38: "thud", 39: "riser", 40: "pop", 41: "paw", 42: "paper", 43: "tick", 44: "chime", 45: "chain", 46: "ding", 47: "stamp",
-}
+_FAM = {"thud": "sub", "stamp": "sub", "boom": "sub", "paw": "sub", "clank": "metal", "chain": "metal", "klaxon": "metal",
+        "ding": "bell", "chime": "bell", "tick": "click", "pop": "blip", "snap": "pluck", "whoosh": "air", "riser": "air",
+        "paper": "texture", "creak": "texture", "caw": "bird"}
+# 2026-10-08 Who Writes the Study: each beat's own descriptive sfx name maps to ONE bank kind, then adjacent beats that
+# land in the same spectral family are walked to a sibling kind so no family repeats back to back.
+_BY_NAME = {"whoosh": "whoosh", "sizzle": "paper", "snap": "snap", "slide": "creak", "thunk": "stamp", "whirr": "whoosh",
+            "click": "tick", "blip": "pop", "riser": "whoosh", "clunk": "clank", "clip": "snap", "hum": "creak", "thump": "paw",
+            "splash": "whoosh", "cascade": "chain", "page": "paper", "scratch": "paper", "sonar": "ding", "hit": "boom",
+            "fade": "creak", "bloop": "chime", "silence": "creak", "tick": "tick", "stamp": "stamp", "creak": "creak"}
+_ALT = {"sub": ["thud", "stamp", "boom", "paw"], "metal": ["clank", "chain"], "bell": ["chime", "ding"], "click": ["tick"], "blip": ["pop"],
+        "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"], "bird": ["caw"]}
+_CYCLE = {"slide": ["creak", "paper", "whoosh"], "hum": ["creak", "chain", "ding", "clank"], "sizzle": ["paper", "snap", "tick"],
+          "scratch": ["paper", "tick"], "fade": ["creak", "chime"], "silence": ["creak"], "splash": ["whoosh", "caw", "pop"]}
+_seen = {}
+_KIND_BY_BEAT = {}
+_prev_fam = None
+_used = {}
+for _b in _board["beats"]:
+    _k = _BY_NAME.get(str(_b["sfx"]).split("-")[0], "tick")
+    _nm = str(_b["sfx"]).split("-")[0]
+    if _nm in _CYCLE:
+        _k = _CYCLE[_nm][_seen.get(_nm, 0) % len(_CYCLE[_nm])]
+        _seen[_nm] = _seen.get(_nm, 0) + 1
+    if _b["id"] == 41:
+        _k = "riser"          # the ONE riser of the film: the cost of silence
+    if _FAM[_k] == _prev_fam:
+        _opts = [x for fam, xs in _ALT.items() if fam != _prev_fam for x in xs]
+        _k = sorted(_opts, key=lambda x: (_used.get(x, 0), x))[0]
+    _used[_k] = _used.get(_k, 0) + 1
+    _KIND_BY_BEAT[_b["id"]] = _k
+    _prev_fam = _FAM[_k]
 _PERFORMANCE = [
     (_KIND_BY_BEAT[b["id"]], "hero" if _KIND_BY_BEAT[b["id"]] in _HERO else "texture" if _KIND_BY_BEAT[b["id"]] in _TEXTURE else "standard", 0.0, b["shows"][:70])
     for b in _board["beats"]
@@ -155,28 +183,38 @@ def event_timing(index, t):
 #
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
+_W = json.load(open(os.path.join(AUD, "words.json")))
+_W = _W["words"] if isinstance(_W, dict) else _W
+def _word(w, after=0.0):
+    for x in _W:
+        if re.sub(r"[^a-z0-9']", "", x["w"].lower()) == w.lower() and x["s"] >= after - 0.001:
+            return x["s"]
+    return after
+_T_ONE = _word("One", 108.0)
 BED_ARC = [
-    (L[0], 0.55),           # the overcast, the slam
-    (L[0] + 2.5, 0.80),     # the shake
-    (L[1], 0.66),           # the state Labor Department says
-    (L[2], 0.74),           # the sidebar
-    (28.3, 0.05),           # THE INTERRUPT: silence in the breath so the shake slam lands clean
-    (29.2, 0.74),
-    (L[4], 0.72),           # the named sector
-    (L[5], 0.70),
-    (L[6], 0.62),           # too uncertain, thin
-    (L[7], 0.76),           # which row is the AI row
-    (L[8], 0.58),           # the scary rows
-    (L[9], 0.70),
-    (L[10], 0.44),          # the fair objection, nearly bare
-    (L[11] - 0.4, 0.30),
-    (L[11] + 4.2, 0.62),    # the label lights warm
-    (L[12], 0.52),
-    (L[13], 0.76),          # the AI row is the labeled blank
-    (L[14] - 0.7, 0.04),    # THE PRE-BUTTON DIP
-    (L[14] + 0.1, 0.34),
-    (L[14] + 3.0, 0.58),
-    (VIDEO_SECS - 4.0, 0.46),
+    (L[0], 0.55),            # the pier at dawn, the lens swings in
+    (L[0] + 2.5, 0.78),
+    (L[1], 0.66),            # the desk, the stamp
+    (L[2], 0.74),            # the array, the scale
+    (L[3] - 0.5, 0.50),      # accepted is not approved
+    (L[4], 0.60),            # who puts them in
+    (L[5], 0.76),            # three groups, the hands
+    (L[6], 0.66),
+    (L[7], 0.62),            # the fleet
+    (L[8], 0.52),            # the council table, thin
+    (L[9], 0.46),            # the dotted hand
+    (L[10] - 0.5, 0.05),     # SILENCE: did DeepGreen call the borough back
+    (L[10] + 1.5, 0.30),
+    (L[11], 0.52),           # the best case against, nearly bare
+    (L[12], 0.48),
+    (L[13], 0.60),           # push in too early, the stall
+    (L[14], 0.50),           # the fishery shouldn't be a test subject
+    (L[15], 0.72),           # the second chair, relief
+    (L[16], 0.60),
+    (L[17], 0.74),           # filings are due
+    (_T_ONE - 0.7, 0.04),    # THE PRE-BUTTON DIP
+    (_T_ONE + 0.2, 0.36),
+    (VIDEO_SECS - 3.5, 0.50),
     (VIDEO_SECS - 0.4, 0.0),
 ]
 
@@ -197,7 +235,7 @@ BED_ARC = [
 # October 6th: a trading-post room, stove tick and soft air. The filtered noise stays
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
-AMB_LEVEL = 0.018
+AMB_LEVEL = 0.03
 
 
 def _assert_per_run_data_covers_the_film():
