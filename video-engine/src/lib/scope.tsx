@@ -185,7 +185,7 @@ export const StudyLens: React.FC<{
       <g transform={`rotate(${handleDeg}) translate(${R - 6},0)`}>
         {hands.map((h, i) => {
           const along = 150 + h.at * (HL - 260);
-          const dist = 520 * (1 - Math.max(0, Math.min(1, h.reach)));
+          const dist = 1500 * (1 - Math.max(0, Math.min(1, h.reach)));
           return (
             <g key={i} transform={`translate(${along},0) rotate(${-h.side * armDeg}) translate(${-dist},0)`}
               opacity={h.dotted ? 0.55 : 1}>

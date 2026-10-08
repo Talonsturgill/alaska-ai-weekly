@@ -747,7 +747,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b, from, bt} = p;
   const g = f + from;
   const pour = b(20);
-  const zoom = lerp(1.55, 0.3, easeIO(f, pour + 18, 84));
+  const zoom = lerp(1.5, 0.5, easeIO(f, pour + 22, 90));
   const crane = easeIO(f, b(22) - 12, 52);
   const cards = Array.from({length: 120}, (_, i) => i);
   const rows = [0, 1, 2, 3, 4];
@@ -760,11 +760,16 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(0,${-1250 * crane})`}>
           <SeaOnly f={f} />
           <g transform={`translate(540,1060) scale(${zoom}) translate(-540,-1060)`}>
-            {rows.map((r) => Array.from({length: 7}, (_, i) => {
-              if (r === 2 && i === 3) return null;
-              const bx = 90 + i * 150 + (r % 2) * 70, by = 880 + r * 120;
-              const vis = clamp01((f - pour - 30 - (r * 3 + i)) / 10);
-              return <g key={`${r}${i}`} opacity={vis}><FleetBoat x={bx} y={by} s={0.34} f={f + i * 5} /></g>;
+            {rows.map((r) => Array.from({length: 11}, (_, i) => {
+              if (r === 2 && i === 5) return null;
+              const bx = 540 + (i - 5) * 200 + (r % 2) * 100, by = 760 + r * 120;
+              const vis = clamp01((f - pour - 36 - (r * 4 + Math.abs(i - 5) * 2)) / 10);
+              return (
+                <g key={`${r}${i}`} opacity={vis}>
+                  <FleetBoat x={bx} y={by} s={0.5} f={f + i * 5} />
+                  <PermitCard x={bx - 10} y={by - 36} s={0.5} rot={-6 + i} />
+                </g>
+              );
             }))}
             <FleetBoat x={540} y={1040} s={1.0} f={f} />
             {cards.map((i) => {
@@ -1006,7 +1011,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <Chair x={c2x} y={1010} s={1.1} tone="#2A3E52" />
         <Dust x={c2x} y={1030} t={(f - b(38)) / 22} />
         <Table y={1000} />
-        <DeskPhone x={300} y={990} s={0.7} lit={lit} f={f} />
+        <DeskPhone x={300} y={1000} s={0.8} lit={lit} f={f} />
         <g transform={`translate(${lerp(925, 800, page)},${lerp(520, 1050, page * page)}) rotate(${lerp(0, 8, page)})`} opacity={f < b(39) ? 0 : 1}>
           <rect x={-100} y={-90} width={200} height={180} fill={C.paper} stroke={C.ink} strokeWidth={5} />
           <rect x={-100} y={-90} width={200} height={34} fill={C.stamp} />
