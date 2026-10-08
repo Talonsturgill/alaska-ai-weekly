@@ -216,7 +216,7 @@ const PierShot: React.FC<PierProps> = ({f, view = 'front', lens, handleDeg = 24,
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const swing = ease(f, 0, 30);
-  const lens: Pose = {x: lerp(760, 520, swing), y: lerp(380, 800, swing) + 6 * Math.sin(f / 24), s: 0.8, rot: pend(f, 8, 26, 36, 40) + 3};
+  const lens: Pose = {x: lerp(760, 520, swing), y: lerp(380, 830, swing) + 6 * Math.sin(f / 24), s: 0.8, rot: pend(f, 8, 26, 36, 40) + 3};
   const t2 = b(2);
   const sp = clamp01((f - t2) / 60);
   const spot = {x: lerp(330, 760, easeIO(sp * 1, 0, 1) * 0 + sp) + 28 * Math.sin(f / 6), y: 1190 + 70 * Math.sin(sp * Math.PI * 2.5) + 10 * Math.sin(f / 4)};
@@ -475,7 +475,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <g opacity={bracket}>
           <path d={`M${lerp(540, 150, bracket)},470 H${lerp(540, 930, bracket)} M${lerp(540, 150, bracket)},450 V490 M${lerp(540, 930, bracket)},450 V490`} stroke={C.paper} strokeWidth={6} strokeLinecap="round" />
         </g>
-        <Plate text={`PROPOSED · ${reel} MW`} y={560} size={32} tone="paper" p={ease(f, b(7), 10)} drop={40} />
+        <Plate text="PROPOSED · 100 MW" y={560} size={32} tone="paper" p={ease(f, b(7), 10)} drop={40} />
+        <g opacity={ease(f, b(7), 8) * (reel < 100 ? 1 : 0)}><rect x={440} y={600} width={200} height={50} fill={C.ink} stroke={C.paper} strokeWidth={3} /><text x={540} y={638} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={C.paper}>{reel}</text></g>
         {f >= b(8) && <Plate text="66 HIVES" x={300} y={660} size={32} tone="ink" p={ease(f, b(8), 10)} />}
         {f >= b(9) && <Plate text="UP TO 350 TURBINES" x={680} y={760} size={30} tone="paper" p={ease(f, b(9) + 30, 12)} />}
         {f >= b(10) && <Plate text="ABOUT 3 MILES · NARROWEST POINT OF THE INLET · PER ADN" displayLines={['ABOUT 3 MILES', 'NARROWEST POINT OF THE INLET · PER ADN']} y={1200} size={26} tone="ink" p={ease(f, b(10) + 14, 12)} />}
@@ -485,7 +486,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
 };
 
 // ---- pier shared state: the sheet keeps its lines from shot to shot ---------------------------------------------------
-const LENS_FRONT: Pose = {x: 520, y: 800, s: 0.8, rot: 0};
+const LENS_Y = 830;
+const LENS_FRONT: Pose = {x: 520, y: LENS_Y, s: 0.8, rot: 0};
 const SHEET_FRONT = {x: 250, y: 1030, w: 560, h: 300, rot: -2};
 const lineY = (n: number) => SHEET_FRONT.y + 86 + n * ((SHEET_FRONT.h - 120) / 4) + 32;
 const SLOT_AT = 1.0;
@@ -575,7 +577,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const g = f + from;
   const r: [number, number, number] = [spring(f, b(16) + 2, 22), spring(f, b(16) + 9, 22), spring(f, b(16) + 16, 22)];
   const tilt = ease(f, b(17), 22);
-  const lens: Pose = {x: 520, y: 800, s: 0.8, rot: 11 * tilt + jolt(f, b(16) + 10, 2.2, 16)};
+  const lens: Pose = {x: 520, y: 830, s: 0.8, rot: 11 * tilt + jolt(f, b(16) + 10, 2.2, 16)};
   const spotX = lerp(560, 340 + 150 * clamp01((g - bt(18)) / 45), tilt);
   const spot = {x: spotX, y: lineY(0) - 10};
   const glassK = ease(f, b(17), 20);
@@ -584,8 +586,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <PierShot f={g} lens={lens} hands={filers(r)} sheet={{...SHEET_FRONT, lines: sheetLines(g, bt)}} spot={spot} beam={ease(f, 0, 6)}
           glass={tilt > 0.05 ? <GlassCBD f={f} k={glassK} /> : <GlassInlet f={f} />} />
-        {f < b(18) - 10 && <Plate text="3 MOTIONS TO INTERVENE · PER ADN" y={510} size={27} tone="paper" p={ease(f, b(16) + 10, 10)} drop={40} />}
-        {f >= b(18) - 6 && <Plate text="" displayLines={['CBD MOTION', 'NOISE COULD INTERFERE WITH BELUGA FEEDING']} y={500} size={26} tone="paper" p={ease(f, b(18) - 6, 12)} drop={40} />}
+        {f < b(18) - 10 && <Plate text="3 MOTIONS TO INTERVENE · PER ADN" y={500} size={27} tone="paper" p={ease(f, b(16) + 10, 10)} drop={40} />}
+        {f >= b(18) - 6 &&  <Plate text="" displayLines={['CBD MOTION', 'NOISE COULD INTERFERE WITH BELUGA FEEDING']} y={592} size={24} tone="paper" p={ease(f, b(18) - 6, 12)} drop={40} />}
       </SVG>
     </Frame>
   );
@@ -610,7 +612,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const t0 = b(26) + 8;
   const rch = f < t0 ? 0 : f < t0 + 40 ? reach(f - t0) : f < t0 + 80 ? reach(f - t0 - 40) : f < t0 + 120 ? reach(f - t0 - 80) : 0;
   const snap = ease(f, b(27), 10) * (1 - ease(f, b(27) + 16, 10));
-  const lens: Pose = {x: 520, y: 800, s: 0.8, rot: 3 * Math.sin(f / 27)};
+  const lens: Pose = {x: 520, y: 860, s: 0.8, rot: 3 * Math.sin(f / 27)};
   const hands: LensHandSpec[] = [...filers([1, 1, 1]), {kind: 'agency', at: 0.9, side: 1, reach: Math.max(rch, 0.45 * snap), dotted: true}];
   const chip = ease(f, b(28), 14);
   return (
@@ -620,8 +622,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
           under={<AEAPhone x={170} y={1290} s={0.8} lit={0} />}>
           <EmptySlot {...handleAt(lens, 24, SLOT_AT)} rot={24 + 90} glow={snap} f={f} />
         </PierShot>
-        {f < b(28) - 4 && <Plate text="" displayLines={['STATE ENERGY AUTHORITY', 'SAID IT WOULD INTERVENE']} y={500} size={26} tone="paper" p={ease(f, b(26), 12)} drop={40} />}
-        {f >= b(28) - 4 && <Plate text="" displayLines={['AEA · NO CONTACT FROM DEEPGREEN', 'AUGUST · PER ADN']} y={500} size={25} tone="ink" p={chip} drop={40} />}
+        {f < b(28) - 4 && <Plate text="STATE ENERGY AUTHORITY · SAID IT WOULD INTERVENE" y={500} size={23} tone="paper" p={ease(f, b(26), 12)} drop={40} />}
+        {f >= b(28) - 4 && <Plate text="AEA · NO CONTACT FROM DEEPGREEN · AUGUST · PER ADN" y={560} size={22} tone="ink" p={chip} drop={40} />}
       </SVG>
     </Frame>
   );
@@ -657,7 +659,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
   const g = f + from;
   const pull = easeIO(f, b(40) + 4, 50);
   const sx = 250, sy = lerp(1130, 1030, pull);
-  const lens: Pose = {x: 520, y: 800, s: 0.8, rot: 2 * Math.sin(f / 31)};
+  const lens: Pose = {x: 520, y: 830, s: 0.8, rot: 2 * Math.sin(f / 31)};
   const glow = 0.5 + 0.5 * Math.sin(f / 9);
   const hands: LensHandSpec[] = [...filers([1, 1, 1]), {kind: 'agency', at: 0.9, side: 1, reach: 0.5 + 0.08 * Math.sin(f / 13), dotted: true}];
   const gloveX = sx - 6 - 40 * (1 - pull);
@@ -686,7 +688,7 @@ const S17: React.FC<SceneProps> = ({p}) => {
   const back = easeIO(f, dur - 62, 56);
   const wedge = turn * (1 - back);
   const ring = lerp(lerp(1, 0.6, turn), 1, back);
-  const lens: Pose = {x: lerp(lerp(520, 470, turn), 520, back), y: lerp(lerp(800, 740, turn), 800, back), s: 0.8, rot: lerp(lerp(0, -14, turn), 3, back)};
+  const lens: Pose = {x: lerp(lerp(520, 470, turn), 520, back), y: lerp(lerp(830, 770, turn), 830, back), s: 0.8, rot: lerp(lerp(0, -14, turn), 3, back)};
   const settle = ease(f, b(46), 20);
   const slideT = clamp01((f - (dur - 62)) / 60);
   const lines = sheetLines(g, bt);
@@ -752,7 +754,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const cards = Array.from({length: 120}, (_, i) => i);
   const rows = [0, 1, 2, 3, 4];
   const tilt = ease(f, b(22) + 2, 22);
-  const lens: Pose = {x: 520, y: 800, s: 0.8, rot: lerp(11, -9, tilt)};
+  const lens: Pose = {x: 520, y: 830, s: 0.8, rot: lerp(11, -9, tilt)};
   const spotX = 340 + 140 * clamp01((g - bt(22) - 8) / 45);
   return (
     <Frame p={p} z0={1.0} z1={1.03} day={0.3}>
@@ -788,7 +790,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <PierShot f={g} lens={lens} hands={filers([1, 1, 1])} sheet={{...SHEET_FRONT, lines: sheetLines(g, bt)}} spot={{x: spotX, y: lineY(1) - 10}} beam={tilt > 0.1 ? 1 : 0} />
         </g>
         {crane < 0.4 && <Plate text="" displayLines={['1,300+ ACTIVE PERMITS NOT ASSESSED', 'THE ALLIANCE SAYS']} y={520} size={27} tone="paper" p={ease(f, pour + 8, 12) * (1 - ease(f, b(21) - 6, 8))} drop={40} />}
-        {crane < 0.4 && <Plate text="" displayLines={['NEARLY $10 MILLION IN REGIONAL REVENUE', "THE ALLIANCE'S MOTION"]} y={520} size={26} tone="ink" p={ease(f, b(21), 12)} drop={40} />}
+        {crane < 0.4 && <Plate text="" displayLines={['NEARLY $10 MILLION IN REGIONAL REVENUE', "THE ALLIANCE'S MOTION"]} y={660} size={26} tone="ink" p={ease(f, b(21), 12)} drop={40} />}
       </SVG>
     </Frame>
   );
