@@ -394,7 +394,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <circle cx={800} cy={600 + dustY} r={4} fill="#E3D9C0" opacity={0.7} />
         <circle cx={850} cy={680 + ((dustY + 40) % 120)} r={3} fill="#E3D9C0" opacity={0.6} />
         <Plate text="ACCEPTED NOT APPROVED" y={540} size={32} tone="paper" p={ease(f, 8, 12)} drop={50} />
-        <Plate text="STUDY PERMIT · NO CONSTRUCTION AUTHORITY" displayLines={['STUDY PERMIT', 'NO CONSTRUCTION AUTHORITY']} y={760} size={30} tone="stamp" p={ease(f, b(12) + 14, 12)} drop={40} />
+        <Plate text="APPLICATION FOR A STUDY PERMIT · NO CONSTRUCTION AUTHORITY" displayLines={['APPLICATION FOR A STUDY PERMIT', 'NO CONSTRUCTION AUTHORITY']} y={760} size={30} tone="stamp" p={ease(f, b(12) + 14, 12)} drop={40} />
       </SVG>
     </Frame>
   );
@@ -585,7 +585,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <PierShot f={g} lens={lens} hands={filers(r)} sheet={{...SHEET_FRONT, lines: sheetLines(g, bt)}} spot={spot} beam={ease(f, 0, 6)}
           glass={tilt > 0.05 ? <GlassCBD f={f} k={glassK} /> : <GlassInlet f={f} />} />
         {f < b(18) - 10 && <Plate text="3 MOTIONS TO INTERVENE · PER ADN" y={510} size={27} tone="paper" p={ease(f, b(16) + 10, 10)} drop={40} />}
-        {f >= b(18) - 6 && <Plate text="" displayLines={['CBD MOTION', 'NOISE COULD DISRUPT BELUGA FEEDING']} y={500} size={26} tone="paper" p={ease(f, b(18) - 6, 12)} drop={40} />}
+        {f >= b(18) - 6 && <Plate text="" displayLines={['CBD MOTION', 'NOISE COULD INTERFERE WITH BELUGA FEEDING']} y={500} size={26} tone="paper" p={ease(f, b(18) - 6, 12)} drop={40} />}
       </SVG>
     </Frame>
   );
@@ -681,13 +681,13 @@ const S15: React.FC<SceneProps> = ({p}) => {
 const S17: React.FC<SceneProps> = ({p}) => {
   const {f, b, from, bt, dur} = p;
   const g = f + from;
-  const away = ease(f, b(43) + 24, 20);
-  const turn = easeIO(f, b(44), 26);
+  const away = ease(f, b(44) + 24, 20);
+  const turn = easeIO(f, b(45), 26);
   const back = easeIO(f, dur - 62, 56);
   const wedge = turn * (1 - back);
   const ring = lerp(lerp(1, 0.6, turn), 1, back);
   const lens: Pose = {x: lerp(lerp(520, 470, turn), 520, back), y: lerp(lerp(800, 740, turn), 800, back), s: 0.8, rot: lerp(lerp(0, -14, turn), 3, back)};
-  const settle = ease(f, b(45), 20);
+  const settle = ease(f, b(46), 20);
   const slideT = clamp01((f - (dur - 62)) / 60);
   const lines = sheetLines(g, bt);
   const sheetSkew = (1 - back) * (0.4 + 0.6 * turn);
@@ -1033,8 +1033,8 @@ const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const tones = [C.cuffCbd, C.glove, C.cuffBor];
   const tabs = ['CBD', 'ALLIANCE', 'BOROUGH'];
-  const minute = lerp(-90, 270, ease(f, b(42), 8)) ;
-  const tag = f < b(42) ? 0 : 1;
+  const minute = lerp(-90, 270, ease(f, b(43), 8)) ;
+  const tag = f < b(43) ? 0 : 1;
   return (
     <Frame p={p} z0={1.04} z1={1.0} dx0={-14} dx1={14} day={0.3}>
       <SVG>
@@ -1050,7 +1050,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(540,0)"><path d="M0,0 V480" stroke={C.ink} strokeWidth={6} opacity={0.0} /></g>
         <rect x={110} y={1100} width={820} height={230} fill="#E4DFCD" stroke={C.ink} strokeWidth={5} />
         {tones.map((tn, i) => {
-          const t0 = b(41) + i * 18;
+          const t0 = b(42) + i * 18;
           const k = f < t0 ? 0 : spring(f, t0, 16);
           const yy = lerp(-300, 1220 - i * 32, clamp01(k)) + (f >= t0 && f < t0 + 18 ? 0 : 0);
           return (
