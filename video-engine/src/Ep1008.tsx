@@ -217,11 +217,11 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const swing = ease(f, 0, 30);
   const lens: Pose = {x: lerp(760, 520, swing), y: lerp(380, 830, swing) + 6 * Math.sin(f / 24), s: 0.8, rot: pend(f, 8, 26, 36, 40) + 3};
-  const t2 = b(2);
+  const t2 = b(3);
   const sp = clamp01((f - t2) / 60);
   const spot = {x: lerp(330, 760, easeIO(sp * 1, 0, 1) * 0 + sp) + 28 * Math.sin(f / 6), y: 1190 + 70 * Math.sin(sp * Math.PI * 2.5) + 10 * Math.sin(f / 4)};
   const beam = ease(f, 18, 10);
-  const plate = ease(f, b(3), 12);
+  const plate = ease(f, b(2), 12);
   return (
     <Frame p={p} z0={1.03} z1={1.0}>
       <SVG>
@@ -301,7 +301,7 @@ const Folder: React.FC<{x: number; y: number; s?: number; rot?: number; tab?: st
       </g>
     )}
     {permit > 0 && (
-      <g transform={`translate(${lerp(420, 40, permit)},${lerp(-50, 56, permit)}) rotate(${lerp(18, -3, permit)})`}>
+      <g transform={`translate(${lerp(420, 150, permit)},${lerp(-50, 118, permit)}) rotate(${lerp(18, -2, permit)}) scale(0.82)`}>
         <rect x={-150} y={-62} width={300} height={124} fill={C.paper} stroke={C.ink} strokeWidth={5} />
         <rect x={-150} y={-62} width={300} height={22} fill={C.stamp} />
         <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={46} letterSpacing={2} fill={C.ink}>STUDY</text>
@@ -479,7 +479,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <g opacity={ease(f, b(7), 8) * (reel < 100 ? 1 : 0)}><rect x={440} y={600} width={200} height={50} fill={C.ink} stroke={C.paper} strokeWidth={3} /><text x={540} y={638} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={C.paper}>{reel}</text></g>
         {f >= b(8) && <Plate text="66 HIVES" x={300} y={660} size={32} tone="ink" p={ease(f, b(8), 10)} />}
         {f >= b(9) && <Plate text="UP TO 350 TURBINES" x={680} y={760} size={30} tone="paper" p={ease(f, b(9) + 30, 12)} />}
-        {f >= b(10) && <Plate text="ABOUT 3 MILES · NARROWEST POINT OF THE INLET · PER ADN" displayLines={['ABOUT 3 MILES', 'NARROWEST POINT OF THE INLET · PER ADN']} y={1200} size={26} tone="ink" p={ease(f, b(10) + 14, 12)} />}
+        {f >= b(10) && <Plate text="ABOUT 3 MILES · NARROWEST POINT OF THE INLET · PER ADN" displayLines={['ABOUT 3 MILES', 'NARROWEST POINT OF THE INLET · PER ADN']} y={940} size={26} tone="ink" p={ease(f, b(10) + 14, 12)} />}
       </SVG>
     </Frame>
   );
@@ -488,7 +488,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
 // ---- pier shared state: the sheet keeps its lines from shot to shot ---------------------------------------------------
 const LENS_Y = 830;
 const LENS_FRONT: Pose = {x: 520, y: LENS_Y, s: 0.8, rot: 0};
-const SHEET_FRONT = {x: 250, y: 1030, w: 560, h: 300, rot: -2};
+const SHEET_FRONT = {x: 230, y: 1020, w: 620, h: 310, rot: -2};
 const lineY = (n: number) => SHEET_FRONT.y + 86 + n * ((SHEET_FRONT.h - 120) / 4) + 32;
 const SLOT_AT = 1.0;
 /** the sheet's lines at global frame g: line one burned by the CBD tilt, line two by the orange glove, line three pencilled */
@@ -521,14 +521,15 @@ const GlassCBD: React.FC<{f: number; k: number}> = ({f, k}) => (
   </g>
 );
 
-const AEAPhone: React.FC<{x: number; y: number; s?: number; lit?: number}> = ({x, y, s = 1, lit = 0}) => (
+const AEATray: React.FC<{x: number; y: number; s?: number; f?: number}> = ({x, y, s = 1, f = 0}) => (
   <g transform={`translate(${x},${y}) scale(${s})`}>
-    <ellipse cx={0} cy={60} rx={118} ry={12} fill="#000" opacity={0.28} />
-    <path d="M-110,40 Q-110,-30 -40,-34 H40 Q110,-30 110,40 Z" fill={lit > 0 ? '#58666C' : C.deskShade} stroke={C.ink} strokeWidth={6} />
-    <rect x={-86} y={-24} width={172} height={26} rx={12} fill={lit > 0 ? C.phoneGlow : '#1E282D'} opacity={lit > 0 ? 0.9 : 1} />
-    {[-50, -20, 10, 40].map((px, i) => <circle key={i} cx={px} cy={20} r={8} fill="#8A969B" stroke={C.ink} strokeWidth={3} />)}
-    <path d="M-100,-44 Q0,-84 100,-44" fill="none" stroke={C.ink} strokeWidth={14} strokeLinecap="round" />
-    <path d="M-100,-44 Q0,-84 100,-44" fill="none" stroke={lit > 0 ? '#58666C' : '#4A5A61'} strokeWidth={7} strokeLinecap="round" />
+    <ellipse cx={0} cy={58} rx={140} ry={13} fill="#000" opacity={0.28} />
+    <path d="M-124,30 L-104,-26 H104 L124,30 V54 H-124 Z" fill={C.deskShade} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M-100,-14 H100 L112,24 H-112 Z" fill="#1E2A30" stroke={C.ink} strokeWidth={4} />
+    <path d="M-96,-10 H96" stroke="#7E919A" strokeWidth={4} opacity={0.5} />
+    <path d="M-70,-26 V-62 H70 V-26" fill="none" stroke={C.ink} strokeWidth={6} />
+    <rect x={-44} y={32} width={88} height={14} rx={3} fill="#8A969B" opacity={0.7} />
+    <rect x={-100} y={58} width={200} height={4} fill="#fff" opacity={0.05} />
   </g>
 );
 
@@ -619,7 +620,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.07} dx0={20} dx1={-20} day={0.35}>
       <SVG>
         <PierShot f={g} lens={lens} hands={hands} sheet={{...SHEET_FRONT, lines: sheetLines(g, bt)}} spot={{x: 480, y: lineY(3) - 10}} beam={0.0}
-          under={<AEAPhone x={170} y={1290} s={0.8} lit={0} />}>
+          under={<AEATray x={165} y={1292} s={0.78} f={f} />}>
           <EmptySlot {...handleAt(lens, 24, SLOT_AT)} rot={24 + 90} glow={snap} f={f} />
         </PierShot>
         {f < b(28) - 4 && <Plate text="STATE ENERGY AUTHORITY · SAID IT WOULD INTERVENE" y={500} size={23} tone="paper" p={ease(f, b(26), 12)} drop={40} />}
@@ -635,10 +636,10 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const g = f + from;
   const grip = ease(f, 0, 8);
   const shake = Math.sin(f * 1.7) * 2.4 * (1 - ease(f, 30, 40));
-  const slide = easeIO(f, b(33) + 22, 60);
+  const slide = easeIO(f, b(34) + 22, 60);
   const lens: Pose = {x: 500, y: 640, s: 0.92, rot: shake};
   const sx = 250, sy = lerp(900, 1130, slide);
-  const pin = ease(f, b(34), 16);
+  const pin = ease(f, b(35), 16);
   const lines = sheetLines(g, bt);
   return (
     <Frame p={p} z0={1.02} z1={1.06} day={0.3}>
@@ -657,7 +658,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
 const S15: React.FC<SceneProps> = ({p}) => {
   const {f, b, from, bt} = p;
   const g = f + from;
-  const pull = easeIO(f, b(40) + 4, 50);
+  const pull = easeIO(f, b(41) + 4, 50);
   const sx = 250, sy = lerp(1130, 1030, pull);
   const lens: Pose = {x: 520, y: 830, s: 0.8, rot: 2 * Math.sin(f / 31)};
   const glow = 0.5 + 0.5 * Math.sin(f / 9);
@@ -667,7 +668,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.05} dx0={14} dx1={-14} day={0.35}>
       <SVG>
         <PierShot f={g} lens={lens} hands={hands} sheet={{x: sx, y: sy, w: 560, h: 300, rot: lerp(5, -2, pull), lines: sheetLines(g, bt), hang: (1 - pull) * 0.2}}
-          spot={{x: 560, y: lineY(3) - 10}} beam={0.0} under={<AEAPhone x={170} y={1290} s={0.8} lit={0} />}>
+          spot={{x: 560, y: lineY(3) - 10}} beam={0.0} under={<AEATray x={165} y={1292} s={0.78} f={f} />}>
           <EmptySlot {...handleAt(lens, 24, SLOT_AT)} rot={24 + 90} glow={glow} f={f} />
           <g transform={`translate(${gloveX},${sy + 170}) rotate(180) scale(0.8)`}>
             <path d="M630,-56 L2000,-56 L2000,64 L630,64 Z" fill={C.glove} stroke={C.ink} strokeWidth={5} />
@@ -683,13 +684,13 @@ const S15: React.FC<SceneProps> = ({p}) => {
 const S17: React.FC<SceneProps> = ({p}) => {
   const {f, b, from, bt, dur} = p;
   const g = f + from;
-  const away = ease(f, b(44) + 24, 20);
-  const turn = easeIO(f, b(45), 26);
+  const away = ease(f, b(45) + 24, 20);
+  const turn = easeIO(f, b(46), 26);
   const back = easeIO(f, dur - 62, 56);
   const wedge = turn * (1 - back);
   const ring = lerp(lerp(1, 0.6, turn), 1, back);
   const lens: Pose = {x: lerp(lerp(520, 470, turn), 520, back), y: lerp(lerp(830, 770, turn), 830, back), s: 0.8, rot: lerp(lerp(0, -14, turn), 3, back)};
-  const settle = ease(f, b(46), 20);
+  const settle = ease(f, b(47), 20);
   const slideT = clamp01((f - (dur - 62)) / 60);
   const lines = sheetLines(g, bt);
   const sheetSkew = (1 - back) * (0.4 + 0.6 * turn);
@@ -869,7 +870,6 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Chair x={820} y={1010} s={1.1} tone="#2A3E52" rot={0} />
         <g opacity={0.0} />
         <Table y={1000} />
-        <DeskPhone x={850} y={990} s={0.66} f={f} />
         <StudySheet f={g} x={SHEET_FRONT.x} y={SHEET_FRONT.y + 10} w={560} h={300} rot={-1} lines={sheetLines(g, bt)} />
         <g transform={`translate(${lerp(1300, 760, rest)},1120) rotate(180) scale(0.8)`}>
           <path d="M630,-56 L2000,-56 L2000,64 L630,64 Z" fill={C.cuffBor} stroke={C.ink} strokeWidth={5} />
@@ -886,23 +886,23 @@ const S8: React.FC<SceneProps> = ({p}) => {
   );
 };
 
-// ---- S10: the borough's phone sits dark beside an unsent slip, then the lens swings into the foreground -----------------------
+// ---- S10: the borough's chair stays empty, a blank calendar hangs beside it, then the lens swings into the foreground -----------
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const flip = ease(f, b(30), 18);
   const lensIn = easeIO(f, b(30) - 4, 30);
   const lens: Pose = {x: lerp(1380, 640, lensIn), y: 1000 + 10 * Math.sin(f / 20), s: lerp(1.5, 1.4, lensIn), rot: pend(f, b(30) + 10, 14, 34, 40)};
+  const sway = 3 * Math.sin(f / 26);
   return (
     <Frame p={p} z0={1.0} z1={1.08} day={0.3}>
       <SVG>
-        <CouncilWorld f={f + 200} swing={0.6} warm={0.6} />
-        <Table y={1090} />
-        <DeskPhone x={500} y={1050} s={1.9} lit={0} f={f} />
-        <g transform="translate(820,1000) rotate(7)">
-          <rect x={-150} y={-90} width={300} height={170} fill={C.paper} stroke={C.ink} strokeWidth={5} />
-          <text x={0} y={-40} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.stamp} letterSpacing={2}>UNSENT</text>
-          <text x={0} y={2} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>WE DEMAND CONTACT</text>
-          <text x={0} y={32} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>AND DISCUSSION</text>
+        <CouncilWorld f={f + 200} swing={0.9} warm={0.6} />
+        <Chair x={430} y={1130} s={2.1} />
+        <Table y={1130} />
+        <g transform={`translate(790,${700 + sway}) rotate(${sway * 0.4})`}>
+          <rect x={-120} y={-150} width={240} height={300} fill={C.paper} stroke={C.ink} strokeWidth={6} />
+          <rect x={-120} y={-150} width={240} height={52} fill={C.stamp} stroke={C.ink} strokeWidth={6} />
+          {Array.from({length: 5}, (_, r) => Array.from({length: 4}, (_, c) => <rect key={`${r}${c}`} x={-100 + c * 50} y={-78 + r * 46} width={42} height={36} fill="none" stroke={C.ink} strokeWidth={2.5} opacity={0.4} />))}
         </g>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={C.paper} opacity={0.2 * flip} />
         <g opacity={lensIn > 0 ? 1 : 0}>
@@ -921,7 +921,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const pull = easeIO(f, 6, 70);
   const lens: Pose = {x: lerp(560, 440, pull), y: 780, s: 0.8, rot: lerp(0, -6, pull)};
   const brk = easeIO(f, b(31), 80);
-  const q = ease(f, b(32), 14);
+  const q = ease(f, b(33), 14);
   return (
     <Frame p={p} z0={1.0} z1={1.05} day={0.25}>
       <SVG>
@@ -960,7 +960,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
           hands={[{kind: 'dev', at: 0.1, side: -1, reach: ease(f, 0, 20), tag: 'DEEPGREEN'}]}
           glass={<GlassInlet f={f} boat={false} />} />
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={C.paper} opacity={0.22} />
-        <Plate text="A PERMIT LETS A DEVELOPER STUDY A SITE" y={500} size={22} tone="paper" p={ease(f, 4, 12)} drop={40} />
+        <Plate text="A PRELIMINARY PERMIT LETS A DEVELOPER STUDY A SITE" y={500} size={22} tone="paper" p={ease(f, 4, 12)} drop={40} />
         <QuotePlate text={'"A PRELIMINARY PERMIT DOESN\'T GIVE US PERMISSION TO BUILD ANYTHING" · LOUIS WOLFSON, DEEPGREEN, PER ADN'} y={1150} size={26} wrap={34} p={q} rot={-1} />
       </SVG>
     </Frame>
@@ -970,7 +970,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
 // ---- S13: the fishery under the glass, a beluga and a permit card lit as specimens ---------------------------------------------------
 const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const q = ease(f, b(36), 40);
+  const q = ease(f, b(37), 40);
   const lens: Pose = {x: 540, y: 900, s: 1.2, rot: 3 * Math.sin(f / 33)};
   return (
     <Frame p={p} z0={1.0} z1={1.06} day={0.2}>
@@ -999,10 +999,10 @@ const S13: React.FC<SceneProps> = ({p}) => {
 const S14: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const pullC = easeIO(f, 4, 40);
-  const c2 = f < b(38) ? 0 : spring(f, b(38) - 4, 26);
+  const c2 = f < b(39) ? 0 : spring(f, b(39) - 4, 26);
   const c2x = lerp(1400, 640, clamp01(c2));
-  const lit = ease(f, b(38) + 8, 16);
-  const page = f < b(39) ? 0 : clamp01((f - b(39)) / 24);
+  const lit = ease(f, b(39) + 8, 16);
+  const page = f < b(40) ? 0 : clamp01((f - b(40)) / 24);
   return (
     <Frame p={p} z0={1.0} z1={1.07} dx0={16} dx1={-16} day={0.3}>
       <SVG>
@@ -1011,20 +1011,19 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <rect x={840} y={420} width={170} height={44} fill={C.stamp} stroke={C.ink} strokeWidth={6} />
         <Chair x={lerp(380, 300, pullC)} y={1010} s={1.1} />
         <Chair x={c2x} y={1010} s={1.1} tone="#2A3E52" />
-        <Dust x={c2x} y={1030} t={(f - b(38)) / 22} />
+        <Dust x={c2x} y={1030} t={(f - b(39)) / 22} />
         <Table y={1000} />
-        <DeskPhone x={300} y={1000} s={0.8} lit={lit} f={f} />
-        <g transform={`translate(${lerp(925, 800, page)},${lerp(520, 1050, page * page)}) rotate(${lerp(0, 8, page)})`} opacity={f < b(39) ? 0 : 1}>
+        <g transform={`translate(${lerp(925, 800, page)},${lerp(520, 1050, page * page)}) rotate(${lerp(0, 8, page)})`} opacity={f < b(40) ? 0 : 1}>
           <rect x={-100} y={-90} width={200} height={180} fill={C.paper} stroke={C.ink} strokeWidth={5} />
           <rect x={-100} y={-90} width={200} height={34} fill={C.stamp} />
           <text x={0} y={-8} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={C.ink}>MEETING</text>
           <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={C.ink}>SCHEDULED</text>
         </g>
-        <g transform={`translate(${lerp(1320, 920, ease(f, 4, 30))},1180) rotate(180) scale(0.7)`} opacity={f < b(38) - 6 ? 1 : 1 - ease(f, b(38) - 6, 8)}>
+        <g transform={`translate(${lerp(1320, 920, ease(f, 4, 30))},1180) rotate(180) scale(0.7)`} opacity={f < b(39) - 6 ? 1 : 1 - ease(f, b(39) - 6, 8)}>
           <path d="M630,-56 L2000,-56 L2000,64 L630,64 Z" fill={C.cuffBor} stroke={C.ink} strokeWidth={5} />
           <GripHand x={0} y={0} reach={1} scale={1} cuffColor={C.cuffBor} />
         </g>
-        <Plate text="" displayLines={['DEEPGREEN REACHED OUT', 'MEETING SCHEDULED · PER ADN']} y={520} size={28} tone="paper" p={ease(f, b(38) + 4, 12)} drop={40} />
+        <Plate text="" displayLines={['DEEPGREEN REACHED OUT', 'MEETING SCHEDULED · PER ADN']} y={520} size={28} tone="paper" p={ease(f, b(39) + 4, 12)} drop={40} />
       </SVG>
     </Frame>
   );
@@ -1035,8 +1034,8 @@ const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const tones = [C.cuffCbd, C.glove, C.cuffBor];
   const tabs = ['CBD', 'ALLIANCE', 'BOROUGH'];
-  const minute = lerp(-90, 270, ease(f, b(43), 8)) ;
-  const tag = f < b(43) ? 0 : 1;
+  const minute = lerp(-90, 270, ease(f, b(44), 8)) ;
+  const tag = f < b(44) ? 0 : 1;
   return (
     <Frame p={p} z0={1.04} z1={1.0} dx0={-14} dx1={14} day={0.3}>
       <SVG>
@@ -1052,7 +1051,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(540,0)"><path d="M0,0 V480" stroke={C.ink} strokeWidth={6} opacity={0.0} /></g>
         <rect x={110} y={1100} width={820} height={230} fill="#E4DFCD" stroke={C.ink} strokeWidth={5} />
         {tones.map((tn, i) => {
-          const t0 = b(42) + i * 18;
+          const t0 = b(43) + i * 18;
           const k = f < t0 ? 0 : spring(f, t0, 16);
           const yy = lerp(-300, 1220 - i * 32, clamp01(k)) + (f >= t0 && f < t0 + 18 ? 0 : 0);
           return (

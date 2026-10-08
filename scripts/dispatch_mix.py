@@ -122,7 +122,7 @@ for _b in _board["beats"]:
     if _nm in _CYCLE:
         _k = _CYCLE[_nm][_seen.get(_nm, 0) % len(_CYCLE[_nm])]
         _seen[_nm] = _seen.get(_nm, 0) + 1
-    if _b["id"] == 40:
+    if _b["id"] == 41:
         _k = "riser"          # the ONE riser of the film: the cost of silence
     if _FAM[_k] == _prev_fam:
         _opts = [x for fam, xs in _ALT.items() if fam != _prev_fam for x in xs]
@@ -235,7 +235,7 @@ BED_ARC = [
 # October 6th: a trading-post room, stove tick and soft air. The filtered noise stays
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
-AMB_LEVEL = 0.018
+AMB_LEVEL = 0.03
 
 
 def _assert_per_run_data_covers_the_film():

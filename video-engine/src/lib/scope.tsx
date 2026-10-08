@@ -107,7 +107,7 @@ export const StudyLens: React.FC<{
 
       {/* handle, behind the ring: collar, shaft with grip ridges, end ring */}
       {wedge > 0 && (
-        <g transform={`rotate(${lerpN(handleDeg, 118, wedge)}) translate(${R * ring - 6},0)`} opacity={wedge}>
+        <g transform={`rotate(${lerpN(handleDeg, 66, wedge)}) translate(${R * ring - 6},0)`} opacity={wedge}>
           <path d="M0,-26 L420,-95 Q452,-95 452,0 Q452,95 420,95 L0,26 Z" fill={`url(#${id}-hd)`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
           {Array.from({length: 7}, (_, i) => (
             <path key={i} d={`M${70 + i * 48},${-(30 + i * 8.6)} L${70 + i * 48},${30 + i * 8.6}`} stroke={INK} strokeWidth={4 + i * 0.6} opacity={0.4} />
@@ -187,7 +187,7 @@ export const StudyLens: React.FC<{
           const along = 150 + h.at * (HL - 260);
           const dist = 1500 * (1 - Math.max(0, Math.min(1, h.reach)));
           return (
-            <g key={i} transform={`translate(${along},0) rotate(${-h.side * armDeg}) translate(${-dist},0)`}
+            <g key={i} transform={`translate(${along},0) rotate(${-h.side * armDeg}) translate(${dist},0)`}
               opacity={h.dotted ? 0.55 : 1}>
               <g transform={`scale(${handScale})`}>
                 {h.dotted ? (

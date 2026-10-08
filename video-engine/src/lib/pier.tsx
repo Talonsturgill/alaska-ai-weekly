@@ -256,7 +256,7 @@ export const StudySheet: React.FC<{
             const burn = ln?.burn ?? 0;
             const pencil = ln?.pencil ?? 0;
             const cool = ln?.cool ?? 0;
-            const fs = 29;
+            const fs = 33;
             const tw = ln ? ln.text.length * fs * 0.6 : 0;
             const col = lerpHex(PC.amber, PC.cool, cool);
             const blankGlow = !ln && pulse > 0 ? pulse : 0;
@@ -281,7 +281,7 @@ export const StudySheet: React.FC<{
                 {ln && pencil > 0 && (
                   <g>
                     <clipPath id={`${id}-p${n}`}><rect x={64} y={ly - 34} width={Math.max(1, (tw + 20) * clamp01(pencil))} height={52} /></clipPath>
-                    <text x={74} y={ly - 2} clipPath={`url(#${id}-p${n})`} fontFamily="'JetBrains Mono', monospace" fontWeight={600} fontSize={fs - 3} fill="#5A5F66"
+                    <text x={74} y={ly - 2} clipPath={`url(#${id}-p${n})`} fontFamily="'JetBrains Mono', monospace" fontWeight={600} fontSize={fs - 4} fill="#5A5F66"
                       opacity={0.85}>{ln.text}</text>
                   </g>
                 )}
