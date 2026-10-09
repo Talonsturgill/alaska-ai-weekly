@@ -83,7 +83,11 @@ export const SteelVessel: React.FC<{
   /** 0..1 how much of the interior is visible through the mouth */
   mouth?: number;
   gain?: number;
-}> = ({f, x, y, scale = 1, lid = 1, tagTurn = 0, tagText = '', tagSub = '', phase = 0, mouth = 1, gain = 1}) => {
+  /** NEW 2026-10-09: a face (TankFace in lib/refinery.tsx) drawn in place of the sight glass */
+  face?: React.ReactNode;
+  /** px of cold shiver, a fast lateral tremor on the whole barrel */
+  shiver?: number;
+}> = ({f, x, y, scale = 1, lid = 1, tagTurn = 0, tagText = '', tagSub = '', phase = 0, mouth = 1, gain = 1, face, shiver = 0}) => {
   const T = tones(BP.steel);
   const v = vitals(f, phase, gain * 0.28); // a two-tonne vessel barely moves, but it is not dead
   const uid = `sv${Math.round(x)}_${Math.round(y)}`;
@@ -111,7 +115,7 @@ export const SteelVessel: React.FC<{
   }
 
   return (
-    <g transform={`translate(${x + v.swayX * 0.25},${y}) scale(${scale})`}>
+    <g transform={`translate(${x + v.swayX * 0.25 + shiver * Math.sin(f * 2.1)},${y}) scale(${scale})`}>
       <defs>
         <FormGradient id={`${uid}f`} t={T} softness={0.85} />
         <clipPath id={`${uid}c`}><path d={VESSEL_PATH} /></clipPath>
@@ -147,10 +151,12 @@ export const SteelVessel: React.FC<{
       {rivets}
 
       {/* the sight glass: the one place you could look in, and there is nothing to see */}
-      <g>
-        <rect x={-22} y={-134} width={44} height={62} rx={7} fill="#0F1512" stroke={INK} strokeWidth={4} />
-        <rect x={-16} y={-128} width={13} height={50} rx={5} fill={T.key} opacity={0.22} />
-      </g>
+      {face ? face : (
+        <g>
+          <rect x={-22} y={-134} width={44} height={62} rx={7} fill="#0F1512" stroke={INK} strokeWidth={4} />
+          <rect x={-16} y={-128} width={13} height={50} rx={5} fill={T.key} opacity={0.22} />
+        </g>
+      )}
 
       {/* the valve, and the tag hanging off it */}
       <g transform="translate(96,-96)">
