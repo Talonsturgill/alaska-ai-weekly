@@ -78,8 +78,9 @@ spend tokens on nothing, and each has a replacement:
 2. **One call per step of a cut.** A panel candidate is ONE job:
    `scripts/run_bg.sh out/dispatch/bg cut -- scripts/make_cut.sh <Comp>`, then
    `python3 scripts/wait_for.py out/dispatch/bg cut --show out/dispatch/cut_summary.txt`. It runs
-   the source gates, the full render, the encode, the evidence pack and preflight in order and
-   stops at the first required failure. Every step is an existing script, unchanged.
+   the source gates, the mix (`dispatch_mix.py`, every cut, because its receipt hashes the board),
+   the full render, the encode, the evidence pack and preflight in order and stops at the first
+   required failure. Every step is an existing script, unchanged.
 3. **Full-size frames in the conversation.** An image stays in context for the rest of the run.
    Look through `scripts/probe_frames.sh` strips (several frames in one image) and crop to real
    scale where detail decides it. Never open full-size frames one by one to judge composition, and
@@ -667,7 +668,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   with draw + t + vo + sfx + means (+ `kick: true` on at most 3, §4.6), shots[] (framing, transition_in, thread, camera: composed stage3d
   CameraMoves ('craneDown+dollyThrough' or 'static:<reason>'), stage3d: 'planes' | 'flat:<reason>'),
   hook block (pattern, frame1, headline 3 to 8 words, motion_by_s <= 1.3, loopback), audio_arc
-  (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern), divergence_note. Plus
+  (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern, optional `bed` nodes
+  `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block),
+  divergence_note. Plus
   storyboard.md for humans.
 - ENGAGEMENT (docs/craft/ENGAGEMENT.md, read in the directors room): `reveals` [{t, type, what,
   hold_s 0.4 to 0.8}] with at least ONE scale-class reveal (scale-pullback, morph-to-chart,

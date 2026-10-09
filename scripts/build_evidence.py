@@ -44,7 +44,10 @@ EV = os.path.join(REPO, "out", "evidence")
 # the FILM: "the named signature move does not execute", on a shove that executes fine
 # 1.5s before the strip was taken. An anchor that photographs the wrong moment does not
 # produce a softer score, it produces a false finding, which is more expensive.
-MOVE_RUN_DATE = "2026-10-09"
+# The run id the board must belong to. None means "read it from out/dispatch/.run_stamp.json"
+# (machine pass 2026-10-09: this was a date literal hand-edited every run, and it failed the cut
+# on 10-08 and 10-09). Tests pin it to a fixed id.
+MOVE_RUN_DATE = None
 LINE_START_ACTIONS = {}
 # 2026-10-03 "The Choosing Isn't": one sample per board beat. Slams and stamps are sampled at their contact (+0.35 s). Contacts at +0.2s, scale reveals and camera
 # moves at +0.45s, settles after an overshoot (stamps, slams, the count landing) at +0.6s.
@@ -100,8 +103,14 @@ def _spans(rows, film_end):
 
 def conformed_moves(board, start, film_end):
     """Resolve named action samples and fail before writing a misleading pack."""
-    if board.get("run_date") != MOVE_RUN_DATE:
-        raise ValueError("evidence move names belong to " + MOVE_RUN_DATE + "; update them for this board")
+    run_date = MOVE_RUN_DATE
+    if run_date is None:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from run_stamp import run_id
+        run_date = run_id()
+    if board.get("run_date") != run_date:
+        raise ValueError("evidence move names belong to " + run_date + " (the stamped run), but "
+                         "storyboard.json is for " + str(board.get("run_date")) + "; the board is stale")
     beats = {beat["id"]: beat for beat in board["beats"]}
     if (len(beats) != len(board["beats"]) or len(MOVES) != len(beats)
             or set(beats) != {beat for _, beat, _ in MOVES}

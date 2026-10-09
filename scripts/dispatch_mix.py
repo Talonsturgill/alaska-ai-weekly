@@ -30,8 +30,10 @@ machinery below CARRY OVER unchanged.
 import json, os, re, subprocess, sys, math, zlib, shutil
 try:
     from .sfx_bank import scheduled_time
+    from .run_stamp import board_run_id, RunStampError
 except ImportError:
     from sfx_bank import scheduled_time
+    from run_stamp import board_run_id, RunStampError
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -39,7 +41,14 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-10-09"   # episode seed for the shuffle-bag + jitter
+# The episode seed for the shuffle-bag and jitter is THE RUN ID, read from the run stamp
+# (machine pass 2026-10-09: this was a hand-edited date literal that failed the cut on two
+# consecutive runs). board_run_id also refuses a storyboard.json written for another run.
+_board = json.load(open(os.path.join(OUT, "storyboard.json")))
+try:
+    DATE = board_run_id(_board, "dispatch_mix")
+except RunStampError as _exc:
+    raise SystemExit(f"dispatch_mix: {_exc}")
 
 
 def run(cmd):
@@ -86,8 +95,7 @@ VIDEO_SECS = (json.load(open(_props))["total"] / 30.0) if os.path.exists(_props)
     else max(x["end"] for x in _lines) + _TAIL
 
 # The approved board is the single episode-local source of beat times and sound roles.
-# Times are conformed from actual VO line anchors before mixing.
-_board = json.load(open(os.path.join(OUT, "storyboard.json")))
+# Times are conformed from actual VO line anchors before mixing. (_board is loaded above.)
 # One authored bank performance per approved beat: kind, class, prop pan, role.
 # 2026-10-03 The Choosing Isn't: a typewriter-press, paper, a slot frame, stamps, a phone,
 # a belt, a dune and a masthead carry the physical sounds.
@@ -112,24 +120,58 @@ _ALT = {"sub": ["thud", "stamp", "boom", "paw"], "metal": ["clank", "chain"], "b
         "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"], "bird": ["caw"]}
 _CYCLE = {"slide": ["creak", "paper", "whoosh"], "hum": ["creak", "chain", "ding", "clank"], "sizzle": ["paper", "snap", "tick"],
           "scratch": ["paper", "tick"], "fade": ["creak", "chime"], "silence": ["creak"], "splash": ["whoosh", "caw", "pop"]}
-_seen = {}
-_KIND_BY_BEAT = {}
-_prev_fam = None
-_used = {}
-for _b in _board["beats"]:
-    _k = _BY_NAME.get(str(_b["sfx"]).split("-")[0], "tick")
-    _nm = str(_b["sfx"]).split("-")[0]
-    if _nm in _CYCLE:
-        _k = _CYCLE[_nm][_seen.get(_nm, 0) % len(_CYCLE[_nm])]
-        _seen[_nm] = _seen.get(_nm, 0) + 1
-    if _b["id"] == 42:
-        _k = "riser"          # the ONE riser of the film: the build into the closing question
-    if _FAM[_k] == _prev_fam:
-        _opts = [x for fam, xs in _ALT.items() if fam != _prev_fam for x in xs]
-        _k = sorted(_opts, key=lambda x: (_used.get(x, 0), x))[0]
-    _used[_k] = _used.get(_k, 0) + 1
-    _KIND_BY_BEAT[_b["id"]] = _k
-    _prev_fam = _FAM[_k]
+def _beat_onset(beat):
+    v = beat.get("at_s", beat.get("t"))
+    return float(v.split("-", 1)[0]) if isinstance(v, str) else float(v)
+
+
+def riser_beat_id(board):
+    """The beat that carries the film's ONE riser: the beat whose onset is nearest the board's
+    audio_arc.riser_at (ties go to the earlier beat, so the riser builds INTO the moment).
+
+    Machine pass 2026-10-09: this was a hand-typed beat id (`_b["id"] == 42`) that had to be
+    re-set every run and silently pointed at the wrong beat whenever a beat was inserted. The
+    board already names the riser's time, so the beat follows from it. None when the board
+    declares no riser_at (storyboard_check requires one, so that is a malformed board)."""
+    try:
+        at = float((board.get("audio_arc") or {}).get("riser_at"))
+    except (TypeError, ValueError):
+        return None
+    beats = board.get("beats") or []
+    if not beats:
+        return None
+    return min(beats, key=lambda b: (abs(_beat_onset(b) - at), _beat_onset(b)))["id"]
+
+
+def kinds_by_beat(beats, riser_beat):
+    """One bank kind per beat: the beat's own descriptive sfx name mapped to the bank, adjacent
+    families walked apart, and the riser on riser_beat only."""
+    seen, kinds, used, prev_fam = {}, {}, {}, None
+    for i, b in enumerate(beats):
+        nm = str(b["sfx"]).split("-")[0]
+        k = _BY_NAME.get(nm, "tick")
+        if nm in _CYCLE:
+            k = _CYCLE[nm][seen.get(nm, 0) % len(_CYCLE[nm])]
+            seen[nm] = seen.get(nm, 0) + 1
+        nxt = beats[i + 1]["id"] if i + 1 < len(beats) else None
+        if b["id"] == riser_beat:
+            k = "riser"       # the ONE riser of the film: the build into the closing question
+        elif k == "riser":
+            k = "whoosh"      # a descriptive "riser" on any other beat must not add a second one
+        # Walk off the previous beat's family. The riser beat is never walked; the beat BEFORE
+        # it is walked off the riser's family instead, so the board's riser can't be recast away.
+        avoid = {prev_fam} | ({_FAM["riser"]} if nxt == riser_beat else set())
+        if b["id"] != riser_beat and _FAM[k] in avoid:
+            opts = [x for fam, xs in _ALT.items() if fam not in avoid for x in xs]
+            k = sorted(opts, key=lambda x: (used.get(x, 0), x))[0]
+        used[k] = used.get(k, 0) + 1
+        kinds[b["id"]] = k
+        prev_fam = _FAM[k]
+    return kinds
+
+
+RISER_BEAT = riser_beat_id(_board)
+_KIND_BY_BEAT = kinds_by_beat(_board["beats"], RISER_BEAT)
 _PERFORMANCE = [
     (_KIND_BY_BEAT[b["id"]], "hero" if _KIND_BY_BEAT[b["id"]] in _HERO else "texture" if _KIND_BY_BEAT[b["id"]] in _TEXTURE else "standard", 0.0, b["shows"][:70])
     for b in _board["beats"]
@@ -183,38 +225,96 @@ def event_timing(index, t):
 #
 # Multipliers are relative to the bed's base level, so the shape lives here and the level
 # lives in one place in the graph.
-_W = json.load(open(os.path.join(AUD, "words.json")))
-_W = _W["words"] if isinstance(_W, dict) else _W
-def _word(w, after=0.0):
-    for x in _W:
-        if re.sub(r"[^a-z0-9']", "", x["w"].lower()) == w.lower() and x["s"] >= after - 0.001:
-            return x["s"]
-    return after
-_T_ONE = _word("Which", 115.0)
-BED_ARC = [
-    (L[0], 0.55),            # the yard at dusk, the needle slams
-    (L[0] + 2.5, 0.72),
-    (L[1], 0.66),            # the table, the stamp
-    (L[2], 0.74),            # the slice of the pie
-    (L[3], 0.62),            # waste or feedstock
-    (L[4], 0.58),            # atoms on the outside of the cell
-    (L[5], 0.72),            # two tools, the tarp
-    (L[6], 0.78),            # the tarp comes off, the energy peak
-    (L[7], 0.50),            # the question, the cells stall
-    (L[8], 0.44),            # the professor, thin
-    (L[9], 0.60),            # software first
-    (L[10] - 0.4, 0.05),     # SILENCE under NO RESULTS YET
-    (L[10] + 1.6, 0.34),
-    (L[11], 0.48),           # a smart controller can't make power cheaper
-    (L[12], 0.60),           # the obvious alternative, the barge
-    (L[13], 0.52),           # lab and small pilot tests
-    (L[14], 0.76),           # the design brief
-    (L[15], 0.64),           # the fork
-    (_T_ONE - 0.7, 0.04),    # THE PRE-BUTTON DIP
-    (_T_ONE + 0.2, 0.36),
-    (VIDEO_SECS - 3.5, 0.50),
-    (VIDEO_SECS - 0.4, 0.0),
-]
+#
+# THE ARC COMES FROM THE BOARD (machine pass 2026-10-09). It was a 22-node table rewritten by
+# hand every run against that film's line indices, and it failed the cut on consecutive runs.
+# bed_arc() reads the board instead:
+#   1. `audio_arc.bed` when the board authors one: a list of nodes, each [t, level] or
+#      {"line": <vo line idx>, "offset": <s>, "level": m} or {"at_s": t, "level": m} or
+#      {"from_end": <s before the last frame>, "level": m}. This is the place to write a
+#      script-shaped arc (thin under a concession, swell into the question).
+#   2. otherwise an arc DERIVED from the audio_arc block storyboard_check already requires:
+#      every line start at 0.60, a hook swell, the interrupt at 0.78, the last build_steps line
+#      starts before riser_at ramping to 0.76, a silence pocket at each extra_dips time and at
+#      dip_at recovering to 0.34/0.36, then the tail resolve. The same shape the hand tables had.
+BED_FLOOR, BED_CEIL = 0.0, 2.0
+
+
+def bed_arc(board, line_starts, video_secs):
+    """(time, multiplier) breakpoints for the bed, and where they came from."""
+    aa = board.get("audio_arc") or {}
+    authored = aa.get("bed")
+    if authored:
+        pts = []
+        for n in authored:
+            if isinstance(n, (list, tuple)):
+                t, m = float(n[0]), float(n[1])
+            elif "line" in n:
+                t, m = line_starts[int(n["line"])] + float(n.get("offset", 0.0)), float(n["level"])
+            elif "from_end" in n:
+                t, m = video_secs - float(n["from_end"]), float(n["level"])
+            else:
+                t, m = float(n["at_s"]), float(n["level"])
+            if not (BED_FLOOR <= m <= BED_CEIL) or not (-0.5 <= t <= video_secs + 1.0):
+                raise SystemExit(f"dispatch_mix: audio_arc.bed node {n!r} is out of range "
+                                 f"(level {BED_FLOOR} to {BED_CEIL}, time 0 to {video_secs:.1f}s)")
+            pts.append((t, m))
+        return sorted(pts), "board audio_arc.bed"
+
+    def num(key):
+        try:
+            return float(aa.get(key))
+        except (TypeError, ValueError):
+            return None
+
+    starts = sorted(line_starts.values())
+    pts = {}
+
+    def put(t, m):
+        if 0.0 <= t <= video_secs:
+            pts[round(t, 3)] = m
+
+    for s in starts:
+        put(s, 0.60)
+    if starts:
+        put(starts[0], 0.55)                                # the cold open sits low
+        if len(starts) < 2 or starts[1] > starts[0] + 2.5:
+            put(starts[0] + 2.5, 0.72)                      # and swells under the hook
+    riser = num("riser_at")
+    steps = aa.get("build_steps")
+    steps = len(steps) if isinstance(steps, list) else int(steps or 0)
+    build = [s for s in starts if riser is not None and s < riser][-steps:] if steps > 0 else []
+    for k, s in enumerate(build):
+        put(s, 0.60 + 0.16 * (k + 1) / len(build))          # build into the riser
+    if num("interrupt_at") is not None:
+        put(num("interrupt_at"), 0.78)                      # the energy peak
+    pockets = []
+    for d in aa.get("extra_dips") or []:
+        try:
+            d = float(d)
+        except (TypeError, ValueError):
+            continue
+        nxt = min([s for s in starts if s > d + 0.2] or [d + 1.6])
+        pockets.append((d - 0.4, 0.05, min(d + 1.6, max(nxt, d + 0.6)), 0.34))
+    if num("dip_at") is not None:
+        d, pay = num("dip_at"), num("payoff_at")
+        pockets.append((d, 0.04, max(pay if pay is not None else d, d + 0.6), 0.36))
+    for a, lo, b, up in pockets:
+        for t in [t for t in pts if a < t < b]:
+            del pts[t]                                      # the pocket owns its window
+        put(a, lo)
+        put(b, up)
+    last = max(pts) if pts else 0.0
+    tail = max(video_secs - 3.5, min(last + 0.5, video_secs - 1.0))
+    for t in [t for t in pts if t > tail]:
+        del pts[t]
+    put(tail, 0.50)
+    put(video_secs - 0.4, 0.0)                              # resolve before the last frame
+    return sorted(pts.items()), "derived from board audio_arc"
+
+
+BED_ARC, BED_ARC_SOURCE = bed_arc(_board, L, VIDEO_SECS)
+print(f"dispatch_mix: bed arc {len(BED_ARC)} nodes, {BED_ARC_SOURCE}")
 
 # A WIND BED FOR THE COUNTRY THE FILM DRIVES INTO. The same panel note asked for ambience,
 # and undifferentiated room tone under the whole piece would be another flat layer. This is
@@ -258,7 +358,7 @@ def _assert_per_run_data_covers_the_film():
     line in the log. The numbers make the diagnosis immediate either way.
     """
     warn = []
-    # `for t, *_` not `for t, _`: BED_ARC is hand-rewritten every run, and a node written
+    # `for t, *_` not `for t, _`: BED_ARC used to be hand-rewritten every run, and a node written
     # with a trailing comment value or a third element would raise inside the guard that
     # exists to protect the mix, killing it at import. EVENTS is already tolerant.
     arc_end = max(t for t, *_ in BED_ARC) if BED_ARC else 0.0
@@ -268,11 +368,11 @@ def _assert_per_run_data_covers_the_film():
     # seconds, the button, with no bed move at all.
     if arc_end < VIDEO_SECS * 0.95:
         warn.append(f"BED_ARC ends at {arc_end:.1f}s but the film runs {VIDEO_SECS:.1f}s. The last "
-                    f"{VIDEO_SECS - arc_end:.1f}s have no bed automation. Re-anchor BED_ARC to THIS "
-                    f"film's beats from vo_lines.json.")
+                    f"{VIDEO_SECS - arc_end:.1f}s have no bed automation. Fix the board's "
+                    f"audio_arc.bed nodes (or delete them to use the derived arc).")
     if arc_end > VIDEO_SECS + 1.0:
         warn.append(f"BED_ARC runs to {arc_end:.1f}s past a {VIDEO_SECS:.1f}s film; its last moves "
-                    f"never play. These are the previous episode's breakpoints.")
+                    f"never play. Check the board's audio_arc.bed nodes.")
     ev_end = max((t for t, *_ in EVENTS), default=0.0)
     if ev_end < VIDEO_SECS * 0.85:
         warn.append(f"EVENTS stop at {ev_end:.1f}s on a {VIDEO_SECS:.1f}s film; the last "

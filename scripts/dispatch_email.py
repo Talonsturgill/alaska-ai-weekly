@@ -242,6 +242,37 @@ def _label_for(url):
     return (m.group(1) if m else url or "source")
 
 
+_KEEP = re.compile(r"https?://[^\s<>\"']+|&#?\w+;|\d[:;]\d")
+
+
+def prose_punct(text):
+    """A source title or note in house punctuation: a colon or semicolon becomes a comma.
+
+    Machine pass 2026-10-09: publishers title things "Collaborative Research: FEC ..." and
+    the fact-check notes carry semicolons, so a draft tripped the visible-copy lint on a string
+    the run did not write and had to be retyped by hand. URLs, HTML entities and a digit pair
+    such as 10:30 are left alone (a guessed rewrite of a time or ratio would be a new claim),
+    so those still fail the lint, which now names the source they came from."""
+    out, last = [], 0
+    for m in _KEEP.finditer(text or ""):
+        keep = m.group()
+        if keep.startswith("http"):
+            keep = keep.rstrip(".,;:!?)]}")      # sentence punctuation after a URL is prose
+        out.append(re.sub(r"\s*[:;]+\s*", ", ", text[last:m.start()]))
+        out.append(keep)
+        last = m.start() + len(keep)
+    out.append(re.sub(r"\s*[:;]+\s*", ", ", (text or "")[last:]))
+    return re.sub(r",\s*$", "", "".join(out)).strip()
+
+
+def copy_origins(line, inputs):
+    """Which caller-supplied strings a failing visible line came from, by name."""
+    needle = (line or "").strip()
+    if not needle:
+        return []
+    return [name for name, value in inputs if value and (needle in value or value.strip() in needle)]
+
+
 def parse_sources(data):
     """Extract EVERY source from the run's sources.json regardless of which schema the
     fact-check phase emitted. Accepts: a `sources` list of {title/outlet/url/note} dicts,
@@ -259,7 +290,8 @@ def parse_sources(data):
         u = (url or "").strip()
         if u.startswith("http") and u not in seen:
             seen.add(u)
-            items.append({"url": u, "label": label or _label_for(u), "note": note})
+            items.append({"url": u, "label": prose_punct(label) or _label_for(u),
+                          "note": prose_punct(note)})
 
     for s in data.get("sources") or []:
         if isinstance(s, dict):
@@ -281,7 +313,7 @@ def parse_sources(data):
                 for x in v.values():
                     walk(x)
         walk(data)
-    return items, (data.get("sourcing_note") or "").strip()
+    return items, prose_punct(data.get("sourcing_note") or "")
 
 
 # The permanent tail of every sources section: the owner's public decision/update log.
@@ -527,7 +559,17 @@ def main():
     subject = f"Ready to post · {a.title or a.date}"
     copy_check = check_email_copy(subject, html)
     if copy_check["status"] != "PASS":
+        # Say WHICH input tripped it, not only the rendered line (machine pass 2026-10-09).
+        inputs = ([(f"sources.json sources[{i}] title", x["label"]) for i, x in enumerate(sources)]
+                  + [(f"sources.json sources[{i}] note", x["note"]) for i, x in enumerate(sources)]
+                  + [("--title", a.title), ("--score", a.score), ("--note", a.note),
+                     ("--voice", a.voice), ("--music", a.music), ("post", post)]
+                  + [("--upgrades line", ln) for ln in (a.upgrades or "").splitlines()])
+        for f in copy_check["failures"]:
+            f["from"] = copy_origins(f.get("text"), inputs) or ["the email template"]
         sys.exit("REFUSING TO BUILD DRAFT: visible email copy fails house rules.\n" +
+                 "\n".join(f"  x {', '.join(f['why'])} in {' / '.join(f['from'])}: {f.get('text', '')[:120]!r}"
+                            for f in copy_check["failures"]) + "\n" +
                  json.dumps(copy_check, indent=2))
     if a.out_html:
         Path(a.out_html).write_text(html); print("wrote", a.out_html)

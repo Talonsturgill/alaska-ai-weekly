@@ -1,15 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-10-03",
+    "date": "2026-10-09",
     "shipped": [
-      "vo-wer-canonicalizer",
-      "caption-chunk-by-sense",
-      "caption-check-banned-words",
-      "strip-name-driver-vocabulary",
-      "transform-with-clippath-lint"
+      "evidence-run-date-constant",
+      "mix-receipt-hashes-board",
+      "held-beats-under-2pct",
+      "dispatch-email-source-punctuation"
     ],
-    "engine_advance": "lib/captionrows.ts + lib/captions.tsx shared caption row breaker (unrendered until Ep1004 imports it)",
-    "escalated": []
+    "engine_advance": "none this pass; run_stamp.py and board-derived mix and evidence constants",
+    "escalated": [
+      "label-vs-label-gate"
+    ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
 }
