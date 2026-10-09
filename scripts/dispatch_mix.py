@@ -233,7 +233,7 @@ BED_ARC = [
 # October 6th: a trading-post room, stove tick and soft air. The filtered noise stays
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
-AMB_LEVEL = 0.03
+AMB_LEVEL = 0.045
 
 
 def _assert_per_run_data_covers_the_film():
@@ -664,7 +664,7 @@ def main():
     # codec. Limit isolated transients further, then restore 0.3 dB of level after the
     # limiter. The limiter acts on peaks, not the story's bed/VO arc. The AAC preview
     # and final encoded cut must still prove both loudness and true peak independently.
-    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume=0.3dB",
+    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume=1.0dB",
          "-ar", str(SR), "-ac", "2", master])
     os.remove(premix)
     print("wrote", master)
