@@ -149,6 +149,12 @@ CHECKS = [
      [sys.executable, "scripts/content_sag_check.py"], False),
     ("dead space within ceilings",
      [sys.executable, "scripts/dead_space_check.py", "--every", "30"], False),
+    # HELD BEATS, NAMED BEFORE THE PANEL NAMES THEM (machine pass 2026-10-09). All three
+    # judges listed the same sub-2-percent beats on 10-08 and again on 10-09, every one of them
+    # already measured in out/evidence/motion.json. ADVISORY, never blocking: the NOTE line
+    # carries the beat names into make_cut's summary, and the fix is an idle cycle per beat.
+    ("held beats move at least 2 percent",
+     [sys.executable, "scripts/held_beat_check.py"], False),
     # THE CAMERA DOES NOT PUNCTUATE BEATS (owner, 2026-10-03: "every like five seconds ...
     # the screen is shaking slightly ... it's just kind of overstimulating"). The 10-03 and
     # 10-02 films kicked the whole frame on every beat, 41 and 49 jolts. REQUIRED from the
