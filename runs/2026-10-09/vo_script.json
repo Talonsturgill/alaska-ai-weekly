@@ -1,0 +1,154 @@
+{
+ "run_date": "2026-10-09",
+ "title": "THE DESIGN BRIEF",
+ "note": "Figures and quotes are from UAF News (October 5th, 2026) and the NSF award record 2614749. The vessel, the barge and the ash are illustrations. Everything described is planned work.",
+ "caption_fixups": {
+  "A I": "AI",
+  "twenty thirty": "2030",
+  "six million dollar": "$6 million",
+  "nine hundred thirteen thousand dollars": "$913,000"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Picture a bioreactor that doesn't exist yet, already nervous about the power bill.",
+   "t": "Picture a bioreactor that doesn't exist yet, already nervous about the power bill.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "On October fifth, the University of Alaska Fairbanks announced it's joining a six million dollar National Science Foundation project with three other universities.",
+   "t": "On October fifth, the University of Alaska Fairbanks announced it's joining a six million dollar National Science Foundation project with three other universities.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "UAF's slice of that is about nine hundred thirteen thousand dollars.",
+   "t": "UAF's slice of that is about nine hundred thirteen thousand dollars.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "Microbes would recover rare earths from coal refuse and ash.",
+   "t": "Microbes would recover rare earths from coal refuse and ash.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Rare earth atoms can cling to a cell's outer wall.",
+   "t": "Rare earth atoms can cling to a cell's outer wall.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "Two A I tools are planned. The first will predict how readily rare earths can be recovered.",
+   "t": "Two A I tools are planned. The first will predict how readily rare earths can be recovered.",
+   "claims": [
+    "c5",
+    "c17"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "The second will adjust the bioreactor as conditions and available energy change, because living cells stall when power does.",
+   "t": "The second will adjust the bioreactor as conditions and available energy change, because living cells stall when power does.",
+   "claims": [
+    "c6",
+    "c18"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "So the question is whether cells can keep working on Alaska's power.",
+   "t": "So the question is whether cells can keep working on Alaska's power.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "UAF professor Srijan Aggarwal says Alaska's remote energy challenges make energy use a central part of that question.",
+   "t": "UAF professor Srijan Aggarwal says Alaska's remote energy challenges make energy use a central part of that question.",
+   "claims": [
+    "c11",
+    "c16"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "Power is the risk, so they'll build the plant in software first, a virtual pilot plant.",
+   "t": "Power is the risk, so they'll build the plant in software first, a virtual pilot plant.",
+   "claims": [
+    "c7",
+    "c19"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "No results have been reported yet.",
+   "t": "No results have been reported yet.",
+   "claims": [
+    "c9"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "A smart controller can adapt to expensive power. It can't make power cheaper.",
+   "t": "A smart controller can adapt to expensive power. It can't make power cheaper.",
+   "claims": [
+    "c20"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "The obvious alternative is to ship the ash where power is cheap.",
+   "t": "The obvious alternative is to ship the ash where power is cheap.",
+   "claims": [
+    "c14"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "Lab and small pilot tests through August twenty thirty will weigh costs, energy, and environmental effects.",
+   "t": "Lab and small pilot tests through August twenty thirty will weigh costs, energy, and environmental effects.",
+   "claims": [
+    "c10",
+    "c8"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "Energy isn't an afterthought here. It's the design brief.",
+   "t": "Energy isn't an afterthought here. It's the design brief.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "It becomes a win if the controller can keep microbes working on power that wobbles. If not, shipping wins.",
+   "t": "It becomes a win if the controller can keep microbes working on power that wobbles. If not, shipping wins.",
+   "claims": [
+    "c15",
+    "c14"
+   ]
+  },
+  {
+   "idx": 16,
+   "text": "Which would you bet on?",
+   "t": "Which would you bet on?",
+   "claims": []
+  }
+ ]
+}

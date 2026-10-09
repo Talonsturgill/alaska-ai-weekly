@@ -39,7 +39,7 @@ OUT = os.path.join(REPO, "out", "dispatch")
 AUD = os.path.join(OUT, "audio")
 FF = os.environ.get("FFMPEG_BIN", "ffmpeg")
 SR = 44100
-DATE = "2026-10-08"   # episode seed for the shuffle-bag + jitter
+DATE = "2026-10-09"   # episode seed for the shuffle-bag + jitter
 
 
 def run(cmd):
@@ -122,8 +122,8 @@ for _b in _board["beats"]:
     if _nm in _CYCLE:
         _k = _CYCLE[_nm][_seen.get(_nm, 0) % len(_CYCLE[_nm])]
         _seen[_nm] = _seen.get(_nm, 0) + 1
-    if _b["id"] == 41:
-        _k = "riser"          # the ONE riser of the film: the cost of silence
+    if _b["id"] == 42:
+        _k = "riser"          # the ONE riser of the film: the build into the closing question
     if _FAM[_k] == _prev_fam:
         _opts = [x for fam, xs in _ALT.items() if fam != _prev_fam for x in xs]
         _k = sorted(_opts, key=lambda x: (_used.get(x, 0), x))[0]
@@ -190,28 +190,26 @@ def _word(w, after=0.0):
         if re.sub(r"[^a-z0-9']", "", x["w"].lower()) == w.lower() and x["s"] >= after - 0.001:
             return x["s"]
     return after
-_T_ONE = _word("One", 108.0)
+_T_ONE = _word("Which", 115.0)
 BED_ARC = [
-    (L[0], 0.55),            # the pier at dawn, the lens swings in
-    (L[0] + 2.5, 0.78),
-    (L[1], 0.66),            # the desk, the stamp
-    (L[2], 0.74),            # the array, the scale
-    (L[3] - 0.5, 0.50),      # accepted is not approved
-    (L[4], 0.60),            # who puts them in
-    (L[5], 0.76),            # three groups, the hands
-    (L[6], 0.66),
-    (L[7], 0.62),            # the fleet
-    (L[8], 0.52),            # the council table, thin
-    (L[9], 0.46),            # the dotted hand
-    (L[10] - 0.5, 0.05),     # SILENCE: did DeepGreen call the borough back
-    (L[10] + 1.5, 0.30),
-    (L[11], 0.52),           # the best case against, nearly bare
-    (L[12], 0.48),
-    (L[13], 0.60),           # push in too early, the stall
-    (L[14], 0.50),           # the fishery shouldn't be a test subject
-    (L[15], 0.72),           # the second chair, relief
-    (L[16], 0.60),
-    (L[17], 0.74),           # filings are due
+    (L[0], 0.55),            # the yard at dusk, the needle slams
+    (L[0] + 2.5, 0.72),
+    (L[1], 0.66),            # the table, the stamp
+    (L[2], 0.74),            # the slice of the pie
+    (L[3], 0.62),            # waste or feedstock
+    (L[4], 0.58),            # atoms on the outside of the cell
+    (L[5], 0.72),            # two tools, the tarp
+    (L[6], 0.78),            # the tarp comes off, the energy peak
+    (L[7], 0.50),            # the question, the cells stall
+    (L[8], 0.44),            # the professor, thin
+    (L[9], 0.60),            # software first
+    (L[10] - 0.4, 0.05),     # SILENCE under NO RESULTS YET
+    (L[10] + 1.6, 0.34),
+    (L[11], 0.48),           # a smart controller can't make power cheaper
+    (L[12], 0.60),           # the obvious alternative, the barge
+    (L[13], 0.52),           # lab and small pilot tests
+    (L[14], 0.76),           # the design brief
+    (L[15], 0.64),           # the fork
     (_T_ONE - 0.7, 0.04),    # THE PRE-BUTTON DIP
     (_T_ONE + 0.2, 0.36),
     (VIDEO_SECS - 3.5, 0.50),
@@ -235,7 +233,7 @@ BED_ARC = [
 # October 6th: a trading-post room, stove tick and soft air. The filtered noise stays
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
-AMB_LEVEL = 0.03
+AMB_LEVEL = 0.045
 
 
 def _assert_per_run_data_covers_the_film():
@@ -666,7 +664,7 @@ def main():
     # codec. Limit isolated transients further, then restore 0.3 dB of level after the
     # limiter. The limiter acts on peaks, not the story's bed/VO arc. The AAC preview
     # and final encoded cut must still prove both loudness and true peak independently.
-    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume=0.3dB",
+    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume=1.0dB",
          "-ar", str(SR), "-ac", "2", master])
     os.remove(premix)
     print("wrote", master)

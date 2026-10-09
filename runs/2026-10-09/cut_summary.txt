@@ -1,0 +1,14 @@
+make_cut Dispatch1009 started 08:16:12Z
+  OK    typecheck (17s) 
+  OK    text_fit (1s) text-fit: 22 plated strings/variants measured (mono, Plate, actual Label or browser Box), 9 not measured, 0 failing
+  OK    caption_band (0s) caption_band_check: clean across 1 file(s)
+  OK    say_it_show_it (0s) PASS [say_it_show_it] 16 shots, every one drawing its own lines
+  OK    staging (1s) staging_check: 0 direct Character site(s), no source-level staging violations
+  OK    render (692s)   OK  /home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4  3932 frames  54M
+  OK    encode (185s)   OK  the LinkedIn cut is not taller than wide, so it stays in the main feed
+  OK    evidence (64s)   audio_report.json rebuilt from the delivered cut
+  NOTE  every evidence strip is named for what the film draws there: ValueError: substring not found
+  NOTE  the square crop cuts nothing built:   which elements were authored and this does not.
+  NOTE  the story region never stops moving:   bobs continuously, so every frame contains motion whatever the story is doing.
+  OK    preflight (119s) preflight: clear. The mechanical checks have nothing left to say; what remains is taste, which is what the panel is for.
+make_cut: Dispatch1009 is a panel candidate, 1079s in all. Deliverables in out/dispatch/, evidence from build_evidence.py.

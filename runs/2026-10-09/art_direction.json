@@ -1,0 +1,114 @@
+{
+ "run_date": "2026-10-09",
+ "palette": {
+  "sky": "#1B2744",
+  "ground": "#8190B2",
+  "hero": "#B4BCC0",
+  "accent": "#F08A24",
+  "shadow": "#101423",
+  "support": {
+   "ink": "#101423",
+   "indigo_sky": "#1B2744",
+   "dusk_low": "#3A3F63",
+   "galvanized_steel": "#B4BCC0",
+   "steel_deep": "#6E787D",
+   "ember": "#F08A24",
+   "ember_hot": "#FFC46B",
+   "ember_deep": "#B5530F",
+   "coal": "#2A231F",
+   "ash": "#76706A",
+   "ash_light": "#A39C93",
+   "spruce": "#18302B",
+   "paper": "#EDE6D2",
+   "kraft": "#A88E62",
+   "water": "#2C3E5E",
+   "sim_lime": "#C6F24A",
+   "stamp_oxblood": "#7A2236",
+   "partner_blue": "#5E7AA8",
+   "partner_sage": "#7C9C8C",
+   "barge_cool_brown": "#5E4A3E",
+   "snow_unlit": "#8190B2",
+   "snow_deep": "#4A5780",
+   "lamp_pool_snow": "#C9D6E6",
+   "dusk_violet": "#8A6AA8",
+   "billboard_gold": "#E9DDA8",
+   "governor_steel": "#B4BCC0"
+  },
+  "mood": "a cold midwinter dusk in a snowy Alaska utility yard under one pole lamp, hopeful and a little comic, never ominous. A steel tank with a face that flinches whenever the power gauge drops.",
+  "why": "The story is a planned bio-refinery whose second AI exists for variable power, so the PICTURE is power: a lit lamp, a needle, a cable that carries an ember pulse, and a whole frame whose darkness is driven by the needle (NightGrade amount is the power value). VALUE PLAN: the unlit snow floor is a mid blue-violet #8190B2 to #4A5780 and the sky is deep indigo, so the pale galvanized tank #B4BCC0 is the lightest large value outside the lamp pool (about 2:1 on the floor); only the lamp pool under the pole lifts the snow toward #C9D6E6. COLOUR LICENCE, one meaning each: EMBER #F08A24 means ONLY electricity (the needle, the lamp, the cable pulse, the gauge's low-zone arc in ember_deep). It is never a share, a fire or a sun. The horizon glow is dusk violet #8A6AA8, the billboard sun is a painted gold disc on a post that lights nothing, the ash glints are ash_light speculars. SIMULATION LIME #C6F24A means ONLY the model (the half-drawn tank in frame 1, the monitor twin, and the dashed PLANNED governor frame). OXBLOOD #7A2236 stamps mean NO RESULTS and the sealed RESULTS envelope only. The UAF wedge is paper white with an ink outline and a pennant. Diverges from 10-08, 10-07, 10-06 and 10-05 (all four palettes named in the board). A hex reused from 10-07 (kraft, oxblood) was shifted."
+ },
+ "light": {
+  "time_of_day": "deep dusk, a low ember glow on the horizon",
+  "direction": "cool indigo fill from the sky, a warm ember key from the pole lamp at frame right that dims and flares with the gauge, rim on the steel from the lamp side",
+  "key": "ember lamp #FFC46B from the pole at frame right, dimming with the gauge",
+  "fill": "indigo sky #3A3F63",
+  "rim": "warm rim on the tank's lamp side only",
+  "depth": "three planes: sky and ridges drift slowest, spruce rows and the pole next, the yard and its objects in front, snow falling across all three. The yard lamp and the horizon glow are driven by the same power value as the needle so the world answers the gauge.",
+  "per_stage": {
+   "frost-yard": "key: pole lamp ember_hot at right, fill: sky #3A3F63, rim on steel from the lamp. Parallax: sky 0.4, ridges 0.55, spruce and pole 0.8, yard 1.0, near snow 1.4.",
+   "round-table": "same yard, the lamp pool lands on the table top, the three chairs rim-lit blue from the sky; parallax as the yard.",
+   "ledger-sheet": "overhead, one soft paper-white key from above the page, no ember; the pie rim picks one specular.",
+   "ash-pier": "low sky fill only, the pole lamp is a distant warm dot; ash chunks catch ash_light speculars, not ember. Water gets violet sky reflection.",
+   "cell-macro": "deep indigo bokeh, cell wall lit from the upper left with a green-grey key, atoms rim in ash_light; no ember, no lime.",
+   "plank-bench": "the pole lamp is the key from frame right, jars catch it on glass; the reticle is paper white dashed.",
+   "tank-cutaway": "the barrel window is lit from inside by a cool green-grey cell light that dims with the needle; the yard around it darkens with the power value.",
+   "sim-desk": "the lime monitor is the key (cool), a single desk lamp in ember_hot is licensed as electricity; window to the snow at left.",
+   "gauge-close": "ember_hot needle tip is the only ember_hot on the dial, lamp rim from above."
+  }
+ },
+ "shape_language": {
+  "contrast": "THREE GRAMMARS. ROUND AND HEAVY for the tank, the gauge dial, the cells and the barge hull. THIN AND STRAIGHT for the grid: cable, pole, mast and posts. FLAT AND RECTILINEAR for paperwork and institutions: the news card, plates, the ledger, the envelope, the stamps and the ribbon. The tank is the only object that flinches.",
+  "why": "The thesis is that a living process depends on a thin wobbling line. A fat dented vessel at the end of a long thin cable draws dependence in one silhouette."
+ },
+ "casting": {
+  "hero": "SteelVessel with a face (TankFace, NET-NEW in lib/refinery.tsx, wired into SteelVessel via the new face prop), the shelf's dented bioreactor given eyes, brows and a mouth.",
+  "net_new": {
+   "TankFace": "Not Sourdough (a blocky power PLANT hero whose tell is its own furnace glow) and not Cell (a charge-bar sidekick). The tank is a power CONSUMER whose tell is a flinch driven by an EXTERNAL gauge, with eyes, brow and mouth drawn on the existing SteelVessel through a new face prop so the shelf compounds.",
+   "PowerGauge": "the throughline object, a round dial with an ember needle and a lamp",
+   "AshHeap": "the feedstock with a tag that flips WASTE to FEEDSTOCK?",
+   "Barge": "the strongest fair case against the angle, drawn as a character",
+   "AwardPie, NameChair, Envelope, SampleJars, Tarp, Monitor, CheapSun, Cable, FrostYardDusk, Snowfall": "the supporting set pieces, all in lib/refinery.tsx",
+   "shelf_duplicate_check": "FrostYardBG and the Ep0919 Gauge and the Ep1008 Chair are episode-local, not importable (checked ASSET_INDEX), so FrostYardDusk, PowerGauge and NameChair are new reusable lib assets. StateLetter is a state letter with a face-less hinged flap for a different story; Envelope is a kraft sealed envelope with a rising card and stamp. FishingBoat is a seiner; Barge is a flat deck ash barge with a face. ArmoredCable is a subsea cable; Cable here carries an ember pulse and lives on land."
+  },
+  "shelf": [
+   "SteelVessel",
+   "TwinVessel",
+   "LoopGovernor",
+   "CellSurface",
+   "SearchReticle"
+  ],
+  "why": "Hero differs from the last four (StudyLens, FortuneBall, BrassBell, ClassroomDoor).",
+  "disclosure": "2026-08-09 'The Method, Not The Metal' covered NSF award 2614749 with SteelVessel, TwinVessel, LoopGovernor and CellSurface. That film's angle was that the software never looks at the microbe, set in a frontal locked boiler room with an acid-green model. This film is outside the 30 day window and is a different story (the UAF announcement of October 5th, 2026), a different angle (energy is the design brief), a different set (a dusk snow yard with a lamp that answers the gauge), a different camera (low and ground-level, descend-and-hold), and a different hero grammar (the vessel gets a face and is the one who flinches; the governor returns only as a faceless dashed PLANNED supporting prop).",
+  "faces": "Faces are rationed: the tank (hero) and the barge (the named counter-case). Chairs are faceless and identified by name card. The ash heap has a tag only. The cell uses CellSurface's reject dimple.",
+  "map": {
+   "GhostTank": "TwinVessel (Simulated over VESSEL_PATH) in sim lime plus TankFace",
+   "RoundTable": "ellipse table and NameChair",
+   "QuoteBoard": "QuotePlate riding the cable",
+   "TankCutaway": "SteelVessel with a window and cells",
+   "NoResultsStamp": "stamp in oxblood",
+   "Fork": "two-halves composition",
+   "PriceTag": "PriceTag in lib/refinery.tsx",
+   "PlannedGovernor": "LoopGovernor in a dashed lime PLANNED frame"
+  }
+ },
+ "motion_language": {
+  "world": "snow falls through every frame, stars twinkle, the lamp flickers on the gauge, the cable carries an ember pulse, water ripples at the pier, the sun rays turn",
+  "hero_moves": [
+   "the needle slams down and the tank flinches with a sweat drop",
+   "the tarp whips off and the governor spins up and turns the valve",
+   "the tank shivers as the cells in the cutaway stall",
+   "the barge honks and the cheap sun rises",
+   "the plate flips from POWER to DESIGN BRIEF and the tank plugs in, relieved"
+  ],
+  "blur": "180 degree motion blur on the tarp and the barge entry"
+ },
+ "composition": {
+  "focal_hierarchy": "the tank face or the gauge is the best-finished thing in every frame; plates sit in the y 500 to 760 band clear of it; objects live between y 560 and 1300",
+  "negative_space": "indigo sky above in the yard shots and the dark macro bokeh in the cell shot; ONE ember accent per frame",
+  "safe_area": "hero action and every plate inside y 490..1300 for the 1:1 square; the snow floor and the near plane below y 1475 are 9:16 only",
+  "signature_shot": "the gauge close-up at 103.4s where the plate flips from POWER to DESIGN BRIEF and the camera RISES to the whole lit yard (the only full-yard reveal of the film; the mid-film reveals are a table pull back, a cell macro pull back and a tank-window morph)",
+  "plated_note": "Plates sit in the y 500 to 800 band; the persistent PLANNED WORK tag sits at y 1296 inside the square, above the caption card."
+ },
+ "craft_advance": "None required. The net-new asset family lives in lib/refinery.tsx and the face and shiver props on SteelVessel. No BioLook harness was built this run (queued for the machine pass); tagTurn is not used (the tank has a face instead of the glass and tag is not shown).",
+ "geography": "ONE PLACE: a snowy utility yard with a pole and a lamp. The tank stands at left, the gauge on its post at right, the cable runs between them. The round table is out in the same snow, the ash pier and the barge are the yard's shore, the desk is a shed beside the tank. The gauge is visible in the background of most shots."
+}

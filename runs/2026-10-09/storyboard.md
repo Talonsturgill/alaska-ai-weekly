@@ -1,0 +1,4 @@
+# The Design Brief (2026-10-09)
+Story: UAF joins a $6M NSF project (UAA, Montana Tech, Wyoming) to use microbes and two planned AI tools to recover rare earths from coal refuse and ash. Everything is planned. Angle: the second AI exists to keep living cells working on Alaska's wobbling power, so energy is the design brief. Fair case against: no results, a controller can't make power cheaper, the old answer is to ship the ash.
+Hero: SteelVessel with a face (TankFace). Throughline: the power gauge needle. Loops: why is the tank nervous (4.8s to 103s), the sealed RESULTS envelope (48.5s to 93.5s).
+Shots: 1 needle slams, 2 round table, 3 award pie, 4 waste to feedstock, 5 atoms cling outside, 6 two tools, 7 tarp off, 8 cells stall, 9 quote board, 10 virtual pilot plant, 11 no results and no cheaper power, 12 the barge, 13 the envelope opens, 14 the design brief, 15 two roads and the question.

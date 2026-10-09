@@ -1,0 +1,1682 @@
+{
+ "run_date": "2026-10-09",
+ "slug": "the-design-brief",
+ "title": "The Design Brief",
+ "concept": "A steel bioreactor that does not exist yet is nervous about Alaska's power. The plan's second AI exists to keep living cells working as power rises and falls. The film tests that against the fair objection (no results, a controller can't make power cheaper, ship the ash to cheap power) and lands on the honest read: energy is the design brief.",
+ "derived_from": "scratch",
+ "engine": "infographic-2.5d",
+ "total_seconds": 117.82,
+ "fingerprint": {
+  "pov": "low-angle-ground",
+  "motion_vector": "vertical-descent",
+  "hero_treatment": "single-organic-hero",
+  "layout": "fullbleed-split",
+  "register": "editorial-schematic",
+  "camera_strategy": "descend-and-hold",
+  "light_story": "dusk-practical-lamp",
+  "palette": "midwinter indigo dusk sky, snow-blue floor, coal black ash, galvanized steel, ember orange that means only electricity, simulation lime that means only the model",
+  "metaphor": "a steel bioreactor with a face that flinches whenever the power gauge drops, because the plan's second AI exists to keep living cells working on Alaska's wobbling power"
+ },
+ "palette": "midwinter indigo dusk, snow-blue, coal black, galvanized steel, ember electricity, simulation lime",
+ "divergence_note": "A dusk exterior yard with a faced steel tank and a power gauge, cutting to a round table in the snow, a macro cell, a sample bench, a cutaway, a monitor desk, a pier with a barge and a fork in the snow. 10-08 was a dawn pier with a burning glass lens, 10-07 an overcast gravel bar with a fortune ball, 10-06 a warm stove-lit interior with a brass bell, 10-05 a seafoam school corridor. This film is cold indigo night with a single ember accent, the hero has a face and the clock is a needle.",
+ "angle": {
+  "thesis": "The AI in this plan isn't mainly there to find rare earths in coal waste. A second AI is there to keep living microbes working as power rises and falls, so Alaska's hardest input, energy, is the design brief and not an afterthought.",
+  "falsifiable_by": "If the 2030 results show the bioreactor controller ignores available energy, or the energy and cost evaluation is a footnote, the thesis is false. No results exist yet.",
+  "supporting_facts": [
+   "c6 a second AI effort will adjust the bioreactor as conditions and available energy change",
+   "c7 the refinery is tested first as a virtual pilot plant, computer models",
+   "c11 Aggarwal: Alaska's remote energy challenges make energy use central"
+  ],
+  "fair_counterpoint": "Nothing has been tested (c9), no Alaska coal source is named, UAF is one of four partners with about $913,000 of roughly $6M, and a controller can adapt to costly power but can't make power cheaper. The old answer, ship ash where power is cheap, still has to be beaten.",
+  "second_movement": "UAF joins, not leads: a seat at a national table, and the virtual plant is only models.",
+  "stance": "celebratory",
+  "valence": "celebratory but honest",
+  "runner_ups": [
+   "Planned-not-proven skeptic reading (valence curious): true but the same facts, folded in as the Act 3 test.",
+   "Waste-as-feedstock comedy: kept as a sight-gag source."
+  ],
+  "cross_challenge": "All three analysts converged on energy-as-design-brief. The skeptic lens was folded in as Act 3: no results, a controller can't cut the power price, ship the ash. The comedian lens supplied the WASTE to FEEDSTOCK? tag and OUTSIDE ONLY sticker.",
+  "claim_ids": [
+   "c1",
+   "c2",
+   "c3",
+   "c4",
+   "c5",
+   "c6",
+   "c7",
+   "c8",
+   "c9",
+   "c10",
+   "c11",
+   "c12",
+   "c13",
+   "c14",
+   "c15",
+   "c16",
+   "c17"
+  ]
+ },
+ "treatment": {
+  "winner": "The Dramatist's structure (energy is the opponent, the barge is the test) with the Comedian's sight gags, the Enthusiast's faced SteelVessel and dashed-twin states, and the Explainer's award pie",
+  "why": "All four pitches converged on a faced steel vessel and a power gauge; the Dramatist's Act 3 barge scene draws the strongest fair case against the angle at full strength, and the Enthusiast's honest narrowing keeps it celebratory but earned."
+ },
+ "hook": {
+  "pattern": "in-medias-res",
+  "frame1": "A dashed ghost outline of a steel tank in a snowy indigo yard beside a round power gauge, the needle slamming into the red as the lamp dips and the ghost eyes snap open.",
+  "headline": "A TANK NERVOUS ABOUT POWER",
+  "motion_by_s": 0.4,
+  "loopback": "The last frame is the same yard, the tank back to its dashed ghost, the needle dropping again and the tank adjusting instead of flinching."
+ },
+ "open_loop": {
+  "plant_t": 4.8,
+  "pay_t": 103.4,
+  "what": "Why is a tank that does not exist yet nervous about the power bill. Paid when the gauge plate flips to DESIGN BRIEF."
+ },
+ "open_loop_2": {
+  "plant_t": 48.9,
+  "pay_t": 93.5,
+  "what": "A sealed RESULTS envelope drops beside the tank. Paid when it opens on COST, ENERGY, ENVIRONMENT, TO BE EVALUATED."
+ },
+ "throughline": {
+  "object": "the power gauge needle",
+  "lands_in_button": "the needle slams down and the yard dims as in frame 1, but this time the tank's cells keep working",
+  "states": [
+   {
+    "at_s": 0.0,
+    "state": "slams down into the red as the lamp dips"
+   },
+   {
+    "at_s": 12.7,
+    "state": "settles at mid on the pole behind the table"
+   },
+   {
+    "at_s": 25.44,
+    "state": "steady and small while the heap is introduced"
+   },
+   {
+    "at_s": 35.0,
+    "state": "twitches as the lump under the tarp stirs"
+   },
+   {
+    "at_s": 42.78,
+    "state": "swings wildly as the planned governor spins up"
+   },
+   {
+    "at_s": 51.4,
+    "state": "sinks into the low zone, the yard darkens and the cells stall"
+   },
+   {
+    "at_s": 80.58,
+    "state": "steadied by the planned governor but the price tag snaps back"
+   },
+   {
+    "at_s": 103.4,
+    "state": "plate relabelled DESIGN BRIEF and the yard is lit again"
+   },
+   {
+    "at_s": 116.62,
+    "state": "slams down exactly as in frame 1 but the cells keep working"
+   }
+  ]
+ },
+ "reveals": [
+  {
+   "t": 15.4,
+   "type": "scale-pullback",
+   "what": "the camera pulls back from the UAF chair to the whole round table in the snow",
+   "hold_s": 0.6
+  },
+  {
+   "t": 33.0,
+   "type": "scale-pullback",
+   "what": "pull back from one atom on the cell wall to the whole breathing cell",
+   "hold_s": 0.6
+  },
+  {
+   "t": 49.2,
+   "type": "morph-to-chart",
+   "what": "the three drooping cells in the barrel window become the cutaway chart of the whole row of cells",
+   "hold_s": 0.6
+  },
+  {
+   "t": 72.0,
+   "type": "build-on",
+   "what": "the twin builds on its internals in lime",
+   "hold_s": 0.6
+  },
+  {
+   "t": 105.2,
+   "type": "scale-pullback",
+   "what": "the camera rises from the gauge to the whole lit yard",
+   "hold_s": 0.6
+  }
+ ],
+ "audio_arc": {
+  "build_steps": 4,
+  "dip_at": 115.6,
+  "riser_at": 113.4,
+  "silence_at": 115.9,
+  "payoff_at": 116.7,
+  "button_pattern": "question",
+  "interrupt_at": 42.78,
+  "extra_dips": [
+   57.9,
+   86.9
+  ]
+ },
+ "shots": [
+  {
+   "id": 1,
+   "title": "The needle slams down",
+   "vo_line": 0,
+   "start_s": 0.0,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "low",
+   "stage": "frost-yard",
+   "pov": "low-angle-ground",
+   "layout": "single-object-void",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "single-organic-hero",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "",
+   "thread": "",
+   "centered": "the ghost tank at x330 y1240",
+   "means": "Hook. Frame 1 is already the film: a lime-outlined model of a steel tank, only half drawn in, stands in a snowy indigo yard beside a round power gauge, and the needle SLAMS down, the yard lamp dips and the whole frame darkens. The model tank's eyes snap open and a sweat drop slides. Pencil hatch ticks fill the outline as if it is still being designed. A price tag hangs on the pole.",
+   "ambient": "snow falls, stars twinkle, the cable pulse crawls, the model outline crawls, the lamp flickers",
+   "hero": {
+    "name": "GhostTank",
+    "parts": 9,
+    "zones": 3,
+    "detail_note": "60% model tank and face, 25% gauge and cable, 15% yard"
+   }
+  },
+  {
+   "id": 2,
+   "title": "Four chairs at a round table",
+   "vo_line": 1,
+   "start_s": 7.72,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "round-table",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "centered": "the table at x540 y1130",
+   "means": "A UAF NEWS card stamps down, then a round table in the snow under the lamp. Three chairs slide in first (UAA, MONTANA TECH, WYOMING) and leave a gap. The UAF chair scoots into the gap last, its JOINING tag lighting. Nobody takes a head seat because the table is round. The camera pulls back to show the whole table.",
+   "ambient": "snow falls, the lamp sways, steam curls from three mugs",
+   "hero": {
+    "name": "RoundTable",
+    "parts": 10,
+    "zones": 3,
+    "detail_note": "50% chairs and cards, 30% table, 20% card and yard"
+   }
+  },
+  {
+   "id": 3,
+   "title": "The slice",
+   "vo_line": 2,
+   "start_s": 19.76,
+   "framing": "push-detail",
+   "scale": "medium",
+   "height": "overhead",
+   "stage": "ledger-sheet",
+   "pov": "top-down-map",
+   "layout": "hud-instrument-frame",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "data-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the pie at x540 y960",
+   "means": "The round table becomes the round pie. Overhead on a paper award ledger, a pie of about $6 million is drawn to true proportion and the UAF wedge, 15 percent, pulls out in paper white with a UAF pennant. Plate: UAF SHARE, ABOUT $913,000.",
+   "ambient": "ledger lines scroll faintly, the pie rim shines, a pen scratches a tick beside the wedge",
+   "hero": {
+    "name": "AwardPie",
+    "parts": 5,
+    "zones": 2,
+    "detail_note": "70% pie and wedge, 20% ledger, 10% pen"
+   }
+  },
+  {
+   "id": 4,
+   "title": "Waste or feedstock",
+   "vo_line": 3,
+   "start_s": 25.44,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "low",
+   "stage": "ash-pier",
+   "pov": "low-angle-ground",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "landscape-as-subject",
+   "camera": "orbitReveal",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the ash heap at x540 y1250",
+   "means": "Low and close at the foot of a big heap of coal refuse and ash with a WASTE tag on its stake. The tag flips to FEEDSTOCK? as tiny microbes crawl up the heap and carry specks away. Snow falls on the heap. Plate: COAL REFUSE AND ASH.",
+   "ambient": "snow falls, tag sways on the stake, ash dust lifts, microbes crawl",
+   "hero": {
+    "name": "AshHeap",
+    "parts": 24,
+    "zones": 3,
+    "detail_note": "70% heap and tag, 20% microbes, 10% yard"
+   }
+  },
+  {
+   "id": 5,
+   "title": "Atoms cling outside",
+   "vo_line": 4,
+   "start_s": 30.48,
+   "framing": "macro-closeup",
+   "scale": "close",
+   "height": "eye",
+   "stage": "cell-macro",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "structure-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the cell at x470 y900",
+   "means": "Down into the macro world. One big cell, its outer wall breathing. Rare earth atoms click onto the OUTSIDE of the wall like burrs, and one atom presses in, dimples the wall and is pushed back out. Plate stays ILLUSTRATIVE throughout.",
+   "ambient": "the membrane breathes, atoms jitter, bokeh drifts, specks float",
+   "hero": {
+    "name": "CellSurface",
+    "parts": 22,
+    "zones": 3,
+    "detail_note": "85% cell and atoms, 15% bokeh"
+   }
+  },
+  {
+   "id": 6,
+   "title": "Two tools, one under a tarp",
+   "vo_line": 5,
+   "start_s": 35.0,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "plank-bench",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "centered": "jars at x300 y1230 and tarp at x770 y1230",
+   "means": "A long plank bench out in the snow under the lamp, split by a line of dashes. Left, three sample jars with a dashed search reticle hunting across them, plate AI WILL PREDICT RECOVERY. Right, a lump under a heavy tarp that bulges and lifts one corner. Plate TWO AI TOOLS PLANNED.",
+   "ambient": "snow falls, the reticle drifts, the tarp breathes, jar glints",
+   "hero": {
+    "name": "SampleJars",
+    "parts": 12,
+    "zones": 3,
+    "detail_note": "45% jars and reticle, 40% tarp, 15% bench"
+   }
+  },
+  {
+   "id": 7,
+   "title": "The tarp comes off",
+   "vo_line": 6,
+   "start_s": 42.78,
+   "framing": "push-detail",
+   "scale": "close",
+   "height": "low",
+   "stage": "frost-yard",
+   "pov": "low-angle-ground",
+   "layout": "single-object-void",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "single-organic-hero",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "match-action",
+   "thread": "carry",
+   "centered": "the tank at x290 y1270",
+   "means": "The tarp whips off the bench lump and a governor in a dashed lime PLANNED frame spins up beside the worried tank and reaches for its valve, but the tank stays worried. The gauge needle swings wildly and the lamp pulses. Plate: AI WILL ADJUST THE BIOREACTOR. Three cells in the barrel window droop, then a sealed RESULTS envelope drops in the corner.",
+   "ambient": "snow falls, lamp pulses, flyballs spin, the needle swings, the cable pulse runs",
+   "hero": {
+    "name": "TankFace",
+    "parts": 26,
+    "zones": 4,
+    "detail_note": "45% tank and face, 30% governor, 25% gauge"
+   }
+  },
+  {
+   "id": 8,
+   "title": "Cells stall when power does",
+   "vo_line": 7,
+   "start_s": 51.4,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "tank-cutaway",
+   "pov": "cross-section-cutaway",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "structure-as-subject",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the tank cutaway at x470 y1280",
+   "means": "A cutaway window in the tank barrel: rows of small round cells working. As the needle beside it sinks into the low zone and the whole yard darkens, the cells slow, droop and stall one by one, and the tank shivers. Plate: CAN CELLS KEEP WORKING, ILLUSTRATIVE.",
+   "ambient": "cells wiggle, bubbles, the needle trembles, the yard dims, snow falls",
+   "hero": {
+    "name": "TankCutaway",
+    "parts": 30,
+    "zones": 3,
+    "detail_note": "60% cells and cutaway, 25% gauge, 15% yard"
+   }
+  },
+  {
+   "id": 9,
+   "title": "The professor says so",
+   "vo_line": 8,
+   "start_s": 58.94,
+   "framing": "alt-vantage",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "frost-yard",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "single-organic-hero",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "mask-wipe",
+   "thread": "travel",
+   "centered": "the quote at x540 y800",
+   "means": "An ember pulse runs along the cable from the gauge to the tank, and the quote plate rides in on it, typed in serif with the nameplate SRIJAN AGGARWAL, UAF PROFESSOR. The tank's cell window speeds up and slows with the lamp as the pulse arrives.",
+   "ambient": "snow falls, the lamp flickers, the cable pulse runs, the tank breathes",
+   "hero": {
+    "name": "QuoteBoard",
+    "parts": 14,
+    "zones": 3,
+    "detail_note": "40% quote, 35% tank, 25% gauge and yard"
+   }
+  },
+  {
+   "id": 10,
+   "title": "Built in software first",
+   "vo_line": 9,
+   "start_s": 68.58,
+   "framing": "data-panel",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "sim-desk",
+   "pov": "instrument-screen",
+   "layout": "hud-instrument-frame",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "fui-boot",
+   "thread": "build",
+   "centered": "the monitor at x540 y1000",
+   "means": "A desk in a shed with a monitor. The screen boots and a lime outline of the tank draws itself with its internals, the virtual pilot plant. Plate: VIRTUAL PILOT PLANT.",
+   "ambient": "scanlines, the model jitters, a desk-lamp glow, snow outside the window",
+   "hero": {
+    "name": "Monitor",
+    "parts": 14,
+    "zones": 3,
+    "detail_note": "75% monitor and model, 15% desk, 10% window"
+   }
+  },
+  {
+   "id": 11,
+   "title": "No results yet",
+   "vo_line": 10,
+   "start_s": 77.32,
+   "framing": "push-detail",
+   "scale": "close",
+   "height": "low",
+   "stage": "sim-desk",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "data-as-subject",
+   "camera": "craneDown",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the stamp at x540 y900",
+   "means": "A NO RESULTS YET stamp slams across the lime model on the screen and the model flickers and shakes.",
+   "ambient": "scanlines, the model flickers, dust jumps off the desk",
+   "hero": {
+    "name": "NoResultsStamp",
+    "parts": 6,
+    "zones": 2,
+    "detail_note": "60% stamp, 40% model"
+   }
+  },
+  {
+   "id": 12,
+   "title": "The price does not move",
+   "vo_line": 11,
+   "start_s": 80.58,
+   "framing": "push-detail",
+   "scale": "medium",
+   "height": "low",
+   "stage": "frost-yard",
+   "pov": "low-angle-ground",
+   "layout": "fullbleed-split",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "structure-as-subject",
+   "camera": "dollyThrough",
+   "stage3d": "planes",
+   "transition_in": "match-action",
+   "thread": "carry",
+   "centered": "the pole at x900 y900",
+   "means": "Out in the yard at the pole. The dashed PLANNED governor nudges the gauge dial and the needle steadies, but the PRICE tag on the pole creeps down, strains, and snaps back like elastic with a clunk, and the lamp dims. Plate: IT ADAPTS and CAN'T MAKE POWER CHEAPER.",
+   "ambient": "snow falls, the lamp flickers, the cable pulse crawls, flyballs spin",
+   "hero": {
+    "name": "PriceTag",
+    "parts": 10,
+    "zones": 3,
+    "detail_note": "40% pole and tag, 35% governor and gauge, 25% yard"
+   },
+   "cut_offset_s": 0.5,
+   "cut_reason": "the stamp's thud is still ringing and the cut lands on the governor's nudge, half a second into the next line"
+  },
+  {
+   "id": 13,
+   "title": "The obvious alternative",
+   "vo_line": 12,
+   "start_s": 87.62,
+   "framing": "wide-establish",
+   "scale": "extreme-wide",
+   "height": "ground",
+   "stage": "ash-pier",
+   "pov": "orbital-aerial",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "landscape-as-subject",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "centered": "the barge at x660 y1230",
+   "means": "The pier. A barge with a face and a deck of ash sacks slides in, mast sign SHIP IT, and its horn blows on the words ship the ash while a painted billboard sun on a post, CHEAPER POWER SOMEWHERE, rises behind it. The tank watches its own cable on the shore, sweating, its cell window dimming. Plate: THE OBVIOUS ALTERNATIVE, SHIP IT.",
+   "ambient": "water ripples, the barge bobs, the billboard rays turn, snow falls, the wake crawls",
+   "hero": {
+    "name": "Barge",
+    "parts": 20,
+    "zones": 3,
+    "detail_note": "50% barge, 25% billboard, 25% tank and water"
+   }
+  },
+  {
+   "id": 14,
+   "title": "The envelope opens",
+   "vo_line": 13,
+   "start_s": 92.92,
+   "framing": "push-detail",
+   "scale": "medium",
+   "height": "high",
+   "stage": "sim-desk",
+   "pov": "top-down-map",
+   "layout": "stacked-layers",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "data-as-subject",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "centered": "the envelope at x540 y1000",
+   "means": "The sealed RESULTS envelope opens on the desk and a card rises with a lab flask and a small pilot vessel, then COST, ENERGY, ENVIRONMENT tick one by one under TO BE EVALUATED. A calendar ribbon unrolls beside it, SEPT 2026 TO AUG 2030.",
+   "ambient": "dust floats in the lamp, the ribbon sways, the flask bubbles",
+   "hero": {
+    "name": "Envelope",
+    "parts": 12,
+    "zones": 3,
+    "detail_note": "45% card, 30% ribbon, 25% flask and vessel"
+   }
+  },
+  {
+   "id": 15,
+   "title": "The design brief",
+   "vo_line": 14,
+   "start_s": 101.1,
+   "framing": "subject-portrait",
+   "scale": "close",
+   "height": "eye",
+   "stage": "gauge-close",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "riseWith",
+   "stage3d": "planes",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "centered": "the gauge at x560 y960",
+   "means": "Close on the gauge. An AFTERTHOUGHT tag is swept off the pole, the plate under the dial flips from POWER to DESIGN BRIEF and an OUR READ stamp lands, then the tank plugs in its cable and the camera rises to the lit yard.",
+   "ambient": "needle wobble, lamp pulse, snow, the cable pulse",
+   "hero": {
+    "name": "PowerGauge",
+    "parts": 10,
+    "zones": 3,
+    "detail_note": "60% gauge, 25% tank, 15% yard"
+   }
+  },
+  {
+   "id": 16,
+   "title": "Two roads",
+   "vo_line": 15,
+   "start_s": 106.6,
+   "framing": "two-up",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "frost-yard",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "single-organic-hero",
+   "camera": "truckAcross",
+   "stage3d": "planes",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "centered": "the fork at x540 y1100",
+   "means": "A fork in the snow. Left, the tank with its cell window glowing as the needle wobbles but holds. Right, the barge sails off toward the billboard. On the last line the needle slams and the yard dims exactly as in frame 1, but this time the cells keep working. The question plate lands, WHICH WOULD YOU BET ON.",
+   "ambient": "snow falls, water ripples, needle wobbles, lamp flickers",
+   "hero": {
+    "name": "Fork",
+    "parts": 16,
+    "zones": 3,
+    "detail_note": "40% tank, 35% barge, 25% yard"
+   }
+  }
+ ],
+ "beats": [
+  {
+   "id": 1,
+   "shot": 1,
+   "t": "0.000-2.600",
+   "at_s": 0.0,
+   "vo_line": 0,
+   "offset": 0.0,
+   "vo": "Picture a bioreactor that doesn't exist yet, already nervous about the power bill.",
+   "phrase": "Picture a bioreactor",
+   "shows": "the needle slams into the low zone, the lamp dips, the whole frame darkens and the half-drawn model tank flinches",
+   "sfx": "thump",
+   "means": "hook: power drops and the tank that does not exist yet flinches",
+   "rehook": "",
+   "draw": {
+    "subject": "model tank",
+    "action": "flinches as the needle slams down",
+    "emotion": "alarmed",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the needle slams into the low zone, the lamp dips, the whole frame darkens and the half-drawn model tank flinches",
+    "reaction": "the tank shudders and the cable pulse stutters",
+    "ambient": "snow falls, stars twinkle, the outline crawls"
+   }
+  },
+  {
+   "id": 2,
+   "shot": 1,
+   "t": "2.600-4.800",
+   "at_s": 2.6,
+   "vo_line": 0,
+   "offset": 2.6,
+   "vo": "Picture a bioreactor that doesn't exist yet, already nervous about the power bill.",
+   "phrase": "that doesn't exist yet",
+   "shows": "pencil hatch ticks fill the dashed outline, the tank's eyes open and a sweat drop slides",
+   "sfx": "scratch",
+   "means": "it is still being drawn and it is already nervous",
+   "rehook": "",
+   "draw": {
+    "subject": "model tank",
+    "action": "opens its eyes and sweats",
+    "emotion": "worried",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "pencil hatch ticks fill the dashed outline, the tank's eyes open and a sweat drop slides",
+    "reaction": "the sweat drop slides down the barrel",
+    "ambient": "hatch ticks scribble in, snow falls"
+   }
+  },
+  {
+   "id": 3,
+   "shot": 1,
+   "t": "4.800-7.720",
+   "at_s": 4.8,
+   "vo_line": 0,
+   "offset": 4.8,
+   "vo": "Picture a bioreactor that doesn't exist yet, already nervous about the power bill.",
+   "phrase": "about the power bill",
+   "shows": "the headline plate lands and a PRICE tag sways on the pole",
+   "sfx": "stamp",
+   "means": "the question is planted",
+   "rehook": "",
+   "draw": {
+    "subject": "plate and price tag",
+    "action": "land and sway",
+    "emotion": "neutral",
+    "annotation": "A TANK NERVOUS ABOUT POWER"
+   },
+   "choreo": {
+    "primary": "the headline plate lands and a PRICE tag sways on the pole",
+    "reaction": "the price tag swings on its string",
+    "ambient": "snow falls, lamp flickers"
+   }
+  },
+  {
+   "id": 4,
+   "shot": 2,
+   "t": "7.720-10.600",
+   "at_s": 7.72,
+   "vo_line": 1,
+   "offset": 0.0,
+   "vo": "On October fifth, the University of Alaska Fairbanks announced it's joining a six million dollar National Science Foundation project with three other universities.",
+   "phrase": "On October fifth",
+   "shows": "a UAF NEWS card stamps down, OCTOBER 5TH, $6 MILLION NSF",
+   "sfx": "stamp",
+   "means": "the announcement",
+   "rehook": "",
+   "draw": {
+    "subject": "news card",
+    "action": "stamps down",
+    "emotion": "neutral",
+    "annotation": "UAF NEWS \u00b7 OCTOBER 5TH \u00b7 $6 MILLION NSF"
+   },
+   "choreo": {
+    "primary": "a UAF NEWS card stamps down, OCTOBER 5TH, $6 MILLION NSF",
+    "reaction": "the table jumps under the stamp",
+    "ambient": "snow falls, steam curls"
+   }
+  },
+  {
+   "id": 5,
+   "shot": 2,
+   "t": "10.600-12.700",
+   "at_s": 10.6,
+   "vo_line": 1,
+   "offset": 2.88,
+   "vo": "On October fifth, the University of Alaska Fairbanks announced it's joining a six million dollar National Science Foundation project with three other universities.",
+   "phrase": "announced it's joining",
+   "shows": "three chairs slide in around the round table and leave a gap",
+   "sfx": "slide",
+   "means": "who is at the table",
+   "rehook": "",
+   "draw": {
+    "subject": "three chairs",
+    "action": "slide in leaving a gap",
+    "emotion": "curious",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "three chairs slide in around the round table and leave a gap",
+    "reaction": "the gap stays empty and the lamp sways over it",
+    "ambient": "snow falls, steam curls"
+   }
+  },
+  {
+   "id": 6,
+   "shot": 2,
+   "t": "12.700-16.200",
+   "at_s": 12.7,
+   "vo_line": 1,
+   "offset": 4.98,
+   "vo": "On October fifth, the University of Alaska Fairbanks announced it's joining a six million dollar National Science Foundation project with three other universities.",
+   "phrase": "joining",
+   "shows": "the UAF chair scoots into the gap and its JOINING tag lights",
+   "sfx": "blip",
+   "means": "UAF is joining, not leading",
+   "rehook": "",
+   "draw": {
+    "subject": "UAF chair",
+    "action": "scoots into the gap",
+    "emotion": "eager",
+    "annotation": "UAF \u00b7 JOINING"
+   },
+   "choreo": {
+    "primary": "the UAF chair scoots into the gap and its JOINING tag lights",
+    "reaction": "the tag lights and the chair rocks into place",
+    "ambient": "snow falls"
+   }
+  },
+  {
+   "id": 7,
+   "shot": 2,
+   "t": "16.200-19.760",
+   "at_s": 16.2,
+   "vo_line": 1,
+   "offset": 8.48,
+   "vo": "On October fifth, the University of Alaska Fairbanks announced it's joining a six million dollar National Science Foundation project with three other universities.",
+   "phrase": "with three other universities",
+   "shows": "the plate names the three partners and the camera pulls back to the whole round table",
+   "sfx": "whoosh",
+   "means": "three partners",
+   "rehook": "",
+   "draw": {
+    "subject": "partner plate",
+    "action": "lands as the camera pulls back",
+    "emotion": "pleased",
+    "annotation": "UAA \u00b7 MONTANA TECH \u00b7 WYOMING"
+   },
+   "choreo": {
+    "primary": "the plate names the three partners and the camera pulls back to the whole round table",
+    "reaction": "the whole table is revealed with the tank watching from the left edge",
+    "ambient": "snow falls, lamp sways"
+   }
+  },
+  {
+   "id": 8,
+   "shot": 3,
+   "t": "19.760-22.400",
+   "at_s": 19.76,
+   "vo_line": 2,
+   "offset": 0.0,
+   "vo": "UAF's slice of that is about nine hundred thirteen thousand dollars.",
+   "phrase": "UAF's slice of that",
+   "shows": "the round table becomes a pie on a paper award ledger",
+   "sfx": "whoosh",
+   "means": "the share",
+   "rehook": "",
+   "draw": {
+    "subject": "pie",
+    "action": "grows in on the ledger",
+    "emotion": "neutral",
+    "annotation": "UAF SHARE \u00b7 ABOUT $913,000"
+   },
+   "choreo": {
+    "primary": "the round table becomes a pie on a paper award ledger",
+    "reaction": "the ledger rule lines shiver as the pie lands",
+    "ambient": "ledger lines scroll, the rim shines"
+   }
+  },
+  {
+   "id": 9,
+   "shot": 3,
+   "t": "22.400-25.440",
+   "at_s": 22.4,
+   "vo_line": 2,
+   "offset": 2.64,
+   "vo": "UAF's slice of that is about nine hundred thirteen thousand dollars.",
+   "phrase": "about nine hundred thirteen thousand",
+   "shows": "the UAF wedge pulls out and a pennant pops on it",
+   "sfx": "pop",
+   "means": "the number lands once",
+   "rehook": "",
+   "draw": {
+    "subject": "wedge and pennant",
+    "action": "pull out",
+    "emotion": "pleased",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the UAF wedge pulls out and a pennant pops on it",
+    "reaction": "the pen scratches a tick beside the wedge",
+    "ambient": "pen scratches, the rim shines"
+   }
+  },
+  {
+   "id": 10,
+   "shot": 4,
+   "t": "25.440-27.900",
+   "at_s": 25.44,
+   "vo_line": 3,
+   "offset": 0.0,
+   "vo": "Microbes would recover rare earths from coal refuse and ash.",
+   "phrase": "Microbes would recover",
+   "shows": "the WASTE tag flips to FEEDSTOCK? as microbes crawl up the heap",
+   "sfx": "page",
+   "means": "waste becomes a question",
+   "rehook": "",
+   "draw": {
+    "subject": "ash heap tag",
+    "action": "flips",
+    "emotion": "hopeful",
+    "annotation": "COAL REFUSE AND ASH"
+   },
+   "choreo": {
+    "primary": "the WASTE tag flips to FEEDSTOCK? as microbes crawl up the heap",
+    "reaction": "the heap sheds a puff of dust",
+    "ambient": "snow falls on the heap, tag sways"
+   }
+  },
+  {
+   "id": 11,
+   "shot": 4,
+   "t": "27.900-30.480",
+   "at_s": 27.9,
+   "vo_line": 3,
+   "offset": 2.46,
+   "vo": "Microbes would recover rare earths from coal refuse and ash.",
+   "phrase": "from coal refuse and ash",
+   "shows": "microbes carry specks away down the slope",
+   "sfx": "scratch",
+   "means": "the raw material",
+   "rehook": "",
+   "draw": {
+    "subject": "microbes",
+    "action": "carry specks away",
+    "emotion": "busy",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "microbes carry specks away down the slope",
+    "reaction": "a trail of specks follows them",
+    "ambient": "snow falls, ash dust lifts"
+   }
+  },
+  {
+   "id": 12,
+   "shot": 5,
+   "t": "30.480-32.400",
+   "at_s": 30.48,
+   "vo_line": 4,
+   "offset": 0.0,
+   "vo": "Rare earth atoms can cling to a cell's outer wall.",
+   "phrase": "Rare earth atoms",
+   "shows": "down into one cell, atoms click onto the outside of the wall",
+   "sfx": "click",
+   "means": "mechanism",
+   "rehook": "",
+   "draw": {
+    "subject": "atoms",
+    "action": "click onto the cell wall",
+    "emotion": "neutral",
+    "annotation": "ATOMS CLING OUTSIDE \u00b7 ILLUSTRATIVE"
+   },
+   "choreo": {
+    "primary": "down into one cell, atoms click onto the outside of the wall",
+    "reaction": "the wall dimples under each click",
+    "ambient": "the membrane breathes, bokeh drifts"
+   }
+  },
+  {
+   "id": 13,
+   "shot": 5,
+   "t": "32.400-35.000",
+   "at_s": 32.4,
+   "vo_line": 4,
+   "offset": 1.92,
+   "vo": "Rare earth atoms can cling to a cell's outer wall.",
+   "phrase": "outer wall",
+   "shows": "one atom presses in, the wall dimples and pushes it back out",
+   "sfx": "blip",
+   "means": "not eaten",
+   "rehook": "",
+   "draw": {
+    "subject": "rejected atom",
+    "action": "is pushed back out",
+    "emotion": "smug",
+    "annotation": "ONE KNOWN MECHANISM \u00b7 ILLUSTRATIVE"
+   },
+   "choreo": {
+    "primary": "one atom presses in, the wall dimples and pushes it back out",
+    "reaction": "the atom is shoved out and the wall relaxes",
+    "ambient": "the membrane breathes"
+   }
+  },
+  {
+   "id": 14,
+   "shot": 6,
+   "t": "35.000-38.000",
+   "at_s": 35.0,
+   "vo_line": 5,
+   "offset": 0.0,
+   "vo": "Two A I tools are planned. The first will predict how readily rare earths can be recovered.",
+   "phrase": "Two A I tools are planned",
+   "shows": "a plank bench in the snow splits into two sides, plate TWO AI TOOLS PLANNED",
+   "sfx": "whoosh",
+   "means": "two tools",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "bench",
+    "action": "splits",
+    "emotion": "curious",
+    "annotation": "TWO AI TOOLS PLANNED"
+   },
+   "choreo": {
+    "primary": "a plank bench in the snow splits into two sides, plate TWO AI TOOLS PLANNED",
+    "reaction": "the dashed seam draws down the middle",
+    "ambient": "snow falls, jar glints"
+   }
+  },
+  {
+   "id": 15,
+   "shot": 6,
+   "t": "38.000-40.400",
+   "at_s": 38.0,
+   "vo_line": 5,
+   "offset": 3.0,
+   "vo": "Two A I tools are planned. The first will predict how readily rare earths can be recovered.",
+   "phrase": "The first will predict",
+   "shows": "a dashed reticle hunts the jars",
+   "sfx": "sonar",
+   "means": "tool one",
+   "rehook": "",
+   "draw": {
+    "subject": "reticle",
+    "action": "hunts across the jars",
+    "emotion": "focused",
+    "annotation": "AI WILL PREDICT RECOVERY"
+   },
+   "choreo": {
+    "primary": "a dashed reticle hunts the jars",
+    "reaction": "the jars glint as it passes",
+    "ambient": "snow falls"
+   }
+  },
+  {
+   "id": 16,
+   "shot": 6,
+   "t": "40.400-42.780",
+   "at_s": 40.4,
+   "vo_line": 5,
+   "offset": 5.4,
+   "vo": "Two A I tools are planned. The first will predict how readily rare earths can be recovered.",
+   "phrase": "rare earths can be recovered",
+   "shows": "the tarp bulges and one corner lifts",
+   "sfx": "creak",
+   "means": "the setup for tool two",
+   "rehook": "",
+   "draw": {
+    "subject": "tarp",
+    "action": "bulges and lifts a corner",
+    "emotion": "eager",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the tarp bulges and one corner lifts",
+    "reaction": "the corner flaps and the lump shudders",
+    "ambient": "snow falls"
+   }
+  },
+  {
+   "id": 17,
+   "shot": 7,
+   "t": "42.780-46.400",
+   "at_s": 42.78,
+   "vo_line": 6,
+   "offset": 0.0,
+   "vo": "The second will adjust the bioreactor as conditions and available energy change, because living cells stall when power does.",
+   "phrase": "The second will adjust",
+   "shows": "the tarp whips off and a dashed PLANNED governor spins up as the needle swings",
+   "sfx": "whoosh",
+   "means": "tool two",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "governor",
+    "action": "spins up",
+    "emotion": "eager",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the tarp whips off and a dashed PLANNED governor spins up as the needle swings",
+    "reaction": "the tank flinches back from the whipping tarp",
+    "ambient": "lamp pulses, flyballs spin"
+   }
+  },
+  {
+   "id": 18,
+   "shot": 7,
+   "t": "46.400-48.900",
+   "at_s": 46.4,
+   "vo_line": 6,
+   "offset": 3.62,
+   "vo": "The second will adjust the bioreactor as conditions and available energy change, because living cells stall when power does.",
+   "phrase": "as conditions change",
+   "shows": "the governor reaches for the tank valve, the tank stays worried",
+   "sfx": "creak",
+   "means": "it is planned, not proven",
+   "rehook": "",
+   "draw": {
+    "subject": "governor",
+    "action": "reaches for the valve",
+    "emotion": "focused",
+    "annotation": "AI WILL ADJUST THE BIOREACTOR"
+   },
+   "choreo": {
+    "primary": "the governor reaches for the tank valve, the tank stays worried",
+    "reaction": "the tank eyes the reaching arm and sweats",
+    "ambient": "flyballs spin, the needle swings"
+   }
+  },
+  {
+   "id": 19,
+   "shot": 7,
+   "t": "48.900-51.400",
+   "at_s": 48.9,
+   "vo_line": 6,
+   "offset": 6.12,
+   "vo": "The second will adjust the bioreactor as conditions and available energy change, because living cells stall when power does.",
+   "phrase": "because living cells stall",
+   "shows": "three cells in the barrel window droop and a sealed RESULTS envelope drops in the corner",
+   "sfx": "thunk",
+   "means": "the second loop is planted: results",
+   "rehook": "",
+   "draw": {
+    "subject": "cells and envelope",
+    "action": "droop and drop",
+    "emotion": "tired",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "three cells in the barrel window droop and a sealed RESULTS envelope drops in the corner",
+    "reaction": "the cells sag and the envelope thuds on the snow",
+    "ambient": "snow falls"
+   }
+  },
+  {
+   "id": 20,
+   "shot": 8,
+   "t": "51.400-55.300",
+   "at_s": 51.4,
+   "vo_line": 7,
+   "offset": 0.0,
+   "vo": "So the question is whether cells can keep working on Alaska's power.",
+   "phrase": "So the question",
+   "shows": "the cutaway cells slow and stall as the needle sinks and the yard darkens",
+   "sfx": "creak",
+   "means": "the stakes",
+   "rehook": "",
+   "draw": {
+    "subject": "cells",
+    "action": "slow and stall",
+    "emotion": "tired",
+    "annotation": "CAN CELLS KEEP WORKING \u00b7 ILLUSTRATIVE"
+   },
+   "choreo": {
+    "primary": "the cutaway cells slow and stall as the needle sinks and the yard darkens",
+    "reaction": "the cells droop one by one",
+    "ambient": "bubbles rise, the needle trembles"
+   }
+  },
+  {
+   "id": 21,
+   "shot": 8,
+   "t": "55.300-58.940",
+   "at_s": 55.3,
+   "vo_line": 7,
+   "offset": 3.9,
+   "vo": "So the question is whether cells can keep working on Alaska's power.",
+   "phrase": "on Alaska's power",
+   "shows": "the lamp flickers off and on and the tank shivers",
+   "sfx": "bloop",
+   "means": "power wobbles",
+   "rehook": "",
+   "draw": {
+    "subject": "lamp",
+    "action": "flickers off and on",
+    "emotion": "worried",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the lamp flickers off and on and the tank shivers",
+    "reaction": "the tank shivers in the dark",
+    "ambient": "the yard dims and returns, snow falls"
+   }
+  },
+  {
+   "id": 22,
+   "shot": 9,
+   "t": "58.940-63.300",
+   "at_s": 58.94,
+   "vo_line": 8,
+   "offset": 0.0,
+   "vo": "UAF professor Srijan Aggarwal says Alaska's remote energy challenges make energy use a central part of that question.",
+   "phrase": "UAF professor",
+   "shows": "the quote plate rides in along the cable on an ember pulse",
+   "sfx": "sonar",
+   "means": "the authority",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "quote plate",
+    "action": "rides in on the pulse",
+    "emotion": "neutral",
+    "annotation": "SRIJAN AGGARWAL \u00b7 UAF PROFESSOR"
+   },
+   "choreo": {
+    "primary": "the quote plate rides in along the cable on an ember pulse",
+    "reaction": "the plate rocks as the pulse passes",
+    "ambient": "the cable pulse runs, snow falls"
+   }
+  },
+  {
+   "id": 23,
+   "shot": 9,
+   "t": "63.300-66.400",
+   "at_s": 63.3,
+   "vo_line": 8,
+   "offset": 4.36,
+   "vo": "UAF professor Srijan Aggarwal says Alaska's remote energy challenges make energy use a central part of that question.",
+   "phrase": "remote energy challenges",
+   "shows": "the pulse reaches the tank and its cell window speeds up then slows with the lamp",
+   "sfx": "hum",
+   "means": "energy is central",
+   "rehook": "",
+   "draw": {
+    "subject": "cell window",
+    "action": "speeds up and slows",
+    "emotion": "listening",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the pulse reaches the tank and its cell window speeds up then slows with the lamp",
+    "reaction": "the cells in the window race then lag",
+    "ambient": "the lamp flickers, snow falls"
+   }
+  },
+  {
+   "id": 24,
+   "shot": 9,
+   "t": "66.400-68.580",
+   "at_s": 66.4,
+   "vo_line": 8,
+   "offset": 7.46,
+   "vo": "UAF professor Srijan Aggarwal says Alaska's remote energy challenges make energy use a central part of that question.",
+   "phrase": "that question",
+   "shows": "the gauge lights its low zone",
+   "sfx": "clip",
+   "means": "back to the question",
+   "rehook": "",
+   "draw": {
+    "subject": "gauge",
+    "action": "lights the low zone",
+    "emotion": "neutral",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the gauge lights its low zone",
+    "reaction": "the needle trembles in the low zone",
+    "ambient": "snow falls"
+   }
+  },
+  {
+   "id": 25,
+   "shot": 10,
+   "t": "68.580-71.200",
+   "at_s": 68.58,
+   "vo_line": 9,
+   "offset": 0.0,
+   "vo": "Power is the risk, so they'll build the plant in software first, a virtual pilot plant.",
+   "phrase": "Power is the risk",
+   "shows": "a switch clunks, the desk lamp swings and the monitor flares on as a lime outline of the tank draws itself",
+   "sfx": "whirr",
+   "means": "software first",
+   "rehook": "",
+   "draw": {
+    "subject": "monitor",
+    "action": "boots",
+    "emotion": "neutral",
+    "annotation": "VIRTUAL PILOT PLANT"
+   },
+   "choreo": {
+    "primary": "a switch clunks, the desk lamp swings and the monitor flares on as a lime outline of the tank draws itself",
+    "reaction": "the screen glow flares across the desk",
+    "ambient": "scanlines, desk lamp glow"
+   }
+  },
+  {
+   "id": 26,
+   "shot": 10,
+   "t": "71.200-75.000",
+   "at_s": 71.2,
+   "vo_line": 9,
+   "offset": 2.62,
+   "vo": "Power is the risk, so they'll build the plant in software first, a virtual pilot plant.",
+   "phrase": "in software first",
+   "shows": "the model fills with internals",
+   "sfx": "click",
+   "means": "virtual",
+   "rehook": "",
+   "draw": {
+    "subject": "model",
+    "action": "fills with internals",
+    "emotion": "neutral",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the model fills with internals",
+    "reaction": "the impeller starts turning in the model",
+    "ambient": "scanlines, the model jitters"
+   }
+  },
+  {
+   "id": 27,
+   "shot": 10,
+   "t": "75.000-77.320",
+   "at_s": 75.0,
+   "vo_line": 9,
+   "offset": 6.42,
+   "vo": "Power is the risk, so they'll build the plant in software first, a virtual pilot plant.",
+   "phrase": "a virtual pilot plant",
+   "shows": "a test run sweeps a level line up the model",
+   "sfx": "blip",
+   "means": "the model runs",
+   "rehook": "",
+   "draw": {
+    "subject": "level line",
+    "action": "sweeps up",
+    "emotion": "neutral",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "a test run sweeps a level line up the model",
+    "reaction": "the level line wobbles as it runs",
+    "ambient": "scanlines"
+   }
+  },
+  {
+   "id": 28,
+   "shot": 11,
+   "t": "77.320-80.580",
+   "at_s": 77.32,
+   "vo_line": 10,
+   "offset": 0.0,
+   "vo": "No results have been reported yet.",
+   "phrase": "No results",
+   "shows": "a NO RESULTS YET stamp slams across the model",
+   "sfx": "thunk",
+   "means": "honesty",
+   "rehook": "",
+   "draw": {
+    "subject": "stamp",
+    "action": "slams",
+    "emotion": "neutral",
+    "annotation": "NO RESULTS YET"
+   },
+   "choreo": {
+    "primary": "a NO RESULTS YET stamp slams across the model",
+    "reaction": "the model flickers and shakes under the stamp",
+    "ambient": "dust jumps off the desk"
+   },
+   "kick": true
+  },
+  {
+   "id": 29,
+   "shot": 12,
+   "t": "80.580-83.500",
+   "at_s": 80.58,
+   "vo_line": 11,
+   "offset": 0.5,
+   "vo": "A smart controller can adapt to expensive power. It can't make power cheaper.",
+   "phrase": "A smart controller",
+   "shows": "the dashed governor nudges the gauge and the needle steadies",
+   "sfx": "click",
+   "means": "it adapts",
+   "rehook": "",
+   "draw": {
+    "subject": "governor",
+    "action": "nudges the dial",
+    "emotion": "calm",
+    "annotation": "IT ADAPTS"
+   },
+   "choreo": {
+    "primary": "the dashed governor nudges the gauge and the needle steadies",
+    "reaction": "the needle steadies under the nudge",
+    "ambient": "snow falls, flyballs spin"
+   }
+  },
+  {
+   "id": 30,
+   "shot": 12,
+   "t": "83.500-87.620",
+   "at_s": 83.5,
+   "vo_line": 11,
+   "offset": 3.42,
+   "vo": "A smart controller can adapt to expensive power. It can't make power cheaper.",
+   "phrase": "can't make power cheaper",
+   "shows": "the PRICE tag creeps down, strains, and snaps back with a clunk while the lamp dims",
+   "sfx": "clunk",
+   "means": "limit",
+   "rehook": "",
+   "draw": {
+    "subject": "price tag",
+    "action": "creeps down and snaps back",
+    "emotion": "neutral",
+    "annotation": "CAN'T MAKE POWER CHEAPER"
+   },
+   "choreo": {
+    "primary": "the PRICE tag creeps down, strains, and snaps back with a clunk while the lamp dims",
+    "reaction": "the tag whips and the lamp dims",
+    "ambient": "snow falls, the cable pulse crawls"
+   }
+  },
+  {
+   "id": 31,
+   "shot": 13,
+   "t": "87.620-88.900",
+   "at_s": 87.62,
+   "vo_line": 12,
+   "offset": 0.0,
+   "vo": "The obvious alternative is to ship the ash where power is cheap.",
+   "phrase": "The obvious alternative",
+   "shows": "a barge with a face slides in loaded with ash sacks",
+   "sfx": "slide",
+   "means": "the other road",
+   "rehook": "",
+   "draw": {
+    "subject": "barge",
+    "action": "slides in",
+    "emotion": "smug",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "a barge with a face slides in loaded with ash sacks",
+    "reaction": "the barge wake slaps the pier",
+    "ambient": "water ripples, snow falls"
+   }
+  },
+  {
+   "id": 32,
+   "shot": 13,
+   "t": "88.900-90.500",
+   "at_s": 88.9,
+   "vo_line": 12,
+   "offset": 1.28,
+   "vo": "The obvious alternative is to ship the ash where power is cheap.",
+   "phrase": "ship the ash",
+   "shows": "the horn blows and the mast sign reads SHIP IT",
+   "sfx": "clunk",
+   "means": "the old idea",
+   "rehook": "",
+   "draw": {
+    "subject": "barge horn",
+    "action": "blows",
+    "emotion": "smug",
+    "annotation": "THE OBVIOUS ALTERNATIVE \u00b7 SHIP IT"
+   },
+   "choreo": {
+    "primary": "the horn blows and the mast sign reads SHIP IT",
+    "reaction": "the tank flinches at the horn and its cell window dims",
+    "ambient": "water ripples"
+   }
+  },
+  {
+   "id": 33,
+   "shot": 13,
+   "t": "90.500-92.920",
+   "at_s": 90.5,
+   "vo_line": 12,
+   "offset": 2.88,
+   "vo": "The obvious alternative is to ship the ash where power is cheap.",
+   "phrase": "where power is cheap",
+   "shows": "a painted billboard sun on a post rises behind the barge",
+   "sfx": "riser",
+   "means": "temptation",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "billboard",
+    "action": "rises",
+    "emotion": "warm",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "a painted billboard sun on a post rises behind the barge",
+    "reaction": "the rays turn and the tank looks away at its own cable",
+    "ambient": "rays turn, water ripples"
+   }
+  },
+  {
+   "id": 34,
+   "shot": 14,
+   "t": "92.920-96.500",
+   "at_s": 92.92,
+   "vo_line": 13,
+   "offset": 0.0,
+   "vo": "Lab and small pilot tests through August twenty thirty will weigh costs, energy, and environmental effects.",
+   "phrase": "Lab and small pilot tests",
+   "shows": "the sealed RESULTS envelope opens on a crate in the yard, a card rises headed TO BE EVALUATED, beside a lab flask and a dashed pilot vessel",
+   "sfx": "page",
+   "means": "loop two pays",
+   "rehook": "",
+   "draw": {
+    "subject": "envelope",
+    "action": "opens",
+    "emotion": "neutral",
+    "annotation": "TO BE EVALUATED"
+   },
+   "choreo": {
+    "primary": "the sealed RESULTS envelope opens on a crate in the yard, a card rises headed TO BE EVALUATED, beside a lab flask and a dashed pilot vessel",
+    "reaction": "the flask bubbles as the card rises",
+    "ambient": "dust floats in the lamp"
+   }
+  },
+  {
+   "id": 35,
+   "shot": 14,
+   "t": "96.500-99.200",
+   "at_s": 96.5,
+   "vo_line": 13,
+   "offset": 3.58,
+   "vo": "Lab and small pilot tests through August twenty thirty will weigh costs, energy, and environmental effects.",
+   "phrase": "through August twenty thirty",
+   "shows": "a calendar ribbon unrolls, SEPT 2026 TO AUG 2030",
+   "sfx": "whoosh",
+   "means": "timeline",
+   "rehook": "",
+   "draw": {
+    "subject": "ribbon",
+    "action": "unrolls",
+    "emotion": "neutral",
+    "annotation": "SEPT 2026 TO AUG 2030"
+   },
+   "choreo": {
+    "primary": "a calendar ribbon unrolls, SEPT 2026 TO AUG 2030",
+    "reaction": "the ribbon sways as it settles",
+    "ambient": "dust floats"
+   }
+  },
+  {
+   "id": 36,
+   "shot": 14,
+   "t": "99.200-101.100",
+   "at_s": 99.2,
+   "vo_line": 13,
+   "offset": 6.28,
+   "vo": "Lab and small pilot tests through August twenty thirty will weigh costs, energy, and environmental effects.",
+   "phrase": "costs, energy, and environmental effects",
+   "shows": "a pen taps three empty boxes beside COST, ENERGY and ENVIRONMENT and a question mark pops in each",
+   "sfx": "stamp",
+   "means": "what gets weighed",
+   "rehook": "",
+   "draw": {
+    "subject": "pen",
+    "action": "taps down on the card",
+    "emotion": "focused",
+    "annotation": "COST \u00b7 ENERGY \u00b7 ENVIRONMENT"
+   },
+   "choreo": {
+    "primary": "a pen taps three empty boxes beside COST, ENERGY and ENVIRONMENT and a question mark pops in each",
+    "reaction": "each tick pops in on its word",
+    "ambient": "the flask bubbles"
+   }
+  },
+  {
+   "id": 37,
+   "shot": 15,
+   "t": "101.100-103.400",
+   "at_s": 101.1,
+   "vo_line": 14,
+   "offset": 0.0,
+   "vo": "Energy isn't an afterthought here. It's the design brief.",
+   "phrase": "Energy isn't an afterthought",
+   "shows": "an AFTERTHOUGHT tag is swept off the pole",
+   "sfx": "snap",
+   "means": "the read",
+   "rehook": "",
+   "draw": {
+    "subject": "tag",
+    "action": "is swept off",
+    "emotion": "neutral",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "an AFTERTHOUGHT tag is swept off the pole",
+    "reaction": "the tag spins away into the snow",
+    "ambient": "needle wobble, snow falls"
+   },
+   "kick": true
+  },
+  {
+   "id": 38,
+   "shot": 15,
+   "t": "103.400-105.000",
+   "at_s": 103.4,
+   "vo_line": 14,
+   "offset": 2.3,
+   "vo": "Energy isn't an afterthought here. It's the design brief.",
+   "phrase": "It's the design brief",
+   "shows": "the plate flips from POWER to DESIGN BRIEF and an OUR READ stamp lands",
+   "sfx": "stamp",
+   "means": "the primary loop pays",
+   "rehook": "",
+   "draw": {
+    "subject": "gauge plate",
+    "action": "flips",
+    "emotion": "neutral",
+    "annotation": "OUR READ"
+   },
+   "choreo": {
+    "primary": "the plate flips from POWER to DESIGN BRIEF and an OUR READ stamp lands",
+    "reaction": "the lamp pulses as the stamp lands",
+    "ambient": "snow falls, cable pulse"
+   }
+  },
+  {
+   "id": 39,
+   "shot": 15,
+   "t": "105.000-106.600",
+   "at_s": 105.0,
+   "vo_line": 14,
+   "offset": 3.9,
+   "vo": "Energy isn't an afterthought here. It's the design brief.",
+   "phrase": "brief",
+   "shows": "the tank plugs in its cable and the camera rises to the lit yard",
+   "sfx": "hum",
+   "means": "relieved",
+   "rehook": "",
+   "draw": {
+    "subject": "tank",
+    "action": "plugs in",
+    "emotion": "relieved",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the tank plugs in its cable and the camera rises to the lit yard",
+    "reaction": "the tank breathes out as the cable seats",
+    "ambient": "the cable pulse runs"
+   }
+  },
+  {
+   "id": 40,
+   "shot": 16,
+   "t": "106.600-110.400",
+   "at_s": 106.6,
+   "vo_line": 15,
+   "offset": 0.0,
+   "vo": "It becomes a win if the controller can keep microbes working on power that wobbles. If not, shipping wins.",
+   "phrase": "It becomes a win",
+   "shows": "a fork in the snow, the tank with its glowing cell window on the left",
+   "sfx": "whoosh",
+   "means": "win condition",
+   "rehook": "",
+   "draw": {
+    "subject": "fork",
+    "action": "splits",
+    "emotion": "hopeful",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "a fork in the snow, the tank with its glowing cell window on the left",
+    "reaction": "the cell window glows steadily",
+    "ambient": "snow falls, water ripples"
+   }
+  },
+  {
+   "id": 41,
+   "shot": 16,
+   "t": "110.400-112.900",
+   "at_s": 110.4,
+   "vo_line": 15,
+   "offset": 3.8,
+   "vo": "It becomes a win if the controller can keep microbes working on power that wobbles. If not, shipping wins.",
+   "phrase": "can keep microbes working on power that wobbles",
+   "shows": "the needle wobbles but holds and the cells keep working",
+   "sfx": "tick",
+   "means": "the bet",
+   "rehook": "",
+   "draw": {
+    "subject": "needle",
+    "action": "wobbles but holds",
+    "emotion": "focused",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the needle wobbles but holds and the cells keep working",
+    "reaction": "a sweat drop slides and the cells keep going",
+    "ambient": "snow falls"
+   }
+  },
+  {
+   "id": 42,
+   "shot": 16,
+   "t": "112.900-116.620",
+   "at_s": 112.9,
+   "vo_line": 15,
+   "offset": 6.3,
+   "vo": "It becomes a win if the controller can keep microbes working on power that wobbles. If not, shipping wins.",
+   "phrase": "If not, shipping wins",
+   "shows": "the barge sails off toward the billboard with the ash",
+   "sfx": "clunk",
+   "means": "the other road",
+   "rehook": "",
+   "draw": {
+    "subject": "barge",
+    "action": "sails away",
+    "emotion": "neutral",
+    "annotation": "NO LABEL, PICTURE ONLY"
+   },
+   "choreo": {
+    "primary": "the barge sails off toward the billboard with the ash",
+    "reaction": "the barge wake spreads",
+    "ambient": "water ripples"
+   }
+  },
+  {
+   "id": 43,
+   "shot": 16,
+   "t": "116.620-117.820",
+   "at_s": 116.62,
+   "vo_line": 16,
+   "offset": 0.0,
+   "vo": "Which would you bet on?",
+   "phrase": "Which would you bet on",
+   "shows": "the needle slams and the yard dims as in frame 1 and the cells flicker between working and stalled, the 2030? tag stays, the question plate lands",
+   "sfx": "stamp",
+   "means": "button",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "lands",
+    "emotion": "neutral",
+    "annotation": "WHICH WOULD YOU BET ON"
+   },
+   "choreo": {
+    "primary": "the needle slams and the yard dims as in frame 1 and the cells flicker between working and stalled, the 2030? tag stays, the question plate lands",
+    "reaction": "the tank shudders and its cells keep glowing",
+    "ambient": "the yard dims, snow falls"
+   }
+  }
+ ]
+}
