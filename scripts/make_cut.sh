@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# ONE CUT, ONE JOB: source gates -> full render -> encode -> evidence -> preflight.
+# ONE CUT, ONE JOB: source gates -> mix -> full render -> encode -> evidence -> preflight.
 #
 # WHY THIS EXISTS (2026-09-30, the cost project). A panel candidate used to take a dozen or
 # more main-loop calls: launch the render, poll it, launch the encode, poll that, build the
@@ -68,6 +68,14 @@ step text_fit          1 python3 scripts/text_fit_check.py
 step caption_band      1 python3 scripts/caption_band_check.py
 step say_it_show_it    1 python3 scripts/say_it_show_it_check.py
 step staging           0 python3 scripts/staging_check.py
+
+# 1b. The mix, every cut (machine pass 2026-10-09). The mix receipt hashes storyboard.json,
+# episode_props.json and vo_lines.json, so a board or build_scenes change after the last mix
+# made encode fail with "source contents changed" on a render that was fine, and 10-09 lost a
+# cut to it. dispatch_mix.py is deterministic (seeded by the run id) and reads nothing the
+# render writes, so it runs here, after the source gates and before the render, and a schedule
+# failure (family repeat, second riser) costs seconds instead of a render.
+step mix               1 python3 scripts/dispatch_mix.py
 
 # 2. The full-resolution render, the parallel queue, its own frame count assert.
 step render            1 bash scripts/render_parallel.sh "$COMP"
