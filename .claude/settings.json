@@ -34,5 +34,6 @@
       }
     ]
   },
-  "effortLevel": "xhigh"
+  "effortLevel": "xhigh",
+  "attribution": {"commit": "", "pr": "", "sessionUrl": false}
 }
