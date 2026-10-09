@@ -667,7 +667,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   with draw + t + vo + sfx + means (+ `kick: true` on at most 3, §4.6), shots[] (framing, transition_in, thread, camera: composed stage3d
   CameraMoves ('craneDown+dollyThrough' or 'static:<reason>'), stage3d: 'planes' | 'flat:<reason>'),
   hook block (pattern, frame1, headline 3 to 8 words, motion_by_s <= 1.3, loopback), audio_arc
-  (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern), divergence_note. Plus
+  (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern, optional `bed` nodes
+  `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block),
+  divergence_note. Plus
   storyboard.md for humans.
 - ENGAGEMENT (docs/craft/ENGAGEMENT.md, read in the directors room): `reveals` [{t, type, what,
   hold_s 0.4 to 0.8}] with at least ONE scale-class reveal (scale-pullback, morph-to-chart,
