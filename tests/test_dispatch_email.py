@@ -15,6 +15,29 @@ from scripts.visible_copy_check import check_email_copy, visible_html_text
 
 
 class DispatchEmailRenderingTest(unittest.TestCase):
+    def test_source_titles_and_notes_lose_colons_and_semicolons(self):
+        # machine pass 2026-10-09: a publisher's "Title: Subtitle" must not fail the draft
+        sources, note = parse_sources({"sources": [
+            {"url": "https://example.com/a", "title": "NSF award 2614749: Research; FEC",
+             "note": "Primary record; fetched in full"}], "sourcing_note": "One outlet: ADN"})
+        self.assertEqual(sources[0]["label"], "NSF award 2614749, Research, FEC")
+        self.assertEqual(sources[0]["note"], "Primary record, fetched in full")
+        self.assertEqual(note, "One outlet, ADN")
+        self.assertEqual(dispatch_email.prose_punct("see https://e.com:8443/x;y; then"),
+                         "see https://e.com:8443/x;y, then")
+        self.assertEqual(dispatch_email.prose_punct("Tom &amp; Jerry at 10:30"),
+                         "Tom &amp; Jerry at 10:30")
+        html = render("x", "", {"square": "https://example.com/s.mp4",
+                                "vertical": "https://example.com/v.mp4"},
+                      "v", "m", sources, "s", "d", False, "2026-09-03", "T", "u")
+        self.assertEqual(check_email_copy("s", html)["status"], "PASS")
+
+    def test_a_failing_line_names_the_input_it_came_from(self):
+        self.assertEqual(dispatch_email.copy_origins(
+            "Meeting at 10:30", [("sources.json sources[0] title", "Meeting at 10:30"),
+                                 ("--note", "Draft only.")]),
+            ["sources.json sources[0] title"])
+
     def test_comment_sources_use_specific_titles_before_shared_outlet(self):
         sources, _ = parse_sources({"sources": [
             {"url": "https://example.com/notice", "title": "The announcement", "outlet": "TCC"},
