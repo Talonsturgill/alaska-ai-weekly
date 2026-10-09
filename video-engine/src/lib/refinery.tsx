@@ -25,14 +25,14 @@ export const RF = {
   emberDeep: '#B5530F',
   emberHot: '#FFC46B',
   paper: '#EDE6D2',
-  kraft: '#B79B6B',
+  kraft: '#A88E62',
   coal: '#2A231F',
   ash: '#76706A',
   ashLight: '#A39C93',
   water: '#2C3E5E',
   waterLight: '#4B6590',
   spruce: '#18302B',
-  rust: '#8E4A2A',
+  rust: '#5E4A3E',
   ink: INK,
 };
 
@@ -227,7 +227,7 @@ export const AshHeap: React.FC<{
         </g>
       ))}
       {glint > 0 && [0, 1, 2, 3].map((i) => (
-        <circle key={i} cx={-70 + i * 52 + hash(i, 20) * 12} cy={-40 - (i % 2) * 36} r={3 + 2 * Math.sin(f / 9 + i * 2)} fill={RF.emberHot} opacity={glint * (0.5 + 0.4 * Math.sin(f / 7 + i * 1.9))} />
+        <circle key={i} cx={-70 + i * 52 + hash(i, 20) * 12} cy={-40 - (i % 2) * 36} r={3 + 2 * Math.sin(f / 9 + i * 2)} fill={RF.ashLight} opacity={glint * (0.5 + 0.4 * Math.sin(f / 7 + i * 1.9))} />
       ))}
       <RimLight d="M -96 -66 Q -40 -128 8 -132" w={5} opacity={0.55} />
       {eyes && [-1, 1].map((s) => (
@@ -241,8 +241,7 @@ export const AshHeap: React.FC<{
       <g transform="translate(-196,-6)">
         <rect x={-5} y={-190} width={10} height={192} fill="#7B5E3B" stroke={INK} strokeWidth={3.6} />
         <g transform={`translate(0,-176) rotate(${3 * Math.sin(f / 21 + phase)})`}>
-          <g transform={`translate(${w / 2 - 6},40) scale(${Math.abs(turn) < 0.07 ? 0.07 : turn},1)`}>
-            <path d={`M ${-w / 2} -44 L ${-w / 2} 4`} stroke={INK} strokeWidth={0} />
+          <g transform={`translate(${w / 2 - 6},40) scale(${Math.abs(turn) < 0.07 ? 0.07 : Math.abs(turn)},1)`}>
             <rect x={-w / 2} y={-22} width={w} height={44} rx={4} fill={turn > 0 ? RF.paper : RF.kraft} stroke={INK} strokeWidth={4} />
             {Math.abs(turn) > 0.35 && (
               <text x={0} y={7} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={18} fill={INK}>{turn > 0 ? tagA : tagB}</text>
@@ -327,21 +326,22 @@ export const Barge: React.FC<{
   );
 };
 
-/** A low sun that is brighter than the tank's lamp, with a label tag. */
-export const CheapSun: React.FC<{f: number; x: number; y: number; scale?: number; label?: string; pull?: number}> = ({f, x, y, scale = 1, label = 'CHEAP POWER', pull = 0}) => {
-  const w = monoW(label, 22) + 44;
+/** A painted billboard disc on a post (NOT a light source), with a generic label. */
+export const CheapSun: React.FC<{f: number; x: number; y: number; scale?: number; label?: string; pull?: number}> = ({f, x, y, scale = 1, label = 'CHEAPER POWER, SOMEWHERE', pull = 0}) => {
+  const w = monoW(label, 20) + 44;
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <rect x={-9} y={90} width={18} height={640} fill="#4A3A2B" stroke={INK} strokeWidth={5} />
       {Array.from({length: 16}, (_, i) => (
-        <path key={i} d="M 0 -150 L 11 -118 L -11 -118 Z" fill={RF.emberHot} opacity={0.5} transform={`rotate(${i * 22.5 + f * 0.3})`} />
+        <path key={i} d="M 0 -150 L 11 -118 L -11 -118 Z" fill="#E9DDA8" stroke={INK} strokeWidth={2.4} transform={`rotate(${i * 22.5 + Math.sin(f / 30) * 4})`} />
       ))}
-      <circle r={104} fill={RF.emberHot} stroke={INK} strokeWidth={7} />
-      <circle r={78} fill={RF.ember} opacity={0.35} />
-      <circle cx={-26} cy={-30} r={26} fill="#fff" opacity={0.35} />
-      <g transform={`translate(${pull * -30},150)`}>
+      <circle r={104} fill="#E9DDA8" stroke={INK} strokeWidth={7} />
+      <circle r={80} fill="none" stroke={INK} strokeWidth={3} opacity={0.35} />
+      <circle cx={-26} cy={-30} r={22} fill="#fff" opacity={0.4} />
+      <g transform={`translate(${pull * -20},152)`}>
         <rect x={-w / 2 + 5} y={-24} width={w} height={46} rx={5} fill="#000" opacity={0.3} />
         <rect x={-w / 2} y={-28} width={w} height={46} rx={5} fill={RF.paper} stroke={INK} strokeWidth={4.4} />
-        <text x={0} y={5} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={22} letterSpacing={1.5} fill={INK}>{label}</text>
+        <text x={0} y={5} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={20} letterSpacing={1.5} fill={INK}>{label}</text>
       </g>
     </g>
   );
@@ -350,7 +350,7 @@ export const CheapSun: React.FC<{f: number; x: number; y: number; scale?: number
 /* ================================================================== */
 /* THE ROUND TABLE, THE PIE, THE ENVELOPE, THE JARS, THE TARP           */
 /* ================================================================== */
-export const NameChair: React.FC<{x: number; y: number; scale?: number; label: string; tone?: string; arrive?: number; join?: boolean; face?: number}> = ({x, y, scale = 1, label, tone = '#5B6C8F', arrive = 1, join = false, face = 1}) => {
+export const NameChair: React.FC<{x: number; y: number; scale?: number; label: string; tone?: string; arrive?: number; join?: boolean; face?: number}> = ({x, y, scale = 1, label, tone = '#5B6C8F', arrive = 1, join = false, face = 0}) => {
   const T = tones(tone);
   const uid = `nc${Math.round(x)}${label.length}`;
   const w = Math.max(110, monoW(label, 18) + 28);
@@ -376,27 +376,40 @@ export const NameChair: React.FC<{x: number; y: number; scale?: number; label: s
   );
 };
 
-/** A pie of three NSF award records drawn to true proportion. `cut` pulls the UAF wedge out. */
+/** A pie of the three NSF award records' total ($5,998,412). The UAF wedge ($913,037) is drawn to true proportion (15.2 percent). `cut` pulls it out. */
 export const AwardPie: React.FC<{f: number; x: number; y: number; scale?: number; cut?: number; grow?: number}> = ({f, x, y, scale = 1, cut = 0, grow = 1}) => {
-  // shares of the three NSF award records: UAA 3,824,575 / Montana Tech 1,260,800 / UAF 913,037 of 5,998,412
-  const shares = [0.6376, 0.2102, 0.1522];
-  const cols = ['#5E7AA8', '#7C9C8C', RF.ember];
+  const uaf = 913037 / 5998412;
   const R = 150;
-  let a0 = -Math.PI / 2;
-  const wedges = shares.map((s, i) => {
-    const a1 = a0 + s * Math.PI * 2;
-    const mid = (a0 + a1) / 2;
-    const off = i === 2 ? 56 * cut : 0;
-    const p = `M ${Math.cos(mid) * off} ${Math.sin(mid) * off} L ${Math.cos(a0) * R + Math.cos(mid) * off} ${Math.sin(a0) * R + Math.sin(mid) * off} A ${R} ${R} 0 ${s > 0.5 ? 1 : 0} 1 ${Math.cos(a1) * R + Math.cos(mid) * off} ${Math.sin(a1) * R + Math.sin(mid) * off} Z`;
-    a0 = a1;
-    return <path key={i} d={p} fill={cols[i]} stroke={INK} strokeWidth={6} strokeLinejoin="round" />;
-  });
+  const a0 = -Math.PI / 2;
+  const a1 = a0 + (1 - uaf) * Math.PI * 2; // the rest first, UAF last
+  const mid = (a1 + a0 + Math.PI * 2) / 2;
+  const off = 56 * cut;
+  const big = `M 0 0 L ${Math.cos(a0) * R} ${Math.sin(a0) * R} A ${R} ${R} 0 1 1 ${Math.cos(a1) * R} ${Math.sin(a1) * R} Z`;
+  const small = `M ${Math.cos(mid) * off} ${Math.sin(mid) * off} L ${Math.cos(a1) * R + Math.cos(mid) * off} ${Math.sin(a1) * R + Math.sin(mid) * off} A ${R} ${R} 0 0 1 ${Math.cos(a0 + Math.PI * 2) * R + Math.cos(mid) * off} ${Math.sin(a0 + Math.PI * 2) * R + Math.sin(mid) * off} Z`;
   return (
     <g transform={`translate(${x},${y}) scale(${scale * grow})`}>
       <ContactShadow cx={0} cy={R + 30} rx={170} ry={18} opacity={0.4} />
       <circle r={R + 12} fill="#E9E1CB" stroke={INK} strokeWidth={6} />
-      {wedges}
+      <path d={big} fill="#5E7AA8" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <text x={-30} y={20} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={22} letterSpacing={2} fill="#F4F2EA">REST OF THE $6M</text>
+      <path d={small} fill={RF.paper} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
       <circle r={R - 4} fill="none" stroke="#fff" strokeWidth={4} opacity={0.12} />
+    </g>
+  );
+};
+
+/** A price tag on a string that creeps down, strains, and snaps back like elastic. No number on it, by design. */
+export const PriceTag: React.FC<{f: number; x: number; y: number; scale?: number; creep?: number; snap?: number}> = ({f, x, y, scale = 1, creep = 0, snap = 0}) => {
+  const drop = 90 * creep * (1 - snap);
+  const wob = snap > 0 && snap < 1 ? 14 * Math.sin(snap * 30) * (1 - snap) : 0;
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <path d={`M 0 0 L ${wob} ${50 + drop}`} stroke={INK} strokeWidth={4} fill="none" />
+      <g transform={`translate(${wob},${50 + drop}) rotate(${wob})`}>
+        <path d="M -44 0 L 44 0 L 44 70 L 0 92 L -44 70 Z" fill={RF.kraft} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        <circle cx={0} cy={14} r={6} fill="#10151F" stroke={INK} strokeWidth={2} />
+        <text y={58} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={900} fontSize={22} letterSpacing={1} fill={INK}>PRICE</text>
+      </g>
     </g>
   );
 };
@@ -408,7 +421,7 @@ export const Envelope: React.FC<{f: number; x: number; y: number; scale?: number
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${scale})`}>
       <ContactShadow cx={0} cy={110} rx={150} ry={14} opacity={0.35} />
       {k > 0.05 && (
-        <g transform={`translate(0,${-150 * k})`}>
+        <g transform={`translate(0,${-235 * k})`}>
           <rect x={-w / 2} y={-30} width={w} height={40 + lines.length * 40} fill={RF.paper} stroke={INK} strokeWidth={5} />
           {lines.map((l, i) => (
             <text key={i} x={0} y={14 + i * 40} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={22} letterSpacing={1} fill={INK}>{l}</text>
@@ -420,8 +433,8 @@ export const Envelope: React.FC<{f: number; x: number; y: number; scale?: number
       <path d="M -130 110 L -20 20 M 130 110 L 20 20" stroke={INK} strokeWidth={4} fill="none" />
       {stamp && k < 0.2 && (
         <g transform="translate(0,60) rotate(-8)">
-          <rect x={-100} y={-22} width={200} height={44} fill="none" stroke="#8E1B3A" strokeWidth={5} />
-          <text x={0} y={8} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={900} fontSize={22} letterSpacing={2} fill="#8E1B3A">{stamp}</text>
+          <rect x={-100} y={-22} width={200} height={44} fill="none" stroke="#7A2236" strokeWidth={5} />
+          <text x={0} y={8} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={900} fontSize={22} letterSpacing={2} fill="#7A2236">{stamp}</text>
         </g>
       )}
     </g>
@@ -533,14 +546,20 @@ export const FrostYardDusk: React.FC<{f: number; power?: number; ground?: number
           <stop offset="0.7" stopColor={RF.skyLow} />
           <stop offset="1" stopColor={power > 0.5 ? '#9A5D6E' : '#59526F'} />
         </linearGradient>
+        <linearGradient id="fyd-au0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4FA3A0" stopOpacity="0.26" /><stop offset="1" stopColor="#4FA3A0" stopOpacity="0" /></linearGradient>
+        <linearGradient id="fyd-au1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#8A6AA8" stopOpacity="0.26" /><stop offset="1" stopColor="#8A6AA8" stopOpacity="0" /></linearGradient>
         <linearGradient id="fyd-snow" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor={RF.snow} />
-          <stop offset="1" stopColor={RF.snowShade} />
+          <stop offset="0" stopColor="#8190B2" />
+          <stop offset="1" stopColor="#4A5780" />
         </linearGradient>
       </defs>
       <rect data-band="ok" x={-20} y={-20} width={1120} height={ground + 40} fill="url(#fyd-sky)" />
       {stars.map((s) => <circle key={s.p} cx={s.x} cy={s.y} r={s.r} fill="#fff" opacity={0.35 + 0.35 * Math.sin(f / 23 + s.p)} />)}
-      <ellipse cx={600 - shift * 0.2} cy={ground - 20} rx={520} ry={110 + 40 * power} fill={RF.ember} opacity={0.1 + 0.2 * power} />
+      {[0, 1].map((k) => (
+        <path key={k} d={`M -40 ${360 + k * 120} ${Array.from({length: 9}, (_, i) => `Q ${i * 140 + 70} ${300 + k * 120 + 70 * Math.sin(f / 70 + i * 0.9 + k)} ${(i + 1) * 140} ${360 + k * 120 + 40 * Math.sin(f / 90 + i * 0.7)}`).join(' ')} L 1180 ${700 + k * 120} L -40 ${700 + k * 120} Z`}
+          fill={k ? 'url(#fyd-au1)' : 'url(#fyd-au0)'} opacity={0.75 + 0.25 * Math.sin(f / 50 + k)} />
+      ))}
+      <ellipse cx={600 - shift * 0.2} cy={ground - 20} rx={520} ry={110 + 40 * power} fill="#8A6AA8" opacity={0.1 + 0.2 * power} />
       {ridge(1, ground - 230, 90, '#2A3555', 0.25)}
       {ridge(2, ground - 150, 70, '#1F2B49', 0.5)}
       {trees.map((t, i) => (
@@ -550,6 +569,21 @@ export const FrostYardDusk: React.FC<{f: number; power?: number; ground?: number
       ))}
       <rect data-band="ok" x={-20} y={ground - 6} width={1120} height={1960 - ground} fill="url(#fyd-snow)" />
       <path d={`M -20 ${ground + 4} Q 300 ${ground - 12} 560 ${ground + 2} T 1100 ${ground + 4}`} fill="none" stroke="#fff" strokeWidth={4} opacity={0.5} />
+      {/* mid-ground drifts and the near plane (a fence and a foreground bank) so the lower third is a stage */}
+      <ellipse cx={180 - shift * 1.2} cy={ground + 120} rx={420} ry={46} fill="#7683A8" opacity={0.7} />
+      <ellipse cx={880 - shift * 1.2} cy={ground + 160} rx={380} ry={40} fill="#6C799E" opacity={0.7} />
+      <g data-band="ok">
+        <path d={`M -40 1980 L -40 1620 Q 200 ${1560 + 10 * Math.sin(f / 80)} 460 1620 Q 760 1690 1120 1590 L 1120 1980 Z`} fill="#34406A" stroke={INK} strokeWidth={5} />
+        <path d="M -40 1700 Q 260 1650 560 1710 T 1120 1690" fill="none" stroke="#8190B2" strokeWidth={4} opacity={0.5} />
+        {[90, 330, 590, 840, 1040].map((fx, i) => (
+          <g key={i} transform={`translate(${fx - shift * 1.6},${1640 + (i % 2) * 40})`}>
+            <rect x={-10} y={-90} width={20} height={150} fill="#4A3A2B" stroke={INK} strokeWidth={4} />
+            <path d="M -10 -80 L -300 -70 M -10 -50 L -300 -42" stroke={INK} strokeWidth={3} opacity={0.7} />
+          </g>
+        ))}
+        {Array.from({length: 7}, (_, i) => <ellipse key={i} cx={120 + i * 150 + 20 * Math.sin(i)} cy={1790 + (i % 3) * 36} rx={38} ry={9} fill="#2A3558" opacity={0.7} />)}
+      </g>
+      {pole && <ellipse cx={900 - shift * 0.9} cy={ground + 70} rx={420} ry={64} fill="#C9D6E6" opacity={0.08 + 0.4 * power} />}
       {pole && (
         <g transform={`translate(${900 - shift * 0.9},${ground + 30})`}>
           <ContactShadow cx={0} cy={0} rx={50} ry={9} opacity={0.5} />
