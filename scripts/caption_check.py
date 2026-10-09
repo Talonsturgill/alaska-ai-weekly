@@ -96,6 +96,47 @@ BULLETY=re.compile(r"^\s*([•▪✓✅➤→\-\*])\s")
 # the pattern deliberately does not touch it.
 SENTENCE_BUT = re.compile(r"(?:(?<=^)|(?<=[.!?]\s)|(?<=[.!?]\s\s)|(?<=\n))\s*But\b", re.M)
 
+# NO FIRST PERSON IN THE CAPTION (owner rule 2026-10-09: "stop using first person in the actual
+# caption"). Measured that day on the 22 captions this channel had shipped: 11 spoke in the first
+# person, four of them through "My read is", and that was how each of the last three did it.
+#
+# The rubric still hard-fails a caption with no point of view, and the two rules agree once the
+# position is stated flat. "My read is that the win and the warning are one rule" becomes "The win
+# and the warning are one rule". "I think the hard part is the power" becomes "The hard part is the
+# power". The claim is the take, and the narrator announcing it adds nothing a reader can argue with.
+#
+# Exempt, each one measured on the shipped captions or a house rule already:
+#   - a verbatim quote inside straight double quotes, so a source's own "we" stays theirs
+#   - "US" in capitals, the country
+#   - "I" as a numeral after a word like Title, Phase, Class or War
+#   - "mine" the noun ("one operating coal mine", 2026-08-09). Only the possessive is first person,
+#     so it is flagged after a verb or "of" with nothing noun-like after it ("it isn't mine to make")
+# Reported speech without quote marks is NOT exempt. "almost directing us to AI, a state legislator
+# said" shipped on 2026-08-08, and the narrator said "us". Quote the words verbatim or report them in
+# the third person.
+FIRST_PERSON_WORDS = re.compile(r"\b(?:[Mm]e|[Mm]y|[Mm]yself|[Ww]e|[Uu]s|[Oo]ur|[Oo]urs|[Oo]urselves|[Ll]et's)\b")
+FIRST_PERSON_I = re.compile(r"(?<![\w.])I(?!\w|-\d|\.\w)")
+FIRST_PERSON_MINE = re.compile(r"\b(?:is|isn't|was|wasn't|are|aren't|be|it's|that's|of)\s+mine\b"
+                               r"(?=[ \t]*(?:[.,!?\"]|$)|\s+(?:to|and|alone|too|either|now|but|or)\b)",
+                               re.I | re.M)
+ROMAN_I_HEADS = {"title", "phase", "class", "part", "tier", "type", "stage", "level", "grade", "war",
+                 "division", "article", "section", "chapter", "schedule", "region"}
+QUOTED = re.compile(r'"[^"\n]*"')
+
+def first_person_hits(text):
+    """Every first-person word in the caption's own voice, as (word, context) pairs in order."""
+    t = QUOTED.sub(lambda q: " " * len(q.group(0)), text)   # same length, so offsets still hold
+    hits = []
+    for rx in (FIRST_PERSON_WORDS, FIRST_PERSON_I, FIRST_PERSON_MINE):
+        for mm in rx.finditer(t):
+            if rx is FIRST_PERSON_I:
+                prev = re.search(r"([A-Za-z]+)[ \t]+$", t[:mm.start()])
+                if prev and prev.group(1).lower() in ROMAN_I_HEADS:
+                    continue
+            hits.append((mm.start(), mm.group(0)))
+    return [(w, text[max(0, s - 28):s + len(w) + 28].replace("\n", " ").strip())
+            for s, w in sorted(hits)]
+
 def lint(text):
     fails=[]; warns=[]; m={}
     t=text.rstrip("\n"); lines=t.split("\n")
@@ -150,6 +191,17 @@ def lint(text):
                      f"the turn before the turn lands, so the reader is told about the "
                      f"contradiction instead of hitting it. Fuse the two sentences, or state "
                      f"the second fact flat and let it collide on its own.")
+    # NO FIRST PERSON (owner rule 2026-10-09). Hard fail, and the message names the rewrite,
+    # because deleting "I think" and keeping the hedge is not the fix. The claim alone is the take.
+    fp = first_person_hits(t)
+    m["first_person"] = len(fp)
+    if fp:
+        shown = "; ".join(f"{w!r} in {ctx!r}" for w, ctx in fp[:3])
+        more = f" and {len(fp) - 3} more" if len(fp) > 3 else ""
+        fails.append(f"VOICE: first person in the caption ({shown}{more}). Banned (owner rule "
+                     f"2026-10-09). Keep the position and drop who holds it. \"My read is that X\" "
+                     f"and \"I think X\" become \"X\". Ask the reader, never \"tell me\". A source's "
+                     f"own words keep their first person only inside straight double quotes.")
     # CONTRACTION LAW (owner directive 2026-07-30): "ban the word 'cannot', always use
     # 'can't' instead, especially in the captions". "cannot" is the formal register and it
     # reads as institutional writing, which is exactly the voice this brand is not. Enforced
@@ -211,8 +263,53 @@ def lint(text):
     m["passes"]=len(fails)==0
     return fails, warns, m
 
+def self_test():
+    """The first-person rule goes red on what shipped and stays quiet on what it must not touch.
+
+    Planted sentences cover each word and each exemption. The shipped captions are the proof that
+    it reads real posts the way the owner does. 10-09 said "I think" and "My read is". 10-05 said
+    "My read is" beside a legislator's quoted "We need ... happen to us". 08-09 said "coal mine",
+    and 10-02 had no first person.
+    """
+    repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    flagged = ["I think the hard part is the power.", "My read is simple.", "We built it in Nome.",
+               "The spreadsheet would not open for us.", "Let's be plain about it.",
+               "Our state paid for it.", "It isn't mine to make.", "I'm wrong, and I'd like to be.",
+               "Tell me where the model breaks.", "It is almost directing us to AI, a legislator said."]
+    clean = ["The US Department of Energy paid for it.", "Title I money reached Bethel.",
+             "The state has one operating coal mine.", "It began after World War I.",
+             'She said, "We need to be deliberate with how we want to engage with AI."',
+             "#WeAreAlaska #AI", "The closure of mine sites is the slow part.", "The mine is idle.",
+             "Phase I ends in May.", "A.I. is the wrong spelling.", "Which would you bet on?"]
+    shipped = {"runs/2026-10-09/post.txt": ["I", "My"], "runs/2026-10-05/post.txt": ["My"],
+               "runs/2026-08-09/post.txt": [], "runs/2026-10-02/post.txt": []}
+    bad = []
+    for s in flagged:
+        if not first_person_hits(s):
+            bad.append(f"missed first person in {s!r}")
+    for s in clean:
+        if first_person_hits(s):
+            bad.append(f"false alarm on {s!r}: {first_person_hits(s)}")
+    for rel, want in shipped.items():
+        path = os.path.join(repo, rel)
+        if not os.path.exists(path):
+            bad.append(f"{rel} is missing, so the shipped replay can't run")
+            continue
+        got = [w for w, _ in first_person_hits(open(path, encoding="utf-8").read())]
+        if got != want:
+            bad.append(f"{rel} gave {got}, expected {want}")
+    sample = "\n\n".join(["A plain hook line about Nome.", "My read is that it holds.", "Why?"])
+    if not any(f.startswith("VOICE:") for f in lint(sample)[0]):
+        bad.append("lint() did not fail a caption saying 'My read is'")
+    for b in bad:
+        print("  ✗ " + b)
+    print(f"caption_check self-test: {'FAIL' if bad else 'PASS'} ({len(flagged)} flagged, "
+          f"{len(clean)} clean, {len(shipped)} shipped captions replayed)")
+    return 1 if bad else 0
+
 def main():
     src=None
+    if sys.argv[1:2] == ["--self-test"]: sys.exit(self_test())
     if len(sys.argv)>1 and os.path.exists(sys.argv[1]): src=sys.argv[1]; text=open(src,encoding="utf-8").read()
     else: text=sys.stdin.read()
     # AN EMPTY READ IS AN INVOCATION ERROR, NOT A FAILING POST (2026-08-08). Called with no

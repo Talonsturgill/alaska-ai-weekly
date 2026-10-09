@@ -1857,3 +1857,17 @@ palette, voice summary, render wall-time, panel result, and this run's upgrade.
   apart, held by scripts/build_scenes.py and drawn by lib/camera.ts; preflight runs
   `python3 scripts/jolt_check.py` on the master as a required row; the rubric's Motion axis and the
   flow critic were told never to ask for camera shake.
+- 2026-10-09: the caption spoke in the first person. The owner: "stop using first person in the
+  actual caption". Measured that day on the 22 captions this channel had shipped (runs/ and
+  archive/): 11 said I, me, my, we, us or our in the post's own voice, four of them through "My
+  read is", and each of the last three (10-05, 10-06, 10-09) did it that way. Nothing pushed back,
+  because the rubric hard-fails a caption with no point of view and no rule said how to hold one
+  without a narrator. FIX: Phase 6B states the position flat as a claim about the story ("My read is
+  that the win and the warning are one rule" becomes "The win and the warning are one rule");
+  scripts/caption_check.py fails first person in the post's own voice as a VOICE hard fail, so
+  dispatch_email.py refuses it too, and exempts only a source's verbatim words inside straight
+  double quotes, "US" the country, a numeral "I" after Title, Phase, Class or War, and "mine" the
+  noun. `python3 scripts/caption_check.py --self-test` replays four shipped captions, 10-09 and
+  10-05 red and 08-09 ("one operating coal mine") and 10-02 clean, and the replay of all 22 found
+  no false alarm. config/linkedin_caption_rubric.yaml carries it as a hard fail and says a
+  10-point position is stated flat.

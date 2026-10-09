@@ -852,6 +852,17 @@ restraint (no bold-unicode, <= 3 emoji, no bullet walls), a genuine CTA question
 3 to 5 hashtags at the very end. No dashes, NO colons, no semicolons, no AI-tells, no savior
 framing. DATES TAKE THE ORDINAL and COMMAS are capped at 4.9 per 100 words (guardrails 5a and 5b).
 
+**NO FIRST PERSON IN THE CAPTION** (owner, 2026-10-09). The post never says I, me, my, we, us, our
+or let's in its own voice. The POSITION stays and gets sharper, stated flat as a claim about the
+story instead of as somebody's opinion. "My read is that the win and the warning are one rule"
+becomes "The win and the warning are one rule". "...for coal ash, and I think the hard part is the
+power" becomes "...for coal ash. The hard part is the power." The CTA asks the reader what THEY
+would do, never "tell me" or "let us know". A source's own words keep their first person only inside
+straight double quotes. Reported speech without quote marks does not ("almost directing us to AI, a
+state legislator said" put "us" in the narrator's mouth on 2026-08-08). Measured on 2026-10-09, 11
+of the 22 shipped captions spoke in the first person, and the last three did it through "My read
+is". Hard fail via caption_check first_person_hits, which shows each hit in context.
+
 THE POST BODY IS ONLY hook + argument + CTA question + hashtags. Sources and the music and voice
 credit NEVER go in the body (owner, 2026-07-21); dispatch_email.py delivers them separately as the
 copy-paste FIRST COMMENT block. post.txt ends at the hashtags.
@@ -862,11 +873,12 @@ the email shipped post.txt with no hashtags, a colon, a semicolon and a sentence
 ANY rewrite of the caption at ANY point re-runs GATE A.
 
 GATE A: `python3 scripts/caption_check.py out/dispatch/post.txt` exit 0 (it hard-fails a colon, a
-semicolon, an em/en dash, a sentence starting with "But", a hashtag count outside 3 to 5, commas over
-4.9 per 100 words, "cannot", a non-ordinal date, any URL, and any sources or credit line in the
-body). GATE B: editor then scorer vs config/linkedin_caption_rubric.yaml (ship 8.5, zero
-hard_fails). Loop until both pass. dispatch_email.py also lints the exact string it embeds and exits
-2 rather than build a draft that breaks a house rule.
+semicolon, an em/en dash, a sentence starting with "But", first person outside a verbatim quote, a
+hashtag count outside 3 to 5, commas over 4.9 per 100 words, "cannot", a non-ordinal date, any URL,
+and any sources or credit line in the body). GATE B: editor then scorer vs
+config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both pass.
+dispatch_email.py also lints the exact string it embeds and exits 2 rather than build a draft that
+breaks a house rule.
 
 ## PHASE 7: DELIVER, FULLY DONE (no pending states)  (`run_cost.py phase deliver`)
 

@@ -17,9 +17,11 @@ rubric:
       hashtags:    "3-5, grouped at the END (>5 = ~68% reach cut)"
       restraint:   "no Unicode-bold, <=3 emoji, not a wall of bullets"
       brand_punct: "no em/en dash, semicolon, or curly quotes; ranges 'X to Y'"
+      voice:       "no first person outside a source's verbatim quote (owner, 2026-10-09)"
       cta:         "an engagement question near the end"
   hard_fails:                    # ANY = automatic fail regardless of score
-    - "caption_check.py fails (hook past the fold, length out of band, hashtag misuse, over-formatting, banned punctuation, no CTA)"
+    - "caption_check.py fails (hook past the fold, length out of band, hashtag misuse, over-formatting, banned punctuation, first person, no CTA)"
+    - "first person in the caption's own voice (I, me, my, we, us, our, let's), including 'My read is' and 'I think'. Only a source's verbatim words inside straight double quotes keep theirs (owner, 2026-10-09)"
     - "a claim not traceable to the Dispatch's verified sources, or a number not in the video"
     - "no discernible POINT OF VIEW — it summarizes instead of taking a position"
     - "AI-tells present (delve, tapestry, ever-evolving, leverage-synergy, etc.) or generic 'thought-leader' filler"
@@ -33,7 +35,7 @@ rubric:
       4:  "Buried lede, vague, or front-loads context before the point."
     - name: "Point of view / take"
       weight: 0.18
-      10: "Takes a clear, defensible position on what the story MEANS for Alaska + AI — an angle a smart reader would want to argue with or share."
+      10: "Takes a clear, defensible position on what the story MEANS for Alaska + AI — an angle a smart reader would want to argue with or share. The position is stated flat as a claim about the story, never framed as 'my read' or 'I think'."
       7:  "Has a view but hedges; reads more explainer than argument."
       4:  "Neutral summary; no thesis."
     - name: "Substance & specificity"
