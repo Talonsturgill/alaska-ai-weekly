@@ -126,8 +126,8 @@ const QuotePlate: React.FC<{text: string; x?: number; y: number; size?: number; 
 
 // ---- the shot frame: push, kick, grade ---------------------------------------------------------
 const PLANNED = 'PLANNED WORK · ILLUSTRATION';
-const Frame: React.FC<{p: SP; z0?: number; z1?: number; zk?: (f: number) => number; dx0?: number; dx1?: number; dy0?: number; dy1?: number; night?: number; bloom?: number; vignette?: number; ox?: number; oy?: number; tag?: boolean; overlay?: React.ReactNode; children: React.ReactNode}> =
-({p, z0 = 1, z1 = 1.05, zk, dx0 = 0, dx1 = 0, dy0 = 0, dy1 = 0, night = 0.2, bloom = 0.06, vignette = 0.32, ox = 540, oy = 900, tag = true, overlay, children}) => {
+const Frame: React.FC<{p: SP; z0?: number; z1?: number; zk?: (f: number) => number; dx0?: number; dx1?: number; dy0?: number; dy1?: number; night?: number; bloom?: number; vignette?: number; ox?: number; oy?: number; tag?: boolean; overlay?: React.ReactNode; tagText?: string; children: React.ReactNode}> =
+({p, z0 = 1, z1 = 1.05, zk, dx0 = 0, dx1 = 0, dy0 = 0, dy1 = 0, night = 0.2, bloom = 0.06, vignette = 0.32, ox = 540, oy = 900, tag = true, overlay, tagText = PLANNED, children}) => {
   const jl = kickTransform(p.f, cameraKick(p.f, p.from, p.dur, p.kicks));
   const t = clamp01(p.f / Math.max(1, p.dur));
   const z = zk ? zk(p.f) : lerp(z0, z1, easeIO(p.f, 0, Math.max(1, p.dur)));
@@ -144,8 +144,8 @@ const Frame: React.FC<{p: SP; z0?: number; z1?: number; zk?: (f: number) => numb
       {tag && (
         <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
           <g data-band="ok">
-            <rect x={50} y={436} width={monoW(PLANNED, 20) + 30} height={38} rx={5} fill="#10151F" stroke={C.paper} strokeWidth={2.4} opacity={0.92} />
-            <text x={65} y={462} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1.5} fill={C.paper}>{PLANNED}</text>
+            <rect x={50} y={436} width={monoW(tagText, 20) + 30} height={38} rx={5} fill="#10151F" stroke={C.paper} strokeWidth={2.4} opacity={0.92} />
+            <text x={65} y={462} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1.5} fill={C.paper}>{tagText}</text>
           </g>
         </svg>
       )}
@@ -160,12 +160,12 @@ const Tank: React.FC<{f: number; x: number; y: number; s?: number; mood?: TankMo
   <g transform={flip ? `translate(${2 * x},0) scale(-1,1)` : undefined}>
     {/* the tank is PLANNED: a dashed lime model outline rides around the steel everywhere it stands in the yard */}
     <g transform={`translate(${x},${y}) scale(${s * 1.07})`} opacity={ghost < 1 ? 0.95 : 0}>
-      <path d={VESSEL_PATH} fill="none" stroke={SIM} strokeWidth={3.2 / s} strokeDasharray={`${14 / s} ${9 / s}`} strokeDashoffset={-f * 0.6} />
-      <g transform="translate(0,-262)"><rect x={-44} y={-14} width={88} height={26} rx={4} fill="#10151F" stroke={SIM} strokeWidth={2 / s} /><text y={5} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={15} letterSpacing={2} fill={SIM}>PLANNED</text></g>
+      <path d={VESSEL_PATH} fill="none" stroke={SIM} strokeWidth={5 / s} strokeDasharray={`${16 / s} ${9 / s}`} strokeDashoffset={-f * 0.6} />
+      <g transform={s > 2.2 ? 'translate(150,-262)' : 'translate(0,-318)'}><rect x={-58} y={-18} width={116} height={34} rx={4} fill="#10151F" stroke={SIM} strokeWidth={2.4 / s} /><text y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={2} fill={SIM}>PLANNED</text></g>
     </g>
     {ghost < 1 && (
       <g opacity={1 - ghost}>
-        <SteelVessel f={f} x={x} y={y} scale={s} lid={0} phase={phase} mouth={0} shiver={shiver}
+        <SteelVessel f={f} x={x} y={y} scale={s} lid={0} phase={phase} mouth={0} shiver={shiver} gain={2.6}
           face={<TankFace f={f} mood={mood} look={flip ? -look : look} lookY={lookY} sweat={sweat} phase={phase} />} />
       </g>
     )}
@@ -252,7 +252,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Tank f={f} x={300} y={1270} s={2.1} ghost={0.5 + 0.5 * ease(f, 0, 34)} mood={mood} look={0.9} sweat={ease(f, b(2), 40)} shiver={slam * 2.2} />
         <HatchFill x={300} y={1270} s={2.1} p={ease(f, b(2) - 6, 60)} />
         <Gauge p={p} x={740} y={1270} s={1.6} />
-        <Plate text="A TANK NERVOUS ABOUT POWER" y={540} size={32} tone="paper" p={ease(f, 8, 10)} drop={50} />
+        <Plate text="A TANK NERVOUS ABOUT POWER" y={685} size={32} tone="paper" p={ease(f, 8, 10)} drop={50} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -289,9 +289,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
             <path d={`M ${-4 + 3 * Math.sin(f / 9 + i)} -30 q 6 -18 0 -34`} fill="none" stroke="#fff" strokeWidth={3} opacity={0.5} />
           </g>
         ))}
-        <Plate text="" displayLines={['UAF NEWS · OCTOBER 5TH', '$6 MILLION NSF']} y={540} size={30} tone="paper" p={card} drop={50} />
-        <Plate text="UAF · JOINING" y={700} size={30} tone="amber" p={ease(f, b(6), 8)} drop={30} />
-        <Plate text="" displayLines={['UAA · MONTANA TECH · WYOMING']} y={790} size={24} tone="ink" p={ease(f, b(7), 10)} drop={30} />
+        <Plate text="" displayLines={['UAF NEWS · OCTOBER 5TH', '$6 MILLION NSF']} y={585} size={30} tone="paper" p={card} drop={50} />
+        <Plate text="UAF · JOINING" y={745} size={30} tone="amber" p={ease(f, b(6), 8)} drop={30} />
+        <Plate text="" displayLines={['UAA · MONTANA TECH · WYOMING']} y={835} size={24} tone="ink" p={ease(f, b(7), 10)} drop={30} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -312,17 +312,16 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <path d="M 120 -20 L 120 1960" stroke="#7A2236" strokeWidth={3} opacity={0.35} />
         {[0, 1, 2, 3].map((i) => (<g key={i} transform={`translate(0,${1260 + i * 0})`}><rect x={150 + i * 205} y={1230} width={190} height={46} fill="none" stroke="#6E7D83" strokeWidth={3} /><rect x={162 + i * 205} y={1246} width={60 + 30 * ((i * 37) % 4)} height={12} fill="#6E7D83" opacity={0.6} /></g>))}
         <ContactShadow cx={540} cy={1150} rx={380} ry={30} opacity={0.3} />
-        <AwardPie f={f} x={540} y={900} scale={1.6} cut={cut} grow={grow} />
-        <g transform={`translate(${540 + 220 * cut},${1040 - 110 * cut})`} opacity={cut}>
-          <path d="M 0 0 L 0 -170" stroke={C.ink} strokeWidth={7} />
-          <path d="M 0 -170 L 110 -136 L 0 -104 Z" fill="#E9DDA8" stroke={C.ink} strokeWidth={5} />
+        <AwardPie f={f} x={540} y={1000} scale={1.45} cut={cut} grow={grow} />
+        <g transform={`translate(${540 - 0.46 * 1.45 * (125 + 56 * cut)},${1000 - 0.89 * 1.45 * (125 + 56 * cut)})`} opacity={cut}>
+          <path d="M 0 0 L 0 -120" stroke={C.ink} strokeWidth={7} />
+          <path d="M 0 -120 L -100 -92 L 0 -64 Z" fill="#E9DDA8" stroke={C.ink} strokeWidth={5} />
         </g>
         <g transform={`translate(${860 - 120 * pen},${1200 - 160 * pen}) rotate(-35)`} opacity={pen}>
           <rect x={-8} y={-130} width={16} height={130} fill="#2B3446" stroke={C.ink} strokeWidth={4} />
           <path d="M -8 0 L 8 0 L 0 26 Z" fill="#E9DDA8" stroke={C.ink} strokeWidth={3} />
         </g>
-        <Plate text="UAF SHARE · ABOUT $913,000" y={540} size={28} tone="amber" p={ease(f, b(8), 10)} drop={40} />
-        <Plate text="OF ABOUT $6 MILLION, DRAWN TO SCALE" y={625} size={20} tone="ink" p={ease(f, b(8) + 14, 10)} drop={20} />
+        <Plate text="" displayLines={['UAF SHARE · ABOUT $913,000', 'OF ABOUT $6 MILLION · TO SCALE']} y={585} size={28} tone="amber" p={ease(f, b(8), 10)} drop={40} />
       </SVG>
     </Frame>
   );
@@ -351,7 +350,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
             </g>
           );
         })}
-        <Plate text="COAL REFUSE AND ASH" y={540} size={30} tone="paper" p={ease(f, b(10), 10)} drop={40} />
+        <Plate text="COAL REFUSE AND ASH" y={585} size={30} tone="paper" p={ease(f, b(10), 10)} drop={40} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -365,8 +364,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const rej = clamp01(((f - (b(13) - 8)) % 70) / 50) * (f > b(13) - 8 ? 1 : 0);
   return (
     <Frame p={p} z0={1.5} z1={1.0} ox={800} oy={820} night={0.05} overlay={<>
-      <Plate text="ATOMS CLING OUTSIDE · ILLUSTRATIVE" y={540} size={26} tone="paper" p={ease(f, 2, 10)} drop={40} />
-      <Plate text="ONE KNOWN MECHANISM · ILLUSTRATIVE" y={640} size={22} tone="ink" p={ease(f, b(13), 10)} drop={30} />
+      <Plate text="ATOMS CLING OUTSIDE · ILLUSTRATIVE" y={585} size={26} tone="paper" p={ease(f, 2, 10)} drop={40} />
+      <Plate text="ONE KNOWN MECHANISM · ILLUSTRATIVE" y={685} size={22} tone="ink" p={ease(f, b(13), 10)} drop={30} />
     </>}>
       <SVG>
         <defs>
@@ -407,8 +406,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <rect x={-100} y={-176} width={200} height={176} fill="#8E6B3E" stroke={C.ink} strokeWidth={6} />
           <Tarp x={0} y={4} w={290} h={230} pull={0.06 * lift} f={f} />
         </g>
-        <Plate text="TWO AI TOOLS PLANNED" y={520} size={30} tone="paper" p={ease(f, 0, 10)} drop={40} />
-        <Plate text="AI WILL PREDICT RECOVERY" y={600} size={22} tone="ink" p={ease(f, b(15), 10)} drop={30} />
+        <Plate text="TWO AI TOOLS PLANNED" y={565} size={30} tone="paper" p={ease(f, 0, 10)} drop={40} />
+        <Plate text="AI WILL PREDICT RECOVERY" y={645} size={22} tone="ink" p={ease(f, b(15), 10)} drop={30} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -440,8 +439,8 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(150,${lerp(300, 1320, env * env)}) rotate(${-8 + 6 * (1 - env)})`} opacity={env > 0 ? 1 : 0}>
           <Envelope f={f} x={0} y={0} scale={0.42} stamp="RESULTS" />
         </g>
-        <Plate text="AI WILL ADJUST THE BIOREACTOR" y={540} size={28} tone="amber" p={ease(f, b(18), 10)} drop={40} />
-        <Plate text="CELLS STALL · ILLUSTRATIVE" y={625} size={22} tone="ink" p={ease(f, b(19), 10)} drop={30} />
+        <Plate text="AI WILL ADJUST THE BIOREACTOR" y={585} size={28} tone="amber" p={ease(f, b(18), 10)} drop={40} />
+        <Plate text="CELLS STALL · ILLUSTRATIVE" y={670} size={22} tone="ink" p={ease(f, b(19), 10)} drop={30} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -464,7 +463,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Tank f={f} x={470} y={1290} s={2.3} mood={mood} look={0.9} sweat={stall} shiver={stall * 1.8} />
         <CellWindow f={f} x={470} y={1290} s={2.3} stall={stall} />
         <Gauge p={p} x={920} y={1300} s={1.15} />
-        <Plate text="CAN CELLS KEEP WORKING · ILLUSTRATIVE" y={540} size={26} tone="paper" p={ease(f, 2, 10)} drop={40} />
+        <Plate text="CAN CELLS KEEP WORKING · ILLUSTRATIVE" y={585} size={26} tone="paper" p={ease(f, 2, 10)} drop={40} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -487,7 +486,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Tank f={f} x={170} y={1300} s={1.25} mood="worried" look={0.8} />
         <CellWindow f={f * (racing ? 1.8 : 0.8)} x={170} y={1300} s={1.25} stall={clamp01(0.7 - v * 1.4)} n={18} />
         <Gauge p={p} x={930} y={1300} s={1.0} />
-        <QuotePlate text={"\"ALASKA'S REMOTE ENERGY CHALLENGES MAKE ENERGY USE A CENTRAL PART OF THAT QUESTION\" · SRIJAN AGGARWAL · UAF PROFESSOR"} x={lerp(760, 540, ride)} y={800} size={36} wrap={26} p={q} />
+        <QuotePlate text={"\"ALASKA'S REMOTE ENERGY CHALLENGES MAKE ENERGY USE A CENTRAL PART OF THAT QUESTION\" · SRIJAN AGGARWAL · UAF PROFESSOR"} x={lerp(760, 540, ride)} y={690} size={36} wrap={26} p={q} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -503,7 +502,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const lampSwing = 8 * Math.sin(f / 7) * Math.exp(-f / 50);
   const level = f > b(27) ? ((f - b(27)) / 40) % 1 : 0;
   return (
-    <Frame p={p} z0={1.0} z1={1.16} oy={1000} night={0.1}>
+    <Frame p={p} z0={1.0} z1={1.16} oy={1000} night={0.1} overlay={<Plate text="VIRTUAL PILOT PLANT" y={565} size={32} tone="ink" p={ease(f, 4, 10)} drop={40} />}>
       <SVG>
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1980} fill={C.shed} />
         {Array.from({length: 9}, (_, i) => <path key={i} d={`M -20 ${60 + i * 150} L 1100 ${60 + i * 150}`} stroke="#000" strokeWidth={3} opacity={0.18} />)}
@@ -529,14 +528,13 @@ const S10: React.FC<SceneProps> = ({p}) => {
           </g>
         </Monitor>
         <text x={470} y={740} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={3} fill={SIM}>VIRTUAL · NOT BUILT</text>
-        <Gauge p={p} x={900} y={1470} s={0.9} plate="POWER STILL LOW" />
+        <Gauge p={p} x={900} y={1470} s={0.9} />
         <g transform="translate(120,1380)">
           <ContactShadow cx={0} cy={6} rx={50} ry={8} opacity={0.4} />
           <rect x={-30} y={-52} width={60} height={56} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} />
           <path d={`M 30 -40 q 24 6 0 28`} fill="none" stroke={C.ink} strokeWidth={5} />
           <path d={`M ${-6 + 3 * Math.sin(f / 9)} -62 q 6 -18 0 -34`} fill="none" stroke="#fff" strokeWidth={3} opacity={0.5} />
         </g>
-        <Plate text="VIRTUAL PILOT PLANT" y={520} size={32} tone="ink" p={ease(f, 4, 10)} drop={40} />
       </SVG>
     </Frame>
   );
@@ -548,7 +546,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const st = f < 6 ? 0 : spring(f, 4, 12);
   const shake = f >= 6 && f < 30 ? Math.sin((f - 6) * 1.9) * 6 * (1 - (f - 6) / 24) : 0;
   return (
-    <Frame p={p} z0={1.0} z1={1.1} oy={950} night={0.05}>
+    <Frame p={p} z0={1.0} z1={1.1} oy={950} night={0.05} overlay={<Plate text="" displayLines={['THE MODEL ONLY']} y={565} size={26} tone="ink" p={ease(f, 8, 8)} drop={30} />}>
       <SVG>
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1980} fill="#0D1522" />
         {Array.from({length: 40}, (_, i) => <path key={i} d={`M -20 ${i * 50} L 1100 ${i * 50}`} stroke="#000" strokeWidth={1.4} opacity={0.3} />)}
@@ -559,7 +557,6 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <rect x={-330} y={-70} width={660} height={140} fill="#0D1522" fillOpacity={0.5} stroke={C.stamp} strokeWidth={14} />
           <text y={24} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={70} letterSpacing={4} fill={C.stamp}>NO RESULTS YET</text>
         </g>
-        <Plate text="" displayLines={['THE MODEL ONLY']} y={520} size={26} tone="ink" p={ease(f, 8, 8)} drop={30} />
         <Gauge p={p} x={920} y={1230} s={0.8} />
       </SVG>
     </Frame>
@@ -575,7 +572,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const creep = ease(f, b(30) - 8, 36);
   const snap = f < b(30) + 30 ? 0 : clamp01((f - b(30) - 30) / 24);
   return (
-    <Frame p={p} z0={1.12} z1={1.0} oy={1000} night={nightOf(v, 0.12)}>
+    <Frame p={p} z0={1.12} z1={1.0} oy={1000} night={nightOf(v, 0.12)} overlay={<><Plate text="IT ADAPTS" y={565} size={32} tone="paper" p={ease(f, b(29), 10)} drop={40} /><Plate text="CAN'T MAKE POWER CHEAPER" y={655} size={28} tone="stamp" p={ease(f, b(30), 10)} drop={30} /></>}>
       <SVG>
         <FrostYardDusk f={f + p.from} power={v} ground={1210} />
         <PriceTag f={f} x={812} y={700} scale={1.5} creep={creep} snap={snap} />
@@ -583,8 +580,6 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <PlannedGovernor f={f} fl={f + p.from} x={300} y={1290} s={1.3} spin={0.6} throttle={nudge} />
         <Gauge p={p} x={640} y={1290} s={1.15} />
         <path d={`M 390 1180 Q 480 ${1120 + 20 * nudge} 600 1150`} fill="none" stroke={SIM} strokeWidth={5} strokeDasharray="12 9" strokeDashoffset={-f * 2} />
-        <Plate text="IT ADAPTS" y={520} size={32} tone="paper" p={ease(f, b(29), 10)} drop={40} />
-        <Plate text="CAN'T MAKE POWER CHEAPER" y={610} size={28} tone="stamp" p={ease(f, b(30), 10)} drop={30} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>
@@ -600,7 +595,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const horn = f > b(32) && f < b(32) + 40 ? ease(f, b(32), 34) : 0;
   const dimmed = f > b(32) ? 0.7 : 0.2;
   return (
-    <Frame p={p} z0={1.0} z1={1.07} dx0={0} dx1={-26} night={nightOf(v, 0.14)}>
+    <Frame p={p} z0={1.0} z1={1.07} dx0={0} dx1={-26} night={nightOf(v, 0.14)} tagText="OUR FRAMING · ILLUSTRATION" overlay={<Plate text="THE OBVIOUS ALTERNATIVE · SHIP IT" y={585} size={28} tone="paper" p={ease(f, b(32), 10)} drop={40} />}>
       <SVG>
         <FrostYardDusk f={f + p.from} power={v} ground={1000} pole={false} />
         <g opacity={0.95}>
@@ -613,10 +608,9 @@ const S13: React.FC<SceneProps> = ({p}) => {
             transform={`translate(${14 * Math.sin(f / 30 + i)},0)`} />
         ))}
         <path d="M -20 1000 Q 160 960 300 1010 L 300 1100 L -20 1100 Z" fill="#8190B2" stroke={C.ink} strokeWidth={6} />
-        <Tank f={f} x={130} y={1110} s={1.2} mood={f > b(32) ? 'strain' : 'worried'} look={0.9} sweat={0.7} />
-        <CellWindow f={f} x={130} y={1110} s={1.2} stall={dimmed} n={18} />
+        <Tank f={f} x={200} y={1110} s={1.2} mood={f > b(32) ? 'strain' : 'worried'} look={0.9} sweat={0.7} />
+        <CellWindow f={f} x={200} y={1110} s={1.2} stall={dimmed} n={18} />
         <Barge f={f} x={lerp(1500, 590, arrive)} y={1290} scale={1.6} sign="SHIP IT" horn={horn} />
-        <Plate text="THE OBVIOUS ALTERNATIVE · SHIP IT" y={520} size={28} tone="paper" p={ease(f, b(32), 10)} drop={40} />
         <Snowfall f={f + p.from} n={45} />
       </SVG>
     </Frame>
@@ -634,7 +628,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const tap = (i: number) => (f > tapAt[i] && f < tapAt[i] + 14 ? Math.sin(((f - tapAt[i]) / 14) * Math.PI) : 0);
   const penI = f < tapAt[1] - 6 ? 0 : f < tapAt[2] - 6 ? 1 : 2;
   const pen = ease(f, b(36) - 8, 10);
-  const lineYs = [1, 2, 3].map((i) => 1100 + 1.3 * (14 + 40 * i - 235 * open));
+  const lineYs = [1, 2, 3].map((i) => 1090 + 1.3 * (14 + 40 * i - 280 * open) - 4);
   return (
     <Frame p={p} z0={1.06} z1={1.0} night={nightOf(v, 0.12)}>
       <SVG>
@@ -649,7 +643,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
             {tap(i) > 0.05 && <text x={413} y={ly + 5} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} fill={C.stamp} opacity={tap(i)}>?</text>}
           </g>
         ))}
-        <g transform={`translate(${440 + 30 * (1 - pen)},${(lineYs[penI] ?? 1100) - 160 - 24 * tap(penI)}) rotate(-24)`} opacity={pen}>
+        <g transform={`translate(${413 + 40 * (1 - pen)},${(lineYs[penI] ?? 1100) - 4 - 26 * tap(penI) - 50 * (1 - pen)}) rotate(-24)`} opacity={pen}>
           <rect x={-8} y={-150} width={16} height={150} fill="#2B3446" stroke={C.ink} strokeWidth={4} />
           <path d="M -8 0 L 8 0 L 0 28 Z" fill="#E9DDA8" stroke={C.ink} strokeWidth={3} />
         </g>
@@ -682,15 +676,15 @@ const S15: React.FC<SceneProps> = ({p}) => {
   const plug = ease(f, b(39) - 6, 20);
   const rise = easeIO(f, b(39) - 12, 60);
   return (
-    <Frame p={p} zk={() => lerp(1.5, 1.0, rise)} ox={560} oy={1000} night={nightOf(v, 0.1)}>
+    <Frame p={p} zk={() => lerp(1.25, 1.0, rise)} ox={560} oy={1000} night={nightOf(v, 0.1)} overlay={<g transform={`translate(540,540) rotate(-5) scale(${stamp})`} opacity={stamp > 0 ? 1 : 0}><rect x={-140} y={-38} width={280} height={76} fill={RF.paper} stroke={C.stamp} strokeWidth={9} /><text y={13} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={40} letterSpacing={4} fill={C.stamp}>OUR READ</text></g>}>
       <SVG>
         <FrostYardDusk f={f + p.from} power={v} ground={1190} />
-        <Cable f={f + p.from} x0={540} y0={1190} x1={lerp(250, 400, plug)} y1={1120} sag={60} live={clamp01(v * 1.4 + 0.3 * plug)} />
-        <Tank f={f} x={190} y={1300} s={1.15} mood={plug > 0.6 ? 'relief' : 'calm'} look={0.9} />
-        <CellWindow f={f} x={190} y={1300} s={1.15} stall={0} n={18} />
+        <Cable f={f + p.from} x0={560} y0={1080} x1={lerp(330, 420, plug)} y1={1010} sag={60} live={clamp01(v * 1.4 + 0.3 * plug)} />
+        <Tank f={f} x={270} y={1170} s={1.0} mood={plug > 0.6 ? 'relief' : 'calm'} look={0.9} />
+        <CellWindow f={f} x={270} y={1170} s={1.0} stall={0} n={18} />
         <g>
-          <Gauge p={p} x={560} y={1250} s={2.0} />
-          <g transform="translate(560,1304)">
+          <Gauge p={p} x={600} y={1170} s={1.8} />
+          <g transform="translate(600,1236)">
             <rect x={-170} y={-34} width={340} height={64} rx={6} fill="#E9DDA8" stroke={C.ink} strokeWidth={5} opacity={flip} />
             <text y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} letterSpacing={3} fill={C.ink} opacity={flip}>DESIGN BRIEF</text>
           </g>
@@ -699,10 +693,6 @@ const S15: React.FC<SceneProps> = ({p}) => {
           <path d="M 0 -40 L 0 0" stroke={C.ink} strokeWidth={3} />
           <rect x={-86} y={0} width={172} height={40} rx={4} fill={RF.kraft} stroke={C.ink} strokeWidth={4} />
           <text y={27} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={17} letterSpacing={1} fill={C.ink}>AFTERTHOUGHT</text>
-        </g>
-        <g transform={`translate(560,500) rotate(-5) scale(${stamp})`} opacity={stamp > 0 ? 1 : 0}>
-          <rect x={-140} y={-38} width={280} height={76} fill={RF.paper} stroke={C.stamp} strokeWidth={9} />
-          <text y={13} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={40} letterSpacing={4} fill={C.stamp}>OUR READ</text>
         </g>
         <Snowfall f={f + p.from} />
       </SVG>
@@ -719,20 +709,20 @@ const S16: React.FC<SceneProps> = ({p}) => {
   const slam = t > 116.62;
   const mood: TankMood = slam ? 'strain' : 'calm';
   return (
-    <Frame p={p} z0={1.0} z1={1.04} night={nightOf(v, 0.1)}>
+    <Frame p={p} z0={1.0} z1={1.04} night={nightOf(v, 0.1)} tagText="OUR FRAMING · ILLUSTRATION">
       <SVG>
         <FrostYardDusk f={f + p.from} power={v} ground={1150} />
         <rect data-band="ok" x={540} y={1000} width={620} height={920} fill={RF.water} />
         <g transform="translate(540,0)">{Array.from({length: 8}, (_, i) => <path key={i} d={`M ${20 + rnd(i) * 400} ${1060 + i * 70} q 30 -10 60 0 t 60 0`} fill="none" stroke="#fff" strokeWidth={3} opacity={0.2} />)}</g>
         <rect data-band="ok" x={536} y={560} width={8} height={1360} fill={C.ink} />
-        <Cable f={f + p.from} x0={470} y0={1160} x1={300} y1={1100} sag={50} live={clamp01(v * 1.6)} />
-        <Tank f={f} x={260} y={1300} s={1.45} mood={mood} look={0.2} sweat={slam ? 0.8 : 0} shiver={slam ? 1.6 : 0} />
-        <CellWindow f={f} x={260} y={1300} s={1.45} stall={slam ? 0.5 + 0.5 * Math.sin(f / 5) : 0} n={18} />
-        <g transform="translate(260,1150)"><rect x={-40} y={-18} width={80} height={32} rx={4} fill="#10151F" stroke={C.paper} strokeWidth={2.4} /><text y={6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.paper}>2030?</text></g>
-        <Gauge p={p} x={470} y={1320} s={0.75} />
-        <CheapSun f={f} x={860} y={880} scale={0.5} label="CHEAPER POWER, SOMEWHERE" />
-        <Barge f={f} x={lerp(790, 1560, away)} y={1230} scale={0.8} sign="SHIP IT" loaded={1} />
-        <Plate text="WHICH WOULD YOU BET ON" y={520} size={34} tone="amber" p={ease(f, b(43), 10)} drop={50} />
+        <Cable f={f + p.from} x0={470} y0={1180} x1={330} y1={1110} sag={50} live={clamp01(v * 1.6)} />
+        <Tank f={f} x={215} y={1310} s={1.75} mood={mood} look={0.2} sweat={slam ? 0.8 : 0} shiver={slam ? 1.6 : 0} />
+        <CellWindow f={f} x={215} y={1310} s={1.75} stall={slam ? 0.5 + 0.5 * Math.sin(f / 5) : 0} n={18} />
+        <g transform="translate(215,1115)"><rect x={-40} y={-18} width={80} height={32} rx={4} fill="#10151F" stroke={C.paper} strokeWidth={2.4} /><text y={6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.paper}>2030?</text></g>
+        <Gauge p={p} x={470} y={1330} s={0.82} />
+        <CheapSun f={f} x={850} y={860} scale={0.7} label="CHEAPER POWER, SOMEWHERE" />
+        <Barge f={f} x={lerp(800, 860, away / 0.55)} y={lerp(1250, 1120, away / 0.55)} scale={lerp(1.0, 0.62, away / 0.55)} sign="SHIP IT" loaded={1} />
+        <Plate text="WHICH WOULD YOU BET ON" y={565} size={34} tone="amber" p={ease(f, b(43), 10)} drop={50} />
         <Snowfall f={f + p.from} />
       </SVG>
     </Frame>

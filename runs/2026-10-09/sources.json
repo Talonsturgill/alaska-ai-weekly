@@ -1,0 +1,41 @@
+{
+ "run_date": "2026-10-09",
+ "title": "The Design Brief",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "UAF joins $6M NSF critical minerals effort",
+   "outlet": "UAF News (Kate Avery), October 5th, 2026",
+   "url": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "claims": [
+    "c1",
+    "c2",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c16",
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "Primary institutional release, fetched in full by a validator."
+  },
+  {
+   "id": "s2",
+   "title": "NSF award 2614749, Collaborative Research, FEC, Transformative Bioprocessing and AI-Driven Frameworks for Sustainable Critical Mineral Recovery",
+   "outlet": "National Science Foundation award record",
+   "url": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "claims": [
+    "c3",
+    "c8",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": "Primary federal record. Sibling awards 2614750 (Montana Tech) and 2614751 (UAF, $913,037) total $5,998,412."
+  }
+ ]
+}

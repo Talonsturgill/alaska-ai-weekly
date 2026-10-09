@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.987,
+    "heard": "Picture a bio-reactor that doesn't exist yet, already nervous about the power bill. On October 5, the University of Alaska Fairbanks announced its joining a $6 million National Science Foundation project with three other universities. UAF's slice of that is about $913,000. Microbes would recover rare earths from cold refuse and ash. Rare earth atoms can cling to a cell's outer wall. Two AI tools are planned. The first will predict how readily rare earths can be recovered. The second will adjust the bio-reactor as conditions and available energy change, because living cells stall when power does. So the question is whether cells can keep working on Alaska's power. UAF professor Sreejan Agarwal says Alaska's remote energy challenges make energy use a central part of that question. Power is the risk, so they'll build the plant in software first. A virtual pilot plant. No results have been reported yet. A smart controller can adapt to expensive power. It can't make power cheaper. The obvious alternative is to ship the ash where power is cheap. Lab and small pilot tests through August 2030 will wait costs, energy, and environmental effects. Energy isn't an afterthought here. It's the design brief. It becomes a win if the controller can keep microbes working on power that wobbles. If not, shipping wins. Which would you bet on?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.026,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.78,
+        "voiced_frac": 0.38,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 118.24,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 118.24,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (5 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.989,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.987,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

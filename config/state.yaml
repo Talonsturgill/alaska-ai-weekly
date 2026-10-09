@@ -2326,3 +2326,53 @@ dispatch_history:
       yellow lens enamel, cool violet stamp ink, cold white paper, dawn peach backlight
     metaphor: a hand lens that is a burning glass, focusing the dawn on a blank study
       sheet so that whoever tilts it writes their question into the study
+- date: '2026-10-09'
+  topic: UAF joins a $6M NSF project to use microbes and two planned AI tools on coal
+    refuse and ash, and the second AI is built around variable power
+  slug: dispatch-2026-10-09-the-design-brief
+  key_entities:
+  - UAF
+  - UAA
+  - Montana Tech
+  - University of Wyoming
+  - NSF EPSCoR
+  - rare earth elements
+  - coal refuse and ash
+  - bio-refinery
+  - Srijan Aggarwal
+  - virtual pilot plant
+  archetype: a faced steel tank in a dusk yard flinching at a power gauge
+  palette: midwinter indigo dusk sky, snow-blue floor, coal black ash, galvanized
+    steel, ember orange that means only electricity, simulation lime that means only
+    the model
+  voice: Gemini native TTS Sulafat
+  stance: celebratory
+  angle: The AI in this plan isn't mainly there to find rare earths in coal waste.
+    A second AI is there to keep living microbes working as power rises and falls,
+    so Alaska's hardest input, energy, is the design brief and not an afterthought.
+  hero: SteelVessel
+  cast:
+  - SteelVessel
+  - TankFace
+  - PowerGauge
+  - LoopGovernor
+  - TwinVessel
+  - CellSurface
+  - AshHeap
+  - Barge
+  - AwardPie
+  - FrostYardDusk
+  composition:
+    pov: low-angle-ground
+    motion_vector: vertical-descent
+    hero_treatment: single-organic-hero
+    layout: fullbleed-split
+    register: editorial-schematic
+    camera_strategy: descend-and-hold
+    light_story: dusk-practical-lamp
+    palette: midwinter indigo dusk sky, snow-blue floor, coal black ash, galvanized
+      steel, ember orange that means only electricity, simulation lime that means
+      only the model
+    metaphor: a steel bioreactor with a face that flinches whenever the power gauge
+      drops, because the plan's second AI exists to keep living cells working on Alaska's
+      wobbling power

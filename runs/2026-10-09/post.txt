@@ -1,0 +1,17 @@
+A $6 million NSF project plans microbes and AI for coal ash, and I think the hard part is the power.
+
+On October 5th, UAF announced it is joining the project with UAA, Montana Tech and the University of Wyoming. UAF's slice is about $913,000. The team will study how microbes can recover rare earth elements from coal refuse and ash, and two AI tools are planned.
+
+The first will predict how readily rare earths can be recovered from different materials.
+
+The second will adjust the bioreactor as conditions and available energy change. The question is how to keep a biological process working reliably, and UAF professor Srijan Aggarwal says Alaska's remote energy challenges make energy use a central part of that question.
+
+My read is that energy isn't an afterthought in this plan. It's the design brief. A project that designs around Alaska's energy problem from day one is starting with the right problem.
+
+All of this is planned work. No results have been reported. The team will model it first in a virtual pilot plant, which is computer models and not a physical plant. Lab and small pilot tests will refine those models, and the team will weigh costs, energy needs and environmental effects. The award runs through August 2030.
+
+A smart controller can adapt to expensive power. It can't make power cheaper. The obvious alternative is to ship the ash where power is cheap, and the plan has to beat that.
+
+So the test by 2030 is whether keeping microbes working on power that wobbles beats shipping the ash to cheaper power. Which would you bet on, and what would tip it?
+
+#Alaska #AI #Biomining #CriticalMinerals

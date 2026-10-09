@@ -1,0 +1,298 @@
+{
+ "run_date": "2026-10-09",
+ "fact_check_verdict": "PASS. Publish as a funded plan, future tense. No results, no named Alaska coal source, no lead institution named.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "On October fifth, UAF announced it is joining a six million dollar National Science Foundation project.",
+   "on_screen": "UAF NEWS \u00b7 OCTOBER 5TH \u00b7 $6 MILLION NSF",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "UAF is JOINING, not leading. Say joining. $6M is a rounded figure of three awards totaling $5,998,412."
+   ],
+   "verbatim": "UAF researchers at the Institute of Northern Engineering are joining a $6 million National Science Foundation-funded project",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "The partners are UAF, UAA, Montana Tech, and the University of Wyoming.",
+   "on_screen": "UAF \u00b7 UAA \u00b7 MONTANA TECH \u00b7 WYOMING",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Never name a lead institution. Neither source says who leads."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "UAF's share is about nine hundred thirteen thousand dollars.",
+   "on_screen": "UAF SHARE \u00b7 ABOUT $913,000",
+   "source": "https://api.nsf.gov/services/v1/awards/2614749.json (sibling award 2614751)",
+   "requires": [
+    "Exact NSF figure $913,037; UAF says nearly $913,000. Use ABOUT $913,000 spoken."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The plan is to use microbes to recover rare earth elements from coal refuse and ash.",
+   "on_screen": "COAL REFUSE AND ASH",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Research plan only. Verb is studies how it CAN recover. Name no Alaska coal source or mine."
+   ],
+   "verbatim": "recover rare earth elements from coal refuse and ash",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "AI will predict how readily rare earths can be recovered from different materials.",
+   "on_screen": "AI WILL PREDICT RECOVERY",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Future tense. Do not say AI predicts as if it already does."
+   ],
+   "verbatim": "predicting how readily rare earth elements can be recovered from different materials",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "A second AI effort will adjust the bioreactor as conditions and available energy change.",
+   "on_screen": "AI WILL ADJUST THE BIOREACTOR",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Future tense, planned work."
+   ],
+   "verbatim": "adjust bioreactor operation as conditions and energy availability change",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "The team calls the goal a smart bio-refinery, tested first as a virtual pilot plant.",
+   "on_screen": "SMART BIO-REFINERY \u00b7 VIRTUAL PILOT PLANT",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "A virtual pilot plant is computer models, not a physical plant. The bio-refinery is a goal."
+   ],
+   "verbatim": "A virtual pilot plant will connect experimental results with computer models",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "The award runs from September 2026 through August 2030.",
+   "on_screen": "SEPT 2026 TO AUG 2030",
+   "source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "requires": [
+    "NSF award 2614749 start 09/01/2026, end 08/31/2030."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "No results have been reported yet.",
+   "on_screen": "NO RESULTS YET",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Both sources describe planned work only."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "Lab and small-scale pilot tests will refine the models, and the team will evaluate costs, energy needs and environmental impacts.",
+   "on_screen": "COST \u00b7 ENERGY \u00b7 ENVIRONMENT TO BE EVALUATED",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Future tense."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "Srijan Aggarwal, who leads UAF's part, says Alaska's remote energy challenges make energy use a central part of the question.",
+   "on_screen": "SRIJAN AGGARWAL \u00b7 UAF",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Quote needs context: the question is keeping biological processes working reliably."
+   ],
+   "verbatim": "Alaska's remote energy challenges make energy use a central part of that question.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "UAF says it is one of eight projects sharing thirty nine point nine million dollars across sixteen jurisdictions.",
+   "on_screen": "PER UAF \u00b7 8 PROJECTS \u00b7 $39.9M",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Attribute to UAF only; not verified at NSF."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "explainer-illustrative",
+   "spoken": "Rare earth atoms can cling to a cell's outer wall. The microbe doesn't eat them.",
+   "on_screen": "ATOMS CLING OUTSIDE \u00b7 ILLUSTRATIVE",
+   "source": "general biosorption science; NSF abstract names Shewanella oneidensis extraction (https://api.nsf.gov/services/v1/awards/2614749.json)",
+   "requires": [
+    "General mechanism, labelled illustrative. Not a result of this project. The project's own organism or method is not specified beyond the NSF abstract."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "argument-not-fact",
+   "spoken": "Ship the ash where power is cheap.",
+   "on_screen": "THE OBVIOUS ALTERNATIVE \u00b7 SHIP IT",
+   "source": "film's own framing of the fair counterpoint (angle.json)",
+   "requires": [
+    "Frame as the alternative the plan has to beat. No cost figure, no claim that it is cheaper, no named place."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "our-read",
+   "spoken": "Here's the honest read. Energy isn't an afterthought in this plan. It's the design brief.",
+   "on_screen": "OUR READ",
+   "source": "editorial judgment from c6, c11",
+   "requires": [
+    "Label as the channel's read. Falsifiable by the 2030 results."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "Fairbanks professor Srijan Aggarwal",
+   "on_screen": "SRIJAN AGGARWAL \u00b7 UAF PROFESSOR OF ENVIRONMENTAL ENGINEERING",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Aggarwal is a UAF professor of environmental engineering and leads UAF's work."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "Two A I tools are planned.",
+   "on_screen": "TWO AI TOOLS PLANNED",
+   "source": "https://www.uaf.edu/news/uaf-joins-6m-nsf-critical-minerals-effort.php",
+   "requires": [
+    "Planned work. NSF abstract and UAF release describe two AI efforts."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "our-read",
+   "spoken": "Living cells stall when power does.",
+   "on_screen": "CELLS STALL \u00b7 ILLUSTRATIVE",
+   "source": "argument from the NSF abstract's premise that biological processes must be kept working reliably (c11 context)",
+   "requires": [
+    "Illustrative cutaway. Not a measured result. Planned work only."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "inference",
+   "spoken": "Power is the risk, so they'll build the plant in software first, a virtual pilot plant.",
+   "on_screen": "VIRTUAL PILOT PLANT",
+   "source": "UAF release (c7); the 'so' is the channel's inference",
+   "requires": [
+    "The virtual pilot plant is computer models. The causal 'so' is our reading, not the source's."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "argument-not-fact",
+   "spoken": "A smart controller can adapt to expensive power. It can't make power cheaper.",
+   "on_screen": "IT ADAPTS \u00b7 CAN'T MAKE POWER CHEAPER",
+   "source": "film's own argument (angle.json counterpoint)",
+   "requires": [
+    "Draw every working-controller image as planned (dashed, PLANNED). The price tag carries no number."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

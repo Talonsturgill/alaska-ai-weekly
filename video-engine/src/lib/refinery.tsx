@@ -61,7 +61,7 @@ export const TankFace: React.FC<{
 }> = ({f, mood = 'calm', look = 0, lookY = 0, sweat = 0, phase = 0}) => {
   const blinkT = (f + phase * 53) % 151;
   const blink = blinkT < 5 ? Math.sin((blinkT / 5) * Math.PI) : 0;
-  const lid = {calm: 0.28, worried: 0.12, strain: 0.55, relief: 0.4, wry: 0.45, gasp: 0, ghost: 0.2}[mood];
+  const lid = {calm: 0.28, worried: 0.12, strain: 0.36, relief: 0.4, wry: 0.45, gasp: 0, ghost: 0.2}[mood];
   const lidAmt = Math.max(lid, blink);
   const browTilt = {calm: 0, worried: -16, strain: 14, relief: -4, wry: 8, gasp: -22, ghost: -6}[mood];
   const browLift = {calm: 0, worried: -6, strain: 6, relief: 0, wry: -3, gasp: -12, ghost: 0}[mood];
@@ -338,7 +338,7 @@ export const CheapSun: React.FC<{f: number; x: number; y: number; scale?: number
       <circle r={104} fill="#E9DDA8" stroke={INK} strokeWidth={7} />
       <circle r={80} fill="none" stroke={INK} strokeWidth={3} opacity={0.35} />
       <circle cx={-26} cy={-30} r={22} fill="#fff" opacity={0.4} />
-      <g transform={`translate(${pull * -20},152)`}>
+      <g transform={`translate(${pull * -20},196)`}>
         <rect x={-w / 2 + 5} y={-24} width={w} height={46} rx={5} fill="#000" opacity={0.3} />
         <rect x={-w / 2} y={-28} width={w} height={46} rx={5} fill={RF.paper} stroke={INK} strokeWidth={4.4} />
         <text x={0} y={5} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={20} letterSpacing={1.5} fill={INK}>{label}</text>
@@ -421,7 +421,7 @@ export const Envelope: React.FC<{f: number; x: number; y: number; scale?: number
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${scale})`}>
       <ContactShadow cx={0} cy={110} rx={150} ry={14} opacity={0.35} />
       {k > 0.05 && (
-        <g transform={`translate(0,${-235 * k})`}>
+        <g transform={`translate(0,${-280 * k})`}>
           <rect x={-w / 2} y={-30} width={w} height={40 + lines.length * 40} fill={RF.paper} stroke={INK} strokeWidth={5} />
           {lines.map((l, i) => (
             <text key={i} x={0} y={14 + i * 40} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={800} fontSize={22} letterSpacing={1} fill={INK}>{l}</text>
@@ -460,8 +460,8 @@ export const SampleJars: React.FC<{f: number; x: number; y: number; scale?: numb
             {[0, 1, 2, 3].map((g) => <circle key={g} cx={-18 + g * 12 + hash(g, i) * 6} cy={-30 - g * 14} r={3} fill={RF.emberHot} opacity={0.5 + 0.4 * Math.sin(f / 8 + g + i)} />)}
             {rank > 0 && (
               <g transform={`translate(0,${-h - 70 + 10 * (1 - clamp01(rank))})`} opacity={clamp01(rank)}>
-                <circle r={22} fill={[RF.emberHot, RF.paper, RF.paper][i]} stroke={INK} strokeWidth={4.4} />
-                <text y={8} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={900} fontSize={24} fill={INK}>{i === 0 ? 1 : i === 1 ? 3 : 2}</text>
+                <circle r={22} fill={RF.paper} stroke={INK} strokeWidth={4.4} />
+                <text y={9} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={900} fontSize={26} fill={INK}>?</text>
               </g>
             )}
           </g>
@@ -529,7 +529,9 @@ export const Snowfall: React.FC<{f: number; n?: number; speed?: number; opacity?
  * the vessel. `power` 0..1 drives the pole lamp and the horizon glow so the WORLD answers the
  * gauge. `ground` is the y of the snow line. Draws full-bleed (0..1080 x 0..1920).
  */
-export const FrostYardDusk: React.FC<{f: number; power?: number; ground?: number; pole?: boolean; shift?: number; snow?: boolean}> = ({f, power = 1, ground = 1180, pole = true, shift = 0, snow = true}) => {
+export const FrostYardDusk: React.FC<{f: number; power?: number; ground?: number; pole?: boolean; shift?: number; snow?: boolean}> = ({f, power = 1, ground = 1180, pole = true, shift: shift0 = 0, snow = true}) => {
+  // a slow parallax drift always runs under the yard, so no held beat is a still
+  const shift = shift0 + 26 * Math.sin(f / 130);
   const stars = Array.from({length: 46}, (_, i) => ({x: (hash(i, 5) * 0.5 + 0.5) * 1080, y: (hash(i, 6) * 0.5 + 0.5) * (ground - 420), r: 1 + (i % 3) * 0.7, p: i}));
   const ridge = (seed: number, base: number, amp: number, col: string, par: number) => {
     let d = `M -60 ${ground + 8} L -60 ${base}`;

@@ -1,0 +1,16 @@
+{
+ "thesis": "The AI in this plan isn't mainly there to find rare earths in coal waste. A second AI is there to keep living microbes working as power rises and falls, so Alaska's hardest input, energy, is the design brief and not an afterthought.",
+ "falsifier": "If the 2030 results show the bioreactor controller ignores available energy, or the energy and cost evaluation is a footnote, the thesis is false. No results exist yet.",
+ "supporting_facts": [
+  "c6 a second AI effort will adjust the bioreactor as conditions and available energy change",
+  "c7 the refinery is tested first as a virtual pilot plant, computer models",
+  "c11 Aggarwal: Alaska's remote energy challenges make energy use central"
+ ],
+ "counterpoint": "Nothing has been tested (c9), no Alaska coal source is named, UAF is one of four partners with about $913,000 of roughly $6M, and a controller can adapt to costly power but can't make power cheaper. The old answer, ship ash where power is cheap, still has to be beaten.",
+ "stance": "celebratory",
+ "runner_ups": [
+  "Planned-not-proven skeptic reading (valence curious): true but the same facts, folded in as the Act 3 test.",
+  "Waste-as-feedstock comedy: kept as a sight-gag source."
+ ],
+ "second_movement": "UAF joins, not leads: a seat at a national table, and the virtual plant is only models."
+}
