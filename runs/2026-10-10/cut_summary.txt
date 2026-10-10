@@ -1,0 +1,18 @@
+make_cut Dispatch1010 started 08:25:24Z
+  OK    typecheck (18s) 
+  OK    text_fit (1s) text-fit: 41 plated strings/variants measured (mono, Plate, actual Label or browser Box), 6 not measured, 0 failing
+  OK    caption_band (0s) caption_band_check: clean across 1 file(s)
+  OK    say_it_show_it (0s) PASS [say_it_show_it] 14 shots, every one drawing its own lines
+  NOTE  staging (1s, exit 1, advisory) invention. Where it did not, the board is the thing to fix first.
+  OK    mix (28s) AAC check PASS: I -13.64 LUFS; TP -2.59 dBTP; LRA 6.80 LU -> /home/user/alaska-ai-weekly/out/dispatch/audio/aac_check.json
+  OK    render (737s)   OK  /home/user/alaska-ai-weekly/out/dispatch/render_mute.mp4  3965 frames  42M
+  OK    encode (200s)   OK  the LinkedIn cut is not taller than wide, so it stays in the main feed
+  OK    evidence (72s)   audio_report.json rebuilt from the delivered cut
+  NOTE  every figure on screen is doing something: invention. Where it did not, the board is the thing to fix first.
+  NOTE  every evidence strip is named for what the film draws there: ValueError: substring not found
+  NOTE  the square crop cuts nothing built:   which elements were authored and this does not.
+  NOTE  the story region never stops moving:   bobs continuously, so every frame contains motion whatever the story is doing.
+  NOTE  dead space within ceilings:   noise and scatter all score as empty here, correctly.
+  NOTE  held beats move at least 2 percent: 8 under 2%: bracket_24 0.3, city_tape_20 0.8, patrol_car_and_drone_31 0.8, mayor_21 1.2, rulebooks_19 1.4, slab_29 1.5, plate_39 1.9, unlit_sockets_16 1.9 (of 41 strips; give e
+  OK    preflight (157s) preflight: clear. The mechanical checks have nothing left to say; what remains is taste, which is what the panel is for.
+make_cut: Dispatch1010 is a panel candidate, 1214s in all. Deliverables in out/dispatch/, evidence from build_evidence.py.

@@ -2376,3 +2376,43 @@ dispatch_history:
     metaphor: a steel bioreactor with a face that flinches whenever the power gauge
       drops, because the plan's second AI exists to keep living cells working on Alaska's
       wobbling power
+- date: '2026-10-10'
+  topic: A new Flock plate reader camera at an Anchorage Lowe's was cut down within
+    days, while two proposed city rules would bind only city cameras
+  slug: who-keeps-the-plate
+  key_entities:
+  - Flock Safety
+  - Lowe's
+  - Anchorage Assembly
+  - AO 2026-108
+  - Axon
+  - APD
+  - KTUU
+  - Anchorage Daily News
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: mixed
+  angle: The cut down camera answers to a store and its vendor, the October 20th proposals
+    govern only city cameras, so ask any camera what it keeps, for how long and who
+    gets it
+  hero: PoleCam
+  cast:
+  - PoleCam
+  - ReceiptTape
+  - StreetNight
+  - ShadowHand
+  - BarePole
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: tactile-collage
+    camera_strategy: track-follow
+    light_story: night-practical
+    palette: Anchorage night slate, pale drifts, charcoal asphalt, sodium amber for
+      the store, magenta for the vendor, civic blue for the city, cyan for the machine
+      reading
+    metaphor: a camera's receipt tape of what it saw, and three coloured rulebooks
+      (store, vendor, city) fighting over who may cut it

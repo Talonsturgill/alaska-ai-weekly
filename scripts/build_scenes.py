@@ -624,6 +624,8 @@ def _source_labels(srcs):
             lab = "ALASKA DGGS"
         elif "epscor" in url:
             lab = "NSF EPSCOR"
+        elif "muni.org" in url:
+            lab = "MUNI.ORG AO 2026-108 AND 108(S)"
         else:
             host = re.sub(r"^www\.", "", urlparse(url).netloc)
             lab = host.upper()

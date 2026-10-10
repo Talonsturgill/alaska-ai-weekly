@@ -1,0 +1,103 @@
+{
+ "run_date": "2026-10-10",
+ "palette": {
+  "sky": "#14232F",
+  "ground": "#2A2F36",
+  "hero": "#E8E4D8",
+  "accent": "#FFB43A",
+  "shadow": "#0B1219",
+  "support": {
+   "slate_sky": "#14232F",
+   "slate_low": "#1F3A47",
+   "asphalt": "#2A2F36",
+   "asphalt_light": "#3C434D",
+   "drift": "#D5DDE0",
+   "drift_shade": "#8E9EA6",
+   "sodium_amber": "#FFB43A",
+   "sodium_hot": "#FFD98A",
+   "vendor_magenta": "#F070B8",
+   "magenta_deep": "#A63A78",
+   "civic_blue": "#4C7FD1",
+   "civic_deep": "#2A4F94",
+   "machine_cyan": "#4DE3D6",
+   "camera_bone": "#E8E4D8",
+   "graphite": "#3A4048",
+   "steel": "#7C8792",
+   "paper": "#D8CCAE",
+   "kraft": "#9C8A66",
+   "ribbon_oxblood": "#B3262E",
+   "street_white": "#F3E7C8",
+   "pickup_spruce": "#5E7A5A",
+   "aurora_sage": "#6C8F7A",
+   "tape_stamps": "Tape stamps are the owner colour of the sheet they sit on (amber, magenta, civic blue) or neutral ink, never oxblood."
+  },
+  "mood": "a cold Anchorage night in a big-box parking lot under two sodium lamps, watchful and a little wry, never ominous. A pole camera with one big lens eye and a graphite solar panel for a hat.",
+  "why": "The story is about WHO OWNS A RULE, so the picture is colour-coded by owner. AMBER #FFB43A means ONLY the store (its lot lamps, its storefront sign, the 90-day privacy sheet, its leash). MAGENTA #F070B8 means ONLY the vendor (Flock's FAQ sheet, its leash, the server box), moved off the earlier lilac so it can't collapse into the city's blue for colour-blind viewers. CIVIC BLUE #4C7FD1 means ONLY the city (the two rulebooks, the boundary, the Assembly hall banner, the lit pupils of the socket wall). CYAN #4DE3D6 means ONLY the machine reading (lens glow, scan beam, cheek LED, plate highlight) and is the only saturated cool in any frame because the sky is a desaturated blue-slate #14232F, not teal. OXBLOOD #B3262E is only the NEW! ribbon. Street lamps, the map's city lights and the hall lamp are neutral warm white #F3E7C8, never amber. VALUE PLAN: bone #E8E4D8 camera on asphalt #2A2F36 measures about 10:1, the lightest large value outside the lamp pools; paper is dropped to #D8CCAE so paperwork never outshines the hero, and the snowbank is capped at #8E9EA6. civic_deep and magenta_deep are interior shading only, never a boundary, tape edge or leash. The engine's INK constant #101423 is shared across every film and is not a palette role; shadow is #0B1219. Diverges from 2026-08-06 'The Same Face, The Same Plate' (municipal slate-blue night, SocketGrid), from 10-09 (indigo dusk, ember orange, simulation lime, kraft, paper) and 10-08 (dawn khaki pier, harbor yellow, violet ink)."
+ },
+ "light": {
+  "time_of_day": "deep night, two sodium lamp poles on the store's lot, a faint sage aurora #6C8F7A in the sky",
+  "direction": "cool blue-slate fill #1F3A47 from the sky, warm sodium key from the lamp poles at frame left and right, cyan self-light from the lens when it reads",
+  "key": "sodium #FFB43A from the lot lamp heads (the store's property only), neutral warm white #F3E7C8 from street and hall lamps",
+  "fill": "blue-slate sky #1F3A47",
+  "rim": "sodium rim on the bone camera head and the steel pole from the lamp side",
+  "depth": "four planes: sky and ridge drift slowest, the store and lamp poles next, the asphalt and the cameras in front, the snow bank and the shopping cart nearest. Snow falls across all four.",
+  "per_stage": {
+   "lot-night": "key sodium lamps, fill blue-slate #1F3A47, parallax sky 0.2, ridge 0.45, store 0.7, lamps 0.8-0.9, asphalt 1.1",
+   "cutaway-bench": "dark bench #0B151A, cyan beam is the only light, bone camera lit by the lens",
+   "street-corner": "key street_white #F3E7C8 from a public lamp, fill slate #1F3A47, the camera across the road is lit amber only on the store's side; parallax sky 0.2, buildings 0.5, curb 1.0",
+   "anchorage-map": "city lights street_white dots on slate #14232F, civic_blue lines only for rule scope",
+   "assembly-hall": "key street_white #F3E7C8 table lamp, fill civic_deep #2A4F94 from the banner, window night #14232F; parallax wall 0.6, table 1.0",
+   "test-split": "left hall (street_white key, civic_deep fill), right lot (sodium key, slate fill), a hard seam, amber never crosses to the hall side",
+   "feed-wall": "the wall is the light source, eyes pale with civic blue pupils",
+   "tv-desk": "key street_white desk lamp, neutral grey-white TV glow (not a machine cue) #E4E6E8 on the cards, fill slate",
+   "document-desk": "overhead street_white lamp pool, amber and magenta only on their own sheets"
+  }
+ },
+ "shape_language": {
+  "contrast": "THREE GRAMMARS. ROUND for the lens eye, the sockets of the wall and the cart wheels. THIN AND STRAIGHT for the pole, the lamp poles, the saw and the tape ticks. FLAT AND RECTILINEAR for paperwork, the rulebooks, the calendar and plates. The camera is the only eye with a lid and brows, and the wall's sockets are lidless.",
+  "why": "A single round watching eye on a thin straight pole in a world of flat paperwork draws surveillance versus rules in one silhouette."
+ },
+ "casting": {
+  "hero": "PoleCam (NET-NEW, lib/polecam.tsx), a pole-mounted plate reader with a bone-white head, a solar-panel hat, one big lens eye with lid and brows, cheek LEDs and an optional NEW! ribbon.",
+  "net_new": {
+   "PoleCam": "Not SeismicStation (a ground ear) or SatelliteEye (an orbital eye) or StudyLens (a hand lens). A street-level machine that is bolted to someone else's property and can be sawn off, with a face.",
+   "Tape": "the throughline receipt strip with day ticks and stamps",
+   "Pickup, PatrolCar, Drone, FeedWall, Rulebook, LotNight, ShoppingCart, SawBlade, HandSign, ScanBeam, NoCameraSign": "the supporting set pieces, all in lib/polecam.tsx"
+  },
+  "cast": "Character rig for the neighbor (puffer) and the mayor (suit, glasses). The store is a lit storefront and a plaque, no person.",
+  "shelf_duplicate_check": {
+   "Drone": "SeedDrone (evidence_state.tsx) is a seed-sowing agri drone and Vale/Petrel (kit.tsx) are characterized heroes; this Drone is a small, plain, faceless quad that appears twice as a rider in the city's deal. A ten-line prop, kept here.",
+   "ScanBeam": "vision.tsx's SearchReticle and VisionGrid are screen overlays. This is a world-space cone from a lens to a target. Different geometry.",
+   "Rulebook": "Sheet/StateLetter/HandbookPlate are flat sheets or a single plate. This is a standing ring binder with spine, label and ribbon, because two of them have to land and slide apart on a table.",
+   "HandSign": "HandSil (stack.tsx) is a hand silhouette. This is a scribbled cardboard sign on a stake with no letterforms.",
+   "NoCameraSign": "Dropped from the film (a lettered protest sign could be confused with the vandal's sign). Left in the lib unused.",
+   "CYAN": "vision.tsx exports a reserved CYAN token; this film's machine cyan #4DE3D6 is its own role in the owner colour code, declared in PC.",
+   "PoleCam": "Not SeismicStation (a ground ear), SatelliteEye (orbital) or StudyLens (a hand lens). A street-level machine bolted to someone else's property that can be sawn off."
+  },
+  "faces": "PoleCam alone has a face (one lens eye with lid and brows, cheek LEDs). The pickup, patrol car, drone, wall sockets and the pole in the leash shot have no faces. People: the neighbor (puffer, frowning) and the mayor (suit, glasses, dignified and generic, no likeness)."
+ },
+ "motion_language": {
+  "world": "snow falls through every frame, stars twinkle, lamps flicker, a shopping cart rolls through the near plane of the whole film, the tape keeps spooling, eyes blink at their own phases",
+  "hero_moves": [
+   "the camera blinks awake and its pupil tracks a pickup",
+   "the saw strokes and the pole topples with a puff",
+   "the cyan beam sweeps and four tags peel off the truck",
+   "the lot shrinks to a pin as the view rises over the city",
+   "one eye pulls back into 750 eyes lighting in a count",
+   "the dashed civic boundary draws itself and stops short of a pole",
+   "the amber tape unrolls to its soft end at ninety on one sheet and the magenta tape stops at seven on another",
+   "a new pole rises and a new camera blinks awake"
+  ],
+  "blur": "180 degree motion blur on the saw, the pickup pass and the patrol car"
+ },
+ "composition": {
+  "focal_hierarchy": "the camera's lens eye is the best-finished thing in every shot it appears in; plates sit in the y 500 to 760 band clear of it; objects live between y 560 and 1300",
+  "negative_space": "blue-slate sky above in lot shots, the dark bench and the dark table in the diagram shots; ONE owner colour dominant per frame",
+  "safe_area": "hero action and every plate inside y 490..1300 for the 1:1 square; the snow bank and near plane below y 1475 are 9:16 only",
+  "signature_shot": "the 750 sockets reveal at about 77 to 91 s: one lit socket pulls back into a wall of 750 camera sockets, most dark and a few lit, under UP TO 750 FEEDS; the tiny PoleCam stands at x 900 y 1250 (inside the square, below the corner chip at y 436 to 474) and shrinks.",
+  "plated_note": "No plate above y 490. The persistent corner chip sits at y 436 to 474."
+ },
+ "craft_advance": "None required. The net-new asset family lives in lib/polecam.tsx.",
+ "geography": "TWO PLACES. A big-box parking lot in South Anchorage (the pole, the leash shot, the curb) and the Municipality's civic world (the newsroom desk, the hall, the map and plan, the wall). The diagram bench and the document desk are overlays on the first place.",
+ "prior_film_disclosure": "2026-08-06 'The Same Face, The Same Plate' covered Anchorage's Real-Time Crime Center and its camera-feed capacity. It is outside the 30-day window. This film's angle is different (who owns the rule for a store's pole versus the city's), its set is a store lot with a pole camera, a newsroom desk, a hall and a plan view, and its 750 is a wall of sockets (most dark) read as a capacity, in a colour-coded owner grammar, with no FrameOfEvidence, ScanReticle or SocketGrid."
+}

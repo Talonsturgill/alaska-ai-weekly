@@ -1,0 +1,1783 @@
+{
+ "run_date": "2026-10-10",
+ "slug": "who-keeps-the-plate",
+ "title": "Who Keeps The Plate",
+ "concept": "A brand new plate-reading camera with a face is sawn off its pole in an Anchorage lot, and the film asks who decides what it keeps. The October 20th vote governs the city's own cameras, not the store's pole, so the pole answers to a retailer and a vendor. The film ends on three questions to put to any automated camera.",
+ "derived_from": "scratch",
+ "engine": "infographic-2.5d",
+ "total_seconds": 118.88,
+ "fingerprint": {
+  "pov": "eye-level-immersive",
+  "motion_vector": "horizontal-traverse",
+  "hero_treatment": "single-organic-hero",
+  "layout": "centered-hero-lowerthird",
+  "register": "tactile-collage",
+  "camera_strategy": "track-follow",
+  "light_story": "night-practical",
+  "palette": "Anchorage night slate, pale drifts, charcoal asphalt, sodium amber for the store, magenta for the vendor, civic blue for the city, cyan for the machine reading",
+  "metaphor": "a camera's receipt tape of what it saw, and three coloured rulebooks (store, vendor, city) fighting over who may cut it"
+ },
+ "palette": "Anchorage night slate, pale drifts, charcoal asphalt, sodium amber for the store, magenta for the vendor, civic blue for the city, cyan for the machine reading",
+ "divergence_note": "10-09 was a dusk utility yard with a steel tank and a power gauge, 10-08 a dawn pier with a burning glass lens. This film is a night parking lot under sodium lamps with a pole camera that has one big eye, plus a newsroom desk, a civic hall, a plan-view boundary, a wall of 750 sockets and a document desk. The look is colour-coded by who owns a rule (amber store, magenta vendor, civic blue city, cyan machine), where 10-09 coded electricity and the model. The hero is a street-level machine that can be sawn off its pole, and the argument is carried by cutting between many worlds, where 10-09 held one yard.",
+ "angle": {
+  "run_date": "2026-10-10",
+  "thesis": "The camera someone cut down belongs to a store and the October 20th vote governs the city's own cameras, so Anchorage is arguing about the visible pole while the rules that matter sit with a retailer, a vendor and the city, and the honest questions to ask of any automated camera are what it keeps, for how long and who gets it.",
+  "falsifier": "If either proposed ordinance (AO 2026-108 or the mayor's 108(S)) reaches the data a private business collects, or if the news and the ordinances already describe what the software extracts, the thesis is false. The facts set shows the ordinances cover city surveillance data, and the vendor's own FAQ is the only source that says machine learning and vehicle traits.",
+  "supporting_facts": [
+   "f1 Flock began installing plate readers for an unnamed private customer, cameras went up at Anchorage Lowe's stores",
+   "f6 Lowe's keeps such data typically no more than 90 days and shares with service providers and NCMEC, Flock's own FAQ default is 7 days",
+   "f7 APD doesn't use Flock and has no feed, but its own readers ride in patrol cars under an Axon contract",
+   "f8 the two proposed ordinances split on retention, outside networks and Assembly approval of purchases",
+   "f11 Flock's own FAQ says the cameras apply machine learning and capture make, color and body type, no news article calls it AI"
+  ],
+  "counterpoint": "The mayor says the Assembly version could unduly limit core APD functions, a store may put a camera on its own pole, Lowe's publishes a ceiling, and a customer's privacy statement may be rule enough. The fair case gets a full scene at full strength. And the residents who reject the capability outright aren't answered by rules about who controls it.",
+  "stance": "mixed",
+  "runner_ups": [
+   "Pure who-holds-the-data structure story (analyst 2): folded in as the three rulebooks spine.",
+   "Pro-capability governance frame (analyst 1): its counter-case became the Test scene.",
+   "Honest-AI machine vision (analyst 3): supplies the cutaway of what the machine reads and the three questions button."
+  ],
+  "second_movement": "The cameras people are fighting over aren't the biggest system in town. The city's own Axon deal is $11.8 million over five years for up to 750 camera feeds, plate readers and drones, and that is what the vote governs."
+ },
+ "treatment": {
+  "winner": "The Dramatist's structure (the saw cold open, the Test, three rulebooks) with the Comedian's NEW! ribbon and rolling shopping cart, the Explainer's receipt TAPE as the throughline and the make, color, body type tags, and the Enthusiast's honest wonder at what the machine reads",
+  "why": "All four pitches converged on a faced pole camera and the three questions button. The Dramatist drew the fair counter-case as a named scene, the Explainer's tape gave the 7 versus 90 day comparison a physical form, and the ordinance check confirmed the structural reveal that both proposed rules bind only the city. The storyboard critic's revision moved Flock's statements to a neutral newsroom desk so the film never implies the customer is Lowe's."
+ },
+ "hook": {
+  "pattern": "in-medias-res",
+  "frame1": "A brand new PoleCam with a NEW! ribbon on a snowy night lot blinks awake as an installer's ladder slides away and a pickup rolls through, then a saw blade slides in.",
+  "headline": "A CAMERA CUT DOWN IN DAYS",
+  "motion_by_s": 0.4,
+  "loopback": "The last frame is the same pole, a new camera blinking awake on it, the tape printing a fresh tiny truck."
+ },
+ "open_loop": {
+  "plant_t": 16.88,
+  "pay_t": 107.3,
+  "what": "Who decides what the camera keeps. Not who you'd think. Paid when the pole shows two leashes, the store and the vendor."
+ },
+ "open_loop_2": {
+  "plant_t": 41.295,
+  "pay_t": 77.12,
+  "what": "That parking lot camera isn't the biggest system in town. Paid when the 750-socket Axon wall pulls back."
+ },
+ "throughline": {
+  "object": "the receipt tape the camera prints",
+  "lands_in_button": "the new camera keeps printing its tape beneath the three questions and the open replays",
+  "states": [
+   {
+    "at_s": 1.87,
+    "state": "prints a tiny truck out of the camera's belly"
+   },
+   {
+    "at_s": 16.88,
+    "state": "scrolls across the dark desk with three coloured shadow hands reaching for it"
+   },
+   {
+    "at_s": 27.058,
+    "state": "a strip lies beside the statement cards on the newsroom desk, still printing"
+   },
+   {
+    "at_s": 34.843,
+    "state": "drifts down the street from the camera to the neighbor's boots"
+   },
+   {
+    "at_s": 43.52,
+    "state": "lies along the hall table between the two rulebooks"
+   },
+   {
+    "at_s": 60.384,
+    "state": "stays on the store's side of the seam as a pole camera tape, while a separate blue city tape feeds the shredder and the clamp"
+   },
+   {
+    "at_s": 64.2,
+    "state": "is wrapped round the store's pole"
+   },
+   {
+    "at_s": 70.06,
+    "state": "flutters along the curb under the floating cards"
+   },
+   {
+    "at_s": 87.075,
+    "state": "a thin line trailing into the wall of sockets"
+   },
+   {
+    "at_s": 94.704,
+    "state": "trails off the dashed boundary and ends beside the pole outside it"
+   },
+   {
+    "at_s": 98.16,
+    "state": "unrolls its day ticks to a soft end at 90"
+   },
+   {
+    "at_s": 104.192,
+    "state": "a short strip that ends at 7"
+   },
+   {
+    "at_s": 107.3,
+    "state": "hangs slack from the pole between the two leashes"
+   },
+   {
+    "at_s": 111.8,
+    "state": "keeps printing from the new camera beneath the three questions"
+   }
+  ]
+ },
+ "reveals": [
+  {
+   "t": 8.5,
+   "type": "build-on",
+   "what": "the camera's lens becomes the cutaway bench and four tags peel off the truck",
+   "hold_s": 0.6
+  },
+  {
+   "t": 37.34,
+   "type": "scale-pullback",
+   "what": "the lot shrinks to a pin as the view rises over Anchorage",
+   "hold_s": 0.6
+  },
+  {
+   "t": 77.12,
+   "type": "scale-pullback",
+   "what": "one lit socket pulls back into a wall of 750 sockets",
+   "hold_s": 0.6
+  },
+  {
+   "t": 91.76,
+   "type": "morph-to-chart",
+   "what": "the wall becomes a plan view with a dashed civic boundary",
+   "hold_s": 0.6
+  }
+ ],
+ "audio_arc": {
+  "build_steps": 4,
+  "dip_at": 110.2,
+  "riser_at": 107.3,
+  "silence_at": 110.5,
+  "payoff_at": 111.8,
+  "button_pattern": "question",
+  "interrupt_at": 22.9,
+  "extra_dips": [
+   57.26,
+   76.12
+  ]
+ },
+ "shots": [
+  {
+   "title": "The pole they cut",
+   "vo_line": 0,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "low",
+   "stage": "lot-night",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "single-organic-hero",
+   "camera": "craneDown",
+   "transition_in": "",
+   "thread": "",
+   "stage3d": "planes",
+   "centered": "the pole at x540 y1290",
+   "means": "Hook. A brand new PoleCam with a NEW! ribbon blinks awake on its pole in a snowy night lot while an installer's ladder slides away and a pickup rolls through, its tape printing a tiny truck. A saw blade's tip and shadow wait at frame left from the first frame, then it strokes the pole, which topples into the snow with a puff. The lens goes dark beside a pure scribble hand sign.",
+   "ambient": "snow falls, the sodium lamps flicker, a shopping cart rolls across the near plane, the ribbon flaps, stars twinkle",
+   "hero": {
+    "name": "PoleCam",
+    "parts": 34,
+    "zones": 4,
+    "detail_note": "60% camera and pole, 20% pickup and tape, 20% lot"
+   },
+   "id": 1,
+   "start_s": 0.0
+  },
+  {
+   "title": "What the machine reads",
+   "vo_line": 1,
+   "framing": "push-detail",
+   "scale": "close",
+   "height": "eye",
+   "stage": "cutaway-bench",
+   "pov": "cross-section-cutaway",
+   "layout": "hud-instrument-frame",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "static:a locked diagram where the beam and tags move",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "stage3d": "flat:a locked diagram bench, depth adds nothing",
+   "centered": "the lens at x300 y900",
+   "means": "The lens eye is the match cut. A second PoleCam stands on a dark diagram bench glowing cyan, a scan beam sweeping a pickup side-on. Four tags peel off the truck one at a time, PLATE, MAKE, COLOR and BODY TYPE, under a plate that names Flock's own FAQ.",
+   "ambient": "the beam sweeps, scan rings pulse out of the lens, the iris breathes, dust motes drift through the beam",
+   "hero": {
+    "name": "PoleCam",
+    "parts": 34,
+    "zones": 3,
+    "detail_note": "40% camera, 40% truck and tags, 20% bench"
+   },
+   "id": 2,
+   "start_s": 8.5
+  },
+  {
+   "title": "Who decides what it keeps",
+   "vo_line": 2,
+   "framing": "macro-closeup",
+   "scale": "insert",
+   "height": "overhead",
+   "stage": "document-desk",
+   "pov": "macro-closeup",
+   "layout": "single-object-void",
+   "motion_vector": "scroll-data",
+   "hero_treatment": "data-as-subject",
+   "camera": "static:the desk is the whole frame and the tape is what moves",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "stage3d": "flat:straight down on a desk, depth adds nothing",
+   "centered": "the tape at x540 y900",
+   "means": "Straight down on a dark desk. The receipt tape scrolls across it printing tiny trucks while three shadow hands (amber, magenta and civic blue) reach in from three sides with question marks. The hands freeze and a big question stamp lands on the tape.",
+   "ambient": "the tape keeps spooling, the shadow hands tremble, dust floats, the desk lamp pool sways",
+   "hero": {
+    "name": "Tape",
+    "parts": 18,
+    "zones": 2,
+    "detail_note": "70% tape, 30% hands"
+   },
+   "id": 3,
+   "start_s": 16.88
+  },
+  {
+   "title": "Flock told a TV station",
+   "vo_line": 3,
+   "framing": "alt-vantage",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "tv-desk",
+   "pov": "instrument-screen",
+   "layout": "stacked-layers",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "instrument-as-subject",
+   "camera": "truckAcross",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "stage3d": "planes",
+   "centered": "the statement cards at x540 y1050",
+   "means": "A newsroom desk under a lamp with a TV STATION monitor. A statement card FLOCK TO KTUU reads NOT AWARE OF ANY CAMERAS IN ALASKA and is slid aside by an updated card, BEGAN INSTALLING FOR A PRIVATE CUSTOMER, stamped UPDATED. Beside them an empty silhouette card marked CUSTOMER NOT NAMED BY FLOCK waits with a question mark.",
+   "ambient": "the monitor static flickers, the desk lamp sways, a coffee steams, the tape strip creeps off the desk edge",
+   "hero": {
+    "name": "StatementCards",
+    "parts": 24,
+    "zones": 3,
+    "detail_note": "50% cards, 30% monitor, 20% desk"
+   },
+   "id": 4,
+   "start_s": 22.9
+  },
+  {
+   "title": "Very Minority Report",
+   "vo_line": 4,
+   "framing": "subject-portrait",
+   "scale": "close",
+   "height": "eye",
+   "stage": "street-corner",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "push-in-only",
+   "hero_treatment": "single-organic-hero",
+   "camera": "dollyThrough",
+   "transition_in": "hard-cut",
+   "thread": "carry",
+   "stage3d": "planes",
+   "centered": "the neighbor at x540 y1100",
+   "means": "A neighbor in a puffer coat on the curb frowns across the road at a camera on a pole while the camera's tape drifts down the street to her boots. A quote card rises beside her, VERY MINORITY REPORT, attributed to a resident speaking to KTUU.",
+   "ambient": "snow falls, her breath steams, the sodium lamp flickers, the camera across the road blinks, the tape flutters along the curb",
+   "hero": {
+    "name": "Character",
+    "parts": 30,
+    "zones": 3,
+    "detail_note": "60% figure, 20% card, 20% street"
+   },
+   "id": 5,
+   "start_s": 32.8
+  },
+  {
+   "title": "Not the biggest in town",
+   "vo_line": 5,
+   "framing": "map-territory",
+   "scale": "extreme-wide",
+   "height": "high",
+   "stage": "anchorage-map",
+   "pov": "orbital-aerial",
+   "layout": "map-territory",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "landscape-as-subject",
+   "camera": "risewith",
+   "transition_in": "pull-out",
+   "thread": "travel",
+   "stage3d": "planes",
+   "centered": "the lot pin at x540 y1000",
+   "means": "The view rises off the curb and pulls out over Anchorage at night. The lot shrinks to a pin with a tiny camera, the tape a thin thread behind it, while a dim grid of unlit sockets spreads over the city blocks, hinting at something larger.",
+   "ambient": "city lights twinkle, the pin pulses, traffic dots crawl the grid, the unlit sockets glimmer",
+   "hero": {
+    "name": "CityMap",
+    "parts": 40,
+    "zones": 3,
+    "detail_note": "70% city grid and sockets, 20% pin, 10% thread"
+   },
+   "id": 6,
+   "start_s": 37.34
+  },
+  {
+   "title": "Two proposed rules",
+   "vo_line": 6,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "assembly-hall",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "structure-as-subject",
+   "camera": "dollyThrough",
+   "transition_in": "carried-element",
+   "thread": "carry",
+   "stage3d": "planes",
+   "centered": "the table at x540 y1200",
+   "means": "The lot pin drops onto a long table in a civic hall as a tiny camera icon. Two rulebooks land at opposite ends of the table and slide apart, the pin's camera icon sitting at the table edge and the spine of the FROM THE MAYOR book about to become the seam of the next shot. A wall calendar flips to OCT 20 with VOTE EXPECTED stamped in the same frame, and tags land on the books, FROM THE MAYOR and FROM ASSEMBLY MEMBERS.",
+   "ambient": "dust drifts in the hall light, the calendar curls, a flag sways, the table lamp glows",
+   "hero": {
+    "name": "Rulebook",
+    "parts": 22,
+    "zones": 3,
+    "detail_note": "40% rulebooks, 30% calendar, 30% hall"
+   },
+   "id": 7,
+   "start_s": 43.52
+  },
+  {
+   "title": "The test: the fair case",
+   "vo_line": 7,
+   "framing": "two-up",
+   "scale": "medium",
+   "height": "eye",
+   "stage": "test-split",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "single-organic-hero",
+   "camera": "truckAcross",
+   "transition_in": "match-cut",
+   "thread": "match",
+   "stage3d": "planes",
+   "centered": "the seam at x540 y1100",
+   "means": "The spine of the FROM THE MAYOR rulebook becomes a hard seam down the frame. Left, the mayor at a podium glances at a small CITY CAMERAS patrol-car icon whose own civic-blue city tape (never the pole camera's tape) feeds a shredder slot after 14 ticks, then lifts a folder marked CORE POLICE OPERATIONS as a clamp tightens on the folder and the blue tape. Right, a store pole with a lit storefront behind it and a plaque A STORE'S POLE, A STORE'S CALL, the pole camera's own tape wrapped around it, staying on this side of the seam, and a bracket glinting at the top.",
+   "ambient": "the podium lamp sways, the shredder hums, the clamp creaks, snow falls on the right half, the storefront sign flickers",
+   "hero": {
+    "name": "Character",
+    "parts": 44,
+    "zones": 4,
+    "detail_note": "50% mayor and props, 30% pole and storefront, 20% set"
+   },
+   "id": 8,
+   "start_s": 53.6
+  },
+  {
+   "title": "Rules and the neighbor",
+   "vo_line": 9,
+   "cut_offset_s": -0.5,
+   "cut_reason": "J-cut: the neighbor shot begins under the last words, on its own pole, so the test shot stays under the 16 second ceiling",
+   "framing": "alt-vantage",
+   "scale": "wide",
+   "height": "low",
+   "stage": "street-corner",
+   "pov": "eye-level-immersive",
+   "layout": "single-object-void",
+   "motion_vector": "vertical-descent",
+   "hero_treatment": "landscape-as-subject",
+   "camera": "dollyThrough",
+   "transition_in": "hard-cut",
+   "thread": "carry",
+   "stage3d": "planes",
+   "centered": "the road at x540 y1150",
+   "means": "Over the neighbor's shoulder, low. She stands with her arms crossed looking across the road at the lit camera, whose blinking lens is what becomes the first lit socket of the next shot. Two small cards, THE MAYOR'S POINT and A STORE'S POINT, each ticked, float past between her and the camera without stopping, and a plate lands RULES DON'T ANSWER NEIGHBORS WHO WANT NO CAMERA.",
+   "ambient": "snow falls, her breath steams, the camera across the road blinks cyan, the tape flutters along the curb, headlights pass",
+   "hero": {
+    "name": "Character",
+    "parts": 36,
+    "zones": 3,
+    "detail_note": "40% figure, 30% cards, 30% road and camera"
+   },
+   "id": 9,
+   "start_s": 70.06
+  },
+  {
+   "title": "The biggest system",
+   "vo_line": 10,
+   "framing": "wide-establish",
+   "scale": "extreme-wide",
+   "height": "low",
+   "stage": "feed-wall",
+   "pov": "instrument-screen",
+   "layout": "grid-modular",
+   "motion_vector": "assemble-build",
+   "hero_treatment": "multiplicity-swarm",
+   "camera": "orbitReveal",
+   "transition_in": "match-cut",
+   "thread": "build",
+   "stage3d": "planes",
+   "centered": "the wall at x540 y900",
+   "means": "One socket pulls back into a wall of 750 identical camera sockets, none lit as a count, under plates CITY'S AXON DEAL, $11.8M, 5 YEARS and UP TO 750 FEEDS. A patrol car with a roof reader and the plate CITY'S AXON DEAL on its door rolls in early, the wall pulses once when the $11.8M slab drops, the UP TO 750 bracket lands and a drone flies in. A small amber PoleCam stands OUTSIDE the wall's frame, tagged THIS LOT, and shrinks.",
+   "ambient": "sockets blink at their own phases, the beam crawls, the drone hovers, the car wheels turn",
+   "hero": {
+    "name": "FeedWall",
+    "parts": 800,
+    "zones": 3,
+    "detail_note": "70% wall, 20% car and drone, 10% tiny PoleCam"
+   },
+   "id": 10,
+   "start_s": 77.12
+  },
+  {
+   "title": "The fence around the city",
+   "vo_line": 11,
+   "framing": "map-territory",
+   "scale": "wide",
+   "height": "overhead",
+   "stage": "anchorage-map",
+   "pov": "top-down-map",
+   "layout": "map-territory",
+   "motion_vector": "radial-emanate",
+   "hero_treatment": "data-as-subject",
+   "camera": "static:plan view where the dashed civic boundary is what moves",
+   "transition_in": "graphic-match",
+   "thread": "match",
+   "stage3d": "flat:plan view, depth adds nothing",
+   "cut_offset_s": -0.45,
+   "cut_reason": "J-cut: the plan view begins under the last words, plate readers and drones, so the 750-socket shot stays under the 16 second ceiling",
+   "centered": "the boundary at x540 y1000",
+   "means": "Straight down. A dashed civic-blue boundary draws itself around the feed wall, the patrol car and the drone. A store's pole stands outside the line in a pool of amber light and the line stops short of it. The amber pool is carried into the desk-lamp pool of the next shot.",
+   "ambient": "the boundary dashes crawl, the pole's amber pool breathes, snow drifts across the plan, the car creeps",
+   "hero": {
+    "name": "Boundary",
+    "parts": 26,
+    "zones": 3,
+    "detail_note": "50% boundary and city objects, 30% pole, 20% ground"
+   },
+   "id": 11,
+   "start_s": 91.76
+  },
+  {
+   "title": "Two documents",
+   "vo_line": 12,
+   "framing": "data-panel",
+   "scale": "medium",
+   "height": "high",
+   "stage": "document-desk",
+   "pov": "macro-closeup",
+   "layout": "stacked-layers",
+   "motion_vector": "scroll-data",
+   "hero_treatment": "data-as-subject",
+   "camera": "truckAcross",
+   "transition_in": "mask-wipe",
+   "thread": "carry",
+   "stage3d": "flat:straight down on documents, depth adds nothing",
+   "centered": "the sheets at x540 y1100",
+   "means": "High over a desk. A privacy statement sheet marked LOWE'S PRIVACY STATEMENT carries a tape of day ticks that runs to a soft end at TYPICALLY NO MORE THAN 90 DAYS. The sheet slides off and a separate FLOCK FAQ sheet slides on with a short tape ending at DEFAULT 7 DAYS, ADJUSTABLE BY LOCAL RULE.",
+   "ambient": "the desk lamp sways, the tapes flutter, paper edges lift, a paperclip glints",
+   "hero": {
+    "name": "Tape",
+    "parts": 40,
+    "zones": 3,
+    "detail_note": "50% tapes, 30% sheets, 20% desk"
+   },
+   "id": 12,
+   "start_s": 98.16
+  },
+  {
+   "title": "The pole and its two leashes",
+   "vo_line": 13,
+   "framing": "wide-establish",
+   "scale": "wide",
+   "height": "eye",
+   "stage": "lot-night",
+   "pov": "eye-level-immersive",
+   "layout": "fullbleed-split",
+   "motion_vector": "horizontal-traverse",
+   "hero_treatment": "structure-as-subject",
+   "camera": "truckAcross",
+   "transition_in": "whip-pan",
+   "thread": "travel",
+   "stage3d": "planes",
+   "centered": "the pole at x540 y1250",
+   "means": "Eye level at the lot edge. A bare pole stands in the middle with two leashes running off, an amber one to a lit storefront on the left and a magenta one to a server box on the right, each with a label, STORE and VENDOR.",
+   "ambient": "snow falls, the leashes sway, the storefront sign flickers, the server box LEDs blink, the cart rolls",
+   "hero": {
+    "name": "Pole",
+    "parts": 20,
+    "zones": 3,
+    "detail_note": "30% pole, 40% storefront and server box, 30% lot"
+   },
+   "id": 13,
+   "start_s": 107.3
+  },
+  {
+   "title": "Ask the camera",
+   "vo_line": 14,
+   "framing": "subject-portrait",
+   "scale": "medium",
+   "height": "low",
+   "stage": "lot-night",
+   "pov": "eye-level-immersive",
+   "layout": "centered-hero-lowerthird",
+   "motion_vector": "vertical-rise",
+   "hero_treatment": "single-organic-hero",
+   "camera": "craneDown",
+   "transition_in": "match-action",
+   "thread": "match",
+   "stage3d": "planes",
+   "centered": "the new pole at x540 y1290",
+   "means": "Back to the first frame. A new pole rises from the stump with a new PoleCam that blinks awake and keeps printing its tape. Three plates stamp on beneath it, WHAT DOES IT KEEP, FOR HOW LONG, WHO GETS IT.",
+   "ambient": "snow falls, lamps flicker, the cart rolls, the ribbon flaps, the tape keeps printing",
+   "hero": {
+    "name": "PoleCam",
+    "parts": 34,
+    "zones": 4,
+    "detail_note": "60% camera and pole, 20% plates, 20% lot"
+   },
+   "id": 14,
+   "start_s": 111.8
+  }
+ ],
+ "beats": [
+  {
+   "id": 1,
+   "shot": 1,
+   "t": "0.000-1.870",
+   "at_s": 0.0,
+   "vo_line": 0,
+   "anchor": {
+    "vo_line": 0,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "A brand new camera went up on a pole at an Anchorage Lowe's. Within days, somebody cut it down.",
+   "phrase": "A brand new camera",
+   "shows": "a brand new PoleCam with a NEW! ribbon blinks awake on its pole while an installer's ladder leans against it",
+   "sfx": "bloop",
+   "means": "hook: a new camera, alive",
+   "rehook": "",
+   "draw": {
+    "subject": "PoleCam",
+    "action": "blinks awake",
+    "emotion": "proud",
+    "annotation": "FLOCK CAMERA \u00b7 ANCHORAGE LOWE'S"
+   },
+   "choreo": {
+    "primary": "a brand new PoleCam with a NEW! ribbon blinks awake on its pole while an installer's ladder leans against it",
+    "reaction": "the ribbon flaps and the lens irises open",
+    "ambient": "snow falls, the sodium lamps flicker, a shopping cart rolls across the near plane, the ribbon flaps, stars twinkle"
+   }
+  },
+  {
+   "id": 2,
+   "shot": 1,
+   "t": "1.870-4.675",
+   "at_s": 1.87,
+   "vo_line": 0,
+   "anchor": {
+    "vo_line": 0,
+    "fraction": 0.22,
+    "offset": 1.87
+   },
+   "offset": 1.87,
+   "vo": "A brand new camera went up on a pole at an Anchorage Lowe's. Within days, somebody cut it down.",
+   "phrase": "went up on a pole",
+   "shows": "the ladder slides away, a pickup rolls past, the lens tracks it and the tape prints a tiny truck",
+   "sfx": "whoosh",
+   "means": "the camera at work, the tape begins",
+   "rehook": "",
+   "draw": {
+    "subject": "PoleCam",
+    "action": "tracks the pickup",
+    "emotion": "proud",
+    "annotation": "TAPE PRINTS A TRUCK"
+   },
+   "choreo": {
+    "primary": "the ladder slides away, a pickup rolls past, the lens tracks it and the tape prints a tiny truck",
+    "reaction": "the tape curls out and the tiny truck inks onto it",
+    "ambient": "snow falls, the sodium lamps flicker, a shopping cart rolls across the near plane, the ribbon flaps, stars twinkle"
+   }
+  },
+  {
+   "id": 3,
+   "shot": 1,
+   "t": "4.675-6.800",
+   "at_s": 4.675,
+   "vo_line": 0,
+   "anchor": {
+    "vo_line": 0,
+    "fraction": 0.55,
+    "offset": 4.675
+   },
+   "offset": 4.675,
+   "vo": "A brand new camera went up on a pole at an Anchorage Lowe's. Within days, somebody cut it down.",
+   "phrase": "Within days",
+   "shows": "a saw blade slides in from frame left and strokes at the pole while the camera keeps watching the lot",
+   "sfx": "clunk",
+   "means": "the saw arrives",
+   "rehook": "",
+   "draw": {
+    "subject": "saw blade",
+    "action": "strokes into the pole",
+    "emotion": "calm",
+    "annotation": "WITHIN DAYS"
+   },
+   "choreo": {
+    "primary": "a saw blade slides in from frame left and strokes at the pole while the camera keeps watching the lot",
+    "reaction": "sawdust puffs at each stroke and the pole shivers",
+    "ambient": "snow falls, the sodium lamps flicker, a shopping cart rolls across the near plane, the ribbon flaps, stars twinkle"
+   }
+  },
+  {
+   "id": 4,
+   "shot": 1,
+   "t": "6.800-8.500",
+   "at_s": 6.8,
+   "vo_line": 0,
+   "anchor": {
+    "vo_line": 0,
+    "fraction": 0.8,
+    "offset": 6.8
+   },
+   "offset": 6.8,
+   "vo": "A brand new camera went up on a pole at an Anchorage Lowe's. Within days, somebody cut it down.",
+   "phrase": "cut it down",
+   "shows": "the pole topples into the snow with a puff and the lens goes dark beside a scribbled hand sign",
+   "sfx": "thump",
+   "means": "the camera falls",
+   "rehook": "",
+   "draw": {
+    "subject": "PoleCam",
+    "action": "topples into the snow",
+    "emotion": "off",
+    "annotation": "OCT 4 \u00b7 LATE AT NIGHT \u00b7 OLD SEWARD HWY"
+   },
+   "choreo": {
+    "primary": "the pole topples into the snow with a puff and the lens goes dark beside a scribbled hand sign",
+    "reaction": "the head bounces once and the snow flies up",
+    "ambient": "snow falls, the sodium lamps flicker, a shopping cart rolls across the near plane, the ribbon flaps, stars twinkle"
+   },
+   "kick": true
+  },
+  {
+   "id": 5,
+   "shot": 2,
+   "t": "8.500-11.684",
+   "at_s": 8.5,
+   "vo_line": 1,
+   "anchor": {
+    "vo_line": 1,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "It's a Flock camera, and Flock says it uses machine learning to read the plate, make, color and body type.",
+   "phrase": "It's a Flock camera",
+   "shows": "hard match cut on the lens eye, a second PoleCam glows cyan on the diagram bench",
+   "sfx": "blip",
+   "means": "the same kind of camera, reading",
+   "rehook": "",
+   "draw": {
+    "subject": "PoleCam",
+    "action": "swivels its lens",
+    "emotion": "proud",
+    "annotation": "FLOCK"
+   },
+   "choreo": {
+    "primary": "hard match cut on the lens eye, a second PoleCam glows cyan on the diagram bench",
+    "reaction": "the iris tightens and the lens ring lights",
+    "ambient": "the beam sweeps, scan rings pulse out of the lens, the iris breathes, dust motes drift through the beam"
+   }
+  },
+  {
+   "id": 6,
+   "shot": 2,
+   "t": "11.684-14.198",
+   "at_s": 11.684,
+   "vo_line": 1,
+   "anchor": {
+    "vo_line": 1,
+    "fraction": 0.38,
+    "offset": 3.184
+   },
+   "offset": 3.184,
+   "vo": "It's a Flock camera, and Flock says it uses machine learning to read the plate, make, color and body type.",
+   "phrase": "machine learning",
+   "shows": "a cyan beam sweeps from the lens across a pickup side-on, scan rings pulse out",
+   "sfx": "bloop",
+   "means": "what it does",
+   "rehook": "",
+   "draw": {
+    "subject": "PoleCam",
+    "action": "sweeps its beam",
+    "emotion": "proud",
+    "annotation": "FLOCK'S OWN FAQ \u00b7 MACHINE LEARNING"
+   },
+   "choreo": {
+    "primary": "a cyan beam sweeps from the lens across a pickup side-on, scan rings pulse out",
+    "reaction": "the pickup's plate glints as the beam passes",
+    "ambient": "the beam sweeps, scan rings pulse out of the lens, the iris breathes, dust motes drift through the beam"
+   }
+  },
+  {
+   "id": 7,
+   "shot": 2,
+   "t": "14.198-16.880",
+   "at_s": 14.198,
+   "vo_line": 1,
+   "anchor": {
+    "vo_line": 1,
+    "fraction": 0.68,
+    "offset": 5.698
+   },
+   "offset": 5.698,
+   "vo": "It's a Flock camera, and Flock says it uses machine learning to read the plate, make, color and body type.",
+   "phrase": "plate, make, color and body type",
+   "shows": "four tags peel off the truck one by one, PLATE, MAKE, COLOR, BODY TYPE",
+   "sfx": "click",
+   "means": "what it reads",
+   "rehook": "",
+   "draw": {
+    "subject": "pickup",
+    "action": "sheds four tags",
+    "emotion": "neutral",
+    "annotation": "PLATE \u00b7 MAKE \u00b7 COLOR \u00b7 BODY TYPE"
+   },
+   "choreo": {
+    "primary": "four tags peel off the truck one by one, PLATE, MAKE, COLOR, BODY TYPE",
+    "reaction": "each tag snaps onto its leader line with a small bounce",
+    "ambient": "the beam sweeps, scan rings pulse out of the lens, the iris breathes, dust motes drift through the beam"
+   }
+  },
+  {
+   "id": 8,
+   "shot": 3,
+   "t": "16.880-20.733",
+   "at_s": 16.88,
+   "vo_line": 2,
+   "anchor": {
+    "vo_line": 2,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "So who decides what it keeps? The answer isn't who you'd think.",
+   "phrase": "So who decides",
+   "shows": "straight down, the tape scrolls across a dark desk and three shadow hands reach in with question marks",
+   "sfx": "page",
+   "means": "the question",
+   "rehook": "",
+   "draw": {
+    "subject": "tape",
+    "action": "scrolls and gets reached for",
+    "emotion": "neutral",
+    "annotation": "WHO DECIDES WHAT IT KEEPS?"
+   },
+   "choreo": {
+    "primary": "straight down, the tape scrolls across a dark desk and three shadow hands reach in with question marks",
+    "reaction": "the three hands tremble toward the tape",
+    "ambient": "the tape keeps spooling, the shadow hands tremble, dust floats, the desk lamp pool sways"
+   }
+  },
+  {
+   "id": 9,
+   "shot": 3,
+   "t": "20.733-22.900",
+   "at_s": 20.733,
+   "vo_line": 2,
+   "anchor": {
+    "vo_line": 2,
+    "fraction": 0.64,
+    "offset": 3.853
+   },
+   "offset": 3.853,
+   "vo": "So who decides what it keeps? The answer isn't who you'd think.",
+   "phrase": "the answer isn't who you'd think",
+   "shows": "the three hands freeze and a big question stamp lands on the tape",
+   "sfx": "stamp",
+   "means": "the promise",
+   "rehook": "",
+   "draw": {
+    "subject": "question stamp",
+    "action": "lands on the tape",
+    "emotion": "neutral",
+    "annotation": "NOT WHO YOU'D THINK"
+   },
+   "choreo": {
+    "primary": "the three hands freeze and a big question stamp lands on the tape",
+    "reaction": "the tape jumps under the stamp and the hands recoil a finger's width",
+    "ambient": "the tape keeps spooling, the shadow hands tremble, dust floats, the desk lamp pool sways"
+   }
+  },
+  {
+   "id": 10,
+   "shot": 4,
+   "t": "22.900-27.058",
+   "at_s": 22.9,
+   "vo_line": 3,
+   "anchor": {
+    "vo_line": 3,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "Flock first told a TV station it knew of no cameras here. Then it said it was installing them for a private customer.",
+   "phrase": "Flock first told a TV station",
+   "shows": "a statement card FLOCK TO KTUU reads NOT AWARE OF ANY CAMERAS IN ALASKA under a TV STATION monitor",
+   "sfx": "blip",
+   "means": "the first statement",
+   "rehook": "",
+   "draw": {
+    "subject": "statement card",
+    "action": "sits under the monitor",
+    "emotion": "neutral",
+    "annotation": "FLOCK TO KTUU \u00b7 NOT AWARE OF ANY CAMERAS IN ALASKA"
+   },
+   "choreo": {
+    "primary": "a statement card FLOCK TO KTUU reads NOT AWARE OF ANY CAMERAS IN ALASKA under a TV STATION monitor",
+    "reaction": "the monitor static flickers over the card",
+    "ambient": "the monitor static flickers, the desk lamp sways, a coffee steams, the tape strip creeps off the desk edge"
+   }
+  },
+  {
+   "id": 11,
+   "shot": 4,
+   "t": "27.058-30.226",
+   "at_s": 27.058,
+   "vo_line": 3,
+   "anchor": {
+    "vo_line": 3,
+    "fraction": 0.42,
+    "offset": 4.158
+   },
+   "offset": 4.158,
+   "vo": "Flock first told a TV station it knew of no cameras here. Then it said it was installing them for a private customer.",
+   "phrase": "Then it said",
+   "shows": "an updated card slides over it, BEGAN INSTALLING FOR A PRIVATE CUSTOMER, and an UPDATED stamp lands",
+   "sfx": "stamp",
+   "means": "the updated statement",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "updated card",
+    "action": "slides over and takes a stamp",
+    "emotion": "neutral",
+    "annotation": "UPDATED \u00b7 BEGAN INSTALLING FOR A PRIVATE CUSTOMER"
+   },
+   "choreo": {
+    "primary": "an updated card slides over it, BEGAN INSTALLING FOR A PRIVATE CUSTOMER, and an UPDATED stamp lands",
+    "reaction": "the old card is pushed to the desk edge and the stamp ink spreads",
+    "ambient": "the monitor static flickers, the desk lamp sways, a coffee steams, the tape strip creeps off the desk edge"
+   }
+  },
+  {
+   "id": 12,
+   "shot": 4,
+   "t": "30.226-32.800",
+   "at_s": 30.226,
+   "vo_line": 3,
+   "anchor": {
+    "vo_line": 3,
+    "fraction": 0.74,
+    "offset": 7.326
+   },
+   "offset": 7.326,
+   "vo": "Flock first told a TV station it knew of no cameras here. Then it said it was installing them for a private customer.",
+   "phrase": "for a private customer",
+   "shows": "an empty silhouette card marked CUSTOMER NOT NAMED BY FLOCK slides in with a question mark",
+   "sfx": "sonar",
+   "means": "the customer is unnamed",
+   "rehook": "",
+   "draw": {
+    "subject": "silhouette card",
+    "action": "slides in empty",
+    "emotion": "neutral",
+    "annotation": "CUSTOMER \u00b7 NOT NAMED BY FLOCK"
+   },
+   "choreo": {
+    "primary": "an empty silhouette card marked CUSTOMER NOT NAMED BY FLOCK slides in with a question mark",
+    "reaction": "the question mark pops and the card wobbles",
+    "ambient": "the monitor static flickers, the desk lamp sways, a coffee steams, the tape strip creeps off the desk edge"
+   }
+  },
+  {
+   "id": 13,
+   "shot": 5,
+   "t": "32.800-34.843",
+   "at_s": 32.8,
+   "vo_line": 4,
+   "anchor": {
+    "vo_line": 4,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "One neighbor called it very Minority Report.",
+   "phrase": "One neighbor",
+   "shows": "a neighbor in a puffer coat frowns across the road at the camera, the camera's tape drifting down the street to her boots",
+   "sfx": "sonar",
+   "means": "the reaction",
+   "rehook": "",
+   "draw": {
+    "subject": "neighbor",
+    "action": "frowns across the road",
+    "emotion": "worried",
+    "annotation": "ONE NEIGHBOR"
+   },
+   "choreo": {
+    "primary": "a neighbor in a puffer coat frowns across the road at the camera, the camera's tape drifting down the street to her boots",
+    "reaction": "her breath steams and the tape curls round her boot",
+    "ambient": "snow falls, her breath steams, the sodium lamp flickers, the camera across the road blinks, the tape flutters along the curb"
+   }
+  },
+  {
+   "id": 14,
+   "shot": 5,
+   "t": "34.843-37.340",
+   "at_s": 34.843,
+   "vo_line": 4,
+   "anchor": {
+    "vo_line": 4,
+    "fraction": 0.45,
+    "offset": 2.043
+   },
+   "offset": 2.043,
+   "vo": "One neighbor called it very Minority Report.",
+   "phrase": "called it very Minority Report",
+   "shows": "a quote card rises beside her, VERY MINORITY REPORT",
+   "sfx": "blip",
+   "means": "the quote",
+   "rehook": "",
+   "draw": {
+    "subject": "quote card",
+    "action": "rises beside her",
+    "emotion": "worried",
+    "annotation": "\"VERY MINORITY REPORT\" \u00b7 RESIDENT TO KTUU"
+   },
+   "choreo": {
+    "primary": "a quote card rises beside her, VERY MINORITY REPORT",
+    "reaction": "the card settles with a small overshoot",
+    "ambient": "snow falls, her breath steams, the sodium lamp flickers, the camera across the road blinks, the tape flutters along the curb"
+   }
+  },
+  {
+   "id": 15,
+   "shot": 6,
+   "t": "37.340-41.295",
+   "at_s": 37.34,
+   "vo_line": 5,
+   "anchor": {
+    "vo_line": 5,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "But that parking lot camera is small next to the city's own system.",
+   "phrase": "But that parking lot camera",
+   "shows": "the view rises off the curb and the lot shrinks to a pin with a tiny camera and a thread of tape",
+   "sfx": "whoosh",
+   "means": "scale shift",
+   "rehook": "",
+   "draw": {
+    "subject": "map pin",
+    "action": "pulses",
+    "emotion": "neutral",
+    "annotation": "THIS LOT"
+   },
+   "choreo": {
+    "primary": "the view rises off the curb and the lot shrinks to a pin with a tiny camera and a thread of tape",
+    "reaction": "the pin pulses once as the city grid comes into focus",
+    "ambient": "city lights twinkle, the pin pulses, traffic dots crawl the grid, the unlit sockets glimmer"
+   }
+  },
+  {
+   "id": 16,
+   "shot": 6,
+   "t": "41.295-43.520",
+   "at_s": 41.295,
+   "vo_line": 5,
+   "anchor": {
+    "vo_line": 5,
+    "fraction": 0.64,
+    "offset": 3.955
+   },
+   "offset": 3.955,
+   "vo": "But that parking lot camera is small next to the city's own system.",
+   "phrase": "is small next to the city's own system",
+   "shows": "a dim grid of unlit sockets spreads over the city blocks, the lot a speck beside it",
+   "sfx": "snap",
+   "means": "promise of a larger system",
+   "rehook": "",
+   "draw": {
+    "subject": "unlit sockets",
+    "action": "spread over the blocks",
+    "emotion": "neutral",
+    "annotation": "SMALL NEXT TO THE CITY'S OWN SYSTEM"
+   },
+   "choreo": {
+    "primary": "a dim grid of unlit sockets spreads over the city blocks, the lot a speck beside it",
+    "reaction": "the sockets glimmer in a slow wave outward from the pin",
+    "ambient": "city lights twinkle, the pin pulses, traffic dots crawl the grid, the unlit sockets glimmer"
+   }
+  },
+  {
+   "id": 17,
+   "shot": 7,
+   "t": "43.520-46.947",
+   "at_s": 43.52,
+   "vo_line": 6,
+   "anchor": {
+    "vo_line": 6,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "The city's Assembly has two proposed rules, expected to go to a vote October twentieth. One is from the mayor, one from Assembly members.",
+   "phrase": "The city's Assembly has two proposed rules",
+   "shows": "the pin drops at the hall table's edge as a tiny camera icon and two rulebooks land at opposite ends and slide apart",
+   "sfx": "thump",
+   "means": "the rules arrive",
+   "rehook": "",
+   "draw": {
+    "subject": "rulebooks",
+    "action": "land and slide apart",
+    "emotion": "neutral",
+    "annotation": "2 PROPOSED RULES"
+   },
+   "choreo": {
+    "primary": "the pin drops at the hall table's edge as a tiny camera icon and two rulebooks land at opposite ends and slide apart",
+    "reaction": "the tape between them jumps and the lamp swings",
+    "ambient": "dust drifts in the hall light, the calendar curls, a flag sways, the table lamp glows"
+   }
+  },
+  {
+   "id": 18,
+   "shot": 7,
+   "t": "46.947-50.778",
+   "at_s": 46.947,
+   "vo_line": 6,
+   "anchor": {
+    "vo_line": 6,
+    "fraction": 0.34,
+    "offset": 3.427
+   },
+   "offset": 3.427,
+   "vo": "The city's Assembly has two proposed rules, expected to go to a vote October twentieth. One is from the mayor, one from Assembly members.",
+   "phrase": "expected to go to a vote October twentieth",
+   "shows": "a wall calendar flips to OCT 20 with VOTE EXPECTED stamped in the same frame",
+   "sfx": "stamp",
+   "means": "the date, expected",
+   "rehook": "",
+   "draw": {
+    "subject": "calendar",
+    "action": "flips and takes the stamp",
+    "emotion": "neutral",
+    "annotation": "OCT 20 \u00b7 VOTE EXPECTED"
+   },
+   "choreo": {
+    "primary": "a wall calendar flips to OCT 20 with VOTE EXPECTED stamped in the same frame",
+    "reaction": "the calendar page curls and the clock hand jumps",
+    "ambient": "dust drifts in the hall light, the calendar curls, a flag sways, the table lamp glows"
+   }
+  },
+  {
+   "id": 19,
+   "shot": 7,
+   "t": "50.778-53.600",
+   "at_s": 50.778,
+   "vo_line": 6,
+   "anchor": {
+    "vo_line": 6,
+    "fraction": 0.72,
+    "offset": 7.258
+   },
+   "offset": 7.258,
+   "vo": "The city's Assembly has two proposed rules, expected to go to a vote October twentieth. One is from the mayor, one from Assembly members.",
+   "phrase": "One is from the mayor, one from Assembly members",
+   "shows": "a tag lands on each rulebook, FROM THE MAYOR and FROM ASSEMBLY MEMBERS",
+   "sfx": "bloop",
+   "means": "who wrote them",
+   "rehook": "",
+   "draw": {
+    "subject": "rulebooks",
+    "action": "take their tags",
+    "emotion": "neutral",
+    "annotation": "FROM THE MAYOR \u00b7 FROM ASSEMBLY MEMBERS"
+   },
+   "choreo": {
+    "primary": "a tag lands on each rulebook, FROM THE MAYOR and FROM ASSEMBLY MEMBERS",
+    "reaction": "each tag swings on its string and settles",
+    "ambient": "dust drifts in the hall light, the calendar curls, a flag sways, the table lamp glows"
+   }
+  },
+  {
+   "id": 20,
+   "shot": 8,
+   "t": "53.600-58.264",
+   "at_s": 53.6,
+   "vo_line": 7,
+   "anchor": {
+    "vo_line": 7,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "The members' version would delete city camera data after fourteen days. The mayor says it could unduly limit core police operations.",
+   "phrase": "The members' version would delete city camera data after fourteen days",
+   "shows": "a civic-blue city tape from a CITY CAMERAS icon feeds a shredder slot beside the podium and the ticks fall away after day 14, while the mayor glances at it",
+   "sfx": "page",
+   "means": "what the members' version does",
+   "rehook": "",
+   "draw": {
+    "subject": "city tape",
+    "action": "feeds the shredder",
+    "emotion": "neutral",
+    "annotation": "MEMBERS' VERSION \u00b7 CITY DATA DELETED AFTER 14 DAYS"
+   },
+   "choreo": {
+    "primary": "a civic-blue city tape from a CITY CAMERAS icon feeds a shredder slot beside the podium and the ticks fall away after day 14, while the mayor glances at it",
+    "reaction": "the shredder hums and paper confetti drops",
+    "ambient": "the podium lamp sways, the shredder hums, the clamp creaks, snow falls on the right half, the storefront sign flickers"
+   }
+  },
+  {
+   "id": 21,
+   "shot": 8,
+   "t": "58.264-60.384",
+   "at_s": 58.264,
+   "vo_line": 7,
+   "anchor": {
+    "vo_line": 7,
+    "fraction": 0.44,
+    "offset": 4.664
+   },
+   "offset": 4.664,
+   "vo": "The members' version would delete city camera data after fourteen days. The mayor says it could unduly limit core police operations.",
+   "phrase": "The mayor says",
+   "shows": "the mayor at the podium lifts a folder marked CORE POLICE OPERATIONS",
+   "sfx": "blip",
+   "means": "the mayor's objection",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "mayor",
+    "action": "lifts the folder",
+    "emotion": "neutral",
+    "annotation": "THE MAYOR'S SIDE"
+   },
+   "choreo": {
+    "primary": "the mayor at the podium lifts a folder marked CORE POLICE OPERATIONS",
+    "reaction": "she shifts her weight and the podium lamp sways",
+    "ambient": "the podium lamp sways, the shredder hums, the clamp creaks, snow falls on the right half, the storefront sign flickers"
+   }
+  },
+  {
+   "id": 22,
+   "shot": 8,
+   "t": "60.384-64.200",
+   "at_s": 60.384,
+   "vo_line": 7,
+   "anchor": {
+    "vo_line": 7,
+    "fraction": 0.64,
+    "offset": 6.784
+   },
+   "offset": 6.784,
+   "vo": "The members' version would delete city camera data after fourteen days. The mayor says it could unduly limit core police operations.",
+   "phrase": "unduly limit core police operations",
+   "shows": "a clamp tightens on the folder and the blue city tape",
+   "sfx": "creak",
+   "means": "the objection drawn",
+   "rehook": "",
+   "draw": {
+    "subject": "clamp",
+    "action": "tightens on the folder",
+    "emotion": "neutral",
+    "annotation": "THE MAYOR \u00b7 \"UNDULY LIMIT SOME CORE FUNCTIONS OF APD OPERATIONS\""
+   },
+   "choreo": {
+    "primary": "a clamp tightens on the folder and the blue city tape",
+    "reaction": "the folder bulges at the jaws and the blue tape pinches in the clamp",
+    "ambient": "the podium lamp sways, the shredder hums, the clamp creaks, snow falls on the right half, the storefront sign flickers"
+   }
+  },
+  {
+   "id": 23,
+   "shot": 8,
+   "t": "64.200-67.833",
+   "at_s": 64.2,
+   "vo_line": 8,
+   "anchor": {
+    "vo_line": 8,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "The store's side? A store can put a camera on its own pole.",
+   "phrase": "The store's side",
+   "shows": "the view settles on the right half, a pole with a plaque A STORE'S POLE, A STORE'S CALL and the pole camera's own tape wrapped around it",
+   "sfx": "click",
+   "means": "the store's argument",
+   "rehook": "",
+   "draw": {
+    "subject": "plaque",
+    "action": "hangs on the pole",
+    "emotion": "neutral",
+    "annotation": "A STORE'S POLE \u00b7 A STORE'S CALL"
+   },
+   "choreo": {
+    "primary": "the view settles on the right half, a pole with a plaque A STORE'S POLE, A STORE'S CALL and the pole camera's own tape wrapped around it",
+    "reaction": "the tape wraps one more turn and the plaque swings",
+    "ambient": "the podium lamp sways, the shredder hums, the clamp creaks, snow falls on the right half, the storefront sign flickers"
+   }
+  },
+  {
+   "id": 24,
+   "shot": 8,
+   "t": "67.833-70.060",
+   "at_s": 67.833,
+   "vo_line": 8,
+   "anchor": {
+    "vo_line": 8,
+    "fraction": 0.62,
+    "offset": 3.633
+   },
+   "offset": 3.633,
+   "vo": "The store's side? A store can put a camera on its own pole.",
+   "phrase": "a camera on its own pole",
+   "shows": "a bracket glints at the top of the store's pole",
+   "sfx": "snap",
+   "means": "the store can do it",
+   "rehook": "",
+   "draw": {
+    "subject": "bracket",
+    "action": "glints",
+    "emotion": "neutral",
+    "annotation": "NEITHER PROPOSAL WOULD STOP IT"
+   },
+   "choreo": {
+    "primary": "a bracket glints at the top of the store's pole",
+    "reaction": "the bracket winks a highlight and the storefront sign flickers",
+    "ambient": "the podium lamp sways, the shredder hums, the clamp creaks, snow falls on the right half, the storefront sign flickers"
+   }
+  },
+  {
+   "id": 25,
+   "shot": 9,
+   "t": "70.060-73.025",
+   "at_s": 70.06,
+   "vo_line": 9,
+   "anchor": {
+    "vo_line": 9,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "Fair points. They don't answer neighbors who want no camera at all.",
+   "phrase": "Fair points",
+   "shows": "two small ticked cards, THE MAYOR'S POINT and A STORE'S POINT, float past between the neighbor and the camera",
+   "sfx": "stamp",
+   "means": "the fair case holds",
+   "rehook": "",
+   "draw": {
+    "subject": "cards",
+    "action": "float past her",
+    "emotion": "neutral",
+    "annotation": "FAIR \u00b7 FAIR"
+   },
+   "choreo": {
+    "primary": "two small ticked cards, THE MAYOR'S POINT and A STORE'S POINT, float past between the neighbor and the camera",
+    "reaction": "each tick pops as its card slides past her shoulder",
+    "ambient": "snow falls, her breath steams, the camera across the road blinks cyan, the tape flutters along the curb, headlights pass"
+   }
+  },
+  {
+   "id": 26,
+   "shot": 9,
+   "t": "73.025-77.120",
+   "at_s": 73.025,
+   "vo_line": 9,
+   "anchor": {
+    "vo_line": 9,
+    "fraction": 0.42,
+    "offset": 2.965
+   },
+   "offset": 2.965,
+   "vo": "Fair points. They don't answer neighbors who want no camera at all.",
+   "phrase": "don't answer neighbors who want no camera at all",
+   "shows": "a plate lands RULES DON'T ANSWER NEIGHBORS WHO WANT NO CAMERA while she stays turned toward the lit camera",
+   "sfx": "blip",
+   "means": "what rules don't answer",
+   "rehook": "",
+   "draw": {
+    "subject": "neighbor",
+    "action": "stays turned toward the camera",
+    "emotion": "worried",
+    "annotation": "RULES DON'T ANSWER NEIGHBORS WHO WANT NO CAMERA"
+   },
+   "choreo": {
+    "primary": "a plate lands RULES DON'T ANSWER NEIGHBORS WHO WANT NO CAMERA while she stays turned toward the lit camera",
+    "reaction": "her arms tighten and the cards drift out of frame",
+    "ambient": "snow falls, her breath steams, the camera across the road blinks cyan, the tape flutters along the curb, headlights pass"
+   }
+  },
+  {
+   "id": 27,
+   "shot": 10,
+   "t": "77.120-80.926",
+   "at_s": 77.12,
+   "vo_line": 10,
+   "anchor": {
+    "vo_line": 10,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "phrase": "Now the city's own system",
+   "shows": "one socket pulls back into a wall of 750 identical camera sockets, all the same state, a capacity and not a count",
+   "sfx": "hit",
+   "means": "scale reveal",
+   "rehook": "",
+   "draw": {
+    "subject": "socket wall",
+    "action": "pulls back",
+    "emotion": "neutral",
+    "annotation": "THE CITY'S OWN SYSTEM"
+   },
+   "choreo": {
+    "primary": "one socket pulls back into a wall of 750 identical camera sockets, all the same state, a capacity and not a count",
+    "reaction": "the lit sockets blink as the wall comes into view",
+    "ambient": "sockets blink at their own phases, the beam crawls, the drone hovers, the car wheels turn"
+   },
+   "kick": true
+  },
+  {
+   "id": 28,
+   "shot": 10,
+   "t": "80.926-83.708",
+   "at_s": 80.926,
+   "vo_line": 10,
+   "anchor": {
+    "vo_line": 10,
+    "fraction": 0.26,
+    "offset": 3.806
+   },
+   "offset": 3.806,
+   "vo": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "phrase": "Its deal with the company Axon",
+   "shows": "the patrol car rolls in carrying CITY'S AXON DEAL on its door and a plate lands",
+   "sfx": "slide",
+   "means": "who",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "lands",
+    "emotion": "neutral",
+    "annotation": "CITY'S AXON DEAL"
+   },
+   "choreo": {
+    "primary": "the patrol car rolls in carrying CITY'S AXON DEAL on its door and a plate lands",
+    "reaction": "the plate drops with a small bounce",
+    "ambient": "sockets blink at their own phases, the beam crawls, the drone hovers, the car wheels turn"
+   }
+  },
+  {
+   "id": 29,
+   "shot": 10,
+   "t": "83.708-87.075",
+   "at_s": 83.708,
+   "vo_line": 10,
+   "anchor": {
+    "vo_line": 10,
+    "fraction": 0.45,
+    "offset": 6.588
+   },
+   "offset": 6.588,
+   "vo": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "phrase": "eleven point eight million dollars over five years",
+   "shows": "a slab stamps $11.8M \u00b7 5 YEARS and the whole wall pulses once, every socket alike",
+   "sfx": "stamp",
+   "means": "the money",
+   "rehook": "",
+   "draw": {
+    "subject": "slab",
+    "action": "stamps down",
+    "emotion": "neutral",
+    "annotation": "$11.8M \u00b7 5 YEARS"
+   },
+   "choreo": {
+    "primary": "a slab stamps $11.8M \u00b7 5 YEARS and the whole wall pulses once, every socket alike",
+    "reaction": "the wall shudders under the stamp",
+    "ambient": "sockets blink at their own phases, the beam crawls, the drone hovers, the car wheels turn"
+   }
+  },
+  {
+   "id": 30,
+   "shot": 10,
+   "t": "87.075-90.003",
+   "at_s": 87.075,
+   "vo_line": 10,
+   "anchor": {
+    "vo_line": 10,
+    "fraction": 0.68,
+    "offset": 9.955
+   },
+   "offset": 9.955,
+   "vo": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "phrase": "up to seven hundred fifty feeds",
+   "shows": "a ceiling bracket marks UP TO 750 over the wall as the sockets ripple together",
+   "sfx": "clunk",
+   "means": "the ceiling, made physical",
+   "rehook": "",
+   "draw": {
+    "subject": "sockets",
+    "action": "a few more light",
+    "emotion": "neutral",
+    "annotation": "UP TO 750 FEEDS"
+   },
+   "choreo": {
+    "primary": "a ceiling bracket marks UP TO 750 over the wall as the sockets ripple together",
+    "reaction": "the bracket drops into place and the sockets ripple",
+    "ambient": "sockets blink at their own phases, the beam crawls, the drone hovers, the car wheels turn"
+   }
+  },
+  {
+   "id": 31,
+   "shot": 10,
+   "t": "90.003-91.760",
+   "at_s": 90.003,
+   "vo_line": 10,
+   "anchor": {
+    "vo_line": 10,
+    "fraction": 0.88,
+    "offset": 12.883
+   },
+   "offset": 12.883,
+   "vo": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "phrase": "plate readers and drones",
+   "shows": "a drone flies in and the beam from the patrol car's roof reader joins the wall while the small amber PoleCam outside the wall, tagged THIS LOT, shrinks",
+   "sfx": "whoosh",
+   "means": "what else is in the deal",
+   "rehook": "",
+   "draw": {
+    "subject": "patrol car and drone",
+    "action": "arrive",
+    "emotion": "neutral",
+    "annotation": "PLATE READERS \u00b7 DRONES"
+   },
+   "choreo": {
+    "primary": "a drone flies in and the beam from the patrol car's roof reader joins the wall while the small amber PoleCam outside the wall, tagged THIS LOT, shrinks",
+    "reaction": "the beam crawls into the wall and the tiny PoleCam shrinks back",
+    "ambient": "sockets blink at their own phases, the beam crawls, the drone hovers, the car wheels turn"
+   }
+  },
+  {
+   "id": 32,
+   "shot": 11,
+   "t": "91.760-94.704",
+   "at_s": 91.76,
+   "vo_line": 11,
+   "anchor": {
+    "vo_line": 11,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "Both proposals cover city cameras. Neither covers a store's pole.",
+   "phrase": "Both proposals cover city cameras",
+   "shows": "straight down, a dashed civic boundary draws itself around the wall, the car and the drone",
+   "sfx": "whoosh",
+   "means": "scope of the rules",
+   "rehook": "",
+   "draw": {
+    "subject": "boundary",
+    "action": "draws itself",
+    "emotion": "neutral",
+    "annotation": "BOTH PROPOSALS WOULD BIND CITY AGENCIES ONLY"
+   },
+   "choreo": {
+    "primary": "straight down, a dashed civic boundary draws itself around the wall, the car and the drone",
+    "reaction": "the dashes crawl as the loop closes and the car's reader dims",
+    "ambient": "the boundary dashes crawl, the pole's amber pool breathes, snow drifts across the plan, the car creeps"
+   }
+  },
+  {
+   "id": 33,
+   "shot": 11,
+   "t": "94.704-98.160",
+   "at_s": 94.704,
+   "vo_line": 11,
+   "anchor": {
+    "vo_line": 11,
+    "fraction": 0.46,
+    "offset": 2.944
+   },
+   "offset": 2.944,
+   "vo": "Both proposals cover city cameras. Neither covers a store's pole.",
+   "phrase": "Neither covers a store's pole",
+   "shows": "a store's pole stands outside the line in amber light and the line stops short of it",
+   "sfx": "thunk",
+   "means": "the pole is outside",
+   "rehook": "rehook",
+   "draw": {
+    "subject": "store pole",
+    "action": "stands outside the line",
+    "emotion": "neutral",
+    "annotation": "NEITHER COVERS A STORE'S POLE"
+   },
+   "choreo": {
+    "primary": "a store's pole stands outside the line in amber light and the line stops short of it",
+    "reaction": "the amber pool swells and the line's end flicks back",
+    "ambient": "the boundary dashes crawl, the pole's amber pool breathes, snow drifts across the plan, the car creeps"
+   }
+  },
+  {
+   "id": 34,
+   "shot": 12,
+   "t": "98.160-100.354",
+   "at_s": 98.16,
+   "vo_line": 12,
+   "anchor": {
+    "vo_line": 12,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "Lowe's privacy statement says it typically keeps such data no more than ninety days. Flock's own default is seven days.",
+   "phrase": "Lowe's privacy statement says it typically keeps such data no more than ninety days",
+   "shows": "a sheet marked LOWE'S PRIVACY STATEMENT carries a tape of day ticks that runs to a soft end at TYPICALLY NO MORE THAN 90 DAYS",
+   "sfx": "page",
+   "means": "the store's statement",
+   "rehook": "",
+   "draw": {
+    "subject": "privacy statement",
+    "action": "unrolls its tape to a soft end",
+    "emotion": "neutral",
+    "annotation": "LOWE'S PRIVACY STATEMENT \u00b7 TYPICALLY NO MORE THAN 90 DAYS"
+   },
+   "choreo": {
+    "primary": "a sheet marked LOWE'S PRIVACY STATEMENT carries a tape of day ticks that runs to a soft end at TYPICALLY NO MORE THAN 90 DAYS",
+    "reaction": "the tape unrolls tick by tick and the sheet's corner lifts",
+    "ambient": "the desk lamp sways, the tapes flutter, paper edges lift, a paperclip glints"
+   }
+  },
+  {
+   "id": 35,
+   "shot": 12,
+   "t": "100.354-104.192",
+   "at_s": 100.354,
+   "vo_line": 12,
+   "anchor": {
+    "vo_line": 12,
+    "fraction": 0.24,
+    "offset": 2.194
+   },
+   "offset": 2.194,
+   "vo": "Lowe's privacy statement says it typically keeps such data no more than ninety days. Flock's own default is seven days.",
+   "phrase": "typically keeps such data",
+   "shows": "the day ticks count up along the tape toward DAY 90",
+   "sfx": "tick",
+   "means": "the ticks count",
+   "rehook": "",
+   "draw": {
+    "subject": "tape",
+    "action": "counts its ticks",
+    "emotion": "neutral",
+    "annotation": "DAY 1 TO DAY 90"
+   },
+   "choreo": {
+    "primary": "the day ticks count up along the tape toward DAY 90",
+    "reaction": "the ticks flick on one by one",
+    "ambient": "the desk lamp sways, the tapes flutter, paper edges lift, a paperclip glints"
+   }
+  },
+  {
+   "id": 36,
+   "shot": 12,
+   "t": "104.192-107.300",
+   "at_s": 104.192,
+   "vo_line": 12,
+   "anchor": {
+    "vo_line": 12,
+    "fraction": 0.66,
+    "offset": 6.032
+   },
+   "offset": 6.032,
+   "vo": "Lowe's privacy statement says it typically keeps such data no more than ninety days. Flock's own default is seven days.",
+   "phrase": "Flock's own default is seven days",
+   "shows": "that sheet slides off and a FLOCK FAQ sheet slides on with a short tape ending at DEFAULT 7 DAYS, ADJUSTABLE BY LOCAL RULE",
+   "sfx": "bloop",
+   "means": "the vendor's default",
+   "rehook": "",
+   "draw": {
+    "subject": "FAQ sheet",
+    "action": "slides on with a short tape",
+    "emotion": "neutral",
+    "annotation": "FLOCK FAQ \u00b7 DEFAULT 7 DAYS \u00b7 ADJUSTABLE"
+   },
+   "choreo": {
+    "primary": "that sheet slides off and a FLOCK FAQ sheet slides on with a short tape ending at DEFAULT 7 DAYS, ADJUSTABLE BY LOCAL RULE",
+    "reaction": "the new sheet lands with a paper slap and the ticks fan out",
+    "ambient": "the desk lamp sways, the tapes flutter, paper edges lift, a paperclip glints"
+   }
+  },
+  {
+   "id": 37,
+   "shot": 13,
+   "t": "107.300-111.800",
+   "at_s": 107.3,
+   "vo_line": 13,
+   "anchor": {
+    "vo_line": 13,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "So the pole answers to the store and its vendor.",
+   "phrase": "So the pole answers to the store and its vendor",
+   "shows": "at the lot edge a bare pole's two leashes tighten, an amber one to a lit storefront and a magenta one to a server box",
+   "sfx": "riser",
+   "means": "the answer",
+   "rehook": "",
+   "draw": {
+    "subject": "pole",
+    "action": "wears two leashes",
+    "emotion": "neutral",
+    "annotation": "THE POLE ANSWERS TO THE STORE AND ITS VENDOR"
+   },
+   "choreo": {
+    "primary": "at the lot edge a bare pole's two leashes tighten, an amber one to a lit storefront and a magenta one to a server box",
+    "reaction": "the leashes sway and tighten as the labels pop on",
+    "ambient": "snow falls, the leashes sway, the storefront sign flickers, the server box LEDs blink, the cart rolls"
+   }
+  },
+  {
+   "id": 38,
+   "shot": 14,
+   "t": "111.800-113.358",
+   "at_s": 111.8,
+   "vo_line": 14,
+   "anchor": {
+    "vo_line": 14,
+    "fraction": 0.0,
+    "offset": 0.0
+   },
+   "offset": 0.0,
+   "vo": "Ask any camera three things. What does it keep? For how long? Who gets it?",
+   "phrase": "Ask any camera three things",
+   "shows": "a new pole rises from the stump and a new PoleCam blinks awake and keeps printing its tape",
+   "sfx": "hit",
+   "means": "the button begins",
+   "rehook": "",
+   "draw": {
+    "subject": "new PoleCam",
+    "action": "rises and blinks awake",
+    "emotion": "proud",
+    "annotation": "ASK ANY CAMERA"
+   },
+   "choreo": {
+    "primary": "a new pole rises from the stump and a new PoleCam blinks awake and keeps printing its tape",
+    "reaction": "the snow puffs at the stump and the lens irises open",
+    "ambient": "snow falls, lamps flicker, the cart rolls, the ribbon flaps, the tape keeps printing"
+   }
+  },
+  {
+   "id": 39,
+   "shot": 14,
+   "t": "113.358-115.765",
+   "at_s": 113.358,
+   "vo_line": 14,
+   "anchor": {
+    "vo_line": 14,
+    "fraction": 0.22,
+    "offset": 1.558
+   },
+   "offset": 1.558,
+   "vo": "Ask any camera three things. What does it keep? For how long? Who gets it?",
+   "phrase": "What does it keep",
+   "shows": "plate one stamps on, WHAT DOES IT KEEP",
+   "sfx": "stamp",
+   "means": "question one",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "stamps on",
+    "emotion": "neutral",
+    "annotation": "WHAT DOES IT KEEP?"
+   },
+   "choreo": {
+    "primary": "plate one stamps on, WHAT DOES IT KEEP",
+    "reaction": "the plate lands with a bounce and the tape ticks once",
+    "ambient": "snow falls, lamps flicker, the cart rolls, the ribbon flaps, the tape keeps printing"
+   }
+  },
+  {
+   "id": 40,
+   "shot": 14,
+   "t": "115.765-117.464",
+   "at_s": 115.765,
+   "vo_line": 14,
+   "anchor": {
+    "vo_line": 14,
+    "fraction": 0.56,
+    "offset": 3.965
+   },
+   "offset": 3.965,
+   "vo": "Ask any camera three things. What does it keep? For how long? Who gets it?",
+   "phrase": "For how long",
+   "shows": "plate two stamps on, FOR HOW LONG",
+   "sfx": "tick",
+   "means": "question two",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "stamps on",
+    "emotion": "neutral",
+    "annotation": "FOR HOW LONG?"
+   },
+   "choreo": {
+    "primary": "plate two stamps on, FOR HOW LONG",
+    "reaction": "the second plate drops under the first with a smaller bounce",
+    "ambient": "snow falls, lamps flicker, the cart rolls, the ribbon flaps, the tape keeps printing"
+   }
+  },
+  {
+   "id": 41,
+   "shot": 14,
+   "t": "117.464-118.880",
+   "at_s": 117.464,
+   "vo_line": 14,
+   "anchor": {
+    "vo_line": 14,
+    "fraction": 0.8,
+    "offset": 5.664
+   },
+   "offset": 5.664,
+   "vo": "Ask any camera three things. What does it keep? For how long? Who gets it?",
+   "phrase": "Who gets it",
+   "shows": "plate three stamps on, WHO GETS IT, and the camera blinks, the first frame again",
+   "sfx": "blip",
+   "means": "question three, loop",
+   "rehook": "",
+   "draw": {
+    "subject": "plate",
+    "action": "stamps on and the camera blinks",
+    "emotion": "proud",
+    "annotation": "WHO GETS IT?"
+   },
+   "choreo": {
+    "primary": "plate three stamps on, WHO GETS IT, and the camera blinks, the first frame again",
+    "reaction": "the camera blinks cyan and the tape prints a fresh tiny truck",
+    "ambient": "snow falls, lamps flicker, the cart rolls, the ribbon flaps, the tape keeps printing"
+   },
+   "kick": true
+  }
+ ]
+}
