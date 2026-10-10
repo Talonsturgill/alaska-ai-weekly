@@ -348,22 +348,21 @@ export const Drone: React.FC<{f: number; x: number; y: number; scale?: number; t
  * FeedWall — 750 tiny camera eyes in a 50 x 15 grid, lit one after another as `count` rises 0..750.
  * Origin = the wall's top-left. `cell` is the pitch. Lit eyes blink at their own phase.
  */
-export const FeedWall: React.FC<{f: number; x: number; y: number; lit: number; cell?: number; tint?: string; beam?: number}> = ({f, x, y, lit, cell = 18, tint = PC.civic, beam = 0}) => {
+export const FeedWall: React.FC<{f: number; x: number; y: number; pulse?: number; cell?: number; tint?: string; beam?: number}> = ({f, x, y, pulse = 0, cell = 18, tint = PC.civic, beam = 0}) => {
   const cols = 50, rows = 15;
   const W = cols * cell, H = rows * cell;
+  const k = clamp01(pulse);
   return (
     <g transform={`translate(${x},${y})`}>
       <rect x={-14} y={-14} width={W + 28} height={H + 28} rx={12} fill="#0B1219" stroke={INK} strokeWidth={6} />
       <rect x={-6} y={-6} width={W + 12} height={H + 12} rx={8} fill="#13222B" />
+      {/* every one of the 750 sockets is drawn in the SAME state: a capacity, never a live count */}
       {Array.from({length: cols * rows}, (_, i) => {
         const c = i % cols, r = Math.floor(i / cols);
-        // sockets light in a fixed random order, so `lit` (0..750) is a count of lit sockets, never a fill order
-        const on = hash(i + 4040) < lit / 750 || i === 0;
-        const bl = (f + hash(i) * 90) % 97 < 3;
         return (
           <g key={i} transform={`translate(${c * cell + cell / 2},${r * cell + cell / 2})`}>
-            <circle r={cell * 0.38} fill={on ? '#E8E4D8' : '#1C2F39'} stroke={on ? INK : '#0B1219'} strokeWidth={on ? 1.6 : 1.2} />
-            {on && <circle r={cell * 0.18} fill={bl ? '#14181D' : tint} />}
+            <circle r={cell * 0.38} fill={k > 0.02 ? '#2E4A5C' : '#1C2F39'} stroke={tint} strokeWidth={1.8} opacity={0.75 + 0.25 * k} />
+            <circle r={cell * 0.14} fill={k > 0.02 ? '#E8E4D8' : '#0B1219'} opacity={0.4 + 0.6 * k} />
           </g>
         );
       })}
@@ -434,6 +433,7 @@ export const LotNight: React.FC<{f: number; ground?: number; shift?: number; lam
       </defs>
       <rect data-band="ok" x={-20} y={-20} width={1120} height={ground + 40} fill="url(#ln-sky)" />
       {stars.map((s) => <circle key={s.p} cx={s.x} cy={s.y} r={s.r} fill="#fff" opacity={0.3 + 0.35 * Math.sin(f / 21 + s.p)} />)}
+      <g opacity={0.9}><circle cx={850} cy={330} r={62} fill={PC.lampWhite} opacity={0.16} /><circle cx={850} cy={330} r={38} fill={PC.lampWhite} opacity={0.75} /><circle cx={838} cy={320} r={9} fill="#D8CCAE" opacity={0.6} /><circle cx={864} cy={344} r={6} fill="#D8CCAE" opacity={0.5} /></g>
       <path d={`M -40 360 ${Array.from({length: 9}, (_, i) => `Q ${i * 140 + 70} ${290 + 70 * Math.sin(f / 80 + i * 0.9)} ${(i + 1) * 140} ${360 + 40 * Math.sin(f / 95 + i * 0.7)}`).join(' ')} L 1180 740 L -40 740 Z`} fill="url(#ln-au)" opacity={0.8 + 0.2 * Math.sin(f / 55)} />
       {ridge(1, ground - 250, 110, '#17363C', 0.2)}
       {ridge(5, ground - 170, 70, '#112A30', 0.45)}
@@ -442,7 +442,7 @@ export const LotNight: React.FC<{f: number; ground?: number; shift?: number; lam
         <rect x={40} y={ground - 190} width={760} height={190} fill="#38434F" stroke={INK} strokeWidth={5} />
         <rect x={40} y={ground - 190} width={760} height={34} fill="#2C353F" stroke={INK} strokeWidth={5} />
         <rect x={60} y={ground - 150} width={720} height={44} rx={4} fill="#222A32" stroke={INK} strokeWidth={4} data-band="ok" />
-        <text x={420} y={ground - 117} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={32} letterSpacing={6} fill={PC.sodiumHot} opacity={0.9}>{store}</text>
+        <text x={250} y={ground - 117} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={32} letterSpacing={6} fill={PC.sodiumHot} opacity={0.9}>{store}</text>
         {[110, 300, 490, 680].map((dx) => <rect key={dx} x={dx} y={ground - 90} width={100} height={90} fill={PC.sodium} opacity={0.5 + 0.1 * Math.sin(f / 30 + dx)} stroke={INK} strokeWidth={4} />)}
         <rect x={800} y={ground - 150} width={90} height={150} fill="#2A323B" stroke={INK} strokeWidth={5} />
       </g>}
@@ -567,8 +567,8 @@ export const Calendar: React.FC<{f: number; x: number; y: number; scale?: number
       )}
       {stamp && stampP > 0.02 && (
         <g transform={`translate(0,92) rotate(-8) scale(${0.7 + 0.3 * clamp01(stampP)})`} opacity={clamp01(stampP * 2)}>
-          <rect x={-92} y={-24} width={184} height={48} fill="none" stroke={PC.civic} strokeWidth={6} />
-          <text x={0} y={9} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={24} letterSpacing={2} fill={PC.civic}>{stamp}</text>
+          <rect x={-84} y={-20} width={168} height={40} fill="none" stroke={PC.civic} strokeWidth={5} />
+          <text x={0} y={7} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={17} letterSpacing={1} fill={PC.civic}>{stamp}</text>
         </g>
       )}
     </g>
@@ -642,7 +642,7 @@ export const Storefront: React.FC<{f: number; x: number; y: number; scale?: numb
       <rect x={-230} y={-330} width={460} height={330} fill="#38434F" stroke={INK} strokeWidth={6} />
       <rect x={-230} y={-330} width={460} height={46} fill="#2C353F" stroke={INK} strokeWidth={6} />
       <rect x={-200} y={-276} width={400} height={64} rx={5} fill="#222A32" stroke={INK} strokeWidth={4.5} />
-      <text x={0} y={-276 + 42} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={size} letterSpacing={4} fill={PC.sodiumHot} opacity={0.85 + 0.1 * Math.sin(f / 7)}>{sign}</text>
+      <text x={-60} y={-276 + 42} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={size} letterSpacing={4} fill={PC.sodiumHot} opacity={0.85 + 0.1 * Math.sin(f / 7)}>{sign}</text>
       {[-130, 0, 130].map((dx) => <rect key={dx} x={dx - 52} y={-170} width={104} height={170} fill={PC.sodium} opacity={0.55} stroke={INK} strokeWidth={4.5} />)}
       <ellipse cx={0} cy={26} rx={260} ry={22} fill={PC.sodium} opacity={0.2} />
     </g>
@@ -668,7 +668,8 @@ export const ServerBox: React.FC<{f: number; x: number; y: number; scale?: numbe
 /** StatementCard — a paper card with a heading line and a body, sized to its strings by arithmetic. Origin = centre. */
 export const StatementCard: React.FC<{x: number; y: number; head: string; lines: string[]; w?: number; rot?: number; tint?: string; opacity?: number; empty?: boolean}> = ({x, y, head, lines, w = 460, rot = 0, tint = PC.paper, opacity = 1, empty = false}) => {
   const hs = Math.min(22, (w - 40) / (head.length * 0.602 + 0.1));
-  const h = 74 + lines.length * 40 + 20;
+  const h = 74 + lines.length * 40 + 20 + (empty ? 120 : 0);
+  const textBottom = -h / 2 + 48 + 38 + lines.length * 40;
   return (
     <g transform={`translate(${x},${y}) rotate(${rot})`} opacity={opacity}>
       <rect x={-w / 2 + 8} y={-h / 2 + 10} width={w} height={h} fill="#000" opacity={0.3} />
@@ -677,8 +678,8 @@ export const StatementCard: React.FC<{x: number; y: number; head: string; lines:
       <text x={0} y={-h / 2 + 32} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={hs} letterSpacing={1} fill={PC.paper}>{head}</text>
       {empty ? (
         <g>
-          <circle cx={0} cy={-h / 2 + 48 + (h - 48) / 2 - 10} r={30} fill="#9AA3AD" stroke={INK} strokeWidth={4} />
-          <path d={`M -48 ${-h / 2 + 48 + (h - 48) / 2 + 60} Q 0 ${-h / 2 + 48 + (h - 48) / 2 + 12} 48 ${-h / 2 + 48 + (h - 48) / 2 + 60} Z`} fill="#9AA3AD" stroke={INK} strokeWidth={4} />
+          <circle cx={0} cy={textBottom + 34} r={26} fill="#9AA3AD" stroke={INK} strokeWidth={4} />
+          <path d={`M -44 ${textBottom + 100} Q 0 ${textBottom + 52} 44 ${textBottom + 100} Z`} fill="#9AA3AD" stroke={INK} strokeWidth={4} />
         </g>
       ) : null}
       {lines.map((l, i) => {
