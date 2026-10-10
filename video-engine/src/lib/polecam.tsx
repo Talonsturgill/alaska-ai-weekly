@@ -388,9 +388,9 @@ export const Rulebook: React.FC<{
       <rect x={-w / 2} y={-h} width={w} height={h} rx={8} fill={`url(#${uid})`} stroke={INK} strokeWidth={5.5} />
       <rect x={-w / 2} y={-h} width={22} height={h} rx={6} fill={deep} stroke={INK} strokeWidth={4} />
       {[0.2, 0.5, 0.8].map((k) => <circle key={k} cx={-w / 2 + 11} cy={-h * k} r={5} fill="#C9D0D6" stroke={INK} strokeWidth={2.6} />)}
-      <rect x={-w / 2 + 38} y={-h + 28} width={w - 64} height={56} rx={4} fill={PC.paper} stroke={INK} strokeWidth={3.4} />
-      <text x={-w / 2 + 38 + (w - 64) / 2} y={-h + 64} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={Math.min(26, (w - 80) / (title.length * 0.602 + 0.1))} letterSpacing={1} fill={INK}>{title}</text>
-      {sub && <text x={-w / 2 + 38 + (w - 64) / 2} y={-h + 118} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={Math.min(18, (w - 70) / (sub.length * 0.602 + 0.1))} fill={PC.paper}>{sub}</text>}
+      <rect x={-w / 2 + 34} y={-h + 28} width={w - 100} height={56} rx={4} fill={PC.paper} stroke={INK} strokeWidth={3.4} />
+      <text x={-w / 2 + 34 + (w - 100) / 2} y={-h + 64} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={Math.min(26, (w - 116) / (title.length * 0.602 + 0.1))} letterSpacing={1} fill={INK}>{title}</text>
+      {sub && <text x={-w / 2 + 34 + (w - 100) / 2} y={-h + 118} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={800} fontSize={Math.min(18, (w - 70) / (sub.length * 0.602 + 0.1))} fill={PC.paper}>{sub}</text>}
       <path d={`M ${w / 2 - 28} ${-h} L ${w / 2 - 28} ${-h + 56} L ${w / 2 - 38} ${-h + 46} L ${w / 2 - 48} ${-h + 56} L ${w / 2 - 48} ${-h} Z`} fill={PC.paper} stroke={INK} strokeWidth={3} />
     </g>
   );
@@ -405,7 +405,7 @@ export const Rulebook: React.FC<{
  * pools on the asphalt, painted parking lines, snow banks and a near plane of carts. `ground` is
  * the y of the asphalt line. Draws full-bleed (0..1080 x 0..1920). `lamp` 0..1 lights the sodium pools.
  */
-export const LotNight: React.FC<{f: number; ground?: number; shift?: number; lamp?: number; store?: string; cartX?: number; cart?: boolean}> = ({f, ground = 1180, shift: shift0 = 0, lamp = 1, store = 'THE STORE', cartX = -200, cart = true}) => {
+export const LotNight: React.FC<{f: number; ground?: number; shift?: number; lamp?: number; store?: string | null; cartX?: number; cart?: boolean}> = ({f, ground = 1180, shift: shift0 = 0, lamp = 1, store = 'THE STORE', cartX = -200, cart = true}) => {
   const shift = shift0 + 22 * Math.sin(f / 140);
   const stars = Array.from({length: 40}, (_, i) => ({x: hash(i + 11) * 1080, y: hash(i + 71) * (ground - 520), r: 1 + (i % 3) * 0.7, p: i}));
   const ridge = (seed: number, base: number, amp: number, col: string, par: number) => {
@@ -438,14 +438,14 @@ export const LotNight: React.FC<{f: number; ground?: number; shift?: number; lam
       {ridge(1, ground - 250, 110, '#17363C', 0.2)}
       {ridge(5, ground - 170, 70, '#112A30', 0.45)}
       {/* the store */}
-      <g transform={`translate(${-shift * 0.7},0)`}>
+      {store !== null && <g transform={`translate(${-shift * 0.7},0)`}>
         <rect x={40} y={ground - 190} width={760} height={190} fill="#38434F" stroke={INK} strokeWidth={5} />
         <rect x={40} y={ground - 190} width={760} height={34} fill="#2C353F" stroke={INK} strokeWidth={5} />
         <rect x={60} y={ground - 150} width={720} height={44} rx={4} fill="#222A32" stroke={INK} strokeWidth={4} data-band="ok" />
         <text x={420} y={ground - 117} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={32} letterSpacing={6} fill={PC.sodiumHot} opacity={0.9}>{store}</text>
         {[110, 300, 490, 680].map((dx) => <rect key={dx} x={dx} y={ground - 90} width={100} height={90} fill={PC.sodium} opacity={0.5 + 0.1 * Math.sin(f / 30 + dx)} stroke={INK} strokeWidth={4} />)}
         <rect x={800} y={ground - 150} width={90} height={150} fill="#2A323B" stroke={INK} strokeWidth={5} />
-      </g>
+      </g>}
       <rect data-band="ok" x={-20} y={ground} width={1120} height={1960 - ground} fill="url(#ln-asph)" />
       <path d={`M -20 ${ground + 2} L 1100 ${ground + 2}`} stroke="#fff" strokeWidth={3} opacity={0.18} />
       {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => <path key={i} d={`M ${60 + i * 130 - shift * 1.1} ${ground + 40} L ${20 + i * 130 - shift * 1.1} ${ground + 260}`} stroke="#EDE6D2" strokeWidth={6} opacity={0.35} />)}
@@ -599,17 +599,19 @@ export const Folder: React.FC<{x: number; y: number; scale?: number; label: stri
   );
 };
 
-/** Clamp — a C-clamp that closes (close 0..1) on something at its jaws. Origin = the jaws' centre. */
-export const Clamp: React.FC<{x: number; y: number; scale?: number; close: number}> = ({x, y, scale = 1, close}) => {
-  const gap = 120 - 70 * clamp01(close);
+/** Clamp — a screw clamp that closes (close 0..1) on something between its pads. Origin = the pads' centre. */
+export const Clamp: React.FC<{x: number; y: number; scale?: number; close: number; gapOpen?: number; gapClosed?: number}> = ({x, y, scale = 1, close, gapOpen = 170, gapClosed = 116}) => {
+  const gap = gapOpen + (gapClosed - gapOpen) * clamp01(close);
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`}>
-      <path d={`M ${-gap / 2 - 36} -80 L ${-gap / 2 - 36} 80 L ${gap / 2 + 36} 80 L ${gap / 2 + 36} -80`} fill="none" stroke={INK} strokeWidth={22} strokeLinejoin="round" />
-      <path d={`M ${-gap / 2 - 36} -80 L ${-gap / 2 - 36} 80 L ${gap / 2 + 36} 80 L ${gap / 2 + 36} -80`} fill="none" stroke="#8C97A3" strokeWidth={12} strokeLinejoin="round" />
-      <rect x={-gap / 2 - 22} y={-42} width={22} height={84} fill="#B8C2CC" stroke={INK} strokeWidth={4} />
-      <rect x={gap / 2} y={-42} width={22} height={84} fill="#B8C2CC" stroke={INK} strokeWidth={4} />
-      <path d={`M ${gap / 2 + 22} 0 L ${gap / 2 + 70} 0`} stroke={INK} strokeWidth={10} />
-      <circle cx={gap / 2 + 76} cy={0} r={12} fill="#8C97A3" stroke={INK} strokeWidth={4} />
+      <path d={`M ${-gap / 2 - 24} -64 Q ${-gap / 2 - 24} -96 ${-gap / 2 + 20} -96 L ${gap / 2 + 20} -96`} fill="none" stroke={INK} strokeWidth={16} strokeLinecap="round" />
+      <path d={`M ${-gap / 2 - 24} -64 Q ${-gap / 2 - 24} -96 ${-gap / 2 + 20} -96 L ${gap / 2 + 20} -96`} fill="none" stroke="#8C97A3" strokeWidth={8} strokeLinecap="round" />
+      <rect x={-gap / 2 - 26} y={-64} width={26} height={128} rx={4} fill="#B8C2CC" stroke={INK} strokeWidth={5} />
+      <rect x={gap / 2} y={-64} width={26} height={128} rx={4} fill="#B8C2CC" stroke={INK} strokeWidth={5} />
+      <path d={`M ${gap / 2 + 26} 0 L ${gap / 2 + 96} 0`} stroke={INK} strokeWidth={14} strokeLinecap="round" />
+      <path d={`M ${gap / 2 + 26} 0 L ${gap / 2 + 96} 0`} stroke="#8C97A3" strokeWidth={7} strokeLinecap="round" />
+      <path d={`M ${gap / 2 + 100} -34 L ${gap / 2 + 100} 34`} stroke={INK} strokeWidth={13} strokeLinecap="round" />
+      <path d={`M ${gap / 2 + 100} -34 L ${gap / 2 + 100} 34`} stroke="#B8C2CC" strokeWidth={6} strokeLinecap="round" />
     </g>
   );
 };
