@@ -589,12 +589,14 @@ export const Podium: React.FC<{x: number; y: number; scale?: number}> = ({x, y, 
 /** Folder — a kraft folder with a label. `squeeze` 0..1 narrows it under a clamp. Origin = bottom centre. */
 export const Folder: React.FC<{x: number; y: number; scale?: number; label: string; squeeze?: number; rot?: number}> = ({x, y, scale = 1, label, squeeze = 0, rot = 0}) => {
   const w = 190 * (1 - 0.22 * clamp01(squeeze));
-  const size = Math.min(18, (w - 20) / (label.length * 0.602));
+  const words = label.split(' ');
+  const lines = label.length > 12 && words.length > 1 ? [words.slice(0, Math.ceil(words.length / 2)).join(' '), words.slice(Math.ceil(words.length / 2)).join(' ')] : [label];
+  const size = Math.min(22, (w - 30) / (Math.max(...lines.map((l) => l.length)) * 0.602));
   return (
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${scale})`}>
       <path d={`M ${-w / 2} 0 L ${-w / 2} -240 L ${-w / 2 + 70} -240 L ${-w / 2 + 84} -256 L ${w / 2} -256 L ${w / 2} 0 Z`} fill={PC.kraft} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
-      <rect x={-w / 2 + 10} y={-170} width={w - 20} height={44} rx={3} fill={PC.paper} stroke={INK} strokeWidth={3} />
-      <text x={0} y={-142} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={size} letterSpacing={0.5} fill={INK}>{label}</text>
+      <rect x={-w / 2 + 10} y={-190} width={w - 20} height={lines.length * (size + 8) + 14} rx={3} fill={PC.paper} stroke={INK} strokeWidth={3} />
+      {lines.map((l, i) => <text key={i} x={0} y={-190 + 10 + size + i * (size + 8)} textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontWeight={900} fontSize={size} letterSpacing={0.5} fill={INK}>{l}</text>)}
     </g>
   );
 };

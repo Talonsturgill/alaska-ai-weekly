@@ -226,24 +226,24 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} night={0.1}
       overlay={<>
-        <Plate text="FLOCK CAMERA · ANCHORAGE LOWE'S" y={566} size={28} p={ease(f, b(1) + 8, 10) * (f < b(3) ? 1 : 0)} />
-        <Plate text="WITHIN DAYS" y={566} size={34} tone="paper" p={ease(f, b(3) + 6, 10) * (f < b(4) ? 1 : 0)} />
-        <Plate text="OCT 4 · ABOUT 11:28 PM · OLD SEWARD HWY" y={566} size={26} p={ease(f, b(4) + 8, 12)} />
+        <Plate text="FLOCK CAMERA · ANCHORAGE LOWE'S" y={520} size={28} p={ease(f, b(1) + 8, 10) * (f < b(3) ? 1 : 0)} />
+        <Plate text="WITHIN DAYS" x={870} y={665} size={34} tone="paper" p={ease(f, b(3) + 6, 10) * (f < b(4) ? 1 : 0)} />
+        <Plate text="OCT 4 · LATE AT NIGHT · OLD SEWARD HWY" y={590} size={26} p={ease(f, b(4) + 8, 12)} />
       </>}>
       <SVG>
         <LotNight f={f + p.from} ground={1060} lamp={0.88 + 0.12 * Math.sin(f / 5)} />
         <Ladder x={ladderX} y={1330} scale={1.35} lean={-8} />
         <Pickup f={f} x={pxCar} y={1285} scale={0.9} roll={f * 14} />
         {/* the saw's tip and shadow wait at frame left from frame 1 */}
-        <g opacity={f < b(3) - 14 ? 1 : 0}><path d="M -10 1092 L 46 1098 L 46 1114 L -10 1112 Z" fill="#B8C2CC" stroke={INK} strokeWidth={4} /></g>
-        <PoleCam f={f} x={540} y={1330} h={440} cutAt={250} scale={1.2} mood={mood} look={look} ribbon={fall < 0.02} glow={f < b(3) ? 0.35 : 0}
+        <g opacity={f < b(3) - 14 ? 1 : 0}><path d="M -10 998 L 46 1004 L 46 1020 L -10 1018 Z" fill="#B8C2CC" stroke={INK} strokeWidth={4} /></g>
+        <PoleCam f={f} x={540} y={1330} h={440} cutAt={170} scale={1.2} mood={mood} look={look} ribbon={fall < 0.02} glow={f < b(3) ? 0.35 : 0}
           cut={cutP} fall={fall} lean={fall < 0.02 ? 3 * cutP * Math.sin(f * 0.8) : 0} />
         {fall < 0.02 && <Tape f={f} x={622} y={826} rot={90} len={330} printed={tapeP} trucks={3} wave={5} phase={1} />}
         {landed && <Tape f={f} x={700} y={1340} rot={4} len={280} printed={ease(f, b(4) + 12, 30)} trucks={3} wave={3} />}
-        {cutting && <SawBlade x={sawX} y={1102} rot={-2} scale={1.1} />}
+        {cutting && <SawBlade x={sawX} y={1008} rot={-2} scale={1.1} />}
         {cutting && Array.from({length: 8}, (_, i) => {
           const ph = (f * 1.6 + i * 11) % 44;
-          return <circle key={i} cx={520 + 8 * Math.sin(i * 2 + f / 3)} cy={1114 + ph * 1.5} r={2.6} fill="#D7C79B" opacity={1 - ph / 48} />;
+          return <circle key={i} cx={520 + 8 * Math.sin(i * 2 + f / 3)} cy={1020 + ph * 1.5} r={2.6} fill="#D7C79B" opacity={1 - ph / 48} />;
         })}
         {landed && <g opacity={1 - puff}>{[0, 1, 2, 3, 4].map((i) => <circle key={i} cx={640 + (i - 2) * 40 * puff} cy={1326 - 30 * puff - (i % 2) * 14} r={14 + 36 * puff} fill="#E6EEF0" opacity={0.55} />)}</g>}
         {f > b(4) + 4 && f < b(4) + 12 && <ImpactStar cx={660} cy={1310} r={46} color="#FFFFFF" rot={12} />}
@@ -270,7 +270,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} zk={() => zoom * lerp(1.0, 1.04, easeIO(f, 56, 200))} ox={265} oy={683} night={0.05} tagText="FLOCK'S OWN WORDS · ILLUSTRATION"
       overlay={<>
         <Plate text="FLOCK" y={546} size={34} tone="mag" p={ease(f, b(5) + 24, 10) * (f < b(6) ? 1 : 0)} />
-        <Plate text="FLOCK'S OWN FAQ · MACHINE LEARNING" y={546} size={26} tone="cyan" p={ease(f, b(6) + 4, 10)} />
+        <Plate text="FLOCK'S OWN FAQ · MACHINE LEARNING" y={618} size={26} tone="cyan" p={ease(f, b(6) + 4, 10)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill="#0B1219" />
@@ -316,7 +316,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.04} night={0.05}
       overlay={<>
         <Plate text="WHO DECIDES WHAT IT KEEPS?" y={640} size={32} p={ease(f, b(8) + 8, 10) * (f < b(9) ? 1 : 0)} />
-        <Plate text="NOT WHO YOU'D THINK" y={640} size={34} tone="paper" p={ease(f, b(9) + 8, 10)} />
+        <Plate text="NOT WHO YOU'D THINK" y={724} size={34} tone="paper" p={ease(f, b(9) + 8, 10)} />
         {stamp > 0.02 && (
           <g transform={`translate(540,930) rotate(-9) scale(${stamp})`}>
             <circle r={104} fill={PC.paper} stroke={INK} strokeWidth={9} />
@@ -350,8 +350,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.03} dx0={36} dx1={-36} night={0.1}
       overlay={<>
         <Plate text="FLOCK TO KTUU" y={590} size={32} tone="mag" p={ease(f, b(10) + 6, 10) * (f < b(11) ? 1 : 0)} />
-        <Plate text="UPDATED" y={590} size={32} tone="paper" p={ease(f, b(11) + 6, 10) * (f < b(12) ? 1 : 0)} />
-        <Plate text="CUSTOMER NOT NAMED BY FLOCK" y={590} size={28} p={ease(f, b(12) + 6, 10)} />
+        <Plate text="UPDATED" y={666} size={32} tone="paper" p={ease(f, b(11) + 6, 10) * (f < b(12) ? 1 : 0)} />
+        <Plate text="CUSTOMER NOT NAMED BY FLOCK" y={742} size={28} p={ease(f, b(12) + 6, 10)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill="#162632" />
@@ -418,7 +418,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} zk={() => zoom} ox={540} oy={1000} night={0.05}
       overlay={<>
         <Plate text="THIS LOT" y={620} size={32} p={ease(f, b(15) + 20, 10) * (f < b(16) ? 1 : 0)} />
-        <Plate text="NOT THE BIGGEST SYSTEM IN TOWN" y={620} size={28} p={ease(f, b(16) + 6, 10)} />
+        <Plate text="NOT THE BIGGEST SYSTEM IN TOWN" y={700} size={28} p={ease(f, b(16) + 6, 10)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill="#0E1A24" />
@@ -459,7 +459,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.08} ox={540} oy={1000} night={0.08}
       overlay={<>
         <Plate text="2 PROPOSED RULES" y={620} size={32} tone="civic" p={ease(f, b(17) + 18, 10) * (f < b(18) ? 1 : 0)} />
-        <Plate text="OCT 20 · VOTE EXPECTED" y={620} size={32} tone="civic" p={ease(f, b(18) + 6, 10)} />
+        <Plate text="OCT 20 · VOTE EXPECTED" y={704} size={32} tone="civic" p={ease(f, b(18) + 6, 10)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill="#17283A" />
@@ -470,7 +470,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <rect x={380} y={560} width={260} height={360} fill="#0F1E2B" stroke={INK} strokeWidth={6} />
         {Array.from({length: 22}, (_, i) => <circle key={i} cx={392 + rnd(i + 4) * 236} cy={575 + rnd(i + 44) * 330} r={1.4 + rnd(i) * 1.4} fill="#fff" opacity={0.5 + 0.4 * Math.sin(f / 18 + i)} />)}
         <path d="M 510 560 L 510 920 M 380 740 L 640 740" stroke={INK} strokeWidth={5} />
-        <Calendar f={f} x={860} y={760} scale={1.05} flip={cal} stamp="VOTE EXPECTED" stampP={stamp} />
+        <Calendar f={f} x={900} y={800} scale={1.0} flip={cal} stamp="VOTE EXPECTED" stampP={stamp} />
         <rect data-band="ok" x={-20} y={1180} width={1120} height={800} fill="#5B4632" stroke={INK} strokeWidth={6} />
         <rect data-band="ok" x={-20} y={1180} width={1120} height={30} fill="#7A5E40" />
         {Array.from({length: 10}, (_, i) => <path key={i} d={`M -20 ${1230 + i * 70} L 1100 ${1236 + i * 70}`} stroke="#4A3826" strokeWidth={3} />)}
@@ -484,8 +484,8 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <circle cx={0} cy={-19} r={10} fill="#F4F1E6" stroke={INK} strokeWidth={3} /><circle cx={0} cy={-19} r={5} fill={PC.cyan} />
         </g>
         <Tape f={f} x={140} y={1165} len={260} w={26} printed={ease(f, b(17) + 20, 40)} trucks={3} wave={2} phase={7} />
-        <Rulebook f={f} x={lerp(240, 150, easeIO(f, b(17) + 30, 40)) + 0 * slide} y={lerp(-300, 1176, dropA)} scale={0.9} w={240} h={270} color={PC.civic} deep={PC.civicDeep} title="AO 2026-108" sub="PROPOSED" />
-        <Rulebook f={f} x={lerp(840, 930, slide) - 0 * slide} y={lerp(-300, 1176, dropB)} scale={0.9} w={240} h={270} color="#7FA6E8" deep="#3C63AE" title="AO 108(S)" sub="PROPOSED" />
+        <Rulebook f={f} x={lerp(240, 150, easeIO(f, b(17) + 30, 40)) + 0 * slide} y={lerp(-300, 1176, dropA) + 3 * Math.sin(f / 17)} rot={0.9 * Math.sin(f / 23)} scale={0.9} w={240} h={270} color={PC.civic} deep={PC.civicDeep} title="AO 2026-108" sub="PROPOSED" />
+        <Rulebook f={f} x={lerp(840, 930, slide) - 0 * slide} y={lerp(-300, 1176, dropB) + 3 * Math.sin(f / 19 + 1)} rot={-0.9 * Math.sin(f / 21)} scale={0.9} w={240} h={270} color="#7FA6E8" deep="#3C63AE" title="AO 108(S)" sub="PROPOSED" />
         <g transform={`translate(${160},${1180 + 30 * tagA})`} opacity={clamp01(tagA)}>
           <path d="M 0 -240 L 0 -190" stroke={INK} strokeWidth={3} />
           <rect x={-130} y={-190} width={260} height={46} rx={4} fill={PC.paper} stroke={INK} strokeWidth={4} />
@@ -514,31 +514,31 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const dimL = lerp(0, 0.5, storeTurn);
   const dimR = lerp(0.45, 0, storeTurn);
   const wrap = ease(f, b(23) + 4, 50);
-  const glint = ease(f, b(24), 12) * (1 - ease(f, b(24) + 20, 20));
-  const mayorX = 230, mayorY = 1300;
+  const glint = f < b(24) ? 0 : 0.55 + 0.45 * Math.sin(f / 5);
+  const mayorX = 260, mayorY = 1300;
   return (
     <Frame p={p} z0={1.0} z1={1.04} ox={540} oy={1000} night={0.08}
       overlay={<>
-        <Plate text="MEMBERS' VERSION · CITY DATA DELETED AFTER 14 DAYS" displayLines={["MEMBERS' VERSION", 'CITY DATA DELETED AFTER 14 DAYS']} x={270} y={600} size={19} tone="civic" p={ease(f, b(20) + 20, 10) * (f < b(22) ? 1 : 0)} />
-        <QuotePlate text={'"UNDULY LIMIT SOME CORE FUNCTIONS OF APD OPERATIONS" · THE MAYOR'} x={270} y={700} size={23} wrap={19} p={ease(f, b(22) + 8, 14) * (f < b(23) ? 1 : 0.35 * (1 - storeTurn) + 0.0)} />
-        <Plate text="A STORE'S POLE · A STORE'S CALL" displayLines={["A STORE'S POLE", "A STORE'S CALL"]} x={810} y={620} size={24} tone="amber" p={ease(f, b(23) + 6, 12)} />
-        <Plate text="NOTHING IN EITHER RULE STOPS IT" displayLines={['NOTHING IN EITHER', 'RULE STOPS IT']} x={810} y={740} size={21} tone="paper" p={ease(f, b(24) + 10, 12)} />
+        <Plate text="MEMBERS' VERSION · CITY DATA DELETED AFTER 14 DAYS" displayLines={["MEMBERS' VERSION", 'CITY DATA DELETED AFTER 14 DAYS']} x={292} y={590} size={18} tone="civic" p={ease(f, b(20) + 20, 10) * (f < b(22) ? 1 : 0)} />
+        <QuotePlate text={'"UNDULY LIMIT SOME CORE FUNCTIONS OF APD OPERATIONS" · THE MAYOR'} x={292} y={700} size={23} wrap={19} p={ease(f, b(22) + 8, 14) * (f < b(23) ? 1 : 0.35 * (1 - storeTurn) + 0.0)} />
+        <Plate text="A STORE'S POLE · A STORE'S CALL" displayLines={["A STORE'S POLE", "A STORE'S CALL"]} x={830} y={640} size={24} tone="amber" p={ease(f, b(23) + 6, 12)} />
+        <Plate text="NOTHING IN EITHER RULE STOPS IT" displayLines={['NOTHING IN EITHER', 'RULE STOPS IT']} x={830} y={760} size={21} tone="paper" p={ease(f, b(24) + 10, 12)} />
       </>}>
       <SVG>
         <defs>
-          <clipPath id="s8L"><rect x={-20} y={-20} width={560} height={1960} /></clipPath>
-          <clipPath id="s8R"><rect x={540} y={-20} width={560} height={1960} /></clipPath>
+          <clipPath id="s8L"><rect data-band="ok" x={-20} y={-20} width={560} height={1960} /></clipPath>
+          <clipPath id="s8R"><rect data-band="ok" x={540} y={-20} width={560} height={1960} /></clipPath>
         </defs>
         {/* LEFT: the hall (city) */}
         <g clipPath="url(#s8L)">
           <rect data-band="ok" x={-20} y={-20} width={580} height={1960} fill="#17283A" />
           <rect x={-10} y={540} width={540} height={14} fill={PC.civicDeep} />
           <rect x={-20} y={1240} width={580} height={800} fill="#2A3B4A" stroke={INK} strokeWidth={5} data-band="ok" />
-          <Tape f={f} x={118} y={1296} len={300} w={24} printed={feed} tint={PC.civic} ticks tickEvery={21} wave={2} phase={8} />
-          <Shredder f={f} x={470} y={1310} scale={0.78} run={run} />
-          <g transform="translate(78,1300)">
-            <PatrolCar f={f} x={0} y={0} scale={0.36} />
-            <g transform="translate(6,-96)"><rect x={-78} y={-16} width={156} height={32} rx={4} fill={PC.civicDeep} stroke={INK} strokeWidth={3} /><text y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={15} letterSpacing={1} fill="#F4F1E6">CITY CAMERAS</text></g>
+          <Tape f={f} x={432} y={1296} rot={180} len={300} w={24} printed={feed} tint={PC.civic} ticks tickEvery={21} wave={2} phase={8} />
+          <Shredder f={f} x={104} y={1310} scale={0.78} run={run} />
+          <g transform="translate(442,1300)">
+            <PatrolCar f={f} x={0} y={0} scale={0.36} flip />
+            <g transform="translate(0,-96)"><rect x={-78} y={-16} width={156} height={32} rx={4} fill={PC.civicDeep} stroke={INK} strokeWidth={3} /><text y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={15} letterSpacing={1} fill="#F4F1E6">CITY CAMERAS</text></g>
           </g>
           <Character frame={f} x={mayorX} y={mayorY} scale={1.25} facing={1} outfit="suit" glasses hairStyle="long" hair="#3d2c1e" pose="carry" gesture={lift} emotion="neutral" talking={talk} look={f < b(21) ? -14 : 0} />
           <Podium x={mayorX} y={mayorY + 4} scale={0.95} />
@@ -546,7 +546,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
             <Folder x={0} y={0} scale={0.8} label="CORE POLICE OPERATIONS" squeeze={close} rot={-2 * lift} />
           </g>
           {f > b(22) - 4 && <g transform={`translate(${mayorX + 150},${mayorY - 250 - 70 * lift - 110})`} opacity={ease(f, b(22) - 4, 8)}><Clamp x={0} y={0} scale={0.8} close={close} gapOpen={188} gapClosed={126} /></g>}
-          <rect x={-20} y={-20} width={580} height={1960} fill="#000" opacity={dimL} />
+          <rect data-band="ok" x={-20} y={-20} width={580} height={1960} fill="#000" opacity={dimL} />
         </g>
         {/* RIGHT: the store's lot */}
         <g clipPath="url(#s8R)">
@@ -566,11 +566,11 @@ const S8: React.FC<SceneProps> = ({p}) => {
           </g>
           <ShoppingCart f={f} x={(560 + f * 0.9) % 700 + 500} y={1440} scale={0.8} />
           <Snowfall f={f + p.from} n={44} />
-          <rect x={540} y={-20} width={580} height={1960} fill="#000" opacity={dimR} />
+          <rect data-band="ok" x={540} y={-20} width={580} height={1960} fill="#000" opacity={dimR} />
         </g>
         {/* the seam is the spine of the FROM THE MAYOR rulebook */}
-        <rect x={528} y={-20} width={24} height={1960} fill={PC.civic} stroke={INK} strokeWidth={5} />
-        <rect x={528} y={-20} width={8} height={1960} fill="#fff" opacity={0.25} />
+        <rect data-band="ok" x={528} y={-20} width={24} height={1960} fill={PC.civic} stroke={INK} strokeWidth={5} />
+        <rect data-band="ok" x={528} y={-20} width={8} height={1960} fill="#fff" opacity={0.25} />
       </SVG>
     </Frame>
   );
@@ -586,15 +586,15 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={() => lerp(1.0, 1.1, easeIO(f, 0, p.dur))} ox={330} oy={1100} night={0.1}
       overlay={<>
-        <Plate text="FAIR POINTS" x={690} y={600} size={32} tone="paper" p={ease(f, b(25) + 6, 10) * (f < b(26) ? 1 : 0)} />
-        <Plate text="THEY DON'T ANSWER NEIGHBORS WHO WANT NO CAMERA" displayLines={["THEY DON'T ANSWER", 'NEIGHBORS WHO WANT NO CAMERA']} x={690} y={640} size={26} p={ease(f, b(26) + 6, 12)} />
+        <Plate text="FAIR POINTS" x={640} y={548} size={32} tone="paper" p={ease(f, b(25) + 6, 10) * (f < b(26) ? 1 : 0)} />
+        <Plate text="THEY DON'T ANSWER NEIGHBORS WHO WANT NO CAMERA" displayLines={["THEY DON'T ANSWER", 'NEIGHBORS WHO WANT NO CAMERA']} x={640} y={650} size={26} p={ease(f, b(26) + 6, 12)} />
       </>}>
       <SVG>
         <StreetNight f={f + p.from} ground={1180} shift={40} />
-        <PoleCam f={f} x={890} y={1255} h={440} scale={0.9} mood="calm" look={-1} glow={0.5 + 0.2 * Math.sin(f / 6)} flip phase={3} />
+        <PoleCam f={f} x={900} y={1255} h={400} scale={0.85} mood="calm" look={-1} glow={0.5 + 0.2 * Math.sin(f / 6)} flip phase={3} />
         <Tape f={f} x={820} y={1268} rot={180} len={560} w={22} printed={1} trucks={6} wave={9} phase={11} />
-        <Character frame={f} x={250} y={1520} scale={2.15} facing={1} outfit="puffer" headgear="beanie" pose="arms-crossed" emotion="worried" idleGain={squeeze > 0.1 ? 1.4 : 1} />
-        <ContactShadow cx={250} cy={1524} rx={160} ry={20} opacity={0.5} />
+        <Character frame={f} x={230} y={1500} scale={1.85} facing={1} outfit="puffer" headgear="beanie" pose="arms-crossed" emotion="worried" idleGain={squeeze > 0.1 ? 1.4 : 1} />
+        <ContactShadow cx={230} cy={1504} rx={140} ry={18} opacity={0.5} />
         {[{x: x1, y: 1010, t: "THE MAYOR'S POINT", w: 330}, {x: x2, y: 1110, t: "A STORE'S POINT", w: 300}].map((c, i) => (
           <g key={i} transform={`translate(${c.x},${c.y + 8 * Math.sin(f / 9 + i)}) rotate(${-4 + 8 * i})`} opacity={f > b(25) - 2 ? 1 : 0}>
             <rect x={-c.w / 2 + 6} y={-30 + 8} width={c.w} height={60} fill="#000" opacity={0.3} />
@@ -625,7 +625,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const pull = easeIO(f, 0, 120);
   const lit = 6 + 54 * ease(f, b(28), 50) + 60 * ease(f, b(29), 40) + 40 * ease(f, b(30), 40);
   const col = Math.round(interpolate(f, [b(29), b(29) + 56], [0, 49], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
-  const carX = lerp(-340, 400, easeIO(f, b(28) - 6, 70));
+  const carX = lerp(-340, 400, easeIO(f, b(28) - 6, 70)) + 0.35 * Math.max(0, f - (b(28) + 64));
   const bracket = ease(f, b(30), 20);
   const drone = ease(f, b(31), 40);
   const beam = ease(f, b(31) + 6, 36);
@@ -633,9 +633,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={() => lerp(11, 1, pull)} ox={99} oy={659} night={0.06} tagText="UP TO 750 · ILLUSTRATION"
       overlay={<>
-        <Plate text="THE BIGGEST SYSTEM" y={560} size={30} tone="paper" p={ease(f, b(27) + 70, 10) * (f < b(28) ? 1 : 0)} />
+        <Plate text="THE BIGGEST SYSTEM" x={700} y={560} size={30} tone="paper" p={ease(f, b(27) + 70, 10) * (f < b(28) ? 1 : 0)} />
         <Plate text="CITY'S AXON DEAL" x={320} y={560} size={28} tone="civic" p={ease(f, b(28) + 4, 10)} />
-        <Plate text="$11.8M · 5 YEARS" x={330} y={1030} size={50} tone="paper" p={ease(f, b(29) + 4, 12)} />
+        <Plate text="$11.8M · 5 YEARS" x={345} y={1030} size={50} tone="paper" p={ease(f, b(29) + 4, 12)} />
         <Plate text="UP TO 750 FEEDS" x={330} y={1130} size={40} tone="civic" p={ease(f, b(30) + 6, 12)} />
         {bracket > 0.02 && (
           <g opacity={bracket}>
@@ -643,12 +643,13 @@ const S10: React.FC<SceneProps> = ({p}) => {
           </g>
         )}
         {drone > 0.02 && <text x={0} y={0} />}
-        <Plate text="THIS LOT" x={950} y={1000} size={18} tone="amber" p={ease(f, b(27) + 100, 14)} />
+        <Plate text="THIS LOT" x={930} y={1000} size={18} tone="amber" p={ease(f, b(27) + 100, 14)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill="#0C1620" />
         <rect data-band="ok" x={-20} y={1240} width={1120} height={800} fill="#16232D" stroke={INK} strokeWidth={5} />
         <FeedWall f={f} x={90} y={650} lit={lit} beam={beam} />
+        <rect data-band="ok" x={90 + ((f * 7) % 980) - 80} y={650} width={70} height={270} fill={PC.civic} opacity={0.14} />
         {/* the column that lights when the slab drops */}
         {f > b(29) && f < b(29) + 90 && Array.from({length: 15}, (_, r) => (
           <g key={r} transform={`translate(${90 + col * 18 + 9},${650 + r * 18 + 9})`} opacity={1 - clamp01((f - b(29) - 56) / 30)}>
@@ -659,7 +660,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <PatrolCar f={f} x={carX} y={1285} scale={0.8} roll={f * 10} pod={ease(f, b(31), 10)} />
         <g transform={`translate(${carX + 8},${1285 - 52})`}><rect x={-70} y={-16} width={140} height={32} rx={3} fill={PC.civicDeep} stroke={INK} strokeWidth={3} /><text y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={13} letterSpacing={0.5} fill="#F4F1E6">CITY'S AXON DEAL</text></g>
         {beam > 0.02 && <path d={`M ${carX - 50} ${1285 - 105} L ${lerp(carX - 50, 140, beam)} ${lerp(1285 - 105, 940, beam)}`} stroke={PC.cyan} strokeWidth={4} strokeDasharray="12 9" strokeDashoffset={-f * 3} opacity={0.8} />}
-        <Drone f={f} x={lerp(1250, 700, drone)} y={lerp(1000, 1040, drone)} scale={0.8} tilt={lerp(14, -3, drone)} />
+        <Drone f={f} x={lerp(1250, 700, drone) + 14 * Math.sin(f / 21)} y={lerp(1000, 1040, drone) + 10 * Math.sin(f / 13)} scale={0.8} tilt={lerp(14, -3, drone)} />
         {/* the lot's own camera stands OUTSIDE the wall, amber, and shrinks */}
         <PoleCam f={f} x={950} y={1290} h={430} scale={shrink} mood="calm" look={-1} flip phase={4} />
         <g transform="translate(950,1290)"><ellipse cx={0} cy={-6} rx={90 * shrink * 2} ry={16} fill={PC.sodium} opacity={0.3} /></g>
@@ -724,12 +725,12 @@ const S11: React.FC<SceneProps> = ({p}) => {
 
 // ---- S12: two documents (beats 34 to 35) -----------------------------------------------------------------------------------------
 const Sheet: React.FC<{x: number; y: number; head: string; tint: string; fg: string; children?: React.ReactNode; rot?: number}> = ({x, y, head, tint, fg, children, rot = 0}) => (
-  <g transform={`translate(${x},${y}) rotate(${rot})`}>
-    <rect x={-420} y={-290} width={860} height={600} fill="#000" opacity={0.3} />
-    <rect x={-430} y={-300} width={860} height={600} fill={PC.paper} stroke={INK} strokeWidth={6} />
-    <rect x={-430} y={-300} width={860} height={78} fill={tint} stroke={INK} strokeWidth={6} />
-    <text x={0} y={-248} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={Math.min(34, 780 / (head.length * 0.602))} letterSpacing={2} fill={fg}>{head}</text>
-    {[-170, -120, 140, 190, 240].map((ly, i) => <path key={i} d={`M -380 ${ly} L ${180 + (i % 3) * 70} ${ly}`} stroke={INK} strokeWidth={5} opacity={0.14} strokeLinecap="round" />)}
+  <g transform={`translate(${x - 430},${y}) rotate(${rot} 430 0)`}>
+    <rect x={10} y={-290} width={860} height={600} fill="#000" opacity={0.3} />
+    <rect x={0} y={-300} width={860} height={600} fill={PC.paper} stroke={INK} strokeWidth={6} />
+    <rect x={0} y={-300} width={860} height={78} fill={tint} stroke={INK} strokeWidth={6} />
+    <text x={430} y={-248} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={Math.min(34, 780 / (head.length * 0.602))} letterSpacing={2} fill={fg}>{head}</text>
+    {[-170, -120, 140, 190, 240].map((ly, i) => <path key={i} d={`M 50 ${ly} L ${610 + (i % 3) * 70} ${ly}`} stroke={INK} strokeWidth={5} opacity={0.14} strokeLinecap="round" />)}
     {children}
   </g>
 );
@@ -741,8 +742,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.04} night={0.06}
       overlay={<>
-        <Plate text="TYPICALLY NO MORE THAN 90 DAYS" y={620} size={26} tone="amber" p={ease(f, b(34) + 8, 12) * (1 - swap)} />
-        <Plate text="DEFAULT 7 DAYS · ADJUSTABLE BY LOCAL RULE" displayLines={['DEFAULT 7 DAYS', 'ADJUSTABLE BY LOCAL RULE']} y={640} size={26} tone="mag" p={ease(f, b(35) + 12, 12)} />
+        <Plate text="TYPICALLY NO MORE THAN 90 DAYS" y={640} size={26} tone="amber" p={ease(f, b(34) + 8, 12) * (1 - swap)} />
+        <Plate text="DEFAULT 7 DAYS · ADJUSTABLE BY LOCAL RULE" displayLines={['DEFAULT 7 DAYS', 'ADJUSTABLE BY LOCAL RULE']} y={545} size={26} tone="mag" p={ease(f, b(35) + 12, 12)} />
       </>}>
       <SVG>
         <defs><radialGradient id="s12-lamp" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stopColor={PC.lampWhite} stopOpacity="0.3" /><stop offset="1" stopColor={PC.lampWhite} stopOpacity="0" /></radialGradient></defs>
@@ -750,17 +751,17 @@ const S12: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 26}, (_, i) => <path key={i} d={`M -20 ${i * 76 + 10} Q 540 ${i * 76 + 24 * Math.sin(i)} 1100 ${i * 76 + 10}`} stroke="#1A2A31" strokeWidth={3} fill="none" />)}
         <ellipse cx={540 + 40 * Math.sin(f / 50)} cy={1000} rx={600} ry={460} fill="url(#s12-lamp)" />
         <g transform={`translate(${-1150 * swap},0)`}>
-          <Sheet x={540} y={1010} head="LOWE'S PRIVACY STATEMENT" tint={PC.sodium} fg={INK} rot={-1.5}>
-            <Tape f={f} x={-380} y={30} len={760} w={52} printed={t90} tint={PC.paper} ticks tickEvery={8.44} wave={2} phase={14} fadeEnd={0.12} />
-            <text x={-380} y={100} fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={0.8}>DAY 1</text>
-            <text x={380} y={100} textAnchor="end" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={t90 > 0.95 ? 0.9 : 0}>DAY 90</text>
+          <Sheet x={540} y={1010 + 6 * Math.sin(f / 25)} head="LOWE'S PRIVACY STATEMENT" tint={PC.sodium} fg={INK} rot={-1.5 + 0.5 * Math.sin(f / 31)}>
+            <Tape f={f} x={50} y={30} len={760} w={52} printed={t90} tint={PC.paper} ticks tickEvery={8.44} wave={2} phase={14} fadeEnd={0.12} />
+            <text x={50} y={100} fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={0.8}>DAY 1</text>
+            <text x={810} y={100} textAnchor="end" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={t90 > 0.95 ? 0.9 : 0}>DAY 90</text>
           </Sheet>
         </g>
         <g transform={`translate(${1150 * (1 - swap)},0)`}>
-          <Sheet x={540} y={1010} head="FLOCK FAQ" tint={PC.lilac} fg={INK} rot={1.2}>
-            <Tape f={f} x={-380} y={30} len={196} w={52} printed={t7} tint={PC.paper} ticks tickEvery={28} wave={2} phase={15} />
-            <text x={-380} y={100} fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={0.8}>DAY 1</text>
-            <text x={-170} y={100} textAnchor="end" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={t7 > 0.95 ? 0.9 : 0}>DAY 7</text>
+          <Sheet x={540} y={1010 + 6 * Math.sin(f / 27 + 1)} head="FLOCK FAQ" tint={PC.lilac} fg={INK} rot={1.2 + 0.5 * Math.sin(f / 29)}>
+            <Tape f={f} x={50} y={30} len={196} w={52} printed={t7} tint={PC.paper} ticks tickEvery={28} wave={2} phase={15} />
+            <text x={50} y={100} fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={0.8}>DAY 1</text>
+            <text x={246} y={100} textAnchor="end" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK} opacity={t7 > 0.95 ? 0.9 : 0}>DAY 7</text>
           </Sheet>
         </g>
         <g transform="translate(920,700) rotate(24)"><path d="M 0 0 L 0 -90 Q 0 -110 18 -110 Q 36 -110 36 -90 L 36 20" fill="none" stroke="#8C97A3" strokeWidth={6} /></g>
@@ -814,7 +815,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <Plate text="WHO GETS IT?" y={680} size={30} tone="paper" p={ease(f, b(40) + 4, 10)} />
       </>}>
       <SVG>
-        <defs><clipPath id="s14c"><rect x={-20} y={-20} width={1120} height={1396} /></clipPath></defs>
+        <defs><clipPath id="s14c"><rect data-band="ok" x={-20} y={-20} width={1120} height={1396} /></clipPath></defs>
         <LotNight f={f + p.from} ground={1060} lamp={0.88 + 0.12 * Math.sin(f / 5)} />
         {/* the stump of the cut pole, with its scribble sign */}
         <g>
