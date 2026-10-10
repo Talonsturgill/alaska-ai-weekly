@@ -1,0 +1,77 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 5,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.988,
+    "heard": "A brand new camera went up on a pole at an anchorage lows. Within days, somebody cut it down. It's a flock camera, and flock says it uses machine learning to read the plate, make, color, and body type. So who decides what it keeps? The answer isn't who you'd think. Flock first told a TV station it knew of no cameras here. Then it said it was installing them for a private customer. One neighbor called it very minority report. But that parking lot camera is small next to the city's own system. The city's assembly has two proposed rules, expected to go to a vote October 20th. One is from the mayor, one from assembly members. The members version would delete city camera data after 14 days. The mayor says it could unduly limit core police operations. The store side? A store can put a camera on its own pole. Fair points. They don't answer neighbors who want no camera at all. Now the city's own system. It's deal with the company axon is $11.8 million over five years for up to 750 feeds, plate readers, and drones. Both proposals cover city cameras. Neither covers a store's pole. Low privacy statements says it typically keeps such data no more than 90 days. Flock's own default is seven days. So the poll answers to the store and its vendor. Ask any camera three things. What does it keep for how long? Who gets it?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.024,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.44,
+        "voiced_frac": 0.43,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 119.24,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 119.24,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

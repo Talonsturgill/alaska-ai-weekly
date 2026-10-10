@@ -1,0 +1,261 @@
+{
+ "run_date": "2026-10-10",
+ "fact_check_verdict": "PASS with caveats. Two independent Alaska outlets (ADN, KTUU) plus KTOO and the ordinance PDFs. The AI description is Flock's own FAQ, no outlet calls the cameras AI. Ordinances are proposed, vote expected October 20th.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-source",
+   "spoken": "A brand new camera went up on a pole at an Anchorage Lowe's.",
+   "on_screen": "FLOCK CAMERAS \u00b7 ANCHORAGE LOWE'S",
+   "source": "https://www.adn.com/alaska-news/anchorage/2026/10/06/flock-cameras-arrive-in-anchorage-while-assembly-duels-over-surveillance-policies/",
+   "requires": [
+    "Say cameras went up at Anchorage Lowe's stores. Flock said it began installing for an unnamed private customer, never say Flock confirmed Lowe's is that customer."
+   ],
+   "verbatim": "were mounted on poles around the parking areas at multiple Lowe's stores",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-two-source",
+   "spoken": "Within days, somebody cut it down.",
+   "on_screen": "OCT 4 \u00b7 LATE AT NIGHT \u00b7 OLD SEWARD HWY",
+   "source": "https://www.alaskasnewssource.com/2026/10/06/downed-flock-camera-outside-south-anchorage-lowes-confirmed-apd-says-no-report-filed-no-access-feed/",
+   "requires": [
+    "Say approximately. The time is from Lowe's report as confirmed by APD. Do not repeat the headline's 'no report filed'. Describe the handwritten sign, never quote it."
+   ],
+   "verbatim": "at approximately 11:28 p.m. on Oct. 4, an individual cut down a newly installed camera",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "It's a Flock camera, and Flock says it uses machine learning to read the plate, make, color and body type.",
+   "on_screen": "FLOCK'S OWN FAQ \u00b7 MACHINE LEARNING",
+   "source": "https://www.flocksafety.com/faq",
+   "requires": [
+    "Attribute to Flock's own FAQ. Neither ADN nor KTUU calls the cameras AI. Never write 'AI cameras' as a news fact."
+   ],
+   "verbatim": "Flock Safety cameras apply machine learning to the footage they capture",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-two-source",
+   "spoken": "Flock first told a TV station it knew of no cameras here. Then it said it was installing them for a private customer.",
+   "on_screen": "FLOCK TO KTUU \u00b7 FIRST NONE, THEN INSTALLING",
+   "source": "https://www.alaskasnewssource.com/2026/10/06/downed-flock-camera-outside-south-anchorage-lowes-confirmed-apd-says-no-report-filed-no-access-feed/",
+   "requires": [
+    "Single outlet (KTUU) for the first statement. The private customer is unnamed by Flock. Never say the customer is Lowe's."
+   ],
+   "verbatim": "it was not aware of any cameras in Alaska",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-two-source",
+   "spoken": "One neighbor called it very Minority Report.",
+   "on_screen": "\"VERY MINORITY REPORT\" \u00b7 LISA VITALE",
+   "source": "https://www.alaskasnewssource.com/2026/10/06/downed-flock-camera-outside-south-anchorage-lowes-confirmed-apd-says-no-report-filed-no-access-feed/",
+   "requires": [
+    "Residents interviewed by KTUU were opposed, this is not a poll. Quote only the verbatim fragment."
+   ],
+   "verbatim": "It's very 'Minority Report' where everybody's now guilty before being proven innocent.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-two-source",
+   "spoken": "The city's Assembly has two proposed rules, expected to go to a vote October twentieth. One is from the mayor, one from Assembly members.",
+   "on_screen": "2 PROPOSED RULES \u00b7 VOTE EXPECTED OCT 20",
+   "source": "https://www.adn.com/alaska-news/anchorage/2026/10/06/flock-cameras-arrive-in-anchorage-while-assembly-duels-over-surveillance-policies/",
+   "requires": [
+    "Say proposed and expected. The vote date is not confirmed by an agenda. Original AO 2026-108 from Assembly members McCormick, Scout, Volland. Substitute 108(S) from the mayor's administration."
+   ],
+   "verbatim": "expected to go before the Assembly for a vote on Oct. 20",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-two-source",
+   "spoken": "The mayor says it could unduly limit core police operations.",
+   "on_screen": "THE MAYOR \u00b7 \"UNDULY LIMIT SOME CORE FUNCTIONS OF APD OPERATIONS\"",
+   "source": "https://www.yahoo.com/news/politics/articles/stuck-details-anchorage-assembly-delays-221100268.html",
+   "requires": [
+    "Mayor LaFrance's words per ADN September 16th via Yahoo: 'unduly limit some core functions of APD operations'. Paraphrased in VO, fragment quoted on screen."
+   ],
+   "verbatim": "unduly limit some core functions of APD operations",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "on_screen": "CITY'S AXON DEAL \u00b7 $11.8M \u00b7 5 YEARS \u00b7 UP TO 750 FEEDS",
+   "source": "https://www.muni.org/Departments/Assembly/Documents/AO%202026-108.pdf",
+   "requires": [
+    "From the recitals of AO 2026-108 (Axon Real-Time Crime Center contract, September 23rd, 2025). Say the city's deal. Do not say Flock is part of it. Say Axon is a Flock competitor only if sourced to ADN."
+   ],
+   "verbatim": "$11.8",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "Both proposals cover city cameras. Neither covers a store's pole.",
+   "on_screen": "BOTH PROPOSALS WOULD BIND CITY AGENCIES ONLY",
+   "source": "https://www.muni.org/Departments/Assembly/Documents/AO%202026-108%28S%29.pdf",
+   "requires": [
+    "AO 2026-108 chapter 3.102 'no municipal agency shall'; substitute 'applies to all municipal departments, agencies, and offices'. Neither puts a duty on a private camera owner. The original bars the city from accepting private ALPR data. Say 'neither covers', never 'nobody regulates it'."
+   ],
+   "verbatim": "This chapter applies to all municipal departments, agencies, and offices",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-two-source",
+   "spoken": "Lowe's privacy statement says it typically keeps such data no more than ninety days. Flock's own default is seven days.",
+   "on_screen": "LOWE'S PRIVACY STATEMENT \u00b7 TYPICALLY NO MORE THAN 90 DAYS",
+   "source": "https://www.adn.com/alaska-news/anchorage/2026/10/06/flock-cameras-arrive-in-anchorage-while-assembly-duels-over-surveillance-policies/",
+   "requires": [
+    "Lowe's figure is from its published privacy statement as quoted by ADN, Lowe's did not answer ADN's questions. Flock's 7 days is the FAQ default, adjustable by local rule. Never subtract or compare as one rule."
+   ],
+   "verbatim": "typically no more than 90 days (though shorter in certain states)",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-two-source",
+   "spoken": "So the pole answers to the store and its vendor.",
+   "on_screen": "THE POLE: STORE + VENDOR RULES",
+   "source": "https://www.adn.com/alaska-news/anchorage/2026/10/06/flock-cameras-arrive-in-anchorage-while-assembly-duels-over-surveillance-policies/",
+   "requires": [
+    "Inference from c9 and c10, framed as the film's read. Flock says customers own their data and control sharing (ADN)."
+   ],
+   "verbatim": "Every customer owns their data and controls who it is shared with.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-two-source",
+   "spoken": "Ask any camera three things. What does it keep? For how long? Who gets it?",
+   "on_screen": "WHAT KEEPS \u00b7 HOW LONG \u00b7 WHO GETS IT",
+   "source": "film's own framing",
+   "requires": [
+    "OUR READ, not a sourced claim. Label it as the film's question."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "But that parking lot camera is small next to the city's own system.",
+   "on_screen": "SMALL NEXT TO THE CITY'S OWN SYSTEM",
+   "source": "https://www.muni.org/Departments/Assembly/Documents/AO%202026-108.pdf",
+   "requires": [
+    "Setup for c8, same source."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-two-source",
+   "spoken": "The store's side? A store can put a camera on its own pole.",
+   "on_screen": "A STORE'S POLE \u00b7 A STORE'S CALL",
+   "source": "film's own framing",
+   "requires": [
+    "Framing of the fair case. Do not claim a legal rule. Say can, as in nothing in either ordinance stops it (c9)."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-two-source",
+   "spoken": "So who decides what it keeps? The answer isn't who you'd think.",
+   "on_screen": "WHO DECIDES WHAT IT KEEPS?",
+   "source": "film's own framing",
+   "requires": [
+    "Question, paid at c11."
+   ],
+   "verbatim": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-two-source",
+   "spoken": "Fair points. They don't answer neighbors who want no camera at all.",
+   "on_screen": "RULES DON'T ANSWER NEIGHBORS WHO WANT NO CAMERA",
+   "source": "film's own framing",
+   "requires": [
+    "OUR READ. Residents quoted by KTUU (Zurek) object to the cameras themselves."
+   ],
+   "verbatim": "Please don't. We have enough intrusion in our lives with tracking and things.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "The members' version would delete city camera data after fourteen days.",
+   "on_screen": "MEMBERS' VERSION \u00b7 CITY DATA DELETED AFTER 14 DAYS",
+   "source": "https://www.muni.org/Departments/Assembly/Documents/AO%202026-108.pdf",
+   "requires": [
+    "Original AO 2026-108 only (the mayor's substitute removes the fixed retention). Say proposed. 14 days applies to captured plate data and to video, audio and sensor data from the city's real-time crime center, city-owned cameras and integrated camera feeds. Never imply it applies to a store's cameras."
+   ],
+   "verbatim": "permanently deleted no later than fourteen days after capture",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

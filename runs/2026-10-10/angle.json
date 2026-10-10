@@ -1,0 +1,20 @@
+{
+ "run_date": "2026-10-10",
+ "thesis": "The camera someone cut down belongs to a store and the October 20th vote governs the city's own cameras, so Anchorage is arguing about the visible pole while the rules that matter sit with a retailer, a vendor and the city, and the honest questions to ask of any automated camera are what it keeps, for how long and who gets it.",
+ "falsifier": "If either proposed ordinance (AO 2026-108 or the mayor's 108(S)) reaches the data a private business collects, or if the news and the ordinances already describe what the software extracts, the thesis is false. The facts set shows the ordinances cover city surveillance data, and the vendor's own FAQ is the only source that says machine learning and vehicle traits.",
+ "supporting_facts": [
+  "f1 Flock began installing plate readers for an unnamed private customer, cameras went up at Anchorage Lowe's stores",
+  "f6 Lowe's keeps such data typically no more than 90 days and shares with service providers and NCMEC, Flock's own FAQ default is 7 days",
+  "f7 APD doesn't use Flock and has no feed, but its own readers ride in patrol cars under an Axon contract",
+  "f8 the two proposed ordinances split on retention, outside networks and Assembly approval of purchases",
+  "f11 Flock's own FAQ says the cameras apply machine learning and capture make, color and body type, no news article calls it AI"
+ ],
+ "counterpoint": "The mayor says the Assembly version could unduly limit core APD functions, a store may put a camera on its own pole, Lowe's publishes a ceiling, and a customer's privacy statement may be rule enough. The fair case gets a full scene at full strength. And the residents who reject the capability outright aren't answered by rules about who controls it.",
+ "stance": "mixed",
+ "runner_ups": [
+  "Pure who-holds-the-data structure story (analyst 2): folded in as the three rulebooks spine.",
+  "Pro-capability governance frame (analyst 1): its counter-case became the Test scene.",
+  "Honest-AI machine vision (analyst 3): supplies the cutaway of what the machine reads and the three questions button."
+ ],
+ "second_movement": "The cameras people are fighting over aren't the biggest system in town. The city's own Axon deal is $11.8 million over five years for up to 750 camera feeds, plate readers and drones, and that is what the vote governs."
+}

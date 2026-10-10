@@ -1,0 +1,70 @@
+{
+ "run_date": "2026-10-10",
+ "title": "Who Keeps The Plate",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Flock cameras arrive in Anchorage while Assembly duels over surveillance policies",
+   "outlet": "Anchorage Daily News (Zachariah Hughes), October 7th, 2026",
+   "url": "https://www.adn.com/alaska-news/anchorage/2026/10/06/flock-cameras-arrive-in-anchorage-while-assembly-duels-over-surveillance-policies/",
+   "claims": [
+    "c1",
+    "c6",
+    "c10",
+    "c11"
+   ],
+   "used_in_film": true,
+   "note": "Fetched in full by a validator."
+  },
+  {
+   "id": "s2",
+   "title": "Downed Flock camera outside South Anchorage Lowe's confirmed, APD says no access to feed",
+   "outlet": "Alaska's News Source (KTUU), October 5th, 2026",
+   "url": "https://www.alaskasnewssource.com/2026/10/06/downed-flock-camera-outside-south-anchorage-lowes-confirmed-apd-says-no-report-filed-no-access-feed/",
+   "claims": [
+    "c2",
+    "c4",
+    "c5",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "Fetched in full by a validator."
+  },
+  {
+   "id": "s3",
+   "title": "Flock Safety FAQ",
+   "outlet": "Flock Safety",
+   "url": "https://www.flocksafety.com/faq",
+   "claims": [
+    "c3",
+    "c10"
+   ],
+   "used_in_film": true,
+   "note": "Fetched in full by a validator."
+  },
+  {
+   "id": "s4",
+   "title": "AO 2026-108 and AO 2026-108(S)",
+   "outlet": "Municipality of Anchorage Assembly",
+   "url": "https://www.muni.org/Departments/Assembly/Documents/AO%202026-108.pdf",
+   "claims": [
+    "c8",
+    "c9",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": "Fetched in full by a validator."
+  },
+  {
+   "id": "s5",
+   "title": "Stuck on details, Anchorage Assembly delays surveillance vote",
+   "outlet": "Anchorage Daily News (Bella Biondini), September 16th, 2026, via Yahoo",
+   "url": "https://www.yahoo.com/news/politics/articles/stuck-details-anchorage-assembly-delays-221100268.html",
+   "claims": [
+    "c7"
+   ],
+   "used_in_film": true,
+   "note": "Fetched in full by a validator."
+  }
+ ]
+}

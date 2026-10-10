@@ -3836,3 +3836,8 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - Shipped (commits 0298196, 7b3590f, f2826a3, fe3a624, 7921f33): scripts/run_stamp.py and board-derived mix and evidence per-run constants (date, riser beat, bed arc), make_cut.sh runs dispatch_mix.py as its own required step, held_beat_check.py names beats under 2 percent change as a preflight NOTE, dispatch_email normalises source-title punctuation and names the input a failing lint line came from.
 - Escalated: label-vs-label-gate (a fixed corner-chip lane gives false positives in older films; needs a declared chip box or a lib CornerChip).
 - Note: this pass changes dispatch_mix.py, so re-running ship_gate freshness on the shipped 10-09 cut fails by design; the next run re-mixes from scratch.
+
+## 2026-10-10 (Who Keeps the Plate)
+- Shipped: new lib/polecam.tsx family (PoleCam and the pole, plate-reader and receipt-tape parts). Panel median 7.45 against 7.0 (7.4, 7.45, 7.5). Caption rewritten five times for honesty, length and hashtag mix, scored 8.12, 8.30, 8.43, 8.48 and finally 8.57 against 8.5 with zero hard fails.
+- In-run fixes: build_scenes labels muni.org ordinance sources, honesty fixes (Lowe's never confirmed as Flock's customer, 90-day and 7-day figures kept as separate documents, 14-day deletion only in the members' version).
+- Recurring causes: held beats and long VO gaps, caption scorer plateau on hashtag craft. Queued in docs/MACHINE_QUEUE.md (4 items, one repeat offender).

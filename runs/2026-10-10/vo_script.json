@@ -1,0 +1,140 @@
+{
+ "run_date": "2026-10-10",
+ "title": "WHO KEEPS THE PLATE",
+ "note": "Figures and quotes are from ADN (October 7th), Alaska's News Source (October 5th), Flock's FAQ and the Municipality's ordinance texts. The camera, the pole and the tape are illustrations.",
+ "caption_fixups": {
+  "eleven point eight million dollars": "$11.8 million",
+  "seven hundred fifty": "750",
+  "ninety days": "90 days",
+  "October twentieth": "October 20th",
+  "fourteen days": "14 days"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A brand new camera went up on a pole at an Anchorage Lowe's. Within days, somebody cut it down.",
+   "t": "A brand new camera went up on a pole at an Anchorage Lowe's. Within days, somebody cut it down.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "It's a Flock camera, and Flock says it uses machine learning to read the plate, make, color and body type.",
+   "t": "It's a Flock camera, and Flock says it uses machine learning to read the plate, make, color and body type.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "So who decides what it keeps? The answer isn't who you'd think.",
+   "t": "So who decides what it keeps? The answer isn't who you'd think.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "Flock first told a TV station it knew of no cameras here. Then it said it was installing them for a private customer.",
+   "t": "Flock first told a TV station it knew of no cameras here. Then it said it was installing them for a private customer.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "One neighbor called it very Minority Report.",
+   "t": "One neighbor called it very Minority Report.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "But that parking lot camera is small next to the city's own system.",
+   "t": "But that parking lot camera is small next to the city's own system.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "The city's Assembly has two proposed rules, expected to go to a vote October twentieth. One is from the mayor, one from Assembly members.",
+   "t": "The city's Assembly has two proposed rules, expected to go to a vote October twentieth. One is from the mayor, one from Assembly members.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "The members' version would delete city camera data after fourteen days. The mayor says it could unduly limit core police operations.",
+   "t": "The members' version would delete city camera data after fourteen days. The mayor says it could unduly limit core police operations.",
+   "claims": [
+    "c17",
+    "c7"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "The store's side? A store can put a camera on its own pole.",
+   "t": "The store's side? A store can put a camera on its own pole.",
+   "claims": [
+    "c14"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "Fair points. They don't answer neighbors who want no camera at all.",
+   "t": "Fair points. They don't answer neighbors who want no camera at all.",
+   "claims": [
+    "c16"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "t": "Now the city's own system. Its deal with the company Axon is eleven point eight million dollars over five years, for up to seven hundred fifty feeds, plate readers and drones.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Both proposals cover city cameras. Neither covers a store's pole.",
+   "t": "Both proposals cover city cameras. Neither covers a store's pole.",
+   "claims": [
+    "c9"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "Lowe's privacy statement says it typically keeps such data no more than ninety days. Flock's own default is seven days.",
+   "t": "Lowe's privacy statement says it typically keeps such data no more than ninety days. Flock's own default is seven days.",
+   "claims": [
+    "c10"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "So the pole answers to the store and its vendor.",
+   "t": "So the pole answers to the store and its vendor.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "Ask any camera three things. What does it keep? For how long? Who gets it?",
+   "t": "Ask any camera three things. What does it keep? For how long? Who gets it?",
+   "claims": [
+    "c12"
+   ]
+  }
+ ],
+ "caption_split_after": [
+  "company axon",
+  "over five years,"
+ ]
+}
