@@ -510,9 +510,9 @@ const S8: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.04} ox={540} oy={1000} night={0.08}
       overlay={<>
         <Plate text="MEMBERS' VERSION · CITY DATA DELETED AFTER 14 DAYS" displayLines={["MEMBERS' VERSION", 'CITY DATA DELETED AFTER 14 DAYS']} x={292} y={556} size={18} tone="civic" p={ease(f, b(20) + 20, 10) * (f < b(22) ? 1 : 0)} />
-        <QuotePlate text={'"UNDULY LIMIT SOME CORE FUNCTIONS OF APD OPERATIONS" · THE MAYOR'} x={292} y={716} size={23} wrap={19} p={ease(f, b(22) + 8, 14) * (f < b(23) ? 1 : 0.35 * (1 - storeTurn) + 0.0)} />
+        <QuotePlate text={'"UNDULY LIMIT SOME CORE FUNCTIONS OF APD OPERATIONS" · THE MAYOR'} x={292} y={690} size={20} wrap={24} p={ease(f, b(22) + 8, 14) * (f < b(23) ? 1 : 0.35 * (1 - storeTurn) + 0.0)} />
         <Plate text="A STORE'S POLE · A STORE'S CALL" displayLines={["A STORE'S POLE", "A STORE'S CALL"]} x={830} y={640} size={24} tone="amber" p={ease(f, b(23) + 6, 12)} />
-        <Plate text="NOTHING IN EITHER RULE STOPS IT" displayLines={['NOTHING IN EITHER', 'RULE STOPS IT']} x={830} y={760} size={21} tone="paper" p={ease(f, b(24) + 10, 12)} />
+        <Plate text="NEITHER PROPOSAL WOULD STOP IT" displayLines={['NEITHER PROPOSAL', 'WOULD STOP IT']} x={830} y={760} size={21} tone="paper" p={ease(f, b(24) + 10, 12)} />
       </>}>
       <SVG>
         <defs>
@@ -535,7 +535,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <g transform={`translate(${mayorX + 150},${mayorY - 250 - 70 * lift})`}>
             <Folder x={0} y={0} scale={0.8} label="CORE POLICE OPERATIONS" squeeze={close} rot={-2 * lift} />
           </g>
-          {f > b(22) - 4 && <g transform={`translate(${mayorX + 150},${mayorY - 250 - 70 * lift - 110})`} opacity={ease(f, b(22) - 4, 8)}><Clamp x={0} y={0} scale={0.8} close={close} gapOpen={188} gapClosed={126} /></g>}
+          {f > b(22) - 4 && <g transform={`translate(${mayorX + 150},${mayorY - 250 - 70 * lift - 48})`} opacity={ease(f, b(22) - 4, 8)}><Clamp x={0} y={0} scale={0.8} close={close} gapOpen={188} gapClosed={126} /></g>}
           <rect data-band="ok" x={-20} y={-20} width={580} height={1960} fill="#000" opacity={dimL} />
         </g>
         {/* RIGHT: the store's lot */}
@@ -545,8 +545,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
           {Array.from({length: 24}, (_, i) => <circle key={i} cx={560 + rnd(i + 2) * 520} cy={rnd(i + 62) * 700} r={1.2 + (i % 3) * 0.6} fill="#fff" opacity={0.3 + 0.3 * Math.sin(f / 20 + i)} />)}
           <rect data-band="ok" x={540} y={1120} width={580} height={800} fill={PC.asphalt} />
           <Storefront f={f} x={810} y={1130} scale={0.78} sign="THE STORE" />
-          <BarePole x={810} y={1300} h={470} glint={glint} />
-          <g transform={`translate(810,${1300 - 330})`}>
+          <BarePole x={935} y={1300} h={470} glint={glint} />
+          <g transform={`translate(935,${1300 - 330})`}>
             {[0, 1, 2].map((i) => <rect key={i} x={-14} y={-8 + i * 34 - 20 * wrap} width={28} height={14} fill={PC.paper} stroke={INK} strokeWidth={2.6} opacity={wrap > 0.05 + i * 0.25 ? 1 : 0} transform={`skewY(${i % 2 ? -14 : 14})`} />)}
           </g>
           <ShoppingCart f={f} x={(560 + f * 0.9) % 700 + 500} y={1440} scale={0.8} />
@@ -633,12 +633,12 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill="#0C1620" />
         <rect data-band="ok" x={-20} y={1240} width={1120} height={800} fill="#16232D" stroke={INK} strokeWidth={5} />
         <FeedWall f={f} x={90} y={650} pulse={pulse} beam={beam} />
-        <rect data-band="ok" x={90 + ((f * 7) % 980) - 80} y={650} width={70} height={270} fill={PC.civic} opacity={0.14} />
+        <rect data-band="ok" x={90 + ((f * 7) % 1100) - 200} y={650} width={200} height={270} fill={PC.civic} opacity={0.07} />
         {/* the patrol car carries CITY'S AXON DEAL on its door */}
         <PatrolCar f={f} x={carX} y={1285} scale={0.8} roll={f * 10} pod={ease(f, b(31), 10)} />
         <g transform={`translate(${carX + 8},${1285 - 52})`}><rect x={-70} y={-16} width={140} height={32} rx={3} fill={PC.civicDeep} stroke={INK} strokeWidth={3} /><text y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={13} letterSpacing={0.5} fill="#F4F1E6">CITY'S AXON DEAL</text></g>
         {beam > 0.02 && <path d={`M ${carX - 50} ${1285 - 105} L ${lerp(carX - 50, 140, beam)} ${lerp(1285 - 105, 940, beam)}`} stroke={PC.cyan} strokeWidth={4} strokeDasharray="12 9" strokeDashoffset={-f * 3} opacity={0.8} />}
-        <Drone f={f} x={lerp(1010, 700, drone) + 14 * Math.sin(f / 21)} y={lerp(1000, 1040, drone) + 10 * Math.sin(f / 13)} scale={0.8} tilt={lerp(14, -3, drone)} />
+        <Drone f={f} x={lerp(420, 700, drone) + 14 * Math.sin(f / 21)} y={lerp(960, 1040, drone) + 10 * Math.sin(f / 13)} scale={0.8} tilt={lerp(14, -3, drone)} />
         {/* the lot's own camera stands OUTSIDE the wall, amber, and shrinks */}
         <PoleCam f={f} x={950} y={1290} h={430} scale={shrink} mood="calm" look={-1} flip phase={4} />
         <g transform="translate(950,1290)"><ellipse cx={0} cy={-6} rx={90 * shrink * 2} ry={16} fill={PC.sodium} opacity={0.3} /></g>
@@ -667,7 +667,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         {/* the city's things, seen from above */}
         <g transform="translate(240,790)">
           <rect x={-150} y={-62} width={300} height={124} rx={10} fill="#0B1219" stroke={INK} strokeWidth={5} />
-          {Array.from({length: 60}, (_, i) => <circle key={i} cx={-136 + (i % 20) * 14.4} cy={-44 + Math.floor(i / 20) * 40} r={4.6} fill={rnd(i + 2) > 0.7 ? '#E8E4D8' : '#1C2F39'} />)}
+          {Array.from({length: 60}, (_, i) => <circle key={i} cx={-136 + (i % 20) * 14.4} cy={-44 + Math.floor(i / 20) * 40} r={4.6} fill="#1C2F39" stroke={PC.civic} strokeWidth={1.4} />)}
         </g>
         <g transform={`translate(${560 + 30 * Math.sin(f / 60)},960)`}>
           <rect x={-70} y={-30} width={140} height={60} rx={14} fill="#E9ECEF" stroke={INK} strokeWidth={5} />
