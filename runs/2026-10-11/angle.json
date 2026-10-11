@@ -1,0 +1,26 @@
+{
+ "run_date": "2026-10-11",
+ "thesis": "A study meant to fly medicine to rural Alaska turned into a cleaner record of what rural shelves charge, because AI wrote the tedious code and a person still checks it, and since the federal rule starts rural Alaska's food plan from an Anchorage price, measured rural prices are a different kind of evidence whose weight waits on publication and on USDA.",
+ "falsifier": "If the zone adjustments in the federal rule are already built from refreshed rural shelf checks, or if the cleaned rural prices once published match the Anchorage-plus-zone figures, the thesis is false. The claims file settles neither, so the film asks it and does not rule.",
+ "supporting_facts": [
+  "c3 Jones: what it became is significantly more than transportation research",
+  "c4 AI-written code helped clean the price data",
+  "c5 Quebec researchers spent hundreds of hours by hand (per ADN)",
+  "c8 7 CFR 273.10 starts Alaska plans from Anchorage food prices, adjusted by zone",
+  "c9 Jones says the code still needs human oversight"
+ ],
+ "counterpoint": "One city price plus fixed zones is stable and auditable, and scattered rural prices are noisy. The study is unpublished, USDA action is a hope, the 40 years is the Daily News's description, and the whole story rests on one outlet. Jones built the caution in himself by saying the code needs human oversight.",
+ "runner_ups": [
+  {
+   "lens": "Structuralist",
+   "lost_because": "Led with the rule being wrong-shaped, which the facts cannot support. Its closing question is kept."
+  },
+  {
+   "lens": "Auditor",
+   "lost_because": "Would have audited a researcher who only claimed a hope. Its distance-to-a-changed-benefit ledger is kept as the third act."
+  }
+ ],
+ "valence": "mixed (curious, leaning celebratory on the capability, open on the outcome)",
+ "stance": "curious",
+ "cross_challenge": "The three proposals converged on the facts and were each stress-tested against their own strongest counterpoint. Synthesis challenge: is it a booster piece (no, c6 and c10 cap it), a scold (no, Jones is credited for building the caution in), a list (no, the chain is origin, accident, code, rule, test, open question)."
+}

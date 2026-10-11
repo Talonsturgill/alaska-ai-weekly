@@ -912,3 +912,17 @@ flow high, gate open and spill high, and the picture says it without a caption.
 - `LotNight`, `ShoppingCart`, `Storefront`, `ServerBox`, `Ladder` (`lib/polecam.tsx`) — NET-NEW 2026-10-10. LotNight is the home set: blue-slate night, a ridge, a store (or none with `store={null}`), sodium lamp poles with light pools, parking lines, snow banks and a near plane. COLOUR LICENCE: amber means only the store, magenta only the vendor, civic blue only the city, cyan only the machine reading.
 - `SawBlade`, `HandSign`, `ScanBeam`, `NoCameraSign` (`lib/polecam.tsx`) — NET-NEW 2026-10-10. HandSign is scribble strokes with no letterforms. NoCameraSign was cut from the film and is unused.
 - Episode-local in Ep1010.tsx, candidates for promotion: `BarePole`, `StreetNight`, `ShadowHand`, `Sheet`, `Frame` with its `overlay` prop, `Plate`, `QuotePlate`.
+
+## GROCER, 2026-10-11 (hero of "This Crate Was Supposed To Fly") — lib/grocer.tsx
+- `KraftTag` (lib/grocer.tsx) NET-NEW 2026-10-11, the throughline price tag on a string with swappable faces (blank, smudge, ruled, measured, rule, stamped), a flip through edge-on, a continuous `spin`, a destination line that can fill in dotted, and a stamp state. It exists because newsroom `PriceTag` carries only text lines and can't hold a barcode, a destination line or a stamp. ACTIVE.
+- `SteelTag` (lib/grocer.tsx) NET-NEW 2026-10-11, the Anchorage rule tag, a steel plate with a barcode, text sized to its string by arithmetic. ACTIVE.
+- `GroceryShelf` (lib/grocer.tsx) NET-NEW 2026-10-11, a three-tier rural grocery shelf whose edge tags can be messy (`mess`) or snapped to ruled rows (`snap`). ACTIVE.
+- `CodeSheet` (lib/grocer.tsx) NET-NEW 2026-10-11, a mint self-lit code sheet that prints line by line (`progress`) and sweeps a cleaning comb (`comb`). Mint means only AI-written code. ACTIVE.
+- `ZoneBeam` and `ZoneWeights` (lib/grocer.tsx) NET-NEW 2026-10-11, the rule's steel beam with hooks and snow loading, and three IDENTICAL gold weights in a fan that can slide out and light up in turn, so nothing implies which zone costs more. ACTIVE.
+- `Rotors` (lib/grocer.tsx) NET-NEW 2026-10-11, four quadcopter rotor booms for a cargo crate, `spin` and `fold`, drawn around FlightCrate's origin. ACTIVE.
+- `DriftStack` (lib/grocer.tsx) NET-NEW 2026-10-11, a paper and tag stack that grows to a height. ACTIVE.
+- `UsdaMarker` (lib/grocer.tsx) NET-NEW 2026-10-11, a plain green signpost with no door, lock or lights because nothing has been decided. ACTIVE.
+- `Calipers` (lib/grocer.tsx) NET-NEW 2026-10-11, nickel calipers that open between two points. ACTIVE.
+- `RuralSwirl` (lib/grocer.tsx) NET-NEW 2026-10-11, a gust of loose tags on jittering orbits. ACTIVE.
+- `Barcode` (lib/grocer.tsx) NET-NEW 2026-10-11, a bar glyph with no digits whose mess can be dialled from clean to doubled and smeared. ACTIVE.
+- Episode-local in Ep1011.tsx, candidates for promotion: `DawnTundra`, `CrateOnTundra`, `DrawerWall`, `ProofDesk`, `StoreWall`, `MapTable`, `Silhouette` (with `work`), `Plate`, `QuotePlate`, `Frame`.

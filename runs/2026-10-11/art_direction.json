@@ -1,0 +1,102 @@
+{
+ "run_date": "2026-10-11",
+ "palette": {
+  "sky": "#8FB0D0 glacier zenith to #B4B6D4 to #E0AABA to #F2A58E rose at the horizon, no ink or indigo stop",
+  "ground": "#EEF3F5",
+  "hero": "#C49A5A",
+  "accent": "#D9362B",
+  "shadow": "#101826",
+  "roles": {
+   "kraft #C49A5A": "only the price tag, the throughline. Honest overlap, 10-09 also used kraft and paper. Here kraft is the one brown in every frame it appears in, and plates use snow-white paper #F4F1EA.",
+   "first_light_rose #F2A58E and glacier_blue #7FB4D6": "the tundra, the sky and the map, the rural world",
+   "steel #5E7388": "only the federal rule (the beam, the steel tag, the panel that wipes in)",
+   "zone_gold #F2C14E": "only the three zone weights",
+   "mint #58E0B0": "only AI-written code, on self-lit glyphs and the comb ray",
+   "pen_red #D9362B": "only the person's pen and its underlines. The NOT PUBLISHED YET stamp is inked in newsprint blue-black #2A3342, because publication status is not a human verdict",
+   "usda_green #3E7B4E": "only the USDA signpost. The store set is warm wood and desaturated spruce #2F5D50 so green stays rare",
+   "tungsten #F6D9A0": "the warm light colour inside the store and over the proof desk",
+   "ink #101423": "the shared outline, and the figure at the Quebec desk",
+   "instrument metal": "nickel #A9B4BC with a deeper #6E7C88, at least 25 L* away from kraft so the tag is the only brown. Never brass on the calipers or the inspection light. The tally counter is a shelf asset and keeps its brass, which sits at the Quebec desk only."
+  },
+  "support": {
+   "snow": "#EEF3F5 with shade #B9C8D2",
+   "spruce": "#2F5D50 with deep #1D3F36",
+   "paper": "#F4F1EA"
+  }
+ },
+ "light": {
+  "time_of_day": "first light on open tundra, then warm interior store light, then flat Anchorage morning, then a snowy bluff yard",
+  "direction": "low rose key from frame left on the tundra, soft overhead fill indoors, cool steel fill on the Anchorage beam",
+  "key": "first_light_rose #F2A58E low from the left, warm tungsten #F6D9A0 inside the store",
+  "fill": "glacier blue #7FB4D6",
+  "rim": "rose rim on the crate edge and the tag's kraft, mint self-light from the code sheet",
+  "depth": "Planes stages (tundra-dawn, tundra-map, store-shelf, anchorage, beam-yard, usda-marker, tundra-rope) run at least three parallax layers: sky and ridge slowest, set and props next, snow, dust and near tussocks fastest. Locked stages (shelf-and-code, split-quebec-oversight, rule-archive, proof-desk) are deliberate diagrams where depth adds nothing and the parts move instead.",
+  "per_stage": {
+   "tundra-dawn": "rose key low from the left as side light with a rose rim on the crate edge and a long soft shadow, glacier fill, ridge parallax 0.25, tundra 0.6, crate 1.0, tussocks 1.2",
+   "tundra-map": "the same dawn with a high pale map card in front, a cool flat plate, pin pulses rose",
+   "store-shelf": "warm tungsten key from the ceiling lamp, spruce shelves, kraft tags catch the light, wall parallax 0.6, shelf 1.0, floor 1.2",
+   "shelf-and-code": "one tungsten shelf key from above left and mint self-light spilling from the code sheet onto the grid and the nearest cans, spill direction right to left",
+   "split-quebec-oversight": "warm desk lamp on the left half, cool white lamp on the right, the seam a hard light edge, the steel panel a cool rim when it wipes in",
+   "anchorage": "flat morning light, steel beam with a cool fill and gold weights as the only warm accent",
+   "beam-yard": "overcast diffuse light on a snowy bluff, a nickel inspection light moving along the beam, the gust side a little darker",
+   "proof-desk": "one cool white lamp pool on a pale slate wall, a warm kraft tag the only warm value",
+   "usda-marker": "cool blue map table, the glacier dotted line the light source, the signpost lit only by the line's glow",
+   "tundra-rope": "S11 reverses the camera into the sun, so the tags read as backlit with a kraft rim and shadows toward the camera. S12 turns back to the S1 side key so the loopback frame matches S1 exactly.",
+   "rule-archive": "a cool steel wall with one warm lamp pool, the shelf tag the warmest value, the labelled drawer lit a step brighter"
+  }
+ },
+ "shape_language": {
+  "contrast": "Geometry, stated as radii. The crate has heavily rounded corners (about 18 percent of its short side), a pillowy lid and a round gauge, the tag has a clipped corner, a round eyelet and a soft string catenary. The beam, weights and signpost are hard, bevelled and bolted with 0 to 2 px corner radius. The swirl is jagged, with irregular rotations. Instruments (calipers, code sheet, shelf, stack) are rectilinear. The person's pen is a round character shape.",
+  "why": "A soft kraft tag against a hard steel beam against a loose swirl draws a measured shelf price, a rule that starts from one city price and the noise of scattered rural prices, with no villain."
+ },
+ "casting": {
+  "hero": "FlightCrate (clinic.tsx, hero 2026-09-11) as the study's origin, with the new KraftTag (grocer.tsx) as the throughline. KraftTag is new because the shelf PriceTag carries only text lines and cannot hold a barcode, a CHECKED BY box, a stamp or a destination line.",
+  "net_new": {
+   "KraftTag": "throughline tag with swappable faces",
+   "SteelTag": "the Anchorage rule tag on the beam",
+   "GroceryShelf": "rural shelf whose edge tags can be messy or ruled",
+   "CodeSheet": "mint code sheet with a comb sweep",
+   "ZoneBeam": "the rule's steel beam with hooks",
+   "ZoneWeights": "three identical zone weights in a fan",
+   "Rotors": "quadcopter rotor booms for a cargo crate",
+   "DriftStack": "a stack of hand-matched tags that grows",
+   "UsdaMarker": "a plain signpost with no state",
+   "Calipers": "nickel calipers",
+   "RuralSwirl": "a gust of loose tags"
+  },
+  "reused": "AlaskaMini (kit.tsx), ReviewPen and TallyCounter (props.tsx), AnchorageSkylineBG (biomes.tsx), Snowfall (refinery.tsx). The silhouette at the Quebec desk is episode-local and sorts tags. The raven, the stamp robot and the sealed gate were cut.",
+  "why": "All of the story's objects exist on the shelf except these, and they are written as reusable lib assets in lib/grocer.tsx and registered in ASSET_MANIFEST.md.",
+  "cast_freshness": "FlightCrate was the hero on 2026-09-11, not in the last two dispatches (PoleCam 10-10, TankFace 10-09).",
+  "episode_local": {
+   "TundraRope": "a rope strung between two stakes with a catenary sag that deepens at the turn and a glint that runs along it (the signature shot's frame, about 12 parts)",
+   "InkStamp": "a hand-held wooden stamp with a grey ink plate that slams and lifts, driven by the proof desk beat and not by a character",
+   "NewsClipping": "the Anchorage Daily News clipping pinned with two pins, newsprint bars",
+   "InspectionLight": "a nickel lamp with a cone that runs along the beam",
+   "QuotePlate and Plate": "episode-local plate components sized to their strings by arithmetic",
+   "DrawerWall": "an archive wall of steel drawers with typed label cards and knobs, the one drawer that holds the rule highlighted",
+   "Silhouette": "the Quebec desk figure, sorting tags with one arm"
+  }
+ },
+ "motion_language": {
+  "world": "The tundra drifts on a slow parallax, tags fall like leaves, the code prints line by line, the beam never moves while everything near it flutters.",
+  "hero_moves": [
+   "the crate's rotors whine up, it lifts an inch and settles, drawn as a study and not as a failed flight",
+   "the rotor blades unscrew and each blade flutters into a price tag that settles on the shelf",
+   "the tag flips through edge-on to its rule face",
+   "the red pen runs down the code lines and rests on one",
+   "the stamp slams onto the tag and the tag swings on its one string",
+   "the calipers open and the readout becomes two empty slots"
+  ],
+  "blur": "180 degree motion blur on the crate lift and the flipping tag"
+ },
+ "composition": {
+  "focal": "the kraft tag is the best-finished thing in every frame it appears in",
+  "negative_space": "S1 and S11 leave the upper half to a pale dawn sky",
+  "safe_area": "hero action y 420 to 1320, the caption band 1336 to 1472 kept clear of hero motion, a near plane from 1475 down in every shot, plates at or below y 490 and clear of 1336",
+  "signature_shot": "Shot 11 (the rope), two tags hung from one rope between two stakes on the dawn tundra, the shelf tag and the Anchorage tag, nickel calipers open between them and the readout turned into two empty dashed slots, PUBLICATION and USDA. It is the film's open question drawn as weather and objects.",
+  "lower_third": "a near plane of snow tussocks, shelf-edge cans, desk edge or beam footing in every shot below y 1475"
+ },
+ "craft_advance": "Eleven reusable assets in lib/grocer.tsx (KraftTag, SteelTag, GroceryShelf, CodeSheet, ZoneBeam, ZoneWeights, Rotors, DriftStack, UsdaMarker, Calipers, RuralSwirl), all registered in ASSET_MANIFEST.md.",
+ "mood": "first light on the tundra and warm inside, a small curious accident rather than a scandal. A crate that was supposed to fly, a kraft price tag on a string, a shelf of rural groceries, one steady city beam and the honest question.",
+ "why": "The story is about WHERE A PRICE STARTS, so the picture is coded by role and a muted viewer can follow who did what. Against 10-10 (night slate, sodium amber, magenta, civic blue, cyan) and 10-09 (indigo dusk, ember orange, lime, kraft, paper) this film is a light daylight film at thumbnail size: pale snow and rose against two dark films. The overlap with 10-09 is kraft and paper, stated above. The sky is a pale dawn gradient, glacier at the zenith falling to rose at the horizon, so the opening frame is bright from top to foot and no indigo dusk stop repeats 10-09."
+}

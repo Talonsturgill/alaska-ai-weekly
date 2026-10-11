@@ -1,0 +1,216 @@
+{
+ "run_date": "2026-10-11",
+ "fact_check_verdict": "PASS with caveats. One independent validator re-fetched the ADN article (Tim Rockey, Oct 8th, a roundup of UAA AI research) and the federal rule text. No second outlet and no UAA, ISER or USDA page on the study exists, so every study claim is attributed to the Daily News on screen and in the VO. USDA FNS pages returned 403, so no SNAP dollar figure is cleared. The AI role is generated code, never a model setting rates.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-single-source-attributed",
+   "spoken": "UAA economist Mike Jones",
+   "on_screen": "RURAL ALASKA GROCERY PRICES",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Attribute to the Anchorage Daily News. ADN's body text calls him a UAA economics professor, only the photo caption says Institute of Social and Economic Research. Say the Daily News reported it."
+   ],
+   "verbatim": "Mike Jones is a professor of applied economics at the UAA's Institute of Social and Economic Research.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-single-source-attributed",
+   "spoken": "It started as transportation research, a study of delivering goods and medicine to rural Alaska by drone.",
+   "on_screen": "STARTED AS DRONE DELIVERY RESEARCH",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Draw delivery by drone only as the study's origin. Do not say drones are used now."
+   ],
+   "verbatim": "set out to study delivery of goods and medicine by drones to rural parts of the state",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-single-source-attributed",
+   "spoken": "\"The impetus for the study was actually transportation research. What it's become is significantly more than that.\"",
+   "on_screen": "\"SIGNIFICANTLY MORE THAN THAT\" \u00b7 MIKE JONES",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Quote as two consecutive sentences, attribute to Jones, straight quotes."
+   ],
+   "verbatim": "\"The impetus for the study was actually transportation research. What it's become is significantly more than that.\"",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-single-source-attributed",
+   "spoken": "AI-written code helped his team clean up the price data.",
+   "on_screen": "AI-WRITTEN CODE \u00b7 CLEANED THE PRICE DATA",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "The AI wrote code. Never say an AI model analyzed prices or set SNAP rates. The correction of anomalies in the product codes grocers use is ADN's paraphrase."
+   ],
+   "verbatim": "With the help of an AI-generated code, Jones and his team of researchers compiled more accurate price data",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-single-source-attributed",
+   "spoken": "Researchers in Quebec had spent hundreds of hours doing similar work by hand.",
+   "on_screen": "QUEBEC \u00b7 HUNDREDS OF HOURS BY HAND \u00b7 PER ADN",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Attribute to the Daily News. ADN names no Quebec study. Put no multiplier on the AI speedup, ADN only says efficiency improved."
+   ],
+   "verbatim": "Researchers in Quebec had taken hundreds of hours doing similar work by hand.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-single-source-attributed",
+   "spoken": "He hopes the data will inform USDA's update of SNAP benefit rates in Alaska.",
+   "on_screen": "HOPED TO INFORM USDA \u00b7 SNAP RATES IN ALASKA",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "A hope, not a decision. Say hopes. No USDA action is reported."
+   ],
+   "verbatim": "Jones is hopeful that data will inform the U.S. Department of Agriculture's update of SNAP benefit rates in Alaska.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-single-source-attributed",
+   "spoken": "The Daily News calls the formula behind rural Alaska's SNAP benefits 40 years old.",
+   "on_screen": "ADN CALLS IT A 40-YEAR-OLD FORMULA",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "The age is ADN's own description, not Jones's and not USDA's. Always say the Daily News calls it. Put no SNAP dollar figure anywhere."
+   ],
+   "verbatim": "SNAP benefits in rural Alaska are based on a 40-year-old formula.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "Under the federal rule, rural Alaska's food plan starts from Anchorage food prices and is adjusted by zone.",
+   "on_screen": "ANCHORAGE PRICES PLUS ZONE ADJUSTMENT \u00b7 7 CFR 273.10",
+   "source": "https://www.law.cornell.edu/cfr/text/7/273.10",
+   "requires": [
+    "Structure only. The rule says the Alaska plans are the 48 state plan adjusted by the price of food in Anchorage and further adjusted for urban, rural I and rural II Alaska. Do not claim the study will change it, and do not name a dollar amount."
+   ],
+   "verbatim": "The TFPs for urban, rural I, and rural II parts of Alaska shall be the TFP for the 48 States and DC adjusted ... by the price of food in Anchorage and further adjusted for urban, rural I, and rural II Alaska",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-single-source-attributed",
+   "spoken": "The code still needs a person to check it, Jones said.",
+   "on_screen": "JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Attribute to Jones as reported by ADN. Paraphrase only, the quote is not fully captured."
+   ],
+   "verbatim": "Jones said the SNAP pricing code still needs human oversight",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-single-source-attributed",
+   "spoken": "The research hasn't been published yet.",
+   "on_screen": "NOT PUBLISHED YET",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "No venue or timeline is reported. Never call the numbers findings."
+   ],
+   "verbatim": "The research hasn't been published yet",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-single-source-attributed",
+   "spoken": "Now it's about what rural groceries cost.",
+   "on_screen": "RURAL ALASKA GROCERY PRICES",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "The study tracks grocery prices in rural Alaska. Attribute to the Anchorage Daily News. Say study, never findings."
+   ],
+   "verbatim": "Tracking grocery prices, skiing speed and senior routines, ways AI is used for research at UAA",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "The rule adjusts by zone.",
+   "on_screen": "URBAN \u00b7 RURAL I \u00b7 RURAL II",
+   "source": "https://www.law.cornell.edu/cfr/text/7/273.10",
+   "requires": [
+    "The three Alaska zones named in the rule are urban, rural I and rural II. Draw them as labels only, no dollar figure and no claim about which zone costs more."
+   ],
+   "verbatim": "The TFPs for urban, rural I, and rural II parts of Alaska shall be the TFP for the 48 States and DC adjusted",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-by-absence",
+   "spoken": "It all comes from one news report.",
+   "on_screen": "ONE OUTLET \u00b7 ANCHORAGE DAILY NEWS",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Say one news report, never that the study is unconfirmed or doubtful. A validator found no second outlet and no UAA, ISER or USDA page on the study as of October 11th."
+   ],
+   "verbatim": "NOT A QUOTATION. Research finding, a validator found no second outlet and no UAA, ISER or USDA page on this study as of 2026-10-11.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "Federal law requires cost adjustments to the food plan for urban and rural Alaska.",
+   "on_screen": "FEDERAL LAW REQUIRES RURAL ALASKA ADJUSTMENT",
+   "source": "https://www.law.cornell.edu/uscode/text/7/2012",
+   "requires": [
+    "Statute 7 U.S.C. 2012(u)(3)(A) tells the Secretary to adjust the thrifty food plan for Hawaii and the urban and rural parts of Alaska. Do not say Congress chose Anchorage prices, that choice is the regulation in 7 CFR 273.10."
+   ],
+   "verbatim": "make cost adjustments in the thrifty food plan for Hawaii and the urban and rural parts of Alaska",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

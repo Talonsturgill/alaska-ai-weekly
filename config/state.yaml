@@ -2416,3 +2416,42 @@ dispatch_history:
       reading
     metaphor: a camera's receipt tape of what it saw, and three coloured rulebooks
       (store, vendor, city) fighting over who may cut it
+- date: '2026-10-11'
+  topic: UAA drone study becomes rural grocery price study, SNAP food plan
+  slug: dispatch-2026-10-11
+  key_entities:
+  - UAA
+  - Mike Jones
+  - Anchorage Daily News
+  - USDA
+  - SNAP
+  archetype: explainer
+  palette: first-light rose and glacier ice, kraft, steel
+  voice: Sulafat
+  stance: curious
+  angle: A rule that starts from one Anchorage price and three zones can't see what
+    an individual rural town pays, and a UAA study is now measuring rural grocery
+    prices.
+  hero: FlightCrate
+  cast:
+  - FlightCrate
+  - KraftTag
+  - SteelTag
+  - GroceryShelf
+  - CodeSheet
+  - ZoneBeam
+  - DrawerWall
+  - Calipers
+  composition:
+    pov: eye-level-immersive
+    motion_vector: vertical-rise
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: editorial-schematic
+    camera_strategy: rise-reveal
+    light_story: dawn-backlight
+    palette: first-light rose and glacier ice tundra, spruce shelves, kraft tags,
+      steel beam with gold zone weights, mint code, pen red
+    metaphor: a kraft price tag on a string that started on a medicine crate, passes
+      through a code comb and a red pen, and hangs beside a steel beam that prices
+      rural Alaska from Anchorage
