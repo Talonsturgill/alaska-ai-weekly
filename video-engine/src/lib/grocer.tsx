@@ -12,7 +12,7 @@ export const PAL = {
   ink: INK, kraft: '#C49A5A', kraftShade: '#8F6B36', kraftHi: '#E3C58C', paper: '#F1E8D2', snow: '#EEF3F5', snowShade: '#B9C8D2',
   rose: '#F2A58E', glacier: '#7FB4D6', tundraInk: '#1E2B3A', spruce: '#2F5D50', spruceDeep: '#1D3F36',
   red: '#D9362B', steel: '#5E7388', steelHi: '#8EA2B5', steelDeep: '#3C4B5B', gold: '#F2C14E', goldDeep: '#B98A1E',
-  mint: '#58E0B0', mintDeep: '#1F8F6C', green: '#3E7B4E', greenDeep: '#27513A', raven: '#151A22', brass: '#C79A3B',
+  mint: '#58E0B0', mintDeep: '#1F8F6C', green: '#3E7B4E', greenDeep: '#27513A', raven: '#151A22', brass: '#C79A3B', nickel: '#A9B4BC', nickelDeep: '#6E7C88',
 };
 
 export const monoW = (text: string, size: number, ls = 1.5) => text.length * size * 0.602 + ls * (text.length - 1);
@@ -51,13 +51,7 @@ export type TagFace = 'blank' | 'smudge' | 'ruled' | 'measured' | 'rule' | 'stam
 const FaceContent: React.FC<{face: TagFace; w: number; h: number; tick?: number; f: number; destDots?: number; label?: string; label2?: string; stamp?: number}> =
 ({face, w, h, tick = 0, f, destDots = 0, label, label2, stamp = 0}) => {
   const bc = (mess: number, seed: number) => <Barcode x={-w / 2 + 28} y={64} w={w - 56} h={44} seed={seed} mess={mess} />;
-  const box = (
-    <g transform={`translate(${-w / 2 + 28},${h - 62})`}>
-      <rect x={0} y={0} width={36} height={36} fill={PAL.paper} stroke={PAL.ink} strokeWidth={4} />
-      {tick > 0.02 && <path d={`M 6 20 L 15 30 L ${6 + 28 * tick} ${30 - 28 * tick}`} fill="none" stroke={PAL.red} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" />}
-      <text x={50} y={26} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1} fill={PAL.ink}>CHECKED BY</text>
-    </g>
-  );
+  const box = null;
   if (face === 'blank') {
     return (
       <g>
@@ -103,9 +97,9 @@ const FaceContent: React.FC<{face: TagFace; w: number; h: number; tick?: number;
         {bc(0, 7)}
         {box}
         <g transform={`translate(0,${h * 0.55}) rotate(-9) scale(${1 + 0.5 * (1 - clamp01(stamp))})`} opacity={clamp01(stamp * 2.4)}>
-          <rect x={-136} y={-30} width={272} height={60} fill="none" stroke={PAL.red} strokeWidth={6} />
+          <rect x={-136} y={-30} width={272} height={60} fill="none" stroke="#2A3342" strokeWidth={6} />
           <rect x={-136} y={-30} width={272} height={60} fill={PAL.paper} opacity={0.55} />
-          <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={21} letterSpacing={0.5} fill={PAL.red}>{label ?? 'NOT PUBLISHED YET'}</text>
+          <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={21} letterSpacing={0.5} fill="#2A3342">{label ?? 'NOT PUBLISHED YET'}</text>
         </g>
       </g>
     );
@@ -116,7 +110,7 @@ const FaceContent: React.FC<{face: TagFace; w: number; h: number; tick?: number;
       <rect x={-w / 2 + 22} y={22} width={w - 44} height={44} fill={PAL.steel} stroke={PAL.ink} strokeWidth={4} />
       <text x={0} y={52} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} letterSpacing={2} fill={PAL.snow}>ANCHORAGE</text>
       <text x={0} y={104} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} letterSpacing={2} fill={PAL.ink}>+ ZONE</text>
-      {[-1, 0, 1].map((k) => <circle key={k} cx={k * 52} cy={140} r={13} fill={PAL.gold} stroke={PAL.ink} strokeWidth={4} />)}
+      {[-1, 0, 1].map((k) => <g key={k} transform={`translate(${k * 62},146)`}><ellipse rx={20} ry={11} fill="none" stroke={PAL.steelDeep} strokeWidth={6} /><ellipse rx={9} ry={4} fill="none" stroke={PAL.steelDeep} strokeWidth={4} opacity={0.6} /></g>)}
       {label2 && <text x={0} y={h - 22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={1} fill={PAL.ink} opacity={0.7}>{label2}</text>}
     </g>
   );
@@ -401,7 +395,7 @@ export const UsdaMarker: React.FC<{x: number; y: number; f: number; scale?: numb
 /** Brass calipers opening between two points. Origin = pivot (top). `open` 0..1. */
 export const Calipers: React.FC<{x: number; y: number; f: number; scale?: number; open?: number; legLen?: number}> = ({x, y, f, scale = 1, open = 1, legLen = 360}) => {
   const a = 6 + 26 * clamp01(open) + 1.2 * Math.sin(f / 7);
-  const T = tones(PAL.brass);
+  const T = tones(PAL.nickel);
   const id = `cal-${Math.round(x)}-${Math.round(y)}`;
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`}>
