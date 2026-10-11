@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, staticFile, useCurrentFrame} from 'remotion';
 import {FlightCrate} from './lib/clinic';
-import {KraftTag, Rotors, GroceryShelf, CodeSheet, ZoneBeam, DriftStack, UsdaGate, Calipers, RuralSwirl, SteelTag, PAL} from './lib/grocer';
+import {KraftTag, Rotors, GroceryShelf, CodeSheet, ZoneBeam, DriftStack, UsdaMarker, ZoneWeights, Calipers, RuralSwirl, SteelTag, PAL} from './lib/grocer';
 import {GradeLayer} from './lib/lighting';
 import {AlaskaMini} from './lib/kit';
 import {StampBot} from './lib/credentials';
@@ -33,9 +33,9 @@ export const GrocerLook: React.FC = () => {
           <CodeSheet x={540} y={1500} f={f} w={420} h={300} progress={0.7} comb={0.5} />
         </g>}
         {panel === 2 && <g>
-          <ZoneBeam x={540} y={500} f={f} />
+          <ZoneBeam x={540} y={500} f={f} /><ZoneWeights x={435} y={620} f={f} />
           <SteelTag x={540} y={600} f={f} />
-          <UsdaGate x={540} y={1700} f={f} scale={0.9} />
+          <UsdaMarker x={540} y={1700} f={f} scale={0.9} />
         </g>}
         {panel === 3 && <g>
           <rect y={1300} width={1080} height={620} fill="#EEF3F5" />

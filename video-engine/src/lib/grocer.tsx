@@ -302,11 +302,10 @@ export const CodeSheet: React.FC<{x: number; y: number; f: number; w?: number; h
   );
 };
 
-/** The rule's steel beam on two posts with a hook for a tag and three gold zone weights on chains. Origin = beam centre top. */
-export const ZoneBeam: React.FC<{x: number; y: number; f: number; scale?: number; weights?: number; w?: number; labels?: boolean; sway?: number}> = ({x, y, f, scale = 1, weights = 1, w = 820, labels = true, sway = 0}) => {
+/** The rule's steel beam on two posts with hooks for tags. Origin = beam centre top. Hooks sit at the given beam-local x positions. */
+export const ZoneBeam: React.FC<{x: number; y: number; f: number; scale?: number; w?: number; hooks?: number[]; snow?: number}> = ({x, y, f, scale = 1, w = 820, hooks = [-110, 290], snow = 0}) => {
   const T = tones(PAL.steel);
   const id = `zb-${Math.round(x)}-${Math.round(y)}`;
-  const names = ['URBAN', 'RURAL I', 'RURAL II'];
   return (
     <g transform={`translate(${x},${y}) scale(${scale})`}>
       <defs><FormGradient id={id} t={T} /></defs>
@@ -320,21 +319,39 @@ export const ZoneBeam: React.FC<{x: number; y: number; f: number; scale?: number
       <rect x={-w / 2} y={0} width={w} height={64} fill={`url(#${id})`} stroke={PAL.ink} strokeWidth={8} />
       <rect x={-w / 2} y={0} width={w} height={14} fill="#fff" opacity={0.22} />
       {Array.from({length: 13}, (_, i) => <circle key={i} cx={-w / 2 + 40 + i * ((w - 80) / 12)} cy={46} r={5} fill={PAL.steelDeep} stroke={PAL.ink} strokeWidth={2} />)}
-      <path d="M 0 64 L 0 100" stroke={PAL.ink} strokeWidth={8} strokeLinecap="round" />
-      <circle cx={0} cy={106} r={9} fill={PAL.steelHi} stroke={PAL.ink} strokeWidth={5} />
+      {hooks.map((hx, i) => (
+        <g key={i}>
+          <path d={`M ${hx} 64 L ${hx} 92`} stroke={PAL.ink} strokeWidth={8} strokeLinecap="round" />
+          <circle cx={hx} cy={98} r={9} fill={PAL.steelHi} stroke={PAL.ink} strokeWidth={5} />
+        </g>
+      ))}
+      {snow > 0.01 && (
+        <g>
+          <path d={`M ${-w / 2 + 10} 2 Q ${-w / 4} ${-26 * snow} 0 ${-12 * snow} T ${w / 2 - 10} 2 Z`} fill={PAL.snow} stroke={PAL.ink} strokeWidth={4} />
+        </g>
+      )}
+    </g>
+  );
+};
+
+/** The three equal zone weights hanging in a fan from one point (the Anchorage tag). Origin = the point they hang from. t 0..1 slides them out; labels shows the zone names. */
+export const ZoneWeights: React.FC<{x: number; y: number; f: number; scale?: number; t?: number; labels?: number}> = ({x, y, f, scale = 1, t = 1, labels = 0}) => {
+  const names = ['URBAN', 'RURAL I', 'RURAL II'];
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`} opacity={clamp01(t * 3)}>
       {[-1, 0, 1].map((k, i) => {
-        const wx = k * (w / 2 - 130);
-        const drop = weights * (i === 1 ? 330 : 170);
-        const swing = Math.sin(f / 17 + i * 1.4) * 3 * weights + sway;
+        const wx = k * 190 * t;
+        const drop = 190 * t + 30;
+        const swing = Math.sin(f / 17 + i * 1.4) * 2.5 * t;
+        const glow = clamp01(labels * 3 - i);
         return (
-          <g key={i} opacity={clamp01(weights * 3)}>
-            <g transform={`translate(${wx},64) rotate(${swing})`}>
-              <path d={`M 0 0 L 0 ${drop}`} stroke={PAL.ink} strokeWidth={9} strokeDasharray="14 6" />
-              <g transform={`translate(0,${drop})`}>
-                <path d={`M -48 0 L 48 0 L 62 70 L -62 70 Z`} fill={PAL.gold} stroke={PAL.ink} strokeWidth={7} strokeLinejoin="round" />
-                <path d={`M -40 8 L 40 8`} stroke="#fff" strokeWidth={5} opacity={0.5} />
-                {labels && <text x={0} y={52} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={names[i].length > 6 ? 17 : 20} letterSpacing={1} fill={PAL.ink}>{names[i]}</text>}
-              </g>
+          <g key={i}>
+            <path d={`M 0 0 L ${wx} ${drop}`} stroke={PAL.ink} strokeWidth={8} strokeDasharray="14 6" />
+            <g transform={`translate(${wx},${drop}) rotate(${swing})`}>
+              <path d={`M -52 0 L 52 0 L 66 74 L -66 74 Z`} fill={PAL.gold} stroke={PAL.ink} strokeWidth={7} strokeLinejoin="round" />
+              <path d={`M -44 8 L 44 8`} stroke="#fff" strokeWidth={5} opacity={0.5} />
+              <path d={`M -52 0 L 52 0 L 66 74 L -66 74 Z`} fill="#fff" opacity={0.35 * glow * (0.6 + 0.4 * Math.sin(f / 5))} />
+              {labels > 0.01 && <text x={0} y={52} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={names[i].length > 6 ? 17 : 20} letterSpacing={1} fill={PAL.ink} opacity={glow}>{names[i]}</text>}
             </g>
           </g>
         );
@@ -364,29 +381,19 @@ export const DriftStack: React.FC<{x: number; y: number; f: number; h?: number; 
   );
 };
 
-/** The green USDA gate on the edge of a map. `open` 0..1 swings the leaves. Origin = base centre. */
-export const UsdaGate: React.FC<{x: number; y: number; f: number; scale?: number; open?: number; rise?: number}> = ({x, y, f, scale = 1, open = 0, rise = 1}) => {
+/** The USDA marker: a plain green signpost at the end of a dotted line. It has no door, no lock and no lights, because nothing has been decided. Origin = base centre. */
+export const UsdaMarker: React.FC<{x: number; y: number; f: number; scale?: number; rise?: number}> = ({x, y, f, scale = 1, rise = 1}) => {
   const T = tones(PAL.green);
-  const id = `ug-${Math.round(x)}-${Math.round(y)}`;
-  const o = clamp01(open) * 64;
+  const id = `um-${Math.round(x)}-${Math.round(y)}`;
   const r = clamp01(rise);
   return (
-    <g transform={`translate(${x},${y + (1 - r) * 340}) scale(${scale})`} opacity={clamp01(r * 3)}>
+    <g transform={`translate(${x},${y + (1 - r) * 300}) scale(${scale})`} opacity={clamp01(r * 3)}>
       <defs><FormGradient id={id} t={T} /></defs>
-      <ContactShadow cx={0} cy={4} rx={290} ry={16} opacity={0.4} />
-      {[-1, 1].map((s) => <rect key={s} x={s * 220 - 38} y={-480} width={76} height={480} fill={`url(#${id})`} stroke={PAL.ink} strokeWidth={8} />)}
-      <path d="M -258 -470 Q 0 -640 258 -470 L 258 -420 L -258 -420 Z" fill={`url(#${id})`} stroke={PAL.ink} strokeWidth={8} strokeLinejoin="round" />
-      <rect x={-130} y={-560} width={260} height={64} rx={6} fill={PAL.paper} stroke={PAL.ink} strokeWidth={6} />
-      <text x={0} y={-514} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={42} letterSpacing={6} fill={PAL.greenDeep}>USDA</text>
-      {[-1, 1].map((s) => (
-        <g key={s} transform={`translate(${s * 182},-60) scale(${1 - o / 100 * 0.0},1)`}>
-          <g transform={`skewY(${-s * o * 0.18})`}>
-            <rect x={s === -1 ? 0 : -(182)} y={-340} width={182 - o * 0.4} height={320} fill={PAL.greenDeep} stroke={PAL.ink} strokeWidth={7} />
-            {[0, 1, 2, 3, 4].map((k) => <path key={k} d={`M ${s === -1 ? 14 : -168} ${-320 + k * 62} l ${150 - o * 0.4} 0`} stroke="#000" strokeWidth={3} opacity={0.25} />)}
-          </g>
-        </g>
-      ))}
-      <circle cx={0} cy={-200} r={14} fill={PAL.brass} stroke={PAL.ink} strokeWidth={5} />
+      <ContactShadow cx={0} cy={4} rx={130} ry={14} opacity={0.4} />
+      <rect x={-16} y={-420} width={32} height={420} fill="#7B5B3A" stroke={PAL.ink} strokeWidth={7} />
+      <rect x={-170} y={-520} width={340} height={150} rx={10} fill={`url(#${id})`} stroke={PAL.ink} strokeWidth={8} />
+      <rect x={-154} y={-504} width={308} height={118} rx={6} fill="none" stroke={PAL.paper} strokeWidth={3} opacity={0.7} />
+      <text x={0} y={-418} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={64} letterSpacing={8} fill={PAL.paper}>USDA</text>
     </g>
   );
 };

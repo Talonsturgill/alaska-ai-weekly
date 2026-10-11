@@ -24,7 +24,7 @@ LINES = [
     "Now it's about what rural groceries cost.",
     "Jones's team used code written by AI to clean up the price data.",
     "Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand.",
-    "The code didn't set a single price, and Jones said it still needs human oversight.",
+    "The code didn't set a single price, and Jones said it still needs human oversight. Those shelf prices land beside a federal rule.",
     "Under federal law, SNAP benefits in rural Alaska start from a food plan priced in Anchorage and adjusted by zone. The zones are urban, rural one and rural two.",
     "The Daily News calls the formula forty years old.",
     "The case for the old way. One city price plus fixed zones is steady, and anyone can audit it.",
@@ -38,128 +38,191 @@ LINES = [
     "This drone crate was supposed to fly.",
 ]
 
-# id, shot, vo_line, fraction, sfx, subject, action, emotion, annotation, shows, rehook, kick
+# id, shot, vo_line, anchor (a fraction of the line, or ("word", nth) snapped to that spoken word), sfx, subject, action, emotion, annotation, shows, reaction, rehook
 B = [
-    (1, 1, 0, 0.00, "bloop", "FlightCrate", "lifts an inch on its rotor stubs", "hopeful", "STUDY CRATE",
-     "the FlightCrate's four rotor stubs whine up and it lifts an inch off first-light tundra as a blank kraft tag spins on its handle", "", False),
-    (2, 1, 0, 0.55, "thump", "FlightCrate", "wobbles and thumps back down", "sheepish", "STARTED AS DRONE DELIVERY RESEARCH",
-     "the crate wobbles and thumps into the snow with a dust puff while the tag swings on its string", "", False),
-    (3, 2, 1, 0.00, "whoosh", "AlaskaMini", "rises as the camera pulls back", "curious", "PER ANCHORAGE DAILY NEWS",
-     "the camera pulls back from the crate and a map plate of Alaska rises with a PER ANCHORAGE DAILY NEWS chip", "", False),
-    (4, 2, 1, 0.38, "blip", "Mike Jones silhouette", "sits at a desk behind the crate", "focused", "MIKE JONES · UAA",
-     "a faceless silhouette at a desk behind the crate gets its name plate, MIKE JONES · UAA", "", False),
-    (5, 2, 1, 0.62, "tick", "dotted flight line", "draws itself toward a village pin", "hopeful", "A DRONE DELIVERY PLAN",
-     "four rotor stubs trace a dotted flight line toward a village pin on the map, drawn as a plan and never a flight", "", False),
+    (1, 1, 0, 0.00, "bloop", "FlightCrate", "whines its rotors up and lifts an inch", "hopeful", "STUDY CRATE",
+     "the FlightCrate's four rotors whine up and it lifts an inch off first-light tundra as a blank kraft tag spins on its handle",
+     "the cottongrass flattens in the rotor wash", ""),
+    (2, 1, 0, ("fly", 1), "thunk", "FlightCrate", "settles gently back onto the snow", "wistful", "STARTED AS DRONE DELIVERY RESEARCH",
+     "the crate settles back onto the snow and the rotors wind down while the tag keeps spinning",
+     "a soft ring of snow-dust lifts and drifts off the lid", ""),
+    (3, 2, 1, 0.00, "slide", "AlaskaMini", "rises as the camera pulls back", "curious", "PER ANCHORAGE DAILY NEWS",
+     "the camera pulls back from the crate and a map plate of Alaska slides up with a PER ANCHORAGE DAILY NEWS chip",
+     "the crate shrinks onto the map and its rotors fold", ""),
+    (4, 2, 1, ("Mike", 1), "blip", "name chip", "pins to the map beside the dotted plan", "focused", "MIKE JONES · UAA",
+     "a name chip, MIKE JONES · UAA, pins to the map at the start of the route",
+     "the map pin pulses once", ""),
+    (5, 2, 1, ("delivering", 1), "tick", "dotted flight line", "draws itself toward a village pin", "hopeful", "A DRONE DELIVERY PLAN",
+     "a dotted route draws itself across the map toward a village pin, a plan and never a flight",
+     "the pin bobs as the line reaches it", ""),
     (6, 3, 2, 0.00, "whoosh", "rotor blades", "unscrew and flutter into price tags", "playful", "WHERE IS IT HEADED?",
-     "the rotor stubs unscrew, float off and each blade flutters into a kraft price tag that settles on a rural store shelf", "", False),
-    (7, 3, 3, 0.00, "page", "quote plate", "types the quote across the shelf", "earnest", "\"SIGNIFICANTLY MORE THAN THAT\" · MIKE JONES",
-     "a quote plate types Jones's two sentences while the tags settle", "", False),
-    (8, 3, 3, 0.50, "click", "crate tag", "flips to a smudged face with a blank destination line", "puzzled", "SMUDGED SHELF ENTRIES",
-     "the crate's own tag flips to scrawled illegible shelf entries and a blank destination line that pulses", "", False),
-    (9, 4, 4, 0.00, "whoosh", "grocery shelf", "slides in with a mint code sheet beside it", "curious", "RURAL ALASKA GROCERY PRICES",
-     "a rural grocery shelf slides in beside a blank mint code sheet", "rehook: new place, new question", False),
-    (10, 4, 4, 0.58, "tick", "shelf tags", "disagree about the same can", "baffled", "UNCLEANED PRICE DATA",
-     "on the shelf two tags for the same can carry codes that do not line up", "", False),
-    (11, 4, 5, 0.00, "whoosh", "code sheet", "prints mint lines and the smudged entries snap into rows", "satisfied", "AI-WRITTEN CODE · CLEANED THE PRICE DATA",
-     "the mint code sheet prints line by line and the smudged shelf entries snap one by one into ruled rows", "", False),
-    (12, 4, 5, 0.58, "click", "kraft tag", "is combed flat and set on a fresh string", "relieved", "CODE WRITTEN BY AI",
-     "the code comb passes over the tag and it comes out flat on a fresh string with its CHECKED BY box empty", "", False),
-    (13, 5, 6, 0.40, "thunk", "paper stack", "grows past the top of frame as a tally counter clicks", "weary", "QUEBEC · HUNDREDS OF HOURS BY HAND · PER ADN",
-     "on the left of a hard seam a stack of hand-matched tags grows past the top of the frame as a brass tally counter clicks", "", False),
-    (14, 5, 7, 0.00, "snap", "StampBot", "charges in with APPROVED raised and a hand stops it", "indignant", "JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT",
-     "on the right of the seam a small stamp robot charges in with APPROVED raised and a hand holding a red pen stops it", "", False),
-    (15, 5, 7, 0.60, "tick", "red pen", "hovers over the code and does not land", "careful", "CHECKED BY",
-     "the pen hovers over one code line while the CHECKED BY box on the tag stays empty", "", False),
-    (16, 6, 8, 0.00, "whoosh", "Anchorage beam", "whips in under the skyline with one crisp tag", "steady", "ANCHORAGE FOOD PRICES",
-     "a whip pan to the Anchorage skyline where a steel beam holds one crisp tag stamped ANCHORAGE", "", False),
-    (17, 6, 8, 0.38, "clunk", "zone weights", "slide out along the beam", "methodical", "ANCHORAGE PRICES PLUS ZONE ADJUSTMENT · 7 CFR 273.10",
-     "three gold zone weights slide out along the beam, URBAN, RURAL I and RURAL II, nudging copies of the tag", "", False),
-    (34, 6, 8, 0.76, "tick", "zone weights", "light up one by one", "methodical", "URBAN · RURAL I · RURAL II",
-     "the three gold zone weights light up one by one as the zones are named, URBAN, RURAL I and RURAL II", "", False),
-    (18, 6, 9, 0.00, "stamp", "kraft tag", "flips through edge-on to its back", "wry", "ADN CALLS IT A 40-YEAR-OLD FORMULA",
-     "the hero tag flips through edge-on and its back reads ANCHORAGE + ZONE under a chip, ADN CALLS IT A 40-YEAR-OLD FORMULA", "", False),
-    (19, 7, 10, 0.00, "thunk", "steady beam", "stands firm in the snow lit by a brass inspection light", "calm", "STEADY · AUDITABLE",
-     "the Anchorage beam stands firm on a snowy bluff and a brass inspection light runs along it so every part reads", "rehook: the fair case against, at full strength", False),
-    (20, 7, 10, 0.58, "tick", "zone weights", "line up on a ruled rail", "orderly", "ONE CITY PRICE PLUS FIXED ZONES",
-     "the three weights line up on a ruled rail anyone could check with a ruler", "", False),
-    (21, 7, 11, 0.00, "whoosh", "rural tags", "swirl in a gust while a raven snatches one", "chaotic", "RURAL PRICES ARE NOISY",
-     "a gust sends a cart of rural tags swirling and jittering and a raven snatches one and flaps off", "", False),
-    (22, 8, 12, 0.00, "stamp", "NOT PUBLISHED YET stamp", "lands on the hero tag", "sober", "NOT PUBLISHED YET",
-     "a stamp reading NOT PUBLISHED YET lands on the hero tag in close-up", "", False),
-    (23, 8, 12, 0.55, "click", "single chip", "pins to the top of the frame", "plain", "ONE OUTLET · ANCHORAGE DAILY NEWS",
-     "a single chip pins to the top, ONE OUTLET · ANCHORAGE DAILY NEWS, and stays", "", False),
-    (24, 9, 13, 0.00, "whoosh", "USDA gate", "rises at the edge of the map", "closed", "HOPED TO INFORM USDA · SNAP RATES IN ALASKA",
-     "a green USDA gate rises at the edge of the Alaska map with a sealed envelope beside it", "", False),
-    (25, 9, 13, 0.58, "tick", "hero tag", "drifts toward the gate and stops short", "hopeful", "A HOPE",
-     "the hero tag drifts toward the gate and stops an inch short", "", False),
-    (26, 9, 14, 0.00, "click", "crate destination line", "fills in as a dotted USDA address", "wistful", "HOPED · NOT A DECISION",
-     "the crate's blank destination line finally fills in, dotted, USDA, with a HOPED chip", "", False),
-    (27, 10, 15, 0.00, "whoosh", "two tags", "hang side by side under one lamp", "curious", "SHELF PRICE · ANCHORAGE PRICE PLUS ZONE",
-     "two tags hang side by side under one lamp, MEASURED ON THE SHELF and STARTS FROM ANCHORAGE", "rehook: the turn, a different kind of evidence", False),
-    (28, 10, 15, 0.55, "tick", "calipers", "swing open between the tags with a dotted readout", "pending", "NOBODY HAS PUBLISHED THE DISTANCE",
-     "brass calipers swing open between the two tags and the readout stays dotted", "", False),
-    (29, 10, 16, 0.00, "thunk", "red pen", "lands and ticks the CHECKED BY box", "satisfied", "CHECKED BY A PERSON",
-     "the red pen lands and ticks the CHECKED BY box on the shelf tag", "", False),
-    (30, 10, 16, 0.55, "click", "plate", "reads WAITS ON PUBLICATION AND USDA", "patient", "WAITS ON PUBLICATION AND USDA",
-     "a plate slides in under the calipers, WAITS ON PUBLICATION AND USDA", "", False),
-    (31, 11, 17, 0.00, "whoosh", "tundra crate", "back at first light with the tag spinning edge-on", "wistful", "WILL THEY MATCH ANCHORAGE PLUS A ZONE?",
-     "back on the dawn tundra the crate sits with the tag spinning edge-on between its two faces", "", False),
-    (32, 11, 17, 0.62, "riser", "rotor stubs", "twitch", "hopeful", "A QUESTION",
-     "the rotor stubs give one small twitch as the music thins", "", False),
-    (33, 11, 18, 0.00, "bloop", "FlightCrate", "lifts an inch again", "hopeful", "STUDY CRATE",
-     "the crate lifts an inch again, the frame the film opened on", "", False),
+     "the rotor blades unscrew, float off and each one flutters into a kraft price tag that settles on a rural store shelf",
+     "the shelf's own edge tags tremble as the new ones land", ""),
+    (8, 3, 3, ("impetus", 1), "click", "crate tag", "drops in and flips to a smudged face with a blank destination line", "puzzled", "SMUDGED SHELF ENTRIES",
+     "the study's tag drops in on its string and flips to scrawled illegible shelf entries and a blank destination line that pulses",
+     "the shelf tags lean to read it", ""),
+    (39, 3, 3, ("What", 1), "tick", "crate tag", "pulses its blank destination line", "puzzled", "WHERE IS IT HEADED?",
+     "the study tag's blank destination line pulses under a plate, WHERE IS IT HEADED?",
+     "the shelf tags lean toward the pulse", ""),
+    (7, 3, 3, ("significantly", 1), "page", "quote plate", "types the quote across the shelf", "earnest", "\"SIGNIFICANTLY MORE THAN THAT\" · MIKE JONES",
+     "a quote plate lands with Jones's words over the shelf",
+     "the tag stills on its string as the words land", ""),
+    (9, 4, 4, 0.00, "slide", "grocery shelf", "slides in beside a blank mint code sheet", "curious", "RURAL ALASKA GROCERY PRICES",
+     "a rural grocery shelf slides in beside a blank mint code sheet on a dark grid",
+     "the code sheet's cursor starts to blink", ""),
+    (10, 4, 4, ("groceries", 1), "tick", "shelf tags", "disagree about the same can", "baffled", "UNCLEANED PRICE DATA",
+     "on the shelf two tags for the same can carry codes that do not line up and a dashed ring circles them",
+     "the neighbouring cans lean away from the muddle", ""),
+    (11, 4, 5, ("code", 1), "page", "code sheet", "prints mint lines and the smudged entries snap into rows", "satisfied", "AI-WRITTEN CODE · CLEANED THE PRICE DATA",
+     "the mint code sheet prints line by line and the smudged shelf entries snap one by one into ruled rows",
+     "the shelf tags straighten on their pegs row by row", "rehook: the first payoff, messy becomes ruled"),
+    (12, 4, 5, ("clean", 1), "click", "kraft tag", "is combed flat and set on a fresh string", "relieved", "CODE WRITTEN BY AI",
+     "the code comb passes over the tag and it comes out flat on a fresh string with its CHECKED BY box empty",
+     "the comb ray fades out down the shelf", ""),
+    (13, 5, 6, ("hundreds", 1), "thunk", "paper stack", "grows past the top of frame as a tally counter clicks", "weary", "QUEBEC · HUNDREDS OF HOURS BY HAND · PER ADN",
+     "on the left of a hard seam a stack of hand-matched tags grows past the top of the frame as a brass tally counter clicks",
+     "the seated figure keeps sorting without looking up", ""),
+    (15, 5, 7, ("single", 1), "slide", "red pen", "runs down the code sheet that slid across the seam", "careful", "A PERSON READS THE CODE",
+     "the mint code sheet slides across the seam and a red pen runs down its lines, underlining one row at a time",
+     "the code sheet's glow dims a little under the pen", ""),
+    (14, 5, 7, ("oversight", 1), "tick", "red pen", "rests on one line and does not move on", "careful", "JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT",
+     "the pen comes to rest on one line while a plate carries Jones's caution",
+     "the Quebec stack stops growing", ""),
+    (36, 5, 7, ("federal", 1), "slide", "steel panel", "wipes in from the right edge", "steady", "FEDERAL RULE",
+     "a steel panel wipes in from the right edge of the frame, riveted and plain, and pushes the code sheet out",
+     "the seam line bends under the steel", ""),
+    (16, 6, 8, ("SNAP", 1), "whoosh", "skyline", "whips in under a pale morning", "steady", "SNAP BENEFITS · RURAL ALASKA",
+     "a whip pan to the Anchorage skyline where a steel beam stands with two empty hooks and a plate names SNAP BENEFITS IN RURAL ALASKA",
+     "the beam's rivets catch the morning light", "rehook: the pivot to the federal rule"),
+    (35, 6, 8, ("Anchorage", 1), "clunk", "steel tag", "drops onto the left hook", "steady", "ANCHORAGE FOOD PRICES",
+     "a steel tag stamped ANCHORAGE drops onto the beam's left hook",
+     "the beam dips a hair and levels", ""),
+    (17, 6, 8, ("adjusted", 1), "slide", "zone weights", "slide out from the steel tag on chains", "methodical", "ANCHORAGE PRICES PLUS ZONE ADJUSTMENT · 7 CFR 273.10",
+     "three identical gold weights slide out on chains from the steel tag and a dotted gap with a question mark opens between it and the empty right hook",
+     "the empty hook swings, waiting", ""),
+    (34, 6, 8, ("urban", 1), "tick", "zone weights", "light up one by one", "methodical", "URBAN · RURAL I · RURAL II",
+     "the three zone weights light up one by one as the zones are named, URBAN, RURAL I and RURAL II",
+     "the steel tag swings a hair with each light", ""),
+    (18, 6, 9, 0.00, "page", "kraft tag", "hangs on the empty hook and flips to its back", "wry", "ADN CALLS IT A 40-YEAR-OLD FORMULA",
+     "the shelf tag drops onto the empty hook beside the steel tag and flips through edge-on to its rule face with a chip, ADN CALLS IT A 40-YEAR-OLD FORMULA",
+     "the dotted gap with its question mark tightens between the two tags", ""),
+    (40, 7, 10, 0.00, "whoosh", "snowy bluff", "opens under falling snow", "calm", "A STEADY BEAM",
+     "a snowy bluff opens with the Anchorage beam standing in it under falling snow",
+     "the snow settles on the bluff and the light goes flat", ""),
+    (19, 7, 10, ("One", 1), "thunk", "steady beam", "stands firm on a snowy bluff lit by a brass inspection light", "calm", "ONE CITY PRICE PLUS FIXED ZONES",
+     "the Anchorage beam with its steel tag and three weights stands on a snowy bluff and a brass inspection light begins to run along it",
+     "the inspection light's cone sweeps the snow", "rehook: the fair case against, at full strength"),
+    (20, 7, 10, ("audit", 1), "tick", "beam", "stays unmoved while snow loads on top of it", "orderly", "STEADY · AUDITABLE",
+     "snow loads onto the beam's top edge and the beam does not move",
+     "the weights barely sway", ""),
+    (21, 7, 11, 0.00, "whoosh", "rural tags", "swirl in a gust that also hits the shelf tag", "chaotic", "RURAL PRICES ARE NOISY",
+     "a gust sends a cart of rural tags swirling and jittering and blurs the shelf tag's clean rows back toward the smudge before they settle",
+     "the post and its crossbar creak", ""),
+    (38, 7, 11, ("noisy", 1), "slide", "swirl tags", "two of them tear away and blow off the frame", "chaotic", "SCATTERED SHELF TAGS",
+     "two loose tags tear away from the swirl and tumble off the right edge",
+     "the remaining tags jitter and rebalance", ""),
+    (22, 8, 12, ("published", 1), "stamp", "NOT PUBLISHED YET stamp", "lands on the shelf tag", "sober", "NOT PUBLISHED YET",
+     "a stamp reading NOT PUBLISHED YET slams onto the shelf tag, which hangs from a single string tied to a news clipping",
+     "the tag swings on its one string and ink flecks the clipping", ""),
+    (23, 8, 12, ("one", 2), "click", "single chip", "pins under the tag", "plain", "ONE OUTLET · ANCHORAGE DAILY NEWS",
+     "a chip pins under the tag, ONE OUTLET · ANCHORAGE DAILY NEWS, and the string it hangs by stays taut",
+     "the clipping's pins catch the lamp", ""),
+    (24, 9, 13, 0.00, "slide", "USDA marker", "rises at the edge of the map", "plain", "HOPED TO INFORM USDA · SNAP RATES IN ALASKA",
+     "a plain green USDA signpost rises at the edge of the Alaska map with a dotted line growing toward it",
+     "the dotted line marches as it grows", ""),
+    (25, 9, 13, ("inform", 1), "tick", "shelf tag", "drifts along the dotted line and stops short", "hopeful", "A HOPE",
+     "the shelf tag drifts along the dotted line and stops a clear gap short of the signpost",
+     "the tag's string slackens and it sways to a halt", ""),
+    (26, 9, 14, ("hope", 1), "click", "tag destination line", "fills in as a dotted USDA address", "wistful", "HOPED · NOT A DECISION",
+     "the tag flips and its blank destination line fills in, dotted, USDA, with a HOPED chip",
+     "the signpost stays unlit and unchanged", ""),
+    (27, 10, 15, 0.00, "clunk", "two tags", "swing in on a rope between two stakes", "curious", "SHELF PRICE · ANCHORAGE PRICE PLUS ZONE",
+     "on the dawn tundra a shelf tag and an Anchorage tag swing in on a rope strung between two stakes",
+     "the rope sags and the stakes lean", "rehook: the turn, a different kind of evidence"),
+    (28, 10, 15, ("Anchorage", 1), "tick", "calipers", "swing open between the tags with a dotted readout", "pending", "NOBODY HAS PUBLISHED THE DISTANCE",
+     "brass calipers swing open between the two tags and the readout stays dotted",
+     "the two tags settle out of phase", ""),
+    (29, 10, 16, ("weighs", 1), "click", "readout", "turns into two empty slots", "patient", "PUBLICATION · USDA",
+     "the dotted readout becomes two empty dashed slots, PUBLICATION and USDA, and nothing fills them",
+     "the calipers hold their opening", ""),
+    (30, 10, 16, ("waits", 1), "page", "plate", "reads WAITS ON PUBLICATION AND USDA", "patient", "WAITS ON PUBLICATION AND USDA",
+     "a plate slides in over the slots, WAITS ON PUBLICATION AND USDA",
+     "the rope sways once in a breath of wind", ""),
+    (31, 11, 17, 0.00, "whoosh", "tundra crate", "is parked at first light with the tag spinning edge-on", "wistful", "WILL THEY MATCH ANCHORAGE PLUS A ZONE?",
+     "back on the dawn tundra the crate sits parked with its rotors furled and the tag spinning edge-on between its two faces",
+     "the clouds drift and the grass shivers", ""),
+    (32, 11, 17, ("zone", 1), "riser", "rotors", "unfold with a small twitch", "hopeful", "A QUESTION",
+     "the rotors unfold with a small twitch as the music thins",
+     "the cottongrass leans toward the crate", ""),
+    (33, 11, 18, 0.00, "bloop", "FlightCrate", "begins to spin its rotors again", "hopeful", "STUDY CRATE",
+     "the rotors begin to turn again, the frame the film opened on, and the tag keeps spinning",
+     "the snow-dust lifts off the lid", ""),
 ]
 
 # id, vo_line, framing, scale, height, stage, pov, layout, motion_vector, hero_treatment, transition_in, thread, title, means
 S = [
     (1, 0, "subject-portrait", "wide", "ground", "tundra-dawn", "eye-level-immersive", "single-object-void", "vertical-rise", "single-organic-hero", "", "",
-     "The crate that couldn't fly", "A FlightCrate on first-light tundra lifts an inch and thumps back."),
+     "The crate that was supposed to fly", "A FlightCrate on first-light tundra whines its rotors up, lifts an inch and settles."),
     (2, 1, "map-territory", "extreme-wide", "high", "tundra-map", "orbital-aerial", "map-territory", "horizontal-traverse", "landscape-as-subject", "push-in", "carry",
      "The study that was supposed to fly", "The camera pulls back from the crate to a map of Alaska with a dotted drone plan."),
     (3, 2, "push-detail", "medium", "eye", "store-shelf", "macro-closeup", "stacked-layers", "vertical-descent", "multiplicity-swarm", "match-cut", "match",
      "Blades become price tags", "The rotor blades flutter into kraft price tags that settle on a rural store shelf."),
     (4, 4, "macro-closeup", "close", "eye", "shelf-and-code", "instrument-screen", "hud-instrument-frame", "scroll-data", "data-as-subject", "whip-pan", "travel",
      "The code that cleaned the shelf", "A rural grocery shelf beside a mint code sheet that prints and combs the smudged tags into rows."),
-    (5, 6, "two-up", "wide", "high", "split-quebec-oversight", "eye-level-immersive", "fullbleed-split", "vertical-rise", "structure-as-subject", "match-action", "match",
-     "Hours by hand, and the pen", "A hard seam splits a Quebec desk of hand-matched tags from a red pen that stops a stamp robot."),
+    (5, 6, "two-up", "wide", "high", "split-quebec-oversight", "eye-level-immersive", "fullbleed-split", "vertical-rise", "structure-as-subject", "carried-element", "carry",
+     "Hours by hand, and the person checking", "A hard seam splits a Quebec desk of hand-matched tags from the mint code sheet and a red pen that reads down it."),
     (6, 8, "map-territory", "extreme-wide", "high", "anchorage", "exploded-diagram", "grid-modular", "assemble-build", "structure-as-subject", "whip-pan", "travel",
-     "The starting price", "A steel beam under the Anchorage skyline holds one tag and three zone weights."),
+     "The starting price", "A steel beam under the Anchorage skyline holds one tag and three zone weights and waits with an empty hook."),
+    (61, 9, "push-detail", "close", "eye", "anchorage-insert", "macro-closeup", "single-object-void", "push-in-only", "single-organic-hero", "match-cut", "match",
+     "Forty years old", "A close insert on the beam's two hooks where the shelf tag flips to its rule face beside the Anchorage tag."),
     (7, 10, "two-up", "medium", "low", "beam-yard", "eye-level-immersive", "fullbleed-split", "radial-emanate", "multiplicity-swarm", "match-action", "match",
-     "The case for the old way", "A steady beam on a snowy bluff against a gust of noisy rural tags."),
-    (8, 12, "macro-closeup", "insert", "eye", "tag-bench", "macro-closeup", "single-object-void", "push-in-only", "single-organic-hero", "hard-cut", "match",
-     "Not published yet", "A stamp lands on the hero tag and one outlet chip pins to the frame."),
-    (9, 13, "alt-vantage", "wide", "overhead", "usda-gate", "top-down-map", "map-territory", "assemble-build", "structure-as-subject", "map-travel", "travel",
-     "A hope, not a decision", "A closed USDA gate on the map and the tag that stops an inch short."),
-    (10, 15, "two-up", "close", "low", "tag-bench", "macro-closeup", "fullbleed-split", "radial-emanate", "instrument-as-subject", "fui-boot", "build",
-     "Different evidence", "Two tags under one lamp, calipers open, the red pen ticks the box."),
+     "The case for the old way", "A steady beam on a snowy bluff against a gust of noisy rural tags that also blurs the shelf tag."),
+    (8, 12, "macro-closeup", "insert", "eye", "proof-desk", "macro-closeup", "single-object-void", "push-in-only", "single-organic-hero", "hard-cut", "match",
+     "Not published yet", "A stamp lands on the shelf tag, which hangs from one string tied to one news clipping."),
+    (9, 13, "alt-vantage", "wide", "overhead", "usda-marker", "top-down-map", "map-territory", "assemble-build", "structure-as-subject", "map-travel", "travel",
+     "A hope, not a decision", "A plain USDA signpost on the map and the tag that stops a clear gap short of it."),
+    (10, 15, "two-up", "close", "low", "tundra-rope", "eye-level-immersive", "fullbleed-split", "radial-emanate", "instrument-as-subject", "carried-element", "carry",
+     "Different evidence", "Two tags on a rope between stakes at dawn, calipers open, the readout two empty slots."),
     (11, 17, "subject-portrait", "wide", "ground", "tundra-dawn", "eye-level-immersive", "single-object-void", "vertical-rise", "single-organic-hero", "graphic-match", "match",
-     "The question, and the crate", "Back on the dawn tundra the tag spins and the crate lifts an inch again."),
+     "The question, and the parked crate", "Back on the dawn tundra the crate sits parked, the rotors unfold and the tag spins."),
 ]
 
 # Per-shot choreography (ambient life the held frame runs on) and centre of interest.
 AMBIENT = {
     1: "tundra cottongrass shivers, clouds drift, the tag swings, snow-dust blows off the crate lid, the gauge needle hunts",
-    2: "map pin pulses, the dotted line marches, tundra ripples below, the silhouette's lamp sways",
-    3: "tags flutter and settle, shelf cans gleam, dust turns in the light, the crate tag swings",
+    2: "map pin pulses, the dotted line marches, tundra ripples below, the map card's gridlines glide",
+    3: "tags flutter and settle, shelf cans gleam, dust turns in the light, the study tag swings",
     4: "code lines scroll, the mint glow breathes, shelf tags tremble, cans gleam, dust turns in the lamp light",
-    5: "the tally counter clicks, the stack leans, the pen hovers and drifts, the robot's stamp shivers, a lamp sways on each side",
+    5: "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side",
     6: "the skyline lights blink, clouds slide, the beam hum shows as a faint shimmer, the weights swing on their chains",
-    7: "snow falls, the swirl keeps moving, the inspection light slides along the beam, the raven circles",
-    8: "the lamp pool breathes, the kraft tag sways on its string, dust turns, the stamp ink settles",
-    9: "the map pin pulses, the gate lights breathe, the envelope flap lifts and settles, the dotted line marches",
-    10: "the lamp swings a few pixels, both tags sway out of phase, the calipers tremble, the pen tip drifts",
+    7: "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half",
+    8: "the lamp pool breathes, the tag sways on its string, dust turns, the clipping's pins glint",
+    9: "the map pin pulses, the dotted line marches, the signpost board catches the light, map gridlines glide",
+    10: "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind",
     11: "tundra grass shivers, clouds drift, the tag spins edge-on, the gauge needle hunts",
+    61: "the beam hooks shine, the two tags sway out of phase, the dotted gap pulses, flat morning light slides across the steel",
 }
 CENTER = {1: "the crate at x540 y1180", 2: "the map plate at x540 y1000", 3: "the shelf at x540 y1150", 4: "the code sheet at x540 y1000",
           5: "the seam at x540", 6: "the beam at x540 y900", 7: "the beam at x300, the swirl at x780",
-          8: "the tag at x540 y1000", 9: "the gate at x540 y950", 10: "the two tags at x330 and x750", 11: "the crate at x540 y1180"}
-HERO = {1: ("FlightCrate", 40), 2: ("AlaskaMini + FlightCrate", 30), 3: ("PriceTag", 45), 4: ("GroceryShelf + CodeSheet", 50),
-        5: ("DriftStack + PenHand", 45), 6: ("ZoneBeam", 40), 7: ("ZoneBeam + RuralSwirl", 45), 8: ("PriceTag", 30),
-        9: ("UsdaGate", 35), 10: ("PriceTag x2 + calipers", 45), 11: ("FlightCrate", 40)}
-
-
+          8: "the tag at x540 y1000", 9: "the signpost at x860 y950", 10: "the two tags at x290 and x790", 11: "the crate at x540 y1180", 61: "the two tags at x240 and x800"}
+HERO = {
+    1: ("FlightCrate", "70% crate and rotors and tag, 20% tundra and ridge, 10% sky"),
+    2: ("AlaskaMini + FlightCrate icon", "60% map and dotted plan, 25% crate icon and name chip, 15% dawn ground"),
+    3: ("KraftTag + falling blades", "50% tags and blades, 30% shelf, 20% store wall"),
+    4: ("GroceryShelf + CodeSheet", "50% code sheet and comb, 35% shelf tags, 15% grid backdrop"),
+    5: ("DriftStack + CodeSheet + red pen", "40% stack and tally, 40% code sheet and pen, 20% seam and desks"),
+    6: ("ZoneBeam + steel tag + ZoneWeights", "60% beam and steel tag, 25% three equal weights and the dotted gap, 15% skyline"),
+    7: ("ZoneBeam + RuralSwirl + shelf tag", "40% beam and light, 40% swirl and the hanging shelf tag, 20% bluff"),
+    8: ("KraftTag + stamp", "60% tag and stamp, 25% clipping, 15% desk"),
+    9: ("UsdaMarker + KraftTag", "45% tag and dotted line, 30% signpost, 25% map"),
+    10: ("KraftTag + SteelTag + Calipers", "50% caliper jaws and the empty slots, 30% two tags, 20% rope and dawn"),
+    11: ("FlightCrate", "70% crate and rotors and tag, 20% tundra, 10% sky"),
+    61: ("KraftTag + SteelTag", "60% the flipping shelf tag, 25% the steel tag and the dotted gap, 15% beam and sky"),
+}
+CHOREO_STAGE3D = {1: "planes", 2: "planes", 3: "planes", 4: "flat:a locked code sheet, depth adds nothing", 5: "flat:a locked split with a seam, depth adds nothing",
+                  6: "planes", 7: "planes", 8: "flat:a locked macro, the swing is the motion", 9: "planes", 10: "planes", 11: "planes", 61: "flat:a locked insert, the flip is the motion"}
 CAMERA = {1: "craneDown", 2: "dollyThrough+craneDown", 3: "truckAcross", 4: "static:a locked code sheet where the lines and the tags move", 5: "riseWith",
-          6: "truckAcross+riseWith", 7: "dollyThrough", 8: "orbitReveal", 9: "craneDown", 10: "orbitReveal", 11: "craneDown+dollyThrough"}
+          6: "truckAcross+riseWith", 7: "dollyThrough", 8: "static:a locked macro where the tag swings", 9: "craneDown", 10: "orbitReveal", 11: "craneDown+dollyThrough", 61: "static:a locked insert where the tag flips"}
 
 
 def est_starts():
@@ -182,42 +245,75 @@ def line_starts():
     return est_starts(), False
 
 
+def load_words():
+    p = OUT / "audio" / "words.json"
+    if not p.exists():
+        return {}
+    w = json.loads(p.read_text())
+    ws = w["words"] if isinstance(w, dict) else w
+    out = {}
+    for x in ws:
+        out.setdefault(int(x["seg"]), []).append(x)
+    return out
+
+
+def norm(s):
+    return "".join(c for c in s.lower() if c.isalnum())
+
+
 def build():
     starts, real = line_starts()
     end = starts["end"]
+    words = load_words() if real else {}
 
-    def at(line, frac):
+    def at(line, anc):
         nxt = starts.get(line + 1, end)
-        return starts[line] + frac * (nxt - starts[line])
+        if isinstance(anc, tuple):
+            want, nth = anc
+            hits = [x for x in words.get(line, []) if norm(x["w"]) == norm(want)]
+            if len(hits) >= nth:
+                return max(starts[line], float(hits[nth - 1]["s"]) - 0.05)
+            return starts[line] + 0.5 * (nxt - starts[line])
+        return starts[line] + anc * (nxt - starts[line])
 
     beats = []
-    for i, (bid, shot, line, frac, sfx, subj, act, emo, ann, shows, rehook, kick) in enumerate(B):
-        a = round(at(line, frac), 3)
+    def shot_for(line):
+        return max(i for i, row in enumerate(S, 1) if row[1] <= line)
+
+    def key_for(line):
+        return next(row[0] for i, row in enumerate(S, 1) if i == shot_for(line))
+
+    for (bid, shot, line, anc, sfx, subj, act, emo, ann, shows, reaction, rehook) in B:
+        shot = key_for(line)
+        a = round(at(line, anc), 3)
         beats.append({
-            "id": bid, "shot": shot, "at_s": a, "vo_line": line,
-            "anchor": {"vo_line": line, "fraction": frac, "offset": round(a - starts[line], 3)},
+            "id": bid, "shot": shot_for(line), "at_s": a, "vo_line": line,
+            "anchor": {"vo_line": line, "fraction": anc if not isinstance(anc, tuple) else 0.0, "offset": round(a - starts[line], 3)},
             "offset": round(a - starts[line], 3), "vo": LINES[line], "phrase": " ".join(LINES[line].split()[:4]),
             "shows": shows, "sfx": sfx, "means": ann.lower(), "rehook": rehook,
             "draw": {"subject": subj, "action": act, "emotion": emo, "annotation": ann},
-            "choreo": {"primary": shows, "reaction": f"{subj} {act}", "ambient": AMBIENT[shot]},
-            **({"kick": True} if kick else {}),
+            "choreo": {"primary": shows, "reaction": reaction, "ambient": AMBIENT[shot]},
         })
+    beats.sort(key=lambda b: (b["at_s"], b["id"]))
     for i, b in enumerate(beats):
         nx = beats[i + 1]["at_s"] if i + 1 < len(beats) else end
         b["t"] = f"{b['at_s']:.3f}-{nx:.3f}"
     shots = []
-    for (sid, line, framing, scale, height, stage, pov, layout, mv, hero_t, trans, thread, title, means) in S:
+    for idx, (sid, line, framing, scale, height, stage, pov, layout, mv, hero_t, trans, thread, title, means) in enumerate(S, 1):
         st = round(starts[line], 3)
         shots.append({
             "title": title, "vo_line": line, "framing": framing, "scale": scale, "height": height, "stage": stage,
             "pov": pov, "layout": layout, "motion_vector": mv, "hero_treatment": hero_t,
-            "camera": CAMERA[sid],
-            "transition_in": trans, "thread": thread,
-            "stage3d": "planes" if sid in (1, 2, 3, 7, 9, 11) else "flat:a locked bench or diagram, depth adds nothing",
+            "camera": CAMERA[sid], "transition_in": trans, "thread": thread, "stage3d": CHOREO_STAGE3D[sid],
             "centered": CENTER[sid], "means": means, "ambient": AMBIENT[sid],
-            "hero": {"name": HERO[sid][0], "parts": HERO[sid][1], "zones": 3, "detail_note": "60% hero, 20% supporting, 20% set"},
-            "id": sid, "start_s": st,
+            "hero": {"name": HERO[sid][0], "parts": 40, "zones": 3, "detail_note": HERO[sid][1]},
+            "id": idx, "start_s": st,
         })
+    for s in shots:
+        if s["title"] == "The starting price":
+            s["cut_offset_s"] = -0.4
+            s["cut_reason"] = "the cut lands under the steel panel's wipe as it fills the frame, which keeps the Quebec and pen shot under the 16 second ceiling"
+            s["start_s"] = round(s["start_s"] - 0.4, 3)
     for i, s in enumerate(shots):
         nx = shots[i + 1]["start_s"] if i + 1 < len(shots) else end
         s["t"] = f"{s['start_s']:.3f}-{nx:.3f}"
@@ -225,49 +321,49 @@ def build():
     def b_at(i):
         return next(b for b in beats if b["id"] == i)["at_s"]
 
+    palette = "first-light rose and glacier ice tundra, spruce shelves, kraft tags, steel beam with gold zone weights, mint code, pen red"
     board = {
         "run_date": "2026-10-11", "slug": "this-crate-was-supposed-to-fly", "title": "This Crate Was Supposed To Fly",
-        "concept": ("A medicine crate built to fly goods to rural Alaska can't lift off, and the Anchorage Daily News story behind it is that a UAA drone-delivery "
-                    "study grew into a cleaner record of rural grocery prices, cleaned by code an AI wrote and a person checks. The film sets that shelf-measured price "
-                    "beside the federal rule, which starts rural Alaska's food plan from an Anchorage price and adjusts by zone, gives the steady rule its best case, "
-                    "and ends on the open question with the crate lifting an inch again."),
+        "concept": ("A medicine crate that was supposed to fly stands for a UAA drone-delivery study that, per the Anchorage Daily News, grew into a cleaner record of rural grocery prices, "
+                    "cleaned by code an AI wrote and a person checks. The film sets that shelf-measured price beside the federal rule, which starts rural Alaska's food plan from an Anchorage price "
+                    "and adjusts by zone, gives the steady rule its best case, and ends on the open question with the crate parked and its rotors unfolding."),
         "derived_from": "scratch", "engine": "infographic-2.5d", "total_seconds": round(end, 2),
         "fingerprint": {
-            "pov": "macro-closeup", "motion_vector": "vertical-descent", "hero_treatment": "multiplicity-swarm",
+            "pov": "eye-level-immersive", "motion_vector": "vertical-rise", "hero_treatment": "single-organic-hero",
             "layout": "stacked-layers", "register": "editorial-schematic", "camera_strategy": "rise-reveal", "light_story": "dawn-backlight",
-            "palette": "first-light rose and glacier ice tundra, spruce shelves, kraft tags, pewter beam with brass zone weights, mint code, pen red",
+            "palette": palette,
             "metaphor": "a kraft price tag on a string that started on a medicine crate, passes through a code comb and a red pen, and hangs beside a steel beam that prices rural Alaska from Anchorage",
         },
-        "palette": "first-light rose and glacier ice tundra, spruce shelves, kraft tags, pewter beam with brass zone weights, mint code, pen red",
+        "palette": palette,
         "divergence_note": ("10-10 was a night parking lot under amber sodium lamps with a pole camera and colour-coded rule owners, 10-09 a dusk utility yard with a steel tank. "
-                            "This film opens on pink first-light tundra with a medicine crate, then moves through a warm store shelf, a cool paper office, a flat Anchorage morning, "
-                            "a snowy bluff and a kraft-lit tag bench. The hero is a soft object on a string passing between tools, where 10-10 was a faced machine on a pole. "
-                            "The colour code is by role (kraft the tag, mint the code, red the human check, steel and gold the rule), and the argument is carried by one tag flipping between a measured face and a rule face."),
+                            "This film opens on pink first-light tundra with a medicine crate, then moves through a warm store shelf, a mint code grid, a split Quebec desk, a flat Anchorage morning, "
+                            "a snowy bluff, a pale proof desk and a rope strung across the tundra. The hero is a soft object on a string passing between tools, where 10-10 was a faced machine on a pole. "
+                            "The colour code is by role (kraft the tag, mint the code, red the person, steel and gold the rule, green the signpost), and the argument is carried by one tag flipping between a measured face and a rule face."),
         "angle": json.loads((OUT / "angle.json").read_text()) if (OUT / "angle.json").exists() else {},
         "treatment": {
-            "winner": "The Enthusiast's structure (the crate that never flew, rotors that become tags, the dotted hope) with the Explainer's rule gate with zone teeth, the Dramatist's calipers with a dotted readout, and the Comedian's raven.",
-            "why": "All four pitches converged on a kraft price tag as the throughline and the Daily News attribution on every study claim. The Enthusiast gave the accident a wonder moment without claiming an outcome, the Explainer drew the rule's structure as a physical mechanism, the Dramatist's calipers hold the ambivalence, and the Comedian's raven pays the fair case against a joke.",
+            "winner": "The Enthusiast's structure (the crate that never flew, rotors that become tags, the dotted hope) with the Explainer's rule beam with three zone weights, the Dramatist's calipers with a dotted readout.",
+            "why": "All four pitches converged on a kraft price tag as the throughline and the Daily News attribution on every study claim. The Enthusiast gave the accident a wonder moment without claiming an outcome, the Explainer drew the rule's structure as a physical mechanism, and the Dramatist's calipers hold the ambivalence as two empty slots. The Comedian's raven gag was cut after the storyboard critic flagged it as a cultural misstep.",
         },
-        "hook": {"pattern": "in-medias-res", "frame1": "A medicine crate on first-light tundra whines its four rotor stubs up and lifts an inch with a blank kraft tag spinning on its handle.",
+        "hook": {"pattern": "in-medias-res", "frame1": "A medicine crate on first-light tundra whines its four rotors up and lifts an inch with a blank kraft tag spinning on its handle.",
                  "headline": "THIS CRATE WAS SUPPOSED TO FLY", "motion_by_s": 0.4,
-                 "loopback": "The last frame is the same crate lifting an inch again, with the tag spinning, and the open replays."},
-        "open_loop": {"plant_t": b_at(6), "pay_t": b_at(26), "what": "Where is the crate's tag headed. Paid when the destination line fills in, dotted, as a hope for USDA."},
-        "open_loop_2": {"plant_t": b_at(14), "pay_t": b_at(29), "what": "Who checks what the code did. Paid when the red pen lands and ticks the CHECKED BY box."},
-        "throughline": {"object": "the kraft price tag on the crate's handle", "lands_in_button": "the tag spins between its measured face and its rule face as the crate lifts an inch",
+                 "loopback": "The last frame is the same crate with its rotors beginning to turn and the tag spinning, and the open replays."},
+        "open_loop": {"plant_t": b_at(6), "pay_t": b_at(26), "what": "Where is the study tag headed. Paid when its blank destination line fills in, dotted, as a hope for USDA."},
+        "open_loop_2": {"plant_t": b_at(17), "pay_t": b_at(29), "what": "How far apart are the shelf price and the Anchorage price. Planted as a dotted gap with a question mark between two hooks, paid as an honest empty slot, PUBLICATION and USDA."},
+        "throughline": {"object": "the kraft price tag on the crate's handle", "lands_in_button": "the tag spins between its measured face and its rule face while the rotors begin to turn",
                         "states": [
                             {"at_s": b_at(1), "state": "blank, spinning on the crate handle"},
                             {"at_s": b_at(8), "state": "smudged with illegible shelf entries and a blank destination line"},
-                            {"at_s": b_at(13), "state": "combed flat on a fresh string with an empty CHECKED BY box"},
+                            {"at_s": b_at(12), "state": "combed flat on a fresh string with an empty CHECKED BY box"},
                             {"at_s": b_at(18), "state": "flipped to its rule face, ANCHORAGE + ZONE"},
-                            {"at_s": b_at(22), "state": "stamped NOT PUBLISHED YET"},
+                            {"at_s": b_at(22), "state": "stamped NOT PUBLISHED YET and hanging by one string"},
                             {"at_s": b_at(26), "state": "its destination line filled in, dotted, for USDA"},
-                            {"at_s": b_at(29), "state": "ticked CHECKED BY A PERSON"},
-                            {"at_s": b_at(31), "state": "spinning edge-on between measured and rule faces"},
+                            {"at_s": b_at(28), "state": "hanging on a rope beside the Anchorage tag with calipers open"},
+                            {"at_s": b_at(31), "state": "spinning edge-on between measured and rule faces on the parked crate"},
                         ]},
         "reveals": [
-            {"t": b_at(3), "type": "scale-pullback", "what": "the crate shrinks to a pin as a map of Alaska rises", "hold_s": 0.6},
+            {"t": b_at(3), "type": "scale-pullback", "what": "the crate shrinks to an icon as a map of Alaska rises", "hold_s": 0.6},
             {"t": b_at(18), "type": "build-on", "what": "the hero tag flips and its back builds on the rule, ANCHORAGE + ZONE", "hold_s": 0.6},
-            {"t": b_at(27), "type": "morph-to-chart", "what": "two tags and open calipers become a comparison with a dotted readout", "hold_s": 0.6},
+            {"t": b_at(28), "type": "build-on", "what": "the calipers build on between the two tags and the readout opens as two empty slots", "hold_s": 0.6},
         ],
         "audio_arc": {"build_steps": 4, "dip_at": b_at(31), "riser_at": b_at(32), "silence_at": round(starts[18] - 0.9, 3),
                       "payoff_at": round(starts[18], 3), "button_pattern": "question", "interrupt_at": b_at(21), "extra_dips": [b_at(22), b_at(26)]},
