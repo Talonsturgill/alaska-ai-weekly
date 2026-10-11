@@ -80,7 +80,8 @@ const Plate: React.FC<{text: string; displayLines?: string[]; x?: number; y: num
   const t = TONES[tone];
   const k = clamp01(p);
   if (k <= 0.01) return null;
-  const sc = 0.84 + 0.16 * spring(k * 20, 0, 20);
+  const fr = useCurrentFrame();
+  const sc = (0.84 + 0.16 * spring(k * 20, 0, 20)) * (1 + 0.012 * Math.sin(fr / 11 + x * 0.01));
   return (
     <g opacity={Math.min(1, k * 1.6)} transform={`translate(${x} ${yy - drop * (1 - k)}) rotate(${rot}) scale(${sc})`}>
       <rect x={-w / 2 + 6} y={-h / 2 + 8} width={w} height={h} rx={6} fill="#000" opacity={0.3} />
@@ -436,6 +437,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Plate text="PER ADN" x={285} y={560} size={26} tone="kraft" p={ease(f, t42 + 8, 10) * (f < t13 ? 1 : 0)} />
         <Plate text="QUEBEC · HUNDREDS OF HOURS BY HAND · PER ADN" displayLines={['QUEBEC · HUNDREDS OF HOURS', 'BY HAND · PER ADN']} x={285} y={650} size={21} tone="kraft" p={ease(f, t13, 10)} />
         <Plate text="JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT" displayLines={['JONES SAYS IT STILL', 'NEEDS HUMAN OVERSIGHT']} x={800} y={560} size={21} tone="paper" p={ease(f, t14, 10) * plateOut} />
+        <Plate text="A FEDERAL RULE · 7 CFR 273.10" displayLines={['A FEDERAL RULE', '7 CFR 273.10']} x={820} y={760} size={34} tone="steel" p={ease(f, t36 + 36, 10)} />
         <Plate text="THE CODE NEEDS A PERSON" displayLines={['THE CODE', 'NEEDS A PERSON']} x={800} y={1230} size={26} tone="red" p={ease(f, t15 + 40, 10) * plateOut} />
       </>}>
       <SVG>
@@ -548,7 +550,7 @@ const S6B: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.1} ox={540} oy={900} night={0} bloom={0.05}
       overlay={<>
         <Plate text="THE RULE ON FILE" y={540} size={26} tone="steel" p={ease(f, t18 + 10, 10) * (f < t44 ? 1 : 0)} />
-        <Plate text="ADN CALLS IT A 40-YEAR-OLD FORMULA" y={620} size={26} tone="paper" p={ease(f, t44 + 18, 10)} />
+        <Plate text="ADN CALLS IT A 40-YEAR-OLD FORMULA" y={620} size={26} tone="paper" p={ease(f, t44 + 6, 8)} />
       </>}>
       <SVG>
         <DrawerWall f={f + p.from} />

@@ -1,0 +1,16 @@
+One Anchorage price and three fixed zones set rural Alaska's SNAP food plan.
+The Daily News calls the formula behind rural SNAP benefits 40 years old, and a UAA study that began with drones is now tracking rural grocery prices.
+
+A rule keyed to one Anchorage price and three fixed zones can't see what an individual rural town pays. Under the federal rule, Alaska's SNAP food plan is adjusted by the price of food in Anchorage, then by zones named urban, rural one and rural two.
+
+UAA economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone. In his words, "The impetus for the study was actually transportation research. What it's become is significantly more than that."
+
+AI-generated code helped his team clean up the price data. Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand. Jones said the code still needs human oversight.
+
+The best case for the old way is simple. One city price and three set zones make one rule anyone can read.
+
+The research hasn't been published, and every public detail of it comes from one news report. Jones hopes it will inform USDA's update of SNAP benefit rates in Alaska. That is a hope, and no USDA action has been reported.
+
+What does the food plan miss about the cost of groceries in your town?
+
+#Alaska #AI #SNAP #RuralAlaska #FoodSecurity

@@ -1,0 +1,1970 @@
+{
+  "run_date": "2026-10-11",
+  "slug": "this-crate-was-supposed-to-fly",
+  "title": "This Crate Was Supposed To Fly",
+  "concept": "A medicine crate that was supposed to fly stands for a UAA drone-delivery study that, per the Anchorage Daily News, grew into a cleaner record of rural grocery prices, cleaned by code an AI wrote and a person checks. The film sets that shelf-measured price beside the federal rule, which starts rural Alaska's food plan from an Anchorage price and adjusts by zone, gives the steady rule its best case, and ends on the open question with the crate parked and its rotors unfolding.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 112.92,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "vertical-rise",
+    "hero_treatment": "single-organic-hero",
+    "layout": "stacked-layers",
+    "register": "editorial-schematic",
+    "camera_strategy": "rise-reveal",
+    "light_story": "dawn-backlight",
+    "palette": "first-light rose and glacier ice tundra, spruce shelves, kraft tags, steel beam with gold zone weights, mint code, pen red",
+    "metaphor": "a kraft price tag on a string that started on a medicine crate, passes through a code comb and a red pen, and hangs beside a steel beam that prices rural Alaska from Anchorage"
+  },
+  "palette": "first-light rose and glacier ice tundra, spruce shelves, kraft tags, steel beam with gold zone weights, mint code, pen red",
+  "divergence_note": "10-10 was a night parking lot under amber sodium lamps with a pole camera and colour-coded rule owners, 10-09 a dusk utility yard with a steel tank. This film opens on pink first-light tundra with a medicine crate, then moves through a warm store shelf, a mint code grid, a split Quebec desk, a flat Anchorage morning, a snowy bluff, a pale proof desk and a rope strung across the tundra. The hero is a soft object on a string passing between tools, where 10-10 was a faced machine on a pole. The colour code is by role (kraft the tag, mint the code, red the person, steel and gold the rule, green the signpost), and the argument is carried by one tag flipping between a measured face and a rule face.",
+  "angle": {
+    "run_date": "2026-10-11",
+    "thesis": "A study meant to fly medicine to rural Alaska turned into a cleaner record of what rural shelves charge, because AI wrote the tedious code and a person still checks it, and since the federal rule starts rural Alaska's food plan from an Anchorage price, measured rural prices are a different kind of evidence whose weight waits on publication and on USDA.",
+    "falsifier": "If the zone adjustments in the federal rule are already built from refreshed rural shelf checks, or if the cleaned rural prices once published match the Anchorage-plus-zone figures, the thesis is false. The claims file settles neither, so the film asks it and does not rule.",
+    "supporting_facts": [
+      "c3 Jones: what it became is significantly more than transportation research",
+      "c4 AI-written code helped clean the price data",
+      "c5 Quebec researchers spent hundreds of hours by hand (per ADN)",
+      "c8 7 CFR 273.10 starts Alaska plans from Anchorage food prices, adjusted by zone",
+      "c9 Jones says the code still needs human oversight"
+    ],
+    "counterpoint": "One city price plus fixed zones is stable and auditable, and scattered rural prices are noisy. The study is unpublished, USDA action is a hope, the 40 years is the Daily News's description, and the whole story rests on one outlet. Jones built the caution in himself by saying the code needs human oversight.",
+    "runner_ups": [
+      {
+        "lens": "Structuralist",
+        "lost_because": "Led with the rule being wrong-shaped, which the facts cannot support. Its closing question is kept."
+      },
+      {
+        "lens": "Auditor",
+        "lost_because": "Would have audited a researcher who only claimed a hope. Its distance-to-a-changed-benefit ledger is kept as the third act."
+      }
+    ],
+    "valence": "mixed (curious, leaning celebratory on the capability, open on the outcome)",
+    "stance": "curious",
+    "cross_challenge": "The three proposals converged on the facts and were each stress-tested against their own strongest counterpoint. Synthesis challenge: is it a booster piece (no, c6 and c10 cap it), a scold (no, Jones is credited for building the caution in), a list (no, the chain is origin, accident, code, rule, test, open question)."
+  },
+  "treatment": {
+    "winner": "The Enthusiast's structure (the crate that never flew, rotors that become tags, the dotted hope) with the Explainer's rule beam with three zone weights, the Dramatist's calipers with a dotted readout.",
+    "why": "All four pitches converged on a kraft price tag as the throughline and the Daily News attribution on every study claim. The Enthusiast gave the accident a wonder moment without claiming an outcome, the Explainer drew the rule's structure as a physical mechanism, and the Dramatist's calipers hold the ambivalence as two empty slots. The Comedian's raven gag was cut after the storyboard critic flagged it as a cultural misstep."
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "A medicine crate on first-light tundra whines its four rotors up and lifts an inch with a blank kraft tag spinning on its handle.",
+    "headline": "THIS CRATE WAS SUPPOSED TO FLY",
+    "motion_by_s": 0.4,
+    "loopback": "The last frame is the same crate with its rotors unfolded and still and the tag spinning, and the open replays on the whine-up."
+  },
+  "open_loop": {
+    "plant_t": 13.62,
+    "pay_t": 91.37,
+    "what": "Where is the study tag headed. Paid when its blank destination line fills in, dotted, as a hope for USDA."
+  },
+  "open_loop_2": {
+    "plant_t": 56.95,
+    "pay_t": 101.11,
+    "what": "How far apart are the shelf price and the Anchorage price. Planted as a dotted gap with a question mark between two hooks, paid as an honest empty slot, PUBLICATION and USDA."
+  },
+  "throughline": {
+    "object": "the kraft price tag on the crate's handle",
+    "lands_in_button": "the tag spins between its measured face and its rule face while the rotors begin to turn",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "blank, spinning on the crate handle"
+      },
+      {
+        "at_s": 18.51,
+        "state": "smudged with illegible shelf entries and a blank destination line"
+      },
+      {
+        "at_s": 32.45,
+        "state": "combed flat on a fresh string with clean barcode bars"
+      },
+      {
+        "at_s": 64.83,
+        "state": "flipped to its rule face, ANCHORAGE + ZONE"
+      },
+      {
+        "at_s": 81.25,
+        "state": "stamped NOT PUBLISHED YET and hanging by one string"
+      },
+      {
+        "at_s": 91.37,
+        "state": "its destination line filled in, dotted, for USDA"
+      },
+      {
+        "at_s": 99.21,
+        "state": "hanging on a rope beside the Anchorage tag with calipers open"
+      },
+      {
+        "at_s": 105.22,
+        "state": "spinning on the parked crate, measured face then rule face"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 4.14,
+      "type": "scale-pullback",
+      "what": "the crate shrinks to an icon as a map of Alaska rises",
+      "hold_s": 0.6
+    },
+    {
+      "t": 64.83,
+      "type": "build-on",
+      "what": "the hero tag flips and its back builds on the rule, ANCHORAGE + ZONE",
+      "hold_s": 0.6
+    },
+    {
+      "t": 99.21,
+      "type": "build-on",
+      "what": "the calipers build on between the two tags and the readout opens as two empty slots",
+      "hold_s": 0.6
+    }
+  ],
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 105.22,
+    "riser_at": 108.91,
+    "silence_at": 109.18,
+    "payoff_at": 110.08,
+    "button_pattern": "question",
+    "interrupt_at": 75.58,
+    "extra_dips": [
+      81.25,
+      91.37
+    ]
+  },
+  "shots": [
+    {
+      "title": "The crate that was supposed to fly",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "tundra-dawn",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the crate at x540 y1180",
+      "means": "A FlightCrate on first-light tundra whines its rotors up, lifts an inch and settles.",
+      "ambient": "tundra cottongrass shivers, clouds drift, the tag swings, snow-dust blows off the crate lid, the gauge needle hunts",
+      "hero": {
+        "name": "FlightCrate",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "70% crate and rotors and tag, 20% tundra and ridge, 10% sky"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-4.140"
+    },
+    {
+      "title": "The study that was supposed to fly",
+      "vo_line": 1,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "tundra-map",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "dollyThrough+craneDown",
+      "transition_in": "pull-out",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the map plate at x540 y1000",
+      "means": "The camera pulls back from the crate to a map of Alaska with a dotted drone plan.",
+      "ambient": "map pin pulses, the dotted line marches, tundra ripples below, the map card's gridlines glide",
+      "hero": {
+        "name": "AlaskaMini + FlightCrate icon",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "60% map and dotted plan, 25% crate icon and name chip, 15% dawn ground"
+      },
+      "id": 2,
+      "start_s": 4.14,
+      "t": "4.140-13.620"
+    },
+    {
+      "title": "Blades become price tags",
+      "vo_line": 2,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "store-shelf",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the shelf at x540 y1150",
+      "means": "The rotor blades flutter into kraft price tags that settle on a rural store shelf.",
+      "ambient": "tags flutter and settle, shelf cans gleam, dust turns in the light, the study tag swings",
+      "hero": {
+        "name": "KraftTag + falling blades",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "50% tags and blades, 30% shelf, 20% store wall"
+      },
+      "id": 3,
+      "start_s": 13.62,
+      "t": "13.620-26.060"
+    },
+    {
+      "title": "The code that cleaned the shelf",
+      "vo_line": 4,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "eye",
+      "stage": "shelf-and-code",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:a locked code sheet where the lines and the tags move",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "flat:a locked code sheet, depth adds nothing",
+      "centered": "the code sheet at x540 y1000",
+      "means": "A rural grocery shelf beside a mint code sheet that prints and combs the smudged tags into rows.",
+      "ambient": "code lines scroll, the mint glow breathes, shelf tags tremble, cans gleam, dust turns in the lamp light",
+      "hero": {
+        "name": "GroceryShelf + CodeSheet",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "50% code sheet and comb, 35% shelf tags, 15% grid backdrop"
+      },
+      "id": 4,
+      "start_s": 26.06,
+      "t": "26.060-34.360"
+    },
+    {
+      "title": "Hours by hand, and the person checking",
+      "vo_line": 6,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "high",
+      "stage": "split-quebec-oversight",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:a locked split where the stack grows and the pen moves",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked split with a seam, depth adds nothing",
+      "centered": "the seam at x540",
+      "means": "A hard seam splits a Quebec desk of hand-matched tags from the mint code sheet and a red pen that reads down it.",
+      "ambient": "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side",
+      "hero": {
+        "name": "DriftStack + CodeSheet + red pen",
+        "parts": 62,
+        "zones": 3,
+        "detail_note": "40% stack and tally, 40% code sheet and pen, 20% seam and desks"
+      },
+      "id": 5,
+      "start_s": 34.36,
+      "t": "34.360-50.300"
+    },
+    {
+      "title": "The starting price",
+      "vo_line": 8,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "anchorage",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross+riseWith",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the beam at x540 y900",
+      "means": "A steel beam under the Anchorage skyline holds one tag and three zone weights and waits with an empty hook.",
+      "ambient": "the skyline lights blink, clouds slide, the beam hum shows as a faint shimmer, the weights swing on their chains",
+      "hero": {
+        "name": "ZoneBeam + steel tag + ZoneWeights",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "60% beam and steel tag, 25% three equal weights and the dotted gap, 15% skyline"
+      },
+      "id": 6,
+      "start_s": 50.3,
+      "cut_offset_s": -0.4,
+      "cut_reason": "the cut lands under the steel panel's wipe as it fills the frame, which keeps the Quebec and pen shot under the 16 second ceiling",
+      "t": "50.300-63.060"
+    },
+    {
+      "title": "The rule on file",
+      "vo_line": 9,
+      "framing": "alt-vantage",
+      "scale": "close",
+      "height": "eye",
+      "stage": "rule-archive",
+      "pov": "cross-section-cutaway",
+      "layout": "grid-modular",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:a locked archive wall where the tag flips",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked archive wall, the flip is the motion",
+      "centered": "the hanging tag at x540 y900",
+      "means": "In an archive wall of steel drawers the shelf tag hangs from the drawer that holds the rule and flips to its rule face.",
+      "ambient": "the drawer knobs shine, the tag sways on its string, the lamp pool breathes, a slow push drifts across the steel wall",
+      "hero": {
+        "name": "KraftTag + DrawerWall",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% the flipping shelf tag, 30% the labelled drawer, 15% the steel wall"
+      },
+      "id": 7,
+      "start_s": 63.06,
+      "t": "63.060-67.040"
+    },
+    {
+      "title": "The case for the old way",
+      "vo_line": 10,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "low",
+      "stage": "beam-yard",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "dollyThrough",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the beam at x300, the swirl at x780",
+      "means": "A steady beam on a snowy bluff against a gust of noisy rural tags that also blurs the shelf tag.",
+      "ambient": "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half",
+      "hero": {
+        "name": "ZoneBeam + RuralSwirl + shelf tag",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "40% beam and light, 40% swirl and the hanging shelf tag, 20% bluff"
+      },
+      "id": 8,
+      "start_s": 67.04,
+      "t": "67.040-80.000"
+    },
+    {
+      "title": "Not published yet",
+      "vo_line": 12,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "proof-desk",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:a locked macro where the tag swings",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked macro, the swing is the motion",
+      "centered": "the tag at x540 y1000",
+      "means": "A stamp lands on the shelf tag, which hangs from one string tied to one news clipping.",
+      "ambient": "the lamp pool breathes, the tag sways on its string, dust turns, the clipping's pins glint",
+      "hero": {
+        "name": "KraftTag + stamp",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "60% tag and stamp, 25% clipping, 15% desk"
+      },
+      "id": 9,
+      "start_s": 80.0,
+      "t": "80.000-85.240"
+    },
+    {
+      "title": "A hope, not a decision",
+      "vo_line": 13,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "usda-marker",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the signpost at x860 y950",
+      "means": "A plain USDA signpost on the map and the tag that stops a clear gap short of it.",
+      "ambient": "the map pin pulses, the dotted line marches, the signpost board catches the light, map gridlines glide",
+      "hero": {
+        "name": "UsdaMarker + KraftTag",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "45% tag and dotted line, 30% signpost, 25% map"
+      },
+      "id": 10,
+      "start_s": 85.24,
+      "t": "85.240-93.960"
+    },
+    {
+      "title": "Different evidence",
+      "vo_line": 15,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "low",
+      "stage": "tundra-rope",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "orbitReveal",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the two tags at x290 and x790",
+      "means": "Two tags on a rope between stakes at dawn, calipers open, the readout two empty slots.",
+      "ambient": "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind",
+      "hero": {
+        "name": "KraftTag + SteelTag + Calipers",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% caliper jaws and the empty slots, 30% two tags, 20% rope and dawn"
+      },
+      "id": 11,
+      "start_s": 93.96,
+      "t": "93.960-105.220"
+    },
+    {
+      "title": "The question, and the parked crate",
+      "vo_line": 17,
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "tundra-dawn",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the crate at x540 y1180",
+      "means": "Back on the dawn tundra the crate sits parked, the rotors unfold and the tag spins.",
+      "ambient": "tundra grass shivers, clouds drift, the tag spins edge-on, the gauge needle hunts",
+      "hero": {
+        "name": "FlightCrate",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "70% crate and rotors and tag, 20% tundra, 10% sky"
+      },
+      "id": 12,
+      "start_s": 105.22,
+      "t": "105.220-112.920"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "This drone crate was supposed to fly.",
+      "phrase": "This drone crate was",
+      "shows": "the FlightCrate's four rotors whine up and it lifts an inch off first-light tundra as a blank kraft tag spins on its handle",
+      "sfx": "bloop",
+      "means": "study crate",
+      "rehook": "",
+      "draw": {
+        "subject": "FlightCrate",
+        "action": "whines its rotors up and lifts an inch",
+        "emotion": "hopeful",
+        "annotation": "STUDY CRATE"
+      },
+      "choreo": {
+        "primary": "the FlightCrate's four rotors whine up and it lifts an inch off first-light tundra as a blank kraft tag spins on its handle",
+        "reaction": "the cottongrass flattens in the rotor wash",
+        "ambient": "tundra cottongrass shivers, clouds drift, the tag swings, snow-dust blows off the crate lid, the gauge needle hunts"
+      },
+      "t": "0.000-2.790",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.79,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.79
+      },
+      "offset": 2.79,
+      "vo": "This drone crate was supposed to fly.",
+      "phrase": "This drone crate was",
+      "shows": "the crate settles back onto the snow and the rotors wind down while the tag keeps spinning",
+      "sfx": "thunk",
+      "means": "started as drone delivery research",
+      "rehook": "",
+      "draw": {
+        "subject": "FlightCrate",
+        "action": "settles gently back onto the snow",
+        "emotion": "wistful",
+        "annotation": "STARTED AS DRONE DELIVERY RESEARCH"
+      },
+      "choreo": {
+        "primary": "the crate settles back onto the snow and the rotors wind down while the tag keeps spinning",
+        "reaction": "a soft ring of snow-dust lifts and drifts off the lid",
+        "ambient": "tundra cottongrass shivers, clouds drift, the tag swings, snow-dust blows off the crate lid, the gauge needle hunts"
+      },
+      "t": "2.790-4.140",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 2,
+      "at_s": 4.14,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The Anchorage Daily News reports UAA economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone.",
+      "phrase": "The Anchorage Daily News",
+      "shows": "the camera pulls back from the crate and a map plate of Alaska slides up with a PER ANCHORAGE DAILY NEWS chip",
+      "sfx": "slide",
+      "means": "per anchorage daily news",
+      "rehook": "",
+      "draw": {
+        "subject": "AlaskaMini",
+        "action": "rises as the camera pulls back",
+        "emotion": "curious",
+        "annotation": "PER ANCHORAGE DAILY NEWS"
+      },
+      "choreo": {
+        "primary": "the camera pulls back from the crate and a map plate of Alaska slides up with a PER ANCHORAGE DAILY NEWS chip",
+        "reaction": "the crate shrinks onto the map and its rotors fold",
+        "ambient": "map pin pulses, the dotted line marches, tundra ripples below, the map card's gridlines glide"
+      },
+      "t": "4.140-7.110",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 7.11,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "The Anchorage Daily News reports UAA economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone.",
+      "phrase": "The Anchorage Daily News",
+      "shows": "a name chip, MIKE JONES \u00b7 UAA, pins to the map at the start of the route",
+      "sfx": "blip",
+      "means": "mike jones \u00b7 uaa",
+      "rehook": "",
+      "draw": {
+        "subject": "name chip",
+        "action": "pins to the map beside the dotted plan",
+        "emotion": "focused",
+        "annotation": "MIKE JONES \u00b7 UAA"
+      },
+      "choreo": {
+        "primary": "a name chip, MIKE JONES \u00b7 UAA, pins to the map at the start of the route",
+        "reaction": "the map pin pulses once",
+        "ambient": "map pin pulses, the dotted line marches, tundra ripples below, the map card's gridlines glide"
+      },
+      "t": "7.110-9.290",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 9.29,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 5.15
+      },
+      "offset": 5.15,
+      "vo": "The Anchorage Daily News reports UAA economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone.",
+      "phrase": "The Anchorage Daily News",
+      "shows": "a dotted route draws itself across the map toward a village pin, a plan and never a flight",
+      "sfx": "scratch",
+      "means": "a drone delivery plan",
+      "rehook": "",
+      "draw": {
+        "subject": "dotted flight line",
+        "action": "draws itself toward a village pin",
+        "emotion": "hopeful",
+        "annotation": "A DRONE DELIVERY PLAN"
+      },
+      "choreo": {
+        "primary": "a dotted route draws itself across the map toward a village pin, a plan and never a flight",
+        "reaction": "the pin bobs as the line reaches it",
+        "ambient": "map pin pulses, the dotted line marches, tundra ripples below, the map card's gridlines glide"
+      },
+      "t": "9.290-13.620",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 3,
+      "at_s": 13.62,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then the study changed shape.",
+      "phrase": "Then the study changed",
+      "shows": "the rotor blades unscrew, float off and each one flutters into a kraft price tag that settles on a rural store shelf",
+      "sfx": "whoosh",
+      "means": "a blade becomes a tag",
+      "rehook": "",
+      "draw": {
+        "subject": "rotor blades",
+        "action": "unscrew and flutter into price tags",
+        "emotion": "playful",
+        "annotation": "A BLADE BECOMES A TAG"
+      },
+      "choreo": {
+        "primary": "the rotor blades unscrew, float off and each one flutters into a kraft price tag that settles on a rural store shelf",
+        "reaction": "the shelf's own edge tags tremble as the new ones land",
+        "ambient": "tags flutter and settle, shelf cans gleam, dust turns in the light, the study tag swings"
+      },
+      "t": "13.620-18.510",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 18.51,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 1.37
+      },
+      "offset": 1.37,
+      "vo": "In his words, \"The impetus for the study was actually transportation research. What it's become is significantly more than that.\"",
+      "phrase": "In his words, \"The",
+      "shows": "the study's tag drops in on its string and flips to scrawled illegible shelf entries and a blank destination line that pulses",
+      "sfx": "clip",
+      "means": "where is it headed?",
+      "rehook": "",
+      "draw": {
+        "subject": "crate tag",
+        "action": "drops in and flips to a smudged face with a blank destination line",
+        "emotion": "puzzled",
+        "annotation": "WHERE IS IT HEADED?"
+      },
+      "choreo": {
+        "primary": "the study's tag drops in on its string and flips to scrawled illegible shelf entries and a blank destination line that pulses",
+        "reaction": "the shelf tags lean to read it",
+        "ambient": "tags flutter and settle, shelf cans gleam, dust turns in the light, the study tag swings"
+      },
+      "t": "18.510-22.250",
+      "key": 8
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 22.25,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 5.11
+      },
+      "offset": 5.11,
+      "vo": "In his words, \"The impetus for the study was actually transportation research. What it's become is significantly more than that.\"",
+      "phrase": "In his words, \"The",
+      "shows": "the study tag's blank destination line pulses again as the second half of the quote begins",
+      "sfx": "blip",
+      "means": "blank destination line",
+      "rehook": "",
+      "draw": {
+        "subject": "crate tag",
+        "action": "pulses its blank destination line",
+        "emotion": "puzzled",
+        "annotation": "BLANK DESTINATION LINE"
+      },
+      "choreo": {
+        "primary": "the study tag's blank destination line pulses again as the second half of the quote begins",
+        "reaction": "the shelf tags lean toward the pulse",
+        "ambient": "tags flutter and settle, shelf cans gleam, dust turns in the light, the study tag swings"
+      },
+      "t": "22.250-23.690",
+      "key": 39
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 23.69,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.55
+      },
+      "offset": 6.55,
+      "vo": "In his words, \"The impetus for the study was actually transportation research. What it's become is significantly more than that.\"",
+      "phrase": "In his words, \"The",
+      "shows": "a quote plate lands with Jones's words over the shelf",
+      "sfx": "page",
+      "means": "\"significantly more than that\" \u00b7 mike jones",
+      "rehook": "",
+      "draw": {
+        "subject": "quote plate",
+        "action": "types the quote across the shelf",
+        "emotion": "earnest",
+        "annotation": "\"SIGNIFICANTLY MORE THAN THAT\" \u00b7 MIKE JONES"
+      },
+      "choreo": {
+        "primary": "a quote plate lands with Jones's words over the shelf",
+        "reaction": "the tag stills on its string as the words land",
+        "ambient": "tags flutter and settle, shelf cans gleam, dust turns in the light, the study tag swings"
+      },
+      "t": "23.690-26.060",
+      "key": 7
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 26.06,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now it's about what rural groceries cost.",
+      "phrase": "Now it's about what",
+      "shows": "a rural grocery shelf slides in beside a blank mint code sheet on a dark grid",
+      "sfx": "slide",
+      "means": "rural alaska grocery prices",
+      "rehook": "",
+      "draw": {
+        "subject": "grocery shelf",
+        "action": "slides in beside a blank mint code sheet",
+        "emotion": "curious",
+        "annotation": "RURAL ALASKA GROCERY PRICES"
+      },
+      "choreo": {
+        "primary": "a rural grocery shelf slides in beside a blank mint code sheet on a dark grid",
+        "reaction": "the code sheet's cursor starts to blink",
+        "ambient": "code lines scroll, the mint glow breathes, shelf tags tremble, cans gleam, dust turns in the lamp light"
+      },
+      "t": "26.060-27.690",
+      "key": 9
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 27.69,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 1.63
+      },
+      "offset": 1.63,
+      "vo": "Now it's about what rural groceries cost.",
+      "phrase": "Now it's about what",
+      "shows": "on the shelf two tags for the same can carry codes that do not line up and a dashed ring circles them",
+      "sfx": "hum",
+      "means": "uncleaned price data",
+      "rehook": "",
+      "draw": {
+        "subject": "shelf tags",
+        "action": "disagree about the same can",
+        "emotion": "baffled",
+        "annotation": "UNCLEANED PRICE DATA"
+      },
+      "choreo": {
+        "primary": "on the shelf two tags for the same can carry codes that do not line up and a dashed ring circles them",
+        "reaction": "the neighbouring cans lean away from the muddle",
+        "ambient": "code lines scroll, the mint glow breathes, shelf tags tremble, cans gleam, dust turns in the lamp light"
+      },
+      "t": "27.690-30.830",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 30.83,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 1.23
+      },
+      "offset": 1.23,
+      "vo": "Jones's team used code written by AI to clean up the price data.",
+      "phrase": "Jones's team used code",
+      "shows": "the mint code sheet prints line by line and the smudged shelf entries snap one by one into ruled rows",
+      "sfx": "page",
+      "means": "ai-written code \u00b7 cleaned the price data",
+      "rehook": "rehook: the first payoff, messy becomes ruled",
+      "draw": {
+        "subject": "code sheet",
+        "action": "prints mint lines and the smudged entries snap into rows",
+        "emotion": "satisfied",
+        "annotation": "AI-WRITTEN CODE \u00b7 CLEANED THE PRICE DATA"
+      },
+      "choreo": {
+        "primary": "the mint code sheet prints line by line and the smudged shelf entries snap one by one into ruled rows",
+        "reaction": "the shelf tags straighten on their pegs row by row",
+        "ambient": "code lines scroll, the mint glow breathes, shelf tags tremble, cans gleam, dust turns in the lamp light"
+      },
+      "t": "30.830-32.450",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 32.45,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.85
+      },
+      "offset": 2.85,
+      "vo": "Jones's team used code written by AI to clean up the price data.",
+      "phrase": "Jones's team used code",
+      "shows": "the code comb passes over the tag and it comes out flat on a fresh string with its barcode in clean bars",
+      "sfx": "sizzle",
+      "means": "code written by ai",
+      "rehook": "",
+      "draw": {
+        "subject": "kraft tag",
+        "action": "is combed flat and set on a fresh string",
+        "emotion": "relieved",
+        "annotation": "CODE WRITTEN BY AI"
+      },
+      "choreo": {
+        "primary": "the code comb passes over the tag and it comes out flat on a fresh string with its barcode in clean bars",
+        "reaction": "the comb ray fades out down the shelf",
+        "ambient": "code lines scroll, the mint glow breathes, shelf tags tremble, cans gleam, dust turns in the lamp light"
+      },
+      "t": "32.450-34.360",
+      "key": 12
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 34.36,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand.",
+      "phrase": "Per the Daily News,",
+      "shows": "a hard seam closes down the middle of the frame with a desk of hand-matched tags on the left and a chip, PER ADN",
+      "sfx": "slide",
+      "means": "per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "seam",
+        "action": "closes down the middle with a Quebec desk on the left",
+        "emotion": "weary",
+        "annotation": "PER ADN"
+      },
+      "choreo": {
+        "primary": "a hard seam closes down the middle of the frame with a desk of hand-matched tags on the left and a chip, PER ADN",
+        "reaction": "the lamp on the desk sways",
+        "ambient": "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side"
+      },
+      "t": "34.360-37.290",
+      "key": 42
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 37.29,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand.",
+      "phrase": "Per the Daily News,",
+      "shows": "on the left of a hard seam a stack of hand-matched tags grows past the top of the frame as a brass tally counter clicks",
+      "sfx": "thunk",
+      "means": "quebec \u00b7 hundreds of hours by hand \u00b7 per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "paper stack",
+        "action": "grows past the top of frame as a tally counter clicks",
+        "emotion": "weary",
+        "annotation": "QUEBEC \u00b7 HUNDREDS OF HOURS BY HAND \u00b7 PER ADN"
+      },
+      "choreo": {
+        "primary": "on the left of a hard seam a stack of hand-matched tags grows past the top of the frame as a brass tally counter clicks",
+        "reaction": "the seated figure keeps sorting without looking up",
+        "ambient": "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side"
+      },
+      "t": "37.290-41.430",
+      "key": 13
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 41.43,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.67
+      },
+      "offset": 0.67,
+      "vo": "Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.",
+      "phrase": "Jones said the code",
+      "shows": "the mint code sheet slides across the seam and a hand holding a red pen runs down its lines, underlining one row at a time",
+      "sfx": "slide",
+      "means": "the code needs a person",
+      "rehook": "",
+      "draw": {
+        "subject": "red pen",
+        "action": "a hand runs it down the code sheet that slid across the seam",
+        "emotion": "careful",
+        "annotation": "THE CODE NEEDS A PERSON"
+      },
+      "choreo": {
+        "primary": "the mint code sheet slides across the seam and a hand holding a red pen runs down its lines, underlining one row at a time",
+        "reaction": "the code sheet's glow dims a little under the pen",
+        "ambient": "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side"
+      },
+      "t": "41.430-42.970",
+      "key": 15
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 42.97,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.21
+      },
+      "offset": 2.21,
+      "vo": "Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.",
+      "phrase": "Jones said the code",
+      "shows": "the pen comes to rest on one line while a plate carries Jones's caution",
+      "sfx": "hum",
+      "means": "jones says it still needs human oversight",
+      "rehook": "",
+      "draw": {
+        "subject": "red pen",
+        "action": "rests on one line and does not move on",
+        "emotion": "careful",
+        "annotation": "JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT"
+      },
+      "choreo": {
+        "primary": "the pen comes to rest on one line while a plate carries Jones's caution",
+        "reaction": "the Quebec stack keeps growing on its side",
+        "ambient": "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side"
+      },
+      "t": "42.970-44.250",
+      "key": 14
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 44.25,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.49
+      },
+      "offset": 3.49,
+      "vo": "Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.",
+      "phrase": "Jones said the code",
+      "shows": "the combed shelf tag lifts off the code sheet and slides toward the seam as the shelf prices are named",
+      "sfx": "page",
+      "means": "rural grocery prices",
+      "rehook": "",
+      "draw": {
+        "subject": "combed shelf tag",
+        "action": "lifts off the code sheet and slides toward the seam",
+        "emotion": "steady",
+        "annotation": "RURAL GROCERY PRICES"
+      },
+      "choreo": {
+        "primary": "the combed shelf tag lifts off the code sheet and slides toward the seam as the shelf prices are named",
+        "reaction": "the code sheet's glow follows it and dims",
+        "ambient": "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side"
+      },
+      "t": "44.250-46.530",
+      "key": 50
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 46.53,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 5.77
+      },
+      "offset": 5.77,
+      "vo": "Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.",
+      "phrase": "Jones said the code",
+      "shows": "a steel panel wipes in from the right edge of the frame, riveted and plain, and pushes the code sheet out",
+      "sfx": "slide",
+      "means": "federal rule",
+      "rehook": "",
+      "draw": {
+        "subject": "steel panel",
+        "action": "wipes in from the right edge",
+        "emotion": "steady",
+        "annotation": "FEDERAL RULE"
+      },
+      "choreo": {
+        "primary": "a steel panel wipes in from the right edge of the frame, riveted and plain, and pushes the code sheet out",
+        "reaction": "the seam line bends under the steel",
+        "ambient": "the tally counter clicks, the stack leans, the pen drifts, the figure keeps sorting, a lamp sways on each side"
+      },
+      "t": "46.530-50.700",
+      "key": 36
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 50.7,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
+      "phrase": "Under a federal rule,",
+      "shows": "a whip pan lands on the Anchorage skyline and a steel beam rises with two empty hooks",
+      "sfx": "whoosh",
+      "means": "a steel beam",
+      "rehook": "rehook: the pivot to the federal rule",
+      "draw": {
+        "subject": "skyline",
+        "action": "whips in under a pale morning",
+        "emotion": "steady",
+        "annotation": "A STEEL BEAM"
+      },
+      "choreo": {
+        "primary": "a whip pan lands on the Anchorage skyline and a steel beam rises with two empty hooks",
+        "reaction": "the beam's rivets catch the morning light",
+        "ambient": "the skyline lights blink, clouds slide, the beam hum shows as a faint shimmer, the weights swing on their chains"
+      },
+      "t": "50.700-53.130",
+      "key": 51
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 53.13,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.43
+      },
+      "offset": 2.43,
+      "vo": "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
+      "phrase": "Under a federal rule,",
+      "shows": "a plate names SNAP BENEFITS IN RURAL ALASKA over the empty beam",
+      "sfx": "click",
+      "means": "snap benefits \u00b7 alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "names SNAP BENEFITS IN RURAL ALASKA",
+        "emotion": "steady",
+        "annotation": "SNAP BENEFITS \u00b7 ALASKA"
+      },
+      "choreo": {
+        "primary": "a plate names SNAP BENEFITS IN RURAL ALASKA over the empty beam",
+        "reaction": "the beam's rivets catch the morning light",
+        "ambient": "the skyline lights blink, clouds slide, the beam hum shows as a faint shimmer, the weights swing on their chains"
+      },
+      "t": "53.130-54.990",
+      "key": 16
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 54.99,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.29
+      },
+      "offset": 4.29,
+      "vo": "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
+      "phrase": "Under a federal rule,",
+      "shows": "a steel tag stamped ANCHORAGE drops onto the beam's left hook",
+      "sfx": "clunk",
+      "means": "anchorage food prices",
+      "rehook": "",
+      "draw": {
+        "subject": "steel tag",
+        "action": "drops onto the left hook",
+        "emotion": "steady",
+        "annotation": "ANCHORAGE FOOD PRICES"
+      },
+      "choreo": {
+        "primary": "a steel tag stamped ANCHORAGE drops onto the beam's left hook",
+        "reaction": "the beam dips a hair and levels",
+        "ambient": "the skyline lights blink, clouds slide, the beam hum shows as a faint shimmer, the weights swing on their chains"
+      },
+      "t": "54.990-56.950",
+      "key": 35
+    },
+    {
+      "id": 23,
+      "shot": 6,
+      "at_s": 56.95,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 6.25
+      },
+      "offset": 6.25,
+      "vo": "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
+      "phrase": "Under a federal rule,",
+      "shows": "three identical gold weights slide out on chains from the steel tag and a dotted gap with a question mark opens between it and the empty right hook",
+      "sfx": "slide",
+      "means": "anchorage prices plus zone adjustment \u00b7 7 cfr 273.10",
+      "rehook": "",
+      "draw": {
+        "subject": "zone weights",
+        "action": "slide out from the steel tag on chains",
+        "emotion": "methodical",
+        "annotation": "ANCHORAGE PRICES PLUS ZONE ADJUSTMENT \u00b7 7 CFR 273.10"
+      },
+      "choreo": {
+        "primary": "three identical gold weights slide out on chains from the steel tag and a dotted gap with a question mark opens between it and the empty right hook",
+        "reaction": "the empty hook swings, waiting",
+        "ambient": "the skyline lights blink, clouds slide, the beam hum shows as a faint shimmer, the weights swing on their chains"
+      },
+      "t": "56.950-59.370",
+      "key": 17
+    },
+    {
+      "id": 24,
+      "shot": 6,
+      "at_s": 59.37,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 8.67
+      },
+      "offset": 8.67,
+      "vo": "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
+      "phrase": "Under a federal rule,",
+      "shows": "the three zone weights light up one by one as the zones are named, URBAN, RURAL I and RURAL II",
+      "sfx": "blip",
+      "means": "urban \u00b7 rural i \u00b7 rural ii",
+      "rehook": "",
+      "draw": {
+        "subject": "zone weights",
+        "action": "light up one by one",
+        "emotion": "methodical",
+        "annotation": "URBAN \u00b7 RURAL I \u00b7 RURAL II"
+      },
+      "choreo": {
+        "primary": "the three zone weights light up one by one as the zones are named, URBAN, RURAL I and RURAL II",
+        "reaction": "the steel tag swings a hair with each light",
+        "ambient": "the skyline lights blink, clouds slide, the beam hum shows as a faint shimmer, the weights swing on their chains"
+      },
+      "t": "59.370-63.060",
+      "key": 34
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 63.06,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The Daily News calls the formula forty years old.",
+      "phrase": "The Daily News calls",
+      "shows": "in an archive wall of steel drawers the shelf tag hangs from the knob of the drawer labelled with the rule",
+      "sfx": "clunk",
+      "means": "the rule on file",
+      "rehook": "",
+      "draw": {
+        "subject": "kraft tag",
+        "action": "hangs from a drawer knob in the archive",
+        "emotion": "wry",
+        "annotation": "THE RULE ON FILE"
+      },
+      "choreo": {
+        "primary": "in an archive wall of steel drawers the shelf tag hangs from the knob of the drawer labelled with the rule",
+        "reaction": "the label card on the rule drawer lifts a hair in the lamp's draft",
+        "ambient": "the drawer knobs shine, the tag sways on its string, the lamp pool breathes, a slow push drifts across the steel wall"
+      },
+      "t": "63.060-64.830",
+      "key": 18
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "at_s": 64.83,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.77
+      },
+      "offset": 1.77,
+      "vo": "The Daily News calls the formula forty years old.",
+      "phrase": "The Daily News calls",
+      "shows": "the shelf tag flips through edge-on to its rule face and a chip lands, ADN CALLS IT A 40-YEAR-OLD FORMULA",
+      "sfx": "page",
+      "means": "adn calls it a 40-year-old formula",
+      "rehook": "",
+      "draw": {
+        "subject": "kraft tag",
+        "action": "flips through edge-on to its rule face",
+        "emotion": "wry",
+        "annotation": "ADN CALLS IT A 40-YEAR-OLD FORMULA"
+      },
+      "choreo": {
+        "primary": "the shelf tag flips through edge-on to its rule face and a chip lands, ADN CALLS IT A 40-YEAR-OLD FORMULA",
+        "reaction": "the label card on the rule drawer lifts a hair in the lamp's draft",
+        "ambient": "the drawer knobs shine, the tag sways on its string, the lamp pool breathes, a slow push drifts across the steel wall"
+      },
+      "t": "64.830-67.040",
+      "key": 44
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 67.04,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The case for the old way. One city price plus three set zones is steady and simple to check.",
+      "phrase": "The case for the",
+      "shows": "a snowy bluff opens with the Anchorage beam standing in it under falling snow",
+      "sfx": "whoosh",
+      "means": "a steady beam",
+      "rehook": "",
+      "draw": {
+        "subject": "snowy bluff",
+        "action": "opens under falling snow",
+        "emotion": "calm",
+        "annotation": "A STEADY BEAM"
+      },
+      "choreo": {
+        "primary": "a snowy bluff opens with the Anchorage beam standing in it under falling snow",
+        "reaction": "the snow settles on the bluff and the light goes flat",
+        "ambient": "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half"
+      },
+      "t": "67.040-70.410",
+      "key": 40
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 70.41,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "The case for the old way. One city price plus three set zones is steady and simple to check.",
+      "phrase": "The case for the",
+      "shows": "the Anchorage beam with its steel tag and three weights settles on a snowy bluff",
+      "sfx": "thunk",
+      "means": "one city price plus fixed zones",
+      "rehook": "rehook: the fair case against, at full strength",
+      "draw": {
+        "subject": "steady beam",
+        "action": "stands with its steel tag and three weights",
+        "emotion": "calm",
+        "annotation": "ONE CITY PRICE PLUS FIXED ZONES"
+      },
+      "choreo": {
+        "primary": "the Anchorage beam with its steel tag and three weights settles on a snowy bluff",
+        "reaction": "the weights settle on their chains",
+        "ambient": "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half"
+      },
+      "t": "70.410-72.570",
+      "key": 19
+    },
+    {
+      "id": 29,
+      "shot": 8,
+      "at_s": 72.57,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 5.53
+      },
+      "offset": 5.53,
+      "vo": "The case for the old way. One city price plus three set zones is steady and simple to check.",
+      "phrase": "The case for the",
+      "shows": "snow loads onto the beam's top edge and the beam does not move",
+      "sfx": "thunk",
+      "means": "steady",
+      "rehook": "",
+      "draw": {
+        "subject": "beam",
+        "action": "stays unmoved while snow loads on top of it",
+        "emotion": "calm",
+        "annotation": "STEADY"
+      },
+      "choreo": {
+        "primary": "snow loads onto the beam's top edge and the beam does not move",
+        "reaction": "the weights barely sway",
+        "ambient": "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half"
+      },
+      "t": "72.570-74.170",
+      "key": 45
+    },
+    {
+      "id": 30,
+      "shot": 8,
+      "at_s": 74.17,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 7.13
+      },
+      "offset": 7.13,
+      "vo": "The case for the old way. One city price plus three set zones is steady and simple to check.",
+      "phrase": "The case for the",
+      "shows": "a nickel inspection light runs along the beam so every part of it reads",
+      "sfx": "blip",
+      "means": "steady \u00b7 simple to check",
+      "rehook": "",
+      "draw": {
+        "subject": "inspection light",
+        "action": "runs along the beam so every part reads",
+        "emotion": "orderly",
+        "annotation": "STEADY \u00b7 SIMPLE TO CHECK"
+      },
+      "choreo": {
+        "primary": "a nickel inspection light runs along the beam so every part of it reads",
+        "reaction": "the light's cone sweeps the snow",
+        "ambient": "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half"
+      },
+      "t": "74.170-75.580",
+      "key": 20
+    },
+    {
+      "id": 31,
+      "shot": 8,
+      "at_s": 75.58,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Prices scattered across rural shelves are noisy.",
+      "phrase": "Prices scattered across rural",
+      "shows": "a gust sends a cart of loose rural tags swirling and jittering while the shelf tag sways on its string and its clean rows hold",
+      "sfx": "whoosh",
+      "means": "the case \u00b7 scattered prices are noisy",
+      "rehook": "",
+      "draw": {
+        "subject": "rural tags",
+        "action": "swirl in a gust",
+        "emotion": "chaotic",
+        "annotation": "THE CASE \u00b7 SCATTERED PRICES ARE NOISY"
+      },
+      "choreo": {
+        "primary": "a gust sends a cart of loose rural tags swirling and jittering while the shelf tag sways on its string and its clean rows hold",
+        "reaction": "the beam's weights swing once and stop, the beam itself does not move",
+        "ambient": "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half"
+      },
+      "t": "75.580-77.990",
+      "key": 21
+    },
+    {
+      "id": 32,
+      "shot": 8,
+      "at_s": 77.99,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.41
+      },
+      "offset": 2.41,
+      "vo": "Prices scattered across rural shelves are noisy.",
+      "phrase": "Prices scattered across rural",
+      "shows": "two loose tags tear away from the swirl and tumble off the right edge",
+      "sfx": "slide",
+      "means": "scattered rural prices",
+      "rehook": "",
+      "draw": {
+        "subject": "swirl tags",
+        "action": "two of them tear away and blow off the frame",
+        "emotion": "chaotic",
+        "annotation": "SCATTERED RURAL PRICES"
+      },
+      "choreo": {
+        "primary": "two loose tags tear away from the swirl and tumble off the right edge",
+        "reaction": "the remaining tags jitter and rebalance",
+        "ambient": "snow falls, the swirl keeps moving, the inspection light slides along the beam, snow streaks cross the right half"
+      },
+      "t": "77.990-80.000",
+      "key": 38
+    },
+    {
+      "id": 33,
+      "shot": 9,
+      "at_s": 80.0,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The research hasn't been published yet, and it all comes from one news report.",
+      "phrase": "The research hasn't been",
+      "shows": "a pale proof desk opens with the shelf tag hanging by one string below a single news clipping",
+      "sfx": "slide",
+      "means": "one clipping",
+      "rehook": "",
+      "draw": {
+        "subject": "proof desk",
+        "action": "opens with the tag hanging below a news clipping",
+        "emotion": "sober",
+        "annotation": "ONE CLIPPING"
+      },
+      "choreo": {
+        "primary": "a pale proof desk opens with the shelf tag hanging by one string below a single news clipping",
+        "reaction": "the string sways in the lamp's warmth",
+        "ambient": "the lamp pool breathes, the tag sways on its string, dust turns, the clipping's pins glint"
+      },
+      "t": "80.000-81.250",
+      "key": 52
+    },
+    {
+      "id": 34,
+      "shot": 9,
+      "at_s": 81.25,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 1.25
+      },
+      "offset": 1.25,
+      "vo": "The research hasn't been published yet, and it all comes from one news report.",
+      "phrase": "The research hasn't been",
+      "shows": "a stamp reading NOT PUBLISHED YET slams onto the shelf tag, which hangs from a single string tied to a news clipping",
+      "sfx": "stamp",
+      "means": "not published yet",
+      "rehook": "",
+      "draw": {
+        "subject": "NOT PUBLISHED YET stamp",
+        "action": "lands on the shelf tag",
+        "emotion": "sober",
+        "annotation": "NOT PUBLISHED YET"
+      },
+      "choreo": {
+        "primary": "a stamp reading NOT PUBLISHED YET slams onto the shelf tag, which hangs from a single string tied to a news clipping",
+        "reaction": "the tag swings on its one string and ink flecks the clipping",
+        "ambient": "the lamp pool breathes, the tag sways on its string, dust turns, the clipping's pins glint"
+      },
+      "t": "81.250-83.310",
+      "key": 22
+    },
+    {
+      "id": 35,
+      "shot": 9,
+      "at_s": 83.31,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "The research hasn't been published yet, and it all comes from one news report.",
+      "phrase": "The research hasn't been",
+      "shows": "a chip pins under the tag, ONE OUTLET \u00b7 ANCHORAGE DAILY NEWS, and the string it hangs by stays taut",
+      "sfx": "clip",
+      "means": "one outlet \u00b7 anchorage daily news",
+      "rehook": "",
+      "draw": {
+        "subject": "single chip",
+        "action": "pins under the tag",
+        "emotion": "plain",
+        "annotation": "ONE OUTLET \u00b7 ANCHORAGE DAILY NEWS"
+      },
+      "choreo": {
+        "primary": "a chip pins under the tag, ONE OUTLET \u00b7 ANCHORAGE DAILY NEWS, and the string it hangs by stays taut",
+        "reaction": "the clipping's pins catch the lamp",
+        "ambient": "the lamp pool breathes, the tag sways on its string, dust turns, the clipping's pins glint"
+      },
+      "t": "83.310-85.240",
+      "key": 23
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 85.24,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Jones hopes the data will inform USDA's update of SNAP benefit rates in Alaska.",
+      "phrase": "Jones hopes the data",
+      "shows": "a dotted line grows across the Alaska map and the shelf tag sets off along it",
+      "sfx": "slide",
+      "means": "a dotted line across alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "dotted line",
+        "action": "grows across the map as the shelf tag sets off",
+        "emotion": "hopeful",
+        "annotation": "A DOTTED LINE ACROSS ALASKA"
+      },
+      "choreo": {
+        "primary": "a dotted line grows across the Alaska map and the shelf tag sets off along it",
+        "reaction": "the dotted line marches as it grows",
+        "ambient": "the map pin pulses, the dotted line marches, the signpost board catches the light, map gridlines glide"
+      },
+      "t": "85.240-87.810",
+      "key": 24
+    },
+    {
+      "id": 37,
+      "shot": 10,
+      "at_s": 87.81,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.57
+      },
+      "offset": 2.57,
+      "vo": "Jones hopes the data will inform USDA's update of SNAP benefit rates in Alaska.",
+      "phrase": "Jones hopes the data",
+      "shows": "a plain green USDA signpost rises at the edge of the Alaska map at the end of the dotted line",
+      "sfx": "slide",
+      "means": "hoped to inform usda \u00b7 snap rates in alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "USDA marker",
+        "action": "rises at the edge of the map",
+        "emotion": "plain",
+        "annotation": "HOPED TO INFORM USDA \u00b7 SNAP RATES IN ALASKA"
+      },
+      "choreo": {
+        "primary": "a plain green USDA signpost rises at the edge of the Alaska map at the end of the dotted line",
+        "reaction": "the signpost board catches the light",
+        "ambient": "the map pin pulses, the dotted line marches, the signpost board catches the light, map gridlines glide"
+      },
+      "t": "87.810-91.370",
+      "key": 46
+    },
+    {
+      "id": 38,
+      "shot": 10,
+      "at_s": 91.37,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.63
+      },
+      "offset": 0.63,
+      "vo": "That's a hope, not a decision.",
+      "phrase": "That's a hope, not",
+      "shows": "the tag flips and its blank destination line fills in, dotted, USDA, with a HOPED chip",
+      "sfx": "click",
+      "means": "hoped \u00b7 not a decision",
+      "rehook": "",
+      "draw": {
+        "subject": "tag destination line",
+        "action": "fills in as a dotted USDA address",
+        "emotion": "wistful",
+        "annotation": "HOPED \u00b7 NOT A DECISION"
+      },
+      "choreo": {
+        "primary": "the tag flips and its blank destination line fills in, dotted, USDA, with a HOPED chip",
+        "reaction": "the signpost stays unlit and unchanged",
+        "ambient": "the map pin pulses, the dotted line marches, the signpost board catches the light, map gridlines glide"
+      },
+      "t": "91.370-93.960",
+      "key": 26
+    },
+    {
+      "id": 39,
+      "shot": 11,
+      "at_s": 93.96,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A price tracked in rural Alaska is different evidence than one worked out from Anchorage.",
+      "phrase": "A price tracked in",
+      "shows": "on the dawn tundra the shelf tag swings in alone on a rope strung between two stakes",
+      "sfx": "clunk",
+      "means": "rural price",
+      "rehook": "",
+      "draw": {
+        "subject": "shelf tag",
+        "action": "swings in on a rope between two stakes",
+        "emotion": "curious",
+        "annotation": "RURAL PRICE"
+      },
+      "choreo": {
+        "primary": "on the dawn tundra the shelf tag swings in alone on a rope strung between two stakes",
+        "reaction": "the rope sags and the stakes lean",
+        "ambient": "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind"
+      },
+      "t": "93.960-96.890",
+      "key": 27
+    },
+    {
+      "id": 40,
+      "shot": 11,
+      "at_s": 96.89,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "A price tracked in rural Alaska is different evidence than one worked out from Anchorage.",
+      "phrase": "A price tracked in",
+      "shows": "the rope sags and a pale glint runs along it as the turn is spoken",
+      "sfx": "blip",
+      "means": "different evidence",
+      "rehook": "rehook: the turn, a different kind of evidence",
+      "draw": {
+        "subject": "rope",
+        "action": "sags and a glint runs along it",
+        "emotion": "curious",
+        "annotation": "DIFFERENT EVIDENCE"
+      },
+      "choreo": {
+        "primary": "the rope sags and a pale glint runs along it as the turn is spoken",
+        "reaction": "the stakes lean in",
+        "ambient": "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind"
+      },
+      "t": "96.890-98.490",
+      "key": 48
+    },
+    {
+      "id": 41,
+      "shot": 11,
+      "at_s": 98.49,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 4.53
+      },
+      "offset": 4.53,
+      "vo": "A price tracked in rural Alaska is different evidence than one worked out from Anchorage.",
+      "phrase": "A price tracked in",
+      "shows": "the steel Anchorage tag swings in on the far end of the rope, ANCHORAGE + ZONE",
+      "sfx": "slide",
+      "means": "anchorage price plus zone",
+      "rehook": "",
+      "draw": {
+        "subject": "Anchorage tag",
+        "action": "swings in on the rope's far end",
+        "emotion": "steady",
+        "annotation": "ANCHORAGE PRICE PLUS ZONE"
+      },
+      "choreo": {
+        "primary": "the steel Anchorage tag swings in on the far end of the rope, ANCHORAGE + ZONE",
+        "reaction": "the rope rocks and the shelf tag swings out of phase",
+        "ambient": "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind"
+      },
+      "t": "98.490-99.210",
+      "key": 49
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 99.21,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 5.25
+      },
+      "offset": 5.25,
+      "vo": "A price tracked in rural Alaska is different evidence than one worked out from Anchorage.",
+      "phrase": "A price tracked in",
+      "shows": "nickel calipers swing open between the two tags and the readout stays dotted",
+      "sfx": "snap",
+      "means": "this study's numbers aren't out yet",
+      "rehook": "",
+      "draw": {
+        "subject": "calipers",
+        "action": "swing open between the tags with a dotted readout",
+        "emotion": "pending",
+        "annotation": "THIS STUDY'S NUMBERS AREN'T OUT YET"
+      },
+      "choreo": {
+        "primary": "nickel calipers swing open between the two tags and the readout stays dotted",
+        "reaction": "the two tags settle out of phase",
+        "ambient": "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind"
+      },
+      "t": "99.210-101.110",
+      "key": 28
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 101.11,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.97
+      },
+      "offset": 0.97,
+      "vo": "How much that weighs waits on publication and USDA.",
+      "phrase": "How much that weighs",
+      "shows": "the dotted readout becomes two empty dashed slots, PUBLICATION and USDA, and nothing fills them",
+      "sfx": "blip",
+      "means": "publication \u00b7 usda",
+      "rehook": "",
+      "draw": {
+        "subject": "readout",
+        "action": "turns into two empty slots",
+        "emotion": "patient",
+        "annotation": "PUBLICATION \u00b7 USDA"
+      },
+      "choreo": {
+        "primary": "the dotted readout becomes two empty dashed slots, PUBLICATION and USDA, and nothing fills them",
+        "reaction": "the calipers hold their opening",
+        "ambient": "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind"
+      },
+      "t": "101.110-102.470",
+      "key": 29
+    },
+    {
+      "id": 44,
+      "shot": 11,
+      "at_s": 102.47,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.33
+      },
+      "offset": 2.33,
+      "vo": "How much that weighs waits on publication and USDA.",
+      "phrase": "How much that weighs",
+      "shows": "the PUBLICATION slot pulses and then the USDA slot pulses, and both stay empty",
+      "sfx": "blip",
+      "means": "waits on publication and usda",
+      "rehook": "",
+      "draw": {
+        "subject": "empty slots",
+        "action": "pulse one after the other",
+        "emotion": "patient",
+        "annotation": "WAITS ON PUBLICATION AND USDA"
+      },
+      "choreo": {
+        "primary": "the PUBLICATION slot pulses and then the USDA slot pulses, and both stay empty",
+        "reaction": "the rope sways once in a breath of wind",
+        "ambient": "the rope sags and sways, the tags swing out of phase, the calipers tremble, clouds drift behind"
+      },
+      "t": "102.470-105.220",
+      "key": 30
+    },
+    {
+      "id": 45,
+      "shot": 12,
+      "at_s": 105.22,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "When those prices are out, will they match Anchorage plus a zone?",
+      "phrase": "When those prices are",
+      "shows": "back on the dawn tundra the crate sits parked with its rotors furled and the tag spinning on its handle",
+      "sfx": "whoosh",
+      "means": "will they match anchorage plus a zone?",
+      "rehook": "",
+      "draw": {
+        "subject": "tundra crate",
+        "action": "is parked at first light with the tag spinning",
+        "emotion": "wistful",
+        "annotation": "WILL THEY MATCH ANCHORAGE PLUS A ZONE?"
+      },
+      "choreo": {
+        "primary": "back on the dawn tundra the crate sits parked with its rotors furled and the tag spinning on its handle",
+        "reaction": "the clouds drift and the grass shivers",
+        "ambient": "tundra grass shivers, clouds drift, the tag spins edge-on, the gauge needle hunts"
+      },
+      "t": "105.220-107.550",
+      "key": 31
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 107.55,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 2.33
+      },
+      "offset": 2.33,
+      "vo": "When those prices are out, will they match Anchorage plus a zone?",
+      "phrase": "When those prices are",
+      "shows": "the spinning tag stills on its measured face and turns to its rule face as Anchorage is said",
+      "sfx": "snap",
+      "means": "measured or anchorage plus a zone",
+      "rehook": "",
+      "draw": {
+        "subject": "study tag",
+        "action": "stills on its measured face then turns to its rule face",
+        "emotion": "curious",
+        "annotation": "MEASURED OR ANCHORAGE PLUS A ZONE"
+      },
+      "choreo": {
+        "primary": "the spinning tag stills on its measured face and turns to its rule face as Anchorage is said",
+        "reaction": "the grass leans toward it",
+        "ambient": "tundra grass shivers, clouds drift, the tag spins edge-on, the gauge needle hunts"
+      },
+      "t": "107.550-108.910",
+      "key": 54
+    },
+    {
+      "id": 47,
+      "shot": 12,
+      "at_s": 108.91,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 3.69
+      },
+      "offset": 3.69,
+      "vo": "When those prices are out, will they match Anchorage plus a zone?",
+      "phrase": "When those prices are",
+      "shows": "the rotors unfold with a small twitch as the music thins",
+      "sfx": "riser",
+      "means": "a question",
+      "rehook": "",
+      "draw": {
+        "subject": "rotors",
+        "action": "unfold with a small twitch",
+        "emotion": "hopeful",
+        "annotation": "A QUESTION"
+      },
+      "choreo": {
+        "primary": "the rotors unfold with a small twitch as the music thins",
+        "reaction": "the cottongrass leans toward the crate",
+        "ambient": "tundra grass shivers, clouds drift, the tag spins edge-on, the gauge needle hunts"
+      },
+      "t": "108.910-110.080",
+      "key": 32
+    },
+    {
+      "id": 48,
+      "shot": 12,
+      "at_s": 110.08,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "This drone crate was supposed to fly.",
+      "phrase": "This drone crate was",
+      "shows": "the rotors hold unfolded and still, the frame the film opened on, while the tag keeps spinning",
+      "sfx": "bloop",
+      "means": "study crate",
+      "rehook": "",
+      "draw": {
+        "subject": "FlightCrate",
+        "action": "holds with its rotors unfolded and still",
+        "emotion": "hopeful",
+        "annotation": "STUDY CRATE"
+      },
+      "choreo": {
+        "primary": "the rotors hold unfolded and still, the frame the film opened on, while the tag keeps spinning",
+        "reaction": "the snow-dust lifts off the lid",
+        "ambient": "tundra grass shivers, clouds drift, the tag spins edge-on, the gauge needle hunts"
+      },
+      "t": "110.080-112.920",
+      "key": 33
+    }
+  ]
+}

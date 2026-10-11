@@ -1,0 +1,50 @@
+{
+ "run_date": "2026-10-11",
+ "title": "The Price Tag Problem",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Tracking grocery prices, skiing speed and senior routines, ways AI is used for research at UAA",
+   "outlet": "Anchorage Daily News (Tim Rockey), October 8th, 2026",
+   "url": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c9",
+    "c10",
+    "c11",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": "Fetched in full by a validator. Single outlet, attributed on screen."
+  },
+  {
+   "id": "s2",
+   "title": "7 CFR 273.10 (Determining household eligibility and benefit levels)",
+   "outlet": "Legal Information Institute, Cornell Law School",
+   "url": "https://www.law.cornell.edu/cfr/text/7/273.10",
+   "claims": [
+    "c8",
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "Primary regulatory text, fetched by a validator."
+  },
+  {
+   "id": "s3",
+   "title": "7 U.S.C. 2012 (Definitions, thrifty food plan adjustments for Alaska)",
+   "outlet": "Legal Information Institute, Cornell Law School",
+   "url": "https://www.law.cornell.edu/uscode/text/7/2012",
+   "claims": [
+    "c14"
+   ],
+   "used_in_film": true,
+   "note": "Primary statute text, fetched by a validator."
+  }
+ ]
+}

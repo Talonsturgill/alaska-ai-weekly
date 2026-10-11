@@ -393,3 +393,14 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A pen is long.** Rotating a 150px pen by -24 degrees put its body across the header it was meant to avoid. Rotate it the other way and aim the tip from the side the text is not on.
 - **Parallax is the cheapest idle life.** A constant 26 px sine drift on the yard's far layers (FrostYardDusk) lifts every held yard beat above the 1 percent stills the panel keeps naming.
 - **Per-run constants cost five cuts.** dispatch_mix.DATE, its riser beat id and BED_ARC, build_evidence.MOVE_RUN_DATE, the run stamp's composition, and the sources.json the build script requires are all hand-set per run, and the mix receipt hashes the board, so any board regeneration needs dispatch_mix.py again before encode. (Machine pass 2026-10-09: the dates now come from `.run_stamp.json` via `scripts/run_stamp.py`, the riser lands on the beat nearest `audio_arc.riser_at`, BED_ARC is `audio_arc.bed` on the board or derived from `audio_arc`, and make_cut.sh runs the mix on every cut. Don't hand-edit any of them.)
+
+## 13. Things the 2026-10-11 panel found that were knowable in advance
+
+- A VO line patch that shortens a line leaves its slot as dead air. Patch to similar length or give the slot a picture event (the steel panel sat empty for 3.3s at 47.4s).
+- Spoken and painted words must come from the claims text: "shelf prices", "federal law" and "fixed zones" were inferences the editor caught. Say "tracked in rural Alaska" and "a federal rule".
+- Beats anchor to a spoken word, so a re-cut line needs its anchor words re-checked; ids must stay 1..N in time order for dispatch_mix.
+- plate_overlap measures the plate `text` width, not displayLines; give overlapping plates distinct y.
+- Chips and plates need to be caption scale and clear of wipes; fade plates out before a wipe starts.
+- Nickel is the instrument metal, kraft is the tag; do not mix them.
+- Held beats need an idle cycle (rotor blades, dotted line, plates under 1 percent change again). Plate now breathes by default.
+- No verdict props: the film shows the plan beside the rule and never rules.

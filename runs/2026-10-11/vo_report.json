@@ -1,0 +1,67 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 4,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.998,
+    "heard": "This drone crate was supposed to fly. The Anchorage Daily News reports UAA economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone. Then, the study changed shape. In his words, the impetus for the study was actually transportation research. What it's become is significantly more than that. Now it's about what rural groceries cost. Jones' team used code written by AI to clean up the price data. Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand. The code didn't set a single price, and Jones said it still needs human oversight. Those shelf prices land beside a federal rule. Under federal law, SNAP benefits in rural Alaska start from a food plan priced in Anchorage and adjusted by zone. The zones are urban, rural one, and rural two. The Daily News calls the formula 40 years old. The case for the old way. One city price plus fixed zones is steady, and anyone can audit it. Prices scattered across rural shelves are noisy. The research hasn't been published yet, and it all comes from one news report. Jones hopes the data will inform USDA's update of SNAP benefit rates in Alaska. That's a hope, not a decision. A price measured on the shelf is different evidence than one worked out from Anchorage. How much it weighs, waits on publication, and USDA. When those prices are out, will they match Anchorage plus a zone? This drone crate was supposed to fly.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.004,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.32,
+        "voiced_frac": 0.49,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 113.76,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 113.76,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (2 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.998,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.985,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.996,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

@@ -3841,3 +3841,9 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - Shipped: new lib/polecam.tsx family (PoleCam and the pole, plate-reader and receipt-tape parts). Panel median 7.45 against 7.0 (7.4, 7.45, 7.5). Caption rewritten five times for honesty, length and hashtag mix, scored 8.12, 8.30, 8.43, 8.48 and finally 8.57 against 8.5 with zero hard fails.
 - In-run fixes: build_scenes labels muni.org ordinance sources, honesty fixes (Lowe's never confirmed as Flock's customer, 90-day and 7-day figures kept as separate documents, 14-day deletion only in the members' version).
 - Recurring causes: held beats and long VO gaps, caption scorer plateau on hashtag craft. Queued in docs/MACHINE_QUEUE.md (4 items, one repeat offender).
+
+## 2026-10-11 (This Crate Was Supposed to Fly)
+- Shipped: new lib/grocer.tsx family (kraft and steel tags, grocery shelf, code sheet, zone beam, drawer wall, calipers). Panel median 7.19 against 7.0 (7.26, 7.13, 7.19). Five VO lines re-cut in place for source fidelity (vo_patch_lines), mix re-leveled so the delivered LRA is 6.0 (long gaps now carry the bed up).
+- In-run fixes: build_scenes possessive break, dispatch_mix gap lift, Plate idle breathing, plate sizes, steel-wipe timing.
+- Caption: 15 rounds, scorer plateau 7.3 to 7.9; see the final scorecard in the email.
+- Recurring causes: held beats, a long VO gap, small plate type. Queued in docs/MACHINE_QUEUE.md (5 items, one repeat offender).

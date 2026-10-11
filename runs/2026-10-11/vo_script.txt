@@ -1,0 +1,19 @@
+This drone crate was supposed to fly.
+The Anchorage Daily News reports U A A economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone.
+Then the study changed shape.
+In his words, "The impetus for the study was actually transportation research. What it's become is significantly more than that."
+Now it's about what rural groceries cost.
+Jones's team used code written by A I to clean up the price data.
+Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand.
+Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.
+Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.
+The Daily News calls the formula forty years old.
+The case for the old way. One city price plus three set zones is steady and simple to check.
+Prices scattered across rural shelves are noisy.
+The research hasn't been published yet, and it all comes from one news report.
+Jones hopes the data will inform U S D A's update of SNAP benefit rates in Alaska.
+That's a hope, not a decision.
+A price tracked in rural Alaska is different evidence than one worked out from Anchorage.
+How much that weighs waits on publication and U S D A.
+When those prices are out, will they match Anchorage plus a zone?
+This drone crate was supposed to fly.

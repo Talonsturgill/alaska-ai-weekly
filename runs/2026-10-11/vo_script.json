@@ -1,0 +1,166 @@
+{
+ "run_date": "2026-10-11",
+ "title": "THIS CRATE WAS SUPPOSED TO FLY",
+ "note": "The crate, the tags, the shelf, the beam and the gate are illustrations. Every study claim is reported by the Anchorage Daily News (October 8th) and the rule structure is from 7 CFR 273.10. No SNAP dollar figure is used.",
+ "caption_fixups": {
+  "U A A": "UAA",
+  "U S D A": "USDA",
+  "A I": "AI",
+  "forty years old": "40 years old"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "This drone crate was supposed to fly.",
+   "t": "This drone crate was supposed to fly.",
+   "claims": []
+  },
+  {
+   "idx": 1,
+   "text": "The Anchorage Daily News reports U A A economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone.",
+   "t": "The Anchorage Daily News reports U A A economist Mike Jones set out to study delivering goods and medicine to rural Alaska by drone.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "Then the study changed shape.",
+   "t": "Then the study changed shape.",
+   "claims": [
+    "c2"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "In his words, \"The impetus for the study was actually transportation research. What it's become is significantly more than that.\"",
+   "t": "In his words, \"The impetus for the study was actually transportation research. What it's become is significantly more than that.\"",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Now it's about what rural groceries cost.",
+   "t": "Now it's about what rural groceries cost.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "Jones's team used code written by A I to clean up the price data.",
+   "t": "Jones's team used code written by A I to clean up the price data.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand.",
+   "t": "Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.",
+   "t": "Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.",
+   "claims": [
+    "c4",
+    "c9"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
+   "t": "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
+   "claims": [
+    "c8",
+    "c12",
+    "c14"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "The Daily News calls the formula forty years old.",
+   "t": "The Daily News calls the formula forty years old.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "The case for the old way. One city price plus three set zones is steady and simple to check.",
+   "t": "The case for the old way. One city price plus three set zones is steady and simple to check.",
+   "claims": [
+    "c8",
+    "c12"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Prices scattered across rural shelves are noisy.",
+   "t": "Prices scattered across rural shelves are noisy.",
+   "claims": []
+  },
+  {
+   "idx": 12,
+   "text": "The research hasn't been published yet, and it all comes from one news report.",
+   "t": "The research hasn't been published yet, and it all comes from one news report.",
+   "claims": [
+    "c10",
+    "c13"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "Jones hopes the data will inform U S D A's update of SNAP benefit rates in Alaska.",
+   "t": "Jones hopes the data will inform U S D A's update of SNAP benefit rates in Alaska.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "That's a hope, not a decision.",
+   "t": "That's a hope, not a decision.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "A price tracked in rural Alaska is different evidence than one worked out from Anchorage.",
+   "t": "A price tracked in rural Alaska is different evidence than one worked out from Anchorage.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 16,
+   "text": "How much that weighs waits on publication and U S D A.",
+   "t": "How much that weighs waits on publication and U S D A.",
+   "claims": [
+    "c10",
+    "c6"
+   ]
+  },
+  {
+   "idx": 17,
+   "text": "When those prices are out, will they match Anchorage plus a zone?",
+   "t": "When those prices are out, will they match Anchorage plus a zone?",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 18,
+   "text": "This drone crate was supposed to fly.",
+   "t": "This drone crate was supposed to fly.",
+   "claims": []
+  }
+ ]
+}
