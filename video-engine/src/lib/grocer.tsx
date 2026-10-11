@@ -336,7 +336,7 @@ export const ZoneWeights: React.FC<{x: number; y: number; f: number; scale?: num
       {[-1, 0, 1].map((k, i) => {
         const wx = k * 190 * t;
         const drop = 190 * t + 30;
-        const swing = Math.sin(f / 17 + i * 1.4) * 2.5 * t;
+        const swing = Math.sin(f / 11 + i * 1.4) * 7 * t;
         const glow = clamp01(labels * 3 - i);
         return (
           <g key={i}>

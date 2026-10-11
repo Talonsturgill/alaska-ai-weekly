@@ -424,7 +424,7 @@ def _cards_from_words(caps, max_chars=68):
                     c -= 40
                 if ws[k]["w"].lower() in _SPLIT_GOOD_START:
                     c -= 12
-                if last in _SPLIT_BAD_END:
+                if last in _SPLIT_BAD_END or (last.endswith("'s") and last not in ("it's", "that's", "what's", "there's", "here's", "let's")):
                     c += 60
                 if any(show(ws[:k]).lower().endswith(f) for f in force):
                     c -= 500
@@ -455,7 +455,7 @@ def _rebalance_cues(caps):
     untouched; only the grouping changes. Merging is capped so a cue can't grow past what
     fits on two lines at phone size.
     """
-    DANGLING = ("of", "out of", "the", "a", "an", "to", "in", "on", "and", "or", "for",
+    DANGLING = ("of", "out of", "the", "a", "an", "to", "in", "on", "and", "or", "for", "usda's",
                 "at", "by", "with", "from", "into", "than", "as", "is", "was", "which",
                 "you", "it", "they", "we", "that", "this", "has", "have", "had", "be",
                 # NUMBER WORDS, added 2026-08-09. The digit guard below cannot see these, and

@@ -13,6 +13,7 @@ import {ReviewPen, TallyCounter} from './lib/props';
 import {AnchorageSkylineBG} from './lib/biomes';
 import {Snowfall} from './lib/refinery';
 import {ImpactStar} from './lib/FX';
+import {IDS} from './Ep1011Ids';
 import {PAL, KraftTag, Rotors, GroceryShelf, CodeSheet, ZoneBeam, DriftStack, UsdaMarker, ZoneWeights, Calipers, RuralSwirl, SteelTag, Barcode, monoW} from './lib/grocer';
 
 // THIS CRATE WAS SUPPOSED TO FLY, 2026-10-11. Palette roles are art_direction.json. KRAFT is only the tag, MINT only AI-written code, RED only the human check,
@@ -228,7 +229,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.1} z1={1.0} dy0={-40} dy1={0} night={0} bloom={0.08}
       overlay={<>
         <Plate text="STUDY CRATE" y={560} size={32} tone="paper" p={ease(f, b(1) + 8, 10) * (f < t2 + 4 ? 1 : 0)} />
-        <Plate text="STARTED AS DRONE DELIVERY RESEARCH" displayLines={['STARTED AS DRONE', 'DELIVERY RESEARCH']} y={600} size={30} tone="kraft" p={ease(f, t2 + 6, 10)} />
+        <Plate text="STARTED AS DRONE DELIVERY RESEARCH" displayLines={['STARTED AS DRONE', 'DELIVERY RESEARCH']} y={660} size={30} tone="kraft" p={ease(f, t2 + 6, 10)} />
       </>}>
       <SVG>
         <DawnTundra f={f + p.from} wind={1.2} wash={wash} />
@@ -277,7 +278,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate text="PER ANCHORAGE DAILY NEWS" y={520} size={28} tone="paper" p={ease(f, b(3) + 10, 10)} />
         <Plate text="MIKE JONES · UAA" x={600} y={640} size={26} tone="paper" p={ease(f, b(4), 10)} />
-        <Plate text="A DRONE DELIVERY PLAN" y={1290} size={26} tone="kraft" p={ease(f, b(5) + 10, 10)} />
+        <Plate text="A DRONE DELIVERY PLAN" y={1275} size={26} tone="kraft" p={ease(f, b(5) + 10, 10)} />
       </>}>
       <SVG>
         <DawnTundra f={f + p.from} wind={0.6} ground={lerp(1330, 1500, rise)} dust={false} />
@@ -342,9 +343,9 @@ const S3: React.FC<SceneProps> = ({p}) => {
         {BLADES.map((bl, i) => {
           const k = clamp01((f - t6 - bl.t) / 70);
           const fall = easeIn(f, t6 + bl.t, 70);
-          const bx = bl.sx + (bl.x - bl.sx) + 40 * Math.sin(k * 9 + i) * (1 - k);
+          const bx = bl.sx + (bl.x - bl.sx) + 90 * Math.sin(k * 11 + i) * (1 - k * 0.6);
           const by = lerp(-60, 705, fall);
-          const rot = 80 * Math.sin(k * 7 + i) * (1 - k) + (k > 0.95 ? (i % 2 ? 9 : -8) : 0);
+          const rot = 140 * Math.sin(k * 9 + i) * (1 - k * 0.7) + (k > 0.95 ? (i % 2 ? 9 : -8) : 0);
           const asTag = clamp01((k - 0.45) / 0.2);
           return (
             <g key={i} transform={`translate(${bx},${by}) rotate(${rot})`}>
@@ -389,7 +390,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate text="RURAL ALASKA GROCERY PRICES" y={540} size={26} tone="paper" p={ease(f, t9 + 12, 10) * (f < t11 ? 1 : 0)} />
         <Plate text="UNCLEANED PRICE DATA" x={300} y={1175} size={24} tone="kraft" p={ease(f, t10 + 4, 10) * (f < t11 + 10 ? 1 : 0)} />
-        <Plate text="AI-WRITTEN CODE · CLEANED THE PRICE DATA" displayLines={['AI-WRITTEN CODE ·', 'CLEANED THE PRICE DATA']} y={560} size={28} tone="mint" p={ease(f, t11 + 4, 10)} />
+        <Plate text="AI-WRITTEN CODE · CLEANED THE PRICE DATA" displayLines={['AI-WRITTEN CODE ·', 'CLEANED THE PRICE DATA']} y={640} size={28} tone="mint" p={ease(f, t11 + 4, 10)} />
         <Plate text="CODE WRITTEN BY AI" x={540} y={1250} size={26} tone="mint" p={ease(f, t12 + 14, 10)} />
       </>}>
       <SVG>
@@ -419,12 +420,13 @@ const S4: React.FC<SceneProps> = ({p}) => {
 const S5: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const t42 = b(42), t13 = b(13), t14 = b(14), t15 = b(15), t50 = b(50), t36 = b(36);
-  const stackH = lerp(80, 560, ease(f, t42 + 20, 200));
+  const stackH = lerp(120, 560, ease(f, t42, 260));
   const sheetX = 810;
   const penGo = ease(f, t15 + 14, 110);
   const penY = lerp(700, 1080, penGo);
   const penHover = f > t15 + 124 ? 6 * Math.sin(f / 9) : 0;
-  const wipe = easeIO(f, t36, 30);
+  const wipe = easeIO(f, t36 + 10, 30);
+  const plateOut = 1 - ease(f, t36 - 14, 8);
   const slide = easeIO(f, t50, 40);
   const rows = 17, h = 740, rh = (h - 120) / rows;
   const done = Math.floor(penGo * 11);
@@ -432,9 +434,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.05} night={0} bloom={0.05}
       overlay={<>
         <Plate text="PER ADN" x={285} y={560} size={26} tone="kraft" p={ease(f, t42 + 8, 10) * (f < t13 ? 1 : 0)} />
-        <Plate text="QUEBEC · HUNDREDS OF HOURS BY HAND · PER ADN" displayLines={['QUEBEC · HUNDREDS OF HOURS', 'BY HAND · PER ADN']} x={285} y={560} size={21} tone="kraft" p={ease(f, t13, 10)} />
-        <Plate text="JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT" displayLines={['JONES SAYS IT STILL', 'NEEDS HUMAN OVERSIGHT']} x={800} y={560} size={21} tone="paper" p={ease(f, t14, 10) * (1 - wipe)} />
-        <Plate text="A PERSON READS THE CODE" displayLines={['A PERSON', 'READS THE CODE']} x={800} y={1230} size={22} tone="red" p={ease(f, t15 + 40, 10) * (1 - wipe)} />
+        <Plate text="QUEBEC · HUNDREDS OF HOURS BY HAND · PER ADN" displayLines={['QUEBEC · HUNDREDS OF HOURS', 'BY HAND · PER ADN']} x={285} y={650} size={21} tone="kraft" p={ease(f, t13, 10)} />
+        <Plate text="JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT" displayLines={['JONES SAYS IT STILL', 'NEEDS HUMAN OVERSIGHT']} x={800} y={560} size={21} tone="paper" p={ease(f, t14, 10) * plateOut} />
+        <Plate text="THE CODE NEEDS A PERSON" displayLines={['THE CODE', 'NEEDS A PERSON']} x={800} y={1230} size={26} tone="red" p={ease(f, t15 + 40, 10) * plateOut} />
       </>}>
       <SVG>
         <g>
@@ -445,6 +447,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <ellipse cx={270} cy={520} rx={330} ry={300} fill="#FFE9B8" opacity={0.35} />
         </g>
         <DriftStack x={250} y={1210} f={f + p.from} h={stackH} w={300} seed={3} />
+        {Array.from({length: 18}, (_, i) => <circle key={i} cx={((rnd(i + 2) * 560 + (f + p.from) * (0.7 + rnd(i) * 1.3)) % 560)} cy={420 + rnd(i + 7) * 700 - (((f + p.from) * (0.5 + rnd(i + 4))) % 90)} r={2 + rnd(i + 5) * 3} fill="#FFE9B8" opacity={0.6} />)}
         <TallyCounter x={80} y={1090} s={0.9} f={f + p.from} count="0001" spin={1} roll={0} />
         <g transform="translate(300,0)"><Silhouette x={0} y={1250} f={f + p.from} scale={0.78} work={1} /></g>
         <g transform={`translate(0,${-16 * Math.max(0, 1 - (f - t42) / 14)})`} opacity={0}><rect width={1} height={1} /></g>
@@ -482,13 +485,14 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} night={0} bloom={0.05}
       overlay={<>
-        <Plate text="SNAP BENEFITS · RURAL ALASKA" y={540} size={26} tone="paper" p={ease(f, t16, 10) * (f < t35 ? 1 : 0)} />
-        <Plate text="ANCHORAGE FOOD PRICES" y={540} size={28} tone="steel" p={ease(f, t35 + 6, 10)} />
+        <Plate text="SNAP BENEFITS · ALASKA" y={540} size={26} tone="paper" p={ease(f, t16, 10) * (f < t35 ? 1 : 0)} />
+        <Plate text="ANCHORAGE FOOD PRICES" y={620} size={28} tone="steel" p={ease(f, t35 + 6, 10)} />
         <Plate text="ANCHORAGE PRICES PLUS ZONE ADJUSTMENT · 7 CFR 273.10" displayLines={['ANCHORAGE PRICES PLUS', 'ZONE ADJUSTMENT · 7 CFR 273.10']} y={1250} size={24} tone="steel" p={ease(f, t17 + 8, 10)} />
       </>}>
       <SVG>
         <AnchorageSkylineBG f={f + p.from} season="summer" denali={false} floatplane={false} />
         <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill={PAL.steel} opacity={0.1} />
+        {[0, 1, 2].map((i) => <ellipse key={i} cx={((i * 430 + (f + p.from) * (0.9 + i * 0.4)) % 1500) - 200} cy={300 + i * 70} rx={170} ry={26} fill="#fff" opacity={0.55} />)}
         <g opacity={beamIn}>
           <ZoneBeam x={540} y={620 + 30 * (1 - beamIn)} f={f + p.from} scale={0.95} hooks={[-110, 290]} />
         </g>
@@ -544,7 +548,7 @@ const S6B: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.1} ox={540} oy={900} night={0} bloom={0.05}
       overlay={<>
         <Plate text="THE RULE ON FILE" y={540} size={26} tone="steel" p={ease(f, t18 + 10, 10) * (f < t44 ? 1 : 0)} />
-        <Plate text="ADN CALLS IT A 40-YEAR-OLD FORMULA" y={540} size={26} tone="paper" p={ease(f, t44 + 18, 10)} />
+        <Plate text="ADN CALLS IT A 40-YEAR-OLD FORMULA" y={620} size={26} tone="paper" p={ease(f, t44 + 18, 10)} />
       </>}>
       <SVG>
         <DrawerWall f={f + p.from} />
@@ -566,14 +570,13 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const lampX = lerp(-330, 330, triPhase);
   const gust = ease(f, t21, 24);
   const snow = ease(f, t45, 80);
-  const flick = f > t21 && f < t21 + 44 ? 0.5 + 0.5 * Math.sin((f - t21) * 0.9) : 0;
-  const blow = clamp01((f - t38) / 60);
+    const blow = clamp01((f - t38) / 60);
   return (
     <Frame p={p} z0={1.0} z1={1.05} night={0} bloom={0.04}
       overlay={<>
-        <Plate text="ONE CITY PRICE PLUS FIXED ZONES" displayLines={['ONE CITY PRICE PLUS', 'FIXED ZONES']} x={290} y={1245} size={22} tone="steel" p={ease(f, t19, 10)} />
-        <Plate text="STEADY · AUDITABLE" x={290} y={560} size={26} tone="steel" p={ease(f, t45 + 10, 10)} />
-        <Plate text="RURAL PRICES ARE NOISY" displayLines={['RURAL PRICES', 'ARE NOISY']} x={800} y={560} size={26} tone="kraft" p={ease(f, t21 + 14, 10)} />
+        <Plate text="ONE CITY PRICE PLUS THREE SET ZONES" displayLines={['ONE CITY PRICE PLUS', 'THREE SET ZONES']} x={290} y={1245} size={22} tone="steel" p={ease(f, t19, 10)} />
+        <Plate text="STEADY · SIMPLE TO CHECK" x={290} y={560} size={26} tone="steel" p={ease(f, t45 + 10, 10)} />
+        <Plate text="THE CASE · SCATTERED PRICES ARE NOISY" displayLines={['THE CASE ·', 'SCATTERED PRICES ARE NOISY']} x={800} y={560} size={22} tone="kraft" p={ease(f, t21 + 14, 10)} />
       </>}>
       <SVG>
         <defs><linearGradient id="s7-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#B7C7D6" /><stop offset="1" stopColor="#E6EDF2" /></linearGradient></defs>
@@ -594,7 +597,6 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <rect x={532} y={740} width={16} height={330} fill="#8F6B36" stroke={INK} strokeWidth={4} />
         <rect x={470} y={748} width={140} height={14} fill="#8F6B36" stroke={INK} strokeWidth={4} />
         <KraftTag x={540} y={762} f={f + p.from} scale={0.6} front="measured" stringLen={16} swing={gust * 7 * Math.sin(f / 4)} />
-        {flick > 0 && <g opacity={flick * 0.85}><KraftTag x={540} y={762} f={f + p.from} scale={0.6} front="smudge" stringLen={16} swing={gust * 7 * Math.sin(f / 4)} /></g>}
         {/* right: the gust of rural tags, a few torn away */}
         <g opacity={0.35 + 0.65 * gust}>
           <RuralSwirl f={f + p.from} cx={800} cy={930} n={9} r={210} gust={1} scale={0.4} skip={4} />
@@ -637,8 +639,9 @@ const ProofDesk: React.FC<{f: number}> = ({f}) => (
     <rect data-band="ok" x={-20} y={-20} width={1120} height={1960} fill="url(#pd-bg)" />
     {Array.from({length: 9}, (_, i) => <path key={i} d={`M -20 ${40 + i * 130} L 1100 ${40 + i * 130}`} stroke="#fff" strokeWidth={3} opacity={0.25} />)}
     <ellipse cx={540 + 20 * Math.sin(f / 50)} cy={760} rx={620} ry={620} fill="url(#pd-lamp)" />
+    {Array.from({length: 26}, (_, i) => <circle key={i} cx={(rnd(i + 2) * 1100 + f * (0.5 + rnd(i) * 1.4)) % 1100} cy={400 + rnd(i + 8) * 900 - ((f * (0.6 + rnd(i + 3))) % 120)} r={2 + rnd(i + 5) * 3} fill="#fff" opacity={0.5} />)}
     {/* the single news clipping the whole story rests on */}
-    <g transform="translate(350,520) rotate(-1.5)">
+    <g transform={`translate(350,520) rotate(${-1.5 + 1.6 * Math.sin(f / 11)} 190 0)`}>
       <rect x={14} y={14} width={380} height={290} fill="#000" opacity={0.25} />
       <rect x={0} y={0} width={380} height={290} fill="#F1EBDD" stroke={INK} strokeWidth={6} />
       <rect x={20} y={18} width={340} height={48} fill={INK} />
@@ -697,16 +700,16 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const t24 = b(24), t46 = b(46), t26 = b(26);
   const markIn = easeIO(f, t46, 36);
-  const drift = easeIO(f, t24, 200);
+  const drift = easeIO(f, t24, 150);
   const tagX = lerp(150, 520, drift);
   const flip = easeIO(f, t26, 26);
   const dest = ease(f, t26 + 14, 40);
-  const line = ease(f, t24, 140);
+  const line = ease(f, t24, 70);
   return (
     <Frame p={p} z0={1.0} z1={1.05} night={0} bloom={0.05}
       overlay={<>
         <Plate text="HOPED TO INFORM USDA · SNAP RATES IN ALASKA" displayLines={['HOPED TO INFORM USDA ·', 'SNAP RATES IN ALASKA']} y={560} size={26} tone="green" p={ease(f, t46 + 14, 10) * (f < t26 ? 1 : 0)} />
-        <Plate text="HOPED · NOT A DECISION" displayLines={['HOPED ·', 'NOT A DECISION']} y={560} size={30} tone="paper" p={ease(f, t26 + 20, 10)} />
+        <Plate text="HOPED · NOT A DECISION" displayLines={['HOPED ·', 'NOT A DECISION']} y={690} size={30} tone="paper" p={ease(f, t26 + 20, 10)} />
       </>}>
       <SVG>
         <MapTable f={f + p.from} />
@@ -714,7 +717,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <rect x={-20} y={1590} width={1120} height={74} fill={PAL.nickel} stroke={INK} strokeWidth={6} />
         {Array.from({length: 54}, (_, i) => <path key={i} d={`M ${i * 21} 1590 l 0 ${i % 5 === 0 ? 34 : 18}`} stroke={INK} strokeWidth={3} opacity={0.7} />)}
         <UsdaMarker x={880} y={1260} f={f + p.from} scale={0.8} rise={markIn} />
-        <path d={`M 130 1010 Q 420 1070 ${130 + 594 * line} ${1010 - 130 * line + 60 * Math.sin(line * 3.14)}`} fill="none" stroke={PAL.glacier} strokeWidth={9} strokeLinecap="round" strokeDasharray="2 22" opacity={0.9} />
+        <path d={`M 130 1010 Q 420 1070 ${130 + 594 * line} ${1010 - 130 * line + 60 * Math.sin(line * 3.14)}`} fill="none" stroke={PAL.glacier} strokeWidth={9} strokeLinecap="round" strokeDasharray="2 22" strokeDashoffset={-(f * 0.9)} opacity={0.9} />
         <KraftTag x={tagX} y={820} f={f + p.from} scale={0.9} flip={flip} front="measured" back="blank" destDots={dest} swing={4 * Math.sin(f / 7)} />
       </SVG>
     </Frame>
@@ -737,9 +740,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} night={0} bloom={0.07}
       overlay={<>
-        <Plate text="SHELF PRICE" x={290} y={1010} size={26} tone="kraft" p={ease(f, t27 + 24, 10)} />
+        <Plate text="RURAL PRICE" x={290} y={1010} size={26} tone="kraft" p={ease(f, t27 + 24, 10)} />
         <Plate text="ANCHORAGE PRICE PLUS ZONE" displayLines={['ANCHORAGE PRICE', 'PLUS ZONE']} x={790} y={1010} size={22} tone="steel" p={ease(f, t49 + 24, 10)} />
-        <Plate text="NOBODY HAS PUBLISHED THE DISTANCE" displayLines={['NOBODY HAS PUBLISHED', 'THE DISTANCE']} y={560} size={26} tone="ink" p={ease(f, t28 + 48, 10)} />
+        <Plate text="THIS STUDY'S NUMBERS AREN'T OUT YET" displayLines={['THIS STUDY\'S NUMBERS', 'AREN\'T OUT YET']} y={560} size={26} tone="ink" p={ease(f, t28 + 48, 10)} />
       </>}>
       <SVG>
         <DawnTundra f={f + p.from} wind={0.8} dust={false} />
@@ -756,7 +759,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Calipers x={540} y={762} f={f + p.from} open={open} legLen={300} />
         {open > 0.3 && slots < 0.05 && (
           <g>
-            <rect x={450} y={1110} width={180} height={78} rx={10} fill={PAL.paper} stroke={INK} strokeWidth={6} />
+            <rect x={430} y={1110} width={220} height={78} rx={10} fill={PAL.paper} stroke={INK} strokeWidth={6} />
             <text x={540} y={1168} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={40} letterSpacing={6} fill={INK} opacity={0.4 + 0.4 * Math.sin(f / 6)}>· · ?</text>
           </g>
         )}
@@ -819,11 +822,11 @@ const SHOT_ORDER = [1, 2, 3, 4, 5, 6, 61, 7, 8, 9, 10, 11];
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
   const f = useCurrentFrame();
   const b = (id: number) => {
-    const x = beats.find((y) => y.id === id);
+    const x = beats.find((y) => y.id === (IDS[id] ?? id));
     return x ? Math.round(x.at * 30) - from : 0;
   };
   const bt = (id: number) => {
-    const x = beats.find((y) => y.id === id);
+    const x = beats.find((y) => y.id === (IDS[id] ?? id));
     return x ? Math.round(x.at * 30) : 0;
   };
   const Comp = SHOTS[n];

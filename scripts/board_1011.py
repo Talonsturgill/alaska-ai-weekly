@@ -24,16 +24,16 @@ LINES = [
     "Now it's about what rural groceries cost.",
     "Jones's team used code written by AI to clean up the price data.",
     "Per the Daily News, researchers in Quebec spent hundreds of hours on similar work by hand.",
-    "The code didn't set a single price, and Jones said it still needs human oversight. Those shelf prices land beside a federal rule.",
-    "Under federal law, SNAP benefits in rural Alaska start from a food plan priced in Anchorage and adjusted by zone. The zones are urban, rural one and rural two.",
+    "Jones said the code still needs human oversight. SNAP benefits in Alaska follow a federal rule.",
+    "Under a federal rule, Alaska's SNAP food plan starts from Anchorage food prices and is adjusted by zone. The zones are urban, rural one and rural two.",
     "The Daily News calls the formula forty years old.",
-    "The case for the old way. One city price plus fixed zones is steady, and anyone can audit it.",
+    "The case for the old way. One city price plus three set zones is steady and simple to check.",
     "Prices scattered across rural shelves are noisy.",
     "The research hasn't been published yet, and it all comes from one news report.",
     "Jones hopes the data will inform USDA's update of SNAP benefit rates in Alaska.",
     "That's a hope, not a decision.",
-    "A price measured on the shelf is different evidence than one worked out from Anchorage.",
-    "How much it weighs waits on publication, and USDA.",
+    "A price tracked in rural Alaska is different evidence than one worked out from Anchorage.",
+    "How much that weighs waits on publication and USDA.",
     "When those prices are out, will they match Anchorage plus a zone?",
     "This drone crate was supposed to fly.",
 ]
@@ -52,13 +52,13 @@ B = [
     (4, 2, 1, ("Mike", 1), "blip", "name chip", "pins to the map beside the dotted plan", "focused", "MIKE JONES · UAA",
      "a name chip, MIKE JONES · UAA, pins to the map at the start of the route",
      "the map pin pulses once", ""),
-    (5, 2, 1, ("delivering", 1), "tick", "dotted flight line", "draws itself toward a village pin", "hopeful", "A DRONE DELIVERY PLAN",
+    (5, 2, 1, ("delivering", 1), "scratch", "dotted flight line", "draws itself toward a village pin", "hopeful", "A DRONE DELIVERY PLAN",
      "a dotted route draws itself across the map toward a village pin, a plan and never a flight",
      "the pin bobs as the line reaches it", ""),
     (6, 3, 2, 0.00, "whoosh", "rotor blades", "unscrew and flutter into price tags", "playful", "A BLADE BECOMES A TAG",
      "the rotor blades unscrew, float off and each one flutters into a kraft price tag that settles on a rural store shelf",
      "the shelf's own edge tags tremble as the new ones land", ""),
-    (8, 3, 3, ("impetus", 1), "click", "crate tag", "drops in and flips to a smudged face with a blank destination line", "puzzled", "WHERE IS IT HEADED?",
+    (8, 3, 3, ("impetus", 1), "clip", "crate tag", "drops in and flips to a smudged face with a blank destination line", "puzzled", "WHERE IS IT HEADED?",
      "the study's tag drops in on its string and flips to scrawled illegible shelf entries and a blank destination line that pulses",
      "the shelf tags lean to read it", ""),
     (39, 3, 3, ("What", 1), "blip", "crate tag", "pulses its blank destination line", "puzzled", "BLANK DESTINATION LINE",
@@ -70,13 +70,13 @@ B = [
     (9, 4, 4, 0.00, "slide", "grocery shelf", "slides in beside a blank mint code sheet", "curious", "RURAL ALASKA GROCERY PRICES",
      "a rural grocery shelf slides in beside a blank mint code sheet on a dark grid",
      "the code sheet's cursor starts to blink", ""),
-    (10, 4, 4, ("groceries", 1), "tick", "shelf tags", "disagree about the same can", "baffled", "UNCLEANED PRICE DATA",
+    (10, 4, 4, ("groceries", 1), "hum", "shelf tags", "disagree about the same can", "baffled", "UNCLEANED PRICE DATA",
      "on the shelf two tags for the same can carry codes that do not line up and a dashed ring circles them",
      "the neighbouring cans lean away from the muddle", ""),
     (11, 4, 5, ("code", 1), "page", "code sheet", "prints mint lines and the smudged entries snap into rows", "satisfied", "AI-WRITTEN CODE · CLEANED THE PRICE DATA",
      "the mint code sheet prints line by line and the smudged shelf entries snap one by one into ruled rows",
      "the shelf tags straighten on their pegs row by row", "rehook: the first payoff, messy becomes ruled"),
-    (12, 4, 5, ("clean", 1), "click", "kraft tag", "is combed flat and set on a fresh string", "relieved", "CODE WRITTEN BY AI",
+    (12, 4, 5, ("clean", 1), "sizzle", "kraft tag", "is combed flat and set on a fresh string", "relieved", "CODE WRITTEN BY AI",
      "the code comb passes over the tag and it comes out flat on a fresh string with its barcode in clean bars",
      "the comb ray fades out down the shelf", ""),
     (42, 5, 6, 0.00, "slide", "seam", "closes down the middle with a Quebec desk on the left", "weary", "PER ADN",
@@ -85,13 +85,13 @@ B = [
     (13, 5, 6, ("hundreds", 1), "thunk", "paper stack", "grows past the top of frame as a tally counter clicks", "weary", "QUEBEC · HUNDREDS OF HOURS BY HAND · PER ADN",
      "on the left of a hard seam a stack of hand-matched tags grows past the top of the frame as a brass tally counter clicks",
      "the seated figure keeps sorting without looking up", ""),
-    (15, 5, 7, ("single", 1), "slide", "red pen", "a hand runs it down the code sheet that slid across the seam", "careful", "A PERSON READS THE CODE",
+    (15, 5, 7, ("code", 1), "slide", "red pen", "a hand runs it down the code sheet that slid across the seam", "careful", "THE CODE NEEDS A PERSON",
      "the mint code sheet slides across the seam and a hand holding a red pen runs down its lines, underlining one row at a time",
      "the code sheet's glow dims a little under the pen", ""),
-    (14, 5, 7, ("oversight", 1), "tick", "red pen", "rests on one line and does not move on", "careful", "JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT",
+    (14, 5, 7, ("oversight", 1), "hum", "red pen", "rests on one line and does not move on", "careful", "JONES SAYS IT STILL NEEDS HUMAN OVERSIGHT",
      "the pen comes to rest on one line while a plate carries Jones's caution",
-     "the Quebec stack stops growing", ""),
-    (50, 5, 7, ("Those", 1), "page", "combed shelf tag", "lifts off the code sheet and slides toward the seam", "steady", "SHELF PRICES",
+     "the Quebec stack keeps growing on its side", ""),
+    (50, 5, 7, ("SNAP", 1), "page", "combed shelf tag", "lifts off the code sheet and slides toward the seam", "steady", "RURAL GROCERY PRICES",
      "the combed shelf tag lifts off the code sheet and slides toward the seam as the shelf prices are named",
      "the code sheet's glow follows it and dims", ""),
     (36, 5, 7, ("federal", 1), "slide", "steel panel", "wipes in from the right edge", "steady", "FEDERAL RULE",
@@ -100,7 +100,7 @@ B = [
     (51, 6, 8, ("Under", 1), "whoosh", "skyline", "whips in under a pale morning", "steady", "A STEEL BEAM",
      "a whip pan lands on the Anchorage skyline and a steel beam rises with two empty hooks",
      "the beam's rivets catch the morning light", "rehook: the pivot to the federal rule"),
-    (16, 6, 8, ("SNAP", 1), "click", "plate", "names SNAP BENEFITS IN RURAL ALASKA", "steady", "SNAP BENEFITS · RURAL ALASKA",
+    (16, 6, 8, ("SNAP", 1), "click", "plate", "names SNAP BENEFITS IN RURAL ALASKA", "steady", "SNAP BENEFITS · ALASKA",
      "a plate names SNAP BENEFITS IN RURAL ALASKA over the empty beam",
      "the beam's rivets catch the morning light", ""),
     (35, 6, 8, ("Anchorage", 1), "clunk", "steel tag", "drops onto the left hook", "steady", "ANCHORAGE FOOD PRICES",
@@ -109,15 +109,15 @@ B = [
     (17, 6, 8, ("adjusted", 1), "slide", "zone weights", "slide out from the steel tag on chains", "methodical", "ANCHORAGE PRICES PLUS ZONE ADJUSTMENT · 7 CFR 273.10",
      "three identical gold weights slide out on chains from the steel tag and a dotted gap with a question mark opens between it and the empty right hook",
      "the empty hook swings, waiting", ""),
-    (34, 6, 8, ("urban", 1), "tick", "zone weights", "light up one by one", "methodical", "URBAN · RURAL I · RURAL II",
+    (34, 6, 8, ("urban", 1), "blip", "zone weights", "light up one by one", "methodical", "URBAN · RURAL I · RURAL II",
      "the three zone weights light up one by one as the zones are named, URBAN, RURAL I and RURAL II",
      "the steel tag swings a hair with each light", ""),
     (18, 6, 9, 0.00, "clunk", "kraft tag", "hangs from a drawer knob in the archive", "wry", "THE RULE ON FILE",
      "in an archive wall of steel drawers the shelf tag hangs from the knob of the drawer labelled with the rule",
-     "the dotted gap with its question mark pulses between the two tags, never narrowing", ""),
+     "the label card on the rule drawer lifts a hair in the lamp's draft", ""),
     (44, 7, 9, ("forty", 1), "page", "kraft tag", "flips through edge-on to its rule face", "wry", "ADN CALLS IT A 40-YEAR-OLD FORMULA",
      "the shelf tag flips through edge-on to its rule face and a chip lands, ADN CALLS IT A 40-YEAR-OLD FORMULA",
-     "the knob's drawer label catches the lamp", ""),
+     "the label card on the rule drawer lifts a hair in the lamp's draft", ""),
     (40, 7, 10, 0.00, "whoosh", "snowy bluff", "opens under falling snow", "calm", "A STEADY BEAM",
      "a snowy bluff opens with the Anchorage beam standing in it under falling snow",
      "the snow settles on the bluff and the light goes flat", ""),
@@ -127,13 +127,13 @@ B = [
     (45, 7, 10, ("steady", 1), "thunk", "beam", "stays unmoved while snow loads on top of it", "calm", "STEADY",
      "snow loads onto the beam's top edge and the beam does not move",
      "the weights barely sway", ""),
-    (20, 7, 10, ("audit", 1), "blip", "inspection light", "runs along the beam so every part reads", "orderly", "STEADY · AUDITABLE",
+    (20, 7, 10, ("check", 1), "blip", "inspection light", "runs along the beam so every part reads", "orderly", "STEADY · SIMPLE TO CHECK",
      "a nickel inspection light runs along the beam so every part of it reads",
      "the light's cone sweeps the snow", ""),
-    (21, 7, 11, 0.00, "whoosh", "rural tags", "swirl in a gust that also hits the shelf tag", "chaotic", "RURAL PRICES ARE NOISY",
-     "a gust sends a cart of rural tags swirling and jittering and blurs the shelf tag's clean rows back toward the smudge before they settle",
-     "the post and its crossbar creak", ""),
-    (38, 7, 11, ("noisy", 1), "slide", "swirl tags", "two of them tear away and blow off the frame", "chaotic", "SCATTERED SHELF TAGS",
+    (21, 7, 11, 0.00, "whoosh", "rural tags", "swirl in a gust", "chaotic", "THE CASE · SCATTERED PRICES ARE NOISY",
+     "a gust sends a cart of loose rural tags swirling and jittering while the shelf tag sways on its string and its clean rows hold",
+     "the beam's weights swing once and stop, the beam itself does not move", ""),
+    (38, 7, 11, ("noisy", 1), "slide", "swirl tags", "two of them tear away and blow off the frame", "chaotic", "SCATTERED RURAL PRICES",
      "two loose tags tear away from the swirl and tumble off the right edge",
      "the remaining tags jitter and rebalance", ""),
     (52, 8, 12, 0.00, "slide", "proof desk", "opens with the tag hanging below a news clipping", "sober", "ONE CLIPPING",
@@ -142,7 +142,7 @@ B = [
     (22, 8, 12, ("published", 1), "stamp", "NOT PUBLISHED YET stamp", "lands on the shelf tag", "sober", "NOT PUBLISHED YET",
      "a stamp reading NOT PUBLISHED YET slams onto the shelf tag, which hangs from a single string tied to a news clipping",
      "the tag swings on its one string and ink flecks the clipping", ""),
-    (23, 8, 12, ("one", 1), "click", "single chip", "pins under the tag", "plain", "ONE OUTLET · ANCHORAGE DAILY NEWS",
+    (23, 8, 12, ("one", 1), "clip", "single chip", "pins under the tag", "plain", "ONE OUTLET · ANCHORAGE DAILY NEWS",
      "a chip pins under the tag, ONE OUTLET · ANCHORAGE DAILY NEWS, and the string it hangs by stays taut",
      "the clipping's pins catch the lamp", ""),
     (24, 9, 13, 0.00, "slide", "dotted line", "grows across the map as the shelf tag sets off", "hopeful", "A DOTTED LINE ACROSS ALASKA",
@@ -154,7 +154,7 @@ B = [
     (26, 9, 14, ("hope", 1), "click", "tag destination line", "fills in as a dotted USDA address", "wistful", "HOPED · NOT A DECISION",
      "the tag flips and its blank destination line fills in, dotted, USDA, with a HOPED chip",
      "the signpost stays unlit and unchanged", ""),
-    (27, 10, 15, 0.00, "clunk", "shelf tag", "swings in on a rope between two stakes", "curious", "SHELF PRICE",
+    (27, 10, 15, 0.00, "clunk", "shelf tag", "swings in on a rope between two stakes", "curious", "RURAL PRICE",
      "on the dawn tundra the shelf tag swings in alone on a rope strung between two stakes",
      "the rope sags and the stakes lean", ""),
     (48, 10, 15, ("different", 1), "blip", "rope", "sags and a glint runs along it", "curious", "DIFFERENT EVIDENCE",
@@ -163,10 +163,10 @@ B = [
     (49, 10, 15, ("worked", 1), "slide", "Anchorage tag", "swings in on the rope's far end", "steady", "ANCHORAGE PRICE PLUS ZONE",
      "the steel Anchorage tag swings in on the far end of the rope, ANCHORAGE + ZONE",
      "the rope rocks and the shelf tag swings out of phase", ""),
-    (28, 10, 15, ("Anchorage", 1), "snap", "calipers", "swing open between the tags with a dotted readout", "pending", "NOBODY HAS PUBLISHED THE DISTANCE",
-     "brass calipers swing open between the two tags and the readout stays dotted",
+    (28, 10, 15, ("Anchorage", 1), "snap", "calipers", "swing open between the tags with a dotted readout", "pending", "THIS STUDY'S NUMBERS AREN'T OUT YET",
+     "nickel calipers swing open between the two tags and the readout stays dotted",
      "the two tags settle out of phase", ""),
-    (29, 10, 16, ("weighs", 1), "click", "readout", "turns into two empty slots", "patient", "PUBLICATION · USDA",
+    (29, 10, 16, ("weighs", 1), "blip", "readout", "turns into two empty slots", "patient", "PUBLICATION · USDA",
      "the dotted readout becomes two empty dashed slots, PUBLICATION and USDA, and nothing fills them",
      "the calipers hold their opening", ""),
     (30, 10, 16, ("publication", 1), "blip", "empty slots", "pulse one after the other", "patient", "WAITS ON PUBLICATION AND USDA",
@@ -397,12 +397,25 @@ def build():
                       "payoff_at": round(starts[18], 3), "button_pattern": "question", "interrupt_at": b_at(21), "extra_dips": [b_at(22), b_at(26)]},
         "shots": shots, "beats": beats,
     }
+    # the sound mix needs beat ids 1..N in time order, so rename by rank and keep the authoring ids as `key`
+    order = sorted(board["beats"], key=lambda b: (b["at_s"], b["id"]))
+    ids = {}
+    for rank, b in enumerate(order, 1):
+        ids[b["id"]] = rank
+    for b in board["beats"]:
+        b["key"] = b["id"]
+        b["id"] = ids[b["key"]]
+    board["beats"].sort(key=lambda b: b["id"])
+    board["_ids"] = ids
     return board, real
 
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "gen"
     board, real = build()
+    ids = board.pop("_ids")
+    (ROOT / "video-engine" / "src" / "Ep1011Ids.ts").write_text(
+        "// GENERATED by scripts/board_1011.py. Authoring beat key -> storyboard beat id (time order).\nexport const IDS: Record<number, number> = " + json.dumps({str(k): v for k, v in sorted(ids.items())}) + ";\n")
     (OUT / "storyboard.json").write_text(json.dumps(board, indent=2) + "\n")
     print(f"{cmd}: {len(board['beats'])} beats / {len(board['shots'])} shots, {board['total_seconds']}s, "
           f"{'REAL voice timing' if real else 'ESTIMATED timing (no vo_lines.json yet)'}")
