@@ -1,0 +1,11 @@
+“Five days before the Alaska Legislature gavels out, the executive branch has already decided the data-center question the legislature is still arguing about.
+
+On May 13 and 14, the Department of Natural Resources issued a preliminary best-interest finding on a 50-year lease of roughly one square mile of state land off the Dalton Highway to Stak Energy, for a $500 million campus that could draw up to 3 gigawatts for AI and cloud compute. Public comment runs through June 15, a month past the legislature’s May 20 constitutional adjournment. Operations are targeted for 2028. The facility would consume more than twice the natural gas urban Alaska burns for all electrical generation and heating combined, according to Northern Journal’s reporting on the DNR filing.
+
+The conventional read is that the legislature is doing its job in parallel. It isn’t. SB 250, Sen. Tobin’s bill requiring utilities to recover data-center costs only from data centers and conditioning operations on community benefit agreements, cleared Senate Labor & Commerce on May 13 with one Do Pass and three No Recommendation votes, and landed on the Senate calendar today. HB 217, Rep. Carrick’s bill requiring a human safety operator in commercial autonomous vehicles, cleared Senate Transportation 0-4 No Rec on May 12 and was held in State Affairs on May 14. HB 239, the omnibus crime package carrying Alaska’s only AI-generated CSAM felony provisions, was heard and held in Senate Finance on May 11.
+
+That’s the speed gap. One Do Pass, four No Recs, and a hold, versus a preliminary lease finding on the largest AI data center proposal ever filed in Alaska. The elected branch is producing weak committee signals on guardrails. The executive branch is producing a 50-year ground lease.
+
+What gets locked in by May 20 is the asymmetry itself. DNR’s comment window stays open through June 15, four weeks after the legislature adjourns. If SB 250 dies on the Senate calendar, the only consumer-protection guardrail in play dies with it, and the Stak application keeps moving on its own clock. A 50-year lease runs longer than the political cycle that approved it.
+
+Should an executive-branch agency be approving 50-year AI infrastructure leases while the legislature is still mid-debate on the rules, or is the legislature simply too slow for the technology it’s trying to govern?”

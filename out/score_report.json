@@ -1,0 +1,17 @@
+{
+  "post_path": "out/final_post.md",
+  "weighted_total": 8.8,
+  "threshold": 8.0,
+  "ship": true,
+  "criteria": [
+    {"name": "Hook strength", "score": 9, "weight": 0.15, "note": "Concrete five-day deadline plus named live tension between executive and legislative branches; hints at the asymmetry that drives the post."},
+    {"name": "Local relevance", "score": 10, "weight": 0.20, "note": "Every claim is anchored to named AK actors, places, and bills (DNR, Dalton Highway, Stak, SB 250, HB 217, HB 239, Tobin, Carrick)."},
+    {"name": "Factual density", "score": 9, "weight": 0.15, "note": "Specific dates, vote counts, dollar figures, gigawatts, and deadlines appear in nearly every sentence; one paragraph stacks three bills tightly."},
+    {"name": "Source quality", "score": 8, "weight": 0.15, "note": "All claims trace to verified findings and Northern Journal is named, but inline attribution for the bill actions to akleg.gov is implicit rather than explicit."},
+    {"name": "Voice match", "score": 9, "weight": 0.15, "note": "Analytical, structural, position-taking — 'speed gap,' 'asymmetry itself,' '50-year lease runs longer than the political cycle' all read like the anchor."},
+    {"name": "Readability (mobile)", "score": 7, "weight": 0.10, "note": "Paragraphs are mostly tight but the three-bill paragraph is a dense block that's harder to scan on phone; total length is at the high end of target."},
+    {"name": "Engagement question", "score": 9, "weight": 0.10, "note": "Real, debatable binary tied directly to the post's structural tension between executive lease-making and legislative pace; not generic."}
+  ],
+  "one_sentence_fix_if_below_threshold": "",
+  "overall_notes": "Weighted math: 9*0.15=1.35; 10*0.20=2.00; 9*0.15=1.35; 8*0.15=1.20; 9*0.15=1.35; 7*0.10=0.70; 9*0.10=0.90. Sum = 8.85. Floored to one decimal = 8.8. Above the 8.0 ship threshold. Ship."
+}
