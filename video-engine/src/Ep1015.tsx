@@ -743,7 +743,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.07} oy={1000}
       overlay={<>
         <Plate text="A GUIDE FROM UAF" y={580} size={34} tone="paper" p={ease(f, t19 + 14, 8) * (f < t20 ? 1 : 0)} />
-        <Plate text="ASKS THE QUESTIONS UNDERNEATH" displayLines={['ASKS THE QUESTIONS', 'UNDERNEATH']} y={700} size={32} tone="paper" p={ease(f, t20 + 4, 8)} />
+        <Plate text="A GUIDE FROM UAF" displayLines={['A GUIDE', 'FROM UAF']} y={700} size={32} tone="paper" p={ease(f, t20 + 4, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={PAL.desk} />

@@ -76,7 +76,7 @@ B = [
  (19, 7, 7, 0.0, "thump", "guide folder", "drops onto the desk with the token engraved UNTIL on its cover", "curious", "A GUIDE FROM UAF",
   "a guide folder drops onto a desk and the gold token, engraved UNTIL, lands on its cover",
   "the folder's cover flutters and the desk lamp breathes", ""),
- (21, 7, 7, W("questions"), "blip", "two hands", "reach for the folder and part around the token", "curious", "THE QUESTIONS UNDERNEATH",
+ (21, 7, 7, W("questions"), "blip", "two hands", "reach for the folder and part around the token", "curious", "A GUIDE FROM UAF",
   "two hands labelled YES and NO reach for the folder and part to either side of the token, which stays upright between them",
   "the hands settle at the folder's edges", ""),
  (22, 8, 8, 0.0, "crunch", "frost", "freezes along the Gate's arm and brow as the brow droops", "grim", "THE PAUSE",

@@ -613,7 +613,7 @@ def main():
     # So the same script-shaped curve is applied to the VOICE, at a third of the depth: a
     # documentary narrator does drop under a concession and does lift into a closing
     # question, and unlike the bed it is the thing the meter is listening to.
-    vo_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.5) for t, m in BED_ARC])
+    vo_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.85) for t, m in BED_ARC])
     # Ambience and motivated hits otherwise hold the quiet phases up after the VO and bed
     # arcs have moved.  Carry a gentle version of the same authored arc through the finished
     # mix so every layer changes together; this raises macro dynamics without changing the
@@ -657,7 +657,7 @@ def main():
         _gaps = [(a["end"], b["start"]) for a, b in zip(_lines, _lines[1:])
                  if b["start"] - a["end"] >= 0.5]
         for a, b in _gaps:
-            pk = 1.5 if b - a < 1.6 else 3.4  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
+            pk = 2.2 if b - a < 1.6 else 3.8  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
             gap_lift += [(a + 0.05, 1.0), (a + 0.4, pk), (b - 0.4, pk), (b - 0.05, 1.0)]
         print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
               f"({sum(b - a for a, b in _gaps):.1f}s of room)")
