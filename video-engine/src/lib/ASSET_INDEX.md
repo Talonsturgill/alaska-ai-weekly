@@ -303,3 +303,6 @@ of each asset you pick with grep -n -A6 on its name in ASSET_MANIFEST.md.
 - Calipers (lib/grocer.tsx) (lib/grocer.tsx) NET-NEW 2026-10-11, nickel calipers that open between two points. ACTIVE.
 - RuralSwirl (lib/grocer.tsx) (lib/grocer.tsx) NET-NEW 2026-10-11, a gust of loose tags on jittering orbits. ACTIVE.
 - Barcode (lib/grocer.tsx) (lib/grocer.tsx) NET-NEW 2026-10-11, a bar glyph with no digits whose mess can be dialled from clean to ...
+
+## HELD-PROP IDLE RIG — lib/heldidle.tsx (engine advance, machine pass 2026-10-15)
+- HeldProp (lib/heldidle.tsx) + propIdle() wraps ANY held prop (drawn unchanged, same coordinates) and gives it life a scene no longer has ...
