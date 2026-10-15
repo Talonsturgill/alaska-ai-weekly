@@ -1,0 +1,19 @@
+The Fairbanks Assembly's data center pause is only a request. The Senate passed a data center bill 14 to 5. The House never took it up.
+
+On August 27th the Fairbanks North Star Borough Assembly asked the Legislature to pause new commercial data centers on municipal or state owned lands until standards exist, KUAC reported.
+
+The Assembly can't impose the pause itself.
+
+A pause that ends when standards exist is only as real as whoever drafts the standards. KUAC lists four topics for the standards. They are electrical demand, water use, environmental impacts and air quality.
+
+The Alaska Beacon says the Senate bill covered power use and decommissioning.
+
+On October 6th, about one in five borough voters cast a ballot by the unofficial count. Alexis Howell won an Assembly seat by an unofficial 217 votes. Runner up Miguel Ramirez took no position on data centers and said there need to be more studies.
+
+A University of Alaska Fairbanks guide out this month called Computing in Place asks who benefits and who pays, as UAF summarizes it.
+
+ACEP's project lead Leasi Vanessa Lee Raymond says a small facility supporting a hospital or tribal government "raises different questions from a hyperscale facility serving global customers."
+
+Whoever writes the first standard writes the pause. Who should draft Alaska's data center standards, and what should the first one say?
+
+#Fairbanks #DataCenters #ArtificialIntelligence #Alaska #EnergyPolicy

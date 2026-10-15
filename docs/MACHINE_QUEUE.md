@@ -88,3 +88,10 @@ the pass can't fix safely stays open with ` | escalated <date>: <why>` and goes 
 - [ ] 2026-10-11 | repeat: 0 | vo-patch-leaves-dead-slot | evidence: vo_patch_lines accepted a shorter line and left 3.3s of silence mid-film | fix: warn when the patched line ends more than 1.5s before its slot and suggest a picture event
 - [ ] 2026-10-11 | repeat: 0 | mix-tick-ceiling-mapping | evidence: click and unknown sfx names map to tick and trip the 18 percent ceiling | fix: map click to its own family or list the mapping in the error
 - [ ] 2026-10-11 | repeat: 0 | caption-possessive-break | evidence: caption_render_check broke "USDA's" at the apostrophe | fix: treat possessives as unbreakable in build_scenes
+
+## 2026-10-15 queue additions (The Door With a Condition)
+- [ ] 2026-10-15 | repeat: 1 | caption-scorer-plateau | evidence: six caption rounds scored 7.8, 8.1, 7.88, 8.04 against 8.5 on a story with several single-source claims, each round re-anchoring on a different weakest criterion | fix: calibration anchors and a rule for which criterion the rewrite targets
+- [ ] 2026-10-15 | repeat: 1 | held-beats-under-2pct | evidence: guide, clinic box, four dials and condition plate at 1.9 to 3.4 percent named by all three judges | fix: a shared idle rig for held props so a scene gets breath for free
+- [ ] 2026-10-15 | repeat: 0 | vo-edit-orphans-board-beats | evidence: removing the "favors whoever builds first" clause left a beat anchored to a word that no longer existed and a 0.29s beat that broke the evidence strip | fix: board_1015 conform should fail loudly when an anchor word is missing from words.json
+- [ ] 2026-10-15 | repeat: 0 | storyboard-edit-invalidates-render | evidence: a text-only edit to storyboard.json after render started cost a 17 minute re-render at the provenance check | fix: make board metadata edits not part of the render provenance hash
+- [ ] 2026-10-15 | repeat: 0 | caption-split-after-discovery | evidence: caption_render_check failed on "is a no / with" and the fix (caption_split_after) was found by reading build_scenes | fix: name caption_split_after in the failure message

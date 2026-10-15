@@ -2455,3 +2455,37 @@ dispatch_history:
     metaphor: a kraft price tag on a string that started on a medicine crate, passes
       through a code comb and a red pen, and hangs beside a steel beam that prices
       rural Alaska from Anchorage
+- date: '2026-10-15'
+  topic: Fairbanks Assembly data center pause request and UAF Computing in Place guide
+  slug: 2026-10-15-the-door-with-a-condition
+  key_entities:
+  - Fairbanks North Star Borough Assembly
+  - KUAC
+  - UAF ACEP
+  - Computing in Place
+  - Alexis Howell
+  - Miguel Ramirez
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: curious
+  angle: A pause that ends when standards exist is a door with a condition, and a
+    condition can be written.
+  hero: Gate
+  cast:
+  - QuestionToken
+  - ServerMachine
+  - TallyCounter
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: structure-as-subject
+    layout: fullbleed-split
+    register: naturalistic-scene
+    palette: bright pearl fog daylight, warm cranberry gate, golden larch token, teal-black
+      shadow, navy ink stamp
+    camera_strategy: dolly-through
+    light_story: fog thickening through the Test, thinning at the turn, closing in
+      at the button
+    metaphor: a gate with a condition on its plate, waiting for a hand to write the
+      rule

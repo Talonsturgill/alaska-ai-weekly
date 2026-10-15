@@ -3847,3 +3847,8 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - In-run fixes: build_scenes possessive break, dispatch_mix gap lift, Plate idle breathing, plate sizes, steel-wipe timing.
 - Caption: 15 rounds, scorer plateau 7.3 to 7.9; see the final scorecard in the email.
 - Recurring causes: held beats, a long VO gap, small plate type. Queued in docs/MACHINE_QUEUE.md (5 items, one repeat offender).
+
+## 2026-10-15 (The Door With a Condition)
+- Shipped: Gate film on the Fairbanks Assembly pause request and the UAF Computing in Place guide. Panel median 7.2 against 7.0 (7.22, 7.2, 7.18), no hard blockers.
+- In-run fixes: honest VO edits (public land scope, per UAF, funded not paid, LaJiness framed as general view), idle drift in Frame, mix gap lift and VO arc depth (LRA 5.4 to 7.6), Raymond quote retimed to the read, caption_split_after, board anchors re-conformed to the new read.
+- Recurring causes: held beats, caption scorer plateau, Raymond card wrap. Queued in docs/MACHINE_QUEUE.md (5 items, two repeat offenders).

@@ -1,0 +1,154 @@
+{
+ "run_date": "2026-10-15",
+ "title": "THE DOOR WITH A CONDITION",
+ "note": "The Gate, the token, the chairs, the doors, the boxes and the dials are illustrations. Vote counts are the borough's unofficial results (October 13th printout). The guide's questions are as UAF News summarizes them, and the film never says what the guide PDF contains. Navy funding is per the Zenodo deposit record. No bill number or sponsor is used.",
+ "caption_fixups": {
+  "two hundred seventeen": "217",
+  "October sixth": "October 6th",
+  "fourteen to five": "14 to 5"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Fairbanks just voted on data centers. Except it didn't.",
+   "t": "Fairbanks just voted on data centers. Except it didn't.",
+   "claims": []
+  },
+  {
+   "idx": 1,
+   "text": "On October sixth, about one in five borough voters cast a ballot.",
+   "t": "On October sixth, about one in five borough voters cast a ballot.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "The closest borough Assembly seat went to Alexis Howell by two hundred seventeen votes, unofficially.",
+   "t": "The closest borough Assembly seat went to Alexis Howell by two hundred seventeen votes, unofficially.",
+   "claims": [
+    "c3",
+    "c4"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "Runner up Miguel Ramirez took no position and said there need to be more studies.",
+   "t": "Runner up Miguel Ramirez took no position and said there need to be more studies.",
+   "claims": [
+    "c5",
+    "c6"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "So who answered the data center question?",
+   "t": "So who answered the data center question?",
+   "claims": []
+  },
+  {
+   "idx": 5,
+   "text": "In August, that Assembly asked the state Legislature in Juneau to pause new commercial data centers on public land until standards exist, KUAC reported.",
+   "t": "In August, that Assembly asked the state Legislature in Juneau to pause new commercial data centers on public land until standards exist, KUAC reported.",
+   "claims": [
+    "c7",
+    "c8"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "A data center bill on power use and decommissioning passed the state Senate fourteen to five, and the House never took it up.",
+   "t": "A data center bill on power use and decommissioning passed the state Senate fourteen to five, and the House never took it up.",
+   "claims": [
+    "c9",
+    "c10",
+    "c11"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Meanwhile a University of Alaska Fairbanks guide takes up the same subject.",
+   "t": "Meanwhile a University of Alaska Fairbanks guide takes up the same subject.",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Now the case against.",
+   "t": "Now the case against.",
+   "claims": []
+  },
+  {
+   "idx": 9,
+   "text": "A pause until standards exist is a no with good manners if nobody drafts them.",
+   "t": "A pause until standards exist is a no with good manners if nobody drafts them.",
+   "claims": []
+  },
+  {
+   "idx": 10,
+   "text": "On data centers in general, winning incumbent Nick LaJiness said, \"I don't think that data centers are good for any community.\"",
+   "t": "On data centers in general, winning incumbent Nick LaJiness said, \"I don't think that data centers are good for any community.\"",
+   "claims": [
+    "c16"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "But the pause ends when standards exist. That's a door with a condition, and a condition can be written.",
+   "t": "But the pause ends when standards exist. That's a door with a condition, and a condition can be written.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "That guide is called Computing in Place, and the Navy's research office funded it, per the deposit record.",
+   "t": "That guide is called Computing in Place, and the Navy's research office funded it, per the deposit record.",
+   "claims": [
+    "c12",
+    "c15"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "Per UAF, it asks who benefits, and who pays.",
+   "t": "Per UAF, it asks who benefits, and who pays.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+   "t": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+   "claims": [
+    "c17"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "So the missing option isn't yes or no. It's rules sized to what gets built.",
+   "t": "So the missing option isn't yes or no. It's rules sized to what gets built.",
+   "claims": []
+  },
+  {
+   "idx": 16,
+   "text": "Fairbanks asked for rules first. The Senate's data center bill stalled in the House.",
+   "t": "Fairbanks asked for rules first. The Senate's data center bill stalled in the House.",
+   "claims": [
+    "c10"
+   ]
+  },
+  {
+   "idx": 17,
+   "text": "So who writes them?",
+   "t": "So who writes them?",
+   "claims": []
+  }
+ ],
+ "caption_split_after": [
+  "standards exist"
+ ]
+}
