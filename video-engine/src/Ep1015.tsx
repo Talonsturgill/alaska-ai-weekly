@@ -136,7 +136,7 @@ const Frame: React.FC<{p: SP; z0?: number; z1?: number; zk?: (f: number) => numb
   const z = zk ? zk(p.f) : lerp(z0, z1, easeIO(p.f, 0, Math.max(1, p.dur)));
   return (
     <AbsoluteFill>
-      <div style={{position: 'absolute', inset: 0, transform: `translate(${jl.x + lerp(dx0, dx1, t)}px, ${jl.y + lerp(dy0, dy1, t)}px) scale(${z * jl.scale})`, transformOrigin: `${ox}px ${oy}px`}}>
+      <div style={{position: 'absolute', inset: 0, transform: `translate(${jl.x + lerp(dx0, dx1, t) + 9 * Math.sin(p.f / 23)}px, ${jl.y + lerp(dy0, dy1, t) + 12 * Math.sin(p.f / 17 + 1)}px) rotate(${0.35 * Math.sin(p.f / 31)}deg) scale(${z * jl.scale * (1 + 0.009 * Math.sin(p.f / 13))})`, transformOrigin: `${ox}px ${oy}px`}}>
         {children}
       </div>
       {overlay && <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>{overlay}</svg>}
@@ -319,7 +319,7 @@ const BallotBox: React.FC<{x: number; y: number; scale?: number; f: number}> = (
     <rect x={-84} y={-230} width={168} height={230} rx={10} fill={WALNUT} stroke={INK} strokeWidth={6} />
     <rect x={-84} y={-230} width={168} height={22} rx={8} fill="#7A6050" stroke={INK} strokeWidth={5} />
     <rect x={-52} y={-222} width={104} height={10} rx={4} fill={INK} />
-    <rect x={-60} y={-170} width={120} height={64} rx={4} fill={PAL.birch} stroke={INK} strokeWidth={4} />
+    <rect x={-74} y={-170} width={148} height={64} rx={4} fill={PAL.birch} stroke={INK} strokeWidth={4} />
     <text x={0} y={-128} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={2} fill={INK}>BALLOTS</text>
     <rect x={-84} y={-230} width={10} height={230} fill="#FFFFFF" opacity={0.16 + 0.05 * Math.sin(f / 17)} />
   </g>
@@ -373,7 +373,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const idle = f < t2 + 28 ? (g / 11) * 57 : tokRot;
   return (
     <Frame p={p} z0={1.0} z1={1.18} oy={1000}
-      overlay={<Plate text="DID FAIRBANKS VOTE ON DATA CENTERS" displayLines={['DID FAIRBANKS VOTE', 'ON DATA CENTERS']} y={600} size={40} tone="paper" p={ease(f, 4, 8)} />}>
+      overlay={<Plate text="DID FAIRBANKS VOTE ON DATA CENTERS?" displayLines={['DID FAIRBANKS VOTE', 'ON DATA CENTERS?']} y={600} size={40} tone="paper" p={ease(f, 4, 8)} />}>
       <SVG>
         <FogLot f={g} fog={1} sunBurn={0.2} />
         <BallotBox x={170} y={1250} scale={1.1} f={g} />
@@ -427,7 +427,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <defs>
-          <mask id="s2-slot"><rect x={-40} y={-40} width={1160} height={2000} fill="#fff" />
+          <mask id="s2-slot"><rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#fff" />
             <rect x={540 - (120 + 1300 * hole)} y={900 - (14 + 1000 * hole)} width={(120 + 1300 * hole) * 2} height={(14 + 1000 * hole) * 2} rx={14 + 40 * hole} fill="#000" />
           </mask>
         </defs>
@@ -435,7 +435,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 18}, (_, i) => <line key={i} x1={-40} y1={560 + i * 40} x2={1120} y2={560 + i * 40} stroke={INK} strokeWidth={2} opacity={0.12} />)}
         {Array.from({length: 12}, (_, i) => <rect key={i} x={70 + (i % 4) * 250} y={540 + Math.floor(i / 4) * 330} width={170} height={74} rx={10} fill={PAL.fogWhite} opacity={0.2 + 0.05 * Math.sin(g / 6 + i * 1.7)} />)}
         <GymChairs f={f} t3={t3} t4={t4} />
-        <TallyCounter x={900} y={1180} s={0.8} f={g} variant="clicker" count="2095" spin={click} />
+        <TallyCounter x={900} y={1180} s={0.8} f={g} variant="clicker" count="20.95" spin={click} />
         <Token x={150} y={1180} scale={0.7} text={f > t4 + 14 ? '1 IN 5' : ''} mat={1} />
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={PAL.teal} mask="url(#s2-slot)" />
       </SVG>
@@ -488,12 +488,14 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <Plate text="HOWELL 7,759" x={320} y={600} size={28} tone="paper" p={ease(f, t5 + 18, 10)} />
         <Plate text="RAMIREZ 7,542" x={760} y={600} size={28} tone="paper" p={ease(f, t5 + 22, 10)} />
         <Plate text="217 VOTES" x={540} y={880} size={26} tone="paper" p={ease(f, t6 + 6, 8)} />
-        <Plate text="UNOFFICIAL" x={540} y={1300} size={26} tone="navy" p={ease(f, t7 + 14, 8)} />
+        <Plate text="UNOFFICIAL" x={540} y={1270} size={26} tone="navy" p={ease(f, t7 + 14, 8)} />
       </>}>
       <SVG>
         <CountTableBG f={g} />
+        <g transform={`translate(0,${f > t7 && f < t7 + 14 ? 9 * Math.sin((f - t7) * 1.3) * (1 - (f - t7) / 14) : 0})`}>
         <Stack x={320} baseY={baseY} w={190} h={HH * rise} tone={PAL.birch} />
         <Stack x={760} baseY={baseY} w={190} h={RH * rise} tone="#E8E3D2" />
+        </g>
         {sliver > 0.02 && (
           <g opacity={sliver}>
             <rect x={415} y={Math.min(topH, topR) - 3} width={345} height={Math.abs(topH - topR) + 6} fill={PAL.goldHi} opacity={0.9} />
@@ -515,7 +517,7 @@ const NameCard: React.FC<{x: number; y: number; w: number; h: number; name: stri
   if (k <= 0.01) return null;
   const sc = 0.85 + 0.15 * spring(k * 20, 0, 20);
   return (
-    <g transform={`translate(${x + (1 - ease(k * 30, 0, 24)) * -900},${y}) scale(${sc})`}>
+    <g transform={`translate(${x + (1 - ease(k * 30, 0, 24)) * -900},${y + 5 * Math.sin(useCurrentFrame() / 13)}) rotate(${0.9 * Math.sin(useCurrentFrame() / 29)}) scale(${sc})`}>
       <rect x={-w / 2 + 10} y={-h / 2 + 14} width={w} height={h} fill="#000" opacity={0.3} />
       <rect x={-w / 2} y={-h / 2} width={w} height={h} fill={PAL.birch} stroke={INK} strokeWidth={6} />
       <rect x={-w / 2} y={-h / 2} width={w} height={64} fill={INK} />
@@ -535,19 +537,22 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.08} oy={900}
       overlay={<>
         <Plate text="NO POSITION" y={580} size={32} tone="paper" p={ease(f, t9 + 6, 8) * (f < t10 + 4 ? 1 : 0)} />
-        <Plate text="MORE STUDIES" y={580} size={32} tone="paper" p={ease(f, t10 + 6, 8)} />
+        <Plate text="MORE STUDIES" y={980} size={32} tone="paper" p={ease(f, t10 + 6, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#5B6B78" />
         <ellipse cx={540} cy={900} rx={560} ry={520} fill="#FFE2AE" opacity={0.1 + 0.03 * Math.sin(g / 25)} />
         <rect x={120} y={500} width={840} height={820} fill={PAL.board} stroke={INK} strokeWidth={8} />
         {Array.from({length: 40}, (_, i) => <circle key={i} cx={140 + rnd(i) * 800} cy={520 + rnd(i + 40) * 780} r={2.2} fill={INK} opacity={0.25} />)}
-        <NameCard x={540} y={790} w={680} h={300} name="MIGUEL RAMIREZ" sub="RUNNER UP" k={ease(f, t8, 24)}>
-          <text x={-300} y={20} fontFamily={MONO} fontWeight={800} fontSize={26} letterSpacing={3} fill={INK}>POSITION</text>
-          <rect x={-100} y={-22} width={380} height={64} fill="none" stroke={INK} strokeWidth={4} strokeDasharray={f > t9 ? '10 9' : '0'} opacity={f > t9 ? 0.9 : 0} />
-          {f > t9 + 6 && <rect x={-100} y={-22} width={380 * ease(f, t9 + 6, 10)} height={64} fill={PAL.pearl} opacity={0.35} />}
-          <text x={-300} y={104} fontFamily={MONO} fontWeight={600} fontSize={22} letterSpacing={2} fill={PAL.pearlSteelDeep}>FAIRBANKS BOROUGH ASSEMBLY</text>
-        </NameCard>
+        <NameCard x={540} y={790} w={680} h={300} name="MIGUEL RAMIREZ" sub="RUNNER UP" k={ease(f, t8, 24)} />
+        <g transform={`translate(${(1 - ease(ease(f, t8, 24) * 30, 0, 24)) * -900},0)`}>
+          <rect x={224} y={768} width={212} height={64} fill="none" stroke={INK} strokeWidth={3} />
+          <text x={330} y={810} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} letterSpacing={3} fill={INK}>POSITION</text>
+          <rect x={440} y={768} width={380} height={64} fill="none" stroke={INK} strokeWidth={4} strokeDasharray={f > t9 ? '10 9' : '0'} opacity={f > t9 ? 0.9 : 0} />
+          {f > t9 + 6 && <rect x={440} y={768} width={380 * ease(f, t9 + 6, 10)} height={64} fill={PAL.pearl} opacity={0.35} />}
+          <rect x={224} y={866} width={440} height={40} fill={PAL.birch} stroke={PAL.pearlSteel} strokeWidth={2} />
+          <text x={444} y={894} textAnchor="middle" fontFamily={MONO} fontWeight={600} fontSize={22} letterSpacing={2} fill={PAL.pearlSteelDeep}>FAIRBANKS BOROUGH ASSEMBLY</text>
+        </g>
         <Token x={880} y={1130} scale={0.8} text="1 IN 5" mat={1} />
         {/* the balance scale: level pans and a weight hovering unplaced */}
         <g transform="translate(540,1260)">
@@ -580,7 +585,7 @@ const OutlineIcon: React.FC<{x: number; y: number; kind: 'box' | 'gavel' | 'door
     {kind === 'box' && <g><rect x={-34} y={-34} width={68} height={72} fill="none" stroke={INK} strokeWidth={5} strokeDasharray="8 7" /><rect x={-22} y={-40} width={44} height={8} fill={INK} /></g>}
     {kind === 'gavel' && <g transform="rotate(-30)"><rect x={-30} y={-40} width={60} height={30} fill="none" stroke={INK} strokeWidth={5} strokeDasharray="8 7" /><rect x={-5} y={-10} width={10} height={60} fill="none" stroke={INK} strokeWidth={5} strokeDasharray="8 7" /></g>}
     {kind === 'door' && <g><rect x={-30} y={-46} width={60} height={92} fill="none" stroke={INK} strokeWidth={5} strokeDasharray="8 7" /><circle cx={16} cy={0} r={4} fill={INK} /></g>}
-    <text x={0} y={70 + 2 * Math.sin(f / 5)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={42} fill={INK}>?</text>
+    <text x={0} y={70 + 2 * Math.sin(f / 5)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={INK}>?</text>
   </g>
 );
 const S5: React.FC<SceneProps> = ({p}) => {
@@ -598,9 +603,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.06} oy={900}
       overlay={<>
         <Plate text="WHO ANSWERED THAT?" y={580} size={32} tone="paper" p={ease(f, t11 + 4, 8) * (f < t12 ? 1 : 0)} />
-        <Plate text="REQUEST TO THE LEGISLATURE" y={580} size={30} tone="paper" p={ease(f, t13 + 4, 8) * (f < t14 ? 1 : 0)} />
-        <Plate text="PAUSE · PER KUAC" y={580} size={32} tone="paper" p={ease(f, t14 + 6, 8) * (f < t15 ? 1 : 0)} />
-        <Plate text="UNTIL" y={580} size={32} tone="paper" p={ease(f, t15 + 6, 8)} />
+        <Plate text="REQUEST TO THE LEGISLATURE" y={660} size={30} tone="paper" p={ease(f, t13 + 4, 8) * (f < t14 ? 1 : 0)} />
+        <Plate text="PAUSE · PER KUAC" y={1250} size={32} tone="paper" p={ease(f, t14 + 6, 8) * (f < t15 ? 1 : 0)} />
+        <Plate text="UNTIL" y={1170} size={32} tone="paper" p={ease(f, t15 + 6, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={PAL.map} />
@@ -614,7 +619,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${PIN.x},${PIN.y})`}>
           <circle r={22 + 6 * Math.sin(g / 9)} fill="none" stroke={PAL.fogWhite} strokeWidth={4} opacity={0.7} />
           <circle r={10} fill={INK} stroke={PAL.fogWhite} strokeWidth={3} />
-          <rect x={-46} y={14} width={92} height={14} rx={4} fill={INK} stroke={PAL.fogWhite} strokeWidth={3} />
+          <rect x={-64} y={14} width={128} height={14} rx={4} fill={INK} stroke={PAL.fogWhite} strokeWidth={3} />
           <text x={0} y={52} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={2} fill={PAL.fogWhite}>JUNEAU</text>
         </g>
         {/* the calendar leaf, OCT 6TH flipping backward to AUG 27TH */}
@@ -649,7 +654,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             {[0, 1, 2].map((i) => <ellipse key={i} cx={Math.sin(g / 30 + i * 2) * 60} cy={72 + i * 18} rx={190} ry={16} fill="#fff" opacity={0.6} />)}
           </g>
         )}
-        <Token x={f > t15 ? 735 : 540} y={f > t15 ? 1160 : 1250} scale={0.7} text={f > t15 + 6 ? 'UNTIL' : ''} mat={1} rot={f < t12 ? g * 4 : 0} />
+        <Token x={f > t15 ? 735 : 540} y={f > t15 ? 1160 : 1250} scale={0.7 + (f > t15 && f < t15 + 16 ? 0.35 * Math.sin(((f - t15) / 16) * Math.PI) : 0)} text={f > t15 + 6 ? 'UNTIL' : ''} mat={1} rot={f < t12 ? g * 4 : 0} />
       </SVG>
     </Frame>
   );
@@ -677,8 +682,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} zk={() => lerp(1.0, 1.1, easeIO(f, 0, p.dur))} ox={VP.x} oy={VP.y}
       overlay={<>
         <Plate text="DATA CENTER BILL · POWER USE · DECOMMISSIONING" displayLines={['DATA CENTER BILL', 'POWER USE ·', 'DECOMMISSIONING']} y={640} size={28} tone="paper" p={ease(f, t16 + 4, 10) * (f < t17 - 2 ? 1 : 0)} />
-        <Plate text="SENATE 14-5" y={580} size={36} tone="paper" p={ease(f, t17 + 4, 8) * (f < t18 - 2 ? 1 : 0)} />
-        <Plate text="HOUSE NEVER TOOK IT UP" y={580} size={32} tone="paper" p={ease(f, t18 + 6, 8)} />
+        <Plate text="SENATE 14-5" y={800} size={36} tone="paper" p={ease(f, t17 + 4, 8) * (f < t18 - 2 ? 1 : 0)} />
+        <Plate text="HOUSE NEVER TOOK IT UP" y={920} size={32} tone="paper" p={ease(f, t18 + 6, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={PAL.fog} />
@@ -738,7 +743,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.07} oy={1000}
       overlay={<>
         <Plate text="A GUIDE FROM UAF" y={580} size={34} tone="paper" p={ease(f, t19 + 14, 8) * (f < t20 ? 1 : 0)} />
-        <Plate text="ASKS THE QUESTIONS UNDERNEATH" displayLines={['ASKS THE QUESTIONS', 'UNDERNEATH']} y={600} size={32} tone="paper" p={ease(f, t20 + 4, 8)} />
+        <Plate text="ASKS THE QUESTIONS UNDERNEATH" displayLines={['ASKS THE QUESTIONS', 'UNDERNEATH']} y={700} size={32} tone="paper" p={ease(f, t20 + 4, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={PAL.desk} />
@@ -788,21 +793,20 @@ const S8: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1000}
       overlay={<>
-        <Plate text="A NO WITH GOOD MANNERS" y={590} size={32} tone="paper" p={ease(f, t25 + 6, 8) * (f < t26 + 20 ? 1 : 0)} />
-        <Plate text="IF NOBODY DRAFTS THEM" y={590} size={32} tone="paper" p={ease(f, t26 + 6, 8) * (f < t28 - 4 ? 1 : 0)} />
-        <Plate text="FAVORS WHOEVER BUILDS FIRST" displayLines={['FAVORS WHOEVER', 'BUILDS FIRST']} y={610} size={32} tone="paper" p={ease(f, t28 + 16, 8)} />
+        <Plate text="A NO WITH GOOD MANNERS" y={560} size={32} tone="paper" p={ease(f, t25 + 6, 8) * (f < t26 + 20 ? 1 : 0)} />
+        <Plate text="IF NOBODY DRAFTS THEM" y={650} size={32} tone="paper" p={ease(f, t26 + 6, 8) * (f < t28 - 4 ? 1 : 0)} />
       </>}>
       <SVG>
         <FogLot f={g} fog={1.25 + 0.2 * ease(f, t24, 30)} sunBurn={0.1} />
         <rect x={0} y={880} width={1080} height={300} fill={PAL.fog} opacity={0.0} />
         {/* the STANDARDS drawer behind the Gate, with a cobweb */}
-        <g transform="translate(150,1010)">
+        <g transform="translate(170,1010)">
           <ContactShadow cx={0} cy={200} rx={130} ry={12} opacity={0.35} />
           <rect x={-100} y={-170} width={200} height={370} fill="#8A97A2" stroke={INK} strokeWidth={6} />
           <rect x={-86} y={-150} width={172} height={150} fill="#A9B4BC" stroke={INK} strokeWidth={5} />
           <rect x={-40} y={-82} width={80} height={14} rx={5} fill={INK} />
-          <rect x={-70} y={-130} width={140} height={34} fill={PAL.birch} stroke={INK} strokeWidth={3} />
-          <text x={0} y={-105} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={2} fill={INK}>STANDARDS</text>
+          <rect x={-80} y={-130} width={160} height={34} fill={PAL.birch} stroke={INK} strokeWidth={3} />
+          <text x={0} y={-105} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} letterSpacing={2} fill={INK}>STANDARDS</text>
           <rect x={-86} y={14} width={172} height={160} fill="#A9B4BC" stroke={INK} strokeWidth={5} />
           {web > 0.02 && (
             <g opacity={web} stroke={INK} strokeWidth={2.2} fill="none">
@@ -828,9 +832,9 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <WallClock x={900} y={640} f={g} />
         <ServerMachine frame={g} emotion="nervous" x={790} y={1240} scale={0.8} lookX={-2 + 8 * glance} tint="copper" />
         <g transform="translate(790,1120)">
-          <rect x={-46} y={-30} width={92} height={64} fill={PAL.birch} stroke={INK} strokeWidth={4} transform={`rotate(${3 * Math.sin(g / 14)})`} />
+          <rect x={-62} y={-30} width={124} height={64} fill={PAL.birch} stroke={INK} strokeWidth={4} transform={`rotate(${3 * Math.sin(g / 14)})`} />
           <text x={0} y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={16} letterSpacing={2} fill={INK}>TICKET</text>
-          {punch > 0.3 && <g><circle cx={0} cy={18} r={10} fill={PAL.pearlSteelDeep} stroke={INK} strokeWidth={3} /><text x={0} y={46} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={3} fill={INK}>FIRST</text></g>}
+          {punch > 0.3 && <g><circle cx={0} cy={18} r={10} fill={PAL.pearlSteelDeep} stroke={INK} strokeWidth={3} /></g>}
         </g>
         {punch > 0.02 && punch < 0.99 && <rect x={768} y={1070 + 40 * punch} width={44} height={24} rx={5} fill={PAL.nickelBrass} stroke={INK} strokeWidth={4} />}
       </SVG>
@@ -844,7 +848,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const g = f + p.from;
   const t29 = b(29), t66 = b(66), t30 = b(30);
   const quote = "I don't think that data centers are good for any community.";
-  const n = Math.min(quote.length, typedN(f, t29 + 8, 0.95));
+  const n = Math.min(quote.length, typedN(f, t29 + 68, 1.0));
   const typed = quote.slice(0, n);
   const words = typed.split(' ');
   const lines: string[] = [];
@@ -885,7 +889,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const g = f + p.from;
   const t31 = b(31), t32 = b(32), t33 = b(33), t34 = b(34);
   const lit = ease(f, t31, 14);
-  const crack = easeIO(f, t32, 22);
+  const crack = easeIO(f, t32, 14);
   const frostLeft = 1 - crack;
   const clause = ease(f, t32 + 12, 14);
   const GY10 = 930, GS10 = 1.6;
@@ -899,9 +903,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={950}
       overlay={<>
-        <Plate text="UNTIL STANDARDS EXIST · PER KUAC" displayLines={['UNTIL STANDARDS EXIST', 'PER KUAC']} y={600} size={30} tone="paper" p={ease(f, t32 + 14, 8) * (f < t33 + 4 ? 1 : 0)} />
-        <Plate text="A DOOR WITH A CONDITION" y={580} size={32} tone="paper" p={ease(f, t33 + 14, 8) * (f < t34 ? 1 : 0)} />
-        <Plate text="A CONDITION CAN BE WRITTEN" y={580} size={30} tone="paper" p={ease(f, t34 + 4, 8)} />
+        <Plate text="UNTIL STANDARDS EXIST · PER KUAC" displayLines={['UNTIL STANDARDS EXIST', 'PER KUAC']} y={560} size={30} tone="paper" p={ease(f, t32 + 14, 8) * (f < t33 + 4 ? 1 : 0)} />
+        <Plate text="A DOOR WITH A CONDITION" y={680} size={32} tone="paper" p={ease(f, t33 + 14, 8) * (f < t34 ? 1 : 0)} />
+        <Plate text="A CONDITION CAN BE WRITTEN" y={770} size={30} tone="paper" p={ease(f, t34 + 4, 8)} />
       </>}>
       <SVG>
         <FogLot f={g} fog={lerp(1.3, 0.55, crack)} sunBurn={crack} />
@@ -913,7 +917,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <text x={540} y={bTop + 84} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} letterSpacing={2} fill={INK}>EXIST</text>
         </g>
         {lit > 0.02 && lit < 1 && <rect x={540 - 164 * GS10} y={bTop - 2} width={328 * GS10} height={(bBot - bTop) - 2} rx={10} fill={PAL.goldHi} opacity={0.35 * lit} />}
-        {frostLeft > 0.02 && frostLeft < 0.98 && pieces.map((q, i) => <rect key={i} x={q.x} y={GY10 - 40 + q.fall * 520} width={36} height={22} rx={4} fill={PAL.frost} stroke={PAL.frostEdge} strokeWidth={2} transform={`rotate(${q.fall * 90 * (i % 2 ? 1 : -1)} ${q.x} ${GY10 - 40 + q.fall * 520})`} opacity={1 - q.fall} />)}
+        {frostLeft > 0.02 && frostLeft < 0.98 && pieces.map((q, i) => <rect key={i} x={q.x} y={GY10 - 40 + q.fall * 520} width={52} height={30} rx={4} fill={PAL.frost} stroke={PAL.frostEdge} strokeWidth={2} transform={`rotate(${q.fall * 90 * (i % 2 ? 1 : -1)} ${q.x} ${GY10 - 40 + q.fall * 520})`} opacity={1 - q.fall} />)}
         <Token x={430} y={bBot + 10 - 38} scale={0.5} text="" dent={1} frost={frostLeft} mat={0} />
         <FlatSheet x={690} y={bBot + 26} scale={0.9} f={g} />
         {/* four labelled dials rise under the plate: ELECTRICAL DEMAND, WATER USE, ENVIRONMENTAL IMPACTS, AIR QUALITY */}
@@ -953,6 +957,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <text x={-155} y={-96} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={38} fill={INK}>IN PLACE</text>
           <text x={-155} y={-30} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={16} letterSpacing={1} fill={PAL.pearlSteelDeep}>A CONVERSATION GUIDE ON</text>
           <text x={-155} y={-8} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={16} letterSpacing={1} fill={PAL.pearlSteelDeep}>DATA CENTERS FOR ALASKANS</text>
+          {/* a page-turn highlight sweeps the right page as the guide opens */}
+          {f > t36 && f < t36 + 40 && <path d={`M ${lerp(300, -300, (f - t36) / 40)} -250 Q ${lerp(300, -300, (f - t36) / 40) - 80} 0 ${lerp(300, -300, (f - t36) / 40)} 250`} fill="none" stroke={PAL.fogWhite} strokeWidth={26} opacity={0.5} />}
           {/* the right page riffles to a spread of question marks */}
           <g opacity={riffle}>
             {[0, 1, 2, 3, 4, 5].map((i) => <text key={i} x={70 + (i % 3) * 90} y={-130 + Math.floor(i / 3) * 130} fontFamily={SERIF} fontWeight={900} fontSize={84} fill={INK} opacity={0.75}>?</text>)}
@@ -1027,22 +1033,21 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const t41 = b(41), t42 = b(42), t43 = b(43), t44 = b(44), t55 = b(55), t45 = b(45), t65 = b(65);
   const split = easeIO(f, t42, 30);
   const typed = "A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.";
-  const n = Math.min(typed.length, typedN(f, t43, 0.62));
+  const n = Math.min(typed.length, typedN(f, t43, 0.7));
   const qlines: string[] = [];
   let cur = '';
-  typed.slice(0, n).split(' ').forEach((w) => { if ((cur + ' ' + w).trim().length > 34) { qlines.push(cur.trim()); cur = w; } else cur = (cur + ' ' + w).trim(); });
+  typed.slice(0, n).split(' ').forEach((w) => { if ((cur + ' ' + w).trim().length > 46) { qlines.push(cur.trim()); cur = w; } else cur = (cur + ' ' + w).trim(); });
   if (cur) qlines.push(cur);
   const clinicX = lerp(-140, 250, easeIO(f, t43, 50));
-  const machX = lerp(1250, 800, easeIO(f, t45, 34));
+  const machX = lerp(1250, 790, easeIO(f, t45, 34));
   const pull = easeIO(f, t45, 40);
   const cardSmall = ease(f, t44, 12), cardFlip = ease(f, t55, 14), cardBig = ease(f, t65, 12);
   const ringX = lerp(540, 250, split), ringX2 = lerp(540, 790, split);
   return (
     <Frame p={p} zk={() => lerp(1.12, 1.0, pull)} ox={540} oy={1000}
       overlay={<>
-        <Plate text="TWO APERTURES" y={600} size={32} tone="paper" p={ease(f, t42 + 10, 8) * (f < t44 - 2 ? 1 : 0)} />
-        <Plate text="HOSPITAL OR TRIBAL FACILITY" displayLines={['HOSPITAL OR', 'TRIBAL FACILITY']} x={290} y={640} size={26} tone="paper" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
-        <Plate text="HYPERSCALE · DIFFERENT QUESTIONS" displayLines={['HYPERSCALE ·', 'DIFFERENT QUESTIONS']} x={640} y={640} size={26} tone="paper" p={ease(f, t45 + 8, 8)} />
+        <Plate text="HOSPITAL OR TRIBAL FACILITY" displayLines={['HOSPITAL OR', 'TRIBAL FACILITY']} x={290} y={1075} size={26} tone="paper" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
+        <Plate text="HYPERSCALE · DIFFERENT QUESTIONS" displayLines={['HYPERSCALE ·', 'DIFFERENT QUESTIONS']} x={640} y={900} size={26} tone="paper" p={ease(f, t45 + 8, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={1180} fill="#5E6E7A" />
@@ -1062,12 +1067,12 @@ const S13: React.FC<SceneProps> = ({p}) => {
         ))}
         {split < 0.98 && <circle cx={ringX} cy={880} r={30 + 8 * (1 - split)} fill="none" stroke={PAL.cran} strokeWidth={8} opacity={1 - split} />}
         {/* the question cards, each inked on its own plate */}
-        <QCard x={250} y={1210} rows={2} k={cardSmall * (1 - 0.5 * cardFlip) + cardFlip * 0.5} />
+        <g transform={`translate(250,1210) scale(${Math.max(0.05, Math.abs(Math.cos(cardFlip * Math.PI)))},1) translate(-250,-1210)`}><QCard x={250} y={1210} rows={cardFlip > 0.5 ? 3 : 2} k={cardSmall} /></g>
         <QCard x={800} y={1180} rows={4} k={cardBig} />
-        {f > t43 && <g transform={`translate(${clinicX},1130)`}><ContactShadow cx={0} cy={22} rx={70} ry={9} opacity={0.4} />
+        {f > t43 && <g transform={`translate(${clinicX},${1130 + 6 * Math.sin(g / 4)}) rotate(${3 * Math.sin(g / 5)})`}><ContactShadow cx={0} cy={22} rx={70} ry={9} opacity={0.4} />
           <rect x={-52} y={-86} width={104} height={96} rx={10} fill={PAL.fogWhite} stroke={INK} strokeWidth={6} />
           <rect x={-8} y={-66} width={16} height={46} fill={PAL.panel} /><rect x={-24} y={-52} width={48} height={16} fill={PAL.panel} /></g>}
-        {f > t45 && <g transform={`translate(${machX},1220)`}><ServerMachine frame={g} emotion="focused" x={0} y={0} scale={1.55} tint="steel" /></g>}
+        {f > t45 && <g transform={`translate(${machX},1250)`}><ServerMachine frame={g} emotion="focused" x={0} y={0} scale={1.1} tint="copper" /></g>}
       </SVG>
     </Frame>
   );
@@ -1090,8 +1095,8 @@ const S14: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.04} oy={980}
       overlay={<>
-        <Plate text="NOT YES, NOT NO" y={590} size={34} tone="panel" p={ease(f, t46 + 10, 8) * (f < t47 - 2 ? 1 : 0)} />
-        <Plate text="RULES SIZED TO WHAT GETS BUILT" displayLines={['RULES SIZED TO', 'WHAT GETS BUILT']} y={600} size={32} tone="panel" p={ease(f, t47 + 6, 8)} />
+        <Plate text="NOT YES, NOT NO" y={560} size={34} tone="panel" p={ease(f, t46 + 10, 8) * (f < t47 - 2 ? 1 : 0)} />
+        <Plate text="RULES SIZED TO WHAT GETS BUILT" displayLines={['RULES SIZED TO', 'WHAT GETS BUILT']} y={700} size={32} tone="panel" p={ease(f, t47 + 6, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={PAL.panel} />
@@ -1107,9 +1112,9 @@ const S14: React.FC<SceneProps> = ({p}) => {
           <text transform="rotate(-80) translate(0,-212)" textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} letterSpacing={3} fill={PAL.pearlSteelDeep} opacity={0.45}>YES</text>
           <text transform="rotate(80) translate(0,-212)" textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} letterSpacing={3} fill={PAL.pearlSteelDeep} opacity={0.45}>NO</text>
           <g transform="translate(-180,-80) scale(0.9)"><Silhouette x={0} y={0} /></g>
-          <text x={-180} y={-110} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill={INK}>SMALL</text>
+          <rect x={-232} y={-132} width={104} height={32} fill={PAL.birch} stroke={INK} strokeWidth={3} /><text x={-180} y={-110} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill={INK}>SMALL</text>
           <g transform={`translate(180,-70) scale(1.4)`} opacity={0.9}><rect x={-34} y={-76} width={68} height={76} rx={6} fill={PAL.steel} stroke={INK} strokeWidth={4} /><circle cx={0} cy={-52} r={7} fill={PAL.fogWhite} /></g>
-          <text x={180} y={-130} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill={INK}>LARGE</text>
+          <rect x={128} y={-152} width={104} height={32} fill={PAL.birch} stroke={INK} strokeWidth={3} /><text x={180} y={-130} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill={INK}>LARGE</text>
           {/* the snapped arrow from the opening, the dial's pointer, with the token as its hub */}
           <g transform={`rotate(${ang - 90 + 90})`}>
             <g transform={`translate(0,${-(1 - drop) * 700}) rotate(90)`}><g transform="translate(150,0) scale(1.1)"><SnappedArrow x={0} y={0} rot={0} scale={1} /></g></g>
@@ -1141,9 +1146,9 @@ const S15: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={() => lerp(1.18, 1.0, easeIO(f, 0, p.dur))} oy={1000}
       overlay={<>
-        <Plate text="ONE BLANK PAGE" y={600} size={34} tone="paper" p={ease(f, t48 + 10, 8) * (f < t49 ? 1 : 0)} />
-        <Plate text="THE SENATE'S BILL STALLED IN THE HOUSE" displayLines={['THE SENATE\'S BILL', 'STALLED IN THE HOUSE']} y={610} size={32} tone="paper" p={ease(f, t49 + 8, 8) * (f < t51 ? 1 : 0)} />
-        <Plate text="WHO WRITES THEM?" y={600} size={44} tone="paper" p={ease(f, t51 + 14, 8)} />
+        <Plate text="ONE BLANK PAGE" x={300} y={880} size={34} tone="paper" p={ease(f, t48 + 10, 8) * (f < t49 ? 1 : 0)} />
+        <Plate text="THE SENATE'S BILL STALLED IN THE HOUSE" displayLines={['THE SENATE\'S BILL', 'STALLED IN THE HOUSE']} y={660} size={32} tone="paper" p={ease(f, t49 + 8, 8) * (f < t51 ? 1 : 0)} />
+        <Plate text="WHO WRITES THEM?" y={560} size={44} tone="paper" p={ease(f, t51 + 14, 8)} />
       </>}>
       <SVG>
         <FogLot f={g} fog={fog} sunBurn={0.2} />
@@ -1152,8 +1157,8 @@ const S15: React.FC<SceneProps> = ({p}) => {
         <GateRig f={g} x={GX} y={GY} scale={GS} fogPlate={1} />
         <FlatSheet x={420} y={SILL_Y + 18} scale={0.95} f={g} />
         <g transform={`translate(${lerp(1200, 690, bill)},${SILL_Y + 4}) rotate(${-2})`}>
-          <rect x={-90} y={-112} width={180} height={116} fill={PAL.birch} stroke={INK} strokeWidth={5} />
-          <text x={0} y={-80} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={15} letterSpacing={2} fill={INK}>DATA CENTER BILL</text>
+          <rect x={-106} y={-112} width={212} height={116} fill={PAL.birch} stroke={INK} strokeWidth={5} />
+          <text x={0} y={-80} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} letterSpacing={1.5} fill={INK}>DATA CENTER BILL</text>
           {[0, 1, 2].map((i) => <line key={i} x1={-66} y1={-56 + i * 24} x2={64 - 20 * (i % 2)} y2={-56 + i * 24} stroke={INK} strokeWidth={2.5} opacity={0.4} />)}
         </g>
         <Token x={560} y={SILL_Y - 38} scale={0.5} text={tokText} rot={flip * 360} mat={0} glow={flip > 0.5 ? 0.6 : 0} />

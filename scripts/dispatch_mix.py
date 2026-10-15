@@ -115,7 +115,12 @@ _FAM = {"thud": "sub", "stamp": "sub", "boom": "sub", "paw": "sub", "clank": "me
 _BY_NAME = {"whoosh": "whoosh", "sizzle": "paper", "snap": "snap", "slide": "creak", "thunk": "stamp", "whirr": "whoosh",
             "click": "tick", "blip": "pop", "riser": "whoosh", "clunk": "clank", "clip": "snap", "hum": "creak", "thump": "paw",
             "splash": "whoosh", "cascade": "chain", "page": "paper", "scratch": "paper", "sonar": "ding", "hit": "boom",
-            "fade": "creak", "bloop": "chime", "silence": "creak", "tick": "tick", "stamp": "stamp", "creak": "creak"}
+            "fade": "creak", "bloop": "chime", "silence": "creak", "tick": "tick", "stamp": "stamp", "creak": "creak",
+            # 2026-10-15 The Door With a Condition: this film's descriptive names, each to one bank kind
+            "alarm": "klaxon", "swell": "whoosh", "sting": "boom", "tap": "tick", "thock": "tick", "bloom": "chime", "ping": "ding",
+            "bell": "ding", "hush": "paper", "rumble": "boom", "crunch": "paper", "pulse": "ding", "crack": "snap", "clank": "clank",
+            "punch": "pop", "knock": "thud", "drone": "creak", "roll": "chain", "flip": "paper", "stop": "clank", "heavy": "boom",
+            "fold": "paper", "type": "tick", "pop": "pop", "clink": "ding", "chime": "chime", "thud": "thud", "boom": "boom"}
 _ALT = {"sub": ["thud", "stamp", "boom", "paw"], "metal": ["clank", "chain"], "bell": ["chime", "ding"], "click": ["tick"], "blip": ["pop"],
         "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"], "bird": ["caw"]}
 _CYCLE = {"slide": ["creak", "paper", "whoosh"], "hum": ["creak", "chain", "ding", "clank"], "sizzle": ["paper", "snap", "tick"],

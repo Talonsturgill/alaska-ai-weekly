@@ -243,7 +243,12 @@ def _ocr_frames(paths):
 # while a full-frame pass on the same pixels read '4.0' every time. The film's mono face draws a
 # dotted zero that this engine reads as an 8 at the crop's scale. The fold is the licence digits
 # only (CC BY 4.0 / 4.8), so it cannot excuse a missing or truncated licence line.
-_OCR_CONFUSIONS = (('IH', 'TH'), ('CCBY48', 'CCBY40'))
+# THIRD (measured 2026-10-15). Tesseract read the open parenthesis before INCOMPETECH as a C at the last
+# sample of the 2026-10-15 film's credits (CINCOMPETECH.COM), while the same string rendered standalone in the
+# same face at 32px, in the sibling credit '"LONG NOTE TWO" KEVIN MACLEOD (INCOMPETECH.COM)' and in a full-frame
+# pass on the very frame all read correctly. The fold is that one stray letter in front of the domain, so it
+# cannot excuse a missing or truncated credit.
+_OCR_CONFUSIONS = (('IH', 'TH'), ('CCBY48', 'CCBY40'), ('CINCOMPETECH', 'INCOMPETECH'))
 
 
 def _fold(s):
