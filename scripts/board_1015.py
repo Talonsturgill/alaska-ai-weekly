@@ -12,6 +12,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from board_anchor import AnchorBook  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out" / "dispatch"
 LINES = [l.strip() for l in (OUT / "vo_script.txt").read_text().splitlines() if l.strip()]
@@ -76,7 +79,7 @@ B = [
  (19, 7, 7, 0.0, "thump", "guide folder", "drops onto the desk with the token engraved UNTIL on its cover", "curious", "A GUIDE FROM UAF",
   "a guide folder drops onto a desk and the gold token, engraved UNTIL, lands on its cover",
   "the folder's cover flutters and the desk lamp breathes", ""),
- (21, 7, 7, W("questions"), "blip", "two hands", "reach for the folder and part around the token", "curious", "A GUIDE FROM UAF",
+ (21, 7, 7, 0.5, "blip", "two hands", "reach for the folder and part around the token", "curious", "A GUIDE FROM UAF",
   "two hands labelled YES and NO reach for the folder and part to either side of the token, which stays upright between them",
   "the hands settle at the folder's edges", ""),
  (22, 8, 8, 0.0, "crunch", "frost", "freezes along the Gate's arm and brow as the brow droops", "grim", "THE PAUSE",
@@ -309,19 +312,15 @@ def build():
     end = starts["end"]
     words = load_words() if real else {}
 
+    # Word anchors resolve through board_anchor: on conform (real voice) a word the read no longer
+    # says is an orphan and main() refuses to write the board (machine pass 2026-10-15).
+    book = AnchorBook(words, real=real, lines=LINES)
+
     def at(line, anc):
         nxt = starts.get(line + 1, end)
         if isinstance(anc, tuple):
             want, nth = anc
-            if words:
-                hits = [x for x in words.get(line, []) if norm(x["w"]) == norm(want)]
-                if len(hits) >= nth:
-                    return max(starts[line], float(hits[nth - 1]["s"]) - 0.05)
-            toks = [norm(t) for t in LINES[line].split()]
-            if norm(want) in toks:
-                k = toks.index(norm(want))
-                return starts[line] + (nxt - starts[line]) * (k / max(1, len(toks)))
-            return starts[line] + 0.5 * (nxt - starts[line])
+            return book.word(line, want, nth, starts[line], nxt)
         return starts[line] + anc * (nxt - starts[line])
 
     def shot_for(line):
@@ -421,6 +420,7 @@ def build():
         b["id"] = ids[b["key"]]
     board["beats"].sort(key=lambda b: b["id"])
     board["_ids"] = ids
+    book.raise_if_missing("board_1015 conform")
     return board, real
 
 
