@@ -178,7 +178,7 @@ def kinds_by_beat(beats, riser_beat):
 RISER_BEAT = riser_beat_id(_board)
 _KIND_BY_BEAT = kinds_by_beat(_board["beats"], RISER_BEAT)
 _PERFORMANCE = [
-    (_KIND_BY_BEAT[b["id"]], "hero" if _KIND_BY_BEAT[b["id"]] in _HERO else "texture" if _KIND_BY_BEAT[b["id"]] in _TEXTURE else "standard", 0.0, b["shows"][:70])
+    (_KIND_BY_BEAT[b["id"]], "hero" if _KIND_BY_BEAT[b["id"]] in _HERO else "texture" if _KIND_BY_BEAT[b["id"]] in _TEXTURE else "standard", 0.0, b["shows"][:70])  # label-only
     for b in _board["beats"]
 ]
 _PERFORMANCE_KINDS = [kind for kind, _, _, _ in _PERFORMANCE]
@@ -192,7 +192,7 @@ EVENTS = [
     for i, (b, (kind, cls, pan, _)) in enumerate(zip(_board["beats"], _PERFORMANCE))
 ]
 EVENT_LABELS = [
-    f"{b['shows']} | Bank performance: {role}. Approved sound: {b['sfx']}"
+    f"{b['shows']} | Bank performance: {role}. Approved sound: {b['sfx']}"  # label-only
     for b, (_, _, _, role) in zip(_board["beats"], _PERFORMANCE)
 ]
 

@@ -43,10 +43,63 @@ def sha(path):
     return h.hexdigest()
 
 
+# THE MIX HASHES WHAT THE MIX HEARS (machine pass 2026-10-15). storyboard.json was hashed as raw
+# bytes, so a text-only edit to a beat's `shows` or a shot's prose while the render ran failed
+# begin_encode with "source contents changed: out/dispatch/storyboard.json", and 10-15 paid a 17
+# minute re-cut for a sentence nobody can hear. The mix receipt now hashes the board WITHOUT the
+# fields below. Every other field, including any field added later, stays hashed, so the default is
+# still "a change re-mixes". Nothing in the render reads storyboard.json (build_scenes bakes it into
+# episode_props.json, which the render binds by hash), so the picture receipt is unchanged.
+# `shows` feeds only the descriptive sfx_events.json label, never the audio; make_cut re-mixes on
+# every cut, so the label catches up on the next one. mix_board_guard() refuses a mix whose own
+# source starts reading any other dropped field.
+BOARD = 'out/dispatch/storyboard.json'
+BOARD_PROSE_TOP = ('concept', 'treatment', 'divergence_note', 'angle', 'hook', 'fingerprint',
+                   'palette', 'title', 'slug', 'derived_from', 'engine', 'reveals', 'throughline',
+                   'open_loop', 'open_loop_2', 'shots')
+BOARD_PROSE_BEAT = ('shows', 'draw', 'choreo', 'means', 'vo', 'phrase', 'rehook', 'annotation')
+MIX_READERS = ('scripts/dispatch_mix.py', 'scripts/sfx_bank.py', 'scripts/run_stamp.py')
+LABEL_ONLY = ('shows',)
+
+
+def board_audio_sha(path):
+    """sha256 of the board with its prose removed: what a text-only edit cannot change."""
+    board = json.loads(Path(path).read_text())
+    if not isinstance(board, dict):
+        return sha(path)
+    kept = {k: v for k, v in board.items() if k not in BOARD_PROSE_TOP}
+    if isinstance(kept.get('beats'), list):
+        kept['beats'] = [{k: v for k, v in b.items() if k not in BOARD_PROSE_BEAT}
+                         if isinstance(b, dict) else b for b in kept['beats']]
+    payload = json.dumps(kept, sort_keys=True, separators=(',', ':')).encode()
+    return 'board-audio:' + hashlib.sha256(payload).hexdigest()
+
+
+def mix_board_guard(root=ROOT):
+    """Fail when a mix source reads a board field the mix receipt does not hash."""
+    import re
+    for rel in MIX_READERS:
+        path = Path(root) / rel
+        if not path.is_file():
+            continue
+        for n, line in enumerate(path.read_text().splitlines(), 1):
+            for key in BOARD_PROSE_TOP + BOARD_PROSE_BEAT:
+                if not re.search(r'["\']' + key + r'["\']', line):
+                    continue
+                if key in LABEL_ONLY and '# label-only' in line:
+                    continue   # the sfx_events label, never the audio
+                raise ValueError(f'{rel}:{n} reads board field {key!r}, which the mix receipt does '
+                                 'not hash (render_provenance.BOARD_PROSE_*). Remove it from that '
+                                 'list in the same change, or the mix can go stale silently.')
+
+
 def snapshot(root=ROOT, patterns=RENDER_PATTERNS):
     root = Path(root)
-    return {str(p.relative_to(root)): sha(p)
-            for p in sorted({p for pat in patterns for p in root.glob(pat) if p.is_file()})}
+    files = sorted({p for pat in patterns for p in root.glob(pat) if p.is_file()})
+    hashed = patterns is MIX_PATTERNS
+    return {str(p.relative_to(root)): (board_audio_sha(p) if hashed and str(p.relative_to(root)) == BOARD
+                                       else sha(p))
+            for p in files}
 
 
 def same_sources(expected, root=ROOT, patterns=RENDER_PATTERNS):
@@ -207,6 +260,7 @@ def check_render(data, root=ROOT):
 
 def begin_mix(wav, vo, inputs, root=ROOT):
     require_files(root, MIX_REQUIRED)
+    mix_board_guard(root)
     paths = sorted({str(Path(p).resolve()) for p in inputs})
     if str(Path(wav).resolve()) in paths or Path(wav).resolve() == Path(vo).resolve():
         raise ValueError('mix output must not also be an input')
@@ -285,10 +339,66 @@ def check_delivery(root=ROOT):
         return False, str(exc)
 
 
+def self_test():
+    """A prose edit to the board keeps the mix receipt; a timing, sound or new field breaks it."""
+    mix_board_guard(ROOT)   # the real mix sources read no unhashed board field
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        for rel in MIX_REQUIRED + MIX_READERS + ('scripts/render_provenance.py',):
+            dst = root / rel
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            if (ROOT / rel).is_file() and rel.startswith('scripts/'):
+                shutil.copyfile(ROOT / rel, dst)
+            else:
+                dst.write_text('{}\n')
+        board = {'run_date': '2026-10-15', 'title': 'T', 'audio_arc': {'riser_at': 9.0},
+                 'shots': [{'id': 1, 'title': 'a shot'}],
+                 'beats': [{'id': 1, 'at_s': 1.0, 't': '1.000-2.000', 'sfx': 'tap',
+                            'shows': 'a gate lifts', 'draw': {'subject': 'Gate'}}]}
+        bpath = root / BOARD
+
+        def put(b):
+            bpath.write_text(json.dumps(b, indent=2) + '\n')
+        put(board)
+        vo, wav = root / 'vo.wav', root / 'master.wav'
+        vo.write_bytes(b'vo')
+        data = begin_mix(wav, vo, [], root)
+        prose = json.loads(json.dumps(board))
+        prose['beats'][0]['shows'] = 'the gate lifts its brow'
+        prose['beats'][0]['draw'] = {'subject': 'Gate', 'action': 'lifts'}
+        prose['shots'][0]['title'] = 'renamed'
+        prose['title'] = 'The Door With a Condition'
+        put(prose)
+        check_mix_inputs(data, root)   # the 10-15 case: a text-only edit no longer re-cuts
+        for mutate in (lambda b: b['beats'][0].update(at_s=1.2),
+                       lambda b: b['beats'][0].update(sfx='thud'),
+                       lambda b: b['audio_arc'].update(riser_at=8.0),
+                       lambda b: b.update(new_field=1)):
+            changed = json.loads(json.dumps(prose))
+            mutate(changed)
+            put(changed)
+            try:
+                check_mix_inputs(data, root)
+            except ValueError:
+                continue
+            raise AssertionError('an audible board change kept the mix receipt')
+        reader = root / 'scripts/dispatch_mix.py'
+        reader.write_text(reader.read_text() + '\nX = _board["beats"][0]["means"]\n')
+        try:
+            mix_board_guard(root)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('a mix reading an unhashed board field must be refused')
+    print('render_provenance self-test: PASS (prose edit keeps the mix receipt; timing, sound, '
+          'arc and new fields break it; an unhashed read is refused)')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['begin-render', 'finish-render', 'restore-chunk',
-                        'begin-mix', 'finish-mix', 'begin-encode', 'finish-encode', 'check'])
+                        'begin-mix', 'finish-mix', 'begin-encode', 'finish-encode', 'check',
+                        'self-test'])
     parser.add_argument('--video')
     parser.add_argument('--props', default=str(ROOT / 'out/dispatch/episode_props.json'))
     parser.add_argument('--composition')
@@ -318,6 +428,8 @@ def main():
         begin_encode(args.video, args.wav)
     elif args.action == 'finish-encode':
         finish_encode()
+    elif args.action == 'self-test':
+        self_test()
     else:
         ok, message = check_delivery()
         print(('PASS' if ok else 'FAIL') + ' [render provenance] ' + message)
