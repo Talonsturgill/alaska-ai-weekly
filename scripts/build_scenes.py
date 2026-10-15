@@ -693,7 +693,12 @@ def main():
     caps = _merge_by_sense(_cards_from_words(_apply_caption_fixups(caps)))
     start = {L["idx"]: L["start"] for L in lines}
     last_end = max(L["end"] for L in lines)
-    total_s = last_end + TAIL
+    # A board may ask for a longer hold on its final frame (tail_s), so a loop-closing question can be read.
+    try:
+        _tail = float(json.load(open(os.path.join(OUT, "storyboard.json"))).get("tail_s", TAIL))
+    except (OSError, ValueError, TypeError):
+        _tail = TAIL
+    total_s = last_end + max(TAIL, min(_tail, 2.5))
     total_f = round(total_s * FPS)
 
     board = json.load(open(os.path.join(OUT, "storyboard.json")))
