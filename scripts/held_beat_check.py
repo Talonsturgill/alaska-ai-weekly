@@ -70,7 +70,7 @@ def main(argv=None):
         print(f"  {pct:4.1f}%  {name}{shows}")
     # Names first: make_cut keeps the first 220 characters of a NOTE line.
     print(f"{len(low)} under {a.floor:g}%: " + ", ".join(f"{n} {p:.1f}" for n, p in low)
-          + f" (of {len(strips)} strips; give each an idle cycle before the panel)")
+          + f" (of {len(strips)} strips; wrap each held prop in <HeldProp> from lib/heldidle.tsx)")
     return 2
 
 

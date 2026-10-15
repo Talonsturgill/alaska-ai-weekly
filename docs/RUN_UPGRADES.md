@@ -3852,3 +3852,8 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - Shipped: Gate film on the Fairbanks Assembly pause request and the UAF Computing in Place guide. Panel median 7.2 against 7.0 (7.22, 7.2, 7.18), no hard blockers.
 - In-run fixes: honest VO edits (public land scope, per UAF, funded not paid, LaJiness framed as general view), idle drift in Frame, mix gap lift and VO arc depth (LRA 5.4 to 7.6), Raymond quote retimed to the read, caption_split_after, board anchors re-conformed to the new read.
 - Recurring causes: held beats, caption scorer plateau, Raymond card wrap. Queued in docs/MACHINE_QUEUE.md (5 items, two repeat offenders).
+
+## 2026-10-15 weekly machine pass
+- Shipped: board conform refuses beats anchored to a word the voice no longer says (board_anchor.py), the mix receipt hashes what the mix hears so a prose-only board edit no longer forces a re-cut, caption_render_check names caption_split_after, Gate B round ledger with the rubric's max_revision_cycles of 5 enforced (caption_rounds.py), calibration anchors for the caption scorer.
+- Engine advance: HeldProp in lib/heldidle.tsx, a shared idle rig for held props (wrapped props move a median 2.8 to 6.2 percent, bare props 0).
+- Verified by the orchestrator: board_anchor, render_provenance, caption_render_check, caption_rounds and machine_due self-tests, runbook_check, asset_index --check and tsc all pass.

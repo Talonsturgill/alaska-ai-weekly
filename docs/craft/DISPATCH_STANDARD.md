@@ -59,6 +59,14 @@ document, not of the judge.
 
 - **Every held figure needs idle life**: a breath cycle and a lateral weight shift, phase
   offset per figure so two people in a frame are never in lockstep.
+- **Every held PROP gets the same, for free: wrap it in `<HeldProp>`** (`lib/heldidle.tsx`,
+  machine pass 2026-10-15, after five straight films had a panel name a held prop frozen). Give
+  it the prop's pivot, rough size, a `kind` ('rest' on a surface, 'hang' for a plate or sign,
+  'float' for a token or card) and a per-prop `seed`, and wrap the label the prop carries with it.
+  It adds a continuous rock, irregular settle nudges and a soft light pass on the prop's own
+  silhouette (2.8 to 6.2 percent median change on the prop in `HeldPropLook`, 0 when bare). A whole-
+  frame camera drift is not prop life: motion_registered solves it out and judges still call the
+  prop frozen. `gain={0}` only where stillness is the point.
 - **The weight shift is applied ABOVE the feet.** Applying it at the character root slides
   the boots and their contact shadows along the ground, which reads as skating. Torso
   carries the full shift, legs about a third, boots stay planted.
@@ -406,6 +414,6 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - No verdict props: the film shows the plan beside the rule and never rules.
 
 ## 2026-10-15 additions
-- A VO edit after the board exists must be followed by `board_1015.py conform` and a check that no anchor word vanished, or a beat lands on the wrong word.
+- A VO edit after the board exists must be followed by `board_1015.py conform`; since the 2026-10-15 machine pass that conform refuses to write when an anchor word vanished (`scripts/board_anchor.py`), so read its list and re-anchor.
 - A typewriter quote card types to the forced-alignment word times, never to a fixed rate, and wraps wide enough that the last line stays inside the card.
 - A mix with LRA under 6 gets a deeper VO arc before more bed lift: premix LRA 7.7 delivered 5.5 until the arc depth rose.

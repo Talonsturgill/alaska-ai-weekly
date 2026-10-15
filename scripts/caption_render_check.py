@@ -187,6 +187,35 @@ def row_lint(cues, max_chars=ROW_MAX):
     return fails
 
 
+def split_hints(cues, max_chars=ROW_MAX):
+    """The caption_split_after phrases that would move each dangling break back one word.
+
+    Machine pass 2026-10-15: 10-15 failed on "is a no / with" and found the lever, the
+    `caption_split_after` list in out/dispatch/vo_script.json that build_scenes reads, only by
+    reading build_scenes. The failure now names it, with a phrase to paste."""
+    hints = []
+    texts = [c["text"] for c in cues]
+    for rows, why in caption_rows(texts, max_chars):
+        for r, y in zip(rows, why):
+            words = r.split()
+            if y and len(words) >= 2:
+                phrase = " ".join(words[max(0, len(words) - 4):-1]).strip(" ,;")
+                if phrase and phrase.lower() not in (h.lower() for h in hints):
+                    hints.append(phrase)
+    return hints
+
+
+def remedy(cues):
+    hints = split_hints(cues)
+    lever = ('Fix: add the words a card must END on to "caption_split_after" in '
+             'out/dispatch/vo_script.json (a list of phrases; build_scenes breaks the card after '
+             'each), then rerun scripts/build_scenes.py. Or re-cue the line at a clause boundary in '
+             'scripts/build_scenes.py (_cards_from_words), or reword it; never pad a row.')
+    if hints:
+        lever += ' Candidate: "caption_split_after": ' + json.dumps(hints)
+    return lever
+
+
 def _self_test():
     bad = [{"t": 0.0, "d": 3, "text": "Fish carry tiny ear stones, and NOAA counts the"},
            {"t": 3.0, "d": 3, "text": "Per NOAA, that's 600 to"},
@@ -207,6 +236,11 @@ def _self_test():
     print(f"  [{'x' if not got_good else ' '}] sense breaks pass clean: {got_good or 'no dangling row'}")
     if got_good:
         fails += got_good
+    fix = remedy(bad)
+    named = "caption_split_after" in fix and "vo_script.json" in fix and "Candidate" in fix
+    print(f"  [{'x' if named else ' '}] the failure names the lever: {fix[-90:]}")
+    if not named:
+        fails.append("remedy does not name caption_split_after")
     print("SELF-TEST", "FAIL" if fails else "PASS")
     return 1 if fails else 0
 
@@ -229,6 +263,8 @@ def main():
             print("  - " + f)
         print(f"{'FAIL' if fails else 'PASS'} [caption_render_check rows] {len(fails)} dangling "
               f"row(s) in {len(cues)} cues")
+        if fails:
+            print(remedy(cues))
         return 1 if fails else 0
 
     if not os.path.exists(a.video):
@@ -265,8 +301,7 @@ def main():
               f"points at the next row, as lib/captionrows.ts breaks them:")
         for f in dangling:
             print("  - " + f)
-        print("Re-cue the line at a clause boundary in scripts/build_scenes.py (_cards_from_words) "
-              "or reword it; never pad a row to move the break.")
+        print(remedy(cues))
         return 1
 
     good = [c for c in cues if c["d"] > 0.35 and c["text"].strip()]

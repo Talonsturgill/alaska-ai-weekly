@@ -671,7 +671,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern, optional `bed` nodes
   `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block),
   divergence_note. Plus
-  storyboard.md for humans.
+  storyboard.md for humans. A per-run board script (copy `scripts/board_1015.py`) resolves word
+  anchors through `scripts/board_anchor.py`, so after a VO edit its `conform` refuses to write and
+  names every beat anchored to a word the new read no longer says.
 - ENGAGEMENT (docs/craft/ENGAGEMENT.md, read in the directors room): `reveals` [{t, type, what,
   hold_s 0.4 to 0.8}] with at least ONE scale-class reveal (scale-pullback, morph-to-chart,
   build-on) IN EACH THIRD at 120s, the first at the escalation point; `rehook` in each drift window;
@@ -877,6 +879,11 @@ semicolon, an em/en dash, a sentence starting with "But", first person outside a
 hashtag count outside 3 to 5, commas over 4.9 per 100 words, "cannot", a non-ordinal date, any URL,
 and any sources or credit line in the body). GATE B: editor then scorer vs
 config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both pass.
+Each round: save the scorer's JSON card, run `python3 scripts/caption_rounds.py record --card <card>`,
+and rewrite for the ONE target it names (largest weighted shortfall, held until it stalls twice),
+handing the next scorer the previous scores and diff it prints. At the rubric's
+`max_revision_cycles` with zero hard fails it prints STOP and the best round: ship that text and put
+its card in the email as below the bar. A hard fail is never capped.
 dispatch_email.py also lints the exact string it embeds and exits 2 rather than build a draft that
 breaks a house rule.
 
