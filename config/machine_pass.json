@@ -1,16 +1,15 @@
 {
   "last_pass": {
-    "date": "2026-10-09",
+    "date": "2026-10-15",
     "shipped": [
-      "evidence-run-date-constant",
-      "mix-receipt-hashes-board",
-      "held-beats-under-2pct",
-      "dispatch-email-source-punctuation"
+      "vo-edit-orphans-board-beats",
+      "storyboard-edit-invalidates-render",
+      "caption-split-after-discovery",
+      "caption-scorer-plateau",
+      "held-beats-under-2pct"
     ],
-    "engine_advance": "none this pass; run_stamp.py and board-derived mix and evidence constants",
-    "escalated": [
-      "label-vs-label-gate"
-    ]
+    "engine_advance": "HeldProp in lib/heldidle.tsx, a shared idle rig for held props",
+    "escalated": []
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
 }
