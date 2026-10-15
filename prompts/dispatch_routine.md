@@ -879,6 +879,11 @@ semicolon, an em/en dash, a sentence starting with "But", first person outside a
 hashtag count outside 3 to 5, commas over 4.9 per 100 words, "cannot", a non-ordinal date, any URL,
 and any sources or credit line in the body). GATE B: editor then scorer vs
 config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both pass.
+Each round: save the scorer's JSON card, run `python3 scripts/caption_rounds.py record --card <card>`,
+and rewrite for the ONE target it names (largest weighted shortfall, held until it stalls twice),
+handing the next scorer the previous scores and diff it prints. At the rubric's
+`max_revision_cycles` with zero hard fails it prints STOP and the best round: ship that text and put
+its card in the email as below the bar. A hard fail is never capped.
 dispatch_email.py also lints the exact string it embeds and exits 2 rather than build a draft that
 breaks a house rule.
 

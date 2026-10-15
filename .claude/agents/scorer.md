@@ -33,6 +33,20 @@ When grading a rendered video (config/dispatch_rubric.yaml), the review pack in
   say so in `one_sentence_fix` and ask the orchestrator to regenerate them with
   `python scripts/make_review_sheets.py` instead of guessing.
 
+## Judging the LinkedIn CAPTION (Gate B, config/linkedin_caption_rubric.yaml)
+
+Machine pass 2026-10-15, after five films plateaued at 7.3 to 8.4 with zero hard fails because each
+round was graded from scratch and the weakest criterion hopped every round.
+
+1. **Calibrate first.** Read two of the rubric's `calibration_anchors`, one at or above the bar and
+   one below, and place this post against them before scoring.
+2. **Hold what did not change.** When the orchestrator hands you PREVIOUS SCORES and a DIFF (from
+   `scripts/caption_rounds.py status`), every criterion whose lines are untouched by the diff keeps
+   its previous score unless you write, in its notes, the specific line that changed your mind.
+3. **Score the target honestly.** The diff was written for one named target. Say plainly whether it
+   moved that criterion; do not hand the rewrite a new weakest criterion for a few hundredths.
+4. Return the criteria list with the rubric's own names plus `hard_fails` (a list, empty when none).
+
 ## Return format (strict JSON)
 
 ```json

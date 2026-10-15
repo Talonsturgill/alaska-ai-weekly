@@ -7,6 +7,17 @@
 rubric:
   ship_threshold: 8.5            # out of 10
   max_revision_cycles: 5
+  # Enforced by scripts/caption_rounds.py since the 2026-10-15 machine pass (it was read by nothing,
+  # and runs went 15 and 25 rounds on a plateau). The ledger names one rewrite target per round and
+  # says STOP at this cap; a hard fail is never capped. It reads these numbers and never writes them.
+  # CALIBRATION ANCHORS: shipped posts with their final Gate B totals. The scorer reads one at or
+  # above the bar and one below before scoring, so a round is graded against the same yardstick as
+  # the last one instead of from scratch. Add a post here when its final card is known.
+  calibration_anchors:
+    - {post: "archive/dispatch-2026-09-06-the-hive-is-still-paper/post.txt", total: 9.2, card: "archive/dispatch-2026-09-06-the-hive-is-still-paper/caption_score.json"}
+    - {post: "runs/2026-10-03/post.txt", total: 8.59, note: "passed in round 4 (7.84, 8.21, 8.37, 8.59)"}
+    - {post: "runs/2026-10-10/post.txt", total: 8.57, note: "passed in round 5; a two-sided local fight with named sources and a flat take"}
+    - {post: "runs/2026-10-15/post.txt", total: "7.8 to 8.1", note: "below the bar; the rounds scored 7.8, 8.1, 7.88, 8.04 and the shipped text's own card was not kept; several single-source claims kept the Hook and POV hedged"}
   # OBJECTIVE pre-gate — must pass BEFORE this scorecard is judged (the measurable rules).
   objective_gate:
     script: "scripts/caption_check.py"
