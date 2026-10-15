@@ -1,0 +1,95 @@
+{
+ "run_date": "2026-10-15",
+ "title": "The Door With a Condition",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Unofficial Election Summary Report, Oct 6 2026",
+   "outlet": "Fairbanks North Star Borough Clerk",
+   "url": "https://www.fnsb.gov/DocumentCenter/View/29574/UNOFFICIAL-ELECTION-RESULTS-PDF-SUMMARY-",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4"
+   ],
+   "used_in_film": true,
+   "note": "Fetched by a validator."
+  },
+  {
+   "id": "s2",
+   "title": "Fairbanks releases final results",
+   "outlet": "Alaska's News Source (Alex Bengel), Oct 13th 2026",
+   "url": "https://www.alaskasnewssource.com/2026/10/14/fairbanks-releases-final-results-2026-municipal-election/",
+   "claims": [
+    "c3"
+   ],
+   "used_in_film": true,
+   "note": "Fetched by a validator."
+  },
+  {
+   "id": "s3",
+   "title": "Fairbanks borough Assembly candidates weigh data centers",
+   "outlet": "Alaska's News Source (Alex Bengel), Sept 29th 2026",
+   "url": "https://www.alaskasnewssource.com/2026/09/30/fairbanks-borough-assembly-candidates-weigh-data-centers/",
+   "claims": [
+    "c5",
+    "c6",
+    "c7",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "Fetched by a validator."
+  },
+  {
+   "id": "s4",
+   "title": "In legislative priorities, borough Assembly doubles up on data center moratorium request",
+   "outlet": "KUAC (Patrick Gilchrist), Aug 31st 2026",
+   "url": "https://fm.kuac.org/2026-08-31/in-legislative-priorities-fairbanks-north-star-borough-assembly-doubles-up-on-ai-data-center-moratorium-request",
+   "claims": [
+    "c7",
+    "c8"
+   ],
+   "used_in_film": true,
+   "note": "Fetched by a validator."
+  },
+  {
+   "id": "s5",
+   "title": "Where do Alaska's four governor candidates stand on data centers",
+   "outlet": "Alaska Beacon via Alaska Public Media (James Brooks), Sept 21st 2026",
+   "url": "https://alaskapublic.org/news/politics/elections/2026-09-21/where-do-alaskas-four-governor-candidates-stand-on-data-centers",
+   "claims": [
+    "c9",
+    "c10",
+    "c11"
+   ],
+   "used_in_film": true,
+   "note": "Fetched by a validator."
+  },
+  {
+   "id": "s6",
+   "title": "New guide helps Alaskans shape data center conversations",
+   "outlet": "UAF News (Yuri Bult-Ito), Oct 14th 2026",
+   "url": "https://www.uaf.edu/news/new-guide-helps-alaskans-shape-data-center-conversations.php",
+   "claims": [
+    "c12",
+    "c13",
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "Fetched by a validator."
+  },
+  {
+   "id": "s7",
+   "title": "Computing in Place, record 23175112",
+   "outlet": "Zenodo (ACEP), Oct 6th 2026",
+   "url": "https://zenodo.org/records/23175112",
+   "claims": [
+    "c12",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Fetched by a validator."
+  }
+ ]
+}

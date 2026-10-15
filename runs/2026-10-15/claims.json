@@ -1,0 +1,246 @@
+{
+ "run_date": "2026-10-15",
+ "fact_check_verdict": "PASS with caveats. Two independent validators re-fetched the FNSB results PDF (read as images), Alaska's News Source, KUAC, Alaska Beacon via Alaska Public, the UAF News release and the Zenodo record and API. Vote counts rest on the borough's primary PDF (unofficial). The guide PDF (15.6 MB) was too large to fetch, so every guide claim is attributed to UAF's release or Zenodo. Claims were split into single facts after the check. SB 250 and sponsor unverified, not used.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-sources",
+   "spoken": "On October sixth Fairbanks borough voters filled Assembly seats.",
+   "on_screen": "OCT 6TH",
+   "source": "https://www.fnsb.gov/DocumentCenter/View/29574/UNOFFICIAL-ELECTION-RESULTS-PDF-SUMMARY-",
+   "requires": [
+    "The election was October 6th, 2026. Unofficial results only. Never say certified or final."
+   ],
+   "verbatim": "Election Summary Report ... October 6, 2026 ... Unofficial Results",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-single-source-primary",
+   "spoken": "About one in five borough voters cast a ballot.",
+   "on_screen": "TURNOUT 20.95% \u00b7 16,177 OF 77,227 \u00b7 UNOFFICIAL",
+   "source": "https://www.fnsb.gov/DocumentCenter/View/29574/UNOFFICIAL-ELECTION-RESULTS-PDF-SUMMARY-",
+   "requires": [
+    "20.95 percent is the PDF's own figure. Say about one in five. Unofficial results only. Never say certified or final. Do not use the PDF grand total 19,923, it double counts city voters."
+   ],
+   "verbatim": "Total 16,177 77,227 20.95%",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-two-sources",
+   "spoken": "Alexis Howell won the closest borough Assembly seat.",
+   "on_screen": "HOWELL 7,759",
+   "source": "https://www.fnsb.gov/DocumentCenter/View/29574/UNOFFICIAL-ELECTION-RESULTS-PDF-SUMMARY-",
+   "requires": [
+    "Alaska's News Source confirms Howell won the open seat. The counts are from the borough PDF only. Unofficial results only. Never say certified or final. No position is attributed to Howell."
+   ],
+   "verbatim": "Alexis Howell 5,612 354 1,618 175 7,759; Miguel Ramirez 6,251 270 856 165 7,542",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-single-source-primary",
+   "spoken": "She won by two hundred seventeen votes, unofficially.",
+   "on_screen": "217 VOTES",
+   "source": "https://www.fnsb.gov/DocumentCenter/View/29574/UNOFFICIAL-ELECTION-RESULTS-PDF-SUMMARY-",
+   "requires": [
+    "7,759 minus 7,542 is 217. Say unofficially in the same breath. Do not use pronouns for Howell, none are given."
+   ],
+   "verbatim": "Alexis Howell ... 7,759; Miguel Ramirez ... 7,542",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-quote",
+   "spoken": "Runner up Miguel Ramirez took no position.",
+   "on_screen": "MIGUEL RAMIREZ \u00b7 NO POSITION",
+   "source": "https://www.alaskasnewssource.com/2026/09/30/fairbanks-borough-assembly-candidates-weigh-data-centers/",
+   "requires": [
+    "Ramirez took no position. Do not use pronouns for Ramirez. Leaders's moratorium support is a paraphrase, never quoted."
+   ],
+   "verbatim": "I can't really say 'yay' or 'nay' because I think there need to be more studies done.",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-quote",
+   "spoken": "Ramirez said there need to be more studies.",
+   "on_screen": "MORE STUDIES",
+   "source": "https://www.alaskasnewssource.com/2026/09/30/fairbanks-borough-assembly-candidates-weigh-data-centers/",
+   "requires": [
+    "Reported speech is a paraphrase of the source quote: I can't really say 'yay' or 'nay' because I think there need to be more studies done."
+   ],
+   "verbatim": "there need to be more studies done",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-two-sources",
+   "spoken": "In August the Assembly asked the Legislature in Juneau.",
+   "on_screen": "AUG 27TH",
+   "source": "https://www.alaskasnewssource.com/2026/09/30/fairbanks-borough-assembly-candidates-weigh-data-centers/",
+   "requires": [
+    "The Assembly adopted its 2027 legislative priorities 6-1 on August 27th, and the request rode inside that package. It is a request, the Assembly can't impose it. KUAC confirms the date. Say request to the Legislature."
+   ],
+   "verbatim": "adopting a set of legislative priorities for 2027",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-single-source",
+   "spoken": "The request pauses new commercial data centers on public land until standards exist.",
+   "on_screen": "UNTIL STANDARDS EXIST \u00b7 PER KUAC",
+   "source": "https://fm.kuac.org/2026-08-31/in-legislative-priorities-fairbanks-north-star-borough-assembly-doubles-up-on-ai-data-center-moratorium-request",
+   "requires": [
+    "Per KUAC, Aug 31st: halt permitting, leasing or building new commercial data centers until standards exist for electrical demand, water use, environmental impacts and air quality, on municipal or state-owned lands. Attribute to KUAC."
+   ],
+   "verbatim": "until standards exist for electrical demand, water use, environmental impacts and air quality",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-single-source",
+   "spoken": "A data center bill passed the state Senate fourteen to five.",
+   "on_screen": "SENATE 14-5",
+   "source": "https://alaskapublic.org/news/politics/elections/2026-09-21/where-do-alaskas-four-governor-candidates-stand-on-data-centers",
+   "requires": [
+    "Per Alaska Beacon via Alaska Public Media. Bill number and sponsor not verified against akleg.gov (403), so don't name them."
+   ],
+   "verbatim": "This year, the Alaska Senate voted 14-5 to pass a data center bill",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-single-source",
+   "spoken": "The House never took it up.",
+   "on_screen": "HOUSE NEVER TOOK IT UP",
+   "source": "https://alaskapublic.org/news/politics/elections/2026-09-21/where-do-alaskas-four-governor-candidates-stand-on-data-centers",
+   "requires": [
+    "The article says the House failed to take it up before the end of the legislative session."
+   ],
+   "verbatim": "failed to take it up before the end of the legislative session",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-single-source",
+   "spoken": "The bill covered power use and decommissioning.",
+   "on_screen": "DATA CENTER BILL \u00b7 POWER USE \u00b7 DECOMMISSIONING",
+   "source": "https://alaskapublic.org/news/politics/elections/2026-09-21/where-do-alaskas-four-governor-candidates-stand-on-data-centers",
+   "requires": [
+    "Per the same article the bill would regulate how data centers use electricity from public utilities and require decommissioning plans."
+   ],
+   "verbatim": "regulate how data centers use electricity from public utilities and require decommissioning plans",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified",
+   "spoken": "A University of Alaska Fairbanks guide called Computing in Place.",
+   "on_screen": "A GUIDE FROM UAF",
+   "source": "https://www.uaf.edu/news/new-guide-helps-alaskans-shape-data-center-conversations.php",
+   "requires": [
+    "Guide public on Zenodo October 6th (v1, DOI 10.5281/zenodo.23175112, CC BY 4.0). UAF News release dated Oct 14th, ACEP mirror Oct 11th. Say this month, not released October 14th."
+   ],
+   "verbatim": "Computing in Place: A Conversation Guide on Data Centers for Alaskans, by Alaskans",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-secondary-summary",
+   "spoken": "The guide asks who benefits and who pays.",
+   "on_screen": "WHO BENEFITS? WHO PAYS? \u00b7 AS UAF SUMMARIZES",
+   "source": "https://www.uaf.edu/news/new-guide-helps-alaskans-shape-data-center-conversations.php",
+   "requires": [
+    "Questions are UAF News's summary of the guide, not verified against the PDF (15.6 MB, too large to fetch). Say the guide asks, per UAF. Never say the guide contains or lacks figures."
+   ],
+   "verbatim": "What computing does Alaska need? What resources should support it? Who should control it? Who benefits and who pays?",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "The Navy's research office funded the guide.",
+   "on_screen": "OFFICE OF NAVAL RESEARCH \u00b7 PER THE DEPOSIT RECORD",
+   "source": "https://zenodo.org/records/23175112",
+   "requires": [
+    "Funder Office of Naval Research, ARCTIC II, award N00014-22-1-2049, per the Zenodo record only. Ignore the UAF page footer USDA NIFA line. Say per the deposit record."
+   ],
+   "verbatim": "Funder: Office of Naval Research; Program: ARCTIC II; Award number: N00014-22-1-2049",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-quote",
+   "spoken": "\"I don't think that data centers are good for any community.\"",
+   "on_screen": "\"NOT GOOD FOR ANY COMMUNITY\" \u00b7 NICK LAJINESS",
+   "source": "https://www.alaskasnewssource.com/2026/09/30/fairbanks-borough-assembly-candidates-weigh-data-centers/",
+   "requires": [
+    "Quote LaJiness exactly, straight quotes. He is the winning incumbent. His general view, not a statement about the moratorium. Source misspells him LaJinness. Spell it LaJiness."
+   ],
+   "verbatim": "I don't think that data centers are good for any community, to be honest with you",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-quote",
+   "spoken": "\"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+   "on_screen": "\"DIFFERENT QUESTIONS\" \u00b7 LEASI VANESSA LEE RAYMOND, ACEP",
+   "source": "https://www.uaf.edu/news/new-guide-helps-alaskans-shape-data-center-conversations.php",
+   "requires": [
+    "Attribute to ACEP's Leasi Vanessa Lee Raymond, who leads the project. Verbatim has for example after government and from, not than. Zenodo lists her as Vanessa Raymond, Concordia University, so state no affiliation beyond UAF's wording."
+   ],
+   "verbatim": "A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

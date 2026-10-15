@@ -1,0 +1,40 @@
+{
+ "run_date": "2026-10-15",
+ "thesis": "Fairbanks didn't settle data centers on October 6th, it asked for rules first, and the rules are the one thing nobody has written yet, which is the part Alaska can still win by writing.",
+ "falsifier": "If voters were asked a data center question and answered it, or the winners' verified positions show they ran on the pause, or the Assembly could impose the pause itself, or the request had no end condition, the thesis is false. The claims show none of those: turnout 20.95 percent, an unofficial 217-vote margin over a challenger who took no position, a request only the Legislature can grant, and a pause that ends when standards exist.",
+ "supporting_facts": [
+  "c4 about one in five borough voters cast a ballot",
+  "c1 Howell won by an unofficial 217, over Ramirez who couldn't say yay or nay without more studies (c8)",
+  "c5 and c6 the Assembly's August request is a request to Juneau that pauses new commercial data centers until standards exist",
+  "c9 a data center bill passed the Senate 14-5 and the House never took it up",
+  "c13 and c14 UAF's guide hands out questions, and says a small hospital or tribal facility raises different questions from a hyperscale one"
+ ],
+ "counterpoint": "A pause until standards exist, with nobody drafting standards, works as a no in practice, and the winning incumbent LaJiness's flat 'not good for any community' (c7) is the honest version of it. Waiting for a mandate is itself a choice that favors whoever builds first. The film draws that case at full strength as its Act 3 test, then answers it with the conditional text of the request, the scale distinction and the Senate majority.",
+ "runner_ups": [
+  {
+   "lens": "Auditor",
+   "lost_because": "Pure no-mandate framing is a correction, and left the viewer with nothing to want. Its turnout and margin scenes, the August-before-October timeline and its closing question are kept."
+  },
+  {
+   "lens": "Structural",
+   "lost_because": "The false-binary line is kept as the hook, but alone it had no object to hold."
+  },
+  {
+   "lens": "Enthusiast",
+   "lost_because": "Led with upside the claims can't carry (no standards are on the way). Its hospital-scale versus hyperscale upside is kept as the turn."
+  }
+ ],
+ "valence": "mixed (curious, leaning constructive)",
+ "stance": "curious",
+ "cross_challenge": "All three analysts independently refused the brief's overstatement that three winners back a pause and that Howell wanted more analysis, neither of which is in the claims. Synthesis builds on the unofficial count, the conditional request and the guide's questions only.",
+ "writer_guardrails": [
+  "Never say certified or final, every count is unofficial",
+  "The 6-1 was the whole 2027 priorities package, say request to Juneau",
+  "No position for Howell or Crass, none is in the claims",
+  "Leaders's moratorium support is a paraphrase, never quoted",
+  "No Senate bill number or sponsor",
+  "Guide is mid-October or this month, never released October 14th",
+  "Guide questions are as UAF summarizes, the no-figures claim covers the release and record only",
+  "Spell LaJiness"
+ ]
+}

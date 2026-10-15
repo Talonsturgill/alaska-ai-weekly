@@ -404,3 +404,8 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - Nickel is the instrument metal, kraft is the tag; do not mix them.
 - Held beats need an idle cycle (rotor blades, dotted line, plates under 1 percent change again). Plate now breathes by default.
 - No verdict props: the film shows the plan beside the rule and never rules.
+
+## 2026-10-15 additions
+- A VO edit after the board exists must be followed by `board_1015.py conform` and a check that no anchor word vanished, or a beat lands on the wrong word.
+- A typewriter quote card types to the forced-alignment word times, never to a fixed rate, and wraps wide enough that the last line stays inside the card.
+- A mix with LRA under 6 gets a deeper VO arc before more bed lift: premix LRA 7.7 delivered 5.5 until the arc depth rose.

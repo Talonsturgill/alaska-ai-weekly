@@ -1,0 +1,133 @@
+{
+ "run_date": "2026-10-15",
+ "palette": {
+  "sky": "#EEF1F4 pearl zenith to #C9D3DD fog band, no ink or indigo stop",
+  "ground": "#DDE3EA",
+  "hero": "#8E2F4A",
+  "accent": "#E3B23C",
+  "shadow": "#1B2E34",
+  "roles": {
+   "cranberry #8E2F4A": "only the Gate (the rule with a condition): its post, head and boom. Its shaded half is cranberry multiplied to no darker than #6A2238 and it is NEVER staged against teal-black (1.8:1). It keeps the shared INK #101423 outline at 6 px plus a fog-white #F7F9FA rim of 2 to 3 px on the side facing the sun.",
+   "larch_gold #E3B23C": "only the QuestionToken, the throughline. Body larch gold with a 6 px INK #101423 keyline (matching the Gate's outline), a deep-gold bevel #9A6F12 on the lower rim, a #FFF4D0 specular and engraved text in INK, never gold on gold. The token's contrast carrier on any pale plane (gym floor in S2, map in S5, folder cover in S7) is that 6 px keyline (9.4 to 1 against gold and at least 10 to 1 against every pale plane) plus a teal-black #1B2E34 contact mat at 60 percent. A 25 to 30 percent shadow pool does NOT count as a darker plane.",
+   "pearl_fog #DDE3EA and #EEF1F4": "the world, the lot, the gym floor, the map table, the hall, the guide desk. Daylight, not night.",
+   "teal_black #1B2E34": "shadow only, at 25 to 30 percent with a 12 px blur. Never a backdrop behind the Gate, and the dial-panel's dark ground is #223A44 so cranberry never meets teal-black.",
+   "birch_paper #F4F1E6": "every sheet, name card, ledger, ballot stack, the STANDARDS sheet and the guide folder. Every birch object carries a 2 px INK keyline and a teal-black contact shadow at 30 percent, and is staged against a mid or dark plane (the cranberry sill, the count table #8C7A66, the navy desk #2C4A6E, the hall floor) and never against pearl alone, because paper on pearl is 1.0 to 1. Birch question cards on the pearl-steel plates carry a 6 px INK border inset on the plate (paper vs INK 16.2 to 1). Cards hang on the Gate's cranberry board or body below the plate, never on the fogged white plate.",
+   "steel #7C8A96 with copper #B26B3C": "only the ServerMachine and the FIRST ticket, never the hero. The ServerMachine, ThresholdGate and AperturePlate carry the shared 6 px INK outline plus a 2 to 3 px #F7F9FA rim on the sun side (INK vs the aperture wall 3.5 to 1, vs pearl 14.2 to 1).",
+   "navy_plate #2C4A6E": "only the Navy funder plate with birch text, and the guide-desk top.",
+   "pearl_steel #A9B4BC": "ThresholdGate and AperturePlate bodies (S13 and S14), with cranberry only on the condition ring that echoes the Gate. The cranberry condition ring is inset on the pearl-steel body with a pearl-steel margin of at least 8 px on every side (ring vs plate 3.7 to 1, plate vs dial panel 5.7 to 1), in S13 and S14.",
+   "spruce #2F5D50 deep #1D3F36": "far treeline only, desaturated so the cranberry stays the rare saturated hue, and wherever the Gate's silhouette overlaps the treeline the treeline is veiled by at least 65 percent fog band #C9D3DD (cranberry vs spruce is 1.05 to 1 otherwise). Deep spruce #1D3F36 never touches the Gate.",
+   "nickel_brass #8C7D5A": "the shelf ReviewPen and TallyCounter and the satellite tokens radiating in S12, via a tint, L* 53 against larch gold's L* 75 (22 apart), so the central QuestionToken is the one gold object in any frame. Lit chairs in the gym glow warm white #FFF4D0 with no gold. Satellite tokens carry a 2 px #FFF4D0 rim (about 8 to 1 on the navy desk), engrave in INK, and their lit state is a brighter #FFF4D0 rim and glow, never a gold fill. The pen rests on the blank sheet, never on the bare cranberry sill, and carries a 2 px #F7F9FA rim.",
+   "navy_ink #1F3A5C": "the UNOFFICIAL stamp and the CASE AGAINST stamp ink on birch paper, and the shut-state lamp reads as value only (unlit pearl glass versus lit warm white). Vermilion is dropped because it sat within a few delta-E of 10-11's pen red #D9362B and collided with cranberry for colour-blind viewers.",
+   "condition_plate": "the Gate's condition plate is birch with INK text (16 to 1, plate vs cranberry 7 to 1) and #FFF4D0 when lit. Dials are pearl-steel faces on the cranberry body with INK labels (8.7 to 1)."
+  },
+  "support": {
+   "snow": "#F2F5F7 with shade #BCC9D3, and the horizon is carried by the fog band #C9D3DD and the treeline, never snow against pearl alone",
+   "fog_white": "#F7F9FA",
+   "frost": "#CFE4EE with edge #9FC3D4",
+   "map_table": "#6F8596",
+   "count_table": "#8C7A66",
+   "hall_floor": "#7A848C",
+   "dial_panel": "#223A44",
+   "pinboard": "#6E5E4E",
+   "guide_room_wall": "#5B6B78",
+   "aperture_wall": "#5E6E7A",
+   "gate_ledger_wall": "#C9D3DD fog band",
+   "gym_floor": "#76828A (lit chairs #FFF4D0 3.6 to 1, every chair carries a 2 px INK keyline, the TallyCounter a 2 px INK keyline)",
+   "gate_frost_backdrop": "fog band #C9D3DD behind the Gate (cranberry 5.2 to 1, shade 7.3 to 1)",
+   "guide_room_table": "#7A6A58 (paper 4.6 to 1)",
+   "house_hall_walls": "fog band #C9D3DD with walnut doors #5E4A3E (5.5 to 1), the lit first door a step brighter",
+   "ballot_box_and_sign": "walnut #5E4A3E posts and boxes with birch boards, each over the fog band at 3 to 1 or better",
+   "juneau_slot_plane": "the paper plane glides over open map table #6F8596 (paper vs map 3.4 to 1) with its INK keyline and contact shadow, never over a pale landmass"
+  },
+  "mood": "a bright cold Fairbanks morning in ice fog, patient and a little wry, never ominous. A civic Gate with a doorman face that is trying to do its job with a rule nobody finished.",
+  "why": "The story is about a CONDITION, so the world is a pale neutral where one saturated cranberry rule and one gold question carry all the meaning. Cranberry, pearl and larch gold appear in none of 10-09, 10-10 or 10-11. HONEST OVERLAP: 10-11 was also a pale daylight opener, so the thumbnail break comes from a cool pearl-grey world with no rose and a single dark cranberry mass, not from daylight itself. Shared supporting hexes: spruce #2F5D50 and #1D3F36 match 10-11 exactly (far treeline only), steel #7C8A96 sits within a hair of 10-10's #7C8792 (the machine only), snow #F2F5F7 is close to 10-11's #EEF3F5, and teal-black #1B2E34 sits near 10-11's #101826 (shadow only). Kraft, plum and indigo are not used. Colour licence: larch gold means ONLY the question token, cranberry ONLY the Gate, navy ink ONLY an official stamp, steel and copper ONLY the machine. ADDITIONAL OVERLAPS DISCLOSED: pearl_steel #A9B4BC is 10-11's nickel exactly (S13 and S14 only), birch #F4F1E6 is within a hair of 10-11's paper #F4F1EA, the navy ink #1F3A5C is in the same ROLE as 10-11's stamp blue-black #2A3342 (a status stamp that is not a verdict) at a shifted hue, and cranberry's shaded floor #6A2238 sits near 10-09's stamp oxblood #7A2236, which was a stamp accent and never a hero mass."
+ },
+ "light": {
+  "time_of_day": "late morning in ice fog, a low white sun behind the fog bank, then warm interior lamps in the gym, count room and guide room",
+  "direction": "three-quarter back-left through fog on exteriors, warm brass lamp pools on interiors",
+  "key": "sun disc behind the fog bank at x 260, y 520 (frame left, behind the Gate), so the key comes three-quarter from back-left, with fog_white #F7F9FA fill. Shadows fall toward the camera and to the right at 25 percent teal-black with a 12 px blur. S1 and S15 use the same position so the loop matches.",
+  "fill": "frost #CFE4EE",
+  "rim": "a fog-white #F7F9FA rim, 2 to 3 px, on the Gate's top edge and arm, the side facing the sun. The token gets an INK keyline plus a #FFF4D0 specular, never a gold rim.",
+  "depth": "Parallax numbers for EVERY planes stage. ice-fog-lot: treeline 0.25, fog band A 0.4, lot 0.6, Gate 1.0, ballot box and fence posts 1.2, fog band B 1.4. count-table: wall 0.5, table 1.0, near paper stacks 1.2. quote-wall: wall 0.4, pinboard and card 1.0, near lamp shade 1.3. juneau-map: map 0.6, pins 1.0, plane 1.4. house-hall: far door 0.4, walls 0.7, sheet 1.0, floor lip 1.2. guide-desk: desk 0.8, folder 1.0, near hands 1.3. gate-frost: fog 0.4, drawer wall 0.7, Gate and machine 1.0, frost and web 1.2. gate-ledger: treeline 0.25, fog band 0.4, Gate 1.0, sill and pen 1.2. guide-room: floor 0.7, table 1.0, near chairs 1.3. token-desk: desk 0.8, tokens 1.0 to 1.4. aperture-sort: wall 0.5, plates 1.0, boxes 1.2, floor lip 1.4. gym-overhead and dial-panel are locked diagrams where the parts move instead.",
+  "per_stage": {
+   "ice-fog-lot": "fog bank backlit by a low white sun at x 260 y 520, a fog-white #F7F9FA rim on the Gate's top edge and arm, treeline parallax 0.25, lot 0.6, Gate 1.0, ballot box and fence posts 1.2, drifting fog bands on two layers",
+   "gym-overhead": "a flat overhead lamp grid, honey floor boards desaturated to pearl, lit chairs glow warm white #FFF4D0 with no gold, the dim chairs at 35 percent value, the corner token sits on a teal-black #1B2E34 mat at 60 percent with its 6 px keyline",
+   "count-table": "one warm brass lamp pool over the table #8C7A66, the ballot stacks the lightest warm value, the sliver band a cool white strip",
+   "juneau-map": "map table #6F8596 lit from above. The Juneau pin is INK with a pearl halo pulse, and the gold token spins over the AlaskaMini landmass or a teal-black pool at 60 percent, never open table.",
+   "house-hall": "a long hallway of overhead lamps in perspective over a hall floor #7A848C, the shut door lit a step brighter at the end",
+   "guide-desk": "warm desk lamp from the upper left, the folder cover the brightest paper value",
+   "gate-frost": "flat fog light with frost white glints, the Gate's shaded half no darker than #6A2238 against a pearl-fog backdrop, never against teal-black",
+   "guide-room": "overhead conference light, chairs ringed in warm pools",
+   "aperture-sort": "split light, one cool lamp for the small plate and one warm for the big",
+   "dial-panel": "a dark panel #223A44 with the dial lit from inside, the only dark frame in the film and a deliberate hard reset before the button, the Gate's cranberry never appears against it",
+   "gate-ledger": "an EXTERIOR: treeline 0.25, fog band 0.4, Gate 1.0, sill and pen 1.2. The sun disc at x 260 y 520 burns partway through the fog at 60 percent while the fog bands thin, and the condition board is lit warm from inside.",
+   "token-desk": "a warm desk lamp on a navy desk, the tokens catch gold keylines",
+   "quote-wall": "a pearl wall with a pinboard #6E5E4E carrying the card and the token (S4 only, LaJiness now plays at the count table in S9), one lamp pool on the board, a slow vignette"
+  },
+  "story": "flat pearl fog through the Test (S8 to S9), a pale low sun disc burning partway through at the turn (S10), and the fog closing back in at the button (S15) so the open question stays open"
+ },
+ "shape_language": {
+  "contrast": "Rounded against rectilinear, stated as radii. The Gate is the shelf's articulated doorman: a rounded head with a brow bar and two lidded eyes, a many-parted rig with a boom at a 6 px corner. The QuestionToken is a scalloped disc with 14 lobes and soft engraved text. Everything that is a RECORD (name cards, ballot stacks, bill sheet, guide, sheets) is a hard rectilinear slab at a 0 to 2 px corner. The condition plate is a flat bolted rectangle. The ServerMachine is a tall steel cabinet, the only tall rectangle in the film.",
+  "why": "A rounded, many-parted thing that can say it depends is the rule with a condition. A rectilinear slab is a record, a number or a stamp that can't. The viewer should see from the silhouette alone which is which at thumbnail size, before reading a label."
+ },
+ "casting": {
+  "hero": "Gate (civics.tsx, the conditional rule with a face). It has never been a Dispatch hero in the ledger and the last two heroes were PoleCam and FlightCrate. Condition text and tint are params.",
+  "reused": "Gate (civics.tsx, HERO), QuestionToken (credentials.tsx, throughline), ThresholdGate and AperturePlate (civics.tsx, a DIFFERENT component from Gate that shares its rig family, used in S13 and S14 only and never as the hero, pearl-steel with a cranberry condition ring), ServerMachine (kit.tsx, supporting only), TallyCounter and ReviewPen (props.tsx, nickel-brass tint), AlaskaMini (kit.tsx), Snowfall (refinery.tsx). StampBot is cut.",
+  "net_new": {},
+  "episode_local": {
+   "BallotBox": "a plain slotted box",
+   "YesNoSign": "a two-armed signpost that spins and snaps",
+   "ChairGrid": "a plan-view grid of folding chairs with a calendar chip",
+   "BallotStacks": "two stacks with name labels, a ruler and a sliver band",
+   "NameCard": "a boxed name label with a typewriter quote chip (the board's QuoteCard is this)",
+   "BalanceScale": "level YAY and NAY pans with a hovering MORE STUDIES weight",
+   "Calendar": "a flipping AUG 27TH leaf",
+   "QuestionOutlines": "a ballot box, a gavel and a Senate door outline stamped with question marks",
+   "PaperPlane": "the folded request",
+   "JuneauPin": "an INK pin with a pearl halo",
+   "ConditionDials": "four dials under the Gate's board labelled ELECTRICAL DEMAND, WATER USE, ENVIRONMENTAL IMPACTS, AIR QUALITY",
+   "BillSheet": "the bill sheet with tally lamps",
+   "HouseDoors": "two doors in a hall",
+   "GuideFolder": "the open guide with a title page and the Navy plate",
+   "TwoHands": "two plain hands labelled YES and NO",
+   "CaseAgainstStamp": "a heavy stamp in navy ink",
+   "Frost": "a creeping frost layer on the Gate's arm and the token",
+   "StandardsDrawer": "a drawer with a falling cobweb",
+   "NoThankYouCard": "a neat card on the Gate's board",
+   "Ticket": "a paper ticket taped to the ServerMachine with a FIRST hole punch and a WallClock",
+   "DentOverlay": "a dent on the token",
+   "StandardsSheet": "the throughline blank sheet",
+   "FunderPlate": "navy plate with birch text",
+   "ApertureBoxes": "a clinic box (two question marks on its card) and the carried ServerMachine from the waiting line as the large box, its ticket torn off as it enters (a long stack of question marks on its card)"
+  },
+  "why": "The Gate, the token, the apertures, the pen, the counter, the machine and the map all exist on the shelf, and everything else is an episode-local prop of flat shapes and strings, so no ASSET_MANIFEST entry is owed this run.",
+  "cast_freshness": "dedupe.py check --hero Gate returned FRESH (and ThresholdGate FRESH). The last twelve heroes: RunOfRiver, Statement, Binder, Otolith, NewsAgent, ClassroomDoor, BrassBell, FortuneBall, StudyLens, SteelVessel, PoleCam, FlightCrate.",
+  "verified_on_shelf": "Checked against video-engine/src/lib/civics.tsx: Gate has a rounded head with a brow bar that tilts, two lidded eyes that blink and look around, a verdict lamp on the crown, an arm that swings by `swing`, a sway-mounted condition board with a `condition` and a `source` string, and a `tint`. It has NO arms, hands, chest plate, inner lamp or half-open plate. So the film does NOT claim them. 'Holds up a neat NO THANK YOU card and bows' is an episode-local card parented to the board with the whole Gate tilted forward, the four dials are an episode-local overlay drawn under the board, the glow in the seams is an episode-local gradient, and the condition text is the Gate's own `condition` prop. ServerMachine (kit.tsx) has a face, a lamp and no arms: its FIRST ticket is taped to its front and it 'looks up at the clock' with its eyes only. QuestionToken (credentials.tsx) honors arbitrary text on one or two lines and takes color, faceColor and inkColor, so re-engrave and a dent (an episode-local overlay on the token) need no library change."
+ },
+ "motion_language": {
+  "world": "EXTERIOR stages (ice-fog-lot, gate-frost, gate-ledger): fog bands drift on two layers and snow dust turns. INTERIOR stages (gym-overhead, count-table, quote-wall, house-hall, guide-desk, guide-room, token-desk, aperture-sort): drifting dust motes in the lamp pool and a 2 percent lamp breath, no ice fog. juneau-map: drifting cloud shadow. dial-panel: the dial's idle sway and shimmering ticks.",
+  "hero_moves": [
+   "the camera dollies through the Gate's gap and the arrow snaps off the signpost",
+   "the camera drops through the ballot box slot into a plan-view gym and one chair in five lights",
+   "two ballot stacks rise and a sliver band opens between the tops",
+   "a paper request folds, glides across the map and lands in a slot",
+   "frost spreads along the Gate's arm and a cobweb falls on the drawer",
+   "the condition board lights, frost cracks off the arm in plates and four labelled dials rise, and the pen taps their empty slots and leaves no ink",
+   "the clinic box stops at the small aperture and the server machine stops at the large one, each at its own question card",
+   "the dial turns with the snapped arrow as its pointer",
+   "the bill sheet slides onto the sill beside the blank sheet",
+   "the token flips to WHO WRITES THEM"
+  ],
+  "blur": "180 degree motion blur on the paper plane, the whip pans and the plate swing",
+  "camera": "slow push on every held shot, three camera kicks at most (the UNOFFICIAL stamp, the dent, the CASE AGAINST stamp)"
+ },
+ "composition": {
+  "focal": "the Gate or the token is the best-finished thing in every frame it appears in, and the QuestionToken is the one gold object in view",
+  "negative_space": "S1 and S15 leave the upper half to pale fog",
+  "safe_area": "hero action y 420 to 1320, the caption band 1336 to 1472 kept clear of hero motion, a near plane from 1475 down in every shot, plates at or below y 560 in zoomed shots and clear of 1336",
+  "signature_shot": "Shot 15, the closing frame: the half-open cranberry Gate in the same ice fog as the opening frame, the blank STANDARDS sheet lying on the cranberry sill (paper on cranberry is about 6.6 to 1) with three empty INK-dotted lines, the pen hovering with no ink at the nib, and the keylined gold token reading WHO WRITES THEM in INK against the Gate body, never against the fog band. The Gate sits at x 540, y 700 to 1250 and the upper half is fog. The framing, sun and fog are the opening frame's, with the ballot box and the signpost stump either side, and the camera drifts back out through the gap. It is the film's open question drawn as weather and objects, and it loops to frame 1.",
+  "lower_third": "a near plane of snow drift, ballot box base, desk edge, hall floor or panel rim in every shot below y 1475"
+ },
+ "craft_advance": "none this run, the shelf covers the film (engine advances belong to the weekly machine pass)",
+ "hero_state": "Gate state is consistent: half open at S1, frosted at S8, plate lit at S10, half open again at S15. The pen never writes any ink, so the STANDARDS sheet is blank in S10 and S15. The request's UNTIL clause stays fogged white through S5 and the frost on the Gate (S8) until it cracks off at S10."
+}

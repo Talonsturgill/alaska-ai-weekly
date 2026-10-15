@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1444,
+    "hook": "The Fairbanks Assembly's data center pause is only a request. The Senate passed a data center bill 14 to 5. The House never took it up.",
+    "hook_len": 135,
+    "hashtags": [
+      "#Fairbanks",
+      "#DataCenters",
+      "#ArtificialIntelligence",
+      "#Alaska",
+      "#EnergyPolicy"
+    ],
+    "n_hashtags": 5,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "sentence_initial_but": 0,
+    "first_person": 0,
+    "commas_per_100w": 2.67,
+    "passes": true
+  }
+}

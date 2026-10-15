@@ -1,0 +1,66 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.994,
+    "heard": "Fair banks just voted on data centers, except it didn't. On October 6th, about one in five borough voters cast a ballot. The closest borough assembly seat went to Alexis Howell by 217 votes, unofficially. Runner up Miguel Ramirez took no position and said there need to be more studies. So who answered the data center question? In August, that assembly asked the state legislature in Juneau to pause new commercial data centers on public land until standards exist, KUAC reported. A data center bill on power use and decommissioning passed the state senate, 14 to 5, and the house never took it up. Meanwhile, a University of Alaska Fairbank's guide takes up the same subject. Now, the case against. A pause until standards exist is a rye no with good manners, if nobody drafts them. On data centers in general, winning incumbent Nick Lageness said, I don't think that data centers are good for any community. But the pause ends when standards exist. That's a door with a condition, and a condition can be written. That guide is called Computing in Place, and the Navy's research office funded it per the deposit record. Per UAF, it asks who benefits, and who pays. The guide's lead, Liosi Vanessa Lee Raymond says, a small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers. So the missing option isn't yes or no. It's rules sized to what gets built. Fairbanks asked for rules first. The senate's data center bill stalled in the house. So who writes them?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.011,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.39,
+        "voiced_frac": 0.48,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 112.52,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 112.52,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "VO PLAN IS STALE. vo_direction.json does not match vo_script.txt.",
+    "  script lines: 18    plan lines: 18",
+    "  line 9:\n    script: A pause until standards exist is a no with good manners if nobody drafts them.\n    plan:   A pause until standards exist is a no with good manners if nobody drafts them,",
+    "REPAIRING: the SCRIPT is the source of truth (it is the locked copy the fact-check and the caption both key off), so the plan is rebuilt from it. Per-line direction is preserved for every line whose spoken text is unchanged; changed or new lines carry no inline tags, which is the safe default because an unvetted tag risks being read aloud.",
+    "pronunciation guide injected into the notes (5 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.994,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.985,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.989,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

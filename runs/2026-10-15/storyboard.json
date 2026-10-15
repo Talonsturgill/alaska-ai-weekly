@@ -1,0 +1,2317 @@
+{
+  "run_date": "2026-10-15",
+  "slug": "the-door-with-a-condition",
+  "title": "The Door With a Condition",
+  "concept": "A half-open Gate with a face stands for the Fairbanks Assembly's August request to pause new commercial data centers until standards exist. The film shows that the October 6th vote did not decide the question, that the pause is a door with a condition rather than a no, and that a University of Alaska Fairbanks guide, Computing in Place, hands out questions while the one data center bill that moved stalled in the House, so the open question is who writes the rules. A gold question token changes state across the film and the blank STANDARDS sheet is the unpaid promise.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 112.18,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "structure-as-subject",
+    "layout": "fullbleed-split",
+    "register": "naturalistic-scene",
+    "palette": "bright pearl fog daylight, warm cranberry gate, golden larch token, teal-black shadow, navy ink stamp",
+    "camera_strategy": "dolly-through",
+    "light_story": "fog thickening through the Test, thinning at the turn, closing in at the button",
+    "metaphor": "a gate with a condition on its plate, waiting for a hand to write the rule"
+  },
+  "palette": "bright pearl fog daylight, warm cranberry gate, golden larch token, teal-black shadow, navy ink stamp",
+  "divergence_note": "10-11 opened on first-light rose tundra with a medicine crate, 10-10 was a night parking lot under sodium lamps and 10-09 a dusk utility yard. This film opens in pearl daylight ice fog on a cranberry Gate that is the seam between a YES side and a NO side, moves through a plan-view gym floor of chairs, a count table, a map, a hallway and a guide desk, and ends on a thin loop to the fog. The hero is a conditional rule rather than a machine or an object being carried, the opening is a split frame rather than a centred portrait, and its palette is pearl, cranberry and larch gold, none of which the last three decks used. The honest overlaps are daylight and a pale snow world, which 10-11 also had, so the break comes from the hue family and the split composition.",
+  "treatment": {
+    "winner": "The Dramatist's half-open Gate and its Padlock scene, with the Comedian's polite no and waiting machine, the Explainer's chair grid and four dials, and the Enthusiast's two apertures as the turn.",
+    "why": "All four pitches cast the Gate as hero and the QuestionToken as throughline, so the synthesis took each room's strongest fair beat."
+  },
+  "angle": {
+    "run_date": "2026-10-15",
+    "thesis": "Fairbanks didn't settle data centers on October 6th, it asked for rules first, and the rules are the one thing nobody has written yet, which is the part Alaska can still win by writing.",
+    "falsifier": "If voters were asked a data center question and answered it, or the winners' verified positions show they ran on the pause, or the Assembly could impose the pause itself, or the request had no end condition, the thesis is false. The claims show none of those: turnout 20.95 percent, an unofficial 217-vote margin over a challenger who took no position, a request only the Legislature can grant, and a pause that ends when standards exist.",
+    "supporting_facts": [
+      "c4 about one in five borough voters cast a ballot",
+      "c1 Howell won by an unofficial 217, over Ramirez who couldn't say yay or nay without more studies (c8)",
+      "c5 and c6 the Assembly's August request is a request to Juneau that pauses new commercial data centers until standards exist",
+      "c9 a data center bill passed the Senate 14-5 and the House never took it up",
+      "c13 and c14 UAF's guide hands out questions, and says a small hospital or tribal facility raises different questions from a hyperscale one"
+    ],
+    "counterpoint": "A pause until standards exist, with nobody drafting standards, works as a no in practice, and the winning incumbent LaJiness's flat 'not good for any community' (c7) is the honest version of it. Waiting for a mandate is itself a choice that favors whoever builds first. The film draws that case at full strength as its Act 3 test, then answers it with the conditional text of the request, the scale distinction and the Senate majority.",
+    "runner_ups": [
+      {
+        "lens": "Auditor",
+        "lost_because": "Pure no-mandate framing is a correction, and left the viewer with nothing to want. Its turnout and margin scenes, the August-before-October timeline and its closing question are kept."
+      },
+      {
+        "lens": "Structural",
+        "lost_because": "The false-binary line is kept as the hook, but alone it had no object to hold."
+      },
+      {
+        "lens": "Enthusiast",
+        "lost_because": "Led with upside the claims can't carry (no standards are on the way). Its hospital-scale versus hyperscale upside is kept as the turn."
+      }
+    ],
+    "valence": "mixed (curious, leaning constructive)",
+    "stance": "curious",
+    "cross_challenge": "All three analysts independently refused the brief's overstatement that three winners back a pause and that Howell wanted more analysis, neither of which is in the claims. Synthesis builds on the unofficial count, the conditional request and the guide's questions only.",
+    "writer_guardrails": [
+      "Never say certified or final, every count is unofficial",
+      "The 6-1 was the whole 2027 priorities package, say request to Juneau",
+      "No position for Howell or Crass, none is in the claims",
+      "Leaders's moratorium support is a paraphrase, never quoted",
+      "No Senate bill number or sponsor",
+      "Guide is mid-October or this month, never released October 14th",
+      "Guide questions are as UAF summarizes, the no-figures claim covers the release and record only",
+      "Spell LaJiness"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A cranberry Gate with a face stands half open in ice fog as the seam between a ballot box and a YES and NO sign, a blank gold token spinning on its sill.",
+    "headline": "DID FAIRBANKS VOTE ON DATA CENTERS",
+    "motion_by_s": 0.5,
+    "loopback": "The last frame is the same fog lot with the Gate half open and the token reading WHO WRITES THEM, and the open replays on the token spin."
+  },
+  "open_loop": {
+    "plant_t": 3.01,
+    "pay_t": 111.63,
+    "what": "Who answered the data center question. Paid as a blank STANDARDS sheet and the Senate bill stalled beside it, and the question who writes them."
+  },
+  "open_loop_2": {
+    "plant_t": 48.02,
+    "pay_t": 83.93,
+    "what": "The questions underneath. Paid as the guide's question tokens, who benefits and who pays."
+  },
+  "throughline": {
+    "object": "the gold QuestionToken",
+    "lands_in_button": "the token flips to WHO WRITES THEM on the sill of the half-open Gate in the same fog",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "blank gold disc lying on the Gate's sill, then spinning"
+      },
+      {
+        "at_s": 7.03,
+        "state": "engraved 1 IN 5 in the corner of the gym"
+      },
+      {
+        "at_s": 34.45,
+        "state": "engraved UNTIL on the Juneau slot's edge"
+      },
+      {
+        "at_s": 57.83,
+        "state": "frosted over to a blank disc on the Gate's sill"
+      },
+      {
+        "at_s": 66.69,
+        "state": "dented by the strongest no"
+      },
+      {
+        "at_s": 85.19,
+        "state": "re-engraved WHO PAYS"
+      },
+      {
+        "at_s": 111.63,
+        "state": "WHO WRITES THEM, seated on the sill of the half-open Gate"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 5.42,
+      "type": "build-on",
+      "what": "the ballot box slot becomes the gym door and the chair grid builds from it",
+      "hold_s": 0.6
+    },
+    {
+      "t": 30.65,
+      "type": "mask-wipe",
+      "what": "the request unfolds in the Juneau slot with PAUSE in large type",
+      "hold_s": 0.5
+    },
+    {
+      "t": 71.75,
+      "type": "build-on",
+      "what": "the four labelled dials build on under the lit condition plate and the pen taps them",
+      "hold_s": 0.6
+    },
+    {
+      "t": 95.73,
+      "type": "scale-pullback",
+      "what": "the camera pulls out until the server machine dwarfs the clinic box",
+      "hold_s": 0.6
+    }
+  ],
+  "tail_s": 1.7,
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 105.3,
+    "riser_at": 109.72,
+    "silence_at": 111.22,
+    "payoff_at": 111.63,
+    "button_pattern": "question",
+    "interrupt_at": 51.75,
+    "extra_dips": [
+      68.02,
+      83.93
+    ]
+  },
+  "shots": [
+    {
+      "title": "The Gate is the seam",
+      "vo_line": 0,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "high",
+      "stage": "ice-fog-lot",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the Gate at x540 y1100",
+      "means": "A half-open cranberry Gate stands in ice fog with a ballot box on one side and a YES and NO sign on the other.",
+      "ambient": "ice fog bands drift on two layers, snow dust turns, the token glints as it spins, the signpost arms sway",
+      "hero": {
+        "name": "Gate",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% gate, token, ballot box and sign, 25% fog lot and treeline, 15% sky"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-5.420"
+    },
+    {
+      "title": "One in five chairs",
+      "vo_line": 1,
+      "framing": "data-panel",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "gym-overhead",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked plan-view chair grid where depth adds nothing",
+      "centered": "the chair grid at x540 y1000",
+      "means": "A plan view of a gym floor of folding chairs fills in and one in five lights.",
+      "ambient": "ceiling lamps hum and flicker, dust motes drift in the lamp pools, the dim chairs sway a pixel, the lit chairs glint",
+      "hero": {
+        "name": "ChairGrid + TallyCounter",
+        "parts": 120,
+        "zones": 3,
+        "detail_note": "70% chair grid and clicker, 20% gym floor, 10% lamp grid"
+      },
+      "id": 2,
+      "start_s": 5.42,
+      "t": "5.420-10.820"
+    },
+    {
+      "title": "The 217 sliver",
+      "vo_line": 2,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "count-table",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the stacks at x540 y1100",
+      "means": "Two ballot stacks rise on a count table and a sliver opens between their tops.",
+      "ambient": "a brass lamp breathes two percent over the count table, dust motes drift in the pool, paper edges flutter",
+      "hero": {
+        "name": "BallotStacks + name labels",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "55% stacks and sliver, 25% ruler and stamp, 20% table"
+      },
+      "id": 3,
+      "start_s": 10.82,
+      "t": "10.820-17.600"
+    },
+    {
+      "title": "More studies",
+      "vo_line": 3,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "eye",
+      "stage": "quote-wall",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the name card at x540 y960",
+      "means": "The Ramirez name card beside a level balance scale with a weight hovering above it.",
+      "ambient": "the lamp pool on the wall breathes, a slow vignette drifts, the balance pans bob a pixel, the card's corner lifts",
+      "hero": {
+        "name": "NameCard + balance scale",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "50% card, 30% scale and weight, 20% wall"
+      },
+      "id": 4,
+      "start_s": 17.6,
+      "t": "17.600-23.380"
+    },
+    {
+      "title": "From the question to Juneau",
+      "vo_line": 4,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "juneau-map",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown+truckAcross",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the Juneau pin at x760 y900",
+      "means": "A map of Alaska, three question outlines, a calendar flipping to August and a paper request flying to Juneau.",
+      "ambient": "cloud shadow drifts over the map, the gridlines glide, the pins pulse, the paper plane's fold flutters",
+      "hero": {
+        "name": "AlaskaMini + calendar + paper plane",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "50% map and pins, 30% calendar and plane, 20% table"
+      },
+      "id": 5,
+      "start_s": 23.38,
+      "t": "23.380-37.440"
+    },
+    {
+      "title": "The door that never opened",
+      "vo_line": 6,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "house-hall",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the second door at x540 y900",
+      "means": "A bill sheet slides down a hallway past a first door that lights and a second door that holds.",
+      "ambient": "overhead lamp bars flicker slowly, dust drifts in the window shaft, a radiator ticks, the sheet ripples in the draft",
+      "hero": {
+        "name": "BillSheet + HouseDoors + tally lamps",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "40% sheet, 40% doors, 20% hall floor and lamps"
+      },
+      "id": 6,
+      "start_s": 37.44,
+      "t": "37.440-45.380"
+    },
+    {
+      "title": "A guide lands on the desk",
+      "vo_line": 7,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "overhead",
+      "stage": "guide-desk",
+      "pov": "top-down-map",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the folder at x540 y1000",
+      "means": "A guide folder drops onto a desk with the gold token on it and two hands reach for it.",
+      "ambient": "the desk lamp breathes, paper fibers drift, the folder cover flutters, dust motes turn in the lamp",
+      "hero": {
+        "name": "GuideFolder + QuestionToken + hands",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "50% folder and token, 30% hands, 20% desk"
+      },
+      "id": 7,
+      "start_s": 45.38,
+      "t": "45.380-50.660"
+    },
+    {
+      "title": "The frost and the waiting machine",
+      "vo_line": 8,
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "gate-frost",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the stillness is the argument so the frost and the waiting machine move instead",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the Gate at x420 y1100, the machine at x800",
+      "means": "The Gate frosting over beside a cobwebbed drawer and a waiting server machine.",
+      "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks",
+      "hero": {
+        "name": "Gate + ServerMachine + drawer",
+        "parts": 62,
+        "zones": 3,
+        "detail_note": "45% Gate, 30% machine and clock, 25% drawer and frost"
+      },
+      "id": 8,
+      "start_s": 50.66,
+      "t": "50.660-60.520"
+    },
+    {
+      "title": "LaJiness says it plainly",
+      "vo_line": 10,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "count-table",
+      "pov": "macro-closeup",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the quote types on the label and the dent lands so nothing is passed through",
+      "transition_in": "focus-pull",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the quote card at x540 y960",
+      "means": "A name label on the winning stack with a typewriter quote and a dented token.",
+      "ambient": "the lamp pool breathes, dust drifts, the token's dent glints, the card ripples as the type lands",
+      "hero": {
+        "name": "NameCard + dented token",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "55% card and quote, 30% token, 15% wall"
+      },
+      "id": 9,
+      "start_s": 60.52,
+      "t": "60.520-68.020"
+    },
+    {
+      "title": "A condition can be written",
+      "vo_line": 11,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "gate-ledger",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "orbitReveal",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the Gate's plate at x540 y900",
+      "means": "The Gate's condition plate lights over four empty dial slots and a pen taps each one.",
+      "ambient": "a warm inner glow breathes in the Gate's seams, dust drifts, the four dials flicker, the pen glints",
+      "hero": {
+        "name": "Gate + four dials + ReviewPen",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "50% plate and dials, 30% Gate and seams, 20% pen and sill"
+      },
+      "id": 10,
+      "start_s": 68.02,
+      "t": "68.020-75.680"
+    },
+    {
+      "title": "The guide opens",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "guide-room",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the guide at x540 y1000",
+      "means": "The guide folder opens to its title page and a Navy plate stamps its cover.",
+      "ambient": "overhead conference light hums, dust drifts, the title page riffles, the chairs sway a pixel",
+      "hero": {
+        "name": "GuideFolder + Navy plate",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "55% open guide, 25% plate, 20% table and chairs"
+      },
+      "id": 11,
+      "start_s": 75.68,
+      "t": "75.680-82.080"
+    },
+    {
+      "title": "Who benefits, who pays",
+      "vo_line": 13,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "token-desk",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:a slow rack between the satellite tokens so nothing is passed through",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the central token at x540 y1000",
+      "means": "Question tokens radiate outward from the central token.",
+      "ambient": "the tokens drift on slow orbits, a lamp breathes, the central token glints",
+      "hero": {
+        "name": "QuestionToken + radiating tokens",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "50% central token, 40% tokens, 10% desk"
+      },
+      "id": 12,
+      "start_s": 82.08,
+      "t": "82.080-86.700"
+    },
+    {
+      "title": "Two apertures",
+      "vo_line": 14,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "aperture-sort",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the two plates at x300 and x780",
+      "means": "A clinic box and a hangar box each stop at their own aperture plate.",
+      "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse",
+      "hero": {
+        "name": "ThresholdGate + AperturePlate + boxes",
+        "parts": 64,
+        "zones": 3,
+        "detail_note": "50% two plates, 35% boxes, 15% floor"
+      },
+      "id": 13,
+      "start_s": 86.7,
+      "t": "86.700-98.740"
+    },
+    {
+      "title": "Rules sized to what gets built",
+      "vo_line": 15,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "dial-panel",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the dial turning is the whole shot",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "stage3d": "flat:a locked dial panel, the turning dial is the motion",
+      "centered": "the dial at x540 y1000",
+      "means": "A dial panel with the gold token as hub and two slots that resize.",
+      "ambient": "the dial lamp breathes, tick marks shimmer, the hub token glints, a dark panel vignette drifts",
+      "hero": {
+        "name": "AperturePlate dial + QuestionToken hub",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% dial, 25% slots, 15% panel and sign"
+      },
+      "id": 14,
+      "start_s": 98.74,
+      "t": "98.740-105.500"
+    },
+    {
+      "title": "The blank sheet and the loop",
+      "vo_line": 16,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "high",
+      "stage": "ice-fog-lot",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "pull-back-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the Gate at x540 y1100",
+      "means": "The opening framing again, the half-open Gate as the seam between the ballot box and the signpost stump, the blank sheet, the pen and the token on its sill, the camera drifting back out through the gap.",
+      "ambient": "ice fog bands drift on two layers, snow dust turns, the pen shivers, the token glints, the Gate blinks",
+      "hero": {
+        "name": "Gate + StandardsSheet + ReviewPen",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% Gate and sill, 25% sheet and pen, 25% fog lot"
+      },
+      "id": 15,
+      "start_s": 105.5,
+      "t": "105.500-112.180"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Fairbanks just voted on data centers. Except it didn't.",
+      "phrase": "Fairbanks just voted on",
+      "shows": "the camera dollies through the gap of the half-open cranberry Gate, which lifts its brow, while a blank gold token spins on its sill, a ballot box on one side and a YES and NO signpost on the other, the Gate's boom the seam between them",
+      "sfx": "thunk",
+      "means": "did fairbanks vote on data centers",
+      "rehook": "",
+      "draw": {
+        "subject": "Gate",
+        "action": "lifts its brow and the blank token spins as the camera dollies through its gap",
+        "emotion": "wary",
+        "annotation": "DID FAIRBANKS VOTE ON DATA CENTERS"
+      },
+      "choreo": {
+        "primary": "the camera dollies through the gap of the half-open cranberry Gate, which lifts its brow, while a blank gold token spins on its sill, a ballot box on one side and a YES and NO signpost on the other, the Gate's boom the seam between them",
+        "reaction": "the YES and NO arms of the sign sway toward the token",
+        "ambient": "ice fog bands drift on two layers, snow dust turns, the token glints as it spins, the signpost arms sway"
+      },
+      "t": "0.000-3.010",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.01,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "Fairbanks just voted on data centers. Except it didn't.",
+      "phrase": "Fairbanks just voted on",
+      "shows": "the YES and NO signpost spins hard and its arrow snaps off and knocks the token, which rolls along the sill and spins",
+      "sfx": "alarm",
+      "means": "yes or no",
+      "rehook": "",
+      "draw": {
+        "subject": "signpost",
+        "action": "spins hard and snaps its own arrow off into the token",
+        "emotion": "comic",
+        "annotation": "YES OR NO"
+      },
+      "choreo": {
+        "primary": "the YES and NO signpost spins hard and its arrow snaps off and knocks the token, which rolls along the sill and spins",
+        "reaction": "the Gate blinks and the fog drifts past the gap",
+        "ambient": "ice fog bands drift on two layers, snow dust turns, the token glints as it spins, the signpost arms sway"
+      },
+      "t": "3.010-5.420",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 2,
+      "at_s": 5.42,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On October sixth, about one in five borough voters cast a ballot.",
+      "phrase": "On October sixth, about",
+      "shows": "the camera drops through the ballot box's slot, the slot becomes a gym door in plan view and a grid of folding chairs fills in from the middle under a calendar chip, most chairs dim",
+      "sfx": "tap",
+      "means": "oct 6th",
+      "rehook": "",
+      "draw": {
+        "subject": "ballot box slot",
+        "action": "opens into a plan-view gym door as chairs fill in",
+        "emotion": "blank",
+        "annotation": "OCT 6TH"
+      },
+      "choreo": {
+        "primary": "the camera drops through the ballot box's slot, the slot becomes a gym door in plan view and a grid of folding chairs fills in from the middle under a calendar chip, most chairs dim",
+        "reaction": "the dim chairs sway a pixel and the overhead lamp grid hums",
+        "ambient": "ceiling lamps hum and flicker, dust motes drift in the lamp pools, the dim chairs sway a pixel, the lit chairs glint"
+      },
+      "t": "5.420-7.030",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 7.03,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 1.61
+      },
+      "offset": 1.61,
+      "vo": "On October sixth, about one in five borough voters cast a ballot.",
+      "phrase": "On October sixth, about",
+      "shows": "one chair in five lights warm white as the tally clicker clicks, and the gold token in the corner engraves 1 IN 5",
+      "sfx": "click",
+      "means": "turnout 20.95% \u00b7 16,177 of 77,227 \u00b7 unofficial",
+      "rehook": "",
+      "draw": {
+        "subject": "tally clicker",
+        "action": "clicks one chair in five alight",
+        "emotion": "flat",
+        "annotation": "TURNOUT 20.95% \u00b7 16,177 OF 77,227 \u00b7 UNOFFICIAL"
+      },
+      "choreo": {
+        "primary": "one chair in five lights warm white as the tally clicker clicks, and the gold token in the corner engraves 1 IN 5",
+        "reaction": "the lit chairs glint and the dim ones stay put",
+        "ambient": "ceiling lamps hum and flicker, dust motes drift in the lamp pools, the dim chairs sway a pixel, the lit chairs glint"
+      },
+      "t": "7.030-10.820",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 3,
+      "at_s": 10.82,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The closest borough Assembly seat went to Alexis Howell by two hundred seventeen votes, unofficially.",
+      "phrase": "The closest borough Assembly",
+      "shows": "two ballot stacks rise on a count table under a brass lamp with boxed name labels, Howell a hair taller, the gold token resting in the near corner of the table",
+      "sfx": "thump",
+      "means": "howell 7,759 \u00b7 ramirez 7,542 \u00b7 unofficial",
+      "rehook": "",
+      "draw": {
+        "subject": "ballot stacks",
+        "action": "rise side by side on the count table",
+        "emotion": "tense",
+        "annotation": "HOWELL 7,759 \u00b7 RAMIREZ 7,542 \u00b7 UNOFFICIAL"
+      },
+      "choreo": {
+        "primary": "two ballot stacks rise on a count table under a brass lamp with boxed name labels, Howell a hair taller, the gold token resting in the near corner of the table",
+        "reaction": "the lamp sways a hair and paper edges flutter",
+        "ambient": "a brass lamp breathes two percent over the count table, dust motes drift in the pool, paper edges flutter"
+      },
+      "t": "10.820-14.030",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 3,
+      "at_s": 14.03,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.21
+      },
+      "offset": 3.21,
+      "vo": "The closest borough Assembly seat went to Alexis Howell by two hundred seventeen votes, unofficially.",
+      "phrase": "The closest borough Assembly",
+      "shows": "a bright sliver band opens between the stack tops and a ruler measures it, 217",
+      "sfx": "snap",
+      "means": "217 votes",
+      "rehook": "",
+      "draw": {
+        "subject": "sliver band",
+        "action": "opens between the stack tops and is measured",
+        "emotion": "tense",
+        "annotation": "217 VOTES"
+      },
+      "choreo": {
+        "primary": "a bright sliver band opens between the stack tops and a ruler measures it, 217",
+        "reaction": "the stacks lean away from each other by a pixel",
+        "ambient": "a brass lamp breathes two percent over the count table, dust motes drift in the pool, paper edges flutter"
+      },
+      "t": "14.030-15.950",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 15.95,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.13
+      },
+      "offset": 5.13,
+      "vo": "The closest borough Assembly seat went to Alexis Howell by two hundred seventeen votes, unofficially.",
+      "phrase": "The closest borough Assembly",
+      "shows": "a navy ink UNOFFICIAL stamp slams onto the ledger and the count table jumps",
+      "sfx": "thud",
+      "means": "unofficial",
+      "rehook": "",
+      "draw": {
+        "subject": "UNOFFICIAL stamp",
+        "action": "slams onto the ledger",
+        "emotion": "firm",
+        "annotation": "UNOFFICIAL"
+      },
+      "choreo": {
+        "primary": "a navy ink UNOFFICIAL stamp slams onto the ledger and the count table jumps",
+        "reaction": "the stacks jolt and settle a hair short",
+        "ambient": "a brass lamp breathes two percent over the count table, dust motes drift in the pool, paper edges flutter"
+      },
+      "t": "15.950-17.600",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 4,
+      "at_s": 17.6,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Runner up Miguel Ramirez took no position and said there need to be more studies.",
+      "phrase": "Runner up Miguel Ramirez",
+      "shows": "the Ramirez name card slides into close-up with the gold token beside it, still engraved 1 IN 5",
+      "sfx": "slide",
+      "means": "miguel ramirez",
+      "rehook": "",
+      "draw": {
+        "subject": "name card",
+        "action": "slides in beside the engraved token",
+        "emotion": "unsure",
+        "annotation": "MIGUEL RAMIREZ"
+      },
+      "choreo": {
+        "primary": "the Ramirez name card slides into close-up with the gold token beside it, still engraved 1 IN 5",
+        "reaction": "the card's corner lifts a hair as it lands",
+        "ambient": "the lamp pool on the wall breathes, a slow vignette drifts, the balance pans bob a pixel, the card's corner lifts"
+      },
+      "t": "17.600-19.770",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 4,
+      "at_s": 19.77,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.17
+      },
+      "offset": 2.17,
+      "vo": "Runner up Miguel Ramirez took no position and said there need to be more studies.",
+      "phrase": "Runner up Miguel Ramirez",
+      "shows": "a dashed empty POSITION field is stamped on the card and stays blank",
+      "sfx": "thock",
+      "means": "no position",
+      "rehook": "",
+      "draw": {
+        "subject": "position field",
+        "action": "is stamped on the card and stays blank",
+        "emotion": "unsure",
+        "annotation": "NO POSITION"
+      },
+      "choreo": {
+        "primary": "a dashed empty POSITION field is stamped on the card and stays blank",
+        "reaction": "the field's dashes shiver once",
+        "ambient": "the lamp pool on the wall breathes, a slow vignette drifts, the balance pans bob a pixel, the card's corner lifts"
+      },
+      "t": "19.770-22.070",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 22.07,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.47
+      },
+      "offset": 4.47,
+      "vo": "Runner up Miguel Ramirez took no position and said there need to be more studies.",
+      "phrase": "Runner up Miguel Ramirez",
+      "shows": "a balance scale with level YAY and NAY pans and an unplaced MORE STUDIES weight hovering above them",
+      "sfx": "creak",
+      "means": "more studies",
+      "rehook": "",
+      "draw": {
+        "subject": "balance scale",
+        "action": "holds its YAY and NAY pans level under a hovering weight",
+        "emotion": "unsure",
+        "annotation": "MORE STUDIES"
+      },
+      "choreo": {
+        "primary": "a balance scale with level YAY and NAY pans and an unplaced MORE STUDIES weight hovering above them",
+        "reaction": "the pans bob a pixel and the weight turns slowly",
+        "ambient": "the lamp pool on the wall breathes, a slow vignette drifts, the balance pans bob a pixel, the card's corner lifts"
+      },
+      "t": "22.070-23.380",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 5,
+      "at_s": 23.38,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So who answered the data center question?",
+      "phrase": "So who answered the",
+      "shows": "three outlines on the borough map, a ballot box, a gavel and a Senate door, each stamped with a faint question mark while the gold token spins up a question",
+      "sfx": "swell",
+      "means": "who answered that?",
+      "rehook": "",
+      "draw": {
+        "subject": "three outlines",
+        "action": "each carry a faint question mark",
+        "emotion": "curious",
+        "annotation": "WHO ANSWERED THAT?"
+      },
+      "choreo": {
+        "primary": "three outlines on the borough map, a ballot box, a gavel and a Senate door, each stamped with a faint question mark while the gold token spins up a question",
+        "reaction": "the map's gridlines glide and the pins pulse",
+        "ambient": "cloud shadow drifts over the map, the gridlines glide, the pins pulse, the paper plane's fold flutters"
+      },
+      "t": "23.380-26.820",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 5,
+      "at_s": 26.82,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In August, that Assembly asked the state Legislature in Juneau to pause new commercial data centers on public land until standards exist, KUAC reported.",
+      "phrase": "In August, that Assembly",
+      "shows": "the calendar leaf starts on the OCT 6TH chip carried from the gym, flips visibly backward to AUG 27TH and a paper request folds in front of it",
+      "sfx": "flip",
+      "means": "aug 27th",
+      "rehook": "rehook: the reversal, the request came before the vote",
+      "draw": {
+        "subject": "calendar",
+        "action": "starts on the OCT 6TH chip from the gym and flips backward to AUG 27TH",
+        "emotion": "brisk",
+        "annotation": "AUG 27TH"
+      },
+      "choreo": {
+        "primary": "the calendar leaf starts on the OCT 6TH chip carried from the gym, flips visibly backward to AUG 27TH and a paper request folds in front of it",
+        "reaction": "the leaf curls and settles",
+        "ambient": "cloud shadow drifts over the map, the gridlines glide, the pins pulse, the paper plane's fold flutters"
+      },
+      "t": "26.820-28.490",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 28.49,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 1.67
+      },
+      "offset": 1.67,
+      "vo": "In August, that Assembly asked the state Legislature in Juneau to pause new commercial data centers on public land until standards exist, KUAC reported.",
+      "phrase": "In August, that Assembly",
+      "shows": "the folded request glides over the map to a Juneau pin, the gold token riding its fold, and lands in a slot",
+      "sfx": "swoosh",
+      "means": "request to the legislature",
+      "rehook": "",
+      "draw": {
+        "subject": "paper plane",
+        "action": "glides to the Juneau pin",
+        "emotion": "hopeful",
+        "annotation": "REQUEST TO THE LEGISLATURE"
+      },
+      "choreo": {
+        "primary": "the folded request glides over the map to a Juneau pin, the gold token riding its fold, and lands in a slot",
+        "reaction": "the pin bobs as it lands",
+        "ambient": "cloud shadow drifts over the map, the gridlines glide, the pins pulse, the paper plane's fold flutters"
+      },
+      "t": "28.490-30.650",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 30.65,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.83
+      },
+      "offset": 3.83,
+      "vo": "In August, that Assembly asked the state Legislature in Juneau to pause new commercial data centers on public land until standards exist, KUAC reported.",
+      "phrase": "In August, that Assembly",
+      "shows": "the request unfolds in the slot showing PAUSE in large type, new commercial data centers, and its UNTIL clause fogged white so it reads as a plain no for now",
+      "sfx": "thud",
+      "means": "pause \u00b7 per kuac",
+      "rehook": "",
+      "draw": {
+        "subject": "request",
+        "action": "opens in the slot with PAUSE in large type and its UNTIL clause fogged",
+        "emotion": "firm",
+        "annotation": "PAUSE \u00b7 PER KUAC"
+      },
+      "choreo": {
+        "primary": "the request unfolds in the slot showing PAUSE in large type, new commercial data centers, and its UNTIL clause fogged white so it reads as a plain no for now",
+        "reaction": "the slot's edge lamp flickers once",
+        "ambient": "cloud shadow drifts over the map, the gridlines glide, the pins pulse, the paper plane's fold flutters"
+      },
+      "t": "30.650-34.450",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 34.45,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 7.63
+      },
+      "offset": 7.63,
+      "vo": "In August, that Assembly asked the state Legislature in Juneau to pause new commercial data centers on public land until standards exist, KUAC reported.",
+      "phrase": "In August, that Assembly",
+      "shows": "the gold token engraves UNTIL on the slot's edge while the request's clause stays fogged white",
+      "sfx": "chime",
+      "means": "until",
+      "rehook": "",
+      "draw": {
+        "subject": "token",
+        "action": "engraves UNTIL and settles on the slot",
+        "emotion": "firm",
+        "annotation": "UNTIL"
+      },
+      "choreo": {
+        "primary": "the gold token engraves UNTIL on the slot's edge while the request's clause stays fogged white",
+        "reaction": "the token glints and the map's pins pulse",
+        "ambient": "cloud shadow drifts over the map, the gridlines glide, the pins pulse, the paper plane's fold flutters"
+      },
+      "t": "34.450-37.440",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 6,
+      "at_s": 37.44,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A data center bill on power use and decommissioning passed the state Senate fourteen to five, and the House never took it up.",
+      "phrase": "A data center bill",
+      "shows": "a bill sheet slides down a long hallway of overhead lamps toward a pair of doors, the gold token riding its corner",
+      "sfx": "slide",
+      "means": "data center bill \u00b7 power use \u00b7 decommissioning",
+      "rehook": "",
+      "draw": {
+        "subject": "bill sheet",
+        "action": "slides down a long hallway",
+        "emotion": "hopeful",
+        "annotation": "DATA CENTER BILL \u00b7 POWER USE \u00b7 DECOMMISSIONING"
+      },
+      "choreo": {
+        "primary": "a bill sheet slides down a long hallway of overhead lamps toward a pair of doors, the gold token riding its corner",
+        "reaction": "the sheet's corners ripple in the draft",
+        "ambient": "overhead lamp bars flicker slowly, dust drifts in the window shaft, a radiator ticks, the sheet ripples in the draft"
+      },
+      "t": "37.440-41.630",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 41.63,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.19
+      },
+      "offset": 4.19,
+      "vo": "A data center bill on power use and decommissioning passed the state Senate fourteen to five, and the House never took it up.",
+      "phrase": "A data center bill",
+      "shows": "tally lamps light one by one beside the first door, fourteen lit against five dark",
+      "sfx": "ping",
+      "means": "senate 14-5",
+      "rehook": "",
+      "draw": {
+        "subject": "tally lamps",
+        "action": "light one by one to fourteen against five",
+        "emotion": "pleased",
+        "annotation": "SENATE 14-5"
+      },
+      "choreo": {
+        "primary": "tally lamps light one by one beside the first door, fourteen lit against five dark",
+        "reaction": "the lamps glow and the door frame hums",
+        "ambient": "overhead lamp bars flicker slowly, dust drifts in the window shaft, a radiator ticks, the sheet ripples in the draft"
+      },
+      "t": "41.630-43.370",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 43.37,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.93
+      },
+      "offset": 5.93,
+      "vo": "A data center bill on power use and decommissioning passed the state Senate fourteen to five, and the House never took it up.",
+      "phrase": "A data center bill",
+      "shows": "the bill sheet nudges the second door, which rattles and holds, and the sheet and token wait at its foot",
+      "sfx": "knock",
+      "means": "house never took it up",
+      "rehook": "",
+      "draw": {
+        "subject": "second door",
+        "action": "rattles but holds with the token at its foot",
+        "emotion": "blank",
+        "annotation": "HOUSE NEVER TOOK IT UP"
+      },
+      "choreo": {
+        "primary": "the bill sheet nudges the second door, which rattles and holds, and the sheet and token wait at its foot",
+        "reaction": "dust falls from the lintel",
+        "ambient": "overhead lamp bars flicker slowly, dust drifts in the window shaft, a radiator ticks, the sheet ripples in the draft"
+      },
+      "t": "43.370-45.380",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 7,
+      "at_s": 45.38,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Meanwhile a University of Alaska Fairbanks guide takes up the same subject.",
+      "phrase": "Meanwhile a University of",
+      "shows": "a guide folder drops onto a desk and the gold token, engraved UNTIL, lands on its cover",
+      "sfx": "thump",
+      "means": "a guide from uaf",
+      "rehook": "",
+      "draw": {
+        "subject": "guide folder",
+        "action": "drops onto the desk with the token engraved UNTIL on its cover",
+        "emotion": "curious",
+        "annotation": "A GUIDE FROM UAF"
+      },
+      "choreo": {
+        "primary": "a guide folder drops onto a desk and the gold token, engraved UNTIL, lands on its cover",
+        "reaction": "the folder's cover flutters and the desk lamp breathes",
+        "ambient": "the desk lamp breathes, paper fibers drift, the folder cover flutters, dust motes turn in the lamp"
+      },
+      "t": "45.380-48.020",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 7,
+      "at_s": 48.02,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.64
+      },
+      "offset": 2.64,
+      "vo": "Meanwhile a University of Alaska Fairbanks guide takes up the same subject.",
+      "phrase": "Meanwhile a University of",
+      "shows": "two hands labelled YES and NO reach for the folder and part to either side of the token, which stays upright between them",
+      "sfx": "blip",
+      "means": "a guide from uaf",
+      "rehook": "",
+      "draw": {
+        "subject": "two hands",
+        "action": "reach for the folder and part around the token",
+        "emotion": "curious",
+        "annotation": "A GUIDE FROM UAF"
+      },
+      "choreo": {
+        "primary": "two hands labelled YES and NO reach for the folder and part to either side of the token, which stays upright between them",
+        "reaction": "the hands settle at the folder's edges",
+        "ambient": "the desk lamp breathes, paper fibers drift, the folder cover flutters, dust motes turn in the lamp"
+      },
+      "t": "48.020-50.660",
+      "key": 21
+    },
+    {
+      "id": 21,
+      "shot": 8,
+      "at_s": 50.66,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now the case against.",
+      "phrase": "Now the case against.",
+      "shows": "frost freezes along the Gate's arm and brow as the Gate's brow droops, the token still gold on its sill",
+      "sfx": "crunch",
+      "means": "the pause",
+      "rehook": "",
+      "draw": {
+        "subject": "frost",
+        "action": "freezes along the Gate's arm and brow as the brow droops",
+        "emotion": "grim",
+        "annotation": "THE PAUSE"
+      },
+      "choreo": {
+        "primary": "frost freezes along the Gate's arm and brow as the Gate's brow droops, the token still gold on its sill",
+        "reaction": "the fog thickens across the gap",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "50.660-51.750",
+      "key": 22
+    },
+    {
+      "id": 22,
+      "shot": 8,
+      "at_s": 51.75,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 1.09
+      },
+      "offset": 1.09,
+      "vo": "Now the case against.",
+      "phrase": "Now the case against.",
+      "shows": "a heavy navy stamp comes down on the Gate's fogged condition plate reading THE CASE AGAINST",
+      "sfx": "boom",
+      "means": "the case against",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp",
+        "action": "comes down on the Gate's fogged plate",
+        "emotion": "grim",
+        "annotation": "THE CASE AGAINST"
+      },
+      "choreo": {
+        "primary": "a heavy navy stamp comes down on the Gate's fogged condition plate reading THE CASE AGAINST",
+        "reaction": "the plate rattles and the frost shivers",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "51.750-53.550",
+      "key": 23
+    },
+    {
+      "id": 23,
+      "shot": 8,
+      "at_s": 53.55,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.31
+      },
+      "offset": 0.31,
+      "vo": "A pause until standards exist is a no with good manners if nobody drafts them.",
+      "phrase": "A pause until standards",
+      "shows": "the fog grows and drifts across the gap as the Gate's condition plate fills with white",
+      "sfx": "hush",
+      "means": "a pause",
+      "rehook": "rehook: the case against",
+      "draw": {
+        "subject": "fog",
+        "action": "grows as the Gate's plate fills with white",
+        "emotion": "stiff",
+        "annotation": "A PAUSE"
+      },
+      "choreo": {
+        "primary": "the fog grows and drifts across the gap as the Gate's condition plate fills with white",
+        "reaction": "the Gate's breath shows in the fog",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "53.550-54.230",
+      "key": 24
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 54.23,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.99
+      },
+      "offset": 0.99,
+      "vo": "A pause until standards exist is a no with good manners if nobody drafts them.",
+      "phrase": "A pause until standards",
+      "shows": "the white fog on the Gate's plate tears a bar open to show the word UNTIL and closes again",
+      "sfx": "tick",
+      "means": "until",
+      "rehook": "",
+      "draw": {
+        "subject": "plate fog",
+        "action": "tears a bar to show the word UNTIL and closes",
+        "emotion": "stiff",
+        "annotation": "UNTIL"
+      },
+      "choreo": {
+        "primary": "the white fog on the Gate's plate tears a bar open to show the word UNTIL and closes again",
+        "reaction": "the Gate's brow droops a hair",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "54.230-56.590",
+      "key": 67
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 56.59,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.35
+      },
+      "offset": 3.35,
+      "vo": "A pause until standards exist is a no with good manners if nobody drafts them.",
+      "phrase": "A pause until standards",
+      "shows": "the Gate holds up a neat NO, THANK YOU card on its board and tilts forward in a small bow",
+      "sfx": "pop",
+      "means": "a no with good manners",
+      "rehook": "",
+      "draw": {
+        "subject": "Gate",
+        "action": "holds up a neat NO, THANK YOU card and bows",
+        "emotion": "polite",
+        "annotation": "A NO WITH GOOD MANNERS"
+      },
+      "choreo": {
+        "primary": "the Gate holds up a neat NO, THANK YOU card on its board and tilts forward in a small bow",
+        "reaction": "the card quivers and the frosted token stays put",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "56.590-57.830",
+      "key": 25
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 57.83,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 4.59
+      },
+      "offset": 4.59,
+      "vo": "A pause until standards exist is a no with good manners if nobody drafts them.",
+      "phrase": "A pause until standards",
+      "shows": "frost freezes over the gold token and its engraved UNTIL until only a blank frosted disc is left, so the pause reads as a no",
+      "sfx": "creak",
+      "means": "blank",
+      "rehook": "",
+      "draw": {
+        "subject": "token",
+        "action": "freezes over until its engraved UNTIL is erased to a blank disc",
+        "emotion": "stiff",
+        "annotation": "BLANK"
+      },
+      "choreo": {
+        "primary": "frost freezes over the gold token and its engraved UNTIL until only a blank frosted disc is left, so the pause reads as a no",
+        "reaction": "the frost glints on the sill",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "57.830-58.450",
+      "key": 59
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 58.45,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.21
+      },
+      "offset": 5.21,
+      "vo": "A pause until standards exist is a no with good manners if nobody drafts them.",
+      "phrase": "A pause until standards",
+      "shows": "a generic steel server machine turns toward the wall clock as its second hand drops a tick",
+      "sfx": "tick",
+      "means": "waiting",
+      "rehook": "",
+      "draw": {
+        "subject": "server machine",
+        "action": "turns toward the wall clock as its second hand drops a tick",
+        "emotion": "patient",
+        "annotation": "WAITING"
+      },
+      "choreo": {
+        "primary": "a generic steel server machine turns toward the wall clock as its second hand drops a tick",
+        "reaction": "its status lamp blinks slowly",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "58.450-59.090",
+      "key": 28
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 59.09,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.85
+      },
+      "offset": 5.85,
+      "vo": "A pause until standards exist is a no with good manners if nobody drafts them.",
+      "phrase": "A pause until standards",
+      "shows": "a cobweb falls across the STANDARDS drawer behind the Gate and settles",
+      "sfx": "hush",
+      "means": "if nobody drafts them",
+      "rehook": "",
+      "draw": {
+        "subject": "cobweb",
+        "action": "falls across the STANDARDS drawer and settles",
+        "emotion": "stiff",
+        "annotation": "IF NOBODY DRAFTS THEM"
+      },
+      "choreo": {
+        "primary": "a cobweb falls across the STANDARDS drawer behind the Gate and settles",
+        "reaction": "the web sways and shakes in the draft",
+        "ambient": "ice fog thickens and drifts, frost glints, the cobweb sways, the machine's status lamp blinks, the wall clock ticks"
+      },
+      "t": "59.090-62.430",
+      "key": 26
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 62.43,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.91
+      },
+      "offset": 1.91,
+      "vo": "On data centers in general, winning incumbent Nick LaJiness said, \"I don't think that data centers are good for any community.\"",
+      "phrase": "On data centers in",
+      "shows": "back at the count table the LaJiness name label sits on the winning stack, WINNING INCUMBENT, with the quote typing on the label and the blank frosted token beside it",
+      "sfx": "slide",
+      "means": "nick lajiness \u00b7 winning incumbent",
+      "rehook": "",
+      "draw": {
+        "subject": "name label",
+        "action": "slides onto the winning stack with the quote typing",
+        "emotion": "firm",
+        "annotation": "NICK LAJINESS \u00b7 WINNING INCUMBENT"
+      },
+      "choreo": {
+        "primary": "back at the count table the LaJiness name label sits on the winning stack, WINNING INCUMBENT, with the quote typing on the label and the blank frosted token beside it",
+        "reaction": "the lamp pool breathes over the stacks",
+        "ambient": "the lamp pool breathes, dust drifts, the token's dent glints, the card ripples as the type lands"
+      },
+      "t": "62.430-64.990",
+      "key": 29
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 64.99,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.47
+      },
+      "offset": 4.47,
+      "vo": "On data centers in general, winning incumbent Nick LaJiness said, \"I don't think that data centers are good for any community.\"",
+      "phrase": "On data centers in",
+      "shows": "an INK rule draws under DATA CENTERS in the typed quote",
+      "sfx": "tick",
+      "means": "data centers",
+      "rehook": "",
+      "draw": {
+        "subject": "quote",
+        "action": "underlines DATA CENTERS as it types",
+        "emotion": "firm",
+        "annotation": "DATA CENTERS"
+      },
+      "choreo": {
+        "primary": "an INK rule draws under DATA CENTERS in the typed quote",
+        "reaction": "the label's WINNING INCUMBENT chip taps once",
+        "ambient": "the lamp pool breathes, dust drifts, the token's dent glints, the card ripples as the type lands"
+      },
+      "t": "64.990-66.690",
+      "key": 66
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 66.69,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 6.17
+      },
+      "offset": 6.17,
+      "vo": "On data centers in general, winning incumbent Nick LaJiness said, \"I don't think that data centers are good for any community.\"",
+      "phrase": "On data centers in",
+      "shows": "the blank frosted gold token beside the stack takes a dent as the quote ends, labelled as his general view",
+      "sfx": "clank",
+      "means": "his general view",
+      "rehook": "",
+      "draw": {
+        "subject": "token",
+        "action": "takes a dent",
+        "emotion": "grim",
+        "annotation": "HIS GENERAL VIEW"
+      },
+      "choreo": {
+        "primary": "the blank frosted gold token beside the stack takes a dent as the quote ends, labelled as his general view",
+        "reaction": "the label settles and the dent glints",
+        "ambient": "the lamp pool breathes, dust drifts, the token's dent glints, the card ripples as the type lands"
+      },
+      "t": "66.690-68.020",
+      "key": 30
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 68.02,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But the pause ends when standards exist. That's a door with a condition, and a condition can be written.",
+      "phrase": "But the pause ends",
+      "shows": "the dented token's glint carries across the cut into the Gate's condition plate, which lights from inside as hairline cracks run through the frost on its arm",
+      "sfx": "pulse",
+      "means": "but",
+      "rehook": "",
+      "draw": {
+        "subject": "condition plate",
+        "action": "lights from inside as the dent's glint carries into it",
+        "emotion": "relieved",
+        "annotation": "BUT"
+      },
+      "choreo": {
+        "primary": "the dented token's glint carries across the cut into the Gate's condition plate, which lights from inside as hairline cracks run through the frost on its arm",
+        "reaction": "the plate's lamp breathes",
+        "ambient": "a warm inner glow breathes in the Gate's seams, dust drifts, the four dials flicker, the pen glints"
+      },
+      "t": "68.020-68.650",
+      "key": 31
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 68.65,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.63
+      },
+      "offset": 0.63,
+      "vo": "But the pause ends when standards exist. That's a door with a condition, and a condition can be written.",
+      "phrase": "But the pause ends",
+      "shows": "the frost cracks off the Gate and off the token in plates, which returns to dented blank gold, and for the first time the plate's clause UNTIL STANDARDS EXIST is legible, the fog thinning behind it",
+      "sfx": "crack",
+      "means": "until standards exist \u00b7 per kuac",
+      "rehook": "rehook: the pause ends when standards exist",
+      "draw": {
+        "subject": "frost",
+        "action": "cracks off the Gate in plates and the clause becomes legible",
+        "emotion": "relieved",
+        "annotation": "UNTIL STANDARDS EXIST \u00b7 PER KUAC"
+      },
+      "choreo": {
+        "primary": "the frost cracks off the Gate and off the token in plates, which returns to dented blank gold, and for the first time the plate's clause UNTIL STANDARDS EXIST is legible, the fog thinning behind it",
+        "reaction": "the plates fall and the dented token glints",
+        "ambient": "a warm inner glow breathes in the Gate's seams, dust drifts, the four dials flicker, the pen glints"
+      },
+      "t": "68.650-71.750",
+      "key": 32
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 71.75,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.73
+      },
+      "offset": 3.73,
+      "vo": "But the pause ends when standards exist. That's a door with a condition, and a condition can be written.",
+      "phrase": "But the pause ends",
+      "shows": "four empty dials rise under the plate, ELECTRICAL DEMAND, WATER USE, ENVIRONMENTAL IMPACTS and AIR QUALITY, a warm glow running down the Gate's seams to its sill where a pen rests on a blank STANDARDS sheet",
+      "sfx": "bloom",
+      "means": "a door with a condition",
+      "rehook": "",
+      "draw": {
+        "subject": "four dials",
+        "action": "appear in a row under the plate, labelled and empty",
+        "emotion": "hopeful",
+        "annotation": "A DOOR WITH A CONDITION"
+      },
+      "choreo": {
+        "primary": "four empty dials rise under the plate, ELECTRICAL DEMAND, WATER USE, ENVIRONMENTAL IMPACTS and AIR QUALITY, a warm glow running down the Gate's seams to its sill where a pen rests on a blank STANDARDS sheet",
+        "reaction": "the four dials flicker once each and stay dark",
+        "ambient": "a warm inner glow breathes in the Gate's seams, dust drifts, the four dials flicker, the pen glints"
+      },
+      "t": "71.750-73.490",
+      "key": 33
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 73.49,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.47
+      },
+      "offset": 5.47,
+      "vo": "But the pause ends when standards exist. That's a door with a condition, and a condition can be written.",
+      "phrase": "But the pause ends",
+      "shows": "the pen taps each of the four empty dial slots in turn and leaves no ink",
+      "sfx": "tick",
+      "means": "a condition can be written",
+      "rehook": "",
+      "draw": {
+        "subject": "pen",
+        "action": "taps each empty dial slot and leaves no ink",
+        "emotion": "hopeful",
+        "annotation": "A CONDITION CAN BE WRITTEN"
+      },
+      "choreo": {
+        "primary": "the pen taps each of the four empty dial slots in turn and leaves no ink",
+        "reaction": "the pen's cap glints and the sheet stays blank",
+        "ambient": "a warm inner glow breathes in the Gate's seams, dust drifts, the four dials flicker, the pen glints"
+      },
+      "t": "73.490-75.680",
+      "key": 34
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 75.68,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That guide is called Computing in Place, and the Navy's research office funded it, per the deposit record.",
+      "phrase": "That guide is called",
+      "shows": "the guide lies open to its title page, COMPUTING IN PLACE, and the dented blank gold token rolls in from the left edge, from the Gate's sill, and settles on it",
+      "sfx": "roll",
+      "means": "computing in place",
+      "rehook": "",
+      "draw": {
+        "subject": "guide",
+        "action": "lies open to its title page as the token rolls onto it",
+        "emotion": "warm",
+        "annotation": "COMPUTING IN PLACE"
+      },
+      "choreo": {
+        "primary": "the guide lies open to its title page, COMPUTING IN PLACE, and the dented blank gold token rolls in from the left edge, from the Gate's sill, and settles on it",
+        "reaction": "the pages riffle once and settle",
+        "ambient": "overhead conference light hums, dust drifts, the title page riffles, the chairs sway a pixel"
+      },
+      "t": "75.680-78.570",
+      "key": 36
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 78.57,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 2.89
+      },
+      "offset": 2.89,
+      "vo": "That guide is called Computing in Place, and the Navy's research office funded it, per the deposit record.",
+      "phrase": "That guide is called",
+      "shows": "a navy deposit-record tag snaps onto the guide's cover, OFFICE OF NAVAL RESEARCH, PER THE DEPOSIT RECORD",
+      "sfx": "clip",
+      "means": "office of naval research \u00b7 per the deposit record",
+      "rehook": "",
+      "draw": {
+        "subject": "navy tag",
+        "action": "snaps onto the cover",
+        "emotion": "plain",
+        "annotation": "OFFICE OF NAVAL RESEARCH \u00b7 PER THE DEPOSIT RECORD"
+      },
+      "choreo": {
+        "primary": "a navy deposit-record tag snaps onto the guide's cover, OFFICE OF NAVAL RESEARCH, PER THE DEPOSIT RECORD",
+        "reaction": "the cover jumps a hair and the lamp breathes",
+        "ambient": "overhead conference light hums, dust drifts, the title page riffles, the chairs sway a pixel"
+      },
+      "t": "78.570-80.970",
+      "key": 37
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "at_s": 80.97,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 5.29
+      },
+      "offset": 5.29,
+      "vo": "That guide is called Computing in Place, and the Navy's research office funded it, per the deposit record.",
+      "phrase": "That guide is called",
+      "shows": "the guide's pages riffle past the title to a spread of question marks and the token lifts a hair off the page",
+      "sfx": "flip",
+      "means": "per the deposit record",
+      "rehook": "",
+      "draw": {
+        "subject": "guide pages",
+        "action": "riffle past the title to a spread of question marks as the token lifts a hair",
+        "emotion": "plain",
+        "annotation": "PER THE DEPOSIT RECORD"
+      },
+      "choreo": {
+        "primary": "the guide's pages riffle past the title to a spread of question marks and the token lifts a hair off the page",
+        "reaction": "the tag swings on its clip",
+        "ambient": "overhead conference light hums, dust drifts, the title page riffles, the chairs sway a pixel"
+      },
+      "t": "80.970-82.080",
+      "key": 52
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 82.08,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Per UAF, it asks who benefits, and who pays.",
+      "phrase": "Per UAF, it asks",
+      "shows": "the central token lifts off the guide's cover and four blank satellite tokens bloom around it",
+      "sfx": "pop",
+      "means": "the questions underneath",
+      "rehook": "",
+      "draw": {
+        "subject": "central token",
+        "action": "lifts off the guide's cover as four satellite tokens bloom around it",
+        "emotion": "curious",
+        "annotation": "THE QUESTIONS UNDERNEATH"
+      },
+      "choreo": {
+        "primary": "the central token lifts off the guide's cover and four blank satellite tokens bloom around it",
+        "reaction": "the cover settles under the token's shadow",
+        "ambient": "the tokens drift on slow orbits, a lamp breathes, the central token glints"
+      },
+      "t": "82.080-83.930",
+      "key": 53
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 83.93,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 1.85
+      },
+      "offset": 1.85,
+      "vo": "Per UAF, it asks who benefits, and who pays.",
+      "phrase": "Per UAF, it asks",
+      "shows": "the four satellite tokens engrave UAF's summarized questions one at a time, WHAT COMPUTING, WHAT RESOURCES, WHO SHOULD CONTROL IT and WHO BENEFITS, as a slow rack passes between them",
+      "sfx": "clink",
+      "means": "who benefits? who pays? \u00b7 as uaf summarizes",
+      "rehook": "",
+      "draw": {
+        "subject": "satellite tokens",
+        "action": "engrave UAF's four summary questions one at a time",
+        "emotion": "curious",
+        "annotation": "WHO BENEFITS? WHO PAYS? \u00b7 AS UAF SUMMARIZES"
+      },
+      "choreo": {
+        "primary": "the four satellite tokens engrave UAF's summarized questions one at a time, WHAT COMPUTING, WHAT RESOURCES, WHO SHOULD CONTROL IT and WHO BENEFITS, as a slow rack passes between them",
+        "reaction": "the unengraved tokens dim a step",
+        "ambient": "the tokens drift on slow orbits, a lamp breathes, the central token glints"
+      },
+      "t": "83.930-85.190",
+      "key": 39
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 85.19,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 3.11
+      },
+      "offset": 3.11,
+      "vo": "Per UAF, it asks who benefits, and who pays.",
+      "phrase": "Per UAF, it asks",
+      "shows": "the ring lights WHO PAYS and the central token re-engraves itself to WHO PAYS and settles",
+      "sfx": "clink",
+      "means": "who pays",
+      "rehook": "",
+      "draw": {
+        "subject": "central token",
+        "action": "re-engraves itself WHO PAYS",
+        "emotion": "curious",
+        "annotation": "WHO PAYS"
+      },
+      "choreo": {
+        "primary": "the ring lights WHO PAYS and the central token re-engraves itself to WHO PAYS and settles",
+        "reaction": "the radiating tokens draw back toward it",
+        "ambient": "the tokens drift on slow orbits, a lamp breathes, the central token glints"
+      },
+      "t": "85.190-87.270",
+      "key": 40
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 87.27,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.57
+      },
+      "offset": 0.57,
+      "vo": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+      "phrase": "The guide's lead, Leasi",
+      "shows": "the Raymond name card slides in showing the name only, the token beside it engraved WHO PAYS",
+      "sfx": "slide",
+      "means": "leasi vanessa lee raymond, acep",
+      "rehook": "",
+      "draw": {
+        "subject": "name card",
+        "action": "slides in with the guide lead's name only",
+        "emotion": "calm",
+        "annotation": "LEASI VANESSA LEE RAYMOND, ACEP"
+      },
+      "choreo": {
+        "primary": "the Raymond name card slides in showing the name only, the token beside it engraved WHO PAYS",
+        "reaction": "the two aperture plates tilt toward the card",
+        "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse"
+      },
+      "t": "87.270-87.970",
+      "key": 41
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "at_s": 87.97,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 1.27
+      },
+      "offset": 1.27,
+      "vo": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+      "phrase": "The guide's lead, Leasi",
+      "shows": "the cranberry rim of the WHO PAYS token carries across the cut as the Gate's condition ring and splits into two pearl-steel apertures with cranberry rims, one small and one large",
+      "sfx": "whoosh",
+      "means": "two apertures",
+      "rehook": "",
+      "draw": {
+        "subject": "condition ring",
+        "action": "splits into two pearl-steel apertures",
+        "emotion": "calm",
+        "annotation": "TWO APERTURES"
+      },
+      "choreo": {
+        "primary": "the cranberry rim of the WHO PAYS token carries across the cut as the Gate's condition ring and splits into two pearl-steel apertures with cranberry rims, one small and one large",
+        "reaction": "the two plates settle on either side of the card",
+        "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse"
+      },
+      "t": "87.970-90.230",
+      "key": 42
+    },
+    {
+      "id": 44,
+      "shot": 13,
+      "at_s": 90.23,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+      "phrase": "The guide's lead, Leasi",
+      "shows": "a small clinic box rolls in from the left edge toward the small aperture as the Raymond quote starts typing",
+      "sfx": "rumble",
+      "means": "a small facility",
+      "rehook": "rehook: the guide lead's scale distinction splits the rule",
+      "draw": {
+        "subject": "clinic box",
+        "action": "rolls in from the left edge toward the small aperture as the quote types",
+        "emotion": "plain",
+        "annotation": "A SMALL FACILITY"
+      },
+      "choreo": {
+        "primary": "a small clinic box rolls in from the left edge toward the small aperture as the Raymond quote starts typing",
+        "reaction": "the aperture plate tilts toward it",
+        "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse"
+      },
+      "t": "90.230-91.690",
+      "key": 43
+    },
+    {
+      "id": 45,
+      "shot": 13,
+      "at_s": 91.69,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 4.99
+      },
+      "offset": 4.99,
+      "vo": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+      "phrase": "The guide's lead, Leasi",
+      "shows": "the clinic box stops at the small aperture's plate, which shows a short question card of two question marks",
+      "sfx": "stop",
+      "means": "hospital or tribal facility",
+      "rehook": "",
+      "draw": {
+        "subject": "clinic box",
+        "action": "stops at its own plate which shows a short question card",
+        "emotion": "plain",
+        "annotation": "HOSPITAL OR TRIBAL FACILITY"
+      },
+      "choreo": {
+        "primary": "the clinic box stops at the small aperture's plate, which shows a short question card of two question marks",
+        "reaction": "the box's lamp warms",
+        "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse"
+      },
+      "t": "91.690-94.030",
+      "key": 44
+    },
+    {
+      "id": 46,
+      "shot": 13,
+      "at_s": 94.03,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 7.33
+      },
+      "offset": 7.33,
+      "vo": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+      "phrase": "The guide's lead, Leasi",
+      "shows": "the short question card on the clinic box's plate flips over as the quote reaches raises different questions",
+      "sfx": "flip",
+      "means": "\"different questions\" \u00b7 leasi vanessa lee raymond, acep",
+      "rehook": "",
+      "draw": {
+        "subject": "question card",
+        "action": "flips over on the clinic box's plate",
+        "emotion": "plain",
+        "annotation": "\"DIFFERENT QUESTIONS\" \u00b7 LEASI VANESSA LEE RAYMOND, ACEP"
+      },
+      "choreo": {
+        "primary": "the short question card on the clinic box's plate flips over as the quote reaches raises different questions",
+        "reaction": "the box's lamp warms",
+        "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse"
+      },
+      "t": "94.030-95.730",
+      "key": 55
+    },
+    {
+      "id": 47,
+      "shot": 13,
+      "at_s": 95.73,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 9.03
+      },
+      "offset": 9.03,
+      "vo": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+      "phrase": "The guide's lead, Leasi",
+      "shows": "the camera pulls out as the generic steel server machine rolls in, its ticket torn off at the edge of frame, dwarfs the clinic box, and stops at the large aperture's plate, which shows a long stack of question marks",
+      "sfx": "heavy",
+      "means": "hyperscale \u00b7 different questions",
+      "rehook": "",
+      "draw": {
+        "subject": "server machine",
+        "action": "rolls in as the camera pulls out and dwarfs the clinic box",
+        "emotion": "plain",
+        "annotation": "HYPERSCALE \u00b7 DIFFERENT QUESTIONS"
+      },
+      "choreo": {
+        "primary": "the camera pulls out as the generic steel server machine rolls in, its ticket torn off at the edge of frame, dwarfs the clinic box, and stops at the large aperture's plate, which shows a long stack of question marks",
+        "reaction": "the machine's lamp warms and the clinic box looks small beside it",
+        "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse"
+      },
+      "t": "95.730-96.690",
+      "key": 45
+    },
+    {
+      "id": 48,
+      "shot": 13,
+      "at_s": 96.69,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 9.99
+      },
+      "offset": 9.99,
+      "vo": "The guide's lead, Leasi Vanessa Lee Raymond, says, \"A small facility supporting a hospital or tribal government, for example, raises different questions from a hyperscale facility serving global customers.\"",
+      "phrase": "The guide's lead, Leasi",
+      "shows": "the server machine stops at the large aperture's plate, which shows a long stack of question marks, and its lamp warms",
+      "sfx": "stop",
+      "means": "a long stack of questions",
+      "rehook": "",
+      "draw": {
+        "subject": "server machine",
+        "action": "stops at the large aperture's plate and its lamp warms",
+        "emotion": "plain",
+        "annotation": "A LONG STACK OF QUESTIONS"
+      },
+      "choreo": {
+        "primary": "the server machine stops at the large aperture's plate, which shows a long stack of question marks, and its lamp warms",
+        "reaction": "the clinic box looks small beside it",
+        "ambient": "two lamps breathe, the plates shimmer, dust motes drift, the boxes' lamps pulse"
+      },
+      "t": "96.690-98.740",
+      "key": 65
+    },
+    {
+      "id": 49,
+      "shot": 14,
+      "at_s": 98.74,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the missing option isn't yes or no. It's rules sized to what gets built.",
+      "phrase": "So the missing option",
+      "shows": "the dial panel powers on and the snapped arrow from the opening drops onto the dial as its pointer, between greyed YES and NO marks at the two ends of a continuous size scale, the gold token as the hub",
+      "sfx": "fold",
+      "means": "not yes, not no",
+      "rehook": "",
+      "draw": {
+        "subject": "dial panel",
+        "action": "powers on as the snapped arrow drops onto the dial between greyed YES and NO",
+        "emotion": "plain",
+        "annotation": "NOT YES, NOT NO"
+      },
+      "choreo": {
+        "primary": "the dial panel powers on and the snapped arrow from the opening drops onto the dial as its pointer, between greyed YES and NO marks at the two ends of a continuous size scale, the gold token as the hub",
+        "reaction": "the panel's dial lamp glows",
+        "ambient": "the dial lamp breathes, tick marks shimmer, the hub token glints, a dark panel vignette drifts"
+      },
+      "t": "98.740-100.290",
+      "key": 46
+    },
+    {
+      "id": 50,
+      "shot": 14,
+      "at_s": 100.29,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 1.55
+      },
+      "offset": 1.55,
+      "vo": "So the missing option isn't yes or no. It's rules sized to what gets built.",
+      "phrase": "So the missing option",
+      "shows": "the pointer touches the greyed YES then the greyed NO and slides off both onto the size scale between them",
+      "sfx": "tap",
+      "means": "not yes, not no",
+      "rehook": "",
+      "draw": {
+        "subject": "pointer",
+        "action": "touches YES then NO and slides off both onto the scale",
+        "emotion": "focused",
+        "annotation": "NOT YES, NOT NO"
+      },
+      "choreo": {
+        "primary": "the pointer touches the greyed YES then the greyed NO and slides off both onto the size scale between them",
+        "reaction": "the hub token turns a hair",
+        "ambient": "the dial lamp breathes, tick marks shimmer, the hub token glints, a dark panel vignette drifts"
+      },
+      "t": "100.290-102.490",
+      "key": 57
+    },
+    {
+      "id": 51,
+      "shot": 14,
+      "at_s": 102.49,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 3.75
+      },
+      "offset": 3.75,
+      "vo": "So the missing option isn't yes or no. It's rules sized to what gets built.",
+      "phrase": "So the missing option",
+      "shows": "the dial turns and the two slots resize themselves to the silhouettes of the clinic box and the server machine from the aperture shot",
+      "sfx": "tick",
+      "means": "rules sized to what gets built",
+      "rehook": "",
+      "draw": {
+        "subject": "dial",
+        "action": "turns and the two slots resize to the clinic box and machine silhouettes",
+        "emotion": "focused",
+        "annotation": "RULES SIZED TO WHAT GETS BUILT"
+      },
+      "choreo": {
+        "primary": "the dial turns and the two slots resize themselves to the silhouettes of the clinic box and the server machine from the aperture shot",
+        "reaction": "the tick marks shimmer",
+        "ambient": "the dial lamp breathes, tick marks shimmer, the hub token glints, a dark panel vignette drifts"
+      },
+      "t": "102.490-105.500",
+      "key": 47
+    },
+    {
+      "id": 52,
+      "shot": 15,
+      "at_s": 105.5,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Fairbanks asked for rules first. The Senate's data center bill stalled in the House.",
+      "phrase": "Fairbanks asked for rules",
+      "shows": "the half-open Gate in the same fog lot framing as the opening, the ballot box on one side and the signpost stump on the other, a blank gold unengraved token on its cranberry sill beside the blank STANDARDS sheet and a pen hovering over a dotted first line",
+      "sfx": "drone",
+      "means": "one blank page",
+      "rehook": "",
+      "draw": {
+        "subject": "pen",
+        "action": "hovers over the first dotted line of the blank sheet",
+        "emotion": "expectant",
+        "annotation": "ONE BLANK PAGE"
+      },
+      "choreo": {
+        "primary": "the half-open Gate in the same fog lot framing as the opening, the ballot box on one side and the signpost stump on the other, a blank gold unengraved token on its cranberry sill beside the blank STANDARDS sheet and a pen hovering over a dotted first line",
+        "reaction": "the fog rolls in and the pen shivers",
+        "ambient": "ice fog bands drift on two layers, snow dust turns, the pen shivers, the token glints, the Gate blinks"
+      },
+      "t": "105.500-106.470",
+      "key": 48
+    },
+    {
+      "id": 53,
+      "shot": 15,
+      "at_s": 106.47,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.97
+      },
+      "offset": 0.97,
+      "vo": "Fairbanks asked for rules first. The Senate's data center bill stalled in the House.",
+      "phrase": "Fairbanks asked for rules",
+      "shows": "the pen drops to the first dotted line of the blank sheet and the ink does not take",
+      "sfx": "tap",
+      "means": "rules first",
+      "rehook": "",
+      "draw": {
+        "subject": "pen",
+        "action": "drops to the first dotted line and the ink does not take",
+        "emotion": "expectant",
+        "annotation": "RULES FIRST"
+      },
+      "choreo": {
+        "primary": "the pen drops to the first dotted line of the blank sheet and the ink does not take",
+        "reaction": "the sheet's corner lifts",
+        "ambient": "ice fog bands drift on two layers, snow dust turns, the pen shivers, the token glints, the Gate blinks"
+      },
+      "t": "106.470-108.690",
+      "key": 64
+    },
+    {
+      "id": 54,
+      "shot": 15,
+      "at_s": 108.69,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "Fairbanks asked for rules first. The Senate's data center bill stalled in the House.",
+      "phrase": "Fairbanks asked for rules",
+      "shows": "the bill sheet from the hallway slides onto the cranberry sill beside the blank STANDARDS sheet and stops",
+      "sfx": "knock",
+      "means": "the senate's bill stalled in the house",
+      "rehook": "",
+      "draw": {
+        "subject": "bill sheet",
+        "action": "slides onto the sill beside the blank sheet",
+        "emotion": "blank",
+        "annotation": "THE SENATE'S BILL STALLED IN THE HOUSE"
+      },
+      "choreo": {
+        "primary": "the bill sheet from the hallway slides onto the cranberry sill beside the blank STANDARDS sheet and stops",
+        "reaction": "the sheet's corner lifts in the draft",
+        "ambient": "ice fog bands drift on two layers, snow dust turns, the pen shivers, the token glints, the Gate blinks"
+      },
+      "t": "108.690-110.720",
+      "key": 49
+    },
+    {
+      "id": 55,
+      "shot": 15,
+      "at_s": 110.72,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So who writes them?",
+      "phrase": "So who writes them?",
+      "shows": "the fog closes in around the half-open Gate in the same framing as the opening, the camera drifting back out through the gap, and its lamp swings",
+      "sfx": "swell",
+      "means": "fog closes in",
+      "rehook": "",
+      "draw": {
+        "subject": "Gate",
+        "action": "swings its lamp half open as the fog closes in",
+        "emotion": "expectant",
+        "annotation": "FOG CLOSES IN"
+      },
+      "choreo": {
+        "primary": "the fog closes in around the half-open Gate in the same framing as the opening, the camera drifting back out through the gap, and its lamp swings",
+        "reaction": "the fog drifts across the sheet",
+        "ambient": "ice fog bands drift on two layers, snow dust turns, the pen shivers, the token glints, the Gate blinks"
+      },
+      "t": "110.720-111.630",
+      "key": 50
+    },
+    {
+      "id": 56,
+      "shot": 15,
+      "at_s": 111.63,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.91
+      },
+      "offset": 0.91,
+      "vo": "So who writes them?",
+      "phrase": "So who writes them?",
+      "shows": "the gold token flips to WHO WRITES THEM on the sill of the half-open Gate and holds for the outro while the fog drifts and the pen shivers",
+      "sfx": "bell",
+      "means": "who writes them?",
+      "rehook": "",
+      "draw": {
+        "subject": "token",
+        "action": "flips to WHO WRITES THEM on the sill and holds",
+        "emotion": "expectant",
+        "annotation": "WHO WRITES THEM?"
+      },
+      "choreo": {
+        "primary": "the gold token flips to WHO WRITES THEM on the sill of the half-open Gate and holds for the outro while the fog drifts and the pen shivers",
+        "reaction": "the pen hovers over the blank sheet and shivers",
+        "ambient": "ice fog bands drift on two layers, snow dust turns, the pen shivers, the token glints, the Gate blinks"
+      },
+      "t": "111.630-112.180",
+      "key": 51
+    }
+  ]
+}
