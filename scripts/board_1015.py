@@ -184,7 +184,7 @@ B = [
  (50, 15, 17, 0.0, "swell", "Gate", "swings its lamp half open as the fog closes in", "expectant", "FOG CLOSES IN",
   "the fog closes in around the half-open Gate in the same framing as the opening, the camera drifting back out through the gap, and its lamp swings",
   "the fog drifts across the sheet", ""),
- (51, 15, 17, W("who"), "bell", "token", "flips to WHO WRITES THEM on the sill and holds", "expectant", "WHO WRITES THEM?",
+ (51, 15, 17, W("writes"), "bell", "token", "flips to WHO WRITES THEM on the sill and holds", "expectant", "WHO WRITES THEM?",
   "the gold token flips to WHO WRITES THEM on the sill of the half-open Gate and holds for the outro while the fog drifts and the pen shivers",
   "the pen hovers over the blank sheet and shivers", ""),
 ]
