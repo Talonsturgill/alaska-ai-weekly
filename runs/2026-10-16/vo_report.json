@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.971,
+    "heard": "307 in the morning, October 15th, a magnitude 5.6 earthquake hits near Lake Manchumana, Alaska and 103 people file felt reports. Then the only question left. When's the next one? The US Geological Survey can't tell you when. It can tell you the odds and it posted them 12 hours after the shaking. A week out, another quake of magnitude 3 or bigger? About 40 and 100. 4 or bigger? About 7 and 100. 5 under 1 in 100. 6 under 1 in 1000. Those odds come from a published equation. It starts from how passed after shock sequences behaved, then bends toward this one. It also gives a range, not a single number. Zero to five after shocks this week, with one counted so far. So is it worth trusting? One quake can't grade a probability because 40 and 100 isn't wrong either way. The grade comes when the week ends and across a long run of forecasts. It names its own weak spot too. It may perform poorly when big aftershocks set off their own. Sometimes the big one comes second. In 2011, a magnitude 7.3 quake in Japan came two days before a 9.1. So the forecast doesn't prove it's right. It proves it can be checked and every forecast carries the time of its next update. The week isn't over, so the check isn't finished. Odds a range, a limit, a next check. The same test works on any forecast, human or machine, and it's the bar for any number Alaskan's Leonor.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.059,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 7.57,
+        "voiced_frac": 0.48,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 122.32,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 122.32,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (2 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.971,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.985,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.941,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

@@ -1,0 +1,21 @@
+{
+ "run_date": "2026-10-16",
+ "thesis": "The USGS forecast for the Lake Minchumina quake shows what a number worth leaning on looks like: odds instead of promises, a range, its own printed weak spot and the time of its next check.",
+ "supporting_facts": [
+  "c5 to c8: the ladder from about 40 in 100 (M3+) down to under 1 in 1,000 (M6+) in one week",
+  "c14 and c13: a 95 percent range of 0 to 5, from a count of 1 at issue time",
+  "c15 and c16: it prints where it may perform poorly, and when it will check itself again"
+ ],
+ "counterpoint_to_honor": "One quake can't grade a probability, and by USGS's own account the model may perform poorly when big aftershocks set off their own (c15), the Japan 2011 case (c17). The checklist proves a forecast CAN be checked, not that it is right. Accuracy is the next question.",
+ "falsifiability": "False if the printed update doesn't arrive, or the week's M3+ count lands outside 0 to 5 AND USGS gives no account of it, or if the posting rule is discretionary. Verdict pending, the film says the week isn't over.",
+ "second_movement": "Walk the ladder down so the viewer feels the reassurance hidden in the headline number, then turn: the weak spot printed on the page is the cascading case (Japan), the one where the stakes are highest.",
+ "ai_point_OUR_READ": "Labelled opinion. No claim the model is or isn't AI. Whatever tool makes a number for Alaskans, human or machine, this is the bar: odds, a range, its limits, the time it checks again.",
+ "valence": "Upbeat, a public-science win credited plainly, one earned counter-scene.",
+ "runner_up_angles": {
+  "A": "trust (merged, thesis base)",
+  "B": "disclosure checklist (merged, the OUR READ)",
+  "C": "3 a.m. human (merged, cold open and ladder)"
+ },
+ "debate": "A's pending-verdict honesty kept (no pass claimed). B's 'disclosure not math' defends against 'rewards the old method'. C's strongest counter (calm confident answer comforts more) is answered by the ladder itself holding real reassurance. Stance: celebratory with a curious turn.",
+ "stance": "celebratory"
+}

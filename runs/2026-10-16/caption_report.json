@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1494,
+    "hook": "USGS puts the odds of another magnitude 3 or bigger near Lake Minchumina this week at about 40 in 100, and it published the math.",
+    "hook_len": 129,
+    "hashtags": [
+      "#Alaska",
+      "#USGS",
+      "#Earthquakes",
+      "#Forecasting",
+      "#AI"
+    ],
+    "n_hashtags": 5,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "sentence_initial_but": 0,
+    "first_person": 0,
+    "commas_per_100w": 4.12,
+    "passes": true
+  }
+}

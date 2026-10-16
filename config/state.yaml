@@ -2489,3 +2489,40 @@ dispatch_history:
       at the button
     metaphor: a gate with a condition on its plate, waiting for a hand to write the
       rule
+- date: '2026-10-16'
+  topic: USGS aftershock forecast for the October 15th M5.6 near Lake Minchumina,
+    and what a forecast should show
+  slug: dispatch-2026-10-16-the-forecast-that-shows-its-work
+  key_entities:
+  - USGS
+  - Lake Minchumina
+  - aftershock forecast
+  - Reasenberg and Jones
+  - Operational Aftershock Forecasting
+  archetype: receipt printed by the ground, odds as a count of tiles
+  palette: midnight teal, tungsten amber, chalk white, brass, one alarm vermilion,
+    pre-dawn blue
+  voice: gemini Sulafat
+  stance: celebratory
+  angle: 'The USGS forecast for the Lake Minchumina quake shows what a number worth
+    leaning on looks like: odds instead of promises, a range, its own printed weak
+    spot and the time of its next check.'
+  hero: SeismicStation
+  cast:
+  - SeismicStation
+  - Slip
+  - OddsBoard
+  - GrainBin
+  - DialPanel
+  - RangeSlots
+  - Pegboard
+  - MapPlate
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: instrument-as-subject
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: midnight teal, tungsten amber, chalk white, brass, one alarm vermilion,
+      pre-dawn blue
+    metaphor: a receipt printed by the ground itself
