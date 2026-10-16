@@ -25,7 +25,7 @@ B = [
  (1, 1, 0, 0.0, "rumble", "SeismicStation", "shudders as its horn whips and the pen lashes a hard zigzag across the paper drum", "alarmed", "JUST PAST 3 A.M.",
   "the SeismicStation on black muskeg shudders as its horn whips round and the pen lashes a hard zigzag across the drum under one tungsten lamp, a 3:07 pip flaring red",
   "the lamp swings and snow dust jumps off the ground", ""),
- (2, 1, 0, W("magnitude"), "thump", "magnitude chip", "slams onto the frame", "firm", "M5.6 · 43 KM NNW OF LAKE MINCHUMINA · OCT 15TH",
+ (2, 1, 0, W("magnitude"), "thump", "magnitude chip", "slams onto the frame", "firm", "M5.6 · 43 KM NNW OF LAKE MINCHUMINA · OCTOBER 15TH",
   "a chalk chip M5.6 slams onto the frame beside the station with its place line under it",
   "the horn settles toward listening and the zigzag trace keeps drawing", ""),
  (3, 1, 0, W("hits"), "whoosh", "blank slip", "starts to curl out of the station's flank", "curious", "A SLIP",

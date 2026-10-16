@@ -87,7 +87,8 @@ export const Slip: React.FC<{
   box?: number; boxShown?: boolean; tab?: number; stamp?: {text: string; k: number; tone?: 'ink' | 'rust'}; curl?: number; header?: string; lineGap?: number;
 }> = ({x, y, f, scale = 1, rot = 0, out = 1, lines = [], tape = 0, peel = 0, tapeLine = '', box = 0, boxShown = false, tab = 0, stamp, curl = 1, header = '', lineGap = 60}) => {
   const W = 330;
-  const H = Math.max(120, 90 + lines.length * lineGap + (tapeLine ? lineGap : 0) + (boxShown ? 150 : 0));
+  const tapeRows = tapeLine ? tapeLine.split('|') : [];
+  const H = Math.max(120, 90 + lines.length * lineGap + (tapeLine ? 24 + tapeRows.length * 24 : 0) + (boxShown ? 150 : 0));
   const shown = H * clamp01(out);
   const sway = Math.sin(f / 19) * 1.2 * curl;
   return (
@@ -111,7 +112,7 @@ export const Slip: React.FC<{
         })}
         {tapeLine && (
           <g transform={`translate(0 ${96 + lines.length * lineGap})`}>
-            <text x={-W / 2 + 22} y={0} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1} fill={OD.alarm} opacity={peel}>{tapeLine}</text>
+            {tapeRows.map((r, i) => <text key={i} x={-W / 2 + 20} y={i * 24} fontFamily={MONO} fontWeight={800} fontSize={16} letterSpacing={0.5} fill={OD.alarm} opacity={peel}>{r}</text>)}
           </g>
         )}
         {tape > 0.01 && (
@@ -127,8 +128,7 @@ export const Slip: React.FC<{
               <g opacity={box}>
                 <circle cx={0} cy={0} r={38} fill={OD.chalk} stroke={INK} strokeWidth={4} />
                 {Array.from({length: 12}, (_, i) => <line key={i} x1={0} y1={-32} x2={0} y2={i % 3 === 0 ? -24 : -28} stroke={INK} strokeWidth={2.5} transform={`rotate(${i * 30})`} />)}
-                <line x1={0} y1={0} x2={0} y2={-24} stroke={INK} strokeWidth={4} strokeLinecap="round" transform={`rotate(${40 + box * 200})`} />
-                <line x1={0} y1={0} x2={0} y2={-16} stroke={INK} strokeWidth={5} strokeLinecap="round" transform={`rotate(${-30 + box * 20})`} />
+                <circle r={6} fill={INK} />
               </g>
             )}
             {box <= 0.01 && <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={INK} opacity={0.4}>?</text>}
@@ -231,6 +231,10 @@ export const GrainBin: React.FC<{x: number; y: number; f: number; scale?: number
         <circle r={3} cx={-2} cy={-2} fill={OD.litHi} />
       </g>
       <rect x={-330} y={-240} width={660} height={22} rx={10} fill="#fff" opacity={0.1} />
+      <path d="M -300 -220 L -230 -220 L -330 300 L -330 300 Z" fill="#fff" opacity={0.07} />
+      <path d="M 190 -220 L 230 -220 L 150 300 L 110 300 Z" fill="#fff" opacity={0.06} />
+      <rect x={-330} y={290} width={660} height={30} rx={12} fill={OD.brass} stroke={INK} strokeWidth={6} />
+      <rect x={-330} y={-240} width={660} height={560} rx={16} fill="none" stroke={OD.skeptic} strokeWidth={3} opacity={0.4} />
     </g>
   );
 };
@@ -381,11 +385,14 @@ export const Pegboard: React.FC<{x: number; y: number; f: number; scale?: number
 export const MapPlate: React.FC<{x: number; y: number; f: number; scale?: number; pin?: number; disc?: number; ticks?: number; zoom?: number}> = ({x, y, f, scale = 1, pin = 1, disc = 0, ticks = 0, zoom = 1}) => (
   <g transform={`translate(${x} ${y}) scale(${scale * zoom})`}>
     <ContactShadow cx={0} cy={420} rx={470} ry={24} opacity={0.5} />
-    <rect x={-470} y={-380} width={940} height={800} rx={14} fill={OD.chalk} stroke={INK} strokeWidth={8} />
+    <rect x={-470} y={-380} width={940} height={800} rx={14} fill="#C9D3D0" stroke={INK} strokeWidth={8} />
     <clipPath id="mapclip"><rect x={-462} y={-372} width={924} height={784} rx={10} /></clipPath>
     <g clipPath="url(#mapclip)">
       {Array.from({length: 13}, (_, i) => <line key={`v${i}`} x1={-462 + i * 77} y1={-372} x2={-462 + i * 77} y2={412} stroke={OD.skepticDeep} strokeWidth={2} opacity={0.3} transform={`translate(${Math.sin(f / 40) * 3} 0)`} />)}
       {Array.from({length: 11}, (_, i) => <line key={`h${i}`} x1={-462} y1={-372 + i * 78} x2={462} y2={-372 + i * 78} stroke={OD.skepticDeep} strokeWidth={2} opacity={0.3} />)}
+      <rect x={-462} y={-372} width={924} height={784} fill="#9DB8C0" />
+      <path d="M -462 -372 L 140 -372 Q 60 -250 160 -120 Q 260 20 120 150 Q 20 260 -120 330 Q -260 400 -462 412 Z" fill="#A9B79A" stroke={INK} strokeWidth={6} />
+      <path d="M -300 -300 Q -230 -200 -300 -100 M -200 -60 Q -120 40 -210 150" fill="none" stroke="#6F8466" strokeWidth={5} opacity={0.6} />
       <circle cx={0} cy={0} r={520} fill="none" stroke={OD.skepticDeep} strokeWidth={2} opacity={0.2} />
       {disc > 0.001 && (
         <g opacity={clamp01(disc * 2)}>
