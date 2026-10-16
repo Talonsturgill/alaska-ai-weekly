@@ -22,7 +22,7 @@ LINES = [l.strip() for l in (OUT / "vo_script.txt").read_text().splitlines() if 
 W = lambda w, n=1: (w, n)
 # key, shot, line, anchor, sfx, subject, action, emotion, annotation, shows, reaction, rehook
 B = [
- (1, 1, 0, 0.0, "rumble", "SeismicStation", "shudders as its horn whips and the pen lashes a hard zigzag across the paper drum", "alarmed", "3:07 A.M.",
+ (1, 1, 0, 0.0, "rumble", "SeismicStation", "shudders as its horn whips and the pen lashes a hard zigzag across the paper drum", "alarmed", "JUST PAST 3 A.M.",
   "the SeismicStation on black muskeg shudders as its horn whips round and the pen lashes a hard zigzag across the drum under one tungsten lamp, a 3:07 pip flaring red",
   "the lamp swings and snow dust jumps off the ground", ""),
  (2, 1, 0, W("magnitude"), "thump", "magnitude chip", "slams onto the frame", "firm", "M5.6 · 43 KM NNW OF LAKE MINCHUMINA · OCT 15TH",
@@ -34,9 +34,6 @@ B = [
  (4, 1, 0, W("hundred"), "swoosh", "report slips", "flutter onto a cork wall one by one", "busy", "103 FELT REPORTS · USGS",
   "the truck along the slip arrives at a cork wall where small report slips flutter on and pin home one by one",
   "the pinned slips tremble and settle", ""),
- (5, 1, 0, W("reports"), "thock", "count chip", "stamps the final count on the wall", "firm", "103 FELT REPORTS · USGS",
-  "a count chip stamps 103 on the cork wall, the slips below it a dense grid",
-  "the grid of slips shivers a pixel", ""),
  (6, 2, 1, 0.0, "hush", "dark clock", "fills the frame with no hands and the blank slip hangs beside it", "uneasy", "WHEN?",
   "a dark round clock face with no hands fills the frame and the blank slip hangs beside it, the lamp pool breathing",
   "the slip's end turns slowly and the clock face glints", ""),
@@ -44,51 +41,48 @@ B = [
   "a single question mark rises on the dark clock face and the hands start to draw and fade out",
   "the clock glass shivers", ""),
  (8, 3, 2, 0.0, "slide", "slip", "slides onto a desk under a lamp as a stamp hovers", "calm", "U S GEOLOGICAL SURVEY",
-  "the slip slides onto a desk under a lamp already wrapped on its last line in masking tape marked READ LAST, and a rubber stamp reading U S GEOLOGICAL SURVEY hovers over it",
+  "the slip slides onto a desk under a lamp with a dashed clock box at its foot holding a question mark, and a rubber stamp reading U S GEOLOGICAL SURVEY hovers over it",
   "the lamp sways and the paper curls at the edge", ""),
- (9, 3, 2, W("odds"), "click", "slip first line", "prints ODDS with a stepper stutter", "firm", "ODDS, NOT A TIME",
+ (9, 3, 2, W("odds"), "fold", "slip first line", "prints ODDS with a stepper stutter", "firm", "ODDS, NOT A TIME",
   "the slip's first line prints ODDS with a stepper stutter and a second line stays blank where WHEN would go",
   "the print head stutters and the paper creeps", ""),
- (10, 3, 2, W("twelve"), "alarm", "wall clock", "whips a half day with overshoot as a stamp lands", "brisk", "FORECAST ISSUED 12 HOURS LATER",
+ (10, 3, 2, W("twelve"), "whoosh", "wall clock", "whips a half day with overshoot as a stamp lands", "brisk", "FORECAST ISSUED 12 HOURS LATER",
   "the wall clock hands whip a full half day with overshoot and a stamp lands on the slip, 12 HOURS LATER",
-  "the clock pendulum swings and the stamp bounces", "rehook: the odds arrive twelve hours late"),
- (11, 3, 2, W("shaking"), "creak", "forecast chip", "stamps beside the slip as the taped end lifts in the draft", "wary", "M5+ OUTSIDE THE LOWER 48 · FORECAST POSTED",
-  "a chip stamps beside the slip, M5 PLUS OUTSIDE THE LOWER 48, FORECAST POSTED, while the taped end of the slip lifts in the draft",
-  "the tape end lifts in the draft", ""),
+  "the clock pendulum swings and the stamp bounces", "rehook: the odds arrive twelve hours later"),
+ (11, 3, 2, W("shaking"), "creak", "forecast chip", "stamps beside the slip as its foot box shivers in the draft", "plain", "M5+ OUTSIDE THE LOWER 48 · FORECAST POSTED",
+  "a chip stamps beside the slip, M5 PLUS OUTSIDE THE LOWER 48, FORECAST POSTED, while the slip's foot box shivers in the draft",
+  "the foot box shivers in the draft", ""),
  (12, 4, 3, 0.0, "thunk", "odds board", "rises as a ten by ten board of dark enamel tiles in a brass frame", "expectant", "A WEEK OUT · M3+",
   "a ten by ten board of one hundred dark enamel tiles rises in a brass frame under a boxed M3 PLUS A WEEK OUT label",
   "the tiles glint one by one and the frame hums", ""),
- (13, 4, 3, W("forty"), "clack", "forty tiles", "flip lit in a serpentine ripple", "rising", "ABOUT 40 IN 100",
+ (13, 4, 3, W("forty"), "clink", "forty tiles", "flip lit in a serpentine ripple", "rising", "ABOUT 40 IN 100",
   "forty tiles flip chartreuse in a serpentine ripple with a clack each, the board's count ticking to 40",
   "the lit tiles pulse and the dark ones sway", "rehook: forty in a hundred is a lot"),
- (14, 4, 3, W("seven"), "tick", "tiles", "fall dark until seven stay lit", "easing", "M4+ · ABOUT 7 IN 100",
+ (14, 4, 3, W("seven"), "thump", "tiles", "fall dark until seven stay lit", "easing", "M4+ · ABOUT 7 IN 100",
   "the forty fall dark until seven stay lit",
   "the seven glow and the board settles", ""),
  (15, 4, 3, W("Five"), "blip", "single tile", "lights only three quarters of the way, never full", "calm", "M5+ · UNDER 1 IN 100",
-  "one tile fills with light only three quarters of the way and never goes full",
+  "one big tile fills with light only three quarters of the way and never goes full",
   "the sliver tile pulses once", ""),
  (16, 4, 3, W("Six"), "swoosh", "bin", "the camera pulls back and up to a glass bin of a thousand grains with one grain glowing smaller than its neighbours", "relieved", "M6+ · UNDER 1 IN 1,000",
-  "the camera pulls back and up and the board is one layer of ten in a glass bin of a thousand grains with one grain glowing a little smaller than its neighbours",
+  "the camera pulls back and the big tile is one grain of a thousand in a glass bin, one grain glowing a little smaller than its neighbours",
   "the grains shimmer and the lit speck breathes", "rehook: the bin pullback"),
- (17, 4, 3, W("thousand"), "chime", "drawers", "slide out nested, a day inside a week inside a year", "plain", "ONE DAY 23 IN 100 · ONE YEAR 58 IN 100 · M3+",
-  "three nested drawers slide out of the bin's front, each containing the one before, labelled ONE DAY 23 IN 100 and ONE YEAR 58 IN 100",
-  "the drawer handles swing and the lit tiles inside glint", ""),
- (18, 5, 4, 0.0, "fold", "dial panel", "powers on with four brass dials a b c and p under a Reasenberg and Jones plate", "focused", "REASENBERG AND JONES · 1989 · FOUR DIALS: a b c p",
+ (18, 5, 4, 0.0, "fold", "dial panel", "powers on with four brass dials a b c and p under a Reasenberg and Jones plate", "focused", "REASENBERG AND JONES · 1989 · FOUR DIALS a b c p",
   "a brass dial panel powers on with four dials a, b, c and p under a Reasenberg and Jones 1989 plate",
   "the dial needles settle and the panel lamp breathes", ""),
  (19, 5, 4, W("past"), "slide", "ledger sheets", "feed into the panel and the dials settle", "focused", "PAST SEQUENCES",
   "ledger sheets of past sequences feed into the panel's slot one after another and the dials seat",
   "the sheets ripple as they feed", ""),
- (20, 5, 4, W("bends"), "tick", "fresh sheet", "slides in and the dials re-seat by a hair", "alert", "BENDS TOWARD THIS ONE",
-  "one fresh sheet slides in last and the dials re-seat by a hair with p wobbling",
+ (20, 5, 4, W("bends"), "clunk", "fresh sheet", "slides in and the dials re-seat by a hair", "alert", "BENDS TOWARD THIS ONE",
+  "one fresh sheet, the slip itself, slides in last wrapped on its last line in masking tape marked READ LAST, and the dials re-seat by a hair with p wobbling",
   "dial p wobbles and settles", ""),
  (21, 6, 5, 0.0, "swoosh", "bracket", "opens over a row of six slots", "curious", "A RANGE, NOT A NUMBER",
-  "a dashed bone bracket opens over a row of six empty slots while a corner of the slip shows its blank clock box",
+  "a dashed chalk bracket opens over a row of six empty slots while a corner of the slip shows its blank clock box",
   "the bracket's dashes crawl and the slots glint", "rehook: a range, not a number"),
- (22, 6, 5, W("Zero"), "click", "slots", "label 0 to 5 as the bracket snaps wide", "firm", "0 TO 5 AFTERSHOCKS THIS WEEK",
+ (22, 6, 5, W("Zero"), "stamp", "slots", "label 0 to 5 as the bracket snaps wide", "firm", "0 TO 5 AFTERSHOCKS THIS WEEK",
   "the six slots label themselves 0 to 5 as the bracket snaps wide",
   "the slots flicker once each", ""),
- (23, 6, 5, W("counted"), "thock", "chalk token", "drops into slot 1 and the clicker reads 1", "firm", "COUNTED SO FAR · 1 AFTERSHOCK M3+",
+ (23, 6, 5, W("counted"), "clink", "chalk token", "drops into slot 1 and the clicker reads 1", "firm", "COUNTED SO FAR · 1 AFTERSHOCK M3+",
   "a chalk token drops into slot 1 with a bounce and a brass clicker reads 1",
   "the token rocks and settles", ""),
  (24, 7, 6, 0.0, "bell", "slip", "tilts into frame with a question mark over its odds line", "doubtful", "WORTH TRUSTING?",
@@ -103,25 +97,25 @@ B = [
  (27, 7, 6, W("week"), "flip", "calendar", "flips to the week's end as a long stack of small boards fans out", "patient", "A LONG RUN OF FORECASTS",
   "a calendar leaf flips to the week's end and a long stack of small boards fans out behind it",
   "the leaf curls and the fan shivers", ""),
- (28, 8, 8, 0.0, "creak", "tape", "trembles on the slip's last line in macro", "uneasy", "READ LAST",
+ (28, 8, 7, 0.0, "creak", "tape", "trembles on the slip's last line in macro", "uneasy", "READ LAST",
   "macro on the slip's taped last line, the tape trembling and its rust corner just visible",
   "the tape end quivers and the paper grain drifts", ""),
- (29, 8, 8, W("poorly"), "crack", "tape", "peels about a pivot and the rust line prints in alarm red", "grim", "MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE · PER USGS",
+ (29, 8, 7, W("poorly"), "crack", "tape", "peels about a pivot and the rust line prints in alarm red", "grim", "MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE · PER USGS",
   "the tape peels about a pivot and the line beneath prints in alarm red, MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE, PER USGS",
   "the peeled tape curls away and the red line glows", "rehook: the page confesses first"),
- (30, 8, 8, W("own", 2), "boom", "big tile", "lands and kicks its own row of tiles like dominoes", "alarmed", "AFTERSHOCKS SET OFF THEIR OWN",
-  "a big tile lands and kicks its own row of tiles like dominoes while the four dials lose sync",
-  "the dominoes rattle and the dial needles wobble", ""),
- (31, 9, 7, 0.0, "swell", "map plate", "a small magnitude 7.3 pin ticks on a bone map plate", "tense", "CONTEXT, NOT AN ALASKA CLAIM",
-  "a small M7.3 pin pulses on a bone map plate labelled CONTEXT, NOT AN ALASKA CLAIM",
+ (30, 8, 7, W("own", 2), "boom", "dial panel", "the four dial needles lurch apart and wobble out of sync one after another", "alarmed", "DIALS OUT OF SYNC",
+  "the four dial needles lurch apart and wobble out of sync one after another beside the slip as the red line glows",
+  "the needles shake and the red line glows", ""),
+ (31, 9, 8, 0.0, "swell", "map plate", "a small magnitude 7.3 pin ticks on a chalk map plate", "tense", "CONTEXT, NOT AN ALASKA CLAIM",
+  "a small M7.3 pin pulses on a chalk map plate labelled CONTEXT, NOT AN ALASKA CLAIM",
   "the pin pulses and the map grid glides", ""),
- (32, 9, 7, W("2011"), "tap", "date chip", "stamps 2011 JAPAN on the plate", "firm", "2011 JAPAN · M7.3",
+ (32, 9, 8, W("2011"), "thump", "date chip", "stamps 2011 JAPAN on the plate", "firm", "2011 JAPAN · M7.3",
   "a date chip stamps 2011 JAPAN M7.3 on the plate",
   "the plate tilts a hair", ""),
- (33, 9, 7, W("two"), "tick", "two ticks", "pass on a day dial", "tense", "TWO DAYS LATER",
+ (33, 9, 8, W("two"), "tick", "two ticks", "pass on a day dial", "tense", "TWO DAYS LATER",
   "a day dial ticks twice beside the pin",
   "the dial needle trembles", ""),
- (34, 9, 7, W("nine"), "heavy", "giant disc", "swings in and fills the picture as the first pin shrinks to a speck", "stunned", "2011 JAPAN · M7.3 · TWO DAYS LATER · M9.1",
+ (34, 9, 8, W("nine"), "heavy", "giant disc", "swings in and fills the picture as the first pin shrinks to a speck", "stunned", "2011 JAPAN · M7.3 · TWO DAYS LATER · M9.1",
   "the camera pulls back as a giant M9.1 disc swings in and fills the picture, the first pin a speck in its corner, labelled not to scale",
   "the disc's rim shivers and the map dims", "rehook: the big one came second"),
  (35, 10, 9, 0.0, "thud", "stamp", "lands on the slip, CAN BE CHECKED · NOT YET GRADED", "firm", "CAN BE CHECKED · NOT YET GRADED",
@@ -142,6 +136,19 @@ B = [
  (40, 11, 10, W("bar"), "bell", "station lamp", "lights as a blank slip curls out of its flank, the open replaying", "warm", "THE BAR",
   "dawn light grows on the corkboard as the station's lamp lights and a blank slip starts to curl out of its flank, the open replaying",
   "the slip's end curls and the lamp warms", ""),
+
+ (41, 3, 2, W("when"), "stamp", "rubber stamp", "taps the slip beside a WHEN line that stays unprinted", "blank", "NO TIME, ONLY ODDS",
+  "the rubber stamp bobs down and taps the slip beside a WHEN line that stays blank",
+  "the stamp rocks and lifts", ""),
+ (42, 4, 3, W("magnitude"), "pop", "label", "snaps onto the board as the whole frame hums", "expectant", "M3 PLUS · A WEEK OUT",
+  "the boxed A WEEK OUT M3 PLUS label snaps onto the dark board and the brass frame flashes once",
+  "the frame hums and the tiles glint", ""),
+ (43, 10, 9, W("proves"), "clink", "check tick", "draws across the slip as a second stamp lands", "firm", "CHECKED, NOT GRADED",
+  "a tick draws across the pinned slip beside the CHECKED stamp as the station's lamp warms",
+  "the tick glows and the slip sways", ""),
+ (44, 11, 10, W("test"), "swoosh", "blank slips", "lift one after another along the corkboard", "hopeful", "THE SAME TEST",
+  "the four blank slips on the corkboard lift one after another in a wave as the four ticks glow",
+  "the blank slips curl and settle", ""),
 ]
 
 # id, vo_line, framing, scale, height, stage, pov, layout, motion_vector, hero_treatment, transition_in, thread, title, means
@@ -154,16 +161,16 @@ S = [
   "The odds come out", "A desk under a lamp, a slip that prints ODDS and a wall clock that whips twelve hours."),
  (4, 3, "data-panel", "close", "eye", "odds-board", "instrument-screen", "hud-instrument-frame", "vertical-rise", "data-as-subject", "fui-boot", "build",
   "A hundred tiles, then a bin", "A ten by ten tile board lights forty, seven and a sliver, then the camera pulls back to a thousand grains."),
- (5, 4, "push-detail", "insert", "eye", "dial-panel", "exploded-diagram", "grid-modular", "scroll-data", "instrument-as-subject", "match-cut", "match",
+ (5, 4, "push-detail", "insert", "eye", "dial-panel", "instrument-screen", "grid-modular", "radial-emanate", "instrument-as-subject", "match-cut", "match",
   "Four dials", "A brass dial panel fed by ledger sheets of past aftershock sequences."),
- (6, 5, "two-up", "medium", "low", "range-table", "eye-level-immersive", "fullbleed-split", "pull-back-only", "multiplicity-swarm", "mask-wipe", "build",
+ (6, 5, "two-up", "medium", "low", "range-table", "eye-level-immersive", "fullbleed-split", "horizontal-traverse", "multiplicity-swarm", "mask-wipe", "build",
   "A range of six", "A dashed bracket over six slots and a token that drops into slot one."),
  (7, 6, "two-up", "wide", "overhead", "pegboard-test", "top-down-map", "grid-modular", "vertical-descent", "data-as-subject", "carried-element", "carry",
   "One draw", "A marble on a pegboard, two panels with the same board, and a long run of small boards."),
- (9, 7, "map-territory", "extreme-wide", "high", "japan-map", "orbital-aerial", "map-territory", "pull-back-only", "landscape-as-subject", "whip-pan", "travel",
-  "The big one came second", "A map plate with a small pin that is overtaken by a giant disc."),
- (8, 8, "macro-closeup", "close", "ground", "slip-desk", "macro-closeup", "single-object-void", "push-in-only", "instrument-as-subject", "focus-pull", "carry",
+ (8, 7, "macro-closeup", "close", "ground", "slip-desk", "macro-closeup", "single-object-void", "push-in-only", "instrument-as-subject", "focus-pull", "carry",
   "The tape comes off", "Macro on the slip's last line as the tape peels and a red line prints."),
+ (9, 8, "map-territory", "extreme-wide", "high", "japan-map", "orbital-aerial", "map-territory", "pull-back-only", "landscape-as-subject", "whip-pan", "travel",
+  "The big one came second", "A map plate with a small pin that is overtaken by a giant disc."),
  (10, 9, "subject-portrait", "medium", "low", "muskeg-night-yard", "eye-level-immersive", "centered-hero-lowerthird", "radial-emanate", "single-organic-hero", "match-action", "match",
   "Checked, not graded", "The station on the muskeg with the slip pinned to its flank and a clock box that fills."),
  (11, 10, "wide-establish", "wide", "eye", "corkboard-dawn", "eye-level-immersive", "fullbleed-split", "horizontal-traverse", "structure-as-subject", "carried-element", "carry",
@@ -205,7 +212,7 @@ STAGE3D[4] = "flat:a locked tile board where the lit count is the motion and the
 STAGE3D[5] = "flat:a locked dial panel where the dials seating is the motion"
 STAGE3D[7] = "flat:a locked top-down pegboard where the marble drop is the motion"
 CAMERA = {1: "dollyThrough", 2: "static:the question mark rising on the clock is the whole shot", 3: "craneDown", 4: "riseWith", 5: "static:the dials seating is the whole shot", 6: "truckAcross",
-          7: "static:the marble drop and the split are the shot", 8: "dollyThrough", 9: "craneDown+truckAcross", 10: "orbitReveal", 11: "dollyThrough"}
+          7: "static:the marble drop and the split are the shot", 8: "dollyThrough", 9: "riseWith", 10: "orbitReveal", 11: "riseWith"}
 
 
 # ---- the L3 split (2026-10-16): the ladder line ran 18.8 s as one shot, over the 16 s ceiling, so the script line is now two
@@ -227,8 +234,8 @@ def _remap():
         if row[0] >= 5:
             row[1] = row[1] + 1
         ns.append(tuple(row))
-    new = (12, 4, "map-territory", "extreme-wide", "high", "grain-bin", "orbital-aerial", "stacked-layers", "pull-back-only", "multiplicity-swarm", "match-cut", "match",
-           "A bin of a thousand", "The board pulls back and up to a glass bin of a thousand grains with one grain lit and three nested drawers.")
+    new = (12, 4, "macro-closeup", "insert", "eye", "grain-bin", "macro-closeup", "single-object-void", "pull-back-only", "data-as-subject", "hard-cut", "carry",
+           "One tile, then a thousand", "A single tile filled three quarters of the way pulls back to a glass bin of a thousand grains with one grain lit.")
     i = next(k for k, r in enumerate(ns) if r[0] == 4)
     ns.insert(i + 1, new)
     for k, r in enumerate(nb):
@@ -238,12 +245,12 @@ def _remap():
     B, S = nb, ns
 
 
-AMBIENT[12] = "the grains shimmer, the lit speck breathes, the glass glints, the drawer handles swing"
+AMBIENT[12] = "the tile glints, the lit fill breathes, then the grains shimmer and the lit speck breathes"
 CENTER[12] = "the bin at x540 y930"
-HERO[12] = ("GrainBin + OddsBoard", "55% bin, 30% board on top, 15% drawers")
+HERO[12] = ("SingleTile + GrainBin", "60% tile then bin, 25% lit grain, 15% room")
 PARTS[12] = 110
 STAGE3D[12] = "planes"
-CAMERA[12] = "craneDown"
+CAMERA[12] = "riseWith"
 HERO[4] = ("OddsBoard", "70% board, 20% frame and label, 10% room")
 PARTS[4] = 70
 _remap()
@@ -284,6 +291,17 @@ def norm(s):
     return "".join(c for c in s.lower() if c.isalnum())
 
 
+def _phrase(line, anc):
+    words = LINES[line].split()
+    if isinstance(anc, tuple):
+        want, nth = anc
+        hits = [i for i, w in enumerate(words) if norm(w) == norm(want)]
+        if len(hits) >= nth:
+            i = hits[nth - 1]
+            return " ".join(words[i:i + 4])
+    return " ".join(words[:4])
+
+
 def build():
     starts, real = line_starts()
     end = starts["end"]
@@ -311,10 +329,10 @@ def build():
         beats.append({
             "id": bid, "shot": sh, "at_s": a, "vo_line": line,
             "anchor": {"vo_line": line, "fraction": anc if not isinstance(anc, tuple) else 0.0, "offset": round(a - starts[line], 3)},
-            "offset": round(a - starts[line], 3), "vo": LINES[line], "phrase": " ".join(LINES[line].split()[:4]),
+            "offset": round(a - starts[line], 3), "vo": LINES[line], "phrase": _phrase(line, anc),
             "shows": shows, "sfx": sfx, "means": ann.lower(), "rehook": rehook,
             "draw": {"subject": subj, "action": act, "emotion": emo, "annotation": ann},
-            "choreo": {"primary": shows, "reaction": reaction, "ambient": AMBIENT[sh]},
+            "choreo": {"primary": shows, "reaction": reaction, "ambient": AMBIENT[S[sh - 1][0]]},
         })
     beats.sort(key=lambda b: (b["at_s"], b["id"]))
     # keep ONE declared rehook per drift window, the first candidate in it
@@ -347,7 +365,7 @@ def build():
     def b_at(i):
         return next(b for b in beats if b["id"] == i)["at_s"]
 
-    palette = "black-spruce night, tungsten lamp, chalk paper, brass, alarm red once per frame, snow-blue dawn"
+    palette = "midnight teal, tungsten amber, chalk white, brass, one alarm vermilion, pre-dawn blue"
     board = {
         "run_date": "2026-10-16", "slug": "the-forecast-that-shows-its-work", "title": "The Forecast That Shows Its Work",
         "concept": ("USGS posted odds for aftershocks twelve hours after the October 15th M5.6 near Lake Minchumina. The film makes the odds physical (a hundred tiles, a bin of a thousand grains), "
@@ -355,7 +373,7 @@ def build():
                     "and ends on what any forecast, human or machine, should show. A thermal slip printed by a seismic station is the throughline and the verdict stays pending."),
         "derived_from": "scratch", "engine": "infographic-2.5d", "total_seconds": round(end, 2),
         "fingerprint": {"pov": "eye-level-immersive", "motion_vector": "push-in-only", "hero_treatment": "instrument-as-subject", "layout": "centered-hero-lowerthird",
-                        "register": "naturalistic-scene", "palette": palette, "camera_strategy": "dolly-through", "light_story": "3 a.m. tungsten night warming to snow-blue dawn as the slip fills",
+                        "register": "naturalistic-scene", "palette": palette, "camera_strategy": "rise-reveal", "light_story": "3 a.m. tungsten night warming to snow-blue dawn as the slip fills",
                         "metaphor": "a receipt printed by the ground itself"},
         "palette": palette,
         "divergence_note": ("10-15 was pearl fog daylight with a cranberry Gate and 10-11 first-light rose tundra with a medicine crate. This film opens in a black-spruce night under one tungsten lamp "
@@ -367,17 +385,18 @@ def build():
         "hook": {"pattern": "anomaly-question", "frame1": "A brass seismic station on black muskeg shudders at 3:07 under one tungsten lamp, its pen lashing a zigzag.",
                  "headline": "THE FORECAST THAT SHOWS ITS WORK", "motion_by_s": 0.4,
                  "loopback": "The last frame is the station with a blank slip starting to curl out of its flank, the open replaying."},
-        "open_loop": {"plant_t": b_at(8), "pay_t": b_at(30), "what": "What is under the tape marked READ LAST. Paid as the forecast's own printed weak spot."},
-        "open_loop_2": {"plant_t": b_at(21), "pay_t": b_at(36), "what": "What the blank clock box on the slip is for. Paid as the time of the next update."},
+        "open_loop": {"plant_t": b_at(8), "pay_t": b_at(36), "what": "What the blank clock box with a question mark on the slip is for. Paid as the time of the next update printed on every forecast."},
+        "open_loop_2": {"plant_t": b_at(20), "pay_t": b_at(29), "what": "What is under the tape marked READ LAST on the fresh slip. Paid as the forecast's own printed weak spot."},
         "throughline": {"object": "the thermal Slip", "lands_in_button": "the slip pinned on a corkboard beside blank slips for flood, fire, weather and any tool",
                         "states": [
                             {"at_s": b_at(3), "state": "blank warm slip curling out of the station"},
-                            {"at_s": b_at(9), "state": "ODDS printed, last line taped READ LAST, clock box blank"},
+                            {"at_s": b_at(9), "state": "ODDS printed, clock box at the foot blank with a question mark"},
                             {"at_s": b_at(23), "state": "range bracket 0 to 5 and a count of 1 stamped"},
                             {"at_s": b_at(29), "state": "tape peeled, the rust weak spot printed"},
                             {"at_s": b_at(36), "state": "clock box filled, NEXT UPDATE tab"},
                             {"at_s": b_at(39), "state": "pinned on the corkboard beside blank slips"}]},
         "reveals": [
+            {"t": b_at(4), "type": "build-on", "what": "the truck along the slip arrives at a cork wall and 103 felt-report slips build on one by one", "hold_s": 0.6},
             {"t": b_at(16), "type": "scale-pullback", "what": "the tile board pulls back to a glass bin of a thousand grains with one grain lit", "hold_s": 0.6},
             {"t": b_at(21), "type": "build-on", "what": "a dashed bracket opens over six slots and a token drops in", "hold_s": 0.6},
             {"t": b_at(34), "type": "scale-pullback", "what": "a giant M9.1 disc fills the map and the first pin becomes a speck", "hold_s": 0.7}],

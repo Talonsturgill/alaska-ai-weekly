@@ -161,6 +161,26 @@ const DarkRoom: React.FC<{f: number; lampX?: number; lampY?: number; floor?: num
     <rect data-band="ok" x={-40} y={floor} width={1160} height={14} fill={OD.deskHi} opacity={0.7} />
     {Array.from({length: 7}, (_, i) => <rect key={i} data-band="ok" x={-40} y={floor + 60 + i * 110} width={1160} height={4} fill="#000" opacity={0.18} />)}
     <circle cx={lampX} cy={lampY} r={560 * (1 + 0.02 * Math.sin(f / 21))} fill="url(#dr-lamp)" />
+    {/* the practical: a pendant lamp that motivates the pool, swinging a hair */}
+    <g transform={`translate(${lampX} 0) rotate(${1.2 * Math.sin(f / 37)} 0 0)`}>
+      <line x1={0} y1={-20} x2={0} y2={170} stroke={INK} strokeWidth={6} />
+      <path d="M -92 270 Q -80 190 0 176 Q 80 190 92 270 Z" fill={OD.brass} stroke={INK} strokeWidth={7} />
+      <path d="M -70 262 Q -60 208 -4 190" fill="none" stroke={OD.brassHi} strokeWidth={6} opacity={0.7} />
+      <ellipse cx={0} cy={272} rx={92} ry={14} fill={OD.tungstenHi} stroke={INK} strokeWidth={5} />
+    </g>
+    {/* near plane on the desk: a mug with steam and a pen cup, so the lower third has a front row */}
+    <g transform={`translate(150 ${floor + 380})`}>
+      <ContactShadow cx={0} cy={86} rx={96} ry={14} opacity={0.5} />
+      <path d="M -70 -60 L -62 80 Q 0 100 62 80 L 70 -60 Z" fill="#7E8C82" stroke={INK} strokeWidth={7} />
+      <ellipse cx={0} cy={-60} rx={70} ry={16} fill="#2A1A12" stroke={INK} strokeWidth={6} />
+      <path d="M 68 -30 q 52 0 46 44 q -6 34 -50 28" fill="none" stroke={INK} strokeWidth={11} />
+      {[0, 1, 2].map((i) => <path key={i} d={`M ${-24 + i * 24} -86 q ${10 * Math.sin(f / 9 + i)} -40 0 -80`} fill="none" stroke={OD.chalk} strokeWidth={5} opacity={0.3} strokeLinecap="round" />)}
+    </g>
+    <g transform={`translate(${940} ${floor + 360})`}>
+      <ContactShadow cx={0} cy={100} rx={80} ry={12} opacity={0.5} />
+      <rect x={-48} y={-70} width={96} height={170} rx={10} fill={OD.brass} stroke={INK} strokeWidth={7} />
+      {[-24, 0, 24].map((x, i) => <line key={i} x1={x} y1={-70} x2={x + (i - 1) * 16} y2={-170 - i * 18} stroke={i === 1 ? OD.alarm : OD.chalk} strokeWidth={10} strokeLinecap="round" />)}
+    </g>
     {Array.from({length: 18}, (_, i) => {
       const px = ((rnd(i + 3) * 1200 + f * (0.6 + rnd(i) * 1.2)) % 1200) - 60;
       return <circle key={i} cx={px} cy={200 + rnd(i + 11) * 1100 + 12 * Math.sin(f / 30 + i)} r={1.5 + rnd(i + 5) * 2} fill={OD.tungstenHi} opacity={0.2 + 0.25 * rnd(i + 8)} />;
@@ -172,7 +192,7 @@ const DarkRoom: React.FC<{f: number; lampX?: number; lampY?: number; floor?: num
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t1 = b(1), t2 = b(2), t3 = b(3), t4 = b(4), t5 = b(5);
+  const t1 = b(1), t2 = b(2), t3 = b(3), t4 = b(4), t5 = b(4) + 26;
   const shake = f < t2 + 10 ? clamp01(1 - f / (t2 + 10)) * (f > 0 ? 1 : 0.5) : 0;
   const pan = easeIO(f, t4 - 14, 34);
   const out = ease(f, t3, 46);
@@ -182,9 +202,10 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1100}
       overlay={<>
-        <Plate text="3:07 A.M." x={300} y={560} size={40} tone="rust" p={ease(f, t1 + 2, 8) * (f < t2 + 40 ? 1 : 0)} />
+        <Plate text="THE FORECAST THAT SHOWS ITS WORK" x={540} y={500} size={26} tone="paper" p={ease(f, t1 + 6, 10) * (f < t4 - 20 ? 1 : 0)} />
+        <Plate text="JUST PAST 3 A.M." x={400} y={600} size={36} tone="rust" p={ease(f, t1 + 2, 8) * (f < t2 + 40 ? 1 : 0)} />
         <Plate text="M5.6 · 43 KM NNW OF LAKE MINCHUMINA · OCT 15TH" displayLines={['M5.6 · 43 KM NNW OF', 'LAKE MINCHUMINA · OCT 15TH']} y={700} size={30} tone="ink" p={chipIn * (f < t4 - 6 ? 1 : 0)} />
-        <Plate text="103 FELT REPORTS · USGS" y={620} size={36} tone="ink" p={ease(f, t5, 8)} />
+        <Plate text="103 FELT REPORTS · USGS" y={820} size={36} tone="ink" p={ease(f, t5, 8)} />
       </>}>
       <SVG>
         <g transform={`translate(${-1200 * pan} 0)`}>
@@ -216,13 +237,12 @@ const S2: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} oy={960}
       overlay={<>
-        <Plate text="WHEN?" y={600} size={56} tone="ink" p={ease(f, t6 + 4, 8) * (f < t7 ? 1 : 0)} />
-        <Plate text="THE NEXT ONE" y={600} size={44} tone="ink" p={ease(f, t7 + 4, 8)} />
+        <Plate text="WHEN?" y={540} size={56} tone="ink" p={ease(f, t6 + 4, 8) * (f < t7 ? 1 : 0)} />
+        <Plate text="THE NEXT ONE" y={660} size={44} tone="ink" p={ease(f, t7 + 4, 8)} />
       </>}>
       <SVG>
         <DarkRoom f={g} lampX={560} lampY={900} />
         <g opacity={appear}><ClockFace x={540} y={960} f={g} scale={1.55} hands={false} dark qmark={q} /></g>
-        <Slip x={170} y={760} f={g} scale={0.55} out={1} lines={[]} rot={-6} header="" />
       </SVG>
     </Frame>
   );
@@ -232,7 +252,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
 const S3: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t8 = b(8), t9 = b(9), t10 = b(10), t11 = b(11);
+  const t8 = b(8), t9 = b(9), t10 = b(10), t11 = b(11), t41 = b(41);
+  const tap = Math.max(0, 1 - Math.abs(f - (t41 + 5)) / 6);
   const slide = easeIO(f, t8, 22);
   const print = clamp01((f - t9) / 12);
   const whip = spring(f, t10, 30);
@@ -241,14 +262,14 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.04} z1={1.0} oy={900}
       overlay={<>
-        <Plate text={ann} displayLines={ann.length > 34 ? ['M5+ OUTSIDE THE LOWER 48', 'FORECAST POSTED'] : undefined} y={1130} size={30} tone={f < t9 ? 'navy' : 'ink'} p={ease(f, t8 + 6, 8)} />
+        <Plate text={f < t9 ? 'U S GEOLOGICAL SURVEY' : f < t10 ? 'ODDS, NOT A TIME' : f < t11 ? 'FORECAST ISSUED 12 HOURS LATER' : 'M5+ OUTSIDE THE LOWER 48 · FORECAST POSTED'} displayLines={ann.length > 34 ? ['M5+ OUTSIDE THE LOWER 48', 'FORECAST POSTED'] : undefined} y={1130} size={30} tone={f < t9 ? 'navy' : 'ink'} p={ease(f, t8 + 6, 8)} />
       </>}>
       <SVG>
         <DarkRoom f={g} lampX={400} lampY={760} />
         <Slip x={lerp(-260, 360, slide)} y={540} f={g} scale={1.05} out={1} header="U S GEOLOGICAL SURVEY" lines={[{text: 'ODDS', p: print}]}
-          tape={ease(f, t8 + 8, 10)} tapeLine="MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE" stamp={{text: '12 HOURS LATER', k: ease(f, t10 + 14, 6), tone: 'ink'}} />
+          boxShown box={0} stamp={{text: '12 HOURS LATER', k: ease(f, t10 + 14, 6), tone: 'ink'}} />
         <ClockFace x={820} y={760} f={g} scale={0.72} hands h={h} m={m} tone="warm" />
-        <g transform={`translate(${lerp(1200, 560, easeIO(f, t8 + 6, 24))} ${1030 + 12 * Math.sin(g / 9)}) rotate(${-8 + 10 * (f > t10 ? 0 : 1)})`} opacity={f < t10 ? 1 : 0}>
+        <g transform={`translate(${lerp(1200, 560, easeIO(f, t8 + 6, 24))} ${1030 + 12 * Math.sin(g / 9) - 70 * tap}) rotate(${-8 + 10 * (f > t10 ? 0 : 1)})`} opacity={f < t10 ? 1 : 0}>
           <rect x={-60} y={-100} width={120} height={90} rx={10} fill={OD.brass} stroke={INK} strokeWidth={6} />
           <rect x={-18} y={-10} width={36} height={60} rx={6} fill={OD.deskHi} stroke={INK} strokeWidth={5} />
         </g>
@@ -261,7 +282,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
 const S4: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t12 = b(12), t13 = b(13), t14 = b(14);
+  const t12 = b(12), t13 = b(13), t14 = b(14), t42 = b(42);
+  const flash = Math.max(0, 1 - Math.abs(f - (t42 + 3)) / 8);
   const rise = ease(f, t12, 26);
   let lit = 40 * easeIO(f, t13, 40);
   if (f >= t14) lit = lerp(40, 7, easeIO(f, t14, 22));
@@ -269,44 +291,44 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={900} bloom={0.08}
       overlay={<>
-        <Plate text={ann} y={1255} size={30} tone="ink" p={ease(f, t13, 8)} />
+        <Plate text={f < t14 ? 'ABOUT 40 IN 100' : 'M4+ · ABOUT 7 IN 100'} y={1255} size={30} tone="ink" p={ease(f, t13, 8)} />
       </>}>
       <SVG>
         <DarkRoom f={g} lampX={540} lampY={860} />
-        <TileBoard x={540} y={860} f={g} scale={0.92} lit={lit} rise={rise} label="A WEEK OUT · M3+" />
+        <TileBoard x={540} y={860} f={g} scale={0.92} lit={lit} rise={rise} flash={flash} label="A WEEK OUT · M3+" />
+        <Slip x={110} y={1090} f={g} scale={0.5} out={ease(f, t12, 20)} header="" rot={-4}
+          lines={[{text: '40 IN 100', p: clamp01((f - t13) / 10), small: false}, {text: '7 IN 100', p: clamp01((f - t14) / 10), small: false}]} />
       </SVG>
     </Frame>
   );
 };
 
-// ---- S12: the sliver, then a bin of a thousand grains (beats 15 to 17) --------------------------------------------------------------
+// ---- S12: one tile three quarters full, then a bin of a thousand grains (beats 15 and 16) ---------------------------------------
 const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t15 = b(15), t16 = b(16), t17 = b(17);
-  const lit = 7 + 0.76 * ease(f, t15, 12);
-  const pull = easeIO(f, t16, 46);
-  const ann = f < t16 ? 'M5+ · UNDER 1 IN 100' : f < t17 ? 'M6+ · UNDER 1 IN 1,000' : 'ONE DAY 23 IN 100 · ONE YEAR 58 IN 100 · M3+';
-  const draw = ease(f, t17, 16);
+  const t15 = b(15), t16 = b(16);
+  const fill = 0.76 * ease(f, t15, 14);
+  const pull = easeIO(f, t16, 50);
+  const ann = f < t16 ? 'M5+ · UNDER 1 IN 100' : 'M6+ · UNDER 1 IN 1,000';
+  const big = lerp(1, 0.05, pull);
   return (
-    <Frame p={p} z0={1.05} z1={1.0} oy={900} bloom={0.08}
+    <Frame p={p} z0={1.0} z1={1.05} oy={900} bloom={0.08}
       overlay={<>
-        <Plate text={ann} displayLines={ann.length > 36 ? ['ONE DAY 23 IN 100 ·', 'ONE YEAR 58 IN 100 · M3+'] : undefined} y={1255} size={30} tone="ink" p={ease(f, t15, 8)} />
+        <Plate text={f < t16 ? 'M5+ · UNDER 1 IN 100' : 'M6+ · UNDER 1 IN 1,000'} y={1255} size={30} tone="ink" p={ease(f, t15, 8)} />
       </>}>
       <SVG>
         <DarkRoom f={g} lampX={540} lampY={860} />
-        <g opacity={1 - pull}>
-          <TileBoard x={540} y={860} f={g} scale={0.92} lit={lit} rise={1} label="A WEEK OUT · M3+" />
-        </g>
         <g opacity={pull}>
-          <GrainBin x={540} y={930} f={g} scale={lerp(0.2, 1.0, pull)} glow={1} />
-          <TileBoard x={540} y={lerp(860, 640, pull)} f={g} scale={lerp(0.92, 0.5, pull)} lit={7} frame={false} rise={1} />
+          <GrainBin x={540} y={930} f={g} scale={lerp(0.3, 1.0, pull)} glow={1} />
         </g>
-        {draw > 0.01 && [0, 1, 2].map((i) => (
-          <g key={i} transform={`translate(${540 + (i - 1) * 140} ${1090 - 14 * i}) scale(${draw})`} opacity={draw}>
-            <rect x={-220 + i * 20} y={-30} width={440 - i * 40} height={60} rx={8} fill="none" stroke={OD.lit} strokeWidth={4} strokeDasharray="10 8" />
-          </g>
-        ))}
+        <g transform={`translate(${lerp(540, 480, pull)} ${lerp(880, 1162, pull)}) scale(${big})`}>
+          <ContactShadow cx={0} cy={250} rx={240} ry={20} opacity={0.5} />
+          <rect x={-210} y={-210} width={420} height={420} rx={46} fill={OD.tile} stroke={INK} strokeWidth={14} />
+          <rect x={-190} y={-190} width={380} height={30} rx={14} fill="#fff" opacity={0.08} />
+          <rect x={-196} y={196 - 392 * fill} width={392} height={392 * fill} rx={38} fill={OD.lit} stroke={INK} strokeWidth={8} />
+          <rect x={-170} y={196 - 392 * fill + 14} width={340} height={20} rx={10} fill={OD.litHi} opacity={0.6 + 0.2 * Math.sin(g / 8)} />
+        </g>
       </SVG>
     </Frame>
   );
@@ -325,8 +347,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={900}
       overlay={<>
-        <Plate text={f < t19 ? 'REASENBERG AND JONES · 1989 · FOUR DIALS: a b c p' : f < t20 ? 'PAST SEQUENCES' : 'BENDS TOWARD THIS ONE'}
-          displayLines={f < t19 ? ['REASENBERG AND JONES · 1989', 'FOUR DIALS: a b c p'] : undefined} y={1240} size={30} tone="ink" p={ease(f, t18 + 6, 8)} />
+        <Plate text={f < t19 ? 'REASENBERG AND JONES · 1989 · FOUR DIALS a b c p' : f < t20 ? 'PAST SEQUENCES' : 'BENDS TOWARD THIS ONE'}
+          displayLines={f < t19 ? ['REASENBERG AND JONES · 1989', 'FOUR DIALS a b c p'] : undefined} y={1240} size={30} tone="ink" p={ease(f, t18 + 6, 8)} />
       </>}>
       <SVG>
         <DarkRoom f={g} lampX={540} lampY={860} />
@@ -335,7 +357,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           const k = clamp01(feedK * 3.4 - i * 0.9);
           return <Ledger key={i} x={lerp(-160, 540, easeIO(k, 0, 1))} y={1090 - 40 * k} rot={-10 + 20 * k} scale={0.85 * (1 - 0.35 * k)} tone="past" label="PAST" />;
         })}
-        <Ledger x={lerp(1240, 640, nowK)} y={1090 - 30 * nowK} rot={8 - 12 * nowK} scale={0.9 * (1 - 0.3 * nowK)} tone="now" label="THIS ONE" />
+        <Slip x={lerp(1240, 700, nowK)} y={lerp(1000, 940, nowK)} f={g} scale={0.46} out={1} lines={[{text: 'ODDS', p: 1}]} tape={ease(f, t20 + 14, 10)} tapeLine="MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE" rot={6 - 8 * nowK} />
       </SVG>
     </Frame>
   );
@@ -353,12 +375,12 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={900}
       overlay={<>
-        <Plate text={ann} y={1180} size={30} tone="ink" p={ease(f, t21 + 4, 8)} />
+        <Plate text={f < t22 ? 'A RANGE, NOT A NUMBER' : f < t23 ? '0 TO 5 AFTERSHOCKS THIS WEEK' : 'COUNTED SO FAR · 1 AFTERSHOCK M3+'} y={1180} size={30} tone="ink" p={ease(f, t21 + 4, 8)} />
       </>}>
       <SVG>
         <DarkRoom f={g} lampX={540} lampY={820} />
         <RangeSlots x={540} y={800} f={g} scale={0.98} open={open} label={label} drop={drop} count={drop > 0.9 ? 1 : 0} />
-        <Slip x={150} y={1020} f={g} scale={0.46} out={1} lines={[{text: 'ODDS', p: 1}]} boxShown box={0} rot={-4} header="" />
+        <Slip x={150} y={1020} f={g} scale={0.46} out={1} lines={[{text: 'ODDS', p: 1}]} boxShown box={0} tape={1} tapeLine="MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE" rot={-4} header="" />
       </SVG>
     </Frame>
   );
@@ -377,14 +399,14 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.04} oy={900}
       overlay={<>
-        <Plate text={ann} displayLines={ann.length > 30 ? ['FORTY IN A HUNDRED', 'NOT WRONG EITHER WAY'] : undefined} y={f < t26 ? 540 : 1210} size={34} tone={f < t25 ? 'ink' : 'navy'} p={ease(f, t24 + 6, 8)} />
+        <Plate text={f < t25 ? 'WORTH TRUSTING?' : f < t26 ? 'ONE QUAKE' : f < t27 ? 'FORTY IN A HUNDRED · NOT WRONG EITHER WAY' : 'A LONG RUN OF FORECASTS'} displayLines={ann.length > 30 ? ['FORTY IN A HUNDRED', 'NOT WRONG EITHER WAY'] : undefined} y={f < t26 ? 540 : 1210} size={34} tone={f < t25 ? 'ink' : 'navy'} p={ease(f, t24 + 6, 8)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#0B1E25" />
         <rect data-band="ok" x={-40} y={440} width={1160} height={900} fill="#10303A" />
         <g opacity={1 - split}>
           <Pegboard x={540} y={720} f={g} scale={0.66} k={drop} seed={5} />
-          <Slip x={170} y={760} f={g} scale={0.55} out={1} lines={[{text: 'ODDS', p: 1}]} rot={-6} header="" />
+          <Slip x={170} y={760} f={g} scale={0.55} out={1} lines={[{text: 'ODDS', p: 1}]} tape={1} tapeLine="MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE" rot={-6} header="" />
           <g opacity={q}><text x={170} y={1010} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={140} fill={OD.tungsten} stroke={INK} strokeWidth={5} paintOrder="stroke">?</text></g>
         </g>
         <g opacity={split * (1 - cal)}>
@@ -425,8 +447,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <DarkRoom f={g} lampX={540} lampY={620} />
         <Slip x={540} y={470} f={g} scale={1.38} out={1} header="U S GEOLOGICAL SURVEY" lines={[{text: 'ODDS', p: 1}, {text: 'RANGE 0 TO 5', p: 1}]} tape={1 - peel * 0.0} peel={peel} tapeLine="MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE" />
         <g opacity={ease(f, t30 - 6, 10)}>
-          <DialPanel x={540} y={1060} f={g} scale={0.34} seat={1} sync={sync} wobble={1 - sync} on={1} />
-          <Dominoes x={540} y={1160} k={dom} scale={0.8} />
+          <DialPanel x={540} y={1090} f={g} scale={0.46} seat={1} sync={sync} wobble={1 - sync} on={1} />
         </g>
       </SVG>
     </Frame>
@@ -444,7 +465,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={() => lerp(1.12, 0.9, easeIO(f, t34 - 4, 56))} oy={900}
       overlay={<>
-        <Plate text={ann} displayLines={ann.length > 34 ? ['2011 JAPAN · M7.3', 'TWO DAYS LATER · M9.1'] : undefined} y={f < t32 ? 560 : 1210} size={30} tone={f < t32 ? 'ink' : 'navy'} p={ease(f, t31 + 4, 8)} />
+        <Plate text={f < t32 ? 'CONTEXT, NOT AN ALASKA CLAIM' : f < t34 ? '2011 JAPAN · M7.3 · TWO DAYS LATER' : '2011 JAPAN · M7.3 · TWO DAYS LATER · M9.1'} displayLines={ann.length > 34 ? ['2011 JAPAN · M7.3', 'TWO DAYS LATER · M9.1'] : undefined} y={f < t32 ? 560 : 1210} size={30} tone={f < t32 ? 'ink' : 'navy'} p={ease(f, t31 + 4, 8)} />
         <Plate text="ILLUSTRATIVE SIZE · NOT TO SCALE" y={1130} size={24} tone="panel" p={ease(f, t34 + 20, 8)} />
       </>}>
       <SVG>
@@ -459,7 +480,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t35 = b(35), t36 = b(36), t37 = b(37);
+  const t35 = b(35), t36 = b(36), t37 = b(37), t43 = b(43);
+  const tk = ease(f, t43, 16);
   const box = ease(f, t36, 26);
   const tab = ease(f, t36 + 10, 16);
   const pend = ease(f, t37, 8);
@@ -467,12 +489,13 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1000}
       overlay={<>
-        <Plate text={ann} displayLines={ann.length > 32 ? ['NEXT UPDATE TIME', 'PRINTED ON EVERY FORECAST'] : undefined} y={1130} size={30} tone="ink" p={ease(f, t35 + 4, 8)} />
+        <Plate text={f < t36 ? 'CAN BE CHECKED · NOT YET GRADED' : f < t37 ? 'NEXT UPDATE TIME PRINTED ON EVERY FORECAST' : 'VERDICT PENDING'} displayLines={ann.length > 32 ? ['NEXT UPDATE TIME', 'PRINTED ON EVERY FORECAST'] : undefined} y={1130} size={30} tone="ink" p={ease(f, t35 + 4, 8)} />
       </>}>
       <SVG>
         <Night f={g} dawn={0.2} lamp={{x: 340, y: 980}} />
         <SeismicStation x={330} y={1190} f={g} scale={1.6} emotion={f < t37 ? 'listening' : 'listening'} lamp={0} heading={f < t37 ? -24 : -8 + 6 * Math.sin(f / 30)} groundY={0} tint="#7E8C82" />
         <Slip x={730} y={520} f={g} scale={1.0} out={1} header="U S GEOLOGICAL SURVEY" lines={[{text: 'ODDS', p: 1}, {text: 'RANGE 0 TO 5', p: 1}]} boxShown box={box} tab={tab} stamp={{text: 'PENDING', k: pend, tone: 'rust'}} />
+        <path d="M 640 700 L 700 770 L 840 600" fill="none" stroke={OD.lit} strokeWidth={22} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={420} strokeDashoffset={420 * (1 - tk)} opacity={tk > 0 ? 0.95 : 0} />
       </SVG>
     </Frame>
   );
@@ -490,7 +513,7 @@ const TickRow: React.FC<{y: number; label: string; k: number}> = ({y, label, k})
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t38 = b(38), t39 = b(39), t40 = b(40);
+  const t38 = b(38), t39 = b(39), t40 = b(40), t44 = b(44);
   const pull = easeIO(f, t39, 40);
   const dawn = ease(f, t39, 80);
   const lampK = ease(f, t40, 14);
@@ -516,7 +539,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <TickRow y={222} label="A NEXT CHECK" k={clamp01((f - t38 - 42) / 12)} />
         </g>
         {names.map((n, i) => (
-          <Slip key={n} x={640 + (i % 2) * 190} y={810 + Math.floor(i / 2) * 170} f={g + i * 7} scale={0.4} out={ease(f, t39 + i * 5, 14)} header={n} lines={[]} rot={-5 + i * 3} />
+          <Slip key={n} x={640 + (i % 2) * 190} y={810 + Math.floor(i / 2) * 170 - 34 * Math.max(0, 1 - Math.abs(f - (t44 + 6 + i * 7)) / 8)} f={g + i * 7} scale={0.4} out={ease(f, t39 + i * 5, 14)} header={n} lines={[]} rot={-5 + i * 3} />
         ))}
         {/* the station keeps the open: its lamp lights and a blank slip curls out */}
         <g transform="translate(150 1290)">
@@ -539,7 +562,7 @@ const Rough: React.FC<{n: number; title: string; p: SP}> = ({n, title, p}) => (
 );
 const TITLES: Record<number, string> = {1: 'STATION', 2: 'CLOCK', 3: 'ODDS', 4: 'TILES', 12: 'BIN', 5: 'DIALS', 6: 'RANGE', 7: 'ONE DRAW', 8: 'TAPE', 9: 'JAPAN', 10: 'CHECKED', 11: 'ASK'};
 const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 12: S12, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11};
-const SHOT_ORDER = [1, 2, 3, 4, 12, 5, 6, 7, 9, 8, 10, 11];
+const SHOT_ORDER = [1, 2, 3, 4, 12, 5, 6, 7, 8, 9, 10, 11];
 
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
   const f = useCurrentFrame();

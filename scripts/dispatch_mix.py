@@ -472,7 +472,7 @@ def _fit_silence_dip(lines, after_frac=0.5):
 # Episode-local: fit the breath ONLY in the real gap before line15's final question.
 # The shared helper and its minimum/margins remain unchanged. If the natural take
 # has no usable final gap, warn rather than invent a pause or attenuate spoken words.
-_BUTTON_LINE = 12
+_BUTTON_LINE = max(L) if L else 12  # the button is the last narration line (was hand-set per run)
 SILENCE_DIP_AT, DIP_LEN = _fit_silence_dip(
     _lines, after_frac=(L[_BUTTON_LINE] - 0.000001) / max(x["end"] for x in _lines))
 if SILENCE_DIP_AT is None:

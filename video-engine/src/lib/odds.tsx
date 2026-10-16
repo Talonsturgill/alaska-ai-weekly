@@ -115,9 +115,9 @@ export const Slip: React.FC<{
           </g>
         )}
         {tape > 0.01 && (
-          <g transform={`translate(0 ${96 + lines.length * lineGap - 26}) rotate(${-peel * 38} ${-W / 2} 0)`} opacity={tape}>
-            <rect x={-W / 2 - 6 + peel * 120} y={-6} width={W + 12 - peel * 120} height={58} fill="#CBB892" stroke={INK} strokeWidth={3.5} />
-            <text x={peel * 60} y={34} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={3} fill={OD.alarmDeep}>READ LAST</text>
+          <g transform={`translate(${peel * 150} ${96 + lines.length * lineGap - 26 + peel * 150}) rotate(${peel * 32} ${W / 2} 0)`} opacity={tape * (1 - Math.max(0, peel - 0.55) * 2.2)}>
+            <rect x={-W / 2 - 6} y={-6} width={W + 12} height={58} fill="#CBB892" stroke={INK} strokeWidth={3.5} />
+            <text x={0} y={34} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={3} fill={OD.alarmDeep}>READ LAST</text>
           </g>
         )}
         {boxShown && (
