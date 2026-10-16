@@ -1,0 +1,258 @@
+{
+ "run_date": "2026-10-16",
+ "fact_check_verdict": "Publish as an explainer of a USGS statistical forecast pegged to the October 15th Lake Minchumina M5.6. Every figure is read from USGS primary JSON/pages fetched October 16th. NO claim that the model is or is not AI/ML beyond 'a published equation'. NO claim about damage, felt extent, Alaska Earthquake Center, ShakeAlert in Alaska, or any Alaska AI deployment (all unverified, dropped). The AI point is the film's OUR READ, labelled as opinion.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "A magnitude five point six earthquake hit near Lake Minchumina before dawn on October fifteenth.",
+   "on_screen": "M5.6 \u00b7 43 KM NNW OF LAKE MINCHUMINA \u00b7 OCTOBER 15TH",
+   "source": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=aka2026ukynnb&format=geojson",
+   "requires": [
+    "USGS event aka2026ukynnb, origin 11:07 UTC (3:07 a.m. Alaska time). No damage, felt-extent or injury claim: none was verified."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "a hundred and three people file felt reports",
+   "on_screen": "103 FELT REPORTS \u00b7 USGS",
+   "source": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=aka2026ukynnb&format=geojson",
+   "requires": [
+    "Count as fetched October 16th and may rise. Say 'filed felt reports', never 'felt as far as' any town."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "The U S G S posted odds for it, because it posts them for any quake of magnitude five or bigger outside the lower forty-eight.",
+   "on_screen": "M5+ OUTSIDE THE LOWER 48 \u00b7 FORECAST POSTED",
+   "source": "https://earthquake.usgs.gov/data/oaf/overview.php",
+   "requires": [
+    "Overview text: 'Forecasts are posted for earthquakes of M4+ in the contiguous United States and M5+ in other U.S. states and territories.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The forecast came out twelve hours after the shaking.",
+   "on_screen": "FORECAST ISSUED 12 HOURS LATER",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "creationTime 2026-10-15 23:07 UTC vs origin 11:07 UTC, which is 3:07 p.m. Alaska time. Say 'twelve hours later', never 'that evening' or 'that morning'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "One week out, the chance of another quake of magnitude three or bigger was about forty in a hundred.",
+   "on_screen": "M3+ \u00b7 ONE WEEK \u00b7 ABOUT 40 IN 100",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "Probability 0.3988. A probability, not a prediction."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "For magnitude four or bigger, about seven in a hundred.",
+   "on_screen": "M4+ \u00b7 ABOUT 7 IN 100",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "Probability 0.06993 for one week."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "For magnitude five or bigger, less than one in a hundred.",
+   "on_screen": "M5+ \u00b7 UNDER 1 IN 100",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "Probability 0.007636 for one week."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "And for magnitude six, under one in a thousand.",
+   "on_screen": "M6+ \u00b7 UNDER 1 IN 1,000",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "Probability 0.0007708 for one week."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "For magnitude three or bigger, one year is fifty-eight in a hundred.",
+   "on_screen": "ONE DAY 23 IN 100 \u00b7 ONE YEAR 58 IN 100 \u00b7 M3+",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "Probabilities 0.2295 and 0.5782."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "Longer windows get bigger odds, because each window contains the one before it.",
+   "on_screen": "EACH WINDOW CONTAINS THE ONE BEFORE",
+   "source": "https://earthquake.usgs.gov/data/oaf/overview.php",
+   "requires": [
+    "Overview: 'each time interval contains the one before (e.g. a one-year forecast includes the first day, first week, and first month) plus additional time.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "It's a published equation with four dials, named a, b, c and p, from a paper by Reasenberg and Jones.",
+   "on_screen": "REASENBERG AND JONES \u00b7 1989 \u00b7 FOUR DIALS a b c p",
+   "source": "https://earthquake.usgs.gov/data/oaf/background.php",
+   "requires": [
+    "Background: 'We use the statistical model of aftershock rate developed by Reasenberg and Jones (1989, 1994)' and 'a, b, c, and p are model parameters'. Do not call it AI, machine learning or a neural net, and do not state that USGS says it doesn't use ML."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "It starts from how past aftershock sequences behaved, then bends toward this one as the quake keeps going.",
+   "on_screen": "STARTS FROM PAST SEQUENCES \u00b7 BENDS TO THIS ONE",
+   "source": "https://earthquake.usgs.gov/data/oaf/overview.php",
+   "requires": [
+    "Overview: 'We use the behavior of past aftershock sequences to forecast the likelihood of future aftershocks. As an aftershock sequence progresses, our forecast also incorporates information about the behavior of that specific sequence.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "one aftershock of magnitude three or bigger had been counted",
+   "on_screen": "COUNTED SO FAR \u00b7 1 AFTERSHOCK M3+",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "forecast.json observations: M3 count 1, M4 to M7 count 0, at forecast creation."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "Zero to five aftershocks this week",
+   "on_screen": "95% RANGE \u00b7 M3+ THIS WEEK \u00b7 0 TO 5",
+   "source": "https://earthquake.usgs.gov/product/oaf/aka2026ukynnb/us/1792106224027/forecast.json",
+   "requires": [
+    "p95minimum 0, p95maximum 5 for the one week M3 bin. Number of aftershocks, a 95 percent range."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "And it says where it breaks. It may perform poorly when big aftershocks set off their own aftershocks.",
+   "on_screen": "ITS OWN LIMIT \u00b7 MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE",
+   "source": "https://earthquake.usgs.gov/data/oaf/background.php",
+   "requires": [
+    "Background: 'It works well for mainshocks followed only by smaller aftershocks, but may perform poorly for sequences with large aftershocks that trigger many of their own aftershocks.' Attribute to USGS."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "Forecasts are updated regularly, and each one carries the time of the next update.",
+   "on_screen": "NEXT UPDATE TIME PRINTED ON EVERY FORECAST",
+   "source": "https://earthquake.usgs.gov/data/oaf/overview.php",
+   "requires": [
+    "Overview: 'The time that the current forecast was released, and the planned time of the next forecast update, are included in each forecast.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "The odds are no idle number, because sometimes the big one comes second. In 2011, a magnitude seven point three quake in Japan came two days before a nine point one.",
+   "on_screen": "2011 JAPAN \u00b7 M7.3 \u00b7 TWO DAYS LATER \u00b7 M9.1",
+   "source": "https://earthquake.usgs.gov/data/oaf/overview.php",
+   "requires": [
+    "Overview: 'the 2011 M9.1 Japan earthquake and tsunami was preceded by a M7.3 foreshock two days before.' Context only, not an Alaska claim."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "The generic version is honest about being unsure, and says its uncertainty is large.",
+   "on_screen": "GENERIC FORECASTS HAVE LARGE UNCERTAINTY",
+   "source": "https://earthquake.usgs.gov/data/oaf/background.php",
+   "requires": [
+    "Background: 'the generic aftershock forecasts also tend to have large uncertainty.' Note this forecast is the Bayesian combination of generic and sequence-specific parameters."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

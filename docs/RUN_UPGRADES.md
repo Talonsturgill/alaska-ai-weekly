@@ -3857,3 +3857,9 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - Shipped: board conform refuses beats anchored to a word the voice no longer says (board_anchor.py), the mix receipt hashes what the mix hears so a prose-only board edit no longer forces a re-cut, caption_render_check names caption_split_after, Gate B round ledger with the rubric's max_revision_cycles of 5 enforced (caption_rounds.py), calibration anchors for the caption scorer.
 - Engine advance: HeldProp in lib/heldidle.tsx, a shared idle rig for held props (wrapped props move a median 2.8 to 6.2 percent, bare props 0).
 - Verified by the orchestrator: board_anchor, render_provenance, caption_render_check, caption_rounds and machine_due self-tests, runbook_check, asset_index --check and tsc all pass.
+
+## 2026-10-16 (The Forecast That Shows Its Work)
+- Shipped: explainer of the USGS operational aftershock forecast for the October 15th M5.6 near Lake Minchumina. Hero SeismicStation, throughline a thermal Slip, odds drawn as tiles and a grain bin. Panel median 7.25 against 7.0 (7.02, 7.25, 7.35), no hard blockers. Caption 8.53 after five rounds.
+- In-run fixes: dispatch_mix button line derived from the script, new lib/odds.tsx (TileBoard, GrainBin, DialPanel, RangeSlots, Pegboard, MapPlate, Slip), board_1016.py with the line-split remap, SFX recast under the tick ceiling, plate and copy-rule fixes after preflight.
+- Honest gaps: Gemini prepaid credits ran out after the second synth, so editor wording notes on three VO lines could not be re-read. Judge 3 graded motion from contact stills only.
+- Queued for the machine pass: 6 items (docs/MACHINE_QUEUE.md, 2026-10-16 section).

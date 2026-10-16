@@ -1,0 +1,41 @@
+{
+ "run_date": "2026-10-16",
+ "palette": {
+  "sky": "#0A1418 ground-ink night to #14303A spruce-night, dawning to #6F94A6 snow-blue by the button",
+  "ground": "#14303A muskeg-night with #EDE6D3 chalk snow patches",
+  "hero": "#B58A3C brass SeismicStation horn and #F2B04A tungsten lamp",
+  "accent": "#E0453A alarm red",
+  "shadow": "#0A1418",
+  "mood": "3 a.m. cabin-and-muskeg night under one tungsten practical, warming to paper-and-dawn as the slip fills",
+  "roles": {
+   "tungsten #F2B04A": "the one motivated key light: the cabin lamp, the SeismicStation lamp, lit dots. Never fills a large area.",
+   "chalk #EDE6D3": "the Slip (thermal paper), dots, bracket, labels. Every paper object keeps a 2px ink keyline and sits against a dark plane.",
+   "alarm red #E0453A": "spent ONCE per frame and only on the printed weak spot (the taped rust line) and the 3:07 pip",
+   "skeptic cool #8FB5C9": "only the shot 8 pegboard and its two boards, and the Japan map plate and day dial, so the Test and the context read as a different air",
+   "spruce #14303A": "night ground, never behind chalk text at low contrast",
+   "lit chartreuse #C8E04A": "lit tiles and the single lit grain only, the one cool-warm accent that means counted"
+  },
+  "diverges_from_last_two": "10-15 pearl fog daylight with cranberry; 10-11 first-light rose tundra. This is a black-spruce night with tungsten and chalk, no cranberry, no pearl."
+ },
+ "light": {
+  "time_of_day": "3:07 a.m. to first grey light at the button",
+  "direction": "one tungsten practical lamp low left, cold window light from right",
+  "intent": "key=tungsten lamp pool, fill=snow-blue window light at 25 percent, rim=chalk on the station horn",
+  "depth": "Stage3D planes: near table/slip, mid station or board, far spruce ridge, haze; NightGrade over every exterior"
+ },
+ "shape_language": "SOFT ROUND instrument (SeismicStation) and round dots against HARD ANGULAR land and a hard rectangular Slip: the question is round, the answer is a straight-edged receipt",
+ "casting": {
+  "hero": "SeismicStation (sensors.tsx, shelf, last hero 2026-07-25, not in the last two)",
+  "throughline": "the Slip: net-new thermal receipt strip in lib/odds.tsx, prints line by line, curls, takes a rust-taped line that peels, a clock box, a PENDING stamp",
+  "supporting": "OddsBoard 10x10 tiles, GrainBin, DialPanel, RangeSlots, Pegboard, ClockFace, MapPlate, CorkWall, Dominoes (no animal cast: the SeismicStation is the only face)",
+  "net_new_reason": "the shelf has no probability-as-count object or receipt; both are reusable (odds.tsx)"
+ },
+ "motion_language": "nothing linear: slip prints with stepper stutter and curl, dots flip with a ripple and clack, tape peels about a pivot, clocks whip with overshoot; hero SeismicStation lamp and horn idle continuously (vitals)",
+ "composition": {
+  "focal_hierarchy": "one lit object per shot",
+  "negative_space": "the breather shot is 60 percent dark with a flat trace",
+  "safe_area": "hero action inside y 420 to 1500; plates clear of y 420, 1336 to 1472 caption band",
+  "signature_shot": "the tile board pulls back and up until it is one layer of ten in a glass bin of a thousand grains, one speck lit, and then three nested drawers slide out"
+ },
+ "craft_advance": "none required; odds.tsx is a reusable probability-as-count kit"
+}

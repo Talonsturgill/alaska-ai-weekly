@@ -1,0 +1,1776 @@
+{
+  "run_date": "2026-10-16",
+  "slug": "the-forecast-that-shows-its-work",
+  "title": "The Forecast That Shows Its Work",
+  "concept": "USGS posted odds for aftershocks twelve hours after the October 15th M5.6 near Lake Minchumina. The film makes the odds physical (a hundred tiles, a bin of a thousand grains), shows that the forecast gives a range, a count, its own weak spot and the time of its next update, lets the strongest fair objection stand (one quake can't grade a probability), and ends on what any forecast, human or machine, should show. A thermal slip printed by a seismic station is the throughline and the verdict stays pending.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 121.92,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "push-in-only",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "centered-hero-lowerthird",
+    "register": "naturalistic-scene",
+    "palette": "midnight teal, tungsten amber, chalk white, brass, one alarm vermilion, pre-dawn blue",
+    "camera_strategy": "rise-reveal",
+    "light_story": "3 a.m. tungsten night warming to snow-blue dawn as the slip fills",
+    "metaphor": "a receipt printed by the ground itself"
+  },
+  "palette": "midnight teal, tungsten amber, chalk white, brass, one alarm vermilion, pre-dawn blue",
+  "divergence_note": "10-15 was pearl fog daylight with a cranberry Gate and 10-11 first-light rose tundra with a medicine crate. This film opens in a black-spruce night under one tungsten lamp on a round brass instrument with a face, moves through a clock void, a desk, a tile board, a dial panel, a pegboard and a map, and ends at a corkboard at dawn. The hero is an instrument that listens, the throughline is a paper receipt, and the palette is night teal, tungsten and chalk with no cranberry or pearl.",
+  "treatment": {
+    "winner": "The Dramatist's 3 a.m. frame and Slip, with the Explainer's hundred-tile board and bin, the Comedian's tape peel and the Enthusiast's ask-for-the-slip corkboard.",
+    "why": "The Dramatist's night and its tape-peel loop carry the honest turn, the Explainer's tile counts make the odds felt, and the Enthusiast's button turns the point into something a viewer can ask for."
+  },
+  "angle": {
+    "run_date": "2026-10-16",
+    "thesis": "The USGS forecast for the Lake Minchumina quake shows what a number worth leaning on looks like: odds instead of promises, a range, its own printed weak spot and the time of its next check.",
+    "supporting_facts": [
+      "c5 to c8: the ladder from about 40 in 100 (M3+) down to under 1 in 1,000 (M6+) in one week",
+      "c14 and c13: a 95 percent range of 0 to 5, from a count of 1 at issue time",
+      "c15 and c16: it prints where it may perform poorly, and when it will check itself again"
+    ],
+    "counterpoint_to_honor": "One quake can't grade a probability, and by USGS's own account the model may perform poorly when big aftershocks set off their own (c15), the Japan 2011 case (c17). The checklist proves a forecast CAN be checked, not that it is right. Accuracy is the next question.",
+    "falsifiability": "False if the printed update doesn't arrive, or the week's M3+ count lands outside 0 to 5 AND USGS gives no account of it, or if the posting rule is discretionary. Verdict pending, the film says the week isn't over.",
+    "second_movement": "Walk the ladder down so the viewer feels the reassurance hidden in the headline number, then turn: the weak spot printed on the page is the cascading case (Japan), the one where the stakes are highest.",
+    "ai_point_OUR_READ": "Labelled opinion. No claim the model is or isn't AI. Whatever tool makes a number for Alaskans, human or machine, this is the bar: odds, a range, its limits, the time it checks again.",
+    "valence": "Upbeat, a public-science win credited plainly, one earned counter-scene.",
+    "runner_up_angles": {
+      "A": "trust (merged, thesis base)",
+      "B": "disclosure checklist (merged, the OUR READ)",
+      "C": "3 a.m. human (merged, cold open and ladder)"
+    },
+    "debate": "A's pending-verdict honesty kept (no pass claimed). B's 'disclosure not math' defends against 'rewards the old method'. C's strongest counter (calm confident answer comforts more) is answered by the ladder itself holding real reassurance. Stance: celebratory with a curious turn.",
+    "stance": "celebratory"
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A brass seismic station on black muskeg shudders at 3:07 under one tungsten lamp, its pen lashing a zigzag.",
+    "headline": "THE FORECAST THAT SHOWS ITS WORK",
+    "motion_by_s": 0.4,
+    "loopback": "The last frame is the station with a blank slip starting to curl out of its flank, the open replaying."
+  },
+  "open_loop": {
+    "plant_t": 18.54,
+    "pay_t": 104.79,
+    "what": "What the blank clock box with a question mark on the slip is for. Paid as the time of the next update printed on every forecast."
+  },
+  "open_loop_2": {
+    "plant_t": 54.01,
+    "pay_t": 82.99,
+    "what": "What is under the tape marked READ LAST on the fresh slip. Paid as the forecast's own printed weak spot."
+  },
+  "throughline": {
+    "object": "the thermal Slip",
+    "lands_in_button": "the slip pinned on a corkboard beside blank slips for flood, fire, weather and any tool",
+    "states": [
+      {
+        "at_s": 6.45,
+        "state": "blank warm slip curling out of the station"
+      },
+      {
+        "at_s": 23.95,
+        "state": "ODDS printed, clock box at the foot blank with a question mark"
+      },
+      {
+        "at_s": 63.21,
+        "state": "range bracket 0 to 5 and a count of 1 stamped"
+      },
+      {
+        "at_s": 82.99,
+        "state": "tape peeled, the rust weak spot printed"
+      },
+      {
+        "at_s": 104.79,
+        "state": "clock box filled, NEXT UPDATE tab"
+      },
+      {
+        "at_s": 116.41,
+        "state": "pinned on the corkboard beside blank slips"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 9.39,
+      "type": "build-on",
+      "what": "the truck along the slip arrives at a cork wall and 103 felt-report slips build on one by one",
+      "hold_s": 0.6
+    },
+    {
+      "t": 43.19,
+      "type": "scale-pullback",
+      "what": "the tile board pulls back to a glass bin of a thousand grains with one grain lit",
+      "hold_s": 0.6
+    },
+    {
+      "t": 56.04,
+      "type": "build-on",
+      "what": "a dashed bracket opens over six slots and a token drops in",
+      "hold_s": 0.6
+    },
+    {
+      "t": 95.71,
+      "type": "scale-pullback",
+      "what": "a giant M9.1 disc fills the map and the first pin becomes a speck",
+      "hold_s": 0.7
+    }
+  ],
+  "tail_s": 1.7,
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 110.18,
+    "riser_at": 109.38,
+    "silence_at": 110.88,
+    "payoff_at": 119.53,
+    "button_pattern": "question",
+    "interrupt_at": 85.21,
+    "extra_dips": [
+      82.99,
+      95.71
+    ]
+  },
+  "shots": [
+    {
+      "title": "3:07 on the muskeg",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "muskeg-night-yard",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the station at x540 y1150",
+      "means": "A seismic station shudders on black muskeg at night and prints a slip that carries the camera to a cork wall of felt reports.",
+      "ambient": "snow dust drifts across the muskeg, the lamp swings, the paper end sways, the station's horn idles",
+      "hero": {
+        "name": "SeismicStation + Slip + cork wall",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "50% station and slip, 30% muskeg and sky, 20% cork wall"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-12.900"
+    },
+    {
+      "title": "A clock with no hands",
+      "vo_line": 1,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "clock-void",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the question mark rising on the clock is the whole shot",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "flat:a locked dark clock face where the question mark is the motion",
+      "centered": "the clock at x540 y1000",
+      "means": "A dark clock face with no hands and a question mark that rises.",
+      "ambient": "the lamp pool breathes, dust turns, the clock glass glints, the slip hangs and sways",
+      "hero": {
+        "name": "DarkClock + Slip",
+        "parts": 24,
+        "zones": 3,
+        "detail_note": "60% clock, 25% slip, 15% void"
+      },
+      "id": 2,
+      "start_s": 12.9,
+      "t": "12.900-18.540"
+    },
+    {
+      "title": "The odds come out",
+      "vo_line": 2,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "high",
+      "stage": "slip-desk",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the slip at x540 y1000",
+      "means": "A desk under a lamp, a slip that prints ODDS and a wall clock that whips twelve hours.",
+      "ambient": "the desk lamp breathes, paper edges curl, the wall pendulum swings, the print head stutters",
+      "hero": {
+        "name": "Slip + desk + wall clock",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "45% slip, 30% clock, 25% desk and lamp"
+      },
+      "id": 3,
+      "start_s": 18.54,
+      "t": "18.540-28.420"
+    },
+    {
+      "title": "A hundred tiles, then a bin",
+      "vo_line": 3,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "odds-board",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "riseWith",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "stage3d": "flat:a locked tile board where the lit count is the motion and the pullback is the camera",
+      "centered": "the board at x540 y1000",
+      "means": "A ten by ten tile board lights forty, seven and a sliver, then the camera pulls back to a thousand grains.",
+      "ambient": "the tiles glint, the brass frame hums, a slow vignette drifts, the grains in the bin shimmer",
+      "hero": {
+        "name": "OddsBoard",
+        "parts": 70,
+        "zones": 3,
+        "detail_note": "70% board, 20% frame and label, 10% room"
+      },
+      "id": 4,
+      "start_s": 28.42,
+      "t": "28.420-39.960"
+    },
+    {
+      "title": "One tile, then a thousand",
+      "vo_line": 4,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "grain-bin",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "pull-back-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the bin at x540 y930",
+      "means": "A single tile filled three quarters of the way pulls back to a glass bin of a thousand grains with one grain lit.",
+      "ambient": "the tile glints, the lit fill breathes, then the grains shimmer and the lit speck breathes",
+      "hero": {
+        "name": "SingleTile + GrainBin",
+        "parts": 110,
+        "zones": 3,
+        "detail_note": "60% tile then bin, 25% lit grain, 15% room"
+      },
+      "id": 5,
+      "start_s": 39.96,
+      "t": "39.960-47.140"
+    },
+    {
+      "title": "Four dials",
+      "vo_line": 5,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "dial-panel",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the dials seating is the whole shot",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked dial panel where the dials seating is the motion",
+      "centered": "the dial panel at x540 y1000",
+      "means": "A brass dial panel fed by ledger sheets of past aftershock sequences.",
+      "ambient": "the dial lamp breathes, needles tremble, ledger edges flutter, tick marks shimmer",
+      "hero": {
+        "name": "DialPanel + ledger sheets",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "55% panel, 30% sheets, 15% plate"
+      },
+      "id": 6,
+      "start_s": 47.14,
+      "t": "47.140-56.040"
+    },
+    {
+      "title": "A range of six",
+      "vo_line": 6,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "low",
+      "stage": "range-table",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the bracket at x540 y1000",
+      "means": "A dashed bracket over six slots and a token that drops into slot one.",
+      "ambient": "the bracket's dashes crawl, the slot lamps flicker, dust motes drift, the token rocks",
+      "hero": {
+        "name": "RangeCarton + bracket",
+        "parts": 30,
+        "zones": 3,
+        "detail_note": "50% slots, 30% bracket and token, 20% table"
+      },
+      "id": 7,
+      "start_s": 56.04,
+      "t": "56.040-65.040"
+    },
+    {
+      "title": "One draw",
+      "vo_line": 7,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "pegboard-test",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the marble drop and the split are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked top-down pegboard where the marble drop is the motion",
+      "centered": "the pegboard at x540 y1000",
+      "means": "A marble on a pegboard, two panels with the same board, and a long run of small boards.",
+      "ambient": "the pegs ring, the seam lamp flickers, the boards glow, the calendar leaf curls",
+      "hero": {
+        "name": "Pegboard + two boards + calendar",
+        "parts": 64,
+        "zones": 3,
+        "detail_note": "40% pegboard, 40% boards, 20% calendar"
+      },
+      "id": 8,
+      "start_s": 65.04,
+      "t": "65.040-79.640"
+    },
+    {
+      "title": "The tape comes off",
+      "vo_line": 8,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "ground",
+      "stage": "slip-desk",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "focus-pull",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the tape at x540 y960",
+      "means": "Macro on the slip's last line as the tape peels and a red line prints.",
+      "ambient": "paper grain drifts, the tape quivers, the red line glows, dominoes rattle",
+      "hero": {
+        "name": "Slip tape + red line + dominoes",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "50% slip and tape, 30% dominoes, 20% dials"
+      },
+      "id": 9,
+      "start_s": 79.64,
+      "t": "79.640-86.600"
+    },
+    {
+      "title": "The big one came second",
+      "vo_line": 9,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "japan-map",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "pull-back-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the map plate at x540 y980",
+      "means": "A map plate with a small pin that is overtaken by a giant disc.",
+      "ambient": "the map grid glides, cloud shadow drifts, the pin pulses, the disc rim shivers",
+      "hero": {
+        "name": "MapPlate + pins + giant disc",
+        "parts": 30,
+        "zones": 3,
+        "detail_note": "40% plate, 40% disc, 20% pins"
+      },
+      "id": 10,
+      "start_s": 86.6,
+      "t": "86.600-97.360"
+    },
+    {
+      "title": "Checked, not graded",
+      "vo_line": 10,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "muskeg-night-yard",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "orbitReveal",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the station at x540 y1150",
+      "means": "The station on the muskeg with the slip pinned to its flank and a clock box that fills.",
+      "ambient": "snow dust drifts, the slip sways, the station's lamp warms, the clock tab swings",
+      "hero": {
+        "name": "SeismicStation + Slip",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% station, 30% slip and clock box, 25% muskeg"
+      },
+      "id": 11,
+      "start_s": 97.36,
+      "t": "97.360-110.380"
+    },
+    {
+      "title": "Ask for the slip",
+      "vo_line": 11,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "corkboard-dawn",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the corkboard at x540 y1000",
+      "means": "A corkboard at dawn with the pinned slip and blank slips for flood, fire, weather and any tool.",
+      "ambient": "dawn light grows, the blank slips curl, dust drifts, the station's lamp breathes",
+      "hero": {
+        "name": "Corkboard + slips + SeismicStation",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "55% board, 25% slips, 20% station and dawn"
+      },
+      "id": 12,
+      "start_s": 110.38,
+      "t": "110.380-121.920"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Three oh seven in the morning, October fifteenth. A magnitude five point six earthquake hits near Lake Minchumina, Alaska, and a hundred and three people file felt reports.",
+      "phrase": "Three oh seven in",
+      "shows": "the SeismicStation on black muskeg shudders as its horn whips round and the pen lashes a hard zigzag across the drum under one tungsten lamp, a 3:07 pip flaring red",
+      "sfx": "rumble",
+      "means": "just past 3 a.m.",
+      "rehook": "",
+      "draw": {
+        "subject": "SeismicStation",
+        "action": "shudders as its horn whips and the pen lashes a hard zigzag across the paper drum",
+        "emotion": "alarmed",
+        "annotation": "JUST PAST 3 A.M."
+      },
+      "choreo": {
+        "primary": "the SeismicStation on black muskeg shudders as its horn whips round and the pen lashes a hard zigzag across the drum under one tungsten lamp, a 3:07 pip flaring red",
+        "reaction": "the lamp swings and snow dust jumps off the ground",
+        "ambient": "snow dust drifts across the muskeg, the lamp swings, the paper end sways, the station's horn idles"
+      },
+      "t": "0.000-4.210",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 4.21,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.21
+      },
+      "offset": 4.21,
+      "vo": "Three oh seven in the morning, October fifteenth. A magnitude five point six earthquake hits near Lake Minchumina, Alaska, and a hundred and three people file felt reports.",
+      "phrase": "magnitude five point six",
+      "shows": "a chalk chip M5.6 slams onto the frame beside the station with its place line under it",
+      "sfx": "thump",
+      "means": "m5.6 \u00b7 43 km nnw of lake minchumina \u00b7 october 15th",
+      "rehook": "",
+      "draw": {
+        "subject": "magnitude chip",
+        "action": "slams onto the frame",
+        "emotion": "firm",
+        "annotation": "M5.6 \u00b7 43 KM NNW OF LAKE MINCHUMINA \u00b7 OCTOBER 15TH"
+      },
+      "choreo": {
+        "primary": "a chalk chip M5.6 slams onto the frame beside the station with its place line under it",
+        "reaction": "the horn settles toward listening and the zigzag trace keeps drawing",
+        "ambient": "snow dust drifts across the muskeg, the lamp swings, the paper end sways, the station's horn idles"
+      },
+      "t": "4.210-6.450",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 6.45,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.45
+      },
+      "offset": 6.45,
+      "vo": "Three oh seven in the morning, October fifteenth. A magnitude five point six earthquake hits near Lake Minchumina, Alaska, and a hundred and three people file felt reports.",
+      "phrase": "hits near Lake Minchumina,",
+      "shows": "a blank warm thermal slip starts to curl out of a slot in the station's flank and the camera trucks along it",
+      "sfx": "whoosh",
+      "means": "a slip",
+      "rehook": "",
+      "draw": {
+        "subject": "blank slip",
+        "action": "starts to curl out of the station's flank",
+        "emotion": "curious",
+        "annotation": "A SLIP"
+      },
+      "choreo": {
+        "primary": "a blank warm thermal slip starts to curl out of a slot in the station's flank and the camera trucks along it",
+        "reaction": "the slip's free end sways and the lamp glints on the paper",
+        "ambient": "snow dust drifts across the muskeg, the lamp swings, the paper end sways, the station's horn idles"
+      },
+      "t": "6.450-9.390",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 9.39,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 9.39
+      },
+      "offset": 9.39,
+      "vo": "Three oh seven in the morning, October fifteenth. A magnitude five point six earthquake hits near Lake Minchumina, Alaska, and a hundred and three people file felt reports.",
+      "phrase": "hundred and three people",
+      "shows": "the truck along the slip arrives at a cork wall where small report slips flutter on and pin home one by one",
+      "sfx": "swoosh",
+      "means": "103 felt reports \u00b7 usgs",
+      "rehook": "",
+      "draw": {
+        "subject": "report slips",
+        "action": "flutter onto a cork wall one by one",
+        "emotion": "busy",
+        "annotation": "103 FELT REPORTS \u00b7 USGS"
+      },
+      "choreo": {
+        "primary": "the truck along the slip arrives at a cork wall where small report slips flutter on and pin home one by one",
+        "reaction": "the pinned slips tremble and settle",
+        "ambient": "snow dust drifts across the muskeg, the lamp swings, the paper end sways, the station's horn idles"
+      },
+      "t": "9.390-12.900",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 12.9,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then the only question left. When's the next one?",
+      "phrase": "Then the only question",
+      "shows": "a dark round clock face with no hands fills the frame and the blank slip hangs beside it, the lamp pool breathing",
+      "sfx": "hush",
+      "means": "when?",
+      "rehook": "",
+      "draw": {
+        "subject": "dark clock",
+        "action": "fills the frame with no hands and the blank slip hangs beside it",
+        "emotion": "uneasy",
+        "annotation": "WHEN?"
+      },
+      "choreo": {
+        "primary": "a dark round clock face with no hands fills the frame and the blank slip hangs beside it, the lamp pool breathing",
+        "reaction": "the slip's end turns slowly and the clock face glints",
+        "ambient": "the lamp pool breathes, dust turns, the clock glass glints, the slip hangs and sways"
+      },
+      "t": "12.900-16.450",
+      "key": 6
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 16.45,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.55
+      },
+      "offset": 3.55,
+      "vo": "Then the only question left. When's the next one?",
+      "phrase": "When's the next one?",
+      "shows": "a single question mark rises on the dark clock face and the hands start to draw and fade out",
+      "sfx": "tick",
+      "means": "the next one",
+      "rehook": "",
+      "draw": {
+        "subject": "question mark",
+        "action": "rises on the clock face and the hands refuse to appear",
+        "emotion": "uneasy",
+        "annotation": "THE NEXT ONE"
+      },
+      "choreo": {
+        "primary": "a single question mark rises on the dark clock face and the hands start to draw and fade out",
+        "reaction": "the clock glass shivers",
+        "ambient": "the lamp pool breathes, dust turns, the clock glass glints, the slip hangs and sways"
+      },
+      "t": "16.450-18.540",
+      "key": 7
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 18.54,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The U S Geological Survey can't tell you when. It can tell you the odds, and it posted them twelve hours after the shaking.",
+      "phrase": "The U S Geological",
+      "shows": "the slip slides onto a desk under a lamp with a dashed clock box at its foot holding a question mark, and a rubber stamp reading U S GEOLOGICAL SURVEY hovers over it",
+      "sfx": "slide",
+      "means": "u s geological survey",
+      "rehook": "",
+      "draw": {
+        "subject": "slip",
+        "action": "slides onto a desk under a lamp as a stamp hovers",
+        "emotion": "calm",
+        "annotation": "U S GEOLOGICAL SURVEY"
+      },
+      "choreo": {
+        "primary": "the slip slides onto a desk under a lamp with a dashed clock box at its foot holding a question mark, and a rubber stamp reading U S GEOLOGICAL SURVEY hovers over it",
+        "reaction": "the lamp sways and the paper curls at the edge",
+        "ambient": "the desk lamp breathes, paper edges curl, the wall pendulum swings, the print head stutters"
+      },
+      "t": "18.540-21.630",
+      "key": 8
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 21.63,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.09
+      },
+      "offset": 3.09,
+      "vo": "The U S Geological Survey can't tell you when. It can tell you the odds, and it posted them twelve hours after the shaking.",
+      "phrase": "when. It can tell",
+      "shows": "the rubber stamp bobs down and taps the slip beside a WHEN line that stays blank",
+      "sfx": "stamp",
+      "means": "no time, only odds",
+      "rehook": "",
+      "draw": {
+        "subject": "rubber stamp",
+        "action": "taps the slip beside a WHEN line that stays unprinted",
+        "emotion": "blank",
+        "annotation": "NO TIME, ONLY ODDS"
+      },
+      "choreo": {
+        "primary": "the rubber stamp bobs down and taps the slip beside a WHEN line that stays blank",
+        "reaction": "the stamp rocks and lifts",
+        "ambient": "the desk lamp breathes, paper edges curl, the wall pendulum swings, the print head stutters"
+      },
+      "t": "21.630-23.950",
+      "key": 41
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 23.95,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.41
+      },
+      "offset": 5.41,
+      "vo": "The U S Geological Survey can't tell you when. It can tell you the odds, and it posted them twelve hours after the shaking.",
+      "phrase": "odds, and it posted",
+      "shows": "the slip's first line prints ODDS with a stepper stutter and a second line stays blank where WHEN would go",
+      "sfx": "fold",
+      "means": "odds, not a time",
+      "rehook": "",
+      "draw": {
+        "subject": "slip first line",
+        "action": "prints ODDS with a stepper stutter",
+        "emotion": "firm",
+        "annotation": "ODDS, NOT A TIME"
+      },
+      "choreo": {
+        "primary": "the slip's first line prints ODDS with a stepper stutter and a second line stays blank where WHEN would go",
+        "reaction": "the print head stutters and the paper creeps",
+        "ambient": "the desk lamp breathes, paper edges curl, the wall pendulum swings, the print head stutters"
+      },
+      "t": "23.950-25.830",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 25.83,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 7.29
+      },
+      "offset": 7.29,
+      "vo": "The U S Geological Survey can't tell you when. It can tell you the odds, and it posted them twelve hours after the shaking.",
+      "phrase": "twelve hours after the",
+      "shows": "the wall clock hands whip a full half day with overshoot and a stamp lands on the slip, 12 HOURS LATER",
+      "sfx": "whoosh",
+      "means": "forecast issued 12 hours later",
+      "rehook": "rehook: the odds arrive twelve hours later",
+      "draw": {
+        "subject": "wall clock",
+        "action": "whips a half day with overshoot as a stamp lands",
+        "emotion": "brisk",
+        "annotation": "FORECAST ISSUED 12 HOURS LATER"
+      },
+      "choreo": {
+        "primary": "the wall clock hands whip a full half day with overshoot and a stamp lands on the slip, 12 HOURS LATER",
+        "reaction": "the clock pendulum swings and the stamp bounces",
+        "ambient": "the desk lamp breathes, paper edges curl, the wall pendulum swings, the print head stutters"
+      },
+      "t": "25.830-27.250",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 27.25,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 8.71
+      },
+      "offset": 8.71,
+      "vo": "The U S Geological Survey can't tell you when. It can tell you the odds, and it posted them twelve hours after the shaking.",
+      "phrase": "shaking.",
+      "shows": "a chip stamps beside the slip, M5 PLUS OUTSIDE THE LOWER 48, FORECAST POSTED, while the slip's foot box shivers in the draft",
+      "sfx": "creak",
+      "means": "m5+ outside the lower 48 \u00b7 forecast posted",
+      "rehook": "",
+      "draw": {
+        "subject": "forecast chip",
+        "action": "stamps beside the slip as its foot box shivers in the draft",
+        "emotion": "plain",
+        "annotation": "M5+ OUTSIDE THE LOWER 48 \u00b7 FORECAST POSTED"
+      },
+      "choreo": {
+        "primary": "a chip stamps beside the slip, M5 PLUS OUTSIDE THE LOWER 48, FORECAST POSTED, while the slip's foot box shivers in the draft",
+        "reaction": "the foot box shivers in the draft",
+        "ambient": "the desk lamp breathes, paper edges curl, the wall pendulum swings, the print head stutters"
+      },
+      "t": "27.250-28.420",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 28.42,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A week out, another quake of magnitude three or bigger? About forty in a hundred. Four or bigger, about seven in a hundred.",
+      "phrase": "A week out, another",
+      "shows": "a ten by ten board of one hundred dark enamel tiles rises in a brass frame under a boxed M3 PLUS A WEEK OUT label",
+      "sfx": "thunk",
+      "means": "a week out \u00b7 m3+",
+      "rehook": "",
+      "draw": {
+        "subject": "odds board",
+        "action": "rises as a ten by ten board of dark enamel tiles in a brass frame",
+        "emotion": "expectant",
+        "annotation": "A WEEK OUT \u00b7 M3+"
+      },
+      "choreo": {
+        "primary": "a ten by ten board of one hundred dark enamel tiles rises in a brass frame under a boxed M3 PLUS A WEEK OUT label",
+        "reaction": "the tiles glint one by one and the frame hums",
+        "ambient": "the tiles glint, the brass frame hums, a slow vignette drifts, the grains in the bin shimmer"
+      },
+      "t": "28.420-31.230",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 31.23,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.81
+      },
+      "offset": 2.81,
+      "vo": "A week out, another quake of magnitude three or bigger? About forty in a hundred. Four or bigger, about seven in a hundred.",
+      "phrase": "magnitude three or bigger?",
+      "shows": "the boxed A WEEK OUT M3 PLUS label snaps onto the dark board and the brass frame flashes once",
+      "sfx": "pop",
+      "means": "m3 plus \u00b7 a week out",
+      "rehook": "",
+      "draw": {
+        "subject": "label",
+        "action": "snaps onto the board as the whole frame hums",
+        "emotion": "expectant",
+        "annotation": "M3 PLUS \u00b7 A WEEK OUT"
+      },
+      "choreo": {
+        "primary": "the boxed A WEEK OUT M3 PLUS label snaps onto the dark board and the brass frame flashes once",
+        "reaction": "the frame hums and the tiles glint",
+        "ambient": "the tiles glint, the brass frame hums, a slow vignette drifts, the grains in the bin shimmer"
+      },
+      "t": "31.230-33.810",
+      "key": 42
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 33.81,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 5.39
+      },
+      "offset": 5.39,
+      "vo": "A week out, another quake of magnitude three or bigger? About forty in a hundred. Four or bigger, about seven in a hundred.",
+      "phrase": "forty in a hundred.",
+      "shows": "forty tiles flip chartreuse in a serpentine ripple with a clack each, the board's count ticking to 40",
+      "sfx": "clink",
+      "means": "about 40 in 100",
+      "rehook": "",
+      "draw": {
+        "subject": "forty tiles",
+        "action": "flip lit in a serpentine ripple",
+        "emotion": "rising",
+        "annotation": "ABOUT 40 IN 100"
+      },
+      "choreo": {
+        "primary": "forty tiles flip chartreuse in a serpentine ripple with a clack each, the board's count ticking to 40",
+        "reaction": "the lit tiles pulse and the dark ones sway",
+        "ambient": "the tiles glint, the brass frame hums, a slow vignette drifts, the grains in the bin shimmer"
+      },
+      "t": "33.810-37.810",
+      "key": 13
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 37.81,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 9.39
+      },
+      "offset": 9.39,
+      "vo": "A week out, another quake of magnitude three or bigger? About forty in a hundred. Four or bigger, about seven in a hundred.",
+      "phrase": "seven in a hundred.",
+      "shows": "the forty fall dark until seven stay lit",
+      "sfx": "thump",
+      "means": "m4+ \u00b7 about 7 in 100",
+      "rehook": "",
+      "draw": {
+        "subject": "tiles",
+        "action": "fall dark until seven stay lit",
+        "emotion": "easing",
+        "annotation": "M4+ \u00b7 ABOUT 7 IN 100"
+      },
+      "choreo": {
+        "primary": "the forty fall dark until seven stay lit",
+        "reaction": "the seven glow and the board settles",
+        "ambient": "the tiles glint, the brass frame hums, a slow vignette drifts, the grains in the bin shimmer"
+      },
+      "t": "37.810-39.960",
+      "key": 14
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 39.96,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Five, under one in a hundred. Six, under one in a thousand.",
+      "phrase": "Five, under one in",
+      "shows": "one big tile fills with light only three quarters of the way and never goes full",
+      "sfx": "blip",
+      "means": "m5+ \u00b7 under 1 in 100",
+      "rehook": "",
+      "draw": {
+        "subject": "single tile",
+        "action": "lights only three quarters of the way, never full",
+        "emotion": "calm",
+        "annotation": "M5+ \u00b7 UNDER 1 IN 100"
+      },
+      "choreo": {
+        "primary": "one big tile fills with light only three quarters of the way and never goes full",
+        "reaction": "the sliver tile pulses once",
+        "ambient": "the tile glints, the lit fill breathes, then the grains shimmer and the lit speck breathes"
+      },
+      "t": "39.960-43.190",
+      "key": 15
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 43.19,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.23
+      },
+      "offset": 3.23,
+      "vo": "Five, under one in a hundred. Six, under one in a thousand.",
+      "phrase": "Six, under one in",
+      "shows": "the camera pulls back and the big tile is one grain of a thousand in a glass bin, one grain glowing a little smaller than its neighbours",
+      "sfx": "swoosh",
+      "means": "m6+ \u00b7 under 1 in 1,000",
+      "rehook": "rehook: the bin pullback",
+      "draw": {
+        "subject": "bin",
+        "action": "the camera pulls back and up to a glass bin of a thousand grains with one grain glowing smaller than its neighbours",
+        "emotion": "relieved",
+        "annotation": "M6+ \u00b7 UNDER 1 IN 1,000"
+      },
+      "choreo": {
+        "primary": "the camera pulls back and the big tile is one grain of a thousand in a glass bin, one grain glowing a little smaller than its neighbours",
+        "reaction": "the grains shimmer and the lit speck breathes",
+        "ambient": "the tile glints, the lit fill breathes, then the grains shimmer and the lit speck breathes"
+      },
+      "t": "43.190-47.140",
+      "key": 16
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 47.14,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Those odds come from a published equation. It starts from how past aftershock sequences behaved, then bends toward this one.",
+      "phrase": "Those odds come from",
+      "shows": "a brass dial panel powers on with four dials a, b, c and p under a Reasenberg and Jones 1989 plate",
+      "sfx": "fold",
+      "means": "reasenberg and jones \u00b7 1989 \u00b7 four dials a b c p",
+      "rehook": "",
+      "draw": {
+        "subject": "dial panel",
+        "action": "powers on with four brass dials a b c and p under a Reasenberg and Jones plate",
+        "emotion": "focused",
+        "annotation": "REASENBERG AND JONES \u00b7 1989 \u00b7 FOUR DIALS a b c p"
+      },
+      "choreo": {
+        "primary": "a brass dial panel powers on with four dials a, b, c and p under a Reasenberg and Jones 1989 plate",
+        "reaction": "the dial needles settle and the panel lamp breathes",
+        "ambient": "the dial lamp breathes, needles tremble, ledger edges flutter, tick marks shimmer"
+      },
+      "t": "47.140-51.210",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 51.21,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.07
+      },
+      "offset": 4.07,
+      "vo": "Those odds come from a published equation. It starts from how past aftershock sequences behaved, then bends toward this one.",
+      "phrase": "past aftershock sequences behaved,",
+      "shows": "ledger sheets of past sequences feed into the panel's slot one after another and the dials seat",
+      "sfx": "slide",
+      "means": "past sequences",
+      "rehook": "",
+      "draw": {
+        "subject": "ledger sheets",
+        "action": "feed into the panel and the dials settle",
+        "emotion": "focused",
+        "annotation": "PAST SEQUENCES"
+      },
+      "choreo": {
+        "primary": "ledger sheets of past sequences feed into the panel's slot one after another and the dials seat",
+        "reaction": "the sheets ripple as they feed",
+        "ambient": "the dial lamp breathes, needles tremble, ledger edges flutter, tick marks shimmer"
+      },
+      "t": "51.210-54.010",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 54.01,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 6.87
+      },
+      "offset": 6.87,
+      "vo": "Those odds come from a published equation. It starts from how past aftershock sequences behaved, then bends toward this one.",
+      "phrase": "bends toward this one.",
+      "shows": "one fresh sheet, the slip itself, slides in last wrapped on its last line in masking tape marked READ LAST, and the dials re-seat by a hair with p wobbling",
+      "sfx": "clunk",
+      "means": "bends toward this one",
+      "rehook": "",
+      "draw": {
+        "subject": "fresh sheet",
+        "action": "slides in and the dials re-seat by a hair",
+        "emotion": "alert",
+        "annotation": "BENDS TOWARD THIS ONE"
+      },
+      "choreo": {
+        "primary": "one fresh sheet, the slip itself, slides in last wrapped on its last line in masking tape marked READ LAST, and the dials re-seat by a hair with p wobbling",
+        "reaction": "dial p wobbles and settles",
+        "ambient": "the dial lamp breathes, needles tremble, ledger edges flutter, tick marks shimmer"
+      },
+      "t": "54.010-56.040",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 56.04,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It also gives a range, not a single number. Zero to five aftershocks this week, with one counted so far.",
+      "phrase": "It also gives a",
+      "shows": "a dashed chalk bracket opens over a row of six empty slots while a corner of the slip shows its blank clock box",
+      "sfx": "swoosh",
+      "means": "a range, not a number",
+      "rehook": "rehook: a range, not a number",
+      "draw": {
+        "subject": "bracket",
+        "action": "opens over a row of six slots",
+        "emotion": "curious",
+        "annotation": "A RANGE, NOT A NUMBER"
+      },
+      "choreo": {
+        "primary": "a dashed chalk bracket opens over a row of six empty slots while a corner of the slip shows its blank clock box",
+        "reaction": "the bracket's dashes crawl and the slots glint",
+        "ambient": "the bracket's dashes crawl, the slot lamps flicker, dust motes drift, the token rocks"
+      },
+      "t": "56.040-60.150",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 60.15,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.11
+      },
+      "offset": 4.11,
+      "vo": "It also gives a range, not a single number. Zero to five aftershocks this week, with one counted so far.",
+      "phrase": "Zero to five aftershocks",
+      "shows": "the six slots label themselves 0 to 5 as the bracket snaps wide",
+      "sfx": "stamp",
+      "means": "0 to 5 aftershocks this week",
+      "rehook": "",
+      "draw": {
+        "subject": "slots",
+        "action": "label 0 to 5 as the bracket snaps wide",
+        "emotion": "firm",
+        "annotation": "0 TO 5 AFTERSHOCKS THIS WEEK"
+      },
+      "choreo": {
+        "primary": "the six slots label themselves 0 to 5 as the bracket snaps wide",
+        "reaction": "the slots flicker once each",
+        "ambient": "the bracket's dashes crawl, the slot lamps flicker, dust motes drift, the token rocks"
+      },
+      "t": "60.150-63.210",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 63.21,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.17
+      },
+      "offset": 7.17,
+      "vo": "It also gives a range, not a single number. Zero to five aftershocks this week, with one counted so far.",
+      "phrase": "counted so far.",
+      "shows": "a chalk token drops into slot 1 with a bounce and a brass clicker reads 1",
+      "sfx": "clink",
+      "means": "counted so far \u00b7 1 aftershock m3+",
+      "rehook": "",
+      "draw": {
+        "subject": "chalk token",
+        "action": "drops into slot 1 and the clicker reads 1",
+        "emotion": "firm",
+        "annotation": "COUNTED SO FAR \u00b7 1 AFTERSHOCK M3+"
+      },
+      "choreo": {
+        "primary": "a chalk token drops into slot 1 with a bounce and a brass clicker reads 1",
+        "reaction": "the token rocks and settles",
+        "ambient": "the bracket's dashes crawl, the slot lamps flicker, dust motes drift, the token rocks"
+      },
+      "t": "63.210-65.040",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 65.04,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So is it worth trusting? One quake can't grade a probability, because forty in a hundred isn't wrong either way. The grade comes when the week ends, and across a long run of forecasts.",
+      "phrase": "So is it worth",
+      "shows": "the slip tilts into frame with a question mark stamped over its odds line",
+      "sfx": "bell",
+      "means": "worth trusting?",
+      "rehook": "",
+      "draw": {
+        "subject": "slip",
+        "action": "tilts into frame with a question mark over its odds line",
+        "emotion": "doubtful",
+        "annotation": "WORTH TRUSTING?"
+      },
+      "choreo": {
+        "primary": "the slip tilts into frame with a question mark stamped over its odds line",
+        "reaction": "the slip rocks and the question mark pulses",
+        "ambient": "the pegs ring, the seam lamp flickers, the boards glow, the calendar leaf curls"
+      },
+      "t": "65.040-68.190",
+      "key": 24
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 68.19,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.15
+      },
+      "offset": 3.15,
+      "vo": "So is it worth trusting? One quake can't grade a probability, because forty in a hundred isn't wrong either way. The grade comes when the week ends, and across a long run of forecasts.",
+      "phrase": "quake can't grade a",
+      "shows": "one marble drops down a pegboard and lands in one slot beside a small board of forty lit tiles",
+      "sfx": "thud",
+      "means": "one quake",
+      "rehook": "",
+      "draw": {
+        "subject": "marble",
+        "action": "drops down a pegboard and lands in a slot beside a board of forty lit tiles",
+        "emotion": "tense",
+        "annotation": "ONE QUAKE"
+      },
+      "choreo": {
+        "primary": "one marble drops down a pegboard and lands in one slot beside a small board of forty lit tiles",
+        "reaction": "the pegs ring and the marble bounces",
+        "ambient": "the pegs ring, the seam lamp flickers, the boards glow, the calendar leaf curls"
+      },
+      "t": "68.190-72.570",
+      "key": 25
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 72.57,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 7.53
+      },
+      "offset": 7.53,
+      "vo": "So is it worth trusting? One quake can't grade a probability, because forty in a hundred isn't wrong either way. The grade comes when the week ends, and across a long run of forecasts.",
+      "phrase": "wrong either way. The",
+      "shows": "two panels meet at a hard seam, one where another quake arrives and one where none does, and both boards still read FORTY IN A HUNDRED",
+      "sfx": "snap",
+      "means": "forty in a hundred \u00b7 not wrong either way",
+      "rehook": "",
+      "draw": {
+        "subject": "split panels",
+        "action": "two panels meet at a hard seam and both boards still read forty",
+        "emotion": "firm",
+        "annotation": "FORTY IN A HUNDRED \u00b7 NOT WRONG EITHER WAY"
+      },
+      "choreo": {
+        "primary": "two panels meet at a hard seam, one where another quake arrives and one where none does, and both boards still read FORTY IN A HUNDRED",
+        "reaction": "the seam lamp flickers and both boards glow",
+        "ambient": "the pegs ring, the seam lamp flickers, the boards glow, the calendar leaf curls"
+      },
+      "t": "72.570-75.490",
+      "key": 26
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 75.49,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 10.45
+      },
+      "offset": 10.45,
+      "vo": "So is it worth trusting? One quake can't grade a probability, because forty in a hundred isn't wrong either way. The grade comes when the week ends, and across a long run of forecasts.",
+      "phrase": "week ends, and across",
+      "shows": "a calendar leaf flips to the week's end and a long stack of small boards fans out behind it",
+      "sfx": "flip",
+      "means": "a long run of forecasts",
+      "rehook": "",
+      "draw": {
+        "subject": "calendar",
+        "action": "flips to the week's end as a long stack of small boards fans out",
+        "emotion": "patient",
+        "annotation": "A LONG RUN OF FORECASTS"
+      },
+      "choreo": {
+        "primary": "a calendar leaf flips to the week's end and a long stack of small boards fans out behind it",
+        "reaction": "the leaf curls and the fan shivers",
+        "ambient": "the pegs ring, the seam lamp flickers, the boards glow, the calendar leaf curls"
+      },
+      "t": "75.490-79.640",
+      "key": 27
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 79.64,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It names its own weak spot too. It may perform poorly when big aftershocks set off their own.",
+      "phrase": "It names its own",
+      "shows": "macro on the slip's taped last line, the tape trembling and its rust corner just visible",
+      "sfx": "creak",
+      "means": "read last",
+      "rehook": "",
+      "draw": {
+        "subject": "tape",
+        "action": "trembles on the slip's last line in macro",
+        "emotion": "uneasy",
+        "annotation": "READ LAST"
+      },
+      "choreo": {
+        "primary": "macro on the slip's taped last line, the tape trembling and its rust corner just visible",
+        "reaction": "the tape end quivers and the paper grain drifts",
+        "ambient": "paper grain drifts, the tape quivers, the red line glows, dominoes rattle"
+      },
+      "t": "79.640-82.990",
+      "key": 28
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 82.99,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.35
+      },
+      "offset": 3.35,
+      "vo": "It names its own weak spot too. It may perform poorly when big aftershocks set off their own.",
+      "phrase": "poorly when big aftershocks",
+      "shows": "the tape peels about a pivot and the line beneath prints in alarm red, MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE, PER USGS",
+      "sfx": "crack",
+      "means": "may perform poorly when big aftershocks trigger more \u00b7 per usgs",
+      "rehook": "rehook: the page confesses first",
+      "draw": {
+        "subject": "tape",
+        "action": "peels about a pivot and the rust line prints in alarm red",
+        "emotion": "grim",
+        "annotation": "MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE \u00b7 PER USGS"
+      },
+      "choreo": {
+        "primary": "the tape peels about a pivot and the line beneath prints in alarm red, MAY PERFORM POORLY WHEN BIG AFTERSHOCKS TRIGGER MORE, PER USGS",
+        "reaction": "the peeled tape curls away and the red line glows",
+        "ambient": "paper grain drifts, the tape quivers, the red line glows, dominoes rattle"
+      },
+      "t": "82.990-85.210",
+      "key": 29
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 85.21,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.57
+      },
+      "offset": 5.57,
+      "vo": "It names its own weak spot too. It may perform poorly when big aftershocks set off their own.",
+      "phrase": "own.",
+      "shows": "the four dial needles lurch apart and wobble out of sync one after another beside the slip as the red line glows",
+      "sfx": "boom",
+      "means": "dials out of sync",
+      "rehook": "",
+      "draw": {
+        "subject": "dial panel",
+        "action": "the four dial needles lurch apart and wobble out of sync one after another",
+        "emotion": "alarmed",
+        "annotation": "DIALS OUT OF SYNC"
+      },
+      "choreo": {
+        "primary": "the four dial needles lurch apart and wobble out of sync one after another beside the slip as the red line glows",
+        "reaction": "the needles shake and the red line glows",
+        "ambient": "paper grain drifts, the tape quivers, the red line glows, dominoes rattle"
+      },
+      "t": "85.210-86.600",
+      "key": 30
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 86.6,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Sometimes the big one comes second. In 2011, a magnitude seven point three quake in Japan came two days before a nine point one.",
+      "phrase": "Sometimes the big one",
+      "shows": "a small M7.3 pin pulses on a chalk map plate labelled CONTEXT, NOT AN ALASKA CLAIM",
+      "sfx": "swell",
+      "means": "context, not an alaska claim",
+      "rehook": "",
+      "draw": {
+        "subject": "map plate",
+        "action": "a small magnitude 7.3 pin ticks on a chalk map plate",
+        "emotion": "tense",
+        "annotation": "CONTEXT, NOT AN ALASKA CLAIM"
+      },
+      "choreo": {
+        "primary": "a small M7.3 pin pulses on a chalk map plate labelled CONTEXT, NOT AN ALASKA CLAIM",
+        "reaction": "the pin pulses and the map grid glides",
+        "ambient": "the map grid glides, cloud shadow drifts, the pin pulses, the disc rim shivers"
+      },
+      "t": "86.600-90.350",
+      "key": 31
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 90.35,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.75
+      },
+      "offset": 3.75,
+      "vo": "Sometimes the big one comes second. In 2011, a magnitude seven point three quake in Japan came two days before a nine point one.",
+      "phrase": "2011, a magnitude seven",
+      "shows": "a date chip stamps 2011 JAPAN M7.3 on the plate",
+      "sfx": "thump",
+      "means": "2011 japan \u00b7 m7.3",
+      "rehook": "",
+      "draw": {
+        "subject": "date chip",
+        "action": "stamps 2011 JAPAN on the plate",
+        "emotion": "firm",
+        "annotation": "2011 JAPAN \u00b7 M7.3"
+      },
+      "choreo": {
+        "primary": "a date chip stamps 2011 JAPAN M7.3 on the plate",
+        "reaction": "the plate tilts a hair",
+        "ambient": "the map grid glides, cloud shadow drifts, the pin pulses, the disc rim shivers"
+      },
+      "t": "90.350-94.490",
+      "key": 32
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 94.49,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 7.89
+      },
+      "offset": 7.89,
+      "vo": "Sometimes the big one comes second. In 2011, a magnitude seven point three quake in Japan came two days before a nine point one.",
+      "phrase": "two days before a",
+      "shows": "a day dial ticks twice beside the pin",
+      "sfx": "tick",
+      "means": "two days later",
+      "rehook": "",
+      "draw": {
+        "subject": "two ticks",
+        "action": "pass on a day dial",
+        "emotion": "tense",
+        "annotation": "TWO DAYS LATER"
+      },
+      "choreo": {
+        "primary": "a day dial ticks twice beside the pin",
+        "reaction": "the dial needle trembles",
+        "ambient": "the map grid glides, cloud shadow drifts, the pin pulses, the disc rim shivers"
+      },
+      "t": "94.490-95.710",
+      "key": 33
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 95.71,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 9.11
+      },
+      "offset": 9.11,
+      "vo": "Sometimes the big one comes second. In 2011, a magnitude seven point three quake in Japan came two days before a nine point one.",
+      "phrase": "nine point one.",
+      "shows": "the camera pulls back as a giant M9.1 disc swings in and fills the picture, the first pin a speck in its corner, labelled not to scale",
+      "sfx": "heavy",
+      "means": "2011 japan \u00b7 m7.3 \u00b7 two days later \u00b7 m9.1",
+      "rehook": "rehook: the big one came second",
+      "draw": {
+        "subject": "giant disc",
+        "action": "swings in and fills the picture as the first pin shrinks to a speck",
+        "emotion": "stunned",
+        "annotation": "2011 JAPAN \u00b7 M7.3 \u00b7 TWO DAYS LATER \u00b7 M9.1"
+      },
+      "choreo": {
+        "primary": "the camera pulls back as a giant M9.1 disc swings in and fills the picture, the first pin a speck in its corner, labelled not to scale",
+        "reaction": "the disc's rim shivers and the map dims",
+        "ambient": "the map grid glides, cloud shadow drifts, the pin pulses, the disc rim shivers"
+      },
+      "t": "95.710-97.360",
+      "key": 34
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 97.36,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the forecast doesn't prove it's right. It proves it can be checked, and every forecast carries the time of its next update. The week isn't over, so the check isn't finished.",
+      "phrase": "So the forecast doesn't",
+      "shows": "back on the muskeg a stamp lands on the slip pinned to the station's flank, CAN BE CHECKED, NOT YET GRADED",
+      "sfx": "thud",
+      "means": "can be checked \u00b7 not yet graded",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp",
+        "action": "lands on the slip, CAN BE CHECKED \u00b7 NOT YET GRADED",
+        "emotion": "firm",
+        "annotation": "CAN BE CHECKED \u00b7 NOT YET GRADED"
+      },
+      "choreo": {
+        "primary": "back on the muskeg a stamp lands on the slip pinned to the station's flank, CAN BE CHECKED, NOT YET GRADED",
+        "reaction": "the stamp bounces and the slip sways",
+        "ambient": "snow dust drifts, the slip sways, the station's lamp warms, the clock tab swings"
+      },
+      "t": "97.360-100.710",
+      "key": 35
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 100.71,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.35
+      },
+      "offset": 3.35,
+      "vo": "So the forecast doesn't prove it's right. It proves it can be checked, and every forecast carries the time of its next update. The week isn't over, so the check isn't finished.",
+      "phrase": "proves it can be",
+      "shows": "a tick draws across the pinned slip beside the CHECKED stamp as the station's lamp warms",
+      "sfx": "clink",
+      "means": "checked, not graded",
+      "rehook": "",
+      "draw": {
+        "subject": "check tick",
+        "action": "draws across the slip as a second stamp lands",
+        "emotion": "firm",
+        "annotation": "CHECKED, NOT GRADED"
+      },
+      "choreo": {
+        "primary": "a tick draws across the pinned slip beside the CHECKED stamp as the station's lamp warms",
+        "reaction": "the tick glows and the slip sways",
+        "ambient": "snow dust drifts, the slip sways, the station's lamp warms, the clock tab swings"
+      },
+      "t": "100.710-104.790",
+      "key": 43
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 104.79,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 7.43
+      },
+      "offset": 7.43,
+      "vo": "So the forecast doesn't prove it's right. It proves it can be checked, and every forecast carries the time of its next update. The week isn't over, so the check isn't finished.",
+      "phrase": "next update. The week",
+      "shows": "the slip's blank clock box fills with a printed clock face and a NEXT UPDATE tab swings from it",
+      "sfx": "ping",
+      "means": "next update time printed on every forecast",
+      "rehook": "rehook: what the box was for",
+      "draw": {
+        "subject": "clock box",
+        "action": "fills with a printed clock face and a NEXT UPDATE tab",
+        "emotion": "relieved",
+        "annotation": "NEXT UPDATE TIME PRINTED ON EVERY FORECAST"
+      },
+      "choreo": {
+        "primary": "the slip's blank clock box fills with a printed clock face and a NEXT UPDATE tab swings from it",
+        "reaction": "the tab swings and the station's lamp warms",
+        "ambient": "snow dust drifts, the slip sways, the station's lamp warms, the clock tab swings"
+      },
+      "t": "104.790-106.490",
+      "key": 36
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "at_s": 106.49,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 9.13
+      },
+      "offset": 9.13,
+      "vo": "So the forecast doesn't prove it's right. It proves it can be checked, and every forecast carries the time of its next update. The week isn't over, so the check isn't finished.",
+      "phrase": "isn't over, so the",
+      "shows": "a PENDING stamp lands under the clock and the station's horn turns to watching with its lamp dim",
+      "sfx": "hush",
+      "means": "verdict pending",
+      "rehook": "",
+      "draw": {
+        "subject": "pending stamp",
+        "action": "lands as the station's lamp dims to watching",
+        "emotion": "patient",
+        "annotation": "VERDICT PENDING"
+      },
+      "choreo": {
+        "primary": "a PENDING stamp lands under the clock and the station's horn turns to watching with its lamp dim",
+        "reaction": "the horn sweeps a few degrees",
+        "ambient": "snow dust drifts, the slip sways, the station's lamp warms, the clock tab swings"
+      },
+      "t": "106.490-110.380",
+      "key": 37
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 110.38,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Odds, a range, a limit, a next check. The same test works on any forecast, human or machine, and it's the bar for any number Alaskans lean on.",
+      "phrase": "Odds, a range, a",
+      "shows": "four ticks stamp down the slip's edge one beat each beside ODDS, A RANGE, A LIMIT and A NEXT CHECK",
+      "sfx": "tick",
+      "means": "odds \u00b7 a range \u00b7 a limit \u00b7 a next check",
+      "rehook": "",
+      "draw": {
+        "subject": "four ticks",
+        "action": "stamp down the slip's edge one beat each",
+        "emotion": "firm",
+        "annotation": "ODDS \u00b7 A RANGE \u00b7 A LIMIT \u00b7 A NEXT CHECK"
+      },
+      "choreo": {
+        "primary": "four ticks stamp down the slip's edge one beat each beside ODDS, A RANGE, A LIMIT and A NEXT CHECK",
+        "reaction": "the ticks bounce and settle",
+        "ambient": "dawn light grows, the blank slips curl, dust drifts, the station's lamp breathes"
+      },
+      "t": "110.380-115.350",
+      "key": 38
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 115.35,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.97
+      },
+      "offset": 4.97,
+      "vo": "Odds, a range, a limit, a next check. The same test works on any forecast, human or machine, and it's the bar for any number Alaskans lean on.",
+      "phrase": "test works on any",
+      "shows": "the four blank slips on the corkboard lift one after another in a wave as the four ticks glow",
+      "sfx": "swoosh",
+      "means": "the same test",
+      "rehook": "",
+      "draw": {
+        "subject": "blank slips",
+        "action": "lift one after another along the corkboard",
+        "emotion": "hopeful",
+        "annotation": "THE SAME TEST"
+      },
+      "choreo": {
+        "primary": "the four blank slips on the corkboard lift one after another in a wave as the four ticks glow",
+        "reaction": "the blank slips curl and settle",
+        "ambient": "dawn light grows, the blank slips curl, dust drifts, the station's lamp breathes"
+      },
+      "t": "115.350-116.410",
+      "key": 44
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 116.41,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.03
+      },
+      "offset": 6.03,
+      "vo": "Odds, a range, a limit, a next check. The same test works on any forecast, human or machine, and it's the bar for any number Alaskans lean on.",
+      "phrase": "forecast, human or machine,",
+      "shows": "the camera pulls back from the pinned slip to a corkboard with blank slips labelled FLOOD, FIRE, WEATHER and ANY TOOL",
+      "sfx": "pop",
+      "means": "flood \u00b7 fire \u00b7 weather \u00b7 any tool",
+      "rehook": "",
+      "draw": {
+        "subject": "corkboard",
+        "action": "the camera pulls back from the pinned slip to blank slips FLOOD FIRE WEATHER ANY TOOL",
+        "emotion": "hopeful",
+        "annotation": "FLOOD \u00b7 FIRE \u00b7 WEATHER \u00b7 ANY TOOL"
+      },
+      "choreo": {
+        "primary": "the camera pulls back from the pinned slip to a corkboard with blank slips labelled FLOOD, FIRE, WEATHER and ANY TOOL",
+        "reaction": "the blank slips curl in the draft",
+        "ambient": "dawn light grows, the blank slips curl, dust drifts, the station's lamp breathes"
+      },
+      "t": "116.410-119.530",
+      "key": 39
+    },
+    {
+      "id": 42,
+      "shot": 12,
+      "at_s": 119.53,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 9.15
+      },
+      "offset": 9.15,
+      "vo": "Odds, a range, a limit, a next check. The same test works on any forecast, human or machine, and it's the bar for any number Alaskans lean on.",
+      "phrase": "bar for any number",
+      "shows": "dawn light grows on the corkboard as the station's lamp lights and a blank slip starts to curl out of its flank, the open replaying",
+      "sfx": "bell",
+      "means": "the bar",
+      "rehook": "",
+      "draw": {
+        "subject": "station lamp",
+        "action": "lights as a blank slip curls out of its flank, the open replaying",
+        "emotion": "warm",
+        "annotation": "THE BAR"
+      },
+      "choreo": {
+        "primary": "dawn light grows on the corkboard as the station's lamp lights and a blank slip starts to curl out of its flank, the open replaying",
+        "reaction": "the slip's end curls and the lamp warms",
+        "ambient": "dawn light grows, the blank slips curl, dust drifts, the station's lamp breathes"
+      },
+      "t": "119.530-121.920",
+      "key": 40
+    }
+  ]
+}

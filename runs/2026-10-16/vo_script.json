@@ -1,0 +1,106 @@
+{
+ "run_date": "2026-10-16",
+ "title": "THE FORECAST THAT SHOWS ITS WORK",
+ "note": "Probabilities are the USGS forecast issued 2026-10-15 23:07 UTC for event aka2026ukynnb. The film does not say the model is or isn't AI, and makes no damage, felt-extent or accuracy claim. The closing line is the film's own read. Claim c3 rides line 2's shot as an on-screen plate (M5+ OUTSIDE THE LOWER 48 \u00b7 FORECAST POSTED); the narration does not say it.",
+ "caption_fixups": {},
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Three oh seven in the morning, October fifteenth. A magnitude five point six earthquake hits near Lake Minchumina, Alaska, and a hundred and three people file felt reports.",
+   "t": "Three oh seven in the morning, October fifteenth. A magnitude five point six earthquake hits near Lake Minchumina, Alaska, and a hundred and three people file felt reports.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "Then the only question left. When's the next one?",
+   "t": "Then the only question left. When's the next one?",
+   "claims": []
+  },
+  {
+   "idx": 2,
+   "text": "The U S Geological Survey can't tell you when. It can tell you the odds, and it posted them twelve hours after the shaking.",
+   "t": "The U S Geological Survey can't tell you when. It can tell you the odds, and it posted them twelve hours after the shaking.",
+   "claims": [
+    "c4",
+    "c3"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "A week out, another quake of magnitude three or bigger? About forty in a hundred. Four or bigger, about seven in a hundred.",
+   "t": "A week out, another quake of magnitude three or bigger? About forty in a hundred. Four or bigger, about seven in a hundred.",
+   "claims": [
+    "c5",
+    "c6"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Five, under one in a hundred. Six, under one in a thousand.",
+   "t": "Five, under one in a hundred. Six, under one in a thousand.",
+   "claims": [
+    "c7",
+    "c8"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "Those odds come from a published equation. It starts from how past aftershock sequences behaved, then bends toward this one.",
+   "t": "Those odds come from a published equation. It starts from how past aftershock sequences behaved, then bends toward this one.",
+   "claims": [
+    "c11",
+    "c12"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "It also gives a range, not a single number. Zero to five aftershocks this week, with one counted so far.",
+   "t": "It also gives a range, not a single number. Zero to five aftershocks this week, with one counted so far.",
+   "claims": [
+    "c13",
+    "c14"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "So is it worth trusting? One quake can't grade a probability, because forty in a hundred isn't wrong either way. The grade comes when the week ends, and across a long run of forecasts.",
+   "t": "So is it worth trusting? One quake can't grade a probability, because forty in a hundred isn't wrong either way. The grade comes when the week ends, and across a long run of forecasts.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "It names its own weak spot too. It may perform poorly when big aftershocks set off their own.",
+   "t": "It names its own weak spot too. It may perform poorly when big aftershocks set off their own.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "Sometimes the big one comes second. In 2011, a magnitude seven point three quake in Japan came two days before a nine point one.",
+   "t": "Sometimes the big one comes second. In 2011, a magnitude seven point three quake in Japan came two days before a nine point one.",
+   "claims": [
+    "c17"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "So the forecast doesn't prove it's right. It proves it can be checked, and every forecast carries the time of its next update. The week isn't over, so the check isn't finished.",
+   "t": "So the forecast doesn't prove it's right. It proves it can be checked, and every forecast carries the time of its next update. The week isn't over, so the check isn't finished.",
+   "claims": [
+    "c16"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Odds, a range, a limit, a next check. The same test works on any forecast, human or machine, and it's the bar for any number Alaskans lean on.",
+   "t": "Odds, a range, a limit, a next check. The same test works on any forecast, human or machine, and it's the bar for any number Alaskans lean on.",
+   "claims": []
+  }
+ ]
+}
