@@ -1,0 +1,230 @@
+{
+ "run_date": "2026-10-17",
+ "fact_check_verdict": "Publish as an explainer of the mismatch between a data center pitch priced in dollars and a grid counted in megawatts. All sourcing is secondary (KUAC via KTOO, KTUU, News-Miner, ADN): no transcript, no GVEA primary page (bot-walled). Burgum's figures are attributed to him. No cause named for the unit outage. No GVEA peak or capacity figure was found, so none is used. The AI point is the film's OUR READ, labelled as opinion.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-secondary",
+   "spoken": "Interior Secretary Doug Burgum spoke to a Fairbanks Chamber of Commerce event on Wednesday, October fourteenth.",
+   "on_screen": "BURGUM \u00b7 FAIRBANKS CHAMBER \u00b7 OCTOBER 14TH",
+   "source": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "requires": [
+    "KUAC names the Chamber host, KTUU gives the date and the 8 Star Event Center. Two outlets, no transcript."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-secondary",
+   "spoken": "Burgum said people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+   "on_screen": "BURGUM SAID \u00b7 10 BILLION \u00b7 NO TAX BREAKS",
+   "source": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "requires": [
+    "KUAC only. Always attribute: Burgum said. Never say Fairbanks or Alaska is getting a ten billion dollar data center, no developer or site is named. Never attach the 10 billion to Ellendale."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-secondary",
+   "spoken": "He said you convert electricity into intelligence, you make money.",
+   "on_screen": "\"YOU CONVERT ELECTRICITY INTO INTELLIGENCE, YOU MAKE MONEY\" \u00b7 BURGUM",
+   "source": "https://www.alaskasnewssource.com/2026/10/15/interior-secretary-pitches-fairbanks-amid-regional-power-emergency/",
+   "requires": [
+    "KTUU only. Quote whole or not at all, do not tidy it. Attribute to Burgum on the same frame."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-secondary",
+   "spoken": "He pointed to a North Dakota project, in Ellendale, with homes and electric bill rebates.",
+   "on_screen": "ELLENDALE, N.D. \u00b7 HOMES + BILL REBATES \u00b7 PER KTUU",
+   "source": "https://www.alaskasnewssource.com/2026/10/15/interior-secretary-pitches-fairbanks-amid-regional-power-emergency/",
+   "requires": [
+    "KTUU only. The 1.2 billion dollar figure and the 2,000 jobs are Burgum's claims as reported, attribute if used. Do not say outside Fargo. No developer named."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-secondary",
+   "spoken": "Two days earlier, on Monday, Golden Valley Electric sent its first alert under a new alert system.",
+   "on_screen": "GOLDEN VALLEY ELECTRIC \u00b7 LEVEL 2 ALERT",
+   "source": "https://www.newsminer.com/news/local_news/gvea-issues-first-alert-warning-under-new-system/article_94d12582-acf6-4ff6-bb2c-a4850d27a44d.html",
+   "requires": [
+    "Say first alert under its new system, never first-ever emergency. News-Miner calls it a Level 2 Energy Watch. Two outlets, no primary GVEA page was readable."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-secondary",
+   "spoken": "Level two means the reserve is under fifteen megawatts.",
+   "on_screen": "LEVEL 2 \u00b7 RESERVE UNDER 15 MW",
+   "source": "https://www.alaskasnewssource.com/2026/10/15/gvea-asks-members-conserve-energy-amid-generator-failure/",
+   "requires": [
+    "ANS wording: less than 15 MW in reserve. Do not say generation capacity. Level 1 is under 38 MW. Neither source gives a MW threshold for level 3."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-secondary",
+   "spoken": "One generating unit went offline while two others were in scheduled maintenance.",
+   "on_screen": "1 UNIT OFFLINE \u00b7 2 IN MAINTENANCE",
+   "source": "https://www.alaskasnewssource.com/2026/10/15/gvea-asks-members-conserve-energy-amid-generator-failure/",
+   "requires": [
+    "Say went offline. The unit and cause were not named. Do not name a plant."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-secondary",
+   "spoken": "The utility's spokesperson said the generation system is not going to be a quick fix.",
+   "on_screen": "\"NOT GOING TO BE A QUICK FIX\" \u00b7 GVEA'S ASHLEY BRADISH",
+   "source": "https://www.newsminer.com/news/local_news/gvea-issues-first-alert-warning-under-new-system/article_94d12582-acf6-4ff6-bb2c-a4850d27a44d.html",
+   "requires": [
+    "News-Miner quote. Attribute to GVEA spokesperson Ashley Bradish."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-secondary",
+   "spoken": "At that event, Jonathan Kreiss-Tomkins, a Democratic candidate for Alaska governor, was in the audience.",
+   "on_screen": "KREISS-TOMKINS \u00b7 DEMOCRATIC CANDIDATE FOR GOVERNOR",
+   "source": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "requires": [
+    "KUAC calls him the sole Democratic candidate in Alaska's gubernatorial race and says he was an audience member. Say a Democratic candidate. Spell Kreiss-Tomkins as KUAC does."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-secondary",
+   "spoken": "And the reports name no megawatts.",
+   "on_screen": "THE REPORTS NAME NO MEGAWATTS FOR THE 10 BILLION",
+   "source": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "requires": [
+    "An ABSENCE claim: neither KUAC nor KTUU reports a megawatt load, developer or site for the 10 billion Burgum described. Say 'the reports name no megawatts', never 'there is no load figure'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-secondary",
+   "spoken": "He said, I think we should pause.",
+   "on_screen": "\"I THINK WE SHOULD PAUSE\" \u00b7 KREISS-TOMKINS",
+   "source": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "requires": [
+    "KUAC quote: I think we should pause. A separate quote from the 'and then' sentence, never run together."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-secondary",
+   "spoken": "Kreiss-Tomkins also said, and then, in a thoughtful way, development can proceed.",
+   "on_screen": "\"AND THEN, IN A THOUGHTFUL WAY, DEVELOPMENT CAN PROCEED\" \u00b7 KREISS-TOMKINS",
+   "source": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "requires": [
+    "KUAC quote, separate from the pause sentence."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-secondary",
+   "spoken": "A power company keeps spare room above what everyone's using. That's the reserve.",
+   "on_screen": "THE RESERVE \u00b7 SPARE ROOM",
+   "source": "https://www.alaskasnewssource.com/2026/10/15/gvea-asks-members-conserve-energy-amid-generator-failure/",
+   "requires": [
+    "Explanatory definition of a reserve margin in plain words. ANS reports the alert levels as megawatts of reserve. No capacity figure for GVEA is claimed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-secondary",
+   "spoken": "The best version is a customer that brings its own power, which could leave more reserve, not less. But the reports don't say whether this one would.",
+   "on_screen": "IF IT BROUGHT ITS OWN POWER?",
+   "source": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "requires": [
+    "THE FILM'S OWN CONDITIONAL, labelled as a question on screen. Not a report that any developer offered to bring power. The second sentence is the c13 absence."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-secondary",
+   "spoken": "Burgum's own sentence, electricity into intelligence, makes the AI question a power question first.",
+   "on_screen": "OUR READ",
+   "source": "https://www.alaskasnewssource.com/2026/10/15/interior-secretary-pitches-fairbanks-amid-regional-power-emergency/",
+   "requires": [
+    "OUR READ, opinion, labelled as the film's own. Rests on c3."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-secondary",
+   "spoken": "",
+   "on_screen": "THE REPORTS TIE THE ALERT TO A UNIT, NOT A DATA CENTER",
+   "source": "https://www.alaskasnewssource.com/2026/10/15/gvea-asks-members-conserve-energy-amid-generator-failure/",
+   "requires": [
+    "An ABSENCE claim. ANS and the News-Miner give the cause as one unit offline and two in scheduled maintenance, and neither links the alert to a data center. Say 'the reports tie', never that data centers had nothing to do with it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

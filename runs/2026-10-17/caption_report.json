@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "fails": [],
+  "warns": [],
+  "metrics": {
+    "chars": 1591,
+    "hook": "Burgum said people want to drop ten billion on a data center. Two days earlier Golden Valley Electric's reserve fell under 15 megawatts.",
+    "hook_len": 136,
+    "hashtags": [
+      "#Alaska",
+      "#Fairbanks",
+      "#DataCenters",
+      "#ArtificialIntelligence"
+    ],
+    "n_hashtags": 4,
+    "emoji": 0,
+    "unicode_bold": 0,
+    "bullet_lines": 0,
+    "sentence_initial_but": 0,
+    "first_person": 0,
+    "commas_per_100w": 1.53,
+    "passes": true
+  }
+}

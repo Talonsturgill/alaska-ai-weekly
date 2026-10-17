@@ -417,3 +417,14 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - A VO edit after the board exists must be followed by `board_1015.py conform`; since the 2026-10-15 machine pass that conform refuses to write when an anchor word vanished (`scripts/board_anchor.py`), so read its list and re-anchor.
 - A typewriter quote card types to the forced-alignment word times, never to a fixed rate, and wraps wide enough that the last line stays inside the card.
 - A mix with LRA under 6 gets a deeper VO arc before more bed lift: premix LRA 7.7 delivered 5.5 until the arc depth rose.
+
+## 14. Things the 2026-10-17 gates found that were knowable in advance
+
+- **Read the last two storyboards for MOTIFS, not just tags.** Gate 0B and 0D found the first board repeated 10-15's balance scale that won't tip, folding chairs, a pause and a wall calendar two days later. `storyboard_check` compares the fingerprint axes and passes a film whose objects are the same objects. Before casting, grep the last two boards' `draw.subject` for the props you plan (scale, chairs, calendar, pause) and pick a different prop for the same idea. A growth chart marked in megawatts replaced the scale, a remote replaced the chairs, a date drum replaced the calendar.
+- **A fingerprint is a claim about screen time.** Declaring `pov`, `layout` and `motion` for a few shots while most of the runtime sits elsewhere is a relabel. Count the seconds each axis value covers and declare the one that dominates.
+- **Declared palette roles bind the kit.** "Cyan is only the fluid" fails the moment a readout paints cyan digits. Grep the kit for the role colours before declaring "only", and recolour the kit, not the plan.
+- **A dark label on a dark world is invisible.** `LEVEL 1` set in navy on a navy cutaway disappeared. Give any label that can appear in two worlds a colour prop.
+- **A label can sit under a plate.** The ghost block's `100 MW` read as `MW` because a Plate covered its left half. When a held plate sits in the same band as in-scene text, put the in-scene text below the plate's bottom edge.
+- **A beat of 0.3 s can't be sampled.** `build_evidence` needs about 0.6 s inside a beat for its strip, so two anchor words a third of a second apart (`reserve`, `Level`) fail the pack after a 13 minute render. Check the board for beats under 0.7 s before rendering.
+- **The lower third needs a near plane in every shot.** Interior floors and snow fields were empty under y 1475 in the first frames. A ReserveBar cameo, a rug, a cable and snow drifts in the near plane filled it and gave the throughline object a reason to be on screen in shots it would otherwise miss.
+- **`storyboard_check` flags a METRONOME at three gaps within 0.8 s of each other.** Remove a beat or move an anchor word, don't add one.

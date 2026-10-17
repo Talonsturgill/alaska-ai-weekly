@@ -1,0 +1,57 @@
+{
+ "run_date": "2026-10-17",
+ "palette": {
+  "sky": "#4F7FA8 cobalt zenith grading through #9DB4C8 to #F6E3C9 peach horizon",
+  "ground": "#FBF0E2 warm-lit snow with #9FB6CF cobalt shadow planes; interiors #E9DCC8 plaster over a #B58A5A wood floor and a brick-and-cream rug; cutaways #142B3D deep navy",
+  "hero": "#25C7E8 reserve-fluid cyan in a #E9F6FA glass tube with a #1F3A4A steel cap",
+  "accent": "#FF7A1A hazard orange",
+  "shadow": "#14283A",
+  "mood": "a low peach sun over an Interior snow day, a deep navy cutaway world for the numbers, hazard orange only for alerts",
+  "roles": {
+   "cyan #25C7E8": "the ReserveBar's fluid ONLY (and its glass highlight). No readout, lamp or rim is cyan.",
+   "hazard orange #FF7A1A": "alerts only, at most one orange element per frame: the LEVEL 2 line, the alert lamp, the pencil mark line, the NO MEGAWATTS stamp.",
+   "banknote green #3E8E5A": "the CashBlock and the brick tower only",
+   "brass #C99A3C": "the funnel machine, the coins, the date drum and the remote glow only",
+   "brick #C4553C and wood #B58A5A": "the plant yard stacks, a rug and the height chart, named here as set dressing, never on the hero",
+   "navy #142B3D": "ink, plates and the deep cutaway world",
+   "peach #F2CFA6 to cobalt #4F7FA8": "the Interior low-sun sky"
+  },
+  "diverges_from_last_two": "10-16 black-spruce night, tungsten and chalk. 10-15 bright cold ice fog, frost #CFE4EE, snow #F2F5F7, teal-black shadow, cranberry. This film differs in WORLD VALUE as well as hue: low peach sun with cobalt zenith (warm sky against 10-15's cold frost), warm-lit snow with cobalt shadows, warm plaster interiors, and a deep navy mid-dark cutaway world for the reserve shots. HONEST OVERLAP: snow is pale like 10-15's and 10-11's, and navy ink is near 10-15's teal-black."
+ },
+ "light": {
+  "time_of_day": "Interior low sun, an hour before dusk in the exteriors, midday in the plaster rooms",
+  "direction": "exteriors: sun disc at x170 y(ground-330) low left, shadows falling right, cobalt fill from the snow; interiors: window shaft upper left, warm bounce off the wood; cutaway: no sun, the fluid is the only light and glows",
+  "intent": "key=low peach sun or window shaft, fill=cobalt snow bounce, rim=snow white on the sun side, no cyan rim spill",
+  "depth": "SnowDay planes: sun and far ridge drift 8 px (parallax 0.25), near ridge 16 px (0.5), ground static, hero 1.0, foreground drifts 22 px (1.3) with a ReserveBar or crowd cameo in the lower third; DayRoom: wall, wood floor, rug and cable near plane at y1500 and below; cutaway: grid lines static, bar breathes. Hazard-orange practicals sit only on the alert lamp, the LEVEL 2 line and the pencil mark."
+ },
+ "shape_language": "TALL THIN glass gauge (the ReserveBar) against a SQUAT HEAVY banknote block (the CashBlock): in hero frames the ReserveBar is the only tall object above 300 px apart from the height chart, which is the thing the block is measured against, and the plant stacks in shot 7, where the bar is the small outsider",
+ "casting": {
+  "hero": "ReserveBar (net-new, lib/grid.tsx). dedupe.py check --hero ReserveBar returned FRESH. Not SeismicStation or Gate, the last two heroes.",
+  "kit_used": {
+   "ReserveBar": "hero",
+   "CashBlock": "the money, eager not smug",
+   "HeightChart": "the megawatt growth chart, shots 1 and 13",
+   "RemoteControl": "pause, rewind, play, shots 4, 5 and 10",
+   "DateDrum": "two days earlier, shot 5",
+   "Switchbox": "the alert lamp, shot 5",
+   "FunnelMachine": "electricity into intelligence, shots 3 and 12",
+   "GenStack": "three units, shot 7",
+   "PostcardStreet": "Ellendale, shot 8",
+   "OwnPlug": "its own power, shot 9",
+   "LedgerSlip and MWReadout": "every term is a megawatt question, shot 11",
+   "SpareTire": "the reserve metaphor, shot 6",
+   "HallFront": "the Chamber event, shot 2",
+   "DayRoom and SnowDay": "the two worlds"
+  },
+  "hero_state": "calm blinking awake at 3.4 s, attentive in the audience foreground at 32 s, uneasy at the alert at 42 s, slumped and sweating at 57 s, sweating beside the dark stack at 72 s, an amber silhouette in a porch window at 78 s, perked up at 88 s, wary at 95 s, an unlit mini bar at 107 s, looking at the camera at 126 s, looping to the first frame",
+  "net_new_reason": "the shelf has no gauge with a face, no money as a block and no megawatt growth chart; all are reusable for any dollars-versus-units story (to be registered in ASSET_MANIFEST.md)"
+ },
+ "motion_language": "nothing linear: the CashBlock hops and squashes, the pencil wobbles, the fluid slumps with overshoot and sloshes, the date drum whirs back, the remote buttons press with a glow, plugs seat with a clunk; the hero idles with blinks, a fluid wave and a sweat bead. Cook Inlet is only a plate and a ghost, there is no Cook Inlet scene, so the light does not leave the Interior.",
+ "composition": {
+  "focal_hierarchy": "one lit object per shot; the near plane in the lower third carries a ReserveBar cameo or the crowd",
+  "negative_space": "the funnel and remote macros are mostly plain wall",
+  "safe_area": "hero action inside y 420 to 1320, caption band 1336 to 1472 clear of hero motion, a near plane at 1475 and below",
+  "signature_shot": "the CashBlock hops onto its mark against a wooden height chart marked in megawatts, the pencil hovers at the top of its head with no reading, and at the end the same shot returns with a dashed ? MW block hovering above the block waiting for its number"
+ },
+ "craft_advance": "none required; grid.tsx is a reusable units-mismatch kit"
+}

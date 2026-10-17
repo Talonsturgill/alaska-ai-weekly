@@ -1,0 +1,20 @@
+{
+ "run_date": "2026-10-17",
+ "thesis": "Burgum's ten billion is priced in dollars while Fairbanks' grid is counted in megawatts, and Fairbanks can't say yes or no until someone puts the two on one page.",
+ "supporting_facts": [
+  "c5 to c8: GVEA's first alert under its new system, reserve under 15 MW, one unit offline and two in maintenance",
+  "c2, c3, c13: Burgum said ten billion and electricity into intelligence, and the reports name no megawatts",
+  "c12: one Cook Inlet filing says 100 MW, not on GVEA's grid, scale only"
+ ],
+ "counterpoint_to_honor": "The alert was a supply event, not a data center event, and Burgum's model (Ellendale, N.D., c4) came with homes and bill rebates, and no tax breaks means the investor carries the cost. A big customer that pays for its own power could leave Fairbanks with more reserve, not less. The thesis claims no harm, only that the deciding number is unpublished.",
+ "falsifiability": "False if a developer, site and megawatt load are published for the ten billion and it brings its own generation, or GVEA states standing headroom for a large load.",
+ "second_movement": "Rewind the week on one reserve bar, then turn: the best case for yes (Ellendale, no tax breaks, pause then proceed) is a list of terms Fairbanks can ask for, and every term is a megawatt question.",
+ "ai_point_OUR_READ": "Labelled opinion. Burgum's own sentence turns electricity into intelligence, so the AI question here is a power question first.",
+ "valence": "Constructive and open, not anti and not boosterish. 'Name the megawatts' is what the evidence earns.",
+ "runner_up_angles": {
+  "A": "Enthusiast: what has to be true for Alaska to win (merged as the second movement)",
+  "B": "Dramatist: the porch light household and who pays (merged as the human stake)"
+ },
+ "debate": "Grid-math base kept. Enthusiast's Ellendale terms became the counter-scene. Dramatist's unfair-juxtaposition objection is answered by the thesis claiming no causation. Cold-climate cooling and developer-paid generation are not in the claims and stay out except as questions.",
+ "stance": "mixed"
+}

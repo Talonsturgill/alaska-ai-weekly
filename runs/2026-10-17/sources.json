@@ -1,0 +1,62 @@
+{
+ "run_date": "2026-10-17",
+ "title": "TBD",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "KUAC via Alaska Public Media: In Fairbanks, Interior Secretary Burgum touts deregulation and data centers",
+   "outlet": "KUAC / Alaska Public Media",
+   "url": "https://alaskapublic.org/news/alaska-desk/2026-10-15/in-fairbanks-interior-secretary-burgum-touts-deregulation-and-data-centers",
+   "claims": [
+    "c1",
+    "c2",
+    "c10",
+    "c14",
+    "c15",
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "Fetched 2026-10-17 by validator. Published 2026-10-15."
+  },
+  {
+   "id": "s2",
+   "title": "Alaska's News Source: Interior secretary pitches Fairbanks amid regional power emergency",
+   "outlet": "Alaska's News Source (KTUU)",
+   "url": "https://www.alaskasnewssource.com/2026/10/15/interior-secretary-pitches-fairbanks-amid-regional-power-emergency/",
+   "claims": [
+    "c1",
+    "c3",
+    "c4",
+    "c18"
+   ],
+   "used_in_film": true,
+   "note": "Fetched 2026-10-17 by validator. Published 2026-10-14."
+  },
+  {
+   "id": "s3",
+   "title": "Alaska's News Source: GVEA asks members to conserve energy amid generator failure",
+   "outlet": "Alaska's News Source (KTUU)",
+   "url": "https://www.alaskasnewssource.com/2026/10/15/gvea-asks-members-conserve-energy-amid-generator-failure/",
+   "claims": [
+    "c6",
+    "c7",
+    "c16",
+    "c19"
+   ],
+   "used_in_film": true,
+   "note": "Fetched 2026-10-17 by validator. Published 2026-10-14."
+  },
+  {
+   "id": "s4",
+   "title": "Fairbanks Daily News-Miner: GVEA issues first alert warning under new system",
+   "outlet": "Fairbanks Daily News-Miner",
+   "url": "https://www.newsminer.com/news/local_news/gvea-issues-first-alert-warning-under-new-system/article_94d12582-acf6-4ff6-bb2c-a4850d27a44d.html",
+   "claims": [
+    "c5",
+    "c8"
+   ],
+   "used_in_film": true,
+   "note": "Fetched 2026-10-17 by validator. Published 2026-10-14."
+  }
+ ]
+}

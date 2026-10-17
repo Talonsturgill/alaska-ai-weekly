@@ -1,0 +1,2098 @@
+{
+  "run_date": "2026-10-17",
+  "slug": "ten-billion-how-many-megawatts",
+  "title": "Ten Billion, How Many Megawatts",
+  "concept": "Interior Secretary Burgum told a Fairbanks Chamber crowd on October 14th that people want to drop ten billion on a data center with no tax breaks, two days after Golden Valley Electric's first alert under its new alert system, a Level 2 with reserve under 15 MW. The film stands a block of money against a growth chart marked in megawatts, shows they are in different units, gives the best case for yes (Ellendale's homes and rebates, a customer that brings its own power) a full scene, and lands on one blank readout: the reports name no megawatts. A glass ReserveBar with a face is the throughline.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 127.32,
+  "fingerprint": {
+    "pov": "cross-section-cutaway",
+    "motion_vector": "vertical-rise",
+    "hero_treatment": "single-organic-hero",
+    "layout": "hud-instrument-frame",
+    "register": "bright-industrial-comic",
+    "palette": "frost noon, snowbank, reserve cyan, hazard orange, banknote green, charcoal",
+    "camera_strategy": "pull-back-reveal",
+    "light_story": "low peach sun over an Interior snow day, a deep navy cutaway, hazard-orange alerts",
+    "metaphor": "a growth chart marked in megawatts that a block of dollars can't be measured against"
+  },
+  "palette": "frost noon, snowbank, reserve cyan, hazard orange, banknote green, charcoal",
+  "divergence_note": "10-16 was a black-spruce night with tungsten and chalk around a seismic station, and 10-15 pearl fog with a cranberry Gate. This film is a bright snow-and-ice winter noon with cyan, hazard orange and banknote green, a tall thin glass gauge against a squat heavy money block, and it moves through a height-chart room, a snowy door, a funnel machine, a remote on a table, a date drum and switchbox, a navy reserve cutaway, a plant yard, a postcard street and a ledger desk.",
+  "treatment": {
+    "winner": "The Explainer's balance scale and reserve cutaway, with the Comedian's smug CashBlock, the Dramatist's pause button and the Enthusiast's Ellendale test.",
+    "why": "The scale makes the units mismatch a picture before a word is said, the cutaway makes a reserve felt, and the best case for yes gets a full scene that ends on the same blank readout."
+  },
+  "angle": {
+    "run_date": "2026-10-17",
+    "thesis": "Burgum's ten billion is priced in dollars while Fairbanks' grid is counted in megawatts, and Fairbanks can't say yes or no until someone puts the two on one page.",
+    "supporting_facts": [
+      "c5 to c8: GVEA's first alert under its new system, reserve under 15 MW, one unit offline and two in maintenance",
+      "c2, c3, c13: Burgum said ten billion and electricity into intelligence, and the reports name no megawatts",
+      "c12: one Cook Inlet filing says 100 MW, not on GVEA's grid, scale only"
+    ],
+    "counterpoint_to_honor": "The alert was a supply event, not a data center event, and Burgum's model (Ellendale, N.D., c4) came with homes and bill rebates, and no tax breaks means the investor carries the cost. A big customer that pays for its own power could leave Fairbanks with more reserve, not less. The thesis claims no harm, only that the deciding number is unpublished.",
+    "falsifiability": "False if a developer, site and megawatt load are published for the ten billion and it brings its own generation, or GVEA states standing headroom for a large load.",
+    "second_movement": "Rewind the week on one reserve bar, then turn: the best case for yes (Ellendale, no tax breaks, pause then proceed) is a list of terms Fairbanks can ask for, and every term is a megawatt question.",
+    "ai_point_OUR_READ": "Labelled opinion. Burgum's own sentence turns electricity into intelligence, so the AI question here is a power question first.",
+    "valence": "Constructive and open, not anti and not boosterish. 'Name the megawatts' is what the evidence earns.",
+    "runner_up_angles": {
+      "A": "Enthusiast: what has to be true for Alaska to win (merged as the second movement)",
+      "B": "Dramatist: the porch light household and who pays (merged as the human stake)"
+    },
+    "debate": "Grid-math base kept. Enthusiast's Ellendale terms became the counter-scene. Dramatist's unfair-juxtaposition objection is answered by the thesis claiming no causation. Cold-climate cooling and developer-paid generation are not in the claims and stay out except as questions.",
+    "stance": "mixed"
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A smug green money block thuds onto one pan of a brass balance scale while the other pan holds a blank megawatt readout, and the beam refuses to tip.",
+    "headline": "TEN BILLION, HOW MANY MEGAWATTS",
+    "motion_by_s": 0.4,
+    "loopback": "The last frame is the balance scale again with the bar stepping onto the right pan, the open replaying."
+  },
+  "open_loop": {
+    "plant_t": 3.43,
+    "pay_t": 124.63,
+    "what": "How many megawatts the ten billion is. Paid as the ask: the reports name none, so name them."
+  },
+  "open_loop_2": {
+    "plant_t": 50.69,
+    "pay_t": 90.99,
+    "what": "Whether a new big customer could fit beside a reserve under 15 megawatts. Paid as the reports not saying whether this one would bring its own power."
+  },
+  "throughline": {
+    "object": "the ReserveBar",
+    "lands_in_button": "the bar beside the height chart turning to look straight at the camera while the pencil hovers over the blank line",
+    "states": [
+      {
+        "at_s": 3.43,
+        "state": "calm, blinking awake beside the chart and the hovering pencil"
+      },
+      {
+        "at_s": 32.29,
+        "state": "attentive in the foreground of the audience, looking up at the remote"
+      },
+      {
+        "at_s": 41.99,
+        "state": "uneasy in the cutaway of the alert, a lamp orange behind it"
+      },
+      {
+        "at_s": 57.77,
+        "state": "fluid slumped below the Level 2 line, sweating"
+      },
+      {
+        "at_s": 72.09,
+        "state": "sweating beside a dark stack and a quote plate"
+      },
+      {
+        "at_s": 78.37,
+        "state": "a bar-shaped silhouette lit amber in a porch window"
+      },
+      {
+        "at_s": 87.93,
+        "state": "perked up tall beside a plug on its own cord"
+      },
+      {
+        "at_s": 94.98,
+        "state": "wary in the foreground glancing up at the play button"
+      },
+      {
+        "at_s": 107.45,
+        "state": "unlit mini bar in the readout bezel under the slam"
+      },
+      {
+        "at_s": 126.77,
+        "state": "looking straight at the camera beside the blank line"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 23.09,
+      "type": "build-on",
+      "what": "a lightning bolt drops into a funnel machine and a brain pops out with coins",
+      "hold_s": 0.6
+    },
+    {
+      "t": 62.55,
+      "type": "build-on",
+      "what": "three stacks rise from the snow, one goes dark and two put on hard hats",
+      "hold_s": 0.6
+    },
+    {
+      "t": 94.98,
+      "type": "morph-to-chart",
+      "what": "the remote's pause button pops up and the play button takes over",
+      "hold_s": 0.6
+    },
+    {
+      "t": 124.63,
+      "type": "build-on",
+      "what": "a dashed ghost block marked ? MW hovers above the CashBlock waiting for its number",
+      "hold_s": 0.7
+    }
+  ],
+  "tail_s": 1.7,
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 123.73,
+    "riser_at": 122.99,
+    "silence_at": 124.43,
+    "payoff_at": 126.77,
+    "button_pattern": "question",
+    "interrupt_at": 107.45,
+    "extra_dips": [
+      57.77,
+      94.98
+    ]
+  },
+  "shots": [
+    {
+      "title": "Dollars against a megawatt chart",
+      "vo_line": 0,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "height-chart-room",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the block at x400 y1230",
+      "means": "A CashBlock stands against a wooden height chart marked in megawatts while a pencil hovers with no reading and the ReserveBar blinks beside it.",
+      "ambient": "the pencil wobbles, window light drifts, the chart creaks, the bar breathes",
+      "hero": {
+        "name": "HeightChart + CashBlock + ReserveBar",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "40% chart, 35% block, 25% bar and pencil"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-5.870"
+    },
+    {
+      "title": "A knock",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "snow-street",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the door at x620 y1000",
+      "means": "A snowy hall front where the CashBlock knocks on a plaqued door under a Burgum plate and ten bricks fold into a data center.",
+      "ambient": "snow dust drifts, the awning drips, the block bobs, the crowd shifts",
+      "hero": {
+        "name": "CashBlock + door + crowd",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "40% block and bricks, 35% door and hall, 25% crowd"
+      },
+      "id": 2,
+      "start_s": 5.87,
+      "t": "5.870-20.160"
+    },
+    {
+      "title": "Electricity into intelligence",
+      "vo_line": 2,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "funnel-machine",
+      "pov": "cross-section-cutaway",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the bolt dropping and the brain popping is the whole shot",
+      "transition_in": "whip-pan",
+      "thread": "build",
+      "stage3d": "flat:a locked funnel machine where the bolt and the brain are the motion",
+      "centered": "the funnel at x540 y1000",
+      "means": "A funnel machine takes a lightning bolt and spits out a brain and coins.",
+      "ambient": "gears turn, sparks jump, the brain bobs, coins settle",
+      "hero": {
+        "name": "FunnelMachine",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "60% machine, 25% brain and coins, 15% bolt"
+      },
+      "id": 3,
+      "start_s": 20.16,
+      "t": "20.160-26.140"
+    },
+    {
+      "title": "Pause",
+      "vo_line": 3,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "high",
+      "stage": "remote-table",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "mask-wipe",
+      "thread": "carry",
+      "stage3d": "flat:a locked macro of the remote where the press and the glow are the motion",
+      "centered": "the remote at x540 y1000",
+      "means": "A big remote drops onto a table beside a tent card and its pause button glows.",
+      "ambient": "the remote rocks, the tent card sways, dust drifts, the bar in the foreground blinks",
+      "hero": {
+        "name": "RemoteControl + tent card",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "65% remote, 20% card, 15% table"
+      },
+      "id": 4,
+      "start_s": 26.14,
+      "t": "26.140-36.620"
+    },
+    {
+      "title": "Two days earlier",
+      "vo_line": 4,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "high",
+      "stage": "drum-and-box",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the drum at x300 y1000",
+      "means": "The remote's rewind rolls a brass date drum back to the 12th and a switchbox lamp goes orange.",
+      "ambient": "the drum whirs, the switchbox lamp pulses, wires sway, the remote rocks",
+      "hero": {
+        "name": "DateDrum + Switchbox + remote",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% drum, 40% switchbox, 20% remote"
+      },
+      "id": 5,
+      "start_s": 36.62,
+      "t": "36.620-48.900"
+    },
+    {
+      "title": "The reserve",
+      "vo_line": 5,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "reserve-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "focus-pull",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the bar at x540 y1000",
+      "means": "The ReserveBar in a navy cutaway with a spare tire, a SPARE ROOM bracket and a fluid that slumps past the Level 2 line.",
+      "ambient": "the fluid waves, the tire sways, the bracket dashes crawl, a sweat bead slides",
+      "hero": {
+        "name": "ReserveBar",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "70% bar, 30% tire and bracket"
+      },
+      "id": 6,
+      "start_s": 48.9,
+      "t": "48.900-59.720"
+    },
+    {
+      "title": "Three units",
+      "vo_line": 6,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "plant-yard",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the stacks at x540 y1000",
+      "means": "Three steam stacks in the snow, one goes dark and two put on hard hats and a stamp ties the alert to a unit.",
+      "ambient": "steam curls, snow drifts, hard hats tilt, the dark stack ticks as it cools",
+      "hero": {
+        "name": "Generator stacks + ReserveBar",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "60% stacks, 25% hats and stamp, 15% bar"
+      },
+      "id": 7,
+      "start_s": 59.72,
+      "t": "59.720-73.900"
+    },
+    {
+      "title": "A postcard from Ellendale",
+      "vo_line": 7,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "postcard-street",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the postcard at x540 y1000",
+      "means": "A postcard unfolds into a street of small houses with porch lights and a rebate check.",
+      "ambient": "porch lights flicker, card edges curl, snowflakes fall, the check rocks",
+      "hero": {
+        "name": "Postcard street",
+        "parts": 70,
+        "zones": 3,
+        "detail_note": "55% houses, 30% porch lights, 15% check"
+      },
+      "id": 8,
+      "start_s": 73.9,
+      "t": "73.900-83.560"
+    },
+    {
+      "title": "Its own power",
+      "vo_line": 8,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "reserve-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the bar at x330 y1000",
+      "means": "The bar perks up as a plug on its own cord seats in its base and a question mark stamps on its tag.",
+      "ambient": "the cord swings, the bar blinks, the tag turns, the fluid waves",
+      "hero": {
+        "name": "ReserveBar + plug",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "55% bar, 30% plug and cord, 15% tag"
+      },
+      "id": 9,
+      "start_s": 83.56,
+      "t": "83.560-94.980"
+    },
+    {
+      "title": "Then proceed",
+      "vo_line": 9,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "remote-table",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the play press and the rolling triangle are the whole shot",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked macro of the remote where the play press and the rolling triangle are the motion",
+      "centered": "the remote at x540 y1000",
+      "means": "The remote's play button presses and its triangle rolls forward.",
+      "ambient": "the triangle pulses, the lamp sways, dust drifts, the quote plate breathes",
+      "hero": {
+        "name": "RemoteControl",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "70% remote, 20% plate, 10% table"
+      },
+      "id": 10,
+      "start_s": 94.98,
+      "t": "94.980-102.480"
+    },
+    {
+      "title": "Every term is megawatts",
+      "vo_line": 10,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "ledger-desk",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the stamps landing are the shot",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "stage3d": "flat:a locked ledger desk where the stamps are the motion",
+      "centered": "the ledger at x540 y1000",
+      "means": "Three ledger slips stamp down each ending in MW? and an orange stamp slams across the blank readout.",
+      "ambient": "slips bounce, the readout flickers, the stamp rings, dust drifts",
+      "hero": {
+        "name": "Ledger slips + readout",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% slips, 30% readout, 20% stamp"
+      },
+      "id": 11,
+      "start_s": 102.48,
+      "t": "102.480-111.060"
+    },
+    {
+      "title": "Our read",
+      "vo_line": 11,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "funnel-machine",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "pull-back-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the funnel at x540 y1000",
+      "means": "The funnel machine rolls back with a plug where the bolt entered.",
+      "ambient": "gears turn, the plug sways, the bar blinks, sparks jump",
+      "hero": {
+        "name": "FunnelMachine + plug",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "60% machine, 25% plug, 15% bar"
+      },
+      "id": 12,
+      "start_s": 111.06,
+      "t": "111.060-119.740"
+    },
+    {
+      "title": "Name the megawatts",
+      "vo_line": 12,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "height-chart-room",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "pull-back-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the block at x400 y1230",
+      "means": "The CashBlock hops back against the height chart and a dashed ? MW block hovers above it while the bar looks at the camera.",
+      "ambient": "the pencil wobbles, window light drifts, the bar breathes",
+      "hero": {
+        "name": "HeightChart + CashBlock + ReserveBar",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "40% chart, 35% block and ghost, 25% bar"
+      },
+      "id": 13,
+      "start_s": 119.74,
+      "t": "119.740-127.320"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.528,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.09,
+        "offset": 0.528
+      },
+      "offset": 0.528,
+      "vo": "Ten billion dollars. How many megawatts?",
+      "phrase": "Ten billion dollars. How",
+      "shows": "a banknote-green CashBlock with an eager face hops onto its mark in front of a wooden height chart marked in MW and lands with a squash",
+      "sfx": "thud",
+      "means": "10 billion",
+      "rehook": "",
+      "draw": {
+        "subject": "CashBlock",
+        "action": "hops in and lands on its mark against a wooden megawatt height chart with a squash and an eager grin",
+        "emotion": "eager",
+        "annotation": "10 BILLION"
+      },
+      "choreo": {
+        "primary": "a banknote-green CashBlock with an eager face hops onto its mark in front of a wooden height chart marked in MW and lands with a squash",
+        "reaction": "the chart creaks and the block's grin settles",
+        "ambient": "the pencil wobbles, window light drifts, the chart creaks, the bar breathes"
+      },
+      "t": "0.528-3.430",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.43,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.43
+      },
+      "offset": 3.43,
+      "vo": "Ten billion dollars. How many megawatts?",
+      "phrase": "megawatts?",
+      "shows": "a pencil slides in over the chart and hovers level with the block's head while the ReserveBar beside the chart blinks awake and the reading stays blank",
+      "sfx": "pop",
+      "means": "how many megawatts?",
+      "rehook": "",
+      "draw": {
+        "subject": "pencil",
+        "action": "slides in and hovers at the block's head, the reading line left blank",
+        "emotion": "puzzled",
+        "annotation": "HOW MANY MEGAWATTS?"
+      },
+      "choreo": {
+        "primary": "a pencil slides in over the chart and hovers level with the block's head while the ReserveBar beside the chart blinks awake and the reading stays blank",
+        "reaction": "the pencil wobbles and the bar blinks",
+        "ambient": "the pencil wobbles, window light drifts, the chart creaks, the bar breathes"
+      },
+      "t": "3.430-5.870",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 2,
+      "at_s": 5.87,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+      "phrase": "On Wednesday, October fourteenth,",
+      "shows": "a snow-banked hall front slides in with a date chip and the CashBlock hops down in front of its door",
+      "sfx": "whoosh",
+      "means": "burgum \u00b7 fairbanks chamber \u00b7 october 14th",
+      "rehook": "",
+      "draw": {
+        "subject": "hall front",
+        "action": "slides in with a date chip as the CashBlock hops down in front of the door",
+        "emotion": "brisk",
+        "annotation": "BURGUM \u00b7 FAIRBANKS CHAMBER \u00b7 OCTOBER 14TH"
+      },
+      "choreo": {
+        "primary": "a snow-banked hall front slides in with a date chip and the CashBlock hops down in front of its door",
+        "reaction": "snow dust drifts and the block bobs",
+        "ambient": "snow dust drifts, the awning drips, the block bobs, the crowd shifts"
+      },
+      "t": "5.870-8.610",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 8.61,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.74
+      },
+      "offset": 2.74,
+      "vo": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+      "phrase": "Secretary Doug Burgum told",
+      "shows": "a banner chip whips across the top of the hall front reading INTERIOR SECRETARY BURGUM and a brass plaque on the door reads BURGUM",
+      "sfx": "swoosh",
+      "means": "interior secretary burgum",
+      "rehook": "",
+      "draw": {
+        "subject": "banner chip",
+        "action": "whips across the top of the hall front",
+        "emotion": "brisk",
+        "annotation": "INTERIOR SECRETARY BURGUM"
+      },
+      "choreo": {
+        "primary": "a banner chip whips across the top of the hall front reading INTERIOR SECRETARY BURGUM and a brass plaque on the door reads BURGUM",
+        "reaction": "the banner flutters and the block bobs",
+        "ambient": "snow dust drifts, the awning drips, the block bobs, the crowd shifts"
+      },
+      "t": "8.610-11.970",
+      "key": 31
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 11.97,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 6.1
+      },
+      "offset": 6.1,
+      "vo": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+      "phrase": "crowd that people are",
+      "shows": "a row of small snow-suited silhouettes in the foreground lean in toward the door as the ReserveBar peeks up among them",
+      "sfx": "creak",
+      "means": "a fairbanks chamber crowd",
+      "rehook": "",
+      "draw": {
+        "subject": "chamber crowd",
+        "action": "unfaced snow-suited figures lean in toward the door",
+        "emotion": "attentive",
+        "annotation": "A FAIRBANKS CHAMBER CROWD"
+      },
+      "choreo": {
+        "primary": "a row of small snow-suited silhouettes in the foreground lean in toward the door as the ReserveBar peeks up among them",
+        "reaction": "the figures shift their weight",
+        "ambient": "snow dust drifts, the awning drips, the block bobs, the crowd shifts"
+      },
+      "t": "11.970-13.590",
+      "key": 39
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 13.59,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 7.72
+      },
+      "offset": 7.72,
+      "vo": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+      "phrase": "knocking on his door",
+      "shows": "the CashBlock knocks on the brass-plaqued door three times, squashing on each knock, under a BURGUM SAID plate",
+      "sfx": "thump",
+      "means": "burgum said",
+      "rehook": "",
+      "draw": {
+        "subject": "CashBlock",
+        "action": "knocks on the door three times with a squash on each knock",
+        "emotion": "eager",
+        "annotation": "BURGUM SAID"
+      },
+      "choreo": {
+        "primary": "the CashBlock knocks on the brass-plaqued door three times, squashing on each knock, under a BURGUM SAID plate",
+        "reaction": "the door shivers and the crowd leans with each knock",
+        "ambient": "snow dust drifts, the awning drips, the block bobs, the crowd shifts"
+      },
+      "t": "13.590-17.290",
+      "key": 4
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 17.29,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 11.42
+      },
+      "offset": 11.42,
+      "vo": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+      "phrase": "center, with no tax",
+      "shows": "the brick tower folds down inside a dashed thought bubble into a squat windowless hall with a sign reading A DATA CENTER",
+      "sfx": "thunk",
+      "means": "a data center",
+      "rehook": "",
+      "draw": {
+        "subject": "data center box",
+        "action": "the tower folds into a squat windowless hall with a sign inside a dashed thought bubble",
+        "emotion": "plain",
+        "annotation": "A DATA CENTER"
+      },
+      "choreo": {
+        "primary": "the brick tower folds down inside a dashed thought bubble into a squat windowless hall with a sign reading A DATA CENTER",
+        "reaction": "the sign swings and the hall hums",
+        "ambient": "snow dust drifts, the awning drips, the block bobs, the crowd shifts"
+      },
+      "t": "17.290-18.990",
+      "key": 33
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 18.99,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 13.12
+      },
+      "offset": 13.12,
+      "vo": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+      "phrase": "breaks.",
+      "shows": "a NO TAX BREAKS tag swings from the block's handle",
+      "sfx": "snap",
+      "means": "no tax breaks",
+      "rehook": "",
+      "draw": {
+        "subject": "tag",
+        "action": "swings from the block's handle",
+        "emotion": "eager",
+        "annotation": "NO TAX BREAKS"
+      },
+      "choreo": {
+        "primary": "a NO TAX BREAKS tag swings from the block's handle",
+        "reaction": "the tag swings",
+        "ambient": "snow dust drifts, the awning drips, the block bobs, the crowd shifts"
+      },
+      "t": "18.990-20.160",
+      "key": 5
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 20.16,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "He said, you convert electricity into intelligence, you make money.",
+      "phrase": "He said, you convert",
+      "shows": "a lightning bolt drops into the mouth of a brass funnel machine and the gears spin up",
+      "sfx": "whoosh",
+      "means": "electricity in",
+      "rehook": "",
+      "draw": {
+        "subject": "lightning bolt",
+        "action": "drops into a funnel machine whose gears spin up",
+        "emotion": "charged",
+        "annotation": "ELECTRICITY IN"
+      },
+      "choreo": {
+        "primary": "a lightning bolt drops into the mouth of a brass funnel machine and the gears spin up",
+        "reaction": "the gears turn and sparks jump off the funnel rim",
+        "ambient": "gears turn, sparks jump, the brain bobs, coins settle"
+      },
+      "t": "20.160-23.090",
+      "key": 6
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 23.09,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "He said, you convert electricity into intelligence, you make money.",
+      "phrase": "intelligence, you make money.",
+      "shows": "a brain pops out of the machine's spout under a quote plate attributed to Burgum",
+      "sfx": "pop",
+      "means": "\"you convert electricity into intelligence, you make money\" \u00b7 burgum",
+      "rehook": "rehook: the brain",
+      "draw": {
+        "subject": "brain",
+        "action": "pops out of the spout",
+        "emotion": "delighted",
+        "annotation": "\"YOU CONVERT ELECTRICITY INTO INTELLIGENCE, YOU MAKE MONEY\" \u00b7 BURGUM"
+      },
+      "choreo": {
+        "primary": "a brain pops out of the machine's spout under a quote plate attributed to Burgum",
+        "reaction": "the brain bobs",
+        "ambient": "gears turn, sparks jump, the brain bobs, coins settle"
+      },
+      "t": "23.090-24.750",
+      "key": 7
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 24.75,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 4.59
+      },
+      "offset": 4.59,
+      "vo": "He said, you convert electricity into intelligence, you make money.",
+      "phrase": "money.",
+      "shows": "coins spill out of the spout and bounce along the floor",
+      "sfx": "clink",
+      "means": "money",
+      "rehook": "",
+      "draw": {
+        "subject": "coins",
+        "action": "spill out of the spout after the brain",
+        "emotion": "delighted",
+        "annotation": "MONEY"
+      },
+      "choreo": {
+        "primary": "coins spill out of the spout and bounce along the floor",
+        "reaction": "the coins bounce and settle",
+        "ambient": "gears turn, sparks jump, the brain bobs, coins settle"
+      },
+      "t": "24.750-26.140",
+      "key": 50
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 26.14,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "At that event, Jonathan Kreiss-Tomkins, a Democratic candidate for Alaska governor, was in the audience. He said, I think we should pause.",
+      "phrase": "At that event, Jonathan",
+      "shows": "a big horizontal remote drops from above onto a table and bounces, a small tent card standing beside it",
+      "sfx": "thump",
+      "means": "at that event",
+      "rehook": "",
+      "draw": {
+        "subject": "remote",
+        "action": "drops from above onto a table and bounces",
+        "emotion": "attentive",
+        "annotation": "AT THAT EVENT"
+      },
+      "choreo": {
+        "primary": "a big horizontal remote drops from above onto a table and bounces, a small tent card standing beside it",
+        "reaction": "the remote rocks and settles",
+        "ambient": "the remote rocks, the tent card sways, dust drifts, the bar in the foreground blinks"
+      },
+      "t": "26.140-29.870",
+      "key": 8
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 29.87,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.73
+      },
+      "offset": 3.73,
+      "vo": "At that event, Jonathan Kreiss-Tomkins, a Democratic candidate for Alaska governor, was in the audience. He said, I think we should pause.",
+      "phrase": "candidate for Alaska governor,",
+      "shows": "the tent card flips open to read KREISS-TOMKINS, DEMOCRATIC CANDIDATE FOR GOVERNOR",
+      "sfx": "paper",
+      "means": "kreiss-tomkins \u00b7 democratic candidate for governor",
+      "rehook": "",
+      "draw": {
+        "subject": "tent card",
+        "action": "flips open to its full line",
+        "emotion": "attentive",
+        "annotation": "KREISS-TOMKINS \u00b7 DEMOCRATIC CANDIDATE FOR GOVERNOR"
+      },
+      "choreo": {
+        "primary": "the tent card flips open to read KREISS-TOMKINS, DEMOCRATIC CANDIDATE FOR GOVERNOR",
+        "reaction": "the card swings and settles",
+        "ambient": "the remote rocks, the tent card sways, dust drifts, the bar in the foreground blinks"
+      },
+      "t": "29.870-32.290",
+      "key": 34
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 32.29,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.15
+      },
+      "offset": 6.15,
+      "vo": "At that event, Jonathan Kreiss-Tomkins, a Democratic candidate for Alaska governor, was in the audience. He said, I think we should pause.",
+      "phrase": "audience. He said, I",
+      "shows": "the ReserveBar in the foreground turns to look up at the remote from the audience",
+      "sfx": "creak",
+      "means": "in the audience",
+      "rehook": "",
+      "draw": {
+        "subject": "ReserveBar",
+        "action": "in the foreground turns to look up at the remote",
+        "emotion": "attentive",
+        "annotation": "IN THE AUDIENCE"
+      },
+      "choreo": {
+        "primary": "the ReserveBar in the foreground turns to look up at the remote from the audience",
+        "reaction": "the bar blinks and tilts its head",
+        "ambient": "the remote rocks, the tent card sways, dust drifts, the bar in the foreground blinks"
+      },
+      "t": "32.290-35.250",
+      "key": 35
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 35.25,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 9.11
+      },
+      "offset": 9.11,
+      "vo": "At that event, Jonathan Kreiss-Tomkins, a Democratic candidate for Alaska governor, was in the audience. He said, I think we should pause.",
+      "phrase": "pause.",
+      "shows": "the remote's pause button presses down and glows brass beside a quote plate",
+      "sfx": "clunk",
+      "means": "kreiss-tomkins \u00b7 \"i think we should pause\"",
+      "rehook": "",
+      "draw": {
+        "subject": "pause button",
+        "action": "presses down and glows",
+        "emotion": "firm",
+        "annotation": "KREISS-TOMKINS \u00b7 \"I THINK WE SHOULD PAUSE\""
+      },
+      "choreo": {
+        "primary": "the remote's pause button presses down and glows brass beside a quote plate",
+        "reaction": "the button glows and the remote rocks",
+        "ambient": "the remote rocks, the tent card sways, dust drifts, the bar in the foreground blinks"
+      },
+      "t": "35.250-36.620",
+      "key": 9
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 36.62,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Pause for what? Two days earlier, on Monday, the power company Golden Valley Electric sent a level two alert, its first under a new alert system.",
+      "phrase": "Pause for what? Two",
+      "shows": "the remote's pause button pops up and the rewind button presses as a brass date drum on the wall starts to roll backwards",
+      "sfx": "whoosh",
+      "means": "two days earlier",
+      "rehook": "rehook: pause for what?",
+      "draw": {
+        "subject": "rewind button",
+        "action": "presses and a brass date drum starts to roll backwards",
+        "emotion": "curious",
+        "annotation": "TWO DAYS EARLIER"
+      },
+      "choreo": {
+        "primary": "the remote's pause button pops up and the rewind button presses as a brass date drum on the wall starts to roll backwards",
+        "reaction": "the drum whirs and the remote rocks",
+        "ambient": "the drum whirs, the switchbox lamp pulses, wires sway, the remote rocks"
+      },
+      "t": "36.620-40.390",
+      "key": 10
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 40.39,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.77
+      },
+      "offset": 3.77,
+      "vo": "Pause for what? Two days earlier, on Monday, the power company Golden Valley Electric sent a level two alert, its first under a new alert system.",
+      "phrase": "Monday, the power company",
+      "shows": "the drum clicks to rest on 12 and a hazard-orange ring draws round it",
+      "sfx": "ping",
+      "means": "monday october 12th",
+      "rehook": "",
+      "draw": {
+        "subject": "date drum",
+        "action": "lands on the 12th with a hazard-orange ring",
+        "emotion": "pointed",
+        "annotation": "MONDAY OCTOBER 12TH"
+      },
+      "choreo": {
+        "primary": "the drum clicks to rest on 12 and a hazard-orange ring draws round it",
+        "reaction": "the ring wobbles",
+        "ambient": "the drum whirs, the switchbox lamp pulses, wires sway, the remote rocks"
+      },
+      "t": "40.390-41.990",
+      "key": 48
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 41.99,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.37
+      },
+      "offset": 5.37,
+      "vo": "Pause for what? Two days earlier, on Monday, the power company Golden Valley Electric sent a level two alert, its first under a new alert system.",
+      "phrase": "Golden Valley Electric sent",
+      "shows": "a hazard-orange lamp lights on a switchbox beside the drum",
+      "sfx": "stamp",
+      "means": "golden valley electric \u00b7 level 2 alert",
+      "rehook": "",
+      "draw": {
+        "subject": "alert lamp",
+        "action": "lights hazard orange on a switchbox",
+        "emotion": "uneasy",
+        "annotation": "GOLDEN VALLEY ELECTRIC \u00b7 LEVEL 2 ALERT"
+      },
+      "choreo": {
+        "primary": "a hazard-orange lamp lights on a switchbox beside the drum",
+        "reaction": "the lamp pulses",
+        "ambient": "the drum whirs, the switchbox lamp pulses, wires sway, the remote rocks"
+      },
+      "t": "41.990-45.810",
+      "key": 11
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 45.81,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 9.19
+      },
+      "offset": 9.19,
+      "vo": "Pause for what? Two days earlier, on Monday, the power company Golden Valley Electric sent a level two alert, its first under a new alert system.",
+      "phrase": "first under a new",
+      "shows": "the switchbox lid flips open to show a 1 sticker as a stamp lands: FIRST UNDER A NEW ALERT SYSTEM",
+      "sfx": "thunk",
+      "means": "first under a new alert system",
+      "rehook": "",
+      "draw": {
+        "subject": "switchbox lid",
+        "action": "opens to show a 1 sticker as a stamp lands",
+        "emotion": "firm",
+        "annotation": "FIRST UNDER A NEW ALERT SYSTEM"
+      },
+      "choreo": {
+        "primary": "the switchbox lid flips open to show a 1 sticker as a stamp lands: FIRST UNDER A NEW ALERT SYSTEM",
+        "reaction": "the stamp bounces and the lamp pulses",
+        "ambient": "the drum whirs, the switchbox lamp pulses, wires sway, the remote rocks"
+      },
+      "t": "45.810-48.900",
+      "key": 12
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 48.9,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A power company keeps spare room above what everyone's using. That's the reserve. Level two means that spare room is under fifteen megawatts.",
+      "phrase": "A power company keeps",
+      "shows": "the ReserveBar rises in a navy cutaway with a spare tire hung on a hook beside it and the fluid sloshing",
+      "sfx": "whoosh",
+      "means": "the reserve",
+      "rehook": "",
+      "draw": {
+        "subject": "ReserveBar",
+        "action": "rises in a navy cutaway with a spare tire hung beside it",
+        "emotion": "calm",
+        "annotation": "THE RESERVE"
+      },
+      "choreo": {
+        "primary": "the ReserveBar rises in a navy cutaway with a spare tire hung on a hook beside it and the fluid sloshing",
+        "reaction": "the fluid waves and the tire sways",
+        "ambient": "the fluid waves, the tire sways, the bracket dashes crawl, a sweat bead slides"
+      },
+      "t": "48.900-50.690",
+      "key": 13
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 50.69,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 1.79
+      },
+      "offset": 1.79,
+      "vo": "A power company keeps spare room above what everyone's using. That's the reserve. Level two means that spare room is under fifteen megawatts.",
+      "phrase": "room above what everyone's",
+      "shows": "a chalk bracket opens up the tube marking SPARE ROOM",
+      "sfx": "snap",
+      "means": "the reserve \u00b7 spare room",
+      "rehook": "",
+      "draw": {
+        "subject": "bracket",
+        "action": "opens up the tube marking spare room",
+        "emotion": "explaining",
+        "annotation": "THE RESERVE \u00b7 SPARE ROOM"
+      },
+      "choreo": {
+        "primary": "a chalk bracket opens up the tube marking SPARE ROOM",
+        "reaction": "the bracket dashes crawl and the fluid glints",
+        "ambient": "the fluid waves, the tire sways, the bracket dashes crawl, a sweat bead slides"
+      },
+      "t": "50.690-51.950",
+      "key": 14
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 51.95,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.05
+      },
+      "offset": 3.05,
+      "vo": "A power company keeps spare room above what everyone's using. That's the reserve. Level two means that spare room is under fifteen megawatts.",
+      "phrase": "everyone's using. That's the",
+      "shows": "small house icons light up beside the tube under an IN USE chip",
+      "sfx": "pop",
+      "means": "in use",
+      "rehook": "",
+      "draw": {
+        "subject": "house icons",
+        "action": "light up beside the tube",
+        "emotion": "plain",
+        "annotation": "IN USE"
+      },
+      "choreo": {
+        "primary": "small house icons light up beside the tube under an IN USE chip",
+        "reaction": "the windows twinkle",
+        "ambient": "the fluid waves, the tire sways, the bracket dashes crawl, a sweat bead slides"
+      },
+      "t": "51.950-54.010",
+      "key": 41
+    },
+    {
+      "id": 23,
+      "shot": 6,
+      "at_s": 54.01,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 5.11
+      },
+      "offset": 5.11,
+      "vo": "A power company keeps spare room above what everyone's using. That's the reserve. Level two means that spare room is under fifteen megawatts.",
+      "phrase": "Level two means that",
+      "shows": "the orange LEVEL 2 line draws across the tube and the bar's lamp lights while the fluid holds still",
+      "sfx": "snap",
+      "means": "level 2",
+      "rehook": "",
+      "draw": {
+        "subject": "LEVEL 2 line",
+        "action": "draws across the tube in hazard orange as the bar's lamp lights",
+        "emotion": "uneasy",
+        "annotation": "LEVEL 2"
+      },
+      "choreo": {
+        "primary": "the orange LEVEL 2 line draws across the tube and the bar's lamp lights while the fluid holds still",
+        "reaction": "the line's dashes crawl and the bar looks at it",
+        "ambient": "the fluid waves, the tire sways, the bracket dashes crawl, a sweat bead slides"
+      },
+      "t": "54.010-57.770",
+      "key": 52
+    },
+    {
+      "id": 24,
+      "shot": 6,
+      "at_s": 57.77,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 8.87
+      },
+      "offset": 8.87,
+      "vo": "A power company keeps spare room above what everyone's using. That's the reserve. Level two means that spare room is under fifteen megawatts.",
+      "phrase": "fifteen megawatts.",
+      "shows": "the orange LEVEL 2 line draws across the tube and the fluid slumps with overshoot below it while the bar sweats",
+      "sfx": "creak",
+      "means": "level 2 \u00b7 reserve under 15 mw",
+      "rehook": "",
+      "draw": {
+        "subject": "fluid",
+        "action": "slumps with overshoot below the orange LEVEL 2 line",
+        "emotion": "alarmed",
+        "annotation": "LEVEL 2 \u00b7 RESERVE UNDER 15 MW"
+      },
+      "choreo": {
+        "primary": "the orange LEVEL 2 line draws across the tube and the fluid slumps with overshoot below it while the bar sweats",
+        "reaction": "a sweat bead slides down the glass",
+        "ambient": "the fluid waves, the tire sways, the bracket dashes crawl, a sweat bead slides"
+      },
+      "t": "57.770-59.720",
+      "key": 15
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 59.72,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+      "phrase": "It happened because one",
+      "shows": "three generator stacks rise out of the snow with steam curling off them and a sweating ReserveBar in the foreground",
+      "sfx": "rumble",
+      "means": "three units",
+      "rehook": "",
+      "draw": {
+        "subject": "plant stacks",
+        "action": "three steam stacks rise out of the snow",
+        "emotion": "plain",
+        "annotation": "THREE UNITS"
+      },
+      "choreo": {
+        "primary": "three generator stacks rise out of the snow with steam curling off them and a sweating ReserveBar in the foreground",
+        "reaction": "the steam curls and the snow drifts",
+        "ambient": "steam curls, snow drifts, hard hats tilt, the dark stack ticks as it cools"
+      },
+      "t": "59.720-62.550",
+      "key": 16
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "at_s": 62.55,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.83
+      },
+      "offset": 2.83,
+      "vo": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+      "phrase": "offline while two others",
+      "shows": "the left stack's steam stops and its lamp goes orange",
+      "sfx": "clunk",
+      "means": "1 unit offline",
+      "rehook": "rehook: one unit offline",
+      "draw": {
+        "subject": "left stack",
+        "action": "goes dark with an orange lamp",
+        "emotion": "grim",
+        "annotation": "1 UNIT OFFLINE"
+      },
+      "choreo": {
+        "primary": "the left stack's steam stops and its lamp goes orange",
+        "reaction": "the dark stack ticks as it cools",
+        "ambient": "steam curls, snow drifts, hard hats tilt, the dark stack ticks as it cools"
+      },
+      "t": "62.550-65.170",
+      "key": 17
+    },
+    {
+      "id": 27,
+      "shot": 7,
+      "at_s": 65.17,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.45
+      },
+      "offset": 5.45,
+      "vo": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+      "phrase": "maintenance. Spokesperson Ashley Bradish",
+      "shows": "hard hats drop onto the two other stacks with a clink each under a 2 IN MAINTENANCE chip",
+      "sfx": "clink",
+      "means": "2 in maintenance",
+      "rehook": "",
+      "draw": {
+        "subject": "hard hats",
+        "action": "drop onto the two other stacks",
+        "emotion": "plain",
+        "annotation": "2 IN MAINTENANCE"
+      },
+      "choreo": {
+        "primary": "hard hats drop onto the two other stacks with a clink each under a 2 IN MAINTENANCE chip",
+        "reaction": "the hats wobble and settle",
+        "ambient": "steam curls, snow drifts, hard hats tilt, the dark stack ticks as it cools"
+      },
+      "t": "65.170-67.230",
+      "key": 36
+    },
+    {
+      "id": 28,
+      "shot": 7,
+      "at_s": 67.23,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.51
+      },
+      "offset": 7.51,
+      "vo": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+      "phrase": "Spokesperson Ashley Bradish said",
+      "shows": "a stamp lands across the dark stack: THE REPORTS TIE THE ALERT TO A UNIT, NOT A DATA CENTER",
+      "sfx": "thunk",
+      "means": "the reports tie the alert to a unit, not a data center",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp",
+        "action": "lands over the dark stack",
+        "emotion": "firm",
+        "annotation": "THE REPORTS TIE THE ALERT TO A UNIT, NOT A DATA CENTER"
+      },
+      "choreo": {
+        "primary": "a stamp lands across the dark stack: THE REPORTS TIE THE ALERT TO A UNIT, NOT A DATA CENTER",
+        "reaction": "the stamp rings and the stack ticks",
+        "ambient": "steam curls, snow drifts, hard hats tilt, the dark stack ticks as it cools"
+      },
+      "t": "67.230-69.390",
+      "key": 53
+    },
+    {
+      "id": 29,
+      "shot": 7,
+      "at_s": 69.39,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 9.67
+      },
+      "offset": 9.67,
+      "vo": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+      "phrase": "generation system is not",
+      "shows": "a wrench-and-stack icon turns over the three stacks",
+      "sfx": "clank",
+      "means": "generation",
+      "rehook": "",
+      "draw": {
+        "subject": "wrench and stack",
+        "action": "icon turns over the stacks",
+        "emotion": "plain",
+        "annotation": "GENERATION"
+      },
+      "choreo": {
+        "primary": "a wrench-and-stack icon turns over the three stacks",
+        "reaction": "the wrench turns",
+        "ambient": "steam curls, snow drifts, hard hats tilt, the dark stack ticks as it cools"
+      },
+      "t": "69.390-72.090",
+      "key": 54
+    },
+    {
+      "id": 30,
+      "shot": 7,
+      "at_s": 72.09,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 12.37
+      },
+      "offset": 12.37,
+      "vo": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+      "phrase": "quick fix.",
+      "shows": "a quote plate stamps in beside the sweating bar",
+      "sfx": "stamp",
+      "means": "\"not going to be a quick fix\" \u00b7 gvea's ashley bradish",
+      "rehook": "",
+      "draw": {
+        "subject": "quote plate",
+        "action": "stamps in beside the bar",
+        "emotion": "grim",
+        "annotation": "\"NOT GOING TO BE A QUICK FIX\" \u00b7 GVEA'S ASHLEY BRADISH"
+      },
+      "choreo": {
+        "primary": "a quote plate stamps in beside the sweating bar",
+        "reaction": "the plate bounces and the bar shivers",
+        "ambient": "steam curls, snow drifts, hard hats tilt, the dark stack ticks as it cools"
+      },
+      "t": "72.090-73.900",
+      "key": 18
+    },
+    {
+      "id": 31,
+      "shot": 8,
+      "at_s": 73.9,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the best case for yes. Burgum pointed to Ellendale, North Dakota, with homes and electric bill rebates, per K T U U.",
+      "phrase": "Here's the best case",
+      "shows": "a postcard unfolds on a hinge into a street of small houses whose porch lights wink on",
+      "sfx": "fold",
+      "means": "the best case for yes",
+      "rehook": "rehook: the best case for yes",
+      "draw": {
+        "subject": "postcard",
+        "action": "unfolds on a hinge into a street of small houses with porch lights",
+        "emotion": "hopeful",
+        "annotation": "THE BEST CASE FOR YES"
+      },
+      "choreo": {
+        "primary": "a postcard unfolds on a hinge into a street of small houses whose porch lights wink on",
+        "reaction": "the porch lights flicker and the card edges curl",
+        "ambient": "porch lights flicker, card edges curl, snowflakes fall, the check rocks"
+      },
+      "t": "73.900-78.370",
+      "key": 19
+    },
+    {
+      "id": 32,
+      "shot": 8,
+      "at_s": 78.37,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.47
+      },
+      "offset": 4.47,
+      "vo": "Here's the best case for yes. Burgum pointed to Ellendale, North Dakota, with homes and electric bill rebates, per K T U U.",
+      "phrase": "Dakota, with homes and",
+      "shows": "an ELLENDALE, NORTH DAKOTA chip pops up over the street",
+      "sfx": "pop",
+      "means": "ellendale, north dakota",
+      "rehook": "",
+      "draw": {
+        "subject": "map chip",
+        "action": "pops up over the street",
+        "emotion": "plain",
+        "annotation": "ELLENDALE, NORTH DAKOTA"
+      },
+      "choreo": {
+        "primary": "an ELLENDALE, NORTH DAKOTA chip pops up over the street",
+        "reaction": "the chip bobs",
+        "ambient": "porch lights flicker, card edges curl, snowflakes fall, the check rocks"
+      },
+      "t": "78.370-80.670",
+      "key": 37
+    },
+    {
+      "id": 33,
+      "shot": 8,
+      "at_s": 80.67,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 6.77
+      },
+      "offset": 6.77,
+      "vo": "Here's the best case for yes. Burgum pointed to Ellendale, North Dakota, with homes and electric bill rebates, per K T U U.",
+      "phrase": "rebates, per K T",
+      "shows": "a rebate check flutters down and lands on a roof",
+      "sfx": "clink",
+      "means": "bill rebates",
+      "rehook": "",
+      "draw": {
+        "subject": "rebate check",
+        "action": "flutters down and lands on a roof",
+        "emotion": "warm",
+        "annotation": "BILL REBATES"
+      },
+      "choreo": {
+        "primary": "a rebate check flutters down and lands on a roof",
+        "reaction": "the check rocks on the shingles",
+        "ambient": "porch lights flicker, card edges curl, snowflakes fall, the check rocks"
+      },
+      "t": "80.670-81.770",
+      "key": 20
+    },
+    {
+      "id": 34,
+      "shot": 8,
+      "at_s": 81.77,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 7.87
+      },
+      "offset": 7.87,
+      "vo": "Here's the best case for yes. Burgum pointed to Ellendale, North Dakota, with homes and electric bill rebates, per K T U U.",
+      "phrase": "K T U U.",
+      "shows": "a PER KTUU source chip stamps onto the street",
+      "sfx": "stamp",
+      "means": "per ktuu",
+      "rehook": "",
+      "draw": {
+        "subject": "source chip",
+        "action": "stamps on the street",
+        "emotion": "plain",
+        "annotation": "PER KTUU"
+      },
+      "choreo": {
+        "primary": "a PER KTUU source chip stamps onto the street",
+        "reaction": "the chip bounces",
+        "ambient": "porch lights flicker, card edges curl, snowflakes fall, the check rocks"
+      },
+      "t": "81.770-83.560",
+      "key": 55
+    },
+    {
+      "id": 35,
+      "shot": 9,
+      "at_s": 83.56,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The best version is a customer that brings its own power, which could leave more reserve, not less. But the reports don't say whether this one would.",
+      "phrase": "The best version is",
+      "shows": "a plug on its own long cord slides in from the side toward the bar in the cutaway",
+      "sfx": "slide",
+      "means": "if it brought its own power?",
+      "rehook": "",
+      "draw": {
+        "subject": "plug",
+        "action": "a plug on its own power cord slides in from the side",
+        "emotion": "hopeful",
+        "annotation": "IF IT BROUGHT ITS OWN POWER?"
+      },
+      "choreo": {
+        "primary": "a plug on its own long cord slides in from the side toward the bar in the cutaway",
+        "reaction": "the cord swings and the bar tips its head",
+        "ambient": "the cord swings, the bar blinks, the tag turns, the fluid waves"
+      },
+      "t": "83.560-87.930",
+      "key": 21
+    },
+    {
+      "id": 36,
+      "shot": 9,
+      "at_s": 87.93,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.37
+      },
+      "offset": 4.37,
+      "vo": "The best version is a customer that brings its own power, which could leave more reserve, not less. But the reports don't say whether this one would.",
+      "phrase": "leave more reserve, not",
+      "shows": "the fluid climbs the tube and a mark rises with it reading MORE RESERVE, NOT LESS, as a question",
+      "sfx": "swoosh",
+      "means": "more reserve, not less",
+      "rehook": "",
+      "draw": {
+        "subject": "reserve mark",
+        "action": "rises on the bar's tube as the fluid climbs",
+        "emotion": "hopeful",
+        "annotation": "MORE RESERVE, NOT LESS"
+      },
+      "choreo": {
+        "primary": "the fluid climbs the tube and a mark rises with it reading MORE RESERVE, NOT LESS, as a question",
+        "reaction": "the fluid sloshes and the bar beams",
+        "ambient": "the cord swings, the bar blinks, the tag turns, the fluid waves"
+      },
+      "t": "87.930-90.990",
+      "key": 38
+    },
+    {
+      "id": 37,
+      "shot": 9,
+      "at_s": 90.99,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 7.43
+      },
+      "offset": 7.43,
+      "vo": "The best version is a customer that brings its own power, which could leave more reserve, not less. But the reports don't say whether this one would.",
+      "phrase": "But the reports don't",
+      "shows": "a question mark stamps onto the plug's tag and the bar holds its height, eyes sliding sideways",
+      "sfx": "hush",
+      "means": "the reports don't say",
+      "rehook": "rehook: but the reports don't say",
+      "draw": {
+        "subject": "question mark",
+        "action": "stamps onto the plug's tag and the bar holds its height, unsure",
+        "emotion": "uncertain",
+        "annotation": "THE REPORTS DON'T SAY"
+      },
+      "choreo": {
+        "primary": "a question mark stamps onto the plug's tag and the bar holds its height, eyes sliding sideways",
+        "reaction": "the tag swings and the bar blinks",
+        "ambient": "the cord swings, the bar blinks, the tag turns, the fluid waves"
+      },
+      "t": "90.990-94.980",
+      "key": 22
+    },
+    {
+      "id": 38,
+      "shot": 10,
+      "at_s": 94.98,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Kreiss-Tomkins also said, and then, in a thoughtful way, development can proceed.",
+      "phrase": "Kreiss-Tomkins also said, and",
+      "shows": "the remote's play button presses down and the pause button pops up beside a quote plate",
+      "sfx": "clunk",
+      "means": "\"and then, in a thoughtful way, development can proceed\" \u00b7 kreiss-tomkins",
+      "rehook": "",
+      "draw": {
+        "subject": "play button",
+        "action": "presses down and the pause button pops up",
+        "emotion": "relieved",
+        "annotation": "\"AND THEN, IN A THOUGHTFUL WAY, DEVELOPMENT CAN PROCEED\" \u00b7 KREISS-TOMKINS"
+      },
+      "choreo": {
+        "primary": "the remote's play button presses down and the pause button pops up beside a quote plate",
+        "reaction": "the button glows and the bar in the foreground glances up",
+        "ambient": "the triangle pulses, the lamp sways, dust drifts, the quote plate breathes"
+      },
+      "t": "94.980-98.550",
+      "key": 23
+    },
+    {
+      "id": 39,
+      "shot": 10,
+      "at_s": 98.55,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.57
+      },
+      "offset": 3.57,
+      "vo": "Kreiss-Tomkins also said, and then, in a thoughtful way, development can proceed.",
+      "phrase": "thoughtful way, development can",
+      "shows": "a small lamp glows over the remote",
+      "sfx": "ping",
+      "means": "thoughtful",
+      "rehook": "",
+      "draw": {
+        "subject": "lamp",
+        "action": "glows over the remote",
+        "emotion": "relieved",
+        "annotation": "THOUGHTFUL"
+      },
+      "choreo": {
+        "primary": "a small lamp glows over the remote",
+        "reaction": "the lamp sways",
+        "ambient": "the triangle pulses, the lamp sways, dust drifts, the quote plate breathes"
+      },
+      "t": "98.550-99.910",
+      "key": 58
+    },
+    {
+      "id": 40,
+      "shot": 10,
+      "at_s": 99.91,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 4.93
+      },
+      "offset": 4.93,
+      "vo": "Kreiss-Tomkins also said, and then, in a thoughtful way, development can proceed.",
+      "phrase": "development can proceed.",
+      "shows": "the play triangle rolls forward across the table toward the camera",
+      "sfx": "chime",
+      "means": "proceed",
+      "rehook": "",
+      "draw": {
+        "subject": "play triangle",
+        "action": "rolls forward across the table",
+        "emotion": "hopeful",
+        "annotation": "PROCEED"
+      },
+      "choreo": {
+        "primary": "the play triangle rolls forward across the table toward the camera",
+        "reaction": "the triangle pulses",
+        "ambient": "the triangle pulses, the lamp sways, dust drifts, the quote plate breathes"
+      },
+      "t": "99.910-102.480",
+      "key": 45
+    },
+    {
+      "id": 41,
+      "shot": 11,
+      "at_s": 102.48,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So every term of yes is a megawatt question, and the reports name no megawatts.",
+      "phrase": "So every term of",
+      "shows": "the ledger slip HOMES stamps down ending in MW? and a mini ReserveBar sits unlit in the readout's bezel",
+      "sfx": "stamp",
+      "means": "every term of yes",
+      "rehook": "",
+      "draw": {
+        "subject": "ledger slip",
+        "action": "HOMES stamps down ending in MW?",
+        "emotion": "firm",
+        "annotation": "EVERY TERM OF YES"
+      },
+      "choreo": {
+        "primary": "the ledger slip HOMES stamps down ending in MW? and a mini ReserveBar sits unlit in the readout's bezel",
+        "reaction": "the slip bounces and settles",
+        "ambient": "slips bounce, the readout flickers, the stamp rings, dust drifts"
+      },
+      "t": "102.480-103.710",
+      "key": 24
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 103.71,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.23
+      },
+      "offset": 1.23,
+      "vo": "So every term of yes is a megawatt question, and the reports name no megawatts.",
+      "phrase": "term of yes is",
+      "shows": "the ledger slip REBATES stamps down ending in MW?",
+      "sfx": "stamp",
+      "means": "a megawatt question",
+      "rehook": "",
+      "draw": {
+        "subject": "ledger slip",
+        "action": "REBATES stamps down ending in MW?",
+        "emotion": "firm",
+        "annotation": "A MEGAWATT QUESTION"
+      },
+      "choreo": {
+        "primary": "the ledger slip REBATES stamps down ending in MW?",
+        "reaction": "the slip bounces",
+        "ambient": "slips bounce, the readout flickers, the stamp rings, dust drifts"
+      },
+      "t": "103.710-105.350",
+      "key": 59
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 105.35,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.87
+      },
+      "offset": 2.87,
+      "vo": "So every term of yes is a megawatt question, and the reports name no megawatts.",
+      "phrase": "megawatt question, and the",
+      "shows": "the ledger slip WHO BUILDS THE POWER stamps down ending in MW?",
+      "sfx": "snap",
+      "means": "mw?",
+      "rehook": "",
+      "draw": {
+        "subject": "ledger slip",
+        "action": "WHO BUILDS THE POWER stamps down ending in MW?",
+        "emotion": "firm",
+        "annotation": "MW?"
+      },
+      "choreo": {
+        "primary": "the ledger slip WHO BUILDS THE POWER stamps down ending in MW?",
+        "reaction": "the slip bounces",
+        "ambient": "slips bounce, the readout flickers, the stamp rings, dust drifts"
+      },
+      "t": "105.350-107.450",
+      "key": 46
+    },
+    {
+      "id": 44,
+      "shot": 11,
+      "at_s": 107.45,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.97
+      },
+      "offset": 4.97,
+      "vo": "So every term of yes is a megawatt question, and the reports name no megawatts.",
+      "phrase": "reports name no megawatts.",
+      "shows": "an orange stamp slams across the blank MW readout: THE REPORTS NAME NO MEGAWATTS FOR THE 10 BILLION",
+      "sfx": "boom",
+      "means": "the reports name no megawatts for the 10 billion",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp",
+        "action": "slams in hazard orange across the blank readout",
+        "emotion": "grim",
+        "annotation": "THE REPORTS NAME NO MEGAWATTS FOR THE 10 BILLION"
+      },
+      "choreo": {
+        "primary": "an orange stamp slams across the blank MW readout: THE REPORTS NAME NO MEGAWATTS FOR THE 10 BILLION",
+        "reaction": "the stamp rings and the readout flickers",
+        "ambient": "slips bounce, the readout flickers, the stamp rings, dust drifts"
+      },
+      "t": "107.450-111.060",
+      "key": 25
+    },
+    {
+      "id": 45,
+      "shot": 12,
+      "at_s": 111.06,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Burgum's own sentence, electricity into intelligence, makes the AI question a power question first.",
+      "phrase": "Burgum's own sentence, electricity",
+      "shows": "the funnel machine rolls back in, a power plug where the bolt entered and OUR READ on a tag",
+      "sfx": "whoosh",
+      "means": "our read",
+      "rehook": "rehook: our read",
+      "draw": {
+        "subject": "funnel machine",
+        "action": "rolls back in with a plug where the lightning bolt entered",
+        "emotion": "thoughtful",
+        "annotation": "OUR READ"
+      },
+      "choreo": {
+        "primary": "the funnel machine rolls back in, a power plug where the bolt entered and OUR READ on a tag",
+        "reaction": "the gears turn slowly and the plug sways",
+        "ambient": "gears turn, the plug sways, the bar blinks, sparks jump"
+      },
+      "t": "111.060-115.810",
+      "key": 26
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 115.81,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.75
+      },
+      "offset": 4.75,
+      "vo": "Burgum's own sentence, electricity into intelligence, makes the AI question a power question first.",
+      "phrase": "AI question a power",
+      "shows": "a small AI tag flips onto the funnel machine's rim",
+      "sfx": "creak",
+      "means": "ai",
+      "rehook": "",
+      "draw": {
+        "subject": "AI tag",
+        "action": "flips on the funnel machine",
+        "emotion": "plain",
+        "annotation": "AI"
+      },
+      "choreo": {
+        "primary": "a small AI tag flips onto the funnel machine's rim",
+        "reaction": "the tag swings",
+        "ambient": "gears turn, the plug sways, the bar blinks, sparks jump"
+      },
+      "t": "115.810-117.090",
+      "key": 47
+    },
+    {
+      "id": 47,
+      "shot": 12,
+      "at_s": 117.09,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.03
+      },
+      "offset": 6.03,
+      "vo": "Burgum's own sentence, electricity into intelligence, makes the AI question a power question first.",
+      "phrase": "power question first.",
+      "shows": "the plug slots into the machine's input and the bar nods beside it",
+      "sfx": "clunk",
+      "means": "a power question first",
+      "rehook": "",
+      "draw": {
+        "subject": "plug",
+        "action": "slots into the machine's input and the bar nods",
+        "emotion": "firm",
+        "annotation": "A POWER QUESTION FIRST"
+      },
+      "choreo": {
+        "primary": "the plug slots into the machine's input and the bar nods beside it",
+        "reaction": "the bar blinks and the gears spin up",
+        "ambient": "gears turn, the plug sways, the bar blinks, sparks jump"
+      },
+      "t": "117.090-119.740",
+      "key": 27
+    },
+    {
+      "id": 48,
+      "shot": 13,
+      "at_s": 119.74,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So, ten billion dollars. How many megawatts? Name them, and anyone can read the scale.",
+      "phrase": "So, ten billion dollars.",
+      "shows": "the CashBlock hops back onto its mark against the height chart and lands with a squash, the pencil hovering at its head",
+      "sfx": "thud",
+      "means": "10 billion",
+      "rehook": "",
+      "draw": {
+        "subject": "CashBlock",
+        "action": "hops back onto its mark against the height chart",
+        "emotion": "eager",
+        "annotation": "10 BILLION"
+      },
+      "choreo": {
+        "primary": "the CashBlock hops back onto its mark against the height chart and lands with a squash, the pencil hovering at its head",
+        "reaction": "the chart creaks and the block's grin settles",
+        "ambient": "the pencil wobbles, window light drifts, the bar breathes"
+      },
+      "t": "119.740-122.990",
+      "key": 28
+    },
+    {
+      "id": 49,
+      "shot": 13,
+      "at_s": 122.99,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.25
+      },
+      "offset": 3.25,
+      "vo": "So, ten billion dollars. How many megawatts? Name them, and anyone can read the scale.",
+      "phrase": "many megawatts? Name them,",
+      "shows": "the pencil swings in and snaps a dashed line across the chart level with the block's head as a ? MW label flips up beside it",
+      "sfx": "tick",
+      "means": "? mw",
+      "rehook": "",
+      "draw": {
+        "subject": "pencil line",
+        "action": "swings in and snaps a dashed line across the chart as a ? MW label flips up",
+        "emotion": "puzzled",
+        "annotation": "? MW"
+      },
+      "choreo": {
+        "primary": "the pencil swings in and snaps a dashed line across the chart level with the block's head as a ? MW label flips up beside it",
+        "reaction": "the pencil wobbles",
+        "ambient": "the pencil wobbles, window light drifts, the bar breathes"
+      },
+      "t": "122.990-124.630",
+      "key": 61
+    },
+    {
+      "id": 50,
+      "shot": 13,
+      "at_s": 124.63,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 4.89
+      },
+      "offset": 4.89,
+      "vo": "So, ten billion dollars. How many megawatts? Name them, and anyone can read the scale.",
+      "phrase": "Name them, and anyone",
+      "shows": "a dashed ghost block marked ? MW hovers above the CashBlock waiting for its number",
+      "sfx": "bell",
+      "means": "name the megawatts",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed block",
+        "action": "hovers above the CashBlock waiting for a number",
+        "emotion": "hopeful",
+        "annotation": "NAME THE MEGAWATTS"
+      },
+      "choreo": {
+        "primary": "a dashed ghost block marked ? MW hovers above the CashBlock waiting for its number",
+        "reaction": "the dashes crawl and the pencil hovers",
+        "ambient": "the pencil wobbles, window light drifts, the bar breathes"
+      },
+      "t": "124.630-126.770",
+      "key": 29
+    },
+    {
+      "id": 51,
+      "shot": 13,
+      "at_s": 126.77,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 7.03
+      },
+      "offset": 7.03,
+      "vo": "So, ten billion dollars. How many megawatts? Name them, and anyone can read the scale.",
+      "phrase": "read the scale.",
+      "shows": "the ReserveBar beside the chart turns to look straight at the camera while the pencil hovers over the blank line, the opening image replaying",
+      "sfx": "ping",
+      "means": "10 billion \u00b7 ? mw",
+      "rehook": "",
+      "draw": {
+        "subject": "ReserveBar",
+        "action": "turns to look straight at the camera and the open replays",
+        "emotion": "warm",
+        "annotation": "10 BILLION \u00b7 ? MW"
+      },
+      "choreo": {
+        "primary": "the ReserveBar beside the chart turns to look straight at the camera while the pencil hovers over the blank line, the opening image replaying",
+        "reaction": "the bar smiles",
+        "ambient": "the pencil wobbles, window light drifts, the bar breathes"
+      },
+      "t": "126.770-127.320",
+      "key": 30
+    }
+  ]
+}
