@@ -1,0 +1,19 @@
+Burgum said people want to drop ten billion on a data center. Two days earlier Golden Valley Electric's reserve fell under 15 megawatts.
+
+On Wednesday October 14th Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce event that people are knocking on his door to drop ten billion on a data center with no tax breaks. The reports name no developer, no site and no megawatts.
+
+On Monday Golden Valley Electric sent a Level 2 alert (its first under a new alert system). Level 2 means the spare room on the grid (the reserve) is under 15 megawatts.
+
+One generating unit went offline while two others were in scheduled maintenance. The reports tie the alert to that unit and not to a data center.
+
+Dollars and megawatts are different units. A pitch that names no megawatts isn't yet a proposal, and a ten billion dollar figure can't be weighed against a 15 megawatt reserve until someone names the load.
+
+Burgum pointed to Ellendale (North Dakota) with homes and electric bill rebates per KTUU. A customer that brings its own power could leave more reserve and not less, but the reports don't say whether this one would.
+
+Jonathan Kreiss-Tomkins (a Democratic candidate for Alaska governor) was in the audience. He said "I think we should pause." He also said development can proceed "in a thoughtful way."
+
+Burgum said "you convert electricity into intelligence, you make money." That sentence makes the AI question a power question first.
+
+What would a data center have to put in writing in megawatts before you'd say yes?
+
+#Alaska #Fairbanks #DataCenters #ArtificialIntelligence

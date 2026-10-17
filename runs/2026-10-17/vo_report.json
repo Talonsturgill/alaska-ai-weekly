@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.979,
+    "heard": "$10 billion. How many megawatts? On Wednesday, October 14th, Interior Secretary Doug Burgham told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop $10 billion on a data center, with no tax breaks. He said, you convert electricity into intelligence, you make money. At that event, Jonathan Christ Tompkins, a Democratic candidate for Alaska Governor, was in the audience. He said, I think we should pause. Pause for what? Two days earlier, on Monday, the power company Golden Valley Electric sent a Level 2 alert, its first under a new alert system. A power company keeps spare room above what everyone's using. That's the reserve. Level 2 means that spare room is under 15 megawatts. It happened because one generating unit went offline, while two others were in scheduled maintenance. Spokesperson Ashley Brattish said the generation system is not going to be a quick fix. Here's the best case for yes. Burgham pointed to Ellen Dale, North Dakota, with homes and electric bill rebates, per KTU. The best version is a customer that brings its own power, which could leave more reserve, not less. But the reports don't say whether this one would. Christ Tompkins also said, and then, in a thoughtful way, development can proceed. So every term of yes is a megawatt question. And the reports name no megawatts. Burgham's own sense, electricity into intelligence makes the AI question a power question first. So $10 billion, how many megawatts, name them, and anyone can read the scale.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.043,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 8.76,
+        "voiced_frac": 0.52,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 127.8,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 127.8,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.979,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.982,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.982,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

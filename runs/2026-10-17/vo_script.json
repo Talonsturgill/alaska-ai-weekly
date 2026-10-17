@@ -1,0 +1,119 @@
+{
+ "run_date": "2026-10-17",
+ "title": "TEN BILLION, HOW MANY MEGAWATTS",
+ "note": "Burgum's figures are attributed to him. The film makes no claim about where a data center would be built, who is building it, or how many megawatts it would need. The closing read is the film's own opinion.",
+ "caption_fixups": {},
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Ten billion dollars. How many megawatts?",
+   "t": "Ten billion dollars. How many megawatts?",
+   "claims": [
+    "c2"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+   "t": "On Wednesday, October fourteenth, Interior Secretary Doug Burgum told a Fairbanks Chamber of Commerce crowd that people are knocking on his door to drop ten billion on a data center, with no tax breaks.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "He said, you convert electricity into intelligence, you make money.",
+   "t": "He said, you convert electricity into intelligence, you make money.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "At that event, Jonathan Kreiss-Tomkins, a Democratic candidate for Alaska governor, was in the audience. He said, I think we should pause.",
+   "t": "At that event, Jonathan Kreiss-Tomkins, a Democratic candidate for Alaska governor, was in the audience. He said, I think we should pause.",
+   "claims": [
+    "c10",
+    "c14"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Pause for what? Two days earlier, on Monday, the power company Golden Valley Electric sent a level two alert, its first under a new alert system.",
+   "t": "Pause for what? Two days earlier, on Monday, the power company Golden Valley Electric sent a level two alert, its first under a new alert system.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "A power company keeps spare room above what everyone's using. That's the reserve. Level two means that spare room is under fifteen megawatts.",
+   "t": "A power company keeps spare room above what everyone's using. That's the reserve. Level two means that spare room is under fifteen megawatts.",
+   "claims": [
+    "c6",
+    "c16"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+   "t": "It happened because one generating unit went offline while two others were in scheduled maintenance. Spokesperson Ashley Bradish said the generation system is not going to be a quick fix.",
+   "claims": [
+    "c7",
+    "c8"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Here's the best case for yes. Burgum pointed to Ellendale, North Dakota, with homes and electric bill rebates, per K T U U.",
+   "t": "Here's the best case for yes. Burgum pointed to Ellendale, North Dakota, with homes and electric bill rebates, per K T U U.",
+   "claims": [
+    "c4"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "The best version is a customer that brings its own power, which could leave more reserve, not less. But the reports don't say whether this one would.",
+   "t": "The best version is a customer that brings its own power, which could leave more reserve, not less. But the reports don't say whether this one would.",
+   "claims": [
+    "c17",
+    "c13"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "Kreiss-Tomkins also said, and then, in a thoughtful way, development can proceed.",
+   "t": "Kreiss-Tomkins also said, and then, in a thoughtful way, development can proceed.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "So every term of yes is a megawatt question, and the reports name no megawatts.",
+   "t": "So every term of yes is a megawatt question, and the reports name no megawatts.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Burgum's own sentence, electricity into intelligence, makes the AI question a power question first.",
+   "t": "Burgum's own sentence, electricity into intelligence, makes the AI question a power question first.",
+   "claims": [
+    "c3",
+    "c18"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "So, ten billion dollars. How many megawatts? Name them, and anyone can read the scale.",
+   "t": "So, ten billion dollars. How many megawatts? Name them, and anyone can read the scale.",
+   "claims": [
+    "c2",
+    "c13"
+   ]
+  }
+ ]
+}

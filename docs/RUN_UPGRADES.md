@@ -3863,3 +3863,8 @@ Shipped 937bb99: the shared cast rig gets a garment silhouette, cel-stepped face
 - In-run fixes: dispatch_mix button line derived from the script, new lib/odds.tsx (TileBoard, GrainBin, DialPanel, RangeSlots, Pegboard, MapPlate, Slip), board_1016.py with the line-split remap, SFX recast under the tick ceiling, plate and copy-rule fixes after preflight.
 - Honest gaps: Gemini prepaid credits ran out after the second synth, so editor wording notes on three VO lines could not be re-read. Judge 3 graded motion from contact stills only.
 - Queued for the machine pass: 6 items (docs/MACHINE_QUEUE.md, 2026-10-16 section).
+
+## 2026-10-17 Ten Billion, How Many Megawatts
+- Shipped: a bright, comic explainer on Burgum's ten billion data center pitch against Golden Valley Electric's first Level 2 alert (reserve under 15 MW), the best case for yes (Ellendale, a customer that brings its own power) and the one number the reports name nowhere. Hero ReserveBar (net-new, lib/grid.tsx), CashBlock, HeightChart, RemoteControl, DateDrum, FunnelMachine, GenStack, PostcardStreet. Panel median 7.42 (7.51, 7.42, 7.36) against a 7.0 bar, no hard blockers.
+- In-run fixes: the first board repeated 10-15's scale, chairs, pause and calendar (Gates 0B and 0D), so the world was rebuilt around a height chart, a remote and a date drum; Gate 0C beat holes, sound variety and throughline presence; the Fairbanks placement of the data center, Ellendale next to the ten billion stamp, ghost-then-slump causation and smug tone from the editor; setup_env.sh git identity (commits had been authored as Anthropic and auto-pushed).
+- Queued for the machine pass: 10 (see docs/MACHINE_QUEUE.md, 2026-10-17).

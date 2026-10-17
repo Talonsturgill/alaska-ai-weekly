@@ -2526,3 +2526,46 @@ dispatch_history:
     palette: midnight teal, tungsten amber, chalk white, brass, one alarm vermilion,
       pre-dawn blue
     metaphor: a receipt printed by the ground itself
+- date: '2026-10-17'
+  topic: Burgum pitches a ten billion data center in Fairbanks days after Golden Valley
+    Electric's first Level 2 alert, and the reports name no megawatts
+  slug: dispatch-2026-10-17-ten-billion-how-many-megawatts
+  key_entities:
+  - Burgum
+  - Fairbanks Chamber of Commerce
+  - Golden Valley Electric
+  - GVEA
+  - Level 2 alert
+  - Kreiss-Tomkins
+  - Ellendale
+  - KUAC
+  - KTUU
+  - Ashley Bradish
+  archetype: height chart and reserve gauge explainer
+  palette: frost noon, snowbank, reserve cyan, hazard orange, banknote green, charcoal
+  voice: ''
+  stance: mixed
+  angle: Burgum's ten billion is priced in dollars while Fairbanks' grid is counted
+    in megawatts, and Fairbanks can't say yes or no until someone puts the two on
+    one page.
+  hero: ReserveBar
+  cast:
+  - CashBlock
+  - HeightChart
+  - RemoteControl
+  - DateDrum
+  - FunnelMachine
+  - GenStack
+  - PostcardStreet
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: vertical-rise
+    hero_treatment: single-organic-hero
+    layout: hud-instrument-frame
+    register: bright-industrial-comic
+    palette: frost noon, snowbank, reserve cyan, hazard orange, banknote green, charcoal
+    camera_strategy: pull-back-reveal
+    light_story: low peach sun over an Interior snow day, a deep navy cutaway, hazard-orange
+      alerts
+    metaphor: a growth chart marked in megawatts that a block of dollars can't be
+      measured against
