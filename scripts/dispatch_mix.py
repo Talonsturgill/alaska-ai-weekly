@@ -770,8 +770,19 @@ def main():
     # codec. Limit isolated transients further, then restore 0.3 dB of level after the
     # limiter. The limiter acts on peaks, not the story's bed/VO arc. The AAC preview
     # and final encoded cut must still prove both loudness and true peak independently.
-    run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume=1.0dB",
-         "-ar", str(SR), "-ac", "2", master])
+    # ADAPTIVE RESTORE (2026-10-18). The restore gain after the limiter was a constant 1.0 dB, and a take
+    # whose inter-sample peaks happened to survive the limiter higher than usual measured -0.91 dBTP in the
+    # exact AAC codec against a -1.0 ceiling (the same film's earlier take was -2.44). A constant that
+    # depends on how a random TTS take is shaped is a coin flip, so step the restore down 0.4 dB at a time
+    # and keep the first master whose AAC true peak clears the ceiling. Loudness lands -14.0 to -14.6 LUFS.
+    for _restore in (1.0, 0.6, 0.2, -0.2):
+        run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume={_restore}dB",
+             "-ar", str(SR), "-ac", "2", master])
+        _chk = subprocess.run([sys.executable, os.path.join(HERE, "mix_aac_check.py"), "--wav", master,
+                               "--report", os.path.join(AUD, "aac_check.json")], capture_output=True, text=True)
+        print(f"restore {_restore} dB -> {_chk.stdout.strip().splitlines()[-1] if _chk.stdout.strip() else _chk.returncode}")
+        if _chk.returncode == 0:
+            break
     os.remove(premix)
     print("wrote", master)
 

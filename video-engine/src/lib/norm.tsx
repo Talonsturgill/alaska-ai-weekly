@@ -547,7 +547,7 @@ export const DeskMold: React.FC<{x: number; y: number; f: number; scale?: number
 );
 
 /** A banner on a stage with three small project tiles (ski, home, machine). tiles is 0..3 how many have popped. */
-export const SymposiumStage: React.FC<{x: number; y: number; f: number; scale?: number; tiles?: number; id?: string; label?: string}> = ({x, y, f, scale = 1, tiles = 0, id = 'ss', label = 'A I SYMPOSIUM'}) => (
+export const SymposiumStage: React.FC<{x: number; y: number; f: number; scale?: number; tiles?: number; id?: string; label?: string}> = ({x, y, f, scale = 1, tiles = 0, id = 'ss', label = 'AI SYMPOSIUM'}) => (
   <g transform={`translate(${x} ${y}) scale(${scale})`}>
     <defs><Grad id={`${id}-b`} base={NM.indigo} /></defs>
     <ContactShadow cx={0} cy={14} rx={420} ry={22} opacity={0.4} />
