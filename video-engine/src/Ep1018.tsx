@@ -243,7 +243,7 @@ const PriceTag: React.FC<{x: number; y: number; f: number; scale?: number; rot?:
     <circle cx={206} cy={-62} r={14} fill={NM.felt} stroke={INK} strokeWidth={5} />
     <path d="M 206 -62 L 206 -230" stroke={INK} strokeWidth={5} />
     <text x={-10} y={-48} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} letterSpacing={2} fill={NM.navy}>ESTIMATED OVER</text>
-    <text x={-10} y={34} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={66} letterSpacing={2} fill={NM.navy}>$54 BILLION</text>
+    <text x={-10} y={34} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={58} letterSpacing={1} fill={NM.navy}>$54 BILLION</text>
     <text x={-10} y={96} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} letterSpacing={2} fill={NM.steel}>PER ADN</text>
   </g>
 );
@@ -297,10 +297,10 @@ const S2: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={(ff) => lerp(1.0, 1.14, easeIO(ff, 0, p.dur))} oy={1150}
       overlay={<>
-        <Plate text="NORM" y={590} size={44} tone="felt" p={ease(f, t4 + 2, 8) * (f < t5 ? 1 : 0)} />
-        <Plate text="NORM · A STAND-IN FOR A MACHINE THAT LEARNS NORMAL" displayLines={['NORM · A STAND-IN FOR', 'A MACHINE THAT LEARNS NORMAL']} y={600} size={28} tone="felt" p={ease(f, t5 + 2, 8) * (f < t6 ? 1 : 0)} />
-        <Plate text="PRESS THE REAL BOOT BACK" y={580} size={30} tone="ink" p={ease(f, t6 + 2, 8) * (f < t7 ? 1 : 0)} />
-        <Plate text="WHERE IT DOESN'T FIT" y={580} size={32} tone="ink" p={ease(f, t7 + 2, 8)} />
+        <Plate text="NORM" y={520} size={44} tone="felt" p={ease(f, t4 + 2, 8) * (f < t5 ? 1 : 0)} />
+        <Plate text="NORM · A STAND-IN FOR A MACHINE THAT LEARNS NORMAL" displayLines={['NORM · A STAND-IN FOR', 'A MACHINE THAT LEARNS NORMAL']} y={610} size={28} tone="felt" p={ease(f, t5 + 2, 8) * (f < t6 ? 1 : 0)} />
+        <Plate text="PRESS THE REAL BOOT BACK" y={700} size={30} tone="ink" p={ease(f, t6 + 2, 8) * (f < t7 ? 1 : 0)} />
+        <Plate text="WHERE IT DOESN'T FIT" y={780} size={32} tone="ink" p={ease(f, t7 + 2, 8)} />
       </>}>
       <SVG>
         <InspectBG f={g} floor={1250} id="s2w" />
@@ -323,13 +323,13 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1000} dx0={-20} dx1={20}
       overlay={<>
-        <Plate text="UA AI SYMPOSIUM · SEPTEMBER 25TH TO 27TH" displayLines={['UA AI SYMPOSIUM', 'SEPTEMBER 25TH TO 27TH']} y={560} size={32} tone="indigo" p={ease(f, t9 + 4, 8)} />
-        <Plate text="THREE PROJECTS" y={690} size={34} tone="paper" p={ease(f, t10 - 30, 8) * (f < t11 ? 1 : 0)} />
-        <Plate text="THE SAME WAY" y={690} size={34} tone="ink" p={ease(f, t11 + 2, 8)} />
+        <Plate text="UA AI SYMPOSIUM · SEPTEMBER 25TH TO 27TH" displayLines={['UA AI SYMPOSIUM', 'SEPTEMBER 25TH TO 27TH']} y={535} size={32} tone="indigo" p={ease(f, t9 + 4, 8)} />
+        <Plate text="THREE PROJECTS" y={645} size={34} tone="paper" p={ease(f, t10 - 30, 8) * (f < t11 ? 1 : 0)} />
+        <Plate text="THE SAME WAY" y={715} size={34} tone="ink" p={ease(f, t11 + 2, 8)} />
       </>}>
       <SVG>
         <HallBG f={g} id="s3h" />
-        <SymposiumStage x={lerp(1200, 540, slideIn)} y={1210} f={g} scale={1.2} tiles={tiles} id="s3s" />
+        <SymposiumStage x={lerp(1200, 540, slideIn)} y={1260} f={g} scale={1.2} tiles={tiles} id="s3s" />
         {link > 0 && [0, 1, 2].map((i) => <path key={i} d={`M ${300 + i * 240} 1050 Q ${300 + i * 120} ${1250 + 60 * i} 190 1360`} fill="none" stroke={NM.mint} strokeWidth={7} strokeDasharray="4 14" strokeLinecap="round" pathLength={1} strokeDashoffset={1 - link} opacity={0.9 * link} />)}
         <Norm x={170} y={1500} f={g} scale={0.5} emotion="ask" look={0.7} id="s3n" />
         {Array.from({length: 5}, (_, i) => (
@@ -360,8 +360,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1000} dx0={20} dx1={-10}
       overlay={<>
-        <Plate text="FIRST · A SKI TURN" y={555} size={34} tone="indigo" p={ease(f, t12 + 2, 8) * (f < t13 ? 1 : 0)} />
-        <Plate text="FLOWLINE · JAN RONNER · PER ADN" displayLines={['FLOWLINE · JAN RONNER', 'PER ADN']} y={570} size={30} tone="paper" p={ease(f, t13 + 2, 8)} />
+        <Plate text="FIRST · A SKI TURN" y={520} size={34} tone="indigo" p={ease(f, t12 + 2, 8) * (f < t13 ? 1 : 0)} />
+        <Plate text="FLOWLINE · JAN RONNER · PER ADN" displayLines={['FLOWLINE · JAN RONNER', 'PER ADN']} y={645} size={30} tone="paper" p={ease(f, t13 + 2, 8)} />
         <Plate text="GRADES UPLOADED VIDEO · SUGGESTS DRILLS" displayLines={['GRADES UPLOADED VIDEO', 'SUGGESTS DRILLS']} y={1220} size={26} tone="indigo" p={ease(f, t16 + 2, 10)} />
       </>}>
       <SVG>
@@ -429,8 +429,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.02} z1={1.1} oy={1050} dx0={30} dx1={-30}
       overlay={<>
-        <Plate text="SECOND · A KITCHEN" y={560} size={34} tone="plum" p={ease(f, t56 + 2, 8) * (f < t21 ? 1 : 0)} />
-        <Plate text="ANCHOR · NATHAN HEALY · PER ADN" displayLines={['ANCHOR · NATHAN HEALY', 'PER ADN']} y={570} size={32} tone="plum" p={ease(f, t21 + 4, 8)} />
+        <Plate text="SECOND · A KITCHEN" y={520} size={34} tone="plum" p={ease(f, t56 + 2, 8) * (f < t21 ? 1 : 0)} />
+        <Plate text="ANCHOR · NATHAN HEALY · PER ADN" displayLines={['ANCHOR · NATHAN HEALY', 'PER ADN']} y={650} size={32} tone="plum" p={ease(f, t21 + 4, 8)} />
       </>}>
       <SVG>
         <NightRoom f={g} floor={1240} id="s6r" />
@@ -470,17 +470,17 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={900}
       overlay={<>
-        <Plate text="MOTION SENSORS + ONE BUTTON" y={545} size={30} tone="plum" p={ease(f, t25 + 2, 8) * (f < t26 ? 1 : 0)} />
-        <Plate text="LEARNS A SENIOR'S ROUTINES" y={545} size={30} tone="plum" p={ease(f, t26 + 2, 8) * (f < t27 ? 1 : 0)} />
-        <Plate text="DESIGNED TO ALERT FAMILY" y={545} size={30} tone="plum" p={ease(f, t27 + 2, 8)} />
-        <Plate text="SAFETY THRESHOLD" y={1290} size={26} tone="paper" p={ease(f, t27 + 40, 10)} />
-        <Plate text="HOW IT'S DESIGNED" y={1215} size={26} tone="felt" dashed p={ease(f, t25 + 4, 10)} />
+        <Plate text="MOTION SENSORS + ONE BUTTON" y={520} size={30} tone="plum" p={ease(f, t25 + 2, 8) * (f < t26 ? 1 : 0)} />
+        <Plate text="LEARNS A SENIOR'S ROUTINES" y={595} size={30} tone="plum" p={ease(f, t26 + 2, 8) * (f < t27 ? 1 : 0)} />
+        <Plate text="DESIGNED TO ALERT FAMILY" y={670} size={30} tone="plum" p={ease(f, t27 + 2, 8)} />
+        <Plate text="SAFETY THRESHOLD" y={1275} size={26} tone="paper" p={ease(f, t27 + 40, 10)} />
+        <Plate text="HOW IT'S DESIGNED" y={740} size={26} tone="felt" dashed p={ease(f, t25 + 4, 10)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={NM.plum} />
         {Array.from({length: 18}, (_, i) => <line key={`a${i}`} data-band="ok" x1={i * 64 - 20} y1={-40} x2={i * 64 - 20} y2={1960} stroke={NM.plumHi} strokeWidth={2} opacity={0.5} />)}
         {Array.from({length: 32}, (_, i) => <line key={`c${i}`} data-band="ok" x1={-40} y1={i * 64 - 20} x2={1120} y2={i * 64 - 20} stroke={NM.plumHi} strokeWidth={2} opacity={0.5} />)}
-        <FloorPlan x={540} y={930} f={g} scale={1.3} sensors={sensors} button={1} band={band} trace={trace} dev={dev} press={press} id="s7f" />
+        <FloorPlan x={540} y={1030} f={g} scale={1.2} sensors={sensors} button={1} band={band} trace={trace} dev={dev} press={press} id="s7f" />
         <FamilyPhone x={920} y={1090} f={g} scale={0.5} buzz={0} ghost={buzz > 0 ? 1 : 0.3} />
         <NormCameo x={160} f={g} emotion={dev > 0.4 ? 'alarm' : 'proud'} look={0.7} scale={0.55} dent="ring" dentK={band} red={dev} id="s7c" />
       </SVG>
@@ -540,9 +540,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} oy={1100}
       overlay={<>
-        <Plate text="THIRD · A MACHINE" y={555} size={34} tone="indigo" p={ease(f, t30 + 2, 8) * (f < t31 ? 1 : 0)} />
-        <Plate text="AARON SMITH · DIGITAL TWINS OF COMPRESSORS · PER ADN" displayLines={['AARON SMITH · DIGITAL TWINS', 'OF COMPRESSORS · PER ADN']} y={575} size={28} tone="paper" p={ease(f, t31 + 2, 8) * (f < t32 + 40 ? 1 : 0)} />
-        <Plate text="A VIRTUAL COPY OF REAL EQUIPMENT" displayLines={['A VIRTUAL COPY', 'OF REAL EQUIPMENT']} y={575} size={30} tone="indigo" p={ease(f, t32 + 44, 8)} />
+        <Plate text="THIRD · A MACHINE" y={520} size={34} tone="indigo" p={ease(f, t30 + 2, 8) * (f < t31 ? 1 : 0)} />
+        <Plate text="AARON SMITH · DIGITAL TWINS OF COMPRESSORS · PER ADN" displayLines={['AARON SMITH · DIGITAL TWINS', 'OF COMPRESSORS · PER ADN']} y={635} size={28} tone="paper" p={ease(f, t31 + 2, 8) * (f < t32 + 40 ? 1 : 0)} />
+        <Plate text="A VIRTUAL COPY OF REAL EQUIPMENT" displayLines={['A VIRTUAL COPY', 'OF REAL EQUIPMENT']} y={760} size={30} tone="indigo" p={ease(f, t32 + 44, 8)} />
       </>}>
       <SVG>
         <YardBG f={g} ground={1260} id="s9y" />
@@ -572,9 +572,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={(ff) => lerp(1.1, 1.0, easeIO(ff, t36 - 6, 50))} oy={1000}
       overlay={<>
-        <Plate text="A PROPOSED GAS PIPELINE" y={555} size={32} tone="indigo" p={ease(f, t33 + 2, 8) * (f < t34 ? 1 : 0)} />
+        <Plate text="A PROPOSED GAS PIPELINE" y={520} size={32} tone="indigo" p={ease(f, t33 + 2, 8) * (f < t34 ? 1 : 0)} />
         <QuotePlate text={'"THE HEARTBEAT OF THAT PIPELINE" · AARON SMITH'} y={600} size={38} wrap={24} p={ease(f, t34 + 2, 12) * (f < t36 - 6 ? 1 : 0)} />
-        <Plate text="ESTIMATED OVER $54 BILLION · PER ADN" displayLines={['ESTIMATED OVER $54 BILLION', 'PER ADN']} y={600} size={30} tone="paper" p={ease(f, t36 + 8, 8)} />
+        <Plate text="ESTIMATED OVER $54 BILLION · PER ADN" displayLines={['ESTIMATED OVER $54 BILLION', 'PER ADN']} y={650} size={30} tone="paper" p={ease(f, t36 + 8, 8)} />
       </>}>
       <SVG>
         <YardBG f={g} ground={1230} id="s10y" pipe={pipe} />
@@ -634,8 +634,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1000}
       overlay={<>
-        <Plate text="SHOWCASE PROJECTS · EARLY IS FAIR" displayLines={['SHOWCASE PROJECTS', 'EARLY IS FAIR']} y={575} size={34} tone="felt" p={ease(f, t57 + 2, 10) * (f < t43 - 6 ? 1 : 0)} />
-        <Plate text="WHAT WOULD COUNT AS PROOF" y={560} size={34} tone="paper" p={ease(f, t43 - 6, 10)} />
+        <Plate text="SHOWCASE PROJECTS · EARLY IS FAIR" displayLines={['SHOWCASE PROJECTS', 'EARLY IS FAIR']} y={555} size={34} tone="felt" p={ease(f, t57 + 2, 10) * (f < t43 - 6 ? 1 : 0)} />
+        <Plate text="WHAT WOULD COUNT AS PROOF" y={660} size={34} tone="paper" p={ease(f, t43 - 6, 10)} />
       </>}>
       <SVG>
         <InspectBG f={g} floor={1260} id="s12p" />
