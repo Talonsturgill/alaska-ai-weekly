@@ -7,7 +7,7 @@ import {cameraKick, kickTransform} from './lib/camera';
 import {EndCredits} from './lib/EndCredits';
 import {assertCropSafe} from './lib/cropsafe';
 import {CaptionBar} from './lib/captions';
-import {NM, Norm, SkiBoot, PhoneApp, Skier, Workbench, SlopeBG, NightRoom, PaperSet, FloorPlan, Compressor, Ecg, YardBG, Clipboard, ProofCard, DeskMold, SymposiumStage} from './lib/norm';
+import {NM, Norm, SkiBoot, PhoneApp, Skier, Workbench, SlopeBG, NightRoom, PaperSet, FloorPlan, Compressor, Ecg, YardBG, Clipboard, ProofCard, SymposiumStage} from './lib/norm';
 import {IDS} from './Ep1018Ids';
 
 // WHAT NORM LEARNS, 2026-10-18. Palette roles are art_direction.json. MINT is only Norm (and the band he learned), ALARM RED only where the real thing does not match
@@ -160,6 +160,24 @@ const HallBG: React.FC<{f: number; id?: string}> = ({f, id = 'hl'}) => (
   </g>
 );
 
+/** The inspection table: a deep navy blueprint wall with a hard spot pool, and a slate floor. Where Norm is checked against the real thing. */
+const InspectBG: React.FC<{f: number; floor?: number; id?: string}> = ({f, floor = 1250, id = 'ib'}) => (
+  <g>
+    <defs>
+      <linearGradient id={`${id}-w`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0F1A33" /><stop offset="1" stopColor="#24366A" /></linearGradient>
+      <radialGradient id={`${id}-p`} cx="0.5" cy="0.45" r="0.55"><stop offset="0" stopColor="#BFD2FF" stopOpacity="0.55" /><stop offset="1" stopColor="#BFD2FF" stopOpacity="0" /></radialGradient>
+    </defs>
+    <rect data-band="ok" x={-40} y={-40} width={1160} height={floor + 40} fill={`url(#${id}-w)`} />
+    {Array.from({length: 20}, (_, i) => <line key={`v${i}`} data-band="ok" x1={i * 60 - 20} y1={-40} x2={i * 60 - 20} y2={floor} stroke="#5B7BC0" strokeWidth={2} opacity={0.35} />)}
+    {Array.from({length: 22}, (_, i) => <line key={`h${i}`} data-band="ok" x1={-40} y1={i * 60 - 10} x2={1120} y2={i * 60 - 10} stroke="#5B7BC0" strokeWidth={2} opacity={0.35} />)}
+    <ellipse data-band="ok" cx={540} cy={floor - 140} rx={600} ry={560} fill={`url(#${id}-p)`} />
+    <rect data-band="ok" x={-40} y={floor} width={1160} height={760} fill="#2B3A66" />
+    <rect data-band="ok" x={-40} y={floor - 12} width={1160} height={26} fill="#16224A" stroke={INK} strokeWidth={5} />
+    {Array.from({length: 9}, (_, i) => <line key={i} data-band="ok" x1={540 + (i - 4) * 80} y1={floor + 14} x2={540 + (i - 4) * 240} y2={1960} stroke="#5B7BC0" strokeWidth={2.5} opacity={0.4} />)}
+    {Array.from({length: 14}, (_, i) => <circle key={i} data-band="ok" cx={((i * 191 + f * 0.3) % 1200) - 60} cy={160 + ((i * 123) % 900)} r={2 + (i % 3)} fill="#BFD2FF" opacity={0.25} />)}
+  </g>
+);
+
 const StickyNote: React.FC<{x: number; y: number; rot?: number; f: number; k?: number}> = ({x, y, rot = 0, f, k = 1}) => (
   <g transform={`translate(${x} ${y}) rotate(${rot + 1.2 * Math.sin(f / 9)})`} opacity={k}>
     <rect x={-120} y={-110} width={240} height={240} fill="#000" opacity={0.25} transform="translate(8 10)" />
@@ -192,17 +210,22 @@ const AnchorButton: React.FC<{x: number; y: number; f: number; scale?: number; p
       const t = ((f / 36 + k * 0.5) % 1);
       return <ellipse key={k} cx={0} cy={-34} rx={90 + t * 160} ry={40 + t * 60} fill="none" stroke={NM.amberHi} strokeWidth={6} opacity={0.7 * (1 - t) * ring} />;
     })}
-    <rect x={-120} y={-30} width={240} height={60} rx={12} fill={NM.feltDeep} stroke={INK} strokeWidth={8} />
-    <rect x={-120} y={-30} width={240} height={12} rx={6} fill="#FFFFFF" opacity={0.25} />
-    <ellipse cx={0} cy={-34 + press * 10} rx={92} ry={36} fill={NM.brassDeep} stroke={INK} strokeWidth={8} />
-    <path d={`M -92 ${-34 + press * 10} L -92 ${-70 + press * 22} Q 0 ${-124 + press * 22} 92 ${-70 + press * 22} L 92 ${-34 + press * 10}`} fill={NM.brass} stroke={INK} strokeWidth={8} strokeLinejoin="round" />
-    <ellipse cx={0} cy={-70 + press * 22} rx={92} ry={32} fill={NM.brassHi} stroke={INK} strokeWidth={8} />
-    <ellipse cx={-24} cy={-78 + press * 22} rx={34} ry={10} fill="#FFFFFF" opacity={0.6} />
+    {/* a steel wall plate with rivets and a coil cable, so it reads as a device */}
+    <rect x={-130} y={-24} width={260} height={54} rx={10} fill={NM.steel} stroke={INK} strokeWidth={8} />
+    <rect x={-130} y={-24} width={260} height={11} rx={5} fill="#FFFFFF" opacity={0.3} />
+    {[-108, 108].map((rx) => <circle key={rx} cx={rx} cy={3} r={7} fill={NM.steelHi} stroke={INK} strokeWidth={4} />)}
+    <path d="M 130 6 C 190 6 170 -40 230 -20 S 280 20 320 8" fill="none" stroke={INK} strokeWidth={10} strokeLinecap="round" />
+    {/* the collar and the cap */}
+    <rect x={-84} y={-52 + press * 8} width={168} height={34} rx={8} fill={NM.steelDeep} stroke={INK} strokeWidth={7} />
+    <path d={`M -70 ${-52 + press * 8} L -70 ${-92 + press * 22} Q 0 ${-124 + press * 22} 70 ${-92 + press * 22} L 70 ${-52 + press * 8} Z`} fill={NM.amber} stroke={INK} strokeWidth={8} strokeLinejoin="round" />
+    <ellipse cx={0} cy={-92 + press * 22} rx={70} ry={20} fill={NM.amberHi} stroke={INK} strokeWidth={7} />
+    <path d={`M -40 ${-92 + press * 22} a 40 14 0 0 0 80 0`} fill="none" stroke={NM.brassDeep} strokeWidth={6} strokeLinecap="round" />
+    <ellipse cx={-26} cy={-100 + press * 22} rx={22} ry={6} fill="#FFFFFF" opacity={0.7} />
   </g>
 );
 
-const FamilyPhone: React.FC<{x: number; y: number; f: number; scale?: number; buzz?: number; label?: string}> = ({x, y, f, scale = 1, buzz = 0, label = 'FAMILY'}) => (
-  <g transform={`translate(${x + (buzz > 0 ? 5 * Math.sin(f * 1.7) * buzz : 0)} ${y}) scale(${scale})`}>
+const FamilyPhone: React.FC<{x: number; y: number; f: number; scale?: number; buzz?: number; label?: string; ghost?: number}> = ({x, y, f, scale = 1, buzz = 0, label = 'FAMILY', ghost = 1}) => (
+  <g transform={`translate(${x + (buzz > 0 ? 5 * Math.sin(f * 1.7) * buzz : 0)} ${y}) scale(${scale})`} opacity={ghost}>
     <ContactShadow cx={0} cy={220} rx={140} ry={14} opacity={0.35} />
     <rect x={-120} y={-210} width={240} height={430} rx={34} fill={NM.navy} stroke={INK} strokeWidth={9} />
     <rect x={-102} y={-186} width={204} height={382} rx={20} fill={NM.paper} stroke={INK} strokeWidth={4} />
@@ -233,7 +256,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const pop = spring(f, 0, 16);
   const nx = 540, ny = 1190, ns = 1.15;
   // the dent boot sits at (-6,-22) scale 1.18 in Norm space
-  const tx = nx - 6 * ns, ty = ny - 22 * ns, tsc = 1.18 * ns;
+  const tx = nx - 6 * ns, ty = ny - 22 * ns, tsc = 0.9 * ns;
   const drop = easeIn(f, t2 - 16, 16);
   const lift = ease(f, t2 + 16, 18);
   const by = lerp(-420, ty, drop) - lift * 520;
@@ -242,7 +265,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} oy={1100}
       overlay={<>
-        <Plate text="WHAT NORM LEARNS" y={600} size={40} tone="felt" p={ease(f, t1 + 2, 8)} />
+        <Plate text="WHAT NORM LEARNS" y={530} size={40} tone="felt" p={ease(f, t1 + 2, 8)} />
       </>}>
       <SVG>
         <Workbench f={g} floor={1250} id="s1w" />
@@ -265,8 +288,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
   const ns = 1.15;
   const land = bump(f, t4 + 14, 12);
   const slide = ease(f, t6 - 22, 26);
-  const bx = lerp(1320, 540 - 6 * ns + 14, slide);
-  const bsc = lerp(1.18 * ns, 1.3 * ns, ease(f, t7, 12));
+  const bx = lerp(1320, 540 - 6 * ns + 12, slide);
+  const bsc = lerp(0.9 * ns, 1.0 * ns, ease(f, t7, 12));
   const redK = ease(f, t8, 8);
   const press = bump(f, t6 + 4, 12);
   const unset = ease(f, t5, 16);
@@ -280,9 +303,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <Plate text="WHERE IT DOESN'T FIT" y={580} size={32} tone="ink" p={ease(f, t7 + 2, 8)} />
       </>}>
       <SVG>
-        <Workbench f={g} floor={1250} id="s2w" />
-        <Norm x={nx} y={ny} f={g} scale={ns} emotion={f < t6 ? (f < t4 + 14 ? 'proud' : 'calm') : f < t8 ? 'ask' : 'alarm'} sq={land * 0.6 + press * 0.5} dent="boot" dentK={1} red={redK} redAt="toe" unset={unset} look={f > t6 ? 0.5 : 0} id="s2n" />
-        {f > t6 - 24 && <SkiBoot x={bx} y={1190 - 22 * ns} f={g} scale={bsc} rot={3 * ease(f, t7, 12)} redK={redK} id="s2b" />}
+        <InspectBG f={g} floor={1250} id="s2w" />
+        <Norm x={nx} y={ny} f={g} scale={ns} emotion={f < t6 ? (f < t4 + 14 ? 'proud' : 'calm') : f < t8 ? 'ask' : 'alarm'} sq={land * 0.6 + press * 0.5} dent="boot" dentK={1} red={redK} redAt="toe" unset={unset} unsetLabel look={f > t6 ? 0.5 : 0} id="s2n" />
+        {f > t6 - 24 && <SkiBoot x={bx} y={1220 - 22 * ns} f={g} scale={bsc} rot={3 * ease(f, t7, 12)} redK={redK} id="s2b" />}
         {ticks > 0 && [0, 1, 2].map((i) => <circle key={i} cx={470 + i * 30} cy={1255 - i * 8} r={9 * ticks} fill={NM.mint} stroke={INK} strokeWidth={3} />)}
       </SVG>
     </Frame>
@@ -349,7 +372,6 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${lerp(1400, 810, phoneIn)} ${1000 + 8 * Math.sin(g / 14)})`}>
           <PhoneApp x={0} y={0} f={g} scale={0.8} rot={-4} grade={grade} drill={drill} id="s4p" />
         </g>
-        <NormCameo f={g} emotion="ask" look={0.6} scale={0.5} id="s4c" />
       </SVG>
     </Frame>
   );
@@ -359,11 +381,12 @@ const S4: React.FC<SceneProps> = ({p}) => {
 const S5: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t17 = b(17), t18 = b(18), t19 = b(19), t20 = b(20);
+  const t17 = b(17), t18 = b(18), t19 = b(19), t20 = b(20), t55 = b(55);
   const ns = 1.35;
-  const slap = easeIn(f, t17 - 12, 12);
+  const hang = ease(f, t55, Math.max(8, t17 - t55 - 10));
+  const slap = easeIn(f, t17 - 10, 10);
   const slide = ease(f, t17 + 14, 22);
-  const noteY = lerp(300, 1040, slap) + slide * 560;
+  const noteY = lerp(-200, 520, hang) + lerp(0, 520, slap) + slide * 560;
   const noteK = f < t17 + 32 ? 1 : Math.max(0, 1 - (f - t17 - 32) / 6);
   const sqz = bump(f, t17, 10) * 0.5;
   const fly = ease(f, t18 - 8, 22);
@@ -380,7 +403,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Norm x={540} y={1280} f={g} scale={ns} emotion={f < t17 ? 'calm' : f < t18 ? 'worried' : 'proud'} sq={sqz} dent="turn" dentK={dentK} look={0.3} id="s5n" />
         {noteK > 0 && <StickyNote x={540 + 80 * slide} y={noteY} rot={4 + 30 * slide} f={g} k={noteK} />}
         {f > t20 - 6 && f < t20 + 40 && (
-          <g transform={`translate(${lerp(1000, 640, ease(f, t20 - 6, 30))} ${lerp(820, 1080, ease(f, t20 - 6, 30))})`} opacity={1 - ease(f, t20 + 24, 14)}>
+          <g transform={`translate(${lerp(1000, 660, ease(f, t20 - 6, 30))} ${lerp(820, 1170, ease(f, t20 - 6, 30))})`} opacity={1 - ease(f, t20 + 24, 14)}>
             <circle r={46} fill={NM.paper} stroke={INK} strokeWidth={6} />
             <path d="M -26 14 C -10 -20 8 10 26 -18" fill="none" stroke={NM.indigo} strokeWidth={9} strokeLinecap="round" />
           </g>
@@ -399,12 +422,14 @@ const S5: React.FC<SceneProps> = ({p}) => {
 const S6: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t21 = b(21), t22 = b(22);
+  const t21 = b(21), t22 = b(22), t56 = b(56);
   const glowW = ease(f, t22, 24);
+  const qB = ease(f, t22 + 6, 14);
   const press = Math.abs(Math.sin(Math.max(0, f - t21 - 40) / 7)) * (f > t21 + 40 && f < t21 + 80 ? 1 : 0);
   return (
     <Frame p={p} z0={1.02} z1={1.1} oy={1050} dx0={30} dx1={-30}
       overlay={<>
+        <Plate text="SECOND · A KITCHEN" y={560} size={34} tone="plum" p={ease(f, t56 + 2, 8) * (f < t21 ? 1 : 0)} />
         <Plate text="ANCHOR · NATHAN HEALY · PER ADN" displayLines={['ANCHOR · NATHAN HEALY', 'PER ADN']} y={570} size={32} tone="plum" p={ease(f, t21 + 4, 8)} />
       </>}>
       <SVG>
@@ -421,7 +446,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <path d="M -50 0 L -42 -80 L 42 -80 L 50 0 Z" fill={NM.cream} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
           <path d="M 42 -64 Q 86 -60 70 -22 L 46 -18" fill="none" stroke={INK} strokeWidth={8} strokeLinecap="round" />
         </g>
-        <NormCameo x={870} f={g} emotion="calm" look={-0.5} scale={0.55} id="s6c" />
+        {qB > 0 && <g transform={`translate(${620} ${800 + 8 * Math.sin(g / 10)}) scale(${0.6 + 0.4 * qB})`} opacity={qB}>
+          <ellipse cx={0} cy={0} rx={86} ry={72} fill={NM.cream} stroke={INK} strokeWidth={7} strokeDasharray="14 9" strokeDashoffset={-g * 0.6} />
+          <circle cx={-40} cy={78} r={12} fill={NM.cream} stroke={INK} strokeWidth={5} />
+          <text x={0} y={30} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={96} fill={NM.navy}>?</text>
+        </g>}
       </SVG>
     </Frame>
   );
@@ -445,13 +474,14 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate text="LEARNS A SENIOR'S ROUTINES" y={545} size={30} tone="plum" p={ease(f, t26 + 2, 8) * (f < t27 ? 1 : 0)} />
         <Plate text="DESIGNED TO ALERT FAMILY" y={545} size={30} tone="plum" p={ease(f, t27 + 2, 8)} />
         <Plate text="SAFETY THRESHOLD" y={1290} size={26} tone="paper" p={ease(f, t27 + 40, 10)} />
+        <Plate text="HOW IT'S DESIGNED" y={1215} size={26} tone="felt" dashed p={ease(f, t25 + 4, 10)} />
       </>}>
       <SVG>
         <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={NM.plum} />
         {Array.from({length: 18}, (_, i) => <line key={`a${i}`} data-band="ok" x1={i * 64 - 20} y1={-40} x2={i * 64 - 20} y2={1960} stroke={NM.plumHi} strokeWidth={2} opacity={0.5} />)}
         {Array.from({length: 32}, (_, i) => <line key={`c${i}`} data-band="ok" x1={-40} y1={i * 64 - 20} x2={1120} y2={i * 64 - 20} stroke={NM.plumHi} strokeWidth={2} opacity={0.5} />)}
         <FloorPlan x={540} y={930} f={g} scale={1.3} sensors={sensors} button={1} band={band} trace={trace} dev={dev} press={press} id="s7f" />
-        <FamilyPhone x={920} y={1090} f={g} scale={0.5} buzz={buzz} />
+        <FamilyPhone x={920} y={1090} f={g} scale={0.5} buzz={0} ghost={buzz > 0 ? 1 : 0.3} />
         <NormCameo x={160} f={g} emotion={dev > 0.4 ? 'alarm' : 'proud'} look={0.7} scale={0.55} dent="ring" dentK={band} red={dev} id="s7c" />
       </SVG>
     </Frame>
@@ -476,8 +506,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1100}
       overlay={<>
-        <Plate text="SAME NORM" y={560} size={40} tone="felt" p={ease(f, t28 + 2, 8)} />
-        <Plate text="HIGHER STAKES" y={660} size={36} tone="ink" p={ease(f, t29 + 2, 8)} />
+        <Plate text="SAME NORM" x={330} y={560} size={40} tone="felt" p={ease(f, t28 + 2, 8)} />
+        <Plate text="HIGHER STAKES" x={330} y={660} size={36} tone="ink" p={ease(f, t29 + 2, 8)} />
       </>}>
       <SVG>
         <Workbench f={g} floor={1280} id="s8w" lamp={0.8} />
@@ -518,6 +548,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <YardBG f={g} ground={1260} id="s9y" />
         <Compressor x={cx} y={1250} f={g} scale={sc} id="s9c" run={1} glow={0.6} />
         {twin > 0 && <Compressor x={tx} y={1250} f={g} scale={sc} ghost scan={scan} id="s9t" run={1} />}
+        {arrow > 0 && apart > 0.8 && <g transform="translate(540 760)" opacity={arrow}><circle r={50} fill={NM.cream} stroke={INK} strokeWidth={7} /><text x={0} y={28} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={80} fill={NM.navy}>?</text></g>}
         {arrow > 0 && <g opacity={arrow}><path d="M 380 760 C 480 700 600 700 700 760" fill="none" stroke={INK} strokeWidth={26} strokeLinecap="round" /><path d="M 380 760 C 480 700 600 700 700 760" fill="none" stroke={NM.cream} strokeWidth={14} strokeLinecap="round" /><path d="M 676 724 L 712 764 L 662 786 Z" fill={NM.cream} stroke={INK} strokeWidth={6} strokeLinejoin="round" /></g>}
         <NormCameo x={170} f={g} emotion="ask" look={0.8} scale={0.5} dent="heart" dentK={ease(f, t32, 30)} id="s9n" />
       </SVG>
@@ -580,7 +611,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <path d="M -90 360 L -40 300 L 40 300 L 90 360 Z" fill={NM.steel} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
           <ellipse cx={0} cy={362} rx={90} ry={12} fill={NM.lamp} stroke={INK} strokeWidth={5} />
         </g>
-        <Norm x={290} y={1260} f={g} scale={0.95} emotion={f < t41 ? 'wobbly' : 'worried'} wob={1.6} unset={1} look={0.7} id="s11n" />
+        <Norm x={290} y={1260} f={g} scale={0.95} emotion={f < t41 ? 'wobbly' : 'worried'} wob={1.6} unset={1} unsetLabel look={0.7} id="s11n" />
         <g transform={`translate(${lerp(1400, 740, cb)} 930)`}>
           <Clipboard x={0} y={0} f={g} scale={0.9} head="ONE STORY" rows={[
             {text: 'NO USERS REPORTED', k: ease(f, t39, 8)},
@@ -597,69 +628,63 @@ const S11: React.FC<SceneProps> = ({p}) => {
 const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t43 = b(43), t44 = b(44), t45 = b(45), t52 = b(52);
+  const t43 = b(43), t44 = b(44), t45 = b(45), t57 = b(57);
+  const t52 = t45 + 24;
   const st = ease(f, t52, 16);
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1000}
       overlay={<>
-        <Plate text="WHAT WOULD COUNT AS PROOF" y={560} size={34} tone="ink" p={ease(f, 2, 10)} />
+        <Plate text="SHOWCASE PROJECTS · EARLY IS FAIR" displayLines={['SHOWCASE PROJECTS', 'EARLY IS FAIR']} y={575} size={34} tone="felt" p={ease(f, t57 + 2, 10) * (f < t43 - 6 ? 1 : 0)} />
+        <Plate text="WHAT WOULD COUNT AS PROOF" y={560} size={34} tone="paper" p={ease(f, t43 - 6, 10)} />
       </>}>
       <SVG>
-        <PaperSet f={g} floor={1260} id="s12p" />
+        <InspectBG f={g} floor={1260} id="s12p" />
         <ProofCard x={640} y={780} f={g} scale={1} lines={['DECEMBER START', 'THAT HOLDS']} p={ease(f, t43 - 4, 18)} rot={-2 * (1 - st)} size={32} />
         <ProofCard x={640} y={970} f={g} scale={1} lines={['A FIRST HOUSEHOLD', 'FOR ANCHOR']} p={ease(f, t44 - 4, 18)} rot={1.5 * (1 - st)} size={32} />
         <ProofCard x={640} y={1170} f={g} scale={1} lines={['A TWIN CHECKED', 'AGAINST A REAL', 'COMPRESSOR']} p={ease(f, t45 - 4, 18)} rot={-1 * (1 - st)} size={32} />
-        <Norm x={170} y={1260} f={g} scale={0.7} emotion="ask" unset={1} look={0.9} id="s12n" />
+        <Norm x={170} y={1260} f={g} scale={0.7} emotion={f < t43 ? 'calm' : 'ask'} unset={1} look={0.9} id="s12n" />
       </SVG>
     </Frame>
   );
 };
 
-// ---- S13: where it started: 2019 (beats 46, 47, 48) ----------------------------------------------------------------------------------------------------------------------------
+// ---- S13: what would you press (beats 54, 49) ------------------------------------------------------------------------------------------------------------------------------------------
 const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t46 = b(46), t47 = b(47), t48 = b(48), t53 = b(53);
-  const desk = ease(f, t46 - 6, 22);
-  const hopU = ease(f, t47 - 20, 22);
-  const nx = lerp(150, 540, hopU);
-  const ny = 1018 - 160 * Math.sin(hopU * Math.PI) * (f < t47 + 4 ? 1 : 0);
-  const land = bump(f, t47, 14);
-  const setK = ease(f, t47 + 6, 20);
-  const banner = ease(f, t48, 26);
-  return (
-    <Frame p={p} zk={(ff) => lerp(1.12, 1.0, easeIO(ff, t48 - 6, 56))} oy={1100}
-      overlay={<>
-        <Plate text="FIRST UAA AI CLASS · 2019 · HELENA WISNIEWSKI" displayLines={['FIRST UAA AI CLASS · 2019', 'HELENA WISNIEWSKI']} y={570} size={30} tone="felt" p={ease(f, t46 + 4, 8) * (f < t48 ? 1 : 0)} />
-        <Plate text="UA AI SYMPOSIUM · SEPTEMBER 25TH TO 27TH" displayLines={['UA AI SYMPOSIUM', 'SEPTEMBER 25TH TO 27TH']} y={575} size={30} tone="indigo" p={ease(f, t48 + 6, 8)} />
-      </>}>
-      <SVG>
-        <Workbench f={g} floor={1280} id="s13w" lamp={0.8} />
-        {banner > 0 && <SymposiumStage x={540} y={lerp(1700, 960, banner)} f={g} scale={0.78} tiles={ease(f, t53 - 10, 50) * 3} id="s13s" />}
-        <DeskMold x={lerp(1300, 540, desk)} y={1280} f={g} scale={1.1} year="2019" fill={setK} id="s13d" />
-        <Norm x={nx} y={ny} f={g} scale={1.0} emotion={f < t47 ? 'ask' : 'proud'} sq={land * 0.7} setK={setK} unset={1 - setK} look={0.3} id="s13n" />
-      </SVG>
-    </Frame>
-  );
-};
-
-// ---- S14: what would you press (beat 49) ------------------------------------------------------------------------------------------------------------------------------------------
-const S14: React.FC<SceneProps> = ({p}) => {
-  const {f, b} = p;
-  const g = f + p.from;
   const t49 = b(49), t54 = b(54);
-  const sway = 6 * Math.sin(g / 18);
-  const lowering = ease(f, t54, 40) * 0.6 + ease(f, t49 - 6, 30) * 0.4;
+  const drop = ease(f, t54, 40);
+  const settle = ease(f, t49 - 6, 30);
+  const sway = (k: number) => 7 * Math.sin(g / 17 + k);
+  const items = [
+    {x: 230, top: 300, rest: 760, k: 0},
+    {x: 540, top: 240, rest: 680, k: 1.7},
+    {x: 850, top: 320, rest: 800, k: 3.1},
+  ];
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1150}
       overlay={<>
-        <Plate text="WHAT WOULD YOU PRESS NORM AGAINST FIRST?" displayLines={['WHAT WOULD YOU PRESS', 'NORM AGAINST FIRST?']} y={570} size={34} tone="felt" p={ease(f, t49 + 2, 10)} />
+        <Plate text="WHAT WOULD YOU PRESS NORM AGAINST FIRST?" displayLines={['WHAT WOULD YOU PRESS', 'NORM AGAINST FIRST?']} y={560} size={34} tone="felt" p={ease(f, t49 + 2, 10)} />
       </>}>
       <SVG>
         <Workbench f={g} floor={1280} id="s14w" />
-        <Norm x={540} y={1280} f={g} scale={1.25} emotion="ask" unset={1} look={0} id="s14n" />
-        <line x1={540 + sway * 0.5} y1={-40} x2={540 + sway} y2={lerp(260, 760, lowering)} stroke={INK} strokeWidth={6} />
-        <SkiBoot x={540 + sway} y={lerp(330, 900, lowering)} f={g} scale={0.9} rot={sway * 0.8 + 90} id="s14b" />
+        <Norm x={540} y={1280} f={g} scale={1.25} emotion={f < t49 ? 'ask' : 'calm'} unset={1} unsetLabel look={f < t49 ? 0 : 0} id="s14n" />
+        {items.map((it, i) => {
+          const y = lerp(it.top - 600, it.rest + 90 * settle * 0, drop) ;
+          const x = it.x + sway(it.k);
+          return (
+            <g key={i}>
+              <line x1={it.x + sway(it.k) * 0.4} y1={-40} x2={x} y2={y} stroke={INK} strokeWidth={6} />
+              {i === 0 && <SkiBoot x={x} y={y + 90} f={g} scale={0.75} rot={sway(it.k)} id="s14b" />}
+              {i === 1 && <g transform={`translate(${x} ${y + 130}) rotate(${sway(it.k) * 0.5})`}>
+                <ellipse cx={0} cy={-6} rx={70} ry={26} fill={NM.brassDeep} stroke={INK} strokeWidth={7} />
+                <path d="M -70 -6 L -70 -44 Q 0 -96 70 -44 L 70 -6" fill={NM.brass} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+                <ellipse cx={0} cy={-44} rx={70} ry={24} fill={NM.brassHi} stroke={INK} strokeWidth={7} />
+              </g>}
+              {i === 2 && <Compressor x={x} y={y + 220} f={g} scale={0.28} id="s14c" run={1} />}
+            </g>
+          );
+        })}
       </SVG>
     </Frame>
   );
@@ -674,9 +699,9 @@ const Rough: React.FC<{n: number; title: string; p: SP}> = ({n, title, p}) => (
     </SVG>
   </Frame>
 );
-const TITLES: Record<number, string> = {1: 'PRESS', 2: 'FIT', 3: 'STAGE', 4: 'SKI', 5: 'GENERIC', 6: 'KITCHEN', 7: 'PLAN', 8: 'STAKES', 9: 'TWIN', 10: 'PIPELINE', 11: 'TEST', 12: 'PROOF', 13: '2019', 14: 'ASK'};
-const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13, 14: S14};
-const SHOT_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+const TITLES: Record<number, string> = {1: 'PRESS', 2: 'FIT', 3: 'STAGE', 4: 'SKI', 5: 'GENERIC', 6: 'KITCHEN', 7: 'PLAN', 8: 'STAKES', 9: 'TWIN', 10: 'PIPELINE', 11: 'TEST', 12: 'PROOF', 13: 'ASK'};
+const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13};
+const SHOT_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
   const f = useCurrentFrame();
@@ -712,7 +737,7 @@ const FontStyles = () => (
 );
 
 export const Ep1018: React.FC<Props> = ({captions: cues = [], scenes, beats, kicks = [], credits, mouth = [], accents = []}) => {
-  const starts = [0, 5.7, 18.3, 25.8, 43.1, 50.3, 67.6, 71.3, 83.1, 92.5, 102.3, 111, 121, 128].map((x) => Math.round(x * 30));
+  const starts = [0, 5.7, 18.3, 25.8, 43.1, 50.3, 67.6, 71.3, 83.1, 92.5, 102.3, 112, 124].map((x) => Math.round(x * 30));
   const slots = scenes ?? starts.slice(0, -1).map((from, i) => ({from, dur: starts[i + 1] - from}));
   const end = slots[slots.length - 1].from + slots[slots.length - 1].dur;
   const bs = beats ?? [];

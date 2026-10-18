@@ -47,9 +47,10 @@ const DOME = 'M -180 0 C -188 -150 -110 -300 0 -304 C 110 -300 188 -150 180 0 Q 
  * pale unset patch on his flank, look turns the eyes, setK (0..1) firms and deepens him, tint recolours the jelly for the mold.
  */
 export const Norm: React.FC<{
+  unsetLabel?: boolean;
   x: number; y: number; f: number; scale?: number; emotion?: NormEmotion; sq?: number; wob?: number; dent?: NormDent; dentK?: number;
   red?: number; redAt?: 'toe' | 'side' | 'dip'; unset?: number; look?: number; setK?: number; id?: string; shadow?: boolean; flip?: boolean; heartK?: number;
-}> = ({x, y, f, scale = 1, emotion = 'calm', sq = 0, wob = 1, dent = 'none', dentK = 0, red = 0, redAt = 'toe', unset = 0, look = 0, setK = 0, id = 'nm', shadow = true, flip = false, heartK = 1}) => {
+}> = ({unsetLabel = false, x, y, f, scale = 1, emotion = 'calm', sq = 0, wob = 1, dent = 'none', dentK = 0, red = 0, redAt = 'toe', unset = 0, look = 0, setK = 0, id = 'nm', shadow = true, flip = false, heartK = 1}) => {
   const ph = x * 0.013;
   const w = Math.sin(f / 4.6 + ph) * 0.016 * wob * (1 - setK * 0.85);
   const w2 = Math.sin(f / 7.3 + ph + 1) * 0.011 * wob * (1 - setK * 0.85);
@@ -77,7 +78,7 @@ export const Norm: React.FC<{
   const dk = clamp01(dentK);
   const dentShape = (() => {
     switch (dent) {
-      case 'boot': return <path d={BOOT_D} transform="translate(-6 -22) scale(1.18)" />;
+      case 'boot': return <path d={BOOT_D} transform="translate(-6 -22) scale(0.9)" />;
       case 'turn': return <path d="M -96 -250 C -20 -206 64 -172 -6 -122 C -78 -72 -36 -30 52 -6" fill="none" strokeWidth={34} strokeLinecap="round" />;
       case 'ring': return <ellipse cx={0} cy={-104} rx={124} ry={66} fill="none" strokeWidth={24} strokeDasharray="30 14" strokeDashoffset={-f * 0.6} />;
       case 'heart': return <path d="M -150 -100 L -84 -100 L -58 -164 L -22 -52 L 12 -150 L 34 -100 L 150 -100" fill="none" strokeWidth={22} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - clamp01(heartK)} />;
@@ -105,11 +106,11 @@ export const Norm: React.FC<{
           {/* the dent: a pressed-in hollow, shaded inside with a lit lower lip */}
           {dent !== 'none' && dk > 0 && (
             <g opacity={clamp01(dk * 1.3)} transform={`translate(0 ${(1 - dk) * 6}) scale(${lerp(1.08, 1, dk)})`}>
-              <g fill={NM.mintDeep} stroke={NM.mintDeep} opacity={0.62}>{dentShape}</g>
+              <g fill="#12705D" stroke="#12705D" opacity={0.85}>{dentShape}</g>
               <g fill="none" stroke={NM.mintHi} strokeWidth={5} opacity={0.65} transform="translate(5 6)">
-                {dent === 'boot' ? <path d={BOOT_D} transform="translate(-6 -22) scale(1.18)" fill="none" /> : null}
+                {dent === 'boot' ? <path d={BOOT_D} transform="translate(-6 -22) scale(0.9)" fill="none" /> : null}
               </g>
-              <g fill={NM.mintDeep} stroke={NM.mintDeep} opacity={0.35} transform="translate(-4 -4)">{dentShape}</g>
+              <g fill="#0B4F42" stroke="#0B4F42" opacity={0.35} transform="translate(-5 -5)">{dentShape}</g>
             </g>
           )}
           {/* the red: only where the real thing does not match the shape Norm remembered */}
@@ -123,6 +124,7 @@ export const Norm: React.FC<{
             <g opacity={clamp01(unset)}>
               <ellipse cx={-120} cy={-86} rx={50} ry={62} fill={NM.mintPale} opacity={0.95} />
               <ellipse cx={-120} cy={-86} rx={50} ry={62} fill="none" stroke={INK} strokeWidth={4} strokeDasharray="10 8" strokeDashoffset={-f * 0.5} opacity={0.7} />
+              {unsetLabel && ['NOT', 'SET', 'YET'].map((w, i) => <text key={w} x={-120} y={-104 + i * 28} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={25} letterSpacing={1} fill={NM.navy}>{w}</text>)}
             </g>
           )}
           <path d="M -140 -60 C -150 -180 -90 -262 -20 -276" fill="none" stroke="#FFFFFF" strokeWidth={14} strokeLinecap="round" opacity={0.5} />
@@ -166,7 +168,7 @@ export const SkiBoot: React.FC<{x: number; y: number; f: number; scale?: number;
     <rect x={-70} y={22} width={192} height={20} rx={5} fill={NM.navy} stroke={INK} strokeWidth={6} />
     {Array.from({length: 7}, (_, i) => <rect key={i} x={-58 + i * 28} y={26} width={12} height={12} fill={NM.steelDeep} />)}
     <path d="M -52 -118 L 28 -118" stroke="#FFFFFF" strokeWidth={5} opacity={0.4} />
-    {redK > 0 && <circle cx={104} cy={6} r={44 + 6 * Math.sin(f / 3)} fill={NM.alarm} opacity={0.5 * clamp01(redK)} />}
+    {redK > 0 && <g opacity={clamp01(redK)}><circle cx={104} cy={4} r={52 + 7 * Math.sin(f / 3)} fill={NM.alarm} opacity={0.55} /><path d="M 36 -52 Q 100 -42 114 -8 L 114 22 L 30 22 Z" fill="none" stroke={NM.alarm} strokeWidth={13} strokeLinejoin="round" /><path d="M 36 -52 Q 100 -42 114 -8 L 114 22" fill="none" stroke={NM.alarmHi} strokeWidth={4} strokeLinejoin="round" /></g>}
   </g>
 );
 
@@ -193,15 +195,13 @@ export const PhoneApp: React.FC<{x: number; y: number; f: number; scale?: number
           <circle cx={0} cy={-34} r={8} fill={NM.cream} stroke={INK} strokeWidth={3} />
           <rect x={-18} y={0} width={36} height={5} rx={2} fill={NM.navy} />
         </g>
-        {play > 0 && <circle cx={72} cy={-126} r={9} fill={NM.alarm} opacity={0.85} />}
+        {play > 0 && <circle cx={72} cy={-126} r={9} fill={NM.cream} opacity={0.85} />}
       </g>
-      {/* three grade bars */}
-      {[0, 1, 2].map((i) => (
-        <g key={i} transform={`translate(${-88 + i * 64} 48)`}>
-          <rect x={0} y={0} width={52} height={20} rx={6} fill={NM.creamShade} stroke={INK} strokeWidth={3} />
-          <rect x={0} y={0} width={52 * clamp01(grade - i)} height={20} rx={6} fill={NM.mintDeep} stroke={INK} strokeWidth={3} opacity={clamp01(grade - i) > 0 ? 1 : 0} />
-        </g>
-      ))}
+      {/* an unvalued feedback chip: the video was graded, and no score is shown */}
+      <g opacity={clamp01(grade)} transform={`translate(0 ${(1 - clamp01(grade)) * 10})`}>
+        <rect x={-100} y={34} width={200} height={42} rx={10} fill={NM.cream} stroke={INK} strokeWidth={4} />
+        <text x={0} y={63} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={16} letterSpacing={0.5} fill={NM.navy}>YOUR VIDEO, GRADED</text>
+      </g>
       {/* drill chip with an arrow */}
       <g opacity={clamp01(drill)} transform={`translate(0 ${(1 - clamp01(drill)) * 14})`}>
         <rect x={-100} y={88} width={200} height={86} rx={12} fill={NM.cream} stroke={INK} strokeWidth={4} />
