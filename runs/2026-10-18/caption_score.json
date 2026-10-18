@@ -1,0 +1,13 @@
+{
+ "round": 5,
+ "weighted_total": 8.17,
+ "threshold": 8.5,
+ "note": "cap reached (5 cycles), zero hard fails; shipped best round, below the bar",
+ "history": [
+  7.41,
+  7.6,
+  7.9,
+  8.07,
+  8.17
+ ]
+}

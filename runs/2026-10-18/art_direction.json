@@ -1,0 +1,54 @@
+{
+ "run_date": "2026-10-18",
+ "palette": {
+  "sky": "#2B2A5C indigo zenith grading through #7A5AA0 violet to #E58AA0 alpenglow rose at the ridge (ski and compressor exteriors)",
+  "ground": "#F2E6D2 warm paper snow with #8E8AB8 lilac shadow planes; the workbench world is #D9A441 mustard felt under a #FFF4DC lamp pool; the kitchen is #3A2A44 plum night with a #F6B65A amber window",
+  "hero": "#5FD6B8 mint jelly, shade #1E8C7A, cream highlight #F4FFF9, ink #14213D",
+  "accent": "#FF4D2E alarm red",
+  "shadow": "#14213D",
+  "mood": "a blue-hour Interior of lilac snow and a warm mustard workbench where a mint jelly learns shapes, alarm red only where something does not fit",
+  "roles": {
+   "alarm red #FF4D2E": "only where a real thing does not match Norm's remembered shape: the boot's toe, the trace that leaves the band. At most one red element per frame, and none on the rose-lit ski slope or in any frame where the rose ridge is the background.",
+   "mint #5FD6B8": "Norm's jelly only. No readout, lamp or chip is mint.",
+   "mustard felt #D9A441": "the workbench and the 2019 desk only",
+   "brass #C99A3C": "the ANCHOR button and the clipboard clip only",
+   "steel #5B6B7E": "the compressor and the pipeline",
+   "navy #14213D": "ink, plates and the paper test set",
+   "alpenglow rose #E58AA0": "the ridge light and the ski slope shadow only"
+  },
+  "diverges_from_last_two": "10-17 was a low peach sun over Interior snow with cobalt shadows and warm plaster interiors, hero cyan, hazard orange alerts, deep navy cutaways. 10-16 was a black-spruce night, midnight teal and tungsten amber with an alarm vermilion. This film is a blue-hour indigo to violet to rose sky over lilac snow, a warm mustard felt workbench and a plum night kitchen, a mint jelly hero and a signal red used once per frame only on a mismatch. HONEST OVERLAP: signal red #FF4D2E sits near 10-16's vermilion #E0453A in role (one alert color), mint #5FD6B8 is a neighbouring blue-green to 10-17's cyan #25C7E8 hero (the mint is greener and warmer and never glows), and navy ink is shared by every film."
+ },
+ "light": {
+  "time_of_day": "blue hour for the ski slope and the compressor yard, a lamp pool over the workbench, a plum night kitchen with an amber window",
+  "direction": "workbench: key from a lamp at upper left, mustard bounce; slope: low rose sun right of frame, lilac fill from the snow; kitchen: amber window right, plum fill; paper test set: flat overhead with a clipboard lamp",
+  "intent": "key=lamp or low rose sun, fill=lilac snow bounce or plum, rim=cream on the lit side, Norm gets a translucent mint glow on the side away from the key",
+  "depth": "Workbench: far felt wall drifts 8 px, table edge 16 px, Norm 1.0, foreground boot/tools drift 22 px. Slope: ridge 8 px, tree row 16 px, slope 1.0, near drift fence 24 px. Kitchen: wall 8, counter 16, hero 1.0, chair-less near plane of a rug and cable at y1500. Compressor yard: pipe run parallax 0.5, twin ghost 1.0. Paper and inspection sets (shots 2, 11, 12): wall grid static, hero 1.0, a floor perspective ruling and drifting dust as the near plane at y1500 and below. Compressor yard: far ridge 8 px, lilac ground, compressor and twin 1.0, snow ellipses and a pipe run as the near plane."
+ },
+ "shape_language": "SOFT ROUND JELLY (Norm, a wobbling dome with a flat base) against HARD ANGULAR things that press into him: a ski boot, a compressor block, a wall button, a phone, a clipboard. Norm is the only soft object in a hero frame; every prop that touches him has a corner.",
+ "casting": {
+  "hero": "Norm (net-new, lib/norm.tsx). dedupe.py check --hero Norm returned FRESH. Not ReserveBar or SeismicStation, the last two heroes.",
+  "kit_used": {
+   "Norm": "hero, the machine that learns normal",
+   "SkiBoot": "the first press, shots 1 and 2",
+   "Phone and SkierClip": "FlowLine, shots 4 and 5",
+   "KitchenCutaway + AnchorButton": "ANCHOR, shot 6",
+   "CompressorBlock + TwinGhost": "the digital twin, shot 8",
+   "Pipeline": "shot 9",
+   "Clipboard + StampRow": "the test, shot 10",
+   "ProofCards": "shot 11",
+   "SymposiumSign": "shot 3",
+   "DeskMold2019": "shot 12"
+  },
+  "hero_state": "blank and wobbling at 0 s, boot-dented grinning at 4 s, red-browed on the mismatch at 9 s, ski-turn dented at 38 s, routine ring with a red segment at 60 s, heartbeat-dented under the $54B tag at 82 s, unset and wobbling under the lamp at 92 s, set in the 2019 mold at 115 s, blank and facing camera at 125 s",
+  "net_new_reason": "the shelf has no soft deformable hero that holds an imprint of another object; Norm is reusable for any learn-normal-then-flag story (to be registered in ASSET_MANIFEST.md)"
+ },
+ "motion_language": "nothing linear: Norm squashes and rebounds with springs and keeps a continuous wobble, dents form with an ease and a small overshoot, the boot drops with anticipation, the phone buzzes, the clipboard stamps ring; Norm idles with blinks, a slow breath, a jelly shimmer and a brow that tells the state.",
+ "composition": {
+  "focal_hierarchy": "one lit object per shot; Norm is the best-finished thing in every frame he is in; the near plane in the lower third carries a boot, a rug and cable, snow drifts or the felt table edge",
+  "negative_space": "the paper test set (shots 10 and 11) is deliberately plain so the clipboard and the cards carry it",
+  "safe_area": "hero action inside y 420 to 1320, caption band 1336 to 1472 clear of hero motion, a near plane at 1475 and below",
+  "signature_shot": "a blank mint jelly under a lamp with a boot-shaped dent already in his forehead, the real boot pressed back into it, and one corner of the boot glowing alarm red where it does not fit"
+ },
+ "craft_advance": "none required; norm.tsx is a reusable deformable-imprint hero",
+ "world_values": "mid-dark: slope and yard (indigo to rose), plum kitchen and plan, navy inspection table; mid-light: mustard felt workbench; light: cream paper test set. Cuts between the dark worlds and the felt bench ride Norm (the one mint object) and the lamp pool."
+}

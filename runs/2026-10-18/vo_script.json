@@ -1,0 +1,127 @@
+{
+ "run_date": "2026-10-18",
+ "title": "WHAT NORM LEARNS",
+ "note": "Single-source ADN feature. Norm is a labelled metaphor for the learn-normal mechanism the three projects are described as using. No project is shown launched, live, deployed or piloted.",
+ "caption_fixups": {},
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Press a blob against a boot, and it remembers the boot.",
+   "t": "Press a blob against a boot, and it remembers the boot.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.",
+   "t": "Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "Three University of Alaska projects, shown at a statewide A I symposium, each start from one particular thing.",
+   "t": "Three University of Alaska projects, shown at a statewide A I symposium, each start from one particular thing.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.",
+   "t": "First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.",
+   "claims": [
+    "c1",
+    "c4"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "Online advice, Ronner said, is very generic.",
+   "t": "Online advice, Ronner said, is very generic.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "So picture Norm pressed with one skier's turn. Ronner plans to launch in December.",
+   "t": "So picture Norm pressed with one skier's turn. Ronner plans to launch in December.",
+   "claims": [
+    "c2"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "Second, a kitchen. Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.",
+   "t": "Second, a kitchen. Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Motion sensors and one button learn a senior's routines, and it's designed to alert family when a routine slips past a safety threshold.",
+   "t": "Motion sensors and one button learn a senior's routines, and it's designed to alert family when a routine slips past a safety threshold.",
+   "claims": [
+    "c6",
+    "c7"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Higher stakes each time.",
+   "t": "Higher stakes each time.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "Third, a machine. Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.",
+   "t": "Third, a machine. Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "Smith calls the compressor that pipeline's heartbeat, and the Daily News reports an estimate of more than fifty four billion dollars for the pipeline.",
+   "t": "Smith calls the compressor that pipeline's heartbeat, and the Daily News reports an estimate of more than fifty four billion dollars for the pipeline.",
+   "claims": [
+    "c9",
+    "c10"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+   "t": "Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+   "claims": [
+    "c13",
+    "c16",
+    "c17",
+    "c18"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.",
+   "t": "These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.",
+   "claims": [
+    "c14"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "So what would you press Norm against first?",
+   "t": "So what would you press Norm against first?",
+   "claims": []
+  }
+ ],
+ "caption_split_after": [
+  "to alert family"
+ ]
+}

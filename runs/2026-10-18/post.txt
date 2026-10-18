@@ -1,0 +1,15 @@
+A graduate student models compressors for an estimated 54 billion dollar pipeline. The Daily News story reports no accuracy figures.
+
+Three UAA AI projects were shown at a symposium, and that story reports no users, no accuracy figures and no pilots for any of them. Early is fair, but a symposium demo isn't evidence. These three should face the same proof test any vendor would.
+
+The Anchorage Daily News reported on October 8th. Jan Ronner is a former UAA alpine racer building FlowLine, an app that grades a skier's uploaded video and suggests drills. Ronner calls online advice very generic and plans to launch in December.
+
+Nathan Healy presented ANCHOR, built to help older Alaskans stay independent. It uses motion sensors and one button to learn a senior's routines, and it is designed to alert family when a routine slips past a safety threshold.
+
+Graduate student Aaron Smith uses digital twins (virtual copies of real equipment) to model compressors for a proposed gas pipeline. Smith calls the compressor that pipeline's heartbeat. The Daily News reports an estimate of more than 54 billion dollars for the pipeline.
+
+The video draws the shared idea as Norm, a stand-in for a machine that learns normal. Only ANCHOR is described as alerting.
+
+Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor. Which of the three would you want proven first, and what would count as proof to you?
+
+#Alaska #ArtificialIntelligence #DigitalTwins #UAA #AlaskaTech

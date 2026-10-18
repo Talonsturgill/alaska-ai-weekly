@@ -1,0 +1,51 @@
+{
+ "run_date": "2026-10-18",
+ "title": "TBD",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "ADN: Tracking grocery prices, skiing speed and senior routines, ways AI is used for research at UAA",
+   "outlet": "Anchorage Daily News",
+   "url": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c8",
+    "c9",
+    "c10",
+    "c13",
+    "c16",
+    "c17",
+    "c18"
+   ],
+   "used_in_film": true,
+   "note": "Tim Rockey, published 2026-10-08."
+  },
+  {
+   "id": "s2",
+   "title": "Yahoo News syndication of the ADN article",
+   "outlet": "Yahoo News (ADN copy)",
+   "url": "https://www.yahoo.com/news/science/articles/tracking-grocery-prices-skiing-speed-035900494.html",
+   "claims": [
+    "c6",
+    "c7"
+   ],
+   "used_in_film": true,
+   "note": "Syndicated copy, not independent."
+  },
+  {
+   "id": "s3",
+   "title": "Alaska Business: University of Alaska Statewide AI Symposium",
+   "outlet": "Alaska Business",
+   "url": "https://www.akbizmag.com/alaska-events/university-of-alaska-statewide-ai-symposium/",
+   "claims": [
+    "c11"
+   ],
+   "used_in_film": true,
+   "note": "Event listing, dates and venue."
+  }
+ ]
+}
