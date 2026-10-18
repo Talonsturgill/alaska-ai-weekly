@@ -1,0 +1,244 @@
+{
+ "run_date": "2026-10-18",
+ "fact_check_verdict": "single-source feature: ADN is the only outlet for every project; quote fragments verified; symposium dates from a second listing; no primary documents reached. Hedged language only.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "single-source",
+   "spoken": "Jan Ronner, a former U A A alpine racer, is building FlowLine.",
+   "on_screen": "FLOWLINE \u00b7 JAN RONNER \u00b7 PER ADN",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "ADN only. Say building, never live. No users or accuracy figure is reported."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "single-source",
+   "spoken": "Ronner plans to launch in December.",
+   "on_screen": "LAUNCH PLANNED FOR DECEMBER",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Ronner's plan per ADN. Never say launched."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-quote",
+   "spoken": "Online advice, Ronner said, is very generic.",
+   "on_screen": "\"VERY GENERIC\" \u00b7 JAN RONNER",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Quote fragment confirmed on ADN and Yahoo ('very generic and not very personalized'). Attribute to Ronner."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "single-source",
+   "spoken": "FlowLine is an A I app that grades a skier's uploaded video and suggests drills.",
+   "on_screen": "GRADES UPLOADED VIDEO \u00b7 SUGGESTS DRILLS",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "ADN description. No method, accuracy or user figure is reported, so the film never shows a score."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "single-source",
+   "spoken": "Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.",
+   "on_screen": "ANCHOR \u00b7 NATHAN HEALY \u00b7 PER ADN",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "ADN says Healy presented ANCHOR. Do not say deployed, piloted or sold, and do not give Healy a role."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "single-source",
+   "spoken": "Motion sensors and one button learn a senior's routines.",
+   "on_screen": "MOTION SENSORS + ONE BUTTON",
+   "source": "https://www.yahoo.com/news/science/articles/tracking-grocery-prices-skiing-speed-035900494.html",
+   "requires": [
+    "Wording from the ADN text as syndicated by Yahoo, paraphrase. Do not name routine types."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "single-source",
+   "spoken": "It's designed to alert family when a routine slips past a safety threshold.",
+   "on_screen": "DESIGNED TO ALERT FAMILY",
+   "source": "https://www.yahoo.com/news/science/articles/tracking-grocery-prices-skiing-speed-035900494.html",
+   "requires": [
+    "Keep 'designed to'. Never draw an alert that has happened to a person."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "single-source",
+   "spoken": "Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.",
+   "on_screen": "AARON SMITH \u00b7 DIGITAL TWINS OF COMPRESSORS \u00b7 PER ADN",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "ADN ties it to the proposed pipeline. Never say the pipeline's developer uses or approved his work."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "single-source",
+   "spoken": "Smith calls the compressor that pipeline's heartbeat.",
+   "on_screen": "\"THE HEARTBEAT OF THAT PIPELINE\" \u00b7 AARON SMITH",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "Quote confirmed on ADN and Yahoo. Attribute to Smith."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "single-source",
+   "spoken": "The Daily News reports an estimate of more than fifty four billion dollars for the pipeline.",
+   "on_screen": "ESTIMATED OVER $54 BILLION \u00b7 PER ADN",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "ADN only, estimator not named. Always estimated and per ADN."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-secondary",
+   "spoken": "Three University of Alaska projects were shown at a statewide A I symposium.",
+   "on_screen": "UA AI SYMPOSIUM \u00b7 SEPTEMBER 25TH TO 27TH",
+   "source": "https://www.akbizmag.com/alaska-events/university-of-alaska-statewide-ai-symposium/",
+   "requires": [
+    "Dates from the Alaska Business listing, not ADN."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "film-framing",
+   "spoken": "That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+   "on_screen": "ONE STORY",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "True of the ADN text the validator read: no users, accuracy figure, pilot or deployment is reported. 'The only one' means the only story the research found, say 'that story'. A statement about the record, not about the projects."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "film-framing",
+   "spoken": "These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.",
+   "on_screen": "WHAT WOULD COUNT AS PROOF",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "The film's own framing, labelled as such on screen. Not a claim that any of these will happen."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "film-framing",
+   "spoken": "Press a blob against a boot, and it remembers the boot. Norm is a blob standing in for a machine that learns normal.",
+   "on_screen": "NORM \u00b7 A STAND-IN FOR A MACHINE THAT LEARNS NORMAL",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "A labelled metaphor. The film never says FlowLine or the twin flags departures. Only ANCHOR is described as alerting."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "film-framing",
+   "spoken": "",
+   "on_screen": "NO USERS REPORTED",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "True of the ADN text the validator read. A statement about the record, not about the projects."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "film-framing",
+   "spoken": "",
+   "on_screen": "NO ACCURACY FIGURES",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "True of the ADN text the validator read. A statement about the record, not about the projects."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "film-framing",
+   "spoken": "",
+   "on_screen": "NO PILOTS REPORTED",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/08/tracking-grocery-prices-skiing-speed-and-senior-routines-ways-ai-is-used-for-research-at-uaa/",
+   "requires": [
+    "True of the ADN text the validator read. A statement about the record, not about the projects."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

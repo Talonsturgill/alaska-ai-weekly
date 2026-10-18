@@ -1,0 +1,2026 @@
+{
+  "run_date": "2026-10-18",
+  "slug": "what-norm-learns",
+  "title": "What Norm Learns",
+  "concept": "Three University of Alaska AI projects shown at a statewide symposium and reported by the Anchorage Daily News (a ski-video coach, a senior-routine sensor, a compressor digital twin) share one move: learn what is normal for one particular thing and compare the real thing to it. The film draws that move as Norm, a mint jelly that keeps the dent of whatever is pressed into him and glows red where the real thing does not fit, climbs a staircase of rising stakes, then gives the honest test a full scene: one outlet, no users, no accuracy figures, no pilots, and three things that would count as proof. Norm is a labelled metaphor.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 120.16,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "single-organic-hero",
+    "layout": "single-object-void",
+    "register": "tactile-collage",
+    "palette": "warm lamp-lit mustard felt, glowing rose alpenglow, lilac snow, plum window, mint jelly, signal red",
+    "camera_strategy": "slow-push-on-held-worlds",
+    "light_story": "a warm lamp pool on a golden mustard felt bench, rose alpenglow over lilac snow, a cozy amber-windowed kitchen, a plain paper test set",
+    "metaphor": "a soft jelly that keeps the dent of whatever is pressed into it and glows red where the real thing does not fit"
+  },
+  "palette": "warm lamp-lit mustard felt, glowing rose alpenglow, lilac snow, plum window, mint jelly, signal red",
+  "divergence_note": "10-17 was a bright frost noon with cyan, hazard orange and banknote green around a tall glass gauge. 10-16 a black-spruce night with tungsten and chalk. This film is a blue-hour lilac and rose world with a mustard felt workbench, a mint jelly hero and alarm red, moving through a bench, a symposium stage, a ski slope, a night kitchen, a top-down home plan, a felt staircase, a compressor yard, a pipeline, a paper test set and a ski slope.",
+  "treatment": {
+    "winner": "The Explainer's Norm (press, remember, press back, red where it doesn't fit), with the Dramatist's rising-stakes ladder and empty proof boxes, the Comedian's generic-advice sticky note and the Enthusiast's 2019 lineage button.",
+    "why": "One physical idea makes three unlike projects legible in a glance, the honest test gets its own paper set, and the unset patch plants a question the last shot pays."
+  },
+  "angle": {
+    "run_date": "2026-10-18",
+    "thesis": "Three UAA projects make the same move, learn what is normal for one particular thing and compare the real thing to it, and the stakes of getting it right climb from a ski turn to a senior's safety to a pipeline's heartbeat, while the reporting shows none of them proven yet.",
+    "supporting_facts": [
+      "c1,c3: FlowLine grades a skier's own uploaded video because online feedback is generic",
+      "c5,c6: ANCHOR is designed to learn a senior's routines and alert family past a safety threshold",
+      "c7,c8,c9: a student models the compressor, the heartbeat of a proposed pipeline estimated over $54 billion",
+      "c10,c11: one first AI class in 2019 to a statewide symposium"
+    ],
+    "counterpoint_to_honor": "These are student and faculty showcase projects, so asking for proof is early. The film credits the capacity first, then says plainly that no users, accuracy figures, pilots or deployments are reported, all from one ADN feature, and asks what would prove each.",
+    "falsifiability": "False if a primary source reports a pilot, accuracy figure or deployment (the 'unproven' claim expires), or if a project turns out to apply one fixed standard to everyone with no model of the particular subject.",
+    "second_movement": "From idea to proof. Stakes rise across the three, then the film states the stage plainly and names what would count as proof: December launch, a first household for ANCHOR, a twin checked against a real compressor. Mike Jones ethics line (through 'right now') sits at the test.",
+    "valence": "Earned optimism, hedged. The win is the people and direction of the work, not any proven product.",
+    "runner_up_angles": {
+      "enthusiast": "capacity pipeline from 2019 class to symposium (merged as the lineage beat)",
+      "skeptic": "who answers when ANCHOR misses (merged as the stakes-rise question, asked not asserted)"
+    },
+    "debate": "Explainer thesis kept as spine. Enthusiast supplies the lineage button. Skeptic supplies the rising-stakes ladder and the unproven stage, with no failure implied.",
+    "stance": "celebratory"
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A blank mint jelly dome with a face wobbles awake on a felt bench and a hard ski boot drops and presses into his belly.",
+    "headline": "WHAT NORM LEARNS",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame is Norm blank on the bench again with a boot hovering above him, the open replaying as a question."
+  },
+  "open_loop": {
+    "plant_t": 8.67,
+    "pay_t": 118.83,
+    "what": "The pale unset patch on Norm's flank. Paid as the open question: what would you press him against first, since nothing is reported proven."
+  },
+  "open_loop_2": {
+    "plant_t": 58.99,
+    "pay_t": 103.91,
+    "what": "Whether ANCHOR's alert has ever fired for a real household. Planted as a question mark over the button, paid as the clipboard: no pilots reported."
+  },
+  "throughline": {
+    "object": "Norm",
+    "lands_in_button": "blank soft Norm looking straight at the camera with the boot hovering and his unset patch pale",
+    "states": [
+      {
+        "at_s": 0.164,
+        "state": "blank and wobbling on the bench"
+      },
+      {
+        "at_s": 3.55,
+        "state": "boot-dented and grinning"
+      },
+      {
+        "at_s": 8.67,
+        "state": "calm with a pale unset patch on his flank"
+      },
+      {
+        "at_s": 44.95,
+        "state": "ski-turn dented and proud"
+      },
+      {
+        "at_s": 70.58,
+        "state": "swollen on the second step of the staircase"
+      },
+      {
+        "at_s": 92.31,
+        "state": "sweating beside the signpost with the 54 billion tag"
+      },
+      {
+        "at_s": 95.61,
+        "state": "unset and wobbling under the hard lamp"
+      },
+      {
+        "at_s": 110.09,
+        "state": "leaning in beside three empty proof boxes"
+      },
+      {
+        "at_s": 118.83,
+        "state": "blank and soft again, looking at the camera"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 22.59,
+      "type": "build-on",
+      "what": "three paper tiles pop onto the symposium stage",
+      "hold_s": 0.6
+    },
+    {
+      "t": 63.77,
+      "type": "morph-to-chart",
+      "what": "a mint band of the usual path draws through the home plan and a day-trace follows",
+      "hold_s": 0.6
+    },
+    {
+      "t": 92.31,
+      "type": "scale-pullback",
+      "what": "the view pulls back over the whole pipeline as the price tag drops on its signpost",
+      "hold_s": 0.7
+    }
+  ],
+  "tail_s": 1.7,
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 117.93,
+    "riser_at": 114.61,
+    "silence_at": 118.63,
+    "payoff_at": 118.83,
+    "button_pattern": "question",
+    "interrupt_at": 16.39,
+    "extra_dips": [
+      92.31,
+      103.91
+    ]
+  },
+  "shots": [
+    {
+      "title": "A boot presses a blob",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "workbench",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the boot press is the whole shot",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "flat:a locked macro of the bench where the boot press and the wobble are the motion",
+      "centered": "Norm at x540 y1000",
+      "means": "A blank mint jelly dome with a face wobbles on a felt bench as a ski boot drops and presses a boot-shaped dent into him.",
+      "ambient": "the jelly wobbles, the lamp light drifts, dust motes float, the pegboard outlines sway",
+      "hero": {
+        "name": "Norm + SkiBoot",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "60% Norm, 30% boot, 10% bench"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-5.480"
+    },
+    {
+      "title": "The real boot goes back",
+      "vo_line": 1,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "high",
+      "stage": "workbench",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Norm and the boot at x540 y1000",
+      "means": "Norm hops to the middle, the real boot slides back into the dent and its toe sticks out and glows red.",
+      "ambient": "the jelly breathes, the patch outline crawls, the lamp drifts, the toe red pulses",
+      "hero": {
+        "name": "Norm + SkiBoot",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "55% Norm, 35% boot, 10% red glow"
+      },
+      "id": 2,
+      "start_s": 5.48,
+      "t": "5.480-18.240"
+    },
+    {
+      "title": "Three projects",
+      "vo_line": 2,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "symposium-stage",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the banner at x540 y800",
+      "means": "A stage banner whips in and three paper tiles pop onto it: a ski turn, a home plan, a pulse line.",
+      "ambient": "stage lights drift, tiles bob, Norm tilts, dust motes float",
+      "hero": {
+        "name": "SymposiumStage",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "60% banner and tiles, 25% stage, 15% Norm"
+      },
+      "id": 3,
+      "start_s": 18.24,
+      "t": "18.240-27.060"
+    },
+    {
+      "title": "A ski turn",
+      "vo_line": 3,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "ski-slope",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the skier at x400 y1000",
+      "means": "A skier carves a turn at blue hour and a phone slides in playing the clip with grade bars and a drill arrow.",
+      "ambient": "snow sprays, the ridge drifts, the clip loops, the trace draws on",
+      "hero": {
+        "name": "Skier + PhoneApp",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "50% slope and skier, 35% phone, 15% Norm cameo"
+      },
+      "id": 4,
+      "start_s": 27.06,
+      "t": "27.060-40.160"
+    },
+    {
+      "title": "Generic, then one skier's turn",
+      "vo_line": 4,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "high",
+      "stage": "workbench",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the note and the dent are the shot",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked macro where the note and the dent are the motion",
+      "centered": "Norm at x540 y1000",
+      "means": "A sticky note slides off Norm's belly and a carved S-turn dent presses in.",
+      "ambient": "the note peels, the dent glints, the lamp drifts, the jelly wobbles",
+      "hero": {
+        "name": "Norm + sticky note",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "70% Norm, 20% note, 10% bench"
+      },
+      "id": 5,
+      "start_s": 40.16,
+      "t": "40.160-52.100"
+    },
+    {
+      "title": "A kitchen and a button",
+      "vo_line": 6,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "low",
+      "stage": "night-kitchen",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the button at x540 y1000",
+      "means": "A plum night kitchen with an amber window and one brass button on the counter.",
+      "ambient": "the window light drifts, the button gleams, dust motes float, Norm breathes",
+      "hero": {
+        "name": "Night kitchen + AnchorButton",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% room, 30% button, 20% window"
+      },
+      "id": 6,
+      "start_s": 52.1,
+      "t": "52.100-60.520"
+    },
+    {
+      "title": "Sensors, a band and a trace",
+      "vo_line": 7,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "home-plan",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the plan and its trace are the shot",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "stage3d": "flat:a locked top-down plan where the rings, band and trace are the motion",
+      "centered": "the plan at x540 y900",
+      "means": "A top-down home plan where sensors pulse, a mint band draws and a trace drifts off it in red.",
+      "ambient": "sensor rings expand, the band edge glints, the button gleams, the phone shakes",
+      "hero": {
+        "name": "FloorPlan",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "70% plan, 20% trace and band, 10% phone"
+      },
+      "id": 7,
+      "start_s": 60.52,
+      "t": "60.520-70.580"
+    },
+    {
+      "title": "Higher stakes",
+      "vo_line": 8,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "felt-stairs",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Norm on the stairs at x540 y1000",
+      "means": "Norm hops up a felt staircase of three lit steps, SKI TURN, A HOME, A PIPELINE.",
+      "ambient": "the steps glow, Norm wobbles, dust floats, the felt breathes",
+      "hero": {
+        "name": "Norm + staircase",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% Norm, 35% steps, 10% labels"
+      },
+      "id": 8,
+      "start_s": 70.58,
+      "t": "70.580-73.180"
+    },
+    {
+      "title": "A compressor and its twin",
+      "vo_line": 9,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "compressor-yard",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the compressor at x540 y1000",
+      "means": "A compressor runs in a blue-hour yard while a dashed twin slides onto it and stands beside it.",
+      "ambient": "the flywheel turns, pistons pump, the dashes crawl, snow drifts",
+      "hero": {
+        "name": "Compressor + twin",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "55% compressor, 30% twin, 15% Norm cameo"
+      },
+      "id": 9,
+      "start_s": 73.18,
+      "t": "73.180-85.520"
+    },
+    {
+      "title": "The pipeline and the price",
+      "vo_line": 10,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "pipeline-tundra",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the pipeline and Norm at x540 y1000",
+      "means": "A pipeline snakes across the tundra, a heartbeat line pulses and a heavy price tag drops on Norm.",
+      "ambient": "the pipe draws on, the heartbeat blip travels, the tag swings, Norm sweats",
+      "hero": {
+        "name": "Pipeline + price tag + Norm",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "45% pipeline, 30% Norm and tag, 25% heartbeat line"
+      },
+      "id": 10,
+      "start_s": 85.52,
+      "t": "85.520-95.610"
+    },
+    {
+      "title": "The test",
+      "vo_line": 11,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "paper-set",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "Norm and the clipboard at x540 y1000",
+      "means": "Norm wobbles unset under a hard lamp as a clipboard collects stamps: one story, no users, no accuracy figures, no pilots.",
+      "ambient": "the lamp sways, Norm wobbles, the patch outline crawls, stamps ring",
+      "hero": {
+        "name": "Clipboard + Norm",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% clipboard, 40% Norm, 15% lamp"
+      },
+      "id": 11,
+      "start_s": 95.61,
+      "t": "95.610-105.240"
+    },
+    {
+      "title": "What would count as proof",
+      "vo_line": 12,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "paper-set-cards",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the cards sliding in are the shot",
+      "transition_in": "focus-pull",
+      "thread": "match",
+      "stage3d": "flat:a locked card table where the sliding cards are the motion",
+      "centered": "the cards at x640 y900",
+      "means": "Three paper proof cards slide in with empty tick boxes.",
+      "ambient": "cards bob, tick boxes dash, Norm leans, dust floats",
+      "hero": {
+        "name": "ProofCards",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "70% cards, 20% Norm, 10% lamp"
+      },
+      "id": 12,
+      "start_s": 105.24,
+      "t": "105.240-117.420"
+    },
+    {
+      "title": "What would you press",
+      "vo_line": 13,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "high",
+      "stage": "workbench",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the lowering objects are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked macro where the lowering objects are the motion",
+      "centered": "Norm at x540 y1100",
+      "means": "Three objects, a boot, a brass button and a compressor, lower on cords toward a blank soft Norm with a pale unset patch.",
+      "ambient": "the objects sway on their cords, Norm blinks, the patch outline crawls, the lamp drifts",
+      "hero": {
+        "name": "Norm + three hanging objects",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% Norm, 40% objects, 10% bench"
+      },
+      "id": 13,
+      "start_s": 117.42,
+      "t": "117.420-120.160"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.164,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.03,
+        "offset": 0.164
+      },
+      "offset": 0.164,
+      "vo": "Press a blob against a boot, and it remembers the boot.",
+      "phrase": "Press a blob against",
+      "shows": "a blank mint jelly dome with a face wobbles awake on a mustard felt bench under a lamp and blinks, a pegboard of pressed outlines behind him",
+      "sfx": "pop",
+      "means": "what norm learns",
+      "rehook": "",
+      "draw": {
+        "subject": "Norm",
+        "action": "wobbles awake on a lamp-lit felt bench and blinks",
+        "emotion": "blank",
+        "annotation": "WHAT NORM LEARNS"
+      },
+      "choreo": {
+        "primary": "a blank mint jelly dome with a face wobbles awake on a mustard felt bench under a lamp and blinks, a pegboard of pressed outlines behind him",
+        "reaction": "the jelly wobbles and his eyes blink",
+        "ambient": "the jelly wobbles, the lamp light drifts, dust motes float, the pegboard outlines sway"
+      },
+      "t": "0.164-2.210",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.21,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.21
+      },
+      "offset": 2.21,
+      "vo": "Press a blob against a boot, and it remembers the boot.",
+      "phrase": "boot, and it remembers",
+      "shows": "a hard grey ski boot drops from above and presses into his belly, the jelly squashing round it",
+      "sfx": "thud",
+      "means": "a boot",
+      "rehook": "",
+      "draw": {
+        "subject": "ski boot",
+        "action": "drops from above and presses into his belly with a squash",
+        "emotion": "startled",
+        "annotation": "A BOOT"
+      },
+      "choreo": {
+        "primary": "a hard grey ski boot drops from above and presses into his belly, the jelly squashing round it",
+        "reaction": "the dome squashes and rebounds",
+        "ambient": "the jelly wobbles, the lamp light drifts, dust motes float, the pegboard outlines sway"
+      },
+      "t": "2.210-3.550",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 3.55,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.55
+      },
+      "offset": 3.55,
+      "vo": "Press a blob against a boot, and it remembers the boot.",
+      "phrase": "remembers the boot.",
+      "shows": "the boot lifts away and a boot-shaped dent stays in the jelly while Norm grins",
+      "sfx": "pop",
+      "means": "remembers the boot",
+      "rehook": "",
+      "draw": {
+        "subject": "Norm",
+        "action": "lifts the boot away and grins at the boot-shaped dent it left",
+        "emotion": "proud",
+        "annotation": "REMEMBERS THE BOOT"
+      },
+      "choreo": {
+        "primary": "the boot lifts away and a boot-shaped dent stays in the jelly while Norm grins",
+        "reaction": "the dent glints and the jelly settles",
+        "ambient": "the jelly wobbles, the lamp light drifts, dust motes float, the pegboard outlines sway"
+      },
+      "t": "3.550-5.480",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 5.48,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.",
+      "phrase": "Meet Norm, a blob",
+      "shows": "a NORM plate slides in as the jelly hops to the middle of the bench",
+      "sfx": "whoosh",
+      "means": "norm",
+      "rehook": "",
+      "draw": {
+        "subject": "name plate",
+        "action": "slides in as Norm hops to the middle of the bench",
+        "emotion": "proud",
+        "annotation": "NORM"
+      },
+      "choreo": {
+        "primary": "a NORM plate slides in as the jelly hops to the middle of the bench",
+        "reaction": "the plate bobs and Norm bows",
+        "ambient": "the jelly breathes, the patch outline crawls, the lamp drifts, the toe red pulses"
+      },
+      "t": "5.480-8.670",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 8.67,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.",
+      "phrase": "machine that learns normal.",
+      "shows": "a chip pops up reading NORM, A STAND-IN FOR A MACHINE THAT LEARNS NORMAL and a pale dashed unset patch shows on his flank",
+      "sfx": "ping",
+      "means": "norm \u00b7 a stand-in for a machine that learns normal",
+      "rehook": "",
+      "draw": {
+        "subject": "stand-in chip",
+        "action": "pops up beside Norm and a pale unset patch shows on his flank",
+        "emotion": "calm",
+        "annotation": "NORM \u00b7 A STAND-IN FOR A MACHINE THAT LEARNS NORMAL"
+      },
+      "choreo": {
+        "primary": "a chip pops up reading NORM, A STAND-IN FOR A MACHINE THAT LEARNS NORMAL and a pale dashed unset patch shows on his flank",
+        "reaction": "the patch outline crawls and the jelly breathes",
+        "ambient": "the jelly breathes, the patch outline crawls, the lamp drifts, the toe red pulses"
+      },
+      "t": "8.670-11.150",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 11.15,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 5.67
+      },
+      "offset": 5.67,
+      "vo": "Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.",
+      "phrase": "Press the real boot",
+      "shows": "the real boot slides in from the right and presses back into the dent while mint ticks bloom along its edge",
+      "sfx": "thump",
+      "means": "press the real boot back",
+      "rehook": "",
+      "draw": {
+        "subject": "the real boot",
+        "action": "slides in from the right and presses back into the dent",
+        "emotion": "attentive",
+        "annotation": "PRESS THE REAL BOOT BACK"
+      },
+      "choreo": {
+        "primary": "the real boot slides in from the right and presses back into the dent while mint ticks bloom along its edge",
+        "reaction": "the jelly squashes round the boot",
+        "ambient": "the jelly breathes, the patch outline crawls, the lamp drifts, the toe red pulses"
+      },
+      "t": "11.150-13.310",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 13.31,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 7.83
+      },
+      "offset": 7.83,
+      "vo": "Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.",
+      "phrase": "anywhere it doesn't fit,",
+      "shows": "the real boot tilts and its toe sticks out of the dent edge",
+      "sfx": "snap",
+      "means": "where it doesn't fit",
+      "rehook": "",
+      "draw": {
+        "subject": "the real boot",
+        "action": "tilts and sticks its toe out of the dent",
+        "emotion": "uneasy",
+        "annotation": "WHERE IT DOESN'T FIT"
+      },
+      "choreo": {
+        "primary": "the real boot tilts and its toe sticks out of the dent edge",
+        "reaction": "the boot rocks and the jelly tightens",
+        "ambient": "the jelly breathes, the patch outline crawls, the lamp drifts, the toe red pulses"
+      },
+      "t": "13.310-16.390",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 16.39,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 10.91
+      },
+      "offset": 10.91,
+      "vo": "Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.",
+      "phrase": "red.",
+      "shows": "the boot's toe corner sticks out past the dent and glows alarm red while his brows shoot up",
+      "sfx": "sting",
+      "means": "where it doesn't fit",
+      "rehook": "",
+      "draw": {
+        "subject": "toe corner",
+        "action": "glows alarm red where the boot sticks out of the dent as his brows shoot up",
+        "emotion": "alarmed",
+        "annotation": "WHERE IT DOESN'T FIT"
+      },
+      "choreo": {
+        "primary": "the boot's toe corner sticks out past the dent and glows alarm red while his brows shoot up",
+        "reaction": "the red pulses and the jelly shivers",
+        "ambient": "the jelly breathes, the patch outline crawls, the lamp drifts, the toe red pulses"
+      },
+      "t": "16.390-18.240",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 18.24,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Three University of Alaska projects, shown at a statewide A I symposium, each start from one particular thing.",
+      "phrase": "Three University of Alaska",
+      "shows": "a banner on a stage whips in reading A I SYMPOSIUM under a date plate while Norm looks up from the foreground",
+      "sfx": "whoosh",
+      "means": "ua ai symposium \u00b7 september 25th to 27th",
+      "rehook": "",
+      "draw": {
+        "subject": "symposium banner",
+        "action": "whips in over a stage as the bench slides away",
+        "emotion": "curious",
+        "annotation": "UA AI SYMPOSIUM \u00b7 SEPTEMBER 25TH TO 27TH"
+      },
+      "choreo": {
+        "primary": "a banner on a stage whips in reading A I SYMPOSIUM under a date plate while Norm looks up from the foreground",
+        "reaction": "the banner sways and Norm tilts",
+        "ambient": "stage lights drift, tiles bob, Norm tilts, dust motes float"
+      },
+      "t": "18.240-22.590",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 22.59,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 4.35
+      },
+      "offset": 4.35,
+      "vo": "Three University of Alaska projects, shown at a statewide A I symposium, each start from one particular thing.",
+      "phrase": "symposium, each start from",
+      "shows": "three paper tiles, a ski turn, a floor plan with a button and a pulse line, pop onto the stage one after another",
+      "sfx": "pop",
+      "means": "three projects",
+      "rehook": "",
+      "draw": {
+        "subject": "project tiles",
+        "action": "pop onto the stage one after another",
+        "emotion": "plain",
+        "annotation": "THREE PROJECTS"
+      },
+      "choreo": {
+        "primary": "three paper tiles, a ski turn, a floor plan with a button and a pulse line, pop onto the stage one after another",
+        "reaction": "the tiles settle and the stage lights drift",
+        "ambient": "stage lights drift, tiles bob, Norm tilts, dust motes float"
+      },
+      "t": "22.590-25.070",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 25.07,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 6.83
+      },
+      "offset": 6.83,
+      "vo": "Three University of Alaska projects, shown at a statewide A I symposium, each start from one particular thing.",
+      "phrase": "particular thing.",
+      "shows": "dotted strings pull from each of the three tiles toward Norm in the foreground",
+      "sfx": "click",
+      "means": "one particular thing",
+      "rehook": "",
+      "draw": {
+        "subject": "dotted strings",
+        "action": "pull from each tile toward Norm",
+        "emotion": "curious",
+        "annotation": "ONE PARTICULAR THING"
+      },
+      "choreo": {
+        "primary": "dotted strings pull from each of the three tiles toward Norm in the foreground",
+        "reaction": "the strings sway and Norm tilts",
+        "ambient": "stage lights drift, tiles bob, Norm tilts, dust motes float"
+      },
+      "t": "25.070-27.060",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 27.06,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.",
+      "phrase": "First, a ski turn.",
+      "shows": "a small skier in a puffy suit carves an S-turn down a blue-hour lilac slope under a rose ridge and leaves a dotted trace",
+      "sfx": "whoosh",
+      "means": "first \u00b7 a ski turn",
+      "rehook": "",
+      "draw": {
+        "subject": "skier",
+        "action": "carves a turn down a lilac slope at blue hour",
+        "emotion": "joyful",
+        "annotation": "FIRST \u00b7 A SKI TURN"
+      },
+      "choreo": {
+        "primary": "a small skier in a puffy suit carves an S-turn down a blue-hour lilac slope under a rose ridge and leaves a dotted trace",
+        "reaction": "snow sprays and the trace draws on",
+        "ambient": "snow sprays, the ridge drifts, the clip loops, the trace draws on"
+      },
+      "t": "27.060-29.670",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 29.67,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.61
+      },
+      "offset": 2.61,
+      "vo": "First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.",
+      "phrase": "Jan Ronner, a former",
+      "shows": "a plate stamps onto the slope reading FLOWLINE, JAN RONNER, PER ADN",
+      "sfx": "stamp",
+      "means": "flowline \u00b7 jan ronner \u00b7 per adn",
+      "rehook": "rehook: Ronner",
+      "draw": {
+        "subject": "name plate",
+        "action": "stamps onto the slope",
+        "emotion": "plain",
+        "annotation": "FLOWLINE \u00b7 JAN RONNER \u00b7 PER ADN"
+      },
+      "choreo": {
+        "primary": "a plate stamps onto the slope reading FLOWLINE, JAN RONNER, PER ADN",
+        "reaction": "the plate bounces",
+        "ambient": "snow sprays, the ridge drifts, the clip loops, the trace draws on"
+      },
+      "t": "29.670-33.550",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 33.55,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.49
+      },
+      "offset": 6.49,
+      "vo": "First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.",
+      "phrase": "FlowLine, an A I",
+      "shows": "a phone slides in from the right playing a clip of the skier with three grade bars filling and a drill arrow chip popping up",
+      "sfx": "pop",
+      "means": "grades uploaded video \u00b7 suggests drills",
+      "rehook": "",
+      "draw": {
+        "subject": "phone",
+        "action": "slides in from the right playing a clip of the skier",
+        "emotion": "plain",
+        "annotation": "GRADES UPLOADED VIDEO \u00b7 SUGGESTS DRILLS"
+      },
+      "choreo": {
+        "primary": "a phone slides in from the right playing a clip of the skier with three grade bars filling and a drill arrow chip popping up",
+        "reaction": "the clip loops and the bars fill",
+        "ambient": "snow sprays, the ridge drifts, the clip loops, the trace draws on"
+      },
+      "t": "33.550-35.790",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 35.79,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 8.73
+      },
+      "offset": 8.73,
+      "vo": "First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.",
+      "phrase": "grades a skier's uploaded",
+      "shows": "three grade bars fill on the phone while the clip of the skier plays",
+      "sfx": "tick",
+      "means": "grades uploaded video",
+      "rehook": "",
+      "draw": {
+        "subject": "grade bars",
+        "action": "fill on the phone as the clip plays",
+        "emotion": "plain",
+        "annotation": "GRADES UPLOADED VIDEO"
+      },
+      "choreo": {
+        "primary": "three grade bars fill on the phone while the clip of the skier plays",
+        "reaction": "the bars fill and the clip loops",
+        "ambient": "snow sprays, the ridge drifts, the clip loops, the trace draws on"
+      },
+      "t": "35.790-38.490",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "at_s": 38.49,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 11.43
+      },
+      "offset": 11.43,
+      "vo": "First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.",
+      "phrase": "drills.",
+      "shows": "a drill arrow chip slides up on the phone",
+      "sfx": "snap",
+      "means": "suggests drills",
+      "rehook": "",
+      "draw": {
+        "subject": "drill chip",
+        "action": "slides up on the phone",
+        "emotion": "plain",
+        "annotation": "SUGGESTS DRILLS"
+      },
+      "choreo": {
+        "primary": "a drill arrow chip slides up on the phone",
+        "reaction": "the chip bobs",
+        "ambient": "snow sprays, the ridge drifts, the clip loops, the trace draws on"
+      },
+      "t": "38.490-40.160",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 40.16,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Online advice, Ronner said, is very generic.",
+      "phrase": "Online advice, Ronner said,",
+      "shows": "a sticky note reading GENERIC ADVICE descends from above toward Norm's belly",
+      "sfx": "creak",
+      "means": "advice online",
+      "rehook": "",
+      "draw": {
+        "subject": "sticky note",
+        "action": "descends from above toward Norm's belly",
+        "emotion": "uneasy",
+        "annotation": "ADVICE ONLINE"
+      },
+      "choreo": {
+        "primary": "a sticky note reading GENERIC ADVICE descends from above toward Norm's belly",
+        "reaction": "the note swings",
+        "ambient": "the note peels, the dent glints, the lamp drifts, the jelly wobbles"
+      },
+      "t": "40.160-43.050",
+      "key": 55
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 43.05,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.89
+      },
+      "offset": 2.89,
+      "vo": "Online advice, Ronner said, is very generic.",
+      "phrase": "generic.",
+      "shows": "a sticky note reading GENERIC ADVICE slaps onto Norm's belly and slides off while a quote plate lands",
+      "sfx": "thunk",
+      "means": "\"very generic\" \u00b7 jan ronner",
+      "rehook": "",
+      "draw": {
+        "subject": "sticky note",
+        "action": "slaps onto Norm's belly and slides off, a bad fit",
+        "emotion": "unimpressed",
+        "annotation": "\"VERY GENERIC\" \u00b7 JAN RONNER"
+      },
+      "choreo": {
+        "primary": "a sticky note reading GENERIC ADVICE slaps onto Norm's belly and slides off while a quote plate lands",
+        "reaction": "the note peels off and Norm frowns",
+        "ambient": "the note peels, the dent glints, the lamp drifts, the jelly wobbles"
+      },
+      "t": "43.050-44.950",
+      "key": 17
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 44.95,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.37
+      },
+      "offset": 0.37,
+      "vo": "So picture Norm pressed with one skier's turn. Ronner plans to launch in December.",
+      "phrase": "picture Norm pressed with",
+      "shows": "a dotted S-curve from the skier's trace flies in and presses into Norm's belly as a carved dent",
+      "sfx": "whoosh",
+      "means": "one skier's turn",
+      "rehook": "",
+      "draw": {
+        "subject": "turn dent",
+        "action": "presses into Norm's belly as an S-curve",
+        "emotion": "proud",
+        "annotation": "ONE SKIER'S TURN"
+      },
+      "choreo": {
+        "primary": "a dotted S-curve from the skier's trace flies in and presses into Norm's belly as a carved dent",
+        "reaction": "the dent glints and the jelly settles",
+        "ambient": "the note peels, the dent glints, the lamp drifts, the jelly wobbles"
+      },
+      "t": "44.950-48.690",
+      "key": 18
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 48.69,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.11
+      },
+      "offset": 4.11,
+      "vo": "So picture Norm pressed with one skier's turn. Ronner plans to launch in December.",
+      "phrase": "Ronner plans to launch",
+      "shows": "a small skier icon slides toward the dent on Norm's belly",
+      "sfx": "pop",
+      "means": "ronner",
+      "rehook": "",
+      "draw": {
+        "subject": "skier icon",
+        "action": "slides toward the dent on Norm's belly",
+        "emotion": "plain",
+        "annotation": "RONNER"
+      },
+      "choreo": {
+        "primary": "a small skier icon slides toward the dent on Norm's belly",
+        "reaction": "the icon bobs and Norm watches",
+        "ambient": "the note peels, the dent glints, the lamp drifts, the jelly wobbles"
+      },
+      "t": "48.690-50.210",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 5,
+      "at_s": 50.21,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 5.63
+      },
+      "offset": 5.63,
+      "vo": "So picture Norm pressed with one skier's turn. Ronner plans to launch in December.",
+      "phrase": "December.",
+      "shows": "a dashed plate stamps in reading LAUNCH PLANNED FOR DECEMBER",
+      "sfx": "ping",
+      "means": "launch planned for december",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "stamps in dashed",
+        "emotion": "plain",
+        "annotation": "LAUNCH PLANNED FOR DECEMBER"
+      },
+      "choreo": {
+        "primary": "a dashed plate stamps in reading LAUNCH PLANNED FOR DECEMBER",
+        "reaction": "the dashes crawl",
+        "ambient": "the note peels, the dent glints, the lamp drifts, the jelly wobbles"
+      },
+      "t": "50.210-52.100",
+      "key": 19
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 52.1,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Second, a kitchen. Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.",
+      "phrase": "Second, a kitchen. Nathan",
+      "shows": "a plum night kitchen slides in with an amber window and a steaming kettle",
+      "sfx": "whoosh",
+      "means": "second \u00b7 a kitchen",
+      "rehook": "",
+      "draw": {
+        "subject": "kitchen",
+        "action": "slides in with its amber window as the kettle steams",
+        "emotion": "warm",
+        "annotation": "SECOND \u00b7 A KITCHEN"
+      },
+      "choreo": {
+        "primary": "a plum night kitchen slides in with an amber window and a steaming kettle",
+        "reaction": "the steam curls and the window glows",
+        "ambient": "the window light drifts, the button gleams, dust motes float, Norm breathes"
+      },
+      "t": "52.100-55.330",
+      "key": 56
+    },
+    {
+      "id": 23,
+      "shot": 6,
+      "at_s": 55.33,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 3.23
+      },
+      "offset": 3.23,
+      "vo": "Second, a kitchen. Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.",
+      "phrase": "presented ANCHOR, built to",
+      "shows": "a plate stamps in reading ANCHOR, NATHAN HEALY, PER ADN over a plum night kitchen where a brass button sits on the counter by an amber window",
+      "sfx": "stamp",
+      "means": "anchor \u00b7 nathan healy \u00b7 per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "name plate",
+        "action": "stamps onto a plum night kitchen with a brass button on the counter",
+        "emotion": "warm",
+        "annotation": "ANCHOR \u00b7 NATHAN HEALY \u00b7 PER ADN"
+      },
+      "choreo": {
+        "primary": "a plate stamps in reading ANCHOR, NATHAN HEALY, PER ADN over a plum night kitchen where a brass button sits on the counter by an amber window",
+        "reaction": "the window light drifts and the button gleams",
+        "ambient": "the window light drifts, the button gleams, dust motes float, Norm breathes"
+      },
+      "t": "55.330-57.570",
+      "key": 21
+    },
+    {
+      "id": 24,
+      "shot": 6,
+      "at_s": 57.57,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.47
+      },
+      "offset": 5.47,
+      "vo": "Second, a kitchen. Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.",
+      "phrase": "older Alaskans stay independent.",
+      "shows": "a ring rolls out from the brass button across the counter as the amber window brightens",
+      "sfx": "swoosh",
+      "means": "built for older alaskans",
+      "rehook": "",
+      "draw": {
+        "subject": "ring",
+        "action": "rolls out from the button across the counter",
+        "emotion": "warm",
+        "annotation": "BUILT FOR OLDER ALASKANS"
+      },
+      "choreo": {
+        "primary": "a ring rolls out from the brass button across the counter as the amber window brightens",
+        "reaction": "the ring fades and the kettle steams",
+        "ambient": "the window light drifts, the button gleams, dust motes float, Norm breathes"
+      },
+      "t": "57.570-58.990",
+      "key": 58
+    },
+    {
+      "id": 25,
+      "shot": 6,
+      "at_s": 58.99,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 6.89
+      },
+      "offset": 6.89,
+      "vo": "Second, a kitchen. Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.",
+      "phrase": "independent.",
+      "shows": "the amber window brightens as steam rises from the kettle on the counter",
+      "sfx": "ping",
+      "means": "older alaskans stay independent",
+      "rehook": "",
+      "draw": {
+        "subject": "window",
+        "action": "brightens as steam rises from the kettle",
+        "emotion": "warm",
+        "annotation": "OLDER ALASKANS STAY INDEPENDENT"
+      },
+      "choreo": {
+        "primary": "the amber window brightens as steam rises from the kettle on the counter",
+        "reaction": "the steam curls and the window glows",
+        "ambient": "the window light drifts, the button gleams, dust motes float, Norm breathes"
+      },
+      "t": "58.990-60.520",
+      "key": 22
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "at_s": 60.52,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Motion sensors and one button learn a senior's routines, and it's designed to alert family when a routine slips past a safety threshold.",
+      "phrase": "Motion sensors and one",
+      "shows": "the view drops to a top-down plan of the home as sensor pucks pulse rings and the one brass button sits on its table",
+      "sfx": "pulse",
+      "means": "motion sensors + one button",
+      "rehook": "rehook: motion sensors and one button",
+      "draw": {
+        "subject": "sensor pucks",
+        "action": "pulse rings around a top-down plan of a small home",
+        "emotion": "attentive",
+        "annotation": "MOTION SENSORS + ONE BUTTON"
+      },
+      "choreo": {
+        "primary": "the view drops to a top-down plan of the home as sensor pucks pulse rings and the one brass button sits on its table",
+        "reaction": "the rings expand and the button gleams",
+        "ambient": "sensor rings expand, the band edge glints, the button gleams, the phone shakes"
+      },
+      "t": "60.520-63.770",
+      "key": 25
+    },
+    {
+      "id": 27,
+      "shot": 7,
+      "at_s": 63.77,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.25
+      },
+      "offset": 3.25,
+      "vo": "Motion sensors and one button learn a senior's routines, and it's designed to alert family when a routine slips past a safety threshold.",
+      "phrase": "routines, and it's designed",
+      "shows": "a mint band draws along the usual path through the rooms and a navy day-trace follows it",
+      "sfx": "swoosh",
+      "means": "learns a senior's routines",
+      "rehook": "",
+      "draw": {
+        "subject": "mint band",
+        "action": "draws along the usual path as a navy day-trace follows it",
+        "emotion": "attentive",
+        "annotation": "LEARNS A SENIOR'S ROUTINES"
+      },
+      "choreo": {
+        "primary": "a mint band draws along the usual path through the rooms and a navy day-trace follows it",
+        "reaction": "the band edge glints",
+        "ambient": "sensor rings expand, the band edge glints, the button gleams, the phone shakes"
+      },
+      "t": "63.770-65.750",
+      "key": 26
+    },
+    {
+      "id": 28,
+      "shot": 7,
+      "at_s": 65.75,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 5.23
+      },
+      "offset": 5.23,
+      "vo": "Motion sensors and one button learn a senior's routines, and it's designed to alert family when a routine slips past a safety threshold.",
+      "phrase": "alert family when a",
+      "shows": "today's trace drifts off the band and across the threshold line in alarm red while a phone marked FAMILY buzzes in the corner",
+      "sfx": "buzz",
+      "means": "designed to alert family",
+      "rehook": "",
+      "draw": {
+        "subject": "trace",
+        "action": "drifts off the band and turns alarm red as a phone buzzes",
+        "emotion": "alarmed",
+        "annotation": "DESIGNED TO ALERT FAMILY"
+      },
+      "choreo": {
+        "primary": "today's trace drifts off the band and across the threshold line in alarm red while a phone marked FAMILY buzzes in the corner",
+        "reaction": "the phone shakes and the red pulses",
+        "ambient": "sensor rings expand, the band edge glints, the button gleams, the phone shakes"
+      },
+      "t": "65.750-70.580",
+      "key": 27
+    },
+    {
+      "id": 29,
+      "shot": 8,
+      "at_s": 70.58,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Higher stakes each time.",
+      "phrase": "Higher stakes each time.",
+      "shows": "Norm hops onto the second step of a felt staircase, swelling, his brows set",
+      "sfx": "whoosh",
+      "means": "higher stakes",
+      "rehook": "",
+      "draw": {
+        "subject": "Norm",
+        "action": "hops onto the second step of a felt staircase and swells",
+        "emotion": "determined",
+        "annotation": "HIGHER STAKES"
+      },
+      "choreo": {
+        "primary": "Norm hops onto the second step of a felt staircase, swelling, his brows set",
+        "reaction": "the jelly squashes on landing",
+        "ambient": "the steps glow, Norm wobbles, dust floats, the felt breathes"
+      },
+      "t": "70.580-71.330",
+      "key": 28
+    },
+    {
+      "id": 30,
+      "shot": 8,
+      "at_s": 71.33,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.75
+      },
+      "offset": 0.75,
+      "vo": "Higher stakes each time.",
+      "phrase": "each time.",
+      "shows": "the staircase lights three steps in turn, SKI TURN, A HOME, A PIPELINE, and Norm hops to the top",
+      "sfx": "clunk",
+      "means": "higher stakes",
+      "rehook": "",
+      "draw": {
+        "subject": "staircase",
+        "action": "lights its three steps, SKI TURN, A HOME, A PIPELINE",
+        "emotion": "serious",
+        "annotation": "HIGHER STAKES"
+      },
+      "choreo": {
+        "primary": "the staircase lights three steps in turn, SKI TURN, A HOME, A PIPELINE, and Norm hops to the top",
+        "reaction": "the steps glow and Norm wobbles",
+        "ambient": "the steps glow, Norm wobbles, dust floats, the felt breathes"
+      },
+      "t": "71.330-73.180",
+      "key": 29
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 73.18,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Third, a machine. Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.",
+      "phrase": "Third, a machine. Graduate",
+      "shows": "a compressor skid runs in a blue-hour yard, its flywheel spinning and pistons pumping",
+      "sfx": "whoosh",
+      "means": "third \u00b7 a machine",
+      "rehook": "",
+      "draw": {
+        "subject": "compressor",
+        "action": "runs, its flywheel spinning, in a blue-hour yard",
+        "emotion": "curious",
+        "annotation": "THIRD \u00b7 A MACHINE"
+      },
+      "choreo": {
+        "primary": "a compressor skid runs in a blue-hour yard, its flywheel spinning and pistons pumping",
+        "reaction": "the flywheel turns and the pistons pump",
+        "ambient": "the flywheel turns, pistons pump, the dashes crawl, snow drifts"
+      },
+      "t": "73.180-76.490",
+      "key": 30
+    },
+    {
+      "id": 32,
+      "shot": 9,
+      "at_s": 76.49,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "Third, a machine. Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.",
+      "phrase": "Aaron Smith uses digital",
+      "shows": "a plate stamps in reading AARON SMITH, DIGITAL TWINS OF COMPRESSORS, PER ADN",
+      "sfx": "stamp",
+      "means": "aaron smith \u00b7 digital twins of compressors \u00b7 per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "name plate",
+        "action": "stamps onto the yard",
+        "emotion": "plain",
+        "annotation": "AARON SMITH \u00b7 DIGITAL TWINS OF COMPRESSORS \u00b7 PER ADN"
+      },
+      "choreo": {
+        "primary": "a plate stamps in reading AARON SMITH, DIGITAL TWINS OF COMPRESSORS, PER ADN",
+        "reaction": "the plate bounces",
+        "ambient": "the flywheel turns, pistons pump, the dashes crawl, snow drifts"
+      },
+      "t": "76.490-78.370",
+      "key": 31
+    },
+    {
+      "id": 33,
+      "shot": 9,
+      "at_s": 78.37,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.19
+      },
+      "offset": 5.19,
+      "vo": "Third, a machine. Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.",
+      "phrase": "twins, virtual copies of",
+      "shows": "a dashed cream wireframe twin of the compressor slides onto it with a scan line and then stands beside it",
+      "sfx": "shimmer",
+      "means": "a virtual copy of real equipment",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed twin",
+        "action": "slides onto the compressor and then stands beside it",
+        "emotion": "curious",
+        "annotation": "A VIRTUAL COPY OF REAL EQUIPMENT"
+      },
+      "choreo": {
+        "primary": "a dashed cream wireframe twin of the compressor slides onto it with a scan line and then stands beside it",
+        "reaction": "the scan line sweeps and the dashes crawl",
+        "ambient": "the flywheel turns, pistons pump, the dashes crawl, snow drifts"
+      },
+      "t": "78.370-82.290",
+      "key": 32
+    },
+    {
+      "id": 34,
+      "shot": 9,
+      "at_s": 82.29,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 9.11
+      },
+      "offset": 9.11,
+      "vo": "Third, a machine. Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.",
+      "phrase": "compressors for a proposed",
+      "shows": "the pistons pump faster as a fat arrow points from the compressor to its dashed twin",
+      "sfx": "clank",
+      "means": "model compressors",
+      "rehook": "",
+      "draw": {
+        "subject": "pistons",
+        "action": "pump faster as an arrow points at the twin",
+        "emotion": "curious",
+        "annotation": "MODEL COMPRESSORS"
+      },
+      "choreo": {
+        "primary": "the pistons pump faster as a fat arrow points from the compressor to its dashed twin",
+        "reaction": "the pistons pump and the dashes crawl",
+        "ambient": "the flywheel turns, pistons pump, the dashes crawl, snow drifts"
+      },
+      "t": "82.290-86.110",
+      "key": 50
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 86.11,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.59
+      },
+      "offset": 0.59,
+      "vo": "Smith calls the compressor that pipeline's heartbeat, and the Daily News reports an estimate of more than fifty four billion dollars for the pipeline.",
+      "phrase": "calls the compressor that",
+      "shows": "a fat pipeline snakes away across the lilac tundra from the compressor under a rose horizon",
+      "sfx": "rumble",
+      "means": "a proposed gas pipeline",
+      "rehook": "",
+      "draw": {
+        "subject": "pipeline",
+        "action": "snakes away across the lilac tundra from the compressor",
+        "emotion": "plain",
+        "annotation": "A PROPOSED GAS PIPELINE"
+      },
+      "choreo": {
+        "primary": "a fat pipeline snakes away across the lilac tundra from the compressor under a rose horizon",
+        "reaction": "the pipe draws on",
+        "ambient": "the pipe draws on, the heartbeat blip travels, the tag swings, Norm sweats"
+      },
+      "t": "86.110-88.010",
+      "key": 33
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 88.01,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.49
+      },
+      "offset": 2.49,
+      "vo": "Smith calls the compressor that pipeline's heartbeat, and the Daily News reports an estimate of more than fifty four billion dollars for the pipeline.",
+      "phrase": "heartbeat, and the Daily",
+      "shows": "an alarm-pink heartbeat line draws across the pipe and pulses under a quote plate",
+      "sfx": "thump",
+      "means": "\"the heartbeat of that pipeline\" \u00b7 aaron smith",
+      "rehook": "",
+      "draw": {
+        "subject": "heartbeat line",
+        "action": "draws across the pipe and pulses",
+        "emotion": "intense",
+        "annotation": "\"THE HEARTBEAT OF THAT PIPELINE\" \u00b7 AARON SMITH"
+      },
+      "choreo": {
+        "primary": "an alarm-pink heartbeat line draws across the pipe and pulses under a quote plate",
+        "reaction": "the blip travels along the line",
+        "ambient": "the pipe draws on, the heartbeat blip travels, the tag swings, Norm sweats"
+      },
+      "t": "88.010-89.250",
+      "key": 34
+    },
+    {
+      "id": 37,
+      "shot": 10,
+      "at_s": 89.25,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.73
+      },
+      "offset": 3.73,
+      "vo": "Smith calls the compressor that pipeline's heartbeat, and the Daily News reports an estimate of more than fifty four billion dollars for the pipeline.",
+      "phrase": "Daily News reports an",
+      "shows": "a heavy price tag descends on its string from above toward a signpost beside the pipeline",
+      "sfx": "creak",
+      "means": "per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "price tag",
+        "action": "descends on its string from above",
+        "emotion": "uneasy",
+        "annotation": "PER ADN"
+      },
+      "choreo": {
+        "primary": "a heavy price tag descends on its string from above toward a signpost beside the pipeline",
+        "reaction": "the tag swings on its string",
+        "ambient": "the pipe draws on, the heartbeat blip travels, the tag swings, Norm sweats"
+      },
+      "t": "89.250-92.310",
+      "key": 51
+    },
+    {
+      "id": 38,
+      "shot": 10,
+      "at_s": 92.31,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 6.79
+      },
+      "offset": 6.79,
+      "vo": "Smith calls the compressor that pipeline's heartbeat, and the Daily News reports an estimate of more than fifty four billion dollars for the pipeline.",
+      "phrase": "billion dollars for the",
+      "shows": "a heavy price tag drops onto a signpost beside the pipeline reading ESTIMATED OVER $54 BILLION, PER ADN, and swings while Norm sweats",
+      "sfx": "boom",
+      "means": "estimated over $54 billion \u00b7 per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "price tag",
+        "action": "drops onto a signpost beside the pipeline and swings",
+        "emotion": "strained",
+        "annotation": "ESTIMATED OVER $54 BILLION \u00b7 PER ADN"
+      },
+      "choreo": {
+        "primary": "a heavy price tag drops onto a signpost beside the pipeline reading ESTIMATED OVER $54 BILLION, PER ADN, and swings while Norm sweats",
+        "reaction": "the tag swings and Norm sweats",
+        "ambient": "the pipe draws on, the heartbeat blip travels, the tag swings, Norm sweats"
+      },
+      "t": "92.310-95.610",
+      "key": 36
+    },
+    {
+      "id": 39,
+      "shot": 11,
+      "at_s": 95.61,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+      "phrase": "Do they work yet?",
+      "shows": "Norm wobbles under a hard overhead lamp on a plain cream paper set with his pale unset patch showing and a clipboard sliding in",
+      "sfx": "swoosh",
+      "means": "do they work yet?",
+      "rehook": "rehook: do they work yet",
+      "draw": {
+        "subject": "Norm",
+        "action": "wobbles unset under a hard lamp on a plain paper set",
+        "emotion": "worried",
+        "annotation": "DO THEY WORK YET?"
+      },
+      "choreo": {
+        "primary": "Norm wobbles under a hard overhead lamp on a plain cream paper set with his pale unset patch showing and a clipboard sliding in",
+        "reaction": "the lamp sways and the jelly wobbles",
+        "ambient": "the lamp sways, Norm wobbles, the patch outline crawls, stamps ring"
+      },
+      "t": "95.610-98.470",
+      "key": 37
+    },
+    {
+      "id": 40,
+      "shot": 11,
+      "at_s": 98.47,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.86
+      },
+      "offset": 2.86,
+      "vo": "Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+      "phrase": "story, the only report",
+      "shows": "a clipboard slides in from the right with ONE STORY written at the top",
+      "sfx": "paper",
+      "means": "one story",
+      "rehook": "",
+      "draw": {
+        "subject": "clipboard",
+        "action": "slides in from the right with ONE STORY at the top",
+        "emotion": "plain",
+        "annotation": "ONE STORY"
+      },
+      "choreo": {
+        "primary": "a clipboard slides in from the right with ONE STORY written at the top",
+        "reaction": "the clip rocks",
+        "ambient": "the lamp sways, Norm wobbles, the patch outline crawls, stamps ring"
+      },
+      "t": "98.470-101.330",
+      "key": 38
+    },
+    {
+      "id": 41,
+      "shot": 11,
+      "at_s": 101.33,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.72
+      },
+      "offset": 5.72,
+      "vo": "Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+      "phrase": "users, no accuracy figures",
+      "shows": "a navy stamp lands on the clipboard row NO USERS REPORTED under ONE STORY",
+      "sfx": "stamp",
+      "means": "no users reported",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp row",
+        "action": "stamps NO USERS REPORTED on the clipboard",
+        "emotion": "plain",
+        "annotation": "NO USERS REPORTED"
+      },
+      "choreo": {
+        "primary": "a navy stamp lands on the clipboard row NO USERS REPORTED under ONE STORY",
+        "reaction": "the stamp rings",
+        "ambient": "the lamp sways, Norm wobbles, the patch outline crawls, stamps ring"
+      },
+      "t": "101.330-102.370",
+      "key": 39
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 102.37,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.76
+      },
+      "offset": 6.76,
+      "vo": "Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+      "phrase": "accuracy figures and no",
+      "shows": "a navy stamp lands on the clipboard row NO ACCURACY FIGURES",
+      "sfx": "stamp",
+      "means": "no accuracy figures",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp row",
+        "action": "stamps NO ACCURACY FIGURES on the clipboard",
+        "emotion": "plain",
+        "annotation": "NO ACCURACY FIGURES"
+      },
+      "choreo": {
+        "primary": "a navy stamp lands on the clipboard row NO ACCURACY FIGURES",
+        "reaction": "the stamp rings",
+        "ambient": "the lamp sways, Norm wobbles, the patch outline crawls, stamps ring"
+      },
+      "t": "102.370-103.910",
+      "key": 40
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 103.91,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 8.3
+      },
+      "offset": 8.3,
+      "vo": "Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.",
+      "phrase": "pilots.",
+      "shows": "a navy stamp lands on the clipboard row NO PILOTS",
+      "sfx": "stamp",
+      "means": "no pilots reported",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp row",
+        "action": "stamps NO PILOTS on the clipboard",
+        "emotion": "plain",
+        "annotation": "NO PILOTS REPORTED"
+      },
+      "choreo": {
+        "primary": "a navy stamp lands on the clipboard row NO PILOTS",
+        "reaction": "the stamp rings and Norm looks over",
+        "ambient": "the lamp sways, Norm wobbles, the patch outline crawls, stamps ring"
+      },
+      "t": "103.910-105.810",
+      "key": 41
+    },
+    {
+      "id": 44,
+      "shot": 12,
+      "at_s": 105.81,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.57
+      },
+      "offset": 0.57,
+      "vo": "These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.",
+      "phrase": "showcase projects, so early",
+      "shows": "a banner drops in reading SHOWCASE PROJECTS, EARLY IS FAIR while Norm tilts his head",
+      "sfx": "paper",
+      "means": "showcase projects \u00b7 early is fair",
+      "rehook": "",
+      "draw": {
+        "subject": "banner",
+        "action": "drops in over the stage lights reading SHOWCASE PROJECTS, EARLY IS FAIR",
+        "emotion": "calm",
+        "annotation": "SHOWCASE PROJECTS \u00b7 EARLY IS FAIR"
+      },
+      "choreo": {
+        "primary": "a banner drops in reading SHOWCASE PROJECTS, EARLY IS FAIR while Norm tilts his head",
+        "reaction": "the banner swings",
+        "ambient": "cards bob, tick boxes dash, Norm leans, dust floats"
+      },
+      "t": "105.810-110.090",
+      "key": 57
+    },
+    {
+      "id": 45,
+      "shot": 12,
+      "at_s": 110.09,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 4.85
+      },
+      "offset": 4.85,
+      "vo": "These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.",
+      "phrase": "December start that holds,",
+      "shows": "the first of three paper proof cards slides in reading DECEMBER START THAT HOLDS with an empty dashed tick box under a heading WHAT WOULD COUNT AS PROOF",
+      "sfx": "slide",
+      "means": "what would count as proof",
+      "rehook": "",
+      "draw": {
+        "subject": "proof card",
+        "action": "slides in with an empty tick box",
+        "emotion": "hopeful",
+        "annotation": "WHAT WOULD COUNT AS PROOF"
+      },
+      "choreo": {
+        "primary": "the first of three paper proof cards slides in reading DECEMBER START THAT HOLDS with an empty dashed tick box under a heading WHAT WOULD COUNT AS PROOF",
+        "reaction": "the card bobs and the box dashes crawl",
+        "ambient": "cards bob, tick boxes dash, Norm leans, dust floats"
+      },
+      "t": "110.090-112.630",
+      "key": 43
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 112.63,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 7.39
+      },
+      "offset": 7.39,
+      "vo": "These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.",
+      "phrase": "household for ANCHOR, and",
+      "shows": "the second proof card slides in reading A FIRST HOUSEHOLD FOR ANCHOR with an empty dashed tick box",
+      "sfx": "slide",
+      "means": "a first household for anchor",
+      "rehook": "",
+      "draw": {
+        "subject": "proof card",
+        "action": "slides in with an empty tick box",
+        "emotion": "hopeful",
+        "annotation": "A FIRST HOUSEHOLD FOR ANCHOR"
+      },
+      "choreo": {
+        "primary": "the second proof card slides in reading A FIRST HOUSEHOLD FOR ANCHOR with an empty dashed tick box",
+        "reaction": "the card bobs",
+        "ambient": "cards bob, tick boxes dash, Norm leans, dust floats"
+      },
+      "t": "112.630-114.610",
+      "key": 44
+    },
+    {
+      "id": 47,
+      "shot": 12,
+      "at_s": 114.61,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 9.37
+      },
+      "offset": 9.37,
+      "vo": "These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.",
+      "phrase": "twin checked against a",
+      "shows": "the third proof card slides in reading A TWIN CHECKED AGAINST A REAL COMPRESSOR with an empty dashed tick box",
+      "sfx": "slide",
+      "means": "a twin checked against a real compressor",
+      "rehook": "",
+      "draw": {
+        "subject": "proof card",
+        "action": "slides in with an empty tick box",
+        "emotion": "hopeful",
+        "annotation": "A TWIN CHECKED AGAINST A REAL COMPRESSOR"
+      },
+      "choreo": {
+        "primary": "the third proof card slides in reading A TWIN CHECKED AGAINST A REAL COMPRESSOR with an empty dashed tick box",
+        "reaction": "the card bobs and Norm leans in",
+        "ambient": "cards bob, tick boxes dash, Norm leans, dust floats"
+      },
+      "t": "114.610-117.420",
+      "key": 45
+    },
+    {
+      "id": 48,
+      "shot": 13,
+      "at_s": 117.42,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So what would you press Norm against first?",
+      "phrase": "So what would you",
+      "shows": "a boot on a cord descends into frame above blank soft Norm",
+      "sfx": "creak",
+      "means": "so what would you press",
+      "rehook": "",
+      "draw": {
+        "subject": "boot",
+        "action": "descends on its cord into frame above blank Norm",
+        "emotion": "curious",
+        "annotation": "SO WHAT WOULD YOU PRESS"
+      },
+      "choreo": {
+        "primary": "a boot on a cord descends into frame above blank soft Norm",
+        "reaction": "the cord sways and Norm looks up",
+        "ambient": "the objects sway on their cords, Norm blinks, the patch outline crawls, the lamp drifts"
+      },
+      "t": "117.420-118.830",
+      "key": 54
+    },
+    {
+      "id": 49,
+      "shot": 13,
+      "at_s": 118.83,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 1.41
+      },
+      "offset": 1.41,
+      "vo": "So what would you press Norm against first?",
+      "phrase": "press Norm against first?",
+      "shows": "a boot lowers on its cord toward a blank soft Norm who looks straight at the camera with his unset patch pale on his flank",
+      "sfx": "thump",
+      "means": "what would you press norm against first?",
+      "rehook": "",
+      "draw": {
+        "subject": "boot",
+        "action": "lowers toward blank Norm who looks straight at the camera",
+        "emotion": "curious",
+        "annotation": "WHAT WOULD YOU PRESS NORM AGAINST FIRST?"
+      },
+      "choreo": {
+        "primary": "a boot lowers on its cord toward a blank soft Norm who looks straight at the camera with his unset patch pale on his flank",
+        "reaction": "the boot sways and Norm blinks",
+        "ambient": "the objects sway on their cords, Norm blinks, the patch outline crawls, the lamp drifts"
+      },
+      "t": "118.830-120.160",
+      "key": 49
+    }
+  ]
+}

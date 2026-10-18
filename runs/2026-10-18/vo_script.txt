@@ -1,0 +1,14 @@
+Press a blob against a boot, and it remembers the boot.
+Meet Norm, a blob standing in for a machine that learns normal. Press the real boot back, and anywhere it doesn't fit, he glows red.
+Three University of Alaska projects, shown at a statewide A I symposium, each start from one particular thing.
+First, a ski turn. Jan Ronner, a former U A A alpine racer, is building FlowLine, an A I app that grades a skier's uploaded video and suggests drills.
+Online advice, Ronner said, is very generic.
+So picture Norm pressed with one skier's turn. Ronner plans to launch in December.
+Second, a kitchen. Nathan Healy presented ANCHOR, built to help older Alaskans stay independent.
+Motion sensors and one button learn a senior's routines, and it's designed to alert family when a routine slips past a safety threshold.
+Higher stakes each time.
+Third, a machine. Graduate student Aaron Smith uses digital twins, virtual copies of real equipment, to model compressors for a proposed gas pipeline.
+Smith calls the compressor that pipeline's heartbeat, and the Daily News reports an estimate of more than fifty four billion dollars for the pipeline.
+Do they work yet? That Daily News story, the only report found, names no users, no accuracy figures and no pilots.
+These are showcase projects, so early is fair. Proof would be a December start that holds, a first household for ANCHOR, and a twin checked against a real compressor.
+So what would you press Norm against first?

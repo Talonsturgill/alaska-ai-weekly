@@ -428,3 +428,17 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A beat of 0.3 s can't be sampled.** `build_evidence` needs about 0.6 s inside a beat for its strip, so two anchor words a third of a second apart (`reserve`, `Level`) fail the pack after a 13 minute render. Check the board for beats under 0.7 s before rendering.
 - **The lower third needs a near plane in every shot.** Interior floors and snow fields were empty under y 1475 in the first frames. A ReserveBar cameo, a rug, a cable and snow drifts in the near plane filled it and gave the throughline object a reason to be on screen in shots it would otherwise miss.
 - **`storyboard_check` flags a METRONOME at three gaps within 0.8 s of each other.** Remove a beat or move an anchor word, don't add one.
+
+## 15. Things the 2026-10-18 panel and gates found that were knowable in advance
+
+- **A metaphor object never asserts a claim on its own.** Norm (a jelly that keeps a dent and glows red where the real thing doesn't fit) was drawn pressed against all three projects, and the editor read "work the same way" and the staircase as saying FlowLine and the compressor twin flag departures. Only ANCHOR was described as alerting. Voice the shared idea as "each start from one particular thing", keep the red for the toy boot and for the one mechanism the record describes, and keep the metaphor off any figure (a price tag hangs on its own signpost, never on the hero).
+- **Never write he, she or his for a named person the record doesn't gender.** The VO, plates and post said "he" for two named people on a guess. Use the surname ("Smith calls...", "Ronner said").
+- **A score is never drawn.** FlowLine "grades" a video and the record gives no score, accuracy or user figure, so three filling grade bars were an invented value. Draw an unvalued chip ("YOUR VIDEO, GRADED").
+- **An alert that has not happened is drawn as a design.** The trace leaving the band and a phone that rings must carry a persistent HOW IT'S DESIGNED label and a ghosted phone. A real household's alert has not been reported.
+- **A lineage beat that sits next to project tiles links the person to the projects.** The 2019 class and Helena Wisniewski were cut because nothing in the record says she taught these three.
+- **A plate is sized for a phone, not for the square sheet.** Judges named 26 to 30 px mono plates as small. Plates in the 9:16 master start at 34 and the sourcing plate at 38.
+- **Two plates in sequence still need two different y values.** plate_overlap_check reads geometry, not timing: eighteen overlaps on first run, all sequenced pairs.
+- **Beat rhythm is checked in triples.** METRONOME fires on any three consecutive gaps within 0.4 s, and moving one word anchor by a word fixes it. Check the gap list after every VO re-take, because every re-take moves every beat.
+- **A shot can only start on a line start, so a 17 s line is two lines.** A 16 s cap forced two script splits (and two re-synths) before the board passed.
+- **Do not touch ASSET_MANIFEST.md or ASSET_INDEX.md while a render is bundling.** render provenance hashes them and the encode failed after a 7 minute render. Register the asset before the cut starts.
+- **A judge with only Read can't list a folder.** Hand the judges the exact evidence file names (out/evidence listing) in the brief. The first panel round opened no stills and no filmstrips and its Motion axis was a prior, not a measurement.

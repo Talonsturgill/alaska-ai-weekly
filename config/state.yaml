@@ -2569,3 +2569,53 @@ dispatch_history:
       alerts
     metaphor: a growth chart marked in megawatts that a block of dollars can't be
       measured against
+- date: '2026-10-18'
+  topic: 'UAA symposium AI projects (FlowLine ski coach, ANCHOR senior sensor, compressor
+    digital twin) per ADN, drawn through Norm, a labelled metaphor, with the honest
+    test: no users, no accuracy figures, no pilots reported'
+  slug: dispatch-2026-10-18-what-norm-learns
+  key_entities:
+  - FlowLine
+  - ANCHOR
+  - Jan Ronner
+  - Nathan Healy
+  - Aaron Smith
+  - UAA
+  - Anchorage Daily News
+  - statewide AI symposium
+  - digital twin
+  - compressor
+  - Alaska pipeline estimate
+  archetype: press-and-compare jelly metaphor with an honest test scene
+  palette: warm lamp-lit mustard felt, glowing rose alpenglow, lilac snow, plum window,
+    mint jelly, signal red
+  voice: Gemini Sulafat
+  stance: celebratory
+  angle: Three UAA projects make the same move, learn what is normal for one particular
+    thing and compare the real thing to it, and the stakes of getting it right climb
+    from a ski turn to a senior's safety to a pipeline's heartbeat, while the reporting
+    shows none of them proven yet.
+  hero: Norm
+  cast:
+  - Norm
+  - SkiBoot
+  - PhoneApp
+  - Skier
+  - FloorPlan
+  - Compressor
+  - Clipboard
+  - ProofCard
+  - SymposiumStage
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: single-organic-hero
+    layout: single-object-void
+    register: tactile-collage
+    palette: warm lamp-lit mustard felt, glowing rose alpenglow, lilac snow, plum
+      window, mint jelly, signal red
+    camera_strategy: slow-push-on-held-worlds
+    light_story: a warm lamp pool on a golden mustard felt bench, rose alpenglow over
+      lilac snow, a cozy amber-windowed kitchen, a plain paper test set
+    metaphor: a soft jelly that keeps the dent of whatever is pressed into it and
+      glows red where the real thing does not fit
