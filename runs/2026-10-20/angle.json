@@ -1,0 +1,20 @@
+{
+ "run_date": "2026-10-20",
+ "thesis": "Alaska is being asked to decide whether about 19,950 acres of public land should pass to AIDEA with no payment for land value before anyone can say what will be built there, and October 26th is the first time senators can put that question to the department making the call.",
+ "falsifiable_by": "Before or at the October 26th hearing AIDEA or DNR puts forward any of the six things Ruaro's July 30th letter says do not exist yet (committed tenant, site plan, power source, cooling, water plan, construction schedule), or the commissioner treats the preliminary finding as settled.",
+ "supporting_facts": [
+  "c2 no payment for land value, AIDEA still pays survey and closing",
+  "c4+c5 data centers only a possible use, and the applicant's own letter lists six things that do not exist",
+  "c6 the director called a data center on the site implausible (per Alaska Public Media), so the fear and the plan both point at an empty record",
+  "c7+c10 the Legislature subpoenaed the commissioner after DNR said the governor's office had not given permission"
+ ],
+ "counterpoint_honored": "AIDEA's case at full strength: a development authority needs site control before any tenant commits, ready land is how a state competes, AIDEA says about $495 million in dividends declared to the state, the finding is preliminary and the process (comment, subpoena, hearing) is doing its job. The thesis never says the transfer is wrong.",
+ "second_movement": "The word implausible (c6) cuts both ways: the data center is not the real question, the empty record is. The $495M is statewide, self-reported and ties to no land here (c12 note).",
+ "ai_hook": "No source mentions AI. Data centers are the buildings AI runs in, said once as context. The film says data centers, never AI data centers.",
+ "valence": "mixed",
+ "runner_ups": {
+  "enthusiast land-bank": "folded in as the counterpoint scene",
+  "resident skeptic": "folded in as c13 respect beat; thesis too close to opposition framing",
+  "oversight-is-working": "too untestable before Oct 26"
+ }
+}

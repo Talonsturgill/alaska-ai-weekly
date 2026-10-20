@@ -1,0 +1,59 @@
+{
+ "run_date": "2026-10-20",
+ "palette": {
+  "sky": "#A9C2BD overcast celadon grading to #DDE7E3 pale horizon haze (the Houston spruce exterior); the land office is #3B2A20 walnut wall with a #2F6B4F banker-green lamp",
+  "ground": "#EEF2EF birch-bone snow with #8FA3A8 slate-blue shadow planes; the desk and counter are #5A3D2B walnut under a #FFF1C9 lamp pool; the senate room is #2C3A36 deep spruce-green",
+  "hero": "#E8C98A manila folder, shade #B98A4E kraft, highlight #FFF1CC, ink #1D2A2A",
+  "accent": "#C2336F fireweed magenta",
+  "shadow": "#1D2A2A",
+  "mood": "an overcast Mat-Su land office, walnut and banker green and manila, where a folder is asked to hold a forest and fireweed magenta marks only what is missing",
+  "roles": {
+   "fireweed magenta #C2336F": "only what is missing or not yet true: the dashed outlines and BLANK labels in the six empty pockets and tab slots, the dotted-pencil data center, the NO / NOT plates' underline. Never the Houston pin (that is land that exists, stamp ink). At most one magenta system per frame.",
+   "manila #E8C98A": "the folder, its tabs and the map sheet only. No readout or lamp is manila.",
+   "banker green #2F6B4F": "the desk lamp, the counter's process lamps, the hearing-room wall and the vote-lamp housings only. The letterhead is stamp ink #1D2A2A on cream. Lit lamps are a #7FC4A0 core with a cream bloom against the dark #2C3A36 wall.",
+   "brass #C99A3C": "nameplates, the coin stack, the gavel",
+   "stamp ink #1D2A2A navy-black": "all stamps and plates",
+   "slate #8FA3A8": "the exterior snow shadows and the survey grid",
+   "sticky note #FFF1CC": "the OCT 26 note only: cream paper, #1D2A2A ink, a brass #C99A3C top strip and edge, distinct in hue and value from the manila folder",
+   "eraser #8FA3A8 slate with a #B98A4E kraft sleeve": "the eraser only",
+   "paperclip #C9D2D8": "the paperclip only"
+  },
+  "diverges_from_last_two": "10-18 was a blue-hour indigo to rose sky over lilac snow with a mustard felt bench, mint jelly hero and alarm red. 10-17 was a low peach sun over Interior snow with cobalt shadows and banknote green. This film is overcast celadon and slate over birch-bone snow, a walnut and banker-green land office, a manila folder hero and fireweed magenta. HONEST OVERLAP: banker green sits near 10-17's banknote green in hue but is dark, desaturated and used only on lamps and the senate wall, never a hero; navy-black ink is shared by every film."
+ },
+ "light": {
+  "time_of_day": "overcast daylight throughout: flat celadon window light on the walnut desk, a single banker lamp that clicks on only at the last beat, grey snow light on the Houston flat and aerial, a lamp-lit spruce-green hearing room, a bright counter",
+  "direction": "desk: key from a banker lamp at upper left, walnut bounce; exterior: soft overcast top light with a pale low sun smear right; counter: grey window light left, warm shelf lamps; senate: overhead pendants",
+  "intent": "key=overcast window light from upper left (desk) or sky (exterior), fill=snow bounce, rim=cream on the lit side; the banker lamp is OFF until the final beat and its click is the film's only warm key change, so an unlit file becomes a question with a date",
+  "depth": "hearing-room: wall 6 px, bench 14 px, hero 1.0, near chair backs at y1500. Desk (shots 1, 2, 3, 7): wall drifts 8 px, desk edge 16 px, folder 1.0, near blotter and pencil 22 px. desk-blotter macro (shot 4): green blotter grid static, sheet and stamp 1.0, key from the lamp upper left, a drifting pencil and ink spatter at y1475 and below. plan-sheet (shot 5): sheet 1.0, a static survey grid behind, key from the lamp upper left, drifting window-light dust and a pencil edge as the near plane. letter-desk (shot 6): desk wall static, letter and folder 1.0, key from the lamp upper left, a near paperclip and cable at y1500. exterior (shot 8): far ridge 8 px, spruce row 16 px, snow plane 1.0, near stakes 26 px. counter (shot 10): window 6 px, shelves 12 px, folder and counter 1.0, near rail and coin jar at y1500. counter-shelf (shot 11): shelf face static, coins and string 1.0, grey window light from the left, a rail edge and drifting dust at y1475 and below. walnut-desk macro (shot 13): lamp pool static, open folder 1.0, key from the lamp upper left, drifting dust and the pencil edge at the bottom."
+ },
+ "shape_language": "HARD-CORNERED RECTANGLES (the folder, its tabs, the map sheet, the stamps, the filing shelves, the pegboard of acres) against the only round things, the coin stack, the lamp dome and the headlights. The folder is the one object with a face and it is all right angles; every circle in a frame means money or light.",
+ "casting": {
+  "hero": "Folio (net-new, lib/folio.tsx). dedupe.py check --hero Folio returned FRESH. Not Norm or ReserveBar, the last two heroes.",
+  "kit_used": {
+   "Folio": "hero, case ADL 234762 (net-new, lib/folio.tsx), shots 1 to 13",
+   "DeskBG (with WitnessChair silhouette)": "shots 1, 2, 3, 4, 6, 7, 13 (net-new, folio.tsx)",
+   "MapSheet": "the 19,950 acres, shots 2 to 5 (net-new)",
+   "Stamp + ReceiptTag": "shot 4 (net-new)",
+   "DottedBuilding": "shots 5 and 7, erased in 7 (net-new)",
+   "LetterSheet": "Ruaro's July letter, shot 6 (net-new)",
+   "eraser + Paperclip": "shot 7 and the paperclip again in 13 (net-new)",
+   "CouncilSign x2 + ExteriorBG": "shot 8 (net-new)",
+   "WitnessChair + SenateBG + VoteLamp x5": "shot 9 (net-new)",
+   "WitnessChair + OctNote": "shots 12 and 13 (net-new)",
+   "CounterBG + Headlights + CoinStack + VoteLamp (process lamps)": "shots 10 and 11 (net-new)",
+   "string and STATEWIDE shelf": "shot 11, drawn in the episode on CounterBG (episode-local)",
+   "AerialBG + parcel outline": "shots 3 and 5, the real land from above (net-new, folio.tsx)"
+  },
+  "hero_state": "thin and sliding in at 0.2 s, hopping to the middle at 5.7 s, fat with the plan sheet at 18.5 s, stamped preliminary at 34 s, open with six empty pockets at 56.5 s, rattling at 58.5 s, hollow with swinging tabs at 67.6 s, pinned by a subpoena stamp at 87.3 s, listening at the counter at 89 s, tied to nothing at 107 s, holding a sticky note OCT 26 at 116.5 s, open to camera with six blanks fanned at 120.5 s",
+  "net_new_reason": "the shelf has no paper-record hero that can be thin, fat, hollow and shaken; Folio is reusable for any story about a file, a permit or a docket"
+ },
+ "motion_language": "nothing linear: Folio hops with squash and a corner pivot, stamps land with an overshoot and an ink spatter, the map sheet unrolls with a spring, tabs pop in sequence, shaking rattles the tabs and drops a paperclip; idle breath is a slight corner sway and a blink.",
+ "composition": {
+  "focal_hierarchy": "one lit object per shot; Folio is the best-finished thing in every frame it is in; the lower third (y1475 and below) carries a desk edge with pencil and blotter, a snow plane with survey stakes, a counter rail, or chair backs; the empty witness chair is planted in shot 1 and pays off in shot 12",
+  "negative_space": "the best-case-for-the-transfer counter and shelf (shots 10 and 11) is warm and tidy on purpose so the argument looks as good as it is",
+  "safe_area": "hero action inside y 420 to 1320, caption band 1336 to 1472 clear of hero motion",
+  "signature_shot": "shot 13: the folder held open to camera with six empty magenta pockets fanned like a hand of cards, one paperclip glinting in the middle and the cream OCT 26 note lit beside it under the banker's lamp"
+ },
+ "craft_advance": "none required; folio.tsx is a reusable paper-record hero",
+ "world_values": "dark: walnut desk, senate room; mid: overcast exterior; light: the counter. Cuts ride Folio (the one manila object) and the lamp pool."
+}
