@@ -187,8 +187,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <DeskBG f={g} desk={1180} id="s2d" />
         <MapSheet x={700} y={880} f={g} scale={0.8} k={roll} hatch={ease(f, t5 + 20, 20)} pinK={0} rot={-2 + 2 * (1 - roll)} id="s2m" />
         <Folio x={x} y={y} f={g} scale={1.02} emotion={f < t44 ? 'proud' : 'smug'} sq={land * 0.7} look={0.5} forest={0.4 * (1 - ease(f, t5, 20))} id="s2f" />
-        {!stampOut && <Stamp x={x} y={y - 470} f={g} scale={0.8} down={sd} ink={stampInk} lines={['COMMENTS CLOSED', 'AUG 19']} size={30} rot={-5} id="s2s" />}
-        {stampOut === 1 && <Stamp x={x} y={y - 470} f={g} scale={0.8} down={1} ink={1} lines={['COMMENTS CLOSED', 'AUG 19']} size={30} rot={-5} id="s2s2" />}
+        {!stampOut && <Stamp x={x} y={y - 470} f={g} scale={0.8} down={sd} ink={stampInk} lines={['COMMENTS CLOSED', 'AUG 19TH']} size={30} rot={-5} id="s2s" />}
+        {stampOut === 1 && <Stamp x={x} y={y - 470} f={g} scale={0.8} down={1} ink={1} lines={['COMMENTS CLOSED', 'AUG 19TH']} size={30} rot={-5} id="s2s2" />}
       </SVG>
     </Frame>
   );
@@ -200,7 +200,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
   const g = f + p.from;
   const t7 = b(7), t45 = b(45), t8 = b(8);
   return (
-    <Frame p={p} zk={(ff) => lerp(1.3, 1.0, easeIO(ff, 0, 60))} oy={800} tagText="ILLUSTRATION · TRUE SHAPE, SIMPLIFIED"
+    <Frame p={p} zk={(ff) => lerp(1.3, 1.0, easeIO(ff, 0, 60))} oy={800} tagText="ILLUSTRATION · SHAPE APPROXIMATE"
       overlay={<>
         <Plate text="ABOUT 19,950 ACRES NEAR HOUSTON" displayLines={['ABOUT 19,950 ACRES', 'NEAR HOUSTON']} y={575} size={40} tone="paper" p={ease(f, t7 + 2, 8)} />
         <Plate text="HOUSTON, ALASKA" x={650} y={1255} size={30} tone="ink" p={ease(f, t45 + 2, 8)} />
@@ -208,7 +208,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <AerialBG f={g} id="s3a" outline={ease(f, 0, 14)} hatch={ease(f, t7, 26)} roofs={ease(f, t45, 16)} />
-        <Folio x={880} y={1905} f={g} scale={0.62} emotion="alert" thick={ease(f, t7, 26)} forest={ease(f, t7, 26)} look={-0.6} id="s3f" />
+        <Folio x={lerp(1250, 880, ease(f, 2, 20))} y={1905 - 40 * Math.sin(ease(f, 2, 20) * Math.PI)} f={g} scale={0.62} emotion="alert" thick={ease(f, t7, 26)} forest={ease(f, t7, 26)} look={-0.6} id="s3f" />
       </SVG>
     </Frame>
   );
@@ -229,11 +229,11 @@ const S4: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <g transform={`translate(0 ${-6 * jump})`}>
           <DeskBG f={g} desk={1180} id="s4d" chair={false} />
-          <Folio x={140} y={1285} f={g} scale={0.42} emotion={f < t11 ? 'proud' : 'worried'} look={0.9} id="s4f" />
           <MapSheet x={540} y={920} f={g} scale={1.0} k={1} hatch={1} pinK={0} id="s4m" />
           <Stamp x={540} y={900} f={g} scale={1.1} down={easeIn(f, t9 - 14, 14)} ink={f >= t9 ? ease(f, t9, 5) : 0} lines={['NO PAYMENT', 'FOR LAND VALUE']} size={46} rot={-3} smudge={0} id="s4s1" />
           <ReceiptTag x={lerp(560, 810, ease(f, t10, 26))} y={lerp(900, 1130, easeIn(f, t10, 26))} f={g} scale={0.95} rot={lerp(-20, 6, ease(f, t10, 26))} lines={['SURVEY + CLOSING', 'COSTS · AIDEA PAYS']} k={ease(f, t10, 6)} size={24} />
-          <Stamp x={400} y={1110} f={g} scale={0.95} down={easeIn(f, t11 - 14, 14)} ink={f >= t11 ? ease(f, t11, 5) : 0} lines={['PRELIMINARY ONLY', 'NO FINAL DECISION']} size={32} rot={4} smudge={ease(f, t11 + 4, 20)} id="s4s2" />
+          <Stamp x={420} y={1090} f={g} scale={1.0} down={easeIn(f, t11 - 14, 14)} ink={f >= t11 ? ease(f, t11, 5) : 0} lines={['PRELIMINARY']} size={46} rot={4} smudge={ease(f, t11 + 4, 20)} id="s4s2" />
+          <Folio x={130} y={1295} f={g} scale={0.55} emotion={f < t11 ? 'proud' : 'worried'} look={0.9} id="s4f" />
         </g>
       </SVG>
     </Frame>
@@ -247,11 +247,11 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const t12 = b(12), t13 = b(13), t14 = b(14), t15 = b(15);
   const k = ease(f, t13, 28);
   return (
-    <Frame p={p} z0={1.04} z1={1.14} oy={800} tagText="ILLUSTRATION · TRUE SHAPE, SIMPLIFIED"
+    <Frame p={p} z0={1.04} z1={1.14} oy={800} tagText="ILLUSTRATION · SHAPE APPROXIMATE"
       overlay={<>
         <Plate text="AIDEA'S OWN PLAN" y={545} size={40} tone="felt" p={ease(f, t12 + 2, 8)} />
         <Plate text="DATA CENTERS · 'POTENTIALLY'" displayLines={['DATA CENTERS', "'POTENTIALLY'"]} y={650} size={38} tone="paper" p={ease(f, t13 + 4, 8)} />
-        <Plate text="THE BUILDINGS AI RUNS IN" displayLines={['THE BUILDINGS', 'AI RUNS IN']} y={1180} size={34} tone="ink" p={ease(f, t14 + 2, 8)} />
+        <Plate text="CONTEXT · AI RUNS IN DATA CENTERS" y={1180} size={26} tone="ink" p={ease(f, t14 + 2, 8)} />
         <Plate text="NOT A COMMITMENT" y={820} size={38} tone="indigo" dashed p={ease(f, t15 + 2, 8)} />
       </>}>
       <SVG>
@@ -282,13 +282,13 @@ const S6: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} zk={(ff) => lerp(1.0, 1.1, easeIO(ff, 0, p.dur))} oy={1000} dx0={20} dx1={-20}
       overlay={<>
         <Plate text="AIDEA · JULY 30TH LETTER · RANDY RUARO" y={538} size={28} tone="green" p={ease(f, t16 + 4, 8)} />
-        <Plate text="NO COMMITTED TENANT · NO SITE PLAN" y={612} size={30} tone="plum" p={ease(f, t17 + 2, 8) * (f < t18 ? 1 : 0)} />
-        <Plate text="NO POWER SOURCE · NO COOLING" y={684} size={30} tone="plum" p={ease(f, t18 + 2, 8) * (f < t19 ? 1 : 0)} />
-        <Plate text="NO WATER PLAN · NO SCHEDULE" y={756} size={30} tone="plum" p={ease(f, t19 + 2, 8)} />
+        <Plate text="NO COMMITTED TENANT · NO SITE PLAN" x={640} y={612} size={30} tone="plum" p={ease(f, t17 + 2, 8) * (f < t18 ? 1 : 0)} />
+        <Plate text="NO POWER SOURCE · NO COOLING" x={640} y={684} size={30} tone="plum" p={ease(f, t18 + 2, 8) * (f < t19 ? 1 : 0)} />
+        <Plate text="NO WATER PLAN · NO SCHEDULE" x={640} y={756} size={30} tone="plum" p={ease(f, t19 + 2, 8)} />
       </>}>
       <SVG>
         <DeskBG f={g} desk={1180} id="s6d" chair={false} />
-        <LetterSheet x={lerp(1500, 800, slide)} y={900} f={g} scale={0.7} rot={lerp(8, -1.5, slide)} head="AIDEA · JULY 30TH" items={['TENANT', 'SITE PLAN', 'POWER', 'COOLING', 'WATER', 'SCHEDULE']} shown={shown} />
+        <LetterSheet x={lerp(1500, 800, slide)} y={900} f={g} scale={0.7} rot={lerp(8, -1.5, slide)} head="AIDEA · JULY 30TH" items={['COMMITTED TENANT', 'SITE PLAN', 'POWER SOURCE', 'COOLING', 'WATER PLAN', 'SCHEDULE']} shown={shown} />
         <Folio x={265} y={1195} f={g} scale={1.0} emotion={f < t17 ? 'alert' : 'worried'} look={0.9} tabs={tabs} open={open} blank={0.6 + 0.4 * Math.sin(g / 5)} rattle={0.15 * ease(f, t19, 6)} id="s6f" />
       </SVG>
     </Frame>
@@ -316,7 +316,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <AerialBG f={g} id="s7a" outline={1} hatch={0.5} roofs={1} />
         <g transform="translate(500 860)"><DottedBuilding x={0} y={0} f={g} scale={0.95} k={1} erase={Math.min(1, ease(f, t21, 40) * (1 + ease(f, t22, 50) * 0.3))} label="" /></g>
-        <Folio x={400} y={1235} f={g} scale={1.15} emotion={f < t22 ? 'worried' : f < t23 ? 'ask' : 'hollow'} tilt={tilt} rattle={shake * 0.9 + 0.12 * hollow} tabs={6} open={open} forest={0.5} blank={0.7 + 0.3 * Math.sin(g / 4) * hollow + 0.3 * (1 - hollow)} look={f < t22 ? 0.7 : 0} id="s7f" />
+        <Folio x={380} y={1235} f={g} scale={1.0} emotion={f < t22 ? 'worried' : f < t23 ? 'ask' : 'hollow'} tilt={tilt} rattle={shake * 0.9 + 0.12 * hollow} tabs={6} open={open} forest={0.5} blank={0.7 + 0.3 * Math.sin(g / 4) * hollow + 0.3 * (1 - hollow)} look={f < t22 ? 0.7 : 0} id="s7f" />
         {f > t20 + 10 && <Paperclip x={560 + 30 * dropT} y={clipY} scale={0.9} rot={20 + 160 * dropT} />}
       </SVG>
     </Frame>
@@ -338,8 +338,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <ExteriorBG f={g} ground={1180} id="s8e" stakes />
-        <Folio x={915} y={1330} f={g} scale={0.4} emotion="listen" look={-0.8} id="s8f" />
-        <g data-band="ok"><ellipse cx={915} cy={1332} rx={170} ry={46} fill={FO.snow} stroke={INK} strokeWidth={5} /><ellipse cx={880} cy={1318} rx={60} ry={18} fill="#FFFFFF" opacity={0.7} /></g>
+        <Folio x={900} y={1330} f={g} scale={0.55} emotion="listen" look={-0.8} tilt={3 * Math.sin(g / 14)} id="s8f" />
+        <g data-band="ok"><ellipse cx={905} cy={1335} rx={200} ry={54} fill={FO.snow} stroke={INK} strokeWidth={5} /><ellipse cx={880} cy={1318} rx={60} ry={18} fill="#FFFFFF" opacity={0.7} /></g>
         <CouncilSign x={290} y={1360} f={g} scale={1.0} lines={['HOUSTON', 'CITY COUNCIL', 'OPPOSE']} k={s1} size={34} lit={0.5 + 0.5 * Math.sin(g / 7)} />
         <CouncilSign x={690} y={1370} f={g} scale={1.0} lines={['MEADOW LAKES', 'COMMUNITY', 'COUNCIL', 'OPPOSE']} k={s2} size={32} lit={0.5 + 0.5 * Math.sin(g / 6 + 1)} />
         {fade > 0.01 && <g opacity={fade}><AerialBG f={g} id="s8a" outline={0.6} hatch={0.3} panX={0} /></g>}
@@ -358,15 +358,15 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} zk={(ff) => lerp(1.0, 1.08, easeIO(ff, 0, p.dur))} oy={1000}
       overlay={<>
         <Plate text="DNR · 'NO PERMISSION TO ATTEND'" y={545} size={32} tone="ink" p={ease(f, t27 + 2, 8) * (f < t28 ? 1 : 0)} />
-        <Plate text="OCT 14 · SENATE SUBPOENAS DNR COMMISSIONER" y={620} size={28} tone="paper" p={ease(f, t28 + 2, 8)} />
-        <Plate text="5 VOTED YES" y={720} size={44} tone="green" p={ease(f, t29 + 6, 8)} />
+        <Plate text="OCT 14TH · SENATE SUBPOENAS DNR COMMISSIONER" y={620} size={26} tone="paper" p={ease(f, t28 + 2, 8)} />
+        <Plate text="5 VOTED YES" y={700} size={44} tone="green" p={ease(f, t29 + 6, 8)} />
       </>}>
       <SVG>
         <SenateBG f={g} id="s9s" floor={1230} />
         <g data-band="ok"><rect x={470} y={858} width={560} height={26} fill={FO.brassDeep} stroke={INK} strokeWidth={6} opacity={ease(f, t29 - 6, 8)} /></g>
         {[0, 1, 2, 3, 4].map((i) => <VoteLamp key={i} x={520 + i * 112} y={800} f={g} on={ease(f, t29 + i * 9, 6)} scale={0.8} />)}
         <WitnessChair x={300} y={1260} f={g} scale={1.0} plate="CROWTHER" slip={f >= t27 - 6} slipK={ease(f, t27 - 6, 16)} spin={0.4} k={ease(f, t46, 10)} />
-        <Stamp x={240} y={1100} f={g} scale={0.9} down={easeIn(f, t30 - 14, 14)} ink={f >= t30 ? ease(f, t30, 5) : 0} lines={['SUBPOENA']} size={36} rot={-6} id="s9st" />
+        <Stamp x={300} y={1195} f={g} scale={0.9} down={easeIn(f, t30 - 14, 14)} ink={f >= t30 ? ease(f, t30, 5) : 0} lines={['SUBPOENA']} size={36} rot={-6} id="s9st" />
         <Folio x={830} y={1270} f={g} scale={0.78} emotion="ask" tabs={6} tabsStand={stand} look={-0.9} blank={0.7} id="s9f" />
       </SVG>
     </Frame>
@@ -383,11 +383,11 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const glow = ease(f, t32 + 14, 10);
   const grow = ease(f, t47, Math.max(10, t34 - t47 + 24));
   return (
-    <Frame p={p} z0={1.0} z1={1.06} oy={1000}
+    <Frame p={p} z0={1.0} z1={1.1} oy={1000}
       overlay={<>
-        <Plate text="THE BEST CASE FOR THE TRANSFER" y={540} size={32} tone="paper" p={ease(f, t31 + 2, 8) * (f < t32 ? 1 : 0)} />
-        <Plate text="SITE CONTROL BEFORE A TENANT SIGNS" y={610} size={30} tone="felt" p={ease(f, t32 + 2, 8) * (f < t33 ? 1 : 0)} />
-        <Plate text="READY LAND · HOW A STATE COMPETES" y={680} size={30} tone="green" p={ease(f, t33 + 2, 8) * (f < t34 ? 1 : 0)} />
+        <Plate text="THE BEST CASE FOR THE TRANSFER" y={540} size={32} tone="paper" p={ease(f, t31 + 2, 8)} />
+        <Plate text="SITE CONTROL BEFORE A TENANT SIGNS" y={610} size={30} tone="felt" p={ease(f, t32 + 2, 8)} />
+        <Plate text="READY LAND · HOW A STATE COMPETES" y={680} size={30} tone="green" p={ease(f, t33 + 2, 8)} />
         <Plate text="AIDEA SAYS · ~$495M IN DIVIDENDS TO STATE" y={750} size={28} tone="ink" p={ease(f, t34 + 2, 8)} />
       </>}>
       <SVG>
@@ -413,14 +413,14 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const fx = 400, fy = 780;
   const tilt = 5 * Math.sin(ease(f, t50, 14) * Math.PI);
   return (
-    <Frame p={p} z0={1.0} z1={1.05} oy={1000}
+    <Frame p={p} z0={1.0} z1={1.15} oy={1000}
       overlay={<>
         <Plate text="STATEWIDE · TIED TO NO LAND HERE" displayLines={['STATEWIDE ·', 'TIED TO NO LAND HERE']} y={575} size={38} tone="felt" p={ease(f, t35 + 2, 8)} />
         <Plate text="LETTER · NO RETURN TO HOUSTON GUARANTEED" displayLines={['LETTER · NO RETURN TO', 'HOUSTON GUARANTEED']} y={705} size={34} tone="plum" p={ease(f, t36 + 2, 8)} />
       </>}>
       <SVG>
         <CounterBG f={g} id="s11c" floor={1230} lamps={3} />
-        <g data-band="ok" transform={`translate(${cx} 1075)`}>
+        <g data-band="ok" transform={`translate(${cx} 1272)`}>
           <rect x={-170} y={-12} width={340} height={44} fill={FO.manilaDeep} stroke={INK} strokeWidth={6} />
           <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} letterSpacing={4} fill={FO.navy}>STATEWIDE</text>
         </g>
@@ -448,13 +448,13 @@ const S12: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.07} oy={1000}
       overlay={<>
         <Plate text="ASK WHAT READY LAND IS READY FOR" y={540} size={32} tone="paper" p={ease(f, t37 + 2, 8) * (f < t38 ? 1 : 0)} />
-        <Plate text="OCT 26 · HEARING" y={612} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t52 ? 1 : 0)} />
-        <Plate text="THE FIRST TIME SENATORS CAN ASK" y={684} size={32} tone="green" p={ease(f, t52 + 2, 8)} />
+        <Plate text="OCT 26TH · HEARING" y={612} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t52 ? 1 : 0)} />
+        <Plate text="WHEN SENATORS CAN ASK HIM" y={684} size={34} tone="green" p={ease(f, t52 + 2, 8)} />
       </>}>
       <SVG>
         <SenateBG f={g} id="s12s" floor={1230} />
         <WitnessChair x={780} y={1260} f={g} scale={1.0} plate="CROWTHER" turn={turn} />
-        <Folio x={x} y={y} f={g} scale={0.95} emotion={f < t38 ? 'ask' : 'proud'} sq={land * 0.8} tabs={6} note={ease(f, t38, 8)} look={0.9} blank={0.5} id="s12f" />
+        <Folio x={x} y={y} f={g} scale={0.95} emotion={f < t38 ? 'ask' : 'proud'} sq={land * 0.8} tabs={6} note={ease(f, t38, 8)} noteText="OCT 26TH" look={0.9} blank={0.5} id="s12f" />
       </SVG>
     </Frame>
   );
@@ -470,16 +470,16 @@ const S13: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.12} oy={1000}
       overlay={<>
-        <Plate text="SIX BLANKS" y={545} size={46} tone="plum" p={ease(f, t40 + 2, 8)} />
-        <Plate text="ONE DATE" y={650} size={46} tone="ink" p={ease(f, t41 + 2, 8)} />
-        <Plate text="WATCH WHICH TABS FILL" y={755} size={40} tone="paper" p={ease(f, t42 + 2, 8)} />
+        <Plate text="SIX BLANKS" y={535} size={46} tone="plum" p={ease(f, t40 + 2, 8)} />
+        <Plate text="ONE DATE" y={608} size={46} tone="ink" p={ease(f, t41 + 2, 8)} />
+        <Plate text="WATCH WHICH TABS FILL" y={680} size={40} tone="paper" p={ease(f, t42 + 2, 8)} />
       </>}>
       <SVG>
         <DeskBG f={g} desk={1180} id="s13d" lamp={lamp} />
-        <Folio x={400} y={1230} f={g} scale={1.3} emotion={f < t42 ? 'hollow' : 'ask'} open={open} tabs={6} blank={0.6 + 0.4 * Math.sin(g / 5)} look={0.4} id="s13f" />
+        <Folio x={400} y={1240} f={g} scale={1.15} emotion={f < t42 ? 'hollow' : 'ask'} open={open} tabs={6} blank={0.6 + 0.4 * Math.sin(g / 5)} look={0.4} id="s13f" />
         <Paperclip x={470} y={1040 - 4 * Math.sin(g / 9)} scale={0.9} rot={20} />
         {f % 40 < 6 && <circle cx={470} cy={1040} r={20 + 10 * Math.sin(f)} fill="#FFFFFF" opacity={0.35} />}
-        <OctNote x={840} y={1000} f={g} scale={0.9} k={ease(f, t41, 8)} rot={5} />
+        <OctNote x={770} y={960} f={g} scale={0.85} text="OCT 26TH" k={ease(f, t41, 8)} rot={5} />
       </SVG>
     </Frame>
   );

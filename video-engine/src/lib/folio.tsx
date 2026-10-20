@@ -58,10 +58,11 @@ export const Folio: React.FC<{
   const ph = x * 0.011;
   const rat = rattle * (Math.sin(f * 1.9 + ph) * 5 + Math.sin(f * 3.1) * 2.5);
   const breathe = Math.sin(f / 31 + ph) * 0.006;
-  const sway = Math.sin(f / 23 + ph) * (1.1 + 2.6 * rattle);
-  const sx = 1 + 0.12 * sq + breathe, sy = 1 - 0.18 * sq - breathe;
+  const sway = Math.sin(f / 23 + ph) * (2.0 + 2.6 * rattle) + Math.sin(f / 61 + ph * 2) * 1.2;
+  const bob = Math.abs(Math.sin(f / 52 + ph)) * 0.012;
+  const sx = 1 + 0.12 * sq + breathe - bob, sy = 1 - 0.18 * sq - breathe + bob;
   const blink = Math.sin(f / 37 + ph) > 0.965 ? 0.12 : 1;
-  const px = look * 11;
+  const px = look * 11 + Math.sin(f / 47 + ph) * 3.5;
   const py = emotion === 'worried' || emotion === 'hollow' ? 6 : emotion === 'ask' ? -4 : emotion === 'listen' ? 2 : 0;
   const brow = emotion === 'shock' ? -20 : emotion === 'ask' ? -12 : emotion === 'smug' || emotion === 'proud' ? -5 : emotion === 'worried' || emotion === 'hollow' ? 8 : 0;
   const bt = emotion === 'shock' ? -10 : emotion === 'worried' || emotion === 'hollow' ? 12 : emotion === 'smug' ? -8 : 0;
@@ -136,7 +137,7 @@ export const Folio: React.FC<{
           const on = clamp01(nTabs - i);
           if (on <= 0) return null;
           const ty = -COVER_H + 44 + i * 74;
-          const out = on * 150 * (1 - k);
+          const out = on * 190 * (1 - k);
           const wob = Math.sin(f / 9 + i * 1.3) * 2 * rattle;
           return (
             <g key={t} transform={`translate(${COVER_W / 2 - 20 - tabsStand * 20} ${ty + wob - tabsStand * (i % 2 ? 6 : 0)}) rotate(${-tabsStand * (14 + i * 2)} 0 30)`}>
@@ -148,8 +149,8 @@ export const Folio: React.FC<{
                 </g>
               )}
               {on > 0.6 && <>
-                <text x={12} y={36} fontFamily={MONO} fontWeight={800} fontSize={t.length > 6 ? 21 : 24} letterSpacing={0.5} fill={FO.navy}>{t}</text>
-                <rect x={out - 36} y={14} width={22} height={32} fill="none" stroke={FO.magenta} strokeWidth={3.5} strokeDasharray="6 5" strokeDashoffset={-f * 0.6} opacity={blank} />
+                <text x={34} y={37} fontFamily={MONO} fontWeight={800} fontSize={t.length > 6 ? 21 : 24} letterSpacing={0.5} fill={FO.navy}>{t}</text>
+                <rect x={out - 34} y={14} width={20} height={32} fill="none" stroke={FO.magenta} strokeWidth={3.5} strokeDasharray="6 5" strokeDashoffset={-f * 0.6} opacity={blank} />
               </>}
             </g>
           );
@@ -192,11 +193,11 @@ export const Folio: React.FC<{
         </g>
         {/* the sticky note */}
         {note > 0 && (
-          <g transform={`translate(${COVER_W / 2 - 40} ${-COVER_H + 210}) rotate(${6 + 2 * Math.sin(f / 13)}) scale(${0.5 + 0.5 * clamp01(note)})`} opacity={clamp01(note * 2)}>
+          <g transform={`translate(${COVER_W / 2 - 70} ${-190}) rotate(${6 + 2 * Math.sin(f / 13)}) scale(${0.5 + 0.5 * clamp01(note)})`} opacity={clamp01(note * 2)}>
             <rect x={-96} y={-86} width={192} height={192} fill="#000" opacity={0.25} transform="translate(7 9)" />
             <rect x={-96} y={-96} width={192} height={192} fill="#FFF1CC" stroke={INK} strokeWidth={6} />
             <rect x={-96} y={-96} width={192} height={30} fill={FO.brass} stroke={INK} strokeWidth={4} />
-            <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={56} letterSpacing={1} fill={FO.navy}>{noteText}</text>
+            <NoteWords text={noteText} />
           </g>
         )}
       </g>
@@ -232,6 +233,7 @@ export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: bo
       </g>
     )}
     <ellipse data-band="ok" cx={540} cy={desk - 140} rx={620} ry={520} fill={`url(#${id}-p)`} opacity={lamp} />
+    {lamp > 0.4 && <rect data-band="ok" x={-40} y={-40} width={1160} height={desk + 40} fill={FO.lamp} opacity={0.16 * lamp} />}
     {/* flat celadon window light off the Houston snow, a tall soft shaft from upper left */}
     <path data-band="ok" d={`M -40 -40 L 360 -40 L 760 ${desk} L 120 ${desk} Z`} fill={FO.celadonHi} opacity={0.2 - 0.14 * lamp} />
     <rect data-band="ok" x={-40} y={-40} width={1160} height={desk + 40} fill={FO.celadon} opacity={0.14 * (1 - lamp)} />
@@ -538,12 +540,22 @@ export const WitnessChair: React.FC<{x: number; y: number; f: number; scale?: nu
         <rect x={-pw / 2} y={-44} width={pw} height={44} fill={FO.brass} stroke={INK} strokeWidth={6} />
         <text x={0} y={-12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} letterSpacing={2} fill={FO.navy}>{plate}</text>
       </g>
-      {slip && <g transform={`translate(0 ${-470 + 330 * (1 - slipK) + 10 * Math.sin(f / 12)}) rotate(-4)`} opacity={clamp01(slipK * 3)}>
+      {slip && <g transform={`translate(0 ${-400 + 280 * (1 - slipK) + 10 * Math.sin(f / 12)}) rotate(-4)`} opacity={clamp01(slipK * 3)}>
         <rect x={-150} y={-40} width={300} height={80} fill={FO.paper} stroke={INK} strokeWidth={5} />
-        <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FO.navy}>NO PERMISSION</text>
+        <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FO.navy}>DNR · NO PERMISSION</text>
         <text x={0} y={24} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FO.navy}>TO ATTEND</text>
       </g>}
     </g>
+  );
+};
+
+/** The words on a sticky note, one word to a line so a long ordinal date fits the paper. */
+const NoteWords: React.FC<{text: string}> = ({text}) => {
+  const w = text.split(' ');
+  return (
+    <>
+      {w.map((t, i) => <text key={i} x={0} y={(w.length === 1 ? 22 : -2 + i * 58)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={i === 0 && w.length > 1 ? 40 : 62} letterSpacing={1} fill={FO.navy}>{t}</text>)}
+    </>
   );
 };
 
@@ -620,7 +632,7 @@ export const OctNote: React.FC<{x: number; y: number; f: number; scale?: number;
     <rect x={-96} y={-86} width={192} height={192} fill="#000" opacity={0.25} transform="translate(7 9)" />
     <rect x={-96} y={-96} width={192} height={192} fill="#FFF1CC" stroke={INK} strokeWidth={6} />
     <rect x={-96} y={-96} width={192} height={30} fill={FO.brass} stroke={INK} strokeWidth={4} />
-    <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={56} letterSpacing={1} fill={FO.navy}>{text}</text>
+    <NoteWords text={text} />
   </g>
 );
 
