@@ -442,3 +442,18 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A shot can only start on a line start, so a 17 s line is two lines.** A 16 s cap forced two script splits (and two re-synths) before the board passed.
 - **Do not touch ASSET_MANIFEST.md or ASSET_INDEX.md while a render is bundling.** render provenance hashes them and the encode failed after a 7 minute render. Register the asset before the cut starts.
 - **A judge with only Read can't list a folder.** Hand the judges the exact evidence file names (out/evidence listing) in the brief. The first panel round opened no stills and no filmstrips and its Motion axis was a prior, not a measurement.
+
+## 16. Things the 2026-10-20 panel and editor found that were knowable in advance
+
+- **A tally drawn as a closed row of lit lamps reads unanimous.** Five lit vote lamps on a rail that ended inside the frame read 5 of 5, and c8 says never unanimous. Run the rail off both edges with dim housings past the lit ones, and never draw a total.
+- **A label that hangs under a cover is clipped by the cover.** The six index tabs started under the folder's front edge, so TENANT read "ENANT" for 70 seconds. Start a tab's text past the cover edge and size the tab for its longest word (SCHEDULE).
+- **A stamp lands beside a nameplate, never on it.** SUBPOENA over CROWTHER merged into one unreadable word. Put the stamp on the table front or the paper it acts on.
+- **The payoff object never sits on the hero's face or its tab column.** The OCT 26 note covered an eye and three tabs. Seat it low on the cover, clear of the face and the tab stack.
+- **A plate carries the hedge the voice carries.** "Developers want site control" and "can be how a state competes" are an ARGUMENT (c17), so the plates say DEVELOPERS WANT and CAN BE. "AIDEA RECEIVES" dropped "proposed", so the plate reads TO AIDEA · PROPOSED.
+- **A place label states its distance from the source.** The parcel is about two miles north of Houston, so the label reads HOUSTON · ABOUT 2 MILES SOUTH and sits outside the outline.
+- **Every date painted on screen takes the ordinal.** COMMENTS CLOSED AUG 19TH, OCT 14TH, OCT 26TH. A two-word sticky note (OCT / 26TH) fits the paper where one line of 56 px type does not.
+- **A plate ladder is planned before the scene is authored.** plate_overlap_check accepts no sequencing, so a scene with four plates needs four y values (single-line, 26 to 32 px, 525 to 750, 60 px apart). A three-line plate at y 575 landed on the folder.
+- **TTS respellings and spelled numbers are a caption problem.** "A D L two three four seven six two" and "D N R" reached the screen until `caption_fixups` mapped them (ADL 234762, DNR, 19,950, 495 million dollars). Add the map when the script is written, not after the editor.
+- **A board's descriptive sfx name must be one `_BY_NAME` knows.** Unknown names fall to `tick`, so a 49-beat film reached 13 kinds against a floor of 15. Use hit, slide, page, crack, thump, knock, bell, bloop, fade, roll, swell, thunk and clink.
+- **A chair that turns to face the hero turns a few degrees.** Thirty degrees read as knocked over, which a muted viewer takes as the witness not showing (c9 is future tense).
+- **An aerial backdrop of repeated discs reads as polka dots.** Spruce drawn as one ellipse per clump looked like dots, so the clumps are rings of small star polygons with shadows.
