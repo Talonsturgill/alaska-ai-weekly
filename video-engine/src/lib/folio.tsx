@@ -527,7 +527,7 @@ export const WitnessChair: React.FC<{x: number; y: number; f: number; scale?: nu
       <rect x={-232} y={-116} width={18} height={116} fill={FO.walnut} stroke={INK} strokeWidth={6} />
       <rect x={214} y={-116} width={18} height={116} fill={FO.walnut} stroke={INK} strokeWidth={6} />
       {/* the chair, tipping a little on its swivel */}
-      <g transform={`translate(0 -10) scale(${1 - Math.abs(turn) * 0.022} 1) rotate(${turn * 0.25 + spin * Math.sin(f / 9) * 4}) translate(0 10)`}>
+      <g transform={`translate(0 -10) scale(${1 - Math.abs(turn) * 0.022} 1) rotate(${spin * Math.sin(f / 9) * 3}) translate(0 10)`}>
         <rect x={-62} y={-330} width={124} height={170} rx={10} fill={FO.green} stroke={INK} strokeWidth={7} />
         <rect x={-62} y={-330} width={124} height={34} rx={10} fill={FO.greenHi} stroke={INK} strokeWidth={6} opacity={0.7} />
         <rect x={-70} y={-170} width={140} height={32} rx={8} fill={FO.green} stroke={INK} strokeWidth={7} />

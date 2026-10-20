@@ -232,7 +232,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           <MapSheet x={540} y={920} f={g} scale={1.0} k={1} hatch={1} pinK={0} id="s4m" />
           <Stamp x={540} y={900} f={g} scale={1.1} down={easeIn(f, t9 - 14, 14)} ink={f >= t9 ? ease(f, t9, 5) : 0} lines={['NO PAYMENT']} size={50} rot={-3} smudge={0} id="s4s1" />
           <ReceiptTag x={lerp(560, 810, ease(f, t10, 26))} y={lerp(900, 1130, easeIn(f, t10, 26))} f={g} scale={0.95} rot={lerp(-20, 6, ease(f, t10, 26))} lines={['SURVEY + CLOSING', 'COSTS · AIDEA PAYS']} k={ease(f, t10, 6)} size={24} />
-          <Stamp x={540} y={1090} f={g} scale={1.0} down={easeIn(f, t11 - 14, 14)} ink={f >= t11 ? ease(f, t11, 5) : 0} lines={['PRELIMINARY']} size={46} rot={4} smudge={ease(f, t11 + 4, 20)} id="s4s2" />
+          <Stamp x={470} y={1000} f={g} scale={1.0} down={easeIn(f, t11 - 14, 14)} ink={f >= t11 ? ease(f, t11, 5) : 0} lines={['PRELIMINARY']} size={46} rot={4} smudge={ease(f, t11 + 4, 20)} id="s4s2" />
           <Folio x={175} y={1295} f={g} scale={0.55} emotion={f < t11 ? 'proud' : 'worried'} look={0.9} id="s4f" />
         </g>
       </SVG>
@@ -282,9 +282,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} zk={(ff) => lerp(1.0, 1.1, easeIO(ff, 0, p.dur))} oy={1000} dx0={20} dx1={-20}
       overlay={<>
         <Plate text="AIDEA · JULY 30TH LETTER · RANDY RUARO" y={525} size={28} tone="green" p={ease(f, t16 + 4, 8)} />
-        <Plate text="NO COMMITTED TENANT · NO SITE PLAN" x={640} y={585} size={28} tone="plum" p={ease(f, t17 + 2, 8) * (f < t18 ? 1 : 0)} />
-        <Plate text="NO POWER SOURCE · NO COOLING" x={640} y={647} size={28} tone="plum" p={ease(f, t18 + 2, 8) * (f < t19 ? 1 : 0)} />
-        <Plate text="NO WATER PLAN · NO SCHEDULE" x={640} y={709} size={28} tone="plum" p={ease(f, t19 + 2, 8)} />
+        <Plate text="NO COMMITTED TENANT · NO SITE PLAN" x={640} y={585} size={26} tone="plum" p={ease(f, t17 + 2, 8) * (f < t18 ? 1 : 0)} />
+        <Plate text="NO POWER SOURCE · NO COOLING" x={640} y={642} size={26} tone="plum" p={ease(f, t18 + 2, 8) * (f < t19 ? 1 : 0)} />
+        <Plate text="NO WATER PLAN · NO SCHEDULE" x={640} y={699} size={26} tone="plum" p={ease(f, t19 + 2, 8)} />
       </>}>
       <SVG>
         <DeskBG f={g} desk={1180} id="s6d" chair={false} />
@@ -366,7 +366,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <g data-band="ok"><rect x={-40} y={858} width={1160} height={26} fill={FO.brassDeep} stroke={INK} strokeWidth={6} opacity={ease(f, t29 - 6, 8)} /></g>
         {[-1, 0, 1, 2, 3, 4, 5].map((i) => <VoteLamp key={i} x={500 + i * 112} y={800} f={g} on={i >= 0 && i <= 4 ? ease(f, t29 + i * 9, 6) : 0} scale={0.8} dim={i < 0 || i > 4} />)}
         <WitnessChair x={300} y={1260} f={g} scale={1.0} plate="CROWTHER" slip={f >= t27 - 6} slipK={ease(f, t27 - 6, 16)} spin={0.4} k={ease(f, t46, 10)} />
-        <Stamp x={300} y={1195} f={g} scale={0.9} down={easeIn(f, t30 - 14, 14)} ink={f >= t30 ? ease(f, t30, 5) : 0} lines={['SUBPOENA']} size={36} rot={-6} id="s9st" />
+        {f >= t30 - 16 && <Stamp x={300} y={1195} f={g} scale={0.9} down={easeIn(f, t30 - 14, 14)} ink={f >= t30 ? ease(f, t30, 5) : 0} lines={['SUBPOENA']} size={36} rot={-6} id="s9st" />}
         <Folio x={730} y={1270} f={g} scale={0.78} emotion="ask" tabs={6} tabsStand={stand} look={-0.9} blank={0.7} id="s9f" />
       </SVG>
     </Frame>
@@ -420,9 +420,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <CounterBG f={g} id="s11c" floor={1230} lamps={3} />
-        <g data-band="ok" transform={`translate(${cx} 1272)`}>
-          <rect x={-170} y={-12} width={340} height={44} fill={FO.manilaDeep} stroke={INK} strokeWidth={6} />
-          <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} letterSpacing={4} fill={FO.navy}>STATEWIDE</text>
+        <g data-band="ok" transform={`translate(560 1160)`}>
+          <rect x={-130} y={-20} width={260} height={44} fill={FO.manilaDeep} stroke={INK} strokeWidth={6} />
+          <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} letterSpacing={3} fill={FO.navy}>STATEWIDE</text>
         </g>
         <path data-band="ok" d={`M ${fx + 40} ${fy + 60} Q ${(fx + cx) / 2} ${Math.max(fy, 1000) + sag} ${cx} 1000`} fill="none" stroke={INK} strokeWidth={8} strokeLinecap="round" />
         <path data-band="ok" d={`M ${fx + 40} ${fy + 60} Q ${(fx + cx) / 2} ${Math.max(fy, 1000) + sag} ${cx} 1000`} fill="none" stroke={FO.manila} strokeWidth={3.5} strokeLinecap="round" />
@@ -476,7 +476,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <DeskBG f={g} desk={1180} id="s13d" lamp={lamp} />
-        <Folio x={400} y={1290} f={g} scale={1.05} emotion={f < t42 ? 'hollow' : 'ask'} open={open} tabs={6} blank={0.6 + 0.4 * Math.sin(g / 5)} look={0.4} id="s13f" />
+        <Folio x={400} y={1290} f={g} scale={1.05} emotion={f < t42 ? 'hollow' : 'ask'} open={open} tabs={6} blank={0.8 + 0.2 * Math.sin(g / 5)} look={0.4} id="s13f" />
         <Paperclip x={640} y={1180 - 4 * Math.sin(g / 9)} scale={0.9} rot={20} />
         {f % 40 < 6 && <circle cx={640} cy={1180} r={20 + 10 * Math.sin(f)} fill="#FFFFFF" opacity={0.35} />}
         <OctNote x={770} y={960} f={g} scale={0.85} text="OCT 26TH" k={ease(f, t41, 8)} rot={5} />
