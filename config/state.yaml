@@ -2619,3 +2619,42 @@ dispatch_history:
       lilac snow, a cozy amber-windowed kitchen, a plain paper test set
     metaphor: a soft jelly that keeps the dent of whatever is pressed into it and
       glows red where the real thing does not fit
+- date: '2026-10-20'
+  topic: AIDEA Houston land transfer ADL 234762
+  slug: adl-234762
+  key_entities:
+  - AIDEA
+  - DNR
+  - Houston
+  - Mat-Su
+  - Senate Resources Committee
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: mixed
+  angle: Alaska is being asked to decide whether about 19,950 acres of public land
+    should pass to AIDEA with no payment for land value before anyone can say what
+    will be built there, and October 26th is the first time senators can put that
+    question to the department making the call.
+  hero: Folio
+  cast:
+  - Folio
+  - MapSheet
+  - Stamp
+  - VoteLamp
+  - WitnessChair
+  - CoinStack
+  - LetterSheet
+  composition:
+    pov: orbital-aerial
+    motion_vector: assemble-build
+    hero_treatment: structure-as-subject
+    layout: stacked-layers
+    register: paper-and-walnut
+    palette: overcast celadon and slate over birch-bone snow, walnut and banker green
+      land office, manila folder, fireweed magenta for what is missing
+    camera_strategy: crane-and-truck-between-worlds
+    light_story: flat overcast celadon window light on a walnut desk until one banker
+      lamp clicks on at the end, overcast snow light on the Houston flat, a spruce-green
+      hearing room, a bright counter
+    metaphor: a manila case folder with six empty tabs asked to hold a forest

@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.971,
+    "heard": "What does a state handover before anyone says what gets built? Meet a folder, case ADL 234762. Inside is a proposal from the State Department of Natural Resources, DNR, to give about 19,950 acres near Houston, Alaska to idea the state's industrial development authority. Idea would make no payment for land value, only survey and closing costs, and DNR's finding is preliminary. Idea's own plan lists data centers, the buildings that AI runs in as a possible use. It is not a commitment. Then, Idea's director, Randy Ruaro, wrote in July that there is no committed tenant, no site plan, no power source, no cooling, no water plan, and no schedule. This month, Alaska Public Media reports, he called a data center on the site, impossible. So the data center is not the question. The empty folder is. Houston City Council, and the neighboring metal lakes community council, voted to oppose it for the Matzu Sentinel. DNR said the governor's office had not given its commissioner permission to attend an earlier hearing. So on October 14th, five senators voted yes to subpoena him, John Crowther. The best case for the transfer says developers want site control before they sign, so ready land can be how a state competes. And Idea says it has declared about $495 million in dividends, a real argument, but those dividends are statewide and tied to no land here. Ruaro's letter says no return to Houston is guaranteed. So ask what ready land is ready for. Crowther is set to appear on October 26th when senators can put the question to him. Six blanks. One date. Watch which tabs fill.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.059,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.82,
+        "voiced_frac": 0.47,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 127.8,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 127.8,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (5 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.97,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.97,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.971,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

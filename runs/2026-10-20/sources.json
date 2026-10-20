@@ -1,0 +1,101 @@
+{
+ "run_date": "2026-10-20",
+ "title": "ADL 234762",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "AIDEA Houston land fact sheet",
+   "outlet": "AIDEA",
+   "url": "https://www.aidea.org/Portals/0/AIDEA_Houston_Land_Fact_Sheet.pdf",
+   "claims": [
+    "c1",
+    "c14",
+    "c15",
+    "c2"
+   ],
+   "used_in_film": true,
+   "note": "Applicant's own summary of DNR's preliminary decision."
+  },
+  {
+   "id": "s2",
+   "title": "AIDEA letter to Mat-Su legislators, July 30th",
+   "outlet": "AIDEA",
+   "url": "https://www.aidea.org/Portals/0/Letter%20to%20Mat-Su%20Legislators%207_30_26.pdf",
+   "claims": [
+    "c12",
+    "c16",
+    "c17",
+    "c4",
+    "c5"
+   ],
+   "used_in_film": true,
+   "note": "Applicant's own statement."
+  },
+  {
+   "id": "s3",
+   "title": "DNR public notice ADL 234762",
+   "outlet": "State of Alaska Online Public Notices",
+   "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224431",
+   "claims": [
+    "c3"
+   ],
+   "used_in_film": true,
+   "note": "Primary state notice."
+  },
+  {
+   "id": "s4",
+   "title": "Senate Resources subpoenas resources commissioner",
+   "outlet": "Anchorage Daily News",
+   "url": "https://www.adn.com/politics/2026/10/14/alaska-senate-resources-committee-subpoenas-resources-commissioner-looking-to-sidestep-governor/",
+   "claims": [
+    "c2",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11"
+   ],
+   "used_in_film": true,
+   "note": ""
+  },
+  {
+   "id": "s5",
+   "title": "DNR commissioner will appear at hearing",
+   "outlet": "KTOO / Alaska Public Media",
+   "url": "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/",
+   "claims": [
+    "c4",
+    "c6",
+    "c7",
+    "c9",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": ""
+  },
+  {
+   "id": "s6",
+   "title": "Senators subpoena DNR commissioner",
+   "outlet": "Alaska's News Source",
+   "url": "https://www.alaskasnewssource.com/2026/10/15/senators-subpoena-dnr-commissioner-over-aidea-land-transfer/",
+   "claims": [
+    "c7",
+    "c8",
+    "c9"
+   ],
+   "used_in_film": true,
+   "note": ""
+  },
+  {
+   "id": "s7",
+   "title": "Residents worry land transfer could open door to data centers",
+   "outlet": "KTNA / Alaska Public Media",
+   "url": "https://alaskapublic.org/news/economy/energy/2026-10-19/residents-worry-that-a-proposed-land-transfer-near-houston-could-open-the-door-to-data-centers",
+   "claims": [
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": ""
+  }
+ ]
+}

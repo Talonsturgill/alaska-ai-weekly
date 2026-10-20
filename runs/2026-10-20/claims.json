@@ -1,0 +1,300 @@
+{
+ "run_date": "2026-10-20",
+ "fact_check_verdict": "Publish as a proposal and a live public process. Core story survives: DNR preliminary proposal to convey about 19,950 acres to AIDEA with no payment for land value; data centers are only a possible use; no source mentions AI. CUT: $14M a year estimate, UA lease figure, 'scalable data centers' wording, 10 a.m. time, clean 5-0 tally.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "The state Department of Natural Resources has proposed handing about nineteen thousand nine hundred fifty acres near Houston to AIDEA, the state's industrial development authority.",
+   "on_screen": "ABOUT 19,950 ACRES NEAR HOUSTON",
+   "source": [
+    "https://www.aidea.org/Portals/0/AIDEA_Houston_Land_Fact_Sheet.pdf",
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224431"
+   ],
+   "requires": [
+    "Say about. Preliminary, never final. Never state 20,000 as exact."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "DNR has issued a Preliminary Decision proposing to convey approximately 19,950 acres of State-owned land, located about two miles north of the City of Houston"
+  },
+  {
+   "id": "c2",
+   "status": "verified",
+   "spoken": "AIDEA would pay nothing for the land itself.",
+   "on_screen": "NO PAYMENT FOR LAND VALUE",
+   "source": [
+    "https://www.aidea.org/Portals/0/AIDEA_Houston_Land_Fact_Sheet.pdf",
+    "https://www.adn.com/politics/2026/10/14/alaska-senate-resources-committee-subpoenas-resources-commissioner-looking-to-sidestep-governor/"
+   ],
+   "requires": [
+    "Prefer 'no payment for land value' over bare 'free'. AIDEA still pays survey and closing costs."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "AIDEA would make no payment for the value of the land, but remains responsible for administrative, survey, platting, and closing-related costs."
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "The case is filed as A D L two three four seven six two, and public comment closed August nineteenth.",
+   "on_screen": "COMMENTS CLOSED",
+   "source": [
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224431"
+   ],
+   "requires": [
+    "Primary state notice."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified_with_hedge",
+   "spoken": "AIDEA's own plan lists data centers as one possible use, and says it is not a commitment.",
+   "on_screen": "DATA CENTERS \u00b7 'POTENTIALLY'",
+   "source": [
+    "https://www.aidea.org/Portals/0/Letter%20to%20Mat-Su%20Legislators%207_30_26.pdf",
+    "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/"
+   ],
+   "requires": [
+    "Say lists and possible. Do not quote 'scalable data centers' (unverified wording). No source says AI; call them data centers only."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "AIDEA's development plan identifies a range of possibilities ... and, potentially, data centers. ... It does not constitute a commitment that any particular use will be built."
+  },
+  {
+   "id": "c5",
+   "status": "verified",
+   "spoken": "But AIDEA's director, Randy Ruaro, wrote in July that there is no committed data center tenant, no site plan, no power source, no cooling system, no water plan, and no construction schedule.",
+   "on_screen": "NO COMMITTED TENANT \u00b7 NO SITE PLAN",
+   "source": [
+    "https://www.aidea.org/Portals/0/Letter%20to%20Mat-Su%20Legislators%207_30_26.pdf"
+   ],
+   "requires": [
+    "Attribute to Ruaro's July 30th letter, the applicant's own statement. Keep the word committed."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "There is no committed data-center tenant, industrial developer, site plan, power source, cooling system, water-supply plan, or construction schedule."
+  },
+  {
+   "id": "c6",
+   "status": "verified_with_hedge",
+   "spoken": "At a hearing this month, Alaska Public Media reports, he called a data center on the site implausible.",
+   "on_screen": "\"IMPLAUSIBLE\" \u00b7 AIDEA DIRECTOR \u00b7 PER ALASKA PUBLIC MEDIA",
+   "source": [
+    "https://alaskapublic.org/news/politics/alaska-legislature/2026-10-15/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena",
+    "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/"
+   ],
+   "requires": [
+    "Only the single word implausible is quoted in source. Do not build a full Ruaro sentence or give a reason."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "AIDEA's executive director later called hosting a data center on the site 'implausible' at a hearing earlier this month."
+  },
+  {
+   "id": "c7",
+   "status": "verified",
+   "spoken": "On October fourteenth, the Senate Resources Committee voted to subpoena the DNR commissioner, John Crowther.",
+   "on_screen": "OCT 14TH \u00b7 SENATE SUBPOENAS DNR COMMISSIONER",
+   "source": [
+    "https://www.alaskasnewssource.com/2026/10/15/senators-subpoena-dnr-commissioner-over-aidea-land-transfer/",
+    "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/",
+    "https://www.adn.com/politics/2026/10/14/alaska-senate-resources-committee-subpoenas-resources-commissioner-looking-to-sidestep-governor/"
+   ],
+   "requires": [
+    "Oct 14, 2026 is a Wednesday."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified_with_hedge",
+   "spoken": "Five senators voted yes.",
+   "on_screen": "5 VOTED YES",
+   "source": [
+    "https://www.alaskasnewssource.com/2026/10/15/senators-subpoena-dnr-commissioner-over-aidea-land-transfer/",
+    "https://www.adn.com/politics/2026/10/14/alaska-senate-resources-committee-subpoenas-resources-commissioner-looking-to-sidestep-governor/"
+   ],
+   "requires": [
+    "Say five senators voted yes only. Never unanimous, never six. Rauscher's vote is disputed between outlets."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified_with_hedge",
+   "spoken": "He is set to appear on October twenty-sixth.",
+   "on_screen": "OCT 26TH \u00b7 HEARING",
+   "source": [
+    "https://www.alaskasnewssource.com/2026/10/15/senators-subpoena-dnr-commissioner-over-aidea-land-transfer/",
+    "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/",
+    "https://www.adn.com/politics/2026/10/14/alaska-senate-resources-committee-subpoenas-resources-commissioner-looking-to-sidestep-governor/"
+   ],
+   "requires": [
+    "Future tense. Omit the time of day."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "DNR said the governor's office had not given him permission to attend an earlier hearing.",
+   "on_screen": "DNR \u00b7 'NO PERMISSION TO ATTEND'",
+   "source": [
+    "https://www.adn.com/politics/2026/10/14/alaska-senate-resources-committee-subpoenas-resources-commissioner-looking-to-sidestep-governor/",
+    "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/"
+   ],
+   "requires": [
+    "Attribute to DNR. Never say why."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "The governor's office has not given us permission to attend."
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "Senate Resources chair Cathy Giessel put it this way. That land has value.",
+   "on_screen": "GIESSEL \u00b7 'THAT LAND HAS VALUE'",
+   "source": [
+    "https://www.adn.com/politics/2026/10/14/alaska-senate-resources-committee-subpoenas-resources-commissioner-looking-to-sidestep-governor/"
+   ],
+   "requires": [
+    "Attribute to Giessel. Her opinion, not a legal finding."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "One of my big concerns is this is a huge conveyance of public land. That land has value."
+  },
+  {
+   "id": "c12",
+   "status": "verified",
+   "spoken": "AIDEA says it has declared about four hundred ninety-five million dollars in dividends to the state.",
+   "on_screen": "AIDEA SAYS \u00b7 ~$495M IN DIVIDENDS TO STATE",
+   "source": [
+    "https://www.aidea.org/Portals/0/Letter%20to%20Mat-Su%20Legislators%207_30_26.pdf"
+   ],
+   "requires": [
+    "Say AIDEA says. Self-reported and cumulative. Letter adds no return to Houston is guaranteed."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Including the dividend declared for fiscal year 2026, AIDEA has declared approximately $495 million in dividends to the State."
+  },
+  {
+   "id": "c13",
+   "status": "verified_with_hedge",
+   "spoken": "Houston's city council and the Meadow Lakes council voted to oppose it, per the Mat-Su Sentinel.",
+   "on_screen": "HOUSTON + MEADOW LAKES COUNCILS \u00b7 OPPOSE",
+   "source": [
+    "https://alaskapublic.org/news/economy/energy/2026-10-19/residents-worry-that-a-proposed-land-transfer-near-houston-could-open-the-door-to-data-centers",
+    "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/"
+   ],
+   "requires": [
+    "Council votes are secondhand via the Mat-Su Sentinel. Never present local opinion as a bloc beyond named bodies.",
+    "Body name per the fact-checker's verbatim source is Meadow Lakes Community Council."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified",
+   "spoken": "The finding is preliminary. There is no final decision.",
+   "on_screen": "PRELIMINARY ONLY \u00b7 NO FINAL DECISION",
+   "source": [
+    "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/",
+    "https://www.aidea.org/Portals/0/AIDEA_Houston_Land_Fact_Sheet.pdf"
+   ],
+   "requires": [
+    "True as of Oct 16."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "This is a preliminary proposal open for public comment, not a final approval, and not a commitment to any specific project."
+  },
+  {
+   "id": "c15",
+   "status": "verified",
+   "spoken": "only survey and closing costs",
+   "on_screen": "SURVEY + CLOSING COSTS \u00b7 AIDEA PAYS",
+   "source": [
+    "https://www.aidea.org/Portals/0/AIDEA_Houston_Land_Fact_Sheet.pdf"
+   ],
+   "requires": [
+    "AIDEA still pays administrative, survey, platting and closing costs. Never say free."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified",
+   "spoken": "Ruaro's letter says no return to Houston is guaranteed.",
+   "on_screen": "LETTER \u00b7 NO RETURN TO HOUSTON GUARANTEED",
+   "source": [
+    "https://www.aidea.org/Portals/0/Letter%20to%20Mat-Su%20Legislators%207_30_26.pdf"
+   ],
+   "requires": [
+    "Attribute to the AIDEA July 30th letter."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "argument-not-fact",
+   "spoken": "The best case for the transfer says developers want site control before they sign, so ready land can be how a state competes.",
+   "on_screen": "THE BEST CASE FOR THE TRANSFER",
+   "source": [
+    "https://www.aidea.org/Portals/0/Letter%20to%20Mat-Su%20Legislators%207_30_26.pdf"
+   ],
+   "requires": [
+    "Always framed as the best case for the transfer, an argument and never a reported fact. No source in the fact-checked set states it, and the film says so by labelling it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

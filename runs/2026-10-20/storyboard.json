@@ -1,0 +1,2030 @@
+{
+  "run_date": "2026-10-20",
+  "slug": "adl-234762",
+  "title": "ADL 234762",
+  "concept": "DNR has preliminarily proposed giving about 19,950 acres near Houston to AIDEA with no payment for land value. AIDEA's plan lists data centers as a possible use, and AIDEA's own director wrote that no tenant, site plan, power, cooling, water plan or schedule exists. The film draws the case file as Folio, a manila folder with a face that goes thin, fat and hollow, whose six index tabs are the six missing things. It gives the best case for the transfer a full warm scene (site control before a tenant signs, ready land, AIDEA's own dividend claim), shows why that case is real but doesn't answer this land, and ends on the one date, October 26th, when senators can first ask the commissioner.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 127.32,
+  "fingerprint": {
+    "pov": "orbital-aerial",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "structure-as-subject",
+    "layout": "stacked-layers",
+    "register": "paper-and-walnut",
+    "palette": "overcast celadon and slate over birch-bone snow, walnut and banker green land office, manila folder, fireweed magenta for what is missing",
+    "camera_strategy": "crane-and-truck-between-worlds",
+    "light_story": "flat overcast celadon window light on a walnut desk until one banker lamp clicks on at the end, overcast snow light on the Houston flat, a spruce-green hearing room, a bright counter",
+    "metaphor": "a manila case folder with six empty tabs asked to hold a forest"
+  },
+  "palette": "overcast celadon and slate over birch-bone snow, walnut and banker green land office, manila folder, fireweed magenta for what is missing",
+  "divergence_note": "10-18 was a blue-hour indigo to rose world with a mustard felt bench and a mint jelly. 10-17 a low peach sun with banknote green. This film is overcast celadon and slate with a walnut land-office desk, a manila folder hero and fireweed magenta, moving through a desk, a plan sheet, a blotter macro, a dotted plan, a letter, a snowy council flat, a hearing room, a counter and a shelf.",
+  "treatment": {
+    "winner": "The Comedian's Folder (ADL 234762, six empty tabs, an empty chair gag), with the Dramatist's key-shop tenant headlights as the counter scene, the Explainer's acres plan sheet and the Enthusiast's fair land-bank counter.",
+    "why": "A face on a hard-cornered object carries emotion, six tabs make the six missing things countable and the best case gets a warm scene before the film asks its question."
+  },
+  "angle": {
+    "run_date": "2026-10-20",
+    "thesis": "Alaska is being asked to decide whether about 19,950 acres of public land should pass to AIDEA with no payment for land value before anyone can say what will be built there, and October 26th is the first time senators can put that question to the department making the call.",
+    "falsifiable_by": "Before or at the October 26th hearing AIDEA or DNR puts forward any of the six things Ruaro's July 30th letter says do not exist yet (committed tenant, site plan, power source, cooling, water plan, construction schedule), or the commissioner treats the preliminary finding as settled.",
+    "supporting_facts": [
+      "c2 no payment for land value, AIDEA still pays survey and closing",
+      "c4+c5 data centers only a possible use, and the applicant's own letter lists six things that do not exist",
+      "c6 the director called a data center on the site implausible (per Alaska Public Media), so the fear and the plan both point at an empty record",
+      "c7+c10 the Legislature subpoenaed the commissioner after DNR said the governor's office had not given permission"
+    ],
+    "counterpoint_honored": "AIDEA's case at full strength: a development authority needs site control before any tenant commits, ready land is how a state competes, AIDEA says about $495 million in dividends declared to the state, the finding is preliminary and the process (comment, subpoena, hearing) is doing its job. The thesis never says the transfer is wrong.",
+    "second_movement": "The word implausible (c6) cuts both ways: the data center is not the real question, the empty record is. The $495M is statewide, self-reported and ties to no land here (c12 note).",
+    "ai_hook": "No source mentions AI. Data centers are the buildings AI runs in, said once as context. The film says data centers, never AI data centers.",
+    "valence": "mixed",
+    "runner_ups": {
+      "enthusiast land-bank": "folded in as the counterpoint scene",
+      "resident skeptic": "folded in as c13 respect beat; thesis too close to opposition framing",
+      "oversight-is-working": "too untestable before Oct 26"
+    }
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A thin manila folder with two eyes skids across a walnut desk under a banker's lamp and squashes onto its mark, its tab reading ADL 234762.",
+    "headline": "WHAT DOES THE STATE HAND OVER?",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame is the open folder with six blank pockets and the lamp finally clicked on, the empty chair behind it, the first frame's question left on the desk."
+  },
+  "open_loop": {
+    "plant_t": 3.09,
+    "pay_t": 120.63,
+    "what": "Who will answer for this folder? Planted as the empty witness chair swivels in the corner of the first shot, paid as the chair turns to face the folder when the hearing date lands."
+  },
+  "open_loop_2": {
+    "plant_t": 57.07,
+    "pay_t": 105.45,
+    "what": "So what is the folder for? Planted as the folder rattles, answered as the dividends slide away tied to no land here."
+  },
+  "throughline": {
+    "object": "Folio",
+    "lands_in_button": "the open folder with six blank pockets fanned under the lamp beside the OCT 26 note",
+    "states": [
+      {
+        "at_s": 0.169,
+        "state": "thin and sliding in"
+      },
+      {
+        "at_s": 17.45,
+        "state": "fat with the plan sheet"
+      },
+      {
+        "at_s": 33.01,
+        "state": "stamped preliminary"
+      },
+      {
+        "at_s": 53.73,
+        "state": "open with six empty pockets"
+      },
+      {
+        "at_s": 66.25,
+        "state": "hollow, tabs swinging"
+      },
+      {
+        "at_s": 68.7,
+        "state": "a tab peeking from a snowbank"
+      },
+      {
+        "at_s": 86.69,
+        "state": "standing its tabs up like question cards facing the empty chair"
+      },
+      {
+        "at_s": 91.21,
+        "state": "its TENANT tab lit in a dashed outline by the headlights"
+      },
+      {
+        "at_s": 117.93,
+        "state": "holding a sticky note OCT 26"
+      },
+      {
+        "at_s": 122.56,
+        "state": "open to camera, six blanks fanned, the lamp clicking on"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 17.45,
+      "type": "scale-pullback",
+      "what": "the plan sheet match-cuts to the same parcel outline over real snowy spruce land from above",
+      "hold_s": 0.7
+    },
+    {
+      "t": 68.7,
+      "type": "build-on",
+      "what": "the aerial descends to a snowy spruce flat and two council signs pop up",
+      "hold_s": 0.6
+    },
+    {
+      "t": 105.45,
+      "type": "morph-to-chart",
+      "what": "the coin stack slides along a shelf labelled STATEWIDE and its string to the folder goes slack",
+      "hold_s": 0.6
+    }
+  ],
+  "tail_s": 1.7,
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 124.21,
+    "riser_at": 113.43,
+    "silence_at": 125.06,
+    "payoff_at": 125.89,
+    "button_pattern": "question",
+    "interrupt_at": 27.75,
+    "extra_dips": [
+      61.45,
+      86.69
+    ]
+  },
+  "shots": [
+    {
+      "title": "The folder skids in",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "walnut-desk",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the folder at x540 y1100",
+      "means": "A thin manila folder with a face skids across a walnut desk under a banker's lamp as an empty chair swivels in the corner.",
+      "ambient": "the window light drifts, dust motes float, the chair creaks, the folder breathes",
+      "hero": {
+        "name": "Folio + DeskBG",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "55% folder, 30% desk, 15% chair"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-5.640"
+    },
+    {
+      "title": "The plan sheet unrolls",
+      "vo_line": 1,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "high",
+      "stage": "walnut-desk",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the sheet at x540 y900",
+      "means": "The folder hops to the middle of the desk and a plan sheet unrolls from it, a parcel hatched near Houston.",
+      "ambient": "the sheet corners curl, the roll settles, the window light drifts, the folder breathes",
+      "hero": {
+        "name": "Folio + MapSheet",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "50% sheet, 35% folder, 15% desk"
+      },
+      "id": 2,
+      "start_s": 5.64,
+      "t": "5.640-17.340"
+    },
+    {
+      "title": "From paper to land",
+      "vo_line": 3,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "houston-aerial",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the parcel at x540 y900",
+      "means": "The plan sheet's hatched parcel match-cuts to the same outline over real snowy spruce land from above, rooftops marking Houston, the folder swelling in a corner.",
+      "ambient": "the outline pulses, snow drifts, the rooftops bounce, the folder breathes",
+      "hero": {
+        "name": "AerialBG + parcel outline + Folio cameo",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "70% land and parcel, 15% rooftops, 15% folder cameo"
+      },
+      "id": 3,
+      "start_s": 17.34,
+      "t": "17.340-26.660"
+    },
+    {
+      "title": "Stamps and a receipt",
+      "vo_line": 4,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "high",
+      "stage": "desk-blotter",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the stamp and the receipt are the shot",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked macro of the blotter where the stamp and the receipt are the motion",
+      "centered": "the sheet at x540 y950",
+      "means": "A stamp slams NO PAYMENT FOR LAND VALUE, a receipt flutters out and a PRELIMINARY stamp smudges the cover.",
+      "ambient": "ink spatter settles, the desk jumps, the window light drifts, the receipt flutters",
+      "hero": {
+        "name": "Stamp + ReceiptTag + MapSheet",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% sheet, 35% stamp, 20% receipt"
+      },
+      "id": 4,
+      "start_s": 26.66,
+      "t": "26.660-34.980"
+    },
+    {
+      "title": "A dotted data center on real land",
+      "vo_line": 5,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "houston-aerial-plan",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the plan at x540 y950",
+      "means": "AIDEA's plan overlays the real parcel in pencil tracing and a data center draws itself in dotted pencil with window lights blinking on.",
+      "ambient": "the dashes crawl, window lights flicker, the sheet breathes, dust floats",
+      "hero": {
+        "name": "AerialBG + DottedBuilding",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "55% shed, 35% land, 10% folder cameo"
+      },
+      "id": 5,
+      "start_s": 34.98,
+      "t": "34.980-43.980"
+    },
+    {
+      "title": "The July letter and six tabs",
+      "vo_line": 6,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "letter-desk",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the folder at x420 y1150",
+      "means": "A green-letterhead letter slides in and the folder opens, six tabs popping out one pair at a time, every pocket empty.",
+      "ambient": "the tabs wobble, the letter settles, the pockets pulse, dust floats",
+      "hero": {
+        "name": "Folio + LetterSheet",
+        "parts": 62,
+        "zones": 3,
+        "detail_note": "45% folder, 40% letter, 15% desk"
+      },
+      "id": 6,
+      "start_s": 43.98,
+      "t": "43.980-56.520"
+    },
+    {
+      "title": "Shaken over the land, then empty",
+      "vo_line": 7,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "houston-aerial",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the empty folder is played as chosen stillness",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the folder at x400 y1200",
+      "means": "The folder tips and shakes itself over the real parcel and a paperclip falls, the dotted data center fades to a faint ghost on the land, and the folder looks hollow at the camera.",
+      "ambient": "the folder rattles, the snow drifts, the slots pulse, the ghost dashes fade",
+      "hero": {
+        "name": "Folio + AerialBG + ghost shed",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% folder, 35% land, 15% ghost shed"
+      },
+      "id": 7,
+      "start_s": 56.52,
+      "t": "56.520-68.700"
+    },
+    {
+      "title": "Two councils oppose",
+      "vo_line": 9,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "houston-snow",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the signs at x540 y1000",
+      "means": "The aerial descends to a snowy spruce flat where two hand-lettered council signs pop up with porch lamps and the folder's tab peeks from a snowbank.",
+      "ambient": "snow drifts, the signs sway, the porch lamps flicker, the spruce row sways",
+      "hero": {
+        "name": "CouncilSign x2 + ExteriorBG",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "45% signs, 40% snow flat, 15% lamps"
+      },
+      "id": 8,
+      "start_s": 68.7,
+      "t": "68.700-76.000"
+    },
+    {
+      "title": "The empty chair and five lamps",
+      "vo_line": 10,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "low",
+      "stage": "hearing-room",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the chair at x540 y1050",
+      "means": "A hearing room with an empty witness chair, a no-permission slip, five green vote lamps and a subpoena stamp on the folder in the foreground.",
+      "ambient": "pendant lamps sway, the chair swivels, vote lamps pulse, dust floats",
+      "hero": {
+        "name": "WitnessChair + VoteLamps",
+        "parts": 64,
+        "zones": 3,
+        "detail_note": "40% chair, 35% lamps, 25% folder cameo"
+      },
+      "id": 9,
+      "start_s": 76.0,
+      "t": "76.000-88.160"
+    },
+    {
+      "title": "The best case at the counter",
+      "vo_line": 12,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "ready-land-counter",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the folder at x330 y1150",
+      "means": "A warm counter of ready parcel files where headlights stop outside, three green lamps light and a coin stack grows.",
+      "ambient": "the shelves glow, the headlight beams shimmer, the lamps flare, coins clink",
+      "hero": {
+        "name": "CounterBG + CoinStack + Folio",
+        "parts": 66,
+        "zones": 3,
+        "detail_note": "40% counter, 30% coin stack, 30% folder"
+      },
+      "id": 10,
+      "start_s": 88.16,
+      "t": "88.160-102.920"
+    },
+    {
+      "title": "The coins tie to no land here",
+      "vo_line": 14,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "counter-shelf",
+      "pov": "instrument-screen",
+      "layout": "stacked-layers",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the slack string is the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked shelf where the sliding coins and the slack string are the motion",
+      "centered": "the coins at x540 y1000",
+      "means": "The coin stack slides along a STATEWIDE shelf as its string to the folder goes slack.",
+      "ambient": "the string sags, the coins settle, the shelf light drifts, dust floats",
+      "hero": {
+        "name": "CoinStack + shelf",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% coins, 30% shelf, 20% folder"
+      },
+      "id": 11,
+      "start_s": 102.92,
+      "t": "102.920-112.880"
+    },
+    {
+      "title": "A date on a note",
+      "vo_line": 15,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "hearing-room",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the folder at x400 y1150",
+      "means": "The folder hops to the witness table, a sticky note reading OCT 26 slaps onto it and the empty chair swivels toward it.",
+      "ambient": "the chair swivels, the note flutters, the pendants sway, the folder breathes",
+      "hero": {
+        "name": "Folio + WitnessChair",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% folder, 40% chair, 15% note"
+      },
+      "id": 12,
+      "start_s": 112.88,
+      "t": "112.880-122.560"
+    },
+    {
+      "title": "Six blanks, one date",
+      "vo_line": 16,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "high",
+      "stage": "walnut-desk",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the open folder at x540 y1050",
+      "means": "The open folder fans six empty pockets beside a lit OCT 26 note under the banker's lamp.",
+      "ambient": "the pockets pulse, the paperclip glints, the tabs flicker, the window light drifts",
+      "hero": {
+        "name": "Folio open",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "65% folder, 20% note, 15% desk"
+      },
+      "id": 13,
+      "start_s": 122.56,
+      "t": "122.560-127.320"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.169,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.03,
+        "offset": 0.169
+      },
+      "offset": 0.169,
+      "vo": "What does a state hand over before anyone says what gets built?",
+      "phrase": "What does a state",
+      "shows": "a thin manila folder with two eyes skids across a walnut desk under a banker's lamp and hits its mark with a squash, the tab reading ADL 234762",
+      "sfx": "hit",
+      "means": "what does the state hand over?",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "skids across a walnut desk under a banker's lamp and hits its mark with a squash",
+        "emotion": "alert",
+        "annotation": "WHAT DOES THE STATE HAND OVER?"
+      },
+      "choreo": {
+        "primary": "a thin manila folder with two eyes skids across a walnut desk under a banker's lamp and hits its mark with a squash, the tab reading ADL 234762",
+        "reaction": "the folder squashes and blinks",
+        "ambient": "the window light drifts, dust motes float, the chair creaks, the folder breathes"
+      },
+      "t": "0.169-1.010",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.01,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 1.01
+      },
+      "offset": 1.01,
+      "vo": "What does a state hand over before anyone says what gets built?",
+      "phrase": "hand over before anyone",
+      "shows": "the folder leans toward the camera and spruce tips poke out of its mouth like an overstuffed document",
+      "sfx": "slide",
+      "means": "a forest in a folder",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "pushes its cover toward the camera as spruce tips poke out of its mouth",
+        "emotion": "alert",
+        "annotation": "A FOREST IN A FOLDER"
+      },
+      "choreo": {
+        "primary": "the folder leans toward the camera and spruce tips poke out of its mouth like an overstuffed document",
+        "reaction": "the folder leans and the spruce tips sway",
+        "ambient": "the window light drifts, dust motes float, the chair creaks, the folder breathes"
+      },
+      "t": "1.010-3.090",
+      "key": 49
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 3.09,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.09
+      },
+      "offset": 3.09,
+      "vo": "What does a state hand over before anyone says what gets built?",
+      "phrase": "says what gets built?",
+      "shows": "an empty wooden chair in the corner behind the desk swivels a little",
+      "sfx": "creak",
+      "means": "an empty chair",
+      "rehook": "",
+      "draw": {
+        "subject": "witness chair",
+        "action": "swivels a little in the dim corner behind the desk",
+        "emotion": "plain",
+        "annotation": "AN EMPTY CHAIR"
+      },
+      "choreo": {
+        "primary": "an empty wooden chair in the corner behind the desk swivels a little",
+        "reaction": "the chair creaks and the window light drifts",
+        "ambient": "the window light drifts, dust motes float, the chair creaks, the folder breathes"
+      },
+      "t": "3.090-4.130",
+      "key": 2
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 4.13,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.13
+      },
+      "offset": 4.13,
+      "vo": "What does a state hand over before anyone says what gets built?",
+      "phrase": "built?",
+      "shows": "a dotted magenta pencil outline of a building flickers over the desk and vanishes",
+      "sfx": "blip",
+      "means": "what gets built",
+      "rehook": "",
+      "draw": {
+        "subject": "dotted outline",
+        "action": "flickers over the desk and vanishes",
+        "emotion": "plain",
+        "annotation": "WHAT GETS BUILT"
+      },
+      "choreo": {
+        "primary": "a dotted magenta pencil outline of a building flickers over the desk and vanishes",
+        "reaction": "the dashes crawl and fade",
+        "ambient": "the window light drifts, dust motes float, the chair creaks, the folder breathes"
+      },
+      "t": "4.130-5.640",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 5.64,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Meet a folder, case A D L two three four seven six two.",
+      "phrase": "Meet a folder, case",
+      "shows": "the folder hops to the middle of the desk and turns its tab to the camera, ADL 234762",
+      "sfx": "pop",
+      "means": "adl 234762",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "hops to the middle of the desk and turns its tab to the camera",
+        "emotion": "proud",
+        "annotation": "ADL 234762"
+      },
+      "choreo": {
+        "primary": "the folder hops to the middle of the desk and turns its tab to the camera, ADL 234762",
+        "reaction": "the folder squashes and blinks",
+        "ambient": "the sheet corners curl, the roll settles, the window light drifts, the folder breathes"
+      },
+      "t": "5.640-8.150",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 8.15,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.51
+      },
+      "offset": 2.51,
+      "vo": "Meet a folder, case A D L two three four seven six two.",
+      "phrase": "two three four seven",
+      "shows": "a stamp lands on the folder's tab reading COMMENTS CLOSED AUG 19TH under ADL 234762",
+      "sfx": "crack",
+      "means": "adl 234762 \u00b7 comments closed aug 19th",
+      "rehook": "",
+      "draw": {
+        "subject": "tab stamp",
+        "action": "stamps COMMENTS CLOSED AUG 19 onto the folder's tab",
+        "emotion": "plain",
+        "annotation": "ADL 234762 \u00b7 COMMENTS CLOSED AUG 19TH"
+      },
+      "choreo": {
+        "primary": "a stamp lands on the folder's tab reading COMMENTS CLOSED AUG 19TH under ADL 234762",
+        "reaction": "the stamp rings and the tab flips",
+        "ambient": "the sheet corners curl, the roll settles, the window light drifts, the folder breathes"
+      },
+      "t": "8.150-11.900",
+      "key": 44
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 11.9,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Inside is a proposal from the state Department of Natural Resources, D N R,",
+      "phrase": "Inside is a proposal",
+      "shows": "a surveyed plan sheet unrolls out of the folder across the desk, a creek, a grid and a hatched parcel",
+      "sfx": "page",
+      "means": "the proposal",
+      "rehook": "",
+      "draw": {
+        "subject": "plan sheet",
+        "action": "unrolls out of the folder across the desk",
+        "emotion": "curious",
+        "annotation": "THE PROPOSAL"
+      },
+      "choreo": {
+        "primary": "a surveyed plan sheet unrolls out of the folder across the desk, a creek, a grid and a hatched parcel",
+        "reaction": "the roll curls and the sheet settles",
+        "ambient": "the sheet corners curl, the roll settles, the window light drifts, the folder breathes"
+      },
+      "t": "11.900-14.210",
+      "key": 5
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 14.21,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.31
+      },
+      "offset": 2.31,
+      "vo": "Inside is a proposal from the state Department of Natural Resources, D N R,",
+      "phrase": "Department of Natural Resources,",
+      "shows": "a plate stamps onto the sheet reading DNR PROPOSES",
+      "sfx": "ping",
+      "means": "dnr proposes",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "stamps onto the sheet",
+        "emotion": "plain",
+        "annotation": "DNR PROPOSES"
+      },
+      "choreo": {
+        "primary": "a plate stamps onto the sheet reading DNR PROPOSES",
+        "reaction": "the plate bounces",
+        "ambient": "the sheet corners curl, the roll settles, the window light drifts, the folder breathes"
+      },
+      "t": "14.210-17.450",
+      "key": 6
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 17.45,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.11
+      },
+      "offset": 0.11,
+      "vo": "to give about nineteen thousand nine hundred fifty acres near Houston, Alaska, to AIDEA, the state's industrial development authority.",
+      "phrase": "give about nineteen thousand",
+      "shows": "the view match-cuts from the plan sheet's hatched parcel to the same outline over real snowy spruce land from above while the folder swells fat in a corner, ABOUT 19,950 ACRES",
+      "sfx": "thump",
+      "means": "about 19,950 acres near houston",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "swells fat as spruce bulges out and the sheet's parcel match-cuts to the real land",
+        "emotion": "alert",
+        "annotation": "ABOUT 19,950 ACRES NEAR HOUSTON"
+      },
+      "choreo": {
+        "primary": "the view match-cuts from the plan sheet's hatched parcel to the same outline over real snowy spruce land from above while the folder swells fat in a corner, ABOUT 19,950 ACRES",
+        "reaction": "the outline pulses and the snow drifts",
+        "ambient": "the outline pulses, snow drifts, the rooftops bounce, the folder breathes"
+      },
+      "t": "17.450-21.130",
+      "key": 7
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 21.13,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.79
+      },
+      "offset": 3.79,
+      "vo": "to give about nineteen thousand nine hundred fifty acres near Houston, Alaska, to AIDEA, the state's industrial development authority.",
+      "phrase": "Houston, Alaska, to AIDEA,",
+      "shows": "a small cluster of rooftops pops up at the edge of the parcel with a label HOUSTON, ABOUT 2 MILES SOUTH",
+      "sfx": "pop",
+      "means": "houston \u00b7 about 2 miles south",
+      "rehook": "",
+      "draw": {
+        "subject": "Houston rooftops",
+        "action": "pop up at the edge of the parcel with a label",
+        "emotion": "alert",
+        "annotation": "HOUSTON \u00b7 ABOUT 2 MILES SOUTH"
+      },
+      "choreo": {
+        "primary": "a small cluster of rooftops pops up at the edge of the parcel with a label HOUSTON, ABOUT 2 MILES SOUTH",
+        "reaction": "the rooftops bounce",
+        "ambient": "the outline pulses, snow drifts, the rooftops bounce, the folder breathes"
+      },
+      "t": "21.130-24.190",
+      "key": 45
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 24.19,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.85
+      },
+      "offset": 6.85,
+      "vo": "to give about nineteen thousand nine hundred fifty acres near Houston, Alaska, to AIDEA, the state's industrial development authority.",
+      "phrase": "industrial development authority.",
+      "shows": "a plate stamps onto the land reading TO AIDEA, PROPOSED",
+      "sfx": "thunk",
+      "means": "to aidea \u00b7 proposed",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "stamps onto the land",
+        "emotion": "plain",
+        "annotation": "TO AIDEA \u00b7 PROPOSED"
+      },
+      "choreo": {
+        "primary": "a plate stamps onto the land reading TO AIDEA, PROPOSED",
+        "reaction": "the plate bounces",
+        "ambient": "the outline pulses, snow drifts, the rooftops bounce, the folder breathes"
+      },
+      "t": "24.190-27.750",
+      "key": 8
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 27.75,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 1.09
+      },
+      "offset": 1.09,
+      "vo": "AIDEA would make no payment for land value, only survey and closing costs, and D N R's finding is preliminary.",
+      "phrase": "payment for land value,",
+      "shows": "a rubber stamp slams onto the sheet leaving NO PAYMENT FOR LAND VALUE in ink",
+      "sfx": "knock",
+      "means": "no payment for land value",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp",
+        "action": "comes down on the sheet and leaves NO PAYMENT FOR LAND VALUE",
+        "emotion": "firm",
+        "annotation": "NO PAYMENT FOR LAND VALUE"
+      },
+      "choreo": {
+        "primary": "a rubber stamp slams onto the sheet leaving NO PAYMENT FOR LAND VALUE in ink",
+        "reaction": "the ink spatters and the desk jumps",
+        "ambient": "ink spatter settles, the desk jumps, the window light drifts, the receipt flutters"
+      },
+      "t": "27.750-29.670",
+      "key": 9
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 29.67,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "AIDEA would make no payment for land value, only survey and closing costs, and D N R's finding is preliminary.",
+      "phrase": "survey and closing costs,",
+      "shows": "a small torn receipt flutters out from under the stamp reading SURVEY + CLOSING COSTS, AIDEA PAYS",
+      "sfx": "page",
+      "means": "survey + closing costs \u00b7 aidea pays",
+      "rehook": "",
+      "draw": {
+        "subject": "receipt",
+        "action": "flutters out from under the stamp",
+        "emotion": "plain",
+        "annotation": "SURVEY + CLOSING COSTS \u00b7 AIDEA PAYS"
+      },
+      "choreo": {
+        "primary": "a small torn receipt flutters out from under the stamp reading SURVEY + CLOSING COSTS, AIDEA PAYS",
+        "reaction": "the receipt flutters and settles",
+        "ambient": "ink spatter settles, the desk jumps, the window light drifts, the receipt flutters"
+      },
+      "t": "29.670-33.010",
+      "key": 10
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 33.01,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 6.35
+      },
+      "offset": 6.35,
+      "vo": "AIDEA would make no payment for land value, only survey and closing costs, and D N R's finding is preliminary.",
+      "phrase": "preliminary.",
+      "shows": "a PRELIMINARY ONLY stamp lands on the sheet, the wet ink smudging",
+      "sfx": "stamp",
+      "means": "preliminary only \u00b7 no final decision",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp",
+        "action": "lands on the sheet and smudges",
+        "emotion": "plain",
+        "annotation": "PRELIMINARY ONLY \u00b7 NO FINAL DECISION"
+      },
+      "choreo": {
+        "primary": "a PRELIMINARY ONLY stamp lands on the sheet, the wet ink smudging",
+        "reaction": "the ink smudges",
+        "ambient": "ink spatter settles, the desk jumps, the window light drifts, the receipt flutters"
+      },
+      "t": "33.010-35.850",
+      "key": 11
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 35.85,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.87
+      },
+      "offset": 0.87,
+      "vo": "AIDEA's own plan lists data centers, the buildings that AI runs in, as a possible use. It is not a commitment.",
+      "phrase": "plan lists data centers,",
+      "shows": "the view tilts down over the real parcel as AIDEA's own plan overlays it in pencil tracing",
+      "sfx": "whoosh",
+      "means": "aidea's own plan",
+      "rehook": "",
+      "draw": {
+        "subject": "AIDEA plan",
+        "action": "overlays the real land as a pencil tracing",
+        "emotion": "curious",
+        "annotation": "AIDEA'S OWN PLAN"
+      },
+      "choreo": {
+        "primary": "the view tilts down over the real parcel as AIDEA's own plan overlays it in pencil tracing",
+        "reaction": "the sheet flaps open and settles",
+        "ambient": "the dashes crawl, window lights flicker, the sheet breathes, dust floats"
+      },
+      "t": "35.850-36.630",
+      "key": 12
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 36.63,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 1.65
+      },
+      "offset": 1.65,
+      "vo": "AIDEA's own plan lists data centers, the buildings that AI runs in, as a possible use. It is not a commitment.",
+      "phrase": "data centers, the buildings",
+      "shows": "a dotted pencil data center shed draws itself on the real land, a quote tag reading POTENTIALLY",
+      "sfx": "bloop",
+      "means": "data centers \u00b7 'potentially'",
+      "rehook": "rehook: the data center draws itself",
+      "draw": {
+        "subject": "dotted data center",
+        "action": "draws itself in dotted pencil on the land",
+        "emotion": "curious",
+        "annotation": "DATA CENTERS \u00b7 'POTENTIALLY'"
+      },
+      "choreo": {
+        "primary": "a dotted pencil data center shed draws itself on the real land, a quote tag reading POTENTIALLY",
+        "reaction": "the dashes crawl",
+        "ambient": "the dashes crawl, window lights flicker, the sheet breathes, dust floats"
+      },
+      "t": "36.630-38.570",
+      "key": 13
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 38.57,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.59
+      },
+      "offset": 3.59,
+      "vo": "AIDEA's own plan lists data centers, the buildings that AI runs in, as a possible use. It is not a commitment.",
+      "phrase": "AI runs in, as",
+      "shows": "rows of window lights blink on in the dotted shed one by one",
+      "sfx": "click",
+      "means": "context \u00b7 ai runs in data centers",
+      "rehook": "",
+      "draw": {
+        "subject": "window lights",
+        "action": "blink on in the dotted shed row by row",
+        "emotion": "plain",
+        "annotation": "CONTEXT \u00b7 AI RUNS IN DATA CENTERS"
+      },
+      "choreo": {
+        "primary": "rows of window lights blink on in the dotted shed one by one",
+        "reaction": "the lights flicker row by row",
+        "ambient": "the dashes crawl, window lights flicker, the sheet breathes, dust floats"
+      },
+      "t": "38.570-42.430",
+      "key": 14
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 42.43,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 7.45
+      },
+      "offset": 7.45,
+      "vo": "AIDEA's own plan lists data centers, the buildings that AI runs in, as a possible use. It is not a commitment.",
+      "phrase": "commitment.",
+      "shows": "a dashed ghost stamp fades onto the plan reading NOT A COMMITMENT",
+      "sfx": "thunk",
+      "means": "not a commitment",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed ghost stamp",
+        "action": "fades onto the plan",
+        "emotion": "plain",
+        "annotation": "NOT A COMMITMENT"
+      },
+      "choreo": {
+        "primary": "a dashed ghost stamp fades onto the plan reading NOT A COMMITMENT",
+        "reaction": "the dashes crawl",
+        "ambient": "the dashes crawl, window lights flicker, the sheet breathes, dust floats"
+      },
+      "t": "42.430-44.890",
+      "key": 15
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 44.89,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.91
+      },
+      "offset": 0.91,
+      "vo": "Then AIDEA's director, Randy Ruaro, wrote in July that there is no committed tenant, no site plan, no power source, no cooling, no water plan, and no schedule.",
+      "phrase": "director, Randy Ruaro, wrote",
+      "shows": "a letter slides in from the right reading AIDEA, JULY 30TH LETTER, RANDY RUARO, while the closed folder stiffens and its eyes follow",
+      "sfx": "page",
+      "means": "aidea \u00b7 july 30th letter \u00b7 randy ruaro",
+      "rehook": "",
+      "draw": {
+        "subject": "letter",
+        "action": "slides in from the right as the folder stiffens",
+        "emotion": "attentive",
+        "annotation": "AIDEA \u00b7 JULY 30TH LETTER \u00b7 RANDY RUARO"
+      },
+      "choreo": {
+        "primary": "a letter slides in from the right reading AIDEA, JULY 30TH LETTER, RANDY RUARO, while the closed folder stiffens and its eyes follow",
+        "reaction": "the letter settles and the folder stiffens",
+        "ambient": "the tabs wobble, the letter settles, the pockets pulse, dust floats"
+      },
+      "t": "44.890-49.070",
+      "key": 16
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 49.07,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.09
+      },
+      "offset": 5.09,
+      "vo": "Then AIDEA's director, Randy Ruaro, wrote in July that there is no committed tenant, no site plan, no power source, no cooling, no water plan, and no schedule.",
+      "phrase": "tenant, no site plan,",
+      "shows": "two index tabs pop out of the closed folder's edge reading TENANT and SITE PLAN, each with an empty dotted slot",
+      "sfx": "pop",
+      "means": "no committed tenant \u00b7 no site plan",
+      "rehook": "",
+      "draw": {
+        "subject": "tabs",
+        "action": "pop out of the folder's edge reading TENANT and SITE PLAN",
+        "emotion": "attentive",
+        "annotation": "NO COMMITTED TENANT \u00b7 NO SITE PLAN"
+      },
+      "choreo": {
+        "primary": "two index tabs pop out of the closed folder's edge reading TENANT and SITE PLAN, each with an empty dotted slot",
+        "reaction": "the tabs wobble",
+        "ambient": "the tabs wobble, the letter settles, the pockets pulse, dust floats"
+      },
+      "t": "49.070-51.270",
+      "key": 17
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 51.27,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.29
+      },
+      "offset": 7.29,
+      "vo": "Then AIDEA's director, Randy Ruaro, wrote in July that there is no committed tenant, no site plan, no power source, no cooling, no water plan, and no schedule.",
+      "phrase": "power source, no cooling,",
+      "shows": "two more tabs pop out reading POWER and COOLING with empty dotted slots",
+      "sfx": "click",
+      "means": "no power source \u00b7 no cooling",
+      "rehook": "",
+      "draw": {
+        "subject": "tabs",
+        "action": "pop out reading POWER and COOLING",
+        "emotion": "attentive",
+        "annotation": "NO POWER SOURCE \u00b7 NO COOLING"
+      },
+      "choreo": {
+        "primary": "two more tabs pop out reading POWER and COOLING with empty dotted slots",
+        "reaction": "the tabs wobble",
+        "ambient": "the tabs wobble, the letter settles, the pockets pulse, dust floats"
+      },
+      "t": "51.270-53.730",
+      "key": 18
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 53.73,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 9.75
+      },
+      "offset": 9.75,
+      "vo": "Then AIDEA's director, Randy Ruaro, wrote in July that there is no committed tenant, no site plan, no power source, no cooling, no water plan, and no schedule.",
+      "phrase": "water plan, and no",
+      "shows": "the last two tabs pop out reading WATER and SCHEDULE and the cover swings open on six empty pockets pulsing magenta",
+      "sfx": "thump",
+      "means": "no water plan \u00b7 no schedule",
+      "rehook": "rehook: the letter",
+      "draw": {
+        "subject": "tabs",
+        "action": "pop out reading WATER and SCHEDULE and the cover swings open on six empty pockets",
+        "emotion": "alert",
+        "annotation": "NO WATER PLAN \u00b7 NO SCHEDULE"
+      },
+      "choreo": {
+        "primary": "the last two tabs pop out reading WATER and SCHEDULE and the cover swings open on six empty pockets pulsing magenta",
+        "reaction": "the pockets pulse",
+        "ambient": "the tabs wobble, the letter settles, the pockets pulse, dust floats"
+      },
+      "t": "53.730-57.070",
+      "key": 19
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 57.07,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.55
+      },
+      "offset": 0.55,
+      "vo": "This month, Alaska Public Media reports, he called a data center on the site implausible.",
+      "phrase": "month, Alaska Public Media",
+      "shows": "the folder tips and shakes itself over the real parcel, one paperclip dropping out and bouncing on the snow",
+      "sfx": "snap",
+      "means": "rattles",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "tips and shakes itself over the real parcel, a paperclip dropping out",
+        "emotion": "worried",
+        "annotation": "RATTLES"
+      },
+      "choreo": {
+        "primary": "the folder tips and shakes itself over the real parcel, one paperclip dropping out and bouncing on the snow",
+        "reaction": "the folder rattles and the clip bounces",
+        "ambient": "the folder rattles, the snow drifts, the slots pulse, the ghost dashes fade"
+      },
+      "t": "57.070-61.450",
+      "key": 20
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 61.45,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.93
+      },
+      "offset": 4.93,
+      "vo": "This month, Alaska Public Media reports, he called a data center on the site implausible.",
+      "phrase": "implausible.",
+      "shows": "the dotted data center on the real land fades to a faint ghost while a quote plate reads IMPLAUSIBLE, PER ALASKA PUBLIC MEDIA",
+      "sfx": "fade",
+      "means": "aidea director \u00b7 'implausible' \u00b7 per alaska public media",
+      "rehook": "",
+      "draw": {
+        "subject": "data center ghost",
+        "action": "fades to a faint ghost under a quote tag",
+        "emotion": "plain",
+        "annotation": "AIDEA DIRECTOR \u00b7 'IMPLAUSIBLE' \u00b7 PER ALASKA PUBLIC MEDIA"
+      },
+      "choreo": {
+        "primary": "the dotted data center on the real land fades to a faint ghost while a quote plate reads IMPLAUSIBLE, PER ALASKA PUBLIC MEDIA",
+        "reaction": "the dashes fade and the folder blinks",
+        "ambient": "the folder rattles, the snow drifts, the slots pulse, the ghost dashes fade"
+      },
+      "t": "61.450-64.870",
+      "key": 21
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 64.87,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 1.75
+      },
+      "offset": 1.75,
+      "vo": "So the data center is not the question. The empty folder is.",
+      "phrase": "question. The empty folder",
+      "shows": "the folder turns its eyes to the camera over the real parcel as the ghost fades further",
+      "sfx": "creak",
+      "means": "data center \u00b7 not the question",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "turns its eyes to the camera over the bare parcel",
+        "emotion": "ask",
+        "annotation": "DATA CENTER \u00b7 NOT THE QUESTION"
+      },
+      "choreo": {
+        "primary": "the folder turns its eyes to the camera over the real parcel as the ghost fades further",
+        "reaction": "the folder blinks and the window light drifts",
+        "ambient": "the folder rattles, the snow drifts, the slots pulse, the ghost dashes fade"
+      },
+      "t": "64.870-66.250",
+      "key": 22
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "at_s": 66.25,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.13
+      },
+      "offset": 3.13,
+      "vo": "So the data center is not the question. The empty folder is.",
+      "phrase": "empty folder is.",
+      "shows": "the six tabs swing and the magenta empty slots pulse as the folder looks hollow, THE EMPTY FOLDER",
+      "sfx": "roll",
+      "means": "the empty folder",
+      "rehook": "rehook: the empty folder",
+      "draw": {
+        "subject": "tabs",
+        "action": "swing hollow and the magenta slots pulse",
+        "emotion": "hollow",
+        "annotation": "THE EMPTY FOLDER"
+      },
+      "choreo": {
+        "primary": "the six tabs swing and the magenta empty slots pulse as the folder looks hollow, THE EMPTY FOLDER",
+        "reaction": "the slots pulse",
+        "ambient": "the folder rattles, the snow drifts, the slots pulse, the ghost dashes fade"
+      },
+      "t": "66.250-68.700",
+      "key": 23
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 68.7,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Houston's city council and the neighboring Meadow Lakes community council voted to oppose it, per the Mat-Su Sentinel.",
+      "phrase": "Houston's city council and",
+      "shows": "the view descends from the aerial to ground level on a snowy spruce flat where a hand-lettered sign pops up reading HOUSTON CITY COUNCIL, OPPOSE, with a porch lamp, the folder's tab peeking from a snowbank",
+      "sfx": "whoosh",
+      "means": "houston + meadow lakes councils \u00b7 oppose",
+      "rehook": "",
+      "draw": {
+        "subject": "council sign",
+        "action": "pops up from the snow as the view descends from the aerial",
+        "emotion": "serious",
+        "annotation": "HOUSTON + MEADOW LAKES COUNCILS \u00b7 OPPOSE"
+      },
+      "choreo": {
+        "primary": "the view descends from the aerial to ground level on a snowy spruce flat where a hand-lettered sign pops up reading HOUSTON CITY COUNCIL, OPPOSE, with a porch lamp, the folder's tab peeking from a snowbank",
+        "reaction": "the sign sways and the lamp flickers",
+        "ambient": "snow drifts, the signs sway, the porch lamps flicker, the spruce row sways"
+      },
+      "t": "68.700-70.510",
+      "key": 24
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 70.51,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.81
+      },
+      "offset": 1.81,
+      "vo": "Houston's city council and the neighboring Meadow Lakes community council voted to oppose it, per the Mat-Su Sentinel.",
+      "phrase": "Meadow Lakes community council",
+      "shows": "a second sign pops up beside it reading MEADOW LAKES COMMUNITY COUNCIL, OPPOSE, with its lamp",
+      "sfx": "pop",
+      "means": "meadow lakes community council \u00b7 oppose",
+      "rehook": "",
+      "draw": {
+        "subject": "council sign",
+        "action": "pops up beside the first with its lamp",
+        "emotion": "serious",
+        "annotation": "MEADOW LAKES COMMUNITY COUNCIL \u00b7 OPPOSE"
+      },
+      "choreo": {
+        "primary": "a second sign pops up beside it reading MEADOW LAKES COMMUNITY COUNCIL, OPPOSE, with its lamp",
+        "reaction": "the sign sways and the lamp flickers",
+        "ambient": "snow drifts, the signs sway, the porch lamps flicker, the spruce row sways"
+      },
+      "t": "70.510-74.410",
+      "key": 25
+    },
+    {
+      "id": 29,
+      "shot": 8,
+      "at_s": 74.41,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.71
+      },
+      "offset": 5.71,
+      "vo": "Houston's city council and the neighboring Meadow Lakes community council voted to oppose it, per the Mat-Su Sentinel.",
+      "phrase": "Sentinel.",
+      "shows": "a plate stamps onto the snow reading PER MAT-SU SENTINEL",
+      "sfx": "ping",
+      "means": "per mat-su sentinel",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "stamps onto the snow",
+        "emotion": "plain",
+        "annotation": "PER MAT-SU SENTINEL"
+      },
+      "choreo": {
+        "primary": "a plate stamps onto the snow reading PER MAT-SU SENTINEL",
+        "reaction": "the plate bounces",
+        "ambient": "snow drifts, the signs sway, the porch lamps flicker, the spruce row sways"
+      },
+      "t": "74.410-76.000",
+      "key": 26
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 76.0,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "D N R said the governor's office had not given its commissioner permission to attend an earlier hearing.",
+      "phrase": "D N R said",
+      "shows": "the view whips to a spruce-green hearing room around an empty witness chair at a table with a brass nameplate",
+      "sfx": "swell",
+      "means": "the hearing room",
+      "rehook": "",
+      "draw": {
+        "subject": "hearing room",
+        "action": "whips in around the empty witness chair",
+        "emotion": "serious",
+        "annotation": "THE HEARING ROOM"
+      },
+      "choreo": {
+        "primary": "the view whips to a spruce-green hearing room around an empty witness chair at a table with a brass nameplate",
+        "reaction": "the pendants sway and the chair creaks",
+        "ambient": "pendant lamps sway, the chair swivels, vote lamps pulse, dust floats"
+      },
+      "t": "76.000-79.050",
+      "key": 46
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 79.05,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.05
+      },
+      "offset": 3.05,
+      "vo": "D N R said the governor's office had not given its commissioner permission to attend an earlier hearing.",
+      "phrase": "permission to attend an",
+      "shows": "a note slips onto the table of the empty witness chair reading NO PERMISSION TO ATTEND, DNR",
+      "sfx": "page",
+      "means": "dnr \u00b7 'no permission to attend'",
+      "rehook": "",
+      "draw": {
+        "subject": "slip",
+        "action": "slides under the witness chair's table",
+        "emotion": "plain",
+        "annotation": "DNR \u00b7 'NO PERMISSION TO ATTEND'"
+      },
+      "choreo": {
+        "primary": "a note slips onto the table of the empty witness chair reading NO PERMISSION TO ATTEND, DNR",
+        "reaction": "the note flutters and the chair swivels",
+        "ambient": "pendant lamps sway, the chair swivels, vote lamps pulse, dust floats"
+      },
+      "t": "79.050-82.270",
+      "key": 27
+    },
+    {
+      "id": 32,
+      "shot": 9,
+      "at_s": 82.27,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 1.11
+      },
+      "offset": 1.11,
+      "vo": "So on October fourteenth, five senators voted yes to subpoena him, John Crowther.",
+      "phrase": "October fourteenth, five senators",
+      "shows": "a plate stamps onto the hearing room wall reading OCT 14TH, SENATE SUBPOENAS DNR COMMISSIONER",
+      "sfx": "thunk",
+      "means": "oct 14th \u00b7 senate subpoenas dnr commissioner",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "stamps onto the hearing room wall",
+        "emotion": "plain",
+        "annotation": "OCT 14TH \u00b7 SENATE SUBPOENAS DNR COMMISSIONER"
+      },
+      "choreo": {
+        "primary": "a plate stamps onto the hearing room wall reading OCT 14TH, SENATE SUBPOENAS DNR COMMISSIONER",
+        "reaction": "the plate bounces",
+        "ambient": "pendant lamps sway, the chair swivels, vote lamps pulse, dust floats"
+      },
+      "t": "82.270-83.630",
+      "key": 28
+    },
+    {
+      "id": 33,
+      "shot": 9,
+      "at_s": 83.63,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.47
+      },
+      "offset": 2.47,
+      "vo": "So on October fourteenth, five senators voted yes to subpoena him, John Crowther.",
+      "phrase": "five senators voted yes",
+      "shows": "five green vote lamps appear and light one after another along the rail, 5 VOTED YES",
+      "sfx": "pulse",
+      "means": "5 voted yes",
+      "rehook": "",
+      "draw": {
+        "subject": "vote lamps",
+        "action": "light up green one after another along a rail that runs off both edges of the frame",
+        "emotion": "plain",
+        "annotation": "5 VOTED YES"
+      },
+      "choreo": {
+        "primary": "five green vote lamps appear and light one after another along the rail, 5 VOTED YES",
+        "reaction": "the lamps flare as each lights",
+        "ambient": "pendant lamps sway, the chair swivels, vote lamps pulse, dust floats"
+      },
+      "t": "83.630-86.690",
+      "key": 29
+    },
+    {
+      "id": 34,
+      "shot": 9,
+      "at_s": 86.69,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.53
+      },
+      "offset": 5.53,
+      "vo": "So on October fourteenth, five senators voted yes to subpoena him, John Crowther.",
+      "phrase": "Crowther.",
+      "shows": "a SUBPOENA stamp lands across the CROWTHER nameplate on the empty table while the folder stands its six tabs up like question cards facing the chair",
+      "sfx": "stamp",
+      "means": "crowther \u00b7 subpoena",
+      "rehook": "",
+      "draw": {
+        "subject": "subpoena stamp",
+        "action": "lands across the CROWTHER nameplate on the empty table",
+        "emotion": "firm",
+        "annotation": "CROWTHER \u00b7 SUBPOENA"
+      },
+      "choreo": {
+        "primary": "a SUBPOENA stamp lands across the CROWTHER nameplate on the empty table while the folder stands its six tabs up like question cards facing the chair",
+        "reaction": "the stamp rings and the tabs wobble",
+        "ambient": "pendant lamps sway, the chair swivels, vote lamps pulse, dust floats"
+      },
+      "t": "86.690-88.670",
+      "key": 30
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 88.67,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.51
+      },
+      "offset": 0.51,
+      "vo": "The best case for the transfer says developers want site control before they sign, so ready land can be how a state competes.",
+      "phrase": "best case for the",
+      "shows": "the view wipes to a warm land counter with shelves of parcel files while a plate slides in reading THE BEST CASE FOR THE TRANSFER, the folder listening at the rail",
+      "sfx": "whoosh",
+      "means": "the best case for the transfer",
+      "rehook": "rehook: the best case",
+      "draw": {
+        "subject": "plate",
+        "action": "slides in over a warm ready-land counter",
+        "emotion": "attentive",
+        "annotation": "THE BEST CASE FOR THE TRANSFER"
+      },
+      "choreo": {
+        "primary": "the view wipes to a warm land counter with shelves of parcel files while a plate slides in reading THE BEST CASE FOR THE TRANSFER, the folder listening at the rail",
+        "reaction": "the shelves glow and the folder tilts",
+        "ambient": "the shelves glow, the headlight beams shimmer, the lamps flare, coins clink"
+      },
+      "t": "88.670-91.210",
+      "key": 31
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 91.21,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.05
+      },
+      "offset": 3.05,
+      "vo": "The best case for the transfer says developers want site control before they sign, so ready land can be how a state competes.",
+      "phrase": "site control before they",
+      "shows": "two headlights sweep across the window and stop, the beam falling across the folder's TENANT tab which lights in a dashed outline, a plate reading SITE CONTROL BEFORE A TENANT SIGNS",
+      "sfx": "drone",
+      "means": "developers want site control first",
+      "rehook": "",
+      "draw": {
+        "subject": "headlights",
+        "action": "sweep across the window and the beam lights the TENANT tab",
+        "emotion": "attentive",
+        "annotation": "DEVELOPERS WANT SITE CONTROL FIRST"
+      },
+      "choreo": {
+        "primary": "two headlights sweep across the window and stop, the beam falling across the folder's TENANT tab which lights in a dashed outline, a plate reading SITE CONTROL BEFORE A TENANT SIGNS",
+        "reaction": "the beams shimmer and the tab glows",
+        "ambient": "the shelves glow, the headlight beams shimmer, the lamps flare, coins clink"
+      },
+      "t": "91.210-95.270",
+      "key": 32
+    },
+    {
+      "id": 37,
+      "shot": 10,
+      "at_s": 95.27,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 7.11
+      },
+      "offset": 7.11,
+      "vo": "The best case for the transfer says developers want site control before they sign, so ready land can be how a state competes.",
+      "phrase": "competes.",
+      "shows": "three green lamps light in a row on the rail, READY LAND, HOW A STATE COMPETES",
+      "sfx": "bell",
+      "means": "ready land can be how a state competes",
+      "rehook": "",
+      "draw": {
+        "subject": "process lamps",
+        "action": "light green in a row on the rail",
+        "emotion": "plain",
+        "annotation": "READY LAND CAN BE HOW A STATE COMPETES"
+      },
+      "choreo": {
+        "primary": "three green lamps light in a row on the rail, READY LAND, HOW A STATE COMPETES",
+        "reaction": "the lamps flare as each lights",
+        "ambient": "the shelves glow, the headlight beams shimmer, the lamps flare, coins clink"
+      },
+      "t": "95.270-97.210",
+      "key": 33
+    },
+    {
+      "id": 38,
+      "shot": 10,
+      "at_s": 97.21,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.39
+      },
+      "offset": 0.39,
+      "vo": "And AIDEA says it has declared about four hundred ninety-five million dollars in dividends.",
+      "phrase": "AIDEA says it has",
+      "shows": "a small ledger tag slides in beside an empty coin tray reading AIDEA SAYS",
+      "sfx": "clink",
+      "means": "aidea says",
+      "rehook": "",
+      "draw": {
+        "subject": "ledger tag",
+        "action": "slides in beside the coin jar",
+        "emotion": "warm",
+        "annotation": "AIDEA SAYS"
+      },
+      "choreo": {
+        "primary": "a small ledger tag slides in beside an empty coin tray reading AIDEA SAYS",
+        "reaction": "the tag bobs",
+        "ambient": "the shelves glow, the headlight beams shimmer, the lamps flare, coins clink"
+      },
+      "t": "97.210-98.990",
+      "key": 47
+    },
+    {
+      "id": 39,
+      "shot": 10,
+      "at_s": 98.99,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.17
+      },
+      "offset": 2.17,
+      "vo": "And AIDEA says it has declared about four hundred ninety-five million dollars in dividends.",
+      "phrase": "hundred ninety-five million dollars",
+      "shows": "a brass coin stack grows on the counter beside the folder under a plate reading AIDEA SAYS, ABOUT $495M IN DIVIDENDS TO THE STATE",
+      "sfx": "bloop",
+      "means": "aidea says \u00b7 ~$495m in dividends to state",
+      "rehook": "",
+      "draw": {
+        "subject": "coin stack",
+        "action": "grows on the counter beside the folder",
+        "emotion": "warm",
+        "annotation": "AIDEA SAYS \u00b7 ~$495M IN DIVIDENDS TO STATE"
+      },
+      "choreo": {
+        "primary": "a brass coin stack grows on the counter beside the folder under a plate reading AIDEA SAYS, ABOUT $495M IN DIVIDENDS TO THE STATE",
+        "reaction": "the coins clink and settle",
+        "ambient": "the shelves glow, the headlight beams shimmer, the lamps flare, coins clink"
+      },
+      "t": "98.990-102.920",
+      "key": 34
+    },
+    {
+      "id": 40,
+      "shot": 11,
+      "at_s": 102.92,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A real argument, but those dividends are statewide and tied to no land here. Ruaro's letter says no return to Houston is guaranteed.",
+      "phrase": "A real argument, but",
+      "shows": "the folder tilts and a REAL tick ticks onto the ledger tag beside the coins",
+      "sfx": "crack",
+      "means": "a real argument",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "tilts as a REAL tick ticks onto the ledger tag",
+        "emotion": "attentive",
+        "annotation": "A REAL ARGUMENT"
+      },
+      "choreo": {
+        "primary": "the folder tilts and a REAL tick ticks onto the ledger tag beside the coins",
+        "reaction": "the tick lands and the folder tilts",
+        "ambient": "the string sags, the coins settle, the shelf light drifts, dust floats"
+      },
+      "t": "102.920-105.450",
+      "key": 50
+    },
+    {
+      "id": 41,
+      "shot": 11,
+      "at_s": 105.45,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 2.53
+      },
+      "offset": 2.53,
+      "vo": "A real argument, but those dividends are statewide and tied to no land here. Ruaro's letter says no return to Houston is guaranteed.",
+      "phrase": "statewide and tied to",
+      "shows": "the coin stack slides along a shelf labelled STATEWIDE while the string to the folder goes slack, TIED TO NO LAND HERE, and the TENANT tab's dashed outline dims, possible but not committed",
+      "sfx": "whoosh",
+      "means": "statewide figure \u00b7 not a houston number",
+      "rehook": "rehook: statewide",
+      "draw": {
+        "subject": "coin stack",
+        "action": "slides away along a shelf labelled STATEWIDE as the string to the folder goes slack",
+        "emotion": "serious",
+        "annotation": "STATEWIDE FIGURE \u00b7 NOT A HOUSTON NUMBER"
+      },
+      "choreo": {
+        "primary": "the coin stack slides along a shelf labelled STATEWIDE while the string to the folder goes slack, TIED TO NO LAND HERE, and the TENANT tab's dashed outline dims, possible but not committed",
+        "reaction": "the string sags and the coins settle",
+        "ambient": "the string sags, the coins settle, the shelf light drifts, dust floats"
+      },
+      "t": "105.450-109.630",
+      "key": 35
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 109.63,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 6.71
+      },
+      "offset": 6.71,
+      "vo": "A real argument, but those dividends are statewide and tied to no land here. Ruaro's letter says no return to Houston is guaranteed.",
+      "phrase": "letter says no return",
+      "shows": "a plate stamps beside the folder reading LETTER, NO RETURN TO HOUSTON GUARANTEED",
+      "sfx": "thunk",
+      "means": "letter \u00b7 no return to houston guaranteed",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "stamps beside the folder",
+        "emotion": "serious",
+        "annotation": "LETTER \u00b7 NO RETURN TO HOUSTON GUARANTEED"
+      },
+      "choreo": {
+        "primary": "a plate stamps beside the folder reading LETTER, NO RETURN TO HOUSTON GUARANTEED",
+        "reaction": "the plate bounces",
+        "ambient": "the string sags, the coins settle, the shelf light drifts, dust floats"
+      },
+      "t": "109.630-113.430",
+      "key": 36
+    },
+    {
+      "id": 43,
+      "shot": 12,
+      "at_s": 113.43,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.55
+      },
+      "offset": 0.55,
+      "vo": "So ask what ready land is ready for. Crowther is set to appear on October twenty-sixth, when senators can put the question to him.",
+      "phrase": "ask what ready land",
+      "shows": "the folder hops up to the witness table of the hearing room beside the empty chair, a plate reading ASK WHAT READY LAND IS READY FOR",
+      "sfx": "whoosh",
+      "means": "ask what ready land is ready for",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "hops up to the witness table in the hearing room",
+        "emotion": "ask",
+        "annotation": "ASK WHAT READY LAND IS READY FOR"
+      },
+      "choreo": {
+        "primary": "the folder hops up to the witness table of the hearing room beside the empty chair, a plate reading ASK WHAT READY LAND IS READY FOR",
+        "reaction": "the folder squashes and the chair swivels",
+        "ambient": "the chair swivels, the note flutters, the pendants sway, the folder breathes"
+      },
+      "t": "113.430-116.410",
+      "key": 37
+    },
+    {
+      "id": 44,
+      "shot": 12,
+      "at_s": 116.41,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "So ask what ready land is ready for. Crowther is set to appear on October twenty-sixth, when senators can put the question to him.",
+      "phrase": "Crowther is set to",
+      "shows": "the empty witness chair swivels toward the CROWTHER nameplate on the table",
+      "sfx": "creak",
+      "means": "crowther is set to appear",
+      "rehook": "",
+      "draw": {
+        "subject": "witness chair",
+        "action": "swivels to the CROWTHER nameplate",
+        "emotion": "plain",
+        "annotation": "CROWTHER IS SET TO APPEAR"
+      },
+      "choreo": {
+        "primary": "the empty witness chair swivels toward the CROWTHER nameplate on the table",
+        "reaction": "the chair creaks and swivels",
+        "ambient": "the chair swivels, the note flutters, the pendants sway, the folder breathes"
+      },
+      "t": "116.410-117.930",
+      "key": 51
+    },
+    {
+      "id": 45,
+      "shot": 12,
+      "at_s": 117.93,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 5.05
+      },
+      "offset": 5.05,
+      "vo": "So ask what ready land is ready for. Crowther is set to appear on October twenty-sixth, when senators can put the question to him.",
+      "phrase": "October twenty-sixth, when senators",
+      "shows": "a cream sticky note slaps onto the folder cover reading OCT 26, a plate reading OCT 26 HEARING",
+      "sfx": "knock",
+      "means": "oct 26th \u00b7 hearing",
+      "rehook": "",
+      "draw": {
+        "subject": "sticky note",
+        "action": "slaps onto the folder cover",
+        "emotion": "firm",
+        "annotation": "OCT 26TH \u00b7 HEARING"
+      },
+      "choreo": {
+        "primary": "a cream sticky note slaps onto the folder cover reading OCT 26, a plate reading OCT 26 HEARING",
+        "reaction": "the note flutters and settles",
+        "ambient": "the chair swivels, the note flutters, the pendants sway, the folder breathes"
+      },
+      "t": "117.930-120.630",
+      "key": 38
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 120.63,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 7.75
+      },
+      "offset": 7.75,
+      "vo": "So ask what ready land is ready for. Crowther is set to appear on October twenty-sixth, when senators can put the question to him.",
+      "phrase": "question to him.",
+      "shows": "the witness chair turns to face the folder as the note lifts and the pendants brighten",
+      "sfx": "slide",
+      "means": "when senators can ask him",
+      "rehook": "",
+      "draw": {
+        "subject": "witness chair",
+        "action": "turns to face the folder as the note lifts",
+        "emotion": "firm",
+        "annotation": "WHEN SENATORS CAN ASK HIM"
+      },
+      "choreo": {
+        "primary": "the witness chair turns to face the folder as the note lifts and the pendants brighten",
+        "reaction": "the chair turns and the note lifts",
+        "ambient": "the chair swivels, the note flutters, the pendants sway, the folder breathes"
+      },
+      "t": "120.630-122.560",
+      "key": 52
+    },
+    {
+      "id": 47,
+      "shot": 13,
+      "at_s": 122.56,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Six blanks. One date. Watch which tabs fill.",
+      "phrase": "Six blanks. One date.",
+      "shows": "the folder opens to camera with six empty magenta pockets fanned like a hand of cards and one paperclip glinting at the centre",
+      "sfx": "heavy",
+      "means": "six blanks",
+      "rehook": "",
+      "draw": {
+        "subject": "Folio",
+        "action": "opens to camera with six empty pockets fanned like a hand of cards",
+        "emotion": "hollow",
+        "annotation": "SIX BLANKS"
+      },
+      "choreo": {
+        "primary": "the folder opens to camera with six empty magenta pockets fanned like a hand of cards and one paperclip glinting at the centre",
+        "reaction": "the pockets pulse and the clip glints",
+        "ambient": "the pockets pulse, the paperclip glints, the tabs flicker, the window light drifts"
+      },
+      "t": "122.560-124.710",
+      "key": 40
+    },
+    {
+      "id": 48,
+      "shot": 13,
+      "at_s": 124.71,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.15
+      },
+      "offset": 2.15,
+      "vo": "Six blanks. One date. Watch which tabs fill.",
+      "phrase": "date. Watch which tabs",
+      "shows": "the OCT 26 note brightens beside the open folder",
+      "sfx": "chime",
+      "means": "one date",
+      "rehook": "",
+      "draw": {
+        "subject": "sticky note",
+        "action": "lights up beside the folder",
+        "emotion": "firm",
+        "annotation": "ONE DATE"
+      },
+      "choreo": {
+        "primary": "the OCT 26 note brightens beside the open folder",
+        "reaction": "the note glows",
+        "ambient": "the pockets pulse, the paperclip glints, the tabs flicker, the window light drifts"
+      },
+      "t": "124.710-125.890",
+      "key": 41
+    },
+    {
+      "id": 49,
+      "shot": 13,
+      "at_s": 125.89,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 3.33
+      },
+      "offset": 3.33,
+      "vo": "Six blanks. One date. Watch which tabs fill.",
+      "phrase": "Watch which tabs fill.",
+      "shows": "the banker's lamp clicks on over the open folder as the six tabs flicker and the camera pushes in",
+      "sfx": "bell",
+      "means": "watch which tabs fill",
+      "rehook": "",
+      "draw": {
+        "subject": "banker lamp",
+        "action": "clicks on over the open folder",
+        "emotion": "ask",
+        "annotation": "WATCH WHICH TABS FILL"
+      },
+      "choreo": {
+        "primary": "the banker's lamp clicks on over the open folder as the six tabs flicker and the camera pushes in",
+        "reaction": "the lamp light blooms and the tabs flicker",
+        "ambient": "the pockets pulse, the paperclip glints, the tabs flicker, the window light drifts"
+      },
+      "t": "125.890-127.320",
+      "key": 42
+    }
+  ]
+}
