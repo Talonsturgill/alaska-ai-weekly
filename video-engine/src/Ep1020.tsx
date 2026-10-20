@@ -203,7 +203,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} zk={(ff) => lerp(1.3, 1.0, easeIO(ff, 0, 60))} oy={800} tagText="ILLUSTRATION · TRUE SHAPE, SIMPLIFIED"
       overlay={<>
         <Plate text="ABOUT 19,950 ACRES NEAR HOUSTON" displayLines={['ABOUT 19,950 ACRES', 'NEAR HOUSTON']} y={575} size={40} tone="paper" p={ease(f, t7 + 2, 8)} />
-        <Plate text="HOUSTON, ALASKA" x={650} y={1290} size={30} tone="ink" p={ease(f, t45 + 2, 8)} />
+        <Plate text="HOUSTON, ALASKA" x={650} y={1255} size={30} tone="ink" p={ease(f, t45 + 2, 8)} />
         <Plate text="AIDEA RECEIVES" y={720} size={38} tone="felt" p={ease(f, t8 + 2, 8)} />
       </>}>
       <SVG>
@@ -223,8 +223,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1000}
       overlay={<>
-        <Plate text="NO PAYMENT FOR LAND VALUE" displayLines={['NO PAYMENT', 'FOR LAND VALUE']} y={575} size={40} tone="ink" p={ease(f, t9 + 6, 8)} />
-        <Plate text="PRELIMINARY ONLY · NO FINAL DECISION" displayLines={['PRELIMINARY ONLY', 'NO FINAL DECISION']} y={575} size={38} tone="paper" p={ease(f, t11 + 12, 8)} />
+        <Plate text="NO PAYMENT FOR LAND VALUE" y={545} size={36} tone="ink" p={ease(f, t9 + 6, 8)} />
+        <Plate text="PRELIMINARY ONLY · NO FINAL DECISION" y={625} size={30} tone="paper" p={ease(f, t11 + 12, 8)} />
       </>}>
       <SVG>
         <g transform={`translate(0 ${-6 * jump})`}>
@@ -281,10 +281,10 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={(ff) => lerp(1.0, 1.1, easeIO(ff, 0, p.dur))} oy={1000} dx0={20} dx1={-20}
       overlay={<>
-        <Plate text="AIDEA · JULY 30TH LETTER · RANDY RUARO" displayLines={['AIDEA · JULY 30TH LETTER', 'RANDY RUARO']} y={575} size={36} tone="green" p={ease(f, t16 + 4, 8)} />
-        <Plate text="NO COMMITTED TENANT · NO SITE PLAN" displayLines={['NO COMMITTED TENANT', 'NO SITE PLAN']} y={705} size={36} tone="plum" p={ease(f, t17 + 2, 8) * (f < t18 ? 1 : 0)} />
-        <Plate text="NO POWER SOURCE · NO COOLING" displayLines={['NO POWER SOURCE', 'NO COOLING']} y={705} size={36} tone="plum" p={ease(f, t18 + 2, 8) * (f < t19 ? 1 : 0)} />
-        <Plate text="NO WATER PLAN · NO SCHEDULE" displayLines={['NO WATER PLAN', 'NO SCHEDULE']} y={705} size={36} tone="plum" p={ease(f, t19 + 2, 8)} />
+        <Plate text="AIDEA · JULY 30TH LETTER · RANDY RUARO" y={538} size={28} tone="green" p={ease(f, t16 + 4, 8)} />
+        <Plate text="NO COMMITTED TENANT · NO SITE PLAN" y={612} size={30} tone="plum" p={ease(f, t17 + 2, 8) * (f < t18 ? 1 : 0)} />
+        <Plate text="NO POWER SOURCE · NO COOLING" y={684} size={30} tone="plum" p={ease(f, t18 + 2, 8) * (f < t19 ? 1 : 0)} />
+        <Plate text="NO WATER PLAN · NO SCHEDULE" y={756} size={30} tone="plum" p={ease(f, t19 + 2, 8)} />
       </>}>
       <SVG>
         <DeskBG f={g} desk={1180} id="s6d" chair={false} />
@@ -311,7 +311,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <QuotePlate text={'"IMPLAUSIBLE" · AIDEA DIRECTOR · PER ALASKA PUBLIC MEDIA'} y={610} size={40} wrap={22} p={ease(f, t21 + 2, 12) * (f < t22 ? 1 : 0)} />
         <Plate text="NOT THE QUESTION" y={560} size={42} tone="ink" p={ease(f, t22 + 2, 8) * (f < t23 ? 1 : 0)} />
-        <Plate text="THE EMPTY FOLDER" y={560} size={44} tone="plum" p={ease(f, t23 + 2, 8)} />
+        <Plate text="THE EMPTY FOLDER" y={660} size={44} tone="plum" p={ease(f, t23 + 2, 8)} />
       </>}>
       <SVG>
         <AerialBG f={g} id="s7a" outline={1} hatch={0.5} roofs={1} />
@@ -357,8 +357,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={(ff) => lerp(1.0, 1.08, easeIO(ff, 0, p.dur))} oy={1000}
       overlay={<>
-        <Plate text="DNR · 'NO PERMISSION TO ATTEND'" displayLines={['DNR · NO PERMISSION', 'TO ATTEND']} y={575} size={36} tone="ink" p={ease(f, t27 + 2, 8) * (f < t28 ? 1 : 0)} />
-        <Plate text="OCT 14 · SENATE SUBPOENAS DNR COMMISSIONER" displayLines={['OCT 14 · SENATE SUBPOENAS', 'DNR COMMISSIONER']} y={575} size={34} tone="paper" p={ease(f, t28 + 2, 8)} />
+        <Plate text="DNR · 'NO PERMISSION TO ATTEND'" y={545} size={32} tone="ink" p={ease(f, t27 + 2, 8) * (f < t28 ? 1 : 0)} />
+        <Plate text="OCT 14 · SENATE SUBPOENAS DNR COMMISSIONER" y={620} size={28} tone="paper" p={ease(f, t28 + 2, 8)} />
         <Plate text="5 VOTED YES" y={720} size={44} tone="green" p={ease(f, t29 + 6, 8)} />
       </>}>
       <SVG>
@@ -385,10 +385,10 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1000}
       overlay={<>
-        <Plate text="THE BEST CASE FOR THE TRANSFER" displayLines={['THE BEST CASE', 'FOR THE TRANSFER']} y={575} size={38} tone="paper" p={ease(f, t31 + 2, 8) * (f < t32 ? 1 : 0)} />
-        <Plate text="SITE CONTROL BEFORE A TENANT SIGNS" displayLines={['SITE CONTROL BEFORE', 'A TENANT SIGNS']} y={575} size={36} tone="felt" p={ease(f, t32 + 2, 8) * (f < t33 ? 1 : 0)} />
-        <Plate text="READY LAND · HOW A STATE COMPETES" displayLines={['READY LAND · HOW', 'A STATE COMPETES']} y={575} size={36} tone="green" p={ease(f, t33 + 2, 8) * (f < t34 ? 1 : 0)} />
-        <Plate text="AIDEA SAYS · ~$495M IN DIVIDENDS TO STATE" displayLines={['AIDEA SAYS · ~$495M', 'IN DIVIDENDS TO STATE']} y={575} size={34} tone="ink" p={ease(f, t34 + 2, 8)} />
+        <Plate text="THE BEST CASE FOR THE TRANSFER" y={540} size={32} tone="paper" p={ease(f, t31 + 2, 8) * (f < t32 ? 1 : 0)} />
+        <Plate text="SITE CONTROL BEFORE A TENANT SIGNS" y={610} size={30} tone="felt" p={ease(f, t32 + 2, 8) * (f < t33 ? 1 : 0)} />
+        <Plate text="READY LAND · HOW A STATE COMPETES" y={680} size={30} tone="green" p={ease(f, t33 + 2, 8) * (f < t34 ? 1 : 0)} />
+        <Plate text="AIDEA SAYS · ~$495M IN DIVIDENDS TO STATE" y={750} size={28} tone="ink" p={ease(f, t34 + 2, 8)} />
       </>}>
       <SVG>
         <CounterBG f={g} id="s10c" floor={1230} lamps={lamps} />
@@ -447,9 +447,9 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} oy={1000}
       overlay={<>
-        <Plate text="ASK WHAT READY LAND IS READY FOR" displayLines={['ASK WHAT READY LAND', 'IS READY FOR']} y={575} size={38} tone="paper" p={ease(f, t37 + 2, 8) * (f < t38 ? 1 : 0)} />
-        <Plate text="OCT 26 · HEARING" y={545} size={46} tone="ink" p={ease(f, t38 + 2, 8) * (f < t52 ? 1 : 0)} />
-        <Plate text="THE FIRST TIME SENATORS CAN ASK" displayLines={['THE FIRST TIME', 'SENATORS CAN ASK']} y={575} size={38} tone="green" p={ease(f, t52 + 2, 8)} />
+        <Plate text="ASK WHAT READY LAND IS READY FOR" y={540} size={32} tone="paper" p={ease(f, t37 + 2, 8) * (f < t38 ? 1 : 0)} />
+        <Plate text="OCT 26 · HEARING" y={612} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t52 ? 1 : 0)} />
+        <Plate text="THE FIRST TIME SENATORS CAN ASK" y={684} size={32} tone="green" p={ease(f, t52 + 2, 8)} />
       </>}>
       <SVG>
         <SenateBG f={g} id="s12s" floor={1230} />

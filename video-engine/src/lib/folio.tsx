@@ -238,8 +238,19 @@ export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: bo
     <rect data-band="ok" x={-40} y={desk} width={1160} height={800} fill={`url(#${id}-d)`} />
     <rect data-band="ok" x={-40} y={desk - 12} width={1160} height={26} fill={FO.walnutDeep} stroke={INK} strokeWidth={5} />
     {/* the blotter, a pencil, and the grain of the desk */}
-    <rect data-band="ok" x={150} y={desk + 90} width={780} height={420} fill={FO.green} stroke={INK} strokeWidth={6} opacity={0.9} />
-    <rect data-band="ok" x={150} y={desk + 90} width={780} height={420} fill="none" stroke={FO.greenHi} strokeWidth={3} opacity={0.4} transform="translate(8 8)" />
+    <rect data-band="ok" x={250} y={desk + 230} width={580} height={250} fill={FO.green} stroke={INK} strokeWidth={6} opacity={0.9} />
+    <rect data-band="ok" x={250} y={desk + 230} width={580} height={250} fill="none" stroke={FO.greenHi} strokeWidth={3} opacity={0.4} transform="translate(8 8)" />
+    <g data-band="ok" transform={`translate(150 ${desk + 330})`}>
+      <ContactShadow cx={0} cy={86} rx={64} ry={10} opacity={0.4} />
+      <path d="M -52 0 L -44 84 L 44 84 L 52 0 Z" fill={FO.cream} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M 52 14 Q 98 20 88 54 Q 80 72 46 68" fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+      <ellipse cx={0} cy={0} rx={52} ry={12} fill={FO.walnutDeep} stroke={INK} strokeWidth={5} />
+      {[0, 1].map((i) => <path key={i} d={`M ${-14 + i * 28} -16 q ${8 * Math.sin(f / 12 + i)} -22 0 -44`} fill="none" stroke="#FFFFFF" strokeWidth={5} strokeLinecap="round" opacity={0.4} />)}
+    </g>
+    <g data-band="ok" transform={`translate(930 ${desk + 430})`}>
+      <ContactShadow cx={0} cy={44} rx={130} ry={12} opacity={0.4} />
+      {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={-120 + (i % 2) * 8} y={36 - i * 22} width={240} height={22} fill={i % 2 ? FO.paper : FO.cream} stroke={INK} strokeWidth={5} />)}
+    </g>
     <g data-band="ok" transform={`translate(780 ${desk + 600}) rotate(${-8 + Math.sin(f / 50) * 0.8})`}>
       <rect x={-130} y={-9} width={260} height={18} fill="#E9B740" stroke={INK} strokeWidth={5} />
       <path d="M 130 -9 L 170 0 L 130 9 Z" fill={FO.creamShade} stroke={INK} strokeWidth={4} />
@@ -626,9 +637,12 @@ export const AerialBG: React.FC<{f: number; id?: string; outline?: number; hatch
       <rect data-band="ok" x={-120} y={-40} width={1320} height={2000} fill={`url(#${id}-s)`} />
       {clumps.map((c, i) => (
         <g key={i} data-band="ok">
-          <ellipse cx={c.x + 6} cy={c.y + 8} rx={c.r} ry={c.r * 0.8} fill={FO.slateDeep} opacity={0.25} />
-          <ellipse cx={c.x} cy={c.y} rx={c.r} ry={c.r * 0.8} fill={i % 3 ? FO.spruce : FO.spruceHi} stroke={INK} strokeWidth={4} opacity={0.92} />
-          {Array.from({length: 4}, (_, j) => <circle key={j} cx={c.x + (rnd(i * 7 + j) - 0.5) * c.r} cy={c.y + (rnd(i * 5 + j + 9) - 0.5) * c.r * 0.6} r={c.r * 0.18} fill={FO.spruceHi} opacity={0.7} />)}
+          <ellipse cx={c.x + 8} cy={c.y + 10} rx={c.r * 1.05} ry={c.r * 0.85} fill={FO.slateDeep} opacity={0.22} />
+          {Array.from({length: 6}, (_, j) => {
+            const sx = c.x + (rnd(i * 11 + j) - 0.5) * c.r * 1.5, sy = c.y + (rnd(i * 13 + j + 5) - 0.5) * c.r * 1.2, sr = c.r * (0.34 + 0.2 * rnd(i * 17 + j));
+            const pts = Array.from({length: 16}, (_, k) => { const a = (k / 16) * Math.PI * 2, rr = k % 2 ? sr * 0.46 : sr; return `${(sx + Math.cos(a) * rr).toFixed(1)},${(sy + Math.sin(a) * rr).toFixed(1)}`; }).join(' ');
+            return <polygon key={j} points={pts} fill={(i + j) % 3 ? FO.spruce : FO.spruceHi} stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />;
+          })}
         </g>
       ))}
       <path data-band="ok" d="M -120 1480 C 200 1380 360 1560 640 1440 S 1000 1330 1260 1400" fill="none" stroke="#8DB6C6" strokeWidth={34} strokeLinecap="round" opacity={0.85} />
