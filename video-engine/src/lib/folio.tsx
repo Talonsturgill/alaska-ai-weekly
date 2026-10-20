@@ -52,8 +52,9 @@ const COVER_W = 360, COVER_H = 500;
 export const Folio: React.FC<{
   x: number; y: number; f: number; scale?: number; emotion?: FolioEmotion; sq?: number; thick?: number; open?: number; tabs?: number; blank?: number;
   rattle?: number; pin?: number; note?: number; look?: number; tilt?: number; id?: string; shadow?: boolean; label?: string; noteText?: string; pinText?: string;
+  forest?: number; tabGlow?: number; tabsStand?: number;
 }> = ({x, y, f, scale = 1, emotion = 'blank', sq = 0, thick = 0, open = 0, tabs = 0, blank = 1, rattle = 0, pin = 0, note = 0, look = 0, tilt = 0, id = 'fo', shadow = true,
-  label = 'ADL 234762', noteText = 'OCT 26', pinText = 'SUBPOENA'}) => {
+  label = 'ADL 234762', noteText = 'OCT 26', pinText = 'SUBPOENA', forest = 0, tabGlow = 0, tabsStand = 0}) => {
   const ph = x * 0.011;
   const rat = rattle * (Math.sin(f * 1.9 + ph) * 5 + Math.sin(f * 3.1) * 2.5);
   const breathe = Math.sin(f / 31 + ph) * 0.006;
@@ -92,6 +93,19 @@ export const Folio: React.FC<{
       </defs>
       {shadow && <ContactShadow cx={0} cy={12} rx={COVER_W * 0.62 + fat * 30} ry={22} opacity={0.42} />}
       <g transform={`scale(${sx} ${sy})`}>
+        {/* a spruce forest poking out of the folder's mouth: the folder is asked to hold the land */}
+        {forest > 0 && (
+          <g opacity={clamp01(forest * 1.6)}>
+            {Array.from({length: 7}, (_, i) => {
+              const tx = -COVER_W / 2 + 36 + i * 50 + 5 * Math.sin(f / 19 + i);
+              const th = (60 + (i * 37) % 60 + forest * 70) * (0.5 + 0.5 * clamp01(forest));
+              return (
+                <path key={i} d={`M ${tx} ${-COVER_H + 8} L ${tx - 22} ${-COVER_H + 8} L ${tx - 10} ${-COVER_H - th * 0.4} L ${tx - 18} ${-COVER_H - th * 0.4} L ${tx} ${-COVER_H - th} L ${tx + 18} ${-COVER_H - th * 0.4} L ${tx + 10} ${-COVER_H - th * 0.4} L ${tx + 22} ${-COVER_H + 8} Z`}
+                  fill={i % 2 ? FO.spruce : FO.spruceHi} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+              );
+            })}
+          </g>
+        )}
         {/* the stack of sheets behind the cover (fatness) */}
         {Array.from({length: sheets}, (_, i) => (
           <g key={i} transform={`translate(${14 + i * 9} ${-i * 3})`}>
@@ -105,7 +119,7 @@ export const Folio: React.FC<{
             {TAB_LABELS.map((t, i) => {
               const col = i % 2, row = Math.floor(i / 2);
               const px0 = -COVER_W / 2 + 64 + col * 148, py0 = -COVER_H + 52 + row * 146;
-              const on = clamp01((nTabs - i) * 1.2);
+              const on = Math.max(0.28, clamp01((nTabs - i) * 1.2));
               return (
                 <g key={t} opacity={on}>
                   <rect x={px0} y={py0} width={128} height={112} fill={FO.cream} stroke={INK} strokeWidth={4} />
@@ -125,8 +139,14 @@ export const Folio: React.FC<{
           const out = on * 150 * (1 - k);
           const wob = Math.sin(f / 9 + i * 1.3) * 2 * rattle;
           return (
-            <g key={t} transform={`translate(${COVER_W / 2 - 20} ${ty + wob})`}>
+            <g key={t} transform={`translate(${COVER_W / 2 - 20 - tabsStand * 20} ${ty + wob - tabsStand * (i % 2 ? 6 : 0)}) rotate(${-tabsStand * (14 + i * 2)} 0 30)`}>
               <rect x={-4} y={0} width={out} height={60} fill={`url(#${id}-k)`} stroke={INK} strokeWidth={5} />
+              {i === 0 && tabGlow > 0 && (
+                <g opacity={clamp01(tabGlow)}>
+                  <rect x={-14} y={-10} width={out + 20} height={80} fill={FO.headlight} opacity={0.35} />
+                  <rect x={-8} y={-4} width={out + 8} height={68} fill="none" stroke={FO.headlight} strokeWidth={5} strokeDasharray="10 7" strokeDashoffset={-f * 0.8} />
+                </g>
+              )}
               {on > 0.6 && <>
                 <text x={12} y={36} fontFamily={MONO} fontWeight={800} fontSize={t.length > 6 ? 21 : 24} letterSpacing={0.5} fill={FO.navy}>{t}</text>
                 <rect x={out - 36} y={14} width={22} height={32} fill="none" stroke={FO.magenta} strokeWidth={3.5} strokeDasharray="6 5" strokeDashoffset={-f * 0.6} opacity={blank} />
@@ -174,8 +194,8 @@ export const Folio: React.FC<{
         {note > 0 && (
           <g transform={`translate(${COVER_W / 2 - 40} ${-COVER_H + 210}) rotate(${6 + 2 * Math.sin(f / 13)}) scale(${0.5 + 0.5 * clamp01(note)})`} opacity={clamp01(note * 2)}>
             <rect x={-96} y={-86} width={192} height={192} fill="#000" opacity={0.25} transform="translate(7 9)" />
-            <rect x={-96} y={-96} width={192} height={192} fill="#FFE27A" stroke={INK} strokeWidth={6} />
-            <rect x={-96} y={-96} width={192} height={30} fill="#F2CC3E" stroke={INK} strokeWidth={4} />
+            <rect x={-96} y={-96} width={192} height={192} fill="#FFF1CC" stroke={INK} strokeWidth={6} />
+            <rect x={-96} y={-96} width={192} height={30} fill={FO.brass} stroke={INK} strokeWidth={4} />
             <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={56} letterSpacing={1} fill={FO.navy}>{noteText}</text>
           </g>
         )}
@@ -186,7 +206,7 @@ export const Folio: React.FC<{
 
 // ---- worlds -------------------------------------------------------------------------------------------------------------------------
 /** The land-office desk: a walnut wall, a banker's lamp throwing a pool, a desk edge with a blotter and a pencil, and the dust in the lamp. */
-export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: boolean}> = ({f, desk = 1180, id = 'dk', chair = true}) => (
+export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: boolean; lamp?: number; chairSwing?: number}> = ({f, desk = 1180, id = 'dk', chair = true, lamp = 0.12, chairSwing = 0}) => (
   <g>
     <defs>
       <linearGradient id={`${id}-w`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={FO.walnutDeep} /><stop offset="1" stopColor={FO.walnut} /></linearGradient>
@@ -203,7 +223,7 @@ export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: bo
       {Array.from({length: 6}, (_, i) => <line key={i} x1={-96 + i * 38} y1={-66} x2={-96 + i * 38} y2={64} stroke={FO.slate} strokeWidth={2.5} />)}
     </g>
     {chair && (
-      <g data-band="ok" transform={`translate(900 ${desk - 20})`}>
+      <g data-band="ok" transform={`translate(900 ${desk - 20}) rotate(${chairSwing + 1.2 * Math.sin(f / 37)} 0 -10)`}>
         <ContactShadow cx={0} cy={6} rx={92} ry={12} opacity={0.4} />
         <rect x={-70} y={-310} width={140} height={200} fill={FO.walnutHi} stroke={INK} strokeWidth={7} />
         <rect x={-70} y={-120} width={140} height={26} fill={FO.walnut} stroke={INK} strokeWidth={7} />
@@ -211,7 +231,10 @@ export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: bo
         <rect x={48} y={-96} width={14} height={92} fill={FO.walnut} stroke={INK} strokeWidth={6} />
       </g>
     )}
-    <ellipse data-band="ok" cx={540} cy={desk - 140} rx={620} ry={520} fill={`url(#${id}-p)`} />
+    <ellipse data-band="ok" cx={540} cy={desk - 140} rx={620} ry={520} fill={`url(#${id}-p)`} opacity={lamp} />
+    {/* flat celadon window light off the Houston snow, a tall soft shaft from upper left */}
+    <path data-band="ok" d={`M -40 -40 L 360 -40 L 760 ${desk} L 120 ${desk} Z`} fill={FO.celadonHi} opacity={0.2 - 0.14 * lamp} />
+    <rect data-band="ok" x={-40} y={-40} width={1160} height={desk + 40} fill={FO.celadon} opacity={0.14 * (1 - lamp)} />
     <rect data-band="ok" x={-40} y={desk} width={1160} height={800} fill={`url(#${id}-d)`} />
     <rect data-band="ok" x={-40} y={desk - 12} width={1160} height={26} fill={FO.walnutDeep} stroke={INK} strokeWidth={5} />
     {/* the blotter, a pencil, and the grain of the desk */}
@@ -228,7 +251,8 @@ export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: bo
       <ContactShadow cx={0} cy={4} rx={80} ry={10} opacity={0.4} />
       <rect x={-46} y={-26} width={92} height={26} rx={6} fill={FO.brass} stroke={INK} strokeWidth={6} />
       <rect x={-8} y={-196} width={16} height={172} fill={FO.brassDeep} stroke={INK} strokeWidth={5} />
-      <path d="M -88 -176 Q 0 -250 88 -176 L 70 -158 L -70 -158 Z" fill={FO.green} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+      <path d="M -88 -176 Q 0 -250 88 -176 L 70 -158 L -70 -158 Z" fill={lamp > 0.5 ? FO.greenHi : FO.green} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+      {lamp > 0.5 && <ellipse cx={0} cy={-150} rx={70} ry={14} fill={FO.lamp} opacity={0.9} />}
       <path d="M -60 -190 Q 0 -230 50 -194" fill="none" stroke={FO.greenHi} strokeWidth={6} opacity={0.6} strokeLinecap="round" />
     </g>
   </g>
@@ -287,6 +311,14 @@ export const SenateBG: React.FC<{f: number; id?: string; floor?: number}> = ({f,
     <rect data-band="ok" x={-40} y={floor - 12} width={1160} height={26} fill={FO.walnut} stroke={INK} strokeWidth={5} />
     {Array.from({length: 9}, (_, i) => <line key={i} data-band="ok" x1={540 + (i - 4) * 80} y1={floor + 14} x2={540 + (i - 4) * 240} y2={1960} stroke={FO.walnutHi} strokeWidth={2.5} opacity={0.35} />)}
     {Array.from({length: 16}, (_, i) => <circle key={i} data-band="ok" cx={((i * 191 + f * 0.3) % 1200) - 60} cy={160 + ((i * 123) % 900)} r={2 + (i % 3)} fill={FO.lamp} opacity={0.2} />)}
+    {/* the near plane: the backs of the public benches along the bottom, and a brass rail */}
+    {[60, 400, 740, 1080].map((bx, i) => (
+      <g key={i} data-band="ok" transform={`translate(${bx + 10 * Math.sin(f / 60 + i)} 0)`}>
+        <rect x={-130} y={1580} width={260} height={400} rx={18} fill={FO.walnut} stroke={INK} strokeWidth={8} />
+        <rect x={-110} y={1600} width={220} height={120} rx={10} fill={FO.walnutHi} opacity={0.5} />
+      </g>
+    ))}
+    <rect data-band="ok" x={-40} y={1520} width={1160} height={22} fill={FO.brass} stroke={INK} strokeWidth={6} />
   </g>
 );
 
@@ -326,6 +358,15 @@ export const CounterBG: React.FC<{f: number; id?: string; floor?: number; lamps?
     <rect data-band="ok" x={-40} y={floor - 16} width={1160} height={34} fill={FO.walnutHi} stroke={INK} strokeWidth={6} />
     <rect data-band="ok" x={-40} y={floor + 18} width={1160} height={14} fill={FO.brass} stroke={INK} strokeWidth={4} />
     {Array.from({length: 12}, (_, i) => <circle key={i} data-band="ok" cx={((i * 191 + f * 0.3) % 1200) - 60} cy={200 + ((i * 123) % 800)} r={2 + (i % 3)} fill="#FFFFFF" opacity={0.25} />)}
+    {/* the near plane: stacked ready-parcel file boxes and a brass rail along the bottom */}
+    {[0, 1, 2, 3, 4].map((i) => (
+      <g key={i} data-band="ok" transform={`translate(${60 + i * 240 + 8 * Math.sin(f / 50 + i)} ${1600 + (i % 2) * 70})`}>
+        <rect x={-100} y={0} width={200} height={260} fill={i % 2 ? FO.manila : FO.manilaDeep} stroke={INK} strokeWidth={8} />
+        <rect x={-100} y={0} width={200} height={36} fill={FO.manilaHi} opacity={0.4} />
+        <rect x={-60} y={70} width={120} height={46} fill="none" stroke={FO.navy} strokeWidth={4} opacity={0.6} />
+      </g>
+    ))}
+    <rect data-band="ok" x={-40} y={1560} width={1160} height={22} fill={FO.brass} stroke={INK} strokeWidth={6} />
   </g>
 );
 
@@ -351,7 +392,7 @@ export const MapSheet: React.FC<{x: number; y: number; f: number; scale?: number
         {pinK > 0 && (
           <g transform={`translate(-170 ${160 - 30 * (1 - clamp01(pinK))})`} opacity={clamp01(pinK * 2)}>
             <ellipse cx={0} cy={4} rx={20} ry={6} fill={INK} opacity={0.3} />
-            <path d="M 0 0 C -30 -34 -22 -64 0 -64 C 22 -64 30 -34 0 0 Z" fill={FO.magenta} stroke={INK} strokeWidth={5} />
+            <path d="M 0 0 C -30 -34 -22 -64 0 -64 C 22 -64 30 -34 0 0 Z" fill={FO.navy} stroke={INK} strokeWidth={5} />
             <circle cx={0} cy={-42} r={8} fill="#FFFFFF" stroke={INK} strokeWidth={3} />
           </g>
         )}
@@ -402,7 +443,7 @@ export const ReceiptTag: React.FC<{x: number; y: number; f: number; scale?: numb
 
 /** A dotted-pencil data centre: a long low shed with rows of windows and cooling fans, drawn dashed because it does not exist. erase (0..1) rubs it out. */
 export const DottedBuilding: React.FC<{x: number; y: number; f: number; scale?: number; k?: number; erase?: number; id?: string; label?: string}> = ({x, y, f, scale = 1, k = 1, erase = 0, label = 'DATA CENTERS'}) => {
-  const op = clamp01(k) * (1 - clamp01(erase));
+  const op = clamp01(k) * (1 - 0.78 * clamp01(erase));
   const dash = `14 9`;
   return (
     <g transform={`translate(${x} ${y}) scale(${scale})`} opacity={op}>
@@ -426,8 +467,8 @@ export const LetterSheet: React.FC<{x: number; y: number; f: number; scale?: num
     <g transform={`translate(${x} ${y}) rotate(${rot + 0.8 * Math.sin(f / 22)}) scale(${scale})`}>
       <rect x={-w / 2 + 10} y={-h / 2 + 14} width={w} height={h} fill="#000" opacity={0.3} />
       <rect x={-w / 2} y={-h / 2} width={w} height={h} fill={FO.paper} stroke={INK} strokeWidth={8} />
-      <rect x={-w / 2} y={-h / 2} width={w} height={64} fill={FO.green} stroke={INK} strokeWidth={6} />
-      <text x={-w / 2 + 28} y={-h / 2 + 42} fontFamily={MONO} fontWeight={900} fontSize={28} letterSpacing={2} fill={FO.cream}>{head}</text>
+      <rect x={-w / 2} y={-h / 2} width={w} height={64} fill={FO.cream} stroke={INK} strokeWidth={6} />
+      <text x={-w / 2 + 28} y={-h / 2 + 42} fontFamily={MONO} fontWeight={900} fontSize={28} letterSpacing={2} fill={FO.navy}>{head}</text>
       {Array.from({length: 9}, (_, i) => <line key={i} x1={-w / 2 + 34} y1={-h / 2 + 108 + i * 34} x2={w / 2 - 34 - (i % 3) * 60} y2={-h / 2 + 108 + i * 34} stroke={FO.slate} strokeWidth={5} strokeLinecap="round" opacity={0.7} />)}
       {items.map((t, i) => {
         const on = clamp01(shown - i);
@@ -460,7 +501,7 @@ export const CouncilSign: React.FC<{x: number; y: number; f: number; scale?: num
 };
 
 /** A witness chair at a hearing table with a brass nameplate and a microphone. The chair is empty unless seated is set (it never is). */
-export const WitnessChair: React.FC<{x: number; y: number; f: number; scale?: number; plate?: string; k?: number; spin?: number; slip?: boolean}> = ({x, y, f, scale = 1, plate = 'CROWTHER', k = 1, spin = 0, slip = false}) => {
+export const WitnessChair: React.FC<{x: number; y: number; f: number; scale?: number; plate?: string; k?: number; spin?: number; slip?: boolean; turn?: number; slipK?: number}> = ({x, y, f, scale = 1, plate = 'CROWTHER', k = 1, spin = 0, slip = false, turn = 0, slipK = 1}) => {
   const pw = monoW(plate, 26, 2) + 44;
   return (
     <g transform={`translate(${x} ${y}) scale(${scale})`} opacity={clamp01(k * 2)}>
@@ -470,7 +511,7 @@ export const WitnessChair: React.FC<{x: number; y: number; f: number; scale?: nu
       <rect x={-232} y={-116} width={18} height={116} fill={FO.walnut} stroke={INK} strokeWidth={6} />
       <rect x={214} y={-116} width={18} height={116} fill={FO.walnut} stroke={INK} strokeWidth={6} />
       {/* the chair, tipping a little on its swivel */}
-      <g transform={`rotate(${spin * Math.sin(f / 9) * 5} 0 -10)`}>
+      <g transform={`rotate(${turn + spin * Math.sin(f / 9) * 5} 0 -10)`}>
         <rect x={-62} y={-330} width={124} height={170} rx={10} fill={FO.green} stroke={INK} strokeWidth={7} />
         <rect x={-62} y={-330} width={124} height={34} rx={10} fill={FO.greenHi} stroke={INK} strokeWidth={6} opacity={0.7} />
         <rect x={-70} y={-170} width={140} height={32} rx={8} fill={FO.green} stroke={INK} strokeWidth={7} />
@@ -486,7 +527,7 @@ export const WitnessChair: React.FC<{x: number; y: number; f: number; scale?: nu
         <rect x={-pw / 2} y={-44} width={pw} height={44} fill={FO.brass} stroke={INK} strokeWidth={6} />
         <text x={0} y={-12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} letterSpacing={2} fill={FO.navy}>{plate}</text>
       </g>
-      {slip && <g transform={`translate(0 ${-470 + 10 * Math.sin(f / 12)}) rotate(-4)`}>
+      {slip && <g transform={`translate(0 ${-470 + 330 * (1 - slipK) + 10 * Math.sin(f / 12)}) rotate(-4)`} opacity={clamp01(slipK * 3)}>
         <rect x={-150} y={-40} width={300} height={80} fill={FO.paper} stroke={INK} strokeWidth={5} />
         <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FO.navy}>NO PERMISSION</text>
         <text x={0} y={24} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FO.navy}>TO ATTEND</text>
@@ -548,6 +589,7 @@ export const Paperclip: React.FC<{x: number; y: number; scale?: number; rot?: nu
 /** A vote lamp: lit when on (0..1). Five of them make five yes votes. */
 export const VoteLamp: React.FC<{x: number; y: number; f: number; on?: number; scale?: number; label?: string}> = ({x, y, f, on = 0, scale = 1, label}) => {
   const k = clamp01(on);
+  if (k <= 0) return null;
   const pop = k > 0 ? 1 + 0.18 * Math.max(0, 1 - (k * 6 - 1)) : 1;
   return (
     <g transform={`translate(${x} ${y}) scale(${scale * pop})`}>
@@ -565,8 +607,50 @@ export const VoteLamp: React.FC<{x: number; y: number; f: number; on?: number; s
 export const OctNote: React.FC<{x: number; y: number; f: number; scale?: number; text?: string; k?: number; rot?: number}> = ({x, y, f, scale = 1, text = 'OCT 26', k = 1, rot = 0}) => (
   <g transform={`translate(${x} ${y}) rotate(${rot + 1.5 * Math.sin(f / 11)}) scale(${scale * (0.6 + 0.4 * clamp01(k))})`} opacity={clamp01(k * 2)}>
     <rect x={-96} y={-86} width={192} height={192} fill="#000" opacity={0.25} transform="translate(7 9)" />
-    <rect x={-96} y={-96} width={192} height={192} fill="#FFE27A" stroke={INK} strokeWidth={6} />
-    <rect x={-96} y={-96} width={192} height={30} fill="#F2CC3E" stroke={INK} strokeWidth={4} />
+    <rect x={-96} y={-96} width={192} height={192} fill="#FFF1CC" stroke={INK} strokeWidth={6} />
+    <rect x={-96} y={-96} width={192} height={30} fill={FO.brass} stroke={INK} strokeWidth={4} />
     <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={56} letterSpacing={1} fill={FO.navy}>{text}</text>
   </g>
 );
+
+/** The real parcel from above: birch-bone snow, spruce clumps in grey-green, a creek, a road, the roofs of Houston. outline (0..1) draws the parcel boundary in stamp ink. */
+export const AerialBG: React.FC<{f: number; id?: string; outline?: number; hatch?: number; roofs?: number; panX?: number}> = ({f, id = 'ae', outline = 1, hatch = 0, roofs = 0, panX = 0}) => {
+  const clumps = Array.from({length: 46}, (_, i) => ({x: -60 + rnd(i * 3 + 1) * 1200, y: 60 + rnd(i * 3 + 2) * 1800, r: 34 + rnd(i * 3 + 3) * 70}));
+  const P = 'M 150 520 L 640 450 L 900 800 L 780 1250 L 330 1360 L 120 920 Z';
+  return (
+    <g transform={`translate(${panX} 0)`}>
+      <defs>
+        <linearGradient id={`${id}-s`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={FO.snow} /><stop offset="1" stopColor={FO.snowShade} /></linearGradient>
+        <clipPath id={`${id}-p`}><path d={P} /></clipPath>
+      </defs>
+      <rect data-band="ok" x={-120} y={-40} width={1320} height={2000} fill={`url(#${id}-s)`} />
+      {clumps.map((c, i) => (
+        <g key={i} data-band="ok">
+          <ellipse cx={c.x + 6} cy={c.y + 8} rx={c.r} ry={c.r * 0.8} fill={FO.slateDeep} opacity={0.25} />
+          <ellipse cx={c.x} cy={c.y} rx={c.r} ry={c.r * 0.8} fill={i % 3 ? FO.spruce : FO.spruceHi} stroke={INK} strokeWidth={4} opacity={0.92} />
+          {Array.from({length: 4}, (_, j) => <circle key={j} cx={c.x + (rnd(i * 7 + j) - 0.5) * c.r} cy={c.y + (rnd(i * 5 + j + 9) - 0.5) * c.r * 0.6} r={c.r * 0.18} fill={FO.spruceHi} opacity={0.7} />)}
+        </g>
+      ))}
+      <path data-band="ok" d="M -120 1480 C 200 1380 360 1560 640 1440 S 1000 1330 1260 1400" fill="none" stroke="#8DB6C6" strokeWidth={34} strokeLinecap="round" opacity={0.85} />
+      <path data-band="ok" d="M -120 1480 C 200 1380 360 1560 640 1440 S 1000 1330 1260 1400" fill="none" stroke={FO.snow} strokeWidth={14} strokeLinecap="round" opacity={0.7} />
+      <path data-band="ok" d="M 470 -40 C 520 500 440 1000 560 1960" fill="none" stroke={FO.slate} strokeWidth={22} strokeLinecap="round" opacity={0.75} />
+      <path data-band="ok" d="M 470 -40 C 520 500 440 1000 560 1960" fill="none" stroke={FO.cream} strokeWidth={4} strokeDasharray="22 22" opacity={0.8} />
+      {hatch > 0 && <g clipPath={`url(#${id}-p)`} opacity={hatch}>
+        <path d={P} fill={FO.navy} opacity={0.12} />
+        {Array.from({length: 26}, (_, i) => <line key={i} x1={80 + i * 36} y1={420} x2={-240 + i * 36 + 520} y2={1400} stroke={FO.navy} strokeWidth={3} opacity={0.22} />)}
+      </g>}
+      {outline > 0 && <path d={P} fill="none" stroke={FO.navy} strokeWidth={9} strokeLinejoin="round" strokeDasharray="30 14" strokeDashoffset={-f * 0.9} opacity={clamp01(outline)} />}
+      {roofs > 0 && (
+        <g data-band="ok" opacity={clamp01(roofs * 1.6)} transform={`translate(${200} ${1480}) scale(${0.7 + 0.3 * clamp01(roofs)})`}>
+          {Array.from({length: 9}, (_, i) => (
+            <g key={i} transform={`translate(${(i % 3) * 66} ${Math.floor(i / 3) * 52}) rotate(${(i * 7) % 10 - 5})`}>
+              <rect x={0} y={0} width={46} height={34} fill={i % 2 ? FO.brass : FO.manilaDeep} stroke={INK} strokeWidth={4} />
+              <path d="M -4 0 L 23 -16 L 50 0 Z" fill={FO.walnut} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+            </g>
+          ))}
+        </g>
+      )}
+      {Array.from({length: 30}, (_, i) => <circle key={`n${i}`} data-band="ok" cx={((i * 83 + f * (0.5 + (i % 3) * 0.25)) % 1300) - 80} cy={((i * 131 + f * 1.1) % 2000)} r={2 + (i % 3)} fill="#FFFFFF" opacity={0.55} />)}
+    </g>
+  );
+};
