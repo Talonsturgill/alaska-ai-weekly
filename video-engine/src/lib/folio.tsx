@@ -193,7 +193,7 @@ export const Folio: React.FC<{
         </g>
         {/* the sticky note */}
         {note > 0 && (
-          <g transform={`translate(${COVER_W / 2 - 70} ${-190}) rotate(${6 + 2 * Math.sin(f / 13)}) scale(${0.5 + 0.5 * clamp01(note)})`} opacity={clamp01(note * 2)}>
+          <g transform={`translate(${-60} ${-200}) rotate(${6 + 2 * Math.sin(f / 13)}) scale(${0.62 * (0.5 + 0.5 * clamp01(note))})`} opacity={clamp01(note * 2)}>
             <rect x={-96} y={-86} width={192} height={192} fill="#000" opacity={0.25} transform="translate(7 9)" />
             <rect x={-96} y={-96} width={192} height={192} fill="#FFF1CC" stroke={INK} strokeWidth={6} />
             <rect x={-96} y={-96} width={192} height={30} fill={FO.brass} stroke={INK} strokeWidth={4} />
@@ -218,7 +218,7 @@ export const DeskBG: React.FC<{f: number; desk?: number; id?: string; chair?: bo
     {/* wainscot panels */}
     {Array.from({length: 4}, (_, i) => <rect key={i} data-band="ok" x={40 + i * 262} y={desk - 560} width={230} height={480} fill="none" stroke={FO.walnutHi} strokeWidth={5} opacity={0.5} />)}
     {/* the framed plat on the wall */}
-    <g data-band="ok" transform={`translate(190 ${desk - 760}) rotate(${-0.6 + Math.sin(f / 60) * 0.3})`}>
+    <g data-band="ok" transform={`translate(350 ${desk - 870}) rotate(${-0.6 + Math.sin(f / 60) * 0.3})`}>
       <rect x={-110} y={-80} width={220} height={160} fill={FO.cream} stroke={INK} strokeWidth={8} />
       {Array.from({length: 5}, (_, i) => <line key={i} x1={-96} y1={-60 + i * 30} x2={96} y2={-60 + i * 30} stroke={FO.slate} strokeWidth={2.5} />)}
       {Array.from({length: 6}, (_, i) => <line key={i} x1={-96 + i * 38} y1={-66} x2={-96 + i * 38} y2={64} stroke={FO.slate} strokeWidth={2.5} />)}
@@ -501,7 +501,7 @@ export const CouncilSign: React.FC<{x: number; y: number; f: number; scale?: num
   const h = lines.length * (size + 14) + 36;
   const up = clamp01(k);
   return (
-    <g transform={`translate(${x} ${y + (1 - up) * 340}) rotate(${rot + 1.2 * Math.sin(f / 17 + x * 0.01)}) scale(${scale})`}>
+    <g transform={`translate(${x} ${y + (1 - up) * 340}) rotate(${rot + 2.6 * Math.sin(f / 17 + x * 0.01)}) scale(${scale})`}>
       <ContactShadow cx={0} cy={4} rx={w * 0.4} ry={10} opacity={0.4} />
       {[-w * 0.32, w * 0.32].map((px) => <rect key={px} x={px - 9} y={-h - 150} width={18} height={150} fill={FO.manilaDeep} stroke={INK} strokeWidth={6} />)}
       <rect x={-w / 2 + 8} y={-h - 190 + 10} width={w} height={h} fill="#000" opacity={0.25} />
@@ -610,9 +610,9 @@ export const Paperclip: React.FC<{x: number; y: number; scale?: number; rot?: nu
 );
 
 /** A vote lamp: lit when on (0..1). Five of them make five yes votes. */
-export const VoteLamp: React.FC<{x: number; y: number; f: number; on?: number; scale?: number; label?: string}> = ({x, y, f, on = 0, scale = 1, label}) => {
+export const VoteLamp: React.FC<{x: number; y: number; f: number; on?: number; scale?: number; label?: string; dim?: boolean}> = ({x, y, f, on = 0, scale = 1, label, dim = false}) => {
   const k = clamp01(on);
-  if (k <= 0) return null;
+  if (k <= 0 && !dim) return null;
   const pop = k > 0 ? 1 + 0.18 * Math.max(0, 1 - (k * 6 - 1)) : 1;
   return (
     <g transform={`translate(${x} ${y}) scale(${scale * pop})`}>
