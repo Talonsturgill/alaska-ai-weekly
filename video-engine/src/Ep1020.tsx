@@ -232,7 +232,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           <MapSheet x={540} y={920} f={g} scale={1.0} k={1} hatch={1} pinK={0} id="s4m" />
           <Stamp x={540} y={900} f={g} scale={1.1} down={easeIn(f, t9 - 14, 14)} ink={f >= t9 ? ease(f, t9, 5) : 0} lines={['NO PAYMENT']} size={50} rot={-3} smudge={0} id="s4s1" />
           <ReceiptTag x={lerp(560, 810, ease(f, t10, 26))} y={lerp(900, 1130, easeIn(f, t10, 26))} f={g} scale={0.95} rot={lerp(-20, 6, ease(f, t10, 26))} lines={['SURVEY + CLOSING', 'COSTS · AIDEA PAYS']} k={ease(f, t10, 6)} size={24} />
-          <Stamp x={420} y={1090} f={g} scale={1.0} down={easeIn(f, t11 - 14, 14)} ink={f >= t11 ? ease(f, t11, 5) : 0} lines={['PRELIMINARY']} size={46} rot={4} smudge={ease(f, t11 + 4, 20)} id="s4s2" />
+          <Stamp x={540} y={1090} f={g} scale={1.0} down={easeIn(f, t11 - 14, 14)} ink={f >= t11 ? ease(f, t11, 5) : 0} lines={['PRELIMINARY']} size={46} rot={4} smudge={ease(f, t11 + 4, 20)} id="s4s2" />
           <Folio x={175} y={1295} f={g} scale={0.55} emotion={f < t11 ? 'proud' : 'worried'} look={0.9} id="s4f" />
         </g>
       </SVG>
@@ -288,7 +288,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <DeskBG f={g} desk={1180} id="s6d" chair={false} />
-        <LetterSheet x={lerp(1500, 800, slide)} y={900} f={g} scale={0.7} rot={lerp(8, -1.5, slide)} head="AIDEA · JULY 30TH" items={['COMMITTED TENANT', 'SITE PLAN', 'POWER SOURCE', 'COOLING', 'WATER PLAN', 'SCHEDULE']} shown={shown} />
+        <LetterSheet x={lerp(1500, 800, slide)} y={945} f={g} scale={0.7} rot={lerp(8, -1.5, slide)} head="AIDEA · JULY 30TH" items={['COMMITTED TENANT', 'SITE PLAN', 'POWER SOURCE', 'COOLING', 'WATER PLAN', 'SCHEDULE']} shown={shown} />
         <Folio x={265} y={1195} f={g} scale={1.0} emotion={f < t17 ? 'alert' : 'worried'} look={0.9} tabs={tabs} open={open} blank={0.6 + 0.4 * Math.sin(g / 5)} rattle={0.15 * ease(f, t19, 6)} id="s6f" />
       </SVG>
     </Frame>
@@ -340,8 +340,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <ExteriorBG f={g} ground={1180} id="s8e" stakes />
         <Folio x={900} y={1330} f={g} scale={0.55} emotion="listen" look={-0.8} tilt={3 * Math.sin(g / 14)} id="s8f" />
         <g data-band="ok"><ellipse cx={905} cy={1335} rx={200} ry={54} fill={FO.snow} stroke={INK} strokeWidth={5} /><ellipse cx={880} cy={1318} rx={60} ry={18} fill="#FFFFFF" opacity={0.7} /></g>
-        <CouncilSign x={290} y={1360} f={g} scale={1.0} lines={['HOUSTON', 'CITY COUNCIL', 'OPPOSE']} k={s1} size={34} lit={0.5 + 0.5 * Math.sin(g / 7)} />
-        <CouncilSign x={690} y={1370} f={g} scale={1.0} lines={['MEADOW LAKES', 'COMMUNITY', 'COUNCIL', 'OPPOSE']} k={s2} size={32} lit={0.5 + 0.5 * Math.sin(g / 6 + 1)} />
+        <CouncilSign x={340} y={1360} f={g} scale={1.0} lines={['HOUSTON', 'CITY COUNCIL', 'OPPOSE']} k={s1} size={34} lit={0.5 + 0.5 * Math.sin(g / 7)} />
+        <CouncilSign x={740} y={1370} f={g} scale={1.0} lines={['MEADOW LAKES', 'COMMUNITY', 'COUNCIL', 'OPPOSE']} k={s2} size={32} lit={0.5 + 0.5 * Math.sin(g / 6 + 1)} />
         {fade > 0.01 && <g opacity={fade}><AerialBG f={g} id="s8a" outline={0.6} hatch={0.3} panX={0} /></g>}
       </SVG>
     </Frame>
@@ -440,8 +440,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const g = f + p.from;
   const t37 = b(37), t51 = b(51), t38 = b(38), t52 = b(52);
   const hop = ease(f, t37 - 12, 26);
-  const x = lerp(-260, 330, hop);
-  const y = 1255 - 150 * Math.sin(hop * Math.PI);
+  const x = lerp(-260, 290, hop);
+  const y = 1275 - 150 * Math.sin(hop * Math.PI);
   const land = bump(f, t37 + 16, 12);
   const turn = -9 * ease(f, t51, 14) + 9 * ease(f, t51 + 26, 6) - 14 * ease(f, t52, 18);
   return (
@@ -449,11 +449,11 @@ const S12: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate text="ASK WHAT READY LAND IS READY FOR" y={540} size={32} tone="paper" p={ease(f, t37 + 2, 8) * (f < t38 ? 1 : 0)} />
         <Plate text="OCT 26TH · HEARING" y={612} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t52 ? 1 : 0)} />
-        <Plate text="WHEN SENATORS CAN ASK HIM" y={684} size={34} tone="green" p={ease(f, t52 + 2, 8)} />
+        <Plate text="WHEN SENATORS CAN ASK HIM" y={672} size={34} tone="green" p={ease(f, t52 + 2, 8)} />
       </>}>
       <SVG>
         <SenateBG f={g} id="s12s" floor={1230} />
-        <WitnessChair x={780} y={1260} f={g} scale={1.0} plate="CROWTHER" turn={turn} />
+        <WitnessChair x={830} y={1260} f={g} scale={1.0} plate="CROWTHER" turn={turn} />
         <Folio x={x} y={y} f={g} scale={0.95} emotion={f < t38 ? 'ask' : 'proud'} sq={land * 0.8} tabs={6} note={ease(f, t38, 8)} noteText="OCT 26TH" look={0.9} blank={0.5} id="s12f" />
       </SVG>
     </Frame>

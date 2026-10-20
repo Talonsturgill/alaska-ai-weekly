@@ -118,6 +118,7 @@ export const Folio: React.FC<{
           <g opacity={clamp01(k * 2)}>
             <rect x={-COVER_W / 2} y={-COVER_H} width={COVER_W} height={COVER_H} fill={`url(#${id}-p)`} stroke={INK} strokeWidth={7} />
             {TAB_LABELS.map((t, i) => {
+              const POCKET: string[][] = [['COMMITTED', 'TENANT'], ['SITE', 'PLAN'], ['POWER', 'SOURCE'], ['COOLING'], ['WATER', 'PLAN'], ['SCHEDULE']];
               const col = i % 2, row = Math.floor(i / 2);
               const px0 = -COVER_W / 2 + 64 + col * 148, py0 = -COVER_H + 52 + row * 146;
               const on = Math.max(0.28, clamp01((nTabs - i) * 1.2));
@@ -125,7 +126,7 @@ export const Folio: React.FC<{
                 <g key={t} opacity={on}>
                   <rect x={px0} y={py0} width={128} height={112} fill={FO.cream} stroke={INK} strokeWidth={4} />
                   <rect x={px0 + 7} y={py0 + 7} width={114} height={98} fill="none" stroke={FO.magenta} strokeWidth={3.2} strokeDasharray="9 7" strokeDashoffset={-f * 0.5} opacity={blank} />
-                  <text x={px0 + 64} y={py0 + 62} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={t.length > 7 ? 17 : 20} letterSpacing={1} fill={FO.navy}>{t}</text>
+                  {POCKET[i].map((w, wi) => <text key={wi} x={px0 + 64} y={py0 + 40 + wi * 22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} letterSpacing={0.5} fill={FO.navy}>{w}</text>)}
                   <text x={px0 + 64} y={py0 + 92} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={FO.magenta} opacity={blank}>BLANK</text>
                 </g>
               );
@@ -140,7 +141,7 @@ export const Folio: React.FC<{
           const out = on * 190 * (1 - k);
           const wob = Math.sin(f / 9 + i * 1.3) * 2 * rattle;
           return (
-            <g key={t} transform={`translate(${COVER_W / 2 - 20 - tabsStand * 20} ${ty + wob - tabsStand * (i % 2 ? 6 : 0)}) rotate(${-tabsStand * (14 + i * 2)} 0 30)`}>
+            <g key={t} transform={`translate(${COVER_W / 2 - 20} ${ty + wob + tabsStand * (i % 2 ? -9 : 9)})`}>
               <rect x={-4} y={0} width={out} height={60} fill={`url(#${id}-k)`} stroke={INK} strokeWidth={5} />
               {i === 0 && tabGlow > 0 && (
                 <g opacity={clamp01(tabGlow)}>
@@ -159,8 +160,10 @@ export const Folio: React.FC<{
         <g transform={`translate(${-COVER_W / 2} 0) scale(${coverSX} 1) translate(${COVER_W / 2} 0)`}>
           <rect x={-COVER_W / 2} y={-COVER_H} width={COVER_W} height={COVER_H} fill={`url(#${id}-m)`} stroke={INK} strokeWidth={9} strokeLinejoin="round" />
           {/* the top tab with the case number */}
-          <path d={`M ${-COVER_W / 2} ${-COVER_H} L ${-COVER_W / 2} ${-COVER_H - 46} L ${-COVER_W / 2 + 190} ${-COVER_H - 46} L ${-COVER_W / 2 + 214} ${-COVER_H} Z`} fill={`url(#${id}-k)`} stroke={INK} strokeWidth={9} strokeLinejoin="round" />
-          <text x={-COVER_W / 2 + 18} y={-COVER_H - 12} fontFamily={MONO} fontWeight={900} fontSize={25} letterSpacing={1} fill={FO.navy}>{label}</text>
+          <g opacity={clamp01(1 - k * 3)}>
+            <path d={`M ${-COVER_W / 2} ${-COVER_H} L ${-COVER_W / 2} ${-COVER_H - 46} L ${-COVER_W / 2 + 190} ${-COVER_H - 46} L ${-COVER_W / 2 + 214} ${-COVER_H} Z`} fill={`url(#${id}-k)`} stroke={INK} strokeWidth={9} strokeLinejoin="round" />
+            <text x={-COVER_W / 2 + 18} y={-COVER_H - 12} fontFamily={MONO} fontWeight={900} fontSize={25} letterSpacing={1} fill={FO.navy}>{label}</text>
+          </g>
           <path d={`M ${-COVER_W / 2 + 12} ${-COVER_H + 14} L ${COVER_W / 2 - 12} ${-COVER_H + 14}`} stroke={FO.manilaHi} strokeWidth={6} opacity={0.7} strokeLinecap="round" />
           <rect x={COVER_W / 2 - 22} y={-COVER_H} width={22} height={COVER_H} fill={FO.manilaDeep} opacity={0.3} />
           {/* the face */}
@@ -487,7 +490,7 @@ export const LetterSheet: React.FC<{x: number; y: number; f: number; scale?: num
         const on = clamp01(shown - i);
         return (
           <g key={t} opacity={on} transform={`translate(${(1 - on) * 80} 0)`}>
-            <text x={-w / 2 + 40} y={-h / 2 + 112 + 6 + i * 34} fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={FO.magentaDeep}>{`NO ${t}`}</text>
+            <text x={-w / 2 + 40} y={-h / 2 + 108 - 9 + i * 34} fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={FO.magentaDeep}>{`NO ${t}`}</text>
           </g>
         );
       })}
@@ -524,7 +527,7 @@ export const WitnessChair: React.FC<{x: number; y: number; f: number; scale?: nu
       <rect x={-232} y={-116} width={18} height={116} fill={FO.walnut} stroke={INK} strokeWidth={6} />
       <rect x={214} y={-116} width={18} height={116} fill={FO.walnut} stroke={INK} strokeWidth={6} />
       {/* the chair, tipping a little on its swivel */}
-      <g transform={`rotate(${turn + spin * Math.sin(f / 9) * 5} 0 -10)`}>
+      <g transform={`translate(0 -10) scale(${1 - Math.abs(turn) * 0.022} 1) rotate(${turn * 0.25 + spin * Math.sin(f / 9) * 4}) translate(0 10)`}>
         <rect x={-62} y={-330} width={124} height={170} rx={10} fill={FO.green} stroke={INK} strokeWidth={7} />
         <rect x={-62} y={-330} width={124} height={34} rx={10} fill={FO.greenHi} stroke={INK} strokeWidth={6} opacity={0.7} />
         <rect x={-70} y={-170} width={140} height={32} rx={8} fill={FO.green} stroke={INK} strokeWidth={7} />
