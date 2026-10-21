@@ -22,7 +22,7 @@ SAMPLES THE 9:16 MASTER, because that is the cut config/panel_protocol.md conven
 on. It sampled the square until 2026-08-09, when all three judges independently reported they
 could not see the frame they had been asked to grade.
 """
-import argparse, glob, json, os, subprocess, sys, time
+import argparse, glob, json, os, re, subprocess, sys, time
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(REPO, "out", "dispatch")
@@ -465,6 +465,113 @@ def main():
         print("  !! audio_report.json COULD NOT BE REBUILT and may describe a different cut:")
         print("     " + (_r.stderr or _r.stdout).strip()[-300:])
 
+    n = write_index(EV, _board, end)
+    print(f"  INDEX.txt: {n} files listed for the panel and the editor")
+
+
+# THE PACK HAS AN INDEX (machine pass 2026-10-21). The editor agent has only Read, and the panel
+# seats are briefed with a directory, so on 10-17 the editor could not confirm 3 of 5 claimed
+# fixes and on 10-18 all three seats guessed still names and scored Motion in round 1 without
+# opening a filmstrip. A judge who cannot list the directory needs the list written down: every
+# file, its timecode, and the shot and beat it photographs. Written LAST, so it lists what exists.
+NOTES = {
+    "contact_square.jpg": "contact sheet, every still below at a third of full size",
+    "caption_cues.json": "every open-caption cue in the delivered cut, start/end/text",
+    "motion.json": "measured frame 1 vs frame 8 change for every filmstrip, read before calling a beat frozen",
+    "motion_registered.json": "the same with the camera solved out per shot",
+    "audio_report.json": "loudness, true peak, LRA and VO gaps of the delivered mix",
+}
+
+
+def write_index(ev, board, film_end):
+    """Write ev/INDEX.txt naming every file in the pack; return how many it listed."""
+    beat_span = _spans(board["beats"], film_end)
+    shot_span = _spans(board["shots"], film_end)
+    subj = {b["id"]: b.get("draw", {}).get("subject", "") for b in board["beats"]}
+
+    def where(t):
+        sh = next((s for s, (lo, hi) in shot_span.items() if lo <= t < hi), None)
+        bt = max((b for b, (lo, _) in beat_span.items() if lo <= t + 1e-6),
+                 key=lambda b: beat_span[b][0], default=None)
+        return (f"shot {sh}" if sh is not None else "after the last shot (credits)",
+                f"beat {bt} ({subj.get(bt, '')})" if bt is not None and sh is not None else "")
+
+    try:
+        motion = json.load(open(os.path.join(ev, "motion.json"))).get("strips", {})
+    except (OSError, ValueError):
+        motion = {}
+    stills, strips, notes = [], [], []
+    for f in sorted(os.listdir(ev)):
+        p = os.path.join(ev, f)
+        if f == "INDEX.txt" or f.startswith("_") or not os.path.isfile(p):
+            continue
+        m = re.fullmatch(r"f(\d+(?:\.\d+)?)\.jpg", f)
+        if m:
+            t = float(m.group(1))
+            sh, bt = where(t)
+            stills.append((t, f"{f:<44} still  t={t:6.1f}s  {sh}  {bt}".rstrip()))
+            continue
+        m = re.fullmatch(r"filmstrip_(.+)\.jpg", f)
+        if m:
+            name = m.group(1)
+            row = motion.get(name, {})
+            c = row.get("centre_s")
+            bid = name.rsplit("_", 1)[-1]
+            bid = int(bid) if bid.isdigit() else None
+            sh, _ = where(c) if c is not None else ("shot ?", "")
+            pct = f"  changed {row['changed_pct']}%" if "changed_pct" in row else ""
+            cs = f"centre {c:6.2f}s" if c is not None else "centre ?"
+            strips.append((c if c is not None else 1e9,
+                           f"{f:<44} strip  {cs}  {sh}  beat {bid} ({subj.get(bid, '')}){pct}"))
+            continue
+        notes.append(f"{f:<44} {NOTES.get(f, 'pack file')}")
+    lines = ["# out/evidence/INDEX.txt, written by scripts/build_evidence.py from the files on disk.",
+             "# Open files by these exact names; never guess a name. Times are seconds from frame 0.",
+             "", "## Reference files", *notes,
+             "", f"## Stills ({len(stills)}), in time order", *[s for _, s in sorted(stills)],
+             "", f"## Motion filmstrips ({len(strips)}), 8 frames each, in time order",
+             *[s for _, s in sorted(strips)], ""]
+    with open(os.path.join(ev, "INDEX.txt"), "w") as fh:
+        fh.write("\n".join(lines))
+    return len(stills) + len(strips) + len(notes)
+
+
+def _self_test():
+    import tempfile
+    board = {"shots": [{"id": 1, "t": "0.000-5.000"}, {"id": 2, "t": "5.000-9.000"}],
+             "beats": [{"id": 1, "t": "0.000-2.000", "draw": {"subject": "calf"}},
+                       {"id": 2, "t": "2.000-5.000", "draw": {"subject": "frame"}},
+                       {"id": 3, "t": "5.000-9.000", "draw": {"subject": "plane"}}]}
+    with tempfile.TemporaryDirectory() as d:
+        for f in ("f001.0.jpg", "f006.5.jpg", "f009.6.jpg", "filmstrip_frame_2.jpg",
+                  "contact_square.jpg", "_p_tmp_1.jpg"):
+            open(os.path.join(d, f), "w").close()
+        json.dump({"strips": {"frame_2": {"centre_s": 2.2, "changed_pct": 4.1}}},
+                  open(os.path.join(d, "motion.json"), "w"))
+        n = write_index(d, board, 10.0)
+        txt = open(os.path.join(d, "INDEX.txt")).read()
+    checks = [
+        (n == 6, "lists every pack file and skips probe scratch (6)"),
+        ("f001.0.jpg" in txt and "shot 1  beat 1 (calf)" in txt, "a still names its shot and beat"),
+        ("f006.5.jpg" in txt and "shot 2  beat 3 (plane)" in txt, "a later still lands in its own shot"),
+        ("after the last shot (credits)" in txt, "a still past the board is the credits"),
+        ("centre   2.20s  shot 1  beat 2 (frame)  changed 4.1%" in txt, "a strip carries centre, beat and motion"),
+        ("_p_tmp" not in txt, "probe scratch is not listed"),
+    ]
+    for ok, what in checks:
+        print(f"  [{'x' if ok else ' '}] {what}")
+    ok = all(c for c, _ in checks)
+    print("SELF-TEST", "PASS" if ok else "FAIL")
+    return 0 if ok else 1
+
 
 if __name__ == "__main__":
+    if "--self-test" in sys.argv:
+        sys.exit(_self_test())
+    if "--index-only" in sys.argv:
+        # Rebuild INDEX.txt for the pack already on disk, without re-sampling the cut.
+        _b = json.load(open(os.path.join(OUT, "storyboard.json")))
+        _p = json.load(open(os.path.join(OUT, "episode_props.json")))
+        print("INDEX.txt:", write_index(EV, _b, _p["total"] / 30.0), "files")
+        sys.exit(0)
     main()
