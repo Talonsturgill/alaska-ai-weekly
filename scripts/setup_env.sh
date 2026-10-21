@@ -23,6 +23,10 @@ fi
 # python deps (only install if missing)
 python3 -c "import PIL,numpy,scipy,matplotlib,edge_tts,soundfile,yaml" >/dev/null 2>&1 \
   || python3 -m pip install --break-system-packages -q pillow numpy scipy matplotlib edge-tts soundfile pyyaml
+# `import PIL` passes on a shadowing copy whose C core can't load (10-20 and 10-21 lost a render
+# and encode to it at build_evidence). Prove the core loads, repair ahead of the shadow, or stop.
+python3 "$(dirname "${BASH_SOURCE[0]}")/pillow_check.py" --repair \
+  || { echo "setup_env: Pillow can't load its C core; build_evidence would die after the render" >&2; exit 1; }
 # librosa + faster_whisper: the Gemini VO pipeline's soundcheck (scripts/vo_soundcheck.py
 # pitch-variance gate) imports librosa, and scripts/vo_synth_gemini.py's whole-file forced
 # alignment imports faster_whisper, both under the SYSTEM python3 (not the voice venv). They

@@ -812,7 +812,9 @@ mid-delivery change.
 - **THE PANEL, AND HOW MANY JUDGES** (owner, 2026-09-30: one judge for early rounds, three decide the
   ship). Convened per `config/panel_protocol.md`: judges score from the evidence pack ALONE with the
   anchors for their axes, commit axis scores BEFORE seeing what changed, and a re-grade carries that
-  judge's own previous card.
+  judge's own previous card. Every judge, editor and flow-critic prompt names
+  `out/evidence/INDEX.txt` (build_evidence writes it: every still and filmstrip with its timecode,
+  shot and beat) as the first file to read, because those agents can't list a directory.
   - **Early rounds: ONE judge**, one standing seat that carries its own card across rounds, graded
     against the bar read from the rubric. Motion is graded from the filmstrips, never "unverifiable
     from stills". On the FIRST graded cut, and on any round where timing or the edit changed, also

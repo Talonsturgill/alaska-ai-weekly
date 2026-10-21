@@ -79,6 +79,14 @@ spent on films nowhere near the bar, where one careful judge finds the same name
   0.4 drop rule above applies to the median; a single seat that drops more than 1.0 on a cut with
   no reverted change is re-run once before it is acted on.
 
+## Every prompt names the pack's index (machine pass 2026-10-21)
+
+The judges and the editor read files and can't list a directory, so on 10-17 and 10-18 they
+guessed still names and graded Motion without a filmstrip. `scripts/build_evidence.py` writes
+`out/evidence/INDEX.txt` last, naming every still and filmstrip with its timecode, shot and beat.
+Each judge, editor and flow-critic prompt says: read `out/evidence/INDEX.txt` first and open
+files by the names it lists.
+
 ## The rule this protocol does NOT contain
 
 Nothing here permits a run to stop, to ship below bar, or to decide a score is "really"

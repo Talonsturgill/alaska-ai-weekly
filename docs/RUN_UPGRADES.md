@@ -3884,3 +3884,7 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - In-run fixes: Pillow for the container Python, caption split rule, 55 beat ceiling, plate x and y ladders, build_scenes after every conform. DISPATCH_STANDARD section 17 added.
 - Honest gaps: calf drawn with tusk buds, Alaska map is a stylised outline, the hand hover reads as not settling. All queued.
 - Queued for the machine pass: 9 items (docs/MACHINE_QUEUE.md, 2026-10-21).
+
+## 2026-10-21 weekly machine pass
+- Shipped: strip_name_check reads scene-component episodes (it had crashed on every film since 10-06), visible_copy_check resolves const and ternary plate text per scene, build_evidence writes out/evidence/INDEX.txt and the judge prompts name it, setup_env verifies Pillow loads (scripts/pillow_check.py), audio_report explains an LRA over 9.
+- Escalated: the premix arc softener in dispatch_mix.py (needs an over-target film to tune on), strip_name_check promotion to a gate (real board versus engine drift on 10-21, 10-18 and older).

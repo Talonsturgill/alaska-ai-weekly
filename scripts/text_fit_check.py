@@ -239,7 +239,12 @@ const attrs=n=>Object.fromEntries(n.attributes.properties.filter(ts.isJsxAttribu
 const val=n=>n&&ts.isJsxExpression(n)?n.expression:n;
 const defaults=name=>{const d=vars.get(name);if(!d||!d.initializer||!ts.isArrowFunction(d.initializer))return {};const p=d.initializer.parameters[0];if(!p||!ts.isObjectBindingPattern(p.name))return {};return Object.fromEntries(p.name.elements.map(e=>[e.name.getText(sf),numeric(e.initializer)]));};
 let props=null;try{props=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));}catch(e){}
-const strings=n=>{n=val(n);if(!n)return null;if(ts.isStringLiteral(n)||ts.isNoSubstitutionTemplateLiteral(n))return [n.text];if(ts.isConditionalExpression(n)){const a=strings(n.whenTrue),b=strings(n.whenFalse);return a&&b?[...new Set([...a,...b])]:null;}if(ts.isParenthesizedExpression(n))return strings(n.expression);return null;};
+// A `const` bound to a string or a ternary of strings resolves to its values, looked up
+// LEXICALLY from the use (nearest enclosing block first), so two scenes that each declare
+// `const ann = ...` are never confused (machine pass 2026-10-21: 10-16 and 10-17 both failed
+// visible_copy_check on `<Plate text={ann} />` and 10-17 lost a 17 minute render to it).
+const constDecl=id=>{for(let p=id.parent;p;p=p.parent){if(!p.statements)continue;for(const st of p.statements){if(!ts.isVariableStatement(st)||!(st.declarationList.flags&ts.NodeFlags.Const))continue;for(const d of st.declarationList.declarations)if(ts.isIdentifier(d.name)&&d.name.text===id.text)return d;}}return null;};
+const strings=(n,seen=new Set())=>{n=val(n);if(!n)return null;if(ts.isStringLiteral(n)||ts.isNoSubstitutionTemplateLiteral(n))return [n.text];if(ts.isConditionalExpression(n)){const a=strings(n.whenTrue,seen),b=strings(n.whenFalse,seen);return a&&b?[...new Set([...a,...b])]:null;}if(ts.isParenthesizedExpression(n))return strings(n.expression,seen);if(ts.isIdentifier(n)&&!seen.has(n.text)){const d=constDecl(n);return d&&d.initializer?strings(d.initializer,new Set([...seen,n.text])):null;}return null;};
 // Copy coverage is additive and independent of geometry. Only display-bearing
 // attributes and the named headline array are read, never style/code literals.
 const copy_literals=[],copy_issues=[];
