@@ -1,0 +1,63 @@
+{
+ "run_date": "2026-10-21",
+ "palette": {
+  "sky": "#9AA3A6 cool fog pewter grading to #DCDFDB with a faint green-grey horizon over the Chukchi beach; the dusk beach is #5F6B78 grading to #A9AFB4; the cabin night is #2A211C with a pale kerosene lamp pool #F2E2B0 under a #9FB59A green cast; orbit is #121A33 deep navy with #CFE3EE hairlines",
+  "ground": "#CFC4AE straw gravel with #8A7F6C shadow planes; sea #2A5568 slate teal with #3F7A86 swell highlights; carcass mounds are a darker #6F6359 with a cool #A8A3A0 top edge so they read as silhouettes against the gravel",
+  "hero": "#B8765A tawny blubber calf (shade #8A4F3C, key #E1A584), cream whisker pad #F2E6D0, ivory tusk buds, wet #101423 eyes with a white catchlight",
+  "accent": "#FF8C1A survey orange",
+  "shadow": "#101423",
+  "mood": "a cold pewter-lilac September beach where everything is dull and counted until one warm tawny thing breathes; survey orange marks only the count, and a lamp-lit cabin is the one warm room",
+  "roles": {
+   "tawny #B8765A": "the calf only. Carcass mounds are the dull grey-brown #8C7D72 so the living thing is the only warm hide.",
+   "teal ink #2A5568": "the sea and the lagoon only",
+   "dotted pale #CFE3EE": "the network's guesses and the satellite grid: dotted, never solid, because a guess is not yet a mark",
+   "navy-black #101423": "ink, plates and outlines",
+   "survey orange #FF8C1A": "ONLY the count and its marks: viewfinder corners, human label boxes, the question stamp and the window mullions the frame becomes. Never the calf, the sea, the flannel, the puffer or the route line. At most one orange system per frame. The small parked question mark in the corner of the machine shots is drawn as an outline and is exempt from the one-system rule.",
+   "flannel (Violet)": "the rig's flannel outfit pushed to a muted desaturated check, never orange and never tawny, so the calf is the only warm hide",
+   "puffer (Tony)": "the rig's puffer outfit in a dull moss, kept clear of the sea teal",
+   "kerosene lamp #F2E2B0": "the cabin lamp and its pool only, pale straw under a green-grey cast. Warmth in the cabin sits in the calf and the blanket more than in the light, so it does not repeat 10-18's amber kitchen or 10-20's walnut lamp pool.",
+   "village windows #E8B66A": "tiny dim warm points far down the dusk beach, the community's windows. Warmth first appears there and only later fills the cabin.",
+   "brass tally #C99A3C": "the tally clicker only",
+   "trail camera LED #F2E6D0": "a cream blink, never red",
+   "network layers": "pale #CFE3EE glass at 30 to 40 percent with dotted links",
+   "map and route": "bone land, teal water, the route line in navy ink because it is not a count",
+   "pool tile #A9C9C6": "the SeaLife pool tile and water, an aqua that is explicitly not the sea teal",
+   "kennel #8A8F94": "the transport kennel only",
+   "carcass mounds": "#6F6359 with a cool #A8A3A0 top edge, the same everywhere"
+  },
+  "diverges_from_last_two": "10-20 was an overcast celadon and walnut office with a manila folder and fireweed magenta. 10-18 was a blue-hour indigo and rose world with a mustard felt bench and a mint jelly. This film is a cool fog-pewter and teal outdoor coast with straw gravel, a tawny animal hero and survey orange, then a pale-lamp plank cabin, a dusk beach and a navy orbit. HONEST OVERLAP: survey orange plays the same single-marker role as 10-18's alarm red but sits on the yellow side of orange; navy ink is shared by every film; a lamp pool is again the cabin's payoff but it is pale and green-grey, not amber."
+ },
+ "light": {
+  "time_of_day": "soft fog-pewter dawn on the beach, a dusk beach, a pale kerosene-lit cabin at night turning to grey dawn at the window, a navy orbit, a map, dark data panels and a bright aqua pool",
+  "direction": "beach: soft top light from the fog sky with a low cool smear at the horizon, no hard sun; cabin: a single pale straw kerosene lamp low left as the key with a cool window fill; orbit: flat cold light from the grid itself",
+  "intent": "key=fog sky (beach), low cool horizon smear (dusk), a pale kerosene lamp low left (cabin), flat panel light (data); fill=gravel bounce; rim=cream on the lit side. Warmth first appears as the community's tiny windows at dusk and then fills the cabin through the calf and the blanket, so the rescue is the warmest the film gets.",
+  "depth": "S1 to S3, S8, S16: far sea band 6 px, mid haulout mounds 14 px, hero plane 1.0, near stones and a tin can at y1500 drifting 24 px. S2 map: static paper land plane, pin 1.0, near cloud wisps 20 px. S4: calf 1.0, near prints at y1500. S5, S6, S9 data panels: static grid, panel or photo 1.0, near dust and a hand edge at y1475 and below. S7 and S16 orbit: starfield 4 px, coast 10 px, grid 1.0, satellite body 20 px. S10 and S11 dusk beach: low cool horizon smear, village window points 6 px, sea 6 px, mounds 14 px, calf 1.0, near stones y1500. S12: dusk gravel 1.0, cabin wall 8 px, near stones. S13 cabin: wall static, window 8 px, calf and people 1.0, near blanket folds at y1500, the window greys from night to dawn at beat 54. S14: far shore 6 px, water bands 14 px, skiff 1.0, near ripples 26 px, then the map plane static with the route line 1.0. S15 pool: tiled wall static, water band 1.0, near pool rim at y1500 with caustic drift."
+ },
+ "shape_language": "OPEN CORNERS AGAINST HEAVY HORIZONTAL MASS. The count is four L-shaped orange corners that never close into a rectangle until the frame becomes the cabin window, and everything it counts is a low, heavy, horizontal mass hugging the ground line (the mounds, the carcasses, the calf, the shore). Closure is the story beat: the frame only closes around a living thing as a window. This differs from 10-18 (soft round jelly against hard angular props) and 10-20 (hard rectangles with a folder hero) because the contrast here is open against closed and flat against ground, and the hero is an animal, not an object.",
+ "casting": {
+  "hero": "WalrusCalf (net-new, lib/calf.tsx), Annautaq. fauna.tsx has an adult hauled-out Walrus but no calf: the calf needs juvenile proportions, tawny hide, an eye-open and breath rig and a hoo-hoo throat pulse. dedupe.py check --hero WalrusCalf returned FRESH. Not Norm or Folio, the last two heroes.",
+  "kit_used": {
+   "WalrusCalf": "hero, S1 (dull) and S3 to S15 (net-new)",
+   "CarcassMound": "S1, S2, S3, S8, S10 (net-new, silhouette derived from the fauna.tsx Walrus so the two read as kin)",
+   "ViewFrame": "the throughline: S1, S2, S3, S4, S6, S7, S8, S11, S13, S16 (net-new)",
+   "BeachBG, CabinBG, OrbitBG": "net-new sets: S1 to S4, S8, S10 to S12 beach, S13 cabin, S7 and S16 orbit",
+   "Character (shelf), flannel and puffer outfits": "Violet and Tony, generic rig, S2, S12, S13, S14 and S16; Violet's sleeve and hand only in S4 and S11; no figures in S8",
+   "TallyCounter (shelf, props.tsx)": "the clicker, S1 only, under a human hand, plus a flicker that never settles in S16",
+   "SatelliteEye (shelf, sensors.tsx)": "S7, S8, S16",
+   "BushPlane (shelf, vehicles.tsx)": "S14",
+   "AlaskaMini (shelf, kit.tsx)": "S2 and S14",
+   "TrailCam, HaulPhoto, Pool, Kennel, BearPrints, Phone": "net-new in calf.tsx (no trail camera, labelled photo, pool or kennel on the shelf); the network layers, the lagoon skiff, the dusk windows and the route line are episode-local"
+  },
+  "hero_state": "a breathing grey mound at 3 s that looks like one more carcass, warming to tawny and opening a wet eye at 21 s, afraid and small beside bear prints at 24 s, held still beside the question mark during the community scenes, sad and calling at the cabin window at 99 s, asleep with his head against Violet's leg at 104 s, afloat in a small pool at 118 s, and finally a warm dot beside a tiny figure at the close",
+  "net_new_reason": "the shelf has the adult hauled-out Walrus mound but no calf, no carcass, no beach set and no counting frame. WalrusCalf is reusable for any marine-mammal rescue or survey story."
+ },
+ "motion_language": "nothing linear: the viewfinder snaps on with overshoot, the tally clicks with a mechanical hit under a human hand only, the calf's belly rises and falls on a slow breath that is the film's only moving thing on the beach for two seconds, the network's dotted guesses drift partway toward the human boxes and never lock, flippers shuffle, the whisker pad twitches, hoo hoo makes the throat pulse.",
+ "composition": {
+  "focal_hierarchy": "one warm object per shot. The calf is the best-finished thing in every frame it is in. The lower third (y1475 and below) carries gravel stones, a tin can, bear prints, blanket folds or ripples. The community beat is composed with the calf low and still in the foreground and house lights small in the distance, never a drawing of people.",
+  "negative_space": "the community's decision (S10 and S11) is held quiet on purpose: S10 is a static dusk wide with steady house windows and the calf small at the edge, S11 is a low two-up of Violet's hand and the calf's flank, and no machine is on screen in either",
+  "safe_area": "hero action inside y 420 to 1320, caption band 1336 to 1472 clear of hero motion",
+  "signature_shot": "S3 at 21.1 to 24.6 s: two hard orange boxes locked on two dull grey carcasses and, between them and outside both boxes, a tawny calf's wet eye opens with a white catchlight. Nothing orange touches him."
+ },
+ "craft_advance": "none required; WalrusCalf and ViewFrame are reusable",
+ "world_values": "mid: fog beach and sea, the map; dark: the data panels, orbit and the night cabin; mid-dark: the dusk beach; light: the aqua pool. The cut S9 to S10 rides the orange frame from a dark panel to the dusk beach, and S14 to S15 rides the calf from the map to the bright pool."
+}

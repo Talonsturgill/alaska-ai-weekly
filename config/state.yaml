@@ -2658,3 +2658,48 @@ dispatch_history:
       lamp clicks on at the end, overcast snow light on the Houston flat, a spruce-green
       hearing room, a bright counter
     metaphor: a manila case folder with six empty tabs asked to hold a forest
+- date: '2026-10-21'
+  topic: USGS neural networks for walruses and the Point Lay orphaned calf Annautaq,
+    the community asked first
+  slug: dispatch-2026-10-21-the-count-and-the-calf
+  key_entities:
+  - USGS
+  - walrus
+  - Point Lay
+  - Alaska SeaLife Center
+  - Annautaq
+  - Violet Anniskett
+  - Tony Fischbach
+  - Alaska Public Media
+  - Advanced Research Computing
+  - Marine Mammal Protection Act
+  archetype: survey-orange counting frame that becomes a window
+  palette: soft pewter dawn over a teal sea and straw gravel, a tawny calf, survey
+    orange for the count, one amber cabin and a navy orbit
+  voice: gemini-tts:Sulafat
+  stance: mixed
+  angle: USGS is teaching machines to spot walruses and to count their carcasses from
+    the sky, but at Point Lay in September the count only found one living calf because
+    a person was close enough to see a stomach move, and what happened next waited
+    on a decision the community made first.
+  hero: WalrusCalf
+  cast:
+  - WalrusCalf
+  - CarcassMound
+  - ViewFrame
+  - Character
+  - SatelliteEye
+  - BushPlane
+  - AlaskaMini
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: pewter-coast-and-tawny-hero
+    palette: soft pewter dawn over a teal sea and straw gravel, a tawny calf, survey
+      orange for the count, one amber cabin and a navy orbit
+    camera_strategy: push-ins on the calf with orbit pull-backs
+    light_story: soft dawn light on a gravel beach, a navy orbit, a gentle dusk beach,
+      then one warm glowing amber lamp pool in a plank cabin
+    metaphor: a survey-orange counting frame that becomes a window

@@ -3878,3 +3878,9 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - Shipped: explainer of DNR's preliminary proposal to convey about 19,950 acres near Houston to AIDEA with no committed tenant, the Senate Resources subpoena and the best case for the transfer labelled as an argument. Hero Folio (net-new, lib/folio.tsx). Panel median 7.48 (7.55, 7.48, 7.38) against 7.0, no hard blockers. Caption stopped at the five-round cap at 8.44 against 8.5.
 - In-run fixes: clipped folder tabs, a vote tally that read unanimous (edge-bleeding rails, dim lamps), stamp and note collisions, hedge plates, ordinals, caption fixups for spelled-out TTS, a tipped chair, Pillow shadowing, hosted CRF variant for the over-limit master. DISPATCH_STANDARD section 16 added.
 - Queued for the machine pass: 7 items (docs/MACHINE_QUEUE.md, 2026-10-20). Weekly pass due 2026-10-21.
+
+## 2026-10-21 "The Count and the Calf"
+- Shipped: Alaska Public Media's Point Lay walrus calf rescue set against USGS work on remote carcass counting (methods in development, no reported accuracy). Hero WalrusCalf (net-new, lib/calf.tsx), throughline ViewFrame. Panel median 7.35 (7.47, 7.24, 7.35) against 7.0, no hard blockers. Caption Gate B 8.51 after six rounds.
+- In-run fixes: Pillow for the container Python, caption split rule, 55 beat ceiling, plate x and y ladders, build_scenes after every conform. DISPATCH_STANDARD section 17 added.
+- Honest gaps: calf drawn with tusk buds, Alaska map is a stylised outline, the hand hover reads as not settling. All queued.
+- Queued for the machine pass: 9 items (docs/MACHINE_QUEUE.md, 2026-10-21).
