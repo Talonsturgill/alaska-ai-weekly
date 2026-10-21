@@ -9,14 +9,14 @@ import {ContactShadow, FormGradient, INK, RimLight, tones, paleTones} from './li
 // Everything is SVG in the 1080 x 1920 frame at a caller-set x, y and scale, every animated value is passed in, and the only strings
 // painted are the ones the caller hands in.
 export const CAL = {
-  skyTop: '#8F96B8', skyLow: '#B9B3CF', haze: '#D9D2DC',
+  skyTop: '#9AA3A6', skyLow: '#C0C6C6', haze: '#DCDFDB',
   sea: '#2A5568', seaHi: '#3F7A86', seaDeep: '#1B3C4B',
-  gravel: '#BDB19A', gravelShade: '#8A7F6C', gravelHi: '#D8CDB5', stone: '#7C7364',
+  gravel: '#CFC4AE', gravelShade: '#8A7F6C', gravelHi: '#E4DAC4', stone: '#7C7364',
   calf: '#B8765A', calfShade: '#8A4F3C', calfKey: '#E1A584', pad: '#F2E6D0', tusk: '#F0EAD8',
-  mound: '#8C7D72', moundShade: '#6A5E56', moundHi: '#A99A8E',
-  orange: '#FF7A1A', orangeDeep: '#B84A00', orangeHi: '#FFB36B',
+  mound: '#6F6359', moundShade: '#51473F', moundHi: '#A8A3A0',
+  orange: '#FF8C1A', orangeDeep: '#B85A00', orangeHi: '#FFBE6B',
   pale: '#CFE3EE', navy: '#121A33', navyHi: '#26335C',
-  wood: '#4A3A30', woodDeep: '#2A211C', woodHi: '#6E5646', amber: '#FFC46B', amberHi: '#FFE2A8',
+  wood: '#4A3A30', woodDeep: '#2A211C', woodHi: '#6E5646', amber: '#F2E2B0', amberHi: '#FBF1CF',
   violet: '#7A3B5E', slate: '#4B5D73', ink: INK, cream: '#F4EEDC', paper: '#FFFDF4',
 };
 export const MONO = "'JetBrains Mono', monospace";
@@ -401,7 +401,7 @@ export const TrailCam: React.FC<{x: number; y: number; f: number; scale?: number
       <circle cx={-22} cy={-312} r={30} fill="#1A1620" stroke={INK} strokeWidth={5} />
       <circle cx={-22} cy={-312} r={13} fill="#26335C" stroke={INK} strokeWidth={3} />
       <circle cx={-14} cy={-320} r={4.4} fill="#FFFFFF" opacity={0.8} />
-      <circle cx={42} cy={-338} r={7} fill="#FF3B30" opacity={led} />
+      <circle cx={42} cy={-338} r={7} fill="#F2E6D0" opacity={led} />
       <rect x={20} y={-300} width={44} height={14} rx={4} fill="#2A2F25" stroke={INK} strokeWidth={3} />
       <path d="M-78,-330 q-12,40 0,80 M78,-330 q12,40 0,80" fill="none" stroke="#3A3A3A" strokeWidth={9} />
     </g>
