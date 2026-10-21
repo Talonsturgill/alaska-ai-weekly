@@ -508,9 +508,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.1} oy={1100}
       overlay={<>
-        <Plate x={350} text="IT FELT HARD" y={540} size={40} tone="dusk" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
-        <QuotePlate x={350} text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={700} size={36} wrap={22} p={ease(f, t45, 8) * (f < t46 + 2 ? 1 : 0)} type={ease(f, t45, 70)} />
-        <Plate x={350} text="ONCE THE COMMUNITY DECIDED" y={860} size={32} tone="paper" p={ease(f, t46 + 2, 8) * (f < t47 ? 1 : 0.0)} />
+        <Plate x={390} text="IT FELT HARD" y={540} size={40} tone="dusk" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
+        <QuotePlate x={390} text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={700} size={36} wrap={22} p={ease(f, t45, 8) * (f < t46 + 2 ? 1 : 0)} type={ease(f, t45, 70)} />
+        <Plate x={390} text="ONCE THE COMMUNITY DECIDED" y={860} size={32} tone="paper" p={ease(f, t46 + 2, 8) * (f < t47 ? 1 : 0.0)} />
       </>}>
       <SVG>
         <BeachBG f={g} horizon={420} shore={500} id="s11b" dusk={1} dark={0.22} gulls={false} far={false} />
