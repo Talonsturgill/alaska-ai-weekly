@@ -457,3 +457,16 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A board's descriptive sfx name must be one `_BY_NAME` knows.** Unknown names fall to `tick`, so a 49-beat film reached 13 kinds against a floor of 15. Use hit, slide, page, crack, thump, knock, bell, bloop, fade, roll, swell, thunk and clink.
 - **A chair that turns to face the hero turns a few degrees.** Thirty degrees read as knocked over, which a muted viewer takes as the witness not showing (c9 is future tense).
 - **An aerial backdrop of repeated discs reads as polka dots.** Spruce drawn as one ellipse per clump looked like dots, so the clumps are rings of small star polygons with shadows.
+
+## 17. Things the 2026-10-21 gates and critics found that were knowable in advance
+
+- **A board over about 55 beats can't pass the sfx palette.** dispatch_mix wants distinct kinds equal to 30 percent of the events and the bank has 17, so 65 beats asked for 20 and failed after a 27 s mix. Plan at most 55 beats for a 120 s film, and use sfx names that map to at least 16 distinct bank kinds.
+- **Every `<Plate>` carries an explicit numeric `x`.** zoom_clip_check can't measure a plate with no `x={540}` and calls that a failure, not a pass. A plate in a shot that pushes in past about 1.05 must also keep its authored left edge at or beyond 98 px (a push to 1.1 moves it toward the frame centre by 10 percent of its distance).
+- **plate_overlap_check accepts no sequencing.** Give every plate in a scene its own y, 70 px apart for single lines and 120 px for two lines, even when each retires before the next lands. Plan the ladder before authoring: nine of sixteen scenes failed it on the first run.
+- **Run `build_scenes.py` after every `board conform`.** episode_props.json carries the beats, and a stale one made the first S5 probe show the USGS plate ten seconds early.
+- **A must_ship claim's approved string is the plate's string.** c8's TAUGHT FROM PICTURES PEOPLE COLLECT was shortened to PICTURES PEOPLE COLLECT and claims_contract_check failed it.
+- **The last beat needs 0.6 s before the VO ends.** A 0.36 s beat on the final word failed build_evidence after a 14 minute render. Anchor the last beat to the word before it.
+- **A caption card that ends on "an" or "old" is re-split in vo_script.json before the render**, because captions burn in. Run `caption_render_check.py` against the props before the first full render, not against the cut.
+- **A person fading to a ghost outline on a subsistence coast reads as erasure.** The fair worry about fewer people on the beach is drawn as a satellite cell labelling three mounds alike while the middle one breathes unseen, with nobody in frame.
+- **The community's decision is never drawn as a count.** Windows lighting one by one read as a vote tally the record can't know. Keep the windows steady before the shot opens, and let Violet's hand hovering and then settling carry the decision.
+- **A network picture that converges is a claim.** Dotted guesses that snap onto the human boxes read as a working classifier. They move partway, the needle stays above zero, and the plate says ILLUSTRATIVE.
