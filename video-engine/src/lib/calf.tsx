@@ -382,7 +382,7 @@ export const OrbitBG: React.FC<{f: number; id?: string; grid?: number; cells?: n
         {Array.from({length: 18}).map((_, i) => <ellipse key={i} cx={560 + rnd(i) * 440} cy={1100 + rnd(i + 30) * 420} rx={7 + rnd(i + 2) * 5} ry={4} fill={CAL.moundShade} opacity={0.9} />)}
       </g>
       {grid > 0 && (
-        <g opacity={clamp01(grid)} stroke={CAL.pale} strokeWidth={2.4} fill="none">
+        <g opacity={clamp01(grid)} stroke={CAL.pale} strokeWidth={4} fill="none">
           {Array.from({length: cells + 1}).map((_, i) => <path key={`v${i}`} d={`M${i * (1080 / cells)},560 L${i * (1080 / cells)},1700`} opacity={0.5} />)}
           {Array.from({length: 8}).map((_, i) => <path key={`h${i}`} d={`M0,${560 + i * 163} L1080,${560 + i * 163}`} opacity={0.5} />)}
         </g>

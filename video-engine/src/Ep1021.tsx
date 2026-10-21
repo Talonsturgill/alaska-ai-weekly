@@ -92,8 +92,8 @@ const QuotePlate: React.FC<{text: string; x?: number; y: number; size?: number; 
   if (cur) lines.push(cur);
   const k = clamp01(p);
   if (k <= 0.01) return null;
-  const tw = Math.min(1000, Math.max(...lines.map((l) => l.length * size * 0.68), by ? monoW(by, 20) : 0) + 80);
-  const th = lines.length * (size + 10) + (by ? 46 : 0) + 36;
+  const tw = Math.min(1000, Math.max(...lines.map((l) => l.length * size * 0.68), by ? monoW(by, 28) : 0) + 80);
+  const th = lines.length * (size + 10) + (by ? 58 : 0) + 36;
   const yy = Math.min(y, CAP_GUARD - th / 2);
   assertCropSafe(full, yy - th / 2, yy + th / 2);
   const shown = Math.round(full.length * clamp01(type));
@@ -108,7 +108,7 @@ const QuotePlate: React.FC<{text: string; x?: number; y: number; size?: number; 
         used += l.length + 1;
         return <text key={i} x={0} y={-th / 2 + 22 + size * 0.86 + i * (size + 10)} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={size} fill={C.ink}>{l.slice(0, take)}</text>;
       })}
-      {by && <text x={0} y={th / 2 - 22} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={20} letterSpacing={1} fill="#26335C" opacity={clamp01(type * 3)}>{by}</text>}
+      {by && <text x={0} y={th / 2 - 22} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={28} letterSpacing={1} fill="#26335C" opacity={clamp01(type * 3)}>{by}</text>}
     </g>
   );
 };
@@ -152,6 +152,24 @@ const Tony: React.FC<{x: number; y: number; f: number; scale?: number; facing?: 
   <g>
     <ContactShadow cx={x} cy={y + 4} rx={70 * scale * 2} ry={10} opacity={0.3} blur={7} />
     <Character frame={f + 17} x={x} y={y} scale={scale} facing={facing} pose="stand" emotion="neutral" outfit="puffer" headgear="cap" hair="#2d2a26" walking={walking} walkPhase={phase} />
+  </g>
+);
+
+/** NearPlane: stones, a driftwood log and grass tufts bleeding off the lower edge, so the lower third of every exterior shot has a near plane. */
+const NearPlane: React.FC<{y?: number; f: number; seed?: number; tone?: string}> = ({y = 1560, f, seed = 0, tone = '#6F6359'}) => (
+  <g>
+    {Array.from({length: 7}).map((_, i) => {
+      const sx = rnd(i + seed * 7) * 1160 - 40, sy = y + 20 + rnd(i + 11 + seed) * 280, s = 0.8 + rnd(i + 3 + seed) * 1.3;
+      return <ellipse key={i} cx={sx + 10 * Math.sin(f / (60 + i * 7) + i)} cy={sy} rx={44 * s} ry={22 * s} fill={tone} stroke={INK} strokeWidth={4} opacity={0.95} />;
+    })}
+    <g transform={`translate(${-20 + seed * 90} ${y + 190}) rotate(-4)`}>
+      <rect x={0} y={0} width={470} height={38} rx={18} fill="#5B4A3B" stroke={INK} strokeWidth={5} />
+      <path d="M50,10 l110,0 M210,22 l120,0" stroke={INK} strokeWidth={3} opacity={0.4} />
+    </g>
+    {Array.from({length: 9}).map((_, i) => {
+      const gx = rnd(i + 40 + seed) * 1080, gy = y + 330 + rnd(i + 50) * 120;
+      return <path key={`g${i}`} d={`M${gx},${gy} q${-12 + 6 * Math.sin(f / 21 + i)},-60 ${-24},-96 M${gx},${gy} q${8 + 6 * Math.sin(f / 23 + i)},-70 ${18},-110`} fill="none" stroke="#6E7A55" strokeWidth={7} strokeLinecap="round" />;
+    })}
   </g>
 );
 
@@ -207,7 +225,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.06} oy={1100}
       overlay={<>
         <Plate x={540} text="POINT LAY · MID-SEPTEMBER" y={540} size={36} tone="ink" p={ease(f, 4, 8) * (f < t6 - 6 ? 1 : 0)} />
-        <Plate x={540} text="VIOLET ANNISKETT · COLLEGE STUDENT" y={610} size={30} tone="paper" p={ease(f, t6 + 2, 8) * (f < t7 + 70 ? 1 : 0)} />
+        <Plate x={540} text="VIOLET ANNISKETT · COLLEGE STUDENT" y={610} size={30} tone="paper" p={ease(f, t6 + 2, 8)} />
+        <Plate x={540} text="PER ALASKA PUBLIC MEDIA" y={830} size={28} tone="dusk" p={ease(f, 18, 8)} />
         <Plate x={540} text="PHOTOS, TO COUNT LATER" y={680} size={34} tone="orange" p={ease(f, t7 + 2, 8)} />
         <Plate x={540} text="TONY FISCHBACH · USGS" y={750} size={32} tone="ink" p={ease(f, t9 + 2, 8)} />
       </>}>
@@ -261,14 +280,14 @@ const S3: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <BeachBG f={g} horizon={760} shore={930} id="s3b" gulls={false} />
-        <CarcassMound x={150} y={1246} scale={1.5} f={g} id="s3a" />
-        <CarcassMound x={950} y={1262} scale={1.4} facing={-1} variant={2} f={g} id="s3c" />
-        <g opacity={1 - w}><WalrusCalf x={540} y={1268 + 3 * jolt} f={g} scale={1.35} dull={1} eyes={0} breath={heave} mood="sleep" id="s3d" sq={0} /></g>
-        <g opacity={w}><WalrusCalf x={540} y={1268 + 3 * jolt} f={g} scale={1.35} dull={0} eyes={eyes} breath={heave} mood={f > t14 - 20 ? 'afraid' : 'wake'} shiver={shiver} id="s3e" /></g>
-        {wide > 0.01 && <ViewFrame x={540} y={1130} w={1000} h={520} f={f} mode="bracket" k={snap(f, 0, 10) * wide + 0.0} dim={1 - wide} id="s3v" />}
-        <ViewFrame x={150} y={1130} w={560} h={380} f={f} mode="box" k={two} id="s3b1" />
-        <ViewFrame x={950} y={1146} w={520} h={360} f={f} mode="box" k={snap(f, t13 + 3, 10)} id="s3b2" />
-        <BearPrints x={60} y={1296} scale={1.25} n={5} k={ease(f, t15, 46)} rot={-3} />
+        <CarcassMound x={150} y={1190} scale={1.5} f={g} id="s3a" />
+        <CarcassMound x={950} y={1206} scale={1.4} facing={-1} variant={2} f={g} id="s3c" />
+        <g opacity={1 - w}><WalrusCalf x={540} y={1212 + 3 * jolt} f={g} scale={1.02} dull={1} eyes={0} breath={heave} mood="sleep" id="s3d" sq={0} /></g>
+        <g opacity={w}><WalrusCalf x={540} y={1212 + 3 * jolt} f={g} scale={1.02} dull={0} eyes={eyes} breath={heave} mood={f > t14 - 20 ? 'afraid' : 'wake'} shiver={shiver} id="s3e" /></g>
+        {wide > 0.01 && <ViewFrame x={540} y={1074} w={1000} h={520} f={f} mode="bracket" k={snap(f, 0, 10) * wide + 0.0} dim={1 - wide} id="s3v" />}
+        <ViewFrame x={150} y={1074} w={560} h={380} f={f} mode="box" k={two} id="s3b1" />
+        <ViewFrame x={950} y={1090} w={520} h={360} f={f} mode="box" k={snap(f, t13 + 3, 10)} id="s3b2" />
+        <BearPrints x={60} y={1240} scale={1.25} n={5} k={ease(f, t15, 46)} rot={-3} />
       </SVG>
     </Frame>
   );
@@ -346,7 +365,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
   const t25 = b(25), t26 = b(26), t27 = b(26) + 33, t28 = b(28);
-  const PW = 900, PH = 400, PX = 90, PY = 910, N = 7;
+  const PW = 980, PH = 420, PX = 50, PY = 900, N = 7;
   const marks = N * ease(f, t25, 56);
   const idx = Math.min(N - 1, Math.floor(marks));
   const px = PX + 70 + rnd(idx * 3 + 0) * (PW - 160), py = PY + 100 + rnd(idx * 3 + 1) * (PH - 190);
@@ -366,7 +385,10 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="#1F2540" />
         {Array.from({length: 12}).map((_, i) => <path key={i} d={`M${-40 + i * 100},0 L${-40 + i * 100},1960`} stroke={CAL.pale} strokeWidth={1.6} opacity={0.08} />)}
         <HaulPhoto x={PX} y={PY} w={PW} h={PH} f={g} n={N} marks={marks} guess={ease(f, t26, 20)} learn={f < t26 ? 0 : learn} id="s6p" />
-        {handOn && <HandSil x={px + 60} y={py + 40} rot={-28} s={0.45} sleeve fill="#5A4A5C" />}
+        {handOn && (<>
+          <HandSil x={px + 60} y={py + 40} rot={-28} s={0.47} sleeve={false} fill={INK} />
+          <HandSil x={px + 60} y={py + 40} rot={-28} s={0.45} sleeve fill="#5A4A5C" />
+        </>)}
         <Gauge x={930} y={705} scale={0.5} v={gauge} f={g} />
       </SVG>
     </Frame>
@@ -399,7 +421,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           const sx = 560 + rnd(i) * 440 + d, sy = 1100 + rnd(i + 30) * 420;
           const kk = snap(f, t30 + i * 4, 8);
           const flick = 0.55 + 0.45 * Math.abs(Math.sin(f / (6 + i) + i));
-          return <ViewFrame key={i} x={sx} y={sy} w={74} h={46} f={f} mode="dotted" k={kk} sw={4} dim={1 - flick} id={`s7v${i}`} />;
+          return <ViewFrame key={i} x={sx} y={sy} w={112} h={72} f={f} mode="dotted" k={kk} sw={6} dim={1 - flick} id={`s7v${i}`} />;
         })}
       </SVG>
     </Frame>
@@ -490,6 +512,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           );
         })}
         <WalrusCalf x={150} y={1264} f={g} scale={0.46} eyes={0.9} breath={1.1} mood="calm" id="s10k" />
+        <NearPlane y={1470} f={g} seed={3} tone="#5E5648" />
         <QMark x={950} y={640} size={96} f={g} k={1 - qDim * 0.85} outline />
       </SVG>
     </Frame>
@@ -509,12 +532,13 @@ const S11: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.1} oy={1100}
       overlay={<>
         <Plate x={390} text="IT FELT HARD" y={540} size={40} tone="dusk" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
-        <QuotePlate x={390} text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={700} size={36} wrap={22} p={ease(f, t45, 8) * (f < t46 + 2 ? 1 : 0)} type={ease(f, t45, 70)} />
+        <QuotePlate x={390} text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={700} size={36} wrap={22} p={ease(f, t45, 8) * (f < t46 + 2 ? 1 : 0)} type={ease(f, t45, 40)} />
         <Plate x={390} text="ONCE THE COMMUNITY DECIDED" y={860} size={32} tone="paper" p={ease(f, t46 + 2, 8) * (f < t47 ? 1 : 0.0)} />
       </>}>
       <SVG>
         <BeachBG f={g} horizon={420} shore={500} id="s11b" dusk={1} dark={0.22} gulls={false} far={false} />
         <WalrusCalf x={470} y={1262} f={g} scale={2.3} eyes={0.85} breath={1.2} mood={f < t46 ? 'afraid' : 'calm'} shiver={f < t46 ? 0.2 : 0} id="s11k" />
+        <HandSil x={770} y={hy - 40} rot={180} s={0.84} sleeve={false} fill={INK} />
         <HandSil x={770} y={hy - 40} rot={180} s={0.8} sleeve fill="#5A4A5C" />
         <ViewFrame x={580} y={1100} w={lerp(960, 1300, back)} h={lerp(560, 760, back)} f={f} mode="bracket" k={snap(f, 0, 8)} dim={0.65 * back} id="s11v" />
         {f >= t47 && <ViewFrame x={930} y={1000} w={200} h={420} f={f} mode="box" k={snap(f, t47, 10)} id="s11d" />}
@@ -605,6 +629,14 @@ const S13: React.FC<SceneProps> = ({p}) => {
 
 // ---- S14: 800 miles (keys 56 to 60) ---------------------------------------------------------------------------------------------------------------------
 const ROUTE = 'M92,118 C150,96 230,112 292,176 L318,205';
+const routePos = (t: number): [number, number] => {
+  if (t < 0.8) {
+    const u = t / 0.8, w = 1 - u;
+    return [w * w * w * 92 + 3 * w * w * u * 150 + 3 * w * u * u * 230 + u * u * u * 292, w * w * w * 118 + 3 * w * w * u * 96 + 3 * w * u * u * 112 + u * u * u * 176];
+  }
+  const v = (t - 0.8) / 0.2;
+  return [292 + 26 * v, 176 + 29 * v];
+};
 const S14: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
@@ -617,9 +649,9 @@ const S14: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.05} oy={1050}
       overlay={<>
         <Plate x={540} text="ACROSS THE LAGOON" y={540} size={36} tone="ink" p={ease(f, t56 + 4, 8) * (phase === 0 ? 1 : 0)} />
-        <Plate x={540} text="ALASKA SEALIFE CENTER · KENNEL" displayLines={['ALASKA SEALIFE CENTER', 'KENNEL']} y={650} size={34} tone="paper" p={ease(f, t57 + 2, 8) * (phase === 1 ? 1 : 0)} />
-        <Plate x={540} text="FLEW TO ANCHORAGE" y={760} size={38} tone="dusk" p={ease(f, t58 + 2, 8) * (phase === 2 ? 1 : 0)} />
-        <Plate x={540} text="MORE THAN 800 MILES TO SEWARD" displayLines={['MORE THAN 800 MILES', 'TO SEWARD']} y={880} size={38} tone="orange" p={ease(f, t60 + 2, 8)} />
+        <Plate x={540} text="ALASKA SEALIFE CENTER · KENNEL" displayLines={['ALASKA SEALIFE CENTER', 'KENNEL']} y={640} size={34} tone="paper" p={ease(f, t57 + 2, 8) * (phase === 1 ? 1 : 0)} />
+        <Plate x={540} text="FLEW TO ANCHORAGE" y={750} size={38} tone="dusk" p={ease(f, t58 + 2, 8) * (phase === 2 ? 1 : 0)} />
+        <Plate x={540} text="MORE THAN 800 MILES TO SEWARD" displayLines={['MORE THAN 800 MILES', 'TO SEWARD']} y={830} size={38} tone="orange" p={ease(f, t60 + 2, 8)} />
       </>}>
       <SVG>
         {phase === 0 && (
@@ -630,6 +662,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
             <rect data-band="ok" x={-40} y={920} width={1160} height={1040} fill={CAL.sea} />
             {[0, 1, 2, 3, 4, 5, 6].map((i) => <path key={i} d={`M-40,${960 + i * 70 + 6 * Math.sin(g / 20 + i)} q140,-12 280,0 t280,0 t280,0 t280,0`} fill="none" stroke="#FFFFFF" strokeWidth={3 + i * 0.6} opacity={0.14 + i * 0.03} />)}
             <path d={`M${sk - 240},1150 q-80,10 -170,-4 M${sk - 250},1170 q-120,14 -250,-6`} fill="none" stroke="#FFFFFF" strokeWidth={6} opacity={0.4} />
+            <NearPlane y={1470} f={g} seed={5} tone="#34474C" />
             <Skiff x={sk} y={1120} scale={1.05} f={g} id="s14k" />
             <WalrusCalf x={sk - 20} y={1092} f={g} scale={0.3} eyes={0.9} breath={0.9} mood="calm" shadow={false} id="s14c" />
             {[-90, 70, 130].map((dx, i) => <g key={i}><circle cx={sk + dx} cy={1000 + (i === 1 ? 6 : 0)} r={17} fill="#2A2F36" stroke={INK} strokeWidth={3} /><rect x={sk + dx - 17} y={1018} width={34} height={56} rx={14} fill="#2A2F36" stroke={INK} strokeWidth={3} /></g>)}
@@ -640,15 +673,18 @@ const S14: React.FC<SceneProps> = ({p}) => {
             <BeachBG f={g} horizon={760} shore={940} id="s14b" far={false} />
             <Kennel x={700} y={1260} scale={1.2} f={g} door={ease(f, t57, 20)} id="s14n" />
             <WalrusCalf x={kc} y={1262} f={g} scale={0.55} eyes={0.9} breath={0.9} mood="calm" id="s14d" />
+            <HandSil x={kc - 220} y={1090} rot={90} s={0.63} sleeve={false} fill={INK} />
             <HandSil x={kc - 220} y={1090} rot={90} s={0.6} sleeve fill="#5A4A5C" />
             <ViewFrame x={800} y={1090} w={300} h={330} f={f} mode="bracket" k={snap(f, t57 + 4, 10)} sw={8} id="s14o" />
+            <NearPlane y={1470} f={g} seed={6} />
           </g>
         )}
         {phase === 2 && (
           <g>
             <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill={CAL.skyLow} />
             {[0, 1, 2, 3, 4].map((i) => <ellipse key={i} cx={200 + i * 190 + 40 * Math.sin(g / 60 + i)} cy={600 + i * 140} rx={230} ry={30} fill="#FFFFFF" opacity={0.22} />)}
-            <g transform={`rotate(${-8 + 6 * Math.sin(g / 30)} 540 900)`}>
+            <g transform={`rotate(${-12 + 10 * Math.sin(g / 20)} 540 900)`}>
+              <path d={`M-160,905 L${lerp(-160, 1240, easeIO(f, t58 - 4, 64)) - 150},905`} stroke={CAL.cream} strokeWidth={6} strokeDasharray="16 14" strokeDashoffset={-g} opacity={0.7} />
               <BushPlane x={lerp(-160, 1240, easeIO(f, t58 - 4, 64))} y={900} scale={1.1} f={g} mode="fly" propSpeed={1.4} />
             </g>
             <path d="M-40,1500 L1120,1420 L1120,1960 L-40,1960 Z" fill={CAL.gravelShade} opacity={0.55} />
@@ -658,14 +694,15 @@ const S14: React.FC<SceneProps> = ({p}) => {
           <g>
             <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="#8FA4A8" />
             <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="#2A5568" opacity={0.55} />
-            <g transform="translate(190 990) scale(1.4)">
+            <g transform="translate(120 905) scale(1.75)">
               <AlaskaMini frame={g} x={0} y={0} scale={1} pin={false} />
               <path d={ROUTE} fill="none" stroke={CAL.cream} strokeWidth={11} strokeLinecap="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - route} />
               <path d={ROUTE} fill="none" stroke="#16203F" strokeWidth={6} strokeLinecap="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - route} />
+              {(() => { const [rx, ry] = routePos(route); return <circle cx={rx} cy={ry} r={9 + 2 * Math.sin(f / 4)} fill={CAL.cream} stroke="#16203F" strokeWidth={4} opacity={route > 0.02 ? 1 : 0} />; })()}
               {[[92, 118, 'POINT LAY'], [292, 176, 'ANCHORAGE'], [318, 205, 'SEWARD']].map(([cx, cy, lb], i) => (
                 <g key={i} opacity={ease(f, t59 + i * 24, 8)}>
                   <circle cx={cx as number} cy={cy as number} r={8} fill="#16203F" stroke={CAL.cream} strokeWidth={4} />
-                  <text x={(cx as number) + (i === 0 ? 14 : -14)} y={(cy as number) + (i === 0 ? -14 : 26)} textAnchor={i === 0 ? 'start' : 'end'} fontFamily={MONO} fontWeight={800} fontSize={19} fill="#16203F" stroke={CAL.cream} strokeWidth={4} paintOrder="stroke">{lb as string}</text>
+                  <text x={(cx as number) + (i === 0 || i === 2 ? 14 : -14)} y={(cy as number) + (i === 0 ? -14 : i === 1 ? -14 : 10)} textAnchor={i === 0 || i === 2 ? 'start' : 'end'} fontFamily={MONO} fontWeight={800} fontSize={17} fill="#16203F" stroke={CAL.cream} strokeWidth={4} paintOrder="stroke">{lb as string}</text>
                 </g>
               ))}
             </g>
@@ -695,8 +732,9 @@ const S15: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 9}).map((_, i) => <path key={i} d={`M${-40 + i * 140},0 L${-40 + i * 140},1960`} stroke="#FFFFFF" strokeWidth={3} opacity={0.35} />)}
         {Array.from({length: 14}).map((_, i) => <path key={i} d={`M-40,${i * 140} L1120,${i * 140}`} stroke="#FFFFFF" strokeWidth={3} opacity={0.3} />)}
         <Pool x={540} y={1330} w={800} h={430} f={g} id="s15p" />
-        <WalrusCalf x={520} y={1040 + bob} f={g} scale={1.15} eyes={0.75} breath={1.3} mood="content" raise={0.5} id="s15k" />
-        <rect x={140} y={920} width={800} height={410} fill="#6FB4C4" opacity={0.42} />
+        <WalrusCalf x={520} y={1030 + bob} f={g} scale={1.45} eyes={0.75} breath={1.3} mood="content" raise={0.5} id="s15k" />
+        <rect x={140} y={920} width={800} height={410} fill="#7CC4D0" opacity={0.45} />
+        {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M${200 + i * 120 + 18 * Math.sin(g / 17 + i)},930 l40,0 l-14,300 l-40,0 Z`} fill="#FFFFFF" opacity={0.12 + 0.05 * Math.sin(g / 11 + i)} />)}
         {[0, 1, 2].map((i) => <path key={i} d={`M150,${950 + i * 22 + 4 * Math.sin(g / 12 + i)} q100,-10 200,0 t200,0 t200,0 t200,0`} fill="none" stroke="#FFFFFF" strokeWidth={3} opacity={0.5 - i * 0.12} />)}
         <rect x={110} y={900} width={860} height={22} fill="#D8D2C2" stroke={INK} strokeWidth={5} />
       </SVG>
@@ -715,15 +753,17 @@ const S16: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.02} oy={1100}
       overlay={<>
-        <Plate x={540} text="DO THE COUNTING" y={560} size={40} tone="pale" p={ease(f, t64 + 2, 8) * (f < t65 ? 1 : 0)} />
-        <Plate x={540} text="WHO SHOULD STILL BE ON THE BEACH?" displayLines={['WHO SHOULD STILL BE', 'ON THE BEACH?']} y={690} size={42} tone="orange" p={ease(f, t65 + 2, 8)} />
+        <Plate x={540} text="DO THE COUNTING" y={690} size={40} tone="pale" p={ease(f, t64 + 2, 8) * (f < t65 ? 1 : 0)} />
+        <Plate x={540} text="WHO SHOULD STILL BE ON THE BEACH?" displayLines={['WHO SHOULD STILL BE', 'ON THE BEACH?']} y={560} size={42} tone="orange" p={ease(f, t65 + 2, 8)} />
       </>}>
       <SVG>
         <g opacity={1 - orbit}>
           <BeachBG f={g} horizon={860} shore={1010} id="s16b" far={false} />
-          <Violet x={540} y={1280} f={g} scale={0.78} pose="carry" />
-          <Phone x={540 + 120 * 0.78} y={1280 - 190 * 0.78} scale={1.1} />
-          <ViewFrame x={560} y={1060} w={360} h={620} f={f} mode="bracket" k={snap(f, t65 + 4, 10)} id="s16v" />
+          <Violet x={540} y={1290} f={g} scale={0.95} pose="carry" />
+          <Phone x={540 + 120 * 0.95} y={1290 - 190 * 0.95} scale={1.3} />
+          <ViewFrame x={570} y={1010} w={420} h={640} f={f} mode="bracket" k={snap(f, t65 + 4, 10)} id="s16v" />
+          <Tally x={190} y={1300} scale={0.55} n={3} roll={0.5 + 0.04 * Math.sin(f * 1.6)} shiver={1} f={g} />
+          <NearPlane y={1470} f={g} seed={8} />
         </g>
         <g opacity={orbit}>
           <g transform={`translate(800 1250) scale(${zoom}) translate(-800 -1250)`}>
