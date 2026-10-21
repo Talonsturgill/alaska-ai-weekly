@@ -160,8 +160,8 @@ export const CarcassMound: React.FC<{x: number; y: number; scale?: number; facin
       <path d="M126,-16 C122,-76 164,-100 200,-82 C232,-66 238,-28 212,-12 C180,6 140,4 126,-16 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
       <path d="M170,-60 q10,6 22,2" fill="none" stroke={INK} strokeWidth={3.6} strokeLinecap="round" />
       <path d="M190,-44 q30,-4 42,14 q4,14 -12,20 q-20,6 -34,-6 Z" fill="#B5A89C" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
-      <path d="M198,-10 q4,36 -2,64 q-7,-2 -8,-10 q-2,-28 2,-54 Z" fill="#DCD4BE" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
-      <path d="M214,-10 q5,32 0,56 q-7,-2 -8,-9 q-2,-24 2,-47 Z" fill="#CFC6AE" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+      <path d="M198,-10 q4,24 -1,40 q-7,-2 -8,-8 q-2,-18 2,-32 Z" fill="#DCD4BE" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+      <path d="M214,-10 q5,22 0,36 q-7,-2 -8,-7 q-2,-16 2,-29 Z" fill="#CFC6AE" stroke={INK} strokeWidth={4} strokeLinejoin="round" />
       <RimLight d="M-140,-96 q50,-26 130,-26 q70,0 130,22" w={3.2} opacity={0.4} />
       {/* a hair of wind lifting a loose skin edge keeps the still life from reading as a cut-out */}
       <path d={`M-150,-30 q${6 + 2 * Math.sin(f / 17)},-10 ${14 + 2 * Math.sin(f / 13)},-4`} fill="none" stroke={CAL.moundHi} strokeWidth={3} opacity={0.5} strokeLinecap="round" />
@@ -277,9 +277,10 @@ export const BeachBG: React.FC<{f: number; horizon?: number; shore?: number; id?
       </defs>
       <rect x={-40} y={0} width={1160} height={horizon + 4} fill={`url(#${id}sky)`} />
       {/* soft cloud bands drifting on an irrational period */}
-      {[0, 1, 2, 3].map((i) => (
-        <ellipse key={i} cx={140 + i * 270 + 60 * Math.sin(f / (140 + i * 23) + i)} cy={220 + i * 120} rx={260 - i * 20} ry={26 + i * 4} fill="#FFFFFF" opacity={0.16 - i * 0.02} />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+        <ellipse key={i} cx={100 + i * 150 + 70 * Math.sin(f / (140 + i * 23) + i)} cy={140 + i * 78 + rnd(i + 11) * 40} rx={230 - i * 12 + rnd(i) * 70} ry={20 + i * 3.2} fill={i % 3 === 0 ? '#7F8A90' : '#FFFFFF'} opacity={0.17 - i * 0.012} />
       ))}
+      <path d={`M-40,${horizon} L90,${horizon - 34} L230,${horizon - 14} L380,${horizon - 52} L520,${horizon - 20} L690,${horizon - 44} L850,${horizon - 16} L1000,${horizon - 38} L1120,${horizon} Z`} fill="#6F7F88" opacity={0.55} />
       {gulls && [0, 1, 2].map((i) => {
         const gx = ((f * (0.6 + i * 0.25) + i * 400) % 1300) - 100;
         const gy = 300 + i * 90 + 14 * Math.sin(f / (21 + i * 5));
@@ -492,6 +493,121 @@ export const Kennel: React.FC<{x: number; y: number; scale?: number; f: number; 
       <rect x={120 - 44 * door} y={-110} width={14} height={30} fill="#C9D2D8" stroke={INK} strokeWidth={3} />
       <rect x={-196} y={-26} width={392} height={12} fill="#3D454D" stroke={INK} strokeWidth={4} />
       <path d={`M-170,-186 Q0,${-208 + 2 * Math.sin(f / 20)} 170,-186`} fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.35} />
+    </g>
+  );
+};
+
+// ---- small props ------------------------------------------------------------------------------------------------------------------
+export const BRASS = '#C99A3C';
+/** Tally: a brass hand clicker with a two-digit window. n is the shown count, roll (0..1) is how far the next digit has turned, so a stuck digit sits at roll 0.5 and shivers. Origin is the bottom centre. */
+export const Tally: React.FC<{x: number; y: number; scale?: number; n?: number; roll?: number; f: number; shiver?: number; id?: string}> = ({x, y, scale = 1, n = 0, roll = 0, f, shiver = 0, id = 'ty'}) => {
+  const t = tones(BRASS);
+  const gid = `${id}${Math.round(x)}${Math.round(y)}`;
+  const sh = shiver * Math.sin(f * 1.9) * 2.2;
+  const dg = (v: number) => String(v % 100).padStart(2, '0');
+  return (
+    <g transform={`translate(${x + sh},${y}) scale(${scale})`}>
+      <FormGradient id={gid} t={t} softness={0.6} />
+      <ContactShadow cx={0} cy={4} rx={70} ry={11} opacity={0.34} blur={8} />
+      <rect x={-66} y={-170} width={132} height={170} rx={26} fill={`url(#${gid})`} stroke={INK} strokeWidth={6} />
+      <rect x={-48} y={-142} width={96} height={52} rx={8} fill="#1B1D22" stroke={INK} strokeWidth={4} />
+      <clipPath id={`${gid}c`}><rect x={-48} y={-142} width={96} height={52} rx={8} /></clipPath>
+      <g clipPath={`url(#${gid}c)`} fontFamily={MONO} fontWeight={800} fontSize={44} fill="#F2E6D0" textAnchor="middle">
+        <text x={0} y={-100 - 52 * roll}>{dg(n)}</text>
+        <text x={0} y={-100 + 52 - 52 * roll}>{dg(n + 1)}</text>
+      </g>
+      <rect x={-34} y={-250 + 26 * roll} width={68} height={86} rx={20} fill={`url(#${gid})`} stroke={INK} strokeWidth={6} />
+      <path d="M-30,-232 q30,-10 60,0" fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.5} strokeLinecap="round" />
+    </g>
+  );
+};
+
+/** QMark: the big question mark glyph in survey orange with an ink outline. Origin is the centre. outline draws it as a hollow mark. */
+export const QMark: React.FC<{x: number; y: number; size?: number; f: number; k?: number; outline?: boolean; rot?: number; glow?: number}> = ({x, y, size = 400, f, k = 1, outline = false, rot = 0, glow = 0}) => {
+  const kk = clamp01(k);
+  if (kk <= 0.01) return null;
+  const over = 1 + (1 - kk) * 1.2;
+  const pulse = 1 + 0.025 * Math.sin(f / 9);
+  return (
+    <g transform={`translate(${x},${y}) rotate(${rot}) scale(${over * pulse})`} opacity={Math.min(1, kk * 2.4)}>
+      {glow > 0 && <circle cx={0} cy={0} r={size * 0.55} fill={CAL.orange} opacity={0.2 * glow} />}
+      <text x={6} y={size * 0.36 + 10} textAnchor="middle" fontFamily="Fraunces, Georgia, serif" fontWeight={900} fontSize={size} fill="#000" opacity={0.28}>?</text>
+      <text x={0} y={size * 0.36} textAnchor="middle" fontFamily="Fraunces, Georgia, serif" fontWeight={900} fontSize={size}
+        fill={outline ? 'none' : CAL.orange} stroke={outline ? CAL.orange : INK} strokeWidth={outline ? Math.max(4, size * 0.04) : size * 0.03} paintOrder="stroke">?</text>
+    </g>
+  );
+};
+
+/** NeuralStack: four stacked pale glass layers with dotted links, lit one by one with `lit` (0..4). Origin is the centre. dim (0..1) dims it. */
+export const NeuralStack: React.FC<{x: number; y: number; scale?: number; f: number; lit?: number; dim?: number}> = ({x, y, scale = 1, f, lit = 4, dim = 0}) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`} opacity={1 - 0.65 * dim}>
+    {[0, 1, 2, 3].map((i) => {
+      const a = clamp01(lit - i);
+      const yy = 150 - i * 100;
+      return (
+        <g key={i} transform={`translate(0,${yy})`}>
+          <path d="M-170,0 L120,0 L170,-50 L-120,-50 Z" fill={CAL.pale} opacity={0.18 + 0.26 * a} stroke={CAL.pale} strokeWidth={4} />
+          {[-90, -30, 30, 90].map((nx, j) => <circle key={j} cx={nx + 10 - 20 * (i % 2)} cy={-24} r={9} fill={CAL.pale} opacity={0.3 + 0.7 * a * (0.7 + 0.3 * Math.sin(f / 7 + i + j))} stroke={INK} strokeWidth={2.4} />)}
+        </g>
+      );
+    })}
+    {[0, 1, 2].map((i) => [-90, -30, 30, 90].map((nx, j) => (
+      <path key={`${i}${j}`} d={`M${nx + 10 - 20 * (i % 2)},${126 - i * 100} L${nx + 10 - 20 * ((i + 1) % 2) + 20 * (j % 2 ? -1 : 1)},${26 - i * 100}`} stroke={CAL.pale} strokeWidth={2.4} strokeDasharray="6 8" strokeDashoffset={-f * 0.8} opacity={0.5 * clamp01(lit - i - 0.5)} fill="none" />
+    )))}
+  </g>
+);
+
+/** CalfInset: a small tawny calf held in its own orange corners, breathing, for the machine stretch. */
+export const CalfInset: React.FC<{x: number; y: number; scale?: number; f: number; id?: string}> = ({x, y, scale = 0.4, f, id = 'ci'}) => (
+  <g>
+    <rect x={x - 230 * scale * 1.6 + 0} y={y - 190 * scale * 1.5} width={460 * scale * 1.6} height={230 * scale * 1.5 + 20} fill="#101423" opacity={0.28} rx={10} />
+    <WalrusCalf x={x} y={y} f={f} scale={scale} mood="calm" breath={1.4} id={id} />
+    <ViewFrame x={x} y={y - 78 * scale * 1.6} w={470 * scale * 1.6} h={250 * scale * 1.6} f={f} mode="bracket" k={1} sw={7} id={`${id}f`} />
+  </g>
+);
+
+/** Gauge: a thin comparison needle gauge with an empty arc. v (0..1) is the needle, where 0 is 'matches'. Origin is the dial centre. */
+export const Gauge: React.FC<{x: number; y: number; scale?: number; v: number; f: number}> = ({x, y, scale = 1, v, f}) => {
+  const ang = -80 + 160 * clamp01(v) + Math.sin(f / 4) * 2.2 * clamp01(v);
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <path d="M-150,0 A150,150 0 0 1 150,0" fill="#1B1D22" stroke={INK} strokeWidth={6} />
+      <path d="M-150,0 A150,150 0 0 1 150,0" fill="none" stroke={CAL.pale} strokeWidth={5} strokeDasharray="4 10" opacity={0.7} />
+      <path d="M0,0 L0,-128" stroke={CAL.orange} strokeWidth={8} strokeLinecap="round" transform={`rotate(${ang})`} />
+      <circle cx={0} cy={0} r={14} fill={CAL.cream} stroke={INK} strokeWidth={4} />
+    </g>
+  );
+};
+
+/** Skiff: a small open boat in side view. Origin is the waterline centre. Figures are caller-drawn. */
+export const Skiff: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; id?: string}> = ({x, y, scale = 1, f, facing = 1, id = 'sk'}) => {
+  const t = tones('#8A8F94');
+  const bob = Math.sin(f / 11) * 5;
+  const gid = `${id}${Math.round(x)}`;
+  return (
+    <g transform={`translate(${x},${y + bob}) scale(${scale * facing},${scale}) rotate(${Math.sin(f / 17) * 1.6})`}>
+      <FormGradient id={gid} t={t} softness={0.6} />
+      <path d="M-210,-40 L210,-52 L170,18 L-170,18 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M-196,-30 L198,-42" stroke="#FFFFFF" strokeWidth={4} opacity={0.4} />
+      <rect x={-196} y={-24} width={380} height={12} fill="#2A2F36" opacity={0.6} />
+      <rect x={-232} y={-96} width={44} height={80} rx={8} fill="#4A4F55" stroke={INK} strokeWidth={5} />
+      <path d="M-240,20 q20,-8 40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0 t40,0" fill="none" stroke="#FFFFFF" strokeWidth={5} opacity={0.5} />
+    </g>
+  );
+};
+
+/** CabinDoor: the old broken plank door of the camp cabin, swinging on a left hinge. open (0..1). Origin is the bottom of the hinge side. */
+export const CabinDoor: React.FC<{x: number; y: number; scale?: number; open?: number; f: number}> = ({x, y, scale = 1, open = 0, f}) => {
+  const w = 190 * Math.cos(open * 1.25);
+  return (
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <rect x={-18} y={-420} width={230} height={420} fill="#14100E" stroke={INK} strokeWidth={6} />
+      <g transform={`rotate(${Math.sin(f / 13) * open * 1.5})`}>
+        <rect x={0} y={-410} width={w} height={410} fill="#35271F" stroke={INK} strokeWidth={6} />
+        <path d={`M${w * 0.33},-400 L${w * 0.33},0 M${w * 0.66},-400 L${w * 0.66},0`} stroke={CAL.woodDeep} strokeWidth={5} />
+        <path d={`M${w * 0.5},-250 l${-w * 0.16},40 l${w * 0.22},30 l${-w * 0.14},50`} fill="none" stroke="#0E0A08" strokeWidth={8} strokeLinejoin="round" />
+        <circle cx={w * 0.86} cy={-200} r={9} fill="#8A8A90" stroke={INK} strokeWidth={3} />
+      </g>
     </g>
   );
 };
