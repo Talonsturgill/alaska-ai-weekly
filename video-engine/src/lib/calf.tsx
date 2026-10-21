@@ -371,6 +371,11 @@ export const OrbitBG: React.FC<{f: number; id?: string; grid?: number; cells?: n
         <path d={`M-60,760 C120,700 260,820 420,790 C560,760 640,880 780,860 C900,840 1000,900 1160,880 L1160,1960 L-60,1960 Z`} fill="#3F4A3E" stroke={INK} strokeWidth={5} />
         <path d={`M-60,790 C120,730 260,850 420,820 C560,790 640,910 780,890 C900,870 1000,930 1160,910 L1160,1960 L-60,1960 Z`} fill={CAL.gravel} opacity={0.88} />
         <path d={`M-60,820 C120,760 260,880 420,850 C560,820 640,940 780,920 C900,900 1000,960 1160,940`} fill="none" stroke="#FFFFFF" strokeWidth={5} opacity={0.4} />
+        {/* tundra ponds, a meandering river and wet ground so the land reads as ground and not as a slab */}
+        {Array.from({length: 16}).map((_, i) => <ellipse key={`p${i}`} cx={rnd(i + 60) * 1100 - 20} cy={900 + rnd(i + 70) * 420} rx={14 + rnd(i + 80) * 34} ry={6 + rnd(i + 90) * 14} fill={CAL.seaDeep} opacity={0.55} stroke={INK} strokeWidth={2} />)}
+        <path d="M-40,1180 C120,1130 200,1260 330,1210 C460,1160 520,1290 660,1250 C800,1210 880,1320 1120,1270" fill="none" stroke={CAL.sea} strokeWidth={14} strokeLinecap="round" opacity={0.8} />
+        <path d="M-40,1180 C120,1130 200,1260 330,1210 C460,1160 520,1290 660,1250 C800,1210 880,1320 1120,1270" fill="none" stroke="#FFFFFF" strokeWidth={3} strokeLinecap="round" opacity={0.35} />
+        {Array.from({length: 26}).map((_, i) => <path key={`g${i}`} d={`M${rnd(i + 120) * 1080},${850 + rnd(i + 130) * 900} q18,-10 40,0`} fill="none" stroke="#6E7A55" strokeWidth={4} opacity={0.5} strokeLinecap="round" />)}
         {/* the lagoon and its spit */}
         <path d="M120,960 C260,920 420,940 520,990 C440,1030 260,1040 120,960 Z" fill={CAL.sea} stroke={INK} strokeWidth={4} opacity={0.95} />
         {/* specks of walrus mounds on the shore */}
