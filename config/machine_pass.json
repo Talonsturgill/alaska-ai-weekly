@@ -1,15 +1,18 @@
 {
   "last_pass": {
-    "date": "2026-10-15",
+    "date": "2026-10-21",
     "shipped": [
-      "vo-edit-orphans-board-beats",
-      "storyboard-edit-invalidates-render",
-      "caption-split-after-discovery",
-      "caption-scorer-plateau",
-      "held-beats-under-2pct"
+      "evidence-strip-named-substring-error",
+      "visible-copy-unresolved-plate-text",
+      "editor-cant-list-evidence",
+      "setup-env-pillow-shadowed",
+      "audio-report-lra-diagnosis"
     ],
-    "engine_advance": "HeldProp in lib/heldidle.tsx, a shared idle rig for held props",
-    "escalated": []
+    "engine_advance": null,
+    "escalated": [
+      "audio-report-lra-too-high premix arc softener (no over-target audio to tune against)",
+      "strip_name_check stays advisory until a film ships clean (10-21 key 65, 10-18 key 58 and older drift)"
+    ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
 }
