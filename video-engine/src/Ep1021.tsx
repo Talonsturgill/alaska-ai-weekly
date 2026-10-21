@@ -159,7 +159,7 @@ const Tony: React.FC<{x: number; y: number; f: number; scale?: number; facing?: 
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t2 = b(2), t3 = b(3);
+  const t2 = 42, t3 = b(3);
   const A = {x: 250, y: 1118}, B = {x: 860, y: 1126}, Cc = {x: 560, y: 1160};
   const hop1 = easeIO(f, t2 - 8, 14), hop2 = easeIO(f, t3 - 22, 14);
   const cx = f < t3 - 22 ? lerp(A.x, B.x, hop1) : lerp(B.x, Cc.x, hop2);
@@ -192,7 +192,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
 const S2: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t5 = b(5), t6 = b(6), t7 = b(7), t9 = b(9);
+  const t5 = b(4) + 58, t6 = b(6), t7 = b(7), t9 = b(9);
   const zoom = Math.exp(lerp(0, Math.log(9), easeIO(f, t5 - 24, 36)));
   const mapOp = 1 - ease(f, t5 + 6, 14);
   const beachOp = ease(f, t5 + 2, 16);
@@ -345,7 +345,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
 const S6: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t25 = b(25), t26 = b(26), t27 = b(27), t28 = b(28);
+  const t25 = b(25), t26 = b(26), t27 = b(26) + 33, t28 = b(28);
   const PW = 900, PH = 400, PX = 90, PY = 910, N = 7;
   const marks = N * ease(f, t25, 56);
   const idx = Math.min(N - 1, Math.floor(marks));
@@ -377,7 +377,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
 const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t129 = b(129), t30 = b(30), t31 = b(31), t32 = b(32);
+  const t129 = b(29) + 56, t30 = b(31) - 40, t31 = b(31), t32 = b(32);
   const shrink = easeIO(f, 0, 30);
   const d = Math.sin(g / 90) * 8;
   return (
@@ -410,7 +410,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
 const S8: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t33 = b(33), t34 = b(34), t35 = b(35), t36 = b(36);
+  const t33 = b(33), t34 = b(34), t35 = b(35), t36 = b(35) + 48;
   const sx = lerp(-120, 1180, easeIO(f, t34 - 20, 140));
   const heave = 1.3;
   return (
@@ -437,7 +437,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
 const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t37 = b(37), t38 = b(38), t39 = b(39), t40 = b(40);
+  const t37 = 0, t38 = b(38), t39 = b(39), t40 = b(40);
   const slide = easeIO(f, t38, 30);
   const wall = ease(f, t39 - 4, 14);
   const dim = ease(f, t39, 14);
@@ -501,7 +501,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t44 = b(44), t45 = b(45), t46 = b(46), t47 = b(47);
+  const t44 = b(44), t45 = b(45), t46 = b(46), t47 = b(46) + 66;
   const lower = ease(f, t46, 22);
   const hy = 640 + 70 * lower + 3 * Math.sin(f * 0.9) * (1 - lower);
   const back = ease(f, t46 + 4, 30);
@@ -708,7 +708,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
 const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t63 = b(63), t64 = b(64), t65 = b(65), t66 = b(66);
+  const t63 = b(63), t64 = b(63) + 27, t65 = b(65), t66 = b(66);
   const zoom = Math.exp(lerp(0, Math.log(5.5), easeIO(f, t64 + 6, 52)));
   const orbit = 1 - ease(f, t65 - 12, 16);
   const flick = 0.5 + 0.5 * Math.abs(Math.sin(f / 5));
