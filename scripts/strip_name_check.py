@@ -16,8 +16,9 @@ That is the 2026-08-03 failure in a new coat: an artifact read BY NAME that look
 and misrepresented the film, and the cost is the most expensive kind, because it is paid in
 judge attention and in a score that then reads as a craft verdict.
 
-WHAT THIS CHECKS. For every entry in build_evidence.MOVES it finds which `n === k` branch of
-the episode animates that beat, through q(), pop(), at(), since() or bAt(), and compares the beat's own
+WHAT THIS CHECKS. For every board beat (named as build_evidence names its strip) it finds which
+scene of the episode animates that beat, through q(), pop(), at(), since(), bAt(), or the
+scene-component episodes' b(key) and bt(key), and compares the beat's own
 storyboard `shot` field against it. A mismatch means the strip is named from a beat sheet
 that no longer describes the picture. A beat no shot animates at all is worse: the pack will
 photograph a moment the film never stages.
@@ -57,8 +58,8 @@ def episode_path(board_date):
 DRIVER = re.compile(r"\b(?:q|pop|at|since|bAt)\((\d+)")
 
 
-def shot_of_beat(src):
-    """beat id -> the first `n === k` branch that animates it."""
+def _legacy_shot_of_beat(src):
+    """The pre-10-06 single-component episode: `if (n === k)` branches under `let picture`."""
     body = src[src.index("let picture: React.ReactNode"):]
     marks = sorted([(int(m.group(1)), m.start())
                     for m in re.finditer(r"\(n === (\d+)\)", body)], key=lambda x: x[1])
@@ -68,6 +69,77 @@ def shot_of_beat(src):
         for m in DRIVER.finditer(body[a:b]):
             out.setdefault(int(m.group(1)), n)
     return out
+
+
+# The scene-component episode (Ep1006 on): one top-level `const S<k>: React.FC<SceneProps>`
+# per scene, beats read through the shot's `b(key)` / `bt(key)`, where key is the AUTHORING
+# key and `Ep<date>Ids.ts` maps it to the storyboard beat id, and `SHOT_ORDER` maps the
+# sequence slot (the board's `shot`) to the scene component it plays.
+# Machine pass 2026-10-21: every film from 10-06 to 10-21 used this shape, and the check only
+# knew the `let picture` one, so it raised "ValueError: substring not found" on every cut and
+# had silently checked nothing for two weeks while preflight printed it as a NOTE.
+SCENE = re.compile(r"^const S(\d+)\s*:\s*React\.FC", re.M)
+TOP_LEVEL = re.compile(r"^(?:const|let|function|export|type|interface)\b", re.M)
+KEYED_DRIVER = re.compile(r"\b(?:q|pop|at|since|bAt|b|bt)\((\d+)")
+
+
+def _ids_map(ids_src):
+    if not ids_src:
+        return {}
+    m = re.search(r"=\s*(\{.*?\})\s*;", ids_src, re.S)
+    return {int(k): int(v) for k, v in json.loads(m.group(1)).items()} if m else {}
+
+
+def _scene_shot_of_beat(src, ids):
+    order = None
+    so = re.search(r"SHOT_ORDER\s*=\s*\[([^\]]*)\]", src)
+    if so:
+        order = [int(x) for x in so.group(1).split(",") if x.strip()]
+    out = {}
+    for m in SCENE.finditer(src):
+        n = int(m.group(1))
+        end = TOP_LEVEL.search(src, m.end())
+        body = src[m.start():end.start() if end else len(src)]
+        slot = order.index(n) + 1 if order and n in order else n
+        for d in KEYED_DRIVER.finditer(body):
+            k = int(d.group(1))
+            out.setdefault(ids.get(k, k), slot)
+    return out
+
+
+def shot_of_beat(src, ids_src=None):
+    """beat id -> the shot (sequence slot) that first animates it, for either episode shape."""
+    if "let picture: React.ReactNode" in src:
+        return _legacy_shot_of_beat(src)
+    if SCENE.search(src):
+        return _scene_shot_of_beat(src, _ids_map(ids_src))
+    raise SystemExit("strip_name_check: the episode has neither `let picture` branches nor "
+                     "`const S<k>: React.FC` scenes, so no beat can be located. Teach this "
+                     "checker the new shape rather than skipping it.")
+
+
+def _ids_path(episode):
+    p = episode[:-len(".tsx")] + "Ids.ts"
+    return p if os.path.exists(p) else None
+
+
+def _slug(text, n=36):
+    # build_evidence._slug, copied so a historical board can be named without importing
+    # build_evidence, which reads out/dispatch/storyboard.json at import.
+    return re.sub(r"[^a-z0-9]+", "_", text.lower()).strip("_")[:n].strip("_")
+
+
+def strip_names(board):
+    """beat id -> the strip name build_evidence gives it (subject slug plus id)."""
+    return {b["id"]: f"{_slug(b['draw']['subject'])}_{b['id']}" for b in board["beats"]}
+
+
+def opens_its_shot(beat, board):
+    """A beat on its shot's first frame is staged by the cut itself, with no b() call."""
+    for s in board.get("shots", []):
+        if s.get("id") == beat.get("shot") and "start_s" in s and "at_s" in beat:
+            return abs(float(beat["at_s"]) - float(s["start_s"])) < 1.5 / 30
+    return False
 
 
 def _self_test():
@@ -80,9 +152,49 @@ def _self_test():
 """
     got = shot_of_beat(src)
     want = {3: 1, 4: 2, 5: 2, 6: 3, 7: 3}
-    ok = got == want
-    print(f"  [{'x' if ok else ' '}] q(N), ease/spring(f, bAt(N)), interpolate([bAt(N)]) and since(N) "
-          f"all count: {got}")
+    ok1 = got == want
+    print(f"  [{'x' if ok1 else ' '}] legacy: q(N), ease/spring(f, bAt(N)), interpolate([bAt(N)]) "
+          f"and since(N) all count: {got}")
+
+    scene = """
+const S1: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const t3 = b(3);
+  return <rect fill="rgb(1,2,3)" />;
+};
+
+const Helper = () => <g />;
+
+// ---- S2 ----
+const S2: React.FC<SceneProps> = ({p}) => {
+  const {f, b, bt} = p;
+  const t7 = b(7), g = bt(9);
+  return null;
+};
+const SHOTS = {1: S1, 2: S2};
+const SHOT_ORDER = [2, 1];
+"""
+    ids = "export const IDS: Record<number, number> = {\"3\": 2, \"7\": 5, \"9\": 4};"
+    got2 = shot_of_beat(scene, ids)
+    want2 = {2: 2, 5: 1, 4: 1}
+    ok2 = got2 == want2
+    print(f"  [{'x' if ok2 else ' '}] scene components: b(key) and bt(key) map through IDS, "
+          f"scene S<k> maps through SHOT_ORDER to its slot, rgb( is not a driver: {got2}")
+
+    board = {"shots": [{"id": 1, "start_s": 0.0}, {"id": 2, "start_s": 5.66}],
+             "beats": [{"id": 1, "shot": 1, "at_s": 0.0}, {"id": 2, "shot": 2, "at_s": 5.67},
+                       {"id": 3, "shot": 2, "at_s": 7.0}]}
+    ok3 = [opens_its_shot(b, board) for b in board["beats"]] == [True, True, False]
+    print(f"  [{'x' if ok3 else ' '}] a beat on its shot's first frame is staged by the cut")
+
+    try:
+        shot_of_beat("const X = 1;")
+        ok4 = False
+    except SystemExit:
+        ok4 = True
+    print(f"  [{'x' if ok4 else ' '}] an unknown episode shape fails loudly, never a bare traceback")
+
+    ok = ok1 and ok2 and ok3 and ok4
     print("SELF-TEST", "PASS" if ok else "FAIL")
     return 0 if ok else 1
 
@@ -97,20 +209,20 @@ def main():
         return _self_test()
 
     board = json.load(open(a.board))
-    src = open(a.episode or episode_path(board.get("run_date"))).read()
-    drawn = shot_of_beat(src)
+    episode = a.episode or episode_path(board.get("run_date"))
+    ids_path = _ids_path(episode)
+    src = open(episode).read()
+    drawn = shot_of_beat(src, open(ids_path).read() if ids_path else None)
 
-    import build_evidence
-    named = {bid: name for name, bid, _ in build_evidence.MOVES}
+    named = strip_names(board)
 
     undrawn, misplaced = [], []
     for beat in board["beats"]:
         bid = beat["id"]
-        if bid not in named:
-            continue
         where = drawn.get(bid)
         if where is None:
-            undrawn.append((bid, named[bid]))
+            if not opens_its_shot(beat, board):
+                undrawn.append((bid, named[bid]))
         elif where != beat.get("shot"):
             misplaced.append((bid, named[bid], beat.get("shot"), where))
 
