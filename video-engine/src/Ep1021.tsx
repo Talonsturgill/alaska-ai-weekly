@@ -708,7 +708,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
 const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
-  const t63 = b(63), t64 = b(63) + 27, t65 = b(65), t66 = b(66);
+  const t63 = b(63), t64 = b(63) + 27, t65 = b(66);
   const zoom = Math.exp(lerp(0, Math.log(5.5), easeIO(f, t64 + 6, 52)));
   const orbit = 1 - ease(f, t65 - 12, 16);
   const flick = 0.5 + 0.5 * Math.abs(Math.sin(f / 5));

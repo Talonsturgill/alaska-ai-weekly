@@ -180,12 +180,12 @@ B = [
  (63, 16, 16, W("satellites"), "whoosh", "orbit view", "pulls back from the pool to the coast grid", "ask", "IF SATELLITES",
   "the pool shrinks away into a satellite view of the coast under the dotted grid",
   "the grid draws in and the satellite glides", ""),
- (65, 16, 16, W("who"), "swell", "orange frame", "the view cranes down into one cell that turns solid orange around a figure", "ask", "WHO SHOULD STILL BE ON THE BEACH?",
-  "the view cranes down into one dotted cell on the beach that turns solid survey orange as its corners snap around Violet standing with her phone, WHO SHOULD STILL BE ON THE BEACH?",
-  "the corners snap with an overshoot", ""),
- (66, 16, 16, W("beach"), "hit", "orange frame", "holds on her", "ask", "ON THE BEACH",
-  "the solid corners hold around Violet and her phone on the gravel as the gulls cross",
-  "the corners breathe and the gulls cross", "pay: the loop back to the first frame"),
+ (65, 16, 16, W("someday"), "swell", "orbit view", "cranes down toward one dotted cell on the beach", "ask", "ONE CELL ON THE BEACH",
+  "the view cranes down toward one dotted grid cell on the beach where a tiny figure stands",
+  "the grid slides and the cell grows", ""),
+ (66, 16, 16, W("who"), "hit", "orange frame", "the cell turns solid orange as its corners snap around Violet", "ask", "WHO SHOULD STILL BE ON THE BEACH?",
+  "the dotted cell turns solid survey orange as its corners snap around Violet standing with her phone on the gravel, WHO SHOULD STILL BE ON THE BEACH?",
+  "the corners snap with an overshoot and the gulls cross", "pay: the loop back to the first frame"),
 ]
 
 # id, vo_line, framing, scale, height, stage, pov, layout, motion_vector, hero_treatment, transition_in, thread, title, means
