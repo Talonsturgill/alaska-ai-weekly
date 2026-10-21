@@ -50,6 +50,113 @@ def gaps_from_words(words_path, min_gap=0.35):
     return out, (w[-1]["e"] if w else 0.0)
 
 
+def short_term(path):
+    """[(t, S)] short-term (3 s) loudness every 0.1 s, from ffmpeg's ebur128 meter."""
+    p = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-af", "ebur128",
+                        "-f", "null", "-"], capture_output=True, text=True)
+    return [(float(t), float(v)) for t, v in
+            re.findall(r"\bt:\s*([\d.]+)\s.*?\bS:\s*(-?[\d.]+)", p.stderr)]
+
+
+def _extremes(windows, key, n=3, apart=3.0):
+    out = []
+    for t, v in sorted(windows, key=key):
+        if all(abs(t - u) >= apart for u, _ in out):
+            out.append((t, v))
+        if len(out) == n:
+            break
+    return out
+
+
+def diagnose(lra, gaps, last_word, windows=None):
+    """(diagnosis, lra_windows) for all three cases: under, inside and OVER the 6 to 9 LU target.
+
+    The over branch was missing until the machine pass of 2026-10-21. On 10-11 (LRA 11.4) and
+    10-17 (9.1 to 9.3) this printed the under-target cause, or "inside the target" beside
+    pass.lra false, and all three 10-17 judges named the LRA. An LRA over target means the quiet
+    3 s windows sit too far under the loud ones, so it names both, measured, and says which quiet
+    windows hold a VO gap where only the bed is playing.
+    """
+    long_gaps = [g for g in gaps if g["len"] >= 0.50]
+    silence = round(sum(g["len"] for g in gaps), 2)
+    if 6.0 <= lra <= 9.0:
+        return "LRA is inside the 6 to 9 LU target.", None
+    if lra < 6.0:
+        return (
+            f"LRA is {lra} against the 6 to 9 LU target. MEASURED CAUSE, not asserted: the "
+            f"VO track leaves {len(gaps)} gaps of 0.35s or longer ({len(long_gaps)} of them "
+            f"0.50s or longer), totalling {silence}s of silence, and the last word ends at "
+            f"{round(last_word, 2)}s. The room for the bed to open therefore EXISTS. If the "
+            f"loudness range is still flat, the bed is not rising into that room, which is a "
+            f"mix problem to be fixed at the faders and the duck release, not a script "
+            f"problem to be fixed by cutting lines. An earlier hand-written version of this "
+            f"field claimed there was only one gap over 0.35s and sent the fix in the wrong "
+            f"direction; these figures are computed from words.json every run."), None
+    # Over target. Measure inside the narration only: the credits tail and the silent head are
+    # not what the range gate is complaining about, and ebur128 gates out silence anyway.
+    span = [(t, v) for t, v in (windows or []) if 3.0 <= t <= last_word + 0.5 and v > -70.0]
+    if not span:
+        return (f"LRA is {lra}, OVER the 9 LU ceiling, and the short-term loudness timeline "
+                f"could not be measured to say where; rerun with ffmpeg's ebur128 available."), None
+
+    def silent_s(t):
+        """seconds of the 3 s window ending at t in which the voice is silent"""
+        return round(sum(max(0.0, min(t, g["at"] + g["len"]) - max(t - 3.0, g["at"])) for g in gaps), 2)
+
+    # Only windows that stand OUT of the narration's own level are a cause: 3 LU under or over
+    # its median short-term loudness. Plain speech at the median is never named.
+    med = sorted(v for _, v in span)[len(span) // 2]
+    quiet = _extremes([w for w in span if w[1] <= med - 3.0], key=lambda w: w[1])
+    loud = _extremes([w for w in span if w[1] >= med + 3.0], key=lambda w: -w[1])
+    q_rows = [{"t": round(t, 1), "short_term_lufs": round(v, 1),
+               "vo_silent_s_of_3": silent_s(t)} for t, v in quiet]
+    l_rows = [{"t": round(t, 1), "short_term_lufs": round(v, 1)} for t, v in loud]
+    gapped = sum(1 for r in q_rows if r["vo_silent_s_of_3"] >= 1.0)
+    q_txt = ", ".join(f"{r['t']}s ({r['short_term_lufs']} LUFS, voice silent "
+                      f"{r['vo_silent_s_of_3']}s of the 3)" for r in q_rows) or "none"
+    l_txt = ", ".join(f"{r['t']}s ({r['short_term_lufs']} LUFS)" for r in l_rows) or "none"
+    if q_rows and gapped * 2 >= len(q_rows):
+        cause = ("most of the quiet windows are VO gaps where only the bed plays, so lift the bed "
+                 "into those gaps (the gap lift in dispatch_mix.py) rather than cutting lines")
+    elif q_rows:
+        cause = ("the quiet windows are under the voice itself, so the VO arc dips too deep there: "
+                 "soften the arc depth in dispatch_mix.py at those times before touching the script")
+    else:
+        cause = ("nothing sits far under the narration, so the loud end is the outlier: pull down "
+                 "the loudest windows (a hero hit, a riser or the gap lift peak)")
+    return (f"LRA is {lra}, OVER the 6 to 9 LU target. MEASURED CAUSE, not asserted: the "
+            f"narration's median short-term loudness is {round(med, 1)} LUFS; windows 3 LU or more "
+            f"under it: {q_txt}; windows 3 LU or more over it: {l_txt}. {gapped} of the "
+            f"{len(q_rows)} quiet windows are at least a third VO silence, so {cause}."), \
+        {"median_short_term_lufs": round(med, 1), "quietest": q_rows, "loudest": l_rows}
+
+
+def _self_test():
+    gaps = [{"at": 20.0, "len": 1.6}, {"at": 40.0, "len": 0.4}]
+    ok_in = diagnose(7.4, gaps, 60.0)[0].startswith("LRA is inside")
+    ok_lo = "gaps of 0.35s" in diagnose(4.0, gaps, 60.0)[0]
+    win = [(t / 10, -14.0) for t in range(30, 600)]
+    win = [(t, -31.0 if 21.0 <= t <= 22.5 else -9.0 if 45.0 <= t <= 45.4 else v) for t, v in win]
+    d, rows = diagnose(11.4, gaps, 60.0, win)
+    ok_hi = (d.startswith("LRA is 11.4, OVER") and rows["quietest"][0]["vo_silent_s_of_3"] >= 1.0 and "lift the bed" in d
+             and rows["loudest"][0]["t"] == 45.0 and "inside the target" not in d)
+    flat = [(t / 10, -14.0) for t in range(30, 600)]
+    flat = [(t, -13.0 if 30.0 <= t <= 33.0 else -24.0 if 50.0 <= t <= 51.0 else v) for t, v in flat]
+    d2, rows2 = diagnose(9.4, [], 60.0, flat)
+    ok_arc = "under the voice itself" in d2 and [r["t"] for r in rows2["quietest"]] == [50.0] \
+        and rows2["loudest"] == []
+    ok_none = "could not be measured" in diagnose(9.3, gaps, 60.0, [])[0]
+    checks = [(ok_in, "inside 6 to 9 says inside"), (ok_lo, "under 6 keeps the gap count cause"),
+              (ok_hi, "over 9 names the quiet window in a VO gap and the loud peak, and blames the bed"),
+              (ok_arc, "a dip under continuous voice blames the VO arc, and median speech is never named"),
+              (ok_none, "over 9 with no meter says so instead of claiming inside")]
+    for ok, what in checks:
+        print(f"  [{'x' if ok else ' '}] {what}")
+    ok = all(c for c, _ in checks)
+    print("SELF-TEST", "PASS" if ok else "FAIL")
+    return 0 if ok else 1
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--delivered", default=os.path.join(OUT, "dispatch_square.mp4"))
@@ -63,20 +170,8 @@ def main():
     silence = round(sum(g["len"] for g in gaps), 2)
 
     lra = m.get("lra", 0.0)
-    if lra >= 6.0:
-        diagnosis = "LRA is inside the 6 to 9 LU target."
-    else:
-        diagnosis = (
-            f"LRA is {lra} against the 6 to 9 LU target. MEASURED CAUSE, not asserted: the "
-            f"VO track leaves {len(gaps)} gaps of 0.35s or longer ({len(long_gaps)} of them "
-            f"0.50s or longer), totalling {silence}s of silence, and the last word ends at "
-            f"{round(last_word, 2)}s. The room for the bed to open therefore EXISTS. If the "
-            f"loudness range is still flat, the bed is not rising into that room, which is a "
-            f"mix problem to be fixed at the faders and the duck release, not a script "
-            f"problem to be fixed by cutting lines. An earlier hand-written version of this "
-            f"field claimed there was only one gap over 0.35s and sent the fix in the wrong "
-            f"direction; these figures are computed from words.json every run."
-        )
+    windows = short_term(a.delivered) if lra > 9.0 else None
+    diagnosis, lra_windows = diagnose(lra, gaps, last_word, windows)
 
     # PROVE THE MEASUREMENT COVERS THE MASTER, DO NOT ASSERT IT (2026-08-08).
     # The square is a video-only crop of the 9:16 master, so the two carry byte-identical
@@ -135,6 +230,8 @@ def main():
         "longest_gaps": sorted(gaps, key=lambda g: -g["len"])[:8],
         "diagnosis": diagnosis,
     }
+    if lra_windows:
+        rep["lra_windows"] = lra_windows
     # THE HIT LIST RIDES IN THE PACK (2026-10-02). A judge marked Sound down with "nothing confirms
     # motivated SFX on the named hits": the pack carried loudness and VO gaps but never the list of
     # hits the mix actually performed, which dispatch_mix.py writes at mix time. One row per hit:
@@ -156,4 +253,7 @@ def main():
 
 
 if __name__ == "__main__":
+    import sys
+    if "--self-test" in sys.argv:
+        sys.exit(_self_test())
     main()
