@@ -121,6 +121,29 @@ const Shot=({n})=><g><Plate text="BAD; PLATE"/><Scope/><Type text={HEAD[n-1]}/><
                 self.assertEqual(result["status"], "FAIL")
                 self.assertTrue(result["issues"])
 
+    def test_const_string_ternary_resolves_lexically(self):
+        # 10-16 and 10-17: <Plate text={ann}/> with a const ternary failed as unresolved.
+        self.source.write_text('''
+const Plate=({text})=><Type text={text}/>;
+const S1=({f})=>{const ann=f>3?'HELD':'OPEN';return <Plate text={ann}/>;};
+const S2=({f})=>{const ann=f>3?'BAD; TWO':'FINE';const head=ann;return <g><Plate text={ann}/><Type text={head}/></g>;};
+''')
+        result = self.result()
+        self.assertEqual(result["issues"], [])
+        texts = sorted(f["text"] for f in result["failures"])
+        self.assertEqual(texts, ["BAD; TWO", "BAD; TWO"])
+        self.assertEqual(result["checked"]["source"], 6)
+
+    def test_let_or_runtime_const_stays_unresolved(self):
+        for body in ("let ann='OPEN';if(f)ann='SHUT';", "const ann=props.copy;",
+                     "const ann=ann2;const ann2=ann;"):
+            with self.subTest(body=body):
+                self.source.write_text('const Plate=({text})=><Type text={text}/>;'
+                    'const S1=({f})=>{' + body + 'return <Plate text={ann}/>;};')
+                result = self.result()
+                self.assertEqual(result["status"], "FAIL")
+                self.assertTrue(any("Unresolved" in i["why"] for i in result["issues"]))
+
     def test_code_style_and_comments_not_display_copy(self):
         self.source.write_text('''
 // cannot: a comment;
