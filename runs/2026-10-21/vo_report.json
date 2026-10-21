@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.986,
+    "heard": "She was counting the dead when one of them breathed. Mid-September, near Pointlay, college student Violet Unisquit photographed walrus carcasses for account with USGS researcher Tony Fishbok. Then she saw a stomach move, a baby walrus between two carcasses alive, bear tracks nearby. Her first move wasn't a rescue. It was a question. Machines are being taught to count walrus. USGS says its computing center is using trail camera photos to teach deep neural networks to spot walruses remotely. People mark what's in a picture, and the network guesses, compares, and adjusts. USGS is also developing satellite carcass counts from Marine Mammal Protection Act reporting. Methods, not results. One fair worry. If counting goes remote, fewer people may stand on beaches like that one. These networks learn from pictures people collect, but they don't make the choice she faced next. Walrus are hunted there for subsistence. It was very important for us to ask the community first, she said. It felt hard. Quote, we can't choose this on our own, she said. Once the community decided, they went ahead. They walked the calf to camp, got him through an old broken door into a cabin, and stayed the night. He made a sad little hoo hoo, and kept going to the window. By day two, he slept against her. Towns people boated him across the lagoon. The Alaska sea life center brought a kennel, and she flew with them to Anchorage. Then drove to Seward, more than 800 miles away. The sea life center says he's doing well. His name is Ona Talk, after her late father. If satellites do the counting someday, who should still be on the beach?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.029,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 5.7,
+        "voiced_frac": 0.47,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 128.04,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 128.04,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.984,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.984,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.986,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

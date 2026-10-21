@@ -1,0 +1,17 @@
+A college student photographing walrus carcasses near Point Lay saw a stomach move.
+
+Between two of the carcasses lay a baby walrus, alive, with bear tracks nearby. Alaska Public Media reported that Violet Anniskett was photographing them with USGS researcher Tony Fischbach in mid-September so they could be counted later.
+
+Walrus are hunted there for subsistence. "It was very important for us to ask the community first," she said. "We can't choose this on our own."
+
+Once the community decided as a whole, the rescue could move forward. They walked the calf to camp. At the cabin window he made a sad little hoo hoo, and by day two he slept with his snout on her leg.
+
+A boat, a kennel, a plane and a car then carried him more than 800 miles to the Alaska SeaLife Center in Seward. Staff say he is doing well and was recently transferred to a long-term home. His name is Annautaq, after her late father.
+
+USGS says its Advanced Research Computing center is using trail camera photos from partner agencies to teach deep neural networks to recognize walruses remotely. A USGS photo caption adds that satellite methods to count carcasses are being developed for Marine Mammal Protection Act reporting. Those are methods in development, not results.
+
+Here is the stake. A count only has to see the carcasses. A person on the beach saw the one that was breathing, then asked a community before doing anything. These networks learn from pictures people collect. Satellite counting may serve the reporting it was built for. It can't make that call and it shouldn't replace the person standing there.
+
+If satellites do the counting someday, what would you still send a person to do?
+
+#Alaska #Walrus #ArtificialIntelligence #MachineLearning #PointLay

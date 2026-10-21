@@ -1,0 +1,50 @@
+{
+ "run_date": "2026-10-21",
+ "title": "The Count and the Calf",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "USGS Alaska Science Center, Walrus research",
+   "outlet": "USGS",
+   "url": "https://www.usgs.gov/centers/alaska-science-center/science/walrus-research",
+   "claims": [
+    "c4",
+    "c5",
+    "c6",
+    "c8"
+   ],
+   "used_in_film": true,
+   "note": "Primary; page dated October 16th"
+  },
+  {
+   "id": "s2",
+   "title": "Alaska Public Media, orphaned walrus calf's rescue began with startling discovery (Casey Grove, Oct 12)",
+   "outlet": "Alaska Public Media",
+   "url": "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14"
+   ],
+   "used_in_film": true,
+   "note": "Interview with Violet Anniskett"
+  },
+  {
+   "id": "s3",
+   "title": "USGS media: Onshore walrus carcass survey (Sept 11)",
+   "outlet": "USGS",
+   "url": "https://www.usgs.gov/media/images/onshore-walrus-carcass-survey",
+   "claims": [
+    "c6"
+   ],
+   "used_in_film": true,
+   "note": "Caption for satellite carcass methods"
+  }
+ ]
+}

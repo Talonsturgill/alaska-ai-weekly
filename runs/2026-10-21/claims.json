@@ -1,0 +1,264 @@
+{
+ "run_date": "2026-10-21",
+ "fact_check_verdict": "Core survives. USGS page confirmed by direct fetch on Oct 21 (neural networks, haulout automation, drones, carcass methods); AKPM interview read raw. CUT: Ilisagvik/intern, any link of the Sept 11 USGS orphan photo to Annautaq, the derived 13.7 years figure, accuracy or deployment claims.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "Mid-September near Point Lay, college student Violet Anniskett photographed walrus carcasses with U S G S researcher Tony Fischbach, to count them later.",
+   "on_screen": "POINT LAY \u00b7 MID-SEPTEMBER",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Say college student, never intern and never a school name. Say mid-September. The photos were to count the carcasses later. Attribute to Alaska Public Media."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "A college student helping research walrus near her hometown of Point Lay, on Alaska's northwest coast, made a startling discovery in mid-September ... I was taking photos of all the carcasses so that I can go back and count them"
+  },
+  {
+   "id": "c2",
+   "status": "verified",
+   "spoken": "Then she saw a stomach move, a baby walrus between two carcasses, alive.",
+   "on_screen": "A STOMACH MOVED",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "A person found the calf. No tool, drone or satellite found it. Do not imply a tool did."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "A baby walrus sandwiched between two carcasses. ... I saw the stomach move."
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "Bear tracks nearby.",
+   "on_screen": "BEAR TRACKS NEARBY",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Anniskett says bear tracks were nearby. Say nearby only."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "there were also bear tracks nearby"
+  },
+  {
+   "id": "c4",
+   "status": "verified_with_hedge",
+   "spoken": "U S G S says its Advanced Research Computing center is using trail camera photos to teach deep neural networks to recognize walruses, so they can be spotted remotely.",
+   "on_screen": "USGS \u00b7 TEACHING NEURAL NETWORKS TO SPOT WALRUSES",
+   "source": [
+    "https://www.usgs.gov/centers/alaska-science-center/science/walrus-research"
+   ],
+   "requires": [
+    "Say is using to teach, in development. Never accurate, working, deployed or counting. Ongoing program description from a page dated October 16th, not a new announcement. Do not say the calf photos trained anything. Tag telemetry is not machine learning."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "the USGS Advanced Research Computing center is using trail camera ground-truth imagery collected by partner agencies to teach deep neural networks to recognize walruses so they can more rapidly detect walruses remotely"
+  },
+  {
+   "id": "c5",
+   "status": "labelled_explainer",
+   "spoken": "How does that work? People mark what's in a picture, and the network guesses, compares, and adjusts.",
+   "on_screen": "ILLUSTRATIVE \u00b7 HOW THIS KIND OF LEARNING WORKS",
+   "source": [
+    "https://www.usgs.gov/centers/alaska-science-center/science/walrus-research"
+   ],
+   "requires": [
+    "Generic description of supervised learning, not a USGS statement and not a description of USGS's system. Must carry ILLUSTRATIVE. No accuracy, counts, speeds or architecture names."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: a general description of how supervised neural networks learn from labelled pictures, tied to USGS's own phrase ground-truth imagery"
+  },
+  {
+   "id": "c6",
+   "status": "verified_with_hedge",
+   "spoken": "U S G S is also developing satellite methods to count carcasses, for Marine Mammal Protection Act reporting. Methods, not results.",
+   "on_screen": "METHODS IN DEVELOPMENT \u00b7 NOT RESULTS",
+   "source": [
+    "https://www.usgs.gov/media/images/onshore-walrus-carcass-survey",
+    "https://www.usgs.gov/centers/alaska-science-center/science/walrus-research"
+   ],
+   "requires": [
+    "Say developing methods. No claim it works. The satellite and reporting wording comes from the media caption dated September 11th. The main page says developing methods to detect and count walrus carcasses found onshore."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "to develop methods to detect and count carcasses from satellite ... to meet reporting requirements of the Marine Mammal Protection Act"
+  },
+  {
+   "id": "c7",
+   "status": "argument",
+   "spoken": "Fair objection. If counting goes remote, fewer people may stand on beaches like that one.",
+   "on_screen": "THE FAIR OBJECTION",
+   "source": [
+    "https://www.usgs.gov/centers/alaska-science-center/science/walrus-research",
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "This is the film's own argument and the counterpoint to it. Never attribute it to USGS. USGS does not say it wants fewer people in the field."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: the film's own argument, supported by no USGS statement"
+  },
+  {
+   "id": "c8",
+   "status": "verified_with_hedge",
+   "spoken": "Those networks learn from pictures people collect, but they don't make the choice she faced next.",
+   "on_screen": "TAUGHT FROM PICTURES PEOPLE COLLECT",
+   "source": [
+    "https://www.usgs.gov/centers/alaska-science-center/science/walrus-research",
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Pictures are collected by partner agencies. Do not say these networks play any part in the rescue decision or that Anniskett's photos trained them."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "trail camera ground-truth imagery collected by partner agencies"
+  },
+  {
+   "id": "c9",
+   "status": "verified",
+   "spoken": "Walrus are hunted there for subsistence. \"It was very important for us to ask the community first,\" she said.",
+   "on_screen": "\"IT WAS VERY IMPORTANT FOR US TO ASK THE COMMUNITY FIRST\" \u00b7 ANNISKETT \u00b7 PER ALASKA PUBLIC MEDIA",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Quote verbatim, attribute to Anniskett. One person's words, never a community bloc. No Native iconography. No characterized-object humor near this beat."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": true
+   },
+   "verbatim_source": "For one thing, people in the region hunt walrus for subsistence ... It was very important for us to ask the community first"
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "It felt hard. \"We can't choose this on our own,\" she said. Once the community decided, she and Fischbach could go ahead.",
+   "on_screen": "\"WE CAN'T CHOOSE THIS ON OUR OWN\" \u00b7 ANNISKETT",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Quote verbatim. As soon as they decided as a whole, then we're able to move forward. Do not characterize what the community thought beyond her words."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": true
+   },
+   "verbatim_source": "it felt a little hard ... You know what? We can't choose this on our own ... as soon as they decided as a whole, then we're able to move forward with the steps of saving him through the Sea Life Center."
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "They walked the calf to camp, got him through an old broken door into a cabin, and stayed the night.",
+   "on_screen": "THE CAMP CABIN",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "From her interview. She and Fischbach stayed with him. Keep the door old and broken."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "we walked him all the way to our camp ... We had to go through an old broken door ... Then we we had to stay with him throughout the night."
+  },
+  {
+   "id": "c12",
+   "status": "verified",
+   "spoken": "He made a sad little hoo hoo and kept going to the window. By day two he slept with his snout on her leg.",
+   "on_screen": "\"HOO, HOO\"",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Her description. Keep sad little hoo hoo and the window."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "he would kind of walk around making like a sad little \"hoo, hoo.\" And he would go to the windows and look out the window ... he just put his snout on my leg, kind of, and he fell asleep"
+  },
+  {
+   "id": "c13",
+   "status": "verified",
+   "spoken": "Townspeople boated him across the lagoon. The SeaLife Center came with a kennel, and she flew with them to Anchorage, then drove to Seward, more than eight hundred miles away.",
+   "on_screen": "MORE THAN 800 MILES TO SEWARD",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Say more than 800 miles as reported. The distance is from the beach to Seward per Alaska Public Media."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "some people from town who had a boat ... over the lagoon back to Point Lay ... Then the SeaLife Center came ... fly with them all the way to Anchorage, and then we drove to Seward ... more than 800 miles from the beach where it was found"
+  },
+  {
+   "id": "c14",
+   "status": "verified",
+   "spoken": "The Alaska SeaLife Center says he's doing well. His name is Annautaq, after her late father.",
+   "on_screen": "ANNAUTAQ \u00b7 NAMED FOR HER LATE FATHER",
+   "source": [
+    "https://alaskapublic.org/2026-10-12/on-alaskas-northwest-coast-orphaned-walrus-calfs-rescue-began-with-startling-discovery"
+   ],
+   "requires": [
+    "Staff say the calf is doing well and was recently transferred to a long-term home. Name explained only as the article does."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "named Annautaq after the student's late father ... SeaLife Center staff say the calf is doing well and was recently transferred to a long-term home"
+  },
+  {
+   "id": "c15",
+   "status": "argument",
+   "spoken": "If satellites do the counting someday, who should still be on the beach?",
+   "on_screen": "WHO SHOULD STILL BE ON THE BEACH?",
+   "source": [
+    "https://www.usgs.gov/centers/alaska-science-center/science/walrus-research"
+   ],
+   "requires": [
+    "An open question to the viewer. Not a USGS claim."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: the film's closing question"
+  }
+ ]
+}
