@@ -508,14 +508,14 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.1} oy={1100}
       overlay={<>
-        <Plate x={540} text="IT FELT HARD" y={560} size={40} tone="dusk" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
-        <QuotePlate text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={720} size={36} wrap={22} p={ease(f, t45, 8) * (f < t46 + 2 ? 1 : 0)} type={ease(f, t45, 70)} />
-        <Plate x={540} text="ONCE THE COMMUNITY DECIDED" y={640} size={32} tone="paper" p={ease(f, t46 + 2, 8) * (f < t47 ? 1 : 0.0)} />
+        <Plate x={350} text="IT FELT HARD" y={540} size={40} tone="dusk" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
+        <QuotePlate x={350} text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={700} size={36} wrap={22} p={ease(f, t45, 8) * (f < t46 + 2 ? 1 : 0)} type={ease(f, t45, 70)} />
+        <Plate x={350} text="ONCE THE COMMUNITY DECIDED" y={860} size={32} tone="paper" p={ease(f, t46 + 2, 8) * (f < t47 ? 1 : 0.0)} />
       </>}>
       <SVG>
         <BeachBG f={g} horizon={420} shore={500} id="s11b" dusk={1} dark={0.22} gulls={false} far={false} />
         <WalrusCalf x={470} y={1262} f={g} scale={2.3} eyes={0.85} breath={1.2} mood={f < t46 ? 'afraid' : 'calm'} shiver={f < t46 ? 0.2 : 0} id="s11k" />
-        <HandSil x={520} y={hy - 60} rot={180} s={0.85} sleeve fill="#5A4A5C" />
+        <HandSil x={770} y={hy - 40} rot={180} s={0.8} sleeve fill="#5A4A5C" />
         <ViewFrame x={580} y={1100} w={lerp(960, 1300, back)} h={lerp(560, 760, back)} f={f} mode="bracket" k={snap(f, 0, 8)} dim={0.65 * back} id="s11v" />
         {f >= t47 && <ViewFrame x={930} y={1000} w={200} h={420} f={f} mode="box" k={snap(f, t47, 10)} id="s11d" />}
       </SVG>
