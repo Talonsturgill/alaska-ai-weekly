@@ -174,7 +174,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.08} oy={1150}
       overlay={<>
         <Plate text="SHE WAS COUNTING THE DEAD" y={560} size={38} tone="ink" p={ease(f, 4, 8) * (f < t3 ? 1 : 0)} />
-        <Plate text="ONE OF THEM BREATHED" y={560} size={40} tone="orange" p={ease(f, t3 + 2, 8)} />
+        <Plate text="ONE OF THEM BREATHED" y={640} size={40} tone="orange" p={ease(f, t3 + 2, 8)} />
       </>}>
       <SVG>
         <BeachBG f={g} horizon={820} shore={980} id="s1b" />
@@ -206,10 +206,10 @@ const S2: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1100}
       overlay={<>
-        <Plate text="POINT LAY · MID-SEPTEMBER" y={560} size={36} tone="ink" p={ease(f, 4, 8) * (f < t6 - 6 ? 1 : 0)} />
-        <Plate text="VIOLET ANNISKETT · COLLEGE STUDENT" y={540} size={30} tone="paper" p={ease(f, t6 + 2, 8) * (f < t7 + 70 ? 1 : 0)} />
-        <Plate text="PHOTOS, TO COUNT LATER" y={610} size={34} tone="orange" p={ease(f, t7 + 2, 8)} />
-        <Plate text="TONY FISCHBACH · USGS" y={680} size={32} tone="ink" p={ease(f, t9 + 2, 8)} />
+        <Plate text="POINT LAY · MID-SEPTEMBER" y={540} size={36} tone="ink" p={ease(f, 4, 8) * (f < t6 - 6 ? 1 : 0)} />
+        <Plate text="VIOLET ANNISKETT · COLLEGE STUDENT" y={610} size={30} tone="paper" p={ease(f, t6 + 2, 8) * (f < t7 + 70 ? 1 : 0)} />
+        <Plate text="PHOTOS, TO COUNT LATER" y={680} size={34} tone="orange" p={ease(f, t7 + 2, 8)} />
+        <Plate text="TONY FISCHBACH · USGS" y={750} size={32} tone="ink" p={ease(f, t9 + 2, 8)} />
       </>}>
       <SVG>
         <g opacity={beachOp}>
@@ -226,8 +226,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
         </g>
         <g opacity={mapOp}>
           <g transform={`translate(${pinX} ${pinY}) scale(${zoom}) translate(${-pinX} ${-pinY})`}>
-            <rect x={-600} y={0} width={2400} height={1920} fill="#8FA4A8" />
-            <rect x={-600} y={0} width={2400} height={1920} fill="#2A5568" opacity={0.55} />
+            <rect data-band="ok" x={-600} y={0} width={2400} height={1920} fill="#8FA4A8" />
+            <rect data-band="ok" x={-600} y={0} width={2400} height={1920} fill="#2A5568" opacity={0.55} />
             <AlaskaMini frame={g} x={60} y={720} scale={1.9} pin={false} />
             <circle cx={pinX} cy={pinY} r={22 + 14 * Math.sin(f / 7)} fill="none" stroke={CAL.cream} strokeWidth={6} opacity={0.8} />
             <circle cx={pinX} cy={pinY} r={11} fill="#16203F" stroke={CAL.cream} strokeWidth={4} />
@@ -316,10 +316,10 @@ const S5: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.06} oy={1100} dx0={0} dx1={-30}
       overlay={<>
         <Plate text="USGS" displayLines={['USGS · TEACHING NEURAL NETWORKS', 'TO SPOT WALRUSES']} y={540} size={32} tone="ink" p={ease(f, t21 + 2, 8)} />
-        <Plate text="COMPUTING CENTER" y={650} size={30} tone="dusk" p={ease(f, t21 + 6, 8) * (f < t22 ? 1 : 0)} />
-        <Plate text="TRAIL CAMERA PHOTOS" y={700} size={30} tone="paper" p={ease(f, t22 + 2, 8) * (f < t23 ? 1 : 0)} />
-        <Plate text="DEEP NEURAL NETWORK" y={750} size={30} tone="pale" p={ease(f, t23 + 2, 8) * (f < t24 ? 1 : 0)} />
-        <Plate text="IN DEVELOPMENT" y={800} size={32} tone="pale" dashed p={ease(f, t24 + 2, 8)} />
+        <Plate text="COMPUTING CENTER" y={660} size={30} tone="dusk" p={ease(f, t21 + 6, 8) * (f < t22 ? 1 : 0)} />
+        <Plate text="TRAIL CAMERA PHOTOS" y={730} size={30} tone="paper" p={ease(f, t22 + 2, 8) * (f < t23 ? 1 : 0)} />
+        <Plate text="DEEP NEURAL NETWORK" y={800} size={30} tone="pale" p={ease(f, t23 + 2, 8) * (f < t24 ? 1 : 0)} />
+        <Plate text="IN DEVELOPMENT" y={870} size={32} tone="pale" dashed p={ease(f, t24 + 2, 8)} />
       </>}>
       <SVG>
         <BeachBG f={g} horizon={740} shore={930} id="s5b" gulls={false} far={false} />
@@ -346,7 +346,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
   const t25 = b(25), t26 = b(26), t27 = b(27), t28 = b(28);
-  const PW = 900, PH = 420, PX = 90, PY = 850, N = 7;
+  const PW = 900, PH = 400, PX = 90, PY = 910, N = 7;
   const marks = N * ease(f, t25, 56);
   const idx = Math.min(N - 1, Math.floor(marks));
   const px = PX + 70 + rnd(idx * 3 + 0) * (PW - 160), py = PY + 100 + rnd(idx * 3 + 1) * (PH - 190);
@@ -358,17 +358,16 @@ const S6: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate text="ILLUSTRATIVE" displayLines={['ILLUSTRATIVE', 'HOW THIS KIND OF LEARNING WORKS']} y={525} size={30} tone="orange" p={ease(f, 4, 8)} />
         <Plate text="PEOPLE MARK" y={640} size={34} tone="paper" p={ease(f, t25 + 2, 8) * (f < t26 ? 1 : 0)} />
-        <Plate text="THE NETWORK GUESSES" y={700} size={34} tone="pale" p={ease(f, t26 + 2, 8) * (f < t27 ? 1 : 0)} />
-        <Plate text="COMPARES" y={760} size={34} tone="dusk" p={ease(f, t27 + 2, 8) * (f < t28 ? 1 : 0)} />
-        <Plate text="ADJUSTS" y={810} size={34} tone="pale" p={ease(f, t28 + 2, 8)} />
+        <Plate text="THE NETWORK GUESSES" y={715} size={34} tone="pale" p={ease(f, t26 + 2, 8) * (f < t27 ? 1 : 0)} />
+        <Plate text="COMPARES" y={790} size={34} tone="dusk" p={ease(f, t27 + 2, 8) * (f < t28 ? 1 : 0)} />
+        <Plate text="ADJUSTS" y={865} size={34} tone="pale" p={ease(f, t28 + 2, 8)} />
       </>}>
       <SVG>
-        <rect x={-40} y={0} width={1160} height={1960} fill="#1F2540" />
+        <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="#1F2540" />
         {Array.from({length: 12}).map((_, i) => <path key={i} d={`M${-40 + i * 100},0 L${-40 + i * 100},1960`} stroke={CAL.pale} strokeWidth={1.6} opacity={0.08} />)}
         <HaulPhoto x={PX} y={PY} w={PW} h={PH} f={g} n={N} marks={marks} guess={ease(f, t26, 20)} learn={f < t26 ? 0 : learn} id="s6p" />
         {handOn && <HandSil x={px + 60} y={py + 40} rot={-28} s={0.45} sleeve fill="#5A4A5C" />}
         <Gauge x={930} y={705} scale={0.5} v={gauge} f={g} />
-        <CalfInset x={150} y={1300} scale={0.3} f={g} id="s6c" />
       </SVG>
     </Frame>
   );
@@ -384,9 +383,9 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} zk={(ff) => lerp(1.45, 1.0, easeIO(ff, 0, 44)) + 0.04 * (ff / p.dur)} oy={1100}
       overlay={<>
-        <Plate text="SATELLITE VIEW" y={560} size={38} tone="pale" p={ease(f, 6, 8) * (f < t31 ? 1 : 0)} />
-        <Plate text="MARINE MAMMAL PROTECTION ACT · REPORTING" displayLines={['MARINE MAMMAL PROTECTION ACT', 'REPORTING']} y={560} size={32} tone="ink" p={ease(f, t31 + 2, 8)} />
-        <Plate text="METHODS IN DEVELOPMENT · NOT RESULTS" displayLines={['METHODS IN DEVELOPMENT', 'NOT RESULTS']} y={700} size={36} tone="pale" dashed p={ease(f, t32 + 2, 8)} />
+        <Plate text="SATELLITE VIEW" y={540} size={38} tone="pale" p={ease(f, 6, 8) * (f < t31 ? 1 : 0)} />
+        <Plate text="MARINE MAMMAL PROTECTION ACT · REPORTING" displayLines={['MARINE MAMMAL PROTECTION ACT', 'REPORTING']} y={640} size={32} tone="ink" p={ease(f, t31 + 2, 8)} />
+        <Plate text="METHODS IN DEVELOPMENT · NOT RESULTS" displayLines={['METHODS IN DEVELOPMENT', 'NOT RESULTS']} y={770} size={36} tone="pale" dashed p={ease(f, t32 + 2, 8)} />
       </>}>
       <SVG>
         <OrbitBG f={g} grid={ease(f, t129 - 14, 30)} />
@@ -418,7 +417,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.05} oy={1150}
       overlay={<>
         <Plate text="THE FAIR OBJECTION" y={560} size={40} tone="ink" p={ease(f, t33 + 2, 8) * (f < t36 ? 1 : 0)} />
-        <Plate text="3 MOUNDS · NOBODY STANDING THERE" displayLines={['3 MOUNDS', 'NOBODY STANDING THERE']} y={640} size={34} tone="dusk" p={ease(f, t35 + 2, 8)} />
+        <Plate text="3 MOUNDS · NOBODY STANDING THERE" displayLines={['3 MOUNDS', 'NOBODY STANDING THERE']} y={670} size={34} tone="dusk" p={ease(f, t35 + 2, 8)} />
       </>}>
       <SVG>
         <BeachBG f={g} horizon={820} shore={980} id="s8b" />
@@ -451,7 +450,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Plate text="THE CHOICE SHE FACED" y={700} size={38} tone="orange" p={ease(f, t40 + 2, 8)} />
       </>}>
       <SVG>
-        <rect x={-40} y={0} width={1160} height={1960} fill="#1B2140" />
+        <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="#1B2140" />
         {Array.from({length: 12}).map((_, i) => <path key={i} d={`M${-40 + i * 100},0 L${-40 + i * 100},1960`} stroke={CAL.pale} strokeWidth={1.6} opacity={0.08} />)}
         <NeuralStack x={270} y={950} scale={0.95} f={g} lit={ease(f, t37, 30) * 4} dim={dim} />
         <path d={`M120,1230 L${lerp(120, 250, slide)},${lerp(1230, 1090, slide)}`} stroke={CAL.pale} strokeWidth={10} strokeDasharray="14 12" strokeDashoffset={-f} opacity={0.7} strokeLinecap="round" />
@@ -510,13 +509,13 @@ const S11: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.1} oy={1100}
       overlay={<>
         <Plate text="IT FELT HARD" y={560} size={40} tone="dusk" p={ease(f, t44 + 4, 8) * (f < t45 ? 1 : 0)} />
-        <QuotePlate text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={720} size={36} wrap={22} p={ease(f, t45, 8)} type={ease(f, t45, 70)} />
-        <Plate text="ONCE THE COMMUNITY DECIDED" y={560} size={32} tone="paper" p={ease(f, t46 + 2, 8) * (f < t47 ? 1 : 0.0)} />
+        <QuotePlate text="WE CAN'T CHOOSE THIS ON OUR OWN · ANNISKETT" y={720} size={36} wrap={22} p={ease(f, t45, 8) * (f < t46 + 2 ? 1 : 0)} type={ease(f, t45, 70)} />
+        <Plate text="ONCE THE COMMUNITY DECIDED" y={640} size={32} tone="paper" p={ease(f, t46 + 2, 8) * (f < t47 ? 1 : 0.0)} />
       </>}>
       <SVG>
         <BeachBG f={g} horizon={420} shore={500} id="s11b" dusk={1} dark={0.22} gulls={false} far={false} />
         <WalrusCalf x={470} y={1262} f={g} scale={2.3} eyes={0.85} breath={1.2} mood={f < t46 ? 'afraid' : 'calm'} shiver={f < t46 ? 0.2 : 0} id="s11k" />
-        <HandSil x={520} y={hy} rot={180} s={1.1} sleeve fill="#5A4A5C" />
+        <HandSil x={520} y={hy - 60} rot={180} s={0.85} sleeve fill="#5A4A5C" />
         <ViewFrame x={580} y={1100} w={lerp(960, 1300, back)} h={lerp(560, 760, back)} f={f} mode="bracket" k={snap(f, 0, 8)} dim={0.65 * back} id="s11v" />
         {f >= t47 && <ViewFrame x={930} y={1000} w={200} h={420} f={f} mode="box" k={snap(f, t47, 10)} id="s11d" />}
       </SVG>
@@ -538,10 +537,10 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1150}
       overlay={<>
-        <Plate text="THEY WALKED HIM TO CAMP" y={560} size={34} tone="dusk" p={ease(f, t48 + 4, 8) * (f < t49 ? 1 : 0)} />
-        <Plate text="AN OLD BROKEN DOOR" y={630} size={36} tone="paper" p={ease(f, t49 + 2, 8) * (f < t50 ? 1 : 0)} />
-        <Plate text="THE CAMP CABIN" y={560} size={38} tone="paper" p={ease(f, t50 + 2, 8) * (f < t51 ? 1 : 0)} />
-        <Plate text="THEY STAYED THE NIGHT" y={630} size={34} tone="dusk" p={ease(f, t51 + 2, 8)} />
+        <Plate text="THEY WALKED HIM TO CAMP" y={540} size={34} tone="dusk" p={ease(f, t48 + 4, 8) * (f < t49 ? 1 : 0)} />
+        <Plate text="AN OLD BROKEN DOOR" y={610} size={36} tone="paper" p={ease(f, t49 + 2, 8) * (f < t50 ? 1 : 0)} />
+        <Plate text="THE CAMP CABIN" y={680} size={38} tone="paper" p={ease(f, t50 + 2, 8) * (f < t51 ? 1 : 0)} />
+        <Plate text="THEY STAYED THE NIGHT" y={750} size={34} tone="dusk" p={ease(f, t51 + 2, 8)} />
       </>}>
       <SVG>
         {!inside && (
@@ -554,7 +553,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <CabinDoor x={790} y={1200} scale={0.85} open={door} f={g} />
             <Violet x={vx} y={1300} f={g} scale={0.6} walking={f < 120} />
             <Tony x={tx} y={1290} f={g} scale={0.6} facing={1} walking={f < 120} />
-            <WalrusCalf x={Math.min(cxp, 840)} y={1290} f={g} scale={0.5} eyes={0.9} breath={0.9} mood="calm" id="s12k" />
+            <WalrusCalf x={Math.min(cxp, 840)} y={1290} f={g} scale={0.72} eyes={0.9} breath={0.9} mood="calm" id="s12k" />
           </g>
         )}
         {inside && (
@@ -583,10 +582,10 @@ const S13: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.1} oy={1050}
       overlay={<>
-        <Plate text={'"HOO, HOO"'} y={560} size={44} tone="paper" p={ease(f, t52 + 2, 8) * (f < t53 ? 1 : 0)} />
-        <Plate text="THE WINDOW" y={560} size={40} tone="dusk" p={ease(f, t53 + 2, 8) * (f < t54 ? 1 : 0)} />
-        <Plate text="DAY TWO" y={560} size={42} tone="ink" p={ease(f, t54 + 2, 8) * (f < t55 ? 1 : 0)} />
-        <Plate text="ASLEEP AGAINST HER" y={630} size={36} tone="paper" p={ease(f, t55 + 2, 8)} />
+        <Plate text={'"HOO, HOO"'} y={540} size={44} tone="paper" p={ease(f, t52 + 2, 8) * (f < t53 ? 1 : 0)} />
+        <Plate text="THE WINDOW" y={610} size={40} tone="dusk" p={ease(f, t53 + 2, 8) * (f < t54 ? 1 : 0)} />
+        <Plate text="DAY TWO" y={680} size={42} tone="ink" p={ease(f, t54 + 2, 8) * (f < t55 ? 1 : 0)} />
+        <Plate text="ASLEEP AGAINST HER" y={750} size={36} tone="paper" p={ease(f, t55 + 2, 8)} />
       </>}>
       <SVG>
         <CabinBG f={g} wx={740} wy={900} ww={300} wh={360} lamp={1 - 0.55 * dawn} id="s13c" door={false} />
@@ -617,11 +616,10 @@ const S14: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1050}
       overlay={<>
-        <Plate text="ACROSS THE LAGOON" y={560} size={36} tone="ink" p={ease(f, t56 + 4, 8) * (phase === 0 ? 1 : 0)} />
-        <Plate text="ALASKA SEALIFE CENTER · KENNEL" displayLines={['ALASKA SEALIFE CENTER', 'KENNEL']} y={560} size={34} tone="paper" p={ease(f, t57 + 2, 8) * (phase === 1 ? 1 : 0)} />
-        <Plate text="FLEW TO ANCHORAGE" y={560} size={38} tone="dusk" p={ease(f, t58 + 2, 8) * (phase === 2 ? 1 : 0)} />
-        <Plate text="DROVE TO SEWARD" y={560} size={38} tone="ink" p={ease(f, t59 + 2, 8) * (f < t60 ? 1 : 0)} />
-        <Plate text="MORE THAN 800 MILES TO SEWARD" displayLines={['MORE THAN 800 MILES', 'TO SEWARD']} y={560} size={38} tone="orange" p={ease(f, t60 + 2, 8)} />
+        <Plate text="ACROSS THE LAGOON" y={540} size={36} tone="ink" p={ease(f, t56 + 4, 8) * (phase === 0 ? 1 : 0)} />
+        <Plate text="ALASKA SEALIFE CENTER · KENNEL" displayLines={['ALASKA SEALIFE CENTER', 'KENNEL']} y={650} size={34} tone="paper" p={ease(f, t57 + 2, 8) * (phase === 1 ? 1 : 0)} />
+        <Plate text="FLEW TO ANCHORAGE" y={760} size={38} tone="dusk" p={ease(f, t58 + 2, 8) * (phase === 2 ? 1 : 0)} />
+        <Plate text="MORE THAN 800 MILES TO SEWARD" displayLines={['MORE THAN 800 MILES', 'TO SEWARD']} y={880} size={38} tone="orange" p={ease(f, t60 + 2, 8)} />
       </>}>
       <SVG>
         {phase === 0 && (
@@ -629,7 +627,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
             <rect x={-40} y={0} width={1160} height={900} fill={`url(#s14sky)`} />
             <defs><linearGradient id="s14sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={CAL.skyTop} /><stop offset="1" stopColor={CAL.haze} /></linearGradient></defs>
             <path d="M-40,880 L200,850 L420,870 L640,845 L900,872 L1120,850 L1120,940 L-40,940 Z" fill="#6F7F88" opacity={0.7} />
-            <rect x={-40} y={920} width={1160} height={1040} fill={CAL.sea} />
+            <rect data-band="ok" x={-40} y={920} width={1160} height={1040} fill={CAL.sea} />
             {[0, 1, 2, 3, 4, 5, 6].map((i) => <path key={i} d={`M-40,${960 + i * 70 + 6 * Math.sin(g / 20 + i)} q140,-12 280,0 t280,0 t280,0 t280,0`} fill="none" stroke="#FFFFFF" strokeWidth={3 + i * 0.6} opacity={0.14 + i * 0.03} />)}
             <path d={`M${sk - 240},1150 q-80,10 -170,-4 M${sk - 250},1170 q-120,14 -250,-6`} fill="none" stroke="#FFFFFF" strokeWidth={6} opacity={0.4} />
             <Skiff x={sk} y={1120} scale={1.05} f={g} id="s14k" />
@@ -648,7 +646,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         )}
         {phase === 2 && (
           <g>
-            <rect x={-40} y={0} width={1160} height={1960} fill={CAL.skyLow} />
+            <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill={CAL.skyLow} />
             {[0, 1, 2, 3, 4].map((i) => <ellipse key={i} cx={200 + i * 190 + 40 * Math.sin(g / 60 + i)} cy={600 + i * 140} rx={230} ry={30} fill="#FFFFFF" opacity={0.22} />)}
             <g transform={`rotate(${-8 + 6 * Math.sin(g / 30)} 540 900)`}>
               <BushPlane x={lerp(-160, 1240, easeIO(f, t58 - 4, 64))} y={900} scale={1.1} f={g} mode="fly" propSpeed={1.4} />
@@ -658,9 +656,9 @@ const S14: React.FC<SceneProps> = ({p}) => {
         )}
         {phase === 3 && (
           <g>
-            <rect x={-40} y={0} width={1160} height={1960} fill="#8FA4A8" />
-            <rect x={-40} y={0} width={1160} height={1960} fill="#2A5568" opacity={0.55} />
-            <g transform="translate(120 700) scale(1.6)">
+            <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="#8FA4A8" />
+            <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="#2A5568" opacity={0.55} />
+            <g transform="translate(190 990) scale(1.4)">
               <AlaskaMini frame={g} x={0} y={0} scale={1} pin={false} />
               <path d={ROUTE} fill="none" stroke={CAL.cream} strokeWidth={11} strokeLinecap="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - route} />
               <path d={ROUTE} fill="none" stroke="#16203F" strokeWidth={6} strokeLinecap="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - route} />
@@ -693,7 +691,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <defs><linearGradient id="s15w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#DCE9E6" /><stop offset="1" stopColor="#9FC2C0" /></linearGradient></defs>
-        <rect x={-40} y={0} width={1160} height={1960} fill="url(#s15w)" />
+        <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill="url(#s15w)" />
         {Array.from({length: 9}).map((_, i) => <path key={i} d={`M${-40 + i * 140},0 L${-40 + i * 140},1960`} stroke="#FFFFFF" strokeWidth={3} opacity={0.35} />)}
         {Array.from({length: 14}).map((_, i) => <path key={i} d={`M-40,${i * 140} L1120,${i * 140}`} stroke="#FFFFFF" strokeWidth={3} opacity={0.3} />)}
         <Pool x={540} y={1330} w={800} h={430} f={g} id="s15p" />
@@ -718,7 +716,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.02} oy={1100}
       overlay={<>
         <Plate text="DO THE COUNTING" y={560} size={40} tone="pale" p={ease(f, t64 + 2, 8) * (f < t65 ? 1 : 0)} />
-        <Plate text="WHO SHOULD STILL BE ON THE BEACH?" displayLines={['WHO SHOULD STILL BE', 'ON THE BEACH?']} y={560} size={42} tone="orange" p={ease(f, t65 + 2, 8)} />
+        <Plate text="WHO SHOULD STILL BE ON THE BEACH?" displayLines={['WHO SHOULD STILL BE', 'ON THE BEACH?']} y={690} size={42} tone="orange" p={ease(f, t65 + 2, 8)} />
       </>}>
       <SVG>
         <g opacity={1 - orbit}>

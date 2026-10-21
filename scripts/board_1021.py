@@ -22,7 +22,7 @@ W = lambda w, n=1: (w, n)
 # key, shot, line, anchor, sfx, subject, action, emotion, annotation, shows, reaction, rehook
 B = [
  (1, 1, 0, 0.0, "hit", "viewfinder frame", "slams onto the first grey mound on the gravel and the tally clicks 01", "plain", "COUNT",
-  "four orange viewfinder corners slam onto a grey mound on a pewter-lilac gravel beach and a brass tally clicks to 01",
+  "four orange viewfinder corners slam onto a grey mound on a straw gravel beach and a brass tally clicks to 01",
   "the corners overshoot and settle, the tally digit rolls", ""),
  (2, 1, 0, W("dead"), "click", "viewfinder frame", "hops to the second mound and the tally clicks 02", "plain", "COUNT 02",
   "the corners hop to the second grey mound and the tally rolls to 02",
@@ -73,7 +73,7 @@ B = [
   "the hand withdraws and a big orange question mark slams down beside the calf and stays",
   "the stamp lands and the calf blinks", "rehook: the question"),
  (19, 5, 4, W("Machines"), "whoosh", "trail camera", "swings its lens toward a far haulout of grey mounds", "curious", "MACHINES · TAUGHT TO COUNT",
-  "the view cuts to a trail camera on a post looking out over a far haulout of grey mounds, its red light blinking, while a brass tally beside it clicks up by itself",
+  "the view cuts to a trail camera on a post looking out over a far haulout of grey mounds, its cream light blinking, while orange corners settle on the far haulout and a small breathing calf sits held in its own corners in the lower corner",
   "the lens turns and the LED blinks", ""),
  (21, 5, 5, W("U"), "thunk", "plate", "stamps beside the trail camera", "plain", "USGS · TEACHING NEURAL NETWORKS TO SPOT WALRUSES",
   "a plate stamps beside the trail camera reading USGS, TEACHING NEURAL NETWORKS TO SPOT WALRUSES, while the big orange question mark shrinks into a small mark parked in the corner",
@@ -82,7 +82,7 @@ B = [
   "the trail camera flashes and a photo of grey mounds slides out into frame",
   "the flash blooms and the photo settles", ""),
  (23, 5, 5, W("neural"), "bloop", "neural network", "lights up as four glass layers", "curious", "DEEP NEURAL NETWORK",
-  "four stacked glass layers with dotted links light up beside the photo, a deep neural network, in development",
+  "four stacked glass layers with dotted links light up beside the photo, a deep neural network, in development, the small calf insert still breathing in its corners",
   "the layers glow in sequence", ""),
  (24, 5, 5, W("walruses"), "ping", "dotted guesses", "drop onto the photo's mounds", "plain", "SPOTTING WALRUSES · IN DEVELOPMENT",
   "pale dotted boxes drop onto the mounds in the photo, IN DEVELOPMENT",
@@ -166,7 +166,7 @@ B = [
   "an old split plank door with a hole swings in and the calf shuffles through",
   "the door creaks and swings", ""),
  (50, 12, 12, W("cabin"), "click", "lamp", "clicks on inside the cabin", "warm", "THE CAMP CABIN",
-  "an amber lamp clicks on inside the plank cabin and the calf settles on the floor",
+  "a pale straw kerosene lamp clicks on inside the plank cabin and the calf settles on the floor",
   "the lamp light blooms and flickers", ""),
  (51, 12, 12, W("stayed"), "fold", "Violet", "sits down beside him", "warm", "THEY STAYED THE NIGHT",
   "Violet and Tony sit down on the floor on either side of him",
@@ -175,7 +175,7 @@ B = [
   "the calf lifts its head and calls, a sad little hoo hoo, its throat pulsing, HOO HOO",
   "the throat pulses and the lamp flickers", "rehook: hoo hoo"),
  (53, 13, 13, W("window"), "bell", "window frame", "the orange frame becomes a cabin window the calf looks out of", "sad", "THE WINDOW",
-  "the calf goes to the window and the orange frame becomes its mullions, amber glow behind him",
+  "the calf goes to the window and the orange frame becomes its mullions, pale lamp glow behind him",
   "the mullions draw in and the glow warms", ""),
  (54, 13, 13, W("day"), "hush", "dawn light", "greys the window", "plain", "DAY TWO",
   "dawn grey fills the window as the lamp pales",
@@ -187,7 +187,7 @@ B = [
   "a small skiff carries the calf and two people across a teal lagoon, ACROSS THE LAGOON",
   "the skiff bobs and the wake spreads", ""),
  (57, 14, 14, W("Alaska"), "thunk", "kennel", "stands open on the gravel and the calf steps in", "plain", "ALASKA SEALIFE CENTER · KENNEL",
-  "a grey transport kennel stands open on the gravel and the calf is lifted in, ALASKA SEALIFE CENTER, KENNEL",
+  "a grey transport kennel stands open on the gravel framed by orange corners at its door and Violet's sleeve guides the calf in, ALASKA SEALIFE CENTER, KENNEL",
   "the latch swings and the calf looks out", ""),
  (58, 14, 14, W("flew"), "drone", "bush plane", "banks across a pewter sky", "plain", "FLEW TO ANCHORAGE",
   "a small plane banks across a pewter sky, FLEW TO ANCHORAGE",
@@ -202,7 +202,7 @@ B = [
   "the calf floats at the surface of a small tiled pool, content, SEALIFE CENTER, DOING WELL",
   "the water rocks and the calf blinks", ""),
  (62, 15, 15, W("Annautaq"), "chime", "name plate", "drops in beside the pool", "warm", "ANNAUTAQ · NAMED FOR HER LATE FATHER",
-  "a name plate drops in beside the pool reading ANNAUTAQ, NAMED FOR HER LATE FATHER",
+  "a name plate drops in beside the pool and orange corners close on it, reading ANNAUTAQ, NAMED FOR HER LATE FATHER",
   "the plate glows and the water rocks", "pay: the calf lives"),
  (63, 16, 16, W("satellites"), "whoosh", "orbit view", "pulls back from the pool to the coast grid", "ask", "IF SATELLITES",
   "the pool shrinks away into a satellite view of the coast under the dotted grid",
@@ -298,7 +298,7 @@ STAGE3D = {k: "planes" for k in range(1, 17)}
 for _k in (6, 9, 15):
     STAGE3D[_k] = "flat:a locked panel where the boxes, the wall and the water are the motion"
 CAMERA = {1: "dollyThrough", 2: "craneDown", 3: "dollyThrough", 4: "dollyThrough", 5: "truckAcross", 6: "static:the boxes and the needle are the shot", 7: "craneDown", 8: "static:the held corners over the breathing mound are the shot",
-          9: "static:the dotted wall is the shot", 10: "dollyThrough", 11: "dollyThrough", 12: "truckAcross", 13: "dollyThrough", 14: "craneDown", 15: "static:the calf in the water is the shot", 16: "craneDown"}
+          9: "static:the dotted wall is the shot", 10: "static:the steady windows and the still calf are the shot", 11: "dollyThrough", 12: "truckAcross", 13: "dollyThrough", 14: "craneDown", 15: "static:the calf in the water is the shot", 16: "craneDown"}
 
 
 def est_starts():

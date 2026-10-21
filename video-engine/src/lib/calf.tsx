@@ -530,7 +530,7 @@ export const QMark: React.FC<{x: number; y: number; size?: number; f: number; k?
   const pulse = 1 + 0.025 * Math.sin(f / 9);
   return (
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${over * pulse})`} opacity={Math.min(1, kk * 2.4)}>
-      {glow > 0 && <circle cx={0} cy={0} r={size * 0.55} fill={CAL.orange} opacity={0.2 * glow} />}
+      {glow > 0 && <circle cx={0} cy={0} r={size * 0.58} fill="none" stroke={CAL.orange} strokeWidth={6} strokeDasharray="10 14" opacity={0.7 * glow} />}
       <text x={6} y={size * 0.36 + 10} textAnchor="middle" fontFamily="Fraunces, Georgia, serif" fontWeight={900} fontSize={size} fill="#000" opacity={0.28}>?</text>
       <text x={0} y={size * 0.36} textAnchor="middle" fontFamily="Fraunces, Georgia, serif" fontWeight={900} fontSize={size}
         fill={outline ? 'none' : CAL.orange} stroke={outline ? CAL.orange : INK} strokeWidth={outline ? Math.max(4, size * 0.04) : size * 0.03} paintOrder="stroke">?</text>
