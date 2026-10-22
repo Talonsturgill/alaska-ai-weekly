@@ -202,7 +202,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         {[0, 1, 2, 3, 4].map((i) => <DownloadArrow key={i} x={540 + (i - 2) * 118 * (1 - square)} y={820 + Math.abs(i - 2) * 22 - 8} scale={0.7} f={g} k={ease(f, t5 + i * 5, 10) * (1 - ease(f, t56, 12))} id={`s2a${i}`} />)}
         <Sleeper f={g} x={880} y={1700} twitch={0} zzz={1} id="s2b" />
         <LampArm x={60} y={40} f={g} />
-        <Plumb x={170} y={-20} len={760} f={g} scale={1.0} mood="curious" amp={5} look={0.6} ph={1.4} id="s2p" shadow={false} />
+        <Plumb x={190} y={-20} len={800} f={g} scale={1.5} mood="curious" amp={5} look={0.6} ph={1.4} id="s2p" shadow={false} />
         <QuotePlate x={540} y={690} text={'"IMPROVE THE UNDERSTANDING OF THE GEOLOGY AND MINERAL POTENTIAL" · DGGS'} wrap={22} size={32} p={ease(f, t48, 8)} type={ease(f, t48 + 2, 90)} />
       </SVG>
     </Frame>
@@ -232,7 +232,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <PaperPlane x={px} y={py} rot={lerp(-20, 4, fly)} scale={1.1} f={g} shadowDy={70 - 30 * fly} />
         {f > t8 && f < t10 + 8 && <g transform={`translate(${px - 60},${py + 20})`}><HangTag text="PORTLAND-BASED" size={24} tone="kraft" f={g} k={ease(f, t8, 8)} rot={-10} /></g>}
         <Sleeper f={g} x={900} y={1720} twitch={0} zzz={0.5} id="s3b" />
-        <Plumb x={880} y={-20} len={560} f={g} scale={0.9} mood="curious" amp={5} look={-0.7} ph={2.1} id="s3p" shadow={false} />
+        <Plumb x={860} y={-20} len={640} f={g} scale={1.4} mood="curious" amp={5} look={-0.7} ph={2.1} id="s3p" shadow={false} />
       </SVG>
     </Frame>
   );
@@ -287,7 +287,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(330,640)"><HangTag text="USGS + STATE MAPPING" size={22} tone="kraft" f={g} k={ease(f, t55 + 14, 8)} rot={-4} /></g>
         <Sleeper f={g} x={160} y={1730} twitch={0} zzz={0.8} id="s5s" />
         <LampArm x={60} y={40} f={g} scale={1.1} swing={1.5} />
-        <Plumb x={600} y={-20} len={860} f={g} scale={1.2} mood="curious" amp={5} ph={3.1} look={-0.5} id="s5p" shadow={false} />
+        <Plumb x={600} y={-20} len={900} f={g} scale={1.6} mood="curious" amp={5} ph={3.1} look={-0.5} id="s5p" shadow={false} />
       </SVG>
     </Frame>
   );
@@ -326,13 +326,13 @@ const S6: React.FC<SceneProps> = ({p}) => {
             const x0 = dir > 0 ? 40 : 1040;
             return <path key={i} data-band="ok" d={`M${x0},${yy} l${dir * 1000 * q},0`} stroke={PR.thread} strokeWidth={6 + i * 0.6} strokeLinecap="round" strokeDasharray="22 10" opacity={0.95} />;
           })}
-          <SurveyHeli x={hx} y={hy} f={g} scale={1.25} facing={f < t20 || Math.floor(flyP * 2) % 2 === 0 ? 1 : -1} bird={f < t20 ? 150 : 170} swing={8 * Math.sin(g / 16)} tilt={f < t20 ? -4 * (1 - enter) : 2} />
+          <SurveyHeli x={hx} y={hy + 60} f={g} scale={1.6} facing={f < t20 || Math.floor(flyP * 2) % 2 === 0 ? 1 : -1} bird={f < t20 ? 150 : 170} swing={8 * Math.sin(g / 16)} tilt={f < t20 ? -4 * (1 - enter) : 2} />
         </g>
         <g opacity={cut}>
           <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill={PR.spruceDeep} />
           <rect data-band="ok" x={-40} y={760} width={1160} height={1200} fill={PR.spruce} opacity={0.7} />
           <RockBlock x={500} y={1300} w={680} h={400} f={g} field={ease(f, t21, 20)} glow={ease(f, t22, 20)} bend={bend} depth={110} id="s6r" />
-          <SurveyHeli x={cx} y={700} f={g} scale={1.0} bird={104} swing={10 * Math.sin(g / 14)} tilt={0} />
+          <SurveyHeli x={cx} y={720} f={g} scale={1.25} bird={96} swing={10 * Math.sin(g / 14)} tilt={0} />
           <g transform="translate(850,1010)"><HangTag text="ROCK THAT DIFFERS" size={22} tone="bone" f={g} k={ease(f, t22 + 6, 10)} rot={4} /></g>
           <Sleeper f={g} x={900} y={1720} twitch={ease(f, t49, 6) * (1 - ease(f, t49 + 40, 20))} zzz={1 - ease(f, t49, 6)} id="s6b" />
         </g>
@@ -398,7 +398,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(0,0)">{[0, 1, 2].map((i) => <DownloadArrow key={i} x={rx[i] + 150} y={1250} scale={0.42} f={g} k={ease(f, t27 + i * 3, 10) * (1 - ease(f, t27 + 40, 14))} id={`s8a${i}`} />)}</g>
         <rect data-band="ok" x={-40} y={1290} width={1160} height={110} fill="#2B1F16" stroke={INK} strokeWidth={6} />
         <Sleeper f={g} x={200} y={1700} scale={0.7} twitch={0} eyes={ease(f, t47, 10)} zzz={0} tarp={1} id="s8s" />
-        <Plumb x={720} y={-20} len={1040} f={g} scale={1.3} mood={f > t28 ? 'ask' : 'curious'} amp={4} ph={1.1} look={0.5} id="s8p" shadowY={1090} />
+        <Plumb x={720} y={-20} len={1060} f={g} scale={1.5} mood={f > t28 ? 'ask' : 'curious'} amp={4} ph={1.1} look={0.5} id="s8p" shadowY={1090} />
       </SVG>
     </Frame>
   );
@@ -459,7 +459,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <ReleaseScroll x={230} y={1000} w={300} h={420} unroll={ease(f, t32, 30)} f={g} id="s10s" />
         <g transform="translate(230,850)"><HangTag text="ITS RELEASE" size={22} tone="brass" f={g} k={ease(f, t32 + 10, 8)} rot={-3} drop={30} /></g>
         <Sleeper f={g} x={900} y={1730} scale={0.7} zzz={0.6} id="s10s2" />
-        <Plumb x={900} y={-20} len={720} f={g} scale={1.0} mood="wary" amp={4} ph={2.2} look={-0.6} id="s10p" shadow={false} />
+        <Plumb x={880} y={-20} len={800} f={g} scale={1.5} mood="wary" amp={4} ph={2.2} look={-0.6} id="s10p" shadow={false} />
       </SVG>
     </Frame>
   );
@@ -487,7 +487,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <g opacity={sheetOp}><VellumSheet x={480} y={1130} w={760} h={900} f={g} contours={1} glow={ease(f, t35, 24)} patch={1} patchX={40} patchY={80} id="s11v" /></g>
         <g opacity={blockOp}><RockBlock x={400} y={1360} w={640} h={380} f={g} field={1} glow={1} bend={0.5 + 0.5 * Math.sin(g / 14)} lift={1 - ease(f, t36, 26)} id="s11r" depth={110} /></g>
         <DrillBit x={900} y={1380} f={g} scale={1.2} tilt={1 - wake} tarp={1 - ease(f, t37 - 4, 20)} eyes={ease(f, t37 - 8, 12)} yawn={yawn} shake={shake} brow={6} id="s11b" />
-        <Plumb x={220} y={-20} len={640} f={g} scale={0.9} mood="curious" amp={5} ph={0.2} look={0.7} id="s11p" shadow={false} />
+        <Plumb x={230} y={-20} len={720} f={g} scale={1.35} mood="curious" amp={5} ph={0.2} look={0.7} id="s11p" shadow={false} />
       </SVG>
     </Frame>
   );
@@ -540,29 +540,32 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const g = f + p.from;
   const t41 = b(41), t42 = b(42), t43 = b(43), t44 = b(44), t57 = b(57);
-  const pulse = 1 + 0.06 * Math.sin(g / 5) * (f > t57 ? 1 : 0);
+  const pulse = 1 + 0.07 * Math.sin(g / 5) * (f > t57 ? 1 : 0);
+  const rise = snap(f, t41 - 6, 16);
   return (
-    <Frame p={p} z0={1.0} z1={1.05} oy={1100}
+    <Frame p={p} z0={1.0} z1={1.06} oy={1150}
       overlay={<>
         <QuotePlate x={540} y={700} text={'"TWO OF THE MOST PROSPECTIVE PLACES IN THE WORLD" · MARK SUMNER, CEO'} wrap={21} size={32} p={ease(f, t41, 8)} type={ease(f, t42 + 10, t57 - t42 + 20)} />
       </>}>
       <SVG>
-        <TableBG f={g} lampX={540} lampY={1100} seed={13} />
-        <VellumSheet x={540} y={1180} w={860} h={640} rot={-1.5} f={g} contours={0.4} id="s13v" />
-        <g transform={`translate(330,1260) scale(${pulse})`}><PinOutline x={0} y={0} f={g} scale={0.62} k={snap(f, t42, 12)} /></g>
-        <g transform={`translate(700,1260) scale(${pulse})`}><PinOutline x={0} y={0} f={g} scale={0.62} k={snap(f, t42 + 8, 12)} /></g>
-        <g transform="translate(330,1155)"><HangTag text="PERU" size={22} tone="bone" f={g} k={ease(f, t42 + 4, 8)} drop={24} /></g>
-        <g transform="translate(700,1155)"><HangTag text="ALASKA" size={22} tone="bone" f={g} k={ease(f, t42 + 12, 8)} drop={24} /></g>
-        <g opacity={ease(f, t43, 8)}>
-          <circle cx={480} cy={1340} r={44} fill="none" stroke={INK} strokeWidth={12} />
-          <circle cx={480} cy={1340} r={44} fill="none" stroke="#B87333" strokeWidth={6} strokeDasharray="12 9" strokeDashoffset={-g * 0.6} />
-          <circle cx={570} cy={1340} r={44} fill="none" stroke={INK} strokeWidth={12} opacity={ease(f, t44, 8)} />
-          <circle cx={570} cy={1340} r={44} fill="none" stroke="#E0B83A" strokeWidth={6} strokeDasharray="12 9" strokeDashoffset={-g * 0.6} opacity={ease(f, t44, 8)} />
+        <TableBG f={g} lampX={540} lampY={1150} seed={13} dim={0.25} near={true} />
+        <Globe x={540} y={1180} r={250 * (0.6 + 0.4 * rise)} f={g} wrap={0} id="s13g" tiltDeg={-8} />
+        <g transform={`translate(430,1240) scale(${pulse})`}><PinOutline x={0} y={0} f={g} scale={0.85} k={snap(f, t42, 12)} /></g>
+        <g transform={`translate(660,1070) scale(${pulse})`}><PinOutline x={0} y={0} f={g} scale={0.85} k={snap(f, t42 + 8, 12)} /></g>
+        <g transform="translate(430,1060)"><HangTag text="PERU" size={26} tone="bone" f={g} k={ease(f, t42 + 4, 8)} drop={30} /></g>
+        <g transform="translate(660,890)"><HangTag text="ALASKA" size={26} tone="bone" f={g} k={ease(f, t42 + 12, 8)} drop={30} /></g>
+        <g opacity={ease(f, t43, 8)} transform={`translate(0,${6 * Math.sin(g / 9)})`}>
+          <circle cx={170} cy={1330} r={64} fill="none" stroke={INK} strokeWidth={14} />
+          <circle cx={170} cy={1330} r={64} fill="none" stroke="#B87333" strokeWidth={7} strokeDasharray="14 10" strokeDashoffset={-g * 0.6} />
+          <g transform="translate(170,1410)"><HangTag text="COPPER" size={22} tone="bone" f={g} k={ease(f, t43 + 4, 8)} drop={16} /></g>
         </g>
-        <g transform="translate(480,1380)"><HangTag text="COPPER" size={18} tone="bone" f={g} k={ease(f, t43 + 4, 8)} drop={16} /></g>
-        <g transform="translate(570,1380)"><HangTag text="GOLD" size={18} tone="bone" f={g} k={ease(f, t44 + 4, 8)} drop={16} /></g>
-        <DrillBit x={930} y={1740} f={g} scale={0.75} tilt={0} tarp={0} cape={1} eyes={1} brow={-3} id="s13b" />
-        <Plumb x={150} y={-20} len={640} f={g} scale={0.95} mood="curious" amp={5} ph={2.6} look={0.6} id="s13p" shadow={false} />
+        <g opacity={ease(f, t44, 8)} transform={`translate(0,${6 * Math.sin(g / 8 + 1)})`}>
+          <circle cx={910} cy={1330} r={64} fill="none" stroke={INK} strokeWidth={14} />
+          <circle cx={910} cy={1330} r={64} fill="none" stroke="#E0B83A" strokeWidth={7} strokeDasharray="14 10" strokeDashoffset={-g * 0.6} />
+          <g transform="translate(910,1410)"><HangTag text="GOLD" size={22} tone="bone" f={g} k={ease(f, t44 + 4, 8)} drop={16} /></g>
+        </g>
+        <DrillBit x={930} y={1760} f={g} scale={0.75} tilt={0} tarp={0} cape={1} eyes={1} brow={-3} id="s13b" />
+        <Plumb x={150} y={-20} len={780} f={g} scale={1.35} mood="curious" amp={5} ph={2.6} look={0.6} id="s13p" shadow={false} />
       </SVG>
     </Frame>
   );
