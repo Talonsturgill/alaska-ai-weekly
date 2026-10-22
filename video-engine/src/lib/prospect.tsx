@@ -20,7 +20,7 @@ export const PR = {
   steel: '#8E99A3', steelShade: '#4A5560', steelHi: '#C9D2DA', steelDeep: '#2E363E',
   tarp: '#5B6B58', tarpShade: '#3A4638', tarpHi: '#7C8E77',
   bone: '#F4EEDC', kraft: '#B58B55', kraftShade: '#7E5C35',
-  duskTop: '#5C6F96', duskMid: '#7F93B5', duskLow: '#C9B28A', hills: '#6E86C9', hillsFar: '#8EA1C9',
+  duskTop: '#6F6A9A', duskMid: '#D4977C', duskLow: '#F0C58E', hills: '#8A76A6', hillsFar: '#B49CC2',
   tundra: '#7A7B4A', tundraHi: '#A89B62', tundraShade: '#4F5232', willow: '#8C8F52',
   ocean: '#2F5AA0', oceanHi: '#5B8AD0', land: '#6C8B4E',
   ink: INK,
@@ -429,8 +429,8 @@ export const SurveyHeli: React.FC<{x: number; y: number; f: number; scale?: numb
  * wrap is the number of laps drawn so far (1 is once around), laps past 1 spiral up the axis, tail (0..1) is the free end streaming
  * away from the last lap, so the ribbon visibly has slack left over.
  */
-export const Globe: React.FC<{x: number; y: number; r?: number; f: number; wrap?: number; tail?: number; id?: string; tiltDeg?: number; sw?: number}> =
-({x, y, r = 250, f, wrap = 0, tail = 0, id = 'gl', tiltDeg = -16, sw = 16}) => {
+export const Globe: React.FC<{x: number; y: number; r?: number; f: number; wrap?: number; tail?: number; id?: string; tiltDeg?: number; sw?: number; geo?: boolean; children?: React.ReactNode}> =
+({x, y, r = 250, f, wrap = 0, tail = 0, id = 'gl', tiltDeg = -16, sw = 16, geo = false, children}) => {
   const gid = `${id}${Math.round(x)}${Math.round(y)}`;
   const spinX = (f * 0.35) % 700;
   const pts = (t0: number, t1: number) => {
@@ -465,10 +465,11 @@ export const Globe: React.FC<{x: number; y: number; r?: number; f: number; wrap?
       <defs>
         <radialGradient id={`${gid}g`} cx="0.35" cy="0.3" r="0.85"><stop offset="0" stopColor={PR.oceanHi} /><stop offset="0.55" stopColor={PR.ocean} /><stop offset="1" stopColor="#14295A" /></radialGradient>
         <clipPath id={`${gid}c`}><circle cx={0} cy={0} r={r} /></clipPath>
+        <radialGradient id={`${gid}t`} cx="0.3" cy="0.28" r="0.95"><stop offset="0.55" stopColor="#06102E" stopOpacity="0" /><stop offset="0.9" stopColor="#06102E" stopOpacity="0.55" /><stop offset="1" stopColor="#06102E" stopOpacity="0.8" /></radialGradient>
       </defs>
       <circle cx={0} cy={0} r={r} fill={`url(#${gid}g)`} stroke={INK} strokeWidth={7} />
       <g clipPath={`url(#${gid}c)`}>
-        {[0, 1].map((k) => (
+        {!geo && [0, 1].map((k) => (
           <g key={k} transform={`translate(${-spinX + k * 700},0)`}>
             <path d="M-150,-120 C-110,-170 -40,-150 -20,-100 C0,-60 -60,-40 -80,0 C-110,40 -170,10 -170,-50 Z" fill={PR.land} stroke={INK} strokeWidth={3.6} opacity={0.95} />
             <path d="M120,-30 C170,-60 240,-20 230,40 C220,100 150,130 110,90 C80,60 90,0 120,-30 Z" fill="#7C9A58" stroke={INK} strokeWidth={3.6} opacity={0.95} />
@@ -476,12 +477,23 @@ export const Globe: React.FC<{x: number; y: number; r?: number; f: number; wrap?
             <path d="M260,-150 C300,-170 340,-140 320,-100 C290,-90 260,-110 260,-150 Z" fill="#7C9A58" stroke={INK} strokeWidth={3.6} opacity={0.95} />
           </g>
         ))}
-        <ellipse cx={-r * 0.3} cy={-r * 0.45} rx={r * 0.5} ry={r * 0.22} fill="#FFFFFF" opacity={0.14} transform="rotate(-24)" />
-        <circle cx={0} cy={0} r={r} fill="none" stroke="#0A1330" strokeWidth={r * 0.55} opacity={0.22} transform="translate(26 30)" />
+        {geo && (
+          <g transform={`scale(${r / 250})`}>
+            {/* the Americas: a broad north, a narrow waist, a long south with a west coast bulge */}
+            <path d="M-170,-150 C-190,-190 -120,-220 -60,-205 C0,-195 40,-160 30,-120 C20,-80 -20,-60 -40,-30 C-60,-10 -90,-20 -120,-50 C-150,-80 -160,-110 -170,-150 Z" fill={PR.land} stroke={INK} strokeWidth={4} />
+            <path d="M-40,-30 C-20,-10 -4,10 -20,30 C-60,40 -100,70 -90,110 C-80,160 -40,200 -10,190 C20,170 20,120 10,80 C0,40 -10,10 -40,-30 Z" fill="#7C9A58" stroke={INK} strokeWidth={4} />
+            {[-150, -110, -70, -30, 10, 50, 90, 130, 170].map((gy, i) => <path key={i} d={`M-250,${gy} q250,${i % 2 ? 14 : -14} 500,0`} fill="none" stroke="#FFFFFF" strokeWidth={1.4} opacity={0.18} />)}
+            {[-180, -110, -40, 30, 100, 170].map((gx, i) => <path key={`m${i}`} d={`M${gx},-240 q${gx * 0.2},240 0,480`} fill="none" stroke="#FFFFFF" strokeWidth={1.4} opacity={0.14} />)}
+          </g>
+        )}
+        <ellipse cx={-r * 0.3} cy={-r * 0.45} rx={r * 0.5} ry={r * 0.22} fill="#FFFFFF" opacity={0.12} transform="rotate(-24)" />
+        <circle cx={0} cy={0} r={r} fill={`url(#${gid}t)`} />
       </g>
+      <circle cx={0} cy={0} r={r + 8} fill="none" stroke="#9DB8FF" strokeWidth={10} opacity={0.22} />
       <RimLight d={`M${-r * 0.82},${-r * 0.5} A${r},${r} 0 0 1 ${-r * 0.1},${-r * 0.98}`} w={4} color="#BFD4FF" opacity={0.6} />
       <path d={seg(true)} fill="none" stroke={INK} strokeWidth={sw + 6} strokeLinecap="round" strokeLinejoin="round" />
       <path d={seg(true)} fill="none" stroke={PR.thread} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="22 8" strokeDashoffset={-f * 0.8} />
+      {children}
       {tl > 0.02 && <><path d={tailD} fill="none" stroke={INK} strokeWidth={sw + 6} strokeLinecap="round" /><path d={tailD} fill="none" stroke={PR.thread} strokeWidth={sw} strokeLinecap="round" strokeDasharray="22 8" strokeDashoffset={-f * 0.8} /></>}
     </g>
   );
@@ -795,8 +807,17 @@ export const GroundBG: React.FC<{
         <linearGradient id={`${id}s`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={sT} /><stop offset="0.65" stopColor={sM} /><stop offset="1" stopColor={sL} /></linearGradient>
         <linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={PR.tundraHi} /><stop offset="0.5" stopColor={PR.tundra} /><stop offset="1" stopColor={PR.tundraShade} /></linearGradient>
         <linearGradient id={`${id}r`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.5" /></linearGradient>
+        <radialGradient id={`${id}h`}><stop offset="0" stopColor="#FFE3B0" stopOpacity="0.55" /><stop offset="1" stopColor="#FFE3B0" stopOpacity="0" /></radialGradient>
+        <radialGradient id={`${id}l`}><stop offset="0" stopColor={PR.lichen} stopOpacity="0.62" /><stop offset="0.55" stopColor={PR.lichen} stopOpacity="0.24" /><stop offset="1" stopColor={PR.lichen} stopOpacity="0" /></radialGradient>
       </defs>
       <rect data-band="ok" x={-40} y={0} width={1160} height={surface + 20} fill={`url(#${id}s)`} />
+      <ellipse data-band="ok" cx={dawn > 0.5 ? 820 : 260} cy={surface - 120} rx={520} ry={260} fill={`url(#${id}h)`} />
+      {[0, 1].map((k) => Array.from({length: 5}).map((_, i) => {
+        const bx = ((f * (0.9 + k * 0.5) + i * 70 + k * 600) % 1500) - 200;
+        const by = 330 + k * 150 + i * 14 + 20 * Math.sin(f / 31 + i + k);
+        const w = 18 + 6 * Math.sin(f / 5 + i * 1.7);
+        return <path key={`${k}${i}`} data-band="ok" d={`M${bx - 26},${by} q${13},${-w} ${26},0 q${13},${-w} ${26},0`} fill="none" stroke={INK} strokeWidth={4} strokeLinecap="round" opacity={0.7} />;
+      }))}
       {[0, 1, 2].map((i) => <ellipse key={i} data-band="ok" cx={(160 + i * 380 + f * (0.18 + i * 0.07)) % 1500 - 200} cy={surface - 640 + i * 110} rx={250 - i * 28} ry={20} fill="#F0DCC0" opacity={0.26 + 0.1 * dawn} />)}
       <path data-band="ok" d={`M-40,${surface} L-40,${surface - 170} C100,${surface - 250} 240,${surface - 210} 360,${surface - 170} C500,${surface - 120} 640,${surface - 280} 800,${surface - 210} C920,${surface - 160} 1040,${surface - 220} 1120,${surface - 190} L1120,${surface} Z`} fill={PR.hillsFar} transform={`translate(${-6 * Math.sin(f / 120)},0)`} opacity={0.95} />
       <path data-band="ok" d={`M-40,${surface + 10} L-40,${surface - 80} C140,${surface - 160} 300,${surface - 90} 480,${surface - 120} C640,${surface - 140} 820,${surface - 70} 1120,${surface - 110} L1120,${surface + 10} Z`} fill={PR.hills} transform={`translate(${-12 * Math.sin(f / 90 + 1)},0)`} />
@@ -817,12 +838,15 @@ export const GroundBG: React.FC<{
       })}
       {Array.from({length: 60}).map((_, i) => <circle key={i} data-band="ok" cx={rnd(i + 3) * 1160 - 40} cy={top + rnd(i + 77) * (1960 - top)} r={2 + rnd(i + 5) * 4} fill="#000" opacity={0.2} />)}
       <rect data-band="ok" x={-40} y={top} width={1160} height={1960 - top} fill={`url(#${id}r)`} />
-      {/* lichen glow where the rock differs */}
-      {glow > 0.01 && [[210, 1330, 110], [610, 1520, 140], [410, 1760, 100], [930, 1360, 90], [800, 1700, 80]].map(([gx, gy, gr], i) => (
-        <g key={i} data-band="ok" opacity={clamp01(glow) * (0.75 + 0.25 * Math.sin(f / 12 + i * 2))}>
-          <circle cx={gx as number} cy={gy as number} r={(gr as number) * 1.6} fill={PR.lichen} opacity={0.16} />
-          <circle cx={gx as number} cy={gy as number} r={gr as number} fill={PR.lichen} opacity={0.46} />
-        </g>
+      {/* cracks and stones in the rock */}
+      {Array.from({length: 18}).map((_, i) => {
+        const cx = rnd(i + 31) * 1100, cy = top + 60 + rnd(i + 41) * (1960 - top - 100);
+        return <path key={`c${i}`} data-band="ok" d={`M${cx},${cy} l${22 + rnd(i) * 40},${10 + rnd(i + 2) * 24} l${-10 + rnd(i + 3) * 30},${18 + rnd(i + 4) * 30}`} fill="none" stroke="#0A110E" strokeWidth={3} opacity={0.45} strokeLinecap="round" />;
+      })}
+      {Array.from({length: 12}).map((_, i) => <ellipse key={`s${i}`} data-band="ok" cx={rnd(i + 61) * 1100} cy={top + 40 + rnd(i + 71) * (1960 - top - 80)} rx={16 + rnd(i + 5) * 26} ry={9 + rnd(i + 6) * 12} fill="#000" opacity={0.18} stroke="#FFFFFF" strokeWidth={1.4} strokeOpacity={0.12} />)}
+      {/* lichen glow where the rock differs: soft falloff, wider than tall so it follows the strata */}
+      {glow > 0.01 && [[210, 1330, 190], [610, 1520, 230], [410, 1760, 170], [930, 1360, 150], [800, 1700, 150]].map(([gx, gy, gr], i) => (
+        <ellipse key={i} data-band="ok" cx={gx as number} cy={gy as number} rx={(gr as number) * 1.5} ry={(gr as number) * 0.62} fill={`url(#${id}l)`} opacity={clamp01(glow) * (0.78 + 0.22 * Math.sin(f / 12 + i * 2))} />
       ))}
       {field > 0.01 && (
         <g data-band="ok" opacity={clamp01(field)} fill="none" stroke={PR.periHi} strokeWidth={5} strokeLinecap="round">
