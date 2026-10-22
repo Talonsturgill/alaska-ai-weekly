@@ -352,6 +352,20 @@ _SPLIT_GOOD_START = {"and", "but", "so", "because", "while", "whether", "which",
                      "on", "at", "for", "from", "are", "more", "still"}
 
 
+def apply_fixups(text, fix):
+    """Apply a caption_fixups map to one string, LONGEST KEY FIRST, with the same alnum
+    boundary _apply_caption_fixups and caption_spelling_check use.
+
+    Machine pass 2026-10-22. The card builder walked the map in dict order, so with both
+    "A I" and "A I driven" declared, "A I" fired first and the longer key never matched.
+    The 10-22 film shipped "AI driven" while its own map said "AI-driven", and
+    caption_spelling_check passed it, because the spelled key was gone by then. One
+    ordering rule for every place a fixup is applied."""
+    for k, v in sorted(fix.items(), key=lambda kv: -len(kv[0])):
+        text = re.sub(r"(?<![A-Za-z0-9])" + re.escape(k) + r"(?![A-Za-z0-9])", v, text, flags=re.I)
+    return text
+
+
 def _cards_from_words(caps, max_chars=68):
     """Rebuild each spoken line as one card, or two split at the best clause boundary
     (2026-10-03, panel finding: aligner chunk edges tore "conservative / pollster" and left
@@ -376,10 +390,7 @@ def _cards_from_words(caps, max_chars=68):
         # whose only clause boundary sat past the 68-character half limit)
         force = [x.lower() for x in (_vs.get("caption_split_after") or [])]
     def show(ws):
-        t = " ".join(x["w"] for x in ws)
-        for k, v in fix.items():
-            t = re.sub(r"\b" + re.escape(k) + r"\b", v, t, flags=re.I)
-        return t
+        return apply_fixups(" ".join(x["w"] for x in ws), fix)
     def inside_fix(ws, k):
         left = " ".join(x["w"] for x in ws[:k]).lower()
         right = " ".join(x["w"] for x in ws[k:]).lower()

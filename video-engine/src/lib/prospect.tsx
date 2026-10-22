@@ -133,9 +133,28 @@ const TAGT: Record<TagTone, {fill: string; fg: string; edge: string}> = {
   bone: {fill: PR.bone, fg: INK, edge: '#8A8575'},
   ink: {fill: '#10151F', fg: PR.bone, edge: '#4A5560'},
 };
-/** HangTag: a tag on a string, sized to its string by arithmetic. Origin is the top of the string (the knot), the tag hangs below it. */
-export const HangTag: React.FC<{text: string; size?: number; tone?: TagTone; drop?: number; rot?: number; sway?: number; f?: number; k?: number; lines?: string[]}> =
-({text, size = 26, tone = 'brass', drop = 46, rot = 0, sway = 3, f = 0, k = 1, lines}) => {
+/**
+ * tagShift: how far a HangTag's body must slide sideways so its whole width stays inside the frame's safe margin.
+ * atX is the knot's x in authored frame space (after every parent translate), camScale the scene's camera scale about x 540,
+ * the same projection zoom_clip_check uses. Returns 0 when the tag already fits. When the tag is wider than the safe span it
+ * centres on the frame. Machine pass 2026-10-22, after the 10-22 metaphor tag read METAPHO and METAP on shots 3, 5, 9 and 10
+ * with its hero at x 850 to 910.
+ */
+export const tagShift = (atX: number, w: number, camScale = 1, margin = 54, frameW = 1080) => {
+  const half = w / 2 + 7;                                 // body half width, plus the drop shadow offset and the stroke
+  const lo = 540 + (margin - 540) / camScale + half - atX;          // smallest shift that clears the left margin
+  const hi = 540 + (frameW - margin - 540) / camScale - half - atX; // largest shift that clears the right margin
+  if (lo > hi) return 540 - atX;
+  return Math.max(lo, Math.min(hi, 0));
+};
+
+/**
+ * HangTag: a tag on a string, sized to its string by arithmetic. Origin is the top of the string (the knot), the tag hangs below it.
+ * Pass atX (the knot's authored frame x) and camScale to keep the tag inside the 54 px safe margin. The body slides sideways and
+ * the string angles to follow it, so the knot never moves. Without atX the tag draws exactly as before.
+ */
+export const HangTag: React.FC<{text: string; size?: number; tone?: TagTone; drop?: number; rot?: number; sway?: number; f?: number; k?: number; lines?: string[]; atX?: number; camScale?: number; margin?: number}> =
+({text, size = 26, tone = 'brass', drop = 46, rot = 0, sway = 3, f = 0, k = 1, lines, atX, camScale = 1, margin = 54}) => {
   const ls = lines ?? [text];
   const w = Math.max(...ls.map((l) => monoW(l, size, 1.2))) + 40;
   const h = ls.length * (size + 12) + 16;
@@ -143,11 +162,12 @@ export const HangTag: React.FC<{text: string; size?: number; tone?: TagTone; dro
   const kk = clamp01(k);
   if (kk <= 0.02) return null;
   const s = 0.8 + 0.2 * Math.min(1, kk * 1.2);
+  const dx = atX === undefined ? 0 : tagShift(atX, w, camScale, margin);
   return (
     <g opacity={Math.min(1, kk * 1.8)} transform={`rotate(${rot + sway * Math.sin(f / 19)}) scale(${s})`}>
-      <path d={`M0,0 L0,${drop}`} stroke={PR.bone} strokeWidth={2.4} />
+      <path d={`M0,0 L${dx},${drop}`} stroke={PR.bone} strokeWidth={2.4} />
       <circle cx={0} cy={0} r={3.6} fill={PR.brassShade} stroke={INK} strokeWidth={2} />
-      <g transform={`translate(0,${drop})`}>
+      <g transform={`translate(${dx},${drop})`}>
         <rect x={-w / 2 + 5} y={5} width={w} height={h} rx={7} fill="#000" opacity={0.28} />
         <path d={`M${-w / 2},12 L${-14},0 L14,0 L${w / 2},12 L${w / 2},${h} L${-w / 2},${h} Z`} fill={T.fill} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
         <path d={`M${-w / 2 + 6},${h - 6} L${w / 2 - 6},${h - 6}`} stroke={T.edge} strokeWidth={4} />
