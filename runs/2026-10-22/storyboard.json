@@ -1,0 +1,2234 @@
+{
+  "run_date": "2026-10-22",
+  "slug": "the-hair-above-the-ground",
+  "title": "The Hair Above the Ground",
+  "concept": "Alaska's geologists flew two helicopter surveys and offer the data for download. A Portland company, Geomorphic AI, says it has set up in Alaska as an AI driven prospect generator that screens geological data, and has named no Alaska property. The film draws the reader as a brass plumb bob on a hairline string that hangs a hair above the map and can't come down, and the only thing that can grade a map, a steel drill bit asleep under a tarp in the corner, wakes up across the film. It gives the fair case for the reader a scene (the map is open to everyone so the edge goes to whoever reads best), keeps every company line labelled ITS WORDS, and ends on the open question of who gets the first look and who pays for the first hole.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 112.86,
+  "fingerprint": {
+    "pov": "cross-section-cutaway",
+    "motion_vector": "vertical-descent",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "fullbleed-split",
+    "register": "editorial-schematic",
+    "palette": "dark spruce ink night, vellum maps, brass hanging reader, periwinkle magnetic contours, lichen green glow, cold steel drill and one vermilion thread",
+    "camera_strategy": "slow pushes on a side view of the ground with a craneDown into the rock and a dollyThrough on the bench",
+    "light_story": "a cold dusk over tundra turf with a pond, a self-lit glow in the rock, a lamp-lit bench, a cold space with a globe, then a pale dawn with the steel bit boring down through the rock",
+    "metaphor": "a brass plumb bob that hangs a hair above the map while a steel drill bit is the only thing that goes down"
+  },
+  "palette": "dark spruce ink night, vellum maps, brass hanging reader, periwinkle magnetic contours, lichen green glow, cold steel drill and one vermilion thread",
+  "divergence_note": "10-21 was a pewter-lilac and teal beach with a tawny calf and survey orange. 10-20 was a celadon and walnut office with a manila folder and fireweed magenta. 10-18 was a blue-hour indigo and rose world with a mustard felt bench. This film is a dark spruce-ink survey table with vellum, brass, periwinkle and lichen green and one vermilion thread, and it moves through a table, a map, a lamp lit bench, a dusk tundra, a rock cutaway and a globe, with an instrument hero and a top-down map view.",
+  "treatment": {
+    "winner": "The Dramatist's Plumb (a brass bob that hangs a hair above the ground and can't come down), with the Comedian's sleeping drill bit as the throughline that wakes act by act, the Explainer's flight-line ribbon around the Earth, and the Enthusiast's open-map bench as the fair case.",
+    "why": "A hanging reader with a face carries emotion and the whole thesis in one image, the sleeping steel bit gives the film a quiet joke and a payoff and is the only thing that grades, and the fair case for the reader gets a full scene before the film narrows honestly."
+  },
+  "angle": {
+    "run_date": "2026-10-22",
+    "thesis": "The scarce step in Alaska exploration used to be collecting the data. The state has now flown and posted about 45,800 line kilometers of it, a company with no Alaska property says its A I will read it, and the reading only gets graded when a partner drills.",
+    "falsifiable_by": "Geomorphic naming Alaska projects that rest on ground or data outside the public record, or never naming a property and never signing a partner who drills, or a source showing it is not reading public data in Alaska at all.",
+    "supporting_facts": [
+      "c6 the release says what it reads in Alaska is public: USGS and state mapping, new state airborne surveys, a state claim staking system",
+      "c7/c8/c14 two 2026 DGGS helicopter surveys, 25,731 and 20,090 line-km, about 45,800 added, offered for download",
+      "c3 it does not drill, partners fund and drill and it keeps an interest",
+      "c13 a map shows where rock differs, only a drill shows what it holds"
+    ],
+    "counterpoint_honored": "A release with no property, no date and no method may not be news yet, and nothing ties Geomorphic to these two surveys. The film says so on screen: no Alaska property named (c4), its own disclaimer that deposits it mentions belong to others (c11), every AI line is its own description (c2/c12), and the surveys are shown as 'what one of those looks like', never as its inputs. The AI may be thin and the state's data the part with weight, and the film lets that stand.",
+    "second_movement": "Geomorphic doesn't drill and the data is offered to everyone, so the AI is one more reader of an open map. The edge goes to whoever reads fastest and then to whoever pays for the hole. That is the scene where the film's thesis is tested: a map target is not a result.",
+    "ai_link_wording": "Geomorphic AI calls itself an AI driven minerals prospect generator that screens geological and historic data for overlooked mineral systems. That is its description. No method, accuracy, result or use of these surveys is reported.",
+    "valence": "cautiously positive for Alaska's public data, open verdict on the company",
+    "runner_ups": {
+      "debunk: AI hype on a press release": "sour is invented, no harm or failure reported",
+      "booster: AI finds Alaska's hidden gold": "no property, no result",
+      "pure survey explainer": "too little AI"
+    },
+    "challenge_round": "Builder credited the state's data over the AI; skeptic added that a property-less release may not be news and that side by side surveys could imply a link; explainer added the 45,800 line-km scale and the map-to-drill mechanism. Synthesis keeps the state's data as the substance, the AI as a reader whose work is unproven, and the drill as the only grader."
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A brass plumb bob with bone eyes swings in on a hairline string over a dark survey sheet and stops a hair above a blue patch while a helicopter lays red flight lines.",
+    "headline": "45,800 KM OF ALASKA ROCK",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame is the same table, Plumb a hair above the same blue patch, but the steel bit is awake beside him and spinning into the ground."
+  },
+  "open_loop": {
+    "plant_t": 0.0,
+    "pay_t": 111.73,
+    "what": "Will the hanging weight ever come down? Planted as Plumb stops a hair above the blue patch, paid at the button when the steel bit goes in beside him and Plumb still hangs."
+  },
+  "open_loop_2": {
+    "plant_t": 41.71,
+    "pay_t": 88.75,
+    "what": "What is under the tarp? Planted as the moss tarp twitches when the survey bird passes, paid as the tarp lifts on a steel drill bit that shakes its head."
+  },
+  "throughline": {
+    "object": "the sleeping steel drill bit",
+    "lands_in_button": "the bit awake and spinning into the ground beside the hanging Plumb",
+    "states": [
+      {
+        "at_s": 6.61,
+        "state": "asleep under a moss tarp in the corner, Zzz"
+      },
+      {
+        "at_s": 30.99,
+        "state": "the sleeper turns over under the tarp"
+      },
+      {
+        "at_s": 41.71,
+        "state": "the tarp twitches as the survey bird passes"
+      },
+      {
+        "at_s": 71.27,
+        "state": "one steel eye opens under the tarp and watches the readers"
+      },
+      {
+        "at_s": 88.75,
+        "state": "the tarp slides off and the bit sits up and shakes its head"
+      },
+      {
+        "at_s": 93.55,
+        "state": "standing with the tarp as a cape beside the partners' thermos"
+      },
+      {
+        "at_s": 111.73,
+        "state": "spinning into the ground beside Plumb"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 6.17,
+      "type": "build-on",
+      "what": "vermilion flight lines fill the vellum sheet row on row like a mown lawn",
+      "hold_s": 0.7
+    },
+    {
+      "t": 61.07,
+      "type": "scale-pullback",
+      "what": "two sheets of lines lift off as one red ribbon that winds around a globe more than once",
+      "hold_s": 0.7
+    },
+    {
+      "t": 87.11,
+      "type": "build-on",
+      "what": "a banded rock block rises out of the glowing map",
+      "hold_s": 0.6
+    }
+  ],
+  "tail_s": 3.2,
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 108.63,
+    "riser_at": 106.04,
+    "silence_at": 111.38,
+    "payoff_at": 111.73,
+    "button_pattern": "question",
+    "interrupt_at": 44.8,
+    "extra_dips": [
+      88.75
+    ]
+  },
+  "shots": [
+    {
+      "title": "A hair above the ground",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "ground-column-dusk",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "Plumb at x540 y1000",
+      "means": "A brass plumb bob swings in on a string and stops a hair above a pond in the tundra turf while a floating sheet fills with red flight lines.",
+      "ambient": "the lamp swings a hair, dust crosses the cone, Plumb's string breathes, the lines draw on",
+      "hero": {
+        "name": "Plumb + VellumSheet + SurveyHeli",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% Plumb, 40% sheet, 20% lines"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-8.200"
+    },
+    {
+      "title": "Offered for download",
+      "vo_line": 1,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ground-column-dusk",
+      "pov": "cross-section-cutaway",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "static:the fanning copies and landing arrows are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked panel where the sheets, the arrows and the contours are the motion",
+      "centered": "the copies at x540 y1050",
+      "means": "The floating sheet fans into copies in the sky and an arrow lands on each while a tarp rumples on the turf.",
+      "ambient": "the copies shimmer, the tarp breathes, dust crosses the cone, the lamp swings",
+      "hero": {
+        "name": "VellumSheet x5 + download arrows + tarp",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% copies, 30% arrows, 20% tarp"
+      },
+      "id": 2,
+      "start_s": 8.2,
+      "t": "8.200-16.800"
+    },
+    {
+      "title": "A paper plane from Portland",
+      "vo_line": 2,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "ground-column-dusk",
+      "pov": "cross-section-cutaway",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the map at x540 y1100",
+      "means": "A paper plane glides across the sky to a floating Alaska map and a dashed pin outline floats up beside it.",
+      "ambient": "the plane glides, the map shimmers, the lamp swings, the pin outline crawls",
+      "hero": {
+        "name": "AlaskaMini + paper plane + dashed pin",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "55% map, 25% plane, 20% plate"
+      },
+      "id": 3,
+      "start_s": 16.8,
+      "t": "16.800-25.420"
+    },
+    {
+      "title": "Its words",
+      "vo_line": 3,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "ground-column-dusk",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Plumb at x540 y1000",
+      "means": "Plumb hangs a hair above the turf, its words hang on a tag, hollow question marks bloom in the bare rock and a roll slides out.",
+      "ambient": "Plumb swings, the tag swings, the beam sweeps, dust crosses the cone",
+      "hero": {
+        "name": "Plumb + tag + question marks + tube",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% Plumb, 35% sheet, 25% roll"
+      },
+      "id": 4,
+      "start_s": 25.42,
+      "t": "25.420-38.400"
+    },
+    {
+      "title": "Public data",
+      "vo_line": 4,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ground-column-dusk",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the sliding sheets and the rippling contours are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked panel where the sheets, the arrows and the contours are the motion",
+      "centered": "the sheets at x540 y1050",
+      "means": "Two sheets float in from either side of Plumb and the tarp twitches on the turf.",
+      "ambient": "the lamp swings, contours ripple, Plumb swings, dust crosses the cone",
+      "hero": {
+        "name": "VellumSheet x2 + lamp + contours",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% sheets, 30% lamp pool, 20% Plumb"
+      },
+      "id": 5,
+      "start_s": 38.4,
+      "t": "38.400-44.800"
+    },
+    {
+      "title": "What one of those looks like",
+      "vo_line": 5,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "dusk-tundra-to-cutaway",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the helicopter at x540 y950",
+      "means": "A helicopter mows rows over a dusk tundra and the ground goes translucent on bending field lines and a lichen glow.",
+      "ambient": "grass sways, the bird swings, the rotor blurs, the field lines ripple",
+      "hero": {
+        "name": "TundraBG + SurveyHeli + RockBlock",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "40% tundra, 30% heli, 30% cutaway"
+      },
+      "id": 6,
+      "start_s": 44.8,
+      "t": "44.800-56.220"
+    },
+    {
+      "title": "More than once around",
+      "vo_line": 6,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "globe-and-sheets",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the globe at x540 y1000",
+      "means": "Two survey sheets send one red ribbon around a globe with slack to spare.",
+      "ambient": "the globe turns, the ribbon ripples, the sheets shimmer, stars twinkle",
+      "hero": {
+        "name": "VellumSheet x2 + Globe + ribbon",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% globe, 35% sheets, 20% ribbon"
+      },
+      "id": 7,
+      "start_s": 56.22,
+      "t": "56.220-63.380"
+    },
+    {
+      "title": "The same map",
+      "vo_line": 7,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "bench-lamp",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the bench at x540 y1100",
+      "means": "Five readers and a hanging brass bob lean over copies of one sheet toward a question mark pedestal.",
+      "ambient": "the lamp swings, the readers shift, the question mark bobs, dust crosses the cone",
+      "hero": {
+        "name": "Character x5 + benches + Plumb + pedestal",
+        "parts": 62,
+        "zones": 3,
+        "detail_note": "50% readers, 30% bench, 20% pedestal"
+      },
+      "id": 8,
+      "start_s": 63.38,
+      "t": "63.380-69.900"
+    },
+    {
+      "title": "No property named",
+      "vo_line": 8,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ground-column-dusk",
+      "pov": "cross-section-cutaway",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Plumb at x540 y950",
+      "means": "A lone dashed pin floats in the sky beside Plumb who sways and flips a tag of question marks while an eye opens under the tarp.",
+      "ambient": "Plumb sways, the dashes crawl, the tag swings, dust crosses the cone",
+      "hero": {
+        "name": "AlaskaMini + dashed pin + Plumb",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "45% map, 35% Plumb, 20% tag"
+      },
+      "id": 9,
+      "start_s": 69.9,
+      "t": "69.900-76.740"
+    },
+    {
+      "title": "Others' deposits",
+      "vo_line": 9,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "eye",
+      "stage": "ground-column-dusk",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the unrolling release and the hang tags are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked panel where the sheets, the arrows and the contours are the motion",
+      "centered": "the map at x540 y1050",
+      "means": "A release scrolls out above three tagged mounds on the turf and a dashed ring circles the pond under Plumb.",
+      "ambient": "the scroll curls, the tags swing, the dashes crawl, the lamp swings",
+      "hero": {
+        "name": "MapSheet + release scroll + blobs",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "40% map, 35% scroll, 25% blobs"
+      },
+      "id": 10,
+      "start_s": 76.74,
+      "t": "76.740-83.540"
+    },
+    {
+      "title": "A map shows rock",
+      "vo_line": 10,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "ground-column-glow",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the block at x540 y1000",
+      "means": "The rock under the turf glows where it differs and the tarp lifts on a steel bit on the turf that shakes its head.",
+      "ambient": "the bands shimmer, the glow swells, the bit breathes, dust drifts",
+      "hero": {
+        "name": "RockBlock + glowing map + DrillBit",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "45% block, 30% bit, 25% glow"
+      },
+      "id": 11,
+      "start_s": 83.54,
+      "t": "83.540-91.780"
+    },
+    {
+      "title": "Partners drill",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ground-column-dawn",
+      "pov": "cross-section-cutaway",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Plumb and the bit at x540 y1050",
+      "means": "Plumb reaches for the bit and has no hands as partners walk in at dawn with a thermos and a tag clips on.",
+      "ambient": "Plumb swings, steam drifts, the tag swings, the lamp swings",
+      "hero": {
+        "name": "Plumb + DrillBit + Character x2",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "35% Plumb, 30% bit, 35% partners"
+      },
+      "id": 12,
+      "start_s": 91.78,
+      "t": "91.780-97.340"
+    },
+    {
+      "title": "The announcing",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "survey-table-lamp",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the card at x540 y900",
+      "means": "A quote card types the CEO's words as two dashed pins and two dashed discs pop onto a map sheet while the caped bit stands by.",
+      "ambient": "the cape ripples, the dashes crawl, steam drifts, the lamp swings",
+      "hero": {
+        "name": "quote card + MapSheet + dashed pins + DrillBit",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% card, 35% map, 25% bit"
+      },
+      "id": 13,
+      "start_s": 97.34,
+      "t": "97.340-106.040"
+    },
+    {
+      "title": "The first hole",
+      "vo_line": 13,
+      "framing": "wide-establish",
+      "scale": "close",
+      "height": "eye",
+      "stage": "ground-column-dawn",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Plumb at x400 y950",
+      "means": "The ground returns at dawn, Plumb holds a hair above the pond and the steel bit spins down through the turf and the rock beside him.",
+      "ambient": "Plumb trembles, the string breathes, the question mark bobs, dust crosses the cone",
+      "hero": {
+        "name": "Plumb + DrillBit + VellumSheet",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% Plumb, 35% bit, 25% sheet"
+      },
+      "id": 14,
+      "start_s": 106.04,
+      "t": "106.040-112.860"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Two 2026 state airborne surveys add up to about forty five thousand eight hundred line kilometers.",
+      "phrase": "Two 2026 state airborne",
+      "shows": "a brass plumb bob with two bone eyes swings in on a hairline string from the top of the frame and stops a hair above a blue pond in the tundra turf, its tip trembling, while a floating survey sheet at the left holds flight lines, DGGS, TWO 2026 SURVEYS",
+      "sfx": "hit",
+      "means": "dggs \u00b7 two 2026 surveys",
+      "rehook": "",
+      "draw": {
+        "subject": "Plumb",
+        "action": "swings in on his hairline string and stops a hair above a blue patch of a dark survey sheet, tip trembling",
+        "emotion": "wary",
+        "annotation": "DGGS \u00b7 TWO 2026 SURVEYS"
+      },
+      "choreo": {
+        "primary": "a brass plumb bob with two bone eyes swings in on a hairline string from the top of the frame and stops a hair above a blue pond in the tundra turf, its tip trembling, while a floating survey sheet at the left holds flight lines, DGGS, TWO 2026 SURVEYS",
+        "reaction": "the string swings and settles, the tip trembles",
+        "ambient": "the lamp swings a hair, dust crosses the cone, Plumb's string breathes, the lines draw on"
+      },
+      "t": "0.000-4.230",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 4.23,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.23
+      },
+      "offset": 4.23,
+      "vo": "Two 2026 state airborne surveys add up to about forty five thousand eight hundred line kilometers.",
+      "phrase": "forty five thousand eight",
+      "shows": "a small survey helicopter crosses the floating vellum sheet and a vermilion dashed line draws behind it",
+      "sfx": "whoosh",
+      "means": "flight lines",
+      "rehook": "",
+      "draw": {
+        "subject": "survey helicopter",
+        "action": "crosses the floating sheet laying a vermilion dashed flight line behind it",
+        "emotion": "plain",
+        "annotation": "FLIGHT LINES"
+      },
+      "choreo": {
+        "primary": "a small survey helicopter crosses the floating vellum sheet and a vermilion dashed line draws behind it",
+        "reaction": "the rotor blurs and the line draws on",
+        "ambient": "the lamp swings a hair, dust crosses the cone, Plumb's string breathes, the lines draw on"
+      },
+      "t": "4.230-6.170",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 6.17,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.17
+      },
+      "offset": 6.17,
+      "vo": "Two 2026 state airborne surveys add up to about forty five thousand eight hundred line kilometers.",
+      "phrase": "line kilometers.",
+      "shows": "vermilion flight lines fill the floating sheet row on row like a mown lawn, ABOUT 45,800 LINE-KM, THE FILM'S ARITHMETIC",
+      "sfx": "tick",
+      "means": "about 45,800 line-km \u00b7 the film's arithmetic",
+      "rehook": "",
+      "draw": {
+        "subject": "flight lines",
+        "action": "fill the sheet row on row like a mown lawn while a brass counter rolls",
+        "emotion": "plain",
+        "annotation": "ABOUT 45,800 LINE-KM \u00b7 THE FILM'S ARITHMETIC"
+      },
+      "choreo": {
+        "primary": "vermilion flight lines fill the floating sheet row on row like a mown lawn, ABOUT 45,800 LINE-KM, THE FILM'S ARITHMETIC",
+        "reaction": "the rows draw in and the digits roll",
+        "ambient": "the lamp swings a hair, dust crosses the cone, Plumb's string breathes, the lines draw on"
+      },
+      "t": "6.170-6.610",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 6.61,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.61
+      },
+      "offset": 6.61,
+      "vo": "Two 2026 state airborne surveys add up to about forty five thousand eight hundred line kilometers.",
+      "phrase": "kilometers.",
+      "shows": "on the turf at the right edge a moss green tarp rumples over a lumpy shape and a tiny Zzz rises",
+      "sfx": "hush",
+      "means": "zzz",
+      "rehook": "",
+      "draw": {
+        "subject": "moss tarp",
+        "action": "rumples in the lower corner and a tiny Zzz rises",
+        "emotion": "sleepy",
+        "annotation": "ZZZ"
+      },
+      "choreo": {
+        "primary": "on the turf at the right edge a moss green tarp rumples over a lumpy shape and a tiny Zzz rises",
+        "reaction": "the tarp breathes and the Zzz drifts",
+        "ambient": "the lamp swings a hair, dust crosses the cone, Plumb's string breathes, the lines draw on"
+      },
+      "t": "6.610-8.200",
+      "key": 6
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 8.2,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The state offers both datasets for download, and says the Ganes Creek data will improve understanding of the geology and mineral potential.",
+      "phrase": "The state offers both",
+      "shows": "copies of the survey sheet fan out like a hand of cards, DATA OFFERED FOR DOWNLOAD, DGGS",
+      "sfx": "slide",
+      "means": "data offered for download \u00b7 dggs",
+      "rehook": "",
+      "draw": {
+        "subject": "survey sheet",
+        "action": "copies fan out from the sheet like a hand of cards",
+        "emotion": "plain",
+        "annotation": "DATA OFFERED FOR DOWNLOAD \u00b7 DGGS"
+      },
+      "choreo": {
+        "primary": "copies of the survey sheet fan out like a hand of cards, DATA OFFERED FOR DOWNLOAD, DGGS",
+        "reaction": "the cards fan and settle",
+        "ambient": "the copies shimmer, the tarp breathes, dust crosses the cone, the lamp swings"
+      },
+      "t": "8.200-10.090",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 10.09,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 1.89
+      },
+      "offset": 1.89,
+      "vo": "The state offers both datasets for download, and says the Ganes Creek data will improve understanding of the geology and mineral potential.",
+      "phrase": "download, and says the",
+      "shows": "a fat download arrow drops onto each copy in turn",
+      "sfx": "pop",
+      "means": "download",
+      "rehook": "",
+      "draw": {
+        "subject": "download arrows",
+        "action": "drop onto each copy",
+        "emotion": "plain",
+        "annotation": "DOWNLOAD"
+      },
+      "choreo": {
+        "primary": "a fat download arrow drops onto each copy in turn",
+        "reaction": "each arrow lands with a bounce",
+        "ambient": "the copies shimmer, the tarp breathes, dust crosses the cone, the lamp swings"
+      },
+      "t": "10.090-12.650",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 12.65,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.45
+      },
+      "offset": 4.45,
+      "vo": "The state offers both datasets for download, and says the Ganes Creek data will improve understanding of the geology and mineral potential.",
+      "phrase": "improve understanding of the",
+      "shows": "a quote plate types the state's words, IMPROVE THE UNDERSTANDING OF THE GEOLOGY AND MINERAL POTENTIAL, DGGS",
+      "sfx": "type",
+      "means": "improve the understanding of the geology and mineral potential",
+      "rehook": "",
+      "draw": {
+        "subject": "quote plate",
+        "action": "types the state's words",
+        "emotion": "plain",
+        "annotation": "IMPROVE THE UNDERSTANDING OF THE GEOLOGY AND MINERAL POTENTIAL"
+      },
+      "choreo": {
+        "primary": "a quote plate types the state's words, IMPROVE THE UNDERSTANDING OF THE GEOLOGY AND MINERAL POTENTIAL, DGGS",
+        "reaction": "the words type to the voice",
+        "ambient": "the copies shimmer, the tarp breathes, dust crosses the cone, the lamp swings"
+      },
+      "t": "12.650-16.456",
+      "key": 48
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 16.456,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.96,
+        "offset": 8.256
+      },
+      "offset": 8.256,
+      "vo": "The state offers both datasets for download, and says the Ganes Creek data will improve understanding of the geology and mineral potential.",
+      "phrase": "The state offers both",
+      "shows": "the copies slide into a neat stack as the arrows fade and the bit's tarp breathes in the corner, ONE MAP, MANY COPIES",
+      "sfx": "slide",
+      "means": "one map, many copies",
+      "rehook": "",
+      "draw": {
+        "subject": "copies",
+        "action": "slide into a neat stack as the arrows fade",
+        "emotion": "plain",
+        "annotation": "ONE MAP, MANY COPIES"
+      },
+      "choreo": {
+        "primary": "the copies slide into a neat stack as the arrows fade and the bit's tarp breathes in the corner, ONE MAP, MANY COPIES",
+        "reaction": "the stack squares up",
+        "ambient": "the copies shimmer, the tarp breathes, dust crosses the cone, the lamp swings"
+      },
+      "t": "16.456-17.330",
+      "key": 56
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 17.33,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.53
+      },
+      "offset": 0.53,
+      "vo": "On October twentieth, a Portland company called Geomorphic A I said it has set up an Alaska subsidiary, Golden Dyke Exploration.",
+      "phrase": "October twentieth, a Portland",
+      "shows": "a map of Alaska floats in the sky as a paper plane flies in from off the lower left, OCT 20TH",
+      "sfx": "whoosh",
+      "means": "oct 20th",
+      "rehook": "",
+      "draw": {
+        "subject": "paper plane",
+        "action": "flies in from off the lower left across the map",
+        "emotion": "curious",
+        "annotation": "OCT 20TH"
+      },
+      "choreo": {
+        "primary": "a map of Alaska floats in the sky as a paper plane flies in from off the lower left, OCT 20TH",
+        "reaction": "the plane glides and its shadow crosses the map",
+        "ambient": "the plane glides, the map shimmers, the lamp swings, the pin outline crawls"
+      },
+      "t": "17.330-18.650",
+      "key": 7
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 18.65,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 1.85
+      },
+      "offset": 1.85,
+      "vo": "On October twentieth, a Portland company called Geomorphic A I said it has set up an Alaska subsidiary, Golden Dyke Exploration.",
+      "phrase": "Portland company called Geomorphic",
+      "shows": "a kraft tag swings from the plane's tail reading PORTLAND-BASED",
+      "sfx": "tap",
+      "means": "portland-based",
+      "rehook": "",
+      "draw": {
+        "subject": "tag",
+        "action": "swings from the plane's tail",
+        "emotion": "plain",
+        "annotation": "PORTLAND-BASED"
+      },
+      "choreo": {
+        "primary": "a kraft tag swings from the plane's tail reading PORTLAND-BASED",
+        "reaction": "the tag swings",
+        "ambient": "the plane glides, the map shimmers, the lamp swings, the pin outline crawls"
+      },
+      "t": "18.650-19.690",
+      "key": 8
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 19.69,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.89
+      },
+      "offset": 2.89,
+      "vo": "On October twentieth, a Portland company called Geomorphic A I said it has set up an Alaska subsidiary, Golden Dyke Exploration.",
+      "phrase": "Geomorphic A I said",
+      "shows": "a plate drops in over the map reading GEOMORPHIC AI",
+      "sfx": "thunk",
+      "means": "geomorphic ai",
+      "rehook": "",
+      "draw": {
+        "subject": "name plate",
+        "action": "drops in over the map",
+        "emotion": "plain",
+        "annotation": "GEOMORPHIC AI"
+      },
+      "choreo": {
+        "primary": "a plate drops in over the map reading GEOMORPHIC AI",
+        "reaction": "the plate bounces",
+        "ambient": "the plane glides, the map shimmers, the lamp swings, the pin outline crawls"
+      },
+      "t": "19.690-22.510",
+      "key": 9
+    },
+    {
+      "id": 12,
+      "shot": 3,
+      "at_s": 22.51,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.71
+      },
+      "offset": 5.71,
+      "vo": "On October twentieth, a Portland company called Geomorphic A I said it has set up an Alaska subsidiary, Golden Dyke Exploration.",
+      "phrase": "Alaska subsidiary, Golden Dyke",
+      "shows": "the plane lands and a dashed pin outline floats up beside the map, unplaced, OCT 20TH, GOLDEN DYKE EXPLORATION LLC",
+      "sfx": "hit",
+      "means": "oct 20th \u00b7 golden dyke exploration llc",
+      "rehook": "",
+      "draw": {
+        "subject": "paper plane",
+        "action": "lands on the map and a dashed pin outline pops up",
+        "emotion": "plain",
+        "annotation": "OCT 20TH \u00b7 GOLDEN DYKE EXPLORATION LLC"
+      },
+      "choreo": {
+        "primary": "the plane lands and a dashed pin outline floats up beside the map, unplaced, OCT 20TH, GOLDEN DYKE EXPLORATION LLC",
+        "reaction": "the plane skids and settles, the dashes crawl",
+        "ambient": "the plane glides, the map shimmers, the lamp swings, the pin outline crawls"
+      },
+      "t": "22.510-26.450",
+      "key": 10
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 26.45,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 1.03
+      },
+      "offset": 1.03,
+      "vo": "It calls itself an A I driven prospect generator. It says it screens geological data for overlooked mineral systems, secures the ground, and builds drill ready data packages.",
+      "phrase": "calls itself an A",
+      "shows": "Plumb hangs a hair above the pond and a tag hangs from his string reading ITS WORDS",
+      "sfx": "chime",
+      "means": "its words",
+      "rehook": "",
+      "draw": {
+        "subject": "Plumb",
+        "action": "turns and a brass-edged tag hangs on his string",
+        "emotion": "curious",
+        "annotation": "ITS WORDS"
+      },
+      "choreo": {
+        "primary": "Plumb hangs a hair above the pond and a tag hangs from his string reading ITS WORDS",
+        "reaction": "the tag swings and Plumb tilts",
+        "ambient": "Plumb swings, the tag swings, the beam sweeps, dust crosses the cone"
+      },
+      "t": "26.450-28.250",
+      "key": 11
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 28.25,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.83
+      },
+      "offset": 2.83,
+      "vo": "It calls itself an A I driven prospect generator. It says it screens geological data for overlooked mineral systems, secures the ground, and builds drill ready data packages.",
+      "phrase": "prospect generator. It says",
+      "shows": "a plaque rises beside Plumb reading ITS WORDS, AI-DRIVEN PROSPECT GENERATOR",
+      "sfx": "bloop",
+      "means": "its words \u00b7 ai-driven prospect generator",
+      "rehook": "rehook: it calls itself",
+      "draw": {
+        "subject": "plaque",
+        "action": "rises beside Plumb",
+        "emotion": "plain",
+        "annotation": "ITS WORDS \u00b7 AI-DRIVEN PROSPECT GENERATOR"
+      },
+      "choreo": {
+        "primary": "a plaque rises beside Plumb reading ITS WORDS, AI-DRIVEN PROSPECT GENERATOR",
+        "reaction": "the plaque bounces",
+        "ambient": "Plumb swings, the tag swings, the beam sweeps, dust crosses the cone"
+      },
+      "t": "28.250-30.990",
+      "key": 12
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 30.99,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 5.57
+      },
+      "offset": 5.57,
+      "vo": "It calls itself an A I driven prospect generator. It says it screens geological data for overlooked mineral systems, secures the ground, and builds drill ready data packages.",
+      "phrase": "geological data for overlooked",
+      "shows": "in the lower corner the moss tarp shifts as the sleeping shape turns over under it and the Zzz stops",
+      "sfx": "creak",
+      "means": "turns over",
+      "rehook": "",
+      "draw": {
+        "subject": "moss tarp",
+        "action": "shifts in the lower corner as the sleeping shape turns over and the Zzz stops",
+        "emotion": "sleepy",
+        "annotation": "TURNS OVER"
+      },
+      "choreo": {
+        "primary": "in the lower corner the moss tarp shifts as the sleeping shape turns over under it and the Zzz stops",
+        "reaction": "the tarp shifts and settles",
+        "ambient": "Plumb swings, the tag swings, the beam sweeps, dust crosses the cone"
+      },
+      "t": "30.990-32.290",
+      "key": 53
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "at_s": 32.29,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.87
+      },
+      "offset": 6.87,
+      "vo": "It calls itself an A I driven prospect generator. It says it screens geological data for overlooked mineral systems, secures the ground, and builds drill ready data packages.",
+      "phrase": "overlooked mineral systems, secures",
+      "shows": "hollow question marks bloom on the bare rock under the turf one by one as a beam from Plumb's tip sweeps across, OVERLOOKED SYSTEMS?",
+      "sfx": "ping",
+      "means": "overlooked systems?",
+      "rehook": "",
+      "draw": {
+        "subject": "question marks",
+        "action": "bloom on the bare rock under the turf as a beam from his tip sweeps",
+        "emotion": "curious",
+        "annotation": "OVERLOOKED SYSTEMS?"
+      },
+      "choreo": {
+        "primary": "hollow question marks bloom on the bare rock under the turf one by one as a beam from Plumb's tip sweeps across, OVERLOOKED SYSTEMS?",
+        "reaction": "the marks pop and the beam sweeps",
+        "ambient": "Plumb swings, the tag swings, the beam sweeps, dust crosses the cone"
+      },
+      "t": "32.290-36.850",
+      "key": 13
+    },
+    {
+      "id": 17,
+      "shot": 4,
+      "at_s": 36.85,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 11.43
+      },
+      "offset": 11.43,
+      "vo": "It calls itself an A I driven prospect generator. It says it screens geological data for overlooked mineral systems, secures the ground, and builds drill ready data packages.",
+      "phrase": "packages.",
+      "shows": "a rolled sheet in a brass tube floating in the sky rolls out, DRILL-READY DATA PACKAGE",
+      "sfx": "roll",
+      "means": "drill-ready data package",
+      "rehook": "",
+      "draw": {
+        "subject": "rolled sheet",
+        "action": "rolls out of a brass tube floating in the sky",
+        "emotion": "plain",
+        "annotation": "DRILL-READY DATA PACKAGE"
+      },
+      "choreo": {
+        "primary": "a rolled sheet in a brass tube floating in the sky rolls out, DRILL-READY DATA PACKAGE",
+        "reaction": "the roll unrolls and curls",
+        "ambient": "Plumb swings, the tag swings, the beam sweeps, dust crosses the cone"
+      },
+      "t": "36.850-38.400",
+      "key": 14
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 38.4,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "What it reads in Alaska, it says, is public, including new state airborne surveys.",
+      "phrase": "What it reads in",
+      "shows": "a generic mapping sheet glides in from the left and floats beside Plumb, WHAT IT READS",
+      "sfx": "swing",
+      "means": "what it reads",
+      "rehook": "",
+      "draw": {
+        "subject": "mapping sheet",
+        "action": "glides in from the left and floats beside Plumb",
+        "emotion": "curious",
+        "annotation": "WHAT IT READS"
+      },
+      "choreo": {
+        "primary": "a generic mapping sheet glides in from the left and floats beside Plumb, WHAT IT READS",
+        "reaction": "the lamp swings and the sheet glides",
+        "ambient": "the lamp swings, contours ripple, Plumb swings, dust crosses the cone"
+      },
+      "t": "38.400-40.830",
+      "key": 55
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 40.83,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.43
+      },
+      "offset": 2.43,
+      "vo": "What it reads in Alaska, it says, is public, including new state airborne surveys.",
+      "phrase": "public, including new state",
+      "shows": "the dusk light settles on a plate, ITS WORDS, WHAT IT READS IN ALASKA IS PUBLIC",
+      "sfx": "swell",
+      "means": "its words \u00b7 what it reads is public",
+      "rehook": "",
+      "draw": {
+        "subject": "dusk light",
+        "action": "settles on a plate",
+        "emotion": "plain",
+        "annotation": "ITS WORDS \u00b7 WHAT IT READS IS PUBLIC"
+      },
+      "choreo": {
+        "primary": "the dusk light settles on a plate, ITS WORDS, WHAT IT READS IN ALASKA IS PUBLIC",
+        "reaction": "the lamp swings and the light pool shifts",
+        "ambient": "the lamp swings, contours ripple, Plumb swings, dust crosses the cone"
+      },
+      "t": "40.830-41.710",
+      "key": 15
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 41.71,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "What it reads in Alaska, it says, is public, including new state airborne surveys.",
+      "phrase": "including new state airborne",
+      "shows": "on the turf at the right edge the moss tarp twitches as the second sheet slides in",
+      "sfx": "creak",
+      "means": "what's under the tarp?",
+      "rehook": "",
+      "draw": {
+        "subject": "moss tarp",
+        "action": "twitches on the turf as the new survey sheet slides in",
+        "emotion": "plain",
+        "annotation": "WHAT'S UNDER THE TARP?"
+      },
+      "choreo": {
+        "primary": "on the turf at the right edge the moss tarp twitches as the second sheet slides in",
+        "reaction": "the tarp twitches",
+        "ambient": "the lamp swings, contours ripple, Plumb swings, dust crosses the cone"
+      },
+      "t": "41.710-42.770",
+      "key": 49
+    },
+    {
+      "id": 21,
+      "shot": 5,
+      "at_s": 42.77,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.37
+      },
+      "offset": 4.37,
+      "vo": "What it reads in Alaska, it says, is public, including new state airborne surveys.",
+      "phrase": "airborne surveys.",
+      "shows": "a second sheet with periwinkle aeromagnetic contours slides in, NEW STATE AIRBORNE SURVEYS",
+      "sfx": "slide",
+      "means": "new state airborne surveys",
+      "rehook": "",
+      "draw": {
+        "subject": "survey sheet",
+        "action": "slides in from the right with periwinkle contours and floats there, never under Plumb",
+        "emotion": "plain",
+        "annotation": "NEW STATE AIRBORNE SURVEYS"
+      },
+      "choreo": {
+        "primary": "a second sheet with periwinkle aeromagnetic contours slides in, NEW STATE AIRBORNE SURVEYS",
+        "reaction": "the sheet slides and settles",
+        "ambient": "the lamp swings, contours ripple, Plumb swings, dust crosses the cone"
+      },
+      "t": "42.770-43.270",
+      "key": 16
+    },
+    {
+      "id": 22,
+      "shot": 5,
+      "at_s": 43.27,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.87
+      },
+      "offset": 4.87,
+      "vo": "What it reads in Alaska, it says, is public, including new state airborne surveys.",
+      "phrase": "surveys.",
+      "shows": "periwinkle contour lines ripple across the new sheet as Plumb leans over it",
+      "sfx": "bloom",
+      "means": "state data",
+      "rehook": "",
+      "draw": {
+        "subject": "contours",
+        "action": "ripple across the sheet",
+        "emotion": "plain",
+        "annotation": "STATE DATA"
+      },
+      "choreo": {
+        "primary": "periwinkle contour lines ripple across the new sheet as Plumb leans over it",
+        "reaction": "the contours ripple",
+        "ambient": "the lamp swings, contours ripple, Plumb swings, dust crosses the cone"
+      },
+      "t": "43.270-44.800",
+      "key": 17
+    },
+    {
+      "id": 23,
+      "shot": 6,
+      "at_s": 44.8,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's what one of those surveys looks like. At Ganes Creek, a helicopter flew over twenty five thousand line kilometers, carrying a magnetic sensor and two gamma ray spectrometers.",
+      "phrase": "Here's what one of",
+      "shows": "the world drops away to a dusk tundra where a survey helicopter banks in with a sensor bird swinging on a cable, WHAT ONE OF THOSE LOOKS LIKE",
+      "sfx": "whoosh",
+      "means": "what one of those looks like",
+      "rehook": "rehook: what one looks like",
+      "draw": {
+        "subject": "survey helicopter",
+        "action": "banks across a dusk tundra with a bird swinging on a cable",
+        "emotion": "plain",
+        "annotation": "WHAT ONE OF THOSE LOOKS LIKE"
+      },
+      "choreo": {
+        "primary": "the world drops away to a dusk tundra where a survey helicopter banks in with a sensor bird swinging on a cable, WHAT ONE OF THOSE LOOKS LIKE",
+        "reaction": "the rotor blurs and the bird swings",
+        "ambient": "grass sways, the bird swings, the rotor blurs, the field lines ripple"
+      },
+      "t": "44.800-47.530",
+      "key": 18
+    },
+    {
+      "id": 24,
+      "shot": 6,
+      "at_s": 47.53,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.73
+      },
+      "offset": 2.73,
+      "vo": "Here's what one of those surveys looks like. At Ganes Creek, a helicopter flew over twenty five thousand line kilometers, carrying a magnetic sensor and two gamma ray spectrometers.",
+      "phrase": "Ganes Creek, a helicopter",
+      "shows": "a plate drops in over the hills reading GANES CREEK, 25,731 LINE-KM",
+      "sfx": "thunk",
+      "means": "ganes creek \u00b7 25,731 line-km",
+      "rehook": "",
+      "draw": {
+        "subject": "name plate",
+        "action": "drops in over the hills",
+        "emotion": "plain",
+        "annotation": "GANES CREEK \u00b7 25,731 LINE-KM"
+      },
+      "choreo": {
+        "primary": "a plate drops in over the hills reading GANES CREEK, 25,731 LINE-KM",
+        "reaction": "the plate bounces",
+        "ambient": "grass sways, the bird swings, the rotor blurs, the field lines ripple"
+      },
+      "t": "47.530-48.530",
+      "key": 19
+    },
+    {
+      "id": 25,
+      "shot": 6,
+      "at_s": 48.53,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.73
+      },
+      "offset": 3.73,
+      "vo": "Here's what one of those surveys looks like. At Ganes Creek, a helicopter flew over twenty five thousand line kilometers, carrying a magnetic sensor and two gamma ray spectrometers.",
+      "phrase": "helicopter flew over twenty",
+      "shows": "the helicopter flies row after row over the tundra and vermilion lines draw behind it",
+      "sfx": "drone",
+      "means": "400 m apart",
+      "rehook": "",
+      "draw": {
+        "subject": "survey helicopter",
+        "action": "flies row after row and the lines draw behind it",
+        "emotion": "plain",
+        "annotation": "400 M APART"
+      },
+      "choreo": {
+        "primary": "the helicopter flies row after row over the tundra and vermilion lines draw behind it",
+        "reaction": "the rows draw and the counter rolls",
+        "ambient": "grass sways, the bird swings, the rotor blurs, the field lines ripple"
+      },
+      "t": "48.530-52.570",
+      "key": 20
+    },
+    {
+      "id": 26,
+      "shot": 6,
+      "at_s": 52.57,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 7.77
+      },
+      "offset": 7.77,
+      "vo": "Here's what one of those surveys looks like. At Ganes Creek, a helicopter flew over twenty five thousand line kilometers, carrying a magnetic sensor and two gamma ray spectrometers.",
+      "phrase": "magnetic sensor and two",
+      "shows": "periwinkle field lines bend under the sensor bird, MAGNETIC SENSOR, GAMMA-RAY SPECTROMETERS",
+      "sfx": "bloom",
+      "means": "magnetic sensor \u00b7 gamma-ray spectrometers",
+      "rehook": "",
+      "draw": {
+        "subject": "bird",
+        "action": "passes over the cutaway where periwinkle field lines bend",
+        "emotion": "plain",
+        "annotation": "MAGNETIC SENSOR \u00b7 GAMMA-RAY SPECTROMETERS"
+      },
+      "choreo": {
+        "primary": "periwinkle field lines bend under the sensor bird, MAGNETIC SENSOR, GAMMA-RAY SPECTROMETERS",
+        "reaction": "the field lines bend",
+        "ambient": "grass sways, the bird swings, the rotor blurs, the field lines ripple"
+      },
+      "t": "52.570-54.150",
+      "key": 21
+    },
+    {
+      "id": 27,
+      "shot": 6,
+      "at_s": 54.15,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 9.35
+      },
+      "offset": 9.35,
+      "vo": "Here's what one of those surveys looks like. At Ganes Creek, a helicopter flew over twenty five thousand line kilometers, carrying a magnetic sensor and two gamma ray spectrometers.",
+      "phrase": "gamma ray spectrometers.",
+      "shows": "lichen green glow brightens in the rock layers where they differ",
+      "sfx": "bloom",
+      "means": "glow means rock differs",
+      "rehook": "",
+      "draw": {
+        "subject": "rock layers",
+        "action": "glow lichen green where they differ",
+        "emotion": "plain",
+        "annotation": "GLOW MEANS ROCK DIFFERS"
+      },
+      "choreo": {
+        "primary": "lichen green glow brightens in the rock layers where they differ",
+        "reaction": "the glow swells and fades",
+        "ambient": "grass sways, the bird swings, the rotor blurs, the field lines ripple"
+      },
+      "t": "54.150-56.220",
+      "key": 22
+    },
+    {
+      "id": 28,
+      "shot": 7,
+      "at_s": 56.22,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Add the second survey, at Aniak and the Little Taylor Mountains, and it's more than once around the Earth.",
+      "phrase": "Add the second survey,",
+      "shows": "a second survey sheet snaps in beside the first, ANIAK AND LITTLE TAYLOR MTNS, 20,090 LINE-KM, lines 400 M APART",
+      "sfx": "slide",
+      "means": "aniak + little taylor mtns \u00b7 20,090 line-km",
+      "rehook": "",
+      "draw": {
+        "subject": "second survey sheet",
+        "action": "snaps in beside the first",
+        "emotion": "plain",
+        "annotation": "ANIAK + LITTLE TAYLOR MTNS \u00b7 20,090 LINE-KM"
+      },
+      "choreo": {
+        "primary": "a second survey sheet snaps in beside the first, ANIAK AND LITTLE TAYLOR MTNS, 20,090 LINE-KM, lines 400 M APART",
+        "reaction": "the sheet snaps with a bounce",
+        "ambient": "the globe turns, the ribbon ripples, the sheets shimmer, stars twinkle"
+      },
+      "t": "56.220-61.070",
+      "key": 23
+    },
+    {
+      "id": 29,
+      "shot": 7,
+      "at_s": 61.07,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.85
+      },
+      "offset": 4.85,
+      "vo": "Add the second survey, at Aniak and the Little Taylor Mountains, and it's more than once around the Earth.",
+      "phrase": "once around the Earth.",
+      "shows": "the vermilion lines lift off both sheets as one ribbon and wind around a blue globe, MORE THAN ONCE AROUND",
+      "sfx": "swell",
+      "means": "more than once around",
+      "rehook": "",
+      "draw": {
+        "subject": "vermilion ribbon",
+        "action": "lifts off both sheets and winds around a globe",
+        "emotion": "curious",
+        "annotation": "MORE THAN ONCE AROUND"
+      },
+      "choreo": {
+        "primary": "the vermilion lines lift off both sheets as one ribbon and wind around a blue globe, MORE THAN ONCE AROUND",
+        "reaction": "the ribbon winds and the globe turns",
+        "ambient": "the globe turns, the ribbon ripples, the sheets shimmer, stars twinkle"
+      },
+      "t": "61.070-62.070",
+      "key": 24
+    },
+    {
+      "id": 30,
+      "shot": 7,
+      "at_s": 62.07,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.85
+      },
+      "offset": 5.85,
+      "vo": "Add the second survey, at Aniak and the Little Taylor Mountains, and it's more than once around the Earth.",
+      "phrase": "Earth.",
+      "shows": "the ribbon passes once around the globe with slack trailing, SURVEYS ADD, NOT ONE FLIGHT",
+      "sfx": "hit",
+      "means": "surveys add \u00b7 not one flight",
+      "rehook": "",
+      "draw": {
+        "subject": "ribbon",
+        "action": "passes once around with slack left over",
+        "emotion": "curious",
+        "annotation": "SURVEYS ADD \u00b7 NOT ONE FLIGHT"
+      },
+      "choreo": {
+        "primary": "the ribbon passes once around the globe with slack trailing, SURVEYS ADD, NOT ONE FLIGHT",
+        "reaction": "the slack ripples",
+        "ambient": "the globe turns, the ribbon ripples, the sheets shimmer, stars twinkle"
+      },
+      "t": "62.070-63.630",
+      "key": 25
+    },
+    {
+      "id": 31,
+      "shot": 8,
+      "at_s": 63.63,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.25
+      },
+      "offset": 0.25,
+      "vo": "The best case is simple. With the data offered for download, the edge can go to whoever reads it best.",
+      "phrase": "best case is simple.",
+      "shows": "the view drops to a lamp lit bench where three identical readers with loupes lean over copies of the same sheet, THE BEST CASE",
+      "sfx": "swell",
+      "means": "the best case",
+      "rehook": "rehook: the fair case",
+      "draw": {
+        "subject": "four readers",
+        "action": "lean over copies of one sheet on a lamp lit bench",
+        "emotion": "curious",
+        "annotation": "THE BEST CASE"
+      },
+      "choreo": {
+        "primary": "the view drops to a lamp lit bench where three identical readers with loupes lean over copies of the same sheet, THE BEST CASE",
+        "reaction": "the readers lean and the lamp swings",
+        "ambient": "the lamp swings, the readers shift, the question mark bobs, dust crosses the cone"
+      },
+      "t": "63.630-66.210",
+      "key": 26
+    },
+    {
+      "id": 32,
+      "shot": 8,
+      "at_s": 66.21,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.83
+      },
+      "offset": 2.83,
+      "vo": "The best case is simple. With the data offered for download, the edge can go to whoever reads it best.",
+      "phrase": "download, the edge can",
+      "shows": "download arrows land at once, one copy per reader, with Plumb hanging at the head of the bench as one more reader, THE SAME MAP",
+      "sfx": "pop",
+      "means": "the same map",
+      "rehook": "",
+      "draw": {
+        "subject": "download arrows",
+        "action": "land at once, one copy per reader",
+        "emotion": "plain",
+        "annotation": "THE SAME MAP"
+      },
+      "choreo": {
+        "primary": "download arrows land at once, one copy per reader, with Plumb hanging at the head of the bench as one more reader, THE SAME MAP",
+        "reaction": "the arrows bounce",
+        "ambient": "the lamp swings, the readers shift, the question mark bobs, dust crosses the cone"
+      },
+      "t": "66.210-67.130",
+      "key": 27
+    },
+    {
+      "id": 33,
+      "shot": 8,
+      "at_s": 67.13,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.75
+      },
+      "offset": 3.75,
+      "vo": "The best case is simple. With the data offered for download, the edge can go to whoever reads it best.",
+      "phrase": "edge can go to",
+      "shows": "at the end of the bench a bone pedestal carries a floating question mark, FIRST LOOK, and the third reader steps toward it first while the others lean in after",
+      "sfx": "tap",
+      "means": "first look?",
+      "rehook": "",
+      "draw": {
+        "subject": "pedestal",
+        "action": "carries a floating question mark and the third reader steps toward it first",
+        "emotion": "ask",
+        "annotation": "FIRST LOOK?"
+      },
+      "choreo": {
+        "primary": "at the end of the bench a bone pedestal carries a floating question mark, FIRST LOOK, and the third reader steps toward it first while the others lean in after",
+        "reaction": "the question mark bobs and the readers lean",
+        "ambient": "the lamp swings, the readers shift, the question mark bobs, dust crosses the cone"
+      },
+      "t": "67.130-70.830",
+      "key": 28
+    },
+    {
+      "id": 34,
+      "shot": 9,
+      "at_s": 70.83,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.93
+      },
+      "offset": 0.93,
+      "vo": "But it hasn't named a single Alaska property. First projects, it says, are coming soon.",
+      "phrase": "named a single Alaska",
+      "shows": "a lone dashed pin outline floats in the sky beside the Alaska map card and Plumb, NO ALASKA PROPERTY NAMED YET",
+      "sfx": "thunk",
+      "means": "no alaska property named yet",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed pin",
+        "action": "sits alone on the map under Plumb",
+        "emotion": "ask",
+        "annotation": "NO ALASKA PROPERTY NAMED YET"
+      },
+      "choreo": {
+        "primary": "a lone dashed pin outline floats in the sky beside the Alaska map card and Plumb, NO ALASKA PROPERTY NAMED YET",
+        "reaction": "the dashes crawl and Plumb trembles",
+        "ambient": "Plumb sways, the dashes crawl, the tag swings, dust crosses the cone"
+      },
+      "t": "70.830-71.270",
+      "key": 29
+    },
+    {
+      "id": 35,
+      "shot": 9,
+      "at_s": 71.27,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 1.37
+      },
+      "offset": 1.37,
+      "vo": "But it hasn't named a single Alaska property. First projects, it says, are coming soon.",
+      "phrase": "single Alaska property. First",
+      "shows": "on the turf at the right edge the moss tarp lifts a crack and one steel eye opens and watches Plumb",
+      "sfx": "knock",
+      "means": "one eye open",
+      "rehook": "",
+      "draw": {
+        "subject": "moss tarp",
+        "action": "lifts a crack on the turf and one steel eye opens and watches Plumb",
+        "emotion": "wary",
+        "annotation": "ONE EYE OPEN"
+      },
+      "choreo": {
+        "primary": "on the turf at the right edge the moss tarp lifts a crack and one steel eye opens and watches Plumb",
+        "reaction": "the tarp lifts and the eye blinks",
+        "ambient": "Plumb sways, the dashes crawl, the tag swings, dust crosses the cone"
+      },
+      "t": "71.270-72.130",
+      "key": 47
+    },
+    {
+      "id": 36,
+      "shot": 9,
+      "at_s": 72.13,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.23
+      },
+      "offset": 2.23,
+      "vo": "But it hasn't named a single Alaska property. First projects, it says, are coming soon.",
+      "phrase": "property. First projects, it",
+      "shows": "Plumb swings and a tiny tag on his string flips through question marks",
+      "sfx": "scratch",
+      "means": "a deed?",
+      "rehook": "",
+      "draw": {
+        "subject": "Plumb",
+        "action": "swings back and forth with a tag that flips through question marks",
+        "emotion": "worried",
+        "annotation": "A DEED?"
+      },
+      "choreo": {
+        "primary": "Plumb swings and a tiny tag on his string flips through question marks",
+        "reaction": "the tag flips and Plumb sags",
+        "ambient": "Plumb sways, the dashes crawl, the tag swings, dust crosses the cone"
+      },
+      "t": "72.130-75.310",
+      "key": 30
+    },
+    {
+      "id": 37,
+      "shot": 9,
+      "at_s": 75.31,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.41
+      },
+      "offset": 5.41,
+      "vo": "But it hasn't named a single Alaska property. First projects, it says, are coming soon.",
+      "phrase": "soon.",
+      "shows": "a pale tag swings from the dashed pin reading SOON, ITS WORD",
+      "sfx": "tick",
+      "means": "soon \u00b7 its word",
+      "rehook": "",
+      "draw": {
+        "subject": "tag",
+        "action": "swings from the dashed pin",
+        "emotion": "plain",
+        "annotation": "SOON \u00b7 ITS WORD"
+      },
+      "choreo": {
+        "primary": "a pale tag swings from the dashed pin reading SOON, ITS WORD",
+        "reaction": "the tag swings",
+        "ambient": "Plumb sways, the dashes crawl, the tag swings, dust crosses the cone"
+      },
+      "t": "75.310-76.870",
+      "key": 31
+    },
+    {
+      "id": 38,
+      "shot": 10,
+      "at_s": 76.87,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.13
+      },
+      "offset": 0.13,
+      "vo": "Its release adds that deposits it mentions belong to other people, and aren't a sign of anything on its own ground.",
+      "phrase": "release adds that deposits",
+      "shows": "a release sheet unrolls like a scroll beside the map, ITS RELEASE",
+      "sfx": "page",
+      "means": "its release",
+      "rehook": "",
+      "draw": {
+        "subject": "release sheet",
+        "action": "unrolls like a scroll beside the map",
+        "emotion": "plain",
+        "annotation": "ITS RELEASE"
+      },
+      "choreo": {
+        "primary": "a release sheet unrolls like a scroll beside the map, ITS RELEASE",
+        "reaction": "the scroll unrolls and curls",
+        "ambient": "the scroll curls, the tags swing, the dashes crawl, the lamp swings"
+      },
+      "t": "76.870-78.630",
+      "key": 32
+    },
+    {
+      "id": 39,
+      "shot": 10,
+      "at_s": 78.63,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.89
+      },
+      "offset": 1.89,
+      "vo": "Its release adds that deposits it mentions belong to other people, and aren't a sign of anything on its own ground.",
+      "phrase": "belong to other people,",
+      "shows": "three solid deposit mounds sit on the turf each with a hang tag, ITS RELEASE, DEPOSITS IT MENTIONS BELONG TO OTHERS",
+      "sfx": "slide",
+      "means": "its release \u00b7 deposits it mentions belong to others",
+      "rehook": "",
+      "draw": {
+        "subject": "deposit blobs",
+        "action": "sit on the map each with a hang tag",
+        "emotion": "plain",
+        "annotation": "ITS RELEASE \u00b7 DEPOSITS IT MENTIONS BELONG TO OTHERS"
+      },
+      "choreo": {
+        "primary": "three solid deposit mounds sit on the turf each with a hang tag, ITS RELEASE, DEPOSITS IT MENTIONS BELONG TO OTHERS",
+        "reaction": "the tags swing",
+        "ambient": "the scroll curls, the tags swing, the dashes crawl, the lamp swings"
+      },
+      "t": "78.630-82.070",
+      "key": 33
+    },
+    {
+      "id": 40,
+      "shot": 10,
+      "at_s": 82.07,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.33
+      },
+      "offset": 5.33,
+      "vo": "Its release adds that deposits it mentions belong to other people, and aren't a sign of anything on its own ground.",
+      "phrase": "ground.",
+      "shows": "a dashed empty ring sits on the bare turf away from Plumb, SAYS NOTHING ABOUT ITS OWN GROUND",
+      "sfx": "hush",
+      "means": "says nothing about its own ground",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed outline",
+        "action": "stays empty among them",
+        "emotion": "ask",
+        "annotation": "SAYS NOTHING ABOUT ITS OWN GROUND"
+      },
+      "choreo": {
+        "primary": "a dashed empty ring sits on the bare turf away from Plumb, SAYS NOTHING ABOUT ITS OWN GROUND",
+        "reaction": "the dashes crawl",
+        "ambient": "the scroll curls, the tags swing, the dashes crawl, the lamp swings"
+      },
+      "t": "82.070-84.050",
+      "key": 34
+    },
+    {
+      "id": 41,
+      "shot": 11,
+      "at_s": 84.05,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.51
+      },
+      "offset": 0.51,
+      "vo": "A map of magnetism and natural radiation shows where rock differs. Only a drill shows what the rock holds.",
+      "phrase": "magnetism and natural radiation",
+      "shows": "a floating sheet and the rock beneath the turf glow periwinkle and lichen green, MAGNETISM, NATURAL RADIATION",
+      "sfx": "bloom",
+      "means": "magnetism + natural radiation",
+      "rehook": "",
+      "draw": {
+        "subject": "glowing map",
+        "action": "glows periwinkle and lichen",
+        "emotion": "plain",
+        "annotation": "MAGNETISM + NATURAL RADIATION"
+      },
+      "choreo": {
+        "primary": "a floating sheet and the rock beneath the turf glow periwinkle and lichen green, MAGNETISM, NATURAL RADIATION",
+        "reaction": "the glow swells",
+        "ambient": "the bands shimmer, the glow swells, the bit breathes, dust drifts"
+      },
+      "t": "84.050-87.110",
+      "key": 35
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 87.11,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.57
+      },
+      "offset": 3.57,
+      "vo": "A map of magnetism and natural radiation shows where rock differs. Only a drill shows what the rock holds.",
+      "phrase": "differs. Only a drill",
+      "shows": "the banded rock under the turf glows where it differs, A MAP SHOWS WHERE ROCK DIFFERS",
+      "sfx": "fade",
+      "means": "a map shows rock \u00b7 a drill shows what's in it",
+      "rehook": "",
+      "draw": {
+        "subject": "rock block",
+        "action": "pulls out of the map as a cutaway with banded layers",
+        "emotion": "curious",
+        "annotation": "A MAP SHOWS ROCK \u00b7 A DRILL SHOWS WHAT'S IN IT"
+      },
+      "choreo": {
+        "primary": "the banded rock under the turf glows where it differs, A MAP SHOWS WHERE ROCK DIFFERS",
+        "reaction": "the block rises and the bands shimmer",
+        "ambient": "the bands shimmer, the glow swells, the bit breathes, dust drifts"
+      },
+      "t": "87.110-88.750",
+      "key": 36
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 88.75,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 5.21
+      },
+      "offset": 5.21,
+      "vo": "A map of magnetism and natural radiation shows where rock differs. Only a drill shows what the rock holds.",
+      "phrase": "drill shows what the",
+      "shows": "the moss tarp lifts and a steel tricone bit with two eyes sits up on the turf, yawns, looks at the glow in the rock and shakes its head, ONLY A DRILL SHOWS WHAT THE ROCK HOLDS",
+      "sfx": "thump",
+      "means": "only a drill shows what the rock holds",
+      "rehook": "rehook: it's a drill bit",
+      "draw": {
+        "subject": "steel bit",
+        "action": "throws off the moss tarp, sits up, yawns, looks at the glow and shakes its head",
+        "emotion": "serious",
+        "annotation": "ONLY A DRILL SHOWS WHAT THE ROCK HOLDS"
+      },
+      "choreo": {
+        "primary": "the moss tarp lifts and a steel tricone bit with two eyes sits up on the turf, yawns, looks at the glow in the rock and shakes its head, ONLY A DRILL SHOWS WHAT THE ROCK HOLDS",
+        "reaction": "the tarp slides and the bit yawns and shakes",
+        "ambient": "the bands shimmer, the glow swells, the bit breathes, dust drifts"
+      },
+      "kick": true,
+      "t": "88.750-92.290",
+      "key": 37
+    },
+    {
+      "id": 44,
+      "shot": 12,
+      "at_s": 92.29,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.51
+      },
+      "offset": 0.51,
+      "vo": "Geomorphic doesn't drill. Partners fund and run the drilling, and it keeps an interest.",
+      "phrase": "doesn't drill. Partners fund",
+      "shows": "Plumb swings toward the bit and has no hands, the string just swings, IT DOESN'T DRILL",
+      "sfx": "hit",
+      "means": "it doesn't drill",
+      "rehook": "",
+      "draw": {
+        "subject": "Plumb",
+        "action": "reaches for the bit and has no hands",
+        "emotion": "worried",
+        "annotation": "IT DOESN'T DRILL"
+      },
+      "choreo": {
+        "primary": "Plumb swings toward the bit and has no hands, the string just swings, IT DOESN'T DRILL",
+        "reaction": "the string swings and Plumb droops",
+        "ambient": "Plumb swings, steam drifts, the tag swings, the lamp swings"
+      },
+      "t": "92.290-93.550",
+      "key": 38
+    },
+    {
+      "id": 45,
+      "shot": 12,
+      "at_s": 93.55,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 1.77
+      },
+      "offset": 1.77,
+      "vo": "Geomorphic doesn't drill. Partners fund and run the drilling, and it keeps an interest.",
+      "phrase": "Partners fund and run",
+      "shows": "two rig figures in hard hats walk in at dawn, one with a thermos, and the bit stands up with its tarp as a cape and a tag PARTNERS FUND AND RUN IT, PARTNERS DRILL, IT KEEPS AN INTEREST",
+      "sfx": "whoosh",
+      "means": "partners drill \u00b7 it keeps an interest",
+      "rehook": "",
+      "draw": {
+        "subject": "partners",
+        "action": "walk in with hard hats and a thermos",
+        "emotion": "plain",
+        "annotation": "PARTNERS DRILL \u00b7 IT KEEPS AN INTEREST"
+      },
+      "choreo": {
+        "primary": "two rig figures in hard hats walk in at dawn, one with a thermos, and the bit stands up with its tarp as a cape and a tag PARTNERS FUND AND RUN IT, PARTNERS DRILL, IT KEEPS AN INTEREST",
+        "reaction": "their strides settle and the steam drifts",
+        "ambient": "Plumb swings, steam drifts, the tag swings, the lamp swings"
+      },
+      "t": "93.550-96.090",
+      "key": 39
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 96.09,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.31
+      },
+      "offset": 4.31,
+      "vo": "Geomorphic doesn't drill. Partners fund and run the drilling, and it keeps an interest.",
+      "phrase": "interest.",
+      "shows": "a small brass tag clips onto Plumb's string, KEEPS AN INTEREST",
+      "sfx": "clink",
+      "means": "keeps an interest",
+      "rehook": "",
+      "draw": {
+        "subject": "brass tag",
+        "action": "clips onto Plumb's string",
+        "emotion": "plain",
+        "annotation": "KEEPS AN INTEREST"
+      },
+      "choreo": {
+        "primary": "a small brass tag clips onto Plumb's string, KEEPS AN INTEREST",
+        "reaction": "the tag clinks and swings",
+        "ambient": "Plumb swings, steam drifts, the tag swings, the lamp swings"
+      },
+      "t": "96.090-98.730",
+      "key": 40
+    },
+    {
+      "id": 47,
+      "shot": 13,
+      "at_s": 98.73,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 1.39
+      },
+      "offset": 1.39,
+      "vo": "Its C E O, Mark Sumner, calls Peru and Alaska two of the most prospective places in the world to explore for copper and gold.",
+      "phrase": "Sumner, calls Peru and",
+      "shows": "a quote card types the CEO's words, MARK SUMNER, CEO",
+      "sfx": "type",
+      "means": "mark sumner, ceo",
+      "rehook": "",
+      "draw": {
+        "subject": "quote card",
+        "action": "types the CEO's words",
+        "emotion": "plain",
+        "annotation": "MARK SUMNER, CEO"
+      },
+      "choreo": {
+        "primary": "a quote card types the CEO's words, MARK SUMNER, CEO",
+        "reaction": "the words type to the voice",
+        "ambient": "the cape ripples, the dashes crawl, steam drifts, the lamp swings"
+      },
+      "t": "98.730-99.770",
+      "key": 41
+    },
+    {
+      "id": 48,
+      "shot": 13,
+      "at_s": 99.77,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 2.43
+      },
+      "offset": 2.43,
+      "vo": "Its C E O, Mark Sumner, calls Peru and Alaska two of the most prospective places in the world to explore for copper and gold.",
+      "phrase": "Peru and Alaska two",
+      "shows": "two dashed pin outlines pop onto the map sheet labelled PERU and ALASKA, TWO OF THE MOST PROSPECTIVE PLACES IN THE WORLD, MARK SUMNER, CEO",
+      "sfx": "pop",
+      "means": "\"two of the most prospective places in the world\" \u00b7 mark sumner, ceo",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed pins",
+        "action": "pop onto a map sheet labelled PERU and ALASKA",
+        "emotion": "curious",
+        "annotation": "\"TWO OF THE MOST PROSPECTIVE PLACES IN THE WORLD\" \u00b7 MARK SUMNER, CEO"
+      },
+      "choreo": {
+        "primary": "two dashed pin outlines pop onto the map sheet labelled PERU and ALASKA, TWO OF THE MOST PROSPECTIVE PLACES IN THE WORLD, MARK SUMNER, CEO",
+        "reaction": "the pins pop and the dashes crawl",
+        "ambient": "the cape ripples, the dashes crawl, steam drifts, the lamp swings"
+      },
+      "t": "99.770-102.450",
+      "key": 42
+    },
+    {
+      "id": 49,
+      "shot": 13,
+      "at_s": 102.45,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 5.11
+      },
+      "offset": 5.11,
+      "vo": "Its C E O, Mark Sumner, calls Peru and Alaska two of the most prospective places in the world to explore for copper and gold.",
+      "phrase": "places in the world",
+      "shows": "the two dashed pins pulse together on the map sheet",
+      "sfx": "slide",
+      "means": "two places",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed pins",
+        "action": "pulse together",
+        "emotion": "curious",
+        "annotation": "TWO PLACES"
+      },
+      "choreo": {
+        "primary": "the two dashed pins pulse together on the map sheet",
+        "reaction": "the pins pulse",
+        "ambient": "the cape ripples, the dashes crawl, steam drifts, the lamp swings"
+      },
+      "t": "102.450-104.430",
+      "key": 57
+    },
+    {
+      "id": 50,
+      "shot": 13,
+      "at_s": 104.43,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 7.09
+      },
+      "offset": 7.09,
+      "vo": "Its C E O, Mark Sumner, calls Peru and Alaska two of the most prospective places in the world to explore for copper and gold.",
+      "phrase": "copper and gold.",
+      "shows": "a dashed copper coloured circle pops beside the pins, COPPER",
+      "sfx": "ping",
+      "means": "copper",
+      "rehook": "",
+      "draw": {
+        "subject": "copper disc",
+        "action": "a dashed copper coloured circle pops beside the pins",
+        "emotion": "plain",
+        "annotation": "COPPER"
+      },
+      "choreo": {
+        "primary": "a dashed copper coloured circle pops beside the pins, COPPER",
+        "reaction": "the dashes crawl",
+        "ambient": "the cape ripples, the dashes crawl, steam drifts, the lamp swings"
+      },
+      "t": "104.430-104.890",
+      "key": 43
+    },
+    {
+      "id": 51,
+      "shot": 13,
+      "at_s": 104.89,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 7.55
+      },
+      "offset": 7.55,
+      "vo": "Its C E O, Mark Sumner, calls Peru and Alaska two of the most prospective places in the world to explore for copper and gold.",
+      "phrase": "gold.",
+      "shows": "a dashed gold coloured circle pops beside the copper one, GOLD",
+      "sfx": "tick",
+      "means": "gold",
+      "rehook": "",
+      "draw": {
+        "subject": "gold disc",
+        "action": "a dashed gold coloured circle pops beside the copper one",
+        "emotion": "plain",
+        "annotation": "GOLD"
+      },
+      "choreo": {
+        "primary": "a dashed gold coloured circle pops beside the copper one, GOLD",
+        "reaction": "the dashes crawl",
+        "ambient": "the cape ripples, the dashes crawl, steam drifts, the lamp swings"
+      },
+      "t": "104.890-106.040",
+      "key": 44
+    },
+    {
+      "id": 52,
+      "shot": 14,
+      "at_s": 106.04,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "If the state puts its surveys up for download, who should get to act on them first, and who should carry the cost of the first hole?",
+      "phrase": "If the state puts",
+      "shows": "the ground returns at dawn with Plumb one hair above the blue pond and the steel bit awake on the turf beside him",
+      "sfx": "swell",
+      "means": "the hair above the ground",
+      "rehook": "",
+      "draw": {
+        "subject": "Plumb",
+        "action": "returns over the table one hair above the blue patch with the bit beside him",
+        "emotion": "wary",
+        "annotation": "THE HAIR ABOVE THE GROUND"
+      },
+      "choreo": {
+        "primary": "the ground returns at dawn with Plumb one hair above the blue pond and the steel bit awake on the turf beside him",
+        "reaction": "the string settles and the tip trembles",
+        "ambient": "Plumb trembles, the string breathes, the question mark bobs, dust crosses the cone"
+      },
+      "t": "106.040-109.130",
+      "key": 52
+    },
+    {
+      "id": 53,
+      "shot": 14,
+      "at_s": 109.13,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 3.09
+      },
+      "offset": 3.09,
+      "vo": "If the state puts its surveys up for download, who should get to act on them first, and who should carry the cost of the first hole?",
+      "phrase": "get to act on",
+      "shows": "a brass question mark floats up from the blue patch, WHO ACTS ON IT FIRST?",
+      "sfx": "ping",
+      "means": "who acts on it first?",
+      "rehook": "",
+      "draw": {
+        "subject": "question mark",
+        "action": "floats up from the blue patch",
+        "emotion": "ask",
+        "annotation": "WHO ACTS ON IT FIRST?"
+      },
+      "choreo": {
+        "primary": "a brass question mark floats up from the blue patch, WHO ACTS ON IT FIRST?",
+        "reaction": "the question mark bobs",
+        "ambient": "Plumb trembles, the string breathes, the question mark bobs, dust crosses the cone"
+      },
+      "t": "109.130-110.950",
+      "key": 45
+    },
+    {
+      "id": 54,
+      "shot": 14,
+      "at_s": 110.95,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.91
+      },
+      "offset": 4.91,
+      "vo": "If the state puts its surveys up for download, who should get to act on them first, and who should carry the cost of the first hole?",
+      "phrase": "who should carry the",
+      "shows": "a second hollow question mark floats up beside the steel bit, WHO PAYS FOR THE FIRST HOLE?",
+      "sfx": "bloop",
+      "means": "who pays for the first hole?",
+      "rehook": "",
+      "draw": {
+        "subject": "question mark",
+        "action": "a second hollow question mark floats up beside the bit",
+        "emotion": "ask",
+        "annotation": "WHO PAYS FOR THE FIRST HOLE?"
+      },
+      "choreo": {
+        "primary": "a second hollow question mark floats up beside the steel bit, WHO PAYS FOR THE FIRST HOLE?",
+        "reaction": "the question mark bobs",
+        "ambient": "Plumb trembles, the string breathes, the question mark bobs, dust crosses the cone"
+      },
+      "t": "110.950-111.730",
+      "key": 50
+    },
+    {
+      "id": 55,
+      "shot": 14,
+      "at_s": 111.73,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 5.69
+      },
+      "offset": 5.69,
+      "vo": "If the state puts its surveys up for download, who should get to act on them first, and who should carry the cost of the first hole?",
+      "phrase": "cost of the first",
+      "shows": "the steel bit spins and bores down through the turf and the rock beside Plumb who still hangs a hair above, ILLUSTRATIVE",
+      "sfx": "thud",
+      "means": "the first hole",
+      "rehook": "",
+      "draw": {
+        "subject": "steel bit",
+        "action": "spins and bores down through the turf and the rock beside Plumb",
+        "emotion": "firm",
+        "annotation": "THE FIRST HOLE"
+      },
+      "choreo": {
+        "primary": "the steel bit spins and bores down through the turf and the rock beside Plumb who still hangs a hair above, ILLUSTRATIVE",
+        "reaction": "the bit spins and the ground jolts",
+        "ambient": "Plumb trembles, the string breathes, the question mark bobs, dust crosses the cone"
+      },
+      "kick": true,
+      "t": "111.730-112.860",
+      "key": 46
+    }
+  ]
+}

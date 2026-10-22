@@ -1,0 +1,56 @@
+{
+ "run_date": "2026-10-22",
+ "palette": {
+  "mood": "a cold dusk over tundra turf with one blue pond, a brass bob hanging a hair above it, banded rock below with a steel drill bit asleep on the turf under a moss tarp; the only red is the flight lines; the light arc runs dusk, a lamp-lit bench, a cold space with a globe, a self-lit glow in the rock, then pale dawn",
+  "ground": "#14211B spruce ink (table, night, shadow planes), #1C2E26 lifted spruce for the table top",
+  "sky": "#7F93B5 dusk-blue grading to #C9B28A pale straw at the tundra horizon; the table-room backdrop is #0E1713",
+  "hero": "#C79A2B brass (shade #8A6A1C, key #F0CF72, rim #FFE9A8) on Plumb and on the lamp arm; his eyes are bone #F4EEDC with ink pupils",
+  "accent": "#C6D84A lichen, the natural-radiation glow only",
+  "shadow": "#0A110E",
+  "roles": {
+   "vellum #E8DCB8": "the survey sheet and every paper (releases, packages). Contour lines in #B9A878.",
+   "periwinkle #6E86C9": "magnetic field lines and the aeromagnetic colour on maps only",
+   "lichen #C6D84A": "gamma glow only. Never a result: it brightens where rock differs, and says so",
+   "thread vermilion #D7263D": "ONLY the flight lines and the ribbon they unspool into around the globe. Never a verdict. No red anywhere else, not on tarps, plates or stamps.",
+   "brass #C79A2B": "Plumb ALONE (and the rim of his string tag). Plates for the company's own words are kraft #B58B55, tags bone or kraft, the lamp on the bench is the only other warm metal.",
+   "steel #8E99A3 + #4A5560": "the drill bit and rig, so the grader reads cold and plain beside warm brass",
+   "tarp #5B6B58 moss canvas": "the cloth over the sleeping bit",
+   "plates": "ink #10151F with bone text; the brass-edged plate for ITS WORDS lines so every company line is visibly the company's",
+   "tundra #7A7B4A olive, #A89B62 straw, hills #6E86C9": "outdoor ground and hills, desaturated so the red thread reads",
+   "vellum #DCE3D6": "cool drafting film: every floating sheet, release and card (contours #8FA394). Deliberately cooler than 10-20's manila so it can't read as paper under a lamp.",
+   "sky + turf": "dusk sky #5C6F96 to #C9B28A over periwinkle hills, olive turf #7A7B4A; dawn turns the same sky to #8EA3CB over #F6DDB4",
+   "strata": "seven cool bands (#4A5560, #6B5F4C, #3F4D43, #7A6A54, #524A66, #5E5E4C, #3E4A55) with lichen glow only where the film says rock differs"
+  },
+  "diverges_from_last_two": "10-21 was a pewter-lilac and teal beach with a tawny calf and survey orange. 10-20 was a celadon and walnut office with a manila folder, a banker lamp and dashed pockets. This film lives outdoors in a side view of the ground, with a cool drafting-film sheet, a brass hero that nothing else is allowed to share, and a pale dawn at the end. HONEST OVERLAP: 10-18 had an indigo world, a lamp bench appears once here (S8) and dashed outlines still mean 'not yet named', but the lamp is no longer the home light."
+ },
+ "light": {
+  "time_of_day": "cold dusk on tundra (S1 to S5, S9, S10), a lamp-lit bench (S8), a cold space (S7, S13), a self-lit rock cutaway (S6), a glow in the rock (S11), pale dawn (S12, S14)",
+  "direction": "dusk: soft top sky light with a low straw horizon and a long rim on the left; dawn: the same side lit from the lower right as the sky pales; bench: one lamp upper left; cutaway and rock glow: self-lit",
+  "intent": "the light changes with the argument: the reader hangs in dusk, the rock glows when a map shows it, and dawn arrives with the thing that drills. The last frame repeats the first composition in dawn light.",
+  "depth": "Ground world: sky 4 px, far hills 6 px, near hills 12 px, turf strip 1.0, Plumb 1.1, floating sheets 1.05 on a slow bob, strata as the near plane (a lower third that is always rock texture). Tundra: sky 4, hills 8, tundra band 14, heli 1.0, tufts 26. Cutaway: block face 1.0, field lines 1.05. Globe: stars 4, globe 1.0, ribbon 1.05."
+ },
+ "shape_language": {
+  "dominant": "round and hanging (a teardrop bob, a ball globe, rolled tubes, coiled thread) against the hard rectilinear grid of the survey sheet and the straight flight lines. The drill bit is the one angular, toothed, cold thing: the shape that gets the verdict.",
+  "contrast": "soft hanging brass versus a hard steel grader",
+  "why": "the story is a reader that can hover over a map forever and a bit that can only go down. Round hesitation against a pointed fact."
+ },
+ "casting": {
+  "hero": "Plumb (NET-NEW lib/prospect.tsx): a brass plumb bob on a hairline string, a LABELLED metaphor for 'a reader of maps' that never asserts a claim. Face: two bone eyes on the shoulders of the brass, brows, a tip that trembles. Never lights up, never points at a result.",
+  "throughline": "THE DRILL BIT (NET-NEW, same file): a steel tricone bit, shown asleep under a moss tarp with a Zzz from the first table shot, twitching when the helicopter passes, opening one eye at the test, sitting up at the turn, standing with the tarp as a cape when partners arrive, and spinning once at the button.",
+  "supporting_shelf": "Character (generic rig figures: readers on the bench, partners at dawn), AlaskaMini (the Alaska card), Globe + SurveyHeli + RockBlock + GroundBG (net-new kit, lib/prospect.tsx), no table in the home world",
+  "net_new": "Plumb (the one hero illustration), DrillBit, GroundBG (the home world), VellumSheet, SurveyHeli, Globe, RockBlock, TableBG and LampArm (bench only), PaperPlane, DownloadArrow, RollTube, Pedestal, DepositBlob, ReleaseScroll, PinOutline, HollowQ, HangTag, Zzz, Loupe, Thermos (episode-local). Brass belongs to Plumb. MapSheet from 10-20 is not used.",
+  "freshness": "Hero is not Folio or WalrusCalf or any of the last 17 heroes. No manila folder (10-20), no stamp slammed on paper (10-20), no tally, orange frame, beach or calf (10-21), no jelly (10-18)."
+ },
+ "motion_language": {
+  "world": "Plumb never stops: a pendulum swing on a long period (not periodic with the camera), a tip tremble when near the map, breath in the string. The lamp swings a few pixels. Flight lines draw on at the helicopter's speed. Dust motes cross the lamp cone.",
+  "key_hero_moves": "Plumb dives and checks, stops a hair above the map, recoils, shrugs. The drill bit's wake-ups are the film's slow comedy: a twitch, an eye, a yawn that lifts the tarp, a head shake, then a first spin that earns the film's one hard impact.",
+  "camera": "slow push on every held shot, dolly-throughs on the tundra, a craneDown into the cutaway; the whole frame kicks only on beats flagged kick (at most 3)."
+ },
+ "composition": {
+  "focal_hierarchy": "one focal object per shot: Plumb over the sheet, the helicopter on its line, the globe under the ribbon, the bit under the tarp. Plates stay in 525 to 1290 and clear of 420 and 1500. The lower third always carries a near plane.",
+  "negative_space": "the empty vellum around a dashed pin in S9 and the dark table in S1 are deliberate emptiness: the film's subject is what is not there yet.",
+  "safe_area": "master 9:16, hero action inside y 420 to 1500 so the square keeps it",
+  "signature_shot": "S14, the last seconds: Plumb hanging one hair above the blue pond at dawn and, a few paces away, the steel bit boring down through the turf and the rock in a black shaft. The brass hesitates, the steel goes down. It is the first frame in a different light."
+ },
+ "craft_advance": "none required for this film; any engine advance is queued for the weekly machine pass"
+}

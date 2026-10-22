@@ -2703,3 +2703,49 @@ dispatch_history:
     light_story: soft dawn light on a gravel beach, a navy orbit, a gentle dusk beach,
       then one warm glowing amber lamp pool in a plank cabin
     metaphor: a survey-orange counting frame that becomes a window
+- date: '2026-10-22'
+  topic: Geomorphic AI Alaska subsidiary and the two 2026 DGGS airborne surveys offered
+    for download
+  slug: dispatch-2026-10-22
+  key_entities:
+  - Geomorphic AI
+  - Golden Dyke Exploration
+  - DGGS
+  - Ganes Creek
+  - Aniak
+  - Little Taylor Mountains
+  - Mining News
+  archetype: ground-world
+  palette: dusk violet apricot, olive turf, vellum, lichen glow, brass, kraft
+  voice: Sulafat
+  stance: curious
+  angle: The scarce step in Alaska exploration used to be collecting the data. The
+    state has now flown and posted about 45,800 line kilometers of it, a company with
+    no Alaska property says its AI will read it, and the reading only gets graded
+    when a partner drills.
+  hero: Plumb
+  cast:
+  - Plumb
+  - DrillBit
+  - VellumSheet
+  - SurveyHeli
+  - Globe
+  - RockBlock
+  - HollowQ
+  - Character readers
+  - partners
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: vertical-descent
+    hero_treatment: instrument-as-subject
+    layout: fullbleed-split
+    register: editorial-schematic
+    palette: dark spruce ink night, vellum maps, brass hanging reader, periwinkle
+      magnetic contours, lichen green glow, cold steel drill and one vermilion thread
+    camera_strategy: slow pushes on a side view of the ground with a craneDown into
+      the rock and a dollyThrough on the bench
+    light_story: a cold dusk over tundra turf with a pond, a self-lit glow in the
+      rock, a lamp-lit bench, a cold space with a globe, then a pale dawn with the
+      steel bit boring down through the rock
+    metaphor: a brass plumb bob that hangs a hair above the map while a steel drill
+      bit is the only thing that goes down

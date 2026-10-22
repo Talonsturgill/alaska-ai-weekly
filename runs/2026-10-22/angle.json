@@ -1,0 +1,21 @@
+{
+ "run_date": "2026-10-22",
+ "thesis": "The scarce step in Alaska exploration used to be collecting the data. The state has now flown and posted about 45,800 line kilometers of it, a company with no Alaska property says its A I will read it, and the reading only gets graded when a partner drills.",
+ "falsifiable_by": "Geomorphic naming Alaska projects that rest on ground or data outside the public record, or never naming a property and never signing a partner who drills, or a source showing it is not reading public data in Alaska at all.",
+ "supporting_facts": [
+  "c6 the release says what it reads in Alaska is public: USGS and state mapping, new state airborne surveys, a state claim staking system",
+  "c7/c8/c14 two 2026 DGGS helicopter surveys, 25,731 and 20,090 line-km, about 45,800 added, offered for download",
+  "c3 it does not drill, partners fund and drill and it keeps an interest",
+  "c13 a map shows where rock differs, only a drill shows what it holds"
+ ],
+ "counterpoint_honored": "A release with no property, no date and no method may not be news yet, and nothing ties Geomorphic to these two surveys. The film says so on screen: no Alaska property named (c4), its own disclaimer that deposits it mentions belong to others (c11), every AI line is its own description (c2/c12), and the surveys are shown as 'what one of those looks like', never as its inputs. The AI may be thin and the state's data the part with weight, and the film lets that stand.",
+ "second_movement": "Geomorphic doesn't drill and the data is offered to everyone, so the AI is one more reader of an open map. The edge goes to whoever reads fastest and then to whoever pays for the hole. That is the scene where the film's thesis is tested: a map target is not a result.",
+ "ai_link_wording": "Geomorphic AI calls itself an AI driven minerals prospect generator that screens geological and historic data for overlooked mineral systems. That is its description. No method, accuracy, result or use of these surveys is reported.",
+ "valence": "cautiously positive for Alaska's public data, open verdict on the company",
+ "runner_ups": {
+  "debunk: AI hype on a press release": "sour is invented, no harm or failure reported",
+  "booster: AI finds Alaska's hidden gold": "no property, no result",
+  "pure survey explainer": "too little AI"
+ },
+ "challenge_round": "Builder credited the state's data over the AI; skeptic added that a property-less release may not be news and that side by side surveys could imply a link; explainer added the 45,800 line-km scale and the map-to-drill mechanism. Synthesis keeps the state's data as the substance, the AI as a reader whose work is unproven, and the drill as the only grader."
+}

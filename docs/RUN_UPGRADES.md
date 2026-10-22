@@ -3888,3 +3888,9 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 ## 2026-10-21 weekly machine pass
 - Shipped: strip_name_check reads scene-component episodes (it had crashed on every film since 10-06), visible_copy_check resolves const and ternary plate text per scene, build_evidence writes out/evidence/INDEX.txt and the judge prompts name it, setup_env verifies Pillow loads (scripts/pillow_check.py), audio_report explains an LRA over 9.
 - Escalated: the premix arc softener in dispatch_mix.py (needs an over-target film to tune on), strip_name_check promotion to a gate (real board versus engine drift on 10-21, 10-18 and older).
+
+## 2026-10-22 "Plumb and the Sleeping Bit"
+- Shipped: Geomorphic AI's October 20th Alaska subsidiary announcement set against two 2026 DGGS airborne surveys the state offers for download. Hero Plumb (net-new kit, lib/prospect.tsx), throughline the sleeping steel bit under a moss tarp. Panel median 7.39 (7.39, 7.41, 7.06) against 7.0, editor SHIP, no hard blockers. Caption card 8.39, below the 8.5 bar after five rounds, disclosed. Art predicted 6.8 by the flow critic.
+- In-run fixes: ground world redesign after Gate 0, plate overlap and crop gates, metaphor tag baseline, company plates re-hung under one sign across shots 3, 4, 5, 9, 10 and 12, jolt-safe hero tremble, caption_fixups for spelled initialisms, kill_render.py. DISPATCH_STANDARD section 18 added.
+- Honest gaps: one ground set carries most shots, shot 13 near-static, open is label-heavy, thin SFX layer. All queued.
+- Queued for the machine pass: 11 items (docs/MACHINE_QUEUE.md, 2026-10-22). Repeat offenders: plate gates before render, caption fixups for spelled initialisms, atomic claims.
