@@ -240,7 +240,6 @@ const S3: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.05} oy={1050}
       overlay={<>
         <Plate x={540} text="OCT 20TH" y={540} size={38} tone="ink" p={ease(f, t7 + 2, 8) * (f < t10 ? 1 : 0)} />
-        <Plate x={540} text="GEOMORPHIC AI" y={610} size={40} tone="brass" p={ease(f, t9 + 2, 8)} />
         <Plate x={540} text="OCT 20TH · GOLDEN DYKE EXPLORATION LLC" displayLines={['OCT 20TH · GOLDEN DYKE', 'EXPLORATION LLC']} y={760} size={34} tone="paper" p={ease(f, t10 + 2, 8)} />
       </>}>
       <SVG>
@@ -253,7 +252,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <PaperPlane x={px} y={py} rot={lerp(-20, 4, fly)} scale={1.1} f={g} shadowDy={70 - 30 * fly} />
         {f > t8 && f < t10 + 8 && <g transform={`translate(${px - 60},${py + 20})`}><HangTag text="PORTLAND-BASED" size={24} tone="kraft" f={g} k={ease(f, t8, 8)} rot={-10} /></g>}
         <Sleeper f={g} x={950} scale={0.5} zzz={0.5} id="s3b" />
-        <CoSign x={690} y={720} f={g} k={ease(f, t9, 8)} />
+        <CoSign x={540} y={600} f={g} k={ease(f, t9, 8)} />
         <HairPlumb x={880} f={g} scale={1.4} mood="curious" amp={5} ph={2.1} look={-0.7} id="s3p" />
       </SVG>
     </Frame>
@@ -268,13 +267,13 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const sweep = easeIO(f, t13 - 14, 60);
   const bx = lerp(200, 880, sweep);
   const qs: [number, number][] = [[200, 1290], [430, 1400], [660, 1300], [860, 1390], [540, 1240]];
-  const pk = plumbTip(830, -20, SURF - 14 + 20, g, 4, 0.5, 0);
+  const pk = plumbTip(850, -20, SURF - 14 + 20, g, 4, 0.5, 0);
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1000}
       overlay={<>
-        <Plate x={450} text="ITS WORDS · AI-DRIVEN PROSPECT GENERATOR" displayLines={['ITS WORDS ·', 'AI-DRIVEN PROSPECT GENERATOR']} y={560} size={34} tone="brass" p={ease(f, t12 + 2, 8)} />
-        <Plate x={450} text="OVERLOOKED SYSTEMS?" y={730} size={36} tone="ink" p={ease(f, t13 + 2, 8) * (f < t14 ? 1 : 0)} />
-        <Plate x={450} text="DRILL-READY DATA PACKAGE" y={800} size={34} tone="paper" p={ease(f, t14 + 2, 8)} />
+        <Plate x={420} text="ITS WORDS · AI-DRIVEN PROSPECT GENERATOR" displayLines={['ITS WORDS ·', 'AI-DRIVEN PROSPECT GENERATOR']} y={560} size={34} tone="brass" p={ease(f, t12 + 2, 8)} />
+        <Plate x={420} text="OVERLOOKED SYSTEMS?" y={730} size={36} tone="ink" p={ease(f, t13 + 2, 8) * (f < t14 ? 1 : 0)} />
+        <Plate x={420} text="ITS WORDS · DRILL-READY DATA PACKAGES" displayLines={['ITS WORDS ·', 'DRILL-READY DATA PACKAGES']} y={815} size={34} tone="paper" p={ease(f, t14 + 2, 8)} />
       </>}>
       <SVG>
         <GroundBG f={g} surface={SURF} pondX={540} id="s4g" />
@@ -282,8 +281,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {qs.map(([qx, qy], i) => <HollowQ key={i} x={qx} y={qy} size={96} f={g} k={snap(f, t13 + i * 9, 10)} color={PR.bone} />)}
         <RollTube x={170} y={900} scale={0.8} f={g} out={ease(f, t14, 26)} id="s4r" />
         <Sleeper f={g} x={940} scale={0.52} zzz={1 - ease(f, t53, 4)} tilt={1} id="s4b" />
-        <CoSign x={450} y={470} f={g} k={ease(f, t11, 8)} />
-        <HairPlumb x={830} f={g} scale={1.6} mood="curious" amp={4} ph={0.5} id="s4p" />
+        <CoSign x={420} y={410} f={g} k={ease(f, t11, 8)} />
+        <HairPlumb x={850} f={g} scale={1.6} mood="curious" amp={4} ph={0.5} id="s4p" />
       </SVG>
     </Frame>
   );
@@ -299,8 +298,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1050}
       overlay={<>
-        <Plate x={450} text="ITS WORDS · WHAT IT READS IS PUBLIC" displayLines={['ITS WORDS ·', 'WHAT IT READS IS PUBLIC']} y={560} size={34} tone="brass" p={ease(f, t15 + 2, 8)} />
-        <Plate x={450} text="NEW STATE AIRBORNE SURVEYS" y={730} size={34} tone="ink" p={ease(f, t16 + 2, 8)} />
+        <Plate x={450} text="ITS WORDS · WHAT IT READS IS PUBLIC" displayLines={['ITS WORDS ·', 'WHAT IT READS IS PUBLIC']} y={560} size={34} tone="brass" p={ease(f, t55 + 2, 8)} />
+        <Plate x={450} text="ITS WORDS · NEW STATE AIRBORNE SURVEYS" displayLines={['ITS WORDS ·', 'NEW STATE AIRBORNE SURVEYS']} y={750} size={34} tone="ink" p={ease(f, t16 + 2, 8)} />
       </>}>
       <SVG>
         <GroundBG f={g} surface={SURF} pondX={540} id="s5g" />
@@ -309,11 +308,11 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <g transform="translate(230,1150)"><HangTag text="USGS + STATE MAPPING" size={20} tone="kraft" f={g} k={ease(f, t55 + 14, 8)} rot={-3} drop={26} /></g>
         </g>
         <g transform={`translate(${lerp(400, 0, s2)},${5 * Math.sin(g / 33 + 1)})`}>
-          <VellumSheet x={700} y={900} w={260} h={440} rot={4} f={g} contours={ease(f, t17, 30)} glow={0} rows={0} id="s5b" />
+          <VellumSheet x={690} y={900} w={240} h={440} rot={4} f={g} contours={ease(f, t17, 30)} glow={0} rows={0} id="s5b" />
         </g>
         <Sleeper f={g} x={955} scale={0.46} twitch={tw} zzz={1 - ease(f, t49, 6)} id="s5s" />
-        <CoSign x={450} y={470} f={g} k={ease(f, t15, 8)} />
-        <HairPlumb x={830} f={g} scale={1.5} mood="curious" amp={5} ph={3.1} look={-0.5} id="s5p" />
+        <CoSign x={450} y={410} f={g} k={ease(f, t55, 8)} />
+        <HairPlumb x={910} f={g} scale={1.5} mood="curious" amp={5} ph={3.1} look={-0.5} id="s5p" />
       </SVG>
     </Frame>
   );
@@ -441,8 +440,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1050}
       overlay={<>
-        <Plate x={540} text="NO ALASKA PROPERTY NAMED YET" y={560} size={36} tone="ink" p={ease(f, t29 + 2, 8)} />
-        <Plate x={540} text="SOON · ITS WORD" y={640} size={36} tone="paper" p={ease(f, t31 + 2, 8)} />
+        <Plate x={420} text="NO ALASKA PROPERTY NAMED YET" y={560} size={36} tone="ink" p={ease(f, t29 + 2, 8)} />
+        <Plate x={420} text="SOON · ITS WORD" y={640} size={36} tone="paper" p={ease(f, t31 + 2, 8)} />
       </>}>
       <SVG>
         <GroundBG f={g} surface={SURF} pondX={790} dawn={0.15} id="s9g" />
@@ -455,9 +454,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <g transform="translate(570,880)"><HangTag text="SOON" size={26} tone="kraft" f={g} k={ease(f, t31, 8)} rot={6} /></g>
         </g>
         <Sleeper f={g} x={960} scale={0.44} zzz={f > t47 ? 0 : 0.6} eyes={ease(f, t47, 10)} id="s9s" />
-        <CoSign x={200} y={760} f={g} k={ease(f, t29, 8)} />
-        <HairPlumb x={790} f={g} scale={1.5} mood={f > t30 ? 'worried' : 'wary'} tremble={f > t30 ? 0.7 : 0.4} amp={f > t30 && f < t30 + 70 ? 9 : 5} ph={0.9} look={-0.5} id="s9p"
-          tag={f > t30 ? <g transform="translate(215,60)"><HangTag text={f % 24 < 8 ? '?' : f % 24 < 16 ? '??' : '???'} size={34} tone="bone" f={g} k={ease(f, t30, 6)} /></g> : undefined} />
+        <CoSign x={420} y={450} f={g} k={ease(f, t29, 8)} />
+        <HairPlumb x={900} f={g} scale={1.5} mood={f > t30 ? 'worried' : 'wary'} tremble={f > t30 ? 0.7 : 0.4} amp={f > t30 && f < t30 + 70 ? 9 : 5} ph={0.9} look={-0.5} id="s9p"
+          tag={f > t30 ? <g transform="translate(-215,60)"><HangTag text={f % 24 < 8 ? '?' : f % 24 < 16 ? '??' : '???'} size={34} tone="bone" f={g} k={ease(f, t30, 6)} /></g> : undefined} />
       </SVG>
     </Frame>
   );
@@ -549,8 +548,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1100}
       overlay={<>
-        <Plate x={640} text="ITS WORDS · IT DOESN'T DRILL" displayLines={['ITS WORDS ·', "IT DOESN'T DRILL"]} y={560} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t39 + 30 ? 1 : 0)} />
-        <Plate x={640} text="ITS WORDS · PARTNERS DRILL · IT KEEPS AN INTEREST" displayLines={['ITS WORDS ·', 'PARTNERS DRILL ·', 'IT KEEPS AN INTEREST']} y={725} size={34} tone="brass" p={ease(f, t39 + 2, 8)} />
+        <Plate x={640} text="ITS WORDS · IT DOESN'T DRILL" displayLines={['ITS WORDS ·', "IT DOESN'T DRILL"]} y={560} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t39 ? 1 : 0)} />
+        <Plate x={640} text="ITS WORDS · PARTNERS DRILL · IT KEEPS AN INTEREST" displayLines={['ITS WORDS ·', 'PARTNERS DRILL ·', 'IT KEEPS AN INTEREST']} y={640} size={34} tone="brass" p={ease(f, t39 + 2, 8)} />
       </>}>
       <SVG>
         <GroundBG f={g} surface={SURF} pondX={300} dawn={0.6} id="s12g" />
@@ -561,8 +560,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Character frame={g + 17} x={pxB} y={SURF + 26} scale={0.95} facing={-1} pose="stand" emotion="neutral" outfit="puffer" headgear="hardhat" walking={walking} walkPhase={g * 0.3 + 2} />
         <DrillBit x={940} y={SURF + 18} f={g} scale={1.0} tilt={1 - ease(f, t39 - 8, 20)} tarp={0} cape={ease(f, t39, 16)} eyes={1} brow={-4} id="s12b" />
         {handoff > 0.02 && <g transform={`translate(${830},${SURF - 270})`}><HangTag text="PARTNERS FUND + RUN IT" size={20} tone="kraft" f={g} k={snap(f, t39 + 14, 10)} drop={26} rot={4} /></g>}
-        <CoSign x={640} y={470} f={g} k={ease(f, t38, 8)} />
-        <HairPlumb x={200} f={g} scale={1.5} mood={f > t38 ? 'sheepish' : 'wary'} amp={4 + 9 * reach * (1 - ease(f, t38 + 40, 30))} ph={0.4} look={0.9} id="s12p" />
+        <CoSign x={640} y={410} f={g} k={ease(f, t38, 8)} />
+        <HairPlumb x={240} f={g} scale={1.5} mood={f > t38 ? 'sheepish' : 'wary'} amp={4 + 9 * reach * (1 - ease(f, t38 + 40, 30))} ph={0.4} look={0.9} id="s12p" />
 
       </SVG>
     </Frame>
