@@ -145,12 +145,23 @@ const Sleeper: React.FC<{x?: number; f: number; scale?: number; twitch?: number;
     {zzz > 0.02 && <Zzz x={x - 40 * scale} y={SURF - 110 * scale} f={f} k={zzz} scale={scale * 1.2} />}
   </g>
 );
-/** Plumb in the home world: his string is fixed above the frame and his tip stops a hair above the turf at x */
-const HairPlumb: React.FC<{x: number; f: number; scale?: number; mood?: React.ComponentProps<typeof Plumb>['mood']; amp?: number; ph?: number; look?: number; tremble?: number; tag?: React.ReactNode; id: string; lift?: number}> =
-({x, f, scale = 1.45, mood = 'wary', amp = 5, ph = 0, look = 0, tremble = 0, tag, id, lift = 14}) => (
-  <Plumb x={x} y={-20} len={SURF - lift + 20} f={f} scale={scale} mood={mood} tremble={tremble} amp={amp} ph={ph} look={look} id={id} shadow={false} tag={tag} />
-);
 const MetaTag: React.FC<{f: number; k?: number}> = ({f, k = 1}) => <HangTag text="A MAP READER · METAPHOR" size={19} tone="bone" f={f} k={k} drop={34} sway={2} />;
+/** Plumb in the home world: his string is fixed above the frame and his tip stops a hair above the turf at x */
+const HairPlumb: React.FC<{x: number; f: number; scale?: number; mood?: React.ComponentProps<typeof Plumb>['mood']; amp?: number; ph?: number; look?: number; tremble?: number; tag?: React.ReactNode; id: string; lift?: number; meta?: boolean}> =
+({x, f, scale = 1.45, mood = 'wary', amp = 5, ph = 0, look = 0, tremble = 0, tag, id, lift = 14, meta = true}) => (
+  <Plumb x={x} y={-20} len={SURF - lift + 20} f={f} scale={scale} mood={mood} tremble={tremble} amp={amp} ph={ph} look={look} id={id} shadow={false}
+    tag={<g>{meta && <MetaTag f={f} />}{tag}</g>} />
+);
+/** CoSign: Geomorphic's own nameplate, hung from the sky on its own string. Everything the company says hangs from IT, never from Plumb. */
+const CoSign: React.FC<{x?: number; y?: number; f: number; k?: number; text?: string; extra?: string}> = ({x = 150, y = 690, f, k = 1, text = 'GEOMORPHIC AI', extra}) => (
+  <g>
+    <path d={`M${x},-20 L${x},${y}`} stroke={PR.bone} strokeWidth={2.4} opacity={0.9 * clamp01(k)} />
+    <g transform={`translate(${x},${y - 34})`}>
+      <HangTag text={text} size={26} tone="kraft" f={f} k={k} drop={34} sway={2.5} />
+      {extra && <g transform="translate(0,64)"><HangTag text={extra} size={20} tone="kraft" f={f + 9} k={k} drop={28} sway={3} /></g>}
+    </g>
+  </g>
+);
 const SHEET_W = 820, SHEET_H = 1040;
 
 // ---- S1: a hair above the ground (keys 1, 2, 3, 6) -------------------------------------------------------------------------------------------------
@@ -170,7 +181,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} oy={1000}
       overlay={<>
-        <Plate x={540} text="DGGS · TWO 2026 SURVEYS" y={540} size={36} tone="ink" p={ease(f, 4, 8)} />
+        <Plate x={540} text="DGGS · TWO 2026 SURVEYS" y={540} size={36} tone="ink" p={ease(f, 4, 8) * (f < t2 + 40 ? 1 : 0)} />
         <Plate x={540} text="ABOUT 45,800 LINE-KM · THE FILM'S ARITHMETIC" displayLines={['ABOUT 45,800 LINE-KM', "THE FILM'S ARITHMETIC"]} y={640} size={34} tone="paper" p={ease(f, t2 + 2, 8)} />
       </>}>
       <SVG>
@@ -179,8 +190,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
           <VellumSheet x={sx} y={sy} w={sw} h={sh} rot={-4} f={g} contours={ease(f, t3, 40) * 0.6} rows={rows} rowCount={rowCount} id="s1v" />
           {rows > 0.01 && rows < 0.995 && <SurveyHeli x={hx} y={hy} f={g} scale={0.42} facing={dir as 1 | -1} bird={50} swing={0} rotor={1} />}
         </g>
-        <Sleeper f={g} x={900} scale={0.7} zzz={ease(f, t6, 12)} id="s1b" />
-        <HairPlumb x={550} f={g} scale={1.6} tremble={1} amp={amp} look={0.4} id="s1p" tag={<MetaTag f={g} k={ease(f, 10, 10)} />} />
+        <Sleeper f={g} x={890} scale={0.8} zzz={ease(f, t6, 12)} id="s1b" />
+        <HairPlumb x={550} f={g} scale={1.6} tremble={1} amp={amp} look={0.4} id="s1p" />
       </SVG>
     </Frame>
   );
@@ -210,7 +221,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         })}
         {[0, 1, 2, 3, 4].map((i) => <DownloadArrow key={i} x={360 + (i - 2) * 100 * (1 - square)} y={690 + Math.abs(i - 2) * 20} scale={0.6} f={g} k={ease(f, t5 + i * 5, 10) * (1 - ease(f, t56, 12))} id={`s2a${i}`} />)}
         <Sleeper f={g} x={940} scale={0.52} zzz={1} id="s2b" />
-        <HairPlumb x={830} f={g} scale={1.5} mood="curious" amp={5} ph={1.4} look={-0.6} id="s2p" tag={<MetaTag f={g} />} />
+        <HairPlumb x={830} f={g} scale={1.5} mood="curious" amp={5} ph={1.4} look={-0.6} id="s2p" />
         <QuotePlate x={540} y={690} text={'"IMPROVE THE UNDERSTANDING OF THE GEOLOGY AND MINERAL POTENTIAL" · DGGS'} wrap={22} size={32} p={ease(f, t48, 8)} type={ease(f, t48 + 2, 90)} />
       </SVG>
     </Frame>
@@ -242,7 +253,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <PaperPlane x={px} y={py} rot={lerp(-20, 4, fly)} scale={1.1} f={g} shadowDy={70 - 30 * fly} />
         {f > t8 && f < t10 + 8 && <g transform={`translate(${px - 60},${py + 20})`}><HangTag text="PORTLAND-BASED" size={24} tone="kraft" f={g} k={ease(f, t8, 8)} rot={-10} /></g>}
         <Sleeper f={g} x={950} scale={0.5} zzz={0.5} id="s3b" />
-        <HairPlumb x={870} f={g} scale={1.4} mood="curious" amp={5} ph={2.1} look={-0.7} id="s3p" tag={<MetaTag f={g} />} />
+        <CoSign x={880} y={760} f={g} k={ease(f, t9, 8)} />
+        <HairPlumb x={560} f={g} scale={1.4} mood="curious" amp={5} ph={2.1} look={-0.7} id="s3p" />
       </SVG>
     </Frame>
   );
@@ -270,8 +282,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {qs.map(([qx, qy], i) => <HollowQ key={i} x={qx} y={qy} size={96} f={g} k={snap(f, t13 + i * 9, 10)} color={PR.bone} />)}
         <RollTube x={170} y={900} scale={0.8} f={g} out={ease(f, t14, 26)} id="s4r" />
         <Sleeper f={g} x={940} scale={0.52} zzz={1 - ease(f, t53, 4)} tilt={1} id="s4b" />
-        <HairPlumb x={540} f={g} scale={1.6} mood="curious" amp={4} ph={0.5} id="s4p"
-          tag={<g><MetaTag f={g} /><g transform="translate(0,64)"><HangTag text="ITS WORDS" size={26} tone="kraft" f={g} k={ease(f, t11, 8)} drop={30} /></g></g>} />
+        <CoSign x={170} y={760} f={g} k={ease(f, t11, 8)} extra="ITS WORDS" />
+        <HairPlumb x={560} f={g} scale={1.6} mood="curious" amp={4} ph={0.5} id="s4p" />
       </SVG>
     </Frame>
   );
@@ -300,7 +312,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <VellumSheet x={850} y={900} w={360} h={440} rot={4} f={g} contours={ease(f, t17, 30)} glow={0} rows={0} id="s5b" />
         </g>
         <Sleeper f={g} x={955} scale={0.46} twitch={tw} zzz={1 - ease(f, t49, 6)} id="s5s" />
-        <HairPlumb x={540} f={g} scale={1.5} mood="curious" amp={5} ph={3.1} look={-0.5} id="s5p" tag={<MetaTag f={g} />} />
+        <CoSign x={80} y={780} f={g} k={ease(f, t15, 8)} extra="ITS WORDS" />
+        <HairPlumb x={540} f={g} scale={1.5} mood="curious" amp={5} ph={3.1} look={-0.5} id="s5p" />
       </SVG>
     </Frame>
   );
@@ -404,7 +417,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
           return (
             <g key={i}>
               <ContactShadow cx={xx} cy={1296} rx={80} ry={11} opacity={0.3} blur={7} />
-              <Character frame={g + i * 13} x={xx} y={1290} scale={0.95} facing={1} pose="carry" emotion={i === 2 && f > t28 ? 'smug' : 'neutral'} outfit={i % 2 ? 'flannel' : 'puffer'} headgear="bare" idleGain={1} walking={i === 2 && f > t28 - 6 && f < t28 + 22} walkPhase={g * 0.3} />
+              <Character frame={g + i * 13} x={xx} y={1290} scale={0.95} facing={1} pose="carry" emotion={i === 2 && f > t28 ? 'smug' : 'neutral'} outfit={['flannel', 'puffer', 'vest'][i] as 'flannel'} headgear={['beanie', 'bare', 'cap'][i] as 'bare'} hair={['#3d2c1e', '#7a5a3a', '#1f1c1a'][i]} idleGain={1} walking={i === 2 && f > t28 - 6 && f < t28 + 22} walkPhase={g * 0.3} />
               <Loupe x={xx + 120 * 0.95} y={1290 - 190 * 0.95 + 24 * lean(i)} scale={0.9} rot={-30} />
             </g>
           );
@@ -414,7 +427,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         {[0, 1, 2].map((i) => <VellumSheet key={i} x={rx[i] + 150 + (i === 2 ? 200 * step : 0)} y={1330 - 8 * i} w={230} h={150} rot={i % 2 ? 4 : -4} f={g} contours={0.8} rows={0.5} rowCount={6} id={`s8v${i}`} />)}
         <g>{[0, 1, 2].map((i) => <DownloadArrow key={i} x={rx[i] + 150} y={1250} scale={0.42} f={g} k={ease(f, t27 + i * 3, 10) * (1 - ease(f, t27 + 40, 14))} id={`s8a${i}`} />)}</g>
         <rect data-band="ok" x={-40} y={1290} width={1160} height={110} fill="#2B1F16" stroke={INK} strokeWidth={6} />
-        <Plumb x={720} y={-20} len={1060} f={g} scale={1.5} mood={f > t28 ? 'ask' : 'curious'} amp={4} ph={1.1} look={0.5} id="s8p" shadowY={1090} />
+        <Plumb x={250} y={-20} len={880} f={g} scale={1.3} mood={f > t28 ? 'ask' : 'curious'} amp={4} ph={1.1} look={0.5} id="s8p" shadow={false} tag={<MetaTag f={g} />} />
       </SVG>
     </Frame>
   );
@@ -442,6 +455,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <g transform="translate(570,880)"><HangTag text="SOON" size={26} tone="kraft" f={g} k={ease(f, t31, 8)} rot={6} /></g>
         </g>
         <Sleeper f={g} x={960} scale={0.44} zzz={f > t47 ? 0 : 0.6} eyes={ease(f, t47, 10)} id="s9s" />
+        <CoSign x={130} y={760} f={g} k={ease(f, t29, 8)} />
         <HairPlumb x={790} f={g} scale={1.5} mood={f > t30 ? 'worried' : 'wary'} tremble={f > t30 ? 0.7 : 0.4} amp={f > t30 && f < t30 + 70 ? 9 : 5} ph={0.9} look={-0.5} id="s9p"
           tag={f > t30 ? <HangTag text={f % 24 < 8 ? '?' : f % 24 < 16 ? '??' : '???'} size={34} tone="bone" f={g} k={ease(f, t30, 6)} /> : undefined} />
       </SVG>
@@ -474,7 +488,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
         </g>
         <ReleaseScroll x={250} y={880} w={280} h={380} unroll={ease(f, t32, 30)} f={g} id="s10s" />
         <g transform="translate(250,720)"><HangTag text="ITS RELEASE" size={22} tone="brass" f={g} k={ease(f, t32 + 10, 8)} rot={-3} drop={30} /></g>
-        <HairPlumb x={790} f={g} scale={1.5} mood="wary" amp={4} ph={2.2} look={-0.4} id="s10p" />
+        <CoSign x={640} y={780} f={g} k={ease(f, t33, 8)} />
+        <HairPlumb x={800} f={g} scale={1.4} mood="wary" amp={4} ph={2.2} look={-0.4} id="s10p" />
       </SVG>
     </Frame>
   );
@@ -546,7 +561,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Character frame={g + 17} x={pxB} y={SURF + 26} scale={0.95} facing={-1} pose="stand" emotion="neutral" outfit="puffer" headgear="hardhat" walking={walking} walkPhase={g * 0.3 + 2} />
         <DrillBit x={940} y={SURF + 18} f={g} scale={1.0} tilt={1 - ease(f, t39 - 8, 20)} tarp={0} cape={ease(f, t39, 16)} eyes={1} brow={-4} id="s12b" />
         {handoff > 0.02 && <g transform={`translate(${830},${SURF - 270})`}><HangTag text="PARTNERS FUND + RUN IT" size={20} tone="kraft" f={g} k={snap(f, t39 + 14, 10)} drop={26} rot={4} /></g>}
-        <HairPlumb x={300} f={g} scale={1.5} mood={f > t38 ? 'sheepish' : 'wary'} amp={4 + 9 * reach * (1 - ease(f, t38 + 40, 30))} ph={0.4} look={0.9} id="s12p" />
+        <CoSign x={90} y={800} f={g} k={ease(f, t38, 8)} />
+        <HairPlumb x={380} f={g} scale={1.5} mood={f > t38 ? 'sheepish' : 'wary'} amp={4 + 9 * reach * (1 - ease(f, t38 + 40, 30))} ph={0.4} look={0.9} id="s12p" />
 
       </SVG>
     </Frame>
@@ -618,7 +634,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <DrillBit x={820} y={bitY} f={g} scale={1.0} tilt={0} tarp={0} cape={1 - ease(f, t50 - 10, 10)} eyes={1} brow={f > t50 ? -6 : 4} spin={spin} dust={f > t50 ? (1 - ease(f, t50 + 60, 30)) * (dig < 0.98 ? 1 : 0.3) : 0} shadow={dig < 0.02} id="s14b" />
         <HollowQ x={250} y={900} size={110} f={g} k={snap(f, t45, 12)} color={PR.brass} />
         <HollowQ x={620} y={930} size={90} f={g} k={snap(f, t50, 12)} color={PR.bone} />
-        <HairPlumb x={430} f={g} scale={1.6} mood="wary" tremble={1} amp={5} look={0.5} id="s14p" tag={<MetaTag f={g} />} />
+        <HairPlumb x={430} f={g} scale={1.6} mood="wary" tremble={1} amp={5} look={0.5} id="s14p" />
       </SVG>
     </Frame>
   );

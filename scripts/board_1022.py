@@ -114,7 +114,7 @@ B = [
  (26, 8, 7, W("best"), "swell", "four readers", "lean over copies of one sheet on a lamp lit bench", "curious", "THE BEST CASE",
   "the view drops to a lamp lit bench where three identical readers with loupes lean over copies of the same sheet, THE BEST CASE",
   "the readers lean and the lamp swings", "rehook: the fair case"),
- (27, 8, 7, W("anyone"), "pop", "download arrows", "land at once, one copy per reader", "plain", "THE SAME MAP",
+ (27, 8, 7, W("download"), "pop", "download arrows", "land at once, one copy per reader", "plain", "THE SAME MAP",
   "download arrows land at once, one copy per reader, with Plumb hanging at the head of the bench as one more reader, THE SAME MAP",
   "the arrows bounce", ""),
  (28, 8, 7, W("edge"), "tap", "pedestal", "carries a floating question mark and the third reader steps toward it first", "ask", "FIRST LOOK?",
