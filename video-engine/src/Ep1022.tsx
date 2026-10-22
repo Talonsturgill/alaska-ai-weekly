@@ -314,7 +314,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate x={540} text="WHAT ONE OF THOSE LOOKS LIKE" y={540} size={34} tone="ink" p={ease(f, t18 + 2, 8) * (f < t19 + 40 ? 1 : 0)} />
         <Plate x={540} text="GANES CREEK · 25,731 LINE-KM" y={610} size={36} tone="paper" p={ease(f, t19 + 2, 8) * (f < t21 ? 1 : 0)} />
-        <Plate x={540} text="MAGNETIC SENSOR · GAMMA-RAY SPECTROMETERS" displayLines={['MAGNETIC SENSOR ·', 'GAMMA-RAY SPECTROMETERS']} y={565} size={34} tone="ink" p={ease(f, t21 + 2, 8)} />
+        <Plate x={540} text="MAGNETIC SENSOR · GAMMA-RAY SPECTROMETERS" displayLines={['MAGNETIC SENSOR ·', 'GAMMA-RAY SPECTROMETERS']} y={700} size={34} tone="ink" p={ease(f, t21 + 2, 8)} />
       </>}>
       <SVG>
         <g opacity={tun}>
@@ -331,9 +331,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <g opacity={cut}>
           <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill={PR.spruceDeep} />
           <rect data-band="ok" x={-40} y={760} width={1160} height={1200} fill={PR.spruce} opacity={0.7} />
-          <RockBlock x={500} y={1300} w={680} h={400} f={g} field={ease(f, t21, 20)} glow={ease(f, t22, 20)} bend={bend} depth={110} id="s6r" />
-          <SurveyHeli x={cx} y={720} f={g} scale={1.25} bird={96} swing={10 * Math.sin(g / 14)} tilt={0} />
-          <g transform="translate(850,1010)"><HangTag text="ROCK THAT DIFFERS" size={22} tone="bone" f={g} k={ease(f, t22 + 6, 10)} rot={4} /></g>
+          <RockBlock x={500} y={1340} w={680} h={340} f={g} field={ease(f, t21, 20)} glow={ease(f, t22, 20)} bend={bend} depth={110} id="s6r" />
+          <SurveyHeli x={cx} y={880} f={g} scale={1.1} bird={70} swing={10 * Math.sin(g / 14)} tilt={0} />
+          <g transform="translate(850,1090)"><HangTag text="ROCK THAT DIFFERS" size={22} tone="bone" f={g} k={ease(f, t22 + 6, 10)} rot={4} /></g>
           <Sleeper f={g} x={900} y={1720} twitch={ease(f, t49, 6) * (1 - ease(f, t49 + 40, 20))} zzz={1 - ease(f, t49, 6)} id="s6b" />
         </g>
       </SVG>

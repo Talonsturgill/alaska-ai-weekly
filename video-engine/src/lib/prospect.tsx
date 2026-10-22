@@ -56,7 +56,7 @@ const BOB_H = 236;
 export const plumbAngle = (f: number, amp = 5, ph = 0) => ((amp * (0.72 * Math.sin(f / 37 + ph) + 0.28 * Math.sin(f / 23.7 + ph * 1.7))) * Math.PI) / 180;
 export const plumbTip = (x: number, y: number, len: number, f: number, amp = 5, ph = 0, tremble = 0) => {
   const a = plumbAngle(f, amp, ph);
-  const tr = tremble * (Math.sin(f * 1.9 + ph) * 2.6 + Math.sin(f * 3.3) * 1.2);
+  const tr = tremble * (Math.sin(f * 0.37 + ph) * 1.6 + Math.sin(f * 0.61) * 0.7);
   return {x: x + len * Math.sin(a) + tr, y: y + len * Math.cos(a), a};
 };
 
