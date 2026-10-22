@@ -455,9 +455,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <g transform="translate(570,880)"><HangTag text="SOON" size={26} tone="kraft" f={g} k={ease(f, t31, 8)} rot={6} /></g>
         </g>
         <Sleeper f={g} x={960} scale={0.44} zzz={f > t47 ? 0 : 0.6} eyes={ease(f, t47, 10)} id="s9s" />
-        <CoSign x={140} y={760} f={g} k={ease(f, t29, 8)} />
+        <CoSign x={200} y={760} f={g} k={ease(f, t29, 8)} />
         <HairPlumb x={790} f={g} scale={1.5} mood={f > t30 ? 'worried' : 'wary'} tremble={f > t30 ? 0.7 : 0.4} amp={f > t30 && f < t30 + 70 ? 9 : 5} ph={0.9} look={-0.5} id="s9p"
-          tag={f > t30 ? <g transform="translate(120,70)"><HangTag text={f % 24 < 8 ? '?' : f % 24 < 16 ? '??' : '???'} size={34} tone="bone" f={g} k={ease(f, t30, 6)} /></g> : undefined} />
+          tag={f > t30 ? <g transform="translate(215,60)"><HangTag text={f % 24 < 8 ? '?' : f % 24 < 16 ? '??' : '???'} size={34} tone="bone" f={g} k={ease(f, t30, 6)} /></g> : undefined} />
       </SVG>
     </Frame>
   );
@@ -549,8 +549,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={1100}
       overlay={<>
-        <Plate x={540} text="ITS WORDS · IT DOESN'T DRILL" displayLines={['ITS WORDS ·', "IT DOESN'T DRILL"]} y={560} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t39 + 30 ? 1 : 0)} />
-        <Plate x={540} text="ITS WORDS · PARTNERS DRILL · IT KEEPS AN INTEREST" displayLines={['ITS WORDS ·', 'PARTNERS DRILL · IT KEEPS AN INTEREST']} y={700} size={34} tone="brass" p={ease(f, t39 + 2, 8)} />
+        <Plate x={640} text="ITS WORDS · IT DOESN'T DRILL" displayLines={['ITS WORDS ·', "IT DOESN'T DRILL"]} y={560} size={40} tone="ink" p={ease(f, t38 + 2, 8) * (f < t39 + 30 ? 1 : 0)} />
+        <Plate x={640} text="ITS WORDS · PARTNERS DRILL · IT KEEPS AN INTEREST" displayLines={['ITS WORDS ·', 'PARTNERS DRILL ·', 'IT KEEPS AN INTEREST']} y={725} size={34} tone="brass" p={ease(f, t39 + 2, 8)} />
       </>}>
       <SVG>
         <GroundBG f={g} surface={SURF} pondX={300} dawn={0.6} id="s12g" />
@@ -561,8 +561,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Character frame={g + 17} x={pxB} y={SURF + 26} scale={0.95} facing={-1} pose="stand" emotion="neutral" outfit="puffer" headgear="hardhat" walking={walking} walkPhase={g * 0.3 + 2} />
         <DrillBit x={940} y={SURF + 18} f={g} scale={1.0} tilt={1 - ease(f, t39 - 8, 20)} tarp={0} cape={ease(f, t39, 16)} eyes={1} brow={-4} id="s12b" />
         {handoff > 0.02 && <g transform={`translate(${830},${SURF - 270})`}><HangTag text="PARTNERS FUND + RUN IT" size={20} tone="kraft" f={g} k={snap(f, t39 + 14, 10)} drop={26} rot={4} /></g>}
-        <CoSign x={150} y={800} f={g} k={ease(f, t38, 8)} />
-        <HairPlumb x={380} f={g} scale={1.5} mood={f > t38 ? 'sheepish' : 'wary'} amp={4 + 9 * reach * (1 - ease(f, t38 + 40, 30))} ph={0.4} look={0.9} id="s12p" />
+        <CoSign x={640} y={470} f={g} k={ease(f, t38, 8)} />
+        <HairPlumb x={200} f={g} scale={1.5} mood={f > t38 ? 'sheepish' : 'wary'} amp={4 + 9 * reach * (1 - ease(f, t38 + 40, 30))} ph={0.4} look={0.9} id="s12p" />
 
       </SVG>
     </Frame>
