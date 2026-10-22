@@ -253,8 +253,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <PaperPlane x={px} y={py} rot={lerp(-20, 4, fly)} scale={1.1} f={g} shadowDy={70 - 30 * fly} />
         {f > t8 && f < t10 + 8 && <g transform={`translate(${px - 60},${py + 20})`}><HangTag text="PORTLAND-BASED" size={24} tone="kraft" f={g} k={ease(f, t8, 8)} rot={-10} /></g>}
         <Sleeper f={g} x={950} scale={0.5} zzz={0.5} id="s3b" />
-        <CoSign x={880} y={760} f={g} k={ease(f, t9, 8)} />
-        <HairPlumb x={560} f={g} scale={1.4} mood="curious" amp={5} ph={2.1} look={-0.7} id="s3p" />
+        <CoSign x={690} y={720} f={g} k={ease(f, t9, 8)} />
+        <HairPlumb x={880} f={g} scale={1.4} mood="curious" amp={5} ph={2.1} look={-0.7} id="s3p" />
       </SVG>
     </Frame>
   );
@@ -312,7 +312,6 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <VellumSheet x={850} y={900} w={360} h={440} rot={4} f={g} contours={ease(f, t17, 30)} glow={0} rows={0} id="s5b" />
         </g>
         <Sleeper f={g} x={955} scale={0.46} twitch={tw} zzz={1 - ease(f, t49, 6)} id="s5s" />
-        <CoSign x={80} y={780} f={g} k={ease(f, t15, 8)} extra="ITS WORDS" />
         <HairPlumb x={540} f={g} scale={1.5} mood="curious" amp={5} ph={3.1} look={-0.5} id="s5p" />
       </SVG>
     </Frame>
@@ -455,7 +454,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <g transform="translate(570,880)"><HangTag text="SOON" size={26} tone="kraft" f={g} k={ease(f, t31, 8)} rot={6} /></g>
         </g>
         <Sleeper f={g} x={960} scale={0.44} zzz={f > t47 ? 0 : 0.6} eyes={ease(f, t47, 10)} id="s9s" />
-        <CoSign x={130} y={760} f={g} k={ease(f, t29, 8)} />
+        <CoSign x={140} y={760} f={g} k={ease(f, t29, 8)} />
         <HairPlumb x={790} f={g} scale={1.5} mood={f > t30 ? 'worried' : 'wary'} tremble={f > t30 ? 0.7 : 0.4} amp={f > t30 && f < t30 + 70 ? 9 : 5} ph={0.9} look={-0.5} id="s9p"
           tag={f > t30 ? <HangTag text={f % 24 < 8 ? '?' : f % 24 < 16 ? '??' : '???'} size={34} tone="bone" f={g} k={ease(f, t30, 6)} /> : undefined} />
       </SVG>
@@ -561,7 +560,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Character frame={g + 17} x={pxB} y={SURF + 26} scale={0.95} facing={-1} pose="stand" emotion="neutral" outfit="puffer" headgear="hardhat" walking={walking} walkPhase={g * 0.3 + 2} />
         <DrillBit x={940} y={SURF + 18} f={g} scale={1.0} tilt={1 - ease(f, t39 - 8, 20)} tarp={0} cape={ease(f, t39, 16)} eyes={1} brow={-4} id="s12b" />
         {handoff > 0.02 && <g transform={`translate(${830},${SURF - 270})`}><HangTag text="PARTNERS FUND + RUN IT" size={20} tone="kraft" f={g} k={snap(f, t39 + 14, 10)} drop={26} rot={4} /></g>}
-        <CoSign x={90} y={800} f={g} k={ease(f, t38, 8)} />
+        <CoSign x={140} y={800} f={g} k={ease(f, t38, 8)} />
         <HairPlumb x={380} f={g} scale={1.5} mood={f > t38 ? 'sheepish' : 'wary'} amp={4 + 9 * reach * (1 - ease(f, t38 + 40, 30))} ph={0.4} look={0.9} id="s12p" />
 
       </SVG>
