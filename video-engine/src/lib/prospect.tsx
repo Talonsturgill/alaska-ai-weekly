@@ -12,7 +12,7 @@ import {ContactShadow, FormGradient, INK, RimLight, tones, paleTones} from './li
 // as somebody else's, and the glow is only ever rock that differs.
 export const PR = {
   spruce: '#14211B', spruceHi: '#1C2E26', spruceDeep: '#0E1713', night: '#0A110E',
-  vellum: '#E8DCB8', vellumHi: '#F4ECD0', vellumShade: '#C9BA8E', contour: '#B9A878',
+  vellum: '#DCE3D6', vellumHi: '#EEF3EA', vellumShade: '#B9C6B8', contour: '#8FA394',
   brass: '#C79A2B', brassShade: '#8A6A1C', brassKey: '#F0CF72', brassRim: '#FFE9A8',
   peri: '#6E86C9', periDeep: '#3F56A0', periHi: '#A9BAEA',
   lichen: '#C6D84A', lichenDeep: '#7F9420',
@@ -128,7 +128,7 @@ export const Plumb: React.FC<{
 // ---- the paper kit ----------------------------------------------------------------------------------------------------------------------
 export type TagTone = 'brass' | 'kraft' | 'bone' | 'ink';
 const TAGT: Record<TagTone, {fill: string; fg: string; edge: string}> = {
-  brass: {fill: PR.bone, fg: INK, edge: PR.brass},
+  brass: {fill: PR.bone, fg: INK, edge: PR.kraftShade},
   kraft: {fill: PR.kraft, fg: INK, edge: PR.kraftShade},
   bone: {fill: PR.bone, fg: INK, edge: '#8A8575'},
   ink: {fill: '#10151F', fg: PR.bone, edge: '#4A5560'},
@@ -767,3 +767,79 @@ export const Loupe: React.FC<{x: number; y: number; scale?: number; rot?: number
     <path d="M-16,-96 q10,-12 24,-6" fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.7} strokeLinecap="round" />
   </g>
 );
+
+// ---- GroundBG: the home world, a side view of the ground itself -----------------------------------------------------------------------------
+/**
+ * GroundBG: sky, hills, a strip of tundra turf at `surface` with a blue pond in it, and banded rock below down to the bottom of the frame.
+ * It is the world the title is about: Plumb hangs on his string from the top of the frame and his tip stops a hair above the turf, while the
+ * bit sleeps on the turf under a moss tarp and is the only thing that goes down through the rock. dawn (0..1) turns the dusk sky pale,
+ * glow (0..1) lights lichen where the rock differs, field (0..1) bends periwinkle field lines through the strata, shaft (0..1) cuts a
+ * borehole from the turf down at shaftX to shaftTo. It paints no text.
+ */
+export const GroundBG: React.FC<{
+  f: number; surface?: number; dawn?: number; glow?: number; field?: number; bend?: number; pondX?: number; id?: string;
+  shaftX?: number; shaftTo?: number; shaft?: number; dim?: number;
+}> = ({f, surface = 1130, dawn = 0, glow = 0, field = 0, bend = 0, pondX = 560, id = 'gb', shaftX = 780, shaftTo = 1700, shaft = 0, dim = 0}) => {
+  const mix = (a: string, b: string, t: number) => {
+    const pa = [1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16));
+    const pb = [1, 3, 5].map((i) => parseInt(b.slice(i, i + 2), 16));
+    return `rgb(${pa.map((v, i) => Math.round(v + (pb[i] - v) * t)).join(',')})`;
+  };
+  const sT = mix(PR.duskTop, '#8EA3CB', dawn), sM = mix(PR.duskMid, '#E8C9A8', dawn), sL = mix(PR.duskLow, '#F6DDB4', dawn);
+  const strata = ['#4A5560', '#6B5F4C', '#3F4D43', '#7A6A54', '#524A66', '#5E5E4C', '#3E4A55'];
+  const top = surface + 78;
+  const bandH = (1960 - top) / strata.length;
+  return (
+    <g>
+      <defs>
+        <linearGradient id={`${id}s`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={sT} /><stop offset="0.65" stopColor={sM} /><stop offset="1" stopColor={sL} /></linearGradient>
+        <linearGradient id={`${id}g`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={PR.tundraHi} /><stop offset="0.5" stopColor={PR.tundra} /><stop offset="1" stopColor={PR.tundraShade} /></linearGradient>
+        <linearGradient id={`${id}r`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity="0.5" /></linearGradient>
+      </defs>
+      <rect data-band="ok" x={-40} y={0} width={1160} height={surface + 20} fill={`url(#${id}s)`} />
+      {[0, 1, 2].map((i) => <ellipse key={i} data-band="ok" cx={(160 + i * 380 + f * (0.18 + i * 0.07)) % 1500 - 200} cy={surface - 640 + i * 110} rx={250 - i * 28} ry={20} fill="#F0DCC0" opacity={0.26 + 0.1 * dawn} />)}
+      <path data-band="ok" d={`M-40,${surface} L-40,${surface - 170} C100,${surface - 250} 240,${surface - 210} 360,${surface - 170} C500,${surface - 120} 640,${surface - 280} 800,${surface - 210} C920,${surface - 160} 1040,${surface - 220} 1120,${surface - 190} L1120,${surface} Z`} fill={PR.hillsFar} transform={`translate(${-6 * Math.sin(f / 120)},0)`} opacity={0.95} />
+      <path data-band="ok" d={`M-40,${surface + 10} L-40,${surface - 80} C140,${surface - 160} 300,${surface - 90} 480,${surface - 120} C640,${surface - 140} 820,${surface - 70} 1120,${surface - 110} L1120,${surface + 10} Z`} fill={PR.hills} transform={`translate(${-12 * Math.sin(f / 90 + 1)},0)`} />
+      {/* the turf strip */}
+      <rect data-band="ok" x={-40} y={surface} width={1160} height={80} fill={`url(#${id}g)`} />
+      <path data-band="ok" d={`M-40,${surface} L1120,${surface}`} stroke={INK} strokeWidth={6} />
+      {Array.from({length: 30}).map((_, i) => <path key={i} data-band="ok" d={`M${-20 + i * 40 + rnd(i) * 20},${surface + 2} q${-6 + 4 * Math.sin(f / 21 + i)},-26 ${-14},-44 M${-20 + i * 40 + rnd(i) * 20},${surface + 2} q${6 + 4 * Math.sin(f / 23 + i)},-30 ${10},-52`} fill="none" stroke={PR.tundraShade} strokeWidth={5} strokeLinecap="round" />)}
+      {/* the pond: the blue patch, seen from just above the turf */}
+      <ellipse data-band="ok" cx={pondX} cy={surface + 22} rx={146} ry={24} fill={PR.peri} stroke={INK} strokeWidth={5} />
+      <ellipse data-band="ok" cx={pondX - 10} cy={surface + 22} rx={96} ry={14} fill={PR.periDeep} opacity={0.8} />
+      <ellipse data-band="ok" cx={pondX - 40} cy={surface + 18} rx={40} ry={6} fill={PR.periHi} opacity={0.75} />
+      {/* the rock: bands with a gentle fold, darker toward the bottom */}
+      <rect data-band="ok" x={-40} y={top} width={1160} height={1960 - top} fill="#2F3640" />
+      {strata.map((c, i) => {
+        const y0 = top + i * bandH, y1 = y0 + bandH + 2;
+        const fold = 22 * Math.sin(i * 1.7 + 0.4) + 5 * Math.sin(f / 40 + i);
+        return <path key={i} data-band="ok" d={`M-40,${y0} C260,${y0 + fold} 700,${y0 - fold} 1120,${y0 + fold * 0.6} L1120,${y1 + fold * 0.6} C700,${y1 - fold} 260,${y1 + fold} -40,${y1} Z`} fill={c} stroke={INK} strokeWidth={3} />;
+      })}
+      {Array.from({length: 60}).map((_, i) => <circle key={i} data-band="ok" cx={rnd(i + 3) * 1160 - 40} cy={top + rnd(i + 77) * (1960 - top)} r={2 + rnd(i + 5) * 4} fill="#000" opacity={0.2} />)}
+      <rect data-band="ok" x={-40} y={top} width={1160} height={1960 - top} fill={`url(#${id}r)`} />
+      {/* lichen glow where the rock differs */}
+      {glow > 0.01 && [[210, 1330, 110], [610, 1520, 140], [410, 1760, 100], [930, 1360, 90], [800, 1700, 80]].map(([gx, gy, gr], i) => (
+        <g key={i} data-band="ok" opacity={clamp01(glow) * (0.75 + 0.25 * Math.sin(f / 12 + i * 2))}>
+          <circle cx={gx as number} cy={gy as number} r={(gr as number) * 1.6} fill={PR.lichen} opacity={0.16} />
+          <circle cx={gx as number} cy={gy as number} r={gr as number} fill={PR.lichen} opacity={0.46} />
+        </g>
+      ))}
+      {field > 0.01 && (
+        <g data-band="ok" opacity={clamp01(field)} fill="none" stroke={PR.periHi} strokeWidth={5} strokeLinecap="round">
+          {[120, 320, 540, 760, 960].map((fx, i) => {
+            const bow = 40 * Math.sin(f / 18 + i) * 0.5 + bend * (i === 2 || i === 3 ? 90 : 26);
+            return <path key={i} d={`M${fx},${top} C${fx + bow},${top + 260} ${fx - bow},${top + 520} ${fx + bow * 0.5},${1900}`} strokeDasharray="14 12" strokeDashoffset={-f * 0.9} opacity={0.9} />;
+          })}
+        </g>
+      )}
+      {/* a borehole cut down from the turf */}
+      {shaft > 0.01 && (
+        <g data-band="ok">
+          <rect x={shaftX - 36} y={surface + 6} width={72} height={Math.max(0, (shaftTo - surface) * clamp01(shaft))} fill="#050807" stroke={INK} strokeWidth={5} />
+          <ellipse cx={shaftX} cy={surface + 6} rx={54} ry={11} fill="#050807" stroke={INK} strokeWidth={5} />
+        </g>
+      )}
+      {dim > 0 && <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill={PR.night} opacity={dim} />}
+    </g>
+  );
+};
