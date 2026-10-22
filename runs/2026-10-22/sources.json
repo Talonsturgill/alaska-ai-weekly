@@ -1,0 +1,68 @@
+{
+ "run_date": "2026-10-22",
+ "title": "The Hair Above the Ground",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Geomorphic AI Establishes Subsidiaries in Peru and Alaska (company release, Oct 20th)",
+   "outlet": "Geomorphic AI",
+   "url": "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c11",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Primary, company's own words, self-interested"
+  },
+  {
+   "id": "s2",
+   "title": "Geomorphic AI targets Alaska minerals (Shane Lasley, Oct 21st)",
+   "outlet": "North of 60 Mining News",
+   "url": "https://www.miningnewsnorth.com/story/2026/10/23/news/geomorphic-ai-targets-alaska-minerals/9920.html",
+   "claims": [
+    "c1",
+    "c4",
+    "c5",
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "Trade press, built from the release; second source for the subsidiary, the quote and no named properties"
+  },
+  {
+   "id": "s3",
+   "title": "Kuskokwim airborne magnetic and radiometric geophysical survey, Ganes Creek (GPR 2026-1)",
+   "outlet": "Alaska DGGS",
+   "url": "https://dggs.alaska.gov/pubs/gpdata/413",
+   "claims": [
+    "c7",
+    "c9",
+    "c10",
+    "c14",
+    "c16",
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "Primary, state geological survey"
+  },
+  {
+   "id": "s4",
+   "title": "Kuskokwim airborne magnetic and radiometric survey, Aniak and the Little Taylor Mountains (GPR 2026-5)",
+   "outlet": "Alaska DGGS",
+   "url": "https://dggs.alaska.gov/pubs/gpdata/414",
+   "claims": [
+    "c8",
+    "c9",
+    "c14",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "Primary, state geological survey"
+  }
+ ]
+}

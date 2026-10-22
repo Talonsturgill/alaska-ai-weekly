@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.99,
+    "heard": "To 2026 State Airborne Surveys, add up to about 45,800 line kilometers. The state offers both data sets for download, and says the gain's creek data will improve understanding of the geology and mineral potential. On October 20th, a Portland company called Geomorphic AI said it has set up an Alaska subsidiary, Golden Dyke Exploration. It calls itself an AI-driven prospect generator. It says it screens geological data for overlooked mineral systems, secures the ground, and builds drill-ready data packages. What it reads in Alaska, it says, is public, including new state airborne surveys. Here's what one of those surveys looks like. At Gaines Creek, a helicopter flew over 25,000 line kilometers, carrying a magnetic sensor and two gamma-ray spectrometers. Add the second survey, add Amyac and the Little Taylor Mountains, and it's more than once around the Earth. The best case is simple. With the data offered for download, the edge can go to whoever reads it best. But it hasn't named a single Alaska property. First projects, it says, are coming soon. It's release adds that deposits it mentions belong to other people, and aren't a sign of anything on its own ground. A map of magnetism and natural radiation shows where rock differs. Only a drill shows what the rock holds. Geomorphic doesn't drill. Partners fund and run the drilling, and it keeps an interest. Its CEO, Mark Sumner, calls Peru and Alaska two of the most prospective places in the world to explore for copper and gold. If the state puts its surveys up for download, who should get to act on them first, and who should carry the cost of the first hole?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.021,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 7.07,
+        "voiced_frac": 0.53,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 113.32,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 113.32,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.984,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.983,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

@@ -1,0 +1,301 @@
+{
+ "run_date": "2026-10-22",
+ "fact_check_verdict": "Core survives with hedges. Company release read via geomorphic.ai (primary, self-interested), Mining News (trade press, built from the release), DGGS survey pages (primary government). CUT: founded early 2026 (single outlet), any statement that Geomorphic used these two surveys (neither source says so), any performance, accuracy or method claim for its AI, USGS Earth MRI funding of these surveys (DGGS pages only tag it), any property, result or deal.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "On October twentieth, a Portland company called Geomorphic A I said it has set up an Alaska subsidiary, Golden Dyke Exploration.",
+   "on_screen": "OCT 20TH \u00b7 GOLDEN DYKE EXPLORATION LLC",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/",
+    "https://www.miningnewsnorth.com/story/2026/10/23/news/geomorphic-ai-targets-alaska-minerals/9920.html"
+   ],
+   "requires": [
+    "Attribute to the company's own release. Portland-based. Wholly owned subsidiary. Peru gets a sibling subsidiary, Masi Resources. Date October 20th."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Geomorphic AI Establishes Subsidiaries in Peru and Alaska (company release headline, Oct 20 2026, Portland); Mining News: Geomorphic AI targets Alaska minerals, Oct 21 2026"
+  },
+  {
+   "id": "c2",
+   "status": "verified_with_hedge",
+   "spoken": "It calls itself an A I driven prospect generator. It says it screens geological data for overlooked mineral systems, then builds drill ready data packages.",
+   "on_screen": "ITS WORDS \u00b7 AI-DRIVEN PROSPECT GENERATOR",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/"
+   ],
+   "requires": [
+    "Every description of what the AI does is the company's self-description, attributed with calls itself or says. No accuracy, no performance, no track record, no method (do not say machine learning or language model). Release language: systematic, data-driven screening of geological and historic databases."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: company release describes an AI-driven minerals prospect generator that uses systematic, data-driven screening of geological and historic databases to identify overlooked mineral systems, secures the ground and compiles drill-ready data packages"
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "Partners fund and run the drilling. Geomorphic keeps an interest. It doesn't drill itself.",
+   "on_screen": "PARTNERS DRILL \u00b7 IT KEEPS AN INTEREST",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/"
+   ],
+   "requires": [
+    "Joint ventures and earn-in agreements per the release. Geomorphic does not fund or operate drilling itself."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: release says projects advance through joint ventures, earn-in agreements and partnerships in which operating companies fund and carry out exploration while Geomorphic keeps a continuing interest, and that it does not fund or operate drilling itself"
+  },
+  {
+   "id": "c4",
+   "status": "verified",
+   "spoken": "It hasn't named a single Alaska property. First projects, it says, are coming soon.",
+   "on_screen": "NO ALASKA PROPERTY NAMED YET",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/",
+    "https://www.miningnewsnorth.com/story/2026/10/23/news/geomorphic-ai-targets-alaska-minerals/9920.html"
+   ],
+   "requires": [
+    "No property, result, deal, claim count or money is reported. Soon is the company's word, no date."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: both sources report no named Alaska properties and an expectation to announce first projects soon"
+  },
+  {
+   "id": "c5",
+   "status": "verified",
+   "spoken": "Its C E O, Mark Sumner, calls Peru and Alaska two of the most prospective places in the world to explore for copper and gold.",
+   "on_screen": "\"TWO OF THE MOST PROSPECTIVE PLACES IN THE WORLD\" \u00b7 MARK SUMNER, CEO",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/",
+    "https://www.miningnewsnorth.com/story/2026/10/23/news/geomorphic-ai-targets-alaska-minerals/9920.html"
+   ],
+   "requires": [
+    "Quote is Sumner's, from the release, confirmed in Mining News. Do not drop copper and gold or Peru."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"Peru and Alaska are two of the most prospective places in the world to explore for copper and gold,\""
+  },
+  {
+   "id": "c6",
+   "status": "verified",
+   "spoken": "What it says it reads in Alaska is public. Decades of U S G S and state geochemistry and mapping, plus new state airborne surveys, and a state claim staking system.",
+   "on_screen": "ITS WORDS \u00b7 WHAT IT READS IS PUBLIC",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/"
+   ],
+   "requires": [
+    "From the company release's Alaska paragraph. It names new state airborne geophysical surveys in general, not these two specific surveys."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: release says Alaska has a state claim-staking system giving access to open ground and that new state airborne geophysical surveys extend decades of USGS and State geochemistry and mapping"
+  },
+  {
+   "id": "c7",
+   "status": "verified",
+   "spoken": "Here's what one of those surveys looks like. At Ganes Creek, a helicopter flew over twenty five thousand line kilometers.",
+   "on_screen": "GANES CREEK \u00b7 25,731 LINE-KM",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/413"
+   ],
+   "requires": [
+    "State DGGS Geophysical Report 2026-1. Say a helicopter; flights June 21 to September 7, 2024 and June 16 to 25, 2025, contractor EON Geosciences. Area 8,197 square kilometers. The survey is context: neither the company nor Mining News says Geomorphic used it."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "field: line-km \"25,731\"; area \"8,197 km2\"; Scintrex CS-3 cesium-vapour magnetometer; two Radiation Solutions RS-500 series gamma-ray spectrometers (DGGS GPR 2026-1)"
+  },
+  {
+   "id": "c8",
+   "status": "verified",
+   "spoken": "A second one covers Aniak and the Little Taylor Mountains, about twenty thousand line kilometers, flown with lines four hundred meters apart.",
+   "on_screen": "ANIAK + LITTLE TAYLOR MTNS \u00b7 20,090 LINE-KM",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/414"
+   ],
+   "requires": [
+    "DGGS GPR 2026-5, flown June 12 to November 8, 2025, line spacing 400 meters, collected by Terraquest. Use 20,090 line-km (page says 20,090.5 accepted). Context only, same caveat as c7."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "field: line-km \"20,090.5\"; area \"6,957 km2\"; line spacing \"400 meters\" (DGGS GPR 2026-5)"
+  },
+  {
+   "id": "c9",
+   "status": "verified_with_hedge",
+   "spoken": "The state offers both datasets for download, and says the Ganes Creek data will improve understanding of the geology and mineral potential.",
+   "on_screen": "DATA OFFERED FOR DOWNLOAD \u00b7 DGGS",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/413",
+    "https://dggs.alaska.gov/pubs/gpdata/414"
+   ],
+   "requires": [
+    "Say offers for download on the state site. Do not say free as a licence claim and do not name a licence: the pages list downloadable files and state no price or licence. Hard copy price not used."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: both DGGS pages list data files (Geosoft grids, GeoTIFF, ASCII, PDF) for download with no charge mentioned"
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "The state says the Ganes Creek data will improve understanding of the geology and mineral potential.",
+   "on_screen": "\"IMPROVE THE UNDERSTANDING OF THE GEOLOGY AND MINERAL POTENTIAL\" \u00b7 DGGS",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/413"
+   ],
+   "requires": [
+    "Ganes Creek page only. Attribute to DGGS."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"Data from the Ganes Creek survey will improve the understanding of the geology and mineral potential\""
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "Its release adds that deposits it mentions belong to other people, and say nothing about its own ground.",
+   "on_screen": "ITS RELEASE \u00b7 DEPOSITS IT MENTIONS BELONG TO OTHERS",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/"
+   ],
+   "requires": [
+    "Paraphrase of the release's disclaimer: mentioned deposits are owned by third parties and do not indicate mineralization on Geomorphic's ground. Attribute to the release."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: release notes that deposits mentioned are owned by third parties and are not indicative of mineralization on the company's ground"
+  },
+  {
+   "id": "c12",
+   "status": "verified_with_hedge",
+   "spoken": "Mining News says the company describes its A I as support for geologists, and it keeps an in house geology team to test the targets.",
+   "on_screen": "PER MINING NEWS \u00b7 IN-HOUSE GEOLOGY TEAM",
+   "source": [
+    "https://www.miningnewsnorth.com/story/2026/10/23/news/geomorphic-ai-targets-alaska-minerals/9920.html"
+   ],
+   "requires": [
+    "Single outlet, Mining News (North of 60), October 21st. Paraphrase only, attributed: the company says. Not a quote."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: Mining News reports the company says it is meant to support geologists, not replace them, and has an in-house geology team to test targets"
+  },
+  {
+   "id": "c13",
+   "status": "labelled_explainer",
+   "spoken": "A map of magnetism and natural radiation shows where rock differs. Only a drill shows what the rock holds.",
+   "on_screen": "A MAP SHOWS ROCK \u00b7 A DRILL SHOWS WHAT'S IN IT",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/413"
+   ],
+   "requires": [
+    "Explainer, labelled as the film's own read. Not a claim about Geomorphic's method or results. The survey instruments measure magnetic field and gamma radiation (c7), nothing else."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: the film's own explainer. DGGS describes the survey as magnetic and radiometric (gamma-ray) measurements"
+  },
+  {
+   "id": "c14",
+   "status": "labelled_explainer",
+   "spoken": "Two state airborne surveys add up to about forty five thousand eight hundred line kilometers. Add the second survey, at Aniak, and it's more than once around the Earth.",
+   "on_screen": "ABOUT 45,800 LINE-KM \u00b7 THE FILM'S ARITHMETIC",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/413",
+    "https://dggs.alaska.gov/pubs/gpdata/414"
+   ],
+   "requires": [
+    "The sum is the film's own arithmetic of c7 plus c8 (25,731 + 20,090.5 = 45,821.5), labelled as such. Earth's circumference at the equator is about 40,075 km, a general reference constant. Flight lines add, they do not make one continuous flight; say add, never one flight."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: the film's own arithmetic, 25,731 + 20,090.5 line-km from DGGS GPR 2026-1 and GPR 2026-5, compared with Earth's equatorial circumference of about 40,075 km"
+  },
+  {
+   "id": "c15",
+   "status": "verified",
+   "spoken": "A Portland company called Geomorphic A I.",
+   "on_screen": "PORTLAND-BASED",
+   "source": [
+    "https://www.geomorphic.ai/news/establishes-subsidiaries-in-peru-and/"
+   ],
+   "requires": [
+    "Portland dateline from the company release. Do not say which Portland."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: the company release is datelined Portland, Oregon and describes Geomorphic AI as Portland-based"
+  },
+  {
+   "id": "c16",
+   "status": "verified",
+   "spoken": "Two state airborne surveys.",
+   "on_screen": "DGGS \u00b7 TWO 2026 SURVEYS",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/413",
+    "https://dggs.alaska.gov/pubs/gpdata/414"
+   ],
+   "requires": [
+    "State Division of Geological and Geophysical Surveys reports GPR 2026-1 and GPR 2026-5, both airborne magnetic and radiometric surveys. The DGGS pages name the aircraft only for Ganes Creek (Eurocopter helicopters, contractor EON Geosciences), so the VO says airborne and the film draws a helicopter as an illustration."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "field: Geophysical Report 2026-1 (Ganes Creek) and Geophysical Report 2026-5 (Aniak and the Little Taylor Mountains), State of Alaska DGGS"
+  },
+  {
+   "id": "c17",
+   "status": "verified",
+   "spoken": "carrying a magnetic sensor and gamma ray spectrometers.",
+   "on_screen": "MAGNETIC SENSOR \u00b7 GAMMA-RAY SPECTROMETERS",
+   "source": [
+    "https://dggs.alaska.gov/pubs/gpdata/413"
+   ],
+   "requires": [
+    "Ganes Creek instruments per the DGGS page: a cesium-vapour magnetometer and two gamma-ray spectrometers."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "field: Scintrex CS-3 cesium-vapour split-beam magnetometer; two Radiation Solutions RS-500 series gamma-ray spectrometers (DGGS GPR 2026-1)"
+  }
+ ]
+}
