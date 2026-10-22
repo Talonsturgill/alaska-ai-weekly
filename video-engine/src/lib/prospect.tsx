@@ -153,7 +153,7 @@ export const HangTag: React.FC<{text: string; size?: number; tone?: TagTone; dro
         <path d={`M${-w / 2 + 6},${h - 6} L${w / 2 - 6},${h - 6}`} stroke={T.edge} strokeWidth={4} />
         <circle cx={0} cy={10} r={4.4} fill="#10151F" stroke={INK} strokeWidth={1.6} />
         {ls.map((l, i) => (
-          <text key={i} x={0} y={14 + (size + 12) * (i + 0.5) + size * 0.36 + 6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={size} letterSpacing={1.2} fill={T.fg}>{l}</text>
+          <text key={i} x={0} y={14 + (size + 12) * (i + 0.5) + size * 0.36 - 1} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={size} letterSpacing={1.2} fill={T.fg}>{l}</text>
         ))}
       </g>
     </g>
