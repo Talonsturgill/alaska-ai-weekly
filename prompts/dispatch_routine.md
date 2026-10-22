@@ -418,7 +418,10 @@ named organizations only, no monolithic framing, no unverified quotes (a 403'd s
 = cut). The output is the FACT-CHECK-SAFE SET: the only numbers and quotes allowed on screen, each
 with its label. A claim's `note` is an OBLIGATION: write it into the claim's `requires` block so
 `scripts/claims_contract_check.py` reads it, and check that each approved on_screen string matches
-its own verbatim.
+its own verbatim. Write ATOMIC claims, one spoken fact per id, because the script spends about one
+line per claim. Then run `python3 scripts/vo_claims_check.py --plan`, which fails a safe set too
+small for the density floor at the target runtime and names every compound or restated claim to
+split before a word of VO is written.
 
 ## PHASE 3: PICK THE STORY  (`run_cost.py phase pick`)
 
@@ -554,6 +557,9 @@ the film run 112.
 Short punchy sentences (they clone best and caption cleanest). Conversational, concrete, zero
 filler. No em/en dashes, no semicolons; contractions fine. Numbers and acronyms written phonetically
 for the synth ("five hundred", "U A F") but NUMERALS on screen. Banned words per config/brand.yaml.
+Every vo_script line carries `claims`, the ids it voices, planned to the floor `--plan` printed.
+Map every spelled token in `caption_fixups` as the line is written. `vo_claims_check.py` WARNs on
+any it finds unmapped and `caption_spelling_check.py` fails a spaced initialism before the render.
 Structure: a hook that demands the next line, an escalating middle riding the treatment, the turn
 stated plainly and always DRAWN as a picture, a button that lands with the final image.
 

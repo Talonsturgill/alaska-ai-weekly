@@ -147,7 +147,103 @@ def provisional_runtime(script, direction_path):
     return seconds, detail
 
 
+def _words(s):
+    return " ".join(re.findall(r"[a-z0-9']+", str(s or "").lower()))
+
+
+def plan(claims_list, target_seconds):
+    """The claim plan, from claims.json alone, at the end of Phase 2 and before a VO is written.
+
+    Machine pass 2026-10-22, a repeat offender (10-18, 10-22). Twice the density floor below
+    failed only once a script existed: 6.1 claims a minute on 10-22 until c15 to c17 were split
+    out of compound claims and a line was cut. The cause is upstream. The fact-checker writes one
+    `spoken` per claim, often two or three facts long, and the script spends about one line per
+    claim. So this runs on the safe set before the script. It FAILS when the set holds fewer
+    claims than the floor needs at the declared target runtime, counted the way the density gate
+    counts them, and it NAMES the split candidates: every spoken of more than one sentence, and
+    every claim whose words all sit inside another claim (10-22's c10 inside c9), which a line
+    voices for free and which is no substitute for a new fact. Returns (problems, notes)."""
+    need = math.ceil(MIN_CLAIMS_PER_MIN * target_seconds / 60.0)
+    words = {c["id"]: set(_words(c.get("spoken")).split()) for c in claims_list}
+    notes = []
+    for c in claims_list:
+        a = c["id"]
+        for b, wb in words.items():
+            wa = words[a]
+            if a != b and len(wa) >= 3 and wa <= wb and (len(wa) < len(wb) or a > b):
+                notes.append(f"{a} restates {b} (every word of its spoken is in {b}'s)")
+                break
+    for c in claims_list:
+        n = len([s for s in re.split(r"(?<=[.?!])\s+", str(c.get("spoken") or "").strip()) if s])
+        if n > 1:
+            notes.append(f"{c['id']} spoken carries {n} sentences, a candidate to split into atomic claims")
+    problems = []
+    if len(claims_list) < need:
+        problems.append(
+            f"CLAIM PLAN: {len(claims_list)} claims in claims.json against the {need} a "
+            f"{target_seconds:g}s film needs at {MIN_CLAIMS_PER_MIN:g} a minute. The script spends "
+            f"about one line per claim, so this safe set fails the density floor before a word is "
+            f"written. Split compound claims into one spoken fact each (the notes name the "
+            f"candidates) and give each its own id, source and requires.")
+    return problems, notes
+
+
+def _target_seconds():
+    try:
+        for ln in open(os.path.join(REPO, "config", "state.yaml")):
+            m = re.match(r"dispatch_target_seconds:\s*([0-9.]+)", ln)
+            if m:
+                return float(m.group(1))
+    except OSError:
+        pass
+    return 120.0
+
+
+def _plan_self_test():
+    fails = []
+    def mk(n, extra=()):
+        return [{"id": f"c{i + 1}", "spoken": f"fact number {i + 1} is true."} for i in range(n)] + list(extra)
+    p, _ = plan(mk(14), 120)
+    print(f"  [{'x' if not p else ' '}] 14 atomic claims at 120s pass")
+    fails += p
+    p, _ = plan(mk(13), 120)
+    print(f"  [{'x' if p else ' '}] 13 claims at 120s fail (14 needed)")
+    fails += [] if p else ["short safe set passed"]
+    _, n = plan(mk(13, [{"id": "c14", "spoken": "The state says the data will help."},
+                        {"id": "c15", "spoken": "The state offers it, and says the data will help."}]), 120)
+    ok = any("c14 restates c15" in x for x in n) and not any(x.startswith("c15 restates") for x in n)
+    print(f"  [{'x' if ok else ' '}] a claim restated inside another is named, the fuller one is not")
+    fails += [] if ok else ["restated claim not named"]
+    _, n = plan(mk(13, [{"id": "c14", "spoken": "It calls itself a generator. It screens data."}]), 120)
+    ok = any(x.startswith("c14 spoken carries 2 sentences") for x in n)
+    print(f"  [{'x' if ok else ' '}] a two-sentence spoken is named as a split candidate")
+    fails += [] if ok else ["compound spoken not named"]
+    p, _ = plan(mk(15), 130)
+    print(f"  [{'x' if p else ' '}] 15 claims at 130s fail (16 needed)")
+    fails += [] if p else ["130s floor not applied"]
+    print("SELF-TEST", "FAIL" if fails else "PASS")
+    return 1 if fails else 0
+
+
 def main():
+    if "--plan-self-test" in sys.argv:
+        return _plan_self_test()
+    if "--plan" in sys.argv:
+        with open(os.path.join(OUT, "claims.json")) as stream:
+            claims_list = json.load(stream)["claims"]
+        target = _target_seconds()
+        problems, notes = plan(claims_list, target)
+        for n in notes:
+            print(f"  NOTE {n}")
+        if problems:
+            print("FAIL [vo_claims_check --plan]")
+            for p in problems:
+                print(f"  {p}")
+            return 1
+        print(f"PASS [vo_claims_check --plan] {len(claims_list)} claims reach the "
+              f"{math.ceil(MIN_CLAIMS_PER_MIN * target / 60.0)} a {target:g}s film needs. Give every "
+              f"vo_script line a `claims` list of the ids it voices.")
+        return 0
     show = "--list" in sys.argv
     before_synth = "--before-synth" in sys.argv
     with open(os.path.join(OUT, "vo_script.json")) as stream:
@@ -222,6 +318,29 @@ def main():
         print("\n".join(notes))
         print(f"\nvo_claims_check: {len(script['lines'])} lines, "
               f"{sum(1 for l in script['lines'] if l.get('claims'))} carry a claim id")
+
+    # SPELLED TTS TOKENS WITH NO CAPTION FIXUP (machine pass 2026-10-22, repeat offender on
+    # 10-20 and 10-22). The script spells initialisms and numbers for the synth ("C E O",
+    # "forty five thousand"), and captions are aligned from that audio, so each one reaches the
+    # screen unless caption_fixups maps it. Both runs learned it from the editor after a render.
+    # This is the script stage, before synth, so it names the map entry to add. It WARNS: a
+    # number word can be right on a caption. caption_spelling_check fails an undeclared spaced
+    # initialism in the built props before the render.
+    try:
+        from caption_spelling_check import uncovered
+    except ImportError:
+        from scripts.caption_spelling_check import uncovered
+    fixups = script.get("caption_fixups") or {}
+    spelled = []
+    for line in script["lines"]:
+        for kind, phrase in uncovered(line["text"], fixups):
+            spelled.append(f"L{line['idx']}: {kind} {phrase!r} has no caption_fixups entry")
+    for w in dict.fromkeys(spelled):
+        print(f"WARN [vo_claims_check] {w}")
+    if spelled:
+        print('WARN [vo_claims_check] add each to "caption_fixups" in out/dispatch/vo_script.json '
+              '(spoken form to screen form, for example "C E O": "CEO", "twenty five thousand": '
+              '"25,000") now, before the editor finds it on a caption.')
 
     problems = list(dict.fromkeys(problems))
     # ---- STORY DENSITY (2026-08-13, owner: "ever since we went to 2 mins, it feels like ur

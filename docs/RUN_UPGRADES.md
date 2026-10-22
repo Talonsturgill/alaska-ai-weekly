@@ -3894,3 +3894,8 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - In-run fixes: ground world redesign after Gate 0, plate overlap and crop gates, metaphor tag baseline, company plates re-hung under one sign across shots 3, 4, 5, 9, 10 and 12, jolt-safe hero tremble, caption_fixups for spelled initialisms, kill_render.py. DISPATCH_STANDARD section 18 added.
 - Honest gaps: one ground set carries most shots, shot 13 near-static, open is label-heavy, thin SFX layer. All queued.
 - Queued for the machine pass: 11 items (docs/MACHINE_QUEUE.md, 2026-10-22). Repeat offenders: plate gates before render, caption fixups for spelled initialisms, atomic claims.
+
+## 2026-10-22 weekly machine pass
+- Shipped: make_cut.sh runs plate_overlap_check, zoom_clip_check, caption_render_check and caption_spelling_check before the render, caption fixups apply longest key first (the 10-22 film showed AI driven against a map saying AI-hyphen-driven), a spaced initialism in built captions fails before the render and the script stage warns on unmapped spelled forms, vo_claims_check --plan checks claim density at the end of Phase 2, HangTag takes atX and camScale so a tag stays inside the 54 px margin.
+- Escalated: whether a subset claim should count toward claim density, the tag baseline text_fit assertion, the two-way-only caption splitter.
+- Verified by the showrunner: 17 listed commands, all pass.

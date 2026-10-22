@@ -67,6 +67,14 @@ step typecheck         1 video-engine/node_modules/.bin/tsc --noEmit -p video-en
 step text_fit          1 python3 scripts/text_fit_check.py
 step caption_band      1 python3 scripts/caption_band_check.py
 step say_it_show_it    1 python3 scripts/say_it_show_it_check.py
+# Machine pass 2026-10-22, a repeat offender (10-21, 10-22 twice). These four read only the episode
+# source and episode_props.json, yet ran only inside preflight, after the render. The 10-22 re-cut
+# lost a 24 minute render to an 11 px plate overlap and a plate 6 px past the crop margin, both
+# knowable from the source in seconds. Preflight still runs them on the shipped bytes.
+step plate_overlap     1 python3 scripts/plate_overlap_check.py
+step zoom_clip         1 python3 scripts/zoom_clip_check.py
+step caption_rows      1 python3 scripts/caption_render_check.py --rows-only
+step caption_spelling  1 python3 scripts/caption_spelling_check.py
 step staging           0 python3 scripts/staging_check.py
 
 # 1b. The mix, every cut (machine pass 2026-10-09). The mix receipt hashes storyboard.json,
