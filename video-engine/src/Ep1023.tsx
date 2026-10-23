@@ -245,7 +245,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
             {strike > 0.02 && (
               <g opacity={clamp01(strike * 2)} transform={`scale(${1 + 0.12 * (1 - strike)})`}>
                 <rect x={-48} y={-30} width={96} height={34} rx={4} fill="none" stroke={PM.marigoldDeep} strokeWidth={4} transform="rotate(-3)" />
-                <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} letterSpacing={0.4} fill={PM.marigoldDeep} transform="rotate(-3)">OCT 20TH</text>
+                <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={11} letterSpacing={0.3} fill={PM.marigoldDeep} transform="rotate(-3)">OCT 20TH</text>
               </g>
             )}
           </g>
