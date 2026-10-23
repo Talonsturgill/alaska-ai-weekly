@@ -475,7 +475,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate x={540} text="ITS REPORT · SILVER IODIDE" displayLines={['ITS REPORT', 'SILVER IODIDE']} y={600} size={36} tone="putty" p={ease(f, t19, 8) * (1 - phaseB)} />
         <Plate x={540} text="ABOUT 375 G · ITS REPORT" y={1090} size={34} tone="ink" p={ease(f, t20, 8) * (1 - phaseB)} />
-        <Plate x={540} text="RAINMAKER SAYS · 19 MILLION GALLONS" displayLines={['RAINMAKER SAYS', `${f >= t23 ? count : 0} MILLION GALLONS`]} y={600} size={36} tone="ink" p={ease(f, t23, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
+        <Plate x={540} text="RAINMAKER SAYS · 19 MILLION GALLONS" displayLines={['RAINMAKER SAYS', `${f >= t23 ? count : 0} MILLION GALLONS`]} y={600} size={36} tone="ink" p={ease(f, t23, 8) * (1 - dive)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
         <Plate x={540} text="100 SQUARE MILES" y={720} size={34} tone="paper" p={ease(f, t24 - 2, 8) * (1 - phaseC)} />
         {/* the cross section the dive arrives at, in screen space */}
         {phaseC > 0.01 && (
@@ -488,7 +488,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             {Array.from({length: 11}).map((_, i) => <path key={i} d={`M${i % 5 === 0 ? 120 : 134},${1180 - i * 30} L150,${1180 - i * 30}`} stroke={INK} strokeWidth={3} />)}
             <text x={112} y={870} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={26} fill={INK}>1 IN</text>
             <path d="M170,1174 L330,1090" stroke={INK} strokeWidth={5} />
-            <RainGauge x={620} y={1180} f={g} scale={1.0} labels tag1={undefined} tag2={undefined} id="s5g" />
+            <RainGauge x={620} y={1180} f={g} scale={1.0} tag1={undefined} tag2={undefined} id="s5g" />
           </g>
         )}
         {phaseC > 0.01 && (
@@ -720,7 +720,7 @@ const Balance: React.FC<{x: number; y: number; f: number; theta: number; leftLin
   const rx = x + L * Math.cos(a), ry = y - L * Math.sin(a);
   const card = (cx: number, cy: number, lines: string[], tone: 'paper' | 'putty', k: number, partial = 1, partial2 = 1) => {
     if (k <= 0.02) return null;
-    const w = 340;
+    const w = 420;
     const h = lines.length * 34 + 30;
     return (
       <g transform={`translate(${cx},${cy - 150 * (1 - k)})`} opacity={clamp01(k * 2)}>
@@ -789,8 +789,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <rect x={1860} y={1314} width={30} height={20} fill={PM.snowShade} stroke={INK} strokeWidth={5} />
         </g>
         <Balance x={1630} y={640} f={g} theta={th}
-          leftLines={['MAYOR PETER MICCICHE', 'MISLED ABOUT WHAT', 'RAINMAKER PLANNED']} kL={snap(f, t35, 10)}
-          rightLines={["RAINMAKER'S CEO", 'HAD EVERY PERMISSION IT NEEDED', 'COULD HAVE DONE MORE OUTREACH']} kR={snap(f, t36, 10)} rightType={ease(f, t37, 36)} rightType2={ease(f, t38, 36)} />
+          leftLines={['MAYOR PETER MICCICHE', 'SAYS BOROUGH WAS MISLED', 'ON WHAT RAINMAKER PLANNED']} kL={snap(f, t35, 10)}
+          rightLines={["RAINMAKER'S CEO SAYS", 'HAD EVERY PERMISSION IT NEEDED', 'COULD HAVE DONE MORE OUTREACH']} kR={snap(f, t36, 10)} rightType={ease(f, t37, 36)} rightType2={ease(f, t38, 36)} />
       </SVG>
     </Frame>
   );
@@ -974,7 +974,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
           <QMark x={540} y={floorTop('sky') + 130} f={g} size={84} />
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} />
         </BuildingWorld>
-        <Dotty x={300} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
+        <Dotty x={800} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
       </SVG>
     </Frame>
   );
