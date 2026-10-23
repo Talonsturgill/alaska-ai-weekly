@@ -244,7 +244,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
             {[-18, -2, 14].map((yy) => <rect key={yy} x={-46} y={yy + 8} width={92 - (yy === 14 ? 30 : 0)} height={4} rx={2} fill={PM.paperDeep} />)}
             <circle cx={0} cy={-42} r={5} fill={INK} />
             {strike > 0.02 && (
-              <g opacity={clamp01(strike * 2)} transform={`scale(${1 + 0.12 * (1 - strike)})`}>
+              <g opacity={clamp01(strike * 2) * (1 - ease(f, t5 - 6, 6))} transform={`scale(${1 + 0.12 * (1 - strike)})`}>
                 <rect x={-48} y={-30} width={96} height={34} rx={4} fill="none" stroke={PM.marigoldDeep} strokeWidth={4} transform="rotate(-3)" />
                 <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={11} letterSpacing={0.3} fill={PM.marigoldDeep} transform="rotate(-3)">OCT 20TH</text>
               </g>
@@ -507,7 +507,6 @@ const S5: React.FC<SceneProps> = ({p}) => {
         {phaseC > 0.01 && (
           <g opacity={phaseC}>
             <g transform={`translate(${tagX},${tagY})`}><PTag lines={TAG1} size={20} tone="putty" k={1} f={g} drop={30} sway={tagPeel < 0.99 ? 0 : 3} /></g>
-            <Plate x={400} text="ABOUT 0.01 IN" y={1060} size={34} tone="paper" p={ease(f, t24 + 22, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
           </g>
         )}
       </>}>
@@ -538,7 +537,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <text x={905} y={940} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={INK}>1 IN</text>
           {f >= t22 - 2 && <rect x={880} y={1257} width={50} height={3} fill={PM.waterDeep} stroke={PM.teal} strokeWidth={ease(f, t22, 6) * 3} />}
           <g transform={`translate(${200},${620}) rotate(${(1 - snap(f, t21, 14)) * -30})`} opacity={clamp01((f - t21 + 2) / 5)}>
-            {f < t24 + 30 && <PTag lines={['RAINMAKER SAYS']} size={24} tone="putty" k={1} f={g} drop={34} sway={3} />}
+            {f < t24 - 2 && <PTag lines={['RAINMAKER SAYS']} size={24} tone="putty" k={1} f={g} drop={34} sway={3} />}
           </g>
         </g>
         {f >= t22 && f < t24 && <Plate x={860} text="ABOUT 0.01 IN" displayLines={["ABOUT 0.01 IN", "OF RAIN"]} y={880 + 1900 * (1 - phaseB)} size={24} tone="paper" p={ease(f, t22 + 4, 8)} />}
