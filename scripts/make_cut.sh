@@ -75,7 +75,17 @@ step plate_overlap     1 python3 scripts/plate_overlap_check.py
 step zoom_clip         1 python3 scripts/zoom_clip_check.py
 step caption_rows      1 python3 scripts/caption_render_check.py --rows-only
 step caption_spelling  1 python3 scripts/caption_spelling_check.py
-step staging           0 python3 scripts/staging_check.py
+# Machine pass 2026-10-23, a repeat offender (10-02, 10-23 four cuts running). A label behind a
+# character, under a quote card, or past the frame after a push-in passed every gate above,
+# because each models one source relationship and none models a label against ART or reads the
+# Frame camera. This renders the composition in Chrome every third frame (about a minute) and
+# fails a label cut for 0.5 s or more. `--shots 7,13` re-checks named shots in seconds.
+step label_footprint   1 python3 scripts/label_footprint_check.py
+# Machine pass 2026-10-23: a beat too short for its evidence strip failed build_evidence AFTER the
+# render on 10-15, 10-17 (twice) and 10-22. The strip plan reads only the board, vo_lines.json and
+# the props, so resolve it here, naming every short beat at once.
+step evidence_plan     1 python3 scripts/build_evidence.py --check-plan
+step staging          0 python3 scripts/staging_check.py
 
 # 1b. The mix, every cut (machine pass 2026-10-09). The mix receipt hashes storyboard.json,
 # episode_props.json and vo_lines.json, so a board or build_scenes change after the last mix

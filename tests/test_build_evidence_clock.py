@@ -106,6 +106,20 @@ class ConformedMoveClockTests(unittest.TestCase):
             CM(
                 self.board({"id": 1, "t": "0.0-0.4"}), {0: 0.0})
 
+    def test_every_short_beat_is_named_with_its_arithmetic(self):
+        # machine pass 2026-10-23: one failure per render was the cost, so name them all
+        BUILD_EVIDENCE.MOVES = [("a", 1, .35), ("b", 2, .2), ("c", 3, .45)]
+        board = {"run_date": "2099-01-01",
+                 "beats": [{"id": 1, "t": "0.0-0.3"}, {"id": 2, "t": "0.3-2.0"}, {"id": 3, "t": "2.0-2.4"}],
+                 "shots": [{"id": 1, "t": "0.0-2.4"}]}
+        with self.assertRaises(ValueError) as cm:
+            CM(board, {0: 0.0})
+        msg = str(cm.exception)
+        self.assertIn("2 beat(s) too short", msg)
+        self.assertIn("beat 1 (a) runs 0.30s", msg)
+        self.assertIn("beat 3 (c) runs 0.40s", msg)
+        self.assertNotIn("beat 2 (b)", msg)
+
     def test_uncovered_shot_still_fails(self):
         board = self.board({"id": 1, "t": "0.0-2.0"})
         board["shots"].append({"id": 2, "t": "2.0-4.0"})

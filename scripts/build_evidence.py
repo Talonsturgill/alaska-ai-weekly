@@ -119,7 +119,7 @@ def conformed_moves(board, start, film_end):
     beat_span = _spans(board["beats"], film_end)
     shot_span = _spans(board["shots"], film_end)
     shots = [(sid, lo, hi) for sid, (lo, hi) in shot_span.items()]
-    covered, result = set(), []
+    covered, result, short = set(), [], []
     for name, beat_id, peak_after in MOVES:
         beat = beats[beat_id]
         # Both board schemas declare a VO clock. Do not silently disregard the
@@ -157,9 +157,19 @@ def conformed_moves(board, start, film_end):
             beat_start = at
         centre = at + peak_after
         if not beat_start <= centre - 0.13 or centre + (8 / 30.0 - 0.13) > beat_end:
-            raise ValueError(f"beat {beat_id} is too short for its intended motion strip")
+            # Name EVERY short beat with its arithmetic (machine pass 2026-10-23): 10-15, 10-17
+            # twice and 10-22 each found one beat at a time, after a full render.
+            need = peak_after + (8 / 30.0 - 0.13)
+            short.append(f"beat {beat_id} ({name}) runs {beat_end - beat_start:.2f}s from "
+                         f"{beat_start:.2f}s and its strip at +{peak_after:.2f}s needs "
+                         f"{need:.2f}s after its onset")
+            continue
         covered.update(sid for sid, left, right in shots if left <= centre < right)
         result.append((name, line, off + peak_after))
+    if short:
+        raise ValueError(f"{len(short)} beat(s) too short for their intended motion strip: "
+                         + "; ".join(short) + ". Move the next beat's anchor later, merge the "
+                         "two beats, or anchor this one a word earlier.")
     if covered != {sid for sid, _, _ in shots}:
         raise ValueError("evidence motion samples do not cover every current shot")
     return result
@@ -169,14 +179,25 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--video", default=os.path.join(OUT, "dispatch_master.mp4"))
     ap.add_argument("--frames", type=int, default=14)
+    ap.add_argument("--check-plan", action="store_true",
+                    help="resolve every motion strip against the board and VO clock, write nothing")
     a = ap.parse_args()
 
     lines = json.load(open(os.path.join(OUT, "vo_lines.json")))["lines"]
     start = {L["idx"]: L["start"] for L in lines}
     _board = json.load(open(os.path.join(OUT, "storyboard.json")))
     _p0 = json.load(open(os.path.join(OUT, "episode_props.json")))
-    moves = conformed_moves(_board, start,
-                            max(max(L["end"] for L in lines), _p0["total"] / 30.0))
+    try:
+        moves = conformed_moves(_board, start,
+                                max(max(L["end"] for L in lines), _p0["total"] / 30.0))
+    except ValueError as exc:
+        sys.exit(f"build_evidence: {exc}")
+    if a.check_plan:
+        # make_cut.sh runs this BEFORE the render (machine pass 2026-10-23). Every input is the
+        # board, vo_lines.json and episode_props.json, so a beat too short for its strip fails in
+        # a second instead of after a 13 to 24 minute render and encode.
+        print(f"build_evidence --check-plan: {len(moves)} motion strip(s) fit their beats and cover every shot")
+        return
     # THE FILM, NOT THE NARRATION. `end` was the last VO line's end (122.84s), so the
     # contact sheet stopped there and never photographed the final 2.6 seconds — which is
     # exactly where the sign-off plate and the music credit live. Five judges across three

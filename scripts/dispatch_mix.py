@@ -107,24 +107,13 @@ _TEXTURE = {"whoosh", "paper", "chain", "creak", "riser"}
 # 2026-10-06 A Desk That Never Sleeps: the board's `sfx` field carries a DESCRIPTIVE name per beat ("ding-ring",
 # "silence-pop-pop"), which is for the film's author. The bank only knows its own 17 kinds, so this run maps each
 # beat id to ONE bank kind, chosen so no two adjacent beats share a spectral family and no kind carries the film.
-_FAM = {"thud": "sub", "stamp": "sub", "boom": "sub", "paw": "sub", "clank": "metal", "chain": "metal", "klaxon": "metal",
-        "ding": "bell", "chime": "bell", "tick": "click", "pop": "blip", "snap": "pluck", "whoosh": "air", "riser": "air",
-        "paper": "texture", "creak": "texture", "caw": "bird"}
-# 2026-10-08 Who Writes the Study: each beat's own descriptive sfx name maps to ONE bank kind, then adjacent beats that
-# land in the same spectral family are walked to a sibling kind so no family repeats back to back.
-_BY_NAME = {"whoosh": "whoosh", "sizzle": "paper", "snap": "snap", "slide": "creak", "thunk": "stamp", "whirr": "whoosh",
-            "click": "tick", "blip": "pop", "riser": "whoosh", "clunk": "clank", "clip": "snap", "hum": "creak", "thump": "paw",
-            "splash": "whoosh", "cascade": "chain", "page": "paper", "scratch": "paper", "sonar": "ding", "hit": "boom",
-            "fade": "creak", "bloop": "chime", "silence": "creak", "tick": "tick", "stamp": "stamp", "creak": "creak",
-            # 2026-10-15 The Door With a Condition: this film's descriptive names, each to one bank kind
-            "alarm": "klaxon", "swell": "whoosh", "sting": "boom", "tap": "tick", "thock": "tick", "bloom": "chime", "ping": "ding",
-            "bell": "ding", "hush": "paper", "rumble": "boom", "crunch": "paper", "pulse": "ding", "crack": "snap", "clank": "clank",
-            "punch": "pop", "knock": "thud", "drone": "creak", "roll": "chain", "flip": "paper", "stop": "clank", "heavy": "boom",
-            "fold": "paper", "type": "tick", "pop": "pop", "clink": "ding", "chime": "chime", "thud": "thud", "boom": "boom"}
-_ALT = {"sub": ["thud", "stamp", "boom", "paw"], "metal": ["clank", "chain"], "bell": ["chime", "ding"], "click": ["tick"], "blip": ["pop"],
-        "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"], "bird": ["caw"]}
-_CYCLE = {"slide": ["creak", "paper", "whoosh"], "hum": ["creak", "chain", "ding", "clank"], "sizzle": ["paper", "snap", "tick"],
-          "scratch": ["paper", "tick"], "fade": ["creak", "chime"], "silence": ["creak"], "splash": ["whoosh", "caw", "pop"]}
+# The name-to-kind tables and the walk live in scripts/sfx_names.py (machine pass 2026-10-23), which
+# also stops an unknown name from silently becoming a tick (10-11, 10-20) and names it every mix.
+sys.path.insert(0, HERE)
+from sfx_names import FAM as _FAM, BY_NAME as _BY_NAME, ALT as _ALT, CYCLE as _CYCLE  # noqa: E402
+from sfx_names import kinds_by_beat as _kinds_and_unknown, unknown_report, names_for_kind  # noqa: E402
+
+
 def _beat_onset(beat):
     v = beat.get("at_s", beat.get("t"))
     return float(v.split("-", 1)[0]) if isinstance(v, str) else float(v)
@@ -149,32 +138,13 @@ def riser_beat_id(board):
 
 
 def kinds_by_beat(beats, riser_beat):
-    """One bank kind per beat: the beat's own descriptive sfx name mapped to the bank, adjacent
-    families walked apart, and the riser on riser_beat only."""
-    seen, kinds, used, prev_fam = {}, {}, {}, None
-    for i, b in enumerate(beats):
-        nm = str(b["sfx"]).split("-")[0]
-        k = _BY_NAME.get(nm, "tick")
-        if nm in _CYCLE:
-            k = _CYCLE[nm][seen.get(nm, 0) % len(_CYCLE[nm])]
-            seen[nm] = seen.get(nm, 0) + 1
-        nxt = beats[i + 1]["id"] if i + 1 < len(beats) else None
-        if b["id"] == riser_beat:
-            k = "riser"       # the ONE riser of the film: the build into the closing question
-        elif k == "riser":
-            k = "whoosh"      # a descriptive "riser" on any other beat must not add a second one
-        # Walk off the previous beat's family. The riser beat is never walked; the beat BEFORE
-        # it is walked off the riser's family instead, so the board's riser can't be recast away.
-        avoid = {prev_fam} | ({_FAM["riser"]} if nxt == riser_beat else set())
-        if b["id"] != riser_beat and _FAM[k] in avoid:
-            opts = [x for fam, xs in _ALT.items() if fam not in avoid for x in xs]
-            k = sorted(opts, key=lambda x: (used.get(x, 0), x))[0]
-        used[k] = used.get(k, 0) + 1
-        kinds[b["id"]] = k
-        prev_fam = _FAM[k]
+    """One bank kind per beat (scripts/sfx_names.py); unknown names go to UNKNOWN_SFX."""
+    kinds, unknown = _kinds_and_unknown(beats, riser_beat)
+    UNKNOWN_SFX[:] = unknown
     return kinds
 
 
+UNKNOWN_SFX = []
 RISER_BEAT = riser_beat_id(_board)
 _KIND_BY_BEAT = kinds_by_beat(_board["beats"], RISER_BEAT)
 _PERFORMANCE = [
@@ -527,7 +497,9 @@ def check_schedule(events):
             raise SystemExit(
                 f"SFX SCHEDULE: '{top}' is {c} of {n} events ({c/n:.0%}), over the 18% ceiling. "
                 f"No single kind may carry a film. Recast some of them; the bank has "
-                f"{len(FAMILY)} kinds and six takes each.")
+                f"{len(FAMILY)} kinds and six takes each. Board sfx names on '{top}': "
+                f"{', '.join(names_for_kind(_board['beats'], _KIND_BY_BEAT, top)) or 'none'}"
+                f" (the table is BY_NAME in scripts/sfx_names.py).")
         heavy = sum(c for _, c in kinds.most_common(4))
         if heavy / n > 0.55:
             raise SystemExit(
@@ -544,6 +516,8 @@ def main():
 
     if len(EVENT_LABELS) != len(EVENTS):
         raise SystemExit(f"SFX SCHEDULE: {len(EVENTS)} events but {len(EVENT_LABELS)} labels")
+    for line in unknown_report(UNKNOWN_SFX):
+        print("dispatch_mix: NOTE " + line)
     check_schedule(EVENTS)
 
     # THE SOUND DESIGN HAS TO BE VISIBLE, NOT JUST AUDIBLE (2026-08-13).
