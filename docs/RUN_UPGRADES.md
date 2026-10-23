@@ -3899,3 +3899,8 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - Shipped: make_cut.sh runs plate_overlap_check, zoom_clip_check, caption_render_check and caption_spelling_check before the render, caption fixups apply longest key first (the 10-22 film showed AI driven against a map saying AI-hyphen-driven), a spaced initialism in built captions fails before the render and the script stage warns on unmapped spelled forms, vo_claims_check --plan checks claim density at the end of Phase 2, HangTag takes atX and camScale so a tag stays inside the 54 px margin.
 - Escalated: whether a subset claim should count toward claim density, the tag baseline text_fit assertion, the two-way-only caption splitter.
 - Verified by the showrunner: 17 listed commands, all pass.
+
+## 2026-10-23 "The Rule That Stops at the Fence"
+- Shipped: 13-shot film on the Kenai Peninsula Borough weather modification permit rule (Dotty the permit form, a rain gauge throughline). Panel median 7.42 against 7.0 (7.43, 7.34, 7.42) on the ninth cut, editor ship. Caption Gate B ended at 8.45 against 8.5 at the five-round cap, disclosed in the draft.
+- In-run fixes: card widths and camera span on the balance shot, the FAA sign hidden behind its quote card, the closing wide's Dotty and sign placement, the stamp text retired under the effect tag, the gauge's doubled scale label, soil strata under the dive, one 0.01 inch label. Standard updated with the label-footprint lessons.
+- Queued for the machine pass: 5 items (docs/MACHINE_QUEUE.md, 2026-10-23).

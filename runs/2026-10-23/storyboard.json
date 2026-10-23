@@ -1,0 +1,2264 @@
+{
+  "run_date": "2026-10-23",
+  "slug": "the-rule-that-stops-at-the-fence",
+  "title": "The Rule That Stops at the Fence",
+  "concept": "On October 20th the Kenai Peninsula Borough Assembly passed a weather modification rule after California's Rainmaker flew a cloud seeding drone near Homer. The rule is a form that attaches to borough land only. The film draws the form as Dotty, a paper character who is pinned to the borough's own ground and asks four things about a flight, beside a rain gauge, while the sky above belongs to the FAA and the state office is dark and empty. It gives the fair case a scene (a land permit was never going to measure the weather, both sides are quoted, the assembly has asked the Legislature) and ends on one fact: the form asks what a flight intends, the gauge carries only Rainmaker's tag, and the reports found describe no outside check of the rain Rainmaker says it made.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 124.76,
+  "fingerprint": {
+    "pov": "cross-section-cutaway",
+    "motion_vector": "vertical-rise",
+    "hero_treatment": "single-organic-hero",
+    "layout": "stacked-layers",
+    "register": "tactile-collage",
+    "palette": "first-snow white and mist-blue, a paper form hero with checkbox eyes, emerald borough ground, indigo and plum upper floors, a late summer viridian and gold bay, a single amber tag on the rain gauge's second hook, a black tack",
+    "camera_strategy": "pull-backs from a desk to a three floor building, a tilted parcel plane, a dive into a hairline and a craneDown through the floors",
+    "light_story": "an overcast first-snow day, a lit ground floor under two dark floors, a late summer gold bay in flashback, a cool snow window wall with no lamp, cold grey blinds in an empty state office, then flat noon light on a rain gauge in the snow",
+    "metaphor": "a form that can only be pinned to the ground it stands on, beside a rain gauge with a hook nobody has hung an outside reading on"
+  },
+  "palette": "first-snow white and mist-blue, a paper form hero with checkbox eyes, emerald borough ground, indigo and plum upper floors, a late summer viridian and gold bay, a single amber tag on the rain gauge's second hook, a black tack",
+  "divergence_note": "10-22 was a dusk tundra survey table in spruce ink, brass and vermilion with a plumb bob. 10-21 was a pewter beach with a tawny calf. 10-20 was a celadon and walnut office with a manila folder and a lamp. This film is a bright first-snow day with a paper form hero, an emerald borough accent, indigo and plum floors, a late summer viridian and gold flashback and an amber hook tag, and it moves through a snowy three floor building cutaway, a tilted parcel plane, a summer bay map, a forecast panel, an empty state office and a rain gauge in the snow. HONEST OVERLAP: a paper document hero with a face, as in 10-20, and a question that ends on an absence, as in 10-22.",
+  "treatment": {
+    "winner": "The Explainer's three floor building and the dive into 19 million gallons being a hairline, with the Comedian's characterized form (Dotty) as hero, a rain gauge with an empty hook as the throughline object, the Dramatist's conditional Vance bill, and the Enthusiast's fair-case template scene.",
+    "why": "A form with a face carries the thesis in one image (it can only be pinned to the ground it stands on), the lit floor under two dark ones makes jurisdiction a picture a muted viewer can read, and a rain gauge with a bare hook gives a planted promise that pays at the button."
+  },
+  "angle": {
+    "run_date": "2026-10-23",
+    "thesis": "A borough can only write a rule for the ground a drone takes off from, so Kenai's new permit collects what an operator intends to do, while the only number anyone has for what came out of the sky is the company's own.",
+    "falsifiable_by": "An outside measurement of the August 23rd result (NWS, a university) turning up, or the rule turning out to require a measured post-flight result, or a state or federal rule turning out to already cover cloud seeding in Alaska.",
+    "supporting_facts": [
+      "c2/c10/c11 the rule attaches to borough land (lease or land use permit); the mayor says reach is limited to borough lands and the FAA controls the skies",
+      "c9 DNR says state law doesn't address cloud seeding, so the middle layer is blank",
+      "c3 the application asks for intended outcome, chemicals, flares, flight frequency and duration",
+      "c6/c7/c15/c16 every output figure is Rainmaker's own, checked by its own method, and the reports don't describe an outside check"
+    ],
+    "counterpoint_honored": "A land rule was never meant to be atmospheric science. The borough did what it could with the lever it has, said so plainly, and asked the Legislature for the rest (c13, c14). Rainmaker says it had every permission it needed and concedes more outreach was possible (c12); no harm is reported. A disclosure form is a template the state can copy. The film gives this its own scene at full strength, then lets the thesis narrow rather than break: the form asks for a prediction, nobody is yet set up to ask for the measurement.",
+    "second_movement": "The form is half a test: it puts a prediction on file. The picture is a form with its INTENDED OUTCOME slot filled and an outside-check slot that reads NOT REPORTED. The fact that recontextualises the first: the ground floor wrote the first draft because the floors above it are empty or federal.",
+    "throughline_object": "the application form (states: blank, filled with intended outcome, pinned to the borough parcel, a second slot for an outside check left dashed, final: the dashed slot is the question)",
+    "ai_link_wording": "A drone plus a forecasting platform, Stratus, that Rainmaker describes as taking in real time weather data to pick seeding windows. No source says AI, machine learning or autonomous. The film says drone and software, never AI.",
+    "valence": "even-handed, constructive about the borough's tool and Rainmaker's capability, skeptical only of the evidence chain; nobody a villain",
+    "runner_ups": {
+      "BUILDER: a form instead of a ban is a template": "grafted as the counterpoint scene",
+      "SKEPTIC: 19 million gallons is a hundredth of an inch and only the seller measured it": "grafted as the second movement and the button"
+    }
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A snowy paper building in cutaway with falling snow and a paper form with checkbox eyes rising out of a floor slot on the lit ground floor under two dark floors, a rain gauge on a post standing in the snow beside the building.",
+    "headline": "THE WEATHER RULE IS A FORM",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame is the same form standing in the snow beside the same rain gauge with the same building behind her, looking from the gauge to the camera at flat noon."
+  },
+  "open_loop": {
+    "plant_t": 16.03,
+    "pay_t": 118.37,
+    "what": "What is the empty second hook on the rain gauge for? Planted as Dotty is pinned beside the gauge with its first hook empty too and its second hook bare, paid when a tag drops onto it reading NOT IN THE REPORTS WE FOUND."
+  },
+  "open_loop_2": {
+    "plant_t": 59.13,
+    "pay_t": 104.85,
+    "what": "Who writes the rules for when it flies? Planted as a hollow question mark rises over the forecast window, paid when a conditional bill and one dashed light appear under it on the state office desk."
+  },
+  "throughline": {
+    "object": "the rain gauge with an empty second hook",
+    "lands_in_button": "Dotty beside the gauge, looking from its empty hook to the camera",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "standing in the snow beside the building"
+      },
+      {
+        "at_s": 16.03,
+        "state": "planted beside Dotty's parcel with a bare hook"
+      },
+      {
+        "at_s": 54.21,
+        "state": "the tag ABOUT 0.01 IN AUG 23RD RAINMAKER SAYS peels off the flood tile and hangs on its first hook, second hook bare"
+      },
+      {
+        "at_s": 80.42,
+        "state": "Dotty looks up at its tag and its spinning cups with nobody reading them"
+      },
+      {
+        "at_s": 118.37,
+        "state": "the second hook gets a tag NOT IN THE REPORTS WE FOUND"
+      },
+      {
+        "at_s": 120.64,
+        "state": "Dotty looks from it to the camera"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 4.49,
+      "type": "scale-pullback",
+      "what": "the camera pulls back from Dotty to the whole building where only the ground floor is lit and two floors are dark with a question mark each",
+      "hold_s": 0.7
+    },
+    {
+      "t": 54.21,
+      "type": "scale-pullback",
+      "what": "the camera dives from a flooded tile to its edge where the flood is a hairline film matching the gauge's hairline",
+      "hold_s": 0.7
+    },
+    {
+      "t": 120.64,
+      "type": "scale-pullback",
+      "what": "a hard cut to the frame one wide where Dotty and the gauge are small under the building and two dark floors",
+      "hold_s": 1.0
+    }
+  ],
+  "tail_s": 3.2,
+  "audio_arc": {
+    "build_steps": 4,
+    "dip_at": 120.34,
+    "riser_at": 113.25,
+    "silence_at": 118.02,
+    "payoff_at": 118.37,
+    "button_pattern": "question",
+    "interrupt_at": 54.21,
+    "extra_dips": [
+      86.1
+    ]
+  },
+  "shots": [
+    {
+      "title": "The form rises",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "building-exterior",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "Dotty at x440 y1250",
+      "means": "Dotty rises out of a slot in the lit ground floor of a snowy paper building under two dark floors and a stamp dates the rule on her header.",
+      "ambient": "snow falls, the lit window flickers, Dotty breathes, the cowlick sways, the gauge vane turns",
+      "hero": {
+        "name": "Dotty + Building + stamp + rain gauge",
+        "parts": 62,
+        "zones": 3,
+        "detail_note": "45% building, 35% Dotty, 20% stamp"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-12.420"
+    },
+    {
+      "title": "Borough land",
+      "vo_line": 2,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "high",
+      "stage": "snow-parcel-plane",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the parcel at x540 y1100",
+      "means": "A tilted plane of parcels lights emerald where the borough owns it, Dotty is pinned down beside a rain gauge and leans back from a casual use parcel.",
+      "ambient": "snow drifts, the dashed borders crawl, the bush sways, the tracks draw on",
+      "hero": {
+        "name": "ParcelPlane + Dotty + rain gauge + NO glyph",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "45% parcels, 30% Dotty, 25% gauge"
+      },
+      "id": 2,
+      "start_s": 12.42,
+      "t": "12.420-25.040"
+    },
+    {
+      "title": "Her four boxes",
+      "vo_line": 4,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "snow-window-wall",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the typing boxes are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked panel with a slow drift where the typing boxes, the trace and the tag are the motion",
+      "centered": "Dotty at x470 y1100",
+      "means": "Dotty reads her own boxes aloud as chemicals, flares, flights and the intended outcome type in and tick beside a rain gauge with an empty second hook.",
+      "ambient": "the window light shifts, the typed ink flickers, the cowlick sways, the empty hook swings",
+      "hero": {
+        "name": "Dotty close-up + four boxes + rain gauge",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "55% Dotty, 20% boxes, 25% gauge"
+      },
+      "id": 3,
+      "start_s": 25.04,
+      "t": "25.040-33.000"
+    },
+    {
+      "title": "August 23rd",
+      "vo_line": 5,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "summer-bay-map",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the map at x540 y1000",
+      "means": "A late summer map of Kachemak Bay, a drone lifts from two pins and a dashed line runs twenty miles northeast of Homer.",
+      "ambient": "the water shimmers, the sun glints, the rotors blur, the dashes crawl",
+      "hero": {
+        "name": "summer bay map + SeedDrone",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% map, 30% drone, 20% plates"
+      },
+      "id": 4,
+      "start_s": 33.0,
+      "t": "33.000-42.420"
+    },
+    {
+      "title": "Nineteen million gallons",
+      "vo_line": 6,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "summer-tile",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the tile at x540 y1000",
+      "means": "A silver iodide stream, a square tile, a flood of water and a camera dive that shows the flood is a hairline film matching the hairline in a rain gauge.",
+      "ambient": "the rotors blur, the stream shimmers, the flood ripples, sunlight glints",
+      "hero": {
+        "name": "SeedDrone + tile + flood + counter + gauge",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "35% tile, 30% drone, 35% counter"
+      },
+      "id": 5,
+      "start_s": 42.42,
+      "t": "42.420-56.100"
+    },
+    {
+      "title": "Stratus",
+      "vo_line": 7,
+      "framing": "data-panel",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "forecast-sky",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the trace and the marker are the shot",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "flat:a locked panel with a slow drift where the typing boxes, the trace and the tag are the motion",
+      "centered": "the panel at x540 y1000",
+      "means": "A forecast trace draws across a late summer sky and a window marker clicks onto a time bar while the drone slides along.",
+      "ambient": "the trace draws, the ticks stream, the rotors blur, the marker pulses",
+      "hero": {
+        "name": "ForecastTrace + time bar + SeedDrone",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "50% trace, 30% bar, 20% drone"
+      },
+      "id": 6,
+      "start_s": 56.1,
+      "t": "56.100-62.580"
+    },
+    {
+      "title": "The stair that stops",
+      "vo_line": 8,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "building-exterior",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the stair at x540 y1000",
+      "means": "Dotty climbs a stair in the lit ground floor that stops at a painted line while the rain gauge stands in the snow outside the wall with its first hook tagged and its second bare, and a locked hatch rattles above and drops a question mark down the dashed stair.",
+      "ambient": "the window flickers, the dashes crawl, the padlock rattles, snow drifts past the windows",
+      "hero": {
+        "name": "Building + Stair + Dotty + Hatch",
+        "parts": 64,
+        "zones": 3,
+        "detail_note": "45% building, 30% Dotty, 25% hatch"
+      },
+      "id": 7,
+      "start_s": 62.58,
+      "t": "62.580-74.620"
+    },
+    {
+      "title": "The empty office",
+      "vo_line": 10,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "state-office",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the desk at x540 y1100",
+      "means": "The question mark lands on the dead desk of an empty dark state office.",
+      "ambient": "dust drifts, the blinds glow cold, the fixture flickers, the question bobs",
+      "hero": {
+        "name": "state office + dead desk + question mark",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% room, 30% desk, 20% question"
+      },
+      "id": 8,
+      "start_s": 74.62,
+      "t": "74.620-80.420"
+    },
+    {
+      "title": "The fair case",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "low",
+      "stage": "snow-base",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "Dotty at x400 y1250",
+      "means": "At the foot of the building Dotty looks up at the gauge, pats her tack and turns back to her parcel, then a balance holds the mayor's card and Rainmaker's CEO's.",
+      "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways",
+      "hero": {
+        "name": "Dotty + gauge + balance",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% Dotty, 30% balance, 30% gauge"
+      },
+      "id": 9,
+      "start_s": 80.42,
+      "t": "80.420-95.480"
+    },
+    {
+      "title": "The ask",
+      "vo_line": 13,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "state-office",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the door at x540 y1000",
+      "means": "A copy of Dotty slides under the Legislature door and the assembly ticks BAN and OR AT LEAST REGULATE on it, a dashed conditional bill draws beside the Vance card, a dashed light comes on, and copies rise up the dashed stair through the floor hole.",
+      "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk",
+      "hero": {
+        "name": "door + bill + copier + copies",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "35% door, 30% copies, 35% bill"
+      },
+      "id": 10,
+      "start_s": 95.48,
+      "t": "95.480-109.580"
+    },
+    {
+      "title": "What it asks",
+      "vo_line": 15,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "snow-window-wall",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the boxes and the sweep are the shot",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the typing boxes, the trace and the tag are the motion",
+      "centered": "Dotty at x400 y1100",
+      "means": "Dotty beside the rain gauge with her ticked boxes, a tagged first hook and an empty second hook, and a radar sweep plate.",
+      "ambient": "the window light shifts, the empty hook swings, the radar sweeps, the cowlick sways",
+      "hero": {
+        "name": "Dotty + rain gauge + radar plate",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "50% Dotty, 30% gauge, 20% plate"
+      },
+      "id": 11,
+      "start_s": 109.58,
+      "t": "109.580-116.460"
+    },
+    {
+      "title": "Not in the reports",
+      "vo_line": 16,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "snow-gauge",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the tag drop is the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked panel with a slow drift where the typing boxes, the trace and the tag are the motion",
+      "centered": "the gauge at x540 y1000",
+      "means": "Report pages riffle past the rain gauge on bare white snow and a tag drops onto the empty second hook.",
+      "ambient": "the pages riffle, the tag swings, the film glints, snow falls",
+      "hero": {
+        "name": "rain gauge + report pages + tag",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "55% gauge, 25% pages, 20% tag"
+      },
+      "id": 12,
+      "start_s": 116.46,
+      "t": "116.460-120.640"
+    },
+    {
+      "title": "The question",
+      "vo_line": 17,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "eye",
+      "stage": "building-exterior-noon",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Dotty at x420 y1150",
+      "means": "A hard cut to the frame one wide at flat noon where Dotty stands small in the snow beside the rain gauge under the building and looks from the gauge to the camera.",
+      "ambient": "snow drifts, the tagged hook swings, the window glows, the vane turns",
+      "hero": {
+        "name": "Dotty + rain gauge + building",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% Dotty, 30% gauge, 30% building"
+      },
+      "id": 13,
+      "start_s": 120.64,
+      "t": "120.640-124.760"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A borough in Alaska just wrote a weather rule. It's a form.",
+      "phrase": "A borough in Alaska",
+      "shows": "wide on a snowy three floor paper building in cutaway, snow falling, Dotty the borough form rises out of a slot in the floor of the lit ground floor and snaps upright with a squash, a rain gauge on a post standing in the snow beside the building",
+      "sfx": "thunk",
+      "means": "the weather rule is a form",
+      "rehook": "",
+      "draw": {
+        "subject": "Dotty",
+        "action": "rises out of a slot in the floor of the lit ground floor and locks upright",
+        "emotion": "proud",
+        "annotation": "THE WEATHER RULE IS A FORM"
+      },
+      "choreo": {
+        "primary": "wide on a snowy three floor paper building in cutaway, snow falling, Dotty the borough form rises out of a slot in the floor of the lit ground floor and snaps upright with a squash, a rain gauge on a post standing in the snow beside the building",
+        "reaction": "her cowlick bounces and the lit window flickers",
+        "ambient": "snow falls, the lit window flickers, Dotty breathes, the cowlick sways, the gauge vane turns"
+      },
+      "kick": true,
+      "t": "0.000-4.490",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 4.49,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.49
+      },
+      "offset": 4.49,
+      "vo": "A borough in Alaska just wrote a weather rule. It's a form.",
+      "phrase": "form.",
+      "shows": "the camera pushes in on Dotty then pulls back to the whole building, the ground floor glowing and labelled BOROUGH LAND, the two floors above dark, each with a small hollow question mark",
+      "sfx": "hush",
+      "means": "borough land",
+      "rehook": "",
+      "draw": {
+        "subject": "building",
+        "action": "pulls back to show the lit floor under two dark floors",
+        "emotion": "proud",
+        "annotation": "BOROUGH LAND"
+      },
+      "choreo": {
+        "primary": "the camera pushes in on Dotty then pulls back to the whole building, the ground floor glowing and labelled BOROUGH LAND, the two floors above dark, each with a small hollow question mark",
+        "reaction": "the lit window flickers and snow drifts past",
+        "ambient": "snow falls, the lit window flickers, Dotty breathes, the cowlick sways, the gauge vane turns"
+      },
+      "t": "4.490-5.980",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 5.98,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On October twentieth, the Kenai Peninsula Borough Assembly passed it, in effect right away.",
+      "phrase": "On October twentieth, the",
+      "shows": "the camera slides in on Dotty as the stamp comes down and strikes OCT 20TH onto her header band in emerald ink",
+      "sfx": "thunk",
+      "means": "oct 20th",
+      "rehook": "",
+      "draw": {
+        "subject": "stamp",
+        "action": "strikes the date onto Dotty's header band",
+        "emotion": "proud",
+        "annotation": "OCT 20TH"
+      },
+      "choreo": {
+        "primary": "the camera slides in on Dotty as the stamp comes down and strikes OCT 20TH onto her header band in emerald ink",
+        "reaction": "the strike makes her sheet jump and the ink print blooms",
+        "ambient": "snow falls, the lit window flickers, Dotty breathes, the cowlick sways, the gauge vane turns"
+      },
+      "t": "5.980-10.430",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 10.43,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.45
+      },
+      "offset": 4.45,
+      "vo": "On October twentieth, the Kenai Peninsula Borough Assembly passed it, in effect right away.",
+      "phrase": "effect right away.",
+      "shows": "a tag swings onto the door frame, IN EFFECT RIGHT AWAY, and the window light flares once",
+      "sfx": "snap",
+      "means": "in effect right away",
+      "rehook": "",
+      "draw": {
+        "subject": "tag",
+        "action": "swings onto the door frame",
+        "emotion": "proud",
+        "annotation": "IN EFFECT RIGHT AWAY"
+      },
+      "choreo": {
+        "primary": "a tag swings onto the door frame, IN EFFECT RIGHT AWAY, and the window light flares once",
+        "reaction": "the tag swings",
+        "ambient": "snow falls, the lit window flickers, Dotty breathes, the cowlick sways, the gauge vane turns"
+      },
+      "t": "10.430-12.420",
+      "key": 5
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 12.42,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Anyone modifying weather on borough land now needs a commercial lease or land use permit.",
+      "phrase": "Anyone modifying weather on",
+      "shows": "the camera drops from the roof onto a tilted snow plane of land parcels where the borough's own parcels light emerald and the rest stay white and fir green, BOROUGH LAND",
+      "sfx": "swell",
+      "means": "borough land",
+      "rehook": "",
+      "draw": {
+        "subject": "parcel plane",
+        "action": "tilts in with the borough's own parcels lighting emerald",
+        "emotion": "plain",
+        "annotation": "BOROUGH LAND"
+      },
+      "choreo": {
+        "primary": "the camera drops from the roof onto a tilted snow plane of land parcels where the borough's own parcels light emerald and the rest stay white and fir green, BOROUGH LAND",
+        "reaction": "the dashed borders crawl and snow drifts",
+        "ambient": "snow drifts, the dashed borders crawl, the bush sways, the tracks draw on"
+      },
+      "t": "12.420-16.030",
+      "key": 6
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 16.03,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.61
+      },
+      "offset": 3.61,
+      "vo": "Anyone modifying weather on borough land now needs a commercial lease or land use permit.",
+      "phrase": "lease or land use",
+      "shows": "Dotty walks in on her paper legs and stands on an emerald parcel beside the rain gauge on its post, a plate reads COMMERCIAL LEASE OR LAND USE PERMIT",
+      "sfx": "tap",
+      "means": "commercial lease or land use permit",
+      "rehook": "",
+      "draw": {
+        "subject": "Dotty",
+        "action": "walks onto an emerald parcel",
+        "emotion": "proud",
+        "annotation": "COMMERCIAL LEASE OR LAND USE PERMIT"
+      },
+      "choreo": {
+        "primary": "Dotty walks in on her paper legs and stands on an emerald parcel beside the rain gauge on its post, a plate reads COMMERCIAL LEASE OR LAND USE PERMIT",
+        "reaction": "her boots plant and her sheet sways",
+        "ambient": "snow drifts, the dashed borders crawl, the bush sways, the tracks draw on"
+      },
+      "t": "16.030-17.390",
+      "key": 7
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 17.39,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 4.97
+      },
+      "offset": 4.97,
+      "vo": "Anyone modifying weather on borough land now needs a commercial lease or land use permit.",
+      "phrase": "permit.",
+      "shows": "an ink tack drops onto Dotty's page and pins her to the parcel",
+      "sfx": "knock",
+      "means": "pinned to borough land",
+      "rehook": "",
+      "draw": {
+        "subject": "tack",
+        "action": "drops and pins Dotty to the parcel",
+        "emotion": "proud",
+        "annotation": "PINNED TO BOROUGH LAND"
+      },
+      "choreo": {
+        "primary": "an ink tack drops onto Dotty's page and pins her to the parcel",
+        "reaction": "the tack bounces and her page flutters",
+        "ambient": "snow drifts, the dashed borders crawl, the bush sways, the tracks draw on"
+      },
+      "t": "17.390-19.496",
+      "key": 8
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 19.496,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.12,
+        "offset": 0.756
+      },
+      "offset": 0.756,
+      "vo": "On land set aside for berry picking and skiing, geoengineering is banned outright.",
+      "phrase": "On land set aside",
+      "shows": "the camera slides to a snowy parcel, Dotty leaning toward it on her tack",
+      "sfx": "fade",
+      "means": "a casual-use parcel",
+      "rehook": "",
+      "draw": {
+        "subject": "berry bush",
+        "action": "slides into view on a snowy parcel",
+        "emotion": "curious",
+        "annotation": "A CASUAL-USE PARCEL"
+      },
+      "choreo": {
+        "primary": "the camera slides to a snowy parcel, Dotty leaning toward it on her tack",
+        "reaction": "the bush sways and the tracks draw on",
+        "ambient": "snow drifts, the dashed borders crawl, the bush sways, the tracks draw on"
+      },
+      "t": "19.496-20.030",
+      "key": 9
+    },
+    {
+      "id": 9,
+      "shot": 2,
+      "at_s": 20.03,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 1.29
+      },
+      "offset": 1.29,
+      "vo": "On land set aside for berry picking and skiing, geoengineering is banned outright.",
+      "phrase": "berry picking and skiing,",
+      "shows": "a berry bush shakes its berries as the label prints, BERRY PICKING, and a pair of ski tracks draw on beside it and finish on the word skiing, SKIING",
+      "sfx": "page",
+      "means": "berry picking",
+      "rehook": "",
+      "draw": {
+        "subject": "berry bush",
+        "action": "shakes its berries",
+        "emotion": "curious",
+        "annotation": "BERRY PICKING"
+      },
+      "choreo": {
+        "primary": "a berry bush shakes its berries as the label prints, BERRY PICKING, and a pair of ski tracks draw on beside it and finish on the word skiing, SKIING",
+        "reaction": "the bush sways",
+        "ambient": "snow drifts, the dashed borders crawl, the bush sways, the tracks draw on"
+      },
+      "t": "20.030-23.370",
+      "key": 56
+    },
+    {
+      "id": 10,
+      "shot": 2,
+      "at_s": 23.37,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.63
+      },
+      "offset": 4.63,
+      "vo": "On land set aside for berry picking and skiing, geoengineering is banned outright.",
+      "phrase": "banned outright.",
+      "shows": "an ink NO glyph slaps down across the parcel in front of Dotty and she leans back because there is no form to fill there, GEOENGINEERING BANNED, CASUAL-USE LAND",
+      "sfx": "hit",
+      "means": "geoengineering banned \u00b7 casual-use land",
+      "rehook": "",
+      "draw": {
+        "subject": "NO glyph",
+        "action": "slaps down in front of Dotty and she leans back",
+        "emotion": "wary",
+        "annotation": "GEOENGINEERING BANNED \u00b7 CASUAL-USE LAND"
+      },
+      "choreo": {
+        "primary": "an ink NO glyph slaps down across the parcel in front of Dotty and she leans back because there is no form to fill there, GEOENGINEERING BANNED, CASUAL-USE LAND",
+        "reaction": "the glyph rattles and Dotty leans back",
+        "ambient": "snow drifts, the dashed borders crawl, the bush sways, the tracks draw on"
+      },
+      "t": "23.370-25.040",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 25.04,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The form asks for the chemicals, the flares, how often and how long the flights run, and the outcome they intend.",
+      "phrase": "The form asks for",
+      "shows": "close on Dotty against a pale snow window wall as her four boxes pop open one after another and she reads them aloud, CHEMICALS typing in, the rain gauge with its empty second hook beside her",
+      "sfx": "pop",
+      "means": "the form asks",
+      "rehook": "",
+      "draw": {
+        "subject": "Dotty",
+        "action": "reads her own boxes aloud as they pop open",
+        "emotion": "proud",
+        "annotation": "THE FORM ASKS"
+      },
+      "choreo": {
+        "primary": "close on Dotty against a pale snow window wall as her four boxes pop open one after another and she reads them aloud, CHEMICALS typing in, the rain gauge with its empty second hook beside her",
+        "reaction": "her eyes drop to each box in turn and the cowlick sways",
+        "ambient": "the window light shifts, the typed ink flickers, the cowlick sways, the empty hook swings"
+      },
+      "t": "25.040-27.510",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 3,
+      "at_s": 27.51,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.47
+      },
+      "offset": 2.47,
+      "vo": "The form asks for the chemicals, the flares, how often and how long the flights run, and the outcome they intend.",
+      "phrase": "flares, how often and",
+      "shows": "the FLARES box types in and a tick pops",
+      "sfx": "click",
+      "means": "flares",
+      "rehook": "",
+      "draw": {
+        "subject": "FLARES box",
+        "action": "types in",
+        "emotion": "proud",
+        "annotation": "FLARES"
+      },
+      "choreo": {
+        "primary": "the FLARES box types in and a tick pops",
+        "reaction": "the typed ink flickers on",
+        "ambient": "the window light shifts, the typed ink flickers, the cowlick sways, the empty hook swings"
+      },
+      "t": "27.510-28.570",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 3,
+      "at_s": 28.57,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "The form asks for the chemicals, the flares, how often and how long the flights run, and the outcome they intend.",
+      "phrase": "often and how long",
+      "shows": "the FLIGHTS box types in with how often and how long and a tick pops",
+      "sfx": "click",
+      "means": "how often \u00b7 how long",
+      "rehook": "",
+      "draw": {
+        "subject": "FLIGHTS box",
+        "action": "types in",
+        "emotion": "proud",
+        "annotation": "HOW OFTEN \u00b7 HOW LONG"
+      },
+      "choreo": {
+        "primary": "the FLIGHTS box types in with how often and how long and a tick pops",
+        "reaction": "the typed ink flickers on",
+        "ambient": "the window light shifts, the typed ink flickers, the cowlick sways, the empty hook swings"
+      },
+      "t": "28.570-30.950",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 3,
+      "at_s": 30.95,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.91
+      },
+      "offset": 5.91,
+      "vo": "The form asks for the chemicals, the flares, how often and how long the flights run, and the outcome they intend.",
+      "phrase": "outcome they intend.",
+      "shows": "the INTENDED OUTCOME box fills last and its tick pops, Dotty beaming, the second hook on the gauge beside her bobbing empty",
+      "sfx": "bell",
+      "means": "the outcome they intend",
+      "rehook": "",
+      "draw": {
+        "subject": "INTENDED OUTCOME box",
+        "action": "fills last and ticks",
+        "emotion": "beam",
+        "annotation": "THE OUTCOME THEY INTEND"
+      },
+      "choreo": {
+        "primary": "the INTENDED OUTCOME box fills last and its tick pops, Dotty beaming, the second hook on the gauge beside her bobbing empty",
+        "reaction": "her cheeks glow and the empty hook swings",
+        "ambient": "the window light shifts, the typed ink flickers, the cowlick sways, the empty hook swings"
+      },
+      "t": "30.950-33.000",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 33.0,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It followed August twenty third, when a California company, Rainmaker, flew a cloud seeding drone from two sites about twenty miles northeast of Homer.",
+      "phrase": "It followed August twenty",
+      "shows": "the view whips to a late summer map of Kachemak Bay from above, green shore, low gold sun and blue water with a calendar chip, AUG 23RD",
+      "sfx": "swell",
+      "means": "aug 23rd",
+      "rehook": "rehook: the summer bay",
+      "draw": {
+        "subject": "map",
+        "action": "drops in from above as a late summer bay map",
+        "emotion": "plain",
+        "annotation": "AUG 23RD"
+      },
+      "choreo": {
+        "primary": "the view whips to a late summer map of Kachemak Bay from above, green shore, low gold sun and blue water with a calendar chip, AUG 23RD",
+        "reaction": "the water shimmers and the sun glints",
+        "ambient": "the water shimmers, the sun glints, the rotors blur, the dashes crawl"
+      },
+      "t": "33.000-35.610",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "at_s": 35.61,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.61
+      },
+      "offset": 2.61,
+      "vo": "It followed August twenty third, when a California company, Rainmaker, flew a cloud seeding drone from two sites about twenty miles northeast of Homer.",
+      "phrase": "company, Rainmaker, flew a",
+      "shows": "a putty tag, RAINMAKER, CALIFORNIA, swings in beside the shore",
+      "sfx": "clip",
+      "means": "rainmaker \u00b7 california",
+      "rehook": "",
+      "draw": {
+        "subject": "putty tag",
+        "action": "swings in",
+        "emotion": "plain",
+        "annotation": "RAINMAKER \u00b7 CALIFORNIA"
+      },
+      "choreo": {
+        "primary": "a putty tag, RAINMAKER, CALIFORNIA, swings in beside the shore",
+        "reaction": "the tag swings",
+        "ambient": "the water shimmers, the sun glints, the rotors blur, the dashes crawl"
+      },
+      "t": "35.610-38.230",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 4,
+      "at_s": 38.23,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 5.23
+      },
+      "offset": 5.23,
+      "vo": "It followed August twenty third, when a California company, Rainmaker, flew a cloud seeding drone from two sites about twenty miles northeast of Homer.",
+      "phrase": "drone from two sites",
+      "shows": "a grey seeding drone lifts off from two launch pins and climbs northeast over the shore, A DRONE, TWO SITES",
+      "sfx": "whirr",
+      "means": "a drone \u00b7 two sites",
+      "rehook": "",
+      "draw": {
+        "subject": "SeedDrone",
+        "action": "lifts off two launch pins and climbs",
+        "emotion": "plain",
+        "annotation": "A DRONE \u00b7 TWO SITES"
+      },
+      "choreo": {
+        "primary": "a grey seeding drone lifts off from two launch pins and climbs northeast over the shore, A DRONE, TWO SITES",
+        "reaction": "the rotors blur and its shadow slides over the shore",
+        "ambient": "the water shimmers, the sun glints, the rotors blur, the dashes crawl"
+      },
+      "t": "38.230-39.870",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 4,
+      "at_s": 39.87,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 6.87
+      },
+      "offset": 6.87,
+      "vo": "It followed August twenty third, when a California company, Rainmaker, flew a cloud seeding drone from two sites about twenty miles northeast of Homer.",
+      "phrase": "twenty miles northeast of",
+      "shows": "a dashed line stretches from a Homer pin out to the launch pins, 20 MILES NE OF HOMER",
+      "sfx": "ping",
+      "means": "20 miles ne of homer",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed line",
+        "action": "stretches out from Homer to the pins",
+        "emotion": "plain",
+        "annotation": "20 MILES NE OF HOMER"
+      },
+      "choreo": {
+        "primary": "a dashed line stretches from a Homer pin out to the launch pins, 20 MILES NE OF HOMER",
+        "reaction": "the dashes crawl",
+        "ambient": "the water shimmers, the sun glints, the rotors blur, the dashes crawl"
+      },
+      "t": "39.870-42.420",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 42.42,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "By its own report, it dispersed about three hundred seventy five grams of silver iodide. Rainmaker says that made about a hundredth of an inch of rain, which it puts at nineteen million gallons across a hundred square miles.",
+      "phrase": "By its own report,",
+      "shows": "high over the bay in late summer light the drone's flare rack pours a thin stream toward a weighing pan, ITS REPORT",
+      "sfx": "sizzle",
+      "means": "its report",
+      "rehook": "",
+      "draw": {
+        "subject": "silver iodide",
+        "action": "pours from the drone's rack in a thin stream",
+        "emotion": "plain",
+        "annotation": "ITS REPORT"
+      },
+      "choreo": {
+        "primary": "high over the bay in late summer light the drone's flare rack pours a thin stream toward a weighing pan, ITS REPORT",
+        "reaction": "the stream shimmers and the rotors blur",
+        "ambient": "the rotors blur, the stream shimmers, the flood ripples, sunlight glints"
+      },
+      "t": "42.420-44.270",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 44.27,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 1.85
+      },
+      "offset": 1.85,
+      "vo": "By its own report, it dispersed about three hundred seventy five grams of silver iodide. Rainmaker says that made about a hundredth of an inch of rain, which it puts at nineteen million gallons across a hundred square miles.",
+      "phrase": "three hundred seventy five",
+      "shows": "the thin silver stream builds a small heap on a weighing pan under the drone, SILVER IODIDE, ABOUT 375 G, ITS REPORT",
+      "sfx": "click",
+      "means": "silver iodide \u00b7 about 375 g",
+      "rehook": "",
+      "draw": {
+        "subject": "weighing pan",
+        "action": "grows a small heap under the stream",
+        "emotion": "plain",
+        "annotation": "SILVER IODIDE \u00b7 ABOUT 375 G"
+      },
+      "choreo": {
+        "primary": "the thin silver stream builds a small heap on a weighing pan under the drone, SILVER IODIDE, ABOUT 375 G, ITS REPORT",
+        "reaction": "the heap glints",
+        "ambient": "the rotors blur, the stream shimmers, the flood ripples, sunlight glints"
+      },
+      "t": "44.270-47.890",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 5,
+      "at_s": 47.89,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.47
+      },
+      "offset": 5.47,
+      "vo": "By its own report, it dispersed about three hundred seventy five grams of silver iodide. Rainmaker says that made about a hundredth of an inch of rain, which it puts at nineteen million gallons across a hundred square miles.",
+      "phrase": "Rainmaker says that made",
+      "shows": "a putty tag, RAINMAKER SAYS, swings in over a square map tile that slides up into view and stays on the tile to the end of the shot",
+      "sfx": "flip",
+      "means": "rainmaker says",
+      "rehook": "",
+      "draw": {
+        "subject": "putty tag",
+        "action": "swings in over a square map tile",
+        "emotion": "plain",
+        "annotation": "RAINMAKER SAYS"
+      },
+      "choreo": {
+        "primary": "a putty tag, RAINMAKER SAYS, swings in over a square map tile that slides up into view and stays on the tile to the end of the shot",
+        "reaction": "the tag swings and the tile edges shimmer",
+        "ambient": "the rotors blur, the stream shimmers, the flood ripples, sunlight glints"
+      },
+      "t": "47.890-49.470",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 5,
+      "at_s": 49.47,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.05
+      },
+      "offset": 7.05,
+      "vo": "By its own report, it dispersed about three hundred seventy five grams of silver iodide. Rainmaker says that made about a hundredth of an inch of rain, which it puts at nineteen million gallons across a hundred square miles.",
+      "phrase": "hundredth of an inch",
+      "shows": "a ruler tick marks a hairline height on the tile edge, ABOUT 0.01 IN OF RAIN, RAINMAKER SAYS",
+      "sfx": "pop",
+      "means": "about 0.01 in of rain \u00b7 rainmaker says",
+      "rehook": "",
+      "draw": {
+        "subject": "ruler",
+        "action": "marks a hairline on the tile edge",
+        "emotion": "plain",
+        "annotation": "ABOUT 0.01 IN OF RAIN \u00b7 RAINMAKER SAYS"
+      },
+      "choreo": {
+        "primary": "a ruler tick marks a hairline height on the tile edge, ABOUT 0.01 IN OF RAIN, RAINMAKER SAYS",
+        "reaction": "the tick flashes and settles",
+        "ambient": "the rotors blur, the stream shimmers, the flood ripples, sunlight glints"
+      },
+      "t": "49.470-51.750",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 5,
+      "at_s": 51.75,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 9.33
+      },
+      "offset": 9.33,
+      "vo": "By its own report, it dispersed about three hundred seventy five grams of silver iodide. Rainmaker says that made about a hundredth of an inch of rain, which it puts at nineteen million gallons across a hundred square miles.",
+      "phrase": "nineteen million gallons across",
+      "shows": "a gallon counter rolls up to 19 MILLION GALLONS while a sheet of water floods the whole tile, RAINMAKER SAYS",
+      "sfx": "roll",
+      "means": "rainmaker says \u00b7 19 million gallons",
+      "rehook": "",
+      "draw": {
+        "subject": "gallon counter",
+        "action": "rolls up while a sheet of water floods the tile",
+        "emotion": "plain",
+        "annotation": "RAINMAKER SAYS \u00b7 19 MILLION GALLONS"
+      },
+      "choreo": {
+        "primary": "a gallon counter rolls up to 19 MILLION GALLONS while a sheet of water floods the whole tile, RAINMAKER SAYS",
+        "reaction": "the counter rolls and the flood ripples",
+        "ambient": "the rotors blur, the stream shimmers, the flood ripples, sunlight glints"
+      },
+      "t": "51.750-54.210",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 5,
+      "at_s": 54.21,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 11.79
+      },
+      "offset": 11.79,
+      "vo": "By its own report, it dispersed about three hundred seventy five grams of silver iodide. Rainmaker says that made about a hundredth of an inch of rain, which it puts at nineteen million gallons across a hundred square miles.",
+      "phrase": "square miles.",
+      "shows": "the label 100 SQUARE MILES prints on the tile and the camera dives to its edge where the flood is a thin film thinner than a sheet of paper that matches the water line in a rain gauge beside it, the counter still reading 19 MILLION GALLONS, and the tag ABOUT 0.01 IN, AUG 23RD, RAINMAKER SAYS peels off the tile edge and hangs itself on the gauge's first hook",
+      "sfx": "clunk",
+      "means": "100 square miles \u00b7 about 0.01 in \u00b7 rainmaker says",
+      "rehook": "",
+      "draw": {
+        "subject": "camera",
+        "action": "dives to the tile's edge where the flood is a thin film beside a gauge",
+        "emotion": "curious",
+        "annotation": "100 SQUARE MILES \u00b7 ABOUT 0.01 IN \u00b7 RAINMAKER SAYS"
+      },
+      "choreo": {
+        "primary": "the label 100 SQUARE MILES prints on the tile and the camera dives to its edge where the flood is a thin film thinner than a sheet of paper that matches the water line in a rain gauge beside it, the counter still reading 19 MILLION GALLONS, and the tag ABOUT 0.01 IN, AUG 23RD, RAINMAKER SAYS peels off the tile edge and hangs itself on the gauge's first hook",
+        "reaction": "the film glints and the ruler ticks",
+        "ambient": "the rotors blur, the stream shimmers, the flood ripples, sunlight glints"
+      },
+      "kick": true,
+      "t": "54.210-56.100",
+      "key": 24
+    },
+    {
+      "id": 25,
+      "shot": 6,
+      "at_s": 56.1,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It describes its forecasting software, Stratus, as picking the seeding windows from real time weather data.",
+      "phrase": "It describes its forecasting",
+      "shows": "a forecast panel with an observed line and a predicted line draws itself across a late summer sky, real time weather ticks streaming in",
+      "sfx": "scratch",
+      "means": "real time weather",
+      "rehook": "",
+      "draw": {
+        "subject": "forecast trace",
+        "action": "draws itself across a panel",
+        "emotion": "plain",
+        "annotation": "REAL TIME WEATHER"
+      },
+      "choreo": {
+        "primary": "a forecast panel with an observed line and a predicted line draws itself across a late summer sky, real time weather ticks streaming in",
+        "reaction": "the trace draws and the ticks stream",
+        "ambient": "the trace draws, the ticks stream, the rotors blur, the marker pulses"
+      },
+      "t": "56.100-58.190",
+      "key": 25
+    },
+    {
+      "id": 26,
+      "shot": 6,
+      "at_s": 58.19,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.09
+      },
+      "offset": 2.09,
+      "vo": "It describes its forecasting software, Stratus, as picking the seeding windows from real time weather data.",
+      "phrase": "Stratus, as picking the",
+      "shows": "a putty plate, ITS WORDS, STRATUS, swings onto the panel",
+      "sfx": "clink",
+      "means": "its words \u00b7 stratus",
+      "rehook": "",
+      "draw": {
+        "subject": "putty plate",
+        "action": "swings onto the panel",
+        "emotion": "plain",
+        "annotation": "ITS WORDS \u00b7 STRATUS"
+      },
+      "choreo": {
+        "primary": "a putty plate, ITS WORDS, STRATUS, swings onto the panel",
+        "reaction": "the plate swings",
+        "ambient": "the trace draws, the ticks stream, the rotors blur, the marker pulses"
+      },
+      "t": "58.190-59.130",
+      "key": 60
+    },
+    {
+      "id": 27,
+      "shot": 6,
+      "at_s": 59.13,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.03
+      },
+      "offset": 3.03,
+      "vo": "It describes its forecasting software, Stratus, as picking the seeding windows from real time weather data.",
+      "phrase": "picking the seeding windows",
+      "shows": "a window marker clicks onto the time bar, PICKS THE SEEDING WINDOWS, the drone slides along under it and a hollow question mark with the word WHO rises over the window and then drifts up out of the panel on the whip into the next shot",
+      "sfx": "click",
+      "means": "picks the seeding windows",
+      "rehook": "",
+      "draw": {
+        "subject": "window marker",
+        "action": "clicks onto the time bar and the drone slides along",
+        "emotion": "plain",
+        "annotation": "PICKS THE SEEDING WINDOWS"
+      },
+      "choreo": {
+        "primary": "a window marker clicks onto the time bar, PICKS THE SEEDING WINDOWS, the drone slides along under it and a hollow question mark with the word WHO rises over the window and then drifts up out of the panel on the whip into the next shot",
+        "reaction": "the marker settles and the question bobs",
+        "ambient": "the trace draws, the ticks stream, the rotors blur, the marker pulses"
+      },
+      "t": "59.130-62.580",
+      "key": 26
+    },
+    {
+      "id": 28,
+      "shot": 7,
+      "at_s": 62.58,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So what can a borough reach? The borough mayor, Peter Micciche, says its power is \"limited to borough lands at this point.\"",
+      "phrase": "So what can a",
+      "shows": "the camera starts low inside the lit ground floor looking up the stair as the question mark from the last shot floats down into view at the top of the dashed stair, Dotty at the foot of the stair looking up through two dark floors, SO WHAT CAN A BOROUGH REACH?",
+      "sfx": "drone",
+      "means": "so what can a borough reach?",
+      "rehook": "rehook: the stair",
+      "draw": {
+        "subject": "Dotty",
+        "action": "stands at the foot of the stair looking up",
+        "emotion": "curious",
+        "annotation": "SO WHAT CAN A BOROUGH REACH?"
+      },
+      "choreo": {
+        "primary": "the camera starts low inside the lit ground floor looking up the stair as the question mark from the last shot floats down into view at the top of the dashed stair, Dotty at the foot of the stair looking up through two dark floors, SO WHAT CAN A BOROUGH REACH?",
+        "reaction": "her cowlick sways and the lit window flickers",
+        "ambient": "the window flickers, the dashes crawl, the padlock rattles, snow drifts past the windows"
+      },
+      "t": "62.580-65.550",
+      "key": 27
+    },
+    {
+      "id": 29,
+      "shot": 7,
+      "at_s": 65.55,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "So what can a borough reach? The borough mayor, Peter Micciche, says its power is \"limited to borough lands at this point.\"",
+      "phrase": "mayor, Peter Micciche, says",
+      "shows": "a name card, MAYOR PETER MICCICHE, slides in beside the stair as Dotty starts to climb",
+      "sfx": "clip",
+      "means": "mayor peter micciche",
+      "rehook": "",
+      "draw": {
+        "subject": "mayor card",
+        "action": "slides in beside the stair as Dotty starts to climb",
+        "emotion": "plain",
+        "annotation": "MAYOR PETER MICCICHE"
+      },
+      "choreo": {
+        "primary": "a name card, MAYOR PETER MICCICHE, slides in beside the stair as Dotty starts to climb",
+        "reaction": "the card flutters and Dotty's boots start up",
+        "ambient": "the window flickers, the dashes crawl, the padlock rattles, snow drifts past the windows"
+      },
+      "t": "65.550-68.090",
+      "key": 28
+    },
+    {
+      "id": 30,
+      "shot": 7,
+      "at_s": 68.09,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.51
+      },
+      "offset": 5.51,
+      "vo": "So what can a borough reach? The borough mayor, Peter Micciche, says its power is \"limited to borough lands at this point.\"",
+      "phrase": "\"limited to borough lands",
+      "shows": "Dotty climbs and the solid stair stops at a painted borough line, a quote plate reads LIMITED TO BOROUGH LANDS AT THIS POINT, MAYOR MICCICHE, and the stair beyond it is only dashes rising through a dark floor",
+      "sfx": "knock",
+      "means": "\"limited to borough lands at this point\" \u00b7 mayor micciche",
+      "rehook": "",
+      "draw": {
+        "subject": "painted line",
+        "action": "stops the solid stair at the ceiling of the lit floor",
+        "emotion": "plain",
+        "annotation": "\"LIMITED TO BOROUGH LANDS AT THIS POINT\" \u00b7 MAYOR MICCICHE"
+      },
+      "choreo": {
+        "primary": "Dotty climbs and the solid stair stops at a painted borough line, a quote plate reads LIMITED TO BOROUGH LANDS AT THIS POINT, MAYOR MICCICHE, and the stair beyond it is only dashes rising through a dark floor",
+        "reaction": "her boots plant on the line and the dashes crawl",
+        "ambient": "the window flickers, the dashes crawl, the padlock rattles, snow drifts past the windows"
+      },
+      "t": "68.090-71.060",
+      "key": 29
+    },
+    {
+      "id": 31,
+      "shot": 7,
+      "at_s": 71.06,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "He also said, \"We know that the FAA controls the skies.\"",
+      "phrase": "He also said, \"We",
+      "shows": "the locked round hatch with a padlock, drawn dark at the top of the dashed stair from the start of the shot, wakes and rattles, Dotty goes on tiptoe and the hollow question mark drifts up toward the padlock",
+      "sfx": "alarm",
+      "means": "the hatch wakes",
+      "rehook": "",
+      "draw": {
+        "subject": "FAA hatch",
+        "action": "wakes and rattles its padlock far above the dashed stair",
+        "emotion": "wary",
+        "annotation": "THE HATCH WAKES"
+      },
+      "choreo": {
+        "primary": "the locked round hatch with a padlock, drawn dark at the top of the dashed stair from the start of the shot, wakes and rattles, Dotty goes on tiptoe and the hollow question mark drifts up toward the padlock",
+        "reaction": "the padlock rattles and Dotty goes on tiptoe",
+        "ambient": "the window flickers, the dashes crawl, the padlock rattles, snow drifts past the windows"
+      },
+      "t": "71.060-72.730",
+      "key": 30
+    },
+    {
+      "id": 32,
+      "shot": 7,
+      "at_s": 72.73,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.67
+      },
+      "offset": 1.67,
+      "vo": "He also said, \"We know that the FAA controls the skies.\"",
+      "phrase": "FAA controls the skies.\"",
+      "shows": "an ink plate, FAA, swings onto the hatch as the quote types, THE FAA CONTROLS THE SKIES, MAYOR MICCICHE, and on the word skies the hollow question mark bounces off the padlock once and falls down the dashed stair through the cut",
+      "sfx": "bell",
+      "means": "\"the faa controls the skies\" \u00b7 mayor micciche",
+      "rehook": "",
+      "draw": {
+        "subject": "FAA plate",
+        "action": "swings onto the hatch",
+        "emotion": "wary",
+        "annotation": "\"THE FAA CONTROLS THE SKIES\" \u00b7 MAYOR MICCICHE"
+      },
+      "choreo": {
+        "primary": "an ink plate, FAA, swings onto the hatch as the quote types, THE FAA CONTROLS THE SKIES, MAYOR MICCICHE, and on the word skies the hollow question mark bounces off the padlock once and falls down the dashed stair through the cut",
+        "reaction": "the plate swings",
+        "ambient": "the window flickers, the dashes crawl, the padlock rattles, snow drifts past the windows"
+      },
+      "t": "72.730-74.620",
+      "key": 54
+    },
+    {
+      "id": 33,
+      "shot": 8,
+      "at_s": 74.62,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "And Alaska's Department of Natural Resources says state law doesn't address cloud seeding.",
+      "phrase": "And Alaska's Department of",
+      "shows": "the view cuts to the inside of the dark middle floor at eye level, the dashed stair rising up through a hole in its floor and out through its ceiling toward the hatch, an empty chair and a dead desk, the question mark lands on the desk",
+      "sfx": "hum",
+      "means": "the dark middle floor",
+      "rehook": "",
+      "draw": {
+        "subject": "state office",
+        "action": "cuts to an empty state office where the question mark lands on a dead desk",
+        "emotion": "plain",
+        "annotation": "THE DARK MIDDLE FLOOR"
+      },
+      "choreo": {
+        "primary": "the view cuts to the inside of the dark middle floor at eye level, the dashed stair rising up through a hole in its floor and out through its ceiling toward the hatch, an empty chair and a dead desk, the question mark lands on the desk",
+        "reaction": "the question mark settles and dust drifts",
+        "ambient": "dust drifts, the blinds glow cold, the fixture flickers, the question bobs"
+      },
+      "t": "74.620-75.830",
+      "key": 31
+    },
+    {
+      "id": 34,
+      "shot": 8,
+      "at_s": 75.83,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.21
+      },
+      "offset": 1.21,
+      "vo": "And Alaska's Department of Natural Resources says state law doesn't address cloud seeding.",
+      "phrase": "Department of Natural Resources",
+      "shows": "a plate, DNR, swings onto the dead desk",
+      "sfx": "tick",
+      "means": "dnr",
+      "rehook": "",
+      "draw": {
+        "subject": "DNR plate",
+        "action": "swings onto the dead desk",
+        "emotion": "plain",
+        "annotation": "DNR"
+      },
+      "choreo": {
+        "primary": "a plate, DNR, swings onto the dead desk",
+        "reaction": "the plate swings",
+        "ambient": "dust drifts, the blinds glow cold, the fixture flickers, the question bobs"
+      },
+      "t": "75.830-77.810",
+      "key": 58
+    },
+    {
+      "id": 35,
+      "shot": 8,
+      "at_s": 77.81,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "And Alaska's Department of Natural Resources says state law doesn't address cloud seeding.",
+      "phrase": "law doesn't address cloud",
+      "shows": "the plate types on, STATE LAW DOESN'T ADDRESS CLOUD SEEDING, finishing on the words cloud seeding",
+      "sfx": "type",
+      "means": "state law doesn't address cloud seeding",
+      "rehook": "",
+      "draw": {
+        "subject": "law plate",
+        "action": "types on",
+        "emotion": "plain",
+        "annotation": "STATE LAW DOESN'T ADDRESS CLOUD SEEDING"
+      },
+      "choreo": {
+        "primary": "the plate types on, STATE LAW DOESN'T ADDRESS CLOUD SEEDING, finishing on the words cloud seeding",
+        "reaction": "the plate types",
+        "ambient": "dust drifts, the blinds glow cold, the fixture flickers, the question bobs"
+      },
+      "t": "77.810-79.270",
+      "key": 59
+    },
+    {
+      "id": 36,
+      "shot": 8,
+      "at_s": 79.27,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.65
+      },
+      "offset": 4.65,
+      "vo": "And Alaska's Department of Natural Resources says state law doesn't address cloud seeding.",
+      "phrase": "seeding.",
+      "shows": "a dead ceiling fixture flickers cold twice and fails while the dashed stair in the middle of the room flickers with it",
+      "sfx": "crack",
+      "means": "the question stays",
+      "rehook": "",
+      "draw": {
+        "subject": "ceiling fixture",
+        "action": "flickers cold twice and fails",
+        "emotion": "plain",
+        "annotation": "THE QUESTION STAYS"
+      },
+      "choreo": {
+        "primary": "a dead ceiling fixture flickers cold twice and fails while the dashed stair in the middle of the room flickers with it",
+        "reaction": "the fixture flickers and dust drifts",
+        "ambient": "dust drifts, the blinds glow cold, the fixture flickers, the question bobs"
+      },
+      "t": "79.270-80.420",
+      "key": 32
+    },
+    {
+      "id": 37,
+      "shot": 9,
+      "at_s": 80.42,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That limit isn't a failure. A land permit was never going to measure the weather.",
+      "phrase": "That limit isn't a",
+      "shows": "at the foot of the building in the snow Dotty looks up at the rain gauge spinning its cups above her with nobody reading it, then down at her own tack, and pats it",
+      "sfx": "swell",
+      "means": "that limit",
+      "rehook": "rehook: the fair case",
+      "draw": {
+        "subject": "Dotty",
+        "action": "looks up at the gauge, then down at her own tack",
+        "emotion": "proud",
+        "annotation": "THAT LIMIT"
+      },
+      "choreo": {
+        "primary": "at the foot of the building in the snow Dotty looks up at the rain gauge spinning its cups above her with nobody reading it, then down at her own tack, and pats it",
+        "reaction": "her eyes go up and down and her hand pats the tack",
+        "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways"
+      },
+      "t": "80.420-83.170",
+      "key": 33
+    },
+    {
+      "id": 38,
+      "shot": 9,
+      "at_s": 83.17,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.75
+      },
+      "offset": 2.75,
+      "vo": "That limit isn't a failure. A land permit was never going to measure the weather.",
+      "phrase": "permit was never going",
+      "shows": "a plate swings in over the snow, A LAND PERMIT, while Dotty turns back toward her parcel",
+      "sfx": "tap",
+      "means": "a land permit",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "swings in",
+        "emotion": "proud",
+        "annotation": "A LAND PERMIT"
+      },
+      "choreo": {
+        "primary": "a plate swings in over the snow, A LAND PERMIT, while Dotty turns back toward her parcel",
+        "reaction": "the plate swings",
+        "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways"
+      },
+      "t": "83.170-84.810",
+      "key": 34
+    },
+    {
+      "id": 39,
+      "shot": 9,
+      "at_s": 84.81,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.39
+      },
+      "offset": 4.39,
+      "vo": "That limit isn't a failure. A land permit was never going to measure the weather.",
+      "phrase": "weather.",
+      "shows": "a second plate swings in under the first, NOT A WEATHER GAUGE, as the gauge's cups keep spinning with nobody reading them",
+      "sfx": "clink",
+      "means": "not a weather gauge",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "swings in under the first",
+        "emotion": "proud",
+        "annotation": "NOT A WEATHER GAUGE"
+      },
+      "choreo": {
+        "primary": "a second plate swings in under the first, NOT A WEATHER GAUGE, as the gauge's cups keep spinning with nobody reading them",
+        "reaction": "the second plate swings and the cups spin",
+        "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways"
+      },
+      "t": "84.810-86.100",
+      "key": 53
+    },
+    {
+      "id": 40,
+      "shot": 9,
+      "at_s": 86.1,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The mayor says the borough was misled about what Rainmaker planned. Rainmaker's CEO says it had every permission it needed, and could have done more outreach.",
+      "phrase": "The mayor says the",
+      "shows": "a name card lands on the left pan of a balance on a snow table and the pan drops, MAYOR MICCICHE, MISLED ABOUT WHAT RAINMAKER PLANNED",
+      "sfx": "thud",
+      "means": "mayor \u00b7 misled about what rainmaker planned",
+      "rehook": "",
+      "draw": {
+        "subject": "mayor card",
+        "action": "lands on the left pan of a balance",
+        "emotion": "plain",
+        "annotation": "MAYOR \u00b7 MISLED ABOUT WHAT RAINMAKER PLANNED"
+      },
+      "choreo": {
+        "primary": "a name card lands on the left pan of a balance on a snow table and the pan drops, MAYOR MICCICHE, MISLED ABOUT WHAT RAINMAKER PLANNED",
+        "reaction": "the beam rocks and settles low on the left",
+        "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways"
+      },
+      "t": "86.100-89.950",
+      "key": 35
+    },
+    {
+      "id": 41,
+      "shot": 9,
+      "at_s": 89.95,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.85
+      },
+      "offset": 3.85,
+      "vo": "The mayor says the borough was misled about what Rainmaker planned. Rainmaker's CEO says it had every permission it needed, and could have done more outreach.",
+      "phrase": "Rainmaker's CEO says it",
+      "shows": "a matching card lands on the right pan, RAINMAKER'S CEO, and the beam swings up through level",
+      "sfx": "knock",
+      "means": "rainmaker's ceo",
+      "rehook": "",
+      "draw": {
+        "subject": "CEO card",
+        "action": "lands on the right pan",
+        "emotion": "plain",
+        "annotation": "RAINMAKER'S CEO"
+      },
+      "choreo": {
+        "primary": "a matching card lands on the right pan, RAINMAKER'S CEO, and the beam swings up through level",
+        "reaction": "the beam rocks",
+        "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways"
+      },
+      "t": "89.950-91.830",
+      "key": 36
+    },
+    {
+      "id": 42,
+      "shot": 9,
+      "at_s": 91.83,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 5.73
+      },
+      "offset": 5.73,
+      "vo": "The mayor says the borough was misled about what Rainmaker planned. Rainmaker's CEO says it had every permission it needed, and could have done more outreach.",
+      "phrase": "permission it needed, and",
+      "shows": "the right hand card types its line, HAD EVERY PERMISSION IT NEEDED",
+      "sfx": "type",
+      "means": "had every permission it needed",
+      "rehook": "",
+      "draw": {
+        "subject": "CEO card",
+        "action": "types its line",
+        "emotion": "plain",
+        "annotation": "HAD EVERY PERMISSION IT NEEDED"
+      },
+      "choreo": {
+        "primary": "the right hand card types its line, HAD EVERY PERMISSION IT NEEDED",
+        "reaction": "the line types on",
+        "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways"
+      },
+      "t": "91.830-93.950",
+      "key": 37
+    },
+    {
+      "id": 43,
+      "shot": 9,
+      "at_s": 93.95,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 7.85
+      },
+      "offset": 7.85,
+      "vo": "The mayor says the borough was misled about what Rainmaker planned. Rainmaker's CEO says it had every permission it needed, and could have done more outreach.",
+      "phrase": "outreach.",
+      "shows": "a second smaller line types under the first on the CEO's card, COULD HAVE DONE MORE OUTREACH, and the beam swings back and forth through level and never settles on either side",
+      "sfx": "pop",
+      "means": "could have done more outreach",
+      "rehook": "",
+      "draw": {
+        "subject": "outreach line",
+        "action": "types under the first line on the CEO's own card",
+        "emotion": "plain",
+        "annotation": "COULD HAVE DONE MORE OUTREACH"
+      },
+      "choreo": {
+        "primary": "a second smaller line types under the first on the CEO's card, COULD HAVE DONE MORE OUTREACH, and the beam swings back and forth through level and never settles on either side",
+        "reaction": "the beam swings through level and the snow drifts",
+        "ambient": "snow drifts, the beam rocks, the vane spins, the cowlick sways"
+      },
+      "t": "93.950-95.480",
+      "key": 38
+    },
+    {
+      "id": 44,
+      "shot": 10,
+      "at_s": 95.48,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The assembly has asked the Alaska Legislature to ban weather modification, or at least regulate it. Homer's Representative Sarah Vance says she'll sponsor a bill if she's re-elected.",
+      "phrase": "The assembly has asked",
+      "shows": "back on the dark middle floor a copy of Dotty with two empty boxes slides under a tall door, ALASKA LEGISLATURE, ASSEMBLY ASKED THE LEGISLATURE, the question mark still on the dead desk",
+      "sfx": "slide",
+      "means": "assembly asked the legislature",
+      "rehook": "",
+      "draw": {
+        "subject": "copy of Dotty",
+        "action": "slides under a tall door in the dark middle floor",
+        "emotion": "plain",
+        "annotation": "ASSEMBLY ASKED THE LEGISLATURE"
+      },
+      "choreo": {
+        "primary": "back on the dark middle floor a copy of Dotty with two empty boxes slides under a tall door, ALASKA LEGISLATURE, ASSEMBLY ASKED THE LEGISLATURE, the question mark still on the dead desk",
+        "reaction": "the bill slides and the dust drifts",
+        "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk"
+      },
+      "t": "95.480-97.970",
+      "key": 39
+    },
+    {
+      "id": 45,
+      "shot": 10,
+      "at_s": 97.97,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.49
+      },
+      "offset": 2.49,
+      "vo": "The assembly has asked the Alaska Legislature to ban weather modification, or at least regulate it. Homer's Representative Sarah Vance says she'll sponsor a bill if she's re-elected.",
+      "phrase": "ban weather modification, or",
+      "shows": "a box on the copy of Dotty that slid under the door presses down into an emerald tick, BAN",
+      "sfx": "clip",
+      "means": "ban",
+      "rehook": "",
+      "draw": {
+        "subject": "BAN box",
+        "action": "presses into a tick on the copy of Dotty",
+        "emotion": "plain",
+        "annotation": "BAN"
+      },
+      "choreo": {
+        "primary": "a box on the copy of Dotty that slid under the door presses down into an emerald tick, BAN",
+        "reaction": "the copy shifts",
+        "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk"
+      },
+      "t": "97.970-99.970",
+      "key": 40
+    },
+    {
+      "id": 46,
+      "shot": 10,
+      "at_s": 99.97,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.49
+      },
+      "offset": 4.49,
+      "vo": "The assembly has asked the Alaska Legislature to ban weather modification, or at least regulate it. Homer's Representative Sarah Vance says she'll sponsor a bill if she's re-elected.",
+      "phrase": "least regulate it. Homer's",
+      "shows": "a second box on the copy of Dotty presses down into an emerald tick, OR AT LEAST REGULATE, and the copy waits under the door",
+      "sfx": "clip",
+      "means": "or at least regulate",
+      "rehook": "",
+      "draw": {
+        "subject": "REGULATE box",
+        "action": "presses into a tick on the copy of Dotty",
+        "emotion": "plain",
+        "annotation": "OR AT LEAST REGULATE"
+      },
+      "choreo": {
+        "primary": "a second box on the copy of Dotty presses down into an emerald tick, OR AT LEAST REGULATE, and the copy waits under the door",
+        "reaction": "the copy shifts",
+        "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk"
+      },
+      "t": "99.970-102.470",
+      "key": 41
+    },
+    {
+      "id": 47,
+      "shot": 10,
+      "at_s": 102.47,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 6.99
+      },
+      "offset": 6.99,
+      "vo": "The assembly has asked the Alaska Legislature to ban weather modification, or at least regulate it. Homer's Representative Sarah Vance says she'll sponsor a bill if she's re-elected.",
+      "phrase": "Sarah Vance says she'll",
+      "shows": "a name card, REP. VANCE, slides in beside the door",
+      "sfx": "slide",
+      "means": "rep. vance",
+      "rehook": "",
+      "draw": {
+        "subject": "Vance card",
+        "action": "slides in beside the door",
+        "emotion": "plain",
+        "annotation": "REP. VANCE"
+      },
+      "choreo": {
+        "primary": "a name card, REP. VANCE, slides in beside the door",
+        "reaction": "the card flutters",
+        "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk"
+      },
+      "t": "102.470-103.790",
+      "key": 42
+    },
+    {
+      "id": 48,
+      "shot": 10,
+      "at_s": 103.79,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 8.31
+      },
+      "offset": 8.31,
+      "vo": "The assembly has asked the Alaska Legislature to ban weather modification, or at least regulate it. Homer's Representative Sarah Vance says she'll sponsor a bill if she's re-elected.",
+      "phrase": "sponsor a bill if",
+      "shows": "a dashed outline bill unfolds beside the card, A BILL",
+      "sfx": "scratch",
+      "means": "a bill",
+      "rehook": "rehook: the conditional bill",
+      "draw": {
+        "subject": "dashed bill",
+        "action": "unfolds in dashes beside the card",
+        "emotion": "plain",
+        "annotation": "A BILL"
+      },
+      "choreo": {
+        "primary": "a dashed outline bill unfolds beside the card, A BILL",
+        "reaction": "the dashes crawl",
+        "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk"
+      },
+      "t": "103.790-104.850",
+      "key": 43
+    },
+    {
+      "id": 49,
+      "shot": 10,
+      "at_s": 104.85,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 9.37
+      },
+      "offset": 9.37,
+      "vo": "The assembly has asked the Alaska Legislature to ban weather modification, or at least regulate it. Homer's Representative Sarah Vance says she'll sponsor a bill if she's re-elected.",
+      "phrase": "re-elected.",
+      "shows": "the words IF RE-ELECTED print under the dashed bill and the dead fixture comes back as a dashed outline glow above the desk lighting the question mark, THE LEGISLATURE, IF IT ACTS",
+      "sfx": "bloom",
+      "means": "the legislature \u00b7 if it acts",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed light",
+        "action": "comes on under the question mark",
+        "emotion": "plain",
+        "annotation": "THE LEGISLATURE \u00b7 IF IT ACTS"
+      },
+      "choreo": {
+        "primary": "the words IF RE-ELECTED print under the dashed bill and the dead fixture comes back as a dashed outline glow above the desk lighting the question mark, THE LEGISLATURE, IF IT ACTS",
+        "reaction": "the dashed light pulses",
+        "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk"
+      },
+      "t": "104.850-107.390",
+      "key": 44
+    },
+    {
+      "id": 50,
+      "shot": 10,
+      "at_s": 107.39,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 1.21
+      },
+      "offset": 1.21,
+      "vo": "So the form is a template the state could copy.",
+      "phrase": "template the state could",
+      "shows": "a copier whirs and feeds copies of Dotty up the dashed stair into the dark middle floor A TEMPLATE THE STATE COULD COPY, the copies rising up the dashed stair through the floor hole, one copy waiting on the top step in front of the dark door",
+      "sfx": "whirr",
+      "means": "a template the state could copy",
+      "rehook": "",
+      "draw": {
+        "subject": "copier",
+        "action": "feeds copies of Dotty up the dashed stair into the dark state office",
+        "emotion": "proud",
+        "annotation": "A TEMPLATE THE STATE COULD COPY"
+      },
+      "choreo": {
+        "primary": "a copier whirs and feeds copies of Dotty up the dashed stair into the dark middle floor A TEMPLATE THE STATE COULD COPY, the copies rising up the dashed stair through the floor hole, one copy waiting on the top step in front of the dark door",
+        "reaction": "the copies climb",
+        "ambient": "dust drifts, the dashed stair crawls, the blinds glow cold, the question bobs on the desk"
+      },
+      "t": "107.390-109.580",
+      "key": 45
+    },
+    {
+      "id": 51,
+      "shot": 11,
+      "at_s": 109.58,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But it only asks what a flight intends. Rainmaker says it checks its results with radar and satellite data.",
+      "phrase": "But it only asks",
+      "shows": "close on Dotty beside the rain gauge in the snow window light, her four boxes ticked under a plate that prints WHAT IT INTENDS on the word, the gauge tagged ABOUT 0.01 IN, RAINMAKER SAYS, on its first hook and its second hook bare",
+      "sfx": "click",
+      "means": "what it intends",
+      "rehook": "",
+      "draw": {
+        "subject": "Dotty",
+        "action": "stands with her filled page beside the rain gauge",
+        "emotion": "wary",
+        "annotation": "WHAT IT INTENDS"
+      },
+      "choreo": {
+        "primary": "close on Dotty beside the rain gauge in the snow window light, her four boxes ticked under a plate that prints WHAT IT INTENDS on the word, the gauge tagged ABOUT 0.01 IN, RAINMAKER SAYS, on its first hook and its second hook bare",
+        "reaction": "the empty hook swings and her eyes drop to it",
+        "ambient": "the window light shifts, the empty hook swings, the radar sweeps, the cowlick sways"
+      },
+      "t": "109.580-113.250",
+      "key": 46
+    },
+    {
+      "id": 52,
+      "shot": 11,
+      "at_s": 113.25,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 3.67
+      },
+      "offset": 3.67,
+      "vo": "But it only asks what a flight intends. Rainmaker says it checks its results with radar and satellite data.",
+      "phrase": "checks its results with",
+      "shows": "a putty plate with a radar sweep, ITS WORDS, RADAR AND SATELLITE CHECK, swings in and Dotty turns and holds her filled page up to the sweep, the sweep passes over it and her four boxes stay intent only",
+      "sfx": "ping",
+      "means": "its words \u00b7 radar and satellite check",
+      "rehook": "",
+      "draw": {
+        "subject": "radar sweep",
+        "action": "swings in on a putty plate",
+        "emotion": "plain",
+        "annotation": "ITS WORDS \u00b7 RADAR AND SATELLITE CHECK"
+      },
+      "choreo": {
+        "primary": "a putty plate with a radar sweep, ITS WORDS, RADAR AND SATELLITE CHECK, swings in and Dotty turns and holds her filled page up to the sweep, the sweep passes over it and her four boxes stay intent only",
+        "reaction": "the sweep turns and Dotty lifts her page",
+        "ambient": "the window light shifts, the empty hook swings, the radar sweeps, the cowlick sways"
+      },
+      "t": "113.250-116.460",
+      "key": 47
+    },
+    {
+      "id": 53,
+      "shot": 12,
+      "at_s": 116.46,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The reports we found don't describe an outside check of that rain.",
+      "phrase": "The reports we found",
+      "shows": "a stack of report pages riffles past in front of the rain gauge, THE REPORTS WE FOUND, the second hook still empty",
+      "sfx": "page",
+      "means": "the reports we found",
+      "rehook": "",
+      "draw": {
+        "subject": "report pages",
+        "action": "riffle past the rain gauge",
+        "emotion": "wary",
+        "annotation": "THE REPORTS WE FOUND"
+      },
+      "choreo": {
+        "primary": "a stack of report pages riffles past in front of the rain gauge, THE REPORTS WE FOUND, the second hook still empty",
+        "reaction": "the pages riffle and the empty hook swings",
+        "ambient": "the pages riffle, the tag swings, the film glints, snow falls"
+      },
+      "t": "116.460-118.370",
+      "key": 48
+    },
+    {
+      "id": 54,
+      "shot": 12,
+      "at_s": 118.37,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 1.91
+      },
+      "offset": 1.91,
+      "vo": "The reports we found don't describe an outside check of that rain.",
+      "phrase": "outside check of that",
+      "shows": "a tag drops onto the empty second hook and swings, OUTSIDE CHECK, NOT IN THE REPORTS WE FOUND, held legible to the end of the shot",
+      "sfx": "stamp",
+      "means": "outside check \u00b7 not in the reports we found",
+      "rehook": "",
+      "draw": {
+        "subject": "tag",
+        "action": "drops onto the empty hook and swings",
+        "emotion": "plain",
+        "annotation": "OUTSIDE CHECK \u00b7 NOT IN THE REPORTS WE FOUND"
+      },
+      "choreo": {
+        "primary": "a tag drops onto the empty second hook and swings, OUTSIDE CHECK, NOT IN THE REPORTS WE FOUND, held legible to the end of the shot",
+        "reaction": "the tag swings",
+        "ambient": "the pages riffle, the tag swings, the film glints, snow falls"
+      },
+      "kick": true,
+      "t": "118.370-119.350",
+      "key": 49
+    },
+    {
+      "id": 55,
+      "shot": 12,
+      "at_s": 119.35,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.89
+      },
+      "offset": 2.89,
+      "vo": "The reports we found don't describe an outside check of that rain.",
+      "phrase": "rain.",
+      "shows": "a small inset of the hairline film from the dive glints beside the gauge, THAT RAIN, desaturated",
+      "sfx": "tap",
+      "means": "that rain",
+      "rehook": "",
+      "draw": {
+        "subject": "hairline film",
+        "action": "glints in a small inset beside the gauge",
+        "emotion": "wary",
+        "annotation": "THAT RAIN"
+      },
+      "choreo": {
+        "primary": "a small inset of the hairline film from the dive glints beside the gauge, THAT RAIN, desaturated",
+        "reaction": "the film glints",
+        "ambient": "the pages riffle, the tag swings, the film glints, snow falls"
+      },
+      "t": "119.350-120.640",
+      "key": 50
+    },
+    {
+      "id": 56,
+      "shot": 13,
+      "at_s": 120.64,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A form can ask what a flight plans to do. Who asks what came out?",
+      "phrase": "A form can ask",
+      "shows": "a hard cut to the frame one wide at flat noon, the whole building under its two dark floors, the rain gauge on its post and Dotty small in the snow beside it looking from the gauge to the camera",
+      "sfx": "creak",
+      "means": "looks from the gauge to you",
+      "rehook": "",
+      "draw": {
+        "subject": "Dotty",
+        "action": "looks from the gauge to the camera",
+        "emotion": "ask",
+        "annotation": "LOOKS FROM THE GAUGE TO YOU"
+      },
+      "choreo": {
+        "primary": "a hard cut to the frame one wide at flat noon, the whole building under its two dark floors, the rain gauge on its post and Dotty small in the snow beside it looking from the gauge to the camera",
+        "reaction": "the tagged hook swings and snow drifts",
+        "ambient": "snow drifts, the tagged hook swings, the window glows, the vane turns"
+      },
+      "t": "120.640-123.610",
+      "key": 51
+    },
+    {
+      "id": 57,
+      "shot": 13,
+      "at_s": 123.61,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "A form can ask what a flight plans to do. Who asks what came out?",
+      "phrase": "Who asks what came",
+      "shows": "the question WHO ASKS WHAT CAME OUT? holds over the wide under flat noon light, the building with its one lit floor",
+      "sfx": "hush",
+      "means": "who asks what came out?",
+      "rehook": "",
+      "draw": {
+        "subject": "plate",
+        "action": "holds the question",
+        "emotion": "ask",
+        "annotation": "WHO ASKS WHAT CAME OUT?"
+      },
+      "choreo": {
+        "primary": "the question WHO ASKS WHAT CAME OUT? holds over the wide under flat noon light, the building with its one lit floor",
+        "reaction": "snow drifts and the window glows",
+        "ambient": "snow drifts, the tagged hook swings, the window glows, the vane turns"
+      },
+      "t": "123.610-124.760",
+      "key": 52
+    }
+  ]
+}
