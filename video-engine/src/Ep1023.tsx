@@ -153,6 +153,7 @@ const GF_Y = floorTop('ground') + FLOOR_H - 40;      // the ground floor's walki
 const SK_Y = floorTop('sky') + FLOOR_H - 40;
 const STAIR_SOLID = 0.43;                            // the painted borough line is the ceiling of the lit floor
 const TAG1 = ['ABOUT 0.01 IN', 'AUG 23RD', 'RAINMAKER SAYS'];
+const TAG2_TEXT = 'NOT IN THE REPORTS WE FOUND';
 const TAG2 = ['OUTSIDE CHECK', 'NOT IN THE REPORTS', 'WE FOUND'];
 
 /** a hollow question mark, ink outline and bone stroke, never amber or emerald */
@@ -224,7 +225,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         <Plate x={540} text="THE WEATHER RULE IS A FORM" displayLines={['THE WEATHER RULE', 'IS A FORM']} y={640} size={44} tone="ink" p={ease(f, 10, 8) * (f < t2 + 2 ? 1 : 1 - ease(f, t2 + 2, 8))} />
-        <Plate x={540} text="OCT 20TH" y={640} size={52} tone="emerald" p={ease(f, t3 + 4, 8)} />
+        <Plate x={540} text="OCT 20TH" y={640} size={52} tone="emerald" p={ease(f, t3 + 4, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
         <Plate x={540} text="KENAI PENINSULA BOROUGH ASSEMBLY" displayLines={['KENAI PENINSULA', 'BOROUGH ASSEMBLY']} y={800} size={34} tone="paper" p={ease(f, t3 + 46, 10)} />
         <Plate x={540} text="IN EFFECT RIGHT AWAY" y={980} size={38} tone="emerald" p={ease(f, t5, 8)} />
       </>}>
@@ -291,9 +292,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate x={540} text="BOROUGH LAND" y={560} size={40} tone="emerald" p={ease(f, t6, 8) * (f < t7 - 2 ? 1 : 1 - ease(f, t7 - 2, 8))} />
         <Plate x={540} text="COMMERCIAL LEASE OR LAND USE PERMIT" displayLines={['COMMERCIAL LEASE', 'OR LAND USE PERMIT']} y={620} size={36} tone="ink" p={ease(f, t7 + 8, 8) * (f < t9 - 2 ? 1 : 1 - ease(f, t9 - 2, 8))} />
-        <Plate x={540} text="BERRY PICKING" y={600} size={38} tone="paper" p={ease(f, t56, 8) * (f < t10 ? 1 : 0)} />
-        <Plate x={540} text="SKIING" y={668} size={38} tone="paper" p={ease(f, t56 + 28, 8) * (f < t10 ? 1 : 0)} />
-        <Plate x={540} text="GEOENGINEERING BANNED · CASUAL-USE LAND" displayLines={['GEOENGINEERING BANNED', 'CASUAL-USE LAND']} y={640} size={36} tone="ink" p={ease(f, t10 + 4, 8)} />
+        <Plate x={540} text="BERRY PICKING" y={600} size={38} tone="paper" p={ease(f, t56, 8) * (f < t10 ? 1 : 0)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
+        <Plate x={540} text="SKIING" y={668} size={38} tone="paper" p={ease(f, t56 + 28, 8) * (f < t10 ? 1 : 0)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
+        <Plate x={540} text="GEOENGINEERING BANNED · CASUAL-USE LAND" displayLines={['GEOENGINEERING BANNED', 'CASUAL-USE LAND']} y={640} size={36} tone="ink" p={ease(f, t10 + 4, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
       </>}>
       <SVG>
         <SnowMorningBG f={g} horizon={470} id="s2" flakes={50} near={false} />
@@ -340,8 +341,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.06} oy={1000}
       overlay={<>
         <Plate x={540} text="THE FORM ASKS" y={560} size={40} tone="emerald" p={ease(f, t11, 8) * (f < t13 - 2 ? 1 : 1 - ease(f, t13 - 2, 6))} />
-        <Plate x={540} text="HOW OFTEN · HOW LONG" y={560} size={38} tone="ink" p={ease(f, t13 + 2, 8) * (f < t14 - 2 ? 1 : 1 - ease(f, t14 - 2, 6))} />
-        <Plate x={540} text="THE OUTCOME THEY INTEND" y={560} size={36} tone="emerald" p={ease(f, t14 + 2, 8)} />
+        <Plate x={540} text="HOW OFTEN · HOW LONG" y={560} size={38} tone="ink" p={ease(f, t13 + 2, 8) * (f < t14 - 2 ? 1 : 1 - ease(f, t14 - 2, 6))} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
+        <Plate x={540} text="THE OUTCOME THEY INTEND" y={560} size={36} tone="emerald" p={ease(f, t14 + 2, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
       </>}>
       <SVG>
         <PaperRoomBG f={g} deskY={1250} id="s3" />
@@ -441,7 +442,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
 const WeighingPan: React.FC<{x: number; y: number; heap: number; f: number}> = ({x, y, heap, f}) => {
   const t = tones(PM.steel);
   return (
-    <g transform={`translate(${x},${y})`}>
+    <g transform={`translate(${x + 3 * Math.sin(f / 23)},${y + 5 * Math.sin(f / 9)})`}>
       <FormGradient id={`wp${Math.round(x)}`} t={t} softness={0.6} />
       <ContactShadow cx={0} cy={8} rx={120} ry={16} opacity={0.34} blur={9} />
       <path d="M-40,0 L-26,-70 L26,-70 L40,0 Z" fill={`url(#wp${Math.round(x)})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
@@ -474,7 +475,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate x={540} text="ITS REPORT · SILVER IODIDE" displayLines={['ITS REPORT', 'SILVER IODIDE']} y={600} size={36} tone="putty" p={ease(f, t19, 8) * (1 - phaseB)} />
         <Plate x={540} text="ABOUT 375 G · ITS REPORT" y={1090} size={34} tone="ink" p={ease(f, t20, 8) * (1 - phaseB)} />
-        <Plate x={540} text={`RAINMAKER SAYS · ${f >= t23 ? count : 0} MILLION GALLONS`} displayLines={['RAINMAKER SAYS', `${f >= t23 ? count : 0} MILLION GALLONS`]} y={600} size={36} tone="ink" p={ease(f, t23, 8)} />
+        <Plate x={540} text="RAINMAKER SAYS · 19 MILLION GALLONS" displayLines={['RAINMAKER SAYS', `${f >= t23 ? count : 0} MILLION GALLONS`]} y={600} size={36} tone="ink" p={ease(f, t23, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
         <Plate x={540} text="100 SQUARE MILES" y={720} size={34} tone="paper" p={ease(f, t24 - 2, 8) * (1 - phaseC)} />
         {/* the cross section the dive arrives at, in screen space */}
         {phaseC > 0.01 && (
@@ -493,7 +494,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         {phaseC > 0.01 && (
           <g opacity={phaseC}>
             <g transform={`translate(${tagX},${tagY})`}><PTag lines={TAG1} size={20} tone="putty" k={1} f={g} drop={30} sway={tagPeel < 0.99 ? 0 : 3} /></g>
-            <Plate x={400} text="ABOUT 0.01 IN" y={1060} size={34} tone="paper" p={ease(f, t24 + 22, 8)} />
+            <Plate x={400} text="ABOUT 0.01 IN" y={1060} size={34} tone="paper" p={ease(f, t24 + 22, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
           </g>
         )}
       </>}>
@@ -527,7 +528,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             {f < t24 + 30 && <PTag lines={['RAINMAKER SAYS']} size={24} tone="putty" k={1} f={g} drop={34} sway={3} />}
           </g>
         </g>
-        {f >= t22 && f < t24 && <Plate x={905} text="ABOUT 0.01 IN OF RAIN" displayLines={['ABOUT 0.01 IN', 'OF RAIN']} y={880 + 1900 * (1 - phaseB)} size={24} tone="paper" p={ease(f, t22 + 4, 8)} />}
+        {f >= t22 && f < t24 && <Plate x={860} text="ABOUT 0.01 IN" displayLines={["ABOUT 0.01 IN", "OF RAIN"]} y={880 + 1900 * (1 - phaseB)} size={24} tone="paper" p={ease(f, t22 + 4, 8)} />}
       </SVG>
     </Frame>
   );
@@ -552,7 +553,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         <Plate x={540} text="REAL TIME WEATHER" y={570} size={34} tone="ink" p={ease(f, t25 + 4, 8) * (f < t60 - 2 ? 1 : 0)} />
-        <Plate x={540} text="ITS WORDS · STRATUS" y={570} size={38} tone="putty" p={ease(f, t60, 8)} />
+        <Plate x={540} text="ITS WORDS · STRATUS" y={570} size={38} tone="putty" p={ease(f, t60, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
         <Plate x={540} text="PICKS THE SEEDING WINDOWS" displayLines={['PICKS THE', 'SEEDING WINDOWS']} y={1235} size={34} tone="paper" p={ease(f, t26 + 6, 8)} />
       </>}>
       <SVG>
@@ -828,8 +829,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="ASSEMBLY ASKED THE LEGISLATURE" displayLines={['ASSEMBLY ASKED', 'THE LEGISLATURE']} y={600} size={38} tone="ink" p={ease(f, t39 + 4, 8) * (f < t42 ? 1 : 0)} />
         <Plate x={300} text="BAN" y={760} size={40} tone="emerald" p={ease(f, t40, 8) * (f < t44 ? 1 : 0)} />
         <Plate x={300} text="OR AT LEAST REGULATE" displayLines={['OR AT LEAST', 'REGULATE']} y={860} size={34} tone="emerald" p={ease(f, t41, 8) * (f < t44 ? 1 : 0)} />
-        <Plate x={540} text="THE LEGISLATURE · IF IT ACTS" displayLines={['THE LEGISLATURE', 'IF IT ACTS']} y={640} size={40} tone="ink" p={ease(f, t44 + 2, 8) * (f < t45 - 2 ? 1 : 1 - ease(f, t45 - 2, 8))} />
-        <Plate x={540} text="A TEMPLATE THE STATE COULD COPY" displayLines={['A TEMPLATE THE', 'STATE COULD COPY']} y={640} size={40} tone="paper" p={ease(f, t45 + 4, 8)} />
+        <Plate x={540} text="THE LEGISLATURE · IF IT ACTS" displayLines={['THE LEGISLATURE', 'IF IT ACTS']} y={640} size={40} tone="ink" p={ease(f, t44 + 2, 8) * (f < t45 - 2 ? 1 : 1 - ease(f, t45 - 2, 8))} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
+        <Plate x={540} text="A TEMPLATE THE STATE COULD COPY" displayLines={['A TEMPLATE THE', 'STATE COULD COPY']} y={640} size={40} tone="paper" p={ease(f, t45 + 4, 8)} /> {/* plate-overlap-ok: sequenced, the earlier plate retires before this one lands */}
       </>}>
       <SVG>
         <OfficeBG g={g} dashed={glow} holeX={210} />
