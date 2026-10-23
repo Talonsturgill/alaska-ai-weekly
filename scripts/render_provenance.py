@@ -93,9 +93,19 @@ def mix_board_guard(root=ROOT):
                                  'list in the same change, or the mix can go stale silently.')
 
 
+def _not_pixels(rel):
+    """Markdown under video-engine/src is documentation the bundler never loads (no .md import or
+    loader exists). Machine pass 2026-10-23: registering Norm in ASSET_MANIFEST.md during the 10-18
+    render failed encode with "source contents changed" and cost a 15 minute cut for a file that
+    can't change a pixel. Run mid-render registration (and asset_index.py) without that risk."""
+    return rel.startswith('video-engine/src/') and rel.endswith('.md')
+
+
 def snapshot(root=ROOT, patterns=RENDER_PATTERNS):
     root = Path(root)
     files = sorted({p for pat in patterns for p in root.glob(pat) if p.is_file()})
+    if patterns is RENDER_PATTERNS:
+        files = [p for p in files if not _not_pixels(str(p.relative_to(root)))]
     hashed = patterns is MIX_PATTERNS
     return {str(p.relative_to(root)): (board_audio_sha(p) if hashed and str(p.relative_to(root)) == BOARD
                                        else sha(p))
@@ -344,6 +354,20 @@ def self_test():
     mix_board_guard(ROOT)   # the real mix sources read no unhashed board field
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
+        lib = root / 'video-engine/src/lib'
+        lib.mkdir(parents=True)
+        (lib / 'ASSET_MANIFEST.md').write_text('a')
+        (lib / 'kit.tsx').write_text('a')
+        before = snapshot(root)
+        (lib / 'ASSET_MANIFEST.md').write_text('a registered asset')
+        (lib / 'ASSET_INDEX.md').write_text('regenerated index')
+        if snapshot(root) != before:
+            raise AssertionError('a manifest or index edit must not invalidate the render receipt')
+        (lib / 'kit.tsx').write_text('changed art')
+        if snapshot(root) == before:
+            raise AssertionError('an engine source edit must invalidate the render receipt')
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
         for rel in MIX_REQUIRED + MIX_READERS + ('scripts/render_provenance.py',):
             dst = root / rel
             dst.parent.mkdir(parents=True, exist_ok=True)
@@ -391,7 +415,8 @@ def self_test():
         else:
             raise AssertionError('a mix reading an unhashed board field must be refused')
     print('render_provenance self-test: PASS (prose edit keeps the mix receipt; timing, sound, '
-          'arc and new fields break it; an unhashed read is refused)')
+          'arc and new fields break it; an unhashed read is refused; a manifest edit keeps the '
+          'render receipt and an engine edit breaks it)')
 
 
 def main():
