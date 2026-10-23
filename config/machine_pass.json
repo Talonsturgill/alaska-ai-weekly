@@ -1,18 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "shipped": [
-      "make_cut-should-run-plate-gates-before-the-render",
-      "caption-fixups-for-spelled-initialisms",
-      "caption-fixups-not-in-script-stage",
-      "metaphor-tag-crops-at-right-edge",
-      "atomic-claims-plan-check (partly)"
+      "label-footprint-check (with label-occluded-by-later-art)",
+      "gauge-label-prop-default",
+      "beat-too-short-for-evidence-strip",
+      "sfx-names-fall-to-tick (with mix-tick-ceiling-mapping)",
+      "asset-manifest-edit-invalidates-render"
     ],
     "engine_advance": null,
     "escalated": [
-      "claims-density-needs-atomic-claims (does a subset claim count toward density)",
-      "hangtag-baseline-on-border text_fit assertion",
-      "caption-splitter-two-way-only"
+      "panel-blocker-definition (the hard-blocker list is the owner's: a 0.5 s floor narrows what fails a film)"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

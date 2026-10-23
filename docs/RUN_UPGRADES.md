@@ -3904,3 +3904,8 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - Shipped: 13-shot film on the Kenai Peninsula Borough weather modification permit rule (Dotty the permit form, a rain gauge throughline). Panel median 7.42 against 7.0 (7.43, 7.34, 7.42) on the ninth cut, editor ship. Caption Gate B ended at 8.45 against 8.5 at the five-round cap, disclosed in the draft.
 - In-run fixes: card widths and camera span on the balance shot, the FAA sign hidden behind its quote card, the closing wide's Dotty and sign placement, the stamp text retired under the effect tag, the gauge's doubled scale label, soil strata under the dive, one 0.01 inch label. Standard updated with the label-footprint lessons.
 - Queued for the machine pass: 5 items (docs/MACHINE_QUEUE.md, 2026-10-23).
+
+## 2026-10-23 weekly machine pass
+- Shipped: scripts/label_footprint_check.py, a make_cut source gate that renders the film in Chrome every third frame and fails a label a character, a card or the frame edge cuts for 0.5 s or more (it fails the 10-23 first cut on every label the editor and panel named over four cuts, and passes the shipped cut); build_evidence --check-plan runs before the render and names every beat too short for its strip; an unknown board sfx name no longer falls to tick and each mix names it (scripts/sfx_names.py); RainGauge draws its scale only when asked; an ASSET_MANIFEST or ASSET_INDEX edit no longer invalidates a render.
+- Escalated: panel-blocker-definition, because the hard-blocker list belongs to the owner.
+- Seen, not fixed: tests/test_build_evidence_clock.py test_explicit_at_s_remains_authoritative and 11 errors in tests/test_render_provenance.py fail on main before this pass.
