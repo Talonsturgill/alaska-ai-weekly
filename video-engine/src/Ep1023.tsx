@@ -482,9 +482,15 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <g opacity={phaseC}>
             <rect data-band="ok" x={0} y={0} width={1080} height={1920} fill="#D9E8DA" />
             <rect data-band="ok" x={0} y={1180} width={1080} height={740} fill={PM.summerGrassDeep} stroke={INK} strokeWidth={8} />
-            <rect x={0} y={1176} width={1080} height={4} fill={PM.water} />
+            <rect x={0} y={1172} width={1080} height={8} fill="#7FD8F0" stroke={INK} strokeWidth={1.5} />
             {/* soil strata, grass blades, a glint on the film and a low sun so the slab and sky are modelled */}
-            {[1260, 1360, 1470, 1590, 1720, 1840].map((yy, i) => <path key={yy} d={`M0,${yy} Q270,${yy - 14 + 8 * i % 5} 540,${yy + 6} T1080,${yy - 4}`} stroke={INK} strokeWidth={3} opacity={0.22} fill="none" />)}
+            <rect x={4} y={1184} width={1072} height={118} fill="#6B4F36" opacity={0.95} />
+            <rect x={4} y={1302} width={1072} height={150} fill="#A9794E" />
+            <rect x={4} y={1452} width={1072} height={200} fill="#9A978F" />
+            <rect x={4} y={1652} width={1072} height={264} fill="#5C6670" />
+            {[1302, 1452, 1652].map((yy) => <path key={yy} d={`M0,${yy} L1080,${yy}`} stroke={INK} strokeWidth={5} />)}
+            {Array.from({length: 40}).map((_, i) => <circle key={i} cx={30 + ((i * 83) % 1020)} cy={1475 + ((i * 47) % 160)} r={6 + (i % 3) * 3} fill="#C9C5BB" stroke={INK} strokeWidth={2} />)}
+            {Array.from({length: 14}).map((_, i) => <path key={i} d={`M${i * 80},1916 L${i * 80 + 80},1656`} stroke={INK} strokeWidth={2.5} opacity={0.3} />)}
             {Array.from({length: 46}).map((_, i) => <path key={i} d={`M${12 + i * 23},1180 l${(i % 3) - 1},${-18 - (i % 4) * 6}`} stroke={PM.summerGrass} strokeWidth={4} strokeLinecap="round" />)}
             {Array.from({length: 26}).map((_, i) => <ellipse key={i} cx={40 + ((i * 97) % 1000)} cy={1230 + ((i * 61) % 600)} rx={14 + (i % 4) * 5} ry={6 + (i % 3) * 3} fill={PM.summerGrass} opacity={0.35} />)}
             <ellipse cx={540} cy={1166} rx={380} ry={7} fill="#FFFFFF" opacity={0.55} />
@@ -620,7 +626,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate x={270} text="MAYOR PETER MICCICHE" displayLines={['MAYOR PETER', 'MICCICHE']} y={1000} size={28} tone="paper" p={ease(f, t28, 10) * (f < t29 - 6 ? 1 : 1 - ease(f, t29 - 6, 8))} rot={-3} />
       </>}>
       <SVG>
-        <BuildingWorld g={g} signs={{ground: 1, sky: ease(f, t54 - 2, 8), state: 0}} tag1={1} lit={{ground: 1, state: 0.08, sky: 0.05}}>
+        <BuildingWorld g={g} signs={{ground: 1, sky: ease(f, t54 - 2, 8), state: 0}} tag1={0} lit={{ground: 1, state: 0.08, sky: 0.05}}>
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} k={f < t54 + 60 ? 1 : 0} />
           <Stair f={g} draw={draw} solidTo={STAIR_SOLID} />
           <path d={`M${BLD.x + 4},${floorTop('state') + FLOOR_H} L${BLD.x + BLD.w - 4},${floorTop('state') + FLOOR_H}`} stroke={PM.marigold} strokeWidth={8} strokeDasharray="30 16" strokeDashoffset={-g * 0.6} opacity={lineK} />
@@ -977,11 +983,11 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="WHO ASKS WHAT CAME OUT?" displayLines={['WHO ASKS', 'WHAT CAME OUT?']} y={640} size={48} tone="ink" p={ease(f, t52, 8)} />
       </>}>
       <SVG>
-        <BuildingWorld g={g} noon tag1={1} tag2={1} lit={{ground: 1, state: 0.06, sky: 0.04}} signs={{ground: 1}}>
+        <BuildingWorld g={g} noon tag1={1} tag2={1} gaugeX={150} gaugeScale={0.8} lit={{ground: 1, state: 0.06, sky: 0.04}} signs={{ground: 1}}>
           <QMark x={540} y={floorTop('sky') + 130} f={g} size={84} />
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} />
         </BuildingWorld>
-        <Dotty x={800} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
+        <Dotty x={930} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
       </SVG>
     </Frame>
   );
