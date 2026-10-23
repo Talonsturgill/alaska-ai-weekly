@@ -230,7 +230,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="IN EFFECT RIGHT AWAY" y={980} size={38} tone="emerald" p={ease(f, t5, 8)} />
       </>}>
       <SVG>
-        <BuildingWorld g={g} signs={{ground: ease(f, t2 + 8, 14)}}>
+        <BuildingWorld g={g} signs={{ground: ease(f, t2 + 34, 14)}}>
           <QMark x={540} y={floorTop('sky') + 130} f={g} size={84} k={qk} />
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} k={qk} />
           <rect x={BLD.x + 370} y={GF_Y - 6} width={140} height={14} rx={5} fill="#1B1620" stroke={INK} strokeWidth={4} />
@@ -501,7 +501,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             {Array.from({length: 11}).map((_, i) => <path key={i} d={`M${i % 5 === 0 ? 120 : 134},${1180 - i * 30} L150,${1180 - i * 30}`} stroke={INK} strokeWidth={3} />)}
             <text x={112} y={870} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={26} fill={INK}>1 IN</text>
             <path d="M170,1174 L330,1090" stroke={INK} strokeWidth={5} />
-            <RainGauge x={560} y={1180} f={g} scale={1.3} tag1={undefined} tag2={undefined} id="s5g" />
+            <RainGauge x={560} y={1180} f={g} scale={1.3} labels={false} tag1={undefined} tag2={undefined} id="s5g" />
           </g>
         )}
         {phaseC > 0.01 && (
