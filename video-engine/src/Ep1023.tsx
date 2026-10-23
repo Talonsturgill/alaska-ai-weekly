@@ -468,7 +468,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
     ? {z: 1.0 + 0.04 * clamp01(f / 200), fx: 540, fy: 960}
     : {z: lerp(1.04, 4.2, dive), fx: lerp(540, 900, dive), fy: lerp(960, 1240, dive)};
   const tagPeel = easeIO(f, t24 + 30, 22);
-  const tagX = lerp(330, 700, tagPeel), tagY = lerp(960, 878, tagPeel) - 160 * Math.sin(tagPeel * Math.PI);
+  const tagX = lerp(330, 664, tagPeel), tagY = lerp(960, 788, tagPeel) - 160 * Math.sin(tagPeel * Math.PI);
   const wy = 1210;
   return (
     <Frame p={p} cam={(ff) => cam} tag
@@ -483,12 +483,19 @@ const S5: React.FC<SceneProps> = ({p}) => {
             <rect data-band="ok" x={0} y={0} width={1080} height={1920} fill="#D9E8DA" />
             <rect data-band="ok" x={0} y={1180} width={1080} height={740} fill={PM.summerGrassDeep} stroke={INK} strokeWidth={8} />
             <rect x={0} y={1176} width={1080} height={4} fill={PM.water} />
+            {/* soil strata, grass blades, a glint on the film and a low sun so the slab and sky are modelled */}
+            {[1260, 1360, 1470, 1590, 1720, 1840].map((yy, i) => <path key={yy} d={`M0,${yy} Q270,${yy - 14 + 8 * i % 5} 540,${yy + 6} T1080,${yy - 4}`} stroke={INK} strokeWidth={3} opacity={0.22} fill="none" />)}
+            {Array.from({length: 46}).map((_, i) => <path key={i} d={`M${12 + i * 23},1180 l${(i % 3) - 1},${-18 - (i % 4) * 6}`} stroke={PM.summerGrass} strokeWidth={4} strokeLinecap="round" />)}
+            {Array.from({length: 26}).map((_, i) => <ellipse key={i} cx={40 + ((i * 97) % 1000)} cy={1230 + ((i * 61) % 600)} rx={14 + (i % 4) * 5} ry={6 + (i % 3) * 3} fill={PM.summerGrass} opacity={0.35} />)}
+            <ellipse cx={540} cy={1166} rx={380} ry={7} fill="#FFFFFF" opacity={0.55} />
+            <circle cx={880} cy={300} r={120} fill="#FFF3C4" opacity={0.55} /><circle cx={880} cy={300} r={64} fill="#FFF8DD" opacity={0.9} />
+            {[0, 1, 2, 3].map((i) => <ellipse key={i} cx={(220 + i * 260 + g * (0.4 + 0.1 * i)) % 1300 - 110} cy={420 + i * 120} rx={150} ry={26} fill="#FFFFFF" opacity={0.5} />)}
             <path d="M0,1176 L1080,1176" stroke={PM.waterDeep} strokeWidth={1.6} />
             <rect x={150} y={880} width={34} height={300} fill="#FFFFFF" opacity={0.55} stroke={INK} strokeWidth={5} />
             {Array.from({length: 11}).map((_, i) => <path key={i} d={`M${i % 5 === 0 ? 120 : 134},${1180 - i * 30} L150,${1180 - i * 30}`} stroke={INK} strokeWidth={3} />)}
             <text x={112} y={870} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={26} fill={INK}>1 IN</text>
             <path d="M170,1174 L330,1090" stroke={INK} strokeWidth={5} />
-            <RainGauge x={620} y={1180} f={g} scale={1.0} tag1={undefined} tag2={undefined} id="s5g" />
+            <RainGauge x={560} y={1180} f={g} scale={1.3} tag1={undefined} tag2={undefined} id="s5g" />
           </g>
         )}
         {phaseC > 0.01 && (
@@ -598,10 +605,10 @@ const S7: React.FC<SceneProps> = ({p}) => {
   else if (f < bounceT) { qx = lerp(660, hat.x - 30, easeIO(f, t30, bounceT - t30)); qy = lerp(700, hat.y - 70, easeIO(f, t30, bounceT - t30)); }
   else { const u = clamp01((f - bounceT) / 40); qx = lerp(hat.x - 30, 560, u); qy = lerp(hat.y - 70, 1100, u * u) - 60 * Math.sin(Math.min(1, u * 3) * Math.PI) * (1 - u); }
   const cam = track([
-    {t: 0, z: 1.55, fx: 420, fy: 1230},
-    {t: t28, z: 1.5, fx: 440, fy: 1200},
-    {t: t29 + 10, z: 1.35, fx: 470, fy: 1050},
-    {t: t30 + 8, z: 1.12, fx: 520, fy: 940},
+    {t: 0, z: 1.3, fx: 500, fy: 1230},
+    {t: t28, z: 1.28, fx: 510, fy: 1200},
+    {t: t29 + 10, z: 1.22, fx: 520, fy: 1050},
+    {t: t30 + 8, z: 1.08, fx: 530, fy: 940},
     {t: p.dur, z: 1.0, fx: 540, fy: 960},
   ]);
   return (
@@ -729,7 +736,7 @@ const Balance: React.FC<{x: number; y: number; f: number; theta: number; leftLin
         {lines.map((l, i) => {
           const part = i === 0 ? 1 : i === 1 ? partial : partial2;
           const shown = l.slice(0, Math.round(l.length * clamp01(part)));
-          return <text key={i} x={-w / 2 + 16} y={-h + 28 + i * 34} fontFamily={MONO} fontWeight={800} fontSize={i === 0 ? 22 : i === 2 ? 17 : 18} letterSpacing={0.6} fill={INK}>{shown}</text>;
+          return <text key={i} x={-w / 2 + 16} y={-h + 28 + i * 34} fontFamily={MONO} fontWeight={800} fontSize={i === 0 ? 26 : 20} letterSpacing={0.6} fill={INK}>{shown}</text>;
         })}
       </g>
     );
@@ -765,8 +772,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const cam = track([
     {t: 0, z: 1.0, fx: 540, fy: 1000},
     {t: t35 - 20, z: 1.0, fx: 540, fy: 1000},
-    {t: t35 + 8, z: 1.12, fx: 1630, fy: 1020},
-    {t: p.dur, z: 1.2, fx: 1630, fy: 1040},
+    {t: t35 + 8, z: 1.0, fx: 1630, fy: 1020},
+    {t: p.dur, z: 1.03, fx: 1630, fy: 1040},
   ]);
   return (
     <Frame p={p} cam={cam}
