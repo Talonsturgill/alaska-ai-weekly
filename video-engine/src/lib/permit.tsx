@@ -10,16 +10,20 @@ import {MONO, monoW, rnd, snap} from './prospect';
 // paints are the form's own box labels (the claim c3 list and OUTSIDE CHECK) and the NEW sticker. Dotty is a labelled metaphor for a form,
 // never a verdict: she never lights up on a result and her fifth box only ever says NOT REPORTED.
 export const PM = {
-  mist: '#A9BFCF', mistHi: '#C8D8E3', ivory: '#EDE6D3', snow: '#EFF1EE', snowShade: '#CBD3D6', snowDeep: '#A9B5BC',
-  spruce: '#1E4B3F', spruceHi: '#2C6554', spruceDeep: '#0F1F1B', night: '#0A1411',
-  marigold: '#F2B632', marigoldDeep: '#B57F10', marigoldHi: '#FFD66B', marigoldRim: '#FFE9A8',
+  mist: '#A9BFCF', mistHi: '#C8D8E3', ivory: '#EDE6D3', snow: '#DCE3E8', snowShade: '#B9C4CB', snowDeep: '#98A5AE',
+  spruce: '#1E4B3F', spruceHi: '#2C6554', spruceDeep: '#0F1F1B', night: '#0A1411',   // 'fir': trees and the parcels the rule doesn't reach
+  // the borough's own ground and rule: emerald, spent only on what the rule can reach
+  marigold: '#2FA36B', marigoldDeep: '#1C6B45', marigoldHi: '#6FD6A0', marigoldRim: '#B9F1D4',
   paper: '#FFFDF4', paperShade: '#E5DCC3', paperDeep: '#C9BD9D', cheek: '#F2A9A0',
-  lav: '#7C7FA6', lavDeep: '#4D5078', lavHi: '#B1B3D6', lavNight: '#2C2F4C',
-  slate: '#4A5560', slateDeep: '#2B333B', slateHi: '#76838F',
-  teal: '#3E8E95', tealHi: '#8CCDD2', tealDeep: '#245C62',
-  kraft: '#B58B55', kraftShade: '#7E5C35', bone: '#F4EEDC',
+  // the sky floor (indigo) and the state floor (plum-gray)
+  lav: '#3A3F7A', lavDeep: '#2B3170', lavHi: '#9AA3E0', lavNight: '#1A1E45',
+  slate: '#5A4A63', slateDeep: '#352B3D', slateHi: '#8A7896',
+  // the open question: amber, the loose dashed outline only
+  teal: '#E8A21B', tealHi: '#FFD27A', tealDeep: '#8A5A07',
+  kraft: '#DCCFA8', kraftShade: '#A89A6E', bone: '#F4EEDC', glow: '#FFF2C9', cream: '#F3DFA8', blind: '#6E7590',
   steel: '#8C99A8', flare: '#F26B45', water: '#5E9AC0', waterHi: '#9ACBE6', waterDeep: '#2F6A8F',
-  wood: '#8A5A33', woodHi: '#B7824F', woodDeep: '#5A3A20',
+  summerGrass: '#7DA856', summerGrassDeep: '#4F7A38', sun: '#F5C453', bay: '#3F8FBF', bayDeep: '#2A6A94',
+  wood: '#C9B28A', woodHi: '#E3D2AE', woodDeep: '#9A8560',
   ink: INK,
 };
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
@@ -55,9 +59,9 @@ const Arm: React.FC<{side: -1 | 1; a: number; f: number; ph: number; hold?: Reac
 
 export const Dotty: React.FC<{
   x: number; y: number; f: number; scale?: number; facing?: 1 | -1; mood?: DottyMood; look?: number;
-  fill?: number; slot5?: 0 | 1 | 2; slotLift?: number; armL?: number; armR?: number; walk?: number; lean?: number;
+  fill?: number; armL?: number; armR?: number; walk?: number; lean?: number;
   sticker?: number; sq?: number; shadow?: boolean; ph?: number; id?: string; holdR?: React.ReactNode; tack?: number; mouthOpen?: number;
-}> = ({x, y, f, scale = 1, facing = 1, mood = 'proud', look = 0, fill = 0, slot5 = 0, slotLift = 0, armL = 12, armR = 12, walk = 0, lean = 0, sticker = 0, sq = 0, shadow = true, ph = 0, id = 'dt', holdR, tack = 0, mouthOpen = 0}) => {
+}> = ({x, y, f, scale = 1, facing = 1, mood = 'proud', look = 0, fill = 0, armL = 12, armR = 12, walk = 0, lean = 0, sticker = 0, sq = 0, shadow = true, ph = 0, id = 'dt', holdR, tack = 0, mouthOpen = 0}) => {
   const gid = `${id}${Math.round(x)}${Math.round(y)}`;
   const t = tones(PM.paper);
   const breath = 1 + 0.012 * Math.sin(f / 22 + ph);
@@ -67,15 +71,9 @@ export const Dotty: React.FC<{
   const px = look * 7, py = mood === 'read' ? 8 : mood === 'wobble' ? -2 : 0;
   const inner = mood === 'cross' ? -9 : mood === 'wobble' ? 12 : mood === 'read' ? 3 : 0;
   const outer = mood === 'cross' ? 12 : mood === 'wobble' ? -8 : mood === 'beam' ? -8 : -3;
-  const lift = clamp01(slotLift);
   const stepA = walk ? Math.sin(walk) : 0;
   const wob = mood === 'wobble' ? 1.4 * Math.sin(f * 0.55 + ph) : 0;
   const rows = DOTTY_ROWS.map((lb, i) => ({lb, k: clamp01(fill - i), y: ROW_TOP(i)}));
-  const slotY = ROW_TOP(4) + 2;
-  // the lifted fifth box rises on an arc to the raised right hand
-  const hand = dottyHand(1, armR, 118);
-  const sx = lerp(0, hand.x + 4, lift), sy = lerp(slotY, hand.y - 40, lift) - 40 * Math.sin(lift * Math.PI);
-  const ss = lerp(1, 1.18, lift);
   return (
     <g transform={`translate(${x},${y}) rotate(${sway + wob}) scale(${scale * facing * (1 + 0.04 * sq)},${scale * (1 - 0.05 * sq)})`}>
       {shadow && <ContactShadow cx={0} cy={4} rx={118} ry={16} opacity={0.34} blur={9} />}
@@ -136,21 +134,6 @@ export const Dotty: React.FC<{
             )}
           </g>
         ))}
-        {/* the fifth box, the only cool thing on a warm form: dashed teal, empty, and at last stamped NOT REPORTED */}
-        {slot5 > 0 && (
-          <g transform={`translate(${sx},${sy}) scale(${ss}) rotate(${lift * 6 * Math.sin(f / 5 + ph)})`} opacity={slot5 > 0 ? 1 : 0}>
-            {lift > 0.02 && <rect x={-122} y={-26} width={244} height={74} rx={7} fill="#000" opacity={0.22} transform="translate(6,8)" />}
-            {lift > 0.02 && <rect x={-122} y={-26} width={244} height={74} rx={7} fill={PM.paper} stroke={INK} strokeWidth={4.5} />}
-            <text x={-116} y={-2} fontFamily={MONO} fontWeight={800} fontSize={14} letterSpacing={0.6} fill={PM.tealDeep}>OUTSIDE CHECK</text>
-            <rect x={-116} y={4} width={232} height={30} rx={5} fill="#F3FAFA" stroke={PM.teal} strokeWidth={3.4} strokeDasharray="12 8" strokeDashoffset={-f * 0.7} />
-            {slot5 === 2 && (
-              <g transform={`translate(0,19) rotate(-4)`}>
-                <rect x={-96} y={-14} width={192} height={28} rx={4} fill="none" stroke={PM.teal} strokeWidth={3.4} />
-                <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={1.4} fill={PM.tealDeep}>NOT REPORTED</text>
-              </g>
-            )}
-          </g>
-        )}
         {sticker > 0.02 && (
           <g transform={`translate(-96,-76) rotate(-12) scale(${snap(f, 0, 1) * clamp01(sticker)})`} opacity={clamp01(sticker * 2)}>
             <circle r={26} fill={PM.marigoldHi} stroke={INK} strokeWidth={4} />
@@ -159,7 +142,7 @@ export const Dotty: React.FC<{
         )}
         {tack > 0.02 && (
           <g transform={`translate(0,${-486 - 24 * (1 - clamp01(tack))})`} opacity={clamp01(tack * 2)}>
-            <circle r={13} fill={PM.flare} stroke={INK} strokeWidth={4} />
+            <circle r={13} fill="#101423" stroke={INK} strokeWidth={4} />
             <ellipse cx={-4} cy={-4} rx={4} ry={3} fill="#FFFFFF" opacity={0.7} />
           </g>
         )}
@@ -173,38 +156,89 @@ export const Dotty: React.FC<{
   );
 };
 
-// ---- Clerk: an ink stamp (a prop, no face) -------------------------------------------------------------------------------------------------
-/** origin is the centre of the rubber face. `down` 0 is raised, 1 is pressed. */
-export const Stamp: React.FC<{x: number; y: number; scale?: number; down?: number; tilt?: number; f?: number; ink?: string}> = ({x, y, scale = 1, down = 0, tilt = 0, f = 0, ink = PM.marigold}) => {
-  const lift = (1 - clamp01(down)) * 120;
-  const t = tones(PM.wood);
+// ---- the rain gauge: the story's own object ------------------------------------------------------------------------------------------------
+/** A putty or amber tag on a string. Sized to its text by arithmetic. Origin is the knot at the top. */
+export const PTag: React.FC<{lines: string[]; size?: number; tone?: 'putty' | 'amber'; k?: number; f?: number; drop?: number; sway?: number; rot?: number}> =
+({lines, size = 20, tone = 'putty', k = 1, f = 0, drop = 34, sway = 3, rot = 0}) => {
+  const kk = clamp01(k);
+  if (kk <= 0.02) return null;
+  const w = Math.max(...lines.map((l) => monoW(l, size, 1.2))) + 34;
+  const h = lines.length * (size + 10) + 18;
+  const fill = tone === 'amber' ? '#FFE9B0' : PM.kraft;
+  const edge = tone === 'amber' ? PM.tealDeep : PM.kraftShade;
+  const fg = tone === 'amber' ? PM.tealDeep : INK;
   return (
-    <g transform={`translate(${x},${y - lift}) rotate(${tilt}) scale(${scale},${scale * (1 - 0.06 * clamp01(down))})`}>
-      <FormGradient id={`stamp${Math.round(x)}`} t={t} softness={0.6} />
-      <ellipse cx={0} cy={lift + 4} rx={86} ry={11} fill="#000" opacity={0.2 * clamp01(down + 0.3)} />
-      <rect x={-72} y={-8} width={144} height={26} rx={6} fill={ink} stroke={INK} strokeWidth={5} />
-      <rect x={-86} y={-44} width={172} height={42} rx={9} fill="#3A4150" stroke={INK} strokeWidth={5.5} />
-      <rect x={-78} y={-38} width={156} height={9} rx={4} fill="#FFFFFF" opacity={0.18} />
-      <path d="M-18,-44 L-18,-116 L18,-116 L18,-44 Z" fill={`url(#stamp${Math.round(x)})`} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
-      <ellipse cx={0} cy={-132} rx={46} ry={34} fill={`url(#stamp${Math.round(x)})`} stroke={INK} strokeWidth={6} />
-      <path d="M-30,-146 Q-8,-162 18,-152" fill="none" stroke={PM.woodHi} strokeWidth={7} strokeLinecap="round" opacity={0.7} />
-      <circle cx={-10} cy={-96} r={10} fill={PM.bone} stroke={INK} strokeWidth={3.4} />
-      <circle cx={14} cy={-96} r={10} fill={PM.bone} stroke={INK} strokeWidth={3.4} />
+    <g opacity={Math.min(1, kk * 1.8)} transform={`rotate(${rot + sway * Math.sin(f / 19)}) scale(${0.8 + 0.2 * Math.min(1, kk * 1.2)})`}>
+      <path d={`M0,0 L0,${drop}`} stroke={PM.bone} strokeWidth={2.4} />
+      <circle cx={0} cy={0} r={3.6} fill={edge} stroke={INK} strokeWidth={2} />
+      <g transform={`translate(0,${drop})`}>
+        <rect x={-w / 2 + 5} y={5} width={w} height={h} rx={6} fill="#000" opacity={0.26} />
+        <path d={`M${-w / 2},12 L-14,0 L14,0 L${w / 2},12 L${w / 2},${h} L${-w / 2},${h} Z`} fill={fill} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+        <path d={`M${-w / 2 + 6},${h - 6} L${w / 2 - 6},${h - 6}`} stroke={edge} strokeWidth={4} />
+        <circle cx={0} cy={9} r={4} fill="#1B2233" />
+        {lines.map((l, i) => <text key={i} x={0} y={14 + (size + 10) * (i + 0.5) + size * 0.34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={size} letterSpacing={1.2} fill={fg}>{l}</text>)}
+      </g>
     </g>
   );
 };
 
-/** the ink print a Stamp leaves: a rounded rectangle with the caller's text, pops with the strike */
-export const StampPrint: React.FC<{x: number; y: number; text: string; k: number; size?: number; rot?: number; color?: string; f?: number}> = ({x, y, text, k, size = 34, rot = -4, color = PM.marigoldDeep, f = 0}) => {
-  const kk = clamp01(k);
-  if (kk <= 0.02) return null;
-  const w = monoW(text, size, 2) + 40;
-  const sc = 1 + 0.18 * (1 - kk) + 0.012 * Math.sin(f / 9);
+/**
+ * RainGauge: a clear cylinder on a post, one inch tall (300 px at scale 1), so a hundredth of an inch is a 3 px hairline. A cup anemometer
+ * spins on top, and a short arm carries two brass hooks. Hook one can carry a tag, hook two stays bare until the caller hangs a tag on it.
+ * Origin is the base of the post. It paints only the strings the caller passes in (tags) and the scale marks 0 and 1 IN.
+ */
+export const RainGauge: React.FC<{x: number; y: number; f: number; scale?: number; level?: number; tag1?: string[]; tag1k?: number; tag2?: string[]; tag2k?: number; spin?: number; hairline?: number; id?: string; shadow?: boolean; labels?: boolean}> =
+({x, y, f, scale = 1, level = 0.01, tag1, tag1k = 0, tag2, tag2k = 0, spin = 1, hairline = 0, id = 'rg', shadow = true, labels = true}) => {
+  const t = tones(PM.woodHi);
+  const gid = `${id}${Math.round(x)}${Math.round(y)}`;
+  const cupA = (f * 9 * spin) % 360;
+  const wp = Math.max(0, level) * 300;
   return (
-    <g transform={`translate(${x},${y}) rotate(${rot}) scale(${sc})`} opacity={Math.min(1, kk * 2.4)}>
-      <rect x={-w / 2} y={-size * 0.8} width={w} height={size * 1.6} rx={6} fill="none" stroke={color} strokeWidth={5} />
-      <rect x={-w / 2 + 6} y={-size * 0.8 + 6} width={w - 12} height={size * 1.6 - 12} rx={3} fill="none" stroke={color} strokeWidth={2} opacity={0.7} />
-      <text x={0} y={size * 0.36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={size} letterSpacing={2} fill={color}>{text}</text>
+    <g transform={`translate(${x},${y}) scale(${scale})`}>
+      <FormGradient id={`${gid}w`} t={t} softness={0.6} />
+      {shadow && <ContactShadow cx={4} cy={4} rx={58} ry={11} opacity={0.34} blur={8} />}
+      {/* the post and its foot */}
+      <path d="M-40,0 L-30,-30 L30,-30 L40,0 Z" fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      <rect x={-11} y={-140} width={22} height={112} fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} />
+      {/* the clear cylinder: one inch of scale */}
+      <rect x={-34} y={-440} width={68} height={304} rx={9} fill="#EAF6FB" fillOpacity={0.55} stroke={INK} strokeWidth={5.5} />
+      <rect x={-27} y={-434} width={9} height={292} rx={4} fill="#FFFFFF" opacity={0.55} />
+      {Array.from({length: 11}).map((_, i) => <path key={i} d={`M${i % 5 === 0 ? 8 : 18},${-140 - i * 30} L34,${-140 - i * 30}`} stroke={INK} strokeWidth={i % 5 === 0 ? 3.4 : 2.2} opacity={0.8} />)}
+      {labels && <text x={-44} y={-436} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={20} fill={PM.slateDeep}>1 IN</text>}
+      {labels && <text x={-44} y={-134} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={20} fill={PM.slateDeep}>0</text>}
+      {/* the water: at a hundredth of an inch it is a hairline */}
+      <rect x={-31} y={-140 - Math.max(1.5, wp)} width={62} height={Math.max(1.5, wp)} fill={PM.water} />
+      <path d={`M-31,${-140 - Math.max(1.5, wp)} L31,${-140 - Math.max(1.5, wp)}`} stroke={PM.waterDeep} strokeWidth={1.8} />
+      {hairline > 0.02 && (
+        <g opacity={clamp01(hairline)}>
+          <path d={`M-31,${-140 - Math.max(1.5, wp)} L-112,${-140 - Math.max(1.5, wp)}`} stroke={PM.teal} strokeWidth={3.4} strokeDasharray="8 6" strokeDashoffset={-f * 0.6} />
+          <circle cx={-112} cy={-140 - Math.max(1.5, wp)} r={7} fill={PM.teal} stroke={INK} strokeWidth={3} />
+        </g>
+      )}
+      <rect x={-40} y={-452} width={80} height={16} rx={6} fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} />
+      {/* the cup anemometer spinning on top */}
+      <path d="M0,-452 L0,-486" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+      <g transform={`translate(0,-488) rotate(${cupA})`}>
+        {[0, 120, 240].map((a) => (
+          <g key={a} transform={`rotate(${a})`}>
+            <path d="M0,0 L44,0" stroke={INK} strokeWidth={5} strokeLinecap="round" />
+            <path d="M44,-12 A12,12 0 0 1 44,12 Z" fill={PM.paper} stroke={INK} strokeWidth={4} />
+          </g>
+        ))}
+        <circle r={6} fill={PM.steel} stroke={INK} strokeWidth={3.4} />
+      </g>
+      {/* the arm with two brass hooks */}
+      <path d="M11,-300 L186,-300" stroke={INK} strokeWidth={11} strokeLinecap="round" />
+      <path d="M11,-300 L186,-300" stroke={PM.woodHi} strokeWidth={5} strokeLinecap="round" />
+      {[90, 170].map((hx, i) => (
+        <g key={hx} transform={`translate(${hx},-300)`}>
+          <path d="M0,0 L0,16 Q0,28 10,24" fill="none" stroke={INK} strokeWidth={8} strokeLinecap="round" />
+          <path d="M0,0 L0,16 Q0,28 10,24" fill="none" stroke="#C9A24A" strokeWidth={3.6} strokeLinecap="round" />
+          {i === 0 && tag1 && <g transform="translate(0,10)"><PTag lines={tag1} size={17} tone="putty" k={tag1k} f={f} drop={26} sway={3} /></g>}
+          {i === 1 && tag2 && <g transform="translate(0,10)"><PTag lines={tag2} size={17} tone="amber" k={tag2k} f={f + 11} drop={26} sway={4} /></g>}
+          {i === 1 && !(tag2 && tag2k > 0.05) && <circle cx={10} cy={30 + 2 * Math.sin(f / 13)} r={4} fill="#C9A24A" stroke={INK} strokeWidth={2} />}
+        </g>
+      ))}
     </g>
   );
 };
@@ -217,7 +251,7 @@ export const BLD = {x: 110, y: 560, w: 860};
 export const floorTop = (k: FloorKey) => BLD.y + (k === 'sky' ? 0 : k === 'state' ? FLOOR_H : FLOOR_H * 2);
 export const Building: React.FC<{f: number; lit?: {sky?: number; state?: number; ground?: number}; id?: string; roof?: boolean; children?: React.ReactNode; stairDashed?: number}> = ({f, lit = {ground: 1}, id = 'bd', roof = true, children}) => {
   const L = {sky: lit.sky ?? 0, state: lit.state ?? 0, ground: lit.ground ?? 1};
-  const wall = (k: FloorKey) => (k === 'sky' ? PM.lavNight : k === 'state' ? PM.slateDeep : '#E9D9B4');
+  const wall = (k: FloorKey) => (k === 'sky' ? PM.lavNight : k === 'state' ? PM.slateDeep : PM.cream);
   const flo = (k: FloorKey) => (k === 'sky' ? PM.lavDeep : k === 'state' ? PM.slate : PM.woodHi);
   const dark = (k: FloorKey) => 1 - L[k];
   return (
@@ -244,7 +278,7 @@ export const Building: React.FC<{f: number; lit?: {sky?: number; state?: number;
             ))}
             {/* the dark floors sit under a cool shade; the lit one glows */}
             {dark(k) > 0.01 && <rect x={BLD.x} y={y0} width={BLD.w} height={FLOOR_H} fill="#0A0D1C" opacity={0.46 * dark(k)} />}
-            {glow > 0.01 && <rect x={BLD.x} y={y0} width={BLD.w} height={FLOOR_H} fill={PM.marigold} opacity={(0.1 + 0.012 * Math.sin(f / 7)) * glow} />}
+            {glow > 0.01 && <rect x={BLD.x} y={y0} width={BLD.w} height={FLOOR_H} fill={PM.glow} opacity={(0.14 + 0.014 * Math.sin(f / 7)) * glow} />}
             <rect x={BLD.x} y={y0} width={BLD.w} height={FLOOR_H} fill="none" stroke={INK} strokeWidth={8} />
           </g>
         );
@@ -388,34 +422,28 @@ export const SnowMorningBG: React.FC<{f: number; horizon?: number; id?: string; 
   );
 };
 
-/** a warm paper room for the courtroom of paper: a wall, a desk plane and one lamp pool */
+/** a cool room with a tall snow window: a pale wall, a birch floor and a window key, no lamp pool anywhere */
 export const PaperRoomBG: React.FC<{f: number; id?: string; deskY?: number; pool?: number}> = ({f, id = 'pr', deskY = 1250, pool = 1}) => (
   <g>
     <defs>
-      <linearGradient id={`${id}w`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#C9B994" /><stop offset="1" stopColor="#E7D9B6" /></linearGradient>
-      <radialGradient id={`${id}l`} cx="0.5" cy="0.2" r="0.8"><stop offset="0" stopColor="#FFF1C4" stopOpacity={0.9 * pool} /><stop offset="1" stopColor="#FFF1C4" stopOpacity={0} /></radialGradient>
+      <linearGradient id={`${id}w`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#CFD8DD" /><stop offset="1" stopColor="#E8ECEA" /></linearGradient>
+      <linearGradient id={`${id}l`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#FFFFFF" stopOpacity={0.75 * pool} /><stop offset="1" stopColor="#FFFFFF" stopOpacity={0} /></linearGradient>
     </defs>
     <rect x={-60} y={-60} width={1200} height={deskY + 60} fill={`url(#${id}w)`} />
-    {Array.from({length: 16}).map((_, i) => <rect key={i} x={-20 + i * 72} y={0} width={5} height={deskY} fill="#B6A67E" opacity={0.35} />)}
+    {Array.from({length: 16}).map((_, i) => <rect key={i} x={-20 + i * 72} y={0} width={4} height={deskY} fill="#B5C0C6" opacity={0.4} />)}
+    {/* the tall snow window and its key light falling across the room */}
+    <rect x={640} y={170} width={330} height={640} rx={10} fill={PM.mistHi} stroke={INK} strokeWidth={9} />
+    <rect x={652} y={182} width={306} height={616} rx={4} fill={PM.mist} opacity={0.9} />
+    {Array.from({length: 26}).map((_, i) => <circle key={i} cx={660 + ((rnd(i + 120) * 290 + f * (0.4 + rnd(i + 121))) % 290)} cy={190 + ((rnd(i + 122) * 600 + f * (1.2 + rnd(i + 123))) % 600)} r={1.6 + rnd(i + 124) * 2} fill="#FFFFFF" opacity={0.7} />)}
+    <path d="M805,182 L805,798 M652,490 L958,490" stroke={INK} strokeWidth={7} />
+    <path d={`M640,810 L970,810 L${760},${deskY} L${180},${deskY} Z`} fill={`url(#${id}l)`} />
     <rect x={-60} y={deskY} width={1200} height={1920 - deskY + 60} fill={PM.woodHi} stroke={INK} strokeWidth={8} />
-    {Array.from({length: 9}).map((_, i) => <path key={i} d={`M-60,${deskY + 24 + i * 60} Q540,${deskY + 8 + i * 60 + (i % 2) * 10} 1140,${deskY + 28 + i * 60}`} fill="none" stroke={PM.wood} strokeWidth={3} opacity={0.5} />)}
-    <ellipse cx={540} cy={deskY - 140} rx={620} ry={700} fill={`url(#${id}l)`} />
-    {Array.from({length: 18}).map((_, i) => <circle key={i} cx={(rnd(i + 90) * 1100 + f * 0.25 * (1 + rnd(i + 91))) % 1140 - 30} cy={200 + rnd(i + 92) * (deskY - 260) + 14 * Math.sin(f / 40 + i)} r={1.4 + rnd(i + 93) * 2} fill="#FFF6D6" opacity={0.28 + 0.3 * rnd(i + 94)} />)}
+    {Array.from({length: 9}).map((_, i) => <path key={i} d={`M-60,${deskY + 24 + i * 60} Q540,${deskY + 8 + i * 60 + (i % 2) * 10} 1140,${deskY + 28 + i * 60}`} fill="none" stroke={PM.woodDeep} strokeWidth={3} opacity={0.5} />)}
   </g>
 );
 
-/** a hanging brass desk lamp's shade (the one warm metal in the courtroom of paper) */
-export const DeskLamp: React.FC<{x: number; y: number; f: number; scale?: number}> = ({x, y, f, scale = 1}) => {
-  const sw = 2.2 * Math.sin(f / 43);
-  return (
-    <g transform={`translate(${x},${y}) rotate(${sw}) scale(${scale})`}>
-      <path d="M0,-400 L0,-60" stroke={INK} strokeWidth={9} />
-      <path d="M-70,0 L70,0 L44,-62 L-44,-62 Z" fill={PM.marigold} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-      <ellipse cx={0} cy={0} rx={70} ry={10} fill={PM.marigoldRim} stroke={INK} strokeWidth={4} />
-      <path d="M-34,-48 L-48,-6" stroke={PM.marigoldRim} strokeWidth={6} strokeLinecap="round" opacity={0.7} />
-    </g>
-  );
-};
+/** a window pane of cold light (kept for compatibility, no lamp is drawn) */
+export const DeskLamp: React.FC<{x: number; y: number; f: number; scale?: number}> = () => null;
 
 /** a book with a hard spine, used for WEATHER SCIENCE next to a form */
 export const BigBook: React.FC<{x: number; y: number; w?: number; h?: number; f?: number; label?: string; tilt?: number}> = ({x, y, w = 260, h = 340, f = 0, label, tilt = 0}) => {
