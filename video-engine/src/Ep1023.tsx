@@ -626,7 +626,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate x={270} text="MAYOR PETER MICCICHE" displayLines={['MAYOR PETER', 'MICCICHE']} y={1000} size={28} tone="paper" p={ease(f, t28, 10) * (f < t29 - 6 ? 1 : 1 - ease(f, t29 - 6, 8))} rot={-3} />
       </>}>
       <SVG>
-        <BuildingWorld g={g} signs={{ground: 1, sky: ease(f, t54 - 2, 8), state: 0}} tag1={0} lit={{ground: 1, state: 0.08, sky: 0.05}}>
+        <BuildingWorld g={g} signs={{ground: 1, sky: 0, state: 0}} tag1={0} lit={{ground: 1, state: 0.08, sky: 0.05}}>
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} k={f < t54 + 60 ? 1 : 0} />
           <Stair f={g} draw={draw} solidTo={STAIR_SOLID} />
           <path d={`M${BLD.x + 4},${floorTop('state') + FLOOR_H} L${BLD.x + BLD.w - 4},${floorTop('state') + FLOOR_H}`} stroke={PM.marigold} strokeWidth={8} strokeDasharray="30 16" strokeDashoffset={-g * 0.6} opacity={lineK} />
@@ -803,7 +803,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         </g>
         <Balance x={1630} y={640} f={g} theta={th}
           leftLines={['MAYOR PETER MICCICHE', 'SAYS BOROUGH WAS MISLED', 'ON WHAT RAINMAKER PLANNED']} kL={snap(f, t35, 10)}
-          rightLines={["RAINMAKER'S CEO SAYS", 'HAD EVERY PERMISSION IT NEEDED', 'COULD HAVE DONE MORE OUTREACH']} kR={snap(f, t36, 10)} rightType={ease(f, t37, 36)} rightType2={ease(f, t38, 36)} />
+          rightLines={["RAINMAKER'S CEO SAYS", 'HAD EVERY PERMISSION IT NEEDED', 'COULD HAVE DONE MORE OUTREACH']} kR={snap(f, t36, 10)} rightType={ease(f, t37, 22)} rightType2={ease(f, t38, 22)} />
       </SVG>
     </Frame>
   );
@@ -983,11 +983,11 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="WHO ASKS WHAT CAME OUT?" displayLines={['WHO ASKS', 'WHAT CAME OUT?']} y={640} size={48} tone="ink" p={ease(f, t52, 8)} />
       </>}>
       <SVG>
-        <BuildingWorld g={g} noon tag1={1} tag2={1} gaugeX={150} gaugeScale={0.8} lit={{ground: 1, state: 0.06, sky: 0.04}} signs={{ground: 1}}>
+        <BuildingWorld g={g} noon tag1={1} tag2={1} gaugeX={170} gaugeScale={0.8} lit={{ground: 1, state: 0.06, sky: 0.04}} signs={{ground: 1}}>
           <QMark x={540} y={floorTop('sky') + 130} f={g} size={84} />
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} />
         </BuildingWorld>
-        <Dotty x={930} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
+        <Dotty x={540} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
       </SVG>
     </Frame>
   );
