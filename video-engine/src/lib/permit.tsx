@@ -184,10 +184,12 @@ export const PTag: React.FC<{lines: string[]; size?: number; tone?: 'putty' | 'a
 
 /**
  * RainGauge: a clear cylinder on a post, one inch tall (300 px at scale 1), so a hundredth of an inch is a 3 px hairline. A funnel tops the tube, a small vane turns on a mast beside it, and a short arm carries two brass hooks. Hook one can carry a tag, hook two stays bare until the caller hangs a tag on it.
- * Origin is the base of the post. It paints only the strings the caller passes in (tags) and the scale marks 0 and 1 IN.
+ * Origin is the base of the post. It paints only the strings the caller passes in (tags), and the scale marks 0 and 1 IN only
+ * when `labels` is passed: the default is off (machine pass 2026-10-23), because on 10-23 the gauge's own 1 IN doubled a ruler's
+ * beside it and the vane pole crossed it, and a scale label is a claim a shot should opt into.
  */
 export const RainGauge: React.FC<{x: number; y: number; f: number; scale?: number; level?: number; tag1?: string[]; tag1k?: number; tag2?: string[]; tag2k?: number; spin?: number; hairline?: number; id?: string; shadow?: boolean; labels?: boolean}> =
-({x, y, f, scale = 1, level = 0.01, tag1, tag1k = 0, tag2, tag2k = 0, spin = 1, hairline = 0, id = 'rg', shadow = true, labels = true}) => {
+({x, y, f, scale = 1, level = 0.01, tag1, tag1k = 0, tag2, tag2k = 0, spin = 1, hairline = 0, id = 'rg', shadow = true, labels = false}) => {
   const t = tones(PM.woodHi);
   const gid = `${id}${Math.round(x)}${Math.round(y)}`;
   const cupA = (f * 9 * spin) % 360;
