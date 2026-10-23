@@ -485,8 +485,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
             <rect x={0} y={1172} width={1080} height={8} fill="#7FD8F0" stroke={INK} strokeWidth={1.5} />
             {/* soil strata, grass blades, a glint on the film and a low sun so the slab and sky are modelled */}
             <rect x={4} y={1184} width={1072} height={118} fill="#6B4F36" opacity={0.95} />
-            <rect x={4} y={1302} width={1072} height={150} fill="#A9794E" />
-            <rect x={4} y={1452} width={1072} height={200} fill="#9A978F" />
+            <rect data-band="ok" x={4} y={1302} width={1072} height={150} fill="#A9794E" />
+            <rect data-band="ok" x={4} y={1452} width={1072} height={200} fill="#9A978F" />
             <rect x={4} y={1652} width={1072} height={264} fill="#5C6670" />
             {[1302, 1452, 1652].map((yy) => <path key={yy} d={`M0,${yy} L1080,${yy}`} stroke={INK} strokeWidth={5} />)}
             {Array.from({length: 40}).map((_, i) => <circle key={i} cx={30 + ((i * 83) % 1020)} cy={1475 + ((i * 47) % 160)} r={6 + (i % 3) * 3} fill="#C9C5BB" stroke={INK} strokeWidth={2} />)}
