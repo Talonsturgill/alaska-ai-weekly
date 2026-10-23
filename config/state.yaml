@@ -2749,3 +2749,45 @@ dispatch_history:
       steel bit boring down through the rock
     metaphor: a brass plumb bob that hangs a hair above the map while a steel drill
       bit is the only thing that goes down
+- date: '2026-10-23'
+  topic: Kenai Peninsula Borough weather modification permit rule
+  slug: the-rule-that-stops-at-the-fence
+  key_entities:
+  - Kenai Peninsula Borough
+  - Rainmaker
+  - Peter Micciche
+  - Sarah Vance
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: mixed
+  angle: A borough can make cloud seeders file what a flight intends, but a form can't
+    say whether the rain was real, and only the company has measured it.
+  hero: Dotty
+  cast:
+  - Dotty
+  - RainGauge
+  - Building
+  - Stair
+  - Hatch
+  - ParcelPlane
+  - SeedDrone
+  - ForecastTrace
+  - Stamp
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: vertical-rise
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: tactile-collage
+    palette: first-snow white and mist-blue, a paper form hero with checkbox eyes,
+      emerald borough ground, indigo and plum upper floors, a late summer viridian
+      and gold bay, a single amber tag on the rain gauge's second hook, a black tack
+    camera_strategy: pull-backs from a desk to a three floor building, a tilted parcel
+      plane, a dive into a hairline and a craneDown through the floors
+    light_story: an overcast first-snow day, a lit ground floor under two dark floors,
+      a late summer gold bay in flashback, a cool snow window wall with no lamp, cold
+      grey blinds in an empty state office, then flat noon light on a rain gauge in
+      the snow
+    metaphor: a form that can only be pinned to the ground it stands on, beside a
+      rain gauge with a hook nobody has hung an outside reading on

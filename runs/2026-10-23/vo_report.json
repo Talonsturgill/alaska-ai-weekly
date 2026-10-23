@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.972,
+    "heard": "A burrow in Alaska just wrote a weather rule, it's a form. On October 20th, the Kenai Peninsula burrow assembly pasted, in effect right away. Anyone modifying weather on burrow land now needs a commercial lease or land use permit. On land set aside for berry picking and skiing, geoengineering is banned outright. The form asks for the chemicals, the flares, how often and how long the flights run and the outcome they intend. It followed August 23rd when a California company Rainmaker flew a cloud-seating drone from two sites about 20 miles northeast of Homer. By its own report, it dispersed about 375 grams of silver iodide. Rainmaker says that made about 100 of an inch of rain, which it puts at 19 million gallons across 100 square miles. It describes its forecasting software, Stratus, as picking the seeding windows from real-time weather data. So, what can a burrow reach? The burrow mayor, Peter Machici, says its power is limited to burrow lands at this point. He also said, we know that the FAA controls the skies, and Alaska's Department of Natural Resources says state law doesn't address cloud-seating. That limit isn't a failure. A land permit was never going to measure the weather. The mayor says the burrow was misled about what Rainmaker planned. Rainmaker CEO says it had every permission it needed, and could have done more outreach. The assembly has asked the Alaska legislature to ban weather modification, or at least regulated. Homer's representative Sarah Vance says she'll sponsor a bill if she's reelected. So, the form is a template the state could copy, but it only asks what a flight intends. Rainmaker says it checks its results with radar and satellite data. The reports we found don't describe an outside check of that rain. A form can ask what a flight plans to do. Who asks what came out?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.055,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.26,
+        "voiced_frac": 0.5,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 125.16,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 125.16,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (7 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.979,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.982,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.972,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

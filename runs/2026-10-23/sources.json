@@ -1,0 +1,66 @@
+{
+ "run_date": "2026-10-23",
+ "title": "The Rule That Stops at the Fence",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Kenai Peninsula Borough adopts new rules for weather modification",
+   "outlet": "KDLL / Alaska Public Media",
+   "url": "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c9",
+    "c10",
+    "c11",
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "Regional public radio, Oct 22 2026"
+  },
+  {
+   "id": "s2",
+   "title": "Assembly enacts weather modification permit process",
+   "outlet": "KDLL",
+   "url": "https://www.kdll.org/local-news/2026-10-21/assembly-enacts-weather-modification-permit-process",
+   "claims": [
+    "c1",
+    "c13",
+    "c14",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "Original report, Oct 21 2026"
+  },
+  {
+   "id": "s3",
+   "title": "A California cloud seeding company says it created rain near Homer. It also created an uproar",
+   "outlet": "Anchorage Press via Alaska Journal of Commerce / ADN",
+   "url": "https://www.adn.com/alaska-journal/news/2026/10/04/a-california-cloud-seeding-company-says-it-created-rain-near-homer-it-also-created-an-uproar/",
+   "claims": [
+    "c5",
+    "c6",
+    "c7",
+    "c12",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "Background, company figures attributed"
+  },
+  {
+   "id": "s4",
+   "title": "Rainmaker technology page",
+   "outlet": "Rainmaker Technology Corp.",
+   "url": "https://www.rainmaker.com/technology",
+   "claims": [
+    "c8",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Primary, company marketing"
+  }
+ ]
+}

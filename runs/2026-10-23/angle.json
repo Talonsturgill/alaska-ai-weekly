@@ -1,0 +1,20 @@
+{
+ "run_date": "2026-10-23",
+ "thesis": "A borough can only write a rule for the ground a drone takes off from, so Kenai's new permit collects what an operator intends to do, while the only number anyone has for what came out of the sky is the company's own.",
+ "falsifiable_by": "An outside measurement of the August 23rd result (NWS, a university) turning up, or the rule turning out to require a measured post-flight result, or a state or federal rule turning out to already cover cloud seeding in Alaska.",
+ "supporting_facts": [
+  "c2/c10/c11 the rule attaches to borough land (lease or land use permit); the mayor says reach is limited to borough lands and the FAA controls the skies",
+  "c9 DNR says state law doesn't address cloud seeding, so the middle layer is blank",
+  "c3 the application asks for intended outcome, chemicals, flares, flight frequency and duration",
+  "c6/c7/c15/c16 every output figure is Rainmaker's own, checked by its own method, and the reports don't describe an outside check"
+ ],
+ "counterpoint_honored": "A land rule was never meant to be atmospheric science. The borough did what it could with the lever it has, said so plainly, and asked the Legislature for the rest (c13, c14). Rainmaker says it had every permission it needed and concedes more outreach was possible (c12); no harm is reported. A disclosure form is a template the state can copy. The film gives this its own scene at full strength, then lets the thesis narrow rather than break: the form asks for a prediction, nobody is yet set up to ask for the measurement.",
+ "second_movement": "The form is half a test: it puts a prediction on file. The picture is a form with its INTENDED OUTCOME slot filled and an outside-check slot that reads NOT REPORTED. The fact that recontextualises the first: the ground floor wrote the first draft because the floors above it are empty or federal.",
+ "throughline_object": "the application form (states: blank, filled with intended outcome, pinned to the borough parcel, a second slot for an outside check left dashed, final: the dashed slot is the question)",
+ "ai_link_wording": "A drone plus a forecasting platform, Stratus, that Rainmaker describes as taking in real time weather data to pick seeding windows. No source says AI, machine learning or autonomous. The film says drone and software, never AI.",
+ "valence": "even-handed, constructive about the borough's tool and Rainmaker's capability, skeptical only of the evidence chain; nobody a villain",
+ "runner_ups": {
+  "BUILDER: a form instead of a ban is a template": "grafted as the counterpoint scene",
+  "SKEPTIC: 19 million gallons is a hundredth of an inch and only the seller measured it": "grafted as the second movement and the button"
+ }
+}

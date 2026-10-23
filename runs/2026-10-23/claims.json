@@ -1,0 +1,286 @@
+{
+ "run_date": "2026-10-23",
+ "fact_check_verdict": "Core survives with hedges. Two outlets (KDLL/Alaska Public Media; Anchorage Press via ADN) plus Rainmaker's own site read in full. NO source says AI, machine learning or autonomy, so the AI link is stated as robotics and software: a drone and a forecasting platform. CUT: any AI claim for Rainmaker, vote count and ordinance number (not reported), the Kodiak and unrelated items, any effect or harm finding, Carrie Harris and other private individuals. 19 million gallons, 0.01 inch and 375 g are Rainmaker's own figures.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "On Tuesday, October twentieth, the Kenai Peninsula Borough Assembly passed a rule on weather modification, in effect right away.",
+   "on_screen": "OCT 20TH",
+   "source": [
+    "https://www.kdll.org/local-news/2026-10-21/assembly-enacts-weather-modification-permit-process",
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "Date October 20th. Effective immediately. Sponsors Mayor Peter Micciche and Assembly member Lenora Niesen if named."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: KDLL reports the assembly passed it Tuesday, October 20th, effective immediately; sponsored by Mayor Peter Micciche and Assembly member Lenora Niesen"
+  },
+  {
+   "id": "c2",
+   "status": "verified",
+   "spoken": "It covers borough land. Anyone doing weather modification there needs a commercial lease or land use permit.",
+   "on_screen": "COMMERCIAL LEASE OR LAND USE PERMIT",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification",
+    "https://www.kdll.org/local-news/2026-10-21/assembly-enacts-weather-modification-permit-process"
+   ],
+   "requires": [
+    "Scope is borough land only. Never say the rule covers the sky, the state or the flights themselves."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: APM, weather modification on borough land requires a commercial lease or a commercial land use permit"
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "Applicants must list the chemicals and flares, how often and how long the flights run, and the outcome they intend.",
+   "on_screen": "THE OUTCOME THEY INTEND",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "Application contents only. No claim about enforcement."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: APM lists type and quantity of chemicals and flares, frequency and duration of flights, and a description of the intended outcome"
+  },
+  {
+   "id": "c4",
+   "status": "verified",
+   "spoken": "On borough land set aside for casual use, like berry picking and skiing, geoengineering is banned outright.",
+   "on_screen": "GEOENGINEERING BANNED \u00b7 CASUAL-USE LAND",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "Casual-use borough land only. The borough's definition is deliberate intervention in the earth's climate system or atmosphere."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: APM, banned outright on borough land designated for casual use, such as berry-picking or skiing"
+  },
+  {
+   "id": "c5",
+   "status": "verified",
+   "spoken": "It followed a test on August twenty third. A California company, Rainmaker, flew a drone from two sites about twenty miles northeast of Homer.",
+   "on_screen": "AUG 23RD",
+   "source": [
+    "https://www.adn.com/alaska-journal/news/2026/10/04/a-california-cloud-seeding-company-says-it-created-rain-near-homer-it-also-created-an-uproar/",
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "Say a drone or drone flights, not a fleet. ADN says a drone from two sites near the head of Kachemak Bay. Company is California-based Rainmaker Technology Corp., CEO Augustus Doricko."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"The company launched a drone from two sites near the head of Kachemak Bay, some 20 miles northeast of Homer.\" (ADN)"
+  },
+  {
+   "id": "c6",
+   "status": "verified_with_hedge",
+   "spoken": "By its own report, it dispersed about three hundred seventy five grams of silver iodide over about three hours.",
+   "on_screen": "ABOUT 375 G \u00b7 ITS REPORT",
+   "source": [
+    "https://www.adn.com/alaska-journal/news/2026/10/04/a-california-cloud-seeding-company-says-it-created-rain-near-homer-it-also-created-an-uproar/"
+   ],
+   "requires": [
+    "Attribute the quantity to Rainmaker's own technical report. Say about."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"In total, the company dispersed some 375 grams of silver iodide.\" (ADN citing the company's technical report)"
+  },
+  {
+   "id": "c7",
+   "status": "verified_with_hedge",
+   "spoken": "Rainmaker says that made about a hundredth of an inch of rain, which it puts at nineteen million gallons across a hundred square miles.",
+   "on_screen": "ABOUT 0.01 IN",
+   "source": [
+    "https://www.adn.com/alaska-journal/news/2026/10/04/a-california-cloud-seeding-company-says-it-created-rain-near-homer-it-also-created-an-uproar/",
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "COMPANY ESTIMATE. Always attributed with Rainmaker says. Never state the gallons as fact. Say about and company figure."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"That amount equates to about 0.01 of an inch of rain across 100 square miles.\" (ADN, the company's figure)"
+  },
+  {
+   "id": "c8",
+   "status": "verified_with_hedge",
+   "spoken": "Rainmaker describes its forecasting platform, Stratus, as taking in real time weather data to pick the seeding windows.",
+   "on_screen": "ITS WORDS \u00b7 STRATUS",
+   "source": [
+    "https://www.rainmaker.com/technology"
+   ],
+   "requires": [
+    "Company marketing wording, attribute with its words or Rainmaker describes. NEVER say AI, machine learning, or autonomous: the page uses none of those terms."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"Rainmaker's proprietary forecasting and nowcasting platform ingests realtime weather data to identify optimal seeding windows\" (rainmaker.com/technology)"
+  },
+  {
+   "id": "c9",
+   "status": "verified_with_hedge",
+   "spoken": "The state's Department of Natural Resources says state law doesn't address cloud seeding, so it didn't authorize it.",
+   "on_screen": "STATE LAW DOESN'T ADDRESS CLOUD SEEDING",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "DNR allowed the drone research on state land (letter of no objection in May per APM Sept 17) but says it has no jurisdiction over cloud seeding. Never write that DNR refused the operation or that the test was illegal."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"because that activity is not addressed in state law.\" (APM, DNR statement)"
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "The mayor, Peter Micciche, put the limit plainly. Quote, our ability to limit weather modification and geoengineering is limited to borough lands at this point.",
+   "on_screen": "\"LIMITED TO BOROUGH LANDS AT THIS POINT\" \u00b7 MAYOR MICCICHE",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "Exact words. Attribute to Mayor Peter Micciche."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"Our ability to limit weather modification and geoengineering is limited to borough lands at this point,\" he said. (APM)"
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "He also said, we know that the FAA controls the skies.",
+   "on_screen": "\"THE FAA CONTROLS THE SKIES\" \u00b7 MAYOR MICCICHE",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification"
+   ],
+   "requires": [
+    "Quote is the opening clause of a longer sentence that trails off to NOAA. Use only the clause, no period inside the quote marks beyond what the caption bar adds."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"We know that the FAA controls the skies, and NOAA is the only other one that is related to any sort of\" (APM)"
+  },
+  {
+   "id": "c12",
+   "status": "verified_with_hedge",
+   "spoken": "The mayor says the borough was misled about what the company planned. Rainmaker's CEO says it had every permission it needed, and could have done more outreach.",
+   "on_screen": "RAINMAKER'S CEO",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification",
+    "https://www.adn.com/alaska-journal/news/2026/10/04/a-california-cloud-seeding-company-says-it-created-rain-near-homer-it-also-created-an-uproar/"
+   ],
+   "requires": [
+    "Both sides attributed. Micciche's allegation is his characterization, not a finding. Doricko says applicable permits and permissions were in hand and concedes more public outreach was possible."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: APM, Micciche said his administration was misled about what exactly the company planned; Doricko says the company had all applicable permits and could have done more outreach"
+  },
+  {
+   "id": "c13",
+   "status": "verified",
+   "spoken": "Last month the assembly asked the Legislature to ban weather modification in Alaska, or at least regulate it.",
+   "on_screen": "ASSEMBLY ASKED THE LEGISLATURE",
+   "source": [
+    "https://www.kdll.org/local-news/2026-10-21/assembly-enacts-weather-modification-permit-process"
+   ],
+   "requires": [
+    "The ask was a ban or, at minimum, regulation. Not regulation alone."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: KDLL, the assembly formally asked lawmakers to ban all forms of weather modification in Alaska or, at minimum, regulate it"
+  },
+  {
+   "id": "c14",
+   "status": "verified",
+   "spoken": "Representative Sarah Vance says that if she's re-elected, she'll sponsor a bill setting clear guidelines.",
+   "on_screen": "REP. VANCE",
+   "source": [
+    "https://www.kdll.org/local-news/2026-10-21/assembly-enacts-weather-modification-permit-process"
+   ],
+   "requires": [
+    "Her stated intent, conditional on re-election. No outcome implied.",
+    "KDLL's description: \"Homer Republican Rep. Sarah Vance\", so 'Homer's Representative' is the article's own identification, not a district claim."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: KDLL, Vance says if re-elected she will sponsor a bill establishing clear guidelines for weather modification"
+  },
+  {
+   "id": "c15",
+   "status": "verified_with_hedge",
+   "spoken": "Rainmaker says it checks its results with radar and satellite data.",
+   "on_screen": "SATELLITE CHECK",
+   "source": [
+    "https://www.rainmaker.com/technology"
+   ],
+   "requires": [
+    "Company's claimed method only. No news source describes how the Homer figure was measured. Never say the result was confirmed."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "literal: \"Always-on radar and satellite monitoring provides rapid validation of mission results with measured effect through quantitative precipitation estimation (QPE).\" (rainmaker.com/technology)"
+  },
+  {
+   "id": "c16",
+   "status": "verified_with_hedge",
+   "spoken": "The reports we found don't describe an outside check of that number.",
+   "on_screen": "NOT IN THE REPORTS WE FOUND",
+   "source": [
+    "https://alaskapublic.org/news/environment/2026-10-22/kenai-peninsula-borough-adopts-new-rules-for-weather-modification",
+    "https://www.adn.com/alaska-journal/news/2026/10/04/a-california-cloud-seeding-company-says-it-created-rain-near-homer-it-also-created-an-uproar/",
+    "https://www.kdll.org/local-news/2026-10-21/assembly-enacts-weather-modification-permit-process"
+   ],
+   "requires": [
+    "This is an absence in the sources read, not a finding that no check exists. Phrase as the reports don't describe. Never state that no check exists."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "labelled non-quotation: absence in the three news reports read (APM Oct 22, KDLL Oct 21, ADN Oct 4); none cites an NWS, university or scientist measurement of the Aug 23 result"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "run_date": "2026-10-23",
+ "palette": {
+  "mood": "a first-snow October day on the Kenai in white and mist blue, with the borough's own ground in emerald, a three-floor paper building whose only lit floor is the ground floor, indigo and plum floors above, a late-summer viridian and gold bay for the August flashback, and one amber tag on a bare brass hook for the open question",
+  "sky": "#A9BFCF mist blue grading to #EDE6D3 ivory at the horizon (October); #8CC3E0 to #F5E3B0 with a low gold sun #F5C453 (the August flashback)",
+  "ground": "#DCE3E8 snow, shade #B9C4CB (cooler and darker so Dotty #FFFDF4 is the lightest value in every frame she is in); summer shore #7DA856 with #4F7A38 shade, bay #3F8FBF; fir #1E4B3F for trees and the parcels the rule doesn't reach",
+  "hero": "#FFFDF4 warm paper for Dotty, ink #101423 outlines, cheeks #F2A9A0, eyes two checkbox squares",
+  "accent": "#2FA36B emerald (hi #6FD6A0, deep #1C6B45), spent only on what the rule can reach: the borough's parcels, Dotty's header band and ticks, the stamp ink",
+  "roles": {
+   "emerald #2FA36B": "the borough's own ground and rule. Never a verdict, never the company.",
+   "sky floor indigo #3A3F7A / night #1A1E45": "the FAA floor and the sky. Closed and dark, a padlocked hatch.",
+   "state floor plum-gray #5A4A63 / deep #352B3D": "the STATE floor, lights off, an empty desk",
+   "drone SeedDrone default steel #8C99A8 with flare #F26B45": "the engine's own SeedDrone colors, deliberately unchanged (an honest shelf default, shared hex with 10-22's steel family)",
+   "company tags putty #DCCFA8": "every Rainmaker line carries RAINMAKER SAYS or ITS WORDS on a putty tag, so a company line is visibly the company's (not 10-22's kraft)",
+   "plates": "ink #1B2233 with bone text",
+   "birch #E3D2AE": "the floor and the snow-window wall's desk. No walnut, no lamp pool anywhere.",
+   "tack and NO glyph": "ink #101423, never red",
+   "ground floor interior": "#F3DFA8 deep cream wall and #FFF2C9 glow, so Dotty is the brightest thing in the room",
+   "amber #E8A21B / hi #FFD27A / deep #8A5A07": "in October frames the OUTSIDE CHECK tag that drops onto the rain gauge's second hook is the only warm-hot item. The August flashback has its own gold sun and the drone's flare orange, which are not October frames.",
+   "blinds #6E7590": "cold grey daylight through drawn blinds in the empty state office (S8, S10); no stars, no lamp",
+   "hollow question marks": "ink #101423 outline with a bone #F4EEDC fill, never amber or emerald (S1, S6, S7, S8, S10)",
+   "state office fixture": "off at #4A4F66, two cold flickers to #A9B3C9 at beat 33 (78.87 s) (never warm, never brighter than Dotty's paper in any frame), then dead until beat 46 (about 104.85 s) when it returns as a dashed outline glow.",
+   "snow-window wall (S3, S11, S12)": "wall #C9D3DA with the window key at or below #EEF2F4, so Dotty #FFFDF4 stays the lightest value in the close-ups",
+   "stamp inks": "the OCT 20TH strike (the only use of the folio Stamp) is emerald #2FA36B because it is the rule. The BAN and OR AT LEAST REGULATE boxes on the copy of Dotty are emerald ticks #2FA36B (the assembly is the borough, so it gets the rule's color, like Dotty's own ticks). No stamp is amber. The stamp's wood handle is the folio shelf default and the only walnut in the film.",
+   "dashed light and dashed conditional bill (S10)": "dashes in #CDBF94 at 60 percent, never emerald and never the lit floor's #F3DFA8: the dead fixture from S8 comes back as a dashed outline glow above the desk at beat 46. The dashed stair (S7, S8, S10) is also #CDBF94 at 60 percent so it reads as potential and not as the lit floor",
+   "first hook tag": "the ABOUT 0.01 IN, AUG 23RD, RAINMAKER SAYS tag is putty #DCCFA8 (the company-tag role) so it can never be drawn amber next to the S12 payoff tag",
+   "snow value cap": "snowflakes and snow highlights at or below #EEF2F4 so falling snow can't out-value Dotty #FFFDF4"
+  },
+  "diverges_from_last_two": "10-22 was a dusk tundra with a brass plumb bob, spruce ink and vermilion. 10-21 was a pewter beach with a tawny calf and teal. 10-20 was a celadon and walnut office with a lamp-lit desk. This film is a bright white and mist-blue snow day with an emerald accent, an indigo and plum building, a viridian and gold summer flashback and an amber question. HONEST OVERLAPS: the SeedDrone's steel and flare hexes are the engine's own and unchanged; dashed outlines still mean 'not yet reported', as in 10-20 and 10-22; amber is a hue cousin of 10-22's brass but is used only on one tag; hollow question marks repeat 10-22's HollowQ grammar (ink outline, bone fill) and the stamp-on-paper grammar of 10-20 is limited to the date strike and two hollow stamps."
+ },
+ "light": {
+  "time_of_day": "S1, S2, S7, S9 an overcast first-snow day (the ground floor lit deep cream from inside); S3 and S11 a cool snow-window wall with a daylight key and NO lamp anywhere; S4, S5, S6 a late-summer afternoon with a low gold sun from the left (the August flashback, no snow); S12 bare white snow under flat overcast light; S8 and S10 the empty middle floor lit only by cold grey daylight through drawn blinds (#6E7590) and, at beat 46, the dead fixture returning as a dashed outline glow; S13 flat overcast noon: higher, shadowless, the snow thinned to a few flakes, the lit floor still lit",
+  "direction": "soft overcast top light outdoors; a pale window key from upper right in S3, S11 and S12; low gold sun from the left in S4 to S6; warm cream interior glow from the ground floor in S1, S7 and S13",
+  "intent": "the light tells the jurisdiction: the only lit floor is the one the rule can reach, and the August flashback is a different season so the chronology reads muted",
+  "depth": "per-world stacks with px drift over the shot: SNOW EXTERIOR (S1, S7, S9, S13; S12 is the gauge alone on bare white snow with falling snow and no window wall) sky 4, clouds 10, ridge 14, building 0 (the camera plane), Dotty 0 and the rain gauge 0 on the ground plane, the balance on its snow table 12 (S9), snowfall 40, near snow bank 30; PARCEL PLANE (S2) plane 0, props 20, Dotty 26, snow 44; SUMMER MAP (S4) map 0, pins 8, drone shadow 14, drone 30, clouds 22, near shore grass band at the bottom 36; SUMMER TILE (S5) sky 6, stream 0, tile 0, counter 0, near spray and shore grass 28; FORECAST SKY (S6) summer sky 6, panel 0, ticks 12, drone 24, near cloud band 36; WINDOW WALL (S3, S11, S12; S12's board stage is 'snow-gauge', the same wall) wall 6, Dotty 0, rain gauge 8, sill 28; STATE OFFICE (S8, S10) wall 0, blinds 6, stair ghost 10, desk 16, dust 34, near chair back 40. The lower third always carries a near plane (snow, shore grass, cloud band, sill or chair). Locked-panel shots (S3, S6, S11, S12) drift 2 to 3 percent."
+ },
+ "shape_language": {
+  "dominant": "WIDE-AND-LOW against NARROW-AND-HIGH. Everything the rule reaches lies flat and wide: the parcels, the pinned sheet, the squat lit ground floor, the balance's low beam. Everything beyond it is narrow and tall: the stair, the tall legislature door, the rain gauge's cylinder and mast, the padlocked hatch at the apex.",
+  "contrast": "flat wide ground vs thin tall reach",
+  "why": "the story is a rule that can only lie flat along the ground it owns, beside a sky and a result that stand tall above it and out of reach. The upper floors are drawn with no hard ceiling line, only a soft darker wash, and the hatch is the only hard edge up there. The drone is soft and diffuse in its spray, not an angular villain.",
+  "honest_overlap": "10-21 set open corners against a low heavy horizontal mass and 10-22 set round against rectilinear. The wide-and-low half repeats 10-21's ground-hugging mass. What is new is the vertical counter-term (the stair, the tall door, the gauge mast and the hatch) and that the flat side is the hero's own reach rather than the thing being counted."
+ },
+ "casting": {
+  "hero": "Dotty (NET-NEW lib/permit.tsx): the Kenai application form as a characterized single sheet with legs, noodle arms and a face (two checkbox eyes). Earnest and proud, never judging, never lighting up on a result, a labelled metaphor with the ILLUSTRATION chip. Dotty must be the brightest value in every frame she is in.",
+  "why_net_new": "Compared against the shelf: Folio (10-20) is a manila folder with pockets and no limbs, StateLetter is faceless on purpose, Sheet (paper.tsx) is a body with no character, Reconcile (forecast.tsx) is a claimed slot beside an honest empty slot but is a chart, not a figure that can walk, be pinned to a map plane and lift a box. The real gap is a single-sheet hero with legs that can stand on a parcel, be tacked to it and strain against the tack. A second paper hero in four films is acceptable because her tack-and-reach acting is the thesis and Folio was never asked to leave the desk.",
+  "kit_used": {
+   "SeedDrone": "shelf (lib/evidence_state.tsx), the faceless seeding quadrotor, unchanged",
+   "Stamp": "shelf (lib/folio.tsx), used for the OCT 20TH emerald strike (S1) only. The BAN and OR AT LEAST REGULATE ticks are boxes on a copy of Dotty (RainGauge/PTag carry the NOT IN THE REPORTS WE FOUND line, not a stamp).",
+   "ForecastTrace": "shelf (lib/forecast.tsx) for Stratus: an observed line continuing into a predicted line, labelled ITS WORDS",
+   "HangTag": "shelf (lib/prospect.tsx) for putty tags",
+   "balance, tile, flood, gallon counter, ruler, gauge, copier, door": "net-new scene-local props in Ep1023.tsx (single use, not shelf additions)",
+   "RainGauge, PTag": "NET-NEW lib/permit.tsx; reusable additions for ASSET_MANIFEST",
+   "EvidenceColumn and RadarGroundCutaway": "deliberately NOT cast: that apparatus is the 08-30 Rainmaker film's; this film's open question is the amber OUTSIDE CHECK tag on the RainGauge's second hook, not a column.",
+   "Dotty, RainGauge, PTag, Building, Stair, Hatch, ParcelPlane, SnowMorningBG, PaperRoomBG": "NET-NEW lib/permit.tsx. PaperRoomBG is the cool snow-window wall used by S3 and S11; the state office (S8, S10) is scene-local in Ep1023.tsx. Reusable additions for ASSET_MANIFEST: Dotty, RainGauge, PTag, Building, Stair, Hatch, ParcelPlane, SnowMorningBG, PaperRoomBG."
+  },
+  "throughline_object": "RainGauge (NET-NEW lib/permit.tsx): a clear cylinder on a post whose scale marks run 0 to 1 IN (the drawn cylinder is a tall narrow figure, the inch is the marking) with a spinning cup anemometer and an arm with two brass hooks, the first for a tag and the second bare until a tag drops on it. Introduced in the first frame; carries the open question as a physical absence."
+ },
+ "motion_language": {
+  "world": "snow falls through every October shot; Dotty breathes and her cowlick sways; the rain gauge's cups spin and its empty hook swings; the stair's dashes crawl; the drone's rotors blur continuously; the lit window flickers a pixel",
+  "key_hero_moves": "Dotty rises out of a floor slot and snaps upright (S1), walks onto a parcel and is tacked down beside the rain gauge (S2), leans toward a casual-use parcel and leans back when the NO glyph slaps down (S2), reads her boxes aloud (S3), climbs the stair and stops on the painted line (S7), looks up at the spinning gauge then down at her tack and pats it (S9), is copied up the dashed stair (S10), holds her page up to a radar sweep (S11), wobbles as a tag drops on the bare hook (S12) and looks from the gauge to the camera (S13)",
+  "camera": "S1 a dollyThrough (the rise is Dotty's motion, not the camera's) then push-in then a pull-back reveal; S2 craneDown onto the plane; S4 craneDown over the bay; S5 dollyThrough then a dive into the flood's edge (the scale reveal); S7 riseWith following Dotty's climb; S8 dollyThrough across the empty office; S9 dollyThrough; S10 truckAcross then a pull-back; S13 dollyThrough. Whole-frame kicks only on beat 1 (0.0 s), beat 24 (54.21 s) and the tag drop beat (118.37 s), and no fourth."
+ },
+ "composition": {
+  "focal_hierarchy": "S1 Dotty rising in the lit floor; S2 the parcel plane with the tack; S3 her four boxes; S4 the drone over the bay; S5 the flood tile and its hairline; S6 the forecast trace; S7 the stair that stops at the painted line; S8 the dead desk with the question mark; S9 Dotty under the gauge, then the balance; S10 the bill and the copies; S11 the gauge's tagged hook against the radar sweep; S12 the tag dropping on the second hook; S13 Dotty and the gauge at noon",
+  "negative_space": "the dark sky and state floors and the empty dashed stair are deliberate emptiness: the subject is what the rule can't reach",
+  "safe_area": "9:16 master with hero action inside y 420 to 1500 so the square keeps it; plates in 525 to 1290",
+  "signature_shot": "S7 at about 68.1 s (Dotty on the painted borough line, beat 29): Dotty with her boots planted on the painted borough line, the lit deep-cream ground floor glowing around her under an overcast snow day, the dashed stair rising a full floor through the dark plum middle floor to a padlocked indigo hatch drawn dark at the apex from the first frame of S7 (it only rattles and gets its FAA plate later). The rain gauge stands in the snow outside the wall, inside the 420 to 1500 safe area, its first hook carrying the putty ABOUT 0.01 IN, AUG 23RD, RAINMAKER SAYS tag and its second hook bare. The only accent in frame is emerald on Dotty's header band and ticks. No amber in this frame."
+ },
+ "craft_advance": "none required for this film; any engine advance is queued for the weekly machine pass"
+}
