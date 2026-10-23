@@ -798,6 +798,9 @@ line indices, the first words of each line, and what the scene DRAWS at those of
 6. Verify the quantity the judge is actually judging (register out the camera push before measuring
    articulation).
 7. DRAW ORDER IS A DEFECT SURFACE: an element that must stay visible is drawn last.
+   `scripts/label_footprint_check.py` (a make_cut source gate, machine pass 2026-10-23) renders the
+   film in Chrome and fails any label a character, a card or the frame edge cuts for 0.5 s or more;
+   run it with `--shots <n,...>` after moving a label, before spending a cut.
 8. The meter and the frame disagree: trust the frame and measure anyway, one variable at a time.
 9. Render-adjacent discipline: guardrail 7.
 
