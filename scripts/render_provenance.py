@@ -23,7 +23,7 @@ RENDER_PATTERNS = ('video-engine/src/**/*', 'video-engine/public/**/*',
                    'video-engine/node_modules/.package-lock.json',
                    'out/dispatch/captions.json', 'scripts/build_scenes.py',
                    *RENDER_REQUIRED)
-MIX_REQUIRED = ('scripts/dispatch_mix.py', 'scripts/sfx_bank.py', 'scripts/mix_aac_check.py',
+MIX_REQUIRED = ('scripts/dispatch_mix.py', 'scripts/sfx_names.py', 'scripts/sfx_bank.py', 'scripts/mix_aac_check.py',
                 'out/dispatch/vo_lines.json', 'out/dispatch/episode_props.json',
                 'out/dispatch/storyboard.json')
 MIX_PATTERNS = (*MIX_REQUIRED, 'out/dispatch/music_credit.json',
@@ -58,7 +58,7 @@ BOARD_PROSE_TOP = ('concept', 'treatment', 'divergence_note', 'angle', 'hook', '
                    'palette', 'title', 'slug', 'derived_from', 'engine', 'reveals', 'throughline',
                    'open_loop', 'open_loop_2', 'shots')
 BOARD_PROSE_BEAT = ('shows', 'draw', 'choreo', 'means', 'vo', 'phrase', 'rehook', 'annotation')
-MIX_READERS = ('scripts/dispatch_mix.py', 'scripts/sfx_bank.py', 'scripts/run_stamp.py')
+MIX_READERS = ('scripts/dispatch_mix.py', 'scripts/sfx_names.py', 'scripts/sfx_bank.py', 'scripts/run_stamp.py')
 LABEL_ONLY = ('shows',)
 
 
