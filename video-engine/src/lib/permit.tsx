@@ -31,7 +31,7 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const rad = (d: number) => (d * Math.PI) / 180;
 
 // ---- Dotty: the form with a face -----------------------------------------------------------------------------------------------------------
-export type DottyMood = 'proud' | 'read' | 'cross' | 'wobble' | 'ask' | 'beam' | 'flat';
+export type DottyMood = 'proud' | 'read' | 'cross' | 'wobble' | 'ask' | 'beam' | 'flat' | 'wary' | 'curious';
 /** the labels on her four boxes (claim c3) and the fifth box (an outside check). The only strings the form paints. */
 export const DOTTY_ROWS = ['CHEMICALS', 'FLARES', 'FLIGHTS', 'INTENDED OUTCOME'];
 const ROW_TOP = (i: number) => -340 + i * 60;
@@ -60,8 +60,8 @@ const Arm: React.FC<{side: -1 | 1; a: number; f: number; ph: number; hold?: Reac
 export const Dotty: React.FC<{
   x: number; y: number; f: number; scale?: number; facing?: 1 | -1; mood?: DottyMood; look?: number;
   fill?: number; armL?: number; armR?: number; walk?: number; lean?: number;
-  sticker?: number; sq?: number; shadow?: boolean; ph?: number; id?: string; holdR?: React.ReactNode; tack?: number; mouthOpen?: number;
-}> = ({x, y, f, scale = 1, facing = 1, mood = 'proud', look = 0, fill = 0, armL = 12, armR = 12, walk = 0, lean = 0, sticker = 0, sq = 0, shadow = true, ph = 0, id = 'dt', holdR, tack = 0, mouthOpen = 0}) => {
+  sticker?: number; sq?: number; shadow?: boolean; ph?: number; id?: string; holdR?: React.ReactNode; tack?: number; mouthOpen?: number; labels?: string[];
+}> = ({x, y, f, scale = 1, facing = 1, mood = 'proud', look = 0, fill = 0, armL = 12, armR = 12, walk = 0, lean = 0, sticker = 0, sq = 0, shadow = true, ph = 0, id = 'dt', holdR, tack = 0, mouthOpen = 0, labels = DOTTY_ROWS}) => {
   const gid = `${id}${Math.round(x)}${Math.round(y)}`;
   const t = tones(PM.paper);
   const breath = 1 + 0.012 * Math.sin(f / 22 + ph);
@@ -69,11 +69,11 @@ export const Dotty: React.FC<{
   const blink = Math.sin(f / 51 + ph * 3) > 0.975 ? 0.15 : 1;
   const eyeH = 50 * blink * (mood === 'wobble' ? 1.12 : mood === 'cross' ? 0.82 : mood === 'read' ? 0.72 : 1);
   const px = look * 7, py = mood === 'read' ? 8 : mood === 'wobble' ? -2 : 0;
-  const inner = mood === 'cross' ? -9 : mood === 'wobble' ? 12 : mood === 'read' ? 3 : 0;
-  const outer = mood === 'cross' ? 12 : mood === 'wobble' ? -8 : mood === 'beam' ? -8 : -3;
+  const inner = mood === 'cross' ? -9 : mood === 'wobble' ? 12 : mood === 'wary' ? 8 : mood === 'read' ? 3 : 0;
+  const outer = mood === 'cross' ? 12 : mood === 'wobble' ? -8 : mood === 'wary' ? -2 : mood === 'beam' ? -8 : mood === 'curious' ? -6 : -3;
   const stepA = walk ? Math.sin(walk) : 0;
   const wob = mood === 'wobble' ? 1.4 * Math.sin(f * 0.55 + ph) : 0;
-  const rows = DOTTY_ROWS.map((lb, i) => ({lb, k: clamp01(fill - i), y: ROW_TOP(i)}));
+  const rows = labels.map((lb, i) => ({lb, k: clamp01(fill - i), y: ROW_TOP(i)}));
   return (
     <g transform={`translate(${x},${y}) rotate(${sway + wob}) scale(${scale * facing * (1 + 0.04 * sq)},${scale * (1 - 0.05 * sq)})`}>
       {shadow && <ContactShadow cx={0} cy={4} rx={118} ry={16} opacity={0.34} blur={9} />}
@@ -109,12 +109,12 @@ export const Dotty: React.FC<{
             <ellipse cx={s * 86} cy={-396} rx={16} ry={10} fill={PM.cheek} opacity={mood === 'cross' ? 0.35 : 0.75} />
           </g>
         ))}
-        {mood === 'proud' && <path d="M-26,-394 Q0,-374 26,-394" fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />}
+        {(mood === 'proud' || mood === 'curious') && <path d="M-26,-394 Q0,-374 26,-394" fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />}
         {mood === 'beam' && <path d="M-30,-398 Q0,-366 30,-398 Q0,-388 -30,-398 Z" fill={PM.cheek} stroke={INK} strokeWidth={5} strokeLinejoin="round" />}
         {mood === 'cross' && <path d="M-22,-388 Q0,-398 22,-388" fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />}
         {mood === 'wobble' && <path d={`M-22,-390 q8,-9 15,0 q8,9 15,0 q8,-9 15,0`} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />}
         {mood === 'read' && <path d="M-14,-392 L14,-392" stroke={INK} strokeWidth={5} strokeLinecap="round" />}
-        {mood === 'flat' && <path d="M-16,-390 L16,-390" stroke={INK} strokeWidth={5} strokeLinecap="round" />}
+        {(mood === 'flat' || mood === 'wary') && <path d="M-16,-390 L16,-390" stroke={INK} strokeWidth={5} strokeLinecap="round" />}
         {mood === 'ask' && <ellipse cx={0} cy={-390} rx={9} ry={mouthOpen ? 11 : 7} fill={PM.cheek} stroke={INK} strokeWidth={4.5} />}
         {/* her four boxes: a label, a white slot, typed ink as the form fills, a marigold tick when a box is complete */}
         {rows.map((r, i) => (
@@ -183,8 +183,7 @@ export const PTag: React.FC<{lines: string[]; size?: number; tone?: 'putty' | 'a
 };
 
 /**
- * RainGauge: a clear cylinder on a post, one inch tall (300 px at scale 1), so a hundredth of an inch is a 3 px hairline. A cup anemometer
- * spins on top, and a short arm carries two brass hooks. Hook one can carry a tag, hook two stays bare until the caller hangs a tag on it.
+ * RainGauge: a clear cylinder on a post, one inch tall (300 px at scale 1), so a hundredth of an inch is a 3 px hairline. A funnel tops the tube, a small vane turns on a mast beside it, and a short arm carries two brass hooks. Hook one can carry a tag, hook two stays bare until the caller hangs a tag on it.
  * Origin is the base of the post. It paints only the strings the caller passes in (tags) and the scale marks 0 and 1 IN.
  */
 export const RainGauge: React.FC<{x: number; y: number; f: number; scale?: number; level?: number; tag1?: string[]; tag1k?: number; tag2?: string[]; tag2k?: number; spin?: number; hairline?: number; id?: string; shadow?: boolean; labels?: boolean}> =
@@ -200,37 +199,37 @@ export const RainGauge: React.FC<{x: number; y: number; f: number; scale?: numbe
       {/* the post and its foot */}
       <path d="M-40,0 L-30,-30 L30,-30 L40,0 Z" fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
       <rect x={-11} y={-140} width={22} height={112} fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} />
-      {/* the clear cylinder: one inch of scale */}
-      <rect x={-34} y={-440} width={68} height={304} rx={9} fill="#EAF6FB" fillOpacity={0.55} stroke={INK} strokeWidth={5.5} />
-      <rect x={-27} y={-434} width={9} height={292} rx={4} fill="#FFFFFF" opacity={0.55} />
-      {Array.from({length: 11}).map((_, i) => <path key={i} d={`M${i % 5 === 0 ? 8 : 18},${-140 - i * 30} L34,${-140 - i * 30}`} stroke={INK} strokeWidth={i % 5 === 0 ? 3.4 : 2.2} opacity={0.8} />)}
-      {labels && <text x={-44} y={-436} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={20} fill={PM.slateDeep}>1 IN</text>}
-      {labels && <text x={-44} y={-134} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={20} fill={PM.slateDeep}>0</text>}
+      {/* the clear measuring tube: one inch of scale, inside a collar, under a funnel */}
+      <rect x={-46} y={-440} width={92} height={304} rx={10} fill="#EAF6FB" fillOpacity={0.6} stroke={INK} strokeWidth={5.5} />
+      <rect x={-36} y={-434} width={10} height={292} rx={4} fill="#FFFFFF" opacity={0.6} />
+      {Array.from({length: 11}).map((_, i) => <path key={i} d={`M${i % 5 === 0 ? 8 : 22},${-140 - i * 30} L46,${-140 - i * 30}`} stroke={INK} strokeWidth={i % 5 === 0 ? 3.4 : 2.2} opacity={0.8} />)}
+      {labels && <text x={-58} y={-436} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={20} fill={PM.slateDeep}>1 IN</text>}
+      {labels && <text x={-58} y={-134} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={20} fill={PM.slateDeep}>0</text>}
       {/* the water: at a hundredth of an inch it is a hairline */}
-      <rect x={-31} y={-140 - Math.max(1.5, wp)} width={62} height={Math.max(1.5, wp)} fill={PM.water} />
-      <path d={`M-31,${-140 - Math.max(1.5, wp)} L31,${-140 - Math.max(1.5, wp)}`} stroke={PM.waterDeep} strokeWidth={1.8} />
+      <rect x={-43} y={-140 - Math.max(1.5, wp)} width={86} height={Math.max(1.5, wp)} fill={PM.water} />
+      <path d={`M-43,${-140 - Math.max(1.5, wp)} L43,${-140 - Math.max(1.5, wp)}`} stroke={PM.waterDeep} strokeWidth={1.8} />
       {hairline > 0.02 && (
         <g opacity={clamp01(hairline)}>
-          <path d={`M-31,${-140 - Math.max(1.5, wp)} L-112,${-140 - Math.max(1.5, wp)}`} stroke={PM.teal} strokeWidth={3.4} strokeDasharray="8 6" strokeDashoffset={-f * 0.6} />
-          <circle cx={-112} cy={-140 - Math.max(1.5, wp)} r={7} fill={PM.teal} stroke={INK} strokeWidth={3} />
+          <path d={`M-43,${-140 - Math.max(1.5, wp)} L-122,${-140 - Math.max(1.5, wp)}`} stroke={PM.teal} strokeWidth={3.4} strokeDasharray="8 6" strokeDashoffset={-f * 0.6} />
+          <circle cx={-122} cy={-140 - Math.max(1.5, wp)} r={7} fill={PM.teal} stroke={INK} strokeWidth={3} />
         </g>
       )}
-      <rect x={-40} y={-452} width={80} height={16} rx={6} fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} />
-      {/* the cup anemometer spinning on top */}
-      <path d="M0,-452 L0,-486" stroke={INK} strokeWidth={6} strokeLinecap="round" />
-      <g transform={`translate(0,-488) rotate(${cupA})`}>
-        {[0, 120, 240].map((a) => (
-          <g key={a} transform={`rotate(${a})`}>
-            <path d="M0,0 L44,0" stroke={INK} strokeWidth={5} strokeLinecap="round" />
-            <path d="M44,-12 A12,12 0 0 1 44,12 Z" fill={PM.paper} stroke={INK} strokeWidth={4} />
-          </g>
-        ))}
-        <circle r={6} fill={PM.steel} stroke={INK} strokeWidth={3.4} />
+      <rect x={-52} y={-452} width={104} height={20} rx={7} fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} />
+      <rect x={-52} y={-146} width={104} height={20} rx={7} fill={`url(#${gid}w)`} stroke={INK} strokeWidth={5} />
+      {/* the funnel on top */}
+      <path d="M-88,-540 L88,-540 L40,-452 L-40,-452 Z" fill="#DCE6EC" stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
+      <path d="M-76,-534 L-34,-458" stroke="#FFFFFF" strokeWidth={6} opacity={0.6} strokeLinecap="round" />
+      <ellipse cx={0} cy={-540} rx={88} ry={12} fill="#B9C9D2" stroke={INK} strokeWidth={5} />
+      {/* a small wind vane turning slowly on a mast beside the funnel */}
+      <path d="M-96,-300 L-96,-520" stroke={INK} strokeWidth={5} strokeLinecap="round" />
+      <g transform={`translate(-96,-526) rotate(${Math.sin(f * 0.02 * spin) * 70 + 20})`}>
+        <path d="M-34,0 L30,0 M30,0 L16,-9 M30,0 L16,9 M-34,0 L-44,-12 M-34,0 L-44,12" stroke={INK} strokeWidth={5} strokeLinecap="round" />
+        <circle r={5} fill={PM.steel} stroke={INK} strokeWidth={3} />
       </g>
       {/* the arm with two brass hooks */}
-      <path d="M11,-300 L186,-300" stroke={INK} strokeWidth={11} strokeLinecap="round" />
-      <path d="M11,-300 L186,-300" stroke={PM.woodHi} strokeWidth={5} strokeLinecap="round" />
-      {[90, 170].map((hx, i) => (
+      <path d="M11,-300 L340,-300" stroke={INK} strokeWidth={11} strokeLinecap="round" />
+      <path d="M11,-300 L340,-300" stroke={PM.woodHi} strokeWidth={5} strokeLinecap="round" />
+      {[80, 290].map((hx, i) => (
         <g key={hx} transform={`translate(${hx},-300)`}>
           <path d="M0,0 L0,16 Q0,28 10,24" fill="none" stroke={INK} strokeWidth={8} strokeLinecap="round" />
           <path d="M0,0 L0,16 Q0,28 10,24" fill="none" stroke="#C9A24A" strokeWidth={3.6} strokeLinecap="round" />
