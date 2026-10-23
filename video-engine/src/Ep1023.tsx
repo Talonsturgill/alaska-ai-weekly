@@ -987,7 +987,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
           <QMark x={540} y={floorTop('sky') + 130} f={g} size={84} />
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} />
         </BuildingWorld>
-        <Dotty x={540} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
+        <Dotty x={680} y={1326} f={g} scale={0.5} mood="ask" look={lerp(-0.9, 0, toCam)} armL={18} armR={20} tack={0} id="s13d" />
       </SVG>
     </Frame>
   );
