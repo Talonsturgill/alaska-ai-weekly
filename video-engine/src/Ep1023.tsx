@@ -983,7 +983,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="WHO ASKS WHAT CAME OUT?" displayLines={['WHO ASKS', 'WHAT CAME OUT?']} y={640} size={48} tone="ink" p={ease(f, t52, 8)} />
       </>}>
       <SVG>
-        <BuildingWorld g={g} noon tag1={1} tag2={1} gaugeX={170} gaugeScale={0.8} lit={{ground: 1, state: 0.06, sky: 0.04}} signs={{ground: 1}}>
+        <BuildingWorld g={g} noon tag1={1} tag2={1} gaugeX={170} gaugeScale={0.8} lit={{ground: 1, state: 0.06, sky: 0.04}} signs={{ground: 0}}>
           <QMark x={540} y={floorTop('sky') + 130} f={g} size={84} />
           <QMark x={540} y={floorTop('state') + 130} f={g + 30} size={84} />
         </BuildingWorld>
