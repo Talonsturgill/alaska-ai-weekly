@@ -16,9 +16,11 @@ from urllib.parse import urlsplit
 if __package__:
     from .caption_check import BANNED_FORMAL
     from .text_fit_check import collect_labels
+    from . import word_ban
 else:
     from caption_check import BANNED_FORMAL
     from text_fit_check import collect_labels
+    import word_ban
 
 REPO = Path(__file__).resolve().parents[1]
 BANNED_PUNCT = {":": "colon", ";": "semicolon", "\u2014": "em dash", "\u2013": "en dash"}
@@ -49,6 +51,10 @@ def violations(text):
     reasons = [name for char, name in BANNED_PUNCT.items() if char in prose]
     reasons += [f"{word} (use {replacement})" for word, replacement in BANNED_FORMAL.items()
                 if re.search(r"\b" + re.escape(word) + r"\b", prose, re.I)]
+    # Machine pass 2026-10-24: the owner's banned words and the brand's banned phrases reach
+    # plates and captions too ("disrupt" was on a 10-08 plate). Quotes and URLs keep their words.
+    reasons += [f"{word} (banned word, owner rule 2026-09-27)" for word in word_ban.hits(prose)]
+    reasons += [f"{ph} (banned phrase, config/brand.yaml)" for ph in word_ban.phrase_hits(prose)]
     return reasons
 
 
