@@ -12,7 +12,7 @@ export const TH = {
   peat: '#5A3B2A', peatHi: '#7C5640', peatDeep: '#3A2418',
   char: '#2B2623', charHi: '#4A413B', ash: '#8A8A92',
   ice: '#9FD8E6', iceHi: '#E3F6FB', iceDeep: '#5C9DB4', silt: '#6D7C86',
-  ember: '#FF5A1F', emberHi: '#FFD23F', steel: '#9AA6B4', rubber: '#1B2233',
+  ember: '#FF8A1F', emberHi: '#FFF4C2', thawGlow: '#C46A2A', steel: '#9AA6B4', rubber: '#1B2233',
 };
 export const MONO = "'JetBrains Mono', monospace";
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
@@ -21,6 +21,13 @@ const hash = (i: number) => {
   x = Math.imul(x ^ (x >>> 16), 0x45d9f3b);
   x = Math.imul(x ^ (x >>> 16), 0x45d9f3b);
   return ((x ^ (x >>> 16)) >>> 0) / 4294967296;
+};
+
+/** an irregular boundary: x across 0..w, y wandering around yb by a few px (ground has no ruler-straight layers) */
+const wavy = (w: number, yb: number, amp: number, seed: number) => {
+  const pts: string[] = [];
+  for (let x = 0; x <= w; x += 20) pts.push(`${x},${(yb + amp * (Math.sin(x / 47 + seed) * 0.6 + Math.sin(x / 19 + seed * 2.1) * 0.4)).toFixed(1)}`);
+  return pts;
 };
 
 type ColProps = {
@@ -55,19 +62,21 @@ export const SoilColumn: React.FC<ColProps> = ({x, y, w = 420, h = 700, f, ftPx 
             <ellipse cx={l.lx + l.lw / 2 + 12} cy={l.ly + 12} rx={l.lw / 3} ry={3} fill={TH.silt} opacity={0.55} />
           </g>
         ))}
-        {/* the thawed peat above the front */}
-        <rect x={0} y={0} width={w} height={thawY} fill={TH.peat} />
-        <rect x={0} y={thawY - 26} width={w} height={26} fill={TH.peatDeep} opacity={0.5} />
+        {/* the thawed peat above the front, its lower edge irregular */}
+        <path d={`M0,0 L${w},0 L${wavy(w, thawY, 9, 1.3).slice().reverse().map((q, i) => (i === 0 ? 'L' : 'L') + q).join(' ')} Z`} fill={TH.peat} />
+        <path d={`M0,${thawY - 30} ${wavy(w, thawY - 26, 7, 2.1).map((q) => 'L' + q).join(' ')} L${w},${thawY + 4} L0,${thawY + 4} Z`} fill={TH.peatDeep} opacity={0.5} />
         {specks.filter((s) => s.sy < thawY - 4).map((s, i) => <circle key={i} cx={s.sx} cy={s.sy} r={s.sr} fill={i % 3 ? TH.peatHi : TH.peatDeep} opacity={0.7} />)}
         {/* the mat on top, moss when whole, char when burned */}
-        <rect x={0} y={0} width={w} height={matH} fill={burned ? TH.char : TH.moss} />
-        <rect x={0} y={matH - 8} width={w} height={8} fill={burned ? TH.charHi : TH.mossDeep} opacity={0.8} />
+        <path d={`M0,0 L${w},0 ${wavy(w, matH, 6, 3.7).slice().reverse().map((q) => 'L' + q).join(' ')} Z`} fill={burned ? TH.char : TH.moss} />
+        <path d={`M0,${matH - 12} ${wavy(w, matH - 6, 4, 4.4).map((q) => 'L' + q).join(' ')} L${w},${matH + 6} L0,${matH + 6} Z`} fill={burned ? TH.charHi : TH.mossDeep} opacity={0.7} />
+        {/* root threads hanging into the peat */}
+        {Array.from({length: 10}).map((_, i) => <path key={i} d={`M${hash(i + 120) * w},${matH} q${(hash(i + 121) - 0.5) * 30},${20 + hash(i + 122) * 40} ${(hash(i + 123) - 0.5) * 24},${50 + hash(i + 124) * 60}`} fill="none" stroke={burned ? TH.charHi : TH.mossDeep} strokeWidth={3} strokeLinecap="round" opacity={0.7} />)}
         {Array.from({length: 14}).map((_, i) => <circle key={i} cx={hash(i + 30) * w} cy={hash(i + 31) * (matH - 8)} r={3 + hash(i + 32) * 4} fill={burned ? TH.charHi : TH.mossHi} opacity={0.8} />)}
         {/* the thaw front: a hot edge when the ground is burned and still giving way */}
         {glow > 0.02 && (
           <g opacity={glow}>
-            <rect x={0} y={thawY - 18} width={w} height={36} fill={TH.ember} opacity={0.35} style={{mixBlendMode: 'screen'}} />
-            <rect x={0} y={thawY - 5} width={w} height={10} fill={TH.emberHi} opacity={0.55} style={{mixBlendMode: 'screen'}} />
+            <path d={`M0,${thawY - 22} ${wavy(w, thawY - 14, 8, 1.3).map((q) => 'L' + q).join(' ')} L${w},${thawY + 22} L0,${thawY + 22} Z`} fill={TH.thawGlow} opacity={0.4} style={{mixBlendMode: 'screen'}} />
+            <path d={`M0,${thawY - 6} ${wavy(w, thawY, 9, 1.3).map((q) => 'L' + q).join(' ')} L${w},${thawY + 6} L0,${thawY + 6} Z`} fill={TH.ember} opacity={0.35} style={{mixBlendMode: 'screen'}} />
           </g>
         )}
       </g>
