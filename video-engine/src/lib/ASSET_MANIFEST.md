@@ -959,3 +959,8 @@ flow high, gate open and spill high, and the picture says it without a caption.
 - `RainGauge` (lib/permit.tsx) NET-NEW 2026-10-23, the throughline: a clear one-inch tube under a funnel with a wind vane and a rail of two brass hooks. `tag1`/`tag2` hang a PTag on a hook, `level` water, `hairline` a dashed level marker, `labels` draws its own 0 and 1 IN scale (pass false beside a ruler).
 - `PTag`, `Building` (three floors in cutaway, `lit` per floor), `Stair`, `Hatch`, `ParcelPlane`, `ParcelPlane`, `SnowMorningBG`, `PaperRoomBG`. ACTIVE.
 - Episode-local in Ep1023.tsx, candidates for promotion: `Balance` (a two-card beam), `FloorSign`, `BuildingWorld`.
+
+# Thaw kit family (2026-10-24, "Seeing Is the Easy Part")
+
+- `SoilColumn` (`lib/thaw.tsx`) NET-NEW 2026-10-24 — layered cut of Interior ground: moss mat or char, thawed peat, frozen ground with ice lenses and silt, a foot ruler on the left edge, `thawDepth` 0..1 that can move, `burned` (mat gone, char on dark peat, thaw-front glow via `glow`), `carbon` 0..1 amber motes lifting out of the peat. Form-shaded, ink outlined, contact shadow — ACTIVE
+- `ThawProbe` (`lib/thaw.tsx`) NET-NEW 2026-10-24 — plain faceless steel rod with a rubber T handle and quarter-foot ticks (long tick each foot), driven by `depth` (px of rod below the surface `y`), `jolt` shakes it on a stop, contact shadow at the entry — ACTIVE
