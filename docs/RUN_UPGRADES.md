@@ -3914,3 +3914,8 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - Shipped: 16-shot film on the MIT Technology Review October 19th feature on Arctic wildfire and permafrost carbon, cross-checked against Earth Fire Alliance, XPRIZE, Alaska Public Media and Woodwell (the Eye, a faced satellite, and one hot square followed from orbit through a 72 hour rule, a thaw probe in two ground cuts, the fair doubt, a fork of fight, leave and set, to a dashed planned square). Panel median 7.17 against 7.0 (7.13, 7.184, 7.17) on the third cut, editor ship. Caption Gate B 8.55 against 8.5 on round 5. The run cost $46.39 by the cost meter.
 - In-run fixes: remotion.config.ts finds the installed headless shell, the 72 HR gauge is a static threshold, claim on_screen strings match the plate literals, the fall-through is a tile mosaic that dissolves in ground colours, the orbit plate carries tiles and contours, the ground cuts end above the caption, the audio bed arc is authored (LRA 5.9 to 7.5), caption breaks fixed, DISPATCH_STANDARD section 19.
 - Queued for the machine pass: 8 items (docs/MACHINE_QUEUE.md, 2026-10-24).
+
+## 2026-10-24 weekly machine pass
+- Shipped: make_cut runs visible_copy_check and claims_contract_check before the render, both SatelliteEyes take lens, cone, dish and telemetry colour props, storyboard_check warns when the audio bed arc is derived, brand banned phrases are enforced on VO, plates, captions and post.
+- Engine advance: SatelliteEye idle (blink, glances, breathing lens, drifting brow), plus a fix to a blink drawn half outside the lens. New EyeLook stand. Dispatch1024 probe frames are pixel-identical to main.
+- Still open: FireSat and Drone idle, and the Plate serif variant.
