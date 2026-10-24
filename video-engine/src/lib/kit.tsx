@@ -855,13 +855,18 @@ export const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: n
 //   coneColor   the imaging cone and its sweep line in both states (default cyan, amber when found)
 //   dishColor   the high-gain dish face (default the pewter bus gradient)
 //   telemetryColor the blinking status light (default red #ff5a4d, dim #5a1f1c)
+//   idle 0..1 (machine pass 2026-10-24, default 0 = the original drawing). The 10-21 and 10-24
+//   panels named the Eye near-static on every held beat (1.7 to 1.8 percent changed), because its
+//   only life was a 5-frame blink every 165 frames, switched off once locked. idle adds a blink
+//   every 2.5 s that survives the lock, iris saccades, a brow lift that drifts, a lens glow pulse,
+//   a dish that tracks and a wider wing flutter. Measured on the EyeLook stand.
 export type SatEmotion = 'searching' | 'straining' | 'found' | 'waiting';
 export const SatelliteEye: React.FC<{
   frame: number; x?: number; y?: number; scale?: number; facing?: 1 | -1;
   emotion?: SatEmotion; eyeLock?: number; accent?: number; scanCone?: number; strain?: number;
-  lensColor?: string; coneColor?: string; dishColor?: string; telemetryColor?: string;
+  lensColor?: string; coneColor?: string; dishColor?: string; telemetryColor?: string; idle?: number;
 }> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, emotion = 'searching', eyeLock = 0, accent = 0, scanCone = 0, strain = 0,
-      lensColor, coneColor, dishColor, telemetryColor}) => {
+      lensColor, coneColor, dishColor, telemetryColor, idle = 0}) => {
   const bodyT = tones('#9AA6B4');   // cool pewter-gunmetal bus
   const cellT = tones('#2b3a6b');   // indigo solar cells
   const idg = `sat${Math.round(x)}_${Math.round(y)}`;
@@ -870,17 +875,25 @@ export const SatelliteEye: React.FC<{
   // iris: wide + sweeping while searching, CLAMPS small + bright when found (locked)
   const sweep = emotion === 'searching' ? 6 * Math.sin(f / 9) : 0;
   const squint = emotion === 'straining' ? 6 : 0;
-  const iris = 26 - lock * 15 - squint + (emotion === 'searching' ? 2 * Math.sin(f / 6) : 0);
+  const iris = 26 - lock * 15 - squint + (emotion === 'searching' ? 2 * Math.sin(f / 6) : 0)
+    + (idle > 0 ? 3 * Math.max(0, Math.min(1, idle)) * Math.sin(f / 4) : 0);   // idle: the lens breathes
   const found = emotion === 'found' || lock > 0.5;
   const irisColor = found ? (lensColor ?? '#FFC94A') : '#37e0d8';   // cyan scanning -> amber found
   const irisEdge = found ? (lensColor ?? '#FF8A3D') : '#1aa39c';
   const tickColor = lensColor ?? '#FFE24A';
   const coneFill = coneColor ?? (found ? '#FFC94A' : '#37e0d8');
   const coneSweep = coneColor ?? (found ? '#FFE39A' : '#8ff7f0');
-  const eyeGlow = 0.45 + 0.5 * lock + accent * 0.4;
-  const blink = ((f + 20) % 165) < 5 && lock < 0.3;
+  const life = Math.max(0, Math.min(1, idle));
+  const eyeGlow = 0.45 + 0.5 * lock + accent * 0.4 + (life > 0 ? 0.12 * life * Math.sin(f / 5) : 0);
+  const blink = life > 0.05 ? ((f + 20) % 75) < 4 : ((f + 20) % 165) < 5 && lock < 0.3;
   const dishBlink = (f % 44) < 22;
-  const wingFlutter = 1.5 * Math.sin(f / 23);
+  const wingFlutter = 1.5 * Math.sin(f / 23) * (1 + 1.6 * life);
+  // saccades: a held glance that steps every ~20 frames and eases between, damped when locked
+  const sacc = (k: number) => Math.sin(Math.floor(f / 20 + k) * 12.9898) * 0.5 + Math.sin(f / 7 + k) * 0.5;
+  const lookX = life > 0 ? life * (1 - 0.4 * lock) * (5 * Math.sin(f / 6.5) + 3 * sacc(0)) : 0;
+  const lookY = life > 0 ? life * (1 - 0.4 * lock) * (3.5 * Math.sin(f / 9 + 1) + 1.5 * sacc(3)) : 0;
+  const browLift = life > 0 ? life * (5 * Math.sin(f / 8) + 2.5 * Math.sin(f / 3.7)) : 0;
+  const dishYaw = life > 0 ? life * 10 * Math.sin(f / 19) : 0;
   const droop = emotion === 'waiting' ? 8 : 0;
   return (
     <g transform={`translate(${x},${y}) scale(${scale * facing},${scale})`}>
@@ -919,7 +932,7 @@ export const SatelliteEye: React.FC<{
           </g>
         ))}
         {/* ---- top: high-gain dish + status light + whip antenna ---- */}
-        <g transform="translate(30,-70)">
+        <g transform={`translate(30,-70) rotate(${dishYaw} -30 20)`}>
           <line x1={-30} y1={20} x2={0} y2={-6} stroke={INK} strokeWidth={6} />
           <ellipse cx={6} cy={-14} rx={26} ry={16} fill={dishColor ?? `url(#${idg}_b)`} stroke={INK} strokeWidth={5} transform="rotate(-24 6 -14)" />
           <ellipse cx={6} cy={-14} rx={13} ry={8} fill={bodyT.shade} transform="rotate(-24 6 -14)" opacity={0.6} />
@@ -947,7 +960,7 @@ export const SatelliteEye: React.FC<{
           <RimLight d="M-92,-38 Q-92,-58 -72,-58 L72,-58" w={4} opacity={0.55} />
         </g>
         {/* ---- brow panels (expression) above the imaging eye ---- */}
-        <g transform="translate(0,10)">
+        <g transform={`translate(0,${10 - browLift})`}>
           <path d={`M-58,${-4 + (found ? 10 : 0) + strain * 6} q22,${-10 - strain * 4} 44,${(found ? 4 : -2)}`} fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
           <path d={`M58,${-4 + (found ? 10 : 0) + strain * 6} q-22,${-10 - strain * 4} -44,${(found ? 4 : -2)}`} fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
         </g>
@@ -957,8 +970,9 @@ export const SatelliteEye: React.FC<{
           <rect x={-30} y={-6} width={60} height={30} rx={8} fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={5} />
           <circle cx={0} cy={44} r={46} fill="#0c1120" stroke={INK} strokeWidth={OUT} />
           <circle cx={0} cy={44} r={46} fill="none" stroke={bodyT.key} strokeWidth={3} opacity={0.5} />
+          <g transform={`translate(${lookX},${lookY})`}>
           {blink ? (
-            <path d="M-34,44 q34,18 68,0" fill="none" stroke={irisColor} strokeWidth={7} strokeLinecap="round" transform="translate(-34,0)" />
+            <path d="M-34,44 q34,18 68,0" fill="none" stroke={irisColor} strokeWidth={7} strokeLinecap="round" />
           ) : (
             <>
               <circle cx={0} cy={44} r={33} fill="none" stroke={irisColor} strokeWidth={5} opacity={0.4 + 0.45 * eyeGlow} />
@@ -972,6 +986,7 @@ export const SatelliteEye: React.FC<{
               ))}
             </>
           )}
+          </g>
           {/* comic strain sweat bead (satellite only) */}
           {strain > 0.3 && (
             <path d={`M52,${6 - 10 * ((f / 24) % 1)} q-6,10 0,16 q6,-6 0,-16 Z`} fill="#8ecbff" stroke={INK} strokeWidth={2} opacity={Math.min(1, strain)} />
