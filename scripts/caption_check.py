@@ -226,6 +226,16 @@ def lint(text):
     if banned:
         fails.append(f"BANNED WORDS: {', '.join(banned)} (owner rule 2026-09-27, both "
                      f"automations). Say the specific thing instead.")
+    # BANNED PHRASES (machine pass 2026-10-24): brand.banned_phrases was documented and never
+    # read, so "disrupt" shipped in a 10-08 post. word_ban.phrase_hits reads the list.
+    try:
+        phrases = word_ban.phrase_hits(t)
+    except Exception as e:                     # a missing list is a failure, never a pass
+        phrases = None
+        fails.append(f"BANNED PHRASES: could not read the list ({e})")
+    if phrases:
+        fails.append(f"BANNED PHRASES: {', '.join(phrases)} (config/brand.yaml banned_phrases). "
+                     f"Say the specific thing instead.")
     # DATE FORM. Hard fail, same reasoning as the contraction law: a style rule nobody
     # checks drifts back within a few runs.
     for rx, what, fix in DATE_FORMS:

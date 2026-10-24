@@ -1,16 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-10-23",
+    "date": "2026-10-24",
     "shipped": [
-      "label-footprint-check (with label-occluded-by-later-art)",
-      "gauge-label-prop-default",
-      "beat-too-short-for-evidence-strip",
-      "sfx-names-fall-to-tick (with mix-tick-ceiling-mapping)",
-      "asset-manifest-edit-invalidates-render"
+      "make-cut-runs-visible-copy-and-claims-contract-first",
+      "kit-eye-and-firesat-warm-light-props",
+      "board-audio-bed-should-be-authored",
+      "brand-banned-phrases-in-vo"
     ],
-    "engine_advance": null,
+    "engine_advance": "SatelliteEye idle (blink, glances, breathing lens, drifting brow)",
     "escalated": [
-      "panel-blocker-definition (the hard-blocker list is the owner's: a 0.5 s floor narrows what fails a film)"
+      "held-prop-motion-on-eyes-and-satellites (FireSat and Drone idle still open)",
+      "plate-serif-variant (needs a second engine advance, first in line next week)"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

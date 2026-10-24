@@ -264,6 +264,9 @@ def main():
         # The owner's banned words (2026-09-27), from config/brand.yaml via word_ban.py.
         for w in word_ban.hits(text):
             problems.append(f"L{idx}: '{w}' is a banned word (owner rule 2026-09-27)\n      {text}")
+        # The brand's banned phrases (machine pass 2026-10-24; "disrupt" ran in the 10-08 VO).
+        for ph in word_ban.phrase_hits(text):
+            problems.append(f"L{idx}: '{ph}' is a banned phrase (config/brand.yaml)\n      {text}")
 
         # Obligations are satisfied across the CLAIM'S SPAN, not line by line. The
         # first build of this gate checked each line alone and fired on "Mina read the

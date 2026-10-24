@@ -75,6 +75,13 @@ step plate_overlap     1 python3 scripts/plate_overlap_check.py
 step zoom_clip         1 python3 scripts/zoom_clip_check.py
 step caption_rows      1 python3 scripts/caption_render_check.py --rows-only
 step caption_spelling  1 python3 scripts/caption_spelling_check.py
+# Machine pass 2026-10-24, a repeat offender (10-20, 10-24). The 10-24 first cut spent 26 minutes
+# to fail preflight on two checks that read only source and props: a `72:00` colon in a board beat
+# label (visible_copy_check) and three claims whose approved on_screen string existed only as split
+# plate lines (claims_contract_check). Both run in under a second, from claims.json, vo_script.txt,
+# the episode source and episode_props.json. Preflight still runs them on the shipped cut.
+step visible_copy      1 python3 scripts/visible_copy_check.py
+step claims_contract   1 python3 scripts/claims_contract_check.py
 # Machine pass 2026-10-23, a repeat offender (10-02, 10-23 four cuts running). A label behind a
 # character, under a quote card, or past the frame after a push-in passed every gate above,
 # because each models one source relationship and none models a label against ART or reads the
@@ -94,6 +101,11 @@ step staging          0 python3 scripts/staging_check.py
 # render writes, so it runs here, after the source gates and before the render, and a schedule
 # failure (family repeat, second riser) costs seconds instead of a render.
 step mix               1 python3 scripts/dispatch_mix.py
+# Machine pass 2026-10-24: a derived bed arc delivered LRA 5.9 against the 6 to 9 target on 10-24,
+# an authored audio_arc.bed 7.5. Say so in the summary, where the run reads it before the render.
+if grep -q "derived from board audio_arc" "$LOGS/mix.log"; then
+  say "  NOTE  bed_arc derived, not authored. Write audio_arc.bed on the board (storyboard_check prints the node forms); a derived arc ran under the LRA target on 10-24."
+fi
 
 # 2. The full-resolution render, the parallel queue, its own frame count assert.
 step render            1 bash scripts/render_parallel.sh "$COMP"

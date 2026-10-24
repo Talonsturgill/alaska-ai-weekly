@@ -567,6 +567,15 @@ def main():
         if norm_tag(aa.get("button_pattern")) not in {"callback", "question", "tricolon"}:
             problems.append(f"audio_arc.button_pattern '{aa.get('button_pattern')}' must be callback|question|tricolon "
                             f"— the button is never a flat declarative")
+        # Machine pass 2026-10-24: on 10-24 the arc dispatch_mix DERIVES from these fields delivered
+        # LRA 5.9 against the 6 to 9 target, and an authored audio_arc.bed delivered 7.5. Advisory,
+        # because the derived arc is a working fallback, but the board is where the script's shape
+        # (a pocket under the concession, a swell into the turn) is cheapest to write.
+        if not aa.get("bed"):
+            print("  [audio-advisory] no audio_arc.bed: dispatch_mix will DERIVE the bed arc, which "
+                  "delivered LRA 5.9 against the 6 to 9 target on 10-24 (authored: 7.5). Author "
+                  "audio_arc.bed from the angle, nodes {line, offset, level}, {at_s, level} or "
+                  "{from_end, level}, a pocket under the concession and a swell into the turn.")
 
     # ---- 2. the banned shortcut: a scene copied from a prior render and re-skinned ----
     if rule.get("require_derived_from_scratch", True):
