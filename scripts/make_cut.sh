@@ -75,6 +75,13 @@ step plate_overlap     1 python3 scripts/plate_overlap_check.py
 step zoom_clip         1 python3 scripts/zoom_clip_check.py
 step caption_rows      1 python3 scripts/caption_render_check.py --rows-only
 step caption_spelling  1 python3 scripts/caption_spelling_check.py
+# Machine pass 2026-10-24, a repeat offender (10-20, 10-24). The 10-24 first cut spent 26 minutes
+# to fail preflight on two checks that read only source and props: a `72:00` colon in a board beat
+# label (visible_copy_check) and three claims whose approved on_screen string existed only as split
+# plate lines (claims_contract_check). Both run in under a second, from claims.json, vo_script.txt,
+# the episode source and episode_props.json. Preflight still runs them on the shipped cut.
+step visible_copy      1 python3 scripts/visible_copy_check.py
+step claims_contract   1 python3 scripts/claims_contract_check.py
 # Machine pass 2026-10-23, a repeat offender (10-02, 10-23 four cuts running). A label behind a
 # character, under a quote card, or past the frame after a push-in passed every gate above,
 # because each models one source relationship and none models a label against ART or reads the
