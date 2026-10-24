@@ -326,10 +326,10 @@ const Coin: React.FC<{x: number; y: number; s?: number}> = ({x, y, s = 1}) => (
 );
 
 /** a mosaic of thermal tiles that carries the camera's fall through the hot square: cover 0..1 builds it, 1..0 dissolves it */
-const TileMosaic: React.FC<{cover: number}> = ({cover}) => {
+const TileMosaic: React.FC<{cover: number; ground?: boolean}> = ({cover, ground = false}) => {
   if (cover <= 0.01) return null;
   const cols = 8, rows = 14, cw = W / cols, ch = H / rows;
-  const colors = [P.hotCore, P.hot, P.hotRim, '#FFD27A', '#E8872A', '#FFE9A8'];
+  const colors = ground ? ['#5A3B2A', '#8A7A52', '#9FD8E6', '#2C4A6E', '#E3F6FB', '#7C5640'] : [P.hotCore, P.hot, P.hotRim, '#FFD27A', '#E8872A', '#FFE9A8'];
   return (
     <g>
       {Array.from({length: rows * cols}).map((_, i) => {
@@ -391,7 +391,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <Plate text="ONE IMAGE · JUNE 2025" x={540} y={1262} size={34} tone="bone" p={ease(f, t6 + 4, 8)} />
       </>}>
       <SVG>
-        <rect x={0} y={0} width={W} height={H} fill="#06091A" />
+        <OrbitBG f={g} id="s2bg" cell={120} rivers={2} y0={0} y1={H} drift={0.5} />
+        <rect x={0} y={0} width={W} height={H} fill="#06091A" opacity={0.55} />
         {Array.from({length: 50}).map((_, i) => <circle key={i} cx={rnd(i + 3) * W} cy={rnd(i + 300) * H} r={1.2 + rnd(i + 500) * 2} fill={P.bone} opacity={0.2 + 0.4 * Math.abs(Math.sin(g / 22 + i))} />)}
         <clipPath id="s2clip"><rect x={60} y={640} width={960} height={680} /></clipPath>
         <g clipPath="url(#s2clip)" opacity={boot}>
@@ -493,12 +494,12 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const toTray = ease(f, t13, 22);
   const mapX = 150, mapY = 470, sc = 1.2;
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 880}, {t: p.dur, z: 1.05, fx: 540, fy: 940}]);
-  const slot = (i: number) => ({x: 640 + (i % 10) * 22, y: 1288 - Math.floor(i / 10) * 22});
+  const slot = (i: number) => ({x: 640 + (i % 10) * 20, y: 1288 - Math.floor(i / 10) * 20});
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="ABOUT HALF OF U.S. WILDFIRE EMISSIONS" displayLines={['ABOUT HALF OF U.S.', 'WILDFIRE EMISSIONS', 'PER MIT TECHNOLOGY REVIEW']} y={915} size={28} tone="ink" p={ease(f, t11 + 6, 8)} />
-        <Plate x={540} text="AROUND 4% OF FEDERAL FIREFIGHTING FUNDS" displayLines={['AROUND 4% OF FEDERAL', 'FIREFIGHTING FUNDS']} y={1040} size={28} tone="bone" p={ease(f, t12 + 4, 8)} />
+        <Plate x={540} text="ABOUT HALF OF U.S. WILDFIRE EMISSIONS" displayLines={['ABOUT HALF OF U.S.', 'WILDFIRE EMISSIONS', 'PER MIT TECHNOLOGY REVIEW']} y={895} size={28} tone="ink" p={ease(f, t11 + 6, 8)} />
+        <Plate x={540} text="AROUND 4% OF FEDERAL FIREFIGHTING FUNDS" displayLines={['AROUND 4% OF FEDERAL', 'FIREFIGHTING FUNDS']} y={1022} size={28} tone="bone" p={ease(f, t12 + 4, 8)} />
       </>}>
       <SVG>
         <OrbitBG f={g} id="s4" cell={120} rivers={2} />
@@ -510,10 +511,10 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <ellipse cx={mapX + 262 * sc} cy={mapY + 112 * sc} rx={150 * (2.2 - 1.2 * land)} ry={96 * (2.2 - 1.2 * land)} fill="none" stroke={P.bone} strokeWidth={5} strokeDasharray="20 14" strokeDashoffset={-g} opacity={0.9 * Math.min(1, land * 2)} />
         <HotPixel x={mapX + 262 * sc} y={mapY + 112 * sc} s={40} f={g} k={land} id="s4h" rings={false} />
         {/* fifty puffs in a column, a hundred-slot tray with four coins */}
-        {Array.from({length: 100}).map((_, i) => <circle key={i} cx={170 + (i % 10) * 22} cy={1288 - Math.floor(i / 10) * 22} r={7} fill="none" stroke={P.boneDim} strokeWidth={1.8} opacity={0.35} />)}
-        {Array.from({length: nPuff}).map((_, i) => <Puff key={i} x={170 + (i % 10) * 22} y={1288 - Math.floor(i / 10) * 22 + (1 - ease(f, t11 + i, 10)) * -40} r={10} f={g} ph={i} />)}
-        <text x={540} y={1080} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={2} fill={P.bone} stroke={INK} strokeWidth={5} paintOrder="stroke" opacity={ease(f, t13, 8)}>OUT OF 100 · ILLUSTRATIVE</text>
-        {Array.from({length: 100}).map((_, i) => <circle key={i} cx={slot(i).x} cy={slot(i).y} r={7} fill="none" stroke={P.boneDim} strokeWidth={1.8} opacity={0.35 * ease(f, t13 - 6, 10)} />)}
+        {Array.from({length: 100}).map((_, i) => <circle key={i} cx={170 + (i % 10) * 20} cy={1288 - Math.floor(i / 10) * 20} r={6.5} fill="none" stroke={P.boneDim} strokeWidth={1.8} opacity={0.35} />)}
+        {Array.from({length: nPuff}).map((_, i) => <Puff key={i} x={170 + (i % 10) * 20} y={1288 - Math.floor(i / 10) * 20 + (1 - ease(f, t11 + i, 10)) * -40} r={9} f={g} ph={i} />)}
+        <text x={540} y={1094} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={2} fill={P.bone} stroke={INK} strokeWidth={5} paintOrder="stroke" opacity={ease(f, t13, 8)}>OUT OF 100 · ILLUSTRATIVE</text>
+        {Array.from({length: 100}).map((_, i) => <circle key={i} cx={slot(i).x} cy={slot(i).y} r={6.5} fill="none" stroke={P.boneDim} strokeWidth={1.8} opacity={0.35 * ease(f, t13 - 6, 10)} />)}
         {[0, 1, 2, 3].map((i) => {
           const dropY = lerp(1000 + i * 10, 1280, coinDrop(i));
           const sl = slot(i);
@@ -541,7 +542,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Plate text="DECIDING" y={1150} size={44} dashed p={ease(f, t15, 8)} x={540} drop={36} />
       </>}>
       <SVG>
-        <rect width={W} height={H} fill={P.void} />
+        <OrbitBG f={g} id="s5bg" cell={130} rivers={2} y0={0} y1={H} drift={0.6} />
+        <rect width={W} height={H} fill={P.void} opacity={0.5} />
         {Array.from({length: 40}).map((_, i) => <circle key={i} cx={rnd(i) * W} cy={rnd(i + 100) * H} r={1.4 + rnd(i + 200) * 2} fill={P.bone} opacity={0.2 + 0.3 * Math.abs(Math.sin(g / 24 + i))} />)}
         <Eye x={540} y={700} s={1.45} f={g} emotion={f >= t15 ? 'waiting' : 'found'} lock={f >= t15 ? 0 : 0.7 * tick} accent={0.2 * tick} />
         <HotPixel x={170} y={1030} s={58} f={g} k={tick} id="s5h" rings={false} />
@@ -622,7 +624,8 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate text="PUT OUT · NO RESULT STATED" y={1262} size={26} dashed p={ease(f, t23 + 14, 8)} x={640} />
       </>}>
       <SVG>
-        <rect width={W} height={H} fill="#06091A" />
+        <OrbitBG f={g} id="s7bg" cell={110} rivers={3} y0={0} y1={H} />
+        <rect width={W} height={H} fill="#06091A" opacity={0.4} />
         <clipPath id="s7clip"><rect x={70} y={790} width={940} height={440} /></clipPath>
         <g clipPath="url(#s7clip)" opacity={boot}>
           <OrbitBG f={g} id="s7" cell={80} rivers={3} y0={760} y1={1260} />
@@ -633,20 +636,20 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <path d="M70,790 h940 v440 h-940 Z" fill="none" stroke={INK} strokeWidth={12} />
         <path d="M70,790 h940 v440 h-940 Z" fill="none" stroke={P.cyan} strokeWidth={3} opacity={0.7} />
         {/* the stopwatch: a ring with a gate tick and a hand, no numerals */}
-        <g transform="translate(540,660)" opacity={boot}>
+        <g transform="translate(540,700)" opacity={boot}>
           <circle r={74} fill="#0B1020" stroke={INK} strokeWidth={8} />
           <circle r={74} fill="none" stroke={P.bone} strokeWidth={4} />
           {Array.from({length: 10}).map((_, i) => <line key={i} x1={0} y1={-66} x2={0} y2={-56} stroke={P.bone} strokeWidth={4} transform={`rotate(${i * 36})`} />)}
           <line x1={0} y1={-82} x2={0} y2={-52} stroke={P.cyan} strokeWidth={8} transform="rotate(190)" />
           <line x1={0} y1={6} x2={0} y2={-58} stroke={P.hot} strokeWidth={7} strokeLinecap="round" transform={`rotate(${hand * 57.3})`} />
           <circle r={7} fill={P.bone} stroke={INK} strokeWidth={3} />
-          <text x={0} y={104} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} letterSpacing={2} fill={P.bone} stroke={INK} strokeWidth={5} paintOrder="stroke">10 MIN</text>
+          <text x={96} y={10} textAnchor="start" fontFamily={MONO} fontWeight={800} fontSize={26} letterSpacing={2} fill={P.bone} stroke={INK} strokeWidth={5} paintOrder="stroke">10 MIN</text>
         </g>
         {/* DETECTED flag */}
         {det > 0.02 && (
-          <g transform={`translate(800,${990 - 56 * det})`} opacity={Math.min(1, det * 2)}>
+          <g transform={`translate(780,${990 - 56 * det})`} opacity={Math.min(1, det * 2)}>
             <line x1={0} y1={0} x2={0} y2={-70} stroke={INK} strokeWidth={9} strokeLinecap="round" />
-            <path d={`M0,-70 h${210 * det} l-16,22 l16,22 h${-210 * det} Z`} fill={P.bone} stroke={INK} strokeWidth={5} />
+            <path d={`M0,-70 h${190 * det} l-16,22 l16,22 h${-190 * det} Z`} fill={P.bone} stroke={INK} strokeWidth={5} />
             {det > 0.7 && <text x={14} y={-48} fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={1.4} fill={INK}>DETECTED</text>}
           </g>
         )}
@@ -730,7 +733,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Plate text="UNBURNED · FROZEN ABOUT A FOOT DOWN" displayLines={['UNBURNED', 'FROZEN ABOUT', 'A FOOT DOWN']} x={180} y={600} size={24} tone="ice" p={ease(f, t29 + 4, 8)} />
         <Plate text="BURN SCAR · JULY 2021" displayLines={['BURN SCAR', 'JULY 2021']} x={870} y={560} size={26} tone="ink" p={ease(f, t31 + 4, 8) * (1 - ease(f, t33 - 6, 6))} />
         <Plate text="AT LEAST 3 TIMES DEEPER" displayLines={['AT LEAST', '3 TIMES DEEPER']} x={878} y={700} size={26} tone="hot" p={ease(f, t33, 8)} />
-        <TileMosaic cover={1 - clamp01(f / 44)} />
+        <TileMosaic cover={1 - clamp01(f / 44)} ground />
       </>}>
       <SVG>
         <rect width={W} height={H} fill="#0F1A2E" />
@@ -745,6 +748,11 @@ const S9: React.FC<SceneProps> = ({p}) => {
           {/* the square at the foot of each cut */}
           <HotPixel x={260} y={GROUND_Y + COL_H - 40} s={30} f={g} dark={0.6} k={1} id="s9pl" rings={false} glow={0.4} />
           <HotPixel x={700} y={GROUND_Y + COL_H - 40} s={30} f={g} dark={0.6} k={1} id="s9pr" rings={false} glow={0.4} />
+        </g>
+        <g data-band="ok">
+          <rect data-band="ok" x={0} y={1340} width={W} height={H - 1340} fill="#1E3A5C" />
+          {Array.from({length: 6}).map((_, i) => <path key={i} d={`M0,${1370 + i * 62} C 220,${1350 + i * 62} 420,${1400 + i * 62} 640,${1374 + i * 62} S 940,${1360 + i * 62} 1080,${1380 + i * 62}`} fill="none" stroke={i % 2 ? '#9FD8E6' : '#5C9DB4'} strokeWidth={i % 2 ? 4 : 9} opacity={0.45} />)}
+          <line x1={0} y1={1340} x2={W} y2={1340} stroke={INK} strokeWidth={7} />
         </g>
         <ThawProbe x={330} y={GROUND_Y} depth={depthL} f={g} ftPx={FT} len={520} jolt={jolt} id="s9pL" />
         <ThawProbe x={700 + (f > t29 + 22 && f < t31 ? 3 * Math.sin(f * 1.9) * wake : 0)} y={GROUND_Y} depth={depthR} f={g} ftPx={FT} len={520} jolt={landed} id="s9pR" />
@@ -1040,7 +1048,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <rect width={W} height={H} fill="#7FA5BA" />
         <OrbitBG f={g} id="s16" cell={120} rivers={3} />
-        <defs><linearGradient id="s16dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#F6A64C" stopOpacity={0} /><stop offset="1" stopColor="#F6A64C" stopOpacity={0.55} /></linearGradient></defs>
+        <defs><linearGradient id="s16dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#FFE2B0" stopOpacity={0} /><stop offset="1" stopColor="#F2C6A0" stopOpacity={0.4} /></linearGradient></defs>
         <rect data-band="ok" x={0} y={900} width={W} height={1020} fill="url(#s16dawn)" opacity={ease(f, t52, 50)} />
         {/* the sunrise ground and its cloud bands fall away as the camera rises */}
         <g opacity={1 - rise}>
@@ -1053,7 +1061,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
           <rect x={-sq / 2} y={-sq / 2} width={sq} height={sq} fill={P.hot} opacity={0.18 + 0.08 * Math.sin(g / 12)} />
           <rect x={-sq / 2} y={-sq / 2} width={sq} height={sq} fill="none" stroke={P.hotRim} strokeWidth={7} strokeDasharray="16 11" strokeDashoffset={-g * 0.9} />
         </g>
-        {[[330, 1230, 'FOUGHT'], [540, 1260, 'LEFT'], [750, 1230, 'LIT']].map(([x, y, label], i) => (
+        {[[330, 1185, 'FOUGHT'], [540, 1215, 'LEFT'], [750, 1185, 'LIT']].map(([x, y, label], i) => (
           <g key={i} transform={`translate(${x},${y})`}>
             <rect x={-34} y={-34} width={68} height={68} fill={P.hot} opacity={0.12 + 0.88 * lit(i)} stroke={INK} strokeWidth={5} />
             <text y={64} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={2} fill={P.bone} stroke={INK} strokeWidth={5} paintOrder="stroke">{label as string}</text>
