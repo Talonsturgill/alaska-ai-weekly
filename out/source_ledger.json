@@ -1,0 +1,89 @@
+{
+  "sources": [
+    {
+      "url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/",
+      "outlet": "KTUU / Alaska's News Source",
+      "pub_date": "2026-06-09",
+      "story_title": "Air Force RFLP — Community Pushback"
+    },
+    {
+      "url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html",
+      "outlet": "Fairbanks Daily News-Miner",
+      "pub_date": "2026-06-11",
+      "story_title": "Air Force RFLP — Fairbanks Area Concerns"
+    },
+    {
+      "url": "https://sam.gov/workspace/contract/opp/c0dd2474a2114d93a5e8ff14d3884270/view",
+      "outlet": "SAM.gov — Solicitation AFCEC-26-R-0006",
+      "pub_date": "2026-06-05",
+      "story_title": "Air Force RFLP Primary Source (login-walled; confirmed by news outlets)"
+    },
+    {
+      "url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-06-12/alaska-house-passes-tax-cut-for-north-slope-gas-pipeline-sending-bill-to-senate",
+      "outlet": "Alaska Public Media",
+      "pub_date": "2026-06-12",
+      "story_title": "HB 381 — House Passes LNG Pipeline Tax Bill 34-5"
+    },
+    {
+      "url": "https://www.adn.com/business-economy/energy/2026/06/08/alaska-gas-pipeline-developer-offers-concession-proposes-to-cap-natural-gas-costs-for-alaskans/",
+      "outlet": "Anchorage Daily News",
+      "pub_date": "2026-06-08",
+      "story_title": "Glenfarne Caps Gas at $16/MMBtu for Cook Inlet Utilities"
+    },
+    {
+      "url": "https://www.alaskasnewssource.com/2026/06/12/lng-special-session-house-passes-tax-exemption-bill-developer-says-can-produce-gas-line/",
+      "outlet": "KTUU / Alaska's News Source",
+      "pub_date": "2026-06-12",
+      "story_title": "LNG Special Session — House Passes Tax Exemption Bill"
+    },
+    {
+      "url": "https://www.uaf.edu/news/salmon-tagging-data-could-help-trawlers-reduce-bycatch.php",
+      "outlet": "UAF News",
+      "pub_date": "2026-06-08",
+      "story_title": "UAF ML Bycatch Model — Salmon Tagging Data"
+    },
+    {
+      "url": "https://alaska-native-news.com/salmon-tagging-data-could-help-trawlers-reduce-bycatch/84483/",
+      "outlet": "Alaska Native News",
+      "pub_date": "2026-06-09",
+      "story_title": "UAF ML Bycatch Model — Alaska Native News Coverage"
+    },
+    {
+      "url": "https://www.juneauempire.com/2026/06/10/alaska-researchers-using-tagging-data-to-reduce-fishing-bycatch/",
+      "outlet": "Juneau Empire",
+      "pub_date": "2026-06-10",
+      "story_title": "UAF ML Bycatch Model — Juneau Empire Coverage"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1186/s40317-026-00456-2",
+      "outlet": "Animal Biotelemetry (Springer)",
+      "pub_date": "2026-06-01",
+      "story_title": "Peer-reviewed paper: Chinook depth model for bycatch reduction"
+    },
+    {
+      "url": "https://www.adn.com/alaska-news/2026/06/07/alaska-health-officials-advance-over-400-projects-for-rural-health-transformation-funding/",
+      "outlet": "Anchorage Daily News",
+      "pub_date": "2026-06-07",
+      "story_title": "RHTP — 400+ Projects Advance"
+    },
+    {
+      "url": "https://www.govtech.com/health/do-alaska-rural-health-transformation-funds-point-to-ai",
+      "outlet": "Government Technology",
+      "pub_date": "2026-06-09",
+      "story_title": "RHTP — Do Alaska Rural Health Funds Point to AI?"
+    },
+    {
+      "url": "https://www.newsminer.com/news/local_news/advanced-proposals-for-rural-health-fund-includes-several-fairbanks-area-projects/article_2b1ce317-f712-4fc6-b9e4-4ac3438d4e82.html",
+      "outlet": "Fairbanks Daily News-Miner",
+      "pub_date": "2026-06-09",
+      "story_title": "RHTP — Fairbanks Area Projects Advance"
+    }
+  ],
+  "new_sources_to_consider": [
+    {"url": "https://www.newsminer.com", "outlet": "Fairbanks Daily News-Miner", "rationale": "Consistent original reporting on Interior Alaska data center and grid stories; used in two verified in-window stories this week. High credibility, strong Eielson/GVEA/UAF beat."},
+    {"url": "https://www.latitudemedia.com", "outlet": "Latitude Media", "rationale": "Energy-transition trade publication with explicit Alaska callouts; produced clearest national framing of Trump coal-to-AI funding package."},
+    {"url": "https://www.nationalfisherman.com", "outlet": "National Fisherman", "rationale": "Trade publication with Alaska desk; produced in-window coverage of Ocean Station Papa fisheries impact (June 7)."},
+    {"url": "https://insideclimatenews.org", "outlet": "Inside Climate News", "rationale": "Juneau-based correspondent Paula Dobbyn wrote detailed Alaska-focused OOI shutdown piece (June 9)."},
+    {"url": "https://www.uafsunstar.com", "outlet": "UAF Sun Star", "rationale": "Student paper with unique primary-source access to UAF campus events; broke DOGE/ChatGPT-kills-ANLC-grant story."}
+  ]
+}
