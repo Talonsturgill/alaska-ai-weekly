@@ -13,13 +13,18 @@ const MINT = '#31e0b6';
 const GOLD = '#ffd24a';
 
 // ---- the ORBITAL EYE: angular bus, twin solar wings, comms dish, down-looking lens ----
+// Colour props (machine pass 2026-10-24): lensColor, dishColor, coneColor and telemetryColor,
+// each defaulting to today's gold lens, gold dish, gold cone and red-orange blink, so a film whose
+// accent licence reserves warm light for one subject can cool the Eye without a local copy.
 export const SatelliteEye: React.FC<{
   x: number; y: number; scale?: number; f: number; facing?: 1 | -1;
   scanCone?: number; lensGlow?: number;
-}> = ({x, y, scale = 1, f, facing = 1, scanCone = 0, lensGlow = 0.3}) => {
+  lensColor?: string; dishColor?: string; coneColor?: string; telemetryColor?: string;
+}> = ({x, y, scale = 1, f, facing = 1, scanCone = 0, lensGlow = 0.3,
+      lensColor = GOLD, dishColor = GOLD, coneColor = GOLD, telemetryColor = '#ff6a4a'}) => {
   const id = uid(`sat${x}${y}`);
   const hull = tones('#6b7683');
-  const gold = tones('#ffd24a');
+  const gold = tones(dishColor);
   const cone = Math.max(0, Math.min(1, scanCone));
   const glow = Math.max(0, Math.min(1, lensGlow));
   const yaw = Math.sin(f / 42) * 6;                 // orbital drift (visible idle)
@@ -34,8 +39,8 @@ export const SatelliteEye: React.FC<{
       {/* the scan cone driving down (the eye looking at the inlet) */}
       {cone > 0.02 && (
         <g opacity={cone} style={{mixBlendMode: 'screen'}}>
-          <path d={`M-28,58 L${-56 - 130 * cone},520 L${56 + 130 * cone},520 L28,58 Z`} fill={GOLD} opacity={0.16} />
-          <line x1={0} y1={58} x2={0} y2={520} stroke={GOLD} strokeWidth={3} opacity={0.4} />
+          <path d={`M-28,58 L${-56 - 130 * cone},520 L${56 + 130 * cone},520 L28,58 Z`} fill={coneColor} opacity={0.16} />
+          <line x1={0} y1={58} x2={0} y2={520} stroke={coneColor} strokeWidth={3} opacity={0.4} />
         </g>
       )}
       {/* solar wings on struts */}
@@ -62,10 +67,10 @@ export const SatelliteEye: React.FC<{
       <rect x={-24} y={-26} width={18} height={14} rx={3} fill="#26303a" stroke={INK} strokeWidth={2.5} />
       {/* down-looking lens barrel */}
       <rect x={-14} y={38} width={28} height={28} rx={4} fill={hull.core} stroke={INK} strokeWidth={4} />
-      <circle cx={0} cy={70} r={16} fill={GOLD} stroke={INK} strokeWidth={4} opacity={0.45 + 0.55 * glow} />
+      <circle cx={0} cy={70} r={16} fill={lensColor} stroke={INK} strokeWidth={4} opacity={0.45 + 0.55 * glow} />
       <circle cx={-4} cy={66} r={6} fill="#fff" opacity={0.55 * glow} style={{mixBlendMode: 'screen'}} />
       {/* telemetry light */}
-      <circle cx={22} cy={-30} r={5} fill="#ff6a4a" opacity={blink} />
+      <circle cx={22} cy={-30} r={5} fill={telemetryColor} opacity={blink} />
     </g>
   );
 };

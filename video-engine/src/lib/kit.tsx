@@ -849,11 +849,19 @@ export const MachineShadow: React.FC<{x: number; y: number; scale?: number; f: n
 //   never a mouth); scanCone 0..1 fades in a downward imaging cone; strain 0..1 a comic
 //   squint + sweat bead (used only on the satellite, never the whale). Built to the depth
 //   bar (tones/FormGradient/RimLight/ContactShadow) with idle bob + blink + panel shimmer.
+//   Colour props (machine pass 2026-10-24, so an accent licence such as "the hot pixel is the
+//   only warm thing" can be kept without an episode-local copy). Each defaults to today's look:
+//   lensColor   the FOUND iris, its edge and lock ticks (default amber #FFC94A / #FF8A3D / #FFE24A)
+//   coneColor   the imaging cone and its sweep line in both states (default cyan, amber when found)
+//   dishColor   the high-gain dish face (default the pewter bus gradient)
+//   telemetryColor the blinking status light (default red #ff5a4d, dim #5a1f1c)
 export type SatEmotion = 'searching' | 'straining' | 'found' | 'waiting';
 export const SatelliteEye: React.FC<{
   frame: number; x?: number; y?: number; scale?: number; facing?: 1 | -1;
   emotion?: SatEmotion; eyeLock?: number; accent?: number; scanCone?: number; strain?: number;
-}> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, emotion = 'searching', eyeLock = 0, accent = 0, scanCone = 0, strain = 0}) => {
+  lensColor?: string; coneColor?: string; dishColor?: string; telemetryColor?: string;
+}> = ({frame: f, x = 0, y = 0, scale = 1, facing = 1, emotion = 'searching', eyeLock = 0, accent = 0, scanCone = 0, strain = 0,
+      lensColor, coneColor, dishColor, telemetryColor}) => {
   const bodyT = tones('#9AA6B4');   // cool pewter-gunmetal bus
   const cellT = tones('#2b3a6b');   // indigo solar cells
   const idg = `sat${Math.round(x)}_${Math.round(y)}`;
@@ -864,8 +872,11 @@ export const SatelliteEye: React.FC<{
   const squint = emotion === 'straining' ? 6 : 0;
   const iris = 26 - lock * 15 - squint + (emotion === 'searching' ? 2 * Math.sin(f / 6) : 0);
   const found = emotion === 'found' || lock > 0.5;
-  const irisColor = found ? '#FFC94A' : '#37e0d8';   // cyan scanning -> amber found
-  const irisEdge = found ? '#FF8A3D' : '#1aa39c';
+  const irisColor = found ? (lensColor ?? '#FFC94A') : '#37e0d8';   // cyan scanning -> amber found
+  const irisEdge = found ? (lensColor ?? '#FF8A3D') : '#1aa39c';
+  const tickColor = lensColor ?? '#FFE24A';
+  const coneFill = coneColor ?? (found ? '#FFC94A' : '#37e0d8');
+  const coneSweep = coneColor ?? (found ? '#FFE39A' : '#8ff7f0');
   const eyeGlow = 0.45 + 0.5 * lock + accent * 0.4;
   const blink = ((f + 20) % 165) < 5 && lock < 0.3;
   const dishBlink = (f % 44) < 22;
@@ -878,13 +889,13 @@ export const SatelliteEye: React.FC<{
       {/* downward imaging cone (fades in for the scan beats) */}
       {scanCone > 0.01 && (
         <g opacity={scanCone * 0.5}>
-          <path d="M-30,150 L-150,560 L150,560 L30,150 Z" fill={found ? '#FFC94A' : '#37e0d8'} opacity={0.10} />
-          <path d="M-30,150 L-150,560" stroke={found ? '#FFC94A' : '#37e0d8'} strokeWidth={3} opacity={0.5} />
-          <path d="M30,150 L150,560" stroke={found ? '#FFC94A' : '#37e0d8'} strokeWidth={3} opacity={0.5} />
+          <path d="M-30,150 L-150,560 L150,560 L30,150 Z" fill={coneFill} opacity={0.10} />
+          <path d="M-30,150 L-150,560" stroke={coneFill} strokeWidth={3} opacity={0.5} />
+          <path d="M30,150 L150,560" stroke={coneFill} strokeWidth={3} opacity={0.5} />
           {/* scan sweep line traveling down the cone */}
           <line x1={-110 - 40 * ((f / 30) % 1) + 40} y1={150 + 410 * ((f / 30) % 1)}
                 x2={110 + 40 * ((f / 30) % 1) - 40} y2={150 + 410 * ((f / 30) % 1)}
-                stroke={found ? '#FFE39A' : '#8ff7f0'} strokeWidth={3} opacity={0.6} />
+                stroke={coneSweep} strokeWidth={3} opacity={0.6} />
         </g>
       )}
       <g transform={`translate(0,${bob + droop})`}>
@@ -910,13 +921,14 @@ export const SatelliteEye: React.FC<{
         {/* ---- top: high-gain dish + status light + whip antenna ---- */}
         <g transform="translate(30,-70)">
           <line x1={-30} y1={20} x2={0} y2={-6} stroke={INK} strokeWidth={6} />
-          <ellipse cx={6} cy={-14} rx={26} ry={16} fill={`url(#${idg}_b)`} stroke={INK} strokeWidth={5} transform="rotate(-24 6 -14)" />
+          <ellipse cx={6} cy={-14} rx={26} ry={16} fill={dishColor ?? `url(#${idg}_b)`} stroke={INK} strokeWidth={5} transform="rotate(-24 6 -14)" />
           <ellipse cx={6} cy={-14} rx={13} ry={8} fill={bodyT.shade} transform="rotate(-24 6 -14)" opacity={0.6} />
           <circle cx={6} cy={-14} r={3.5} fill="#e8f0ff" />
         </g>
         <g transform="translate(-34,-64)">
           <rect x={-3} y={-30} width={6} height={34} rx={3} fill={bodyT.core} stroke={INK} strokeWidth={3} />
-          <circle cx={0} cy={-34} r={6} fill={dishBlink ? '#ff5a4d' : '#5a1f1c'} stroke={INK} strokeWidth={2.5} />
+          <circle cx={0} cy={-34} r={6} fill={telemetryColor ? telemetryColor : (dishBlink ? '#ff5a4d' : '#5a1f1c')}
+            opacity={telemetryColor && !dishBlink ? 0.3 : 1} stroke={INK} strokeWidth={2.5} />
         </g>
         {/* ---- central bus body ---- */}
         <g>
@@ -955,7 +967,7 @@ export const SatelliteEye: React.FC<{
               <circle cx={-Math.max(7, iris) * 0.4} cy={44 - Math.max(7, iris) * 0.4} r={3.4} fill="#fff" opacity={0.9} />
               {/* lock ticks when found */}
               {found && [0, 90, 180, 270].map((deg, i) => (
-                <line key={i} x1={0} y1={44 - 38} x2={0} y2={44 - 44} stroke="#FFE24A" strokeWidth={3}
+                <line key={i} x1={0} y1={44 - 38} x2={0} y2={44 - 44} stroke={tickColor} strokeWidth={3}
                   transform={`rotate(${deg} 0 44)`} opacity={Math.min(1, lock * 2)} />
               ))}
             </>
