@@ -1,0 +1,114 @@
+{
+ "run_date": "2026-10-24",
+ "title": "Seeing Is the Easy Part",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Inside the quest to combat Arctic fires and save the planet's frozen carbon",
+   "outlet": "MIT Technology Review",
+   "url": "https://www.technologyreview.com/2026/10/19/1146832/inside-the-quest-to-combat-arctic-fires-and-save-the-planets-frozen-carbon/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c16",
+    "c17",
+    "c18",
+    "c19"
+   ],
+   "used_in_film": true,
+   "note": "James Temple, Oct 19 2026"
+  },
+  {
+   "id": "s2",
+   "title": "First wildfire images from FireSat Protoflight",
+   "outlet": "Earth Fire Alliance",
+   "url": "https://earthfirealliance.org/news-article/first-wildfire-images-from-firesat-protoflight/",
+   "claims": [
+    "c10"
+   ],
+   "used_in_film": true,
+   "note": "Jul 23 2025"
+  },
+  {
+   "id": "s3",
+   "title": "Earth Fire Alliance's first three operational FireSats reach orbit",
+   "outlet": "Earth Fire Alliance",
+   "url": "https://earthfirealliance.org/news-article/earth-fire-alliances-first-three-operational-firesats-reach-orbit/",
+   "claims": [
+    "c11",
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "Jul 7 2026"
+  },
+  {
+   "id": "s4",
+   "title": "XPRIZE Wildfire awardees",
+   "outlet": "XPRIZE",
+   "url": "https://www.xprize.org/news/xprize-wildfire-awardees",
+   "claims": [
+    "c13",
+    "c14",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Sep 23 2026"
+  },
+  {
+   "id": "s5",
+   "title": "An Alaska wildlife refuge is changing its wildfire strategy to limit carbon emissions",
+   "outlet": "Alaska Public Media / Alaska Beacon",
+   "url": "https://alaskapublic.org/2024/06/05/an-alaska-wildlife-refuge-is-changing-its-wildfire-strategy-to-limit-carbon-emissions/",
+   "claims": [
+    "c5",
+    "c6"
+   ],
+   "used_in_film": true,
+   "note": "Jun 5 2024"
+  },
+  {
+   "id": "s6",
+   "title": "How stopping Alaskan wildfires can slow climate change",
+   "outlet": "Scientific American (Woodwell authors), Oct 4 2022",
+   "url": "https://www.frames.gov/sites/default/files/AFSC/How%20Stopping%20Alaskan%20Wildfires%20Can%20Slow%20Climate%20Change.pdf",
+   "claims": [
+    "c1",
+    "c2"
+   ],
+   "used_in_film": true,
+   "note": "opinion, 2022 basis of the figures"
+  },
+  {
+   "id": "s7",
+   "title": "Yukon Flats NWR about us",
+   "outlet": "US Fish and Wildlife Service",
+   "url": "https://www.fws.gov/refuge/yukon-flats/about-us",
+   "claims": [
+    "c3"
+   ],
+   "used_in_film": true,
+   "note": "acreage"
+  },
+  {
+   "id": "s8",
+   "title": "Northern community impacts of Arctic-boreal wildfire",
+   "outlet": "Woodwell Climate Research Center",
+   "url": "https://www.woodwellclimate.org/northern-community-impacts-arctic-boreal-wildfire/",
+   "claims": [
+    "c18"
+   ],
+   "used_in_film": true,
+   "note": "Aug 28 2025"
+  }
+ ]
+}

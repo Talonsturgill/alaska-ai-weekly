@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.981,
+    "heard": "This orange square is a fire. Somebody has to decide. A prototype satellite, FireSat, caught two Alaska fires in one image. Three operational firesats reached orbit this July. The aim is a scan every 20 minutes by the early 2030s. Alaska makes about half of America's wildfire emissions, but gets around 4% of fire money. Per MIT Technology Review. So seeing is getting easy. Deciding is the hard part. On the UConn flats, a pilot program on 1.6 million acres sends crews only if they expect to contain a fire within 72 hours. In June, an ex-price contest in Alaska asked robots to find and put out a fire in 10 minutes and or a foresight found its fire in time. The Environmental Defense Fund says it intends to build an AI tool to pick which fires to fight. But acres burned may be the wrong number. Near Fairbanks, a thought probe hits frozen ground about a foot down on unburned soil. Inside a burn scar from July of 2021, it plunged at least three times deeper. One fire in 2007 released more than 2 million tons of carbon. So the loss is the ground. A Northern Arizona University scientist says it's not clear suppression can affect these fires. If that doubt holds, a faster eye can't save the ground. If it doesn't, leaving fire costs the ground. So the choices are fight, leave, or light a mild fire on purpose. Edward Alexander of the Gwitchin Council International says we need mild fire, not wildfire. A council of Athabask and Tribal Governments crew plans cultural burns near Fort Yukon next spring. Seeing was the easy part. Who should choose which fire is fought, left, or lit?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.037,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 8.17,
+        "voiced_frac": 0.53,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 125.4,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 125.4,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.986,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.985,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.981,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

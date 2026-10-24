@@ -1,0 +1,35 @@
+{
+ "run_date": "2026-10-24",
+ "thesis": "Alaska is where machines are learning to see every fire, but seeing is only the first step. Deciding which fire to fight is still a seventy two hour human rule, and the choice has three branches, fight it, leave it, or set a mild fire on purpose.",
+ "falsifiable_by": "A working triage tool or any tested rule better than the seventy two hour call already choosing which Alaska fires get fought, or a published result showing suppression clearly does not change outcomes (which would make the question moot), or the planned cultural burns turning out not to happen.",
+ "supporting_facts": [
+  "c10 FireSat protoflight caught the Moran and Chicken fires in one image",
+  "c6/c5 the Yukon Flats pilot attacks a fire only if crews believe they can contain it within 72 hours, on 1.6 million acres",
+  "c18 Edward Alexander, 'We need mild fire, not wildfire.'",
+  "c13/c14 the XPRIZE finals in Alaska asked for detect and suppress in ten minutes, AURA met the detection gate"
+ ],
+ "context_claims": [
+  "c1",
+  "c2",
+  "c7",
+  "c8",
+  "c9",
+  "c11",
+  "c12",
+  "c15",
+  "c16 planned only",
+  "c19 planned only"
+ ],
+ "counterpoint_honored": "c17 Michelle Mack: it is not clear suppression can have any impact on these fires. The film gives it a full scene (the test) so 'leave it' and 'set it' read as real options and not failures. The EDF triage tool (c16) and the CATG burns (c19) are drawn as plans, never as done. No claim says any AI tool is used in Alaska fire management and no XPRIZE suppression result is claimed.",
+ "second_movement": "The probe scene recontextualises the first: the loss is the ground, not the acres (c7, c8, c9), which is why choosing matters and why 'which fire' is the whole game on four percent of the money.",
+ "throughline_object": "the hot pixel (one lit square seen from orbit). States: a single hot pixel (c10), a pixel with a 72 hour clock, a pixel sinking into the ground, a pixel on a three way fork (fight, leave, set), and the final state is a DASHED ember square inside a dashed boundary, planned and not lit (c19 is a plan).",
+ "ai_link_wording": "Satellites (FireSat), the XPRIZE autonomous-detection contest in Alaska, and a PLANNED EDF AI triage tool. No source says AI is used by Alaska fire agencies today and the film never says it.",
+ "valence": "curious, leaning hopeful. The seeing is real and arriving, the deciding is open, nobody is a villain.",
+ "stance": "curious",
+ "one_question": "When satellites can see every fire in the Interior, who should decide which ones get fought, which get left, and which get set on purpose?",
+ "runner_ups": {
+  "enthusiast": "credulous, gives detection a job no claim backs and sidesteps Mack",
+  "structuralist": "right spine, overstates 'doing'",
+  "skeptic": "accurate but sour, reads an absence as a verdict"
+ }
+}
