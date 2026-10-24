@@ -1,0 +1,2365 @@
+{
+  "run_date": "2026-10-24",
+  "slug": "seeing-is-the-easy-part",
+  "title": "Seeing Is the Easy Part",
+  "concept": "MIT Technology Review's October 19th feature on Arctic wildfire and permafrost carbon, checked against Earth Fire Alliance, XPRIZE, Alaska Public Media and Woodwell. A faced satellite, the Eye, looks down at one hot square on a cold false-colour plate. The film follows that square from a FireSat frame, to a seventy two hour clock on the Yukon Flats, to a plunge through the floor into two ground cuts side by side where a thaw probe stops at one foot on unburned ground and goes at least three times deeper in a burn scar, gives the fair doubt about suppression its own cold scene and a fought against left split, then a fork with three roads, fight, leave and set, a mild fire as an idea, and a dashed plan for next spring that lifts to a dashed ember square in orbit.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 124.98,
+  "fingerprint": {
+    "pov": "orbital-aerial",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "landscape-as-subject",
+    "layout": "map-territory",
+    "register": "instrument-readout",
+    "palette": "orbital navy void with river cyan, a bright warm thermal amber and ember yellow hot pixel, ice cyan permafrost, peat brown, smoke wisps, dashed bone plan lines, low sunrise light and birch green on tan for the last frames",
+    "camera_strategy": "aerial-descent",
+    "light_story": "an orbital plate where one warm square is the only light, a clear ice-cyan cut for the doubt, then low sunrise spring light and one small ember flame",
+    "metaphor": "one lit square seen from orbit that is first found, then timed, then buried, then forked, and finally a dashed plan"
+  },
+  "palette": "orbital navy void with river cyan, a bright warm thermal amber and ember yellow hot pixel, ice cyan permafrost, peat brown, smoke wisps, dashed bone plan lines, low sunrise light and birch green on tan for the last frames",
+  "divergence_note": "The last four films were a paper form in a snowy cutaway building, a plumb bob in dark ground with a steel bit, a calf on a pewter beach and a manila folder on a walnut desk. This film is a navy orbital plate with self-lit thermal colour, then a plunge through the floor into ice and peat, then low spring ground. There is no desk, no paper, no lamp pool and no cutaway building, and its dominant POV is looking down from orbit. HONEST OVERLAP: its hero is a faced object for the third film in a row (Plumb, Dotty, now the Eye), and its middle is a ground cutaway with a steel rod like 10-22's drill bit. The cutaway is held to one two-up shot of about twelve seconds plus a cold doubt scene, the rod is a faceless hand-pushed probe that stops, and the accent is amber and not vermilion.",
+  "treatment": {
+    "winner": "The Dramatist's one falling lens from orbit to soil to orbit with the Explainer's 50 versus 4 smoke and coin comparison and probe cutaway, the Enthusiast's three-way fork, and the Comedian's decoy squares gag cut to the XPRIZE scoreboard (the comedy stops before the doubt).",
+    "why": "The story is a view from space that falls to the ground, so a faced satellite and a single hot square carry the argument in one picture a muted viewer can read: the square is found, timed, buried, forked and planned. The doubt gets a drained cold scene at full strength."
+  },
+  "angle": {
+    "run_date": "2026-10-24",
+    "thesis": "Alaska is where machines are learning to see every fire, but seeing is only the first step. Deciding which fire to fight is still a seventy two hour human rule, and the choice has three branches, fight it, leave it, or set a mild fire on purpose.",
+    "falsifiable_by": "A working triage tool or any tested rule better than the seventy two hour call already choosing which Alaska fires get fought, or a published result showing suppression clearly does not change outcomes (which would make the question moot), or the planned cultural burns turning out not to happen.",
+    "supporting_facts": [
+      "c10 FireSat protoflight caught the Moran and Chicken fires in one image",
+      "c6/c5 the Yukon Flats pilot attacks a fire only if crews believe they can contain it within 72 hours, on 1.6 million acres",
+      "c18 Edward Alexander, 'We need mild fire, not wildfire.'",
+      "c13/c14 the XPRIZE finals in Alaska asked for detect and suppress in ten minutes, AURA met the detection gate"
+    ],
+    "context_claims": [
+      "c1",
+      "c2",
+      "c7",
+      "c8",
+      "c9",
+      "c11",
+      "c12",
+      "c15",
+      "c16 planned only",
+      "c19 planned only"
+    ],
+    "counterpoint_honored": "c17 Michelle Mack: it is not clear suppression can have any impact on these fires. The film gives it a full scene (the test) so 'leave it' and 'set it' read as real options and not failures. The EDF triage tool (c16) and the CATG burns (c19) are drawn as plans, never as done. No claim says any AI tool is used in Alaska fire management and no XPRIZE suppression result is claimed.",
+    "second_movement": "The probe scene recontextualises the first: the loss is the ground, not the acres (c7, c8, c9), which is why choosing matters and why 'which fire' is the whole game on four percent of the money.",
+    "throughline_object": "the hot pixel (one lit square seen from orbit). States: a single hot pixel (c10), a pixel with a 72 hour clock, a pixel sinking into the ground, a pixel on a three way fork (fight, leave, set), and the final state is a DASHED ember square inside a dashed boundary, planned and not lit (c19 is a plan).",
+    "ai_link_wording": "Satellites (FireSat), the XPRIZE autonomous-detection contest in Alaska, and a PLANNED EDF AI triage tool. No source says AI is used by Alaska fire agencies today and the film never says it.",
+    "valence": "curious, leaning hopeful. The seeing is real and arriving, the deciding is open, nobody is a villain.",
+    "stance": "curious",
+    "one_question": "When satellites can see every fire in the Interior, who should decide which ones get fought, which get left, and which get set on purpose?",
+    "runner_ups": {
+      "enthusiast": "credulous, gives detection a job no claim backs and sidesteps Mack",
+      "structuralist": "right spine, overstates 'doing'",
+      "skeptic": "accurate but sour, reads an absence as a verdict"
+    }
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A black-indigo top-down false-colour grid of cold tiles with one amber square snapping on at frame 6 with an overshoot and a pulsing heat ring, the faced Eye sliding in from the top edge to look at it.",
+    "headline": "ONE SQUARE \u00b7 ONE FIRE",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame is one dashed ember square on the same cold grid, inside a dashed boundary, with the Eye blinking calmly beside it: the square that was found is now a plan."
+  },
+  "open_loop": {
+    "plant_t": 3.83,
+    "pay_t": 121.69,
+    "what": "Somebody has to decide what to do about the fire. Planted as the reticle clamps on the pixel and a question mark rises, answered with three branches at the fork and handed back to the viewer as the closing question."
+  },
+  "open_loop_2": {
+    "plant_t": 54.73,
+    "pay_t": 90.27,
+    "what": "Did anyone put it out? Planted as the XPRIZE put-out ring stays empty after detection, paid when the doubt line holds that suppression's impact is not clear."
+  },
+  "throughline": {
+    "object": "the hot pixel",
+    "lands_in_button": "one dashed ember square on the cold grid inside a dashed boundary, planned and not lit",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "a single amber hot square snapping on in a cold grid"
+      },
+      {
+        "at_s": 9.95,
+        "state": "two squares, Moran and Chicken, in one FireSat image"
+      },
+      {
+        "at_s": 17.5,
+        "state": "a lit square at the centre of the dashed scan ring"
+      },
+      {
+        "at_s": 22.3,
+        "state": "a brighter square inside the glowing Interior half of Alaska"
+      },
+      {
+        "at_s": 31.18,
+        "state": "a small lit square beside the SEEING tick"
+      },
+      {
+        "at_s": 44.11,
+        "state": "a hot square with a 72:00 clock ring on the Yukon Flats"
+      },
+      {
+        "at_s": 54.73,
+        "state": "the square flagged DETECTED with an empty put-out ring beside it"
+      },
+      {
+        "at_s": 65.43,
+        "state": "the square the camera falls through into the ground"
+      },
+      {
+        "at_s": 83.85,
+        "state": "the square sinking into the peat, dark and heavy"
+      },
+      {
+        "at_s": 100.82,
+        "state": "the square at a fork with three roads, fight, leave and set"
+      },
+      {
+        "at_s": 121.69,
+        "state": "one dashed ember square inside a dashed boundary, planned and not lit"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 6.98,
+      "type": "scale-pullback",
+      "what": "a hard cut to a wide FireSat sensor screen with river braids and a second fire",
+      "hold_s": 0.7
+    },
+    {
+      "t": 65.43,
+      "type": "scale-pullback",
+      "what": "the camera falls through the hot square and the grid dissolves into layered ground",
+      "hold_s": 0.7
+    },
+    {
+      "t": 77.49,
+      "type": "build-on",
+      "what": "the right probe lands past the three foot mark beside the left column's one foot mark",
+      "hold_s": 0.8
+    },
+    {
+      "t": 121.69,
+      "type": "scale-pullback",
+      "what": "the camera lifts from a dashed flame point to orbit where it is a dashed ember square",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.2,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.55
+      },
+      {
+        "line": 0,
+        "offset": 2.5,
+        "level": 0.78
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.62
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.66
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 0.58
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 5,
+        "offset": 2.2,
+        "level": 1.05
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.72
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.48
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.95
+      },
+      {
+        "line": 13,
+        "offset": -0.4,
+        "level": 0.3
+      },
+      {
+        "line": 13,
+        "offset": 0.6,
+        "level": 0.14
+      },
+      {
+        "line": 14,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 15,
+        "offset": 0.0,
+        "level": 0.16
+      },
+      {
+        "line": 16,
+        "offset": -0.4,
+        "level": 0.2
+      },
+      {
+        "line": 16,
+        "offset": 0.2,
+        "level": 1.15
+      },
+      {
+        "line": 17,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 18,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "at_s": 122.13,
+        "level": 0.7
+      },
+      {
+        "at_s": 122.83,
+        "level": 0.07
+      },
+      {
+        "at_s": 124.53,
+        "level": 0.5
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.55
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "build_steps": 4,
+    "dip_at": 122.83,
+    "riser_at": 63.16,
+    "silence_at": 121.39,
+    "payoff_at": 121.69,
+    "button_pattern": "question",
+    "interrupt_at": 65.43,
+    "extra_dips": [
+      86.74
+    ]
+  },
+  "shots": [
+    {
+      "title": "One square",
+      "vo_line": 0,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "overhead",
+      "stage": "orbital-plate",
+      "pov": "top-down-map",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the pixel at x540 y960",
+      "means": "A cold false-colour grid, one amber square snaps on and the Eye slides in to look at it.",
+      "ambient": "grid ticks drift, the heat ring pulses, the Eye's wings flutter",
+      "hero": {
+        "name": "hot pixel + grid + Eye",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "50% pixel, 30% Eye, 20% grid"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-6.980"
+    },
+    {
+      "title": "One image",
+      "vo_line": 1,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "firesat-screen",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the two squares are the shot",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the squares, the boxes, the board and the roads are the motion",
+      "centered": "the two squares at x540 y960",
+      "means": "A hard cut to a FireSat sensor screen that carries the square to a new place, where two squares, Moran and Chicken, light in one image.",
+      "ambient": "scanlines refresh, river braids shimmer, both squares pulse, the iris glows",
+      "hero": {
+        "name": "two squares + FireSat screen",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% squares, 30% screen, 20% tags"
+      },
+      "id": 2,
+      "start_s": 6.98,
+      "t": "6.980-13.200"
+    },
+    {
+      "title": "Three in orbit",
+      "vo_line": 2,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "earth-limb",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the satellites at x540 y900",
+      "means": "Three faceless FireSats glide across the dark limb of the Earth and a dashed ring sweeps out over the Interior for the goal of a twenty minute scan.",
+      "ambient": "stars drift, lens lights blink, dashes crawl, the horizon glows",
+      "hero": {
+        "name": "three FireSats + Earth limb + dashed ring",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% satellites, 35% limb, 20% ring"
+      },
+      "id": 3,
+      "start_s": 13.2,
+      "t": "13.200-22.300"
+    },
+    {
+      "title": "Half and four",
+      "vo_line": 4,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "alaska-plate",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the map at x540 y1000",
+      "means": "The dashed ring lands as the outline of the glowing half of Alaska beside a smoke column while four coins drop and slide into a tray of a hundred.",
+      "ambient": "the glow pulses, smoke drifts, puffs bob, coins wobble",
+      "hero": {
+        "name": "Alaska map + smoke column + coins",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "40% map, 35% smoke, 25% coins"
+      },
+      "id": 4,
+      "start_s": 22.3,
+      "t": "22.300-31.180"
+    },
+    {
+      "title": "Seeing and deciding",
+      "vo_line": 5,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "eye-closeup",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the boxes are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked panel with a slow drift where the squares, the boxes, the board and the roads are the motion",
+      "centered": "the Eye at x540 y960",
+      "means": "The Eye in close-up with a SEEING box ticked and a DECIDING box empty.",
+      "ambient": "the Eye breathes, wings flutter, the box rattles, the iris moves",
+      "hero": {
+        "name": "the Eye + two boxes",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "55% Eye, 45% boxes"
+      },
+      "id": 5,
+      "start_s": 31.18,
+      "t": "31.180-36.620"
+    },
+    {
+      "title": "The seventy two hour clock",
+      "vo_line": 6,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "yukon-flats",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the pilot box at x540 y960",
+      "means": "A braided river basin where a pilot box lights over 1.6 million acres, crews wait at its edge and a fire gets a seventy two hour clock.",
+      "ambient": "rivers shimmer, the box edge pulses, the clock drains, dots shuffle",
+      "hero": {
+        "name": "Yukon Flats basin + pilot box + clock ring",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "45% basin, 30% box, 25% clock"
+      },
+      "id": 6,
+      "start_s": 36.62,
+      "t": "36.620-46.800"
+    },
+    {
+      "title": "Ten minutes",
+      "vo_line": 7,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "high",
+      "stage": "xprize-arena",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the stopwatch and the drone are the shot",
+      "transition_in": "fui-boot",
+      "thread": "build",
+      "stage3d": "flat:a locked panel with a slow drift where the squares, the boxes, the board and the roads are the motion",
+      "centered": "the scoreboard at x540 y960",
+      "means": "A scoreboard stopwatch, a generic drone icon racing over decoys, a detected flag and an empty put-out ring.",
+      "ambient": "scanlines refresh, the stopwatch ticks, rotors blur, dashes crawl",
+      "hero": {
+        "name": "scoreboard + drone + fire pixel + rings",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "35% board, 30% drone, 35% rings"
+      },
+      "id": 7,
+      "start_s": 46.8,
+      "t": "46.800-57.020"
+    },
+    {
+      "title": "A plan and a plunge",
+      "vo_line": 8,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "glass-pane",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the Eye and pane at x540 y960",
+      "means": "A glass pane with a dashed edge the Eye can't press, then the acres counter strikes out and the camera falls through the square.",
+      "ambient": "dashes crawl, the Eye leans, the counter flickers, the grid dissolves",
+      "hero": {
+        "name": "Eye + glass pane + acres counter",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% Eye, 30% pane, 30% counter"
+      },
+      "id": 8,
+      "start_s": 57.02,
+      "t": "57.020-66.900"
+    },
+    {
+      "title": "Frozen against three times deeper",
+      "vo_line": 10,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "two-soil-cuts",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "morph",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the two soil cuts at x540 y1000",
+      "means": "Two ground cuts side by side, the left probe stops dead on the ice at one foot and the right probe plunges through the burn scar to three times deeper.",
+      "ambient": "moss sways, ice glints, handles shake, ash drifts",
+      "hero": {
+        "name": "two SoilColumns + two ThawProbes",
+        "parts": 70,
+        "zones": 3,
+        "detail_note": "50% columns, 50% probes"
+      },
+      "id": 9,
+      "start_s": 66.9,
+      "t": "66.900-78.840"
+    },
+    {
+      "title": "Two million tons",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "burned-plain",
+      "pov": "orbital-aerial",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the plain at x540 y1000",
+      "means": "The thaw glow lifts into amber motes over a burned plain while a counter rolls and the hot square sinks into the peat.",
+      "ambient": "motes rise, smoke drifts, the counter rolls, the pixel dims",
+      "hero": {
+        "name": "burned plain + carbon motes + counter + pixel",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% plain, 30% motes, 30% counter"
+      },
+      "id": 10,
+      "start_s": 78.84,
+      "t": "78.840-86.740"
+    },
+    {
+      "title": "The fair doubt",
+      "vo_line": 13,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "cold-cut",
+      "pov": "cross-section-cutaway",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the cold cut at x540 y1000",
+      "means": "A drained cold cut of ground with the square sunk deep and surface hoses spraying above it under a plain name plate.",
+      "ambient": "frost glints, hoses spray, the pixel stays dark, dust drifts",
+      "hero": {
+        "name": "cold SoilColumn + sunk pixel + hoses",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% column, 25% pixel, 25% hoses"
+      },
+      "id": 11,
+      "start_s": 86.74,
+      "t": "86.740-92.860"
+    },
+    {
+      "title": "If and if not",
+      "vo_line": 14,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "split-test",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the split at x540 y960",
+      "means": "A split frame, a fought ground cut and a left one both sink to the same depth if the doubt holds, and if it is wrong the fought one snaps back to frozen.",
+      "ambient": "thaw fronts sink, hoses spray, glints crawl, the front rebounds",
+      "hero": {
+        "name": "two split cuts + hoses",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "50% left, 50% right"
+      },
+      "id": 12,
+      "start_s": 92.86,
+      "t": "92.860-100.820"
+    },
+    {
+      "title": "Three roads",
+      "vo_line": 16,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "fork-map",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the three roads are the shot",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "flat:a locked panel with a slow drift where the squares, the boxes, the board and the roads are the motion",
+      "centered": "the fork at x540 y960",
+      "means": "The hot square sits on a fork with three roads, fight, leave and set.",
+      "ambient": "the pixel pulses, ring ticks, smoke drifts, the flame flickers",
+      "hero": {
+        "name": "fork + three roads + pixel",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% pixel, 60% roads"
+      },
+      "id": 13,
+      "start_s": 100.82,
+      "t": "100.820-106.220"
+    },
+    {
+      "title": "Mild fire",
+      "vo_line": 17,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "spring-ground",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the ground at x540 y1000",
+      "means": "Unplaced spring ground at eye level, a name plate, a quote typed as it is said and one small flame lit low on the ground as an idea.",
+      "ambient": "grass sways, light shifts, the plate types, the flame flickers",
+      "hero": {
+        "name": "spring ground + quote plate + flame",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% ground, 25% plate, 25% flame"
+      },
+      "id": 14,
+      "start_s": 106.22,
+      "t": "106.220-113.180"
+    },
+    {
+      "title": "A plan, not a result",
+      "vo_line": 18,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "plan-view",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the dashed plan is the shot",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the squares, the boxes, the board and the roads are the motion",
+      "centered": "the plan at x540 y1000",
+      "means": "A dashed plan view of a burn unit near Fort Yukon, the flame as its top-down dashed twin and a dashed flame line grown along its edge.",
+      "ambient": "dashes crawl, the river shimmers, the flame line grows",
+      "hero": {
+        "name": "plan view + dashed outline + flame line",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "55% plan, 25% outline, 20% line"
+      },
+      "id": 15,
+      "start_s": 113.18,
+      "t": "113.180-119.120"
+    },
+    {
+      "title": "Planned, not found",
+      "vo_line": 19,
+      "framing": "subject-portrait",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "orbit-lift",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the square at x540 y1000",
+      "means": "The dashed flame line condenses to a point and the camera lifts to orbit where it is a dashed ember square and the Eye blinks.",
+      "ambient": "the point glows, the square pulses, the Eye blinks, ghost squares pulse",
+      "hero": {
+        "name": "dashed square + lift + orbit grid + Eye",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "40% square, 35% grid, 25% Eye"
+      },
+      "id": 16,
+      "start_s": 119.12,
+      "t": "119.120-124.980"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "This orange square is a fire. Somebody has to decide.",
+      "phrase": "This orange square is",
+      "shows": "black-indigo frame, a hard top-down false-colour grid of cold tiles, one amber square snaps on at frame 6 with an overshoot and throws a pulsing warm ring",
+      "sfx": "thunk",
+      "means": "one square \u00b7 one fire",
+      "rehook": "",
+      "draw": {
+        "subject": "hot pixel",
+        "action": "slams on in a cold grid with an overshoot and a heat ring",
+        "emotion": "alarm",
+        "annotation": "ONE SQUARE \u00b7 ONE FIRE"
+      },
+      "choreo": {
+        "primary": "black-indigo frame, a hard top-down false-colour grid of cold tiles, one amber square snaps on at frame 6 with an overshoot and throws a pulsing warm ring",
+        "reaction": "the ring pulses and the grid ticks drift",
+        "ambient": "grid ticks drift, the heat ring pulses, the Eye's wings flutter"
+      },
+      "t": "0.000-1.170",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.17,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 1.17
+      },
+      "offset": 1.17,
+      "vo": "This orange square is a fire. Somebody has to decide.",
+      "phrase": "square is a fire.",
+      "shows": "the faced satellite slides in from the top edge, cyan iris wide, and tips forward over the pixel",
+      "sfx": "hush",
+      "means": "the eye",
+      "rehook": "",
+      "draw": {
+        "subject": "the Eye",
+        "action": "slides in from the top edge and leans over the square",
+        "emotion": "curious",
+        "annotation": "THE EYE"
+      },
+      "choreo": {
+        "primary": "the faced satellite slides in from the top edge, cyan iris wide, and tips forward over the pixel",
+        "reaction": "its wings flutter and the iris dilates",
+        "ambient": "grid ticks drift, the heat ring pulses, the Eye's wings flutter"
+      },
+      "t": "1.170-3.830",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 3.83,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.83
+      },
+      "offset": 3.83,
+      "vo": "This orange square is a fire. Somebody has to decide.",
+      "phrase": "Somebody has to decide.",
+      "shows": "four corner brackets snap inward onto the pixel and a hollow question mark rises off it",
+      "sfx": "ping",
+      "means": "somebody has to decide",
+      "rehook": "",
+      "draw": {
+        "subject": "scan reticle",
+        "action": "clamps on the pixel and a hollow question mark rises",
+        "emotion": "wary",
+        "annotation": "SOMEBODY HAS TO DECIDE"
+      },
+      "choreo": {
+        "primary": "four corner brackets snap inward onto the pixel and a hollow question mark rises off it",
+        "reaction": "the brackets settle and the question bobs",
+        "ambient": "grid ticks drift, the heat ring pulses, the Eye's wings flutter"
+      },
+      "t": "3.830-6.980",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 6.98,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A prototype satellite, FireSat, caught two Alaska fires in one image.",
+      "phrase": "A prototype satellite, FireSat,",
+      "shows": "a hard cut to a FireSat sensor screen, a bezel, scanlines and a raw sensor strip of river braids, the square carried to a new place on it, a boxed tag reads FIRESAT, A PROTOTYPE",
+      "sfx": "snap",
+      "means": "firesat \u00b7 a prototype",
+      "rehook": "",
+      "draw": {
+        "subject": "FireSat screen",
+        "action": "boots on as a different screen with the square carried in",
+        "emotion": "plain",
+        "annotation": "FIRESAT \u00b7 A PROTOTYPE"
+      },
+      "choreo": {
+        "primary": "a hard cut to a FireSat sensor screen, a bezel, scanlines and a raw sensor strip of river braids, the square carried to a new place on it, a boxed tag reads FIRESAT, A PROTOTYPE",
+        "reaction": "the scanlines refresh and the river braids shimmer",
+        "ambient": "scanlines refresh, river braids shimmer, both squares pulse, the iris glows"
+      },
+      "t": "6.980-9.950",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 9.95,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "A prototype satellite, FireSat, caught two Alaska fires in one image.",
+      "phrase": "two Alaska fires in",
+      "shows": "a second square ignites beside the first, two tags pop on, MORAN FIRE and CHICKEN FIRE, and the Eye's iris tracks from one to the other",
+      "sfx": "pop",
+      "means": "moran fire \u00b7 chicken fire",
+      "rehook": "",
+      "draw": {
+        "subject": "second pixel",
+        "action": "ignites beside the first and both get a tag",
+        "emotion": "alarm",
+        "annotation": "MORAN FIRE \u00b7 CHICKEN FIRE"
+      },
+      "choreo": {
+        "primary": "a second square ignites beside the first, two tags pop on, MORAN FIRE and CHICKEN FIRE, and the Eye's iris tracks from one to the other",
+        "reaction": "both squares pulse out of phase",
+        "ambient": "scanlines refresh, river braids shimmer, both squares pulse, the iris glows"
+      },
+      "t": "9.950-11.910",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 11.91,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.93
+      },
+      "offset": 4.93,
+      "vo": "A prototype satellite, FireSat, caught two Alaska fires in one image.",
+      "phrase": "image.",
+      "shows": "frame brackets slam around both squares and a date chip prints, ONE IMAGE, JUNE 2025",
+      "sfx": "click",
+      "means": "one image \u00b7 june 2025",
+      "rehook": "",
+      "draw": {
+        "subject": "frame brackets",
+        "action": "close around both squares",
+        "emotion": "beam",
+        "annotation": "ONE IMAGE \u00b7 JUNE 2025"
+      },
+      "choreo": {
+        "primary": "frame brackets slam around both squares and a date chip prints, ONE IMAGE, JUNE 2025",
+        "reaction": "the brackets settle and the iris glows cyan",
+        "ambient": "scanlines refresh, river braids shimmer, both squares pulse, the iris glows"
+      },
+      "t": "11.910-13.200",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 13.2,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Three operational FireSats reached orbit this July.",
+      "phrase": "Three operational FireSats reached",
+      "shows": "a curved dark horizon of the Earth with cloud bands and a thin cyan rim, three faceless satellites glide across it in single file, each with a lens light that blinks on in turn",
+      "sfx": "whirr",
+      "means": "3 operational firesats \u00b7 july",
+      "rehook": "rehook: the orbit",
+      "draw": {
+        "subject": "three FireSats",
+        "action": "glide across the dark limb of the Earth in single file",
+        "emotion": "plain",
+        "annotation": "3 OPERATIONAL FIRESATS \u00b7 JULY"
+      },
+      "choreo": {
+        "primary": "a curved dark horizon of the Earth with cloud bands and a thin cyan rim, three faceless satellites glide across it in single file, each with a lens light that blinks on in turn",
+        "reaction": "the stars drift and the lens lights blink",
+        "ambient": "stars drift, lens lights blink, dashes crawl, the horizon glows"
+      },
+      "t": "13.200-16.170",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 16.17,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "Three operational FireSats reached orbit this July.",
+      "phrase": "July.",
+      "shows": "all three lens lights go steady cyan and a boxed tag reads 3 OPERATIONAL FIRESATS, JULY",
+      "sfx": "bell",
+      "means": "reached orbit this july",
+      "rehook": "",
+      "draw": {
+        "subject": "lens lights",
+        "action": "all three go steady",
+        "emotion": "beam",
+        "annotation": "REACHED ORBIT THIS JULY"
+      },
+      "choreo": {
+        "primary": "all three lens lights go steady cyan and a boxed tag reads 3 OPERATIONAL FIRESATS, JULY",
+        "reaction": "the lights pulse softly",
+        "ambient": "stars drift, lens lights blink, dashes crawl, the horizon glows"
+      },
+      "t": "16.170-17.500",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 17.5,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The aim is a scan every twenty minutes by the early twenty thirties.",
+      "phrase": "The aim is a",
+      "shows": "the lead satellite tilts and a dashed scan ring sweeps outward over the dark Interior around one lit square while a dashed plate reads GOAL, EVERY 20 MINUTES, EARLY 2030S",
+      "sfx": "hum",
+      "means": "goal \u00b7 every 20 minutes \u00b7 early 2030s",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed ring",
+        "action": "sweeps outward over the Interior as the lead satellite tilts",
+        "emotion": "plain",
+        "annotation": "GOAL \u00b7 EVERY 20 MINUTES \u00b7 EARLY 2030S"
+      },
+      "choreo": {
+        "primary": "the lead satellite tilts and a dashed scan ring sweeps outward over the dark Interior around one lit square while a dashed plate reads GOAL, EVERY 20 MINUTES, EARLY 2030S",
+        "reaction": "the dashes crawl",
+        "ambient": "stars drift, lens lights blink, dashes crawl, the horizon glows"
+      },
+      "t": "17.500-22.300",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 22.3,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska makes about half of America's wildfire emissions but gets around four percent of fire money, per MIT Technology Review.",
+      "phrase": "Alaska makes about half",
+      "shows": "a hard cut to the state of Alaska on the cold plate, the dashed ring from the last shot landing as the outline of the Interior half which glows a low dull ember with one brighter square in it",
+      "sfx": "snap",
+      "means": "about half of u.s. wildfire emissions",
+      "rehook": "",
+      "draw": {
+        "subject": "Alaska",
+        "action": "snaps in as a state map where the dashed ring lands as the outline of its glowing Interior half",
+        "emotion": "plain",
+        "annotation": "ABOUT HALF OF U.S. WILDFIRE EMISSIONS"
+      },
+      "choreo": {
+        "primary": "a hard cut to the state of Alaska on the cold plate, the dashed ring from the last shot landing as the outline of the Interior half which glows a low dull ember with one brighter square in it",
+        "reaction": "the glow pulses and smoke wisps drift up",
+        "ambient": "the glow pulses, smoke drifts, puffs bob, coins wobble"
+      },
+      "t": "22.300-23.650",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 23.65,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 1.35
+      },
+      "offset": 1.35,
+      "vo": "Alaska makes about half of America's wildfire emissions but gets around four percent of fire money, per MIT Technology Review.",
+      "phrase": "half of America's wildfire",
+      "shows": "a tall column of grey smoke puffs builds beside the map, puff by puff, to a half-height mark, a plate reads ABOUT HALF, PER MIT TECHNOLOGY REVIEW",
+      "sfx": "thump",
+      "means": "about half \u00b7 per mit technology review",
+      "rehook": "",
+      "draw": {
+        "subject": "smoke stack",
+        "action": "builds fifty puffs in a tall column",
+        "emotion": "plain",
+        "annotation": "ABOUT HALF \u00b7 PER MIT TECHNOLOGY REVIEW"
+      },
+      "choreo": {
+        "primary": "a tall column of grey smoke puffs builds beside the map, puff by puff, to a half-height mark, a plate reads ABOUT HALF, PER MIT TECHNOLOGY REVIEW",
+        "reaction": "the puffs bob",
+        "ambient": "the glow pulses, smoke drifts, puffs bob, coins wobble"
+      },
+      "t": "23.650-26.770",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 26.77,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.47
+      },
+      "offset": 4.47,
+      "vo": "Alaska makes about half of America's wildfire emissions but gets around four percent of fire money, per MIT Technology Review.",
+      "phrase": "four percent of fire",
+      "shows": "four steel-silver coins drop one by one beside the tall smoke column and a plate reads AROUND 4% OF FEDERAL FIREFIGHTING FUNDS while the Eye double takes",
+      "sfx": "clink",
+      "means": "around 4% of federal firefighting funds",
+      "rehook": "",
+      "draw": {
+        "subject": "coins",
+        "action": "four steel coins drop beside the smoke and the Eye double takes",
+        "emotion": "wary",
+        "annotation": "AROUND 4% OF FEDERAL FIREFIGHTING FUNDS"
+      },
+      "choreo": {
+        "primary": "four steel-silver coins drop one by one beside the tall smoke column and a plate reads AROUND 4% OF FEDERAL FIREFIGHTING FUNDS while the Eye double takes",
+        "reaction": "the coins wobble and the Eye's iris snaps wide",
+        "ambient": "the glow pulses, smoke drifts, puffs bob, coins wobble"
+      },
+      "t": "26.770-29.890",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 29.89,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 7.59
+      },
+      "offset": 7.59,
+      "vo": "Alaska makes about half of America's wildfire emissions but gets around four percent of fire money, per MIT Technology Review.",
+      "phrase": "Review.",
+      "shows": "the four coins slide into a faint tray of one hundred slots beside the column, four filled, a small label reads OUT OF 100, ILLUSTRATIVE",
+      "sfx": "slide",
+      "means": "out of 100 \u00b7 illustrative",
+      "rehook": "",
+      "draw": {
+        "subject": "coins",
+        "action": "slide into a faint tray of one hundred slots beside the column",
+        "emotion": "plain",
+        "annotation": "OUT OF 100 \u00b7 ILLUSTRATIVE"
+      },
+      "choreo": {
+        "primary": "the four coins slide into a faint tray of one hundred slots beside the column, four filled, a small label reads OUT OF 100, ILLUSTRATIVE",
+        "reaction": "the tray glints",
+        "ambient": "the glow pulses, smoke drifts, puffs bob, coins wobble"
+      },
+      "t": "29.890-31.180",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 31.18,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So seeing is getting easy. Deciding is the hard part.",
+      "phrase": "So seeing is getting",
+      "shows": "the Eye close in the middle of the frame with two boxes, SEEING ticks bone, a small lit square beside it",
+      "sfx": "tick",
+      "means": "seeing",
+      "rehook": "",
+      "draw": {
+        "subject": "SEEING box",
+        "action": "ticks",
+        "emotion": "beam",
+        "annotation": "SEEING"
+      },
+      "choreo": {
+        "primary": "the Eye close in the middle of the frame with two boxes, SEEING ticks bone, a small lit square beside it",
+        "reaction": "the Eye breathes and its wings flutter",
+        "ambient": "the Eye breathes, wings flutter, the box rattles, the iris moves"
+      },
+      "t": "31.180-34.050",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 34.05,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.87
+      },
+      "offset": 2.87,
+      "vo": "So seeing is getting easy. Deciding is the hard part.",
+      "phrase": "Deciding is the hard",
+      "shows": "a dashed DECIDING box slams down beside it, empty, with a hollow question mark and the Eye's iris drops sheepishly",
+      "sfx": "hit",
+      "means": "deciding",
+      "rehook": "rehook: the hard part",
+      "draw": {
+        "subject": "DECIDING box",
+        "action": "slams down empty with a hollow question mark",
+        "emotion": "wary",
+        "annotation": "DECIDING"
+      },
+      "choreo": {
+        "primary": "a dashed DECIDING box slams down beside it, empty, with a hollow question mark and the Eye's iris drops sheepishly",
+        "reaction": "the box rattles and the Eye droops",
+        "ambient": "the Eye breathes, wings flutter, the box rattles, the iris moves"
+      },
+      "t": "34.050-36.620",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 6,
+      "at_s": 36.62,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On the Yukon Flats, a pilot program on one point six million acres sends crews only if they expect to contain a fire within seventy two hours.",
+      "phrase": "On the Yukon Flats,",
+      "shows": "a top-down braided river basin in cold false colour, the refuge outline drawn dashed in bone, rivers in cyan",
+      "sfx": "slide",
+      "means": "yukon flats",
+      "rehook": "",
+      "draw": {
+        "subject": "Yukon Flats",
+        "action": "slides in as a braided river basin from above",
+        "emotion": "plain",
+        "annotation": "YUKON FLATS"
+      },
+      "choreo": {
+        "primary": "a top-down braided river basin in cold false colour, the refuge outline drawn dashed in bone, rivers in cyan",
+        "reaction": "the rivers shimmer and the grid drifts",
+        "ambient": "rivers shimmer, the box edge pulses, the clock drains, dots shuffle"
+      },
+      "t": "36.620-40.750",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 40.75,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.13
+      },
+      "offset": 4.13,
+      "vo": "On the Yukon Flats, a pilot program on one point six million acres sends crews only if they expect to contain a fire within seventy two hours.",
+      "phrase": "acres sends crews only",
+      "shows": "a pilot box lights bright over a section of the refuge and a plate reads 1.6 MILLION ACRES, A PILOT",
+      "sfx": "click",
+      "means": "1.6 million acres \u00b7 a pilot",
+      "rehook": "",
+      "draw": {
+        "subject": "pilot box",
+        "action": "lights over a section of the refuge",
+        "emotion": "plain",
+        "annotation": "1.6 MILLION ACRES \u00b7 A PILOT"
+      },
+      "choreo": {
+        "primary": "a pilot box lights bright over a section of the refuge and a plate reads 1.6 MILLION ACRES, A PILOT",
+        "reaction": "the box edge pulses",
+        "ambient": "rivers shimmer, the box edge pulses, the clock drains, dots shuffle"
+      },
+      "t": "40.750-41.230",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 41.23,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.61
+      },
+      "offset": 4.61,
+      "vo": "On the Yukon Flats, a pilot program on one point six million acres sends crews only if they expect to contain a fire within seventy two hours.",
+      "phrase": "sends crews only if",
+      "shows": "small crew dots walk in along the river in a line and stop at the edge of the pilot box",
+      "sfx": "tap",
+      "means": "crews",
+      "rehook": "",
+      "draw": {
+        "subject": "crew dots",
+        "action": "arrive in a line and wait at the edge of the box",
+        "emotion": "plain",
+        "annotation": "CREWS"
+      },
+      "choreo": {
+        "primary": "small crew dots walk in along the river in a line and stop at the edge of the pilot box",
+        "reaction": "the dots shuffle",
+        "ambient": "rivers shimmer, the box edge pulses, the clock drains, dots shuffle"
+      },
+      "t": "41.230-44.110",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 44.11,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.49
+      },
+      "offset": 7.49,
+      "vo": "On the Yukon Flats, a pilot program on one point six million acres sends crews only if they expect to contain a fire within seventy two hours.",
+      "phrase": "fire within seventy two",
+      "shows": "a hot square ignites inside the pilot box and a radial 72 HR gauge draws itself around it as a yes or no test",
+      "sfx": "alarm",
+      "means": "72 hour threshold",
+      "rehook": "",
+      "draw": {
+        "subject": "fire pixel",
+        "action": "ignites inside the box and a threshold gauge appears",
+        "emotion": "alarm",
+        "annotation": "72 HOUR THRESHOLD"
+      },
+      "choreo": {
+        "primary": "a hot square ignites inside the pilot box and a radial 72 HR gauge draws itself around it as a yes or no test",
+        "reaction": "the pixel pulses and warm rings spread",
+        "ambient": "rivers shimmer, the box edge pulses, the clock drains, dots shuffle"
+      },
+      "t": "44.110-44.770",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 44.77,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 8.15
+      },
+      "offset": 8.15,
+      "vo": "On the Yukon Flats, a pilot program on one point six million acres sends crews only if they expect to contain a fire within seventy two hours.",
+      "phrase": "seventy two hours.",
+      "shows": "the 72 HR gauge holds as a threshold while the crew dots wait at the edge of the box and a plate reads ATTACK ONLY IF CONTAINED IN 72 HOURS",
+      "sfx": "roll",
+      "means": "attack only if contained in 72 hours",
+      "rehook": "",
+      "draw": {
+        "subject": "threshold gauge",
+        "action": "holds as a yes or no test while the crews wait at the edge",
+        "emotion": "plain",
+        "annotation": "ATTACK ONLY IF CONTAINED IN 72 HOURS"
+      },
+      "choreo": {
+        "primary": "the 72 HR gauge holds as a threshold while the crew dots wait at the edge of the box and a plate reads ATTACK ONLY IF CONTAINED IN 72 HOURS",
+        "reaction": "the clock drains and the dots shuffle",
+        "ambient": "rivers shimmer, the box edge pulses, the clock drains, dots shuffle"
+      },
+      "t": "44.770-46.800",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 46.8,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In June, an X Prize contest in Alaska asked robots to find and put out a fire in ten minutes, and AURA Foresight found its fire in time.",
+      "phrase": "In June, an X",
+      "shows": "a contest scoreboard boots on, a stopwatch counting down from 10:00 and a plate XPRIZE, ALASKA, JUNE, 10 MINUTES, over a top-down arena of cold land with three decoy squares, an ILLUSTRATION",
+      "sfx": "drone",
+      "means": "xprize \u00b7 alaska \u00b7 june \u00b7 10 minutes",
+      "rehook": "",
+      "draw": {
+        "subject": "scoreboard",
+        "action": "boots up with a ten minute stopwatch",
+        "emotion": "plain",
+        "annotation": "XPRIZE \u00b7 ALASKA \u00b7 JUNE \u00b7 10 MINUTES"
+      },
+      "choreo": {
+        "primary": "a contest scoreboard boots on, a stopwatch counting down from 10:00 and a plate XPRIZE, ALASKA, JUNE, 10 MINUTES, over a top-down arena of cold land with three decoy squares, an ILLUSTRATION",
+        "reaction": "the stopwatch ticks and the scanlines refresh",
+        "ambient": "scanlines refresh, the stopwatch ticks, rotors blur, dashes crawl"
+      },
+      "t": "46.800-50.170",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 50.17,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "In June, an X Prize contest in Alaska asked robots to find and put out a fire in ten minutes, and AURA Foresight found its fire in time.",
+      "phrase": "robots to find and",
+      "shows": "a faceless generic drone icon races across the arena over the decoy squares toward the real fire pixel and the stopwatch snaps",
+      "sfx": "whirr",
+      "means": "find and put out",
+      "rehook": "rehook: the race",
+      "draw": {
+        "subject": "drone silhouette",
+        "action": "races across the arena over the decoys with a stopwatch snap",
+        "emotion": "plain",
+        "annotation": "FIND AND PUT OUT"
+      },
+      "choreo": {
+        "primary": "a faceless generic drone icon races across the arena over the decoy squares toward the real fire pixel and the stopwatch snaps",
+        "reaction": "the rotors blur and the shadow slides",
+        "ambient": "scanlines refresh, the stopwatch ticks, rotors blur, dashes crawl"
+      },
+      "t": "50.170-54.730",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 54.73,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 7.93
+      },
+      "offset": 7.93,
+      "vo": "In June, an X Prize contest in Alaska asked robots to find and put out a fire in ten minutes, and AURA Foresight found its fire in time.",
+      "phrase": "found its fire in",
+      "shows": "a DETECTED flag pops on the fire pixel and the stopwatch freezes at the gate line, a plate reads AURA FORESIGHT, MET THE DETECTION GATE, and beside it a dashed ring labelled PUT OUT, NO RESULT STATED stays empty",
+      "sfx": "bell",
+      "means": "aura foresight \u00b7 met the detection gate",
+      "rehook": "",
+      "draw": {
+        "subject": "DETECTED flag",
+        "action": "pops on the fire and a dashed put-out ring beside it stays empty",
+        "emotion": "plain",
+        "annotation": "AURA FORESIGHT \u00b7 MET THE DETECTION GATE"
+      },
+      "choreo": {
+        "primary": "a DETECTED flag pops on the fire pixel and the stopwatch freezes at the gate line, a plate reads AURA FORESIGHT, MET THE DETECTION GATE, and beside it a dashed ring labelled PUT OUT, NO RESULT STATED stays empty",
+        "reaction": "the flag flutters and the dashed ring crawls",
+        "ambient": "scanlines refresh, the stopwatch ticks, rotors blur, dashes crawl"
+      },
+      "t": "54.730-57.020",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 57.02,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The Environmental Defense Fund says it intends to build an A I tool to pick which fires to fight.",
+      "phrase": "The Environmental Defense Fund",
+      "shows": "a translucent glass pane with a dashed edge fades up beside the Eye, a plate reads EDF, INTENDS TO BUILD, AI TRIAGE TOOL",
+      "sfx": "hum",
+      "means": "intends to build \u00b7 ai triage tool",
+      "rehook": "",
+      "draw": {
+        "subject": "ghost panel",
+        "action": "fades up as a lit glass pane with a dashed edge beside the Eye",
+        "emotion": "plain",
+        "annotation": "INTENDS TO BUILD \u00b7 AI TRIAGE TOOL"
+      },
+      "choreo": {
+        "primary": "a translucent glass pane with a dashed edge fades up beside the Eye, a plate reads EDF, INTENDS TO BUILD, AI TRIAGE TOOL",
+        "reaction": "the dashes crawl and the Eye leans in",
+        "ambient": "dashes crawl, the Eye leans, the counter flickers, the grid dissolves"
+      },
+      "t": "57.020-61.990",
+      "key": 24
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 61.99,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.97
+      },
+      "offset": 4.97,
+      "vo": "The Environmental Defense Fund says it intends to build an A I tool to pick which fires to fight.",
+      "phrase": "fight.",
+      "shows": "the Eye's solar wing tilts toward a dashed button on the pane and a dashed line from the wingtip passes straight through it",
+      "sfx": "whoosh",
+      "means": "a plan",
+      "rehook": "",
+      "draw": {
+        "subject": "Eye wing",
+        "action": "tilts toward the dashed button and a dashed line from the wingtip passes through it",
+        "emotion": "plain",
+        "annotation": "A PLAN"
+      },
+      "choreo": {
+        "primary": "the Eye's solar wing tilts toward a dashed button on the pane and a dashed line from the wingtip passes straight through it",
+        "reaction": "the dashes crawl",
+        "ambient": "dashes crawl, the Eye leans, the counter flickers, the grid dissolves"
+      },
+      "t": "61.990-63.160",
+      "key": 25
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 63.16,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But acres burned may be the wrong number.",
+      "phrase": "But acres burned may",
+      "shows": "an acres counter flickers over the hot pixel and a strike slashes through it while a plate asks ACRES BURNED, THE WRONG NUMBER?",
+      "sfx": "swell",
+      "means": "acres burned \u00b7 the wrong number?",
+      "rehook": "rehook: the floor",
+      "draw": {
+        "subject": "acre counter",
+        "action": "flickers on the pixel and a strike crosses it",
+        "emotion": "wary",
+        "annotation": "ACRES BURNED \u00b7 THE WRONG NUMBER?"
+      },
+      "choreo": {
+        "primary": "an acres counter flickers over the hot pixel and a strike slashes through it while a plate asks ACRES BURNED, THE WRONG NUMBER?",
+        "reaction": "the counter flickers and the strike draws",
+        "ambient": "dashes crawl, the Eye leans, the counter flickers, the grid dissolves"
+      },
+      "t": "63.160-65.430",
+      "key": 26
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 65.43,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 2.27
+      },
+      "offset": 2.27,
+      "vo": "But acres burned may be the wrong number.",
+      "phrase": "number.",
+      "shows": "the camera falls through the hot square, the grid cells break up and dissolve into irregular strata and the whole frame drops with it",
+      "sfx": "thump",
+      "means": "through the floor",
+      "rehook": "",
+      "draw": {
+        "subject": "camera",
+        "action": "plunges through the square into the ground",
+        "emotion": "alarm",
+        "annotation": "THROUGH THE FLOOR"
+      },
+      "choreo": {
+        "primary": "the camera falls through the hot square, the grid cells break up and dissolve into irregular strata and the whole frame drops with it",
+        "reaction": "the grid dissolves into soil",
+        "ambient": "dashes crawl, the Eye leans, the counter flickers, the grid dissolves"
+      },
+      "kick": true,
+      "t": "65.430-66.900",
+      "key": 27
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 66.9,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Near Fairbanks, a thaw probe hits frozen ground about a foot down on unburned soil.",
+      "phrase": "Near Fairbanks, a thaw",
+      "shows": "two layered cuts side by side, the unburned one on the left with moss on top, peat, then ice and the burned one on the right with char on top, a foot ruler down the left edge, and a steel probe hovering over each",
+      "sfx": "hush",
+      "means": "two grounds",
+      "rehook": "",
+      "draw": {
+        "subject": "two soil columns",
+        "action": "rise into frame, unburned on the left and burned on the right, each with a probe hovering",
+        "emotion": "plain",
+        "annotation": "TWO GROUNDS"
+      },
+      "choreo": {
+        "primary": "two layered cuts side by side, the unburned one on the left with moss on top, peat, then ice and the burned one on the right with char on top, a foot ruler down the left edge, and a steel probe hovering over each",
+        "reaction": "the moss sways and the ice glints",
+        "ambient": "moss sways, ice glints, handles shake, ash drifts"
+      },
+      "t": "66.900-68.930",
+      "key": 28
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 68.93,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.03
+      },
+      "offset": 2.03,
+      "vo": "Near Fairbanks, a thaw probe hits frozen ground about a foot down on unburned soil.",
+      "phrase": "frozen ground about a",
+      "shows": "the left probe drops through the peat and stops dead on the ice at the 1 FT mark, the handle jolts, a chip of ice flies and a plate prints over the left column, UNBURNED, FROZEN ABOUT A FOOT DOWN, then the right column's thaw front starts to glow faintly while its probe twitches",
+      "sfx": "thunk",
+      "means": "unburned \u00b7 frozen about a foot down",
+      "rehook": "",
+      "draw": {
+        "subject": "left probe",
+        "action": "drops and stops dead on the ice",
+        "emotion": "alert",
+        "annotation": "UNBURNED \u00b7 FROZEN ABOUT A FOOT DOWN"
+      },
+      "choreo": {
+        "primary": "the left probe drops through the peat and stops dead on the ice at the 1 FT mark, the handle jolts, a chip of ice flies and a plate prints over the left column, UNBURNED, FROZEN ABOUT A FOOT DOWN, then the right column's thaw front starts to glow faintly while its probe twitches",
+        "reaction": "the handle shakes and a chip of ice flies",
+        "ambient": "moss sways, ice glints, handles shake, ash drifts"
+      },
+      "t": "68.930-72.680",
+      "key": 29
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 72.68,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Inside a burn scar from July of twenty twenty one, it plunged at least three times deeper.",
+      "phrase": "Inside a burn scar",
+      "shows": "the right probe starts down over the burned cut as ash drifts up and the dull thaw front glows and a plate reads BURN SCAR, JULY 2021",
+      "sfx": "slide",
+      "means": "burn scar \u00b7 july 2021",
+      "rehook": "",
+      "draw": {
+        "subject": "right probe",
+        "action": "starts down over the burned column as its thaw front glows",
+        "emotion": "alert",
+        "annotation": "BURN SCAR \u00b7 JULY 2021"
+      },
+      "choreo": {
+        "primary": "the right probe starts down over the burned cut as ash drifts up and the dull thaw front glows and a plate reads BURN SCAR, JULY 2021",
+        "reaction": "ash drifts up and the thaw front glows",
+        "ambient": "moss sways, ice glints, handles shake, ash drifts"
+      },
+      "t": "72.680-75.890",
+      "key": 31
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 75.89,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.21
+      },
+      "offset": 3.21,
+      "vo": "Inside a burn scar from July of twenty twenty one, it plunged at least three times deeper.",
+      "phrase": "plunged at least three",
+      "shows": "the right probe punches down through the 1 FT mark and keeps going while the ice around it dissolves",
+      "sfx": "crack",
+      "means": "at least 3 times deeper",
+      "rehook": "",
+      "draw": {
+        "subject": "right probe",
+        "action": "plunges through the mark where the ice should have stopped it",
+        "emotion": "alarm",
+        "annotation": "AT LEAST 3 TIMES DEEPER"
+      },
+      "choreo": {
+        "primary": "the right probe punches down through the 1 FT mark and keeps going while the ice around it dissolves",
+        "reaction": "the rod blurs and ice chips fly",
+        "ambient": "moss sways, ice glints, handles shake, ash drifts"
+      },
+      "t": "75.890-77.490",
+      "key": 32
+    },
+    {
+      "id": 32,
+      "shot": 9,
+      "at_s": 77.49,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.81
+      },
+      "offset": 4.81,
+      "vo": "Inside a burn scar from July of twenty twenty one, it plunged at least three times deeper.",
+      "phrase": "deeper.",
+      "shows": "the right probe lands past 3 FT and a plate reads BURN SCAR, AT LEAST 3 TIMES DEEPER, the left column's 1 FT mark glowing beside it",
+      "sfx": "knock",
+      "means": "burn scar \u00b7 at least 3 times deeper",
+      "rehook": "",
+      "draw": {
+        "subject": "ruler",
+        "action": "marks 3 FT beside the left column's 1 FT",
+        "emotion": "alarm",
+        "annotation": "BURN SCAR \u00b7 AT LEAST 3 TIMES DEEPER"
+      },
+      "choreo": {
+        "primary": "the right probe lands past 3 FT and a plate reads BURN SCAR, AT LEAST 3 TIMES DEEPER, the left column's 1 FT mark glowing beside it",
+        "reaction": "the handle shudders and the thaw front pulses",
+        "ambient": "moss sways, ice glints, handles shake, ash drifts"
+      },
+      "t": "77.490-78.840",
+      "key": 33
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 78.84,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "One fire, in two thousand seven, released more than two million tons of carbon. So the loss is the ground.",
+      "phrase": "One fire, in two",
+      "shows": "the thaw glow lifts off the burned column as the first amber carbon motes and opens to a wide burned plain under a low smoke sky, a plate reads 2007 ANAKTUVUK RIVER FIRE",
+      "sfx": "rumble",
+      "means": "2007 anaktuvuk river fire",
+      "rehook": "",
+      "draw": {
+        "subject": "burned plain",
+        "action": "opens wide as the first amber motes lift off the glow",
+        "emotion": "plain",
+        "annotation": "2007 ANAKTUVUK RIVER FIRE"
+      },
+      "choreo": {
+        "primary": "the thaw glow lifts off the burned column as the first amber carbon motes and opens to a wide burned plain under a low smoke sky, a plate reads 2007 ANAKTUVUK RIVER FIRE",
+        "reaction": "the motes rise and the smoke drifts",
+        "ambient": "motes rise, smoke drifts, the counter rolls, the pixel dims"
+      },
+      "t": "78.840-81.950",
+      "key": 34
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 81.95,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.11
+      },
+      "offset": 3.11,
+      "vo": "One fire, in two thousand seven, released more than two million tons of carbon. So the loss is the ground.",
+      "phrase": "million tons of carbon.",
+      "shows": "a counter rolls up to 2 MILLION+ TONS OF CARBON as the stream of amber motes thickens",
+      "sfx": "roll",
+      "means": "2 million+ tons of carbon",
+      "rehook": "",
+      "draw": {
+        "subject": "carbon counter",
+        "action": "rolls up to two million tons",
+        "emotion": "alarm",
+        "annotation": "2 MILLION+ TONS OF CARBON"
+      },
+      "choreo": {
+        "primary": "a counter rolls up to 2 MILLION+ TONS OF CARBON as the stream of amber motes thickens",
+        "reaction": "the counter rolls and the motes thicken",
+        "ambient": "motes rise, smoke drifts, the counter rolls, the pixel dims"
+      },
+      "t": "81.950-83.850",
+      "key": 35
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 83.85,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 5.01
+      },
+      "offset": 5.01,
+      "vo": "One fire, in two thousand seven, released more than two million tons of carbon. So the loss is the ground.",
+      "phrase": "So the loss is",
+      "shows": "the hot square sinks slowly through the char into the peat, going from bright to a heavy dark orange, and a plate reads THE LOSS IS THE GROUND, OUR READ",
+      "sfx": "thunk",
+      "means": "the loss is the ground \u00b7 our read",
+      "rehook": "",
+      "draw": {
+        "subject": "hot pixel",
+        "action": "sinks into the peat and goes dark",
+        "emotion": "heavy",
+        "annotation": "THE LOSS IS THE GROUND \u00b7 OUR READ"
+      },
+      "choreo": {
+        "primary": "the hot square sinks slowly through the char into the peat, going from bright to a heavy dark orange, and a plate reads THE LOSS IS THE GROUND, OUR READ",
+        "reaction": "the pixel dims as it sinks",
+        "ambient": "motes rise, smoke drifts, the counter rolls, the pixel dims"
+      },
+      "t": "83.850-86.740",
+      "key": 36
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 86.74,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A Northern Arizona University scientist says it's not clear suppression can affect these fires.",
+      "phrase": "A Northern Arizona University",
+      "shows": "a cold ice-cyan cut of ground with the hot square sunk deep in the peat and small crew dots on the surface far above, a plain name plate MICHELLE MACK, NORTHERN ARIZONA UNIVERSITY slides in over the cold frame",
+      "sfx": "hush",
+      "means": "michelle mack \u00b7 northern arizona university",
+      "rehook": "rehook: the doubt",
+      "draw": {
+        "subject": "cold ground",
+        "action": "drains the warmth from the frame as a name plate arrives",
+        "emotion": "plain",
+        "annotation": "MICHELLE MACK \u00b7 NORTHERN ARIZONA UNIVERSITY"
+      },
+      "choreo": {
+        "primary": "a cold ice-cyan cut of ground with the hot square sunk deep in the peat and small crew dots on the surface far above, a plain name plate MICHELLE MACK, NORTHERN ARIZONA UNIVERSITY slides in over the cold frame",
+        "reaction": "the frost glints and the crew dots shuffle",
+        "ambient": "frost glints, hoses spray, the pixel stays dark, dust drifts"
+      },
+      "t": "86.740-90.270",
+      "key": 37
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 90.27,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "A Northern Arizona University scientist says it's not clear suppression can affect these fires.",
+      "phrase": "suppression can affect these",
+      "shows": "a plain line types out and holds, MACK, SUPPRESSION IMPACT NOT CLEAR, while the hose water arcs down toward the ground and a hollow question mark sits in the distance still to cover",
+      "sfx": "tick",
+      "means": "mack \u00b7 suppression impact not clear",
+      "rehook": "",
+      "draw": {
+        "subject": "doubt line",
+        "action": "types out and holds with the hose water stopping short of a dashed ring",
+        "emotion": "plain",
+        "annotation": "MACK \u00b7 SUPPRESSION IMPACT NOT CLEAR"
+      },
+      "choreo": {
+        "primary": "a plain line types out and holds, MACK, SUPPRESSION IMPACT NOT CLEAR, while the hose water arcs down toward the ground and a hollow question mark sits in the distance still to cover",
+        "reaction": "the hoses spray and the pixel stays dark",
+        "ambient": "frost glints, hoses spray, the pixel stays dark, dust drifts"
+      },
+      "t": "90.270-92.860",
+      "key": 38
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 92.86,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "If that doubt holds, a faster eye can't save the ground.",
+      "phrase": "If that doubt holds,",
+      "shows": "a split frame, FOUGHT on the left and LEFT on the right, each a ground cut with a hose or nothing above it, and both thaw fronts sink to the same depth, a plate reads IF THE DOUBT HOLDS",
+      "sfx": "drone",
+      "means": "if the doubt holds",
+      "rehook": "",
+      "draw": {
+        "subject": "two columns",
+        "action": "sink to the same depth, a fought one and a left one",
+        "emotion": "wary",
+        "annotation": "IF THE DOUBT HOLDS"
+      },
+      "choreo": {
+        "primary": "a split frame, FOUGHT on the left and LEFT on the right, each a ground cut with a hose or nothing above it, and both thaw fronts sink to the same depth, a plate reads IF THE DOUBT HOLDS",
+        "reaction": "the thaw fronts sink",
+        "ambient": "thaw fronts sink, hoses spray, glints crawl, the front rebounds"
+      },
+      "t": "92.860-96.960",
+      "key": 39
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 96.96,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "If it doesn't, leaving fire costs the ground.",
+      "phrase": "If it doesn't, leaving",
+      "shows": "the FOUGHT column snaps back to frozen at 1 FT while the LEFT column sinks further, a plate reads IF THE DOUBT IS WRONG",
+      "sfx": "hit",
+      "means": "if the doubt is wrong",
+      "rehook": "",
+      "draw": {
+        "subject": "fought column",
+        "action": "snaps back to frozen at one foot while the left one sinks further",
+        "emotion": "wary",
+        "annotation": "IF THE DOUBT IS WRONG"
+      },
+      "choreo": {
+        "primary": "the FOUGHT column snaps back to frozen at 1 FT while the LEFT column sinks further, a plate reads IF THE DOUBT IS WRONG",
+        "reaction": "the thaw front rebounds and sinks",
+        "ambient": "thaw fronts sink, hoses spray, glints crawl, the front rebounds"
+      },
+      "t": "96.960-100.820",
+      "key": 40
+    },
+    {
+      "id": 40,
+      "shot": 13,
+      "at_s": 100.82,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the choices are fight, leave, or light a mild fire on purpose.",
+      "phrase": "So the choices are",
+      "shows": "the hot square sits on a fork seen from above, three roads leaving it, FIGHT, LEAVE, SET, each a dim line",
+      "sfx": "snap",
+      "means": "three choices",
+      "rehook": "rehook: the fork",
+      "draw": {
+        "subject": "hot pixel",
+        "action": "arrives at a fork with three roads",
+        "emotion": "curious",
+        "annotation": "THREE CHOICES"
+      },
+      "choreo": {
+        "primary": "the hot square sits on a fork seen from above, three roads leaving it, FIGHT, LEAVE, SET, each a dim line",
+        "reaction": "the pixel pulses",
+        "ambient": "the pixel pulses, ring ticks, smoke drifts, the flame flickers"
+      },
+      "kick": true,
+      "t": "100.820-102.070",
+      "key": 41
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 102.07,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 1.25
+      },
+      "offset": 1.25,
+      "vo": "So the choices are fight, leave, or light a mild fire on purpose.",
+      "phrase": "fight, leave, or light",
+      "shows": "the FIGHT road lights up with a small clock ring",
+      "sfx": "click",
+      "means": "fight",
+      "rehook": "",
+      "draw": {
+        "subject": "FIGHT road",
+        "action": "lights with a clock ring",
+        "emotion": "plain",
+        "annotation": "FIGHT"
+      },
+      "choreo": {
+        "primary": "the FIGHT road lights up with a small clock ring",
+        "reaction": "the ring ticks",
+        "ambient": "the pixel pulses, ring ticks, smoke drifts, the flame flickers"
+      },
+      "t": "102.070-102.870",
+      "key": 42
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 102.87,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.05
+      },
+      "offset": 2.05,
+      "vo": "So the choices are fight, leave, or light a mild fire on purpose.",
+      "phrase": "leave, or light a",
+      "shows": "the LEAVE road fills with drifting grey smoke",
+      "sfx": "hush",
+      "means": "leave",
+      "rehook": "",
+      "draw": {
+        "subject": "LEAVE road",
+        "action": "fills with grey smoke",
+        "emotion": "plain",
+        "annotation": "LEAVE"
+      },
+      "choreo": {
+        "primary": "the LEAVE road fills with drifting grey smoke",
+        "reaction": "the smoke drifts",
+        "ambient": "the pixel pulses, ring ticks, smoke drifts, the flame flickers"
+      },
+      "t": "102.870-105.070",
+      "key": 43
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "at_s": 105.07,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 4.25
+      },
+      "offset": 4.25,
+      "vo": "So the choices are fight, leave, or light a mild fire on purpose.",
+      "phrase": "purpose.",
+      "shows": "the SET road lights a small flame at its start, no brighter than the FIGHT and LEAVE roads",
+      "sfx": "sizzle",
+      "means": "set a mild fire",
+      "rehook": "",
+      "draw": {
+        "subject": "SET road",
+        "action": "lights at the same brightness as the others",
+        "emotion": "plain",
+        "annotation": "SET A MILD FIRE"
+      },
+      "choreo": {
+        "primary": "the SET road lights a small flame at its start, no brighter than the FIGHT and LEAVE roads",
+        "reaction": "the flame flickers",
+        "ambient": "the pixel pulses, ring ticks, smoke drifts, the flame flickers"
+      },
+      "t": "105.070-106.220",
+      "key": 44
+    },
+    {
+      "id": 44,
+      "shot": 14,
+      "at_s": 106.22,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Edward Alexander of the Gwichin Council International says, we need mild fire, not wildfire.",
+      "phrase": "Edward Alexander of the",
+      "shows": "a low eye-level view of unplaced spring ground, birch green on tan, wet sunrise light, a far tree line, a name plate EDWARD ALEXANDER, GWICH'IN COUNCIL INTERNATIONAL slides in",
+      "sfx": "fade",
+      "means": "edward alexander \u00b7 gwich'in council international",
+      "rehook": "",
+      "draw": {
+        "subject": "spring ground",
+        "action": "opens at eye level in low sunrise light with a name plate",
+        "emotion": "plain",
+        "annotation": "EDWARD ALEXANDER \u00b7 GWICH'IN COUNCIL INTERNATIONAL"
+      },
+      "choreo": {
+        "primary": "a low eye-level view of unplaced spring ground, birch green on tan, wet sunrise light, a far tree line, a name plate EDWARD ALEXANDER, GWICH'IN COUNCIL INTERNATIONAL slides in",
+        "reaction": "the grass sways and the light shifts",
+        "ambient": "grass sways, light shifts, the plate types, the flame flickers"
+      },
+      "t": "106.220-109.870",
+      "key": 45
+    },
+    {
+      "id": 45,
+      "shot": 14,
+      "at_s": 109.87,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 3.65
+      },
+      "offset": 3.65,
+      "vo": "Edward Alexander of the Gwichin Council International says, we need mild fire, not wildfire.",
+      "phrase": "need mild fire, not",
+      "shows": "a quote plate types as the words are said, WE NEED MILD FIRE, NOT WILDFIRE",
+      "sfx": "page",
+      "means": "\"we need mild fire, not wildfire.\"",
+      "rehook": "",
+      "draw": {
+        "subject": "quote plate",
+        "action": "types the quote as it is spoken",
+        "emotion": "plain",
+        "annotation": "\"WE NEED MILD FIRE, NOT WILDFIRE.\""
+      },
+      "choreo": {
+        "primary": "a quote plate types as the words are said, WE NEED MILD FIRE, NOT WILDFIRE",
+        "reaction": "the plate types and the grass sways",
+        "ambient": "grass sways, light shifts, the plate types, the flame flickers"
+      },
+      "t": "109.870-111.450",
+      "key": 46
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "at_s": 111.45,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 5.23
+      },
+      "offset": 5.23,
+      "vo": "Edward Alexander of the Gwichin Council International says, we need mild fire, not wildfire.",
+      "phrase": "wildfire.",
+      "shows": "a small low flame lights on the ground in the middle distance, candle scale, steady, and a small plate reads MILD FIRE, THE IDEA",
+      "sfx": "bloom",
+      "means": "mild fire \u00b7 the idea",
+      "rehook": "",
+      "draw": {
+        "subject": "small flame",
+        "action": "lights low on the ground in the middle distance",
+        "emotion": "plain",
+        "annotation": "MILD FIRE \u00b7 THE IDEA"
+      },
+      "choreo": {
+        "primary": "a small low flame lights on the ground in the middle distance, candle scale, steady, and a small plate reads MILD FIRE, THE IDEA",
+        "reaction": "the flame flickers",
+        "ambient": "grass sways, light shifts, the plate types, the flame flickers"
+      },
+      "t": "111.450-113.180",
+      "key": 47
+    },
+    {
+      "id": 47,
+      "shot": 15,
+      "at_s": 113.18,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A Council of Athabascan Tribal Governments crew plans cultural burns near Fort Yukon next spring.",
+      "phrase": "A Council of Athabascan",
+      "shows": "a hard cut to a top-down plan view where the flame is a dashed twin at the edge of a dashed outline of a burn unit beside a river bend, a plate reads CATG CREW, PLANNED",
+      "sfx": "slide",
+      "means": "catg crew \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "plan view",
+        "action": "slides in as the top-down twin of the flame, a dashed burn unit beside a river bend",
+        "emotion": "plain",
+        "annotation": "CATG CREW \u00b7 PLANNED"
+      },
+      "choreo": {
+        "primary": "a hard cut to a top-down plan view where the flame is a dashed twin at the edge of a dashed outline of a burn unit beside a river bend, a plate reads CATG CREW, PLANNED",
+        "reaction": "the dashes crawl and the river shimmers",
+        "ambient": "dashes crawl, the river shimmers, the flame line grows"
+      },
+      "t": "113.180-116.890",
+      "key": 48
+    },
+    {
+      "id": 48,
+      "shot": 15,
+      "at_s": 116.89,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 3.71
+      },
+      "offset": 3.71,
+      "vo": "A Council of Athabascan Tribal Governments crew plans cultural burns near Fort Yukon next spring.",
+      "phrase": "Fort Yukon next spring.",
+      "shows": "a dashed flame line grows along the unit edge, a plan and not a result, a plate reads FORT YUKON, and a line of crew dots in dashed outline stands at the corner",
+      "sfx": "crunch",
+      "means": "fort yukon \u00b7 a plan, not a result",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed flame line",
+        "action": "grows along the unit edge as a plan",
+        "emotion": "plain",
+        "annotation": "FORT YUKON \u00b7 A PLAN, NOT A RESULT"
+      },
+      "choreo": {
+        "primary": "a dashed flame line grows along the unit edge, a plan and not a result, a plate reads FORT YUKON, and a line of crew dots in dashed outline stands at the corner",
+        "reaction": "the dashes crawl",
+        "ambient": "dashes crawl, the river shimmers, the flame line grows"
+      },
+      "t": "116.890-117.790",
+      "key": 49
+    },
+    {
+      "id": 49,
+      "shot": 15,
+      "at_s": 117.79,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 4.61
+      },
+      "offset": 4.61,
+      "vo": "A Council of Athabascan Tribal Governments crew plans cultural burns near Fort Yukon next spring.",
+      "phrase": "spring.",
+      "shows": "a dashed plate stamps onto the plan, PLANNED CULTURAL BURNS, NEXT SPRING",
+      "sfx": "tick",
+      "means": "catg crew \u00b7 planned cultural burns \u00b7 next spring",
+      "rehook": "",
+      "draw": {
+        "subject": "planned tag",
+        "action": "stamps onto the plan",
+        "emotion": "plain",
+        "annotation": "CATG CREW \u00b7 PLANNED CULTURAL BURNS \u00b7 NEXT SPRING"
+      },
+      "choreo": {
+        "primary": "a dashed plate stamps onto the plan, PLANNED CULTURAL BURNS, NEXT SPRING",
+        "reaction": "the plate settles",
+        "ambient": "dashes crawl, the river shimmers, the flame line grows"
+      },
+      "t": "117.790-119.120",
+      "key": 50
+    },
+    {
+      "id": 50,
+      "shot": 16,
+      "at_s": 119.12,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Seeing was the easy part. Who should choose which fire is fought, left, or lit?",
+      "phrase": "Seeing was the easy",
+      "shows": "the dashed flame line condenses to a point at the unit edge and the camera begins to lift straight up",
+      "sfx": "swell",
+      "means": "planned, not yet lit",
+      "rehook": "",
+      "draw": {
+        "subject": "flame line",
+        "action": "condenses to a point and the camera lifts",
+        "emotion": "plain",
+        "annotation": "PLANNED, NOT YET LIT"
+      },
+      "choreo": {
+        "primary": "the dashed flame line condenses to a point at the unit edge and the camera begins to lift straight up",
+        "reaction": "the point glows faintly",
+        "ambient": "the point glows, the square pulses, the Eye blinks, ghost squares pulse"
+      },
+      "t": "119.120-121.690",
+      "key": 51
+    },
+    {
+      "id": 51,
+      "shot": 16,
+      "at_s": 121.69,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 2.57
+      },
+      "offset": 2.57,
+      "vo": "Seeing was the easy part. Who should choose which fire is fought, left, or lit?",
+      "phrase": "Who should choose which",
+      "shows": "the lift ends in orbit, the point is a dashed ember square on the cold grid inside a dashed boundary and the Eye beside it blinks calmly",
+      "sfx": "hush",
+      "means": "who should choose?",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed square",
+        "action": "appears in orbit as a dashed ember square in a dashed boundary",
+        "emotion": "beam",
+        "annotation": "WHO SHOULD CHOOSE?"
+      },
+      "choreo": {
+        "primary": "the lift ends in orbit, the point is a dashed ember square on the cold grid inside a dashed boundary and the Eye beside it blinks calmly",
+        "reaction": "the square pulses softly and the Eye blinks",
+        "ambient": "the point glows, the square pulses, the Eye blinks, ghost squares pulse"
+      },
+      "t": "121.690-123.130",
+      "key": 52
+    },
+    {
+      "id": 52,
+      "shot": 16,
+      "at_s": 123.13,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 4.01
+      },
+      "offset": 4.01,
+      "vo": "Seeing was the easy part. Who should choose which fire is fought, left, or lit?",
+      "phrase": "fought, left, or lit?",
+      "shows": "three small ghost squares around the dashed square light one by one as the words fought, left and lit are said",
+      "sfx": "ping",
+      "means": "fought \u00b7 left \u00b7 lit",
+      "rehook": "",
+      "draw": {
+        "subject": "ghost squares",
+        "action": "light one by one on fought, left and lit",
+        "emotion": "curious",
+        "annotation": "FOUGHT \u00b7 LEFT \u00b7 LIT"
+      },
+      "choreo": {
+        "primary": "three small ghost squares around the dashed square light one by one as the words fought, left and lit are said",
+        "reaction": "the ghost squares pulse",
+        "ambient": "the point glows, the square pulses, the Eye blinks, ghost squares pulse"
+      },
+      "t": "123.130-124.980",
+      "key": 53
+    }
+  ]
+}

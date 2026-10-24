@@ -1,0 +1,54 @@
+{
+ "run_date": "2026-10-24",
+ "palette": {
+  "mood": "the view from orbit in cold false colour, one warm square, then falling into thawed brown ground and out to a small daylight flame. Different world from the last four films (paper building, dark ground cutaway, pewter beach, walnut desk).",
+  "sky": "orbital void #0B1020 with grid ticks #1F3A5F; ground-level daylight #BFD6E0 to #F1E6C8 for the final shot only",
+  "ground": "cold plate (unburned Interior from orbit) #1F3A5F with river cyan #7FD6E0; permafrost ice #9FD8E6; thawed peat #5A3B2A; Fort Yukon spring ground birch green #7BC47F on #8A7A52",
+  "hero": "SatelliteEye (shelf, kit.tsx, the ONE faced satellite, called the Eye) in pewter-titanium with cyan iris. The three FireSats in shot 3 are episode-local faceless silhouettes (cyan lens, no telemetry light), so exactly one face exists. Throughline: the HOT PIXEL, white-hot core #FFF4C2 into amber #FFB02E with an #FF8A1F rim.",
+  "accent": "amber thermal #FFB02E / rim #FF8A1F / core #FFF4C2, spent ONLY on the hot pixel, flames and carbon motes (and, in act 3 only, the thaw front at reduced VALUE #C46A2A). Hue about 29 to 37 degrees (rim about 29, body about 37), against 10-22's vermilion at about 5 degrees and 07-23's warning amber, which was a detection-state tint on a cyan scan, not a thermal square.",
+  "roles": {
+   "cold plate #1F3A5F with cyan #7FD6E0": "the Interior seen from orbit, rivers in cyan",
+   "ice #9FD8E6 and peat #5A3B2A": "Act 3 ground only, the only scene drained of warmth",
+   "dashed bone #F4F1E8": "everything PLANNED (EDF tool, CATG burns, 20 minute goal, empty suppression ring)",
+   "ash gray #6B6B73": "the LEAVE branch smoke",
+   "plates": "ink #0B1020 with bone #F4EEDC text, mono type",
+   "hot pixel amber #FFB02E core #FFF4C2 rim #FF8A1F": "the fire, the decision, and finally the chosen mild flame. Only warm thing in cold frames.",
+   "attribution tags": "bone #F4F1E8 chips with a cyan #7FD6E0 edge (no kraft, no brass)",
+   "accent license per shot": "Shot 4: the half-Alaska glow is a low-chroma dull ember ramp #6A4A3A, darker than the pixel and never brighter. Iris and lens lights are cyan or bone. Coins are steel-silver. The SEEING tick is bone. The limb sunrise is a cold cyan rim. Act 3: the only warm item is the thaw front at reduced value #C46A2A."
+  }
+ },
+ "light": {
+  "time_of_day": "orbital night side for acts 1 to 2, a cold ice-cyan flat scene for act 3, low spring daylight for the last 12 seconds",
+  "direction": "the hot pixel is the only saturated warm light in the cold plate and throws a pulsing ring that tints nearby cyan toward amber; act 3 drains the room to ice cyan and allows exactly ONE warm item, the thaw front at reduced value, which is the film's argument; the final flame lights the ground from a low warm key left",
+  "depth_approach_note": "see depth_plan"
+ },
+ "shape_language": "a deliberate contrast: hard square pixels, grid lines, the probe, the ruler and the plates (the machine's seeing) against soft organic ground (the world). In act 3 only the probe, ruler and plates are straight: strata boundaries are irregular and noisy, the mat has tussock tops and roots, ice lenses are rounded. Dashed outlines for plans.",
+ "casting": {
+  "hero": "SatelliteEye (kit.tsx), called 'the Eye' on screen, the one faced satellite. The three FireSats in shot 3 are faceless.",
+  "supporting": [
+   "IRVision look (reference only, the plate is the film's own OrbitBG)",
+   "SmellRings and DashRing as scan and clock rings",
+   "AlaskaMini for the state map",
+   "Episode-local faceless FireSat silhouettes in shot 3 (cyan lens, no telemetry light) so the accent license holds, built on the shelf SatelliteEye proportions",
+   "Episode-local generic drone icon (ILLUSTRATION)",
+   "Spring ground, plan view and burned plain are drawn in the film's own palette because the shelf's RiverBG, TundraBG and DawnForestBG are eye-level side views"
+  ],
+  "net_new": "lib/thaw.tsx: ThawProbe (steel rod with depth ticks) and SoilColumn (layered permafrost cutaway with a thaw front parameter), the one small gap the shelf does not cover. No Character rig for Alaska Native subjects. Michelle Mack and Edward Alexander are name plates only.",
+  "reason": "The story is a view from space that falls to the ground, so the hero is an eye, not a person. The shelf's RiverBG, TundraBG and DawnForestBG are eye-level side views, and shots 6 and 16 are top-down plates, so the braided rivers are drawn on the orbital plate. Shot 15 and 17's ground is drawn as an eye-level spring ground in the film's own palette.",
+  "net_new_reason": "SoilColumn and ThawProbe vs the shelf: LayeredLand is a torn side-on hillside and CoreColumn a standing banded column with no ruler, no moving thaw front and no burned/unburned state, RadarGroundCutaway is a radar beam over relief, RockGlacierCore a rock-and-ice landform. None takes a foot ruler, a movable thawDepth and a char-top state without a rewrite. ThawProbe differs from DrillBit and CoringTube: it is a thin hand-pushed T-handle rod that STOPS, where they bore. thaw.tsx was registered in the manifest before this gate because make_cut hashes the manifest, which is a mechanical order and not an approval."
+ },
+ "motion_language": "The Eye drifts and tilts with a slow solar-panel flap and blinks; the hot pixel pulses on a 1.3 s cycle with overshoot when it changes state; the descent is a Stage3D dollyThrough; the probe drops with anticipation, overshoot and a thunk; the clock hand ticks with a spring; flame flickers continuously. 180 degree motion blur on the probe and the plunge.",
+ "composition": {
+  "focal_hierarchy": "the hot pixel is always the brightest, warmest, best-finished thing in frame",
+  "negative_space": "a held, near-empty cold frame at the Mack plate (about 3 s) as the loudest quiet",
+  "safe_area": "hero action inside y 420 to 1500 for the 1:1; sky and atmosphere above, near plane (reeds, peat, drifting ash) below the caption card",
+  "signature_shot": "ONE continuous move of about 3.5 s, beats 27 and 28, 65.43 to 68.93 s: the camera falls through the hot square (the shot 8 to shot 9 transition is a morph, not a cut), the pixel-grid cells break up and dissolve into irregular strata, and the two ground cuts resolve under the falling lens before the probes arrive. The probe stop and the burn-scar plunge are supporting beats, framed as a two-up comparison. The final orbit lift is a supporting reveal, not a second signature."
+ },
+ "craft_advance": "none needed beyond lib/thaw.tsx",
+ "divergence": "vs 10-22 (dark spruce ink, brass, vermilion, a bit boring down): this film's ground is navy and cyan, the accent is amber at hue 29 to 37 not vermilion at 5, no brass, no kraft, and the probe is shown as a two-up stop against plunge. vs 10-23 (first-snow white, emerald, plum): no white, no paper. vs 07-23 (beluga from orbit, SatelliteEye, blue-black with detection cyan to amber): that film's hero was a whale seen by the satellite and its palette was a detection tint, this film's orbit plate is a thermal-pixel mosaic and the film falls out of it into soil and ends at ground level.",
+ "depth_plan": {
+  "planes": "shots 1, 3, 6, 8, 9, 11, 17 use parallax layers: far plate at 0.6x drift, mid at 1.0x, near particles/ash/haze at 1.5x; the descent in shot 8 adds a haze that rises from 0 to 0.6 across 63.2 to 65.4 s.",
+  "flat_shots": "shots 2, 5, 7, 14, 16 are locked panels with named layers: 2 (plate under a HUD bezel), 5 (a dark void behind the Eye with floating boxes in front), 7 (arena plate under the scoreboard bezel), 14 (plate behind, roads mid, pixel front), 16 (map behind, dashed unit mid, crew dots front)."
+ },
+ "accent_enforcement": "The per-shot accent license is checked by the pixel critic's colour census and by reading the shot code (only HotPixel, Flame, the carbon motes and the act-3 thaw front use the warm tokens P.hot, P.hotRim, P.hotCore, TH.ember, TH.thawGlow). lib/lighting.tsx AccentRegistry is not wired because Ep1024 owns its tokens locally. The kit.tsx Eye is a named target of the colour census: if its foil or any light renders warm it is overridden locally in Ep1024, not by editing shelf code."
+}

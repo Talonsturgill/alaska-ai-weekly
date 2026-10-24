@@ -2791,3 +2791,50 @@ dispatch_history:
       the snow
     metaphor: a form that can only be pinned to the ground it stands on, beside a
       rain gauge with a hook nobody has hung an outside reading on
+- date: '2026-10-24'
+  topic: 'Arctic wildfire and permafrost carbon: satellites can see every fire, deciding
+    which to fight is still a 72 hour human rule'
+  slug: seeing-is-the-easy-part
+  key_entities:
+  - MIT Technology Review
+  - FireSat
+  - Earth Fire Alliance
+  - XPRIZE Wildfire
+  - Yukon Flats
+  - Alaska Division of Forestry
+  - Edward Alexander
+  - Michelle Mack
+  - Woodwell
+  - Environmental Defense Fund
+  - Alaska Public Media
+  archetype: map-territory
+  palette: orbital navy, ember amber, ice cyan, peat brown
+  voice: Sulafat
+  stance: curious
+  angle: Alaska is where machines are learning to see every fire, but seeing is only
+    the first step. Deciding which fire to fight is still a seventy two hour human
+    rule, and the choice has three branches, fight it, leave it, or set a mild fire
+    on purpose.
+  hero: SatelliteEye
+  cast:
+  - SatelliteEye
+  - SoilColumn
+  - ThawProbe
+  - Crew
+  - HotPixel
+  - TileMosaic
+  composition:
+    pov: orbital-aerial
+    motion_vector: radial-emanate
+    hero_treatment: landscape-as-subject
+    layout: map-territory
+    register: instrument-readout
+    palette: orbital navy void with river cyan, a bright warm thermal amber and ember
+      yellow hot pixel, ice cyan permafrost, peat brown, smoke wisps, dashed bone
+      plan lines, low sunrise light and birch green on tan for the last frames
+    camera_strategy: aerial-descent
+    light_story: an orbital plate where one warm square is the only light, a clear
+      ice-cyan cut for the doubt, then low sunrise spring light and one small ember
+      flame
+    metaphor: one lit square seen from orbit that is first found, then timed, then
+      buried, then forked, and finally a dashed plan
