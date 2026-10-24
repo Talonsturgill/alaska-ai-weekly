@@ -1,0 +1,50 @@
+{
+  "scores": {
+    "Hook strength": {
+      "raw_score": 10,
+      "weight": 0.15,
+      "weighted_score": 1.50,
+      "rationale": "Names a specific date (May 20th), a concrete event (regular session close), and immediately identifies a missing framing (the gap the press missed). Hits the rubric's 10-descriptor: concrete, specific, names a live tension, hints at a missing option. No banned phrases."
+    },
+    "Local relevance": {
+      "raw_score": 10,
+      "weight": 0.20,
+      "weighted_score": 2.00,
+      "rationale": "Every story is anchored to named Alaskan entities: Sen. Löki Tobin, Railbelt grid, Chugach Electric, Golden Valley Electric, Cook Inlet, JBER, Eielson, Clear SFS, Fairbanks spur line. No imported national story present. Satisfies the 10-descriptor fully."
+    },
+    "Factual density": {
+      "raw_score": 10,
+      "weight": 0.15,
+      "weighted_score": 1.50,
+      "rationale": "Specifics appear every 1-2 sentences throughout: dates (May 16th-21st, 29th), vote tallies (14-5, 20-0), dollar figures ($40M fund), tax rates (6/15/40 cents), named entities in every paragraph."
+    },
+    "Source quality": {
+      "raw_score": 7,
+      "weight": 0.15,
+      "weighted_score": 1.05,
+      "rationale": "Cook Inlet/compute claim explicitly attributed to Chugach Electric, Golden Valley Electric, and ADN. SB 250 and HB 239 vote tallies are primary legislative record. Governor's-office concerns and 'overwhelming' House margin characterization lack explicit inline source attribution — places this at the 7-descriptor."
+    },
+    "Voice match": {
+      "raw_score": 10,
+      "weight": 0.15,
+      "weighted_score": 1.50,
+      "rationale": "Mirrors post_001.md structurally and tonally: counter-framing move ('That framing is incomplete'), structural problem named explicitly, position taken without hedging, plainspoken sentences, curly quotes, no hashtags, no emojis, no banned phrases."
+    },
+    "Readability (mobile)": {
+      "raw_score": 10,
+      "weight": 0.10,
+      "weighted_score": 1.00,
+      "rationale": "Approximately 355 words within the 280-420 target. Paragraphs are short (3-5 sentences). The Air Force deadline is a standalone sentence. No wall-of-text block. Easy to scan on a phone."
+    },
+    "Engagement question": {
+      "raw_score": 10,
+      "weight": 0.10,
+      "weighted_score": 1.00,
+      "rationale": "Closing question is real, debatable, and tied directly to the specific structural tension: HB 239 passing vs. SB 250 dying. Not generic, no follow-us CTA."
+    }
+  },
+  "weighted_total": 9.55,
+  "threshold": 8.0,
+  "ship": true,
+  "one_sentence_fix": null
+}
