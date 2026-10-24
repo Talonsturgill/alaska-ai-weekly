@@ -236,7 +236,7 @@ const HotPixel: React.FC<{x: number; y: number; s?: number; f: number; k?: numbe
 };
 
 /** a radial clock ring, `left` 1..0 of the 72 hours remaining, mono readout in the middle */
-const ClockRing: React.FC<{x: number; y: number; r?: number; left: number; f: number; k?: number; label?: string}> = ({x, y, r = 130, left, f, k = 1, label = '72:00'}) => {
+const ClockRing: React.FC<{x: number; y: number; r?: number; left: number; f: number; k?: number; label?: string}> = ({x, y, r = 130, left, f, k = 1, label = '72 HR'}) => {
   const kk = clamp01(k);
   if (kk <= 0.02) return null;
   const a0 = -Math.PI / 2, a1 = a0 + Math.PI * 2 * clamp01(left);
@@ -551,7 +551,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
         </g>
         {[0, 1, 2, 3, 4].map((i) => <Crew key={i} x={lerp(-80, 330, walk)} y={800 + i * 62 + (1 - walk) * i * 12} s={0.85} f={g} ph={i} />)}
         <HotPixel x={600} y={920} s={96} f={g} k={fire} id="s6h" />
-        <ClockRing x={600} y={920} r={150} left={left} f={g} k={fire} label={`${Math.round(72 * left)}:00`} />
+        <ClockRing x={600} y={920} r={150} left={left} f={g} k={fire} label={`${Math.round(72 * left)} HR`} />
       </SVG>
     </Frame>
   );

@@ -75,7 +75,7 @@ B = [
  (18, 6, 6, W("sends"), "tap", "crew dots", "arrive in a line and wait at the edge of the box", "plain", "CREWS",
   "small crew dots walk in along the river in a line and stop at the edge of the pilot box",
   "the dots shuffle", ""),
- (19, 6, 6, W("fire"), "alarm", "fire pixel", "ignites inside the box and a clock ring appears", "alarm", "72:00",
+ (19, 6, 6, W("fire"), "alarm", "fire pixel", "ignites inside the box and a clock ring appears", "alarm", "72 HOUR CLOCK",
   "a hot square ignites inside the pilot box and a radial 72:00 clock ring draws itself around it",
   "the pixel pulses and warm rings spread", ""),
  (20, 6, 6, W("seventy"), "roll", "clock ring", "drains while the crews hold at the edge", "plain", "ATTACK ONLY IF CONTAINED IN 72 HOURS",
