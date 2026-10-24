@@ -101,6 +101,11 @@ step staging          0 python3 scripts/staging_check.py
 # render writes, so it runs here, after the source gates and before the render, and a schedule
 # failure (family repeat, second riser) costs seconds instead of a render.
 step mix               1 python3 scripts/dispatch_mix.py
+# Machine pass 2026-10-24: a derived bed arc delivered LRA 5.9 against the 6 to 9 target on 10-24,
+# an authored audio_arc.bed 7.5. Say so in the summary, where the run reads it before the render.
+if grep -q "derived from board audio_arc" "$LOGS/mix.log"; then
+  say "  NOTE  bed_arc derived, not authored. Write audio_arc.bed on the board (storyboard_check prints the node forms); a derived arc ran under the LRA target on 10-24."
+fi
 
 # 2. The full-resolution render, the parallel queue, its own frame count assert.
 step render            1 bash scripts/render_parallel.sh "$COMP"
