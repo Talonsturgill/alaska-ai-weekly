@@ -964,3 +964,8 @@ flow high, gate open and spill high, and the picture says it without a caption.
 
 - `SoilColumn` (`lib/thaw.tsx`) NET-NEW 2026-10-24 — layered cut of Interior ground: moss mat or char, thawed peat, frozen ground with ice lenses and silt, a foot ruler on the left edge, `thawDepth` 0..1 that can move, `burned` (mat gone, char on dark peat, thaw-front glow via `glow`), `carbon` 0..1 amber motes lifting out of the peat. Form-shaded, ink outlined, contact shadow — ACTIVE
 - `ThawProbe` (`lib/thaw.tsx`) NET-NEW 2026-10-24 — plain faceless steel rod with a rubber T handle and quarter-foot ticks (long tick each foot), driven by `depth` (px of rod below the surface `y`), `jolt` shakes it on a stop, contact shadow at the entry — ACTIVE
+
+## Sign kit (2026-10-25, "One Word, Every Size") - lib/sign.tsx
+- Plate (lib/sign.tsx) NET-NEW 2026-10-25, the HERO and throughline. A rigid enamel sign with a brass rim, stubby cedar legs (legH, 0 to hang) and a face, lettered DATA CENTER. stretchPx telescopes the body like taffy while the lettering holds its size, crack opens a hairline at the left rim clear of the lettering. Moods: smug, plain, strained, worried, curious, alarm. Reacts to SIZE only, never to policy. Built new because AllowanceBoard, HandbookPlate, SteelTag and CouncilSign are rigid and faceless; BrassPlate's brass tokens are reused. ACTIVE.
+- Ruler (lib/sign.tsx) NET-NEW 2026-10-25. A long cedar ruler with brass end caps and no marks until given ticks: kind 'ink' (closed, filed), 'dash' (proposed) or 'open' (the undrawn one, signal pink #E8457A). The horizontal twin of HeightChart without the pencil. ACTIVE.
+- SIGN (lib/sign.tsx) the palette tokens, incl. the single accent signal pink.

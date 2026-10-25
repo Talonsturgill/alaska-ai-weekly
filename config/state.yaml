@@ -2838,3 +2838,46 @@ dispatch_history:
       flame
     metaphor: one lit square seen from orbit that is first found, then timed, then
       buried, then forked, and finally a dashed plan
+- date: '2026-10-25'
+  topic: Sitka planning commission recommends banning data centers in every zone,
+    and the draft has no size line (KCAW, City of Sitka records)
+  slug: dispatch-2026-10-25-one-word-every-size
+  key_entities:
+  - Sitka
+  - Sitka Planning Commission
+  - Sitka Assembly
+  - KCAW
+  - Rudas
+  - Sadlier-Hart
+  - Cordova
+  - Fairbanks North Star Borough
+  - data center
+  - size line
+  archetype: a faced sign stretched past its size against a ruler with no marks
+  palette: cedar boardwalk, teal harbor fog, chalk cream enamel signs with brass rims,
+    hydro blue water, signal pink tick and stamp ink, a golden break
+  voice: gemini:Sulafat
+  stance: curious
+  angle: One word covers a fridge and a gigawatt campus, and Sitka's draft draws no
+    size line, so the real choice before the Assembly is where to draw it, not whether
+    to say yes or no.
+  hero: Plate
+  cast:
+  - Plate
+  - Cubby
+  - gull
+  - Ruler
+  - Hammer
+  - Balance
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: structure-as-subject
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: cedar boardwalk, teal harbor fog, chalk cream enamel signs with brass
+      rims, hydro blue water, signal pink tick and stamp ink, a golden break
+    camera_strategy: dolly-through
+    light_story: storm-dramatic
+    metaphor: one brass sign that fits every size of thing, stretched until it cracks
+      against a ruler with no marks

@@ -292,6 +292,16 @@ def check_not_blank(n=28):
                            ).stdout.strip() or 0)
         if dur <= 0:
             return
+        # THE CREDITS CARD IS FLAT BY DESIGN (2026-10-25). lib/EndCredits.tsx is a dark card with small
+        # type, so a sample that lands in it reads 95 percent "blank", and on 10-25 the 26th of 28
+        # samples fell on the first credits frame and blocked a film every judge had passed. The gate
+        # exists to find a MISSING SCENE in the story, so sample the story and not the card.
+        try:
+            cred_s = float((json.loads((OUT / "episode_props.json").read_text()).get("credits") or {}).get("seconds") or 0)
+        except (OSError, ValueError, TypeError):
+            cred_s = 0.0
+        if 0 < cred_s < dur - 20:
+            dur = dur - cred_s
         for i in range(n):
             t = dur * (i + 0.5) / n
             sp.run(["ffmpeg", "-v", "error", "-ss", f"{t:.3f}", "-i", str(vid),

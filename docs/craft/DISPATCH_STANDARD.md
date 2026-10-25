@@ -508,3 +508,17 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **LRA 5.9 means the bed isn't moving.** Author `audio_arc.bed` with a deep pocket under the doubt (0.14), a swell into "Deciding" and into the three roads (1.05 to 1.15) rather than relying on the derived arc.
 - **The sandbox's Playwright revision moves.** remotion.config.ts now falls back to whatever chromium_headless_shell is installed under /opt/pw-browsers.
 - **A hook needs an event, not only a pixel.** A square snapping on at frame 6 scored 6.5 on the hook. Add a blast ring, a one frame flash and a larger overshoot on the ignition.
+
+## 20. Things the 2026-10-25 gates, critics and panel found that were knowable in advance
+
+- **A recommendation is never drawn as an act.** The first board stamped ALL ZONES across the map, dropped a board on two signposts and called it "overrode both". The editor and Gate 0B read all three as enacted law. Draw RECOMMENDED with dashed hatching, carry a dashed board past the posts, and write "recommended a ban instead". A proposed number (Fairbanks 5 MW) is a dashed tick with a PROPOSED flag and the word "proposed" in the VO.
+- **A faced metaphor object reacts to SIZE, never to policy.** The Plate flinched at the ban and leaned hopeful on the permit post, and Gate 0B ruled it was voting. Its face may strain, crack and look along a ruler. It never smiles at a side.
+- **Cameo characters stand above y 1318.** The caption bar starts at 1336, so a figure authored at y 1390 or 1420 shows only its head. Judges named it in round 1 and again on the first cut.
+- **plate_overlap_check wants a unique y per plate per scene, even when plates retire in turn.** Fourteen overlaps on the first run, all sequenced pairs. Plan the ladder (560, 640, 720, 800 for single lines, 700 for a two-line plate) before authoring.
+- **In-scene text under a transform trips text_fit.** `translate(540,920) rotate(-8)` with `x={0}` was measured at absolute x 0. Put the absolute x on the text and rotate the element about its own centre.
+- **label_footprint flags labels outside the camera span.** A camera that drifts to fx 640 at z 1.04 cuts a label at x 0. Keep drifting cameras symmetric about x 540, and show a cart's own label only while the cart is wholly in frame.
+- **A sign with a face has the face above the lettering.** The mouth at the lettering line read as a strike through DATA CENTER in every judge's notes (fixed by moving the eyes and mouth up 24 px).
+- **A hand-cart for anything that moves along the boardwalk.** "Is carried" with no carrier is an implied off-screen person.
+- **The 38-towers picture needs a skyline, not a ribbon.** A single stack of 38 at the end of a crane is one pixel wide. Seven columns by six levels read as a count and as a place.
+- **The credits card is flat by design.** ship_gate's blank-frame sampler landed on its first frame and blocked a film every judge had passed. The sampler now measures the story only (fixed this run).
+- **Held shots 10 to 11 measured 2 to 6 percent change for 20 seconds in every round.** Rain and a camera push do not count. Give each held beat an object with its own motion (water drops into the pans, a gull shifting, a card tilting).

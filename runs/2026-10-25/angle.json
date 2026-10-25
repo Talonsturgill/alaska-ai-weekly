@@ -1,0 +1,22 @@
+{
+ "run_date": "2026-10-25",
+ "thesis": "One word covers a fridge and a gigawatt campus, and Sitka's draft draws no size line, so the real choice before the Assembly is where to draw it, not whether to say yes or no.",
+ "falsifiable_by": "The Assembly record showing a size line was weighed and rejected because even a Cordova size 150 kilowatt box is judged a threat to the island grid, or the Assembly adding its own size line or permit route (then the rule was never stuck on one word), or a recommendation that already sets a demand threshold.",
+ "supporting_facts": [
+  "c12 the draft definition has no size line",
+  "c13/c19 Rudas names one kilowatt, one megawatt, one gigawatt under one word, and Cordova already runs a fridge size 150 kW unit at a hydro plant, per the city memo",
+  "c9/c10/c11 record peak 26.02 MW, hyperscale typically over 20 MW, one gigawatt about 38 times that peak (our math)",
+  "c22 Fairbanks draws its line at 5 MW"
+ ],
+ "counterpoint_honored": "c7/c18/c8/c14 The ban's best case gets its own act-three scene at full strength: an island grid with no neighbor to import from, 120 GWh made and 118 used in 2025, a memo that calls a small power hungry facility not entirely unlikely, and Sadlier-Hart's say it loud. Hydro moves with rainfall. No claim of spare capacity. The film narrows honestly: the caution is rational, the open question is whether a ban or a line plus conditions protects the thin margin better.",
+ "second_movement": "Staff and the sustainability commission both chose a permit (c2,c3,c4) and the commission overrode them, so the fight was never control versus no control. It is which tool keeps control. Then c9: the whole town peaks at 26 MW.",
+ "throughline_object": "the one word DATA CENTER on a stamped sign/plate that is physically the same plate on every size of thing. States: one plate on a fridge box (Cordova), the same plate stretching over a town-sized load, the plate cracking along a ruler, a ruler with no marks (the draft), and the final state: the ruler with a single open tick, the line not yet drawn.",
+ "ai_link_wording": "The city memo says machine learning and AI spurred the sector's growth (c6). No AI company or project is in Sitka. AI is the reason the loads got big, not a party to the story.",
+ "valence": "curious, constructive, respectful of the ban. No villain, no doom, no boosterism. Never say Sitka banned.",
+ "stance": "curious",
+ "one_question": "Sitka's rule would treat a fridge and a gigawatt alike, so where should the line go?",
+ "runner_ups_lost": [
+  "Pure local-control foresight praise (Sitka wrote the rule first): folded in as the opening beat, lost as thesis because it doesn't survive the missing size line",
+  "Alaska wins enthusiast: a permit door for Cordova-scale compute: kept as the Act 4 option, lost as thesis because it asserts a benefit no source documents in Sitka"
+ ]
+}

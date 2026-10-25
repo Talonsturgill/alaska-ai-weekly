@@ -3919,3 +3919,9 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - Shipped: make_cut runs visible_copy_check and claims_contract_check before the render, both SatelliteEyes take lens, cone, dish and telemetry colour props, storyboard_check warns when the audio bed arc is derived, brand banned phrases are enforced on VO, plates, captions and post.
 - Engine advance: SatelliteEye idle (blink, glances, breathing lens, drifting brow), plus a fix to a blink drawn half outside the lens. New EyeLook stand. Dispatch1024 probe frames are pixel-identical to main.
 - Still open: FireSat and Drone idle, and the Plate serif variant.
+
+## 2026-10-25 "One Word, Every Size" (Sitka planning commission, KCAW and City of Sitka records)
+- Shipped: 125 s film, panel 7.41, 7.58, 7.60 (median 7.58 against the 7.0 bar), no hard blockers, caption 8.58. Three cuts: the first (judge 1 at 7.03) was held for an editor finding of unsupported wording ('overrode', 'urging a ban', Fairbanks as adopted, a side-taking button), fixed in the VO and re-synthesized (the read went 126.2 to 123.0 s), then a second cut added a foreground band, a seven-column skyline, a near-lane cart and a Plate face clear of the lettering, and a third cut added OUR MATH on the plate, FAIRBANKS BOROUGH MAYOR and motion in shots 10 and 11.
+- In-run fixes: ship_gate blank-frame sampler skips the credits card; lib/sign.tsx (Plate with a telescoping body and a crack, Ruler with ink, dashed and open ticks) registered in ASSET_MANIFEST; the Plate's crack moved clear of its lettering; DISPATCH_STANDARD section 20.
+- Queued: held beats under 6 percent (repeat), ambience bed, top-third sky, Plate small-size guard, Gate 0 critic cap (repeat).
+- Cost: see runs/2026-10-25/cost.json.

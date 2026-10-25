@@ -1,0 +1,2085 @@
+{
+  "run_date": "2026-10-25",
+  "slug": "one-word-every-size",
+  "title": "One Word, Every Size",
+  "concept": "KCAW and the Daily Sitka Sentinel report that Sitka's planning commission recommended on October 21st banning data centers in every zone, checked against the City and Borough of Sitka's staff memo, draft ordinance and electric utility annual report, the Fairbanks North Star Borough agenda and Alaska's News Source, and the UAF ACEP guide. A brass-rimmed enamel sign with a face, the Plate, reads DATA CENTER and fits a fridge-size copper box, the Cubby, and a gigawatt block alike. The film follows that one sign across a painted zoning map, a mailbox, a blank ruler, a Cordova powerhouse, a stack of thirty eight towers, two signposts passed by a dashed recommendation board, a hammer and the ruler, an island balance of 120 made against 118 used, a quiet quote, a Fairbanks tick at 5 MW, a cracked sign and one open signal pink tick.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 122.98,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "structure-as-subject",
+    "layout": "centered-hero-lowerthird",
+    "register": "naturalistic-scene",
+    "palette": "cedar boardwalk, teal harbor fog, chalk cream enamel signs with brass rims, hydro blue water, signal pink tick and stamp ink, a golden break",
+    "camera_strategy": "dolly-through",
+    "light_story": "storm-dramatic",
+    "metaphor": "one brass sign that fits every size of thing, stretched until it cracks against a ruler with no marks"
+  },
+  "palette": "cedar boardwalk, teal harbor fog, chalk cream enamel signs with brass rims, hydro blue water, signal pink tick and stamp ink, a golden break",
+  "divergence_note": "The last four films were an orbital navy plate with a hot pixel, a paper form in a snowy cutaway building, a plumb bob in dark ground, and a calf on a pewter beach. This film is an eye-level rain-day boardwalk town in warm cedar, teal and cream with one signal pink. There is no orbit, no cutaway slice of ground, no desk, no paper creature and no lamp pool. Its world is built of signs, posts, a ruler and a balance. HONEST OVERLAP: its hero is a faced object for the fourth film in a row, but it is rigid enamel with a hinge that stretches, shares the frame with a second faced box and a bird, and is not paper or a sensor.",
+  "treatment": {
+    "winner": "The Explainer's Plate that stretches over every size and cracks on the ruler, with the Comedian's gull gag and the 38-stack pullback, the Dramatist's island scene drawn at full strength with the Sadlier-Hart quote held quiet, and the Enthusiast's open tick as the button.",
+    "why": "All four pitches converged on one sign that fits every size. The thesis is a SIZE question, so the picture is a sign stretched past its size against a ruler with no marks. The ban's best case gets its own quiet scene and no gag."
+  },
+  "angle": {
+    "run_date": "2026-10-25",
+    "thesis": "One word covers a fridge and a gigawatt campus, and Sitka's draft draws no size line, so the real choice before the Assembly is where to draw it, not whether to say yes or no.",
+    "falsifiable_by": "The Assembly record showing a size line was weighed and rejected because even a Cordova size 150 kilowatt box is judged a threat to the island grid, or the Assembly adding its own size line or permit route (then the rule was never stuck on one word), or a recommendation that already sets a demand threshold.",
+    "supporting_facts": [
+      "c12 the draft definition has no size line",
+      "c13/c19 Rudas names one kilowatt, one megawatt, one gigawatt under one word, and Cordova already runs a fridge size 150 kW unit at a hydro plant, per the city memo",
+      "c9/c10/c11 record peak 26.02 MW, hyperscale typically over 20 MW, one gigawatt about 38 times that peak (our math)",
+      "c22 Fairbanks draws its line at 5 MW"
+    ],
+    "counterpoint_honored": "c7/c18/c8/c14 The ban's best case gets its own act-three scene at full strength: an island grid with no neighbor to import from, 120 GWh made and 118 used in 2025, a memo that calls a small power hungry facility not entirely unlikely, and Sadlier-Hart's say it loud. Hydro moves with rainfall. No claim of spare capacity. The film narrows honestly: the caution is rational, the open question is whether a ban or a line plus conditions protects the thin margin better.",
+    "second_movement": "Staff and the sustainability commission both chose a permit (c2,c3,c4) and the commission overrode them, so the fight was never control versus no control. It is which tool keeps control. Then c9: the whole town peaks at 26 MW.",
+    "throughline_object": "the one word DATA CENTER on a stamped sign/plate that is physically the same plate on every size of thing. States: one plate on a fridge box (Cordova), the same plate stretching over a town-sized load, the plate cracking along a ruler, a ruler with no marks (the draft), and the final state: the ruler with a single open tick, the line not yet drawn.",
+    "ai_link_wording": "The city memo says machine learning and AI spurred the sector's growth (c6). No AI company or project is in Sitka. AI is the reason the loads got big, not a party to the story.",
+    "valence": "curious, constructive, respectful of the ban. No villain, no doom, no boosterism. Never say Sitka banned.",
+    "stance": "curious",
+    "one_question": "Sitka's rule would treat a fridge and a gigawatt alike, so where should the line go?",
+    "runner_ups_lost": [
+      "Pure local-control foresight praise (Sitka wrote the rule first): folded in as the opening beat, lost as thesis because it doesn't survive the missing size line",
+      "Alaska wins enthusiast: a permit door for Cordova-scale compute: kept as the Act 4 option, lost as thesis because it asserts a benefit no source documents in Sitka"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A rainy powerhouse floor where a brass-rimmed sign with a face slams onto a fridge-size copper box and grins, rain spray ringing out, a gull dropping from the rafters.",
+    "headline": "THE SAME SIGN",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame is the same Plate and Cubby, now hanging from one open signal pink tick on the ruler, the gull's pencil hovering: the sign that slammed on is now asking where the line goes."
+  },
+  "open_loop": {
+    "plant_t": 0.0,
+    "pay_t": 121.73,
+    "what": "One sign fits a fridge and a gigawatt. Where does it stop fitting? Planted as the gull flaps the Plate onto a hillside block, paid as the film hands the open tick to the viewer."
+  },
+  "open_loop_2": {
+    "plant_t": 50.28,
+    "pay_t": 83.55,
+    "what": "What is under the tarp beside Sitka's peak tower? Planted as a brass balance stands covered beside the tower, paid when the wind strips the tarp on the island and 120 made against 118 used leaves the beam nearly level."
+  },
+  "throughline": {
+    "object": "the Plate",
+    "lands_in_button": "the cracked Plate hanging from one open signal pink tick on the blank ruler",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "smug on the Cubby's door like a bow tie"
+      },
+      {
+        "at_s": 6.57,
+        "state": "stretched like taffy over a hillside block, lettering unchanged"
+      },
+      {
+        "at_s": 36.45,
+        "state": "standing on a blank ruler, looking along it"
+      },
+      {
+        "at_s": 39.77,
+        "state": "stretched across a lab box, a container and a mountain until a hairline crack opens"
+      },
+      {
+        "at_s": 44.85,
+        "state": "cracked, on the Cubby at Cordova"
+      },
+      {
+        "at_s": 50.28,
+        "state": "cracked, at the door of Sitka's lit tower"
+      },
+      {
+        "at_s": 57.44,
+        "state": "cracked, standing at the foot of the staff signpost"
+      },
+      {
+        "at_s": 75.44,
+        "state": "cracked, hanging on the island's powerhouse"
+      },
+      {
+        "at_s": 88.58,
+        "state": "cracked, watching the intake stream thin"
+      },
+      {
+        "at_s": 105.93,
+        "state": "cracked, looking along the ruler at the proposed 5 MW tick"
+      },
+      {
+        "at_s": 113.94,
+        "state": "cracked, between two sizes in a golden break"
+      },
+      {
+        "at_s": 121.73,
+        "state": "hanging from one open signal pink tick beside the Cubby"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 6.57,
+      "type": "scale-pullback",
+      "what": "the Plate stretches from the fridge-size box to a hillside block",
+      "hold_s": 0.7
+    },
+    {
+      "t": 54.51,
+      "type": "scale-pullback",
+      "what": "the camera cranes up through thirty eight stacked towers off the top of the frame",
+      "hold_s": 0.8
+    },
+    {
+      "t": 87.33,
+      "type": "morph-to-chart",
+      "what": "the island resolves into a brass balance of 120 made against 118 used",
+      "hold_s": 0.8
+    },
+    {
+      "t": 105.93,
+      "type": "build-on",
+      "what": "the first dashed proposed tick is inked onto the blank ruler at 5 MW",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.2,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 0,
+        "offset": 3.0,
+        "level": 0.8
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.55
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.45
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.62
+      },
+      {
+        "line": 7,
+        "offset": 4.0,
+        "level": 1.0
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.18
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 10,
+        "offset": 4.0,
+        "level": 0.12
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 13,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "at_s": 119.27,
+        "level": 0.1
+      },
+      {
+        "at_s": 122.53,
+        "level": 0.55
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.55
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "build_steps": 4,
+    "dip_at": 119.27,
+    "riser_at": 54.51,
+    "silence_at": 119.27,
+    "payoff_at": 121.73,
+    "button_pattern": "question",
+    "interrupt_at": 68.09,
+    "extra_dips": [
+      92.07
+    ]
+  },
+  "shots": [
+    {
+      "title": "One sign",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "powerhouse-floor",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the Cubby and the Plate at x540 y960",
+      "means": "A rainy powerhouse floor where the Plate grins on the Cubby's door and then stretches like taffy over a hillside block.",
+      "ambient": "rain runs down the window, the Cubby hums, the Plate swings, the block rumbles",
+      "hero": {
+        "name": "the Plate + Cubby + gull + block",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% Plate, 25% Cubby, 20% block, 15% gull"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-7.920"
+    },
+    {
+      "title": "A ban in every zone",
+      "vo_line": 1,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "zoning-wall-map",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the map at x540 y960",
+      "means": "A painted wall map of Sitka where a RECOMMENDED stamp slams across it and every zone takes dashed hatching.",
+      "ambient": "the fjord ripples, rain streaks the glass, ink settles, the tag wobbles",
+      "hero": {
+        "name": "wall map + RECOMMENDED stamp + nameplate",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "55% map, 30% stamp, 15% plate"
+      },
+      "id": 2,
+      "start_s": 7.92,
+      "t": "7.920-18.460"
+    },
+    {
+      "title": "Only a recommendation",
+      "vo_line": 2,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "mailbox-and-lot",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the mailbox and the lot at x540 y1000",
+      "means": "A stamped sheet slides toward a mailbox marked SITKA ASSEMBLY, beside a bare lot with a gull.",
+      "ambient": "the mailbox flag trembles, puddles ripple, the gull shifts, rain drips",
+      "hero": {
+        "name": "stamped sheet + mailbox + bare lot + gull",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "35% sheet, 30% mailbox, 35% lot"
+      },
+      "id": 3,
+      "start_s": 18.46,
+      "t": "18.460-24.320"
+    },
+    {
+      "title": "The memo",
+      "vo_line": 3,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "memo-sheet",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the memo is the shot",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the sheet, the ruler, the posts, the tools, the guide and the tick are the motion",
+      "centered": "the memo at x540 y960",
+      "means": "A city memo with a staircase of growth boxes and a quote card while the Cubby tiptoes in.",
+      "ambient": "the sheet settles, rain streaks, the steps rise, the Cubby bobs",
+      "hero": {
+        "name": "memo sheet + growth steps + quote card + Cubby",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% memo, 30% steps, 30% card"
+      },
+      "id": 4,
+      "start_s": 24.32,
+      "t": "24.320-32.400"
+    },
+    {
+      "title": "No size line",
+      "vo_line": 4,
+      "framing": "data-panel",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "blank-ruler",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "static:the ruler is the shot",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the sheet, the ruler, the posts, the tools, the guide and the tick are the motion",
+      "centered": "the ruler at x540 y980",
+      "means": "A blank ruler across the frame with a lab box, a container and a mountain block under one stretched Plate.",
+      "ambient": "the ruler glints, boxes hum, the Plate shifts its feet, the block rumbles",
+      "hero": {
+        "name": "blank ruler + lab box + container + block + Plate",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "35% ruler, 40% three sizes, 25% Plate"
+      },
+      "id": 5,
+      "start_s": 32.4,
+      "t": "32.400-41.740"
+    },
+    {
+      "title": "Cordova",
+      "vo_line": 5,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "cordova-powerhouse",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the powerhouse at x540 y1000",
+      "means": "A small hydro powerhouse with a turning wheel and the Cubby in the doorway at 150 kW.",
+      "ambient": "the wheel turns, the creek runs, the Cubby hums, the readout flickers",
+      "hero": {
+        "name": "powerhouse + wheel + Cubby + readout",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% house, 30% Cubby, 25% creek"
+      },
+      "id": 6,
+      "start_s": 41.74,
+      "t": "41.740-50.280"
+    },
+    {
+      "title": "Thirty eight towns",
+      "vo_line": 6,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "tower-stack",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the tower at x540 y1000",
+      "means": "One lit tower of twenty six windows, then a crane up through thirty eight identical towers off the top of the frame.",
+      "ambient": "windows flicker, rain falls, clouds part, the gull looks up",
+      "hero": {
+        "name": "lit tower + thirty eight tower stack + gull",
+        "parts": 66,
+        "zones": 3,
+        "detail_note": "30% tower, 55% stack, 15% gull"
+      },
+      "id": 7,
+      "start_s": 50.28,
+      "t": "50.280-57.440"
+    },
+    {
+      "title": "Overridden",
+      "vo_line": 7,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "signposts",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the posts and the board are the shot",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the sheet, the ruler, the posts, the tools, the guide and the tick are the motion",
+      "centered": "the signposts at x540 y1000",
+      "means": "Two signposts on the boardwalk, staff's and the sustainability commission's, and a dashed RECOMMENDATION board on a hand-cart rolling in front of both.",
+      "ambient": "posts sway, rain drips, the bell swings, the board rocks",
+      "hero": {
+        "name": "two signposts + dashed board on a cart + Plate",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% posts, 40% board, 20% Plate"
+      },
+      "id": 8,
+      "start_s": 57.44,
+      "t": "57.440-69.240"
+    },
+    {
+      "title": "Which tool",
+      "vo_line": 8,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "tool-wall",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the tools are the shot",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the sheet, the ruler, the posts, the tools, the guide and the tick are the motion",
+      "centered": "the tools at x540 y960",
+      "means": "A hammer and the blank ruler on a cedar wall and the Plate looking from one to the other.",
+      "ambient": "tools sway on their hooks, the Plate hops and blinks",
+      "hero": {
+        "name": "hammer + ruler + wall + Plate",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "35% hammer, 35% ruler, 30% Plate"
+      },
+      "id": 9,
+      "start_s": 69.24,
+      "t": "69.240-75.440"
+    },
+    {
+      "title": "The island",
+      "vo_line": 9,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "island",
+      "pov": "orbital-aerial",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the island at x540 y1000",
+      "means": "A stone island under a squall with a cord that ends at the shore and a brass balance of 120 against 118.",
+      "ambient": "rain falls, town windows flicker, the cord sways, wheels turn, the beam creaks",
+      "hero": {
+        "name": "island + cord + intakes + balance",
+        "parts": 62,
+        "zones": 3,
+        "detail_note": "35% island, 25% intakes, 40% balance"
+      },
+      "id": 10,
+      "start_s": 75.44,
+      "t": "75.440-88.580"
+    },
+    {
+      "title": "Say it loud",
+      "vo_line": 10,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "podium",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the podium at x540 y1000",
+      "means": "The intake stream thins and the balance tips, then everything fades to rain and a podium with a microphone holds a testimony sheet that types a quote.",
+      "ambient": "the stream thins, the beam dips, the sheet types, the rain falls, the microphone sways",
+      "hero": {
+        "name": "thinning stream + balance + podium + testimony sheet",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "30% stream, 20% balance, 50% podium"
+      },
+      "id": 11,
+      "start_s": 88.58,
+      "t": "88.580-97.780"
+    },
+    {
+      "title": "Fairbanks draws a line",
+      "vo_line": 11,
+      "framing": "data-panel",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "fairbanks-ruler",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the ruler at x540 y980",
+      "means": "The blank ruler returns, a Fairbanks tag in a parka and a dashed ink proposed tick landing at 5 MW.",
+      "ambient": "the tag swings, the gull bobs, the tick pulses",
+      "hero": {
+        "name": "ruler + Fairbanks tag + tick + gull",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "50% ruler, 25% tag, 25% tick"
+      },
+      "id": 12,
+      "start_s": 97.78,
+      "t": "97.780-107.180"
+    },
+    {
+      "title": "Not all the same",
+      "vo_line": 12,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "guide-cover",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the guide is the shot",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the sheet, the ruler, the posts, the tools, the guide and the tick are the motion",
+      "centered": "the guide at x540 y1000",
+      "means": "A guide booklet flips open and the cracked Plate trembles beside it.",
+      "ambient": "the pages flutter, the crack runs, the Plate trembles",
+      "hero": {
+        "name": "guide booklet + Plate + crack",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "50% book, 50% Plate"
+      },
+      "id": 13,
+      "start_s": 107.18,
+      "t": "107.180-113.940"
+    },
+    {
+      "title": "Where does the line go",
+      "vo_line": 13,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ruler-button",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "static:the ruler and the open tick are the shot",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "flat:a locked panel with a slow drift where the sheet, the ruler, the posts, the tools, the guide and the tick are the motion",
+      "centered": "the ruler at x540 y1000",
+      "means": "Two sizes either side of one sign in a golden break, a hammer tap, and the Plate hanging from one open tick.",
+      "ambient": "the rain thins, gold light drifts, the hammer swings, the pencil circles, the Plate sways",
+      "hero": {
+        "name": "Cubby + block + hammer + ruler + open tick + Plate",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "30% sizes, 25% hammer, 45% tick and Plate"
+      },
+      "id": 14,
+      "start_s": 113.94,
+      "t": "113.940-122.980"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "This box the size of a fridge wears a sign that says data center. So does a campus that needs a gigawatt.",
+      "phrase": "This box the size",
+      "shows": "a rainy powerhouse floor, a fridge-size copper box with a face, the Cubby, and a brass-rimmed enamel sign with a face, the Plate, reading DATA CENTER slams onto its door like a bow tie and grins",
+      "sfx": "thunk",
+      "means": "data center",
+      "rehook": "",
+      "draw": {
+        "subject": "the Plate",
+        "action": "slams onto the Cubby's door with an overshoot and a ring of rain spray",
+        "emotion": "smug",
+        "annotation": "DATA CENTER"
+      },
+      "choreo": {
+        "primary": "a rainy powerhouse floor, a fridge-size copper box with a face, the Cubby, and a brass-rimmed enamel sign with a face, the Plate, reading DATA CENTER slams onto its door like a bow tie and grins",
+        "reaction": "the Plate swings on its hinge and the Cubby hum-bounces",
+        "ambient": "rain runs down the window, the Cubby hums, the Plate swings, the block rumbles"
+      },
+      "t": "0.000-1.930",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.93,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 1.93
+      },
+      "offset": 1.93,
+      "vo": "This box the size of a fridge wears a sign that says data center. So does a campus that needs a gigawatt.",
+      "phrase": "fridge wears a sign",
+      "shows": "the Cubby shivers under the sign, a small plate reads FRIDGE SIZE, rain runs down the window behind",
+      "sfx": "ping",
+      "means": "fridge size",
+      "rehook": "",
+      "draw": {
+        "subject": "the Cubby",
+        "action": "hum-bounces and puffs a warm breath under the sign",
+        "emotion": "nervous",
+        "annotation": "FRIDGE SIZE"
+      },
+      "choreo": {
+        "primary": "the Cubby shivers under the sign, a small plate reads FRIDGE SIZE, rain runs down the window behind",
+        "reaction": "the Cubby hums and the rain runs",
+        "ambient": "rain runs down the window, the Cubby hums, the Plate swings, the block rumbles"
+      },
+      "t": "1.930-5.610",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 5.61,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 5.61
+      },
+      "offset": 5.61,
+      "vo": "This box the size of a fridge wears a sign that says data center. So does a campus that needs a gigawatt.",
+      "phrase": "campus that needs a",
+      "shows": "a gull snatches the one Plate off the Cubby's door and flaps it across to a block as big as a hillside sliding in from the right, a small plate reads CAMPUS",
+      "sfx": "whoosh",
+      "means": "campus",
+      "rehook": "",
+      "draw": {
+        "subject": "a gull",
+        "action": "snatches the Plate off the Cubby's door and flaps across to a block as big as a hillside sliding in from frame right",
+        "emotion": "alarm",
+        "annotation": "CAMPUS"
+      },
+      "choreo": {
+        "primary": "a gull snatches the one Plate off the Cubby's door and flaps it across to a block as big as a hillside sliding in from the right, a small plate reads CAMPUS",
+        "reaction": "the block rumbles in and the gull flaps",
+        "ambient": "rain runs down the window, the Cubby hums, the Plate swings, the block rumbles"
+      },
+      "t": "5.610-6.570",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 6.57,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.57
+      },
+      "offset": 6.57,
+      "vo": "This box the size of a fridge wears a sign that says data center. So does a campus that needs a gigawatt.",
+      "phrase": "gigawatt.",
+      "shows": "the Plate snaps onto the huge block and stretches like taffy across it, face squished and straining, DATA CENTER lettering unchanged",
+      "sfx": "rumble",
+      "means": "1 gigawatt",
+      "rehook": "",
+      "draw": {
+        "subject": "the Plate",
+        "action": "snaps onto the block and stretches like taffy while its lettering holds its size",
+        "emotion": "strained",
+        "annotation": "1 GIGAWATT"
+      },
+      "choreo": {
+        "primary": "the Plate snaps onto the huge block and stretches like taffy across it, face squished and straining, DATA CENTER lettering unchanged",
+        "reaction": "the Plate twangs and the rain spatters",
+        "ambient": "rain runs down the window, the Cubby hums, the Plate swings, the block rumbles"
+      },
+      "t": "6.570-7.920",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 7.92,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On October twenty first, Sitka's planning commission voted unanimously to recommend banning data centers in every zone, per Sitka public radio station K C A W.",
+      "phrase": "On October twenty first,",
+      "shows": "a hard cut to a painted sign-shop wall map of Sitka, island and fjord, five tinted zone patches on the town, a boxed tag reads SITKA, OCTOBER 21ST",
+      "sfx": "snap",
+      "means": "sitka \u00b7 october 21st",
+      "rehook": "",
+      "draw": {
+        "subject": "zoning map",
+        "action": "hard cuts in as a painted wall map of Sitka with a fjord and five tinted zones",
+        "emotion": "plain",
+        "annotation": "SITKA \u00b7 OCTOBER 21ST"
+      },
+      "choreo": {
+        "primary": "a hard cut to a painted sign-shop wall map of Sitka, island and fjord, five tinted zone patches on the town, a boxed tag reads SITKA, OCTOBER 21ST",
+        "reaction": "the fjord water ripples and rain streaks the glass",
+        "ambient": "the fjord ripples, rain streaks the glass, ink settles, the tag wobbles"
+      },
+      "t": "7.920-11.390",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 11.39,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.47
+      },
+      "offset": 3.47,
+      "vo": "On October twenty first, Sitka's planning commission voted unanimously to recommend banning data centers in every zone, per Sitka public radio station K C A W.",
+      "phrase": "unanimously to recommend banning",
+      "shows": "a cedar post springs up beside the map with a nameplate PLANNING COMMISSION, UNANIMOUS",
+      "sfx": "pop",
+      "means": "planning commission \u00b7 unanimous",
+      "rehook": "",
+      "draw": {
+        "subject": "commission post",
+        "action": "rises on the boardwalk beside the map",
+        "emotion": "plain",
+        "annotation": "PLANNING COMMISSION \u00b7 UNANIMOUS"
+      },
+      "choreo": {
+        "primary": "a cedar post springs up beside the map with a nameplate PLANNING COMMISSION, UNANIMOUS",
+        "reaction": "the post settles and rain drips off its arm",
+        "ambient": "the fjord ripples, rain streaks the glass, ink settles, the tag wobbles"
+      },
+      "t": "11.390-12.950",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 12.95,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 5.03
+      },
+      "offset": 5.03,
+      "vo": "On October twenty first, Sitka's planning commission voted unanimously to recommend banning data centers in every zone, per Sitka public radio station K C A W.",
+      "phrase": "banning data centers in",
+      "shows": "a big rubber stamp slams RECOMMENDED across the map in signal pink ink, every zone patch taking dashed hatching, not a fill, and a plate reads RECOMMENDED, A BAN IN EVERY ZONE",
+      "sfx": "thump",
+      "means": "recommended \u00b7 a ban in every zone",
+      "rehook": "",
+      "draw": {
+        "subject": "RECOMMENDED stamp",
+        "action": "slams across the map in signal pink ink with squash and a ring of spray, the zones taking dashed hatching",
+        "emotion": "alert",
+        "annotation": "RECOMMENDED \u00b7 A BAN IN EVERY ZONE"
+      },
+      "choreo": {
+        "primary": "a big rubber stamp slams RECOMMENDED across the map in signal pink ink, every zone patch taking dashed hatching, not a fill, and a plate reads RECOMMENDED, A BAN IN EVERY ZONE",
+        "reaction": "the ink settles and the stamp lifts",
+        "ambient": "the fjord ripples, rain streaks the glass, ink settles, the tag wobbles"
+      },
+      "kick": true,
+      "t": "12.950-16.710",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 16.71,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 8.79
+      },
+      "offset": 8.79,
+      "vo": "On October twenty first, Sitka's planning commission voted unanimously to recommend banning data centers in every zone, per Sitka public radio station K C A W.",
+      "phrase": "radio station K C",
+      "shows": "a small radio-tower tag swings in on a hook from the map frame reading PER KCAW, SITKA PUBLIC RADIO",
+      "sfx": "slide",
+      "means": "per kcaw \u00b7 sitka public radio",
+      "rehook": "",
+      "draw": {
+        "subject": "radio tag",
+        "action": "swings in on a hook from the map frame",
+        "emotion": "plain",
+        "annotation": "PER KCAW \u00b7 SITKA PUBLIC RADIO"
+      },
+      "choreo": {
+        "primary": "a small radio-tower tag swings in on a hook from the map frame reading PER KCAW, SITKA PUBLIC RADIO",
+        "reaction": "the tag swings and settles",
+        "ambient": "the fjord ripples, rain streaks the glass, ink settles, the tag wobbles"
+      },
+      "t": "16.710-18.460",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 18.46,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That's only a recommendation, and nobody has proposed a data center in Sitka.",
+      "phrase": "That's only a recommendation,",
+      "shows": "the stamped sheet slides along a boardwalk rail toward a cedar mailbox marked SITKA ASSEMBLY, a plate reads NEXT, THE SITKA ASSEMBLY, DATE NOT SET",
+      "sfx": "creak",
+      "means": "next \u00b7 the sitka assembly \u00b7 date not set",
+      "rehook": "",
+      "draw": {
+        "subject": "stamped sheet",
+        "action": "slides along a cedar rail toward a mailbox marked SITKA ASSEMBLY",
+        "emotion": "plain",
+        "annotation": "NEXT \u00b7 THE SITKA ASSEMBLY \u00b7 DATE NOT SET"
+      },
+      "choreo": {
+        "primary": "the stamped sheet slides along a boardwalk rail toward a cedar mailbox marked SITKA ASSEMBLY, a plate reads NEXT, THE SITKA ASSEMBLY, DATE NOT SET",
+        "reaction": "the mailbox flag trembles and rain drips",
+        "ambient": "the mailbox flag trembles, puddles ripple, the gull shifts, rain drips"
+      },
+      "t": "18.460-21.090",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 21.09,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.63
+      },
+      "offset": 2.63,
+      "vo": "That's only a recommendation, and nobody has proposed a data center in Sitka.",
+      "phrase": "nobody has proposed a",
+      "shows": "the camera trucks to a bare gravel lot behind a chain rail with a plain sign NO DATA CENTER PROPOSED IN SITKA and a gull perched on top, looking at the camera",
+      "sfx": "tick",
+      "means": "no data center proposed in sitka",
+      "rehook": "",
+      "draw": {
+        "subject": "empty lot",
+        "action": "reveals a bare lot with a sign and a gull perched on it",
+        "emotion": "plain",
+        "annotation": "NO DATA CENTER PROPOSED IN SITKA"
+      },
+      "choreo": {
+        "primary": "the camera trucks to a bare gravel lot behind a chain rail with a plain sign NO DATA CENTER PROPOSED IN SITKA and a gull perched on top, looking at the camera",
+        "reaction": "the gull shifts and the puddles ripple",
+        "ambient": "the mailbox flag trembles, puddles ripple, the gull shifts, rain drips"
+      },
+      "t": "21.090-24.320",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 24.32,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The city's memo says A I has spurred growth, and a small, power hungry one here is not entirely unlikely.",
+      "phrase": "The city's memo says",
+      "shows": "a cream memo sheet unfolds on a cedar frame against a rain-streaked window, a heading reads CITY MEMO",
+      "sfx": "page",
+      "means": "city memo",
+      "rehook": "rehook: the memo's warning",
+      "draw": {
+        "subject": "city memo",
+        "action": "unfolds on a cedar frame in a rain-streaked window",
+        "emotion": "plain",
+        "annotation": "CITY MEMO"
+      },
+      "choreo": {
+        "primary": "a cream memo sheet unfolds on a cedar frame against a rain-streaked window, a heading reads CITY MEMO",
+        "reaction": "the sheet settles and the rain streaks",
+        "ambient": "the sheet settles, rain streaks, the steps rise, the Cubby bobs"
+      },
+      "t": "24.320-26.510",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 26.51,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.19
+      },
+      "offset": 2.19,
+      "vo": "The city's memo says A I has spurred growth, and a small, power hungry one here is not entirely unlikely.",
+      "phrase": "spurred growth, and a",
+      "shows": "a staircase of plain unlabelled boxes climbs beside the memo, a plate reads AI SPURRED THE GROWTH, PER CITY MEMO",
+      "sfx": "swell",
+      "means": "ai spurred the growth \u00b7 per city memo",
+      "rehook": "",
+      "draw": {
+        "subject": "growth steps",
+        "action": "rise as a staircase of plain boxes beside the memo",
+        "emotion": "plain",
+        "annotation": "AI SPURRED THE GROWTH \u00b7 PER CITY MEMO"
+      },
+      "choreo": {
+        "primary": "a staircase of plain unlabelled boxes climbs beside the memo, a plate reads AI SPURRED THE GROWTH, PER CITY MEMO",
+        "reaction": "the steps rise and rain streaks the glass",
+        "ambient": "the sheet settles, rain streaks, the steps rise, the Cubby bobs"
+      },
+      "t": "26.510-28.170",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 28.17,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.85
+      },
+      "offset": 3.85,
+      "vo": "The city's memo says A I has spurred growth, and a small, power hungry one here is not entirely unlikely.",
+      "phrase": "small, power hungry one",
+      "shows": "a quote card types NOT ENTIRELY UNLIKELY, CITY MEMO, while the Cubby tiptoes in from the edge wearing its sign and stops, wide-eyed",
+      "sfx": "tap",
+      "means": "\"not entirely unlikely\" \u00b7 city memo",
+      "rehook": "",
+      "draw": {
+        "subject": "quote card",
+        "action": "types the memo's words as the Cubby tiptoes into the frame wearing its sign",
+        "emotion": "wary",
+        "annotation": "\"NOT ENTIRELY UNLIKELY\" \u00b7 CITY MEMO"
+      },
+      "choreo": {
+        "primary": "a quote card types NOT ENTIRELY UNLIKELY, CITY MEMO, while the Cubby tiptoes in from the edge wearing its sign and stops, wide-eyed",
+        "reaction": "the card types and the Cubby bobs",
+        "ambient": "the sheet settles, rain streaks, the steps rise, the Cubby bobs"
+      },
+      "t": "28.170-32.400",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 32.4,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The city staff's draft has no size line. As Planning Commissioner Rudas warned, a kilowatt, a megawatt and a gigawatt all get one name.",
+      "phrase": "The city staff's draft",
+      "shows": "a long cedar ruler with brass end caps slides across the frame with no tick marks at all, a plate reads THE DRAFT, NO SIZE LINE",
+      "sfx": "snap",
+      "means": "the draft \u00b7 no size line",
+      "rehook": "rehook: the ruler with no marks",
+      "draw": {
+        "subject": "blank ruler",
+        "action": "slides across the frame with no marks at all",
+        "emotion": "plain",
+        "annotation": "THE DRAFT \u00b7 NO SIZE LINE"
+      },
+      "choreo": {
+        "primary": "a long cedar ruler with brass end caps slides across the frame with no tick marks at all, a plate reads THE DRAFT, NO SIZE LINE",
+        "reaction": "the ruler glints and settles",
+        "ambient": "the ruler glints, boxes hum, the Plate shifts its feet, the block rumbles"
+      },
+      "t": "32.400-36.450",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 36.45,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.05
+      },
+      "offset": 4.05,
+      "vo": "The city staff's draft has no size line. As Planning Commissioner Rudas warned, a kilowatt, a megawatt and a gigawatt all get one name.",
+      "phrase": "Rudas warned, a kilowatt,",
+      "shows": "a brass name tag drops on a chain from the ruler's end and swings, COMMISSIONER RUDAS, as the Plate climbs onto the ruler and looks along it",
+      "sfx": "clink",
+      "means": "commissioner rudas",
+      "rehook": "",
+      "draw": {
+        "subject": "name tag",
+        "action": "drops on a chain from the ruler's end and swings",
+        "emotion": "plain",
+        "annotation": "COMMISSIONER RUDAS"
+      },
+      "choreo": {
+        "primary": "a brass name tag drops on a chain from the ruler's end and swings, COMMISSIONER RUDAS, as the Plate climbs onto the ruler and looks along it",
+        "reaction": "the tag swings and the Plate shifts its feet",
+        "ambient": "the ruler glints, boxes hum, the Plate shifts its feet, the block rumbles"
+      },
+      "t": "36.450-37.810",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 37.81,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.41
+      },
+      "offset": 5.41,
+      "vo": "The city staff's draft has no size line. As Planning Commissioner Rudas warned, a kilowatt, a megawatt and a gigawatt all get one name.",
+      "phrase": "kilowatt, a megawatt and",
+      "shows": "a small bench box drops onto the ruler beside the Plate and a label reads 1 KW",
+      "sfx": "click",
+      "means": "1 kw",
+      "rehook": "",
+      "draw": {
+        "subject": "lab box",
+        "action": "drops onto the ruler beside the Plate",
+        "emotion": "plain",
+        "annotation": "1 KW"
+      },
+      "choreo": {
+        "primary": "a small bench box drops onto the ruler beside the Plate and a label reads 1 KW",
+        "reaction": "the box hums",
+        "ambient": "the ruler glints, boxes hum, the Plate shifts its feet, the block rumbles"
+      },
+      "t": "37.810-38.770",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 38.77,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 6.37
+      },
+      "offset": 6.37,
+      "vo": "The city staff's draft has no size line. As Planning Commissioner Rudas warned, a kilowatt, a megawatt and a gigawatt all get one name.",
+      "phrase": "megawatt and a gigawatt",
+      "shows": "a shipping-container-size block lands beside it, a label reads 1 MW",
+      "sfx": "knock",
+      "means": "1 mw",
+      "rehook": "",
+      "draw": {
+        "subject": "container",
+        "action": "lands beside the lab box",
+        "emotion": "plain",
+        "annotation": "1 MW"
+      },
+      "choreo": {
+        "primary": "a shipping-container-size block lands beside it, a label reads 1 MW",
+        "reaction": "the container settles",
+        "ambient": "the ruler glints, boxes hum, the Plate shifts its feet, the block rumbles"
+      },
+      "t": "38.770-39.770",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 39.77,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 7.37
+      },
+      "offset": 7.37,
+      "vo": "The city staff's draft has no size line. As Planning Commissioner Rudas warned, a kilowatt, a megawatt and a gigawatt all get one name.",
+      "phrase": "gigawatt all get one",
+      "shows": "a mountain-size block looms behind both, the one Plate stretched across all three until a hairline crack opens in its enamel, a plate reads 1 KW, 1 MW, 1 GW, ONE WORD",
+      "sfx": "rumble",
+      "means": "1 kw \u00b7 1 mw \u00b7 1 gw \u00b7 one word",
+      "rehook": "",
+      "draw": {
+        "subject": "mountain block",
+        "action": "looms in behind both and the Plate stretches across all three until a hairline crack opens",
+        "emotion": "strained",
+        "annotation": "1 KW \u00b7 1 MW \u00b7 1 GW \u00b7 ONE WORD"
+      },
+      "choreo": {
+        "primary": "a mountain-size block looms behind both, the one Plate stretched across all three until a hairline crack opens in its enamel, a plate reads 1 KW, 1 MW, 1 GW, ONE WORD",
+        "reaction": "the Plate strains and the block rumbles",
+        "ambient": "the ruler glints, boxes hum, the Plate shifts its feet, the block rumbles"
+      },
+      "kick": true,
+      "t": "39.770-41.740",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 41.74,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In Cordova, per Sitka's memo, a fridge sized one, one hundred fifty kilowatts, runs inside a hydro plant.",
+      "phrase": "In Cordova, per Sitka's",
+      "shows": "a side view of a creek pouring down a penstock pipe through a turning turbine wheel into a small cedar powerhouse, a plate reads CORDOVA, HYDRO PLANT",
+      "sfx": "whirr",
+      "means": "cordova \u00b7 hydro plant",
+      "rehook": "",
+      "draw": {
+        "subject": "penstock",
+        "action": "pours water down a long pipe into a small powerhouse",
+        "emotion": "plain",
+        "annotation": "CORDOVA \u00b7 HYDRO PLANT"
+      },
+      "choreo": {
+        "primary": "a side view of a creek pouring down a penstock pipe through a turning turbine wheel into a small cedar powerhouse, a plate reads CORDOVA, HYDRO PLANT",
+        "reaction": "the water pours and the wheel turns",
+        "ambient": "the wheel turns, the creek runs, the Cubby hums, the readout flickers"
+      },
+      "t": "41.740-44.850",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 44.85,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.11
+      },
+      "offset": 3.11,
+      "vo": "In Cordova, per Sitka's memo, a fridge sized one, one hundred fifty kilowatts, runs inside a hydro plant.",
+      "phrase": "fridge sized one, one",
+      "shows": "the Cubby wearing the cracked Plate sits on a shelf in the powerhouse and a dotted fridge outline appears beside it and matches it, a plate reads FRIDGE SIZED, PER SITKA'S MEMO",
+      "sfx": "hum",
+      "means": "fridge sized \u00b7 per sitka's memo",
+      "rehook": "",
+      "draw": {
+        "subject": "Cubby",
+        "action": "sits on a shelf in the powerhouse beside a dotted fridge outline",
+        "emotion": "plain",
+        "annotation": "FRIDGE SIZED \u00b7 PER SITKA'S MEMO"
+      },
+      "choreo": {
+        "primary": "the Cubby wearing the cracked Plate sits on a shelf in the powerhouse and a dotted fridge outline appears beside it and matches it, a plate reads FRIDGE SIZED, PER SITKA'S MEMO",
+        "reaction": "the Cubby hums and the wheel turns",
+        "ambient": "the wheel turns, the creek runs, the Cubby hums, the readout flickers"
+      },
+      "t": "44.850-46.110",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 46.11,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.37
+      },
+      "offset": 4.37,
+      "vo": "In Cordova, per Sitka's memo, a fridge sized one, one hundred fifty kilowatts, runs inside a hydro plant.",
+      "phrase": "fifty kilowatts, runs inside",
+      "shows": "a small brass readout on the Cubby's door ticks to 150 KW",
+      "sfx": "tick",
+      "means": "150 kw",
+      "rehook": "",
+      "draw": {
+        "subject": "power readout",
+        "action": "ticks onto the Cubby's door",
+        "emotion": "plain",
+        "annotation": "150 KW"
+      },
+      "choreo": {
+        "primary": "a small brass readout on the Cubby's door ticks to 150 KW",
+        "reaction": "the readout flickers",
+        "ambient": "the wheel turns, the creek runs, the Cubby hums, the readout flickers"
+      },
+      "t": "46.110-50.280",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 50.28,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Sitka's record peak is twenty six megawatts. One gigawatt is about thirty eight times that, by our math.",
+      "phrase": "Sitka's record peak is",
+      "shows": "one slim tower rises on a wet ground plane with twenty six lit windows, the Plate at its door, a plate reads RECORD PEAK, 26.02 MW, and a small brass balance stands covered by a tarp beside it",
+      "sfx": "swell",
+      "means": "record peak \u00b7 26.02 mw",
+      "rehook": "",
+      "draw": {
+        "subject": "one tower",
+        "action": "rises lit with twenty six windows beside a small brass balance under a tarp",
+        "emotion": "curious",
+        "annotation": "RECORD PEAK \u00b7 26.02 MW"
+      },
+      "choreo": {
+        "primary": "one slim tower rises on a wet ground plane with twenty six lit windows, the Plate at its door, a plate reads RECORD PEAK, 26.02 MW, and a small brass balance stands covered by a tarp beside it",
+        "reaction": "the windows flicker and the tarp flaps",
+        "ambient": "windows flicker, rain falls, clouds part, the gull looks up"
+      },
+      "t": "50.280-54.510",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 54.51,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.23
+      },
+      "offset": 4.23,
+      "vo": "Sitka's record peak is twenty six megawatts. One gigawatt is about thirty eight times that, by our math.",
+      "phrase": "thirty eight times that,",
+      "shows": "the camera cranes up and thirty eight identical lit towers stack through the cloud deck and out of the top of the frame, a plate reads 1 GW IS ABOUT 38 TIMES THAT PEAK, a small tag OUR MATH thumps onto the top, a tiny gull on the first tower looks up",
+      "sfx": "rumble",
+      "means": "1 gw is about 38 times that peak",
+      "rehook": "",
+      "draw": {
+        "subject": "tower stack",
+        "action": "cranes up as thirty eight identical towers stack through the cloud deck and off the top of the frame",
+        "emotion": "alarm",
+        "annotation": "1 GW IS ABOUT 38 TIMES THAT PEAK"
+      },
+      "choreo": {
+        "primary": "the camera cranes up and thirty eight identical lit towers stack through the cloud deck and out of the top of the frame, a plate reads 1 GW IS ABOUT 38 TIMES THAT PEAK, a small tag OUR MATH thumps onto the top, a tiny gull on the first tower looks up",
+        "reaction": "the clouds part and the towers glow",
+        "ambient": "windows flicker, rain falls, clouds part, the gull looks up"
+      },
+      "t": "54.510-57.440",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 57.44,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Staff wrote that the draft does not propose prohibiting data centers, and the city's sustainability commission backed a permit, unanimously. The planning commission recommended a ban instead.",
+      "phrase": "Staff wrote that the",
+      "shows": "a cedar signpost rises from the boardwalk reading STAFF DID NOT PROPOSE A BAN, the Plate standing at its foot, rain dripping from its arm",
+      "sfx": "slide",
+      "means": "staff did not propose a ban",
+      "rehook": "rehook: who overrode whom",
+      "draw": {
+        "subject": "staff signpost",
+        "action": "rises on the boardwalk and sags as rain drips from its arm",
+        "emotion": "plain",
+        "annotation": "STAFF DID NOT PROPOSE A BAN"
+      },
+      "choreo": {
+        "primary": "a cedar signpost rises from the boardwalk reading STAFF DID NOT PROPOSE A BAN, the Plate standing at its foot, rain dripping from its arm",
+        "reaction": "the post sways and the rain drips",
+        "ambient": "posts sway, rain drips, the bell swings, the board rocks"
+      },
+      "t": "57.440-62.290",
+      "key": 25
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 62.29,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.85
+      },
+      "offset": 4.85,
+      "vo": "Staff wrote that the draft does not propose prohibiting data centers, and the city's sustainability commission backed a permit, unanimously. The planning commission recommended a ban instead.",
+      "phrase": "sustainability commission backed a",
+      "shows": "a second signpost rises, OCTOBER 5TH, SUSTAINABILITY COMMISSION",
+      "sfx": "knock",
+      "means": "october 5th \u00b7 sustainability commission",
+      "rehook": "",
+      "draw": {
+        "subject": "second signpost",
+        "action": "rises beside it",
+        "emotion": "plain",
+        "annotation": "OCTOBER 5TH \u00b7 SUSTAINABILITY COMMISSION"
+      },
+      "choreo": {
+        "primary": "a second signpost rises, OCTOBER 5TH, SUSTAINABILITY COMMISSION",
+        "reaction": "the post settles",
+        "ambient": "posts sway, rain drips, the bell swings, the board rocks"
+      },
+      "t": "62.290-64.750",
+      "key": 26
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 64.75,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 7.31
+      },
+      "offset": 7.31,
+      "vo": "Staff wrote that the draft does not propose prohibiting data centers, and the city's sustainability commission backed a permit, unanimously. The planning commission recommended a ban instead.",
+      "phrase": "unanimously. The planning commission",
+      "shows": "a small brass bell on the second post rings and a plate reads UNANIMOUS, A PERMIT",
+      "sfx": "chime",
+      "means": "unanimous \u00b7 a permit",
+      "rehook": "",
+      "draw": {
+        "subject": "unanimous bell",
+        "action": "rings on the second post",
+        "emotion": "plain",
+        "annotation": "UNANIMOUS \u00b7 A PERMIT"
+      },
+      "choreo": {
+        "primary": "a small brass bell on the second post rings and a plate reads UNANIMOUS, A PERMIT",
+        "reaction": "the bell swings",
+        "ambient": "posts sway, rain drips, the bell swings, the board rocks"
+      },
+      "t": "64.750-68.090",
+      "key": 27
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 68.09,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 10.65
+      },
+      "offset": 10.65,
+      "vo": "Staff wrote that the draft does not propose prohibiting data centers, and the city's sustainability commission backed a permit, unanimously. The planning commission recommended a ban instead.",
+      "phrase": "instead.",
+      "shows": "a wide dashed RECOMMENDATION board on a boardwalk hand-cart rolls along the near boardwalk in front of both signposts, which stay readable, toward the Assembly mailbox, a plate reads THE PLANNING COMMISSION RECOMMENDED A BAN INSTEAD",
+      "sfx": "thump",
+      "means": "the planning commission recommended a ban instead",
+      "rehook": "",
+      "draw": {
+        "subject": "dashed board",
+        "action": "rolls on a boardwalk hand-cart along the near boardwalk in front of both signposts toward the Assembly mailbox",
+        "emotion": "alert",
+        "annotation": "THE PLANNING COMMISSION RECOMMENDED A BAN INSTEAD"
+      },
+      "choreo": {
+        "primary": "a wide dashed RECOMMENDATION board on a boardwalk hand-cart rolls along the near boardwalk in front of both signposts, which stay readable, toward the Assembly mailbox, a plate reads THE PLANNING COMMISSION RECOMMENDED A BAN INSTEAD",
+        "reaction": "the board sways as it passes and the rain drips",
+        "ambient": "posts sway, rain drips, the bell swings, the board rocks"
+      },
+      "t": "68.090-69.240",
+      "key": 28
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 69.24,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the fight was never control versus no control. It's which tool keeps control.",
+      "phrase": "So the fight was",
+      "shows": "a hammer swings in on a hook and drives one nail through a plain sign board, a plate reads A BAN, ONE CLEAR RULE",
+      "sfx": "click",
+      "means": "a ban \u00b7 one clear rule",
+      "rehook": "",
+      "draw": {
+        "subject": "hammer",
+        "action": "swings in and drives one nail through a plain sign board",
+        "emotion": "plain",
+        "annotation": "A BAN \u00b7 ONE CLEAR RULE"
+      },
+      "choreo": {
+        "primary": "a hammer swings in on a hook and drives one nail through a plain sign board, a plate reads A BAN, ONE CLEAR RULE",
+        "reaction": "the board shudders and the nail rings",
+        "ambient": "tools sway on their hooks, the Plate hops and blinks"
+      },
+      "t": "69.240-73.350",
+      "key": 29
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 73.35,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.11
+      },
+      "offset": 4.11,
+      "vo": "So the fight was never control versus no control. It's which tool keeps control.",
+      "phrase": "tool keeps control.",
+      "shows": "the blank ruler slides under a second plain sign board and the board settles on it, a plate reads WHICH TOOL KEEPS CONTROL",
+      "sfx": "tap",
+      "means": "which tool keeps control",
+      "rehook": "",
+      "draw": {
+        "subject": "ruler",
+        "action": "slides under a second plain sign board and the board settles on it",
+        "emotion": "plain",
+        "annotation": "WHICH TOOL KEEPS CONTROL"
+      },
+      "choreo": {
+        "primary": "the blank ruler slides under a second plain sign board and the board settles on it, a plate reads WHICH TOOL KEEPS CONTROL",
+        "reaction": "the board rocks and settles",
+        "ambient": "tools sway on their hooks, the Plate hops and blinks"
+      },
+      "t": "73.350-75.440",
+      "key": 30
+    },
+    {
+      "id": 30,
+      "shot": 10,
+      "at_s": 75.44,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The ban has a real case. Sitka's grid is an island, powered entirely by water. Last year its hydro plants made one hundred twenty gigawatt hours, the town used one hundred eighteen.",
+      "phrase": "The ban has a",
+      "shows": "a hard cut to a stone island in a dark teal sound under a squall, a tiny lit town, the Plate hanging on the powerhouse, a long dangling extension cord that ends at the shore above the water",
+      "sfx": "hush",
+      "means": "sitka",
+      "rehook": "",
+      "draw": {
+        "subject": "the island",
+        "action": "settles under a squall as a stone island with a lit town and no bridge",
+        "emotion": "plain",
+        "annotation": "SITKA"
+      },
+      "choreo": {
+        "primary": "a hard cut to a stone island in a dark teal sound under a squall, a tiny lit town, the Plate hanging on the powerhouse, a long dangling extension cord that ends at the shore above the water",
+        "reaction": "the rain falls and the town windows flicker",
+        "ambient": "rain falls, town windows flicker, the cord sways, wheels turn, the beam creaks"
+      },
+      "t": "75.440-78.710",
+      "key": 31
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 78.71,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.27
+      },
+      "offset": 3.27,
+      "vo": "The ban has a real case. Sitka's grid is an island, powered entirely by water. Last year its hydro plants made one hundred twenty gigawatt hours, the town used one hundred eighteen.",
+      "phrase": "island, powered entirely by",
+      "shows": "the cord sways over the water, a plate reads ISLANDED GRID, ALL HYDRO",
+      "sfx": "creak",
+      "means": "islanded grid \u00b7 all hydro",
+      "rehook": "",
+      "draw": {
+        "subject": "extension cord",
+        "action": "dangles from the shore over dark water",
+        "emotion": "wary",
+        "annotation": "ISLANDED GRID \u00b7 ALL HYDRO"
+      },
+      "choreo": {
+        "primary": "the cord sways over the water, a plate reads ISLANDED GRID, ALL HYDRO",
+        "reaction": "the cord sways and the water ripples",
+        "ambient": "rain falls, town windows flicker, the cord sways, wheels turn, the beam creaks"
+      },
+      "t": "78.710-80.830",
+      "key": 32
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 80.83,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.39
+      },
+      "offset": 5.39,
+      "vo": "The ban has a real case. Sitka's grid is an island, powered entirely by water. Last year its hydro plants made one hundred twenty gigawatt hours, the town used one hundred eighteen.",
+      "phrase": "water. Last year its",
+      "shows": "two hydro intakes in the hills turn their wheels over white water above the town",
+      "sfx": "whirr",
+      "means": "hydro",
+      "rehook": "",
+      "draw": {
+        "subject": "two intakes",
+        "action": "turn their wheels in the hills above the town",
+        "emotion": "plain",
+        "annotation": "HYDRO"
+      },
+      "choreo": {
+        "primary": "two hydro intakes in the hills turn their wheels over white water above the town",
+        "reaction": "the wheels turn and the foam churns",
+        "ambient": "rain falls, town windows flicker, the cord sways, wheels turn, the beam creaks"
+      },
+      "t": "80.830-83.550",
+      "key": 33
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 83.55,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 8.11
+      },
+      "offset": 8.11,
+      "vo": "The ban has a real case. Sitka's grid is an island, powered entirely by water. Last year its hydro plants made one hundred twenty gigawatt hours, the town used one hundred eighteen.",
+      "phrase": "hundred twenty gigawatt hours,",
+      "shows": "the wind whips the tarp off the brass balance from the tower, its left pan fills with blue water to a marked line, a plate reads 2025, 120 GWH MADE",
+      "sfx": "roll",
+      "means": "2025 \u00b7 120 gwh made",
+      "rehook": "",
+      "draw": {
+        "subject": "balance",
+        "action": "is stripped of its tarp by the wind and its left pan fills to a line",
+        "emotion": "plain",
+        "annotation": "2025 \u00b7 120 GWH MADE"
+      },
+      "choreo": {
+        "primary": "the wind whips the tarp off the brass balance from the tower, its left pan fills with blue water to a marked line, a plate reads 2025, 120 GWH MADE",
+        "reaction": "the water sloshes and the beam creaks",
+        "ambient": "rain falls, town windows flicker, the cord sways, wheels turn, the beam creaks"
+      },
+      "t": "83.550-87.330",
+      "key": 34
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 87.33,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 11.89
+      },
+      "offset": 11.89,
+      "vo": "The ban has a real case. Sitka's grid is an island, powered entirely by water. Last year its hydro plants made one hundred twenty gigawatt hours, the town used one hundred eighteen.",
+      "phrase": "eighteen.",
+      "shows": "the right pan fills to almost the same line, the beam hardly tipping, a plate reads 118 USED",
+      "sfx": "thunk",
+      "means": "118 used",
+      "rehook": "",
+      "draw": {
+        "subject": "right pan",
+        "action": "fills to almost the same line and the beam hardly tips",
+        "emotion": "wary",
+        "annotation": "118 USED"
+      },
+      "choreo": {
+        "primary": "the right pan fills to almost the same line, the beam hardly tipping, a plate reads 118 USED",
+        "reaction": "the beam wobbles and creaks",
+        "ambient": "rain falls, town windows flicker, the cord sways, wheels turn, the beam creaks"
+      },
+      "t": "87.330-88.580",
+      "key": 35
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 88.58,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Rain moves that number. In public testimony, Lisa Sadlier-Hart told the commission, we need to say it loud, and we need to say it now.",
+      "phrase": "Rain moves that number.",
+      "shows": "the intake stream above the island thins to a trickle and the balance's left pan sinks, the beam tipping, the Plate watching, a plate reads HYDRO MOVES WITH RAIN",
+      "sfx": "whoosh",
+      "means": "hydro moves with rain",
+      "rehook": "rehook: the human voice",
+      "draw": {
+        "subject": "intake stream",
+        "action": "thins as a dry spell sets in and the left pan drops",
+        "emotion": "plain",
+        "annotation": "HYDRO MOVES WITH RAIN"
+      },
+      "choreo": {
+        "primary": "the intake stream above the island thins to a trickle and the balance's left pan sinks, the beam tipping, the Plate watching, a plate reads HYDRO MOVES WITH RAIN",
+        "reaction": "the stream thins and the beam dips",
+        "ambient": "the stream thins, the beam dips, the sheet types, the rain falls, the microphone sways"
+      },
+      "t": "88.580-92.070",
+      "key": 36
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 92.07,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.49
+      },
+      "offset": 3.49,
+      "vo": "Rain moves that number. In public testimony, Lisa Sadlier-Hart told the commission, we need to say it loud, and we need to say it now.",
+      "phrase": "Sadlier-Hart told the commission,",
+      "shows": "everything else fades to rain and a wooden podium with a microphone is set down on the boardwalk with a testimony sheet clipped to it, LISA SADLIER-HART, PUBLIC TESTIMONY",
+      "sfx": "knock",
+      "means": "lisa sadlier-hart \u00b7 public testimony",
+      "rehook": "",
+      "draw": {
+        "subject": "podium",
+        "action": "is set down on the boardwalk with a microphone",
+        "emotion": "plain",
+        "annotation": "LISA SADLIER-HART \u00b7 PUBLIC TESTIMONY"
+      },
+      "choreo": {
+        "primary": "everything else fades to rain and a wooden podium with a microphone is set down on the boardwalk with a testimony sheet clipped to it, LISA SADLIER-HART, PUBLIC TESTIMONY",
+        "reaction": "the podium settles and the rain falls",
+        "ambient": "the stream thins, the beam dips, the sheet types, the rain falls, the microphone sways"
+      },
+      "t": "92.070-94.890",
+      "key": 37
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 94.89,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 6.31
+      },
+      "offset": 6.31,
+      "vo": "Rain moves that number. In public testimony, Lisa Sadlier-Hart told the commission, we need to say it loud, and we need to say it now.",
+      "phrase": "loud, and we need",
+      "shows": "the testimony sheet types WE NEED TO SAY IT LOUD, AND WE NEED TO SAY IT NOW with her name beneath, nothing else moving but rain and the microphone's small sway",
+      "sfx": "type",
+      "means": "\"we need to say it loud, and we need to say it now\" \u00b7 lisa sadlier-hart",
+      "rehook": "",
+      "draw": {
+        "subject": "testimony sheet",
+        "action": "types the quote as it is spoken, held quiet",
+        "emotion": "plain",
+        "annotation": "\"WE NEED TO SAY IT LOUD, AND WE NEED TO SAY IT NOW\" \u00b7 LISA SADLIER-HART"
+      },
+      "choreo": {
+        "primary": "the testimony sheet types WE NEED TO SAY IT LOUD, AND WE NEED TO SAY IT NOW with her name beneath, nothing else moving but rain and the microphone's small sway",
+        "reaction": "the sheet types and the rain falls",
+        "ambient": "the stream thins, the beam dips, the sheet types, the rain falls, the microphone sways"
+      },
+      "t": "94.890-97.780",
+      "key": 38
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 97.78,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Fairbanks has proposed a line instead. The mayor filed a moratorium on large data center permits through twenty twenty seven, starting at five megawatts.",
+      "phrase": "Fairbanks has proposed a",
+      "shows": "the blank ruler sweeps back in, a tag reads FAIRBANKS wearing a tiny parka, a gull perched on the ruler's end",
+      "sfx": "whoosh",
+      "means": "fairbanks",
+      "rehook": "",
+      "draw": {
+        "subject": "the ruler",
+        "action": "sweeps back in with a Fairbanks tag in a tiny parka",
+        "emotion": "curious",
+        "annotation": "FAIRBANKS"
+      },
+      "choreo": {
+        "primary": "the blank ruler sweeps back in, a tag reads FAIRBANKS wearing a tiny parka, a gull perched on the ruler's end",
+        "reaction": "the tag swings and the gull bobs",
+        "ambient": "the tag swings, the gull bobs, the tick pulses"
+      },
+      "t": "97.780-101.450",
+      "key": 39
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 101.45,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.67
+      },
+      "offset": 3.67,
+      "vo": "Fairbanks has proposed a line instead. The mayor filed a moratorium on large data center permits through twenty twenty seven, starting at five megawatts.",
+      "phrase": "moratorium on large data",
+      "shows": "a tag swings down from the Fairbanks tag, FAIRBANKS, MORATORIUM PROPOSED, THROUGH DEC. 31ST, 2027",
+      "sfx": "clink",
+      "means": "fairbanks \u00b7 moratorium proposed \u00b7 through dec. 31st, 2027",
+      "rehook": "",
+      "draw": {
+        "subject": "moratorium tag",
+        "action": "swings down from the Fairbanks tag",
+        "emotion": "plain",
+        "annotation": "FAIRBANKS \u00b7 MORATORIUM PROPOSED \u00b7 THROUGH DEC. 31ST, 2027"
+      },
+      "choreo": {
+        "primary": "a tag swings down from the Fairbanks tag, FAIRBANKS, MORATORIUM PROPOSED, THROUGH DEC. 31ST, 2027",
+        "reaction": "the tag swings and settles",
+        "ambient": "the tag swings, the gull bobs, the tick pulses"
+      },
+      "t": "101.450-105.930",
+      "key": 40
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 105.93,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 8.15
+      },
+      "offset": 8.15,
+      "vo": "Fairbanks has proposed a line instead. The mayor filed a moratorium on large data center permits through twenty twenty seven, starting at five megawatts.",
+      "phrase": "five megawatts.",
+      "shows": "the first tick is inked onto the ruler at 5 MW as a dashed proposed mark with a small PROPOSED flag, a plate reads PROPOSED LINE, 5 MW, and the Plate looks along the ruler at it",
+      "sfx": "click",
+      "means": "proposed line \u00b7 5 mw",
+      "rehook": "",
+      "draw": {
+        "subject": "first tick",
+        "action": "is inked onto the ruler at five megawatts as a dashed proposed mark",
+        "emotion": "curious",
+        "annotation": "PROPOSED LINE \u00b7 5 MW"
+      },
+      "choreo": {
+        "primary": "the first tick is inked onto the ruler at 5 MW as a dashed proposed mark with a small PROPOSED flag, a plate reads PROPOSED LINE, 5 MW, and the Plate looks along the ruler at it",
+        "reaction": "the tick pulses",
+        "ambient": "the tag swings, the gull bobs, the tick pulses"
+      },
+      "t": "105.930-107.180",
+      "key": 41
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 107.18,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A University of Alaska Fairbanks guide says it plainly. Data centers are not all the same.",
+      "phrase": "A University of Alaska",
+      "shows": "a guide booklet flips open on the boardwalk and a page turns mid-beat, a plate reads DATA CENTERS ARE NOT ALL THE SAME, UAF ACEP GUIDE",
+      "sfx": "page",
+      "means": "\"data centers are not all the same\" \u00b7 uaf acep guide",
+      "rehook": "",
+      "draw": {
+        "subject": "guide cover",
+        "action": "flips open on the boardwalk and a page turns mid-beat",
+        "emotion": "plain",
+        "annotation": "\"DATA CENTERS ARE NOT ALL THE SAME\" \u00b7 UAF ACEP GUIDE"
+      },
+      "choreo": {
+        "primary": "a guide booklet flips open on the boardwalk and a page turns mid-beat, a plate reads DATA CENTERS ARE NOT ALL THE SAME, UAF ACEP GUIDE",
+        "reaction": "the pages flutter",
+        "ambient": "the pages flutter, the crack runs, the Plate trembles"
+      },
+      "t": "107.180-110.190",
+      "key": 42
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 110.19,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "A University of Alaska Fairbanks guide says it plainly. Data centers are not all the same.",
+      "phrase": "plainly. Data centers are",
+      "shows": "the Cubby and the huge block slide into two different-sized slots in the open guide beside the cracked Plate",
+      "sfx": "snap",
+      "means": "not all the same",
+      "rehook": "",
+      "draw": {
+        "subject": "two sizes",
+        "action": "slide into two different-sized slots in the open guide",
+        "emotion": "plain",
+        "annotation": "NOT ALL THE SAME"
+      },
+      "choreo": {
+        "primary": "the Cubby and the huge block slide into two different-sized slots in the open guide beside the cracked Plate",
+        "reaction": "the slots settle",
+        "ambient": "the pages flutter, the crack runs, the Plate trembles"
+      },
+      "t": "110.190-113.940",
+      "key": 43
+    },
+    {
+      "id": 43,
+      "shot": 14,
+      "at_s": 113.94,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Same sign, two sizes. A ban is one clear rule. A size line is a number someone has to choose. So which, and where?",
+      "phrase": "Same sign, two sizes.",
+      "shows": "the Cubby and the huge block stand either side of the cracked Plate in a thin golden break in the rain, a plate reads SAME SIGN, TWO SIZES",
+      "sfx": "hush",
+      "means": "same sign \u00b7 two sizes",
+      "rehook": "",
+      "draw": {
+        "subject": "two sizes",
+        "action": "stand either side of the Plate",
+        "emotion": "plain",
+        "annotation": "SAME SIGN \u00b7 TWO SIZES"
+      },
+      "choreo": {
+        "primary": "the Cubby and the huge block stand either side of the cracked Plate in a thin golden break in the rain, a plate reads SAME SIGN, TWO SIZES",
+        "reaction": "the rain thins and the golden light drifts",
+        "ambient": "the rain thins, gold light drifts, the hammer swings, the pencil circles, the Plate sways"
+      },
+      "t": "113.940-116.550",
+      "key": 44
+    },
+    {
+      "id": 44,
+      "shot": 14,
+      "at_s": 116.55,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.61
+      },
+      "offset": 2.61,
+      "vo": "Same sign, two sizes. A ban is one clear rule. A size line is a number someone has to choose. So which, and where?",
+      "phrase": "ban is one clear",
+      "shows": "the hammer taps the end of the ruler once, a plate reads A BAN, ONE CLEAR RULE",
+      "sfx": "knock",
+      "means": "a ban \u00b7 one clear rule",
+      "rehook": "",
+      "draw": {
+        "subject": "hammer",
+        "action": "taps the ruler's end once",
+        "emotion": "plain",
+        "annotation": "A BAN \u00b7 ONE CLEAR RULE"
+      },
+      "choreo": {
+        "primary": "the hammer taps the end of the ruler once, a plate reads A BAN, ONE CLEAR RULE",
+        "reaction": "the hammer swings and settles",
+        "ambient": "the rain thins, gold light drifts, the hammer swings, the pencil circles, the Plate sways"
+      },
+      "t": "116.550-119.570",
+      "key": 45
+    },
+    {
+      "id": 45,
+      "shot": 14,
+      "at_s": 119.57,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 5.63
+      },
+      "offset": 5.63,
+      "vo": "Same sign, two sizes. A ban is one clear rule. A size line is a number someone has to choose. So which, and where?",
+      "phrase": "number someone has to",
+      "shows": "the ruler shows one open signal pink tick unlabelled, and a gull hovers over it with a pencil, a plate reads A SIZE LINE",
+      "sfx": "tick",
+      "means": "a size line",
+      "rehook": "",
+      "draw": {
+        "subject": "ruler",
+        "action": "shows one open tick in signal pink on the crack seam with a gull holding a pencil",
+        "emotion": "curious",
+        "annotation": "A SIZE LINE"
+      },
+      "choreo": {
+        "primary": "the ruler shows one open signal pink tick unlabelled, and a gull hovers over it with a pencil, a plate reads A SIZE LINE",
+        "reaction": "the tick pulses and the pencil circles",
+        "ambient": "the rain thins, gold light drifts, the hammer swings, the pencil circles, the Plate sways"
+      },
+      "t": "119.570-121.730",
+      "key": 46
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "at_s": 121.73,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 7.79
+      },
+      "offset": 7.79,
+      "vo": "Same sign, two sizes. A ban is one clear rule. A size line is a number someone has to choose. So which, and where?",
+      "phrase": "which, and where?",
+      "shows": "the cracked Plate hangs from the open tick beside the Cubby, the pencil tip hovering, a plate reads A BAN OR A LINE? AND WHERE?",
+      "sfx": "ping",
+      "means": "a ban or a line? and where?",
+      "rehook": "",
+      "draw": {
+        "subject": "the Plate",
+        "action": "hangs from the open tick beside the Cubby",
+        "emotion": "plain",
+        "annotation": "A BAN OR A LINE? AND WHERE?"
+      },
+      "choreo": {
+        "primary": "the cracked Plate hangs from the open tick beside the Cubby, the pencil tip hovering, a plate reads A BAN OR A LINE? AND WHERE?",
+        "reaction": "the Plate sways and the pencil hovers",
+        "ambient": "the rain thins, gold light drifts, the hammer swings, the pencil circles, the Plate sways"
+      },
+      "t": "121.730-122.980",
+      "key": 47
+    }
+  ]
+}

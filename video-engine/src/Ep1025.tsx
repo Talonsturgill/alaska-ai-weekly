@@ -841,7 +841,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <ContactShadow cx={0} cy={150} rx={300} ry={14} opacity={0.34} blur={9} />
           <rect x={-290} y={-330} width={580} height={250} rx={10} fill={P.cream} opacity={0.94} />
           <rect x={-290} y={-330} width={580} height={250} rx={10} fill="none" stroke={INK} strokeWidth={8} strokeDasharray="26 14" strokeDashoffset={-g * 0.9} />
-          <text x={0} y={-186} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={52} letterSpacing={3} fill={INK}>RECOMMENDATION</text>
+          {cartX > 300 && cartX < 780 && <text x={0} y={-186} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={52} letterSpacing={3} fill={INK}>RECOMMENDATION</text>}
           <rect x={-300} y={-80} width={600} height={50} fill={P.cedar} stroke={INK} strokeWidth={7} />
           {[-190, 190].map((wx) => <g key={wx} transform={`translate(${wx},${40}) rotate(${cart * 700})`}><circle r={56} fill={P.cedarHi} stroke={INK} strokeWidth={8} />{[0, 1, 2, 3].map((k) => <line key={k} x1={0} y1={0} x2={0} y2={-52} stroke={INK} strokeWidth={5} transform={`rotate(${k * 45})`} />)}<line x1={0} y1={-52} x2={0} y2={52} stroke={INK} strokeWidth={5} /></g>)}
           <path d="M-300,-56 L-470,-110" stroke={INK} strokeWidth={14} strokeLinecap="round" />
