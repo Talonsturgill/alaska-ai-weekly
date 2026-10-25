@@ -44,7 +44,7 @@ export const Plate: React.FC<{
   const t = tones(SIGN.cream);
   const gid = `${id}_g`;
   const ex = 50 + stretchPx * 0.045;
-  const ey = top + 66;
+  const ey = top + 58;
   const eyeR = mood === 'alarm' ? 21 : 18;
   const squint = mood === 'smug' ? 0.52 : mood === 'strained' ? 0.4 : 1;
   const lx = Math.max(-6, Math.min(6, look));
@@ -52,7 +52,7 @@ export const Plate: React.FC<{
     const a = mood === 'worried' ? -14 : mood === 'strained' ? 16 : mood === 'smug' ? -6 : mood === 'alarm' ? -18 : mood === 'curious' ? -8 : 0;
     return `M ${sx * ex - 22},${ey - 30 + (sx < 0 ? 0 : 0) - a * 0.3} L ${sx * ex + 22},${ey - 30 + a * 0.5 * sx * -1 + (mood === 'worried' ? 0 : 0)}`;
   };
-  const mouthY = top + 128;
+  const mouthY = top + 104;
   const mouth = mood === 'smug' ? `M -34,${mouthY} Q 0,${mouthY + 22} 38,${mouthY - 10}`
     : mood === 'strained' ? `M -44,${mouthY + 2} L -26,${mouthY - 4} L -8,${mouthY + 4} L 10,${mouthY - 4} L 28,${mouthY + 4} L 44,${mouthY}`
     : mood === 'worried' ? `M -34,${mouthY + 6} Q -17,${mouthY - 8} 0,${mouthY + 6} T 34,${mouthY + 6}`
@@ -92,8 +92,7 @@ export const Plate: React.FC<{
       <path d={mouth} fill={mood === 'alarm' ? '#7A2A2A' : 'none'} stroke={INK} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
       {mood === 'strained' && <path d={`M ${-W / 2 + 40},${top + 70} q 14,-8 22,6 M ${W / 2 - 40},${top + 70} q -14,-8 -22,6`} stroke={SIGN.brassShade} strokeWidth={3} fill="none" opacity={0.55} />}
       {/* the lettering never scales: it is the fixed thing the body is stretched around */}
-      <text x={0} y={bottom - 40} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={1.5} fill={INK}>DATA CENTER</text>
-      <line x1={-120} y1={bottom - 66} x2={120} y2={bottom - 66} stroke={SIGN.creamShade} strokeWidth={3} opacity={0.8} />
+      <text x={0} y={bottom - 30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={1.5} fill={INK}>DATA CENTER</text>
       {crack > 0.01 && (
         <g>
           <path d={crackPath} fill="none" stroke={INK} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" strokeDasharray={crackLen} strokeDashoffset={crackLen * (1 - clamp01(crack))} />

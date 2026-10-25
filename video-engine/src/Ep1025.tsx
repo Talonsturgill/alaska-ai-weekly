@@ -438,7 +438,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const gx = lerp(1320, 700, ease(f, t3 - 36, 28)) + (f > t3 ? lerp(0, -170, fly) : 0);
   const gy = lerp(-80, 1010, ease(f, t3 - 36, 28)) + (f > t3 ? lerp(0, -330, fly) : 0);
   const slab = ease(f, t3 - 4, 34);
-  const hint = 0.38 * (1 - slab);
+  const hint = 0.62 * (1 - slab);
   const plateX = f < t3 - 8 ? 700 : lerp(700, 560, fly);
   const plateY = f < 4 ? dropY : (f < t3 - 8 ? 1338 : lerp(1338, 1360, fly) - 120 * Math.sin(fly * Math.PI) * (1 - land));
   const str = lerp(0, 660, ease(f, t4, 18)) * (1 - 0.0 * land) + 14 * Math.sin(f / 3) * ease(f, t4 + 18, 6);
@@ -769,8 +769,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         <Plate x={540} text="RECORD PEAK · 26.02 MW" y={560} size={34} tone="ink" p={ease(f, 6, 8) * (1 - ease(f, t23 - 10, 8))} />
-        <Plate x={540} text="1 GW IS ABOUT 38 TIMES THAT PEAK" displayLines={['1 GW IS ABOUT', '38 TIMES THAT PEAK']} y={700} size={34} tone="ink" p={ease(f, t23 + 60, 10)} />
-        <Plate x={800} text="OUR MATH" y={880} size={30} tone="cream" rot={-4} p={snap(f, t23 + 100, 10)} />
+        <Plate x={540} text="1 GW IS ABOUT 38 TIMES THAT PEAK" displayLines={['1 GW IS ABOUT', '38 TIMES THAT PEAK', 'OUR MATH']} y={700} size={34} tone="ink" p={ease(f, t23 + 60, 10)} />
       </>}>
       <SVG>
         <Harbor f={g} id="s7" horizon={900} dark={0.3} drift={2} />
@@ -814,7 +813,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const t25 = 6, t26 = b(26), t27 = b(27), t28 = b(28);
   const staffK = ease(f, t25, 20), sustK = ease(f, t26, 20);
   const bell = bump(f, t27, 24);
-  const cart = easeIO(f, t28 - 10, 120);
+  const cart = easeIO(f, t28 - 40, 150);
   const cartX = lerp(-520, 1400, cart);
   const sag = Math.min(1, ease(f, t25 + 70, 40) * 0.9);
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.06, fx: 560, fy: 960}]);
@@ -953,7 +952,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const tarpOff = easeIn(f, t34 - 6, 22);
   const left = ease(f, t34 + 6, 26), right = ease(f, t35, 22);
   const beam = (left - right) * 3 + 2.2 * Math.sin(g / 14) * (right > 0.5 ? 1 : 0.3);
-  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 900}, {t: p.dur, z: 1.05, fx: 540, fy: 960}]);
+  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 900}, {t: p.dur, z: 1.12, fx: 540, fy: 1020}]);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -973,6 +972,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         </g>
         <Balance x={500} y={1010} f={g} beam={beam} left={left} right={right} id="s10b" s={0.95} tarp={1 - tarpOff} />
         {tarpOff > 0.01 && tarpOff < 1 && <path d={`M${540 + 300 * tarpOff},${900 - 200 * tarpOff} q60,-40 120,${20}`} stroke="#5B6B58" strokeWidth={30} fill="none" strokeLinecap="round" opacity={1 - tarpOff} />}
+        {Array.from({length: 7}).map((_, i) => { const ph = ((g * 0.045 + i / 7) % 1); const sx = i % 2 ? 1 : -1; const dx = 500 + sx * 236 * Math.cos(0); const visible = (sx < 0 ? left : right) > 0.05; return visible ? <ellipse key={i} cx={dx + (i % 3) * 8 - 8} cy={720 + ph * 330} rx={5} ry={11} fill={P.blueHi} opacity={0.9 * (1 - ph * 0.3)} /> : null; })}
         <Rain f={g} op={0.5} wind={0.06} len={56} />
       </SVG>
     </Frame>
@@ -990,7 +990,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const fade = ease(f, t37 - 24, 22);
   const pod = ease(f, t37 - 4, 14);
   const mic = 5 * Math.sin(g / 15) + 2 * Math.sin(g / 6.3);
-  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.05, fx: 540, fy: 980}]);
+  const sheetTilt = 0.7 * Math.sin(g / 9) + 0.3 * Math.sin(g / 4.1);
+  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: t37, z: 1.04, fx: 540, fy: 980}, {t: p.dur, z: 1.14, fx: 540, fy: 1030}]);
   return (
     <Frame p={p} cam={cam} dim={0}
       overlay={<>
@@ -1006,6 +1007,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <Sign x={170} y={1318} s={0.9} f={g} mood="worried" crack={1} look={5} phase={9.4} id="s11p" />
         </g>
         <rect x={0} y={0} width={W} height={H} fill="#1A3F42" opacity={fade * 0.82} />
+        {pod > 0.01 && <g opacity={pod}><Boardwalk f={g} y0={1250} id="s11b" puddles rail={false} /><Foreground f={g} seed={11} /></g>}
+        {pod > 0.5 && <Sign x={230} y={1318} s={0.9} f={g} mood="worried" crack={1} look={5} tilt={-4 + 2 * Math.sin(g / 13)} phase={9.9} id="s11q" />}
         {/* the empty podium with a microphone */}
         <g transform={`translate(540,${lerp(1100, 1380, pod * 1)})`} opacity={Math.min(1, pod * 2)}>
           <ContactShadow cx={0} cy={6} rx={170} ry={13} opacity={0.4} blur={9} />
@@ -1061,7 +1064,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <line x1={0} y1={0} x2={0} y2={-180 * tag} stroke={INK} strokeWidth={5} strokeDasharray="8 5" />
           <g transform={`translate(0,${-180 * tag})`}>
             <rect x={-130} y={-120} width={260} height={110} rx={8} fill={P.cream} stroke={INK} strokeWidth={6} />
-            <text x={0} y={-52} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={36} letterSpacing={2} fill={INK}>FAIRBANKS</text>
+            <text x={0} y={-66} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={2} fill={INK}>FAIRBANKS</text>
+            <text x={0} y={-30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={2} fill={INK}>BOROUGH MAYOR</text>
             <path d="M-26,-124 q26,-52 52,0 Z" fill="#B07A52" stroke={INK} strokeWidth={4} /><circle cx={0} cy={-142} r={13} fill="#F4F1E8" stroke={INK} strokeWidth={3} />
           </g>
           {/* the moratorium tag swings down from it */}
@@ -1136,7 +1140,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const px = 540, py = lerp(1290, 1112, lift);
   const gone = Math.max(0, 1 - (f - t46) / 20);
   const pen = ease(f, t46 + 4, 14);
-  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.05, fx: 540, fy: 960}]);
+  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.1, fx: 540, fy: 1040}]);
   const RY = 830;
   const tickAt = 0.5;
   const tickX = 540 + (-470 + 34 + (940 - 68) * tickAt);
