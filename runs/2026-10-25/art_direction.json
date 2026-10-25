@@ -1,0 +1,63 @@
+{
+ "run_date": "2026-10-25",
+ "palette": {
+  "mood": "A Southeast Alaska rain day in a town that does everything with signs. Warm cedar and chalk cream against rain teal, so the film reads as a lived-in wet harbor, not a dark desk, an orbital plate, a cutaway or a pewter beach (last five films: orbit and ground, paper building, plumb in dark ground, calf on a beach, manila folder on walnut).",
+  "sky": "rain-fog #C9D6D3 over a teal fjord, a deeper squall teal #2F6F6B where the cloud sits",
+  "ground": "cedar boardwalk #8A5A3B, wet stone #5E6B6A, harbor water #3E7F86",
+  "hero": "THE PLATE (net-new, lib/sign.tsx): an enamel-cream #F3E9D2 sign with a brass rim #C8962E, ink #14202A outline and fixed lettering DATA CENTER, with a face. It is the hero and the throughline. Supporting: Cubby (ServerMachine, copper tint, fridge-size), a plain gull (episode-local), a blank Ruler, a Hammer.",
+  "accent": "signal pink #E8457A (hue about 340) is the ONLY saturated accent, spent ONLY on the RECOMMENDED stamp ink (S2) and the OPEN tick of the Ruler (S12 none, S14 yes). Fairbanks's 5 MW tick is drawn DASHED ink with a brass dot and a PROPOSED flag, never pink: the filed number is closed, the undrawn one is the accent. Hydro blue #4FA3C7 is spent ONLY on water and balance pans.",
+  "roles": {
+   "rain teal #2F6F6B": "the film's dominant ground, fjord and squall",
+   "cedar #8A5A3B": "boardwalk, posts, the sign shop wood",
+   "chalk cream #F3E9D2": "plates, paper, the Plate itself",
+   "brass #C8962E": "the Plate's rim, the Ruler end caps, the dot on a closed tick, the name tag chain, the 150 KW readout, the bell and the balance frame: all small metal parts, never a fill larger than a plate",
+   "ink #14202A": "every outline and all plate type",
+   "hydro blue #4FA3C7": "water, intakes, the balance pans (never text)",
+   "signal pink #E8457A": "the RECOMMENDED stamp ink (S2) and the open tick of the Ruler (S14), nothing else",
+   "lit-window amber #F2B84B": "the lit windows of the S1 powerhouse window, the Sitka tower and the 38 stacked towers (S7) and the town on the island (S10), small areas only",
+   "gold break #E9C46A": "the thin sun break in S14 only, a wash over the last frames, never on a plate"
+  }
+ },
+ "light": {
+  "time_of_day": "a grey-white rain morning that darkens to a squall and then breaks",
+  "direction": "LIGHT ARC: S1-S5 soft grey-white rain light from the top left (the powerhouse windows warm the Cubby); S6 a warm interior window; S7 dusk-grey sky with amber tower windows; S8 the squall darkens; S10 the darkest frame of the film (squall, lit town windows, brass balance); S11 a near-empty teal rain frame; S12 the cloud starts to thin; S13 flat light; S14 a thin gold break across the boardwalk. The film brightens at the button.",
+  "depth_approach_note": "see depth_plan"
+ },
+ "shape_language": "A deliberate contrast of ELASTIC and FIXED INCREMENTS. Elastic things stretch and squash: the Plate (taffy stretch with its lettering held), the stamp's squash, the Cubby's breath, rain, the gull. Fixed increments never give: the Ruler's ticks, tower windows, the balance's scale, signposts, the hammer. The Plate's whole drama is an elastic body strained against a fixed scale. (Round versus ruled was 10-22's contrast, so the soft things here are elastic and the hard things are increments.)",
+ "casting": {
+  "hero": "THE PLATE (lib/sign.tsx, net-new): the one sign that fits every size. Emotions smug, nervous, strained, cracked, hopeful.",
+  "supporting": [
+   "Cubby, the shelf ServerMachine in copper tint at fridge scale, nervous, never the hero",
+   "a plain gull (episode-local), the recurring bird, carries the Plate and a pencil, never anything that carries a fact",
+   "Ruler (lib/sign.tsx, net-new): blank until Fairbanks puts a tick on it",
+   "Hammer and Stamp (episode-local, faceless)",
+   "MainStreetBG or FjordBG are NOT used whole; the town is built from signposts, a boardwalk and a fjord band in-episode"
+  ],
+  "why_not_shelf_hero": "No shelf asset is a sign. The last two heroes were SatelliteEye and Dotty (a paper form with a face); a cream plate with a face would read as Dotty's cousin if it were paper, so the Plate is brass-rimmed enamel on stubby legs with a hinge, a rigid object with a telescoping stretch, not a flexible sheet.",
+  "asset_by_asset": {
+   "AllowanceBoard (clinic.tsx)": "rigid enamel notice board of allowed uses with no face and no stretch. Not reused: the Plate needs a face and a telescoping body.",
+   "HandbookPlate (corridor.tsx)": "a long nickel bar carrying a sentence on rods, rigid, no face. Not reused.",
+   "SteelTag (grocer.tsx)": "a steel plate with a barcode that sizes to its string. Not reused: its job is a rule tag, not a character.",
+   "CouncilSign (folio.tsx)": "a council placard on a post, rigid. Not reused.",
+   "BrassPlate (bench.tsx)": "a nameplate for naming an actor. Its brass rim tokens are REUSED for the Plate's rim; the telescoping rig is the net-new part.",
+   "HeightChart (grid.tsx)": "a vertical wooden growth chart with a pencil. The Ruler is horizontal, spans the frame, carries no pencil and its drama is what is NOT on it. Its wood tones and tick drawing are reused; extending HeightChart to horizontal and open-tick would have rewritten it.",
+   "ZoneBeam/ZoneWeights (grocer.tsx)": "a steel beam with hooks and snow loading. The island balance is a brass two-pan balance of water, drawn episode-local in S10, not a library asset.",
+   "ServerMachine (kit.tsx)": "REUSED as the Cubby, copper tint, nervous, at fridge scale.",
+   "a plain gull (episode-local)": "REUSED."
+  }
+ },
+ "motion_language": "The Plate stretches like taffy on a spring (anticipation, overshoot) while its lettering holds its size, the signature gag; the stamp slams with squash and a ring of rain spray; towers rise in a staggered stack; rain falls and pools continuously; the balance beam creaks and wobbles on a slow sine plus a cloud-driven dip; the gull bobs and tilts. 180 degree motion blur on the stamp and hammer.",
+ "composition": {
+  "focal_hierarchy": "the Plate is always the best-finished thing in frame; where it is off-stage the open tick or the quoted plate is.",
+  "negative_space": "the Sadlier-Hart quote (S11) is held on a near-empty teal frame for about 4 s with no gag, rain only. The ban gets its quiet.",
+  "safe_area": "hero action inside y 420 to 1500; sky and rain above, a near plane (boardwalk planks, wet stones, a rail) below the caption card",
+  "signature_shot": "ONE continuous pullback of about 5 s in S7: Sitka's record peak is one lit tower of 26 windows, the camera cranes up and 38 identical towers stack through the cloud deck and out of the top of frame, with a tiny gull on the first tower looking up."
+ },
+ "craft_advance": "none needed; lib/sign.tsx (Plate, Ruler) is added because this film needs it",
+ "divergence": "vs 10-24 (navy orbit, amber pixel): eye level in a rain-day town, cedar and teal, signal pink. vs 10-23 (first-snow paper form, plum): no snow, no paper, an enamel sign on legs, a squall light arc rather than flat overcast. vs 10-22 (dark spruce ink, brass, vermilion ground cutaway): no cutaway, the accent is pink at hue 340 not vermilion at 5 degrees, and brass is a rim only. vs 10-20 (manila on walnut): no desk. HONEST OVERLAPS: another faced object for the fourth film in a row (mitigated: rigid, stretching, with a second faced box and a bird); cream on ink plates are the house plate style (every film uses ink plates); brass appears as a rim on the Plate and as end caps on the Ruler, as it did in 10-22 and 10-23 on other objects. Amber lit windows (#F2B84B, hue about 40) are the third film in a row with an amber (10-24 #FFB02E, 10-23 #E8A21B); here they are small window areas only (S1 powerhouse window, S7 towers, S10 town), listed in the colour census.",
+ "depth_plan": {
+  "planes": "S1, S2, S3, S6, S10, S11, S12 use three parallax layers (far fjord and fog at 0.5x, mid boardwalk and signposts at 1.0x, near rain streaks and rail at 1.5x). S7 is a crane up with 38 towers on a staggered depth ladder.",
+  "flat_shots": "S4 (the memo as a locked sheet with a quote card), S5 (the ruler across the frame), S8 (the two signposts and the dashed board rolling past on a cart), S9 (the two tools on a wall), S13 (the book and the Plate), S14 (the ruler and the open tick) are locked panels with named layers and continuous idle motion."
+ },
+ "accent_enforcement": "Enforced two ways. (1) Code: only the RECOMMENDED Stamp, RulerTick with open=true, and nothing else use P.pink; Fairbanks's tick uses P.ink. (2) The pixel critic's colour census targets: signal pink pixels must appear only in S2 and S14. Hydro blue pixels only inside water shapes. Amber #F2B84B only inside windows (the S1 powerhouse window, tower and town windows). lib/lighting.tsx AccentRegistry is not wired because Ep1025 owns its tokens locally."
+}

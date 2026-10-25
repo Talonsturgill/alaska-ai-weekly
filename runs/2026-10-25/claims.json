@@ -1,0 +1,422 @@
+{
+ "run_date": "2026-10-25",
+ "fact_check_verdict": "Core survives with hedges. KCAW is sole source for 'unanimous' and 'all zones'; Sentinel corroborates direction ('Planners Vote Down Data Centers for Now'), minutes unposted. Draft/memo/utility figures from City of Sitka primaries. CUT: vote tally, Assembly date, per-facility GW norms, any Sitka spare-capacity claim, nameplate MW, any state-law claim, Anchorage position, private commenter assertions. It is a recommendation, not law.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "On October twenty first, Sitka's planning commission voted unanimously to recommend banning data centers in every zone, per K C A W.",
+   "on_screen": "RECOMMENDED \u00b7 A BAN IN EVERY ZONE",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/",
+    "https://sitkasentinel.com/stories/planners-vote-down-data-centers-for-now,180679"
+   ],
+   "requires": [
+    "A RECOMMENDATION to the Assembly, never a law and never 'Sitka banned'. Unanimous and all zones are KCAW's reporting, attribute to KCAW."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"Ultimately the Planning Commission unanimously agreed to recommend defining data centers in city code\""
+  },
+  {
+   "id": "c2",
+   "status": "verified",
+   "spoken": "The city's own draft would have allowed them, but only with a conditional use permit.",
+   "on_screen": "CITY DRAFT \u00b7 PERMIT, NOT BAN",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/",
+    "https://sitka.legistar.com/LegislationDetail.aspx?ID=8291675&GUID=7C0A7563-3A68-4533-8625-2256C0C245A0&Options=&Search="
+   ],
+   "requires": [
+    "Say the city's draft, not the commission's."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"The proposed amendment would allow data center construction only with a conditional use permit.\""
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "Staff wrote that the draft does not propose prohibiting data centers.",
+   "on_screen": "STAFF DID NOT PROPOSE A BAN",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718"
+   ],
+   "requires": [
+    "Attribute to the city staff memo of October sixteenth."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"This zoning text amendment does not propose prohibiting data centers\""
+  },
+  {
+   "id": "c4",
+   "status": "verified",
+   "spoken": "The city's sustainability commission had backed the permit route, unanimously, on October fifth.",
+   "on_screen": "OCTOBER 5TH \u00b7 SUSTAINABILITY COMMISSION",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718"
+   ],
+   "requires": [
+    "Ordinal date, no year."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"At their October 5, 2026 regular meeting, the Sustainability Commission unanimously recommended\""
+  },
+  {
+   "id": "c5",
+   "status": "verified",
+   "spoken": "Nobody has proposed a data center in Sitka, and the city code doesn't even define one.",
+   "on_screen": "NO DATA CENTER PROPOSED IN SITKA",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/",
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718"
+   ],
+   "requires": [
+    "Preemptive zoning. Never imply a developer is at the door."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "KCAW: Sitka has no public proposal and its code does not address data centers (field: paraphrase)."
+  },
+  {
+   "id": "c6",
+   "status": "verified",
+   "spoken": "The city memo says machine learning and A I have spurred rapid growth in the sector.",
+   "on_screen": "AI SPURRED THE GROWTH \u00b7 PER CITY MEMO",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718"
+   ],
+   "requires": [
+    "AI is context only. No AI company or project is involved in Sitka."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"the development of machine learning and artificial intelligence (AI) has spurred rapid growth and expansion of the sector recently.\""
+  },
+  {
+   "id": "c7",
+   "status": "verified",
+   "spoken": "Sitka's grid is an island, powered entirely by water.",
+   "on_screen": "ISLANDED GRID \u00b7 ALL HYDRO",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718",
+    "https://www.cityofsitka.com/files/assets/sitka/v/1/electric/documents/reports/annual-reports/2025-cbs-electric-utility-annual-report.pdf"
+   ],
+   "requires": [
+    "Say hydropower or water, never 'renewable only' beyond the memo."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"As an islanded electric grid supplied entirely by hydroelectric power\""
+  },
+  {
+   "id": "c8",
+   "status": "verified",
+   "spoken": "The city memo calls a small, power hungry data center here not entirely unlikely.",
+   "on_screen": "\"NOT ENTIRELY UNLIKELY\" \u00b7 CITY MEMO",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718"
+   ],
+   "requires": [
+    "Quote only, attribute to the memo."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"the possibility of a small footprint, large electric consumption data center being proposed in Sitka is not entirely unlikely.\""
+  },
+  {
+   "id": "c9",
+   "status": "verified",
+   "spoken": "Sitka's record peak demand is twenty six megawatts, set last December.",
+   "on_screen": "RECORD PEAK \u00b7 26.02 MW",
+   "source": [
+    "https://www.cityofsitka.com/files/assets/sitka/v/1/electric/documents/reports/annual-reports/2025-cbs-electric-utility-annual-report.pdf"
+   ],
+   "requires": [
+    "December twenty third, 2025. Instantaneous peak per the utility annual report."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"an instantaneous demand of 26.02 MW\""
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "The memo calls a data center over twenty megawatts hyperscale.",
+   "on_screen": "HYPERSCALE \u00b7 TYPICALLY OVER 20 MW",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718"
+   ],
+   "requires": [
+    "Typically over 20 MW, the memo's wording."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"(sometimes referred to as hyperscale, typically >20 MW)\""
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "One gigawatt is about thirty eight times Sitka's record peak.",
+   "on_screen": "1 GW IS ABOUT 38 TIMES THAT PEAK",
+   "source": [
+    "https://www.cityofsitka.com/files/assets/sitka/v/1/electric/documents/reports/annual-reports/2025-cbs-electric-utility-annual-report.pdf"
+   ],
+   "requires": [
+    "Derived arithmetic: 1000 divided by 26.02. Label it as our math. No source proposes a gigawatt project in Sitka."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "derived: 1000 MW / 26.02 MW = 38.4 (labelled non-quotation)"
+  },
+  {
+   "id": "c12",
+   "status": "verified",
+   "spoken": "The draft's definition sets no size line, so a lab and a hyperscale campus are both a data center.",
+   "on_screen": "THE DRAFT'S DEFINITION HAS NO SIZE LINE",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073207&GUID=B4905E33-E7AA-4889-816F-9580A99D93D2"
+   ],
+   "requires": [
+    "The definition carves out only a local server room used with other permitted uses."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"A data center is not a server rack or room that is used to store and/or access data that is produced locally\""
+  },
+  {
+   "id": "c13",
+   "status": "verified",
+   "spoken": "A commissioner, Dmitry Rudas, warned that one kilowatt, one megawatt and one gigawatt are very different things under one word.",
+   "on_screen": "1 KW \u00b7 1 MW \u00b7 1 GW \u00b7 ONE WORD",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/"
+   ],
+   "requires": [
+    "KCAW paraphrase. NO quote marks on the kilowatt, megawatt, gigawatt line. Use the surname, no pronoun."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "KCAW paraphrase: Rudas compared a one-kilowatt home lab to a one-megawatt data center and a one-gigawatt hyperscale facility (labelled non-quotation)."
+  },
+  {
+   "id": "c14",
+   "status": "verified",
+   "spoken": "Lisa Sadlier-Hart told the commission, we need to say it loud, and we need to say it now.",
+   "on_screen": "\"WE NEED TO SAY IT LOUD, AND WE NEED TO SAY IT NOW\" \u00b7 LISA SADLIER-HART",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/"
+   ],
+   "requires": [
+    "Straight quote, attribute to Sadlier-Hart in public testimony."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"We need to say it loud, and we need to say it now.\""
+  },
+  {
+   "id": "c15",
+   "status": "verified",
+   "spoken": "Aurora Taylor of the sustainability commission said they hope to build a pathway for local regulation and local input.",
+   "on_screen": "\"LOCAL REGULATION AND LOCAL INPUT\" \u00b7 AURORA TAYLOR",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/"
+   ],
+   "requires": [
+    "Quote ends at 'local input'. Surname, no pronoun."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"We are really hoping to establish a pathway for local regulation and local input\""
+  },
+  {
+   "id": "c16",
+   "status": "verified",
+   "spoken": "Commissioner Jacquie Foss said a permit could someday allow something good, but she couldn't yet say what the conditions would be.",
+   "on_screen": "FOSS \u00b7 PERMIT COULD WORK, SOMEDAY",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/"
+   ],
+   "requires": [
+    "Use the surname only, no pronoun. Paraphrase, no quote marks."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"I see conditional uses as an opportunity to allow things that may be beneficial to the town of Sitka\""
+  },
+  {
+   "id": "c17",
+   "status": "verified",
+   "spoken": "The recommendation goes to the Sitka Assembly at a meeting not yet set.",
+   "on_screen": "NEXT \u00b7 THE SITKA ASSEMBLY \u00b7 DATE NOT SET",
+   "source": [
+    "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/",
+    "https://sitka.legistar.com/MeetingDetail.aspx?ID=1454422&GUID=4D089967-47D8-44AB-BE0A-D5360D3514DC&Options=info|&Search="
+   ],
+   "requires": [
+    "No date. It is not on the October 27th Assembly agenda."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"The commission's recommendation will go to the Sitka Assembly for consideration at a future meeting.\""
+  },
+  {
+   "id": "c18",
+   "status": "verified",
+   "spoken": "Sitka's hydro plants made one hundred twenty gigawatt hours last year, and the town used one hundred eighteen.",
+   "on_screen": "2025 \u00b7 120 GWH MADE \u00b7 118 USED",
+   "source": [
+    "https://www.cityofsitka.com/files/assets/sitka/v/1/electric/documents/reports/annual-reports/2025-cbs-electric-utility-annual-report.pdf"
+   ],
+   "requires": [
+    "Calendar year 2025. Hydro varies with rainfall, never imply spare capacity."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"In 2025, Sitka's hydropower generated 120 GWh of electricity\"; \"In 2025, Sitka Consumed 118 GWh\""
+  },
+  {
+   "id": "c19",
+   "status": "verified",
+   "spoken": "In Cordova, a data center the size of a large refrigerator, one hundred fifty kilowatts, runs at a hydro plant.",
+   "on_screen": "CORDOVA \u00b7 150 KW \u00b7 FRIDGE SIZE",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718"
+   ],
+   "requires": [
+    "Per the city memo, installed 2024 at Humpback Creek. Say per the city memo."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"a modular 150-kW, edge-computing data center the size of a large refrigerator, was installed in Cordova's Humpback Creek Hydro Facility powerhouse.\""
+  },
+  {
+   "id": "c20",
+   "status": "verified",
+   "spoken": "The memo also notes a data center proposed in Petersburg and one recently denied in Wrangell.",
+   "on_screen": "PETERSBURG \u00b7 PROPOSED   WRANGELL \u00b7 DENIED",
+   "source": [
+    "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718",
+    "https://sitkasentinel.com/stories/data-center-control-new-issue-for-sitka,180116"
+   ],
+   "requires": [
+    "As stated in the city memo, not independently fetched."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"with a data center proposed in Petersburg and a recently denied facility in Wrangell\""
+  },
+  {
+   "id": "c21",
+   "status": "verified",
+   "spoken": "In Fairbanks, the mayor has filed a moratorium on large data center permits through the end of twenty twenty seven.",
+   "on_screen": "FAIRBANKS \u00b7 MORATORIUM PROPOSED \u00b7 THROUGH DEC. 31ST, 2027",
+   "source": [
+    "https://fnsb.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=13333,plainText=true)",
+    "https://www.alaskasnewssource.com/2026/10/24/fairbanks-borough-mayor-proposes-temporary-data-center-moratorium/"
+   ],
+   "requires": [
+    "Proposed, referred to the Planning Commission, not adopted. Never say Fairbanks banned."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"An Ordinance Establishing A Temporary Moratorium On Land Use Permits For Large Scale Data Centers\""
+  },
+  {
+   "id": "c22",
+   "status": "verified",
+   "spoken": "Fairbanks draws its line at five megawatts of demand.",
+   "on_screen": "PROPOSED LINE \u00b7 5 MW",
+   "source": [
+    "https://www.alaskasnewssource.com/2026/10/24/fairbanks-borough-mayor-proposes-temporary-data-center-moratorium/"
+   ],
+   "requires": [
+    "Thresholds include 5 MW peak demand, per Alaska's News Source quoting the ordinance.",
+    "Draw the tick DASHED and tag it PROPOSED."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"an aggregate peak electrical demand of five megawatts (5 MW) or greater\""
+  },
+  {
+   "id": "c23",
+   "status": "verified",
+   "spoken": "A U A F guide says it plainly, data centers are not all the same.",
+   "on_screen": "\"DATA CENTERS ARE NOT ALL THE SAME\" \u00b7 UAF ACEP GUIDE",
+   "source": [
+    "https://zenodo.org/records/23175112"
+   ],
+   "requires": [
+    "Attribute to the guide's description on Zenodo, not to a person."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"Data centers are not all the same.\""
+  },
+  {
+   "id": "c24",
+   "status": "verified",
+   "spoken": "Sitka has about eight thousand people.",
+   "on_screen": "SITKA \u00b7 ABOUT 8,000 PEOPLE",
+   "source": [
+    "https://live.laborstats.alaska.gov/data-pages/alaska-population-estimates"
+   ],
+   "requires": [
+    "2025 state estimate, 8,032."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Row 'Sitka, City and Borough' = 8,032 (field citation)"
+  }
+ ]
+}

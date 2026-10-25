@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.993,
+    "heard": "This box, the size of a fridge, wears a sign that says data center. So does a campus that needs a gigawatt. On October 21st, Sitka's Planning Commission voted unanimously to recommend banning data centers in every zone, per Sitka Public Radio Station, KCAW. That's only a recommendation, and nobody has proposed a data center in Sitka. The city's memo says AI has spurred growth, and a small, power-hungry one here is not entirely unlikely. The city staff's draft has no size line. As Planning Commissioner Rudis warned, a kilowatt, a megawatt, and a gigawatt all get one name. In Cordova, per Sitka's memo, a fridge-sized one, 150 kilowatts, runs inside a hydro plant. Sitka's record peak is 26 megawatts. One gigawatt is about 38 times that, by our math. Staff wrote that the draft does not propose prohibiting data centers, and the city's sustainability commission backed a permit unanimously. The Planning Commission recommended a ban instead. So the fight was never controlled versus no control. It's which tool keeps control. The ban has a real case. Sitka's grid is an island, powered entirely by water. Last year, its hydro plants made 120 gigawatt hours. The town used 118. Rain moves that number. In public testimony, Lisa Sadler-Heart told the commission, we need to say it loud, and we need to say it now. Fairbanks has proposed a line instead. The mayor filed a moratorium on large data center permits through 2027, starting at five megawatts. A University of Alaska Fairbanks guide says it plainly. Data centers are not all the same. Same sign, two sizes. A ban is one clear rule. A size line is a number someone has to choose, so which and where?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.013,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 8.06,
+        "voiced_frac": 0.59,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 123.56,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 123.56,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.975,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

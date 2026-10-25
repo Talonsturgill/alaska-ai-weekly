@@ -1,0 +1,114 @@
+{
+ "run_date": "2026-10-25",
+ "title": "TBD",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Planning Commission says no data centers for now",
+   "outlet": "KCAW Raven Radio",
+   "url": "https://www.kcaw.org/2026/10/23/sitka-planning-commission-says-no-data-centers-for-now/",
+   "claims": [
+    "c1",
+    "c2",
+    "c5",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "Katherine Rose, Oct 23 2026"
+  },
+  {
+   "id": "s2",
+   "title": "Planners vote down data centers for now",
+   "outlet": "Daily Sitka Sentinel",
+   "url": "https://sitkasentinel.com/stories/planners-vote-down-data-centers-for-now,180679",
+   "claims": [
+    "c1",
+    "c20"
+   ],
+   "used_in_film": true,
+   "note": "Oct 22 2026, paywalled past lede"
+  },
+  {
+   "id": "s3",
+   "title": "Sitka staff memo to Planning Commission, ZA 26-05",
+   "outlet": "City and Borough of Sitka",
+   "url": "https://sitka.legistar.com/View.ashx?M=F&ID=16073204&GUID=BD48294F-58BD-4D43-BD16-8CC289527718",
+   "claims": [
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c10",
+    "c19",
+    "c20"
+   ],
+   "used_in_film": true,
+   "note": "Oct 16 2026"
+  },
+  {
+   "id": "s4",
+   "title": "Draft ordinance, data center definition",
+   "outlet": "City and Borough of Sitka",
+   "url": "https://sitka.legistar.com/View.ashx?M=F&ID=16073207&GUID=B4905E33-E7AA-4889-816F-9580A99D93D2",
+   "claims": [
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "Legistar"
+  },
+  {
+   "id": "s5",
+   "title": "2025 electric utility annual report",
+   "outlet": "City and Borough of Sitka",
+   "url": "https://www.cityofsitka.com/files/assets/sitka/v/1/electric/documents/reports/annual-reports/2025-cbs-electric-utility-annual-report.pdf",
+   "claims": [
+    "c7",
+    "c9",
+    "c11",
+    "c18"
+   ],
+   "used_in_film": true,
+   "note": "2025"
+  },
+  {
+   "id": "s6",
+   "title": "Ordinance 2026-42 agenda item and coverage",
+   "outlet": "FNSB Assembly / Alaska's News Source",
+   "url": "https://fnsb.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=13333,plainText=true)",
+   "claims": [
+    "c21",
+    "c22"
+   ],
+   "used_in_film": true,
+   "note": "Oct 22-23 2026"
+  },
+  {
+   "id": "s7",
+   "title": "Computing in Place guide",
+   "outlet": "UAF ACEP via Zenodo",
+   "url": "https://zenodo.org/records/23175112",
+   "claims": [
+    "c23"
+   ],
+   "used_in_film": true,
+   "note": "Oct 6 2026"
+  },
+  {
+   "id": "s8",
+   "title": "Alaska population estimates",
+   "outlet": "Alaska DOLWD",
+   "url": "https://live.laborstats.alaska.gov/data-pages/alaska-population-estimates",
+   "claims": [
+    "c24"
+   ],
+   "used_in_film": true,
+   "note": "2025"
+  }
+ ]
+}

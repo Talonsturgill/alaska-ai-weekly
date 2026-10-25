@@ -1,0 +1,23 @@
+Sitka's planning commission voted unanimously to recommend banning data centers in every zone, and nobody has proposed one.
+
+The vote came on October 21st, per KCAW. It is a recommendation, and the Sitka Assembly has no date set to take it up. The real flaw is the draft's missing size line.
+
+The city's own memo names the driver. It says AI has spurred growth in the sector and that a small power hungry data center here is "not entirely unlikely."
+
+The draft's definition sets no size line. It covers a fridge-size data center at 150 kilowatts in Cordova, per Sitka's memo. It also covers a gigawatt campus.
+
+Sitka's record peak demand is 26 megawatts. One gigawatt is about 38 times that by simple division.
+
+City staff wrote on October 16th that the draft did not propose prohibiting data centers. The draft allowed them only with a conditional use permit.
+
+The sustainability commission backed that route unanimously on October 5th. The planning commission recommended a ban instead.
+
+The ban has a real case. Sitka's grid is an island powered entirely by water. In 2025 its hydro plants made 120 gigawatt hours and the town used 118. Hydro moves with rain.
+
+In public testimony Lisa Sadlier-Hart told the commission "We need to say it loud, and we need to say it now."
+
+Fairbanks has proposed a line instead. Its mayor filed a moratorium on large data center permits through the end of 2027, with 5 megawatts of peak demand among the thresholds. A University of Alaska Fairbanks guide says data centers are not all the same.
+
+A ban is one clear rule. A size line is a number someone has to choose. Which should Sitka pick, and if a line, where?
+
+#Alaska #Sitka #DataCenters #ArtificialIntelligence
