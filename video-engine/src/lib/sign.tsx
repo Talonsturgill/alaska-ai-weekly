@@ -37,7 +37,7 @@ export const Plate: React.FC<{
   const bottom = -base;
   const pinch = Math.min(1, stretchPx / 700) * 34;
   const breath = 1 + 0.012 * Math.sin(f / 15 + phase) + 0.004 * Math.sin(f / 6.1 + phase * 2);
-  const sway = tilt + 1.1 * Math.sin(f / 31 + phase) + 0.5 * Math.sin(f / 13.3 + phase * 1.7);
+  const sway = tilt + 2.1 * Math.sin(f / 26 + phase) + 0.9 * Math.sin(f / 11.3 + phase * 1.7);
   const blink = ((f + Math.floor(phase * 37)) % 88) < 5;
   const r = 34;
   const body = `M ${-W / 2 + r},${top} Q 0,${top + pinch} ${W / 2 - r},${top} Q ${W / 2},${top} ${W / 2},${top + r} L ${W / 2},${bottom - r} Q ${W / 2},${bottom} ${W / 2 - r},${bottom} Q 0,${bottom - pinch} ${-W / 2 + r},${bottom} Q ${-W / 2},${bottom} ${-W / 2},${bottom - r} L ${-W / 2},${top + r} Q ${-W / 2},${top} ${-W / 2 + r},${top} Z`;
@@ -60,10 +60,10 @@ export const Plate: React.FC<{
     : mood === 'curious' ? `M -10,${mouthY} Q 0,${mouthY + 10} 10,${mouthY}`
     : `M -26,${mouthY} Q 0,${mouthY + 10} 26,${mouthY}`;
   const cx = 28 + stretchPx * 0.12;
-  const crackPath = `M ${cx},${top - 3} l -12,34 l 20,18 l -18,30 l 16,26 l -14,32 l 10,26`;
-  const crackLen = 190;
+  const crackPath = `M ${-(W / 2 - 26)},${top - 3} l 12,30 l -16,20 l 18,26 l -10,24`;
+  const crackLen = 150;
   return (
-    <g transform={`translate(${x},${y}) rotate(${sway}) scale(${s * (1 + (breath - 1) * 0.5)},${s * breath})`}>
+    <g transform={`translate(${x},${y - 5 * Math.max(0, Math.sin(f / 17 + phase))}) rotate(${sway}) scale(${s * (1 + (breath - 1) * 0.5)},${s * breath})`}>
       <defs><FormGradient id={gid} t={t} /></defs>
       <ContactShadow cx={0} cy={4} rx={W * 0.42} ry={12} opacity={0.34} blur={8} />
       {legs && [-1, 1].map((sx) => (
