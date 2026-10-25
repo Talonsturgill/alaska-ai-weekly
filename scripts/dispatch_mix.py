@@ -310,6 +310,99 @@ print(f"dispatch_mix: bed arc {len(BED_ARC)} nodes, {BED_ARC_SOURCE}")
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
 AMB_LEVEL = 0.045
 
+# THE BED HAS TO BE THE WORLD ON SCREEN (machine pass 2026-10-25; queue: no-ambient-bed-in-mix,
+# location-ambience-beds). On 10-25 all three seats capped Sound at 7.0 to 7.3 for "no continuous
+# rain or harbor bed" in a film whose board names rain in 9 of its 14 shots' ambient lines. The
+# brown-noise air above was in the mix, at 0.045 and lowpassed to 560 Hz, under a music bed: it
+# reads as nothing, and certainly not as rain. Two additions, both no-ops unless asked for:
+#   1. RAIN, synthesised (pink noise band-passed to the hiss of rain on glass and boardwalk, a slow
+#      intensity drift prime to the sfx grid), when the board sets audio_arc.ambience to ["rain"].
+#      Deterministic and owes no attribution, like the air. It is AUTHORED on audio_arc, not read
+#      off the shots' ambient prose, because the mix receipt deliberately does not hash prose (a
+#      text fix must not stale a mix); storyboard_check FAILS a board whose shot ambient lines name
+#      rain in a quarter of its shots without asking for it (board_sync_check.rain_shots), so the
+#      world still reaches the mix.
+#   2. A STEM, when the board sets audio_arc.ambience_stem to a repo-relative WAV (a CC0 loop with
+#      its provenance in assets/sfx/MANIFEST.md): looped under the whole film at
+#      audio_arc.ambience_level (default 0.10), with the same fades. A configured stem that is
+#      missing ends the mix, because a bed the board promised and the mix dropped is the defect.
+# A board with neither (every board from 10-20 to 10-25) mixes exactly as before. The mix
+# writes what it performed into sfx_events.json under "ambience", so a judge can see the bed.
+AMBIENCE_KINDS = ("rain",)
+RAIN_LEVEL = 0.28      # about -36 dBFS RMS: 18 to 20 dB under the VO, 12 under the music bed
+
+
+def ambience_layers(board):
+    """{'rain': True} when audio_arc.ambience asks for it, else {}. Unknown kinds end the mix."""
+    want = (board.get("audio_arc") or {}).get("ambience") or []
+    if isinstance(want, str):
+        want = [want]
+    bad = [w for w in want if w not in AMBIENCE_KINDS]
+    if bad:
+        raise SystemExit(f"dispatch_mix: audio_arc.ambience {bad} unknown; the mix can perform "
+                         f"{list(AMBIENCE_KINDS)} or a stem via audio_arc.ambience_stem")
+    return {w: True for w in want}
+
+
+def ambience_stem(board, repo=REPO):
+    """(absolute path, level) of the board's configured ambience stem, or (None, 0.0)."""
+    aa = board.get("audio_arc") or {}
+    rel = aa.get("ambience_stem")
+    if not rel:
+        return None, 0.0
+    path = rel if os.path.isabs(rel) else os.path.join(repo, rel)
+    if not os.path.isfile(path):
+        raise SystemExit(f"dispatch_mix: audio_arc.ambience_stem {rel!r} does not exist; add the "
+                         f"loop (with provenance) or remove the key")
+    return path, float(aa.get("ambience_level", 0.10))
+
+
+def rain_filter(idx, out_label, amb_in, amb_out):
+    """The rain layer's filter chain on lavfi input `idx`."""
+    drift = "0.78+0.16*sin(2*PI*t/11.3)+0.06*sin(2*PI*t/2.9)"
+    return (f"[{idx}:a]aformat=sample_rates={SR}:channel_layouts=stereo,"
+            f"highpass=f=900,lowpass=f=7000,equalizer=f=3000:t=q:w=1:g=-4,"
+            f"volume=volume={drift.replace(',', chr(92) + ',')}:eval=frame,"
+            f"volume={RAIN_LEVEL},"
+            f"afade=t=in:st={amb_in}:d=1.8,afade=t=out:st={amb_out}:d=2.6[{out_label}]")
+
+
+def stem_filter(idx, out_label, level, secs, amb_in, amb_out):
+    return (f"[{idx}:a]aformat=sample_rates={SR}:channel_layouts=stereo,"
+            f"aloop=loop=-1:size={int(SR * 600)},atrim=0:{secs:.3f},"
+            f"equalizer=f=3000:t=q:w=1:g=-2.5,volume={level:.4f},"
+            f"afade=t=in:st={amb_in}:d=1.8,afade=t=out:st={amb_out}:d=2.6[{out_label}]")
+
+
+AMB_LAYERS = ambience_layers(_board)
+AMB_STEM, AMB_STEM_LEVEL = ambience_stem(_board)
+print(f"dispatch_mix: ambience air" + (", rain (audio_arc.ambience)" if AMB_LAYERS.get("rain") else "")
+      + (f", stem {os.path.relpath(AMB_STEM, REPO)} at {AMB_STEM_LEVEL}" if AMB_STEM else ""))
+
+
+def ambience_preview(path, secs=12.0):
+    """Render the ambience layers alone (no VO, music or sfx) for listening and measurement."""
+    inputs = ["-f", "lavfi", "-i",
+              f"anoisesrc=color=brown:sample_rate={SR}:amplitude=0.9:duration={secs:.3f}"]
+    gust = "0.62+0.38*sin(2*PI*t/9.5)+0.12*sin(2*PI*t/3.7)"
+    fc = [f"[0:a]aformat=sample_rates={SR}:channel_layouts=stereo,highpass=f=70,lowpass=f=560,"
+          f"equalizer=f=3000:t=q:w=1:g=-2.5,volume=volume={gust.replace(',', chr(92) + ',')}:eval=frame,"
+          f"volume={AMB_LEVEL}[amb]"]
+    labels = ["[amb]"]
+    if AMB_LAYERS.get("rain"):
+        inputs += ["-f", "lavfi", "-i", f"anoisesrc=color=pink:sample_rate={SR}:amplitude=0.9:"
+                                        f"duration={secs:.3f}:seed=1025"]
+        fc.append(rain_filter(len(labels), "rain", 0.0, secs - 2.6))
+        labels.append("[rain]")
+    if AMB_STEM:
+        inputs += ["-i", AMB_STEM]
+        fc.append(stem_filter(len(labels), "stem", AMB_STEM_LEVEL, secs, 0.0, secs - 2.6))
+        labels.append("[stem]")
+    fc.append("".join(labels) + f"amix=inputs={len(labels)}:normalize=0[out]")
+    run([FF, "-y", *inputs, "-filter_complex", ";".join(fc), "-map", "[out]",
+         "-ar", str(SR), "-ac", "2", "-t", f"{secs:.3f}", path])
+    print(f"ambience preview: {path} ({', '.join(l.strip('[]') for l in labels)})")
+
 
 def _assert_per_run_data_covers_the_film():
     """BED_ARC and EVENTS are PER-RUN DATA. Fail loudly when they belong to another film.
@@ -511,6 +604,12 @@ def check_schedule(events):
 
 
 def main():
+    if len(sys.argv) > 2 and sys.argv[1] == "--ambience-preview":
+        # `--ambience-preview OUT.wav [rain]`: render the ambience alone, rain forced if named.
+        if "rain" in sys.argv[3:]:
+            AMB_LAYERS["rain"] = True
+        ambience_preview(sys.argv[2])
+        return
     sys.path.insert(0, HERE)
     from sfx_bank import resolve
 
@@ -544,6 +643,15 @@ def main():
             "events": [{"t": t, "kind": k, "class": c, "pan": p, "label": EVENT_LABELS[i],
                         **event_timing(i, t)}
                        for i, (t, k, c, p) in enumerate(EVENTS)],
+            "ambience": {
+                "note": "continuous layers under the whole film, faded in over 1.8 s and out over 2.6 s",
+                "span_s": [AMB_IN, round(AMB_OUT + 2.6, 2)],
+                "layers": (["air (synthesised brown noise, lowpassed)"]
+                           + (["rain (synthesised pink noise, 900 Hz to 7 kHz, audio_arc.ambience)"]
+                              if AMB_LAYERS.get("rain") else [])
+                           + ([f"stem {os.path.relpath(AMB_STEM, REPO)} at {AMB_STEM_LEVEL}"]
+                              if AMB_STEM else [])),
+            },
         }, open(_sfx_out, "w"), indent=1)
         print(f"sfx_events.json written: {len(EVENTS)} events, {len(set(k for _, k, _, _ in EVENTS))} kinds")
     except Exception as _e:
@@ -566,6 +674,8 @@ def main():
         "--input", os.path.join(OUT, "music_bed.wav")]
     for mix_input in sorted(set(takes)):
         mix_begin += ["--input", mix_input]
+    if AMB_STEM:
+        mix_begin += ["--input", AMB_STEM]
     subprocess.run(mix_begin, check=True)
 
     # 2) assemble inputs: [0]=VO padded to VIDEO, [1]=music looped/trimmed, then SFX,
@@ -576,6 +686,16 @@ def main():
     amb_idx = 2 + len(takes)
     inputs += ["-f", "lavfi", "-i",
                f"anoisesrc=color=brown:sample_rate={SR}:amplitude=0.9:duration={VIDEO_SECS:.3f}"]
+    # World ambience (machine pass 2026-10-25): appended after the air, so a board with no rain
+    # and no stem builds the identical input list and filtergraph it always did.
+    extra_amb = []
+    if AMB_LAYERS.get("rain"):
+        inputs += ["-f", "lavfi", "-i", f"anoisesrc=color=pink:sample_rate={SR}:amplitude=0.9:"
+                                        f"duration={VIDEO_SECS:.3f}:seed=1025"]
+        extra_amb.append(("rain", amb_idx + 1 + len(extra_amb)))
+    if AMB_STEM:
+        inputs += ["-i", AMB_STEM]
+        extra_amb.append(("stem", amb_idx + 1 + len(extra_amb)))
 
     fc = []
     # VO: pad to full length, keep dominant; split (one copy to mix, one as sidechain key)
@@ -701,9 +821,17 @@ def main():
         f"afade=t=in:st={AMB_IN}:d=1.8,afade=t=out:st={AMB_OUT}:d=2.6[amb]"
     )
 
-    # mix VO + bed + wind + all sfx
-    mix_in = "[vo][bed][amb]" + "".join(sfx_labels)
-    n = 3 + len(sfx_labels)
+    amb_labels = ""
+    for name, idx in extra_amb:
+        if name == "rain":
+            fc.append(rain_filter(idx, "rain", AMB_IN, AMB_OUT))
+        else:
+            fc.append(stem_filter(idx, "stem", AMB_STEM_LEVEL, VIDEO_SECS, AMB_IN, AMB_OUT))
+        amb_labels += f"[{name}]"
+
+    # mix VO + bed + wind + world ambience + all sfx
+    mix_in = "[vo][bed][amb]" + amb_labels + "".join(sfx_labels)
+    n = 3 + len(extra_amb) + len(sfx_labels)
     fc.append(f"{mix_in}amix=inputs={n}:normalize=0:dropout_transition=0[mixed]")
     # The pre-button breath is a STORY beat, not only a music-bed automation.  A VO line or
     # motivated hit can otherwise mask the bed dip and leave the delivered mix effectively

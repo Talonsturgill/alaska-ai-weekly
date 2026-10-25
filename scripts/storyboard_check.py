@@ -685,6 +685,23 @@ def main():
     except Exception as _e:
         print(f"  [beat-events] could not run ({_e}); beats not event-validated")
 
+    # ---- 8. SHOT ROWS AGREE WITH THEIR BEATS (machine pass 2026-10-25) ----
+    # scripts/board_sync_check.py. Gate 0B, 0C and 0D spent two to three critic rounds on 10-24 and
+    # 10-25 naming stale shots[] fields and annotation-vs-shows text drift. The structural part
+    # (vo_line, ambient, beat-before-shot, orphan beats) FAILS here; it has zero hits on every
+    # board from 10-10 to 10-25. The text part prints as advisories for the author to clear
+    # before the critics read the board.
+    try:
+        import board_sync_check as _bs
+        _sr = _bs.analyze(sb)
+        for _p in _sr["problems"]:
+            problems.append(f"board-sync: {_p}")
+        for _w in _sr["warnings"]:
+            print(f"  [board-sync-advisory] {_w}")
+        print(f"  [board-sync] {len(_sr['problems'])} stale shot rows, {len(_sr['warnings'])} text advisories")
+    except Exception as _e:
+        print(f"  [board-sync] could not run ({_e}); shot rows not diffed against beats")
+
     if problems:
         for p in problems:
             print(f"FAIL [storyboard_check] {p}")

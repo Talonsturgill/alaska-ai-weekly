@@ -66,6 +66,10 @@ step() {
 step typecheck         1 video-engine/node_modules/.bin/tsc --noEmit -p video-engine/tsconfig.json
 step text_fit          1 python3 scripts/text_fit_check.py
 step caption_band      1 python3 scripts/caption_band_check.py
+# Machine pass 2026-10-25: the lib sign-kit Plate was drawn at s 0.5 to 0.62 in three 10-25 shots and
+# every seat called its lettering unreadable. A lettered Plate stays at s 0.8 or more, or passes
+# lettered={false}. Reads the episode source only.
+step plate_scale       1 python3 scripts/plate_scale_check.py
 step say_it_show_it    1 python3 scripts/say_it_show_it_check.py
 # Machine pass 2026-10-22, a repeat offender (10-21, 10-22 twice). These four read only the episode
 # source and episode_props.json, yet ran only inside preflight, after the render. The 10-22 re-cut

@@ -1,16 +1,17 @@
 {
   "last_pass": {
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "shipped": [
-      "make-cut-runs-visible-copy-and-claims-contract-first",
-      "kit-eye-and-firesat-warm-light-props",
-      "board-audio-bed-should-be-authored",
-      "brand-banned-phrases-in-vo"
+      "critic-loops-never-reach-ship (board_sync_check in Gate 0A)",
+      "held-beats-under-six-percent (held_beat_check solves the camera and rain out, preflight advisory, --strict)",
+      "no-ambient-bed-in-mix (dispatch_mix rain bed or stem when audio_arc.ambience is set, Gate 0A checks the board names it)",
+      "plate-hero-clutter-on-small-sizes (PLATE_MIN_LETTERED_S 0.8 and plate_scale_check in make_cut)"
     ],
-    "engine_advance": "SatelliteEye idle (blink, glances, breathing lens, drifting brow)",
+    "engine_advance": "none",
     "escalated": [
-      "held-prop-motion-on-eyes-and-satellites (FireSat and Drone idle still open)",
-      "plate-serif-variant (needs a second engine advance, first in line next week)"
+      "top-third-empty-sky (calibrate on two films)",
+      "location-ambience-beds (no CC0 loops yet)",
+      "a round cap for Gate 0 critics is the owner's call"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
