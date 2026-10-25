@@ -532,7 +532,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
           </g>
         </g>
         {f >= t7 && f < t7 + 22 && <ellipse cx={540} cy={930} rx={ease(f, t7, 18) * 480} ry={ease(f, t7, 18) * 120} fill="none" stroke="#DCEBEA" strokeWidth={7 * (1 - ease(f, t7, 18))} opacity={0.8} />}
-        <Signpost x={925} y={1480} lines={['PLANNING', 'COMMISSION', 'UNANIMOUS']} size={28} k={post} f={g} id="s2p" />
+        <Signpost x={850} y={1480} lines={['PLANNING', 'COMMISSION', 'UNANIMOUS']} size={24} k={post} f={g} id="s2p" />
         {/* the radio tag swinging from the map frame */}
         {tag > 0.01 && (
           <g transform={`translate(250,${698}) rotate(${(1 - tag) * 70 + 5 * Math.sin(g / 12)})`}>
@@ -615,7 +615,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="AI SPURRED THE GROWTH · PER CITY MEMO" displayLines={['AI SPURRED THE GROWTH', 'PER CITY MEMO']} y={556} size={30} tone="ink" p={ease(f, t12 + 4, 8)} />
+        <Plate x={540} text="AI SPURRED THE GROWTH · PER CITY MEMO" displayLines={['AI SPURRED THE GROWTH', 'PER CITY MEMO']} y={526} size={30} tone="ink" p={ease(f, t12 + 4, 8)} />
         <QuotePlate x={540} y={1150} text="NOT ENTIRELY UNLIKELY" by="CITY MEMO" size={44} wrap={16} p={ease(f, t13 + 6, 8)} type={ease(f, t13 + 8, 40)} />
       </>}>
       <SVG>
@@ -623,7 +623,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <Boardwalk f={g} y0={1260} id="s4b" puddles={false} rail={false} />
         <Foreground f={g} seed={4} />
         {/* the memo on a cedar frame */}
-        <g transform={`translate(330,930) scale(${0.7 + 0.3 * open},${open})`}>
+        <g transform={`translate(330,1010) scale(${0.7 + 0.3 * open},${open})`}>
           <rect x={-250} y={-340} width={500} height={680} rx={8} fill={P.cedar} stroke={INK} strokeWidth={9} />
           <rect x={-226} y={-316} width={452} height={632} fill={P.cream} stroke={INK} strokeWidth={5} />
           <text x={0} y={-258} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} letterSpacing={3} fill={INK}>CITY MEMO</text>
@@ -957,22 +957,21 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="SITKA" y={560} size={32} tone="ink" p={ease(f, 8, 8) * (1 - ease(f, t32 + 2, 6))} />
-        <Plate x={540} text="ISLANDED GRID · ALL HYDRO" y={560} size={30} tone="cream" p={ease(f, t32 + 4, 8)} />
+        <Plate x={540} text="SITKA · ISLANDED GRID · ALL HYDRO" y={560} size={28} tone="cream" p={ease(f, 8, 8)} />
         <Plate x={540} text="2025 · 120 GWH MADE" y={640} size={30} tone="ink" p={ease(f, t34 + 10, 8)} />
         <Plate x={540} text="118 USED" y={720} size={30} tone="cream" p={ease(f, t35 + 4, 8)} />
       </>}>
       <SVG>
         <Harbor f={g} id="s10" horizon={1060} dark={0.55} />
         <g transform="translate(0,150)"><Island f={g} id="s10i" /></g>
-        <Sign x={190} y={1250} s={0.8} f={g} mood="plain" crack={1} look={3} phase={8.3} id="s10p" />
+        <Sign x={940} y={1280} s={0.55} f={g} mood="plain" crack={1} look={-3} phase={8.3} id="s10p" />
         {/* the extension cord that ends at the shore above the water */}
         <g opacity={ease(f, t32 - 4, 12)}>
           <path d={`M120,1140 q-70,${60 + 8 * Math.sin(g / 20)} -20,${150}`} stroke={INK} strokeWidth={14} fill="none" strokeLinecap="round" />
           <path d={`M120,1140 q-70,${60 + 8 * Math.sin(g / 20)} -20,${150}`} stroke="#E8A21B" strokeWidth={8} fill="none" strokeLinecap="round" />
           <g transform={`translate(100,${1290 + 3 * Math.sin(g / 20)}) rotate(8)`}><rect x={-14} y={0} width={28} height={40} rx={4} fill="#14202A" stroke={INK} strokeWidth={4} /><line x1={-6} y1={40} x2={-6} y2={58} stroke={P.steel} strokeWidth={5} /><line x1={6} y1={40} x2={6} y2={58} stroke={P.steel} strokeWidth={5} /></g>
         </g>
-        <Balance x={560} y={1010} f={g} beam={beam} left={left} right={right} id="s10b" s={0.95} tarp={1 - tarpOff} />
+        <Balance x={500} y={1010} f={g} beam={beam} left={left} right={right} id="s10b" s={0.95} tarp={1 - tarpOff} />
         {tarpOff > 0.01 && tarpOff < 1 && <path d={`M${540 + 300 * tarpOff},${900 - 200 * tarpOff} q60,-40 120,${20}`} stroke="#5B6B58" strokeWidth={30} fill="none" strokeLinecap="round" opacity={1 - tarpOff} />}
         <Rain f={g} op={0.5} wind={0.06} len={56} />
       </SVG>
@@ -1117,7 +1116,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
           {s1 > 0.01 && <g transform={`translate(${lerp(60, 95, s1)},${lerp(-420, 120, snap(f, t43, 14))}) scale(0.46)`}><Cubby x={0} y={0} s={0.7} f={g} emotion="focused" phase={11.2} /></g>}
           {s2 > 0.01 && <g transform={`translate(${lerp(280, 285, s2)},${lerp(-520, 118, snap(f, t43 + 10, 14))})`}><Slab x={0} y={0} w={180} h={112} f={g} id="s13s" windows={4} fans={2} /></g>}
         </g>
-        <Sign x={150} y={1318} s={0.9} f={g} mood={f > t43 ? 'plain' : 'worried'} crack={1} look={5} tilt={2 * Math.sin(g / 3) * ease(f, t43, 10) * (1 - ease(f, t43 + 20, 30))} phase={12.2} id="s13p" />
+        <Sign x={235} y={1318} s={0.9} f={g} mood={f > t43 ? 'plain' : 'worried'} crack={1} look={5} tilt={2 * Math.sin(g / 3) * ease(f, t43, 10) * (1 - ease(f, t43 + 20, 30))} phase={12.2} id="s13p" />
         <Rain f={g} op={0.3} />
       </SVG>
     </Frame>

@@ -156,7 +156,7 @@ B = [
  (46, 14, 13, W("number"), "tick", "ruler", "shows one open tick in signal pink on the crack seam with a gull holding a pencil", "curious", "A SIZE LINE",
   "the ruler shows one open signal pink tick unlabelled, and a gull hovers over it with a pencil, a plate reads A SIZE LINE",
   "the tick pulses and the pencil circles", ""),
- (47, 14, 13, W("where"), "ping", "the Plate", "hangs from the open tick beside the Cubby", "plain", "A BAN OR A LINE? AND WHERE?",
+ (47, 14, 13, W("which"), "ping", "the Plate", "hangs from the open tick beside the Cubby", "plain", "A BAN OR A LINE? AND WHERE?",
   "the cracked Plate hangs from the open tick beside the Cubby, the pencil tip hovering, a plate reads A BAN OR A LINE? AND WHERE?",
   "the Plate sways and the pencil hovers", ""),
 ]
