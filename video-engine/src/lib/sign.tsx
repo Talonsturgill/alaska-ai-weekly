@@ -28,11 +28,11 @@ const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 
 export const Plate: React.FC<{
   x?: number; y?: number; s?: number; f: number; mood?: PlateMood; stretchPx?: number; crack?: number; look?: number; tilt?: number;
-  legs?: boolean; phase?: number; id?: string;
-}> = ({x = 0, y = 0, s = 1, f, mood = 'plain', stretchPx = 0, crack = 0, look = 0, tilt = 0, legs = true, phase = 0, id = 'pl'}) => {
+  legs?: boolean; legH?: number; phase?: number; id?: string;
+}> = ({x = 0, y = 0, s = 1, f, mood = 'plain', stretchPx = 0, crack = 0, look = 0, tilt = 0, legs = true, legH = 44, phase = 0, id = 'pl'}) => {
   const W = 300 + stretchPx;
   const H = 190;
-  const base = legs ? 44 : 0;
+  const base = legs ? legH : 0;
   const top = -base - H;
   const bottom = -base;
   const pinch = Math.min(1, stretchPx / 700) * 34;
@@ -69,7 +69,7 @@ export const Plate: React.FC<{
       {legs && [-1, 1].map((sx) => (
         <g key={sx} transform={`translate(${sx * Math.max(78, W / 2 - 70)},0)`}>
           <rect x={-17} y={-base - 4} width={34} height={base + 4} rx={6} fill={SIGN.cedar} stroke={INK} strokeWidth={5} />
-          <rect x={-11} y={-base} width={9} height={base - 4} fill={SIGN.cedarHi} opacity={0.6} />
+          <rect x={-11} y={-base} width={9} height={Math.max(0, base - 4)} fill={SIGN.cedarHi} opacity={0.6} />
           <rect x={-22} y={-8} width={44} height={12} rx={5} fill={SIGN.cedarShade} stroke={INK} strokeWidth={4} />
         </g>
       ))}
