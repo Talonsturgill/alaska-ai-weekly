@@ -412,9 +412,9 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="FRIDGE SIZE" y={620} size={34} tone="ink" p={ease(f, t2, 8) * (1 - ease(f, t3 + 4, 8))} />
-        <Plate x={540} text="CAMPUS" y={620} size={34} tone="ink" p={ease(f, t3 + 6, 8) * (1 - ease(f, t4, 8))} />
-        <Plate x={540} text="1 GIGAWATT" y={620} size={34} tone="ink" p={ease(f, t4 + 4, 8)} />
+        <Plate x={540} text="FRIDGE SIZE" y={560} size={34} tone="ink" p={ease(f, t2, 8) * (1 - ease(f, t3 + 4, 8))} />
+        <Plate x={540} text="CAMPUS" y={635} size={34} tone="ink" p={ease(f, t3 + 6, 8) * (1 - ease(f, t4, 8))} />
+        <Plate x={540} text="1 GIGAWATT" y={710} size={34} tone="ink" p={ease(f, t4 + 4, 8)} />
       </>}>
       <SVG>
         <PowerWall f={g} id="s1" />
@@ -477,9 +477,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
           ))}
           <path d="M560,640 q30,70 -10,120" stroke="#fff" strokeWidth={0} fill="none" />
           {/* the RECOMMENDED imprint */}
-          <g transform="translate(540,920) rotate(-8)" opacity={imprint * 0.94}>
-            <text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={84} letterSpacing={3} fill={P.pink} stroke={P.pink} strokeWidth={1.2}>RECOMMENDED</text>
-            <rect x={-380} y={-86} width={760} height={122} fill="none" stroke={P.pink} strokeWidth={7} strokeDasharray="22 12" />
+          <g opacity={imprint * 0.94}>
+            <text x={540} y={920} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={84} letterSpacing={3} fill={P.pink} stroke={P.pink} strokeWidth={1.2} transform="rotate(-8 540 920)">RECOMMENDED</text>
+            <rect x={160} y={834} width={760} height={122} fill="none" stroke={P.pink} strokeWidth={7} strokeDasharray="22 12" transform="rotate(-8 540 920)" />
           </g>
         </g>
         {/* the stamp */}
@@ -503,7 +503,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
             <text x={0} y={118} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1.5} fill={INK}>SITKA PUBLIC RADIO</text>
           </g>
         )}
-        <Sign x={150} y={1420} s={0.62} f={g} mood="worried" look={5} stretchPx={0} crack={0} phase={1.1} id="s2s" />
+        <Sign x={150} y={1318} s={0.7} f={g} mood="worried" look={5} stretchPx={0} crack={0} phase={1.1} id="s2s" />
         <Rain f={g} op={0.3} />
       </SVG>
     </Frame>
@@ -516,14 +516,14 @@ const S3: React.FC<SceneProps> = ({p}) => {
   const g = f + p.from;
   const t10 = b(10);
   const slide = easeIO(f, 0, Math.max(30, t10 - 4));
-  const sheetX = lerp(80, 760, slide);
+  const sheetX = lerp(280, 760, slide);
   const cam = track([{t: 0, z: 1.0, fx: 640, fy: 980}, {t: t10 + 10, z: 1.0, fx: 640, fy: 980}, {t: p.dur, z: 1.04, fx: 420, fy: 990}]);
   const flag = 20 * Math.sin(g / 5) * Math.max(0, 1 - slide) + (slide > 0.9 ? 6 : 0);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="NEXT · THE SITKA ASSEMBLY · DATE NOT SET" displayLines={['NEXT · THE SITKA ASSEMBLY', 'DATE NOT SET']} y={640} size={28} tone="ink" p={ease(f, 4, 8) * (1 - ease(f, t10 + 8, 8))} />
-        <Plate x={540} text="NO DATA CENTER PROPOSED IN SITKA" displayLines={['NO DATA CENTER', 'PROPOSED IN SITKA']} y={640} size={30} tone="cream" p={ease(f, t10 + 8, 8)} />
+        <Plate x={540} text="NEXT · THE SITKA ASSEMBLY · DATE NOT SET" displayLines={['NEXT · THE SITKA ASSEMBLY', 'DATE NOT SET']} y={560} size={28} tone="ink" p={ease(f, 4, 8) * (1 - ease(f, t10 + 8, 8))} />
+        <Plate x={540} text="NO DATA CENTER PROPOSED IN SITKA" displayLines={['NO DATA CENTER', 'PROPOSED IN SITKA']} y={700} size={30} tone="cream" p={ease(f, t10 + 8, 8)} />
       </>}>
       <SVG>
         <Harbor f={g} id="s3" horizon={1000} dark={0.08} />
@@ -546,7 +546,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
           <rect x={-90} y={-130} width={180} height={140} rx={30} fill={P.cedarHi} stroke={INK} strokeWidth={7} />
           <rect x={-62} y={-96} width={124} height={50} rx={8} fill="#2B1E14" stroke={INK} strokeWidth={5} />
           <rect x={-70} y={-170} width={140} height={44} rx={6} fill={P.cream} stroke={INK} strokeWidth={5} />
-          <text x={0} y={-139} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={INK}>ASSEMBLY</text>
+          <text x={0} y={-139} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={1} fill={INK}>ASSEMBLY</text>
           <g transform={`translate(88,-80) rotate(${-flag})`}><rect x={0} y={-70} width={14} height={80} fill={P.brass} stroke={INK} strokeWidth={4} /><rect x={0} y={-70} width={44} height={28} fill={P.brass} stroke={INK} strokeWidth={4} /></g>
         </g>
         {/* the stamped sheet sliding along the rail */}
@@ -574,7 +574,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="AI SPURRED THE GROWTH · PER CITY MEMO" displayLines={['AI SPURRED THE GROWTH', 'PER CITY MEMO']} y={640} size={30} tone="ink" p={ease(f, t12 + 4, 8)} />
+        <Plate x={540} text="AI SPURRED THE GROWTH · PER CITY MEMO" displayLines={['AI SPURRED THE GROWTH', 'PER CITY MEMO']} y={556} size={30} tone="ink" p={ease(f, t12 + 4, 8)} />
         <QuotePlate x={540} y={1150} text="NOT ENTIRELY UNLIKELY" by="CITY MEMO" size={44} wrap={16} p={ease(f, t13 + 6, 8)} type={ease(f, t13 + 8, 40)} />
       </>}>
       <SVG>
@@ -616,7 +616,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const crack = ease(f, t18 + 26, 14);
   const stilts = lerp(44, 330, ease(f, t16 - 6, 20));
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 980}, {t: p.dur, z: 1.07, fx: 540, fy: 960}]);
-  const RY = 1200;
+  const RY = 1150;
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -635,9 +635,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
         {con > 0.01 && <Container x={860} y={RY - 38 - (1 - snap(f, t17, 12)) * 520} s={0.8} id="s5c" />}
         {/* Rudas's name tag drops on a chain from the ruler's end */}
         {tag > 0.01 && (
-          <g transform={`translate(${rx + 430},${RY + 38}) rotate(${6 * Math.sin(g / 10) * (1.2 - tag * 0.2)})`}>
-            <line x1={0} y1={0} x2={0} y2={lerp(0, 56, tag)} stroke={INK} strokeWidth={5} strokeDasharray="8 5" />
-            <g transform={`translate(0,${lerp(0, 56, tag)})`}>
+          <g transform={`translate(${rx - 10},${RY + 38}) rotate(${6 * Math.sin(g / 10) * (1.2 - tag * 0.2)})`}>
+            <line x1={0} y1={0} x2={0} y2={lerp(0, 26, tag)} stroke={INK} strokeWidth={5} strokeDasharray="8 5" />
+            <g transform={`translate(0,${lerp(0, 26, tag)})`}>
               <rect x={-170} y={0} width={340} height={64} rx={8} fill={P.brass} stroke={INK} strokeWidth={6} />
               <text x={0} y={42} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} letterSpacing={1} fill={INK}>COMMISSIONER RUDAS</text>
             </g>
@@ -681,7 +681,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           {[0.15, 0.4, 0.65, 0.9].map((k) => <g key={k} transform={`translate(${lerp(250, 690, k)},${lerp(800, 1160, k)}) rotate(39)`}><rect x={-8} y={-38} width={16} height={76} fill="#5A6770" stroke={INK} strokeWidth={4} /></g>)}
         </g>
         {/* the powerhouse with an open front */}
-        <g transform="translate(790,1330)">
+        <g transform="translate(690,1330)">
           <ContactShadow cx={0} cy={4} rx={340} ry={18} opacity={0.36} blur={10} />
           <rect x={-290} y={-380} width={580} height={380} fill="#1B2D33" stroke={INK} strokeWidth={9} />
           <rect x={-272} y={-362} width={544} height={344} fill="#2D4A4D" />
@@ -725,15 +725,15 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="RECORD PEAK · 26.02 MW" y={600} size={34} tone="ink" p={ease(f, 6, 8) * (1 - ease(f, t23 - 10, 8))} />
-        <Plate x={540} text="1 GW IS ABOUT 38 TIMES THAT PEAK" displayLines={['1 GW IS ABOUT', '38 TIMES THAT PEAK']} y={620} size={34} tone="ink" p={ease(f, t23 + 60, 10)} />
-        <Plate x={800} text="OUR MATH" y={800} size={30} tone="cream" rot={-4} p={snap(f, t23 + 100, 10)} />
+        <Plate x={540} text="RECORD PEAK · 26.02 MW" y={560} size={34} tone="ink" p={ease(f, 6, 8) * (1 - ease(f, t23 - 10, 8))} />
+        <Plate x={540} text="1 GW IS ABOUT 38 TIMES THAT PEAK" displayLines={['1 GW IS ABOUT', '38 TIMES THAT PEAK']} y={700} size={34} tone="ink" p={ease(f, t23 + 60, 10)} />
+        <Plate x={800} text="OUR MATH" y={880} size={30} tone="cream" rot={-4} p={snap(f, t23 + 100, 10)} />
       </>}>
       <SVG>
         <Harbor f={g} id="s7" horizon={900} dark={0.3} drift={2} />
         {/* the whole world rides the crane: scale about the tower's base */}
         <g transform={`translate(540,1300) scale(${sc}) translate(-540,-1300)`}>
-          <Boardwalk f={g} y0={1300} id="s7b" puddles rail={false} />
+          <g opacity={1 - crane * 0.85}><Boardwalk f={g} y0={1300} id="s7b" puddles rail={false} /></g>
           {Array.from({length: 38}).map((_, k) => {
             const o = k === 0 ? 1 : ease(f, t23 + (k - 1) * 2.4, 8);
             if (o < 0.02) return null;
@@ -784,13 +784,13 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Signpost x={290} y={1400} lines={['STAFF DID NOT', 'PROPOSE A BAN']} size={28} k={staffK} f={g} sag={sag} id="s8a" />
         <Signpost x={790} y={1400} lines={['OCTOBER 5TH', 'SUSTAINABILITY', 'COMMISSION']} size={28} k={sustK} f={g} id="s8c" />
         {sustK > 0.5 && (
-          <g transform={`translate(905,${1400 - 560 + 110}) rotate(${22 * bell * Math.sin(g / 2)} 0 -20)`}>
+          <g transform={`translate(790,${1400 - 470 + 92}) rotate(${22 * bell * Math.sin(g / 2)} 0 -20)`}>
             <line x1={0} y1={-20} x2={0} y2={0} stroke={INK} strokeWidth={5} />
             <path d="M-26,50 Q-26,0 0,0 Q26,0 26,50 Z" fill={P.brass} stroke={INK} strokeWidth={6} />
             <circle cx={0} cy={54} r={7} fill={P.brassShade} stroke={INK} strokeWidth={3} />
           </g>
         )}
-        <Sign x={540} y={1392} s={0.62} f={g} mood="plain" crack={1} look={f < t28 ? -4 : 4} phase={6.1} id="s8p" />
+        <Sign x={540} y={1318} s={0.72} f={g} mood="plain" crack={1} look={f < t28 ? -4 : 4} phase={6.1} id="s8p" />
         {/* the dashed RECOMMENDATION board on a hand-cart */}
         <g transform={`translate(${cartX},1250)`}>
           <ContactShadow cx={0} cy={150} rx={300} ry={14} opacity={0.34} blur={9} />
@@ -823,8 +823,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="A BAN · ONE CLEAR RULE" y={600} size={32} tone="ink" p={ease(f, 22, 8) * (1 - ease(f, t30 + 4, 8))} />
-        <Plate x={540} text="WHICH TOOL KEEPS CONTROL" y={600} size={32} tone="cream" p={ease(f, t30 + 8, 8)} />
+        <Plate x={540} text="A BAN · ONE CLEAR RULE" y={560} size={32} tone="ink" p={ease(f, 22, 8) * (1 - ease(f, t30 + 4, 8))} />
+        <Plate x={540} text="WHICH TOOL KEEPS CONTROL" y={640} size={32} tone="cream" p={ease(f, t30 + 8, 8)} />
       </>}>
       <SVG>
         <PowerWall f={g} id="s9" y1={1240} />
@@ -839,7 +839,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <text x={780} y={920} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={80} letterSpacing={4} fill={INK}>LINE</text>
         </g>
         <Ruler x={rulerX} y={1100 + boardLower * 36} len={620} h={60} f={g} id="s9r" />
-        <Sign x={560} y={1390} s={0.55} f={g} mood="curious" crack={1} look={f < t30 ? -5 : 5} phase={7.2} id="s9p" />
+        <Sign x={560} y={1318} s={0.65} f={g} mood="curious" crack={1} look={f < t30 ? -5 : 5} phase={7.2} id="s9p" />
         <Rain f={g} op={0.28} />
       </SVG>
     </Frame>
@@ -918,7 +918,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Harbor f={g} id="s10" horizon={1060} dark={0.75} />
         <Island f={g} id="s10i" />
-        <Sign x={470} y={812} s={0.4} f={g} mood="plain" crack={1} look={3} legs={false} phase={8.3} id="s10p" />
+        <Sign x={250} y={880} s={0.4} f={g} mood="plain" crack={1} look={3} legs={false} phase={8.3} id="s10p" />
         {/* the extension cord that ends at the shore above the water */}
         <g opacity={ease(f, t32 - 4, 12)}>
           <path d={`M120,1140 q-70,${60 + 8 * Math.sin(g / 20)} -20,${150}`} stroke={INK} strokeWidth={14} fill="none" strokeLinecap="round" />
@@ -948,8 +948,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} dim={0}
       overlay={<>
-        <Plate x={540} text="HYDRO MOVES WITH RAIN" y={620} size={32} tone="ink" p={ease(f, 10, 8) * (1 - ease(f, t37 - 20, 8))} />
-        <Plate x={540} text="LISA SADLIER-HART · PUBLIC TESTIMONY" displayLines={['LISA SADLIER-HART', 'PUBLIC TESTIMONY']} y={620} size={30} tone="cream" p={ease(f, t37 + 6, 8)} />
+        <Plate x={540} text="HYDRO MOVES WITH RAIN" y={560} size={32} tone="ink" p={ease(f, 10, 8) * (1 - ease(f, t37 - 20, 8))} />
+        <Plate x={540} text="LISA SADLIER-HART · PUBLIC TESTIMONY" displayLines={['LISA SADLIER-HART', 'PUBLIC TESTIMONY']} y={700} size={30} tone="cream" p={ease(f, t37 + 6, 8)} />
         <QuotePlate x={540} y={1060} text="WE NEED TO SAY IT LOUD, AND WE NEED TO SAY IT NOW" by="LISA SADLIER-HART" size={40} wrap={22} p={ease(f, t38 - 2, 8)} type={ease(f, t38, 74)} />
       </>}>
       <SVG>
@@ -957,7 +957,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <g opacity={1 - fade}>
           <Island f={g} id="s11i" stream={lerp(1, 0.18, thin)} flow={lerp(1, 0.4, thin)} />
           <Balance x={540} y={900} f={g} beam={beam} left={left} right={right} id="s11b" s={1.0} />
-          <Sign x={170} y={1380} s={0.62} f={g} mood="worried" crack={1} look={5} phase={9.4} id="s11p" />
+          <Sign x={170} y={1318} s={0.72} f={g} mood="worried" crack={1} look={5} phase={9.4} id="s11p" />
         </g>
         <rect x={0} y={0} width={W} height={H} fill="#0F2A2C" opacity={fade * 0.9} />
         {/* the empty podium with a microphone */}
@@ -987,9 +987,9 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const tag = ease(f, 14, 18);
   const mor = f < t40 ? 0 : snap(f, t40, 16);
   const tick = ease(f, t41, 14);
-  const cam = track([{t: 0, z: 1.0, fx: 640, fy: 980}, {t: p.dur, z: 1.04, fx: 520, fy: 980}]);
+  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 980}, {t: p.dur, z: 1.03, fx: 540, fy: 980}]);
   const RY = 1150;
-  const tickAt = 0.19;
+  const tickAt = 0.34;
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -1009,7 +1009,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
           </g>
         )}
         {/* the Fairbanks tag in a tiny parka */}
-        <g transform={`translate(${rx - 330},${RY - 60}) rotate(${7 * Math.sin(g / 14) * (1.3 - tag * 0.3)})`} opacity={Math.min(1, tag * 2)}>
+        <g transform={`translate(${rx - 290},${RY - 60}) rotate(${7 * Math.sin(g / 14) * (1.3 - tag * 0.3)})`} opacity={Math.min(1, tag * 2)}>
           <line x1={0} y1={0} x2={0} y2={-180 * tag} stroke={INK} strokeWidth={5} strokeDasharray="8 5" />
           <g transform={`translate(0,${-180 * tag})`}>
             <rect x={-130} y={-120} width={260} height={110} rx={8} fill={P.cream} stroke={INK} strokeWidth={6} />
@@ -1021,7 +1021,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <g transform={`translate(0,${-180 * tag + 4}) rotate(${(1 - mor) * 40 + 6 * Math.sin(g / 9)})`}>
               <line x1={0} y1={0} x2={0} y2={46} stroke={INK} strokeWidth={5} />
               <rect x={-96} y={46} width={192} height={64} rx={6} fill={P.brass} stroke={INK} strokeWidth={5} />
-              <text x={0} y={88} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill={INK}>THROUGH 2027</text>
+              <text x={0} y={88} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={1} fill={INK}>THROUGH 2027</text>
             </g>
           )}
         </g>
@@ -1067,7 +1067,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
           {s1 > 0.01 && <g transform={`translate(${lerp(60, 95, s1)},${lerp(-420, 120, snap(f, t43, 14))}) scale(0.46)`}><Cubby x={0} y={0} s={0.7} f={g} emotion="focused" phase={11.2} /></g>}
           {s2 > 0.01 && <g transform={`translate(${lerp(280, 285, s2)},${lerp(-520, 118, snap(f, t43 + 10, 14))})`}><Slab x={0} y={0} w={180} h={112} f={g} id="s13s" windows={4} fans={2} /></g>}
         </g>
-        <Sign x={150} y={1396} s={0.7} f={g} mood={f > t43 ? 'plain' : 'worried'} crack={1} look={5} tilt={2 * Math.sin(g / 3) * ease(f, t43, 10) * (1 - ease(f, t43 + 20, 30))} phase={12.2} id="s13p" />
+        <Sign x={150} y={1318} s={0.8} f={g} mood={f > t43 ? 'plain' : 'worried'} crack={1} look={5} tilt={2 * Math.sin(g / 3) * ease(f, t43, 10) * (1 - ease(f, t43 + 20, 30))} phase={12.2} id="s13p" />
         <Rain f={g} op={0.3} />
       </SVG>
     </Frame>
@@ -1084,7 +1084,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const hamSwing = f < t45 ? 52 : 52 - 52 * snap(f, t45, 8) + 3;
   const tick = ease(f, t46 - 2, 12);
   const lift = easeIO(f, t47 - 4, 40);
-  const px = 540, py = lerp(1396, 1112, lift);
+  const px = 540, py = lerp(1318, 1112, lift);
   const gone = Math.max(0, 1 - (f - t46) / 20);
   const pen = ease(f, t46 + 4, 14);
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.05, fx: 540, fy: 960}]);
@@ -1096,17 +1096,17 @@ const S14: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam} bloom={0.06}
       overlay={<>
         <Plate x={540} text="SAME SIGN · TWO SIZES" y={560} size={34} tone="ink" p={ease(f, 8, 8) * (1 - ease(f, t45 - 4, 8))} />
-        <Plate x={540} text="A BAN · ONE CLEAR RULE" y={560} size={34} tone="cream" p={ease(f, t45, 8) * (1 - ease(f, t46 - 6, 8))} />
-        <Plate x={540} text="A SIZE LINE" y={560} size={36} tone="ink" p={ease(f, t46, 8) * (1 - ease(f, t47 - 4, 8))} />
-        <Plate x={540} text="WHERE DOES THE LINE GO?" y={560} size={34} tone="cream" p={ease(f, t47 + 8, 10)} />
+        <Plate x={540} text="A BAN · ONE CLEAR RULE" y={640} size={34} tone="cream" p={ease(f, t45, 8) * (1 - ease(f, t46 - 6, 8))} />
+        <Plate x={540} text="A SIZE LINE" y={720} size={36} tone="ink" p={ease(f, t46, 8) * (1 - ease(f, t47 - 4, 8))} />
+        <Plate x={540} text="WHERE DOES THE LINE GO?" y={800} size={34} tone="cream" p={ease(f, t47 + 8, 10)} />
       </>}>
       <SVG>
         <Harbor f={g} id="s14" horizon={1000} dark={0} gold={gold} />
         <Boardwalk f={g} y0={1290} id="s14b" />
         {/* a thin golden break across the boards */}
         <path d="M-100,1290 L1180,1000 L1180,1180 L-100,1500 Z" fill={P.gold} opacity={0.18 * gold} />
-        <Cubby x={190} y={1400} s={0.62} f={g} emotion="nervous" phase={13.3} />
-        <Slab x={870} y={1400} w={430} h={270} f={g} id="s14s" windows={5} fans={2} />
+        <Cubby x={190} y={1322} s={0.62} f={g} emotion="nervous" phase={13.3} />
+        <Slab x={870} y={1322} w={430} h={270} f={g} id="s14s" windows={5} fans={2} />
         {/* the ruler hangs by two ropes */}
         <line x1={150} y1={-40} x2={150} y2={RY - 40} stroke={INK} strokeWidth={10} />
         <line x1={930} y1={-40} x2={930} y2={RY - 40} stroke={INK} strokeWidth={10} />
