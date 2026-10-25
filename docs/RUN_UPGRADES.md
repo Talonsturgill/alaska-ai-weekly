@@ -3925,3 +3925,8 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - In-run fixes: ship_gate blank-frame sampler skips the credits card; lib/sign.tsx (Plate with a telescoping body and a crack, Ruler with ink, dashed and open ticks) registered in ASSET_MANIFEST; the Plate's crack moved clear of its lettering; DISPATCH_STANDARD section 20.
 - Queued: held beats under 6 percent (repeat), ambience bed, top-third sky, Plate small-size guard, Gate 0 critic cap (repeat).
 - Cost: see runs/2026-10-25/cost.json.
+
+## 2026-10-25 weekly machine pass
+- Shipped: board_sync_check in Gate 0A (shots against their beats, stale ambient and means), held_beat_check that takes the camera and rain out and names every beat under 6 percent, a rain ambience bed in dispatch_mix when the board asks for it, and a Plate minimum lettered scale guard in make_cut.
+- Engine advance: none, the Plate guard is a prop with a pixel-identical default.
+- Still open: empty top third (needs two films to calibrate), ambience loops, a Gate 0 critic round cap (owner's call).

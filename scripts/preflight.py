@@ -153,7 +153,11 @@ CHECKS = [
     # judges listed the same sub-2-percent beats on 10-08 and again on 10-09, every one of them
     # already measured in out/evidence/motion.json. ADVISORY, never blocking: the NOTE line
     # carries the beat names into make_cut's summary, and the fix is an idle cycle per beat.
-    ("held beats move at least 2 percent",
+    # Machine pass 2026-10-25 (held-beats-under-six-percent, repeat 2): it now also solves the
+    # camera out of each strip and names every beat under 6 percent, the panel's line. On the
+    # 10-25 master that names all five beats the panel did (cord, testimony sheet, island,
+    # intakes, podium). Still ADVISORY until a shipped film clears it.
+    ("held beats move at least 2 percent, 6 with the camera solved out",
      [sys.executable, "scripts/held_beat_check.py"], False),
     # THE CAMERA DOES NOT PUNCTUATE BEATS (owner, 2026-10-03: "every like five seconds ...
     # the screen is shaking slightly ... it's just kind of overstimulating"). The 10-03 and

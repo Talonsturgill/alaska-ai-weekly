@@ -16,11 +16,18 @@ import {MONO} from './prospect';
 //           The horizontal twin of the HeightChart idea, without a pencil, because its drama is what is NOT on it.
 //
 // Draw space for the Plate: origin at the base centre (the ground line), +y down, about 300 wide and 245 tall.
+//
+// SMALL PLATES (machine pass 2026-10-25): the lettering is 34 px in draw space, so at s 0.62 it lands
+// at 21 px and the 10-25 panel read S4, S6 and S10 (s 0.5 to 0.62) as unreadable. Keep a lettered
+// Plate at PLATE_MIN_LETTERED_S or larger; a smaller cameo passes lettered={false} and is a face
+// without words. scripts/plate_scale_check.py fails the episode source otherwise, before the render.
 // =============================================================================
 export const SIGN = {
   cream: '#F3E9D2', creamShade: '#D9C9A6', brass: '#C8962E', brassHi: '#E7C46A', brassShade: '#8A6420',
   cedar: '#8A5A3B', cedarHi: '#B07A52', cedarShade: '#5E3B25', teal: '#2F6F6B', ink: INK, pink: '#E8457A', blue: '#4FA3C7',
 };
+
+export const PLATE_MIN_LETTERED_S = 0.8;
 
 export type PlateMood = 'smug' | 'plain' | 'strained' | 'worried' | 'curious' | 'alarm';
 
@@ -28,8 +35,8 @@ const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 
 export const Plate: React.FC<{
   x?: number; y?: number; s?: number; f: number; mood?: PlateMood; stretchPx?: number; crack?: number; look?: number; tilt?: number;
-  legs?: boolean; legH?: number; phase?: number; id?: string;
-}> = ({x = 0, y = 0, s = 1, f, mood = 'plain', stretchPx = 0, crack = 0, look = 0, tilt = 0, legs = true, legH = 44, phase = 0, id = 'pl'}) => {
+  legs?: boolean; legH?: number; phase?: number; id?: string; lettered?: boolean;
+}> = ({x = 0, y = 0, s = 1, f, mood = 'plain', stretchPx = 0, crack = 0, look = 0, tilt = 0, legs = true, legH = 44, phase = 0, id = 'pl', lettered = true}) => {
   const W = 300 + stretchPx;
   const H = 190;
   const base = legs ? legH : 0;
@@ -92,7 +99,7 @@ export const Plate: React.FC<{
       <path d={mouth} fill={mood === 'alarm' ? '#7A2A2A' : 'none'} stroke={INK} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
       {mood === 'strained' && <path d={`M ${-W / 2 + 40},${top + 70} q 14,-8 22,6 M ${W / 2 - 40},${top + 70} q -14,-8 -22,6`} stroke={SIGN.brassShade} strokeWidth={3} fill="none" opacity={0.55} />}
       {/* the lettering never scales: it is the fixed thing the body is stretched around */}
-      <text x={0} y={bottom - 30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={1.5} fill={INK}>DATA CENTER</text>
+      {lettered && <text x={0} y={bottom - 30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={1.5} fill={INK}>DATA CENTER</text>}
       {crack > 0.01 && (
         <g>
           <path d={crackPath} fill="none" stroke={INK} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" strokeDasharray={crackLen} strokeDashoffset={crackLen * (1 - clamp01(crack))} />

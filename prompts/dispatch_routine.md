@@ -675,7 +675,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   CameraMoves ('craneDown+dollyThrough' or 'static:<reason>'), stage3d: 'planes' | 'flat:<reason>'),
   hook block (pattern, frame1, headline 3 to 8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern, optional `bed` nodes
-  `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block),
+  `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block;
+  `ambience: ["rain"]` and/or `ambience_stem` (a repo WAV) put the world's continuous bed under
+  the film, and Gate 0A fails a board whose shot ambient lines name rain without one),
   divergence_note. Plus
   storyboard.md for humans. A per-run board script (copy `scripts/board_1015.py`) resolves word
   anchors through `scripts/board_anchor.py`, so after a VO edit its `conform` refuses to write and
@@ -687,7 +689,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   10s, never 3 near-identical gaps in a row). flow_check enforces FRONTLOAD, METRONOME, REHOOK and
   OPEN LOOP.
 - GATE 0A: `python3 scripts/storyboard_check.py` exit 0 (divergence vs recent history, shot
-  structure, flow block).
+  structure, flow block, and `scripts/board_sync_check.py`: shots[] rows that disagree with their
+  beats FAIL, and every `[board-sync-advisory]` line, painted text quoted differently in `shows`
+  and `draw.annotation` or a stale shot `means`, is cleared BEFORE Gate 0B reads the board).
 - GATE 0A': `python3 scripts/caption_band_check.py` exit 0, a SOURCE gate run BEFORE the render. It
   refuses raw `<rect>`/`<text>` in the open-caption band and any Plate whose authored y is not its
   rendered y. Background that belongs under the caption card declares `data-band="ok"`; never mark
