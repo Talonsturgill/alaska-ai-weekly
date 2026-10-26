@@ -522,3 +522,19 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **The 38-towers picture needs a skyline, not a ribbon.** A single stack of 38 at the end of a crane is one pixel wide. Seven columns by six levels read as a count and as a place.
 - **The credits card is flat by design.** ship_gate's blank-frame sampler landed on its first frame and blocked a film every judge had passed. The sampler now measures the story only (fixed this run).
 - **Held shots 10 to 11 measured 2 to 6 percent change for 20 seconds in every round.** Rain and a camera push do not count. Give each held beat an object with its own motion (water drops into the pans, a gull shifting, a card tilting).
+
+## 21. Things the 2026-10-26 gates, critics and panel found that were knowable in advance
+
+- **A map is a recognisable map or it is not drawn.** The first Alaska was a tan blob and three judges named it the weakest frame (authenticity, craft and a held-slide motion read at once). Use a real outline (Ep1026 `AK_PATH`, a 1000 by 720 silhouette with the Aleutian tail and the panhandle), put the two places on it at their true relative positions, and keep both labels off the route.
+- **A camera that pans beyond the canvas shows the frame's ink background.** `track()` now clamps fx and fy to the visible span (540 over z, 960 over z); never author z under 1.0 either, because the clamp can't fix a zoom-out.
+- **A plate in a shot with a moving camera sits over different art than you authored.** Plates are in the overlay, art is zoomed, so a label authored at y 820 sat at 836 on screen. Probe a frame at the end of the push before placing a plate stack.
+- **A pen, a tick or a coin crossing a label is a label_footprint FAIL.** Draw the tick above the YES text, keep the pen outside the slip, and put a hanging tag on its own line clear of the cord that hangs from it.
+- **A moratorium is a padlocked gate with a keyhole and a key (STUDY, a dashed FRAMEWORK), never a wall or a BAN plate**, and the key plate says NOT PASSED YET, never NOT WRITTEN YET when the same film shows a bill that passed one chamber.
+- **A hypothetical is drawn dashed.** Moore said data centers "could" pay a dividend, so the coins are outlines hovering over the slots, they start at the envelope and never pass the TAX register, and the plate says COULD PAY.
+- **A neutral faced hero stays out of beats that look like a side.** The BallotBox beside only the yes lecterns read as a verdict; it now appears only for the slip and the grid, never beside a candidate.
+- **A lamp that says ALERT is amber.** A green lamp under RECENT ENERGY ALERT read as all clear. Green means electricity only, so the warning lamp is amber and the line stays green.
+- **A name on a plate follows the name in the VO**, and a label for one candidate never sits under another's plate (ZONING IS LOCAL belongs to PRAX · HANEY and carries their names).
+- **Text inside a flip transform clips.** The bill sheet's headings and stamp were cut by the scaleX of the flip; size them for the narrowest frame of the flip.
+- **The mix needs a moving bed.** LRA 5.7 became 7.0 when the bed alternated between 0.12 and 1.0 across lines instead of sitting at 0.5 to 0.8.
+- **Floors and walls that run under the caption band take `data-band="ok"` on the element itself**, not on a parent group.
+- **ship_gate record takes the judges' NUMERIC scores** (`--judges 7.17,7.23,7.01`), and `upload_video.py` without `--name` writes a plain `dispatch_master.mp4`; always pass `--name dispatch-<date>-<basename>`.

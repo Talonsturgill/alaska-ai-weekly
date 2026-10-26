@@ -1,0 +1,68 @@
+{
+ "run_date": "2026-10-26",
+ "title": "NOT YES OR NO",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Data centers spark a varied opinion among Interior statehouse candidates",
+   "outlet": "Fairbanks Daily News-Miner",
+   "url": "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html",
+   "claims": [
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c21"
+   ],
+   "used_in_film": true,
+   "note": "Jack Barnwell, Oct 18 2026"
+  },
+  {
+   "id": "s2",
+   "title": "Energy takes center stage in race to represent South Anchorage House district",
+   "outlet": "Anchorage Daily News",
+   "url": "https://www.adn.com/politics/alaska-legislature/2026/10/21/energy-takes-center-stage-in-race-to-represent-south-anchorage-house-district/",
+   "claims": [
+    "c10",
+    "c11",
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "Mari Kanagy, Oct 22 2026"
+  },
+  {
+   "id": "s3",
+   "title": "Where do Alaska's four governor candidates stand on data centers?",
+   "outlet": "Alaska Beacon",
+   "url": "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/",
+   "claims": [
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21"
+   ],
+   "used_in_film": true,
+   "note": "James Brooks, Sep 18 2026"
+  },
+  {
+   "id": "s4",
+   "title": "Gubernatorial candidates make their pitch at the Alaska Federation of Natives convention",
+   "outlet": "Alaska Beacon",
+   "url": "https://alaskabeacon.com/2026/10/24/gubernatorial-candidates-make-their-pitch-at-the-alaska-federation-of-natives-convention/",
+   "claims": [
+    "c1"
+   ],
+   "used_in_film": true,
+   "note": "Oct 24 2026, early voting Oct 19 and Election Day Nov 3"
+  }
+ ]
+}

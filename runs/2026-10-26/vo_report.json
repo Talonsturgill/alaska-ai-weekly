@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.984,
+    "heard": "This fall, Alaska's candidates are being asked about data centers, and Election Day is November 3rd. At a Fairbanks area forum, 12 legislative candidates generally agreed that big data centers need rules and local input, per the news minor. One bill already tried to write those rules down. Hold that thought. Then, the candidates split on how, and three backed a state moratorium until Alaska can study the issue. Republican Jeff Renssel favored some sort of tax, and Republican Amy Moore said data centers could pay every Alaskan a digital dividend. In South Anchorage, independent representative Kai Holland wants modest data centers, and Republican John Boyle is open to large ones, especially on the North Slope. For Governor, Republican Dave Bronson said in September, I'm a big believer in data centers, and Republican Treg Taylor said, we need to embrace it. Republican Governor candidate Bernadette Wilson wrote in September that she will never allow Alaska to be littered with hyperscale data centers. Democrat Jonathan Christ Tompkins, running for governor, said in September he wants a moratorium until the legislature passes a framework. In the interior, legislative candidate Harmony Thomas Sheffsky said the grid isn't ready, and Mike Prax and Barbara Haney said zoning is local. Yet Holland and Boyle both see data centers as a way to attract energy investment. So, where is the rule? This year, the Senate voted 14 to 5 for a data center bill on how they use utility power with decommissioning plants. The House never took it up, and Senator Loki Tobin plans to return next year. So the argument is often less yes or no than size, place, and who pays. Which one decides your vote?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.032,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 5.39,
+        "voiced_frac": 0.57,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 120.04,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 120.04,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.984,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.969,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.982,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}
