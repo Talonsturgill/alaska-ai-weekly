@@ -97,6 +97,13 @@ step label_footprint   1 python3 scripts/label_footprint_check.py
 # the props, so resolve it here, naming every short beat at once.
 step evidence_plan     1 python3 scripts/build_evidence.py --check-plan
 step staging          0 python3 scripts/staging_check.py
+# Machine pass 2026-10-26, a repeat offender (10-22, 10-24, 10-25, 10-26: held beats under 6 percent
+# with the camera solved out, named by the panel after the render every time). The strip windows
+# come from the board and the VO clock, so render only frame 1 and frame 8 of each in Chrome (about
+# a minute) and name each HELD beat by shot before the full render. Advisory: the NOTE is the work
+# order, a <HeldTravel> on the held thing (lib/heldidle.tsx). On Ep1026 it names the same twelve
+# beats the master-mode measure and the panel did.
+step held_plan        0 python3 scripts/held_beat_check.py --source
 
 # 1b. The mix, every cut (machine pass 2026-10-09). The mix receipt hashes storyboard.json,
 # episode_props.json and vo_lines.json, so a board or build_scenes change after the last mix

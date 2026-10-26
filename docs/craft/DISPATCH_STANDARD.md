@@ -67,6 +67,15 @@ document, not of the judge.
   silhouette (2.8 to 6.2 percent median change on the prop in `HeldPropLook`, 0 when bare). A whole-
   frame camera drift is not prop life: motion_registered solves it out and judges still call the
   prop frozen. `gain={0}` only where stillness is the point.
+- **A held beat needs AREA in motion, so give the held thing a travelling element: `<HeldTravel>`**
+  (`lib/heldidle.tsx`, machine pass 2026-10-26, after 10-22, 10-24, 10-25 and 10-26 panels all
+  capped Motion on beats under 6 percent with the camera solved out, twelve strips on 10-26). The
+  rock moves a prop's edges and lifts a frame about one point; a sweep of light across it, a shadow
+  drifting over it, or a runner along its cord lifts a 460x320 sheet 2.5 points more
+  (`python3 scripts/held_travel_look_check.py`). 'sweep' for a mid-tone or dark thing, 'shadow' for a
+  pale sheet or wall, 'runner' with a `path` for a cord, wire or rail. It draws no text and never
+  counts as cover over a label. `make_cut.sh` runs `held_beat_check.py --source` before the render
+  and its NOTE line names each HELD beat by shot: put a HeldTravel on those, not a bigger camera move.
 - **The weight shift is applied ABOVE the feet.** Applying it at the character root slides
   the boots and their contact shadows along the ground, which reads as skating. Torso
   carries the full shift, legs about a third, boots stay planted.
