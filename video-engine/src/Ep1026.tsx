@@ -271,6 +271,7 @@ const Pole: React.FC<{x: number; y: number; s?: number; sag?: number; lamp?: num
         <rect x={-34} y={-30} width={68} height={60} rx={10} fill="#3D4652" stroke={INK} strokeWidth={5.4} />
         <circle cx={0} cy={0} r={20} fill={lamp > 0.05 ? '#F2A33B' : '#6B7F70'} opacity={0.5 + 0.5 * lamp * (0.5 + 0.5 * flick)} stroke={INK} strokeWidth={4} />
         {lamp > 0.05 && <circle cx={0} cy={0} r={60 + 30 * flick} fill="#F2A33B" opacity={0.18 * lamp} />}
+        {lamp > 0.05 && [0, 1].map((i) => { const k = ((f / 40 + i * 0.5) % 1); return <circle key={i} cx={0} cy={0} r={24 + 120 * k} fill="none" stroke="#F2A33B" strokeWidth={5} opacity={0.6 * (1 - k) * lamp} />; })}
       </g>
     </g>
   );
@@ -355,7 +356,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <Hall f={g} id="s2" floorY={1060} />
         <rect data-band="ok" x={0} y={1060} width={W} height={380} fill={P.wood} stroke={INK} strokeWidth={6} />
         {Array.from({length: 6}).map((_, i) => <line key={i} x1={0} y1={1100 + i * 60} x2={W} y2={1100 + i * 60} stroke={P.woodShade} strokeWidth={3} opacity={0.5} />)}
-        <LecternRows f={g} litAt={t6} nodAt={t7} signAt={t8} lateTwo id="s2l" />
+        <LecternRows f={g} litAt={t6} nodAt={t7} id="s2l" />
         <NearRail f={g} y={1520} seed={2} />
       </SVG>
     </Frame>
@@ -459,9 +460,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Hall f={g} id="s5" floorY={1000} />
         <rect data-band="ok" x={-40} y={1000} width={W + 80} height={420} fill={P.woodHi} stroke={INK} strokeWidth={7} />
         {Array.from({length: 7}).map((_, i) => <line key={i} x1={0} y1={1040 + i * 56} x2={W} y2={1040 + i * 56} stroke={P.woodShade} strokeWidth={3} opacity={0.45} />)}
-        <Rails x={540} y={960} s={1.15} f={g} vals={[0.5, 0.5, knob]} labels={['SIZE', 'PLACE', 'WHO PAYS']} onlyIdx={2} w={560} pulse={[0, 0, bump(f, t16, 20)]} />
+        <Rails x={540} y={960} s={1.35} f={g} vals={[0.5, 0.5, knob]} labels={['SIZE', 'PLACE', 'WHO PAYS']} onlyIdx={2} w={560} pulse={[0, 0, bump(f, t16, 20)]} />
         {/* the cash register */}
-        <g transform="translate(250,1230)" opacity={1 - 0.55 * ease(f, t17, 10)}>
+        <g transform="translate(260,1250) scale(1.3)" opacity={1 - 0.55 * ease(f, t17, 10)}>
           <ContactShadow cx={0} cy={4} rx={170} ry={14} opacity={0.34} blur={8} />
           <Blk x={-150} y={-170} w={300} h={170} c="#7E5B2E" id="s5r" r={12} sw={7} />
           <rect x={-110} y={-250} width={220} height={90} rx={10} fill={P.cream} stroke={INK} strokeWidth={6} />
@@ -526,7 +527,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const roll = easeIO(f, t21, 44);
   const SP = {x: 40 + 495, y: 560 + 430}, NP = {x: 40 + 600, y: 560 + 70};
   const hx = lerp(SP.x, NP.x, roll), hy = lerp(SP.y, NP.y, roll);
-  const cam = track([{t: 0, z: 1.2, fx: 540, fy: 1150}, {t: t21 + 10, z: 1.1, fx: 580, fy: 960}, {t: t22 + 36, z: 1.0, fx: 540, fy: 940}, {t: p.dur, z: 1.0, fx: 540, fy: 940}]);
+  const cam = track([{t: 0, z: 1.22, fx: 470, fy: 1180}, {t: t21 + 10, z: 1.12, fx: 600, fy: 940}, {t: t22 + 36, z: 1.04, fx: 560, fy: 930}, {t: p.dur, z: 1.06, fx: 520, fy: 960}]);
   const cord = ease(f, t22 - 6, 14);
   const cs = 34 * Math.sin(g / 14);
   return (
@@ -548,6 +549,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <path d={`M ${SP.x},${SP.y} Q ${SP.x + 40},${(SP.y + NP.y) / 2} ${NP.x},${NP.y}`} stroke={INK} strokeWidth={20} fill="none" strokeLinecap="round" strokeDasharray="2 42" opacity={0.9} />
         <g transform={`translate(${SP.x},${SP.y})`}><circle r={17} fill={P.brick} stroke={INK} strokeWidth={5} /><circle r={26 + 6 * Math.sin(g / 9)} fill="none" stroke={P.brick} strokeWidth={3} opacity={0.5} /></g>
         <g transform={`translate(${NP.x},${NP.y})`}><circle r={17} fill={P.inkBlue} stroke={INK} strokeWidth={5} /><circle r={26 + 6 * Math.sin(g / 9 + 1)} fill="none" stroke={P.inkBlue} strokeWidth={3} opacity={0.5} /></g>
+        {[0, 1, 2, 3].map((i) => { const k = ((g * 0.012 + i * 0.25) % 1); return <circle key={i} cx={lerp(SP.x, NP.x, k) + 18 * Math.sin(k * Math.PI)} cy={lerp(SP.y, NP.y, k)} r={7} fill={P.cream} stroke={INK} strokeWidth={3} opacity={0.9} />; })}
         {shed > 0.02 && <g transform={`translate(0,${(1 - shed) * -80})`} opacity={shed}><Building x={SP.x - 65} y={SP.y - 20} w={130} h={78} id="s6s" windows={2} kind="shed" f={g} /></g>}
         {roll > 0 && <Building x={hx - 120} y={hy + 40} w={240} h={96} id="s6h" windows={5} kind="hall" f={g} />}
         {/* the dangling cord from the top of the frame: planted for the pay at the shed */}
@@ -732,7 +734,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <DuskSky f={g} id="s9d" />
         <g transform={`translate(${lerp(500, 0, slideIn)},0)`}><Pole x={500} y={1360} s={1.2} sag={sag} lamp={lamp} f={g} id="s9p" reach={620} /></g>
         {/* a small rail card: WHO PAYS jams, then PLACE slides to LOCAL */}
-        <g transform="translate(250,930)">
+        <g transform="translate(250,850)">
           <rect x={-170} y={-96} width={340} height={ 268} rx={10} fill={P.cream} stroke={INK} strokeWidth={6} opacity={0.94} />
           <g transform={`translate(${jamShake},0)`}><Rails x={0} y={-14} s={0.95} f={g} vals={[0.5, f < t53 ? 0.5 : lerp(0.5, 0.06, local), 0.55 + 0.03 * jam]} labels={['SIZE', 'PLACE', 'WHO PAYS']} w={290} pulse={[0, bump(f, t53, 20), jam > 0.5 ? 0.6 : 0]} /></g>
           
@@ -878,6 +880,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
           {[-1, 1].map((sx) => <rect key={sx} x={sx * 170 - 14} y={-164} width={28} height={170} fill={P.wood} stroke={INK} strokeWidth={5} />)}
           <g transform="translate(0,-214)"><BillSheet x={0} y={0} s={0.5} rot={-5} f={g} face typed={1} stamp={1} id="s12b" /></g>
           {Array.from({length: 4}).map((_, i) => <circle key={i} cx={-140 + i * 90 + 10 * Math.sin(g / 14 + i)} cy={-250 - ((g * 0.5 + i * 19) % 40)} r={3} fill={P.creamShade} opacity={0.5} />)}
+          {Array.from({length: 18}).map((_, i) => <circle key={`d${i}`} cx={((g * (0.6 + rnd(i) * 0.8) + rnd(i + 3) * 1300) % 1300) - 160} cy={-400 - 300 * rnd(i + 8) + 14 * Math.sin(g / 20 + i)} r={2 + 2.4 * rnd(i + 2)} fill="#fff" opacity={0.35} />)}
         </g>
         <g transform={`translate(890,1450) rotate(${toll * 10 * Math.sin(g / 2.4)})`}>
           <ContactShadow cx={0} cy={6} rx={60} ry={10} opacity={0.34} blur={8} />
