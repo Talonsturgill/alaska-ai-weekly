@@ -147,7 +147,7 @@ export const Slip: React.FC<{
   const gid = `${id}_g`;
   const W = 380, H = 520;
   const m = clamp01(melt);
-  const boxFade = 1 - clamp01((m - 0.55) / 0.3);
+  const boxFade = 1 - clamp01((m - 0.4) / 0.22);
   const sag = m * 70;
   const flutter = 2.2 * Math.sin(f / 13 + x * 0.01) + 0.8 * Math.sin(f / 5.3);
   const box = (cx: number, label: string, i: number) => {
@@ -174,7 +174,7 @@ export const Slip: React.FC<{
       {!blank && <>
         {box(-92, 'YES', 0)}
         {box(92, 'NO', 1)}
-        {m > 0.5 && <Rails x={0} y={-60 + sag * 0.2} s={0.95} f={f} vals={vals} pulse={pulse} show={clamp01((m - 0.55) / 0.3)} w={300} />}
+        {m > 0.6 && <Rails x={0} y={-60 + sag * 0.2} s={0.95} f={f} vals={vals} pulse={pulse} show={clamp01((m - 0.68) / 0.26)} w={300} />}
       </>}
       {blank && <>
         {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={-W / 2 + 40} y={-H / 2 + 150 + i * 56} width={W - 80} height={6} rx={3} fill={BAL.navy} opacity={0.35} />)}
@@ -210,9 +210,16 @@ export const Lectern: React.FC<{
       <ContactShadow cx={0} cy={6 + hop * 28} rx={86} ry={11} opacity={0.34 - hop * 0.12} blur={7} />
       {bust && (
         <g>
-          <path d="M -46,-196 Q -48,-262 0,-264 Q 48,-262 46,-196 Z" fill={BAL.navy} stroke={INK} strokeWidth={5.4} />
-          <circle cx={0} cy={-300} r={31} fill={BAL.navy} stroke={INK} strokeWidth={5.4} />
-          <path d="M -26,-312 Q -10,-324 14,-322" stroke={BAL.steelHi} strokeWidth={4} fill="none" opacity={0.5} />
+          <g transform={`translate(0,${-196}) scale(1,${1 + 0.022 * Math.sin(f / 15 + phase)}) translate(0,${196})`}>
+            <path d="M -46,-196 Q -48,-262 0,-264 Q 48,-262 46,-196 Z" fill={BAL.navy} stroke={INK} strokeWidth={5.4} />
+            <path d="M -40,-204 Q -42,-250 -8,-258" stroke={BAL.steelHi} strokeWidth={5} fill="none" opacity={0.55} />
+            <path d="M -14,-262 L 0,-236 L 14,-262" fill={BAL.cream} stroke={INK} strokeWidth={3.6} strokeLinejoin="round" />
+          </g>
+          <g transform={`translate(0,-262) rotate(${5 * Math.sin(f / 37 + phase * 1.7)}) translate(0,262)`}>
+            <circle cx={0} cy={-300} r={31} fill={BAL.navy} stroke={INK} strokeWidth={5.4} />
+            <path d="M -26,-312 Q -10,-324 14,-322" stroke={BAL.steelHi} strokeWidth={4} fill="none" opacity={0.6} />
+            <path d="M 18,-290 Q 30,-300 24,-318" stroke="#fff" strokeWidth={3} fill="none" opacity={0.25} />
+          </g>
         </g>
       )}
       <path d="M -70,-190 L 70,-190 L 82,-176 L 82,-6 Q 82,0 76,0 L -76,0 Q -82,0 -82,-6 L -82,-176 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
@@ -319,14 +326,14 @@ export const BillSheet: React.FC<{
                 <circle cx={-W / 2 + 46} cy={0} r={20} fill={i === 0 ? BAL.aurora : BAL.honey} stroke={INK} strokeWidth={4.4} opacity={clamp01(typed * 3 - i)} />
                 {i === 0 ? <path d={`M ${-W / 2 + 38},-6 l 0,-8 M ${-W / 2 + 54},-6 l 0,-8 M ${-W / 2 + 34},-5 l 24,0 l -4,12 l -16,0 Z`} stroke={INK} strokeWidth={3.4} fill="none" opacity={clamp01(typed * 3 - i)} />
                   : <path d={`M ${-W / 2 + 36},10 l 0,-18 l 12,0 l 8,-8 l 4,6 l -8,6 l 0,14 Z`} fill={INK} opacity={clamp01(typed * 3 - i) * 0.9} />}
-                <text x={-W / 2 + 80} y={9} fontFamily={MONO} fontWeight={800} fontSize={lines[i].length > 18 ? 17.5 : 21} letterSpacing={0.6} fill={INK}>{shown(lines[i], clamp01(typed * 2 - i))}</text>
+                <text x={-W / 2 + 72} y={7} fontFamily={MONO} fontWeight={800} fontSize={lines[i].length > 18 ? 15 : 18} letterSpacing={0.4} fill={INK}>{shown(lines[i], clamp01(typed * 2 - i))}</text>
               </g>
             ))}
             {[0, 1, 2].map((i) => <rect key={i} x={-W / 2 + 34} y={-H / 2 + 250 + i * 30} width={W - 68 - (i === 2 ? 90 : 0)} height={5} rx={2.5} fill={BAL.navy} opacity={0.3} />)}
             {stamp > 0.02 && (
-              <g transform={`translate(40,${H / 2 - 70}) rotate(-12) scale(${1 + 0.4 * (1 - clamp01(stamp))})`} opacity={clamp01(stamp * 2)}>
-                <rect x={-96} y={-26} width={192} height={52} rx={6} fill="none" stroke={BAL.navy} strokeWidth={5} />
-                <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={25} letterSpacing={2} fill={BAL.navy}>SENATE PASSED</text>
+              <g transform={`translate(10,${H / 2 - 70}) rotate(-10) scale(${1 + 0.3 * (1 - clamp01(stamp))})`} opacity={clamp01(stamp * 2)}>
+                <rect x={-96} y={-24} width={192} height={48} rx={6} fill="none" stroke={BAL.navy} strokeWidth={5} />
+                <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={1} fill={BAL.navy}>SENATE PASSED</text>
               </g>
             )}
           </g>
@@ -366,8 +373,8 @@ export const InTray: React.FC<{
       <rect x={-236} y={-112} width={472} height={26} rx={9} fill={BAL.woodHi} stroke={INK} strokeWidth={6} />
       <rect x={-224} y={-108} width={448} height={5} rx={2.5} fill="#fff" opacity={0.4} />
       <g transform={`translate(-150,-48) rotate(${-4 + 14 * Math.max(0, 1 - tab) * Math.sin(f / 3)})`}>
-        <rect x={-54} y={-17} width={108} height={34} rx={5} fill={BAL.cream} stroke={INK} strokeWidth={4.4} />
-        <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={21} letterSpacing={2} fill={INK}>{tabText}</text>
+        <rect x={-66} y={-17} width={132} height={34} rx={5} fill={BAL.cream} stroke={INK} strokeWidth={4.4} />
+        <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={tabText.length > 6 ? 18 : 21} letterSpacing={1.5} fill={INK}>{tabText}</text>
       </g>
       <g transform="translate(208,-122)">
         <rect x={-5} y={-70} width={10} height={70} rx={3} fill={BAL.steelShade} stroke={INK} strokeWidth={4} />

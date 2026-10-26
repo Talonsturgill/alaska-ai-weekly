@@ -184,21 +184,47 @@ const Hall: React.FC<{f: number; id: string; dusk?: number; floorY?: number; wal
   );
 };
 
-/** a near-plane rail and floor planks under the caption card so the lower third is a stage */
-const NearRail: React.FC<{f: number; y?: number; dusk?: number}> = ({f, y = 1560, dusk = 0}) => (
-  <g data-band="ok" opacity={1 - dusk * 0.15}>
-    <rect x={-40} y={y + 80} width={W + 80} height={H - y} fill={P.mapleDeep} stroke={INK} strokeWidth={5} />
-    <rect x={-40} y={y} width={W + 80} height={26} rx={6} fill={P.woodHi} stroke={INK} strokeWidth={5} />
-    {Array.from({length: 9}).map((_, i) => <rect key={i} x={20 + i * 130 + 6 * Math.sin(f / 60)} y={y + 26} width={22} height={54} rx={5} fill={P.wood} stroke={INK} strokeWidth={4} />)}
-    <rect x={-40} y={y - 6} width={W + 80} height={8} fill="#fff" opacity={0.25} />
-    {/* a front row of folding chairs, backs only, in the near plane under the caption card */}
-    {Array.from({length: 5}).map((_, i) => (
-      <g key={i} transform={`translate(${60 + i * 230 + 6 * Math.sin(f / 50 + i)},${y + 190})`}>
-        <rect x={-70} y={0} width={140} height={110} rx={12} fill="#2A3556" stroke={INK} strokeWidth={6} />
-        <rect x={-56} y={12} width={112} height={18} rx={6} fill="#4A5A88" opacity={0.7} />
-        {[-52, 52].map((cx) => <rect key={cx} x={cx - 7} y={106} width={14} height={110} fill="#1B2440" stroke={INK} strokeWidth={4} />)}
+/** a near-plane rail and floor planks under the caption card so the lower third is a stage. kind: chairs (varied row, some empty, a spotlight pool), spruce (dark foreground trees on a snow bank, for the dusk shots), bare. */
+const NearRail: React.FC<{f: number; y?: number; dusk?: number; kind?: 'chairs' | 'spruce' | 'bare'; seed?: number}> = ({f, y = 1560, dusk = 0, kind = 'chairs', seed = 1}) => (
+  <g data-band="ok" opacity={1 - dusk * 0.1}>
+    {kind === 'spruce' ? (
+      <g>
+        <rect data-band="ok" x={-40} y={y + 20} width={W + 80} height={H - y} fill="#2B3050" stroke={INK} strokeWidth={5} />
+        <path d={`M -40,${y + 30} Q 270,${y - 10} 540,${y + 24} T 1120,${y + 20} L 1120,${y + 80} L -40,${y + 80} Z`} fill="#E6ECF4" stroke={INK} strokeWidth={5} />
+        {Array.from({length: 9}).map((_, i) => {
+          const tx = 40 + i * 125 + 30 * rnd(i + seed * 7), th = 150 + 150 * rnd(i + seed * 3 + 5);
+          return (
+            <g key={i} transform={`translate(${tx},${y + 120}) rotate(${1.4 * Math.sin(f / 40 + i)})`}>
+              <path d={`M 0,${-th} L 46,-30 L 18,-30 L 62,60 L -62,60 L -18,-30 L -46,-30 Z`} fill="#141A33" stroke={INK} strokeWidth={4} />
+              <path d={`M 0,${-th + 8} L 20,${-th + 70} L 0,${-th + 62} Z`} fill="#3A4570" opacity={0.7} />
+            </g>
+          );
+        })}
       </g>
-    ))}
+    ) : (
+      <g>
+        <rect data-band="ok" x={-40} y={y + 80} width={W + 80} height={H - y} fill={P.mapleDeep} stroke={INK} strokeWidth={5} />
+        <rect x={-40} y={y} width={W + 80} height={26} rx={6} fill={P.woodHi} stroke={INK} strokeWidth={5} />
+        {Array.from({length: 9}).map((_, i) => <rect key={i} x={20 + i * 130 + 6 * Math.sin(f / 60)} y={y + 26} width={22} height={54} rx={5} fill={P.wood} stroke={INK} strokeWidth={4} />)}
+        <rect x={-40} y={y - 6} width={W + 80} height={8} fill="#fff" opacity={0.25} />
+        {kind === 'chairs' && (
+          <g>
+            <ellipse cx={200 + 600 * rnd(seed + 40)} cy={y + 250} rx={330} ry={110} fill="#fff" opacity={0.12} />
+            {Array.from({length: 5}).map((_, i) => {
+              if (rnd(i + seed * 11) < 0.22) return null;
+              const hh = 90 + 60 * rnd(i + seed * 5 + 2);
+              return (
+                <g key={i} transform={`translate(${60 + i * 230 + 6 * Math.sin(f / 50 + i)},${y + 160 + 70 * rnd(i + seed * 13)})`}>
+                  <rect x={-70} y={0} width={140} height={hh} rx={12} fill="#2A3556" stroke={INK} strokeWidth={6} />
+                  <rect x={-56} y={12} width={112} height={18} rx={6} fill="#4A5A88" opacity={0.7} />
+                  {[-52, 52].map((cx) => <rect key={cx} x={cx - 7} y={hh - 4} width={14} height={110} fill="#1B2440" stroke={INK} strokeWidth={4} />)}
+                </g>
+              );
+            })}
+          </g>
+        )}
+      </g>
+    )}
   </g>
 );
 
@@ -231,10 +257,10 @@ const Building: React.FC<{x: number; y: number; w: number; h: number; id: string
 
 /** the power pole. sag 0..1 droops the line, lamp 0..1 lights the alert lamp (green is electricity only). */
 const Pole: React.FC<{x: number; y: number; s?: number; sag?: number; lamp?: number; f: number; id: string; reach?: number}> = ({x, y, s = 1, sag = 0, lamp = 0, f, id, reach = 520}) => {
-  const sg = 40 + sag * 150;
+  const sg = 40 + sag * 150 + 7 * Math.sin(f / 13) + 4 * Math.sin(f / 7.3);
   const flick = lamp > 0.05 ? 0.5 + 0.5 * Math.sin(f / 2.2) : 0;
   return (
-    <g transform={`translate(${x},${y}) scale(${s})`}>
+    <g transform={`translate(${x},${y}) rotate(${0.8 * Math.sin(f / 33)}) scale(${s})`}>
       <ContactShadow cx={0} cy={4} rx={70} ry={11} opacity={0.34} blur={8} />
       <Blk x={-17} y={-620} w={34} h={620} c={P.wood} id={id} r={6} sw={6} />
       <Blk x={-120} y={-600} w={240} h={26} c={P.woodHi} id={`${id}x`} r={6} sw={5} />
@@ -243,8 +269,8 @@ const Pole: React.FC<{x: number; y: number; s?: number; sag?: number; lamp?: num
       {[-100, 100].map((sx) => <circle key={sx} cx={sx} cy={-585} r={11} fill={P.cream} stroke={INK} strokeWidth={4.4} />)}
       <g transform="translate(0,-470)">
         <rect x={-34} y={-30} width={68} height={60} rx={10} fill="#3D4652" stroke={INK} strokeWidth={5.4} />
-        <circle cx={0} cy={0} r={20} fill={P.aurora} opacity={0.2 + 0.8 * lamp * (0.6 + 0.4 * flick)} stroke={INK} strokeWidth={4} />
-        {lamp > 0.05 && <circle cx={0} cy={0} r={60 + 30 * flick} fill={P.aurora} opacity={0.14 * lamp} />}
+        <circle cx={0} cy={0} r={20} fill={lamp > 0.05 ? '#F2A33B' : '#6B7F70'} opacity={0.5 + 0.5 * lamp * (0.5 + 0.5 * flick)} stroke={INK} strokeWidth={4} />
+        {lamp > 0.05 && <circle cx={0} cy={0} r={60 + 30 * flick} fill="#F2A33B" opacity={0.18 * lamp} />}
       </g>
     </g>
   );
@@ -273,7 +299,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Hall f={g} id="s1" floorY={1180} />
-        <NearRail f={g} y={1580} />
+        <NearRail f={g} y={1580} seed={1} />
         <g transform="translate(0,0)">
           <Slip x={sx} y={sy} s={sc} f={g} melt={melt} rot={-4} vals={vals} pulse={[rail > 0.9 ? bump(f, t4 + 6, 20) : 0, 0, 0]} penAt={penOn ? 250 : undefined} id="s1sl" head="DATA CENTERS?" />
         </g>
@@ -300,8 +326,8 @@ const LecternRows: React.FC<{f: number; litAt: number; nodAt: number; id: string
           {sg > 0.02 && (
             <g transform={`translate(${x0 - 4 * sc},${y0 - (300 + 40 * sg) * sc}) scale(${sc * 1.2 * sg})`}>
               <rect x={-3} y={0} width={6} height={52} fill={P.creamShade} stroke={INK} strokeWidth={3.4} />
-              <rect x={-44} y={-26} width={88} height={30} rx={4} fill={P.cream} stroke={INK} strokeWidth={4} />
-              <text x={0} y={-5} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={INK}>{(i % 2) ? 'LOCAL' : 'RULES'}</text>
+              <rect x={-68} y={-26} width={136} height={30} rx={4} fill={P.cream} stroke={INK} strokeWidth={4} />
+              <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={11} fill={INK}>RULES + LOCAL</text>
             </g>
           )}
         </g>
@@ -330,7 +356,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={0} y={1060} width={W} height={380} fill={P.wood} stroke={INK} strokeWidth={6} />
         {Array.from({length: 6}).map((_, i) => <line key={i} x1={0} y1={1100 + i * 60} x2={W} y2={1100 + i * 60} stroke={P.woodShade} strokeWidth={3} opacity={0.5} />)}
         <LecternRows f={g} litAt={t6} nodAt={t7} signAt={t8} lateTwo id="s2l" />
-        <NearRail f={g} y={1520} />
+        <NearRail f={g} y={1520} seed={2} />
       </SVG>
     </Frame>
   );
@@ -357,7 +383,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Hall f={g} id="s3" floorY={1160} />
-        <NearRail f={g} y={1560} />
+        <NearRail f={g} y={1560} kind="bare" />
         {/* the rail the slip rides on */}
         <rect x={-40} y={600} width={W + 80} height={22} rx={11} fill={P.inkBlue} stroke={INK} strokeWidth={5} />
         <rect x={-40} y={604} width={W + 80} height={5} rx={2} fill="#fff" opacity={0.2} />
@@ -405,7 +431,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           <g key={i}><Lectern x={gx - 270 + i * 66} y={1350 - i * 12} s={0.74} f={g} lit={1} card="" phase={i * 2.1} id={`s4h${i}`} hop={0} /></g>
         ))}
         <Gate x={gx} y={1390} s={1.2} f={g} keyLabel="STUDY" keyK={key * 0.78} open={0} id="s4g" keyShow={ease(f, t14 - 10, 8)} />
-        <NearRail f={g} y={1540} />
+        <NearRail f={g} y={1540} seed={4} />
       </SVG>
     </Frame>
   );
@@ -421,7 +447,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const env = ease(f, t17, 20);
   const pour = clamp01((f - t18) / 70);
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 1010}, {t: p.dur, z: 1.1, fx: 540, fy: 1090}]);
-  const slotX = (i: number) => 330 + i * 78;
+  const slotX = (i: number) => 720 + i * 52;
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -435,11 +461,11 @@ const S5: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 7}).map((_, i) => <line key={i} x1={0} y1={1040 + i * 56} x2={W} y2={1040 + i * 56} stroke={P.woodShade} strokeWidth={3} opacity={0.45} />)}
         <Rails x={540} y={820} s={1.15} f={g} vals={[0.5, 0.5, knob]} labels={['SIZE', 'PLACE', 'WHO PAYS']} onlyIdx={2} w={560} pulse={[0, 0, bump(f, t16, 20)]} />
         {/* the cash register */}
-        <g transform="translate(250,1230)">
+        <g transform="translate(250,1230)" opacity={1 - 0.55 * ease(f, t17, 10)}>
           <ContactShadow cx={0} cy={4} rx={170} ry={14} opacity={0.34} blur={8} />
           <Blk x={-150} y={-170} w={300} h={170} c="#7E5B2E" id="s5r" r={12} sw={7} />
           <rect x={-110} y={-250} width={220} height={90} rx={10} fill={P.cream} stroke={INK} strokeWidth={6} />
-          <text x={0} y={-188} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={42} fill={INK}>{f > t16 ? 'TAX' : '— —'}</text>
+          <text x={0} y={-188} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={42} fill={INK}>{f > t16 ? 'TAX' : ''}</text>
           {[0, 1, 2, 3].map((i) => [0, 1].map((j) => <rect key={`${i}${j}`} x={-120 + i * 60} y={-140 + j * 40} width={46} height={28} rx={5} fill={P.honey} stroke={INK} strokeWidth={4} />))}
           <rect x={-130} y={-30 + 36 * drawer} width={260} height={42} rx={7} fill="#4A3216" stroke={INK} strokeWidth={6} />
           {drawer > 0.2 && Array.from({length: 4}).map((_, i) => <Coin key={i} x={-90 + i * 56} y={-12 + 36 * drawer} s={0.8} />)}
@@ -453,7 +479,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         </g>
         {/* a row of identical mail slots along the desk front */}
         {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-          <g key={i} transform={`translate(${slotX(i) - 80},1400)`}>
+          <g key={i} transform={`translate(${slotX(i) - 130},1400)`}>
             <rect x={-26} y={-18} width={52} height={30} rx={5} fill={P.cream} stroke={INK} strokeWidth={4.4} />
             <rect x={-16} y={-8} width={32} height={8} rx={3} fill={INK} />
           </g>
@@ -461,21 +487,33 @@ const S5: React.FC<SceneProps> = ({p}) => {
         {pour > 0 && Array.from({length: 8}).map((_, i) => {
           const k = clamp01(pour * 1.6 - i * 0.12);
           const kk = Math.min(k, 0.78);
-          return k > 0 ? <g key={i} opacity={0.75}><circle cx={lerp(760 + i * 6, slotX(i) - 80, kk)} cy={lerp(1170, 1320, kk * kk) - 120 * Math.sin(kk * Math.PI)} r={17} fill="none" stroke={INK} strokeWidth={4.4} strokeDasharray="7 6" /></g> : null;
+          return k > 0 ? <g key={i} opacity={0.75}><circle cx={lerp(800 + i * 4, slotX(i) - 130, kk)} cy={lerp(1170, 1320, kk * kk) - 120 * Math.sin(kk * Math.PI)} r={17} fill="none" stroke={INK} strokeWidth={4.4} strokeDasharray="7 6" /></g> : null;
         })}
-        <NearRail f={g} y={1570} />
+        <NearRail f={g} y={1570} kind="bare" />
       </SVG>
     </Frame>
   );
 };
 
 // ---- S6: shed or hall on a painted map (keys 19, 20, 21, 22) ----------------------------------------------------------------------------------
-const MapLand: React.FC<{id: string}> = ({id}) => (
+const AK_PATH = 'M 880,70 L 800,50 L 730,40 L 660,52 L 590,38 L 520,56 L 470,26 L 425,45 L 395,95 L 340,128 L 300,118 L 255,150 L 205,168 L 190,150 L 215,205 L 270,222 L 245,270 L 205,315 L 185,372 L 212,425 L 262,455 L 300,478 L 262,505 L 205,545 L 130,575 L 70,605 L 25,625 L 12,650 L 75,628 L 150,600 L 232,568 L 305,528 L 360,505 L 425,492 L 470,470 L 492,432 L 520,398 L 540,440 L 560,478 L 620,500 L 700,470 L 745,448 L 800,468 L 860,520 L 905,572 L 950,632 L 990,700 L 945,688 L 900,640 L 868,590 L 880,540 L 890,300 Z';
+const MapLand: React.FC<{id: string; f: number}> = ({id, f}) => (
   <g>
-    <defs><FormGradient id={id} t={tones('#B9A56E')} /></defs>
-    <path d="M 120,470 L 340,430 L 560,470 L 760,430 L 980,500 L 1000,620 L 920,700 L 940,820 L 860,900 L 800,1020 L 720,1100 L 660,1220 L 560,1260 L 470,1330 L 380,1300 L 320,1380 L 220,1330 L 190,1220 L 250,1120 L 200,1000 L 120,920 L 160,780 L 90,640 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={8} strokeLinejoin="round" />
-    <path d="M 760,430 L 800,520 L 700,560 L 760,640 M 340,430 L 400,560 L 330,700 L 420,820" fill="none" stroke="#7E6F3D" strokeWidth={5} opacity={0.6} />
-    {Array.from({length: 8}).map((_, i) => <path key={i} d={`M ${200 + i * 90},${900 + (i % 3) * 60} l 12,-30 l 12,30 Z`} fill="#4F6F58" stroke={INK} strokeWidth={3} />)}
+    <defs>
+      <FormGradient id={id} t={tones('#B9A56E')} />
+      <clipPath id={`${id}c`}><path d={AK_PATH} /></clipPath>
+    </defs>
+    <path d={AK_PATH} fill="#000" opacity={0.2} transform="translate(14,18)" />
+    <path d={AK_PATH} fill={`url(#${id})`} stroke={INK} strokeWidth={8} strokeLinejoin="round" />
+    <g clipPath={`url(#${id}c)`}>
+      <path d="M 330,150 Q 520,100 800,118" fill="none" stroke="#7E6F3D" strokeWidth={26} opacity={0.5} strokeLinecap="round" />
+      <path d="M 300,330 Q 470,250 700,360 Q 760,380 800,440" fill="none" stroke="#7E6F3D" strokeWidth={22} opacity={0.45} strokeLinecap="round" />
+      <path d="M 260,230 Q 330,300 300,420 M 560,200 Q 600,280 560,360 M 700,160 Q 740,240 780,300" fill="none" stroke="#5E88A8" strokeWidth={7} opacity={0.7} strokeLinecap="round" />
+      {Array.from({length: 22}).map((_, i) => <path key={i} d={`M ${250 + (i * 83) % 600},${200 + (i * 57) % 260} l 11,-28 l 11,28 Z`} fill="#4F6F58" stroke={INK} strokeWidth={3} />)}
+      {/* cloud shadows drifting across the land */}
+      {[0, 1, 2].map((i) => <ellipse key={i} cx={((f * (0.9 + i * 0.3) + i * 380) % 1300) - 150} cy={170 + i * 150} rx={170} ry={46} fill="#233" opacity={0.12} />)}
+    </g>
+    <path d={AK_PATH} fill="none" stroke="#fff" strokeWidth={5} opacity={0.25} transform="translate(-4,-4)" />
   </g>
 );
 
@@ -485,9 +523,12 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const t19 = b(19), t20 = b(20), t21 = b(21), t22 = b(22);
   const unroll = ease(f, 0, 26);
   const shed = ease(f, t20, 14);
-  const roll = easeIO(f, t21, 40);
-  const hx = lerp(500, 700, roll), hy = lerp(1230, 700, roll);
-  const cam = track([{t: 0, z: 1.18, fx: 520, fy: 1120}, {t: t21 + 10, z: 1.12, fx: 560, fy: 960}, {t: t22 + 36, z: 1.0, fx: 540, fy: 900}, {t: p.dur, z: 1.0, fx: 540, fy: 920}]);
+  const roll = easeIO(f, t21, 44);
+  const SP = {x: 40 + 495, y: 560 + 430}, NP = {x: 40 + 600, y: 560 + 70};
+  const hx = lerp(SP.x, NP.x, roll), hy = lerp(SP.y, NP.y, roll);
+  const cam = track([{t: 0, z: 1.2, fx: 540, fy: 1150}, {t: t21 + 10, z: 1.1, fx: 580, fy: 960}, {t: t22 + 36, z: 1.0, fx: 540, fy: 940}, {t: p.dur, z: 1.0, fx: 540, fy: 940}]);
+  const cord = ease(f, t22 - 6, 14);
+  const cs = 12 * Math.sin(g / 12);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -497,25 +538,29 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="NORTH SLOPE" y={760} size={34} tone="cream" p={ease(f, t22 + 10, 8)} />
       </>}>
       <SVG>
-        <rect x={0} y={0} width={W} height={H} fill="#A6C3CE" />
-        {Array.from({length: 14}).map((_, i) => <path key={i} d={`M ${-40 + i * 90},${(i * 211) % 1900} q 40,${10 * Math.sin(g / 20 + i)} 90,0`} stroke="#fff" strokeWidth={4} fill="none" opacity={0.35} />)}
-        <g transform={`translate(${(1 - unroll) * 700},0)`}><MapLand id="s6m" /></g>
+        <defs><linearGradient id="s6sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#9EC3D3" /><stop offset="1" stopColor="#6F9DB4" /></linearGradient></defs>
+        <rect data-band="ok" x={0} y={0} width={W} height={H} fill="url(#s6sea)" />
+        {Array.from({length: 26}).map((_, i) => <path key={i} d={`M ${(i * 211) % 1100 - 40},${300 + (i * 173) % 1500} q 40,${10 * Math.sin(g / 20 + i)} 90,0`} stroke="#fff" strokeWidth={4} fill="none" opacity={0.4} strokeLinecap="round" />)}
+        <g transform={`translate(${(1 - unroll) * 760 + 40},540)`}><MapLand id="s6m" f={g} /></g>
+        {/* a small ship crossing the Gulf */}
+        <g transform={`translate(${((g * 1.4) % 1300) - 100},1330)`}><path d="M -26,0 L 26,0 L 18,14 L -18,14 Z" fill={P.cream} stroke={INK} strokeWidth={4} /><rect x={-8} y={-14} width={16} height={14} fill={P.steel} stroke={INK} strokeWidth={3.4} /></g>
         {/* the rail the hall rolls on: south pin to north pin */}
-        <path d="M 470,1260 Q 560,1000 700,760" stroke={INK} strokeWidth={22} fill="none" strokeLinecap="round" strokeDasharray="2 44" opacity={0.9} />
-        {/* pins */}
-        <g transform="translate(470,1290)"><circle r={16} fill={P.brick} stroke={INK} strokeWidth={5} /><rect x={-3} y={14} width={6} height={30} fill={INK} /></g>
-        <g transform="translate(700,730)"><circle r={16} fill={P.inkBlue} stroke={INK} strokeWidth={5} /><rect x={-3} y={14} width={6} height={30} fill={INK} /></g>
-        {shed > 0.02 && <g transform={`translate(0,${(1 - shed) * -80})`} opacity={shed}><Building x={410} y={1260} w={130} h={78} id="s6s" windows={2} kind="shed" f={g} /></g>}
-        {roll > 0 && <Building x={hx - 160} y={hy + 20} w={320} h={120} id="s6h" windows={6} kind="hall" f={g} />}
-        {/* the corner knob and its dangling cord */}
-        <g transform="translate(170,1370)">
-          <Rails x={110} y={0} s={0.5} f={g} vals={[0.5, 0.5, 0.9]} onlyIdx={2} w={300} />
-          {f > t22 - 4 && <g opacity={ease(f, t22, 12)}>
-            <path d={`M 240,18 Q 260,${90 + 10 * Math.sin(g / 12)} 230,${150 + 14 * Math.sin(g / 9)}`} stroke={INK} strokeWidth={12} fill="none" strokeLinecap="round" />
-            <path d={`M 240,18 Q 260,${90 + 10 * Math.sin(g / 12)} 230,${150 + 14 * Math.sin(g / 9)}`} stroke={P.aurora} strokeWidth={6} fill="none" strokeLinecap="round" />
-            <g transform={`translate(230,${158 + 14 * Math.sin(g / 9)})`}><rect x={-14} y={-8} width={28} height={22} rx={4} fill={P.creamShade} stroke={INK} strokeWidth={4} /><rect x={-8} y={12} width={5} height={14} fill={INK} /><rect x={4} y={12} width={5} height={14} fill={INK} /></g>
-          </g>}
-        </g>
+        <path d={`M ${SP.x},${SP.y} Q ${SP.x + 40},${(SP.y + NP.y) / 2} ${NP.x},${NP.y}`} stroke={INK} strokeWidth={20} fill="none" strokeLinecap="round" strokeDasharray="2 42" opacity={0.9} />
+        <g transform={`translate(${SP.x},${SP.y})`}><circle r={17} fill={P.brick} stroke={INK} strokeWidth={5} /><circle r={26 + 6 * Math.sin(g / 9)} fill="none" stroke={P.brick} strokeWidth={3} opacity={0.5} /></g>
+        <g transform={`translate(${NP.x},${NP.y})`}><circle r={17} fill={P.inkBlue} stroke={INK} strokeWidth={5} /><circle r={26 + 6 * Math.sin(g / 9 + 1)} fill="none" stroke={P.inkBlue} strokeWidth={3} opacity={0.5} /></g>
+        {shed > 0.02 && <g transform={`translate(0,${(1 - shed) * -80})`} opacity={shed}><Building x={SP.x - 65} y={SP.y - 20} w={130} h={78} id="s6s" windows={2} kind="shed" f={g} /></g>}
+        {roll > 0 && <Building x={hx - 120} y={hy + 40} w={240} h={96} id="s6h" windows={5} kind="hall" f={g} />}
+        {/* the dangling cord from the top of the frame: planted for the pay at the shed */}
+        {cord > 0.02 && (
+          <g opacity={cord}>
+            <rect x={86} y={440} width={130} height={34} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} />
+            <text x={151} y={463} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={1} fill={INK}>WHO PAYS</text>
+            <path d={`M 151,474 Q ${170 + cs},700 ${140 + cs * 1.4},${960 + 14 * Math.sin(g / 9)}`} stroke={INK} strokeWidth={20} fill="none" strokeLinecap="round" />
+            <path d={`M 151,474 Q ${170 + cs},700 ${140 + cs * 1.4},${960 + 14 * Math.sin(g / 9)}`} stroke={P.aurora} strokeWidth={10} fill="none" strokeLinecap="round" />
+            <g transform={`translate(${140 + cs * 1.4},${976 + 14 * Math.sin(g / 9)})`}><rect x={-20} y={-12} width={40} height={30} rx={5} fill={P.creamShade} stroke={INK} strokeWidth={5} /><rect x={-12} y={16} width={7} height={22} fill={INK} /><rect x={6} y={16} width={7} height={22} fill={INK} /></g>
+          </g>
+        )}
+        <NearRail f={g} y={1560} kind="bare" />
       </SVG>
     </Frame>
   );
@@ -564,10 +609,10 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={0} y={1120} width={W} height={330} fill={P.wood} stroke={INK} strokeWidth={6} />
         <Lectern x={300} y={1340} s={1.25} f={g} lit={ease(f, t24, 6)} card="BRONSON" cardSize={17} phase={0.4} id="s7a" />
         <Lectern x={790} y={1340} s={1.25} f={g} lit={ease(f, t26, 6)} card="TAYLOR" cardSize={17} phase={2.1} id="s7b" />
-        <MiniSlip x={300} y={1020} s={1.0} f={g} tick={ease(f, t25, 14)} rot={-5} id="s7s1" />
-        <MiniSlip x={790} y={1020} s={1.0} f={g} tick={ease(f, t27, 14)} rot={4} id="s7s2" />
-        <BallotBox x={140} y={1360} s={0.55} f={g} mood={f > t25 ? 'ask' : 'blank'} look={5} phase={3.1} id="s7b0" />
-        <NearRail f={g} y={1560} />
+        <MiniSlip x={300} y={1065} s={1.0} f={g} tick={ease(f, t25, 14)} rot={-5} id="s7s1" />
+        <MiniSlip x={790} y={1065} s={1.0} f={g} tick={ease(f, t27, 14)} rot={4} id="s7s2" />
+        <BallotBox x={545} y={1340} s={0.5} f={g} mood="blank" look={0} phase={3.1} id="s7b0" />
+        <NearRail f={g} y={1560} seed={7} />
       </SVG>
     </Frame>
   );
@@ -609,7 +654,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} letterSpacing={3} fill={P.cream}>LIMIT</text>
         </g>
         {slam > 0.3 && Array.from({length: 7}).map((_, i) => <circle key={i} cx={680 + i * 40} cy={1040 - ((i * 7) % 3) * 10} r={4 + (i % 3)} fill={P.creamShade} opacity={0.6 * (1 - slam) + 0.2} />)}
-        <NearRail f={g} y={1560} />
+        <NearRail f={g} y={1560} seed={8} />
       </SVG>
     </Frame>
   );
@@ -628,7 +673,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate x={540} text="KREISS-TOMKINS · SEPTEMBER" y={540} size={30} tone="cream" p={ease(f, t31 + 8, 8)} />
         <Plate x={540} text="UNTIL A FRAMEWORK" y={640} size={34} tone="ink" p={ease(f, t32, 8)} />
-        <Plate x={540} text="A FRAMEWORK · NOT WRITTEN YET" displayLines={['A FRAMEWORK', 'NOT WRITTEN YET']} y={760} size={30} tone="cream" p={ease(f, t33 + 6, 8)} />
+        <Plate x={540} text="A FRAMEWORK · NOT PASSED YET" displayLines={['A FRAMEWORK', 'NOT PASSED YET']} y={760} size={30} tone="cream" p={ease(f, t33 + 6, 8)} />
       </>}>
       <SVG>
         <Hall f={g} id="s14" floorY={1120} />
@@ -646,11 +691,26 @@ const S14: React.FC<SceneProps> = ({p}) => {
           <text x={0} y={-52} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={1.5} fill={INK}>FRAMEWORK</text>
           {[0, 1, 2].map((i) => <rect key={i} x={-48} y={-22 + i * 30} width={96 - (i === 2 ? 30 : 0)} height={5} rx={2.5} fill={INK} opacity={0.35} />)}
         </g>
-        <NearRail f={g} y={1560} />
+        <NearRail f={g} y={1560} kind="bare" />
       </SVG>
     </Frame>
   );
 };
+
+/** the dusk Interior sky: slate-violet gradient, twinkling stars, a crescent moon, drifting cloud bands and two parallax ridges. Never green. */
+const DuskSky: React.FC<{f: number; id: string; ground?: number}> = ({f, id, ground = 1230}) => (
+  <g>
+    <defs><linearGradient id={`${id}_s`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={P.duskDeep} /><stop offset="1" stopColor={P.duskHi} /></linearGradient></defs>
+    <rect data-band="ok" x={0} y={0} width={W} height={1320} fill={`url(#${id}_s)`} />
+    {Array.from({length: 36}).map((_, i) => <circle key={i} cx={rnd(i) * 1080} cy={rnd(i + 40) * 760} r={1.6 + rnd(i + 7) * 2.4} fill="#fff" opacity={0.3 + 0.5 * Math.abs(Math.sin(f / 26 + i))} />)}
+    <g transform="translate(900,250)"><circle r={54} fill="#F3EEDC" stroke={INK} strokeWidth={5} /><circle cx={22} cy={-8} r={50} fill={P.duskHi} /></g>
+    {[0, 1, 2, 3].map((i) => <ellipse key={i} cx={((f * (0.5 + i * 0.22) + i * 330) % 1500) - 200} cy={520 + i * 110} rx={300} ry={34} fill="#9AA0C8" opacity={0.28} />)}
+    <path d={`M-60,1150 ${Array.from({length: 15}).map((_, i) => `L ${i * 95 - 40 + ((f * 0.25) % 95)},${1010 - 80 * rnd(i + 3 + Math.floor((f * 0.25) / 95))}`).join(' ')} L 1200,1150 Z`} fill="#2F3552" stroke={INK} strokeWidth={4} />
+    <path d={`M-40,1220 ${Array.from({length: 13}).map((_, i) => `L ${i * 95 + 30},${1130 - 60 * rnd(i + 9)}`).join(' ')} L 1160,1220 Z`} fill="#222742" stroke={INK} strokeWidth={4} />
+    {Array.from({length: 14}).map((_, i) => <path key={i} d={`M${i * 82 + 8},${ground + 2} l 16,-70 l 16,70 Z`} fill="#1C2038" stroke={INK} strokeWidth={2.4} />)}
+    <rect data-band="ok" x={0} y={ground} width={W} height={300} fill="#3A3B4E" stroke={INK} strokeWidth={5} />
+  </g>
+);
 
 // ---- S9: the grid (keys 34 to 37, 53) ------------------------------------------------------------------------------------------------------------
 const S9: React.FC<SceneProps> = ({p}) => {
@@ -669,26 +729,20 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} dim={0.16} tagText="IN THE INTERIOR"
       overlay={<>
-        <Plate x={540} text="TOMASZEWSKI" y={540} size={34} tone="cream" p={ease(f, t35, 8)} />
-        <Plate x={540} text="THE GRID ISN'T READY" y={620} size={34} tone="ink" p={ease(f, t36, 8)} />
-        <Plate x={540} text="GOLDEN VALLEY ELECTRIC · RECENT ENERGY ALERT" displayLines={['GOLDEN VALLEY ELECTRIC', 'RECENT ENERGY ALERT']} y={720} size={26} tone="cream" p={ease(f, t36 + 6, 8) * (1 - ease(f, t53 + 20, 8))} />
-        <Plate x={540} text="PRAX · HANEY" y={950} size={32} tone="cream" p={ease(f, t37, 8) * 0 + (f > t37 + 20 ? ease(f, t37 + 20, 8) * (1 - ease(f, t53 + 4, 6)) : 0)} />
-        <Plate x={540} text="ZONING IS LOCAL" y={860} size={34} tone="ink" p={ease(f, t53, 8)} />
+        <Plate x={540} text="TOMASZEWSKI" y={540} size={34} tone="cream" p={ease(f, t35, 8) * (1 - ease(f, t37 - 8, 8))} />
+        <Plate x={540} text="THE GRID ISN'T READY" y={620} size={34} tone="ink" p={ease(f, t36, 8) * (1 - ease(f, t37 - 8, 8))} />
+        <Plate x={790} text="GOLDEN VALLEY ELECTRIC · RECENT ENERGY ALERT" displayLines={['GOLDEN VALLEY ELECTRIC', 'RECENT ENERGY ALERT']} y={730} size={26} tone="cream" p={ease(f, t36 + 6, 8) * (1 - ease(f, t37 - 8, 8))} />
+        
+        <Plate x={715} text="PRAX · HANEY · ZONING IS LOCAL" y={860} size={28} tone="ink" p={ease(f, t53, 8)} />
       </>}>
       <SVG>
-        <defs><linearGradient id="s9sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={P.duskDeep} /><stop offset="1" stopColor={P.duskHi} /></linearGradient></defs>
-        <rect x={0} y={0} width={W} height={1320} fill="url(#s9sky)" />
-        {Array.from({length: 24}).map((_, i) => <circle key={i} cx={rnd(i) * 1080} cy={rnd(i + 40) * 700} r={1.6 + rnd(i + 7) * 2} fill="#fff" opacity={0.3 + 0.4 * Math.abs(Math.sin(g / 30 + i))} />)}
-        <path d={`M-40,1150 ${Array.from({length: 13}).map((_, i) => `L ${i * 95},${1010 - 80 * rnd(i + 3)}`).join(' ')} L 1160,1150 Z`} fill="#2F3552" stroke={INK} strokeWidth={4} />
-        <path d={`M-40,1220 ${Array.from({length: 13}).map((_, i) => `L ${i * 95 + 30},${1130 - 60 * rnd(i + 9)}`).join(' ')} L 1160,1220 Z`} fill="#222742" stroke={INK} strokeWidth={4} />
-        {Array.from({length: 14}).map((_, i) => <path key={i} d={`M${i * 82 + 8},1232 l 16,-70 l 16,70 Z`} fill="#1C2038" stroke={INK} strokeWidth={2.4} />)}
-        <rect data-band="ok" x={0} y={1230} width={W} height={300} fill="#3A3B4E" stroke={INK} strokeWidth={5} />
+        <DuskSky f={g} id="s9d" />
         <g transform={`translate(${lerp(500, 0, slideIn)},0)`}><Pole x={500} y={1360} s={1.2} sag={sag} lamp={lamp} f={g} id="s9p" reach={620} /></g>
         {/* a small rail card: WHO PAYS jams, then PLACE slides to LOCAL */}
         <g transform="translate(250,930)">
           <rect x={-170} y={-78} width={340} height={ 250} rx={10} fill={P.cream} stroke={INK} strokeWidth={6} opacity={0.94} />
           <g transform={`translate(${jamShake},0)`}><Rails x={0} y={-30} s={0.95} f={g} vals={[0.5, f < t53 ? 0.5 : lerp(0.5, 0.06, local), 0.55 + 0.03 * jam]} labels={['SIZE', 'PLACE', 'WHO PAYS']} w={290} pulse={[0, bump(f, t53, 20), jam > 0.5 ? 0.6 : 0]} /></g>
-          {f > t53 + 14 && <text x={-118} y={150} fontFamily={MONO} fontWeight={800} fontSize={18} fill={BAL.navy} opacity={ease(f, t53 + 14, 8)}>LOCAL</text>}
+          
         </g>
         <g transform={`translate(${lerp(1400, 850, counter)},1380)`}>
           <ContactShadow cx={0} cy={4} rx={150} ry={12} opacity={0.34} blur={8} />
@@ -701,7 +755,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           </g>
         </g>
         <BallotBox x={120} y={1318} s={0.5} f={g} mood={f > t36 ? 'worried' : 'blank'} flagDroop={f > t36 ? 1 : 0} look={4} phase={2.7} id="s9b" />
-        <NearRail f={g} y={1580} dusk={1} />
+        <NearRail f={g} y={1580} dusk={1} kind="spruce" seed={9} />
       </SVG>
     </Frame>
   );
@@ -724,19 +778,15 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="BOTH SEE ENERGY INVESTMENT" y={640} size={32} tone="ink" p={ease(f, t39, 8)} />
       </>}>
       <SVG>
-        <defs><linearGradient id="s10sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={P.duskDeep} /><stop offset="1" stopColor={P.duskHi} /></linearGradient></defs>
-        <rect x={0} y={0} width={W} height={1320} fill="url(#s10sky)" />
-        {Array.from({length: 24}).map((_, i) => <circle key={i} cx={rnd(i + 2) * 1080} cy={rnd(i + 50) * 700} r={1.6 + rnd(i + 8) * 2} fill="#fff" opacity={0.3 + 0.4 * Math.abs(Math.sin(g / 30 + i))} />)}
-        <path d={`M-40,1180 ${Array.from({length: 13}).map((_, i) => `L ${i * 95},${1040 - 70 * rnd(i + 13)}`).join(' ')} L 1160,1180 Z`} fill="#2F3552" stroke={INK} strokeWidth={4} />
-        <rect data-band="ok" x={0} y={1230} width={W} height={300} fill="#3A3B4E" stroke={INK} strokeWidth={5} />
+        <DuskSky f={g} id="s10d" />
         <Pole x={990} y={1360} s={0.9} sag={1} lamp={0.8} f={g} id="s10p" reach={420} />
-        <g transform={`translate(${lerp(-400, 0, slide)},0)`}><Building x={90} y={1360} w={300} h={170} id="s10s" windows={3} kind="shed" f={g} lit={0.9} plug={plug} /></g>
-        <g transform={`translate(${lerp(1400, 0, slide)},0)`}><Building x={520} y={1370} w={440} h={250} id="s10h" windows={6} kind="hall" f={g} lit={0.9} /></g>
-        <path d={`M 380,1170 Q 560,1080 760,1130`} stroke={INK} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray="22 16" opacity={0.9 - 0.4 * fill} />
-        <path d={`M 380,1170 Q 560,1080 760,1130`} stroke={fill > 0.02 ? P.aurora : '#8A91B4'} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={fill > 0.98 ? undefined : '22 16'} opacity={0.5 + 0.5 * fill} />
-        <g transform="translate(570,1090)"><rect x={-98} y={-18} width={196} height={30} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} /><text x={0} y={5} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={2} fill={INK}>INVESTMENT</text></g>
+        <g transform={`translate(${lerp(-400, 0, slide)},0)`}><Building x={40} y={1380} w={380} h={230} id="s10s" windows={3} kind="shed" f={g} lit={0.9} plug={plug} /></g>
+        <g transform={`translate(${lerp(1400, 0, slide)},0)`}><Building x={470} y={1390} w={560} h={340} id="s10h" windows={7} kind="hall" f={g} lit={0.9} /></g>
+        <path d={`M 400,1120 Q 580,1020 780,1090`} stroke={INK} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray="22 16" opacity={0.9 - 0.4 * fill} />
+        <path d={`M 400,1120 Q 580,1020 780,1090`} stroke={fill > 0.02 ? P.aurora : '#8A91B4'} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={fill > 0.98 ? undefined : '22 16'} opacity={0.5 + 0.5 * fill} />
+        <g transform="translate(590,1030)"><rect x={-98} y={-18} width={196} height={30} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} /><text x={0} y={5} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={2} fill={INK}>INVESTMENT</text></g>
         {(() => {
-          const ex = lerp(880 + 14 * Math.sin(g / 11), 366, swing), ey = lerp(1120 + 16 * Math.sin(g / 9), 1318, swing);
+          const ex = lerp(880 + 14 * Math.sin(g / 11), 396, swing), ey = lerp(1120 + 16 * Math.sin(g / 9), 1338, swing);
           const cxp = lerp(930, 640, swing), cyp = lerp(1060, 1290, swing);
           const d = `M 905,838 Q ${cxp},${cyp} ${ex},${ey}`;
           return (<g>
@@ -745,7 +795,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
             <g transform={`translate(${ex},${ey})`}><rect x={-15} y={-9} width={30} height={22} rx={4} fill={P.creamShade} stroke={INK} strokeWidth={4} />{plug > 0.5 && <circle r={26 + 6 * Math.sin(g / 3)} fill={P.aurora} opacity={0.35} />}</g>
           </g>);
         })()}
-        <NearRail f={g} y={1580} dusk={1} />
+        <NearRail f={g} y={1580} dusk={1} kind="spruce" seed={10} />
       </SVG>
     </Frame>
   );
@@ -772,12 +822,12 @@ const S11: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Hall f={g} id="s11" dusk={0.8} floorY={1180} />
-        <NearRail f={g} y={1580} dusk={1} />
-        <InTray x={540} y={1360} s={1.6} f={g} lamp={lamp} tab={1} tabText={tabFlip > 0.5 ? 'NOW' : 'LATER'} id="s11t">
+        <NearRail f={g} y={1580} dusk={1} kind="bare" />
+        <InTray x={540} y={1360} s={1.6} f={g} lamp={lamp} tab={1} tabText={tabFlip > 0.5 ? 'THIS YEAR' : 'LATER'} id="s11t">
           {flip < 0.02 && <BillSheet x={0} y={-190} s={0.55} f={g} face={false} id="s11b0" />}
         </InTray>
         {flip >= 0.02 && (
-          <BillSheet x={540} y={lerp(1130, 1010, rise)} s={lerp(0.9, 1.0, rise)} f={g} flip={flip} typed={typed} stamp={stamp} id="s11b1" />
+          <BillSheet x={540} y={lerp(1130, 1060, rise)} s={lerp(0.9, 1.0, rise)} f={g} flip={flip} typed={typed} stamp={stamp} id="s11b1" />
         )}
       </SVG>
     </Frame>
@@ -808,6 +858,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <path d="M 1080,0 L 750,520 L 750,1100 L 1080,1500 Z" fill="#9DB6A2" stroke={INK} strokeWidth={6} />
         <path d="M 0,1500 L 330,1100 L 750,1100 L 1080,1500 L 1080,1920 L 0,1920 Z" fill="#C79A52" stroke={INK} strokeWidth={6} />
         <path d="M 0,0 L 330,520 L 750,520 L 1080,0 Z" fill="#8DA896" stroke={INK} strokeWidth={6} />
+        <path d="M 330,1920 L 470,1100 L 610,1100 L 750,1920 Z" fill="#5B6C8A" stroke={INK} strokeWidth={6} />
+        <path d="M 380,1920 L 490,1100 M 700,1920 L 590,1100" stroke={P.honey} strokeWidth={5} opacity={0.8} />
         {Array.from({length: 6}).map((_, i) => <path key={i} d={`M ${200 + i * 130},1920 L ${440 + i * 40},1100`} stroke={INK} strokeWidth={2.4} opacity={0.18} />)}
         <g transform="translate(540,1100)">
           <Blk x={-210} y={-580} w={210} h={580} c={P.woodHi} id="s12d1" r={8} sw={7} />
@@ -843,7 +895,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <circle cx={0} cy={22} r={9} fill={INK} />
           </g>
         </g>
-        <NearRail f={g} y={1600} dusk={1} />
+        <NearRail f={g} y={1600} dusk={1} kind="bare" />
       </SVG>
     </Frame>
   );
@@ -875,7 +927,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Hall f={g} id="s13" floorY={1180} />
-        <NearRail f={g} y={1580} />
+        <NearRail f={g} y={1580} seed={13} />
         <BallotBox x={330} y={1300} s={1.28} f={g} mood={f < t51 ? 'ask' : 'blank'} mouth={mouth} look={5} phase={0.3} id="s13b" />
         {!slipOn && sheet > 0.02 && swallow < 0.98 && <Slip x={sxo} y={syo} s={scs} f={g} blank head="NEXT SESSION" headSize={24} rot={-3} id="s13s" />}
         {sheet > 0.02 && swallow < 0.5 && [0, 1].map((i) => (
