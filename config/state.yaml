@@ -2881,3 +2881,63 @@ dispatch_history:
     light_story: storm-dramatic
     metaphor: one brass sign that fits every size of thing, stretched until it cracks
       against a ruler with no marks
+- date: '2026-10-26'
+  topic: Alaska candidates split on data centers over size, place and who pays, and
+    the Senate's 14 to 5 data center bill never got a House vote (News-Miner, ADN,
+    Alaska Beacon)
+  slug: dispatch-2026-10-26-not-yes-or-no
+  key_entities:
+  - Fairbanks Daily News-Miner
+  - Alaska Beacon
+  - Anchorage Daily News
+  - Dibert
+  - Carrick
+  - McFarland
+  - Rentzel
+  - Moore
+  - Ky Holland
+  - John Boyle
+  - Bronson
+  - Taylor
+  - Wilson
+  - Kreiss-Tomkins
+  - Tomaszewski
+  - Prax
+  - Haney
+  - Loki Tobin
+  - Senate 14 to 5
+  - data center bill
+  archetype: single-hero object, ballot slip melts into three rails
+  palette: pale sage hall walls, honey gym floor, cranberry booth curtains and flag,
+    steel box with a parchment slip, ink-black rails, aurora lamps for electricity
+    only
+  voice: gemini:Sulafat
+  stance: mixed
+  angle: Alaska's candidates mostly aren't arguing yes or no on data centers, they're
+    arguing size, place and who pays, and the one bill that wrote those terms passed
+    the Senate 14 to 5 and then went untouched by the House, so the people elected
+    on November 3rd write Alaska's first data center rule.
+  hero: BallotBox
+  cast:
+  - BallotBox
+  - Slip
+  - Rails
+  - Lectern
+  - Gate
+  - InTray
+  - BillSheet
+  - Building
+  - Pole
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: naturalistic-scene
+    palette: pale sage hall walls, honey gym floor, cranberry booth curtains and flag,
+      steel box with a parchment slip, ink-black rails, aurora lamps for electricity
+      only
+    metaphor: 'a yes or no ballot slip whose boxes melt into three sliding rails:
+      size, place and who pays'
+    camera_strategy: rail-glide-panels
+    light_story: morning-to-dusk

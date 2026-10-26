@@ -3930,3 +3930,6 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 - Shipped: board_sync_check in Gate 0A (shots against their beats, stale ambient and means), held_beat_check that takes the camera and rain out and names every beat under 6 percent, a rain ambience bed in dispatch_mix when the board asks for it, and a Plate minimum lettered scale guard in make_cut.
 - Engine advance: none, the Plate guard is a prop with a pixel-identical default.
 - Still open: empty top third (needs two films to calibrate), ambience loops, a Gate 0 critic round cap (owner's call).
+
+## 2026-10-26, "Not Yes or No"
+Shipped: ballot box hero and slip throughline film on Alaska candidates' data center positions, the Senate's 14 to 5 bill and the House never taking it up. Panel median 7.166 (7.166, 7.23, 7.01) against a 7.0 bar after four panel rounds; caption stopped at the cap, 8.25 with zero hard fails. In-run fixes: clampCam, a real Alaska outline, NearRail variants, bed arc for LRA 7.0, honesty fixes (amber alert lamp, dashed could-coins, NOT PASSED YET, SEPTEMBER on governor plates, BallotBox neutral), text fit and label footprint repairs. Standard section 21 added. Queued: promote ballot kit and AK_PATH, held-beat travel helper, room-tone stems, crowd variety, caption quote marks, caption hook pattern, upload default name.

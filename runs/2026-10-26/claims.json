@@ -1,0 +1,372 @@
+{
+ "run_date": "2026-10-26",
+ "fact_check_verdict": "Core survives with hedges. Forum claims are News-Miner single-source (attribute). Governor positions are Sept (Beacon). Senate bill is Beacon. CUT: forum date as 'a week out', Sullivan/RPM, $500M figure, ADN op-ed platform items (opinion), donor story, SB 250 number, Taylor 'bring their own energy', any claim of every race or AI-specific bill.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "Early voting began October nineteenth, and Election Day is November third.",
+   "on_screen": "VOTING OPEN \u00b7 ELECTION DAY NOVEMBER 3RD",
+   "source": [
+    "https://alaskabeacon.com/2026/10/24/gubernatorial-candidates-make-their-pitch-at-the-alaska-federation-of-natives-convention/"
+   ],
+   "requires": [
+    "Alaska Beacon Oct 24th, corroborated by Alaska Public Media voter guide. Oct 19th, not 20th."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Election Day is Nov. 3 and early voting in Alaska began on Oct. 19."
+  },
+  {
+   "id": "c2",
+   "status": "verified",
+   "spoken": "This fall, Alaska's candidates are being asked about data centers.",
+   "on_screen": "DATA CENTERS \u00b7 ON THE BALLOT",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html",
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/"
+   ],
+   "requires": [
+    "Framing line, supported by c3, c8 to c13. Not a claim about every race."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Where do Alaska's four governor candidates stand on data centers? (headline); candidates ... generally agreed ... during a Tanana Valley League of Women Voters forum"
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "At a Fairbanks area forum, twelve statehouse candidates generally agreed that big data centers need rules and local input, per the Fairbanks Daily News-Miner.",
+   "on_screen": "12 FAIRBANKS-AREA CANDIDATES \u00b7 RULES + LOCAL INPUT",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Attribute to the Fairbanks Daily News-Miner, Jack Barnwell, Oct 18th. Say Interior or Fairbanks area, never statewide. Hedge: generally agreed, some regulatory framework."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Decisions regarding large-scale data centers should have some regulatory framework and include local input."
+  },
+  {
+   "id": "c4",
+   "status": "verified",
+   "spoken": "Then they split on how.",
+   "on_screen": "THEN THEY SPLIT",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Transition from c3 to c5 to c7. Source is the News-Miner."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "The split was in how favorable they were"
+  },
+  {
+   "id": "c5",
+   "status": "verified",
+   "spoken": "Three of them, Carrick, McFarland and Dibert, backed a state moratorium until Alaska can study the issue.",
+   "on_screen": "3 BACK A STATE MORATORIUM",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Democratic incumbent Ashley Carrick House 35, independent Pepper McFarland House 33, Democratic incumbent Maxine Dibert House 31. A state moratorium with an until condition, never a ban."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Carrick, McFarland and Dibert favored placing a state moratorium on any data center development until Alaska can thoroughly study..."
+  },
+  {
+   "id": "c6",
+   "status": "verified",
+   "spoken": "Republican Jeff Rentzel favored some sort of tax on data centers and on automation.",
+   "on_screen": "RENTZEL \u00b7 A TAX ON DATA CENTERS",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Republican Jeff Rentzel, House 35. Keep the hedge some sort of. No rate given."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "He also favored some sort of tax on AI data centers and automation (robotic or self-checkouts) in general."
+  },
+  {
+   "id": "c7",
+   "status": "verified",
+   "spoken": "Republican Aimee Moore said they could pay every Alaskan a digital dividend.",
+   "on_screen": "MOORE \u00b7 A DIGITAL DIVIDEND",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Republican Aimee Moore House 31. Digital dividend is her quote, attribute to her."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"They could also pay us a digital dividend to each Alaskan,\" she said."
+  },
+  {
+   "id": "c8",
+   "status": "verified",
+   "spoken": "Republican Harmony Tomaszewski said the grid isn't ready, and cited Golden Valley Electric's recent energy alert.",
+   "on_screen": "TOMASZEWSKI \u00b7 THE GRID ISN'T READY",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Harmony Tomaszewski, Republican House 34 (article misspells Tomazewski). Say Golden Valley Electric. No alert details."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "She cited Golden Valley Electric Association's recent energy alert. / doesn't have the electrical power infrastructure to accommodate large-scale AI data centers"
+  },
+  {
+   "id": "c9",
+   "status": "verified",
+   "spoken": "Others, like Republicans Mike Prax and Barbara Haney, said zoning is a job for local government.",
+   "on_screen": "PRAX \u00b7 HANEY \u00b7 ZONING IS LOCAL",
+   "source": [
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Republicans Mike Prax incumbent and Barbara Haney, House 33."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "it's more appropriate for local government to be involved than state government."
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "In one South Anchorage House race, independent Representative Ky Holland wants purpose built, modest sized data centers.",
+   "on_screen": "HOLLAND \u00b7 MODEST \u00b7 PURPOSE-BUILT",
+   "source": [
+    "https://www.adn.com/politics/alaska-legislature/2026/10/21/energy-takes-center-stage-in-race-to-represent-south-anchorage-house-district/"
+   ],
+   "requires": [
+    "ADN, Mari Kanagy, dated Oct 22nd. District 9. Holland a one-term independent. Do not call the race AI."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "I'm excited about what we can be doing with purpose-built, strategic, modest-sized, more traditional data centers."
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "His Republican opponent, John Boyle, is more open to large ones, especially on the North Slope.",
+   "on_screen": "BOYLE \u00b7 OPEN TO LARGE, NORTH SLOPE",
+   "source": [
+    "https://www.adn.com/politics/alaska-legislature/2026/10/21/energy-takes-center-stage-in-race-to-represent-south-anchorage-house-district/"
+   ],
+   "requires": [
+    "Boyle works for STAK Energy, which proposes a North Slope data center. Drop the $500 million figure."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Boyle is more open to the possibility of large-scale data centers, especially on the North Slope,"
+  },
+  {
+   "id": "c12",
+   "status": "verified",
+   "spoken": "Both see data centers as a way to attract energy investment.",
+   "on_screen": "BOTH SEE ENERGY INVESTMENT",
+   "source": [
+    "https://www.adn.com/politics/alaska-legislature/2026/10/21/energy-takes-center-stage-in-race-to-represent-south-anchorage-house-district/"
+   ],
+   "requires": [
+    "Counterweight to the split framing."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Both candidates see the potential for data centers to attract investment in energy infrastructure."
+  },
+  {
+   "id": "c13",
+   "status": "verified",
+   "spoken": "For governor, Republican Dave Bronson said in September, I'm a big believer in data centers.",
+   "on_screen": "BRONSON \u00b7 BIG BELIEVER",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/",
+    "https://alaskabeacon.com/2026/10/24/gubernatorial-candidates-make-their-pitch-at-the-alaska-federation-of-natives-convention/"
+   ],
+   "requires": [
+    "Said at a Commonwealth North forum in September. Say said in September.",
+    "Plate carries SAID IN SEPTEMBER.",
+    "Party label Republican per the Alaska Beacon Oct 24th AFN report, which names Bronson and Taylor as Republicans and Wilson as the Republican."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "I'm a big believer in data centers. I know that might be unpopular with some folks here,"
+  },
+  {
+   "id": "c14",
+   "status": "verified",
+   "spoken": "Republican Treg Taylor said, we need to embrace it.",
+   "on_screen": "TAYLOR \u00b7 EMBRACE IT",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/",
+    "https://alaskabeacon.com/2026/10/24/gubernatorial-candidates-make-their-pitch-at-the-alaska-federation-of-natives-convention/"
+   ],
+   "requires": [
+    "September 8th forum. Say said in September.",
+    "Party label Republican per the Alaska Beacon Oct 24th AFN report, which names Bronson and Taylor as Republicans and Wilson as the Republican."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "\"I think we need to embrace it,\" he said of data centers."
+  },
+  {
+   "id": "c15",
+   "status": "verified",
+   "spoken": "Republican governor candidate Bernadette Wilson wrote in September that she will never allow Alaska to be littered with hyperscale data centers.",
+   "on_screen": "WILSON \u00b7 NEVER LITTERED WITH HYPERSCALE",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/",
+    "https://alaskabeacon.com/2026/10/24/gubernatorial-candidates-make-their-pitch-at-the-alaska-federation-of-natives-convention/"
+   ],
+   "requires": [
+    "Written answer in September. Quote only the hyperscale line.",
+    "Party label Republican per the Alaska Beacon Oct 24th AFN report, which names Bronson and Taylor as Republicans and Wilson as the Republican."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "I will never allow Alaska to be littered with hyperscale data centers that take our resources and spoil our lands."
+  },
+  {
+   "id": "c16",
+   "status": "verified",
+   "spoken": "Democrat Jonathan Kreiss-Tomkins said he supports a moratorium until the Legislature passes a regulatory framework.",
+   "on_screen": "KREISS-TOMKINS \u00b7 MORATORIUM UNTIL A FRAMEWORK",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/"
+   ],
+   "requires": [
+    "Alaska Beacon Sep 18th, forum Sep 8th. Say said in September. Platform items from the ADN opinion column are cut."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "I support a moratorium on data center development in Alaska until the Legislature can pass a comprehensive regulatory framework for that development in Alaska,"
+  },
+  {
+   "id": "c17",
+   "status": "verified",
+   "spoken": "This year, the Alaska Senate voted fourteen to five to pass a data center bill.",
+   "on_screen": "SENATE \u00b7 14 TO 5",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/"
+   ],
+   "requires": [
+    "Alaska Beacon Sep 18th. A data center bill, not an AI bill. Do not name SB 250 aloud."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "This year, the Alaska Senate voted 14-5 to pass a data center bill,"
+  },
+  {
+   "id": "c18",
+   "status": "verified",
+   "spoken": "The House never took it up before the session ended.",
+   "on_screen": "HOUSE \u00b7 NEVER TOOK IT UP",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/"
+   ],
+   "requires": [
+    "Never say voted down or killed. No House vote happened."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "but the House failed to take it up before the end of the legislative session."
+  },
+  {
+   "id": "c19",
+   "status": "verified",
+   "spoken": "It would have regulated how data centers use electricity from public utilities, and required decommissioning plans.",
+   "on_screen": "THE BILL \u00b7 POWER RULES + DECOMMISSIONING",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/"
+   ],
+   "requires": [
+    "Not an AI bill."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "That bill would have regulated how data centers can use electricity from public utilities | and would have required them to create decommissioning plans."
+  },
+  {
+   "id": "c20",
+   "status": "verified",
+   "spoken": "Its sponsor, Senator Loki Tobin, returns next year, and the Beacon expects the next governor to face similar legislation.",
+   "on_screen": "SPONSOR RETURNS \u00b7 SIMILAR BILL EXPECTED",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/"
+   ],
+   "requires": [
+    "L\u00f6ki with umlaut on screen. The forecast is the Beacon's, attribute it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "The sponsor of the bill, Sen. L\u00f6ki Tobin, D-Anchorage, will return to the Legislature next year,"
+  },
+  {
+   "id": "c21",
+   "status": "verified",
+   "spoken": "The governor candidates' positions are from September, and the forum is from mid October.",
+   "on_screen": "POSITIONS \u00b7 SEPTEMBER AND OCTOBER",
+   "source": [
+    "https://alaskabeacon.com/2026/09/18/where-do-alaskas-four-governor-candidates-stand-on-data-centers/",
+    "https://www.newsminer.com/news/local_news/data-centers-spark-a-varied-opinion-among-interior-statehouse-candidates/article_740f8c14-a903-4515-8200-971b32881253.html"
+   ],
+   "requires": [
+    "Dating honesty line."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "verbatim_source": "Beacon Sep 18th; News-Miner Oct 18th"
+  }
+ ]
+}

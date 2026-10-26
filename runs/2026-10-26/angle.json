@@ -1,0 +1,25 @@
+{
+ "run_date": "2026-10-26",
+ "thesis": "Alaska's candidates mostly aren't arguing yes or no on data centers, they're arguing size, place and who pays, and the one bill that wrote those terms passed the Senate 14 to 5 and then went untouched by the House, so the people elected on November 3rd write Alaska's first data center rule.",
+ "falsifiable_by": "A covered candidate who opposes data centers of any size anywhere with no condition; or moratorium backers who want a permanent ban rather than a pause until a study or framework; or the Senate bill proving to be a yes/no permission vote rather than rules on utility power and decommissioning; or a data center framework already in force; or no similar bill filed next session.",
+ "supporting_facts": [
+  "c3 12 Fairbanks area candidates generally agreed big data centers need rules and local input (News-Miner)",
+  "c5/c16 the moratoriums are conditional pauses that end when a study or framework exists",
+  "c10/c11/c12 one South Anchorage race: modest and purpose built vs large on the North Slope, and both see energy investment",
+  "c6/c7/c8/c9 tax, digital dividend, grid readiness, local zoning are answers about who pays and who decides",
+  "c17/c18/c19 the Senate passed 14 to 5 a bill on utility power use and decommissioning plans, the House never took it up"
+ ],
+ "counterpoint_honored": "Rules first costs a candidate nothing, a moratorium works like a no in practice, Bronson and Taylor said unqualified yes in September (c13/c14), Tomaszewski says the grid isn't ready (c8), and Prax and Haney say the first rule belongs to local government (c9). Act three gives the pause-and-grid side and the borough-zoning side a scene at full strength, then the open question whether Juneau or the borough writes the first word.",
+ "second_movement": "c19 + c18: the bill that got furthest was an electricity and decommissioning bill, so the data center question is really a power-bill and cleanup question, and the unfinished bill is the framework both the moratorium camp (c16) and the build camp wait for.",
+ "throughline_object": "THE BALLOT SLIP. States: (1) two-box YES/NO slip, (2) the boxes melt into three sliders SIZE / PLACE / WHO PAYS, (3) each slider set differently per candidate, (4) the slip becomes the Senate bill sheet stamped 14 to 5 and parked in an IN tray, (5) a blank rule sheet with a pen hovering, FIRST RULE UNWRITTEN.",
+ "hero": "BallotBox (net-new reusable hero: a steel ballot box with a slot mouth, a face and a flag)",
+ "ai_link_wording": "The data center is the machine room AI runs in. The candidates talk about data centers, the Beacon and ADN stories don't say AI throughout, so the film says data centers and AI's compute, never an AI bill.",
+ "valence": "Constructive, Alaska-first, even-handed. No villain, no savior. The House stall is a calendar fact.",
+ "stance": "mixed",
+ "one_question": "Which of the three decides your yes, the size, the place or who pays for the power?",
+ "runner_ups": [
+  "Rule-writer only (who writes the first rule): folded in as the Act 4 button",
+  "Enthusiast upside: folded in as c12 shared ground and the dividend/tax scenes",
+  "Sullivan/RPM conflict: lost, single partisan source"
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "run_date": "2026-10-26",
+ "palette": {
+  "mood": "A bright October polling-place hall: pale sage walls, pale maple floor, brick-red booth curtains, ink-blue ballot ink. A civic indoor day, unlike the last five worlds (rain boardwalk, orbit, paper building, tundra dusk, beach). The windows are pale morning sky in S1 to S6 and slate-violet dusk in S9 and S10. Green is never in a window.",
+  "sky": "pale sage hall wall #BFD1C0 under pale morning windows #DCE9EE; dusk windows and the Interior sky are slate-violet #3F4468 (not navy, not 10-24's void)",
+  "ground": "pale maple floor #E3C183 (cooler and paler than the brass of 10-23 to 10-25), wood stage #A8743F, tundra slate #4A5A63 on the map",
+  "hero": "THE BALLOT BOX (net-new, lib/ballot.tsx): a tall upright steel-blue #5C7FA3 box with a slanted hinged cream lid, the deposit slot on TOP, a carry handle, a brick-red seal ribbon #A8402F, ink #1E2B4D outline, two eyes and a front return-slot mouth.",
+  "accent": "TWO reserved colours with separate roles. (1) aurora green #43D17A means ONLY electricity: the Cord and plug, the PowerPole line and lamp, the shared ENERGY INVESTMENT line and the tray lamp. It is NEVER in a window or a sky. (2) brick red #A8402F (hue about 8 degrees, deliberately away from 10-25's signal pink at 340) means ONLY the BallotBox seal ribbon and the booth curtains. Honey #D9A441 is a small trim colour (podium tops, the padlock, knobs), never a fill.",
+  "roles": {
+   "sage #BFD1C0": "hall walls",
+   "pale maple #E3C183": "floor",
+   "brick #A8402F": "seal ribbon and curtains only",
+   "ink-blue #1E2B4D": "ballot ink, rail bodies, outlines",
+   "cream #F6EFDC": "slips, plates, bill sheet",
+   "aurora green #43D17A": "electricity only (never windows)",
+   "honey #D9A441": "trim only"
+  }
+ },
+ "light": {
+  "time_of_day": "a bright morning hall that dims to a dusk grid and brightens for the button",
+  "direction": "LIGHT ARC: S1 to S6 flat pale-morning hall light from the high windows (top left); S7 to S8 warm stage spots; S9 the lights dim as the grid line sags and the window goes slate-violet dusk; S10 dusk with the green plug lit; S11 a dim hearing room with one lamp on the tray; S12 the lamp goes out as the session bell rings; S13 the hall lights come up for the button.",
+  "depth_approach_note": "see depth_plan"
+ },
+ "shape_language": "A deliberate contrast of LONG OPEN RUNS and SMALL CLOSED SQUARES. Rails, sheets, the power line and the map run long and open-ended, horizontally. Boxes, padlocks, stamps, podium cards and the BallotBox itself are small closed squares. The hero sits on the CLOSED side and spends the film learning to take in the long open rails. (Round versus ruled and elastic versus fixed were 10-22 and 10-25.)",
+ "casting": {
+  "hero": "THE BALLOT BOX (lib/ballot.tsx, net-new): a tall upright box with a slanted hinged lid, a carry handle, the deposit slot on top, a seal ribbon (not a mailbox flag, because this is a ballot box and not a rural mailbox) and stubby legs. No vents, lights or rack lines. Emotions blank, squint, sweat, worried, ask, calm, surprise. It reacts to the slip, to SIZE and to the grid, never to a candidate or a side.",
+  "supporting": [
+   "Slip (net-new, the throughline): FACELESS, so it can't read as 10-23's Dotty; a cream ballot with two clicked boxes that melt ONCE (S1) into three rails",
+   "Lectern (net-new, renamed from Podium because the shelf already has Podium in polecam.tsx, which is a mic podium with no name card, bust or pennant): faceless silhouettes with a boxed name card",
+   "Gate (net-new): a pause with an end condition, key labeled STUDY or FRAMEWORK",
+   "InTray (net-new, in ballot.tsx), PowerPole and Cord (episode-local; refinery.tsx Cable is a power line with a travelling pulse but no plug, so the dangling cord with a plug is drawn episode-local)",
+   "BillSheet (net-new, a paper sheet that flips)",
+   "Shed and Hall: two plain buildings, low and wide, no slot, no seal"
+  ],
+  "why_not_shelf_hero": "Last heroes were Plate and SatelliteEye. RemoteControl and PAUSE iconography were used on 10-17, so the pause is a padlocked gate, never a button or remote. Calendars and date drums were used on 10-17 and 10-23, so none is drawn.",
+  "asset_by_asset": {
+   "ServerMachine (kit.tsx)": "a faced vented machine, 10-25's Cubby. The BallotBox is tall, upright, un-vented, has a hinged slanted lid and a top slot. The DATA CENTER buildings in this film (Shed, Hall) are low and wide and have NO face, so the audience never has to tell hero from antagonist.",
+   "PetrelDock (kit.tsx)": "a cold slate rectilinear dock. The BallotBox is warm steel with a lid and handle.",
+   "ServerBox (polecam.tsx)": "a store-front server box with LEDs. No LEDs, lights or vents on the BallotBox.",
+   "FlightCrate (clinic.tsx)": "a latched crate on the 10-11 film. The BallotBox has a hinged lid and handle, no latches.",
+   "LeadSlot (newsroom.tsx)": "a slot throughline from 10-03 that is a tray slot, not a box with a face.",
+   "Podium (polecam.tsx)": "a microphone podium. NOT reused: the film needs twelve faceless lecterns with name cards and a pennant, so a new Lectern is added under a new name.",
+   "HallWall (corridor.tsx)": "a seafoam wall with clerestory windows (10-05). Not reused: this hall needs a stage, curtains and a floor, built episode-local in sage and maple.",
+   "Sheet (paper.tsx) and StudySheet (pier.tsx)": "flat sheets. The Slip needs melting boxes and rails so it is net-new, and it is faceless."
+  }
+ },
+ "motion_language": "Rails glide with eased anticipation and settle. Boxes and stamps click and snap. The melt happens ONCE, in S1. The BallotBox breathes, blinks and its seal ribbon sways continuously. Sheets slide on rails with a tiny rotation. Impacts land in the object (squash, a star, paper dust), never in the camera.",
+ "composition": {
+  "focal_hierarchy": "The BallotBox or the slip is the best-finished thing in every frame; where they are off-stage the named slider or sheet is.",
+  "negative_space": "S9 (the grid) holds a quiet near-empty dusk frame for about 3 s with only the sagging line and the lamp.",
+  "safe_area": "hero action inside y 420 to 1500; hall walls and windows above, a honey floor with a near-plane rail below the caption card",
+  "signature_shot": "THE MELT, once, in S1 from about 2.9 s to 6.4 s (about 3.5 s): the camera holds on the slip while the YES and NO boxes soften and drip down the sheet and the drips set into three sliding rails, the BallotBox squinting beside it."
+ },
+ "craft_advance": "none needed; lib/ballot.tsx is added because this film needs it",
+ "divergence": "vs 10-25 (rain boardwalk, cedar and teal, signal pink): a bright indoor hall in sage and maple, brick red at hue 8 (not pink at 340), aurora green as electricity only. vs 10-24 (navy orbit): lit interior, slate-violet dusk rather than a navy void. vs 10-23 (white snow, paper building): no snow, and the Slip is faceless where Dotty had checkbox eyes. vs 10-22 (dark tundra, brass bob): no brass, no ground cutaway. HONEST OVERLAPS: a faced object hero for a fifth film running (mitigated: a tall un-vented box with a hinged lid and top slot, unlike the sign, paper, sensor and satellite heroes); ink plates in the house style; honey trim and ink-blue rails echo the brass and navy of recent films but as trim and ink only; a hall wall with windows resembles 10-05's HallWall, retinted and built with a stage.",
+ "depth_plan": {
+  "planes": "S1 (hall wall and windows 0.5x drift, floor and BallotBox 1.0x, near rail 1.5x), S2 (back curtain 0.5x, twelve lecterns 1.0x, front stage lip 1.5x), S4 (back wall 0.5x, scattering lecterns 1.0x, gate 1.0x, floor edge 1.5x), S6 (the map under a slow descent, pins 1.0x, near map border 1.5x), S7 (dark curtain 0.5x, four lecterns 1.0x, stage lip and footlight 1.5x), S9 (dusk sky 0.4x, far pole silhouettes 0.7x, the pole and counter 1.0x, near gravel verge and fence rail 1.5x under the caption card), S10 (dusk sky 0.4x, shed and hall 1.0x, near gravel 1.5x), S13 (hall wall 0.5x, BallotBox and sheet 1.0x, near rail and floor 1.5x).",
+  "flat_shots": "S3 (the tray under a lamp: tray, sheet and a floor edge named layers), S5 (the rail, register and envelope as a locked panel with a near desk edge), S8 (SIZE rail then gate: a slow lateral creep of 40 px over the shot so it is not a locked panel, with a near floor edge), S11 (board then tray then sheet, with a near desk edge), S12 (tray and bell with a near desk edge) are locked panels with named layers and continuous idle motion."
+ },
+ "accent_enforcement": "Code: only Cord, plug, PowerPole line and lamp, the energy line and the tray lamp use BAL.aurora; brick red is only the seal ribbon and curtains. Per-shot licence: brick red appears in S1, S13 (the BallotBox ribbon and, in S1 and S13, the curtains) and in S2 to S12 only as the ribbon when the BallotBox is on screen; no name card, stamp or knob uses #A8402F. Aurora green appears in S3 (tray lamp), S5/S6 (the dangling cord), S9 (pole line and lamp), S10 (green line and plug), S11 (tray lamp, bill plug icon), S13 (the WHO PAYS cord). lib/lighting.tsx AccentRegistry is NOT wired, because Ep1026 owns its tokens locally, as 10-24 and 10-25 recorded."
+}
