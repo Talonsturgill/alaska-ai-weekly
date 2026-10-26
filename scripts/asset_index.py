@@ -26,7 +26,7 @@ REPO = Path(__file__).resolve().parents[1]
 MANIFEST = REPO / "video-engine" / "src" / "lib" / "ASSET_MANIFEST.md"
 INDEX = REPO / "video-engine" / "src" / "lib" / "ASSET_INDEX.md"
 WIDTH = 110
-FILE_RE = re.compile(r"((?:lib/)?[A-Za-z0-9_]+\.tsx)")
+FILE_RE = re.compile(r"((?:lib/)?[A-Za-z0-9_]+\.tsx?)")
 
 
 def build(text):
