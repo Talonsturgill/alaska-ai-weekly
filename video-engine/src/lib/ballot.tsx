@@ -181,7 +181,7 @@ export const Slip: React.FC<{
         <path d={`M ${-W / 2 + 46},${-H / 2 + 150 + 3 * 56 - 22} q 10,-12 22,0`} stroke={BAL.navy} strokeWidth={2.4} fill="none" opacity={0.0} />
       </>}
       {penAt !== undefined && (
-        <g transform={`translate(${penAt},${blank ? 40 : -150 + 10 * Math.sin(f / 8)}) rotate(-28)`}>
+        <g transform={`translate(${penAt},${blank ? 40 : -40 + 60 * Math.sin(f / 7)}) rotate(${-28 + 12 * Math.sin(f / 7)})`}>
           <ellipse cx={4} cy={118} rx={20} ry={6} fill="#000" opacity={0.2} />
           <rect x={-9} y={-90} width={18} height={168} rx={7} fill={BAL.navy} stroke={INK} strokeWidth={4.4} />
           <rect x={-9} y={-90} width={18} height={26} rx={7} fill={BAL.cranberry} stroke={INK} strokeWidth={4.4} />
@@ -342,41 +342,40 @@ export const BillSheet: React.FC<{
 };
 
 // ----------------------------------------------------------------------------------------------------------------------------------------
-/** A wooden IN tray with a LATER tab and a lamp. Draw space: base centre origin, 440 wide, ~110 tall. children draw sheets sitting in it. */
+/** A wooden IN tray with a LATER tab (tabText) and a lamp. Draw space: base centre origin, 440 wide, ~120 tall. children draw sheets standing in it, behind the front wall. */
 export const InTray: React.FC<{
-  x?: number; y?: number; s?: number; f: number; lamp?: number; tab?: number; id?: string; archLabel?: string; dust?: number; children?: React.ReactNode;
-}> = ({x = 0, y = 0, s = 1, f, lamp = 0, tab = 0, id = 'it', archLabel, dust = 0, children}) => {
+  x?: number; y?: number; s?: number; f: number; lamp?: number; tab?: number; id?: string; archLabel?: string; dust?: number; tabText?: string; children?: React.ReactNode;
+}> = ({x = 0, y = 0, s = 1, f, lamp = 0, tab = 0, id = 'it', archLabel, dust = 0, tabText = 'LATER', children}) => {
   const t = tones(BAL.wood);
   const gid = `${id}_g`;
   const L = clamp01(lamp);
   return (
     <g transform={`translate(${x},${y}) scale(${s})`}>
       <defs><FormGradient id={gid} t={t} /></defs>
-      <ContactShadow cx={0} cy={6} rx={250} ry={14} opacity={0.34} blur={9} />
+      <ContactShadow cx={0} cy={6} rx={260} ry={14} opacity={0.34} blur={9} />
       {archLabel && (
         <g transform="translate(0,-330)">
           <path d="M -230,0 Q -230,-70 0,-70 Q 230,-70 230,0 L 230,8 L -230,8 Z" fill={BAL.cream} stroke={INK} strokeWidth={6} />
           <text x={0} y={-8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} letterSpacing={4} fill={INK}>{archLabel}</text>
         </g>
       )}
-      <path d="M -220,-96 L 220,-96 L 238,0 L -238,0 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-      <path d="M -204,-80 L 204,-80" stroke={BAL.woodShade} strokeWidth={5} opacity={0.5} />
-      <rect x={-232} y={-110} width={464} height={26} rx={9} fill={BAL.woodHi} stroke={INK} strokeWidth={6} />
+      {/* back wall, then whatever stands in the tray, then the front wall over its lower part */}
+      <path d="M -214,-150 L 214,-150 L 226,-96 L -226,-96 Z" fill={BAL.woodShade} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
       {children}
-      <path d="M -220,-96 L 220,-96 L 238,0 L -238,0 Z" fill="none" stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-      <rect x={-232} y={-122} width={464} height={26} rx={9} fill={BAL.woodHi} stroke={INK} strokeWidth={6} />
-      <g transform={`translate(-190,${-60}) rotate(${-4 + 14 * Math.max(0, 1 - tab) * Math.sin(f / 3)})`}>
-        <rect x={-48} y={-16} width={96} height={32} rx={5} fill={BAL.cream} stroke={INK} strokeWidth={4.4} />
-        <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={2} fill={INK}>LATER</text>
+      <path d="M -226,-100 L 226,-100 L 244,0 L -244,0 Z" fill={`url(#${gid})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+      <rect x={-236} y={-112} width={472} height={26} rx={9} fill={BAL.woodHi} stroke={INK} strokeWidth={6} />
+      <rect x={-224} y={-108} width={448} height={5} rx={2.5} fill="#fff" opacity={0.4} />
+      <g transform={`translate(-150,-48) rotate(${-4 + 14 * Math.max(0, 1 - tab) * Math.sin(f / 3)})`}>
+        <rect x={-54} y={-17} width={108} height={34} rx={5} fill={BAL.cream} stroke={INK} strokeWidth={4.4} />
+        <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={21} letterSpacing={2} fill={INK}>{tabText}</text>
       </g>
-      {/* the tray lamp (a plain lamp: electricity, so aurora) */}
-      <g transform="translate(206,-122)">
+      <g transform="translate(208,-122)">
         <rect x={-5} y={-70} width={10} height={70} rx={3} fill={BAL.steelShade} stroke={INK} strokeWidth={4} />
         <path d="M -30,-70 L 30,-70 L 18,-100 L -18,-100 Z" fill={BAL.steel} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
         <circle cx={0} cy={-64} r={12 + 4 * L} fill={BAL.aurora} opacity={0.25 + 0.7 * L} />
         {L > 0.05 && <path d="M -26,-62 L -90,10 L 90,10 L 26,-62 Z" fill={BAL.aurora} opacity={0.1 * L} />}
       </g>
-      {dust > 0.02 && [0, 1, 2, 3, 4].map((i) => <circle key={i} cx={-120 + i * 60 + 8 * Math.sin(f / 9 + i)} cy={-130 - ((f * 0.6 + i * 17) % 46) * dust} r={3.4} fill={BAL.creamShade} opacity={0.55 * dust} />)}
+      {dust > 0.02 && [0, 1, 2, 3, 4].map((i) => <circle key={i} cx={-120 + i * 60 + 8 * Math.sin(f / 9 + i)} cy={-160 - ((f * 0.6 + i * 17) % 46) * dust} r={3.4} fill={BAL.creamShade} opacity={0.55 * dust} />)}
     </g>
   );
 };
