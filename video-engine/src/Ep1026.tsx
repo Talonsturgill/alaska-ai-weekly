@@ -451,15 +451,15 @@ const S5: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="RENTZEL · SOME SORT OF TAX" y={540} size={32} tone="ink" p={ease(f, t15, 8)} />
-        <Plate x={540} text="MOORE" y={640} size={32} tone="cream" p={ease(f, t17, 8)} />
-        <Plate x={540} text="COULD PAY A DIGITAL DIVIDEND" y={740} size={30} tone="ink" p={ease(f, t18, 8)} />
+        <Plate x={540} text="RENTZEL · SOME SORT OF TAX" y={530} size={32} tone="ink" p={ease(f, t15, 8)} />
+        <Plate x={540} text="MOORE" y={610} size={32} tone="cream" p={ease(f, t17, 8)} />
+        <Plate x={540} text="COULD PAY A DIGITAL DIVIDEND" y={690} size={30} tone="ink" p={ease(f, t18, 8)} />
       </>}>
       <SVG>
         <Hall f={g} id="s5" floorY={1000} />
         <rect data-band="ok" x={-40} y={1000} width={W + 80} height={420} fill={P.woodHi} stroke={INK} strokeWidth={7} />
         {Array.from({length: 7}).map((_, i) => <line key={i} x1={0} y1={1040 + i * 56} x2={W} y2={1040 + i * 56} stroke={P.woodShade} strokeWidth={3} opacity={0.45} />)}
-        <Rails x={540} y={820} s={1.15} f={g} vals={[0.5, 0.5, knob]} labels={['SIZE', 'PLACE', 'WHO PAYS']} onlyIdx={2} w={560} pulse={[0, 0, bump(f, t16, 20)]} />
+        <Rails x={540} y={960} s={1.15} f={g} vals={[0.5, 0.5, knob]} labels={['SIZE', 'PLACE', 'WHO PAYS']} onlyIdx={2} w={560} pulse={[0, 0, bump(f, t16, 20)]} />
         {/* the cash register */}
         <g transform="translate(250,1230)" opacity={1 - 0.55 * ease(f, t17, 10)}>
           <ContactShadow cx={0} cy={4} rx={170} ry={14} opacity={0.34} blur={8} />
@@ -532,7 +532,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="SOUTH ANCHORAGE · HOUSE RACE" y={520} size={30} tone="cream" p={ease(f, t19 + 4, 8)} />
+        <Plate x={540} text="SOUTH ANCHORAGE · HOUSE RACE" y={520} size={30} tone="cream" p={ease(f, t19 + 4, 8) * (1 - ease(f, t21 - 10, 8))} />
         <Plate x={540} text="HOLLAND · MODEST · PURPOSE-BUILT" y={600} size={30} tone="ink" p={ease(f, t20, 8) * (1 - ease(f, t21 + 30, 8))} />
         <Plate x={540} text="BOYLE · OPEN TO LARGE" y={680} size={32} tone="ink" p={ease(f, t21, 8)} />
         <Plate x={540} text="NORTH SLOPE" y={760} size={34} tone="cream" p={ease(f, t22 + 10, 8)} />
@@ -553,11 +553,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
         {/* the dangling cord from the top of the frame: planted for the pay at the shed */}
         {cord > 0.02 && (
           <g opacity={cord}>
-            <rect x={186} y={440} width={130} height={34} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} />
-            <text x={251} y={463} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={1} fill={INK}>WHO PAYS</text>
-            <path d={`M 251,474 Q ${290 + cs},700 ${240 + cs * 1.5},${960 + 14 * Math.sin(g / 9)}`} stroke={INK} strokeWidth={28} fill="none" strokeLinecap="round" />
-            <path d={`M 251,474 Q ${290 + cs},700 ${240 + cs * 1.5},${960 + 14 * Math.sin(g / 9)}`} stroke={P.aurora} strokeWidth={15} fill="none" strokeLinecap="round" />
-            <g transform={`translate(${240 + cs * 1.5},${976 + 14 * Math.sin(g / 9)})`}><rect x={-20} y={-12} width={40} height={30} rx={5} fill={P.creamShade} stroke={INK} strokeWidth={5} /><rect x={-12} y={16} width={7} height={22} fill={INK} /><rect x={6} y={16} width={7} height={22} fill={INK} /></g>
+            <rect x={335} y={440} width={130} height={34} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} />
+            <text x={400} y={463} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={1} fill={INK}>WHO PAYS</text>
+            <path d={`M 400,492 Q ${440 + cs},700 ${390 + cs * 1.5},${960 + 14 * Math.sin(g / 9)}`} stroke={INK} strokeWidth={28} fill="none" strokeLinecap="round" />
+            <path d={`M 400,492 Q ${440 + cs},700 ${390 + cs * 1.5},${960 + 14 * Math.sin(g / 9)}`} stroke={P.aurora} strokeWidth={15} fill="none" strokeLinecap="round" />
+            <g transform={`translate(${390 + cs * 1.5},${976 + 14 * Math.sin(g / 9)})`}><rect x={-20} y={-12} width={40} height={30} rx={5} fill={P.creamShade} stroke={INK} strokeWidth={5} /><rect x={-12} y={16} width={7} height={22} fill={INK} /><rect x={6} y={16} width={7} height={22} fill={INK} /></g>
           </g>
         )}
         <NearRail f={g} y={1560} kind="bare" />
@@ -581,13 +581,7 @@ const MiniSlip: React.FC<{x: number; y: number; s?: number; f: number; tick: num
       </g>
     ))}
     {tick > 0.02 && <path d="M -70,-1 L -58,9 L -38,-8" stroke={BAL.navy} strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" fill="none" strokeDasharray={60} strokeDashoffset={60 * (1 - clamp01(tick))} />}
-    {tick > 0.02 && tick < 0.98 && (
-      <g transform={`translate(${-22 + 40 * (1 - tick)},${0 - 90 * (1 - tick)}) rotate(24)`}>
-        <rect x={-6} y={-70} width={12} height={110} rx={5} fill={BAL.navy} stroke={INK} strokeWidth={3.4} />
-        <path d="M -6,40 L 0,58 L 6,40 Z" fill={BAL.creamShade} stroke={INK} strokeWidth={3} />
-      </g>
-    )}
-  </g>
+    </g>
 );
 
 const S7: React.FC<SceneProps> = ({p}) => {
@@ -611,8 +605,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Lectern x={790} y={1340} s={1.25} f={g} lit={ease(f, t26, 6)} card="TAYLOR" cardSize={17} phase={2.1} id="s7b" />
         <MiniSlip x={300} y={1065} s={1.0} f={g} tick={ease(f, t25, 14)} rot={-5} id="s7s1" />
         <MiniSlip x={790} y={1065} s={1.0} f={g} tick={ease(f, t27, 14)} rot={4} id="s7s2" />
-        <BallotBox x={545} y={1340} s={0.5} f={g} mood="blank" look={0} phase={3.1} id="s7b0" />
-        <NearRail f={g} y={1560} seed={7} />
+                <NearRail f={g} y={1560} seed={7} />
       </SVG>
     </Frame>
   );
@@ -818,7 +811,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate x={540} text="THE RULE?" y={520} size={38} tone="cream" p={ease(f, t40, 8) * (1 - ease(f, t41 + 20, 8))} />
         <Plate x={540} text="SENATE · 14 TO 5" y={600} size={38} tone="ink" p={ease(f, t41 + 14, 8)} />
-        <Plate x={540} text="THE BILL · POWER RULES + DECOMMISSIONING" displayLines={['THE BILL', 'POWER RULES + DECOMMISSIONING']} y={730} size={30} tone="cream" p={ease(f, t43, 8)} />
+        <Plate x={540} text="THE BILL · POWER RULES + DECOMMISSIONING" displayLines={['THE BILL', 'POWER RULES + DECOMMISSIONING']} y={700} size={30} tone="cream" p={ease(f, t43, 8)} />
       </>}>
       <SVG>
         <Hall f={g} id="s11" dusk={0.8} floorY={1180} />
