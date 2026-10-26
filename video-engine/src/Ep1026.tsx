@@ -528,7 +528,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const hx = lerp(SP.x, NP.x, roll), hy = lerp(SP.y, NP.y, roll);
   const cam = track([{t: 0, z: 1.2, fx: 540, fy: 1150}, {t: t21 + 10, z: 1.1, fx: 580, fy: 960}, {t: t22 + 36, z: 1.0, fx: 540, fy: 940}, {t: p.dur, z: 1.0, fx: 540, fy: 940}]);
   const cord = ease(f, t22 - 6, 14);
-  const cs = 12 * Math.sin(g / 12);
+  const cs = 34 * Math.sin(g / 14);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -553,11 +553,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
         {/* the dangling cord from the top of the frame: planted for the pay at the shed */}
         {cord > 0.02 && (
           <g opacity={cord}>
-            <rect x={86} y={440} width={130} height={34} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} />
-            <text x={151} y={463} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={1} fill={INK}>WHO PAYS</text>
-            <path d={`M 151,474 Q ${170 + cs},700 ${140 + cs * 1.4},${960 + 14 * Math.sin(g / 9)}`} stroke={INK} strokeWidth={20} fill="none" strokeLinecap="round" />
-            <path d={`M 151,474 Q ${170 + cs},700 ${140 + cs * 1.4},${960 + 14 * Math.sin(g / 9)}`} stroke={P.aurora} strokeWidth={10} fill="none" strokeLinecap="round" />
-            <g transform={`translate(${140 + cs * 1.4},${976 + 14 * Math.sin(g / 9)})`}><rect x={-20} y={-12} width={40} height={30} rx={5} fill={P.creamShade} stroke={INK} strokeWidth={5} /><rect x={-12} y={16} width={7} height={22} fill={INK} /><rect x={6} y={16} width={7} height={22} fill={INK} /></g>
+            <rect x={186} y={440} width={130} height={34} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} />
+            <text x={251} y={463} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={1} fill={INK}>WHO PAYS</text>
+            <path d={`M 251,474 Q ${290 + cs},700 ${240 + cs * 1.5},${960 + 14 * Math.sin(g / 9)}`} stroke={INK} strokeWidth={28} fill="none" strokeLinecap="round" />
+            <path d={`M 251,474 Q ${290 + cs},700 ${240 + cs * 1.5},${960 + 14 * Math.sin(g / 9)}`} stroke={P.aurora} strokeWidth={15} fill="none" strokeLinecap="round" />
+            <g transform={`translate(${240 + cs * 1.5},${976 + 14 * Math.sin(g / 9)})`}><rect x={-20} y={-12} width={40} height={30} rx={5} fill={P.creamShade} stroke={INK} strokeWidth={5} /><rect x={-12} y={16} width={7} height={22} fill={INK} /><rect x={6} y={16} width={7} height={22} fill={INK} /></g>
           </g>
         )}
         <NearRail f={g} y={1560} kind="bare" />
@@ -740,8 +740,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${lerp(500, 0, slideIn)},0)`}><Pole x={500} y={1360} s={1.2} sag={sag} lamp={lamp} f={g} id="s9p" reach={620} /></g>
         {/* a small rail card: WHO PAYS jams, then PLACE slides to LOCAL */}
         <g transform="translate(250,930)">
-          <rect x={-170} y={-78} width={340} height={ 250} rx={10} fill={P.cream} stroke={INK} strokeWidth={6} opacity={0.94} />
-          <g transform={`translate(${jamShake},0)`}><Rails x={0} y={-30} s={0.95} f={g} vals={[0.5, f < t53 ? 0.5 : lerp(0.5, 0.06, local), 0.55 + 0.03 * jam]} labels={['SIZE', 'PLACE', 'WHO PAYS']} w={290} pulse={[0, bump(f, t53, 20), jam > 0.5 ? 0.6 : 0]} /></g>
+          <rect x={-170} y={-96} width={340} height={ 268} rx={10} fill={P.cream} stroke={INK} strokeWidth={6} opacity={0.94} />
+          <g transform={`translate(${jamShake},0)`}><Rails x={0} y={-14} s={0.95} f={g} vals={[0.5, f < t53 ? 0.5 : lerp(0.5, 0.06, local), 0.55 + 0.03 * jam]} labels={['SIZE', 'PLACE', 'WHO PAYS']} w={290} pulse={[0, bump(f, t53, 20), jam > 0.5 ? 0.6 : 0]} /></g>
           
         </g>
         <g transform={`translate(${lerp(1400, 850, counter)},1380)`}>
@@ -780,14 +780,14 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <DuskSky f={g} id="s10d" />
         <Pole x={990} y={1360} s={0.9} sag={1} lamp={0.8} f={g} id="s10p" reach={420} />
-        <g transform={`translate(${lerp(-400, 0, slide)},0)`}><Building x={40} y={1380} w={380} h={230} id="s10s" windows={3} kind="shed" f={g} lit={0.9} plug={plug} /></g>
-        <g transform={`translate(${lerp(1400, 0, slide)},0)`}><Building x={470} y={1390} w={560} h={340} id="s10h" windows={7} kind="hall" f={g} lit={0.9} /></g>
-        <path d={`M 400,1120 Q 580,1020 780,1090`} stroke={INK} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray="22 16" opacity={0.9 - 0.4 * fill} />
-        <path d={`M 400,1120 Q 580,1020 780,1090`} stroke={fill > 0.02 ? P.aurora : '#8A91B4'} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={fill > 0.98 ? undefined : '22 16'} opacity={0.5 + 0.5 * fill} />
-        <g transform="translate(590,1030)"><rect x={-98} y={-18} width={196} height={30} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} /><text x={0} y={5} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={2} fill={INK}>INVESTMENT</text></g>
+        <g transform={`translate(${lerp(-400, 0, slide)},0)`}><Building x={40} y={1300} w={380} h={230} id="s10s" windows={3} kind="shed" f={g} lit={0.9} plug={plug} /></g>
+        <g transform={`translate(${lerp(1400, 0, slide)},0)`}><Building x={470} y={1310} w={560} h={340} id="s10h" windows={7} kind="hall" f={g} lit={0.9} /></g>
+        <path d={`M 300,1010 Q 540,820 790,930`} stroke={INK} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray="22 16" opacity={0.9 - 0.4 * fill} />
+        <path d={`M 300,1010 Q 540,820 790,930`} stroke={fill > 0.02 ? P.aurora : '#8A91B4'} strokeWidth={7} fill="none" strokeLinecap="round" strokeDasharray={fill > 0.98 ? undefined : '22 16'} opacity={0.5 + 0.5 * fill} />
+        <g transform="translate(545,870)"><rect x={-98} y={-18} width={196} height={30} rx={5} fill={P.cream} stroke={INK} strokeWidth={4} /><text x={0} y={5} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={2} fill={INK}>INVESTMENT</text></g>
         {(() => {
-          const ex = lerp(880 + 14 * Math.sin(g / 11), 396, swing), ey = lerp(1120 + 16 * Math.sin(g / 9), 1338, swing);
-          const cxp = lerp(930, 640, swing), cyp = lerp(1060, 1290, swing);
+          const ex = lerp(880 + 14 * Math.sin(g / 11), 397, swing), ey = lerp(1000 + 16 * Math.sin(g / 9), 1263, swing);
+          const cxp = lerp(930, 620, swing), cyp = lerp(960, 1180, swing);
           const d = `M 905,838 Q ${cxp},${cyp} ${ex},${ey}`;
           return (<g>
             <path d={d} stroke={INK} strokeWidth={13} fill="none" strokeLinecap="round" />
@@ -808,7 +808,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const t40 = b(40), t41 = b(41), t42 = b(42), t43 = b(43);
   const flip = easeIO(f, t41, 26);
   const rise = easeIO(f, t41, 40);
-  const typed = ease(f, t42, 50);
+  const typed = ease(f, t41 + 8, 44);
   const stamp = ease(f, t43, 8);
   const lamp = ease(f, t41 - 10, 20) * 0.7 + 0.3;
   const tabFlip = ease(f, t40 + 8, 14);
