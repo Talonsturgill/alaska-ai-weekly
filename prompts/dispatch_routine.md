@@ -560,6 +560,8 @@ for the synth ("five hundred", "U A F") but NUMERALS on screen. Banned words per
 Every vo_script line carries `claims`, the ids it voices, planned to the floor `--plan` printed.
 Map every spelled token in `caption_fixups` as the line is written. `vo_claims_check.py` WARNs on
 any it finds unmapped and `caption_spelling_check.py` fails a spaced initialism before the render.
+When a line voices a source's own words, list the phrase in `caption_quotes` (as the card shows it)
+and `build_scenes.py` burns straight quotes around it, so a quote never reads as narration.
 Structure: a hook that demands the next line, an escalating middle riding the treatment, the turn
 stated plainly and always DRAWN as a picture, a button that lands with the final image.
 
