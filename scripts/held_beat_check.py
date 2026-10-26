@@ -28,8 +28,22 @@ preflight like the 2 percent floor above, until a shipped film clears it; `--str
 the named beats are the work order: an object-level secondary motion on the held thing (HeldProp
 from lib/heldidle.tsx, a drip, a sway, a flutter), never a bigger camera move.
 
+BEFORE THE RENDER (machine pass 2026-10-26; queue: held beats under 6 percent, repeat 3: the
+judges named the class on 10-22, 10-24, 10-25 and 10-26, twelve strips on 10-26: map, alert lamp,
+chamber doors, LATER tab, sponsor tag). The measure above runs on the delivered master, so the work
+order arrived after a 20 minute render and the run shipped it rather than spend another. Every input
+except the pixels is known before the render: `--source` plans the same strip windows build_evidence
+will cut (conformed_moves on the board and the VO clock, slid off shot boundaries the same way),
+renders only frame 1 and frame 8 of each window in Remotion's Chrome (scripts/held_beat_probe.cjs,
+the label_footprint bundle path, about two frames a second), and applies the same camera solve.
+make_cut runs it as an advisory source step, so the summary names each HELD beat, its shot and what
+the board says it shows before a frame of the full render is spent. The remedy it prints is a
+TRAVELLING element on the held thing (HeldTravel in lib/heldidle.tsx: a light sweep, a runner along
+a cord or rail, a drifting shadow), because a HeldProp rock alone moves edges, not area.
+
 Usage: python3 scripts/held_beat_check.py [--motion out/evidence/motion.json] [--floor 2.0]
                                           [--held-floor 6.0] [--no-solve] [--strict]
+       python3 scripts/held_beat_check.py --source [EPISODE.tsx] [--props ...] [--strict]
 """
 import argparse
 import json
@@ -113,6 +127,89 @@ def held_solved(strips, video, floor=HELD_FLOOR):
     return sorted(out, key=lambda x: (x[1], x[0])), measured
 
 
+REMEDY = ("give each held thing a TRAVELLING element, <HeldTravel> from lib/heldidle.tsx (a sweep "
+          "across it, a runner along its cord or rail, a shadow drifting over it), not a camera move")
+
+
+def plan_windows(out_dir=os.path.join(REPO, "out", "dispatch")):
+    """[(name, beat_id, t0_s)] for every strip build_evidence will cut, from the board, the VO clock
+    and the props alone, slid off shot boundaries exactly as build_evidence slides them. Beat-internal
+    cuts (which build_evidence finds in the pixels) are caught later by the wholesale-change guard."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import build_evidence as be
+    lines = json.load(open(os.path.join(out_dir, "vo_lines.json")))["lines"]
+    start = {L["idx"]: L["start"] for L in lines}
+    board = json.load(open(os.path.join(out_dir, "storyboard.json")))
+    props = json.load(open(os.path.join(out_dir, "episode_props.json")))
+    film_end = max(max(L["end"] for L in lines), props["total"] / 30.0)
+    moves = be.conformed_moves(board, start, film_end)
+    beat_of_name = {name: beat for name, beat, _ in be.MOVES}
+    bounds = sorted({round(sc["from"] / 30.0, 3) for sc in props.get("scenes") or [] if sc.get("from")})
+    win = 8 / 30.0
+    out = []
+    for name, line, off in moves:
+        if line not in start:
+            continue
+        centre = start[line] + off
+        t0 = max(0.0, centre - 0.13)
+        cut = next((b for b in bounds if t0 < b < t0 + win), None)
+        if cut is not None:
+            t0 = cut + 1 / 30.0 if centre >= cut - 1e-6 else max(0.0, cut - win - 1 / 30.0)
+        out.append((name, beat_of_name.get(name), t0))
+    return out, props
+
+
+def shot_at(props, t):
+    f = t * 30.0
+    for i, sc in enumerate(props.get("scenes") or []):
+        if sc["from"] <= f < sc["from"] + sc["dur"]:
+            return i + 1
+    return None
+
+
+def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO, "out", "dispatch")):
+    """Render frame 1 and frame 8 of every planned strip in Chrome and solve the camera out.
+    Returns ([(name, beat_id, shot, t0, pct)] under floor, measured count, cut-straddling names)."""
+    import subprocess
+    import tempfile
+    from PIL import Image
+    windows, props = plan_windows(out_dir)
+    pairs = [(name, beat, t0, int(round(t0 * 30)), int(round(t0 * 30)) + 7) for name, beat, t0 in windows]
+    with tempfile.TemporaryDirectory(prefix="held-beat-") as tmp:
+        opts = os.path.join(tmp, "o.json")
+        with open(opts, "w") as fh:
+            json.dump({"source": os.path.abspath(source), "props": os.path.abspath(props_path),
+                       "frames": sorted({f for p in pairs for f in p[3:]})}, fh)
+        frames_dir = os.path.join(tmp, "frames")
+        r = subprocess.run(["node", os.path.join(REPO, "scripts", "held_beat_probe.cjs"), opts, frames_dir],
+                           cwd=REPO, capture_output=True, text=True, timeout=1800)
+        if r.returncode:
+            raise RuntimeError("held_beat_probe failed:\n" + (r.stderr or r.stdout)[-3000:])
+        low, measured, straddled = [], 0, []
+        for name, beat, t0, f0, f1 in pairs:
+            pa, pb = (os.path.join(frames_dir, f"f{f:05d}.png") for f in (f0, f1))
+            if not (os.path.exists(pa) and os.path.exists(pb)):
+                continue
+            a, b = Image.open(pa).convert("RGB"), Image.open(pb).convert("RGB")
+            if _wholesale(a, b):
+                straddled.append(name)      # a beat-internal cut: build_evidence slides off it
+                continue
+            pct, _k = solved_change(a, b)
+            measured += 1
+            if pct < floor:
+                low.append((name, beat, shot_at(props, t0), t0, round(pct, 1)))
+    return sorted(low, key=lambda x: (x[4], x[0])), measured, straddled
+
+
+def _wholesale(a, b):
+    """build_evidence's own cut test: more than 22 percent of a 120 px wide copy moving 40/255."""
+    from PIL import ImageChops
+    sa = a.convert("L").resize((120, 213))
+    sb = b.convert("L").resize((120, 213))
+    h = ImageChops.difference(sa, sb).histogram()
+    return 100.0 * sum(h[40:]) / (120 * 213) > 22.0
+
+
 def held(strips, floor=FLOOR):
     """[(name, pct)] for strips measured within one shot under `floor` percent, stillest first."""
     out = []
@@ -163,8 +260,11 @@ def _self_test():
 
 
 def main(argv=None):
-    if (argv if argv is not None else sys.argv[1:])[:1] == ["--self-test"]:
+    args = argv if argv is not None else sys.argv[1:]
+    if args[:1] == ["--self-test"]:
         return _self_test()
+    if args[:1] == ["--source"]:
+        return main_source(args[1:])
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--motion", default=MOTION)
     ap.add_argument("--board", default=BOARD)
@@ -205,7 +305,7 @@ def main(argv=None):
     if not low:
         print(f"{len(solved)} held under {a.held_floor:g}% with the camera solved out: "
               + ", ".join(f"{n} {p:.1f}" for n, p, _g in solved)
-              + " (an object-level idle on each: HeldProp in lib/heldidle.tsx, not a camera move)")
+              + f" ({REMEDY})")
         return 1 if a.strict else 2
     for name, pct in low:
         b = beats.get(beat_of(name))
@@ -215,6 +315,56 @@ def main(argv=None):
     print(f"{len(low)} under {a.floor:g}%: " + ", ".join(f"{n} {p:.1f}" for n, p in low)
           + f" (of {len(strips)} strips; wrap each held prop in <HeldProp> from lib/heldidle.tsx)")
     return 1 if (a.strict and solved) else 2
+
+
+def main_source(argv):
+    ap = argparse.ArgumentParser(description="held beats, measured from the source before the render")
+    ap.add_argument("targets", nargs="*")
+    ap.add_argument("--props", default=os.path.join(REPO, "out", "dispatch", "episode_props.json"))
+    ap.add_argument("--board", default=BOARD)
+    ap.add_argument("--held-floor", type=float, default=HELD_FLOOR)
+    ap.add_argument("--strict", action="store_true")
+    a = ap.parse_args(argv)
+    targets = a.targets
+    if not targets:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from caption_band_check import default_targets
+        targets = default_targets()
+    if not targets:
+        print("held beats (source): no episode file found")
+        return 2
+    try:
+        beats = {b["id"]: b for b in json.load(open(a.board))["beats"]}
+    except (OSError, ValueError, KeyError):
+        beats = {}
+    worst = 0
+    for t in targets:
+        try:
+            low, measured, straddled = source_held(t, a.props, a.held_floor)
+        except (RuntimeError, ValueError, OSError, KeyError) as exc:
+            print(f"held beats (source): could not measure {os.path.relpath(t, REPO)}: {exc}")
+            worst = max(worst, 2)
+            continue
+        for name, beat, shot, t0, pct in low:
+            b = beats.get(beat)
+            shows = f" | {b.get('shows', '')[:80]}" if b else ""
+            print(f"  HELD {pct:4.1f}% solved  S{shot} {t0:6.2f}s beat {beat}  {name}{shows}")
+        if straddled:
+            print(f"  (skipped {len(straddled)} window(s) on a beat-internal cut: {', '.join(straddled[:6])})")
+        if not measured:
+            print("held beats (source): measured NOTHING")
+            worst = max(worst, 2)
+            continue
+        if not low:
+            print(f"held beats (source): all {measured} planned strips move {a.held_floor:g} percent or "
+                  "more with the camera solved out")
+            continue
+        # Names first: make_cut keeps the first 200 characters of the last line.
+        print(f"{len(low)} of {measured} strips HELD under {a.held_floor:g}% before the render: "
+              + ", ".join(f"S{shot} {name} {pct:.1f}" for name, _b, shot, _t, pct in low)
+              + f" ({REMEDY})")
+        worst = max(worst, 1 if a.strict else 2)
+    return worst
 
 
 if __name__ == "__main__":

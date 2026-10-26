@@ -17,6 +17,17 @@ be an extensionless octet-stream blob that won't open.
 Usage:
   python scripts/upload_video.py --file out/dispatch/dispatch.mp4 --name dispatch-2026-06-27.mp4
   # --name may omit the extension; it is appended from --file automatically.
+  python scripts/upload_video.py --file out/dispatch/poster.png
+  # no --name: hosted as dispatch-<run id>-poster.png, the run id read from out/dispatch/.run_stamp.json
+  python scripts/upload_video.py --self-test
+
+NO PLAIN NAMES (machine pass 2026-10-26, queue: upload_video.py defaults to a plain name that
+overwrites). The runbook's rule is that media names are `dispatch-<date>-<basename>`, so a re-upload
+overwrites the SAME run's path and a URL never changes. Without --name this script hosted the bare
+basename, so `poster.png` or `dispatch_master.mp4` from one run would overwrite another run's file at
+the same raw URL, and any older email or feed entry pointing there would show the new film.
+The default is now the runbook's name, from the run stamp, and with no stamp and no --name it
+refuses rather than guess.
 """
 import argparse, base64, os, subprocess, sys, tempfile, re, json, shutil
 
@@ -165,12 +176,56 @@ def verify(url, file):
             return False, f"content-length {remote} != local file size {local} (truncated/wrong upload)"
     return True, "ok"
 
+STAMP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "out", "dispatch", ".run_stamp.json")
+
+
+def default_name(file, stamp=STAMP):
+    """`dispatch-<run id>-<basename>`, the runbook's deterministic media name. A basename that
+    already starts with `dispatch-<run id>-` is kept as it is. Raises RuntimeError when the run is
+    not stamped, because the only alternative is a plain name that overwrites another run's file."""
+    base = os.path.basename(file)
+    try:
+        rid = json.load(open(stamp)).get("run_id")
+    except (OSError, ValueError):
+        rid = None
+    if not rid or not isinstance(rid, str):
+        raise RuntimeError(f"upload_video: no --name and no run id in {os.path.normpath(stamp)}; a plain "
+                           f"name ({base!r}) would overwrite another run's media. Pass --name "
+                           "dispatch-<date>-<basename> or stamp the run (scripts/run_guard.py init).")
+    prefix = f"dispatch-{rid}-"
+    return base if base.startswith(prefix) else prefix + base
+
+
+def _self_test():
+    with tempfile.TemporaryDirectory() as tmp:
+        stamp = os.path.join(tmp, ".run_stamp.json")
+        json.dump({"run_id": "2026-10-26"}, open(stamp, "w"))
+        assert default_name("out/dispatch/poster.png", stamp) == "dispatch-2026-10-26-poster.png"
+        assert default_name("out/dispatch/dispatch_master.mp4", stamp) == "dispatch-2026-10-26-dispatch_master.mp4"
+        assert default_name("x/dispatch-2026-10-26-poster.png", stamp) == "dispatch-2026-10-26-poster.png"
+        try:
+            default_name("out/dispatch/poster.png", os.path.join(tmp, "missing.json"))
+            raise AssertionError("an unstamped run without --name must refuse, not host a plain name")
+        except RuntimeError:
+            pass
+        assert ensure_ext(default_name("a/b.mp4", stamp), "a/b.mp4") == "dispatch-2026-10-26-b.mp4"
+    print("upload_video self-test: PASS (default name carries the run id; unstamped refuses)")
+    return 0
+
+
 def main():
+    if sys.argv[1:2] == ["--self-test"]:
+        sys.exit(_self_test())
     ap = argparse.ArgumentParser()
-    ap.add_argument("--file", required=True); ap.add_argument("--name", default=None)
+    ap.add_argument("--file", required=True)
+    ap.add_argument("--name", default=None,
+                    help="hosted name; default dispatch-<run id>-<basename> from out/dispatch/.run_stamp.json")
     ap.add_argument("--no-github", action="store_true", help="skip the GitHub media-branch host")
     a = ap.parse_args()
-    name = ensure_ext(a.name or os.path.basename(a.file), a.file)
+    try:
+        name = ensure_ext(a.name or default_name(a.file), a.file)
+    except RuntimeError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr); sys.exit(2)
     url = None; kind = None; errs = []
     if rclone_configured() and have_rclone():
         try: url, kind = via_rclone(a.file, name), "permanent"

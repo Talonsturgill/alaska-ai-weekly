@@ -389,13 +389,14 @@ def _cards_from_words(caps, max_chars=68):
         # a run may name a phrase a card MUST break after (2026-10-05: a 130-character sentence
         # whose only clause boundary sat past the 68-character half limit)
         force = [x.lower() for x in (_vs.get("caption_split_after") or [])]
+    quotes = caption_quotes()
     def show(ws):
         return apply_fixups(" ".join(x["w"] for x in ws), fix)
     def inside_fix(ws, k):
         left = " ".join(x["w"] for x in ws[:k]).lower()
         right = " ".join(x["w"] for x in ws[k:]).lower()
         whole = (left + " " + right)
-        for ph in fix:
+        for ph in list(fix) + quotes:     # never split a card inside a fixup or a quote
             ph = ph.lower()
             for m in re.finditer(re.escape(ph), whole):
                 if m.start() < len(left) < m.end():
@@ -450,6 +451,58 @@ def _cards_from_words(caps, max_chars=68):
         for piece in split_unit(ws):
             out.append({"text": show(piece), "start": piece[0]["s"], "end": piece[-1]["e"], "seg": seg})
     return out
+
+def caption_quotes(out_dir=None):
+    """The `caption_quotes` list from vo_script.json: spoken phrases that are a source's own words."""
+    sp = os.path.join(out_dir or OUT, "vo_script.json")
+    if not os.path.exists(sp):
+        return []
+    q = json.load(open(sp)).get("caption_quotes") or []
+    return [x.strip().strip('"') for x in q if isinstance(x, str) and x.strip().strip('"')]
+
+
+def _apply_caption_quotes(caps, quotes):
+    """Burn straight double quotes around each declared spoken quote (machine pass 2026-10-26).
+
+    WHY. On 10-26 the VO read a candidate's words verbatim ("I'm a big believer in data
+    centers") and the card showed them bare, so they read as the narrator's opinion; the editor
+    flagged it and there was no way to declare it short of hand-editing the built props, which
+    the next build_scenes run would throw away. vo_script.json may now carry `caption_quotes`, a
+    list of phrases as they appear on the card (after caption_fixups), and each is wrapped in
+    straight quotes where it is spoken. Matching is case-insensitive on alphanumeric boundaries,
+    the first occurrence per card, and a phrase already in quotes is left alone. A phrase that
+    the card splitter still had to break across two cards gets its opening mark on the first and
+    its closing mark on the second. A declared phrase that is never found is reported, never
+    silently dropped."""
+    if not quotes:
+        return caps, []
+    missing = []
+    for q in sorted(quotes, key=len, reverse=True):
+        pat = re.compile(r"(?<![A-Za-z0-9\"])" + re.escape(q) + r"(?![A-Za-z0-9\"])", re.I)
+        found = any(('"' + q.lower() + '"') in c["text"].lower() for c in caps)
+        for c in caps:
+            m = pat.search(c["text"])
+            if m:
+                c["text"] = c["text"][:m.start()] + '"' + m.group(0) + '"' + c["text"][m.end():]
+                found = True
+        if not found:
+            toks = q.split()
+            for a, b in zip(caps, caps[1:]):
+                for cut in range(1, len(toks)):
+                    head, tail = " ".join(toks[:cut]), " ".join(toks[cut:])
+                    at, bt = a["text"].rstrip(), b["text"].lstrip()
+                    if (at.lower().endswith(head.lower()) and bt.lower().startswith(tail.lower())
+                            and (len(bt) == len(tail) or not bt[len(tail)].isalnum())):
+                        a["text"] = at[:len(at) - len(head)] + '"' + at[len(at) - len(head):]
+                        b["text"] = bt[:len(tail)] + '"' + bt[len(tail):]
+                        found = True
+                        break
+                if found:
+                    break
+        if not found:
+            missing.append(q)
+    return caps, missing
+
 
 def _rebalance_cues(caps):
     """Never break a caption between a number and its unit, or inside a proper noun.
@@ -702,6 +755,10 @@ def main():
     # on corrected text.
     caps = _rebalance_cues(_apply_caption_fixups(json.load(open(os.path.join(OUT, "captions.json")))))
     caps = _merge_by_sense(_cards_from_words(_apply_caption_fixups(caps)))
+    caps, _missing_quotes = _apply_caption_quotes(caps, caption_quotes())
+    if _missing_quotes:
+        raise SystemExit("build_scenes: caption_quotes not found on any card (write each phrase as "
+                         "the card shows it, after caption_fixups): " + "; ".join(_missing_quotes))
     start = {L["idx"]: L["start"] for L in lines}
     last_end = max(L["end"] for L in lines)
     # A board may ask for a longer hold on its final frame (tail_s), so a loop-closing question can be read.
@@ -825,5 +882,31 @@ def main():
         print(f"  S{i+1}: from={s['from']} dur={s['dur']} ({s['dur']/FPS:.2f}s)")
 
 
+def _self_test_quotes():
+    cases = [
+        ([{"text": "I'm a big believer in data centers,"}], ["I'm a big believer in data centers"],
+         ['"I\'m a big believer in data centers",'], []),
+        ([{"text": "Taylor said, we need to embrace it."}], ["we need to embrace it"],
+         ['Taylor said, "we need to embrace it".'], []),
+        ([{"text": "he said, we need"}, {"text": "to embrace it. Then"}], ["we need to embrace it"],
+         ['he said, "we need', 'to embrace it". Then'], []),
+        ([{"text": '"we need to embrace it" again'}], ["we need to embrace it"],
+         ['"we need to embrace it" again'], []),
+        ([{"text": "nothing to see"}], ["absent phrase"], ["nothing to see"], ["absent phrase"]),
+        ([{"text": "unchanged card"}], [], ["unchanged card"], []),
+    ]
+    bad = 0
+    for caps, quotes, want, want_missing in cases:
+        got, missing = _apply_caption_quotes([dict(c) for c in caps], quotes)
+        ok = [c["text"] for c in got] == want and missing == want_missing
+        bad += not ok
+        print(f"  [{'x' if ok else ' '}] {quotes} -> {[c['text'] for c in got]} missing={missing}")
+    print("build_scenes caption_quotes self-test:", "FAIL" if bad else "PASS")
+    return 1 if bad else 0
+
+
 if __name__ == "__main__":
+    import sys as _sys
+    if _sys.argv[1:2] == ["--self-test-quotes"]:
+        _sys.exit(_self_test_quotes())
     main()

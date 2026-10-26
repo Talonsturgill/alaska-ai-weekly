@@ -3933,3 +3933,8 @@ Queued: eight entries in docs/MACHINE_QUEUE.md (evidence index for the panel, li
 
 ## 2026-10-26, "Not Yes or No"
 Shipped: ballot box hero and slip throughline film on Alaska candidates' data center positions, the Senate's 14 to 5 bill and the House never taking it up. Panel median 7.166 (7.166, 7.23, 7.01) against a 7.0 bar after four panel rounds; caption stopped at the cap, 8.25 with zero hard fails. In-run fixes: clampCam, a real Alaska outline, NearRail variants, bed arc for LRA 7.0, honesty fixes (amber alert lamp, dashed could-coins, NOT PASSED YET, SEPTEMBER on governor plates, BallotBox neutral), text fit and label footprint repairs. Standard section 21 added. Queued: promote ballot kit and AK_PATH, held-beat travel helper, room-tone stems, crowd variety, caption quote marks, caption hook pattern, upload default name.
+
+## 2026-10-26 weekly machine pass
+- Shipped: held beats are named before the render (a two-frame Chrome probe in make_cut, advisory; it named the same 12 beats the panel did on the 10-26 film), upload_video.py defaults --name to dispatch-<run date>-<file>, the ballot kit and AK_PATH (now lib/akmap.ts) registered in the asset manifest, and caption_quotes for straight quotes around a spoken quote.
+- Engine advance: HeldTravel in lib/heldidle.tsx, light, shade or a bead travelling over a held prop (+2.5 points of motion with the camera solved out against about 1 for the rock helper). No film uses it yet.
+- Still open: room-tone stems, a Crowd component, the caption-rubric hook pattern.

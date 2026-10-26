@@ -9,6 +9,7 @@ import {assertCropSafe} from './lib/cropsafe';
 import {CaptionBar} from './lib/captions';
 import {snap, bump, rnd, MONO, monoW} from './lib/prospect';
 import {BAL, BallotBox, Slip, Rails, Lectern, Gate, InTray, BillSheet} from './lib/ballot';
+import {AK_PATH} from './lib/akmap';
 import {IDS} from './Ep1026Ids';
 
 // Not Yes or No, 2026-10-26. Palette roles are art_direction.json. The BALLOT BOX (a tall upright steel box with a slanted hinged lid and a face) is the hero and the SLIP is the throughline: a YES / NO slip whose boxes
@@ -497,7 +498,6 @@ const S5: React.FC<SceneProps> = ({p}) => {
 };
 
 // ---- S6: shed or hall on a painted map (keys 19, 20, 21, 22) ----------------------------------------------------------------------------------
-const AK_PATH = 'M 880,70 L 800,50 L 730,40 L 660,52 L 590,38 L 520,56 L 470,26 L 425,45 L 395,95 L 340,128 L 300,118 L 255,150 L 205,168 L 190,150 L 215,205 L 270,222 L 245,270 L 205,315 L 185,372 L 212,425 L 262,455 L 300,478 L 262,505 L 205,545 L 130,575 L 70,605 L 25,625 L 12,650 L 75,628 L 150,600 L 232,568 L 305,528 L 360,505 L 425,492 L 470,470 L 492,432 L 520,398 L 540,440 L 560,478 L 620,500 L 700,470 L 745,448 L 800,468 L 860,520 L 905,572 L 950,632 L 990,700 L 945,688 L 900,640 L 868,590 L 880,540 L 890,300 Z';
 const MapLand: React.FC<{id: string; f: number}> = ({id, f}) => (
   <g>
     <defs>
