@@ -31,7 +31,7 @@ export type ReelMood = 'calm' | 'hope' | 'worry' | 'ask' | 'surprise' | 'smile' 
 /** Hand anchor of the Reel's raised arm in the Reel's own space, so a Pen can be parented to it. */
 export const reelHand = (raise: number, s: number, x: number, y: number) => {
   const k = clamp01(raise);
-  return {x: x + (150 + 90 * k) * s, y: y - (210 + 40 * k) * s};
+  return {x: x + (150 + 90 * k) * s, y: y - (210 + 130 * k) * s};
 };
 
 export const Reel: React.FC<{
@@ -47,7 +47,7 @@ export const Reel: React.FC<{
   const squint = mood === 'worry' ? 0.8 : mood === 'firm' ? 0.65 : 1;
   const brow = (sx: number) => {
     const a = mood === 'worry' ? -14 : mood === 'ask' ? -8 : mood === 'surprise' ? -16 : mood === 'firm' ? 11 : mood === 'hope' ? -6 : 0;
-    return `M ${sx * 40 - 22},${-282 + (sx < 0 ? a * 0.5 : 0)} L ${sx * 40 + 22},${-282 + (sx > 0 ? a * 0.5 : 0)}`;
+    return `M ${sx * 38 - 22},${-62 + (sx < 0 ? a * 0.5 : 0)} L ${sx * 38 + 22},${-62 + (sx > 0 ? a * 0.5 : 0)}`;
   };
   const mh = 8 + 40 * clamp01(mouth) + (mood === 'smile' || mood === 'hope' ? 6 : 0);
   const k = clamp01(raise);
@@ -101,23 +101,22 @@ export const Reel: React.FC<{
             <ellipse cx={sx * 38} cy={-26} rx={eyeR + 5} ry={(eyeR + 5) * (blink ? 0.12 : squint)} fill={FIB.cream} stroke={INK} strokeWidth={5} />
             {!blink && <circle cx={sx * 38 + lx} cy={-26} r={eyeR * 0.52} fill={INK} />}
             {!blink && <circle cx={sx * 38 + lx + 4} cy={-31} r={4} fill="#fff" />}
-            <path d={brow(sx).replace(/-282/g, '-62')} stroke={INK} strokeWidth={6} strokeLinecap="round" fill="none" />
+            <path d={brow(sx)} stroke={INK} strokeWidth={6} strokeLinecap="round" fill="none" />
           </g>
         ))}
         <path d={`M -34,28 Q 0,${28 + mh} 34,28 Q 0,${28 + (mood === 'worry' ? -6 : 4)} -34,28 Z`} fill={mood === 'worry' ? FIB.saffronShade : '#6C1F18'} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
         <circle r={14} cx={0} cy={66} fill={FIB.saffronShade} stroke={INK} strokeWidth={4} />
         {/* the crank on the hub's rim */}
         <g transform={`rotate(${roll * 0.6},0,0)`}>
-          <line x1={0} y1={0} x2={0} y2={-120} stroke={INK} strokeWidth={15} strokeLinecap="round" />
-          <line x1={0} y1={0} x2={0} y2={-120} stroke={FIB.cableHi} strokeWidth={7} strokeLinecap="round" />
-          <circle cx={0} cy={-124} r={17} fill={FIB.saffronHi} stroke={INK} strokeWidth={5} />
+          <circle cx={0} cy={-120} r={17} fill={FIB.saffronHi} stroke={INK} strokeWidth={5} />
+          <circle cx={0} cy={-120} r={6} fill={FIB.saffronShade} />
         </g>
       </g>
       {/* a mitten arm, raised by `raise`: it leaves the flange's right edge and ends in a round hand */}
       <g>
-        <path d={`M 150,-232 Q ${176 + 30 * k},${-232 - 40 * k} ${150 + 90 * k},${-210 - 40 * k}`} fill="none" stroke={INK} strokeWidth={30} strokeLinecap="round" />
-        <path d={`M 150,-232 Q ${176 + 30 * k},${-232 - 40 * k} ${150 + 90 * k},${-210 - 40 * k}`} fill="none" stroke={FIB.saffron} strokeWidth={18} strokeLinecap="round" />
-        <circle cx={150 + 90 * k} cy={-210 - 40 * k} r={22} fill={FIB.saffronHi} stroke={INK} strokeWidth={5} />
+        <path d={`M 150,-232 Q ${176 + 30 * k},${-232 - 90 * k} ${150 + 90 * k},${-210 - 130 * k}`} fill="none" stroke={INK} strokeWidth={30} strokeLinecap="round" />
+        <path d={`M 150,-232 Q ${176 + 30 * k},${-232 - 90 * k} ${150 + 90 * k},${-210 - 130 * k}`} fill="none" stroke={FIB.saffron} strokeWidth={18} strokeLinecap="round" />
+        <circle cx={150 + 90 * k} cy={-210 - 130 * k} r={22} fill={FIB.saffronHi} stroke={INK} strokeWidth={5} />
       </g>
     </g>
   );
@@ -163,7 +162,7 @@ export const Sticky: React.FC<{x: number; y: number; s?: number; rot?: number; t
 export type BoxMood = 'hope' | 'shy' | 'sweat' | 'cheer' | 'blank' | 'shock' | 'smug';
 
 /** a small faced server box (petitioner). 120 wide, 150 tall; origin base centre. */
-export const DataBox: React.FC<{x?: number; y?: number; s?: number; f: number; mood?: BoxMood; phase?: number; id?: string; hop?: number; look?: number; hat?: boolean; ghost?: boolean; faceless?: boolean}> = ({x = 0, y = 0, s = 1, f, mood = 'hope', phase = 0, id = 'db', hop = 0, look = 0, hat = false, ghost = false, faceless = false}) => {
+export const DataBox: React.FC<{x?: number; y?: number; s?: number; f: number; mood?: BoxMood; phase?: number; id?: string; hop?: number; look?: number; hat?: boolean; ghost?: boolean; faceless?: boolean; arm?: number; flip?: boolean}> = ({x = 0, y = 0, s = 1, f, mood = 'hope', phase = 0, id = 'db', hop = 0, look = 0, hat = false, ghost = false, faceless = false, arm = 0, flip = false}) => {
   const bob = 2.4 * Math.sin(f / 11 + phase) + 1.4 * Math.sin(f / 5.3 + phase * 1.4);
   const blink = ((f + Math.floor(phase * 53)) % 88) < 4;
   const lx = Math.max(-4, Math.min(4, look));
@@ -171,7 +170,7 @@ export const DataBox: React.FC<{x?: number; y?: number; s?: number; f: number; m
   const t = tones(FIB.box);
   const led = [0, 1, 2].map((i) => 0.5 + 0.5 * Math.sin(f / 6 + i * 2 + phase));
   return (
-    <g transform={`translate(${x},${y - hop * 30 + bob * 0.4}) scale(${s})`} opacity={ghost ? 0.55 : 1}>
+    <g transform={`translate(${x},${y - hop * 30 + bob * 0.4}) scale(${flip ? -s : s},${s})`} opacity={ghost ? 0.55 : 1}>
       <defs><FormGradient id={`${id}_g`} t={t} /></defs>
       <ContactShadow cx={0} cy={4} rx={70} ry={9} opacity={0.34} blur={7} />
       {[-1, 1].map((sx) => <rect key={sx} x={sx * 36 - 14} y={-14} width={28} height={14} rx={4} fill={FIB.boxShade} stroke={INK} strokeWidth={4} />)}
@@ -189,6 +188,13 @@ export const DataBox: React.FC<{x?: number; y?: number; s?: number; f: number; m
       {faceless && [0, 1].map((i) => <rect key={i} x={-40} y={-98 + i * 26} width={80} height={10} rx={2} fill={FIB.boxShade} stroke={INK} strokeWidth={2.6} opacity={0.8} />)}
       {!faceless && mood === 'cheer' && <path d="M -46,-70 q 8,-6 16,0 M 30,-70 q 8,-6 16,0" stroke={FIB.rose} strokeWidth={6} strokeLinecap="round" fill="none" opacity={0.55} />}
       <rect x={-40} y={-44} width={80} height={14} rx={4} fill={FIB.boxShade} stroke={INK} strokeWidth={3.4} opacity={0.85} />
+      {arm > 0.02 && (
+        <g>
+          <path d={`M -58,-84 Q ${-80 - 40 * arm},${-92 - 10 * arm} ${-66 - 90 * arm},${-100 - 14 * arm}`} fill="none" stroke={INK} strokeWidth={22} strokeLinecap="round" />
+          <path d={`M -58,-84 Q ${-80 - 40 * arm},${-92 - 10 * arm} ${-66 - 90 * arm},${-100 - 14 * arm}`} fill="none" stroke={FIB.box} strokeWidth={12} strokeLinecap="round" />
+          <circle cx={-66 - 90 * arm} cy={-100 - 14 * arm} r={15} fill={FIB.boxHi} stroke={INK} strokeWidth={4} />
+        </g>
+      )}
       {hat && (
         <g transform="translate(0,-150)">
           <path d="M -28,0 L 0,-52 L 28,0 Z" fill={FIB.teal} stroke={INK} strokeWidth={4.4} strokeLinejoin="round" />

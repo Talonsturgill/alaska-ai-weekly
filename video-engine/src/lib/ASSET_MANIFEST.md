@@ -982,3 +982,14 @@ For any election, ballot measure, bill or vote story. Palette `BAL` (steel blue,
 - `BillSheet` NET-NEW 2026-10-26, a paper bill that lies face down (`face`), flips over (`flip` 0..1), types its `title` and two heading `lines` (`typed` 0..1) and takes a `stamp`; a slow bob. ACTIVE.
 - `AK_PATH` — `lib/akmap.ts` — promoted 2026-10-26 from Ep1026.tsx, a STYLISED painted-map Alaska outline in a 1000x700 box (Interior body, south-coast notch, Alaska Peninsula west, panhandle south-east), closed so it clips terrain cleanly. NOT a true lon/lat projection: never place a real town by coordinate on it. Ep1026's MapLand (S6) is the reference drawing. Moving it left Ep1026's S6 frames byte-identical. ACTIVE.
 - Episode-local in Ep1026.tsx, candidates for promotion: `MapLand` (the painted map with rivers, ranges and drifting cloud shadows), `NearRail`.
+
+## THE FIBER KIT — lib/fiber.tsx (NET-NEW 2026-10-27, "The Blank Line")
+For any cable, fiber, resolution, signature or rule story. Palette `FIB` (saffron ONLY for the Reel, tomato ONLY for rejection stamps, the cut spark and a deadline wedge, butter ONLY for sticky notes). Origins at the base centre, +y down.
+- `Reel` NET-NEW 2026-10-27, the HERO, a saffron cable spool on a two-wheeled cart with a face on its hub, a crank knob, a trailing black cable with an orange tracer (`tail` 0..1), a raised mitten arm (`raise` 0..1, `reelHand()` gives the hand anchor), moods calm/hope/worry/ask/surprise/smile/firm. A round hero among rectangles. ACTIVE.
+- `Pen` NET-NEW 2026-10-27, a pen whose origin is its NIB (rot turns it), cream band. Kept beside the shelf's ReviewPen because that one is a different silhouette. ACTIVE.
+- `SigLine` NET-NEW 2026-10-27, the throughline, a dotted signature line with an X and a label (default BINDING CUSTOMER) and a `pulse`. ACTIVE.
+- `Sticky` NET-NEW 2026-10-27, a butter sticky note with a word (`text`, `size`), a curled corner, optional `heart`, `flap`. ACTIVE.
+- `DataBox` NET-NEW 2026-10-27, a small slate server box with 4 px corners, LEDs, an optional face (`faceless` for silhouettes), `arm` 0..1 (a stubby arm that holds a pen), `hat`, `flip`. A petitioner, never the antagonist. ACTIVE.
+- `Clip` NET-NEW 2026-10-27, a clipboard bouncer with a cream board, teal clip, crossed arms and a stamp (`stamp` 0..1). ACTIVE.
+- `Hen`, `Egg` NET-NEW 2026-10-27, a hard-hatted hen and a face-on egg for a chicken-and-egg standoff. Built and cut from the film in revision (the Reel and a box play the standoff); kept as library for the next such story. ACTIVE.
+- Episode-local in Ep1027.tsx, candidates for promotion: `Resolution` (a sheet with text bars, a butter gap and a SigLine), `Easel`, `Vault`, `Clock` (egg-timer with a wedge), `Magnifier`, `Gavel`, `Banner`, `Porthole`, `DockBG`, `OfficeBG`, `NearDock`.
