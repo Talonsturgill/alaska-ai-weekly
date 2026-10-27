@@ -224,8 +224,8 @@ const TextBars: React.FC<{x: number; y: number; w: number; rows: number; gap?: n
 );
 
 /** the resolution sheet. origin top-centre; w 520, h 680. slot 0..1 opens the blank slot in row 3; ghost dims the text rows; sig is the signature line group. */
-const Resolution: React.FC<{x: number; y: number; s?: number; rot?: number; f: number; unroll?: number; slot?: number; ghost?: number; id: string; sig?: boolean; sigPulse?: number; rows?: number; stickies?: React.ReactNode}> =
-({x, y, s = 1, rot = 0, f, unroll = 1, slot = 0, ghost = 0, id, sig = true, sigPulse = 0, rows = 11, stickies}) => {
+const Resolution: React.FC<{x: number; y: number; s?: number; rot?: number; f: number; unroll?: number; slot?: number; ghost?: number; id: string; sig?: boolean; sigPulse?: number; rows?: number; stickies?: React.ReactNode; head?: boolean}> =
+({x, y, s = 1, rot = 0, f, unroll = 1, slot = 0, ghost = 0, id, sig = true, sigPulse = 0, rows = 11, stickies, head = true}) => {
   const u = clamp01(unroll);
   const h = 680 * Math.max(0.12, u);
   return (
@@ -235,7 +235,7 @@ const Resolution: React.FC<{x: number; y: number; s?: number; rot?: number; f: n
       <g clipPath={`url(#${id}_c)`}>
         <rect x={-260} y={0} width={520} height={680} rx={10} fill={`url(#${id}_p)`} stroke={INK} strokeWidth={6} />
         <rect x={-260} y={0} width={520} height={34} fill={P.petrol} stroke={INK} strokeWidth={5} />
-        <text x={0} y={25} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={P.cream}>RESOLUTION NO. G26-11</text>
+        {head && <text x={0} y={25} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={P.cream}>RESOLUTION NO. G26-11</text>}
         <TextBars x={0} y={78} w={440} rows={rows} gap={40} seed={3} shade={0.5 - ghost * 0.3} show={u} />
         {slot > 0.02 && (
           <g transform="translate(86,158)" opacity={clamp01(slot * 2)}>
@@ -285,13 +285,9 @@ const Magnifier: React.FC<{x: number; y: number; s?: number; rot?: number; f: nu
   </g>
 );
 
-/** a plate fed by a window: p 0..1 */
-const WP: React.FC<{p: number; text: string; lines?: string[]; y: number; x?: number; size?: number; tone?: Tone; rot?: number}> = ({p, text, lines, y, x = 540, size = 34, tone = 'ink', rot = 0}) => (
-  <Plate x={x} text={text} displayLines={lines} y={y} size={size} tone={tone} p={p} rot={rot} />
-);
 
 // ---- S1: the unsigned line (keys 1, 2, 3) ----------------------------------------------------------------------------------------------------
-const Easel: React.FC<{x: number; y: number; s?: number; f: number; id: string; sigPulse?: number; sig?: boolean; ghost?: number; sheetScale?: number; extra?: React.ReactNode}> = ({x, y, s = 1, f, id, sigPulse = 0, sig = true, ghost = 0, sheetScale = 0.5, extra}) => {
+const Easel: React.FC<{x: number; y: number; s?: number; f: number; id: string; sigPulse?: number; sig?: boolean; ghost?: number; sheetScale?: number; head?: boolean; extra?: React.ReactNode}> = ({x, y, s = 1, f, id, sigPulse = 0, sig = true, ghost = 0, sheetScale = 0.5, head = true, extra}) => {
   const top = -340 - 680 * sheetScale;
   return (
     <g transform={`translate(${x},${y}) scale(${s})`}>
@@ -301,7 +297,7 @@ const Easel: React.FC<{x: number; y: number; s?: number; f: number; id: string; 
       {[-1, 1].map((sx) => <rect key={`p${sx}`} x={sx * (260 * sheetScale + 14) - 8} y={top - 20} width={16} height={-340 - top + 20} fill={P.tan} stroke={INK} strokeWidth={5} />)}
       <rect x={-(260 * sheetScale + 24)} y={top - 30} width={2 * (260 * sheetScale + 24)} height={18} rx={4} fill={P.tanHi} stroke={INK} strokeWidth={5} />
       <rect x={-(260 * sheetScale + 28)} y={-346} width={2 * (260 * sheetScale + 28)} height={22} rx={4} fill={P.tanHi} stroke={INK} strokeWidth={6} />
-      <Resolution x={0} y={top} s={sheetScale} f={f} id={`${id}r`} sig={sig} sigPulse={sigPulse} ghost={ghost} />
+      <Resolution x={0} y={top} s={sheetScale} f={f} id={`${id}r`} sig={sig} sigPulse={sigPulse} ghost={ghost} head={head} />
       {extra}
     </g>
   );
@@ -325,7 +321,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.06}
       overlay={<>
-        <WP p={win(f, t3, t3 + 120)} text="ONE UNSIGNED LINE" y={640} size={36} tone="ink" />
+        <Plate p={win(f, t3, t3 + 120)} text="ONE UNSIGNED LINE" y={640} size={36} tone="ink" />
       </>}>
       <SVG>
         <DockBG f={g} id="s1" />
@@ -446,15 +442,15 @@ const S2: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.05}
       overlay={<>
-        <WP p={win(f, t4 + 4, t5 - 4)} text="AIDEA BOARD · OCT 21ST · RESOLUTION G26-11" lines={['AIDEA BOARD · OCT 21ST', 'RESOLUTION G26-11']} y={700} size={34} tone="ink" />
-        <WP p={win(f, t7 + 6, t7 + 150)} text="NORTHSTAR FIBER DEVELOPMENT (WORKING NAME)" lines={['NORTHSTAR FIBER DEVELOPMENT', '(WORKING NAME)']} y={1010} size={30} tone="cream" />
+        <Plate p={win(f, t4 + 4, t5 - 4)} text="AIDEA BOARD · OCT 21ST · RESOLUTION G26-11" displayLines={['AIDEA BOARD · OCT 21ST', 'RESOLUTION G26-11']} y={700} size={34} tone="ink" />
+        <Plate p={win(f, t7 + 6, t7 + 150)} text="NORTHSTAR FIBER DEVELOPMENT (WORKING NAME)" displayLines={['NORTHSTAR FIBER DEVELOPMENT', '(WORKING NAME)']} y={1010} size={30} tone="cream" />
       </>}>
       <SVG>
         <OfficeBG f={g} id="s2" />
         <Banner x={540} y={470} f={g} open={banner} strip={strip} id="s2b" />
         <g>
-          <rect x={440} y={600} width={520} height={14} rx={7} fill={P.tanShade} stroke={INK} strokeWidth={5} />
-          <Resolution x={700} y={606} s={0.78} f={g} unroll={unroll} slot={slot} id="s2r" sig={false} />
+          <rect x={500} y={732} width={400} height={14} rx={7} fill={P.tanShade} stroke={INK} strokeWidth={5} />
+          <Resolution x={700} y={738} s={0.62} f={g} unroll={unroll} slot={slot} id="s2r" sig={false} head={false} />
         </g>
         <Gavel x={250} y={1250} s={1.15} f={g} hit={slam} dust={dustK} id="s2g" />
         <Reel x={850} y={1380} s={0.62} f={g} mood={f > t7 ? 'smile' : 'calm'} look={-4} tail={0.4} phase={0.8} id="s2l" jolt={slam * 0.6} />
@@ -487,8 +483,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.05}
       overlay={<>
-        <WP p={win(f, t8 + 6, t9 - 4)} text="SUBSEA + TERRESTRIAL FIBER" y={560} size={34} tone="ink" />
-        <WP p={win(f, t9 + 6, t10 + 90)} text="ONE WORD IS MISSING" y={650} size={36} tone="cream" />
+        <Plate p={win(f, t8 + 6, t9 - 4)} text="SUBSEA + TERRESTRIAL FIBER" y={560} size={34} tone="ink" />
+        <Plate p={win(f, t9 + 6, t10 + 90)} text="ONE WORD IS MISSING" y={650} size={36} tone="cream" />
       </>}>
       <SVG>
         <OfficeBG f={g} id="s3" dusk={0.4} />
@@ -526,7 +522,7 @@ const Tag1999: React.FC<{x: number; y: number; k: number}> = ({x, y, k}) => {
   return (
     <g transform={`translate(${x},${y}) scale(${0.5 + 0.5 * k})`} opacity={clamp01(k * 2)}>
       <line x1={0} y1={0} x2={0} y2={-14} stroke={INK} strokeWidth={4} />
-      <rect x={-46} y={-2} width={92} height={40} rx={4} fill={P.cream} stroke={INK} strokeWidth={4.4} />
+      <rect x={-56} y={-2} width={112} height={40} rx={4} fill={P.cream} stroke={INK} strokeWidth={4.4} />
       <text x={0} y={28} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={INK}>1999</text>
     </g>
   );
@@ -545,9 +541,9 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.04}
       overlay={<>
-        <WP p={win(f, t12 + 4, t13 - 4)} text="4 UNDERSEA CABLES TO THE LOWER 48" lines={['4 UNDERSEA CABLES', 'TO THE LOWER 48']} y={590} size={34} tone="ink" />
-        <WP p={win(f, t13 + 4, t14 - 6)} text="2 IN SERVICE SINCE 1999" y={560} size={36} tone="cream" />
-        <WP p={win(f, t14 + 4, t14 + 150)} text="END OF TYPICAL DESIGN LIFE" y={690} size={34} tone="ink" />
+        <Plate p={win(f, t12 + 4, t13 - 4)} text="4 UNDERSEA CABLES TO THE LOWER 48" displayLines={['4 UNDERSEA CABLES', 'TO THE LOWER 48']} y={590} size={34} tone="ink" />
+        <Plate p={win(f, t13 + 4, t14 - 6)} text="2 IN SERVICE SINCE 1999" y={700} size={36} tone="cream" />
+        <Plate p={win(f, t14 + 4, t14 + 150)} text="END OF TYPICAL DESIGN LIFE" y={800} size={34} tone="ink" />
       </>}>
       <SVG>
         <defs>
@@ -585,17 +581,16 @@ const S4: React.FC<SceneProps> = ({p}) => {
             </g>
           );
         })}
-        <rect x={-20} y={1262} width={W + 40} height={90} fill={P.tanHi} stroke={INK} strokeWidth={7} />
+        <rect x={-20} y={1262} width={W + 40} height={68} fill={P.tanHi} stroke={INK} strokeWidth={7} />
         <rect x={-20} y={1262} width={W + 40} height={12} fill="#fff" opacity={0.3} />
-        <text x={540} y={1322} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} letterSpacing={8} fill={INK} opacity={0.85 + 0.15 * landPulse}>LOWER 48</text>
-        {landPulse > 0.05 && <rect x={-20} y={1262} width={W + 40} height={90} fill="#fff" opacity={0.3 * landPulse} />}
+        <text x={540} y={1314} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={40} letterSpacing={8} fill={INK} opacity={0.85 + 0.15 * landPulse}>LOWER 48</text>
+        {landPulse > 0.05 && <rect x={-20} y={1262} width={W + 40} height={68} fill="#fff" opacity={0.3 * landPulse} />}
         {CABLE_START.map((_, i) => <circle key={`l${i}`} cx={260 + i * 190} cy={1262} r={11 + 5 * landPulse} fill={P.cream} stroke={INK} strokeWidth={4.4} />)}
         <g transform="translate(172,1020)" opacity={clamp01((gauge + (f > t14 - 16 ? 1 : 0)) * 1.5)}>
           <path d="M -110,0 A 110,110 0 0 1 110,0" fill={P.cream} stroke={INK} strokeWidth={7} />
           <path d="M 60,-92 A 110,110 0 0 1 110,0" fill="none" stroke={P.tomato} strokeWidth={12} />
           <g transform={`rotate(${gaugeA},0,0)`}><line x1={0} y1={0} x2={0} y2={-94} stroke={INK} strokeWidth={8} strokeLinecap="round" /></g>
           <circle r={12} fill={P.cableHi} stroke={INK} strokeWidth={5} />
-          <text x={0} y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={2} fill={P.cream}>DESIGN LIFE</text>
         </g>
         <NearDock f={g} y={1580} seed={4} />
       </SVG>
@@ -653,9 +648,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.05}
       overlay={<>
-        <WP p={win(f, t54, t16 - 4)} text="THE ROAD ENDS" y={560} size={34} tone="cream" />
-        <WP p={win(f, t16 + 4, t17 - 6)} text="ONE DAMAGED SYSTEM CAN DEGRADE OR ISOLATE LARGE PARTS OF THE STATE" lines={['ONE DAMAGED SYSTEM CAN DEGRADE', 'OR ISOLATE LARGE PARTS OF THE STATE']} y={690} size={30} tone="ink" />
-        <WP p={win(f, t17 + 4, t17 + 130)} text="FROM CUL-DE-SAC TOWARD HUB" lines={['FROM "CUL-DE-SAC"', 'TOWARD "HUB"']} y={600} size={36} tone="ink" />
+        <Plate p={win(f, t54, t16 - 4)} text="THE ROAD ENDS" y={560} size={34} tone="cream" />
+        <Plate p={win(f, t16 + 4, t17 - 6)} text="ONE DAMAGED SYSTEM CAN DEGRADE OR ISOLATE LARGE PARTS OF THE STATE" displayLines={['ONE DAMAGED SYSTEM CAN DEGRADE', 'OR ISOLATE LARGE PARTS OF THE STATE']} y={690} size={30} tone="ink" />
+        <Plate p={win(f, t17 + 4, t17 + 130)} text="FROM CUL-DE-SAC TOWARD HUB" displayLines={['FROM "CUL-DE-SAC"', 'TOWARD "HUB"']} y={830} size={36} tone="ink" />
         {grey > 0.05 && <rect x={0} y={0} width={W} height={H} fill="#8C8A99" opacity={0.28 * grey} />}
       </>}>
       <SVG>
@@ -751,9 +746,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.07} vignette={0.3}
       overlay={<>
-        <WP p={win(f, t18 + 4, t19 - 2)} text="THE MONEY HAS A CLOCK" y={560} size={36} tone="cream" />
-        <WP p={win(f, t19 + 2, t19 + 240)} text="AUTHORITY EXPIRES DEC 31ST, 2028" lines={['AUTHORITY EXPIRES', 'DEC 31ST, 2028']} y={680} size={36} tone="ink" />
-        <WP p={win(f, t20 + 4, t20 + 120)} text="UNLESS THE BOARD EXTENDS IT" y={800} size={30} tone="cream" />
+        <Plate p={win(f, t18 + 4, t19 - 2)} text="THE MONEY HAS A CLOCK" y={560} size={36} tone="cream" />
+        <Plate p={win(f, t19 + 2, t19 + 240)} text="AUTHORITY EXPIRES DEC 31ST, 2028" displayLines={['AUTHORITY EXPIRES', 'DEC 31ST, 2028']} y={680} size={36} tone="ink" />
+        <Plate p={win(f, t20 + 4, t20 + 120)} text="UNLESS THE BOARD EXTENDS IT" y={800} size={30} tone="cream" />
       </>}>
       <SVG>
         <VaultInterior f={g} id="s6" />
@@ -769,7 +764,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <text x={0} y={-20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={INK}>AUTHORITY</text>
           <text x={0} y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={INK}>TO SIGN</text>
         </g>
-        {pen > 0.02 && <Pen x={470} y={lerp(300, 1186, pen) - 6 * bump(f, t57 + 8, 14)} s={0.8} rot={lerp(160, 78, pen)} f={g} />}
+        {pen > 0.02 && <Pen x={600} y={lerp(300, 1204, pen) - 6 * bump(f, t57 + 8, 14)} s={0.8} rot={lerp(160, 84, pen)} f={g} />}
         {/* the lever and flag */}
         <g transform="translate(940,1226)">
           <Blk x={-30} y={-24} w={60} h={24} c={P.cableHi} id="s6lv" r={4} sw={5} />
@@ -793,10 +788,10 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.06} vignette={0.3}
       overlay={<>
-        <WP p={win(f, t21 + 6, t22 - 2)} text="THE LINE FORMS" y={540} size={34} tone="cream" />
-        <WP p={win(f, t22 + 2, t23 + 200)} text="ALASKA PUBLIC MEDIA" y={540} size={32} tone="ink" />
-        <WP p={win(f, t50 + 2, t23 + 200)} text="OCT 15TH" y={632} size={32} tone="cream" />
-        <WP p={win(f, t23 + 2, t23 + 200)} text="AS MANY AS 15 DATA CENTER PROPOSALS" lines={['AS MANY AS 15', 'DATA CENTER PROPOSALS']} y={744} size={34} tone="ink" />
+        <Plate p={win(f, t21 + 6, t22 - 2)} text="THE LINE FORMS" y={540} size={34} tone="cream" />
+        <Plate p={win(f, t22 + 2, t23 + 200)} text="ALASKA PUBLIC MEDIA" y={632} size={32} tone="ink" />
+        <Plate p={win(f, t50 + 2, t23 + 200)} text="OCT 15TH" y={720} size={32} tone="cream" />
+        <Plate p={win(f, t23 + 2, t23 + 200)} text="AS MANY AS 15 DATA CENTER PROPOSALS" displayLines={['AS MANY AS 15', 'DATA CENTER PROPOSALS']} y={840} size={34} tone="ink" />
       </>}>
       <SVG>
         <VaultInterior f={g} id="s7" lamp={0.6} />
@@ -814,7 +809,6 @@ const S7: React.FC<SceneProps> = ({p}) => {
             );
           })}
         </Porthole>
-        <rect x={0} y={1330} width={W} height={6} fill="none" />
         <NearDock f={g} y={1580} seed={7} />
       </SVG>
     </Frame>
@@ -838,10 +832,10 @@ const S8: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.05}
       overlay={<>
-        <WP p={win(f, t24 + 4, t25 - 4)} text="SEC. 9" y={530} size={36} tone="ink" />
-        <WP p={win(f, t25 + 2, t25 + 210)} text="SEC. 9 · BINDING CUSTOMER COMMITMENTS" lines={['SEC. 9 · BINDING', 'CUSTOMER COMMITMENTS']} y={625} size={34} tone="ink" />
-        <WP p={win(f, t44 + 4, t25 - 2)} text="NO DOLLAR YET" y={735} size={34} tone="cream" />
-        <WP p={win(f, t26 + 2, t27 + 80)} text='"EXPRESSIONS OF INTEREST ... DO NOT SATISFY"' lines={['"EXPRESSIONS OF INTEREST', '... DO NOT SATISFY"']} y={860} size={30} tone="cream" />
+        <Plate p={win(f, t24 + 4, t25 - 4)} text="SEC. 9" y={530} size={36} tone="ink" />
+        <Plate p={win(f, t25 + 2, t25 + 210)} text="SEC. 9 · BINDING CUSTOMER COMMITMENTS" displayLines={['SEC. 9 · BINDING', 'CUSTOMER COMMITMENTS']} y={625} size={34} tone="ink" />
+        <Plate p={win(f, t44 + 4, t25 - 2)} text="NO DOLLAR YET" y={735} size={34} tone="cream" />
+        <Plate p={win(f, t26 + 2, t27 + 80)} text='"EXPRESSIONS OF INTEREST ... DO NOT SATISFY"' displayLines={['"EXPRESSIONS OF INTEREST', '... DO NOT SATISFY"']} y={860} size={30} tone="cream" />
       </>}>
       <SVG>
         <defs><linearGradient id="s8sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={P.lilacHi} /><stop offset="1" stopColor={P.blush} /></linearGradient></defs>
@@ -850,22 +844,22 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <rect x={-20} y={1010} width={W + 40} height={H - 1010} fill={P.tan} stroke={INK} strokeWidth={6} />
         {Array.from({length: 8}).map((_, i) => <path key={i} d={`M -20,${1030 + i * i * 14 + i * 18} L ${W + 20},${1030 + i * i * 14 + i * 18}`} stroke={INK} strokeWidth={3} opacity={0.3} />)}
         {Array.from({length: 9}).map((_, i) => <path key={`v${i}`} d={`M ${120 + i * 110},1010 L ${-500 + i * 260},${H}`} stroke={INK} strokeWidth={2.4} opacity={0.2} />)}
-        <Easel x={540} y={1330} s={1} f={g} id="s8e" sheetScale={0.75}
+        <Easel x={540} y={1330} s={1} f={g} id="s8e" sheetScale={0.75} head={false}
           extra={
             <g>
               {/* the sticky notes that pile onto the line */}
               {NOTE_FROM.map(([nx, ny], i) => {
                 const k = fly(i);
                 const gx = lerp(0, -520 - i * 40, gust), gy = lerp(0, -260 - 30 * i, gust);
-                const tx = -90 + i * 46, ty = -392 + 10 * Math.sin(i * 2);
+                const tx = [-150, -50, 50, 150, -60][i], ty = [-430, -430, -430, -430, -330][i];
                 const ex = lerp(nx - 540, tx, k) + gx, ey = lerp(ny - 1330 - 40 * Math.sin(k * Math.PI) * 6, ty, k) + gy;
-                if (k < 0.01 || gust > 0.98) return null;
-                return <Sticky key={i} x={ex} y={ey} s={0.95} rot={lerp(-12, i * 6 - 12, k) + gust * 80} text="MAYBE?" size={22} f={g} flap={gust} />;
+                if (k < 0.01 || gust > 0.55) return null;
+                return <Sticky key={i} x={ex} y={ey} s={0.95} rot={lerp(-12, (i % 3) * 4 - 6, k) + gust * 60} text="MAYBE?" size={22} f={g} flap={gust} />;
               })}
               {stampOn && (
                 <g transform={`translate(150,-486) rotate(-7) scale(${1 + 0.8 * (1 - stampK)})`} opacity={clamp01(stampK * 2)}>
-                  <rect x={-132} y={-34} width={264} height={68} rx={4} fill="none" stroke={P.tomato} strokeWidth={8} />
-                  <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={2} fill={P.tomato}>DO NOT COUNT</text>
+                  <rect x={-160} y={-34} width={320} height={68} rx={4} fill="none" stroke={P.tomato} strokeWidth={8} />
+                  <text x={0} y={11} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} letterSpacing={2} fill={P.tomato}>DO NOT COUNT</text>
                 </g>
               )}
             </g>
@@ -915,7 +909,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.06} vignette={0.32}
       overlay={<>
-        <WP p={win(f, t28 + 4, t30 - 6)} text="THE FAIR CASE AGAINST THE RULE" lines={['THE FAIR CASE', 'AGAINST THE RULE']} y={580} size={36} tone="ink" />
+        <Plate p={win(f, t28 + 4, t30 - 6)} text="THE FAIR CASE AGAINST THE RULE" displayLines={['THE FAIR CASE', 'AGAINST THE RULE']} y={580} size={36} tone="ink" />
       </>}>
       <SVG>
         <OfficeBG f={g} id="s9" dusk={0.95} />
@@ -928,7 +922,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <ellipse cx={0} cy={128} rx={70} ry={12} fill={P.saffronHi} stroke={INK} strokeWidth={4} />
         </g>
         <rect x={90} y={1236} width={900} height={36} rx={6} fill={P.tan} stroke={INK} strokeWidth={6} />
-        <Resolution x={540} y={940} s={0.45} f={g} id="s9r" ghost={0.2} />
+        <Resolution x={540} y={940} s={0.45} f={g} id="s9r" ghost={0.2} head={false} />
         <Reel x={rx0} y={1245} s={rs} f={g} mood={mood as ReelMood} look={4} raise={raise} phase={0.2} id="s9l" tail={0.2} />
         <DataBox x={bx} y={by} s={bs} f={g} mood={f > t30 ? 'sweat' : 'cheer'} arm={boxArm} look={-4} phase={0.5} id="s9b" />
         <Pen x={penHand.x - 40} y={penHand.y + 45} s={0.8} rot={penRot} f={g} />
@@ -952,42 +946,41 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const meter = easeIO(f, t45 - 8, 26);
   const lock = ease(f, t55, 10);
   const note = ease(f, t32 - 6, 30);
-  const noteX = lerp(600, 1050, note);
+  const noteX = lerp(560, 950, note);
   const noteY = 1000 - 460 * Math.sin(Math.min(1, note * 1.8) * Math.PI * 0.55) + 120 * note * note;
   const cam = track([{t: 0, z: 1.1, fx: 640, fy: 900}, {t: t31 + 20, z: 1.0, fx: 600, fy: 1000}, {t: p.dur, z: 1.08, fx: 620, fy: 1030}]);
   return (
     <Frame p={p} cam={cam} bloom={0.06}
       overlay={<>
-        <WP p={win(f, t31 + 4, t45 - 4)} text="$75M · ALL-IN CEILING" y={560} size={38} tone="ink" />
-        <WP p={win(f, t45 + 2, t55 - 2)} text="THE MOST IT CAN RISK" y={650} size={34} tone="cream" />
-        <WP p={win(f, t55 + 4, t32 + 100)} text="A CAPPED STATE FUND" y={560} size={34} tone="ink" />
+        <Plate p={win(f, t31 + 4, t45 - 4)} text="$75M · ALL-IN CEILING" y={560} size={38} tone="ink" />
+        <Plate p={win(f, t45 + 2, t55 - 2)} text="THE MOST IT CAN RISK" y={650} size={34} tone="cream" />
+        <Plate p={win(f, t55 + 4, t32 + 100)} text="A CAPPED STATE FUND" y={760} size={34} tone="ink" />
       </>}>
       <SVG>
         <DockBG f={g} id="s10" sun={0.7} />
-        <Vault x={780} y={1290} s={1} f={g} lit={1} id="s10v" jolt={ring} />
-        <g transform={`translate(780,${slabY + 5 * ring * Math.sin(g)})`}>
+        <Vault x={690} y={1290} s={1} f={g} lit={1} id="s10v" jolt={ring} />
+        <g transform={`translate(690,${slabY + 5 * ring * Math.sin(g)})`}>
           <rect x={-250} y={0} width={500} height={48} rx={6} fill={P.lilacHi} opacity={0.55} stroke={INK} strokeWidth={7} />
           <rect x={-240} y={6} width={480} height={10} fill="#fff" opacity={0.6} />
           <path d="M -200,38 L -120,10 M 60,38 L 150,12" stroke="#fff" strokeWidth={5} opacity={0.6} strokeLinecap="round" />
           {slam > 0.9 && Array.from({length: 9}).map((_, i) => <line key={i} x1={-250 + i * 62} y1={52} x2={-250 + i * 62 + (i % 2 ? 10 : -10)} y2={52 + 40 * ring} stroke="#fff" strokeWidth={4} opacity={0.5 * ring} strokeLinecap="round" />)}
         </g>
         {/* the level meter */}
-        <g transform="translate(1000,1290)">
+        <g transform="translate(990,1290)">
           <ContactShadow cx={0} cy={4} rx={60} ry={9} opacity={0.3} blur={6} />
           <rect x={-30} y={-540} width={60} height={540} rx={10} fill={P.cream} stroke={INK} strokeWidth={6} />
           <rect x={-22} y={-540 + 540 * (1 - meter)} width={44} height={540 * meter} rx={6} fill={P.petrolHi} />
           <line x1={-44} y1={-540} x2={44} y2={-540} stroke={P.tomato} strokeWidth={7} />
-          <text x={0} y={-556} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={INK}>$75M</text>
         </g>
         {/* the small coffer */}
-        <g transform="translate(470,1290)">
+        <g transform="translate(370,1290)">
           <ContactShadow cx={0} cy={4} rx={110} ry={11} opacity={0.34} blur={7} />
           <Blk x={-100} y={-120} w={200} h={120} c={P.tanShade} id="s10cf" r={10} sw={6} />
           <path d="M -100,-120 Q 0,-190 100,-120 Z" fill={P.tan} stroke={INK} strokeWidth={6} />
           <rect x={-18} y={-98} width={36} height={44} rx={5} fill={lock > 0.5 ? P.cableHi : P.tanHi} stroke={INK} strokeWidth={5} />
           <path d={`M -10,-98 Q -10,${-128 + 10 * (1 - lock)} 0,${-128 + 10 * (1 - lock)} Q 10,${-128 + 10 * (1 - lock)} 10,-98`} fill="none" stroke={INK} strokeWidth={7} />
         </g>
-        <Reel x={190} y={1290} s={0.8} f={g} mood={f > t31 ? 'worry' : 'calm'} look={5} tail={0.3} phase={0.9} id="s10r" jolt={ring * 0.5} />
+        <Reel x={150} y={1290} s={0.7} f={g} mood={f > t31 ? 'worry' : 'calm'} look={5} tail={0.3} phase={0.9} id="s10r" jolt={ring * 0.5} />
         {note > 0.01 && note < 0.99 && <Sticky x={noteX} y={noteY} s={0.9} rot={-20 + 400 * note} text="MAYBE?" size={22} f={g} flap={note} />}
         <NearDock f={g} y={1580} seed={10} />
       </SVG>
@@ -1021,12 +1014,12 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.05}
       overlay={<>
-        <WP p={win(f, t33 + 2, t53 - 2)} text="SEARCHING THE TEXT" y={540} size={34} tone="cream" />
-        <WP p={win(f, t53 + 2, t53 + 220)} text='THE RESOLUTION NEVER SAYS "AI"' lines={['THE RESOLUTION', 'NEVER SAYS "AI"']} y={640} size={36} tone="ink" />
-        <WP p={chip(0) * (1 - ease(f, t35 + 40, 8))} text="AI · 0 MATCHES" y={790} size={30} tone="cream" />
-        <WP p={chip(1) * (1 - ease(f, t35 + 40, 8))} text="DATA CENTERS · 0 MATCHES" y={870} size={30} tone="cream" />
-        <WP p={chip(2) * (1 - ease(f, t35 + 40, 8))} text="COMPUTE · 0 MATCHES" y={950} size={30} tone="cream" />
-        <WP p={win(f, t35 + 4, t35 + 80)} text="NOTHING ON THE PAGE" y={1060} size={34} tone="ink" />
+        <Plate p={win(f, t33 + 2, t53 - 2)} text="SEARCHING THE TEXT" y={540} size={34} tone="cream" />
+        <Plate p={win(f, t53 + 2, t53 + 220)} text='THE RESOLUTION NEVER SAYS "AI"' displayLines={['THE RESOLUTION', 'NEVER SAYS "AI"']} y={640} size={36} tone="ink" />
+        <Plate p={chip(0) * (1 - ease(f, t35 + 40, 8))} text="AI · 0 MATCHES" y={790} size={30} tone="cream" />
+        <Plate p={chip(1) * (1 - ease(f, t35 + 40, 8))} text="DATA CENTERS · 0 MATCHES" y={870} size={30} tone="cream" />
+        <Plate p={chip(2) * (1 - ease(f, t35 + 40, 8))} text="COMPUTE · 0 MATCHES" y={950} size={30} tone="cream" />
+        <Plate p={win(f, t35 + 4, t35 + 80)} text="NOTHING ON THE PAGE" y={1060} size={34} tone="ink" />
       </>}>
       <SVG>
         <DeskTop f={g} id="s11" />
@@ -1076,10 +1069,10 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bloom={0.07}
       overlay={<>
-        <WP p={win(f, t36 + 4, t58 - 2)} text="TAKE AI OUT" y={540} size={38} tone="ink" />
-        <WP p={win(f, t58 + 2, t37 + 4)} text="THE CABLE STANDS" y={630} size={36} tone="cream" />
-        <WP p={win(f, t37 + 2, t47 - 2)} text="BEAD · $1.017 BILLION ALLOCATED" lines={['BEAD · $1.017 BILLION', 'ALLOCATED']} y={740} size={34} tone="ink" />
-        <WP p={win(f, t47 + 4, t47 + 190)} text="DEPENDS ON A RESILIENT BACKBONE" lines={['DEPENDS ON A', 'RESILIENT BACKBONE']} y={880} size={34} tone="cream" />
+        <Plate p={win(f, t36 + 4, t58 - 2)} text="TAKE AI OUT" y={540} size={38} tone="ink" />
+        <Plate p={win(f, t58 + 2, t37 + 4)} text="THE CABLE STANDS" y={630} size={36} tone="cream" />
+        <Plate p={win(f, t37 + 2, t47 - 2)} text="BEAD · $1.017 BILLION ALLOCATED" displayLines={['BEAD · $1.017 BILLION', 'ALLOCATED']} y={740} size={34} tone="ink" />
+        <Plate p={win(f, t47 + 4, t47 + 190)} text="DEPENDS ON A RESILIENT BACKBONE" displayLines={['DEPENDS ON A', 'RESILIENT BACKBONE']} y={880} size={34} tone="cream" />
       </>}>
       <SVG>
         <DockBG f={g} id="s12" sun={1} deckTop={1090} />
@@ -1124,20 +1117,20 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const penRot = lerp(60, -76, turn);
   const nib = {x: hand.x + lerp(-74, 76, turn) * 0.9, y: hand.y + 43 * 0.9 + dip * 18 + 5 * Math.sin(g / 8)};
   const hands = lerp(0.16, 0.34, ease(f, t56, 120));
-  const cam = track([{t: 0, z: 1.28, fx: 420, fy: 1060}, {t: t41, z: 1.02, fx: 560, fy: 1040}, {t: p.dur, z: 1.0, fx: 540, fy: 1060}]);
+  const cam = track([{t: 0, z: 1.12, fx: 520, fy: 1060}, {t: t41, z: 1.02, fx: 550, fy: 1040}, {t: p.dur, z: 1.0, fx: 540, fy: 1060}]);
   return (
     <Frame p={p} cam={cam} bloom={0.08}
       overlay={<>
-        <WP p={win(f, t39 + 4, t48 - 2)} text="THE CABLE DOESN'T NEED AI" lines={["THE CABLE", "DOESN'T NEED AI"]} y={580} size={38} tone="ink" />
-        <WP p={win(f, t48 + 2, t56 + 20)} text="ANYONE WHO WANTS IN HAS TO SIGN" lines={['ANYONE WHO WANTS', 'IN HAS TO SIGN']} y={700} size={36} tone="ink" />
-        <WP p={win(f, t56 + 2, t40 + 20)} text="WHICH COMES FIRST?" y={830} size={36} tone="cream" />
-        <WP p={win(f, t40 + 4, t41 + 200)} text="A SIGNED CUSTOMER" y={910} size={34} tone="ink" />
-        <WP p={win(f, t41 + 4, t41 + 200)} text="DEC 31ST, 2028" y={990} size={34} tone="cream" />
+        <Plate p={win(f, t39 + 4, t48 - 2)} text="THE CABLE DOESN'T NEED AI" displayLines={["THE CABLE", "DOESN'T NEED AI"]} y={580} size={38} tone="ink" />
+        <Plate p={win(f, t48 + 2, t56 + 20)} text="ANYONE WHO WANTS IN HAS TO SIGN" displayLines={['ANYONE WHO WANTS', 'IN HAS TO SIGN']} y={700} size={36} tone="ink" />
+        <Plate p={win(f, t56 + 2, t40 + 20)} text="WHICH COMES FIRST?" y={830} size={36} tone="cream" />
+        <Plate p={win(f, t40 + 4, t41 + 200)} text="A SIGNED CUSTOMER" y={910} size={34} tone="ink" />
+        <Plate p={win(f, t41 + 4, t41 + 200)} text="DEC 31ST, 2028" y={990} size={34} tone="cream" />
       </>}>
       <SVG>
         <DockBG f={g} id="s13" sun={1} />
-        <Vault x={940} y={1290} s={0.9} f={g} lit={1} id="s13v" />
-        <Easel x={560} y={1290} s={0.78} f={g} id="s13e" sigPulse={f > t40 - 4 ? 0.5 + 0.5 * Math.sin(g / 5) : 0} />
+        <Vault x={880} y={1290} s={0.8} f={g} lit={1} id="s13v" />
+        <Easel x={560} y={1290} s={0.78} f={g} id="s13e" head={false} sigPulse={f > t40 - 4 ? 0.5 + 0.5 * Math.sin(g / 5) : 0} />
         <Clock x={760} y={1290} s={0.5} f={g} hand={hands} wedge={1} id="s13c" chime={bump(f, t41, 30)} />
         <Reel x={rx} y={1290} s={rs} f={g} mood="firm" look={4} raise={1} tail={1} phase={0.3} id="s13r" crank={0} />
         <Pen x={nib.x} y={nib.y} s={0.9} rot={penRot} f={g} />
