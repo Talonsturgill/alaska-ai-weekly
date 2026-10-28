@@ -683,8 +683,10 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   hook block (pattern, frame1, headline 3 to 8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern, optional `bed` nodes
   `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block;
-  `ambience: ["rain"]` and/or `ambience_stem` (a repo WAV) put the world's continuous bed under
-  the film, and Gate 0A fails a board whose shot ambient lines name rain without one),
+  `ambience` from `"rain"`, `"room"` (an interior at rest) and `"wind"` (dusk wind and wire hum),
+  and/or `ambience_stem` (a repo WAV), put the world's continuous bed under the film, so an
+  interior or dusk film asks for room or wind, and Gate 0A fails a board whose shot ambient lines
+  name rain without one),
   divergence_note. Plus
   storyboard.md for humans. A per-run board script (copy `scripts/board_1015.py`) resolves word
   anchors through `scripts/board_anchor.py`, so after a VO edit its `conform` refuses to write and
