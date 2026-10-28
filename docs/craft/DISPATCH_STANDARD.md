@@ -547,3 +547,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **The mix needs a moving bed.** LRA 5.7 became 7.0 when the bed alternated between 0.12 and 1.0 across lines instead of sitting at 0.5 to 0.8.
 - **Floors and walls that run under the caption band take `data-band="ok"` on the element itself**, not on a parent group.
 - **ship_gate record takes the judges' NUMERIC scores** (`--judges 7.17,7.23,7.01`), and `upload_video.py` without `--name` writes a plain `dispatch_master.mp4`; always pass `--name dispatch-<date>-<basename>`.
+- **Never build a thesis on "the source reports no X" before fetching the source table.** Run 2026-10-28 almost shipped a film saying the preprint had no held-out Alaska number; Table 7 had four.
+- **Keep the agency's instrument faceless and fully lit, and label the faced model fan THE MODEL.** Nothing a model does may be drawn on the agency's sonar, and the last frame carries the same labels as the first.
+- **A VO sentence edit moves beat gaps.** Re-run storyboard_check after every VO change; max_gap (5.0 s) and the metronome band (0.4 s) trip on a single added sentence.
+- **Say who a figure belongs to.** A practitioners' rough figure placed next to an agency's numbers reads as the agency's. Attribute it in the same sentence and say what it is not.
