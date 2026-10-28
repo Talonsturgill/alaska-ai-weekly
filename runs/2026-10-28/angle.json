@@ -1,0 +1,20 @@
+{
+ "thesis": "Hold a river out of training and the preprint's AI still counted Alaska's big rivers closely (Kenai banks under 7 and 3 percent, Nushagak about 3.5 percent) while a small California river broke (0.33 to 0.80), so what the preprint leaves open is not the held-out test but use in the field.",
+ "supporting_facts": [
+  "c15 Kenai bank misses under 0.07 and 0.03 across all training conditions including held out (0.069, 0.025), direction near zero",
+  "c22 Nushagak held out about 0.035",
+  "c23 Kenai-Channel doubled when held out, 0.143 to 0.286",
+  "c18 Mad River 0.33 to 0.80 held out, a California river whose fish the preprint calls small and sparse",
+  "c19 built for deployment, no agency use reported"
+ ],
+ "counterpoint_honored": "The Kenai channel site doubled when held out, three California rivers broke, the benchmark is one team's offline preprint, and the informal 10 percent human figure is a different ruler. Alaska's strong held-out numbers are a result on recorded video, not use in the field.",
+ "falsifiable": "False if the held-out Alaska values were as large as the California ones, or if the preprint reported an agency using it.",
+ "valence": "mixed leaning hopeful",
+ "stance": "mixed",
+ "runner_ups": [
+  "upside-only: home-water win (boosterish, hides the held-out test)",
+  "volume-hook only: 855,936 in a day (kept as the cold open, not the thesis)"
+ ],
+ "cross_challenge": "All three analysts converged. Challenges applied: never say beats humans (0.07/0.03 vs informal 10 percent are different measures); Mad River always tagged California and small-count; no cause for any error; no ADF&G AI use; Nushagak -0.65 cut.",
+ "correction_2026-10-28": "An earlier draft said the preprint reports no held-out Alaska number. Table 7 (OOD column) does report one for every Alaska site, and they are low except the Kenai channel. The film was rebuilt on the verified table."
+}

@@ -1,0 +1,2114 @@
+{
+  "run_date": "2026-10-28",
+  "slug": "the-river-it-never-saw",
+  "title": "The River It Never Saw",
+  "concept": "A Caltech and MIT preprint (arXiv 2610.22549, October 15th) called CFC26 is a benchmark for AI that counts salmon in sonar video, with 11 sites on 9 river systems, four in Alaska (three on the Kenai and one on the Nushagak). Held out of training, the Kenai banks still miss by under 0.07 and 0.03 with a direction score near zero and the Nushagak by about 0.035, the Kenai channel doubles from 0.14 to 0.29 and California's Mad River goes from about a third to 0.80. The preprint reports no agency use. The agency's sonar is drawn faceless and fully lit. The model is Wedge, a faced sonar fan labelled THE MODEL that first appears at the question, and a pale gold center line is the throughline: bare, ruled with tallies, a needle, half dashed into the dark, an open hook. A dashed unlit fan with a question mark is planted in the first frame and is the question the film pays at the end with an honest blank.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 124.68,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "push-in-only",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "centered-hero-lowerthird",
+    "register": "naturalistic-scene",
+    "palette": "submerged abyss lit only by a bright phosphor mint sonar fan, amber fish echoes, one gold center line, odometer wheels, violet dashes for the unknown, coral spent once on 0.80",
+    "camera_strategy": "slow-push-with-pullbacks",
+    "light_story": "bright sonar glow in clear water, then a soft fog",
+    "metaphor": "a sonar fan with a face counting fish across a gold line, half of its view black where the unseen river would be"
+  },
+  "palette": "submerged abyss lit only by a bright phosphor mint sonar fan, amber fish echoes, one gold center line, odometer wheels, violet dashes for the unknown, coral spent once on 0.80",
+  "divergence_note": "The last films were a bright civic hall of sage and honey with a ballot box (10-26), a rain boardwalk of signs (10-25), a navy orbit (10-24), a paper building in snow (10-23) and a dark tundra bob (10-22). This film is a near-black submerged sonar world lit by one mint fan, with amber fish echoes, a gold line and violet dashes. There is no hall, no desk of sliding sheets, no podium, no ballot, no boardwalk, no calendar and no scale. Its hero is a wedge-shaped instrument with a face, a new silhouette, and its world is the instrument's own screen plus a river bank near plane.",
+  "treatment": {
+    "winner": "dramatist structure (The Dark Half of the Fan) grafted with comedian hero face and Contrarian-free counting gags, explainer centre-line cutaway, enthusiast moose button",
+    "reasoning": "Scored on scroll-stop, arc, retention, fairness, feasibility, freshness. The Dramatist's black right third of the fan present from frame one makes the withheld number a picture, not a promise; its Test (The Small Creek) draws the strongest fair case at full strength. Grafts: Comedian's faced Wedge with tally wheels and the digit overflow gag (hero needs a face for Emotion); Explainer's line-crossing cutaway because the preprint states humans count crossings of a centre line (verified); Enthusiast's near-zero compass needle high point and unimpressed moose. REJECTED: Comedian's Contrarian wrong-way blob (reads as the model miscounting); Explainer/Enthusiast derived 'ten fish a second' (full-day coverage unverified); Enthusiast 'right neighborhood' line (implies beats-humans).",
+    "hero": "Wedge",
+    "throughline": "CenterLine",
+    "cast": [
+      "Wedge (net-new lib/sonar.tsx)",
+      "CenterLine",
+      "EchoBlob",
+      "TallyWheels",
+      "SonarWater",
+      "Salmon",
+      "TallyCounter",
+      "Character x2 hands/parka",
+      "AlaskaMini/AK_PATH",
+      "PendingMark",
+      "ClaimChip",
+      "Calipers",
+      "RiverBG"
+    ],
+    "revision_2026-10-28": "After Gates 0B and 0D: the agency's counts are drawn on a FACELESS fully lit bank sonar (tally wheels, no eyes, no black sector); the faced Wedge is labelled THE MODEL and first appears at the question (S6); the expert hand count has a person with a clicker and no machine boxes (S4); the moose is on the lit near bank; the violet and coral roles are exclusive; VO 'didn't lean high or low' became 'the lean stayed near zero' per c14.",
+    "revision_2026-10-28b": "Story corrected after the fact-check read Table 7's held-out column: Alaska sites mostly held up, the Kenai channel doubled, California's Mad River broke, and the open question is use in the field. The model's dark third now closes as held-out gauges stop low, the question boxes sit over the dashed unlit fan, the moose is cut."
+  },
+  "angle": {
+    "thesis": "Hold a river out of training and the preprint's AI still counted Alaska's big rivers closely (Kenai banks under 7 and 3 percent, Nushagak about 3.5 percent) while a small California river broke (0.33 to 0.80), so what the preprint leaves open is not the held-out test but use in the field.",
+    "supporting_facts": [
+      "c15 Kenai bank misses under 0.07 and 0.03 across all training conditions including held out (0.069, 0.025), direction near zero",
+      "c22 Nushagak held out about 0.035",
+      "c23 Kenai-Channel doubled when held out, 0.143 to 0.286",
+      "c18 Mad River 0.33 to 0.80 held out, a California river whose fish the preprint calls small and sparse",
+      "c19 built for deployment, no agency use reported"
+    ],
+    "counterpoint_honored": "The Kenai channel site doubled when held out, three California rivers broke, the benchmark is one team's offline preprint, and the informal 10 percent human figure is a different ruler. Alaska's strong held-out numbers are a result on recorded video, not use in the field.",
+    "falsifiable": "False if the held-out Alaska values were as large as the California ones, or if the preprint reported an agency using it.",
+    "valence": "mixed leaning hopeful",
+    "stance": "mixed",
+    "runner_ups": [
+      "upside-only: home-water win (boosterish, hides the held-out test)",
+      "volume-hook only: 855,936 in a day (kept as the cold open, not the thesis)"
+    ],
+    "cross_challenge": "All three analysts converged. Challenges applied: never say beats humans (0.07/0.03 vs informal 10 percent are different measures); Mad River always tagged California and small-count; no cause for any error; no ADF&G AI use; Nushagak -0.65 cut.",
+    "correction_2026-10-28": "An earlier draft said the preprint reports no held-out Alaska number. Table 7 (OOD column) does report one for every Alaska site, and they are low except the Kenai channel. The film was rebuilt on the verified table."
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A black frame, the agency's faceless sonar fan snaps on with a mint ring while amber fish flood across a gold line and a dashed violet unlit fan with a question mark glows at the far right.",
+    "headline": "855,936 IN ONE DAY",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame returns to the opening pose with the center line half dashed and one fish stopping one step short, changed in state."
+  },
+  "open_loop": {
+    "plant_t": 0.5,
+    "pay_t": 111.69,
+    "what": "Why is there a dashed unlit fan with a question mark beside the lit one? Planted in the first frame, paid when the preprint reports no agency use and the film names the missing count somebody uses."
+  },
+  "open_loop_2": {
+    "plant_t": 55.5,
+    "pay_t": 98.55,
+    "what": "Can the model count a river it never saw? Planted as Wedge looks at the dark third, paid in part when the Mad River bar jumps from 0.33 to 0.80."
+  },
+  "throughline": {
+    "object": "the gold center line",
+    "lands_in_button": "the center line half dashed and ending in an open hook, with one fish stopping a step short",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "a bare gold line that fish cross"
+      },
+      {
+        "at_s": 32.32,
+        "state": "ruled with ticks and boxes snapping onto each crossing"
+      },
+      {
+        "at_s": 59.68,
+        "state": "a needle that leans to show direction of error"
+      },
+      {
+        "at_s": 74.05,
+        "state": "the needle resting a hair left of center, near zero"
+      },
+      {
+        "at_s": 76.46,
+        "state": "a clip of the line lifted out of the strip and set aside as a dashed slot"
+      },
+      {
+        "at_s": 81.98,
+        "state": "a gold zero tick on the human ruler"
+      },
+      {
+        "at_s": 101.14,
+        "state": "a pale gold baseline under the Kenai channel bars"
+      },
+      {
+        "at_s": 115.26,
+        "state": "half dashed and ending in an open hook, one fish stopping short"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 12.79,
+      "type": "morph-to-chart",
+      "what": "the stack of slabs rises to 1,111,781 and tops out",
+      "hold_s": 0.7
+    },
+    {
+      "t": 48.65,
+      "type": "build-on",
+      "what": "eleven dots light along the coast and the three Kenai dots share one halo",
+      "hold_s": 0.7
+    },
+    {
+      "t": 99.27,
+      "type": "scale-pullback",
+      "what": "the camera pulls back from the tall 0.80 bar to the full track where the Kenai hairlines sit",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.55
+      },
+      {
+        "line": 0,
+        "offset": 3.0,
+        "level": 1.0
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.15
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 0.95
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.12
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.12
+      },
+      {
+        "line": 9,
+        "offset": 4.0,
+        "level": 1.05
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.12
+      },
+      {
+        "line": 12,
+        "offset": 5.0,
+        "level": 1.0
+      },
+      {
+        "line": 13,
+        "offset": 0.0,
+        "level": 0.1
+      },
+      {
+        "line": 14,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "at_s": 114.96,
+        "level": 0.1
+      },
+      {
+        "at_s": 116.06,
+        "level": 0.55
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.55
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "build_steps": 4,
+    "dip_at": 114.96,
+    "riser_at": 122.87,
+    "silence_at": 114.96,
+    "payoff_at": 111.69,
+    "button_pattern": "callback",
+    "interrupt_at": 55.5,
+    "extra_dips": [
+      111.69
+    ]
+  },
+  "shots": [
+    {
+      "title": "The flood",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "sonar-fan",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the fan at x540 y1090",
+      "means": "A black frame where the agency's faceless sonar fan snaps on and amber fish flood across a gold line while an odometer climbs to 855,936, with a dashed unlit fan and a question mark at the far right.",
+      "ambient": "fish stream across the fan, the odometer rolls, the sweep turns, the question mark pulses, silt drifts",
+      "hero": {
+        "name": "faceless agency sonar + odometer + fish",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "55% sonar, 25% fish, 20% odometer"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-9.380"
+    },
+    {
+      "title": "The Kenai season",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "river-stack",
+      "pov": "overhead",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the stack at x300 y900",
+      "means": "A stack of amber slabs rises beside a small faceless sonar to 1,111,781 and lights the busiest day.",
+      "ambient": "the slabs breathe, the small fan streams, silt drifts",
+      "hero": {
+        "name": "stack of slabs + small faceless sonar",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "60% stack, 30% sonar, 10% plates"
+      },
+      "id": 2,
+      "start_s": 9.38,
+      "t": "9.380-14.740"
+    },
+    {
+      "title": "Fifteen sites",
+      "vo_line": 2,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "painted-map",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the map at x540 y1000",
+      "means": "Fifteen mint pins pop onto a painted Alaska.",
+      "ambient": "the pins pulse, the outline glows, silt drifts",
+      "hero": {
+        "name": "painted Alaska + fifteen pins",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "70% map, 30% pins"
+      },
+      "id": 3,
+      "start_s": 14.74,
+      "t": "14.740-20.060"
+    },
+    {
+      "title": "The preprint",
+      "vo_line": 3,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "preprint-desk",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the sheet at x540 y1000",
+      "means": "A paper sheet CFC26 drops in and is stamped PREPRINT, with a film strip of benchmark clips below.",
+      "ambient": "the sheet sways, the strip fans stream, silt drifts",
+      "hero": {
+        "name": "CFC26 sheet + stamp + film strip",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "55% sheet, 20% stamp, 25% strip"
+      },
+      "id": 4,
+      "start_s": 20.06,
+      "t": "20.060-32.320"
+    },
+    {
+      "title": "Counted at a line",
+      "vo_line": 4,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "sonar-cutaway",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the fan at x540 y1130",
+      "means": "A person with a brass clicker beside a sonar video where fish cross a ruled gold line and the tally wheels tick.",
+      "ambient": "fish stream across the video, the thumb clicks, the wheels tick, the sweep turns",
+      "hero": {
+        "name": "person + clicker + sonar video + tally wheels",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% video, 30% person, 30% clicker and wheels"
+      },
+      "id": 5,
+      "start_s": 32.32,
+      "t": "32.320-46.480"
+    },
+    {
+      "title": "The data",
+      "vo_line": 6,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "coast-line",
+      "pov": "top-down-map",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the coast at x450 y900",
+      "means": "A coast line from Alaska to California with eleven lit dots, three Kenai dots haloed together, and a grid of clip tiles.",
+      "ambient": "the dots pulse, the halo crawls, the tiles twinkle",
+      "hero": {
+        "name": "coast line + eleven dots + clip tiles",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% coast, 35% dots, 25% tiles"
+      },
+      "id": 6,
+      "start_s": 46.48,
+      "t": "46.480-55.500"
+    },
+    {
+      "title": "The question",
+      "vo_line": 7,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "dark-third",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the fan at x500 y1120",
+      "means": "Wedge, labelled as the model, looks at the black third of its own fan where a dashed violet question mark glows.",
+      "ambient": "the eyes squint, the question mark pulses, the dashes crawl",
+      "hero": {
+        "name": "Wedge + black third + question mark",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% Wedge, 30% dark third, 20% question mark"
+      },
+      "id": 7,
+      "start_s": 55.5,
+      "t": "55.500-59.680"
+    },
+    {
+      "title": "Which way it misses",
+      "vo_line": 8,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "needle-gauge",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the needle is the motion",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the fan at x540 y1150",
+      "means": "The center line becomes a needle that sweeps and slows.",
+      "ambient": "the needle trembles, boxes snap, the sweep turns",
+      "hero": {
+        "name": "Wedge + needle",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "60% Wedge, 40% needle"
+      },
+      "id": 8,
+      "start_s": 59.68,
+      "t": "59.680-66.260"
+    },
+    {
+      "title": "A Kenai bank held out",
+      "vo_line": 9,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "kenai-readout",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the fan at x540 y1160",
+      "means": "A cross-section of the Kenai inside a benchmark clip frame with a thin gauge on each bank stopping under 0.07 and 0.03 while a small Wedge reads it and the needle rests a hair left.",
+      "ambient": "the gauges fill, the needle trembles, boxes snap, the clip frame flickers",
+      "hero": {
+        "name": "river cross-section + two bank gauges + small Wedge",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% cross-section, 35% gauges, 20% Wedge"
+      },
+      "id": 9,
+      "start_s": 66.26,
+      "t": "66.260-76.460"
+    },
+    {
+      "title": "Nushagak held out",
+      "vo_line": 10,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "clip-strip",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the strip at x540 y700",
+      "means": "A strip of clips scrolls past Wedge and the Nushagak clip is lifted out and set aside while a thin mint gauge fills a hair.",
+      "ambient": "the clip strip scrolls, the dashed slot pulses, the gauge fills, silt drifts",
+      "hero": {
+        "name": "clip strip + set-aside Nushagak clip + Wedge + thin gauge",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "40% strip, 30% Wedge, 30% gauge"
+      },
+      "id": 10,
+      "start_s": 76.46,
+      "t": "76.460-81.980"
+    },
+    {
+      "title": "A different ruler",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "low",
+      "stage": "clicker-ledge",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the clickers at x540 y1000",
+      "means": "Two brass hand clickers on a warm dusk ledge with a pale ruler dropped between them and a thin gauge that cannot dock against it.",
+      "ambient": "the clickers bob, the gauge slides, the ruler glints, silt drifts",
+      "hero": {
+        "name": "two clickers + dashed ruler + ledge",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% clickers, 25% ruler, 25% ledge"
+      },
+      "id": 11,
+      "start_s": 81.98,
+      "t": "81.980-92.920"
+    },
+    {
+      "title": "Mad River",
+      "vo_line": 12,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "high",
+      "stage": "bar-creek",
+      "pov": "overhead",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the bars at x400 y1000",
+      "means": "Two bars rise to 0.33 and 0.80, then the camera pulls back to the full track where the Kenai hairlines sit.",
+      "ambient": "the bars settle, fish drift, silt drifts",
+      "hero": {
+        "name": "two bars + full track + Kenai hairlines",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "60% bars, 25% track, 15% hairlines"
+      },
+      "id": 12,
+      "start_s": 92.92,
+      "t": "92.920-101.140"
+    },
+    {
+      "title": "Kenai channel",
+      "vo_line": 13,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "channel-bars",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the bars at x400 y1000",
+      "means": "Two mint bars on a gold baseline, the second twice the height of the first.",
+      "ambient": "the bars breathe, the baseline glints, silt drifts",
+      "hero": {
+        "name": "two Kenai channel bars + gold baseline",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "70% bars, 30% baseline"
+      },
+      "id": 13,
+      "start_s": 101.14,
+      "t": "101.140-108.500"
+    },
+    {
+      "title": "Not deployed",
+      "vo_line": 14,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "eye",
+      "stage": "unwired",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the sheet and fan at x540 y1050",
+      "means": "The CFC26 sheet and Wedge beside the agency sonar with a dashed cable that stops one step short.",
+      "ambient": "the sheet sways, fish stream, silt drifts",
+      "hero": {
+        "name": "sheet + Wedge + agency sonar + dashed cable",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "35% sheet, 30% Wedge, 20% sonar, 15% cable"
+      },
+      "id": 14,
+      "start_s": 108.5,
+      "t": "108.500-115.260"
+    },
+    {
+      "title": "The button",
+      "vo_line": 15,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "opening-pose",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the fan at x540 y1130",
+      "means": "The opening frame returns: the agency fan lit at left, the dashed unlit fan at right with Wedge at its edge, the line ending in an open hook and one fish stopping short, then a cut to black.",
+      "ambient": "the dashes crawl, one fish bobs, the sweep turns",
+      "hero": {
+        "name": "agency sonar + dashed fan + Wedge + open hook + one fish",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "35% agency sonar, 30% dashed fan and Wedge, 20% hook, 15% fish"
+      },
+      "id": 15,
+      "start_s": 115.26,
+      "t": "115.260-124.680"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "One day in June, an Alaska Fish and Game sonar on the Nushagak River counted more than eight hundred fifty thousand sockeye.",
+      "phrase": "One day in June,",
+      "shows": "a black frame, the agency's faceless sonar fan snaps on with a mint ring and amber fish flood across a gold center line while a dashed violet question mark glows over an unlit fan at the far right",
+      "sfx": "snap",
+      "means": "nushagak",
+      "rehook": "",
+      "draw": {
+        "subject": "the agency sonar",
+        "action": "snaps on with a mint ring and a flash while amber fish flood across the gold center line",
+        "emotion": "reading",
+        "annotation": "NUSHAGAK"
+      },
+      "choreo": {
+        "primary": "a black frame, the agency's faceless sonar fan snaps on with a mint ring and amber fish flood across a gold center line while a dashed violet question mark glows over an unlit fan at the far right",
+        "reaction": "the tally wheels blur and the question mark pulses",
+        "ambient": "fish stream across the fan, the odometer rolls, the sweep turns, the question mark pulses, silt drifts"
+      },
+      "t": "0.000-3.970",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.97,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.97
+      },
+      "offset": 3.97,
+      "vo": "One day in June, an Alaska Fish and Game sonar on the Nushagak River counted more than eight hundred fifty thousand sockeye.",
+      "phrase": "Nushagak River counted more",
+      "shows": "a plate reads NUSHAGAK, JUNE 28TH, SONAR COUNT",
+      "sfx": "knock",
+      "means": "nushagak \u00b7 june 28th \u00b7 sonar count",
+      "rehook": "",
+      "draw": {
+        "subject": "the plate",
+        "action": "lands over the fan",
+        "emotion": "reading",
+        "annotation": "NUSHAGAK \u00b7 JUNE 28TH \u00b7 SONAR COUNT"
+      },
+      "choreo": {
+        "primary": "a plate reads NUSHAGAK, JUNE 28TH, SONAR COUNT",
+        "reaction": "the fish keep streaming",
+        "ambient": "fish stream across the fan, the odometer rolls, the sweep turns, the question mark pulses, silt drifts"
+      },
+      "t": "3.970-7.310",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 7.31,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 7.31
+      },
+      "offset": 7.31,
+      "vo": "One day in June, an Alaska Fish and Game sonar on the Nushagak River counted more than eight hundred fifty thousand sockeye.",
+      "phrase": "thousand sockeye.",
+      "shows": "a brass six digit odometer rolls up to 855,936 and lands",
+      "sfx": "thump",
+      "means": "855,936",
+      "rehook": "",
+      "draw": {
+        "subject": "the odometer",
+        "action": "rolls up to 855,936 and lands with a hit",
+        "emotion": "reading",
+        "annotation": "855,936"
+      },
+      "choreo": {
+        "primary": "a brass six digit odometer rolls up to 855,936 and lands",
+        "reaction": "the odometer jolts and the plaque rattles while the dashed question fan pulses once",
+        "ambient": "fish stream across the fan, the odometer rolls, the sweep turns, the question mark pulses, silt drifts"
+      },
+      "kick": true,
+      "t": "7.310-9.380",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 9.38,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On the Kenai, its sonar estimated one point one million this summer.",
+      "phrase": "On the Kenai, its",
+      "shows": "the view whips across to a dark river where a tall stack of amber slabs rises beside a small faceless sonar",
+      "sfx": "whoosh",
+      "means": "kenai",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "whips across from the fan to a river where a stack of amber slabs rises",
+        "emotion": "reading",
+        "annotation": "KENAI"
+      },
+      "choreo": {
+        "primary": "the view whips across to a dark river where a tall stack of amber slabs rises beside a small faceless sonar",
+        "reaction": "the slabs rise",
+        "ambient": "the slabs breathe, the small fan streams, silt drifts"
+      },
+      "t": "9.380-12.790",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 12.79,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.41
+      },
+      "offset": 3.41,
+      "vo": "On the Kenai, its sonar estimated one point one million this summer.",
+      "phrase": "million this summer.",
+      "shows": "the stack tops out and the top slab lights pale, a plate reads KENAI MILE 19, 1,111,781, SONAR ESTIMATE",
+      "sfx": "ping",
+      "means": "kenai mile 19 \u00b7 1,111,781 \u00b7 sonar estimate",
+      "rehook": "",
+      "draw": {
+        "subject": "the top slab",
+        "action": "lights pale as the stack tops out",
+        "emotion": "reading",
+        "annotation": "KENAI MILE 19 \u00b7 1,111,781 \u00b7 SONAR ESTIMATE"
+      },
+      "choreo": {
+        "primary": "the stack tops out and the top slab lights pale, a plate reads KENAI MILE 19, 1,111,781, SONAR ESTIMATE",
+        "reaction": "the stack settles and the small fan streams",
+        "ambient": "the slabs breathe, the small fan streams, silt drifts"
+      },
+      "t": "12.790-14.740",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 3,
+      "at_s": 14.74,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Fish and Game runs fifteen sonar sites, on thirteen Alaska rivers.",
+      "phrase": "Fish and Game runs",
+      "shows": "fifteen mint pins pop onto a painted outline of Alaska one by one",
+      "sfx": "pop",
+      "means": "fifteen pins",
+      "rehook": "",
+      "draw": {
+        "subject": "fifteen pins",
+        "action": "pop onto a painted Alaska one after another",
+        "emotion": "reading",
+        "annotation": "FIFTEEN PINS"
+      },
+      "choreo": {
+        "primary": "fifteen mint pins pop onto a painted outline of Alaska one by one",
+        "reaction": "the pins pulse",
+        "ambient": "the pins pulse, the outline glows, silt drifts"
+      },
+      "t": "14.740-17.710",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 17.71,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "Fish and Game runs fifteen sonar sites, on thirteen Alaska rivers.",
+      "phrase": "thirteen Alaska rivers.",
+      "shows": "a plate reads 15 SONAR SITES, 13 RIVERS, ADF&G and a smaller plate marks the map as schematic",
+      "sfx": "click",
+      "means": "15 sonar sites \u00b7 13 rivers \u00b7 adf&g",
+      "rehook": "",
+      "draw": {
+        "subject": "the sites plate",
+        "action": "stamps beside the map",
+        "emotion": "reading",
+        "annotation": "15 SONAR SITES \u00b7 13 RIVERS \u00b7 ADF&G"
+      },
+      "choreo": {
+        "primary": "a plate reads 15 SONAR SITES, 13 RIVERS, ADF&G and a smaller plate marks the map as schematic",
+        "reaction": "the pins pulse",
+        "ambient": "the pins pulse, the outline glows, silt drifts"
+      },
+      "t": "17.710-22.512",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 4,
+      "at_s": 22.512,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.2,
+        "offset": 2.452
+      },
+      "offset": 2.452,
+      "vo": "On October fifteenth, researchers at Caltech and M I T posted a preprint, C F C twenty six, a test for A I that counts fish in sonar video.",
+      "phrase": "On October fifteenth, researchers",
+      "shows": "a cream paper sheet headed CFC26 drops in and settles, a plate reads PREPRINT, OCT 15TH, CALTECH + MIT",
+      "sfx": "slide",
+      "means": "preprint \u00b7 oct 15th \u00b7 caltech + mit",
+      "rehook": "rehook: a paper lands in the river world",
+      "draw": {
+        "subject": "a paper sheet",
+        "action": "drops from above and settles with a bounce",
+        "emotion": "reading",
+        "annotation": "PREPRINT \u00b7 OCT 15TH \u00b7 CALTECH + MIT"
+      },
+      "choreo": {
+        "primary": "a cream paper sheet headed CFC26 drops in and settles, a plate reads PREPRINT, OCT 15TH, CALTECH + MIT",
+        "reaction": "the sheet settles and sways",
+        "ambient": "the sheet sways, the strip fans stream, silt drifts"
+      },
+      "t": "22.512-25.230",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 4,
+      "at_s": 25.23,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 5.17
+      },
+      "offset": 5.17,
+      "vo": "On October fifteenth, researchers at Caltech and M I T posted a preprint, C F C twenty six, a test for A I that counts fish in sonar video.",
+      "phrase": "preprint, C F C",
+      "shows": "an ink stamp slaps PREPRINT onto the sheet and NOT PEER REVIEWED lands under it",
+      "sfx": "thunk",
+      "means": "preprint \u00b7 not peer reviewed",
+      "rehook": "rehook: the stamp lands",
+      "draw": {
+        "subject": "a stamp",
+        "action": "slaps PREPRINT then NOT PEER REVIEWED onto the sheet",
+        "emotion": "reading",
+        "annotation": "PREPRINT \u00b7 NOT PEER REVIEWED"
+      },
+      "choreo": {
+        "primary": "an ink stamp slaps PREPRINT onto the sheet and NOT PEER REVIEWED lands under it",
+        "reaction": "the stamp rings and the sheet shivers",
+        "ambient": "the sheet sways, the strip fans stream, silt drifts"
+      },
+      "t": "25.230-28.310",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 28.31,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 8.25
+      },
+      "offset": 8.25,
+      "vo": "On October fifteenth, researchers at Caltech and M I T posted a preprint, C F C twenty six, a test for A I that counts fish in sonar video.",
+      "phrase": "test for A I",
+      "shows": "a plate reads A TEST FOR SONAR FISH COUNTING",
+      "sfx": "click",
+      "means": "a test for sonar fish counting",
+      "rehook": "",
+      "draw": {
+        "subject": "the sheet's title line",
+        "action": "slides out of the sheet and lands in a plate",
+        "emotion": "reading",
+        "annotation": "A TEST FOR SONAR FISH COUNTING"
+      },
+      "choreo": {
+        "primary": "a plate reads A TEST FOR SONAR FISH COUNTING",
+        "reaction": "the sheet sways",
+        "ambient": "the sheet sways, the strip fans stream, silt drifts"
+      },
+      "t": "28.310-30.730",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 30.73,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 10.67
+      },
+      "offset": 10.67,
+      "vo": "On October fifteenth, researchers at Caltech and M I T posted a preprint, C F C twenty six, a test for A I that counts fish in sonar video.",
+      "phrase": "video.",
+      "shows": "a sprocket film strip slides in under the sheet, each frame a tiny sonar fan with amber fish",
+      "sfx": "bloop",
+      "means": "benchmark clips",
+      "rehook": "",
+      "draw": {
+        "subject": "a strip of clips",
+        "action": "slides in under the sheet, each frame a tiny fan with fish",
+        "emotion": "reading",
+        "annotation": "BENCHMARK CLIPS"
+      },
+      "choreo": {
+        "primary": "a sprocket film strip slides in under the sheet, each frame a tiny sonar fan with amber fish",
+        "reaction": "the strip fans stream",
+        "ambient": "the sheet sways, the strip fans stream, silt drifts"
+      },
+      "t": "30.730-32.320",
+      "key": 38
+    },
+    {
+      "id": 12,
+      "shot": 5,
+      "at_s": 32.32,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The preprint says experts count sonar video by hand, tallying fish across a center line. It doesn't say who runs these sonars.",
+      "phrase": "The preprint says experts",
+      "shows": "a person in a puffer jacket stands at a monitor showing a faceless sonar fan with a ruled gold center line and holds a brass clicker, a plate reads EXPERTS WATCH THE VIDEO, PER PREPRINT",
+      "sfx": "knock",
+      "means": "experts watch the video \u00b7 per preprint",
+      "rehook": "",
+      "draw": {
+        "subject": "a person",
+        "action": "walks in to a sonar video monitor holding a brass clicker",
+        "emotion": "reading",
+        "annotation": "EXPERTS WATCH THE VIDEO \u00b7 PER PREPRINT"
+      },
+      "choreo": {
+        "primary": "a person in a puffer jacket stands at a monitor showing a faceless sonar fan with a ruled gold center line and holds a brass clicker, a plate reads EXPERTS WATCH THE VIDEO, PER PREPRINT",
+        "reaction": "the fish stream and the person breathes",
+        "ambient": "fish stream across the video, the thumb clicks, the wheels tick, the sweep turns"
+      },
+      "t": "32.320-36.030",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 36.03,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.71
+      },
+      "offset": 3.71,
+      "vo": "The preprint says experts count sonar video by hand, tallying fish across a center line. It doesn't say who runs these sonars.",
+      "phrase": "tallying fish across a",
+      "shows": "the thumb clicks the brass clicker as each fish crosses the line and the left and right wheels on the base tick, a plate reads TALLY OF CROSSINGS, EACH DIRECTION",
+      "sfx": "tick",
+      "means": "tally of crossings, each direction",
+      "rehook": "",
+      "draw": {
+        "subject": "the clicker",
+        "action": "clicks and its count rolls up as each fish crosses the line while the left and right wheels tick",
+        "emotion": "reading",
+        "annotation": "TALLY OF CROSSINGS, EACH DIRECTION"
+      },
+      "choreo": {
+        "primary": "the thumb clicks the brass clicker as each fish crosses the line and the left and right wheels on the base tick, a plate reads TALLY OF CROSSINGS, EACH DIRECTION",
+        "reaction": "the count rolls up",
+        "ambient": "fish stream across the video, the thumb clicks, the wheels tick, the sweep turns"
+      },
+      "t": "36.030-38.710",
+      "key": 12
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 38.71,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 6.39
+      },
+      "offset": 6.39,
+      "vo": "The preprint says experts count sonar video by hand, tallying fish across a center line. It doesn't say who runs these sonars.",
+      "phrase": "doesn't say who runs",
+      "shows": "the thumb keeps clicking the brass clicker and the count wheel climbs as fish cross the line",
+      "sfx": "pop",
+      "means": "tally of crossings, each direction",
+      "rehook": "",
+      "draw": {
+        "subject": "the clicker",
+        "action": "keeps clicking and the count climbs while the thumb recoils",
+        "emotion": "reading",
+        "annotation": "TALLY OF CROSSINGS, EACH DIRECTION"
+      },
+      "choreo": {
+        "primary": "the thumb keeps clicking the brass clicker and the count wheel climbs as fish cross the line",
+        "reaction": "the count keeps rolling",
+        "ambient": "fish stream across the video, the thumb clicks, the wheels tick, the sweep turns"
+      },
+      "t": "38.710-43.210",
+      "key": 60
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 43.21,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 1.77
+      },
+      "offset": 1.77,
+      "vo": "It says counts like these guide harvest limits and river management.",
+      "phrase": "harvest limits and river",
+      "shows": "a plate reads COUNTS GUIDE HARVEST LIMITS, PER PREPRINT",
+      "sfx": "tick",
+      "means": "counts guide harvest limits \u00b7 per preprint",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate",
+        "action": "slides in as the thumb clicks again",
+        "emotion": "reading",
+        "annotation": "COUNTS GUIDE HARVEST LIMITS \u00b7 PER PREPRINT"
+      },
+      "choreo": {
+        "primary": "a plate reads COUNTS GUIDE HARVEST LIMITS, PER PREPRINT",
+        "reaction": "the ticks keep dropping",
+        "ambient": "fish stream across the video, the thumb clicks, the wheels tick, the sweep turns"
+      },
+      "t": "43.210-46.480",
+      "key": 13
+    },
+    {
+      "id": 16,
+      "shot": 6,
+      "at_s": 46.48,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Its data holds eleven sites on nine river systems. Four sites are in Alaska, three on the Kenai and one on the Nushagak.",
+      "phrase": "Its data holds eleven",
+      "shows": "a pale coast line draws down the frame and eleven dots light along it one by one while a grid of clip tiles lights below with a plate 4,363 CLIPS, 1.0M+ BOXES",
+      "sfx": "slide",
+      "means": "11 sites",
+      "rehook": "",
+      "draw": {
+        "subject": "a coast line",
+        "action": "draws down the frame from Alaska to California",
+        "emotion": "reading",
+        "annotation": "11 SITES"
+      },
+      "choreo": {
+        "primary": "a pale coast line draws down the frame and eleven dots light along it one by one while a grid of clip tiles lights below with a plate 4,363 CLIPS, 1.0M+ BOXES",
+        "reaction": "the dots pulse",
+        "ambient": "the dots pulse, the halo crawls, the tiles twinkle"
+      },
+      "t": "46.480-48.650",
+      "key": 14
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 48.65,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.17
+      },
+      "offset": 2.17,
+      "vo": "Its data holds eleven sites on nine river systems. Four sites are in Alaska, three on the Kenai and one on the Nushagak.",
+      "phrase": "nine river systems. Four",
+      "shows": "a solid mint halo rings the three Kenai dots as one river system, a plate reads 11 SITES, 9 RIVER SYSTEMS",
+      "sfx": "pop",
+      "means": "11 sites \u00b7 9 river systems",
+      "rehook": "",
+      "draw": {
+        "subject": "the Kenai halo",
+        "action": "closes a solid ring around the three Kenai dots as one",
+        "emotion": "reading",
+        "annotation": "11 SITES \u00b7 9 RIVER SYSTEMS"
+      },
+      "choreo": {
+        "primary": "a solid mint halo rings the three Kenai dots as one river system, a plate reads 11 SITES, 9 RIVER SYSTEMS",
+        "reaction": "the halo crawls",
+        "ambient": "the dots pulse, the halo crawls, the tiles twinkle"
+      },
+      "t": "48.650-50.490",
+      "key": 15
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 50.49,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.01
+      },
+      "offset": 4.01,
+      "vo": "Its data holds eleven sites on nine river systems. Four sites are in Alaska, three on the Kenai and one on the Nushagak.",
+      "phrase": "Four sites are in",
+      "shows": "the four Alaska dots fill solid mint, a plate reads ALASKA, 3 KENAI SITES + 1 NUSHAGAK",
+      "sfx": "pop",
+      "means": "alaska \u00b7 3 kenai sites + 1 nushagak",
+      "rehook": "",
+      "draw": {
+        "subject": "four mint dots",
+        "action": "fill solid on the Alaska end",
+        "emotion": "reading",
+        "annotation": "ALASKA \u00b7 3 KENAI SITES + 1 NUSHAGAK"
+      },
+      "choreo": {
+        "primary": "the four Alaska dots fill solid mint, a plate reads ALASKA, 3 KENAI SITES + 1 NUSHAGAK",
+        "reaction": "the dots pulse",
+        "ambient": "the dots pulse, the halo crawls, the tiles twinkle"
+      },
+      "t": "50.490-51.370",
+      "key": 46
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 51.37,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.89
+      },
+      "offset": 4.89,
+      "vo": "Its data holds eleven sites on nine river systems. Four sites are in Alaska, three on the Kenai and one on the Nushagak.",
+      "phrase": "Alaska, three on the",
+      "shows": "a plate reads ALASKA, LARGER, DENSER POPULATIONS, PER PREPRINT",
+      "sfx": "ping",
+      "means": "alaska \u00b7 larger, denser populations \u00b7 per preprint",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate",
+        "action": "slides in under the coast",
+        "emotion": "reading",
+        "annotation": "ALASKA \u00b7 LARGER, DENSER POPULATIONS \u00b7 PER PREPRINT"
+      },
+      "choreo": {
+        "primary": "a plate reads ALASKA, LARGER, DENSER POPULATIONS, PER PREPRINT",
+        "reaction": "the tiles twinkle",
+        "ambient": "the dots pulse, the halo crawls, the tiles twinkle"
+      },
+      "t": "51.370-55.500",
+      "key": 16
+    },
+    {
+      "id": 20,
+      "shot": 7,
+      "at_s": 55.5,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Can that A I count a river it has never seen?",
+      "phrase": "Can that A I",
+      "shows": "a close Wedge labelled as the model with its eyes on the black right third of the fan, a violet dashed question mark appears in the dark, a plate reads CAN IT COUNT A RIVER IT NEVER SAW?",
+      "sfx": "swell",
+      "means": "can it count a river it never saw?",
+      "rehook": "rehook: the dark third gets a question",
+      "draw": {
+        "subject": "Wedge",
+        "action": "slides in as THE MODEL and swings its eyes to the black third of its fan",
+        "emotion": "unsure",
+        "annotation": "CAN IT COUNT A RIVER IT NEVER SAW?"
+      },
+      "choreo": {
+        "primary": "a close Wedge labelled as the model with its eyes on the black right third of the fan, a violet dashed question mark appears in the dark, a plate reads CAN IT COUNT A RIVER IT NEVER SAW?",
+        "reaction": "the eyes squint and the question mark pulses",
+        "ambient": "the eyes squint, the question mark pulses, the dashes crawl"
+      },
+      "t": "55.500-59.680",
+      "key": 17
+    },
+    {
+      "id": 21,
+      "shot": 8,
+      "at_s": 59.68,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The authors also score which way a model misses, too high or too low.",
+      "phrase": "The authors also score",
+      "shows": "the gold center line becomes a needle that sweeps from side to side, a plate reads NEW SCORE, DIRECTION OF ERROR",
+      "sfx": "whoosh",
+      "means": "new score \u00b7 direction of error",
+      "rehook": "",
+      "draw": {
+        "subject": "the score needle",
+        "action": "sweeps across the center line",
+        "emotion": "reading",
+        "annotation": "NEW SCORE \u00b7 DIRECTION OF ERROR"
+      },
+      "choreo": {
+        "primary": "the gold center line becomes a needle that sweeps from side to side, a plate reads NEW SCORE, DIRECTION OF ERROR",
+        "reaction": "the needle trembles",
+        "ambient": "the needle trembles, boxes snap, the sweep turns"
+      },
+      "t": "59.680-62.330",
+      "key": 19
+    },
+    {
+      "id": 22,
+      "shot": 8,
+      "at_s": 62.33,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.65
+      },
+      "offset": 2.65,
+      "vo": "The authors also score which way a model misses, too high or too low.",
+      "phrase": "misses, too high or",
+      "shows": "the needle slows, a plate reads TOO HIGH OR TOO LOW?",
+      "sfx": "bell",
+      "means": "too high or too low?",
+      "rehook": "",
+      "draw": {
+        "subject": "the needle",
+        "action": "settles toward center",
+        "emotion": "reading",
+        "annotation": "TOO HIGH OR TOO LOW?"
+      },
+      "choreo": {
+        "primary": "the needle slows, a plate reads TOO HIGH OR TOO LOW?",
+        "reaction": "the needle trembles",
+        "ambient": "the needle trembles, boxes snap, the sweep turns"
+      },
+      "t": "62.330-66.260",
+      "key": 36
+    },
+    {
+      "id": 23,
+      "shot": 9,
+      "at_s": 66.26,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Hold a Kenai bank out of training, and the average miss still stayed under seven percent on the left bank and three on the right. The lean stayed near zero.",
+      "phrase": "Hold a Kenai bank",
+      "shows": "a sprocket clip frame snaps up around a cross-section of the Kenai with two banks and a gold line across the channel, a small Wedge labelled as the model in the corner snaps mint boxes onto the fish, a plate reads KENAI BANK HELD OUT OF TRAINING",
+      "sfx": "snap",
+      "means": "kenai bank held out of training",
+      "rehook": "",
+      "draw": {
+        "subject": "a clip frame",
+        "action": "snaps up around a cross-section of the Kenai while a small Wedge in the corner snaps boxes onto the fish crossing the gold line",
+        "emotion": "reading",
+        "annotation": "KENAI BANK HELD OUT OF TRAINING"
+      },
+      "choreo": {
+        "primary": "a sprocket clip frame snaps up around a cross-section of the Kenai with two banks and a gold line across the channel, a small Wedge labelled as the model in the corner snaps mint boxes onto the fish, a plate reads KENAI BANK HELD OUT OF TRAINING",
+        "reaction": "the boxes snap",
+        "ambient": "the gauges fill, the needle trembles, boxes snap, the clip frame flickers"
+      },
+      "t": "66.260-68.610",
+      "key": 20
+    },
+    {
+      "id": 24,
+      "shot": 9,
+      "at_s": 68.61,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 2.35
+      },
+      "offset": 2.35,
+      "vo": "Hold a Kenai bank out of training, and the average miss still stayed under seven percent on the left bank and three on the right. The lean stayed near zero.",
+      "phrase": "average miss still stayed",
+      "shows": "two empty vertical gauge tracks stand up on the two banks of the cross-section",
+      "sfx": "roll",
+      "means": "kenai held out",
+      "rehook": "",
+      "draw": {
+        "subject": "two empty vertical tracks",
+        "action": "stand up on the two banks",
+        "emotion": "reading",
+        "annotation": "KENAI HELD OUT"
+      },
+      "choreo": {
+        "primary": "two empty vertical gauge tracks stand up on the two banks of the cross-section",
+        "reaction": "the tracks settle",
+        "ambient": "the gauges fill, the needle trembles, boxes snap, the clip frame flickers"
+      },
+      "t": "68.610-70.130",
+      "key": 50
+    },
+    {
+      "id": 25,
+      "shot": 9,
+      "at_s": 70.13,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.87
+      },
+      "offset": 3.87,
+      "vo": "Hold a Kenai bank out of training, and the average miss still stayed under seven percent on the left bank and three on the right. The lean stayed near zero.",
+      "phrase": "seven percent on the",
+      "shows": "a thin mint gauge fills a hair and stops under 0.07, a plate reads LEFT BANK, MISS UNDER 0.07 (7%)",
+      "sfx": "ping",
+      "means": "left bank \u00b7 miss under 0.07 (7%)",
+      "rehook": "",
+      "draw": {
+        "subject": "the left bank gauge",
+        "action": "fills a hair and stops under 0.07",
+        "emotion": "reading",
+        "annotation": "LEFT BANK \u00b7 MISS UNDER 0.07 (7%)"
+      },
+      "choreo": {
+        "primary": "a thin mint gauge fills a hair and stops under 0.07, a plate reads LEFT BANK, MISS UNDER 0.07 (7%)",
+        "reaction": "the bar fills",
+        "ambient": "the gauges fill, the needle trembles, boxes snap, the clip frame flickers"
+      },
+      "t": "70.130-72.670",
+      "key": 21
+    },
+    {
+      "id": 26,
+      "shot": 9,
+      "at_s": 72.67,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 6.41
+      },
+      "offset": 6.41,
+      "vo": "Hold a Kenai bank out of training, and the average miss still stayed under seven percent on the left bank and three on the right. The lean stayed near zero.",
+      "phrase": "right. The lean stayed",
+      "shows": "a second thin gauge fills less and stops under 0.03, a plate reads RIGHT BANK, MISS UNDER 0.03 (3%)",
+      "sfx": "pop",
+      "means": "right bank \u00b7 miss under 0.03 (3%)",
+      "rehook": "",
+      "draw": {
+        "subject": "the right bank gauge",
+        "action": "fills even less and stops under 0.03",
+        "emotion": "reading",
+        "annotation": "RIGHT BANK \u00b7 MISS UNDER 0.03 (3%)"
+      },
+      "choreo": {
+        "primary": "a second thin gauge fills less and stops under 0.03, a plate reads RIGHT BANK, MISS UNDER 0.03 (3%)",
+        "reaction": "the bar fills",
+        "ambient": "the gauges fill, the needle trembles, boxes snap, the clip frame flickers"
+      },
+      "t": "72.670-74.050",
+      "key": 22
+    },
+    {
+      "id": 27,
+      "shot": 9,
+      "at_s": 74.05,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 7.79
+      },
+      "offset": 7.79,
+      "vo": "Hold a Kenai bank out of training, and the average miss still stayed under seven percent on the left bank and three on the right. The lean stayed near zero.",
+      "phrase": "lean stayed near zero.",
+      "shows": "the needle leans a hair to the left of center and holds, a plate reads NEAR ZERO, NOT ZERO",
+      "sfx": "bloop",
+      "means": "near zero, not zero",
+      "rehook": "",
+      "draw": {
+        "subject": "the needle",
+        "action": "leans a hair to the left and holds",
+        "emotion": "reading",
+        "annotation": "NEAR ZERO, NOT ZERO"
+      },
+      "choreo": {
+        "primary": "the needle leans a hair to the left of center and holds, a plate reads NEAR ZERO, NOT ZERO",
+        "reaction": "the needle trembles",
+        "ambient": "the gauges fill, the needle trembles, boxes snap, the clip frame flickers"
+      },
+      "t": "74.050-76.460",
+      "key": 23
+    },
+    {
+      "id": 28,
+      "shot": 10,
+      "at_s": 76.46,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Hold the Nushagak out, and it missed by about three and a half percent.",
+      "phrase": "Hold the Nushagak out,",
+      "shows": "a strip of clip frames scrolls past Wedge, the clip labelled NUSHAGAK lifts out of the strip and is set aside as a dashed violet slot, a plate reads HELD OUT OF TRAINING",
+      "sfx": "rumble",
+      "means": "held out of training",
+      "rehook": "rehook: the clip lifts out",
+      "draw": {
+        "subject": "a clip strip",
+        "action": "scrolls past Wedge and the Nushagak clip lifts out, goes dashed violet and is set aside",
+        "emotion": "reading",
+        "annotation": "HELD OUT OF TRAINING"
+      },
+      "choreo": {
+        "primary": "a strip of clip frames scrolls past Wedge, the clip labelled NUSHAGAK lifts out of the strip and is set aside as a dashed violet slot, a plate reads HELD OUT OF TRAINING",
+        "reaction": "the strip scrolls",
+        "ambient": "the clip strip scrolls, the dashed slot pulses, the gauge fills, silt drifts"
+      },
+      "t": "76.460-78.450",
+      "key": 26
+    },
+    {
+      "id": 29,
+      "shot": 10,
+      "at_s": 78.45,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.99
+      },
+      "offset": 1.99,
+      "vo": "Hold the Nushagak out, and it missed by about three and a half percent.",
+      "phrase": "missed by about three",
+      "shows": "a thin mint gauge beside the set-aside clip fills a hair, a plate reads NUSHAGAK HELD OUT, MISS 0.035 (3.5%)",
+      "sfx": "ping",
+      "means": "nushagak held out \u00b7 miss 0.035 (3.5%)",
+      "rehook": "",
+      "draw": {
+        "subject": "a thin mint gauge",
+        "action": "fills a hair beside the set-aside clip",
+        "emotion": "reading",
+        "annotation": "NUSHAGAK HELD OUT \u00b7 MISS 0.035 (3.5%)"
+      },
+      "choreo": {
+        "primary": "a thin mint gauge beside the set-aside clip fills a hair, a plate reads NUSHAGAK HELD OUT, MISS 0.035 (3.5%)",
+        "reaction": "the gauge fills",
+        "ambient": "the clip strip scrolls, the dashed slot pulses, the gauge fills, silt drifts"
+      },
+      "t": "78.450-81.980",
+      "key": 48
+    },
+    {
+      "id": 30,
+      "shot": 11,
+      "at_s": 81.98,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Practitioners told the authors that two people counting one video differ by about ten percent. That's a rough figure for something else, not a score the model beat.",
+      "phrase": "Practitioners told the authors",
+      "shows": "two brass hand clickers on a warm dusk ledge click up to slightly different counts, a plate reads TWO PEOPLE, ONE VIDEO",
+      "sfx": "clink",
+      "means": "two people, one video",
+      "rehook": "rehook: a second ruler drops in",
+      "draw": {
+        "subject": "two clickers",
+        "action": "drop onto a ledge and click up to slightly different counts",
+        "emotion": "reading",
+        "annotation": "TWO PEOPLE, ONE VIDEO"
+      },
+      "choreo": {
+        "primary": "two brass hand clickers on a warm dusk ledge click up to slightly different counts, a plate reads TWO PEOPLE, ONE VIDEO",
+        "reaction": "the clickers bob",
+        "ambient": "the clickers bob, the gauge slides, the ruler glints, silt drifts"
+      },
+      "t": "81.980-85.890",
+      "key": 24
+    },
+    {
+      "id": 31,
+      "shot": 11,
+      "at_s": 85.89,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.91
+      },
+      "offset": 3.91,
+      "vo": "Practitioners told the authors that two people counting one video differ by about ten percent. That's a rough figure for something else, not a score the model beat.",
+      "phrase": "ten percent. That's a",
+      "shows": "a pale ruler drops between the clickers, a plate reads ABOUT 10% APART, INFORMAL",
+      "sfx": "thunk",
+      "means": "about 10% apart \u00b7 informal",
+      "rehook": "",
+      "draw": {
+        "subject": "a pale ruler",
+        "action": "drops between the clickers and measures their gap",
+        "emotion": "reading",
+        "annotation": "ABOUT 10% APART \u00b7 INFORMAL"
+      },
+      "choreo": {
+        "primary": "a pale ruler drops between the clickers, a plate reads ABOUT 10% APART, INFORMAL",
+        "reaction": "the ruler glints",
+        "ambient": "the clickers bob, the gauge slides, the ruler glints, silt drifts"
+      },
+      "t": "85.890-88.830",
+      "key": 25
+    },
+    {
+      "id": 32,
+      "shot": 11,
+      "at_s": 88.83,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.85
+      },
+      "offset": 6.85,
+      "vo": "Practitioners told the authors that two people counting one video differ by about ten percent. That's a rough figure for something else, not a score the model beat.",
+      "phrase": "something else, not a",
+      "shows": "the thin mint Kenai gauge slides in from the right toward the pale human ruler, its tick spacing does not match and it stops a visible gap short, a plate reads NOT A SCOREBOARD",
+      "sfx": "thunk",
+      "means": "not a scoreboard",
+      "rehook": "",
+      "draw": {
+        "subject": "the Kenai gauge",
+        "action": "slides in toward the pale ruler, its ticks do not line up, and it stops a visible gap short",
+        "emotion": "reading",
+        "annotation": "NOT A SCOREBOARD"
+      },
+      "choreo": {
+        "primary": "the thin mint Kenai gauge slides in from the right toward the pale human ruler, its tick spacing does not match and it stops a visible gap short, a plate reads NOT A SCOREBOARD",
+        "reaction": "the clickers stop bobbing",
+        "ambient": "the clickers bob, the gauge slides, the ruler glints, silt drifts"
+      },
+      "t": "88.830-92.920",
+      "key": 39
+    },
+    {
+      "id": 33,
+      "shot": 12,
+      "at_s": 92.92,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "California's Mad River was one of the hard ones. The miss was about a third in training, and rose to eighty percent held out.",
+      "phrase": "California's Mad River was",
+      "shows": "two empty tracks labelled IN TRAINING and HELD OUT slide up, a plate reads MAD RIVER, CALIFORNIA",
+      "sfx": "slide",
+      "means": "mad river \u00b7 california",
+      "rehook": "rehook: the hard river",
+      "draw": {
+        "subject": "two empty tracks",
+        "action": "slide up side by side beside a dusk creek",
+        "emotion": "reading",
+        "annotation": "MAD RIVER \u00b7 CALIFORNIA"
+      },
+      "choreo": {
+        "primary": "two empty tracks labelled IN TRAINING and HELD OUT slide up, a plate reads MAD RIVER, CALIFORNIA",
+        "reaction": "the tracks settle",
+        "ambient": "the bars settle, fish drift, silt drifts"
+      },
+      "t": "92.920-96.810",
+      "key": 27
+    },
+    {
+      "id": 34,
+      "shot": 12,
+      "at_s": 96.81,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.89
+      },
+      "offset": 3.89,
+      "vo": "California's Mad River was one of the hard ones. The miss was about a third in training, and rose to eighty percent held out.",
+      "phrase": "third in training, and",
+      "shows": "the mint bar labelled IN TRAINING rises to about a third and its tag reads ABOUT A THIRD (0.33)",
+      "sfx": "pop",
+      "means": "about a third (0.33)",
+      "rehook": "",
+      "draw": {
+        "subject": "the mint bar",
+        "action": "rises to a third of the track",
+        "emotion": "reading",
+        "annotation": "ABOUT A THIRD (0.33)"
+      },
+      "choreo": {
+        "primary": "the mint bar labelled IN TRAINING rises to about a third and its tag reads ABOUT A THIRD (0.33)",
+        "reaction": "the bar settles",
+        "ambient": "the bars settle, fish drift, silt drifts"
+      },
+      "t": "96.810-98.550",
+      "key": 42
+    },
+    {
+      "id": 35,
+      "shot": 12,
+      "at_s": 98.55,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 5.63
+      },
+      "offset": 5.63,
+      "vo": "California's Mad River was one of the hard ones. The miss was about a third in training, and rose to eighty percent held out.",
+      "phrase": "eighty percent held out.",
+      "shows": "the coral bar labelled HELD OUT shoots up to 0.80 (80%) beside the mint bar at 0.33, a plate reads CALIFORNIA, IN TRAINING 0.33, HELD OUT 0.80",
+      "sfx": "thump",
+      "means": "california \u00b7 in training 0.33 \u00b7 held out 0.80",
+      "rehook": "",
+      "draw": {
+        "subject": "the coral bar",
+        "action": "shoots up to 0.80",
+        "emotion": "wide",
+        "annotation": "CALIFORNIA \u00b7 IN TRAINING 0.33 \u00b7 HELD OUT 0.80"
+      },
+      "choreo": {
+        "primary": "the coral bar labelled HELD OUT shoots up to 0.80 (80%) beside the mint bar at 0.33, a plate reads CALIFORNIA, IN TRAINING 0.33, HELD OUT 0.80",
+        "reaction": "the bar settles",
+        "ambient": "the bars settle, fish drift, silt drifts"
+      },
+      "kick": true,
+      "t": "98.550-99.270",
+      "key": 28
+    },
+    {
+      "id": 36,
+      "shot": 12,
+      "at_s": 99.27,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 6.35
+      },
+      "offset": 6.35,
+      "vo": "California's Mad River was one of the hard ones. The miss was about a third in training, and rose to eighty percent held out.",
+      "phrase": "held out.",
+      "shows": "the camera pulls back from the tall bars and two hairline ticks drop onto the same track at 0.07 and 0.03, a plate reads KENAI HELD OUT, 0.07 AND 0.03",
+      "sfx": "bloop",
+      "means": "kenai held out \u00b7 0.07 and 0.03",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back from the tall bars while two hairline ticks for the Kenai banks drop onto the same track",
+        "emotion": "reading",
+        "annotation": "KENAI HELD OUT \u00b7 0.07 AND 0.03"
+      },
+      "choreo": {
+        "primary": "the camera pulls back from the tall bars and two hairline ticks drop onto the same track at 0.07 and 0.03, a plate reads KENAI HELD OUT, 0.07 AND 0.03",
+        "reaction": "the ticks settle",
+        "ambient": "the bars settle, fish drift, silt drifts"
+      },
+      "t": "99.270-101.140",
+      "key": 29
+    },
+    {
+      "id": 37,
+      "shot": 13,
+      "at_s": 101.14,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "One Kenai site, the channel, saw its miss double when held out, from fourteen percent to twenty nine.",
+      "phrase": "One Kenai site, the",
+      "shows": "two empty tracks stand up on a pale gold baseline, a plate reads KENAI CHANNEL",
+      "sfx": "bloop",
+      "means": "kenai channel",
+      "rehook": "",
+      "draw": {
+        "subject": "two empty tracks",
+        "action": "stand up on a pale gold baseline",
+        "emotion": "reading",
+        "annotation": "KENAI CHANNEL"
+      },
+      "choreo": {
+        "primary": "two empty tracks stand up on a pale gold baseline, a plate reads KENAI CHANNEL",
+        "reaction": "the tracks settle",
+        "ambient": "the bars breathe, the baseline glints, silt drifts"
+      },
+      "t": "101.140-105.830",
+      "key": 30
+    },
+    {
+      "id": 38,
+      "shot": 13,
+      "at_s": 105.83,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.69
+      },
+      "offset": 4.69,
+      "vo": "One Kenai site, the channel, saw its miss double when held out, from fourteen percent to twenty nine.",
+      "phrase": "fourteen percent to twenty",
+      "shows": "the first mint bar rises to about 0.14 and its tag reads 14% (0.14)",
+      "sfx": "pop",
+      "means": "14% (0.14)",
+      "rehook": "",
+      "draw": {
+        "subject": "a mint bar",
+        "action": "rises to 0.14",
+        "emotion": "reading",
+        "annotation": "14% (0.14)"
+      },
+      "choreo": {
+        "primary": "the first mint bar rises to about 0.14 and its tag reads 14% (0.14)",
+        "reaction": "the bar settles",
+        "ambient": "the bars breathe, the baseline glints, silt drifts"
+      },
+      "t": "105.830-106.990",
+      "key": 52
+    },
+    {
+      "id": 39,
+      "shot": 13,
+      "at_s": 106.99,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 5.85
+      },
+      "offset": 5.85,
+      "vo": "One Kenai site, the channel, saw its miss double when held out, from fourteen percent to twenty nine.",
+      "phrase": "twenty nine.",
+      "shows": "a second mint bar labelled HELD OUT shoots up to about 0.29 beside the first and its tag reads 29% (0.29), a plate reads KENAI CHANNEL, HELD OUT 0.14 TO 0.29",
+      "sfx": "thump",
+      "means": "kenai channel \u00b7 held out 0.14 to 0.29",
+      "rehook": "",
+      "draw": {
+        "subject": "a second bar",
+        "action": "shoots up to twice the height beside it",
+        "emotion": "reading",
+        "annotation": "KENAI CHANNEL \u00b7 HELD OUT 0.14 TO 0.29"
+      },
+      "choreo": {
+        "primary": "a second mint bar labelled HELD OUT shoots up to about 0.29 beside the first and its tag reads 29% (0.29), a plate reads KENAI CHANNEL, HELD OUT 0.14 TO 0.29",
+        "reaction": "the bars settle",
+        "ambient": "the bars breathe, the baseline glints, silt drifts"
+      },
+      "t": "106.990-108.500",
+      "key": 31
+    },
+    {
+      "id": 40,
+      "shot": 14,
+      "at_s": 108.5,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The authors say they built it for deployment. Nothing in the preprint says an agency uses it.",
+      "phrase": "The authors say they",
+      "shows": "the CFC26 sheet and Wedge stand beside the agency sonar while a dashed violet cable runs from Wedge toward it and stops one step short and the dashed unlit fan with its question mark waits at the right, a plate reads BUILT FOR DEPLOYMENT",
+      "sfx": "slide",
+      "means": "built for deployment",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed cable",
+        "action": "runs from Wedge toward the agency sonar and stops one step short of it while a dashed unlit fan with a question mark waits behind",
+        "emotion": "reading",
+        "annotation": "BUILT FOR DEPLOYMENT"
+      },
+      "choreo": {
+        "primary": "the CFC26 sheet and Wedge stand beside the agency sonar while a dashed violet cable runs from Wedge toward it and stops one step short and the dashed unlit fan with its question mark waits at the right, a plate reads BUILT FOR DEPLOYMENT",
+        "reaction": "the sheet sways",
+        "ambient": "the sheet sways, fish stream, silt drifts"
+      },
+      "t": "108.500-111.690",
+      "key": 32
+    },
+    {
+      "id": 41,
+      "shot": 14,
+      "at_s": 111.69,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "The authors say they built it for deployment. Nothing in the preprint says an agency uses it.",
+      "phrase": "Nothing in the preprint",
+      "shows": "a plate reads NO AGENCY USE REPORTED over the dashed unlit fan and its question mark greys",
+      "sfx": "clink",
+      "means": "no agency use reported",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate",
+        "action": "stamps over the dashed fan and its question mark greys",
+        "emotion": "reading",
+        "annotation": "NO AGENCY USE REPORTED"
+      },
+      "choreo": {
+        "primary": "a plate reads NO AGENCY USE REPORTED over the dashed unlit fan and its question mark greys",
+        "reaction": "the question mark greys",
+        "ambient": "the sheet sways, fish stream, silt drifts"
+      },
+      "t": "111.690-115.260",
+      "key": 33
+    },
+    {
+      "id": 42,
+      "shot": 15,
+      "at_s": 115.26,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "With each river held out, three of four Alaska sites held up, and California's Mad River didn't. What's still missing is a count somebody uses.",
+      "phrase": "With each river held",
+      "shows": "the opening frame returns: the agency's faceless sonar lit at left with tally wheels and fish crossing the gold line and no boxes, the dashed unlit violet fan at right with Wedge standing at its edge and unlit, the gold line running solid under the lit fan and dashed into the unlit one and ending in an open hook",
+      "sfx": "snap",
+      "means": "adf&g sonar",
+      "rehook": "",
+      "draw": {
+        "subject": "the agency sonar",
+        "action": "returns to the opening composition lit at left, with the dashed unlit fan and Wedge at right",
+        "emotion": "idle",
+        "annotation": "ADF&G SONAR"
+      },
+      "choreo": {
+        "primary": "the opening frame returns: the agency's faceless sonar lit at left with tally wheels and fish crossing the gold line and no boxes, the dashed unlit violet fan at right with Wedge standing at its edge and unlit, the gold line running solid under the lit fan and dashed into the unlit one and ending in an open hook",
+        "reaction": "the dashes crawl and the fish stream",
+        "ambient": "the dashes crawl, one fish bobs, the sweep turns"
+      },
+      "t": "115.260-118.010",
+      "key": 34
+    },
+    {
+      "id": 43,
+      "shot": 15,
+      "at_s": 118.01,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 2.75
+      },
+      "offset": 2.75,
+      "vo": "With each river held out, three of four Alaska sites held up, and California's Mad River didn't. What's still missing is a count somebody uses.",
+      "phrase": "Alaska sites held up,",
+      "shows": "Wedge standing at the edge of the dashed fan turns its eyes from the lit agency fan toward the dashed one",
+      "sfx": "fade",
+      "means": "the model",
+      "rehook": "",
+      "draw": {
+        "subject": "the model's eyes",
+        "action": "turn from the lit agency fan to the dashed fan",
+        "emotion": "unsure",
+        "annotation": "THE MODEL"
+      },
+      "choreo": {
+        "primary": "Wedge standing at the edge of the dashed fan turns its eyes from the lit agency fan toward the dashed one",
+        "reaction": "the dashes crawl",
+        "ambient": "the dashes crawl, one fish bobs, the sweep turns"
+      },
+      "t": "118.010-120.910",
+      "key": 49
+    },
+    {
+      "id": 44,
+      "shot": 15,
+      "at_s": 120.91,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 5.65
+      },
+      "offset": 5.65,
+      "vo": "With each river held out, three of four Alaska sites held up, and California's Mad River didn't. What's still missing is a count somebody uses.",
+      "phrase": "didn't. What's still missing",
+      "shows": "the dashed unlit fan pulses once at its rim beside Wedge",
+      "sfx": "thump",
+      "means": "a count somebody uses \u00b7 still missing",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed fan",
+        "action": "pulses once at its rim",
+        "emotion": "unsure",
+        "annotation": "A COUNT SOMEBODY USES \u00b7 STILL MISSING"
+      },
+      "choreo": {
+        "primary": "the dashed unlit fan pulses once at its rim beside Wedge",
+        "reaction": "the dashes crawl",
+        "ambient": "the dashes crawl, one fish bobs, the sweep turns"
+      },
+      "t": "120.910-122.870",
+      "key": 51
+    },
+    {
+      "id": 45,
+      "shot": 15,
+      "at_s": 122.87,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 7.61
+      },
+      "offset": 7.61,
+      "vo": "With each river held out, three of four Alaska sites held up, and California's Mad River didn't. What's still missing is a count somebody uses.",
+      "phrase": "missing is a count",
+      "shows": "three dashed violet question boxes drop in above the dashed unlit fan and a plate reads A COUNT SOMEBODY USES, STILL MISSING",
+      "sfx": "bloop",
+      "means": "a count somebody uses \u00b7 still missing",
+      "rehook": "",
+      "draw": {
+        "subject": "three question boxes",
+        "action": "drop in above the dashed unlit fan",
+        "emotion": "unsure",
+        "annotation": "A COUNT SOMEBODY USES \u00b7 STILL MISSING"
+      },
+      "choreo": {
+        "primary": "three dashed violet question boxes drop in above the dashed unlit fan and a plate reads A COUNT SOMEBODY USES, STILL MISSING",
+        "reaction": "the boxes pulse",
+        "ambient": "the dashes crawl, one fish bobs, the sweep turns"
+      },
+      "t": "122.870-123.870",
+      "key": 44
+    },
+    {
+      "id": 46,
+      "shot": 15,
+      "at_s": 123.87,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 8.61
+      },
+      "offset": 8.61,
+      "vo": "With each river held out, three of four Alaska sites held up, and California's Mad River didn't. What's still missing is a count somebody uses.",
+      "phrase": "somebody uses.",
+      "shows": "one amber fish with a dashed ring stops one step short of the line of the dashed fan, then the frame cuts to black",
+      "sfx": "swell",
+      "means": "a count somebody uses \u00b7 still missing",
+      "rehook": "",
+      "draw": {
+        "subject": "one fish",
+        "action": "stops one step short of the dashed fan's line",
+        "emotion": "wide",
+        "annotation": "A COUNT SOMEBODY USES \u00b7 STILL MISSING"
+      },
+      "choreo": {
+        "primary": "one amber fish with a dashed ring stops one step short of the line of the dashed fan, then the frame cuts to black",
+        "reaction": "the fish bobs and the dashes crawl",
+        "ambient": "the dashes crawl, one fish bobs, the sweep turns"
+      },
+      "kick": true,
+      "t": "123.870-124.680",
+      "key": 35
+    }
+  ]
+}

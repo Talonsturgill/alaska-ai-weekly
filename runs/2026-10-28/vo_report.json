@@ -1,0 +1,77 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 5,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.972,
+    "heard": "One day in June, an Alaska Fish and Game sonar on the Nussegok River counted more than 850,000 Sakai. On the Kienai, its sonar estimated 1.1 million this summer. Fish and Game runs 15 sonar sites, on 13 Alaska rivers. On October 15, researchers at Caltech and MIT posted a preprint, CFC26, a test for AI that counts fish in sonar video. The preprint says experts count sonar video by hand, tallying fish across a center line. It doesn't say who runs these sonars. It says counts like these guide harvest limits and river management. Its data holds 11 sites, on nine river systems. Four sites are in Alaska, three on the Kienai and one on the Nussegok. Can that AI count a river it has never seen? The authors also score which way a model misses, too high or too low. Hold a Kienai bank out of training and the average mist still stayed under 7% on the left bank and three on the right. The lean stayed near zero. Hold the Nussegok out and it missed by about 3.5%. Practitioners told the authors that two people counting one video differ by about 10%. That's a rough figure for something else, not a score the model beat. California's Mad River was one of the hard ones. The mist was about a third in training and rose to 80% held out. One Kienai site, the channel, saw its mist double when held out, from 14% to 29%. The authors say they built it for deployment, nothing in the pre-print says an agency uses it. With each river held out, three of four Alaska sites held up, and California's Mad River didn't. What's still missing is a count somebody uses.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.056,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.58,
+        "voiced_frac": 0.44,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 125.24,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 125.24,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.98,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.977,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.966,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.969,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.969,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.972,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

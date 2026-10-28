@@ -1,0 +1,67 @@
+{
+ "run_date": "2026-10-28",
+ "title": "The River It Never Saw",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "CFC26: Building Evaluations for Deployment in Sonar-Based Fish Counting (preprint, v1 October 15th, 2026)",
+   "outlet": "arXiv 2610.22549",
+   "url": "https://arxiv.org/abs/2610.22549",
+   "claims": [
+    "c1",
+    "c2",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21"
+   ],
+   "used_in_film": true,
+   "note": "Preprint, not peer reviewed. Every model figure is the authors' own, from their tables."
+  },
+  {
+   "id": "s2",
+   "title": "Kenai River late-run sockeye sonar counts, 2026",
+   "outlet": "Alaska Department of Fish and Game",
+   "url": "https://www.adfg.alaska.gov/sf/FishCounts/index.cfm?ADFG=main.displayResults&COUNTLOCATIONID=40&SpeciesID=420",
+   "claims": [
+    "c4",
+    "c5",
+    "c6"
+   ],
+   "used_in_film": true,
+   "note": "Sonar estimate for the season, final day August 10th."
+  },
+  {
+   "id": "s3",
+   "title": "Nushagak River sockeye sonar counts, 2026",
+   "outlet": "Alaska Department of Fish and Game",
+   "url": "https://www.adfg.alaska.gov/sf/FishCounts/index.cfm?ADFG=main.displayResults&COUNTLOCATIONID=51&SpeciesID=420",
+   "claims": [
+    "c7"
+   ],
+   "used_in_film": true,
+   "note": "Daily sonar count for June 28th."
+  },
+  {
+   "id": "s4",
+   "title": "Alaska sonar program",
+   "outlet": "Alaska Department of Fish and Game",
+   "url": "https://www.adfg.alaska.gov/index.cfm?ADFG=sonar.main",
+   "claims": [
+    "c3"
+   ],
+   "used_in_film": true,
+   "note": "15 state sonar sites on 13 rivers."
+  }
+ ]
+}

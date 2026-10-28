@@ -1,0 +1,131 @@
+{
+ "run_date": "2026-10-28",
+ "story_id": "cfc26-sonar-salmon-counting",
+ "palette": {
+  "roles": {
+   "sky": "#03130F",
+   "ground": "#0A2E25",
+   "hero": "#6FF2C6",
+   "accent": "#FFE9A8",
+   "shadow": "#010806",
+   "paper": "#F3EBD7",
+   "ink": "#06201A",
+   "unknown": "#8B7BC7",
+   "warn": "#FF6B4A",
+   "echo": "#FF9A2E",
+   "dusk_key": "#4A3A2E"
+  },
+  "mood": "Night sonar: abyss teal with mint phosphor for what is measured, amber echoes for fish, one gold centre line, violet reserved for the dashed unknown, coral spent once on the Mad River 0.80. Curious and fair, admiring the Kenai result without crowning it.",
+  "divergence": "Measured against the real last five: a sage and honey civic hall with a ballot box (10-26), a cedar boardwalk of enamel signs in teal fog (10-25), a navy orbit (10-24), a snow-bound paper building (10-23) and a dark tundra with a plumb bob (10-22). This film's ground is green-black (#0A2E25), not teal or navy, lit by ONE radial source, the sonar fan, with no horizon, no orbit plate and no sign. The echoes are saturated orange, the center line a pale gold hairline, violet is reserved for the dashed unknown, and two shots (the clickers and the Mad River creek) switch to a warm dusk key so the film is not one dark run. Fog is a neutral silver-grey."
+ },
+ "light": {
+  "time": "Night, submerged, lit only by the sonar sweep and a dusk bank for two shots",
+  "direction": "The fan is the key: mint light radiates from the wedge apex; amber rim on echoes; gold rim on the centre line; paper-cream key only on the preprint sheet",
+  "depth": "Four planes: far bank silhouettes, water column haze bands, fan plane at mid, near plane of silt motes and sprocket frame edges at z 170 for the lower third. lib/lighting.tsx NightGrade + RimLight; ContactShadow only for the bank post, clickers and preprint sheet; hypothetical things are shadowless and dashed.",
+  "per_shot": {
+   "shots 1,2,3,5,6": "key = the mint sonar fan or the clip monitor; pale gold rim on the center line; faint mint bounce pool on green-black ground",
+   "shot 4": "paper-cream key on the sheet over the green-black water, the film strip lit mint",
+   "shots 7,8,9,10,13": "full mint key on the model's fan and the clip frames; the model's dark third closes as the held-out gauges stop low; shot 13 is two mint bars on the pale gold center line laid flat",
+   "shots 11,12": "WARM DUSK key #4A3A2E from the upper left with echo-orange speculars on the brass clickers and the Mad River bars, mean luminance above the sonar shots",
+   "shots 14,15": "model key one stop dimmer than the open; the dashed unlit fan carries no light"
+  }
+ },
+ "shape_language": {
+  "grammar": "Wedge/triangle silhouette for the instrument (nothing else in the film is a wedge), round amber ellipses for fish echoes, one hairline gold line for the throughline, rectilinear paper for the preprint. Dashed unlit geometry is the grammar of the unknown.",
+  "why": "A wedge on round feet reads in 0.3s and keeps the machine honest as an instrument, not a mascot; the line is the thing being counted across."
+ },
+ "casting": {
+  "hero": "Wedge",
+  "inventory": [
+   {
+    "beats": "1-5, 14-15 (a stand-in only), 38-46",
+    "subject": "the agency's faceless bank sonar (status panel, plaque, tally wheels, no eyes) fully lit",
+    "source": "net-new lib/sonar.tsx Wedge faceless"
+   },
+   {
+    "beats": "21-30, 40-46",
+    "subject": "Wedge, the faced hero labelled THE MODEL, never drawn deployed",
+    "source": "net-new lib/sonar.tsx Wedge"
+   },
+   {
+    "beats": "all",
+    "subject": "CenterLine throughline (bare, ruled, needle, resting needle, dashed, hook)",
+    "source": "net-new lib/sonar.tsx"
+   },
+   {
+    "beats": "1-5",
+    "subject": "EchoBlobs, Odometer, SonarWater",
+    "source": "net-new lib/sonar.tsx"
+   },
+   {
+    "beats": "6-12",
+    "subject": "AK_PATH painted Alaska with 15 pins, CFC26 sheet with ink stamp, sprocket strip",
+    "source": "shelf akmap.ts + Ep1028 local pieces"
+   },
+   {
+    "beats": "13-15",
+    "subject": "a person (puffer, beanie) with a brass TallyCounter clicker at a sonar video monitor",
+    "source": "shelf Character + TallyCounter"
+   },
+   {
+    "beats": "16-18, 46",
+    "subject": "coast line, eleven site dots, solid mint halo, clip tile grid",
+    "source": "Ep1028 local pieces"
+   },
+   {
+    "beats": "22-25",
+    "subject": "Kenai cross-section in a benchmark clip frame with a gauge on each bank",
+    "source": "Ep1028 local pieces"
+   },
+   {
+    "beats": "26-28",
+    "subject": "two clickers on a dusk ledge, a pale ruler, a thin gauge that cannot dock",
+    "source": "shelf TallyCounter + Ep1028"
+   },
+   {
+    "beats": "29",
+    "subject": "clip strip with one clip lifted out, fog",
+    "source": "Ep1028 local pieces"
+   },
+   {
+    "beats": "30-35",
+    "subject": "Mad River tracks and bars, dusk creek, sparse echoes",
+    "source": "Ep1028 local pieces"
+   },
+   {
+    "beats": "38-42",
+    "subject": "CFC26 sheet, dashed violet cable that stops short, dashed unlit fan with Wedge at its edge, question boxes, one fish",
+    "source": "Ep1028 local pieces"
+   }
+  ],
+  "net_new": "Wedge (faced and faceless variants), CenterLine, EchoBlobs, Odometer, SonarWater in video-engine/src/lib/sonar.tsx, registered in ASSET_MANIFEST.md before the first cut.",
+  "continuity": "The agency's sonar is faceless and fully lit and counts with tally wheels. The faced Wedge is THE MODEL, labelled on its base, first appears when the preprint's question is asked (shot 7, beat 19) and is never drawn deployed on a bank or attached to the agency."
+ },
+ "motion_language": {
+  "grammar": "Echoes drift and stream with deterministic hash scatter; digit wheels roll with spring settle; the centre line trembles by tiny amounts only where the claim is a lean; entrances have anticipation and overshoot.",
+  "hero_moves": [
+   "The agency sonar snaps on with a ring and a flash while a six wheel odometer climbs to 855,936 and lands with a hit",
+   "A person's thumb clicks a brass clicker as fish cross the line",
+   "The model's fan: mint boxes snap onto fish, the line becomes a needle that trembles and settles a hair left",
+   "The fan splits into a lit half and a cut-out black half, the line continuing dashed into the dark"
+  ],
+  "blur": "Directional blur on the whip-pan and the tally digits; everything else crisp. Whole-frame kicks at most 3, only on beats flagged kick."
+ },
+ "composition": {
+  "staging": "9:16 master composed for the vertical: fan apex bottom third, sky of dark water above carries chips; key action inside y 420-1500 for the square; lower third always has a near plane (silt, sprocket edge, bank rocks).",
+  "focal": "The faced model is always labelled THE MODEL and never drawn deployed. The agency's sonar in shots 1, 2, 5, 14 and 15 is fully lit and faceless. The dashed unlit violet fan marks the unknown that remains, use in the field, planted in shot 1 and paid in shots 14 and 15. Dead sky is filled by a rippling surface band, a far-bank silhouette and two speeds of motes.",
+  "signature_shot": "Shot 9 (a Kenai bank held out), about 62 to 70 s: a benchmark clip frame around a river cross-section, a hair-thin mint gauge standing on each bank against a full 0 to 0.80 track, the pale gold line crossing the channel and a small labelled model reading it, camera locked."
+ },
+ "craft_advance": "none required; film grows lib/sonar.tsx only",
+ "binding_checks": {
+  "coral": "#FF6B4A only on the HELD OUT bar in shot 12, the Mad River 0.80 (the eighty percent beat)",
+  "violet": "#8B7BC7 only on the dashed unknown: the unlit fan and question mark (shots 1 and 15), the dark sector's dashes in shots 7 and 8, the lifted clip slot in shot 10, the shot 14 cable, the question boxes and the HELD OUT OF TRAINING plate. The dark sector fill itself stays #010806.",
+  "gold": "the pale gold #FFE9A8 only on CenterLine, its needle, and the center line laid flat as the baseline in shots 9, 10 and 13 and the ruler's zero tick; the Kenai halo and the Alaska dots are mint",
+  "label_contrast": "every label in the sonar world is paper on dark, checked by text_fit and label_footprint",
+  "near_plane": "NearBank in every eye-level shot; silt or a sprocket-edge near plane in shots 3, 4 and 6; the ledge front in shot 11; the bars' baseline in shots 12 and 13",
+  "dusk": "mean hue warm and mean luminance above the shot 7 probe for shots 11 and 12",
+  "ground": "probe the shot 1 still at 1.0 s, sampling the ground band below the fan: mean hue must sit between 150 and 168 degrees with saturation under 0.45 and mean luminance under 0.12, and differ from the 10-25 fog ground by at least deltaE 15",
+  "signature": "shot 9, frame range 62 to 70 s, camera locked",
+  "dark_sector": "mean luminance of the dark sector below the surrounding water in the shot 7 probe"
+ }
+}

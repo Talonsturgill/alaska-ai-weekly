@@ -27,7 +27,7 @@ FAM = {"thud": "sub", "stamp": "sub", "boom": "sub", "paw": "sub", "clank": "met
        "ding": "bell", "chime": "bell", "tick": "click", "pop": "blip", "snap": "pluck", "whoosh": "air", "riser": "air",
        "paper": "texture", "creak": "texture", "caw": "bird"}
 BY_NAME = {"whoosh": "whoosh", "sizzle": "paper", "snap": "snap", "slide": "creak", "thunk": "stamp", "whirr": "whoosh",
-           "click": "tick", "blip": "pop", "riser": "whoosh", "clunk": "clank", "clip": "snap", "hum": "creak", "thump": "paw",
+           "click": "tick", "blip": "pop", "riser": "whoosh", "clunk": "clank", "clip": "snap", "hum": "creak", "thump": "thud",
            "splash": "whoosh", "cascade": "chain", "page": "paper", "scratch": "paper", "sonar": "ding", "hit": "boom",
            "fade": "creak", "bloop": "chime", "silence": "creak", "tick": "tick", "stamp": "stamp", "creak": "creak",
            # 2026-10-15 The Door With a Condition: this film's descriptive names, each to one bank kind
@@ -35,10 +35,10 @@ BY_NAME = {"whoosh": "whoosh", "sizzle": "paper", "snap": "snap", "slide": "crea
            "bell": "ding", "hush": "paper", "rumble": "boom", "crunch": "paper", "pulse": "ding", "crack": "snap", "clank": "clank",
            "punch": "pop", "knock": "thud", "drone": "creak", "roll": "chain", "flip": "paper", "stop": "clank", "heavy": "boom",
            "fold": "paper", "type": "tick", "pop": "pop", "clink": "ding", "chime": "chime", "thud": "thud", "boom": "boom"}
-ALT = {"sub": ["thud", "stamp", "boom", "paw"], "metal": ["clank", "chain"], "bell": ["chime", "ding"], "click": ["tick"], "blip": ["pop"],
-       "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"], "bird": ["caw"]}
+ALT = {"sub": ["thud", "stamp", "boom"], "metal": ["clank", "chain"], "bell": ["chime", "ding"], "click": ["tick"], "blip": ["pop"],
+       "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"]}
 CYCLE = {"slide": ["creak", "paper", "whoosh"], "hum": ["creak", "chain", "ding", "clank"], "sizzle": ["paper", "snap", "tick"],
-         "scratch": ["paper", "tick"], "fade": ["creak", "chime"], "silence": ["creak"], "splash": ["whoosh", "caw", "pop"]}
+         "scratch": ["paper", "tick"], "fade": ["creak", "chime"], "silence": ["creak"], "splash": ["whoosh", "pop"]}
 
 
 def head(sfx):

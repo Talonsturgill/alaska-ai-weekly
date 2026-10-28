@@ -1,0 +1,21 @@
+One June day a Nushagak sonar counted 855,936 sockeye. A new preprint asks if AI could count a river it never saw.
+
+Held out, three of four Alaska sites stayed close and California's Mad River didn't.
+
+A good score on rivers a model has seen is not a promise about the next one. This is a preprint, not a field test, and it isn't peer reviewed.
+
+On October 15th researchers at Caltech and MIT posted CFC26, a test for AI that counts fish in sonar video. Its data holds 11 sites on 9 river systems. Four are in Alaska, with three on the Kenai and one on the Nushagak.
+
+The preprint says experts count this kind of video by hand. Separately the Alaska Department of Fish and Game runs 15 sonar sites on 13 rivers. Its Kenai sonar estimated 1,111,781 sockeye this summer.
+
+The authors test on rivers held out of training. With a Kenai bank held out the average miss stayed under 7 percent on the left bank and 3 on the right. The lean stayed near zero. That score shows whether a model misses high or low. The Nushagak missed by about 3.5 percent.
+
+Not every site held up. The Kenai channel's miss doubled when held out, from 14 percent to 29. The Mad River went from about a third in training to 80 percent held out.
+
+Practitioners told the authors that two people counting one video differ by about 10 percent. That is a rough figure for something else, not a score the model beat.
+
+The authors say they built it for deployment. Nothing in the preprint says an agency uses it. What's still missing is a count somebody uses.
+
+What would a model need to show on an unseen river before you'd trust its count?
+
+#Alaska #AI #Salmon #FisheriesScience #SalmonScience

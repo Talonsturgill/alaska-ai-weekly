@@ -2941,3 +2941,43 @@ dispatch_history:
       size, place and who pays'
     camera_strategy: rail-glide-panels
     light_story: morning-to-dusk
+- date: '2026-10-28'
+  topic: 'CFC26 preprint tests AI sonar fish counting on held-out rivers: Kenai banks
+    and Nushagak held, Kenai channel and California''s Mad River did not, no agency
+    use reported'
+  slug: held-out-sonar
+  key_entities:
+  - Caltech
+  - MIT
+  - CFC26
+  - Alaska Department of Fish and Game
+  - Kenai River
+  - Nushagak River
+  - Mad River
+  - arXiv
+  archetype: benchmark explainer
+  palette: phosphor mint sonar, amber fish, gold center line
+  voice: Sulafat
+  stance: mixed
+  angle: Held out of training, the preprint's AI stayed close on Alaska's big rivers
+    and broke on a small California river, so what's open is use in the field, not
+    the test.
+  hero: Wedge
+  cast:
+  - Wedge
+  - TallyCounter
+  - Odometer
+  - SonarWater
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: instrument-as-subject
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: submerged abyss lit only by a bright phosphor mint sonar fan, amber fish
+      echoes, one gold center line, odometer wheels, violet dashes for the unknown,
+      coral spent once on 0.80
+    camera_strategy: slow-push-with-pullbacks
+    light_story: bright sonar glow in clear water, then a soft fog
+    metaphor: a sonar fan with a face counting fish across a gold line, half of its
+      view black where the unseen river would be
