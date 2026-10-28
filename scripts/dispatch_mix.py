@@ -111,7 +111,7 @@ _TEXTURE = {"whoosh", "paper", "chain", "creak", "riser"}
 # also stops an unknown name from silently becoming a tick (10-11, 10-20) and names it every mix.
 sys.path.insert(0, HERE)
 from sfx_names import FAM as _FAM, BY_NAME as _BY_NAME, ALT as _ALT, CYCLE as _CYCLE  # noqa: E402
-from sfx_names import kinds_by_beat as _kinds_and_unknown, unknown_report, names_for_kind  # noqa: E402
+from sfx_names import kinds_by_beat as _kinds_and_unknown, unknown_report, names_for_kind, class_conflicts  # noqa: E402
 
 
 def _beat_onset(beat):
@@ -328,8 +328,51 @@ AMB_LEVEL = 0.045
 #      missing ends the mix, because a bed the board promised and the mix dropped is the defect.
 # A board with neither (every board from 10-20 to 10-25) mixes exactly as before. The mix
 # writes what it performed into sfx_events.json under "ambience", so a judge can see the bed.
-AMBIENCE_KINDS = ("rain",)
+AMBIENCE_KINDS = ("rain", "room", "wind")
 RAIN_LEVEL = 0.28      # about -36 dBFS RMS: 18 to 20 dB under the VO, 12 under the music bed
+
+# ROOM TONE AND DUSK WIND (machine pass 2026-10-28, queue "No room-tone stems", repeat 2). The mix
+# could perform rain only, so interior and dusk films drew "no ambient bed" from all three seats
+# and Sound capped at 6.5 to 7 (10-02, 10-25, 10-26). The queued fix was two CC0 loops, which this
+# container can't fetch with provenance, so both are SYNTHESISED like the rain: deterministic, no
+# attribution owed, a no-op unless the board asks with audio_arc.ambience.
+#   room  a hall or office at rest, pink noise held to 120 Hz to 1.4 kHz with a soft 120 Hz mains
+#         body and a breath of drift, the layer a room mic hears between lines.
+#   wind  dusk wind and wire hum, brown noise from 180 Hz to 2.2 kHz gusting on a 13.1 s cycle,
+#         with a narrow resonance at 410 Hz that sings like a line in the wind.
+# Each has its own noise seed so two layers never phase. Levels are measured by --ambience-preview
+# with the air under them, room -41.5 and wind -38.7 dBFS RMS against the rain's -39.7, so the
+# voice keeps its 18 dB or more (dispatch_mix.py --ambience-self-test holds each to its band).
+AMBIENCE_SPEC = {
+    "rain": {"color": "pink", "seed": 1025,
+             "note": "rain (synthesised pink noise, 900 Hz to 7 kHz, audio_arc.ambience)"},
+    "room": {"color": "pink", "seed": 1028, "level": 0.13,
+             "drift": "0.92+0.05*sin(2*PI*t/17.3)+0.03*sin(2*PI*t/5.1)",
+             "chain": "highpass=f=120,lowpass=f=1400,equalizer=f=120:t=q:w=2:g=5,equalizer=f=3000:t=q:w=1:g=-4",
+             "note": "room tone (synthesised pink noise, 120 Hz to 1.4 kHz with a mains body, audio_arc.ambience)"},
+    "wind": {"color": "brown", "seed": 1029, "level": 0.20,
+             "drift": "0.55+0.35*sin(2*PI*t/13.1)+0.10*sin(2*PI*t/4.3)",
+             "chain": "highpass=f=180,lowpass=f=2200,equalizer=f=410:t=q:w=12:g=9,equalizer=f=3000:t=q:w=1:g=-4",
+             "note": "dusk wind and wire hum (synthesised brown noise, 180 Hz to 2.2 kHz, gusting, audio_arc.ambience)"},
+}
+
+
+def ambience_input(name, secs):
+    """The lavfi noise input of one synthesised ambience layer."""
+    sp = AMBIENCE_SPEC[name]
+    return ["-f", "lavfi", "-i", f"anoisesrc=color={sp['color']}:sample_rate={SR}:amplitude=0.9:"
+                                 f"duration={secs:.3f}:seed={sp['seed']}"]
+
+
+def ambience_filter(name, idx, amb_in, amb_out):
+    """The filter chain of one synthesised ambience layer. Rain is its original chain, unchanged."""
+    if name == "rain":
+        return rain_filter(idx, "rain", amb_in, amb_out)
+    sp = AMBIENCE_SPEC[name]
+    return (f"[{idx}:a]aformat=sample_rates={SR}:channel_layouts=stereo,{sp['chain']},"
+            f"volume=volume={sp['drift'].replace(',', chr(92) + ',')}:eval=frame,"
+            f"volume={sp['level']},"
+            f"afade=t=in:st={amb_in}:d=1.8,afade=t=out:st={amb_out}:d=2.6[{name}]")
 
 
 def ambience_layers(board):
@@ -338,10 +381,12 @@ def ambience_layers(board):
     if isinstance(want, str):
         want = [want]
     bad = [w for w in want if w not in AMBIENCE_KINDS]
+    if not bad and len(set(want)) != len(want):
+        bad = [w for w in want if want.count(w) > 1]
     if bad:
         raise SystemExit(f"dispatch_mix: audio_arc.ambience {bad} unknown; the mix can perform "
                          f"{list(AMBIENCE_KINDS)} or a stem via audio_arc.ambience_stem")
-    return {w: True for w in want}
+    return {w: True for w in AMBIENCE_KINDS if w in want}    # fixed order, so inputs are stable
 
 
 def ambience_stem(board, repo=REPO):
@@ -376,7 +421,7 @@ def stem_filter(idx, out_label, level, secs, amb_in, amb_out):
 
 AMB_LAYERS = ambience_layers(_board)
 AMB_STEM, AMB_STEM_LEVEL = ambience_stem(_board)
-print(f"dispatch_mix: ambience air" + (", rain (audio_arc.ambience)" if AMB_LAYERS.get("rain") else "")
+print(f"dispatch_mix: ambience air" + "".join(f", {w} (audio_arc.ambience)" for w in AMB_LAYERS)
       + (f", stem {os.path.relpath(AMB_STEM, REPO)} at {AMB_STEM_LEVEL}" if AMB_STEM else ""))
 
 
@@ -389,11 +434,10 @@ def ambience_preview(path, secs=12.0):
           f"equalizer=f=3000:t=q:w=1:g=-2.5,volume=volume={gust.replace(',', chr(92) + ',')}:eval=frame,"
           f"volume={AMB_LEVEL}[amb]"]
     labels = ["[amb]"]
-    if AMB_LAYERS.get("rain"):
-        inputs += ["-f", "lavfi", "-i", f"anoisesrc=color=pink:sample_rate={SR}:amplitude=0.9:"
-                                        f"duration={secs:.3f}:seed=1025"]
-        fc.append(rain_filter(len(labels), "rain", 0.0, secs - 2.6))
-        labels.append("[rain]")
+    for name in AMB_LAYERS:
+        inputs += ambience_input(name, secs)
+        fc.append(ambience_filter(name, len(labels), 0.0, secs - 2.6))
+        labels.append(f"[{name}]")
     if AMB_STEM:
         inputs += ["-i", AMB_STEM]
         fc.append(stem_filter(len(labels), "stem", AMB_STEM_LEVEL, secs, 0.0, secs - 2.6))
@@ -603,11 +647,55 @@ def check_schedule(events):
           f"heaviest {kinds.most_common(1)[0][1]}/{n}, no consecutive family repeats")
 
 
+def ambience_self_test():
+    """Each synthesised layer renders, sits in its measured band under the voice, and a board that
+    asks for none adds no input (machine pass 2026-10-28). Measured on 7 s of a 12 s preview with
+    the air under it, which alone measures about -50.6 dBFS RMS."""
+    import tempfile
+    band = {"rain": (-42.0, -37.0), "room": (-44.0, -39.0), "wind": (-41.0, -36.0)}
+    bad = []
+    saved = dict(AMB_LAYERS)
+    with tempfile.TemporaryDirectory() as td:
+        for name, (lo, hi) in band.items():
+            AMB_LAYERS.clear()
+            AMB_LAYERS[name] = True
+            path = os.path.join(td, f"{name}.wav")
+            ambience_preview(path)
+            r = subprocess.run([FF, "-hide_banner", "-nostats", "-ss", "2", "-t", "7", "-i", path, "-af",
+                                "astats=measure_overall=RMS_level:measure_perchannel=0", "-f", "null", "-"],
+                               capture_output=True, text=True).stderr
+            rms = float([ln for ln in r.splitlines() if "RMS level" in ln][-1].split(":")[-1])
+            print(f"  {name}: {rms:.1f} dBFS RMS (band {lo} to {hi})")
+            if not lo <= rms <= hi:
+                bad.append(f"{name} measured {rms:.1f} dBFS RMS, outside {lo} to {hi}")
+    AMB_LAYERS.clear()
+    AMB_LAYERS.update(saved)
+    if ambience_layers({"audio_arc": {}}) != {}:
+        bad.append("a board with no ambience asked for a layer")
+    if list(ambience_layers({"audio_arc": {"ambience": ["wind", "room"]}})) != ["room", "wind"]:
+        bad.append("layers are not in the fixed order, so the input list would move")
+    for want in (["harbor"], ["room", "room"]):
+        try:
+            ambience_layers({"audio_arc": {"ambience": want}})
+            bad.append(f"ambience {want} was accepted")
+        except SystemExit:
+            pass
+    for b in bad:
+        print("  FAIL " + b)
+    print("dispatch_mix ambience self-test: " + ("FAIL" if bad else "PASS"))
+    return 1 if bad else 0
+
+
 def main():
+    if sys.argv[1:2] == ["--ambience-self-test"]:
+        sys.exit(ambience_self_test())
     if len(sys.argv) > 2 and sys.argv[1] == "--ambience-preview":
-        # `--ambience-preview OUT.wav [rain]`: render the ambience alone, rain forced if named.
-        if "rain" in sys.argv[3:]:
-            AMB_LAYERS["rain"] = True
+        # `--ambience-preview OUT.wav [rain] [room] [wind]`: render the ambience alone, named
+        # layers forced on (machine pass 2026-10-28 added room and wind).
+        named = [w for w in AMBIENCE_KINDS if w in sys.argv[3:]]
+        if named:
+            AMB_LAYERS.clear()
+            AMB_LAYERS.update({w: True for w in named})
         ambience_preview(sys.argv[2])
         return
     sys.path.insert(0, HERE)
@@ -617,6 +705,9 @@ def main():
         raise SystemExit(f"SFX SCHEDULE: {len(EVENTS)} events but {len(EVENT_LABELS)} labels")
     for line in unknown_report(UNKNOWN_SFX):
         print("dispatch_mix: NOTE " + line)
+    for bid, nm in class_conflicts(_board["beats"]):
+        print(f"dispatch_mix: NOTE beat {bid} names the animal sound '{nm}' but declares sfx_class object, "
+              f"so it plays an object kind (scripts/sfx_names.py KIND_CLASS).")
     check_schedule(EVENTS)
 
     # THE SOUND DESIGN HAS TO BE VISIBLE, NOT JUST AUDIBLE (2026-08-13).
@@ -647,8 +738,7 @@ def main():
                 "note": "continuous layers under the whole film, faded in over 1.8 s and out over 2.6 s",
                 "span_s": [AMB_IN, round(AMB_OUT + 2.6, 2)],
                 "layers": (["air (synthesised brown noise, lowpassed)"]
-                           + (["rain (synthesised pink noise, 900 Hz to 7 kHz, audio_arc.ambience)"]
-                              if AMB_LAYERS.get("rain") else [])
+                           + [AMBIENCE_SPEC[w]["note"] for w in AMB_LAYERS]
                            + ([f"stem {os.path.relpath(AMB_STEM, REPO)} at {AMB_STEM_LEVEL}"]
                               if AMB_STEM else [])),
             },
@@ -689,10 +779,9 @@ def main():
     # World ambience (machine pass 2026-10-25): appended after the air, so a board with no rain
     # and no stem builds the identical input list and filtergraph it always did.
     extra_amb = []
-    if AMB_LAYERS.get("rain"):
-        inputs += ["-f", "lavfi", "-i", f"anoisesrc=color=pink:sample_rate={SR}:amplitude=0.9:"
-                                        f"duration={VIDEO_SECS:.3f}:seed=1025"]
-        extra_amb.append(("rain", amb_idx + 1 + len(extra_amb)))
+    for name in AMB_LAYERS:
+        inputs += ambience_input(name, VIDEO_SECS)
+        extra_amb.append((name, amb_idx + 1 + len(extra_amb)))
     if AMB_STEM:
         inputs += ["-i", AMB_STEM]
         extra_amb.append(("stem", amb_idx + 1 + len(extra_amb)))
@@ -823,8 +912,8 @@ def main():
 
     amb_labels = ""
     for name, idx in extra_amb:
-        if name == "rain":
-            fc.append(rain_filter(idx, "rain", AMB_IN, AMB_OUT))
+        if name in AMBIENCE_SPEC:
+            fc.append(ambience_filter(name, idx, AMB_IN, AMB_OUT))
         else:
             fc.append(stem_filter(idx, "stem", AMB_STEM_LEVEL, VIDEO_SECS, AMB_IN, AMB_OUT))
         amb_labels += f"[{name}]"

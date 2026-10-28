@@ -471,6 +471,11 @@ ANALYST agents. Each reads the full fact-check-safe set (and its sources) plus c
   menu cannot be falsified; Gate 0E killed that angle twice and four VO drafts died on it).
 - THESIS (one sentence), WHY IT'S TRUE (the evidence, and the strongest point AGAINST it that it
   survives), WHO IT SERVES, and VALENCE wherever the facts land, defended as the honest one.
+- AN ABSENCE IS CHECKED IN THE PRIMARY TABLE BEFORE IT IS A THESIS (2026-10-28). Before any angle
+  says a source has "no X" or "doesn't report X", fetch the full primary document (the paper's HTML
+  or PDF, every results table and appendix, not the abstract or a news write-up) and search it for
+  X. Name the tables and sections searched in the proposal. The first 10-28 angle said the preprint
+  had no held-out Alaska number, Table 7 reported one for every site, and the back half was rebuilt.
 - A SECOND MOVEMENT: a take fully stated in forty seconds can't carry two minutes. Name the fact
   that recontextualises the first, and the strongest fair case against the thesis that deserves a
   scene of its own.
@@ -678,8 +683,10 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   hook block (pattern, frame1, headline 3 to 8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern, optional `bed` nodes
   `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block;
-  `ambience: ["rain"]` and/or `ambience_stem` (a repo WAV) put the world's continuous bed under
-  the film, and Gate 0A fails a board whose shot ambient lines name rain without one),
+  `ambience` from `"rain"`, `"room"` (an interior at rest) and `"wind"` (dusk wind and wire hum),
+  and/or `ambience_stem` (a repo WAV), put the world's continuous bed under the film, so an
+  interior or dusk film asks for room or wind, and Gate 0A fails a board whose shot ambient lines
+  name rain without one),
   divergence_note. Plus
   storyboard.md for humans. A per-run board script (copy `scripts/board_1015.py`) resolves word
   anchors through `scripts/board_anchor.py`, so after a VO edit its `conform` refuses to write and
@@ -689,7 +696,8 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   build-on) IN EACH THIRD at 120s, the first at the escalation point; `rehook` in each drift window;
   both open loops and the throughline as in §4.3. Beat timing is JITTERED (front-loaded in the first
   10s, never 3 near-identical gaps in a row). flow_check enforces FRONTLOAD, METRONOME, REHOOK and
-  OPEN LOOP.
+  OPEN LOOP. After any VO or anchor edit, `python3 scripts/beat_gaps.py --only-flagged` names each
+  beat pair over the 5.0 s ceiling or inside a metronome run before Gate 0A does (2026-10-28).
 - GATE 0A: `python3 scripts/storyboard_check.py` exit 0 (divergence vs recent history, shot
   structure, flow block, and `scripts/board_sync_check.py`: shots[] rows that disagree with their
   beats FAIL, and every `[board-sync-advisory]` line, painted text quoted differently in `shows`
@@ -747,7 +755,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
    texture ~-19, never flat), deterministic crc32(DATE:idx) jitter (pitch by family, +/-1.5dB,
    +/-15ms), pan from the prop's storyboard x (max +/-0.35, hero payoffs centered), 3kHz/-2.5dB
    VO-slot EQ + 100Hz high-pass on the bed and sustained sfx, and dispatch_mix.py check_schedule: NO
-   two consecutive events from one family, at most one riser. Mix: VO dominant, music ducked, a real
+   two consecutive events from one family, at most one riser. Animal kinds (caw, paw) play only on a
+   beat of class animal, from its name or a beat `sfx_class` field (scripts/sfx_names.py, 2026-10-28).
+   Mix: VO dominant, music ducked, a real
    >=6dB dip before the button, -14 LUFS integrated, TP <= -1.0 dBTP, audible tail.
 3. **CAPTIONS + ACTING DATA.** vo_synth_gemini.py produced captions.json + words.json and, via
    scripts/vo_envelope.py, mouth_track.json + accents.json; build_scenes.py folds them into
@@ -865,7 +875,9 @@ mid-delivery change.
 ## PHASE 6B: THE LINKEDIN CAPTION  (`run_cost.py phase caption`)
 
 A dwell-time-first caption that takes a POSITION: hook <= 140 chars inside the mobile fold (a
-concrete fact or sharp claim, no throat-clearing), 900 to 2200 chars total (sweet spot 1300 to
+concrete fact or sharp claim, no throat-clearing), and LINE 2 COUNTS TOWARD THE FOLD (2026-10-28,
+caption_check FOLD row), at least 40 chars of line 2 inside the first 140, so draft line 1 as the
+number, then the stall, then the stake in about 95 chars and open line 2 with the take, 900 to 2200 chars total (sweet spot 1300 to
 1900), specifics from the fact-check-safe set only, an argument a smart reader could push back on,
 restraint (no bold-unicode, <= 3 emoji, no bullet walls), a genuine CTA question tied to the take,
 3 to 5 hashtags at the very end. No dashes, NO colons, no semicolons, no AI-tells, no savior

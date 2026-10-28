@@ -158,7 +158,8 @@ def analyze(dirp):
         R["metrics"]["max_gap_s"] = max(gaps)
         if over:
             R["problems"].append(f"max_gap: {len(over)} beat gap(s) exceed the {bc['max_gap_s']}s never-rest "
-                                 f"ceiling (worst {max(gaps)}s), schedule a change in that window")
+                                 f"ceiling (worst {max(gaps)}s), schedule a change in that window "
+                                 f"(python3 scripts/beat_gaps.py names the beats)")
         lo, hi = bc["target_gap_s"]
         if not (lo <= med <= hi):
             R["warnings"].append(f"median_gap_in_target: median beat gap {med}s is outside the {lo} to {hi}s "
@@ -191,7 +192,7 @@ def analyze(dirp):
             if worst_run > max_run:
                 R["problems"].append(f"METRONOME: {worst_run} consecutive beat gaps within ±{tol}s of "
                                      f"each other (~{run_val}s each); fixed cadence habituates — jitter "
-                                     f"the intervals (ENGAGEMENT.md §2.3)")
+                                     f"the intervals (ENGAGEMENT.md §2.3; python3 scripts/beat_gaps.py names the beats)")
             # REHOOK: a declared re-hook beat in EVERY drift window the piece is long enough
             # to reach. At 60s there was one window. The 90s format has two, because the
             # 25-38s cliff gets a sibling once a viewer has been watching a full minute with
