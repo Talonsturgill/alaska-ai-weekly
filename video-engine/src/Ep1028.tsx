@@ -324,9 +324,9 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="EXPERTS WATCH THE VIDEO · PER PREPRINT" y={560} size={30} tone="ink" p={ease(f, t11, 8) * (1 - ease(f, t13 + 4, 6))} />
-        <Plate x={540} text="TALLY OF CROSSINGS, EACH DIRECTION" y={640} size={30} tone="paper" p={ease(f, t12 - 4, 8)} />
-        <Plate x={540} text="COUNTS GUIDE HARVEST LIMITS · PER PREPRINT" y={720} size={28} tone="ink" p={ease(f, t13 + 8, 8)} />
+        <Plate x={540} text="EXPERTS WATCH THE VIDEO · PER PREPRINT" y={430} size={30} tone="ink" p={ease(f, t11, 8) * (1 - ease(f, t13 + 4, 6))} />
+        <Plate x={540} text="TALLY OF CROSSINGS, EACH DIRECTION" y={575} size={30} tone="paper" p={ease(f, t12 - 4, 8) * (1 - ease(f, t13 - 6, 4))} />
+        <Plate x={540} text="COUNTS GUIDE HARVEST LIMITS · PER PREPRINT" y={500} size={28} tone="ink" p={ease(f, t13 + 2, 8)} />
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s4w" seed={4} />
@@ -338,8 +338,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <Wedge x={680} y={1214} s={0.64} f={f} id="s4" R={640} base={false} faceless lit={0.95} blobs={50} speed={1.5} dirRight={0.7} line="ruled" seed={4} />
         {/* a person with a clicker: the hand count, as the preprint says */}
         <ContactShadow cx={190} cy={1310} rx={130} ry={14} opacity={0.45} blur={9} />
-        <g transform={`translate(${3 * Math.sin(f / 23)},${-4 * Math.abs(Math.sin(f / 19))}) rotate(${1.4 * Math.sin(f / 29)} 190 1310)`}><Character frame={f} pose="stand" emotion="neutral" outfit="puffer" headgear="beanie" facing={1} scale={0.8} x={190} y={1310} /></g>
-        <g transform={`translate(${318 - 8 * thumb},${1090 + 8 * thumb}) scale(${1 + 0.08 * thumb})`}>
+        <g transform={`translate(${6 * Math.sin(f / 23)},${-9 * Math.abs(Math.sin(f / 19))}) rotate(${2.4 * Math.sin(f / 29)} 190 1310)`}><Character frame={f} pose="stand" emotion="neutral" outfit="puffer" headgear="beanie" facing={1} scale={1.0} x={205} y={1310} /></g>
+        <g transform={`translate(${318 - 14 * thumb},${1090 + 14 * thumb}) rotate(${-7 * thumb}) scale(${1 + 0.12 * thumb})`}>
           <TallyCounter x={0} y={0} s={0.9} f={f} variant="clicker" count={String(clicks).padStart(4, '0')} spin={1} />
         </g>
         <NearBank f={f} seed={4} />
@@ -496,8 +496,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <rect x={90} y={1130} width={900} height={110} rx={12} fill="#3A2E24" stroke={INK} strokeWidth={7} />
           <rect x={90} y={1130} width={900} height={16} rx={8} fill={SON.echoHi} opacity={0.25} />
         </g>
-        <TallyCounter x={300} y={960 + 8 * Math.sin(f / 17) + 10 * Math.abs(Math.sin(f / 3.1)) * (n1 < 100 ? 1 : 0)} s={1.6} f={f} variant="clicker" count={String(n1).padStart(4, '0')} spin={1} />
-        <TallyCounter x={640} y={960 + 8 * Math.sin(f / 15 + 1) + 10 * Math.abs(Math.sin(f / 3.4)) * (n2 < 90 ? 1 : 0)} s={1.6} f={f} variant="clicker" count={String(n2).padStart(4, '0')} spin={1} />
+        <g transform={`rotate(${6 * Math.sin(f / 5 + 3) } 300 1000)`}><TallyCounter x={300} y={960 + 8 * Math.sin(f / 17) + 10 * Math.abs(Math.sin(f / 3.1)) * (n1 < 100 ? 1 : 0)} s={1.6} f={f} variant="clicker" count={String(n1).padStart(4, '0')} spin={1} /></g>
+        <g transform={`rotate(${6 * Math.sin(f / 5 + 6) } 640 1000)`}><TallyCounter x={640} y={960 + 8 * Math.sin(f / 15 + 1) + 10 * Math.abs(Math.sin(f / 3.4)) * (n2 < 90 ? 1 : 0)} s={1.6} f={f} variant="clicker" count={String(n2).padStart(4, '0')} spin={1} /></g>
         <Tag text="ILLUSTRATIVE" x={470} y={1290} size={20} />
         {/* the thin Kenai gauge slides in to dock against the human ruler, its ticks do not line up, and it slides back */}
         <g transform="translate(470,820)" opacity={ease(f, t39 - 12, 10)}>
@@ -594,7 +594,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <Tag text="IN TRAINING" x={60} y={56} size={22} />
           <Tag text="HELD OUT" x={260} y={56} size={22} />
           <Tag text="ABOUT A THIRD (0.33)" x={60} y={-TRACK * seen * (0.33 / 0.8) - 34} size={18} op={seen} />
-          <Tag text="80% (0.80)" x={260} y={-TRACK - 34} size={22} op={unseen} />
+          <Tag text="80% (0.80)" x={260} y={-TRACK + 34} size={22} op={unseen} />
           <g opacity={ease(f, t29, 16)}>
             <line x1={196} y1={-TRACK * (0.07 / 0.8)} x2={324} y2={-TRACK * (0.07 / 0.8)} stroke={SON.paper} strokeWidth={4} />
             <line x1={196} y1={-TRACK * (0.03 / 0.8)} x2={324} y2={-TRACK * (0.03 / 0.8)} stroke={SON.paper} strokeWidth={4} />
@@ -631,7 +631,6 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <line x1={-30} y1={0} x2={430} y2={0} stroke={SON.gold} strokeWidth={5} />
           <Tag text="IN TRAINING" x={80} y={56} size={22} />
           <Tag text="HELD OUT" x={320} y={56} size={22} />
-          <Tag text="0.80" x={200} y={-458} size={20} op={0.8} />
           <Tag text="14% (0.14)" x={80} y={-430 * (0.143 / 0.8) * first - 34} size={20} op={first} />
           <Tag text="29% (0.29)" x={320} y={-430 * (0.286 / 0.8) * second - 34} size={20} op={second} />
         </g>
