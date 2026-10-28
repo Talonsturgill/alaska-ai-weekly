@@ -324,9 +324,9 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="EXPERTS WATCH THE VIDEO · PER PREPRINT" y={430} size={30} tone="ink" p={ease(f, t11, 8) * (1 - ease(f, t13 + 4, 6))} />
-        <Plate x={540} text="TALLY OF CROSSINGS, EACH DIRECTION" y={575} size={30} tone="paper" p={ease(f, t12 - 4, 8) * (1 - ease(f, t13 - 6, 4))} />
-        <Plate x={540} text="COUNTS GUIDE HARVEST LIMITS · PER PREPRINT" y={500} size={28} tone="ink" p={ease(f, t13 + 2, 8)} />
+        <Plate x={540} text="EXPERTS WATCH THE VIDEO · PER PREPRINT" y={492} size={30} tone="ink" p={ease(f, t11, 8) * (1 - ease(f, t13 + 4, 6))} />
+        <Plate x={540} text="TALLY OF CROSSINGS, EACH DIRECTION" y={612} size={30} tone="paper" p={ease(f, t12 - 4, 8) * (1 - ease(f, t13 - 6, 4))} />
+        <Plate x={540} text="COUNTS GUIDE HARVEST LIMITS · PER PREPRINT" y={552} size={28} tone="ink" p={ease(f, t13 + 2, 8)} />
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s4w" seed={4} />
