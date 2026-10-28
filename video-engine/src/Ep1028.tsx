@@ -208,9 +208,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
 // ---- S2: the Kenai season (line 1) ---------------------------------------------------------------------------------------------------------------
 const S2: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t4 = b(4), t5 = b(5), t47 = b(47);
+  const t4 = b(4), t5 = b(5);
   const rise = easeIO(f, t4 + 10, 60);
-  const hi = ease(f, t47, 16);
   const cam = track([{t: 0, z: 1.1, fx: 420, fy: 1000}, {t: p.dur, z: 1.0, fx: 540, fy: 1000}]);
   const H0 = 560, base = 1230;
   const slabs = 15;
@@ -232,10 +231,6 @@ const S2: React.FC<SceneProps> = ({p}) => {
             <rect x={-120} y={base - H0 * 0.1546 * rise} width={240} height={H0 * 0.1546 * rise} rx={4} fill={SON.echoHi} stroke={INK} strokeWidth={5} />
             <rect x={-120} y={base - H0 * 0.1546 * rise} width={240} height={8} fill="#fff" opacity={0.3} />
           </g>
-        </g>
-        <g opacity={hi}>
-          <rect x={440} y={base - H0 * 0.8454 - 70} width={430} height={44} rx={6} fill="#06201A" stroke={SON.mint} strokeWidth={3} />
-          <text x={655} y={base - H0 * 0.8454 - 40} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} fill={SON.paper}>JULY 24TH · 171,844</text>
         </g>
         <Wedge x={760} y={1190} s={0.55} f={f} id="s2" R={620} base faceless lit={0.9} blobs={60} speed={1.4} dirRight={0.8} dark={0} line="bare" seed={2} tallyL={f * 0.3} tallyR={f * 1.1} />
         <NearBank f={f} seed={2} />
@@ -277,7 +272,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
 // ---- S3: the preprint (line 3) -------------------------------------------------------------------------------------------------------------------
 const S3: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t8 = b(8), t9 = b(9), t10 = b(10), t38 = b(38), t43 = b(43);
+  const t8 = b(8), t9 = b(9), t10 = b(10), t38 = b(38);
   const drop = ease(f, t8, 26);
   const stamp = ease(f, t9, 12);
   const strip = ease(f, t38 - 10, 22);
@@ -285,7 +280,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="PREPRINT · OCT 15TH · CALTECH + MIT" y={580} size={30} tone="paper" p={ease(f, t43, 8)} />
+        <Plate x={540} text="PREPRINT · OCT 15TH · CALTECH + MIT" y={580} size={30} tone="paper" p={ease(f, t8, 8)} />
         <Plate x={540} text="A TEST FOR SONAR FISH COUNTING" y={660} size={30} tone="ink" p={ease(f, t10 - 4, 8)} />
       </>}>
       <SVG>
@@ -335,7 +330,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {/* the video the experts watch: a faceless sonar fan, no machine boxes in this shot */}
         <rect x={348} y={640} width={604} height={660} rx={22} fill="#04100D" stroke={SON.slateHi} strokeWidth={9} />
         <rect x={364} y={656} width={572} height={628} rx={14} fill="none" stroke={SON.mint} strokeWidth={3} opacity={0.35} />
-        <Tag text="SONAR VIDEO" x={650} y={1262} size={22} />
+        <Tag text="BENCHMARK CLIP" x={650} y={1262} size={22} />
+        {Array.from({length: 14}).map((_, i) => <rect key={i} x={366 + i * 41} y={650} width={20} height={11} rx={3} fill={SON.paper} opacity={0.45} />)}
         <Wedge x={650} y={1214} s={0.66} f={f} id="s4" R={640} base={false} faceless lit={0.95} blobs={50} speed={1.5} dirRight={0.7} line="ruled" seed={4} />
         {/* a person with a clicker: the hand count, as the preprint says */}
         <ContactShadow cx={170} cy={1300} rx={90} ry={12} opacity={0.4} blur={8} />
@@ -364,8 +360,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         <Plate x={540} text="11 SITES · 9 RIVER SYSTEMS" y={560} size={32} tone="ink" p={ease(f, t15, 8)} />
-        <Plate x={540} text="ALASKA: 3 KENAI SITES + 1 NUSHAGAK" y={640} size={28} tone="paper" p={ease(f, t46, 8)} />
-        <Plate x={540} text="ALASKA: LARGER, DENSER POPULATIONS · PER PREPRINT" displayLines={['ALASKA: LARGER, DENSER', 'POPULATIONS · PER PREPRINT']} y={760} size={26} tone="ink" p={ease(f, t16, 8)} />
+        <Plate x={540} text="ALASKA · 3 KENAI SITES + 1 NUSHAGAK" y={640} size={28} tone="paper" p={ease(f, t46, 8)} />
+        <Plate x={540} text="ALASKA · LARGER, DENSER POPULATIONS · PER PREPRINT" displayLines={['ALASKA · LARGER, DENSER', 'POPULATIONS · PER PREPRINT']} y={760} size={26} tone="ink" p={ease(f, t16, 8)} />
         <Plate x={540} text="4,363 CLIPS · 1.0M+ BOXES" y={1250} size={30} tone="ink" p={ease(f, t14 + 30, 8)} />
       </>}>
       <SVG>
@@ -431,7 +427,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s7w" seed={7} />
-        <Wedge x={540} y={1170} s={0.78} f={f} id="s7" R={620} plaque="THE MODEL" mood="squint" look={Math.sin(f / 20)} blobs={60} speed={1.5} dirRight={0.6} boxes={1} line="needle" lean={lean} tallyL={f * 0.35} tallyR={f * 0.38} seed={7} />
+        <Wedge x={540} y={1170} s={0.78} f={f} id="s7" R={620} plaque="THE MODEL" dark={1} darkFrom={11} mood="squint" look={Math.sin(f / 20)} blobs={60} speed={1.5} dirRight={0.6} boxes={1} line="needle" lean={lean} tallyL={f * 0.35} tallyR={f * 0.38} seed={7} />
         <NearBank f={f} seed={7} />
       </SVG>
     </Frame>
@@ -441,24 +437,24 @@ const S7: React.FC<SceneProps> = ({p}) => {
 // ---- S14: the Kenai result (line 9): a river cross-section, two banks, two thin miss gauges -------------------------------------------------------
 const S14: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t20 = b(20), t21 = b(21), t22 = b(22), t23 = b(23);
+  const t20 = b(20), t21 = b(21), t22 = b(22), t23 = b(23), t50 = b(50);
   const lean = -1.6 * ease(f, t23 - 12, 24) + 0.35 * Math.sin(f / 15) * ease(f, t23, 10);
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 940}, {t: p.dur, z: 1.0, fx: 540, fy: 1010}]);
   const gl = ease(f, t21 - 6, 30), gr = ease(f, t22 - 6, 30);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="KENAI · A RIVER IT TRAINED ON" y={560} size={30} tone="paper" p={ease(f, t20, 8)} />
+        <Plate x={540} text="KENAI BANK HELD OUT OF TRAINING" y={560} size={30} tone="paper" p={ease(f, t20, 8)} />
         <Plate x={540} text="LEFT BANK · MISS UNDER 0.07 (7%)" y={640} size={28} tone="ink" p={ease(f, t21, 8)} />
         <Plate x={540} text="RIGHT BANK · MISS UNDER 0.03 (3%)" y={720} size={28} tone="ink" p={ease(f, t22, 8)} />
         <Plate x={540} text="NEAR ZERO, NOT ZERO" y={800} size={30} tone="paper" p={ease(f, t23 + 4, 8)} />
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s14w" seed={14} />
-        <rect x={80} y={640} width={920} height={700} rx={14} fill="#03100C" stroke={SON.slateHi} strokeWidth={8} />
+        <rect x={80} y={640} width={920} height={680} rx={14} fill="#03100C" stroke={SON.slateHi} strokeWidth={8} />
         {Array.from({length: 18}).map((_, i) => <rect key={i} x={100 + i * 50} y={648} width={22} height={12} rx={3} fill={SON.paper} opacity={0.45} />)}
         <Tag text="BENCHMARK CLIP" x={780} y={720} size={22} />
-        <Wedge x={620} y={1040} s={0.5} f={f} id="s14" R={600} plaque="THE MODEL" mood="reading" look={0.4} blobs={50} speed={1.5} dirRight={0.55} boxes={1} line="needle" lean={lean} tallyL={f * 0.35} tallyR={f * 0.38} seed={14} />
+        <Wedge x={620} y={1040} s={0.5} f={f} id="s14" R={600} plaque="THE MODEL" mood="reading" look={0.4} dark={1 - ease(f, t21, 90)} darkFrom={11} blobs={50} speed={1.5} dirRight={0.55} boxes={1} line="needle" lean={lean} tallyL={f * 0.35} tallyR={f * 0.38} seed={14} />
         {/* the river in cross-section: a bank on each side, a thin vertical gauge standing on each */}
         <path d="M -40,1170 L 300,1170 Q 380,1230 540,1250 Q 700,1230 780,1170 L 1120,1170 L 1120,1330 L -40,1330 Z" fill="#0E3A30" stroke={SON.mint} strokeWidth={5} opacity={0.9} />
         {[0, 1].map((i) => {
@@ -466,7 +462,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
           const val = i ? 0.03 : 0.07, k = i ? gr : gl;
           return (
             <g key={i} transform={`translate(${gx},1170)`}>
-              <rect x={0} y={-320} width={34} height={320} rx={6} fill="#02130F" stroke={SON.slateHi} strokeWidth={4} />
+              <rect x={0} y={-320 * ease(f, t50, 14)} width={34} height={320 * ease(f, t50, 14)} rx={6} fill="#02130F" stroke={SON.slateHi} strokeWidth={4} />
               <rect x={4} y={-4 - 312 * (val / 0.8) * k} width={26} height={312 * (val / 0.8) * k} rx={3} fill={SON.mint} />
               <path d={`M -10,${-4 - 312 * (val / 0.8) * k} L 44,${-4 - 312 * (val / 0.8) * k}`} stroke={SON.paper} strokeWidth={4} />
               <Tag text={i ? 'RIGHT' : 'LEFT'} x={17} y={60} size={22} />
@@ -515,6 +511,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         </g>
         <g transform="translate(470,760)" opacity={ease(f, t25, 14)}>
           <rect x={-250} y={-12 + 20 * click} width={500} height={10} rx={4} fill={SON.paper} opacity={0.5} />
+          <line x1={-250} x2={-250} y1={-34 + 20 * click} y2={4 + 20 * click} stroke={SON.gold} strokeWidth={5} />
           {Array.from({length: 11}).map((_, i) => <line key={i} x1={-250 + i * 50} x2={-250 + i * 50} y1={-12 + 20 * click} y2={-26 + 20 * click} stroke={SON.paper} strokeWidth={3} opacity={0.6} />)}
         </g>
         <NearBank f={f} seed={8} />
@@ -523,38 +520,46 @@ const S8: React.FC<SceneProps> = ({p}) => {
   );
 };
 
-// ---- S9: held out of training (line 11) ----------------------------------------------------------------------------------------------------------
+// ---- S9: the Nushagak held out (line 10) -----------------------------------------------------------------------------------------------------
 const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t26 = b(26);
-  const go = easeIO(f, t26 + 8, Math.max(40, p.dur - 20));
-  const cam = track([{t: 0, z: 1.0, fx: 480, fy: 1040}, {t: p.dur, z: 1.12, fx: 640, fy: 940}]);
+  const t26 = b(26), t48 = b(48);
+  const lift = easeIO(f, t26 + 24, 50);
+  const g = ease(f, t48 - 6, 30);
+  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.0, fx: 540, fy: 1000}]);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="HELD OUT OF TRAINING" y={560} size={32} tone="violet" p={ease(f, t26, 8)} />
+        <Plate x={540} text="HELD OUT OF TRAINING" y={560} size={32} tone="violet" p={ease(f, t26, 8) * (1 - ease(f, t48 - 4, 6))} />
+        <Plate x={540} text="NUSHAGAK HELD OUT · MISS 0.035 (3.5%)" y={560} size={28} tone="ink" p={ease(f, t48, 8)} />
       </>}>
       <SVG>
-        <SonarWater f={f + p.from} id="s9w" mood="fog" seed={9} />
-        {Array.from({length: 4}).map((_, i) => <rect key={i} data-band="ok" x={-60} y={520 + i * 230 + 14 * Math.sin(f / 40 + i)} width={1200} height={120} fill="#DDE5E3" opacity={0.1 + 0.05 * i} />)}
-        {/* the training clips scroll by, and one is lifted out and set aside: held out of training */}
-        <g transform="translate(0,660)">
-          <rect data-band="ok" x={-40} y={-70} width={1160} height={140} fill="#03100C" opacity={0.85} />
+        <SonarWater f={f + p.from} id="s9w" seed={9} />
+        {/* the clip strip scrolls, and the Nushagak clip is lifted out and set aside */}
+        <g transform="translate(0,820)">
+          <rect data-band="ok" x={-40} y={-80} width={1160} height={160} fill="#03100C" opacity={0.85} />
           {Array.from({length: 8}).map((_, i) => {
-            const gx = ((i * 190 - f * 1.6) % 1520 + 1520) % 1520 - 190;
-            const lifted = i === 3;
-            const lift = lifted ? easeIO(f, t26 + 20, 50) : 0;
+            const gx = ((i * 190 - f * 1.4) % 1520 + 1520) % 1520 - 190;
+            const out = i === 3;
             return (
-              <g key={i} transform={`translate(${gx},${-130 * lift})`}>
-                <rect x={0} y={-52} width={170} height={104} rx={8} fill={SON.fan} stroke={lifted ? SON.violet : SON.mint} strokeWidth={4} strokeDasharray={lifted && lift > 0.5 ? '10 8' : undefined} opacity={lifted ? 1 : 0.8} />
+              <g key={i} transform={`translate(${out ? 440 : gx},${out ? -230 * lift : 0})`}>
+                <rect x={0} y={-52} width={170} height={104} rx={8} fill={SON.fan} stroke={out ? SON.violet : SON.mint} strokeWidth={4} opacity={out ? 1 : 0.8} />
                 {[0, 1, 2].map((j) => <ellipse key={j} cx={34 + j * 46 + 6 * Math.sin(f / 9 + i + j)} cy={-10 + j * 16} rx={9} ry={4.5} fill={SON.echo} />)}
+                {out && <Tag text="NUSHAGAK" x={85} y={-72} size={20} />}
               </g>
             );
           })}
+          <rect x={440} y={-52} width={170} height={104} rx={8} fill="none" stroke={SON.violet} strokeWidth={4} strokeDasharray="10 8" opacity={lift} />
         </g>
-        <Wedge x={340 + 130 * go} y={1190} s={0.7} f={f} id="s9a" R={600} plaque="THE MODEL" mood="unsure" look={0.8} lit={0.8 - 0.3 * go} blobs={50} speed={1.4} boxes={1 - 0.7 * go} line="bare" seed={9} />
-        <Wedge x={780} y={1190} s={0.7} f={f} id="s9b" R={600} base={false} faceless blobs={0} line="bare" lit={0.18} rings={false} />
-        <NearBank f={f} seed={9} fog />
+        <Wedge x={340} y={1220} s={0.62} f={f} id="s9a" R={600} plaque="THE MODEL" mood="reading" look={0.7} dark={1 - ease(f, t48, 50)} darkFrom={11} blobs={50} speed={1.4} boxes={1} line="bare" seed={9} />
+        {/* a thin mint gauge for the held-out miss, 0.035 on a track that runs to 0.80 */}
+        <g transform="translate(560,1000)">
+          <rect x={0} y={0} width={400} height={34} rx={6} fill="#02130F" stroke={SON.slateHi} strokeWidth={4} />
+          <rect x={4} y={4} width={Math.max(0, 392 * (0.035 / 0.8) * 4) * g} height={26} rx={3} fill={SON.mint} />
+          <Tag text="MISS 0 TO 0.80" x={200} y={72} size={20} />
+          <line x1={-20} y1={48} x2={420} y2={48} stroke={SON.gold} strokeWidth={4} />
+        </g>
+        <NearBank f={f} seed={9} />
       </SVG>
     </Frame>
   );
@@ -563,7 +568,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
 // ---- S10: Mad River (line 12) --------------------------------------------------------------------------------------------------------------------
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t27 = b(27), t28 = b(28), t29 = b(29), t41 = b(41), t42 = b(42), t45 = b(45);
+  const t27 = b(27), t28 = b(28), t29 = b(29), t42 = b(42);
   const seen = ease(f, t42 - 4, 22);
   const unseen = ease(f, t28 - 2, 20);
   const pull = easeIO(f, t29 - 6, 40);
@@ -572,10 +577,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         <Plate x={540} text="MAD RIVER · CALIFORNIA" y={560} size={30} tone="paper" p={ease(f, t27, 8)} />
-        <Plate x={540} text="SMALL COUNTS" y={800} size={30} tone="paper" p={ease(f, t45, 8)} />
-        <Plate x={540} text="CALIFORNIA · SEEN 0.33 · UNSEEN 0.80" y={640} size={28} tone="coral" p={ease(f, t28, 8)} />
-        <Plate x={540} text="A BIG SHARE OF A SMALL COUNT" y={720} size={30} tone="ink" p={ease(f, t29, 8)} />
-        <Plate x={540} text="NOT AN ALASKA RIVER" y={880} size={30} tone="violet" p={ease(f, t41, 8)} />
+        <Plate x={540} text="KENAI HELD OUT · 0.07 AND 0.03" y={720} size={28} tone="ink" p={ease(f, t29, 8)} />
+        <Plate x={540} text="CALIFORNIA · IN TRAINING 0.33 · HELD OUT 0.80" y={640} size={26} tone="coral" p={ease(f, t28, 8)} />
+        
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s10w" mood="dusk" seed={10} />
@@ -586,18 +590,15 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <rect x={4} y={-640 * seen * (0.33 / 0.8) - 4} width={112} height={640 * seen * (0.33 / 0.8)} rx={3} fill={SON.mint} stroke={INK} strokeWidth={3} />
           <rect x={204} y={-640 * unseen - 4 + 4} width={112} height={640 * unseen} rx={3} fill={SON.coral} stroke={INK} strokeWidth={3} />
           <line x1={-30} y1={0} x2={350} y2={0} stroke={SON.gold} strokeWidth={5} />
-          <Tag text="SEEN" x={60} y={56} size={24} />
-          <Tag text="UNSEEN" x={260} y={56} size={24} />
-          <Tag text="ABOUT 1/3" x={60} y={-640 * seen * (0.33 / 0.8) - 34} size={22} op={seen} />
-          <Tag text="80%" x={260} y={-640 * unseen - 34} size={22} op={unseen} />
+          <Tag text="IN TRAINING" x={60} y={56} size={22} />
+          <Tag text="HELD OUT" x={260} y={56} size={22} />
+          <Tag text="ABOUT A THIRD (0.33)" x={60} y={-640 * seen * (0.33 / 0.8) - 34} size={20} op={seen} />
+          <Tag text="80% (0.80)" x={260} y={-640 * unseen - 34} size={22} op={unseen} />
         </g>
-        <g opacity={ease(f, t45, 16)}>
-          {[0, 1, 2, 3, 4].map((i) => <circle key={i} cx={560 + i * 90 + 24 * Math.sin(f / 15 + i)} cy={1000 + 30 * Math.sin(f / 11 + i * 2)} r={5} fill={SON.echo} opacity={0.65} />)}
-        </g>
-        <g opacity={pull}>
-          <path d="M 560,1210 C 640,1180 720,1230 800,1200 S 960,1210 1040,1190 L 1040,1260 L 560,1260 Z" fill="#0E3A30" stroke={SON.mint} strokeWidth={4} opacity={0.9} />
-          {[0, 1, 2, 3, 4, 5].map((i) => <circle key={i} cx={600 + i * 78 + 18 * Math.sin(f / 13 + i)} cy={1226 + 4 * Math.sin(f / 9 + i)} r={4} fill={SON.echo} opacity={0.6} />)}
-          <Tag text="ILLUSTRATIVE" x={800} y={1160} size={20} />
+        <g transform="translate(200,1170)" opacity={ease(f, t29, 16)}>
+          <line x1={-20} y1={-640 * (0.07 / 0.8)} x2={20} y2={-640 * (0.07 / 0.8)} stroke={SON.mint} strokeWidth={4} />
+          <line x1={-20} y1={-640 * (0.03 / 0.8)} x2={20} y2={-640 * (0.03 / 0.8)} stroke={SON.mint} strokeWidth={4} />
+          <Tag text="KENAI 0.07 / 0.03" x={-110} y={-640 * (0.07 / 0.8) - 40} size={18} />
         </g>
         <NearBank f={f} seed={10} />
       </SVG>
@@ -605,25 +606,33 @@ const S10: React.FC<SceneProps> = ({p}) => {
   );
 };
 
-// ---- S11: the dark half (line 13), the signature shot -----------------------------------------------------------------------------------------
+// ---- S11: the Kenai channel doubled (line 13) -----------------------------------------------------------------------------------------------------
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t30 = b(30), t31 = b(31);
-  const open = ease(f, t30 + 6, 30);
-  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.0, fx: 540, fy: 960}]);
+  const t30 = b(30), t31 = b(31), t52 = b(52);
+  const first = ease(f, t52 - 2, 22);
+  const second = ease(f, t31 - 2, 22);
+  const cam = track([{t: 0, z: 1.04, fx: 500, fy: 980}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="AN ALASKA RIVER IT NEVER SAW" y={560} size={30} tone="violet" p={ease(f, t30, 8)} />
-        <Plate x={540} text="NO NUMBER IN THE PREPRINT" y={640} size={32} tone="paper" p={ease(f, t31 - 6, 8)} />
+        <Plate x={540} text="KENAI CHANNEL" y={560} size={32} tone="paper" p={ease(f, t30, 8)} />
+        <Plate x={540} text="KENAI CHANNEL · HELD OUT 0.14 TO 0.29" y={640} size={28} tone="ink" p={ease(f, t31, 8)} />
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s11w" seed={11} />
-        <Wedge x={540} y={1180} s={0.84} f={f} id="s11" R={640} plaque="THE MODEL" mood="unsure" look={0.8} lit={0.95} dark={1} darkFrom={2} darkQ={ease(f, t31 - 10, 20)} blobs={46} speed={1.5} dirRight={0.8} line="hook" dashFrom={0.5} hook={open} seed={11} />
-        <g opacity={open}>
-          <ellipse cx={190} cy={1480} rx={190} ry={44} fill={SON.mint} opacity={0.22} />
-          <ellipse cx={190} cy={1484} rx={130} ry={26} fill={SON.paper} opacity={0.12} />
-          <Moose x={190} y={1478} scale={0.62} f={f} facing={1} />
+        <g transform="translate(250,1230)">
+          <ContactShadow cx={200} cy={8} rx={260} ry={14} opacity={0.4} blur={8} />
+          <rect x={0} y={-640} width={160} height={640} rx={5} fill="#02130F" stroke={SON.slateHi} strokeWidth={4} />
+          <rect x={240} y={-640} width={160} height={640} rx={5} fill="#02130F" stroke={SON.slateHi} strokeWidth={4} />
+          <rect x={4} y={-640 * (0.143 / 0.8) * first - 4} width={152} height={640 * (0.143 / 0.8) * first} rx={3} fill={SON.mint} stroke={INK} strokeWidth={3} />
+          <rect x={244} y={-640 * (0.286 / 0.8) * second - 4} width={152} height={640 * (0.286 / 0.8) * second} rx={3} fill={SON.mint} stroke={INK} strokeWidth={3} />
+          <line x1={-30} y1={0} x2={430} y2={0} stroke={SON.gold} strokeWidth={5} />
+          <Tag text="IN TRAINING" x={80} y={56} size={22} />
+          <Tag text="HELD OUT" x={320} y={56} size={22} />
+          <Tag text="0.80" x={200} y={-668} size={20} op={0.8} />
+          <Tag text="14% (0.14)" x={80} y={-640 * (0.143 / 0.8) * first - 34} size={20} op={first} />
+          <Tag text="29% (0.29)" x={320} y={-640 * (0.286 / 0.8) * second - 34} size={20} op={second} />
         </g>
         <NearBank f={f} seed={11} />
       </SVG>
@@ -640,8 +649,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        <Plate x={540} text="NO AGENCY USE REPORTED" y={560} size={32} tone="paper" p={ease(f, t32, 8)} />
-        <Plate x={540} text="BUILT FOR DEPLOYMENT" y={640} size={32} tone="ink" p={ease(f, t33 - 10, 8)} />
+        <Plate x={540} text="BUILT FOR DEPLOYMENT" y={560} size={32} tone="ink" p={ease(f, t32, 8)} />
+        <Plate x={540} text="NO AGENCY USE REPORTED" y={640} size={32} tone="paper" p={ease(f, t33, 8)} />
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s12w" seed={12} />
@@ -650,7 +659,9 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <Stamp text="PREPRINT" x={50} y={170} rot={-6} p={1} size={28} color="#0B3B52" />
         </Sheet>
         <text x={300} y={832} textAnchor="middle" fontFamily={SERIF} fontWeight={900} fontSize={78} fill="#0B1F26">CFC26</text>
-        <Wedge x={760} y={1180} s={0.6} f={f} id="s12" R={560} plaque="THE MODEL" mood="idle" look={-0.6} blobs={30} speed={1.2} dirRight={0.7} line="bare" seed={12} />
+        <Wedge x={930} y={1000} s={0.4} f={f} id="s12g" R={620} base={false} ghost={0.95} blobs={0} line="bare" lit={0.2} rings={false} />
+        <text x={930} y={860} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={100} fill={SON.violet} opacity={0.6 * (1 - 0.7 * ease(f, t33, 12))}>?</text>
+        <Wedge x={700} y={1180} s={0.6} f={f} id="s12" R={560} plaque="THE MODEL" mood="idle" look={-0.6} blobs={30} speed={1.2} dirRight={0.7} line="bare" seed={12} />
         {/* the agency's bank sonar, and a dashed cable that stops one step short of it */}
         <Wedge x={250} y={1330} s={0.34} f={f} id="s12p" R={560} faceless lit={0.8} blobs={10} speed={1.0} line="bare" seed={22} />
         <path d={`M 560,1320 C 500,1330 ${520 - 150 * reach},1340 ${500 - 190 * reach},1328`} fill="none" stroke={SON.violet} strokeWidth={6} strokeDasharray="14 12" strokeDashoffset={-f * 0.6} strokeLinecap="round" />
@@ -663,23 +674,23 @@ const S12: React.FC<SceneProps> = ({p}) => {
 // ---- S13: the button (line 15), the opening frame changed ------------------------------------------------------------------------------------
 const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t34 = b(34), t35 = b(35), t44 = b(44);
+  const t34 = b(34), t35 = b(35), t44 = b(44), t49 = b(49), t51 = b(51);
   const out = ease(f, p.dur - 14, 12);
   const cam = track([{t: 0, z: 1.1, fx: 540, fy: 1010}, {t: p.dur, z: 1.0, fx: 600, fy: 1000}]);
   const short = ease(f, t35 - 10, 36);
   return (
     <Frame p={p} cam={cam} dim={out}
       overlay={<>
-        <Plate x={540} text="THE NUMBER TO WAIT FOR" y={600} size={32} tone="violet" p={ease(f, t44, 8)} />
+        <Plate x={540} text="A COUNT SOMEBODY USES · STILL MISSING" y={600} size={28} tone="violet" p={ease(f, t44, 8)} />
       </>}>
       <SVG>
         <SonarWater f={f + p.from} id="s13w" seed={13} />
         {/* the agency's lit fan at left, as in the opening, with its odometer slot above */}
         <Wedge x={420} y={1090} s={0.9} f={f} id="s13a" faceless plaque="ADF&G SONAR" lit={0.95} dark={0} blobs={40} speed={1.6} dirRight={0.85} line="bare" seed={1} tallyL={f * 0.5} tallyR={f * 1.2} />
         {/* the dashed unlit fan at right, with the model standing at its edge and the line ending in an open hook */}
-        <Wedge x={850} y={1010} s={0.52} f={f} id="s13g" R={620} base={false} ghost={0.95} blobs={0} line="hook" dashFrom={0.4} hook={1} lit={0.2} rings={false} />
-        <Wedge x={700} y={1250} s={0.34} f={f} id="s13m" R={600} base mood={f > t35 ? 'wide' : 'idle'} look={0.9} blobs={0} line="bare" lit={0.1} rings={false} />
-        <g transform="translate(150,430)">
+        <Wedge x={850} y={1010} s={0.52} f={f} id="s13g" R={620} base={false} ghost={Math.min(1, 0.95 + 0.3 * bump(f, t51, 18))} blobs={0} line="hook" dashFrom={0.4} hook={1} lit={0.2} rings={false} />
+        <Wedge x={700} y={1250} s={0.34} f={f} id="s13m" R={600} base mood={f > t35 ? 'wide' : 'idle'} look={-0.7 + 1.6 * ease(f, t49, 14)} blobs={0} line="bare" lit={0.1} rings={false} />
+        <g transform="translate(690,430)">
           <g opacity={ease(f, t44, 10)} transform={`translate(0,${-90 * (1 - ease(f, t44, 10))})`}>
             <rect x={0} y={0} width={96} height={104} rx={10} fill="none" stroke={SON.violet} strokeWidth={5} strokeDasharray="12 10" strokeDashoffset={-f * 0.5} />
             <text x={48} y={78} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={74} fill={SON.violet}>?</text>
@@ -715,7 +726,7 @@ const Rough: React.FC<{n: number; title: string; p: SP}> = ({n, title, p}) => (
 );
 const TITLES: Record<number, string> = {1: 'THE FLOOD', 2: 'TWO RIVERS', 3: 'THE PREPRINT', 4: 'COUNTED BY HAND', 5: 'THE DATA', 6: 'THE QUESTION', 7: 'THE KENAI', 8: 'DIFFERENT RULER', 9: 'HELD OUT', 10: 'MAD RIVER', 11: 'THE DARK HALF', 12: 'NOT DEPLOYED', 13: 'THE BUTTON', 14: 'KENAI RESULT', 15: 'FIFTEEN SITES'};
 const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13, 14: S14, 15: S15};
-const SHOT_ORDER = [1, 2, 15, 3, 4, 5, 6, 7, 14, 8, 9, 10, 11, 12, 13];
+const SHOT_ORDER = [1, 2, 15, 3, 4, 5, 6, 7, 14, 9, 8, 10, 11, 12, 13];
 
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
   const f = useCurrentFrame();
