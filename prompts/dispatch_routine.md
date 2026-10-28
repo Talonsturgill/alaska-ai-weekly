@@ -689,7 +689,8 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   build-on) IN EACH THIRD at 120s, the first at the escalation point; `rehook` in each drift window;
   both open loops and the throughline as in §4.3. Beat timing is JITTERED (front-loaded in the first
   10s, never 3 near-identical gaps in a row). flow_check enforces FRONTLOAD, METRONOME, REHOOK and
-  OPEN LOOP.
+  OPEN LOOP. After any VO or anchor edit, `python3 scripts/beat_gaps.py --only-flagged` names each
+  beat pair over the 5.0 s ceiling or inside a metronome run before Gate 0A does (2026-10-28).
 - GATE 0A: `python3 scripts/storyboard_check.py` exit 0 (divergence vs recent history, shot
   structure, flow block, and `scripts/board_sync_check.py`: shots[] rows that disagree with their
   beats FAIL, and every `[board-sync-advisory]` line, painted text quoted differently in `shows`
