@@ -74,7 +74,7 @@ export const EchoBlobs: React.FC<{
     const hw = R * cosA * lane * tanA * 0.96;
     const dir = rnd(k * 7 + 2) < dirRight ? 1 : -1;
     const span = 2 * hw + 140;
-    const v = speed * (0.55 + 0.9 * rnd(k * 5 + 3));
+    const v = speed * 1.4 * (0.55 + 0.9 * rnd(k * 5 + 3));
     const raw = f * v * dir + rnd(k) * span * 3;
     const m = ((raw % span) + span) % span;
     const x = m - span / 2;
@@ -188,7 +188,7 @@ export const Odometer: React.FC<{
   for (let i = 0; i < digits; i++) {
     // digit i from the left, each place rolls only as its lower places wrap
     const place = Math.pow(10, digits - 1 - i);
-    vals.push(v / place);
+    vals.push(place > 1 ? Math.floor(v / place) : v);
   }
   let cx = 7;
   return (
@@ -261,9 +261,9 @@ export const Wedge: React.FC<{
   plaque?: string;
 }> = ({x, y, s = 1, f, id = 'wd', R = 620, mood = 'idle', look = 0, lit = 1, dark = 0, darkFrom = 10, darkQ = 0, tallyL = 0, tallyR = 0, blobs = 80, speed = 1.6, seed = 0, dirRight = 0.78, boxes = 0, boxDash = false, line = 'bare', lean = 0, dashFrom = 1, lineDraw = 1, hook = 0, rings = true, inFan, base = true, ghost = 0, faceless = false, plaque}) => {
   const blink = (f % 150) > 144 ? 0.15 : 1;
-  const breathe = 1 + 0.012 * Math.sin(f / 21);
+  const breathe = 1 + 0.022 * Math.sin(f / 17);
   const eyeY = 74;
-  const lookX = look * 18 + 4 * Math.sin(f / 33);
+  const lookX = look * 18 + 8 * Math.sin(f / 21);
   const mouth = ({idle: 'M -22,128 L 22,128', reading: 'M -22,128 L 22,128', unsure: 'M -22,132 Q 0,120 22,132', proud: 'M -26,122 Q 0,146 26,122', squint: 'M -18,130 L 18,130', wide: 'M -16,122 Q 0,148 16,122 Z'} as Record<WedgeMood, string>)[mood];
   const lidH = mood === 'squint' ? 0.78 : mood === 'unsure' ? 0.3 : 0;
   const bright = clamp01(lit);
@@ -370,6 +370,10 @@ export const SonarWater: React.FC<{f: number; id?: string; bank?: number; mood?:
         </linearGradient>
       </defs>
       <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill={`url(#${id}_g)`} />
+      {/* slow caustic bands drift across the whole water so no frame holds still */}
+      {[0, 1, 2].map((i) => (
+        <rect key={`cb${i}`} data-band="ok" x={((f * (0.9 + 0.5 * i) + i * 420) % 1700) - 520} y={0} width={380} height={1920} fill={SON.mint} opacity={0.045} transform={`skewX(-18)`} />
+      ))}
       {/* the surface: a rippling light band and two speeds of suspended motes fill the top of the frame */}
       <rect data-band="ok" x={-40} y={150} width={1160} height={130} fill={SON.mint} opacity={0.035 + 0.02 * Math.sin(f / 40)} />
       {Array.from({length: 6}).map((_, i) => (
