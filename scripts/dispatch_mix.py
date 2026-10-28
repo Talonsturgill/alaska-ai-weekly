@@ -111,7 +111,7 @@ _TEXTURE = {"whoosh", "paper", "chain", "creak", "riser"}
 # also stops an unknown name from silently becoming a tick (10-11, 10-20) and names it every mix.
 sys.path.insert(0, HERE)
 from sfx_names import FAM as _FAM, BY_NAME as _BY_NAME, ALT as _ALT, CYCLE as _CYCLE  # noqa: E402
-from sfx_names import kinds_by_beat as _kinds_and_unknown, unknown_report, names_for_kind  # noqa: E402
+from sfx_names import kinds_by_beat as _kinds_and_unknown, unknown_report, names_for_kind, class_conflicts  # noqa: E402
 
 
 def _beat_onset(beat):
@@ -617,6 +617,9 @@ def main():
         raise SystemExit(f"SFX SCHEDULE: {len(EVENTS)} events but {len(EVENT_LABELS)} labels")
     for line in unknown_report(UNKNOWN_SFX):
         print("dispatch_mix: NOTE " + line)
+    for bid, nm in class_conflicts(_board["beats"]):
+        print(f"dispatch_mix: NOTE beat {bid} names the animal sound '{nm}' but declares sfx_class object, "
+              f"so it plays an object kind (scripts/sfx_names.py KIND_CLASS).")
     check_schedule(EVENTS)
 
     # THE SOUND DESIGN HAS TO BE VISIBLE, NOT JUST AUDIBLE (2026-08-13).

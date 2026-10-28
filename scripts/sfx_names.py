@@ -37,6 +37,54 @@ BY_NAME = {"whoosh": "whoosh", "sizzle": "paper", "snap": "snap", "slide": "crea
            "fold": "paper", "type": "tick", "pop": "pop", "clink": "ding", "chime": "chime", "thud": "thud", "boom": "boom"}
 ALT = {"sub": ["thud", "stamp", "boom"], "metal": ["clank", "chain"], "bell": ["chime", "ding"], "click": ["tick"], "blip": ["pop"],
        "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"]}
+
+# THE SFX CLASS TAG (machine pass 2026-10-28, queue item from 10-28 "The River It Never Saw"). The
+# family walk could land on caw (a bird) and paw (an animal footfall) for an odometer, clickers and
+# a bar, and the judges heard the mismatch. The run fixed it by taking caw and paw out of the walk
+# and the table entirely, which also made them unreachable for a beat that IS an animal. Now a kind
+# carries a class. An animal kind plays only on a beat of class animal, and the walk for an object
+# beat never offers one, so the fallback can't put a gull on a typewriter again.
+#
+# A beat's class is its `sfx_class` field ("animal" or "object") when the board sets it, else
+# "animal" when its sfx name maps to an animal kind (caw, gull, paw, hoof), else "object". A beat
+# that names an animal sound but declares sfx_class "object" walks to an object kind and is
+# reported by class_conflicts, so the board's author sees the contradiction.
+KIND_CLASS = {"caw": "animal", "paw": "animal"}
+ANIMAL_NAMES = {"caw": "caw", "gull": "caw", "squawk": "caw", "cry": "caw", "bird": "caw", "raven": "caw",
+                "paw": "paw", "pawstep": "paw", "hoof": "paw", "pad": "paw", "flipper": "paw"}
+ANIMAL_ALT = {"bird": ["caw"], "sub": ["paw"]}
+
+
+def kind_class(kind):
+    return KIND_CLASS.get(kind, "object")
+
+
+def beat_class(beat):
+    """'animal' or 'object', from the beat's sfx_class or, failing that, its sfx name."""
+    declared = str(beat.get("sfx_class") or "").strip().lower()
+    if declared in ("animal", "object"):
+        return declared
+    return "animal" if head(beat.get("sfx", "")) in ANIMAL_NAMES else "object"
+
+
+def walk_options(avoid, cls):
+    """Every kind the walk may pick outside the avoided families, for a beat of this class."""
+    opts = [x for fam, xs in ALT.items() if fam not in avoid for x in xs]
+    if cls == "animal":
+        opts += [x for fam, xs in ANIMAL_ALT.items() if fam not in avoid for x in xs]
+    return opts
+
+
+def pick(avoid, cls, used):
+    """The walk's choice: same-class kinds first (an animal beat prefers an animal kind), then the
+    least-used, then by name. For an object beat this is exactly the walk before the class tag."""
+    return sorted(walk_options(avoid, cls), key=lambda x: (kind_class(x) != cls, used.get(x, 0), x))[0]
+
+
+def class_conflicts(beats):
+    """[(beat id, name)] for beats that name an animal sound but declare sfx_class object."""
+    return [(b["id"], head(b.get("sfx", ""))) for b in beats
+            if head(b.get("sfx", "")) in ANIMAL_NAMES and beat_class(b) == "object"]
 CYCLE = {"slide": ["creak", "paper", "whoosh"], "hum": ["creak", "chain", "ding", "clank"], "sizzle": ["paper", "snap", "tick"],
          "scratch": ["paper", "tick"], "fade": ["creak", "chime"], "silence": ["creak"], "splash": ["whoosh", "pop"]}
 
@@ -46,11 +94,11 @@ def head(sfx):
 
 
 def known(name):
-    return name in BY_NAME or name in CYCLE
+    return name in BY_NAME or name in CYCLE or name in ANIMAL_NAMES
 
 
 def nearest(name, n=3):
-    return difflib.get_close_matches(name, sorted(set(BY_NAME) | set(CYCLE)), n=n, cutoff=0.5)
+    return difflib.get_close_matches(name, sorted(set(BY_NAME) | set(CYCLE) | set(ANIMAL_NAMES)), n=n, cutoff=0.5)
 
 
 def kinds_by_beat(beats, riser_beat):
@@ -58,12 +106,14 @@ def kinds_by_beat(beats, riser_beat):
     seen, kinds, used, prev_fam, unknown = {}, {}, {}, None, []
     for i, b in enumerate(beats):
         nm = head(b["sfx"])
+        cls = beat_class(b)
         nxt = beats[i + 1]["id"] if i + 1 < len(beats) else None
         avoid = {prev_fam} | ({FAM["riser"]} if nxt == riser_beat else set())
         if not known(nm):
             unknown.append((b["id"], nm))
-            opts = [x for fam, xs in ALT.items() if fam not in avoid for x in xs]
-            k = sorted(opts, key=lambda x: (used.get(x, 0), x))[0]
+            k = pick(avoid, cls, used)
+        elif nm in ANIMAL_NAMES:
+            k = ANIMAL_NAMES[nm]
         else:
             k = BY_NAME.get(nm, "tick")
         if nm in CYCLE:
@@ -75,9 +125,8 @@ def kinds_by_beat(beats, riser_beat):
             k = "whoosh"      # a descriptive "riser" on any other beat must not add a second one
         # Walk off the previous beat's family. The riser beat is never walked; the beat BEFORE
         # it is walked off the riser's family instead, so the board's riser can't be recast away.
-        if b["id"] != riser_beat and FAM[k] in avoid:
-            opts = [x for fam, xs in ALT.items() if fam not in avoid for x in xs]
-            k = sorted(opts, key=lambda x: (used.get(x, 0), x))[0]
+        if b["id"] != riser_beat and (FAM[k] in avoid or kind_class(k) != "object" and kind_class(k) != cls):
+            k = pick(avoid, cls, used)
         used[k] = used.get(k, 0) + 1
         kinds[b["id"]] = k
         prev_fam = FAM[k]
@@ -126,6 +175,25 @@ def self_test():
            kinds_by_beat([{"id": 1, "sfx": "knock-knock"}], None)[0] == {1: "thud"})
     expect("names_for_kind lists the board names on a kind",
            names_for_kind([{"id": 1, "sfx": "tap"}, {"id": 2, "sfx": "type-x"}], {1: "tick", 2: "tick"}, "tick") == ["tap", "type"])
+    # The class tag (2026-10-28). Thirty object beats of unknown and clashing names never reach an
+    # animal kind, the walk is what it was for an object board, and an animal beat gets its sound.
+    objs = [{"id": i + 1, "sfx": s} for i, s in enumerate(
+        ["odometer", "clicker", "bar", "thump", "splash", "zorp", "thud", "boom", "stamp", "whirr"] * 3)]
+    ok_kinds, _ = kinds_by_beat(objs, riser_beat=None)
+    expect("no object beat gets caw or paw, even when the walk runs out of families",
+           not [k for k in ok_kinds.values() if kind_class(k) == "animal"])
+    expect("thump maps to thud", kinds_by_beat([{"id": 1, "sfx": "thump"}], None)[0] == {1: "thud"})
+    animals = [{"id": 1, "sfx": "gull-cry"}, {"id": 2, "sfx": "caw"}, {"id": 3, "sfx": "hoof"},
+               {"id": 4, "sfx": "knock", "sfx_class": "animal"}, {"id": 5, "sfx": "zorp", "sfx_class": "animal"}]
+    ak, _ = kinds_by_beat(animals, None)
+    expect("an animal name plays its animal kind", ak[1] == "caw"
+           and kinds_by_beat([{"id": 1, "sfx": "hoof-step"}], None)[0] == {1: "paw"})
+    expect("a caw after a caw walks to another animal kind, not to an object", ak[2] == "paw")
+    expect("a declared animal beat with an object name keeps the table's kind", ak[4] == "thud")
+    expect("an unknown name on a declared animal beat prefers an animal kind", kind_class(ak[5]) == "animal")
+    tagged = [{"id": 1, "sfx": "caw", "sfx_class": "object"}]
+    expect("a caw on a beat declared object plays an object kind and is reported",
+           kind_class(kinds_by_beat(tagged, None)[0][1]) == "object" and class_conflicts(tagged) == [(1, "caw")])
     print("sfx_names self-test: " + ("PASS" if ok else "FAIL"))
     return 0 if ok else 1
 

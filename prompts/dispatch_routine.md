@@ -747,7 +747,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
    texture ~-19, never flat), deterministic crc32(DATE:idx) jitter (pitch by family, +/-1.5dB,
    +/-15ms), pan from the prop's storyboard x (max +/-0.35, hero payoffs centered), 3kHz/-2.5dB
    VO-slot EQ + 100Hz high-pass on the bed and sustained sfx, and dispatch_mix.py check_schedule: NO
-   two consecutive events from one family, at most one riser. Mix: VO dominant, music ducked, a real
+   two consecutive events from one family, at most one riser. Animal kinds (caw, paw) play only on a
+   beat of class animal, from its name or a beat `sfx_class` field (scripts/sfx_names.py, 2026-10-28).
+   Mix: VO dominant, music ducked, a real
    >=6dB dip before the button, -14 LUFS integrated, TP <= -1.0 dBTP, audible tail.
 3. **CAPTIONS + ACTING DATA.** vo_synth_gemini.py produced captions.json + words.json and, via
    scripts/vo_envelope.py, mouth_track.json + accents.json; build_scenes.py folds them into
