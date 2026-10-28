@@ -1,17 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-10-26",
+    "date": "2026-10-28",
     "shipped": [
-      "held-beats-named-before-render (held_beat_probe + make_cut held_plan, advisory)",
-      "upload-default-name (dispatch-<run date>-<file>, refuses if unstamped)",
-      "ballot-kit-and-akmap-registered (lib/akmap.ts, ASSET_MANIFEST)",
-      "caption_quotes (straight quotes on spoken quotes in build_scenes)"
+      "caption-fold-line-2 (caption_check counts line 2 toward the 140 character fold, hook pattern in the rubric)",
+      "sfx-class-tags (caw and paw only on animal beats)",
+      "beat_gaps.py (names the beats behind max_gap and METRONOME)",
+      "absence-thesis-primary-table (angle room doctrine)",
+      "room-tone-and-dusk-wind-beds (dispatch_mix ambience)"
     ],
-    "engine_advance": "HeldTravel + travelPhase in lib/heldidle.tsx (sweep/shadow/runner over a held prop), measured on HeldTravelLook",
+    "engine_advance": null,
     "escalated": [
-      "room-tone stems",
-      "Crowd component",
-      "caption-rubric hook pattern"
+      "claims-density-needs-atomic-claims"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

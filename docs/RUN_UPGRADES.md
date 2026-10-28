@@ -3941,3 +3941,8 @@ Shipped: ballot box hero and slip throughline film on Alaska candidates' data ce
 
 ## 2026-10-28, "Held Out"
 Shipped: faceless agency sonar versus a faced model fan on the CFC26 preprint's held-out river results (Kenai banks, Nushagak, Kenai channel, California's Mad River) with an honest blank on field use. Panel median 7.06 (7.0, 7.06, 7.28) against a 7.0 bar after three panel rounds; caption stopped at the cap, 8.33 with zero hard fails. In-run fixes: thesis corrected to Table 7 held-out numbers, VO rewritten so ADF&G figures and the preprint's practitioner figure stay apart, sfx walk no longer uses caw or paw, riser moved to the closing question, bigger person and clicker motion, plate stack respaced, floating 0.80 label removed. Queued: caption hook line-2 fold rule, sfx class tags, beat gap preview, primary table fetch before an absence claim.
+
+## 2026-10-28 weekly machine pass
+- Shipped: caption_check counts line 2 toward the 140 character fold and the rubric names the hook pattern, sound effect kinds carry a class so caw and paw play only on animal beats, scripts/beat_gaps.py names the beats behind max_gap and METRONOME, the angle room fetches the primary table before an absence thesis, and the mix can play room tone and dusk wind beds.
+- Engine advance: none.
+- Still open: claims-density-needs-atomic-claims (repeat 2), the dossier template listing the claim ids each line carries.
