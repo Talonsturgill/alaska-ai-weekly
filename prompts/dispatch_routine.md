@@ -865,7 +865,9 @@ mid-delivery change.
 ## PHASE 6B: THE LINKEDIN CAPTION  (`run_cost.py phase caption`)
 
 A dwell-time-first caption that takes a POSITION: hook <= 140 chars inside the mobile fold (a
-concrete fact or sharp claim, no throat-clearing), 900 to 2200 chars total (sweet spot 1300 to
+concrete fact or sharp claim, no throat-clearing), and LINE 2 COUNTS TOWARD THE FOLD (2026-10-28,
+caption_check FOLD row), at least 40 chars of line 2 inside the first 140, so draft line 1 as the
+number, then the stall, then the stake in about 95 chars and open line 2 with the take, 900 to 2200 chars total (sweet spot 1300 to
 1900), specifics from the fact-check-safe set only, an argument a smart reader could push back on,
 restraint (no bold-unicode, <= 3 emoji, no bullet walls), a genuine CTA question tied to the take,
 3 to 5 hashtags at the very end. No dashes, NO colons, no semicolons, no AI-tells, no savior

@@ -24,6 +24,7 @@ rubric:
     must_pass_first: true
     checks:
       hook_fold:   "first line <= 140 chars (earns 'see more' in the mobile fold)"
+      take_fold:   "at least 40 chars of line 2 (or all of it) inside the first 140, so the take counts toward the hook (2026-10-28)"
       length:      "900-2200 chars total (sweet spot 1,300-1,900); 3,000 hard cap"
       hashtags:    "3-5, grouped at the END (>5 = ~68% reach cut)"
       restraint:   "no Unicode-bold, <=3 emoji, not a wall of bullets"
@@ -31,7 +32,7 @@ rubric:
       voice:       "no first person outside a source's verbatim quote (owner, 2026-10-09)"
       cta:         "an engagement question near the end"
   hard_fails:                    # ANY = automatic fail regardless of score
-    - "caption_check.py fails (hook past the fold, length out of band, hashtag misuse, over-formatting, banned punctuation, first person, no CTA)"
+    - "caption_check.py fails (hook past the fold, take opening past the fold, length out of band, hashtag misuse, over-formatting, banned punctuation, first person, no CTA)"
     - "first person in the caption's own voice (I, me, my, we, us, our, let's), including 'My read is' and 'I think'. Only a source's verbatim words inside straight double quotes keep theirs (owner, 2026-10-09)"
     - "a claim not traceable to the Dispatch's verified sources, or a number not in the video"
     - "no discernible POINT OF VIEW — it summarizes instead of taking a position"
@@ -42,6 +43,12 @@ rubric:
     - name: "Hook / scroll-stop"
       weight: 0.20
       10: "First line stops the scroll inside the mobile fold with a concrete fact, sharp number, or a real position; line 2 deepens the tension so the 'see more' is irresistible."
+      # HOOK PATTERN (machine pass 2026-10-28, queue items 10-26, repeat 1 and 2). Two runs hit the
+      # five-round cap at 8.25 and 8.33 because line 2 explained instead of deepening and began past
+      # the fold. The move, from the first draft, is THE NUMBER, THEN THE STALL, THEN THE STAKE on
+      # line 1 (about 95 chars at most) and THE TAKE opening line 2. Score this criterion on the
+      # text caption_check reports as metrics.above_fold, which is line 1 plus the opening of line 2.
+      pattern: "line 1 is the number, then the stall, then the stake; line 2 opens with the take, inside the first 140 chars"
       7:  "Solid opener, would earn some clicks, slightly soft or generic."
       4:  "Buried lede, vague, or front-loads context before the point."
     - name: "Point of view / take"

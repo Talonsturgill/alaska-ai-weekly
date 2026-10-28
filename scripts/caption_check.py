@@ -67,6 +67,38 @@ DATE_FORMS = [
 # there to be qualified. This voice is already short and declarative, so the commas that go
 # are the ones bolting a second thought onto a finished one.
 COMMA_PER_100W = 4.9
+
+# THE TAKE OPENS ABOVE THE FOLD (machine pass 2026-10-28, queue caption hook line 2, repeat 2,
+# with caption-hook-line-vs-paragraph 10-16 and the hook pattern 10-26). Two runs in a row hit the
+# five-round cap (8.25, 8.33) with the scorer holding the Hook at 6.5 to 8.3, because line 2, the
+# take, began past the 140 character fold and so never counted toward the hook. This linter only
+# measured line 1, and line 1 at 129 to 136 characters (10-15 to 10-24) passed while leaving 2 to
+# 9 characters of the take visible. LinkedIn counts the newlines of the blank line too.
+#
+# The rule counts line 2 toward the fold. At least TAKE_MIN_VISIBLE characters of the second line,
+# or all of it when it is shorter, must sit inside the first FOLD characters. 40 is about one
+# rendered mobile line, so the reader sees a full line of the take with "see more" cutting into
+# it. The move is the hook pattern in config/linkedin_caption_rubric.yaml, the number, then the
+# stall, then the stake on line 1 (about 95 characters at most), and the take opening line 2.
+TAKE_MIN_VISIBLE = 40
+
+
+def fold_view(text):
+    """What a mobile reader sees before "see more", and how much of line 2 is in it.
+
+    Returns (above_fold, line2, line2_start, line2_visible). line2 is the second non-empty line
+    (None for a one-line post) and line2_start its offset in the text, newlines counted."""
+    t = text.rstrip("\n")
+    above = t[:FOLD]
+    starts, pos = [], 0
+    for ln in t.split("\n"):
+        if ln.strip():
+            starts.append((pos, ln))
+        pos += len(ln) + 1
+    if len(starts) < 2:
+        return above, None, None, 0
+    s2, l2 = starts[1]
+    return above, l2, s2, max(0, min(len(l2), FOLD - s2))
 BANNED_PUNCT={"—":"em dash","–":"en dash",";":"semicolon",":":"colon","“":"curly quote","”":"curly quote","‘":"curly quote","’":"curly apostrophe"}
 # Sources + music/voice credit belong in the copy-paste COMMENT block (dispatch_email.py), never
 # in the post body (2026-07-21 owner catch: they got pasted into the post AND duplicated, and the
@@ -146,8 +178,23 @@ def lint(text):
     hook=nonempty[0].strip() if nonempty else ""
     m["hook"]=hook; m["hook_len"]=len(hook)
     if not hook: fails.append("HOOK: empty first line")
-    elif len(hook)>FOLD: fails.append(f"HOOK: first line {len(hook)} chars > {FOLD} mobile fold — the hook gets cut before 'see more'")
+    elif len(hook)>FOLD:
+        n_sent = len(re.findall(r"[.!?](?=\s|$)", hook))
+        split = (f" It holds {n_sent} sentences on one line, and the whole first line is the hook "
+                 f"here. Put a line break after the first sentence so the second becomes line 2."
+                 if n_sent > 1 else "")
+        fails.append(f"HOOK: first line {len(hook)} chars > {FOLD} mobile fold — the hook gets cut before 'see more'.{split}")
     if hook and hook[-1] not in ".!?\"" and len(hook)<40: warns.append("HOOK: very short opener — make sure it actually stops the scroll")
+    # FOLD (machine pass 2026-10-28). Line 2 counts toward the fold, see TAKE_MIN_VISIBLE.
+    above, line2, s2, vis = fold_view(t)
+    m["above_fold"] = above; m["line2_start"] = s2; m["line2_visible"] = vis
+    need = min(TAKE_MIN_VISIBLE, len(line2)) if line2 is not None else 0
+    if hook and len(hook) <= FOLD and line2 is not None and vis < need:
+        cut = s2 - (FOLD - need)
+        fails.append(f"FOLD: line 2 starts at character {s2}, so only {vis} of its characters show above "
+                     f"the {FOLD} character fold (need {need}, {TAKE_MIN_VISIBLE} or all of it when shorter). "
+                     f"The take never counts toward the hook. Cut line 1 by at least {cut} characters, "
+                     f"the number, then the stall, then the stake, and open line 2 with the take.")
     # length
     if body_chars>HARD_MAX: fails.append(f"LENGTH: {body_chars} chars > {HARD_MAX} LinkedIn hard cap")
     elif not (LO<=body_chars<=HI): fails.append(f"LENGTH: {body_chars} chars outside {LO}-{HI} (sweet spot 1300-1900)")
@@ -311,10 +358,38 @@ def self_test():
     sample = "\n\n".join(["A plain hook line about Nome.", "My read is that it holds.", "Why?"])
     if not any(f.startswith("VOICE:") for f in lint(sample)[0]):
         bad.append("lint() did not fail a caption saying 'My read is'")
+    # FOLD rule (2026-10-28). Replayed on the shipped posts, line 2 shows 2 to 33 characters above
+    # the fold on 10-15 to 10-25 and 10-28, which is what the scorer's Hook notes described, and
+    # 55 and 51 on 10-21 and 10-26.
+    fold_ok = {"runs/2026-10-21/post.txt": True, "runs/2026-10-26/post.txt": True,
+               "runs/2026-10-17/post.txt": False, "runs/2026-10-23/post.txt": False,
+               "runs/2026-10-28/post.txt": False}
+    for rel, want in fold_ok.items():
+        path = os.path.join(repo, rel)
+        if not os.path.exists(path):
+            bad.append(f"{rel} is missing, so the fold replay can't run")
+            continue
+        got = not any(f.startswith("FOLD:") for f in lint(open(path, encoding="utf-8").read())[0])
+        if got != want:
+            bad.append(f"{rel} fold rule gave {'pass' if got else 'fail'}, expected {'pass' if want else 'fail'}")
+    short2 = "A" * 120 + ".\n\nShort take.\n\nWhy?"
+    if any(f.startswith("FOLD:") for f in lint(short2)[0]):
+        bad.append("FOLD failed a short line 2 that fits whole above the fold")
+    long2 = "A" * 120 + ".\n\n" + "B" * 60 + ".\n\nWhy?"
+    ff = [f for f in lint(long2)[0] if f.startswith("FOLD:")]
+    if not ff or "at least 23 characters" not in ff[0]:
+        bad.append(f"FOLD did not fail a 17 character take opening with the right cut: {ff}")
+    if any(f.startswith("FOLD:") for f in lint("One line only, nothing below it?")[0]):
+        bad.append("FOLD fired on a one-line post")
+    two = "One June day a sonar counted 855,936 sockeye in the river. " * 3 + "And more."
+    hf = [f for f in lint(two + "\n\nTake.\n\nWhy?")[0] if f.startswith("HOOK:")]
+    if not hf or "line break after the first sentence" not in hf[0]:
+        bad.append(f"an overlong two-sentence hook did not get the split hint: {hf}")
     for b in bad:
         print("  ✗ " + b)
     print(f"caption_check self-test: {'FAIL' if bad else 'PASS'} ({len(flagged)} flagged, "
-          f"{len(clean)} clean, {len(shipped)} shipped captions replayed)")
+          f"{len(clean)} clean, {len(shipped)} shipped captions replayed, "
+          f"{len(fold_ok)} fold replays)")
     return 1 if bad else 0
 
 def main():
