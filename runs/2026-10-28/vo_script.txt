@@ -1,0 +1,16 @@
+One day in June, an Alaska Fish and Game sonar on the Nushagak River counted more than eight hundred fifty thousand sockeye.
+On the Kenai, its sonar estimated one point one million this summer.
+Fish and Game runs fifteen sonar sites, on thirteen Alaska rivers.
+On October fifteenth, researchers at Caltech and M I T posted a preprint, C F C twenty six, a test for A I that counts fish in sonar video.
+The preprint says experts count sonar video by hand, tallying fish across a center line. It doesn't say who runs these sonars.
+It says counts like these guide harvest limits and river management.
+Its data holds eleven sites on nine river systems. Four sites are in Alaska, three on the Kenai and one on the Nushagak.
+Can that A I count a river it has never seen?
+The authors also score which way a model misses, too high or too low.
+Hold a Kenai bank out of training, and the average miss still stayed under seven percent on the left bank and three on the right. The lean stayed near zero.
+Hold the Nushagak out, and it missed by about three and a half percent.
+Practitioners told the authors that two people counting one video differ by about ten percent. That's a rough figure for something else, not a score the model beat.
+California's Mad River was one of the hard ones. The miss was about a third in training, and rose to eighty percent held out.
+One Kenai site, the channel, saw its miss double when held out, from fourteen percent to twenty nine.
+The authors say they built it for deployment. Nothing in the preprint says an agency uses it.
+With each river held out, three of four Alaska sites held up, and California's Mad River didn't. What's still missing is a count somebody uses.

@@ -1,0 +1,354 @@
+{
+ "run_date": "2026-10-28",
+ "fact_check_verdict": "Publish as a benchmark preprint with the OOD column of Table 7. Held out, the Alaska sites mostly held up and California sites broke. No deployment claim. The appendix text's -0.65 Nushagak figure is not in Table 7 and is omitted.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "On October fifteenth, researchers at Caltech and M I T posted a preprint called C F C twenty six.",
+   "on_screen": "PREPRINT \u00b7 OCT 15TH \u00b7 CALTECH + MIT",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "A preprint, not peer reviewed. Say preprint every time it is introduced."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "It is a test for sonar fish counting.",
+   "on_screen": "A TEST FOR SONAR FISH COUNTING",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "It is a dataset and evaluation benchmark. Never say it is deployed or used by any agency."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "Fish And Game runs fifteen sonar sites on thirteen rivers in Alaska.",
+   "on_screen": "15 SONAR SITES \u00b7 13 RIVERS \u00b7 ADF&G",
+   "source": "https://www.adfg.alaska.gov/index.cfm?ADFG=sonar.main",
+   "requires": [
+    "Attribute to Alaska Department of Fish and Game."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "At river mile nineteen of the Kenai, a sonar estimates the late run of sockeye.",
+   "on_screen": "KENAI MILE 19 \u00b7 1,111,781 \u00b7 SONAR ESTIMATE",
+   "source": "https://www.adfg.alaska.gov/sf/FishCounts/index.cfm?ADFG=main.displayResults&COUNTLOCATIONID=40&SpeciesID=420",
+   "requires": "The word is estimate, ADF&G's own word.",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "This summer that sonar estimated one point one million sockeye.",
+   "on_screen": "KENAI MILE 19 \u00b7 1,111,781 \u00b7 SONAR ESTIMATE",
+   "source": "https://www.adfg.alaska.gov/sf/FishCounts/index.cfm?ADFG=main.displayResults&COUNTLOCATIONID=40&SpeciesID=420",
+   "requires": [
+    "Say sonar estimate. Counts for the season ended August 10th. Single-page source."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "The busiest day was July twenty fourth, with about one hundred seventy two thousand fish.",
+   "on_screen": "JULY 24TH \u00b7 171,844",
+   "source": "https://www.adfg.alaska.gov/sf/FishCounts/index.cfm?ADFG=main.displayResults&COUNTLOCATIONID=40&SpeciesID=420",
+   "requires": [
+    "Largest daily count of 2026 on the ADF&G page. Say sonar count.",
+    "Not shown in the film: the number is not spoken."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "must_ship": false
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "On the Nushagak, one day in June counted more than eight hundred fifty thousand sockeye.",
+   "on_screen": "NUSHAGAK \u00b7 JUNE 28TH \u00b7 SONAR COUNT",
+   "source": "https://www.adfg.alaska.gov/sf/FishCounts/index.cfm?ADFG=main.displayResults&COUNTLOCATIONID=51&SpeciesID=420",
+   "requires": [
+    "Say sonar count. 2026 ADF&G daily table.",
+    "The exact 2026 daily count of 855,936 (June 28th) is the ADF&G Nushagak daily table figure, verified by direct fetch; the VO says more than eight hundred fifty thousand."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "Today, the preprint says, those counts come from sonar video that experts inspect by hand.",
+   "on_screen": "EXPERTS WATCH THE VIDEO \u00b7 PER PREPRINT",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Attribute to the preprint, NOT to ADF&G. Do not say ADF&G staff do this."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "Its data holds eleven sites on nine river systems, four of them in Alaska.",
+   "on_screen": "11 SITES \u00b7 9 RIVER SYSTEMS",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Kenai's three sites share one river system."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "Four of those sites are Alaskan, three on the Kenai and one on the Nushagak.",
+   "on_screen": "ALASKA \u00b7 3 KENAI SITES + 1 NUSHAGAK",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Paper does not say who runs the sonars. Never attribute the footage to ADF&G."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "That is four thousand three hundred sixty three clips and a little over a million boxes drawn around fish.",
+   "on_screen": "4,363 CLIPS \u00b7 1.0M+ BOXES",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Say a little over, never double. 1,007,877 boxes."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "The preprint says the Alaskan sites have larger, denser populations.",
+   "on_screen": "ALASKA \u00b7 LARGER, DENSER POPULATIONS \u00b7 PER PREPRINT",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Attribute to the preprint. Never link density to any result."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "The authors add a score that says whether a model miscounts in one direction.",
+   "on_screen": "NEW SCORE \u00b7 DIRECTION OF ERROR",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "nMANE: negative means undercounting in the dominant direction of fish movement. Say dominant direction, never upstream."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "At the Kenai banks, that score stayed near zero.",
+   "on_screen": "NEAR ZERO, NOT ZERO",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Held out, the direction score nMANE was -0.036 (left) and -0.017 (right): small, negative, near zero. Say near zero, never zero. Dominant direction, never upstream."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "Hold a Kenai bank out of training, and the average miss still stayed under seven percent on the left bank and three on the right.",
+   "on_screen": "LEFT BANK \u00b7 MISS UNDER 0.07 (7%)",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Table 7 OOD column (target river held out): Kenai-Left 0.069 and Kenai-Right 0.025 nMAE, text: generally below 0.07 and 0.03 across all training conditions. Say held out. Never say the bank was in training."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "Fish counters expect about ten percent disagreement between two people counting the same video.",
+   "on_screen": "ABOUT 10% APART \u00b7 INFORMAL",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Authors cite informal talks with practitioners, not a measurement."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "Hold a whole river out of training and test on it.",
+   "on_screen": "CAN IT COUNT A RIVER IT NEVER SAW?",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Entire locations are excluded during training and used only for evaluation (OOD). The preprint runs this test for every site."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "On California's Mad River, the miss rose from about a third to eighty percent when it was held out.",
+   "on_screen": "CALIFORNIA \u00b7 IN TRAINING 0.33 \u00b7 HELD OUT 0.80",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Mad River is a California river, not Alaska. nMAE 0.333 with Mad in training, 0.800 held out (Table 7). The preprint says California rivers (Klamath, Mad, Eel) feature small, sparsely distributed fish. State that as the authors' description only, give no cause for any error."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "The authors say they built it for deployment, and nothing in the preprint says a state agency uses it.",
+   "on_screen": "NO AGENCY USE REPORTED",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Title says Evaluations for Deployment. No deployment is reported."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "Humans get a count by tallying fish that cross a center line in each direction.",
+   "on_screen": "TALLY OF CROSSINGS, EACH DIRECTION",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Attribute to the preprint (Section 3: Humans determine net fish passage by counting crossings across a center line in each direction). Do not say ADF&G does it this way."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-primary",
+   "spoken": "The preprint says counts like these guide harvest limits and river management.",
+   "on_screen": "COUNTS GUIDE HARVEST LIMITS \u00b7 PER PREPRINT",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Attribute to the preprint's motivation (counts are essential for conservation, harvest limits and river management). Motivation only, no deployment or management use of the model is reported."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "Hold the Nushagak out, and it missed by about three and a half percent.",
+   "on_screen": "NUSHAGAK HELD OUT \u00b7 MISS 0.035 (3.5%)",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Table 7 OOD nMAE 0.035 for Nushagak (0.028 with the river in training). Held out means excluded from training. Preprint benchmark, not field use."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-primary",
+   "spoken": "One Kenai site, the channel, doubled from fourteen percent to twenty nine.",
+   "on_screen": "KENAI CHANNEL \u00b7 IN TRAINING 0.14 \u00b7 HELD OUT 0.29",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Table 7 nMAE for Kenai-Channel 0.143 in training, 0.286 held out. A hard Alaska site, shown so the Alaska result is not cherry-picked. Give no cause."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-primary",
+   "spoken": "",
+   "on_screen": "KENAI HELD OUT \u00b7 0.07 AND 0.03",
+   "source": "https://arxiv.org/html/2610.22549v1",
+   "requires": [
+    "Same Table 7 held-out Kenai bank values as c15, drawn on the same 0 to 0.80 track as the Mad River bars so the scale is honest."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "do_not_say": [
+  "that the preprint reports no held-out Alaska number (Table 7 reports one for every site)",
+  "that a Kenai bank was trained on",
+  "Nushagak -0.65",
+  "a cause for any error",
+  "that ADF&G operates or supplied the footage or uses AI counting",
+  "double the dataset",
+  "Kenai nMANE is zero",
+  "peer reviewed",
+  "counts are small (use the authors' small, sparsely distributed fish)"
+ ]
+}
