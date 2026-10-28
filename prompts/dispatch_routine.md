@@ -471,6 +471,11 @@ ANALYST agents. Each reads the full fact-check-safe set (and its sources) plus c
   menu cannot be falsified; Gate 0E killed that angle twice and four VO drafts died on it).
 - THESIS (one sentence), WHY IT'S TRUE (the evidence, and the strongest point AGAINST it that it
   survives), WHO IT SERVES, and VALENCE wherever the facts land, defended as the honest one.
+- AN ABSENCE IS CHECKED IN THE PRIMARY TABLE BEFORE IT IS A THESIS (2026-10-28). Before any angle
+  says a source has "no X" or "doesn't report X", fetch the full primary document (the paper's HTML
+  or PDF, every results table and appendix, not the abstract or a news write-up) and search it for
+  X. Name the tables and sections searched in the proposal. The first 10-28 angle said the preprint
+  had no held-out Alaska number, Table 7 reported one for every site, and the back half was rebuilt.
 - A SECOND MOVEMENT: a take fully stated in forty seconds can't carry two minutes. Name the fact
   that recontextualises the first, and the strongest fair case against the thesis that deserves a
   scene of its own.
