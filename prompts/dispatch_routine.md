@@ -964,6 +964,10 @@ breaks a house rule.
    COMMITTED, and never `git add -f` it (2026-10-02: four runs force-added scratch, and the 09-30
    lock arrived in the next clone without its receipt, so run_guard refused and no film shipped).
    Evidence that must survive goes in `archive/` or `runs/<date>/`. `.githooks/pre-commit` refuses it.
+   That includes the FINAL panel's three cards, as `runs/<date>/panel_cards.json` beside the
+   verdict: `{"j1": {...}, "j2": {...}, "j3": {...}, "named_open_defects": [...]}`, each seat with
+   its `axis_scores`, `concrete_defects` and `hard_blockers`. `scripts/week_digest.py` counts the
+   weekly machine pass's axes from these, and on 2026-10-29 eleven of twelve films had archived none.
 
 ## PHASE 8: RETRO (every run, short)  (`run_cost.py phase retro`, before step 3 of Phase 7)
 

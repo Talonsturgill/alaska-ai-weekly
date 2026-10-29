@@ -50,25 +50,46 @@ def _num(x):
     return isinstance(x, (int, float)) and not isinstance(x, bool)
 
 
+def _axis_key(name):
+    """One spelling per axis: the rubric writes 'VO–illustration' with an en dash, the judges
+    type a hyphen, and older cards escape the ampersand."""
+    return re.sub(r"[‐-―]", "-", html.unescape(str(name))).strip()
+
+
 def axis_scores(card):
-    """{axis: score} out of a judge card, whichever of the shapes the panel has used."""
+    """{axis: score} out of a judge card, whichever of the shapes the panel has used: `axes` as a
+    dict or a list (through 2026-10-05) and `axis_scores` as a dict (from 2026-10-29)."""
     ax = card.get("axes")
+    if ax is None:
+        ax = card.get("axis_scores")
     out = {}
     if isinstance(ax, dict):
         for k, v in ax.items():
             s = v.get("score") if isinstance(v, dict) else v
             if _num(s):
-                out[html.unescape(str(k))] = float(s)
+                out[_axis_key(k)] = float(s)
     elif isinstance(ax, list):
         for a in ax:
             if isinstance(a, dict) and _num(a.get("score")):
-                out[html.unescape(str(a.get("name") or a.get("axis")))] = float(a["score"])
+                out[_axis_key(a.get("name") or a.get("axis"))] = float(a["score"])
     return out
+
+
+def expand_cards(obj):
+    """A `panel_cards.json` holds every seat under j1, j2, j3 plus the run's named open defects.
+    Split it into one card per seat, and carry the named defects on a card of their own so they
+    reach the digest verbatim without being counted as a judge."""
+    seats = [v for k, v in obj.items() if re.fullmatch(r"j\d+", str(k)) and isinstance(v, dict)]
+    if not seats:
+        return [obj]
+    named = obj.get("named_open_defects") or obj.get("concrete_defects") or []
+    return seats + ([{"concrete_defects": list(named)}] if named else [])
 
 
 def digest(items, axes, queue_text, upgrades_tail, end, days):
     """items: [(date, source, kind, obj)] where kind is 'verdict' or 'card'. Pure, for the self-test."""
     weakest, mentioned, cards, verdicts, defects = {}, {}, 0, [], []
+    axes = [_axis_key(a) for a in axes]
     for date, src, kind, obj in items:
         if kind == "verdict":
             notes = str(obj.get("notes") or "")
@@ -89,6 +110,9 @@ def digest(items, axes, queue_text, upgrades_tail, end, days):
                 defects.append((date, src, str(d)[:300]))
             for b in obj.get("hard_blockers") or []:
                 defects.append((date, src, "HARD BLOCKER: " + str(b)[:300]))
+            note = obj.get("note") or obj.get("notes")
+            if sc and note:
+                defects.append((date, src, "card note: " + str(note)[:300]))
     films = sorted({d for d, *_ in items})
     L = [f"# The Dispatch machine digest, {len(films)} film date(s) in the {days} days to {end}", "",
          "Computed by `scripts/week_digest.py` from the git history of the panel's verdicts and "
@@ -102,6 +126,12 @@ def digest(items, axes, queue_text, upgrades_tail, end, days):
         L.append(f"| {a} | {len(ds)} | {', '.join(sorted(set(ds)))} |")
     if not weakest:
         L.append("| no judge card with axis scores | 0 | |")
+    carded = {d for d, _, k, o in items if k == "card" and axis_scores(o)}
+    bare = sorted({d for d, *_ in verdicts} - carded)
+    if bare:
+        L += ["", f"{len(bare)} of {len(verdicts)} verdict(s) archived no judge card with axis scores "
+              f"({', '.join(bare)}), so this table under-counts. Phase 7 step 4 archives the final "
+              "seats' cards as `runs/<date>/panel_cards.json`."]
     L += ["", "## The axes the verdict notes name, by film date", "", "| axis | films |", "|---|---|"]
     for a, ds in sorted(mentioned.items(), key=lambda x: (-len(x[1]), x[0])):
         L.append(f"| {a} | {len(ds)} ({', '.join(sorted(ds))}) |")
@@ -147,18 +177,52 @@ def git_items(end, days):
             if isinstance(obj, dict):
                 items.append((str(obj.get("run_date") or date), path,
                               "verdict" if path.endswith("panel_verdict.json") else "card", obj))
-    for d in sorted((REPO / "archive").glob("dispatch-*")):
-        m = re.match(r"dispatch-(\d{4}-\d{2}-\d{2})", d.name)
-        if not m or not (start <= m.group(1) <= end.isoformat()):
+    # Since 2026-09-30 the verdict a run ships is archived as runs/<date>/panel_verdict.json
+    # (and, on some runs, its cards as panel_cards.json or panel_j<n>.json), while out/ is never
+    # committed, so the out/dispatch history above is empty for every recent film. Reading only
+    # archive/ and out/ is what made the 2026-10-29 digest print 0 film dates over 11 shipped films.
+    dirs = [(re.match(r"dispatch-(\d{4}-\d{2}-\d{2})", d.name), d)
+            for d in sorted((REPO / "archive").glob("dispatch-*"))]
+    dirs += [(re.fullmatch(r"(\d{4}-\d{2}-\d{2})", d.name), d) for d in sorted((REPO / "runs").glob("*"))]
+    for m, d in dirs:
+        if not m or not d.is_dir() or not (start <= m.group(1) <= end.isoformat()):
             continue
         for f in sorted(d.glob("panel_*.json")):
-            try:
-                obj = json.loads(f.read_text())
-            except ValueError:
-                continue
-            kind = "verdict" if f.name == "panel_verdict.json" else "card"
-            items.append((m.group(1), str(f.relative_to(REPO)), kind, obj))
+            _add_file(items, seen, m.group(1), f)
+    # The run in progress: its cards are still in out/dispatch, under the panel_j<n> name.
+    live = REPO / "out" / "dispatch"
+    if (live / "panel_verdict.json").exists():
+        try:
+            rec = str(json.loads((live / "panel_verdict.json").read_text()).get("recorded_at") or "")[:10]
+        except ValueError:
+            rec = ""
+        if start <= rec <= end.isoformat():
+            for f in sorted(live.glob("panel_*.json")):
+                if f.name == "panel_verdict.json" and (REPO / "runs" / rec / f.name).exists():
+                    continue  # the archived copy is the shipped verdict
+                _add_file(items, seen, rec, f)
     return items
+
+
+def _add_file(items, seen, date, f):
+    """One archived panel file into items, skipping a byte-identical copy already read."""
+    try:
+        raw = f.read_text()
+        obj = json.loads(raw)
+    except (OSError, ValueError):
+        return
+    h = hashlib.sha256(raw.encode()).hexdigest()
+    if h in seen or not isinstance(obj, dict):
+        return
+    seen.add(h)
+    try:
+        src = str(f.relative_to(REPO))
+    except ValueError:
+        src = str(f)
+    if f.name == "panel_verdict.json":
+        items.append((date, src, "verdict", obj))
+    else:
+        items.extend((date, src, "card", c) for c in expand_cards(obj))
 
 
 def self_test():
@@ -188,6 +252,26 @@ def self_test():
     checks.append((ed["films"] == 0 and "no judge card" in e, "an empty window says so rather than failing"))
     live = git_items(dt.date(2026, 10, 3), 30)
     checks.append((isinstance(live, list), "the live git history reads"))
+    # The 2026-10-29 card shape: axis_scores, a hyphen where the rubric has an en dash, a note.
+    new = [("2026-10-29", "j1", "card", {"axis_scores": {"Motion & animation craft": 6.0,
+                                                          "VO-illustration sync & entertainment": 6.0,
+                                                          "Color & grade": 7.5},
+                                          "note": "round 1 card, ghost server"})]
+    nt, nd = digest(new, ["Motion & animation craft", "VO–illustration sync & entertainment"],
+                    "", "", dt.date(2026, 10, 29), 14)
+    checks.append((nd["cards"] == 1 and nd["weakest"].get("VO-illustration sync & entertainment") == 1
+                   and nd["weakest"].get("Motion & animation craft") == 1,
+                   "an axis_scores card counts, and a hyphen and an en dash are the same axis"))
+    checks.append(("card note: round 1 card, ghost server" in nt, "a card's note reaches the digest"))
+    seats = expand_cards({"j1": {"weighted_total": 7.3}, "j2": {"weighted_total": 7.1}, "median": 7.1,
+                          "named_open_defects": ["moose finish lags"]})
+    checks.append((len(seats) == 3 and seats[-1] == {"concrete_defects": ["moose finish lags"]},
+                   "a panel_cards.json splits into its seats plus its named defects"))
+    # The regression this guards: 0 film dates on 2026-10-29 while runs/ held eleven verdicts.
+    recent = git_items(dt.date(2026, 10, 29), 14)
+    rfilms = {d for d, _, k, _ in recent if k == "verdict"}
+    checks.append((len(rfilms) >= 5, f"the shipped verdicts under runs/ are read ({len(rfilms)} film dates "
+                                     "in the 14 days to 2026-10-29)"))
     for ok, msg in checks:
         print(("ok   " if ok else "FAIL ") + msg)
     bad = sum(1 for ok, _ in checks if not ok)
