@@ -1,0 +1,17 @@
+{
+ "thesis": "Alaska's development authority bought discounted shares in a reactor startup, not a reactor: the AI in the pitch is NuCube's own market boilerplate, and the size, site, price and date for Alaska are still blank, so the honest read is what the documents fill in and what they leave open.",
+ "supporting_facts": [
+  "c15 none of the three documents gives a size, site, price or date for a NuCube reactor in Alaska",
+  "c4/c5/c7 $9.25 a share, about 14.5% under the reference price, counts toward the $75M the merger needs to close",
+  "c12/c13/c14 AI appears once, in NuCube's market-trends sentence, never in the Alaska paragraphs, and AIDEA lists data centers but never AI"
+ ],
+ "counterpoint_honored": "Blanks are normal for early equity, and the discount and warrants (c5, c8) are what blanks pay for. Even the one dated Alaska reactor (Oklo, early 2030s, c19) is years out, so no reactor from any company helps the winter shortage Enstar sizes at 18 days (c21). AIDEA wrote the conditions itself (c16).",
+ "falsifiable": "False if any of the three documents gives NuCube a size, site, price or date in Alaska, or if AIDEA's text names AI as the reason for the purchase.",
+ "valence": "even-handed, leaning constructive",
+ "stance": "mixed",
+ "runner_ups": [
+  "hopeful 'paid to be in the room' (loses: the seat metaphor implies governance rights no claim supports)",
+  "two clocks (kept as the second movement: winter gas versus the 2030s)"
+ ],
+ "cross_challenge": "All three analysts converged on blanks-versus-terms. Challenges applied: no 'seat', no 'signed', no AI-as-reason, Oklo is early 2030s never 2030 never paused, c23 reworded to avoid banned 'matters'."
+}

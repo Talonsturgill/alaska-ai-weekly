@@ -1,0 +1,135 @@
+{
+ "run_date": "2026-10-29",
+ "story_id": "aidea-nucube-microreactor-blanks",
+ "palette": {
+  "roles": {
+   "sky": "#1E1430",
+   "ground": "#CBD5EC",
+   "hero": "#C9741F",
+   "accent": "#F2C14E",
+   "shadow": "#0E0B1A",
+   "paper": "#EBD9A0",
+   "ink": "#0E0B1A",
+   "unknown": "#8FE3F2",
+   "stamp": "#D93A3A",
+   "frost": "#F4F8FF",
+   "dusk_band": "#9A4A78",
+   "plane": "#E4D9B8"
+  },
+  "mood": "Freight depot at twenty below, dusk. Aubergine sky with a thin narrow rose-violet horizon band, blue-white snow, one warm ember-orange hero, manila shipping tags, gold only for money, ice cyan only for the dashed unknown NuSun outline and blank lines, stamp red only on NOT STATED. Wry and fair, not sour.",
+  "divergence": "Last five: a near-black submerged sonar world with mint (10-28), a sage and honey civic hall (10-26), a cedar boardwalk in teal fog (10-25), a navy orbit (10-24) and a snow-bound paper building (10-23). Also checked against 10-18 (rose alpenglow, lilac snow, plum window) and 10-22 (dusk violet and apricot tundra): this film's sky is deep aubergine black (#1E1430) with a NARROW rose-violet horizon band (#9A4A78), a blue-white snow ground, an ember-orange hero, cream aircraft and manila tags, and half its shots are interiors (cold mailroom, lamp-lit desk, shed wall) that neither earlier film had. Register is tactile paper collage of tags, stamps and corkboard rather than a painted tundra."
+ },
+ "light": {
+  "time": "Dusk, twenty below",
+  "direction": "Low narrow rose-violet horizon light from the left rakes the snow; Sourdough's furnace window is the warm key on whatever is near him; each tag carries a small warm bounce",
+  "depth": "Four planes: far ridge and sky band, mid depot sheds and a power pole line, hero plane with crate and tag, near plane of snow drift and a plank edge at z 170 under the caption band. lib/lighting.tsx RimLight + ContactShadow for every grounded object; the dashed NuSun outline is shadowless by design.",
+  "per_shot": {
+   "depot-yard shots 1,3,5,8,9,12,13": "narrow rose-violet horizon rim from the left, an ember key from Sourdough's furnace window on whatever is near him, snow lit blue-white from the sky; shot 9 adds a warm pole-light cone (amber, one stop under the yard) and a dim of 0.22; shot 5 has a pole light at the left edge",
+   "interiors 6,7": "amber lamp key one stop under the yard with a plank or wall near plane; mean luminance below the yard shots",
+   "shot 2 mailroom": "cold fluorescent key from a tube at the top, blue-grey plaster, no warm light except the tag; the coldest interior",
+   "shot 4 tag macro": "the yard at dusk dimmed 0.18, the tag lit by the sky with a soft manila bounce",
+   "shot 10 map": "flat overcast top light on a paper map, the pin self-lit in ink, no raking light",
+   "shot 11 calendar wall": "cold frost key at least half a stop dimmer than shot 8, hue colder than shot 1, frost creeping across the window and the calendar",
+   "binding probes": "mean luminance order: shot 8 yard above shot 9 yard above shot 11 wall; the interior warm hue (shots 6,7) between 25 and 40 degrees; shot 11 hue colder than shot 1"
+  }
+ },
+ "shape_language": {
+  "grammar": "Round, warm, blocky Sourdough against rectilinear tags, crates and a calendar; the unknown is always a DASHED OUTLINE with no fill. Nothing in the film is a reactor-shaped solid.",
+  "why": "The honest drawing of NuSun is a dashed outline with four blank lines, so the hero is round and the paperwork is rectilinear and the absence reads instantly."
+ },
+ "casting": {
+  "hero": "Sourdough",
+  "inventory": [
+   {
+    "beats": "all",
+    "subject": "Sourdough, ember power plant (proud, confident, faltering)",
+    "source": "shelf kit.tsx Sourdough"
+   },
+   {
+    "beats": "1,41",
+    "subject": "cream bush plane (not red), skims the depot and drops the crate and the coins",
+    "source": "shelf vehicles.tsx BushPlane, body #E4D9B8"
+   },
+   {
+    "beats": "all tag shots",
+    "subject": "NUSUN shipping tag (blank front, share terms back), tag post, condition blocks",
+    "source": "net-new lib/depot.tsx NuSunTag, TagPost, Chip"
+   },
+   {
+    "beats": "all",
+    "subject": "NuSun dashed ice-cyan outline and Oklo ink dashed outline with paper hatch and a filled tag",
+    "source": "net-new lib/depot.tsx NuSunOutline (variants unknown and oklo)"
+   },
+   {
+    "beats": "1,12,13",
+    "subject": "crate with slats, lid and straw",
+    "source": "net-new lib/depot.tsx Crate"
+   },
+   {
+    "beats": "4-6",
+    "subject": "cork board mailroom, press release, stamps",
+    "source": "net-new lib/depot.tsx Mailroom, PaperDoc"
+   },
+   {
+    "beats": "16-18",
+    "subject": "glass jar on a plank sled, coin stream, AIDEA block, pole light",
+    "source": "net-new lib/depot.tsx MergerJar, Sled, CoinStream, PoleLight"
+   },
+   {
+    "beats": "19-21",
+    "subject": "NuCube filing, AI count box, ghost server cameo",
+    "source": "net-new CountBox, shelf kit.tsx ServerMachine ghost"
+   },
+   {
+    "beats": "22-24",
+    "subject": "four paper blocks on pegs, an empty dashed AI slot",
+    "source": "net-new lib/depot.tsx Chip, shed wall"
+   },
+   {
+    "beats": "30-32",
+    "subject": "banknote block with a face",
+    "source": "shelf lib/grid.tsx CashBlock"
+   },
+   {
+    "beats": "33-35,45",
+    "subject": "painted Alaska map with pin, drill bit",
+    "source": "shelf akmap.ts AK_PATH, local drill"
+   },
+   {
+    "beats": "46-49",
+    "subject": "wall calendar, frosted shed wall",
+    "source": "net-new lib/depot.tsx Calendar, Shed"
+   },
+   {
+    "beats": "38-40",
+    "subject": "share certificate",
+    "source": "local Certificate"
+   }
+  ],
+  "net_new": "lib/depot.tsx: NuSunTag, TagPost, NuSunOutline, Crate, Calendar, MergerJar, CoinStream, Sled, PoleLight, Mailroom, CountBox, PaperDoc, Chip, DepotBG, NearDrift. Registered in ASSET_MANIFEST.md before the first cut. Cell is dropped from the cast.",
+  "continuity": "The tag is always the same manila object. Its front stays blank to the last frame. NuSun is never drawn as a solid. Oklo's reactor is also a dashed outline with its two stated numbers, labelled OKLO."
+ },
+ "motion_language": {
+  "grammar": "Entrances overshoot and settle; the tag swings on its string with a cloth-like flutter; coins and tally digits roll with spring; Sourdough breathes and his furnace glow tracks the beat (proud at the open, faltering at the four blanks, confident at the fair case).",
+  "hero_moves": [
+   "The BushPlane skims in and the crate thumps into the snow, Sourdough rocks back, and the tag whips round to camera",
+   "The share-price sticker folds from $10.82 down to $9.25 and a half-ticket tears off",
+   "Sourdough hangs a price tag on the dashed NuSun outline and it falls straight through into the snow",
+   "The calendar slams down 18 days and frost creeps over both tags"
+  ],
+  "blur": "Directional blur on the plane flyby and the calendar slam; everything else crisp. Whole-frame kicks at most 3."
+ },
+ "composition": {
+  "staging": "9:16 composed for the vertical: sky and plane in the top third, hero plane y 420-1500 for the square, near drift and caption card in the lower third. Plates sit in one slot at y 500 to 540 and replace each other, clear of the tag string.",
+  "focal": "The tag is the focal object in every shot except 6 and 7 (the filing) and 11 (the calendar).",
+  "signature_shot": "Shot 8 (66.8 to 76.5 s): the NUSUN tag face on between Sourdough and the dashed NuSun outline, four red NOT STATED stamps landing from 70.2 s in one dragged stroke after the first, Sourdough's window gutering low, camera LOCKED (zoom 1.0, no drift) from 70.2 s to the end of the shot."
+ },
+ "craft_advance": "none required; film grows lib/depot.tsx only",
+ "binding_checks": {
+  "cyan": "#8FE3F2 only on the dashed NuSun outline, the blank ruled lines, the unknown AI slot and the empty question boxes. Oklo is ink.",
+  "stamp_red": "#D93A3A only on the NOT STATED stamps and the SIZE SITE PRICE DATE NOT STATED plate. The plane is cream, the calendar crossings ink, the AI NOT SAID stamp ink.",
+  "gold": "#F2C14E only on money: coins, the AIDEA block, the $9.25 sticker, the gold band (3 px ink keyline), the certificate seal and the plate that states the money amounts",
+  "near_plane": "snow drift in every yard shot, a plank counter in shots 6 and 7, the wall base in shot 11, the map frame in shot 10, the mailroom floor line in shot 2",
+  "hero_label": "The tag always reads NUSUN"
+ }
+}

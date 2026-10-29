@@ -1,0 +1,340 @@
+{
+ "run_date": "2026-10-29",
+ "fact_check_verdict": "Publish as a statement of what three documents say and don't. AIDEA bought shares in a reactor startup. The AI wording is NuCube's market boilerplate. AIDEA's own release lists data centers, never AI. No size, site, price or date for NuCube in Alaska.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "On October nineteenth, an Idaho company called NuCube Energy announced a twenty five million dollar investment from Alaska.",
+   "on_screen": "OCT 19TH \u00b7 NUCUBE ENERGY \u00b7 IDAHO",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Press release dated October 19th inside the SEC Form 425. Say announced, never signed."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "The money comes from AIDEA, the state's development authority.",
+   "on_screen": "AIDEA \u00b7 ALASKA INDUSTRIAL DEVELOPMENT AND EXPORT AUTHORITY",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "AIDEA is a state-backed investment authority. Attribute the purchase to AIDEA's release and NuCube's SEC filing."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "NuCube builds a small nuclear reactor called NuSun.",
+   "on_screen": "NUSUN \u00b7 SOLID-STATE, HEAT-PIPE-COOLED",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Exact wording: solid-state, heat-pipe-cooled reactor. Never state a size, price, site or date for NuSun."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "AIDEA agreed to buy twenty five million dollars of NuCube shares at nine dollars and twenty five cents each.",
+   "on_screen": "$9.25 A SHARE",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Class A ordinary shares. Attributed to the SEC Form 425."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "That is about fourteen and a half percent below the reference price of ten eighty two.",
+   "on_screen": "~14.5% BELOW",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Say reference price, the filing's term for the price used to set the exchange ratio."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "NuCube is in the middle of a merger with a company called Launch Two.",
+   "on_screen": "MERGER WITH LAUNCH TWO",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Say proposed or in the middle of, never completed."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "That merger needs seventy five million dollars in cash to close, and AIDEA's money counts toward it.",
+   "on_screen": "$75M CASH TO CLOSE",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "The filing's Minimum Cash Condition."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "AIDEA also gets half a warrant per share, to buy more at eleven fifty within five years.",
+   "on_screen": "HALF A WARRANT A SHARE \u00b7 $11.50 \u00b7 5 YEARS",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Exact wording: one-half of one warrant per share exercisable at $11.50 within 5 years."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "NuCube's chief executive called AIDEA the anchor investor.",
+   "on_screen": "\"ANCHOR INVESTOR\" \u00b7 CRISTIAN RABITI, NUCUBE CEO",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Quote: \"As our anchor investor, AIDEA gives us a solid capital foundation\". Anchor investor in the company's current financing. Attribute to Rabiti and the SEC filing."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "The governor said Alaska has always been a place where innovation is driven by necessity.",
+   "on_screen": "\"INNOVATION IS DRIVEN BY NECESSITY\" \u00b7 GOV. DUNLEAVY",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "Verbatim: \"Alaska has always been a place where innovation is driven by necessity.\" From AIDEA's release and the SEC filing, never Alaska Business."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "AIDEA's deputy director said affordable energy is about more than a utility bill.",
+   "on_screen": "\"MORE THAN A UTILITY BILL\" \u00b7 BRANDON BREFCZYNSKI, AIDEA",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "Verbatim: \"Affordable energy is about more than a utility bill.\" Source is AIDEA's release and Alaska Business, never the SEC filing. Title: Deputy Director."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "NuCube's own filing says the word AI once, in a list of market trends.",
+   "on_screen": "NUCUBE'S FILING \u00b7 \"AI DATA CENTER ENERGY DEMAND\" \u00b7 ONCE",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "The phrase sits in the forward-looking statements, a general market sentence, not Alaska-specific text. Say NuCube's own filing. 'AI' appears nowhere else in the filing."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "The paragraphs about Alaska never mention AI.",
+   "on_screen": "ALASKA PARAGRAPHS \u00b7 AI 0",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Checked against the SEC Form 425 quotes, headline and AIDEA paragraphs, and Alaska Business. Say the paragraphs about Alaska in the filing. Do not say no Alaska document anywhere."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "AIDEA's own release does list data centers, next to mining, seafood and manufacturing, as places cheaper energy could help.",
+   "on_screen": "AIDEA \u00b7 MINING \u00b7 SEAFOOD \u00b7 MANUFACTURING \u00b7 DATA CENTERS",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "A list item. The release never says AI. Do not say AIDEA bought it for data centers."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "None of the three documents gives a size, a site, a price or a date for a NuCube reactor in Alaska.",
+   "on_screen": "SIZE \u00b7 SITE \u00b7 PRICE \u00b7 DATE \u00b7 NOT STATED",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "Three documents read in full or by extraction: SEC Form 425, AIDEA release 19-2026, Alaska Business. Say in the three documents we read."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "AIDEA's release says the benefits depend on technology development, regulatory approvals, financing and host communities.",
+   "on_screen": "DEPENDS ON \u00b7 TECHNOLOGY \u00b7 APPROVALS \u00b7 FINANCING \u00b7 HOST COMMUNITIES",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "Paraphrase of the AIDEA caveat: depend on successful technology development, regulatory approvals, project financing, and work with prospective host communities."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "The release also says NuCube is committed to deploying its reactor in Alaska.",
+   "on_screen": "NUCUBE \u00b7 COMMITTED TO DEPLOYMENT IN ALASKA \u00b7 NO DATE",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "Attribute to AIDEA's release: NuCube is also committed to advancing the commercial deployment of its microreactor technology in Alaska. Open-ended, no number or date."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "The one reactor already planned for Alaska belongs to a different company, Oklo, at Eielson Air Force Base.",
+   "on_screen": "OKLO \u00b7 EIELSON AIR FORCE BASE",
+   "source": "https://oklo.com/projects-and-deployments/alaska",
+   "requires": [
+    "Oklo's project page. Say Oklo plans, never operating."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "Oklo says it should make at least five megawatts of electricity, in the early twenty thirties.",
+   "on_screen": "\u22655 MW ELECTRIC \u00b7 EARLY 2030s \u00b7 OKLO",
+   "source": "https://oklo.com/projects-and-deployments/alaska",
+   "requires": [
+    "Oklo's words: at least 5 MWe, target operations early 2030s following NRC licensing and other federal approvals. Never say 2030. Never say paused."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "Oklo says drilling to check the ground begins late this year.",
+   "on_screen": "BOREHOLE DRILLING \u00b7 LATE 2026 \u00b7 OKLO",
+   "source": "https://oklo.com/projects-and-deployments/alaska",
+   "requires": [
+    "Oklo's page: borehole drilling and ground investigations to begin late 2026."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-secondary",
+   "spoken": "Meanwhile Enstar's president says this winter's gas shortage is eighteen days, or three billion cubic feet.",
+   "on_screen": "ENSTAR'S PRESIDENT \u00b7 WINTER GAS SHORTAGE \u00b7 18 DAYS \u00b7 3 BCF",
+   "source": "https://www.adn.com/business-economy/energy/2026/09/15/small-cook-inlet-producer-says-it-has-funds-for-new-drilling-that-can-help-avert-gas-crisis-in-the-short-term/",
+   "requires": [
+    "Attribute to Enstar president John Sims via Anchorage Daily News, September 16th. Not a state figure."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "NuCube was one of four companies the Energy Department picked for its Nuclear Energy Launch Pad on April twenty seventh.",
+   "on_screen": "DOE LAUNCH PAD \u00b7 1 OF 4 \u00b7 APRIL 27TH",
+   "source": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "requires": [
+    "From AIDEA release 19-2026. Say according to AIDEA."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-primary",
+   "spoken": "The CEO said Alaska shows why dependable energy matters where traditional power is limited.",
+   "on_screen": "\"WHERE ACCESS TO TRADITIONAL POWER IS LIMITED\" \u00b7 RABITI",
+   "source": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "requires": [
+    "Rabiti in the SEC filing: Alaska illustrates the need for dependable energy where access to traditional power infrastructure can be limited."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "do_not_say": [
+  "that AIDEA invested for AI or data centers",
+  "that NuCube will build anything in Alaska by a date",
+  "that Oklo's Eielson project is paused (not found in 2026)",
+  "2030 for Oklo (Oklo says early 2030s)",
+  "5 MW as the reactor size (it is at least 5 MWe, about 60 MWth)",
+  "that USNC went bankrupt or its patents moved (single secondary source, unverified)",
+  "founded 2023 (co-founded by Rabiti in 2023 per Alaska Business only)",
+  "that Alaska is the first state to invest",
+  "signed October 19th (announced)",
+  "anything about Copper Valley Valdez as a current plan"
+ ]
+}

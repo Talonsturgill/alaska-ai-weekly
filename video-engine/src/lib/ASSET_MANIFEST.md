@@ -991,3 +991,13 @@ For any story about a sensor that counts, a model that reads imagery, or a resul
 - `Odometer` NET-NEW 2026-10-28, a brass bezel with N rolling digit wheels (`value` is continuous, `digits`, `commas`, `size`, `label`); the last wheel rolls between integers. ACTIVE.
 - `SonarWater` NET-NEW 2026-10-28, the backdrop: green-black water gradient (`mood` night/dusk/fog), a rippling surface band and far-bank silhouette at the top, range lines, two speeds of motes, optional `bank`. ACTIVE.
 - `fanPath(R, a0, a1)` the wedge path helper. Episode-local in Ep1028.tsx, candidates for promotion: `NearBank`, `Gauge`, `Sheet`, `Stamp`.
+
+## THE DEPOT KIT — lib/depot.tsx (NET-NEW 2026-10-29, "The Reactor Is Still a Dotted Line")
+For any story about a paper trail, a deal or an announcement whose terms are stated in some places and blank in others. Palette `DEP` (deep aubergine sky, a narrow rose-violet horizon band, blue-white snow, manila tags, gold only for money, ice cyan only for the unknown, stamp red only for NOT STATED). Hero cast is the shelf's `Sourdough`; this kit is its world.
+- `DepotBG` NET-NEW 2026-10-29, the exterior: sky, band, ridge, two sheds, a pole line, drifting snow and the snow ground; `dim` darkens it, `warmLeft` toggles the band glow. ACTIVE.
+- `NearDrift` NET-NEW 2026-10-29, the near plane: ink-outlined snow mounds with tufts across the lower third under the caption card. ACTIVE.
+- `NuSunTag` NET-NEW 2026-10-29, the THROUGHLINE shipping tag: origin is the eyelet; `flip` 0..1 turns it to a passed-in `back`; the front has four ruled lines (`states` blank, asked, stamped) with `stampP` NOT STATED stamps; `sway`, `flutter`. ACTIVE.
+- `TagPost` NET-NEW 2026-10-29, the wooden post and crossarm the tag hangs from. ACTIVE.
+- `NuSunOutline` NET-NEW 2026-10-29, a reactor as a dashed ice-cyan OUTLINE with no fill and no shadow (`k` draws it on, `label`); `variant="oklo"` is the stated version, an ink dashed outline with a paper hatch. ACTIVE.
+- `Crate`, `Chip`, `Calendar` (`cross` draws crossings one at a time), `MergerJar`, `CoinStream`, `PaperDoc`, `Sled`, `PoleLight` (`on`), `Mailroom` (cold cork-board wall), `CountBox` NET-NEW 2026-10-29, small props, ACTIVE.
+- Episode-local in Ep1029.tsx, candidates for promotion: `Shed` (interior wall), `Lamp`, `StampMark`, `SmallTag`, `Certificate`, `TagBackTerms`, `CondChips`, `Lab`.

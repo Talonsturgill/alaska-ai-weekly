@@ -1,0 +1,83 @@
+{
+ "run_date": "2026-10-29",
+ "title": "The Reactor Is Still a Dotted Line",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "NuCube Energy press release inside SEC Form 425 filed by Launch Two Acquisition Corp. (October 19th, 2026)",
+   "outlet": "SEC EDGAR",
+   "url": "https://www.sec.gov/Archives/edgar/data/0002023676/000121390026110814/ea0309104-425_nucube.htm",
+   "claims": [
+    "c1",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c12",
+    "c13",
+    "c23"
+   ],
+   "used_in_film": true,
+   "note": "Primary. NuCube's and AIDEA's own statements, including the forward-looking statements."
+  },
+  {
+   "id": "s2",
+   "title": "AIDEA press release 19-2026, NuCube Energy equity investment (October 21st, 2026)",
+   "outlet": "Alaska Industrial Development and Export Authority",
+   "url": "https://www.aidea.org/LinkClick.aspx?fileticket=E7LXDrzoAyc%3d&portalid=0",
+   "claims": [
+    "c2",
+    "c10",
+    "c11",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c22"
+   ],
+   "used_in_film": true,
+   "note": "Primary. The list that includes data centers and the stated conditions."
+  },
+  {
+   "id": "s3",
+   "title": "AIDEA buys $25M equity stake in solid-state nuclear power developer (October 23rd, 2026)",
+   "outlet": "Alaska Business",
+   "url": "https://www.akbizmag.com/industry/energy/aidea-buys-25m-equity-stake-in-solid-state-nuclear-power-developer/",
+   "claims": [
+    "c4",
+    "c5",
+    "c11",
+    "c15"
+   ],
+   "used_in_film": true,
+   "note": "Independent secondary report of the same deal."
+  },
+  {
+   "id": "s4",
+   "title": "Oklo Alaska project page (Aurora-Eielson powerhouse)",
+   "outlet": "Oklo",
+   "url": "https://oklo.com/projects-and-deployments/alaska",
+   "claims": [
+    "c18",
+    "c19",
+    "c20"
+   ],
+   "used_in_film": true,
+   "note": "Company's own page. Target operations early 2030s; borehole drilling to begin late 2026."
+  },
+  {
+   "id": "s5",
+   "title": "Small Cook Inlet producer says it has funds for new drilling (September 16th, 2026)",
+   "outlet": "Anchorage Daily News",
+   "url": "https://www.adn.com/business-economy/energy/2026/09/15/small-cook-inlet-producer-says-it-has-funds-for-new-drilling-that-can-help-avert-gas-crisis-in-the-short-term/",
+   "claims": [
+    "c21"
+   ],
+   "used_in_film": true,
+   "note": "Enstar president John Sims' figure, attributed to Enstar and not a state figure."
+  }
+ ]
+}

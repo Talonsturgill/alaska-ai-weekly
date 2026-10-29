@@ -2981,3 +2981,42 @@ dispatch_history:
     light_story: bright sonar glow in clear water, then a soft fog
     metaphor: a sonar fan with a face counting fish across a gold line, half of its
       view black where the unseen river would be
+- date: '2026-10-29'
+  topic: AIDEA buys $25M of NuCube Energy shares, AI appears once in boilerplate,
+    reactor size site price date blank, Oklo Eielson early 2030s
+  slug: dispatch-2026-10-29
+  key_entities:
+  - AIDEA
+  - NuCube Energy
+  - Launch Two
+  - Oklo
+  - Eielson Air Force Base
+  - Enstar
+  archetype: absence-thesis
+  palette: aubergine dusk, rose-violet horizon, ember orange, signal red, ice cyan
+  voice: ''
+  stance: cautionary
+  angle: AIDEA's NuCube stake is a financing, not yet an Alaska energy project, and
+    AI is named once in boilerplate
+  hero: Sourdough
+  cast:
+  - Sourdough
+  - Crate
+  - NuSunTag
+  - Sled
+  - Mailroom
+  - BushPlane
+  - Stamp
+  composition:
+    pov: eye-level-immersive
+    motion_vector: vertical-descent
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: tactile-collage
+    palette: aubergine black dusk and a narrow rose-violet horizon over blue-white
+      snow, an ember orange power plant, manila shipping tags, signal red stamps,
+      an ice cyan outline
+    camera_strategy: track-follow
+    light_story: rose-violet dusk raking over snow, lamp-lit paper interiors
+    metaphor: a shipping tag with four blank ruled lines hung on a post beside a dashed
+      outline of a reactor that anything hung on falls straight through
