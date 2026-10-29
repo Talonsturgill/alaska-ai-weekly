@@ -591,7 +591,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
 const PIN: [number, number] = [560, 300];
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t33 = b(33), t34 = b(34), t35 = b(35), t45 = b(35) + 22;
+  const t33 = b(33), t52 = b(52), t34 = b(34), t35 = b(35), t45 = b(35) + 22;
   const cam = track([{t: 0, z: 1.5, fx: 560, fy: 1180}, {t: Math.max(30, t33 + 40), z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.05, fx: 540, fy: 1010}]);
   const spin = f - t35;
   const sink = ease(f, t45, 30);
@@ -617,7 +617,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           </g>
           <g transform="translate(540,672)"><SmallTag x={0} y={0} text="SCHEMATIC MAP" size={18} rot={0} /></g>
           <g transform="translate(603,990)">
-            <NuSunOutline x={0} y={0} s={0.5} f={f} k={ease(f, t33 + 24, 40)} alpha={0.95} label name="OKLO" variant="oklo" />
+            <NuSunOutline x={0} y={0} s={0.5} f={f} k={ease(f, t52, 40)} alpha={0.95} label name="OKLO" variant="oklo" />
             <g opacity={ease(f, t34, 10)}><SmallTag x={-4} y={-250} text="EARLY 2030s" size={24} rot={-4} /></g>
             <g transform="translate(-160,-150)"><SmallTag x={0} y={0} text="EIELSON AFB" size={20} rot={-2} /></g>
           </g>
@@ -677,11 +677,11 @@ const S11: React.FC<SceneProps> = ({p}) => {
 // ---- S12: shares, not a reactor (line 11) -------------------------------------------------------------------------------------------------------
 const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t38 = b(38), t39 = b(39), t40 = b(40);
+  const t38 = b(38), t54 = b(54), t39 = b(39), t53 = b(53), t40 = b(40);
   const open = ease(f, t38 - 10, 22);
   const rise = easeIO(f, t38 + 6, 30);
   const flip = ease(f, t39 - 4, 22);
-  const toOutline = easeIO(f, t40 - 14, 34);
+  const toOutline = easeIO(f, t53 - 4, 26);
   const fall = clamp01((f - (t40 + 14)) / 44);
   const cx = lerp(330 + 40, 900, toOutline);
   const cy = lerp(lerp(1250, 940, rise), 1380, fall * fall);
@@ -689,8 +689,10 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        {/* plate-overlap-ok */}<Plate x={540} text="SHARES, NOT A REACTOR" y={520} size={34} tone="gold" p={ease(f, t38 + 4, 8) * (1 - ease(f, t39 + 4, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="THE TERMS ARE FILLED IN" y={520} size={34} tone="paper" p={ease(f, t39 + 6, 8) * (1 - ease(f, t40 - 6, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text="SHARES, NOT A REACTOR" y={520} size={34} tone="gold" p={ease(f, t38 + 4, 8) * (1 - ease(f, t54 - 2, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text="ONE CERTIFICATE" y={520} size={34} tone="paper" p={ease(f, t54 + 4, 8) * (1 - ease(f, t39 - 2, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text="THE TERMS ARE FILLED IN" y={520} size={34} tone="paper" p={ease(f, t39 + 6, 8) * (1 - ease(f, t53 - 2, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} displayLines={['A CERTIFICATE AGAINST', 'A DOTTED LINE']} text="A CERTIFICATE AGAINST A DOTTED LINE" y={530} size={30} tone="dark" p={ease(f, t53 + 2, 8) * (1 - ease(f, t40 - 2, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} displayLines={['THE REACTOR IS', 'STILL A DOTTED LINE']} text="THE REACTOR IS STILL A DOTTED LINE" y={535} size={34} tone="cyan" p={ease(f, t40 + 2, 10)} />
       </>}>
       <SVG>
@@ -703,7 +705,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <Crate x={400} y={GROUND_Y + 10} s={0.8} f={f} lid={0.12 + 0.88 * open} />
           {[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M ${340 + i * 28},${1130} q ${i % 2 ? 14 : -14},-30 ${i * 4 - 8},-60`} stroke="#D9C37A" strokeWidth={5} fill="none" strokeLinecap="round" opacity={open} />)}
         </g>
-        <Certificate x={cx} y={cy} rot={-6 + 14 * fall} s={0.62} f={f} />
+        <Certificate x={cx} y={cy} rot={-6 + 14 * fall + 14 * Math.sin(bump(f, t54, 24) * 3)} s={0.62} f={f} />
         <NearDrift f={f} seed={12} />
       </SVG>
     </Frame>
