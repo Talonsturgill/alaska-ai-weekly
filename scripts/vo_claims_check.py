@@ -178,7 +178,7 @@ def _words(s):
     return " ".join(re.findall(r"[a-z0-9']+", str(s or "").lower()))
 
 
-def plan(claims_list, target_seconds):
+def plan(claims_list, target_seconds, band_top=None):
     """The claim plan, from claims.json alone, at the end of Phase 2 and before a VO is written.
 
     Machine pass 2026-10-22, a repeat offender (10-18, 10-22). Twice the density floor below
@@ -205,14 +205,44 @@ def plan(claims_list, target_seconds):
         if n > 1:
             notes.append(f"{c['id']} spoken carries {n} sentences, a candidate to split into atomic claims")
     problems = []
-    if len(claims_list) < need:
+    # A RESTATED CLAIM IS NOT A FACT (machine pass 2026-10-29, repeat 2). 10-22 began with 14
+    # claims against the 14 a 120 s film needs, so a raw count passed it, and c10 restated c9:
+    # a line voices both ids for one fact. Count the distinct ones.
+    restating = sorted({x.split()[0] for x in notes if " restates " in x})
+    distinct = len(claims_list) - len(restating)
+    if distinct < need:
+        extra = (f" ({len(claims_list)} ids, less {len(restating)} that restate another: "
+                 f"{', '.join(restating)})" if restating else "")
         problems.append(
-            f"CLAIM PLAN: {len(claims_list)} claims in claims.json against the {need} a "
+            f"CLAIM PLAN: {distinct} distinct claims in claims.json{extra} against the {need} a "
             f"{target_seconds:g}s film needs at {MIN_CLAIMS_PER_MIN:g} a minute. The script spends "
             f"about one line per claim, so this safe set fails the density floor before a word is "
             f"written. Split compound claims into one spoken fact each (the notes name the "
             f"candidates) and give each its own id, source and requires.")
+    elif band_top and band_top > target_seconds:
+        top = math.ceil(MIN_CLAIMS_PER_MIN * band_top / 60.0)
+        if distinct < top:
+            notes.append(f"headroom: {distinct} distinct claims clear {target_seconds:g}s but a take "
+                         f"at the band's {band_top:g}s needs {top}; split {top - distinct} more "
+                         f"compound claim(s) now and a long take can't fail the density floor")
     return problems, notes
+
+
+def _band_top():
+    """The top of dispatch_seconds_band in config/state.yaml, or None."""
+    try:
+        lines = open(os.path.join(REPO, "config", "state.yaml")).read().splitlines()
+    except OSError:
+        return None
+    for i, ln in enumerate(lines):
+        if ln.startswith("dispatch_seconds_band:"):
+            vals = []
+            for nxt in lines[i + 1:i + 3]:
+                m = re.match(r"\s*-\s*([0-9.]+)", nxt)
+                if m:
+                    vals.append(float(m.group(1)))
+            return max(vals) if vals else None
+    return None
 
 
 def _target_seconds():
@@ -248,6 +278,18 @@ def _plan_self_test():
     p, _ = plan(mk(15), 130)
     print(f"  [{'x' if p else ' '}] 15 claims at 130s fail (16 needed)")
     fails += [] if p else ["130s floor not applied"]
+    # 10-22's opening set: 14 ids, one restating another, at 120 s. A raw count passed it.
+    p, _ = plan(mk(13, [{"id": "c14", "spoken": "fact number 3 is true."}]), 120)
+    print(f"  [{'x' if p and 'less 1 that restate' in p[0] else ' '}] 14 ids with one restatement fail "
+          f"at 120s (13 distinct)")
+    fails += [] if p and "less 1 that restate" in p[0] else ["restated claim counted as a fact"]
+    p, n = plan(mk(14), 120, 130)
+    ok = not p and any(x.startswith("headroom: 14 distinct") for x in n)
+    print(f"  [{'x' if ok else ' '}] 14 at 120s pass with a headroom note for a 130s take")
+    fails += [] if ok else ["headroom note missing"]
+    print(f"  [{'x' if _band_top() == 130.0 else ' '}] the band top is read from config/state.yaml "
+          f"({_band_top()})")
+    fails += [] if _band_top() == 130.0 else ["band top not read"]
     print("SELF-TEST", "FAIL" if fails else "PASS")
     return 1 if fails else 0
 
@@ -287,7 +329,7 @@ def main():
         with open(os.path.join(OUT, "claims.json")) as stream:
             claims_list = json.load(stream)["claims"]
         target = _target_seconds()
-        problems, notes = plan(claims_list, target)
+        problems, notes = plan(claims_list, target, _band_top())
         for n in notes:
             print(f"  NOTE {n}")
         if problems:
