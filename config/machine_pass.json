@@ -1,14 +1,14 @@
 {
   "last_pass": {
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "shipped": [
-      "caption-fold-line-2 (caption_check counts line 2 toward the 140 character fold, hook pattern in the rubric)",
-      "sfx-class-tags (caw and paw only on animal beats)",
-      "beat_gaps.py (names the beats behind max_gap and METRONOME)",
-      "absence-thesis-primary-table (angle room doctrine)",
-      "room-tone-and-dusk-wind-beds (dispatch_mix ambience)"
+      "week_digest reads runs/ verdicts and the axis_scores card shape",
+      "caption-row-figure-phrase (vo_claims_check predicts unsplittable caption cards before synth)",
+      "asr-proper-noun-wer (heard map scores ASR spellings without rewriting the direction)",
+      "wave-of-gates-after-the-render-plan (make_cut runs source gates as one wave, --source-only)",
+      "claims-density-needs-atomic-claims (plan counts distinct claims)"
     ],
-    "engine_advance": null,
+    "engine_advance": "none",
     "escalated": [
       "claims-density-needs-atomic-claims"
     ]

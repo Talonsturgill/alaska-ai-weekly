@@ -61,3 +61,9 @@ If scripts/vo_soundcheck.py fails a take, you get the diagnosis. Fix it IN THE P
 - MONOTONE -> increase energy CONTRAST between neighbors (widen the 1-5 spread), re-emit.
 - LEAK (a tag was spoken) -> move that cue from an inline tag into the NOTES, re-emit.
 - WORDS/PACE/LEVEL -> usually a re-roll or a pace-note tweak; adjust and re-emit if it's the plan.
+- WORDS on proper nouns said as directed (2026-10-29: AIDEA heard "Idea", NuSun "new sun", Oklo
+  "o-close") -> do NOT rewrite `pronunciations` to Whisper's spelling; that changes what the voice
+  is told to say. Run `python3 scripts/vo_soundcheck.py --suggest-heard` (it aligns the first
+  take's ASR text against the script) and add the printed `"heard": {"NuSun": ["new sun"]}` map
+  to vo_direction.json beside `pronunciations`. The soundcheck scores those forms as the name, on
+  both sides, and nothing else. Then re-score the same takes with VO_REUSE_TAKES=1, no new synth.

@@ -3949,3 +3949,8 @@ Shipped: faceless agency sonar versus a faced model fan on the CFC26 preprint's 
 
 ## 2026-10-29, "The Reactor Is Still a Dotted Line"
 Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on AIDEA's $25 million NuCube Energy share purchase, with the honest finding that AI appears once in NuCube's boilerplate and never in its Alaska paragraphs. Oklo at Eielson and Enstar's 18 days shown with their own sourced figures. Panel median 7.2 (7.19, 7.2, 7.2) against a 7.0 bar after four panel rounds; caption passed caption_check. In-run fixes: new depot kit (lib/depot.tsx), caption row and text-fit repairs, clipped warrant sticker, Oklo label, edge slivers, opening crop. Queued: caption-row-figure-phrase, asr-proper-noun-wer, text-fit-local-coordinate-components, wave-of-gates-after-the-render-plan.
+
+## 2026-10-29 weekly machine pass
+- Shipped: week_digest reads the shipped verdicts under runs/ and the axis_scores card shape (it had counted 0 films), vo_claims_check predicts an unsplittable caption card before the synth, a heard map scores ASR spellings of directed names without rewriting the direction, make_cut runs the source gates as one wave with a --source-only mode, the claim plan counts distinct claims.
+- Engine advance: none.
+- Still open: text-fit-local-coordinate-components (first in line), judge cards are not archived (runbook now asks for runs/<date>/panel_cards.json).

@@ -207,7 +207,27 @@ def _norm_words(s, aliases=None):
     # flapped t heard as d is a match inside a long word (_flap_equal). See _wer.
     if aliases is None:
         aliases = _default_aliases()
-    return [aliases.get(w, w) for w in out]
+    out = [aliases.get(w, w) for w in out]
+    phrases = sorted(((k, v) for k, v in aliases.items() if isinstance(k, tuple)),
+                     key=lambda kv: -len(kv[0]))
+    return _apply_phrases(out, phrases) if phrases else out
+
+
+def _apply_phrases(words, phrases):
+    """Replace each heard phrase (a tuple of tokens) with its written tokens, longest first,
+    left to right. Used on BOTH sides of the WER, like every alias, so it can only cancel a
+    mishearing the run declared and never forgive a dropped word."""
+    out, i = [], 0
+    while i < len(words):
+        for k, v in phrases:
+            if tuple(words[i:i + len(k)]) == k:
+                out.extend(v)
+                i += len(k)
+                break
+        else:
+            out.append(words[i])
+            i += 1
+    return out
 
 
 # THE RUN'S PRONUNCIATION MAP IS THE ALIAS LIST. vo_direction.json tells the voice to
@@ -237,9 +257,71 @@ def spoken_aliases(pronunciations):
     return out
 
 
+def heard_aliases(heard):
+    """{heard phrase tuple: written tuple} from a vo_direction `heard` map.
+
+    Machine pass 2026-10-29 (asr-proper-noun-wer). The pronunciation map does two jobs: it
+    tells the voice how to say a name, and it is the WER alias list. On 10-29 every take of a
+    script carrying AIDEA, NuCube, NuSun, Oklo, Eielson and Enstar scored WER 0.10 to 0.12
+    against the 0.08 ceiling, because the voice said "eye-DEE-uh" and Whisper wrote "Idea",
+    "Newcube", "new sun", "o-close", and syllable respellings are skipped as aliases. The run
+    passed only by rewriting the DIRECTION to Whisper's spellings, which changes what the voice
+    is told to say to suit the scorer. `heard` is the scorer's own list, kept apart:
+    {"NuSun": ["new sun"], "Oklo": ["o-close"]}, any token count, possessive included.
+    `python3 scripts/vo_soundcheck.py --suggest-heard` fills it from a take's ASR text."""
+    out = {}
+    for written, forms in (heard or {}).items():
+        w = tuple(_norm_words(str(written), aliases={}))
+        if not w:
+            continue
+        for form in ([forms] if isinstance(forms, str) else forms or []):
+            h = tuple(_norm_words(str(form), aliases={}))
+            if h and h != w:
+                out[h] = w
+                if not h[-1].endswith("s") and not w[-1].endswith("s"):
+                    out[h[:-1] + (h[-1] + "s",)] = w[:-1] + (w[-1] + "s",)   # AIDEA's, "Ideas"
+    return out
+
+
+def direction_aliases(direction):
+    """Every alias a vo_direction dict declares: its pronunciations and its heard map."""
+    direction = direction or {}
+    out = spoken_aliases(direction.get("pronunciations"))
+    out.update(heard_aliases(direction.get("heard")))
+    return out
+
+
+def suggest_heard(script_text, heard_text, names):
+    """{name: [heard forms]} for each name the ASR wrote differently, aligned word by word.
+
+    Reads the take's own transcript, so the vo-director copies what Whisper wrote rather than
+    guessing. Only a span that is exactly the name (or its possessive) on the script side is
+    proposed, so a neighbouring dropped word is never folded into an alias."""
+    import difflib
+    r = _norm_words(script_text, aliases={})
+    h = _norm_words(heard_text, aliases={})
+    want = {}
+    for n in names:
+        t = tuple(_norm_words(str(n), aliases={}))
+        if t:
+            want[t] = n
+            want[t[:-1] + (t[-1] + "s",)] = n
+    out = {}
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, r, h, autojunk=False).get_opcodes():
+        name = want.get(tuple(r[i1:i2]))
+        if op == "replace" and name and j2 > j1:
+            form = " ".join(h[j1:j2])
+            if form.endswith("s") and tuple(r[i1:i2]) != tuple(_norm_words(str(name), aliases={})):
+                form = form[:-1]                          # the possessive's base form
+            out.setdefault(name, [])
+            if form not in out[name]:
+                out[name].append(form)
+    return out
+
+
 def _default_aliases():
     try:
-        return spoken_aliases(json.load(open(_DIRECTION)).get("pronunciations"))
+        return direction_aliases(json.load(open(_DIRECTION)))
     except Exception:
         return {}
 
@@ -382,7 +464,9 @@ def _diagnose(c):
     if not c["no_leak"]["pass"]:
         return f"LEAK: model spoke {c['no_leak']['leaked']} — remove those inline tags, move emotion to the notes, re-synth."
     if not c["word_accuracy"]["pass"]:
-        return f"WORDS: WER {c['word_accuracy']['wer']} too high (dropped/garbled or a 500 text-fallback) — re-roll."
+        return (f"WORDS: WER {c['word_accuracy']['wer']} too high (dropped/garbled or a 500 text-fallback) — re-roll. "
+                f"If the misses are directed names, run `python3 scripts/vo_soundcheck.py --suggest-heard` first, "
+                f"add its `heard` map to vo_direction.json and re-score the same takes with VO_REUSE_TAKES=1.")
     if not c["expressive"]["pass"]:
         return f"MONOTONE: pitch std {c['expressive']['pitch_std_semitones']} st below floor {PITCH_STD_MIN} — add ENERGY CONTRAST between adjacent lines (VO_DIRECTION step 5), then re-synth."
     if not c["duration"]["pass"]:
@@ -450,8 +534,10 @@ def _self_test():
 
     noaa = spoken_aliases({"NOAA": "Noah", "NOAA's": "Noah's", "otolith": "OH-toh-lith",
                            "Herz": "hurts"})
+    # _norm_words folds a possessive to its bare plural on both sides since 2026-10-06, so the
+    # derived possessive alias is "noahs" -> "noaas" (the apostrophe form can't occur).
     eq("pronunciation map -> aliases", noaa,
-       {"noah": "noaa", "noah's": "noaa's", "noahs": "noaa's", "hurts": "herz"})
+       {"noah": "noaa", "noahs": "noaas", "hurts": "herz"})
     eq("directed NOAA heard as Noah is no error",
        _wer("NOAA scientists count the rings", "Noah scientists count the rings", noaa), 0.0)
     eq("without the map it is one error",
@@ -470,7 +556,36 @@ def _self_test():
     eq("no curated alias survives: noah is a word without a map",
        _norm_words("Noah", aliases={}), ["noah"])
 
+    # THE HEARD MAP (2026-10-29): multi-token and possessive mishearings of a directed name.
+    hm = heard_aliases({"NuSun": ["new sun"], "AIDEA": ["idea"], "Oklo": ["o-close"]})
+    eq("a two-word hearing of one name is no error",
+       _wer("a reactor called NuSun", "a reactor called new sun", hm), 0.0)
+    eq("the possessive of a heard name is no error",
+       _wer("AIDEA's money counts", "Ideas money counts", hm), 0.0)
+    eq("a hyphenated hearing is no error", _wer("Oklo at Eielson", "o-close at Eielson", hm), 0.0)
+    eq("a heard map forgives nothing else",
+       _wer("a reactor called NuSun", "a reactor called new son", hm), 0.5)
+    eq("suggest_heard reads the forms off the transcript",
+       suggest_heard("Idaho took money from AIDEA. Its NuSun is small. AIDEA's money counts.",
+                     "Idaho took money from Idea. Its new sun is small. Ideas money counts.",
+                     ["AIDEA", "NuSun", "Oklo"]),
+       {"AIDEA": ["idea"], "NuSun": ["new sun"]})
     root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+    try:
+        # The 10-29 shipped take against its script, with the DIRECTED pronunciations it began
+        # with (syllable respellings, so no alias) plus a heard map suggested from its own ASR.
+        heard29 = json.load(open(os.path.join(root, "runs/2026-10-29/vo_report.json")))["soundcheck"]["heard"]
+        script29 = open(os.path.join(root, "runs/2026-10-29/vo_script.txt")).read().replace("\n", " ")
+        names = ["AIDEA", "NuCube", "NuSun", "Oklo", "Eielson", "Enstar"]
+        sug = suggest_heard(script29, heard29, names)
+        w_raw29 = _wer(script29, heard29, {})
+        w_heard29 = _wer(script29, heard29, heard_aliases(sug))
+        print(f"  10-29 shipped take: WER {w_raw29:.3f} with syllable pronunciations only, "
+              f"{w_heard29:.3f} with the suggested heard map {sug}")
+        eq("10-29 take fails without a heard map", w_raw29 > WER_MAX, True)
+        eq("10-29 take passes on the heard map suggested from its own ASR", w_heard29 <= WER_MAX, True)
+    except Exception as e:                       # archive absent: report, don't fake
+        print(f"  [-] 10-29 re-score skipped: {e}")
     try:
         heard = json.load(open(os.path.join(root, "runs/2026-10-02/vo_report.json")))["soundcheck"]["heard"]
         pron = json.load(open(os.path.join(root, "runs/2026-10-02/vo_direction.json")))["pronunciations"]
@@ -501,15 +616,37 @@ def main():
                     help="vo_direction.json whose pronunciations map is scored as aliases "
                          "(default out/dispatch/vo_direction.json when present)")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--suggest-heard", action="store_true",
+                    help="print the `heard` map for vo_direction.json from a take's ASR text "
+                         "(--heard-from vo_report.json, --script the spoken text, --direction)")
+    ap.add_argument("--heard-from", default=None,
+                    help="vo_report.json whose soundcheck.heard is the take's transcript")
     a = ap.parse_args()
     if a.self_test:
         sys.exit(_self_test())
+    if a.suggest_heard:
+        out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "out", "dispatch")
+        rep = json.load(open(a.heard_from or os.path.join(out_dir, "vo_report.json")))
+        heard = (rep.get("soundcheck") or rep).get("heard") or ""
+        script = a.script or open(os.path.join(out_dir, "vo_script.txt")).read()
+        if os.path.exists(script):
+            script = open(script).read()
+        direction = json.load(open(a.direction or _DIRECTION))
+        names = list((direction.get("pronunciations") or {}).keys()) + list((direction.get("heard") or {}).keys())
+        sug = suggest_heard(script, heard, dict.fromkeys(names))
+        merged = {k: list(dict.fromkeys(list(direction.get("heard", {}).get(k, [])) + v)) for k, v in sug.items()}
+        print(json.dumps({"heard": merged}, indent=2))
+        print(f"WER {_wer(script, heard, spoken_aliases(direction.get('pronunciations'))):.3f} on the "
+              f"pronunciations alone, {_wer(script, heard, {**direction_aliases(direction), **heard_aliases(merged)}):.3f} "
+              f"with this heard map (ceiling {WER_MAX}). Add it to vo_direction.json as \"heard\"; "
+              f"never rewrite \"pronunciations\" to Whisper's spelling.", file=sys.stderr)
+        sys.exit(0)
     if not (a.audio and a.script):
         ap.error("--audio and --script are required")
     tags = [t.strip() for t in a.tags.split(",") if t.strip()]
     aliases = None
     if a.direction:
-        aliases = spoken_aliases(json.load(open(a.direction)).get("pronunciations"))
+        aliases = direction_aliases(json.load(open(a.direction)))
     rep = check(a.audio, a.script, tags, aliases=aliases)
     if a.json:
         print(json.dumps(rep, indent=2))

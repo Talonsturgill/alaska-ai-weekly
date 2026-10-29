@@ -20,15 +20,28 @@
 #
 # Exit 0 = a cut exists and preflight is clear, so the panel may be convened.
 # Exit 1 = a step failed. The summary names it and the log under out/dispatch/cut_logs/ has it.
+#
+# THE SOURCE GATES RUN AS ONE WAVE (machine pass 2026-10-29, repeat offender wave-of-gates).
+# 10-29 stopped five times in a row (plate_overlap, zoom_clip, caption_spelling, claims_contract,
+# label_footprint), each a relaunch, each knowable from the source in the same pass. Every gate
+# in block 1 reads only the source, the board and the props, so after the typecheck they all run
+# and every failure is printed together; the cut stops at the END of the block if any failed.
+#   scripts/make_cut.sh --source-only [<Comp>]   # block 1 only, every failure at once, no render
 # ============================================================================
 set -uo pipefail
 cd "$(dirname "$0")/.."
 
-if [ $# -lt 1 ]; then
-  echo "usage: make_cut.sh <Comp>" >&2
+SOURCE_ONLY=0
+if [ "${1:-}" = "--source-only" ]; then
+  SOURCE_ONLY=1
+  shift
+fi
+if [ $# -lt 1 ] && [ $SOURCE_ONLY = 0 ]; then
+  echo "usage: make_cut.sh [--source-only] <Comp>" >&2
   exit 2
 fi
-COMP="$1"
+COMP="${1:-source-gates}"
+SOURCE_FAILS=()
 OUT=out/dispatch
 LOGS="$OUT/cut_logs"
 SUMMARY="$OUT/cut_summary.txt"
@@ -52,6 +65,13 @@ step() {
     say "  OK    $name (${secs}s) $last"
     return 0
   fi
+  if [ "$required" = 2 ]; then
+    # a source gate: name it, keep going, stop at the end of block 1
+    say "  FAIL  $name (${secs}s, exit $code). Last lines of $LOGS/$name.log:"
+    tail -12 "$LOGS/$name.log" | sed 's/^/          /' | tee -a "$SUMMARY" >/dev/null
+    SOURCE_FAILS+=("$name")
+    return 0
+  fi
   if [ "$required" = 1 ]; then
     say "  FAIL  $name (${secs}s, exit $code). Last lines of $LOGS/$name.log:"
     tail -12 "$LOGS/$name.log" | sed 's/^/          /' | tee -a "$SUMMARY" >/dev/null
@@ -64,38 +84,38 @@ step() {
 
 # 1. Source gates, before a single frame is spent. Each reads the engine or the props only.
 step typecheck         1 video-engine/node_modules/.bin/tsc --noEmit -p video-engine/tsconfig.json
-step text_fit          1 python3 scripts/text_fit_check.py
-step caption_band      1 python3 scripts/caption_band_check.py
+step text_fit          2 python3 scripts/text_fit_check.py
+step caption_band      2 python3 scripts/caption_band_check.py
 # Machine pass 2026-10-25: the lib sign-kit Plate was drawn at s 0.5 to 0.62 in three 10-25 shots and
 # every seat called its lettering unreadable. A lettered Plate stays at s 0.8 or more, or passes
 # lettered={false}. Reads the episode source only.
-step plate_scale       1 python3 scripts/plate_scale_check.py
-step say_it_show_it    1 python3 scripts/say_it_show_it_check.py
+step plate_scale       2 python3 scripts/plate_scale_check.py
+step say_it_show_it    2 python3 scripts/say_it_show_it_check.py
 # Machine pass 2026-10-22, a repeat offender (10-21, 10-22 twice). These four read only the episode
 # source and episode_props.json, yet ran only inside preflight, after the render. The 10-22 re-cut
 # lost a 24 minute render to an 11 px plate overlap and a plate 6 px past the crop margin, both
 # knowable from the source in seconds. Preflight still runs them on the shipped bytes.
-step plate_overlap     1 python3 scripts/plate_overlap_check.py
-step zoom_clip         1 python3 scripts/zoom_clip_check.py
-step caption_rows      1 python3 scripts/caption_render_check.py --rows-only
-step caption_spelling  1 python3 scripts/caption_spelling_check.py
+step plate_overlap     2 python3 scripts/plate_overlap_check.py
+step zoom_clip         2 python3 scripts/zoom_clip_check.py
+step caption_rows      2 python3 scripts/caption_render_check.py --rows-only
+step caption_spelling  2 python3 scripts/caption_spelling_check.py
 # Machine pass 2026-10-24, a repeat offender (10-20, 10-24). The 10-24 first cut spent 26 minutes
 # to fail preflight on two checks that read only source and props: a `72:00` colon in a board beat
 # label (visible_copy_check) and three claims whose approved on_screen string existed only as split
 # plate lines (claims_contract_check). Both run in under a second, from claims.json, vo_script.txt,
 # the episode source and episode_props.json. Preflight still runs them on the shipped cut.
-step visible_copy      1 python3 scripts/visible_copy_check.py
-step claims_contract   1 python3 scripts/claims_contract_check.py
+step visible_copy      2 python3 scripts/visible_copy_check.py
+step claims_contract   2 python3 scripts/claims_contract_check.py
 # Machine pass 2026-10-23, a repeat offender (10-02, 10-23 four cuts running). A label behind a
 # character, under a quote card, or past the frame after a push-in passed every gate above,
 # because each models one source relationship and none models a label against ART or reads the
 # Frame camera. This renders the composition in Chrome every third frame (about a minute) and
 # fails a label cut for 0.5 s or more. `--shots 7,13` re-checks named shots in seconds.
-step label_footprint   1 python3 scripts/label_footprint_check.py
+step label_footprint   2 python3 scripts/label_footprint_check.py
 # Machine pass 2026-10-23: a beat too short for its evidence strip failed build_evidence AFTER the
 # render on 10-15, 10-17 (twice) and 10-22. The strip plan reads only the board, vo_lines.json and
 # the props, so resolve it here, naming every short beat at once.
-step evidence_plan     1 python3 scripts/build_evidence.py --check-plan
+step evidence_plan     2 python3 scripts/build_evidence.py --check-plan
 step staging          0 python3 scripts/staging_check.py
 # Machine pass 2026-10-26, a repeat offender (10-22, 10-24, 10-25, 10-26: held beats under 6 percent
 # with the camera solved out, named by the panel after the render every time). The strip windows
@@ -104,6 +124,15 @@ step staging          0 python3 scripts/staging_check.py
 # order, a <HeldTravel> on the held thing (lib/heldidle.tsx). On Ep1026 it names the same twelve
 # beats the master-mode measure and the panel did.
 step held_plan        0 python3 scripts/held_beat_check.py --source
+
+if [ ${#SOURCE_FAILS[@]} -gt 0 ]; then
+  say "make_cut: STOPPED after the source gates, ${#SOURCE_FAILS[@]} failed: ${SOURCE_FAILS[*]}. Fix them all, then relaunch ($(( $(date +%s) - T0 ))s)."
+  exit 1
+fi
+if [ $SOURCE_ONLY = 1 ]; then
+  say "make_cut: every source gate passed, $(( $(date +%s) - T0 ))s (--source-only, nothing rendered)."
+  exit 0
+fi
 
 # 1b. The mix, every cut (machine pass 2026-10-09). The mix receipt hashes storyboard.json,
 # episode_props.json and vo_lines.json, so a board or build_scenes change after the last mix

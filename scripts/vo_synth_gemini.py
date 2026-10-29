@@ -626,7 +626,9 @@ def main():
         print(f"take {n}: {len(pcm)/24000:.1f}s ({used})")
 
     # The pronunciation map is the WER alias list: a word said as directed is not an error.
-    _aliases = sc.spoken_aliases(_pron)
+    # Plus the `heard` map (2026-10-29): how Whisper writes a directed name, kept apart so the
+    # voice's direction is never rewritten to suit the scorer.
+    _aliases = sc.direction_aliases(plan)
     best_i, reports = sc.pick_best([p for p, _ in takes], spoken, tags, aliases=_aliases)
 
     # ---- RUNTIME: RE-ROLL, THEN RETAIN A WORKING TAKE. ----------------------------
