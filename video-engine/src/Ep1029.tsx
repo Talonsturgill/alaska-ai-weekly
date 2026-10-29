@@ -249,10 +249,10 @@ const TagBackTerms: React.FC<{f: number; slot: number; sticker: number; band: nu
 const POST_X = 640, POST_TOP = 660, TAG_Y = 740;
 const PLANE = '#E4D9B8';
 /** the AIDEA condition blocks stapled over the stamped lines of the tag (tag at tx,ty, scale ts) */
-const CondChips: React.FC<{tx: number; ty: number; ts?: number; f: number; t0: number}> = ({tx, ty, ts = 1, f, t0}) => (
+const CondChips: React.FC<{tx: number; ty: number; ts?: number; f: number; t0: number; t1?: number}> = ({tx, ty, ts = 1, f, t0, t1}) => (
   <g>
     {['TECHNOLOGY', 'APPROVALS', 'FINANCING', 'HOST COMMUNITIES'].map((c, i) => {
-      const k = springy(f, t0 + i * 7, 18);
+      const k = springy(f, (i >= 2 && t1 !== undefined ? t1 + (i - 2) * 8 : t0 + i * 8), 18);
       const size = Math.round(24 * ts);
       const w = monoW(c, size) + 36;
       const cx = tx - 190 * ts - 14 - w / 2;
@@ -280,7 +280,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        {/* plate-overlap-ok */}<Plate x={540} text="$25M OF A REACTOR COMPANY" y={520} size={34} tone="gold" p={ease(f, t1 + 4, 8) * (1 - ease(f, t3 - 4, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text="$25M INTO A REACTOR COMPANY" y={520} size={34} tone="gold" p={ease(f, t1 + 4, 8) * (1 - ease(f, t3 - 4, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} text="NOT A REACTOR · A COMPANY" y={520} size={34} tone="cyan" p={ease(f, t3, 8)} />
       </>}>
       <SVG>
@@ -355,6 +355,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <NuSunOutline x={880} y={GROUND_Y + 6} s={0.9} f={f} k={draw} label={draw > 0.9} name="NUSUN" />
         <Hero f={f} x={190} emotion={f > t10 + 20 ? 'faltering' : 'proud'} s={0.78} />
         {f >= t10 - 20 && <SmallTag x={tagX} y={tagY} text="PRICE" rot={-8 + 20 * fall} op={clamp01((f - (t10 - 20)) / 10)} />}
+        {fall >= 0.98 && [0, 1, 2, 3, 4].map((i) => <circle key={i} cx={880 + (i - 2) * 22 * (1 + ease(f, t10 + 40, 14))} cy={GROUND_Y + 30 - 24 * ease(f, t10 + 40, 14) * (1 - 0.2 * i)} r={10 + 8 * ease(f, t10 + 40, 14)} fill="#FFFFFF" opacity={0.7 * (1 - ease(f, t10 + 40, 24))} />)}
         <NearDrift f={f} seed={3} />
       </SVG>
     </Frame>
@@ -385,7 +386,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <DepotBG f={f + p.from} id="s4" dim={0.18} />
         <TagPost x={540} y={GROUND_Y + 60} top={1000} />
-        <NuSunTag x={540} y={400} s={1.12} f={f} flip={flip} sway={0.5} back={<TagBackTerms f={f} slot={slot} sticker={sticker} band={band} strike={strike} ticket={ticket} />} id="s4t" />
+        <NuSunTag x={540} y={400} s={1.12} f={f} flip={flip} sway={1.3} back={<TagBackTerms f={f} slot={slot} sticker={sticker} band={band} strike={strike} ticket={ticket} />} id="s4t" />
         <NearDrift f={f} seed={4} y={1780} />
       </SVG>
     </Frame>
@@ -420,7 +421,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <Sled x={0} y={GROUND_Y + 12} f={f} w={380}>
             <g transform="translate(0,0) scale(0.84)"><MergerJar x={0} y={0} f={f} fill={fill} aidea={0} /></g>
           </Sled>
-          <text x={0} y={1235} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={2} fill={INK} opacity={0.8}>LAUNCH TWO MERGER</text>
+          <g transform="translate(-175,895)"><SmallTag x={0} y={0} text="LAUNCH TWO MERGER" size={20} rot={-3} /></g>
           <g transform="translate(160,938)">
             <rect x={-6} y={-16} width={98} height={32} rx={4} fill={DEP.gold} stroke={INK} strokeWidth={4} opacity={ease(f, t17, 10)} />
             <text x={43} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={INK} opacity={ease(f, t17, 10)}>$75M</text>
@@ -476,9 +477,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <rect x={-270} y={198} width={540 * sweep2} height={20} fill={INK} opacity={0.12} />
           <rect x={-290 + 580 * sweep2 - 6} y={150} width={12} height={190} fill={DEP.cyan} opacity={sweep2 > 0 && sweep2 < 1 ? 0.7 : 0} />
         </g>
-        <CountBox x={880} y={1190} s={0.9} f={f} digit={one ? '1' : '0'} label="AI COUNT" pop={bump(f, t20, 14)} />
-        <g transform={`translate(${900 - 20 * droop},${650 + 90 * droop}) scale(${0.5 - 0.06 * droop})`} opacity={clamp01((f - t19) / 14)}>
-          <ServerMachine frame={f} emotion="ghost" x={0} y={0} scale={1} />
+        <CountBox x={880} y={1190} s={0.9} f={f} digit={f >= t21 ? '0' : one ? '1' : '0'} label={f >= t21 ? 'ALASKA' : 'MARKET TRENDS'} pop={bump(f, f >= t21 ? t21 : t20, 14)} />
+        <g transform={`translate(${900 - 20 * droop},${650 + 90 * droop}) rotate(${-8 * bump(f, t20, 20)}) scale(${0.5 - 0.06 * droop})`} opacity={0.7 * clamp01((f - t19) / 14)}>
+          <ServerMachine frame={f} emotion={droop > 0.3 ? 'nervous' : 'focused'} x={0} y={0} scale={1} />
         </g>
         <g transform="translate(820,560)" opacity={clamp01((f - t19 - 8) / 12) * (1 - droop)}>
           <text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={90} fill={DEP.cyan} opacity={0.8}>?</text>
@@ -507,7 +508,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <rect x={150} y={620} width={780} height={640} rx={8} fill="#6A4630" stroke={INK} strokeWidth={8} opacity={0.96} />
         {[0, 1, 2, 3].map((i) => <circle key={i} cx={540} cy={700 + i * 120} r={9} fill="#8A8F99" stroke={INK} strokeWidth={3} />)}
         {names.map((n, i) => {
-          const k = springy(f, t22 + i * 6, 22);
+          const k = springy(f, t22 + i * 12, 22);
           const hot = i === 3 && f >= t23;
           const rise = hot ? 14 * Math.sin(clamp01((f - t23) / 12) * Math.PI) : 0;
           return (
@@ -518,9 +519,9 @@ const S7: React.FC<SceneProps> = ({p}) => {
         })}
         <g transform="translate(540,1218)" opacity={ease(f, t24 - 4, 8)}>
           <rect x={-130} y={-40} width={260} height={80} rx={10} fill="none" stroke={DEP.cyan} strokeWidth={6} strokeDasharray="16 10" strokeDashoffset={-f * 0.8} />
-          <text x={0} y={16} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={50} fill={DEP.cyan} opacity={0.55}>AI</text>
+          <text x={0} y={16} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={50} fill={DEP.cyan} opacity={0.3}>AI</text>
         </g>
-        <StampMark text="NOT SAID" x={650} y={1150} rot={-10} p={ease(f, t24, 8)} size={32} color={INK} />
+        <StampMark text="NOT SAID" x={540} y={1228} rot={-4} p={ease(f, t24, 8)} size={24} color={INK} />
       </SVG>
     </Frame>
   );
@@ -545,7 +546,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Hero f={f} x={190} y={GROUND_Y} s={0.72} emotion="faltering" glow={dimGlow} />
         <NuSunOutline x={915} y={GROUND_Y + 6} s={0.74} f={f} k={1} alpha={0.9} />
         <TagPost x={555} y={GROUND_Y + 20} top={POST_TOP} />
-        <NuSunTag x={555} y={TAG_Y} s={1.0} f={f} flip={flip} states={states} stampP={stamps} sway={0.4} id="s8t" />
+        <NuSunTag x={555} y={TAG_Y} s={1.0} f={f} flip={flip} states={states} stampP={stamps} sway={0.4} flutter={0.35 * (bump(f, t26, 14) + bump(f, t27, 14) + bump(f, t27 + 12, 14) + bump(f, t27 + 24, 14))} id="s8t" />
         <NearDrift f={f} seed={8} y={1780} />
       </SVG>
     </Frame>
@@ -555,7 +556,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
 // ---- S9: the case for blanks (line 8) -----------------------------------------------------------------------------------------------------------------
 const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t30 = b(30), t31 = b(31), t32 = b(32);
+  const t30 = b(30), t31 = b(31), t32 = b(32), t51 = b(51);
   const walk = ease(f, t30 - 8, 36);
   const cam = track([{t: 0, z: 1.06, fx: 580, fy: 1030}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
   return (
@@ -563,14 +564,14 @@ const S9: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text="THE CASE FOR BLANKS" y={520} size={36} tone="dark" p={ease(f, t30 + 4, 8) * (1 - ease(f, t31 + 8, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} displayLines={['DEPENDS ON · TECHNOLOGY · APPROVALS ·', 'FINANCING · HOST COMMUNITIES']} text="DEPENDS ON · TECHNOLOGY · APPROVALS · FINANCING · HOST COMMUNITIES" y={535} size={24} tone="paper" p={ease(f, t31 + 18, 8) * (1 - ease(f, t32 + 14, 8))} />
-        {/* plate-overlap-ok */}<Plate x={540} displayLines={['A DISCOUNT IS WHAT', 'AN EARLY BLANK COSTS']} text="A DISCOUNT IS WHAT AN EARLY BLANK COSTS" y={538} size={30} tone="gold" p={ease(f, t32 + 16, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} text="SHARES AT A DISCOUNT" y={520} size={36} tone="gold" p={ease(f, t32 + 16, 8)} />
       </>}>
       <SVG>
         <DepotBG f={f + p.from} id="s9" dim={0.22} />
         <PoleLight x={330} y={GROUND_Y + 10} f={f} on={f < 2 ? 0 : 1} />
         <TagPost x={660} y={GROUND_Y + 20} top={POST_TOP} />
         <NuSunTag x={660} y={TAG_Y} s={1.0} f={f} states={['stamped', 'stamped', 'stamped', 'stamped']} stampP={[1, 1, 1, 1]} sway={0.5} id="s9t" />
-        <CondChips tx={660} ty={TAG_Y} f={f} t0={t31} />
+        <CondChips tx={660} ty={TAG_Y} f={f} t0={t31} t1={t51} />
         <Hero f={f} x={965} y={GROUND_Y} s={0.5} emotion="faltering" glow={0.5} facing={-1} />
         <g transform={`translate(${lerp(-300, 112, walk)},${GROUND_Y + 8})`}>
           <CashBlock x={0} y={0} f={f} scale={0.44} emotion="smug" id="s9cb" band="EARLY" knock={f > t31 ? 0.4 : 0} />
@@ -607,23 +608,25 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <rect x={0} y={0} width={W} height={H} fill="#2A1D3A" />
           <rect data-band="ok" x={0} y={620} width={W} height={860} fill="#E7DDC2" stroke={INK} strokeWidth={8} />
           {Array.from({length: 9}, (_, i) => <line key={i} x1={0} y1={620 + i * 100} x2={W} y2={620 + i * 100} stroke="#B8AD90" strokeWidth={2.5} opacity={0.6} />)}
-          <g transform="translate(60,660) scale(0.95)">
+          <g transform="translate(25,640) scale(1.03)">
             <path d={AK_PATH} fill="#BFCBE6" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
             <g transform={`translate(${PIN[0]},${PIN[1]})`}>
               <circle r={18 + 5 * Math.sin(f / 6)} fill={INK} stroke={DEP.paper} strokeWidth={5} />
               <circle r={44} fill="none" stroke={INK} strokeWidth={4} opacity={0.4 + 0.3 * Math.sin(f / 8)} />
             </g>
           </g>
-          <text x={540} y={1490} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={2} fill="#6B5B3A">SCHEMATIC MAP · NOT A SITE PLAN</text>
-          <g transform="translate(700,1130)">
+          <g transform="translate(540,672)"><SmallTag x={0} y={0} text="SCHEMATIC MAP" size={18} rot={0} /></g>
+          <g transform="translate(603,990)">
             <NuSunOutline x={0} y={0} s={0.5} f={f} k={ease(f, t33 + 24, 40)} alpha={0.95} label name="OKLO" variant="oklo" />
             <g opacity={ease(f, t34, 10)}><SmallTag x={-4} y={-250} text="EARLY 2030s" size={24} rot={-4} /></g>
+            <g transform="translate(-160,-150)"><SmallTag x={0} y={0} text="EIELSON AFB" size={20} rot={-2} /></g>
           </g>
-          <g transform={`translate(420,${1090 + 50 * sink})`} opacity={ease(f, t35 - 10, 10)}>
+          <g transform={`translate(430,${1110 + 50 * sink})`} opacity={ease(f, t35 - 10, 10)}>
             <rect x={-8} y={-130} width={16} height={130} fill="#8A8F99" stroke={INK} strokeWidth={4} />
             <g transform={`rotate(${(spin * 20) % 360} 0 0)`}><rect x={-40} y={-6} width={80} height={12} fill="#6D7280" stroke={INK} strokeWidth={4} /></g>
             <path d="M-10,0 L10,0 L0,40 Z" fill="#8A8F99" stroke={INK} strokeWidth={4} />
           </g>
+          <Hero f={f} x={150} y={1450} s={0.42} emotion="confident" />
         </g>
       </SVG>
     </Frame>
@@ -643,7 +646,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text="ENSTAR'S PRESIDENT" y={500} size={30} tone="dark" p={ease(f, t46 + 6, 8) * (1 - ease(f, t36 - 2, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} displayLines={['ENSTAR · WINTER GAS SHORTAGE', '18 DAYS · 3 BCF']} text="ENSTAR · WINTER GAS SHORTAGE · 18 DAYS · 3 BCF" y={520} size={28} tone="dark" p={ease(f, t36, 8) * (1 - ease(f, t37 + 4, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} displayLines={["ENSTAR'S PRESIDENT · WINTER", 'GAS SHORTAGE · 18 DAYS · 3 BCF']} text="ENSTAR'S PRESIDENT · WINTER GAS SHORTAGE · 18 DAYS · 3 BCF" y={524} size={26} tone="dark" p={ease(f, t36, 8) * (1 - ease(f, t37 + 4, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} text="NO DATE REACHES THIS WINTER" y={510} size={30} tone="cyan" p={ease(f, t37 + 8, 8)} />
       </>}>
       <SVG>
@@ -651,19 +654,21 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <Shed f={f + p.from} id="s11" lampX={540} frost={frost} counterY={1400} />
           <rect x={544} y={560} width={14} height={40} fill="#8A8F99" stroke={INK} strokeWidth={4} />
         </g>
-        <Calendar x={560} y={1200} s={1.0} f={f} n={18} slam={hang} frost={frost * 0.8} cross={cross} />
-        <g transform="translate(930,760)" opacity={ease(f, t37, 12)}>
-          <NuSunTag x={0} y={0} s={0.4} f={f} states={['stamped', 'stamped', 'stamped', 'stamped']} stampP={[1, 1, 1, 1]} sway={0.8} id="s11t" />
-          <rect x={-76} y={0} width={152} height={70} fill="#FFFFFF" opacity={0.45 * frost} />
+        <Calendar x={560} y={1180} s={0.92} f={f} n={18} slam={hang} frost={frost * 0.8} cross={cross} />
+        <g transform="translate(150,640)" opacity={ease(f, t37, 12)}>
+          <rect x={-6} y={-60} width={12} height={36} fill="#8A8F99" stroke={INK} strokeWidth={4} />
+          <NuSunTag x={0} y={-10} s={0.44} f={f} states={['stamped', 'stamped', 'stamped', 'stamped']} stampP={[1, 1, 1, 1]} sway={1.2} id="s11t" />
+          <rect x={-84} y={-6} width={168} height={60} fill="#FFFFFF" opacity={0.45 * frost} />
         </g>
-        <g transform="translate(450,1400)" opacity={ease(f, t37, 12)}>
-          <NuSunOutline x={0} y={0} s={0.34} f={f} k={1} alpha={0.9} />
+        <g transform="translate(900,1300)" opacity={ease(f, t37 + 6, 12)}>
+          <NuSunOutline x={0} y={0} s={0.5} f={f} k={1} alpha={0.95} variant="oklo" />
+          <SmallTag x={0} y={-150} text="EARLY 2030s" size={20} rot={3} />
         </g>
-        <g transform="translate(700,1400)" opacity={ease(f, t37 + 6, 12)}>
-          <NuSunOutline x={0} y={0} s={0.34} f={f} k={1} alpha={0.9} variant="oklo" />
-          <SmallTag x={0} y={-150} text="EARLY 2030s" size={18} rot={3} />
+        <g transform="translate(430,1300)" opacity={ease(f, t37, 12)}>
+          <NuSunOutline x={0} y={0} s={0.5} f={f} k={1} alpha={0.9} />
+          <SmallTag x={0} y={-150} text="NO DATE" size={20} rot={-3} />
         </g>
-        <Hero f={f} x={170} y={1400} s={0.58} emotion={cross > 0.3 ? 'faltering' : 'confident'} glow={1 - 0.8 * cross} />
+        <Hero f={f} x={170} y={1330} s={0.58} emotion={cross > 0.3 ? 'faltering' : 'confident'} glow={1 - 0.8 * cross} />
       </SVG>
     </Frame>
   );
@@ -717,17 +722,18 @@ const S13: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} dim={out}
       overlay={<>
-        {/* plate-overlap-ok */}<Plate x={540} displayLines={['WHAT SHOULD AIDEA PUBLISH,', 'AND BY WHEN?']} text="WHAT SHOULD AIDEA PUBLISH, AND BY WHEN?" y={500} size={32} tone="dark" p={ease(f, t41 + 6, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} displayLines={['WHAT SHOULD AIDEA PUBLISH,', 'AND BY WHEN?']} text="WHAT SHOULD AIDEA PUBLISH, AND BY WHEN?" y={496} size={32} tone="dark" p={ease(f, t41 + 6, 8)} />
       </>}>
       <SVG>
         <DepotBG f={f + p.from} id="s13" />
         <TagPost x={POST_X} y={GROUND_Y + 10} top={POST_TOP} />
         <NuSunTag x={POST_X} y={TAG_Y} s={0.85} f={f} flip={Math.max(0, flip)} states={['stamped', 'stamped', 'stamped', 'stamped']} stampP={[1, 1, 1, 1]} flutter={ease(f, t43, 20) * 0.5} id="s13t" />
         <CondChips tx={POST_X} ty={TAG_Y} ts={0.85} f={f} t0={-60} />
-        <Hero f={f} x={990} s={0.62} emotion="confident" facing={-1} />
+        <Hero f={f} x={815} s={0.62} emotion="confident" facing={-1} />
+        <NuSunOutline x={990} y={GROUND_Y + 6} s={0.4} f={f} k={1} alpha={0.9} />
         <Crate x={290} y={GROUND_Y + 24} s={0.62} f={f} lid={0.15} />
         {boxes.map((n, i) => (
-          <g key={n} transform={`translate(${440 + i * 130},${lerp(640, 676 + 5 * Math.sin(f / 6 + i), ease(f, t42 + i * 6, 14))})`} opacity={ease(f, t42 + i * 6, 8)}>
+          <g key={n} transform={`translate(${440 + i * 130},${lerp(560, 592 + 4 * Math.sin(f / 6 + i), ease(f, t42 + i * 6, 14))})`} opacity={ease(f, t42 + i * 6, 8)}>
             <rect x={-54} y={-40} width={108} height={80} rx={8} fill="none" stroke={DEP.cyan} strokeWidth={5} strokeDasharray="12 9" strokeDashoffset={-f * 0.7} />
             <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={DEP.cyan}>{n}</text>
             <text x={0} y={28} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={DEP.cyan}>?</text>
