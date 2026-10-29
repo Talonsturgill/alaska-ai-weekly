@@ -154,6 +154,7 @@ export const NuSunTag: React.FC<{
   const ang = sway * (2.2 * Math.sin(f / 31) + 1.1 * Math.sin(f / 13.7 + 1)) + flutter * 7 * Math.sin(f / 4.3);
   const sx = Math.cos(Math.PI * clamp01(flip));
   const showBack = flip > 0.5;
+  if (Math.abs(sx) < 0.04) return null;
   const T = tones(DEP.manila);
   const body = `M ${-W / 2 + 60},0 L ${W / 2 - 60},0 L ${W / 2},64 L ${W / 2},${H} L ${-W / 2},${H} L ${-W / 2},64 Z`;
   return (
