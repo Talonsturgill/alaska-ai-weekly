@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.967,
+    "heard": "Alaska just put $25 million into a reactor company, not a reactor. On October 19th, Newcube Energy of Idaho announced the money from Idea, the state's development authority. Newcube builds a small nuclear reactor called new sun. So how big is it? Where does it go? How much? And when? The deal papers skip all that, but they do state the share price. Idea agreed to pay $9.25 a share, about 14.5% below the reference price of $10.82, plus half a warrant to buy more at $11.50. Newcube is merging with an acquisition company called Launch 2, and the merger needs $75 million in cash to close. Ideas money counts toward it. Does this deal touch AI at all? Newcube's filing names AI data center demand once in a list of market trends, and never in the paragraphs about Alaska. Ideas release lists data centers beside mining and seafood, but it never says AI. In the filing, the release and a magazine report, a size, site, price and date for a newcube reactor in Alaska, are all blank. That's not a scandal. The shares come at a discount. An idea says the benefits depend on technology, approvals, financing and host communities. Alaska's one planned reactor is o-close at Eilsson Air Force Base, at least five megawatts in the early 2030s, with ground drilling set for late this year. Meanwhile, NSTAR's president says his gas utility faces a shortage this winter of 18 days, for 3 billion cubic feet, and neither reactor has a date that reaches it. So Alaska agreed to buy shares, not a reactor. The terms are filled in, and the reactor is still a dotted line. What should idea publish, and by when, before you count the reactor?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.066,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 5.35,
+        "voiced_frac": 0.52,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 129.32,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 129.32,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (6 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.967,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.961,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": false,
+      "score": 0.956,
+      "diagnosis": "WORDS: WER 0.089 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll."
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

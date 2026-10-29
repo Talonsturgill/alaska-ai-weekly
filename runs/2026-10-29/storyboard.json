@@ -1,0 +1,2171 @@
+{
+  "run_date": "2026-10-29",
+  "slug": "the-reactor-is-still-a-dotted-line",
+  "title": "The Reactor Is Still a Dotted Line",
+  "concept": "On October 19th NuCube Energy of Idaho announced a $25 million investment from AIDEA, Alaska's development authority, bought as discounted shares ($9.25, about 14.5% under a $10.82 reference price, plus a half warrant at $11.50) that count toward the $75 million NuCube's merger with Launch Two needs to close. NuCube's own filing names AI data center demand once, in a list of market trends, and nowhere in its Alaska paragraphs. AIDEA's release lists data centers beside mining and seafood and never says AI. In the filing, the release and Alaska Business, a size, site, price and date for a NuCube reactor in Alaska are all blank. The one dated Alaska reactor is Oklo's at Eielson, at least 5 MW electric in the early 2030s, and Enstar's president puts this winter's gas shortage at 18 days or 3 billion cubic feet. Sourdough, the ember power plant, watches a crate drop from a bush plane. The NUSUN shipping tag with four blank ruled lines (SIZE, SITE, PRICE, DATE) is the throughline: blank, flipped to the share terms, stamped NOT STATED, stapled beside AIDEA's own conditions, frosted beside Oklo and the calendar, and blank again at the button. NuSun is only ever a dashed ice-cyan outline that anything hung on falls straight through.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 128.86,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "vertical-descent",
+    "hero_treatment": "single-organic-hero",
+    "layout": "centered-hero-lowerthird",
+    "register": "tactile-collage",
+    "palette": "aubergine black dusk and a narrow rose-violet horizon over blue-white snow, an ember orange power plant, manila shipping tags, signal red stamps, an ice cyan outline",
+    "camera_strategy": "track-follow",
+    "light_story": "rose-violet dusk raking over snow, lamp-lit paper interiors",
+    "metaphor": "a shipping tag with four blank ruled lines hung on a post beside a dashed outline of a reactor that anything hung on falls straight through"
+  },
+  "palette": "aubergine black dusk and a narrow rose-violet horizon over blue-white snow, an ember orange power plant, manila shipping tags, signal red stamps, an ice cyan outline",
+  "divergence_note": "The last films were a near-black submerged sonar world with mint (10-28), a sage and honey civic hall (10-26), a cedar boardwalk of signs in teal fog (10-25), a navy orbit (10-24) and a snow-bound paper building (10-23). This film is a warm exterior dusk of aubergine and raspberry over blue-white snow with manila tags and an ember-orange power plant, intercut with lamp-lit paper interiors and a frosted shed wall. There is no sonar fan, no hall, no podium, no boardwalk, no orbit. Its hero is Sourdough, a round blocky power plant with a furnace window for a chest, and its object is a shipping tag.",
+  "treatment": {
+    "winner": "Dramatist skeleton with grafts",
+    "title": "The Reactor Is Still a Dotted Line",
+    "hero": "Sourdough",
+    "judge_reasoning": "All four lenses cast Sourdough (not in the last 10 heroes) and converged on the angle. The Dramatist's NUSUN shipping tag with four blank lines (SIZE, SITE, PRICE, DATE) is the strongest throughline because it is the angle drawn as an object: a front that stays blank and a back that fills with share terms. Grafted: the Comedian's running gag that anything hung on the dashed NuSun outline falls straight through and the BushPlane drop that opens and closes the film, the Explainer's TallyCounter reading 1 in NuCube's market-trends paragraph and 0 in the Alaska paragraphs, and the Enthusiast's half-ticket warrant and the fair case that blanks are what a discount pays for. Cut: DOE Launch Pad, the Dunleavy and Brefczynski quotes and the Rabiti anchor line for length (c8 and c20 are voiced, c9 c10 c11 c17 c22 c23 are not).",
+    "throughline": "the NUSUN shipping tag",
+    "tests": "Act 3 'The Case for Blanks' (shots 9 to 11): the fair case at full strength, then Oklo's filled clock and Enstar's calendar narrow it to two different clocks."
+  },
+  "angle": {
+    "thesis": "Alaska's development authority bought discounted shares in a reactor startup, not a reactor: the AI in the pitch is NuCube's own market boilerplate, and the size, site, price and date for Alaska are still blank, so the honest read is what the documents fill in and what they leave open.",
+    "supporting_facts": [
+      "c15 none of the three documents gives a size, site, price or date for a NuCube reactor in Alaska",
+      "c4/c5/c7 $9.25 a share, about 14.5% under the reference price, counts toward the $75M the merger needs to close",
+      "c12/c13/c14 AI appears once, in NuCube's market-trends sentence, never in the Alaska paragraphs, and AIDEA lists data centers but never AI"
+    ],
+    "counterpoint_honored": "Blanks are normal for early equity, and the discount and warrants (c5, c8) are what blanks pay for. Even the one dated Alaska reactor (Oklo, early 2030s, c19) is years out, so no reactor from any company helps the winter shortage Enstar sizes at 18 days (c21). AIDEA wrote the conditions itself (c16).",
+    "falsifiable": "False if any of the three documents gives NuCube a size, site, price or date in Alaska, or if AIDEA's text names AI as the reason for the purchase.",
+    "valence": "even-handed, leaning constructive",
+    "stance": "mixed",
+    "runner_ups": [
+      "hopeful 'paid to be in the room' (loses: the seat metaphor implies governance rights no claim supports)",
+      "two clocks (kept as the second movement: winter gas versus the 2030s)"
+    ],
+    "cross_challenge": "All three analysts converged on blanks-versus-terms. Challenges applied: no 'seat', no 'signed', no AI-as-reason, Oklo is early 2030s never 2030 never paused, c23 reworded to avoid banned 'matters'."
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A cream bush plane skims a narrow rose-violet horizon over a snowy depot and drops a crate beside Sourdough while a manila tag with four blank ruled lines whips round to camera.",
+    "headline": "$25M INTO A REACTOR COMPANY",
+    "motion_by_s": 0.3,
+    "loopback": "The last frame returns to the opening depot with the opened crate at Sourdough's feet and the tag swinging to camera, now stamped."
+  },
+  "open_loop": {
+    "plant_t": 2.13,
+    "pay_t": 122.49,
+    "what": "What is in the crate? Planted in the first frame, paid when Sourdough opens it and finds one share certificate, which falls through the dotted outline, the reactor still a dotted line."
+  },
+  "open_loop_2": {
+    "plant_t": 39.67,
+    "pay_t": 84.59,
+    "what": "Why would a state take a discount and half a ticket? Planted when the half warrant ticket tears off the tag, paid in the case for blanks when the shares are said to come at a discount."
+  },
+  "throughline": {
+    "object": "the NUSUN shipping tag",
+    "lands_in_button": "the tag swinging to camera with the NOT STATED stamps showing under AIDEA's conditions",
+    "states": [
+      {
+        "at_s": 2.13,
+        "state": "hung on its post with four blank ruled lines"
+      },
+      {
+        "at_s": 27.316,
+        "state": "turned over to the share terms with the price sticker and half ticket"
+      },
+      {
+        "at_s": 42.76,
+        "state": "hung on its post beside the merger jar on a sled, share side out"
+      },
+      {
+        "at_s": 74.99,
+        "state": "face on again with NOT STATED stamped across the lines"
+      },
+      {
+        "at_s": 86.61,
+        "state": "AIDEA's four conditions stapled over the stamped lines"
+      },
+      {
+        "at_s": 111.97,
+        "state": "frost over its edge beside Oklo's dated tag and the calendar"
+      },
+      {
+        "at_s": 128.11,
+        "state": "swinging to camera with the stamps under the conditions"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 15.76,
+      "type": "build-on",
+      "what": "the NuSun outline draws itself on beside the tag as a dashed shape with no fill",
+      "hold_s": 0.7
+    },
+    {
+      "t": 58.07,
+      "type": "morph-to-chart",
+      "what": "the count box rolls to 1 in the market trends paragraph and stays at 0 over the Alaska paragraphs",
+      "hold_s": 0.7
+    },
+    {
+      "t": 92.1,
+      "type": "scale-pullback",
+      "what": "the camera pulls back from the snow to a map with the Eielson pin",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.55
+      },
+      {
+        "line": 0,
+        "offset": 3.0,
+        "level": 1.0
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.15
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 0.95
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.12
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.12
+      },
+      {
+        "line": 9,
+        "offset": 4.0,
+        "level": 1.05
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "at_s": 122.19,
+        "level": 0.1
+      },
+      {
+        "at_s": 123.29,
+        "level": 0.55
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.55
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 122.19,
+    "riser_at": 125.19,
+    "silence_at": 122.19,
+    "payoff_at": 122.49,
+    "button_pattern": "callback",
+    "interrupt_at": 81.98,
+    "extra_dips": [
+      108.17
+    ]
+  },
+  "shots": [
+    {
+      "title": "The drop",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "depot-yard",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the crate at x540 y1150",
+      "means": "A bush plane skims a dusk depot and drops a crate beside Sourdough, and a manila NUSUN tag with four blank lines whips round.",
+      "ambient": "snow drifts, the prop spins, the pole line sways, the tag swings",
+      "hero": {
+        "name": "Sourdough + bush plane + crate + NUSUN tag",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "35% Sourdough, 25% plane, 20% crate, 20% tag"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-8.140"
+    },
+    {
+      "title": "Announced",
+      "vo_line": 1,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "overhead",
+      "stage": "mailroom-corkboard",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the release at x540 y1000",
+      "means": "A press release is pinned to a cork board in a cold mailroom and stamped ANNOUNCED and AIDEA.",
+      "ambient": "the tube flickers, the sheet settles, the pins glint",
+      "hero": {
+        "name": "press release + stamps + lamp",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% release, 25% stamps, 20% lamp"
+      },
+      "id": 2,
+      "start_s": 8.14,
+      "t": "8.140-15.760"
+    },
+    {
+      "title": "Four questions",
+      "vo_line": 2,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "depot-yard",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the tag at x400 y1000",
+      "means": "The tag beside a dashed NuSun outline with its four ruled lines lighting as each question is asked.",
+      "ambient": "the dashes crawl, the tag swings, snow drifts",
+      "hero": {
+        "name": "NUSUN tag + dashed outline + Sourdough",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% tag, 35% outline, 25% Sourdough"
+      },
+      "id": 3,
+      "start_s": 15.76,
+      "t": "15.760-25.600"
+    },
+    {
+      "title": "The share terms",
+      "vo_line": 3,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "tag-macro",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the tag back at x540 y1000",
+      "means": "The back of the tag with a price sticker folding from $10.82 to $9.25, a gold band and a half ticket.",
+      "ambient": "the sticker flaps, the tag swings, the coins glint",
+      "hero": {
+        "name": "tag back + price sticker + half ticket",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% tag, 30% sticker, 20% ticket"
+      },
+      "id": 4,
+      "start_s": 25.6,
+      "t": "25.600-42.760"
+    },
+    {
+      "title": "The merger jar",
+      "vo_line": 4,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "depot-yard",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the jar at x540 y1100",
+      "means": "A glass jar on a sled at the depot fills with coins from a plane to $75M and AIDEA's block fills the bottom third.",
+      "ambient": "coins stream, the jar rattles, the lamp sways",
+      "hero": {
+        "name": "glass jar + coins + AIDEA block + Sourdough",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "45% jar, 25% coins, 15% block, 15% Sourdough"
+      },
+      "id": 5,
+      "start_s": 42.76,
+      "t": "42.760-53.680"
+    },
+    {
+      "title": "The AI count",
+      "vo_line": 5,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "high",
+      "stage": "filing-desk",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the filing at x540 y1000",
+      "means": "NuCube's filing under a lamp, a count box at 1 in MARKET TRENDS and 0 over the Alaska paragraphs, with a ghost server.",
+      "ambient": "the count box waits, the ghost server drifts, the lamp sways",
+      "hero": {
+        "name": "filing + count box + ghost server",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% filing, 30% count box, 20% ghost"
+      },
+      "id": 6,
+      "start_s": 53.68,
+      "t": "53.680-64.820"
+    },
+    {
+      "title": "AIDEA's list",
+      "vo_line": 6,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "shed-wall",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the chips at x540 y1000",
+      "means": "Four blocks MINING SEAFOOD MANUFACTURING DATA CENTERS on pegs and a dashed empty slot stamped AI NOT SAID.",
+      "ambient": "the chips breathe, the dashes crawl, the lamp sways",
+      "hero": {
+        "name": "four chips + dashed slot + release",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% chips, 25% slot, 20% release"
+      },
+      "id": 7,
+      "start_s": 64.82,
+      "t": "64.820-71.260"
+    },
+    {
+      "title": "The blanks",
+      "vo_line": 7,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "depot-yard",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the signature shot holds locked from the first stamp",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the tag at x540 y1000",
+      "means": "The tag face on between Sourdough and the dotted outline, four red NOT STATED stamps.",
+      "ambient": "the tag rocks, the dashes crawl, snow drifts",
+      "hero": {
+        "name": "NUSUN tag + red stamps + Sourdough + dashed outline",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% tag, 25% stamps, 20% Sourdough, 15% outline"
+      },
+      "id": 8,
+      "start_s": 71.26,
+      "t": "71.260-81.980"
+    },
+    {
+      "title": "The case for blanks",
+      "vo_line": 8,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "low",
+      "stage": "depot-yard",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the block at x540 y1100",
+      "means": "A banknote block makes the fair case in the snow beside the tag post, stapling four conditions over the stamped lines, with a discount tag.",
+      "ambient": "the block breathes, the discount tag swings, the lamp sways",
+      "hero": {
+        "name": "banknote block + condition board + discount tag",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% block, 35% board, 20% tag"
+      },
+      "id": 9,
+      "start_s": 81.98,
+      "t": "81.980-92.100"
+    },
+    {
+      "title": "Oklo at Eielson",
+      "vo_line": 9,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "eielson-map",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the map at x540 y1000",
+      "means": "A painted map with an Eielson pin, Oklo's dashed outline and tag, and a drill bit.",
+      "ambient": "the pin pulses, the drill spins, the dashes crawl",
+      "hero": {
+        "name": "painted map + Eielson pin + Oklo outline + drill",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% map, 25% outline, 25% drill"
+      },
+      "id": 10,
+      "start_s": 92.1,
+      "t": "92.100-103.040"
+    },
+    {
+      "title": "Two clocks",
+      "vo_line": 10,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "calendar-wall",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the calendar at x540 y1000",
+      "means": "A wall calendar slams onto a frosted shed wall with eighteen days crossed beside two dashed outlines.",
+      "ambient": "frost creeps, the dashes crawl, the pole line sways",
+      "hero": {
+        "name": "wall calendar + two dashed outlines + frost",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% calendar, 35% outlines, 20% frost"
+      },
+      "id": 11,
+      "start_s": 103.04,
+      "t": "103.040-115.100"
+    },
+    {
+      "title": "Shares, not a reactor",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "depot-yard",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the dashed outline at x700 y1100",
+      "means": "Sourdough opens the crate, lifts out one share certificate and hangs it on the dashed outline where it falls straight through.",
+      "ambient": "the certificate sways, the dashes crawl, snow drifts",
+      "hero": {
+        "name": "certificate + dashed outline + Sourdough",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "35% certificate, 35% outline, 30% Sourdough"
+      },
+      "id": 12,
+      "start_s": 115.1,
+      "t": "115.100-124.160"
+    },
+    {
+      "title": "The button",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "depot-yard",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the crate at x540 y1150",
+      "means": "The opening frame returns with the opened crate at Sourdough's feet and the stamped tag under AIDEA's conditions swinging to camera.",
+      "ambient": "snow drifts, the tag flutters, the dashes crawl",
+      "hero": {
+        "name": "Sourdough + crate + plane + stamped tag",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "30% Sourdough, 25% crate, 20% plane, 25% tag"
+      },
+      "id": 13,
+      "start_s": 124.16,
+      "t": "124.160-128.860"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska just put twenty five million dollars into a reactor company, not a reactor.",
+      "phrase": "Alaska just put twenty",
+      "shows": "a cream bush plane skims the aubergine dusk over a snowy depot and a crate drops toward Sourdough while a dashed cyan outline glows beside a post, a plate reads $25M INTO A REACTOR COMPANY",
+      "sfx": "whoosh",
+      "means": "$25m into a reactor company",
+      "rehook": "",
+      "draw": {
+        "subject": "the bush plane",
+        "action": "skims the dusk horizon and drops a crate beside Sourdough while a dashed outline glows beside the post",
+        "emotion": "proud",
+        "annotation": "$25M INTO A REACTOR COMPANY"
+      },
+      "choreo": {
+        "primary": "a cream bush plane skims the aubergine dusk over a snowy depot and a crate drops toward Sourdough while a dashed cyan outline glows beside a post, a plate reads $25M INTO A REACTOR COMPANY",
+        "reaction": "the prop spins and snow drifts",
+        "ambient": "snow drifts, the prop spins, the pole line sways, the tag swings"
+      },
+      "t": "0.000-2.130",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.13,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.13
+      },
+      "offset": 2.13,
+      "vo": "Alaska just put twenty five million dollars into a reactor company, not a reactor.",
+      "phrase": "million dollars into a",
+      "shows": "the crate thumps into the snow, the lid pops an inch and a manila NUSUN tag with four blank ruled lines whips round to face the camera",
+      "sfx": "thump",
+      "means": "$25m from alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "the crate",
+        "action": "thumps into the snow, its lid pops an inch, and a manila tag whips round on its string",
+        "emotion": "proud",
+        "annotation": "$25M FROM ALASKA"
+      },
+      "choreo": {
+        "primary": "the crate thumps into the snow, the lid pops an inch and a manila NUSUN tag with four blank ruled lines whips round to face the camera",
+        "reaction": "the tag swings and settles",
+        "ambient": "snow drifts, the prop spins, the pole line sways, the tag swings"
+      },
+      "kick": true,
+      "t": "2.130-6.670",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 6.67,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.67
+      },
+      "offset": 6.67,
+      "vo": "Alaska just put twenty five million dollars into a reactor company, not a reactor.",
+      "phrase": "reactor.",
+      "shows": "the four ruled lines on the tag glow cyan and Sourdough tilts his head, a plate reads NOT A REACTOR, A COMPANY",
+      "sfx": "pop",
+      "means": "not a reactor \u00b7 a company",
+      "rehook": "",
+      "draw": {
+        "subject": "the tag",
+        "action": "its four dashed lines glow ice cyan",
+        "emotion": "unsure",
+        "annotation": "NOT A REACTOR \u00b7 A COMPANY"
+      },
+      "choreo": {
+        "primary": "the four ruled lines on the tag glow cyan and Sourdough tilts his head, a plate reads NOT A REACTOR, A COMPANY",
+        "reaction": "the lines pulse",
+        "ambient": "snow drifts, the prop spins, the pole line sways, the tag swings"
+      },
+      "t": "6.670-8.140",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 8.14,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On October nineteenth, NuCube Energy of Idaho announced the money from AIDEA, the state's development authority.",
+      "phrase": "On October nineteenth, NuCube",
+      "shows": "a cream press release drops onto a cork board in a cold mailroom and a pushpin punches through it, a plate reads OCT 19TH, NUCUBE ENERGY, IDAHO",
+      "sfx": "slide",
+      "means": "oct 19th \u00b7 nucube energy \u00b7 idaho",
+      "rehook": "rehook: a paper lands in a mailroom",
+      "draw": {
+        "subject": "a press release",
+        "action": "drops onto a cork board and a pushpin punches through it",
+        "emotion": "reading",
+        "annotation": "OCT 19TH \u00b7 NUCUBE ENERGY \u00b7 IDAHO"
+      },
+      "choreo": {
+        "primary": "a cream press release drops onto a cork board in a cold mailroom and a pushpin punches through it, a plate reads OCT 19TH, NUCUBE ENERGY, IDAHO",
+        "reaction": "the sheet settles and the tube flickers",
+        "ambient": "the tube flickers, the sheet settles, the pins glint"
+      },
+      "t": "8.140-11.410",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 11.41,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.27
+      },
+      "offset": 3.27,
+      "vo": "On October nineteenth, NuCube Energy of Idaho announced the money from AIDEA, the state's development authority.",
+      "phrase": "announced the money from",
+      "shows": "an ink stamp slaps ANNOUNCED onto the release",
+      "sfx": "click",
+      "means": "announced oct 19th",
+      "rehook": "",
+      "draw": {
+        "subject": "a stamp",
+        "action": "slaps ANNOUNCED on the release",
+        "emotion": "reading",
+        "annotation": "ANNOUNCED OCT 19TH"
+      },
+      "choreo": {
+        "primary": "an ink stamp slaps ANNOUNCED onto the release",
+        "reaction": "the sheet shivers",
+        "ambient": "the tube flickers, the sheet settles, the pins glint"
+      },
+      "t": "11.410-12.670",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 12.67,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.53
+      },
+      "offset": 4.53,
+      "vo": "On October nineteenth, NuCube Energy of Idaho announced the money from AIDEA, the state's development authority.",
+      "phrase": "AIDEA, the state's development",
+      "shows": "a second stamp lands reading AIDEA and a plate reads AIDEA, ALASKA INDUSTRIAL DEVELOPMENT AND EXPORT AUTHORITY",
+      "sfx": "thunk",
+      "means": "aidea \u00b7 alaska industrial development and export authority",
+      "rehook": "",
+      "draw": {
+        "subject": "the AIDEA stamp",
+        "action": "lands beside it",
+        "emotion": "reading",
+        "annotation": "AIDEA \u00b7 ALASKA INDUSTRIAL DEVELOPMENT AND EXPORT AUTHORITY"
+      },
+      "choreo": {
+        "primary": "a second stamp lands reading AIDEA and a plate reads AIDEA, ALASKA INDUSTRIAL DEVELOPMENT AND EXPORT AUTHORITY",
+        "reaction": "the stamp rings",
+        "ambient": "the tube flickers, the sheet settles, the pins glint"
+      },
+      "t": "12.670-15.760",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 15.76,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "NuCube builds a small nuclear reactor called NuSun, so how big is it, where does it go, how much, and when?",
+      "phrase": "NuCube builds a small",
+      "shows": "a dashed ice cyan outline of a squat reactor draws itself on beside the tag with a name badge reading NUSUN, SOLID-STATE, HEAT-PIPE-COOLED",
+      "sfx": "swell",
+      "means": "nusun \u00b7 solid-state, heat-pipe-cooled",
+      "rehook": "rehook: the reactor appears as a dotted line",
+      "draw": {
+        "subject": "the NuSun outline",
+        "action": "draws itself on beside the tag as a dashed ice cyan outline with no fill",
+        "emotion": "unsure",
+        "annotation": "NUSUN \u00b7 SOLID-STATE, HEAT-PIPE-COOLED"
+      },
+      "choreo": {
+        "primary": "a dashed ice cyan outline of a squat reactor draws itself on beside the tag with a name badge reading NUSUN, SOLID-STATE, HEAT-PIPE-COOLED",
+        "reaction": "the dashes crawl",
+        "ambient": "the dashes crawl, the tag swings, snow drifts"
+      },
+      "t": "15.760-16.990",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 16.99,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 1.23
+      },
+      "offset": 1.23,
+      "vo": "NuCube builds a small nuclear reactor called NuSun, so how big is it, where does it go, how much, and when?",
+      "phrase": "small nuclear reactor called",
+      "shows": "Sourdough pushes the tag post and it rocks, a plate reads FOUR QUESTIONS",
+      "sfx": "knock",
+      "means": "four questions",
+      "rehook": "",
+      "draw": {
+        "subject": "Sourdough",
+        "action": "pushes the post and it rocks",
+        "emotion": "unsure",
+        "annotation": "FOUR QUESTIONS"
+      },
+      "choreo": {
+        "primary": "Sourdough pushes the tag post and it rocks, a plate reads FOUR QUESTIONS",
+        "reaction": "the post rocks",
+        "ambient": "the dashes crawl, the tag swings, snow drifts"
+      },
+      "t": "16.990-20.730",
+      "key": 50
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 20.73,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 4.97
+      },
+      "offset": 4.97,
+      "vo": "NuCube builds a small nuclear reactor called NuSun, so how big is it, where does it go, how much, and when?",
+      "phrase": "big is it, where",
+      "shows": "the SIZE line on the tag lights cyan",
+      "sfx": "ping",
+      "means": "size",
+      "rehook": "",
+      "draw": {
+        "subject": "the SIZE line",
+        "action": "lights up cyan on the tag",
+        "emotion": "unsure",
+        "annotation": "SIZE"
+      },
+      "choreo": {
+        "primary": "the SIZE line on the tag lights cyan",
+        "reaction": "the line pulses",
+        "ambient": "the dashes crawl, the tag swings, snow drifts"
+      },
+      "t": "20.730-22.270",
+      "key": 8
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 22.27,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 6.51
+      },
+      "offset": 6.51,
+      "vo": "NuCube builds a small nuclear reactor called NuSun, so how big is it, where does it go, how much, and when?",
+      "phrase": "go, how much, and",
+      "shows": "the SITE line on the tag lights cyan",
+      "sfx": "ping",
+      "means": "site",
+      "rehook": "",
+      "draw": {
+        "subject": "the SITE line",
+        "action": "lights up cyan on the tag",
+        "emotion": "unsure",
+        "annotation": "SITE"
+      },
+      "choreo": {
+        "primary": "the SITE line on the tag lights cyan",
+        "reaction": "the line pulses",
+        "ambient": "the dashes crawl, the tag swings, snow drifts"
+      },
+      "t": "22.270-23.190",
+      "key": 9
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 23.19,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 7.43
+      },
+      "offset": 7.43,
+      "vo": "NuCube builds a small nuclear reactor called NuSun, so how big is it, where does it go, how much, and when?",
+      "phrase": "how much, and when?",
+      "shows": "the PRICE line lights cyan while Sourdough hangs a small price tag on the dashed outline and it falls straight through into the snow",
+      "sfx": "whoosh",
+      "means": "price",
+      "rehook": "",
+      "draw": {
+        "subject": "a price tag",
+        "action": "Sourdough hangs a price tag on the outline and it falls straight through into the snow",
+        "emotion": "sheepish",
+        "annotation": "PRICE"
+      },
+      "choreo": {
+        "primary": "the PRICE line lights cyan while Sourdough hangs a small price tag on the dashed outline and it falls straight through into the snow",
+        "reaction": "the price tag lies in the snow",
+        "ambient": "the dashes crawl, the tag swings, snow drifts"
+      },
+      "t": "23.190-24.370",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 3,
+      "at_s": 24.37,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 8.61
+      },
+      "offset": 8.61,
+      "vo": "NuCube builds a small nuclear reactor called NuSun, so how big is it, where does it go, how much, and when?",
+      "phrase": "when?",
+      "shows": "the DATE line on the tag lights cyan, all four lines now glow",
+      "sfx": "ping",
+      "means": "date",
+      "rehook": "",
+      "draw": {
+        "subject": "the DATE line",
+        "action": "lights up cyan on the tag",
+        "emotion": "unsure",
+        "annotation": "DATE"
+      },
+      "choreo": {
+        "primary": "the DATE line on the tag lights cyan, all four lines now glow",
+        "reaction": "the lines pulse",
+        "ambient": "the dashes crawl, the tag swings, snow drifts"
+      },
+      "t": "24.370-27.316",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 27.316,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.1,
+        "offset": 1.716
+      },
+      "offset": 1.716,
+      "vo": "The deal papers skip all that, but they do state the share price. AIDEA agreed to pay nine point two five dollars a share, about fourteen point five percent below the reference price of ten eighty two, plus half a warrant to buy more at eleven fifty.",
+      "phrase": "The deal papers skip",
+      "shows": "the tag swings around and flips over to show its back, headed SHARES, with a plate reading THE SHARE TERMS",
+      "sfx": "slide",
+      "means": "the share terms",
+      "rehook": "",
+      "draw": {
+        "subject": "the tag",
+        "action": "swings around and turns over to show its back",
+        "emotion": "reading",
+        "annotation": "THE SHARE TERMS"
+      },
+      "choreo": {
+        "primary": "the tag swings around and flips over to show its back, headed SHARES, with a plate reading THE SHARE TERMS",
+        "reaction": "the tag settles",
+        "ambient": "the sticker flaps, the tag swings, the coins glint"
+      },
+      "t": "27.316-28.890",
+      "key": 12
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 28.89,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.29
+      },
+      "offset": 3.29,
+      "vo": "The deal papers skip all that, but they do state the share price. AIDEA agreed to pay nine point two five dollars a share, about fourteen point five percent below the reference price of ten eighty two, plus half a warrant to buy more at eleven fifty.",
+      "phrase": "state the share price.",
+      "shows": "an empty slot on the back of the tag lights up, a plate reads SHARE PRICE",
+      "sfx": "tick",
+      "means": "share price",
+      "rehook": "",
+      "draw": {
+        "subject": "an empty price slot",
+        "action": "lights up on the back of the tag",
+        "emotion": "reading",
+        "annotation": "SHARE PRICE"
+      },
+      "choreo": {
+        "primary": "an empty slot on the back of the tag lights up, a plate reads SHARE PRICE",
+        "reaction": "the slot pulses",
+        "ambient": "the sticker flaps, the tag swings, the coins glint"
+      },
+      "t": "28.890-31.990",
+      "key": 44
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 31.99,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.39
+      },
+      "offset": 6.39,
+      "vo": "The deal papers skip all that, but they do state the share price. AIDEA agreed to pay nine point two five dollars a share, about fourteen point five percent below the reference price of ten eighty two, plus half a warrant to buy more at eleven fifty.",
+      "phrase": "nine point two five",
+      "shows": "a gold sticker slaps onto the slot on the back of the tag, a plate reads $9.25 A SHARE",
+      "sfx": "pop",
+      "means": "$9.25 a share",
+      "rehook": "",
+      "draw": {
+        "subject": "a gold sticker",
+        "action": "slaps onto the slot",
+        "emotion": "reading",
+        "annotation": "$9.25 A SHARE"
+      },
+      "choreo": {
+        "primary": "a gold sticker slaps onto the slot on the back of the tag, a plate reads $9.25 A SHARE",
+        "reaction": "the sticker flaps",
+        "ambient": "the sticker flaps, the tag swings, the coins glint"
+      },
+      "t": "31.990-36.070",
+      "key": 13
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "at_s": 36.07,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 10.47
+      },
+      "offset": 10.47,
+      "vo": "The deal papers skip all that, but they do state the share price. AIDEA agreed to pay nine point two five dollars a share, about fourteen point five percent below the reference price of ten eighty two, plus half a warrant to buy more at eleven fifty.",
+      "phrase": "below the reference price",
+      "shows": "a gold band brackets the drop and a plate reads ~14.5% BELOW",
+      "sfx": "thump",
+      "means": "~14.5% below",
+      "rehook": "rehook: the gold band brackets the discount",
+      "draw": {
+        "subject": "a gold band",
+        "action": "stamps the drop below the reference price",
+        "emotion": "reading",
+        "annotation": "~14.5% BELOW"
+      },
+      "choreo": {
+        "primary": "a gold band brackets the drop and a plate reads ~14.5% BELOW",
+        "reaction": "the band glints",
+        "ambient": "the sticker flaps, the tag swings, the coins glint"
+      },
+      "t": "36.070-37.450",
+      "key": 14
+    },
+    {
+      "id": 17,
+      "shot": 4,
+      "at_s": 37.45,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 11.85
+      },
+      "offset": 11.85,
+      "vo": "The deal papers skip all that, but they do state the share price. AIDEA agreed to pay nine point two five dollars a share, about fourteen point five percent below the reference price of ten eighty two, plus half a warrant to buy more at eleven fifty.",
+      "phrase": "ten eighty two, plus",
+      "shows": "the reference price $10.82 lands above the sticker with a line through it",
+      "sfx": "tick",
+      "means": "$10.82 reference price",
+      "rehook": "",
+      "draw": {
+        "subject": "a struck price",
+        "action": "lands above the sticker with a line through it",
+        "emotion": "reading",
+        "annotation": "$10.82 REFERENCE PRICE"
+      },
+      "choreo": {
+        "primary": "the reference price $10.82 lands above the sticker with a line through it",
+        "reaction": "the figure settles",
+        "ambient": "the sticker flaps, the tag swings, the coins glint"
+      },
+      "t": "37.450-39.670",
+      "key": 47
+    },
+    {
+      "id": 18,
+      "shot": 4,
+      "at_s": 39.67,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 14.07
+      },
+      "offset": 14.07,
+      "vo": "The deal papers skip all that, but they do state the share price. AIDEA agreed to pay nine point two five dollars a share, about fourteen point five percent below the reference price of ten eighty two, plus half a warrant to buy more at eleven fifty.",
+      "phrase": "warrant to buy more",
+      "shows": "a half ticket tears off the tag's edge, a plate reads HALF A WARRANT A SHARE, $11.50, 5 YEARS",
+      "sfx": "tick",
+      "means": "half a warrant a share \u00b7 $11.50 \u00b7 5 years",
+      "rehook": "",
+      "draw": {
+        "subject": "a half ticket",
+        "action": "tears off the edge of the tag",
+        "emotion": "reading",
+        "annotation": "HALF A WARRANT A SHARE \u00b7 $11.50 \u00b7 5 YEARS"
+      },
+      "choreo": {
+        "primary": "a half ticket tears off the tag's edge, a plate reads HALF A WARRANT A SHARE, $11.50, 5 YEARS",
+        "reaction": "the ticket flutters",
+        "ambient": "the sticker flaps, the tag swings, the coins glint"
+      },
+      "t": "39.670-42.760",
+      "key": 15
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 42.76,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "NuCube is merging with an acquisition company called Launch Two, and the merger needs seventy five million dollars in cash to close. AIDEA's money counts toward it.",
+      "phrase": "NuCube is merging with",
+      "shows": "a tall glass jar slides across the snow on a plank sled that Sourdough hauls in by a rope, a plate reads MERGER WITH LAUNCH TWO",
+      "sfx": "slide",
+      "means": "merger with launch two",
+      "rehook": "",
+      "draw": {
+        "subject": "the jar",
+        "action": "slides across the snow on a plank sled that Sourdough hauls in by a rope",
+        "emotion": "reading",
+        "annotation": "MERGER WITH LAUNCH TWO"
+      },
+      "choreo": {
+        "primary": "a tall glass jar slides across the snow on a plank sled that Sourdough hauls in by a rope, a plate reads MERGER WITH LAUNCH TWO",
+        "reaction": "snow drifts",
+        "ambient": "coins stream, the jar rattles, the lamp sways"
+      },
+      "t": "42.760-47.650",
+      "key": 16
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 47.65,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.89
+      },
+      "offset": 4.89,
+      "vo": "NuCube is merging with an acquisition company called Launch Two, and the merger needs seventy five million dollars in cash to close. AIDEA's money counts toward it.",
+      "phrase": "seventy five million dollars",
+      "shows": "coins pour into the jar from a passing bush plane's hatch and its top mark lights, a plate reads $75M CASH TO CLOSE",
+      "sfx": "roll",
+      "means": "$75m cash to close",
+      "rehook": "rehook: the money pours in",
+      "draw": {
+        "subject": "the jar",
+        "action": "its top mark lights at $75M as coins pour in from a bush plane's hatch",
+        "emotion": "reading",
+        "annotation": "$75M CASH TO CLOSE"
+      },
+      "choreo": {
+        "primary": "coins pour into the jar from a passing bush plane's hatch and its top mark lights, a plate reads $75M CASH TO CLOSE",
+        "reaction": "the coins stream",
+        "ambient": "coins stream, the jar rattles, the lamp sways"
+      },
+      "t": "47.650-51.750",
+      "key": 17
+    },
+    {
+      "id": 21,
+      "shot": 5,
+      "at_s": 51.75,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 8.99
+      },
+      "offset": 8.99,
+      "vo": "NuCube is merging with an acquisition company called Launch Two, and the merger needs seventy five million dollars in cash to close. AIDEA's money counts toward it.",
+      "phrase": "counts toward it.",
+      "shows": "a gold block labelled AIDEA drops in and fills the bottom third of the jar while Sourdough braces it, a plate reads AIDEA'S $25M COUNTS",
+      "sfx": "bell",
+      "means": "aidea's $25m counts",
+      "rehook": "",
+      "draw": {
+        "subject": "a gold block",
+        "action": "drops in and fills the bottom third of the jar while Sourdough braces it",
+        "emotion": "reading",
+        "annotation": "AIDEA'S $25M COUNTS"
+      },
+      "choreo": {
+        "primary": "a gold block labelled AIDEA drops in and fills the bottom third of the jar while Sourdough braces it, a plate reads AIDEA'S $25M COUNTS",
+        "reaction": "the jar rattles",
+        "ambient": "coins stream, the jar rattles, the lamp sways"
+      },
+      "t": "51.750-53.680",
+      "key": 18
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 53.68,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Does this deal touch A I at all? NuCube's filing names A I data center demand once, in a list of market trends, and never in the paragraphs about Alaska.",
+      "phrase": "Does this deal touch",
+      "shows": "NuCube's filing drops onto a lamplit desk with two paragraphs headed MARKET TRENDS and ALASKA and a count box at 0, a ghost server peeks in with a question mark",
+      "sfx": "slide",
+      "means": "nucube's filing",
+      "rehook": "",
+      "draw": {
+        "subject": "NuCube's filing",
+        "action": "drops onto a lamplit desk while a ghost server peeks in with a question mark",
+        "emotion": "reading",
+        "annotation": "NUCUBE'S FILING"
+      },
+      "choreo": {
+        "primary": "NuCube's filing drops onto a lamplit desk with two paragraphs headed MARKET TRENDS and ALASKA and a count box at 0, a ghost server peeks in with a question mark",
+        "reaction": "the count box waits",
+        "ambient": "the count box waits, the ghost server drifts, the lamp sways"
+      },
+      "t": "53.680-58.070",
+      "key": 19
+    },
+    {
+      "id": 23,
+      "shot": 6,
+      "at_s": 58.07,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.39
+      },
+      "offset": 4.39,
+      "vo": "Does this deal touch A I at all? NuCube's filing names A I data center demand once, in a list of market trends, and never in the paragraphs about Alaska.",
+      "phrase": "data center demand once,",
+      "shows": "the count box flips to 1 as a stripe sweeps a phrase in the MARKET TRENDS paragraph, a plate reads NUCUBE'S FILING, AI DATA CENTER ENERGY DEMAND, ONCE",
+      "sfx": "tick",
+      "means": "nucube's filing \u00b7 \"ai data center energy demand\" \u00b7 once",
+      "rehook": "rehook: the counter clicks",
+      "draw": {
+        "subject": "the count box",
+        "action": "flips to 1 as a stripe sweeps the MARKET TRENDS paragraph",
+        "emotion": "reading",
+        "annotation": "NUCUBE'S FILING \u00b7 \"AI DATA CENTER ENERGY DEMAND\" \u00b7 ONCE"
+      },
+      "choreo": {
+        "primary": "the count box flips to 1 as a stripe sweeps a phrase in the MARKET TRENDS paragraph, a plate reads NUCUBE'S FILING, AI DATA CENTER ENERGY DEMAND, ONCE",
+        "reaction": "the count flips to 1",
+        "ambient": "the count box waits, the ghost server drifts, the lamp sways"
+      },
+      "t": "58.070-62.670",
+      "key": 20
+    },
+    {
+      "id": 24,
+      "shot": 6,
+      "at_s": 62.67,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 8.99
+      },
+      "offset": 8.99,
+      "vo": "Does this deal touch A I at all? NuCube's filing names A I data center demand once, in a list of market trends, and never in the paragraphs about Alaska.",
+      "phrase": "paragraphs about Alaska.",
+      "shows": "the stripe sweeps the ALASKA paragraphs and the count box stays at 0 while the ghost server droops, a plate reads ALASKA PARAGRAPHS, AI 0",
+      "sfx": "bloop",
+      "means": "alaska paragraphs \u00b7 ai 0",
+      "rehook": "",
+      "draw": {
+        "subject": "the stripe",
+        "action": "sweeps the ALASKA paragraphs and the count stays at zero while the ghost server droops",
+        "emotion": "reading",
+        "annotation": "ALASKA PARAGRAPHS \u00b7 AI 0"
+      },
+      "choreo": {
+        "primary": "the stripe sweeps the ALASKA paragraphs and the count box stays at 0 while the ghost server droops, a plate reads ALASKA PARAGRAPHS, AI 0",
+        "reaction": "the ghost sinks",
+        "ambient": "the count box waits, the ghost server drifts, the lamp sways"
+      },
+      "t": "62.670-64.820",
+      "key": 21
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 64.82,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "AIDEA's release lists data centers beside mining and seafood, but it never says A I.",
+      "phrase": "AIDEA's release lists data",
+      "shows": "four paper blocks slide in from alternating sides and slam onto pegs on a shed wall reading MINING, SEAFOOD, MANUFACTURING, DATA CENTERS under a release headed AIDEA",
+      "sfx": "stamp",
+      "means": "aidea \u00b7 mining \u00b7 seafood \u00b7 manufacturing \u00b7 data centers",
+      "rehook": "",
+      "draw": {
+        "subject": "four paper blocks",
+        "action": "slide in from alternating sides and slam onto pegs on a shed wall",
+        "emotion": "reading",
+        "annotation": "AIDEA \u00b7 MINING \u00b7 SEAFOOD \u00b7 MANUFACTURING \u00b7 DATA CENTERS"
+      },
+      "choreo": {
+        "primary": "four paper blocks slide in from alternating sides and slam onto pegs on a shed wall reading MINING, SEAFOOD, MANUFACTURING, DATA CENTERS under a release headed AIDEA",
+        "reaction": "the blocks swing on the pegs",
+        "ambient": "the chips breathe, the dashes crawl, the lamp sways"
+      },
+      "t": "64.820-66.250",
+      "key": 22
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "at_s": 66.25,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 1.43
+      },
+      "offset": 1.43,
+      "vo": "AIDEA's release lists data centers beside mining and seafood, but it never says A I.",
+      "phrase": "data centers beside mining",
+      "shows": "the DATA CENTERS block rises out of the row and lights up",
+      "sfx": "pop",
+      "means": "data centers",
+      "rehook": "",
+      "draw": {
+        "subject": "the data centers block",
+        "action": "rises out of the row and lights up",
+        "emotion": "reading",
+        "annotation": "DATA CENTERS"
+      },
+      "choreo": {
+        "primary": "the DATA CENTERS block rises out of the row and lights up",
+        "reaction": "the block glows",
+        "ambient": "the chips breathe, the dashes crawl, the lamp sways"
+      },
+      "t": "66.250-69.490",
+      "key": 23
+    },
+    {
+      "id": 27,
+      "shot": 7,
+      "at_s": 69.49,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.67
+      },
+      "offset": 4.67,
+      "vo": "AIDEA's release lists data centers beside mining and seafood, but it never says A I.",
+      "phrase": "never says A I.",
+      "shows": "an empty dashed cyan slot appears at the end of the row and an ink stamp marks it AI, NOT SAID",
+      "sfx": "thunk",
+      "means": "ai \u00b7 not said",
+      "rehook": "",
+      "draw": {
+        "subject": "an empty dashed slot",
+        "action": "appears at the end of the row and an ink stamp marks it AI NOT SAID",
+        "emotion": "reading",
+        "annotation": "AI \u00b7 NOT SAID"
+      },
+      "choreo": {
+        "primary": "an empty dashed cyan slot appears at the end of the row and an ink stamp marks it AI, NOT SAID",
+        "reaction": "the dashes crawl",
+        "ambient": "the chips breathe, the dashes crawl, the lamp sways"
+      },
+      "t": "69.490-71.260",
+      "key": 24
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 71.26,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In the filing, the release and a magazine report, a size, site, price and date for a NuCube reactor in Alaska are all blank.",
+      "phrase": "In the filing, the",
+      "shows": "the NUSUN tag turns face on between Sourdough and the dashed outline with four ruled lines, Sourdough's window dims",
+      "sfx": "slide",
+      "means": "size \u00b7 site \u00b7 price \u00b7 date",
+      "rehook": "",
+      "draw": {
+        "subject": "the tag",
+        "action": "turns back to its front between Sourdough and the dotted outline",
+        "emotion": "faltering",
+        "annotation": "SIZE \u00b7 SITE \u00b7 PRICE \u00b7 DATE"
+      },
+      "choreo": {
+        "primary": "the NUSUN tag turns face on between Sourdough and the dashed outline with four ruled lines, Sourdough's window dims",
+        "reaction": "the tag sways",
+        "ambient": "the tag rocks, the dashes crawl, snow drifts"
+      },
+      "t": "71.260-74.990",
+      "key": 25
+    },
+    {
+      "id": 29,
+      "shot": 8,
+      "at_s": 74.99,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.73
+      },
+      "offset": 3.73,
+      "vo": "In the filing, the release and a magazine report, a size, site, price and date for a NuCube reactor in Alaska are all blank.",
+      "phrase": "size, site, price and",
+      "shows": "a red stamp slaps NOT STATED across the SIZE line",
+      "sfx": "thunk",
+      "means": "size \u00b7 not stated",
+      "rehook": "",
+      "draw": {
+        "subject": "a red stamp",
+        "action": "slaps NOT STATED on the SIZE line",
+        "emotion": "faltering",
+        "annotation": "SIZE \u00b7 NOT STATED"
+      },
+      "choreo": {
+        "primary": "a red stamp slaps NOT STATED across the SIZE line",
+        "reaction": "the tag rocks",
+        "ambient": "the tag rocks, the dashes crawl, snow drifts"
+      },
+      "t": "74.990-75.870",
+      "key": 26
+    },
+    {
+      "id": 30,
+      "shot": 8,
+      "at_s": 75.87,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.61
+      },
+      "offset": 4.61,
+      "vo": "In the filing, the release and a magazine report, a size, site, price and date for a NuCube reactor in Alaska are all blank.",
+      "phrase": "site, price and date",
+      "shows": "a red stamp drags down the tag and slaps NOT STATED across SITE, PRICE and DATE in one stroke, a plate reads SIZE, SITE, PRICE, DATE, NOT STATED",
+      "sfx": "thunk",
+      "means": "size \u00b7 site \u00b7 price \u00b7 date \u00b7 not stated",
+      "rehook": "",
+      "draw": {
+        "subject": "a red stamp",
+        "action": "drags down the tag and slaps NOT STATED across SITE, PRICE and DATE in one stroke",
+        "emotion": "faltering",
+        "annotation": "SIZE \u00b7 SITE \u00b7 PRICE \u00b7 DATE \u00b7 NOT STATED"
+      },
+      "choreo": {
+        "primary": "a red stamp drags down the tag and slaps NOT STATED across SITE, PRICE and DATE in one stroke, a plate reads SIZE, SITE, PRICE, DATE, NOT STATED",
+        "reaction": "the tag rocks",
+        "ambient": "the tag rocks, the dashes crawl, snow drifts"
+      },
+      "t": "75.870-80.670",
+      "key": 27
+    },
+    {
+      "id": 31,
+      "shot": 8,
+      "at_s": 80.67,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 9.41
+      },
+      "offset": 9.41,
+      "vo": "In the filing, the release and a magazine report, a size, site, price and date for a NuCube reactor in Alaska are all blank.",
+      "phrase": "blank.",
+      "shows": "Sourdough's furnace window gutters to a low glow while the four stamps hold",
+      "sfx": "bloop",
+      "means": "all four blank",
+      "rehook": "",
+      "draw": {
+        "subject": "Sourdough's window",
+        "action": "gutters to a low glow",
+        "emotion": "faltering",
+        "annotation": "ALL FOUR BLANK"
+      },
+      "choreo": {
+        "primary": "Sourdough's furnace window gutters to a low glow while the four stamps hold",
+        "reaction": "the glow flickers",
+        "ambient": "the tag rocks, the dashes crawl, snow drifts"
+      },
+      "t": "80.670-81.980",
+      "key": 48
+    },
+    {
+      "id": 32,
+      "shot": 9,
+      "at_s": 81.98,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That's not a scandal. The shares come at a discount, and AIDEA says the benefits depend on technology, approvals, financing and host communities.",
+      "phrase": "That's not a scandal.",
+      "shows": "a banknote block with a face strides across the snow with arms spread and plants itself beside the tag post under a pole light, a plate reads THE CASE FOR BLANKS",
+      "sfx": "swell",
+      "means": "the case for blanks",
+      "rehook": "rehook: a fair case walks in",
+      "draw": {
+        "subject": "a banknote block",
+        "action": "strides across the snow and plants itself beside the tag post",
+        "emotion": "confident",
+        "annotation": "THE CASE FOR BLANKS"
+      },
+      "choreo": {
+        "primary": "a banknote block with a face strides across the snow with arms spread and plants itself beside the tag post under a pole light, a plate reads THE CASE FOR BLANKS",
+        "reaction": "the block breathes",
+        "ambient": "the block breathes, the discount tag swings, the lamp sways"
+      },
+      "t": "81.980-84.590",
+      "key": 30
+    },
+    {
+      "id": 33,
+      "shot": 9,
+      "at_s": 84.59,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.61
+      },
+      "offset": 2.61,
+      "vo": "That's not a scandal. The shares come at a discount, and AIDEA says the benefits depend on technology, approvals, financing and host communities.",
+      "phrase": "discount, and AIDEA says",
+      "shows": "the torn half ticket with the gold band wrapped on it swings from the block's hand, a plate reads SHARES AT A DISCOUNT",
+      "sfx": "tick",
+      "means": "shares at a discount",
+      "rehook": "",
+      "draw": {
+        "subject": "the torn half ticket",
+        "action": "swings from the block's hand with the gold band wrapped on it",
+        "emotion": "confident",
+        "annotation": "SHARES AT A DISCOUNT"
+      },
+      "choreo": {
+        "primary": "the torn half ticket with the gold band wrapped on it swings from the block's hand, a plate reads SHARES AT A DISCOUNT",
+        "reaction": "the tag swings",
+        "ambient": "the block breathes, the discount tag swings, the lamp sways"
+      },
+      "t": "84.590-86.610",
+      "key": 32
+    },
+    {
+      "id": 34,
+      "shot": 9,
+      "at_s": 86.61,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.63
+      },
+      "offset": 4.63,
+      "vo": "That's not a scandal. The shares come at a discount, and AIDEA says the benefits depend on technology, approvals, financing and host communities.",
+      "phrase": "depend on technology, approvals,",
+      "shows": "four paper blocks staple themselves over the stamped lines of the tag reading TECHNOLOGY, APPROVALS, FINANCING, HOST COMMUNITIES under DEPENDS ON",
+      "sfx": "click",
+      "means": "depends on \u00b7 technology \u00b7 approvals \u00b7 financing \u00b7 host communities",
+      "rehook": "",
+      "draw": {
+        "subject": "four condition blocks",
+        "action": "staple themselves over the stamped lines of the tag",
+        "emotion": "confident",
+        "annotation": "DEPENDS ON \u00b7 TECHNOLOGY \u00b7 APPROVALS \u00b7 FINANCING \u00b7 HOST COMMUNITIES"
+      },
+      "choreo": {
+        "primary": "four paper blocks staple themselves over the stamped lines of the tag reading TECHNOLOGY, APPROVALS, FINANCING, HOST COMMUNITIES under DEPENDS ON",
+        "reaction": "the blocks settle",
+        "ambient": "the block breathes, the discount tag swings, the lamp sways"
+      },
+      "t": "86.610-90.130",
+      "key": 31
+    },
+    {
+      "id": 35,
+      "shot": 9,
+      "at_s": 90.13,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 8.15
+      },
+      "offset": 8.15,
+      "vo": "That's not a scandal. The shares come at a discount, and AIDEA says the benefits depend on technology, approvals, financing and host communities.",
+      "phrase": "host communities.",
+      "shows": "two more paper blocks staple themselves over the stamped lines of the tag reading FINANCING, HOST COMMUNITIES",
+      "sfx": "click",
+      "means": "financing \u00b7 host communities",
+      "rehook": "",
+      "draw": {
+        "subject": "two more condition blocks",
+        "action": "staple themselves over the stamped lines of the tag",
+        "emotion": "confident",
+        "annotation": "FINANCING \u00b7 HOST COMMUNITIES"
+      },
+      "choreo": {
+        "primary": "two more paper blocks staple themselves over the stamped lines of the tag reading FINANCING, HOST COMMUNITIES",
+        "reaction": "the blocks settle",
+        "ambient": "the block breathes, the discount tag swings, the lamp sways"
+      },
+      "t": "90.130-92.100",
+      "key": 51
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 92.1,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska's one planned reactor is Oklo's, at Eielson Air Force Base, at least five megawatts in the early twenty thirties, with ground drilling set for late this year.",
+      "phrase": "Alaska's one planned reactor",
+      "shows": "the camera pulls back to a painted map of the Interior with a pulsing pin and an ink dashed outline labelled OKLO, a plate reads OKLO, EIELSON AIR FORCE BASE",
+      "sfx": "slide",
+      "means": "oklo \u00b7 eielson air force base",
+      "rehook": "rehook: the scale pulls back",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls up and back from the snow to a map with an Eielson pin",
+        "emotion": "reading",
+        "annotation": "OKLO \u00b7 EIELSON AIR FORCE BASE"
+      },
+      "choreo": {
+        "primary": "the camera pulls back to a painted map of the Interior with a pulsing pin and an ink dashed outline labelled OKLO, a plate reads OKLO, EIELSON AIR FORCE BASE",
+        "reaction": "the pin pulses",
+        "ambient": "the pin pulses, the drill spins, the dashes crawl"
+      },
+      "t": "92.100-94.230",
+      "key": 33
+    },
+    {
+      "id": 37,
+      "shot": 10,
+      "at_s": 94.23,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 2.13
+      },
+      "offset": 2.13,
+      "vo": "Alaska's one planned reactor is Oklo's, at Eielson Air Force Base, at least five megawatts in the early twenty thirties, with ground drilling set for late this year.",
+      "phrase": "Oklo's, at Eielson Air",
+      "shows": "Oklo's ink dashed outline assembles on the Eielson pin from the ground up, a plate reads OKLO",
+      "sfx": "slide",
+      "means": "oklo",
+      "rehook": "",
+      "draw": {
+        "subject": "Oklo's outline",
+        "action": "assembles on the pin from the ground up as dashed ink lines",
+        "emotion": "reading",
+        "annotation": "OKLO"
+      },
+      "choreo": {
+        "primary": "Oklo's ink dashed outline assembles on the Eielson pin from the ground up, a plate reads OKLO",
+        "reaction": "the pin pulses",
+        "ambient": "the pin pulses, the drill spins, the dashes crawl"
+      },
+      "t": "94.230-97.410",
+      "key": 52
+    },
+    {
+      "id": 38,
+      "shot": 10,
+      "at_s": 97.41,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.31
+      },
+      "offset": 5.31,
+      "vo": "Alaska's one planned reactor is Oklo's, at Eielson Air Force Base, at least five megawatts in the early twenty thirties, with ground drilling set for late this year.",
+      "phrase": "five megawatts in the",
+      "shows": "a manila tag hangs on Oklo's outline reading AT LEAST 5 MW ELECTRIC, EARLY 2030s, OKLO",
+      "sfx": "ping",
+      "means": "at least 5 mw electric \u00b7 early 2030s \u00b7 oklo",
+      "rehook": "",
+      "draw": {
+        "subject": "Oklo's tag",
+        "action": "fills in with its two stated numbers",
+        "emotion": "reading",
+        "annotation": "AT LEAST 5 MW ELECTRIC \u00b7 EARLY 2030s \u00b7 OKLO"
+      },
+      "choreo": {
+        "primary": "a manila tag hangs on Oklo's outline reading AT LEAST 5 MW ELECTRIC, EARLY 2030s, OKLO",
+        "reaction": "the tag swings",
+        "ambient": "the pin pulses, the drill spins, the dashes crawl"
+      },
+      "t": "97.410-100.550",
+      "key": 34
+    },
+    {
+      "id": 39,
+      "shot": 10,
+      "at_s": 100.55,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 8.45
+      },
+      "offset": 8.45,
+      "vo": "Alaska's one planned reactor is Oklo's, at Eielson Air Force Base, at least five megawatts in the early twenty thirties, with ground drilling set for late this year.",
+      "phrase": "drilling set for late",
+      "shows": "a drill bit spins into the ground beside Oklo's outline, a plate reads BOREHOLE DRILLING, LATE 2026, OKLO",
+      "sfx": "whirr",
+      "means": "borehole drilling \u00b7 late 2026 \u00b7 oklo",
+      "rehook": "",
+      "draw": {
+        "subject": "a drill bit",
+        "action": "turns into the ground beside Oklo's outline",
+        "emotion": "reading",
+        "annotation": "BOREHOLE DRILLING \u00b7 LATE 2026 \u00b7 OKLO"
+      },
+      "choreo": {
+        "primary": "a drill bit spins into the ground beside Oklo's outline, a plate reads BOREHOLE DRILLING, LATE 2026, OKLO",
+        "reaction": "the bit spins",
+        "ambient": "the pin pulses, the drill spins, the dashes crawl"
+      },
+      "t": "100.550-103.040",
+      "key": 35
+    },
+    {
+      "id": 40,
+      "shot": 11,
+      "at_s": 103.04,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Meanwhile Enstar's president says his gas utility faces a shortage this winter of eighteen days, or three billion cubic feet, and neither reactor has a date that reaches it.",
+      "phrase": "Meanwhile Enstar's president says",
+      "shows": "a frosted shed wall slides in and settles with a bare nail and Sourdough standing under it, a plate reads ENSTAR'S PRESIDENT",
+      "sfx": "slide",
+      "means": "enstar's president",
+      "rehook": "",
+      "draw": {
+        "subject": "a shed wall",
+        "action": "slides into frame and settles with a frosted window and a bare nail while Sourdough stands under it",
+        "emotion": "worried",
+        "annotation": "ENSTAR'S PRESIDENT"
+      },
+      "choreo": {
+        "primary": "a frosted shed wall slides in and settles with a bare nail and Sourdough standing under it, a plate reads ENSTAR'S PRESIDENT",
+        "reaction": "frost glints on the window",
+        "ambient": "frost creeps, the dashes crawl, the pole line sways"
+      },
+      "t": "103.040-104.530",
+      "key": 46
+    },
+    {
+      "id": 41,
+      "shot": 11,
+      "at_s": 104.53,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.49
+      },
+      "offset": 1.49,
+      "vo": "Meanwhile Enstar's president says his gas utility faces a shortage this winter of eighteen days, or three billion cubic feet, and neither reactor has a date that reaches it.",
+      "phrase": "president says his gas",
+      "shows": "a wall calendar drops onto the nail and swings",
+      "sfx": "thunk",
+      "means": "this winter",
+      "rehook": "",
+      "draw": {
+        "subject": "a wall calendar",
+        "action": "drops onto the nail and swings",
+        "emotion": "worried",
+        "annotation": "THIS WINTER"
+      },
+      "choreo": {
+        "primary": "a wall calendar drops onto the nail and swings",
+        "reaction": "the calendar swings",
+        "ambient": "frost creeps, the dashes crawl, the pole line sways"
+      },
+      "t": "104.530-108.170",
+      "key": 49
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 108.17,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 5.13
+      },
+      "offset": 5.13,
+      "vo": "Meanwhile Enstar's president says his gas utility faces a shortage this winter of eighteen days, or three billion cubic feet, and neither reactor has a date that reaches it.",
+      "phrase": "eighteen days, or three",
+      "shows": "the calendar crosses eighteen days off one at a time while Sourdough's furnace window gutters a notch per week, a plate reads ENSTAR'S PRESIDENT, WINTER GAS SHORTAGE, 18 DAYS, 3 BCF",
+      "sfx": "alarm",
+      "means": "enstar's president \u00b7 winter gas shortage \u00b7 18 days \u00b7 3 bcf",
+      "rehook": "rehook: the calendar fills with crossings",
+      "draw": {
+        "subject": "the calendar",
+        "action": "crosses its days off one at a time while Sourdough's window gutters a notch per week",
+        "emotion": "worried",
+        "annotation": "ENSTAR'S PRESIDENT \u00b7 WINTER GAS SHORTAGE \u00b7 18 DAYS \u00b7 3 BCF"
+      },
+      "choreo": {
+        "primary": "the calendar crosses eighteen days off one at a time while Sourdough's furnace window gutters a notch per week, a plate reads ENSTAR'S PRESIDENT, WINTER GAS SHORTAGE, 18 DAYS, 3 BCF",
+        "reaction": "frost creeps in",
+        "ambient": "frost creeps, the dashes crawl, the pole line sways"
+      },
+      "kick": true,
+      "t": "108.170-111.970",
+      "key": 36
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 111.97,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 8.93
+      },
+      "offset": 8.93,
+      "vo": "Meanwhile Enstar's president says his gas utility faces a shortage this winter of eighteen days, or three billion cubic feet, and neither reactor has a date that reaches it.",
+      "phrase": "neither reactor has a",
+      "shows": "NuSun's dashed cyan outline with a blank tag and Oklo's ink outline with EARLY 2030s slide in beside the calendar while frost creeps over both tags, a plate reads NO DATE REACHES THIS WINTER",
+      "sfx": "swell",
+      "means": "no date reaches this winter",
+      "rehook": "",
+      "draw": {
+        "subject": "two outlines",
+        "action": "slide in beside the calendar, one with a date and one blank, frost creeping over both tags",
+        "emotion": "worried",
+        "annotation": "NO DATE REACHES THIS WINTER"
+      },
+      "choreo": {
+        "primary": "NuSun's dashed cyan outline with a blank tag and Oklo's ink outline with EARLY 2030s slide in beside the calendar while frost creeps over both tags, a plate reads NO DATE REACHES THIS WINTER",
+        "reaction": "the frost spreads",
+        "ambient": "frost creeps, the dashes crawl, the pole line sways"
+      },
+      "t": "111.970-115.100",
+      "key": 37
+    },
+    {
+      "id": 44,
+      "shot": 12,
+      "at_s": 115.1,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So Alaska agreed to buy shares, not a reactor. The terms are filled in and the reactor is still a dotted line.",
+      "phrase": "So Alaska agreed to",
+      "shows": "Sourdough pries the crate open and lifts out a single gold-sealed share certificate from the straw, a plate reads SHARES, NOT A REACTOR",
+      "sfx": "slide",
+      "means": "shares, not a reactor",
+      "rehook": "",
+      "draw": {
+        "subject": "Sourdough",
+        "action": "pries the crate open and lifts out a single share certificate",
+        "emotion": "confident",
+        "annotation": "SHARES, NOT A REACTOR"
+      },
+      "choreo": {
+        "primary": "Sourdough pries the crate open and lifts out a single gold-sealed share certificate from the straw, a plate reads SHARES, NOT A REACTOR",
+        "reaction": "the straw spills",
+        "ambient": "the certificate sways, the dashes crawl, snow drifts"
+      },
+      "t": "115.100-117.750",
+      "key": 38
+    },
+    {
+      "id": 45,
+      "shot": 12,
+      "at_s": 117.75,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.65
+      },
+      "offset": 2.65,
+      "vo": "So Alaska agreed to buy shares, not a reactor. The terms are filled in and the reactor is still a dotted line.",
+      "phrase": "not a reactor. The",
+      "shows": "the straw spills over the crate's rim while Sourdough turns the certificate in his hands, a plate reads ONE CERTIFICATE",
+      "sfx": "tick",
+      "means": "one certificate",
+      "rehook": "",
+      "draw": {
+        "subject": "the straw",
+        "action": "spills over the crate's rim while the certificate turns in his hands",
+        "emotion": "confident",
+        "annotation": "ONE CERTIFICATE"
+      },
+      "choreo": {
+        "primary": "the straw spills over the crate's rim while Sourdough turns the certificate in his hands, a plate reads ONE CERTIFICATE",
+        "reaction": "the straw settles",
+        "ambient": "the certificate sways, the dashes crawl, snow drifts"
+      },
+      "t": "117.750-120.150",
+      "key": 54
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 120.15,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.05
+      },
+      "offset": 5.05,
+      "vo": "So Alaska agreed to buy shares, not a reactor. The terms are filled in and the reactor is still a dotted line.",
+      "phrase": "filled in and the",
+      "shows": "the tag turns to its back where the share terms are filled in, a plate reads THE TERMS ARE FILLED IN",
+      "sfx": "click",
+      "means": "the terms are filled in",
+      "rehook": "",
+      "draw": {
+        "subject": "the tag",
+        "action": "turns to its back, the share terms filled in",
+        "emotion": "reading",
+        "annotation": "THE TERMS ARE FILLED IN"
+      },
+      "choreo": {
+        "primary": "the tag turns to its back where the share terms are filled in, a plate reads THE TERMS ARE FILLED IN",
+        "reaction": "the tag settles",
+        "ambient": "the certificate sways, the dashes crawl, snow drifts"
+      },
+      "t": "120.150-121.330",
+      "key": 39
+    },
+    {
+      "id": 47,
+      "shot": 12,
+      "at_s": 121.33,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.23
+      },
+      "offset": 6.23,
+      "vo": "So Alaska agreed to buy shares, not a reactor. The terms are filled in and the reactor is still a dotted line.",
+      "phrase": "reactor is still a",
+      "shows": "Sourdough steps up to the dashed outline and holds the certificate against it, a plate reads A CERTIFICATE AGAINST A DOTTED LINE",
+      "sfx": "slide",
+      "means": "a certificate against a dotted line",
+      "rehook": "",
+      "draw": {
+        "subject": "Sourdough",
+        "action": "steps up to the dashed outline and holds the certificate against it",
+        "emotion": "unsure",
+        "annotation": "A CERTIFICATE AGAINST A DOTTED LINE"
+      },
+      "choreo": {
+        "primary": "Sourdough steps up to the dashed outline and holds the certificate against it, a plate reads A CERTIFICATE AGAINST A DOTTED LINE",
+        "reaction": "the outline stays empty",
+        "ambient": "the certificate sways, the dashes crawl, snow drifts"
+      },
+      "t": "121.330-122.490",
+      "key": 53
+    },
+    {
+      "id": 48,
+      "shot": 12,
+      "at_s": 122.49,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 7.39
+      },
+      "offset": 7.39,
+      "vo": "So Alaska agreed to buy shares, not a reactor. The terms are filled in and the reactor is still a dotted line.",
+      "phrase": "dotted line.",
+      "shows": "Sourdough hangs the certificate on the dashed outline and it falls straight through into the snow, the outline stays empty, a plate reads THE REACTOR IS STILL A DOTTED LINE",
+      "sfx": "whoosh",
+      "means": "the reactor is still a dotted line",
+      "rehook": "",
+      "draw": {
+        "subject": "the certificate",
+        "action": "slides onto the dotted outline and falls straight through into the snow",
+        "emotion": "sheepish",
+        "annotation": "THE REACTOR IS STILL A DOTTED LINE"
+      },
+      "choreo": {
+        "primary": "Sourdough hangs the certificate on the dashed outline and it falls straight through into the snow, the outline stays empty, a plate reads THE REACTOR IS STILL A DOTTED LINE",
+        "reaction": "the certificate lies in the snow",
+        "ambient": "the certificate sways, the dashes crawl, snow drifts"
+      },
+      "t": "122.490-124.160",
+      "key": 40
+    },
+    {
+      "id": 49,
+      "shot": 13,
+      "at_s": 124.16,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "What should AIDEA publish, and by when, before you count the reactor?",
+      "phrase": "What should AIDEA publish,",
+      "shows": "the cream bush plane returns over the depot as in the opening and the crate sits at Sourdough's feet, a plate reads WHAT SHOULD AIDEA PUBLISH, AND BY WHEN?",
+      "sfx": "whoosh",
+      "means": "what should aidea publish, and by when?",
+      "rehook": "",
+      "draw": {
+        "subject": "the bush plane",
+        "action": "returns over the depot as in the opening while Sourdough turns to the tag",
+        "emotion": "unsure",
+        "annotation": "WHAT SHOULD AIDEA PUBLISH, AND BY WHEN?"
+      },
+      "choreo": {
+        "primary": "the cream bush plane returns over the depot as in the opening and the crate sits at Sourdough's feet, a plate reads WHAT SHOULD AIDEA PUBLISH, AND BY WHEN?",
+        "reaction": "snow drifts",
+        "ambient": "snow drifts, the tag flutters, the dashes crawl"
+      },
+      "t": "124.160-125.190",
+      "key": 41
+    },
+    {
+      "id": 50,
+      "shot": 13,
+      "at_s": 125.19,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 1.03
+      },
+      "offset": 1.03,
+      "vo": "What should AIDEA publish, and by when, before you count the reactor?",
+      "phrase": "publish, and by when,",
+      "shows": "four dashed cyan boxes drop in one by one above the tag reading SIZE, SITE, PRICE, DATE",
+      "sfx": "tick",
+      "means": "size \u00b7 site \u00b7 price \u00b7 date",
+      "rehook": "",
+      "draw": {
+        "subject": "four dashed boxes",
+        "action": "drop in one by one above the tag as SIZE SITE PRICE DATE",
+        "emotion": "unsure",
+        "annotation": "SIZE \u00b7 SITE \u00b7 PRICE \u00b7 DATE"
+      },
+      "choreo": {
+        "primary": "four dashed cyan boxes drop in one by one above the tag reading SIZE, SITE, PRICE, DATE",
+        "reaction": "the boxes pulse",
+        "ambient": "snow drifts, the tag flutters, the dashes crawl"
+      },
+      "t": "125.190-128.110",
+      "key": 42
+    },
+    {
+      "id": 51,
+      "shot": 13,
+      "at_s": 128.11,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.95
+      },
+      "offset": 3.95,
+      "vo": "What should AIDEA publish, and by when, before you count the reactor?",
+      "phrase": "count the reactor?",
+      "shows": "the tag swings round to face the camera with its red stamps showing under AIDEA's conditions, then the frame fades to black",
+      "sfx": "thunk",
+      "means": "stamps under conditions",
+      "rehook": "",
+      "draw": {
+        "subject": "the tag",
+        "action": "swings to camera with its stamps under AIDEA's conditions and the film fades to black",
+        "emotion": "unsure",
+        "annotation": "STAMPS UNDER CONDITIONS"
+      },
+      "choreo": {
+        "primary": "the tag swings round to face the camera with its red stamps showing under AIDEA's conditions, then the frame fades to black",
+        "reaction": "the tag flutters",
+        "ambient": "snow drifts, the tag flutters, the dashes crawl"
+      },
+      "t": "128.110-128.860",
+      "key": 43
+    }
+  ]
+}
