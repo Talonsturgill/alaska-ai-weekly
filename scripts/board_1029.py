@@ -199,7 +199,7 @@ HERO = {
 PARTS = {1: 52, 2: 44, 3: 50, 4: 46, 5: 48, 6: 50, 7: 44, 8: 52, 9: 50, 10: 48, 11: 50, 12: 46, 13: 52}
 KICKS = (2, 36)
 STAGE3D = {k: "planes" for k in HERO}
-CAMERA = {1: "dollyThrough", 2: "craneDown", 3: "truckAcross", 4: "craneDown", 5: "riseWith", 6: "craneDown", 7: "truckAcross", 8: "dollyThrough",
+CAMERA = {1: "dollyThrough", 2: "craneDown", 3: "truckAcross", 4: "craneDown", 5: "riseWith", 6: "craneDown", 7: "truckAcross", 8: "static:the signature shot holds locked from the first stamp",
           9: "truckAcross", 10: "craneDown", 11: "dollyThrough", 12: "truckAcross", 13: "dollyThrough"}
 
 
