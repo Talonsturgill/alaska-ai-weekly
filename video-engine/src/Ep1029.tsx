@@ -269,7 +269,7 @@ const CondChips: React.FC<{tx: number; ty: number; ts?: number; f: number; t0: n
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const t1 = b(1), t2 = b(2), t3 = b(3);
-  const px = lerp(60, 1300, easeIO(f, 0, Math.max(60, t2 + 70)));
+  const px = lerp(150, 1300, easeIO(f, 0, Math.max(60, t2 + 70)));
   const fall = clamp01((f - (t2 - 26)) / 26);
   const crateY = lerp(540, GROUND_Y + 10, fall * fall);
   const crateX = lerp(px * 0.62 + 120, 420, fall);
@@ -731,8 +731,8 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <TagPost x={POST_X} y={GROUND_Y + 10} top={POST_TOP} />
         <NuSunTag x={POST_X} y={TAG_Y} s={0.85} f={f} flip={Math.max(0, flip)} states={['stamped', 'stamped', 'stamped', 'stamped']} stampP={[1, 1, 1, 1]} flutter={ease(f, t43, 20) * 0.5} id="s13t" />
         <CondChips tx={POST_X} ty={TAG_Y} ts={0.85} f={f} t0={-60} />
-        <Hero f={f} x={815} s={0.62} emotion="confident" facing={-1} />
-        <NuSunOutline x={990} y={GROUND_Y + 6} s={0.4} f={f} k={1} alpha={0.9} />
+        <Hero f={f} x={885} s={0.62} emotion="confident" facing={-1} />
+        <NuSunOutline x={1010} y={GROUND_Y + 6} s={0.4} f={f} k={1} alpha={0.9} />
         <Crate x={290} y={GROUND_Y + 24} s={0.62} f={f} lid={0.15} />
         {boxes.map((n, i) => (
           <g key={n} transform={`translate(${440 + i * 130},${lerp(560, 592 + 4 * Math.sin(f / 6 + i), ease(f, t42 + i * 6, 14))})`} opacity={ease(f, t42 + i * 6, 8)}>
