@@ -149,6 +149,14 @@ const Shed: React.FC<{f: number; id: string; lampX?: number; frost?: number; cou
       <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill={`url(#${id}l)`} />
       <rect x={-40} y={counterY} width={1160} height={70} fill={`url(#${id}c)`} stroke={INK} strokeWidth={7} />
       <rect x={-40} y={counterY + 70} width={1160} height={720} fill="#3A2619" stroke={INK} strokeWidth={6} />
+      <rect data-band="ok" x={60} y={300} width={960} height={16} fill={DEP.wood} stroke={INK} strokeWidth={5} />
+      {[0, 1, 2, 3, 4, 5].map((i) => <g key={i} transform={`translate(${130 + i * 150},300)`}><rect x={-30} y={-70} width={60} height={70} rx={8} fill={['#9FC3E6', '#E9D08F', '#CBD5EC'][i % 3]} stroke={INK} strokeWidth={4} opacity={0.9} /><rect x={-34} y={-82} width={68} height={14} rx={4} fill="#8A8F99" stroke={INK} strokeWidth={4} /></g>)}
+      <g transform={`translate(0,${counterY + 150})`}>
+        <rect data-band="ok" x={110} y={120} width={230} height={150} fill={DEP.wood} stroke={INK} strokeWidth={7} /><line x1={110} y1={170} x2={340} y2={170} stroke={DEP.woodDark} strokeWidth={5} />
+        <rect data-band="ok" x={370} y={170} width={160} height={100} fill="#8A5E40" stroke={INK} strokeWidth={7} />
+        <rect data-band="ok" x={720} y={90} width={130} height={180} rx={14} fill="#8A8F99" stroke={INK} strokeWidth={7} /><rect x={720} y={130} width={130} height={14} fill={INK} /><rect x={720} y={200} width={130} height={14} fill={INK} />
+        <g transform="translate(940,200)"><rect data-band="ok" x={-50} y={-90} width={100} height={170} rx={10} fill="#3A3F52" stroke={INK} strokeWidth={7} /><rect x={-30} y={-60} width={60} height={50} rx={6} fill={DEP.band2} opacity={0.6 + 0.3 * Math.sin(f / 9)} stroke={INK} strokeWidth={4} /></g>
+      </g>
       {Array.from({length: 8}, (_, i) => <line key={i} x1={i * 150 - 20} y1={counterY + 74} x2={i * 150 - 20} y2={1960} stroke="#221409" strokeWidth={4} opacity={0.6} />)}
     </g>
   );
@@ -232,16 +240,16 @@ const TagBackTerms: React.FC<{f: number; slot: number; sticker: number; band: nu
     </g>
     <g opacity={band} transform="translate(-150,296)">
       <rect x={0} y={-5} width={300} height={10} fill={DEP.gold} stroke={INK} strokeWidth={3} />
-      <Lab x={150} y={34} text="ABOUT 14.5% BELOW" size={20} ls={1} fill="#4A3510" />
+      <Lab x={150} y={34} text="ABOUT 14.5% BELOW" size={24} ls={0} fill="#4A3510" />
     </g>
     <g opacity={strike} transform={`translate(0,${420 - 14 * (1 - strike)})`}>
       <Lab x={0} y={0} text="$10.82" size={52} fill="#4A3510" />
       <line x1={-100} y1={-18} x2={100} y2={-18} stroke={INK} strokeWidth={6} />
-      <Lab x={0} y={34} text="REFERENCE PRICE" size={18} ls={1} fill="#4A3510" />
+      <Lab x={0} y={36} text="REFERENCE PRICE" size={24} ls={0} fill="#4A3510" />
     </g>
     <g transform={`translate(${40 + 90 * (1 - ticket) * 0},${505 + 4 * Math.sin(f / 7)}) rotate(${5 * Math.sin(f / 9)})`} opacity={ticket}>
       <path d="M -150,-26 L 0,-26 L 0,26 L -150,26 Z" fill={DEP.paper} stroke={INK} strokeWidth={4} strokeDasharray="10 6" />
-      <Lab x={-75} y={9} text="HALF WARRANT" size={20} fill={INK} />
+      <Lab x={-75} y={10} text="HALF WARRANT" size={24} ls={0} fill={INK} />
     </g>
   </g>
 );
@@ -276,7 +284,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const land = f >= t2 - 2 ? bump(f, t2 - 2, 20) : 0;
   const flip = f < t2 ? 0.5 : 0.5 * (1 - springy(f, t2, 30));
   const asked: LineState[] = f > t3 ? ['asked', 'asked', 'asked', 'asked'] : ['blank', 'blank', 'blank', 'blank'];
-  const cam = track([{t: 0, z: 1.08, fx: 540, fy: 1040}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
+  const cam = track([{t: 0, z: 1.5, fx: 520, fy: 1150}, {t: Math.max(40, t2 + 20), z: 1.2, fx: 540, fy: 1090}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -606,27 +614,30 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <g transform={`translate(${trem},0)`}>
           <rect x={0} y={0} width={W} height={H} fill="#2A1D3A" />
-          <rect data-band="ok" x={0} y={620} width={W} height={860} fill="#E7DDC2" stroke={INK} strokeWidth={8} />
-          {Array.from({length: 9}, (_, i) => <line key={i} x1={0} y1={620 + i * 100} x2={W} y2={620 + i * 100} stroke="#B8AD90" strokeWidth={2.5} opacity={0.6} />)}
-          <g transform="translate(25,640) scale(1.03)">
+          <rect data-band="ok" x={0} y={0} width={W} height={H} fill="#E7DDC2" />
+          {Array.from({length: 20}, (_, i) => <line key={i} x1={0} y1={i * 100} x2={W} y2={i * 100} stroke="#B8AD90" strokeWidth={2.5} opacity={0.5} />)}
+          <path d="M540,0 L540,1920" stroke="#B8AD90" strokeWidth={6} opacity={0.5} />
+          <path d="M0,960 L1080,960" stroke="#B8AD90" strokeWidth={5} opacity={0.35} />
+          <g transform="translate(-6,540) scale(1.1)">
+            <path d={AK_PATH} fill="#7C88AE" opacity={0.35} transform="translate(10,14)" />
             <path d={AK_PATH} fill="#BFCBE6" stroke={INK} strokeWidth={5} strokeLinejoin="round" />
             <g transform={`translate(${PIN[0]},${PIN[1]})`}>
               <circle r={18 + 5 * Math.sin(f / 6)} fill={INK} stroke={DEP.paper} strokeWidth={5} />
               <circle r={44} fill="none" stroke={INK} strokeWidth={4} opacity={0.4 + 0.3 * Math.sin(f / 8)} />
             </g>
           </g>
-          <g transform="translate(540,672)"><SmallTag x={0} y={0} text="SCHEMATIC MAP" size={18} rot={0} /></g>
-          <g transform="translate(603,990)">
-            <NuSunOutline x={0} y={0} s={0.5} f={f} k={ease(f, t52, 40)} alpha={0.95} label name="OKLO" variant="oklo" />
+          <g transform="translate(540,1330)"><SmallTag x={0} y={0} text="SCHEMATIC MAP" size={18} rot={0} /></g>
+          <g transform="translate(615,1075)">
+            <NuSunOutline x={0} y={0} s={0.58} f={f} k={ease(f, t52, 40)} alpha={0.95} label name="OKLO" variant="oklo" />
             <g opacity={ease(f, t34, 10)}><SmallTag x={-4} y={-250} text="EARLY 2030s" size={24} rot={-4} /></g>
             <g transform="translate(-160,-150)"><SmallTag x={0} y={0} text="EIELSON AFB" size={20} rot={-2} /></g>
           </g>
-          <g transform={`translate(430,${1110 + 50 * sink})`} opacity={ease(f, t35 - 10, 10)}>
+          <g transform={`translate(400,${1130 + 50 * sink})`} opacity={ease(f, t35 - 10, 10)}>
             <rect x={-8} y={-130} width={16} height={130} fill="#8A8F99" stroke={INK} strokeWidth={4} />
             <g transform={`rotate(${(spin * 20) % 360} 0 0)`}><rect x={-40} y={-6} width={80} height={12} fill="#6D7280" stroke={INK} strokeWidth={4} /></g>
             <path d="M-10,0 L10,0 L0,40 Z" fill="#8A8F99" stroke={INK} strokeWidth={4} />
           </g>
-          <Hero f={f} x={150} y={1450} s={0.42} emotion="confident" />
+          <Hero f={f} x={140} y={1290} s={0.46} emotion="confident" />
         </g>
       </SVG>
     </Frame>

@@ -54,6 +54,17 @@ export const DepotBG: React.FC<{f: number; horizon?: number; id?: string; dim?: 
       {Array.from({length: 22}, (_, i) => (
         <circle key={i} cx={rnd(i * 9 + 5) * 1080} cy={rnd(i * 4 + 1) * (horizon - 380)} r={1.5 + rnd(i) * 1.6} fill="#FFFFFF" opacity={0.25 + 0.3 * Math.abs(Math.sin(f / (30 + i * 3) + i))} />
       ))}
+      <g transform={`translate(${860 + 14 * Math.sin(f / 160)},250)`}>
+        <circle r={96} fill="#F1E6D0" opacity={0.16} />
+        <circle r={64} fill="#F1E6D0" stroke={INK} strokeWidth={4} />
+        <circle cx={-18} cy={-12} r={14} fill="#D9CDB3" opacity={0.7} />
+        <circle cx={20} cy={18} r={10} fill="#D9CDB3" opacity={0.7} />
+        <circle cx={14} cy={-26} r={7} fill="#D9CDB3" opacity={0.7} />
+      </g>
+      {[0, 1, 2].map((i) => {
+        const cx = ((f * (0.18 + 0.08 * i) + i * 420) % 1500) - 200;
+        return <ellipse key={i} cx={cx} cy={170 + i * 120} rx={240 + 60 * i} ry={22 + 6 * i} fill="#4A3566" opacity={0.55} />;
+      })}
       <path d={ridgeD} fill="#3B2850" stroke={INK} strokeWidth={4} />
       <path d={ridgeD} fill="#53365E" opacity={0.35} transform="translate(0,22)" />
       {/* sheds with lit windows */}
