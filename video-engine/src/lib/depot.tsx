@@ -49,7 +49,7 @@ export const DepotBG: React.FC<{f: number; horizon?: number; id?: string; dim?: 
           <stop offset="1" stopColor={DEP.band2} stopOpacity={0} />
         </radialGradient>
       </defs>
-      <rect x={0} y={0} width={1080} height={horizon + 6} fill={`url(#${id}-sky)`} />
+      <rect x={-80} y={0} width={1240} height={horizon + 6} fill={`url(#${id}-sky)`} />
       {warmLeft && <ellipse cx={120} cy={horizon - 10} rx={620} ry={300} fill={`url(#${id}-glow)`} />}
       {Array.from({length: 22}, (_, i) => (
         <circle key={i} cx={rnd(i * 9 + 5) * 1080} cy={rnd(i * 4 + 1) * (horizon - 380)} r={1.5 + rnd(i) * 1.6} fill="#FFFFFF" opacity={0.25 + 0.3 * Math.abs(Math.sin(f / (30 + i * 3) + i))} />
@@ -85,8 +85,8 @@ export const DepotBG: React.FC<{f: number; horizon?: number; id?: string; dim?: 
       {poles.slice(0, -1).map((px, i) => (
         <path key={i} d={`M ${px - 22},${horizon - 140} Q ${(px + poles[i + 1]) / 2},${horizon - 100 + 6 * Math.sin(f / 40 + i)} ${poles[i + 1] - 22},${horizon - 140}`} stroke={INK} strokeWidth={2.5} fill="none" />
       ))}
-      <rect x={0} y={horizon} width={1080} height={1920 - horizon} fill={`url(#${id}-gr)`} />
-      <path d={`M0,${horizon} L1080,${horizon}`} stroke={INK} strokeWidth={4} />
+      <rect x={-80} y={horizon} width={1240} height={1920 - horizon} fill={`url(#${id}-gr)`} />
+      <path d={`M-80,${horizon} L1160,${horizon}`} stroke={INK} strokeWidth={4} />
       {/* wind-scoured streaks on the snow */}
       {Array.from({length: 14}, (_, i) => {
         const y = horizon + 40 + i * 52 + rnd(i) * 14;
@@ -102,12 +102,12 @@ export const DepotBG: React.FC<{f: number; horizon?: number; id?: string; dim?: 
 /** the near plane: snow drift mounds across the lower third, under the caption card */
 export const NearDrift: React.FC<{f: number; seed?: number; y?: number}> = ({f, seed = 1, y = 1700}) => {
   const pts: string[] = [];
-  for (let i = 0; i <= 12; i++) {
+  for (let i = -1; i <= 13; i++) {
     const x = i * 90 + 2 * Math.sin(f / 60 + i);
     const yy = y - 26 * Math.sin(i / 1.7 + seed) - 22 * rnd(i * 5 + seed);
-    pts.push(`${i === 0 ? 'M' : 'L'} ${x},${yy}`);
+    pts.push(`${i === -1 ? 'M' : 'L'} ${x},${yy}`);
   }
-  const d = `${pts.join(' ')} L 1080,1920 L 0,1920 Z`;
+  const d = `${pts.join(' ')} L 1260,1920 L -90,1920 Z`;
   return (
     <g data-band="ok">
       <path d={d} fill={DEP.snowHi} stroke={INK} strokeWidth={6} strokeLinejoin="round" />

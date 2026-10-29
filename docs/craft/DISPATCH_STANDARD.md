@@ -551,3 +551,16 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **Keep the agency's instrument faceless and fully lit, and label the faced model fan THE MODEL.** Nothing a model does may be drawn on the agency's sonar, and the last frame carries the same labels as the first.
 - **A VO sentence edit moves beat gaps.** Re-run storyboard_check after every VO change; max_gap (5.0 s) and the metronome band (0.4 s) trip on a single added sentence.
 - **Say who a figure belongs to.** A practitioners' rough figure placed next to an agency's numbers reads as the agency's. Attribute it in the same sentence and say what it is not.
+
+## 9. Things the 2026-10-29 build and panel found that were knowable in advance ("The Reactor Is Still a Dotted Line")
+
+- **A plate paired by text_fit is the rect drawn immediately before the text.** A component of loose `<text>` in local coordinates fails text_fit against whatever rect came first (a header bar), so draw text through a measured `Lab` (rect sized by `monoW`, text centered on it). Define shared components above S1: zoom_clip and text_fit attribute every element to the scene function it sits inside.
+- **Sequenced plates in one slot need `{/* plate-overlap-ok */}` on the line**, and a plate in a shot with a camera move is not where you authored it (plates are screen space, art is zoomed). Keep camera zoom at or under 1.1 where a plate sits above art, or probe a frame.
+- **Stamps, chips and tags that cover a ruled line are a label_footprint FAIL.** Staple condition blocks to the outside of the tag, not over its own NOT STATED stamps.
+- **Red is for one thing.** A red bush plane in front of a rose horizon cost a Gate 0D blocker. Plane cream, crossings ink, one stamp color.
+- **A caption card with a 38 character figure phrase can't break clean in 37.** "about 14.5% under the $10.82 reference price" dangles on every cut. Write the spoken figure so the phrase fits a row ("below the reference price of ten eighty two"), before synth.
+- **A VO sentence change moves everything.** Re-synth, re-run board gen, beat_gaps and `build_evidence --check-plan` before a render; a beat shorter than 0.6 s can't carry its motion strip.
+- **The sfx schedule wants 15 distinct kinds.** Names not in `scripts/sfx_names.py` (`slam`, `whir`, `klaxon`) don't count; use `stamp`, `whirr`, `alarm`.
+- **Don't claim the cause.** "A discount is what an early blank costs" read as AIDEA's statement and had no source. State the fact of the deal (the shares come at a discount) and let the reader link it.
+- **Tense follows the claim.** Say agreed to buy and agreed to pay while the merger hasn't closed, in the VO, the plates and the caption.
+- **Empty frame bands are a Composition cap in the 9:16 master.** The top 400 px and the bottom 500 px sit outside the square, so give them a moon, clouds, a shelf, floor props, or a full-bleed map instead of flat fill.

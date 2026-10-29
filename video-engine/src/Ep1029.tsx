@@ -248,8 +248,8 @@ const TagBackTerms: React.FC<{f: number; slot: number; sticker: number; band: nu
       <Lab x={0} y={36} text="REFERENCE PRICE" size={24} ls={0} fill="#4A3510" />
     </g>
     <g transform={`translate(${40 + 90 * (1 - ticket) * 0},${505 + 4 * Math.sin(f / 7)}) rotate(${5 * Math.sin(f / 9)})`} opacity={ticket}>
-      <path d="M -150,-26 L 0,-26 L 0,26 L -150,26 Z" fill={DEP.paper} stroke={INK} strokeWidth={4} strokeDasharray="10 6" />
-      <Lab x={-75} y={10} text="HALF WARRANT" size={24} ls={0} fill={INK} />
+      <path d="M -200,-26 L 0,-26 L 0,26 L -200,26 Z" fill={DEP.paper} stroke={INK} strokeWidth={4} strokeDasharray="10 6" />
+      <Lab x={-100} y={10} text="HALF WARRANT" size={24} ls={0} fill={INK} />
     </g>
   </g>
 );
@@ -284,7 +284,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const land = f >= t2 - 2 ? bump(f, t2 - 2, 20) : 0;
   const flip = f < t2 ? 0.5 : 0.5 * (1 - springy(f, t2, 30));
   const asked: LineState[] = f > t3 ? ['asked', 'asked', 'asked', 'asked'] : ['blank', 'blank', 'blank', 'blank'];
-  const cam = track([{t: 0, z: 1.5, fx: 520, fy: 1150}, {t: Math.max(40, t2 + 20), z: 1.2, fx: 540, fy: 1090}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
+  const cam = track([{t: 0, z: 1.5, fx: 400, fy: 1150}, {t: Math.max(40, t2 + 20), z: 1.2, fx: 540, fy: 1090}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
@@ -629,7 +629,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <g transform="translate(540,1330)"><SmallTag x={0} y={0} text="SCHEMATIC MAP" size={18} rot={0} /></g>
           <g transform="translate(615,1075)">
             <NuSunOutline x={0} y={0} s={0.58} f={f} k={ease(f, t52, 40)} alpha={0.95} label name="OKLO" variant="oklo" />
-            <g opacity={ease(f, t34, 10)}><SmallTag x={-4} y={-250} text="EARLY 2030s" size={24} rot={-4} /></g>
+            <g opacity={ease(f, t34, 10)}><SmallTag x={-4} y={-312} text="EARLY 2030s" size={24} rot={-4} /></g>
             <g transform="translate(-160,-150)"><SmallTag x={0} y={0} text="EIELSON AFB" size={20} rot={-2} /></g>
           </g>
           <g transform={`translate(400,${1130 + 50 * sink})`} opacity={ease(f, t35 - 10, 10)}>
