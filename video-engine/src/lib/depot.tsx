@@ -7,7 +7,7 @@ import {MONO, monoW, rnd} from './prospect';
 // The unknown is ALWAYS a dashed ice-cyan outline with no fill and no shadow. Gold is for money only,
 // stamp red only for NOT STATED. NuSun is never drawn as a solid: no document states its size.
 export const DEP = {
-  sky0: '#1E1230', sky1: '#2B1B3F', band: '#B34A64', band2: '#E27A5B',
+  sky0: '#1E1230', sky1: '#2B1B3F', band: '#9A4A78', band2: '#D9795F',
   snow: '#CBD5EC', snowShade: '#8E9CC4', snowHi: '#F4F8FF', ink: INK,
   manila: '#E9D08F', manilaShade: '#C9A95A', manilaDeep: '#A98B3E', paper: '#F3EBD7',
   cyan: '#8FE3F2', red: '#D93A3A', gold: '#F2C14E', goldDeep: '#B8860B', wood: '#7A5236', woodDark: '#4B3222',
@@ -36,7 +36,7 @@ export const DepotBG: React.FC<{f: number; horizon?: number; id?: string; dim?: 
         <linearGradient id={`${id}-sky`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor={DEP.sky0} />
           <stop offset="0.55" stopColor={DEP.sky1} />
-          <stop offset="0.86" stopColor="#6A2E52" />
+          <stop offset="0.86" stopColor="#5A2E58" />
           <stop offset="1" stopColor={DEP.band} />
         </linearGradient>
         <linearGradient id={`${id}-gr`} x1="0" y1="0" x2="0" y2="1">
@@ -198,7 +198,9 @@ export const TagPost: React.FC<{x: number; y: number; s?: number; top?: number}>
 );
 
 /** NuSun: a dashed ice-cyan OUTLINE, no fill, no shadow. k draws it on. Never a solid. */
-export const NuSunOutline: React.FC<{x: number; y: number; s?: number; f: number; k?: number; label?: boolean; alpha?: number; name?: string}> = ({x, y, s = 1, f, k = 1, label = false, alpha = 1, name = 'NUSUN'}) => {
+export const NuSunOutline: React.FC<{x: number; y: number; s?: number; f: number; k?: number; label?: boolean; alpha?: number; name?: string; variant?: 'unknown' | 'oklo'}> = ({x, y, s = 1, f, k = 1, label = false, alpha = 1, name = 'NUSUN', variant = 'unknown'}) => {
+  const oklo = variant === 'oklo';
+  const col = oklo ? INK : DEP.cyan;
   const body = 'M -110,0 L -110,-230 Q -110,-330 0,-340 Q 110,-330 110,-230 L 110,0 Z';
   const skirt = 'M -150,0 L -150,22 L 150,22 L 150,0';
   const pipes = [-60, 0, 60].map((px) => `M ${px},-30 L ${px},-290`);
@@ -206,15 +208,15 @@ export const NuSunOutline: React.FC<{x: number; y: number; s?: number; f: number
   const dash = `16 11`;
   const wob = 1 + 0.004 * Math.sin(f / 17);
   return (
-    <g transform={`translate(${x},${y}) scale(${s * wob})`} opacity={alpha * clamp01(k * 3)} style={{filter: `drop-shadow(0 0 ${5 + 3 * Math.sin(f / 12)}px ${DEP.cyan})`}}>
-      <path d={body} fill="none" stroke={DEP.cyan} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={dash} strokeDashoffset={-f * 0.7 + len * (1 - clamp01(k))} />
-      <path d={skirt} fill="none" stroke={DEP.cyan} strokeWidth={7} strokeLinecap="round" strokeDasharray={dash} strokeDashoffset={-f * 0.7} />
-      {pipes.map((p, i) => <path key={i} d={p} fill="none" stroke={DEP.cyan} strokeWidth={5} strokeLinecap="round" strokeDasharray="10 12" strokeDashoffset={f * 0.5 + i * 6} opacity={0.8} />)}
-      <path d="M -50,-120 L 50,-120 M -40,-170 L 40,-170" stroke={DEP.cyan} strokeWidth={4} strokeDasharray="6 8" opacity={0.6} />
+    <g transform={`translate(${x},${y}) scale(${s * wob})`} opacity={alpha * clamp01(k * 3)} style={oklo ? undefined : {filter: `drop-shadow(0 0 ${5 + 3 * Math.sin(f / 12)}px ${col})`}}>
+      <path d={body} fill={oklo ? DEP.paper : "none"} fillOpacity={oklo ? 0.5 : 1} stroke={col} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={dash} strokeDashoffset={-f * 0.7 + len * (1 - clamp01(k))} />
+      <path d={skirt} fill="none" stroke={col} strokeWidth={7} strokeLinecap="round" strokeDasharray={dash} strokeDashoffset={-f * 0.7} />
+      {pipes.map((p, i) => <path key={i} d={p} fill="none" stroke={col} strokeWidth={5} strokeLinecap="round" strokeDasharray="10 12" strokeDashoffset={f * 0.5 + i * 6} opacity={0.8} />)}
+      <path d="M -50,-120 L 50,-120 M -40,-170 L 40,-170" stroke={col} strokeWidth={4} strokeDasharray="6 8" opacity={0.6} />
       {label && (
         <g>
-          <rect x={-100} y={-440} width={200} height={50} rx={5} fill={DEP.sky1} stroke={DEP.cyan} strokeWidth={4} />
-          <text x={0} y={-405} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} letterSpacing={2} fill={DEP.cyan}>{name}</text>
+          <rect x={-100} y={-440} width={200} height={50} rx={5} fill={DEP.sky1} stroke={oklo ? DEP.manila : col} strokeWidth={4} />
+          <text x={0} y={-405} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} letterSpacing={2} fill={oklo ? DEP.manila : col}>{name}</text>
         </g>
       )}
     </g>
@@ -243,22 +245,22 @@ export const Chip: React.FC<{x: number; y: number; text: string; size?: number; 
 };
 
 /** wall calendar: 30 day squares, the first n grayed and crossed (a stated shortage, not a countdown) */
-export const Calendar: React.FC<{x: number; y: number; s?: number; f: number; n?: number; slam?: number; frost?: number}> = ({x, y, s = 1, f, n = 18, slam = 1, frost = 0}) => {
+export const Calendar: React.FC<{x: number; y: number; s?: number; f: number; n?: number; slam?: number; frost?: number; cross?: number}> = ({x, y, s = 1, f, n = 18, slam = 1, frost = 0, cross = 1}) => {
   const drop = (1 - slam) * -700;
   const sq = 1 + 0.06 * Math.max(0, 1 - Math.abs(slam - 1) * 10);
   return (
     <g transform={`translate(${x},${y + drop}) scale(${s * sq})`}>
       <ContactShadow cx={0} cy={6} rx={200} ry={14} opacity={0.2 * slam} blur={9} />
       <rect x={-200} y={-420} width={400} height={420} rx={8} fill={DEP.paper} stroke={INK} strokeWidth={8} />
-      <rect x={-200} y={-420} width={400} height={78} rx={8} fill={DEP.red} stroke={INK} strokeWidth={8} />
-      <text x={0} y={-366} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={3} fill={DEP.paper}>THIS WINTER</text>
+      <rect x={-200} y={-420} width={400} height={78} rx={8} fill={DEP.sky1} stroke={INK} strokeWidth={8} />
+      <text x={0} y={-366} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} letterSpacing={3} fill={DEP.manila}>THIS WINTER</text>
       {Array.from({length: 30}, (_, i) => {
         const cx = -160 + (i % 6) * 64, cy = -318 + Math.floor(i / 6) * 62;
-        const hit = i < n;
+        const hit = i < n * clamp01(cross) - 0.001;
         return (
           <g key={i}>
             <rect x={cx - 26} y={cy - 24} width={52} height={50} rx={4} fill={hit ? '#8F8AA5' : '#FFFFFF'} stroke={INK} strokeWidth={3} opacity={hit ? 1 : 0.92} />
-            {hit && <path d={`M ${cx - 18},${cy - 16} L ${cx + 18},${cy + 18} M ${cx + 18},${cy - 16} L ${cx - 18},${cy + 18}`} stroke={DEP.red} strokeWidth={5} strokeLinecap="round" />}
+            {hit && <path d={`M ${cx - 18},${cy - 16} L ${cx + 18},${cy + 18} M ${cx + 18},${cy - 16} L ${cx - 18},${cy + 18}`} stroke={INK} strokeWidth={6} strokeLinecap="round" />}
           </g>
         );
       })}
@@ -278,7 +280,8 @@ export const MergerJar: React.FC<{x: number; y: number; s?: number; f: number; f
   return (
     <g transform={`translate(${x},${y}) scale(${s})`}>
       <ContactShadow cx={0} cy={6} rx={170} ry={16} opacity={0.35} blur={10} />
-      <path d={`M -${W / 2},-${H} L ${W / 2},-${H} L ${W / 2 - 24},0 L -${W / 2 - 24},0 Z`} fill="#BFE3F2" opacity={0.22} stroke={INK} strokeWidth={8} strokeLinejoin="round" />
+      <path d={`M -${W / 2},-${H} L ${W / 2},-${H} L ${W / 2 - 24},0 L -${W / 2 - 24},0 Z`} fill="#9FC3E6" opacity={0.5} stroke={INK} strokeWidth={9} strokeLinejoin="round" />
+      <path d={`M -${W / 2 - 26},-${H - 30} L -${W / 2 - 34},-60`} stroke="#FFFFFF" strokeWidth={12} opacity={0.5} strokeLinecap="round" />
       <path d={`M -${W / 2 - 24 * (1 - fill)},-${H * fill} L ${W / 2 - 24 * (1 - fill)},-${H * fill} L ${W / 2 - 24},0 L -${W / 2 - 24},0 Z`} fill={DEP.gold} opacity={0.9} stroke={INK} strokeWidth={5} />
       {aidea > 0 && <path d={`M -${W / 2 - 24},0 L ${W / 2 - 24},0 L ${W / 2 - 24 + 24 * (1 - 0.33)},-${H * 0.33 * aidea} L -${W / 2 - 24 + 24 * (1 - 0.33)},-${H * 0.33 * aidea} Z`} fill="#FFE08A" opacity={0.0} />}
       {[0.25, 0.5, 0.75, 1].map((m, i) => <line key={i} x1={-W / 2 + 6} y1={-H * m + 4} x2={-W / 2 + 36} y2={-H * m + 4} stroke={INK} strokeWidth={4} />)}
@@ -311,5 +314,65 @@ export const PaperDoc: React.FC<{x: number; y: number; w?: number; h?: number; r
     {Array.from({length: rows}, (_, i) => (
       <rect key={i} x={-w / 2 + 26} y={-h / 2 + 78 + i * 34} width={i === rows - 1 ? (w - 52) * 0.5 : w - 52} height={12} rx={4} fill={i === hot ? DEP.gold : '#3A2E1B'} opacity={i === hot ? 0.9 : 0.2} />
     ))}
+  </g>
+);
+
+/** a plank sled with runners that carries a jar or a crate */
+export const Sled: React.FC<{x: number; y: number; s?: number; f: number; w?: number; children?: React.ReactNode}> = ({x, y, s = 1, f, w = 420, children}) => (
+  <g transform={`translate(${x},${y}) scale(${s})`}>
+    <ContactShadow cx={0} cy={6} rx={w * 0.55} ry={14} opacity={0.35} blur={10} />
+    <path d={`M ${-w / 2 - 30},-6 Q ${-w / 2 - 60},-30 ${-w / 2 - 20},-44 M ${w / 2 + 30},-6 Q ${w / 2 + 60},-30 ${w / 2 + 20},-44`} stroke={INK} strokeWidth={9} fill="none" strokeLinecap="round" />
+    {[-w / 2 + 40, w / 2 - 40].map((rx, i) => <rect key={i} x={rx - 10} y={-40} width={20} height={36} fill={DEP.woodDark} stroke={INK} strokeWidth={5} />)}
+    <rect x={-w / 2} y={-62} width={w} height={26} rx={4} fill={DEP.wood} stroke={INK} strokeWidth={7} />
+    <rect x={-w / 2 - 20} y={-10} width={w + 40} height={12} rx={6} fill="#8A8F99" stroke={INK} strokeWidth={5} />
+    <g transform="translate(0,-62)">{children}</g>
+  </g>
+);
+
+/** a pole light: a pole, an arm and a warm cone onto the snow */
+export const PoleLight: React.FC<{x: number; y: number; f: number; h?: number}> = ({x, y, f, h = 720}) => {
+  const fl = 1 + 0.03 * Math.sin(f / 7);
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <path d={`M -150,0 L 150,0 L 90,${-h} L -90,${-h} Z`} fill="#FFD58A" opacity={0.1 * fl} />
+      <rect x={-9} y={-h} width={18} height={h} fill={DEP.woodDark} stroke={INK} strokeWidth={5} />
+      <rect x={-9} y={-h} width={92} height={14} fill={DEP.woodDark} stroke={INK} strokeWidth={4} />
+      <path d={`M 60,${-h + 14} q 22,0 22,26 l -44,0 q 0,-26 22,-26 Z`} fill="#3E7A5E" stroke={INK} strokeWidth={4} />
+      <ellipse cx={82} cy={-h + 42} rx={22} ry={6} fill="#FFE9A8" opacity={0.9} />
+    </g>
+  );
+};
+
+/** a cold mailroom wall: pale blue-grey plaster, a cork board with pushpins, a fluorescent tube */
+export const Mailroom: React.FC<{f: number; id: string}> = ({f, id}) => (
+  <g>
+    <defs>
+      <linearGradient id={`${id}w`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#7C88AE" /><stop offset="1" stopColor="#566085" /></linearGradient>
+      <linearGradient id={`${id}t`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#E8F1FF" stopOpacity={0} /><stop offset="0.5" stopColor="#E8F1FF" stopOpacity={0.9} /><stop offset="1" stopColor="#E8F1FF" stopOpacity={0} /></linearGradient>
+    </defs>
+    <rect data-band="ok" x={-40} y={0} width={1160} height={1960} fill={`url(#${id}w)`} />
+    {Array.from({length: 9}, (_, i) => <line key={i} data-band="ok" x1={-40} y1={i * 230} x2={1120} y2={i * 230} stroke="#3F486A" strokeWidth={3} opacity={0.4} />)}
+    <g transform="translate(540,60)" opacity={0.85 + 0.1 * Math.sin(f / 3.1)}>
+      <rect x={-300} y={-6} width={600} height={22} rx={10} fill="#E8F1FF" stroke={INK} strokeWidth={5} />
+      <rect x={-420} y={14} width={840} height={440} fill={`url(#${id}t)`} opacity={0.18} />
+    </g>
+    <g transform="translate(540,960)">
+      <rect x={-440} y={-420} width={880} height={820} rx={10} fill="#B98B5A" stroke={INK} strokeWidth={10} />
+      <rect x={-440} y={-420} width={880} height={820} rx={10} fill="none" stroke="#7A5236" strokeWidth={22} opacity={0.6} />
+      {Array.from({length: 120}, (_, i) => <circle key={i} cx={-420 + (i * 97) % 840} cy={-400 + (i * 53) % 790} r={2 + (i % 3)} fill="#8A6040" opacity={0.5} />)}
+    </g>
+    <rect x={-40} y={1500} width={1160} height={460} fill="#3F486A" stroke={INK} strokeWidth={6} />
+  </g>
+);
+
+/** a plain count-up box: a dark case with one big paper digit, a hand-cranked counter */
+export const CountBox: React.FC<{x: number; y: number; s?: number; digit: string; label: string; f: number; pop?: number}> = ({x, y, s = 1, digit, label, f, pop = 0}) => (
+  <g transform={`translate(${x},${y}) scale(${s * (1 + 0.1 * pop)})`}>
+    <ContactShadow cx={0} cy={6} rx={130} ry={12} opacity={0.35} blur={9} />
+    <rect x={-120} y={-170} width={240} height={170} rx={12} fill="#2A2438" stroke={INK} strokeWidth={8} />
+    <rect x={-96} y={-146} width={192} height={96} rx={6} fill={DEP.paper} stroke={INK} strokeWidth={5} />
+    <text x={0} y={-68} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={86} fill={INK}>{digit}</text>
+    <text x={0} y={-16} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={3} fill={DEP.manila}>{label}</text>
+    <circle cx={104} cy={-140 + 2 * Math.sin(f / 5)} r={8} fill={DEP.manilaShade} stroke={INK} strokeWidth={3} />
   </g>
 );
