@@ -375,6 +375,10 @@ const S5: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Shed f={f + p.from} id="s5" lampX={620} counterY={1260} />
         <Lamp x={620} f={f} />
+        <g transform={`translate(${lerp(-400, 190, ease(f, t16 - 6, 24))},0)`} opacity={ease(f, t16 - 6, 10)}>
+          <rect x={-5} y={470} width={10} height={44} fill="#8A8F99" stroke={INK} strokeWidth={3} />
+          <NuSunTag x={0} y={520} s={0.44} f={f} flip={1} sway={1.4} back={<TagBack f={f} sticker={1} band={1} ticket={1} />} id="s5t" />
+        </g>
         <g transform={`translate(${lerp(1400, 600, slide)},0)`}>
           <MergerJar x={0} y={1255} s={1.15} f={f} fill={fill} aidea={0} />
           <text x={0} y={1180} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={2} fill={INK} opacity={0.8}>LAUNCH TWO MERGER</text>
