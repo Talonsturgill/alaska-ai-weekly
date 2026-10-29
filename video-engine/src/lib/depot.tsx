@@ -330,15 +330,15 @@ export const Sled: React.FC<{x: number; y: number; s?: number; f: number; w?: nu
 );
 
 /** a pole light: a pole, an arm and a warm cone onto the snow */
-export const PoleLight: React.FC<{x: number; y: number; f: number; h?: number}> = ({x, y, f, h = 720}) => {
+export const PoleLight: React.FC<{x: number; y: number; f: number; h?: number; on?: number}> = ({x, y, f, h = 720, on = 1}) => {
   const fl = 1 + 0.03 * Math.sin(f / 7);
   return (
     <g transform={`translate(${x},${y})`}>
-      <path d={`M -150,0 L 150,0 L 90,${-h} L -90,${-h} Z`} fill="#FFD58A" opacity={0.1 * fl} />
+      <path d={`M -150,0 L 150,0 L 90,${-h} L -90,${-h} Z`} fill="#FFD58A" opacity={0.1 * fl * on} />
       <rect x={-9} y={-h} width={18} height={h} fill={DEP.woodDark} stroke={INK} strokeWidth={5} />
       <rect x={-9} y={-h} width={92} height={14} fill={DEP.woodDark} stroke={INK} strokeWidth={4} />
       <path d={`M 60,${-h + 14} q 22,0 22,26 l -44,0 q 0,-26 22,-26 Z`} fill="#3E7A5E" stroke={INK} strokeWidth={4} />
-      <ellipse cx={82} cy={-h + 42} rx={22} ry={6} fill="#FFE9A8" opacity={0.9} />
+      <ellipse cx={82} cy={-h + 42} rx={22} ry={6} fill="#FFE9A8" opacity={0.9 * on} />
     </g>
   );
 };

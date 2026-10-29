@@ -205,29 +205,6 @@ const Certificate: React.FC<{x: number; y: number; rot?: number; s?: number; f: 
   </g>
 );
 
-/** the back of the NUSUN tag: share terms */
-const TagBack: React.FC<{f: number; sticker: number; band: number; ticket: number; terms?: number}> = ({f, sticker, band, ticket, terms = 1}) => (
-  <g>
-    <rect x={-162} y={64} width={324} height={64} rx={4} fill={DEP.sky1} stroke={INK} strokeWidth={5} />
-    <text x={0} y={110} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} letterSpacing={3} fill={DEP.manila}>SHARES</text>
-    <text x={-150} y={190} fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={2} fill="#4A3510">REFERENCE PRICE</text>
-    <text x={-150} y={250} fontFamily={MONO} fontWeight={800} fontSize={60} fill="#4A3510">$10.82</text>
-    <line x1={-150} y1={236} x2={86} y2={236} stroke={DEP.red} strokeWidth={6} opacity={0.35 + 0.65 * sticker} />
-    <g transform={`translate(30,${300 - 56 * sticker}) rotate(${-6 + 6 * (1 - sticker)}) scale(${1}, ${0.2 + 0.8 * sticker})`} opacity={clamp01(sticker * 3)}>
-      <rect x={-110} y={-4} width={230} height={88} rx={8} fill={DEP.gold} stroke={INK} strokeWidth={5} />
-      <text x={5} y={64} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={56} fill={INK}>$9.25</text>
-    </g>
-    <g opacity={band} transform={`translate(${-150},${400})`}>
-      <rect x={0} y={-4} width={300} height={10} fill={DEP.gold} stroke={INK} strokeWidth={3} />
-      <text x={0} y={42} fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={1} fill="#4A3510">ABOUT 14.5% BELOW</text>
-    </g>
-    <g transform={`translate(${60 + 160 * (1 - ticket) * 0},${470 + 4 * Math.sin(f / 7)}) rotate(${(1 - ticket) * 0 + 5 * Math.sin(f / 9)})`} opacity={ticket}>
-      <path d="M -150,-26 L 0,-26 L 0,26 L -150,26 Z" fill={DEP.paper} stroke={INK} strokeWidth={4} strokeDasharray="10 6" />
-      <text x={-75} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={INK}>HALF WARRANT</text>
-    </g>
-  </g>
-);
-
 const SOURDOUGH_X = 205, GROUND_Y = 1330;
 const Hero: React.FC<{f: number; x?: number; y?: number; s?: number; emotion?: 'proud' | 'confident' | 'faltering' | 'frozen'; glow?: number; facing?: 1 | -1}> = ({f, x = SOURDOUGH_X, y = GROUND_Y, s = 0.74, emotion = 'proud', glow = 1, facing = 1}) => (
   <Sourdough frame={f} x={x} y={y} scale={s} facing={facing} emotion={emotion} glow={glow} />
@@ -342,11 +319,21 @@ const S3: React.FC<SceneProps> = ({p}) => {
 };
 
 // ---- S4: the share terms (line 3) ------------------------------------------------------------------------------------------------------------------
+/** a mono label inside its own measured rect so text_fit can pair them (rect first, text centered on it) */
+const Lab: React.FC<{x: number; y: number; text: string; size: number; fill: string; ls?: number}> = ({x, y, text, size, fill, ls = 1}) => {
+  const w = monoW(text, size, ls) + 28;
+  return (
+    <g>
+      <rect x={x - w / 2} y={y - size} width={w} height={size * 1.3} fill="none" />
+      <text x={x} y={y} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={size} letterSpacing={ls} fill={fill}>{text}</text>
+    </g>
+  );
+};
 const TagBackTerms: React.FC<{f: number; slot: number; sticker: number; band: number; strike: number; ticket: number}> = ({f, slot, sticker, band, strike, ticket}) => (
   <g>
     <rect x={-162} y={64} width={324} height={64} rx={4} fill={DEP.sky1} stroke={INK} strokeWidth={5} />
     <text x={0} y={110} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} letterSpacing={3} fill={DEP.manila}>SHARES</text>
-    <text x={-150} y={168} fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={2} fill="#4A3510">SHARE PRICE</text>
+    <Lab x={-70} y={168} text="SHARE PRICE" size={22} ls={2} fill="#4A3510" />
     <rect x={-150} y={180} width={300} height={104} rx={8} fill="none" stroke={slot > 0 && sticker < 0.5 ? '#1E7F93' : '#7A6020'} strokeWidth={5} strokeDasharray="14 9" strokeDashoffset={-f * 0.5} />
     <g transform={`translate(0,${232 + (1 - sticker) * -80}) rotate(${-4 * sticker}) scale(${0.7 + 0.3 * sticker})`} opacity={clamp01(sticker * 3)}>
       <rect x={-130} y={-44} width={260} height={88} rx={8} fill={DEP.gold} stroke={INK} strokeWidth={5} />
@@ -354,16 +341,16 @@ const TagBackTerms: React.FC<{f: number; slot: number; sticker: number; band: nu
     </g>
     <g opacity={band} transform="translate(-150,318)">
       <rect x={0} y={-5} width={300} height={10} fill={DEP.gold} stroke={INK} strokeWidth={3} />
-      <text x={0} y={34} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1} fill="#4A3510">ABOUT 14.5% BELOW</text>
+      <Lab x={150} y={34} text="ABOUT 14.5% BELOW" size={20} ls={1} fill="#4A3510" />
     </g>
     <g opacity={strike} transform={`translate(0,${400 - 14 * (1 - strike)})`}>
-      <text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={52} fill="#4A3510">$10.82</text>
+      <Lab x={0} y={0} text="$10.82" size={52} fill="#4A3510" />
       <line x1={-100} y1={-18} x2={100} y2={-18} stroke={INK} strokeWidth={6} />
-      <text x={0} y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={1} fill="#4A3510">REFERENCE PRICE</text>
+      <Lab x={0} y={34} text="REFERENCE PRICE" size={18} ls={1} fill="#4A3510" />
     </g>
     <g transform={`translate(${40 + 90 * (1 - ticket) * 0},${505 + 4 * Math.sin(f / 7)}) rotate(${5 * Math.sin(f / 9)})`} opacity={ticket}>
       <path d="M -150,-26 L 0,-26 L 0,26 L -150,26 Z" fill={DEP.paper} stroke={INK} strokeWidth={4} strokeDasharray="10 6" />
-      <text x={-75} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={INK}>HALF WARRANT</text>
+      <Lab x={-75} y={9} text="HALF WARRANT" size={20} fill={INK} />
     </g>
   </g>
 );
@@ -383,7 +370,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="THE SHARE TERMS" y={1170} size={34} tone="dark" p={ease(f, t12 + 4, 8) * (1 - ease(f, t44 - 2, 6))} />
         <Plate x={540} text="SHARE PRICE" y={1170} size={34} tone="dark" p={ease(f, t44 + 2, 8) * (1 - ease(f, t13 - 2, 6))} />
         <Plate x={540} text="$9.25 A SHARE" y={1170} size={44} tone="gold" p={ease(f, t13 + 2, 8) * (1 - ease(f, t14 - 2, 6))} />
-        <Plate x={540} displayLines={['~14.5% BELOW THE', '$10.82 REFERENCE PRICE']} text="~14.5% BELOW THE $10.82 REFERENCE PRICE" y={1190} size={28} tone="dark" p={ease(f, t14 + 2, 8) * (1 - ease(f, t15 - 2, 6))} />
+        <Plate x={540} text="~14.5% BELOW" y={1170} size={38} tone="dark" p={ease(f, t14 + 2, 8) * (1 - ease(f, t47 - 2, 6))} />
+        <Plate x={540} text="$10.82 REFERENCE PRICE" y={1170} size={32} tone="dark" p={ease(f, t47 + 2, 8) * (1 - ease(f, t15 - 2, 6))} />
         <Plate x={540} displayLines={['HALF A WARRANT A SHARE', '$11.50 · 5 YEARS']} text="HALF A WARRANT A SHARE · $11.50 · 5 YEARS" y={1190} size={28} tone="paper" p={ease(f, t15 + 4, 8)} />
       </>}>
       <SVG>
@@ -404,7 +392,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const pour = clamp01((f - t17) / 60);
   const aid = springy(f, t18, 26);
   const fill = f < t18 ? 0.1 * pour : 0.1 + 0.23 * aid;
-  const jx = lerp(1300, 560, slide);
+  const jx = lerp(1300, 600, slide);
+  const heroX = lerp(-120, 215, slide) + 6 * Math.sin(f / 9) * (1 - slide);
   const planeX = 560 + (f - t17) * 14;
   const cam = track([{t: 0, z: 1.06, fx: 600, fy: 1040}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
   return (
@@ -425,7 +414,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           </Sled>
           <text x={0} y={1235} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} letterSpacing={2} fill={INK} opacity={0.8}>LAUNCH TWO MERGER</text>
           <g transform="translate(160,938)">
-            <rect x={0} y={-16} width={86} height={32} rx={4} fill={DEP.gold} stroke={INK} strokeWidth={4} opacity={ease(f, t17, 10)} />
+            <rect x={-6} y={-16} width={98} height={32} rx={4} fill={DEP.gold} stroke={INK} strokeWidth={4} opacity={ease(f, t17, 10)} />
             <text x={43} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={INK} opacity={ease(f, t17, 10)}>$75M</text>
           </g>
           <CoinStream x={0} y0={680} y1={1280 - 340 * fill} f={f} on={f > t17 && f < t18 + 6 ? 1 : 0} seed={3} />
@@ -437,7 +426,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
           )}
         </g>
         {f > t17 - 40 && f < t17 + 120 && <BushPlane x={planeX} y={660} scale={0.62} f={f} facing={1} mode="fly" propSpeed={1.2} body={PLANE} />}
-        <Hero f={f} x={200} y={GROUND_Y} s={0.66} emotion="confident" />
+        <path d={`M ${heroX + 70},${GROUND_Y - 110} Q ${(heroX + jx) / 2},${GROUND_Y - 40 + 24 * (1 - slide)} ${jx - 215},${GROUND_Y - 24}`} stroke={DEP.manilaDeep} strokeWidth={9} fill="none" strokeLinecap="round" />
+        <path d={`M ${heroX + 70},${GROUND_Y - 110} Q ${(heroX + jx) / 2},${GROUND_Y - 40 + 24 * (1 - slide)} ${jx - 215},${GROUND_Y - 24}`} stroke={INK} strokeWidth={3} fill="none" strokeLinecap="round" />
+        <Hero f={f} x={heroX} y={GROUND_Y} s={0.66} emotion={f > t18 ? 'proud' : 'confident'} />
         <NearDrift f={f} seed={5} y={1770} />
       </SVG>
     </Frame>
@@ -568,7 +559,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <DepotBG f={f + p.from} id="s9" dim={0.22} />
-        <PoleLight x={150} y={GROUND_Y + 10} f={f} />
+        <PoleLight x={150} y={GROUND_Y + 10} f={f} on={f < 2 ? 0 : 1} />
         <TagPost x={520} y={GROUND_Y + 20} top={POST_TOP} />
         <NuSunTag x={520} y={TAG_Y} s={1.0} f={f} states={['stamped', 'stamped', 'stamped', 'stamped']} stampP={[1, 1, 1, 1]} sway={0.5} id="s9t" />
         <CondChips tx={520} ty={TAG_Y} f={f} t0={t31} />
@@ -577,7 +568,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <CashBlock x={0} y={0} f={f} scale={0.52} emotion="smug" id="s9cb" band="EARLY" knock={f > t31 ? 0.4 : 0} />
           <g transform={`translate(-130,-170) rotate(${10 * Math.sin(f / 9)} 0 -30)`} opacity={ease(f, t32, 10)}>
             <line x1={0} y1={-60} x2={0} y2={-6} stroke={INK} strokeWidth={4} />
-            <SmallTag x={0} y={30} text="DISCOUNT" size={24} />
+            <SmallTag x={0} y={30} text="HALF WARRANT" size={20} />
+            <rect x={-92} y={44} width={184} height={12} fill={DEP.gold} stroke={INK} strokeWidth={3} />
           </g>
         </g>
         <NearDrift f={f} seed={9} y={1790} />
@@ -590,7 +582,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
 const PIN: [number, number] = [560, 300];
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t33 = b(33), t34 = b(34), t35 = b(35), t45 = b(45);
+  const t33 = b(33), t34 = b(34), t35 = b(35), t45 = b(35) + 22;
   const cam = track([{t: 0, z: 1.5, fx: 560, fy: 1180}, {t: Math.max(30, t33 + 40), z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.05, fx: 540, fy: 1010}]);
   const spin = f - t35;
   const sink = ease(f, t45, 30);
@@ -600,8 +592,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         <Plate x={540} displayLines={['OKLO · EIELSON', 'AIR FORCE BASE']} text="OKLO · EIELSON AIR FORCE BASE" y={500} size={30} tone="dark" p={ease(f, t33 + 20, 8) * (1 - ease(f, t34 + 2, 6))} />
         <Plate x={540} displayLines={['AT LEAST 5 MW ELECTRIC', 'EARLY 2030s · OKLO']} text="AT LEAST 5 MW ELECTRIC · EARLY 2030s · OKLO" y={510} size={28} tone="paper" p={ease(f, t34 + 4, 8) * (1 - ease(f, t35 - 2, 6))} />
-        <Plate x={540} displayLines={['BOREHOLE DRILLING', 'LATE 2026 · OKLO']} text="BOREHOLE DRILLING · LATE 2026 · OKLO" y={510} size={28} tone="gold" p={ease(f, t35 + 2, 8) * (1 - ease(f, t45 - 2, 6))} />
-        <Plate x={540} text="OKLO · EARLY 2030s" y={500} size={34} tone="paper" p={ease(f, t45 + 2, 8)} />
+        <Plate x={540} displayLines={['BOREHOLE DRILLING', 'LATE 2026 · OKLO']} text="BOREHOLE DRILLING · LATE 2026 · OKLO" y={510} size={28} tone="gold" p={ease(f, t35 + 2, 8)} />
       </>}>
       <SVG>
         <g transform={`translate(${trem},0)`}>
