@@ -307,7 +307,7 @@ def _resplit_bad_breaks(caps, dangling, numbers, limit=68):
 
 
 
-def _merge_by_sense(caps, max_chars=68):
+def _merge_by_sense(caps, max_chars=68, force=None):
     """One card per clause, held long enough to read (2026-10-03, editor finding).
 
     Alignment chunks cues at about 34 characters, so a 70-character sentence arrived as three
@@ -320,7 +320,10 @@ def _merge_by_sense(caps, max_chars=68):
     """
     out = []
     _sp = os.path.join(OUT, "vo_script.json")
-    _force = [x.lower() for x in ((json.load(open(_sp)).get("caption_split_after") or []) if os.path.exists(_sp) else [])]
+    if force is not None:
+        _force = list(force)
+    else:
+        _force = [x.lower() for x in ((json.load(open(_sp)).get("caption_split_after") or []) if os.path.exists(_sp) else [])]
     for c in caps:
         if out:
             prev = out[-1]
@@ -366,6 +369,97 @@ def apply_fixups(text, fix):
     return text
 
 
+def _split_words(ws, fix, force, quotes, max_chars=68):
+    """One card if it fits, else the best clause split, recursively (2026-10-08: a 180
+    character sentence has no two-way split with both halves under the limit, and the old
+    fall-through drew the whole sentence as ONE card of four tiny rows). `ws` is a list of
+    {"w": token} dicts; only the token text is read, so the script stage can run it on the
+    script's own words before any synth (machine pass 2026-10-29, cards_for_script)."""
+    def show(part):
+        return apply_fixups(" ".join(x["w"] for x in part), fix)
+
+    def inside_fix(part, k):
+        left = " ".join(x["w"] for x in part[:k]).lower()
+        right = " ".join(x["w"] for x in part[k:]).lower()
+        whole = (left + " " + right)
+        for ph in list(fix) + list(quotes):     # never split a card inside a fixup or a quote
+            ph = ph.lower()
+            for m in re.finditer(re.escape(ph), whole):
+                if m.start() < len(left) < m.end():
+                    return True
+        return False
+
+    def split_unit(part, depth=0):
+        full = show(part)
+        if len(full) <= max_chars and not any(f in full.lower() for f in force):
+            return [part]
+        best, cost = None, 1e9
+        for strict in (True, False):
+            for k in range(2, len(part) - 1):
+                a, b = show(part[:k]), show(part[k:])
+                _forced = any(a.lower().endswith(f) for f in force)
+                if inside_fix(part, k):
+                    continue
+                if strict and not _forced and (len(a) > max_chars or len(b) > max_chars):
+                    continue
+                last = part[k - 1]["w"].lower().strip(",.?!")
+                c = abs(len(a) - len(b)) * 0.5
+                if not strict:
+                    c += 0.8 * (max(0, len(a) - max_chars) + max(0, len(b) - max_chars))
+                if part[k - 1]["w"].endswith((",", ".", "?")):
+                    c -= 40
+                if part[k]["w"].lower() in _SPLIT_GOOD_START:
+                    c -= 12
+                if last in _SPLIT_BAD_END or (last.endswith("'s") and last not in ("it's", "that's", "what's", "there's", "here's", "let's")):
+                    c += 60
+                if any(show(part[:k]).lower().endswith(f) for f in force):
+                    c -= 500
+                if c < cost:
+                    best, cost = k, c
+            if best is not None:
+                break
+        if best is None or depth > 4:
+            return [part]
+        return split_unit(part[:best], depth + 1) + split_unit(part[best:], depth + 1)
+
+    return split_unit(ws)
+
+
+def cards_for_script(script, max_chars=68):
+    """[(line idx, card text)] as build_scenes will cut them, from vo_script.json alone.
+
+    Machine pass 2026-10-29 (caption-row-figure-phrase). The 10-29 line "about 14.5% under the
+    $10.82 reference price" had no row break that did not end on a figure or a dangling word,
+    which caption_render_check found only after the synth, the alignment and the build, and
+    the fix cost a re-synth. The card builder reads only the words' TEXT (timings only stamp
+    the result), and the aligned words are the script's own tokens, so the same cards can be
+    cut at the script stage: one per sentence, split at the same clause boundaries, with the
+    same caption_fixups, caption_split_after and caption_quotes, then rejoined by the same
+    _merge_by_sense (a forced phrase can split a sentence into pieces the merge puts back)."""
+    fix = script.get("caption_fixups") or {}
+    force = [x.lower() for x in (script.get("caption_split_after") or [])]
+    quotes = [x.strip().strip('"') for x in (script.get("caption_quotes") or [])
+              if isinstance(x, str) and x.strip().strip('"')]
+    cards = []
+    for n, line in enumerate(script.get("lines") or []):
+        units, cur = [], []
+        for tok in str(line.get("text") or "").split():
+            cur.append({"w": tok})
+            if tok.endswith((".", "?", "!")):
+                units.append(cur)
+                cur = []
+        if cur:
+            units.append(cur)
+        for unit in units:
+            for p in _split_words(unit, fix, force, quotes, max_chars):
+                # timings are placeholders: the merge reads only seg and text, and the hold
+                # pass after it only stretches end times, which this never reports
+                t = float(len(cards))
+                cards.append({"text": apply_fixups(" ".join(x["w"] for x in p), fix),
+                              "start": t, "end": t + 1.0, "seg": n, "idx": line.get("idx")})
+    return [(c["idx"], c["text"]) for c in _merge_by_sense(cards, max_chars, force)]
+
+
 def _cards_from_words(caps, max_chars=68):
     """Rebuild each spoken line as one card, or two split at the best clause boundary
     (2026-10-03, panel finding: aligner chunk edges tore "conservative / pollster" and left
@@ -390,18 +484,8 @@ def _cards_from_words(caps, max_chars=68):
         # whose only clause boundary sat past the 68-character half limit)
         force = [x.lower() for x in (_vs.get("caption_split_after") or [])]
     quotes = caption_quotes()
-    def show(ws):
-        return apply_fixups(" ".join(x["w"] for x in ws), fix)
-    def inside_fix(ws, k):
-        left = " ".join(x["w"] for x in ws[:k]).lower()
-        right = " ".join(x["w"] for x in ws[k:]).lower()
-        whole = (left + " " + right)
-        for ph in list(fix) + quotes:     # never split a card inside a fixup or a quote
-            ph = ph.lower()
-            for m in re.finditer(re.escape(ph), whole):
-                if m.start() < len(left) < m.end():
-                    return True
-        return False
+    show = lambda ws: apply_fixups(" ".join(x["w"] for x in ws), fix)
+    split_unit = lambda ws: _split_words(ws, fix, force, quotes, max_chars)
     out = []
     units = []
     for seg in sorted(k for k in by_seg if k is not None):
@@ -412,41 +496,6 @@ def _cards_from_words(caps, max_chars=68):
                 units.append((seg, cur)); cur = []
         if cur:
             units.append((seg, cur))
-    def split_unit(ws, depth=0):
-        """One card if it fits, else the best clause split, recursively (2026-10-08: a 180
-        character sentence has no two-way split with both halves under the limit, and the old
-        fall-through drew the whole sentence as ONE card of four tiny rows)."""
-        full = show(ws)
-        if len(full) <= max_chars and not any(f in full.lower() for f in force):
-            return [ws]
-        best, cost = None, 1e9
-        for strict in (True, False):
-            for k in range(2, len(ws) - 1):
-                a, b = show(ws[:k]), show(ws[k:])
-                _forced = any(a.lower().endswith(f) for f in force)
-                if inside_fix(ws, k):
-                    continue
-                if strict and not _forced and (len(a) > max_chars or len(b) > max_chars):
-                    continue
-                last = ws[k - 1]["w"].lower().strip(",.?!")
-                c = abs(len(a) - len(b)) * 0.5
-                if not strict:
-                    c += 0.8 * (max(0, len(a) - max_chars) + max(0, len(b) - max_chars))
-                if ws[k - 1]["w"].endswith((",", ".", "?")):
-                    c -= 40
-                if ws[k]["w"].lower() in _SPLIT_GOOD_START:
-                    c -= 12
-                if last in _SPLIT_BAD_END or (last.endswith("'s") and last not in ("it's", "that's", "what's", "there's", "here's", "let's")):
-                    c += 60
-                if any(show(ws[:k]).lower().endswith(f) for f in force):
-                    c -= 500
-                if c < cost:
-                    best, cost = k, c
-            if best is not None:
-                break
-        if best is None or depth > 4:
-            return [ws]
-        return split_unit(ws[:best], depth + 1) + split_unit(ws[best:], depth + 1)
     for seg, ws in units:
         for piece in split_unit(ws):
             out.append({"text": show(piece), "start": piece[0]["s"], "end": piece[-1]["e"], "seg": seg})

@@ -35,6 +35,7 @@ Usage:
     python3 scripts/vo_claims_check.py            # exit 1 on any violation
     python3 scripts/vo_claims_check.py --list     # print what it derived, exit 0
     python3 scripts/vo_claims_check.py --before-synth  # provisional density, no old timings
+    python3 scripts/vo_claims_check.py --caption-rows-self-test  # the caption row prediction
 
 It reads the SCRIPT, so it runs BEFORE a second of TTS is spent, which is the whole point.
 """
@@ -80,6 +81,32 @@ QUANT = re.compile(
 MIN_CLAIMS_PER_MIN = 7.0    # a 2-minute film owes ~14 facts, not 13
 MIN_CLAIM_COVERAGE = 0.70   # >=70% of what was verified must actually reach the narration
 PROVISIONAL_WORDS_PER_SECOND = 2.4
+
+def caption_row_dangles(script):
+    """Every caption card the script will cut whose rows can't all end cleanly, as failure lines.
+
+    Machine pass 2026-10-29 (caption-row-figure-phrase). "about 14.5% under the $10.82 reference
+    price" had no row break at 37 characters that did not end on a figure or a dangling word, so
+    caption_render_check failed it after the synth, and rewording it cost a re-synth. The cards
+    are cut here exactly as build_scenes will cut them (build_scenes.cards_for_script) and set
+    in rows by the engine's own breaker (caption_render_check.caption_rows, lib/captionrows.ts in
+    node), so this predicts that failure line for line while the script is still text."""
+    from build_scenes import cards_for_script
+    from caption_render_check import caption_rows
+    cards = cards_for_script(script)
+    if not cards:
+        return []
+    fails = []
+    for (idx, text), (rows, why) in zip(cards, caption_rows([t for _, t in cards])):
+        bad = [f"{r!r} ({y})" for r, y in zip(rows, why) if y]
+        if bad:
+            fails.append(f"L{idx}: the caption card {text!r} has no row break that ends cleanly at "
+                         f"37 characters, it sets as {rows}, and " + "; ".join(bad) + ". Reword "
+                         f"the line so the figure sits beside its unit inside one row (a shorter "
+                         f"phrase, or the figure earlier), or name a break in \"caption_split_after\" "
+                         f"in out/dispatch/vo_script.json, before the synth.")
+    return fails
+
 
 DATEISH = re.compile(r"\b(august|june|july|september|friday|monday|year one)\b", re.I)
 
@@ -225,7 +252,35 @@ def _plan_self_test():
     return 1 if fails else 0
 
 
+def _caption_rows_self_test():
+    """The 10-29 wording fails, its shipped rewording and a forced split that the merge rejoins
+    pass (the 10-10 shape: "company axon" split a sentence the merge put back together)."""
+    fix = {"fourteen point five percent": "14.5%", "ten eighty two": "$10.82",
+           "eleven point eight million dollars": "$11.8 million"}
+    cases = [
+        ("the 10-29 figure phrase is caught", {"caption_fixups": fix, "lines": [{"idx": 4, "text":
+          "AIDEA bought the shares at a discount, about fourteen point five percent under the ten "
+          "eighty two reference price."}]}, True),
+        ("a clean two-row line passes", {"caption_fixups": fix, "lines": [{"idx": 4, "text":
+          "AIDEA paid about fourteen point five percent less than the reference price."}]}, False),
+        ("a forced split the merge rejoins passes", {"caption_fixups": fix,
+          "caption_split_after": ["company axon", "over five years,"], "lines": [{"idx": 10, "text":
+          "Its deal with the company Axon is eleven point eight million dollars over five years, "
+          "for up to seven hundred fifty feeds."}]}, False),
+    ]
+    bad = 0
+    for name, script, want in cases:
+        got = caption_row_dangles(script)
+        ok = bool(got) == want and (not want or "caption_split_after" in got[0])
+        bad += not ok
+        print(f"  [{'x' if ok else ' '}] {name}: {got[0][:110] if got else 'clean'}")
+    print("vo_claims_check caption rows self-test:", "FAIL" if bad else "PASS")
+    return 1 if bad else 0
+
+
 def main():
+    if "--caption-rows-self-test" in sys.argv:
+        return _caption_rows_self_test()
     if "--plan-self-test" in sys.argv:
         return _plan_self_test()
     if "--plan" in sys.argv:
@@ -344,6 +399,10 @@ def main():
         print('WARN [vo_claims_check] add each to "caption_fixups" in out/dispatch/vo_script.json '
               '(spoken form to screen form, for example "C E O": "CEO", "twenty five thousand": '
               '"25,000") now, before the editor finds it on a caption.')
+
+    # CAPTION ROWS (machine pass 2026-10-29): a card no row break can set cleanly fails here,
+    # while rewording it is free, and not at caption_render_check after a synth.
+    problems += caption_row_dangles(script)
 
     problems = list(dict.fromkeys(problems))
     # ---- STORY DENSITY (2026-08-13, owner: "ever since we went to 2 mins, it feels like ur
