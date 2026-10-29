@@ -80,7 +80,10 @@ spend tokens on nothing, and each has a replacement:
    `python3 scripts/wait_for.py out/dispatch/bg cut --show out/dispatch/cut_summary.txt`. It runs
    the source gates, the mix (`dispatch_mix.py`, every cut, because its receipt hashes the board),
    the full render, the encode, the evidence pack and preflight in order and stops at the first
-   required failure. Every step is an existing script, unchanged.
+   required failure, except the source gates, which all run and fail TOGETHER at the end of their
+   block (10-29 relaunched five times, one source gate at a time). After a source edit, run
+   `scripts/make_cut.sh --source-only` (about three minutes, nothing rendered) and fix every
+   failure it lists before launching the cut. Every step is an existing script, unchanged.
 3. **Full-size frames in the conversation.** An image stays in context for the rest of the run.
    Look through `scripts/probe_frames.sh` strips (several frames in one image) and crop to real
    scale where detail decides it. Never open full-size frames one by one to judge composition, and
