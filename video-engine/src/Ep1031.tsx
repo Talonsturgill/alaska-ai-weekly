@@ -238,10 +238,10 @@ const S1: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <ChartBG f={f + p.from} id="s1" />
-        <Phone x={250} y={1090} s={1.05} f={f} glow={f < t2 ? 1 : 0.3} />
+        <Phone x={250} y={1010} s={1.35} f={f} glow={f < t2 ? 1 : 0.3} />
         <SeaWindow f={f} x={60} y={1040} w={960} h={270} k={sea} id="s1" />
         {sea > 0.3 && <CableRun id="s1c" d="M 70,1200 C 300,1170 500,1240 720,1200 S 960,1180 1010,1220" f={f} draw={ease(f, t2 + 6, 30)} w={16} />}
-        <Pip x={px} y={py} s={lerp(0.55, 0.95, popK)} rot={f >= t3 ? 8 : 24 * (1 - popK)} f={f} emotion="curious" squash={bump(f, t2 + 26, 10) * 0.8} glow={f >= t3 ? 0.8 : 0} look={0.6} />
+        <Pip x={px} y={py} s={lerp(0.75, 1.25, popK)} rot={f >= t3 ? 8 : 24 * (1 - popK)} f={f} emotion="curious" squash={bump(f, t2 + 26, 10) * 0.8} glow={f >= t3 ? 0.8 : 0} look={0.6} />
         {f > t1 + 40 && f < t2 + 10 && <PipBand x={px} y={py + 118} text="?" s={0.9} p={ease(f, t1 + 40, 10)} />}
         <DeskNear f={f} seed={1} />
       </SVG>
@@ -347,8 +347,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text={'"A DIGITAL CUL-DE-SAC" · AIDEA'} y={520} size={34} tone="paper" p={ease(f, t10 + 14, 8) * (1 - ease(f, t10 + 100, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} displayLines={['NO CABLE FROM ALASKA', 'REACHES ASIA DIRECTLY', 'PER AIDEA']} text="NO CABLE FROM ALASKA REACHES ASIA DIRECTLY PER AIDEA" y={700} size={32} tone="verm" p={ease(f, t11 + 6, 8) * (1 - ease(f, t12 + 20, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="HOLD THAT THOUGHT" y={860} size={34} tone="gold" p={ease(f, t12, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} displayLines={['NO CABLE FROM ALASKA', 'REACHES ASIA DIRECTLY', 'PER AIDEA']} text="NO CABLE FROM ALASKA REACHES ASIA DIRECTLY PER AIDEA" y={700} size={32} tone="verm" p={ease(f, t11 + 6, 8) * (1 - ease(f, t12 - 6, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text="HOLD THAT THOUGHT" y={780} size={34} tone="gold" p={ease(f, t12, 8)} />
       </>}>
       <SVG>
         <ChartBG f={f + p.from} id="s4" />
@@ -421,7 +421,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const climb = easeIO(f, t16 + 20, Math.max(30, t17 - t16 - 10));
   const bonkK = bump(f, t17 - 2, 16);
   const pipY = lerp(1330, 800, climb) - 18 * bonkK;
-  const pipX = lerp(190, 560, climb);
+  const pipX = lerp(190, 700, climb);
   const cam = track([{t: 0, z: 1.1, fx: 540, fy: 1100}, {t: t17 - 4, z: 1.9, fx: 480, fy: 860}, {t: t17 + 70, z: 1.0, fx: 540, fy: 1040}, {t: p.dur, z: 1.04, fx: 540, fy: 1030}]);
   const chrono = ease(f, t18 - 6, 22);
   return (
@@ -429,7 +429,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text="UP TO $75 MILLION" y={520} size={36} tone="gold" p={ease(f, t16 + 10, 8) * (1 - ease(f, t17, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} text="A CEILING · NOT A CHECK" y={600} size={34} tone="paper" p={ease(f, t17 + 14, 8) * (1 - ease(f, t18 - 4, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="ONE DATE" y={690} size={34} tone="verm" p={ease(f, t18, 8)} />
+        {/* plate-overlap-ok */}<Plate x={800} text="ONE DATE" y={700} size={34} tone="verm" p={ease(f, t18, 8)} />
       </>}>
       <SVG>
         <ChartBG f={f + p.from} id="s6" />
@@ -467,7 +467,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <ChartBG f={f + p.from} id="s7" />
         <g transform="translate(540 970)">
           <rect x={-330} y={-220} width={660} height={440 * unroll} rx={10} fill={FIB.paper2} stroke={FIB.ink} strokeWidth={7} />
-          {unroll > 0.85 && (
+          {unroll > 0.45 && (
             <g>
               <Lab text="1  ALASKA TO THE PACIFIC COAST" x={0} y={-150} size={26} tone={f > t39 ? 'gold' : 'paper'} p={1} />
               <rect x={-290} y={-70} width={380} height={16} rx={6} fill={FIB.pencil} opacity={0.35} />
@@ -618,9 +618,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
   );
   const right = (
     <g>
-      <g transform={`translate(-30 ${-40 - (1 - w1) * 240})`} opacity={clamp01(w1 * 2)}><WordTag text="UP TO $75M" x={0} y={0} s={1} /></g>
+      <g transform={`translate(-30 ${-40 - (1 - w1) * 240})`} opacity={clamp01(w1 * 2)}><WordTag text="UP TO $75M" x={0} y={0} s={1.2} /></g>
       {[0, 1, 2].map((i) => <g key={i} transform={`translate(${-96 + i * 62} ${-78 - 30 * i % 2 - (1 - w2) * 260})`} opacity={clamp01(w2 * 2)}><rect x={-20} y={-8} width={40} height={30} rx={5} fill={FIB.verm} stroke={FIB.ink} strokeWidth={4} /><path d="M-11,-8 Q-11,-30 0,-30 Q11,-30 11,-8" fill="none" stroke={FIB.ink} strokeWidth={5} /></g>)}
-      <g transform={`translate(70 ${-80 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><WordTag text="MUST LAND" x={0} y={0} s={0.9} /></g>
+      <g transform={`translate(70 ${-80 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><WordTag text="MUST LAND" x={0} y={0} s={1.1} /></g>
       <g transform={`translate(-10 ${-130 - (1 - w3) * 260})`} opacity={clamp01(w3 * 2)}><rect x={-46} y={-20} width={92} height={40} rx={5} fill={FIB.land} stroke={FIB.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={FIB.ink}>1999</text></g>
     </g>
   );
@@ -635,7 +635,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Stage f={f + p.from} id="s10" />
         <Chronometer x={920} y={700} s={0.36} f={f} lid={0} />
         <g transform={`translate(0 ${(1 - roll) * 500})`} opacity={clamp01(roll * 2)}>
-          <ScalePans x={540} y={1400} s={1.12} tilt={tilt} f={f} left={left} right={right} labels={['THE DOUBTS', 'THE CASE FOR']} />
+          <ScalePans x={540} y={1330} s={1.12} tilt={tilt} f={f} left={left} right={right} labels={['THE DOUBTS', 'THE CASE FOR']} />
           <Pip x={540} y={840} s={0.75} f={f} emotion="determined" look={0} seed={10} rot={tilt * 16} />
           <PipBand x={540} y={950} text="WHICH WAY?" s={0.9} p={1} />
         </g>
@@ -687,10 +687,10 @@ const S12: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Chart f={f + p.from} id="s12" wall={1} pencil={1} pulse />
-        <Keyhole x={500} y={1270} s={0.55} lit={lit} label="FINANCE PLAN" f={f} />
-        <Keyhole x={725} y={1270} s={0.55} lit={lit} label="CUSTOMERS" f={f} />
+        <Keyhole x={500} y={1260} s={0.8} lit={lit} label="FINANCE PLAN" f={f} />
+        <Keyhole x={725} y={1260} s={0.8} lit={lit} label="CUSTOMERS" f={f} />
         <g transform={`translate(${lerp(1000, 725, card) + 60 * off} ${1365 + 40 * off}) rotate(${12 * off})`} opacity={clamp01(card * 2) * (1 - off * 0.2)}>
-          <Postcard x={0} y={0} s={0.55} text="INTEREST" />
+          <Postcard x={0} y={0} s={0.75} text="INTEREST" />
         </g>
         <Chronometer x={905} y={640} s={0.62} f={f} lid={lid} />
         <Pip x={610} y={1170} s={0.5} f={f} emotion="thoughtful" look={0} seed={12} />
@@ -717,7 +717,6 @@ const S13: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam} warmth={0.1}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text="A STARTING GUN · NOT A FINISH LINE" y={520} size={32} tone="gold" p={ease(f, t34 + 8, 8) * (1 - ease(f, t45 - 4, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="BINDING CUSTOMER COMMITMENT" y={600} size={34} tone="verm" p={ease(f, t45, 8) * (1 - ease(f, t35 - 4, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} text="ALASKA'S TRAFFIC LEAVES ON THE SAME CABLES" y={680} size={32} tone="paper" p={ease(f, t35, 8)} />
       </>}>
       <SVG>
