@@ -235,7 +235,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text="A CHATBOT QUESTION · ALASKA.AI'S FRAMING" y={520} size={34} tone="gold" p={ease(f, t1 + 6, 8) * (1 - ease(f, t2, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} text="OUT OF ALASKA" y={600} size={34} tone="paper" p={ease(f, t2, 8) * (1 - ease(f, t3, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="ON A CABLE" y={680} size={34} tone="sea" p={ease(f, t3, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} text="FOLLOW THE CABLE" y={680} size={34} tone="sea" p={ease(f, t3, 8)} />
       </>}>
       <SVG>
         <ChartBG f={f + p.from} id="s1" />
@@ -314,11 +314,6 @@ const S3: React.FC<SceneProps> = ({p}) => {
         </g>
         <Lab text="ALASKA UNITED EAST 1999" x={300} y={880} size={26} tone="paper" p={ease(f, t7 + 10, 10)} rot={-3} />
         <Lab text="ALASKA COMMUNICATIONS 1999" x={740} y={1245} size={24} tone="paper" p={ease(f, t7 + 14, 10)} rot={2} />
-        <g transform={`translate(120 ${lerp(900, 1210, ease(f, t8, 14))})`} opacity={ease(f, t8, 8)}>
-          <rect x={-90} y={-60} width={180} height={120} rx={8} fill={FIB.paper2} stroke={FIB.ink} strokeWidth={5} transform={`rotate(${-4 + 3 * bump(f, t8 + 12, 16)})`} />
-          <text x={0} y={-12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={FIB.ink}>AIDEA</text>
-          <path d="M-60,16 L60,16 M-60,34 L30,34" stroke={FIB.pencil} strokeWidth={4} />
-        </g>
         <g transform="translate(340 1230)" opacity={ease(f, t9, 10)}>
           <ellipse cx={0} cy={72} rx={120} ry={14} fill="#000" opacity={0.25} />
           <rect x={-100} y={-6} width={200} height={72} rx={10} fill={FIB.paper2} stroke={FIB.ink} strokeWidth={6} />
@@ -636,7 +631,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} displayLines={['CONDITIONS ·', 'LANDING RULE']} text="CONDITIONS LANDING RULE" y={540} size={34} tone="gold" p={ease(f, t47 + 4, 8) * (1 - ease(f, t28 - 4, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="A DOCUMENTED NEED" y={620} size={34} tone="paper" p={ease(f, t28 + 4, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} text="PAST TYPICAL LIFE · PER AIDEA" y={620} size={34} tone="paper" p={ease(f, t28 + 4, 8)} />
       </>}>
       <SVG>
         <Stage f={f + p.from} id="s10" />
