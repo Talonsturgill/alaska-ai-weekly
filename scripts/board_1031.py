@@ -70,8 +70,8 @@ B = [
   "a graphite pencil ticks the first line on the list, a plate reads PACIFIC COAST FIRST", "the pencil taps", ""),
  (20, 7, 6, W("land"), "stamp", "a stamp", "slams down and pins a passing cable to the Alaska shore", "reading", "MUST LAND IN ALASKA",
   "a cable swooping past the shore is pinned to the beach by a stamp reading MUST LAND IN ALASKA", "the cable twitches", ""),
- (21, 7, 6, W("picks"), "fade", "three pencil cards", "slide in and the pencil route erases under Pip", "reading", "NO PROJECT · NO PARTNER · NO ROUTE",
-  "three pencil cards slide in reading NO PROJECT, NO PARTNER, NO ROUTE while the graphite route erases itself under Pip who is left on blank paper", "the cards settle", ""),
+ (21, 7, 6, W("picks"), "fade", "three pencil cards", "slide in and the swooping cable lifts away", "reading", "NO PROJECT · NO PARTNER · NO ROUTE",
+  "three pencil cards slide in reading NO PROJECT, NO PARTNER, NO ROUTE while the swooping cable lifts away while the three cards settle and Pip waits on blank paper", "the cards settle", ""),
  (22, 8, 7, 0.0, "page", "two documents", "slide onto the chart desk under a magnifier", "wry", "THE CASE AGAINST OUR OWN SPIN",
   "two documents slide onto the chart desk under a brass magnifier while Pip peers over the edge, a plate reads THE CASE AGAINST OUR OWN SPIN", "the documents settle", "rehook: the film turns on itself"),
  (23, 8, 7, W("release"), "scratch", "a magnifier", "sweeps the press release line by line", "wry", "THE PRESS RELEASE",
@@ -105,8 +105,8 @@ B = [
   "two keyholes light up at the stub of the pencil line, one reading FINANCE PLAN and one reading BINDING CUSTOMERS, Pip's band reads WHO SIGNS?", "the keyholes glow", ""),
  (32, 12, 11, W("binding", 2), "flutter", "a postcard", "stamped INTEREST jiggles in the second keyhole and slides off", "wry", "BINDING · NOT JUST INTEREST",
   "a postcard stamped INTEREST jiggles in the second keyhole and slides off, a plate reads BINDING, NOT JUST INTEREST", "the postcard flutters", ""),
- (33, 12, 11, W("December"), "bell", "the chronometer", "opens its lid on the date as the camera pulls back to the whole chart", "determined", "AUTHORITY ENDS DEC 31ST, 2028 · UNLESS EXTENDED",
-  "the chronometer in the corner opens its lid on DEC 31ST 2028 while the camera pulls back to the whole chart with four inked strands and the unfinished pencil line, a plate reads AUTHORITY ENDS DEC 31ST, 2028, UNLESS EXTENDED", "the chronometer ticks", "rehook: the chronometer opens and the camera pulls back"),
+ (33, 12, 11, W("December"), "bell", "the chronometer", "opens its lid on the date as the camera pulls back to the whole chart", "determined", "AUTHORITY ENDS DEC 31ST, 2028",
+  "the chronometer in the corner opens its lid on DEC 31ST 2028 while the camera pulls back to the whole chart with four inked strands and the unfinished pencil line, a plate reads AUTHORITY ENDS DEC 31ST, 2028", "the chronometer ticks", "rehook: the chronometer opens and the camera pulls back"),
  (34, 13, 12, 0.0, "thunk", "a starting flag", "plants itself on the stub of the pencil line", "thoughtful", "A STARTING GUN · NOT A FINISH LINE",
   "a small flag plants itself on the stub of the pencil line, a plate reads A STARTING GUN, NOT A FINISH LINE", "the flag flutters", ""),
  (45, 13, 12, W("Until"), "ping", "a signature line", "waits blank with a pen hovering over it", "thoughtful", "BINDING CUSTOMER COMMITMENT",
@@ -153,13 +153,24 @@ AMBIENT = {1: "the phone glows, paper edges lift, a pulse travels the cable", 2:
            7: "the list sways, the pencil taps, a cable twitches", 8: "the lens glints, the documents settle, pencil rings draw", 9: "flags flutter, the binder swings, the pencil outline dashes crawl",
            10: "the chains creak, the pans sway, the needle trembles", 11: "the glass rings, the dots crawl, ruler shadow drifts", 12: "the keyholes glow, the postcard flutters, the chronometer ticks",
            13: "the phone glows, the flag flutters, the pulse streams"}
-CENTER = {1: "the token at x540 y1000", 2: "the chart at x540 y1000", 3: "the strands at x540 y1000", 4: "the sign at x540 y1000", 5: "the port at x540 y1000", 6: "the jar at x540 y1000",
-          7: "the list at x540 y1000", 8: "the scale at x540 y1000", 9: "the pans at x540 y1000", 10: "the pans at x540 y1000", 11: "the chart at x540 y1000", 12: "the port at x540 y1000", 13: "the desk at x540 y1000"}
-HERO = {k: (v, "40% hero object, 30% token, 30% plates and props") for k, v in {
- 1: "Pip + phone + chart desk", 2: "chart + four strands + pins + Pip", 3: "two strands + party hats + cake", 4: "street sign + Pip + glass wall", 5: "gavel + dashed port + nameplate",
- 6: "glass jar + coin + calendar", 7: "paper list + stamp + cable + pencil cards", 8: "brass scale + Pip + magnifier", 9: "stack of studies + binder + Alaska outline",
- 10: "scale + jar + stamp + tag", 11: "chart + Pip + glass wall + ASIA card", 12: "keyholes + postcard + wall clock", 13: "flag + signature line + Pip + phone"}.items()}
-PARTS = {k: 44 for k in range(1, 14)}
+CENTER = {1: "Pip at x540 y1000", 2: "the chart at x540 y1040", 3: "the hatted strands at x540 y1050", 4: "the sign and the bulb at x540 y1250", 5: "the pencil tip at x610 y1250", 6: "the gauge at x400 y1000",
+          7: "the list at x540 y1000", 8: "the lens at x560 y1040", 9: "the Alaska outline at x440 y1010", 10: "the needle at x540 y880", 11: "the glass wall at x100 y1150", 12: "the pencil stub at x610 y1250", 13: "the phone at x250 y1090"}
+HERO = {
+ 1: ("Pip + phone + cut-away sea + cable", "35% Pip, 25% phone, 25% sea window, 15% cable"),
+ 2: ("chart + four strands + pins + Pip", "40% strands, 25% chart, 20% pins, 15% Pip"),
+ 3: ("two hatted strands + cake + AIDEA card", "40% strands, 25% hats, 20% cake, 15% Pip"),
+ 4: ("graphite street sign + bulb road + Pip + glass", "35% sign, 30% Pip, 20% road, 15% glass"),
+ 5: ("gavel + graphite pencil line + lettered nameplate", "35% pencil line, 30% gavel, 20% nameplate, 15% Pip"),
+ 6: ("tide gauge + Pip + chronometer + sea window", "45% gauge, 25% Pip, 15% chronometer, 15% sea"),
+ 7: ("paper list + stamp + cable + pencil cards", "40% list, 25% cards, 20% cable, 15% Pip"),
+ 8: ("two documents + magnifier + ghost words + Pip", "40% documents, 25% magnifier, 20% ghost words, 15% Pip"),
+ 9: ("binder + Alaska outline", "50% binder, 35% outline, 15% Pip"),
+ 10: ("labelled scale + binder + gauge plate + locks + landing stamp + 1999 tag + Pip", "45% scale, 25% weights, 15% Pip, 15% labels"),
+ 11: ("chart + glass wall + dotted line + ASIA strip + Pip", "35% chart, 25% glass, 25% dotted line, 15% Pip"),
+ 12: ("pencil stub + two keyholes + postcard + chronometer", "35% keyholes, 25% stub, 20% chronometer, 20% postcard"),
+ 13: ("phone + flag on pencil stub + signature line + Pip + hatted strands", "30% phone, 25% Pip, 20% flag and line, 25% strands"),
+}
+PARTS = {1: 40, 2: 52, 3: 48, 4: 40, 5: 46, 6: 44, 7: 50, 8: 46, 9: 36, 10: 60, 11: 44, 12: 42, 13: 50}
 KICKS = (6, 40, 33)
 STAGE3D = {k: "planes" for k in HERO}
 CAMERA = {1: "craneDown+dollyThrough", 2: "craneDown", 3: "dollyThrough", 4: "truckAcross", 5: "craneDown", 6: "dollyThrough", 7: "truckAcross", 8: "riseWith",
@@ -284,19 +295,19 @@ def build():
         "derived_from": "scratch", "engine": "infographic-2.5d", "total_seconds": round(end, 2),
         "fingerprint": {"pov": "top-down-map", "motion_vector": "horizontal-traverse", "hero_treatment": "single-organic-hero", "layout": "map-territory",
                         "register": "chart-room-paper", "palette": palette, "camera_strategy": "pullback-reveal",
-                        "light_story": "flat daylight on cream chart paper with a cobalt sea cutaway",
+                        "light_story": "midday chart-room window key drifting to a late warm rake",
                         "metaphor": "a brass question token travelling a cable, a two-pan scale that sinks and re-levels, a dashed port with two locks and a clock"},
         "palette": palette,
         "divergence_note": ("The last five films were an aubergine dusk depot (10-29), a green-black sonar abyss (10-28), a sage civic hall (10-26), a teal fog boardwalk (10-25) and a navy orbit (10-24). "
                             "This film is daylight on cream chart paper with graphite pencil lines and a cobalt sea shown only as a cutaway. Its hero is a faced brass question token, its stage is a chart desk and a brass scale, "
-                            "and it has no night sky, no hall, no depot, no boardwalk and no orbit. The look is a map being drawn and the signature object is a scale that sinks and re-levels."),
+                            "and it has no night sky, no hall, no depot, no boardwalk and no orbit. The look is a map being drawn, the throughline is a graphite pencil line that never reaches its end, and the signature object is a labelled scale that walks to level one weight at a time."),
         "treatment": json.loads((OUT / "treatment.json").read_text()) if (OUT / "treatment.json").exists() else {},
         "angle": json.loads((OUT / "angle.json").read_text()) if (OUT / "angle.json").exists() else {},
         "hook": {"pattern": "anomaly-question", "frame1": "A brass question token with eyes pops out of a phone on a cream chart desk and tumbles across the paper while a chip names the framing.",
                  "headline": "WHERE DOES THE QUESTION GO", "motion_by_s": 0.3,
-                 "loopback": "The last frame returns the token to the phone on the chart desk exactly as in the opening."},
+                 "loopback": "Pip pops out of the phone on the chart desk exactly as in the opening and dives onto the same hatted 1999 strands."},
         "open_loop": {"plant_t": b_at(6), "pay_t": b_at(30), "what": "Why does the question bonk a glass wall to the west? Planted when Pip rolls west across the empty Pacific, paid when a dotted graphite line draws itself through the glass to an ASIA strip, third on the list as explore and collaborate."},
-        "open_loop_2": {"plant_t": b_at(18), "pay_t": b_at(33), "what": "What is the one date? Planted when a closed brass chronometer with a vermilion tab sets itself on the chart edge, paid when its lid opens on December 31st, 2028, unless extended."},
+        "open_loop_2": {"plant_t": b_at(18), "pay_t": b_at(33), "what": "What is the one date? Planted when a closed brass chronometer with a vermilion tab sets itself on the chart edge, paid when its lid opens on December 31st, 2028."},
         "throughline": {"object": "Pip, the brass question token", "lands_in_button": "Pip pops out of the phone again and dives onto the same hatted 1999 strands, engraved with a question mark as in the opening",
                         "states": [
                             {"at_s": b_at(1), "state": "engraved ? and bright brass, popping out of the phone"},

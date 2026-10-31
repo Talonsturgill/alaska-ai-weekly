@@ -298,7 +298,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
         {/* plate-overlap-ok */}<Plate x={540} displayLines={['TYPICAL DESIGN LIFE · ABOUT 25 YEARS', 'PER AIDEA']} text="TYPICAL DESIGN LIFE · ABOUT 25 YEARS PER AIDEA" y={680} size={32} tone="gold" p={ease(f, t9, 8)} />
       </>}>
       <SVG>
-        <ChartBG f={f + p.from} id="s3" sea={1} grid={false} />
+        <ChartBG f={f + p.from} id="s3" />
+        <SeaWindow f={f} x={40} y={700} w={1000} h={700} id="s3" />
         <CableRun id="s3a" d="M -40,1010 C 200,960 420,1060 640,1000 S 980,980 1120,1030" f={f} w={20} />
         <CableRun id="s3b" d="M -40,1150 C 220,1190 460,1100 680,1150 S 960,1200 1120,1140" f={f + 20} w={20} />
         <g opacity={hatIn} transform={`translate(0 ${(1 - hatIn) * -160})`}>
@@ -328,16 +329,16 @@ const S3: React.FC<SceneProps> = ({p}) => {
 // ---- S4: the cul-de-sac (line 3) ----------------------------------------------------------------------------------------------------------------
 const S4: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const t10 = b(10), t38 = b(38), t11 = b(11), t12 = b(12);
+  const t10 = b(10), t11 = b(11), t12 = b(12);
   const rise = ease(f, t10, 30);
-  const lap = clamp01((f - t38) / 46);
+  const lap = clamp01((f - (t10 + 26)) / 72);
   const ang = lap * Math.PI * 2 + Math.PI / 2;
-  const onRoad = f >= t38 && f < t38 + 60;
+  const onRoad = f >= t10 + 26 && f < t10 + 100;
   const roll = easeIO(f, t11 - 6, 44);
   let px = 780, py = 1330;
-  if (f >= t10 && f < t38) { px = lerp(780, 540, ease(f, t10 + 10, 40)); py = 1340; }
+  if (f >= t10 && f < t10 + 26) { px = lerp(780, 540 + 250, ease(f, t10 + 6, 20)); py = 1340; }
   if (onRoad) { px = 540 + 250 * Math.cos(ang); py = 1300 + 70 * Math.sin(ang); }
-  if (f >= t38 + 60 && f < t11 - 6) { px = lerp(540, 700, ease(f, t38 + 60, 20)); py = 1330; }
+  if (f >= t10 + 100 && f < t11 - 6) { px = lerp(790, 700, ease(f, t10 + 100, 20)); py = 1330; }
   if (f >= t11 - 6) { px = lerp(700, 150, roll); py = 1330; }
   const bonk = bump(f, t11 + 36, 14);
   const flipK = ease(f, t12, 12);
@@ -345,8 +346,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam}
       overlay={<>
-        {/* plate-overlap-ok */}<Plate x={540} text={'"A DIGITAL CUL-DE-SAC" · AIDEA'} y={520} size={34} tone="paper" p={ease(f, t10 + 14, 8) * (1 - ease(f, t38, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="OUT THE WAY IT CAME" y={600} size={34} tone="paper" p={ease(f, t38 + 40, 8) * (1 - ease(f, t11, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text={'"A DIGITAL CUL-DE-SAC" · AIDEA'} y={520} size={34} tone="paper" p={ease(f, t10 + 14, 8) * (1 - ease(f, t10 + 100, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} displayLines={['NO CABLE FROM ALASKA', 'REACHES ASIA DIRECTLY', 'PER AIDEA']} text="NO CABLE FROM ALASKA REACHES ASIA DIRECTLY PER AIDEA" y={700} size={32} tone="verm" p={ease(f, t11 + 6, 8) * (1 - ease(f, t12 + 20, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} text="HOLD THAT THOUGHT" y={860} size={34} tone="gold" p={ease(f, t12, 8)} />
       </>}>
@@ -492,6 +492,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
             <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={FIB.pencil}>{['NO PROJECT', 'NO PARTNER', 'NO ROUTE'][i]}</text>
           </g>;
         })}
+        <Chronometer x={930} y={620} s={0.36} f={f} lid={0} />
         <Pip x={lerp(900, 640, erase)} y={lerp(1120, 1290, erase)} s={0.55} f={f} emotion={erase > 0.6 ? 'puzzled' : 'reading'} look={-0.7} seed={7} />
         <DeskNear f={f} seed={7} />
       </SVG>
@@ -547,6 +548,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <g opacity={chip} transform={`translate(${lerp(900, 316, chip)} ${lerp(800, 1180, chip)})`}>
           <Lab text="ALASKA.AI'S FRAMING" x={0} y={0} size={20} tone="gold" p={1} />
         </g>
+        <Chronometer x={940} y={640} s={0.36} f={f} lid={0} />
         <Pip x={130} y={1250} s={0.6} f={f} emotion="wry" look={0.9} seed={8} rot={-6} />
         <DeskNear f={f} seed={8} />
       </SVG>
@@ -585,7 +587,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <path d="M-70,-110 Q-30,-150 10,-100 Q50,-70 30,-20 Q60,20 20,60 Q-10,100 -50,70 Q-90,40 -60,0 Q-100,-40 -70,-110 Z" fill="none" stroke={FIB.cream} strokeWidth={6} />
           {f > t42 && [0, 1, 2].map((i) => <FlagTiny key={i} x={-60 + i * 70} y={-176 - 10 * ease(f, t42 + i * 5, 12)} />)}
         </g>
-        <Pip x={900} y={1250} s={0.6} f={f} emotion="wry" look={-0.7} seed={9} />
+        <Pip x={lerp(900, 520, easeIO(f, t26 - 10, 40))} y={lerp(1250, 1300, easeIO(f, t26 - 10, 40))} s={0.6} f={f} emotion="wry" look={-0.7} seed={9} rot={-14 * bump(f, t26 + 40, 20)} />
         <DeskNear f={f} seed={9} />
       </SVG>
     </Frame>
@@ -635,6 +637,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Stage f={f + p.from} id="s10" />
+        <Chronometer x={920} y={700} s={0.36} f={f} lid={0} />
         <g transform={`translate(0 ${(1 - roll) * 500})`} opacity={clamp01(roll * 2)}>
           <ScalePans x={540} y={1330} s={0.92} tilt={tilt} f={f} left={left} right={right} labels={['THE DOUBTS', 'THE CASE FOR']} />
           <Pip x={540} y={880} s={0.66} f={f} emotion="determined" look={0} seed={10} rot={tilt * 11} />
@@ -709,8 +712,9 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const flag = springy(f, t34, 26);
   const out = easeIO(f, t35, 26);
   const dive = easeIO(f, t36 - 6, 26);
-  const px = f < t36 - 6 ? lerp(250, 560, out) : lerp(560, 640, dive);
-  const py = f < t36 - 6 ? lerp(1000, 1160, out) - 150 * Math.sin(out * Math.PI) : lerp(1160, 1340, dive);
+  const ride = clamp01((f - t36 - 20) / Math.max(40, p.dur - t36 - 24));
+  const px = f < t36 - 6 ? lerp(250, 560, out) : lerp(560, 640, dive) + 220 * ride;
+  const py = f < t36 - 6 ? lerp(1000, 1160, out) - 150 * Math.sin(out * Math.PI) : lerp(1160, 1296, dive) + 8 * Math.sin(ride * 14);
   const sea = ease(f, t36 - 30, 24);
   const cam = track([{t: 0, z: 1.15, fx: 540, fy: 1100}, {t: p.dur, z: 1.0, fx: 540, fy: 1060}]);
   return (
