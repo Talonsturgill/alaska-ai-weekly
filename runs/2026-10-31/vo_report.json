@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.991,
+    "heard": "Where does a chatbot question from Alaska go first? Four undersea cables and one land route link Alaska to the lower 48, three landing in Oregon, and one in Washington. Two one into service in 1999, and idea, the state's development authority, puts a typical design life at about 25 years. Idea calls Alaska a digital cul-de-sac, and no cable connects it directly to Asia. Hold that thought. On October 21st, ideas board voted for a new fiber company called North Star Fiber Development, owned by Idea. Idea can put up to $75 million into it. That's a ceiling, not a check, and one date sets how long the authority lasts. The resolution lists a link to the Pacific Coast first. Idea says any capacity it buys must land in Alaska and picks no project, partner, or route. Here's the case against our own spin. Neither idea's release nor its resolution says artificial intelligence, data center, or compute. The AI part is or framing. The resolution also admits the economic studies its sites cover the Nordic and European context, not Alaska. Still, a ceiling, conditions, and a landing rule are how careful public money should look, and idea says the old cables are past their typical design life. The resolution's list puts Asia third, with the words explore and collaborate. Before any binding commitment, it needs a finance plan and binding customer commitment, and that authority ends December 31st, 2028, unless the board extends it. So the vote is a starting gun, not a finish line. Until somebody signs, Alaska's traffic leaves on the same cables.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.018,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 7.8,
+        "voiced_frac": 0.56,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 121.84,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 121.84,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.989,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.975,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

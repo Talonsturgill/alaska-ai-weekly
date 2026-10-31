@@ -1,0 +1,84 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 7.2,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 7.2,
+   "Color & grade": 7.0,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 6.5,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 8.3,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 7.8
+  },
+  "concrete_defects": [
+   "static open with a lot of empty upper space",
+   "cul-de-sac sign cropped at left edge",
+   "flat fills with thin shading, repeated desk and pan scaffold",
+   "captions blank in short gaps",
+   "35 VO gaps of 0.35s or more, thin ambience",
+   "chip and NOT IN EITHER DOCUMENT plate crowd the RESOLUTION document at 73-75s"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 7.5
+  },
+  "concrete_defects": [
+   "cul-de-sac sign and ASIA plate cropped at left",
+   "Pip tiny and at frame edge, empty grid band above staging",
+   "keyholes cropped and crowded at 102s",
+   "binder small, dotted outline empty at 82.6-83.7s",
+   "25-year plate and cable labels crowd the water, cake flat",
+   "35 VO gaps of 0.35s or more"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7.8,
+   "Illustration craft & detail": 6.9,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 6.6,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.3,
+   "Accuracy & sourcing": 8.2,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8.0
+  },
+  "concrete_defects": [
+   "scale beam reads level, UP TO $75M plate floats, WHICH WAY? chip overlaps MUST LAND at 92-95s",
+   "empty cream band in top quarter of most frames",
+   "cake small and flat, hats hard to read",
+   "map cropped at right edge at 4.9s",
+   "keyhole cards crowd cable ends, WHO SIGNS? chip overlaps both cards",
+   "Pip lacks visible breath and weight shift in holds",
+   "credits source text small"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "empty upper band in most frames",
+  "Pip small and plain next to props",
+  "scale beam level, one weight pile-up at 92-95s",
+  "flat shading on cards and documents",
+  "35 VO gaps with a thin ambience bed",
+  "map and sign crop risks at frame edges",
+  "hard cut to a near-black credits card"
+ ]
+}

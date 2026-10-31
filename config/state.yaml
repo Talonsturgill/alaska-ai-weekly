@@ -3020,3 +3020,43 @@ dispatch_history:
     light_story: rose-violet dusk raking over snow, lamp-lit paper interiors
     metaphor: a shipping tag with four blank ruled lines hung on a post beside a dashed
       outline of a reactor that anything hung on falls straight through
+- date: '2026-10-31'
+  topic: AIDEA Northstar Fiber Development, up to $75M ceiling for subsea and land
+    fiber, no route, partner or project, authority ends December 31st, 2028 (AIDEA
+    release 20-2026, Resolution G26-11)
+  slug: dispatch-2026-10-31-a-ceiling-is-not-a-cable
+  key_entities:
+  - AIDEA
+  - Northstar Fiber Development
+  - Resolution G26-11
+  - TeleGeography
+  - Alaska United
+  - AKORN
+  - BEAD
+  - subsea fiber
+  archetype: chart-room traveller on a cable with an unfinished pencil line
+  palette: cream chart paper, graphite pencil and a cobalt sea cutaway with a brass
+    question token and vermilion on the locks and clock
+  voice: Gemini Sulafat
+  stance: curious
+  angle: 'A ceiling is not a cable: AIDEA''s Northstar Fiber is a guarded option whose
+    test is whether bound customers sign before December 31st, 2028'
+  hero: Pip
+  cast:
+  - Pip
+  - ScalePans
+  - Gauge
+  - Chronometer
+  - QuestionToken-family
+  composition:
+    pov: top-down-map
+    motion_vector: horizontal-traverse
+    hero_treatment: single-organic-hero
+    layout: map-territory
+    register: chart-room-paper
+    palette: cream chart paper, graphite pencil and a cobalt sea cutaway with a brass
+      question token and vermilion on the locks and clock
+    camera_strategy: pullback-reveal
+    light_story: midday chart-room window key drifting to a late warm rake
+    metaphor: a brass question token travelling a cable, a two-pan scale that sinks
+      and re-levels, a dashed port with two locks and a clock

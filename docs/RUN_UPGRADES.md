@@ -3954,3 +3954,9 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: week_digest reads the shipped verdicts under runs/ and the axis_scores card shape (it had counted 0 films), vo_claims_check predicts an unsplittable caption card before the synth, a heard map scores ASR spellings of directed names without rewriting the direction, make_cut runs the source gates as one wave with a --source-only mode, the claim plan counts distinct claims.
 - Engine advance: none.
 - Still open: text-fit-local-coordinate-components (first in line), judge cards are not archived (runbook now asks for runs/<date>/panel_cards.json).
+
+## 2026-10-31 "A Ceiling Is Not a Cable" (AIDEA Northstar Fiber Development, Resolution G26-11)
+- Shipped. Panel median 7.21 against 7.0 (7.18, 7.21, 7.33), no hard blockers, editor and flow critic ship. Caption 8.548 on round 5. Slow week, the story's AI link is indirect and labelled as Alaska.Ai's framing (neither AIDEA document says AI, data center or compute).
+- In-run fixes: new lib/fiber.tsx chart-room family (Pip, CableRun, Gauge, Chronometer, ScalePans, props) registered in ASSET_MANIFEST. Gate 0 took two critic rounds (jar, calendar and dashed port were 10-29 props). VO re-synthesised twice, the second time after the editor found an absolute opening claim. Panel took five single-seat rounds (6.69, 6.93, 6.97, 6.90 capped, 7.06) before the full panel.
+- DISPATCH_STANDARD section 22 added.
+- Queued for the machine pass, see docs/MACHINE_QUEUE.md.

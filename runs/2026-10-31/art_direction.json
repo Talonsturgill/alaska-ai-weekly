@@ -1,0 +1,105 @@
+{
+ "run_date": "2026-10-31",
+ "story_id": "aidea-northstar-fiber-ceiling",
+ "palette": {
+  "roles": {
+   "sky": "#F1E7CB",
+   "ground": "#E3D3A6",
+   "sea": "#1F5F7A",
+   "deep": "#123C52",
+   "hero": "#B8963A",
+   "shadow": "#1F1B17",
+   "paper": "#FBF5E1",
+   "ink": "#2B2824",
+   "unknown": "#6B7280",
+   "land": "#C9B27A",
+   "hero_light": "#E0C46A",
+   "hero_dark": "#6F5A1E",
+   "vermilion": "#E0502A",
+   "cable": "#FBF5E1"
+  },
+  "mood": "A nautical chart room by daylight. Cream chart paper, a deep teal-ink sea shown only as a cut-away window, brass for the traveller and the gauge, vermilion for the two keyholes, the chronometer tab and the date only, graphite pencil for everything undecided. Curious and fair, bright after four dark films.",
+  "divergence": "The last five films were an aubergine dusk depot (10-29), a green-black sonar abyss (10-28), a sage civic hall (10-26), a teal fog boardwalk (10-25) and a navy orbit (10-24). This film is daylight on cream chart paper with warm graphite ink (#2B2824, not a navy-black), a deep teal-ink sea (#1F5F7A over #123C52, not a navy or cobalt) used only inside sea cut-away windows that never fill more than about 45 percent of a frame, a greener brass (#B8963A, distinct from 10-26's #D9A441, 10-25's #C8962E and 10-29's #C9741F) and one vermilion (#E0502A, moved off 10-28's coral). Cables are cream with an ink keyline, so they hold against cobalt. Honest overlaps with 10-29: the same agency, a cream paper ground, and the idea that the undecided is drawn unfilled. This film answers with a pencil line on a map that Pip keeps returning to, a tide gauge instead of a jar, a chronometer instead of a calendar, and no stamp except MUST LAND IN ALASKA."
+ },
+ "light": {
+  "time": "Midday in a chart room, drifting late",
+  "direction": "High window key from the upper left for shots 1 to 9, a warmer lower stage rake on shot 10, a late warm rake across the chart for shots 11 to 13. Binding probe: mean luminance of shot 8 below shot 1 below shot 13; the mean hue of shots 11 and 13 is at least 8 degrees warmer than shot 2.",
+  "depth": "See depth_plan.",
+  "per_shot": {
+   "1": "window key on the desk, sea cut-away lit from above",
+   "2": "flat chart light, a cobalt wash under 45 percent of the frame",
+   "3": "seabed with a caustic top band, strands lit from above",
+   "4": "cul-de-sac on paper, graphite sign in window light",
+   "5": "low gavel-side key, the pencil throws a thin shadow",
+   "6": "sea cut-away with a bright surface band, the gauge lit warm",
+   "7": "top-down list in even paper light",
+   "8": "desk lamp pool on the documents, the magnifier throws a caustic",
+   "9": "top-down chart table, even light",
+   "10": "warmer, lower raking key on the stage so the brass scale throws a long shadow",
+   "11": "late warm rake across the chart",
+   "12": "late rake, the chronometer opening is the lit object",
+   "13": "late warm rake, the phone glow is the warmest thing"
+  }
+ },
+ "shape_language": {
+  "grammar": "CURVE against GRID. Pip (a scalloped brass token), the cables and the pencil line are continuous curves. The chart graticule, the list rows, the scale beam and the ruler are a fixed grid. The drama is a curve looking for a grid line that lands in Alaska. TRAVELLING against ANCHORED: Pip and the cables travel, the gauge, the keyholes and the chronometer stay put.",
+  "why": "The honest drawing of the fifth cable is a pencil curve with no endpoint, so the hero and the line are free curves and the paperwork around them is ruled. This replaces 10-29's round-against-rectilinear contrast with a curve-against-grid one and does not use a dashed outline for the unbuilt thing."
+ },
+ "casting": {
+  "hero": "Pip, a faced brass question token (lib/fiber.tsx)",
+  "asset_by_asset": {
+   "QuestionToken (credentials.tsx)": "same scalloped silhouette family, no face or eyes. Pip is drawn fresh in fiber.tsx with eyes, brows, blink and squash because a throughline object that must emote cannot be the shelf token; the shelf token is not modified. Honest note: Pip is a faced cousin of QuestionToken, not an unrelated asset.",
+   "Plumb (prospect.tsx)": "a brass plumb bob with a face, vertical, hung on a cord. Pip is a flat scalloped coin that rolls and floats. Different silhouette and different behaviour.",
+   "Glyph (corridor.tsx)": "a round head with two eyes. Pip is a scalloped brass coin with an engraving band.",
+   "Norm, Dotty, Plate, BallotBox, Wedge, DrillBit, TankFace, CashBlock": "faced heroes of earlier films, none is a coin or a token.",
+   "Chronometer / Keyhole / Postcard / Phone / Sign / ScalePans": "Closest shelf cousins are civics.tsx CapClock and the polecam and depot calendars (a flat wall object, not a lidded brass instrument), ballot.tsx Gate (a faced door, not a bare keyhole panel), grid.tsx PostcardStreet (a street scene), norm.tsx PhoneApp (a phone with a chip), grocer.tsx UsdaMarker (a roadside marker) and grocer.tsx ZoneBeam. Each is a different silhouette and behaviour in this film; the structural reasons are in lib/fiber.tsx."
+  },
+  "net_new": {
+   "Pip": "the faced traveller",
+   "CableRun": "a cream cable with an ink keyline and a travelling pulse, because refinery.tsx Cable is a sagging power line with an ember pulse and subsea.tsx ArmoredCable is lime and coral on a navy field and neither holds against cobalt",
+   "Gauge": "a brass tide gauge, the ceiling object",
+   "Chronometer": "a brass ship's chronometer with a vermilion tab, the date object",
+   "ScalePans": "a labelled brass two-pan scale; 10-25's balance was a different composition on an island, this one is on a stage with Pip as the needle and one weight per beat",
+   "Keyhole, Postcard, Phone, Sign, Doc, Magnifier, DeskNear, ChartBG, Pin, WestCoast, AlaskaShape": "episode props for the chart room; AlaskaShape wraps the shelf AK_PATH"
+  },
+  "continuity": "Pip never touches a vote or a verdict. It reacts to distance, to glass and to doors, never to AIDEA."
+ },
+ "motion_language": {
+  "grammar": "Pip travels in arcs with anticipation, squash on landings, overshoot on stops; cables carry a continuous travelling pulse; signs swing; the scale pans hang and sway; nothing slides linearly.",
+  "hero_moves": [
+   "the send pop and arc into the sea",
+   "the bonk off the west wall",
+   "the cul-de-sac lap",
+   "riding the needle of the scale"
+  ],
+  "blur": "180 degree motion blur on Pip's fastest moves"
+ },
+ "composition": {
+  "staging": "9:16 master composed for the tall frame: the top 400 px is stage (ruler, compass rose), the 420 to 1500 band holds the action, the lower third carries a near plane that fits each stage.",
+  "focal": "Pip is the focal point except in shots 3, 5, 6, 7 and 9, where the named object (the hatted strands, the pencil line, the gauge, the list, the binder) is the best-finished thing and Pip is a witness at the frame edge.",
+  "signature_shot": "Shot 10 (88.06 to 98.42 s) as one continuous move: the labelled scale rolls in, the binder sinks THE DOUBTS pan, then one weight per beat (the gauge plate at 'ceiling', the locks and the landing stamp at 'rule', the 1999 tag at 'cables') walk the needle to level with Pip riding it. Camera: a short truckAcross that resolves into a lock at zoom 1.0 from the first weight to the end of the shot."
+ },
+ "craft_advance": "none required; film grows lib/fiber.tsx only",
+ "binding_checks": {
+  "vermilion": "vermilion appears ONLY on the two keyholes, the chronometer tab and the date plate",
+  "graphite": "undecided things (the fifth cable, no route, no partner, the dotted line to Asia) are graphite pencil only",
+  "cobalt": "cobalt appears only inside sea cut-away windows, never as a sky, and never above about 45 percent of a frame",
+  "near_plane": "every shot has a near plane in the lower third that fits its stage",
+  "hero_label": "every Pip engraving band is one of six states: ?, VIA LOWER 48, UP TO $75M, WHICH WAY?, WHO SIGNS?, ?"
+ },
+ "depth_plan": {
+  "S1": "desk 0.5x, phone and Pip 1.0x, sea window 0.8x, rolled chart and pencil 1.5x",
+  "S2": "chart paper 0.5x, strands and pins 1.0x, near ruler and pencil 1.5x",
+  "S3": "caustic band 0.4x, strands 1.0x, silt and near cable armour 1.5x",
+  "S4": "road and sign 1.0x, near curb and pencil 1.5x",
+  "S5": "locked macro, chart 0.5x, block and pencil 1.0x, near chart edge 1.4x",
+  "S6": "sea window 0.6x, gauge 1.0x, near silt 1.5x",
+  "S7": "locked top-down list panel with named layers (paper, list, cards, near pencil)",
+  "S8": "desk 0.5x, documents 1.0x, magnifier 1.2x, near pencil 1.5x",
+  "S9": "locked top-down table (table, outline, binder)",
+  "S10": "stage back 0.5x, scale 1.0x, footlight lip 1.5x",
+  "S11": "chart 0.5x, strands 1.0x, glass 1.1x, near ruler 1.5x",
+  "S12": "locked macro (paper, stub, keyholes, chronometer)",
+  "S13": "desk 0.5x, phone and Pip 1.0x, sea window 0.8x, near edge 1.5x"
+ }
+}
