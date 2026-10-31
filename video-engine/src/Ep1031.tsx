@@ -203,7 +203,7 @@ const Chart: React.FC<{f: number; id: string; draw?: number; pins?: number; land
     <WestCoast f={f} />
     <g opacity={asia}>
       <path d="M-40,1000 L120,1000 Q150,1100 110,1180 Q140,1260 100,1330 L-40,1330 Z" fill={FIB.land} stroke={FIB.ink} strokeWidth={7} />
-      <text x={40} y={1170} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={FIB.ink}>ASIA</text>
+      <Lab text="ASIA" x={40} y={1170} size={30} tone="paper" p={1} />
     </g>
     {land > 0.01 && <CableRun id={`lr${id}`} d={LAND_ROUTE} f={f} draw={land} w={11} color={FIB.landD} pulse={false} />}
     {FIVE.map((c, i) => <CableRun key={i} id={`${id}${i}`} d={c.d} f={f + i * 7} draw={clamp01(draw * 1.4 - i * 0.12)} w={13} pulse={pulse} />)}
@@ -306,13 +306,13 @@ const S3: React.FC<SceneProps> = ({p}) => {
           <Hat x={320} y={968} r={-8} /><Hat x={720} y={1112} r={9} />
         </g>
         <Lab text="ALASKA UNITED EAST 1999" x={300} y={880} size={22} tone="paper" p={ease(f, t7 + 10, 10)} rot={-3} />
-        <Lab text="ALASKA COMMUNICATIONS 1999" x={760} y={1250} size={22} tone="paper" p={ease(f, t7 + 14, 10)} rot={2} />
+        <Lab text="ALASKA COMMUNICATIONS 1999" x={740} y={1245} size={22} tone="paper" p={ease(f, t7 + 14, 10)} rot={2} />
         <g transform={`translate(120 ${lerp(900, 1210, ease(f, t8, 14))})`} opacity={ease(f, t8, 8)}>
           <rect x={-90} y={-60} width={180} height={120} rx={8} fill={FIB.paper2} stroke={FIB.ink} strokeWidth={5} transform={`rotate(${-4 + 3 * bump(f, t8 + 12, 16)})`} />
           <text x={0} y={-12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={FIB.ink}>AIDEA</text>
           <path d="M-60,16 L60,16 M-60,34 L30,34" stroke={FIB.pencil} strokeWidth={4} />
         </g>
-        <g transform="translate(540 1230)" opacity={ease(f, t9, 10)}>
+        <g transform="translate(340 1230)" opacity={ease(f, t9, 10)}>
           <ellipse cx={0} cy={72} rx={120} ry={14} fill="#000" opacity={0.25} />
           <rect x={-100} y={-6} width={200} height={72} rx={10} fill={FIB.paper2} stroke={FIB.ink} strokeWidth={6} />
           <rect x={-100} y={-6} width={200} height={26} rx={10} fill={FIB.brassL} stroke={FIB.ink} strokeWidth={6} />
@@ -474,7 +474,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
               <rect x={-290} y={-40} width={260} height={16} rx={6} fill={FIB.pencil} opacity={0.25} />
               <rect x={-290} y={30} width={460} height={16} rx={6} fill={FIB.pencil} opacity={0.35} />
               <rect x={-290} y={60} width={300} height={16} rx={6} fill={FIB.pencil} opacity={0.25} />
-              <Pencil x={160 + 10 * Math.sin(f / 7)} y={-110 + (f > t39 ? 0 : -30)} rot={-20} s={0.7} />
+              <Pencil x={360 + 10 * Math.sin(f / 7)} y={-30 + (f > t39 ? 0 : -30)} rot={-20} s={0.6} />
             </g>
           )}
         </g>
@@ -516,7 +516,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const docIn = ease(f, t22, 30);
   const sweep = clamp01((f - t23) / Math.max(30, t40 - t23));
   const mx = f < t40 ? lerp(230, 560, sweep) : 560;
-  const my = f < t40 ? 1020 + 40 * Math.sin(sweep * 9) : 1040;
+  const my = f < t40 ? 1070 + 20 * Math.sin(sweep * 9) : 1075;
   const ringK = ease(f, t40, 14);
   const fall = (i: number) => clamp01((f - t41 - i * 6) / 34);
   const chip = ease(f, t24, 20);
@@ -538,14 +538,14 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <Lab text="AIDEA" x={330} y={1130} size={26} tone="paper" p={1} />
         </g>
         <g opacity={ringK}>
-          <ellipse cx={316} cy={1130} rx={30} ry={26} fill="none" stroke={FIB.pencil} strokeWidth={5} transform="rotate(-6 316 1130)" />
+          <path d="M290,1164 Q306,1172 324,1163" fill="none" stroke={FIB.pencil} strokeWidth={5} strokeLinecap="round" />
         </g>
         {[0, 1, 2].map((i) => {
           const k = fall(i);
           return k > 0 && <g key={i} opacity={1 - k}><WordTag text={['AI', 'DATA CENTER', 'COMPUTE'][i]} x={420 + i * 150} y={900 + 520 * k * k} rot={-8 + i * 8} ghost /></g>;
         })}
-        <g transform={`translate(${mx} ${my})`}><Magnifier x={0} y={0} s={1.1} rot={-28} /></g>
-        <g opacity={chip} transform={`translate(${lerp(900, 316, chip)} ${lerp(800, 1180, chip)})`}>
+        <g transform={`translate(${mx} ${my})`}><Magnifier x={0} y={0} s={1.1} rot={-90} /></g>
+        <g opacity={chip} transform={`translate(${lerp(900, 316, chip)} ${lerp(800, 1215, chip)})`}>
           <Lab text="ALASKA.AI'S FRAMING" x={0} y={0} size={20} tone="gold" p={1} />
         </g>
         <Chronometer x={940} y={640} s={0.36} f={f} lid={0} />
@@ -624,7 +624,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
     <g>
       <g transform={`translate(-30 ${-40 - (1 - w1) * 240})`} opacity={clamp01(w1 * 2)}><WordTag text="UP TO $75M" x={0} y={0} s={0.8} /></g>
       {[0, 1, 2].map((i) => <g key={i} transform={`translate(${-96 + i * 62} ${-78 - 30 * i % 2 - (1 - w2) * 260})`} opacity={clamp01(w2 * 2)}><rect x={-20} y={-8} width={40} height={30} rx={5} fill={FIB.verm} stroke={FIB.ink} strokeWidth={4} /><path d="M-11,-8 Q-11,-30 0,-30 Q11,-30 11,-8" fill="none" stroke={FIB.ink} strokeWidth={5} /></g>)}
-      <g transform={`translate(70 ${-80 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} fill={FIB.verm}>MUST LAND</text></g>
+      <g transform={`translate(70 ${-80 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><WordTag text="MUST LAND" x={0} y={0} s={0.7} /></g>
       <g transform={`translate(-10 ${-130 - (1 - w3) * 260})`} opacity={clamp01(w3 * 2)}><rect x={-46} y={-20} width={92} height={40} rx={5} fill={FIB.land} stroke={FIB.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={FIB.ink}>1999</text></g>
     </g>
   );
@@ -691,9 +691,9 @@ const S12: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Chart f={f + p.from} id="s12" wall={1} pencil={1} pulse />
-        <Keyhole x={430} y={1280} s={0.62} lit={lit} label="FINANCE PLAN" f={f} />
-        <Keyhole x={800} y={1280} s={0.62} lit={lit} label="BINDING CUSTOMERS" f={f} />
-        <g transform={`translate(${lerp(1100, 800, card) + 90 * off} ${1200 + 60 * off}) rotate(${12 * off})`} opacity={clamp01(card * 2) * (1 - off * 0.2)}>
+        <Keyhole x={500} y={1270} s={0.55} lit={lit} label="FINANCE PLAN" f={f} />
+        <Keyhole x={725} y={1270} s={0.55} lit={lit} label="CUSTOMERS" f={f} />
+        <g transform={`translate(${lerp(1000, 725, card) + 60 * off} ${1365 + 40 * off}) rotate(${12 * off})`} opacity={clamp01(card * 2) * (1 - off * 0.2)}>
           <Postcard x={0} y={0} s={0.55} text="INTEREST" />
         </g>
         <Chronometer x={905} y={640} s={0.62} f={f} lid={lid} />
