@@ -6,7 +6,7 @@ import {AK_PATH} from './akmap';
 // clock and the date. Undecided things are ALWAYS dashed graphite and never filled.
 
 export const FIB = {
-  paper: '#F1E7CB', paper2: '#FBF5E1', land: '#C9B27A', landD: '#A8915A', sea: '#1F5F7A', seaLt: '#58A0B5', deep: '#123C52',
+  paper: '#F1E7CB', paper2: '#FBF5E1', land: '#C9B27A', landD: '#A8915A', sea: '#1F6B66', seaLt: '#5DA898', deep: '#12433F',
   brass: '#B8963A', brassL: '#E0C46A', brassD: '#6F5A1E', verm: '#E0502A', ink: '#2B2824', pencil: '#6B7280', green: '#6B7280', wood: '#A8743F', woodD: '#7A4F25', cream: '#FBF5E1',
 };
 const MONO = "'JetBrains Mono', ui-monospace, monospace";
@@ -46,12 +46,12 @@ export const Pip: React.FC<{x?: number; y?: number; s?: number; rot?: number; f:
 
 /** The engraving is drawn as a separate plate under Pip so the long strings stay legible: a small engraved band below the token. */
 export const PipBand: React.FC<{x: number; y: number; text: string; s?: number; p?: number}> = ({x, y, text, s = 1, p = 1}) => {
-  const w = Math.max(70, text.length * 12.4 + 28);
+  const w = Math.max(80, text.length * 14.8 + 32);
   if (p <= 0.01) return null;
   return (
     <g transform={`translate(${x} ${y}) scale(${s})`} opacity={clamp01(p * 1.6)}>
       <rect x={-w / 2} y={-17} width={w} height={34} rx={7} fill={FIB.brassL} stroke={FIB.ink} strokeWidth={4} />
-      <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={0.6} fill={FIB.ink}>{text}</text>
+      <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} letterSpacing={0.6} fill={FIB.ink}>{text}</text>
     </g>
   );
 };
@@ -252,7 +252,7 @@ export const ScalePans: React.FC<{x: number; y: number; s?: number; tilt: number
       <path d="M-130,160 Q-60,200 20,208" fill="none" stroke={FIB.brassL} strokeWidth={6} opacity={0.8} />
       <g transform="translate(0 145)" key={k}>{kids}</g>
       {labels && (
-        <g transform="translate(0 -52)">
+        <g transform="translate(0 262)">
           <rect x={-labels[k].length * 9.4 - 14} y={-20} width={labels[k].length * 18.8 + 28} height={40} rx={5} fill={FIB.cream} stroke={FIB.ink} strokeWidth={4} />
           <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={0.5} fill={FIB.ink}>{labels[k]}</text>
         </g>
@@ -375,7 +375,7 @@ export const Pin: React.FC<{x: number; y: number; f: number; p: number; label?: 
 
 /** a brass tide gauge standing in the sea cutaway, painted with the ceiling line at the top and water at zero. */
 export const Gauge: React.FC<{x: number; y: number; s?: number; f: number; label?: string; rise?: number; mark?: number}> = ({x, y, s = 1, f, label = 'UP TO $75 MILLION', rise = 1, mark = 0}) => {
-  const w = label.length * 13.6 + 36;
+  const w = label.length * 16.8 + 40;
   return (
     <g transform={`translate(${x} ${y + (1 - rise) * 500}) scale(${s})`} opacity={clamp01(rise * 3)}>
       <ellipse cx={0} cy={6} rx={110} ry={16} fill="#000" opacity={0.3} />
@@ -385,7 +385,7 @@ export const Gauge: React.FC<{x: number; y: number; s?: number; f: number; label
       <line x1={-30} x2={30} y1={-640} y2={-640} stroke={FIB.ink} strokeWidth={4} />
       <g transform="translate(0 -690)">
         <rect x={-w / 2} y={-26} width={w} height={52} rx={6} fill={FIB.cream} stroke={FIB.ink} strokeWidth={6} />
-        <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} letterSpacing={0.5} fill={FIB.ink}>{label}</text>
+        <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} letterSpacing={0.4} fill={FIB.ink}>{label}</text>
         <path d={`M${-w / 2},30 L${w / 2},30`} stroke={FIB.verm} strokeWidth={5} strokeDasharray="14 8" opacity={0.0 + mark} />
       </g>
       <text x={-44} y={-12} textAnchor="end" fontFamily={MONO} fontWeight={900} fontSize={20} fill={FIB.ink} opacity={0.8}>0</text>
@@ -401,7 +401,7 @@ export const Chronometer: React.FC<{x: number; y: number; s?: number; f: number;
     <rect x={-112} y={-44} width={224} height={138} rx={8} fill={FIB.woodD} opacity={0.5} />
     <circle cx={0} cy={26} r={58} fill={FIB.cream} stroke={FIB.brass} strokeWidth={10} opacity={lid} />
     <g opacity={lid}>
-      <text x={0} y={18} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={FIB.verm}>{text}</text>
+      <text x={0} y={18} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={17} fill={FIB.verm}>{text}</text>
       <text x={0} y={46} textAnchor="middle" fontFamily="Fraunces, Georgia, serif" fontWeight={900} fontSize={30} fill={FIB.ink}>{sub}</text>
     </g>
     <g transform={`translate(-130 -60) rotate(${-lid * 112} 0 0)`}>

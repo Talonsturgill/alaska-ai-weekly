@@ -312,8 +312,8 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <g opacity={hatIn} transform={`translate(0 ${(1 - hatIn) * -160})`}>
           <Hat x={320} y={968} r={-8} /><Hat x={720} y={1112} r={9} />
         </g>
-        <Lab text="ALASKA UNITED EAST 1999" x={300} y={880} size={22} tone="paper" p={ease(f, t7 + 10, 10)} rot={-3} />
-        <Lab text="ALASKA COMMUNICATIONS 1999" x={740} y={1245} size={22} tone="paper" p={ease(f, t7 + 14, 10)} rot={2} />
+        <Lab text="ALASKA UNITED EAST 1999" x={300} y={880} size={26} tone="paper" p={ease(f, t7 + 10, 10)} rot={-3} />
+        <Lab text="ALASKA COMMUNICATIONS 1999" x={740} y={1245} size={24} tone="paper" p={ease(f, t7 + 14, 10)} rot={2} />
         <g transform={`translate(120 ${lerp(900, 1210, ease(f, t8, 14))})`} opacity={ease(f, t8, 8)}>
           <rect x={-90} y={-60} width={180} height={120} rx={8} fill={FIB.paper2} stroke={FIB.ink} strokeWidth={5} transform={`rotate(${-4 + 3 * bump(f, t8 + 12, 16)})`} />
           <text x={0} y={-12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={FIB.ink}>AIDEA</text>
@@ -342,11 +342,11 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const ang = lap * Math.PI * 2 + Math.PI / 2;
   const onRoad = f >= t10 + 26 && f < t10 + 100;
   const roll = easeIO(f, t11 - 6, 44);
-  let px = 780, py = 1250;
-  if (f >= t10 && f < t10 + 26) { px = lerp(780, 540 + 250, ease(f, t10 + 6, 20)); py = 1260; }
-  if (onRoad) { px = 540 + 250 * Math.cos(ang); py = 1220 + 70 * Math.sin(ang); }
-  if (f >= t10 + 100 && f < t11 - 6) { px = lerp(790, 700, ease(f, t10 + 100, 20)); py = 1250; }
-  if (f >= t11 - 6) { px = lerp(700, 150, roll); py = 1250; }
+  let px = 780, py = 1210;
+  if (f >= t10 && f < t10 + 26) { px = lerp(780, 540 + 250, ease(f, t10 + 6, 20)); py = 1220; }
+  if (onRoad) { px = 540 + 250 * Math.cos(ang); py = 1180 + 70 * Math.sin(ang); }
+  if (f >= t10 + 100 && f < t11 - 6) { px = lerp(790, 700, ease(f, t10 + 100, 20)); py = 1210; }
+  if (f >= t11 - 6) { px = lerp(700, 150, roll); py = 1210; }
   const bonk = bump(f, t11 + 36, 14);
   const flipK = ease(f, t12, 12);
   const cam = track([{t: 0, z: 1.15, fx: 560, fy: 1050}, {t: p.dur, z: 1.0, fx: 540, fy: 1000}]);
@@ -360,17 +360,17 @@ const S4: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <ChartBG f={f + p.from} id="s4" />
         <g data-band="ok">
-          <ellipse cx={540} cy={1250} rx={330} ry={96} fill="#5B6376" stroke={FIB.ink} strokeWidth={8} />
-          <ellipse cx={540} cy={1250} rx={150} ry={36} fill={FIB.paper} stroke={FIB.ink} strokeWidth={6} />
-          <rect data-band="ok" x={640} y={1208} width={540} height={92} fill="#5B6376" stroke={FIB.ink} strokeWidth={7} />
-          <path d="M650,1254 L1100,1254" stroke={FIB.paper2} strokeWidth={5} strokeDasharray="30 22" />
+          <ellipse cx={540} cy={1210} rx={330} ry={96} fill="#5B6376" stroke={FIB.ink} strokeWidth={8} />
+          <ellipse cx={540} cy={1210} rx={150} ry={36} fill={FIB.paper} stroke={FIB.ink} strokeWidth={6} />
+          <rect data-band="ok" x={640} y={1168} width={540} height={92} fill="#5B6376" stroke={FIB.ink} strokeWidth={7} />
+          <path d="M650,1214 L1100,1214" stroke={FIB.paper2} strokeWidth={5} strokeDasharray="30 22" />
         </g>
-        <Sign x={300} y={1140} text="A DIGITAL CUL-DE-SAC" sub="AIDEA" f={f} rise={rise} s={0.9} w={560} />
+        <Sign x={300} y={1100} text="A DIGITAL CUL-DE-SAC" sub="AIDEA" f={f} rise={rise} s={0.9} w={560} />
         <g opacity={ease(f, t11 + 6, 14)}>
           <rect x={64} y={880} width={26} height={430} rx={6} fill="#fff" opacity={0.25 + 0.2 * bonk} stroke={FIB.sea} strokeWidth={4} />
         </g>
         <Pip x={px} y={py} s={0.8} f={f} emotion={f >= t11 ? 'puzzled' : 'curious'} look={f >= t11 - 6 ? -0.8 : 0.5} squash={bonk} rot={f >= t11 - 6 ? -10 : 8 * Math.sin(lap * 6)} />
-        <PipBand x={px} y={py + 100} text="VIA LOWER 48" s={0.8} p={flipK} />
+        <PipBand x={px} y={py - 115} text="VIA LOWER 48" s={0.8} p={flipK} />
         <DeskNear f={f} seed={4} />
       </SVG>
     </Frame>
@@ -602,9 +602,9 @@ const Stage: React.FC<{f: number; id: string}> = ({f, id}) => (
   <g>
     <ChartBG f={f} id={id} grid={false} />
     <g data-band="ok">
-      <ellipse cx={540} cy={1380} rx={620} ry={120} fill={FIB.wood} stroke={FIB.ink} strokeWidth={8} />
-      <ellipse cx={540} cy={1380} rx={560} ry={96} fill={FIB.woodD} opacity={0.4} />
-      <path d="M200,1420 Q540,1470 880,1420" stroke={FIB.woodD} strokeWidth={4} fill="none" />
+      <ellipse cx={540} cy={1250} rx={620} ry={110} fill={FIB.wood} stroke={FIB.ink} strokeWidth={8} />
+      <ellipse cx={540} cy={1250} rx={560} ry={88} fill={FIB.woodD} opacity={0.4} />
+      <path d="M200,1290 Q540,1340 880,1290" stroke={FIB.woodD} strokeWidth={4} fill="none" />
     </g>
     <path d="M540,0 L300,1300 L780,1300 Z" fill="#fff" opacity={0.07} data-band="ok" />
   </g>
@@ -636,15 +636,15 @@ const S10: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} displayLines={['CONDITIONS ·', 'LANDING RULE']} text="CONDITIONS LANDING RULE" y={540} size={34} tone="gold" p={ease(f, t47 + 4, 8) * (1 - ease(f, t28 - 4, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="A DOCUMENTED NEED" y={680} size={34} tone="paper" p={ease(f, t28 + 4, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} text="A DOCUMENTED NEED" y={620} size={34} tone="paper" p={ease(f, t28 + 4, 8)} />
       </>}>
       <SVG>
         <Stage f={f + p.from} id="s10" />
         <Chronometer x={920} y={700} s={0.36} f={f} lid={0} />
         <g transform={`translate(0 ${(1 - roll) * 500})`} opacity={clamp01(roll * 2)}>
-          <ScalePans x={540} y={1330} s={1.12} tilt={tilt} f={f} left={left} right={right} labels={['THE DOUBTS', 'THE CASE FOR']} />
-          <Pip x={540} y={840} s={0.75} f={f} emotion="determined" look={0} seed={10} rot={tilt * 16} />
-          <PipBand x={540} y={950} text="WHICH WAY?" s={0.9} p={1} />
+          <ScalePans x={540} y={1190} s={1.12} tilt={tilt} f={f} left={left} right={right} labels={['THE DOUBTS', 'THE CASE FOR']} />
+          <Pip x={540} y={730} s={0.75} f={f} emotion="determined" look={0} seed={10} rot={tilt * 16} />
+          <PipBand x={760} y={730} text="WHICH WAY?" s={0.9} p={1} />
         </g>
         <DeskNear f={f} seed={10} />
       </SVG>
@@ -696,7 +696,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Chart f={f + p.from} id="s12" wall={1} pencil={1} pulse />
         <Keyhole x={500} y={1190} s={0.8} lit={lit} label="FINANCE PLAN" f={f} />
         <Keyhole x={725} y={1190} s={0.8} lit={lit} label="CUSTOMERS" f={f} />
-        <g transform={`translate(${lerp(1000, 725, card) + 60 * off} ${1290 + 40 * off}) rotate(${12 * off})`} opacity={clamp01(card * 2) * (1 - off * 0.2)}>
+        <g transform={`translate(${lerp(1000, 725, card) + 60 * off} ${1225 + 40 * off}) rotate(${12 * off})`} opacity={clamp01(card * 2) * (1 - off * 0.2)}>
           <Postcard x={0} y={0} s={0.75} text="INTEREST" />
         </g>
         <Chronometer x={820} y={640} s={0.62} f={f} lid={lid} />
