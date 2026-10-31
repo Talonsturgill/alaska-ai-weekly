@@ -20,10 +20,12 @@ export const Pip: React.FC<{x?: number; y?: number; s?: number; rot?: number; f:
 ({x = 0, y = 0, s = 1, rot = 0, f, emotion = 'curious', squash = 0, look = 0, glow = 0, ghost = false, seed = 0}) => {
   const blink = ((f + seed * 37) % 118) < 4 ? 0.15 : 1;
   const bob = Math.sin((f + seed * 20) / 14) * 3;
+  const breath = 1 + 0.03 * Math.sin((f + seed * 11) / 19);
+  const sway = 3.2 * Math.sin((f + seed * 17) / 41);
   const brow = emotion === 'puzzled' ? [-10, 8] : emotion === 'wry' ? [4, -8] : emotion === 'determined' ? [8, 8] : emotion === 'hopeful' ? [-6, -6] : [0, 0];
   const mouth = emotion === 'puzzled' ? 'M-14,40 Q0,32 14,40' : emotion === 'wry' ? 'M-14,38 Q-2,44 14,32' : emotion === 'determined' ? 'M-14,38 L14,38' : emotion === 'hopeful' ? 'M-14,34 Q0,48 14,34' : 'M-12,36 Q0,44 12,36';
   return (
-    <g transform={`translate(${x} ${y + bob}) rotate(${rot}) scale(${s * (1 + squash * 0.18)} ${s * (1 - squash * 0.18)})`} opacity={ghost ? 0.5 : 1}>
+    <g transform={`translate(${x} ${y + bob}) rotate(${rot + sway}) scale(${s * breath * (1 + squash * 0.18)} ${s * breath * (1 - squash * 0.18)})`} opacity={ghost ? 0.5 : 1}>
       <ellipse cx={0} cy={86} rx={64} ry={12} fill="#000" opacity={0.22} />
       <path d={SCALLOP} fill={FIB.brass} stroke={FIB.ink} strokeWidth={8} strokeLinejoin="round" />
       <path d={SCALLOP} fill="none" stroke={FIB.brassL} strokeWidth={4} transform="scale(0.93)" opacity={0.7} />
@@ -80,6 +82,21 @@ export const ChartBG: React.FC<{f: number; id: string; sea?: number; grid?: bool
       ))}
       <rect x={26} y={26} width={1028} height={1868} fill="none" stroke={FIB.ink} strokeWidth={5} opacity={0.5} data-band="ok" />
       <rect x={40} y={40} width={1000} height={1840} fill="none" stroke={FIB.ink} strokeWidth={1.6} opacity={0.4} data-band="ok" />
+      <g data-band="ok">
+        <rect x={-20} y={-10} width={1120} height={92} fill={FIB.wood} stroke={FIB.ink} strokeWidth={6} />
+        <rect x={-20} y={64} width={1120} height={18} fill={FIB.woodD} opacity={0.6} />
+        {[150, 520, 880].map((cx, i) => (
+          <g key={i} transform={`translate(${cx} 82) rotate(${2.2 * Math.sin(f / 31 + i * 2)})`}>
+            <line x1={0} y1={0} x2={0} y2={96 + 40 * i % 3} stroke={FIB.ink} strokeWidth={4} />
+            <path d={`M-62,${96 + 40 * i % 3} L62,${96 + 40 * i % 3} L44,${150 + 40 * i % 3} L-44,${150 + 40 * i % 3} Z`} fill={i === 1 ? FIB.brassL : FIB.cream} stroke={FIB.ink} strokeWidth={5} />
+          </g>
+        ))}
+        <path d="M300,82 L780,82 L1020,1100 L60,1100 Z" fill="#FFF6D0" opacity={0.1} />
+        <g transform="translate(250 150)" opacity={0.85}>
+          <rect x={-120} y={-14} width={240} height={30} rx={4} fill={FIB.brassL} stroke={FIB.ink} strokeWidth={4} transform="rotate(-6)" />
+          {Array.from({length: 11}).map((_, i) => <line key={i} x1={-110 + i * 22} x2={-110 + i * 22} y1={-14 + (-110 + i * 22) * -0.105} y2={-2 + (-110 + i * 22) * -0.105} stroke={FIB.ink} strokeWidth={2.4} />)}
+        </g>
+      </g>
       <g transform="translate(930 190)" opacity={0.7} data-band="ok">
         <circle r={60} fill="none" stroke={FIB.ink} strokeWidth={2.4} />
         <path d="M0,-74 L12,0 L0,74 L-12,0 Z" fill={FIB.ink} opacity={0.55} />
@@ -217,7 +234,7 @@ export const Doc: React.FC<{x: number; y: number; s?: number; rot?: number; titl
 /** the brass two-pan scale. tilt -1 (left pan down) .. +1 (right pan down). */
 export const ScalePans: React.FC<{x: number; y: number; s?: number; tilt: number; f: number; left?: React.ReactNode; right?: React.ReactNode; labels?: [string, string]}> =
 ({x, y, s = 1, tilt, f, left, right, labels}) => {
-  const ang = tilt * 11 + Math.sin(f / 13) * 0.6 * (1 - Math.abs(tilt));
+  const ang = tilt * 16 + Math.sin(f / 13) * 0.6 * (1 - Math.abs(tilt));
   const r = (ang * Math.PI) / 180;
   const half = 270;
   const lx = -half * Math.cos(r), ly = -150 - half * Math.sin(r) * -1;
@@ -235,7 +252,7 @@ export const ScalePans: React.FC<{x: number; y: number; s?: number; tilt: number
       <path d="M-130,160 Q-60,200 20,208" fill="none" stroke={FIB.brassL} strokeWidth={6} opacity={0.8} />
       <g transform="translate(0 145)" key={k}>{kids}</g>
       {labels && (
-        <g transform="translate(0 258)">
+        <g transform="translate(0 -52)">
           <rect x={-labels[k].length * 9.4 - 14} y={-20} width={labels[k].length * 18.8 + 28} height={40} rx={5} fill={FIB.cream} stroke={FIB.ink} strokeWidth={4} />
           <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={0.5} fill={FIB.ink}>{labels[k]}</text>
         </g>
@@ -337,8 +354,8 @@ export const WestCoast: React.FC<{x?: number; y?: number; f: number}> = ({x = 0,
   <g transform={`translate(${x} ${y})`}>
     <path d="M1100,960 L840,960 Q820,1000 836,1040 Q812,1090 826,1130 Q806,1190 822,1250 Q800,1320 826,1380 L1100,1380 Z" fill={FIB.land} stroke={FIB.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d="M1100,1000 Q960,1010 900,1050 Q880,1130 905,1200 Q940,1300 1100,1330" fill={FIB.landD} opacity={0.25} />
-    <text x={985} y={1000} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FIB.ink} opacity={0.7}>WASHINGTON</text>
-    <text x={985} y={1190} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FIB.ink} opacity={0.7}>OREGON</text>
+    <text x={955} y={1000} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FIB.ink} opacity={0.7}>WASHINGTON</text>
+    <text x={955} y={1190} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={FIB.ink} opacity={0.7}>OREGON</text>
   </g>
 );
 

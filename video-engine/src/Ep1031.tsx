@@ -203,7 +203,7 @@ const Chart: React.FC<{f: number; id: string; draw?: number; pins?: number; land
     <WestCoast f={f} />
     <g opacity={asia}>
       <path d="M-40,1000 L120,1000 Q150,1100 110,1180 Q140,1260 100,1330 L-40,1330 Z" fill={FIB.land} stroke={FIB.ink} strokeWidth={7} />
-      <Lab text="ASIA" x={40} y={1170} size={30} tone="paper" p={1} />
+      <Lab text="ASIA" x={72} y={1170} size={30} tone="paper" p={1} />
     </g>
     {land > 0.01 && <CableRun id={`lr${id}`} d={LAND_ROUTE} f={f} draw={land} w={11} color={FIB.landD} pulse={false} />}
     {FIVE.map((c, i) => <CableRun key={i} id={`${id}${i}`} d={c.d} f={f + i * 7} draw={clamp01(draw * 1.4 - i * 0.12)} w={13} pulse={pulse} />)}
@@ -226,21 +226,21 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const sea = ease(f, t2 - 24, 30);
   const along = clamp01((f - t3) / Math.max(40, p.dur - t3 - 10));
   let px = lerp(250, 540, popK), py = lerp(1000, 1180, popK) - 140 * Math.sin(Math.min(1, popK) * Math.PI);
-  if (f >= t2) { px = lerp(540, 620, leap); py = lerp(1180, 1300, leap) - 260 * Math.sin(leap * Math.PI); }
-  if (f >= t3) { px = lerp(160, 940, along); py = 1330 + 28 * Math.sin(along * 7); }
+  if (f >= t2) { px = lerp(540, 620, leap); py = lerp(1180, 1190, leap) - 260 * Math.sin(leap * Math.PI); }
+  if (f >= t3) { px = lerp(160, 940, along); py = 1190 + 20 * Math.sin(along * 7); }
   const cam = track([{t: 0, z: 1.25, fx: 380, fy: 1080}, {t: Math.max(40, t2), z: 1.1, fx: 540, fy: 1160}, {t: p.dur, z: 1.0, fx: 540, fy: 1100}]);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text="A CHATBOT QUESTION · ALASKA.AI'S FRAMING" y={520} size={34} tone="gold" p={ease(f, t1 + 6, 8) * (1 - ease(f, t2, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} text="OUT OF ALASKA" y={600} size={34} tone="paper" p={ease(f, t2, 8) * (1 - ease(f, t3, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="ONE CABLE SOUTH" y={680} size={34} tone="sea" p={ease(f, t3, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} text="ON A CABLE" y={680} size={34} tone="sea" p={ease(f, t3, 8)} />
       </>}>
       <SVG>
         <ChartBG f={f + p.from} id="s1" />
         <Phone x={250} y={1090} s={1.05} f={f} glow={f < t2 ? 1 : 0.3} />
-        <SeaWindow f={f} x={60} y={1150} w={960} h={330} k={sea} id="s1" />
-        {sea > 0.3 && <CableRun id="s1c" d="M 70,1330 C 300,1290 500,1370 720,1320 S 960,1300 1010,1340" f={f} draw={ease(f, t2 + 6, 30)} w={16} />}
+        <SeaWindow f={f} x={60} y={1040} w={960} h={270} k={sea} id="s1" />
+        {sea > 0.3 && <CableRun id="s1c" d="M 70,1200 C 300,1170 500,1240 720,1200 S 960,1180 1010,1220" f={f} draw={ease(f, t2 + 6, 30)} w={16} />}
         <Pip x={px} y={py} s={lerp(0.55, 0.95, popK)} rot={f >= t3 ? 8 : 24 * (1 - popK)} f={f} emotion="curious" squash={bump(f, t2 + 26, 10) * 0.8} glow={f >= t3 ? 0.8 : 0} look={0.6} />
         {f > t1 + 40 && f < t2 + 10 && <PipBand x={px} y={py + 118} text="?" s={0.9} p={ease(f, t1 + 40, 10)} />}
         <DeskNear f={f} seed={1} />
@@ -437,7 +437,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <Gauge x={400} y={1420} s={0.92} f={f} rise={rise} mark={ease(f, t17, 10)} />
         <rect x={64} y={1396} width={692} height={5} fill="#fff" opacity={0.5} data-band="ok" />
         <Pip x={pipX} y={pipY} s={0.62} f={f} emotion="wry" look={0.3} seed={6} squash={bonkK * 0.6} />
-        {f > t17 && <PipBand x={pipX + 150} y={pipY + 20} text="UP TO $75M" s={0.8} p={ease(f, t17, 10)} />}
+        {f > t17 + 30 && <PipBand x={190} y={1250} text="UP TO $75M" s={0.8} p={ease(f, t17 + 30, 10)} />}
         <g opacity={chrono} transform={`translate(0 ${(1 - chrono) * -120})`}>
           <Chronometer x={915} y={980} s={0.48} f={f} lid={0} />
         </g>
@@ -465,7 +465,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <ChartBG f={f + p.from} id="s7" />
-        <g transform="translate(540 1000)">
+        <g transform="translate(540 970)">
           <rect x={-330} y={-220} width={660} height={440 * unroll} rx={10} fill={FIB.paper2} stroke={FIB.ink} strokeWidth={7} />
           {unroll > 0.85 && (
             <g>
@@ -479,21 +479,21 @@ const S7: React.FC<SceneProps> = ({p}) => {
           )}
         </g>
         <g transform={`translate(0 ${(1 - swoop) * -120})`} opacity={ease(f, t20 - 40, 10) * (1 - erase)}>
-          <CableRun id="s7c" d="M -40,1330 C 260,1290 520,1380 800,1300 S 1000,1340 1120,1300" f={f} w={16} />
+          <CableRun id="s7c" d="M -40,1250 C 260,1210 520,1290 800,1220 S 1000,1260 1120,1220" f={f} w={16} />
         </g>
-        <g opacity={ease(f, t20 - 6, 10) * (1 - erase)} transform={`translate(840 ${1260 + pin * 6})`}>
+        <g opacity={ease(f, t20 - 6, 10) * (1 - erase)} transform={`translate(840 ${1170 + pin * 6})`}>
           <rect x={-70} y={-70} width={140} height={78} rx={6} fill={FIB.verm} stroke={FIB.ink} strokeWidth={6} />
           <rect x={-18} y={8} width={36} height={66} rx={5} fill={FIB.wood} stroke={FIB.ink} strokeWidth={6} />
         </g>
         {[0, 1, 2].map((i) => {
           const sl = ease(f, t21 + i * 8, 20);
-          return <g key={i} transform={`translate(${lerp(i % 2 ? 1300 : -300, 220 + i * 320, sl)} ${1260 + (i % 2) * 22})`} opacity={clamp01(sl * 2)}>
+          return <g key={i} transform={`translate(${lerp(i % 2 ? 1300 : -300, 220 + i * 320, sl)} ${1190 + (i % 2) * 22})`} opacity={clamp01(sl * 2)}>
             <rect x={-130} y={-50} width={260} height={100} rx={8} fill={FIB.paper2} stroke={FIB.pencil} strokeWidth={5} strokeDasharray="12 8" />
             <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={FIB.pencil}>{['NO PROJECT', 'NO PARTNER', 'NO ROUTE'][i]}</text>
           </g>;
         })}
         <Chronometer x={930} y={620} s={0.36} f={f} lid={0} />
-        <Pip x={lerp(900, 640, erase)} y={lerp(1120, 1290, erase)} s={0.55} f={f} emotion={erase > 0.6 ? 'puzzled' : 'reading'} look={-0.7} seed={7} />
+        <Pip x={lerp(900, 640, erase)} y={lerp(1100, 1250, erase)} s={0.55} f={f} emotion={erase > 0.6 ? 'puzzled' : 'reading'} look={-0.7} seed={7} />
         <DeskNear f={f} seed={7} />
       </SVG>
     </Frame>
@@ -519,13 +519,12 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const my = f < t40 ? 1070 + 20 * Math.sin(sweep * 9) : 1075;
   const ringK = ease(f, t40, 14);
   const fall = (i: number) => clamp01((f - t41 - i * 6) / 34);
-  const chip = ease(f, t24, 20);
   const cam = track([{t: 0, z: 1.15, fx: 540, fy: 1060}, {t: p.dur, z: 1.04, fx: 560, fy: 1060}]);
   return (
     <Frame p={p} cam={cam}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text="THE CASE AGAINST OUR OWN SPIN" y={520} size={32} tone="gold" p={ease(f, t22 + 6, 8) * (1 - ease(f, t40, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="AI · ONLY INSIDE AIDEA" y={600} size={34} tone="paper" p={ease(f, t40 + 8, 8) * (1 - ease(f, t41, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text={'"AI" ONLY IN THE NAME AIDEA'} y={600} size={34} tone="paper" p={ease(f, t40 + 8, 8) * (1 - ease(f, t41, 6))} />
         {/* plate-overlap-ok */}<Plate x={540} displayLines={['AI · DATA CENTER · COMPUTE', 'NOT IN EITHER DOCUMENT']} text="AI DATA CENTER COMPUTE NOT IN EITHER DOCUMENT" y={700} size={32} tone="verm" p={ease(f, t41 + 6, 8)} />
         {/* plate-overlap-ok */}<Plate x={540} text="ALASKA.AI'S FRAMING" y={830} size={34} tone="paper" p={ease(f, t24 + 6, 8)} />
       </>}>
@@ -545,9 +544,6 @@ const S8: React.FC<SceneProps> = ({p}) => {
           return k > 0 && <g key={i} opacity={1 - k}><WordTag text={['AI', 'DATA CENTER', 'COMPUTE'][i]} x={420 + i * 150} y={900 + 520 * k * k} rot={-8 + i * 8} ghost /></g>;
         })}
         <g transform={`translate(${mx} ${my})`}><Magnifier x={0} y={0} s={1.1} rot={-90} /></g>
-        <g opacity={chip} transform={`translate(${lerp(900, 316, chip)} ${lerp(800, 1215, chip)})`}>
-          <Lab text="ALASKA.AI'S FRAMING" x={0} y={0} size={20} tone="gold" p={1} />
-        </g>
         <Chronometer x={940} y={640} s={0.36} f={f} lid={0} />
         <Pip x={130} y={1250} s={0.6} f={f} emotion="wry" look={0.9} seed={8} rot={-6} />
         <DeskNear f={f} seed={8} />
@@ -622,9 +618,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
   );
   const right = (
     <g>
-      <g transform={`translate(-30 ${-40 - (1 - w1) * 240})`} opacity={clamp01(w1 * 2)}><WordTag text="UP TO $75M" x={0} y={0} s={0.8} /></g>
+      <g transform={`translate(-30 ${-40 - (1 - w1) * 240})`} opacity={clamp01(w1 * 2)}><WordTag text="UP TO $75M" x={0} y={0} s={1} /></g>
       {[0, 1, 2].map((i) => <g key={i} transform={`translate(${-96 + i * 62} ${-78 - 30 * i % 2 - (1 - w2) * 260})`} opacity={clamp01(w2 * 2)}><rect x={-20} y={-8} width={40} height={30} rx={5} fill={FIB.verm} stroke={FIB.ink} strokeWidth={4} /><path d="M-11,-8 Q-11,-30 0,-30 Q11,-30 11,-8" fill="none" stroke={FIB.ink} strokeWidth={5} /></g>)}
-      <g transform={`translate(70 ${-80 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><WordTag text="MUST LAND" x={0} y={0} s={0.7} /></g>
+      <g transform={`translate(70 ${-80 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><WordTag text="MUST LAND" x={0} y={0} s={0.9} /></g>
       <g transform={`translate(-10 ${-130 - (1 - w3) * 260})`} opacity={clamp01(w3 * 2)}><rect x={-46} y={-20} width={92} height={40} rx={5} fill={FIB.land} stroke={FIB.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={FIB.ink}>1999</text></g>
     </g>
   );
@@ -639,9 +635,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Stage f={f + p.from} id="s10" />
         <Chronometer x={920} y={700} s={0.36} f={f} lid={0} />
         <g transform={`translate(0 ${(1 - roll) * 500})`} opacity={clamp01(roll * 2)}>
-          <ScalePans x={540} y={1330} s={0.92} tilt={tilt} f={f} left={left} right={right} labels={['THE DOUBTS', 'THE CASE FOR']} />
-          <Pip x={540} y={880} s={0.66} f={f} emotion="determined" look={0} seed={10} rot={tilt * 11} />
-          <PipBand x={540} y={982} text="WHICH WAY?" s={0.8} p={1} />
+          <ScalePans x={540} y={1400} s={1.12} tilt={tilt} f={f} left={left} right={right} labels={['THE DOUBTS', 'THE CASE FOR']} />
+          <Pip x={540} y={840} s={0.75} f={f} emotion="determined" look={0} seed={10} rot={tilt * 16} />
+          <PipBand x={540} y={950} text="WHICH WAY?" s={0.9} p={1} />
         </g>
         <DeskNear f={f} seed={10} />
       </SVG>
@@ -727,17 +723,17 @@ const S13: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <ChartBG f={f + p.from} id="s13" />
         <Phone x={250} y={1090} s={1.05} f={f} glow={1} />
-        <g transform="translate(420 40)">
-          <PencilLine draw={1} f={f} tip={false} />
+        <AlaskaShape x={330} y={600} s={0.34} />
+        <path d="M 440,760 C 520,860 640,930 800,1010" fill="none" stroke={FIB.pencil} strokeWidth={10} strokeLinecap="round" />
+        <g transform="translate(800 1010)">
+          <rect x={-3} y={-110} width={8} height={116} fill={FIB.ink} />
+          <path d={`M5,-110 L${86 + 12 * Math.sin(f / 5) * flag},${-88} L5,${-62} Z`} fill={FIB.brassL} stroke={FIB.ink} strokeWidth={5} opacity={flag} />
+          <circle r={9} fill={FIB.pencil} />
         </g>
-        <g transform={`translate(${(PENCIL_TIP[0] + 420)} ${PENCIL_TIP[1] + 40 - 70})`}>
-          <rect x={-3} y={-10} width={7} height={90} fill={FIB.ink} />
-          <path d={`M4,-10 L${70 + 10 * Math.sin(f / 5) * flag},${10} L4,${30} Z`} fill={FIB.brassL} stroke={FIB.ink} strokeWidth={4} opacity={flag} />
-        </g>
-        <g opacity={ease(f, t45 - 6, 10)} transform="translate(720 860)">
-          <path d="M-210,0 L210,0" stroke={FIB.ink} strokeWidth={6} />
-          <Lab text="BINDING CUSTOMER COMMITMENT" x={0} y={-44} size={20} tone="paper" p={1} />
-          <Pencil x={60 + 8 * Math.sin(f / 6)} y={-18} rot={-26} s={0.8} />
+        <g opacity={ease(f, t45 - 6, 10)} transform="translate(760 1140)">
+          <path d="M-250,0 L250,0" stroke={FIB.ink} strokeWidth={8} />
+          <Lab text="BINDING CUSTOMER COMMITMENT" x={0} y={-52} size={26} tone="paper" p={1} />
+          <Pencil x={120 + 8 * Math.sin(f / 6)} y={34} rot={-12} s={0.9} />
         </g>
         {sea > 0.01 && (
           <g>
