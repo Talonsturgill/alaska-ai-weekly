@@ -1,0 +1,53 @@
+{
+ "run_date": "2026-10-31",
+ "title": "A Ceiling Is Not a Cable",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "AIDEA press release 20-2026, Board Approves Investment Tool (October 23rd, 2026)",
+   "outlet": "Alaska Industrial Development and Export Authority",
+   "url": "https://www.aidea.org/Portals/0/PressReleases/20-2026%20PRESS%20RELEASE%20AIDEA%20Board%20Approves%20Investment%20Tool%20to%20Transform%20Alaska%20into%20a%20Global%20Digital%20Hub.pdf",
+   "claims": [
+    "c1",
+    "c13",
+    "c14",
+    "c9"
+   ],
+   "used_in_film": true,
+   "note": "Primary. AIDEA's own statements. Unanimity not voiced."
+  },
+  {
+   "id": "s2",
+   "title": "AIDEA Resolution No. G26-11, Fiber Development (signed October 21st, 2026)",
+   "outlet": "Alaska Industrial Development and Export Authority",
+   "url": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "claims": [
+    "c10",
+    "c11",
+    "c12",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c2",
+    "c3",
+    "c5",
+    "c8"
+   ],
+   "used_in_film": true,
+   "note": "Primary. Sections 3, 9, 10, 12 and the context pages."
+  },
+  {
+   "id": "s3",
+   "title": "TeleGeography Submarine Cable Map, Alaska United East and Alaska Communications cable entries",
+   "outlet": "TeleGeography",
+   "url": "https://www.submarinecablemap.com/api/v3/cable/alaska-united-east-au-east.json",
+   "claims": [
+    "c6",
+    "c7"
+   ],
+   "used_in_film": true,
+   "note": "Independent dataset for landing points and service dates."
+  }
+ ]
+}

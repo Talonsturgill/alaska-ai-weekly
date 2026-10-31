@@ -564,3 +564,17 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **Don't claim the cause.** "A discount is what an early blank costs" read as AIDEA's statement and had no source. State the fact of the deal (the shares come at a discount) and let the reader link it.
 - **Tense follows the claim.** Say agreed to buy and agreed to pay while the merger hasn't closed, in the VO, the plates and the caption.
 - **Empty frame bands are a Composition cap in the 9:16 master.** The top 400 px and the bottom 500 px sit outside the square, so give them a moon, clouds, a shelf, floor props, or a full-bleed map instead of flat fill.
+
+## 22. Things the 2026-10-31 gates, critics and panel found that were knowable in advance ("A Ceiling Is Not a Cable")
+
+- **Two days after a film about the same agency, check the PROPS, not only the palette.** All three Gate 0 critics failed the first board because a jar marked $75M, a wall calendar and a dashed outline of the unbuilt thing were 10-29's props with new paint. Pick the picture from this story's own world (a tide gauge at zero, a closed chronometer, an unfinished pencil line on a chart) and write an honest-overlaps line in the divergence note.
+- **A throughline object that never acts in a shot is not in the shot.** The first board said Pip travelled in every shot and staged it in five. Give the object one decided action per shot or cut it from that shot, and stage every engraving state the plan names.
+- **A repeated weighing gesture on one prop is a sag.** The first scale block was three shots and six weighings in 31 s. Put the absence gag on a different surface, label the pans, and give each weight its own beat that visibly moves the needle.
+- **A hook line that is an absolute claim is a blocker.** "Anything you send out of Alaska leaves on a cable" was unsourced and overbroad (satellite). Open on a question or on a sourced, attributed line.
+- **A landing rule, a count and an extension clause each come from a named document.** The capacity rule is in the release, the studies are "cited", "past typical design life" is AIDEA's figure, and an authority that ends "unless the board extends it" says so in the VO as well as on the plate.
+- **Plates in the lower third hide under the caption card (y 1336 to 1472).** Pan labels, keyholes, a postcard and a road all landed there. Stage the shot's subject above y 1300 and check the pan labels sit under the pans only if the scale is raised clear.
+- **A full-bleed sea is a colour decision, not a window.** Cobalt over 45 percent of a frame read as default blue and as 10-24's orbit. Inset the sea in paper, keep it green-teal, and cap its area.
+- **The top third of a 9:16 frame needs a motivated layer.** Four judges named dead cream above the action. `ChartBG` now carries a top rail with hanging pennants and a lamp cone, and hero art starts higher.
+- **A recording that includes a card with the agency's name on a cable line implies ownership.** Name cables by system and owner, and keep the agency's attribution on a plate, not on the cable.
+- **Plate overlap and label footprint are measured in screen space after the camera.** A plate authored clear of a sign at zoom 1.0 sat on it at 1.2. Probe a frame mid-push before placing a plate stack, and give each plate its own y.
+- **Run label_footprint after moving any prop, not only at the cut.** Seven of the nine source-gate stops this run were a label under a magnifier handle, a pencil, a postcard or a plate.

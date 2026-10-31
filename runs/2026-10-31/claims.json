@@ -1,0 +1,254 @@
+{
+ "run_date": "2026-10-31",
+ "fact_check_verdict": "Publish as what two AIDEA documents say and don't say. A board tool with a ceiling, no route, no partner, no AI or data center words. Cable geography from TeleGeography. AI is context framing only, never AIDEA's claim.",
+ "do_not_say": [
+  "AIDEA plans a data center or AI hub",
+  "first priority is Asia",
+  "Seattle as the only exit",
+  "the cable will cost $75M",
+  "a route, partner or date for any cable",
+  "latency numbers (derived, not published)",
+  "the NorthStar cable is AIDEA's",
+  "unanimous without attribution to AIDEA"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "On October twenty first, the board of AIDEA, the state development authority, voted for a new fiber company.",
+   "on_screen": "OCT 21ST \u00b7 AIDEA BOARD \u00b7 RESOLUTION G26-11",
+   "source": "https://www.aidea.org/Portals/0/PressReleases/20-2026%20PRESS%20RELEASE%20AIDEA%20Board%20Approves%20Investment%20Tool%20to%20Transform%20Alaska%20into%20a%20Global%20Digital%20Hub.pdf",
+   "requires": [
+    "Say 'AIDEA says the board voted unanimously' if unanimity is voiced. The signed resolution records no vote count."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "It is called Northstar Fiber Development, and AIDEA owns all of it.",
+   "on_screen": "NORTHSTAR FIBER DEVELOPMENT LLC",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Wholly owned AIDEA subsidiary. Resolution Sec. 1 says the name is subject to counsel review. An older Alaska Communications cable is also named NorthStar (1999). Never imply a link."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "It can put in up to seventy five million dollars.",
+   "on_screen": "UP TO $75 MILLION",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "It is a ceiling, 'maximum direct and indirect exposure' (Sec. 10). Never say 'spend' or 'invest' as done. Say 'can' or 'up to'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "Today four undersea cables and one land route link Alaska to the Lower 48.",
+   "on_screen": "4 SUBSEA CABLES",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Resolution p3 citing TeleGeography: Alaska United East (1999), NorthStar (1999), Alaska United West (2004), AKORN (2009), plus MTA's AlCan ONE (2020) through Canada. TeleGeography confirms the four cables. Attribute the land route to AIDEA."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "Three of those four cables land in Oregon and one in Washington.",
+   "on_screen": "3 OREGON \u00b7 1 WASHINGTON",
+   "source": "https://www.submarinecablemap.com/api/v3/cable/alaska-united-east-au-east.json",
+   "requires": [
+    "TeleGeography: AU-East lands Lynnwood WA. NorthStar lands Hillsboro OR, AU-West Warrenton OR, AKORN Florence OR. Say Pacific Northwest, never Seattle alone."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "Two of them went into service in nineteen ninety nine.",
+   "on_screen": "ALASKA UNITED EAST 1999",
+   "source": "https://www.submarinecablemap.com/api/v3/cable/northstar.json",
+   "requires": [
+    "Alaska United East RFS Feb 1999, NorthStar RFS Oct 1999 (TeleGeography)."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "AIDEA says that is a typical design life of about twenty five years.",
+   "on_screen": "PAST TYPICAL LIFE PER AIDEA",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Resolution p3: 'typical design life of approximately 25 years', two systems 'have reached the end of that typical design life'. Attribute to AIDEA; it is a typical life, not a failure date."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "AIDEA calls Alaska a digital cul-de-sac where traffic must travel through the Lower 48 to reach the rest of the world.",
+   "on_screen": "\"A DIGITAL CUL-DE-SAC\" \u00b7 AIDEA",
+   "source": "https://www.aidea.org/Portals/0/PressReleases/20-2026%20PRESS%20RELEASE%20AIDEA%20Board%20Approves%20Investment%20Tool%20to%20Transform%20Alaska%20into%20a%20Global%20Digital%20Hub.pdf",
+   "requires": [
+    "Quote verbatim: 'a digital cul-de-sac where traffic must travel through the Lower 48 to reach the rest of the world.' Attribute to AIDEA's release. The resolution says 'data cul-de-sac'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "The resolution says no cable from Alaska connects directly to Asia.",
+   "on_screen": "NO CABLE FROM ALASKA REACHES ASIA DIRECTLY \u00b7 PER AIDEA",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Resolution p3: 'none of the subsea systems landing in Alaska connects Alaska directly to Asia'. Two sources: TeleGeography cable list agrees."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "Its first listed job is a link between Alaska and the Pacific coast of the lower forty eight.",
+   "on_screen": "PACIFIC COAST FIRST",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Sec. 3(a): sovereign connectivity between Alaska and the Pacific coast of the contiguous United States. Asia is 3(c), 'explore and collaborate'. Never say first priority is Asia."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "Asia comes third, and the wording is explore and collaborate.",
+   "on_screen": "ASIA \u00b7 \"EXPLORE AND COLLABORATE\"",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Sec. 3(c): 'explore and collaborate on trans-Pacific connectivity with Asia'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "Any capacity it buys has to land in Alaska, not just pass by.",
+   "on_screen": "MUST LAND IN ALASKA",
+   "source": "https://www.aidea.org/Portals/0/PressReleases/20-2026%20PRESS%20RELEASE%20AIDEA%20Board%20Approves%20Investment%20Tool%20to%20Transform%20Alaska%20into%20a%20Global%20Digital%20Hub.pdf",
+   "requires": [
+    "Release p2: 'capacity that lands in, and is available to Alaska, not simply capacity that passes by'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "The resolution picks no project, no partner and no route.",
+   "on_screen": "NO PROJECT \u00b7 NO PARTNER \u00b7 NO ROUTE",
+   "source": "https://www.aidea.org/Portals/0/PressReleases/20-2026%20PRESS%20RELEASE%20AIDEA%20Board%20Approves%20Investment%20Tool%20to%20Transform%20Alaska%20into%20a%20Global%20Digital%20Hub.pdf",
+   "requires": [
+    "Release p1: 'it does not select a particular project, partner, or route'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "Before any binding commitment it needs a whole project finance plan and customer commitments.",
+   "on_screen": "FINANCE PLAN BINDING CUSTOMER COMMITMENTS",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Sec. 9: whole-project finance plan, due diligence, certification; 9(v) binding customer commitments, 'expressions of interest ... do not satisfy'. "
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "That authority runs out on December thirty first, twenty twenty eight, unless the board extends it.",
+   "on_screen": "AUTHORITY ENDS DEC 31ST, 2028",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Sec. 12. Year shown because it differs from this year."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "Neither the press release nor the resolution says the words artificial intelligence, data center or compute.",
+   "on_screen": "AI \u00b7 DATA CENTER \u00b7 COMPUTE \u00b7 NOT IN EITHER DOCUMENT",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Absence checked by a validator over the full press release (3 pages) and resolution (14 pages). 'AI' appears only inside AIDEA. Say 'neither document says', never 'AIDEA denies'. This is the film's key absence claim."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "The resolution admits the economic studies it cites cover the Nordic and European context, not Alaska.",
+   "on_screen": "NORDIC AND EUROPEAN NOT ALASKA",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/102126/Signed_Resolution_G26-11_Fiber_Development_10212026.pdf",
+   "requires": [
+    "Resolution p5: 'those analyses address the Nordic and European context and have not quantified impacts specific to Alaska'."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

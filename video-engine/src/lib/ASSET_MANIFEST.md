@@ -1001,3 +1001,15 @@ For any story about a paper trail, a deal or an announcement whose terms are sta
 - `NuSunOutline` NET-NEW 2026-10-29, a reactor as a dashed ice-cyan OUTLINE with no fill and no shadow (`k` draws it on, `label`); `variant="oklo"` is the stated version, an ink dashed outline with a paper hatch. ACTIVE.
 - `Crate`, `Chip`, `Calendar` (`cross` draws crossings one at a time), `MergerJar`, `CoinStream`, `PaperDoc`, `Sled`, `PoleLight` (`on`), `Mailroom` (cold cork-board wall), `CountBox` NET-NEW 2026-10-29, small props, ACTIVE.
 - Episode-local in Ep1029.tsx, candidates for promotion: `Shed` (interior wall), `Lamp`, `StampMark`, `SmallTag`, `Certificate`, `TagBackTerms`, `CondChips`, `Lab`.
+
+# Chart-room family (2026-10-31, "A Ceiling Is Not a Cable") — `lib/fiber.tsx`
+
+- `Pip` — `fiber.tsx` — ACTIVE. A faced brass question token (scalloped silhouette, eyes, brows, blink, squash, emotions curious/puzzled/wry/thoughtful/determined/hopeful/reading), a faced cousin of the shelf `QuestionToken` drawn fresh so the shelf token is untouched. Its engraving is a separate `PipBand` plate under it so long strings stay legible.
+- `PipBand` — `fiber.tsx` — the engraving plate for Pip, sized to its string by arithmetic.
+- `ChartBG` — `fiber.tsx` — cream chart paper with ruled border, graticule and compass rose, optional cobalt sea band.
+- `CableRun` — `fiber.tsx` — an ink-keylined cream cable along any path with `draw` 0..1, a travelling pulse and a dashed graphite mode for the undecided.
+- `Gauge` — `fiber.tsx` — a brass tide gauge with a painted ceiling label at the top and water at zero.
+- `Chronometer` — `fiber.tsx` — a lidded brass ship's chronometer with a vermilion tab; `lid` 0..1 opens it onto a date.
+- `ScalePans` — `fiber.tsx` — a brass two-pan scale on a stage with `tilt` -1..1, children for each pan and optional pan labels.
+- `Keyhole`, `Postcard`, `Phone`, `Sign`, `Doc`, `Magnifier`, `DeskNear`, `Pin`, `AlaskaShape` (wraps `AK_PATH`), `WestCoast` — `fiber.tsx` — chart-room props. `DeskNear` is the lower-third near plane of rolled chart edges, pencil and ruler.
+- Episode-local in `Ep1031.tsx`, candidates for promotion: `PencilLine`, `Chart`, `SeaWindow`, `Hat`, `WordTag`, `Stage`, `Lab`, `Plate`.

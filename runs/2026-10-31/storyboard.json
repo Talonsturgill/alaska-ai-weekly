@@ -1,0 +1,2014 @@
+{
+  "run_date": "2026-10-31",
+  "slug": "a-ceiling-is-not-a-cable",
+  "title": "A Ceiling Is Not a Cable",
+  "concept": "On October 21st the board of AIDEA, Alaska's state development authority, voted for a new wholly owned company, Northstar Fiber Development LLC, that can put up to $75 million into subsea and land fiber. Alaska reaches the Lower 48 on four undersea cables (three land in Oregon, one in Washington) and one land route, two of the cables from 1999 against a typical design life of about 25 years per AIDEA, and no cable connects Alaska directly to Asia. The resolution lists a link to the Pacific coast first, Asia third as explore and collaborate, requires capacity to land in Alaska, picks no project, partner or route, requires a finance plan and binding customer commitments before any binding commitment, and ends the authority on December 31st, 2028. Neither AIDEA document says AI, data center or compute, so the AI link is Alaska.Ai's own framing, and the economic studies the resolution cites are Nordic and European. Pip, a faced brass question token, travels in every shot. The film grants the guardrails and the documented need, narrows the claim to a starting gun and ends where it began.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 121.3,
+  "fingerprint": {
+    "pov": "top-down-map",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "single-organic-hero",
+    "layout": "map-territory",
+    "register": "chart-room-paper",
+    "palette": "cream chart paper, graphite pencil and a cobalt sea cutaway with a brass question token and vermilion on the locks and clock",
+    "camera_strategy": "pullback-reveal",
+    "light_story": "midday chart-room window key drifting to a late warm rake",
+    "metaphor": "a brass question token travelling a cable, a two-pan scale that sinks and re-levels, a dashed port with two locks and a clock"
+  },
+  "palette": "cream chart paper, graphite pencil and a cobalt sea cutaway with a brass question token and vermilion on the locks and clock",
+  "divergence_note": "The last five films were an aubergine dusk depot (10-29), a green-black sonar abyss (10-28), a sage civic hall (10-26), a teal fog boardwalk (10-25) and a navy orbit (10-24). This film is daylight on cream chart paper with graphite pencil lines and a cobalt sea shown only as a cutaway. Its hero is a faced brass question token, its stage is a chart desk and a brass scale, and it has no night sky, no hall, no depot, no boardwalk and no orbit. The look is a map being drawn, the throughline is a graphite pencil line that never reaches its end, and the signature object is a labelled scale that walks to level one weight at a time.",
+  "treatment": {
+    "winner": "Explainer spine (a travelling question rides the cables, the Two-Pan Scale test, two locks loop, Asia wall loop)",
+    "judge_reasoning": "All four lenses converged on one spine. The Explainer's pitch was chosen for its three scale reveals, its Test staged as a scale with a pan that sinks and re-levels (so the fair case against the film is drawn at full strength), and its two loops 18s apart. Grafts: the Dramatist's cul-de-sac sign gag and binder-that-does-not-fit gag (Nordic coastline), the Comedian's 1999 birthday-hat gag and magnifier that finds AI only inside AIDEA, the Enthusiast's postcards-of-interest sliding off the keyhole. Rejected: a net-new SPOOL hero (cost, and a second faced object competes with the traveller), the sea otter runner, the BEAD lower third (c19/c20 cut as last-mile and blurring Northstar's ceiling).",
+    "hero": "Pip, a faced brass question token (lib/fiber.tsx), a faced cousin of the shelf QuestionToken drawn fresh",
+    "throughline": "Pip's engraving: ? / VIA LOWER 48 / UP TO $75M / WHO SIGNS? / ?",
+    "signature_shot": "Shot 10 (88.06 to 98.42 s) as one continuous move: the labelled scale rolls in, the binder sinks THE DOUBTS pan, then one weight per beat (the gauge plate at 'ceiling', the locks and the landing stamp at 'rule', the 1999 tag at 'cables') walk the needle to level with Pip riding it. Camera: a short truckAcross that resolves into a lock at zoom 1.0 from the first weight to the end of the shot.",
+    "loops": "Asia wall planted 14s, paid by the Asia third line; the date planted in the ceiling line, paid by the 2028 clock"
+  },
+  "angle": {
+    "thesis": "A ceiling is not a cable. Every Alaskan connection to the wider world, a chatbot question included, leaves on four aging undersea cables that land in Oregon and Washington, and AIDEA's new Northstar Fiber Development is a well-guarded option to add a door, whose test is whether bound customers sign before December 31st, 2028.",
+    "supporting_facts": [
+      "c5/c6/c7/c8 four subsea cables plus one land route, three land in Oregon and one in Washington, two from 1999 against a typical 25 year design life per AIDEA",
+      "c9/c10/c12 AIDEA's own digital cul-de-sac line, no cable direct to Asia, Asia third and only explore and collaborate",
+      "c14/c15/c16 no project, partner or route, binding customer commitments required, authority ends December 31st, 2028"
+    ],
+    "counterpoint_honored": "Conditions, a ceiling and a landing rule are how careful public money should look, and the need is documented (c3, c13, c8). The film grants all of it, then narrows the claim: the economics AIDEA cites are Nordic and European (c18), and neither document says AI (c17), so the AI link is Alaska.Ai's own framing.",
+    "falsifiable": "False if the authority reaches December 31st, 2028 with no finance plan and no binding customer commitment ever being needed, or if any Alaska cable reached Asia directly or the four landed anywhere but the Pacific Northwest.",
+    "valence": "curious and even-handed, leaning constructive",
+    "stance": "curious",
+    "runner_ups": [
+      "Enthusiast: a door built before choosing where it leads (loses: cheerleading with no route)",
+      "Dramatist: a permission slip, not a cable (loses: right facts, sour frame)"
+    ],
+    "cross_challenge": "Three analysts each red-teamed their own thesis against c14, c15 and c18, and the synthesis adopts the stricter falsifier. No separate cross-challenge round ran."
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A brass question token with eyes pops out of a phone on a cream chart desk and tumbles across the paper while a chip names the framing.",
+    "headline": "WHERE DOES THE QUESTION GO",
+    "motion_by_s": 0.3,
+    "loopback": "Pip pops out of the phone on the chart desk exactly as in the opening and dives onto the same hatted 1999 strands."
+  },
+  "open_loop": {
+    "plant_t": 12.41,
+    "pay_t": 97.33,
+    "what": "Why does the question bonk a glass wall to the west? Planted when Pip rolls west across the empty Pacific, paid when a dotted graphite line draws itself through the glass to an ASIA strip, third on the list as explore and collaborate."
+  },
+  "open_loop_2": {
+    "plant_t": 47.81,
+    "pay_t": 108.77,
+    "what": "What is the one date? Planted when a closed brass chronometer with a vermilion tab sets itself on the chart edge, paid when its lid opens on December 31st, 2028."
+  },
+  "throughline": {
+    "object": "Pip, the brass question token",
+    "lands_in_button": "Pip pops out of the phone again and dives onto the same hatted 1999 strands, engraved with a question mark as in the opening",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "engraved ? and bright brass, popping out of the phone"
+      },
+      {
+        "at_s": 30.31,
+        "state": "engraved VIA LOWER 48 after the cul-de-sac lap"
+      },
+      {
+        "at_s": 45.45,
+        "state": "engraved UP TO $75M after bonking the painted ceiling line on the tide gauge"
+      },
+      {
+        "at_s": 84.2,
+        "state": "the needle of the scale, engraved WHICH WAY?"
+      },
+      {
+        "at_s": 101.78,
+        "state": "beside the two keyholes, engraved WHO SIGNS?"
+      },
+      {
+        "at_s": 119.59,
+        "state": "engraved ? again, popping out of the phone onto the same 1999 strands"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 4.68,
+      "type": "scale-pullback",
+      "what": "the camera pulls back from one cable to the whole North Pacific chart with four strands",
+      "hold_s": 0.8
+    },
+    {
+      "t": 45.45,
+      "type": "scale-pullback",
+      "what": "Pip at the painted ceiling line of the gauge to the whole gauge with the water still at zero",
+      "hold_s": 0.8
+    },
+    {
+      "t": 95.6,
+      "type": "scale-pullback",
+      "what": "from the scale beam up to the whole North Pacific chart where the glass wall rings",
+      "hold_s": 0.8
+    },
+    {
+      "t": 108.77,
+      "type": "scale-pullback",
+      "what": "from the opening chronometer out to the whole chart with four inked strands and the unfinished pencil line",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 0,
+        "offset": 3.0,
+        "level": 1.0
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 0.95
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.15
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.16
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.95
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.14
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 1.05
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.16
+      },
+      {
+        "at_s": 108.47,
+        "level": 0.1
+      },
+      {
+        "at_s": 109.57,
+        "level": 0.6
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.55
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 108.47,
+    "riser_at": 113.56,
+    "silence_at": 108.47,
+    "payoff_at": 108.77,
+    "button_pattern": "callback",
+    "interrupt_at": 62.64,
+    "extra_dips": [
+      84.2
+    ]
+  },
+  "shots": [
+    {
+      "title": "The send",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "chart-desk",
+      "pov": "top-down-map",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "Pip at x540 y1000",
+      "means": "A brass question token pops out of a phone on a chart desk, arcs into a cut-away sea and rides a glowing cable.",
+      "ambient": "the phone glows, paper edges lift, a pulse travels the cable",
+      "hero": {
+        "name": "Pip + phone + cut-away sea + cable",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "35% Pip, 25% phone, 25% sea window, 15% cable"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-4.680"
+    },
+    {
+      "title": "Four cables",
+      "vo_line": 1,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "north-pacific-chart",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the chart at x540 y1040",
+      "means": "A chart of the North Pacific where four cream strands draw on from Alaska to the Oregon and Washington coast and the token bonks a glass wall to the west.",
+      "ambient": "the pulse travels the strands, pins pulse, pencil shavings drift",
+      "hero": {
+        "name": "chart + four strands + pins + Pip",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% strands, 25% chart, 20% pins, 15% Pip"
+      },
+      "id": 2,
+      "start_s": 4.68,
+      "t": "4.680-13.900"
+    },
+    {
+      "title": "Nineteen ninety nine",
+      "vo_line": 2,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "seabed-cutaway",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hatted strands at x540 y1050",
+      "means": "Two strands on the seabed wear party hats, an AIDEA card lands and a cake with one candle reads about 25 years.",
+      "ambient": "caustic ripples cross the seabed, silt drifts, the hats wobble",
+      "hero": {
+        "name": "two hatted strands + cake + AIDEA card",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "40% strands, 25% hats, 20% cake, 15% Pip"
+      },
+      "id": 3,
+      "start_s": 13.9,
+      "t": "13.900-23.720"
+    },
+    {
+      "title": "The cul-de-sac",
+      "vo_line": 3,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "cul-de-sac-diorama",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the sign and the bulb at x540 y1250",
+      "means": "A graphite street sign reads A DIGITAL CUL-DE-SAC and the token loops the bulb and rolls west into the glass wall.",
+      "ambient": "the sign sways, road dust drifts, the glass glints",
+      "hero": {
+        "name": "graphite street sign + bulb road + Pip + glass",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "35% sign, 30% Pip, 20% road, 15% glass"
+      },
+      "id": 4,
+      "start_s": 23.72,
+      "t": "23.720-31.940"
+    },
+    {
+      "title": "The vote",
+      "vo_line": 4,
+      "framing": "alt-vantage",
+      "scale": "close",
+      "height": "low",
+      "stage": "chart-table",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the pencil tip at x610 y1250",
+      "means": "A gavel drops and a graphite pencil starts a line out from Alaska lettered NORTHSTAR FIBER DEVELOPMENT LLC with a bracket reading owned by AIDEA.",
+      "ambient": "the gavel's echo ring spreads, pencil shavings fall, dust in a shaft",
+      "hero": {
+        "name": "gavel + graphite pencil line + lettered nameplate",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "35% pencil line, 30% gavel, 20% nameplate, 15% Pip"
+      },
+      "id": 5,
+      "start_s": 31.94,
+      "t": "31.940-41.300"
+    },
+    {
+      "title": "The ceiling",
+      "vo_line": 5,
+      "framing": "data-panel",
+      "scale": "insert",
+      "height": "ground",
+      "stage": "sea-gauge",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the gauge at x400 y1000",
+      "means": "A brass tide gauge rises out of the sea cut-away with the water at zero under a painted ceiling line, and Pip bonks it softly.",
+      "ambient": "the gauge glints, water ripples at zero, the chronometer ticks",
+      "hero": {
+        "name": "tide gauge + Pip + chronometer + sea window",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% gauge, 25% Pip, 15% chronometer, 15% sea"
+      },
+      "id": 6,
+      "start_s": 41.3,
+      "t": "41.300-51.040"
+    },
+    {
+      "title": "What the list says",
+      "vo_line": 6,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "high",
+      "stage": "paper-list",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the list at x540 y1000",
+      "means": "A paper list unrolls with three ruled lines, a stamp pins a passing cable to the shore and three pencil cards erase the route.",
+      "ambient": "the list sways, the pencil taps, a cable twitches",
+      "hero": {
+        "name": "paper list + stamp + cable + pencil cards",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% list, 25% cards, 20% cable, 15% Pip"
+      },
+      "id": 7,
+      "start_s": 51.04,
+      "t": "51.040-62.640"
+    },
+    {
+      "title": "The case against us",
+      "vo_line": 7,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "chart-desk-docs",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the lens at x560 y1040",
+      "means": "A magnifier sweeps two documents on the chart desk and finds AI only inside the word AIDEA while three ghost words fall through the paper.",
+      "ambient": "the lens glints, the documents settle, pencil rings draw",
+      "hero": {
+        "name": "two documents + magnifier + ghost words + Pip",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% documents, 25% magnifier, 20% ghost words, 15% Pip"
+      },
+      "id": 8,
+      "start_s": 62.64,
+      "t": "62.640-76.220"
+    },
+    {
+      "title": "Borrowed numbers",
+      "vo_line": 8,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "high",
+      "stage": "chart-table-top",
+      "pov": "top-down-map",
+      "layout": "fullbleed-split",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the Alaska outline at x440 y1010",
+      "means": "A binder with Nordic flags is laid over an Alaska outline on a top-down chart table and its coastline does not fit.",
+      "ambient": "flags flutter, the binder swings, the pencil outline dashes crawl",
+      "hero": {
+        "name": "binder + Alaska outline",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "50% binder, 35% outline, 15% Pip"
+      },
+      "id": 9,
+      "start_s": 76.22,
+      "t": "76.220-84.200"
+    },
+    {
+      "title": "The fair case",
+      "vo_line": 9,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "stage-scale",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the needle at x540 y880",
+      "means": "A labelled brass scale takes the carried binder on the doubts pan and then the gauge plate, locks, landing stamp and 1999 tag on the case for pan until it levels.",
+      "ambient": "the chains creak, the pans sway, the needle trembles",
+      "hero": {
+        "name": "labelled scale + binder + gauge plate + locks + landing stamp + 1999 tag + Pip",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "45% scale, 25% weights, 15% Pip, 15% labels"
+      },
+      "id": 10,
+      "start_s": 84.2,
+      "t": "84.200-95.600"
+    },
+    {
+      "title": "Asia is third",
+      "vo_line": 10,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "north-pacific-chart-2",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the glass wall at x100 y1150",
+      "means": "The token rolls west to the glass wall and a graphite dotted line draws itself through it to an ASIA strip.",
+      "ambient": "the glass rings, the dots crawl, ruler shadow drifts",
+      "hero": {
+        "name": "chart + glass wall + dotted line + ASIA strip + Pip",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "35% chart, 25% glass, 25% dotted line, 15% Pip"
+      },
+      "id": 11,
+      "start_s": 95.6,
+      "t": "95.600-101.780"
+    },
+    {
+      "title": "Two locks",
+      "vo_line": 11,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "pencil-stub",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the pencil stub at x610 y1250",
+      "means": "Two keyholes at the stub of the pencil line, a postcard that slides off and a chronometer that opens on December 31st 2028.",
+      "ambient": "the keyholes glow, the postcard flutters, the chronometer ticks",
+      "hero": {
+        "name": "pencil stub + two keyholes + postcard + chronometer",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "35% keyholes, 25% stub, 20% chronometer, 20% postcard"
+      },
+      "id": 12,
+      "start_s": 101.78,
+      "t": "101.780-113.560"
+    },
+    {
+      "title": "The button",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "chart-desk",
+      "pov": "top-down-map",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the phone at x250 y1090",
+      "means": "A flag on the pencil stub, a blank signature line, and the token popping out of the phone again onto the same hatted 1999 strands.",
+      "ambient": "the phone glows, the flag flutters, the pulse streams",
+      "hero": {
+        "name": "phone + flag on pencil stub + signature line + Pip + hatted strands",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "30% phone, 25% Pip, 20% flag and line, 25% strands"
+      },
+      "id": 13,
+      "start_s": 113.56,
+      "t": "113.560-121.300"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Where does a chatbot question from Alaska go first?",
+      "phrase": "Where does a chatbot",
+      "shows": "a brass question token with eyes pops out of a phone screen on a cream chart desk and tumbles across the paper while a chip reads A CHATBOT QUESTION, ALASKA.AI'S FRAMING, its engraving band reads a question mark",
+      "sfx": "whoosh",
+      "means": "a chatbot question \u00b7 alaska.ai's framing",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "pops out of a phone screen on a chart desk and tumbles onto the paper, brass and wide-eyed",
+        "emotion": "curious",
+        "annotation": "A CHATBOT QUESTION \u00b7 ALASKA.AI'S FRAMING"
+      },
+      "choreo": {
+        "primary": "a brass question token with eyes pops out of a phone screen on a cream chart desk and tumbles across the paper while a chip reads A CHATBOT QUESTION, ALASKA.AI'S FRAMING, its engraving band reads a question mark",
+        "reaction": "the phone glows and the token wobbles",
+        "ambient": "the phone glows, paper edges lift, a pulse travels the cable"
+      },
+      "t": "0.000-0.910",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 0.91,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.91
+      },
+      "offset": 0.91,
+      "vo": "Where does a chatbot question from Alaska go first?",
+      "phrase": "chatbot question from Alaska",
+      "shows": "the token leaps off the desk in an arc toward a cut-away window of cobalt sea and drops through the surface with a splash",
+      "sfx": "pop",
+      "means": "out of alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "leaps off the desk edge in an arc toward a painted sea and drops through the surface with a splash",
+        "emotion": "curious",
+        "annotation": "OUT OF ALASKA"
+      },
+      "choreo": {
+        "primary": "the token leaps off the desk in an arc toward a cut-away window of cobalt sea and drops through the surface with a splash",
+        "reaction": "the splash rings",
+        "ambient": "the phone glows, paper edges lift, a pulse travels the cable"
+      },
+      "t": "0.910-3.410",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 3.41,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.41
+      },
+      "offset": 3.41,
+      "vo": "Where does a chatbot question from Alaska go first?",
+      "phrase": "first?",
+      "shows": "the token lands on a cream-coloured cable under the sea and zips along it leaving a pulse of light",
+      "sfx": "hum",
+      "means": "follow the cable",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "lands on a glowing cable in the deep and zips along it",
+        "emotion": "curious",
+        "annotation": "FOLLOW THE CABLE"
+      },
+      "choreo": {
+        "primary": "the token lands on a cream-coloured cable under the sea and zips along it leaving a pulse of light",
+        "reaction": "the pulse streams",
+        "ambient": "the phone glows, paper edges lift, a pulse travels the cable"
+      },
+      "t": "3.410-4.680",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 4.68,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Four undersea cables and one land route link Alaska to the Lower 48, three landing in Oregon and one in Washington.",
+      "phrase": "Four undersea cables and",
+      "shows": "the camera pulls back from the cable to a painted chart of the North Pacific where four cream strands with ink keylines draw on from Alaska, a plate reads 4 SUBSEA CABLES",
+      "sfx": "whoosh",
+      "means": "4 subsea cables",
+      "rehook": "rehook: the camera pulls back to the whole map",
+      "draw": {
+        "subject": "the chart",
+        "action": "pulls back from the cable to a map where four cream strands draw on from Alaska",
+        "emotion": "reading",
+        "annotation": "4 SUBSEA CABLES"
+      },
+      "choreo": {
+        "primary": "the camera pulls back from the cable to a painted chart of the North Pacific where four cream strands with ink keylines draw on from Alaska, a plate reads 4 SUBSEA CABLES",
+        "reaction": "the strands pulse",
+        "ambient": "the pulse travels the strands, pins pulse, pencil shavings drift"
+      },
+      "t": "4.680-6.870",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 6.87,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.19
+      },
+      "offset": 2.19,
+      "vo": "Four undersea cables and one land route link Alaska to the Lower 48, three landing in Oregon and one in Washington.",
+      "phrase": "land route link Alaska",
+      "shows": "a solid ink line in land colour draws itself across Canada north of the strands, a plate reads 1 LAND ROUTE, PER AIDEA",
+      "sfx": "tick",
+      "means": "1 land route \u00b7 per aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "an ink line",
+        "action": "draws itself north of the strands across Canada as the land route",
+        "emotion": "reading",
+        "annotation": "1 LAND ROUTE \u00b7 PER AIDEA"
+      },
+      "choreo": {
+        "primary": "a solid ink line in land colour draws itself across Canada north of the strands, a plate reads 1 LAND ROUTE, PER AIDEA",
+        "reaction": "the line settles",
+        "ambient": "the pulse travels the strands, pins pulse, pencil shavings drift"
+      },
+      "t": "6.870-10.950",
+      "key": 37
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 10.95,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 6.27
+      },
+      "offset": 6.27,
+      "vo": "Four undersea cables and one land route link Alaska to the Lower 48, three landing in Oregon and one in Washington.",
+      "phrase": "Oregon and one in",
+      "shows": "three pins pop onto the Oregon coast and one onto Washington, a plate reads 3 OREGON, 1 WASHINGTON",
+      "sfx": "ping",
+      "means": "3 oregon \u00b7 1 washington",
+      "rehook": "",
+      "draw": {
+        "subject": "three pins",
+        "action": "pop onto the Oregon coast and one onto Washington",
+        "emotion": "reading",
+        "annotation": "3 OREGON \u00b7 1 WASHINGTON"
+      },
+      "choreo": {
+        "primary": "three pins pop onto the Oregon coast and one onto Washington, a plate reads 3 OREGON, 1 WASHINGTON",
+        "reaction": "the pins pulse",
+        "ambient": "the pulse travels the strands, pins pulse, pencil shavings drift"
+      },
+      "t": "10.950-12.410",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 12.41,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 7.73
+      },
+      "offset": 7.73,
+      "vo": "Four undersea cables and one land route link Alaska to the Lower 48, three landing in Oregon and one in Washington.",
+      "phrase": "Washington.",
+      "shows": "the token rolls west across the empty Pacific and bonks into an invisible pane of glass that rings",
+      "sfx": "knock",
+      "means": "the glass to the west",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "rolls west across the empty Pacific and bonks into an invisible pane of glass",
+        "emotion": "puzzled",
+        "annotation": "THE GLASS TO THE WEST"
+      },
+      "choreo": {
+        "primary": "the token rolls west across the empty Pacific and bonks into an invisible pane of glass that rings",
+        "reaction": "the glass rings",
+        "ambient": "the pulse travels the strands, pins pulse, pencil shavings drift"
+      },
+      "kick": true,
+      "t": "12.410-13.900",
+      "key": 6
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 13.9,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Two went into service in nineteen ninety nine, and AIDEA, the state's development authority, puts a typical design life at about twenty five years.",
+      "phrase": "Two went into service",
+      "shows": "two of the four cream strands on the seabed wear paper party hats and hang tags reading ALASKA UNITED EAST 1999 and ALASKA COMMUNICATIONS 1999 while Pip slows as it passes",
+      "sfx": "page",
+      "means": "alaska united east 1999 \u00b7 alaska communications 1999",
+      "rehook": "",
+      "draw": {
+        "subject": "two old strands",
+        "action": "wear paper party hats under the sea as Pip rolls slowly past them",
+        "emotion": "wry",
+        "annotation": "ALASKA UNITED EAST 1999 \u00b7 ALASKA COMMUNICATIONS 1999"
+      },
+      "choreo": {
+        "primary": "two of the four cream strands on the seabed wear paper party hats and hang tags reading ALASKA UNITED EAST 1999 and ALASKA COMMUNICATIONS 1999 while Pip slows as it passes",
+        "reaction": "the hats wobble",
+        "ambient": "caustic ripples cross the seabed, silt drifts, the hats wobble"
+      },
+      "t": "13.900-16.830",
+      "key": 7
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 16.83,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "Two went into service in nineteen ninety nine, and AIDEA, the state's development authority, puts a typical design life at about twenty five years.",
+      "phrase": "AIDEA, the state's development",
+      "shows": "a plate drops in reading AIDEA, STATE DEVELOPMENT AUTHORITY",
+      "sfx": "thunk",
+      "means": "aidea \u00b7 state development authority",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate",
+        "action": "names AIDEA and drops its label in over the strands",
+        "emotion": "reading",
+        "annotation": "AIDEA \u00b7 STATE DEVELOPMENT AUTHORITY"
+      },
+      "choreo": {
+        "primary": "a plate drops in reading AIDEA, STATE DEVELOPMENT AUTHORITY",
+        "reaction": "the card settles",
+        "ambient": "caustic ripples cross the seabed, silt drifts, the hats wobble"
+      },
+      "t": "16.830-21.370",
+      "key": 8
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 21.37,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 7.47
+      },
+      "offset": 7.47,
+      "vo": "Two went into service in nineteen ninety nine, and AIDEA, the state's development authority, puts a typical design life at about twenty five years.",
+      "phrase": "about twenty five years.",
+      "shows": "a small cake with a sign reading TYPICAL DESIGN LIFE ABOUT 25 YEARS PER AIDEA and one steady candle",
+      "sfx": "clink",
+      "means": "typical design life \u00b7 about 25 years \u00b7 per aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "a birthday cake",
+        "action": "lights one steady candle on a card reading ABOUT 25 YEARS PER AIDEA",
+        "emotion": "wry",
+        "annotation": "TYPICAL DESIGN LIFE \u00b7 ABOUT 25 YEARS \u00b7 PER AIDEA"
+      },
+      "choreo": {
+        "primary": "a small cake with a sign reading TYPICAL DESIGN LIFE ABOUT 25 YEARS PER AIDEA and one steady candle",
+        "reaction": "the candle glows",
+        "ambient": "caustic ripples cross the seabed, silt drifts, the hats wobble"
+      },
+      "t": "21.370-23.720",
+      "key": 9
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 23.72,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "AIDEA calls Alaska a digital cul-de-sac, and no cable connects it directly to Asia. Hold that thought.",
+      "phrase": "AIDEA calls Alaska a",
+      "shows": "a graphite street sign rises out of the chart reading A DIGITAL CUL-DE-SAC, AIDEA",
+      "sfx": "thump",
+      "means": "\"a digital cul-de-sac\" \u00b7 aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "a street sign",
+        "action": "rises out of the desk reading A DIGITAL CUL-DE-SAC",
+        "emotion": "puzzled",
+        "annotation": "\"A DIGITAL CUL-DE-SAC\" \u00b7 AIDEA"
+      },
+      "choreo": {
+        "primary": "a graphite street sign rises out of the chart reading A DIGITAL CUL-DE-SAC, AIDEA",
+        "reaction": "the sign sways",
+        "ambient": "the sign sways, road dust drifts, the glass glints"
+      },
+      "t": "23.720-27.419",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 27.419,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.45,
+        "offset": 3.699
+      },
+      "offset": 3.699,
+      "vo": "AIDEA calls Alaska a digital cul-de-sac, and no cable connects it directly to Asia. Hold that thought.",
+      "phrase": "AIDEA calls Alaska a",
+      "shows": "the token loops the painted bulb under the cul-de-sac sign and rolls back out the way it came, a plate reads OUT THE WAY IT CAME",
+      "sfx": "roll",
+      "means": "out the way it came",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "loops the painted bulb under the sign and rolls out the way it came",
+        "emotion": "puzzled",
+        "annotation": "OUT THE WAY IT CAME"
+      },
+      "choreo": {
+        "primary": "the token loops the painted bulb under the cul-de-sac sign and rolls back out the way it came, a plate reads OUT THE WAY IT CAME",
+        "reaction": "the token wobbles",
+        "ambient": "the sign sways, road dust drifts, the glass glints"
+      },
+      "t": "27.419-27.930",
+      "key": 38
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 27.93,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.21
+      },
+      "offset": 4.21,
+      "vo": "AIDEA calls Alaska a digital cul-de-sac, and no cable connects it directly to Asia. Hold that thought.",
+      "phrase": "connects it directly to",
+      "shows": "the token rolls west again and the invisible glass wall lights up with a plate reading NO CABLE FROM ALASKA REACHES ASIA DIRECTLY, PER AIDEA",
+      "sfx": "whoosh",
+      "means": "no cable from alaska reaches asia directly \u00b7 per aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "rolls west again and the invisible glass wall lights up",
+        "emotion": "puzzled",
+        "annotation": "NO CABLE FROM ALASKA REACHES ASIA DIRECTLY \u00b7 PER AIDEA"
+      },
+      "choreo": {
+        "primary": "the token rolls west again and the invisible glass wall lights up with a plate reading NO CABLE FROM ALASKA REACHES ASIA DIRECTLY, PER AIDEA",
+        "reaction": "the glass glints",
+        "ambient": "the sign sways, road dust drifts, the glass glints"
+      },
+      "t": "27.930-30.310",
+      "key": 11
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 30.31,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.59
+      },
+      "offset": 6.59,
+      "vo": "AIDEA calls Alaska a digital cul-de-sac, and no cable connects it directly to Asia. Hold that thought.",
+      "phrase": "Hold that thought.",
+      "shows": "the token turns to camera and its engraving band clicks over to VIA LOWER 48, a plate reads HOLD THAT THOUGHT",
+      "sfx": "ratchet",
+      "means": "hold that thought",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "turns to camera and its engraving band clicks over to VIA LOWER 48",
+        "emotion": "thoughtful",
+        "annotation": "HOLD THAT THOUGHT"
+      },
+      "choreo": {
+        "primary": "the token turns to camera and its engraving band clicks over to VIA LOWER 48, a plate reads HOLD THAT THOUGHT",
+        "reaction": "the token wobbles",
+        "ambient": "the sign sways, road dust drifts, the glass glints"
+      },
+      "t": "30.310-31.940",
+      "key": 12
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 31.94,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On October twenty first, AIDEA's board voted for a new fiber company called Northstar Fiber Development, owned by AIDEA.",
+      "phrase": "On October twenty first,",
+      "shows": "a gavel drops on a block under a plate reading OCT 21ST, AIDEA BOARD, RESOLUTION G26-11 and a graphite pencil jumps up from the chart",
+      "sfx": "thunk",
+      "means": "oct 21st \u00b7 aidea board \u00b7 resolution g26-11",
+      "rehook": "rehook: the gavel lands and the pencil starts a line",
+      "draw": {
+        "subject": "a gavel",
+        "action": "drops on a block marked OCT 21ST and a pencil jumps up from the chart",
+        "emotion": "reading",
+        "annotation": "OCT 21ST \u00b7 AIDEA BOARD \u00b7 RESOLUTION G26-11"
+      },
+      "choreo": {
+        "primary": "a gavel drops on a block under a plate reading OCT 21ST, AIDEA BOARD, RESOLUTION G26-11 and a graphite pencil jumps up from the chart",
+        "reaction": "the block jumps",
+        "ambient": "the gavel's echo ring spreads, pencil shavings fall, dust in a shaft"
+      },
+      "t": "31.940-34.810",
+      "key": 13
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 34.81,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.87
+      },
+      "offset": 2.87,
+      "vo": "On October twenty first, AIDEA's board voted for a new fiber company called Northstar Fiber Development, owned by AIDEA.",
+      "phrase": "voted for a new",
+      "shows": "the graphite pencil rises off the chart and hovers over the Alaska coast as the gavel's echo ring spreads",
+      "sfx": "tap",
+      "means": "the board voted",
+      "rehook": "",
+      "draw": {
+        "subject": "the pencil",
+        "action": "rises off the chart and hovers over the Alaska coast",
+        "emotion": "reading",
+        "annotation": "THE BOARD VOTED"
+      },
+      "choreo": {
+        "primary": "the graphite pencil rises off the chart and hovers over the Alaska coast as the gavel's echo ring spreads",
+        "reaction": "the ring spreads",
+        "ambient": "the gavel's echo ring spreads, pencil shavings fall, dust in a shaft"
+      },
+      "t": "34.810-37.030",
+      "key": 48
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 37.03,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.09
+      },
+      "offset": 5.09,
+      "vo": "On October twenty first, AIDEA's board voted for a new fiber company called Northstar Fiber Development, owned by AIDEA.",
+      "phrase": "Northstar Fiber Development, owned",
+      "shows": "the graphite pencil draws a line out from Alaska across the chart and letters NORTHSTAR FIBER DEVELOPMENT LLC along it while Pip rolls toward its tip",
+      "sfx": "scratch",
+      "means": "northstar fiber development llc",
+      "rehook": "",
+      "draw": {
+        "subject": "a pencil",
+        "action": "draws a graphite line out from Alaska and letters a nameplate along it",
+        "emotion": "reading",
+        "annotation": "NORTHSTAR FIBER DEVELOPMENT LLC"
+      },
+      "choreo": {
+        "primary": "the graphite pencil draws a line out from Alaska across the chart and letters NORTHSTAR FIBER DEVELOPMENT LLC along it while Pip rolls toward its tip",
+        "reaction": "the pencil shavings fall",
+        "ambient": "the gavel's echo ring spreads, pencil shavings fall, dust in a shaft"
+      },
+      "t": "37.030-38.150",
+      "key": 14
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 38.15,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 6.21
+      },
+      "offset": 6.21,
+      "vo": "On October twenty first, AIDEA's board voted for a new fiber company called Northstar Fiber Development, owned by AIDEA.",
+      "phrase": "Development, owned by AIDEA.",
+      "shows": "a bracket snaps around the lettered nameplate on the pencil line, a plate reads OWNED BY AIDEA",
+      "sfx": "click",
+      "means": "owned by aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "a bracket",
+        "action": "snaps around the pencil's nameplate",
+        "emotion": "reading",
+        "annotation": "OWNED BY AIDEA"
+      },
+      "choreo": {
+        "primary": "a bracket snaps around the lettered nameplate on the pencil line, a plate reads OWNED BY AIDEA",
+        "reaction": "the bracket settles",
+        "ambient": "the gavel's echo ring spreads, pencil shavings fall, dust in a shaft"
+      },
+      "t": "38.150-41.300",
+      "key": 15
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 41.3,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "AIDEA can put up to seventy five million dollars into it. That's a ceiling, not a check, and one date sets how long the authority lasts.",
+      "phrase": "AIDEA can put up",
+      "shows": "a tall brass tide gauge rises out of a window of cobalt sea with a painted ceiling line at the top reading UP TO $75 MILLION and the water at zero",
+      "sfx": "swell",
+      "means": "up to $75 million",
+      "rehook": "",
+      "draw": {
+        "subject": "a tide gauge",
+        "action": "rises out of the sea cut-away with a painted ceiling line at the top",
+        "emotion": "reading",
+        "annotation": "UP TO $75 MILLION"
+      },
+      "choreo": {
+        "primary": "a tall brass tide gauge rises out of a window of cobalt sea with a painted ceiling line at the top reading UP TO $75 MILLION and the water at zero",
+        "reaction": "the gauge glints",
+        "ambient": "the gauge glints, water ripples at zero, the chronometer ticks"
+      },
+      "t": "41.300-45.450",
+      "key": 16
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 45.45,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.15
+      },
+      "offset": 4.15,
+      "vo": "AIDEA can put up to seventy five million dollars into it. That's a ceiling, not a check, and one date sets how long the authority lasts.",
+      "phrase": "ceiling, not a check,",
+      "shows": "the token floats up the gauge and bonks softly against the painted ceiling line, its engraving band reads UP TO $75M while the camera pulls back to show the water still at zero, a plate reads A CEILING, NOT A CHECK",
+      "sfx": "tick",
+      "means": "a ceiling \u00b7 not a check",
+      "rehook": "rehook: the camera pulls back to the empty gauge",
+      "draw": {
+        "subject": "Pip",
+        "action": "floats up the gauge, bonks softly at the painted line and its band flips to UP TO $75M while the camera pulls back",
+        "emotion": "wry",
+        "annotation": "A CEILING \u00b7 NOT A CHECK"
+      },
+      "choreo": {
+        "primary": "the token floats up the gauge and bonks softly against the painted ceiling line, its engraving band reads UP TO $75M while the camera pulls back to show the water still at zero, a plate reads A CEILING, NOT A CHECK",
+        "reaction": "the gauge sways",
+        "ambient": "the gauge glints, water ripples at zero, the chronometer ticks"
+      },
+      "t": "45.450-47.810",
+      "key": 17
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 47.81,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 6.51
+      },
+      "offset": 6.51,
+      "vo": "AIDEA can put up to seventy five million dollars into it. That's a ceiling, not a check, and one date sets how long the authority lasts.",
+      "phrase": "date sets how long",
+      "shows": "a closed brass chronometer lands on the chart edge with a vermilion tab, a plate reads ONE DATE",
+      "sfx": "knock",
+      "means": "one date",
+      "rehook": "",
+      "draw": {
+        "subject": "a chronometer",
+        "action": "lands on the chart edge with a thud, lid shut, a vermilion tab on its side",
+        "emotion": "thoughtful",
+        "annotation": "ONE DATE"
+      },
+      "choreo": {
+        "primary": "a closed brass chronometer lands on the chart edge with a vermilion tab, a plate reads ONE DATE",
+        "reaction": "the chronometer ticks",
+        "ambient": "the gauge glints, water ripples at zero, the chronometer ticks"
+      },
+      "t": "47.810-51.040",
+      "key": 18
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 51.04,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The resolution lists a link to the Pacific coast first, AIDEA says any capacity it buys must land in Alaska, and picks no project, partner or route.",
+      "phrase": "The resolution lists a",
+      "shows": "a paper list unrolls with three ruled lines and line one lights up reading 1 ALASKA TO THE PACIFIC COAST while lines two and three stay faint pencil ghosts",
+      "sfx": "page",
+      "means": "1 \u00b7 alaska to the pacific coast",
+      "rehook": "",
+      "draw": {
+        "subject": "a to-do list",
+        "action": "slides open across the desk with three ruled lines and line one lights up",
+        "emotion": "reading",
+        "annotation": "1 \u00b7 ALASKA TO THE PACIFIC COAST"
+      },
+      "choreo": {
+        "primary": "a paper list unrolls with three ruled lines and line one lights up reading 1 ALASKA TO THE PACIFIC COAST while lines two and three stay faint pencil ghosts",
+        "reaction": "the list sways",
+        "ambient": "the list sways, the pencil taps, a cable twitches"
+      },
+      "t": "51.040-53.170",
+      "key": 19
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 53.17,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.13
+      },
+      "offset": 2.13,
+      "vo": "The resolution lists a link to the Pacific coast first, AIDEA says any capacity it buys must land in Alaska, and picks no project, partner or route.",
+      "phrase": "Pacific coast first, AIDEA",
+      "shows": "a graphite pencil ticks the first line on the list, a plate reads PACIFIC COAST FIRST",
+      "sfx": "tick",
+      "means": "pacific coast first",
+      "rehook": "",
+      "draw": {
+        "subject": "a pencil",
+        "action": "drops onto line one and a tick mark lands beside it",
+        "emotion": "reading",
+        "annotation": "PACIFIC COAST FIRST"
+      },
+      "choreo": {
+        "primary": "a graphite pencil ticks the first line on the list, a plate reads PACIFIC COAST FIRST",
+        "reaction": "the pencil taps",
+        "ambient": "the list sways, the pencil taps, a cable twitches"
+      },
+      "t": "53.170-57.290",
+      "key": 39
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 57.29,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 6.25
+      },
+      "offset": 6.25,
+      "vo": "The resolution lists a link to the Pacific coast first, AIDEA says any capacity it buys must land in Alaska, and picks no project, partner or route.",
+      "phrase": "land in Alaska, and",
+      "shows": "a cable swooping past the shore is pinned to the beach by a stamp reading MUST LAND IN ALASKA",
+      "sfx": "stamp",
+      "means": "must land in alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "a stamp",
+        "action": "slams down and pins a passing cable to the Alaska shore",
+        "emotion": "reading",
+        "annotation": "MUST LAND IN ALASKA"
+      },
+      "choreo": {
+        "primary": "a cable swooping past the shore is pinned to the beach by a stamp reading MUST LAND IN ALASKA",
+        "reaction": "the cable twitches",
+        "ambient": "the list sways, the pencil taps, a cable twitches"
+      },
+      "t": "57.290-58.890",
+      "key": 20
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 58.89,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.85
+      },
+      "offset": 7.85,
+      "vo": "The resolution lists a link to the Pacific coast first, AIDEA says any capacity it buys must land in Alaska, and picks no project, partner or route.",
+      "phrase": "picks no project, partner",
+      "shows": "three pencil cards slide in reading NO PROJECT, NO PARTNER, NO ROUTE while the swooping cable lifts away while the three cards settle and Pip waits on blank paper",
+      "sfx": "fade",
+      "means": "no project \u00b7 no partner \u00b7 no route",
+      "rehook": "",
+      "draw": {
+        "subject": "three pencil cards",
+        "action": "slide in and the swooping cable lifts away",
+        "emotion": "reading",
+        "annotation": "NO PROJECT \u00b7 NO PARTNER \u00b7 NO ROUTE"
+      },
+      "choreo": {
+        "primary": "three pencil cards slide in reading NO PROJECT, NO PARTNER, NO ROUTE while the swooping cable lifts away while the three cards settle and Pip waits on blank paper",
+        "reaction": "the cards settle",
+        "ambient": "the list sways, the pencil taps, a cable twitches"
+      },
+      "t": "58.890-62.640",
+      "key": 21
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 62.64,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the case against our own spin. Neither AIDEA's release nor its resolution says artificial intelligence, data center or compute. The A I part is our framing.",
+      "phrase": "Here's the case against",
+      "shows": "two documents slide onto the chart desk under a brass magnifier while Pip peers over the edge, a plate reads THE CASE AGAINST OUR OWN SPIN",
+      "sfx": "page",
+      "means": "the case against our own spin",
+      "rehook": "rehook: the film turns on itself",
+      "draw": {
+        "subject": "two documents",
+        "action": "slide onto the chart desk under a magnifier",
+        "emotion": "wry",
+        "annotation": "THE CASE AGAINST OUR OWN SPIN"
+      },
+      "choreo": {
+        "primary": "two documents slide onto the chart desk under a brass magnifier while Pip peers over the edge, a plate reads THE CASE AGAINST OUR OWN SPIN",
+        "reaction": "the documents settle",
+        "ambient": "the lens glints, the documents settle, pencil rings draw"
+      },
+      "t": "62.640-67.270",
+      "key": 22
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 67.27,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.63
+      },
+      "offset": 4.63,
+      "vo": "Here's the case against our own spin. Neither AIDEA's release nor its resolution says artificial intelligence, data center or compute. The A I part is our framing.",
+      "phrase": "release nor its resolution",
+      "shows": "the magnifier sweeps the press release line by line",
+      "sfx": "scratch",
+      "means": "the press release",
+      "rehook": "",
+      "draw": {
+        "subject": "a magnifier",
+        "action": "sweeps the press release line by line",
+        "emotion": "wry",
+        "annotation": "THE PRESS RELEASE"
+      },
+      "choreo": {
+        "primary": "the magnifier sweeps the press release line by line",
+        "reaction": "the lens glints",
+        "ambient": "the lens glints, the documents settle, pencil rings draw"
+      },
+      "t": "67.270-69.190",
+      "key": 23
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 69.19,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 6.55
+      },
+      "offset": 6.55,
+      "vo": "Here's the case against our own spin. Neither AIDEA's release nor its resolution says artificial intelligence, data center or compute. The A I part is our framing.",
+      "phrase": "artificial intelligence, data center",
+      "shows": "the magnifier stops on the letters AI, which sit only inside the word AIDEA, and a pencil rings them",
+      "sfx": "ping",
+      "means": "\"ai\" only in the name aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "the magnifier",
+        "action": "stops on the letters AI and they are only inside the word AIDEA, ringed in pencil",
+        "emotion": "wry",
+        "annotation": "\"AI\" ONLY IN THE NAME AIDEA"
+      },
+      "choreo": {
+        "primary": "the magnifier stops on the letters AI, which sit only inside the word AIDEA, and a pencil rings them",
+        "reaction": "the ring draws",
+        "ambient": "the lens glints, the documents settle, pencil rings draw"
+      },
+      "kick": true,
+      "t": "69.190-71.950",
+      "key": 40
+    },
+    {
+      "id": 29,
+      "shot": 8,
+      "at_s": 71.95,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 9.31
+      },
+      "offset": 9.31,
+      "vo": "Here's the case against our own spin. Neither AIDEA's release nor its resolution says artificial intelligence, data center or compute. The A I part is our framing.",
+      "phrase": "compute. The A I",
+      "shows": "three ghost words AI, DATA CENTER and COMPUTE drawn in graphite fall straight through the paper, a plate reads AI, DATA CENTER, COMPUTE, NOT IN EITHER DOCUMENT",
+      "sfx": "thump",
+      "means": "ai \u00b7 data center \u00b7 compute \u00b7 not in either document",
+      "rehook": "",
+      "draw": {
+        "subject": "three ghost words",
+        "action": "fall through the paper because they weigh nothing",
+        "emotion": "wry",
+        "annotation": "AI \u00b7 DATA CENTER \u00b7 COMPUTE \u00b7 NOT IN EITHER DOCUMENT"
+      },
+      "choreo": {
+        "primary": "three ghost words AI, DATA CENTER and COMPUTE drawn in graphite fall straight through the paper, a plate reads AI, DATA CENTER, COMPUTE, NOT IN EITHER DOCUMENT",
+        "reaction": "the words fall",
+        "ambient": "the lens glints, the documents settle, pencil rings draw"
+      },
+      "t": "71.950-73.650",
+      "key": 41
+    },
+    {
+      "id": 30,
+      "shot": 8,
+      "at_s": 73.65,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 11.01
+      },
+      "offset": 11.01,
+      "vo": "Here's the case against our own spin. Neither AIDEA's release nor its resolution says artificial intelligence, data center or compute. The A I part is our framing.",
+      "phrase": "part is our framing.",
+      "shows": "a chip slides onto the AI word reading ALASKA.AI'S FRAMING",
+      "sfx": "bloop",
+      "means": "alaska.ai's framing",
+      "rehook": "",
+      "draw": {
+        "subject": "a chip",
+        "action": "slides onto the AI word",
+        "emotion": "reading",
+        "annotation": "ALASKA.AI'S FRAMING"
+      },
+      "choreo": {
+        "primary": "a chip slides onto the AI word reading ALASKA.AI'S FRAMING",
+        "reaction": "the chip settles",
+        "ambient": "the lens glints, the documents settle, pencil rings draw"
+      },
+      "t": "73.650-76.220",
+      "key": 24
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 76.22,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The resolution also admits the economic studies it cites cover the Nordic and European context, not Alaska.",
+      "phrase": "The resolution also admits",
+      "shows": "a blue binder is lowered onto a top-down chart table beside a pencilled Alaska outline, a plate reads STUDIES CITED",
+      "sfx": "slide",
+      "means": "studies cited",
+      "rehook": "",
+      "draw": {
+        "subject": "a binder",
+        "action": "is lowered onto a chart table beside an Alaska outline",
+        "emotion": "reading",
+        "annotation": "STUDIES CITED"
+      },
+      "choreo": {
+        "primary": "a blue binder is lowered onto a top-down chart table beside a pencilled Alaska outline, a plate reads STUDIES CITED",
+        "reaction": "the binder swings",
+        "ambient": "flags flutter, the binder swings, the pencil outline dashes crawl"
+      },
+      "t": "76.220-80.210",
+      "key": 25
+    },
+    {
+      "id": 32,
+      "shot": 9,
+      "at_s": 80.21,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.99
+      },
+      "offset": 3.99,
+      "vo": "The resolution also admits the economic studies it cites cover the Nordic and European context, not Alaska.",
+      "phrase": "Nordic and European context,",
+      "shows": "little Nordic and European flags pop up on the binder's spine",
+      "sfx": "page",
+      "means": "nordic and european",
+      "rehook": "",
+      "draw": {
+        "subject": "little flags",
+        "action": "pop up on the binder's spine",
+        "emotion": "reading",
+        "annotation": "NORDIC AND EUROPEAN"
+      },
+      "choreo": {
+        "primary": "little Nordic and European flags pop up on the binder's spine",
+        "reaction": "the flags flutter",
+        "ambient": "flags flutter, the binder swings, the pencil outline dashes crawl"
+      },
+      "t": "80.210-82.630",
+      "key": 42
+    },
+    {
+      "id": 33,
+      "shot": 9,
+      "at_s": 82.63,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 6.41
+      },
+      "offset": 6.41,
+      "vo": "The resolution also admits the economic studies it cites cover the Nordic and European context, not Alaska.",
+      "phrase": "Alaska.",
+      "shows": "the binder's fjord coastline is laid over the Alaska outline and does not fit, a plate reads NORDIC AND EUROPEAN, NOT ALASKA",
+      "sfx": "crack",
+      "means": "nordic and european \u00b7 not alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "the binder",
+        "action": "is laid over the Alaska outline and its fjord coastline does not fit",
+        "emotion": "wry",
+        "annotation": "NORDIC AND EUROPEAN \u00b7 NOT ALASKA"
+      },
+      "choreo": {
+        "primary": "the binder's fjord coastline is laid over the Alaska outline and does not fit, a plate reads NORDIC AND EUROPEAN, NOT ALASKA",
+        "reaction": "the binder slides off",
+        "ambient": "flags flutter, the binder swings, the pencil outline dashes crawl"
+      },
+      "t": "82.630-84.200",
+      "key": 26
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 84.2,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Still, a ceiling, conditions and a landing rule are how careful public money should look, and AIDEA says the old cables are past their typical design life.",
+      "phrase": "Still, a ceiling, conditions",
+      "shows": "a brass two-pan scale rolls in with the left pan labelled THE DOUBTS and the right labelled THE CASE FOR, Pip as the needle engraved WHICH WAY?, and the carried binder drops on the left pan which sinks",
+      "sfx": "creak",
+      "means": "the doubts",
+      "rehook": "rehook: the scale rolls in",
+      "draw": {
+        "subject": "a brass scale",
+        "action": "rolls in with Pip as its needle and the binder drops on the left pan",
+        "emotion": "determined",
+        "annotation": "THE DOUBTS"
+      },
+      "choreo": {
+        "primary": "a brass two-pan scale rolls in with the left pan labelled THE DOUBTS and the right labelled THE CASE FOR, Pip as the needle engraved WHICH WAY?, and the carried binder drops on the left pan which sinks",
+        "reaction": "the pans sway",
+        "ambient": "the chains creak, the pans sway, the needle trembles"
+      },
+      "t": "84.200-85.570",
+      "key": 27
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 85.57,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.37
+      },
+      "offset": 1.37,
+      "vo": "Still, a ceiling, conditions and a landing rule are how careful public money should look, and AIDEA says the old cables are past their typical design life.",
+      "phrase": "ceiling, conditions and a",
+      "shows": "a small brass plate reading UP TO $75M lands on the right pan and the needle moves a third of the way",
+      "sfx": "clink",
+      "means": "ceiling",
+      "rehook": "",
+      "draw": {
+        "subject": "a gauge plate",
+        "action": "lands on the right pan and the needle moves a third of the way",
+        "emotion": "hopeful",
+        "annotation": "CEILING"
+      },
+      "choreo": {
+        "primary": "a small brass plate reading UP TO $75M lands on the right pan and the needle moves a third of the way",
+        "reaction": "the pan dips",
+        "ambient": "the chains creak, the pans sway, the needle trembles"
+      },
+      "t": "85.570-87.630",
+      "key": 43
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 87.63,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.43
+      },
+      "offset": 3.43,
+      "vo": "Still, a ceiling, conditions and a landing rule are how careful public money should look, and AIDEA says the old cables are past their typical design life.",
+      "phrase": "rule are how careful",
+      "shows": "a ring of small locks and then a MUST LAND stamp land on the right pan and the needle reaches level, a plate reads CONDITIONS, LANDING RULE",
+      "sfx": "stamp",
+      "means": "conditions \u00b7 landing rule",
+      "rehook": "",
+      "draw": {
+        "subject": "locks and a stamp",
+        "action": "a ring of locks then a MUST LAND stamp land on the right pan and the needle reaches level",
+        "emotion": "hopeful",
+        "annotation": "CONDITIONS \u00b7 LANDING RULE"
+      },
+      "choreo": {
+        "primary": "a ring of small locks and then a MUST LAND stamp land on the right pan and the needle reaches level, a plate reads CONDITIONS, LANDING RULE",
+        "reaction": "the scale levels",
+        "ambient": "the chains creak, the pans sway, the needle trembles"
+      },
+      "t": "87.630-92.070",
+      "key": 47
+    },
+    {
+      "id": 37,
+      "shot": 10,
+      "at_s": 92.07,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 7.87
+      },
+      "offset": 7.87,
+      "vo": "Still, a ceiling, conditions and a landing rule are how careful public money should look, and AIDEA says the old cables are past their typical design life.",
+      "phrase": "cables are past their",
+      "shows": "the barnacled 1999 tag lands last on the right pan and nudges the needle just past level, a plate reads PAST TYPICAL LIFE, PER AIDEA",
+      "sfx": "clink",
+      "means": "past typical life \u00b7 per aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "the 1999 tag",
+        "action": "lands last and nudges the needle just past level",
+        "emotion": "hopeful",
+        "annotation": "PAST TYPICAL LIFE \u00b7 PER AIDEA"
+      },
+      "choreo": {
+        "primary": "the barnacled 1999 tag lands last on the right pan and nudges the needle just past level, a plate reads PAST TYPICAL LIFE, PER AIDEA",
+        "reaction": "the tag glints",
+        "ambient": "the chains creak, the pans sway, the needle trembles"
+      },
+      "t": "92.070-95.600",
+      "key": 28
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "at_s": 95.6,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The resolution's list puts Asia third, with the words explore and collaborate.",
+      "phrase": "The resolution's list puts",
+      "shows": "Pip rolls off the beam toward the glass wall and the camera pulls up to the North Pacific chart where the glass rings",
+      "sfx": "whoosh",
+      "means": "the glass to the west",
+      "rehook": "rehook: the wall returns",
+      "draw": {
+        "subject": "Pip",
+        "action": "rolls west off the beam and the camera pulls up to the chart where the glass wall rings",
+        "emotion": "puzzled",
+        "annotation": "THE GLASS TO THE WEST"
+      },
+      "choreo": {
+        "primary": "Pip rolls off the beam toward the glass wall and the camera pulls up to the North Pacific chart where the glass rings",
+        "reaction": "the glass rings",
+        "ambient": "the glass rings, the dots crawl, ruler shadow drifts"
+      },
+      "t": "95.600-97.330",
+      "key": 29
+    },
+    {
+      "id": 39,
+      "shot": 11,
+      "at_s": 97.33,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.73
+      },
+      "offset": 1.73,
+      "vo": "The resolution's list puts Asia third, with the words explore and collaborate.",
+      "phrase": "third, with the words",
+      "shows": "a faint graphite dotted line draws itself through the glass to a strip of land labelled ASIA, a plate reads 3 ASIA, EXPLORE AND COLLABORATE",
+      "sfx": "pop",
+      "means": "3 \u00b7 asia \u00b7 \"explore and collaborate\"",
+      "rehook": "",
+      "draw": {
+        "subject": "a dotted line",
+        "action": "slides through the glass toward an ASIA strip and a dotted line follows",
+        "emotion": "reading",
+        "annotation": "3 \u00b7 ASIA \u00b7 \"EXPLORE AND COLLABORATE\""
+      },
+      "choreo": {
+        "primary": "a faint graphite dotted line draws itself through the glass to a strip of land labelled ASIA, a plate reads 3 ASIA, EXPLORE AND COLLABORATE",
+        "reaction": "the dots crawl",
+        "ambient": "the glass rings, the dots crawl, ruler shadow drifts"
+      },
+      "t": "97.330-101.780",
+      "key": 30
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 101.78,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Before any binding commitment it needs a finance plan and binding customer commitments, and that authority ends December thirty first, twenty twenty eight, unless the board extends it.",
+      "phrase": "Before any binding commitment",
+      "shows": "two keyholes light up at the stub of the pencil line, one reading FINANCE PLAN and one reading BINDING CUSTOMERS, Pip's band reads WHO SIGNS?",
+      "sfx": "click",
+      "means": "finance plan \u00b7 binding customer commitments",
+      "rehook": "",
+      "draw": {
+        "subject": "two keyholes",
+        "action": "slide in at the stub of the pencil line and light up",
+        "emotion": "reading",
+        "annotation": "FINANCE PLAN \u00b7 BINDING CUSTOMER COMMITMENTS"
+      },
+      "choreo": {
+        "primary": "two keyholes light up at the stub of the pencil line, one reading FINANCE PLAN and one reading BINDING CUSTOMERS, Pip's band reads WHO SIGNS?",
+        "reaction": "the keyholes glow",
+        "ambient": "the keyholes glow, the postcard flutters, the chronometer ticks"
+      },
+      "t": "101.780-105.610",
+      "key": 31
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 105.61,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.83
+      },
+      "offset": 3.83,
+      "vo": "Before any binding commitment it needs a finance plan and binding customer commitments, and that authority ends December thirty first, twenty twenty eight, unless the board extends it.",
+      "phrase": "binding customer commitments, and",
+      "shows": "a postcard stamped INTEREST jiggles in the second keyhole and slides off, a plate reads BINDING, NOT JUST INTEREST",
+      "sfx": "flutter",
+      "means": "binding \u00b7 not just interest",
+      "rehook": "",
+      "draw": {
+        "subject": "a postcard",
+        "action": "stamped INTEREST jiggles in the second keyhole and slides off",
+        "emotion": "wry",
+        "annotation": "BINDING \u00b7 NOT JUST INTEREST"
+      },
+      "choreo": {
+        "primary": "a postcard stamped INTEREST jiggles in the second keyhole and slides off, a plate reads BINDING, NOT JUST INTEREST",
+        "reaction": "the postcard flutters",
+        "ambient": "the keyholes glow, the postcard flutters, the chronometer ticks"
+      },
+      "t": "105.610-108.770",
+      "key": 32
+    },
+    {
+      "id": 42,
+      "shot": 12,
+      "at_s": 108.77,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.99
+      },
+      "offset": 6.99,
+      "vo": "Before any binding commitment it needs a finance plan and binding customer commitments, and that authority ends December thirty first, twenty twenty eight, unless the board extends it.",
+      "phrase": "December thirty first, twenty",
+      "shows": "the chronometer in the corner opens its lid on DEC 31ST 2028 while the camera pulls back to the whole chart with four inked strands and the unfinished pencil line, a plate reads AUTHORITY ENDS DEC 31ST, 2028",
+      "sfx": "bell",
+      "means": "authority ends dec 31st, 2028",
+      "rehook": "rehook: the chronometer opens and the camera pulls back",
+      "draw": {
+        "subject": "the chronometer",
+        "action": "opens its lid on the date as the camera pulls back to the whole chart",
+        "emotion": "determined",
+        "annotation": "AUTHORITY ENDS DEC 31ST, 2028"
+      },
+      "choreo": {
+        "primary": "the chronometer in the corner opens its lid on DEC 31ST 2028 while the camera pulls back to the whole chart with four inked strands and the unfinished pencil line, a plate reads AUTHORITY ENDS DEC 31ST, 2028",
+        "reaction": "the chronometer ticks",
+        "ambient": "the keyholes glow, the postcard flutters, the chronometer ticks"
+      },
+      "kick": true,
+      "t": "108.770-113.560",
+      "key": 33
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "at_s": 113.56,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the vote is a starting gun, not a finish line. Until somebody signs, Alaska's traffic leaves on the same cables.",
+      "phrase": "So the vote is",
+      "shows": "a small flag plants itself on the stub of the pencil line, a plate reads A STARTING GUN, NOT A FINISH LINE",
+      "sfx": "thunk",
+      "means": "a starting gun \u00b7 not a finish line",
+      "rehook": "",
+      "draw": {
+        "subject": "a starting flag",
+        "action": "plants itself on the stub of the pencil line",
+        "emotion": "thoughtful",
+        "annotation": "A STARTING GUN \u00b7 NOT A FINISH LINE"
+      },
+      "choreo": {
+        "primary": "a small flag plants itself on the stub of the pencil line, a plate reads A STARTING GUN, NOT A FINISH LINE",
+        "reaction": "the flag flutters",
+        "ambient": "the phone glows, the flag flutters, the pulse streams"
+      },
+      "t": "113.560-117.270",
+      "key": 34
+    },
+    {
+      "id": 44,
+      "shot": 13,
+      "at_s": 117.27,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.71
+      },
+      "offset": 3.71,
+      "vo": "So the vote is a starting gun, not a finish line. Until somebody signs, Alaska's traffic leaves on the same cables.",
+      "phrase": "Until somebody signs, Alaska's",
+      "shows": "a blank signature line labelled BINDING CUSTOMER COMMITMENT waits with a pen hovering over it",
+      "sfx": "ping",
+      "means": "binding customer commitment",
+      "rehook": "",
+      "draw": {
+        "subject": "a signature line",
+        "action": "waits blank with a pen hovering over it",
+        "emotion": "thoughtful",
+        "annotation": "BINDING CUSTOMER COMMITMENT"
+      },
+      "choreo": {
+        "primary": "a blank signature line labelled BINDING CUSTOMER COMMITMENT waits with a pen hovering over it",
+        "reaction": "the pen hovers",
+        "ambient": "the phone glows, the flag flutters, the pulse streams"
+      },
+      "t": "117.270-119.590",
+      "key": 45
+    },
+    {
+      "id": 45,
+      "shot": 13,
+      "at_s": 119.59,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 6.03
+      },
+      "offset": 6.03,
+      "vo": "So the vote is a starting gun, not a finish line. Until somebody signs, Alaska's traffic leaves on the same cables.",
+      "phrase": "traffic leaves on the",
+      "shows": "the token pops out of the phone on the desk exactly as in the opening, a plate reads ALASKA'S TRAFFIC LEAVES ON THE SAME CABLES",
+      "sfx": "whirr",
+      "means": "alaska's traffic leaves on the same cables",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "pops out of the phone exactly as in the opening",
+        "emotion": "curious",
+        "annotation": "ALASKA'S TRAFFIC LEAVES ON THE SAME CABLES"
+      },
+      "choreo": {
+        "primary": "the token pops out of the phone on the desk exactly as in the opening, a plate reads ALASKA'S TRAFFIC LEAVES ON THE SAME CABLES",
+        "reaction": "the phone glows",
+        "ambient": "the phone glows, the flag flutters, the pulse streams"
+      },
+      "t": "119.590-120.870",
+      "key": 35
+    },
+    {
+      "id": 46,
+      "shot": 13,
+      "at_s": 120.87,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 7.31
+      },
+      "offset": 7.31,
+      "vo": "So the vote is a starting gun, not a finish line. Until somebody signs, Alaska's traffic leaves on the same cables.",
+      "phrase": "cables.",
+      "shows": "the token dives onto the same two hatted 1999 strands with the pencil line still unfinished behind it",
+      "sfx": "splash",
+      "means": "the same cables",
+      "rehook": "",
+      "draw": {
+        "subject": "Pip",
+        "action": "dives onto the same hatted 1999 strands",
+        "emotion": "curious",
+        "annotation": "THE SAME CABLES"
+      },
+      "choreo": {
+        "primary": "the token dives onto the same two hatted 1999 strands with the pencil line still unfinished behind it",
+        "reaction": "the pulse streams",
+        "ambient": "the phone glows, the flag flutters, the pulse streams"
+      },
+      "t": "120.870-121.300",
+      "key": 36
+    }
+  ]
+}
