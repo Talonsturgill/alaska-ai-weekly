@@ -6,7 +6,7 @@ import {AK_PATH} from './akmap';
 // clock and the date. Undecided things are ALWAYS dashed graphite and never filled.
 
 export const FIB = {
-  paper: '#F1E7CB', paper2: '#FBF5E1', land: '#C9B27A', landD: '#A8915A', sea: '#2B4C9B', seaLt: '#5C84CC', deep: '#1E3C82',
+  paper: '#F1E7CB', paper2: '#FBF5E1', land: '#C9B27A', landD: '#A8915A', sea: '#1F5F7A', seaLt: '#58A0B5', deep: '#123C52',
   brass: '#B8963A', brassL: '#E0C46A', brassD: '#6F5A1E', verm: '#E0502A', ink: '#2B2824', pencil: '#6B7280', green: '#6B7280', wood: '#A8743F', woodD: '#7A4F25', cream: '#FBF5E1',
 };
 const MONO = "'JetBrains Mono', ui-monospace, monospace";

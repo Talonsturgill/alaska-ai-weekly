@@ -110,7 +110,7 @@ const Frame: React.FC<{p: SP; cam?: (f: number) => Cam; z0?: number; z1?: number
           </g>
         </svg>
       )}
-      <GradeLayer f={p.f} bloom={bloom} vignette={vignette} grain={0.04} warmth={warmth} />
+      <GradeLayer f={p.f} bloom={bloom + 0.03} vignette={vignette + 0.08} grain={0.07} warmth={warmth} />
     </AbsoluteFill>
   );
 };
@@ -228,6 +228,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   let px = lerp(250, 540, popK), py = lerp(1000, 1180, popK) - 140 * Math.sin(Math.min(1, popK) * Math.PI);
   if (f >= t2) { px = lerp(540, 620, leap); py = lerp(1180, 1190, leap) - 260 * Math.sin(leap * Math.PI); }
   if (f >= t3) { px = lerp(160, 940, along); py = 1190 + 20 * Math.sin(along * 7); }
+  const blast = clamp01((f - (t1 + 3)) / 18);
   const cam = track([{t: 0, z: 1.25, fx: 380, fy: 1080}, {t: Math.max(40, t2), z: 1.1, fx: 540, fy: 1160}, {t: p.dur, z: 1.0, fx: 540, fy: 1100}]);
   return (
     <Frame p={p} cam={cam}
@@ -241,6 +242,12 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Phone x={250} y={1010} s={1.35} f={f} glow={f < t2 ? 1 : 0.3} />
         <SeaWindow f={f} x={60} y={1040} w={960} h={270} k={sea} id="s1" />
         {sea > 0.3 && <CableRun id="s1c" d="M 70,1200 C 300,1170 500,1240 720,1200 S 960,1180 1010,1220" f={f} draw={ease(f, t2 + 6, 30)} w={16} />}
+        {blast > 0 && blast < 1 && (
+          <g>
+            <circle cx={250} cy={1000} r={40 + 330 * blast} fill="none" stroke={FIB.brassL} strokeWidth={22 * (1 - blast) + 2} opacity={1 - blast * 0.8} />
+            <circle cx={250} cy={1000} r={20 + 180 * blast} fill="#fff" opacity={0.5 * (1 - blast)} />
+          </g>
+        )}
         <Pip x={px} y={py} s={lerp(0.75, 1.25, popK)} rot={f >= t3 ? 8 : 24 * (1 - popK)} f={f} emotion="curious" squash={bump(f, t2 + 26, 10) * 0.8} glow={f >= t3 ? 0.8 : 0} look={0.6} />
         {f > t1 + 40 && f < t2 + 10 && <PipBand x={px} y={py + 118} text="?" s={0.9} p={ease(f, t1 + 40, 10)} />}
         <DeskNear f={f} seed={1} />
@@ -335,11 +342,11 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const ang = lap * Math.PI * 2 + Math.PI / 2;
   const onRoad = f >= t10 + 26 && f < t10 + 100;
   const roll = easeIO(f, t11 - 6, 44);
-  let px = 780, py = 1330;
-  if (f >= t10 && f < t10 + 26) { px = lerp(780, 540 + 250, ease(f, t10 + 6, 20)); py = 1340; }
-  if (onRoad) { px = 540 + 250 * Math.cos(ang); py = 1300 + 70 * Math.sin(ang); }
-  if (f >= t10 + 100 && f < t11 - 6) { px = lerp(790, 700, ease(f, t10 + 100, 20)); py = 1330; }
-  if (f >= t11 - 6) { px = lerp(700, 150, roll); py = 1330; }
+  let px = 780, py = 1250;
+  if (f >= t10 && f < t10 + 26) { px = lerp(780, 540 + 250, ease(f, t10 + 6, 20)); py = 1260; }
+  if (onRoad) { px = 540 + 250 * Math.cos(ang); py = 1220 + 70 * Math.sin(ang); }
+  if (f >= t10 + 100 && f < t11 - 6) { px = lerp(790, 700, ease(f, t10 + 100, 20)); py = 1250; }
+  if (f >= t11 - 6) { px = lerp(700, 150, roll); py = 1250; }
   const bonk = bump(f, t11 + 36, 14);
   const flipK = ease(f, t12, 12);
   const cam = track([{t: 0, z: 1.15, fx: 560, fy: 1050}, {t: p.dur, z: 1.0, fx: 540, fy: 1000}]);
@@ -347,18 +354,18 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam}
       overlay={<>
         {/* plate-overlap-ok */}<Plate x={540} text={'"A DIGITAL CUL-DE-SAC" · AIDEA'} y={520} size={34} tone="paper" p={ease(f, t10 + 14, 8) * (1 - ease(f, t10 + 100, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} displayLines={['NO CABLE FROM ALASKA', 'REACHES ASIA DIRECTLY', 'PER AIDEA']} text="NO CABLE FROM ALASKA REACHES ASIA DIRECTLY PER AIDEA" y={700} size={32} tone="verm" p={ease(f, t11 + 6, 8) * (1 - ease(f, t12 - 6, 6))} />
-        {/* plate-overlap-ok */}<Plate x={540} text="HOLD THAT THOUGHT" y={780} size={34} tone="gold" p={ease(f, t12, 8)} />
+        {/* plate-overlap-ok */}<Plate x={540} displayLines={['NO CABLE FROM ALASKA', 'REACHES ASIA DIRECTLY', 'PER AIDEA']} text="NO CABLE FROM ALASKA REACHES ASIA DIRECTLY PER AIDEA" y={600} size={32} tone="verm" p={ease(f, t11 + 6, 8) * (1 - ease(f, t12 - 6, 6))} />
+        {/* plate-overlap-ok */}<Plate x={540} text="HOLD THAT THOUGHT" y={700} size={34} tone="gold" p={ease(f, t12, 8)} />
       </>}>
       <SVG>
         <ChartBG f={f + p.from} id="s4" />
         <g data-band="ok">
-          <ellipse cx={540} cy={1330} rx={330} ry={96} fill="#5B6376" stroke={FIB.ink} strokeWidth={8} />
-          <ellipse cx={540} cy={1330} rx={150} ry={36} fill={FIB.paper} stroke={FIB.ink} strokeWidth={6} />
-          <rect data-band="ok" x={640} y={1288} width={540} height={92} fill="#5B6376" stroke={FIB.ink} strokeWidth={7} />
-          <path d="M650,1334 L1100,1334" stroke={FIB.paper2} strokeWidth={5} strokeDasharray="30 22" />
+          <ellipse cx={540} cy={1250} rx={330} ry={96} fill="#5B6376" stroke={FIB.ink} strokeWidth={8} />
+          <ellipse cx={540} cy={1250} rx={150} ry={36} fill={FIB.paper} stroke={FIB.ink} strokeWidth={6} />
+          <rect data-band="ok" x={640} y={1208} width={540} height={92} fill="#5B6376" stroke={FIB.ink} strokeWidth={7} />
+          <path d="M650,1254 L1100,1254" stroke={FIB.paper2} strokeWidth={5} strokeDasharray="30 22" />
         </g>
-        <Sign x={300} y={1220} text="A DIGITAL CUL-DE-SAC" sub="AIDEA" f={f} rise={rise} s={0.9} w={560} />
+        <Sign x={300} y={1140} text="A DIGITAL CUL-DE-SAC" sub="AIDEA" f={f} rise={rise} s={0.9} w={560} />
         <g opacity={ease(f, t11 + 6, 14)}>
           <rect x={64} y={880} width={26} height={430} rx={6} fill="#fff" opacity={0.25 + 0.2 * bonk} stroke={FIB.sea} strokeWidth={4} />
         </g>
@@ -618,10 +625,10 @@ const S10: React.FC<SceneProps> = ({p}) => {
   );
   const right = (
     <g>
-      <g transform={`translate(-30 ${-40 - (1 - w1) * 240})`} opacity={clamp01(w1 * 2)}><WordTag text="UP TO $75M" x={0} y={0} s={1.2} /></g>
-      {[0, 1, 2].map((i) => <g key={i} transform={`translate(${-96 + i * 62} ${-78 - 30 * i % 2 - (1 - w2) * 260})`} opacity={clamp01(w2 * 2)}><rect x={-20} y={-8} width={40} height={30} rx={5} fill={FIB.verm} stroke={FIB.ink} strokeWidth={4} /><path d="M-11,-8 Q-11,-30 0,-30 Q11,-30 11,-8" fill="none" stroke={FIB.ink} strokeWidth={5} /></g>)}
-      <g transform={`translate(70 ${-80 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><WordTag text="MUST LAND" x={0} y={0} s={1.1} /></g>
-      <g transform={`translate(-10 ${-130 - (1 - w3) * 260})`} opacity={clamp01(w3 * 2)}><rect x={-46} y={-20} width={92} height={40} rx={5} fill={FIB.land} stroke={FIB.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={FIB.ink}>1999</text></g>
+      <g transform={`translate(-60 ${-30 - (1 - w1) * 240})`} opacity={clamp01(w1 * 2)}><WordTag text="UP TO $75M" x={0} y={0} s={1.2} /></g>
+      {[0, 1, 2].map((i) => <g key={i} transform={`translate(${-110 + i * 56} ${-120 - (1 - w2) * 260})`} opacity={clamp01(w2 * 2)}><rect x={-20} y={-8} width={40} height={30} rx={5} fill={FIB.verm} stroke={FIB.ink} strokeWidth={4} /><path d="M-11,-8 Q-11,-30 0,-30 Q11,-30 11,-8" fill="none" stroke={FIB.ink} strokeWidth={5} /></g>)}
+      <g transform={`translate(70 ${-200 - (1 - w2) * 220})`} opacity={clamp01(w2 * 2)}><rect x={-46} y={-20} width={92} height={36} rx={5} fill={FIB.cream} stroke={FIB.verm} strokeWidth={4} /><WordTag text="MUST LAND" x={0} y={0} s={1.1} /></g>
+      <g transform={`translate(-80 ${-250 - (1 - w3) * 260})`} opacity={clamp01(w3 * 2)}><rect x={-46} y={-20} width={92} height={40} rx={5} fill={FIB.land} stroke={FIB.ink} strokeWidth={4} /><text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={FIB.ink}>1999</text></g>
     </g>
   );
   const cam = track([{t: 0, z: 1.12, fx: 540, fy: 1060}, {t: t43, z: 1.0, fx: 540, fy: 1040}, {t: p.dur, z: 1.0, fx: 540, fy: 1040}]);
@@ -687,12 +694,12 @@ const S12: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Chart f={f + p.from} id="s12" wall={1} pencil={1} pulse />
-        <Keyhole x={500} y={1260} s={0.8} lit={lit} label="FINANCE PLAN" f={f} />
-        <Keyhole x={725} y={1260} s={0.8} lit={lit} label="CUSTOMERS" f={f} />
-        <g transform={`translate(${lerp(1000, 725, card) + 60 * off} ${1365 + 40 * off}) rotate(${12 * off})`} opacity={clamp01(card * 2) * (1 - off * 0.2)}>
+        <Keyhole x={500} y={1190} s={0.8} lit={lit} label="FINANCE PLAN" f={f} />
+        <Keyhole x={725} y={1190} s={0.8} lit={lit} label="CUSTOMERS" f={f} />
+        <g transform={`translate(${lerp(1000, 725, card) + 60 * off} ${1290 + 40 * off}) rotate(${12 * off})`} opacity={clamp01(card * 2) * (1 - off * 0.2)}>
           <Postcard x={0} y={0} s={0.75} text="INTEREST" />
         </g>
-        <Chronometer x={905} y={640} s={0.62} f={f} lid={lid} />
+        <Chronometer x={820} y={640} s={0.62} f={f} lid={lid} />
         <Pip x={610} y={1170} s={0.5} f={f} emotion="thoughtful" look={0} seed={12} />
         <PipBand x={610} y={1240} text="WHO SIGNS?" s={0.6} p={ease(f, t31, 12)} />
         <DeskNear f={f} seed={12} />
