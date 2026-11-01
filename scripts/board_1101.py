@@ -144,7 +144,7 @@ HERO = {
  1: ("LayeredLand slope + goat + dashed ghost hill + ghost goat", "40% slope, 30% ghost, 20% goat, 10% scar"),
  2: ("slate relief map + pin + coin stack hill + road bar + ghost", "35% map, 25% coin hill, 20% ghost, 20% cards"),
  3: ("three slope panels + pristine ghost + rain gauge + seismic station + storm", "35% panels, 25% ghost, 20% gauge and station, 20% storm"),
- 4: ("tall rain gauge + three plain cards + rain", "50% gauge, 30% cards, 20% ghost"),
+ 4: ("tall rain gauge + three plain slate cards + rain", "55% gauge, 30% cards, 15% rain"),
  5: ("ghost hill + bare socket post + four feeds + four clocks + crank machine", "30% ghost, 25% feeds, 25% crank, 20% clocks"),
  6: ("hollow ghost + dead feed lines + award-record pole + UW pole + UAF pole + dashed test outline + empty results plate", "35% ghost, 25% feed lines, 25% poles, 15% outline and plate"),
  7: ("real slope + three lit instruments + ghost + two goats + fog", "30% ghost, 30% instruments, 25% goats, 15% fog"),
