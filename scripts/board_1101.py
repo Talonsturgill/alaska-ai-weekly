@@ -57,11 +57,11 @@ B = [
   "a plain slate card reading HAINES, DEC 2020 under a tall rain gauge with a faint dashed ghost outline behind it, a slow push", "the gauge glints", ""),
  (18, 4, 5, W("eight"), "tick", "the rain gauge", "fills past its top mark", "somber", "AT LEAST 8 IN OF RAIN IN 2 DAYS · PER KHNS",
   "the tall rain gauge fills past its top mark, a plate reads AT LEAST 8 IN OF RAIN IN 2 DAYS, PER KHNS", "the water settles", ""),
- (19, 4, 5, W("killed"), "creak", "a card", "slides in beside the gauge reading two killed", "somber", "TWO KILLED",
+ (19, 4, 5, W("killed"), "tap", "a card", "slides in beside the gauge reading two killed", "somber", "TWO KILLED",
   "a plain slate card slides in beside the gauge reading TWO KILLED", "the card settles", ""),
- (20, 4, 6, 0.0, "paper", "a plain card", "holds still reading Wrangell with a slow push", "somber", "WRANGELL · NOV 20TH 2023",
+ (20, 4, 6, 0.0, "page", "a plain card", "holds still reading Wrangell with a slow push", "somber", "WRANGELL · NOV 20TH 2023",
   "a plain slate card reading WRANGELL, NOV 20TH 2023, a slow push, no other motion", "the card holds", ""),
- (21, 4, 6, W("six"), "creak", "the rain gauge", "drains slowly beside the card as the number lands", "somber", "SIX KILLED",
+ (21, 4, 6, W("six"), "rumble", "the rain gauge", "drains slowly beside the card as the number lands", "somber", "SIX KILLED",
   "the tall rain gauge drains slowly beside the plain card as the card reads SIX KILLED", "the water drains", ""),
  (22, 5, 7, 0.0, "whoosh", "the ghost hill", "rises beside the slope with a blank hanging tag swinging from its corner as the camera pulls back", "curious", "WHICH SLOPE?",
   "the dashed ghost hill rises beside the slope with a blank hanging tag reading SLOPE and a blank line swinging from its corner as the camera pulls back and the overcast thins, a plate reads WHICH SLOPE?", "the tag swings", "rehook: the ghost rises and a blank SLOPE tag swings from it, plant: which slope"),
@@ -103,7 +103,7 @@ B = [
   "a tall gauge ruler climbs the Barry Arm face beside the tiny diorama hill and stops at its mark, a plate reads ROUGHLY 500 MILLION M3, DGGS", "the ruler settles", ""),
  (41, 8, 12, W("tsunami"), "swell", "the fjord", "heaves and a ripple ring spreads past a faint dashed ghost remnant on the shore", "alarmed", "IF IT FAILED FAST · LIFE-THREATENING WAVES",
   "the fjord water heaves and a ripple ring spreads past a faint dashed ghost remnant on the shore, a plate reads IF IT FAILED FAST, LIFE-THREATENING WAVES, no wave height anywhere", "the ripple spreads", ""),
- (42, 9, 13, 0.0, "thud", "the ghost hill", "returns sharp beside one lit lamp with fog beyond and a blank hanging SLOPE tag swinging", "curious", "WHICH SLOPE?",
+ (42, 9, 13, 0.0, "pulse", "the ghost hill", "returns sharp beside one lit lamp with fog beyond and a blank hanging SLOPE tag swinging", "curious", "WHICH SLOPE?",
   "the dashed ghost hill returns razor sharp beside one lit lantern-gold lamp with fog beyond it and the blank hanging SLOPE tag swinging from its corner, a plate reads WHICH SLOPE?", "the tag swings", ""),
  (43, 9, 13, W("Nobody's"), "creak", "the goat", "leans on the blank tag and looks to camera", "wry", "NOBODY'S SAID",
   "the goat leans on the blank tag and looks to camera, a plate reads NOBODY'S SAID", "the goat chews", ""),
@@ -243,7 +243,7 @@ def build():
                     b["rehook"] = ""
                 seen = True
     for i, b in enumerate(beats):
-        nx = beats[i + 1]["at_s"] if i + 1 < len(beats) else end
+        nx = beats[i + 1]["at_s"] if i + 1 < len(beats) else end + 3.0
         b["t"] = f"{b['at_s']:.3f}-{nx:.3f}"
 
     shots = []
