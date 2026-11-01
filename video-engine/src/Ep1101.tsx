@@ -180,7 +180,7 @@ const Rain: React.FC<{f: number; amount: number}> = ({f, amount}) => (
 
 /** THE REAL SLOPE: LayeredLand with a wet overlay, a crack and a slump. soak 0..1, crack 0..1, slump 0..1. x is the slope's centre. */
 const Slope: React.FC<{f: number; x: number; y: number; w?: number; h?: number; soak?: number; crack?: number; slump?: number; scar?: number}> = ({f, x, y, w = 640, h = 520, soak = 0, crack = 0, slump = 0, scar = 0}) => (
-  <g transform={`translate(${slump * 18} ${slump * 26}) rotate(${slump * 2.2} ${x} ${y})`}>
+  <g transform={`translate(${slump * 46} ${slump * 70}) rotate(${slump * 5.5} ${x} ${y})`}>
     <ellipse cx={x + 8} cy={y + 8} rx={w / 2 + 30} ry={18} fill="#000" opacity={0.35} />
     <LayeredLand x={x} y={y} w={w} h={h} f={f} layers={9} />
     <g opacity={0.55 * soak}>
@@ -292,38 +292,60 @@ const Coins: React.FC<{x: number; y: number; n: number; k: number; w?: number; i
 };
 
 /** THE GROUND: wet ground with rain ripples, puddles and dark foreground rocks so the lower frame is never flat fill. */
-const Ground: React.FC<{f: number; tint?: string}> = ({f, tint}) => (
-  <g>
-    <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={tint ?? C.ground} />
-    <g data-band="ok" opacity={0.5}>
-      {Array.from({length: 9}).map((_, i) => (
-        <path key={i} d={`M -40,${1230 + i * 62} Q 270,${1215 + i * 62 + 6 * Math.sin(f / 30 + i)} 540,${1235 + i * 62} T 1120,${1230 + i * 62}`} stroke="#1B2A26" strokeWidth={3 + (i % 3)} fill="none" opacity={0.6} />
+const Ground: React.FC<{f: number; tint?: string}> = ({f, tint}) => {
+  const bands = ['#33503F', '#2C4636', '#3A3F32', '#2B3A34', '#232F2D', '#1C2628'];
+  const wt = 1690 + 10 * Math.sin(f / 40);
+  return (
+    <g>
+      <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={tint ?? C.ground} />
+      {bands.map((c, i) => (
+        <path key={i} data-band="ok" d={`M -60,${1200 + i * 120} Q 270,${1170 + i * 120 + 14 * Math.sin(f / 50 + i)} 540,${1205 + i * 120} T 1140,${1195 + i * 120} L 1140,1980 L -60,1980 Z`} fill={c} stroke="#0F1719" strokeWidth={3} opacity={0.96} />
       ))}
+      <g data-band="ok">
+        <path d={`M -60,${wt} Q 270,${wt - 18} 540,${wt} T 1140,${wt} L 1140,1980 L -60,1980 Z`} fill={C.rain} opacity={0.35} />
+        <path d={`M -60,${wt} Q 270,${wt - 18} 540,${wt} T 1140,${wt}`} stroke={C.rain} strokeWidth={5} fill="none" opacity={0.8} />
+        {Array.from({length: 7}).map((_, i) => {
+          const k = ((f * 1.6 + i * 53) % 330) / 330;
+          return <circle key={`d${i}`} cx={90 + i * 150} cy={1250 + k * (wt - 1250)} r={5} fill={C.rain} opacity={0.65 * (1 - k * 0.3)} />;
+        })}
+        {Array.from({length: 12}).map((_, i) => <ellipse key={`s${i}`} cx={60 + i * 92} cy={1330 + ((i * 97) % 360)} rx={14 + (i % 3) * 6} ry={7} fill="#0F1719" opacity={0.5} />)}
+      </g>
+      {[0, 1, 2, 3, 4].map((i) => {
+        const cx = 140 + i * 210 + (i % 2) * 30, cy = 1215 + (i % 3) * 14;
+        const k = ((f + i * 17) % 45) / 45;
+        return (
+          <g key={i} data-band="ok">
+            <ellipse cx={cx} cy={cy} rx={78} ry={11} fill="#22343A" opacity={0.75} />
+            <ellipse cx={cx + 20 * Math.sin(i)} cy={cy} rx={10 + 52 * k} ry={2 + 7 * k} fill="none" stroke={C.rain} strokeWidth={2.5} opacity={0.75 * (1 - k)} />
+          </g>
+        );
+      })}
     </g>
-    {[0, 1, 2, 3, 4].map((i) => {
-      const cx = 140 + i * 210 + (i % 2) * 30, cy = 1290 + (i % 3) * 110 + (i > 2 ? 150 : 0);
-      const k = ((f + i * 17) % 45) / 45;
-      return (
-        <g key={i} data-band="ok">
-          <ellipse cx={cx} cy={cy} rx={78} ry={13} fill="#22343A" opacity={0.75} />
-          <ellipse cx={cx + 20 * Math.sin(i)} cy={cy} rx={10 + 52 * k} ry={2 + 8 * k} fill="none" stroke={C.rain} strokeWidth={2.5} opacity={0.75 * (1 - k)} />
-        </g>
-      );
-    })}
-    <g data-band="ok">
-      <path d="M -60,1920 L -60,1640 L 90,1590 L 210,1680 L 300,1920 Z" fill="#0F171A" stroke={C.ink} strokeWidth={4} />
-      <path d="M 1140,1920 L 1140,1660 L 1010,1610 L 880,1700 L 800,1920 Z" fill="#0F171A" stroke={C.ink} strokeWidth={4} />
-      <path d="M 420,1920 L 470,1800 L 560,1780 L 640,1830 L 700,1920 Z" fill="#131E21" stroke={C.ink} strokeWidth={4} opacity={0.9} />
+  );
+};
+
+const Debris: React.FC<{f: number; start: number; x: number; y: number; n?: number}> = ({f, start, x, y, n = 14}) => {
+  if (f < start) return null;
+  return (
+    <g>
+      {Array.from({length: n}).map((_, i) => {
+        const t = f - start - i * 2;
+        if (t < 0) return null;
+        const vx = (i % 5 - 2) * 5, g = 0.9;
+        const px = x + vx * t * 0.5 + (i % 3) * 8, py = y + 0.5 * g * t * t * 0.5 - (i % 4) * 4;
+        if (py > 1190) return null;
+        return <polygon key={i} points="0,-9 9,-3 6,8 -7,6" transform={`translate(${px} ${py}) rotate(${t * 9 + i * 20})`} fill="#241E18" stroke={C.ink} strokeWidth={3} />;
+      })}
     </g>
-  </g>
-);
+  );
+};
 
 // ---- S1: the slope --------------------------------------------------------------------------------------------------------------------------
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const k1 = ease(f, b(1), 20);
   const pull = easeIO(f, b(3), 40);
-  const scar = ease(f, b(2), 26);
+  const scar = ease(f, b(2) - 20, 22);
   const grid = ease(f, b(4), 30);
   const jit = bump(f, b(5), 30);
   const q = ease(f, b(6), 24);
@@ -337,7 +359,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
         </g>
       ))}
       <SVG>
-        <Slope f={f} x={330} y={1180} soak={0.7 + 0.2 * Math.sin(f / 30)} scar={scar} />
+        <Slope f={f} x={330} y={1180} soak={0.7 + 0.2 * Math.sin(f / 30)} scar={scar} slump={0.5 * scar} />
+        <Debris f={f} start={2} x={300} y={760} n={16} />
         <Goat f={f} x={250} y={668} scale={0.8} />
         <g transform={`translate(0 ${sit * 0})`} />
         <Ground f={f} />
@@ -349,7 +372,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} text="SOUTHEAST ALASKA" y={rv(3)} p={ease(f, b(3), 18) * (1 - ease(f, b(4), 10))} size={30} />
         <Plate x={540} text="A COMPUTER COPY · PLANNED" y={rv(4)} p={ease(f, b(4), 18) * (1 - ease(f, b(5), 10))} size={28} />
         <Plate x={540} text="A PLAN TO KEEP UP" y={rv(5)} p={ease(f, b(5), 18) * (1 - ease(f, b(6), 10))} size={28} rot={jit * 2} />
-        <Plate x={540} text="CAN THAT CARTOON KEEP UP WITH A REAL MOUNTAIN?" displayLines={['CAN THAT CARTOON KEEP UP', 'WITH A REAL MOUNTAIN?']} y={1130} p={q} size={30} />
+        <Plate x={540} text="CARTOON VS MOUNTAIN" y={1130} p={q} size={30} />
       </SVG>
     </Frame>
   );
@@ -364,7 +387,7 @@ const Relief: React.FC<{f: number; x: number; y: number; k: number}> = ({f, x, y
     <g transform={`translate(${x} ${y + (1 - k) * 260}) scale(0.9)`} opacity={clamp01(k * 2)}>
       <ellipse cx={0} cy={470} rx={420} ry={34} fill="#000" opacity={0.4} />
       {Array.from({length: layers}).map((_, i) => (
-        <path key={i} d={AK_PATH} transform={`translate(-540 ${(layers - i) * 3 - 20}) scale(1.2)`} fill={i === layers - 1 ? '#4B6359' : '#243238'} stroke={C.ink} strokeWidth={i === layers - 1 ? 4 : 1} />
+        <path key={i} d={AK_PATH} transform={`translate(-540 ${(layers - i) * 3 - 20}) scale(1.2)`} fill={i === layers - 1 ? '#4B6359' : '#243238'} stroke={i === layers - 1 ? '#9DB8A6' : C.ink} strokeWidth={i === layers - 1 ? 3 : 1} />
       ))}
     </g>
   );
@@ -428,7 +451,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
           ))}
         </g>
         <Gauge x={panelX(0) + 100} y={1180} f={f} scale={0.28} level={0.1 + 0.8 * soak} id="s3g" />
-        <g opacity={ease(f, b(15), 8) * 0.9 + 0.1}><SeismicStation x={panelX(1) + 120} y={1190} f={f} scale={0.4} emotion={crack > 0.1 ? 'straining' : 'listening'} lamp={0} /></g>
+        <g opacity={ease(f, b(15), 8)}><SeismicStation x={panelX(1) + 120} y={1190} f={f} scale={0.4} emotion={crack > 0.1 ? 'straining' : 'listening'} lamp={0} /></g>
         <g opacity={ease(f, b(16), 14)}>
           <ellipse cx={panelX(2)} cy={620} rx={150} ry={46} fill="#3A4B52" stroke={C.ink} strokeWidth={5} />
           <ellipse cx={panelX(2) - 70} cy={600} rx={90} ry={36} fill="#445760" stroke={C.ink} strokeWidth={5} />
@@ -456,9 +479,11 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <Gauge x={260} y={1160} f={f} scale={0.95} level={Math.max(0.02, lvl - drain * 0.6)} id="s4g" />
         <g opacity={0.8}>
           <ellipse cx={720} cy={1190} rx={340} ry={16} fill="#000" opacity={0.4} />
+          <Debris f={f} start={b(20) + 14} x={760} y={760} n={18} />
           <Slope f={f} x={720} y={1180} w={560} h={480} soak={0.5 + 0.5 * ease(f, b(17), 40)} scar={ease(f, b(17), 50) * 0.7 + 0.3 * ease(f, b(20), 40)} crack={ease(f, b(20) + 20, 30)} slump={ease(f, b(21), 50)} />
         </g>
-        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill="#0C1215" opacity={0.7} />
+        <Ground f={f} tint="#0C1215" />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill="#0C1215" opacity={0.55} />
         <Plate x={750} text="HAINES DEC 2020" displayLines={['HAINES', 'DEC 2020']} y={800} size={34} p={ease(f, b(17), 18) * (1 - ease(f, b(20) - 4, 8))} />
         <Plate x={540} text="AT LEAST 8 IN OF RAIN IN 2 DAYS · PER KHNS" y={620} size={22} p={ease(f, b(18), 16) * (1 - ease(f, b(20) - 4, 8))} />
         <Plate x={750} text="TWO KILLED" y={1090} size={34} p={ease(f, b(19), 20) * (1 - ease(f, b(20) - 4, 8))} tone="warn" />
@@ -516,7 +541,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Plate x={900} text="WEATHER" y={990} p={fx(25) * (1 - ease(f, b(26), 10))} size={28} />
         <Plate x={460} text="GROUNDWATER" y={1140} p={fx(26) * (1 - ease(f, b(27), 10))} size={28} />
         <Plate x={540} text="SEPARATE SYSTEMS RARELY WORK TOGETHER" displayLines={['SEPARATE SYSTEMS', 'RARELY WORK TOGETHER']} y={660} p={fx(27) * (1 - ease(f, b(28), 10))} size={26} />
-        <Plate x={540} text="SURROGATE MODEL · FAST STAND-IN FOR SLOW PHYSICS" y={890} p={fx(28) * (1 - ease(f, b(29), 10))} size={24} />
+        <Plate x={540} tone="plate" text="SURROGATE MODEL · FAST STAND-IN FOR SLOW PHYSICS" y={890} p={fx(28) * (1 - ease(f, b(29), 10))} size={24} />
         <Plate x={540} text="EACH NEW READING WOULD TUG IT CLOSER" y={580} p={ease(f, b(29), 14)} size={26} />
       </SVG>
     </Frame>
@@ -636,9 +661,11 @@ const S8: React.FC<SceneProps> = ({p}) => {
         {[0, 1, 2, 3].map((i) => <path key={`w${i}`} data-band="ok" d={`M -20,${1230 + i * 90} Q 270,${1200 + i * 90 + (10 + 22 * rip) * Math.sin(f / 12 + i)} 540,${1230 + i * 90} T 1100,${1230 + i * 90}`} stroke={C.rain} strokeWidth={5} fill="none" opacity={0.45} />)}
         {[0, 1, 2].map((i) => <path key={i} d={`M -20,${1220 + i * 70} Q 270,${1190 + i * 70 + 8 * Math.sin(f / 20 + i)} 540,${1220 + i * 70} T 1100,${1220 + i * 70}`} stroke={C.rain} strokeWidth={4} fill="none" opacity={0.4} />)}
         <g transform="translate(330 1180) scale(0.2)"><Slope f={f} x={0} y={0} w={640} h={520} soak={0.4} /></g>
-        <g transform={`translate(${420 + 20 * Math.sin(f / 40)} ${1245 + 5 * Math.sin(f / 14)})`}>
-          <path d="M -34,0 L 34,0 L 22,16 L -22,16 Z" fill="#C9D2D2" stroke={C.ink} strokeWidth={3} />
-          <rect x={-3} y={-30} width={6} height={30} fill={C.ink} />
+        <g transform={`translate(${430 + 20 * Math.sin(f / 40)} ${1255 + 5 * Math.sin(f / 14)}) scale(2.3)`}>
+          <path d="M -40,-2 L 40,-2 L 28,16 L -30,16 Z" fill="#E4ECEC" stroke={C.ink} strokeWidth={3} />
+          <rect x={-14} y={-20} width={26} height={18} fill="#9FB4B8" stroke={C.ink} strokeWidth={3} />
+          <rect x={-8} y={-14} width={8} height={8} fill="#16222A" />
+          <path d="M -44,18 Q -20,24 0,18 T 44,18" stroke="#C9D2D2" strokeWidth={2.5} fill="none" opacity={0.7} />
         </g>
         <path d="M -100,330 L 120,250 L 260,330 L 420,200 L 600,310 L 780,220 L 1180,330 L 1180,420 L -100,420 Z" fill="#162126" opacity={0.8} />
         <rect x={680} y={380 + (1 - ruler) * 800} width={36} height={800 * ruler} fill="#C9D2D2" stroke={C.ink} strokeWidth={5} opacity={clamp01(ruler * 2)} />
