@@ -637,7 +637,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         </g>
         <Plate x={540} text="NO ALASKA SLOPE NAMED AWARD ABSTRACT" displayLines={['NO ALASKA SLOPE NAMED', 'AWARD ABSTRACT']} y={500} p={ease(f, b(38), 14) * (1 - ease(f, b(39), 10))} size={26} />
         <Plate x={540} text="BARRY ARM STATE GEOLOGISTS TRACK IT" displayLines={['BARRY ARM', 'STATE GEOLOGISTS TRACK IT']} y={650} p={ease(f, b(39), 14) * (1 - ease(f, b(40), 10))} size={28} />
-        <Plate x={330} text="ROUGHLY 500 MILLION CUBIC METERS" y={800} p={ease(f, b(40), 14) * (1 - ease(f, b(41), 10))} size={28} />
+        <Plate x={380} text="ROUGHLY 500 MILLION CUBIC METERS" y={800} p={ease(f, b(40), 14) * (1 - ease(f, b(41), 10))} size={22} />
         <Plate x={540} text="IF IT FAILED FAST LIFE-THREATENING WAVES" displayLines={['IF IT FAILED FAST', 'LIFE-THREATENING WAVES']} y={950} p={ease(f, b(41), 14)} size={28} tone="warn" />
       </SVG>
     </Frame>
