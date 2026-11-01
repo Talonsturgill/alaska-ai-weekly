@@ -140,15 +140,15 @@ const track = (keys: Array<{t: number; z: number; fx: number; fy: number}>) => (
 
 // ---- the world: sky, rain, slope, ghost -------------------------------------------------------------------------------------------------------
 const Sky: React.FC<{f: number; breakK: number}> = ({f, breakK}) => (
-  <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
+  <svg width={W * 3} height={H * 2} viewBox="-1080 -960 3240 3840" style={{position: 'absolute', left: -1080, top: -960}}>
     <defs>
       <linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stopColor="#26323B" /><stop offset="0.45" stopColor={lerpColor(C.sky, '#5E7580', breakK * 0.6)} /><stop offset="0.7" stopColor={lerpColor(C.skyLo, '#8FA79A', breakK * 0.5)} /><stop offset="1" stopColor="#1C2A28" />
       </linearGradient>
       <radialGradient id="breakg" cx="0.7" cy="0.32" r="0.4"><stop offset="0" stopColor="#E9E7B6" stopOpacity={0.55 * breakK} /><stop offset="1" stopColor="#E9E7B6" stopOpacity={0} /></radialGradient>
     </defs>
-    <rect width={W} height={H} fill="url(#skyg)" />
-    <rect width={W} height={H} fill="url(#breakg)" />
+    <rect x={-1080} y={-960} width={W * 3} height={H * 2} fill="url(#skyg)" />
+    <rect x={-1080} y={-960} width={W * 3} height={H * 2} fill="url(#breakg)" />
     {[0, 1, 2].map((i) => (
       <path key={i} d={`M -40,${760 - i * 70} Q 180,${690 - i * 70 + 10 * Math.sin(f / 90 + i)} 360,${740 - i * 70} T 700,${720 - i * 70} T 1120,${750 - i * 70} L 1120,1000 L -40,1000 Z`}
         fill={['#34454A', '#2D3C42', '#27353A'][i]} opacity={0.55 - i * 0.12} />
@@ -297,7 +297,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const sit = springy(f, b(2) + 14, 22);
   const camZ = lerp(1.0, 0.62, pull) + 0.02 * ease(f, b(5), 40) - 0.06 * ease(f, b(4), 30) * pull;
   return (
-    <Frame p={p} cam={(ff) => ({z: lerp(1.04, 0.6, easeIO(ff, b(3), 44)) - 0.0 * camZ, fx: lerp(540, 540, 0), fy: lerp(1000, 1060, easeIO(ff, b(3), 44))})} breakK={0}>
+    <Frame p={p} cam={(ff) => ({z: lerp(1.08, 0.78, easeIO(ff, b(3), 44)) + 0.0 * camZ, fx: 540, fy: lerp(980, 1010, easeIO(ff, b(3), 44))})} breakK={0}>
       {pull > 0.3 && Array.from({length: 5}).map((_, i) => (
         <g key={i} opacity={clamp01((pull - 0.3) * 1.6)}>
           <LayeredLand x={-150 + i * 280} y={1130 + (i % 2) * 24} w={420} h={300 + (i % 3) * 60} f={f} layers={6} />
@@ -307,16 +307,16 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Slope f={f} x={330} y={1180} soak={0.7 + 0.2 * Math.sin(f / 30)} scar={scar} />
         <Goat f={f} x={250} y={668} scale={0.62} />
         <g transform={`translate(0 ${sit * 0})`} />
-        <rect x={0} y={1180} width={W} height={740} fill={C.ground} />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={C.ground} />
         <path d={`M 0,1180 L 1080,1180`} stroke={C.ink} strokeWidth={6} />
         <GhostHill f={f} x={780} y={1180} w={560} h={500} draw={k1} grid={grid} alpha={1} id="s1" />
         <Goat f={f} x={700} y={800} scale={0.5} ghost lag={(1 - sit) * 10} />
-        <Plate text="A COPY OF A SLOPE · A PLAN" y={rv(1)} p={k1} size={30} />
-        <Plate text="SLIDES HAVE KILLED PEOPLE" y={rv(2)} p={ease(f, b(2), 18)} tone="warn" size={30} />
-        <Plate text="SOUTHEAST ALASKA" y={rv(3)} p={ease(f, b(3), 18)} size={30} />
-        <Plate text="A COMPUTER COPY · PLANNED" y={rv(4)} p={ease(f, b(4), 18)} size={28} />
-        <Plate text="A PLAN TO KEEP UP" y={rv(5)} p={ease(f, b(5), 18) * (1 - 0.0)} size={28} rot={jit * 2} />
-        <Plate displayLines={['CAN THAT CARTOON KEEP UP', 'WITH A REAL MOUNTAIN?']} y={1130} p={q} size={30} />
+        <Plate x={540} text="A COPY OF A SLOPE · A PLAN" y={rv(1)} p={k1 * (1 - ease(f, b(2), 10))} size={30} />
+        <Plate x={540} text="SLIDES HAVE KILLED PEOPLE" y={rv(2)} p={ease(f, b(2), 18) * (1 - ease(f, b(3), 10))} tone="warn" size={30} />
+        <Plate x={540} text="SOUTHEAST ALASKA" y={rv(3)} p={ease(f, b(3), 18) * (1 - ease(f, b(4), 10))} size={30} />
+        <Plate x={540} text="A COMPUTER COPY · PLANNED" y={rv(4)} p={ease(f, b(4), 18) * (1 - ease(f, b(5), 10))} size={28} />
+        <Plate x={540} text="A PLAN TO KEEP UP" y={rv(5)} p={ease(f, b(5), 18) * (1 - ease(f, b(6), 10))} size={28} rot={jit * 2} />
+        <Plate x={540} text="CAN THAT CARTOON KEEP UP WITH A REAL MOUNTAIN?" displayLines={['CAN THAT CARTOON KEEP UP', 'WITH A REAL MOUNTAIN?']} y={1130} p={q} size={30} />
       </SVG>
     </Frame>
   );
@@ -348,7 +348,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} breakK={0}>
       <SVG>
-        <rect x={0} y={1180} width={W} height={740} fill={C.ground} />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={C.ground} />
         <Relief f={f} x={540} y={820} k={rise} />
         <g transform={`translate(${470} ${900 - (1 - pin) * 200})`} opacity={clamp01(pin * 3)}>
           <circle cx={0} cy={0} r={13} fill="#7A2E24" stroke={C.ink} strokeWidth={4} />
@@ -359,12 +359,12 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <rect x={150} y={1060} width={640 * road} height={26} rx={10} fill="#2A383C" stroke={C.ink} strokeWidth={4} />
         <rect x={150} y={1060} width={Math.max(0, 640 * road * 0.07)} height={26} rx={10} fill={C.groundw} />
         <GhostHill f={f} x={520} y={780} w={300} h={220} draw={ghost} grid={ghost} id="s2" />
-        <Plate displayLines={['NSF AWARD RECORD', '2608510']} y={560} p={ease(f, b(7), 16)} size={28} />
-        <Plate text="UNIVERSITY OF ALASKA FAIRBANKS" y={640} p={ease(f, b(8), 16)} size={24} />
-        <Plate text={`$${cnt.toLocaleString('en-US')} · UAF`} y={1010} p={ease(f, b(9), 14)} size={28} />
-        <Plate text="AUG 1ST 2026 TO JULY 31ST 2032" y={1120} p={ease(f, b(10), 14)} size={24} />
-        <Plate text="PI CARL TAPE · UAF" y={700} p={cardP} size={26} />
-        <Plate text="DIGITAL TWIN · A STAND-IN" y={1210} p={ease(f, b(12), 16)} size={26} />
+        <Plate x={540} text="NSF AWARD RECORD 2608510" displayLines={['NSF AWARD RECORD', '2608510']} y={560} p={ease(f, b(7), 16)} size={28} />
+        <Plate x={540} text="UNIVERSITY OF ALASKA FAIRBANKS" y={640} p={ease(f, b(8), 16)} size={24} />
+        <Plate x={540} text="$1,772,170 · UAF" y={1010} p={ease(f, b(9), 14)} size={28} />
+        <Plate x={540} text="AUG 1ST 2026 TO JULY 31ST 2032" y={1120} p={ease(f, b(10), 14)} size={24} />
+        <Plate x={540} text="PI CARL TAPE · UAF" y={700} p={cardP} size={26} />
+        <Plate x={540} text="DIGITAL TWIN · A STAND-IN" y={1210} p={ease(f, b(12), 16)} size={26} />
       </SVG>
     </Frame>
   );
@@ -382,7 +382,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} breakK={0}>
       <SVG>
-        <rect x={0} y={1180} width={W} height={740} fill={C.ground} />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={C.ground} />
         <g transform={`translate(${(1 - strip) * 700} 0)`}>
           {[0, 1, 2].map((i) => (
             <g key={i}>
@@ -400,11 +400,11 @@ const S3: React.FC<SceneProps> = ({p}) => {
           <ellipse cx={panelX(2)} cy={620} rx={150} ry={46} fill="#3A4B52" stroke={C.ink} strokeWidth={5} />
           <ellipse cx={panelX(2) - 70} cy={600} rx={90} ry={36} fill="#445760" stroke={C.ink} strokeWidth={5} />
         </g>
-        <Plate displayLines={['THE CHAIN', 'PER THE AWARD ABSTRACT']} y={540} p={ease(f, b(13), 14)} size={26} />
-        <Plate text="1 · RAIN SOAKS THE HILL" y={1250} p={ease(f, b(14), 12) * (1 - ease(f, b(15), 12))} size={26} />
-        <Plate text="2 · A QUAKE WEAKENS IT" y={1250} p={ease(f, b(15), 12) * (1 - ease(f, b(16), 12))} size={26} />
-        <Plate text="3 · A LATER STORM BRINGS IT DOWN" y={1250} p={ease(f, b(16), 12)} size={24} />
-        <Plate text="A COPY WITH NO READINGS" y={1180} p={ease(f, b(16) + 20, 16)} size={22} tone="warn" />
+        <Plate x={540} text="THE CHAIN PER THE AWARD ABSTRACT" displayLines={['THE CHAIN', 'PER THE AWARD ABSTRACT']} y={500} p={ease(f, b(13), 14)} size={26} />
+        <Plate x={260} text="1 · RAIN SOAKS THE HILL" y={1110} p={ease(f, b(14), 12) * (1 - ease(f, b(15), 12))} size={20} />
+        <Plate x={540} text="2 · A QUAKE WEAKENS IT" y={1170} p={ease(f, b(15), 12) * (1 - ease(f, b(16), 12))} size={20} />
+        <Plate x={790} text="3 · A LATER STORM BRINGS IT DOWN" y={1230} p={ease(f, b(16), 12)} size={18} />
+        <Plate x={540} text="A COPY WITH NO READINGS" y={1010} p={ease(f, b(16) + 20, 16)} size={22} tone="warn" />
       </SVG>
     </Frame>
   );
@@ -419,16 +419,16 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.08} rain={rainAmt} breakK={0} vignette={0.38}>
       <SVG>
-        <rect x={0} y={0} width={W} height={H} fill="#10171B" opacity={0.6} />
+        <rect data-band="ok" x={-1100} y={-1000} width={3280} height={4000} fill="#10171B" opacity={0.6} />
         <Gauge x={380} y={1160} f={f} scale={0.95} level={Math.max(0.02, lvl - drain * 0.6)} id="s4g" />
         <g opacity={ease(f, b(17), 18)}>
           <rect x={560} y={760} width={380} height={170} rx={10} fill="#1E2B31" stroke="#C9D2D2" strokeWidth={4} />
         </g>
-        <Plate displayLines={['HAINES', 'DEC 2020']} x={750} y={845} size={34} p={ease(f, b(17), 18) * (1 - ease(f, b(20), 14))} />
-        <Plate text="AT LEAST 8 IN OF RAIN IN 2 DAYS · PER KHNS" x={540} y={620} size={22} p={ease(f, b(18), 16) * (1 - ease(f, b(20), 14))} />
-        <Plate text="TWO KILLED" x={750} y={1000} size={34} p={ease(f, b(19), 20) * (1 - ease(f, b(20), 14))} tone="warn" />
-        <Plate displayLines={['WRANGELL', 'NOV 20TH 2023']} x={750} y={845} size={34} p={ease(f, b(20), 20)} />
-        <Plate text="SIX KILLED" x={750} y={1000} size={34} p={ease(f, b(21), 20)} tone="warn" />
+        <Plate x={750} text="HAINES DEC 2020" displayLines={['HAINES', 'DEC 2020']} y={800} size={34} p={ease(f, b(17), 18) * (1 - ease(f, b(20), 14))} />
+        <Plate x={540} text="AT LEAST 8 IN OF RAIN IN 2 DAYS · PER KHNS" y={620} size={22} p={ease(f, b(18), 16) * (1 - ease(f, b(20), 14))} />
+        <Plate x={750} text="TWO KILLED" y={1090} size={34} p={ease(f, b(19), 20) * (1 - ease(f, b(20), 14))} tone="warn" />
+        <Plate x={750} text="WRANGELL NOV 20TH 2023" displayLines={['WRANGELL', 'NOV 20TH 2023']} y={930} size={34} p={ease(f, b(20), 20)} />
+        <Plate x={750} text="SIX KILLED" y={1190} size={34} p={ease(f, b(21), 20)} tone="warn" />
       </SVG>
     </Frame>
   );
@@ -447,7 +447,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.05} breakK={brk} warmth={0.02 + 0.05 * brk}
       cam={track([{t: 0, z: 1.12, fx: 700, fy: 980}, {t: b(22) + 40, z: 0.92, fx: 600, fy: 1000}, {t: p.dur, z: 1.0, fx: 600, fy: 1000}])}>
       <SVG>
-        <rect x={0} y={1180} width={W} height={740} fill={C.ground} />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={C.ground} />
         <Slope f={f} x={300} y={1180} w={560} h={500} soak={0.8} />
         <GhostHill f={f} x={gx} y={1180} w={520} h={470} draw={rise} grid={0.6 + 0.4 * tug} fog={0.5 * (1 - tug)} sharp={sharp} id="s5" />
         <Socket x={1000} y={1180} />
@@ -463,26 +463,26 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Feed f={f} d={`M 900,900 C 880,900 ${gx + 120},900 ${gx + 120},980`} color={C.rain} k={fx(25)} seed={2} />
         <Feed f={f} d={`M 470,1160 C 520,1230 ${gx - 100},1240 ${gx - 60},1140`} color={C.groundw} k={fx(26)} seed={3} />
         {fx(27) > 0.02 && [0, 1, 2, 3].map((i) => (
-          <g key={i} opacity={fx(27)} transform={`translate(${150 + i * 250} 560)`}>
-            <circle cx={0} cy={0} r={46} fill="#16222A" stroke={C.plate} strokeWidth={5} />
-            <line x1={0} y1={0} x2={30 * Math.cos(f / (6 + i * 3))} y2={30 * Math.sin(f / (6 + i * 3))} stroke={C.plate} strokeWidth={5} />
+          <g key={i} opacity={fx(27)}>
+            <circle cx={150 + i * 250} cy={560} r={46} fill="#16222A" stroke={C.plate} strokeWidth={5} />
+            <line x1={150 + i * 250} y1={560} x2={150 + i * 250 + 30 * Math.cos(f / (6 + i * 3))} y2={560 + 30 * Math.sin(f / (6 + i * 3))} stroke={C.plate} strokeWidth={5} />
           </g>
         ))}
         {ease(f, b(28), 14) > 0.02 && (
-          <g opacity={ease(f, b(28), 14) * (1 - 0.0)} transform="translate(210 690)">
-            <rect x={-120} y={-70} width={240} height={140} rx={10} fill="#2C3A41" stroke={C.ink} strokeWidth={5} />
-            <circle cx={0} cy={0} r={34} fill="none" stroke={C.plate} strokeWidth={6} />
-            <line x1={0} y1={0} x2={30 * Math.cos(f / 9)} y2={30 * Math.sin(f / 9)} stroke={C.plate} strokeWidth={6} />
+          <g opacity={ease(f, b(28), 14)}>
+            <rect x={90} y={620} width={240} height={140} rx={10} fill="#2C3A41" stroke={C.ink} strokeWidth={5} />
+            <circle cx={210} cy={690} r={34} fill="none" stroke={C.plate} strokeWidth={6} />
+            <line x1={210} y1={690} x2={210 + 30 * Math.cos(f / 9)} y2={690 + 30 * Math.sin(f / 9)} stroke={C.plate} strokeWidth={6} />
           </g>
         )}
-        <Plate text="WHICH SLOPE?" y={540} p={fx(22) * (1 - ease(f, b(23), 10))} size={30} />
-        <Plate text="SHAKING" y={540} p={fx(23) * (1 - ease(f, b(24), 10))} size={28} />
-        <Plate text="SATELLITE PICTURES" y={540} p={fx(24) * (1 - ease(f, b(25), 10))} size={28} />
-        <Plate text="WEATHER" y={540} p={fx(25) * (1 - ease(f, b(26), 10))} size={28} />
-        <Plate text="GROUNDWATER" y={540} p={fx(26) * (1 - ease(f, b(27), 10))} size={28} />
-        <Plate displayLines={['SEPARATE SYSTEMS', 'RARELY WORK TOGETHER']} y={440 + 150} p={fx(27) * (1 - ease(f, b(28), 10))} size={26} />
-        <Plate displayLines={['SURROGATE MODEL', 'FAST STAND-IN FOR SLOW PHYSICS']} y={820} p={fx(28) * (1 - ease(f, b(29), 10))} size={24} />
-        <Plate text="EACH NEW READING TUGS IT CLOSER" y={540} p={ease(f, b(29), 14)} size={26} />
+        <Plate x={540} text="WHICH SLOPE?" y={500} p={fx(22) * (1 - ease(f, b(23), 10))} size={30} />
+        <Plate x={180} text="SHAKING" y={1030} p={fx(23) * (1 - ease(f, b(24), 10))} size={28} />
+        <Plate x={540} text="SATELLITE PICTURES" y={760} p={fx(24) * (1 - ease(f, b(25), 10))} size={28} />
+        <Plate x={900} text="WEATHER" y={990} p={fx(25) * (1 - ease(f, b(26), 10))} size={28} />
+        <Plate x={460} text="GROUNDWATER" y={1140} p={fx(26) * (1 - ease(f, b(27), 10))} size={28} />
+        <Plate x={540} text="SEPARATE SYSTEMS RARELY WORK TOGETHER" displayLines={['SEPARATE SYSTEMS', 'RARELY WORK TOGETHER']} y={660} p={fx(27) * (1 - ease(f, b(28), 10))} size={26} />
+        <Plate x={540} text="SURROGATE MODEL · FAST STAND-IN FOR SLOW PHYSICS" y={890} p={fx(28) * (1 - ease(f, b(29), 10))} size={24} />
+        <Plate x={540} text="EACH NEW READING TUGS IT CLOSER" y={580} p={ease(f, b(29), 14)} size={26} />
       </SVG>
     </Frame>
   );
@@ -500,8 +500,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} breakK={0} sky={0} vignette={0.4}>
       <SVG>
-        <rect x={0} y={0} width={W} height={H} fill="#141C20" />
-        <rect x={0} y={1180} width={W} height={740} fill="#10171B" />
+        <rect data-band="ok" x={-1100} y={-1000} width={3280} height={4000} fill="#141C20" />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill="#10171B" />
         <GhostHill f={f} x={520 + 40 * lean} y={1180} w={520} h={470} hollow={hol} grid={1} fog={0.2} id="s6" />
         {[0, 1, 2, 3].map((i) => (
           <Feed key={i} f={f} d={`M ${-40 + i * 40},${700 + (i % 2) * 90} C ${200 + i * 60},${900 + i * 20} ${380},${980} ${520 + (i - 1.5) * 50},${980}`} color={[C.shake, C.sat, C.rain, C.groundw][i]} k={1} dead={dead(i)} seed={i} />
@@ -528,12 +528,12 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <path d={`M 120,1000 L 260,960 L 300,1100 L 150,1150 Z`} fill="none" stroke={C.plate} strokeWidth={4} strokeDasharray="12 8" />
           <rect x={110} y={1170} width={200} height={50} fill="#16222A" stroke={C.plate} strokeWidth={4} />
         </g>
-        <Plate text="THE FAIR CASE" y={540} p={ease(f, b(30), 14) * (1 - ease(f, b(31), 10))} size={30} />
-        <Plate text="NOT BUILT" y={540} p={ease(f, b(31), 14) * (1 - ease(f, b(32), 10))} size={34} tone="warn" />
-        <Plate displayLines={['ONE PUBLIC SOURCE', 'THE AWARD RECORD']} y={540} p={ease(f, b(32), 14) * (1 - ease(f, b(33), 10))} size={28} />
-        <Plate displayLines={['PARTNER AWARDS', 'UW $2,209,093 · UAF $1,772,170']} y={540} p={ease(f, b(33), 14) * (1 - ease(f, b(46), 10))} size={24} />
-        <Plate text="TESTS PLANNED · ALASKA + PACIFIC NORTHWEST" y={540} p={ease(f, b(46), 14) * (1 - ease(f, b(34), 10))} size={20} />
-        <Plate text="NO RESULTS" y={540} p={ease(f, b(34), 14)} size={34} tone="warn" />
+        <Plate x={540} text="THE FAIR CASE" y={500} p={ease(f, b(30), 14) * (1 - ease(f, b(31), 10))} size={30} />
+        <Plate x={520} text="NOT BUILT" y={1080} p={ease(f, b(31), 14) * (1 - ease(f, b(32), 10))} size={34} tone="warn" />
+        <Plate x={760} text="ONE PUBLIC SOURCE THE AWARD RECORD" displayLines={['ONE PUBLIC SOURCE', 'THE AWARD RECORD']} y={760} p={ease(f, b(32), 14) * (1 - ease(f, b(33), 10))} size={28} />
+        <Plate x={700} text="PARTNER AWARDS UW $2,209,093 · UAF $1,772,170" displayLines={['PARTNER AWARDS', 'UW $2,209,093 · UAF $1,772,170']} y={620} p={ease(f, b(33), 14) * (1 - ease(f, b(46), 10))} size={24} />
+        <Plate x={540} text="TESTS PLANNED · ALASKA + PACIFIC NORTHWEST" y={1260} p={ease(f, b(46), 14) * (1 - ease(f, b(34), 10))} size={20} />
+        <Plate x={230} text="NO RESULTS" y={1150} p={ease(f, b(34), 14)} size={34} tone="warn" />
       </SVG>
     </Frame>
   );
@@ -550,7 +550,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.04} z1={1.0} breakK={brk} warmth={0.05}
       cam={track([{t: 0, z: 1.12, fx: 540, fy: 1100}, {t: b(35) + 50, z: 1.0, fx: 540, fy: 1020}, {t: p.dur, z: 1.04, fx: 540, fy: 1000}])}>
       <SVG>
-        <rect x={0} y={1180} width={W} height={740} fill={C.ground} />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={C.ground} />
         <Slope f={f} x={540} y={1180} w={1000} h={560} soak={0.5} />
         <GhostHill f={f} x={540} y={1180} w={980} h={540} draw={1} grid={0.9} fog={0.9} id="s7a" />
         <rect x={760} y={600} width={320} height={600} fill="url(#fogs)" opacity={0.8} />
@@ -567,9 +567,9 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <g opacity={lit * 0.9}><rect x={590} y={760} width={22} height={400} fill="none" stroke={C.gold} strokeWidth={5} opacity={0.5} /></g>
         <Goat f={f} x={430} y={690} scale={0.55} rim={lit} />
         <g opacity={1 - 0.9 * dis}><Goat f={f} x={430 + 330 * dis} y={690} scale={0.55} ghost lag={dis * 6} /></g>
-        <Plate text="SHARP WHERE INSTRUMENTS ARE" y={540} p={ease(f, b(35), 14) * (1 - ease(f, b(36), 10))} size={28} />
-        <Plate text="IN SYNC NEAR INSTRUMENTS" y={540} p={ease(f, b(36), 14) * (1 - ease(f, b(37), 10))} size={28} />
-        <Plate displayLines={['KEEPS UP WHERE THERE ARE SENSORS', 'NOWHERE ELSE']} y={540} p={ease(f, b(37), 14)} size={26} />
+        <Plate x={540} text="SHARP WHERE INSTRUMENTS ARE" y={500} p={ease(f, b(35), 14) * (1 - ease(f, b(36), 10))} size={28} />
+        <Plate x={540} text="IN SYNC NEAR INSTRUMENTS" y={570} p={ease(f, b(36), 14) * (1 - ease(f, b(37), 10))} size={28} />
+        <Plate x={540} text="KEEPS UP WHERE THERE ARE SENSORS NOWHERE ELSE" displayLines={['KEEPS UP WHERE THERE ARE SENSORS', 'NOWHERE ELSE']} y={700} p={ease(f, b(37), 14)} size={26} />
       </SVG>
     </Frame>
   );
@@ -584,21 +584,21 @@ const S8: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.02} z1={1.0} breakK={0} sky={1} vignette={0.38}>
       <SVG>
-        <rect x={0} y={0} width={W} height={H} fill="#0F161A" opacity={0.4} />
+        <rect data-band="ok" x={-1100} y={-1000} width={3280} height={4000} fill="#0F161A" opacity={0.4} />
         <path d={`M -40,1180 L -40,360 L 140,420 L 300,300 L 520,380 L 760,260 L 1120,360 L 1120,1180 Z`} fill="#1E2A2E" stroke={C.ink} strokeWidth={8} />
         <path d={`M 140,420 L 300,300 L 520,380 L 560,700 L 200,760 Z`} fill="#2A383A" opacity={0.8} />
         <path d={`M 140,420 L 300,300 L 520,380 L 560,700 L 200,760 Z`} fill="none" stroke={C.plate} strokeWidth={5} strokeDasharray="14 10" strokeDashoffset={-f * 3} opacity={mark} />
-        <rect x={0} y={1180} width={W} height={740} fill="#16282B" />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill="#16282B" />
         {[0, 1, 2].map((i) => <path key={i} d={`M -20,${1220 + i * 70} Q 270,${1190 + i * 70 + 8 * Math.sin(f / 20 + i)} 540,${1220 + i * 70} T 1100,${1220 + i * 70}`} stroke={C.rain} strokeWidth={4} fill="none" opacity={0.4} />)}
         <g transform="translate(300 1180) scale(0.07)"><Slope f={f} x={0} y={0} w={640} h={520} soak={0.4} /></g>
         <rect x={680} y={380 + (1 - ruler) * 640} width={36} height={640 * ruler} fill="#C9D2D2" stroke={C.ink} strokeWidth={5} opacity={clamp01(ruler * 2)} />
         <g opacity={rip * 0.9}>
           {[0, 1, 2].map((i) => <ellipse key={i} cx={520} cy={1240} rx={90 + i * 120 * rip} ry={14 + i * 18 * rip} fill="none" stroke={C.rain} strokeWidth={5} opacity={0.7 - i * 0.2} />)}
         </g>
-        <Plate displayLines={['NO ALASKA SLOPE NAMED', 'AWARD ABSTRACT']} y={540} p={ease(f, b(38), 14) * (1 - ease(f, b(39), 10))} size={26} />
-        <Plate displayLines={['BARRY ARM', 'STATE GEOLOGISTS TRACK IT']} y={540} p={ease(f, b(39), 14) * (1 - ease(f, b(40), 10))} size={28} />
-        <Plate displayLines={['ROUGHLY 500 MILLION M3', 'DGGS']} y={540} p={ease(f, b(40), 14) * (1 - ease(f, b(41), 10))} size={28} />
-        <Plate displayLines={['IF IT FAILED FAST', 'LIFE-THREATENING WAVES']} y={540} p={ease(f, b(41), 14)} size={28} tone="warn" />
+        <Plate x={540} text="NO ALASKA SLOPE NAMED AWARD ABSTRACT" displayLines={['NO ALASKA SLOPE NAMED', 'AWARD ABSTRACT']} y={500} p={ease(f, b(38), 14) * (1 - ease(f, b(39), 10))} size={26} />
+        <Plate x={540} text="BARRY ARM STATE GEOLOGISTS TRACK IT" displayLines={['BARRY ARM', 'STATE GEOLOGISTS TRACK IT']} y={650} p={ease(f, b(39), 14) * (1 - ease(f, b(40), 10))} size={28} />
+        <Plate x={540} text="ROUGHLY 500 MILLION M3 DGGS" displayLines={['ROUGHLY 500 MILLION M3', 'DGGS']} y={800} p={ease(f, b(40), 14) * (1 - ease(f, b(41), 10))} size={28} />
+        <Plate x={540} text="IF IT FAILED FAST LIFE-THREATENING WAVES" displayLines={['IF IT FAILED FAST', 'LIFE-THREATENING WAVES']} y={950} p={ease(f, b(41), 14)} size={28} tone="warn" />
       </SVG>
     </Frame>
   );
@@ -614,15 +614,15 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.06} breakK={brk} warmth={0.05}>
       <SVG>
-        <rect x={0} y={1180} width={W} height={740} fill={C.ground} />
+        <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill={C.ground} />
         <Slope f={f} x={300} y={1180} w={560} h={500} soak={0.3} />
         <GhostHill f={f} x={760} y={1180} w={480} h={430} grid={0.8} fog={0.5} id="s9" />
         <Lamp x={560} y={1180} lit={lit} f={f} cone={lit * 0.8} />
         <Socket x={960} y={1180} />
         <Goat f={f} x={lerp(520, 900, step)} y={760} scale={0.55} rim={1 - step} facing={step > 0.5 ? 1 : 1} />
-        <Plate text="WHICH SLOPE?" y={540} p={ease(f, b(42), 14) * (1 - ease(f, b(43), 10))} size={30} />
-        <Plate text="NOBODY'S SAID" y={540} p={ease(f, b(43), 14) * (1 - ease(f, b(44), 10))} size={30} />
-        <Plate text="WHICH SLOPE WOULD YOU PICK?" y={540} p={ease(f, b(44), 14)} size={30} />
+        <Plate x={540} text="WHICH SLOPE?" y={520} p={ease(f, b(42), 14) * (1 - ease(f, b(43), 10))} size={30} />
+        <Plate x={540} text="NOBODY'S SAID" y={610} p={ease(f, b(43), 14) * (1 - ease(f, b(44), 10))} size={30} />
+        <Plate x={540} text="WHICH SLOPE WOULD YOU PICK?" y={700} p={ease(f, b(44), 14)} size={30} />
       </SVG>
     </Frame>
   );
