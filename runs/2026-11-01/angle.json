@@ -1,0 +1,9 @@
+{
+ "thesis": "GAIA is a funded plan for a loop, not yet a forecaster: fast stand-in models redrawn every time new rain, ground-shaking, satellite or groundwater readings arrive, which is the only way to catch the rain, quake, later-storm chain that kills people on Alaska slopes, and it can only sharpen where instruments exist.",
+ "supporting_facts": ["c8 chain: rain soaks, quake weakens, later storm brings it down", "c9 surrogate models couple to observations", "c14 Wrangell six killed Nov 2023, c12/c13 Haines Dec 2020"],
+ "counterpoint": "Nothing is built, the award record is the only public source, UW holds the larger partner award ($2,209,093), and agents are a planned prototype. A loop updates only where data exists.",
+ "falsifiability": "False if the record showed pilot results, a model running on a named Alaska slope, or a single-sensor or offline-simulation design.",
+ "runner_ups": ["Skeptic: held to funded-to-try, integration before prediction (merged as the Test act)", "Enthusiast: Fairbanks as build end and ASF in the same town (grafted as the Alaska-advantage beat)"],
+ "stance": "curious",
+ "guardrails": ["plan language only: aims, plans, would", "never say UAF leads the whole collaboration", "no wave height for Barry Arm", "never name what West/Meyer/Grapenthin lead", "paraphrase knowledge gaps as what scientists don't yet know", "banned words gap, matters, pattern"]
+}

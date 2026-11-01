@@ -1,0 +1,84 @@
+{
+ "run_date": "2026-11-01",
+ "title": "The Stand-In",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "NSF Award 2608510, Collaborative Research: Frameworks: Geophysical AI-driven Integration & Assimilation (GAIA), University of Alaska Fairbanks",
+   "outlet": "National Science Foundation Award API",
+   "url": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c19"
+   ],
+   "used_in_film": true,
+   "note": "Primary source and the only public record found. Award date July 10th, 2026. Every capability is planned, not built."
+  },
+  {
+   "id": "s2",
+   "title": "NSF partner awards 2608509 (University of Washington) and 2608511 (EarthScope Consortium)",
+   "outlet": "National Science Foundation Award API keyword search",
+   "url": "https://api.nsf.gov/services/v1/awards.json?keyword=%22Geophysical+AI-driven+Integration%22",
+   "claims": [
+    "c11"
+   ],
+   "used_in_film": true,
+   "note": "Found by keyword search, so the film does not claim there are no other partners."
+  },
+  {
+   "id": "s3",
+   "title": "Search for survivors of Haines landslide to resume at first light",
+   "outlet": "KTOO / KHNS",
+   "url": "https://www.ktoo.org/2020/12/03/search-for-survivors-of-haines-landslide-to-resume-at-first-light/",
+   "claims": [
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "News figure of at least eight inches of rain in 48 hours, attributed to KHNS and not an NWS measurement."
+  },
+  {
+   "id": "s4",
+   "title": "From rain-drenched mountains to Arctic permafrost, Alaska landslides pose hazards",
+   "outlet": "Alaska Beacon via KTOO",
+   "url": "https://www.ktoo.org/2025/09/12/from-rain-drenched-mountains-to-arctic-permafrost-alaska-landslides-pose-hazards/",
+   "claims": [
+    "c13",
+    "c14"
+   ],
+   "used_in_film": true,
+   "note": "Two killed in the Haines slides and six killed in the November 20th, 2023 Wrangell slide."
+  },
+  {
+   "id": "s5",
+   "title": "Barry Arm landslide",
+   "outlet": "Alaska Division of Geological & Geophysical Surveys",
+   "url": "https://dggs.alaska.gov/hazards/barry-arm-landslide.html",
+   "claims": [
+    "c16",
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "About 500 million cubic meters per DGGS. The page gives no wave height and the film shows none."
+  },
+  {
+   "id": "s6",
+   "title": "Communities in Southeast Alaska are mapping their landslide risk",
+   "outlet": "KHNS via KTOO",
+   "url": "https://www.ktoo.org/2025/02/13/communities-in-southeast-alaska-are-mapping-their-landslide-risk-its-complicated/",
+   "claims": [
+    "c15"
+   ],
+   "used_in_film": false,
+   "note": "Four fatal landslides in a decade. Background for the opening line."
+  }
+ ]
+}

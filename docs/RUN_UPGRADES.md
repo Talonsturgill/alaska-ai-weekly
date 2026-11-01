@@ -3960,3 +3960,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - In-run fixes: new lib/fiber.tsx chart-room family (Pip, CableRun, Gauge, Chronometer, ScalePans, props) registered in ASSET_MANIFEST. Gate 0 took two critic rounds (jar, calendar and dashed port were 10-29 props). VO re-synthesised twice, the second time after the editor found an absolute opening claim. Panel took five single-seat rounds (6.69, 6.93, 6.97, 6.90 capped, 7.06) before the full panel.
 - DISPATCH_STANDARD section 22 added.
 - Queued for the machine pass, see docs/MACHINE_QUEUE.md.
+
+## 2026-11-01 "The Stand-In" (NSF GAIA award 2608510 to UAF, landslide digital twin plan)
+- Shipped: 113 s film, panel median 7.08 against 7.0 (7.08, 7.14, 6.97), no hard blockers, a narrow pass. Caption stopped at 8.42 against its 8.5 bar after seven rounds, zero hard fails, disclosed in the email. Single-source story (the NSF award record), disclosed in film and caption. Gate 0E cold read failed twice (recipient, KHNS and NSF unexplained) and the VO was rewritten.
+- In-run fixes: dispatch_mix targets LRA 7 with a premix compressor (12.7 to 6.1 LU), strata Ground with animated groundwater, Debris, larger slump, editor-driven plan-tense plates and VO (Wrangell date, Barry Arm markers).
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-01).

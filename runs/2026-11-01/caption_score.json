@@ -1,0 +1,18 @@
+{
+ "source": "out/dispatch/post.txt",
+ "objective_gate": "PASS",
+ "scores": {
+  "hook_scroll_stop": 8.6,
+  "point_of_view_take": 8.4,
+  "substance_specificity": 8.4,
+  "readability_restraint": 8.3,
+  "engagement_design": 8.5,
+  "brand_voice_accuracy": 8.4,
+  "hashtag_craft": 8.2
+ },
+ "weighted_total": 8.42,
+ "ship_threshold": 8.5,
+ "hard_fails": [],
+ "ship": false,
+ "note": "Best scored round (7 rounds, 6.9 capped then 7.85, 8.10, 8.15, 8.25, 8.33, 8.42). BELOW the 8.5 bar by 0.08. A fifth hashtag (#Geohazards) was added after this card, as the scorer suggested, and was not rescored."
+}

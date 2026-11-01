@@ -1,0 +1,1904 @@
+{
+  "run_date": "2026-11-01",
+  "slug": "the-stand-in",
+  "title": "The Stand-In",
+  "concept": "According to the NSF award record, 2608510, the University of Alaska Fairbanks gets $1,772,170 over six years from August 1st, 2026 for GAIA, a plan led by Carl Tape for a digital twin that aims to estimate landslide hazards in close to real time. The award abstract describes a chain, rain soaks a slope, an earthquake weakens it, a later storm brings it down, and says the data that could warn of it come from separate systems that rarely work together. The plan adds fast surrogate models, stand-ins for slow physics, coupled to incoming observations. Haines (December 2020, KHNS) and Wrangell (November 2023, six killed) show the stakes. Nothing is built, the award record is the only public source, the University of Washington holds a larger partner award, and a loop only sharpens where instruments exist. A dashed ghost hill, the Stand-In, is the throughline and the film ends on an unlit socket beside one lit lamp.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 112.9,
+  "fingerprint": {
+    "pov": "cross-section-cutaway",
+    "motion_vector": "vertical-descent",
+    "hero_treatment": "single-organic-hero",
+    "layout": "centered-hero-lowerthird",
+    "register": "storm-slate-cutaway",
+    "palette": "verdant wet moss-green slope layers, a muted sulphur-green storm key, slate timber, cool pale plates, a charcoal-cased pale-grey ghost and warm golden lantern light only on lit instruments",
+    "camera_strategy": "crane-down-and-hush",
+    "light_story": "rain light that breaks to clear warm golden light on the instrumented slope",
+    "metaphor": "a dashed ghost hill that redraws itself closer to a real slope each time a reading arrives, goes hollow when its feeds die, and fogs where no instrument listens"
+  },
+  "palette": "verdant wet moss-green slope layers, a muted sulphur-green storm key, slate timber, cool pale plates, a charcoal-cased pale-grey ghost and warm golden lantern light only on lit instruments",
+  "divergence_note": "The last five films were a sage-and-cream fiber chart desk (10-31), an aubergine dusk depot (10-29), a green-black sonar abyss (10-28), a sage civic hall (10-26) and a teal fog boardwalk (10-25). This film is overcast daylight on a wet layered hillside seen from a low angle, with slate timber props, grey-white plates, a standing relief map and a slate void. Its hero is a soaked slope with a goat and a dashed ghost hill, and it has no chart desk, no cream paper, no hall, no depot, no boardwalk and no sea cutaway. Gold appears only on listening instruments, and the signature object is a ghost hill that snaps closer to the real slope with each reading and fogs where no instrument listens.",
+  "treatment": {
+    "title": "The Stand-In",
+    "summary": "# TREATMENT (winner: Explainer \"The Stand-In\", hero LayeredLand slope with the Stand-In ghost)\nThroughline: THE STAND-IN, a pale-grey dashed ghost hill. States: outline, grid, on the map, stale-grey beside the slumping slope, beside an unlit socket, tugged onto the slope, hollow with dead feeds, sharp near instruments and fog beyond, absent at Barry Arm, sharp beside one lit lamp.\nGrafts: Dramatist hush frames for Haines and Wrangell, unlit-socket loop B, Enthusiast fair-case honesty, Comedian goat as skeptic. No prop bench, no blank tag.\nLoop A: can a cartoon keep up with a real mountain, pla"
+  },
+  "angle": {
+    "thesis": "GAIA is a funded plan for a loop, not yet a forecaster: fast stand-in models redrawn every time new rain, ground-shaking, satellite or groundwater readings arrive, which is the only way to catch the rain, quake, later-storm chain that kills people on Alaska slopes, and it can only sharpen where instruments exist.",
+    "supporting_facts": [
+      "c8 chain: rain soaks, quake weakens, later storm brings it down",
+      "c9 surrogate models couple to observations",
+      "c14 Wrangell six killed Nov 2023, c12/c13 Haines Dec 2020"
+    ],
+    "counterpoint": "Nothing is built, the award record is the only public source, UW holds the larger partner award ($2,209,093), and agents are a planned prototype. A loop updates only where data exists.",
+    "falsifiability": "False if the record showed pilot results, a model running on a named Alaska slope, or a single-sensor or offline-simulation design.",
+    "runner_ups": [
+      "Skeptic: held to funded-to-try, integration before prediction (merged as the Test act)",
+      "Enthusiast: Fairbanks as build end and ASF in the same town (grafted as the Alaska-advantage beat)"
+    ],
+    "stance": "curious",
+    "guardrails": [
+      "plan language only: aims, plans, would",
+      "never say UAF leads the whole collaboration",
+      "no wave height for Barry Arm",
+      "never name what West/Meyer/Grapenthin lead",
+      "paraphrase knowledge gaps as what scientists don't yet know",
+      "banned words gap, matters, pattern"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A soaked layered hillside with a goat on its ledge while a dashed ghost hill draws itself beside it in one stroke and a plate reads A COPY OF A SLOPE, A PLAN.",
+    "headline": "A COPY OF A SLOPE",
+    "motion_by_s": 0.3,
+    "loopback": "The goat puts a hoof on the unlit socket post and turns to camera while the ghost stays sharp beside the lamp, rhyming with the opening ledge and the first ghost stroke."
+  },
+  "open_loop": {
+    "plant_t": 10.04,
+    "pay_t": 93.75,
+    "what": "Can a cartoon keep up with a real mountain? Planted when the goat raises an eyebrow at the ghost, paid when the ghost keeps up only around the instruments and the goat steps onto the bare fog."
+  },
+  "open_loop_2": {
+    "plant_t": 55.6,
+    "pay_t": 108.1,
+    "what": "Which slope will the twin learn first? Planted when the ghost rises beside a bare unlit socket, paid when the neighbouring socket is still unlit beside the lit lamp."
+  },
+  "throughline": {
+    "object": "the Stand-In, a dashed ghost hill",
+    "lands_in_button": "the ghost stays razor sharp beside one lit lamp with fog beyond and an unlit socket beside it, the film's argument",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "a blank dashed outline drawn in one stroke beside the real slope"
+      },
+      {
+        "at_s": 6.61,
+        "state": "filled with a faint grid as a planned computer copy"
+      },
+      {
+        "at_s": 26.23,
+        "state": "sketched in over the Interior of the relief map"
+      },
+      {
+        "at_s": 36.99,
+        "state": "goes stale and frozen-grey beside the slumping real slope"
+      },
+      {
+        "at_s": 55.6,
+        "state": "rises beside a bare unlit socket as fog creeps along its edge"
+      },
+      {
+        "at_s": 70.93,
+        "state": "tugged closer to the real slope by each reading"
+      },
+      {
+        "at_s": 77.25,
+        "state": "hollow with every feed line dead and grey"
+      },
+      {
+        "at_s": 88.32,
+        "state": "razor sharp around three lit instruments and fog beyond"
+      },
+      {
+        "at_s": 105.41,
+        "state": "absent, no twin at Barry Arm"
+      },
+      {
+        "at_s": 108.1,
+        "state": "sharp beside one lit lamp with the neighbouring socket still unlit"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 2.47,
+      "type": "scale-pullback",
+      "what": "from the single hill to a whole coast of soaked slopes stretching into mist",
+      "hold_s": 0.8
+    },
+    {
+      "t": 36.99,
+      "type": "morph-to-chart",
+      "what": "the three panels resolve into the chain of rain, quake, storm on one slope with a pristine ghost",
+      "hold_s": 0.8
+    },
+    {
+      "t": 70.93,
+      "type": "scale-pullback",
+      "what": "from one tugged corner to the whole ghost snapping onto the slope as the clouds break",
+      "hold_s": 0.8
+    },
+    {
+      "t": 101.93,
+      "type": "build-on",
+      "what": "the gauge ruler builds up the dark Barry Arm face past the tiny slope silhouette, a scale read on the same shot",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 0,
+        "offset": 3.0,
+        "level": 1.0
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 0.95
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.12
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.95
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "at_s": 93.45,
+        "level": 0.1
+      },
+      {
+        "at_s": 94.55,
+        "level": 0.6
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.55
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 93.45,
+    "riser_at": 95.4,
+    "silence_at": 93.45,
+    "payoff_at": 93.75,
+    "button_pattern": "callback",
+    "interrupt_at": 74.54,
+    "extra_dips": [
+      48.37
+    ]
+  },
+  "shots": [
+    {
+      "title": "The slope",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "wet-slope-ledge",
+      "pov": "cross-section-cutaway",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the slope at x540 y1000",
+      "means": "A soaked slope with a goat, a ghost hill drawing in beside it, a scar, a pullback to a coast of slopes and the goat's raised eyebrow.",
+      "ambient": "the slope drips, mist drifts, the ghost dashes crawl",
+      "hero": {
+        "name": "LayeredLand slope + goat + dashed ghost hill + ghost goat",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% slope, 30% ghost, 20% goat, 10% scar"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-13.080"
+    },
+    {
+      "title": "Fairbanks",
+      "vo_line": 2,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "slate-relief-map",
+      "pov": "eye-level-immersive",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the relief map at x540 y1020",
+      "means": "A standing slate relief map of Alaska with the award plate, a Fairbanks pin, a coin stack that grows into a hill and a six-year road bar, then the ghost sketching in.",
+      "ambient": "the pin pulses, slate dust drifts, the relief map's side light shifts",
+      "hero": {
+        "name": "slate relief map + pin + coin stack hill + road bar + ghost",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "35% map, 25% coin hill, 20% ghost, 20% cards"
+      },
+      "id": 2,
+      "start_s": 13.08,
+      "t": "13.080-29.840"
+    },
+    {
+      "title": "The chain",
+      "vo_line": 4,
+      "framing": "data-panel",
+      "scale": "insert",
+      "height": "ground",
+      "stage": "three-panel-strip",
+      "pov": "macro-closeup",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the middle panel at x540 y1000",
+      "means": "Three panels of the real slope with a pristine ghost beside each, rain, quake and storm hitting only the real one.",
+      "ambient": "the panels settle, rain streaks fall, the crack spreads",
+      "hero": {
+        "name": "three slope panels + pristine ghost + rain gauge + seismic station + storm",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "35% panels, 25% ghost, 20% gauge and station, 20% storm"
+      },
+      "id": 3,
+      "start_s": 29.84,
+      "t": "29.840-39.320"
+    },
+    {
+      "title": "Haines and Wrangell",
+      "vo_line": 5,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "plain-card-gauge",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the gauge at x420 y1040",
+      "means": "A tall rain gauge beside three plain slate cards, a slow push, rain only and no gags.",
+      "ambient": "the gauge glints, a slow push, quiet air",
+      "hero": {
+        "name": "tall rain gauge + three plain slate cards + rain",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "55% gauge, 30% cards, 15% rain"
+      },
+      "id": 4,
+      "start_s": 39.32,
+      "t": "39.320-55.600"
+    },
+    {
+      "title": "The loop",
+      "vo_line": 7,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "high",
+      "stage": "feed-lines-slope",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the ghost hill at x540 y1060",
+      "means": "The ghost rises beside a bare unlit socket post, four feeds pour in one by one, four clocks tick apart, a crank grinds and readings tug the ghost onto the slope.",
+      "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge",
+      "hero": {
+        "name": "ghost hill + bare socket post + four feeds + four clocks + crank machine",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "30% ghost, 25% feeds, 25% crank, 20% clocks"
+      },
+      "id": 5,
+      "start_s": 55.6,
+      "t": "55.600-74.540"
+    },
+    {
+      "title": "Fair case",
+      "vo_line": 9,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "slate-void",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hollow ghost at x640 y1000",
+      "means": "A hard cut to a hollow ghost alone on a slate void, its four feed lines die, one thin line reaches a lone pole, forks to a taller UW pole beside a shorter UAF pole, a dashed test outline and an empty results plate.",
+      "ambient": "slate dust drifts, the dead lines flicker, the live line hums",
+      "hero": {
+        "name": "hollow ghost + dead feed lines + award-record pole + UW pole + UAF pole + dashed test outline + empty results plate",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "35% ghost, 25% feed lines, 25% poles, 15% outline and plate"
+      },
+      "id": 6,
+      "start_s": 74.54,
+      "t": "74.540-88.320"
+    },
+    {
+      "title": "Where the sensors are",
+      "vo_line": 11,
+      "framing": "push-detail",
+      "scale": "wide",
+      "height": "low",
+      "stage": "instrumented-slope",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the ghost at x540 y1040",
+      "means": "The real slope from low with three lit instruments, a razor-sharp ghost around them, fog beyond, the goats in sync and the ghost goat dissolving in the fog.",
+      "ambient": "fog drifts, the lamps glow, the goats breathe",
+      "hero": {
+        "name": "real slope + three lit instruments + ghost + two goats + fog",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "30% ghost, 30% instruments, 25% goats, 15% fog"
+      },
+      "id": 7,
+      "start_s": 88.32,
+      "t": "88.320-95.400"
+    },
+    {
+      "title": "Barry Arm",
+      "vo_line": 12,
+      "framing": "push-detail",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "barry-arm-fjord",
+      "pov": "eye-level-immersive",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "static:opens at fjord scale",
+      "transition_in": "match-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the Barry Arm face at x540 y1020",
+      "means": "Opens at fjord scale on the dark Barry Arm face with the bare slope as a tiny matching silhouette at its foot, a dashed marker, the gauge ruler builds up the face, a ripple ring, no ghost.",
+      "ambient": "the face looms, the water heaves, mist rises",
+      "hero": {
+        "name": "Barry Arm face + tiny slope silhouette at its foot + dashed marker + fjord + ruler + ripple",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "45% face, 25% fjord, 15% silhouette, 15% ruler"
+      },
+      "id": 8,
+      "start_s": 95.4,
+      "t": "95.400-108.100"
+    },
+    {
+      "title": "Which slope",
+      "vo_line": 13,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "instrumented-slope-2",
+      "pov": "cross-section-cutaway",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the lit lamp at x560 y1000",
+      "means": "The ghost snaps sharp beside one lit lamp with the neighbouring socket still unlit, the goat looks from the lamp to the socket and puts a hoof on the unlit post.",
+      "ambient": "the lamp glows, fog drifts, the goat chews",
+      "hero": {
+        "name": "ghost hill + lit lamp + unlit socket post + goat",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "30% ghost, 25% lamp, 25% goat, 20% socket"
+      },
+      "id": 9,
+      "start_s": 108.1,
+      "t": "108.100-112.900"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Landslides have killed people in Southeast Alaska, and now a university plans a computer copy of a hillside that keeps up.",
+      "phrase": "Landslides have killed people",
+      "shows": "a soaked layered slope with a white goat on its ledge and a dashed ghost hill drawing itself in beside it in one stroke as a pebble rolls off the ledge, a plate reads A COPY OF A SLOPE, A PLAN",
+      "sfx": "whoosh",
+      "means": "a copy of a slope \u00b7 a plan",
+      "rehook": "",
+      "draw": {
+        "subject": "the slope",
+        "action": "drips soaked blue as a pebble rolls off the ledge past the goat while a dashed ghost hill draws itself in beside it in one stroke",
+        "emotion": "worried",
+        "annotation": "A COPY OF A SLOPE \u00b7 A PLAN"
+      },
+      "choreo": {
+        "primary": "a soaked layered slope with a white goat on its ledge and a dashed ghost hill drawing itself in beside it in one stroke as a pebble rolls off the ledge, a plate reads A COPY OF A SLOPE, A PLAN",
+        "reaction": "the slope drips",
+        "ambient": "the slope drips, mist drifts, the ghost dashes crawl"
+      },
+      "t": "0.000-1.230",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.23,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 1.23
+      },
+      "offset": 1.23,
+      "vo": "Landslides have killed people in Southeast Alaska, and now a university plans a computer copy of a hillside that keeps up.",
+      "phrase": "killed people in Southeast",
+      "shows": "a scar tears open across the upper layers of the slope as soil crumbles away and the real goat braces its legs while the ghost goat stays standing a beat late, a plate reads SLIDES HAVE KILLED PEOPLE",
+      "sfx": "crack",
+      "means": "slides have killed people",
+      "rehook": "",
+      "draw": {
+        "subject": "the slope face",
+        "action": "tears open a scar across its upper layers as the real goat braces its legs and the ghost goat stays standing a beat late",
+        "emotion": "worried",
+        "annotation": "SLIDES HAVE KILLED PEOPLE"
+      },
+      "choreo": {
+        "primary": "a scar tears open across the upper layers of the slope as soil crumbles away and the real goat braces its legs while the ghost goat stays standing a beat late, a plate reads SLIDES HAVE KILLED PEOPLE",
+        "reaction": "the soil crumbles",
+        "ambient": "the slope drips, mist drifts, the ghost dashes crawl"
+      },
+      "t": "1.230-2.470",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 2.47,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.47
+      },
+      "offset": 2.47,
+      "vo": "Landslides have killed people in Southeast Alaska, and now a university plans a computer copy of a hillside that keeps up.",
+      "phrase": "Southeast Alaska, and now",
+      "shows": "the camera pulls back from the single hill to a whole coast of soaked slopes stretching into mist, a plate reads SOUTHEAST ALASKA",
+      "sfx": "swish",
+      "means": "southeast alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back from the single hill to a whole coast of slopes stretching into mist",
+        "emotion": "reading",
+        "annotation": "SOUTHEAST ALASKA"
+      },
+      "choreo": {
+        "primary": "the camera pulls back from the single hill to a whole coast of soaked slopes stretching into mist, a plate reads SOUTHEAST ALASKA",
+        "reaction": "the mist drifts",
+        "ambient": "the slope drips, mist drifts, the ghost dashes crawl"
+      },
+      "t": "2.470-6.610",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 6.61,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.61
+      },
+      "offset": 6.61,
+      "vo": "Landslides have killed people in Southeast Alaska, and now a university plans a computer copy of a hillside that keeps up.",
+      "phrase": "copy of a hillside",
+      "shows": "the dashed ghost hill fills with a faint grid as the camera drops back to the one hill, a plate reads A COMPUTER COPY, PLANNED",
+      "sfx": "scratch",
+      "means": "a computer copy \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "the ghost hill",
+        "action": "fills with a faint grid as the camera drops back to the one hill",
+        "emotion": "curious",
+        "annotation": "A COMPUTER COPY \u00b7 PLANNED"
+      },
+      "choreo": {
+        "primary": "the dashed ghost hill fills with a faint grid as the camera drops back to the one hill, a plate reads A COMPUTER COPY, PLANNED",
+        "reaction": "the grid shimmers",
+        "ambient": "the slope drips, mist drifts, the ghost dashes crawl"
+      },
+      "t": "6.610-8.450",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 1,
+      "at_s": 8.45,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 8.45
+      },
+      "offset": 8.45,
+      "vo": "Landslides have killed people in Southeast Alaska, and now a university plans a computer copy of a hillside that keeps up.",
+      "phrase": "keeps up.",
+      "shows": "the ghost outline lurches and jitters as a pebble lands on the real slope and the dashes break and re-form, a plate reads A PLAN TO KEEP UP",
+      "sfx": "tick",
+      "means": "a plan to keep up",
+      "rehook": "",
+      "draw": {
+        "subject": "the ghost hill",
+        "action": "lurches and jitters as a pebble lands on the real slope and the dashes break and re-form",
+        "emotion": "puzzled",
+        "annotation": "A PLAN TO KEEP UP"
+      },
+      "choreo": {
+        "primary": "the ghost outline lurches and jitters as a pebble lands on the real slope and the dashes break and re-form, a plate reads A PLAN TO KEEP UP",
+        "reaction": "the dashes crawl",
+        "ambient": "the slope drips, mist drifts, the ghost dashes crawl"
+      },
+      "t": "8.450-10.040",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 1,
+      "at_s": 10.04,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Can that cartoon keep up with a real mountain?",
+      "phrase": "Can that cartoon keep",
+      "shows": "the white goat turns toward the dashed cartoon ghost beside a towering real mountain and tilts its head with one eyebrow up, a plate reads CAN THAT CARTOON KEEP UP WITH A REAL MOUNTAIN?",
+      "sfx": "creak",
+      "means": "can that cartoon keep up?",
+      "rehook": "",
+      "draw": {
+        "subject": "the goat",
+        "action": "turns toward the cartoon ghost standing beside a real mountain and tilts its head with one eyebrow up",
+        "emotion": "skeptical",
+        "annotation": "CAN THAT CARTOON KEEP UP?"
+      },
+      "choreo": {
+        "primary": "the white goat turns toward the dashed cartoon ghost beside a towering real mountain and tilts its head with one eyebrow up, a plate reads CAN THAT CARTOON KEEP UP WITH A REAL MOUNTAIN?",
+        "reaction": "the goat chews",
+        "ambient": "the slope drips, mist drifts, the ghost dashes crawl"
+      },
+      "t": "10.040-13.080",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 13.08,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "According to the N S F award record, the University of Alaska Fairbanks gets one point seven seven million dollars over six years.",
+      "phrase": "According to the N",
+      "shows": "a standing slate relief map of Alaska rises out of the ground as the camera whips to it and an engraved plate reading NSF AWARD RECORD 2608510 inks itself across its corner",
+      "sfx": "snap",
+      "means": "nsf award record \u00b7 2608510",
+      "rehook": "rehook: the whip-pan to a standing relief map",
+      "draw": {
+        "subject": "a slate relief map",
+        "action": "rises out of the ground as the camera whips to it and an engraved plate inks the award number",
+        "emotion": "reading",
+        "annotation": "NSF AWARD RECORD \u00b7 2608510"
+      },
+      "choreo": {
+        "primary": "a standing slate relief map of Alaska rises out of the ground as the camera whips to it and an engraved plate reading NSF AWARD RECORD 2608510 inks itself across its corner",
+        "reaction": "the plate rings",
+        "ambient": "the pin pulses, slate dust drifts, the relief map's side light shifts"
+      },
+      "t": "13.080-16.550",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 16.55,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.47
+      },
+      "offset": 3.47,
+      "vo": "According to the N S F award record, the University of Alaska Fairbanks gets one point seven seven million dollars over six years.",
+      "phrase": "Fairbanks gets one point",
+      "shows": "a pin drops onto Fairbanks on the relief map as a name card reading UNIVERSITY OF ALASKA FAIRBANKS slides in below it",
+      "sfx": "tick",
+      "means": "university of alaska fairbanks",
+      "rehook": "",
+      "draw": {
+        "subject": "a pin",
+        "action": "drops onto Fairbanks as a name card slides in below it",
+        "emotion": "reading",
+        "annotation": "UNIVERSITY OF ALASKA FAIRBANKS"
+      },
+      "choreo": {
+        "primary": "a pin drops onto Fairbanks on the relief map as a name card reading UNIVERSITY OF ALASKA FAIRBANKS slides in below it",
+        "reaction": "the pin pulses",
+        "ambient": "the pin pulses, slate dust drifts, the relief map's side light shifts"
+      },
+      "t": "16.550-18.570",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 2,
+      "at_s": 18.57,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.49
+      },
+      "offset": 5.49,
+      "vo": "According to the N S F award record, the University of Alaska Fairbanks gets one point seven seven million dollars over six years.",
+      "phrase": "million dollars over six",
+      "shows": "a stack of coins grows beside the pin into the shape of a little hill as a slate-bronze dial counter ticks up to $1,772,170, a plate reads $1,772,170",
+      "sfx": "ding",
+      "means": "$1,772,170 \u00b7 uaf",
+      "rehook": "",
+      "draw": {
+        "subject": "a coin stack",
+        "action": "grows beside the pin into the shape of a little hill as a slate-bronze dial counter ticks up to $1,772,170",
+        "emotion": "reading",
+        "annotation": "$1,772,170 \u00b7 UAF"
+      },
+      "choreo": {
+        "primary": "a stack of coins grows beside the pin into the shape of a little hill as a slate-bronze dial counter ticks up to $1,772,170, a plate reads $1,772,170",
+        "reaction": "the coins settle",
+        "ambient": "the pin pulses, slate dust drifts, the relief map's side light shifts"
+      },
+      "t": "18.570-20.650",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 2,
+      "at_s": 20.65,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 7.57
+      },
+      "offset": 7.57,
+      "vo": "According to the N S F award record, the University of Alaska Fairbanks gets one point seven seven million dollars over six years.",
+      "phrase": "years.",
+      "shows": "a long road-shaped bar labelled AUG 1ST 2026 TO JULY 31ST 2032 draws across the relief map and fills only a sliver, a plate reads PLANNED DATES",
+      "sfx": "snap",
+      "means": "aug 1st 2026 to july 31st 2032",
+      "rehook": "",
+      "draw": {
+        "subject": "a long road bar",
+        "action": "draws across the map and stays mostly empty",
+        "emotion": "thoughtful",
+        "annotation": "AUG 1ST 2026 TO JULY 31ST 2032"
+      },
+      "choreo": {
+        "primary": "a long road-shaped bar labelled AUG 1ST 2026 TO JULY 31ST 2032 draws across the relief map and fills only a sliver, a plate reads PLANNED DATES",
+        "reaction": "the bar glows",
+        "ambient": "the pin pulses, slate dust drifts, the relief map's side light shifts"
+      },
+      "t": "20.650-21.820",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 2,
+      "at_s": 21.82,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Carl Tape is the principal investigator, and the aim is a digital twin, a stand-in for a real slope.",
+      "phrase": "Carl Tape is the",
+      "shows": "a card reading PI CARL TAPE, UAF slides onto the relief map beside the Fairbanks pin and settles",
+      "sfx": "paper",
+      "means": "pi carl tape \u00b7 uaf",
+      "rehook": "",
+      "draw": {
+        "subject": "a name card",
+        "action": "slides onto the relief map beside the pin",
+        "emotion": "reading",
+        "annotation": "PI CARL TAPE \u00b7 UAF"
+      },
+      "choreo": {
+        "primary": "a card reading PI CARL TAPE, UAF slides onto the relief map beside the Fairbanks pin and settles",
+        "reaction": "the card settles",
+        "ambient": "the pin pulses, slate dust drifts, the relief map's side light shifts"
+      },
+      "t": "21.820-26.230",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 2,
+      "at_s": 26.23,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.41
+      },
+      "offset": 4.41,
+      "vo": "Carl Tape is the principal investigator, and the aim is a digital twin, a stand-in for a real slope.",
+      "phrase": "twin, a stand-in for",
+      "shows": "the dashed ghost hill sketches itself in over the Interior of the relief map with a faint grid, a plate reads DIGITAL TWIN, A STAND-IN FOR A REAL SLOPE",
+      "sfx": "pop",
+      "means": "digital twin \u00b7 a stand-in",
+      "rehook": "",
+      "draw": {
+        "subject": "the ghost hill",
+        "action": "sketches itself in over the Interior of the relief map",
+        "emotion": "curious",
+        "annotation": "DIGITAL TWIN \u00b7 A STAND-IN"
+      },
+      "choreo": {
+        "primary": "the dashed ghost hill sketches itself in over the Interior of the relief map with a faint grid, a plate reads DIGITAL TWIN, A STAND-IN FOR A REAL SLOPE",
+        "reaction": "the grid shimmers",
+        "ambient": "the pin pulses, slate dust drifts, the relief map's side light shifts"
+      },
+      "t": "26.230-29.840",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 3,
+      "at_s": 29.84,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Slopes fail in a chain, the award abstract says. Rain soaks the hill, a quake weakens it, a later storm brings it down.",
+      "phrase": "Slopes fail in a",
+      "shows": "a three-panel strip slides in, each panel the real slope with the dashed ghost standing pristine beside it, a plate reads THE CHAIN, PER THE AWARD ABSTRACT",
+      "sfx": "whoosh",
+      "means": "the chain \u00b7 per the award abstract",
+      "rehook": "",
+      "draw": {
+        "subject": "a three-panel strip",
+        "action": "slides in with the ghost standing pristine beside the real slope in every panel",
+        "emotion": "reading",
+        "annotation": "THE CHAIN \u00b7 PER THE AWARD ABSTRACT"
+      },
+      "choreo": {
+        "primary": "a three-panel strip slides in, each panel the real slope with the dashed ghost standing pristine beside it, a plate reads THE CHAIN, PER THE AWARD ABSTRACT",
+        "reaction": "the panels settle",
+        "ambient": "the panels settle, rain streaks fall, the crack spreads"
+      },
+      "t": "29.840-33.550",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 3,
+      "at_s": 33.55,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.71
+      },
+      "offset": 3.71,
+      "vo": "Slopes fail in a chain, the award abstract says. Rain soaks the hill, a quake weakens it, a later storm brings it down.",
+      "phrase": "Rain soaks the hill,",
+      "shows": "a one-inch rain gauge fills as blue seeps into the real slope layers in panel one while the ghost beside it stays dry, a plate reads 1 RAIN SOAKS THE HILL",
+      "sfx": "drip",
+      "means": "1 \u00b7 rain soaks the hill",
+      "rehook": "rehook: the real slope floods blue while the ghost beside it stays dry",
+      "draw": {
+        "subject": "a rain gauge",
+        "action": "fills as blue seeps into the real slope only while the ghost stays dry",
+        "emotion": "worried",
+        "annotation": "1 \u00b7 RAIN SOAKS THE HILL"
+      },
+      "choreo": {
+        "primary": "a one-inch rain gauge fills as blue seeps into the real slope layers in panel one while the ghost beside it stays dry, a plate reads 1 RAIN SOAKS THE HILL",
+        "reaction": "the layers darken",
+        "ambient": "the panels settle, rain streaks fall, the crack spreads"
+      },
+      "t": "33.550-35.350",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 3,
+      "at_s": 35.35,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.51
+      },
+      "offset": 5.51,
+      "vo": "Slopes fail in a chain, the award abstract says. Rain soaks the hill, a quake weakens it, a later storm brings it down.",
+      "phrase": "quake weakens it, a",
+      "shows": "a round seismic station on the crest flinches as a crack opens through the soaked real layers in panel two while the ghost stays unmoved, a plate reads 2 A QUAKE WEAKENS IT",
+      "sfx": "clank",
+      "means": "2 \u00b7 a quake weakens it",
+      "rehook": "",
+      "draw": {
+        "subject": "a seismic station",
+        "action": "flinches as a crack opens through the soaked layers while the ghost stays unmoved",
+        "emotion": "alarmed",
+        "annotation": "2 \u00b7 A QUAKE WEAKENS IT"
+      },
+      "choreo": {
+        "primary": "a round seismic station on the crest flinches as a crack opens through the soaked real layers in panel two while the ghost stays unmoved, a plate reads 2 A QUAKE WEAKENS IT",
+        "reaction": "the crack spreads",
+        "ambient": "the panels settle, rain streaks fall, the crack spreads"
+      },
+      "t": "35.350-36.990",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 3,
+      "at_s": 36.99,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 7.15
+      },
+      "offset": 7.15,
+      "vo": "Slopes fail in a chain, the award abstract says. Rain soaks the hill, a quake weakens it, a later storm brings it down.",
+      "phrase": "later storm brings it",
+      "shows": "a storm cloud rolls over panel three and the cracked real slope slumps while the ghost beside it goes stale and frozen-grey, a plate reads 3 A LATER STORM BRINGS IT DOWN and a small plate reads A COPY WITH NO READINGS",
+      "sfx": "thud",
+      "means": "3 \u00b7 a later storm brings it down",
+      "rehook": "",
+      "draw": {
+        "subject": "a storm cloud",
+        "action": "rolls in and the cracked real slope slumps while the ghost goes stale and frozen-grey",
+        "emotion": "alarmed",
+        "annotation": "3 \u00b7 A LATER STORM BRINGS IT DOWN"
+      },
+      "choreo": {
+        "primary": "a storm cloud rolls over panel three and the cracked real slope slumps while the ghost beside it goes stale and frozen-grey, a plate reads 3 A LATER STORM BRINGS IT DOWN and a small plate reads A COPY WITH NO READINGS",
+        "reaction": "the slope slumps",
+        "ambient": "the panels settle, rain streaks fall, the crack spreads"
+      },
+      "kick": true,
+      "t": "36.990-39.320",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 4,
+      "at_s": 39.32,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Haines, December twenty twenty. At least eight inches of rain in two days, per the news outlet K H N S, and two people killed.",
+      "phrase": "Haines, December twenty twenty.",
+      "shows": "a plain slate card reading HAINES, DEC 2020 under a tall rain gauge, a slow push",
+      "sfx": "paper",
+      "means": "haines \u00b7 dec 2020",
+      "rehook": "",
+      "draw": {
+        "subject": "a plain card",
+        "action": "holds still under a tall rain gauge",
+        "emotion": "somber",
+        "annotation": "HAINES \u00b7 DEC 2020"
+      },
+      "choreo": {
+        "primary": "a plain slate card reading HAINES, DEC 2020 under a tall rain gauge, a slow push",
+        "reaction": "the gauge glints",
+        "ambient": "the gauge glints, a slow push, quiet air"
+      },
+      "t": "39.320-42.790",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 4,
+      "at_s": 42.79,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.47
+      },
+      "offset": 3.47,
+      "vo": "Haines, December twenty twenty. At least eight inches of rain in two days, per the news outlet K H N S, and two people killed.",
+      "phrase": "eight inches of rain",
+      "shows": "the tall rain gauge fills past its top mark, a plate reads AT LEAST 8 IN OF RAIN IN 2 DAYS, PER KHNS",
+      "sfx": "tick",
+      "means": "at least 8 in of rain in 2 days \u00b7 per khns",
+      "rehook": "",
+      "draw": {
+        "subject": "the rain gauge",
+        "action": "fills past its top mark",
+        "emotion": "somber",
+        "annotation": "AT LEAST 8 IN OF RAIN IN 2 DAYS \u00b7 PER KHNS"
+      },
+      "choreo": {
+        "primary": "the tall rain gauge fills past its top mark, a plate reads AT LEAST 8 IN OF RAIN IN 2 DAYS, PER KHNS",
+        "reaction": "the water settles",
+        "ambient": "the gauge glints, a slow push, quiet air"
+      },
+      "t": "42.790-45.070",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 4,
+      "at_s": 45.07,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 5.75
+      },
+      "offset": 5.75,
+      "vo": "Haines, December twenty twenty. At least eight inches of rain in two days, per the news outlet K H N S, and two people killed.",
+      "phrase": "per the news outlet",
+      "shows": "the rain thickens and streaks across the plain card as the gauge fills, no ghost",
+      "sfx": "sizzle",
+      "means": "rain thickens",
+      "rehook": "",
+      "draw": {
+        "subject": "the rain",
+        "action": "thickens and streaks across the plain card as the gauge fills",
+        "emotion": "somber",
+        "annotation": "RAIN THICKENS"
+      },
+      "choreo": {
+        "primary": "the rain thickens and streaks across the plain card as the gauge fills, no ghost",
+        "reaction": "the rain thickens",
+        "ambient": "the gauge glints, a slow push, quiet air"
+      },
+      "t": "45.070-48.370",
+      "key": 45
+    },
+    {
+      "id": 20,
+      "shot": 4,
+      "at_s": 48.37,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 9.05
+      },
+      "offset": 9.05,
+      "vo": "Haines, December twenty twenty. At least eight inches of rain in two days, per the news outlet K H N S, and two people killed.",
+      "phrase": "killed.",
+      "shows": "a plain slate card slides in beside the gauge reading TWO KILLED",
+      "sfx": "tap",
+      "means": "two killed",
+      "rehook": "",
+      "draw": {
+        "subject": "a card",
+        "action": "slides in beside the gauge reading two killed",
+        "emotion": "somber",
+        "annotation": "TWO KILLED"
+      },
+      "choreo": {
+        "primary": "a plain slate card slides in beside the gauge reading TWO KILLED",
+        "reaction": "the card settles",
+        "ambient": "the gauge glints, a slow push, quiet air"
+      },
+      "t": "48.370-50.040",
+      "key": 19
+    },
+    {
+      "id": 21,
+      "shot": 4,
+      "at_s": 50.04,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Wrangell, November twenty twenty-three. A landslide killed six.",
+      "phrase": "Wrangell, November twenty twenty-three.",
+      "shows": "a plain slate card reading WRANGELL, NOV 2023, a slow push, no other motion",
+      "sfx": "page",
+      "means": "wrangell \u00b7 nov 2023",
+      "rehook": "",
+      "draw": {
+        "subject": "a plain card",
+        "action": "holds still reading Wrangell with a slow push",
+        "emotion": "somber",
+        "annotation": "WRANGELL \u00b7 NOV 2023"
+      },
+      "choreo": {
+        "primary": "a plain slate card reading WRANGELL, NOV 2023, a slow push, no other motion",
+        "reaction": "the card holds",
+        "ambient": "the gauge glints, a slow push, quiet air"
+      },
+      "t": "50.040-54.150",
+      "key": 20
+    },
+    {
+      "id": 22,
+      "shot": 4,
+      "at_s": 54.15,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.11
+      },
+      "offset": 4.11,
+      "vo": "Wrangell, November twenty twenty-three. A landslide killed six.",
+      "phrase": "six.",
+      "shows": "the tall rain gauge drains slowly beside the plain card as the card reads SIX KILLED",
+      "sfx": "rumble",
+      "means": "six killed",
+      "rehook": "",
+      "draw": {
+        "subject": "the rain gauge",
+        "action": "drains slowly beside the card as the number lands",
+        "emotion": "somber",
+        "annotation": "SIX KILLED"
+      },
+      "choreo": {
+        "primary": "the tall rain gauge drains slowly beside the plain card as the card reads SIX KILLED",
+        "reaction": "the water drains",
+        "ambient": "the gauge glints, a slow push, quiet air"
+      },
+      "t": "54.150-55.600",
+      "key": 21
+    },
+    {
+      "id": 23,
+      "shot": 5,
+      "at_s": 55.6,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The plan pulls in ground shaking, satellite pictures, weather and groundwater, which the abstract says come from separate systems that rarely work together.",
+      "phrase": "The plan pulls in",
+      "shows": "the dashed ghost hill rises beside the slope as a first thin feed line pulls in toward it, next to a bare socket post with an unlit lamp, while fog creeps along the ghost's edge, a plate reads WHICH SLOPE?",
+      "sfx": "whoosh",
+      "means": "which slope?",
+      "rehook": "rehook: the ghost rises beside an unlit socket, plant: which slope",
+      "draw": {
+        "subject": "the ghost hill",
+        "action": "rises beside the slope as a first thin feed line pulls in toward it, next to a bare socket post with an unlit lamp, while fog creeps along its edge",
+        "emotion": "curious",
+        "annotation": "WHICH SLOPE?"
+      },
+      "choreo": {
+        "primary": "the dashed ghost hill rises beside the slope as a first thin feed line pulls in toward it, next to a bare socket post with an unlit lamp, while fog creeps along the ghost's edge, a plate reads WHICH SLOPE?",
+        "reaction": "the first feed line pulses",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "55.600-57.030",
+      "key": 22
+    },
+    {
+      "id": 24,
+      "shot": 5,
+      "at_s": 57.03,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 1.43
+      },
+      "offset": 1.43,
+      "vo": "The plan pulls in ground shaking, satellite pictures, weather and groundwater, which the abstract says come from separate systems that rarely work together.",
+      "phrase": "shaking, satellite pictures, weather",
+      "shows": "a round seismic station on the slope sends a shaking feed line toward the ghost hill, a plate reads SHAKING",
+      "sfx": "ding",
+      "means": "shaking",
+      "rehook": "",
+      "draw": {
+        "subject": "a seismic station",
+        "action": "sends a shaking feed line toward the ghost",
+        "emotion": "curious",
+        "annotation": "SHAKING"
+      },
+      "choreo": {
+        "primary": "a round seismic station on the slope sends a shaking feed line toward the ghost hill, a plate reads SHAKING",
+        "reaction": "the feed pulses",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "57.030-57.850",
+      "key": 23
+    },
+    {
+      "id": 25,
+      "shot": 5,
+      "at_s": 57.85,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.25
+      },
+      "offset": 2.25,
+      "vo": "The plan pulls in ground shaking, satellite pictures, weather and groundwater, which the abstract says come from separate systems that rarely work together.",
+      "phrase": "satellite pictures, weather and",
+      "shows": "a satellite eye swings into frame and beams a feed line toward the ghost hill, a plate reads SATELLITE PICTURES",
+      "sfx": "pop",
+      "means": "satellite pictures",
+      "rehook": "",
+      "draw": {
+        "subject": "a satellite eye",
+        "action": "swings into frame and beams a feed line toward the ghost",
+        "emotion": "curious",
+        "annotation": "SATELLITE PICTURES"
+      },
+      "choreo": {
+        "primary": "a satellite eye swings into frame and beams a feed line toward the ghost hill, a plate reads SATELLITE PICTURES",
+        "reaction": "the beam pulses",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "57.850-59.150",
+      "key": 24
+    },
+    {
+      "id": 26,
+      "shot": 5,
+      "at_s": 59.15,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.55
+      },
+      "offset": 3.55,
+      "vo": "The plan pulls in ground shaking, satellite pictures, weather and groundwater, which the abstract says come from separate systems that rarely work together.",
+      "phrase": "weather and groundwater, which",
+      "shows": "the tall rain gauge from the hush frames slides in and sends a weather feed line toward the ghost hill, a plate reads WEATHER",
+      "sfx": "chime",
+      "means": "weather",
+      "rehook": "",
+      "draw": {
+        "subject": "the rain gauge",
+        "action": "slides in from the hush and sends a weather feed line toward the ghost",
+        "emotion": "curious",
+        "annotation": "WEATHER"
+      },
+      "choreo": {
+        "primary": "the tall rain gauge from the hush frames slides in and sends a weather feed line toward the ghost hill, a plate reads WEATHER",
+        "reaction": "the gauge glints",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "59.150-59.690",
+      "key": 25
+    },
+    {
+      "id": 27,
+      "shot": 5,
+      "at_s": 59.69,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.09
+      },
+      "offset": 4.09,
+      "vo": "The plan pulls in ground shaking, satellite pictures, weather and groundwater, which the abstract says come from separate systems that rarely work together.",
+      "phrase": "groundwater, which the abstract",
+      "shows": "a groundwater probe rises from the slope and drips a green feed line toward the ghost hill, a plate reads GROUNDWATER",
+      "sfx": "drip",
+      "means": "groundwater",
+      "rehook": "",
+      "draw": {
+        "subject": "a groundwater probe",
+        "action": "rises from the slope and drips a green feed line toward the ghost",
+        "emotion": "curious",
+        "annotation": "GROUNDWATER"
+      },
+      "choreo": {
+        "primary": "a groundwater probe rises from the slope and drips a green feed line toward the ghost hill, a plate reads GROUNDWATER",
+        "reaction": "the probe drips",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "59.690-62.410",
+      "key": 26
+    },
+    {
+      "id": 28,
+      "shot": 5,
+      "at_s": 62.41,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 6.81
+      },
+      "offset": 6.81,
+      "vo": "The plan pulls in ground shaking, satellite pictures, weather and groundwater, which the abstract says come from separate systems that rarely work together.",
+      "phrase": "separate systems that rarely",
+      "shows": "four separate clock dials tick one beside each feed and never touch, a plate reads SEPARATE SYSTEMS, RARELY WORK TOGETHER, PER THE ABSTRACT",
+      "sfx": "ratchet",
+      "means": "separate systems \u00b7 rarely work together",
+      "rehook": "",
+      "draw": {
+        "subject": "four clocks",
+        "action": "tick on separate dials that do not touch",
+        "emotion": "wry",
+        "annotation": "SEPARATE SYSTEMS \u00b7 RARELY WORK TOGETHER"
+      },
+      "choreo": {
+        "primary": "four separate clock dials tick one beside each feed and never touch, a plate reads SEPARATE SYSTEMS, RARELY WORK TOGETHER, PER THE ABSTRACT",
+        "reaction": "the dials tick",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "62.410-66.710",
+      "key": 27
+    },
+    {
+      "id": 29,
+      "shot": 5,
+      "at_s": 66.71,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.85
+      },
+      "offset": 0.85,
+      "vo": "So it would add fast surrogate models, quick stand-ins for slow physics, tugged closer to the slope by each new reading.",
+      "phrase": "fast surrogate models, quick",
+      "shows": "a heavy crank machine labelled REAL PHYSICS grinds out one answer while the dashed ghost speed-draws ten quick sketches, a plate reads SURROGATE MODEL, FAST STAND-IN FOR SLOW PHYSICS",
+      "sfx": "clank",
+      "means": "surrogate model \u00b7 fast stand-in for slow physics",
+      "rehook": "",
+      "draw": {
+        "subject": "a crank machine",
+        "action": "grinds slowly labelled REAL PHYSICS while the ghost speed-draws ten quick sketches",
+        "emotion": "determined",
+        "annotation": "SURROGATE MODEL \u00b7 FAST STAND-IN FOR SLOW PHYSICS"
+      },
+      "choreo": {
+        "primary": "a heavy crank machine labelled REAL PHYSICS grinds out one answer while the dashed ghost speed-draws ten quick sketches, a plate reads SURROGATE MODEL, FAST STAND-IN FOR SLOW PHYSICS",
+        "reaction": "the crank grinds",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "66.710-70.930",
+      "key": 28
+    },
+    {
+      "id": 30,
+      "shot": 5,
+      "at_s": 70.93,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.07
+      },
+      "offset": 5.07,
+      "vo": "So it would add fast surrogate models, quick stand-ins for slow physics, tugged closer to the slope by each new reading.",
+      "phrase": "tugged closer to the",
+      "shows": "pulses from the four feeds tug the dashed corners of the ghost and it snaps visibly closer to the real slope each time while the clouds break, a plate reads EACH NEW READING WOULD TUG IT CLOSER",
+      "sfx": "snap",
+      "means": "each new reading would tug it closer",
+      "rehook": "",
+      "draw": {
+        "subject": "pulses",
+        "action": "tug the dashed corners of the ghost until it snaps closer to the real slope as the clouds break",
+        "emotion": "determined",
+        "annotation": "EACH NEW READING WOULD TUG IT CLOSER"
+      },
+      "choreo": {
+        "primary": "pulses from the four feeds tug the dashed corners of the ghost and it snaps visibly closer to the real slope each time while the clouds break, a plate reads EACH NEW READING WOULD TUG IT CLOSER",
+        "reaction": "the ghost snaps",
+        "ambient": "the feeds pulse, the dials tick, fog creeps along the ghost's edge"
+      },
+      "t": "70.930-74.540",
+      "key": 29
+    },
+    {
+      "id": 31,
+      "shot": 6,
+      "at_s": 74.54,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now the fair case. Nothing is built, and the award record is the only public source.",
+      "phrase": "Now the fair case.",
+      "shows": "the first frame after the hard cut is an empty slate void with the dashed ghost already alone on it as it hollows out to an empty outline, a plate reads THE FAIR CASE",
+      "sfx": "creak",
+      "means": "the fair case",
+      "rehook": "rehook: the ghost goes hollow",
+      "draw": {
+        "subject": "the ghost hill",
+        "action": "is already alone on a slate void and hollows out to an empty outline",
+        "emotion": "stern",
+        "annotation": "THE FAIR CASE"
+      },
+      "choreo": {
+        "primary": "the first frame after the hard cut is an empty slate void with the dashed ghost already alone on it as it hollows out to an empty outline, a plate reads THE FAIR CASE",
+        "reaction": "the grid drains",
+        "ambient": "slate dust drifts, the dead lines flicker, the live line hums"
+      },
+      "t": "74.540-77.250",
+      "key": 30
+    },
+    {
+      "id": 32,
+      "shot": 6,
+      "at_s": 77.25,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 2.71
+      },
+      "offset": 2.71,
+      "vo": "Now the fair case. Nothing is built, and the award record is the only public source.",
+      "phrase": "built, and the award",
+      "shows": "the four feed lines into the hollow ghost die one by one and go grey as it sags, a plate reads NOT BUILT",
+      "sfx": "rumble",
+      "means": "not built",
+      "rehook": "",
+      "draw": {
+        "subject": "four feed lines",
+        "action": "die one by one and go grey as the hollow ghost sags",
+        "emotion": "stern",
+        "annotation": "NOT BUILT"
+      },
+      "choreo": {
+        "primary": "the four feed lines into the hollow ghost die one by one and go grey as it sags, a plate reads NOT BUILT",
+        "reaction": "the lines go grey",
+        "ambient": "slate dust drifts, the dead lines flicker, the live line hums"
+      },
+      "t": "77.250-79.570",
+      "key": 31
+    },
+    {
+      "id": 33,
+      "shot": 6,
+      "at_s": 79.57,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.03
+      },
+      "offset": 5.03,
+      "vo": "Now the fair case. Nothing is built, and the award record is the only public source.",
+      "phrase": "public source.",
+      "shows": "one thin line strikes from the hollow ghost to a single lone pole labelled THE AWARD RECORD while every other line stays dark, a plate reads ONE PUBLIC SOURCE",
+      "sfx": "tick",
+      "means": "one public source \u00b7 the award record",
+      "rehook": "",
+      "draw": {
+        "subject": "one thin line",
+        "action": "strikes from the hollow ghost to a lone pole while every other line stays dark",
+        "emotion": "stern",
+        "annotation": "ONE PUBLIC SOURCE \u00b7 THE AWARD RECORD"
+      },
+      "choreo": {
+        "primary": "one thin line strikes from the hollow ghost to a single lone pole labelled THE AWARD RECORD while every other line stays dark, a plate reads ONE PUBLIC SOURCE",
+        "reaction": "the line pulses",
+        "ambient": "slate dust drifts, the dead lines flicker, the live line hums"
+      },
+      "t": "79.570-81.140",
+      "key": 32
+    },
+    {
+      "id": 34,
+      "shot": 6,
+      "at_s": 81.14,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The University of Washington holds a larger partner award, and testing is planned, with no results.",
+      "phrase": "The University of Washington",
+      "shows": "the single live line forks to a second, taller pole labelled UNIVERSITY OF WASHINGTON $2,209,093 beside the shorter pole labelled UAF $1,772,170, EARTHSCOPE $449,448 as a small card, a plate reads PARTNER AWARDS",
+      "sfx": "slide",
+      "means": "partner awards \u00b7 uw $2,209,093 \u00b7 uaf $1,772,170",
+      "rehook": "",
+      "draw": {
+        "subject": "the single live line",
+        "action": "forks to a second, taller pole labelled UNIVERSITY OF WASHINGTON beside the shorter UAF pole",
+        "emotion": "thoughtful",
+        "annotation": "PARTNER AWARDS \u00b7 UW $2,209,093 \u00b7 UAF $1,772,170"
+      },
+      "choreo": {
+        "primary": "the single live line forks to a second, taller pole labelled UNIVERSITY OF WASHINGTON $2,209,093 beside the shorter pole labelled UAF $1,772,170, EARTHSCOPE $449,448 as a small card, a plate reads PARTNER AWARDS",
+        "reaction": "the poles settle",
+        "ambient": "slate dust drifts, the dead lines flicker, the live line hums"
+      },
+      "t": "81.140-85.110",
+      "key": 33
+    },
+    {
+      "id": 35,
+      "shot": 6,
+      "at_s": 85.11,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.97
+      },
+      "offset": 3.97,
+      "vo": "The University of Washington holds a larger partner award, and testing is planned, with no results.",
+      "phrase": "testing is planned, with",
+      "shows": "a small dashed test outline labelled ALASKA and PACIFIC NORTHWEST appears and the hollow ghost leans toward it, a plate reads TESTS PLANNED",
+      "sfx": "paper",
+      "means": "tests planned \u00b7 alaska + pacific northwest",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed test outline",
+        "action": "appears as a dashed outline labelled Alaska and Pacific Northwest and the hollow ghost leans toward it",
+        "emotion": "thoughtful",
+        "annotation": "TESTS PLANNED \u00b7 ALASKA + PACIFIC NORTHWEST"
+      },
+      "choreo": {
+        "primary": "a small dashed test outline labelled ALASKA and PACIFIC NORTHWEST appears and the hollow ghost leans toward it, a plate reads TESTS PLANNED",
+        "reaction": "the model settles",
+        "ambient": "slate dust drifts, the dead lines flicker, the live line hums"
+      },
+      "t": "85.110-86.830",
+      "key": 46
+    },
+    {
+      "id": 36,
+      "shot": 6,
+      "at_s": 86.83,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 5.69
+      },
+      "offset": 5.69,
+      "vo": "The University of Washington holds a larger partner award, and testing is planned, with no results.",
+      "phrase": "results.",
+      "shows": "a results plate under the dashed test outline stays empty as the hollow ghost leans toward it and stops short, a plate reads NO RESULTS",
+      "sfx": "thud",
+      "means": "no results",
+      "rehook": "",
+      "draw": {
+        "subject": "a results plate",
+        "action": "stays empty under the test outline as the hollow ghost stops short",
+        "emotion": "stern",
+        "annotation": "NO RESULTS"
+      },
+      "choreo": {
+        "primary": "a results plate under the dashed test outline stays empty as the hollow ghost leans toward it and stops short, a plate reads NO RESULTS",
+        "reaction": "the plate stays empty",
+        "ambient": "slate dust drifts, the dead lines flicker, the live line hums"
+      },
+      "t": "86.830-88.320",
+      "key": 34
+    },
+    {
+      "id": 37,
+      "shot": 7,
+      "at_s": 88.32,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A loop only sharpens where instruments exist, so it could keep up where there are sensors, and nowhere else.",
+      "phrase": "A loop only sharpens",
+      "shows": "from a low angle the real slope looms with a rain gauge, a seismic station and a probe glowing lantern-gold, the dashed ghost snaps razor sharp around them while fog rolls over its far side, a plate reads SHARP WHERE INSTRUMENTS ARE",
+      "sfx": "swish",
+      "means": "sharp where instruments are",
+      "rehook": "",
+      "draw": {
+        "subject": "the real slope",
+        "action": "looms from a low angle as three lit instruments glow gold and the ghost snaps razor sharp around them while fog rolls over its far side",
+        "emotion": "thoughtful",
+        "annotation": "SHARP WHERE INSTRUMENTS ARE"
+      },
+      "choreo": {
+        "primary": "from a low angle the real slope looms with a rain gauge, a seismic station and a probe glowing lantern-gold, the dashed ghost snaps razor sharp around them while fog rolls over its far side, a plate reads SHARP WHERE INSTRUMENTS ARE",
+        "reaction": "the fog drifts",
+        "ambient": "fog drifts, the lamps glow, the goats breathe"
+      },
+      "t": "88.320-91.630",
+      "key": 35
+    },
+    {
+      "id": 38,
+      "shot": 7,
+      "at_s": 91.63,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "A loop only sharpens where instruments exist, so it could keep up where there are sensors, and nowhere else.",
+      "phrase": "keep up where there",
+      "shows": "the real goat and the ghost goat walk together in sync near the lit instruments",
+      "sfx": "tick",
+      "means": "in sync near instruments",
+      "rehook": "",
+      "draw": {
+        "subject": "two goats",
+        "action": "walk in sync near the instruments",
+        "emotion": "curious",
+        "annotation": "IN SYNC NEAR INSTRUMENTS"
+      },
+      "choreo": {
+        "primary": "the real goat and the ghost goat walk together in sync near the lit instruments",
+        "reaction": "the goats step",
+        "ambient": "fog drifts, the lamps glow, the goats breathe"
+      },
+      "t": "91.630-93.750",
+      "key": 36
+    },
+    {
+      "id": 39,
+      "shot": 7,
+      "at_s": 93.75,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.43
+      },
+      "offset": 5.43,
+      "vo": "A loop only sharpens where instruments exist, so it could keep up where there are sensors, and nowhere else.",
+      "phrase": "nowhere else.",
+      "shows": "the goat steps onto the fog and its ghost goat lags then breaks apart, leaving the bare slope, a plate reads COULD KEEP UP WHERE THERE ARE SENSORS, NOWHERE ELSE",
+      "sfx": "boom",
+      "means": "could keep up where there are sensors \u00b7 nowhere else",
+      "rehook": "rehook: the ghost breaks apart in the fog",
+      "draw": {
+        "subject": "the goat",
+        "action": "steps onto the fog and the ghost goat lags then breaks apart under its hooves, leaving the bare slope",
+        "emotion": "wry",
+        "annotation": "COULD KEEP UP WHERE THERE ARE SENSORS \u00b7 NOWHERE ELSE"
+      },
+      "choreo": {
+        "primary": "the goat steps onto the fog and its ghost goat lags then breaks apart, leaving the bare slope, a plate reads COULD KEEP UP WHERE THERE ARE SENSORS, NOWHERE ELSE",
+        "reaction": "the ghost dissolves",
+        "ambient": "fog drifts, the lamps glow, the goats breathe"
+      },
+      "kick": true,
+      "t": "93.750-95.400",
+      "key": 37
+    },
+    {
+      "id": 40,
+      "shot": 8,
+      "at_s": 95.4,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The award names no Alaska slope. Barry Arm is one state geologists track, roughly five hundred million cubic meters, and a fast failure could make a tsunami with life-threatening waves.",
+      "phrase": "The award names no",
+      "shows": "the shot opens already at fjord scale on the dark Barry Arm face with the bare slope from shot 7 as a tiny matching silhouette at its foot, a plate reads NO ALASKA SLOPE NAMED, AWARD ABSTRACT",
+      "sfx": "paper",
+      "means": "no alaska slope named \u00b7 award abstract",
+      "rehook": "",
+      "draw": {
+        "subject": "the Barry Arm face",
+        "action": "opens already at fjord scale on the dark Barry Arm face with the bare slope as a tiny matching silhouette at its foot",
+        "emotion": "reading",
+        "annotation": "NO ALASKA SLOPE NAMED \u00b7 AWARD ABSTRACT"
+      },
+      "choreo": {
+        "primary": "the shot opens already at fjord scale on the dark Barry Arm face with the bare slope from shot 7 as a tiny matching silhouette at its foot, a plate reads NO ALASKA SLOPE NAMED, AWARD ABSTRACT",
+        "reaction": "the mist drifts",
+        "ambient": "the face looms, the water heaves, mist rises"
+      },
+      "t": "95.400-98.210",
+      "key": 38
+    },
+    {
+      "id": 41,
+      "shot": 8,
+      "at_s": 98.21,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 2.81
+      },
+      "offset": 2.81,
+      "vo": "The award names no Alaska slope. Barry Arm is one state geologists track, roughly five hundred million cubic meters, and a fast failure could make a tsunami with life-threatening waves.",
+      "phrase": "Barry Arm is one",
+      "shows": "a dashed marker draws around the dark Barry Arm face over the fjord, a plate reads BARRY ARM, STATE GEOLOGISTS TRACK IT",
+      "sfx": "whoosh",
+      "means": "barry arm \u00b7 state geologists track it",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed marker",
+        "action": "holds on the face as a dashed marker draws around it",
+        "emotion": "worried",
+        "annotation": "BARRY ARM \u00b7 STATE GEOLOGISTS TRACK IT"
+      },
+      "choreo": {
+        "primary": "a dashed marker draws around the dark Barry Arm face over the fjord, a plate reads BARRY ARM, STATE GEOLOGISTS TRACK IT",
+        "reaction": "the face looms",
+        "ambient": "the face looms, the water heaves, mist rises"
+      },
+      "t": "98.210-101.930",
+      "key": 39
+    },
+    {
+      "id": 42,
+      "shot": 8,
+      "at_s": 101.93,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 6.53
+      },
+      "offset": 6.53,
+      "vo": "The award names no Alaska slope. Barry Arm is one state geologists track, roughly five hundred million cubic meters, and a fast failure could make a tsunami with life-threatening waves.",
+      "phrase": "million cubic meters, and",
+      "shows": "a tall gauge ruler climbs the Barry Arm face past the tiny slope silhouette and stops at its mark, a plate reads ROUGHLY 500 MILLION M3, DGGS",
+      "sfx": "tick",
+      "means": "roughly 500 million m3 \u00b7 dggs",
+      "rehook": "",
+      "draw": {
+        "subject": "a gauge ruler",
+        "action": "climbs the Barry Arm face beside the speck and stops at the mark",
+        "emotion": "reading",
+        "annotation": "ROUGHLY 500 MILLION M3 \u00b7 DGGS"
+      },
+      "choreo": {
+        "primary": "a tall gauge ruler climbs the Barry Arm face past the tiny slope silhouette and stops at its mark, a plate reads ROUGHLY 500 MILLION M3, DGGS",
+        "reaction": "the ruler settles",
+        "ambient": "the face looms, the water heaves, mist rises"
+      },
+      "t": "101.930-105.410",
+      "key": 40
+    },
+    {
+      "id": 43,
+      "shot": 8,
+      "at_s": 105.41,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 10.01
+      },
+      "offset": 10.01,
+      "vo": "The award names no Alaska slope. Barry Arm is one state geologists track, roughly five hundred million cubic meters, and a fast failure could make a tsunami with life-threatening waves.",
+      "phrase": "tsunami with life-threatening waves.",
+      "shows": "the fjord water heaves and a ripple ring spreads across the empty fjord with no ghost anywhere, a plate reads IF IT FAILED FAST, LIFE-THREATENING WAVES, no wave height anywhere",
+      "sfx": "swell",
+      "means": "if it failed fast \u00b7 life-threatening waves",
+      "rehook": "",
+      "draw": {
+        "subject": "the fjord",
+        "action": "heaves and a ripple ring spreads across the empty fjord",
+        "emotion": "alarmed",
+        "annotation": "IF IT FAILED FAST \u00b7 LIFE-THREATENING WAVES"
+      },
+      "choreo": {
+        "primary": "the fjord water heaves and a ripple ring spreads across the empty fjord with no ghost anywhere, a plate reads IF IT FAILED FAST, LIFE-THREATENING WAVES, no wave height anywhere",
+        "reaction": "the ripple spreads",
+        "ambient": "the face looms, the water heaves, mist rises"
+      },
+      "t": "105.410-108.100",
+      "key": 41
+    },
+    {
+      "id": 44,
+      "shot": 9,
+      "at_s": 108.1,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Which slope would the twin learn first? Nobody's said. Which would you pick?",
+      "phrase": "Which slope would the",
+      "shows": "the dashed ghost hill snaps razor sharp beside one lit lantern-gold lamp as fog closes in beyond it and the neighbouring socket post stays unlit, a plate reads WHICH SLOPE?",
+      "sfx": "pulse",
+      "means": "which slope?",
+      "rehook": "",
+      "draw": {
+        "subject": "the ghost hill",
+        "action": "snaps razor sharp beside one lit lamp as fog closes in beyond and the neighbouring socket stays unlit",
+        "emotion": "curious",
+        "annotation": "WHICH SLOPE?"
+      },
+      "choreo": {
+        "primary": "the dashed ghost hill snaps razor sharp beside one lit lantern-gold lamp as fog closes in beyond it and the neighbouring socket post stays unlit, a plate reads WHICH SLOPE?",
+        "reaction": "the lamp glows",
+        "ambient": "the lamp glows, fog drifts, the goat chews"
+      },
+      "t": "108.100-110.870",
+      "key": 42
+    },
+    {
+      "id": 45,
+      "shot": 9,
+      "at_s": 110.87,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.77
+      },
+      "offset": 2.77,
+      "vo": "Which slope would the twin learn first? Nobody's said. Which would you pick?",
+      "phrase": "Nobody's said. Which would",
+      "shows": "the goat leans on the unlit socket post and looks to camera, a plate reads NOBODY'S SAID",
+      "sfx": "creak",
+      "means": "nobody's said",
+      "rehook": "",
+      "draw": {
+        "subject": "the goat",
+        "action": "leans on the unlit socket post and looks to camera",
+        "emotion": "wry",
+        "annotation": "NOBODY'S SAID"
+      },
+      "choreo": {
+        "primary": "the goat leans on the unlit socket post and looks to camera, a plate reads NOBODY'S SAID",
+        "reaction": "the goat chews",
+        "ambient": "the lamp glows, fog drifts, the goat chews"
+      },
+      "t": "110.870-112.110",
+      "key": 43
+    },
+    {
+      "id": 46,
+      "shot": 9,
+      "at_s": 112.11,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.01
+      },
+      "offset": 4.01,
+      "vo": "Which slope would the twin learn first? Nobody's said. Which would you pick?",
+      "phrase": "Which would you pick?",
+      "shows": "the goat looks from the lit lamp to the unlit socket, puts a hoof on the unlit socket post and turns to camera while the ghost stays sharp beside the lamp through the tail, a plate reads WHICH SLOPE WOULD YOU PICK?",
+      "sfx": "ding",
+      "means": "which slope would you pick?",
+      "rehook": "",
+      "draw": {
+        "subject": "the goat",
+        "action": "looks from the lit lamp to the unlit socket, puts a hoof on the unlit socket post and turns to camera through the tail",
+        "emotion": "hopeful",
+        "annotation": "WHICH SLOPE WOULD YOU PICK?"
+      },
+      "choreo": {
+        "primary": "the goat looks from the lit lamp to the unlit socket, puts a hoof on the unlit socket post and turns to camera while the ghost stays sharp beside the lamp through the tail, a plate reads WHICH SLOPE WOULD YOU PICK?",
+        "reaction": "the lamp glows",
+        "ambient": "the lamp glows, fog drifts, the goat chews"
+      },
+      "t": "112.110-115.900",
+      "key": 44
+    }
+  ]
+}

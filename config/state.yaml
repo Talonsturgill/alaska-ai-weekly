@@ -3060,3 +3060,50 @@ dispatch_history:
     light_story: midday chart-room window key drifting to a late warm rake
     metaphor: a brass question token travelling a cable, a two-pan scale that sinks
       and re-levels, a dashed port with two locks and a clock
+- date: '2026-11-01'
+  topic: NSF GAIA award to UAF for a landslide digital twin
+  slug: the-stand-in
+  key_entities:
+  - NSF
+  - University of Alaska Fairbanks
+  - Carl Tape
+  - GAIA
+  - Haines
+  - Wrangell
+  - Barry Arm
+  - University of Washington
+  - EarthScope
+  archetype: cutaway-hillside-ghost
+  palette: verdant wet moss-green slope layers, a muted sulphur-green storm key, slate
+    timber, cool pale plates, a charcoal-cased pale-grey ghost and warm golden lantern
+    light only on lit instruments
+  voice: Sulafat
+  stance: curious
+  angle: 'GAIA is a funded plan for a loop, not yet a forecaster: fast stand-in models
+    redrawn every time new rain, ground-shaking, satellite or groundwater readings
+    arrive, which is the only way to catch the rain, quake, later-storm chain that
+    kills people on Alaska slopes, and it can only sharpen where instruments exist.'
+  hero: LayeredLand
+  cast:
+  - LayeredLand
+  - GhostHill
+  - Goat
+  - Lamp
+  - Socket
+  - Plate
+  - Ground
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: vertical-descent
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: storm-slate-cutaway
+    palette: verdant wet moss-green slope layers, a muted sulphur-green storm key,
+      slate timber, cool pale plates, a charcoal-cased pale-grey ghost and warm golden
+      lantern light only on lit instruments
+    camera_strategy: crane-down-and-hush
+    light_story: rain light that breaks to clear warm golden light on the instrumented
+      slope
+    metaphor: a dashed ghost hill that redraws itself closer to a real slope each
+      time a reading arrives, goes hollow when its feeds die, and fogs where no instrument
+      listens
