@@ -1,0 +1,272 @@
+{
+ "run_date": "2026-11-01",
+ "fact_check_verdict": "two validators; award record is the only public source for the GAIA claims, no press coverage found; Haines date corrected to 2020",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary-nsf",
+   "spoken": "N S F awarded the University of Alaska Fairbanks one point seven seven million dollars.",
+   "on_screen": "$1,772,170 \u00b7 UAF",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Say according to the N S F award record. Obligated FY2026, equals the recorded total."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary-nsf",
+   "spoken": "The grant runs six years, from August first, 2026.",
+   "on_screen": "AUG 1ST 2026 TO JULY 31ST 2032",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Planned dates, not completed ones."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary-nsf",
+   "spoken": "Carl Tape leads it, with three co-investigators from Fairbanks.",
+   "on_screen": "PI CARL TAPE \u00b7 UAF",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Name roles only as the record gives them. Do not state what West, Meyer or Grapenthin lead."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary-nsf",
+   "spoken": "The goal is a digital twin that keeps updating and estimates hazards in close to real time.",
+   "on_screen": "DIGITAL TWIN \u00b7 A STAND-IN",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Goal and design, not a result. Say aims or plans, never has."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary-nsf",
+   "spoken": "The team plans to test it on landslides in Alaska and the Pacific Northwest.",
+   "on_screen": "TESTS PLANNED \u00b7 ALASKA + PACIFIC NORTHWEST",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Planned testing. No results exist."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary-nsf",
+   "spoken": "It pulls in ground shaking, satellite pictures, weather and groundwater.",
+   "on_screen": "SATELLITE PICTURES",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Abstract says ground vibrations and deformation, satellite imagery, meteorological data and groundwater levels."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary-nsf",
+   "spoken": "The abstract says those measurements come from separate systems that rarely work together.",
+   "on_screen": "SEPARATE SYSTEMS \u00b7 RARELY WORK TOGETHER",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Attribute to the award abstract. It is the applicants' framing."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary-nsf",
+   "spoken": "Heavy rain can soak a slope, an earthquake can weaken that same slope, and a later storm can bring it down.",
+   "on_screen": "3 \u00b7 A LATER STORM BRINGS IT DOWN",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Attribute to the award abstract."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary-nsf",
+   "spoken": "Part of the plan is fast surrogate models, stand-ins that approximate slow physics simulations.",
+   "on_screen": "SURROGATE MODEL \u00b7 FAST STAND-IN FOR SLOW PHYSICS",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Abstract: fast surrogate models that approximate expensive physics simulations, coupled to incoming observations through data assimilation."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary-nsf",
+   "spoken": "It also plans software agents that read papers and code and flag what scientists don't yet know.",
+   "on_screen": "SOFTWARE AGENTS \u00b7 PLANNED PROTOTYPE",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Abstract: prototypes research-assisting agents that recommend methods, flag knowledge gaps and generate reproducible workflows. Planned prototype."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary-nsf-api",
+   "spoken": "Two partner awards share the title, one at the University of Washington and one at EarthScope.",
+   "on_screen": "PARTNERS \u00b7 U OF WASHINGTON + EARTHSCOPE",
+   "source": "https://api.nsf.gov/services/v1/awards.json?keyword=%22Geophysical+AI-driven+Integration%22",
+   "requires": [
+    "Amounts: UW $2,209,093 and EarthScope $449,448, found by keyword search of the NSF API. Do not claim no further partner exists."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-secondary-khns",
+   "spoken": "In December 2020, a storm dropped at least eight inches of rain on Haines in two days.",
+   "on_screen": "AT LEAST 8 IN OF RAIN IN 2 DAYS \u00b7 PER KHNS",
+   "source": "https://www.ktoo.org/2020/12/03/search-for-survivors-of-haines-landslide-to-resume-at-first-light/",
+   "requires": [
+    "Attribute to KHNS reporting, a news figure and not an N W S measurement."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-secondary-beacon",
+   "spoken": "Slides that week killed two people.",
+   "on_screen": "TWO KILLED",
+   "source": "https://www.ktoo.org/2025/09/12/from-rain-drenched-mountains-to-arctic-permafrost-alaska-landslides-pose-hazards/",
+   "requires": [
+    "Event is December 2020. Alaska Beacon caption."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-secondary-beacon",
+   "spoken": "In November 2023, a slide in Wrangell killed six people and blocked the Zimovia Highway.",
+   "on_screen": "SIX KILLED",
+   "source": "https://www.ktoo.org/2025/09/12/from-rain-drenched-mountains-to-arctic-permafrost-alaska-landslides-pose-hazards/",
+   "requires": [
+    "Alaska Beacon via KTOO. Contemporaneous counts rose over days."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-secondary-khns",
+   "spoken": "Southeast Alaska has had four fatal landslides in the last decade.",
+   "on_screen": "4 FATAL LANDSLIDES IN A DECADE",
+   "source": "https://www.ktoo.org/2025/02/13/communities-in-southeast-alaska-are-mapping-their-landslide-risk-its-complicated/",
+   "requires": [
+    "KHNS wording, article dated February 13th, 2025."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary-dggs",
+   "spoken": "At Barry Arm, state geologists track a slope of roughly five hundred million cubic meters.",
+   "on_screen": "ROUGHLY 500 MILLION CUBIC METERS",
+   "source": "https://dggs.alaska.gov/hazards/barry-arm-landslide.html",
+   "requires": [
+    "DGGS says about 500 M m3. USGS cites 455 M m3 (Dai et al, 2020). Hedge as roughly."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary-dggs",
+   "spoken": "If it failed fast, it could make a tsunami with life-threatening waves.",
+   "on_screen": "LIFE-THREATENING WAVES",
+   "source": "https://dggs.alaska.gov/hazards/barry-arm-landslide.html",
+   "requires": [
+    "DGGS page gives no wave height. Never print a height."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary-asf",
+   "spoken": "Fairbanks is also home to the Alaska Satellite Facility, NASA's archive for radar satellite data.",
+   "on_screen": "ASF \u00b7 NASA SAR DATA ARCHIVE",
+   "source": "https://asf.alaska.edu/about/about-asf/",
+   "requires": [
+    "Page: As the NASA SAR Distributed Active Archive Center, ASF plays a key role in managing and distributing SAR data. Do not say Meyer works there."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary-nsf-absence",
+   "spoken": "The award names no Alaska slope.",
+   "on_screen": "NO ALASKA SLOPE NAMED \u00b7 AWARD ABSTRACT",
+   "source": "https://api.nsf.gov/services/v1/awards/2608510.json",
+   "requires": [
+    "Absence checked in the full abstract text: it says tests on landslides in Alaska and the Pacific Northwest and names no slope. Say the award abstract names none. Do not say a slope was never chosen."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

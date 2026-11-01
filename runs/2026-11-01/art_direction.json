@@ -1,0 +1,126 @@
+{
+ "run_date": "2026-11-01",
+ "story_id": "uaf-gaia-landslide-digital-twin",
+ "palette": {
+  "roles": {
+   "sky": "#2E3B45",
+   "ground": "#3E5648",
+   "hero": "#3F6B63",
+   "accent": "#F2C14E",
+   "shadow": "#141B20",
+   "paper": "#C9D2D2",
+   "ink": "#1B2328",
+   "rain": "#7FA3B5",
+   "ghost": "#EEF2F0",
+   "key": "#B9B86A",
+   "timber": "#2B3A3F",
+   "ghost_casing": "#1B2328",
+   "feed_shake": "#E08A5B",
+   "feed_sat": "#9CC3D8",
+   "feed_weather": "#7FA3B5",
+   "feed_ground": "#8FBF8A",
+   "slate_bronze": "#6E6A58"
+  },
+  "mood": "Storm slate with a muted sulphur-green key (#B9B86A), wet verdant moss slope layers, slate timber props, cool pale-grey plates (never cream, no bone, no ivory), a cool pale-grey ghost always cased in charcoal dashes or set over slate and moss, and one lantern-gold accent that appears ONLY on listening instruments, the lit side of the slope and the goat's rim at the button. Curious, honest, never alarmist.",
+  "divergence": "Unlike 10-31's sage-and-cream chart desk with graphite lines, 10-29's aubergine dusk depot and 10-28's green-black sonar abyss, this film is overcast daylight on a wet layered hillside, with slate timber props, grey-white plates, a standing relief map instead of a desk map, and gold reserved for listening instruments. The cream and graphite of 10-31 never appear.",
+  "accent_licence": "lantern-gold ONLY on: the three lit instruments and lamp cones (shot 7), the one lit lamp and the goat's lit-side rim (shot 9). Counters and coins are slate-bronze (#6E6A58), never gold, and the RainGauge is desaturated by an episode-local grade outside shot 7. SatelliteEye in shot 5 is passed lensColor, dishColor and coneColor from the feed_sat blue, never its gold defaults. SeismicStation stays at lamp 0 with emotion listening or straining outside shots 7 and 9. No gold in the Haines and Wrangell frames. The feed_shake orange is thin and low-alpha so it never reads as a second accent. The feed_ground green is the groundwater probe's line and the probe drips GREEN.",
+  "ghost_render": "Simulated's own colour is overridden to #EEF2F0 and its lime re-solve tick is overridden in the GhostHill wrapper. The ghost is never placed over plate grey or any light ground, only over slate or moss, and the pale break in shot 5 stays behind the real slope."
+ },
+ "light": {
+  "time": "Overcast storm afternoon clearing to a warm lamp",
+  "direction": "Flat muted sulphur-green key through rain, cool slate fill, lantern-gold rim only on lit instruments and, in shot 9, on the goat's lit side",
+  "depth": "Three planes: foreground rain streaks and plates at z170, the slope layers and ghost at z0, slate sky and ridge at z-120. The ghost is shadowless, only the physical gauge, stations, probe, coin stacks, poles, lamps and goat take contact shadows.",
+  "key_note": "Overcast sulphur-green key (#B9B86A, desaturated) in shots 1 to 4, thinning across shot 5 as readings arrive so the clouds visibly break by the tug beat, warm lantern-gold only where an instrument listens in shots 7 and 9.",
+  "per_shot": {
+   "1": "flat sulphur key, rain streaks z170, slope z0, mist ridge z-120",
+   "2": "side-lit standing relief map with real extrusion and a contact shadow under the slate-bronze coin hill, cool pale plates",
+   "3": "three panels each lit by the same overcast key, panel grounds are slate or moss never plate grey, only the real slope darkens and the ghost goes stale and frozen-grey",
+   "4": "near-black slate void, one soft top key on the RainGauge (labels off, the plate carries the number), three plain slate cards (HAINES, TWO KILLED, WRANGELL), no gold, no ghost, no lamps, rain only; any glint on the gauge is a cool neutral specular, never warm",
+   "5": "overcast thinning to a pale break, feed lines in four hues from the feed roles",
+   "6": "a hollow ghost alone on a slate void, four dead grey lines, three poles (award record, taller UW, shorter UAF) with contact shadows, a dashed test outline and an empty results plate, no slope, no ground",
+   "7": "low angle, gold rim on the three instruments only, fog smears the far side of the ghost",
+   "8": "dark cold fjord face at fjord scale, a tiny slope silhouette at its foot, ruler in cool pale-grey, no gold, no ghost",
+   "9": "low angle, one gold lamp, fog beyond, goat takes a gold rim only on the lit side"
+  }
+ },
+ "shape_language": {
+  "grammar": "Torn jittered slope layers and a soft round seismic station against the rectilinear plates, poles and slate cards. The ghost is the only dashed geometry, always cased in charcoal dashes or set over slate and moss, never over a light ground, drawn with a faint grid fill and fog smear so it reads as a stated model and not a plain dashed line.",
+  "why": "The story moves from organic ground to the rectilinear fair case, and the dashed ghost carries the honest word plan."
+ },
+ "casting": {
+  "hero": "LayeredLand (the slope) with the Stand-In ghost (Simulated over a LayeredLand silhouette) and MountainGoat as witness",
+  "inventory": [
+   {
+    "shot": 1,
+    "beats": "1 to 6",
+    "subject": "LayeredLand slope, real MountainGoat (solid, contact shadow), GhostHill and ghost goat (episode-local wrapper), pebble, scar",
+    "source": "lib/bench.tsx LayeredLand, lib/fauna.tsx MountainGoat, episode-local GhostHill over lib/simulation.tsx Simulated"
+   },
+   {
+    "shot": 2,
+    "beats": "7 to 12",
+    "subject": "standing relief map of Alaska (extruded AK_PATH, side lit), a Fairbanks pin placed by eye, a CoinStack hill with contact shadow, an episode-local slate-bronze dial counter, road bar, name cards and an engraved award plate, GhostHill sketched over the Interior (no goat)",
+    "source": "lib/akmap.ts AK_PATH, lib/folio.tsx CoinStack, episode-local relief, pin, counter, bar and plates, GhostHill"
+   },
+   {
+    "shot": 3,
+    "beats": "13 to 16",
+    "subject": "three-panel strip of the real slope (LayeredLand), RainGauge, SeismicStation (lamp 0), storm cloud, GhostHill pristine then stale and frozen-grey",
+    "source": "lib/bench.tsx LayeredLand, lib/permit.tsx RainGauge, lib/sensors.tsx SeismicStation, episode-local strip and cloud, GhostHill"
+   },
+   {
+    "shot": 4,
+    "beats": "17 to 22",
+    "subject": "tall RainGauge with its vane (labels off), three plain slate cards, rain streaks, no ghost",
+    "source": "lib/permit.tsx RainGauge (never fiber.tsx Gauge), episode-local cards and rain"
+   },
+   {
+    "shot": 5,
+    "beats": "23 to 30",
+    "subject": "LayeredLand slope, GhostHill beside a bare socket post with an unlit lamp (episode-local Socket and Lamp, never LampArm), four feeds (SeismicStation lamp 0, SatelliteEye with feed_sat colours, the carried RainGauge, ThawProbe as the groundwater probe with episode-local green drips), four clocks, crank machine",
+    "source": "lib/bench.tsx, lib/sensors.tsx, lib/permit.tsx, lib/thaw.tsx, episode-local Socket, Lamp, clocks, crank and green drips"
+   },
+   {
+    "shot": 6,
+    "beats": "31 to 36",
+    "subject": "hollow GhostHill alone on a slate void with four dying grey feed lines, a lone pole labelled THE AWARD RECORD, a taller UW pole and a shorter UAF pole, EarthScope card, a dashed test outline, an empty results plate",
+    "source": "episode-local GhostHill, poles, cards, outline and plate"
+   },
+   {
+    "shot": 7,
+    "beats": "37 to 39",
+    "subject": "LayeredLand slope, RainGauge, SeismicStation and ThawProbe with a lantern-gold rim, GhostHill sharp near the instruments and fog beyond, real MountainGoat and ghost goat, lamp cones",
+    "source": "lib/bench.tsx, lib/permit.tsx, lib/sensors.tsx, lib/thaw.tsx, lib/fauna.tsx, episode-local GhostHill, fog and cones"
+   },
+   {
+    "shot": 8,
+    "beats": "40 to 43",
+    "subject": "the dark Barry Arm face over a fjord at fjord scale with a tiny slope silhouette at its foot, a dashed marker, a gauge ruler and a ripple ring, no ghost",
+    "source": "lib/bench.tsx LayeredLand (silhouette), episode-local face, marker, ruler and ripple"
+   },
+   {
+    "shot": 9,
+    "beats": "44 to 46",
+    "subject": "GhostHill sharp beside one lit episode-local Lamp (lantern-gold), neighbouring Socket post unlit, MountainGoat looking from lamp to socket and putting a hoof on the socket post with a gold rim",
+    "source": "lib/fauna.tsx MountainGoat, episode-local Lamp, Socket and GhostHill"
+   }
+  ],
+  "net_new": "Episode-local only, none registered this run: GhostHill (a wrapper over lib/simulation.tsx Simulated that adds a charcoal dashed casing under a pale-grey dashed stroke, a clipped faint grid for the planned-copy fill, two clipped Simulated instances for the sharp side (fidelity about 1) and the fog side (fidelity about 0.15) split at x 760 in shot 7, a hollow state, a stale frozen-grey state, and its own outline path data including a ghost-goat outline), the relief map, the three-panel strip, the crank machine, the four clocks, the socket post, the storm cloud, the cards, the lone pole, the results plate, the Barry Arm face, the gauge ruler. Candidates for promotion: GhostHill. Also episode-local: Lamp and Socket (replacing LampArm, whose brass and lit lens can't be overridden), a slate-bronze dial counter (replacing TallyCounter), the Fairbanks pin, green groundwater drips, a dark grade for the Barry Arm face (FjordBG is not used). RainGauge is wrapped in a desaturating grade (grayscale and dim) in shots 3, 4 and 5 so its cream wood and gold hooks never read as accent or cream, and left native only in shot 7 where gold is licensed.",
+  "continuity": "The Haines RainGauge from shot 4 is carried into shot 5 as the weather feed. The ghost is on screen in every act except the Haines and Wrangell hush and Barry Arm, by design."
+ },
+ "motion_language": {
+  "grammar": "Rain drips settle with weight, the ghost snaps with anticipation and overshoot, the crack opens in two beats, hush frames hold with only a slow push.",
+  "hero_moves": [
+   "The ghost hill snaps onto the real slope after each reading tug",
+   "The crack opens through soaked layers as the station flinches",
+   "The goat steps through fog and the ghost breaks apart under its hooves"
+  ]
+ },
+ "composition": {
+  "focal_hierarchy": "Slope and ghost first, plates second",
+  "negative_space": "Hush frames for Haines and Wrangell are plain cards with large empty slate",
+  "safe_area": "Hero action inside y420 to 1500, captions in the open band",
+  "signature_shot": "Shot 7 beat id 37: from a cross-section-cutaway view the ghost is razor sharp around a RainGauge at x 200, a SeismicStation at x 400 and a ThawProbe at x 600 with the sharp-to-fog boundary at x 760, smeared to fog beyond; the ghost goat walks in sync with the real goat on the lit side then lags and dissolves in the fog."
+ },
+ "craft_advance": "none needed by this film"
+}
