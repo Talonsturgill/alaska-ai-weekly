@@ -840,7 +840,7 @@ def main():
         _gaps = [(a["end"], b["start"]) for a, b in zip(_lines, _lines[1:])
                  if b["start"] - a["end"] >= 0.5]
         for a, b in _gaps:
-            pk = 2.2 if b - a < 1.6 else 3.8  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
+            pk = 3.2 if b - a < 1.6 else 5.0  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
             gap_lift += [(a + 0.05, 1.0), (a + 0.4, pk), (b - 0.4, pk), (b - 0.05, 1.0)]
         print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
               f"({sum(b - a for a, b in _gaps):.1f}s of room)")
@@ -940,14 +940,14 @@ def main():
          "-ar", str(SR), "-ac", "2", "-t", str(VIDEO_SECS), premix])
 
     p = subprocess.run([FF, "-i", premix, "-af",
-                        "loudnorm=I=-14:TP=-2.0:LRA=11:print_format=json", "-f", "null", "-"],
+                        "loudnorm=I=-14:TP=-2.0:LRA=7:print_format=json", "-f", "null", "-"],
                        capture_output=True, text=True)
     m = re.search(r"\{[^{}]*input_i[^{}]*\}", p.stderr, re.S)
     if not m:
         raise SystemExit("dispatch_mix: loudnorm analysis pass produced no JSON")
     a = json.loads(m.group(0))
     print(f"premix measured: {a['input_i']} LUFS  TP {a['input_tp']}  LRA {a['input_lra']}")
-    ln = (f"loudnorm=I=-14:TP=-2.0:LRA=11:linear=true"
+    ln = (f"loudnorm=I=-14:TP=-2.0:LRA=7:linear=true"
           f":measured_I={a['input_i']}:measured_TP={a['input_tp']}"
           f":measured_LRA={a['input_lra']}:measured_thresh={a['input_thresh']}"
           f":offset={a['target_offset']}:print_format=summary")

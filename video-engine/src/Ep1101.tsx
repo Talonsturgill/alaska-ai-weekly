@@ -149,6 +149,11 @@ const Sky: React.FC<{f: number; breakK: number}> = ({f, breakK}) => (
     </defs>
     <rect x={-1080} y={-960} width={W * 3} height={H * 2} fill="url(#skyg)" />
     <rect x={-1080} y={-960} width={W * 3} height={H * 2} fill="url(#breakg)" />
+    <path d="M -100,640 L 80,470 L 190,560 L 330,400 L 470,540 L 620,430 L 780,570 L 930,440 L 1180,600 L 1180,800 L -100,800 Z" fill="#3A4C54" opacity={0.65} />
+    <path d="M 80,470 L 120,505 L 100,520 L 60,505 Z M 330,400 L 372,445 L 340,455 L 305,440 Z M 620,430 L 660,470 L 630,482 L 598,462 Z M 930,440 L 968,480 L 940,490 L 905,470 Z" fill="#C9D2D2" opacity={0.5} />
+    {[0, 1, 2].map((i) => (
+      <ellipse key={`cl${i}`} cx={((f * (0.6 + i * 0.25) + i * 400) % 1500) - 200} cy={330 + i * 90} rx={300 + i * 50} ry={28} fill="#5A6F76" opacity={0.28} />
+    ))}
     {[0, 1, 2].map((i) => (
       <path key={i} d={`M -40,${760 - i * 70} Q 180,${690 - i * 70 + 10 * Math.sin(f / 90 + i)} 360,${740 - i * 70} T 700,${720 - i * 70} T 1120,${750 - i * 70} L 1120,1000 L -40,1000 Z`}
         fill={['#34454A', '#2D3C42', '#27353A'][i]} opacity={0.55 - i * 0.12} />
@@ -229,7 +234,8 @@ const GhostHill: React.FC<{f: number; x: number; y: number; w?: number; h?: numb
 };
 
 const Goat: React.FC<{f: number; x: number; y: number; scale?: number; facing?: 1 | -1; ghost?: boolean; lag?: number; rim?: number}> = ({f, x, y, scale = 0.6, facing = 1, ghost = false, lag = 0, rim = 0}) => (
-  <g opacity={ghost ? 0.5 : 1} style={ghost ? {filter: 'grayscale(1) brightness(1.5)'} : undefined} transform={ghost ? `translate(0 ${lag * 4})` : undefined}>
+  <g opacity={ghost ? 0.5 : 1} style={ghost ? {filter: 'grayscale(1) brightness(1.5)'} : undefined}
+    transform={`translate(0 ${(ghost ? lag * 4 : 0) + 3 * Math.sin(f / 9)}) translate(${x} ${y}) scale(${1 + 0.012 * Math.sin(f / 9)} ${1 + 0.022 * Math.sin(f / 9)}) translate(${-x} ${-y})`}>
     <MountainGoat x={x} y={y} scale={scale} f={f} facing={facing} />
     {rim > 0 && <ellipse cx={x + 24 * facing} cy={y - 100 * scale} rx={46 * scale} ry={90 * scale} fill="none" stroke={C.gold} strokeWidth={6} opacity={rim * 0.7} />}
   </g>
@@ -332,12 +338,12 @@ const S1: React.FC<SceneProps> = ({p}) => {
       ))}
       <SVG>
         <Slope f={f} x={330} y={1180} soak={0.7 + 0.2 * Math.sin(f / 30)} scar={scar} />
-        <Goat f={f} x={250} y={668} scale={0.62} />
+        <Goat f={f} x={250} y={668} scale={0.8} />
         <g transform={`translate(0 ${sit * 0})`} />
         <Ground f={f} />
         <path d={`M 0,1180 L 1080,1180`} stroke={C.ink} strokeWidth={6} />
         <GhostHill f={f} x={780} y={1180} w={560} h={500} draw={k1} grid={grid} alpha={1} id="s1" />
-        <Goat f={f} x={700} y={800} scale={0.5} ghost lag={(1 - sit) * 10} />
+        <Goat f={f} x={700} y={800} scale={0.66} ghost lag={(1 - sit) * 10} />
         <Plate x={540} text="A COPY OF A SLOPE · A PLAN" y={rv(1)} p={k1 * (1 - ease(f, b(2), 10))} size={30} />
         <Plate x={540} text="SLIDES HAVE KILLED PEOPLE" y={rv(2)} p={ease(f, b(2), 18) * (1 - ease(f, b(3), 10))} tone="warn" size={30} />
         <Plate x={540} text="SOUTHEAST ALASKA" y={rv(3)} p={ease(f, b(3), 18) * (1 - ease(f, b(4), 10))} size={30} />
@@ -444,13 +450,13 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const drain = ease(f, b(21), 90);
   const rainAmt = 1 + 0.8 * ease(f, b(45), 40);
   return (
-    <Frame p={p} z0={1.0} z1={1.08} rain={rainAmt} breakK={0} vignette={0.38}>
+    <Frame p={p} z0={1.0} z1={1.18} oy={1020} rain={rainAmt} breakK={0} vignette={0.38}>
       <SVG>
         <rect data-band="ok" x={-1100} y={-1000} width={3280} height={4000} fill="#10171B" opacity={0.6} />
         <Gauge x={260} y={1160} f={f} scale={0.95} level={Math.max(0.02, lvl - drain * 0.6)} id="s4g" />
         <g opacity={0.8}>
           <ellipse cx={720} cy={1190} rx={340} ry={16} fill="#000" opacity={0.4} />
-          <Slope f={f} x={720} y={1180} w={560} h={480} soak={1} scar={ease(f, b(17), 50) * 0.8 + 0.2 * ease(f, b(20), 40)} />
+          <Slope f={f} x={720} y={1180} w={560} h={480} soak={0.5 + 0.5 * ease(f, b(17), 40)} scar={ease(f, b(17), 50) * 0.7 + 0.3 * ease(f, b(20), 40)} crack={ease(f, b(20) + 20, 30)} slump={ease(f, b(21), 50)} />
         </g>
         <rect data-band="ok" x={-1100} y={1180} width={3280} height={1400} fill="#0C1215" opacity={0.7} />
         <Plate x={750} text="HAINES DEC 2020" displayLines={['HAINES', 'DEC 2020']} y={800} size={34} p={ease(f, b(17), 18) * (1 - ease(f, b(20) - 4, 8))} />
@@ -467,7 +473,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
 const S5: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const rise = easeIO(f, b(22), 30);
-  const tug = ease(f, b(29), 36);
+  const tug = springy(f, b(29), 40);
   const fx = (key: number) => ease(f, b(key), 18);
   const sharp = 1 - 0.6 * (1 - tug);
   const brk = ease(f, b(29), 60);
@@ -546,7 +552,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
             <ellipse cx={700} cy={1186} rx={44} ry={9} fill="#000" opacity={0.4} />
           </g>
         )}
-        <Lab text="THE AWARD RECORD" x={700} y={800} size={20} p={lone} />
+        <Lab text="THE AWARD RECORD" x={540} y={790} size={20} p={lone} />
         {fork > 0.02 && (
           <g opacity={fork}>
             <path d={`M 714,860 C 800,800 870,780 900,${1180 - 280 * fork}`} stroke={C.plate} strokeWidth={5} fill="none" strokeDasharray="14 10" strokeDashoffset={-f * 4} />
@@ -617,7 +623,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const rip = ease(f, b(41), 40);
   const mark = ease(f, b(39), 30);
   return (
-    <Frame p={p} z0={1.02} z1={1.0} breakK={0} sky={1} vignette={0.38}>
+    <Frame p={p} z0={1.0} z1={1.1} oy={1000} breakK={0} sky={1} vignette={0.38}>
       <SVG>
         <rect data-band="ok" x={-1100} y={-1000} width={3280} height={4000} fill="#0F161A" opacity={0.4} />
         <g>
@@ -630,10 +636,15 @@ const S8: React.FC<SceneProps> = ({p}) => {
         {[0, 1, 2, 3].map((i) => <path key={`w${i}`} data-band="ok" d={`M -20,${1230 + i * 90} Q 270,${1200 + i * 90 + (10 + 22 * rip) * Math.sin(f / 12 + i)} 540,${1230 + i * 90} T 1100,${1230 + i * 90}`} stroke={C.rain} strokeWidth={5} fill="none" opacity={0.45} />)}
         {[0, 1, 2].map((i) => <path key={i} d={`M -20,${1220 + i * 70} Q 270,${1190 + i * 70 + 8 * Math.sin(f / 20 + i)} 540,${1220 + i * 70} T 1100,${1220 + i * 70}`} stroke={C.rain} strokeWidth={4} fill="none" opacity={0.4} />)}
         <g transform="translate(330 1180) scale(0.2)"><Slope f={f} x={0} y={0} w={640} h={520} soak={0.4} /></g>
+        <g transform={`translate(${420 + 20 * Math.sin(f / 40)} ${1245 + 5 * Math.sin(f / 14)})`}>
+          <path d="M -34,0 L 34,0 L 22,16 L -22,16 Z" fill="#C9D2D2" stroke={C.ink} strokeWidth={3} />
+          <rect x={-3} y={-30} width={6} height={30} fill={C.ink} />
+        </g>
+        <path d="M -100,330 L 120,250 L 260,330 L 420,200 L 600,310 L 780,220 L 1180,330 L 1180,420 L -100,420 Z" fill="#162126" opacity={0.8} />
         <rect x={680} y={380 + (1 - ruler) * 800} width={36} height={800 * ruler} fill="#C9D2D2" stroke={C.ink} strokeWidth={5} opacity={clamp01(ruler * 2)} />
         {Array.from({length: 9}).map((_, i) => <line key={`t${i}`} x1={716} y1={1180 - i * 100 * ruler} x2={750} y2={1180 - i * 100 * ruler} stroke="#C9D2D2" strokeWidth={5} opacity={clamp01(ruler * 2)} />)}
         <g opacity={rip * 0.9}>
-          {[0, 1, 2].map((i) => <ellipse key={i} cx={520} cy={1240} rx={90 + i * 120 * rip} ry={14 + i * 18 * rip} fill="none" stroke={C.rain} strokeWidth={5} opacity={0.7 - i * 0.2} />)}
+          {[0, 1, 2].map((i) => <ellipse key={i} cx={520} cy={1240} rx={90 + i * 220 * rip} ry={14 + i * 34 * rip} fill="none" stroke={C.rain} strokeWidth={5} opacity={0.7 - i * 0.2} />)}
         </g>
         <Plate x={540} text="NO ALASKA SLOPE NAMED AWARD ABSTRACT" displayLines={['NO ALASKA SLOPE NAMED', 'AWARD ABSTRACT']} y={500} p={ease(f, b(38), 14) * (1 - ease(f, b(39), 10))} size={26} />
         <Plate x={540} text="BARRY ARM STATE GEOLOGISTS TRACK IT" displayLines={['BARRY ARM', 'STATE GEOLOGISTS TRACK IT']} y={650} p={ease(f, b(39), 14) * (1 - ease(f, b(40), 10))} size={28} />
