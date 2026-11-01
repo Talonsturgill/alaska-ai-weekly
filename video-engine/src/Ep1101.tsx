@@ -552,7 +552,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
             <ellipse cx={700} cy={1186} rx={44} ry={9} fill="#000" opacity={0.4} />
           </g>
         )}
-        <Lab text="THE AWARD RECORD" x={540} y={790} size={20} p={lone} />
+        <Lab text="THE AWARD RECORD" x={450} y={800} size={20} p={lone} />
         {fork > 0.02 && (
           <g opacity={fork}>
             <path d={`M 714,860 C 800,800 870,780 900,${1180 - 280 * fork}`} stroke={C.plate} strokeWidth={5} fill="none" strokeDasharray="14 10" strokeDashoffset={-f * 4} />
@@ -565,7 +565,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
         )}
         <Lab text="UAF $1,772,170" x={870} y={1180 - 280 * fork - 30} size={18} p={fork} />
         <Lab text="UW $2,209,093" x={900} y={1180 - 470 * fork - 30} size={18} p={fork} />
-        <Lab text="EARTHSCOPE $449,448" x={760} y={1250} size={16} p={fork} />
+        <Lab text="EARTHSCOPE $449,448" x={900} y={1222} size={16} p={fork} />
         <g opacity={test}>
           <path d={`M 90,880 L 230,840 L 270,980 L 120,1030 Z`} fill="none" stroke={C.plate} strokeWidth={4} strokeDasharray="12 8" />
         </g>

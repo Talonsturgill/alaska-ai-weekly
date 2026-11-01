@@ -927,7 +927,8 @@ def main():
     # flat.  Apply the same fitted window to the full mix so the rendered master contains the
     # promised pause.  Static two-pass loudness normalization preserves this relative drop.
     fc.append(f"[mixed]volume=volume={mix_arc}:eval=frame,"
-              f"volume=enable='between(t,{dip0},{dip1})':volume=0.15[premix]")
+              f"volume=enable='between(t,{dip0},{dip1})':volume=0.15,"
+              f"acompressor=threshold=0.05:ratio=3:attack=250:release=1500:makeup=2[premix]")
 
     filtergraph = ";".join(fc)
     master = os.path.join(AUD, "master.wav")
