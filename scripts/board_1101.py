@@ -306,9 +306,9 @@ def build():
             {"t": b_at(29), "type": "scale-pullback", "what": "from one tugged corner to the whole ghost snapping onto the slope as the clouds break", "hold_s": 0.8},
             {"t": b_at(40), "type": "build-on", "what": "the gauge ruler builds up the dark Barry Arm face past the tiny slope silhouette, a scale read on the same shot", "hold_s": 0.8}],
         "tail_s": 3.0, "audio_arc": {"bed": [
-            {"line": 0, "offset": 0.0, "level": 0.6}, {"line": 0, "offset": 3.0, "level": 1.0}, {"line": 2, "offset": 0.0, "level": 0.2},
+            {"line": 0, "offset": 0.0, "level": 0.6}, {"line": 0, "offset": 3.0, "level": 1.0}, {"line": 2, "offset": 0.0, "level": 0.5},
             {"line": 4, "offset": 0.0, "level": 0.95}, {"line": 5, "offset": 0.0, "level": 0.12}, {"line": 7, "offset": 0.0, "level": 0.9},
-            {"line": 8, "offset": 0.0, "level": 0.14}, {"line": 9, "offset": 0.0, "level": 0.95}, {"line": 10, "offset": 0.0, "level": 0.16},
+            {"line": 8, "offset": 0.0, "level": 0.8}, {"line": 9, "offset": 0.0, "level": 0.95}, {"line": 10, "offset": 0.0, "level": 0.4},
             {"line": 11, "offset": 0.0, "level": 0.9},
             {"at_s": round(b_at(37) - 0.3, 3), "level": 0.1}, {"at_s": round(b_at(37) + 0.8, 3), "level": 0.6},
             {"from_end": 2.6, "level": 0.55}, {"from_end": 0.4, "level": 0.0}],
