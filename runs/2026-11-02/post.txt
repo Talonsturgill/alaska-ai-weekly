@@ -1,0 +1,30 @@
+$220 million, and not one claims process for the drivers whose data GM allegedly sold.
+Consent is where the settlement bites, so the fixes start at the door.
+
+Per the settlement, GM will pay $220 million. 36 attorneys general signed on and Alaska is one of them.
+
+Alaska's share is $2.5 million per the Alaska Department of Law as reported by Alaska's News Source. GM admitted no violation of law.
+
+Everything about conduct is alleged. The complaint says Smart Driver tracked hard braking, hard acceleration and late-night driving plus location every three seconds.
+
+It says GM sold that to Verisk and LexisNexis.
+
+It says those firms built driver ratings for insurers and that some insurers used that information in part to set rates.
+
+The alleged break sits at intake. The complaint says GM's apps told over 370,000 people they weren't enrolled while data was collected. It attributes those notices to a technical glitch.
+
+Most of the settlement's fixes act on that door. GM needs a driver's clear yes before it collects or shares driving data.
+
+It must collect only what is reasonably necessary. It must delete driving data kept from before January 16th, 2025, with exceptions.
+
+Acting Attorney General Cori Mills said "This holds GM accountable and reinforces our commitment to safeguarding Alaskans' personal information."
+
+The limit is that none of this pays an individual driver. The settlement sets up no claims process for drivers.
+
+Neither the decree nor the public releases state how many Alaska drivers were in the data.
+
+Drivers can ask GM for a copy of their data or ask it to delete it.
+
+If your car was in that data, what would a clear yes from you have to show before GM collects anything, and would you ask for the copy first?
+
+#Alaska #DataPrivacy #ArtificialIntelligence #ConnectedCars

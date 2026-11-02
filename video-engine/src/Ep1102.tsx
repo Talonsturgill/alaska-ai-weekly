@@ -124,10 +124,10 @@ const Atmos: React.FC<{f: number; bg: string}> = ({f, bg}) => {
 const CHIP = 'ILLUSTRATION';
 type Cam = {z: number; fx: number; fy: number};
 const Frame: React.FC<{p: SP; cam?: (f: number) => Cam; z0?: number; z1?: number; bloom?: number; vignette?: number; ox?: number; oy?: number; warmth?: number; bg?: string; children: React.ReactNode}> =
-({p, cam, z0 = 1.02, z1 = 1.14, bloom = 0.05, vignette = 0.28, ox = 540, oy = 960, warmth = 0.02, bg = C.sky, children}) => {
+({p, cam, z0 = 1.02, z1 = 1.2, bloom = 0.05, vignette = 0.28, ox = 540, oy = 960, warmth = 0.02, bg = C.sky, children}) => {
   const jl = kickTransform(p.f, cameraKick(p.f, p.from, p.dur, p.kicks));
   const t = clamp01(p.f / Math.max(1, p.dur));
-  const c: Cam = cam ? cam(p.f) : {z: lerp(z0, z1, easeIO(p.f, 0, Math.max(1, p.dur))), fx: ox + 26 * Math.sin(p.f / 140) + 18 * t, fy: oy};
+  const c: Cam = cam ? cam(p.f) : {z: lerp(z0, z1, easeIO(p.f, 0, Math.max(1, p.dur))), fx: ox + 50 * Math.sin(p.f / 110) + 30 * t, fy: oy};
   return (
     <AbsoluteFill>
       <Atmos f={p.f} bg={bg} />
@@ -333,22 +333,24 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
   const slam = at(25);
   const cur = TOPS.filter((q) => f >= at(q.k)).length - 1;
   const stopped = f > slam + 6;
+  const bone = f >= at(19) && f < at(41) + 24;
+  const lab = bone ? C.ink : C.cream;
   return (
     <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, pointerEvents: 'none'}}>
       <g data-band="ok">
-        <text x={60} y={150} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={C.cream} opacity={0.7}>THE FOB · ENROLLMENT TAG</text>
+        <text x={60} y={150} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={lab} opacity={bone ? 0.9 : 0.7}>THE FOB · ENROLLMENT TAG</text>
         {TOPS.map((q, i) => {
           const x = 60 + i * 140, on = i <= cur, now = i === cur;
           return (
             <g key={i} transform={`translate(${x} 205)`}>
-              <rect x={0} y={-34} width={126} height={68} rx={10} fill={now ? C.glow : on ? '#2B2760' : '#15123A'} stroke={now ? C.white : C.gun} strokeWidth={now ? 5 : 3} opacity={on ? 1 : 0.5} />
-              <text x={63} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={q.t.length > 9 ? 15 : 19} fill={now ? C.ink : q.t.includes('NOT') ? C.mag : C.cream}>{q.t}</text>
+              <rect x={0} y={-34} width={126} height={68} rx={10} fill={now ? C.glow : on ? (bone ? '#4A4590' : '#2B2760') : (bone ? '#CFC6AE' : '#15123A')} stroke={now ? C.ink : bone ? C.ink : C.gun} strokeWidth={now ? 5 : 3} opacity={on ? 1 : 0.85} />
+              <text x={63} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={q.t.length > 9 ? 15 : 19} fill={now ? C.ink : bone ? (on ? C.white : C.ink) : q.t.includes('NOT') ? C.mag : C.cream}>{q.t}</text>
             </g>
           );
         })}
         <line x1={60} y1={270} x2={1020} y2={270} stroke={C.gun} strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
         <circle cx={60 + Math.max(0, cur) * 140 + 63} cy={270} r={9} fill={C.teal} />
-        <rect x={0} y={1590} width={1080} height={150} fill="#0B0A1F" opacity={0.5} />
+        <rect x={0} y={1590} width={1080} height={150} fill={bone ? '#1B3A3F' : '#0B0A1F'} opacity={bone ? 0.9 : 0.5} />
         {Array.from({length: 60}).map((_, i) => {
           const base = i / 60;
           const k = stopped ? (base * 0.42) : ((base + f * 0.006) % 1);
@@ -358,7 +360,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
           return <circle key={i} cx={x} cy={y} r={r} fill={C.teal} opacity={0.85} />;
         })}
         <rect x={470} y={1600} width={22} height={130} rx={6} fill={stopped ? C.glow : '#34306B'} opacity={stopped ? 1 : 0} stroke={C.ink} strokeWidth={4} />
-        <text x={60} y={1760} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={C.cream} opacity={0.7}>{stopped ? 'THE STREAM WAITS FOR A YES' : 'THE STREAM'}</text>
+        <text x={60} y={1760} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={bone ? C.ink : C.cream} opacity={0.9}>{stopped ? 'THE STREAM WAITS FOR A YES' : 'THE STREAM'}</text>
       </g>
     </svg>
   );
@@ -393,8 +395,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
             </g>
           ))}
         </g>
-        <Plate x={540} text="SMART DRIVER · ALLEGED" y={520} p={ease(f, b(1) + 6, 14) * (1 - ease(f, b(3) - 10, 8))} size={30} />
-        <Plate text="2016 TO 2024 PER THE ATTORNEYS GENERAL" x={540} displayLines={['2016 TO 2024', 'PER THE ATTORNEYS GENERAL']} y={609} p={ease(f, b(3), 14)} size={28} />
+        <Plate x={540} text="SMART DRIVER · ALLEGED" y={560} p={ease(f, b(1) + 6, 14) * (1 - ease(f, b(3) - 10, 8))} size={30} />
+        <Plate text="2016 TO 2024 PER THE ATTORNEYS GENERAL" x={540} displayLines={['2016 TO 2024', 'PER THE ATTORNEYS GENERAL']} y={649} p={ease(f, b(3), 14)} size={28} />
       </SVG>
     </Frame>
   );
@@ -408,7 +410,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
   const cards = Math.floor(clamp01((f - b(5)) / 40) * 36);
   const ak = ease(f, b(6), 18);
   return (
-    <Frame p={p} z0={1.02} z1={1.15} oy={900} bg="#14123A">
+    <Frame p={p} z0={1.02} z1={1.2} oy={900} bg="#14123A">
       <SVG>
         <rect data-band="ok" x={0} y={0} width={1080} height={1920} fill="#14123A" />
         {Array.from({length: Math.round(2 + 20 * k)}).map((_, i) => (
@@ -437,9 +439,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
             </g>
           ) : null;
         })}
-        <Plate x={540} text="$220 MILLION · PER THE SETTLEMENT" y={518} p={ease(f, b(4), 14) * (1 - ease(f, b(5) - 10, 8))} size={26} />
-        <Plate x={540} text="36 ATTORNEYS GENERAL" y={585} p={ease(f, b(5), 14) * (1 - ease(f, b(6) - 10, 8))} size={32} />
-        <Plate x={540} text="ALASKA IN" y={656} p={ease(f, b(6), 14)} size={34} />
+        <Plate x={540} text="$220 MILLION · PER THE SETTLEMENT" y={558} p={ease(f, b(4), 14) * (1 - ease(f, b(5) - 10, 8))} size={26} />
+        <Plate x={540} text="36 ATTORNEYS GENERAL" y={625} p={ease(f, b(5), 14) * (1 - ease(f, b(6) - 10, 8))} size={32} />
+        <Plate x={540} text="ALASKA IN" y={696} p={ease(f, b(6), 14)} size={34} />
       </SVG>
     </Frame>
   );
@@ -464,11 +466,11 @@ const S3: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <rect x={0} y={1010} width={1080} height={300} fill="#2A2358" stroke={C.ink} strokeWidth={6} />
         <g transform="translate(540 940) scale(1.22) translate(-540 -940)">
-        <Envelope x={lerp(-200, 290, sl)} y={880} label="ONE THING FIXED" tone="plate" />
-        <Envelope x={lerp(1280, 790, sl)} y={880} label="ONE THING CAN'T" tone="warn" rattle={bump(f, b(34), 40)} crack={ease(f, b(34), 14)} />
+        <Envelope x={lerp(-200, 345, sl)} y={880} label="ONE THING FIXED" tone="plate" />
+        <Envelope x={lerp(1280, 735, sl)} y={880} label="ONE THING CAN'T" tone="warn" rattle={bump(f, b(34), 40)} crack={ease(f, b(34), 14)} />
         <Fob x={540} y={900} s={1.1} tag="?" rot={6 * Math.sin(f / 12)} />
         </g>
-        <Plate text="ONE THING FIXED ONE THING CAN'T" x={540} displayLines={['ONE THING FIXED', 'ONE THING CAN\'T']} y={545} p={ease(f, b(7), 14)} size={32} />
+        <Plate text="ONE THING FIXED ONE THING CAN'T" x={540} displayLines={['ONE THING FIXED', 'ONE THING CAN\'T']} y={585} p={ease(f, b(7), 14)} size={32} />
       </SVG>
     </Frame>
   );
@@ -499,9 +501,9 @@ const S4: React.FC<SceneProps> = ({p}) => {
           const on = clamp01((city - d * 0.9) * 4);
           return on > 0 ? <circle key={i} cx={gx} cy={gy} r={9 * on} fill={C.teal} opacity={0.8 * on} /> : null;
         })}
-        <Plate x={540} text="HARD BRAKING" y={521} p={ease(f, b(8) + 24, 12) * (1 - ease(f, b(35) - 10, 8))} size={32} />
-        <Plate x={540} text="LATE-NIGHT DRIVING" y={590} p={ease(f, b(35), 12) * (1 - ease(f, t9, 8))} size={30} />
-        <Plate x={540} text="LOCATION EVERY 3 SECONDS" y={657} p={ease(f, t9, 14)} size={28} />
+        <Plate x={540} text="HARD BRAKING" y={561} p={ease(f, b(8) + 24, 12) * (1 - ease(f, b(35) - 10, 8))} size={32} />
+        <Plate x={540} text="LATE-NIGHT DRIVING" y={630} p={ease(f, b(35), 12) * (1 - ease(f, t9, 8))} size={30} />
+        <Plate x={540} text="LOCATION EVERY 3 SECONDS" y={697} p={ease(f, t9, 14)} size={28} />
       </SVG>
     </Frame>
   );
@@ -551,11 +553,11 @@ const S5: React.FC<SceneProps> = ({p}) => {
         })}
         <Fob x={lerp(120, 1000, ((f * 0.004) % 1))} y={1150} s={0.42} tag="?" />
         <Lab text="SOME INSURERS · IN PART" x={780} y={1040} size={26} tone="warn" p={tag} rot={-3} />
-        <Plate x={540} text="GM SOLD IT · ALLEGED" y={520} p={ease(f, b(10), 14) * (1 - ease(f, b(43) - 10, 8))} size={30} />
-        <Plate x={540} text="VERISK" y={590} p={ease(f, b(43), 14) * (1 - ease(f, b(44) - 10, 8))} size={34} />
-        <Plate x={540} text="LEXISNEXIS" y={662} p={ease(f, b(44), 14) * (1 - ease(f, b(11) - 10, 8))} size={34} />
-        <Plate x={540} text="DRIVER RATINGS" y={734} p={ease(f, b(11), 14) * (1 - ease(f, b(12) - 10, 8))} size={34} />
-        <Plate x={540} text="TO INSURERS" y={806} p={ease(f, b(12), 14) * (1 - ease(f, b(13) - 10, 8))} size={34} />
+        <Plate x={540} text="GM SOLD IT · ALLEGED" y={560} p={ease(f, b(10), 14) * (1 - ease(f, b(43) - 10, 8))} size={30} />
+        <Plate x={540} text="VERISK" y={630} p={ease(f, b(43), 14) * (1 - ease(f, b(44) - 10, 8))} size={34} />
+        <Plate x={540} text="LEXISNEXIS" y={702} p={ease(f, b(44), 14) * (1 - ease(f, b(11) - 10, 8))} size={34} />
+        <Plate x={540} text="DRIVER RATINGS" y={774} p={ease(f, b(11), 14) * (1 - ease(f, b(12) - 10, 8))} size={34} />
+        <Plate x={540} text="TO INSURERS" y={846} p={ease(f, b(12), 14) * (1 - ease(f, b(13) - 10, 8))} size={34} />
       </SVG>
     </Frame>
   );
@@ -587,9 +589,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
         </g>
         <Clicky f={f} x={130} y={1170} s={0.5} look={0.9} mood="puzzled" glow={0.5} />
         <Fob x={230} y={1160} s={0.4} tag="?" rot={-8} />
-        <Plate x={540} text="ALASKA · $2.5 MILLION" y={521} p={ease(f, b(14), 14) * (1 - ease(f, b(36) - 10, 8))} size={32} />
-        <Plate text="ALASKA DEPT OF LAW VIA ALASKA'S NEWS SOURCE" x={540} displayLines={['ALASKA DEPT OF LAW', "VIA ALASKA'S NEWS SOURCE"]} y={607} p={ease(f, b(36), 14) * (1 - ease(f, b(15) - 10, 8))} size={24} />
-        <Plate x={540} text="HOW MANY ALASKANS?" y={694} p={ease(f, b(15), 14)} size={34} />
+        <Plate x={540} text="ALASKA · $2.5 MILLION" y={561} p={ease(f, b(14), 14) * (1 - ease(f, b(36) - 10, 8))} size={32} />
+        <Plate text="ALASKA DEPT OF LAW VIA ALASKA'S NEWS SOURCE" x={540} displayLines={['ALASKA DEPT OF LAW', "VIA ALASKA'S NEWS SOURCE"]} y={647} p={ease(f, b(36), 14) * (1 - ease(f, b(15) - 10, 8))} size={24} />
+        <Plate x={540} text="HOW MANY ALASKANS?" y={734} p={ease(f, b(15), 14)} size={34} />
       </SVG>
     </Frame>
   );
@@ -604,11 +606,11 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const wr = ease(f, b(18), 14);
   const river = 1 + 1.3 * ease(f, b(48), 30);
   return (
-    <Frame p={p} z0={1.02} z1={1.16} oy={900} bg="#14113A">
+    <Frame p={p} z0={1.02} z1={1.2} oy={900} bg="#14113A">
       <SVG>
-        <Stream f={f} x0={520} y0={950} x1={250} y1={1230} n={30} w={river} speed={0.014} />
-        <Stream f={f} x0={560} y0={950} x1={520} y1={1240} n={24} w={river * 0.8} speed={0.012} />
-        <g transform={`translate(540 930) rotate(${2 * Math.sin(f / 30)}) scale(1.12)`}>
+        <Stream f={f} x0={520} y0={870} x1={250} y1={1150} n={30} w={river} speed={0.014} />
+        <Stream f={f} x0={560} y0={870} x1={520} y1={1160} n={24} w={river * 0.8} speed={0.012} />
+        <g transform={`translate(540 850) rotate(${2 * Math.sin(f / 30)}) scale(1.12)`}>
           <rect x={-170} y={-280} width={340} height={560} rx={40} fill="#0B0A1F" stroke={C.gun} strokeWidth={9} />
           <rect x={-146} y={-246} width={292} height={492} rx={20} fill="#17143F" />
                     <rect x={-120} y={-100} width={240} height={70} rx={35} fill={C.mag} stroke={C.ink} strokeWidth={4} opacity={0.95} />
@@ -621,18 +623,16 @@ const S7: React.FC<SceneProps> = ({p}) => {
             <text y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={40} fill={C.mag}>ALLEGED</text>
           </g>
         </g>
-        <g transform="translate(880 1215)">
+        <g transform="translate(880 1120)">
           {Array.from({length: 14}).map((_, i) => i / 14 < tower ? <rect key={i} x={-52 + (i % 3) * 3} y={-i * 30} width={104} height={24} rx={3} fill={C.paper} stroke={C.ink} strokeWidth={3} transform={`rotate(${(i % 3 - 1) * 2} 0 ${-i * 30})`} /> : null)}
           <line x1={-90} y1={-420} x2={90} y2={-420} stroke={C.glow} strokeWidth={5} strokeDasharray="10 8" opacity={0.9} />
           <text x={0} y={-440} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.glow}>370,000</text>
         </g>
         <Clicky f={f} x={190} y={740} s={0.75} look={0.9} mood="alarmed" glow={0.7} n={Math.floor(f / 6)} click={lastClick(f, b(16), 12)} />
-        <Fob x={250} y={1110} s={0.5} tag="NOT|ENROLLED" rot={-10} glow={0.8 + 0.2 * Math.sin(f / 4)} />
-        <Lab text="THE COMPLAINT BLAMES A GLITCH" x={540} y={1280} size={22} tone="warn" p={wr} rot={0} />
-        <Plate x={540} text="NOT ENROLLED" y={523} p={ease(f, b(16) + 4, 14) * (1 - ease(f, b(48) - 10, 8))} size={36} tone="warn" />
-        <Plate x={540} text="STILL COLLECTING" y={596} p={ease(f, b(48), 14) * (1 - ease(f, b(17) - 10, 8))} size={34} />
-        <Plate text="OVER 370,000 TOLD 'NOT ENROLLED'" x={540} displayLines={["OVER 370,000 TOLD", "'NOT ENROLLED'"]} y={689} p={ease(f, b(17), 14) * (1 - ease(f, b(38) - 10, 8))} size={30} />
-        <Plate x={540} text="ALLEGED" y={783} p={ease(f, b(38), 14) * (1 - ease(f, b(18) - 10, 8))} size={36} tone="warn" />
+        <Fob x={250} y={1060} s={0.5} tag="NOT|ENROLLED" rot={-10} glow={0.8 + 0.2 * Math.sin(f / 4)} />
+        <Lab text="THE COMPLAINT BLAMES A GLITCH" x={540} y={1240} size={22} tone="warn" p={wr} rot={0} />
+        <Plate x={540} text="STILL COLLECTING" y={562} p={ease(f, b(48), 14) * (1 - ease(f, b(17) - 10, 8))} size={34} />
+        <Plate text="OVER 370,000 TOLD 'NOT ENROLLED'" x={540} displayLines={["OVER 370,000 TOLD", "'NOT ENROLLED'"]} y={655} p={ease(f, b(17), 14) * (1 - ease(f, b(38) - 10, 8))} size={30} />
       </SVG>
     </Frame>
   );
@@ -668,8 +668,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
           </g>
           <g transform={`translate(560 1130)`}>
             <rect x={-250} y={-70} width={500} height={130} rx={8} fill="#D9CFB4" stroke={C.ink} strokeWidth={6} />
-            <text x={0} y={-24} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>STATE v. GM · DOCKET</text>
-            <g transform={`translate(${-60} ${10}) rotate(-8) scale(${stampK})`} opacity={clamp01(stampK * 2)}>
+            <text x={0} y={-30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>STATE v. GM · DOCKET</text>
+            <g transform={`translate(${-60} ${18}) rotate(-8) scale(${stampK})`} opacity={clamp01(stampK * 2)}>
               <rect x={-130} y={-24} width={260} height={48} rx={6} fill="none" stroke={C.mag} strokeWidth={6} />
               <text y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={32} fill={C.mag}>NO ADMISSION</text>
             </g>
@@ -679,19 +679,18 @@ const S8: React.FC<SceneProps> = ({p}) => {
               <rect key={`${r}${c}`} x={-120 + c * 62 + (r % 2) * 30} y={-130 + r * 42} width={58} height={38} fill="#B9674F" stroke="#7A3F30" strokeWidth={3} />
             )))}
             <rect x={-80} y={-60} width={160} height={70} rx={8} fill="#2B2646" stroke={C.ink} strokeWidth={6} opacity={win} />
-            <Lab text="NO CLAIMS PROCESS" x={0} y={55} size={22} tone="warn" p={win} />
           </g>
           <g transform={`translate(${lerp(120, 560, box)} ${lerp(1100, 1250, box)})`} opacity={box}>
             <rect x={-170} y={-30} width={340} height={72} rx={8} fill="#F4EEDD" stroke={C.ink} strokeWidth={4} strokeDasharray="12 8" />
             <text y={-2} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.ink}>ALASKA DRIVERS AFFECTED</text>
             <text y={30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.mag}>NOT STATED</text>
           </g>
-          <Clicky f={f} x={120} y={760} s={0.55} look={0.8} mood="focused" glow={0.2} />
+          <Clicky f={f} x={200} y={770} s={0.8} look={0.8} mood="focused" glow={0.2} />
           <Fob x={960} y={1140} s={0.4} tag="?" rot={10} />
         </g>
-        <Plate x={540} text="THE FAIR CASE" y={523} tone="plate" p={ease(f, b(19) + 8, 14) * (1 - ease(f, b(20) - 10, 8))} size={36} />
-        <Plate x={540} text="NO ADMISSION · GM" y={596} tone="warn" p={ease(f, b(20), 14) * (1 - ease(f, b(21) - 10, 8))} size={34} />
-        <Plate x={540} text="NO CLAIMS PROCESS" y={668} tone="plate" p={ease(f, b(21), 14) * (1 - ease(f, b(22) - 10, 8))} size={34} />
+        <Plate x={540} text="THE FAIR CASE" y={563} tone="plate" p={ease(f, b(19) + 8, 14) * (1 - ease(f, b(20) - 10, 8))} size={36} />
+        <Plate x={540} text="NO ADMISSION · GM" y={636} tone="warn" p={ease(f, b(20), 14) * (1 - ease(f, b(21) - 10, 8))} size={34} />
+        <Plate x={540} text="NO CLAIMS PROCESS" y={708} tone="plate" p={ease(f, b(21), 14) * (1 - ease(f, b(22) - 10, 8))} size={34} />
       </SVG>
     </Frame>
   );
@@ -725,9 +724,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <circle r={16} fill="none" stroke={C.glow} strokeWidth={3} opacity={0.6} />
         </g>
         <Fob x={960} y={1150} s={0.42} tag="" dim rot={12} />
-        <Plate x={540} text="THE ONE THING IT CAN'T DO" y={520} tone="plate" p={ease(f, b(23), 14) * (1 - ease(f, b(42) - 10, 8))} size={30} />
-        <Plate x={540} text="THE COIN STOPS SHORT" y={589} tone="plate" p={ease(f, b(42), 14) * (1 - ease(f, b(24) - 10, 8))} size={32} />
-        <Plate x={540} text="NO PAYOUT FOR DRIVERS" y={659} tone="warn" p={ease(f, b(24), 14)} size={32} />
+        <Plate x={540} text="THE ONE THING IT CAN'T DO" y={560} tone="plate" p={ease(f, b(23), 14) * (1 - ease(f, b(42) - 10, 8))} size={30} />
+        <Plate x={540} text="THE COIN STOPS SHORT" y={629} tone="plate" p={ease(f, b(42), 14) * (1 - ease(f, b(24) - 10, 8))} size={32} />
+        <Plate x={540} text="NO PAYOUT FOR DRIVERS" y={699} tone="warn" p={ease(f, b(24), 14)} size={32} />
       </SVG>
     </Frame>
   );
@@ -759,9 +758,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <rect x={-8} y={420} width={8} height={900} fill={C.ink} />
           <rect x={-40} y={420} width={32} height={900} fill="#000" opacity={0.25} />
         </g>
-        <Plate x={540} text="THE DOOR" y={523} p={ease(f, b(41) + 14, 12) * (1 - ease(f, b(25) - 10, 8))} size={36} />
-        <Plate x={540} text="ASK FIRST" y={601} p={ease(f, b(25), 10) * (1 - ease(f, b(26) - 10, 8))} size={44} tone="glow" />
-        <Plate x={540} text="A CLEAR YES" y={681} p={ease(f, b(26), 12)} size={40} />
+        <Plate x={540} text="THE DOOR" y={563} p={ease(f, b(41) + 14, 12) * (1 - ease(f, b(25) - 10, 8))} size={36} />
+        <Plate x={540} text="ASK FIRST" y={641} p={ease(f, b(25), 10) * (1 - ease(f, b(26) - 10, 8))} size={44} tone="glow" />
+        <Plate x={540} text="A CLEAR YES" y={721} p={ease(f, b(26), 12)} size={40} />
       </SVG>
     </Frame>
   );
@@ -786,13 +785,13 @@ const S11: React.FC<SceneProps> = ({p}) => {
           const keep = i % 9 === 4;
           const alive = i / 40 < grow;
           const fade = old && !keep ? 1 - clamp01(gone * 1.4 - (i / 40) * 0.8) : 1;
-          return alive ? <circle key={i} cx={x} cy={y - 40} r={9} fill={C.teal} opacity={0.85 * fade} /> : null;
+          return alive ? <circle key={i} cx={x} cy={y - 40 + 5 * Math.sin(f / 8 - i / 2)} r={9 + 3 * Math.sin(f / 6 - i / 2)} fill={C.teal} opacity={0.85 * fade} /> : null;
         })}
         <g transform={`translate(${lineX} 0)`} opacity={cut > 0.01 ? 1 : 0}>
           <line x1={0} y1={800} x2={0} y2={1230} stroke={C.glow} strokeWidth={6} />
           <Lab text="JAN 16TH, 2025" x={0} y={1250} size={20} tone="glow" />
         </g>
-        <g transform="translate(800 720) scale(1.3)">
+        <g transform="translate(905 700) scale(1.2)">
           <circle r={120} fill="#0B0A1F" stroke={C.glow} strokeWidth={6} />
           <path d="M -90,0 A 90,90 0 0 1 90,0" fill="none" stroke={C.mag} strokeWidth={14} opacity={0.5} />
           <rect x={-30} y={-110} width={60} height={110} fill={C.teal} opacity={0.2 * clamp} />
@@ -801,10 +800,10 @@ const S11: React.FC<SceneProps> = ({p}) => {
         </g>
         <Clicky f={f} x={190} y={720} s={0.6} look={0.8} off mood="focused" />
         <Fob x={170} y={1190} s={0.4} tag="ASK|FIRST" rot={-6} />
-        <Plate x={540} text="EVERY DOT KEPT" y={523} p={ease(f, b(27), 14) * (1 - ease(f, b(47) - 10, 8))} size={36} />
-        <Plate x={540} text="ONLY WHAT'S NEEDED" y={596} p={ease(f, b(47), 14) * (1 - ease(f, b(28) - 10, 8))} size={34} />
-        <Plate x={540} text="BEFORE JAN 16TH, 2025" y={667} p={ease(f, b(28), 14) * (1 - ease(f, b(40) - 10, 8))} size={32} />
-        <Plate x={540} displayLines={['DELETE OLDER DATA', 'WITH EXCEPTIONS']} text="DELETE OLDER DATA WITH EXCEPTIONS" y={738} p={ease(f, b(40), 14)} size={30} />
+        <Plate x={540} text="EVERY DOT KEPT" y={563} p={ease(f, b(27), 14) * (1 - ease(f, b(47) - 10, 8))} size={36} />
+        <Plate x={540} text="ONLY WHAT'S NEEDED" y={636} p={ease(f, b(47), 14) * (1 - ease(f, b(28) - 10, 8))} size={34} />
+        <Plate x={540} text="BEFORE JAN 16TH, 2025" y={707} p={ease(f, b(28), 14) * (1 - ease(f, b(40) - 10, 8))} size={32} />
+        <Plate x={540} displayLines={['DELETE OLDER DATA', 'WITH EXCEPTIONS']} text="DELETE OLDER DATA WITH EXCEPTIONS" y={799} p={ease(f, b(40), 14)} size={30} />
       </SVG>
     </Frame>
   );
@@ -830,10 +829,10 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <Lab text="ONE THING FIXED" x={0} y={30} size={15} tone="plate" />
         </g>
         <Fob x={fx} y={drop > 0 || env > 0.8 ? fy : 1080} s={0.62} tag={drop > 0.6 ? 'YES?' : 'ASK|FIRST'} rot={lerp(-8, 8, drop)} glow={drop} />
-        <Glove x={lerp(780, 650, rise)} y={lerp(1330, 1120, rise)} s={1.1} rot={lerp(8, -4, rise)} open={1} />
-        <Plate text="THE DOOR GM MUST ASK FIRST" x={540} displayLines={['THE DOOR', 'GM MUST ASK FIRST']} y={541} p={ease(f, b(29), 14) * (1 - ease(f, b(39) - 10, 8))} size={28} />
-        <Plate x={540} text="THE DRIVER" y={633} p={ease(f, b(39), 14) * (1 - ease(f, b(30) - 10, 8))} size={36} />
-        <Plate x={540} text="THE DRIVER HOLDS THE KEY" y={703} p={ease(f, b(30), 14)} size={28} tone="glow" />
+        <Glove x={lerp(780, 650, rise)} y={lerp(1330, 1120, rise)} s={1.1} rot={lerp(8, -4, rise) + 3 * Math.sin(f / 15)} open={1 - 0.15 * Math.sin(f / 11)} />
+        <Plate text="THE DOOR GM MUST ASK FIRST" x={540} displayLines={['THE DOOR', 'GM MUST ASK FIRST']} y={581} p={ease(f, b(29), 14) * (1 - ease(f, b(39) - 10, 8))} size={28} />
+        <Plate x={540} text="THE DRIVER" y={673} p={ease(f, b(39), 14) * (1 - ease(f, b(30) - 10, 8))} size={36} />
+        <Plate x={540} text="THE DRIVER HOLDS THE KEY" y={743} p={ease(f, b(30), 14)} size={28} tone="glow" />
       </SVG>
     </Frame>
   );
@@ -868,9 +867,9 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <Fob x={lerp(540, 880, settle)} y={lerp(560, 1130, settle) - 140 * Math.sin(Math.PI * settle)} s={lerp(0.7, 0.5, settle)} tag={settle > 0.8 ? 'YOUR|CALL' : 'YES?'} rot={lerp(-10, 0, settle)} glow={1 - settle} />
         <Clicky f={f} x={180} y={1120} s={0.62} off mood="warm" look={0.6} />
         {ring > 0 && ring < 80 && <circle cx={880} cy={1130} r={20 + ring * 5} fill="none" stroke={C.teal} strokeWidth={6} opacity={1 - ring / 80} />}
-        <Plate text="ASK FOR A COPY ASK FOR DELETION" x={540} displayLines={['ASK FOR A COPY', 'ASK FOR DELETION']} y={541} p={ease(f, b(31), 14) * (1 - ease(f, b(32) - 10, 8))} size={28} />
-        <Plate x={540} text="YOUR DATA · YOUR CALL" y={629} p={ease(f, b(32), 14) * (1 - ease(f, b(33) - 10, 8))} size={28} />
-        <Plate x={540} text="COPY FIRST OR DELETE?" y={696} p={ease(f, b(33), 14)} size={30} tone="glow" />
+        <Plate text="ASK FOR A COPY ASK FOR DELETION" x={540} displayLines={['ASK FOR A COPY', 'ASK FOR DELETION']} y={581} p={ease(f, b(31), 14) * (1 - ease(f, b(32) - 10, 8))} size={28} />
+        <Plate x={540} text="YOUR DATA · YOUR CALL" y={669} p={ease(f, b(32), 14) * (1 - ease(f, b(33) - 10, 8))} size={28} />
+        <Plate x={540} text="COPY FIRST OR DELETE?" y={736} p={ease(f, b(33), 14)} size={30} tone="glow" />
       </SVG>
     </Frame>
   );

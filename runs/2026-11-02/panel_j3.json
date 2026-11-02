@@ -1,0 +1,45 @@
+{
+ "judge_id": "J3",
+ "axes": {
+  "Hook & retention": 7.0,
+  "Illustration craft & detail": 7.2,
+  "Motion & animation craft": 5.9,
+  "Composition & staging": 7.3,
+  "Color & grade": 7.5,
+  "Typography & captions": 7.0,
+  "Sound design & mix": 7.0,
+  "VO\u2013illustration sync & entertainment": 6.6,
+  "Accuracy & sourcing": 8.0,
+  "Alaska authenticity & cultural respect": 7.0,
+  "Writing & post quality": 7.5
+ },
+ "weights": {
+  "Hook & retention": 0.12,
+  "Illustration craft & detail": 0.16,
+  "Motion & animation craft": 0.12,
+  "Composition & staging": 0.08,
+  "Color & grade": 0.08,
+  "Typography & captions": 0.06,
+  "Sound design & mix": 0.1,
+  "VO\u2013illustration sync & entertainment": 0.08,
+  "Accuracy & sourcing": 0.1,
+  "Alaska authenticity & cultural respect": 0.06,
+  "Writing & post quality": 0.04
+ },
+ "weighted_total": 7.052,
+ "hard_blockers": [],
+ "concrete_defects": [
+  {
+   "axis": "Motion & animation craft",
+   "finding": "Motion weakest axis, shots 10 to 13 are held tableaux"
+  },
+  {
+   "axis": "Composition & staging",
+   "finding": "Fob in shot 7 cropped at the left edge"
+  },
+  {
+   "axis": "Composition & staging",
+   "finding": "Large empty strip beneath the bottom band"
+  }
+ ]
+}

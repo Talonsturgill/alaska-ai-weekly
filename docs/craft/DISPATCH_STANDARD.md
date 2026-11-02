@@ -578,3 +578,9 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A recording that includes a card with the agency's name on a cable line implies ownership.** Name cables by system and owner, and keep the agency's attribution on a plate, not on the cable.
 - **Plate overlap and label footprint are measured in screen space after the camera.** A plate authored clear of a sign at zoom 1.0 sat on it at 1.2. Probe a frame mid-push before placing a plate stack, and give each plate its own y.
 - **Run label_footprint after moving any prop, not only at the cut.** Seven of the nine source-gate stops this run were a label under a magnifier handle, a pencil, a postcard or a plate.
+
+- **A plate may not sit over text the scene itself draws.** The ALLEGED plate covered NOT ENROLLED on the phone in three judge cards. When the prop already says the words, drop the plate. (2026-11-02)
+- **plate_overlap reads source geometry, not time.** Two plates at one y fail even when they crossfade. Stack plates at their own y (start the stack below y 530 so the ILLUSTRATION tag stays clear) and retire one before the next lands. (2026-11-02)
+- **Overlay bands need a light-ground style.** A top strip and bottom band that read on indigo went grey on bone shots. Switch label ink and chip fills when the ground is light. (2026-11-02)
+- **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline strip, a data flow) rather than stars. (2026-11-02)
+- **A paper-wipe transition must start covering the frame.** A rect that began off-screen and slid in never left, and hid the thesis shot for 8 seconds in the first cut. Draw it at x 0, travel it past 1.3 times the width. (2026-11-02)

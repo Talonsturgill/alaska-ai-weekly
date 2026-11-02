@@ -3965,3 +3965,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: 113 s film, panel median 7.08 against 7.0 (7.08, 7.14, 6.97), no hard blockers, a narrow pass. Caption stopped at 8.42 against its 8.5 bar after seven rounds, zero hard fails, disclosed in the email. Single-source story (the NSF award record), disclosed in film and caption. Gate 0E cold read failed twice (recipient, KHNS and NSF unexplained) and the VO was rewritten.
 - In-run fixes: dispatch_mix targets LRA 7 with a premix compressor (12.7 to 6.1 LU), strata Ground with animated groundwater, Debris, larger slump, editor-driven plan-tense plates and VO (Wrangell date, Barry Arm markers).
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-01).
+
+## 2026-11-02 "The Door Is Yours" (GM Smart Driver settlement, 36 attorneys general, Alaska 2.5 million dollar share)
+- Shipped: 125 s film, panel median 7.05 against 7.0 (6.74, 7.20, 7.05), no hard blockers, a thin pass on the sixth graded cut. Caption 8.50 against 8.5 on its fifth round, zero hard fails. Primary documents (Washington decree and complaint) plus two outlets, Alaska share rests on Alaska's News Source citing the Alaska Department of Law, disclosed.
+- In-run fixes: VO retimed after the c17 and c19 wording edits, mix LRA 5.3 to 6.2, plate stacking, bone-ground band legibility, paper-wipe exit bug, duplicate plates, overlay Bands and Atmos layer.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-02), six items.
