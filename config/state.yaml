@@ -3107,3 +3107,45 @@ dispatch_history:
     metaphor: a dashed ghost hill that redraws itself closer to a real slope each
       time a reading arrives, goes hollow when its feeds die, and fogs where no instrument
       listens
+- date: '2026-11-02'
+  topic: GM Smart Driver driving-data settlement, 36 attorneys general, $220M, Alaska
+    $2.5M share, the consent door and the fair case (no claims process, no admission)
+  slug: dispatch-2026-11-02-the-door-is-yours
+  key_entities:
+  - General Motors
+  - GM
+  - Smart Driver
+  - OnStar
+  - Verisk
+  - LexisNexis
+  - Alaska Department of Law
+  - Cori Mills
+  - consent decree
+  - attorneys general
+  archetype: night-cab instrument hero with consent gate
+  palette: midnight indigo cab, sodium amber glow, electric teal stream, gunmetal
+    counter, bone courtroom paper, magenta warning stamps
+  voice: gemini Sulafat
+  stance: mixed
+  angle: The pipeline stays and the settlement rebuilds the intake door, a driver's
+    clear yes, while paying nobody already recorded
+  hero: Clicky
+  cast:
+  - Clicky
+  - Broker
+  - StampBot
+  - KeyFob
+  - ConsentGate
+  - Glove
+  composition:
+    pov: eye-level-immersive
+    motion_vector: radial-emanate
+    hero_treatment: instrument-as-subject
+    layout: hud-instrument-frame
+    register: tactile-collage
+    palette: midnight indigo cab, sodium amber glow, electric teal stream, gunmetal
+      counter, bone courtroom paper, magenta warning stamps
+    camera_strategy: track-follow
+    light_story: night-practical
+    metaphor: a gunmetal counter that clicks every three seconds and a consent gate
+      that waits for a yes, with a nickel key fob carrying ENROLLED? to YOUR CALL

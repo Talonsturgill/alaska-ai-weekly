@@ -1,0 +1,131 @@
+{
+ "run_date": "2026-11-02",
+ "story_id": "gm-smart-driver-settlement",
+ "palette": {
+  "roles": {
+   "sky": "#1A1740",
+   "ground": "#262252",
+   "hero": "#8C93A3",
+   "glow": "#FF9A1F",
+   "accent": "#E0338A",
+   "shadow": "#0B0A1F",
+   "paper": "#EDE6D3",
+   "ink": "#120F2A",
+   "dash": "#34306B",
+   "signal": "#00E0C6",
+   "fob": "#BFC7D5"
+  },
+  "mood": "Midnight indigo cab interior. Clicky is a gunmetal counter (#8C93A3) lit by sodium amber (#FF9A1F) as LIGHT only, an electric teal stream (#00E0C6), bone courtroom paper (#EDE6D3) only in shots 8 and 9, and signal magenta (#E0338A) on ALLEGED stamps, the NOT ENROLLED sign and the NO ADMISSION stamp. Curious, dry, fair, never alarmist.",
+  "divergence": "Against 11-01 (storm slate #2E3B45, sulphur key, golden lantern), 10-31 (cream paper, cobalt sea, brass, vermilion) and 10-29 (aubergine dusk, gold): this film is midnight indigo (#1A1740 sky, #262252 ground, #0B0A1F shadow) with gunmetal rather than brass, an amber that is LIGHT and never an object color, electric teal and magenta. The nearest value is 11-01's dark slate, resolved by moving every dark to the indigo hue family.",
+  "accent_licence": "magenta ONLY on the ALLEGED stamps, the NOT ENROLLED sign and the NO ADMISSION stamp. Teal ONLY on the data stream, the ring pulses and the gate bolts and thread. Amber ONLY as light (dash glow, passing streetlamp sweeps), never a fill on an object. Bone paper ONLY in shots 8 and 9, plus the one paper-flip transition in shot 10."
+ },
+ "light": {
+  "time": "Night, a car cab on an Alaska road",
+  "direction": "Sodium amber from passing streetlamp sweeps and the dash cluster as key, the teal stream as its own rim, indigo fill; shot 3 gets a cold server fluorescent; shots 8 and 9 a flat bone-paper key; shot 10 the gate catches the first warm sweep",
+  "depth": "Per shot below. Near plane wheel rim and dash bezel at z170, hero at z0, backdrop road or courtroom wall at z-220.",
+  "key_note": "A streetlamp sweep crosses the cab every ~9s, rhythm-locked to nothing in the VO.",
+  "per_shot": {
+   "1": "Dash cluster key, one lamp sweep at 5s, near plane wheel rim, backdrop night road",
+   "2": "Counter glow only, near plane ledger edge, backdrop indigo void",
+   "3": "Cold server fluorescent from above, desk near plane, backdrop wall",
+   "4": "Lowest mean luminance of the film, gauges as the only light, near plane bezel",
+   "5": "Brightest dash shot, belt practicals along the track, near plane belt rail",
+   "6": "Map self-lit, near plane map frame, backdrop indigo",
+   "7": "Phone screen teal as key on the sign, near plane hand",
+   "8": "Flat bone-paper key, brightest and flattest of the film, near plane courtroom rail",
+   "9": "Flat bone-paper key with a single cool shadow, near plane felt edge",
+   "10": "The gate catches the first warm lamp sweep as the lever slams",
+   "11": "Dial and calendar practicals, near plane rail",
+   "12": "Warm sweep through the crack, teal rim",
+   "13": "Dash cluster key again, warmer than shot 1 by at least 8 degrees of hue"
+  }
+ },
+ "shape_language": {
+  "grammar": "DISCRETE against CONTINUOUS: the every-three-seconds pings are hard staccato dots and rings firing off Clicky, against one long hinged gate bar that moves exactly once, and an edgeless teal stream that only gets edges when it meets the gate",
+  "why": "The alleged surveillance is a constant tick, the settlement is a single decisive hinge. The picture of the turn is the stream meeting a gate with a seat. Shots 4 and 10 show the contrast at full strength."
+ },
+ "casting": {
+  "hero": "Clicky, an episode-local gunmetal faced counter (a new build, not the shelf TallyCounter, because the shelf asset's colors can't be overridden)",
+  "inventory": [
+   {
+    "shot": 1,
+    "subject": "Clicky on a car dash at night, the key fob in the ignition, a blank dotted signature square, the ledger diary"
+   },
+   {
+    "shot": 2,
+    "subject": "coin stack, flip counter, 36 name cards, mini map pin"
+   },
+   {
+    "shot": 3,
+    "subject": "two envelopes on a desk, the fob between them"
+   },
+   {
+    "shot": 4,
+    "subject": "three dash gauges, dotted trail, ring pulse, the fob swinging from the ignition"
+   },
+   {
+    "shot": 5,
+    "subject": "the Broker (an episode-local ledger-printer booth with eyes, not ServerMachine), rating sheets, belt, insurer houses, the fob on the belt"
+   },
+   {
+    "shot": 6,
+    "subject": "Alaska map, $2.5M card, blank box, Clicky in the corner"
+   },
+   {
+    "shot": 7,
+    "subject": "NOT ENROLLED sign, paper tower, phone, ALLEGED stamp"
+   },
+   {
+    "shot": 8,
+    "subject": "StampBot, claims window, docket, the fob on the docket, Clicky on the rail"
+   },
+   {
+    "shot": 9,
+    "subject": "cracked fob, empty hand, coin"
+   },
+   {
+    "shot": 10,
+    "subject": "consent gate with the fob as the lever knob, teal bolt, Clicky silent"
+   },
+   {
+    "shot": 11,
+    "subject": "second bolt shaped like the fob head, dial, calendar, data pile"
+   },
+   {
+    "shot": 12,
+    "subject": "gate crack, teal thread, car key, driver's hand"
+   },
+   {
+    "shot": 13,
+    "subject": "Clicky, COPY and DELETE buttons, the fob settling into the square"
+   }
+  ],
+  "net_new": "Episode-local in Ep1102.tsx (Clicky, Broker, ConsentGate, DashBezel, Courtroom). The throughline is a nickel car key fob with an engraved tag (not QuestionToken, so 10-31's Pip is not reused). Promote Clicky and ConsentGate to the shelf in the weekly pass if they hold.",
+  "continuity": "The fob and the blank dotted signature square appear in every shot's frame or its near plane; Clicky cameos in shots 6 and 8."
+ },
+ "motion_language": {
+  "grammar": "Pings fire staccato, the gate moves once with anticipation and overshoot, the stream flows edgeless",
+  "hero_moves": [
+   "Clicky clicks every 3 seconds, strains at the NOT ENROLLED reveal near 54s and goes silent when the gate slams at 88.6s",
+   "Broker drools and prints in shot 5",
+   "Clicky watches from the rail in the courtroom shot 8",
+   "The gate lever slams from COLLECT BY DEFAULT to ASK FIRST",
+   "The car key drops into the driver's hand at 113.5s"
+  ]
+ },
+ "composition": {
+  "focal_hierarchy": "Clicky and the fob first, plates second",
+  "negative_space": "Courtroom and the empty-hand close-up are held with large empty bone paper",
+  "safe_area": "Hero action inside y420 to 1500, captions in the open band",
+  "signature_shot": "Shot 10, beat key 25 at 88.6s: the gate lever slams from COLLECT BY DEFAULT to ASK FIRST. The teal stream hits the closed gate and pools, Clicky stops clicking for the first time and its rings die, a single sodium sweep crosses the frame. Camera track-follow along the stream resolving to a lock at zoom 1.0 from the slam to the end of the shot."
+ },
+ "craft_advance": "none needed by this film",
+ "binding_checks": {
+  "magenta": "present only in shots 7, 8 and the NO ADMISSION stamp",
+  "teal": "present in every dash shot as the stream or ring, absent in shots 8 and 9",
+  "sodium": "light only, never an object fill",
+  "bone_paper": "shots 8 and 9 and the shot 10 flip only",
+  "near_plane": "every shot declares a near plane in light.per_shot",
+  "fob_states": "ENROLLED? > ? > NOT ENROLLED > CAN'T > ASK FIRST > YES? > YES"
+ }
+}

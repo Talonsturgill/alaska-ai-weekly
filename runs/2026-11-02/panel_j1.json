@@ -1,0 +1,45 @@
+{
+ "judge_id": "J1",
+ "axes": {
+  "Hook & retention": 6.5,
+  "Illustration craft & detail": 7.0,
+  "Motion & animation craft": 6.0,
+  "Composition & staging": 7.0,
+  "Color & grade": 7.0,
+  "Typography & captions": 6.5,
+  "Sound design & mix": 6.5,
+  "VO\u2013illustration sync & entertainment": 6.5,
+  "Accuracy & sourcing": 7.5,
+  "Alaska authenticity & cultural respect": 6.5,
+  "Writing & post quality": 7.5
+ },
+ "weights": {
+  "Hook & retention": 0.12,
+  "Illustration craft & detail": 0.16,
+  "Motion & animation craft": 0.12,
+  "Composition & staging": 0.08,
+  "Color & grade": 0.08,
+  "Typography & captions": 0.06,
+  "Sound design & mix": 0.1,
+  "VO\u2013illustration sync & entertainment": 0.08,
+  "Accuracy & sourcing": 0.1,
+  "Alaska authenticity & cultural respect": 0.06,
+  "Writing & post quality": 0.04
+ },
+ "weighted_total": 6.74,
+ "hard_blockers": [],
+ "concrete_defects": [
+  {
+   "axis": "Motion & animation craft",
+   "finding": "Motion: 2-6 percent frame change; held figures read as sliding sprites"
+  },
+  {
+   "axis": "Composition & staging",
+   "finding": "Shot 11 dial hugs right edge, lower third empty"
+  },
+  {
+   "axis": "Composition & staging",
+   "finding": "Fob and tab text tiny at phone size"
+  }
+ ]
+}

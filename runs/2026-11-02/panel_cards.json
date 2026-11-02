@@ -1,0 +1,73 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.0,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.0,
+   "Typography & captions": 6.5,
+   "Sound design & mix": 6.5,
+   "VO\u2013illustration sync & entertainment": 6.5,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 6.5,
+   "Writing & post quality": 7.5
+  },
+  "weighted_total": 6.74,
+  "concrete_defects": [
+   "Motion: 2-6 percent frame change; held figures read as sliding sprites",
+   "Shot 11 dial hugs right edge, lower third empty",
+   "Fob and tab text tiny at phone size"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.5,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 7.5
+  },
+  "weighted_total": 7.2,
+  "concrete_defects": [
+   "Motion weakest axis, held figures near-static",
+   "NO ADMISSION stamp touches card border (shot 8)",
+   "Stray teal rectangle behind dial needle (shot 11)"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.2,
+   "Motion & animation craft": 5.9,
+   "Composition & staging": 7.3,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 6.6,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "weighted_total": 7.052,
+  "concrete_defects": [
+   "Motion weakest axis, shots 10 to 13 are held tableaux",
+   "Fob in shot 7 cropped at the left edge",
+   "Large empty strip beneath the bottom band"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "Motion is the weakest axis on every seat (5.9 to 6.5), held figures read as near-static",
+  "Shot 8 NO ADMISSION stamp touches the docket card border",
+  "Fob and tab text small at phone size"
+ ]
+}

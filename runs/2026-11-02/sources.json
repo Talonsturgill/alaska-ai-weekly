@@ -1,0 +1,65 @@
+{
+ "run_date": "2026-11-02",
+ "title": "The Door Is Yours",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "State of Washington v. General Motors LLC, Consent Decree, King County Superior Court No. 26-2-35496-1 SEA",
+   "outlet": "Washington Attorney General",
+   "url": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "claims": [
+    "c1",
+    "c2",
+    "c14",
+    "c15",
+    "c17",
+    "c18",
+    "c19",
+    "c20"
+   ],
+   "used_in_film": true,
+   "note": "Primary source. Terms apply to the Washington decree; the other states entered similar judgments."
+  },
+  {
+   "id": "s2",
+   "title": "State of Washington v. General Motors LLC, Complaint, filed Oct 29th, 2026",
+   "outlet": "Washington Attorney General",
+   "url": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "claims": [
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c11"
+   ],
+   "used_in_film": true,
+   "note": "Primary source. Every conduct claim is an allegation."
+  },
+  {
+   "id": "s3",
+   "title": "GM to pay $220M over sharing drivers' private data, case co-led by Washington",
+   "outlet": "Washington Attorney General release",
+   "url": "https://www.atg.wa.gov/news/news-releases/gm-pay-220m-sharing-drivers-private-data-case-co-led-washington",
+   "claims": [
+    "c2",
+    "c4"
+   ],
+   "used_in_film": true,
+   "note": "36 attorneys general: 35 states plus D.C."
+  },
+  {
+   "id": "s4",
+   "title": "General Motors to pay Alaska over $2.5M in data collection case settlement",
+   "outlet": "Alaska's News Source (KTUU)",
+   "url": "https://www.alaskasnewssource.com/2026/10/30/general-motors-pay-alaska-over-25m-data-collection-case-settlement/",
+   "claims": [
+    "c3",
+    "c21"
+   ],
+   "used_in_film": true,
+   "note": "Secondary. Cites the Alaska Department of Law; the primary release was unreachable (403)."
+  }
+ ]
+}
