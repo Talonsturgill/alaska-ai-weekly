@@ -1,0 +1,60 @@
+{
+ "run_date": "2026-11-02",
+ "window_reported_by_gate": 10,
+ "search_budget": {
+  "researchers": 3,
+  "capped": true,
+  "exhausted": false
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "note": "Three scouts Oct 22 to Nov 2."
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "note": "Scout 3 read Alaska outlet indexes."
+  },
+  {
+   "rung": "widened_window",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "carried_leads",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": true,
+   "note": "Validator pulled the WA consent decree and complaint."
+  },
+  {
+   "rung": "follow_up",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "pegged_explainer",
+   "attempted": false,
+   "note": "Not needed."
+  }
+ ],
+ "locked_story": {
+  "found_at_rung": "in_window_sweep",
+  "source_urls": [
+   "https://www.alaskasnewssource.com/2026/10/30/general-motors-pay-alaska-over-25m-data-collection-case-settlement/"
+  ],
+  "headline": "GM Smart Driver data settlement: $220M, Alaska $2,508,118"
+ },
+ "candidates": [
+  "GM Smart Driver settlement",
+  "11th Airborne armed FPV drone strike",
+  "Alaska RHTP Year 1 $249M",
+  "USGS polar bear satellite deep learning (Oct 8)",
+  "Bristol Bay red king crab tags (not AI)"
+ ]
+}

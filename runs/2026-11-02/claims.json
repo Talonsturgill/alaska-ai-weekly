@@ -1,0 +1,314 @@
+{
+ "run_date": "2026-11-02",
+ "fact_check_verdict": "Publish as an allegation-and-settlement story. GM admitted no violation. Never '36 states', never 'scores', never an Alaska driver count, never a payout for drivers.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "General Motors will pay two hundred twenty million dollars.",
+   "on_screen": "$220 MILLION \u00b7 GM SETTLEMENT",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Say 'per the settlement'. GM admitted no violation of law."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "Thirty-six attorneys general signed on, and Alaska is one of them.",
+   "on_screen": "36 ATTORNEYS GENERAL \u00b7 ALASKA IN",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Never say '36 states'. It is 35 states plus D.C."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-secondary",
+   "spoken": "Alaska's share is two point five million dollars.",
+   "on_screen": "ALASKA \u00b7 $2,508,118",
+   "source": "https://www.alaskasnewssource.com/2026/10/30/general-motors-pay-alaska-over-25m-data-collection-case-settlement/",
+   "requires": [
+    "Attribute to the Alaska Department of Law as reported by Alaska's News Source. Primary release unreachable."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The attorneys general say G M enrolled millions of drivers in Smart Driver from twenty sixteen to twenty twenty-four.",
+   "on_screen": "SMART DRIVER \u00b7 2016 TO 2024",
+   "source": "https://www.atg.wa.gov/news/news-releases/gm-pay-220m-sharing-drivers-private-data-case-co-led-washington",
+   "requires": [
+    "Attribute to the attorneys general. The complaint says 2015 launch."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "Smart Driver tracked hard braking, hard acceleration, and late-night driving.",
+   "on_screen": "HARD BRAKING \u00b7 HARD ACCELERATION \u00b7 LATE-NIGHT",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged in the complaint."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "The complaint says G M also recorded precise location every three seconds.",
+   "on_screen": "LOCATION EVERY 3 SECONDS",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged in the complaint."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "The complaint says G M sold that data to Verisk and to LexisNexis.",
+   "on_screen": "SOLD TO \u00b7 VERISK \u00b7 LEXISNEXIS",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged. Neither news story names the brokers."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "Those companies built driver ratings and sold them to insurance companies.",
+   "on_screen": "DRIVER RATINGS \u2192 INSURERS",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged. Say 'driver ratings', not 'scores'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "Some insurers used that information in part to set rates.",
+   "on_screen": "SOME INSURERS USED IT IN PART TO SET RATES",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged. 'Some insurers', 'in part'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "The complaint says G M made over twenty million dollars from the data sales.",
+   "on_screen": "$20 MILLION+ \u00b7 NATIONWIDE",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged in the complaint."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "G M's apps told over three hundred seventy thousand people they weren't enrolled, while it collected their data.",
+   "on_screen": "370,000+ TOLD 'NOT ENROLLED'",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged. Complaint blames a technical glitch."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "Dealership staff got incentive payments tied to enrollment.",
+   "on_screen": "DEALER INCENTIVES TIED TO ENROLLMENT",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Alleged."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "G M ended Smart Driver in April twenty twenty-four.",
+   "on_screen": "SMART DRIVER ENDED \u00b7 APRIL 2024",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/GM_Complaint.pdf",
+   "requires": [
+    "Per the complaint."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "Now G M needs a driver's clear yes before it collects or shares driving data.",
+   "on_screen": "CLEAR YES REQUIRED",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Per the settlement. Affirmative express consent."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "G M must limit what it collects to what is reasonably necessary.",
+   "on_screen": "COLLECT ONLY WHAT'S NEEDED",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Per the settlement."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "Dealers must be trained so customers accept the privacy terms themselves.",
+   "on_screen": "CUSTOMER ACCEPTS TERMS HIMSELF",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Per the settlement; within sixty days of the effective date."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "G M must delete driving data it kept from before January sixteenth, twenty twenty-five, with exceptions.",
+   "on_screen": "DELETE PRE-JAN 16TH, 2025 DATA (WITH EXCEPTIONS)",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Per the settlement. Exceptions include litigation holds and safety or recall uses."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "G M admitted no violation of law.",
+   "on_screen": "NO ADMISSION OF LIABILITY",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Per the settlement."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "The settlement sets up no claims process for individual drivers.",
+   "on_screen": "NO PAYOUT PROCESS FOR DRIVERS",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Absence checked in decree para 72; consumers get deletion and copy requests instead."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "Drivers can ask G M for a copy of their data or ask it to delete it.",
+   "on_screen": "ASK FOR A COPY \u00b7 ASK FOR DELETION",
+   "source": "https://agportal-s3bucket.s3.us-west-2.amazonaws.com/Consumer%20Protection/2026_10_29ConsentDecree.pdf",
+   "requires": [
+    "Per decree paras 61, 64."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-secondary",
+   "spoken": "The acting attorney general said it reinforces the commitment to safeguarding Alaskans' personal information.",
+   "on_screen": "\"SAFEGUARDING ALASKANS' PERSONAL INFORMATION\"",
+   "source": "https://www.alaskasnewssource.com/2026/10/30/general-motors-pay-alaska-over-25m-data-collection-case-settlement/",
+   "requires": [
+    "Quote only: 'This holds GM accountable and reinforces our commitment to safeguarding Alaskans' personal information.' Cori Mills."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-absence",
+   "spoken": "The number of Alaska drivers affected isn't stated anywhere.",
+   "on_screen": "ALASKA DRIVER COUNT \u00b7 NOT STATED",
+   "source": "https://www.alaskasnewssource.com/2026/10/30/general-motors-pay-alaska-over-25m-data-collection-case-settlement/",
+   "requires": [
+    "Absence checked in the news stories, WA release and decree."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}
