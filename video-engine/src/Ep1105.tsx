@@ -147,11 +147,11 @@ const win = (f: number, a: number, nxt: number) => easeIO(f, a + 4, 10) * (nxt <
 /** the draft sheet: a paper with a header, grey lines, optional cyan machine-written lines, a highlighter pass and an edit mark. */
 const Sheet: React.FC<{x: number; y: number; w?: number; h?: number; rot?: number; title?: string; cy?: number; hl?: number; mark?: number; cyLabel?: string; hlText?: string; s?: number}> =
 ({x, y, w = 420, h = 540, rot = 0, title = 'AI ENGAGED', cy = 0, hl = 0, mark = 0, cyLabel, hlText, s = 1}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y} w={w * s} h={h * s} kind="float" seed={x * 0.013 + y * 0.007} gain={1.6} sheen={0.12}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y} w={w * s} h={h * s} kind="float" seed={x * 0.013 + y * 0.007} gain={3} sheen={0.12}>
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-w / 2 + 8} y={-h / 2 + 12} width={w} height={h} rx={8} fill="#000" opacity={0.3} />
     <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
-    <text x={-w / 2 + 28} y={-h / 2 + 56} fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>{title}</text>
+    <text x={-w / 2 + 28} y={-h / 2 + 56} fontFamily={MONO} fontWeight={800} fontSize={Math.min(34, (w - 56) / (title.length * 0.62))} fill={C.ink}>{title}</text>
     <line x1={-w / 2 + 24} y1={-h / 2 + 76} x2={w / 2 - 24} y2={-h / 2 + 76} stroke={C.hero} strokeWidth={6} />
     {Array.from({length: 9}).map((_, i) => {
       const yy = -h / 2 + 118 + i * 44;
@@ -174,7 +174,7 @@ const Sheet: React.FC<{x: number; y: number; w?: number; h?: number; rot?: numbe
 
 /** a hand and forearm. color cream or cyan; reach 0..1 extends the fingers toward `dir` (+1 pointing right, -1 left). */
 const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; color?: string; reach?: number; glow?: number}> = ({x, y, s = 1, rot = 0, color = '#E6B896', reach = 0, glow = 0}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y + 300} w={130} h={430} kind="hang" seed={x * 0.009} gain={1.8} sheen={0}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y + 300} w={130} h={430} kind="hang" seed={x * 0.009} gain={3} sheen={0}>
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {glow > 0 && <circle cy={-40} r={150} fill={C.accent} opacity={0.2 * glow} />}
     <rect x={-46} y={30 - reach * 20} width={92} height={420} rx={40} fill={color} stroke={C.ink} strokeWidth={7} />
@@ -236,7 +236,7 @@ const Lamp: React.FC<{x: number; y: number; s?: number; on?: number}> = ({x, y, 
 
 /** a stack of draft pages with a cyan edge when `machine`. n pages. */
 const Stack: React.FC<{x: number; y: number; n: number; machine?: boolean; badge?: string; rot?: number; label?: string}> = ({x, y, n, machine = false, badge, rot = 0, label}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y + 20} w={320} h={Math.max(1, Math.floor(n)) * 15 + 30} kind="rest" seed={x * 0.011} gain={1.5} sheen={0.12}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y + 20} w={320} h={Math.max(1, Math.floor(n)) * 15 + 30} kind="rest" seed={x * 0.011} gain={3} sheen={0.12}>
   <g transform={`translate(${x} ${y}) rotate(${rot})`}>
     <ellipse cx={0} cy={22} rx={190} ry={20} fill="#000" opacity={0.3} />
     {Array.from({length: Math.max(1, Math.floor(n))}).map((_, i) => (
@@ -310,7 +310,7 @@ const track = (keys: Array<{t: number; z: number; fx: number; fy: number}>) => (
 // ---- S1: the press, the first mint line, the calendar --------------------------------------------------------------------------------
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const write = clamp01((f - b(2)) / 70);
+  const write = clamp01((f - 6) / 70);
   const slide = easeIO(f, b(28), 30);
   const cal = ease(f, b(3), 26);
   const card = springy(f, b(39), 22);
@@ -318,7 +318,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 560, fy: 960}, {t: p.dur, z: 1.07, fx: 560, fy: 980}])}>
       <SVG>
 <g transform="translate(0 60)">
-        <HeldProp f={f} px={660.0} py={1200.0} w={630.0} h={585.0} kind="rest" seed={0.37} gain={1.5} sheen={0.14}><DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine /></HeldProp>
+        <HeldProp f={f} px={660.0} py={1200.0} w={630.0} h={585.0} kind="rest" seed={0.37} gain={3} sheen={0.14}><DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine /></HeldProp>
         {write > 0 && <path d="M 975,770 C 800,640 520,640 330,800" fill="none" stroke={C.accent} strokeWidth={5} strokeDasharray="14 12" strokeDashoffset={-f * 3} opacity={0.8 * Math.sin(Math.PI * clamp01(write))} />}
         <Sheet x={lerp(280, 270, slide)} y={lerp(930, 1010, slide)} w={380} h={500} rot={lerp(-4, -6, slide)} title="AI ENGAGED" cy={write} cyLabel={write > 0.5 ? 'CLAUDE?' : undefined} s={1 - 0.08 * slide} />
         <Calendar x={870} y={1215} s={0.62} top="NOVEMBER" big="MEETING" flip={cal} />
@@ -327,7 +327,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
           <text y={-20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} letterSpacing={2} fill={C.ink}>REGENTS</text>
         </g>
         </g>
-        <Plate text={'AI ENGAGED'} x={540} y={600} size={30} p={win(f, b(1), b(2))} /> {/* plate-overlap-ok */}
+        <Plate text={'WHO WROTE THE AI RULES?'} x={540} y={600} size={32} p={win(f, b(1) - 4, b(2))} /> {/* plate-overlap-ok */}
         <Plate text={'TWO PROFESSORS SAY CLAUDE WROTE THE FIRST DRAFT'} displayLines={['TWO PROFESSORS SAY', 'CLAUDE WROTE THE FIRST DRAFT']} x={540} y={600} size={26} p={win(f, b(2), b(28))} /> {/* plate-overlap-ok */}
         <Plate text={'THE PLAN ABOUT CHATBOTS'} x={540} y={600} size={28} p={win(f, b(28), b(3))} /> {/* plate-overlap-ok */}
         <Plate text={'REGENTS · NOVEMBER MEETING'} x={540} y={600} size={28} p={win(f, b(3), b(39))} /> {/* plate-overlap-ok */}
@@ -504,8 +504,18 @@ const S6: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} bg="bone" cam={track([{t: 0, z: 1.0, fx: 560, fy: 950}, {t: b(18) + 6, z: 1.12, fx: 570, fy: 980}, {t: p.dur, z: 1.12, fx: 570, fy: 980}])}>
       <SVG>
 <g transform="translate(0 60)">
-        {hum > 0 && <circle cx={420} cy={880} r={150 * hum + 40} fill={C.glow} opacity={0.25 * hum} />}
-        <HeldProp f={f} px={700.0} py={1195.0} w={595.0} h={552.5} kind="rest" seed={0.74} gain={1.5} sheen={0.14}><DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine examiner /></HeldProp>
+        <HeldProp f={f} px={700.0} py={1195.0} w={595.0} h={552.5} kind="rest" seed={0.74} gain={3} sheen={0.14}><DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine examiner /></HeldProp>
+        {[2, 4, 6, 8].map((d) => {
+          const q = Math.max(0, easeIO(f - d, b(17), 26) * 0.4);
+          const pe = 1 - Math.pow(1 - q, 3);
+          const dy = 940 + 0.85 * (-290 + pe * 335);
+          return f > b(17) && f < b(18) + 6 ? <rect key={d} x={700 - 0.85 * 205} y={dy - 0.85 * 64} width={0.85 * 410} height={0.85 * 128} rx={20} fill={C.brass} opacity={0.14 + 0.05 * (8 - d)} /> : null;
+        })}
+        {bump(f, b(18), 14) > 0 && (
+          <g transform="translate(560 1010)" opacity={bump(f, b(18), 14)}>
+            {Array.from({length: 10}).map((_, i) => <line key={i} x1={0} y1={0} x2={Math.cos(i * 0.63) * 120} y2={Math.sin(i * 0.63) * 80} stroke={i % 2 ? C.glow : C.paper} strokeWidth={8} strokeLinecap="round" />)}
+          </g>
+        )}
         {glint > 0 && <circle cx={405} cy={880} r={60} fill={C.glow} opacity={0.4 * glint * (1 - 0.5 * Math.sin(f / 5) ** 2)} />}
         <Sheet x={880} y={1120} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} mark={ease(f, b(33), 20)} />
         <g transform={`translate(300 ${lerp(1180, 1060, card)}) rotate(-4)`} opacity={clamp01(card * 2)}>
@@ -526,7 +536,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
 
 // ---- S7: the empty room from above -----------------------------------------------------------------------------------------------------------------
 const TopChair: React.FC<{x: number; y: number; rot?: number; tag?: string; dim?: boolean; tip?: number}> = ({x, y, rot = 0, tag, dim = false, tip = 0}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y} w={96} h={90} kind="float" seed={x * 0.017 + y * 0.003} gain={1.4} sheen={0}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y} w={96} h={90} kind="float" seed={x * 0.017 + y * 0.003} gain={3} sheen={0}>
   <g transform={`translate(${x} ${y}) rotate(${rot + tip})`} opacity={dim ? 0.7 : 1}>
     <ellipse cx={4} cy={8} rx={56} ry={50} fill="#000" opacity={0.3} />
     <rect x={-48} y={-44} width={96} height={88} rx={20} fill={dim ? '#5A2A32' : C.cuff} stroke={C.ink} strokeWidth={6} />
@@ -550,8 +560,8 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <rect x={290} y={830} width={500} height={340} rx={30} fill="#A7703B" stroke={C.ink} strokeWidth={8} />
         <rect x={310} y={850} width={460} height={300} rx={20} fill="#B9814A" opacity={0.7} />
         {seats.map((s, i) => <TopChair key={i} x={s[0]} y={s[1]} rot={s[2]} dim={i === 5 || i === 7} tip={(i === 5 ? 1 : i === 7 ? -1 : 0) * tip} />)}
-        <Lab text="FACULTY" x={330} y={1310} size={30} tone="plate" p={ease(f, b(22), 12)} />
-        <Lab text="STUDENTS" x={750} y={1310} size={30} tone="plate" p={ease(f, b(22), 12)} />
+        <Lab text="FACULTY" x={330} y={1130} size={30} tone="plate" p={ease(f, b(22), 12)} />
+        <Lab text="STUDENTS" x={750} y={1130} size={30} tone="plate" p={ease(f, b(22), 12)} />
         <Sheet x={540} y={1000} w={260} h={320} rot={-6} title="AI ENGAGED" s={0.8} mark={mark} />
         <Pen x={pa[0]} y={pa[1] + 70} rot={-20} s={0.8} />
         </g>
@@ -606,7 +616,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.1, fx: 560, fy: 1020}])}>
       <SVG>
 <g transform="translate(0 60)">
-        <HeldProp f={f} px={220.0} py={1110.0} w={350.0} h={325.0} kind="rest" seed={1.1099999999999999} gain={1.5} sheen={0.14}><DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" dieText="AI ENGAGED" /></HeldProp>
+        <HeldProp f={f} px={220.0} py={1110.0} w={350.0} h={325.0} kind="rest" seed={1.1099999999999999} gain={3} sheen={0.14}><DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" dieText="AI ENGAGED" /></HeldProp>
         {lit > 0 && <circle cx={330} cy={800} r={120} fill={C.accent} opacity={0.3 * lit} />}
         <Sheet x={650} y={lerp(980, 1040, land)} w={380} h={500} title="AI ENGAGED" mark={1} s={1 - 0.06 * land} />
         <g transform="translate(650 1150)">
@@ -624,6 +634,54 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Plate text={'WHO WAS ASKED?'} x={540} y={600} size={36} tone="glow" p={win(f, b(27), 99999)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
+  );
+};
+
+
+// ---- the throughline strip (top) and the room strip (bottom) --------------------------------------------------------------------------------
+const TOPS = [{k: 1, t: 'WRITTEN?'}, {k: 7, t: 'SUMMER STACK'}, {k: 14, t: 'NO POLICY'}, {k: 16, t: 'EMBOSSED'}, {k: 21, t: 'EDITED'}, {k: 38, t: 'MARKED'}, {k: 27, t: 'UNSIGNED'}];
+const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
+  const f = useCurrentFrame();
+  const at = (k: number) => {
+    const x = beats.find((y) => y.id === (IDS[k] ?? k));
+    return x ? Math.round(x.at * 30) : 99999;
+  };
+  const cur = TOPS.filter((q) => f >= at(q.k)).length - 1;
+  const bone = f >= at(16) && f < at(21);
+  const lab = bone ? C.ink : C.paper;
+  const ask = f >= at(22);
+  return (
+    <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, pointerEvents: 'none'}}>
+      <g data-band="ok">
+        <text x={60} y={150} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={lab} opacity={0.85}>THE DRAFT · AI ENGAGED</text>
+        {TOPS.map((q, i) => {
+          const x = 60 + i * 140, on = i <= cur, now = i === cur;
+          return (
+            <g key={i} transform={`translate(${x} 205)`}>
+              <rect x={0} y={-34} width={126} height={68} rx={10} fill={now ? C.glow : on ? (bone ? '#C9BD99' : '#5A2A32') : (bone ? '#DDD2B4' : '#1E0D14')} stroke={now ? C.ink : bone ? C.ink : '#8E6F5A'} strokeWidth={now ? 5 : 3} opacity={on ? 1 : 0.8} />
+              <text x={63} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={q.t.length > 9 ? 15 : 18} fill={now ? C.ink : bone ? C.ink : C.paper}>{q.t}</text>
+            </g>
+          );
+        })}
+        <line x1={60} y1={270} x2={1020} y2={270} stroke="#8E6F5A" strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
+        <circle cx={60 + Math.max(0, cur) * 140 + 63} cy={270} r={9} fill={C.glow} />
+        <rect x={0} y={1560} width={1080} height={260} fill={bone ? '#C9BD99' : '#14080F'} opacity={0.78} />
+        <text x={60} y={1604} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={lab} opacity={0.9}>WHO WAS IN THE ROOM</text>
+        {Array.from({length: 8}).map((_, i) => {
+          const empty = i >= 6;
+          const x = 80 + i * 126;
+          const pulse = empty && ask ? 0.5 + 0.5 * Math.sin(f / 7) : 0;
+          return (
+            <g key={i} transform={`translate(${x} 1690)`}>
+              <rect x={-40} y={-44} width={80} height={72} rx={16} fill={empty ? 'none' : C.hero} stroke={empty ? (pulse > 0 ? C.glow : '#8E6F5A') : C.ink} strokeWidth={empty ? 5 : 5} strokeDasharray={empty ? '10 8' : undefined} opacity={empty ? 0.9 : 1} />
+              {!empty && <circle cy={-6} r={14} fill="#C98F6B" stroke={C.ink} strokeWidth={4} />}
+              {empty && <text y={-2} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={pulse > 0 ? C.glow : '#8E6F5A'}>?</text>}
+              {empty && <text y={58} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={lab}>{i === 6 ? 'FACULTY' : 'STUDENTS'}</text>}
+            </g>
+          );
+        })}
+      </g>
+    </svg>
   );
 };
 
@@ -677,6 +735,7 @@ export const Ep1105: React.FC<Props> = ({captions: cues = [], scenes, beats, kic
             <Shot n={SHOT_ORDER[i]} from={s.from} dur={s.dur} beats={bs} kicks={kicks} />
           </Sequence>
         ))}
+        <Sequence from={0} durationInFrames={end}><Bands beats={bs} /></Sequence>
         <Sequence from={0} durationInFrames={end}><CaptionBar cues={cues} bar="#1A0A10" ink="#F1E8D0" /></Sequence>
         {credits && (
           <Sequence name="CREDITS" from={end} durationInFrames={credits.frames}>

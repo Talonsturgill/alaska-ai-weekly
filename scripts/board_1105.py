@@ -288,9 +288,9 @@ def build():
             {"t": b_at(13), "type": "morph-to-chart", "what": "the mint ticked tags collapse into a bar that climbs past a baseline", "hold_s": 0.8},
             {"t": b_at(20), "type": "scale-pullback", "what": "from the press to a whole ring of chairs around it", "hold_s": 0.8}],
         "tail_s": 3.0, "audio_arc": {"bed": [
-            {"line": 0, "offset": 0.0, "level": 0.4}, {"line": 0, "offset": 3.0, "level": 1.6}, {"line": 2, "offset": 0.0, "level": 0.3},
-            {"line": 4, "offset": 0.0, "level": 1.6}, {"line": 6, "offset": 0.0, "level": 0.4}, {"line": 8, "offset": 0.0, "level": 1.5},
-            {"line": 10, "offset": 0.0, "level": 0.4}, {"line": 12, "offset": 0.0, "level": 1.6},
+            {"line": 0, "offset": 0.0, "level": 0.5}, {"line": 0, "offset": 3.0, "level": 1.3}, {"line": 2, "offset": 0.0, "level": 0.45},
+            {"line": 4, "offset": 0.0, "level": 1.3}, {"line": 6, "offset": 0.0, "level": 0.55}, {"line": 8, "offset": 0.0, "level": 1.25},
+            {"line": 10, "offset": 0.0, "level": 0.55}, {"line": 12, "offset": 0.0, "level": 1.3},
             {"at_s": round(b_at(38) - 0.3, 3), "level": 0.1}, {"at_s": round(b_at(38) + 0.8, 3), "level": 0.6},
             {"from_end": 2.6, "level": 0.55}, {"from_end": 0.4, "level": 0.0}],
             "ambience": "room",
