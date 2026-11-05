@@ -126,6 +126,11 @@ const Room: React.FC<{f: number; v: string; table?: boolean}> = ({f, v, table = 
       {Array.from({length: 9}).map((_, i) => <rect key={i} x={i * 130 - 20} y={300} width={110} height={900} rx={6} fill={bone ? '#000' : '#000'} opacity={bone ? 0.035 : 0.16} />)}
       {Array.from({length: 4}).map((_, i) => <rect key={`t${i}`} x={90 + i * 270} y={150} width={190} height={110} rx={10} fill="none" stroke={bone ? '#B9AC88' : '#5E2A3C'} strokeWidth={5} opacity={0.6} />)}
       <rect x={70} y={380} width={300} height={560} rx={8} fill={bone ? '#EFE4C6' : '#F2B766'} opacity={bone ? 0.5 : 0.28 + 0.2 * sun} stroke={bone ? '#B9AC88' : '#7A4E2A'} strokeWidth={10} />
+      <g opacity={bone ? 0.55 : 0.8}>
+        <path d="M 74,720 L 130,610 L 170,660 L 225,560 L 290,650 L 330,600 L 366,700 L 366,720 Z" fill={bone ? '#C9BD99' : '#6E3B2E'} stroke={C.ink} strokeWidth={3} />
+        <path d="M 130,610 L 150,632 L 118,640 Z M 225,560 L 250,590 L 205,596 Z" fill={C.paper} opacity={0.85} />
+        {[96, 140, 300, 336].map((tx, i) => <path key={i} d={`M ${tx},${940 - 10} L ${tx - 18},${940 - 60 - (i % 2) * 20} L ${tx - 8},${940 - 60 - (i % 2) * 20} L ${tx - 22},${940 - 110 - (i % 2) * 20} L ${tx + 22},${940 - 110 - (i % 2) * 20} L ${tx + 8},${940 - 60 - (i % 2) * 20} L ${tx + 18},${940 - 60 - (i % 2) * 20} Z`} fill="#1F3A2B" stroke={C.ink} strokeWidth={3} />)}
+      </g>
       <line x1={220} y1={380} x2={220} y2={940} stroke={bone ? '#B9AC88' : '#7A4E2A'} strokeWidth={8} />
       <line x1={70} y1={660} x2={370} y2={660} stroke={bone ? '#B9AC88' : '#7A4E2A'} strokeWidth={8} />
       <polygon points={`370,420 ${760 + 200 * sun},1180 ${520 + 200 * sun},1260 370,900`} fill="url(#shaft)" />
@@ -147,7 +152,7 @@ const win = (f: number, a: number, nxt: number) => easeIO(f, a + 4, 10) * (nxt <
 /** the draft sheet: a paper with a header, grey lines, optional cyan machine-written lines, a highlighter pass and an edit mark. */
 const Sheet: React.FC<{x: number; y: number; w?: number; h?: number; rot?: number; title?: string; cy?: number; hl?: number; mark?: number; cyLabel?: string; hlText?: string; s?: number}> =
 ({x, y, w = 420, h = 540, rot = 0, title = 'AI ENGAGED', cy = 0, hl = 0, mark = 0, cyLabel, hlText, s = 1}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y} w={w * s} h={h * s} kind="float" seed={x * 0.013 + y * 0.007} gain={3} sheen={0.12}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y} w={w * s} h={h * s} kind="float" seed={x * 0.013 + y * 0.007} gain={5} sheen={0.12}>
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-w / 2 + 8} y={-h / 2 + 12} width={w} height={h} rx={8} fill="#000" opacity={0.3} />
     <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
@@ -174,7 +179,7 @@ const Sheet: React.FC<{x: number; y: number; w?: number; h?: number; rot?: numbe
 
 /** a hand and forearm. color cream or cyan; reach 0..1 extends the fingers toward `dir` (+1 pointing right, -1 left). */
 const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; color?: string; reach?: number; glow?: number}> = ({x, y, s = 1, rot = 0, color = '#E6B896', reach = 0, glow = 0}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y + 300} w={130} h={430} kind="hang" seed={x * 0.009} gain={3} sheen={0}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y + 300} w={130} h={430} kind="hang" seed={x * 0.009} gain={5} sheen={0}>
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {glow > 0 && <circle cy={-40} r={150} fill={C.accent} opacity={0.2 * glow} />}
     <rect x={-46} y={30 - reach * 20} width={92} height={420} rx={40} fill={color} stroke={C.ink} strokeWidth={7} />
@@ -183,6 +188,9 @@ const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; color?: st
     {[-40, -14, 12, 38].map((fx, i) => <rect key={i} x={fx - 12} y={-122 - reach * 34 + Math.abs(i - 1.5) * 9} width={26} height={84} rx={13} fill={color} stroke={C.ink} strokeWidth={6} />)}
     <rect x={-96} y={-4} width={40} height={74} rx={18} fill={color} stroke={C.ink} strokeWidth={6} transform="rotate(-32 -76 30)" />
     <path d="M -34,-20 q 34,-16 68,0" fill="none" stroke={C.ink} strokeWidth={3} opacity={0.18} />
+    <path d="M 22,-40 q 30,40 18,110" fill="none" stroke={C.ink} strokeWidth={10} opacity={0.18} />
+    {[-27, -1, 25].map((kx, i) => <line key={i} x1={kx} y1={-70 - reach * 20} x2={kx} y2={-60 - reach * 20} stroke={C.ink} strokeWidth={4} opacity={0.35} />)}
+    <rect x={-60} y={296} width={120} height={14} fill="#B9506A" opacity={0.6} />
   </g>
   </HeldProp>
 );
@@ -236,7 +244,7 @@ const Lamp: React.FC<{x: number; y: number; s?: number; on?: number}> = ({x, y, 
 
 /** a stack of draft pages with a cyan edge when `machine`. n pages. */
 const Stack: React.FC<{x: number; y: number; n: number; machine?: boolean; badge?: string; rot?: number; label?: string}> = ({x, y, n, machine = false, badge, rot = 0, label}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y + 20} w={320} h={Math.max(1, Math.floor(n)) * 15 + 30} kind="rest" seed={x * 0.011} gain={3} sheen={0.12}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y + 20} w={320} h={Math.max(1, Math.floor(n)) * 15 + 30} kind="rest" seed={x * 0.011} gain={5} sheen={0.12}>
   <g transform={`translate(${x} ${y}) rotate(${rot})`}>
     <ellipse cx={0} cy={22} rx={190} ry={20} fill="#000" opacity={0.3} />
     {Array.from({length: Math.max(1, Math.floor(n))}).map((_, i) => (
@@ -310,7 +318,7 @@ const track = (keys: Array<{t: number; z: number; fx: number; fy: number}>) => (
 // ---- S1: the press, the first mint line, the calendar --------------------------------------------------------------------------------
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const write = clamp01((f - 6) / 70);
+  const write = clamp01((f - 2) / 54);
   const slide = easeIO(f, b(28), 30);
   const cal = ease(f, b(3), 26);
   const card = springy(f, b(39), 22);
@@ -318,8 +326,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 560, fy: 960}, {t: p.dur, z: 1.07, fx: 560, fy: 980}])}>
       <SVG>
 <g transform="translate(0 60)">
-        <HeldProp f={f} px={660.0} py={1200.0} w={630.0} h={585.0} kind="rest" seed={0.37} gain={3} sheen={0.14}><DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine /></HeldProp>
-        {write > 0 && <path d="M 975,770 C 800,640 520,640 330,800" fill="none" stroke={C.accent} strokeWidth={5} strokeDasharray="14 12" strokeDashoffset={-f * 3} opacity={0.8 * Math.sin(Math.PI * clamp01(write))} />}
+        <HeldProp f={f} px={660.0} py={1200.0} w={630.0} h={585.0} kind="rest" seed={0.37} gain={5} sheen={0.14}><DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.06 * Math.sin(f / 12) + 0.25 * bump(f, 4, 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine /></HeldProp>
+        {write > 0 && <path d="M 975,770 C 800,640 520,640 330,800" fill="none" stroke={C.accent} strokeWidth={10} strokeDasharray="22 14" strokeDashoffset={-f * 6} opacity={Math.min(1, 1.6 * Math.sin(Math.PI * clamp01(write)))} />}
         <Sheet x={lerp(280, 270, slide)} y={lerp(930, 1010, slide)} w={380} h={500} rot={lerp(-4, -6, slide)} title="AI ENGAGED" cy={write} cyLabel={write > 0.5 ? 'CLAUDE?' : undefined} s={1 - 0.08 * slide} />
         <Calendar x={870} y={1215} s={0.62} top="NOVEMBER" big="MEETING" flip={cal} />
         <g transform={`translate(480 ${lerp(1180, 1256, card)})`} opacity={clamp01(card * 2)}>
@@ -327,7 +335,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
           <text y={-20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} letterSpacing={2} fill={C.ink}>REGENTS</text>
         </g>
         </g>
-        <Plate text={'WHO WROTE THE AI RULES?'} x={540} y={600} size={32} p={win(f, b(1) - 4, b(2))} /> {/* plate-overlap-ok */}
+        <Plate text={'WHO WROTE THE AI RULES?'} x={540} y={600} size={32} p={(1 - easeIO(f, b(2) - 12, 8))} /> {/* plate-overlap-ok */}
         <Plate text={'TWO PROFESSORS SAY CLAUDE WROTE THE FIRST DRAFT'} displayLines={['TWO PROFESSORS SAY', 'CLAUDE WROTE THE FIRST DRAFT']} x={540} y={600} size={26} p={win(f, b(2), b(28))} /> {/* plate-overlap-ok */}
         <Plate text={'THE PLAN ABOUT CHATBOTS'} x={540} y={600} size={28} p={win(f, b(28), b(3))} /> {/* plate-overlap-ok */}
         <Plate text={'REGENTS · NOVEMBER MEETING'} x={540} y={600} size={28} p={win(f, b(3), b(39))} /> {/* plate-overlap-ok */}
@@ -350,8 +358,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
       <SVG>
 <g transform="translate(0 60)">
         <Sheet x={360} y={1000} w={520} h={660} title="AI ENGAGED" cy={ease(f, b(5), 40)} cyLabel="CLAUDE" />
-        <Hand x={150} y={1230} s={1} rot={14} reach={reachH} color="#C98F6B" />
-        <Hand x={880} y={1200} s={1} rot={-14} reach={reachM} color={C.accent} glow={reachM} />
+        <Hand x={150 + 36 * Math.sin(f / 21)} y={1230} s={1} rot={14 + 3 * Math.sin(f / 17)} reach={reachH} color="#C98F6B" />
+        <Hand x={880 - 30 * Math.sin(f / 19)} y={1200} s={1} rot={-14 + 3 * Math.sin(f / 15)} reach={reachM} color={C.accent} glow={reachM} />
         <Pen x={lerp(360, 470, 0.5 + 0.5 * swing)} y={lerp(880, 1010, reachM)} rot={22 + 14 * swing} s={1.1} />
         <Calendar x={820} y={720} s={0.8} top="OCTOBER" big="9" flip={cal} />
         <g transform={`translate(360 ${lerp(900, 640, hush)}) rotate(-6)`} opacity={cal * (1 - hush * 0.7)}>
@@ -452,7 +460,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
 };
 
 // ---- S5: the printed map on the table, three campus flags ----------------------------------------------------------------------------------
-const FLAGS = [{n: 'ANCHORAGE', x: 470, y: 760}, {n: 'FAIRBANKS', x: 620, y: 700}, {n: 'JUNEAU', x: 800, y: 900}];
+const FLAGS = [{n: 'UAA', x: 470, y: 760}, {n: 'UAF', x: 620, y: 700}, {n: 'UAS', x: 800, y: 900}];
 const S5: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const band = easeIO(f, b(15), 34);
@@ -501,11 +509,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const glint = ease(f, b(18) - 2, 10);
   const card = springy(f, b(19), 22);
   return (
-    <Frame p={p} bg="bone" cam={track([{t: 0, z: 1.0, fx: 560, fy: 950}, {t: b(18) + 6, z: 1.12, fx: 570, fy: 980}, {t: p.dur, z: 1.12, fx: 570, fy: 980}])}>
+    <Frame p={p} bg="bone" cam={track([{t: 0, z: 1.0, fx: 560, fy: 950}, {t: b(18) + 6, z: 1.16, fx: 580, fy: 980}, {t: p.dur, z: 1.16, fx: 580, fy: 980}])}>
       <SVG>
 <g transform="translate(0 60)">
-        <HeldProp f={f} px={700.0} py={1195.0} w={595.0} h={552.5} kind="rest" seed={0.74} gain={3} sheen={0.14}><DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine examiner /></HeldProp>
-        {[2, 4, 6, 8].map((d) => {
+        <HeldProp f={f} px={700.0} py={1195.0} w={595.0} h={552.5} kind="rest" seed={0.74} gain={5} sheen={0.14}><DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine examiner /></HeldProp>
+        {[3, 6, 9, 12].map((d) => {
           const q = Math.max(0, easeIO(f - d, b(17), 26) * 0.4);
           const pe = 1 - Math.pow(1 - q, 3);
           const dy = 940 + 0.85 * (-290 + pe * 335);
@@ -513,11 +521,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
         })}
         {bump(f, b(18), 14) > 0 && (
           <g transform="translate(560 1010)" opacity={bump(f, b(18), 14)}>
-            {Array.from({length: 10}).map((_, i) => <line key={i} x1={0} y1={0} x2={Math.cos(i * 0.63) * 120} y2={Math.sin(i * 0.63) * 80} stroke={i % 2 ? C.glow : C.paper} strokeWidth={8} strokeLinecap="round" />)}
+            {Array.from({length: 10}).map((_, i) => <line key={i} x1={0} y1={0} x2={Math.cos(i * 0.63) * 210} y2={Math.sin(i * 0.63) * 140} stroke={i % 2 ? C.glow : C.paper} strokeWidth={12} strokeLinecap="round" />)}
           </g>
         )}
-        {glint > 0 && <circle cx={405} cy={880} r={60} fill={C.glow} opacity={0.4 * glint * (1 - 0.5 * Math.sin(f / 5) ** 2)} />}
-        <Sheet x={880} y={1120} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} mark={ease(f, b(33), 20)} />
         <g transform={`translate(300 ${lerp(1180, 1060, card)}) rotate(-4)`} opacity={clamp01(card * 2)}>
           <rect x={-170} y={-70} width={340} height={140} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.ink}>"BE DELIBERATE"</text>
@@ -536,7 +542,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
 
 // ---- S7: the empty room from above -----------------------------------------------------------------------------------------------------------------
 const TopChair: React.FC<{x: number; y: number; rot?: number; tag?: string; dim?: boolean; tip?: number}> = ({x, y, rot = 0, tag, dim = false, tip = 0}) => (
-  <HeldProp f={useCurrentFrame()} px={x} py={y} w={96} h={90} kind="float" seed={x * 0.017 + y * 0.003} gain={3} sheen={0}>
+  <HeldProp f={useCurrentFrame()} px={x} py={y} w={96} h={90} kind="float" seed={x * 0.017 + y * 0.003} gain={5} sheen={0}>
   <g transform={`translate(${x} ${y}) rotate(${rot + tip})`} opacity={dim ? 0.7 : 1}>
     <ellipse cx={4} cy={8} rx={56} ry={50} fill="#000" opacity={0.3} />
     <rect x={-48} y={-44} width={96} height={88} rx={20} fill={dim ? '#5A2A32' : C.cuff} stroke={C.ink} strokeWidth={6} />
@@ -551,8 +557,9 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const dim = ease(f, b(22), 20);
   const tip = bump(f, b(35), 24) * 10;
   const seats = [[330, 770, 0], [540, 770, 0], [750, 770, 0], [250, 1000, 90], [830, 1000, -90], [330, 1230, 180], [540, 1230, 180], [750, 1230, 180]] as const;
-  const penAt = Math.min(2, Math.floor(pass * 3));
-  const pa = seats[[0, 1, 2][penAt]];
+  const seg = Math.min(1.999, pass * 2);
+  const sa = seats[Math.floor(seg)], sb = seats[Math.floor(seg) + 1];
+  const pa = [lerp(sa[0], sb[0], easeIO(seg % 1 * 1, 0, 1)), lerp(sa[1], sb[1], easeIO(seg % 1, 0, 1)) - 8 * Math.sin(Math.PI * (seg % 1))];
   return (
     <Frame p={p} bg="floor" cam={track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.1, fx: 540, fy: 1020}])}>
       <SVG>
@@ -583,7 +590,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const drop = ease(f, b(24), 12);
   const card = springy(f, b(25), 20);
   return (
-    <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 980}, {t: p.dur, z: 1.08, fx: 520, fy: 990}])}>
+    <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 980}, {t: p.dur, z: 1.2, fx: 500, fy: 1010}])}>
       <SVG>
 <g transform="translate(0 60)">
         <Sheet x={380} y={1000} w={560} h={720} title="AI ENGAGED" mark={1} hl={hl} hlText={words > 0.5 ? 'WHOEVER HELD THE PEN' : undefined} />
@@ -616,7 +623,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.1, fx: 560, fy: 1020}])}>
       <SVG>
 <g transform="translate(0 60)">
-        <HeldProp f={f} px={220.0} py={1110.0} w={350.0} h={325.0} kind="rest" seed={1.1099999999999999} gain={3} sheen={0.14}><DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" dieText="AI ENGAGED" /></HeldProp>
+        <HeldProp f={f} px={220.0} py={1110.0} w={350.0} h={325.0} kind="rest" seed={1.1099999999999999} gain={5} sheen={0.14}><DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" dieText="AI ENGAGED" /></HeldProp>
         {lit > 0 && <circle cx={330} cy={800} r={120} fill={C.accent} opacity={0.3 * lit} />}
         <Sheet x={650} y={lerp(980, 1040, land)} w={380} h={500} title="AI ENGAGED" mark={1} s={1 - 0.06 * land} />
         <g transform="translate(650 1150)">
@@ -665,14 +672,14 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
         })}
         <line x1={60} y1={270} x2={1020} y2={270} stroke="#8E6F5A" strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
         <circle cx={60 + Math.max(0, cur) * 140 + 63} cy={270} r={9} fill={C.glow} />
-        <rect x={0} y={1560} width={1080} height={260} fill={bone ? '#C9BD99' : '#14080F'} opacity={0.78} />
+        <rect x={0} y={1560} width={1080} height={330} fill={bone ? '#C9BD99' : '#14080F'} opacity={0.78} />
         <text x={60} y={1604} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={lab} opacity={0.9}>WHO WAS IN THE ROOM</text>
         {Array.from({length: 8}).map((_, i) => {
           const empty = i >= 6;
           const x = 80 + i * 126;
           const pulse = empty && ask ? 0.5 + 0.5 * Math.sin(f / 7) : 0;
           return (
-            <g key={i} transform={`translate(${x} 1690)`}>
+            <g key={i} transform={`translate(${x} ${1690 + (empty ? 0 : 5 * Math.sin(f / 14 + i * 1.1))})`}>
               <rect x={-40} y={-44} width={80} height={72} rx={16} fill={empty ? 'none' : C.hero} stroke={empty ? (pulse > 0 ? C.glow : '#8E6F5A') : C.ink} strokeWidth={empty ? 5 : 5} strokeDasharray={empty ? '10 8' : undefined} opacity={empty ? 0.9 : 1} />
               {!empty && <circle cy={-6} r={14} fill="#C98F6B" stroke={C.ink} strokeWidth={4} />}
               {empty && <text y={-2} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={pulse > 0 ? C.glow : '#8E6F5A'}>?</text>}
