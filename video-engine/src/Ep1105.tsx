@@ -310,13 +310,15 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 560, fy: 960}, {t: p.dur, z: 1.07, fx: 560, fy: 980}])}>
       <SVG>
-        <DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" machine />
+<g transform="translate(0 60)">
+        <DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine />
         {write > 0 && <path d="M 975,770 C 800,640 520,640 330,800" fill="none" stroke={C.accent} strokeWidth={5} strokeDasharray="14 12" strokeDashoffset={-f * 3} opacity={0.8 * Math.sin(Math.PI * clamp01(write))} />}
-        <Sheet x={lerp(280, 270, slide)} y={lerp(930, 1010, slide)} w={380} h={500} rot={lerp(-4, -6, slide)} title="RULES FOR AI" cy={write} cyLabel={write > 0.5 ? 'CLAUDE?' : undefined} s={1 - 0.08 * slide} />
-        <Calendar x={870} y={1215} s={0.62} top="NOVEMBER" big="MEETING" sub="BOARD OF REGENTS" flip={cal} />
+        <Sheet x={lerp(280, 270, slide)} y={lerp(930, 1010, slide)} w={380} h={500} rot={lerp(-4, -6, slide)} title="AI ENGAGED" cy={write} cyLabel={write > 0.5 ? 'CLAUDE?' : undefined} s={1 - 0.08 * slide} />
+        <Calendar x={870} y={1215} s={0.62} top="NOVEMBER" big="MEETING" flip={cal} />
         <g transform={`translate(480 ${lerp(1180, 1256, card)})`} opacity={clamp01(card * 2)}>
           <path d="M -150,0 L 150,0 L 134,-62 L -134,-62 Z" fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} letterSpacing={2} fill={C.ink}>REGENTS</text>
+        </g>
         </g>
         <Plate text={'AI ENGAGED'} x={540} y={600} size={30} p={win(f, b(1), b(2))} /> {/* plate-overlap-ok */}
         <Plate text={'TWO PROFESSORS SAY CLAUDE WROTE THE FIRST DRAFT'} displayLines={['TWO PROFESSORS SAY', 'CLAUDE WROTE THE FIRST DRAFT']} x={540} y={600} size={26} p={win(f, b(2), b(28))} /> {/* plate-overlap-ok */}
@@ -339,6 +341,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 980}, {t: p.dur, z: 1.08, fx: 520, fy: 980}])}>
       <SVG>
+<g transform="translate(0 60)">
         <Sheet x={360} y={1000} w={520} h={660} title="AI ENGAGED" cy={ease(f, b(5), 40)} cyLabel="CLAUDE" />
         <Hand x={150} y={1230} s={1} rot={14} reach={reachH} color="#C98F6B" />
         <Hand x={880} y={1200} s={1} rot={-14} reach={reachM} color={C.accent} glow={reachM} />
@@ -347,6 +350,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(360 ${lerp(900, 640, hush)}) rotate(-6)`} opacity={cal * (1 - hush * 0.7)}>
           <rect x={-110} y={-36} width={220} height={72} rx={10} fill={C.hero} stroke={C.ink} strokeWidth={6} />
           <text y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.paper}>HUSH</text>
+        </g>
         </g>
         <Plate text={'WHO HELD THE PEN?'} x={540} y={600} size={34} p={win(f, b(4), b(29))} /> {/* plate-overlap-ok */}
         <Plate text={'HUMAN OR MACHINE?'} x={540} y={600} size={32} p={win(f, b(29), b(5))} /> {/* plate-overlap-ok */}
@@ -368,7 +372,9 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 990}, {t: p.dur, z: 1.1, fx: 540, fy: 1000}])}>
       <SVG>
+<g transform="translate(0 60)">
         <Lamp x={110} y={1100} s={1.05 + 0.1 * flare} on={0.7 + 0.5 * flare} />
+        <Sheet x={930} y={1180} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} />
         <Stack x={lerp(400, 470, merge)} y={1130} n={grow} badge="UA" label={merge < 0.1 ? 'UA TECH CHIEF · SUMMER' : undefined} />
         <Stack x={lerp(830, 640, merge)} y={1130} n={4} machine rot={4} label={merge < 0.1 ? 'CLAUDE · THEY SAY' : undefined} />
         <g transform={`translate(${lerp(520, 270, slip)} ${lerp(700, 930, slip)}) rotate(${lerp(-20, -6, slip)})`} opacity={clamp01(slip * 2)}>
@@ -379,6 +385,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(540 ${700 - 18 * bubble}) scale(${bubble})`} opacity={bubble}>
           <rect x={-120} y={-62} width={240} height={124} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={72} fill={C.ink} opacity={0.25 + 0.5 * Math.abs(Math.sin(f / 10))}>?</text>
+        </g>
         </g>
         <Plate text={'UA TECH CHIEF DRAFTED OVER THE SUMMER'} displayLines={['UA TECH CHIEF', 'DRAFTED OVER THE SUMMER']} x={540} y={600} size={28} p={win(f, b(7), b(40))} /> {/* plate-overlap-ok */}
         <Plate text={'OVER THE SUMMER'} x={540} y={600} size={30} p={win(f, b(40), b(8))} /> {/* plate-overlap-ok */}
@@ -400,6 +407,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={track([{t: 0, z: 2.6, fx: 100, fy: 700}, {t: 24, z: 1.0, fx: 540, fy: 920}, {t: p.dur, z: 1.08, fx: 540, fy: 1000}])}>
       <SVG>
+<g transform="translate(0 60)">
         <rect x={50} y={680} width={980} height={380} rx={10} fill="#3B1F14" stroke={C.ink} strokeWidth={6} />
         {tags.map((_, i) => {
           const col = i % 15, row = Math.floor(i / 15);
@@ -418,13 +426,15 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <g opacity={bar} transform="translate(0 0)">
           <line x1={220} y1={1330} x2={860} y2={1330} stroke={C.ink} strokeWidth={6} />
           <rect x={300} y={1330 - 150} width={170} height={150} fill={C.chalk} stroke={C.ink} strokeWidth={6} />
-          <text x={385} y={1318} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>LAST YEAR</text>
+          <text x={385} y={1318} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>YEAR BEFORE</text>
           <rect x={620} y={1330 - 150 * (1 + 0.73 * bar)} width={170} height={150 * (1 + 0.73 * bar)} fill={C.chalk} stroke={C.ink} strokeWidth={6} />
           <line x1={300} y1={1180} x2={860} y2={1180} stroke={C.glow} strokeWidth={4} strokeDasharray="10 8" />
         </g>
-        <g transform={`translate(705 ${1330 - 150 * 1.73 - 36}) scale(${lab})`} opacity={clamp01(lab * 2)}><Lab text="+73%" x={0} y={0} size={34} tone="glow" /></g>
+        <g transform={`translate(880 1180) scale(${lab})`} opacity={clamp01(lab * 2)}><Lab text="+73%" x={0} y={0} size={34} tone="glow" /><Lab text="LAST YEAR" x={0} y={50} size={20} tone="plate" /></g>
         <Sheet x={950} y={1190} w={200} h={260} rot={8} title="AI ENGAGED" s={0.6} />
-        <Plate text={'150 STUDENTS CITED UAA REPORT'} displayLines={['150 STUDENTS CITED', 'UAA REPORT']} x={540} y={610} size={28} p={win(f, b(11), b(12))} /> {/* plate-overlap-ok */}
+        </g>
+        <Plate text={'150 STUDENTS CITED UAA REPORT'} displayLines={['150 STUDENTS CITED', 'UAA REPORT']} x={540} y={610} size={28} p={win(f, b(11), b(42))} /> {/* plate-overlap-ok */}
+        <Plate text={'CITED FOR MISCONDUCT'} x={540} y={610} size={28} p={win(f, b(42), b(12))} /> {/* plate-overlap-ok */}
         <Plate text={'119 OF 150 CITED USED AI'} displayLines={['119 OF 150 CITED', 'USED AI']} x={540} y={610} size={30} p={win(f, b(12), b(30))} /> {/* plate-overlap-ok */}
         <Plate text={'VIA ADN · UAA REPORT'} x={540} y={610} size={28} p={win(f, b(30), b(13))} /> {/* plate-overlap-ok */}
         <Plate text={'AI PLAGIARISM · UP 73% LAST YEAR'} displayLines={['AI PLAGIARISM · UP 73%', 'LAST YEAR']} x={540} y={610} size={28} p={win(f, b(13), b(31))} /> {/* plate-overlap-ok */}
@@ -444,6 +454,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.1, fx: 560, fy: 960}])}>
       <SVG>
+<g transform="translate(0 60)">
         <rect x={110} y={560} width={860} height={640} rx={10} fill={C.paper} stroke={C.ink} strokeWidth={6} transform="rotate(-1.5 540 880)" />
         <g transform="translate(150 590) scale(0.8)"><path d={AK_PATH} fill="#D9C79B" stroke={C.ink} strokeWidth={4} /></g>
         <polygon points={pts.join(' ')} fill="none" stroke={C.accent} strokeWidth={7} strokeDasharray="800" strokeDashoffset={800 * (1 - band)} opacity={band} />
@@ -464,6 +475,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <text y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.ink}>ONE PLAN</text>
         </g>
         <Sheet x={880} y={1130} w={220} h={290} rot={6} title="AI ENGAGED" s={0.62} />
+        </g>
         <Plate text={'NO SINGLE AI POLICY TODAY'} x={540} y={600} size={28} p={win(f, b(14), b(37))} /> {/* plate-overlap-ok */}
         <Plate text={'3 CAMPUSES'} x={540} y={600} size={30} p={win(f, b(37), b(15))} /> {/* plate-overlap-ok */}
         <Plate text={'IF APPROVED ALL 3 CAMPUSES NEED A PLAN'} displayLines={['IF APPROVED', 'ALL 3 CAMPUSES NEED A PLAN']} x={540} y={600} size={26} p={win(f, b(15), b(32))} /> {/* plate-overlap-ok */}
@@ -484,13 +496,16 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} bg="bone" cam={track([{t: 0, z: 1.0, fx: 560, fy: 950}, {t: b(18) + 6, z: 1.12, fx: 570, fy: 980}, {t: p.dur, z: 1.12, fx: 570, fy: 980}])}>
       <SVG>
+<g transform="translate(0 60)">
         {hum > 0 && <circle cx={420} cy={880} r={150 * hum + 40} fill={C.glow} opacity={0.25 * hum} />}
-        <DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" machine examiner />
+        <DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine examiner />
         {glint > 0 && <circle cx={405} cy={880} r={60} fill={C.glow} opacity={0.4 * glint * (1 - 0.5 * Math.sin(f / 5) ** 2)} />}
+        <Sheet x={930} y={1200} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} mark={ease(f, b(33), 20)} />
         <g transform={`translate(300 ${lerp(1180, 1060, card)}) rotate(-4)`} opacity={clamp01(card * 2)}>
           <rect x={-170} y={-70} width={340} height={140} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.ink}>"BE DELIBERATE"</text>
           <text y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.hero}>UA OFFICIAL</text>
+        </g>
         </g>
         <Plate text={'THE FAIR CASE'} x={540} y={600} size={36} tone="plate" p={win(f, b(16), b(33))} /> {/* plate-overlap-ok */}
         <Plate text={'HUMAN IN THE LOOP'} x={540} y={600} size={30} tone="plate" p={win(f, b(33), b(17))} /> {/* plate-overlap-ok */}
@@ -508,7 +523,6 @@ const TopChair: React.FC<{x: number; y: number; rot?: number; tag?: string; dim?
     <ellipse cx={4} cy={8} rx={56} ry={50} fill="#000" opacity={0.3} />
     <rect x={-48} y={-44} width={96} height={88} rx={20} fill={dim ? '#5A2A32' : C.cuff} stroke={C.ink} strokeWidth={6} />
     <rect x={-48} y={-54} width={96} height={26} rx={12} fill="#6E1A29" stroke={C.ink} strokeWidth={6} />
-    {tag && <Lab text={tag} x={0} y={tag === 'FACULTY' ? 78 : 78} size={20} tone="plate" />}
   </g>
 );
 const S7: React.FC<SceneProps> = ({p}) => {
@@ -523,11 +537,15 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} bg="floor" cam={track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.1, fx: 540, fy: 1020}])}>
       <SVG>
+<g transform="translate(0 60)">
         <rect x={290} y={830} width={500} height={340} rx={30} fill="#A7703B" stroke={C.ink} strokeWidth={8} />
         <rect x={310} y={850} width={460} height={300} rx={20} fill="#B9814A" opacity={0.7} />
-        {seats.map((s, i) => <TopChair key={i} x={s[0]} y={s[1]} rot={s[2]} tag={i === 5 ? 'FACULTY' : i === 7 ? 'STUDENTS' : undefined} dim={(i === 5 || i === 7) && dim > 0.1} tip={(i === 5 ? 1 : i === 7 ? -1 : 0) * tip} />)}
+        {seats.map((s, i) => <TopChair key={i} x={s[0]} y={s[1]} rot={s[2]} dim={i === 5 || i === 7} tip={(i === 5 ? 1 : i === 7 ? -1 : 0) * tip} />)}
+        <Lab text="FACULTY" x={330} y={1310} size={24} tone="plate" p={ease(f, b(22), 12)} />
+        <Lab text="STUDENTS" x={750} y={1310} size={24} tone="plate" p={ease(f, b(22), 12)} />
         <Sheet x={540} y={1000} w={260} h={320} rot={-6} title="AI ENGAGED" s={0.8} mark={mark} />
         <Pen x={pa[0]} y={pa[1] + 70} rot={-20} s={0.8} />
+        </g>
         <Plate text="A FIRST DRAFT ISN'T A FLAW" x={540} y={600} size={28} p={win(f, b(20), b(34))} /> {/* plate-overlap-ok */}
         <Plate text={'WHO READS IT?'} x={540} y={600} size={30} p={win(f, b(34), b(21))} /> {/* plate-overlap-ok */}
         <Plate text={'WHO GETS TO CHANGE IT?'} x={540} y={600} size={28} p={win(f, b(21), b(22))} /> {/* plate-overlap-ok */}
@@ -548,19 +566,20 @@ const S8: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 980}, {t: p.dur, z: 1.08, fx: 520, fy: 990}])}>
       <SVG>
-        <Sheet x={380} y={1000} w={560} h={720} title="AI ENGAGED" mark={1} hl={Math.max(hl * 0.35, words)} hlText={words > 0.5 ? 'WHOEVER HELD THE PEN' : undefined} />
-        <g transform="translate(700 800) rotate(-12)" opacity={0.6 * drop}>
-          <text textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={104} fill="none" stroke={C.ink} strokeWidth={5}>DROP IT</text>
+<g transform="translate(0 60)">
+        <Sheet x={380} y={1000} w={560} h={720} title="AI ENGAGED" mark={1} hl={hl} hlText={words > 0.5 ? 'WHOEVER HELD THE PEN' : undefined} />
+        <g transform="translate(380 760) rotate(-12)" opacity={0.6 * drop}>
+          <text textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={84} fill="none" stroke={C.ink} strokeWidth={5}>DROP IT</text>
         </g>
         <g transform={`translate(760 ${lerp(1330, 1180, card)}) rotate(5)`} opacity={clamp01(card * 2)}>
           <rect x={-190} y={-84} width={380} height={168} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-10} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={32} fill={C.ink}>"WRONG APPROACH"</text>
           <text y={40} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.hero}>HARTLEY AND POTTER</text>
         </g>
+        </g>
         <Plate text={'THE PART TO WATCH'} x={540} y={600} size={30} p={win(f, b(23), b(38))} /> {/* plate-overlap-ok */}
         <Plate text={'WHOEVER HELD THE PEN'} x={540} y={600} size={30} p={win(f, b(38), b(24))} /> {/* plate-overlap-ok */}
-        <Plate text={'DROP THE PLAN · THEY SAY'} x={540} y={600} size={28} p={win(f, b(24), b(25))} /> {/* plate-overlap-ok */}
-        <Plate text={'"WRONG APPROACH" HARTLEY AND POTTER'} displayLines={['"WRONG APPROACH"', 'HARTLEY AND POTTER']} x={540} y={600} size={28} p={win(f, b(25), 99999)} /> {/* plate-overlap-ok */}
+        <Plate text={'DROP THE PLAN · THEY SAY'} x={540} y={600} size={28} p={win(f, b(24), 99999)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
@@ -577,17 +596,19 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.1, fx: 560, fy: 1020}])}>
       <SVG>
-        <DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" />
+<g transform="translate(0 60)">
+        <DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" dieText="AI ENGAGED" />
         {lit > 0 && <circle cx={330} cy={800} r={120} fill={C.accent} opacity={0.3 * lit} />}
         <Sheet x={650} y={lerp(980, 1040, land)} w={380} h={500} title="AI ENGAGED" mark={1} s={1 - 0.06 * land} />
-        <g transform="translate(650 1230)">
+        <g transform="translate(650 1150)">
           <line x1={-150} y1={0} x2={150} y2={0} stroke={C.ink} strokeWidth={6} />
           <text y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={C.paper}>SIGNATURE</text>
         </g>
-        <Pen x={760} y={1190 - 70 * lift - 0} rot={-24 + 10 * lift} s={0.9} />
+        <Pen x={760} y={1120 - 70 * lift - 0} rot={-24 + 10 * lift} s={0.9} />
         <Chair x={860} y={1060} s={0.75} tag="FACULTY" dim />
         <Chair x={990} y={1060} s={0.75} tag="STUDENTS" dim />
         <rect data-band="ok" x={-100} y={-100} width={1300} height={2200} fill={C.shadow} opacity={0.5 * dusk} />
+        </g>
         <Plate text={'A HUMAN DECIDES THE UNIVERSITY SAYS'} displayLines={['A HUMAN DECIDES', 'THE UNIVERSITY SAYS']} x={540} y={600} size={28} p={win(f, b(26), b(41))} /> {/* plate-overlap-ok */}
         <Plate text={'UNSIGNED'} x={540} y={600} size={30} p={win(f, b(41), b(36))} /> {/* plate-overlap-ok */}
         <Plate text={'WHO WROTE IT?'} x={540} y={600} size={30} p={win(f, b(36), b(27))} /> {/* plate-overlap-ok */}
