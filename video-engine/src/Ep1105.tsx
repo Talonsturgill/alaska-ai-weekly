@@ -9,6 +9,7 @@ import {assertCropSafe} from './lib/cropsafe';
 import {CaptionBar} from './lib/captions';
 import {MONO, monoW} from './lib/prospect';
 import {DiplomaPress} from './lib/credentials';
+import {HeldProp} from './lib/heldidle';
 import {AK_PATH} from './lib/akmap';
 import {IDS} from './Ep1105Ids';
 
@@ -146,6 +147,7 @@ const win = (f: number, a: number, nxt: number) => easeIO(f, a + 4, 10) * (nxt <
 /** the draft sheet: a paper with a header, grey lines, optional cyan machine-written lines, a highlighter pass and an edit mark. */
 const Sheet: React.FC<{x: number; y: number; w?: number; h?: number; rot?: number; title?: string; cy?: number; hl?: number; mark?: number; cyLabel?: string; hlText?: string; s?: number}> =
 ({x, y, w = 420, h = 540, rot = 0, title = 'AI ENGAGED', cy = 0, hl = 0, mark = 0, cyLabel, hlText, s = 1}) => (
+  <HeldProp f={useCurrentFrame()} px={x} py={y} w={w * s} h={h * s} kind="float" seed={x * 0.013 + y * 0.007} gain={1.6} sheen={0.12}>
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-w / 2 + 8} y={-h / 2 + 12} width={w} height={h} rx={8} fill="#000" opacity={0.3} />
     <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
@@ -167,10 +169,12 @@ const Sheet: React.FC<{x: number; y: number; w?: number; h?: number; rot?: numbe
     {hlText && <text x={-w / 2 + 24} y={h / 2 - 118} fontFamily={MONO} fontWeight={800} fontSize={Math.min(26, (w - 48) / (hlText.length * 0.62))} fill={C.ink}>{hlText}</text>}
     {mark > 0 && <path d={`M ${w / 2 - 40},${-h / 2 + 130} q -30,30 0,60 q 30,30 0,60`} fill="none" stroke={C.hero} strokeWidth={9} strokeLinecap="round" opacity={0.5 + 0.5 * mark} />}
   </g>
+  </HeldProp>
 );
 
 /** a hand and forearm. color cream or cyan; reach 0..1 extends the fingers toward `dir` (+1 pointing right, -1 left). */
 const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; color?: string; reach?: number; glow?: number}> = ({x, y, s = 1, rot = 0, color = '#E6B896', reach = 0, glow = 0}) => (
+  <HeldProp f={useCurrentFrame()} px={x} py={y + 300} w={130} h={430} kind="hang" seed={x * 0.009} gain={1.8} sheen={0}>
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     {glow > 0 && <circle cy={-40} r={150} fill={C.accent} opacity={0.2 * glow} />}
     <rect x={-46} y={30 - reach * 20} width={92} height={420} rx={40} fill={color} stroke={C.ink} strokeWidth={7} />
@@ -180,6 +184,7 @@ const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; color?: st
     <rect x={-96} y={-4} width={40} height={74} rx={18} fill={color} stroke={C.ink} strokeWidth={6} transform="rotate(-32 -76 30)" />
     <path d="M -34,-20 q 34,-16 68,0" fill="none" stroke={C.ink} strokeWidth={3} opacity={0.18} />
   </g>
+  </HeldProp>
 );
 
 /** a pen: nib at the local origin, body rising up-left from there. */
@@ -231,6 +236,7 @@ const Lamp: React.FC<{x: number; y: number; s?: number; on?: number}> = ({x, y, 
 
 /** a stack of draft pages with a cyan edge when `machine`. n pages. */
 const Stack: React.FC<{x: number; y: number; n: number; machine?: boolean; badge?: string; rot?: number; label?: string}> = ({x, y, n, machine = false, badge, rot = 0, label}) => (
+  <HeldProp f={useCurrentFrame()} px={x} py={y + 20} w={320} h={Math.max(1, Math.floor(n)) * 15 + 30} kind="rest" seed={x * 0.011} gain={1.5} sheen={0.12}>
   <g transform={`translate(${x} ${y}) rotate(${rot})`}>
     <ellipse cx={0} cy={22} rx={190} ry={20} fill="#000" opacity={0.3} />
     {Array.from({length: Math.max(1, Math.floor(n))}).map((_, i) => (
@@ -247,6 +253,7 @@ const Stack: React.FC<{x: number; y: number; n: number; machine?: boolean; badge
     )}
     {label && <Lab text={label} x={0} y={64} size={20} tone="plate" />}
   </g>
+  </HeldProp>
 );
 
 const Chair: React.FC<{x: number; y: number; s?: number; tag?: string; lit?: number; dim?: boolean}> = ({x, y, s = 1, tag, lit = 0, dim = false}) => (
@@ -311,7 +318,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 560, fy: 960}, {t: p.dur, z: 1.07, fx: 560, fy: 980}])}>
       <SVG>
 <g transform="translate(0 60)">
-        <DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine />
+        <HeldProp f={f} px={660.0} py={1200.0} w={630.0} h={585.0} kind="rest" seed={0.37} gain={1.5} sheen={0.14}><DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine /></HeldProp>
         {write > 0 && <path d="M 975,770 C 800,640 520,640 330,800" fill="none" stroke={C.accent} strokeWidth={5} strokeDasharray="14 12" strokeDashoffset={-f * 3} opacity={0.8 * Math.sin(Math.PI * clamp01(write))} />}
         <Sheet x={lerp(280, 270, slide)} y={lerp(930, 1010, slide)} w={380} h={500} rot={lerp(-4, -6, slide)} title="AI ENGAGED" cy={write} cyLabel={write > 0.5 ? 'CLAUDE?' : undefined} s={1 - 0.08 * slide} />
         <Calendar x={870} y={1215} s={0.62} top="NOVEMBER" big="MEETING" flip={cal} />
@@ -374,7 +381,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
       <SVG>
 <g transform="translate(0 60)">
         <Lamp x={110} y={1100} s={1.05 + 0.1 * flare} on={0.7 + 0.5 * flare} />
-        <Sheet x={940} y={800} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} />
+        <Sheet x={900} y={800} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} />
         <Stack x={lerp(400, 470, merge)} y={1130} n={grow} badge="UA" label={merge < 0.1 ? 'UA TECH CHIEF · SUMMER' : undefined} />
         <Stack x={lerp(830, 640, merge)} y={1130} n={4} machine rot={4} label={merge < 0.1 ? 'CLAUDE · THEY SAY' : undefined} />
         <g transform={`translate(${lerp(520, 270, slip)} ${lerp(700, 930, slip)}) rotate(${lerp(-20, -6, slip)})`} opacity={clamp01(slip * 2)}>
@@ -431,7 +438,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           <line x1={300} y1={1180} x2={860} y2={1180} stroke={C.glow} strokeWidth={4} strokeDasharray="10 8" />
         </g>
         <g transform={`translate(880 1180) scale(${lab})`} opacity={clamp01(lab * 2)}><Lab text="+73%" x={0} y={0} size={34} tone="glow" /><Lab text="LAST YEAR" x={0} y={50} size={20} tone="plate" /></g>
-        <Sheet x={110} y={1210} w={200} h={260} rot={-8} title="AI ENGAGED" s={0.6} />
+        <Sheet x={150} y={1190} w={200} h={260} rot={-8} title="AI ENGAGED" s={0.6} />
         </g>
         <Plate text={'150 STUDENTS CITED UAA REPORT'} displayLines={['150 STUDENTS CITED', 'UAA REPORT']} x={540} y={610} size={28} p={win(f, b(11), b(42))} /> {/* plate-overlap-ok */}
         <Plate text={'CITED FOR MISCONDUCT'} x={540} y={610} size={28} p={win(f, b(42), b(12))} /> {/* plate-overlap-ok */}
@@ -498,9 +505,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
       <SVG>
 <g transform="translate(0 60)">
         {hum > 0 && <circle cx={420} cy={880} r={150 * hum + 40} fill={C.glow} opacity={0.25 * hum} />}
-        <DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine examiner />
+        <HeldProp f={f} px={700.0} py={1195.0} w={595.0} h={552.5} kind="rest" seed={0.74} gain={1.5} sheen={0.14}><DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine examiner /></HeldProp>
         {glint > 0 && <circle cx={405} cy={880} r={60} fill={C.glow} opacity={0.4 * glint * (1 - 0.5 * Math.sin(f / 5) ** 2)} />}
-        <Sheet x={930} y={1200} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} mark={ease(f, b(33), 20)} />
+        <Sheet x={880} y={1120} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} mark={ease(f, b(33), 20)} />
         <g transform={`translate(300 ${lerp(1180, 1060, card)}) rotate(-4)`} opacity={clamp01(card * 2)}>
           <rect x={-170} y={-70} width={340} height={140} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.ink}>"BE DELIBERATE"</text>
@@ -519,11 +526,13 @@ const S6: React.FC<SceneProps> = ({p}) => {
 
 // ---- S7: the empty room from above -----------------------------------------------------------------------------------------------------------------
 const TopChair: React.FC<{x: number; y: number; rot?: number; tag?: string; dim?: boolean; tip?: number}> = ({x, y, rot = 0, tag, dim = false, tip = 0}) => (
+  <HeldProp f={useCurrentFrame()} px={x} py={y} w={96} h={90} kind="float" seed={x * 0.017 + y * 0.003} gain={1.4} sheen={0}>
   <g transform={`translate(${x} ${y}) rotate(${rot + tip})`} opacity={dim ? 0.7 : 1}>
     <ellipse cx={4} cy={8} rx={56} ry={50} fill="#000" opacity={0.3} />
     <rect x={-48} y={-44} width={96} height={88} rx={20} fill={dim ? '#5A2A32' : C.cuff} stroke={C.ink} strokeWidth={6} />
     <rect x={-48} y={-54} width={96} height={26} rx={12} fill="#6E1A29" stroke={C.ink} strokeWidth={6} />
   </g>
+  </HeldProp>
 );
 const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
@@ -541,8 +550,8 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <rect x={290} y={830} width={500} height={340} rx={30} fill="#A7703B" stroke={C.ink} strokeWidth={8} />
         <rect x={310} y={850} width={460} height={300} rx={20} fill="#B9814A" opacity={0.7} />
         {seats.map((s, i) => <TopChair key={i} x={s[0]} y={s[1]} rot={s[2]} dim={i === 5 || i === 7} tip={(i === 5 ? 1 : i === 7 ? -1 : 0) * tip} />)}
-        <Lab text="FACULTY" x={330} y={1310} size={24} tone="plate" p={ease(f, b(22), 12)} />
-        <Lab text="STUDENTS" x={750} y={1310} size={24} tone="plate" p={ease(f, b(22), 12)} />
+        <Lab text="FACULTY" x={330} y={1310} size={30} tone="plate" p={ease(f, b(22), 12)} />
+        <Lab text="STUDENTS" x={750} y={1310} size={30} tone="plate" p={ease(f, b(22), 12)} />
         <Sheet x={540} y={1000} w={260} h={320} rot={-6} title="AI ENGAGED" s={0.8} mark={mark} />
         <Pen x={pa[0]} y={pa[1] + 70} rot={-20} s={0.8} />
         </g>
@@ -559,7 +568,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
 // ---- S8: the highlight, the drop stamp, the quote card ---------------------------------------------------------------------------------------
 const S8: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const hl = easeIO(f, b(23), 26);
+  const hl = ease(f, b(23), 22);
   const words = ease(f, b(38), 10);
   const drop = ease(f, b(24), 12);
   const card = springy(f, b(25), 20);
@@ -597,7 +606,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: p.dur, z: 1.1, fx: 560, fy: 1020}])}>
       <SVG>
 <g transform="translate(0 60)">
-        <DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" dieText="AI ENGAGED" />
+        <HeldProp f={f} px={220.0} py={1110.0} w={350.0} h={325.0} kind="rest" seed={1.1099999999999999} gain={1.5} sheen={0.14}><DiplomaPress f={f} x={220} y={960} scale={0.5} pull={0.1 * (1 - still)} machine tokenText="WHO WROTE IT?" dieText="AI ENGAGED" /></HeldProp>
         {lit > 0 && <circle cx={330} cy={800} r={120} fill={C.accent} opacity={0.3 * lit} />}
         <Sheet x={650} y={lerp(980, 1040, land)} w={380} h={500} title="AI ENGAGED" mark={1} s={1 - 0.06 * land} />
         <g transform="translate(650 1150)">
