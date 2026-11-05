@@ -23,16 +23,16 @@ W = lambda w, n=1: (w, n)
 W = lambda w, n=1: (w, n)
 # key, shot, line, anchor, sfx, subject, action, emotion, annotation, shows, reaction, rehook
 B = [
- (1, 1, 0, 0.0, "click", "DiplomaPress", "sits on a seminar table, its ice-blue machine handle trembling over a sheet reading AI ENGAGED", "curious", "AI ENGAGED",
-  "the oxblood DiplomaPress sits on a seminar table with its ice-blue machine handle twitching over a draft sheet, a plate reads AI ENGAGED", "the handle trembles", ""),
- (2, 1, 0, W("professors"), "ping", "the ice-blue handle", "lights and drags a glowing line across the sheet", "curious", "TWO PROFESSORS SAY · CLAUDE WROTE THE FIRST DRAFT",
-  "the ice-blue machine handle lights and drags a glowing line across the draft sheet, a plate reads TWO PROFESSORS SAY · CLAUDE WROTE THE FIRST DRAFT", "the line glows", ""),
+ (1, 1, 0, 0.0, "click", "DiplomaPress", "sits on a seminar table, its mint machine handle trembling over a sheet reading AI ENGAGED", "curious", "AI ENGAGED",
+  "the oxblood DiplomaPress sits on a seminar table with its mint machine handle twitching over a draft sheet, a plate reads AI ENGAGED", "the handle trembles", ""),
+ (2, 1, 0, W("professors"), "ping", "the mint handle", "lights and drags a glowing line across the sheet", "curious", "TWO PROFESSORS SAY · CLAUDE WROTE THE FIRST DRAFT",
+  "the mint machine handle lights and drags a glowing line across the draft sheet, a plate reads TWO PROFESSORS SAY · CLAUDE WROTE THE FIRST DRAFT", "the line glows", ""),
  (3, 1, 1, 0.0, "page", "a calendar card", "flips onto the table beside the press", "reading", "REGENTS · NOVEMBER MEETING",
   "a calendar card flips onto the table beside the press, a plate reads REGENTS · NOVEMBER MEETING", "the card settles", ""),
- (4, 2, 2, 0.0, "whoosh", "a pen", "swings over the sheet between a cream human hand and a ice-blue machine hand", "puzzled", "WHO HELD THE PEN?",
-  "a pen swings over the sheet between a cream human hand and a ice-blue machine hand, a plate reads WHO HELD THE PEN?", "the pen swings", "plant: who held the pen"),
- (5, 2, 3, W("Claude"), "ping", "the ice-blue hand", "drags CLAUDE across the first line of the sheet", "curious", "THEY SAY · CLAUDE",
-  "the ice-blue hand drags CLAUDE across the first line of the sheet, a plate reads THEY SAY · CLAUDE", "the ink glows", ""),
+ (4, 2, 2, 0.0, "whoosh", "a pen", "swings over the sheet between a cream human hand and a mint machine hand", "puzzled", "WHO HELD THE PEN?",
+  "a pen swings over the sheet between a cream human hand and a mint machine hand, a plate reads WHO HELD THE PEN?", "the pen swings", "plant: who held the pen"),
+ (5, 2, 3, W("Claude"), "ping", "the mint hand", "drags CLAUDE across the first line of the sheet", "curious", "THEY SAY · CLAUDE",
+  "the mint hand drags CLAUDE across the first line of the sheet, a plate reads THEY SAY · CLAUDE", "the ink glows", ""),
  (6, 2, 3, W("October"), "page", "a calendar page", "flips to OCT 9 while a hush stamp lifts off the sheet", "reading", "OCT 9TH · THEY SAY",
   "a calendar page flips to OCT 9 while a hush stamp lifts off the sheet, a plate reads NOT DISCLOSED UNTIL OCT 9TH · THEY SAY", "the stamp lifts", ""),
  (7, 3, 4, 0.0, "thud", "a stack of summer pages", "grows beside a sun lamp under a UA badge", "reading", "UA TECH CHIEF · DRAFTED OVER THE SUMMER",
@@ -45,8 +45,8 @@ B = [
   "an empty speech bubble opens beside the stacks, pulses and stays empty, a plate reads UA RESPONSE · NOT FOUND", "the bubble pulses", ""),
  (11, 4, 6, 0.0, "pop", "150 name tags", "hang in a grid on a cream wall", "reading", "150 STUDENTS CITED · UAA REPORT",
   "150 name tags hang in a grid on a cream wall, a plate reads 150 STUDENTS CITED · UAA REPORT", "the tags sway", ""),
- (12, 4, 6, W("nineteen"), "ping", "119 tags", "flip up ice-blue underline ticks in a ripple across the grid", "alarmed", "119 OF 150 CITED · USED AI",
-  "119 of the name tags flip up ice-blue underline ticks in a ripple across the grid, a plate reads 119 OF 150 CITED · USED AI", "the ripple runs", ""),
+ (12, 4, 6, W("nineteen"), "ping", "119 tags", "flip up mint underline ticks in a ripple across the grid", "alarmed", "119 OF 150 CITED · USED AI",
+  "119 of the name tags flip up mint underline ticks in a ripple across the grid, a plate reads 119 OF 150 CITED · USED AI", "the ripple runs", ""),
  (13, 4, 7, 0.0, "thock", "a bar", "climbs from a baseline of 1.0 up to 1.73", "alarmed", "AI PLAGIARISM · UP 73% · LAST YEAR",
   "a bar climbs from a baseline of 1.0 up to 1.73, a plate reads AI PLAGIARISM · UP 73% · LAST YEAR", "the bar overshoots", ""),
  (31, 4, 7, 0.6, "pop", "a +73% label", "pops onto the top of the bar", "alarmed", "+73% · LAST YEAR",
@@ -59,8 +59,8 @@ B = [
   "a band ties the three campus pins into one triangle, a plate reads IF APPROVED · ALL 3 CAMPUSES NEED A PLAN", "the band snaps tight", ""),
  (16, 6, 10, 0.0, "creak", "the press", "swings to show its oxblood human examiner handle", "focused", "THE FAIR CASE",
   "the DiplomaPress swings to show its oxblood human examiner handle on bone paper, a plate reads THE FAIR CASE", "the paper settles", ""),
- (17, 6, 10, W("recommend"), "whoosh", "the ice-blue handle", "pulls the die down toward the sheet", "focused", "AI COULD RECOMMEND",
-  "the ice-blue machine handle pulls the die down toward the sheet, a plate reads AI COULD RECOMMEND", "the die drops", ""),
+ (17, 6, 10, W("recommend"), "whoosh", "the mint handle", "pulls the die down toward the sheet", "focused", "AI COULD RECOMMEND",
+  "the mint machine handle pulls the die down toward the sheet, a plate reads AI COULD RECOMMEND", "the die drops", ""),
  (18, 6, 10, W("decides"), "clunk", "the examiner handle", "catches the die a hand short of the sheet", "proud", "BUT A HUMAN DECIDES",
   "the oxblood examiner handle catches the die a hand short of the sheet, a plate reads BUT A HUMAN DECIDES", "the die rocks", ""),
  (19, 6, 11, 0.0, "tap", "a quote card", "slides in beside the press and lands against the bone paper", "reading", "\"BE DELIBERATE\" · UA OFFICIAL",
@@ -80,7 +80,7 @@ B = [
  (25, 8, 15, W("wrong"), "snap", "a quote card", "snaps onto the desk", "somber", "\"WRONG APPROACH\" · HARTLEY AND POTTER",
   "a quote card snaps onto the desk, a plate reads \"WRONG APPROACH\" · HARTLEY AND POTTER", "the card rocks", ""),
  (26, 9, 16, 0.0, "thock", "the cyan handle", "goes still on the press while the token holds", "warm", "A HUMAN DECIDES · THE UNIVERSITY SAYS",
-  "the ice-blue machine handle goes still on the press while the draft sheet holds, a plate reads A HUMAN DECIDES · THE UNIVERSITY SAYS", "the sheet rocks", ""),
+  "the mint machine handle goes still on the press while the draft sheet holds, a plate reads A HUMAN DECIDES · THE UNIVERSITY SAYS", "the sheet rocks", ""),
  (41, 9, 16, 0.25, "tap", "the pen", "lifts off the blank signature line", "somber", "UNSIGNED",
   "the pen lifts off the blank signature line, a plate reads UNSIGNED", "the pen hovers", ""),
  (27, 9, 16, W("consulted"), "thock", "the draft sheet", "lands on the blank signature line in front of two dark chairs", "somber", "WHO WAS ASKED?",
@@ -103,17 +103,17 @@ B = [
   "the pen passes from chair to chair around the ring, a plate reads WHO READS IT?", "the pen rolls", ""),
  (35, 7, 13, 0.5, "clip", "the FACULTY chair", "tips toward the empty STUDENTS chair", "somber", "FACULTY · STUDENTS",
   "the FACULTY chair tips toward the empty STUDENTS chair, a plate reads FACULTY · STUDENTS", "the chairs tip", ""),
- (36, 9, 16, W("wrote"), "blip", "the pen", "and the ice-blue handle light up on the press", "warm", "WHO WROTE IT?",
-  "the pen and the ice-blue handle light up on the press, a plate reads WHO WROTE IT?", "the handle glows", ""),
+ (36, 9, 16, W("wrote"), "blip", "the pen", "and the mint handle light up on the press", "warm", "WHO WROTE IT?",
+  "the pen and the mint handle light up on the press, a plate reads WHO WROTE IT?", "the handle glows", ""),
 ]
 
 S = [
- (1, 0, "subject-portrait", "medium", "eye", "seminar-table", "eye-level-immersive", "centered-hero-lowerthird", "vertical-rise", "single-organic-hero", "", "", "The press", "The DiplomaPress on a seminar table, its ice-blue handle twitching over the AI ENGAGED sheet and a calendar card flipping on."),
+ (1, 0, "subject-portrait", "medium", "eye", "seminar-table", "eye-level-immersive", "centered-hero-lowerthird", "vertical-rise", "single-organic-hero", "", "", "The press", "The DiplomaPress on a seminar table, its mint handle twitching over the AI ENGAGED sheet and a calendar card flipping on."),
  (2, 2, "alt-vantage", "close", "high", "pen-over-sheet", "macro-closeup", "single-object-void", "vertical-descent", "instrument-as-subject", "whip-pan", "travel", "The pen", "A pen hovering between a human hand and a machine hand over the sheet, the date flipping to OCT 9."),
  (3, 4, "two-up", "medium", "eye", "two-stacks", "exploded-diagram", "fullbleed-split", "horizontal-traverse", "structure-as-subject", "carried-element", "carry", "Two drafts", "Two draft stacks slide together while an empty speech bubble pulses."),
- (4, 6, "data-panel", "wide", "low", "name-tag-wall", "instrument-screen", "grid-modular", "radial-emanate", "multiplicity-swarm", "hard-cut", "match", "150 tags", "A wall of 150 name tags, 119 flipping ice-blue, and a bar overtaking a baseline."),
+ (4, 6, "data-panel", "wide", "low", "name-tag-wall", "instrument-screen", "grid-modular", "radial-emanate", "multiplicity-swarm", "hard-cut", "match", "150 tags", "A wall of 150 name tags, 119 flipping mint, and a bar overtaking a baseline."),
  (5, 8, "map-territory", "extreme-wide", "high", "campus-map", "top-down-map", "map-territory", "push-in-only", "landscape-as-subject", "map-travel", "travel", "Three campuses", "A top-down Alaska map with three campus pins tied into one triangle."),
- (6, 10, "wide-establish", "wide", "low", "press-handles", "cross-section-cutaway", "stacked-layers", "assemble-build", "instrument-as-subject", "mask-wipe", "travel", "The fair case", "The press on bone paper, ice-blue handle pulling the die and the oxblood examiner handle catching it."),
+ (6, 10, "wide-establish", "wide", "low", "press-handles", "cross-section-cutaway", "stacked-layers", "assemble-build", "instrument-as-subject", "mask-wipe", "travel", "The fair case", "The press on bone paper, mint handle pulling the die and the oxblood examiner handle catching it."),
  (7, 12, "alt-vantage", "wide", "eye", "chair-ring", "eye-level-immersive", "radial-burst", "scroll-data", "multiplicity-swarm", "match-cut", "match", "The chairs", "A ring of chairs around the press with two empty ones tagged FACULTY and STUDENTS."),
  (8, 14, "push-detail", "close", "eye", "highlight-margin", "macro-closeup", "single-object-void", "push-in-only", "single-organic-hero", "hard-cut", "match", "The margin", "A highlighter lighting WHOEVER HELD THE PEN and a DROP stamp ghosting over the sheet."),
  (9, 16, "subject-portrait", "medium", "low", "signature-line", "eye-level-immersive", "centered-hero-lowerthird", "vertical-rise", "single-organic-hero", "carried-element", "carry", "The token", "The brass token rotating to WHO WAS ASKED? and the pen settling on a signature line."),
@@ -125,11 +125,11 @@ AMBIENT = {1: "the handle twitches, dust drifts in the window light, the token b
 CENTER = {1: "the press at x640 y960", 2: "the pen at x330 y900", 3: "the stacks at x420 y1000", 4: "the tag wall at x540 y880", 5: "the map at x600 y1020", 6: "the press at x700 y940", 7: "the chairs at x540 y1050", 8: "the pinned sheet at x360 y960", 9: "the sheet at x540 y1040"}
 HERO = {
  1: ("DiplomaPress + AI ENGAGED sheet + calendar card + QuestionToken + window sun", "40% press, 25% sheet, 20% token, 15% calendar"),
- 2: ("pen + human hand + ice-blue hand + sheet + calendar page + hush stamp", "30% pen, 25% hands, 25% sheet, 20% calendar"),
+ 2: ("pen + human hand + mint hand + sheet + calendar page + hush stamp", "30% pen, 25% hands, 25% sheet, 20% calendar"),
  3: ("two draft stacks + sun lamp + UA badge + request slip + speech bubble", "35% stacks, 25% lamp, 20% slip, 20% bubble"),
- 4: ("150 name tags + 119 ice-blue tags + bar + baseline", "50% tags, 30% bar, 20% wall"),
+ 4: ("150 name tags + 119 mint tags + bar + baseline", "50% tags, 30% bar, 20% wall"),
  5: ("Alaska map + three campus pins + rulebooks + band", "45% map, 30% pins, 25% band"),
- 6: ("DiplomaPress + ice-blue machine handle + oxblood examiner handle + dial", "55% press, 25% handles, 20% dial"),
+ 6: ("DiplomaPress + mint machine handle + oxblood examiner handle + dial", "55% press, 25% handles, 20% dial"),
  7: ("ring of chairs + press + pen + two empty tagged chairs + red edit mark", "40% chairs, 25% press, 20% tags, 15% mark"),
  8: ("sheet + highlighter + DROP stamp + quote card", "35% sheet, 30% highlighter, 20% stamp, 15% card"),
  9: ("draft sheet + pen + blank signature line + two dark chairs + press", "35% sheet, 25% pen, 20% chairs, 20% press"),
@@ -249,13 +249,13 @@ def build():
     def b_at(i):
         return next(b for b in beats if b["id"] == i)["at_s"]
 
-    palette = "burgundy and oak seminar room at dusk, cream sheets, an oxblood brass press, ice-blue machine light and highlighter yellow"
+    palette = "burgundy and oak seminar room at dusk, cream sheets, an oxblood brass press, mint machine light and highlighter yellow"
     board = {
         "run_date": "2026-11-05", "slug": "who-held-the-pen", "title": "Who Held the Pen",
         "concept": ("Two UAA professors say Anthropic's Claude wrote the first draft of the University of Alaska's 'AI Engaged' plan, which the Board of Regents is set to take up at its November meeting. "
                     "The university's technology chief says he drafted it over the summer at the regents' request, and we found no university response to the Claude claim. A UAA report says 119 of 150 students cited for misconduct used AI and AI plagiarism rose 73% last year. "
                     "The fair case: a university official says AI could recommend but a human decides. The film's position is that who held the pen matters less than who was consulted, because by the reporting the summer draft got too little faculty and student feedback. "
-                    "A DiplomaPress with a ice-blue machine handle and an oxblood human examiner handle is the hero and the draft sheet is the throughline, ending unsigned before two dark chairs"),
+                    "A DiplomaPress with a mint machine handle and an oxblood human examiner handle is the hero and the draft sheet is the throughline, ending unsigned before two dark chairs"),
         "derived_from": "scratch", "engine": "infographic-2.5d", "total_seconds": round(end, 2),
         "fingerprint": {"pov": "eye-level-immersive", "motion_vector": "vertical-rise", "hero_treatment": "single-organic-hero", "layout": "centered-hero-lowerthird",
                         "register": "naturalistic-scene", "palette": palette, "camera_strategy": "slow-orbit-and-push",
@@ -263,18 +263,18 @@ def build():
                         "metaphor": "a plan-stamping press with a machine handle and a human handle, and a draft sheet that changes state until it lies unsigned before two dark chairs"},
         "palette": palette,
         "divergence_note": ("The last films were an indigo night cab (11-02), a storm slate slope (11-01), a sage chart desk (10-31) and an aubergine depot (10-29). "
-                            "This film is a warm burgundy and oak seminar room at dusk with cream paper, a ice-blue machine glow and highlighter yellow light. Its hero is an oxblood brass credential press, "
+                            "This film is a warm burgundy and oak seminar room at dusk with cream paper, a mint machine glow and highlighter yellow light. Its hero is an oxblood brass credential press, "
                             "and it has no cab, slope, chart desk or depot. The throughline is the AI ENGAGED draft sheet, which changes state at every act boundary."),
         "treatment": {"title": "The Press With Two Handles", "summary": "Explainer's mechanism (machine handle vs human handle) with the Dramatist's empty chairs and the Comedian's pen between two hands, and the Enthusiast's fair case given a full scene."},
         "angle": json.loads((OUT / "angle.json").read_text()) if (OUT / "angle.json").exists() else {},
-        "hook": {"pattern": "anomaly-question", "frame1": "An oxblood DiplomaPress sits on a seminar table with its ice-blue machine handle writing a first ice-blue line on a draft sheet titled RULES FOR AI, a plate reads AI ENGAGED.",
+        "hook": {"pattern": "anomaly-question", "frame1": "An oxblood DiplomaPress sits on a seminar table with its mint machine handle writing a first mint line on a draft sheet titled RULES FOR AI, a plate reads AI ENGAGED.",
                  "headline": "WHO WROTE THE AI RULES?", "motion_by_s": 0.3,
-                 "loopback": "The draft sheet lies unsigned in front of two dark chairs on the same press where the ice-blue handle wrote in the first frame."},
+                 "loopback": "The draft sheet lies unsigned in front of two dark chairs on the same press where the mint handle wrote in the first frame."},
         "open_loop": {"plant_t": b_at(4), "pay_t": b_at(38), "what": "Who held the pen, and does that change the plan? Planted with the pen between two hands, paid when the highlighter says it is the part to watch whoever held it."},
         "open_loop_2": {"plant_t": b_at(11), "pay_t": b_at(18), "what": "Will a human stay in charge of AI at the university? Planted with the 150 name tags, paid when the oxblood human examiner handle catches the die."},
         "throughline": {"object": "the AI ENGAGED draft sheet", "lands_in_button": "the draft sheet lies unsigned on its blank signature line in front of two dark chairs, the film's argument",
                         "states": [
-                            {"at_s": b_at(1), "state": "first ice-blue line being written"},
+                            {"at_s": b_at(1), "state": "first mint line being written"},
                             {"at_s": b_at(7), "state": "buried in a summer stack under a UA badge"},
                             {"at_s": b_at(14), "state": "pinned beside a campus flag with no policy on it"},
                             {"at_s": b_at(16), "state": "embossed DRAFT by the press"},
@@ -283,7 +283,7 @@ def build():
                             {"at_s": b_at(27), "state": "unsigned on its blank signature line before two dark chairs"}]},
         "reveals": [
             {"t": b_at(7), "type": "build-on", "what": "a stack of summer draft pages grows under the lamp", "hold_s": 0.8},
-            {"t": b_at(13), "type": "morph-to-chart", "what": "the ice-blue ticked tags collapse into a bar that climbs past a baseline", "hold_s": 0.8},
+            {"t": b_at(13), "type": "morph-to-chart", "what": "the mint ticked tags collapse into a bar that climbs past a baseline", "hold_s": 0.8},
             {"t": b_at(20), "type": "scale-pullback", "what": "from the press to a whole ring of chairs around it", "hold_s": 0.8}],
         "tail_s": 3.0, "audio_arc": {"bed": [
             {"line": 0, "offset": 0.0, "level": 0.6}, {"line": 0, "offset": 3.0, "level": 1.1}, {"line": 2, "offset": 0.0, "level": 0.5},

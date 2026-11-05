@@ -13,14 +13,14 @@ import {AK_PATH} from './lib/akmap';
 import {IDS} from './Ep1102Ids';
 
 // Who Held the Pen, 2026-11-05. Palette roles are art_direction.json. CLICKY is a gunmetal faced counter on the dash of a night cab, the car's own recorder.
-// THE DRAFT SHEET is the throughline: it changes state at every act boundary (art_direction.json). Ice blue is the machine only, yellow is light only.
+// THE DRAFT SHEET is the throughline: it changes state at every act boundary (art_direction.json). Mint is the machine only, yellow is light only.
 const W = 1080, H = 1920;
 const CAPTION_TOP = 1336;
 const CAP_GUARD = CAPTION_TOP - 36;
 type Beat = {id: number; at: number; label: string};
 
 export const C = {
-  sky: '#2A140E', ground: '#5A3A22', hero: '#8E2434', cuff: '#8E2434', glow: '#FFD23F', accent: '#7FB8FF', shadow: '#14080F', paper: '#F1E8D0', ink: '#1A0E14',
+  sky: '#2A140E', ground: '#5A3A22', hero: '#8E2434', cuff: '#8E2434', glow: '#FFD23F', accent: '#83D9B1', shadow: '#14080F', paper: '#F1E8D0', ink: '#1A0E14',
   brass: '#B08A4E', chalk: '#E9E4D4', white: '#F4F1EA',
 };
 
@@ -314,7 +314,7 @@ const track = (keys: Array<{t: number; z: number; fx: number; fy: number}>) => (
 };
 
 
-// ---- S1: the press, the first ice-blue line, the calendar --------------------------------------------------------------------------------
+// ---- S1: the press, the first mint line, the calendar --------------------------------------------------------------------------------
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const write = clamp01((f - b(2)) / 70);
@@ -327,8 +327,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.05 * Math.sin(f / 18) + 0.1 * bump(f, b(2), 40)} tokenText="WHO WROTE IT?" machine draft />
         {write > 0 && <path d="M 975,770 C 800,640 520,640 330,800" fill="none" stroke={C.accent} strokeWidth={5} strokeDasharray="14 12" strokeDashoffset={-f * 3} opacity={0.8 * Math.sin(Math.PI * clamp01(write))} />}
         <Sheet x={lerp(260, 230, slide)} y={lerp(930, 1010, slide)} w={380} h={500} rot={lerp(-4, -10, slide)} title="RULES FOR AI" cy={write} cyLabel={write > 0.5 ? 'CLAUDE?' : undefined} s={1 - 0.08 * slide} />
-        <Calendar x={250} y={640} s={0.85} top="NOVEMBER" big="MEETING" sub="BOARD OF REGENTS" flip={cal} />
-        <g transform={`translate(660 ${lerp(1150, 1236, card)})`} opacity={clamp01(card * 2)}>
+        <Calendar x={870} y={1215} s={0.62} top="NOVEMBER" big="MEETING" sub="BOARD OF REGENTS" flip={cal} />
+        <g transform={`translate(480 ${lerp(1180, 1256, card)})`} opacity={clamp01(card * 2)}>
           <path d="M -150,0 L 150,0 L 134,-62 L -134,-62 Z" fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} letterSpacing={2} fill={C.ink}>REGENTS</text>
         </g>
@@ -478,7 +478,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const glint = ease(f, b(18) - 2, 10);
   const card = springy(f, b(19), 22);
   return (
-    <Frame p={p} bg="bone" cam={track([{t: 0, z: 1.0, fx: 640, fy: 940}, {t: b(17) - 12, z: 1.08, fx: 660, fy: 940}, {t: b(18) + 6, z: 1.62, fx: 690, fy: 1010}, {t: p.dur, z: 1.52, fx: 690, fy: 1000}])}>
+    <Frame p={p} bg="bone" cam={track([{t: 0, z: 1.0, fx: 640, fy: 940}, {t: b(17) - 12, z: 1.08, fx: 660, fy: 940}, {t: b(18) + 6, z: 1.3, fx: 600, fy: 990}, {t: p.dur, z: 1.34, fx: 600, fy: 990}])}>
       <SVG>
         {hum > 0 && <circle cx={420} cy={880} r={150 * hum + 40} fill={C.glow} opacity={0.25 * hum} />}
         <DiplomaPress f={f} x={700} y={940} scale={0.85} pull={pull} brake={brake} tokenText="WHO WROTE IT?" machine examiner draft />
