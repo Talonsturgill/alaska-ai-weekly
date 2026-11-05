@@ -374,7 +374,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
       <SVG>
 <g transform="translate(0 60)">
         <Lamp x={110} y={1100} s={1.05 + 0.1 * flare} on={0.7 + 0.5 * flare} />
-        <Sheet x={930} y={1180} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} />
+        <Sheet x={940} y={800} w={200} h={260} rot={6} title="AI ENGAGED" s={0.6} />
         <Stack x={lerp(400, 470, merge)} y={1130} n={grow} badge="UA" label={merge < 0.1 ? 'UA TECH CHIEF · SUMMER' : undefined} />
         <Stack x={lerp(830, 640, merge)} y={1130} n={4} machine rot={4} label={merge < 0.1 ? 'CLAUDE · THEY SAY' : undefined} />
         <g transform={`translate(${lerp(520, 270, slip)} ${lerp(700, 930, slip)}) rotate(${lerp(-20, -6, slip)})`} opacity={clamp01(slip * 2)}>
@@ -431,7 +431,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           <line x1={300} y1={1180} x2={860} y2={1180} stroke={C.glow} strokeWidth={4} strokeDasharray="10 8" />
         </g>
         <g transform={`translate(880 1180) scale(${lab})`} opacity={clamp01(lab * 2)}><Lab text="+73%" x={0} y={0} size={34} tone="glow" /><Lab text="LAST YEAR" x={0} y={50} size={20} tone="plate" /></g>
-        <Sheet x={950} y={1190} w={200} h={260} rot={8} title="AI ENGAGED" s={0.6} />
+        <Sheet x={110} y={1210} w={200} h={260} rot={-8} title="AI ENGAGED" s={0.6} />
         </g>
         <Plate text={'150 STUDENTS CITED UAA REPORT'} displayLines={['150 STUDENTS CITED', 'UAA REPORT']} x={540} y={610} size={28} p={win(f, b(11), b(42))} /> {/* plate-overlap-ok */}
         <Plate text={'CITED FOR MISCONDUCT'} x={540} y={610} size={28} p={win(f, b(42), b(12))} /> {/* plate-overlap-ok */}
@@ -568,7 +568,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
       <SVG>
 <g transform="translate(0 60)">
         <Sheet x={380} y={1000} w={560} h={720} title="AI ENGAGED" mark={1} hl={hl} hlText={words > 0.5 ? 'WHOEVER HELD THE PEN' : undefined} />
-        <g transform="translate(380 760) rotate(-12)" opacity={0.6 * drop}>
+        <g transform="translate(380 880) rotate(-12)" opacity={0.6 * drop}>
           <text textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={84} fill="none" stroke={C.ink} strokeWidth={5}>DROP IT</text>
         </g>
         <g transform={`translate(760 ${lerp(1330, 1180, card)}) rotate(5)`} opacity={clamp01(card * 2)}>
