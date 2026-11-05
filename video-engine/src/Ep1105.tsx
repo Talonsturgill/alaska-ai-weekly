@@ -125,8 +125,8 @@ const Room: React.FC<{f: number; v: string; table?: boolean}> = ({f, v, table = 
       <rect x={0} y={0} width={W} height={H} fill="url(#wallg)" />
       {Array.from({length: 9}).map((_, i) => <rect key={i} x={i * 130 - 20} y={300} width={110} height={900} rx={6} fill={bone ? '#000' : '#000'} opacity={bone ? 0.035 : 0.16} />)}
       {Array.from({length: 4}).map((_, i) => <rect key={`t${i}`} x={90 + i * 270} y={150} width={190} height={110} rx={10} fill="none" stroke={bone ? '#B9AC88' : '#5E2A3C'} strokeWidth={5} opacity={0.6} />)}
-      <rect x={70} y={380} width={300} height={560} rx={8} fill={bone ? '#EFE4C6' : '#F2B766'} opacity={bone ? 0.5 : 0.28 + 0.2 * sun} stroke={bone ? '#B9AC88' : '#7A4E2A'} strokeWidth={10} />
-      <g opacity={bone ? 0.55 : 0.8}>
+      <rect x={70} y={380} width={300} height={560} rx={8} fill={bone ? '#EFE4C6' : '#FFD9A0'} opacity={bone ? 0.6 : 0.5 + 0.2 * sun} stroke={bone ? '#B9AC88' : '#7A4E2A'} strokeWidth={10} />
+      <g opacity={bone ? 0.7 : 1}>
         <path d="M 74,720 L 130,610 L 170,660 L 225,560 L 290,650 L 330,600 L 366,700 L 366,720 Z" fill={bone ? '#C9BD99' : '#6E3B2E'} stroke={C.ink} strokeWidth={3} />
         <path d="M 130,610 L 150,632 L 118,640 Z M 225,560 L 250,590 L 205,596 Z" fill={C.paper} opacity={0.85} />
         {[96, 140, 300, 336].map((tx, i) => <path key={i} d={`M ${tx},${940 - 10} L ${tx - 18},${940 - 60 - (i % 2) * 20} L ${tx - 8},${940 - 60 - (i % 2) * 20} L ${tx - 22},${940 - 110 - (i % 2) * 20} L ${tx + 22},${940 - 110 - (i % 2) * 20} L ${tx + 8},${940 - 60 - (i % 2) * 20} L ${tx + 18},${940 - 60 - (i % 2) * 20} Z`} fill="#1F3A2B" stroke={C.ink} strokeWidth={3} />)}
@@ -329,6 +329,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <HeldProp f={f} px={660.0} py={1200.0} w={630.0} h={585.0} kind="rest" seed={0.37} gain={5} sheen={0.14}><DiplomaPress f={f} x={660} y={930} scale={0.9} pull={0.1 + 0.06 * Math.sin(f / 12) + 0.25 * bump(f, 4, 40)} tokenText="WHO WROTE IT?" dieText="AI ENGAGED" machine /></HeldProp>
         {write > 0 && <path d="M 975,770 C 800,640 520,640 330,800" fill="none" stroke={C.accent} strokeWidth={10} strokeDasharray="22 14" strokeDashoffset={-f * 6} opacity={Math.min(1, 1.6 * Math.sin(Math.PI * clamp01(write)))} />}
         <Sheet x={lerp(280, 270, slide)} y={lerp(930, 1010, slide)} w={380} h={500} rot={lerp(-4, -6, slide)} title="AI ENGAGED" cy={write} cyLabel={write > 0.5 ? 'CLAUDE?' : undefined} s={1 - 0.08 * slide} />
+        {write > 0 && <path d={`M 120,790 L ${120 + 330 * write},790`} stroke={C.accent} strokeWidth={18} strokeLinecap="round" opacity={0.95} />}
         <Calendar x={870} y={1215} s={0.62} top="NOVEMBER" big="MEETING" flip={cal} />
         <g transform={`translate(480 ${lerp(1180, 1256, card)})`} opacity={clamp01(card * 2)}>
           <path d="M -150,0 L 150,0 L 134,-62 L -134,-62 Z" fill={C.paper} stroke={C.ink} strokeWidth={6} />
@@ -477,11 +478,11 @@ const S5: React.FC<SceneProps> = ({p}) => {
           const pop = springy(f, b(14) + i * 6, 18);
           const book = ease(f, b(14) + 10 + i * 6, 14) * (1 - merge);
           return (
-            <g key={q.n} transform={`translate(${lerp(q.x, 620, merge * 0.0)} ${q.y})`}>
+            <g key={q.n} transform={`translate(${lerp(q.x, 620, merge * 0.0)} ${q.y}) scale(1.6)`}>
               <line x1={0} y1={0} x2={0} y2={-60 * pop} stroke={C.ink} strokeWidth={6} />
               <rect x={0} y={-60 * pop} width={46} height={30} fill={C.hero} stroke={C.ink} strokeWidth={4} />
               <rect x={-34} y={10} width={34} height={44} rx={3} fill={C.chalk} stroke={C.ink} strokeWidth={4} opacity={book} transform={`rotate(${-8 + 6 * Math.sin(f / 10 + i)} -17 30)`} />
-              <Lab text={q.n} x={0} y={86} size={18} p={pop} />
+              <Lab text={q.n} x={0} y={70} size={22} p={pop} />
             </g>
           );
         })}
@@ -489,7 +490,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <rect x={-70} y={-40} width={140} height={86} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.ink}>ONE PLAN</text>
         </g>
-        <Sheet x={880} y={1130} w={220} h={290} rot={6} title="AI ENGAGED" s={0.62} />
+        <Sheet x={170} y={1130} w={220} h={290} rot={-6} title="AI ENGAGED" s={0.62} />
         </g>
         <Plate text={'NO SINGLE AI POLICY TODAY'} x={540} y={600} size={28} p={win(f, b(14), b(37))} /> {/* plate-overlap-ok */}
         <Plate text={'3 CAMPUSES'} x={540} y={600} size={30} p={win(f, b(37), b(15))} /> {/* plate-overlap-ok */}
@@ -552,7 +553,7 @@ const TopChair: React.FC<{x: number; y: number; rot?: number; tag?: string; dim?
 );
 const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const pass = clamp01((f - b(34)) / 70);
+  const pass = clamp01((f - b(20) - 20) / 120);
   const mark = ease(f, b(21), 12);
   const dim = ease(f, b(22), 20);
   const tip = bump(f, b(35), 24) * 10;
