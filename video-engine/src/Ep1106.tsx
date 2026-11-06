@@ -389,7 +389,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
           return (
             <g key={i} transform={`translate(${x} 205)`}>
               <rect x={0} y={-34} width={128} height={68} rx={10} fill={now ? C.gold : on ? '#5E2A0C' : '#7A3A14'} stroke={now ? C.ink : C.paper} strokeWidth={now ? 5 : 3} opacity={on ? 1 : 0.8} />
-              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontSize={17} fontWeight={900} fill={now ? C.ink : C.paper}>{q.t}</text>
+              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontSize={19} fontWeight={900} fill={now ? C.ink : C.paper}>{q.t}</text>
             </g>
           );
         })}
@@ -708,10 +708,10 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Arrow x1={920} y1={820} x2={680} y2={880} color={C.gold} p={a2} />
         <Lab text="PROFESSORS" x={250} y={740} size={22} p={a1} />
         <Lab text="FACULTY" x={830} y={740} size={22} p={a2} />
-        <Arrow x1={540} y1={1250} x2={540} y2={1420} color={C.mag} p={a3} />
-        <g transform="translate(540 1490)" opacity={a3}>
-          <rect x={-120} y={-50} width={240} height={90} rx={10} fill="none" stroke={C.mag} strokeWidth={6} strokeDasharray="14 10" />
-          <text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={48} fill={C.mag}>?</text>
+        <Arrow x1={640} y1={1040} x2={790} y2={1110} color={C.mag} p={a3} />
+        <g transform="translate(880 1170)" opacity={a3}>
+          <rect x={-100} y={-55} width={200} height={110} rx={10} fill="none" stroke={C.mag} strokeWidth={6} strokeDasharray="14 10" />
+          <text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={56} fill={C.mag}>?</text>
         </g>
         <Plate x={540} y={573} text="THE FAIR PART" size={36} p={vis(f, b, K, 0)} />
         <Plate x={540} y={642} text="BOTH SIDES AGREE · AI WAS USED" size={26} p={vis(f, b, K, 1)} />
