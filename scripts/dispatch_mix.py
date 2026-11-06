@@ -796,12 +796,12 @@ def main():
     # So the same script-shaped curve is applied to the VOICE, at a third of the depth: a
     # documentary narrator does drop under a concession and does lift into a closing
     # question, and unlike the bed it is the thing the meter is listening to.
-    vo_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.85) for t, m in BED_ARC])
+    vo_arc = pw_expr([(t, max(0.4, 1.0 + (m - 1.0) * 0.92)) for t, m in BED_ARC])
     # Ambience and motivated hits otherwise hold the quiet phases up after the VO and bed
     # arcs have moved.  Carry a gentle version of the same authored arc through the finished
     # mix so every layer changes together; this raises macro dynamics without changing the
     # narration-to-bed balance or moving the fitted pre-button pause.
-    mix_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.65) for t, m in BED_ARC])
+    mix_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.72) for t, m in BED_ARC])
     fc.append(f"[0:a]aformat=sample_rates={SR}:channel_layouts=stereo,apad=whole_dur={VIDEO_SECS},"
               f"volume=volume={vo_arc}:eval=frame,asplit=2[vo][vok]")
     # Music: loop, trim, base level, VO-slot EQ (wide -2.5dB dip at 3k so the bed
