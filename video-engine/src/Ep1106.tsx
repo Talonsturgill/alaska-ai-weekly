@@ -629,7 +629,6 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <text x={440} y={1092} fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
         {ul > 0.02 && <rect x={318} y={977} width={168 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
-        <Idle f={f} x={215} y={1100} seed={1}><StampBot f={f} x={215} y={1100} reject={0} /></Idle>
         {bal > 0.02 && <g transform="translate(560 1190) scale(1.15)" opacity={bal}>
           <path d="M 0,0 V 70" stroke={C.ink} strokeWidth={10} />
           <g transform={`rotate(${lerp(0, 9, bal)})`}>
