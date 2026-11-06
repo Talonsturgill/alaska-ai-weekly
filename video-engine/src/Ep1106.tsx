@@ -626,7 +626,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Sheet x={540} y={960} s={1.45} title="" strip={false} ruled={false} />
         <Typed x={318} y={885} rows={QUOTE} k={type} size={31} fill={C.ink} />
-        <text x={318} y={1092} fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
+        <text x={440} y={1092} fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
         {ul > 0.02 && <rect x={318} y={977} width={168 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
         <Idle f={f} x={215} y={1100} seed={1}><StampBot f={f} x={215} y={1100} reject={0} /></Idle>
