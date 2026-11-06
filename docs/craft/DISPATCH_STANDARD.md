@@ -155,6 +155,12 @@ document, not of the judge.
   the caption said something the voice did not.
 - **Re-align after patching audio.** A `words.json` older than the `vo.wav` it describes is
   a stale artifact that will burn wrong text on screen.
+- **An ambience bed under the music is not heard** (machine pass 2026-11-06; judges wrote "thin
+  ambience" on 10-31 and "no audible ambience evidence" on 11-06 over a film-long room tone).
+  `audio_report.py` now writes `gap_beds` and `gap_beds_summary` into the pack: the level of every VO
+  gap of 0.5 s or more, any gap that falls to digital quiet, and the ambience layers measured alone
+  against the gaps. On 11-06 the room tone sat 23.2 dB under the music in the gaps, which is masked.
+  Raising it inside its band does not change that; dipping the music in two or three long gaps does.
 - **Never write a measurement into the evidence pack by hand.** `audio_report.json` carried
   a hand-typed claim that the VO left "one gap over 0.35s"; there were 21. It sent three
   rounds of fixes in the wrong direction. Generate it (`scripts/audio_report.py`).
