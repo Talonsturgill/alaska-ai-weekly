@@ -554,7 +554,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.04} z1={1.12} oy={980}>
       <SVG>
         <Chatbot f={f} x={190} y={1020} s={1.0} mood="focused" act={Math.sin(Math.PI * clamp01((f - b(11)) / 36))} />
-        <g transform={`translate(270 ${lerp(1180, 1235, card)})`} opacity={ease(f, b(35), 8)}><rect x={-130} y={-34} width={260} height={68} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>ERICKSON</text><text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.teal}>SPECIAL PROJECTS LEAD</text></g>
+        <g transform={`translate(270 ${lerp(1180, 1235, card)})`} opacity={ease(f, b(35), 8)}><rect x={-130} y={-34} width={260} height={68} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>S. ERICKSON</text><text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.teal}>SPECIAL PROJECTS LEAD</text></g>
         
         {idea > 0.02 && <g transform={`translate(350 ${lerp(930, 882, idea)})`} opacity={idea}><rect x={-120} y={-30} width={240} height={60} rx={8} fill={C.glow} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>THE CORE IDEA</text></g>}
         <g transform={`translate(${noteX} ${1090 + 5 * Math.sin(f / 7)}) rotate(${lerp(-6, 4, slide)})`} opacity={slide > 0.01 ? 1 : 0}>
@@ -625,9 +625,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.04} z1={1.1} oy={950}>
       <SVG>
         <Sheet x={540} y={915} s={1.3} title="" strip={false} ruled={false} />
-        <Typed x={345} y={815} rows={QUOTE} k={type} size={31} fill={C.ink} />
-        <text x={400} y={1030} fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
-        {ul > 0.02 && <rect x={345} y={907} width={168 * ul} height={8} rx={3} fill={C.ink} />}
+        <Typed x={338} y={850} rows={QUOTE} k={type} size={25} fill={C.ink} />
+        <text x={400} y={1045} fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
+        {ul > 0.02 && <rect x={338} y={932} width={135 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
         {bal > 0.02 && <g transform="translate(560 1135) scale(1.1)" opacity={bal}>
           <path d="M 0,0 V 70" stroke={C.ink} strokeWidth={10} />
