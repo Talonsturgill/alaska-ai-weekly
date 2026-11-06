@@ -228,10 +228,10 @@ const Essay: React.FC<{x: number; y: number; s?: number; rot?: number; rejected?
 );
 
 /** THE CHATBOT: a steel boxy machine with a face and a pencil. sweat 0..1, stamp text shown on its forehead. */
-const Chatbot: React.FC<{f: number; x: number; y: number; s?: number; mood?: 'focused' | 'nervous' | 'wry'; sweat?: number; stamp?: number; pencil?: boolean; tag?: number}> = ({f, x, y, s = 1, mood = 'focused', sweat = 0, stamp = 0, pencil = true, tag = 0}) => {
+const Chatbot: React.FC<{f: number; x: number; y: number; s?: number; mood?: 'focused' | 'nervous' | 'wry'; sweat?: number; stamp?: number; pencil?: boolean; tag?: number; act?: number}> = ({f, x, y, s = 1, mood = 'focused', sweat = 0, stamp = 0, pencil = true, tag = 0, act = 0}) => {
   const blink = (f % 110) > 104 ? 0.15 : 1;
   return (
-    <g transform={`translate(${x} ${y + 4 * Math.sin(f / 19)}) scale(${s})`}>
+    <g transform={`translate(${x + 26 * act} ${y + 4 * Math.sin(f / 19)}) rotate(${-7 * act + 1.2 * Math.sin(f / 23)} 0 118) scale(${s * (1 + 0.025 * Math.sin(f / 13))} ${s * (1 - 0.03 * Math.sin(f / 13))})`}>
       <ellipse cx={0} cy={118} rx={100} ry={14} fill="#000" opacity={0.35} />
       <rect x={-92} y={-100} width={184} height={210} rx={22} fill={C.gun} stroke={C.ink} strokeWidth={8} />
       <defs><linearGradient id="chatg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#FFFFFF" stopOpacity={0.45} /><stop offset="0.5" stopColor="#FFFFFF" stopOpacity={0} /><stop offset="1" stopColor="#000000" stopOpacity={0.4} /></linearGradient></defs>
@@ -242,7 +242,7 @@ const Chatbot: React.FC<{f: number; x: number; y: number; s?: number; mood?: 'fo
       {[-30, 30].map((ex, i) => <g key={i}><ellipse cx={ex} cy={-44} rx={14} ry={14 * blink} fill={C.white} stroke={C.ink} strokeWidth={3} /><circle cx={ex + (mood === 'wry' ? 5 : 0)} cy={-44} r={5} fill={C.ink} /></g>)}
       <path d={mood === 'nervous' ? 'M -24,-14 q 24,-14 48,0' : mood === 'wry' ? 'M -24,-16 q 24,10 48,-6' : 'M -24,-16 q 24,12 48,0'} fill="none" stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
       {[0, 1, 2, 3].map((i) => <rect key={i} x={-60} y={12 + i * 22} width={120} height={10} rx={4} fill={C.gunD} stroke={C.ink} strokeWidth={3} />)}
-      {pencil && <g transform="translate(78 -76) rotate(24)"><rect x={-6} y={-60} width={12} height={90} rx={3} fill={C.glow} stroke={C.ink} strokeWidth={4} /><path d="M -6,30 L 0,48 L 6,30 Z" fill={C.ink} /></g>}
+      {pencil && <g transform={`translate(78 -76) rotate(${24 + 14 * Math.sin(f / 5.5)})`}><rect x={-6} y={-60} width={12} height={90} rx={3} fill={C.glow} stroke={C.ink} strokeWidth={4} /><path d="M -6,30 L 0,48 L 6,30 Z" fill={C.ink} /></g>}
       {sweat > 0.01 && [0, 1, 2].map((i) => <path key={i} d="M 0,-8 q 9,14 0,22 q -9,-8 0,-22 Z" fill="#9FD7F5" stroke={C.ink} strokeWidth={2.5} transform={`translate(${-96 + i * 16 - 8} ${-70 + ((f * 3 + i * 40) % 90) * sweat})`} opacity={0.85} />)}
       {tag > 0.01 && (
         <g transform={`translate(${lerp(140, 0, tag)} ${lerp(-60, 100, tag)}) rotate(${lerp(20, -4, tag)})`} opacity={clamp01(tag * 2)}>
@@ -553,7 +553,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.04} z1={1.12} oy={980}>
       <SVG>
-        <Chatbot f={f} x={190} y={1020} s={1.0} mood="focused" />
+        <Chatbot f={f} x={190} y={1020} s={1.0} mood="focused" act={Math.sin(Math.PI * clamp01((f - b(11)) / 36))} />
         <g transform={`translate(270 ${lerp(1180, 1235, card)})`} opacity={ease(f, b(35), 8)}><rect x={-130} y={-34} width={260} height={68} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>ERICKSON</text><text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.teal}>SPECIAL PROJECTS LEAD</text></g>
         
         {idea > 0.02 && <g transform={`translate(350 ${lerp(930, 882, idea)})`} opacity={idea}><rect x={-120} y={-30} width={240} height={60} rx={8} fill={C.glow} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>THE CORE IDEA</text></g>}
@@ -624,12 +624,12 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.04} z1={1.1} oy={950}>
       <SVG>
-        <Sheet x={540} y={960} s={1.45} title="" strip={false} ruled={false} />
-        <Typed x={318} y={885} rows={QUOTE} k={type} size={31} fill={C.ink} />
-        <text x={440} y={1092} fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
-        {ul > 0.02 && <rect x={318} y={977} width={168 * ul} height={8} rx={3} fill={C.ink} />}
+        <Sheet x={540} y={915} s={1.3} title="" strip={false} ruled={false} />
+        <Typed x={345} y={815} rows={QUOTE} k={type} size={31} fill={C.ink} />
+        <text x={400} y={1030} fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
+        {ul > 0.02 && <rect x={345} y={907} width={168 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
-        {bal > 0.02 && <g transform="translate(560 1190) scale(1.15)" opacity={bal}>
+        {bal > 0.02 && <g transform="translate(560 1135) scale(1.1)" opacity={bal}>
           <path d="M 0,0 V 70" stroke={C.ink} strokeWidth={10} />
           <g transform={`rotate(${lerp(0, 9, bal)})`}>
             <path d="M -200,0 H 200" stroke={C.ink} strokeWidth={10} strokeLinecap="round" />
