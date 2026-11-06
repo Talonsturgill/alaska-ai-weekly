@@ -167,18 +167,6 @@ const Atmos: React.FC<{f: number; bg: string}> = ({f, bg}) => {
 const CHIP2 = 'ILLUSTRATION';
 
 /** a vertical run of plates that hand off one to the next. items[i] shows from b(k) to b(next k) - 10; the last stays. */
-type PI = {k: number; text?: string; lines?: string[]; size?: number; tone?: Tone};
-const Seq: React.FC<{f: number; b: (id: number) => number; items: PI[]; ys?: number[]}> = ({f, b, items, ys = [563, 640, 717, 794]}) => (
-  <g>
-    {items.map((it, i) => {
-      const nxt = items[i + 1];
-      const pin = ease(f, b(it.k), 14);
-      const pout = nxt ? ease(f, b(nxt.k) - 10, 8) : 0;
-      return <Plate key={i} x={540} y={ys[i] ?? ys[ys.length - 1]} text={it.text ?? (it.lines ?? []).join(' ')} displayLines={it.lines} size={it.size ?? 30} tone={it.tone ?? 'dark'} p={pin * (1 - pout)} />;
-    })}
-  </g>
-);
-
 const vis = (f: number, b: (id: number) => number, ks: number[], i: number) => ease(f, b(ks[i]), 14) * (i < ks.length - 1 ? 1 - ease(f, b(ks[i + 1]) - 10, 8) : 1);
 
 /** a cream legal-pad sheet with an optional footnote strip. fill 0..1 types the disclosure line, lit lights the bulb. */
@@ -192,7 +180,7 @@ const Sheet: React.FC<{x: number; y: number; s?: number; rot?: number; title?: s
       <rect x={-170} y={-230} width={340} height={460} rx={10} fill={C.paper} stroke={C.ink} strokeWidth={7} />
       <rect x={-170} y={-230} width={340} height={46} rx={10} fill={C.cream} stroke={C.ink} strokeWidth={7} />
       <text x={0} y={-198} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={2} fill={C.ink}>{title}</text>
-      {smudge > 0.01 && <ellipse cx={80} cy={-196} rx={34 * smudge} ry={11 * smudge} fill="#3B3B46" opacity={0.55} />}
+      {smudge > 0.01 && <ellipse cx={128} cy={-196} rx={22 * smudge} ry={9 * smudge} fill="#3B3B46" opacity={0.55} />}
       {Array.from({length: 8}).map((_, i) => <path key={i} d={`M -140,${-140 + i * 36} H ${i % 3 === 2 ? 60 : 140}`} stroke={C.teal} strokeWidth={5} opacity={0.35} />)}
       {strip && (
         <g transform="translate(0 190)">
@@ -289,9 +277,15 @@ const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; color?: s
   );
 };
 
-const Tok: React.FC<{x: number; y: number; s?: number; text: string; glow?: number; rot?: number}> = ({x, y, s = 1, text, glow = 0, rot = 0}) => (
-  <g><QuestionToken x={x} y={y} scale={s} rot={rot} text={text} glow={glow} /></g>
-);
+const Tok: React.FC<{x: number; y: number; s?: number; text: string; glow?: number; rot?: number}> = ({x, y, s = 1, text, glow = 0, rot = 0}) => {
+  const rows = text.split('|');
+  return (
+    <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
+      <QuestionToken text="" glow={glow} />
+      {rows.map((r, i) => <text key={i} x={0} y={(i - (rows.length - 1) / 2) * 20 + 6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={r.length > 8 ? 13 : 16} fill={C.ink}>{r}</text>)}
+    </g>
+  );
+};
 
 /** the typewriter: reveals `text` over time, wrapped to rows. */
 const Typed: React.FC<{x: number; y: number; rows: string[]; k: number; size?: number; fill?: string}> = ({x, y, rows, k, size = 24, fill = C.ink}) => {
@@ -369,19 +363,19 @@ const S1: React.FC<SceneProps> = ({p}) => {
             })}
           </g>
         </g>
-        {tag > 0.02 && <g transform={`translate(520 ${lerp(980, 925, tag)}) rotate(-3)`} opacity={tag}><rect x={-150} y={-22} width={300} height={44} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.ink}>CITED FOR MISCONDUCT</text></g>}
-        <Essay x={640} y={1050} s={1.0} rejected={slam} />
+        {tag > 0.02 && <g transform={`translate(520 ${lerp(880, 906, tag)}) rotate(-3)`} opacity={tag}><rect x={-150} y={-22} width={300} height={44} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.ink}>CITED FOR MISCONDUCT</text></g>}
+        <Essay x={640} y={1095} s={1.0} rejected={slam} />
         {splat > 0.02 && <g opacity={0.9 * (1 - 0.2 * splat)}>
-          <circle cx={640} cy={1050} r={30 + 150 * splat} fill={C.mag} opacity={0.22} />
-          {[0, 1, 2, 3, 4, 5, 6].map((i) => <circle key={i} cx={640 + Math.cos(i * 0.9) * 190 * splat} cy={1050 + Math.sin(i * 0.9) * 150 * splat} r={10 + (i % 3) * 7} fill={C.mag} />)}
+          <circle cx={640} cy={1095} r={30 + 150 * splat} fill={C.mag} opacity={0.22} />
+          {[0, 1, 2, 3, 4, 5, 6].map((i) => <circle key={i} cx={640 + Math.cos(i * 0.9) * 190 * splat} cy={1095 + Math.sin(i * 0.9) * 150 * splat} r={10 + (i % 3) * 7} fill={C.mag} />)}
         </g>}
-        <StampBot f={f} x={290} y={1050} reject={slam} />
+        <StampBot f={f} x={290} y={1095} reject={slam} />
         <Sheet x={880} y={1000} s={0.5} rot={6} title="PLAN" strip f={f} />
         {tok > 0.02 && <Tok x={880} y={lerp(700, 960, tok)} s={0.8} text="WHO WROTE THIS?" glow={tok > 0.9 ? 0.5 : 0} />}
-        <Plate x={540} y={563} text="UAA · 119 OF 150 CITED USED AI" size={27} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={563} text="119 OF 150 CITED" size={34} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={563} text="CITED FOR MISCONDUCT" size={30} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={563} text="WHO WROTE THIS?" size={36} tone="glow" p={vis(f, b, K, 3)} />
+        <Plate x={540} y={568} text="UAA · 119 OF 150 CITED USED AI" size={27} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={637} text="119 OF 150 CITED" size={34} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={707} text="CITED FOR MISCONDUCT" size={30} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={778} text="WHO WROTE THIS?" size={36} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -421,10 +415,10 @@ const S2: React.FC<SceneProps> = ({p}) => {
           <circle cx={-84} cy={-44} r={9} fill={C.mint} stroke={C.ink} strokeWidth={3} />
           <g transform={`translate(0 ${lerp(0, -170, eject)})`}><Sheet x={0} y={-10} s={0.32} title="AI ENGAGED" strip /></g>
         </g>
-        <Plate x={540} y={563} text="ASKED IN MAY" size={38} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={563} text="THE BOARD OF REGENTS" size={32} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={563} text="REGENTS · FAIRBANKS" size={34} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={563} text="AI ENGAGED" size={40} tone="glow" p={vis(f, b, K, 3)} />
+        <Plate x={540} y={574} text="ASKED IN MAY" size={38} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={647} text="THE BOARD OF REGENTS" size={32} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={718} text="REGENTS · FAIRBANKS" size={34} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={793} text="AI ENGAGED" size={40} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -443,16 +437,16 @@ const S3: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.04} z1={1.1} oy={940}>
       <SVG>
         <g opacity={1 - pull}>
-          <Sheet x={540} y={880} s={1.15} title="AI ENGAGED" strip={false} />
+          <Sheet x={540} y={1010} s={1.0} title="" strip={false} />
           {[0, 1, 2, 3, 4, 5].map((i) => {
             const a = bad(i);
-            const bx = 400 + (i % 2) * 280, by = 740 + Math.floor(i / 2) * 120;
+            const bx = 420 + (i % 2) * 240, by = 900 + Math.floor(i / 2) * 110;
             return a > 0.01 ? <g key={i} transform={`translate(${bx} ${by}) scale(${a})`}><circle r={44} fill={C.gold} stroke={C.ink} strokeWidth={6} /><circle r={34} fill="none" stroke={C.ink} strokeWidth={3} /><text y={13} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>{i + 1}</text></g> : null;
           })}
-          <g transform="translate(820 1080)">{[0, 1, 2, 3].map((i) => <ellipse key={i} cx={0} cy={-i * 26 * coins} rx={66} ry={20} fill={C.gold} stroke={C.ink} strokeWidth={5} opacity={coins} />)}</g>
+          <g transform="translate(830 1190)">{[0, 1, 2, 3].map((i) => <ellipse key={i} cx={0} cy={-i * 26 * coins} rx={66} ry={20} fill={C.gold} stroke={C.ink} strokeWidth={5} opacity={coins} />)}</g>
           {[0, 1, 2, 3, 4].map((i) => {
             const k = ease(f, b(9) + i * 7, 12);
-            return <g key={i} transform={`translate(260 ${700 + i * 82})`} opacity={k}><rect x={-26} y={-26} width={52} height={52} rx={6} fill={C.white} stroke={C.ink} strokeWidth={5} /><path d={`M -14,0 l 10,12 l 20,-24`} fill="none" stroke={C.teal} strokeWidth={8} strokeLinecap="round" strokeDasharray="60" strokeDashoffset={60 * (1 - k)} /></g>;
+            return <g key={i} transform={`translate(240 ${860 + i * 80})`} opacity={k}><rect x={-26} y={-26} width={52} height={52} rx={6} fill={C.white} stroke={C.ink} strokeWidth={5} /><path d={`M -14,0 l 10,12 l 20,-24`} fill="none" stroke={C.teal} strokeWidth={8} strokeLinecap="round" strokeDasharray="60" strokeDashoffset={60 * (1 - k)} /></g>;
           })}
         </g>
         {one > 0.02 && <g transform={`translate(${lerp(1200, 860, one)} 1040)`}><rect x={-60} y={10} width={120} height={36} rx={6} fill={C.teal} stroke={C.ink} strokeWidth={5} /><rect x={-50} y={-50} width={100} height={52} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-16} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>NO AI</text></g>}
@@ -468,12 +462,12 @@ const S3: React.FC<SceneProps> = ({p}) => {
             </g>;
           })}
         </g>
-        <g transform="translate(880 600)"><QuestionToken scale={0.8} text={pull > 0.3 ? 'ASK THE CLASS' : 'WHO WROTE THIS?'} /></g>
-        <Plate x={540} y={500} text="6 PRINCIPLES" size={34} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="4 INVESTMENT PRIORITIES" size={30} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={500} text="5 EXPECTATIONS PER CAMPUS" size={28} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={500} text="UNTIL NOW · EACH CLASS ITS OWN" size={26} p={vis(f, b, K, 3)} />
-        <Plate x={540} y={500} text="CLASS BY CLASS" size={38} tone="glow" p={vis(f, b, K, 4)} />
+        <Tok x={880} y={600} s={0.8} text={pull > 0.3 ? 'ASK THE|CLASS' : 'WHO WROTE|THIS?'} />
+        <Plate x={540} y={572} text="6 PRINCIPLES" size={34} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={642} text="4 INVESTMENT PRIORITIES" size={30} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={709} text="5 EXPECTATIONS PER CAMPUS" size={28} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={774} text="UNTIL NOW · EACH CLASS ITS OWN" size={26} p={vis(f, b, K, 3)} />
+        <Plate x={540} y={844} text="CLASS BY CLASS" size={38} tone="glow" p={vis(f, b, K, 4)} />
       </SVG>
     </Frame>
   );
@@ -493,10 +487,9 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.04} z1={1.12} oy={980}>
       <SVG>
         <Chatbot f={f} x={190} y={1020} s={1.0} mood="focused" />
-        <g transform={`translate(330 ${lerp(600, 760, card)})`} opacity={ease(f, b(35), 8)}><rect x={-130} y={-34} width={260} height={68} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>ERICKSON</text><text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.teal}>SPECIAL PROJECTS LEAD</text></g>
-        <Sheet x={760} y={800} s={0.42} title="AI ENGAGED" strip smudge={smudge} f={f} />
-        {smudge > 0.5 && <path d={`M 740,690 l 8,-14 l 8,14 l 14,8 l -14,8 l -8,14 l -8,-14 l -14,-8 Z`} fill={C.glow} opacity={0.6 + 0.4 * Math.sin(f / 4)} transform="translate(30 -10)" />}
-        {idea > 0.02 && <g transform={`translate(560 ${lerp(940, 900, idea)})`} opacity={idea}><rect x={-120} y={-30} width={240} height={60} rx={8} fill={C.glow} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>THE CORE IDEA</text></g>}
+        <g transform={`translate(210 ${lerp(1180, 1235, card)})`} opacity={ease(f, b(35), 8)}><rect x={-130} y={-34} width={260} height={68} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>ERICKSON</text><text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.teal}>SPECIAL PROJECTS LEAD</text></g>
+        <Sheet x={560} y={965} s={0.42} title="AI ENGAGED" strip smudge={smudge} f={f} />
+        {idea > 0.02 && <g transform={`translate(640 ${lerp(960, 930, idea)})`} opacity={idea}><rect x={-120} y={-30} width={240} height={60} rx={8} fill={C.glow} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>THE CORE IDEA</text></g>}
         <g transform={`translate(${noteX} ${1090 + 5 * Math.sin(f / 7)}) rotate(${lerp(-6, 4, slide)})`} opacity={slide > 0.01 ? 1 : 0}>
           <rect x={-90} y={-50} width={180} height={100} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>RECOMMEND</text>
@@ -504,11 +497,11 @@ const S4: React.FC<SceneProps> = ({p}) => {
           {stampK > 0.05 && <g transform={`scale(${stampK}) rotate(-10)`}><rect x={-70} y={-16} width={140} height={34} rx={5} fill="none" stroke={C.teal} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.teal}>DECIDED</text></g>}
         </g>
         <Hand x={lerp(930, 790, stampK)} y={lerp(580, 860, Math.min(1, stampK))} s={1.05} rot={180} />
-        {stampK > 0.2 && <g transform="translate(190 640)"><QuestionToken scale={0.8} rot={-8} text="A PERSON DECIDES" /><path d="M 18,-60 l 10,16" stroke={C.ink} strokeWidth={5} /></g>}
-        <Plate x={540} y={563} text="STEPHANIE ERICKSON · UA SPECIAL PROJECTS LEAD" size={24} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={563} text="THE CORE IDEA" size={38} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={563} text="AI RECOMMENDS" size={38} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={563} text="A PERSON DECIDES" size={38} tone="glow" p={vis(f, b, K, 3)} />
+        {stampK > 0.2 && <Tok x={190} y={640} s={0.8} rot={-8} text="A PERSON|DECIDES" />}
+        <Plate x={540} y={567} text="STEPHANIE ERICKSON · UA SPECIAL PROJECTS LEAD" size={24} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={636} text="THE CORE IDEA" size={38} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={712} text="AI RECOMMENDS" size={38} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={788} text="A PERSON DECIDES" size={38} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -532,7 +525,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <rect x={-100} y={-70} width={200} height={140} rx={6} fill={C.white} stroke={C.ink} strokeWidth={6} />
           <text y={-34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>OP-ED</text>
           <path d="M -80,-10 H 80 M -80,10 H 80 M -80,30 H 40" stroke={C.ink} strokeWidth={5} opacity={0.35} />
-          {head > 0.05 && <g transform={`scale(${head}) rotate(-6)`}><rect x={-84} y={-20} width={168} height={34} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={4} /><text y={5} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.ink}>THE OP-ED SAYS</text></g>}
+          {head > 0.05 && <g transform={`scale(${head}) rotate(-6)`}><rect x={-84} y={-24} width={168} height={14} rx={4} fill={C.mag} opacity={0.0} /></g>}
         </g>
         <g transform={`translate(${lerp(640, 520, cal)} ${lerp(1250, 760, cal)}) rotate(3)`} opacity={clamp01(cal * 2)}>
           <rect x={-80} y={-70} width={160} height={140} rx={8} fill={C.white} stroke={C.ink} strokeWidth={6} />
@@ -542,12 +535,11 @@ const S5: React.FC<SceneProps> = ({p}) => {
         </g>
         <Chatbot f={f} x={830} y={980} s={1.0} mood="focused" pencil={false} tag={tag} />
         <g transform="translate(930 1140) rotate(-18)" opacity={tag}><rect x={-60} y={-5} width={120} height={10} rx={3} fill={C.glow} stroke={C.ink} strokeWidth={3} /></g>
-        <g transform="translate(830 1230)"><QuestionToken scale={crack > 0.5 ? 0.9 : 0.75} rot={crack > 0.5 ? -6 : 0} text={crack > 0.5 ? 'NOT DISCLOSED' : 'WHO WROTE THIS?'} /></g>
-        {crack > 0.02 && <path d="M 810,1170 l 12,22 l -10,14 l 14,28" stroke={C.ink} strokeWidth={5} fill="none" opacity={crack} />}
-        <Plate x={540} y={563} text="OP-ED · UAA PROFESSORS" size={30} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={563} text="THE OP-ED SAYS" size={36} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={563} displayLines={['CLAUDE · FIRST DRAFT, PER THE OP-ED', 'THIS FILM IS ALSO BUILT ON CLAUDE']} text="CLAUDE FIRST DRAFT PER THE OP-ED THIS FILM IS ALSO BUILT ON CLAUDE" size={22} tone="warn" p={vis(f, b, K, 2)} />
-        <Plate x={540} y={590} displayLines={['OP-ED CLAIM', 'NOT DISCLOSED UNTIL OCT 9TH']} text="OP-ED CLAIM NOT DISCLOSED UNTIL OCT 9TH" size={28} tone="warn" p={vis(f, b, K, 3)} />
+        <Tok x={830} y={1230} s={crack > 0.5 ? 0.9 : 0.75} rot={crack > 0.5 ? -6 : 0} text={crack > 0.5 ? 'NOT|DISCLOSED' : 'WHO WROTE|THIS?'} />
+        <Plate x={540} y={570} text="OP-ED · UAA PROFESSORS" size={30} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={641} text="THE OP-ED SAYS" size={36} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={727} displayLines={['CLAUDE · FIRST DRAFT, PER THE OP-ED', 'THIS FILM IS ALSO BUILT ON CLAUDE']} text="CLAUDE FIRST DRAFT PER THE OP-ED THIS FILM IS ALSO BUILT ON CLAUDE" size={22} tone="warn" p={vis(f, b, K, 2)} />
+        <Plate x={540} y={831} displayLines={['OP-ED CLAIM', 'NOT DISCLOSED UNTIL OCT 9TH']} text="OP-ED CLAIM NOT DISCLOSED UNTIL OCT 9TH" size={28} tone="warn" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -565,7 +557,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.04} z1={1.1} oy={950}>
       <SVG>
-        <Sheet x={540} y={960} s={1.45} title="OP-ED QUOTE" strip={false} />
+        <Sheet x={540} y={960} s={1.45} title="" strip={false} />
         <Typed x={300} y={830} rows={QUOTE} k={type} size={31} fill={C.ink} />
         {ul > 0.02 && <rect x={300} y={922} width={168 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
@@ -578,10 +570,10 @@ const S6: React.FC<SceneProps> = ({p}) => {
             <g transform="translate(190 20)"><rect x={-60} y={0} width={120} height={14} rx={6} fill={C.gold} stroke={C.ink} strokeWidth={4} /><g transform="translate(0 -44) scale(0.45)"><Hand x={0} y={-20} s={0.8} rot={0} /></g></g>
           </g>
         </g>}
-        <Plate x={540} y={500} text="HARTLEY AND POTTER · OP-ED QUOTE" size={24} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="AI SPEAKS FIRST" size={36} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={500} text={'"THE HARMFUL PRECEDENT"'} size={30} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={500} text="CHATBOT'S AUTHORITY · HUMAN WISDOM" size={24} tone="glow" p={vis(f, b, K, 3)} />
+        <Plate x={540} y={567} text="HARTLEY AND POTTER · OP-ED QUOTE" size={24} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={635} text="AI SPEAKS FIRST" size={36} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={706} text={'"THE HARMFUL PRECEDENT"'} size={30} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={771} text="CHATBOT'S AUTHORITY · HUMAN WISDOM" size={24} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -624,11 +616,11 @@ const S7: React.FC<SceneProps> = ({p}) => {
           })}
           <Lab text="WHO WASN'T THERE?" x={540} y={1200} size={26} tone="plate" p={pull} />
         </g>
-        {taped > 0.02 && <g transform="translate(170 640)" opacity={taped}><QuestionToken scale={0.75} text="WHO WAS THERE?" /><rect x={-40} y={-14} width={80} height={22} fill="#F2E4B8" opacity={0.85} transform="rotate(-24)" /></g>}
-        <Plate x={540} y={500} text="REBUTTAL · 5 UA FACULTY · NOV 5TH" size={24} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="THEY SAY · IN PLAIN SIGHT" size={30} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={505} displayLines={['"IN THIS CASE, AI USE WAS', "NOT 'CONCEALED.'\""]} text="IN THIS CASE AI USE WAS NOT CONCEALED" size={26} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={505} displayLines={['ANYONE WHO MET WITH', 'ADMINISTRATORS KNEW']} text="ANYONE WHO MET WITH ADMINISTRATORS KNEW" size={28} tone="glow" p={vis(f, b, K, 3)} />
+        {taped > 0.02 && <g opacity={taped}><Tok x={140} y={1240} s={0.6} text="WHO WAS|THERE?" /></g>}
+        <Plate x={540} y={567} text="REBUTTAL · 5 UA FACULTY · NOV 5TH" size={24} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={632} text="THEY SAY · IN PLAIN SIGHT" size={30} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={719} displayLines={['"IN THIS CASE, AI USE WAS', "NOT 'CONCEALED.'\""]} text="IN THIS CASE AI USE WAS NOT CONCEALED" size={26} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={827} displayLines={['ANYONE WHO MET WITH', 'ADMINISTRATORS KNEW']} text="ANYONE WHO MET WITH ADMINISTRATORS KNEW" size={28} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -655,9 +647,9 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <rect x={-120} y={-50} width={240} height={90} rx={10} fill="none" stroke={C.mag} strokeWidth={6} strokeDasharray="14 10" />
           <text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={48} fill={C.mag}>?</text>
         </g>
-        <Plate x={540} y={500} text="THE FAIR PART" size={36} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="BOTH SIDES AGREE · AI WAS USED" size={26} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={500} text="HIDDEN?" size={44} tone="warn" p={vis(f, b, K, 2)} />
+        <Plate x={540} y={573} text="THE FAIR PART" size={36} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={642} text="BOTH SIDES AGREE · AI WAS USED" size={26} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={715} text="HIDDEN?" size={44} tone="warn" p={vis(f, b, K, 2)} />
       </SVG>
     </Frame>
   );
@@ -682,16 +674,16 @@ const S9: React.FC<SceneProps> = ({p}) => {
             return <circle key={i} cx={cx} cy={cy} r={lit && gl > 0.3 ? 6.5 : 5} fill={lit && gl > 0.3 ? C.glow : C.teal} opacity={0.9} />;
           })}
         </g>
-        {blank > 0.02 && <g transform="translate(880 1180)" opacity={blank}><QuestionToken scale={0.7} text="?" /><rect x={-110} y={74} width={220} height={34} rx={5} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /></g>}
+        {blank > 0.02 && <g transform="translate(880 1180)" opacity={blank}><Tok x={0} y={0} s={0.7} text="?" /><rect x={-110} y={74} width={220} height={34} rx={5} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /></g>}
         <g transform={`translate(520 ${lerp(1500, 1080, card)}) scale(${card})`} opacity={clamp01(card * 2)}>
           <rect x={-290} y={-52} width={580} height={104} rx={12} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.ink}>CITED CASES</text>
           <text y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.ink}>NOT ALL CASES</text>
         </g>
-        <Plate x={540} y={500} text="10,500+ UAA STUDENTS" size={32} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="119 CITED" size={38} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={500} text="119 OF 10,500+ · ABOUT 1.1%" size={26} tone="glow" p={vis(f, b, K, 2)} />
-        <Plate x={540} y={500} text="CITED CASES, NOT ALL CASES" size={26} p={vis(f, b, K, 3)} />
+        <Plate x={540} y={571} text="10,500+ UAA STUDENTS" size={32} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={644} text="119 CITED" size={38} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={714} text="119 OF 10,500+ · ABOUT 1.1%" size={26} tone="glow" p={vis(f, b, K, 2)} />
+        <Plate x={540} y={778} text="CITED CASES, NOT ALL CASES" size={26} p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -708,18 +700,18 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.04} z1={1.12} oy={960}>
       <SVG>
-        <Sheet x={620} y={900} s={lerp(1.3, 0.85, back)} title="AI ENGAGED" strip fill={fill} pencil={fill < 1} lit={f >= b(27)} thick={back} f={f} />
+        <Sheet x={620} y={900} s={lerp(1.3, 0.85, back)} title="" strip fill={fill} pencil={fill < 1} lit={f >= b(27)} thick={back} f={f} />
         <StampBot f={f} x={170} y={1030} reject={stampK > 0.2 ? 1 : 0} />
-        {stampK > 0.05 && <g transform={`translate(${lerp(620, 600, back)} ${lerp(1090, 1020, back)}) rotate(-9) scale(${stampK * lerp(1, 0.7, back)})`}><rect x={-190} y={-44} width={380} height={88} rx={8} fill="none" stroke={C.mag} strokeWidth={10} /><text y={20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill={C.mag}>DISCLOSED</text></g>}
+        {stampK > 0.05 && <g transform={`translate(${lerp(640, 600, back)} ${lerp(1010, 930, back)}) rotate(-9) scale(${stampK * lerp(1, 0.7, back)})`}><rect x={-190} y={-44} width={380} height={88} rx={8} fill="none" stroke={C.mag} strokeWidth={10} /><text y={20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill={C.mag}>DISCLOSED</text></g>}
         <g opacity={loop}>
           <path d="M 300,1150 C 80,1300 70,860 230,770" fill="none" stroke={C.glow} strokeWidth={10} strokeDasharray="18 12" />
           <g transform="translate(240 730) rotate(-6)"><rect x={-110} y={-30} width={220} height={60} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>AI RECOMMENDS</text></g>
         </g>
-        <g transform="translate(900 640)"><QuestionToken scale={0.85} glow={fill > 0.98 ? 1 : 0} text={fill > 0.98 ? 'DISCLOSED' : '?'} /></g>
-        <Plate x={540} y={500} displayLines={['OUR SUGGESTION', 'DRAFTED WITH AI · DECIDED BY PEOPLE']} text="OUR SUGGESTION DRAFTED WITH AI DECIDED BY PEOPLE" size={24} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="ONE LINE" size={44} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={500} text="DISCLOSED" size={44} tone="warn" p={vis(f, b, K, 2)} />
-        <Plate x={540} y={500} text="THE PLAN'S OWN RULE" size={32} tone="glow" p={vis(f, b, K, 3)} />
+        <Tok x={900} y={640} s={0.85} glow={fill > 0.98 ? 1 : 0} text={fill > 0.98 ? 'DISCLOSED' : '?'} />
+        <Plate x={540} y={587} displayLines={['OUR SUGGESTION', 'DRAFTED WITH AI · DECIDED BY PEOPLE']} text="OUR SUGGESTION DRAFTED WITH AI DECIDED BY PEOPLE" size={24} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={679} text="ONE LINE" size={44} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={761} text="DISCLOSED" size={44} tone="warn" p={vis(f, b, K, 2)} />
+        <Plate x={540} y={837} text="THE PLAN'S OWN RULE" size={32} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -735,19 +727,19 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.03} z1={1.1} oy={960}>
       <SVG>
-        <Sheet x={250} y={940} s={0.74} title="AI ENGAGED" strip f={f} />
-        <g transform={`translate(${290 + 8 * Math.sin(f / 15)} ${lerp(500, 640, tag)}) rotate(${4 * Math.sin(f / 18)})`} opacity={tag}>
-          <path d="M 0,-80 V 0" stroke={C.ink} strokeWidth={5} />
+        <Sheet x={250} y={940} s={0.74} title="" strip f={f} />
+        <g transform={`translate(${250 + 8 * Math.sin(f / 15)} ${lerp(1060, 1130, tag)}) rotate(${4 * Math.sin(f / 18)})`} opacity={tag}>
+          <path d="M 0,-24 V 0" stroke={C.ink} strokeWidth={5} />
           <rect x={-130} y={0} width={260} height={92} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.ink}>{fillTxt > 0.3 ? 'NO DECISION' : ''}</text>
           <text y={64} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.ink}>{fillTxt > 0.7 ? 'REPORTED' : ''}</text>
         </g>
         <StampBot f={f} x={560} y={1060} reject={ease(f, b(41), 14) * 0.5} />
         <Chatbot f={f} x={850} y={960} s={1.15} mood="focused" stamp={st} />
-        <Plate x={540} y={500} text="NO DECISION REPORTED" size={30} p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="NO RESULT ON THE PLAN" size={30} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={500} text="ONE MORE DISCLOSURE" size={34} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={500} text="THIS FILM · BUILT ON CLAUDE" size={28} tone="warn" p={vis(f, b, K, 3)} />
+        <Plate x={540} y={570} text="NO DECISION REPORTED" size={30} p={vis(f, b, K, 0)} />
+        <Plate x={540} y={638} text="NO RESULT ON THE PLAN" size={30} p={vis(f, b, K, 1)} />
+        <Plate x={540} y={708} text="ONE MORE DISCLOSURE" size={34} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={777} text="THIS FILM · BUILT ON CLAUDE" size={28} tone="warn" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -762,12 +754,12 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.03} z1={1.1} oy={900}>
       <SVG>
-        <Essay x={640} y={1050} s={1.0} foot />
-        <g transform={`translate(0 ${-60 * lift})`}><StampBot f={f} x={290} y={1050} reject={0} /></g>
+        <Essay x={640} y={1095} s={1.0} foot />
+        <g transform={`translate(0 ${-60 * lift})`}><StampBot f={f} x={290} y={1095} reject={0} /></g>
         <g transform={`translate(0 ${lerp(-600, 0, drop)})`} opacity={clamp01(drop * 2)}><Sheet x={880} y={1000} s={0.5} rot={6} title="PLAN" strip fill={1} pencil f={f} /></g>
-        <g transform="translate(880 700)"><QuestionToken scale={0.9} glow={0.5 + 0.5 * Math.sin(f / 7)} text="ONE LINE?" /></g>
-        <Plate x={540} y={500} displayLines={['ONE LINE', 'OR WHO WAS THERE?']} text="ONE LINE OR WHO WAS THERE?" size={34} tone="glow" p={vis(f, b, K, 0)} />
-        <Plate x={540} y={500} text="SHOWS ITS WORK" size={34} p={vis(f, b, K, 1)} />
+        <Tok x={880} y={700} s={0.9} glow={0.5 + 0.5 * Math.sin(f / 7)} text="ONE|LINE?" />
+        <Plate x={540} y={597} displayLines={['ONE LINE', 'OR WHO WAS THERE?']} text="ONE LINE OR WHO WAS THERE?" size={34} tone="glow" p={vis(f, b, K, 0)} />
+        <Plate x={540} y={694} text="SHOWS ITS WORK" size={34} p={vis(f, b, K, 1)} />
       </SVG>
     </Frame>
   );
