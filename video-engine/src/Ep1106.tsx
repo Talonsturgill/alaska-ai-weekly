@@ -169,6 +169,8 @@ const Atmos: React.FC<{f: number; bg: string}> = ({f, bg}) => {
         <g transform="translate(960 1280)"><rect x={-34} y={-44} width={68} height={70} rx={10} fill="#E3175F" stroke="#1B1230" strokeWidth={4} opacity={0.0} /><rect x={-30} y={-40} width={60} height={64} rx={8} fill="#6B7A86" stroke="#1B1230" strokeWidth={4} /><path d="M -14,-40 l -4,-30 M 0,-40 l 2,-34 M 14,-40 l 6,-28" stroke="#FFC36B" strokeWidth={5} strokeLinecap="round" /></g>
         <g transform="translate(540 1510)"><ellipse rx={150} ry={14} fill="#000" opacity={0.2} /></g>
         <g transform="translate(980 1470) rotate(8)"><rect x={-50} y={-9} width={100} height={18} rx={4} fill="#F4EBC6" stroke="#1B1230" strokeWidth={3} /></g>
+        <g transform="translate(120 1560)"><rect x={-70} y={-50} width={140} height={22} rx={3} fill="#B7791F" stroke="#1B1230" strokeWidth={4} /><rect x={-60} y={-72} width={124} height={22} rx={3} fill="#2B6CB0" stroke="#1B1230" strokeWidth={4} /><rect x={-66} y={-94} width={128} height={22} rx={3} fill="#C05621" stroke="#1B1230" strokeWidth={4} /></g>
+        <g transform="translate(930 1570)"><path d="M -26,0 h 52 l -8,-46 h -36 z" fill="#C05621" stroke="#1B1230" strokeWidth={4} /><path d="M 0,-46 q -50,-30 -34,-76 q 36,16 34,76 M 0,-46 q 50,-30 34,-76 q -36,16 -34,76" fill="#2F855A" stroke="#1B1230" strokeWidth={4} /></g>
         <g transform="translate(90 1520) rotate(-8)"><rect x={-60} y={-10} width={120} height={20} rx={4} fill="#E8D9A8" stroke="#1B1230" strokeWidth={3} /><rect x={-54} y={-26} width={120} height={20} rx={4} fill="#F4EBC6" stroke="#1B1230" strokeWidth={3} /></g>
       </g>
     </svg>
@@ -181,7 +183,7 @@ const CHIP2 = 'ILLUSTRATION';
 const vis = (f: number, b: (id: number) => number, ks: number[], i: number) => ease(f, b(ks[i]), 14) * (i < ks.length - 1 ? 1 - ease(f, b(ks[i + 1]) - 10, 8) : 1);
 
 /** a cream legal-pad sheet with an optional footnote strip. fill 0..1 types the disclosure line, lit lights the bulb. */
-const Sheet: React.FC<{x: number; y: number; s?: number; rot?: number; title?: string; strip?: boolean; fill?: number; lit?: boolean; f?: number; pencil?: boolean; thick?: number; smudge?: number}> = ({x, y, s = 1, rot = 0, title = 'AI ENGAGED', strip = true, fill = 0, lit = false, f = 0, pencil = false, thick = 0, smudge = 0}) => {
+const Sheet: React.FC<{x: number; y: number; s?: number; rot?: number; title?: string; strip?: boolean; fill?: number; lit?: boolean; f?: number; pencil?: boolean; thick?: number; smudge?: number; ruled?: boolean}> = ({x, y, s = 1, rot = 0, title = 'AI ENGAGED', strip = true, fill = 0, lit = false, f = 0, pencil = false, thick = 0, smudge = 0, ruled = true}) => {
   const line = 'AI HELPED DRAFT · A PERSON DECIDED';
   const shown = line.slice(0, Math.round(line.length * clamp01(fill)));
   return (
@@ -192,7 +194,7 @@ const Sheet: React.FC<{x: number; y: number; s?: number; rot?: number; title?: s
       <rect x={-170} y={-230} width={340} height={46} rx={10} fill={C.cream} stroke={C.ink} strokeWidth={7} />
       <text x={0} y={-198} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={2} fill={C.ink}>{title}</text>
       {smudge > 0.01 && <ellipse cx={128} cy={-196} rx={22 * smudge} ry={9 * smudge} fill="#3B3B46" opacity={0.55} />}
-      {Array.from({length: 8}).map((_, i) => <path key={i} d={`M -140,${-140 + i * 36} H ${i % 3 === 2 ? 60 : 140}`} stroke={C.teal} strokeWidth={5} opacity={0.35} />)}
+      {ruled && Array.from({length: 8}).map((_, i) => <path key={i} d={`M -140,${-140 + i * 36} H ${i % 3 === 2 ? 60 : 140}`} stroke={C.teal} strokeWidth={5} opacity={0.35} />)}
       {strip && (
         <g transform="translate(0 190)">
           <rect x={-150} y={-24} width={300} height={48} rx={6} fill={fill > 0 ? '#FFFFFF' : 'none'} stroke={pencil ? '#5A5A66' : C.ink} strokeWidth={4} strokeDasharray={fill > 0.98 && !pencil ? '0' : '10 8'} />
@@ -218,7 +220,7 @@ const Essay: React.FC<{x: number; y: number; s?: number; rot?: number; rejected?
     {rejected > 0.01 && (
       <g transform={`rotate(-14) scale(${0.8 + 0.2 * clamp01(rejected)})`} opacity={clamp01(rejected * 2)}>
         <rect x={-100} y={-34} width={200} height={68} rx={6} fill="none" stroke={C.mag} strokeWidth={8} />
-        <text y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={36} fill={C.mag}>REJECTED</text>
+        <text y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={36} fill={C.mag}>CITED</text>
       </g>
     )}
   </g>
@@ -254,23 +256,44 @@ const Chatbot: React.FC<{f: number; x: number; y: number; s?: number; mood?: 'fo
 };
 
 /** a person: round head, coloured shirt, optional crossed arms, optional held paper. */
-const Person: React.FC<{x: number; y: number; s?: number; shirt?: string; skin?: string; arms?: 'crossed' | 'down' | 'up'; label?: string; f?: number; seed?: number; mood?: 'calm' | 'stern'}> = ({x, y, s = 1, shirt = C.teal, skin = '#E7B58F', arms = 'down', label, f = 0, seed = 0, mood = 'calm'}) => (
-  <g transform={`translate(${x} ${y + 3 * Math.sin(f / 21 + seed)}) scale(${s})`}>
-    <ellipse cx={0} cy={140} rx={62} ry={10} fill="#000" opacity={0.35} />
-    <rect x={-48} y={-10} width={96} height={146} rx={30} fill={shirt} stroke={C.ink} strokeWidth={7} />
-    <circle cy={-52} r={40} fill={skin} stroke={C.ink} strokeWidth={7} />
-    <path d="M -40,-66 q 40,-44 80,0 q -40,-14 -80,0 Z" fill="#3A2218" stroke={C.ink} strokeWidth={4} />
-    {[-14, 14].map((ex, i) => <circle key={i} cx={ex} cy={-50} r={4.5} fill={C.ink} />)}
-    <path d={mood === 'stern' ? 'M -12,-30 h 24' : 'M -14,-32 q 14,10 28,0'} stroke={C.ink} strokeWidth={4} fill="none" strokeLinecap="round" />
-    {arms === 'crossed' && <g><path d="M -52,30 q 52,28 104,-4" fill="none" stroke={shirt} strokeWidth={26} strokeLinecap="round" /><path d="M -52,30 q 52,28 104,-4" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" opacity={0.5} /></g>}
-    {arms === 'up' && <path d="M 48,10 L 90,-40" stroke={shirt} strokeWidth={24} strokeLinecap="round" />}
-    {label && <text y={168} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={C.paper}>{label}</text>}
-  </g>
-);
+const HAIR = ['#3A2218', '#1B1230', '#8A5A2B', '#B8B8C0', '#5A2D14'];
+const Person: React.FC<{x: number; y: number; s?: number; shirt?: string; skin?: string; arms?: 'crossed' | 'down' | 'up'; label?: string; f?: number; seed?: number; mood?: 'calm' | 'stern'}> = ({x, y, s = 1, shirt = C.teal, skin = '#E7B58F', arms = 'down', label, f = 0, seed = 0, mood = 'calm'}) => {
+  const hair = HAIR[Math.abs(Math.round(seed * 3)) % HAIR.length];
+  const glasses = Math.abs(Math.round(seed * 5)) % 2 === 1;
+  const breathe = 1 + 0.014 * Math.sin(f / 16 + seed);
+  const nod = 2.2 * Math.sin(f / 31 + seed * 2);
+  const blink = ((f + Math.round(seed * 40)) % 130) > 124 ? 0.15 : 1;
+  const sway = arms === 'up' ? 8 * Math.sin(f / 14 + seed) : 0;
+  return (
+    <g transform={`translate(${x} ${y + 3 * Math.sin(f / 21 + seed)}) scale(${s})`}>
+      <ellipse cx={0} cy={140} rx={62} ry={10} fill="#000" opacity={0.4} />
+      <ellipse cx={0} cy={138} rx={44} ry={6} fill="#000" opacity={0.25} />
+      <g transform={`scale(1 ${breathe})`} style={{transformOrigin: '0px 136px'}}>
+        <rect x={-48} y={-10} width={96} height={146} rx={30} fill={shirt} stroke={C.ink} strokeWidth={7} />
+        <path d="M -30,-6 q 30,26 60,0" fill="#F4EBC6" stroke={C.ink} strokeWidth={4} />
+        <path d="M -40,6 q 6,60 4,110" stroke="#FFFFFF" strokeWidth={5} opacity={0.22} fill="none" />
+        <path d="M 40,6 q -4,60 -2,110" stroke="#000" strokeWidth={6} opacity={0.2} fill="none" />
+      </g>
+      <g transform={`rotate(${nod} 0 -10)`}>
+        <circle cy={-52} r={40} fill={skin} stroke={C.ink} strokeWidth={7} />
+        <path d="M -40,-58 q 40,-52 80,0 q -40,-16 -80,0 Z" fill={hair} stroke={C.ink} strokeWidth={4} />
+        <path d="M -24,-84 q 12,-8 26,-6" stroke="#FFFFFF" strokeWidth={4} opacity={0.3} fill="none" />
+        {[-14, 14].map((ex, i) => <ellipse key={i} cx={ex} cy={-50} rx={4.5} ry={4.5 * blink} fill={C.ink} />)}
+        {glasses && <g fill="none" stroke={C.ink} strokeWidth={3.5}><circle cx={-14} cy={-50} r={10} /><circle cx={14} cy={-50} r={10} /><path d="M -4,-50 h 8" /></g>}
+        <path d={mood === 'stern' ? 'M -12,-30 h 24' : 'M -14,-32 q 14,10 28,0'} stroke={C.ink} strokeWidth={4} fill="none" strokeLinecap="round" />
+      </g>
+      {arms === 'crossed' && <g><path d="M -52,30 q 52,28 104,-4" fill="none" stroke={shirt} strokeWidth={26} strokeLinecap="round" /><path d="M -52,30 q 52,28 104,-4" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" opacity={0.5} /></g>}
+      {arms === 'up' && <g transform={`rotate(${sway} 48 10)`}><path d="M 48,10 L 90,-40" stroke={shirt} strokeWidth={24} strokeLinecap="round" /><circle cx={92} cy={-44} r={13} fill={skin} stroke={C.ink} strokeWidth={4} /></g>}
+      {label && <text y={168} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={C.paper}>{label}</text>}
+    </g>
+  );
+};
 
 const Hand: React.FC<{x: number; y: number; s?: number; rot?: number}> = ({x, y, s = 1, rot = 0}) => (
   <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <rect x={-30} y={0} width={60} height={160} rx={26} fill="#E7B58F" stroke={C.ink} strokeWidth={6} />
+    <rect x={-34} y={60} width={68} height={120} rx={14} fill={C.dash} stroke={C.ink} strokeWidth={6} />
+    <rect x={-30} y={0} width={60} height={90} rx={26} fill="#E7B58F" stroke={C.ink} strokeWidth={6} />
+    <path d="M -22,10 q -2,40 0,70" stroke="#FFFFFF" strokeWidth={4} opacity={0.3} fill="none" />
     <rect x={-44} y={-40} width={88} height={64} rx={26} fill="#E7B58F" stroke={C.ink} strokeWidth={6} />
     {[-28, -9, 10, 28].map((fx, i) => <path key={i} d={`M ${fx},-38 v -22`} stroke={C.ink} strokeWidth={3} />)}
   </g>
@@ -294,7 +317,7 @@ const Tok: React.FC<{x: number; y: number; s?: number; text: string; glow?: numb
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
       <QuestionToken text="" glow={glow} />
-      {rows.map((r, i) => <text key={i} x={0} y={(i - (rows.length - 1) / 2) * 20 + 6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={r.length > 8 ? 13 : 16} fill={C.ink}>{r}</text>)}
+      {rows.map((r, i) => <text key={i} x={0} y={(i - (rows.length - 1) / 2) * 26 + 6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={r.length > 8 ? 13 : 16} fill={C.ink}>{r}</text>)}
     </g>
   );
 };
@@ -464,14 +487,15 @@ const S3: React.FC<SceneProps> = ({p}) => {
         </g>
         {one > 0.02 && <g transform={`translate(${lerp(1200, 860, one)} 1040)`}><rect x={-60} y={10} width={120} height={36} rx={6} fill={C.teal} stroke={C.ink} strokeWidth={5} /><rect x={-50} y={-50} width={100} height={52} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-16} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>NO AI</text></g>}
         <g opacity={pull} transform={`translate(540 880) scale(${lerp(2.2, 1, pull)}) translate(-540 -880)`}>
-          {Array.from({length: 100}).map((_, i) => {
-            const cx = 150 + (i % 10) * 86, cy = 640 + Math.floor(i / 10) * 56;
-            const sg = SIGNS[(i * 7) % SIGNS.length];
-            const ask = i === 53;
+          {Array.from({length: 35}).map((_, i) => {
+            const cx = 150 + (i % 7) * 130, cy = 640 + Math.floor(i / 7) * 110;
+            const sg = SIGNS[(i * 3) % SIGNS.length];
+            const ask = i === 17;
             return <g key={i} transform={`translate(${cx} ${cy})`}>
-              <rect x={-30} y={4} width={60} height={22} rx={4} fill={C.teal} stroke={C.ink} strokeWidth={3} />
-              <rect x={-26} y={-24} width={52} height={26} rx={3} fill={ask ? C.glow : C.paper} stroke={C.ink} strokeWidth={3} />
-              <text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={8} fill={C.ink}>{ask ? 'ASK ME' : sg}</text>
+              <ellipse cx={0} cy={44} rx={50} ry={7} fill="#000" opacity={0.3} />
+              <rect x={-48} y={6} width={96} height={34} rx={5} fill={C.teal} stroke={C.ink} strokeWidth={4} />
+              <rect x={-44} y={-34} width={88} height={40} rx={4} fill={ask ? C.glow : C.paper} stroke={C.ink} strokeWidth={4} />
+              <text y={-8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={C.ink}>{ask ? 'ASK ME' : sg}</text>
             </g>;
           })}
         </g>
@@ -505,8 +529,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {idea > 0.02 && <g transform={`translate(640 ${lerp(960, 930, idea)})`} opacity={idea}><rect x={-120} y={-30} width={240} height={60} rx={8} fill={C.glow} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>THE CORE IDEA</text></g>}
         <g transform={`translate(${noteX} ${1090 + 5 * Math.sin(f / 7)}) rotate(${lerp(-6, 4, slide)})`} opacity={slide > 0.01 ? 1 : 0}>
           <rect x={-90} y={-50} width={180} height={100} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
-          <text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>RECOMMEND</text>
-          <path d="M -60,16 H 60 M -60,34 H 30" stroke={C.teal} strokeWidth={4} opacity={0.5} />
+          <text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink} opacity={1 - clamp01(stampK * 2.5)}>RECOMMEND</text>
+          <path d="M -60,16 H 60 M -60,34 H 30" stroke={C.teal} strokeWidth={4} opacity={0.5 * (1 - clamp01(stampK * 2.5))} />
           {stampK > 0.05 && <g transform={`scale(${stampK}) rotate(-10)`}><rect x={-70} y={-16} width={140} height={34} rx={5} fill="none" stroke={C.teal} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.teal}>DECIDED</text></g>}
         </g>
         <Hand x={lerp(930, 790, stampK)} y={lerp(580, 860, Math.min(1, stampK))} s={1.05} rot={180} />
@@ -570,8 +594,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.04} z1={1.1} oy={950}>
       <SVG>
-        <Sheet x={540} y={960} s={1.45} title="" strip={false} />
-        <Typed x={300} y={830} rows={QUOTE} k={type} size={31} fill={C.ink} />
+        <Sheet x={540} y={960} s={1.45} title="" strip={false} ruled={false} />
+        <Typed x={318} y={830} rows={QUOTE} k={type} size={31} fill={C.ink} />
         {ul > 0.02 && <rect x={300} y={922} width={168 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
         <StampBot f={f} x={190} y={1100} reject={0} />
@@ -595,13 +619,14 @@ const S6: React.FC<SceneProps> = ({p}) => {
 // ---- S7: the rebuttal, then a neutral hallway ---------------------------------------------------------------------------------------------
 const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [18, 37, 19, 20];
+  const K = [18, 37, 19, 20, 48];
   const room = ease(f, b(18), 20);
   const draft = easeIO(f, b(37), 30);
   const bubble = ease(f, b(19), 18);
   const pull = easeIO(f, b(20), 36);
   const type = clamp01((f - b(19)) / 60);
   const taped = ease(f, b(19) + 10, 20);
+  const marks = ease(f, b(48), 16);
   const shirts = ['#2B6CB0', '#7A3FA0', '#2F855A', '#B7791F', '#C05621'];
   return (
     <Frame p={p} z0={1.03} z1={1.1} oy={960} warmth={0.06}>
@@ -613,12 +638,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <g transform={`translate(${lerp(240, 760, draft)} 1090)`} opacity={draft > 0.01 ? 1 : 0}>
             <rect x={-60} y={-34} width={120} height={68} rx={4} fill={C.white} stroke={C.ink} strokeWidth={4} />
             <path d="M -42,-12 H 42 M -42,6 H 42 M -42,22 H 10" stroke={C.ink} strokeWidth={3} opacity={0.4} />
-            <path d="M 18,-24 l 30,10 M 6,0 l 36,8" stroke={C.glow} strokeWidth={5} />
-          </g>
-          <g transform="translate(540 650)" opacity={bubble}>
-            <rect x={-330} y={-76} width={660} height={140} rx={34} fill={C.paper} stroke={C.ink} strokeWidth={6} />
-            <path d="M -30,64 l 20,40 l 30,-40 Z" fill={C.paper} stroke={C.ink} strokeWidth={6} />
-            <Typed x={-300} y={-22} rows={['"In this case, AI use was not', "'concealed.'\""]} k={type} size={28} />
+            <path d="M 18,-24 l 30,10 M 6,0 l 36,8" stroke={C.glow} strokeWidth={5 + 4 * marks} />
           </g>
         </g>
         <g opacity={pull}>
@@ -627,13 +647,14 @@ const S7: React.FC<SceneProps> = ({p}) => {
             const filled = i % 3 === 0;
             return <g key={i} transform={`translate(${cx} ${cy})`}><rect x={-32} y={-34} width={64} height={58} rx={12} fill={C.teal} stroke={C.ink} strokeWidth={5} /><rect x={-26} y={22} width={52} height={14} rx={5} fill={C.dash} stroke={C.ink} strokeWidth={4} />{filled && <circle cy={-48} r={22} fill="#E7B58F" stroke={C.ink} strokeWidth={4} />}</g>;
           })}
-          <Lab text="WHO WASN'T THERE?" x={540} y={1200} size={26} tone="plate" p={pull} />
+
         </g>
         {taped > 0.02 && <g opacity={taped}><Tok x={140} y={1240} s={0.6} text="WHO WAS|THERE?" /></g>}
         <Plate x={540} y={567} text="REBUTTAL · 5 UA FACULTY · NOV 5TH" size={24} p={vis(f, b, K, 0)} />
         <Plate x={540} y={632} text="THEY SAY · IN PLAIN SIGHT" size={30} p={vis(f, b, K, 1)} />
         <Plate x={540} y={719} displayLines={['"IN THIS CASE, AI USE WAS', "NOT 'CONCEALED.'\""]} text="IN THIS CASE AI USE WAS NOT CONCEALED" size={26} p={vis(f, b, K, 2)} />
         <Plate x={540} y={827} displayLines={['ANYONE WHO MET WITH', 'ADMINISTRATORS KNEW']} text="ANYONE WHO MET WITH ADMINISTRATORS KNEW" size={28} tone="glow" p={vis(f, b, K, 3)} />
+        <Plate x={540} y={900} text="THE FIRST DRAFT" size={34} tone="glow" p={vis(f, b, K, 4)} />
       </SVG>
     </Frame>
   );
@@ -680,11 +701,11 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.02} z1={1.06} oy={960} bg="#7A3A14">
       <SVG>
         <g transform={`translate(540 880) scale(${sc}) translate(-540 -880)`}>
-          {Array.from({length: 52 * 30}).map((_, i) => {
-            const cx = 70 + (i % 52) * 18.5, cy = 600 + Math.floor(i / 52) * 17;
-            const inBox = (i % 52) >= 22 && (i % 52) < 33 && Math.floor(i / 52) >= 12 && Math.floor(i / 52) < 23;
-            const lit = inBox && ((i * 7) % 11 < 10);
-            return <circle key={i} cx={cx} cy={cy} r={lit && gl > 0.3 ? 6.5 + 1.6 * Math.sin(f / 5 + i) : 5 + 0.5 * Math.sin(f / 17 + i)} fill={lit && gl > 0.3 ? C.glow : C.teal} opacity={0.9} />;
+          <defs><pattern id="field" x="0" y="0" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="2.2" fill={C.teal} /></pattern></defs>
+          <rect x={70} y={600} width={940} height={520} rx={6} fill="url(#field)" />
+          {Array.from({length: 119}).map((_, i) => {
+            const cx = 82 + ((i * 337) % 910), cy = 612 + ((i * 211 + (i % 7) * 53) % 495);
+            return <circle key={i} cx={cx} cy={cy} r={gl > 0.3 ? 5.5 + 1.8 * Math.sin(f / 5 + i) : 2.2} fill={gl > 0.3 ? C.glow : C.teal} stroke={gl > 0.3 ? C.ink : 'none'} strokeWidth={1.5} />;
           })}
         </g>
         {blank > 0.02 && <g transform="translate(880 1180)" opacity={blank}><Tok x={0} y={0} s={0.7} text="?" /><rect x={-110} y={74} width={220} height={34} rx={5} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /></g>}
@@ -715,7 +736,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Sheet x={620} y={900} s={lerp(1.3, 0.85, back)} title="" strip fill={fill} pencil={fill < 1} lit={f >= b(27)} thick={back} f={f} />
         <StampBot f={f} x={170} y={1030} reject={stampK > 0.2 ? 1 : 0} />
-        {stampK > 0.05 && <g transform={`translate(${lerp(640, 600, back)} ${lerp(1010, 930, back)}) rotate(-9) scale(${stampK * lerp(1, 0.7, back)})`}><rect x={-190} y={-44} width={380} height={88} rx={8} fill="none" stroke={C.mag} strokeWidth={10} /><text y={20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill={C.mag}>DISCLOSED</text><text y={78} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>IF ADOPTED</text></g>}
+        {stampK > 0.05 && <g transform={`translate(${lerp(660, 620, back)} ${lerp(1010, 930, back)}) rotate(-7) scale(${stampK * lerp(1, 0.8, back)})`}><rect x={-170} y={-52} width={340} height={104} rx={6} fill="#FFE27A" stroke={C.ink} strokeWidth={6} /><text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>OUR SUGGESTION</text><text y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.mag}>NOT ADOPTED</text></g>}
         <g opacity={loop}>
           <path d="M 300,1150 C 80,1300 70,860 230,770" fill="none" stroke={C.glow} strokeWidth={10} strokeDasharray="18 12" />
           <g transform="translate(240 730) rotate(-6)"><rect x={-110} y={-30} width={220} height={60} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>AI RECOMMENDS</text></g>
@@ -723,7 +744,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Tok x={900} y={640} s={0.85} glow={fill > 0.98 ? 1 : 0} text={fill > 0.98 ? 'PROPOSED' : '?'} />
         <Plate x={540} y={587} displayLines={['OUR SUGGESTION', 'AI HELPED DRAFT · A PERSON DECIDED']} text="OUR SUGGESTION AI HELPED DRAFT A PERSON DECIDED" size={24} p={vis(f, b, K, 0)} />
         <Plate x={540} y={679} text="ONE LINE" size={44} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={761} text="DISCLOSED" size={44} tone="warn" p={vis(f, b, K, 2)} />
+        <Plate x={540} y={761} text="ONE LINE, DISCLOSED" size={34} tone="warn" p={vis(f, b, K, 2)} />
         <Plate x={540} y={837} text="THE PLAN'S OWN RULE" size={32} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
@@ -767,7 +788,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.03} z1={1.1} oy={900}>
       <SVG>
-        <Essay x={640} y={1095} s={1.0} foot />
+        <Essay x={640} y={1095} s={1.0} />
         <g transform={`translate(0 ${-60 * lift})`}><StampBot f={f} x={290} y={1095} reject={0} /></g>
         <g transform={`translate(0 ${lerp(-600, 0, drop)})`} opacity={clamp01(drop * 2)}><Sheet x={880} y={1000} s={0.5} rot={6} title="PLAN" strip fill={1} pencil f={f} /></g>
         <Tok x={880} y={700} s={0.9} glow={0.5 + 0.5 * Math.sin(f / 7)} text="ONE|LINE?" />
