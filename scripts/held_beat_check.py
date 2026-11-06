@@ -210,6 +210,37 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
     return sorted(low, key=lambda x: (x[4], x[0])), measured, straddled
 
 
+TREATMENTS = ("HeldTravel", "HeldProp")
+
+
+def treated_shots(source):
+    """{shot_number: bool} for each `const S<n>: React.FC<SceneProps>` in the episode: True when the
+    shot draws a lib held-motion rig, directly or through a component of the same file that does.
+
+    WHY (machine pass 2026-11-06; queue: held-beats-under-six-percent, repeat 3 after 11-02 and
+    11-06). held_plan named 18 of 48 strips on 11-06 before the render and the panel named 19 after
+    it, and it has named the class on every film since 10-26, but it was a NOTE, and no film from
+    10-24 to 11-06 drew a single HeldTravel or HeldProp. On a scratch copy of Ep1106 two shadow
+    HeldTravels (one on the S6 quote sheet, one over the S7 faculty table) lifted the typewriter
+    (3.4), the pencil marks (2.9) and the faculty (5.1) strips over 6 percent. So the gate does not
+    demand a number, it demands the known remedy where the measure names a held beat: a held strip
+    in a shot that carries no rig fails the source gates. `gain={0}` on a rig is an explicit, visible
+    decision that the stillness is the point, and counts."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from shot_map import scene_bodies
+    src = open(source).read()
+    comps = [(m.group(1), m.start()) for m in re.finditer(r"^const (\w+)\s*:\s*React\.FC", src, re.M)]
+    rigged = set()
+    for i, (name, a) in enumerate(comps):
+        body = src[a:comps[i + 1][1] if i + 1 < len(comps) else len(src)]
+        if not re.match(r"S\d+$", name) and any(f"<{t}" in body for t in TREATMENTS):
+            rigged.add(name)
+    out = {}
+    for name, body in scene_bodies(source).items():
+        out[int(name[1:])] = any(f"<{t}" in body for t in TREATMENTS + tuple(sorted(rigged)))
+    return out
+
+
 def _wholesale(a, b):
     """build_evidence's own cut test: more than 22 percent of a 120 px wide copy moving 40/255."""
     from PIL import ImageChops
@@ -263,6 +294,20 @@ def _self_test():
     assert still < 2.5, f"a pure camera push read {still:.2f}%"
     assert moving > HELD_FLOOR, f"a moving prop read {moving:.2f}%"
     assert caption_only < 0.5, f"a caption change read {caption_only:.2f}%"
+    import tempfile
+    ep = ("const Lamp: React.FC<{f: number}> = ({f}) => <g><HeldTravel f={f} x={0} y={0} w={9} h={9} /></g>;\n"
+          "const Desk: React.FC<{f: number}> = ({f}) => <rect />;\n"
+          "const S1: React.FC<SceneProps> = ({p}) => <g><HeldTravel f={p.f} x={1} y={1} w={2} h={2} /></g>;\n"
+          "const S2: React.FC<SceneProps> = ({p}) => <g><Desk f={p.f} /></g>;\n"
+          "const S3: React.FC<SceneProps> = ({p}) => <g><Lamp f={p.f} /></g>;\n"
+          "const S4: React.FC<SceneProps> = ({p}) => <g><HeldProp f={p.f} gain={0}><Desk f={p.f} /></HeldProp></g>;\n")
+    with tempfile.NamedTemporaryFile("w", suffix=".tsx", delete=False) as fh:
+        fh.write(ep)
+    try:
+        rig = treated_shots(fh.name)
+    finally:
+        os.remove(fh.name)
+    assert rig == {1: True, 2: False, 3: True, 4: True}, f"treated_shots read {rig}"
     print(f"held_beat_check self-test: PASS (push only {still:.2f}%, push plus prop {moving:.2f}%, "
           f"caption only {caption_only:.2f}%)")
     return 0
@@ -333,6 +378,9 @@ def main_source(argv):
     ap.add_argument("--board", default=BOARD)
     ap.add_argument("--held-floor", type=float, default=HELD_FLOOR)
     ap.add_argument("--strict", action="store_true")
+    ap.add_argument("--gate", action="store_true",
+                    help="make_cut's source gate: exit 1 ONLY for a held strip in a shot with no rig, "
+                         "0 otherwise (held but treated, or not measurable, prints and passes)")
     a = ap.parse_args(argv)
     targets = a.targets
     if not targets:
@@ -368,11 +416,25 @@ def main_source(argv):
             print(f"held beats (source): all {measured} planned strips move {a.held_floor:g} percent or "
                   "more with the camera solved out")
             continue
+        try:
+            rig = treated_shots(t)
+        except (OSError, ValueError):
+            rig = {}
+        bare = sorted({shot for _n, _b, shot, _t, _p in low if shot is not None and rig.get(shot) is False})
         # Names first: make_cut keeps the first 200 characters of the last line.
+        if bare:
+            print(f"UNTREATED: {len(low)} of {measured} strips HELD under {a.held_floor:g}% before the render, "
+                  f"and shot(s) {', '.join(f'S{s}' for s in bare)} carry no HeldTravel or HeldProp: "
+                  + ", ".join(f"S{shot} {name} {pct:.1f}" for name, _b, shot, _t, pct in low if shot in bare)
+                  + f" ({REMEDY}; gain={{0}} on the rig if the stillness is the point)")
+            worst = max(worst, 1)
+            continue
         print(f"{len(low)} of {measured} strips HELD under {a.held_floor:g}% before the render: "
               + ", ".join(f"S{shot} {name} {pct:.1f}" for name, _b, shot, _t, pct in low)
               + f" ({REMEDY})")
         worst = max(worst, 1 if a.strict else 2)
+    if a.gate:
+        return 1 if worst == 1 else 0
     return worst
 
 

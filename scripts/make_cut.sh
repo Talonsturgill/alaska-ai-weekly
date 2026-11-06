@@ -123,7 +123,11 @@ step staging          0 python3 scripts/staging_check.py
 # a minute) and name each HELD beat by shot before the full render. Advisory: the NOTE is the work
 # order, a <HeldTravel> on the held thing (lib/heldidle.tsx). On Ep1026 it names the same twelve
 # beats the master-mode measure and the panel did.
-step held_plan        0 python3 scripts/held_beat_check.py --source
+# Machine pass 2026-11-06 (repeat 3): a NOTE nobody acted on. No film from 10-24 to 11-06 drew one
+# HeldTravel or HeldProp, and the 11-06 panel named 19 held strips against held_plan's 18. --gate
+# fails the source gates when a HELD strip sits in a shot that carries no rig (gain={0} on a rig is
+# an explicit opt-out). Held strips in rigged shots stay a NOTE: the remedy, not a number, is owed.
+step held_plan        2 python3 scripts/held_beat_check.py --source --gate
 # Machine pass 2026-11-06, a repeat offender (empty top of the square named by every seat on 10-31,
 # 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
 # 420 to 690); this fails the source gates when the film mean is over the ceiling calibrated on eight

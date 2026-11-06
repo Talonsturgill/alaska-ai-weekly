@@ -76,6 +76,11 @@ document, not of the judge.
   pale sheet or wall, 'runner' with a `path` for a cord, wire or rail. It draws no text and never
   counts as cover over a label. `make_cut.sh` runs `held_beat_check.py --source` before the render
   and its NOTE line names each HELD beat by shot: put a HeldTravel on those, not a bigger camera move.
+  Since the machine pass of 2026-11-06 that step is a GATE (`--source --gate`): a HELD strip in a
+  shot that draws no HeldTravel or HeldProp fails the source gates, because nine films in a row
+  shipped none and the panel named the same strips held_plan had. Two shadow HeldTravels on a
+  scratch copy of Ep1106 lifted three of its held strips (2.9, 3.4, 5.1) over 6 percent. Put
+  `gain={0}` on the rig where the stillness is the point.
 - **The weight shift is applied ABOVE the feet.** Applying it at the character root slides
   the boots and their contact shadows along the ground, which reads as skating. Torso
   carries the full shift, legs about a third, boots stay planted.
