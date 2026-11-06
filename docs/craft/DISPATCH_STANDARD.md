@@ -104,6 +104,14 @@ document, not of the judge.
   `crop=1080:1080:0:420`. Content outside y 420..1500 is free canvas that stages the
   vertical and never appears in the square — use it (atmosphere and ridges above, near
   foreground below). Do not build for the square band and let the rest be padding.
+- **But the free canvas never fills the square's top** (machine pass 2026-11-06, every seat on
+  10-31, 11-02 and 11-06). Both 11-02 and 11-06 answered "empty top third" with a throughline strip
+  at y 150 to 270, which the square crops away, and the square kept a flat wall from y 420 down to
+  the heroes. Stage the hero or the throughline object so its top reaches into y 420 to 690, or
+  scale it up. `dead_space_check.py --plan` (a make_cut source step, from held_plan's Chrome frames)
+  and preflight's required `--top-only` row fail a film whose top quarter of the square is over
+  45 percent low-information, a ceiling between the faulted films (48.7 to 56.6) and the clean ones
+  (38.2 to 41.2). Texture does not clear it; a subject does.
 - **No overlay may occlude a character silhouette.** Compute it, do not eyeball it: the
   hard hat crown sits at `1180 - 454*scale` in scene space. A card that amputates the
   hero's head held for 2.8 seconds is the kind of thing that reads as broken, not as busy.

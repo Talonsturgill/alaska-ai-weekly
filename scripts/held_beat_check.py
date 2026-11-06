@@ -186,11 +186,16 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
         if r.returncode:
             raise RuntimeError("held_beat_probe failed:\n" + (r.stderr or r.stdout)[-3000:])
         low, measured, straddled = [], 0, []
+        # The same Chrome frames also measure the TOP OF THE SQUARE (machine pass 2026-11-06), so
+        # dead_space_check --plan can fail an empty top band before the full render is spent.
+        import dead_space_check as dsc
+        tops = []
         for name, beat, t0, f0, f1 in pairs:
             pa, pb = (os.path.join(frames_dir, f"f{f:05d}.png") for f in (f0, f1))
             if not (os.path.exists(pa) and os.path.exists(pb)):
                 continue
             a, b = Image.open(pa).convert("RGB"), Image.open(pb).convert("RGB")
+            tops.append({"frame": f0, "top": round(dsc.top_band_fraction(a), 4)})
             if _wholesale(a, b):
                 straddled.append(name)      # a beat-internal cut: build_evidence slides off it
                 continue
@@ -198,6 +203,10 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
             measured += 1
             if pct < floor:
                 low.append((name, beat, shot_at(props, t0), t0, round(pct, 1)))
+    with open(os.path.join(out_dir, "top_band_plan.json"), "w") as fh:
+        json.dump({"source": os.path.relpath(os.path.abspath(source), REPO),
+                   "measure": "dead_space_check.top_band_fraction on Chrome frame 1 of each strip",
+                   "samples": tops}, fh, indent=1)
     return sorted(low, key=lambda x: (x[4], x[0])), measured, straddled
 
 

@@ -149,6 +149,13 @@ CHECKS = [
      [sys.executable, "scripts/content_sag_check.py"], False),
     ("dead space within ceilings",
      [sys.executable, "scripts/dead_space_check.py", "--every", "30"], False),
+    # THE TOP OF THE SQUARE (machine pass 2026-11-06). REQUIRED from the start, on the jolt_check
+    # rule below: calibrated on eight shipped masters, it is green on the four the panel did not
+    # fault for an empty top (10-24 38.9, 10-26 41.0, 10-29 41.2, 11-01 38.2 percent) and red on
+    # the three it did (10-31 48.7, 11-02 52.1, 11-06 56.6), so it has never failed a film the
+    # panel liked. make_cut's top_band source step catches it before the render.
+    ("the top of the square carries the picture",
+     [sys.executable, "scripts/dead_space_check.py", "--every", "30", "--top-only"], True),
     # HELD BEATS, NAMED BEFORE THE PANEL NAMES THEM (machine pass 2026-10-09). All three
     # judges listed the same sub-2-percent beats on 10-08 and again on 10-09, every one of them
     # already measured in out/evidence/motion.json. ADVISORY, never blocking: the NOTE line

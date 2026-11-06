@@ -124,6 +124,11 @@ step staging          0 python3 scripts/staging_check.py
 # order, a <HeldTravel> on the held thing (lib/heldidle.tsx). On Ep1026 it names the same twelve
 # beats the master-mode measure and the panel did.
 step held_plan        0 python3 scripts/held_beat_check.py --source
+# Machine pass 2026-11-06, a repeat offender (empty top of the square named by every seat on 10-31,
+# 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
+# 420 to 690); this fails the source gates when the film mean is over the ceiling calibrated on eight
+# shipped films. On Ep1106 it reads 55.6% before the render against 55.9% on the delivered square.
+step top_band         2 python3 scripts/dead_space_check.py --plan
 
 if [ ${#SOURCE_FAILS[@]} -gt 0 ]; then
   say "make_cut: STOPPED after the source gates, ${#SOURCE_FAILS[@]} failed: ${SOURCE_FAILS[*]}. Fix them all, then relaunch ($(( $(date +%s) - T0 ))s)."
