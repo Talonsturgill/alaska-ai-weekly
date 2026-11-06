@@ -234,6 +234,10 @@ const Chatbot: React.FC<{f: number; x: number; y: number; s?: number; mood?: 'fo
     <g transform={`translate(${x} ${y + 4 * Math.sin(f / 19)}) scale(${s})`}>
       <ellipse cx={0} cy={118} rx={100} ry={14} fill="#000" opacity={0.35} />
       <rect x={-92} y={-100} width={184} height={210} rx={22} fill={C.gun} stroke={C.ink} strokeWidth={8} />
+      <defs><linearGradient id="chatg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#FFFFFF" stopOpacity={0.45} /><stop offset="0.5" stopColor="#FFFFFF" stopOpacity={0} /><stop offset="1" stopColor="#000000" stopOpacity={0.4} /></linearGradient></defs>
+      <rect x={-92} y={-100} width={184} height={210} rx={22} fill="url(#chatg)" />
+      <path d="M -84,-90 v 190" stroke="#FFFFFF" strokeWidth={5} opacity={0.3} />
+      {[[-78, -86], [78, -86], [-78, 96], [78, 96]].map(([sx, sy], i) => <circle key={i} cx={sx} cy={sy} r={5} fill="#CFD8DE" stroke={C.ink} strokeWidth={2.5} />)}
       <rect x={-72} y={-80} width={144} height={74} rx={14} fill="#CFD8DE" stroke={C.ink} strokeWidth={5} />
       {[-30, 30].map((ex, i) => <g key={i}><ellipse cx={ex} cy={-44} rx={14} ry={14 * blink} fill={C.white} stroke={C.ink} strokeWidth={3} /><circle cx={ex + (mood === 'wry' ? 5 : 0)} cy={-44} r={5} fill={C.ink} /></g>)}
       <path d={mood === 'nervous' ? 'M -24,-14 q 24,-14 48,0' : mood === 'wry' ? 'M -24,-16 q 24,10 48,-6' : 'M -24,-16 q 24,12 48,0'} fill="none" stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
@@ -264,24 +268,47 @@ const Person: React.FC<{x: number; y: number; s?: number; shirt?: string; skin?:
   const breathe = 1 + 0.014 * Math.sin(f / 16 + seed);
   const nod = 2.2 * Math.sin(f / 31 + seed * 2);
   const blink = ((f + Math.round(seed * 40)) % 130) > 124 ? 0.15 : 1;
-  const sway = arms === 'up' ? 8 * Math.sin(f / 14 + seed) : 0;
+  const sway = arms === 'up' ? 8 * Math.sin(f / 14 + seed) : 3 * Math.sin(f / 22 + seed);
+  const gid = `pg${shirt.replace('#', '')}`;
+  const sid = `ps${skin.replace('#', '')}`;
   return (
     <g transform={`translate(${x} ${y + 3 * Math.sin(f / 21 + seed)}) scale(${s})`}>
-      <ellipse cx={0} cy={140} rx={62} ry={10} fill="#000" opacity={0.4} />
-      <ellipse cx={0} cy={138} rx={44} ry={6} fill="#000" opacity={0.25} />
+      <defs>
+        <linearGradient id={gid} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#FFFFFF" stopOpacity={0.35} /><stop offset="0.45" stopColor={shirt} /><stop offset="1" stopColor="#000000" stopOpacity={0.35} /></linearGradient>
+        <radialGradient id={sid} cx="0.35" cy="0.3" r="0.8"><stop offset="0" stopColor="#FFFFFF" stopOpacity={0.45} /><stop offset="0.5" stopColor={skin} /><stop offset="1" stopColor="#7A4A2A" stopOpacity={0.45} /></radialGradient>
+      </defs>
+      <ellipse cx={0} cy={142} rx={66} ry={11} fill="#000" opacity={0.42} />
+      <ellipse cx={0} cy={139} rx={44} ry={6} fill="#000" opacity={0.28} />
+      <rect x={-34} y={126} width={30} height={16} rx={7} fill="#2A1A2E" stroke={C.ink} strokeWidth={4} />
+      <rect x={4} y={126} width={30} height={16} rx={7} fill="#2A1A2E" stroke={C.ink} strokeWidth={4} />
       <g transform={`scale(1 ${breathe})`} style={{transformOrigin: '0px 136px'}}>
         <rect x={-48} y={-10} width={96} height={146} rx={30} fill={shirt} stroke={C.ink} strokeWidth={7} />
+        <rect x={-48} y={-10} width={96} height={146} rx={30} fill={`url(#${gid})`} />
         <path d="M -30,-6 q 30,26 60,0" fill="#F4EBC6" stroke={C.ink} strokeWidth={4} />
-        <path d="M -40,6 q 6,60 4,110" stroke="#FFFFFF" strokeWidth={5} opacity={0.22} fill="none" />
-        <path d="M 40,6 q -4,60 -2,110" stroke="#000" strokeWidth={6} opacity={0.2} fill="none" />
+        <path d="M 0,18 v 100" stroke="#000" strokeWidth={3} opacity={0.18} />
+        <path d="M -42,6 q 6,60 4,112" stroke="#FFFFFF" strokeWidth={5} opacity={0.28} fill="none" />
+        <path d="M 42,6 q -4,60 -2,112" stroke="#000" strokeWidth={7} opacity={0.22} fill="none" />
+        <circle cx={0} cy={48} r={4} fill="#F4EBC6" stroke={C.ink} strokeWidth={2} /><circle cx={0} cy={78} r={4} fill="#F4EBC6" stroke={C.ink} strokeWidth={2} />
       </g>
+      {arms === 'down' && [-1, 1].map((d) => (
+        <g key={d} transform={`rotate(${d * sway * 0.4} ${d * 50} 6)`}>
+          <rect x={d > 0 ? 36 : -62} y={0} width={26} height={96} rx={13} fill={shirt} stroke={C.ink} strokeWidth={6} />
+          <rect x={d > 0 ? 36 : -62} y={0} width={26} height={96} rx={13} fill={`url(#${gid})`} />
+          <circle cx={d * 49} cy={104} r={13} fill={skin} stroke={C.ink} strokeWidth={5} />
+        </g>
+      ))}
+      <rect x={-12} y={-24} width={24} height={22} rx={8} fill={skin} stroke={C.ink} strokeWidth={5} />
       <g transform={`rotate(${nod} 0 -10)`}>
+        <circle cx={-40} cy={-50} r={9} fill={skin} stroke={C.ink} strokeWidth={4} /><circle cx={40} cy={-50} r={9} fill={skin} stroke={C.ink} strokeWidth={4} />
         <circle cy={-52} r={40} fill={skin} stroke={C.ink} strokeWidth={7} />
+        <circle cy={-52} r={40} fill={`url(#${sid})`} />
         <path d="M -40,-58 q 40,-52 80,0 q -40,-16 -80,0 Z" fill={hair} stroke={C.ink} strokeWidth={4} />
-        <path d="M -24,-84 q 12,-8 26,-6" stroke="#FFFFFF" strokeWidth={4} opacity={0.3} fill="none" />
+        <path d="M -24,-84 q 12,-8 26,-6" stroke="#FFFFFF" strokeWidth={4} opacity={0.35} fill="none" />
+        <path d="M 0,-48 q 5,10 0,14" stroke={C.ink} strokeWidth={3} fill="none" opacity={0.5} />
+        <circle cx={-22} cy={-36} r={6} fill="#E3175F" opacity={0.18} /><circle cx={22} cy={-36} r={6} fill="#E3175F" opacity={0.18} />
         {[-14, 14].map((ex, i) => <ellipse key={i} cx={ex} cy={-50} rx={4.5} ry={4.5 * blink} fill={C.ink} />)}
         {glasses && <g fill="none" stroke={C.ink} strokeWidth={3.5}><circle cx={-14} cy={-50} r={10} /><circle cx={14} cy={-50} r={10} /><path d="M -4,-50 h 8" /></g>}
-        <path d={mood === 'stern' ? 'M -12,-30 h 24' : 'M -14,-32 q 14,10 28,0'} stroke={C.ink} strokeWidth={4} fill="none" strokeLinecap="round" />
+        <path d={mood === 'stern' ? 'M -12,-28 h 24' : 'M -14,-30 q 14,10 28,0'} stroke={C.ink} strokeWidth={4} fill="none" strokeLinecap="round" />
       </g>
       {arms === 'crossed' && <g><path d="M -52,30 q 52,28 104,-4" fill="none" stroke={shirt} strokeWidth={26} strokeLinecap="round" /><path d="M -52,30 q 52,28 104,-4" fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" opacity={0.5} /></g>}
       {arms === 'up' && <g transform={`rotate(${sway} 48 10)`}><path d="M 48,10 L 90,-40" stroke={shirt} strokeWidth={24} strokeLinecap="round" /><circle cx={92} cy={-44} r={13} fill={skin} stroke={C.ink} strokeWidth={4} /></g>}
@@ -342,7 +369,7 @@ const Typed: React.FC<{x: number; y: number; rows: string[]; k: number; size?: n
 };
 
 // ---- bands: the throughline strip on top, the missing footnote strip at the bottom --------------------------------------------------------
-const TOPS = [{k: 3, t: 'WHO WROTE?'}, {k: 10, t: 'ASK CLASS'}, {k: 12, t: 'PERSON DECIDES'}, {k: 13, t: 'OP-ED CLAIM'}, {k: 19, t: 'WHO THERE?'}, {k: 25, t: 'BLANK'}, {k: 31, t: 'PROPOSED'}];
+const TOPS = [{k: 3, t: 'WHO WROTE?'}, {k: 10, t: 'ASK CLASS'}, {k: 12, t: 'A PERSON'}, {k: 13, t: 'OP-ED'}, {k: 19, t: 'REBUTTAL'}, {k: 23, t: 'CITED'}, {k: 26, t: 'PROPOSED'}];
 const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
   const f = useCurrentFrame();
   const at = (k: number) => {
@@ -362,7 +389,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
           return (
             <g key={i} transform={`translate(${x} 205)`}>
               <rect x={0} y={-34} width={128} height={68} rx={10} fill={now ? C.gold : on ? '#5E2A0C' : '#7A3A14'} stroke={now ? C.ink : C.paper} strokeWidth={now ? 5 : 3} opacity={on ? 1 : 0.8} />
-              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontSize={q.t.length > 12 ? 15 : 18} fontWeight={900} fill={now ? C.ink : C.paper}>{q.t}</text>
+              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontSize={17} fontWeight={900} fill={now ? C.ink : C.paper}>{q.t}</text>
             </g>
           );
         })}
@@ -527,14 +554,14 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.04} z1={1.12} oy={980}>
       <SVG>
         <Chatbot f={f} x={190} y={1020} s={1.0} mood="focused" />
-        <g transform={`translate(210 ${lerp(1180, 1235, card)})`} opacity={ease(f, b(35), 8)}><rect x={-130} y={-34} width={260} height={68} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>ERICKSON</text><text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.teal}>SPECIAL PROJECTS LEAD</text></g>
+        <g transform={`translate(270 ${lerp(1180, 1235, card)})`} opacity={ease(f, b(35), 8)}><rect x={-130} y={-34} width={260} height={68} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={-4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>ERICKSON</text><text y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.teal}>SPECIAL PROJECTS LEAD</text></g>
         
         {idea > 0.02 && <g transform={`translate(350 ${lerp(930, 882, idea)})`} opacity={idea}><rect x={-120} y={-30} width={240} height={60} rx={8} fill={C.glow} stroke={C.ink} strokeWidth={5} /><text y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>THE CORE IDEA</text></g>}
         <g transform={`translate(${noteX} ${1090 + 5 * Math.sin(f / 7)}) rotate(${lerp(-6, 4, slide)})`} opacity={slide > 0.01 ? 1 : 0}>
           <rect x={-90} y={-50} width={180} height={100} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink} opacity={1 - clamp01(stampK * 2.5)}>RECOMMEND</text>
           <path d="M -60,16 H 60 M -60,34 H 30" stroke={C.teal} strokeWidth={4} opacity={0.5 * (1 - clamp01(stampK * 2.5))} />
-          {stampK > 0.05 && <g transform={`scale(${stampK}) rotate(-10)`}><rect x={-70} y={-16} width={140} height={34} rx={5} fill="none" stroke={C.teal} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.teal}>DECIDED</text></g>}
+          {stampK > 0.05 && <g transform={`scale(${stampK}) rotate(-10)`}><rect x={-70} y={-16} width={140} height={34} rx={5} fill="none" stroke={C.teal} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.teal}>HUMAN CALL</text></g>}
         </g>
         <Hand x={lerp(700, 520, stampK)} y={lerp(580, 880, Math.min(1, stampK))} s={1.05} rot={180} />
         {stampK > 0.2 && <Tok x={190} y={640} s={0.8} rot={-8} text="A PERSON|DECIDES" />}
@@ -714,7 +741,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
             return <circle key={i} cx={cx} cy={cy} r={gl > 0.3 ? 5.5 + 1.8 * Math.sin(f / 5 + i) : 1.7} fill={gl > 0.3 ? C.glow : C.teal} stroke={gl > 0.3 ? C.ink : 'none'} strokeWidth={1.5} />;
           })}
         </g></g>
-        {blank > 0.02 && <g transform="translate(880 1180)" opacity={blank}><Tok x={0} y={0} s={0.7} text="?" /><rect x={-110} y={74} width={220} height={34} rx={5} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /></g>}
+        {blank > 0.02 && <g transform="translate(880 1180)" opacity={blank}><Tok x={0} y={0} s={0.7} text="?" /></g>}
         <g transform={`translate(520 ${lerp(1500, 1080, card)}) scale(${card})`} opacity={clamp01(card * 2)}>
           <rect x={-290} y={-52} width={580} height={104} rx={12} fill={C.paper} stroke={C.ink} strokeWidth={6} />
           <text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.ink}>CITED CASES</text>
@@ -742,7 +769,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Sheet x={620} y={900} s={lerp(1.3, 0.85, back)} title="" strip fill={fill} pencil={fill < 1} lit={f >= b(27)} thick={back} f={f} />
         <Idle f={f} x={170} y={1030} seed={5}><StampBot f={f} x={170} y={1030} reject={stampK > 0.2 ? 1 : 0} /></Idle>
-        {stampK > 0.05 && <g transform={`translate(${lerp(660, 620, back)} ${lerp(1010, 930, back)}) rotate(-7) scale(${stampK * lerp(1, 0.8, back)})`}><rect x={-170} y={-52} width={340} height={104} rx={6} fill="#FFE27A" stroke={C.ink} strokeWidth={6} /><text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>OUR SUGGESTION</text><text y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.mag}>NOT ADOPTED</text></g>}
+        {stampK > 0.05 && <g transform={`translate(${lerp(660, 620, back)} ${lerp(1010, 930, back)}) rotate(-7) scale(${stampK * lerp(1, 0.8, back)})`}><rect x={-170} y={-52} width={340} height={104} rx={6} fill="#FFE27A" stroke={C.ink} strokeWidth={6} /><text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>OUR SUGGESTION</text><text y={34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.mag}>OUR WORDING</text></g>}
         <g opacity={loop}>
           <path d="M 300,1150 C 80,1300 70,860 230,770" fill="none" stroke={C.glow} strokeWidth={10} strokeDasharray="18 12" />
           <g transform="translate(240 730) rotate(-6)"><rect x={-110} y={-30} width={220} height={60} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>AI RECOMMENDS</text></g>
