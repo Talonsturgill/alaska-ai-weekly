@@ -178,7 +178,7 @@ const CHIP2 = 'ILLUSTRATION';
 
 /** a vertical run of plates that hand off one to the next. items[i] shows from b(k) to b(next k) - 10; the last stays. */
 /** continuous idle life for any held figure: breath squash, a sway and a settle nudge. */
-const Idle: React.FC<{f: number; x: number; y: number; seed?: number; amp?: number; children: React.ReactNode}> = ({f, x, y, seed = 0, amp = 1, children}) => (
+const Idle: React.FC<{f: number; x: number; y: number; seed?: number; amp?: number; children: React.ReactNode}> = ({f, x, y, seed = 0, amp = 2.2, children}) => (
   <g transform={`translate(${x} ${y}) rotate(${1.6 * amp * Math.sin(f / 26 + seed)}) scale(${1 + 0.018 * amp * Math.sin(f / 15 + seed)} ${1 - 0.022 * amp * Math.sin(f / 15 + seed)}) translate(${-x} ${-y})`}>{children}</g>
 );
 const vis = (f: number, b: (id: number) => number, ks: number[], i: number) => ease(f, b(ks[i]), 14) * (i < ks.length - 1 ? 1 - ease(f, b(ks[i + 1]) - 10, 8) : 1);
@@ -369,7 +369,7 @@ const Typed: React.FC<{x: number; y: number; rows: string[]; k: number; size?: n
 };
 
 // ---- bands: the throughline strip on top, the missing footnote strip at the bottom --------------------------------------------------------
-const TOPS = [{k: 3, t: 'WHO WROTE?'}, {k: 10, t: 'ASK CLASS'}, {k: 12, t: 'A PERSON'}, {k: 13, t: 'OP-ED'}, {k: 19, t: 'REBUTTAL'}, {k: 23, t: 'CITED'}, {k: 26, t: 'PROPOSED'}];
+const TOPS = [{k: 3, t: 'WHO?'}, {k: 10, t: 'CLASS'}, {k: 12, t: 'PERSON'}, {k: 13, t: 'OP-ED'}, {k: 19, t: 'REBUTTAL'}, {k: 23, t: 'CITED'}, {k: 26, t: 'PROPOSED'}];
 const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
   const f = useCurrentFrame();
   const at = (k: number) => {
@@ -389,7 +389,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
           return (
             <g key={i} transform={`translate(${x} 205)`}>
               <rect x={0} y={-34} width={128} height={68} rx={10} fill={now ? C.gold : on ? '#5E2A0C' : '#7A3A14'} stroke={now ? C.ink : C.paper} strokeWidth={now ? 5 : 3} opacity={on ? 1 : 0.8} />
-              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontSize={19} fontWeight={900} fill={now ? C.ink : C.paper}>{q.t}</text>
+              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontSize={22} fontWeight={900} fill={now ? C.ink : C.paper}>{q.t}</text>
             </g>
           );
         })}
@@ -420,8 +420,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.02} z1={1.06} oy={1000}>
       <SVG>
         <g transform={`translate(0 ${lerp(-520, 0, tray)})`}>
-          <rect x={52} y={700} width={780} height={400} rx={14} fill={C.dash} stroke={C.ink} strokeWidth={6} />
-          <g transform="translate(100 760)">
+          <rect x={78} y={700} width={780} height={400} rx={14} fill={C.dash} stroke={C.ink} strokeWidth={6} />
+          <g transform="translate(126 760)">
             {Array.from({length: 150}).map((_, i) => {
               const cx = (i % 15) * 50, cy = Math.floor(i / 15) * 34;
               const lit = i < 119;
@@ -549,7 +549,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const idea = ease(f, b(42), 16);
   const slide = easeIO(f, b(11), 30);
   const stampK = springy(f, b(12), 14);
-  const noteX = lerp(300, 520, slide);
+  const noteX = lerp(300, 790, slide);
   return (
     <Frame p={p} z0={1.04} z1={1.12} oy={980}>
       <SVG>
@@ -563,7 +563,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           <path d="M -60,16 H 60 M -60,34 H 30" stroke={C.teal} strokeWidth={4} opacity={0.5 * (1 - clamp01(stampK * 2.5))} />
           {stampK > 0.05 && <g transform={`scale(${stampK}) rotate(-10)`}><rect x={-70} y={-16} width={140} height={34} rx={5} fill="none" stroke={C.teal} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.teal}>HUMAN CALL</text></g>}
         </g>
-        <Hand x={lerp(700, 520, stampK)} y={lerp(580, 880, Math.min(1, stampK))} s={1.05} rot={180} />
+        <Hand x={lerp(930, 790, stampK)} y={lerp(580, 880, Math.min(1, stampK))} s={1.05} rot={180} />
         {stampK > 0.2 && <Tok x={190} y={640} s={0.8} rot={-8} text="A PERSON|DECIDES" />}
         <Plate x={540} y={567} text="STEPHANIE ERICKSON · UA SPECIAL PROJECTS LEAD" size={24} p={vis(f, b, K, 0)} />
         <Plate x={540} y={636} text="THE CORE IDEA" size={38} p={vis(f, b, K, 1)} />
@@ -629,8 +629,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <text x={318} y={1092} fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
         {ul > 0.02 && <rect x={318} y={977} width={168 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
-        <Idle f={f} x={190} y={1100} seed={1}><StampBot f={f} x={190} y={1100} reject={0} /></Idle>
-        {bal > 0.02 && <g transform="translate(540 1215) scale(1.2)" opacity={bal}>
+        <Idle f={f} x={215} y={1100} seed={1}><StampBot f={f} x={215} y={1100} reject={0} /></Idle>
+        {bal > 0.02 && <g transform="translate(560 1190) scale(1.15)" opacity={bal}>
           <path d="M 0,0 V 70" stroke={C.ink} strokeWidth={10} />
           <g transform={`rotate(${lerp(0, 9, bal)})`}>
             <path d="M -200,0 H 200" stroke={C.ink} strokeWidth={10} strokeLinecap="round" />
