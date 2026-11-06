@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.986,
+    "heard": "At the University of Alaska Anchorage, 119 of 150 students cited for misconduct used AI. So, who writes the rules? The University of Alaska Regents asked for an AI plan in May, and met in Fairbanks this week to take it up. It's called AI Engaged. Six principles for investment priorities. Five expectations for every campus. Until now, professors set AI rules class by class. University of Alaska Special Projects leads Stephanie Erickson, puts the core idea simply. AI can recommend, and a person decides. Then came the fight. Two UAA professors wrote that Anthropics Clawd produced the first draft of AI Engaged and that this wasn't disclosed until October 9. Their line is, quote, allowing AI to speak first sets the harmful precedent of favoring a chatbot's authority over human wisdom. Five University of Alaska faculty answered, quote, in this case, AI use was not concealed. They say anyone who met with administrators and board members knew how the first draft was built. Here's the fair part. Both sides agree an AI was used. They disagree about whether anyone hid it. Of more than 10,500 UAA students, 119 is about 1.1%. Sided cases, not all cases. So here's a cheap fix. One plane line on the plan, saying AI helped draft it and a person decided. The same rule the plan sets for AI. No decision on the plan had been reported when this was made, and one more disclosure. This film's pipeline is itself built on Clawd. Would one line settle it? Or does who was in the room count for more?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.029,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 9.44,
+        "voiced_frac": 0.55,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 128.12,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 128.12,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.98,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.984,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.986,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

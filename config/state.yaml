@@ -3149,3 +3149,38 @@ dispatch_history:
     light_story: night-practical
     metaphor: a gunmetal counter that clicks every three seconds and a consent gate
       that waits for a yes, with a nickel key fob carrying ENROLLED? to YOUR CALL
+- date: '2026-11-06'
+  topic: University of Alaska AI Engaged plan, op-ed fight over Claude drafting it,
+    one disclosure line
+  slug: 2026-11-06-who-knew-ai-wrote-the-plan
+  key_entities:
+  - University of Alaska
+  - Board of Regents
+  - AI Engaged
+  - Gregory Hartley
+  - Joel Potter
+  - Stephanie Erickson
+  - UAA
+  - Anthropic
+  - Claude
+  archetype: stamp-and-plan
+  palette: tangerine, teal, cream, mint, magenta
+  voice: Sulafat
+  stance: mixed
+  angle: Both sides agree AI helped draft the plan and dispute only whether anyone
+    could tell, so one plain disclosure line applies the plan's own rule that AI recommends
+    and a person decides.
+  hero: StampBot
+  cast:
+  - StampBot
+  - Chatbot
+  - ServerMachine
+  - Plan Sheet
+  composition:
+    pov: macro-closeup
+    motion_vector: assemble-build
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: editorial-schematic
+    camera_strategy: dolly-through
+    light_story: noon-hard

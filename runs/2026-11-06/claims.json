@@ -1,0 +1,344 @@
+{
+ "run_date": "2026-11-06",
+ "fact_check_verdict": "Publish as a disclosure dispute and a policy awaiting a result. Claude's role in the first draft is the op-ed authors' claim and the rebuttal doesn't deny AI was used. Misconduct figures are UAA only. No vote outcome is reported, so none is claimed. Disclose that the pipeline is itself built on Claude.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary-release",
+   "spoken": "The University of Alaska regents met in Fairbanks this week, November fourth to sixth.",
+   "on_screen": "REGENTS \u00b7 FAIRBANKS",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [
+    "Meeting dates only. The release does not say when or whether the AI item is voted."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary-release",
+   "spoken": "The regents asked for a university AI strategy back in May.",
+   "on_screen": "ASKED IN MAY",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [
+    "Op-ed says June. Use the release: May."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary-release",
+   "spoken": "It's called A I Engaged.",
+   "on_screen": "AI ENGAGED",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary-release",
+   "spoken": "The statement sets six guiding principles.",
+   "on_screen": "6 PRINCIPLES",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary-release",
+   "spoken": "It sets four investment priorities.",
+   "on_screen": "4 INVESTMENT PRIORITIES",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary-release",
+   "spoken": "It sets five expectations for every campus.",
+   "on_screen": "5 EXPECTATIONS PER CAMPUS",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary-release",
+   "spoken": "Each campus keeps its own say over curriculum and academic integrity.",
+   "on_screen": "EACH CAMPUS KEEPS CURRICULUM",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-news",
+   "spoken": "Until now, professors have set their own A I rules, class by class.",
+   "on_screen": "UNTIL NOW \u00b7 EACH CLASS ITS OWN",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "ADN paraphrase: professors set syllabus rules, no single systemwide AI policy."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-news",
+   "spoken": "At U A A, one hundred nineteen of one hundred fifty students cited for misconduct used A I.",
+   "on_screen": "UAA \u00b7 119 OF 150 CITED USED AI",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "UAA only, from UAA Dean of Students report (August 2026), via ADN. Not systemwide."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-news",
+   "spoken": "That's about one point one percent of more than ten thousand five hundred students.",
+   "on_screen": "119 OF 10,500+ \u00b7 ABOUT 1.1%",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "UAA only."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-news",
+   "spoken": "A I plagiarism there rose seventy three percent in a year.",
+   "on_screen": "AI PLAGIARISM +73%",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "UAA only. Baseline year not stated."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-news",
+   "spoken": "Misconduct overall rose fifty six percent.",
+   "on_screen": "ALL MISCONDUCT +56%",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "UAA only."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-news",
+   "spoken": "The draft says humans stay in the loop. A I can recommend, and a person decides.",
+   "on_screen": "A PERSON DECIDES",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Attribute the explanation to Stephanie Erickson, special projects lead. Do not present 'human in the loop' as a verbatim phrase."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-opinion",
+   "spoken": "Two U A A professors wrote in the Anchorage Daily News that Anthropic's Claude produced the first draft.",
+   "on_screen": "OP-ED \u00b7 UAA PROFESSORS",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "OPINION claim by Gregory Hartley and Joel Potter. Attribute. Never state as the paper's fact."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-opinion",
+   "spoken": "They say that was not disclosed until October ninth.",
+   "on_screen": "OP-ED CLAIM NOT DISCLOSED UNTIL OCT 9TH",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "Opinion claim. 'Concealed' is the op-ed's word and is disputed."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-quote",
+   "spoken": "Their line is, quote, allowing A I to speak first sets the harmful precedent of favoring a chatbot's authority over human wisdom.",
+   "on_screen": "\"THE HARMFUL PRECEDENT\"",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "Verbatim, straight quotes, attributed to Hartley and Potter."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-opinion",
+   "spoken": "Five faculty answered two days later that the A I use was never concealed.",
+   "on_screen": "REBUTTAL \u00b7 5 UA FACULTY \u00b7 NOV 5TH",
+   "source": "https://www.adn.com/opinions/2026/11/05/opinion-humans-not-robots-shaped-uas-approach-to-ai/",
+   "requires": [
+    "Opinion. Authors Carroll, Cason, Ryan, Harnish, Trochim."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-quote",
+   "spoken": "Their words, quote, in this case, A I use was not concealed.",
+   "on_screen": "IN THIS CASE AI USE WAS NOT CONCEALED",
+   "source": "https://www.adn.com/opinions/2026/11/05/opinion-humans-not-robots-shaped-uas-approach-to-ai/",
+   "requires": [
+    "Verbatim. Straight quotes."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-opinion",
+   "spoken": "They say anyone who met with administrators and board members knew how the first draft was built.",
+   "on_screen": "ANYONE WHO MET WITH ADMINISTRATORS KNEW",
+   "source": "https://www.adn.com/opinions/2026/11/05/opinion-humans-not-robots-shaped-uas-approach-to-ai/",
+   "requires": [
+    "Opinion. The rebuttal does not deny AI was used in drafting."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-opinion",
+   "spoken": "Both sides agree an A I was used. They disagree about whether anyone hid it.",
+   "on_screen": "BOTH SIDES AGREE \u00b7 AI WAS USED",
+   "source": "https://www.adn.com/opinions/2026/11/05/opinion-humans-not-robots-shaped-uas-approach-to-ai/",
+   "requires": [
+    "Synthesis of c14 to c19. The rebuttal does not deny Claude was used."
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-student-paper",
+   "spoken": "Over at U A F, the student paper reported there is still no unified A I policy.",
+   "on_screen": "UAF \u00b7 NO UNIFIED AI POLICY \u00b7 OCT 20TH",
+   "source": "https://www.uafsunstar.com/news/uaf-has-no-unified-ai-policy",
+   "requires": [
+    "Student paper Sun Star. Guidance shaped by individual departments and instructors."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-news",
+   "spoken": "The university said it can't control or track every use of A I today.",
+   "on_screen": "UA CAN'T TRACK EVERY AI USE",
+   "source": "https://alaskapublic.org/news/education/2026-09-18/university-of-alaska-regents-consider-draft-ai-policy",
+   "requires": [
+    "Reporter's paraphrase of Shier, not his direct quote. Use 'the university said'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-primary-release",
+   "spoken": "Chief Information Technology Officer Ben Shier presented the latest version to the regents.",
+   "on_screen": "BEN SHIER \u00b7 CHIEF INFORMATION TECHNOLOGY OFFICER",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-primary-release",
+   "spoken": "President Matt Cooper said student learning remains at the heart of the mission.",
+   "on_screen": "\"STUDENT LEARNING REMAINS AT THE HEART OF OUR MISSION\"",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [
+    "Verbatim fragment attributed to President Cooper, as the release gives it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "cut-unconfirmed",
+   "spoken": "The regents vote result.",
+   "on_screen": "NO RESULT REPORTED",
+   "source": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "requires": [
+    "CUT. No source reports an outcome as of November 6th. Never say adopted, approved or passed. At most say no result had been reported."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

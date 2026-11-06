@@ -222,3 +222,9 @@ the pass can't fix safely stays open with ` | escalated <date>: <why>` and goes 
 - [ ] 2026-11-02 | repeat: 2 | stale-text-fields-after-restage | evidence: Gate 0B to 0D failed on brass, token, drool and mini map text left in builder-read fields after a restage | fix: a board_sync pass that greps hero, ambient and concept strings against the active cast
 - [ ] 2026-11-02 | repeat: 0 | plate-overlap-static-geometry | evidence: 59 plate pairs failed plate_overlap because crossfading plates share one y, and the fix was stacking every plate at its own y | fix: a lib PlateSlot helper that assigns slots per shot and checks the real time windows
 - [ ] 2026-11-02 | repeat: 1 | panel-single-seat-creep | evidence: one standing seat scored 6.07, 6.34 before the three-seat panel was convened, six graded cuts to a 7.05 median | fix: convene all three seats once the standing seat is within 0.7 of the bar
+
+## 2026-11-06 (Who Wrote the Rules)
+- Hero scale and the empty upper orange band under the 1:1 crop (y 420 to 1500), flagged by all three seats on rounds 10 to 13. Evidence: Composition 6.0 to 7.0 in every card. Proposed fix: a layout rule that places the hero inside the crop band and a gate that measures hero height against it. repeat: 3
+- Held-figure motion: 19 strips under 6% with the camera solved out (pencil marks 2.6%, typewriter 3.3%). Proposed fix: default idle breath and weight-shift loop on every Character and a stamp strike with squash-settle. repeat: 3
+- The label_footprint gate flagged a byline 10 percent covered by a pan chatbot after a quote card re-set, and the fix was a shift of 55 px. Proposed fix: have the quote-sheet component own its byline position. repeat: 1
+- Ambience audibility: judges can't hear the room-tone bed from the pack. Proposed fix: write the bed level per gap window into audio_report.json so a judge can read it. repeat: 2
