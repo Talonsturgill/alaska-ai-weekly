@@ -150,11 +150,6 @@ const Atmos: React.FC<{f: number; bg: string}> = ({f, bg}) => {
       </defs>
       <rect x={0} y={0} width={W} height={H} fill="url(#wall)" />
       <ellipse cx={200} cy={170} rx={460} ry={320} fill="url(#sun)" />
-      <g opacity={0.9}>
-        <rect x={720} y={90} width={270} height={330} rx={10} fill="#F6C98B" stroke="#4A1D08" strokeWidth={8} />
-        <path d="M 855,90 V 420 M 720,255 H 990" stroke="#4A1D08" strokeWidth={8} />
-        <path d="M 735,110 L 835,110 L 735,230 Z" fill="#FFF2CC" opacity={0.7} />
-      </g>
       {Array.from({length: 22}).map((_, i) => <circle key={i} cx={(i * 173) % 1080} cy={(i * 97) % 520} r={2 + (i % 3)} fill="#FFE9A8" opacity={0.12 + 0.12 * Math.abs(Math.sin(f / 50 + i))} />)}
       <rect x={lerp(-400, 1500, sw)} y={0} width={240} height={H} fill="#FFF2CC" opacity={0.17} transform="skewX(-14)" />
       <rect x={lerp(1500, -500, ((f + 120) % 420) / 420)} y={0} width={320} height={H} fill="#2A1006" opacity={0.13} transform="skewX(-14)" />
@@ -347,7 +342,7 @@ const Typed: React.FC<{x: number; y: number; rows: string[]; k: number; size?: n
 };
 
 // ---- bands: the throughline strip on top, the missing footnote strip at the bottom --------------------------------------------------------
-const TOPS = [{k: 3, t: 'WHO WROTE THIS?'}, {k: 10, t: 'ASK THE CLASS'}, {k: 12, t: 'A PERSON DECIDES'}, {k: 15, t: 'OP-ED CLAIM'}, {k: 19, t: 'WHO WAS THERE?'}, {k: 25, t: 'BLANK'}, {k: 31, t: 'PROPOSED'}];
+const TOPS = [{k: 3, t: 'WHO WROTE?'}, {k: 10, t: 'ASK CLASS'}, {k: 12, t: 'PERSON DECIDES'}, {k: 13, t: 'OP-ED CLAIM'}, {k: 19, t: 'WHO THERE?'}, {k: 25, t: 'BLANK'}, {k: 31, t: 'PROPOSED'}];
 const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
   const f = useCurrentFrame();
   const at = (k: number) => {
@@ -367,7 +362,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
           return (
             <g key={i} transform={`translate(${x} 205)`}>
               <rect x={0} y={-34} width={128} height={68} rx={10} fill={now ? C.gold : on ? '#5E2A0C' : '#7A3A14'} stroke={now ? C.ink : C.paper} strokeWidth={now ? 5 : 3} opacity={on ? 1 : 0.8} />
-              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={q.t.length > 13 ? 12 : 14} fill={now ? C.ink : C.paper}>{q.t}</text>
+              <text x={64} y={7} textAnchor="middle" fontFamily={MONO} fontSize={q.t.length > 12 ? 15 : 18} fontWeight={900} fill={now ? C.ink : C.paper}>{q.t}</text>
             </g>
           );
         })}
@@ -416,7 +411,6 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Idle f={f} x={290} y={1095} seed={1}><StampBot f={f} x={290} y={1160} reject={slam} /></Idle>
         <Sheet x={940} y={990} s={0.46} rot={6} title="PLAN" strip f={f} />
         {tok > 0.02 && <Tok x={940} y={lerp(700, 960, tok)} s={0.8} text="WHO WROTE THIS?" glow={tok > 0.9 ? 0.5 : 0} />}
-        <g opacity={ease(f, b(16), 14)}><Lab text="HARTLEY AND POTTER · ADN OP-ED" x={540} y={1285} size={20} tone="plate" p={1} /></g>
         <Plate x={540} y={568} text="UAA · 119 OF 150 CITED USED AI" size={27} p={vis(f, b, K, 0)} />
         <Plate x={540} y={637} text="119 OF 150 CITED" size={34} p={vis(f, b, K, 1)} />
         <Plate x={540} y={707} text="CITED FOR MISCONDUCT" size={30} p={vis(f, b, K, 2)} />
@@ -579,7 +573,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <text y={50} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={64} fill={C.ink}>9</text>
           <circle cy={32} r={44} fill="none" stroke={C.mag} strokeWidth={6} />
         </g>
-        <Chatbot f={f} x={830} y={980} s={1.0} mood="focused" pencil={false} tag={tag} />
+        <Chatbot f={f} x={830} y={980} s={1.0} mood="focused" pencil={false} />
         <g transform="translate(930 1140) rotate(-18)" opacity={tag}><rect x={-60} y={-5} width={120} height={10} rx={3} fill={C.glow} stroke={C.ink} strokeWidth={3} /></g>
         <Tok x={830} y={1230} s={crack > 0.5 ? 0.9 : 0.75} rot={crack > 0.5 ? -6 : 0} text={crack > 0.5 ? 'OP-ED CLAIM|OCT 9TH' : 'WHO WROTE|THIS?'} />
         <Plate x={540} y={570} text="OP-ED · UAA PROFESSORS" size={30} p={vis(f, b, K, 0)} />
@@ -605,10 +599,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Sheet x={540} y={960} s={1.45} title="" strip={false} ruled={false} />
         <Typed x={318} y={885} rows={QUOTE} k={type} size={31} fill={C.ink} />
+        <text x={318} y={1092} fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.teal}>HARTLEY AND POTTER · ADN OP-ED</text>
         {ul > 0.02 && <rect x={318} y={977} width={168 * ul} height={8} rx={3} fill={C.ink} />}
         <g transform={`translate(860 ${lerp(1500, 760, speak)}) scale(0.55)`}><Chatbot f={f} x={0} y={0} mood="wry" /></g>
         <Idle f={f} x={190} y={1100} seed={1}><StampBot f={f} x={190} y={1100} reject={0} /></Idle>
-        {bal > 0.02 && <g transform="translate(540 1150) scale(1.3)" opacity={bal}>
+        {bal > 0.02 && <g transform="translate(540 1215) scale(1.2)" opacity={bal}>
           <path d="M 0,0 V 70" stroke={C.ink} strokeWidth={10} />
           <g transform={`rotate(${lerp(0, 9, bal)})`}>
             <path d="M -200,0 H 200" stroke={C.ink} strokeWidth={10} strokeLinecap="round" />
@@ -643,7 +638,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <g opacity={1 - pull * 0.9} transform={`translate(540 960) scale(${lerp(1.1, 0.62, pull)}) translate(-540 -960)`}>
           <ellipse cx={540} cy={1120} rx={440} ry={70} fill="#7A3A14" stroke={C.ink} strokeWidth={6} />
           <rect x={150} y={1070} width={780} height={40} rx={10} fill="#C27A3A" stroke={C.ink} strokeWidth={6} />
-          {shirts.map((c, i) => <g key={i} opacity={room}><Person x={190 + i * 175} y={900 + (i % 2) * 18} s={0.8} shirt={c} f={f} seed={i * 1.3} arms={i === 2 ? 'up' : 'down'} /></g>)}
+          {shirts.map((c, i) => <g key={i} opacity={room}><Person x={190 + i * 175} y={900 + (i % 2) * 18 - (i % 3) * 8} s={0.74 + (i % 3) * 0.06} shirt={c} f={f} seed={i * 1.3} arms={i === 2 ? 'up' : 'down'} /></g>)}
           <g transform={`translate(${lerp(240, 760, draft)} 1090)`} opacity={draft > 0.01 ? 1 : 0}>
             <rect x={-60} y={-34} width={120} height={68} rx={4} fill={C.white} stroke={C.ink} strokeWidth={4} />
             <path d="M -42,-12 H 42 M -42,6 H 42 M -42,22 H 10" stroke={C.ink} strokeWidth={3} opacity={0.4} />
@@ -658,6 +653,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           })}
 
         </g>
+        <Lab text="REBUTTAL · 5 UA FACULTY · NOV 5TH" x={540} y={1225} size={20} tone="plate" p={room * (1 - pull)} />
         {taped > 0.02 && <g opacity={taped}><Tok x={140} y={1240} s={0.6} text="WHO WAS|THERE?" /></g>}
         <Plate x={540} y={567} text="REBUTTAL · 5 UA FACULTY · NOV 5TH" size={24} p={vis(f, b, K, 0)} />
         <Plate x={540} y={632} text="THEY SAY · IN PLAIN SIGHT" size={30} p={vis(f, b, K, 1)} />
@@ -709,14 +705,15 @@ const S9: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.02} z1={1.06} oy={960} bg="#7A3A14">
       <SVG>
-        <g transform={`translate(540 880) scale(${sc}) translate(-540 -880)`}>
+        <clipPath id="screen9"><rect x={0} y={470} width={1080} height={860} /></clipPath>
+        <g clipPath="url(#screen9)"><g transform={`translate(540 880) scale(${sc}) translate(-540 -880)`}>
           <defs><pattern id="field" x="0" y="0" width="6.8" height="6.8" patternUnits="userSpaceOnUse"><circle cx="3.4" cy="3.4" r="1.8" fill={C.teal} /></pattern></defs>
           <rect x={70} y={600} width={940} height={520} rx={6} fill="url(#field)" />
           {Array.from({length: 119}).map((_, i) => {
             const cx = 82 + ((i * 337) % 910), cy = 612 + ((i * 211 + (i % 7) * 53) % 495);
             return <circle key={i} cx={cx} cy={cy} r={gl > 0.3 ? 5.5 + 1.8 * Math.sin(f / 5 + i) : 1.7} fill={gl > 0.3 ? C.glow : C.teal} stroke={gl > 0.3 ? C.ink : 'none'} strokeWidth={1.5} />;
           })}
-        </g>
+        </g></g>
         {blank > 0.02 && <g transform="translate(880 1180)" opacity={blank}><Tok x={0} y={0} s={0.7} text="?" /><rect x={-110} y={74} width={220} height={34} rx={5} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /></g>}
         <g transform={`translate(520 ${lerp(1500, 1080, card)}) scale(${card})`} opacity={clamp01(card * 2)}>
           <rect x={-290} y={-52} width={580} height={104} rx={12} fill={C.paper} stroke={C.ink} strokeWidth={6} />
@@ -726,7 +723,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={571} text="10,500+ UAA STUDENTS" size={32} p={vis(f, b, K, 0)} />
         <Plate x={540} y={644} text="119 CITED" size={38} p={vis(f, b, K, 1)} />
         <Plate x={540} y={714} text="119 OF 10,500+ · ABOUT 1.1%" size={26} tone="glow" p={vis(f, b, K, 2)} />
-        <Plate x={540} y={778} text="CITED CASES, NOT ALL CASES" size={26} p={vis(f, b, K, 3)} />
+        <Plate x={540} y={778} text="NOT A RATE OF MISUSE" size={30} p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
@@ -754,7 +751,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={587} displayLines={['OUR SUGGESTION', 'AI HELPED DRAFT · A PERSON DECIDED']} text="OUR SUGGESTION AI HELPED DRAFT A PERSON DECIDED" size={24} p={vis(f, b, K, 0)} />
         <Plate x={540} y={679} text="ONE LINE" size={44} p={vis(f, b, K, 1)} />
         <Plate x={540} y={761} text="ONE LINE, DISCLOSED" size={34} tone="warn" p={vis(f, b, K, 2)} />
-        <Plate x={540} y={837} text="THE PLAN'S OWN RULE" size={32} tone="glow" p={vis(f, b, K, 3)} />
+        <Plate x={540} y={837} text="THE DRAFT'S OWN RULE" size={32} tone="glow" p={vis(f, b, K, 3)} />
       </SVG>
     </Frame>
   );
