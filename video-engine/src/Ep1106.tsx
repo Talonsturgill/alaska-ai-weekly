@@ -160,6 +160,17 @@ const Atmos: React.FC<{f: number; bg: string}> = ({f, bg}) => {
       <rect data-band="ok" x={0} y={1180} width={W} height={740} fill={C.dash} />
       <rect x={0} y={1180} width={W} height={14} fill="#06292C" />
       <rect x={0} y={1194} width={W} height={60} fill="#000" opacity={0.18} />
+      <g data-band="ok">
+        <path d="M 0,1500 L 1080,1440" stroke="#06292C" strokeWidth={4} opacity={0.5} />
+        <path d="M 0,1620 L 1080,1580" stroke="#06292C" strokeWidth={3} opacity={0.4} />
+        <path d="M 0,1760 L 1080,1740" stroke="#06292C" strokeWidth={3} opacity={0.35} />
+        <polygon points="60,1194 420,1194 640,1920 -120,1920" fill="#FFE9A8" opacity={0.07} />
+        <g transform="translate(110 1275) rotate(-5)"><rect x={-70} y={-12} width={140} height={22} rx={3} fill="#E8D9A8" stroke="#1B1230" strokeWidth={3} /><rect x={-64} y={-26} width={140} height={22} rx={3} fill="#F4EBC6" stroke="#1B1230" strokeWidth={3} /></g>
+        <g transform="translate(960 1280)"><rect x={-34} y={-44} width={68} height={70} rx={10} fill="#E3175F" stroke="#1B1230" strokeWidth={4} opacity={0.0} /><rect x={-30} y={-40} width={60} height={64} rx={8} fill="#6B7A86" stroke="#1B1230" strokeWidth={4} /><path d="M -14,-40 l -4,-30 M 0,-40 l 2,-34 M 14,-40 l 6,-28" stroke="#FFC36B" strokeWidth={5} strokeLinecap="round" /></g>
+        <g transform="translate(540 1510)"><ellipse rx={150} ry={14} fill="#000" opacity={0.2} /></g>
+        <g transform="translate(980 1470) rotate(8)"><rect x={-50} y={-9} width={100} height={18} rx={4} fill="#F4EBC6" stroke="#1B1230" strokeWidth={3} /></g>
+        <g transform="translate(90 1520) rotate(-8)"><rect x={-60} y={-10} width={120} height={20} rx={4} fill="#E8D9A8" stroke="#1B1230" strokeWidth={3} /><rect x={-54} y={-26} width={120} height={20} rx={4} fill="#F4EBC6" stroke="#1B1230" strokeWidth={3} /></g>
+      </g>
     </svg>
   );
 };
@@ -171,7 +182,7 @@ const vis = (f: number, b: (id: number) => number, ks: number[], i: number) => e
 
 /** a cream legal-pad sheet with an optional footnote strip. fill 0..1 types the disclosure line, lit lights the bulb. */
 const Sheet: React.FC<{x: number; y: number; s?: number; rot?: number; title?: string; strip?: boolean; fill?: number; lit?: boolean; f?: number; pencil?: boolean; thick?: number; smudge?: number}> = ({x, y, s = 1, rot = 0, title = 'AI ENGAGED', strip = true, fill = 0, lit = false, f = 0, pencil = false, thick = 0, smudge = 0}) => {
-  const line = 'DRAFTED WITH AI · DECIDED BY PEOPLE';
+  const line = 'AI HELPED DRAFT · A PERSON DECIDED';
   const shown = line.slice(0, Math.round(line.length * clamp01(fill)));
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
@@ -267,7 +278,8 @@ const Hand: React.FC<{x: number; y: number; s?: number; rot?: number}> = ({x, y,
 
 const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; color?: string; p?: number}> = ({x1, y1, x2, y2, color = C.ink, p = 1}) => {
   const k = clamp01(p);
-  const ex = lerp(x1, x2, k), ey = lerp(y1, y2, k);
+  const wob = 6 * Math.sin(useCurrentFrame() / 8);
+  const ex = lerp(x1, x2, k) + wob * 0.6, ey = lerp(y1, y2, k) + wob;
   const a = Math.atan2(y2 - y1, x2 - x1);
   return (
     <g opacity={clamp01(k * 3)}>
@@ -303,7 +315,7 @@ const Typed: React.FC<{x: number; y: number; rows: string[]; k: number; size?: n
 };
 
 // ---- bands: the throughline strip on top, the missing footnote strip at the bottom --------------------------------------------------------
-const TOPS = [{k: 3, t: 'WHO WROTE THIS?'}, {k: 10, t: 'ASK THE CLASS'}, {k: 12, t: 'A PERSON DECIDES'}, {k: 15, t: 'NOT DISCLOSED'}, {k: 19, t: 'WHO WAS THERE?'}, {k: 25, t: 'BLANK'}, {k: 31, t: 'DISCLOSED'}];
+const TOPS = [{k: 3, t: 'WHO WROTE THIS?'}, {k: 10, t: 'ASK THE CLASS'}, {k: 12, t: 'A PERSON DECIDES'}, {k: 15, t: 'OP-ED CLAIM'}, {k: 19, t: 'WHO WAS THERE?'}, {k: 25, t: 'BLANK'}, {k: 31, t: 'PROPOSED'}];
 const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
   const f = useCurrentFrame();
   const at = (k: number) => {
@@ -312,7 +324,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
   };
   const cur = TOPS.filter((q) => f >= at(q.k)).length - 1;
   const fill = clamp01((f - at(26)) / Math.max(20, at(40) - at(26)));
-  const line = 'DRAFTED WITH AI · DECIDED BY PEOPLE';
+  const line = 'AI HELPED DRAFT · A PERSON DECIDED';
   const lit = f >= at(27);
   return (
     <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, pointerEvents: 'none'}}>
@@ -330,7 +342,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
         <line x1={44} y1={270} x2={1020} y2={270} stroke={C.paper} strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
         <circle cx={44 + Math.max(0, cur) * 138 + 64} cy={270} r={9} fill={C.gold} />
         <rect x={60} y={1600} width={960} height={110} rx={8} fill="#06292C" opacity={0.75} />
-        <text x={80} y={1632} fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={2} fill={C.paper} opacity={0.9}>THE PLAN'S AI USE NOTE</text>
+        <text x={80} y={1632} fontFamily={MONO} fontWeight={800} fontSize={17} letterSpacing={2} fill={C.paper} opacity={0.9}>{fill > 0 ? 'OUR SUGGESTION · THE PLAN\'S AI USE NOTE' : 'THE PLAN\'S AI USE NOTE'}</text>
         <rect x={80} y={1648} width={860} height={44} rx={6} fill={fill > 0 ? '#FFFFFF' : 'none'} stroke={C.paper} strokeWidth={4} strokeDasharray={fill > 0.98 ? '0' : '12 9'} />
         <text x={96} y={1678} fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.ink}>{line.slice(0, Math.round(line.length * fill))}</text>
         <circle cx={985} cy={1670} r={20} fill={lit ? C.glow : '#6B6B6B'} stroke={C.ink} strokeWidth={4} />
@@ -372,6 +384,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <StampBot f={f} x={290} y={1095} reject={slam} />
         <Sheet x={880} y={1000} s={0.5} rot={6} title="PLAN" strip f={f} />
         {tok > 0.02 && <Tok x={880} y={lerp(700, 960, tok)} s={0.8} text="WHO WROTE THIS?" glow={tok > 0.9 ? 0.5 : 0} />}
+        <g opacity={ease(f, b(16), 14)}><Lab text="HARTLEY AND POTTER · ADN OP-ED" x={540} y={1285} size={20} tone="plate" p={1} /></g>
         <Plate x={540} y={568} text="UAA · 119 OF 150 CITED USED AI" size={27} p={vis(f, b, K, 0)} />
         <Plate x={540} y={637} text="119 OF 150 CITED" size={34} p={vis(f, b, K, 1)} />
         <Plate x={540} y={707} text="CITED FOR MISCONDUCT" size={30} p={vis(f, b, K, 2)} />
@@ -535,7 +548,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         </g>
         <Chatbot f={f} x={830} y={980} s={1.0} mood="focused" pencil={false} tag={tag} />
         <g transform="translate(930 1140) rotate(-18)" opacity={tag}><rect x={-60} y={-5} width={120} height={10} rx={3} fill={C.glow} stroke={C.ink} strokeWidth={3} /></g>
-        <Tok x={830} y={1230} s={crack > 0.5 ? 0.9 : 0.75} rot={crack > 0.5 ? -6 : 0} text={crack > 0.5 ? 'NOT|DISCLOSED' : 'WHO WROTE|THIS?'} />
+        <Tok x={830} y={1230} s={crack > 0.5 ? 0.9 : 0.75} rot={crack > 0.5 ? -6 : 0} text={crack > 0.5 ? 'OP-ED CLAIM|OCT 9TH' : 'WHO WROTE|THIS?'} />
         <Plate x={540} y={570} text="OP-ED · UAA PROFESSORS" size={30} p={vis(f, b, K, 0)} />
         <Plate x={540} y={641} text="THE OP-ED SAYS" size={36} p={vis(f, b, K, 1)} />
         <Plate x={540} y={727} displayLines={['CLAUDE · FIRST DRAFT, PER THE OP-ED', 'THIS FILM IS ALSO BUILT ON CLAUDE']} text="CLAUDE FIRST DRAFT PER THE OP-ED THIS FILM IS ALSO BUILT ON CLAUDE" size={22} tone="warn" p={vis(f, b, K, 2)} />
@@ -671,7 +684,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
             const cx = 70 + (i % 52) * 18.5, cy = 600 + Math.floor(i / 52) * 17;
             const inBox = (i % 52) >= 22 && (i % 52) < 33 && Math.floor(i / 52) >= 12 && Math.floor(i / 52) < 23;
             const lit = inBox && ((i * 7) % 11 < 10);
-            return <circle key={i} cx={cx} cy={cy} r={lit && gl > 0.3 ? 6.5 : 5} fill={lit && gl > 0.3 ? C.glow : C.teal} opacity={0.9} />;
+            return <circle key={i} cx={cx} cy={cy} r={lit && gl > 0.3 ? 6.5 + 1.6 * Math.sin(f / 5 + i) : 5 + 0.5 * Math.sin(f / 17 + i)} fill={lit && gl > 0.3 ? C.glow : C.teal} opacity={0.9} />;
           })}
         </g>
         {blank > 0.02 && <g transform="translate(880 1180)" opacity={blank}><Tok x={0} y={0} s={0.7} text="?" /><rect x={-110} y={74} width={220} height={34} rx={5} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /></g>}
@@ -702,13 +715,13 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Sheet x={620} y={900} s={lerp(1.3, 0.85, back)} title="" strip fill={fill} pencil={fill < 1} lit={f >= b(27)} thick={back} f={f} />
         <StampBot f={f} x={170} y={1030} reject={stampK > 0.2 ? 1 : 0} />
-        {stampK > 0.05 && <g transform={`translate(${lerp(640, 600, back)} ${lerp(1010, 930, back)}) rotate(-9) scale(${stampK * lerp(1, 0.7, back)})`}><rect x={-190} y={-44} width={380} height={88} rx={8} fill="none" stroke={C.mag} strokeWidth={10} /><text y={20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill={C.mag}>DISCLOSED</text></g>}
+        {stampK > 0.05 && <g transform={`translate(${lerp(640, 600, back)} ${lerp(1010, 930, back)}) rotate(-9) scale(${stampK * lerp(1, 0.7, back)})`}><rect x={-190} y={-44} width={380} height={88} rx={8} fill="none" stroke={C.mag} strokeWidth={10} /><text y={20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill={C.mag}>DISCLOSED</text><text y={78} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>IF ADOPTED</text></g>}
         <g opacity={loop}>
           <path d="M 300,1150 C 80,1300 70,860 230,770" fill="none" stroke={C.glow} strokeWidth={10} strokeDasharray="18 12" />
           <g transform="translate(240 730) rotate(-6)"><rect x={-110} y={-30} width={220} height={60} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>AI RECOMMENDS</text></g>
         </g>
-        <Tok x={900} y={640} s={0.85} glow={fill > 0.98 ? 1 : 0} text={fill > 0.98 ? 'DISCLOSED' : '?'} />
-        <Plate x={540} y={587} displayLines={['OUR SUGGESTION', 'DRAFTED WITH AI · DECIDED BY PEOPLE']} text="OUR SUGGESTION DRAFTED WITH AI DECIDED BY PEOPLE" size={24} p={vis(f, b, K, 0)} />
+        <Tok x={900} y={640} s={0.85} glow={fill > 0.98 ? 1 : 0} text={fill > 0.98 ? 'PROPOSED' : '?'} />
+        <Plate x={540} y={587} displayLines={['OUR SUGGESTION', 'AI HELPED DRAFT · A PERSON DECIDED']} text="OUR SUGGESTION AI HELPED DRAFT A PERSON DECIDED" size={24} p={vis(f, b, K, 0)} />
         <Plate x={540} y={679} text="ONE LINE" size={44} p={vis(f, b, K, 1)} />
         <Plate x={540} y={761} text="DISCLOSED" size={44} tone="warn" p={vis(f, b, K, 2)} />
         <Plate x={540} y={837} text="THE PLAN'S OWN RULE" size={32} tone="glow" p={vis(f, b, K, 3)} />
