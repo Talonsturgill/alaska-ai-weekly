@@ -911,6 +911,11 @@ semicolon, an em/en dash, a sentence starting with "But", first person outside a
 hashtag count outside 3 to 5, commas over 4.9 per 100 words, "cannot", a non-ordinal date, any URL,
 and any sources or credit line in the body). GATE B: editor then scorer vs
 config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both pass.
+BEFORE the first draft, run `python3 scripts/caption_rounds.py brief` and write its Hook pattern
+and its three lowest shipped criteria into that draft (10-31, 11-01 and 11-02 each cleared 8.5 by
+hundredths, on a hashtag or readability round a first draft could have done). Archive the final
+card WITH its per-criterion scores as runs/<date>/caption_score.json, because brief learns only
+from cards that kept them.
 Each round: save the scorer's JSON card, run `python3 scripts/caption_rounds.py record --card <card>`,
 and rewrite for the ONE target it names (largest weighted shortfall, held until it stalls twice),
 handing the next scorer the previous scores and diff it prints. At the rubric's

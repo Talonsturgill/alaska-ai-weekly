@@ -20,6 +20,8 @@ What it checks, per shot (a shot is the set of beats whose `shot` equals its id)
     - a shot's first beat starts before the shot does (by more than 0.25 s)
     - the shots' ambient lines name rain in a quarter of the shots but audio_arc asks the mix for
       no rain (audio_arc.ambience: ["rain"] or an ambience_stem); 10-25 capped Sound for it
+    - a prop in the shot's `hero` name or its `centered` subject that none of its beats draws, the
+      stale field a restage leaves (machine pass 2026-11-06, see stale_cast)
 
   WARN (text, printed as advisories so the board's author fixes them before the critic):
     - text a beat's `shows` says is painted (after reads, marked, labelled, types, stamped,
@@ -88,6 +90,40 @@ def _quoted(shows):
 RAIN_WORDS = ("rain", "drizzle", "downpour", "raindrop", "rainy")
 
 
+GENERIC = {"hero", "figure", "figures", "prop", "props", "object", "objects", "thing", "scene",
+           "background", "set"}
+
+
+def _prop_words(s):
+    """Content words of a prop name, CamelCase split ('BenchScope' is bench, scope), counts dropped."""
+    s = re.sub(r"([a-z])([A-Z])", r"\1 \2", str(s or ""))
+    s = re.sub(r"\bx\d+\b|\b\d+\b", " ", s)
+    return {w for w in _words(s) if w not in GENERIC}
+
+
+def stale_cast(shot, beats):
+    """[(field, name)] for each prop the shot's builder-read `hero` name or `centered` subject names
+    that none of the shot's beats draws, shows or choreographs (machine pass 2026-11-06; queue:
+    stale-text-fields-after-restage, 11-01 and 11-02, and board-fields-go-stale-after-redesign,
+    10-31). After a restage the critics failed Gate 0B to 0D for rounds on brass, token, drool, a
+    mini map, a bench, stamps and coin stacks still named in these fields. On the shipped boards
+    10-24 to 11-06 it names 15 parts, among them 11-02's token, dotted map trail and tiny hand."""
+    bw = _prop_words(" ".join(json.dumps({k: b.get(k) for k in ("shows", "draw", "choreo")}) for b in beats))
+    h = shot.get("hero")
+    name = h.get("name") if isinstance(h, dict) else h
+    out = []
+    for part in re.split(r"\s*\+\s*|,\s*", str(name or "")):
+        w = _prop_words(part)
+        if w and not (w & bw):
+            out.append(("hero", part.strip()))
+    m = re.match(r"\s*(?:the\s+)?(.+?)\s+at\s+x", str(shot.get("centered") or ""))
+    if m:
+        w = _prop_words(m.group(1))
+        if w and not (w & bw) and not (w & _prop_words(name)):
+            out.append(("centered", m.group(1).strip()))
+    return out
+
+
 def rain_shots(board):
     """How many shots' ambient lines name rain, and whether that makes rain a world of the film
     (a quarter of the shots, at least two). The mix cannot read shots (its receipt does not hash
@@ -122,6 +158,9 @@ def analyze(sb):
         if st is not None and b0 is not None and b0 < st - 0.25:
             problems.append(f"S{sid} starts at {st:.2f}s but its beat {bs[0].get('id')} is at "
                             f"{b0:.2f}s, before the shot: re-run the board's conform step")
+        for fld, part in stale_cast(s, bs):
+            problems.append(f"S{sid} {fld} names \"{part}\", which none of its beats draws: the field "
+                            f"is stale after a restage, rename it from the beats' draw.subject")
         ambs = {_norm((b.get("choreo") or {}).get("ambient")) for b in bs} - {""}
         if s.get("ambient") and ambs and _norm(s.get("ambient")) not in ambs:
             problems.append(f"S{sid} ambient \"{str(s.get('ambient'))[:70]}\" is carried by none of its "
@@ -188,6 +227,14 @@ def _self_test():
     assert any("name rain" in p for p in analyze(wet)["problems"]), analyze(wet)
     wet["audio_arc"] = {"ambience": ["rain"]}
     assert not analyze(wet)["problems"], analyze(wet)
+    cast = json.loads(json.dumps(good))
+    cast["shots"][0]["hero"] = {"name": "Plate + Cubby door + brass token"}
+    cast["shots"][0]["centered"] = "the bench at x540 y1000"
+    stale = [p for p in analyze(cast)["problems"] if "stale after a restage" in p]
+    assert len(stale) == 2 and "brass token" in stale[0] and "bench" in stale[1], stale
+    cast["shots"][0]["hero"] = {"name": "CubbyDoor x2 + the Plate"}
+    cast["shots"][0]["centered"] = "the hero at x540 y1000"
+    assert not analyze(cast)["problems"], analyze(cast)
     print("board_sync_check self-test: PASS")
     return 0
 

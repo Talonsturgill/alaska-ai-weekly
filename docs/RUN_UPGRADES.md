@@ -3975,3 +3975,7 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: 142 s film, panel median 7.01 against 7.0 (7.34, 7.01, 6.88), no hard blockers, a thin pass on the thirteenth graded cut. Caption 8.59 against 8.5 on its fourth round, zero hard fails. Regents vote outcome unobtainable (alaska.edu 503), so the film makes no claim about it.
 - In-run fixes: quote card plate overlap and sheet-edge clip on shot 6 (two judges flagged it, one as a hard blocker), room tone raised 3 dB inside its self-test band, characters upgraded with breath, hair and glasses, dot field drawn to scale.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-06).
+
+## 2026-11-06 weekly machine pass
+- Shipped: empty-top-of-square gate before the render, VO-gap air in the audio report (room tone was masked 23.2 dB under the music, not missing), held beats owe a rig before the render, caption cheap-levers brief, Gate 0A stale hero check. No engine advance.
+- Escalated: held-figure stamp strike with squash and settle (lib helper), text-fit-local-coordinate-components.

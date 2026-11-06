@@ -58,6 +58,110 @@ def short_term(path):
             re.findall(r"\bt:\s*([\d.]+)\s.*?\bS:\s*(-?[\d.]+)", p.stderr)]
 
 
+def decode_mono(path, sr=16000):
+    """The delivered mix as mono float32 samples at `sr`, or None when ffmpeg can't read it."""
+    import numpy as np
+    p = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-loglevel", "error", "-i", path,
+                        "-vn", "-ac", "1", "-ar", str(sr), "-f", "f32le", "-"], capture_output=True)
+    if p.returncode or not p.stdout:
+        return None
+    return np.frombuffer(p.stdout, dtype=np.float32)
+
+
+DEAD_AIR_DBFS = -55.0    # under this the gap is digital quiet: no bed is playing
+EDGE_S = 0.08            # trimmed off each side of a gap so word tails and onsets stay out
+
+
+def gap_beds(samples, sr, gaps, words, min_len=0.50):
+    """What a listener hears in each VO gap, MEASURED (machine pass 2026-11-06; queue: ambience
+    audibility, repeat 2). Judges read the pack, not the speakers, and on 10-31 and 11-06 they wrote
+    "thin ambience" and "no audible ambience evidence" beside a mix that played a room tone bed for
+    the whole film, because nothing in the pack said how loud the air in the gaps was. This gives
+    each gap of `min_len` or more its RMS level in the delivered mix and its distance under the
+    voice, and names any gap that falls to digital quiet, which is dead air and a real defect."""
+    import numpy as np
+
+    def rms_db(a, b):
+        seg = samples[max(0, int(a * sr)):max(0, int(b * sr))]
+        if len(seg) < sr * 0.05:
+            return None
+        r = float(np.sqrt(np.mean(np.square(seg, dtype=np.float64))))
+        return round(20 * np.log10(max(r, 1e-9)), 1)
+
+    voiced = [rms_db(w["s"], w["e"]) for w in words if w["e"] - w["s"] >= 0.12]
+    voiced = sorted(v for v in voiced if v is not None)
+    voice_db = voiced[len(voiced) // 2] if voiced else None
+    rows = []
+    for g in gaps:
+        if g["len"] < min_len:
+            continue
+        db = rms_db(g["at"] + EDGE_S, g["at"] + g["len"] - EDGE_S)
+        if db is None:
+            continue
+        rows.append({"at": g["at"], "len": g["len"], "gap_dbfs": db,
+                     "under_voice_db": round(voice_db - db, 1) if voice_db is not None else None})
+    levels = sorted(r["gap_dbfs"] for r in rows)
+    dead = [r for r in rows if r["gap_dbfs"] < DEAD_AIR_DBFS]
+    summary = {
+        "voice_median_dbfs": voice_db,
+        "gaps_measured": len(rows),
+        "gap_median_dbfs": levels[len(levels) // 2] if levels else None,
+        "gap_quietest_dbfs": levels[0] if levels else None,
+        "dead_air_gaps": len(dead),
+        "dead_air_floor_dbfs": DEAD_AIR_DBFS,
+    }
+    if not rows:
+        note = "no VO gap of 0.5 s or more to measure"
+    elif dead:
+        note = (f"{len(dead)} of {len(rows)} gaps fall under {DEAD_AIR_DBFS:g} dBFS, digital quiet with "
+                f"no bed playing, at " + ", ".join(f"{r['at']}s" for r in dead[:6])
+                + ": bring the ambience bed up through those gaps")
+    else:
+        note = (f"every one of the {len(rows)} gaps of 0.5 s or more carries sound: what plays in them (music, effects, ambience) measures "
+                f"{summary['gap_median_dbfs']} dBFS median (quietest {summary['gap_quietest_dbfs']}) "
+                f"against the voice's {voice_db}, so no gap is dead air")
+    summary["note"] = note
+    return rows, summary
+
+
+MASKED_DB = 15.0         # an ambience this far under the gap level is masked by what else plays
+
+
+def ambience_alone_dbfs():
+    """RMS of the board's ambience layers rendered ALONE by dispatch_mix --ambience-preview (the
+    same chains the mix plays), measured 2 to 9 s in like its own self-test. None when unavailable."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        path = os.path.join(td, "amb.wav")
+        p = subprocess.run(["python3", os.path.join(REPO, "scripts", "dispatch_mix.py"),
+                            "--ambience-preview", path], capture_output=True, text=True, cwd=REPO)
+        if p.returncode or not os.path.exists(path):
+            return None
+        r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-ss", "2", "-t", "7", "-i", path, "-af",
+                            "astats=measure_overall=RMS_level:measure_perchannel=0", "-f", "null", "-"],
+                           capture_output=True, text=True).stderr
+        lv = [ln for ln in r.splitlines() if "RMS level" in ln]
+        try:
+            return round(float(lv[-1].split(":")[-1]), 1)
+        except (IndexError, ValueError):
+            return None
+
+
+def masking_note(summary, amb_db):
+    """Say whether the ambience a judge is told about can be heard in the gaps, measured."""
+    gap = summary.get("gap_median_dbfs")
+    if amb_db is None or gap is None:
+        return None
+    margin = round(gap - amb_db, 1)
+    if margin >= MASKED_DB:
+        return (margin, f"the ambience layers alone measure {amb_db} dBFS RMS, {margin} dB under the "
+                        f"{gap} dBFS median of what plays in the gaps (music and effects), so they are "
+                        f"masked there and a listener hears the music, not the room: to let the room be "
+                        f"heard, dip the music in a few long gaps rather than raising the bed")
+    return (margin, f"the ambience layers alone measure {amb_db} dBFS RMS, {margin} dB under the gap "
+                    f"median of {gap} dBFS, close enough to be heard in the gaps")
+
+
 def _extremes(windows, key, n=3, apart=3.0):
     out = []
     for t, v in sorted(windows, key=key):
@@ -150,6 +254,24 @@ def _self_test():
               (ok_hi, "over 9 names the quiet window in a VO gap and the loud peak, and blames the bed"),
               (ok_arc, "a dip under continuous voice blames the VO arc, and median speech is never named"),
               (ok_none, "over 9 with no meter says so instead of claiming inside")]
+    # gap beds: a voice with a -40 dBFS bed in one gap and digital quiet in the other
+    import numpy as np
+    sr = 16000
+    rng = np.random.default_rng(11)
+    sig = (rng.standard_normal(sr * 6) * 0.01).astype(np.float32)          # about -40 dBFS air
+    sig[: sr * 1] = np.sin(np.arange(sr) * 0.2) * 0.3                      # a word, 0 to 1 s
+    sig[int(sr * 3.0): int(sr * 4.0)] = 0.0                                # dead air, 3 to 4 s
+    sig[int(sr * 4.0): int(sr * 5.0)] = np.sin(np.arange(sr) * 0.2) * 0.3  # a word, 4 to 5 s
+    words = [{"s": 0.0, "e": 1.0}, {"s": 4.0, "e": 5.0}]
+    rows, summ = gap_beds(sig, sr, [{"at": 1.0, "len": 1.8}, {"at": 3.0, "len": 1.0}], words)
+    ok_bed = (len(rows) == 2 and -43.0 < rows[0]["gap_dbfs"] < -37.0 and rows[0]["under_voice_db"] > 25
+              and summ["dead_air_gaps"] == 1 and "3.0s" in summ["note"])
+    checks.append((ok_bed, "gap beds measure the air in a gap, its distance under the voice, and name dead air"))
+    m_hi = masking_note({"gap_median_dbfs": -16.0}, -41.5)
+    m_lo = masking_note({"gap_median_dbfs": -36.0}, -41.5)
+    ok_mask = (m_hi[0] == 25.5 and "masked" in m_hi[1] and "masked" not in m_lo[1]
+               and masking_note({"gap_median_dbfs": -16.0}, None) is None)
+    checks.append((ok_mask, "an ambience 15 dB or more under the gap level is called masked, a close one is not"))
     for ok, what in checks:
         print(f"  [{'x' if ok else ' '}] {what}")
     ok = all(c for c, _ in checks)
@@ -245,10 +367,29 @@ def main():
                            "hero about -11 dBFS, standard about -15, texture about -19, ducked under the VO.")
     except (OSError, ValueError):
         rep["sfx_hits"] = []
+        sfx = {}
+    # THE AIR IN THE GAPS RIDES IN THE PACK TOO (machine pass 2026-11-06). Measured on the delivered
+    # file, beside the layers the mix says it played, so a judge reading "thin ambience" can check it.
+    samples = decode_mono(a.delivered)
+    if samples is not None:
+        words = json.load(open(a.words))["words"]
+        rows, summ = gap_beds(samples, 16000, gaps, words)
+        summ["layers_played"] = (sfx.get("ambience") or {}).get("layers", [])
+        mk = masking_note(summ, ambience_alone_dbfs())
+        if mk:
+            summ["ambience_alone_dbfs"] = round(summ["gap_median_dbfs"] - mk[0], 1)
+            summ["ambience_under_gap_db"] = mk[0]
+            summ["ambience_note"] = mk[1]
+        rep["gap_beds_summary"] = summ
+        rep["gap_beds"] = rows
     os.makedirs(EV, exist_ok=True)
     json.dump(rep, open(a.out, "w"), indent=1)
     print(f"audio_report: I={rep['delivered_i']} TP={rep['delivered_tp']} LRA={lra}")
     print(f"  {len(gaps)} gaps >=0.35s, {len(long_gaps)} >=0.50s, {silence}s of silence")
+    if rep.get("gap_beds_summary"):
+        print(f"  gap beds: {rep['gap_beds_summary']['note']}")
+        if rep["gap_beds_summary"].get("ambience_note"):
+            print(f"  ambience: {rep['gap_beds_summary']['ambience_note']}")
     print(f"  -> {a.out}")
 
 

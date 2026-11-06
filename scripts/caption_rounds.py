@@ -23,6 +23,7 @@ config/linkedin_caption_rubric.yaml and never written.
 
     python3 scripts/caption_rounds.py record --card out/dispatch/caption_card.json   # after each scorer card
     python3 scripts/caption_rounds.py status       # the target, the diff for the next scorer, STOP or GO
+    python3 scripts/caption_rounds.py brief        # BEFORE the first draft: Hook pattern + lowest criteria
     python3 scripts/caption_rounds.py --self-test
 
 Exit codes: 0 = SHIP (passed) or STOP (cap reached, ship the named best round), 3 = GO (rewrite
@@ -168,7 +169,70 @@ def status(ledger=LEDGER, rubric=RUBRIC, post=POST):
     return code
 
 
+def rubric_anchors(path=RUBRIC):
+    """({criterion name: its '10' anchor text}, the Hook pattern line) read from the rubric YAML."""
+    text = open(path).read()
+    tens = {}
+    for m in re.finditer(r'-\s*name:\s*"([^"]+)"\s*\n\s*weight:\s*[\d.]+\s*\n\s*10:\s*"([^"]+)"', text):
+        tens[m.group(1)] = m.group(2)
+    pm = re.search(r'^\s*pattern:\s*"([^"]+)"', text, re.M)
+    return tens, (pm.group(1) if pm else "")
+
+
+def archived_cards(root=REPO):
+    """[(date, {criterion: score})] for every shipped caption card that kept per-criterion scores."""
+    import glob
+    _thr, _cap, weights = rubric_numbers()
+    out = []
+    for path in sorted(glob.glob(os.path.join(root, "runs", "*", "caption_score.json"))):
+        try:
+            out.append((os.path.basename(os.path.dirname(path)), card_scores(json.load(open(path)), weights)))
+        except (OSError, ValueError, KeyError, TypeError):
+            continue      # a totals-only card (round, history) has no criteria to learn from
+    return out
+
+
+def brief(cards=None, rubric=RUBRIC, last=6):
+    """THE LEVERS BEFORE ROUND 1 (machine pass 2026-11-06; queue: caption-scorer-hair-under-bar,
+    10-31, 11-01, 11-02, repeat 2). Three runs in a row took four to seven rounds to clear 8.5 by a
+    few hundredths, and the round that cleared was a hashtag swap or a readability trim, levers a
+    first draft can pull for free. The ledger only names a target AFTER a card, so the first draft
+    never saw them. This prints, before the first scorer, the rubric's Hook pattern and the criteria
+    that finished lowest on the shipped cards that kept their scores, each with its '10' anchor."""
+    thr, cap, weights = rubric_numbers(rubric)
+    tens, pattern = rubric_anchors(rubric)
+    cards = archived_cards() if cards is None else cards
+    recent = cards[-last:]
+    print(f"BEFORE THE FIRST SCORER, the levers (bar {thr}, cap {cap} rounds):")
+    print(f"  HOOK PATTERN, from the first draft: {pattern}")
+    if not recent:
+        print("  no shipped card kept per-criterion scores yet; target the Hook and the hashtags anyway")
+        return 0
+    short = {n: sum(weights[n] * max(0.0, thr - sc[n]) for _d, sc in recent) / len(recent) for n in weights}
+    low = {n: sum(1 for _d, sc in recent if min(sc.values()) == sc[n] < max(sc.values())) for n in weights}
+    ranked = sorted(weights, key=lambda n: (-short[n], -low[n], -weights[n]))
+    print(f"  from {len(recent)} shipped card(s) with scores ({', '.join(d for d, _ in recent)}):")
+    for n in ranked[:3]:
+        mean = sum(sc[n] for _d, sc in recent) / len(recent)
+        print(f"  - {n}: mean {mean:.2f}, lowest criterion on {low[n]} card(s). A 10 reads: {tens.get(n, '')}")
+    print("  Write all three into the FIRST draft; the ledger's one-target rule starts at round 2.")
+    return 0
+
+
 def _self_test():
+    tens, pattern = rubric_anchors()
+    assert pattern.startswith("line 1 is the number") and len(tens) == 7, (pattern, len(tens))
+    _thr, _cap, wts = rubric_numbers()
+    nm = list(wts)
+    fake = [("2026-11-01", {**{n: 8.5 for n in nm}, nm[-1]: 8.2, nm[3]: 8.3}),
+            ("2026-11-02", {**{n: 8.6 for n in nm}, nm[-1]: 8.3})]
+    import io
+    import contextlib
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        brief(fake)
+    lines = buf.getvalue().splitlines()
+    assert "HOOK PATTERN" in lines[1] and nm[-1] in lines[3], lines
     tmp = tempfile.mkdtemp()
     try:
         post, ledger, card = (os.path.join(tmp, n) for n in ("post.txt", "rounds.json", "card.json"))
@@ -217,7 +281,8 @@ def _self_test():
         d = rnd({}, "ok")
         assert decide(d, thr, cap, weights)[0] == 0
         print("caption_rounds self-test: PASS (target = largest weighted shortfall, held until it stalls twice; "
-              f"STOP at the rubric's {cap} cycles with the best clean round; hard fails never capped)")
+              f"STOP at the rubric's {cap} cycles with the best clean round; hard fails never capped; "
+              "brief names the Hook pattern and the shipped cards' lowest criteria)")
         return 0
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
@@ -227,10 +292,12 @@ def main():
     if "--self-test" in sys.argv:
         return _self_test()
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("action", choices=["record", "status"])
+    ap.add_argument("action", choices=["record", "status", "brief"])
     ap.add_argument("--card")
     a = ap.parse_args()
     try:
+        if a.action == "brief":
+            return brief()
         if a.action == "record":
             if not a.card:
                 ap.error("record needs --card <scorer JSON>")
