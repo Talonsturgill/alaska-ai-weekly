@@ -1,0 +1,147 @@
+{
+ "run_date": "2026-11-06",
+ "story_id": "ua-ai-engaged-claude-draft",
+ "palette": {
+  "roles": {
+   "sky": "#D9641A",
+   "ground": "#8F3B12",
+   "hero": "#83D9B1",
+   "accent": "#E3175F",
+   "shadow": "#4A1D08",
+   "paper": "#FFE9A8",
+   "ink": "#1B1230",
+   "plan": "#FFF6D6",
+   "dots": "#0E6B73",
+   "token": "#D9A441",
+   "desk": "#0A4A50",
+   "field": "#7A3A14",
+   "glow": "#FFC36B",
+   "tokenEdge": "#1B1230",
+   "skin": "#E7B58F",
+   "machine": "#6B7A86",
+   "bulb": "#FFC36B"
+  },
+  "mood": "Warm tangerine office walls over deep teal desks, cream legal pads, a mint StampBot with an oxblood arm and one raspberry-magenta ink reserved for rejection and disclosure. Dry, warm, fair, never a dunk.",
+  "divergence": "Recorded palettes verbatim. 11-02: midnight indigo cab, sodium amber glow, electric teal stream, gunmetal counter, bone courtroom paper, magenta warning stamps. 11-01: overcast moss slope, storm slate, sulphur key, golden lantern. 10-31: sage-and-cream chart desk, cream paper, cobalt sea, brass, vermilion. 10-29: aubergine dusk depot, gold. 10-28: green-black sonar abyss. This film is a saturated tangerine daylight office with deep teal desks. The nearest value is 10-31's cream paper and brass token; the token here is gold with a hard ink keyline and sits on a teal desk or tangerine wall, never on cream paper, and the cream is limited to the Plan Sheet, legal pads and plates. Mint hero echoes 10-18's Norm only in hue; StampBot is a boxy clerk with an oxblood arm.",
+  "accent_licence": {
+   "raspberry_magenta #E3175F": "ONLY on the REJECTED stamp (shot 1), its ink splat (inherits REJECTED), the DISCLOSED stamp (shot 10), the question mark in HIDDEN? (shot 8), the BUILT ON CLAUDE tag and stamp (shots 5 and 11, the film's own disclosure), and the May calendar header. Never on the human DECIDED stamp (teal ink).",
+   "mint #83D9B1": "StampBot only.",
+   "gold #D9A441": "The throughline token only, with an ink keyline (#1B1230) to hold it off the tangerine wall; also the coins and badges in shot 3 as plan furniture.",
+   "glow #FFC36B": "Light only and practical lights: the 119 dots when lit, the single lightbulb, the window bar, the pencil.",
+   "teal #0A4A50 desk and #0E6B73 dots": "Desks, doors and the 150-dot tray. The 10,500 field sits on a rust field (#7A3A14) so teal dots read."
+  }
+ },
+ "light": {
+  "time": "Noon, a university office with a window on the left",
+  "direction": "One story, hard noon window key from upper left at 35 degrees, cream bounce off the paper, no other key. Magenta is ink, never light.",
+  "depth": {
+   "1": "z-220 wall, z0 StampBot and essay, z+90 tray lip, z+170 desk edge",
+   "2": "overhead table-top: z-40 map, z0 calendar and printer, z+30 chairs, z+170 near edge",
+   "3": "z-220 wall, z0 sheet, z+60 badges, z+170 checkboxes; pullback 2.2x to 1.0x about (540,880) with 0.4 parallax ratio on the desks",
+   "4": "z-220 wall, z0 desk and chatbot, z+60 note, z+170 hand",
+   "5": "z-220 wall, z0 professors, z+50 paper and calendar, z+170 desk edge",
+   "6": "overhead: z-40 desk, z0 sheet, z+30 scale, z+170 edge",
+   "7": "z-220 wall, z0 table and faculty, z+50 draft; pull-back 1.1x to 0.62x with hallway chairs on z-120 behind",
+   "8": "overhead: z-40 desk, z0 chatbot, z+60 arrows",
+   "9": "overhead: z-40 field, z0 dots; pull-back 2.6x to 1.0x with a 0.5 parallax ratio",
+   "10": "z-220 wall, z0 sheet, z+60 stamp; pull-back 1.3x to 0.85x with the thick plan stack on z-60",
+   "11": "z-220 wall, z0 sheet and chatbot, z+60 tag",
+   "12": "mirrors shot 1: z-220 wall, z0 StampBot and essay, z+90 sheet"
+  },
+  "key_note": "The window bar crosses once in shot 10 only, as the signature's own light event. Every other shot holds the same hard noon key; the footnote strip sits in the only soft shadow (under the sheet's lower edge) until the DISCLOSED stamp lands and the bulb comes on.",
+  "per_shot": {
+   "1": "Hard noon key top left on the slam, ink splat flash",
+   "2": "Noon key, calendar and pin practical",
+   "3": "Noon key, badges unlit, even teal desk",
+   "4": "Noon key plus a warm desk lamp practical on the note",
+   "5": "Noon key through the window onto the op-ed paper",
+   "6": "Noon key on the typed sheet, a desk lamp practical on the text",
+   "7": "Warm golden bounce for the room, then a cooler neutral key as the hallway pulls back on the pull-back beat",
+   "8": "Flat noon key, arrows self-lit by their own fill",
+   "9": "Noon key on a dark rust field, dots lit by their own fill",
+   "10": "Noon key plus the window bar crossing once, then the bulb practical becomes the key on the strip when it lights",
+   "11": "Soft noon key, tag in shade",
+   "12": "Same noon key as shot 1, rotated 8 degrees warmer"
+  }
+ },
+ "shape_language": {
+  "grammar": "ROUND people against RECTILINEAR machines and paper: StampBot's body is a soft rounded box with a round face, Characters are round-headed, the QuestionToken is scalloped-round, while the ServerMachine chatbot, the Plan Sheet, stamps' impressions, desks and chairs are hard rectangles.",
+  "why": "The thesis axis is a person deciding about a machine-drafted document. People are round, the document and the machine are rectilinear, and the picture of the turn is a round-bodied clerk pressing a rectangular disclosure into a rectangular blank."
+ },
+ "casting": {
+  "hero": "StampBot (credentials.tsx), promoted from sidekick to lead; mint body, oxblood arm as the shelf draws it",
+  "inventory": [
+   {
+    "shot": 1,
+    "subject": "StampBot (credentials.tsx) slams REJECTED, 150-dot tray, blank gold token, small Plan Sheet with blank dotted strip"
+   },
+   {
+    "shot": 2,
+    "subject": "Alaska map (akmap AK_PATH), calendar page, four regent chairs, a Plan Sheet flipping to BYLINE?, printer ejecting AI ENGAGED"
+   },
+   {
+    "shot": 3,
+    "subject": "Plan Sheet, six badges, coin stack, five checkboxes, single NO AI desk, then a hundred desks"
+   },
+   {
+    "shot": 4,
+    "subject": "ServerMachine-style chatbot (episode-local), note, human Hand, name card, token A PERSON DECIDES"
+   },
+   {
+    "shot": 5,
+    "subject": "two Characters, op-ed, calendar page with 9 circled, chatbot with ALSO BUILT ON CLAUDE tag, cracked token"
+   },
+   {
+    "shot": 6,
+    "subject": "Plan Sheet typed quote, balance scale, small chatbot pop"
+   },
+   {
+    "shot": 7,
+    "subject": "five Characters in a warm room, draft sliding across the table, hallway of half-filled chairs, taped token"
+   },
+   {
+    "shot": 8,
+    "subject": "chatbot, three arrows, HIDDEN? box"
+   },
+   {
+    "shot": 9,
+    "subject": "10,500-dot field, 119 glowing, CITED CASES card, blank token"
+   },
+   {
+    "shot": 10,
+    "subject": "Plan Sheet with footnote strip, StampBot, DISCLOSED stamp, lightbulb, thick plan stack"
+   },
+   {
+    "shot": 11,
+    "subject": "NO DECISION REPORTED tag, chatbot with BUILT ON CLAUDE stamp, StampBot hovering"
+   },
+   {
+    "shot": 12,
+    "subject": "mirror of shot 1 with the pencilled footnote"
+   }
+  ],
+  "net_new": "Episode-local in Ep1106.tsx: Chatbot (steel rectilinear machine, focused and nervous emotions only, never greedy, so the film stays fair to it), Person, Hand, Sheet, Essay, Arrow, Typed, lightbulb practical. No new library asset; StampBot (credentials.tsx) is cast as shelf draws it (mint body, oxblood arm, reject recoil) with acting carried by the surrounding props."
+ },
+ "motion_language": {
+  "grammar": "Stamps land once with anticipation, overshoot and a ring of ink, dots flow as a field, rules sprout class by class",
+  "hero_moves": [
+   "StampBot slams REJECTED at 0.4s",
+   "StampBot reads nothing; it watches the strip, then the DISCLOSED stamp lands with a recoil",
+   "StampBot hears the rebuttal and lowers its stamp (stays still while the faculty speak)"
+  ]
+ },
+ "composition": {
+  "focal_hierarchy": "StampBot and the Plan Sheet first, plates second",
+  "negative_space": "Faculty room and the final blank strip are held with open cream",
+  "safe_area": "Hero action inside y420 to 1300. CaptionBar sits at y1336, 136 px tall (1336 to 1472), so the open band below the hero is y1472 to 1500 only; the bottom strip at y1600 is background-band ok.",
+  "signature_shot": "Shot 10 at the DISCLOSED stamp: the footnote strip, a dotted blank on the Plan Sheet since shot 1, finishes typing, StampBot's magenta DISCLOSED lands with a recoil, the single lightbulb beside the strip lights for the first and only time and its warm practical becomes the key on the strip, while the window bar crosses once. The token is blank and unengraved beside the strip until it reads DISCLOSED."
+ },
+ "craft_advance": "none needed by this film",
+ "binding_checks": [
+  "accent licence table respected beat by beat (magenta only on the licensed objects)",
+  "one light story (noon-hard) in art direction and storyboard",
+  "hero is StampBot",
+  "the bulb lights once, at the DISCLOSED stamp",
+  "no dashes colons or emoji on screen"
+ ]
+}

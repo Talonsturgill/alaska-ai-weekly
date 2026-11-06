@@ -3970,3 +3970,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: 125 s film, panel median 7.05 against 7.0 (6.74, 7.20, 7.05), no hard blockers, a thin pass on the sixth graded cut. Caption 8.50 against 8.5 on its fifth round, zero hard fails. Primary documents (Washington decree and complaint) plus two outlets, Alaska share rests on Alaska's News Source citing the Alaska Department of Law, disclosed.
 - In-run fixes: VO retimed after the c17 and c19 wording edits, mix LRA 5.3 to 6.2, plate stacking, bone-ground band legibility, paper-wipe exit bug, duplicate plates, overlay Bands and Atmos layer.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-02), six items.
+
+## 2026-11-06 "Who Wrote the Rules" (University of Alaska AI Engaged plan, op-ed fight over Claude drafting it)
+- Shipped: 142 s film, panel median 7.01 against 7.0 (7.34, 7.01, 6.88), no hard blockers, a thin pass on the thirteenth graded cut. Caption 8.59 against 8.5 on its fourth round, zero hard fails. Regents vote outcome unobtainable (alaska.edu 503), so the film makes no claim about it.
+- In-run fixes: quote card plate overlap and sheet-edge clip on shot 6 (two judges flagged it, one as a hard blocker), room tone raised 3 dB inside its self-test band, characters upgraded with breath, hair and glasses, dot field drawn to scale.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-06).

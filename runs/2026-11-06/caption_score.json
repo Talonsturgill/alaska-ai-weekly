@@ -1,0 +1,12 @@
+{
+ "round": 4,
+ "weighted_total": 8.59,
+ "threshold": 8.5,
+ "ship": true,
+ "history": [
+  8.24,
+  8.29,
+  8.48,
+  8.59
+ ]
+}

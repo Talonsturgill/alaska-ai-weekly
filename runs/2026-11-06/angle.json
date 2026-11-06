@@ -1,0 +1,23 @@
+{
+ "thesis": "Both sides agree AI helped draft the University of Alaska's AI Engaged plan and disagree only about whether anyone could tell, so the cheap fix is one plain disclosure line on a public document, the same rule the plan asks of AI: it recommends, a person decides.",
+ "supporting_facts": [
+  "c20 both sides agree AI was used, they dispute whether it was hidden",
+  "c9 to c12 at UAA, 119 of 150 cited used AI, about 1.1% of 10,500+ students, 73% and 56% rises with no stated baseline (UAA only)",
+  "c8 and c21 until now rules were set class by class and UAF had no unified policy",
+  "c13 AI can recommend, a person decides"
+ ],
+ "counterpoint_to_honor": "The rebuttal at full strength (c17 to c19): administrators and board members knew, a person decided, and drafting help is not a student passing off AI work. A label puts the human decision on the record rather than leaving it to who was in which meeting.",
+ "falsifiability": "False if the public draft carried an AI-use note before October 9th, or if either side denied AI was used.",
+ "honesty_constraints": [
+  "No vote result, c25 cut",
+  "Claude-drafted claim attributed to Hartley and Potter as opinion",
+  "Misconduct figures UAA only, say cited for misconduct",
+  "Disclose the pipeline itself is built on Claude",
+  "'first' scoped to UA system only"
+ ],
+ "cross_challenge": "Analyst 3 warned 1.1% is a floor not a verdict (cited cases are only the caught ones), so the film never says 1.1% used AI improperly. Analyst 2's constructive lens was kept but not allowed to claim adoption. Analyst 1's thesis was kept because it is the only one with a falsifiable observation and a drawable object.",
+ "runner_ups": {
+  "numbers": "folded in as the second movement",
+  "structure": "folded in as the setup"
+ }
+}
