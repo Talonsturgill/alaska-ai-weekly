@@ -840,7 +840,7 @@ def main():
         _gaps = [(a["end"], b["start"]) for a, b in zip(_lines, _lines[1:])
                  if b["start"] - a["end"] >= 0.5]
         for a, b in _gaps:
-            pk = 3.2 if b - a < 1.6 else 5.0  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
+            pk = 4.6 if b - a < 1.6 else 6.5  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
             gap_lift += [(a + 0.05, 1.0), (a + 0.4, pk), (b - 0.4, pk), (b - 0.05, 1.0)]
         print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
               f"({sum(b - a for a, b in _gaps):.1f}s of room)")
