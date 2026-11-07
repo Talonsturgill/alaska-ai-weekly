@@ -1,0 +1,176 @@
+
+// ---- shared drawing -----------------------------------------------------------------------------------------------------------------------
+type PL = {k: number; text?: string; lines?: string[]; size?: number; tone?: Tone};
+/** plates that replace one another at one spot: item i shows from b(k) until the next item's b(k). */
+const Plates: React.FC<{f: number; b: (id: number) => number; items: PL[]; y?: number}> = ({f, b, items, y = 563}) => (
+  <g>
+    {items.map((it, i) => {
+      const nxt = items[i + 1];
+      const pin = ease(f, b(it.k), 12);
+      const pout = nxt ? ease(f, b(nxt.k) - 6, 6) : 0;
+      return <Plate key={i} x={540} y={y} text={it.text ?? (it.lines ?? []).join(' ')} displayLines={it.lines} size={it.size ?? 30} tone={it.tone ?? 'dark'} p={pin * (1 - pout)} />;
+    })}
+  </g>
+);
+
+const Shadow: React.FC<{x: number; y: number; w?: number; o?: number}> = ({x, y, w = 120, o = 0.32}) => <ellipse cx={x} cy={y} rx={w} ry={w * 0.16} fill={C.shadow} opacity={o} />;
+
+/** GRID, the town's power system: an ice-white glass gauge on boots. level 0..1 is the golden fluid, band draws the dashed CAPACITY NOT SETTLED zone. */
+const Grid: React.FC<{f: number; x: number; y: number; s?: number; level?: number; mood?: 'worried' | 'steady' | 'puzzled' | 'hopeful' | 'uneasy' | 'proud'; look?: number; band?: number; pending?: number; pencil?: number; rot?: number; walk?: number}> =
+({f, x, y, s = 1, level = 0.62, mood = 'worried', look = 0, band = 0, pending = 0, pencil = 0, rot = 0, walk = 0}) => {
+  const sl = Math.sin(f / 7) * 5, bob = Math.sin(f / 13) * 3 + Math.abs(Math.sin(walk * 0.4)) * 6 * (walk ? 1 : 0);
+  const tubeH = 300, tubeW = 120;
+  const fillH = tubeH * level;
+  const eyeY = -tubeH - 44;
+  const brow = mood === 'worried' || mood === 'uneasy' ? -8 : mood === 'puzzled' ? 6 : 0;
+  return (
+    <g transform={`translate(${x} ${y - bob}) rotate(${rot}) scale(${s})`}>
+      <Shadow x={0} y={bob + 4} w={110} />
+      <ellipse cx={-34} cy={-4} rx={30} ry={16} fill={C.canneryD} stroke={C.ink} strokeWidth={6} />
+      <ellipse cx={34} cy={-4} rx={30} ry={16} fill={C.canneryD} stroke={C.ink} strokeWidth={6} />
+      <rect x={-tubeW / 2 - 10} y={-tubeH - 14} width={tubeW + 20} height={26} rx={10} fill={C.steel} stroke={C.ink} strokeWidth={6} />
+      <rect x={-tubeW / 2} y={-tubeH} width={tubeW} height={tubeH} rx={22} fill={C.glass} stroke={C.ink} strokeWidth={7} />
+      <rect x={-tubeW / 2 + 8} y={-fillH - 2 + sl * 0.2} width={tubeW - 16} height={fillH} rx={14} fill={C.fluid} stroke={C.ink} strokeWidth={3} />
+      <ellipse cx={0} cy={-fillH - 2 + sl * 0.2} rx={tubeW / 2 - 8} ry={7 + Math.abs(sl) * 0.4} fill="#FFE27A" stroke={C.ink} strokeWidth={3} />
+      <rect x={-tubeW / 2 + 14} y={-tubeH + 14} width={12} height={tubeH - 50} rx={6} fill="#FFFFFF" opacity={0.55} />
+      {band > 0.02 && <g opacity={band}>
+        <rect x={-tubeW / 2 - 4} y={-tubeH - 4} width={tubeW + 8} height={92} rx={14} fill="none" stroke={C.ink} strokeWidth={5} strokeDasharray="12 9" />
+        <text x={tubeW / 2 + 22} y={-tubeH + 46} fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>?</text>
+      </g>}
+      {pending > 0.02 && <g transform={`translate(${-tubeW / 2 - 52} ${-tubeH + 40}) rotate(${f * 6})`} opacity={pending}>
+        <circle r={22} fill="none" stroke={C.ink} strokeWidth={5} strokeDasharray="14 10" />
+        <circle r={4} fill={C.ink} />
+      </g>}
+      <rect x={-46} y={eyeY - 6} width={92} height={62} rx={24} fill={C.hero} stroke={C.ink} strokeWidth={6} />
+      <circle cx={-18 + look * 8} cy={eyeY + 20} r={11} fill={C.ink} />
+      <circle cx={18 + look * 8} cy={eyeY + 20} r={11} fill={C.ink} />
+      <circle cx={-14 + look * 8} cy={eyeY + 16} r={3.5} fill="#fff" />
+      <circle cx={22 + look * 8} cy={eyeY + 16} r={3.5} fill="#fff" />
+      <line x1={-30} y1={eyeY + 2 + brow * 0.2} x2={-8} y2={eyeY + 2 + brow} stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
+      <line x1={30} y1={eyeY + 2 + brow * 0.2} x2={8} y2={eyeY + 2 + brow} stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
+      <path d={mood === 'steady' || mood === 'proud' || mood === 'hopeful' ? `M -14,${eyeY + 44} q 14,10 28,0` : `M -14,${eyeY + 48} q 14,-8 28,0`} fill="none" stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
+      <path d={`M ${tubeW / 2 + 4},-200 q 40,${20 - pencil * 70} 64,${-pencil * 120}`} fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" />
+      <path d={`M ${-tubeW / 2 - 4},-200 q -36,34 -48,66`} fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" />
+      {pencil > 0.02 && <g transform={`translate(${tubeW / 2 + 68} ${-pencil * 120 - 6}) rotate(-30)`}><rect x={-4} y={-46} width={8} height={52} fill={C.fluid} stroke={C.ink} strokeWidth={3} /><polygon points="-4,6 4,6 0,18" fill={C.ink} /></g>}
+    </g>
+  );
+};
+
+/** the unknown load: a blocky crate under a slate-violet tarp, two eyes peeking from the hem. */
+const Crate: React.FC<{f: number; x: number; y: number; s?: number; flinch?: number; blink?: number; tarp2?: number; small?: boolean}> = ({f, x, y, s = 1, flinch = 0, blink = 0, tarp2 = 0, small = false}) => {
+  const sc = small ? 0.62 : 1;
+  const br = Math.sin(f / 15) * 3 + flinch * -8;
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s * sc})`}>
+      <Shadow x={0} y={4} w={150} />
+      <g transform={`translate(0 ${br})`}>
+        <path d="M -140,0 L -150,-24 L -122,-210 L 122,-210 L 150,-24 L 140,0 Z" fill={C.tarp} stroke={C.ink} strokeWidth={7} strokeLinejoin="round" />
+        <path d="M -122,-210 L 122,-210 L 100,-232 L -100,-232 Z" fill={C.tarpD} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
+        <path d="M -70,-206 L -86,-8 M 10,-210 L 6,-4 M 74,-206 L 92,-10" stroke={C.tarpD} strokeWidth={6} fill="none" opacity={0.85} />
+        <path d="M -118,-30 q 24,22 50,0 q 24,22 50,0 q 24,22 50,0 q 24,22 50,0" fill="none" stroke={C.ink} strokeWidth={4} opacity={0.6} />
+        {blink > 0.02 && <g opacity={blink}>
+          <ellipse cx={-34} cy={-20} rx={17} ry={Math.max(2, 14 * (1 - 0.8 * (Math.sin(f / 5) > 0.92 ? 1 : 0)))} fill="#fff" stroke={C.ink} strokeWidth={4} />
+          <ellipse cx={34} cy={-20} rx={17} ry={Math.max(2, 14 * (1 - 0.8 * (Math.sin(f / 5) > 0.92 ? 1 : 0)))} fill="#fff" stroke={C.ink} strokeWidth={4} />
+          <circle cx={-30} cy={-19} r={6} fill={C.ink} /><circle cx={38} cy={-19} r={6} fill={C.ink} />
+        </g>}
+        {tarp2 > 0.02 && <g opacity={tarp2}><path d="M -126,-218 L 126,-218 L 150,-24 L -150,-24 Z" fill="#8F80C4" stroke={C.ink} strokeWidth={6} /><text x={0} y={-130} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>NOT IN THE RECORD</text></g>}
+      </g>
+    </g>
+  );
+};
+
+/** the wooden height chart: unnumbered ticks, optional ladder, lit plates and a pencil. h is the visible height, marks are y offsets up from the base. */
+const Chart: React.FC<{f: number; x: number; y: number; s?: number; h?: number; marks?: number[]; ladder?: number; pencilAt?: number | null; tremble?: number}> = ({f, x, y, s = 1, h = 620, marks = [], ladder = 0, pencilAt = null, tremble = 0}) => (
+  <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <Shadow x={0} y={4} w={90} />
+    <rect x={-44} y={-h} width={88} height={h} rx={8} fill={C.plank} stroke={C.ink} strokeWidth={7} />
+    <rect x={-34} y={-h + 10} width={14} height={h - 20} fill="#FFFFFF" opacity={0.14} />
+    {Array.from({length: 13}).map((_, i) => <line key={i} x1={-44} y1={-h * (i + 1) / 14} x2={i % 3 === 0 ? 4 : -12} y2={-h * (i + 1) / 14} stroke={C.ink} strokeWidth={4} />)}
+    {marks.map((m, i) => <g key={i}><line x1={-44} y1={-m} x2={44} y2={-m} stroke={C.crimson} strokeWidth={0} /><rect x={-50} y={-m - 5} width={100} height={10} rx={3} fill={C.paper} stroke={C.ink} strokeWidth={3} /></g>)}
+    {ladder > 0.02 && <g opacity={ladder} transform={`translate(78 0)`}>
+      <line x1={0} y1={0} x2={0} y2={-h * ladder} stroke={C.ink} strokeWidth={8} /><line x1={46} y1={0} x2={46} y2={-h * ladder} stroke={C.ink} strokeWidth={8} />
+      {Array.from({length: Math.floor((h * ladder) / 50)}).map((_, i) => <line key={i} x1={0} y1={-24 - i * 50} x2={46} y2={-24 - i * 50} stroke={C.ink} strokeWidth={6} />)}
+    </g>}
+    {pencilAt !== null && <g transform={`translate(${-60 + tremble * Math.sin(f * 1.3)} ${-pencilAt}) rotate(35)`}><rect x={-5} y={-48} width={10} height={60} fill={C.fluid} stroke={C.ink} strokeWidth={3} /><polygon points="-5,12 5,12 0,26" fill={C.ink} /></g>}
+  </g>
+);
+
+/** a padlock on a post: body, shackle, label. state: dotted (outline only), solid, green (answered, shackle shut), dark (unresolved). */
+const Padlock: React.FC<{x: number; y: number; s?: number; label?: string; state?: 'dotted' | 'solid' | 'green' | 'dark'; p?: number}> = ({x, y, s = 1, label, state = 'solid', p = 1}) => {
+  if (p <= 0.01) return null;
+  const col = state === 'green' ? C.green : state === 'dark' ? C.shadow : state === 'dotted' ? 'none' : C.iron;
+  const dash = state === 'dotted' ? '9 8' : undefined;
+  return (
+    <g transform={`translate(${x} ${y + (1 - clamp01(p)) * -40}) scale(${s * (0.8 + 0.2 * clamp01(p))})`} opacity={clamp01(p * 1.6)}>
+      <path d="M -26,-52 q 0,-46 26,-46 q 26,0 26,46" fill="none" stroke={C.ink} strokeWidth={11} strokeDasharray={dash} strokeLinecap="round" />
+      <rect x={-48} y={-54} width={96} height={78} rx={14} fill={col} stroke={C.ink} strokeWidth={7} strokeDasharray={dash} />
+      {state !== 'dotted' && <circle cx={0} cy={-18} r={9} fill={state === 'dark' ? C.ink : C.paper} stroke={C.ink} strokeWidth={4} />}
+      {state === 'green' && <path d="M -20,4 l 14,14 l 26,-30" fill="none" stroke={C.paper} strokeWidth={8} strokeLinecap="round" />}
+      {label && <text x={0} y={56} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink} stroke={C.paper} strokeWidth={5} paintOrder="stroke">{label}</text>}
+    </g>
+  );
+};
+
+/** an Assembly figure: parka body, round head, optional raised arms. */
+const Figure: React.FC<{x: number; y: number; s?: number; coat?: string; arms?: 'down' | 'push' | 'hold' | 'up'; face?: number; seed?: number; f: number}> = ({x, y, s = 1, coat = '#4A6C86', arms = 'down', face = 1, seed = 0, f}) => {
+  const idle = Math.sin(f / 18 + seed) * 3;
+  return (
+    <g transform={`translate(${x} ${y + idle * 0.3}) scale(${s * face} ${s})`}>
+      <Shadow x={0} y={2} w={52} o={0.28} />
+      <path d="M -42,0 L -34,-120 Q 0,-142 34,-120 L 42,0 Z" fill={coat} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M -34,-120 Q 0,-102 34,-120" fill="none" stroke={C.ink} strokeWidth={4} opacity={0.5} />
+      <circle cx={0} cy={-156} r={30} fill="#E8B896" stroke={C.ink} strokeWidth={6} />
+      <path d="M -30,-162 Q 0,-196 30,-162 Q 22,-176 0,-178 Q -22,-176 -30,-162 Z" fill={seed % 2 ? '#2A2018' : '#6A4A2A'} stroke={C.ink} strokeWidth={4} />
+      <circle cx={-10} cy={-154} r={4} fill={C.ink} /><circle cx={12} cy={-154} r={4} fill={C.ink} />
+      <path d="M -8,-138 q 8,6 16,0" fill="none" stroke={C.ink} strokeWidth={3.5} strokeLinecap="round" />
+      {arms === 'down' && <><path d="M -34,-112 q -12,40 -4,80" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /><path d="M 34,-112 q 12,40 4,80" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /></>}
+      {arms === 'push' && <><path d="M 34,-110 q 42,-8 70,-28" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /><path d="M -34,-112 q -12,40 -4,80" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /></>}
+      {arms === 'hold' && <><path d="M 34,-110 q 40,-30 62,-70" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /><path d="M -34,-112 q -12,40 -4,80" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /></>}
+      {arms === 'up' && <><path d="M 34,-112 q 20,-30 20,-80" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /><path d="M -34,-112 q -20,-30 -20,-80" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" /></>}
+    </g>
+  );
+};
+
+const Raven: React.FC<{x: number; y: number; s?: number; f: number; tilt?: number; flap?: number}> = ({x, y, s = 1, f, tilt = 0, flap = 0}) => (
+  <g transform={`translate(${x} ${y + Math.sin(f / 10) * 2}) scale(${s}) rotate(${tilt})`}>
+    <Shadow x={0} y={6} w={34} o={0.25} />
+    <path d="M -34,-10 Q -30,-44 8,-48 Q 34,-48 40,-30 L 62,-26 L 40,-18 Q 30,6 -6,6 Q -30,6 -34,-10 Z" fill="#1E242C" stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+    <path d={`M -30,-20 Q -60,${-30 - flap * 40} -64,${-4 - flap * 20} Q -44,-10 -30,-4 Z`} fill="#2A323C" stroke={C.ink} strokeWidth={4} />
+    <circle cx={26} cy={-34} r={4} fill="#fff" /><circle cx={27} cy={-34} r={1.8} fill={C.ink} />
+    <line x1={-8} y1={6} x2={-8} y2={20} stroke={C.ink} strokeWidth={4} /><line x1={8} y1={6} x2={8} y2={20} stroke={C.ink} strokeWidth={4} />
+  </g>
+);
+
+/** the Ocean Beauty cannery: rust-brown shed with a pitched roof, vent, windows, sign. */
+const Cannery: React.FC<{f: number; x: number; y: number; s?: number; sign?: boolean; steam?: boolean}> = ({f, x, y, s = 1, sign = true, steam = true}) => (
+  <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <Shadow x={0} y={4} w={230} />
+    <rect x={-210} y={-230} width={420} height={230} fill={C.cannery} stroke={C.ink} strokeWidth={8} />
+    <polygon points="-230,-230 0,-330 230,-230" fill={C.canneryD} stroke={C.ink} strokeWidth={8} strokeLinejoin="round" />
+    {Array.from({length: 4}).map((_, i) => <rect key={i} x={-170 + i * 90} y={-190} width={54} height={60} rx={6} fill="#9FB4BB" stroke={C.ink} strokeWidth={5} />)}
+    <rect x={-40} y={-120} width={80} height={120} fill={C.canneryD} stroke={C.ink} strokeWidth={6} />
+    <rect x={150} y={-300} width={34} height={90} fill={C.steel} stroke={C.ink} strokeWidth={6} />
+    {steam && Array.from({length: 4}).map((_, i) => <circle key={i} cx={166 + Math.sin(f / 9 + i) * 10} cy={-320 - ((f * 1.4 + i * 30) % 120)} r={14 + i * 4} fill="#F3F7F8" opacity={0.5 - ((f * 1.4 + i * 30) % 120) / 300} />)}
+    {sign && <g><rect x={-160} y={-262} width={220} height={34} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={4} /><text x={-50} y={-238} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>OCEAN BEAUTY</text></g>}
+  </g>
+);
+
+const Transformer: React.FC<{x: number; y: number; s?: number; tag?: string; tagP?: number; lit?: number}> = ({x, y, s = 1, tag, tagP = 0, lit = 0}) => (
+  <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <Shadow x={0} y={4} w={100} />
+    <rect x={-80} y={-170} width={160} height={170} rx={10} fill={C.steel} stroke={C.ink} strokeWidth={7} />
+    {Array.from({length: 4}).map((_, i) => <line key={i} x1={-66} y1={-140 + i * 36} x2={66} y2={-140 + i * 36} stroke={C.ink} strokeWidth={5} opacity={0.55} />)}
+    {[-44, 0, 44].map((dx, i) => <g key={i}><rect x={dx - 8} y={-212} width={16} height={46} fill={C.paper} stroke={C.ink} strokeWidth={5} />{lit > 0.02 && <circle cx={dx} cy={-218} r={12 + 6 * lit} fill={C.fluid} opacity={0.6 * lit} />}</g>)}
+    {tagP > 0.02 && <g opacity={clamp01(tagP * 1.6)} transform={`translate(88 -120) rotate(${8 + Math.sin(tagP * 10) * 3})`}><line x1={0} y1={0} x2={0} y2={20} stroke={C.ink} strokeWidth={3} /><rect x={-4} y={20} width={Math.max(60, monoW(tag ?? '', 16) + 14)} height={34} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={4} /><text x={Math.max(60, monoW(tag ?? '', 16) + 14) / 2 - 4} y={43} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={C.ink}>{tag}</text></g>}
+  </g>
+);
+
+const Dock: React.FC<{y?: number; f: number}> = ({y = 1240, f}) => (
+  <g>
+    <rect x={-20} y={y + 70} width={1120} height={620} fill={C.water} />
+    {Array.from({length: 8}).map((_, i) => <path key={i} d={`M ${-20 + i * 150},${y + 120 + (i % 3) * 40} q 40,-14 80,0 t 80,0`} fill="none" stroke="#EAF2F4" strokeWidth={4} opacity={0.28 + 0.1 * Math.sin(f / 18 + i)} />)}
+    <rect x={-20} y={y - 6} width={1120} height={90} fill={C.plank} stroke={C.ink} strokeWidth={7} />
+    {Array.from({length: 12}).map((_, i) => <line key={i} x1={20 + i * 96} y1={y - 6} x2={20 + i * 96} y2={y + 84} stroke={C.ink} strokeWidth={4} opacity={0.5} />)}
+    <rect x={-20} y={y + 84} width={1120} height={24} fill={C.canneryD} stroke={C.ink} strokeWidth={5} />
+  </g>
+);
