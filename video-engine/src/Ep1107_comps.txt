@@ -5,13 +5,13 @@ const Shadow: React.FC<{x: number; y: number; w?: number; o?: number}> = ({x, y,
 /** GRID, the town's power system: an ice-white glass gauge on boots. level 0..1 is the golden fluid, band draws the dashed CAPACITY NOT SETTLED zone. */
 const Grid: React.FC<{f: number; x: number; y: number; s?: number; level?: number; mood?: 'worried' | 'steady' | 'puzzled' | 'hopeful' | 'uneasy' | 'proud'; look?: number; band?: number; pending?: number; pencil?: number; rot?: number; walk?: number}> =
 ({f, x, y, s = 1, level = 0.62, mood = 'worried', look = 0, band = 0, pending = 0, pencil = 0, rot = 0, walk = 0}) => {
-  const sl = Math.sin(f / 7) * 5, bob = Math.sin(f / 13) * 3 + Math.abs(Math.sin(walk * 0.4)) * 6 * (walk ? 1 : 0);
+  const sl = Math.sin(f / 7) * 5, bob = Math.sin(f / 9) * 5 + Math.abs(Math.sin(walk * 0.4)) * 6 * (walk ? 1 : 0);
   const tubeH = 300, tubeW = 120;
   const fillH = tubeH * level;
   const eyeY = -tubeH - 44;
   const brow = mood === 'worried' || mood === 'uneasy' ? -8 : mood === 'puzzled' ? 6 : 0;
   return (
-    <g transform={`translate(${x} ${y - bob}) rotate(${rot}) scale(${s})`}>
+    <g transform={`translate(${x} ${y - bob}) rotate(${rot + Math.sin(f / 17) * 2.2}) scale(${s})`}>
       <Shadow x={0} y={bob + 4} w={110} />
       <ellipse cx={-34} cy={-4} rx={30} ry={16} fill={C.canneryD} stroke={C.ink} strokeWidth={6} />
       <ellipse cx={34} cy={-4} rx={30} ry={16} fill={C.canneryD} stroke={C.ink} strokeWidth={6} />
@@ -88,7 +88,7 @@ const Padlock: React.FC<{x: number; y: number; s?: number; label?: string; state
   const col = state === 'green' ? C.iron : state === 'dark' ? C.shadow : state === 'dotted' ? 'none' : C.iron;
   const dash = state === 'dotted' ? '9 8' : undefined;
   return (
-    <g transform={`translate(${x} ${y + (1 - clamp01(p)) * -40}) rotate(${Math.sin(x + y + (typeof window === 'undefined' ? 0 : 0)) * 0}) scale(${s * (0.8 + 0.2 * clamp01(p))})`} opacity={clamp01(p * 1.6)}>
+    <g transform={`translate(${x} ${y + (1 - clamp01(p)) * -40}) rotate(${0}) scale(${s * (0.8 + 0.2 * clamp01(p))})`} opacity={clamp01(p * 1.6)}>
       <path d="M -26,-52 q 0,-46 26,-46 q 26,0 26,46" fill="none" stroke={C.ink} strokeWidth={11} strokeDasharray={dash} strokeLinecap="round" />
       <rect x={-48} y={-54} width={96} height={78} rx={14} fill={col} stroke={state === 'green' ? C.fluid : C.ink} strokeWidth={state === 'green' ? 11 : 7} strokeDasharray={dash} />
       {state !== 'dotted' && <circle cx={0} cy={-18} r={9} fill={state === 'dark' ? C.ink : C.paper} stroke={C.ink} strokeWidth={4} />}
@@ -102,11 +102,14 @@ const Padlock: React.FC<{x: number; y: number; s?: number; label?: string; state
 const Figure: React.FC<{x: number; y: number; s?: number; coat?: string; arms?: 'down' | 'push' | 'hold' | 'up'; face?: number; seed?: number; f: number}> = ({x, y, s = 1, coat = '#4A6C86', arms = 'down', face = 1, seed = 0, f}) => {
   const idle = Math.sin(f / 18 + seed) * 3;
   return (
-    <g transform={`translate(${x} ${y + idle * 0.3}) rotate(${Math.sin(f / 11 + seed * 1.7) * 2.2}) scale(${s * face} ${s})`}>
+    <g transform={`translate(${x} ${y + idle * 0.3}) rotate(${Math.sin(f / 11 + seed * 1.7) * 2.2}) scale(${s * face * (0.92 + (seed % 4) * 0.05)} ${s * (0.92 + (seed % 4) * 0.05)})`}>
       <Shadow x={0} y={2} w={52} o={0.28} />
       <path d="M -42,0 L -34,-120 Q 0,-142 34,-120 L 42,0 Z" fill={coat} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d="M -34,-120 Q 0,-102 34,-120" fill="none" stroke={C.ink} strokeWidth={4} opacity={0.5} />
-      <circle cx={0} cy={-156} r={30} fill="#E8B896" stroke={C.ink} strokeWidth={6} />
+      <circle cx={0} cy={-156} r={30} fill={['#E8B896', '#C98F6A', '#F0C8A6'][seed % 3]} stroke={C.ink} strokeWidth={6} />
+      {seed % 3 === 0 && <path d="M -34,-178 Q 0,-212 34,-178 L 30,-168 Q 0,-188 -30,-168 Z" fill={C.fluid} stroke={C.ink} strokeWidth={5} />}
+      {seed % 3 === 1 && <rect x={-32} y={-136} width={64} height={14} rx={6} fill={C.crimson} stroke={C.ink} strokeWidth={4} />}
+      {seed % 3 === 2 && <><circle cx={-10} cy={-154} r={9} fill="none" stroke={C.ink} strokeWidth={3} /><circle cx={12} cy={-154} r={9} fill="none" stroke={C.ink} strokeWidth={3} /></>}
       <path d="M -30,-162 Q 0,-196 30,-162 Q 22,-176 0,-178 Q -22,-176 -30,-162 Z" fill={seed % 2 ? '#2A2018' : '#6A4A2A'} stroke={C.ink} strokeWidth={4} />
       <circle cx={-10} cy={-154} r={4} fill={C.ink} /><circle cx={12} cy={-154} r={4} fill={C.ink} />
       <path d="M -8,-138 q 8,6 16,0" fill="none" stroke={C.ink} strokeWidth={3.5} strokeLinecap="round" />
