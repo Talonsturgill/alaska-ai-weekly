@@ -45,7 +45,7 @@ const SVG: React.FC<{children: React.ReactNode}> = ({children}) => (
   <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, overflow: 'visible'}}>{children}</svg>
 );
 
-const World: React.FC<{children: React.ReactNode}> = ({children}) => <g transform="translate(540 1352) scale(1.2) translate(-540 -1240)">{children}</g>;
+const World: React.FC<{children: React.ReactNode}> = ({children}) => <g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g>;
 
 type Tone = 'dark' | 'plate' | 'warn' | 'glow';
 const TONES: Record<Tone, {fill: string; fg: string; edge: string}> = {
@@ -127,6 +127,8 @@ const Atmos: React.FC<{f: number; bg: string}> = ({f, bg}) => {
         <path d="M 900,1640 q 40,40 0,90 q -40,-10 -50,-60 z" fill="none" stroke={C.ink} strokeWidth={8} />
         <path d="M 760,1700 q 100,40 260,10" fill="none" stroke={C.plank} strokeWidth={10} strokeLinecap="round" />
       </g>
+      {[0, 1, 2, 3, 4, 5].map((i) => { const k = ((f * 0.7 + i * 23) % 70) / 70; return <ellipse key={i} cx={140 + i * 170} cy={1620 + (i % 3) * 70} rx={10 + k * 46} ry={3 + k * 12} fill="none" stroke="#EAF2F4" strokeWidth={3} opacity={0.6 * (1 - k)} />; })}
+      <g transform={`translate(880 ${1780 + Math.sin(f / 14) * 8})`}><circle r={26} fill={C.crimson} stroke={C.ink} strokeWidth={6} /><rect x={-26} y={-6} width={52} height={12} fill={C.paper} stroke={C.ink} strokeWidth={4} /></g>
       {[120, 330, 560, 790, 980].map((px, i) => <g key={i}><rect x={px} y={1500 + (i % 2) * 40} width={44} height={460} fill={C.canneryD} stroke={C.ink} strokeWidth={6} opacity={1} /><ellipse cx={px + 15} cy={1500 + (i % 2) * 40} rx={22} ry={8} fill={C.plank} stroke={C.ink} strokeWidth={4} /></g>)}
       {Array.from({length: 10}).map((_, i) => <path key={i} d={`M ${-40 + i * 130},${1560 + (i % 4) * 90} q 40,-12 80,0 t 80,0`} fill="none" stroke="#EAF2F4" strokeWidth={4} opacity={0.22 + 0.1 * Math.sin(f / 15 + i)} />)}
       {Array.from({length: 46}).map((_, i) => {
