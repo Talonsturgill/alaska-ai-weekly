@@ -29,8 +29,8 @@ const Grid: React.FC<{f: number; x: number; y: number; s?: number; level?: numbe
         <circle r={4} fill={C.ink} />
       </g>}
       <rect x={-46} y={eyeY - 6} width={92} height={62} rx={24} fill={C.hero} stroke={C.ink} strokeWidth={6} />
-      <circle cx={-18 + look * 8} cy={eyeY + 20} r={11} fill={C.ink} />
-      <circle cx={18 + look * 8} cy={eyeY + 20} r={11} fill={C.ink} />
+      <ellipse cx={-18 + look * 8} cy={eyeY + 20} rx={11} ry={Math.sin(f / 6.3) > 0.96 ? 2 : 11} fill={C.ink} />
+      <ellipse cx={18 + look * 8} cy={eyeY + 20} rx={11} ry={Math.sin(f / 6.3) > 0.96 ? 2 : 11} fill={C.ink} />
       <circle cx={-14 + look * 8} cy={eyeY + 16} r={3.5} fill="#fff" />
       <circle cx={22 + look * 8} cy={eyeY + 16} r={3.5} fill="#fff" />
       <line x1={-30} y1={eyeY + 2 + brow * 0.2} x2={-8} y2={eyeY + 2 + brow} stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
@@ -85,14 +85,14 @@ const Chart: React.FC<{f: number; x: number; y: number; s?: number; h?: number; 
 /** a padlock on a post: body, shackle, label. state: dotted (outline only), solid, green (answered, shackle shut), dark (unresolved). */
 const Padlock: React.FC<{x: number; y: number; s?: number; label?: string; state?: 'dotted' | 'solid' | 'green' | 'dark'; p?: number}> = ({x, y, s = 1, label, state = 'solid', p = 1}) => {
   if (p <= 0.01) return null;
-  const col = state === 'green' ? C.green : state === 'dark' ? C.shadow : state === 'dotted' ? 'none' : C.iron;
+  const col = state === 'green' ? C.iron : state === 'dark' ? C.shadow : state === 'dotted' ? 'none' : C.iron;
   const dash = state === 'dotted' ? '9 8' : undefined;
   return (
     <g transform={`translate(${x} ${y + (1 - clamp01(p)) * -40}) scale(${s * (0.8 + 0.2 * clamp01(p))})`} opacity={clamp01(p * 1.6)}>
       <path d="M -26,-52 q 0,-46 26,-46 q 26,0 26,46" fill="none" stroke={C.ink} strokeWidth={11} strokeDasharray={dash} strokeLinecap="round" />
-      <rect x={-48} y={-54} width={96} height={78} rx={14} fill={col} stroke={C.ink} strokeWidth={7} strokeDasharray={dash} />
+      <rect x={-48} y={-54} width={96} height={78} rx={14} fill={col} stroke={state === 'green' ? C.green : C.ink} strokeWidth={state === 'green' ? 11 : 7} strokeDasharray={dash} />
       {state !== 'dotted' && <circle cx={0} cy={-18} r={9} fill={state === 'dark' ? C.ink : C.paper} stroke={C.ink} strokeWidth={4} />}
-      {state === 'green' && <path d="M -20,4 l 14,14 l 26,-30" fill="none" stroke={C.paper} strokeWidth={8} strokeLinecap="round" />}
+      {state === 'green' && <path d="M -20,4 l 14,14 l 26,-30" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" />}
       {label && <text x={0} y={56} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink} stroke={C.paper} strokeWidth={5} paintOrder="stroke">{label}</text>}
     </g>
   );
