@@ -45,7 +45,13 @@ const SVG: React.FC<{children: React.ReactNode}> = ({children}) => (
   <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, overflow: 'visible'}}>{children}</svg>
 );
 
-const World: React.FC<{children: React.ReactNode}> = ({children}) => <g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g>;
+const World: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <g>
+    <g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g>
+    <clipPath id="reflclip"><rect data-band="ok" x={0} y={1400} width={W} height={520} /></clipPath>
+    <g clipPath="url(#reflclip)" opacity={0.2} data-band="ok" transform="translate(0 2524) scale(1 -1)"><g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g></g>
+  </g>
+);
 
 type Tone = 'dark' | 'plate' | 'warn' | 'glow';
 const TONES: Record<Tone, {fill: string; fg: string; edge: string}> = {
@@ -391,7 +397,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Grid f={f} x={480} y={1240} s={1.25} mood="worried" look={-1} rot={-3} level={0.62} />
         {[0, 1, 2, 3, 4, 5].map((i) => {
           const tx = 70 + i * 62;
-          return <Figure key={i} f={f} x={lerp(-90 - i * 40, tx, walkIn)} y={1232} s={0.62} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />;
+          return <Figure key={i} f={f} x={lerp(-90 - i * 40, tx, walkIn)} y={1232} s={0.62} seed={i} arms={Math.floor((f + i * 9) / 18) % 3 === 0 ? 'up' : 'down'} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />;
         })}
         </World>
         <HeldTravel f={f} x={500} y={1010} w={270} h={230} mode="runner" seed={0.37} />
@@ -587,11 +593,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           {[0, 1, 2].map((i) => <g key={i}><rect x={-150 + i * 104} y={-60} width={92} height={150} rx={6} fill={i === 0 ? '#E8F1D8' : '#fff'} stroke={C.ink} strokeWidth={5} strokeDasharray={i === 0 ? '0' : '8 7'} /></g>)}
           <text x={-104} y={36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={78} fill={C.ink} opacity={q}>?</text>
         </g>
-        <g transform={`translate(700 ${lerp(940, 1030, tag)}) rotate(${Math.sin(f / 10) * 5})`} opacity={tag}>
-          <line x1={0} y1={-70} x2={0} y2={-10} stroke={C.ink} strokeWidth={4} />
-          <rect x={-140} y={-10} width={280} height={50} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text x={0} y={24} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.ink}>NO OUTCOME REPORTED</text>
-        </g>
-        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={140 + i * 160} y={1262} s={0.7} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
+        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={140 + i * 160} y={1262} s={0.7} seed={i} arms={Math.floor((f + i * 11) / 16) % 3 === 0 ? 'up' : 'down'} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
         <g transform={`translate(0 ${-nod * 8})`} />
         </World>
         <HeldTravel f={f} x={110} y={640} w={860} h={720} mode="runner" seed={2.22} />
@@ -791,7 +793,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         {br > 0.02 && <g transform="translate(700 800)" opacity={br}><path d="M -50,40 L -50,-20 Q -50,-70 0,-70 Q 50,-70 50,-20 L 50,40" fill="none" stroke={C.ink} strokeWidth={10} strokeDasharray="12 9" strokeLinecap="round" /><text x={0} y={90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>?</text></g>}
         <Crate f={f} x={700} y={1240} s={0.7} small blink={1} />
         <Grid f={f} x={560} y={1240} s={1.1} mood={up > 0.5 ? 'steady' : 'puzzled'} level={0.6} band={1} look={lean ? 1 : 0} pencil={pen * 0.4} />
-        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={80 + i * 70 + lerp(0, 24 * (i - 2.5) * -0.2, turn)} y={1240} s={0.62} seed={i} face={turn > 0.5 ? 1 : -1} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
+        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={80 + i * 70 + lerp(0, 24 * (i - 2.5) * -0.2, turn)} y={1240} s={0.62} seed={i} arms={Math.floor((f + i * 13) / 20) % 3 === 0 ? 'up' : 'down'} face={turn > 0.5 ? 1 : -1} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
         <g transform={`translate(${lerp(-400, 1500, wipe)} 0)`} opacity={wipe > 0.01 && wipe < 0.99 ? 1 : 0}><path d="M 0,420 L 420,420 Q 460,900 380,1500 L 0,1500 Z" fill={C.tarp} stroke={C.ink} strokeWidth={8} /></g>
         </World>
         <HeldTravel f={f} x={786} y={600} w={88} h={640} mode="runner" seed={4.07} />

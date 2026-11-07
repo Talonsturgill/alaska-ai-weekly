@@ -45,7 +45,13 @@ const SVG: React.FC<{children: React.ReactNode}> = ({children}) => (
   <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, overflow: 'visible'}}>{children}</svg>
 );
 
-const World: React.FC<{children: React.ReactNode}> = ({children}) => <g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g>;
+const World: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <g>
+    <g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g>
+    <clipPath id="reflclip"><rect data-band="ok" x={0} y={1400} width={W} height={520} /></clipPath>
+    <g clipPath="url(#reflclip)" opacity={0.2} data-band="ok" transform="translate(0 2524) scale(1 -1)"><g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g></g>
+  </g>
+);
 
 type Tone = 'dark' | 'plate' | 'warn' | 'glow';
 const TONES: Record<Tone, {fill: string; fg: string; edge: string}> = {
