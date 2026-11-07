@@ -27,10 +27,10 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const shade = ease(f, 0, 70);
   const walkIn = easeIO(f, b(2) - 8, 46);
-  const tw = Math.max(bump(f, 14, 22), bump(f, b(3) - 4, 22));
+  const tw = Math.max(1.5 * bump(f, 8, 20), bump(f, b(3) - 4, 22));
   const blink = ease(f, 6, 8);
   return (
-    <Frame p={p} z0={1.04} z1={1.14} oy={1000}>
+    <Frame p={p} z0={1.04} z1={1.14} oy={1000} cam={track([{t: 0, z: 1.3, fx: 700, fy: 1080}, {t: 22, z: 1.08, fx: 560, fy: 1010}, {t: p.dur, z: 1.16, fx: 540, fy: 1000}])}>
       <SVG>
         <World>
         <Dock f={f} />
@@ -48,7 +48,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Grid f={f} x={480} y={1240} s={1.25} mood="worried" look={-1} rot={-3} level={0.62} />
         {[0, 1, 2, 3, 4, 5].map((i) => {
           const tx = 70 + i * 62;
-          return <Figure key={i} f={f} x={lerp(-90 - i * 40, tx, walkIn)} y={1318} s={0.5} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />;
+          return <Figure key={i} f={f} x={lerp(-90 - i * 40, tx, walkIn)} y={1232} s={0.62} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />;
         })}
         </World>
         <HeldTravel f={f} x={500} y={1010} w={270} h={230} mode="sweep" seed={0.37} />
@@ -196,8 +196,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(540 ${760 + jam * 6}) rotate(${jam * 4})`}>
           <path d="M -50,40 L -50,-20 Q -50,-70 0,-70 Q 50,-70 50,-20 L 50,40" fill="none" stroke={C.ink} strokeWidth={10} strokeDasharray="12 9" strokeLinecap="round" />
         </g>
-        {[0, 1, 2].map((i) => <Figure key={i} f={f} x={210 + i * 96 + strain} y={1330} s={0.82} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A'][i]} arms="push" />)}
-        {[0, 1, 2].map((i) => <Figure key={i} f={f} x={870 - i * 96 - strain} y={1330} s={0.82} seed={i + 3} coat={['#8A5A4A', '#4A6C86', '#7A6A3A'][i]} arms="hold" face={-1} />)}
+        {[0, 1, 2].map((i) => <Figure key={i} f={f} x={210 + i * 96 + strain} y={1236} s={0.95} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A'][i]} arms="push" />)}
+        {[0, 1, 2].map((i) => <Figure key={i} f={f} x={870 - i * 96 - strain} y={1236} s={0.95} seed={i + 3} coat={['#8A5A4A', '#4A6C86', '#7A6A3A'][i]} arms="hold" face={-1} />)}
         {plate1 > 0.02 && <g transform={`translate(540 ${880 - jam * 0}) rotate(${Math.sin(f / 9) * 2})`} opacity={plate1}><line x1={0} y1={-40} x2={0} y2={0} stroke={C.ink} strokeWidth={4} /><rect x={-150} y={0} width={300} height={56} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text x={0} y={38} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>1 YEAR PAUSE</text></g>}
         {stamp > 0.02 && <g transform={`translate(540 1130) rotate(-10) scale(${lerp(2.2, 1, Math.min(1, stamp))})`} opacity={clamp01(stamp * 2)}><rect x={-140} y={-44} width={280} height={88} rx={6} fill="none" stroke={C.crimson} strokeWidth={10} /><text x={0} y={20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={60} fill={C.crimson}>FAILED</text></g>}
         <g transform={`translate(${lerp(1400, 540, card)} 1470)`}>
@@ -244,11 +244,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
           {[0, 1, 2].map((i) => <g key={i}><rect x={-150 + i * 104} y={-60} width={92} height={150} rx={6} fill={i === 0 ? '#E8F1D8' : '#fff'} stroke={C.ink} strokeWidth={5} strokeDasharray={i === 0 ? '0' : '8 7'} /></g>)}
           <text x={-104} y={36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={78} fill={C.ink} opacity={q}>?</text>
         </g>
-        <g transform={`translate(760 ${lerp(1030, 1120, tag)}) rotate(${Math.sin(f / 10) * 5})`} opacity={tag}>
+        <g transform={`translate(700 ${lerp(940, 1030, tag)}) rotate(${Math.sin(f / 10) * 5})`} opacity={tag}>
           <line x1={0} y1={-70} x2={0} y2={-10} stroke={C.ink} strokeWidth={4} />
           <rect x={-140} y={-10} width={280} height={50} rx={5} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text x={0} y={24} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.ink}>NO OUTCOME REPORTED</text>
         </g>
-        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={140 + i * 160} y={1372} s={0.62} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
+        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={140 + i * 160} y={1262} s={0.7} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
         <g transform={`translate(0 ${-nod * 8})`} />
         </World>
         <HeldTravel f={f} x={110} y={640} w={860} h={720} mode="shadow" seed={2.22} />
@@ -330,7 +330,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         {tags > 0.02 && [0, 1].map((i) => <g key={i} transform={`translate(${i ? 700 : 520} ${1060 + (1 - tags) * -40}) rotate(${Math.sin(f / 12 + i) * 4})`} opacity={tags}><line x1={0} y1={0} x2={0} y2={26} stroke={C.ink} strokeWidth={3} /><rect x={-70} y={26} width={140} height={42} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={4} /><text x={0} y={55} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>{i ? 'AK ~30¢' : '12.2¢'}</text></g>)}
         {bars > 0.02 && <g transform="translate(130 1260)"><rect x={0} y={-90 * bars} width={70} height={90 * bars} fill={C.fluid} stroke={C.ink} strokeWidth={5} /><rect x={90} y={-250 * bars} width={70} height={250 * bars} fill={C.steel} stroke={C.ink} strokeWidth={5} /></g>}
         <Chart f={f} x={1010} y={1262} h={420} marks={[90, 220]} ladder={1} />
-        <Figure f={f} x={330} y={1336} s={0.9} coat="#D98A2B" arms={f > b(22) - 4 && f < b(22) + 20 ? 'push' : f > b(26) ? 'push' : 'down'} seed={7} />
+        <Figure f={f} x={330} y={1250} s={1.0} coat="#D98A2B" arms={f > b(22) - 4 && f < b(22) + 20 ? 'push' : f > b(26) ? 'push' : 'down'} seed={7} />
         <g transform={`translate(260 1160) rotate(${lerp(-60, 0, brk)})`}><rect x={-6} y={-60} width={12} height={60} fill={C.crimson} stroke={C.ink} strokeWidth={4} /></g>
         </World>
         <HeldTravel f={f} x={110} y={1050} w={160} h={210} mode="sweep" seed={2.96} />
@@ -449,7 +449,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         {br > 0.02 && <g transform="translate(700 800)" opacity={br}><path d="M -50,40 L -50,-20 Q -50,-70 0,-70 Q 50,-70 50,-20 L 50,40" fill="none" stroke={C.ink} strokeWidth={10} strokeDasharray="12 9" strokeLinecap="round" /><text x={0} y={90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>?</text></g>}
         <Crate f={f} x={560} y={1240} s={0.7} small blink={1} />
         <Grid f={f} x={430} y={1240} s={1.1} mood={up > 0.5 ? 'steady' : 'puzzled'} level={0.6} band={1} look={lean ? 1 : 0} pencil={pen * 0.4} />
-        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={80 + i * 70 + lerp(0, 24 * (i - 2.5) * -0.2, turn)} y={1330} s={0.5} seed={i} face={turn > 0.5 ? 1 : -1} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
+        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={80 + i * 70 + lerp(0, 24 * (i - 2.5) * -0.2, turn)} y={1240} s={0.62} seed={i} face={turn > 0.5 ? 1 : -1} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
         <g transform={`translate(${lerp(-400, 1500, wipe)} 0)`} opacity={wipe > 0.01 && wipe < 0.99 ? 1 : 0}><path d="M 0,420 L 420,420 Q 460,900 380,1500 L 0,1500 Z" fill={C.tarp} stroke={C.ink} strokeWidth={8} /></g>
         </World>
         <HeldTravel f={f} x={786} y={600} w={88} h={640} mode="sweep" seed={4.07} />

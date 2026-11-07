@@ -88,11 +88,11 @@ const Padlock: React.FC<{x: number; y: number; s?: number; label?: string; state
   const col = state === 'green' ? C.iron : state === 'dark' ? C.shadow : state === 'dotted' ? 'none' : C.iron;
   const dash = state === 'dotted' ? '9 8' : undefined;
   return (
-    <g transform={`translate(${x} ${y + (1 - clamp01(p)) * -40}) scale(${s * (0.8 + 0.2 * clamp01(p))})`} opacity={clamp01(p * 1.6)}>
+    <g transform={`translate(${x} ${y + (1 - clamp01(p)) * -40}) rotate(${Math.sin(x + y + (typeof window === 'undefined' ? 0 : 0)) * 0}) scale(${s * (0.8 + 0.2 * clamp01(p))})`} opacity={clamp01(p * 1.6)}>
       <path d="M -26,-52 q 0,-46 26,-46 q 26,0 26,46" fill="none" stroke={C.ink} strokeWidth={11} strokeDasharray={dash} strokeLinecap="round" />
-      <rect x={-48} y={-54} width={96} height={78} rx={14} fill={col} stroke={state === 'green' ? C.green : C.ink} strokeWidth={state === 'green' ? 11 : 7} strokeDasharray={dash} />
+      <rect x={-48} y={-54} width={96} height={78} rx={14} fill={col} stroke={state === 'green' ? C.fluid : C.ink} strokeWidth={state === 'green' ? 11 : 7} strokeDasharray={dash} />
       {state !== 'dotted' && <circle cx={0} cy={-18} r={9} fill={state === 'dark' ? C.ink : C.paper} stroke={C.ink} strokeWidth={4} />}
-      {state === 'green' && <path d="M -20,4 l 14,14 l 26,-30" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" />}
+      {state === 'green' && <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>FAQ</text>}
       {label && <text x={0} y={56} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink} stroke={C.paper} strokeWidth={5} paintOrder="stroke">{label}</text>}
     </g>
   );
@@ -102,7 +102,7 @@ const Padlock: React.FC<{x: number; y: number; s?: number; label?: string; state
 const Figure: React.FC<{x: number; y: number; s?: number; coat?: string; arms?: 'down' | 'push' | 'hold' | 'up'; face?: number; seed?: number; f: number}> = ({x, y, s = 1, coat = '#4A6C86', arms = 'down', face = 1, seed = 0, f}) => {
   const idle = Math.sin(f / 18 + seed) * 3;
   return (
-    <g transform={`translate(${x} ${y + idle * 0.3}) scale(${s * face} ${s})`}>
+    <g transform={`translate(${x} ${y + idle * 0.3}) rotate(${Math.sin(f / 11 + seed * 1.7) * 2.2}) scale(${s * face} ${s})`}>
       <Shadow x={0} y={2} w={52} o={0.28} />
       <path d="M -42,0 L -34,-120 Q 0,-142 34,-120 L 42,0 Z" fill={coat} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d="M -34,-120 Q 0,-102 34,-120" fill="none" stroke={C.ink} strokeWidth={4} opacity={0.5} />
