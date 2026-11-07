@@ -1,18 +1,5 @@
 
 // ---- shared drawing -----------------------------------------------------------------------------------------------------------------------
-type PL = {k: number; text?: string; lines?: string[]; size?: number; tone?: Tone};
-/** plates that replace one another at one spot: item i shows from b(k) until the next item's b(k). */
-const Plates: React.FC<{f: number; b: (id: number) => number; items: PL[]; y?: number}> = ({f, b, items, y = 563}) => (
-  <g>
-    {items.map((it, i) => {
-      const nxt = items[i + 1];
-      const pin = ease(f, b(it.k), 12);
-      const pout = nxt ? ease(f, b(nxt.k) - 6, 6) : 0;
-      return <Plate key={i} x={540} y={y} text={it.text ?? (it.lines ?? []).join(' ')} displayLines={it.lines} size={it.size ?? 30} tone={it.tone ?? 'dark'} p={pin * (1 - pout)} />;
-    })}
-  </g>
-);
-
 const Shadow: React.FC<{x: number; y: number; w?: number; o?: number}> = ({x, y, w = 120, o = 0.32}) => <ellipse cx={x} cy={y} rx={w} ry={w * 0.16} fill={C.shadow} opacity={o} />;
 
 /** GRID, the town's power system: an ice-white glass gauge on boots. level 0..1 is the golden fluid, band draws the dashed CAPACITY NOT SETTLED zone. */
@@ -167,7 +154,7 @@ const Transformer: React.FC<{x: number; y: number; s?: number; tag?: string; tag
 
 const Dock: React.FC<{y?: number; f: number}> = ({y = 1240, f}) => (
   <g>
-    <rect x={-20} y={y + 70} width={1120} height={620} fill={C.water} />
+    <rect data-band="ok" x={-20} y={y + 70} width={1120} height={620} fill={C.water} />
     {Array.from({length: 8}).map((_, i) => <path key={i} d={`M ${-20 + i * 150},${y + 120 + (i % 3) * 40} q 40,-14 80,0 t 80,0`} fill="none" stroke="#EAF2F4" strokeWidth={4} opacity={0.28 + 0.1 * Math.sin(f / 18 + i)} />)}
     <rect x={-20} y={y - 6} width={1120} height={90} fill={C.plank} stroke={C.ink} strokeWidth={7} />
     {Array.from({length: 12}).map((_, i) => <line key={i} x1={20 + i * 96} y1={y - 6} x2={20 + i * 96} y2={y + 84} stroke={C.ink} strokeWidth={4} opacity={0.5} />)}

@@ -9,11 +9,13 @@ import {assertCropSafe} from './lib/cropsafe';
 import {CaptionBar} from './lib/captions';
 import {MONO, monoW} from './lib/prospect';
 import {IDS} from './Ep1107Ids';
+import {HeldTravel} from './lib/heldidle';
 
 // What's In The Box, 2026-11-07. Palette roles are art_direction.json. GRID is an ice-white glass gauge on boots (ReserveBar's silhouette, hand-drawn here), golden fluid.
 // THE CHART is the throughline, a wooden height chart: blank, ladder and sixteen tick, three lock plates, two green and GRID dark, pencil hovering.
 // Slate-violet is the tarp over the unknown load. Rust is the cannery. Crimson is the FAILED stamp only. Green is a test the utility's plan answered.
 const W = 1080, H = 1920;
+const PY = 604;
 const CAPTION_TOP = 1336;
 const CAP_GUARD = CAPTION_TOP - 36;
 type Beat = {id: number; at: number; label: string};
