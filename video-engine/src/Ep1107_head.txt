@@ -45,10 +45,10 @@ const SVG: React.FC<{children: React.ReactNode}> = ({children}) => (
 
 type Tone = 'dark' | 'plate' | 'warn' | 'glow';
 const TONES: Record<Tone, {fill: string; fg: string; edge: string}> = {
-  dark: {fill: '#0F0D2B', fg: '#EDE6D3', edge: '#EDE6D3'},
+  dark: {fill: '#14222A', fg: '#F3EEDD', edge: '#F3EEDD'},
   plate: {fill: C.paper, fg: C.ink, edge: C.ink},
-  warn: {fill: C.paper, fg: C.mag, edge: C.mag},
-  glow: {fill: C.glow, fg: C.ink, edge: C.ink},
+  warn: {fill: C.paper, fg: C.crimson, edge: C.crimson},
+  glow: {fill: C.fluid, fg: C.ink, edge: C.ink},
 };
 
 /** THE NAMEPLATE: a mono plate sized to its string by arithmetic, clear of the crop lines and the caption band. */
