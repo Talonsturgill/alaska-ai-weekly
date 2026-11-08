@@ -89,18 +89,17 @@ S = [
  (7, 6, "map-territory", "extreme-wide", "high", "shore-stage", "top-down-map", "map-territory", "vertical-descent", "landscape-as-subject", "pull-out", "travel", "The one road ruler", "The camera rises from one road slab to a long painted shoreline while Strand holds on a foreground layer, a caliper span lights, a thermometer swings, a tag is struck through."),
  (8, 7, "subject-portrait", "medium", "low", "audit-stage", "instrument-screen", "centered-hero-lowerthird", "push-in-only", "instrument-as-subject", "mask-wipe", "build", "The empty window", "The taped dial rolls into white light, two engraved plates clip on, the label reads ACCURACY and the tape tears to empty glass."),
  (9, 8, "macro-closeup", "insert", "eye", "verdict-card", "macro-closeup", "single-object-void", "assemble-build", "single-organic-hero", "match-cut", "match", "Small claim", "A steel frame snaps around the first tenth of the ribbon and a small plate snaps under it."),
- (10, 9, "data-panel", "wide", "overhead", "chart-paper", "top-down-map", "grid-modular", "horizontal-traverse", "data-as-subject", "carried-element", "carry", "A separate clock", "A black-bordered newsprint chart card, a curve flat then a cliff, three bars climb."),
- (11, 9, "alt-vantage", "extreme-wide", "high", "century-axis", "exploded-diagram", "single-object-void", "vertical-descent", "structure-as-subject", "match-cut", "match", "The sliver", "The ribbon's thirty three months shrink to a sliver on the century axis."),
- (12, 10, "macro-closeup", "close", "eye", "record-ribbon", "macro-closeup", "stacked-layers", "scroll-data", "data-as-subject", "graphic-match", "match", "Ten more years", "Xiao's quote types on the ribbon, ten dashed years extend, the blank tag flips to 10 beside the empty dial."),
- (13, 11, "wide-establish", "extreme-wide", "ground", "road-cutaway", "cross-section-cutaway", "centered-hero-lowerthird", "radial-emanate", "single-organic-hero", "carried-element", "carry", "Who lays the next", "The cold open returns, the ribbon runs off frame, a dashed cable unspools, Strand looks up, a blank work order clips on."),
+ (10, 9, "data-panel", "wide", "overhead", "chart-paper", "top-down-map", "grid-modular", "horizontal-traverse", "data-as-subject", "carried-element", "carry", "A separate clock", "A black-bordered newsprint chart card, a curve flat then a cliff, then a hard cut inside the shot to a bare century axis where the ribbon shrinks to a sliver and the roads and pipelines bars climb."),
+ (11, 10, "macro-closeup", "close", "eye", "record-ribbon", "macro-closeup", "stacked-layers", "scroll-data", "data-as-subject", "graphic-match", "match", "Ten more years", "Xiao's quote types on the ribbon, ten dashed years extend, the blank tag flips to 10 beside the empty dial."),
+ (12, 11, "wide-establish", "extreme-wide", "ground", "road-cutaway", "cross-section-cutaway", "centered-hero-lowerthird", "radial-emanate", "single-organic-hero", "carried-element", "carry", "Who lays the next", "The cold open returns, the ribbon runs off frame, a dashed cable unspools, Strand looks up, a blank work order clips on."),
 ]
-SHOT_ANCHOR = {11: (9, W("sixty"))}
+SHOT_ANCHOR = {}
 
-AMBIENT = {13: "the pulse runs, the cursor blinks", 1: "the pulse runs, ice glints, the thaw line wobbles", 2: "the lamp glows, the ribbon prints, the pen scribbles", 3: "the plates sway, the ribbon tail drifts",
+AMBIENT = {1: "the pulse runs, ice glints, the thaw line wobbles", 2: "the lamp glows, the ribbon prints, the pen scribbles", 3: "the plates sway, the ribbon tail drifts",
            4: "the dials twitch, rivets pop, steam puffs", 5: "the needles breathe, the beads patter", 6: "the instruments hum, Strand breathes",
            7: "the strip drifts, the slab sits, Strand bends", 8: "the light breathes, the glass shines", 9: "the frame rivets settle, the ribbon edge flutters",
-           10: "the curve glows, bars rise", 11: "the sliver pulses, the axis ticks", 12: "the letters land, the ticks blink"}
-CENTER = {1: "Strand head at x790 y920", 2: "the box at x300 y900", 3: "the dial at x540 y1000", 4: "the solver at x540 y880", 5: "the dials at x540 y800", 6: "the instruments at x540 y900", 7: "Strand head at x540 y1180", 8: "the dial at x540 y880", 9: "the frame at x540 y900", 10: "the chart at x540 y880", 11: "the sliver at x200 y900", 12: "the ribbon at x540 y930", 13: "Strand head at x790 y920"}
+           10: "the curve glows, bars rise, the sliver pulses", 11: "the letters land, the ticks blink", 12: "the pulse runs, the cursor blinks"}
+CENTER = {1: "Strand head at x790 y920", 2: "the box at x300 y900", 3: "the dial at x540 y1000", 4: "the solver at x540 y880", 5: "the dials at x540 y800", 6: "the instruments at x540 y900", 7: "Strand head at x540 y1180", 8: "the dial at x540 y880", 9: "the frame at x540 y900", 10: "the chart at x540 y880", 11: "the ribbon at x540 y930", 12: "Strand head at x790 y920"}
 HERO = {
  1: ("Strand + road slab + soil strata + ruler + ice lenses", "30% Strand, 30% strata, 20% slab, 20% ruler"),
  2: ("interrogator box + ribbon + date plate + calipers + taped dial", "30% box, 25% ribbon, 25% calipers, 20% dial"),
@@ -111,14 +110,13 @@ HERO = {
  7: ("road slab + shoreline strip + tags + Strand + caliper span", "30% strip, 25% slab, 20% tags, 25% Strand"),
  8: ("taped dial + light pool + engraved plates", "45% dial, 30% light, 25% plates"),
  9: ("steel frame + ribbon + small plate", "50% frame, 30% ribbon, 20% plate"),
- 10: ("newsprint chart card + curve + three bars", "40% chart, 35% curve, 25% bars"),
- 11: ("century axis + ribbon sliver", "70% axis, 30% sliver"),
- 12: ("ribbon + typed quote + ten ticks + tag + empty dial", "30% ribbon, 30% quote, 20% ticks, 20% tag"),
- 13: ("Strand + ruler + dashed cable + cursor + work order", "30% Strand, 25% ruler, 25% cable, 20% cursor"),
+ 10: ("newsprint chart card + curve + bars then a bare century axis + ribbon sliver", "35% chart, 30% curve, 20% bars, 15% sliver"),
+ 11: ("ribbon + typed quote + ten ticks + tag + empty dial", "30% ribbon, 30% quote, 20% ticks, 20% tag"),
+ 12: ("Strand + ruler + dashed cable + cursor + work order", "30% Strand, 25% ruler, 25% cable, 20% cursor"),
 }
-PARTS = {1: 56, 2: 48, 3: 52, 4: 60, 5: 52, 6: 44, 7: 44, 8: 40, 9: 30, 10: 46, 11: 24, 12: 40, 13: 44}
+PARTS = {1: 56, 2: 48, 3: 52, 4: 60, 5: 52, 6: 44, 7: 44, 8: 40, 9: 30, 10: 56, 11: 40, 12: 44}
 KICKS = (47, 35)
-CAMERA = {1: "craneDown+dollyThrough", 2: "truckAcross", 3: "static:plates hold while the ribbon tail moves", 4: "dollyThrough", 5: "craneDown", 6: "truckAcross", 7: "riseWith", 8: "static:the light pool holds the dial", 9: "dollyThrough", 10: "truckAcross", 11: "riseWith", 12: "craneDown", 13: "craneDown+dollyThrough"}
+CAMERA = {1: "craneDown+dollyThrough", 2: "truckAcross", 3: "static:plates hold while the ribbon tail moves", 4: "dollyThrough", 5: "craneDown", 6: "truckAcross", 7: "riseWith", 8: "static:the light pool holds the dial", 9: "dollyThrough", 10: "truckAcross", 11: "craneDown", 12: "craneDown+dollyThrough"}
 
 PALETTE = ("pale overcast snow light, warm stone and umber strata, bone-white ice, a thin terracotta thaw line, a saturated violet fiber cable hero with a white pulse, pewter instruments, a black-and-white newsprint separate-study card and caution yellow tape reserved for the missing number")
 
