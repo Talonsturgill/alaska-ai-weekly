@@ -328,9 +328,9 @@ const S1: React.FC<SceneProps> = ({p}) => {
         {drop >= 1 && f < 34 && <circle cx={800} cy={884} r={16 + (f - 20) * 1.4} fill="none" stroke={ST.honey} strokeWidth={3} opacity={clamp01(1 - (f - 20) / 14)} />}
         <Ribbon x={880} y={940} w={Math.max(1, 190 * slide)} h={58} f={f} ticks={0} label={false} />
         <Ruler x={100} y={1190} w={880} f={f} p={rk} />
-        <Plate x={540} y={520} text="UTQIAGVIK ROAD EMBANKMENT" size={30} tone="dark" p={vis(f, b, K, 0)} />
-        <Plate x={540} y={520} text="2 CABLES" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="1 KM EACH" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={660} y={520} text="UTQIAGVIK ROAD EMBANKMENT" size={30} tone="dark" p={vis(f, b, K, 0)} />
+        <Plate x={660} y={520} text="2 CABLES" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={660} y={520} text="1 KM EACH" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
