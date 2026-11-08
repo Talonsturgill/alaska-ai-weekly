@@ -161,8 +161,10 @@ const Floor: React.FC<{f: number; cable?: boolean}> = ({f, cable = true}) => {
         <rect x={0} y={1696} width={W} height={224} fill="#2E2A24" />
         <rect x={0} y={1476} width={W} height={8} fill="#000" opacity={0.2} />
         {[[140, 1590, 150], [440, 1620, 190], [760, 1580, 160], [980, 1650, 130], [300, 1720, 140], [640, 1760, 180], [900, 1740, 150]].map(([x, y, w], i) => (
-          <g key={i}><ellipse cx={x} cy={y} rx={w / 2} ry={14} fill="#EEF2F2" stroke="#0E1020" strokeWidth={3} /><ellipse cx={x - w * 0.18} cy={y - 3} rx={w * 0.18} ry={3} fill="#FFFFFF" opacity={0.4 + 0.4 * Math.abs(Math.sin(f / 15 + i))} /></g>
+          <g key={i}><ellipse cx={x} cy={y + 6} rx={w / 2} ry={14} fill="#7C8A92" /><ellipse cx={x} cy={y} rx={w / 2} ry={14} fill="#EEF2F2" stroke="#0E1020" strokeWidth={3} /><ellipse cx={x + w * 0.1} cy={y + 5} rx={w * 0.32} ry={4} fill="#9FB0B8" opacity={0.55} /><ellipse cx={x - w * 0.18} cy={y - 3} rx={w * 0.18} ry={3} fill="#FFFFFF" opacity={0.4 + 0.4 * Math.abs(Math.sin(f / 15 + i))} /></g>
         ))}
+        {[0, 1, 2, 3].map((i) => <path key={`s${i}`} d={`M -20,${1560 + i * 44} q 180,${-14 + i * 6} 360,0 t 360,0 t 360,0`} fill="none" stroke="#1C1814" strokeWidth={3} opacity={0.3} />)}
+        {[[80, 1520], [330, 1535], [610, 1515], [880, 1530]].map(([x, y], i) => <path key={`r${i}`} d={`M ${x},${y} q 10,26 -6,52 M ${x},${y + 14} q 18,12 30,34`} fill="none" stroke="#6B5B45" strokeWidth={4} strokeLinecap="round" opacity={0.7} />)}
         {Array.from({length: 24}).map((_, i) => <circle key={`c${i}`} cx={(i * 151) % 1080} cy={1500 + ((i * 67) % 400)} r={3 + (i % 4)} fill={i % 2 ? '#7A6F5E' : '#1C1814'} opacity={0.45} />)}
         {cable && <><path d={d} fill="none" stroke="#0E1020" strokeWidth={34} strokeLinecap="round" />
         <path d={d} fill="none" stroke="#6F3DF0" strokeWidth={24} strokeLinecap="round" />
@@ -406,7 +408,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
   const peek = ease(f, b(13) + 8, 20) * (1 - ease(f, b(14) + 12, 16));
   const pl = (k: number) => ease(f, b(k), 16);
   return (
-    <Frame p={p} z0={1.02} z1={1.07} oy={960}>
+    <Frame p={p} z0={1.02} z1={1.07} oy={960} warmth={0.18}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#CDD3D8" />
         {Array.from({length: 7}).map((_, i) => <line key={i} x1={-60} y1={440 + i * 140} x2={1140} y2={440 + i * 140} stroke="#B3BBC2" strokeWidth={3} />)}
@@ -438,7 +440,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const kn = springy(f, b(16), 22);
   const j1 = ease(f, b(17), 18), j2 = ease(f, b(18), 18);
   return (
-    <Frame p={p} z0={1.02} z1={1.1} oy={960}>
+    <Frame p={p} z0={1.02} z1={1.1} oy={960} warmth={0.18}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#B8C0C8" />
         <rect data-band="ok" x={-60} y={1230} width={1200} height={160} fill="#8F979F" />
@@ -476,7 +478,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
     return {x, on: f > t0 && f < t0 + 80};
   });
   return (
-    <Frame p={p} z0={1.04} z1={1.1} oy={960}>
+    <Frame p={p} z0={1.04} z1={1.1} oy={960} warmth={0.18}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#C9CFD4" />
         <rect x={-60} y={380} width={1200} height={8} fill="#A9B1B8" />
@@ -506,7 +508,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const glow = (k: number, x: number, y: number, r: number) => k > 0.02 && <circle cx={x} cy={y} r={r * (0.7 + 0.3 * k)} fill="#FFFFFF" opacity={0.35 * k + 0.1 * Math.sin(f / 7) * k} />;
   const wig = `M 100,1130 ${Array.from({length: 40}).map((_, i) => `L ${100 + i * 22},${1130 + 14 * Math.sin(i * 0.9)}`).join(' ')}`;
   return (
-    <Frame p={p} z0={1.02} z1={1.08} oy={960}>
+    <Frame p={p} z0={1.02} z1={1.08} oy={960} warmth={0.18}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#D3D8DC" />
         <rect x={-60} y={1000} width={1200} height={330} fill="#A9B1B8" />
@@ -573,7 +575,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <path d={coast} fill="none" stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
           {Array.from({length: 90}).map((_, i) => <path key={`t${i}`} d={`M ${-3200 + ((i * 713) % 6400)},${640 + ((i * 97) % 260)} q 14,-18 28,0`} fill="none" stroke={ST.ink} strokeWidth={2} vectorEffect="non-scaling-stroke" opacity={0.45} />)}
           <rect x={320} y={924} width={440} height={60} fill={ST.stone} stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
-          <rect x={340} y={880} width={400} height={44} rx={4} fill={ST.road} stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
+          <rect x={340} y={924} width={400} height={14} fill="#000" opacity={0.22} /><rect x={340} y={880} width={400} height={44} rx={4} fill={ST.road} stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
           <rect x={340} y={896} width={400} height={5} fill="#EDEFF1" opacity={0.9} />
           {Array.from({length: 40}).map((_, i) => <polygon key={i} points={`${-12000 + i * 600},${620 + 40 * Math.sin(i)} ${-12000 + i * 600 + 260},${604 + 8 * Math.sin(i)} ${-12000 + i * 600 + 420},${640 + 30 * Math.sin(i * 2)}`} fill="#F4F6F7" stroke={ST.ink} strokeWidth={2} vectorEffect="non-scaling-stroke" opacity={0.85} />)}
           <g opacity={caliper}>
@@ -595,7 +597,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(300 ${lerp(640, 1070, town)})`} opacity={clamp01(town * 2)}><Lab text="ONE TOWN" x={0} y={0} size={26} /></g>
         <g transform={`translate(540 ${lerp(640, 1050, fail)})`} opacity={clamp01(fail * 2)}>
           <Lab text="ROAD FAILURE" x={0} y={0} size={28} />
-          <line x1={-140} y1={0} x2={140} y2={0} stroke={ST.ink} strokeWidth={8} />
+          <line x1={-90} y1={0} x2={90} y2={0} stroke={ST.ink} strokeWidth={8} />
         </g>
         <Plate x={540} y={520} text="THE FAIR CASE AGAINST IT" size={28} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={520} text="ONE ROAD" size={36} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
@@ -618,7 +620,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const clear = ease(f, b(38), 16);
   const tremble = ease(f, b(34), 30);
   return (
-    <Frame p={p} z0={1.04} z1={1.1} oy={960}>
+    <Frame p={p} z0={1.04} z1={1.1} oy={960} warmth={0.18}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#2B3036" />
         <defs><radialGradient id="pool" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stopColor="#FFFFFF" stopOpacity={0.62} /><stop offset="1" stopColor="#FFFFFF" stopOpacity={0} /></radialGradient></defs>
@@ -650,7 +652,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const fy = lerp(-120, 880, hover) + lerp(0, 0, snap);
   const fw = lerp(240, 100, snap);
   return (
-    <Frame p={p} z0={1.04} z1={1.1} oy={960}>
+    <Frame p={p} z0={1.04} z1={1.1} oy={960} warmth={0.18}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#D6DBDF" />
         <ellipse cx={540} cy={1060} rx={460} ry={24} fill="#000" opacity={0.18} />
@@ -739,14 +741,14 @@ const S10b: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#E4E6E7" />
         <line x1={100} y1={1060} x2={1010} y2={1060} stroke={ST.ink} strokeWidth={6} />
-        {[2020, 2040, 2060, 2080, 2100].map((yr) => <g key={yr}><line x1={ax(yr)} y1={1060} x2={ax(yr)} y2={1080} stroke={ST.ink} strokeWidth={5} /><text x={ax(yr)} y={1116} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={ST.ink}>{yr}</text></g>)}
+        {[2020, 2100].map((yr) => <g key={yr}><line x1={ax(yr)} y1={1060} x2={ax(yr)} y2={1080} stroke={ST.ink} strokeWidth={5} /><text x={ax(yr)} y={1116} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={ST.ink}>{yr}</text></g>)}
         <HeldProp f={f} px={140} py={1070} w={120} h={70} seed={11} kind="rest" gain={0.8}><g transform="translate(100 1060)">
           <rect x={0} y={-44} width={rw} height={36} fill={ST.paper} stroke={ST.ink} strokeWidth={4} />
           {shrink > 0.9 && <rect x={-6} y={-50} width={rw + 12} height={48} fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.5 + 0.4 * Math.sin(f / 6)} />}
         </g></HeldProp>
         <Lab text="SEPT 2021 TO JUNE 2024" x={300} y={1084} size={20} p={ease(f, b(48) + 60, 14)} />
-        <g opacity={clamp01(shrink * 3)}><rect x={255} y={530} width={570} height={510} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} />{[0, 50, 100].map((pc) => <g key={pc}><line x1={300} y1={960 - pc * 4} x2={310} y2={960 - pc * 4} stroke={ST.ink} strokeWidth={4} /><text x={294} y={960 - pc * 4 + 6} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={16} fill={ST.ink}>{pc}%</text></g>)}<line x1={310} y1={960} x2={800} y2={960} stroke={ST.ink} strokeWidth={4} /><line x1={310} y1={560} x2={310} y2={960} stroke={ST.ink} strokeWidth={4} /><rect x={340} y={960 - 40 * clamp01(shrink * 3)} width={80} height={40 * clamp01(shrink * 3)} fill="#C9CDD0" stroke={ST.ink} strokeWidth={3} strokeDasharray="8 5" /><text x={540} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text></g>
-        <BarsPanel x0={510} base={960} px={4} vals={[80, 60, 90]} grow={[1, r1, r2]} w={76} gap={110} />
+        <g opacity={clamp01(shrink * 3)}><rect x={255} y={530} width={570} height={510} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} />{[0, 50, 100].map((pc) => <g key={pc}><line x1={340} y1={960 - pc * 4} x2={350} y2={960 - pc * 4} stroke={ST.ink} strokeWidth={4} /><text x={334} y={960 - pc * 4 + 6} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={16} fill={ST.ink}>{pc}%</text></g>)}<line x1={350} y1={960} x2={800} y2={960} stroke={ST.ink} strokeWidth={4} /><line x1={350} y1={560} x2={350} y2={960} stroke={ST.ink} strokeWidth={4} /><text x={400} y={990} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={ST.ink}>UNDER</text><text x={400} y={1008} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={ST.ink}>10%</text><rect x={370} y={960 - 40 * clamp01(shrink * 3)} width={60} height={40 * clamp01(shrink * 3)} fill="#C9CDD0" stroke={ST.ink} strokeWidth={3} strokeDasharray="8 5" /><text x={540} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text></g>
+        <BarsPanel x0={530} base={960} px={4} vals={[80, 60, 90]} grow={[1, r1, r2]} w={70} gap={104} />
         <g transform="translate(540 1230)"><rect x={-300} y={-26} width={600} height={52} fill="none" stroke={ST.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>SEPARATE STUDY · HIGH EMISSIONS ONLY</text></g>
         <Plate x={540} y={496} text="60% ROADS" size={34} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={496} text="90% PIPELINES" size={34} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
@@ -772,19 +774,19 @@ const S11: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#D6DBDF" />
         <Typed x={90} y={620} rows={QUOTE} k={typed} size={44} />
-        <HeldProp f={f} px={540} py={1040} w={960} h={140} seed={12} kind="rest" gain={0.5}>
-          <Ribbon x={70} y={960} w={940} h={90} f={f} ticks={1} ext={ext} label />
+        <HeldProp f={f} px={540} py={880} w={960} h={140} seed={12} kind="rest" gain={0.5}>
+          <Ribbon x={70} y={850} w={940} h={90} f={f} ticks={1} ext={ext} label />
         </HeldProp>
         {Array.from({length: 10}).map((_, i) => {
           const on = clamp01(lit * 10 - i);
           const n = 33, cell = (940 * 0.72) / n;
           const x = 70 + 14 + n * cell + 8 + i * (940 * 0.28 / 10);
-          return <rect key={i} x={x} y={960 - 35} width={Math.max(3, 940 * 0.28 / 10 - 8)} height={70} rx={2} fill="#FFFFFF" opacity={on * 0.9} />;
+          return <rect key={i} x={x} y={850 - 35} width={Math.max(3, 940 * 0.28 / 10 - 8)} height={70} rx={2} fill="#FFFFFF" opacity={on * 0.9} />;
         })}
         <g transform={`translate(0 0)`}>
-          <NumTag x={820} y={1120} s={1.5 + 0.4 * bump(f, b(53), 22)} text={flip > 0.5 ? '10' : '?'} drop={tag} lock={lock} f={f} />
+          <NumTag x={800} y={1090} s={1.6 + 0.4 * bump(f, b(53), 22)} text={flip > 0.5 ? '10' : '?'} drop={tag} lock={lock} f={f} />
         </g>
-        <Dial x={230} y={1175} s={0.8} f={f} tape={0} peel={0} hang={false} wobble={0.2} />
+        <Dial x={270} y={1135} s={1.05} f={f} tape={0} peel={0} hang={false} wobble={0.2} />
         <Plate x={540} y={520} text="PENN STATE · XIAO" size={32} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={520} text="10 MORE YEARS OF DATA" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
         <Plate x={540} y={520} text="THE OTHER NUMBER" size={36} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
