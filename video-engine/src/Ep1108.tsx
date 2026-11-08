@@ -575,7 +575,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <rect x={320} y={924} width={440} height={60} fill={ST.stone} stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
           <rect x={340} y={880} width={400} height={44} rx={4} fill={ST.road} stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
           <rect x={340} y={896} width={400} height={5} fill="#EDEFF1" opacity={0.9} />
-          {Array.from({length: 40}).map((_, i) => <polygon key={i} points={`${-12000 + i * 600},${620 + 40 * Math.sin(i)} ${-12000 + i * 600 + 260},${560 + 40 * Math.sin(i)} ${-12000 + i * 600 + 420},${640 + 30 * Math.sin(i * 2)}`} fill="#F4F6F7" stroke={ST.ink} strokeWidth={2} vectorEffect="non-scaling-stroke" opacity={0.85} />)}
+          {Array.from({length: 40}).map((_, i) => <polygon key={i} points={`${-12000 + i * 600},${620 + 40 * Math.sin(i)} ${-12000 + i * 600 + 260},${604 + 8 * Math.sin(i)} ${-12000 + i * 600 + 420},${640 + 30 * Math.sin(i * 2)}`} fill="#F4F6F7" stroke={ST.ink} strokeWidth={2} vectorEffect="non-scaling-stroke" opacity={0.85} />)}
           <g opacity={caliper}>
             <rect x={340} y={850} width={400} height={14} fill="#FFFFFF" stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
             <rect x={334} y={850} width={12} height={86} fill={ST.steel} stroke={ST.ink} strokeWidth={3} vectorEffect="non-scaling-stroke" />
@@ -707,17 +707,17 @@ const S10a: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [42, 45, 47];
   const k = ease(f, b(42), 26);
-  const under = springy(f, b(45), 26);
-  const cliff = springy(f, b(47), 30);
+  const under = ease(f, b(45), 26);
+  const cliff = ease(f, b(47), 30);
   return (
-    <Frame p={p} z0={1.0} z1={1.06} oy={960}>
+    <Frame p={p} z0={1.0} z1={1.06} oy={960} warmth={0.25}>
       <SVG>
         <HeldProp f={f} px={540} py={1200} w={960} h={730} seed={10} kind="rest" gain={0.4}>
           <Card k={k} f={f} under={under} grow={[cliff, 0, 0]} />
         </HeldProp>
-        <g transform="translate(290 560) rotate(-5)" opacity={clamp01(k * 3)}><rect x={-200} y={-30} width={400} height={60} fill="none" stroke={ST.ink} strokeWidth={6} /><rect x={-190} y={-22} width={380} height={44} fill="none" stroke={ST.ink} strokeWidth={2} /><text y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} letterSpacing={3} fill={ST.ink}>SEPARATE STUDY</text></g>
+        <g transform="translate(290 528) rotate(-3)" opacity={clamp01(k * 3)}><rect x={-200} y={-30} width={400} height={60} fill="none" stroke={ST.ink} strokeWidth={6} /><rect x={-190} y={-22} width={380} height={44} fill="none" stroke={ST.ink} strokeWidth={2} /><text y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} letterSpacing={3} fill={ST.ink}>SEPARATE STUDY</text></g>
         <Lab text="NOT THE TWIN" x={800} y={560} size={24} p={ease(f, b(43), 14)} tone="glow" rot={4} />
-        <g transform="translate(330 800) rotate(-3)" opacity={ease(f, b(44), 14)}><rect x={-190} y={-26} width={380} height={52} fill="none" stroke={ST.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} letterSpacing={2} fill={ST.ink}>HIGH EMISSIONS ONLY</text></g>
+        <g transform="translate(540 606)" opacity={ease(f, b(44), 14)}><rect x={-190} y={-26} width={380} height={52} fill="none" stroke={ST.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} letterSpacing={2} fill={ST.ink}>HIGH EMISSIONS ONLY</text></g>
         <Plate x={540} y={1250} text="SEPARATE STUDY · ARCTIC COASTAL PLAIN" size={22} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={1250} text="UNDER 10% AT RISK" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
         <Plate x={540} y={1250} text="2090S · 80% BUILDINGS" size={28} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
@@ -731,11 +731,11 @@ const S10b: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [48, 49];
   const shrink = easeIO(f, b(48), 70);
-  const r1 = springy(f, b(48), 30), r2 = springy(f, b(49), 30);
+  const r1 = ease(f, b(48), 30), r2 = ease(f, b(49), 30);
   const rw = lerp(840, 34, shrink);
   const ax = (yr: number) => 100 + ((yr - 2020) / 80) * 880;
   return (
-    <Frame p={p} z0={1.02} z1={1.1} oy={960}>
+    <Frame p={p} z0={1.02} z1={1.1} oy={960} warmth={0.25}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#E4E6E7" />
         <line x1={100} y1={1060} x2={1010} y2={1060} stroke={ST.ink} strokeWidth={6} />
@@ -744,12 +744,12 @@ const S10b: React.FC<SceneProps> = ({p}) => {
           <rect x={0} y={-44} width={rw} height={36} fill={ST.paper} stroke={ST.ink} strokeWidth={4} />
           {shrink > 0.9 && <rect x={-6} y={-50} width={rw + 12} height={48} fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.5 + 0.4 * Math.sin(f / 6)} />}
         </g></HeldProp>
-        <Lab text="SEPT 2021 TO JUNE 2024" x={300} y={980} size={20} p={ease(f, b(48) + 60, 14)} />
-        <g opacity={clamp01(shrink * 3)}><rect x={470} y={480} width={470} height={560} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} /><text x={705} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text></g>
-        <BarsPanel x0={590} base={960} px={4} vals={[80, 60, 90]} grow={[1, r1, r2]} w={80} gap={115} />
+        <Lab text="SEPT 2021 TO JUNE 2024" x={300} y={1084} size={20} p={ease(f, b(48) + 60, 14)} />
+        <g opacity={clamp01(shrink * 3)}><rect x={255} y={530} width={570} height={510} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} />{[0, 50, 100].map((pc) => <g key={pc}><line x1={300} y1={960 - pc * 4} x2={310} y2={960 - pc * 4} stroke={ST.ink} strokeWidth={4} /><text x={294} y={960 - pc * 4 + 6} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={16} fill={ST.ink}>{pc}%</text></g>)}<line x1={310} y1={960} x2={800} y2={960} stroke={ST.ink} strokeWidth={4} /><line x1={310} y1={560} x2={310} y2={960} stroke={ST.ink} strokeWidth={4} /><rect x={340} y={960 - 40 * clamp01(shrink * 3)} width={80} height={40 * clamp01(shrink * 3)} fill="#C9CDD0" stroke={ST.ink} strokeWidth={3} strokeDasharray="8 5" /><text x={540} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text></g>
+        <BarsPanel x0={510} base={960} px={4} vals={[80, 60, 90]} grow={[1, r1, r2]} w={76} gap={110} />
         <g transform="translate(540 1230)"><rect x={-300} y={-26} width={600} height={52} fill="none" stroke={ST.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>SEPARATE STUDY · HIGH EMISSIONS ONLY</text></g>
-        <Plate x={540} y={520} text="60% ROADS" size={34} tone="dark" p={vis(f, b, K, 0)} />
-        <Plate x={540} y={520} text="90% PIPELINES" size={34} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={496} text="60% ROADS" size={34} tone="dark" p={vis(f, b, K, 0)} />
+        <Plate x={540} y={496} text="90% PIPELINES" size={34} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
@@ -768,10 +768,10 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const flip = ease(f, b(53), 12);
   const lock = springy(f, b(53), 18);
   return (
-    <Frame p={p} z0={1.04} z1={1.1} oy={960}>
+    <Frame p={p} z0={1.04} z1={1.1} oy={960} warmth={0.25}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#D6DBDF" />
-        <Typed x={110} y={640} rows={QUOTE} k={typed} size={36} />
+        <Typed x={90} y={620} rows={QUOTE} k={typed} size={44} />
         <HeldProp f={f} px={540} py={1040} w={960} h={140} seed={12} kind="rest" gain={0.5}>
           <Ribbon x={70} y={960} w={940} h={90} f={f} ticks={1} ext={ext} label />
         </HeldProp>
@@ -818,6 +818,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <path d={`M 480,1170 L ${480 + 450 * cab},${1170}`} fill="none" stroke={ST.ink} strokeWidth={30} strokeLinecap="round" opacity={cab} />
         <path d={`M 480,1170 L ${480 + 450 * cab},${1170}`} fill="none" stroke={ST.ivory} strokeWidth={20} strokeLinecap="round" strokeDasharray="14 9" opacity={cab} />
         <Ruler x={100} y={1190} w={760} f={f} lit={1} p={1} label="1 KM" dark />
+        <Dial x={880} y={690} s={0.75} f={f} tape={0} peel={0} hang={false} wobble={0.3} />
         <g transform={`translate(${lerp(930, 540, wo)} ${lerp(900, 1010, wo)}) scale(${lerp(1, 2.6, wo)}) rotate(${6 * Math.sin(f / 9) * (1 - wo * 0.5)})`} opacity={clamp01(wo * 2)}>
           <path d="M0,-60 V-4" stroke={ST.ink} strokeWidth={4} />
           <rect x={-52} y={-4} width={104} height={92} rx={8} fill={ST.paper} stroke={ST.ink} strokeWidth={5} />

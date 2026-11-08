@@ -220,7 +220,7 @@ def build():
             {"line": 3, "offset": 0.0, "level": 0.4}, {"line": 4, "offset": 0.0, "level": 1.6}, {"line": 5, "offset": 0.0, "level": 0.35},
             {"line": 6, "offset": 0.0, "level": 0.3}, {"line": 7, "offset": 0.0, "level": 0.3},
             {"at_s": round(b_at(38) - 0.4, 3), "level": 0.1}, {"at_s": round(b_at(38) + 0.8, 3), "level": 1.8},
-            {"line": 9, "offset": 0.0, "level": 0.2}, {"line": 10, "offset": 0.0, "level": 0.16}, {"from_end": 2.6, "level": 0.9}, {"from_end": 0.4, "level": 0.0}],
+            {"line": 9, "offset": 0.0, "level": 0.2}, {"line": 10, "offset": 0.0, "level": 0.16}, {"at_s": 90.96, "level": 0.06}, {"at_s": 92.78, "level": 0.2}, {"at_s": 107.68, "level": 0.06}, {"at_s": 109.48, "level": 0.2}, {"at_s": 115.3, "level": 0.06}, {"at_s": 116.78, "level": 0.2}, {"at_s": 119.16, "level": 0.06}, {"at_s": 120.62, "level": 0.2},  {"from_end": 2.6, "level": 0.9}, {"from_end": 0.4, "level": 0.0}],
             "ambience": ["room", "wind"],
             "build_steps": 4, "dip_at": round(b_at(38) - 0.4, 3), "riser_at": round(b_at(36), 3), "silence_at": round(b_at(38) - 0.4, 3),
             "payoff_at": b_at(38), "button_pattern": "callback", "interrupt_at": b_at(28), "extra_dips": [b_at(50), 91.06, 107.78, 115.4]},

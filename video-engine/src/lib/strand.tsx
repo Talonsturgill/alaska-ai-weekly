@@ -125,7 +125,7 @@ export const Dial: React.FC<{x: number; y: number; f: number; s?: number; tape?:
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot + sw}) scale(${s})`}>
       {hang && <path d="M0,-120 V-190" stroke={ST.ink} strokeWidth={6} />}
-      <ellipse cx={4} cy={150} rx={104} ry={13} fill="#000" opacity={0.24} />
+      <ellipse cx={6} cy={152} rx={128} ry={20} fill="#000" opacity={0.12} /><ellipse cx={4} cy={150} rx={100} ry={12} fill="#000" opacity={0.26} />
       <circle r={118} fill={ST.brassD} stroke={ST.ink} strokeWidth={8} />
       <circle r={106} fill={ST.brass} stroke={ST.brassL} strokeWidth={5} />
       <circle r={88} fill={ST.paper} stroke={ST.ink} strokeWidth={5} />
@@ -136,6 +136,10 @@ export const Dial: React.FC<{x: number; y: number; f: number; s?: number; tape?:
       <rect x={-66} y={tape > 0 ? 6 : 6} width={132} height={42} rx={4} fill={ST.coral} stroke={ST.ink} strokeWidth={4} transform={`rotate(${-5 - peel * 38} -66 27)`} opacity={tape * (1 - clamp01((peel - 0.8) / 0.2))} />
       <text y={-34} textAnchor="middle" fontFamily={STMONO} fontWeight={800} fontSize={17} letterSpacing={2} fill={ST.ink}>{label}</text>
       {tape > 0.5 && peel < 0.3 && <path d="M-40,20 L40,34 M-36,34 L44,20" stroke="#fff" strokeWidth={3} opacity={0.35} />}
+      <path d="M-100,-62 A118,118 0 0 1 -30,-112" fill="none" stroke="#FFFFFF" strokeWidth={7} strokeLinecap="round" opacity={0.6} />
+      <path d="M96,66 A118,118 0 0 1 40,108" fill="none" stroke={ST.ink} strokeWidth={8} strokeLinecap="round" opacity={0.35} />
+      <ellipse cx={-26} cy={-58} rx={44} ry={14} fill="#FFFFFF" opacity={0.28} transform="rotate(-24 -26 -58)" />
+      <line x1={3} y1={4} x2={3 + Math.cos((-130 + 40 * Math.sin(f / 40)) * Math.PI / 180) * 70} y2={4 + Math.sin((-130 + 40 * Math.sin(f / 40)) * Math.PI / 180) * 70} stroke={ST.ink} strokeWidth={5} opacity={0.25} />
       <circle r={9} fill={ST.ink} />
     </g>
   );
@@ -170,7 +174,7 @@ export const NumTag: React.FC<{x: number; y: number; f: number; text?: string; d
     <g transform={`translate(${x} ${y - 340 * (1 - k)}) rotate(${sw} 0 -50) scale(${s})`} opacity={clamp01(k * 3)}>
       <path d="M0,-90 V-24" stroke={ST.ink} strokeWidth={5} />
       <rect x={-52} y={-24} width={104} height={86} rx={12} fill={ST.brass} stroke={ST.ink} strokeWidth={6} />
-      <rect x={-44} y={-16} width={88} height={70} rx={8} fill={ST.brassL} stroke={ST.brassD} strokeWidth={3} />
+      <rect x={-44} y={-16} width={88} height={70} rx={8} fill={ST.brassL} stroke={ST.brassD} strokeWidth={3} /><path d="M-46,-8 V-14 Q-46,-18 -40,-18 H34" fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.6} /><rect x={-44} y={50} width={88} height={6} rx={3} fill={ST.brassD} opacity={0.6} />
       <circle cx={0} cy={-8} r={5} fill={ST.ink} />
       <text x={0} y={42} textAnchor="middle" fontFamily={STMONO} fontWeight={900} fontSize={text.length > 2 ? 22 : 44} fill={ST.ink}>{text}</text>
     </g>
