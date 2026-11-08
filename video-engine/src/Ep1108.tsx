@@ -290,7 +290,7 @@ const Ruler: React.FC<{x: number; y: number; w: number; f: number; lit?: number;
 
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [1, 2, 3, 4];
+  const K = [1, 3, 4];
   const drop = clamp01((f - 4) / 16);
   const dropY = lerp(440, 884, drop * drop);
   const mood = f < 20 ? 'calm' : f < 46 ? 'startled' : f < b(3) + 30 ? 'calm' : 'proud';
@@ -311,9 +311,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Ruler x={100} y={1190} w={880} f={f} p={rk} />
         <Hold f={f} x={100} y={1168} w={880} h={44} seed={2} />
         <Plate x={540} y={520} text="UTQIAGVIK ROAD EMBANKMENT" size={30} tone="dark" p={vis(f, b, K, 0)} />
-        <Plate x={540} y={520} text="FROZEN GROUND" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="2 CABLES" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="1 KM EACH" size={30} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="2 CABLES" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="1 KM EACH" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
@@ -322,9 +321,9 @@ const S1: React.FC<SceneProps> = ({p}) => {
 // ---- S2: the field station --------------------------------------------------------------------------------------------------------------
 const S2: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [5, 6, 7, 8, 9];
+  const K = [5, 7, 8, 9];
   const ticks = clamp01((f - b(5)) / Math.max(30, b(7) + 40 - b(5)));
-  const penK = ease(f, b(6), 26);
+  const penK = ease(f, b(5) + 40, 26);
   const cal = springy(f, b(8), 22);
   const dim = 1 - 0.65 * ease(f, b(8) + 6, 20);
   const dial = springy(f, b(9), 28);
@@ -357,10 +356,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
           <Dial x={0} y={0} f={f} tape={1} hang />
         </g>
         <Plate x={540} y={520} text="FIELD STATION" size={30} tone="dark" p={vis(f, b, K, 0)} />
-        <Plate x={540} y={520} text="TEMPERATURE · SEISMIC" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="SEPT 2021 TO JUNE 2024" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="100 METERS" size={30} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="?" size={44} tone="dark" p={vis(f, b, K, 4)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="SEPT 2021 TO JUNE 2024" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="100 METERS" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="?" size={44} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
@@ -369,11 +367,11 @@ const S2: React.FC<SceneProps> = ({p}) => {
 // ---- S3: who built it --------------------------------------------------------------------------------------------------------------------
 const S3: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [13, 14];
+  const K = [13];
   const draw = ease(f, b(10), 56);
   const swing = easeIO(f, b(13), 30);
   const dx = lerp(900, 770, swing), dy = lerp(600, 1000, swing), ds = lerp(0.62, 1.0, swing);
-  const press = bump(f, b(14), 16);
+  const press = bump(f, b(13) + 95, 16);
   const peek = ease(f, b(13) + 8, 20) * (1 - ease(f, b(14) + 12, 16));
   const pl = (k: number) => ease(f, b(k), 16);
   return (
@@ -395,7 +393,6 @@ const S3: React.FC<SceneProps> = ({p}) => {
           <Dial x={dx} y={dy} s={ds} f={f} tape={1} hang={swing < 0.98} wobble={1 - swing * 0.9} rot={-press * 6} />
         </HeldProp>
         <Plate x={540} y={520} text="HOW CLOSE DOES IT GET?" size={28} tone="glow" p={vis(f, b, K, 0)} />
-        <Plate x={540} y={520} text="HOLD THAT THOUGHT" size={30} tone="glow" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
@@ -436,12 +433,12 @@ const S4: React.FC<SceneProps> = ({p}) => {
 // ---- S5: it adjusts ----------------------------------------------------------------------------------------------------------------------
 const S5: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [19, 21, 22, 23, 24];
-  const narrow = ease(f, b(21), 54) * 0.7 + 0.3 * springy(f, b(22), 14);
+  const K = [19, 21, 23];
+  const narrow = ease(f, b(21), 54) * 0.7 + 0.3 * springy(f, b(21) + 60, 14);
   const arc = 1 - narrow;
   const by = ease(f, b(20), 22);
   const tag = springy(f, b(23), 26);
-  const named = bump(f, b(24), 30) + ease(f, b(24) + 6, 10) * 0.0;
+  const named = bump(f, b(23) + 70, 30);
   const beads = Array.from({length: 9}).map((_, i) => {
     const t0 = b(21) + i * 7;
     const x = 140 + clamp01((f - t0) / 70) * 720;
@@ -462,9 +459,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(540 760) rotate(-8)" opacity={clamp01(named * 1.6)}><Lab text="NAMED" x={0} y={0} size={26} tone="glow" /></g>
         <Plate x={540} y={1236} text="UNCERTAIN SOIL PROPERTIES" size={28} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={1236} text="NEW DATA IN · MODEL ADJUSTS" size={28} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={1236} text="THE TWIN ADJUSTS" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={1236} text="ONE MORE NUMBER" size={30} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={1236} text="THE TEAM NAMED IT" size={30} tone="dark" p={vis(f, b, K, 4)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={1236} text="ONE MORE NUMBER" size={30} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
@@ -581,10 +576,10 @@ const S7: React.FC<SceneProps> = ({p}) => {
 // ---- S8: the empty window ----------------------------------------------------------------------------------------------------------------
 const S8: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [33, 34, 35, 36, 37, 38];
+  const K = [33, 34, 35, 36, 38];
   const roll = easeIO(f, 0, 34);
   const dx = lerp(1260, 540, roll);
-  const peel = ease(f, b(36), 40) * 0.4 + ease(f, b(37), 50) * 0.6;
+  const peel = ease(f, b(36), 110);
   const tape = 1;
   const clear = ease(f, b(38), 16);
   const tremble = ease(f, b(34), 30);
@@ -606,9 +601,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={520} text="RESEARCH FRAMEWORK" size={30} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={520} text="NO DEPLOYMENT REPORTED" size={28} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
         <Plate x={540} y={520} text="ACCURACY" size={38} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="THE NUMBER I PROMISED" size={30} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="NO ACCURACY NUMBER IN PUBLIC SUMMARIES" displayLines={["NO ACCURACY NUMBER", "IN PUBLIC SUMMARIES"]} size={26} tone="dark" p={vis(f, b, K, 4)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="THERE ISN'T ONE" size={38} tone="glow" p={vis(f, b, K, 5)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="NO ACCURACY NUMBER IN PUBLIC SUMMARIES" displayLines={["NO ACCURACY NUMBER", "IN PUBLIC SUMMARIES"]} size={26} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="THERE ISN'T ONE" size={38} tone="glow" p={vis(f, b, K, 4)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
@@ -617,8 +611,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
 // ---- S9: small claim -----------------------------------------------------------------------------------------------------------------------
 const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [39, 40, 41];
-  const hover = ease(f, b(39), 22);
+  const K = [40, 41];
+  const hover = ease(f, 2, 22);
   const snap = springy(f, b(40), 16);
   const small = springy(f, b(41), 22);
   const fy = lerp(-120, 880, hover) + lerp(0, 0, snap);
@@ -639,9 +633,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
           {[-1, 1].flatMap((sx) => [-1, 1].map((sy) => <circle key={`${sx}${sy}`} cx={sx * (fw / 2 - 7)} cy={sy * 74 + 5} r={5} fill={ST.steelD} stroke={ST.ink} strokeWidth={2} />))}
         </g>
         <Lab text="THE CLAIM STAYS SMALL" x={380} y={1235} size={24} p={small} />
-        <Plate x={540} y={520} text="THE METHOD" size={34} tone="dark" p={vis(f, b, K, 0)} />
-        <Plate x={540} y={520} text="HOLDS UP AS A METHOD" size={32} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="THE CLAIM STAYS SMALL" size={32} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="HOLDS UP AS A METHOD" size={32} tone="dark" p={vis(f, b, K, 0)} />
+        <Plate x={540} y={520} text="THE CLAIM STAYS SMALL" size={32} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
@@ -679,7 +672,7 @@ const S10a: React.FC<SceneProps> = ({p}) => {
   const flat = ease(f, b(45), 40);
   const cliff = ease(f, b(47), 36);
   const bars: [number, number, number] = [cliff, 0, 0];
-  const mc = ease(f, b(46), 16);
+  const mc = ease(f, b(45) + 80, 16);
   return (
     <Frame p={p} z0={1.0} z1={1.05} oy={960}>
       <SVG>
@@ -738,10 +731,10 @@ const S10: React.FC<SceneProps> = ({p}) => (p.f < p.b(48) ? <S10a p={p} /> : <S1
 const QUOTE = ['"IF WE HAVE, SAY, 10 MORE', 'YEARS OF DATA, THAT WOULD', 'BE EXTREMELY VALUABLE."'];
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [50, 51, 52, 53];
+  const K = [50, 51, 53];
   const typed = ease(f, b(50), Math.max(40, b(51) - b(50) - 8)) * 1;
   const ext = ease(f, b(51), 50);
-  const lit = ease(f, b(52), 60);
+  const lit = ease(f, b(51) + 70, 60);
   const tag = springy(f, 6, 24);
   const flip = ease(f, b(53), 12);
   const lock = springy(f, b(53), 18);
@@ -766,8 +759,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <Dial x={190} y={1150} s={0.5} f={f} tape={0} peel={0} hang={false} wobble={0.2} />
         <Plate x={540} y={520} text="PENN STATE · XIAO" size={32} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={520} text="10 MORE YEARS OF DATA" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="EXTREMELY VALUABLE" size={32} tone="dark" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
-        <Plate x={540} y={520} text="THE OTHER NUMBER" size={36} tone="glow" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
+        <Plate x={540} y={520} text="THE OTHER NUMBER" size={36} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
       </SVG>
     </Frame>
   );
