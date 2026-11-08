@@ -739,6 +739,8 @@ def _source_labels(srcs):
             lab = "NSF EPSCOR"
         elif "muni.org" in url:
             lab = "MUNI.ORG AO 2026-108 AND 108(S)"
+        elif "eos.org" in url:
+            lab = "AGU EOS HIGHLIGHT"   # EOS.ORG defeats the rendered OCR at credit size (2026-11-08)
         else:
             host = re.sub(r"^www\.", "", urlparse(url).netloc)
             lab = host.upper()

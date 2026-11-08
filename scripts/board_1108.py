@@ -221,7 +221,7 @@ def build():
             {"line": 6, "offset": 0.0, "level": 0.3}, {"line": 7, "offset": 0.0, "level": 0.3},
             {"at_s": round(b_at(38) - 0.4, 3), "level": 0.1}, {"at_s": round(b_at(38) + 0.8, 3), "level": 1.8},
             {"line": 9, "offset": 0.0, "level": 0.6}, {"line": 10, "offset": 0.0, "level": 0.4}, {"from_end": 2.6, "level": 0.9}, {"from_end": 0.4, "level": 0.0}],
-            "ambience": "room",
+            "ambience": ["room", "wind"],
             "build_steps": 4, "dip_at": round(b_at(38) - 0.4, 3), "riser_at": round(b_at(36), 3), "silence_at": round(b_at(38) - 0.4, 3),
             "payoff_at": b_at(38), "button_pattern": "callback", "interrupt_at": b_at(28), "extra_dips": [b_at(50)]},
         "shots": shots, "beats": beats,

@@ -126,7 +126,9 @@ export const Dial: React.FC<{x: number; y: number; f: number; s?: number; tape?:
       <circle r={106} fill={ST.brass} stroke={ST.brassL} strokeWidth={5} />
       <circle r={88} fill={ST.paper} stroke={ST.ink} strokeWidth={5} />
       {Array.from({length: 11}).map((_, i) => { const a = (-220 + i * 26) * Math.PI / 180; return <line key={i} x1={Math.cos(a) * 66} y1={Math.sin(a) * 66} x2={Math.cos(a) * 80} y2={Math.sin(a) * 80} stroke={ST.ink} strokeWidth={4} />; })}
-      <rect x={-52} y={4} width={104} height={46} rx={8} fill="#E9E1CC" stroke={ST.ink} strokeWidth={5} />
+      <rect x={-52} y={4} width={104} height={46} rx={8} fill="#F6F9FA" stroke={ST.ink} strokeWidth={5} />
+      <rect x={-46} y={9} width={92} height={10} rx={5} fill="#FFFFFF" opacity={0.8} />
+      <circle cx={0} cy={27} r={5} fill={ST.ink} opacity={0.5} />
       <rect x={-66} y={tape > 0 ? 6 : 6} width={132} height={42} rx={4} fill={ST.coral} stroke={ST.ink} strokeWidth={4} transform={`rotate(${-5 - peel * 38} -66 27)`} opacity={tape * (1 - clamp01((peel - 0.8) / 0.2))} />
       <text y={-34} textAnchor="middle" fontFamily={STMONO} fontWeight={800} fontSize={17} letterSpacing={2} fill={ST.ink}>{label}</text>
       {tape > 0.5 && peel < 0.3 && <path d="M-40,20 L40,34 M-36,34 L44,20" stroke="#fff" strokeWidth={3} opacity={0.35} />}
@@ -145,7 +147,7 @@ export const Ribbon: React.FC<{x: number; y: number; w?: number; h?: number; f: 
       <rect x={0} y={-h / 2 + 6} width={w * clamp01(ticks > 0 ? 1 : 0)} height={h} rx={5} fill="#000" opacity={0.22} />
       <rect x={0} y={-h / 2} width={w} height={h} rx={5} fill={ST.paper} stroke={ST.ink} strokeWidth={5} />
       {glow > 0 && <rect x={0} y={-h / 2} width={w} height={h} rx={5} fill="none" stroke={ST.cyan} strokeWidth={5} opacity={glow} />}
-      {Array.from({length: inked}).map((_, i) => <rect key={i} x={14 + i * cell} y={-h / 2 + 10} width={Math.max(3, cell * 0.5)} height={h - 20} rx={2} fill={i % 3 === 0 ? ST.honey : ST.glacierD} opacity={0.9} />)}
+      {Array.from({length: inked}).map((_, i) => <rect key={i} x={14 + i * cell} y={-h / 2 + 10} width={Math.max(3, cell * 0.5)} height={h - 20} rx={2} fill={i % 3 === 0 ? '#5C5446' : '#9AA3A8'} opacity={0.9} />)}
       {ext > 0 && Array.from({length: 10}).map((_, i) => {
         const k = clamp01(ext * 10 - i);
         return <rect key={`e${i}`} x={14 + n * cell + 8 + i * (w * 0.28 / 10)} y={-h / 2 + 10} width={Math.max(3, w * 0.28 / 10 - 8)} height={h - 20} rx={2} fill="none" stroke={ST.ink} strokeWidth={3} strokeDasharray="5 5" opacity={k * (0.45 + 0.4 * Math.abs(Math.sin(f / 14 + i)))} />;
