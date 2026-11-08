@@ -38,7 +38,8 @@ export const Strand: React.FC<{x: number; y: number; f: number; s?: number; len?
     <g opacity={dim} transform={`translate(${x} ${y}) scale(${s})`}>
       <ellipse cx={-L / 2} cy={w * 0.9 + sg * 0.5} rx={Math.max(60, L / 2)} ry={10} fill="#000" opacity={0.24} />
       <path d={d} fill="none" stroke={ST.ink} strokeWidth={w + 10} strokeLinecap="round" />
-      <path d={d} fill="none" stroke={ST.ivory} strokeWidth={w} strokeLinecap="round" />
+      <path d={d} fill="none" stroke={ST.ivoryD} strokeWidth={w} strokeLinecap="round" transform={`translate(0 ${w * 0.12})`} />
+      <path d={d} fill="none" stroke={ST.ivory} strokeWidth={w * 0.86} strokeLinecap="round" />
       <path d={d} fill="none" stroke={ST.turq} strokeWidth={w * 0.34} strokeLinecap="round" opacity={0.75} />
       <path d={d} fill="none" stroke="#fff" strokeWidth={w * 0.16} strokeLinecap="round" opacity={0.5} transform={`translate(0 ${-w * 0.28})`} />
       {flush > 0 && <path d={d} fill="none" stroke={ST.honey} strokeWidth={w * 0.5} strokeLinecap="round" opacity={0.35 * Math.abs(Math.sin(f / 9))} />}
@@ -46,7 +47,10 @@ export const Strand: React.FC<{x: number; y: number; f: number; s?: number; len?
       {Array.from({length: Math.floor(L / 170)}).map((_, i) => <rect key={i} x={-120 - i * 170 - 6} y={-w / 2 - 2} width={12} height={w + 4} rx={4} fill={ST.turqD} opacity={0.6} />)}
       <g transform={`scale(${breath} ${2 - breath})`}>
         <rect x={-48} y={-58} width={132} height={116} rx={30} fill={ST.ink} />
-        <rect x={-44} y={-54} width={124} height={108} rx={28} fill={ST.ivory} />
+        <defs><linearGradient id={`pg${id}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#9B7BFF" /><stop offset="0.55" stopColor={ST.ivory} /><stop offset="1" stopColor={ST.ivoryD} /></linearGradient></defs>
+        <rect x={-44} y={-54} width={124} height={108} rx={28} fill={`url(#pg${id})`} />
+        <ellipse cx={46} cy={-34} rx={26} ry={9} fill="#FFFFFF" opacity={0.35} />
+        <rect x={-44} y={34} width={124} height={20} rx={14} fill="#000" opacity={0.18} />
         <rect x={-44} y={-54} width={34} height={108} rx={20} fill={ST.turq} stroke={ST.ink} strokeWidth={5} />
         <path d="M-38,-46 Q-8,-62 40,-52" fill="none" stroke="#fff" strokeWidth={6} opacity={0.5} strokeLinecap="round" />
         <rect x={-44} y={-54} width={124} height={108} rx={28} fill="none" stroke={ST.ink} strokeWidth={6} />
@@ -150,7 +154,7 @@ export const Ribbon: React.FC<{x: number; y: number; w?: number; h?: number; f: 
       {Array.from({length: inked}).map((_, i) => <rect key={i} x={14 + i * cell} y={-h / 2 + 10} width={Math.max(3, cell * 0.5)} height={h - 20} rx={2} fill={i % 3 === 0 ? '#5C5446' : '#9AA3A8'} opacity={0.9} />)}
       {ext > 0 && Array.from({length: 10}).map((_, i) => {
         const k = clamp01(ext * 10 - i);
-        return <rect key={`e${i}`} x={14 + n * cell + 8 + i * (w * 0.28 / 10)} y={-h / 2 + 10} width={Math.max(3, w * 0.28 / 10 - 8)} height={h - 20} rx={2} fill="none" stroke={ST.ink} strokeWidth={3} strokeDasharray="5 5" opacity={k * (0.45 + 0.4 * Math.abs(Math.sin(f / 14 + i)))} />;
+        return <rect key={`e${i}`} x={14 + n * cell + 8 + i * (w * 0.24 / 10)} y={-h / 2 + 10} width={Math.max(3, w * 0.24 / 10 - 7)} height={h - 20} rx={2} fill="none" stroke={ST.ink} strokeWidth={3} strokeDasharray="5 5" opacity={k * (0.45 + 0.4 * Math.abs(Math.sin(f / 14 + i)))} />;
       })}
       {label && <text x={14} y={h / 2 + 30} fontFamily={STMONO} fontWeight={800} fontSize={18} letterSpacing={2} fill="#4B5057">SEPT 2021</text>}
       {label && <text x={14 + n * cell} y={h / 2 + 30} textAnchor="end" fontFamily={STMONO} fontWeight={800} fontSize={18} letterSpacing={2} fill="#4B5057">JUNE 2024</text>}
