@@ -337,8 +337,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
         </HeldProp>
         {drop < 1 && <ellipse cx={800} cy={dropY} rx={9} ry={14} fill={ST.honey} stroke={ST.ink} strokeWidth={3} />}
         {drop >= 1 && f < 34 && <circle cx={800} cy={884} r={16 + (f - 20) * 1.4} fill="none" stroke={ST.honey} strokeWidth={3} opacity={clamp01(1 - (f - 20) / 14)} />}
-        <g transform={`translate(${lerp(600, 390, easeIO(f, 40, 56))} ${lerp(905, 690, easeIO(f, 40, 56))}) scale(${lerp(1.5, 0.8, easeIO(f, 40, 56))})`}><Dial x={0} y={0} f={f} tape={1} hang={false} wobble={0.6} /></g>
-        <Plate x={600} y={1085} text="HOW CLOSE DOES IT GET?" size={28} tone="glow" p={ease(f, 2, 8) * (1 - ease(f, 44, 12))} />
+        <g transform={`translate(${lerp(600, 390, easeIO(f, 72, 56))} ${lerp(905, 690, easeIO(f, 72, 56))}) scale(${lerp(1.5, 0.8, easeIO(f, 72, 56))})`}><Dial x={0} y={0} f={f} tape={1} hang={false} wobble={0.6} /></g>
+        <Plate x={600} y={1085} text="HOW CLOSE DOES IT GET?" size={28} tone="glow" p={ease(f, 2, 8) * (1 - ease(f, 76, 12))} />
         <Ribbon x={880} y={940} w={Math.max(1, 190 * slide)} h={58} f={f} ticks={0} label={false} />
         <Ruler x={100} y={1190} w={880} f={f} p={rk} dark />
         <Plate x={660} y={520} text="UTQIAGVIK ROAD EMBANKMENT" size={30} tone="dark" p={vis(f, b, K, 0)} />
@@ -679,7 +679,7 @@ const BarsPanel: React.FC<{x0: number; base: number; px: number; vals: [number, 
       const names = ['BUILDINGS', 'ROADS', 'PIPELINES'];
       return (
         <g key={i} opacity={grow[i] > 0.02 ? 1 : 0}>
-          <rect x={x - w / 2} y={base - hh} width={w} height={hh} fill="#C9CDD0" stroke={ST.ink} strokeWidth={4} />
+          <rect x={x - w / 2 + 8} y={base - 6} width={w} height={12} fill={ST.ink} opacity={0.25} /><rect x={x - w / 2} y={base - hh} width={w} height={hh} fill="#C9CDD0" stroke={ST.ink} strokeWidth={4} /><rect x={x - w / 2 + 4} y={base - hh + 4} width={14} height={Math.max(0, hh - 8)} fill="#FFFFFF" opacity={0.55} /><rect x={x + w / 2 - 18} y={base - hh + 4} width={14} height={Math.max(0, hh - 8)} fill={ST.ink} opacity={0.22} />
           {Array.from({length: Math.max(0, Math.floor(hh / 16) - 1)}).map((_, j) => <line key={j} x1={x - w / 2} y1={base - hh + j * 16 + 20} x2={x + w / 2} y2={base - hh + j * 16 + 8} stroke={ST.ink} strokeWidth={2} opacity={0.45} />)}
           {grow[i] > 0.9 && <><text x={x} y={base - hh - 40} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} fill={ST.ink}>{names[i]}</text><text x={x} y={base - hh - 14} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={ST.ink}>~{val}%</text></>}
         </g>
@@ -745,8 +745,8 @@ const S10b: React.FC<SceneProps> = ({p}) => {
           {shrink > 0.9 && <rect x={-6} y={-50} width={rw + 12} height={48} fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.5 + 0.4 * Math.sin(f / 6)} />}
         </g></HeldProp>
         <Lab text="SEPT 2021 TO JUNE 2024" x={300} y={980} size={20} p={ease(f, b(48) + 60, 14)} />
-        <g opacity={clamp01(shrink * 3)}><rect x={540} y={560} width={480} height={460} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} /><text x={780} y={1000} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text></g>
-        <BarsPanel x0={640} base={960} px={4} vals={[80, 60, 90]} grow={[1, r1, r2]} w={80} gap={110} />
+        <g opacity={clamp01(shrink * 3)}><rect x={470} y={480} width={470} height={560} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} /><text x={705} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text></g>
+        <BarsPanel x0={590} base={960} px={4} vals={[80, 60, 90]} grow={[1, r1, r2]} w={80} gap={115} />
         <g transform="translate(540 1230)"><rect x={-300} y={-26} width={600} height={52} fill="none" stroke={ST.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>SEPARATE STUDY · HIGH EMISSIONS ONLY</text></g>
         <Plate x={540} y={520} text="60% ROADS" size={34} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={520} text="90% PIPELINES" size={34} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
@@ -782,9 +782,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
           return <rect key={i} x={x} y={960 - 35} width={Math.max(3, 940 * 0.28 / 10 - 8)} height={70} rx={2} fill="#FFFFFF" opacity={on * 0.9} />;
         })}
         <g transform={`translate(0 0)`}>
-          <NumTag x={880} y={1160} s={0.9 + 0.3 * bump(f, b(53), 22)} text={flip > 0.5 ? '10' : '?'} drop={tag} lock={lock} f={f} />
+          <NumTag x={820} y={1120} s={1.5 + 0.4 * bump(f, b(53), 22)} text={flip > 0.5 ? '10' : '?'} drop={tag} lock={lock} f={f} />
         </g>
-        <Dial x={190} y={1150} s={0.5} f={f} tape={0} peel={0} hang={false} wobble={0.2} />
+        <Dial x={230} y={1175} s={0.8} f={f} tape={0} peel={0} hang={false} wobble={0.2} />
         <Plate x={540} y={520} text="PENN STATE · XIAO" size={32} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={520} text="10 MORE YEARS OF DATA" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}
         <Plate x={540} y={520} text="THE OTHER NUMBER" size={36} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: hand-off run, each plate retires before the next lands */}

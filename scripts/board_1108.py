@@ -223,7 +223,7 @@ def build():
             {"line": 9, "offset": 0.0, "level": 0.2}, {"line": 10, "offset": 0.0, "level": 0.16}, {"from_end": 2.6, "level": 0.9}, {"from_end": 0.4, "level": 0.0}],
             "ambience": ["room", "wind"],
             "build_steps": 4, "dip_at": round(b_at(38) - 0.4, 3), "riser_at": round(b_at(36), 3), "silence_at": round(b_at(38) - 0.4, 3),
-            "payoff_at": b_at(38), "button_pattern": "callback", "interrupt_at": b_at(28), "extra_dips": [b_at(50)]},
+            "payoff_at": b_at(38), "button_pattern": "callback", "interrupt_at": b_at(28), "extra_dips": [b_at(50), 91.06, 107.78, 115.4]},
         "shots": shots, "beats": beats,
     }
     board["throughline"]["states"].sort(key=lambda x: x["at_s"])
