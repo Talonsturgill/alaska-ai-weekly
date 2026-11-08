@@ -60,7 +60,7 @@ B = [
  (39, 8, 0.0, "swing", "a steel frame", "lifts above the ribbon's first tenth", "firm", "THE METHOD", "the frame hovers", ""),
  (40, 8, W("holds"), "snap", "the steel frame", "snaps around the first tenth of the ribbon", "firm", "HOLDS UP AS A METHOD", "the frame rings", ""),
  (41, 8, W("claim"), "tick", "a small plate", "snaps under the frame", "calm", "THE CLAIM STAYS SMALL", "the plate snaps", ""),
- (42, 9, 0.0, "page", "a black-bordered newsprint chart card", "slides over the scene with a SEPARATE STUDY stamp while a hairline of ribbon stays pinned at its left edge", "reading", "SEPARATE STUDY · ARCTIC COASTAL PLAIN", "the card settles", "rehook: a plum-bordered chart card slides over the whole scene"),
+ (42, 9, 0.0, "page", "a black-bordered newsprint chart card", "slides over the scene with a SEPARATE STUDY stamp while a hairline of ribbon stays pinned at its left edge", "reading", "SEPARATE STUDY · ARCTIC COASTAL PLAIN", "the card settles", "rehook: a black-bordered newsprint chart card slides over the whole scene"),
  (43, 9, W("Plain"), "snap", "a tag", "stamps onto the chart corner", "firm", "NOT THE TWIN", "the tag sticks", ""),
  (44, 9, W("projects"), "stamp", "a stamp", "lands on the chart axis corner", "firm", "HIGH EMISSIONS ONLY", "the stamp rings", ""),
  (45, 9, W("less"), "ping", "the curve", "runs flat and low across the chart past a UNDER 10 PERCENT marker", "reading", "UNDER 10% AT RISK", "the curve runs", ""),
