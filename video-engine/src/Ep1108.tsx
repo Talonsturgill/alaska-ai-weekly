@@ -742,12 +742,13 @@ const S10b: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#E4E6E7" />
         <line x1={100} y1={1060} x2={1010} y2={1060} stroke={ST.ink} strokeWidth={6} />
         {[2020, 2100].map((yr) => <g key={yr}><line x1={ax(yr)} y1={1060} x2={ax(yr)} y2={1080} stroke={ST.ink} strokeWidth={5} /><text x={ax(yr)} y={1116} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={ST.ink}>{yr}</text></g>)}
-        <HeldProp f={f} px={140} py={1070} w={120} h={70} seed={11} kind="rest" gain={0.8}><g transform="translate(100 1060)">
+        <HeldProp f={f} px={140} py={1070} w={120} h={70} seed={11} kind="rest" gain={0.8}><g transform={`translate(${lerp(100, ax(2021.67), shrink)} 1060)`}>
           <rect x={0} y={-44} width={rw} height={36} fill={ST.paper} stroke={ST.ink} strokeWidth={4} />
           {shrink > 0.9 && <rect x={-6} y={-50} width={rw + 12} height={48} fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.5 + 0.4 * Math.sin(f / 6)} />}
         </g></HeldProp>
-        <Lab text="SEPT 2021 TO JUNE 2024" x={300} y={1084} size={20} p={ease(f, b(48) + 60, 14)} />
-        <g opacity={clamp01(shrink * 3)}><rect x={255} y={530} width={570} height={510} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} />{[0, 50, 100].map((pc) => <g key={pc}><line x1={340} y1={960 - pc * 4} x2={350} y2={960 - pc * 4} stroke={ST.ink} strokeWidth={4} /><text x={334} y={960 - pc * 4 + 6} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={16} fill={ST.ink}>{pc}%</text></g>)}<line x1={350} y1={960} x2={800} y2={960} stroke={ST.ink} strokeWidth={4} /><line x1={350} y1={560} x2={350} y2={960} stroke={ST.ink} strokeWidth={4} /><text x={400} y={990} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={ST.ink}>UNDER</text><text x={400} y={1008} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={ST.ink}>10%</text><rect x={370} y={960 - 40 * clamp01(shrink * 3)} width={60} height={40 * clamp01(shrink * 3)} fill="#C9CDD0" stroke={ST.ink} strokeWidth={3} strokeDasharray="8 5" /><text x={540} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text></g>
+        <Lab text="SEPT 2021" x={150} y={960} size={18} p={ease(f, b(48) + 60, 14)} /><Lab text="TO JUNE 2024" x={150} y={992} size={18} p={ease(f, b(48) + 60, 14)} />
+        <g opacity={clamp01(shrink * 3)}><rect x={255} y={530} width={570} height={510} rx={10} fill="#F1F2F3" stroke={ST.ink} strokeWidth={8} />{[0, 50, 100].map((pc) => <g key={pc}><line x1={340} y1={960 - pc * 4} x2={350} y2={960 - pc * 4} stroke={ST.ink} strokeWidth={4} /><text x={334} y={960 - pc * 4 + 6} textAnchor="end" fontFamily={MONO} fontWeight={800} fontSize={16} fill={ST.ink}>{pc}%</text></g>)}<line x1={350} y1={960} x2={800} y2={960} stroke={ST.ink} strokeWidth={4} /><line x1={350} y1={560} x2={350} y2={960} stroke={ST.ink} strokeWidth={4} /><text x={400} y={990} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={ST.ink}>UNDER</text><text x={400} y={1008} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={ST.ink}>10%</text><rect x={370} y={960 - 40 * clamp01(shrink * 3)} width={60} height={40 * clamp01(shrink * 3)} fill="#C9CDD0" stroke={ST.ink} strokeWidth={3} strokeDasharray="8 5" /><text x={634} y={1010} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={2} fill={ST.ink}>IN THE 2090S</text><line x1={470} y1={560} x2={470} y2={1020} stroke={ST.ink} strokeWidth={3} strokeDasharray="10 10" opacity={0.55} /></g>
+        <Lab text="MID CENTURY" x={410} y={915} size={14} p={clamp01(shrink * 3)} />
         <BarsPanel x0={530} base={960} px={4} vals={[80, 60, 90]} grow={[1, r1, r2]} w={70} gap={104} />
         <g transform="translate(540 1230)"><rect x={-300} y={-26} width={600} height={52} fill="none" stroke={ST.ink} strokeWidth={5} /><text y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>SEPARATE STUDY · HIGH EMISSIONS ONLY</text></g>
         <Plate x={540} y={496} text="60% ROADS" size={34} tone="dark" p={vis(f, b, K, 0)} />
@@ -759,7 +760,7 @@ const S10b: React.FC<SceneProps> = ({p}) => {
 const S10: React.FC<SceneProps> = ({p}) => (p.f < p.b(48) ? <S10a p={p} /> : <S10b p={p} />);
 
 // ---- S12: ten more years -----------------------------------------------------------------------------------------------------------------
-const QUOTE = ['"IF WE HAVE, SAY, 10 MORE', 'YEARS OF DATA, THAT WOULD', 'BE EXTREMELY VALUABLE."'];
+const QUOTE = ['"If we have, say, 10 more', 'years of data, that would', 'be extremely valuable."'];
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [50, 51, 53];
