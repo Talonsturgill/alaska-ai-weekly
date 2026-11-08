@@ -411,7 +411,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 7}).map((_, i) => <line key={i} x1={-60} y1={440 + i * 140} x2={1140} y2={440 + i * 140} stroke="#B3BBC2" strokeWidth={3} />)}
         <rect x={850} y={640} width={150} height={620} rx={6} fill="#1C1F2A" stroke={ST.ink} strokeWidth={8} />
         <rect x={860} y={650} width={130} height={600} fill="#0E1020" />
-        <text x={925} y={700} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill="#F4F6F7">TO THE</text><text x={925} y={724} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill="#F4F6F7">SOLVER</text>
+        <text x={925} y={790} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill="#F4F6F7">TO THE</text><text x={925} y={814} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill="#F4F6F7">SOLVER</text>
         <path d="M -30,1180 C 260,1180 330,860 560,840 S 800,900 940,980" fill="none" stroke={ST.ink} strokeWidth={36} strokeLinecap="round" pathLength={100} strokeDasharray={`${100 * draw} 100`} />
         <path d="M -30,1180 C 260,1180 330,860 560,840 S 800,900 940,980" fill="none" stroke={ST.paper} strokeWidth={26} strokeLinecap="round" pathLength={100} strokeDasharray={`${100 * draw} 100`} />
         <Plate x={400} y={640} text="PENN STATE · DIGITAL TWIN" size={28} p={pl(10)} drop={60} />
@@ -688,9 +688,9 @@ const Card: React.FC<{k: number; f: number; cliff: number; bars: [number, number
       <path d={d} fill="none" stroke={ST.ink} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" />
       {[[770, bars[0], 80, 'BUILDINGS'], [855, bars[1], 60, 'ROADS'], [940, bars[2], 90, 'PIPELINES']].map(([x, h, val, nm], i) => {
         const hh = ((val as number) / 100) * (Y0 - YT) * (h as number);
-        return <g key={i} opacity={(h as number) > 0.02 ? 1 : 0}><rect x={(x as number) - 36} y={Y0 - hh} width={72} height={hh} fill="#C9CDD0" stroke={ST.ink} strokeWidth={4} />{Array.from({length: Math.max(0, Math.floor(hh / 16) - 1)}).map((_, j) => <line key={j} x1={(x as number) - 36} y1={Y0 - hh + j * 16 + 20} x2={(x as number) + 36} y2={Y0 - hh + j * 16 + 8} stroke={ST.ink} strokeWidth={2} opacity={0.45} />)}{(h as number) > 0.9 && <><text x={x as number} y={Y0 - hh - 30} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} fill={ST.ink}>{nm as string}</text><text x={x as number} y={Y0 - hh - 10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={ST.ink}>~{val as number}%</text></>}</g>;
+        return <g key={i} opacity={(h as number) > 0.02 ? 1 : 0}><rect x={(x as number) - 36} y={Y0 - hh} width={72} height={hh} fill="#C9CDD0" stroke={ST.ink} strokeWidth={4} />{Array.from({length: Math.max(0, Math.floor(hh / 16) - 1)}).map((_, j) => <line key={j} x1={(x as number) - 36} y1={Y0 - hh + j * 16 + 20} x2={(x as number) + 36} y2={Y0 - hh + j * 16 + 8} stroke={ST.ink} strokeWidth={2} opacity={0.45} />)}{(h as number) > 0.9 && <><text x={x as number} y={Y0 - hh - 54} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} fill={ST.ink}>{nm as string}</text><text x={x as number} y={Y0 - hh - 14} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={ST.ink}>~{val as number}%</text></>}</g>;
       })}
-      <g opacity={clamp01(bars[0] * 2)}><path d={`M ${770 - 36},${Y0 + 30} v 10 H ${940 + 36} v -10`} fill="none" stroke={ST.ink} strokeWidth={3} /><text x={855} y={Y0 + 64} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>2090S</text></g>
+      <g opacity={clamp01(bars[0] * 2)}><path d={`M ${770 - 36},${Y0 + 58} v 10 H ${940 + 36} v -10`} fill="none" stroke={ST.ink} strokeWidth={3} /><text x={855} y={Y0 + 94} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>2090S</text></g>
     </g>
   );
 };
@@ -742,7 +742,7 @@ const S10b: React.FC<SceneProps> = ({p}) => {
         </g></HeldProp>
         {[[700, 80, 'BUILDINGS'], [800, 60, 'ROADS'], [900, 90, 'PIPELINES']].map(([x, val, nm], i) => {
           const hh = ((val as number) / 100) * 520 * bw[i];
-          return <g key={i}><rect x={(x as number) - 38} y={1060 - hh} width={76} height={hh} fill="#C9CDD0" stroke={ST.ink} strokeWidth={4} />{bw[i] > 0.9 && <><text x={x as number} y={1060 - hh - 34} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} fill={ST.ink}>{nm as string}</text><text x={x as number} y={1060 - hh - 12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={ST.ink}>~{val as number}%</text></>}</g>;
+          return <g key={i}><rect x={(x as number) - 38} y={1060 - hh} width={76} height={hh} fill="#C9CDD0" stroke={ST.ink} strokeWidth={4} />{bw[i] > 0.9 && <><text x={x as number} y={1060 - hh - 58} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} fill={ST.ink}>{nm as string}</text><text x={x as number} y={1060 - hh - 14} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={ST.ink}>~{val as number}%</text></>}</g>;
         })}
         <path d="M 662,1130 v 10 H 938 v -10" fill="none" stroke={ST.ink} strokeWidth={3} /><text x={800} y={1172} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={ST.ink}>2090S</text>
         <Lab text="THE RECORD" x={190} y={1000} size={22} p={ease(f, 30, 14)} />
@@ -769,10 +769,10 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const flip = ease(f, b(53), 12);
   const lock = springy(f, b(53), 18);
   return (
-    <Frame p={p} z0={1.04} z1={1.16} oy={960}>
+    <Frame p={p} z0={1.04} z1={1.1} oy={960}>
       <SVG>
         <rect data-band="ok" x={-60} y={380} width={1200} height={1000} fill="#D6DBDF" />
-        <Typed x={90} y={640} rows={QUOTE} k={typed} size={36} />
+        <Typed x={110} y={640} rows={QUOTE} k={typed} size={36} />
         <HeldProp f={f} px={540} py={1040} w={960} h={140} seed={12} kind="rest" gain={0.5}>
           <Ribbon x={70} y={960} w={940} h={90} f={f} ticks={1} ext={ext} label />
         </HeldProp>
