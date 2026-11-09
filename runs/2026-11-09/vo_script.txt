@@ -1,0 +1,13 @@
+Alaska's courts won't let staff or judges use A I on their own to transcribe hearings. A clerk can't even run Zoom's A I for a log note.
+It's one rule in a policy covering every court employee and judge. Version one point two, June, as published by LawSites.
+Everything else is a yes, with homework. Check every answer. Never type in confidential details.
+No personal accounts. No downloads on court devices. Humans review the code. No A I interpreting. Break the rules and risk discipline, up to firing.
+But the same policy says the court's own staff and judges will soon get A I transcripts of every hearing. Keep an eye on who gets to read them.
+They come from CourtSmart, the court's recording system, and should be ready by fall. The policy calls them A I generated, not the official record, and says each links to the official audio.
+Picture one hearing, two people. A judge opens the A I transcript. The party at the table can fill out form T F three oh four, and ask for the audio.
+The transcripts are restricted to internal court use, and may not be shared with the public.
+The policy's stated worry is that a hearing can hold confidential information that couldn't be removed from an A I system, even if the hearing was later sealed.
+That's containment, not a fix. The court keeps the text inside, and the person whose hearing it was can ask for the tape.
+So it isn't banning A I transcripts. It's deciding who holds them. Close the side doors, build one front door.
+And the policy admits one thing about itself. The court asked an A I tool to help format an early draft. Formatting only.
+So should a party get the A I draft of their own hearing?

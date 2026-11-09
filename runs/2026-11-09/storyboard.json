@@ -1,0 +1,2148 @@
+{
+  "run_date": "2026-11-09",
+  "slug": "who-holds-the-transcript",
+  "title": "Who Holds the Transcript",
+  "concept": "The Alaska Court System's AI policy, version 1.2 from June, bans staff and judges from using AI on their own to make hearing notes or transcripts, then says the court's own people will soon get AI transcripts of every hearing from CourtSmart, expected by fall, labeled not the official record, linked to the official audio and restricted to internal use. The film reads that as one rule about control: close the side doors, build one front door, label what comes out. A party gets the audio through form TF-304, not the text, and the policy's stated worry is confidential information that couldn't be removed from an AI system even if a hearing was later sealed. The ink drop makes that worry felt, and the film asks whether a party should get the AI draft of their own hearing. Hero is Reels, a copper recorder with two reel eyes, and the throughline is the transcript page.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 120.28,
+  "fingerprint": {
+    "pov": "cross-section-cutaway",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "fullbleed-split",
+    "register": "tactile-collage",
+    "palette": "oxblood wall panels, walnut wood, ivory sheets, brass hardware, a copper reel recorder and one cobalt ink drop",
+    "camera_strategy": "locked-drift",
+    "light_story": "night-practical",
+    "metaphor": "a court builds one front door for its own AI transcripts and bricks up every side door, and a drop of ink in water shows why a sealed hearing can't be taken back out"
+  },
+  "palette": "oxblood wall panels, walnut wood, ivory sheets, brass hardware, a copper reel recorder and one cobalt ink drop",
+  "divergence_note": "The last five films were a tangerine daylight office (11-06), a night cab (11-02), an overcast moss slope (11-01), a sage chart desk (10-31) and an aubergine dusk depot (10-29). This film (with honest overlap in cream paper, brass and a cobalt accent from 10-31, and a hand and a key tag echoing 11-02) is an oxblood and walnut courtroom after hours, lit by a brass lamp and a cool green window rim, built around a copper reel recorder with a face, a glass counter that splits the frame and a macro ink drop in a tumbler of water. It has no stamp robot, cab, slope or chart desk, and its throughline is a single transcript page that is scribbled, binned, stamped, kept behind glass and finally blank.",
+  "treatment": {
+    "title": "The Ink Drop",
+    "summary": "Explainer's pitch wins. It draws the film's hardest fact (staff inside get searchable text, the party outside gets audio, c19 against c21) as a counter window cut by glass, and carries the court's stated worry (c20) as a physical comparison, a drop of cobalt ink that can't be pulled back out of a glass of water. Grafts: the Comedian's recurring Tagalong notetaker bot sneaking in disguised (a mustache phone, a ficus), the Dramatist's bricked-up side doors and the front door lit inside the recorder, the Enthusiast's blank ribbon throughline reborn as a stamped, tethered transcript. The Enthusiast's template reading is kept as one honest aside. Hero is Reels, a new walnut recorder with reel eyes (CourtSmart as a character), not on the recent-hero list. Palette oxblood walnut, cream, brass with cobalt ink as the single accent."
+  },
+  "angle": {
+    "thesis": "Alaska's court isn't banning AI transcripts, it's deciding who holds them: it bans the side doors, builds one front door inside its own recording system, labels what comes out as not the official record, and keeps it internal, a defensible first step that leaves the party with the audio and not the text.",
+    "supporting_facts": [
+      "c11 c12 c13 no DIY AI hearing notes or transcripts, assistants should be removed",
+      "c14 c15 c16 the court's own CourtSmart AI transcripts of all hearings, should be ready by fall (a plan, never live)",
+      "c17 c18 c19 not the official record, links to official audio, internal only",
+      "c28 the court used AI to help format an early draft of its own policy"
+    ],
+    "counterpoint_to_honor": "The lopsided case at full strength (c19 c21): staff and judges get searchable text of every hearing, a party gets audio by filing form TF-304. The court's stated worry (c20) is confidential information that couldn't be removed from an AI system even if a hearing was later sealed. The film leaves open whether a party should get the AI draft of their own hearing.",
+    "falsifiability": "False if the court treated its own transcripts like the DIY tools it bans (official record, public, cut off from the audio), or if the policy ignored its own confidentiality worry for CourtSmart.",
+    "honesty_constraints": [
+      "Never say transcripts are live, launched, late or delayed, only should be ready by fall (c29 cut)",
+      "Version 1.2 June 2026, copy published by LawSites, never issued today",
+      "should stays should (c6, c13)",
+      "c20 is the policy's stated worry about hearings and AI systems, not tied to one rule",
+      "c28 formatting only",
+      "TF-304 is for parties",
+      "no judges-remain-responsible claim, no AVA",
+      "no calendar deadline from 90 and 30 days"
+    ],
+    "cross_challenge": "Analyst 1 (enthusiast) read it as a template to copy, challenged that the 'should' provisions soften it, kept as an honest aside. Analyst 2 (public door) pressed the party-gets-audio-not-text lopsidedness, kept as the Act 3 test. Analyst 3 (strict rule) supplied the control thesis and warned CourtSmart may not solve the sealing worry, so the film claims containment not a fix. All three agreed on the falsifiable observation; the c20 attribution ambiguity was resolved by saying 'the policy's stated worry'.",
+    "runner_ups": {
+      "template": "folded in as the setup and the c28 aside",
+      "public door": "becomes Act 3 test scene"
+    }
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A small slate-lavender notetaker bot tiptoes through a side door into a hearing room clutching a notebook page, a hand scruffs it and a plate reads NO DIY AI TRANSCRIPTS.",
+    "headline": "WHO HOLDS THE TRANSCRIPT",
+    "motion_by_s": 0.3,
+    "loopback": "Tagalong pops up behind a gavel at the side, rhyming with the opening sneak."
+  },
+  "open_loop": {
+    "plant_t": 14.29,
+    "pay_t": 95.19,
+    "what": "Who gets the key? Planted with a brass key hung tag face down, paid when its tag flips to STAFF SIDE ONLY."
+  },
+  "open_loop_2": {
+    "plant_t": 48.65,
+    "pay_t": 84.03,
+    "what": "What are the glass of water and the ink for? Planted on the bench, paid when the ink blooms and can't be pulled back."
+  },
+  "throughline": {
+    "object": "the transcript page",
+    "lands_in_button": "a second blank page waits at the slot under the glass, the film's open question",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "scribbled in Tagalong's notebook"
+      },
+      {
+        "at_s": 36.29,
+        "state": "crumpled in the bin under the bricked doors"
+      },
+      {
+        "at_s": 57.77,
+        "state": "clean, tagged AI GENERATED and stamped NOT THE OFFICIAL RECORD"
+      },
+      {
+        "at_s": 95.19,
+        "state": "kept behind the glass on the staff side"
+      },
+      {
+        "at_s": 117.14,
+        "state": "a blank second page waiting at the slot"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 37.25,
+      "type": "scale-pullback",
+      "what": "from one phone at one door to the courthouse with three bricked doors",
+      "hold_s": 0.8
+    },
+    {
+      "t": 46.47,
+      "type": "scale-pullback",
+      "what": "from Reels alone to seven hearing rooms feeding it",
+      "hold_s": 0.8
+    },
+    {
+      "t": 99.8,
+      "type": "build-on",
+      "what": "the floor plan from above as four side doors brick shut and one front door lights",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.5
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.9
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.35
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 1.7
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.3
+      },
+      {
+        "at_s": 106.49,
+        "level": 0.12
+      },
+      {
+        "at_s": 107.59,
+        "level": 2.0
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 106.49,
+    "riser_at": 104.65,
+    "silence_at": 106.49,
+    "payoff_at": 106.79,
+    "button_pattern": "callback",
+    "interrupt_at": 57.77,
+    "extra_dips": [
+      84.03
+    ]
+  },
+  "shots": [
+    {
+      "title": "The side door",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "side-door",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Tagalong sneaks in, a hand scruffs it, a clerk's Zoom AI note is wiped",
+      "ambient": "the door creaks, the screen glows, Tagalong's legs paddle",
+      "hero": {
+        "name": "Tagalong + side door + bailiff hand + clerk laptop + notebook page",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "30% Tagalong, 25% door, 25% laptop, 20% hand"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-11.100"
+    },
+    {
+      "title": "The policy lands",
+      "vo_line": 1,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "bench",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A binder slaps onto the bench, the crowd fills in, a key hangs face down",
+      "ambient": "the crowd shifts, the binder settles, the key swings",
+      "hero": {
+        "name": "policy binder + five silhouettes + brass key + date tab",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% binder, 30% crowd, 15% key, 15% tab"
+      },
+      "id": 2,
+      "start_s": 11.1,
+      "t": "11.100-20.140"
+    },
+    {
+      "title": "Yes, with homework",
+      "vo_line": 2,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "desk-page",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A YES sign, a magnifier, a confidential folder snaps shut",
+      "ambient": "the YES sign wobbles, the magnifier hums, the folder rattles",
+      "hero": {
+        "name": "page + magnifier + YES sign + CONFIDENTIAL folder",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "30% page, 25% magnifier, 25% sign, 20% folder"
+      },
+      "id": 3,
+      "start_s": 20.14,
+      "t": "20.140-27.160"
+    },
+    {
+      "title": "The doors close",
+      "vo_line": 3,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "courthouse-front",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Three side doors brick up, the page is binned, the camera pulls back",
+      "ambient": "bricks land, the phone wiggles, the page crumples",
+      "hero": {
+        "name": "three side doors + phone + arrow + code page + NO disc + bin",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "30% doors, 20% phone, 20% arrow, 15% code, 15% disc"
+      },
+      "id": 4,
+      "start_s": 27.16,
+      "t": "27.160-39.980"
+    },
+    {
+      "title": "Reels wakes",
+      "vo_line": 4,
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "recorder-room",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Reels wakes and prints, seven hearing rooms feed it, a glass and an ink bottle appear",
+      "ambient": "the reels spin, the ribbon prints, the lamp blinks",
+      "hero": {
+        "name": "Reels + ribbon + seven hearing rooms + water glass + ink bottle",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "40% Reels, 20% ribbon, 25% rooms, 15% glass"
+      },
+      "id": 5,
+      "start_s": 39.98,
+      "t": "39.980-51.080"
+    },
+    {
+      "title": "The labeled page",
+      "vo_line": 5,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "high",
+      "stage": "recorder-cutaway",
+      "pov": "exploded-diagram",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The transcript is tagged AI GENERATED, stamped, and tied to the audio",
+      "ambient": "the waveform pulses, the calendar leaf wobbles, the stamp rings",
+      "hero": {
+        "name": "Reels + transcript page + calendar leaf + audio speaker + brass thread",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "30% Reels, 30% page, 20% calendar, 20% speaker"
+      },
+      "id": 6,
+      "start_s": 51.08,
+      "t": "51.080-63.600"
+    },
+    {
+      "title": "The counter",
+      "vo_line": 6,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "counter",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A judge scrolls text, a party files TF-304 and gets a cassette",
+      "ambient": "the monitor scrolls, the key tag sways face down, the form slides, the glass glints",
+      "hero": {
+        "name": "counter + glass pane + brass key + judge + monitor + party + form + cassette",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "25% judge, 25% party, 20% monitor, 15% form, 15% cassette"
+      },
+      "id": 7,
+      "start_s": 63.6,
+      "t": "63.600-75.120"
+    },
+    {
+      "title": "The velvet rope",
+      "vo_line": 7,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "low",
+      "stage": "counter-glass",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A rope drops across the window, a hand presses the glass",
+      "ambient": "the rope swings, the hand presses the glass",
+      "hero": {
+        "name": "velvet rope + brass posts + frosted glass + hand",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% rope, 35% glass, 25% hand"
+      },
+      "id": 8,
+      "start_s": 75.12,
+      "t": "75.120-80.860"
+    },
+    {
+      "title": "The ink drop",
+      "vo_line": 8,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "ground",
+      "stage": "water-glass",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Ink blooms in a glass and a SEALED stamp can't pull it back",
+      "ambient": "the ink blooms, the water shimmers, the tweezers close",
+      "hero": {
+        "name": "water tumbler + ink bloom + ink bottle + SEALED stamp + tweezers",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "50% tumbler, 20% ink, 15% stamp, 15% tweezers"
+      },
+      "id": 9,
+      "start_s": 80.86,
+      "t": "80.860-91.120"
+    },
+    {
+      "title": "Containment",
+      "vo_line": 9,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "counter-return",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The key tag flips STAFF SIDE ONLY and the party gets the tape",
+      "ambient": "the tag flips, the cassette slides, the glass glints",
+      "hero": {
+        "name": "key + STAFF SIDE ONLY tag + glass + party + cassette",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "35% key, 35% party, 30% cassette"
+      },
+      "id": 10,
+      "start_s": 91.12,
+      "t": "91.120-99.800"
+    },
+    {
+      "title": "One front door",
+      "vo_line": 10,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "floor-plan",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Side doors brick shut and one front door lights",
+      "ambient": "the plan settles, bricks land, the front door glows",
+      "hero": {
+        "name": "floor plan + four side doors + front door + Reels room",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "40% plan, 30% doors, 15% front door, 15% Reels"
+      },
+      "id": 11,
+      "start_s": 99.8,
+      "t": "99.800-107.380"
+    },
+    {
+      "title": "The admission",
+      "vo_line": 11,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "binder-desk",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "crossfade",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The binder sweats and a tiny comb straightens its margins",
+      "ambient": "sweat drips, the comb moves, the stamp rings",
+      "hero": {
+        "name": "binder + sweat drops + tiny comb + FORMATTING ONLY plate",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "55% binder, 25% comb, 20% plate"
+      },
+      "id": 12,
+      "start_s": 107.38,
+      "t": "107.380-117.140"
+    },
+    {
+      "title": "The question",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "counter-end",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A blank page waits at the glass, Tagalong pops up behind a gavel",
+      "ambient": "the page curls, the gavel taps, Reels blinks",
+      "hero": {
+        "name": "Reels + glass + party + blank page + Tagalong + gavel",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "25% Reels, 25% party, 20% page, 15% Tagalong, 15% gavel"
+      },
+      "id": 13,
+      "start_s": 117.14,
+      "t": "117.140-120.280"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska's courts won't let staff or judges use A I on their own to transcribe hearings. A clerk can't even run Zoom's A I for a log note.",
+      "phrase": "Alaska's courts won't let",
+      "shows": "Tagalong walks through a side door into a hearing room clutching a notebook page it scribbled, a plate reads AI NOTETAKER",
+      "sfx": "creak",
+      "means": "ai notetaker",
+      "rehook": "",
+      "draw": {
+        "subject": "Tagalong",
+        "action": "walks through a side door into a hearing room clutching a notebook page it scribbled",
+        "emotion": "sneaky",
+        "annotation": "AI NOTETAKER"
+      },
+      "choreo": {
+        "primary": "Tagalong walks through a side door into a hearing room clutching a notebook page it scribbled, a plate reads AI NOTETAKER",
+        "reaction": "the door creaks",
+        "ambient": "the door creaks, the screen glows, Tagalong's legs paddle"
+      },
+      "t": "0.000-1.870",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.87,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 1.87
+      },
+      "offset": 1.87,
+      "vo": "Alaska's courts won't let staff or judges use A I on their own to transcribe hearings. A clerk can't even run Zoom's A I for a log note.",
+      "phrase": "staff or judges use",
+      "shows": "a court clerk's hand descends from the top of the frame toward Tagalong, a plate reads COURT STAFF",
+      "sfx": "tap",
+      "means": "court staff",
+      "rehook": "",
+      "draw": {
+        "subject": "a court clerk's hand",
+        "action": "descends from the top of the frame toward Tagalong",
+        "emotion": "stern",
+        "annotation": "COURT STAFF"
+      },
+      "choreo": {
+        "primary": "a court clerk's hand descends from the top of the frame toward Tagalong, a plate reads COURT STAFF",
+        "reaction": "the hand descends",
+        "ambient": "the door creaks, the screen glows, Tagalong's legs paddle"
+      },
+      "t": "1.870-5.510",
+      "key": 47
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 5.51,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 5.51
+      },
+      "offset": 5.51,
+      "vo": "Alaska's courts won't let staff or judges use A I on their own to transcribe hearings. A clerk can't even run Zoom's A I for a log note.",
+      "phrase": "transcribe hearings. A clerk",
+      "shows": "a court clerk's hand scruffs Tagalong by the collar and swings it back out while a brass plate slams down, a plate reads NO DIY AI TRANSCRIPTS",
+      "sfx": "thud",
+      "means": "no diy ai transcripts",
+      "rehook": "",
+      "draw": {
+        "subject": "a court clerk's hand",
+        "action": "scruffs Tagalong by the collar and swings it back out while a brass plate slams down",
+        "emotion": "stern",
+        "annotation": "NO DIY AI TRANSCRIPTS"
+      },
+      "choreo": {
+        "primary": "a court clerk's hand scruffs Tagalong by the collar and swings it back out while a brass plate slams down, a plate reads NO DIY AI TRANSCRIPTS",
+        "reaction": "the plate rings",
+        "ambient": "the door creaks, the screen glows, Tagalong's legs paddle"
+      },
+      "t": "5.510-7.290",
+      "key": 2
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 7.29,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 7.29
+      },
+      "offset": 7.29,
+      "vo": "Alaska's courts won't let staff or judges use A I on their own to transcribe hearings. A clerk can't even run Zoom's A I for a log note.",
+      "phrase": "clerk can't even run",
+      "shows": "a clerk's laptop opens a Zoom tile as an AI log note prints itself, a plate reads ZOOM AI LOG NOTE",
+      "sfx": "tap",
+      "means": "zoom ai log note",
+      "rehook": "",
+      "draw": {
+        "subject": "a clerk's laptop",
+        "action": "opens a Zoom tile as an AI log note prints itself",
+        "emotion": "reading",
+        "annotation": "ZOOM AI LOG NOTE"
+      },
+      "choreo": {
+        "primary": "a clerk's laptop opens a Zoom tile as an AI log note prints itself, a plate reads ZOOM AI LOG NOTE",
+        "reaction": "the note types",
+        "ambient": "the door creaks, the screen glows, Tagalong's legs paddle"
+      },
+      "t": "7.290-10.230",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 1,
+      "at_s": 10.23,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 10.23
+      },
+      "offset": 10.23,
+      "vo": "Alaska's courts won't let staff or judges use A I on their own to transcribe hearings. A clerk can't even run Zoom's A I for a log note.",
+      "phrase": "note.",
+      "shows": "a clerk's hand wipes the Zoom AI note off the screen in one sweep, a plate reads NO ZOOM AI NOTES",
+      "sfx": "flip",
+      "means": "no zoom ai notes",
+      "rehook": "",
+      "draw": {
+        "subject": "a clerk's hand",
+        "action": "wipes the Zoom AI note off the screen in one sweep",
+        "emotion": "firm",
+        "annotation": "NO ZOOM AI NOTES"
+      },
+      "choreo": {
+        "primary": "a clerk's hand wipes the Zoom AI note off the screen in one sweep, a plate reads NO ZOOM AI NOTES",
+        "reaction": "the screen clears",
+        "ambient": "the door creaks, the screen glows, Tagalong's legs paddle"
+      },
+      "t": "10.230-11.100",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 11.1,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It's one rule in a policy covering every court employee and judge. Version one point two, June, as published by LawSites.",
+      "phrase": "It's one rule in",
+      "shows": "a green binder slaps onto the bench as the AI policy with VERSION 1.2 on its cover, a plate reads AI POLICY \u00b7 ALASKA COURT SYSTEM",
+      "sfx": "stamp",
+      "means": "ai policy \u00b7 alaska court system",
+      "rehook": "",
+      "draw": {
+        "subject": "a green binder",
+        "action": "slaps onto the bench as the AI policy with VERSION 1.2 on its cover",
+        "emotion": "proud",
+        "annotation": "AI POLICY \u00b7 ALASKA COURT SYSTEM"
+      },
+      "choreo": {
+        "primary": "a green binder slaps onto the bench as the AI policy with VERSION 1.2 on its cover, a plate reads AI POLICY \u00b7 ALASKA COURT SYSTEM",
+        "reaction": "the binder bounces",
+        "ambient": "the crowd shifts, the binder settles, the key swings"
+      },
+      "t": "11.100-13.370",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 13.37,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.27
+      },
+      "offset": 2.27,
+      "vo": "It's one rule in a policy covering every court employee and judge. Version one point two, June, as published by LawSites.",
+      "phrase": "every court employee and",
+      "shows": "five silhouettes fill in behind the binder, one in a robe, a plate reads ALL STAFF + JUDICIAL OFFICERS",
+      "sfx": "pop",
+      "means": "all staff + judicial officers",
+      "rehook": "",
+      "draw": {
+        "subject": "five silhouettes",
+        "action": "fill in behind the binder, one in a robe",
+        "emotion": "reading",
+        "annotation": "ALL STAFF + JUDICIAL OFFICERS"
+      },
+      "choreo": {
+        "primary": "five silhouettes fill in behind the binder, one in a robe, a plate reads ALL STAFF + JUDICIAL OFFICERS",
+        "reaction": "the crowd settles",
+        "ambient": "the crowd shifts, the binder settles, the key swings"
+      },
+      "t": "13.370-14.290",
+      "key": 6
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 14.29,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "It's one rule in a policy covering every court employee and judge. Version one point two, June, as published by LawSites.",
+      "phrase": "employee and judge. Version",
+      "shows": "a brass key swings on a wall hook with its tag face down, a plate reads WHO GETS THE KEY?",
+      "sfx": "clunk",
+      "means": "who gets the key?",
+      "rehook": "",
+      "draw": {
+        "subject": "a brass key",
+        "action": "swings on a wall hook with its tag face down",
+        "emotion": "curious",
+        "annotation": "WHO GETS THE KEY?"
+      },
+      "choreo": {
+        "primary": "a brass key swings on a wall hook with its tag face down, a plate reads WHO GETS THE KEY?",
+        "reaction": "the key swings",
+        "ambient": "the crowd shifts, the binder settles, the key swings"
+      },
+      "t": "14.290-17.550",
+      "key": 9
+    },
+    {
+      "id": 9,
+      "shot": 2,
+      "at_s": 17.55,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 6.45
+      },
+      "offset": 6.45,
+      "vo": "It's one rule in a policy covering every court employee and judge. Version one point two, June, as published by LawSites.",
+      "phrase": "June, as published by",
+      "shows": "a date tab ticks onto the binder cover, a plate reads VERSION 1.2 \u00b7 JUNE 2026",
+      "sfx": "click",
+      "means": "version 1.2 \u00b7 june 2026",
+      "rehook": "",
+      "draw": {
+        "subject": "a date tab",
+        "action": "ticks onto the binder cover",
+        "emotion": "reading",
+        "annotation": "VERSION 1.2 \u00b7 JUNE 2026"
+      },
+      "choreo": {
+        "primary": "a date tab ticks onto the binder cover, a plate reads VERSION 1.2 \u00b7 JUNE 2026",
+        "reaction": "the tab ticks",
+        "ambient": "the crowd shifts, the binder settles, the key swings"
+      },
+      "t": "17.550-18.870",
+      "key": 7
+    },
+    {
+      "id": 10,
+      "shot": 2,
+      "at_s": 18.87,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 7.77
+      },
+      "offset": 7.77,
+      "vo": "It's one rule in a policy covering every court employee and judge. Version one point two, June, as published by LawSites.",
+      "phrase": "LawSites.",
+      "shows": "a source tag clips onto the binder, a plate reads AS PUBLISHED BY LAWSITES",
+      "sfx": "clip",
+      "means": "as published by lawsites",
+      "rehook": "",
+      "draw": {
+        "subject": "a source tag",
+        "action": "clips onto the binder",
+        "emotion": "reading",
+        "annotation": "AS PUBLISHED BY LAWSITES"
+      },
+      "choreo": {
+        "primary": "a source tag clips onto the binder, a plate reads AS PUBLISHED BY LAWSITES",
+        "reaction": "the tag swings",
+        "ambient": "the crowd shifts, the binder settles, the key swings"
+      },
+      "t": "18.870-20.140",
+      "key": 8
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 20.14,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Everything else is a yes, with homework. Check every answer. Never type in confidential details.",
+      "phrase": "Everything else is a",
+      "shows": "a green YES sign drops onto the wall above a policy page, a plate reads EVERYTHING ELSE IS A YES",
+      "sfx": "chime",
+      "means": "everything else is a yes",
+      "rehook": "",
+      "draw": {
+        "subject": "a green YES sign",
+        "action": "drops onto the wall above a policy page",
+        "emotion": "wry",
+        "annotation": "EVERYTHING ELSE IS A YES"
+      },
+      "choreo": {
+        "primary": "a green YES sign drops onto the wall above a policy page, a plate reads EVERYTHING ELSE IS A YES",
+        "reaction": "the sign wobbles",
+        "ambient": "the YES sign wobbles, the magnifier hums, the folder rattles"
+      },
+      "t": "20.140-23.450",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 3,
+      "at_s": 23.45,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "Everything else is a yes, with homework. Check every answer. Never type in confidential details.",
+      "phrase": "Check every answer. Never",
+      "shows": "a magnifier slides over the page and ticks a green check, a plate reads VERIFY ALL OUTPUT",
+      "sfx": "tick",
+      "means": "verify all output",
+      "rehook": "",
+      "draw": {
+        "subject": "a magnifier",
+        "action": "slides over the page and ticks a green check",
+        "emotion": "focused",
+        "annotation": "VERIFY ALL OUTPUT"
+      },
+      "choreo": {
+        "primary": "a magnifier slides over the page and ticks a green check, a plate reads VERIFY ALL OUTPUT",
+        "reaction": "the check lands",
+        "ambient": "the YES sign wobbles, the magnifier hums, the folder rattles"
+      },
+      "t": "23.450-26.130",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 3,
+      "at_s": 26.13,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.99
+      },
+      "offset": 5.99,
+      "vo": "Everything else is a yes, with homework. Check every answer. Never type in confidential details.",
+      "phrase": "confidential details.",
+      "shows": "a CONFIDENTIAL folder snaps shut with a spark, a plate reads NEVER ENTER CONFIDENTIAL INFO",
+      "sfx": "snap",
+      "means": "never enter confidential info",
+      "rehook": "",
+      "draw": {
+        "subject": "a CONFIDENTIAL folder",
+        "action": "snaps shut with a spark",
+        "emotion": "stern",
+        "annotation": "NEVER ENTER CONFIDENTIAL INFO"
+      },
+      "choreo": {
+        "primary": "a CONFIDENTIAL folder snaps shut with a spark, a plate reads NEVER ENTER CONFIDENTIAL INFO",
+        "reaction": "the folder rattles",
+        "ambient": "the YES sign wobbles, the magnifier hums, the folder rattles"
+      },
+      "t": "26.130-28.070",
+      "key": 12
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 28.07,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.91
+      },
+      "offset": 0.91,
+      "vo": "No personal accounts. No downloads on court devices. Humans review the code. No A I interpreting. Break the rules and risk discipline, up to firing.",
+      "phrase": "personal accounts. No downloads",
+      "shows": "a phone in a fake mustache tries to badge in at a side door and gets bricked in, a plate reads NO PERSONAL AI ACCOUNTS",
+      "sfx": "pop",
+      "means": "no personal ai accounts",
+      "rehook": "rehook: a phone in a fake mustache tries to badge in",
+      "draw": {
+        "subject": "a phone in a fake mustache",
+        "action": "tries to badge in at a side door and gets bricked in",
+        "emotion": "sneaky",
+        "annotation": "NO PERSONAL AI ACCOUNTS"
+      },
+      "choreo": {
+        "primary": "a phone in a fake mustache tries to badge in at a side door and gets bricked in, a plate reads NO PERSONAL AI ACCOUNTS",
+        "reaction": "the phone wiggles",
+        "ambient": "bricks land, the phone wiggles, the page crumples"
+      },
+      "t": "28.070-29.710",
+      "key": 13
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 29.71,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.55
+      },
+      "offset": 2.55,
+      "vo": "No personal accounts. No downloads on court devices. Humans review the code. No A I interpreting. Break the rules and risk discipline, up to firing.",
+      "phrase": "downloads on court devices.",
+      "shows": "a download arrow bounces off the second door, a plate reads NO AI DOWNLOADS ON COURT DEVICES",
+      "sfx": "clank",
+      "means": "no ai downloads on court devices",
+      "rehook": "",
+      "draw": {
+        "subject": "a download arrow",
+        "action": "bounces off the second door",
+        "emotion": "wry",
+        "annotation": "NO AI DOWNLOADS ON COURT DEVICES"
+      },
+      "choreo": {
+        "primary": "a download arrow bounces off the second door, a plate reads NO AI DOWNLOADS ON COURT DEVICES",
+        "reaction": "the arrow bounces",
+        "ambient": "bricks land, the phone wiggles, the page crumples"
+      },
+      "t": "29.710-32.970",
+      "key": 14
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "at_s": 32.97,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 5.81
+      },
+      "offset": 5.81,
+      "vo": "No personal accounts. No downloads on court devices. Humans review the code. No A I interpreting. Break the rules and risk discipline, up to firing.",
+      "phrase": "code. No A I",
+      "shows": "a page of code gets a green check from a human hand, a plate reads HUMAN REVIEWS THE CODE",
+      "sfx": "tick",
+      "means": "human reviews the code",
+      "rehook": "",
+      "draw": {
+        "subject": "a page of code",
+        "action": "gets a green check from a human hand",
+        "emotion": "focused",
+        "annotation": "HUMAN REVIEWS THE CODE"
+      },
+      "choreo": {
+        "primary": "a page of code gets a green check from a human hand, a plate reads HUMAN REVIEWS THE CODE",
+        "reaction": "the check lands",
+        "ambient": "bricks land, the phone wiggles, the page crumples"
+      },
+      "t": "32.970-34.510",
+      "key": 15
+    },
+    {
+      "id": 17,
+      "shot": 4,
+      "at_s": 34.51,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 7.35
+      },
+      "offset": 7.35,
+      "vo": "No personal accounts. No downloads on court devices. Humans review the code. No A I interpreting. Break the rules and risk discipline, up to firing.",
+      "phrase": "interpreting. Break the rules",
+      "shows": "a red NO disc slams onto the third door, a plate reads NO AI INTERPRETING",
+      "sfx": "alarm",
+      "means": "no ai interpreting",
+      "rehook": "",
+      "draw": {
+        "subject": "a red NO disc",
+        "action": "slams onto the third door",
+        "emotion": "stern",
+        "annotation": "NO AI INTERPRETING"
+      },
+      "choreo": {
+        "primary": "a red NO disc slams onto the third door, a plate reads NO AI INTERPRETING",
+        "reaction": "the disc rings",
+        "ambient": "bricks land, the phone wiggles, the page crumples"
+      },
+      "t": "34.510-36.290",
+      "key": 16
+    },
+    {
+      "id": 18,
+      "shot": 4,
+      "at_s": 36.29,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 9.13
+      },
+      "offset": 9.13,
+      "vo": "No personal accounts. No downloads on court devices. Humans review the code. No A I interpreting. Break the rules and risk discipline, up to firing.",
+      "phrase": "rules and risk discipline,",
+      "shows": "the notebook page crumples into a bin under the doors, a plate reads DISCIPLINE UP TO DISMISSAL",
+      "sfx": "page",
+      "means": "discipline up to dismissal",
+      "rehook": "",
+      "draw": {
+        "subject": "the notebook page",
+        "action": "crumples into a bin under the doors",
+        "emotion": "somber",
+        "annotation": "DISCIPLINE UP TO DISMISSAL"
+      },
+      "choreo": {
+        "primary": "the notebook page crumples into a bin under the doors, a plate reads DISCIPLINE UP TO DISMISSAL",
+        "reaction": "the page crumples",
+        "ambient": "bricks land, the phone wiggles, the page crumples"
+      },
+      "t": "36.290-37.250",
+      "key": 17
+    },
+    {
+      "id": 19,
+      "shot": 4,
+      "at_s": 37.25,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 10.09
+      },
+      "offset": 10.09,
+      "vo": "No personal accounts. No downloads on court devices. Humans review the code. No A I interpreting. Break the rules and risk discipline, up to firing.",
+      "phrase": "discipline, up to firing.",
+      "shows": "the camera pulls back until the whole courthouse shows three bricked doors, a plate reads SIDE DOORS CLOSING",
+      "sfx": "whoosh",
+      "means": "side doors closing",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back until the whole courthouse shows three bricked doors",
+        "emotion": "reading",
+        "annotation": "SIDE DOORS CLOSING"
+      },
+      "choreo": {
+        "primary": "the camera pulls back until the whole courthouse shows three bricked doors, a plate reads SIDE DOORS CLOSING",
+        "reaction": "the doors recede",
+        "ambient": "bricks land, the phone wiggles, the page crumples"
+      },
+      "t": "37.250-39.980",
+      "key": 18
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 39.98,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But the same policy says the court's own staff and judges will soon get A I transcripts of every hearing. Keep an eye on who gets to read them.",
+      "phrase": "But the same policy",
+      "shows": "Reels wakes as its reel eyes snap open and spin, a plate reads THE COURT'S OWN RECORDER",
+      "sfx": "swell",
+      "means": "the court's own recorder",
+      "rehook": "",
+      "draw": {
+        "subject": "Reels",
+        "action": "wakes as its reel eyes snap open and spin",
+        "emotion": "proud",
+        "annotation": "THE COURT'S OWN RECORDER"
+      },
+      "choreo": {
+        "primary": "Reels wakes as its reel eyes snap open and spin, a plate reads THE COURT'S OWN RECORDER",
+        "reaction": "the reels spin",
+        "ambient": "the reels spin, the ribbon prints, the lamp blinks"
+      },
+      "t": "39.980-43.290",
+      "key": 19
+    },
+    {
+      "id": 21,
+      "shot": 5,
+      "at_s": 43.29,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "But the same policy says the court's own staff and judges will soon get A I transcripts of every hearing. Keep an eye on who gets to read them.",
+      "phrase": "judges will soon get",
+      "shows": "Reels turns its eyes toward a judge silhouette as its lamp blinks, a plate reads STAFF AND JUDGES",
+      "sfx": "tick",
+      "means": "staff and judges",
+      "rehook": "",
+      "draw": {
+        "subject": "Reels",
+        "action": "turns its eyes toward a judge silhouette as its lamp blinks",
+        "emotion": "curious",
+        "annotation": "STAFF AND JUDGES"
+      },
+      "choreo": {
+        "primary": "Reels turns its eyes toward a judge silhouette as its lamp blinks, a plate reads STAFF AND JUDGES",
+        "reaction": "the lamp blinks",
+        "ambient": "the reels spin, the ribbon prints, the lamp blinks"
+      },
+      "t": "43.290-45.350",
+      "key": 48
+    },
+    {
+      "id": 22,
+      "shot": 5,
+      "at_s": 45.35,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.37
+      },
+      "offset": 5.37,
+      "vo": "But the same policy says the court's own staff and judges will soon get A I transcripts of every hearing. Keep an eye on who gets to read them.",
+      "phrase": "transcripts of every hearing.",
+      "shows": "Reels prints a dashed planned ribbon from its mouth, a plate reads AI TRANSCRIPTS OF ALL HEARINGS",
+      "sfx": "pop",
+      "means": "ai transcripts of all hearings",
+      "rehook": "",
+      "draw": {
+        "subject": "Reels",
+        "action": "prints a dashed planned ribbon from its mouth",
+        "emotion": "proud",
+        "annotation": "AI TRANSCRIPTS OF ALL HEARINGS"
+      },
+      "choreo": {
+        "primary": "Reels prints a dashed planned ribbon from its mouth, a plate reads AI TRANSCRIPTS OF ALL HEARINGS",
+        "reaction": "the ribbon prints",
+        "ambient": "the reels spin, the ribbon prints, the lamp blinks"
+      },
+      "t": "45.350-46.470",
+      "key": 20
+    },
+    {
+      "id": 23,
+      "shot": 5,
+      "at_s": 46.47,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 6.49
+      },
+      "offset": 6.49,
+      "vo": "But the same policy says the court's own staff and judges will soon get A I transcripts of every hearing. Keep an eye on who gets to read them.",
+      "phrase": "every hearing. Keep an",
+      "shows": "seven hearing rooms fade in around Reels with brass threads running to it, a plate reads EVERY HEARING",
+      "sfx": "whoosh",
+      "means": "every hearing",
+      "rehook": "",
+      "draw": {
+        "subject": "seven hearing rooms",
+        "action": "fade in around Reels with brass threads running to it",
+        "emotion": "reading",
+        "annotation": "EVERY HEARING"
+      },
+      "choreo": {
+        "primary": "seven hearing rooms fade in around Reels with brass threads running to it, a plate reads EVERY HEARING",
+        "reaction": "the threads pulse",
+        "ambient": "the reels spin, the ribbon prints, the lamp blinks"
+      },
+      "t": "46.470-48.650",
+      "key": 21
+    },
+    {
+      "id": 24,
+      "shot": 5,
+      "at_s": 48.65,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 8.67
+      },
+      "offset": 8.67,
+      "vo": "But the same policy says the court's own staff and judges will soon get A I transcripts of every hearing. Keep an eye on who gets to read them.",
+      "phrase": "eye on who gets",
+      "shows": "a glass of water and a cobalt ink bottle appear on the bench while Reels glances at the key, a plate reads WHO GETS TO READ THEM?",
+      "sfx": "pop",
+      "means": "who gets to read them?",
+      "rehook": "",
+      "draw": {
+        "subject": "a glass of water and a cobalt ink bottle",
+        "action": "appear on the bench while Reels glances at the key",
+        "emotion": "curious",
+        "annotation": "WHO GETS TO READ THEM?"
+      },
+      "choreo": {
+        "primary": "a glass of water and a cobalt ink bottle appear on the bench while Reels glances at the key, a plate reads WHO GETS TO READ THEM?",
+        "reaction": "the glass shimmers",
+        "ambient": "the reels spin, the ribbon prints, the lamp blinks"
+      },
+      "t": "48.650-51.080",
+      "key": 22
+    },
+    {
+      "id": 25,
+      "shot": 6,
+      "at_s": 51.08,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "They come from CourtSmart, the court's recording system, and should be ready by fall. The policy calls them A I generated, not the official record, and says each links to the official audio.",
+      "phrase": "They come from CourtSmart,",
+      "shows": "Reels slides open its casing and a courtroom waveform feeds in, a plate reads COURTSMART",
+      "sfx": "pulse",
+      "means": "courtsmart",
+      "rehook": "",
+      "draw": {
+        "subject": "Reels",
+        "action": "slides open its casing and a courtroom waveform feeds in",
+        "emotion": "proud",
+        "annotation": "COURTSMART"
+      },
+      "choreo": {
+        "primary": "Reels slides open its casing and a courtroom waveform feeds in, a plate reads COURTSMART",
+        "reaction": "the waveform pulses",
+        "ambient": "the waveform pulses, the calendar leaf wobbles, the stamp rings"
+      },
+      "t": "51.080-55.310",
+      "key": 23
+    },
+    {
+      "id": 26,
+      "shot": 6,
+      "at_s": 55.31,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.23
+      },
+      "offset": 4.23,
+      "vo": "They come from CourtSmart, the court's recording system, and should be ready by fall. The policy calls them A I generated, not the official record, and says each links to the official audio.",
+      "phrase": "fall. The policy calls",
+      "shows": "a calendar leaf drops in with SHOULD BE READY penciled on it and no check, a plate reads SHOULD BE READY BY FALL",
+      "sfx": "page",
+      "means": "should be ready by fall",
+      "rehook": "",
+      "draw": {
+        "subject": "a calendar leaf",
+        "action": "drops in with SHOULD BE READY penciled on it and no check",
+        "emotion": "wry",
+        "annotation": "SHOULD BE READY BY FALL"
+      },
+      "choreo": {
+        "primary": "a calendar leaf drops in with SHOULD BE READY penciled on it and no check, a plate reads SHOULD BE READY BY FALL",
+        "reaction": "the leaf wobbles",
+        "ambient": "the waveform pulses, the calendar leaf wobbles, the stamp rings"
+      },
+      "t": "55.310-57.770",
+      "key": 24
+    },
+    {
+      "id": 27,
+      "shot": 6,
+      "at_s": 57.77,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 6.69
+      },
+      "offset": 6.69,
+      "vo": "They come from CourtSmart, the court's recording system, and should be ready by fall. The policy calls them A I generated, not the official record, and says each links to the official audio.",
+      "phrase": "generated, not the official",
+      "shows": "the transcript page gets a cobalt AI GENERATED tag and a red NOT THE OFFICIAL RECORD stamp, a plate reads NOT THE OFFICIAL RECORD",
+      "sfx": "stamp",
+      "means": "not the official record",
+      "rehook": "rehook: the stamp pounds the transcript",
+      "draw": {
+        "subject": "the transcript page",
+        "action": "gets a cobalt AI GENERATED tag and a red NOT THE OFFICIAL RECORD stamp",
+        "emotion": "firm",
+        "annotation": "NOT THE OFFICIAL RECORD"
+      },
+      "choreo": {
+        "primary": "the transcript page gets a cobalt AI GENERATED tag and a red NOT THE OFFICIAL RECORD stamp, a plate reads NOT THE OFFICIAL RECORD",
+        "reaction": "the stamp rings",
+        "ambient": "the waveform pulses, the calendar leaf wobbles, the stamp rings"
+      },
+      "kick": true,
+      "t": "57.770-62.090",
+      "key": 25
+    },
+    {
+      "id": 28,
+      "shot": 6,
+      "at_s": 62.09,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 11.01
+      },
+      "offset": 11.01,
+      "vo": "They come from CourtSmart, the court's recording system, and should be ready by fall. The policy calls them A I generated, not the official record, and says each links to the official audio.",
+      "phrase": "audio.",
+      "shows": "a brass thread ties the transcript to an audio speaker, a plate reads LINKS TO OFFICIAL AUDIO",
+      "sfx": "clip",
+      "means": "links to official audio",
+      "rehook": "",
+      "draw": {
+        "subject": "a brass thread",
+        "action": "ties the transcript to an audio speaker",
+        "emotion": "reading",
+        "annotation": "LINKS TO OFFICIAL AUDIO"
+      },
+      "choreo": {
+        "primary": "a brass thread ties the transcript to an audio speaker, a plate reads LINKS TO OFFICIAL AUDIO",
+        "reaction": "the thread pulls tight",
+        "ambient": "the waveform pulses, the calendar leaf wobbles, the stamp rings"
+      },
+      "t": "62.090-63.600",
+      "key": 26
+    },
+    {
+      "id": 29,
+      "shot": 7,
+      "at_s": 63.6,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Picture one hearing, two people. A judge opens the A I transcript. The party at the table can fill out form T F three oh four, and ask for the audio.",
+      "phrase": "Picture one hearing, two",
+      "shows": "a counter slides in with a glass pane cutting the room in two, a plate reads ONE HEARING \u00b7 TWO PEOPLE",
+      "sfx": "whoosh",
+      "means": "one hearing \u00b7 two people",
+      "rehook": "",
+      "draw": {
+        "subject": "a counter",
+        "action": "slides in with a glass pane cutting the room in two",
+        "emotion": "reading",
+        "annotation": "ONE HEARING \u00b7 TWO PEOPLE"
+      },
+      "choreo": {
+        "primary": "a counter slides in with a glass pane cutting the room in two, a plate reads ONE HEARING \u00b7 TWO PEOPLE",
+        "reaction": "the glass glints",
+        "ambient": "the monitor scrolls, the key tag sways face down, the form slides, the glass glints"
+      },
+      "t": "63.600-66.570",
+      "key": 27
+    },
+    {
+      "id": 30,
+      "shot": 7,
+      "at_s": 66.57,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "Picture one hearing, two people. A judge opens the A I transcript. The party at the table can fill out form T F three oh four, and ask for the audio.",
+      "phrase": "judge opens the A",
+      "shows": "a judge scrolls a dashed planned AI transcript on a monitor, a plate reads AI TRANSCRIPT",
+      "sfx": "tick",
+      "means": "ai transcript",
+      "rehook": "",
+      "draw": {
+        "subject": "a judge",
+        "action": "scrolls a dashed planned AI transcript on a monitor",
+        "emotion": "calm",
+        "annotation": "AI TRANSCRIPT"
+      },
+      "choreo": {
+        "primary": "a judge scrolls a dashed planned AI transcript on a monitor, a plate reads AI TRANSCRIPT",
+        "reaction": "the lines scroll",
+        "ambient": "the monitor scrolls, the key tag sways face down, the form slides, the glass glints"
+      },
+      "t": "66.570-70.850",
+      "key": 28
+    },
+    {
+      "id": 31,
+      "shot": 7,
+      "at_s": 70.85,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.25
+      },
+      "offset": 7.25,
+      "vo": "Picture one hearing, two people. A judge opens the A I transcript. The party at the table can fill out form T F three oh four, and ask for the audio.",
+      "phrase": "form T F three",
+      "shows": "a party slides form TF-304 under the glass, a plate reads FORM TF-304",
+      "sfx": "slide",
+      "means": "form tf-304",
+      "rehook": "",
+      "draw": {
+        "subject": "a party",
+        "action": "slides form TF-304 under the glass",
+        "emotion": "hopeful",
+        "annotation": "FORM TF-304"
+      },
+      "choreo": {
+        "primary": "a party slides form TF-304 under the glass, a plate reads FORM TF-304",
+        "reaction": "the form slides",
+        "ambient": "the monitor scrolls, the key tag sways face down, the form slides, the glass glints"
+      },
+      "t": "70.850-73.550",
+      "key": 29
+    },
+    {
+      "id": 32,
+      "shot": 7,
+      "at_s": 73.55,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 9.95
+      },
+      "offset": 9.95,
+      "vo": "Picture one hearing, two people. A judge opens the A I transcript. The party at the table can fill out form T F three oh four, and ask for the audio.",
+      "phrase": "audio.",
+      "shows": "a cassette lands on the party's side with a clack, a plate reads OFFICIAL AUDIO",
+      "sfx": "clunk",
+      "means": "official audio",
+      "rehook": "",
+      "draw": {
+        "subject": "a cassette",
+        "action": "lands on the party's side with a clack",
+        "emotion": "reading",
+        "annotation": "OFFICIAL AUDIO"
+      },
+      "choreo": {
+        "primary": "a cassette lands on the party's side with a clack, a plate reads OFFICIAL AUDIO",
+        "reaction": "the cassette bounces",
+        "ambient": "the monitor scrolls, the key tag sways face down, the form slides, the glass glints"
+      },
+      "t": "73.550-75.120",
+      "key": 30
+    },
+    {
+      "id": 33,
+      "shot": 8,
+      "at_s": 75.12,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The transcripts are restricted to internal court use, and may not be shared with the public.",
+      "phrase": "The transcripts are restricted",
+      "shows": "a velvet rope drops across the window between two brass posts, a plate reads INTERNAL ONLY",
+      "sfx": "hush",
+      "means": "internal only",
+      "rehook": "",
+      "draw": {
+        "subject": "a velvet rope",
+        "action": "drops across the window between two brass posts",
+        "emotion": "stern",
+        "annotation": "INTERNAL ONLY"
+      },
+      "choreo": {
+        "primary": "a velvet rope drops across the window between two brass posts, a plate reads INTERNAL ONLY",
+        "reaction": "the rope swings",
+        "ambient": "the rope swings, the hand presses the glass"
+      },
+      "t": "75.120-79.730",
+      "key": 31
+    },
+    {
+      "id": 34,
+      "shot": 8,
+      "at_s": 79.73,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.61
+      },
+      "offset": 4.61,
+      "vo": "The transcripts are restricted to internal court use, and may not be shared with the public.",
+      "phrase": "public.",
+      "shows": "the party's hand presses on the glass, a plate reads NOT FOR THE PUBLIC",
+      "sfx": "thud",
+      "means": "not for the public",
+      "rehook": "",
+      "draw": {
+        "subject": "the party's hand",
+        "action": "presses on the glass",
+        "emotion": "wistful",
+        "annotation": "NOT FOR THE PUBLIC"
+      },
+      "choreo": {
+        "primary": "the party's hand presses on the glass, a plate reads NOT FOR THE PUBLIC",
+        "reaction": "the hand presses",
+        "ambient": "the rope swings, the hand presses the glass"
+      },
+      "t": "79.730-80.860",
+      "key": 32
+    },
+    {
+      "id": 35,
+      "shot": 9,
+      "at_s": 80.86,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The policy's stated worry is that a hearing can hold confidential information that couldn't be removed from an A I system, even if the hearing was later sealed.",
+      "phrase": "The policy's stated worry",
+      "shows": "a glass of water fills the frame lit from the window, a plate reads THE POLICY'S STATED WORRY",
+      "sfx": "swell",
+      "means": "the policy's stated worry",
+      "rehook": "",
+      "draw": {
+        "subject": "a glass of water",
+        "action": "fills the frame lit from the window",
+        "emotion": "reading",
+        "annotation": "THE POLICY'S STATED WORRY"
+      },
+      "choreo": {
+        "primary": "a glass of water fills the frame lit from the window, a plate reads THE POLICY'S STATED WORRY",
+        "reaction": "the water shimmers",
+        "ambient": "the ink blooms, the water shimmers, the tweezers close"
+      },
+      "t": "80.860-84.030",
+      "key": 33
+    },
+    {
+      "id": 36,
+      "shot": 9,
+      "at_s": 84.03,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.17
+      },
+      "offset": 3.17,
+      "vo": "The policy's stated worry is that a hearing can hold confidential information that couldn't be removed from an A I system, even if the hearing was later sealed.",
+      "phrase": "confidential information that couldn't",
+      "shows": "a drop of cobalt ink falls into the water and blooms into the whole glass, a plate reads CAN'T BE PULLED BACK",
+      "sfx": "bloom",
+      "means": "can't be pulled back",
+      "rehook": "",
+      "draw": {
+        "subject": "a drop of cobalt ink",
+        "action": "falls into the water and blooms into the whole glass",
+        "emotion": "worried",
+        "annotation": "CAN'T BE PULLED BACK"
+      },
+      "choreo": {
+        "primary": "a drop of cobalt ink falls into the water and blooms into the whole glass, a plate reads CAN'T BE PULLED BACK",
+        "reaction": "the ink blooms",
+        "ambient": "the ink blooms, the water shimmers, the tweezers close"
+      },
+      "t": "84.030-86.550",
+      "key": 34
+    },
+    {
+      "id": 37,
+      "shot": 9,
+      "at_s": 86.55,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.69
+      },
+      "offset": 5.69,
+      "vo": "The policy's stated worry is that a hearing can hold confidential information that couldn't be removed from an A I system, even if the hearing was later sealed.",
+      "phrase": "removed from an A",
+      "shows": "tweezers swing in toward the ink cloud, a plate reads COULDN'T BE REMOVED",
+      "sfx": "hush",
+      "means": "couldn't be removed",
+      "rehook": "",
+      "draw": {
+        "subject": "tweezers",
+        "action": "swing in toward the ink cloud",
+        "emotion": "reading",
+        "annotation": "COULDN'T BE REMOVED"
+      },
+      "choreo": {
+        "primary": "tweezers swing in toward the ink cloud, a plate reads COULDN'T BE REMOVED",
+        "reaction": "the tweezers swing",
+        "ambient": "the ink blooms, the water shimmers, the tweezers close"
+      },
+      "t": "86.550-89.710",
+      "key": 49
+    },
+    {
+      "id": 38,
+      "shot": 9,
+      "at_s": 89.71,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 8.85
+      },
+      "offset": 8.85,
+      "vo": "The policy's stated worry is that a hearing can hold confidential information that couldn't be removed from an A I system, even if the hearing was later sealed.",
+      "phrase": "sealed.",
+      "shows": "a SEALED stamp and tweezers reach into the ink and can't pull any of it back out, a plate reads SEALED LATER",
+      "sfx": "stamp",
+      "means": "sealed later",
+      "rehook": "",
+      "draw": {
+        "subject": "a SEALED stamp and tweezers",
+        "action": "reach into the ink and can't pull any of it back out",
+        "emotion": "somber",
+        "annotation": "SEALED LATER"
+      },
+      "choreo": {
+        "primary": "a SEALED stamp and tweezers reach into the ink and can't pull any of it back out, a plate reads SEALED LATER",
+        "reaction": "the tweezers close on nothing",
+        "ambient": "the ink blooms, the water shimmers, the tweezers close"
+      },
+      "t": "89.710-91.120",
+      "key": 35
+    },
+    {
+      "id": 39,
+      "shot": 10,
+      "at_s": 91.12,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That's containment, not a fix. The court keeps the text inside, and the person whose hearing it was can ask for the tape.",
+      "phrase": "That's containment, not a",
+      "shows": "the counter swings back into frame as the glass catches the light, a plate reads CONTAINMENT, NOT A FIX",
+      "sfx": "whoosh",
+      "means": "containment, not a fix",
+      "rehook": "rehook: the counter swings back into frame",
+      "draw": {
+        "subject": "the counter",
+        "action": "swings back into frame as the glass catches the light",
+        "emotion": "firm",
+        "annotation": "CONTAINMENT, NOT A FIX"
+      },
+      "choreo": {
+        "primary": "the counter swings back into frame as the glass catches the light, a plate reads CONTAINMENT, NOT A FIX",
+        "reaction": "the glass glints",
+        "ambient": "the tag flips, the cassette slides, the glass glints"
+      },
+      "t": "91.120-95.190",
+      "key": 36
+    },
+    {
+      "id": 40,
+      "shot": 10,
+      "at_s": 95.19,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 4.07
+      },
+      "offset": 4.07,
+      "vo": "That's containment, not a fix. The court keeps the text inside, and the person whose hearing it was can ask for the tape.",
+      "phrase": "inside, and the person",
+      "shows": "the brass key tag flips over to read STAFF SIDE ONLY, a plate reads STAFF SIDE ONLY",
+      "sfx": "clunk",
+      "means": "staff side only",
+      "rehook": "",
+      "draw": {
+        "subject": "the brass key tag",
+        "action": "flips over to read STAFF SIDE ONLY",
+        "emotion": "firm",
+        "annotation": "STAFF SIDE ONLY"
+      },
+      "choreo": {
+        "primary": "the brass key tag flips over to read STAFF SIDE ONLY, a plate reads STAFF SIDE ONLY",
+        "reaction": "the tag flips",
+        "ambient": "the tag flips, the cassette slides, the glass glints"
+      },
+      "t": "95.190-98.570",
+      "key": 37
+    },
+    {
+      "id": 41,
+      "shot": 10,
+      "at_s": 98.57,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 7.45
+      },
+      "offset": 7.45,
+      "vo": "That's containment, not a fix. The court keeps the text inside, and the person whose hearing it was can ask for the tape.",
+      "phrase": "tape.",
+      "shows": "a cassette lifts against the glass level with the dashed transcript page that stays on the staff side, a plate reads THE PARTY CAN REQUEST THE TAPE",
+      "sfx": "clunk",
+      "means": "the party can request the tape",
+      "rehook": "",
+      "draw": {
+        "subject": "a cassette",
+        "action": "lifts against the glass level with the dashed transcript page that stays on the staff side",
+        "emotion": "hopeful",
+        "annotation": "THE PARTY CAN REQUEST THE TAPE"
+      },
+      "choreo": {
+        "primary": "a cassette lifts against the glass level with the dashed transcript page that stays on the staff side, a plate reads THE PARTY CAN REQUEST THE TAPE",
+        "reaction": "the cassette lands",
+        "ambient": "the tag flips, the cassette slides, the glass glints"
+      },
+      "t": "98.570-99.800",
+      "key": 38
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 99.8,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So it isn't banning A I transcripts. It's deciding who holds them. Close the side doors, build one front door.",
+      "phrase": "So it isn't banning",
+      "shows": "a floor plan pulls back to show the courthouse from above, a plate reads NOT BANNING \u00b7 DECIDING WHO HOLDS",
+      "sfx": "whoosh",
+      "means": "not banning \u00b7 deciding who holds",
+      "rehook": "",
+      "draw": {
+        "subject": "a floor plan",
+        "action": "pulls back to show the courthouse from above",
+        "emotion": "reading",
+        "annotation": "NOT BANNING \u00b7 DECIDING WHO HOLDS"
+      },
+      "choreo": {
+        "primary": "a floor plan pulls back to show the courthouse from above, a plate reads NOT BANNING \u00b7 DECIDING WHO HOLDS",
+        "reaction": "the plan settles",
+        "ambient": "the plan settles, bricks land, the front door glows"
+      },
+      "t": "99.800-102.850",
+      "key": 39
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 102.85,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.05
+      },
+      "offset": 3.05,
+      "vo": "So it isn't banning A I transcripts. It's deciding who holds them. Close the side doors, build one front door.",
+      "phrase": "deciding who holds them.",
+      "shows": "the four side doors darken and wait under the lamp, a plate reads WHO HOLDS THEM",
+      "sfx": "swell",
+      "means": "who holds them",
+      "rehook": "",
+      "draw": {
+        "subject": "the four side doors",
+        "action": "darken and wait under the lamp",
+        "emotion": "firm",
+        "annotation": "WHO HOLDS THEM"
+      },
+      "choreo": {
+        "primary": "the four side doors darken and wait under the lamp, a plate reads WHO HOLDS THEM",
+        "reaction": "the doors glow",
+        "ambient": "the plan settles, bricks land, the front door glows"
+      },
+      "t": "102.850-104.650",
+      "key": 50
+    },
+    {
+      "id": 44,
+      "shot": 11,
+      "at_s": 104.65,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.85
+      },
+      "offset": 4.85,
+      "vo": "So it isn't banning A I transcripts. It's deciding who holds them. Close the side doors, build one front door.",
+      "phrase": "Close the side doors,",
+      "shows": "four side doors brick up one after another, a plate reads SIDE DOORS CLOSED",
+      "sfx": "thud",
+      "means": "side doors closed",
+      "rehook": "",
+      "draw": {
+        "subject": "four side doors",
+        "action": "brick up one after another",
+        "emotion": "firm",
+        "annotation": "SIDE DOORS CLOSED"
+      },
+      "choreo": {
+        "primary": "four side doors brick up one after another, a plate reads SIDE DOORS CLOSED",
+        "reaction": "the bricks land",
+        "ambient": "the plan settles, bricks land, the front door glows"
+      },
+      "t": "104.650-106.790",
+      "key": 40
+    },
+    {
+      "id": 45,
+      "shot": 11,
+      "at_s": 106.79,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 6.99
+      },
+      "offset": 6.99,
+      "vo": "So it isn't banning A I transcripts. It's deciding who holds them. Close the side doors, build one front door.",
+      "phrase": "front door.",
+      "shows": "one front door lights as a dashed outline inside the recorder's room tagged A PLAN, a plate reads ONE FRONT DOOR",
+      "sfx": "chime",
+      "means": "one front door",
+      "rehook": "",
+      "draw": {
+        "subject": "one front door",
+        "action": "lights as a dashed outline inside the recorder's room tagged A PLAN",
+        "emotion": "proud",
+        "annotation": "ONE FRONT DOOR"
+      },
+      "choreo": {
+        "primary": "one front door lights as a dashed outline inside the recorder's room tagged A PLAN, a plate reads ONE FRONT DOOR",
+        "reaction": "the door glows",
+        "ambient": "the plan settles, bricks land, the front door glows"
+      },
+      "kick": true,
+      "t": "106.790-107.380",
+      "key": 41
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 107.38,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "And the policy admits one thing about itself. The court asked an A I tool to help format an early draft. Formatting only.",
+      "phrase": "And the policy admits",
+      "shows": "the binder sweats as a thing is admitted, a plate reads THE POLICY ADMITS ONE THING",
+      "sfx": "drone",
+      "means": "the policy admits one thing",
+      "rehook": "",
+      "draw": {
+        "subject": "the binder",
+        "action": "sweats as a thing is admitted",
+        "emotion": "nervous",
+        "annotation": "THE POLICY ADMITS ONE THING"
+      },
+      "choreo": {
+        "primary": "the binder sweats as a thing is admitted, a plate reads THE POLICY ADMITS ONE THING",
+        "reaction": "the sweat drips",
+        "ambient": "sweat drips, the comb moves, the stamp rings"
+      },
+      "t": "107.380-111.570",
+      "key": 42
+    },
+    {
+      "id": 47,
+      "shot": 12,
+      "at_s": 111.57,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.19
+      },
+      "offset": 4.19,
+      "vo": "And the policy admits one thing about itself. The court asked an A I tool to help format an early draft. Formatting only.",
+      "phrase": "asked an A I",
+      "shows": "a tiny comb slides into frame beside the binder, a plate reads THE COURT ASKED AN AI TOOL",
+      "sfx": "slide",
+      "means": "the court asked an ai tool",
+      "rehook": "",
+      "draw": {
+        "subject": "a tiny comb",
+        "action": "slides into frame beside the binder",
+        "emotion": "wry",
+        "annotation": "THE COURT ASKED AN AI TOOL"
+      },
+      "choreo": {
+        "primary": "a tiny comb slides into frame beside the binder, a plate reads THE COURT ASKED AN AI TOOL",
+        "reaction": "the comb slides",
+        "ambient": "sweat drips, the comb moves, the stamp rings"
+      },
+      "t": "111.570-113.230",
+      "key": 51
+    },
+    {
+      "id": 48,
+      "shot": 12,
+      "at_s": 113.23,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.85
+      },
+      "offset": 5.85,
+      "vo": "And the policy admits one thing about itself. The court asked an A I tool to help format an early draft. Formatting only.",
+      "phrase": "format an early draft.",
+      "shows": "a tiny comb straightens the margins of the binder, a plate reads AI HELPED FORMAT AN EARLY DRAFT",
+      "sfx": "flip",
+      "means": "ai helped format an early draft",
+      "rehook": "",
+      "draw": {
+        "subject": "a tiny comb",
+        "action": "straightens the margins of the binder",
+        "emotion": "wry",
+        "annotation": "AI HELPED FORMAT AN EARLY DRAFT"
+      },
+      "choreo": {
+        "primary": "a tiny comb straightens the margins of the binder, a plate reads AI HELPED FORMAT AN EARLY DRAFT",
+        "reaction": "the margins straighten",
+        "ambient": "sweat drips, the comb moves, the stamp rings"
+      },
+      "t": "113.230-115.750",
+      "key": 43
+    },
+    {
+      "id": 49,
+      "shot": 12,
+      "at_s": 115.75,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 8.37
+      },
+      "offset": 8.37,
+      "vo": "And the policy admits one thing about itself. The court asked an A I tool to help format an early draft. Formatting only.",
+      "phrase": "only.",
+      "shows": "a plate stamps FORMATTING ONLY across the binder, a plate reads FORMATTING ONLY",
+      "sfx": "tick",
+      "means": "formatting only",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate",
+        "action": "stamps FORMATTING ONLY across the binder",
+        "emotion": "wry",
+        "annotation": "FORMATTING ONLY"
+      },
+      "choreo": {
+        "primary": "a plate stamps FORMATTING ONLY across the binder, a plate reads FORMATTING ONLY",
+        "reaction": "the stamp rings",
+        "ambient": "sweat drips, the comb moves, the stamp rings"
+      },
+      "t": "115.750-117.140",
+      "key": 44
+    },
+    {
+      "id": 50,
+      "shot": 13,
+      "at_s": 117.14,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So should a party get the A I draft of their own hearing?",
+      "phrase": "So should a party",
+      "shows": "a blank second page slides to the slot under the glass while the party sets a cassette down and looks from it to the page, a plate reads SHOULD A PARTY GET THE AI DRAFT?",
+      "sfx": "pop",
+      "means": "should a party get the ai draft?",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank second page",
+        "action": "slides to the slot under the glass while the party sets a cassette down and looks from it to the page",
+        "emotion": "curious",
+        "annotation": "SHOULD A PARTY GET THE AI DRAFT?"
+      },
+      "choreo": {
+        "primary": "a blank second page slides to the slot under the glass while the party sets a cassette down and looks from it to the page, a plate reads SHOULD A PARTY GET THE AI DRAFT?",
+        "reaction": "the page curls",
+        "ambient": "the page curls, the gavel taps, Reels blinks"
+      },
+      "t": "117.140-119.530",
+      "key": 45
+    },
+    {
+      "id": 51,
+      "shot": 13,
+      "at_s": 119.53,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 2.39
+      },
+      "offset": 2.39,
+      "vo": "So should a party get the A I draft of their own hearing?",
+      "phrase": "own hearing?",
+      "shows": "Tagalong rises behind a gavel at the side, a plate reads THEIR OWN HEARING",
+      "sfx": "creak",
+      "means": "their own hearing",
+      "rehook": "",
+      "draw": {
+        "subject": "Tagalong",
+        "action": "rises behind a gavel at the side",
+        "emotion": "sneaky",
+        "annotation": "THEIR OWN HEARING"
+      },
+      "choreo": {
+        "primary": "Tagalong rises behind a gavel at the side, a plate reads THEIR OWN HEARING",
+        "reaction": "the gavel taps",
+        "ambient": "the page curls, the gavel taps, Reels blinks"
+      },
+      "t": "119.530-123.280",
+      "key": 46
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 7.3,
+   "Illustration craft & detail": 6.9,
+   "Motion & animation craft": 6.8,
+   "Composition & staging": 6.4,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.3,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.3,
+   "Accuracy & sourcing": 7.8,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "concrete_defects": [
+   "Composition: top 35 to 40 percent empty wall, action in a thin mid band, small heroes",
+   "Illustration: Tagalong and humans plain fills while props carry rim light, ILLUSTRATION tag reads as a debug label",
+   "Motion: many beats 2 to 4 percent, held figures show no weight shift",
+   "Sound: thin SFX, gap beds at -25 dBFS, no motivated room tone",
+   "Typography: CourtSmart strap small and low contrast",
+   "Alaska authenticity: no Alaska cue in the visuals"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.5,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 6.5,
+   "Writing & post quality": 7.8
+  },
+  "concrete_defects": [
+   "ILLUSTRATION tag and COURT STAFF label on a disembodied hand",
+   "Motion: 2 to 5 percent beats, held characters show little articulation",
+   "Hook: quiet policy statement, cryptic tab header",
+   "Alaska authenticity: generic courtroom, no Alaska cue",
+   "Caption cue lowercase v, LAWNEXT vs LAWSITES mismatch",
+   "Sound: synthesized noise beds"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "concrete_defects": [
+   "Composition: bottom 30 to 35 percent empty floor",
+   "NOT THE OFFICIAL RECORD stamp spills over the page edge at 62.7s",
+   "Motion: 1.8 to 3.6 percent on NO disc, Reels, party, doors, counter",
+   "Hook: text-heavy policy opener",
+   "Sound: no motivated room bed",
+   "Caption cue 'version 1.2' starts lowercase"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "Held figures lack weight shift and breath (Motion 6.5 to 6.8, all three seats)",
+  "Empty top and bottom bands, small heroes (Composition 6.4 to 7.0)",
+  "No Alaska visual cue (Alaska authenticity 6.5 to 7.0)",
+  "Editor wording risks, not fixed in this cut: 'A judge opens the AI transcript' present tense, 'No downloads on court devices' scope, 'Everything else is a yes' framing",
+  "Caption cue starts lowercase 'version 1.2'",
+  "Sound: thin SFX layering and no audible ambience"
+ ]
+}
