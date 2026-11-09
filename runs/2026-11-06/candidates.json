@@ -1,0 +1,80 @@
+{
+ "run_date": "2026-11-06",
+ "window_reported_by_gate": 10,
+ "search_budget": {
+  "researchers": 3,
+  "capped": true,
+  "exhausted": true
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "note": "Three researchers covered all beats Oct 24 to Nov 6; all independently led with the UA regents AI plan."
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "note": "ADN, Alaska Public, KTOO, KTUU, KFSK, UAF Sun Star, Beacon feed indexes read."
+  },
+  {
+   "rung": "widened_window",
+   "attempted": true,
+   "note": "Older NOAA ice seal AI survey and UAF AURORA-AI microgrid grant found as unseen backups."
+  },
+  {
+   "rung": "carried_leads",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": true,
+   "note": "NSF awards API, Federal Register, FCC order checked; UA release is the primary."
+  },
+  {
+   "rung": "follow_up",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "pegged_explainer",
+   "attempted": false,
+   "note": "Not needed."
+  }
+ ],
+ "locked_story": {
+  "id": "ua-ai-engaged-claude-draft",
+  "found_at_rung": "in_window_sweep",
+  "headline": "Who Wrote the Rules for AI at the University of Alaska",
+  "primary_sources": [
+   "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "https://www.adn.com/opinions/2026/11/05/opinion-humans-not-robots-shaped-uas-approach-to-ai/",
+   "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/"
+  ],
+  "dedupe": "FRESH on distinctive subject set (dedupe.py check)."
+ },
+ "candidates": [
+  {
+   "id": "ua-ai-engaged",
+   "verdict": "locked"
+  },
+  {
+   "id": "anchorage-surveillance-vote",
+   "verdict": "rejected: continues Flock story, AI link unverified"
+  },
+  {
+   "id": "ak-senate-ai-donors",
+   "verdict": "rejected: politics money, not AI tech, single source"
+  },
+  {
+   "id": "noaa-ice-seal-ai",
+   "verdict": "backup, older"
+  },
+  {
+   "id": "uaf-aurora-ai",
+   "verdict": "backup, older"
+  }
+ ]
+}

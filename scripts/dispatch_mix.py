@@ -346,7 +346,7 @@ RAIN_LEVEL = 0.28      # about -36 dBFS RMS: 18 to 20 dB under the VO, 12 under 
 AMBIENCE_SPEC = {
     "rain": {"color": "pink", "seed": 1025,
              "note": "rain (synthesised pink noise, 900 Hz to 7 kHz, audio_arc.ambience)"},
-    "room": {"color": "pink", "seed": 1028, "level": 0.13,
+    "room": {"color": "pink", "seed": 1028, "level": 0.165,
              "drift": "0.92+0.05*sin(2*PI*t/17.3)+0.03*sin(2*PI*t/5.1)",
              "chain": "highpass=f=120,lowpass=f=1400,equalizer=f=120:t=q:w=2:g=5,equalizer=f=3000:t=q:w=1:g=-4",
              "note": "room tone (synthesised pink noise, 120 Hz to 1.4 kHz with a mains body, audio_arc.ambience)"},
@@ -796,12 +796,12 @@ def main():
     # So the same script-shaped curve is applied to the VOICE, at a third of the depth: a
     # documentary narrator does drop under a concession and does lift into a closing
     # question, and unlike the bed it is the thing the meter is listening to.
-    vo_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.85) for t, m in BED_ARC])
+    vo_arc = pw_expr([(t, max(0.35, 1.0 + (m - 1.0) * 1.15)) for t, m in BED_ARC])
     # Ambience and motivated hits otherwise hold the quiet phases up after the VO and bed
     # arcs have moved.  Carry a gentle version of the same authored arc through the finished
     # mix so every layer changes together; this raises macro dynamics without changing the
     # narration-to-bed balance or moving the fitted pre-button pause.
-    mix_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.65) for t, m in BED_ARC])
+    mix_arc = pw_expr([(t, 1.0 + (m - 1.0) * 0.9) for t, m in BED_ARC])
     fc.append(f"[0:a]aformat=sample_rates={SR}:channel_layouts=stereo,apad=whole_dur={VIDEO_SECS},"
               f"volume=volume={vo_arc}:eval=frame,asplit=2[vo][vok]")
     # Music: loop, trim, base level, VO-slot EQ (wide -2.5dB dip at 3k so the bed
@@ -840,7 +840,7 @@ def main():
         _gaps = [(a["end"], b["start"]) for a, b in zip(_lines, _lines[1:])
                  if b["start"] - a["end"] >= 0.5]
         for a, b in _gaps:
-            pk = 3.2 if b - a < 1.6 else 5.0  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
+            pk = 4.6 if b - a < 1.6 else 6.5  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
             gap_lift += [(a + 0.05, 1.0), (a + 0.4, pk), (b - 0.4, pk), (b - 0.05, 1.0)]
         print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
               f"({sum(b - a for a, b in _gaps):.1f}s of room)")
@@ -968,7 +968,7 @@ def main():
     # depends on how a random TTS take is shaped is a coin flip, so step the restore down 0.4 dB at a time
     # and keep the first master whose AAC true peak clears the ceiling. Loudness lands -14.0 to -14.6 LUFS.
     for _restore in (1.0, 0.6, 0.2, -0.2):
-        run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.65:level=false,volume={_restore}dB",
+        run([FF, "-y", "-i", premix, "-af", f"{ln},volume=-0.4dB,alimiter=limit=0.6:attack=0.5:release=40:level=false,volume={_restore}dB",
              "-ar", str(SR), "-ac", "2", master])
         _chk = subprocess.run([sys.executable, os.path.join(HERE, "mix_aac_check.py"), "--wav", master,
                                "--report", os.path.join(AUD, "aac_check.json")], capture_output=True, text=True)

@@ -94,8 +94,10 @@ claude.ai/code/routines (not in this repo).
 
 Use whichever Gmail connector account is currently connected. Read the connector profile,
 resolve its actual email address, and create the draft in that account addressed to that
-same actual address. Pass the resolved address to `dispatch_email.py --to` and
-`record_draft.py --to`. Do not store the profile address in source or printed logs.
+same actual address. Type that address ONLY into the Gmail create_draft call's `to`. Never
+put it in a Bash command, a script flag or a scratch file: the 11-04 and 11-09 runs each sat
+for days on a host permission prompt raised by a shell command carrying it (owner, 2026-11-09).
+`dispatch_email.py` and `record_draft.py` don't need it, so omit `--to`.
 Do not require a particular mailbox, switch accounts, or ask for reconnection because the
 connected address differs from an older repository rule. Do not use the literal recipient
 alias `me`, set From, or select a send-as alias. Verify this run's new draft is DRAFT and
@@ -113,8 +115,8 @@ our own domain. It is NOT the personal Talon.sturgill@gmail.com account this rep
   NO send-as step, no From-address to set, and no alias to select. If you find such an
   instruction anywhere, it is stale and following it would be wrong.
 - The weekly `scripts/gmail_draft.py` sets `"to": DRAFT_TO`, a module constant equal to
-  `docket@alaskaaihq.com`. Daily `dispatch_email.py` requires the connected profile address
-  through `--to` as described above.
+  `docket@alaskaaihq.com`. Daily `dispatch_email.py` takes no address at all;
+  the connected profile address goes only into the Gmail call, as described above.
 - This reverses the earlier `"to": "me"` rule, on the owner's instruction (2026-07-31). The
   old reasoning was that an account-relative alias makes a repoint a connector change rather
   than a code change. That was wrong in practice: the Gmail connector rejects `me` outright

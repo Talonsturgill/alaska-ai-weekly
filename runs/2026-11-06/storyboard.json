@@ -1,0 +1,2032 @@
+{
+  "run_date": "2026-11-06",
+  "slug": "who-wrote-the-rules",
+  "title": "Who Wrote the Rules",
+  "concept": "The University of Alaska regents have a first systemwide AI plan, AI Engaged, before them, and two UAA professors write in an op-ed that Anthropic's Claude produced the first draft and that this wasn't disclosed until October 9th, while five faculty answer that the use was not concealed. Both sides agree AI was used and disagree only about whether anyone hid it. At UAA 119 of 150 students cited for misconduct used AI, about 1.1 percent of more than 10,500 students and cited cases only. No decision on the plan had been reported. The film proposes one plain disclosure line on the plan, the same rule the plan sets for AI (it recommends, a person decides), and discloses that its own pipeline is built on Claude. A mint rubber-stamp robot named StampBot is the hero and a gold question token the throughline, ending as DISCLOSED on a footnote strip.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 127.68,
+  "fingerprint": {
+    "pov": "macro-closeup",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "single-organic-hero",
+    "layout": "stacked-layers",
+    "register": "editorial-schematic",
+    "palette": "saturated tangerine office walls, deep teal desks, cream legal pads, a mint clerk robot with an oxblood arm and raspberry ink",
+    "camera_strategy": "dolly-through",
+    "light_story": "noon-hard",
+    "metaphor": "a rubber stamp that has rejected student essays all semester is asked to stamp the university's own AI plan and finds a blank footnote strip where the disclosure should be"
+  },
+  "palette": "saturated tangerine office walls, deep teal desks, cream legal pads, a mint clerk robot with an oxblood arm and raspberry ink",
+  "divergence_note": "The last five films were a night cab (11-02), an overcast moss slope (11-01), a sage-and-cream chart desk (10-31), an aubergine dusk depot (10-29) and a green-black sonar abyss (10-28). This film is a saturated tangerine daylight office with deep teal desks, cream paper and a mint rubber-stamp hero, lit by hard noon window light. It has no cab, slope, depot or sea cutaway, and its signature object is a gold question token that changes its engraving at every act boundary and lands as DISCLOSED on a footnote strip that sat blank from the first shot.",
+  "treatment": {
+    "title": "The Footnote",
+    "summary": "Comedian has the best recurring gag (missing footnote strip), the fairest Test, 5 gags, shelf-only. Explainer's dot field supplies the scale reveal. Dramatist's concession keeps the rebuttal unmocked."
+  },
+  "angle": {
+    "thesis": "Both sides agree AI helped draft the University of Alaska's AI Engaged plan and disagree only about whether anyone could tell, so the cheap fix is one plain disclosure line on a public document, the same rule the plan asks of AI: it recommends, a person decides.",
+    "supporting_facts": [
+      "c20 both sides agree AI was used, they dispute whether it was hidden",
+      "c9 to c12 at UAA, 119 of 150 cited used AI, about 1.1% of 10,500+ students, 73% and 56% rises with no stated baseline (UAA only)",
+      "c8 and c21 until now rules were set class by class and UAF had no unified policy",
+      "c13 AI can recommend, a person decides"
+    ],
+    "counterpoint_to_honor": "The rebuttal at full strength (c17 to c19): administrators and board members knew, a person decided, and drafting help is not a student passing off AI work. A label puts the human decision on the record rather than leaving it to who was in which meeting.",
+    "falsifiability": "False if the public draft carried an AI-use note before October 9th, or if either side denied AI was used.",
+    "honesty_constraints": [
+      "No vote result, c25 cut",
+      "Claude-drafted claim attributed to Hartley and Potter as opinion",
+      "Misconduct figures UAA only, say cited for misconduct",
+      "Disclose the pipeline itself is built on Claude",
+      "'first' scoped to UA system only"
+    ],
+    "cross_challenge": "Analyst 3 warned 1.1% is a floor not a verdict (cited cases are only the caught ones), so the film never says 1.1% used AI improperly. Analyst 2's constructive lens was kept but not allowed to claim adoption. Analyst 1's thesis was kept because it is the only one with a falsifiable observation and a drawable object.",
+    "runner_ups": {
+      "numbers": "folded in as the second movement",
+      "structure": "folded in as the setup"
+    }
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "StampBot slams a magenta REJECTED stamp on a student essay and ink splats toward the lens, a plate reads UAA 119 OF 150 CITED USED AI.",
+    "headline": "WHO WROTE THE RULES",
+    "motion_by_s": 0.3,
+    "loopback": "StampBot lifts the stamp over a new essay with a footnote on it, rhyming with the opening slam."
+  },
+  "open_loop": {
+    "plant_t": 9.15,
+    "pay_t": 103.48,
+    "what": "Who writes the rules? Planted with the blank gold token on the Plan Sheet, paid when the footnote strip fills with the one-line disclosure."
+  },
+  "open_loop_2": {
+    "plant_t": 56.43,
+    "pay_t": 89.71,
+    "what": "Did anyone hide it? Planted when the token cracks to NOT DISCLOSED UNTIL OCT 9TH, paid at the empty box HIDDEN? after both sides agree AI was used."
+  },
+  "throughline": {
+    "object": "a gold question token",
+    "lands_in_button": "the token is polished and reads DISCLOSED on the footnote strip, the film's argument",
+    "states": [
+      {
+        "at_s": 9.15,
+        "state": "blank engraving WHO WROTE THIS?"
+      },
+      {
+        "at_s": 32.85,
+        "state": "re-engraved ASK THE CLASS"
+      },
+      {
+        "at_s": 44.39,
+        "state": "engraved A PERSON DECIDES with a dent"
+      },
+      {
+        "at_s": 56.43,
+        "state": "cracked NOT DISCLOSED UNTIL OCT 9TH"
+      },
+      {
+        "at_s": 75.35,
+        "state": "taped and re-engraved WHO WAS THERE?"
+      },
+      {
+        "at_s": 98.89,
+        "state": "blank and unengraved beside the still-empty footnote strip"
+      },
+      {
+        "at_s": 123.94,
+        "state": "polished DISCLOSED on the footnote strip"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 32.85,
+      "type": "scale-pullback",
+      "what": "from one desk's rule sign to a hundred desks each with its own",
+      "hold_s": 0.8
+    },
+    {
+      "t": 78.05,
+      "type": "scale-pullback",
+      "what": "from the warm faculty room to a hallway of empty chairs",
+      "hold_s": 0.8
+    },
+    {
+      "t": 92.24,
+      "type": "morph-to-chart",
+      "what": "ten thousand five hundred dots with 119 glowing shrinking to a pinprick",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.5
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.35
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.9
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.3
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 1.8
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.3
+      },
+      {
+        "at_s": 103.18,
+        "level": 0.12
+      },
+      {
+        "at_s": 104.28,
+        "level": 2.0
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 103.18,
+    "riser_at": 98.89,
+    "silence_at": 103.18,
+    "payoff_at": 103.48,
+    "button_pattern": "callback",
+    "interrupt_at": 69.68,
+    "extra_dips": [
+      83.46
+    ]
+  },
+  "shots": [
+    {
+      "title": "The slam",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "high",
+      "stage": "stamp-desk",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "StampBot slams REJECTED on an essay, the dot field glows, the Plan Sheet slides in with a blank token",
+      "ambient": "the ink drips, the dots drift, StampBot breathes",
+      "hero": {
+        "name": "StampBot + essay + dot field + Plan Sheet + token",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "35% StampBot, 25% essay, 20% dots, 20% sheet"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-12.760"
+    },
+    {
+      "title": "The regents",
+      "vo_line": 1,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "regents-map",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "whip-pan",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A calendar flips to May, a pin drops on Fairbanks, DiplomaPress ejects AI ENGAGED",
+      "ambient": "dust drifts in the window light, the pin pulses",
+      "hero": {
+        "name": "calendar + Alaska map + pin + DiplomaPress + Plan Sheet",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "30% map, 25% calendar, 25% press, 20% sheet"
+      },
+      "id": 2,
+      "start_s": 12.76,
+      "t": "12.760-23.720"
+    },
+    {
+      "title": "The plan",
+      "vo_line": 2,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "plan-desk",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Six badges, four coins, five campus doors, then a hundred desks each with its own sign",
+      "ambient": "the badges rock, the coins settle, the signs flip",
+      "hero": {
+        "name": "Plan Sheet + badges + coins + campus doors + hundred desks",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "30% sheet, 25% badges, 25% doors, 20% desks"
+      },
+      "id": 3,
+      "start_s": 23.72,
+      "t": "23.720-36.080"
+    },
+    {
+      "title": "Recommends, decides",
+      "vo_line": 3,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "low",
+      "stage": "decision-desk",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The chatbot slides a note across the desk and a human hand stamps it",
+      "ambient": "the note slides, the hand stamps, StampBot beams",
+      "hero": {
+        "name": "chatbot + note + desk + human hand + StampBot",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "30% chatbot, 25% note, 25% hand, 20% StampBot"
+      },
+      "id": 4,
+      "start_s": 36.08,
+      "t": "36.080-47.620"
+    },
+    {
+      "title": "The fight",
+      "vo_line": 4,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "newsstand",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Two professors hold the op-ed, the chatbot sweats, the token cracks",
+      "ambient": "the paper rustles, sweat drops, the token cracks",
+      "hero": {
+        "name": "two professors + op-ed + chatbot + cracked token",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "30% professors, 25% paper, 25% chatbot, 20% token"
+      },
+      "id": 5,
+      "start_s": 47.62,
+      "t": "47.620-59.100"
+    },
+    {
+      "title": "The quote",
+      "vo_line": 5,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "overhead",
+      "stage": "typed-sheet",
+      "pov": "instrument-screen",
+      "layout": "single-object-void",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The quote types across the Plan Sheet and ghost text writes with no author line",
+      "ambient": "the letters land, the ghost text flickers",
+      "hero": {
+        "name": "Plan Sheet + typed quote + ghost text + magnifier",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "40% sheet, 30% text, 30% magnifier"
+      },
+      "id": 6,
+      "start_s": 59.1,
+      "t": "59.100-69.680"
+    },
+    {
+      "title": "The meeting everyone was in",
+      "vo_line": 6,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "faculty-room",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "crossfade",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Five faculty in a warm room, the speech bubble, then the hallway of empty chairs",
+      "ambient": "the room glows, the chairs stand empty",
+      "hero": {
+        "name": "five faculty + warm room + speech bubble + empty chairs",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "35% faculty, 25% room, 20% bubble, 20% chairs"
+      },
+      "id": 7,
+      "start_s": 69.68,
+      "t": "69.680-83.460"
+    },
+    {
+      "title": "Both agree",
+      "vo_line": 7,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "high",
+      "stage": "agree-desk",
+      "pov": "instrument-screen",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Two equal arrows point at USED and a third at HIDDEN?",
+      "ambient": "the arrows lock, the box pulses",
+      "hero": {
+        "name": "chatbot + two arrows + third arrow + empty box",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "30% chatbot, 40% arrows, 30% box"
+      },
+      "id": 8,
+      "start_s": 83.46,
+      "t": "83.460-92.240"
+    },
+    {
+      "title": "Cited, not all",
+      "vo_line": 8,
+      "framing": "data-panel",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "dot-field",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A field of 10,500 dots, 119 shrink to a pinprick, a card says CITED CASES",
+      "ambient": "the dots drift, the pinprick glows",
+      "hero": {
+        "name": "dot field + glowing 119 + CITED card",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "60% field, 20% pinprick, 20% card"
+      },
+      "id": 9,
+      "start_s": 92.24,
+      "t": "92.240-103.480"
+    },
+    {
+      "title": "The footnote",
+      "vo_line": 9,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "footnote-desk",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The blank strip fills, the bulb lights, StampBot stamps DISCLOSED",
+      "ambient": "the bulb flickers, the strip glows, the stamp rings",
+      "hero": {
+        "name": "footnote strip + lightbulb + StampBot + DISCLOSED stamp",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "35% strip, 25% bulb, 25% StampBot, 15% stamp"
+      },
+      "id": 10,
+      "start_s": 103.48,
+      "t": "103.480-115.040"
+    },
+    {
+      "title": "Our own label",
+      "vo_line": 10,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "tag-desk",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "NO DECISION REPORTED tag, the chatbot stamped BUILT ON CLAUDE",
+      "ambient": "the tag swings, the machine whistles",
+      "hero": {
+        "name": "tag + chatbot + BUILT ON CLAUDE stamp",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "40% chatbot, 30% stamp, 30% tag"
+      },
+      "id": 11,
+      "start_s": 115.04,
+      "t": "115.040-123.940"
+    },
+    {
+      "title": "The loop",
+      "vo_line": 11,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "fresh-sheet",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A fresh Sheet with its footnote printed, the token shines, StampBot lifts the stamp over a new essay",
+      "ambient": "the token shines, StampBot hovers",
+      "hero": {
+        "name": "fresh Sheet + token + StampBot + new essay",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "35% sheet, 25% token, 25% StampBot, 15% essay"
+      },
+      "id": 12,
+      "start_s": 123.94,
+      "t": "123.940-127.680"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "At the University of Alaska Anchorage, one hundred nineteen of one hundred fifty students cited for misconduct used A I. So who writes the rules?",
+      "phrase": "At the University of",
+      "shows": "StampBot slams a magenta REJECTED stamp on a student essay so ink splats toward the lens, a plate reads REJECTED",
+      "sfx": "stamp",
+      "means": "rejected",
+      "rehook": "",
+      "draw": {
+        "subject": "StampBot",
+        "action": "slams a magenta REJECTED stamp on a student essay so ink splats toward the lens",
+        "emotion": "stern",
+        "annotation": "REJECTED"
+      },
+      "choreo": {
+        "primary": "StampBot slams a magenta REJECTED stamp on a student essay so ink splats toward the lens, a plate reads REJECTED",
+        "reaction": "the ink splat spreads",
+        "ambient": "the ink drips, the dots drift, StampBot breathes"
+      },
+      "t": "0.000-1.276",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.276,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.1,
+        "offset": 1.276
+      },
+      "offset": 1.276,
+      "vo": "At the University of Alaska Anchorage, one hundred nineteen of one hundred fifty students cited for misconduct used A I. So who writes the rules?",
+      "phrase": "At the University of",
+      "shows": "the ink splat hits the lens and the plate wipes in, a plate reads UAA \u00b7 119 OF 150 CITED USED AI",
+      "sfx": "splat",
+      "means": "uaa \u00b7 119 of 150 cited used ai",
+      "rehook": "",
+      "draw": {
+        "subject": "the ink splat",
+        "action": "hits the lens and the plate wipes in",
+        "emotion": "stern",
+        "annotation": "UAA \u00b7 119 OF 150 CITED USED AI"
+      },
+      "choreo": {
+        "primary": "the ink splat hits the lens and the plate wipes in, a plate reads UAA \u00b7 119 OF 150 CITED USED AI",
+        "reaction": "the ink runs",
+        "ambient": "the ink drips, the dots drift, StampBot breathes"
+      },
+      "t": "1.276-2.510",
+      "key": 44
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 2.51,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.51
+      },
+      "offset": 2.51,
+      "vo": "At the University of Alaska Anchorage, one hundred nineteen of one hundred fifty students cited for misconduct used A I. So who writes the rules?",
+      "phrase": "nineteen of one hundred",
+      "shows": "a tray of exactly 150 dots slides onto the desk and 119 of them glow, a plate reads 119 OF 150 CITED",
+      "sfx": "ping",
+      "means": "119 of 150 cited",
+      "rehook": "",
+      "draw": {
+        "subject": "a tray of exactly 150 dots",
+        "action": "slides onto the desk and 119 of them glow",
+        "emotion": "reading",
+        "annotation": "119 OF 150 CITED"
+      },
+      "choreo": {
+        "primary": "a tray of exactly 150 dots slides onto the desk and 119 of them glow, a plate reads 119 OF 150 CITED",
+        "reaction": "the dots glow",
+        "ambient": "the ink drips, the dots drift, StampBot breathes"
+      },
+      "t": "2.510-6.570",
+      "key": 2
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 6.57,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.57
+      },
+      "offset": 6.57,
+      "vo": "At the University of Alaska Anchorage, one hundred nineteen of one hundred fifty students cited for misconduct used A I. So who writes the rules?",
+      "phrase": "misconduct used A I.",
+      "shows": "a tag drops onto the dot tray and sticks, a plate reads CITED FOR MISCONDUCT",
+      "sfx": "tap",
+      "means": "cited for misconduct",
+      "rehook": "",
+      "draw": {
+        "subject": "a tag",
+        "action": "drops onto the dot tray and sticks",
+        "emotion": "reading",
+        "annotation": "CITED FOR MISCONDUCT"
+      },
+      "choreo": {
+        "primary": "a tag drops onto the dot tray and sticks, a plate reads CITED FOR MISCONDUCT",
+        "reaction": "the tag pins on",
+        "ambient": "the ink drips, the dots drift, StampBot breathes"
+      },
+      "t": "6.570-9.150",
+      "key": 47
+    },
+    {
+      "id": 5,
+      "shot": 1,
+      "at_s": 9.15,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 9.15
+      },
+      "offset": 9.15,
+      "vo": "At the University of Alaska Anchorage, one hundred nineteen of one hundred fifty students cited for misconduct used A I. So who writes the rules?",
+      "phrase": "So who writes the",
+      "shows": "a blank gold token drops onto the Plan Sheet beside its blank dotted strip reading WHO WROTE THIS? while StampBot's eye slides to it, a plate reads WHO WROTE THIS?",
+      "sfx": "pop",
+      "means": "who wrote this?",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank gold token",
+        "action": "drops onto the Plan Sheet beside its blank dotted strip reading WHO WROTE THIS? while StampBot's eye slides to it",
+        "emotion": "puzzled",
+        "annotation": "WHO WROTE THIS?"
+      },
+      "choreo": {
+        "primary": "a blank gold token drops onto the Plan Sheet beside its blank dotted strip reading WHO WROTE THIS? while StampBot's eye slides to it, a plate reads WHO WROTE THIS?",
+        "reaction": "the token wobbles",
+        "ambient": "the ink drips, the dots drift, StampBot breathes"
+      },
+      "t": "9.150-12.760",
+      "key": 3
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 12.76,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The University of Alaska regents asked for an A I plan in May, and met in Fairbanks this week to take it up. It's called A I Engaged.",
+      "phrase": "The University of Alaska",
+      "shows": "a calendar page flips to MAY above a row of regent chairs, a plate reads ASKED IN MAY",
+      "sfx": "page",
+      "means": "asked in may",
+      "rehook": "",
+      "draw": {
+        "subject": "a calendar page",
+        "action": "flips to MAY above a row of regent chairs",
+        "emotion": "reading",
+        "annotation": "ASKED IN MAY"
+      },
+      "choreo": {
+        "primary": "a calendar page flips to MAY above a row of regent chairs, a plate reads ASKED IN MAY",
+        "reaction": "the page settles",
+        "ambient": "dust drifts in the window light, the pin pulses"
+      },
+      "t": "12.760-16.706",
+      "key": 4
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 16.706,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.36,
+        "offset": 3.946
+      },
+      "offset": 3.946,
+      "vo": "The University of Alaska regents asked for an A I plan in May, and met in Fairbanks this week to take it up. It's called A I Engaged.",
+      "phrase": "The University of Alaska",
+      "shows": "the regents fill four chairs and one regent flips the Plan Sheet over looking for a byline, a plate reads THE BOARD OF REGENTS",
+      "sfx": "creak",
+      "means": "the board of regents",
+      "rehook": "",
+      "draw": {
+        "subject": "the regents",
+        "action": "fill four chairs and one regent flips the Plan Sheet over looking for a byline",
+        "emotion": "reading",
+        "annotation": "THE BOARD OF REGENTS"
+      },
+      "choreo": {
+        "primary": "the regents fill four chairs and one regent flips the Plan Sheet over looking for a byline, a plate reads THE BOARD OF REGENTS",
+        "reaction": "the chairs fill",
+        "ambient": "dust drifts in the window light, the pin pulses"
+      },
+      "t": "16.706-17.710",
+      "key": 33
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 17.71,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.95
+      },
+      "offset": 4.95,
+      "vo": "The University of Alaska regents asked for an A I plan in May, and met in Fairbanks this week to take it up. It's called A I Engaged.",
+      "phrase": "Fairbanks this week to",
+      "shows": "a map pin drops onto Fairbanks on a top-down Alaska map, a plate reads REGENTS \u00b7 FAIRBANKS",
+      "sfx": "pin",
+      "means": "regents \u00b7 fairbanks",
+      "rehook": "",
+      "draw": {
+        "subject": "a map pin",
+        "action": "drops onto Fairbanks on a top-down Alaska map",
+        "emotion": "reading",
+        "annotation": "REGENTS \u00b7 FAIRBANKS"
+      },
+      "choreo": {
+        "primary": "a map pin drops onto Fairbanks on a top-down Alaska map, a plate reads REGENTS \u00b7 FAIRBANKS",
+        "reaction": "the pin bounces",
+        "ambient": "dust drifts in the window light, the pin pulses"
+      },
+      "t": "17.710-20.650",
+      "key": 5
+    },
+    {
+      "id": 9,
+      "shot": 2,
+      "at_s": 20.65,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 7.89
+      },
+      "offset": 7.89,
+      "vo": "The University of Alaska regents asked for an A I plan in May, and met in Fairbanks this week to take it up. It's called A I Engaged.",
+      "phrase": "Engaged.",
+      "shows": "DiplomaPress ejects the Plan Sheet titled AI ENGAGED with a blank dotted strip at its foot, a plate reads AI ENGAGED",
+      "sfx": "clunk",
+      "means": "ai engaged",
+      "rehook": "",
+      "draw": {
+        "subject": "DiplomaPress",
+        "action": "ejects the Plan Sheet titled AI ENGAGED with a blank dotted strip at its foot",
+        "emotion": "proud",
+        "annotation": "AI ENGAGED"
+      },
+      "choreo": {
+        "primary": "DiplomaPress ejects the Plan Sheet titled AI ENGAGED with a blank dotted strip at its foot, a plate reads AI ENGAGED",
+        "reaction": "the press hiccups",
+        "ambient": "dust drifts in the window light, the pin pulses"
+      },
+      "t": "20.650-23.720",
+      "key": 6
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 23.72,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Six principles, four investment priorities, five expectations for every campus. Until now, professors set A I rules class by class.",
+      "phrase": "Six principles, four investment",
+      "shows": "six badges pop onto the Plan Sheet one after another, a plate reads 6 PRINCIPLES",
+      "sfx": "pop",
+      "means": "6 principles",
+      "rehook": "",
+      "draw": {
+        "subject": "six badges",
+        "action": "pop onto the Plan Sheet one after another",
+        "emotion": "proud",
+        "annotation": "6 PRINCIPLES"
+      },
+      "choreo": {
+        "primary": "six badges pop onto the Plan Sheet one after another, a plate reads 6 PRINCIPLES",
+        "reaction": "the badges settle",
+        "ambient": "the badges rock, the coins settle, the signs flip"
+      },
+      "t": "23.720-25.550",
+      "key": 7
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 25.55,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 1.83
+      },
+      "offset": 1.83,
+      "vo": "Six principles, four investment priorities, five expectations for every campus. Until now, professors set A I rules class by class.",
+      "phrase": "four investment priorities, five",
+      "shows": "four coins drop in a stack beside the Sheet, a plate reads 4 INVESTMENT PRIORITIES",
+      "sfx": "ping",
+      "means": "4 investment priorities",
+      "rehook": "",
+      "draw": {
+        "subject": "four coins",
+        "action": "drop in a stack beside the Sheet",
+        "emotion": "reading",
+        "annotation": "4 INVESTMENT PRIORITIES"
+      },
+      "choreo": {
+        "primary": "four coins drop in a stack beside the Sheet, a plate reads 4 INVESTMENT PRIORITIES",
+        "reaction": "the coins settle",
+        "ambient": "the badges rock, the coins settle, the signs flip"
+      },
+      "t": "25.550-27.390",
+      "key": 8
+    },
+    {
+      "id": 12,
+      "shot": 3,
+      "at_s": 27.39,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.67
+      },
+      "offset": 3.67,
+      "vo": "Six principles, four investment priorities, five expectations for every campus. Until now, professors set A I rules class by class.",
+      "phrase": "five expectations for every",
+      "shows": "five checkboxes tick down the side of the Plan Sheet one after another, a plate reads 5 EXPECTATIONS PER CAMPUS",
+      "sfx": "clank",
+      "means": "5 expectations per campus",
+      "rehook": "",
+      "draw": {
+        "subject": "five checkboxes",
+        "action": "tick down the side of the Plan Sheet one after another",
+        "emotion": "reading",
+        "annotation": "5 EXPECTATIONS PER CAMPUS"
+      },
+      "choreo": {
+        "primary": "five checkboxes tick down the side of the Plan Sheet one after another, a plate reads 5 EXPECTATIONS PER CAMPUS",
+        "reaction": "the ticks land",
+        "ambient": "the badges rock, the coins settle, the signs flip"
+      },
+      "t": "27.390-30.370",
+      "key": 9
+    },
+    {
+      "id": 13,
+      "shot": 3,
+      "at_s": 30.37,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 6.65
+      },
+      "offset": 6.65,
+      "vo": "Six principles, four investment priorities, five expectations for every campus. Until now, professors set A I rules class by class.",
+      "phrase": "Until now, professors set",
+      "shows": "a single desk slides in beside the Plan Sheet with a NO AI sign, a plate reads UNTIL NOW \u00b7 EACH CLASS ITS OWN",
+      "sfx": "slide",
+      "means": "until now \u00b7 each class its own",
+      "rehook": "",
+      "draw": {
+        "subject": "a single desk",
+        "action": "slides in beside the Plan Sheet with a NO AI sign",
+        "emotion": "wry",
+        "annotation": "UNTIL NOW \u00b7 EACH CLASS ITS OWN"
+      },
+      "choreo": {
+        "primary": "a single desk slides in beside the Plan Sheet with a NO AI sign, a plate reads UNTIL NOW \u00b7 EACH CLASS ITS OWN",
+        "reaction": "the sign wobbles",
+        "ambient": "the badges rock, the coins settle, the signs flip"
+      },
+      "t": "30.370-32.850",
+      "key": 34
+    },
+    {
+      "id": 14,
+      "shot": 3,
+      "at_s": 32.85,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 9.13
+      },
+      "offset": 9.13,
+      "vo": "Six principles, four investment priorities, five expectations for every campus. Until now, professors set A I rules class by class.",
+      "phrase": "class by class.",
+      "shows": "a hundred little desks pull into view each holding a different rule sign while one reads ASK ME, a plate reads CLASS BY CLASS",
+      "sfx": "whoosh",
+      "means": "class by class",
+      "rehook": "",
+      "draw": {
+        "subject": "a hundred little desks",
+        "action": "pull into view each holding a different rule sign while one reads ASK ME",
+        "emotion": "wry",
+        "annotation": "CLASS BY CLASS"
+      },
+      "choreo": {
+        "primary": "a hundred little desks pull into view each holding a different rule sign while one reads ASK ME, a plate reads CLASS BY CLASS",
+        "reaction": "the signs flip",
+        "ambient": "the badges rock, the coins settle, the signs flip"
+      },
+      "t": "32.850-36.080",
+      "key": 10
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 36.08,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "University of Alaska special projects lead Stephanie Erickson puts the core idea simply. A I can recommend, and a person decides.",
+      "phrase": "University of Alaska special",
+      "shows": "a name card drops onto the desk beside the chatbot, a plate reads STEPHANIE ERICKSON \u00b7 UA SPECIAL PROJECTS LEAD",
+      "sfx": "tap",
+      "means": "stephanie erickson \u00b7 ua special projects lead",
+      "rehook": "rehook: a name card drops and the plan's core idea begins",
+      "draw": {
+        "subject": "a name card",
+        "action": "drops onto the desk beside the chatbot",
+        "emotion": "reading",
+        "annotation": "STEPHANIE ERICKSON \u00b7 UA SPECIAL PROJECTS LEAD"
+      },
+      "choreo": {
+        "primary": "a name card drops onto the desk beside the chatbot, a plate reads STEPHANIE ERICKSON \u00b7 UA SPECIAL PROJECTS LEAD",
+        "reaction": "the card settles",
+        "ambient": "the note slides, the hand stamps, StampBot beams"
+      },
+      "t": "36.080-40.530",
+      "key": 35
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "at_s": 40.53,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.45
+      },
+      "offset": 4.45,
+      "vo": "University of Alaska special projects lead Stephanie Erickson puts the core idea simply. A I can recommend, and a person decides.",
+      "phrase": "core idea simply. A",
+      "shows": "the chatbot ServerMachine lifts its pencil and the core idea card lights up, a plate reads THE CORE IDEA",
+      "sfx": "pop",
+      "means": "the core idea",
+      "rehook": "",
+      "draw": {
+        "subject": "the chatbot ServerMachine",
+        "action": "lifts its pencil and the core idea card lights up",
+        "emotion": "focused",
+        "annotation": "THE CORE IDEA"
+      },
+      "choreo": {
+        "primary": "the chatbot ServerMachine lifts its pencil and the core idea card lights up, a plate reads THE CORE IDEA",
+        "reaction": "the card lights",
+        "ambient": "the note slides, the hand stamps, StampBot beams"
+      },
+      "t": "40.530-43.150",
+      "key": 42
+    },
+    {
+      "id": 17,
+      "shot": 4,
+      "at_s": 43.15,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 7.07
+      },
+      "offset": 7.07,
+      "vo": "University of Alaska special projects lead Stephanie Erickson puts the core idea simply. A I can recommend, and a person decides.",
+      "phrase": "recommend, and a person",
+      "shows": "the chatbot ServerMachine slides a note across a desk toward a human hand, a plate reads AI RECOMMENDS",
+      "sfx": "slide",
+      "means": "ai recommends",
+      "rehook": "",
+      "draw": {
+        "subject": "the chatbot ServerMachine",
+        "action": "slides a note across a desk toward a human hand",
+        "emotion": "focused",
+        "annotation": "AI RECOMMENDS"
+      },
+      "choreo": {
+        "primary": "the chatbot ServerMachine slides a note across a desk toward a human hand, a plate reads AI RECOMMENDS",
+        "reaction": "the note slides",
+        "ambient": "the note slides, the hand stamps, StampBot beams"
+      },
+      "t": "43.150-44.390",
+      "key": 11
+    },
+    {
+      "id": 18,
+      "shot": 4,
+      "at_s": 44.39,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 8.31
+      },
+      "offset": 8.31,
+      "vo": "University of Alaska special projects lead Stephanie Erickson puts the core idea simply. A I can recommend, and a person decides.",
+      "phrase": "person decides.",
+      "shows": "a human hand stamps the note while StampBot beams, a plate reads A PERSON DECIDES",
+      "sfx": "stamp",
+      "means": "a person decides",
+      "rehook": "",
+      "draw": {
+        "subject": "a human hand",
+        "action": "stamps the note while StampBot beams",
+        "emotion": "proud",
+        "annotation": "A PERSON DECIDES"
+      },
+      "choreo": {
+        "primary": "a human hand stamps the note while StampBot beams, a plate reads A PERSON DECIDES",
+        "reaction": "the stamp rings",
+        "ambient": "the note slides, the hand stamps, StampBot beams"
+      },
+      "kick": true,
+      "t": "44.390-47.620",
+      "key": 12
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 47.62,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then came the fight. Two U A A professors wrote that Anthropic's Claude produced the first draft of A I Engaged, and that this wasn't disclosed until October ninth.",
+      "phrase": "Then came the fight.",
+      "shows": "two professors step up as one raises an op-ed and the other lays an October calendar page with the 9th circled, a plate reads OP-ED \u00b7 UAA PROFESSORS",
+      "sfx": "page",
+      "means": "op-ed \u00b7 uaa professors",
+      "rehook": "rehook: two professors step up with an op-ed",
+      "draw": {
+        "subject": "two professors",
+        "action": "step up as one raises an op-ed and the other lays an October calendar page with the 9th circled",
+        "emotion": "firm",
+        "annotation": "OP-ED \u00b7 UAA PROFESSORS"
+      },
+      "choreo": {
+        "primary": "two professors step up as one raises an op-ed and the other lays an October calendar page with the 9th circled, a plate reads OP-ED \u00b7 UAA PROFESSORS",
+        "reaction": "the paper rustles",
+        "ambient": "the paper rustles, sweat drops, the token cracks"
+      },
+      "t": "47.620-51.050",
+      "key": 13
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 51.05,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.43
+      },
+      "offset": 3.43,
+      "vo": "Then came the fight. Two U A A professors wrote that Anthropic's Claude produced the first draft of A I Engaged, and that this wasn't disclosed until October ninth.",
+      "phrase": "wrote that Anthropic's Claude",
+      "shows": "an op-ed headline stamps onto the Plan Sheet title, a plate reads THE OP-ED SAYS",
+      "sfx": "stamp",
+      "means": "the op-ed says",
+      "rehook": "",
+      "draw": {
+        "subject": "an op-ed headline",
+        "action": "stamps onto the Plan Sheet title",
+        "emotion": "firm",
+        "annotation": "THE OP-ED SAYS"
+      },
+      "choreo": {
+        "primary": "an op-ed headline stamps onto the Plan Sheet title, a plate reads THE OP-ED SAYS",
+        "reaction": "the headline lands",
+        "ambient": "the paper rustles, sweat drops, the token cracks"
+      },
+      "t": "51.050-52.290",
+      "key": 45
+    },
+    {
+      "id": 21,
+      "shot": 5,
+      "at_s": 52.29,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.67
+      },
+      "offset": 4.67,
+      "vo": "Then came the fight. Two U A A professors wrote that Anthropic's Claude produced the first draft of A I Engaged, and that this wasn't disclosed until October ninth.",
+      "phrase": "Claude produced the first",
+      "shows": "the chatbot ServerMachine sets its pencil down on the desk and clips a tag to its own casing, a plate reads THIS FILM IS ALSO BUILT ON CLAUDE",
+      "sfx": "clip",
+      "means": "this film is also built on claude",
+      "rehook": "",
+      "draw": {
+        "subject": "the chatbot ServerMachine",
+        "action": "sets its pencil down on the desk and clips a tag to its own casing",
+        "emotion": "focused",
+        "annotation": "THIS FILM IS ALSO BUILT ON CLAUDE"
+      },
+      "choreo": {
+        "primary": "the chatbot ServerMachine sets its pencil down on the desk and clips a tag to its own casing, a plate reads THIS FILM IS ALSO BUILT ON CLAUDE",
+        "reaction": "the tag clips on",
+        "ambient": "the paper rustles, sweat drops, the token cracks"
+      },
+      "t": "52.290-56.430",
+      "key": 14
+    },
+    {
+      "id": 22,
+      "shot": 5,
+      "at_s": 56.43,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 8.81
+      },
+      "offset": 8.81,
+      "vo": "Then came the fight. Two U A A professors wrote that Anthropic's Claude produced the first draft of A I Engaged, and that this wasn't disclosed until October ninth.",
+      "phrase": "disclosed until October ninth.",
+      "shows": "the gold token cracks and its engraving changes to NOT DISCLOSED UNTIL OCT 9TH, a plate reads OP-ED CLAIM \u00b7 NOT DISCLOSED UNTIL OCT 9TH",
+      "sfx": "crack",
+      "means": "op-ed claim \u00b7 not disclosed until oct 9th",
+      "rehook": "",
+      "draw": {
+        "subject": "the gold token",
+        "action": "cracks and its engraving changes to NOT DISCLOSED UNTIL OCT 9TH",
+        "emotion": "worried",
+        "annotation": "OP-ED CLAIM \u00b7 NOT DISCLOSED UNTIL OCT 9TH"
+      },
+      "choreo": {
+        "primary": "the gold token cracks and its engraving changes to NOT DISCLOSED UNTIL OCT 9TH, a plate reads OP-ED CLAIM \u00b7 NOT DISCLOSED UNTIL OCT 9TH",
+        "reaction": "the crack spreads",
+        "ambient": "the paper rustles, sweat drops, the token cracks"
+      },
+      "t": "56.430-59.100",
+      "key": 15
+    },
+    {
+      "id": 23,
+      "shot": 6,
+      "at_s": 59.1,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Their line is, quote, allowing A I to speak first sets the harmful precedent of favoring a chatbot's authority over human wisdom.",
+      "phrase": "Their line is, quote,",
+      "shows": "a typewriter types the professors' quote across the Plan Sheet, a plate reads ALLOWING AI TO SPEAK FIRST SETS THE HARMFUL PRECEDENT",
+      "sfx": "tick",
+      "means": "allowing ai to speak first sets the harmful precedent",
+      "rehook": "",
+      "draw": {
+        "subject": "a typewriter",
+        "action": "types the professors' quote across the Plan Sheet",
+        "emotion": "stern",
+        "annotation": "ALLOWING AI TO SPEAK FIRST SETS THE HARMFUL PRECEDENT"
+      },
+      "choreo": {
+        "primary": "a typewriter types the professors' quote across the Plan Sheet, a plate reads ALLOWING AI TO SPEAK FIRST SETS THE HARMFUL PRECEDENT",
+        "reaction": "the letters land",
+        "ambient": "the letters land, the ghost text flickers"
+      },
+      "t": "59.100-61.630",
+      "key": 16
+    },
+    {
+      "id": 24,
+      "shot": 6,
+      "at_s": 61.63,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.53
+      },
+      "offset": 2.53,
+      "vo": "Their line is, quote, allowing A I to speak first sets the harmful precedent of favoring a chatbot's authority over human wisdom.",
+      "phrase": "speak first sets the",
+      "shows": "a tiny chatbot pops into the corner of the quote sheet and speaks first, a plate reads AI SPEAKS FIRST",
+      "sfx": "pop",
+      "means": "ai speaks first",
+      "rehook": "",
+      "draw": {
+        "subject": "a tiny chatbot",
+        "action": "pops into the corner of the quote sheet and speaks first",
+        "emotion": "wry",
+        "annotation": "AI SPEAKS FIRST"
+      },
+      "choreo": {
+        "primary": "a tiny chatbot pops into the corner of the quote sheet and speaks first, a plate reads AI SPEAKS FIRST",
+        "reaction": "the chatbot pops in",
+        "ambient": "the letters land, the ghost text flickers"
+      },
+      "t": "61.630-63.490",
+      "key": 43
+    },
+    {
+      "id": 25,
+      "shot": 6,
+      "at_s": 63.49,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.39
+      },
+      "offset": 4.39,
+      "vo": "Their line is, quote, allowing A I to speak first sets the harmful precedent of favoring a chatbot's authority over human wisdom.",
+      "phrase": "precedent of favoring a",
+      "shows": "an ink underline slides under the word precedent in the typed quote, a plate reads \"THE HARMFUL PRECEDENT\"",
+      "sfx": "tick",
+      "means": "\"the harmful precedent\"",
+      "rehook": "",
+      "draw": {
+        "subject": "an ink underline",
+        "action": "slides under the word precedent in the typed quote",
+        "emotion": "stern",
+        "annotation": "\"THE HARMFUL PRECEDENT\""
+      },
+      "choreo": {
+        "primary": "an ink underline slides under the word precedent in the typed quote, a plate reads \"THE HARMFUL PRECEDENT\"",
+        "reaction": "the underline lands",
+        "ambient": "the letters land, the ghost text flickers"
+      },
+      "t": "63.490-64.890",
+      "key": 36
+    },
+    {
+      "id": 26,
+      "shot": 6,
+      "at_s": 64.89,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 5.79
+      },
+      "offset": 5.79,
+      "vo": "Their line is, quote, allowing A I to speak first sets the harmful precedent of favoring a chatbot's authority over human wisdom.",
+      "phrase": "chatbot's authority over human",
+      "shows": "a balance scale tips toward a chatbot on one pan against a hand on the other, a plate reads CHATBOT'S AUTHORITY \u00b7 HUMAN WISDOM",
+      "sfx": "shimmer",
+      "means": "chatbot's authority \u00b7 human wisdom",
+      "rehook": "",
+      "draw": {
+        "subject": "a balance scale",
+        "action": "tips toward a chatbot on one pan against a hand on the other",
+        "emotion": "somber",
+        "annotation": "CHATBOT'S AUTHORITY \u00b7 HUMAN WISDOM"
+      },
+      "choreo": {
+        "primary": "a balance scale tips toward a chatbot on one pan against a hand on the other, a plate reads CHATBOT'S AUTHORITY \u00b7 HUMAN WISDOM",
+        "reaction": "the scale tips",
+        "ambient": "the letters land, the ghost text flickers"
+      },
+      "t": "64.890-69.680",
+      "key": 17
+    },
+    {
+      "id": 27,
+      "shot": 7,
+      "at_s": 69.68,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Five University of Alaska faculty answered, quote, in this case, A I use was not concealed. They say anyone who met with administrators and board members knew how the first draft was built.",
+      "phrase": "Five University of Alaska",
+      "shows": "five faculty sit in a warm room around the Sheet, a plate reads REBUTTAL \u00b7 5 UA FACULTY \u00b7 NOV 5TH",
+      "sfx": "swell",
+      "means": "rebuttal \u00b7 5 ua faculty \u00b7 nov 5th",
+      "rehook": "rehook: five faculty answer in a warm room",
+      "draw": {
+        "subject": "five faculty",
+        "action": "sit in a warm room around the Sheet",
+        "emotion": "calm",
+        "annotation": "REBUTTAL \u00b7 5 UA FACULTY \u00b7 NOV 5TH"
+      },
+      "choreo": {
+        "primary": "five faculty sit in a warm room around the Sheet, a plate reads REBUTTAL \u00b7 5 UA FACULTY \u00b7 NOV 5TH",
+        "reaction": "the room glows",
+        "ambient": "the room glows, the chairs stand empty"
+      },
+      "t": "69.680-71.670",
+      "key": 18
+    },
+    {
+      "id": 28,
+      "shot": 7,
+      "at_s": 71.67,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 1.99
+      },
+      "offset": 1.99,
+      "vo": "Five University of Alaska faculty answered, quote, in this case, A I use was not concealed. They say anyone who met with administrators and board members knew how the first draft was built.",
+      "phrase": "answered, quote, in this",
+      "shows": "the meeting draft slides across the faculty table with pencil marks in plain sight, a plate reads THEY SAY \u00b7 IN PLAIN SIGHT",
+      "sfx": "slide",
+      "means": "they say \u00b7 in plain sight",
+      "rehook": "",
+      "draw": {
+        "subject": "the meeting draft",
+        "action": "slides across the faculty table with pencil marks in plain sight",
+        "emotion": "calm",
+        "annotation": "THEY SAY \u00b7 IN PLAIN SIGHT"
+      },
+      "choreo": {
+        "primary": "the meeting draft slides across the faculty table with pencil marks in plain sight, a plate reads THEY SAY \u00b7 IN PLAIN SIGHT",
+        "reaction": "the draft slides",
+        "ambient": "the room glows, the chairs stand empty"
+      },
+      "t": "71.670-75.350",
+      "key": 37
+    },
+    {
+      "id": 29,
+      "shot": 7,
+      "at_s": 75.35,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.67
+      },
+      "offset": 5.67,
+      "vo": "Five University of Alaska faculty answered, quote, in this case, A I use was not concealed. They say anyone who met with administrators and board members knew how the first draft was built.",
+      "phrase": "concealed. They say anyone",
+      "shows": "a speech bubble types the faculty line while StampBot lowers its stamp, a plate reads \"IN THIS CASE, AI USE WAS NOT 'CONCEALED.'\"",
+      "sfx": "tick",
+      "means": "\"in this case, ai use was not 'concealed.'\"",
+      "rehook": "",
+      "draw": {
+        "subject": "a speech bubble",
+        "action": "types the faculty line while StampBot lowers its stamp",
+        "emotion": "calm",
+        "annotation": "\"IN THIS CASE, AI USE WAS NOT 'CONCEALED.'\""
+      },
+      "choreo": {
+        "primary": "a speech bubble types the faculty line while StampBot lowers its stamp, a plate reads \"IN THIS CASE, AI USE WAS NOT 'CONCEALED.'\"",
+        "reaction": "the bubble holds",
+        "ambient": "the room glows, the chairs stand empty"
+      },
+      "t": "75.350-78.050",
+      "key": 19
+    },
+    {
+      "id": 30,
+      "shot": 7,
+      "at_s": 78.05,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 8.37
+      },
+      "offset": 8.37,
+      "vo": "Five University of Alaska faculty answered, quote, in this case, A I use was not concealed. They say anyone who met with administrators and board members knew how the first draft was built.",
+      "phrase": "administrators and board members",
+      "shows": "a hallway of half-filled chairs pulls back through the wall behind the room with a tag asking WHO WASN'T THERE?, a plate reads ANYONE WHO MET WITH ADMINISTRATORS KNEW",
+      "sfx": "whoosh",
+      "means": "anyone who met with administrators knew",
+      "rehook": "",
+      "draw": {
+        "subject": "a hallway of half-filled chairs",
+        "action": "pulls back through the wall behind the room with a tag asking WHO WASN'T THERE?",
+        "emotion": "curious",
+        "annotation": "ANYONE WHO MET WITH ADMINISTRATORS KNEW"
+      },
+      "choreo": {
+        "primary": "a hallway of half-filled chairs pulls back through the wall behind the room with a tag asking WHO WASN'T THERE?, a plate reads ANYONE WHO MET WITH ADMINISTRATORS KNEW",
+        "reaction": "the chairs wait",
+        "ambient": "the room glows, the chairs stand empty"
+      },
+      "t": "78.050-80.470",
+      "key": 20
+    },
+    {
+      "id": 31,
+      "shot": 7,
+      "at_s": 80.47,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 10.79
+      },
+      "offset": 10.79,
+      "vo": "Five University of Alaska faculty answered, quote, in this case, A I use was not concealed. They say anyone who met with administrators and board members knew how the first draft was built.",
+      "phrase": "draft was built.",
+      "shows": "the pencil marks on the meeting draft swell and glow, a plate reads THE FIRST DRAFT",
+      "sfx": "swell",
+      "means": "the first draft",
+      "rehook": "",
+      "draw": {
+        "subject": "the pencil marks",
+        "action": "on the meeting draft swell and glow",
+        "emotion": "calm",
+        "annotation": "THE FIRST DRAFT"
+      },
+      "choreo": {
+        "primary": "the pencil marks on the meeting draft swell and glow, a plate reads THE FIRST DRAFT",
+        "reaction": "the marks glow",
+        "ambient": "the room glows, the chairs stand empty"
+      },
+      "t": "80.470-83.460",
+      "key": 48
+    },
+    {
+      "id": 32,
+      "shot": 8,
+      "at_s": 83.46,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the fair part. Both sides agree an A I was used. They disagree about whether anyone hid it.",
+      "phrase": "Here's the fair part.",
+      "shows": "an arrow from the professors points at the chatbot ServerMachine labeled USED, a plate reads THE FAIR PART",
+      "sfx": "clank",
+      "means": "the fair part",
+      "rehook": "",
+      "draw": {
+        "subject": "an arrow from the professors",
+        "action": "points at the chatbot ServerMachine labeled USED",
+        "emotion": "reading",
+        "annotation": "THE FAIR PART"
+      },
+      "choreo": {
+        "primary": "an arrow from the professors points at the chatbot ServerMachine labeled USED, a plate reads THE FAIR PART",
+        "reaction": "the arrow locks",
+        "ambient": "the arrows lock, the box pulses"
+      },
+      "t": "83.460-85.910",
+      "key": 21
+    },
+    {
+      "id": 33,
+      "shot": 8,
+      "at_s": 85.91,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.45
+      },
+      "offset": 2.45,
+      "vo": "Here's the fair part. Both sides agree an A I was used. They disagree about whether anyone hid it.",
+      "phrase": "agree an A I",
+      "shows": "a second arrow points at the chatbot from the other side, a plate reads BOTH SIDES AGREE \u00b7 AI WAS USED",
+      "sfx": "clank",
+      "means": "both sides agree \u00b7 ai was used",
+      "rehook": "",
+      "draw": {
+        "subject": "a second arrow",
+        "action": "points at the chatbot from the other side",
+        "emotion": "reading",
+        "annotation": "BOTH SIDES AGREE \u00b7 AI WAS USED"
+      },
+      "choreo": {
+        "primary": "a second arrow points at the chatbot from the other side, a plate reads BOTH SIDES AGREE \u00b7 AI WAS USED",
+        "reaction": "the arrow locks",
+        "ambient": "the arrows lock, the box pulses"
+      },
+      "t": "85.910-89.710",
+      "key": 38
+    },
+    {
+      "id": 34,
+      "shot": 8,
+      "at_s": 89.71,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 6.25
+      },
+      "offset": 6.25,
+      "vo": "Here's the fair part. Both sides agree an A I was used. They disagree about whether anyone hid it.",
+      "phrase": "hid it.",
+      "shows": "a third arrow points at an empty box with a magenta question mark, a plate reads HIDDEN?",
+      "sfx": "blip",
+      "means": "hidden?",
+      "rehook": "",
+      "draw": {
+        "subject": "a third arrow",
+        "action": "points at an empty box with a magenta question mark",
+        "emotion": "puzzled",
+        "annotation": "HIDDEN?"
+      },
+      "choreo": {
+        "primary": "a third arrow points at an empty box with a magenta question mark, a plate reads HIDDEN?",
+        "reaction": "the box pulses",
+        "ambient": "the arrows lock, the box pulses"
+      },
+      "t": "89.710-92.240",
+      "key": 22
+    },
+    {
+      "id": 35,
+      "shot": 9,
+      "at_s": 92.24,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Of more than ten thousand five hundred U A A students, one hundred nineteen is about one point one percent. Cited cases, not all cases.",
+      "phrase": "Of more than ten",
+      "shows": "ten thousand five hundred dots fill the frame then pull back to a field, a plate reads 10,500+ UAA STUDENTS",
+      "sfx": "whoosh",
+      "means": "10,500+ uaa students",
+      "rehook": "",
+      "draw": {
+        "subject": "ten thousand five hundred dots",
+        "action": "fill the frame then pull back to a field",
+        "emotion": "reading",
+        "annotation": "10,500+ UAA STUDENTS"
+      },
+      "choreo": {
+        "primary": "ten thousand five hundred dots fill the frame then pull back to a field, a plate reads 10,500+ UAA STUDENTS",
+        "reaction": "the dots drift",
+        "ambient": "the dots drift, the pinprick glows"
+      },
+      "t": "92.240-96.090",
+      "key": 23
+    },
+    {
+      "id": 36,
+      "shot": 9,
+      "at_s": 96.09,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.85
+      },
+      "offset": 3.85,
+      "vo": "Of more than ten thousand five hundred U A A students, one hundred nineteen is about one point one percent. Cited cases, not all cases.",
+      "phrase": "nineteen is about one",
+      "shows": "119 dots flash and swell in the middle of the field, a plate reads 119 CITED",
+      "sfx": "ping",
+      "means": "119 cited",
+      "rehook": "",
+      "draw": {
+        "subject": "119 dots",
+        "action": "flash and swell in the middle of the field",
+        "emotion": "reading",
+        "annotation": "119 CITED"
+      },
+      "choreo": {
+        "primary": "119 dots flash and swell in the middle of the field, a plate reads 119 CITED",
+        "reaction": "the dots glow",
+        "ambient": "the dots drift, the pinprick glows"
+      },
+      "t": "96.090-97.750",
+      "key": 39
+    },
+    {
+      "id": 37,
+      "shot": 9,
+      "at_s": 97.75,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.51
+      },
+      "offset": 5.51,
+      "vo": "Of more than ten thousand five hundred U A A students, one hundred nineteen is about one point one percent. Cited cases, not all cases.",
+      "phrase": "point one percent. Cited",
+      "shows": "119 glowing dots shrink to a pinprick in the field, a plate reads 119 OF 10,500+ \u00b7 ABOUT 1.1%",
+      "sfx": "blip",
+      "means": "119 of 10,500+ \u00b7 about 1.1%",
+      "rehook": "",
+      "draw": {
+        "subject": "119 glowing dots",
+        "action": "shrink to a pinprick in the field",
+        "emotion": "reading",
+        "annotation": "119 OF 10,500+ \u00b7 ABOUT 1.1%"
+      },
+      "choreo": {
+        "primary": "119 glowing dots shrink to a pinprick in the field, a plate reads 119 OF 10,500+ \u00b7 ABOUT 1.1%",
+        "reaction": "the pinprick glows",
+        "ambient": "the dots drift, the pinprick glows"
+      },
+      "t": "97.750-98.890",
+      "key": 24
+    },
+    {
+      "id": 38,
+      "shot": 9,
+      "at_s": 98.89,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 6.65
+      },
+      "offset": 6.65,
+      "vo": "Of more than ten thousand five hundred U A A students, one hundred nineteen is about one point one percent. Cited cases, not all cases.",
+      "phrase": "Cited cases, not all",
+      "shows": "a card drops onto the field, a plate reads CITED CASES, NOT ALL CASES",
+      "sfx": "thud",
+      "means": "cited cases, not all cases",
+      "rehook": "",
+      "draw": {
+        "subject": "a card",
+        "action": "drops onto the field",
+        "emotion": "somber",
+        "annotation": "CITED CASES, NOT ALL CASES"
+      },
+      "choreo": {
+        "primary": "a card drops onto the field, a plate reads CITED CASES, NOT ALL CASES",
+        "reaction": "the card settles",
+        "ambient": "the dots drift, the pinprick glows"
+      },
+      "t": "98.890-103.480",
+      "key": 25
+    },
+    {
+      "id": 39,
+      "shot": 10,
+      "at_s": 103.48,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So here's a cheap fix. One plain line on the plan, saying A I helped draft it and a person decided. The same rule the plan sets for A I.",
+      "phrase": "So here's a cheap",
+      "shows": "the blank dotted strip fills with a typed line while an unlit lightbulb waits beside it, a plate reads OUR SUGGESTION \u00b7 DRAFTED WITH AI \u00b7 DECIDED BY PEOPLE",
+      "sfx": "chime",
+      "means": "our suggestion \u00b7 drafted with ai \u00b7 decided by people",
+      "rehook": "rehook: the footnote strip fills at last",
+      "draw": {
+        "subject": "the blank dotted strip",
+        "action": "fills with a typed line while an unlit lightbulb waits beside it",
+        "emotion": "proud",
+        "annotation": "OUR SUGGESTION \u00b7 DRAFTED WITH AI \u00b7 DECIDED BY PEOPLE"
+      },
+      "choreo": {
+        "primary": "the blank dotted strip fills with a typed line while an unlit lightbulb waits beside it, a plate reads OUR SUGGESTION \u00b7 DRAFTED WITH AI \u00b7 DECIDED BY PEOPLE",
+        "reaction": "the line types in",
+        "ambient": "the bulb flickers, the strip glows, the stamp rings"
+      },
+      "t": "103.480-107.430",
+      "key": 26
+    },
+    {
+      "id": 40,
+      "shot": 10,
+      "at_s": 107.43,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.95
+      },
+      "offset": 3.95,
+      "vo": "So here's a cheap fix. One plain line on the plan, saying A I helped draft it and a person decided. The same rule the plan sets for A I.",
+      "phrase": "saying A I helped",
+      "shows": "the camera pulls back so the one line is the only mark at the foot of a thick plan, a plate reads ONE LINE",
+      "sfx": "whoosh",
+      "means": "one line",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back so the one line is the only mark at the foot of a thick plan",
+        "emotion": "reading",
+        "annotation": "ONE LINE"
+      },
+      "choreo": {
+        "primary": "the camera pulls back so the one line is the only mark at the foot of a thick plan, a plate reads ONE LINE",
+        "reaction": "the plan thickens",
+        "ambient": "the bulb flickers, the strip glows, the stamp rings"
+      },
+      "t": "107.430-109.670",
+      "key": 40
+    },
+    {
+      "id": 41,
+      "shot": 10,
+      "at_s": 109.67,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 6.19
+      },
+      "offset": 6.19,
+      "vo": "So here's a cheap fix. One plain line on the plan, saying A I helped draft it and a person decided. The same rule the plan sets for A I.",
+      "phrase": "decided. The same rule",
+      "shows": "StampBot presses an OUR SUGGESTION note onto the plan and the lightbulb lights, a plate reads ONE LINE, DISCLOSED",
+      "sfx": "stamp",
+      "means": "one line, disclosed",
+      "rehook": "",
+      "draw": {
+        "subject": "StampBot",
+        "action": "presses an OUR SUGGESTION note onto the plan and the lightbulb lights",
+        "emotion": "proud",
+        "annotation": "ONE LINE, DISCLOSED"
+      },
+      "choreo": {
+        "primary": "StampBot presses an OUR SUGGESTION note onto the plan and the lightbulb lights, a plate reads ONE LINE, DISCLOSED",
+        "reaction": "the stamp rings",
+        "ambient": "the bulb flickers, the strip glows, the stamp rings"
+      },
+      "kick": true,
+      "t": "109.670-111.290",
+      "key": 27
+    },
+    {
+      "id": 42,
+      "shot": 10,
+      "at_s": 111.29,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 7.81
+      },
+      "offset": 7.81,
+      "vo": "So here's a cheap fix. One plain line on the plan, saying A I helped draft it and a person decided. The same rule the plan sets for A I.",
+      "phrase": "rule the plan sets",
+      "shows": "an arrow loops from the strip back to the AI RECOMMENDS note, a plate reads THE PLAN'S OWN RULE",
+      "sfx": "swish",
+      "means": "the plan's own rule",
+      "rehook": "",
+      "draw": {
+        "subject": "an arrow",
+        "action": "loops from the strip back to the AI RECOMMENDS note",
+        "emotion": "reading",
+        "annotation": "THE PLAN'S OWN RULE"
+      },
+      "choreo": {
+        "primary": "an arrow loops from the strip back to the AI RECOMMENDS note, a plate reads THE PLAN'S OWN RULE",
+        "reaction": "the arrow loops",
+        "ambient": "the bulb flickers, the strip glows, the stamp rings"
+      },
+      "t": "111.290-115.040",
+      "key": 28
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 115.04,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "No decision on the plan had been reported when this was made. And one more disclosure. This film's pipeline is itself built on Claude.",
+      "phrase": "No decision on the",
+      "shows": "a small tag drops and hangs from the Sheet, a plate reads NO DECISION REPORTED",
+      "sfx": "rustle",
+      "means": "no decision reported",
+      "rehook": "",
+      "draw": {
+        "subject": "a small tag",
+        "action": "drops and hangs from the Sheet",
+        "emotion": "calm",
+        "annotation": "NO DECISION REPORTED"
+      },
+      "choreo": {
+        "primary": "a small tag drops and hangs from the Sheet, a plate reads NO DECISION REPORTED",
+        "reaction": "the tag swings",
+        "ambient": "the tag swings, the machine whistles"
+      },
+      "t": "115.040-116.490",
+      "key": 29
+    },
+    {
+      "id": 44,
+      "shot": 11,
+      "at_s": 116.49,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.45
+      },
+      "offset": 1.45,
+      "vo": "No decision on the plan had been reported when this was made. And one more disclosure. This film's pipeline is itself built on Claude.",
+      "phrase": "reported when this was",
+      "shows": "the tag text fills in line by line, a plate reads NO RESULT ON THE PLAN",
+      "sfx": "scribble",
+      "means": "no result on the plan",
+      "rehook": "",
+      "draw": {
+        "subject": "the tag text",
+        "action": "fills in line by line",
+        "emotion": "calm",
+        "annotation": "NO RESULT ON THE PLAN"
+      },
+      "choreo": {
+        "primary": "the tag text fills in line by line, a plate reads NO RESULT ON THE PLAN",
+        "reaction": "the tag fills",
+        "ambient": "the tag swings, the machine whistles"
+      },
+      "t": "116.490-119.130",
+      "key": 46
+    },
+    {
+      "id": 45,
+      "shot": 11,
+      "at_s": 119.13,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.09
+      },
+      "offset": 4.09,
+      "vo": "No decision on the plan had been reported when this was made. And one more disclosure. This film's pipeline is itself built on Claude.",
+      "phrase": "disclosure. This film's pipeline",
+      "shows": "StampBot inks a stamp and hovers it over the chatbot's forehead, a plate reads ONE MORE DISCLOSURE",
+      "sfx": "press",
+      "means": "one more disclosure",
+      "rehook": "",
+      "draw": {
+        "subject": "StampBot",
+        "action": "inks a stamp and hovers it over the chatbot's forehead",
+        "emotion": "wry",
+        "annotation": "ONE MORE DISCLOSURE"
+      },
+      "choreo": {
+        "primary": "StampBot inks a stamp and hovers it over the chatbot's forehead, a plate reads ONE MORE DISCLOSURE",
+        "reaction": "the stamp hovers",
+        "ambient": "the tag swings, the machine whistles"
+      },
+      "t": "119.130-122.690",
+      "key": 41
+    },
+    {
+      "id": 46,
+      "shot": 11,
+      "at_s": 122.69,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 7.65
+      },
+      "offset": 7.65,
+      "vo": "No decision on the plan had been reported when this was made. And one more disclosure. This film's pipeline is itself built on Claude.",
+      "phrase": "Claude.",
+      "shows": "the chatbot ServerMachine gets a magenta BUILT ON CLAUDE stamp on its forehead and looks straight at the lens, a plate reads THIS FILM \u00b7 BUILT ON CLAUDE",
+      "sfx": "stamp",
+      "means": "this film \u00b7 built on claude",
+      "rehook": "",
+      "draw": {
+        "subject": "the chatbot ServerMachine",
+        "action": "gets a magenta BUILT ON CLAUDE stamp on its forehead and looks straight at the lens",
+        "emotion": "focused",
+        "annotation": "THIS FILM \u00b7 BUILT ON CLAUDE"
+      },
+      "choreo": {
+        "primary": "the chatbot ServerMachine gets a magenta BUILT ON CLAUDE stamp on its forehead and looks straight at the lens, a plate reads THIS FILM \u00b7 BUILT ON CLAUDE",
+        "reaction": "the machine holds still",
+        "ambient": "the tag swings, the machine whistles"
+      },
+      "t": "122.690-123.940",
+      "key": 30
+    },
+    {
+      "id": 47,
+      "shot": 12,
+      "at_s": 123.94,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Would one line settle it, or does who was in the room count for more?",
+      "phrase": "Would one line settle",
+      "shows": "a fresh Plan Sheet drops in with the footnote pencilled in dashes while the gold token reads ONE LINE?, a plate reads ONE LINE OR WHO WAS THERE?",
+      "sfx": "pop",
+      "means": "one line or who was there?",
+      "rehook": "",
+      "draw": {
+        "subject": "a fresh Plan Sheet",
+        "action": "drops in with the footnote pencilled in dashes while the gold token reads ONE LINE?",
+        "emotion": "warm",
+        "annotation": "ONE LINE OR WHO WAS THERE?"
+      },
+      "choreo": {
+        "primary": "a fresh Plan Sheet drops in with the footnote pencilled in dashes while the gold token reads ONE LINE?, a plate reads ONE LINE OR WHO WAS THERE?",
+        "reaction": "the token shines",
+        "ambient": "the token shines, StampBot hovers"
+      },
+      "t": "123.940-126.259",
+      "key": 31
+    },
+    {
+      "id": 48,
+      "shot": 12,
+      "at_s": 126.259,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.62,
+        "offset": 2.319
+      },
+      "offset": 2.319,
+      "vo": "Would one line settle it, or does who was in the room count for more?",
+      "phrase": "Would one line settle",
+      "shows": "StampBot lifts the stamp over a new student essay and the footnote reads DRAFTED WITH AI, a plate reads SHOWS ITS WORK",
+      "sfx": "whoosh",
+      "means": "shows its work",
+      "rehook": "",
+      "draw": {
+        "subject": "StampBot",
+        "action": "lifts the stamp over a new student essay and the footnote reads DRAFTED WITH AI",
+        "emotion": "wry",
+        "annotation": "SHOWS ITS WORK"
+      },
+      "choreo": {
+        "primary": "StampBot lifts the stamp over a new student essay and the footnote reads DRAFTED WITH AI, a plate reads SHOWS ITS WORK",
+        "reaction": "the stamp hovers",
+        "ambient": "the token shines, StampBot hovers"
+      },
+      "t": "126.259-130.680",
+      "key": 32
+    }
+  ]
+}

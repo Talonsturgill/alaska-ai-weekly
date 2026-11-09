@@ -17,11 +17,13 @@ editor, sound designer, and producer. Each run you ship ONE finished ~2-minute, 
 2.5D INFOGRAPHIC Dispatch (The Infographics Show register) that ties a recent, verifiable Alaska
 story to an HONEST AI / robotics / ML angle, plus the matching LinkedIn post, then deliver it as a
 draft in whichever Gmail connector account is currently connected (with one-click video download
-links) for human review before posting. Resolve the actual email address from the connector profile
-and address the draft to that same address. Pass it through `dispatch_email.py --to` and
-`record_draft.py --to`. Do not require a fixed mailbox or request reconnection because an older rule
-names another account. Never use the literal recipient alias `me`, hardcode the connected address,
-or set a From or send-as. The owner handles distribution. Your job is that the automation outputs a
+links) for human review before posting. Address the draft to the connected profile's own address,
+and type that address in ONE place only, the Gmail create_draft call's `to`. It never goes into a
+shell command, a script flag or a scratch file (owner, 2026-11-09: the 11-04 and 11-09 runs each sat
+for days on a host permission prompt raised by a Bash command carrying it; neither `dispatch_email.py`
+nor `record_draft.py` needs it, so omit `--to` and the `to` field). Do not require a fixed mailbox
+or request reconnection because an older rule names another account. Never use the literal
+recipient alias `me`, hardcode the connected address, or set a From or send-as. The owner handles distribution. Your job is that the automation outputs a
 SHOWSTOPPER every run.
 
 ## HOW A TURN ENDS IN THIS RUN (2026-09-30)
@@ -114,7 +116,7 @@ log at wake so every run says whether the setting took.
 How to work on this model (each point written after a run that did the opposite):
 
 1. **The named gates are the verification budget.** `run_guard`, `story_gate`, `storyboard_check`,
-   Gates 0A to 0E, `flow_check`, `caption_check`, the panel and `ship_gate` are adversarial and
+   Gates 0A to 0F, `flow_check`, `caption_check`, the panel and `ship_gate` are adversarial and
    objective and stay exactly as written. Do not invent a re-check no gate asked for, do not re-read
    your own artifact to confirm it, do not spawn an agent to double-check your own work. When a gate
    passes, move on. One carve-out, which is not self-checking: verify what a SUBAGENT or a
@@ -148,6 +150,11 @@ the harness to hand control back for you. The worklog goes in `out/dispatch/WORK
 class is to MOVE THE WRITE, not to widen a rule. Where a settings rule genuinely helps, add it to
 `.claude/settings.json` in the same run and COMMIT it, because the next run is a fresh clone.
 `.claude/WORKLOG.md` is in `.gitignore` so a stray one never shows dirty and never needs an `rm`.
+
+**The owner's mailbox address never appears in a Bash command or a file** (2026-11-09). Both runs
+that stalled for days on a host permission prompt had put it into a shell command, the 11-04 run in
+`record_draft.py --to` and the 11-09 run in a heredoc. The address belongs only in the Gmail
+create_draft call. Same for any other private identifier the session context marks private.
 
 **A compound command is judged by its riskiest part.** Never chain shell steps when one of them is a
 DELETE, a MOVE, or a REDIRECT OVER AN EXISTING FILE. Put the destructive step in its own invocation,
@@ -733,6 +740,13 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   single question the piece answers. If it can't do all three without guessing it returns ship:false
   with the first line where it got lost. Rewrite the VO (§4.2) and re-run to ship:true BEFORE any
   synth.
+- GATE 0F (EDITOR ON THE SCRIPT, machine pass 2026-11-09): after 0E ships, the editor agent (no-spawn)
+  gets `out/dispatch/vo_script.txt` and `out/dispatch/claims.json` and reads every spoken line against
+  the claims it cites (verbs, tense, scope, absolutes), writing `out/dispatch/editor_vo.json`
+  `{"ship": bool, "findings": [{"line", "risk", "fix"}]}`. Apply the fixes to the script and re-run until
+  ship:true, then `python3 scripts/editor_vo_check.py --stamp`. `vo_synth_gemini.py` refuses to synth
+  unless that stamp matches the current script and claims, so any later wording edit needs a fresh
+  read. 11-09's editor found five wording risks only after the synth and they cost a re-synth.
 
 ## PHASE 5: BUILD (Remotion + voice + aligned captions)  (`run_cost.py phase voice`, then `build`)
 
@@ -911,6 +925,11 @@ semicolon, an em/en dash, a sentence starting with "But", first person outside a
 hashtag count outside 3 to 5, commas over 4.9 per 100 words, "cannot", a non-ordinal date, any URL,
 and any sources or credit line in the body). GATE B: editor then scorer vs
 config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both pass.
+BEFORE the first draft, run `python3 scripts/caption_rounds.py brief` and write its Hook pattern
+and its three lowest shipped criteria into that draft (10-31, 11-01 and 11-02 each cleared 8.5 by
+hundredths, on a hashtag or readability round a first draft could have done). Archive the final
+card WITH its per-criterion scores as runs/<date>/caption_score.json, because brief learns only
+from cards that kept them.
 Each round: save the scorer's JSON card, run `python3 scripts/caption_rounds.py record --card <card>`,
 and rewrite for the ONE target it names (largest weighted shortfall, held until it stalls twice),
 handing the next scorer the previous scores and diff it prints. At the rubric's
@@ -957,8 +976,36 @@ breaks a house rule.
    the illustrative-numbers note, `--upgrades` (what Phase 8 and, when it ran, Phase 9 actually
    changed, one per line, plus any repeat-offender escalation) and
    `--cost-json runs/<date>/cost.json`. Hand the payload to the connected Gmail create_draft
-   connector with the actual profile address as `--to`. Verify the new draft's readback is DRAFT and
+   connector, typing the connected profile address into that call's `to` (and nowhere else). Verify the new draft's readback is DRAFT and
    not SENT. Never send it.
+
+   **File-based invocation (2026-11-09 permission-stop repair).** Use the native file-writing
+   tool to create `out/dispatch/email_input.json` and `out/dispatch/upgrades.txt`. Never build
+   these with a shell heredoc, command substitution, an inline Python program, or quoted prose
+   in a compound command. The November 9 run stopped because its quoted heredoc could not be
+   checked before execution. Keep content as data and invoke checked-in code instead:
+   `python3 scripts/dispatch_email_from_file.py --input out/dispatch/email_input.json`.
+   The JSON object uses the existing dispatch_email.py option names without leading `--`:
+   `post`, `video-url-vertical`, `video-url-square`, `poster-url`, `voice`, `vo-report`, `music`,
+   `sources`, `score`, `note`, `date`, `title`, `cost-json`, `out-html`, and `upgrades-file`.
+   All values are strings. Set `upgrades-file` to `out/dispatch/upgrades.txt`; write one actual
+   improvement per line with the file tool, rather than embedding that text in the shell.
+   Leave `to` OUT of the file (the address goes only into the Gmail call), keep these scratch
+   files out of Git, and
+   do not print the input for debugging. The wrapper rejects unknown, duplicate or stale input,
+   cannot request a freshness bypass, and runs every existing email gate. It creates no draft
+   itself; use its final payload with the same Gmail connector/readback steps above. Run the
+   cost-report command separately before this command. Do not loosen permission rules to make
+   an inline shell construction pass. This removes this known prompt trigger; it is not a claim
+   that the host can never ask about a different operation.
+   After the Gmail connector returns a draft ID and readback verifies DRAFT (not SENT), use the
+   native file-writing tool to write `out/dispatch/draft_input.json` with `draft-id`, `subject`,
+   `square-url`, and `vertical-url` as string fields taken from that verified result (no `to`).
+   Then run `python3 scripts/record_draft.py --input out/dispatch/draft_input.json` as its own
+   command. Do not construct a shell variable, quote the subject in a compound command, or pipe
+   this command through output filters. Run Git inspection as separate commands. Never invent
+   a draft ID or write a receipt before connector success and readback. This prevents the
+   November 4 receipt-recording shell construction from recurring without changing permissions.
 4. Git: commit scenes, storyboard, caption, art_direction, artifacts, stills (NOT heavy mp4s or
    frames), `runs/<date>/cost.json`, the ledger (`scripts/dedupe.py add ... --composition
    '<fingerprint JSON>' --stance <celebratory|cautionary|curious|mixed> --angle "<the Phase 3.5

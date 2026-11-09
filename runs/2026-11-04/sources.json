@@ -1,0 +1,65 @@
+{
+ "run_date": "2026-11-04",
+ "title": "The Ears Did the Work",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Barcheck & Ruppert, A New Amphibious Earthquake Catalog for the Alaska Peninsula, Earth and Space Science 13(11), e2026EA005230",
+   "outlet": "AGU / Crossref",
+   "url": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c8",
+    "c9",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c18",
+    "c21"
+   ],
+   "used_in_film": true,
+   "note": "Primary source. Abstract only; the paper body was not reachable. 'Roughly 3x' is the authors' phrase."
+  },
+  {
+   "id": "s2",
+   "title": "Barcheck et al., The Alaska Amphibious Community Seismic Experiment, Seismological Research Letters 91(6)",
+   "outlet": "Seismological Research Letters",
+   "url": "https://api.crossref.org/works/10.1785/0220200189",
+   "claims": [
+    "c6",
+    "c7"
+   ],
+   "used_in_film": true,
+   "note": "Primary source for 75 seafloor and 30 land seismometers and the ~700 km span."
+  },
+  {
+   "id": "s3",
+   "title": "Mousavi et al., Earthquake transformer, Nature Communications volume 11, article 3952",
+   "outlet": "Nature Communications",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7415159/",
+   "claims": [
+    "c10"
+   ],
+   "used_in_film": true,
+   "note": "Primary source for what EQTransformer does."
+  },
+  {
+   "id": "s4",
+   "title": "Outer trench swell",
+   "outlet": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Outer_rise",
+   "claims": [
+    "c17"
+   ],
+   "used_in_film": true,
+   "note": "Secondary, plain-language explainer only."
+  }
+ ]
+}

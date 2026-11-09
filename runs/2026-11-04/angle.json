@@ -1,0 +1,23 @@
+{
+ "thesis": "The credit belongs to the data, not the algorithm: no training trick won, and Alaska's own human-checked earthquake picks, recorded by 75 seafloor and 30 land seismometers, taught an existing AI picker to find roughly three times as many quakes, most of the gain far offshore.",
+ "supporting_facts": [
+  "c11 no training strategy was substantially better",
+  "c12 local waveform data set improved performance",
+  "c14 roughly 3x more earthquakes than the analyst-checked catalog (this 2018-2019 catalog only)",
+  "c16 biggest gains far offshore and outer rise"
+ ],
+ "falsifiability": "False if a training trick clearly beat the others, if extra quakes scattered off known structure, or if gains were not concentrated offshore. Abstract says the opposite on all three. False-positive rate unknown (paper body unreachable).",
+ "counterpoint": "Temporary 2018-2019 experiment, judged from an abstract with no absolute counts. Roughly 3x says nothing about whether seismicity rose or what a permanent network hears today. The expensive part (a dense seafloor array and hand-checked labels) came first. Open question: does Alaska keep putting sensors on the seafloor to feed the recipe?",
+ "second_movement": "The headline reads AI breakthrough, the paper's own finding is data decided it. Credit moves to the people who deployed instruments and checked picks by hand.",
+ "runner_ups": {
+  "dramatist": "what does the AI hear once the seafloor stations are pulled up (kept as the Act 3 TEST and the button question)",
+  "explainer": "falling tide image (kept as the physical comparison for completeness)"
+ },
+ "guardrails": [
+  "roughly, per the authors, no absolute counts",
+  "not an Alaska Earthquake Center product",
+  "no forecast, no causal link to 1938 or 2021 quakes, no 'same segment' without hedge",
+  "banned words gap matters pattern"
+ ],
+ "stance": "curious"
+}

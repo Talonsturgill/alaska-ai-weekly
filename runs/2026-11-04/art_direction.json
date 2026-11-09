@@ -1,0 +1,127 @@
+{
+ "run_date": "2026-11-04",
+ "story_id": "alaska-peninsula-ml-earthquake-catalog",
+ "palette": {
+  "roles": {
+   "sky": "#2A0F1F",
+   "ground": "#4A1D2B",
+   "hero": "#6FE3C1",
+   "gold": "#FFC93C",
+   "chalk": "#F2EBDD",
+   "coral": "#FF6B4A",
+   "shadow": "#14060F",
+   "slate": "#5B6E7A",
+   "ink": "#14060F",
+   "dash": "#7A3A4C"
+  },
+  "mood": "Dark oxblood seafloor and stage, mint seafloor ears, gold for the machine's dots, chalk for the human-checked dots, coral only for the honest limits. Curious, wry, fair.",
+  "divergence": "Against 11-02 (midnight indigo, amber, teal, magenta), 11-01 (storm slate, sulphur), 10-31 (cream, cobalt, brass, vermilion) and 10-28 (green-black sonar abyss): this film is oxblood/wine (#2A0F1F sky, #4A1D2B ground) with mint and gold. No indigo, no teal, no green-black, no cream ground. Nearest value is 11-02's dark; resolved by moving every dark into the red-brown hue family.",
+  "accent_licence": "gold ONLY on machine-found dots, the Robot and the 3X numeral. Chalk ONLY on human-checked dots, analyst ink and paper. Mint ONLY on Bunk and the seafloor ears. Coral ONLY on the limit plates, the closing window and the waterline warning."
+ },
+ "light": {
+  "time": "Underwater dark and a stage",
+  "direction": "Per shot below; Bunk's dome is his own key in the dark, stage spotlights in shot 1 and 11",
+  "depth": "Near plane z170, hero z0, backdrop z-220",
+  "key_note": "A slow mint ring pulse from Bunk every ~6s is the film's heartbeat",
+  "per_shot": {
+   "1": "Stage spotlights from above on the Robot, confetti, Bunk dim in the cross-section beneath",
+   "2": "Seabed practicals: each dome self-lit mint, near plane kelp-like cable tether, backdrop oxblood void",
+   "3": "Flat paper-lamp key on the analyst desk, near plane desk edge",
+   "4": "Cold monitor key on the Robot, near plane flashcard stack",
+   "5": "Track-lights along the race lane, near plane starting rail",
+   "6": "Gold quake dots self-lit against dark, near plane recording-reel edge",
+   "7": "Self-lit counter and waterline, near plane gauge bezel",
+   "8": "Cross-section with the outer rise lit warm from below, near plane ocean surface line",
+   "9": "Flat chalk key on overlay map, near plane map frame",
+   "10": "Crane lamp, coral warning rim on the closing window, near plane crane hook",
+   "11": "The banner swings, spotlight transfers from Robot to Bunk and the pencil",
+   "12": "Dusk-coral key on the coast map, near plane map edge",
+   "13": "Single mint dome glow in darkness, mirror of shot 1"
+  }
+ },
+ "shape_language": {
+  "grammar": "ROUND against GRID: soft round domes, bulbs and dots (the ears, the quakes) against hard rectilinear catalogs, banners and the robot's cards",
+  "why": "The data is the soft living thing and the algorithm is the squared-off wrapper; the turn swaps the banner (hard) for the ear (round)."
+ },
+ "casting": {
+  "hero": "Bunk (ListeningMooring from sensors.tsx, mint dome face)",
+  "inventory": [
+   {
+    "shot": 1,
+    "subject": "ServerMachine as the Robot taking a bow, banner, confetti, Bunk below"
+   },
+   {
+    "shot": 2,
+    "subject": "row of Bunks, AlaskaMini strip, shoreline sensors"
+   },
+   {
+    "shot": 3,
+    "subject": "Character analyst with pencil, squiggle sheets, TallyCounter"
+   },
+   {
+    "shot": 4,
+    "subject": "Robot slurping flashcards"
+   },
+   {
+    "shot": 5,
+    "subject": "four training tricks as capes racing, photo finish"
+   },
+   {
+    "shot": 6,
+    "subject": "recording reel, gold quake dots popping"
+   },
+   {
+    "shot": 7,
+    "subject": "catalog Sheet stack, waterline gauge"
+   },
+   {
+    "shot": 8,
+    "subject": "cross-section plate with outer rise bulge, Bunks"
+   },
+   {
+    "shot": 9,
+    "subject": "overlay map, chalk and gold dots"
+   },
+   {
+    "shot": 10,
+    "subject": "crane hook lifting Bunks, 2018 to 2019 window bar"
+   },
+   {
+    "shot": 11,
+    "subject": "swinging banner, Bunk, pencil"
+   },
+   {
+    "shot": 12,
+    "subject": "coast map, two quake tags"
+   },
+   {
+    "shot": 13,
+    "subject": "Bunk alone"
+   }
+  ],
+  "net_new": "none planned beyond props"
+ },
+ "motion_language": {
+  "grammar": "Pings and pops staccato; the Sheet stack grows with overshoot; the crane moves once",
+  "hero_moves": [
+   "Bunk blinks open in shot 1",
+   "the Bunk row blinks in a wave in shot 2",
+   "the banner swings from AI to LOCAL DATA in shot 11",
+   "Bunk's dome closes in shot 13"
+  ]
+ },
+ "composition": {
+  "focal_hierarchy": "Bunk and the Sheet stack first, plates second",
+  "negative_space": "Shots 10 and 13 hold large empty dark",
+  "safe_area": "Hero action inside y420 to 1500, captions in the open band",
+  "signature_shot": "Shot 7: the waterline drops 0.1 to 0.4 as gold dots surface across the Sheet until ~3X, then the chalk dots stay put under them (same map)."
+ },
+ "craft_advance": "none needed by this film",
+ "binding_checks": {
+  "gold": "machine-found only",
+  "chalk": "human-checked only",
+  "mint": "Bunk only",
+  "coral": "limits only",
+  "sheet_states": "6 chalk dots > stamped CHECKED > gold fill ~3X > margin note 2018 TO 2019 ONLY > outlined dots"
+ }
+}

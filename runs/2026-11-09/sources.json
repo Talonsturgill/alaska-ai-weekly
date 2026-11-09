@@ -1,0 +1,55 @@
+{
+ "run_date": "2026-11-09",
+ "title": "Who Holds the Transcript",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Policy for Court Staff and Judicial Officers on Using Artificial Intelligence at the Alaska Court System, Version 1.2 June 2026",
+   "outlet": "Alaska Court System, a copy published by LawSites",
+   "url": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21",
+    "c22",
+    "c23",
+    "c24",
+    "c25",
+    "c26",
+    "c28",
+    "c29"
+   ],
+   "used_in_film": true,
+   "note": "Primary document, all 12 pages read. CourtSmart transcripts are a plan (should be ready by fall), live status unverified."
+  },
+  {
+   "id": "s2",
+   "title": "Clio Wants To Bring AI to the Judiciary, But 50-State Survey Reveals Policies Differ",
+   "outlet": "LawSites (Bob Ambrogi), November 5th, 2026",
+   "url": "https://www.lawnext.com/2026/11/clio-wants-to-bring-ai-to-the-judiciary-but-50-state-survey-reveals-policies-differ-in-whether-they-allow-it.html",
+   "claims": [
+    "c27"
+   ],
+   "used_in_film": false,
+   "note": "Independent corroboration of the policy's core rules. Survey does not mention CourtSmart."
+  }
+ ]
+}

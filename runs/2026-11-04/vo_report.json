@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.995,
+    "heard": "An AI just found roughly three times as many earthquakes off the Alaska Peninsula. And it's easy to give the AI all the credit. The paper says otherwise. Meet Bunk, a sea floor seismometer. Starting in 2018, 75 like him sat in the mud off the Alaska Peninsula with 30 more on land. Analysts had checked by hand the quakes those sensors recorded. Then, bar check of Cornell and Rupert of the USGS, the paper's authors, built on that catalog. They took a global deep learning model, EQ transformer, that finds quakes and marks when their waves arrive, and fine-tuned it on those hand-checked picks. Then they cried several training tricks, a different starting model, filters, different splits, none was substantially better. What helped was the Alaska data itself. Then they ran it across the continuous recordings, hunting small quakes. The result is roughly three times as many earthquakes as the analyst checked catalog, according to the authors. And the smallest quake it catches reliably, dropped by one-tenth to four-tenths of a magnitude. The biggest gains came far offshore, and in the outer rise, the bulge where the ocean plate bends before it dives. So, are the new ones real? The authors say the map of where quakes cluster mirrors earlier observations, and the limit. This was one temporary experiment. Roughly three times says nothing about whether the ground shook more. It only says how much more got hurt. So, who earned it? Not a clever trick. Local data improved the model, and that data came from sea floor ears and people with pencils. The AI learned Alaska from Alaska's own ears. So, will Alaska put ears back on the sea floor?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.011,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.41,
+        "voiced_frac": 0.45,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 117.92,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 117.92,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.995,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

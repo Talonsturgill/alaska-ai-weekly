@@ -43,7 +43,11 @@ film better is not a fix.
    of any kind (CLAUDE.md).
 5. Mark it in the queue: `[x]` and ` | shipped <date> <commit>`. An item you can't fix safely in this
    pass stays open with ` | escalated <date>: <why>`, and a repeat offender escalated twice goes in
-   the owner's email in plain words.
+   the owner's email in plain words. This is an informational backlog update, not a request for
+   permission or a reason to pause future runs. Keep safe internal engineering follow-up in the
+   queue with a concrete next verification step. Say an owner decision is needed only when there
+   is an actual owner-only choice or required authorization, and identify that exact choice.
+   Do not label ordinary gate calibration or an unverified repair as waiting for the owner.
 
 At most five items per pass, and at most ONE engine system advance (a new capability in `lib/`,
 registered in `video-engine/src/lib/ASSET_MANIFEST.md` with `python3 scripts/asset_index.py` rerun,
