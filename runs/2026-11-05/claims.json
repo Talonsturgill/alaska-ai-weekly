@@ -1,0 +1,230 @@
+{
+ "run_date": "2026-11-05",
+ "fact_check_verdict": "Publish as an attributed-allegation story. Claude-drafting claim is two professors' opinion, single source, no UA response found, no primary document reachable (alaska.edu 503). Never state a vote result.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-secondary",
+   "spoken": "The University of Alaska regents are set to take up a systemwide A I plan at their November meeting.",
+   "on_screen": "REGENTS \u00b7 NOVEMBER MEETING",
+   "source": "https://www.ktoo.org/2026/09/16/university-of-alaska-regents-consider-draft-ai-policy/",
+   "requires": [
+    "Say 'set to' or 'scheduled'. Never state a vote result, none is verified."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-secondary",
+   "spoken": "Two U A A professors say Anthropic's Claude wrote its first draft.",
+   "on_screen": "TWO UAA PROFESSORS SAY \u00b7 CLAUDE WROTE THE FIRST DRAFT",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "Attribute to Hartley and Potter every time. Opinion column, single source, no UA confirmation."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-secondary",
+   "spoken": "The university's own technology chief says he drafted the plan over the summer, at the regents' request.",
+   "on_screen": "UA IT CHIEF \u00b7 DRAFTED OVER THE SUMMER",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Say 'technology chief', not CIO. ADN October 4th."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-secondary",
+   "spoken": "The professors write that this wasn't disclosed until October ninth.",
+   "on_screen": "NOT DISCLOSED UNTIL OCT 9TH \u00b7 THEY WRITE",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "Attribute to the professors. 'Concealed' is their word, do not use it as fact."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-secondary",
+   "spoken": "A U A A report says one hundred nineteen of one hundred fifty students cited for misconduct used A I.",
+   "on_screen": "119 OF 150 CITED \u00b7 USED AI",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Say 'a U A A report' or 'per ADN'. The 1.1 percent is of all students, do not use."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-secondary",
+   "spoken": "The same report says A I plagiarism rose seventy three percent last year.",
+   "on_screen": "AI PLAGIARISM \u00b7 UP 73% \u00b7 LAST YEAR",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Attribute to the UAA report as reported by ADN."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-secondary",
+   "spoken": "The plan would require all three campuses to have an A I plan for students, faculty and staff.",
+   "on_screen": "IF APPROVED \u00b7 ALL 3 CAMPUSES NEED A PLAN",
+   "source": "https://www.ktoo.org/2026/09/16/university-of-alaska-regents-consider-draft-ai-policy/",
+   "requires": [
+    "Conditional on approval. September draft. Whether November keeps it is unverified."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-secondary",
+   "spoken": "The draft came together over the summer without enough faculty and student feedback.",
+   "on_screen": "SUMMER DRAFT \u00b7 TOO LITTLE FEEDBACK",
+   "source": "https://www.ktoo.org/2026/09/16/university-of-alaska-regents-consider-draft-ai-policy/",
+   "requires": [
+    "Reporter text, not a Shier quote. No quote marks."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-secondary",
+   "spoken": "A university official says A I could recommend, but a human decides.",
+   "on_screen": "\"AI COULD RECOMMEND BUT A HUMAN DECIDES\"",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Quote is Stephanie Erickson, UA special projects lead. Say 'a university official'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-secondary",
+   "spoken": "The professors say trusting A I to write the A I plan is the wrong approach.",
+   "on_screen": "\"WRONG APPROACH\" \u00b7 HARTLEY AND POTTER",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "Verbatim: Trusting AI to generate UA's AI plan is the wrong approach. Attribute."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-secondary",
+   "spoken": "We didn't find the university's response to the Claude claim.",
+   "on_screen": "UA RESPONSE \u00b7 NOT FOUND",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "Say plainly we found no response. Do not imply confirm or deny."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-secondary",
+   "spoken": "The university has no single A I policy across its campuses today.",
+   "on_screen": "NO SYSTEMWIDE AI POLICY TODAY",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Paraphrase, single source."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-secondary",
+   "spoken": "The university's technology chief says it can't yet control and track every use of A I.",
+   "on_screen": "CAN'T TRACK EVERY USE YET",
+   "source": "https://www.ktoo.org/2026/09/16/university-of-alaska-regents-consider-draft-ai-policy/",
+   "requires": [
+    "Reporter paraphrase, no quote marks."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-secondary",
+   "spoken": "The professors say the regents should drop the plan.",
+   "on_screen": "DROP THE PLAN \u00b7 THEY SAY",
+   "source": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "requires": [
+    "Attribute to Hartley and Potter."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-secondary",
+   "spoken": "A university official says the school needs to be deliberate about how it engages with A I.",
+   "on_screen": "\"BE DELIBERATE\" \u00b7 UA OFFICIAL",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Erickson quote: We need to be deliberate with how we want to engage with AI instead of letting it just happen to us."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-secondary",
+   "spoken": "The university's technology chief called the document very, very important.",
+   "on_screen": "\"VERY, VERY IMPORTANT\" \u00b7 UA IT CHIEF",
+   "source": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "requires": [
+    "Shier quote per ADN October 4th."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

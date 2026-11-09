@@ -1,0 +1,107 @@
+{
+ "run_date": "2026-11-05",
+ "story_id": "ua-ai-engaged-plan",
+ "palette": {
+  "roles": {
+   "sky": "#2A140E",
+   "ground": "#5A3A22",
+   "hero": "#8E2434",
+   "glow": "#FFD23F",
+   "accent": "#83D9B1",
+   "shadow": "#14080F",
+   "paper": "#F1E8D0",
+   "ink": "#1A0E14",
+   "brass": "#B08A4E",
+   "machine": "#83D9B1",
+   "chalk": "#E9E4D4",
+   "human": "#C98F6B",
+   "cuff": "#8E2434"
+  },
+  "mood": "A warm oxblood-brown seminar room (wall #2A140E, hue about 15 degrees, wood and wine, not plum) at late afternoon turning to dusk. The DiplomaPress is oxblood brass, the machine handle glows mint (#83D9B1, a cool with no green in it, clearly not 11-02's teal), paper is cream, highlighter yellow (#FFD23F) is the one warm LIGHT and the highlighter mark, and brass is a desaturated metal (#B08A4E).",
+  "divergence": "Against 11-02 (indigo, sodium amber, teal): this wall is a brown-red near hue 15 degrees, not indigo near 250, and the machine cool is mint near 210 not teal near 170. Against 10-29 (aubergine near 300): this wall is 285 degrees away on the wheel from violet. Against 11-01 (slate-green) and 10-31 (sage): no green anywhere.",
+  "accent_licence": "Mint ONLY on the machine handle, machine-written lines and the machine hand. The 119 student tags stay paper and get an mint underline tick only, so students are never coded as machines. Highlighter yellow ONLY as light and the highlight. Oxblood is the press body, the examiner handle and the human sleeve cuff. The human hand is skin (#C98F6B) at least two value steps from paper. Edit mark is ink. DROP stamp is ink at 60 percent. The 73 percent bar is chalk with an ink outline. The gavel is oak."
+ },
+ "light": {
+  "time": "Late afternoon turning to dusk",
+  "direction": "A warm window key from the left at low angle, a cyan rim from the machine handle, a desk lamp pool under the press",
+  "depth": "Near plane desk edge or chair backs at z170, hero at z0, wall panel at z-200",
+  "key_note": "The window sun is about 25 degrees up in shot 1, 12 degrees by shot 4, grazing by shot 7, and a last bar crossing the chairs in shot 9.",
+  "per_shot": {
+   "1": "Key: low window sun from the left at about 12 degrees elevation, key:fill 3:1, cool mint rim from the machine handle; near plane z170 table edge, hero z0 press, far z-200 wall",
+   "2": "Key: window sun from the left, 3:1, shadows fall right; mint rim only on the machine hand; near z170 pen, hero z0 sheet, far z-200 wall",
+   "3": "Key: floor lamp pool from the left at x150, 4:1, sun shaft behind; near z170 table, hero z0 stacks, far z-200 panel",
+   "4": "Key: low warm side sun raking across the tag wall from the left so each tag casts a short shadow, 3:1; near z170 rail, hero z0 wall, far z-200 panel",
+   "5": "Key: the desk lamp pool from the left on a printed blotter map lying on the seminar table, window key low across it, 3:1; near z170 table edge, hero z0 map, far z-200 wall",
+   "6": "Key: flat bone-paper day key, 2:1, mint rim on the machine handle falling off and a warm glint on the examiner handle at the catch; near z170 table, hero z0 press, far z-200 wall",
+   "7": "Key: the last sun, low, from the window through the chair backs, long shadows right, 4:1; near z170 chair backs, hero z0 chairs, far z-200 wall",
+   "8": "Key: lamp pool on the sheet from the left, 4:1; near z170 desk edge, hero z0 sheet, far z-200 wall",
+   "9": "Key: the last sun bar sweeps across the chairs at the end and lights them, the sun is the source; near z170 chairs, hero z0 token, far z-200 wall"
+  }
+ },
+ "shape_language": {
+  "grammar": "RECTILINEAR against ROUND. Pages, tables, tags, flags, gauge, note card and the press are right angles. The only rounds are the question token and the ring of chairs, which is the token's circle at room scale ('who was asked' becomes a ring of seats).",
+  "why": "A plan is rectangles and the human question is round. The speech bubble is a square-cornered note card, the dial a rectilinear slide gauge and the map pins square flags, so the ring of chairs and the token are the only circles."
+ },
+ "casting": {
+  "hero": "DiplomaPress (shelf, lib/credentials.tsx), the plan's approval machine with its machine handle and human examiner handle. Not the hero of the last two dispatches (Clicky, LayeredLand).",
+  "inventory": [
+   {
+    "shot": "1",
+    "subject": "DiplomaPress with DRAFT tag, AI ENGAGED sheet, calendar card, gavel; QuestionToken in the press tray"
+   },
+   {
+    "shot": "2",
+    "subject": "pen, human hand (skin, oxblood cuff) and machine hand (mint), sheet; QuestionToken on the sheet corner"
+   },
+   {
+    "shot": "3",
+    "subject": "two draft stacks, lamp, UA badge, slip, square note card; QuestionToken on a stack"
+   },
+   {
+    "shot": "4",
+    "subject": "150 paper name tags with 119 mint underline ticks, chalk bar; QuestionToken pinned as a tag in the wall corner"
+   },
+   {
+    "shot": "5",
+    "subject": "Alaska printed blotter map with square campus flags on the seminar table; QuestionToken as a paperweight"
+   },
+   {
+    "shot": "6",
+    "subject": "DiplomaPress machine handle and oxblood examiner handle, slide gauge; QuestionToken on the press base"
+   },
+   {
+    "shot": "7",
+    "subject": "ring of chairs, pen, sheet; QuestionToken on the first chair"
+   },
+   {
+    "shot": "8",
+    "subject": "sheet, highlighter, DROP stamp, quote card; QuestionToken in the margin"
+   },
+   {
+    "shot": "9",
+    "subject": "big QuestionToken, pen, signature line, chairs"
+   }
+  ],
+  "net_new": "Episode-local in Ep1105.tsx. Throughline is the shelf QuestionToken.",
+  "continuity": "The shelf QuestionToken (lib/credentials.tsx) is staged in every shot, listed per shot above."
+ },
+ "motion_language": {
+  "grammar": "Handles pull with anticipation and brake, paper slides and settles, tags flip in a ripple, the token rocks and its engraving swaps.",
+  "hero_moves": [
+   "The machine handle pulls the die and the examiner handle brakes it",
+   "The tags flip cyan in a ripple"
+  ]
+ },
+ "composition": {
+  "focal_hierarchy": "The press and the token first, plates second",
+  "negative_space": "Shot 7 holds the empty chairs in a big cream floor",
+  "safe_area": "Hero action inside y420 to 1500, captions in the open band",
+  "signature_shot": "Shot 6: the shot opens wide on THE FAIR CASE, then pushes in to close on the die and handles about 75.8s so the hand-width gap fills the band, and the examiner handle catches the die at 77.5s with a warm glint while the mint rim falls off. The catch holds at least 1.8 seconds."
+ },
+ "craft_advance": "none needed by this film",
+ "binding_checks": {
+  "cyan": "mint (#83D9B1) on the machine handle, machine-written lines and machine hand only",
+  "yellow": "light and highlight only",
+  "token_states": "WHO WROTE IT? > WHO HELD THE PEN? > NO POLICY YET > ONE PLAN? > WHO CHANGES IT? > WHO WAS ASKED? (same list as storyboard.throughline.states)"
+ }
+}

@@ -3970,3 +3970,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: 125 s film, panel median 7.05 against 7.0 (6.74, 7.20, 7.05), no hard blockers, a thin pass on the sixth graded cut. Caption 8.50 against 8.5 on its fifth round, zero hard fails. Primary documents (Washington decree and complaint) plus two outlets, Alaska share rests on Alaska's News Source citing the Alaska Department of Law, disclosed.
 - In-run fixes: VO retimed after the c17 and c19 wording edits, mix LRA 5.3 to 6.2, plate stacking, bone-ground band legibility, paper-wipe exit bug, duplicate plates, overlay Bands and Atmos layer.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-02), six items.
+
+## 2026-11-05 "Who Held the Pen" (UA AI Engaged plan, regents November meeting, two UAA professors say Claude drafted it)
+- Shipped: 114 s film, panel median 7.05 against 7.0 (7.08, 7.05, 7.02), no hard blockers, on the ninth graded cut. Caption 8.54 against 8.5 on its fifth round, zero hard fails. No primary document was reachable (alaska.edu 503) and no vote result is stated, disclosed in the draft.
+- In-run fixes: stale Ep1102Ids import, literal Plate conversion for the static gates, DiplomaPress dieText prop, VO attribution re-synth, dispatch_mix loudnorm LRA 7 to 14 (delivered 5.3 to 8.0), HeldProp idle life, top and bottom bands, ghost die and impact star.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-05), six items. Phase 9 machine pass was due and is run next.

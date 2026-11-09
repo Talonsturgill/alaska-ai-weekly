@@ -1,0 +1,49 @@
+{
+ "judge_id": "J2",
+ "axis_scores": {
+  "Hook & retention": 7.0,
+  "Illustration craft & detail": 7.0,
+  "Motion & animation craft": 6.7,
+  "Composition & staging": 6.8,
+  "Color & grade": 7.0,
+  "Typography & captions": 7.5,
+  "Sound design & mix": 7.0,
+  "VO-illustration sync & entertainment": 7.0,
+  "Accuracy & sourcing": 7.5,
+  "Alaska authenticity & cultural respect": 7.0,
+  "Writing & post quality": 7.5
+ },
+ "weights": {
+  "Hook & retention": 0.12,
+  "Illustration craft & detail": 0.16,
+  "Motion & animation craft": 0.12,
+  "Composition & staging": 0.08,
+  "Color & grade": 0.08,
+  "Typography & captions": 0.06,
+  "Sound design & mix": 0.1,
+  "VO-illustration sync & entertainment": 0.08,
+  "Accuracy & sourcing": 0.1,
+  "Alaska authenticity & cultural respect": 0.06,
+  "Writing & post quality": 0.04
+ },
+ "weighted_total": 7.05,
+ "hard_blockers": [],
+ "concrete_defects": [
+  {
+   "axis": "Illustration craft & detail",
+   "finding": "No characters beyond one small examiner figure; window never becomes a scene."
+  },
+  {
+   "axis": "Motion & animation craft",
+   "finding": "Many beats change only 3 to 7 percent; pen travel small and slow."
+  },
+  {
+   "axis": "Composition & staging",
+   "finding": "Bottom 15 percent dead dark; chair ring small; flags float off pins."
+  },
+  {
+   "axis": "Hook & retention",
+   "finding": "First 1.5s shows a closed press with a dashed arc and mint stubs."
+  }
+ ]
+}

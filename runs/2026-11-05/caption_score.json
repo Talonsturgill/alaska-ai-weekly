@@ -1,0 +1,16 @@
+{
+ "scores": {
+  "hook_scroll_stop": 8.6,
+  "point_of_view_take": 8.6,
+  "substance_specificity": 8.7,
+  "readability_restraint": 8.3,
+  "engagement_design": 8.4,
+  "brand_voice_accuracy": 8.5,
+  "hashtag_craft": 8.6
+ },
+ "weighted_total": 8.54,
+ "ship_threshold": 8.5,
+ "hard_fails": [],
+ "ship": true,
+ "note": "Fifth round (8.26, 8.35, 8.45, 8.47, 8.54)."
+}

@@ -1,0 +1,157 @@
+{
+ "j1": {
+  "judge_id": "J1",
+  "axis_scores": {
+   "Hook & retention": 7.2,
+   "Illustration craft & detail": 7.2,
+   "Motion & animation craft": 6.9,
+   "Composition & staging": 7.2,
+   "Color & grade": 7.6,
+   "Typography & captions": 7.2,
+   "Sound design & mix": 6.5,
+   "VO-illustration sync & entertainment": 6.9,
+   "Accuracy & sourcing": 7.0,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "weights": {
+   "Hook & retention": 0.12,
+   "Illustration craft & detail": 0.16,
+   "Motion & animation craft": 0.12,
+   "Composition & staging": 0.08,
+   "Color & grade": 0.08,
+   "Typography & captions": 0.06,
+   "Sound design & mix": 0.1,
+   "VO-illustration sync & entertainment": 0.08,
+   "Accuracy & sourcing": 0.1,
+   "Alaska authenticity & cultural respect": 0.06,
+   "Writing & post quality": 0.04
+  },
+  "weighted_total": 7.08,
+  "hard_blockers": [],
+  "concrete_defects": [
+   {
+    "axis": "Hook & retention",
+    "finding": "The bold mint line lands around 2s, after the first 1.5s."
+   },
+   {
+    "axis": "Motion & animation craft",
+    "finding": "Pen travel at 83 to 88s reads as a parked pen with a small tilt; shot 5 changes 2.8 to 3.8 percent."
+   },
+   {
+    "axis": "Sound design & mix",
+    "finding": "Mix passes (LRA 8.0) but 25 VO gaps hold 18 s of silence with thin SFX and no ambient bed."
+   },
+   {
+    "axis": "Composition & staging",
+    "finding": "Top tracker, ILLUSTRATION tag and bottom strip eat the frame; lower third dark."
+   }
+  ]
+ },
+ "j2": {
+  "judge_id": "J2",
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.7,
+   "Composition & staging": 6.8,
+   "Color & grade": 7.0,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "weights": {
+   "Hook & retention": 0.12,
+   "Illustration craft & detail": 0.16,
+   "Motion & animation craft": 0.12,
+   "Composition & staging": 0.08,
+   "Color & grade": 0.08,
+   "Typography & captions": 0.06,
+   "Sound design & mix": 0.1,
+   "VO-illustration sync & entertainment": 0.08,
+   "Accuracy & sourcing": 0.1,
+   "Alaska authenticity & cultural respect": 0.06,
+   "Writing & post quality": 0.04
+  },
+  "weighted_total": 7.05,
+  "hard_blockers": [],
+  "concrete_defects": [
+   {
+    "axis": "Illustration craft & detail",
+    "finding": "No characters beyond one small examiner figure; window never becomes a scene."
+   },
+   {
+    "axis": "Motion & animation craft",
+    "finding": "Many beats change only 3 to 7 percent; pen travel small and slow."
+   },
+   {
+    "axis": "Composition & staging",
+    "finding": "Bottom 15 percent dead dark; chair ring small; flags float off pins."
+   },
+   {
+    "axis": "Hook & retention",
+    "finding": "First 1.5s shows a closed press with a dashed arc and mint stubs."
+   }
+  ]
+ },
+ "j3": {
+  "judge_id": "J3",
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 6.5,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "weights": {
+   "Hook & retention": 0.12,
+   "Illustration craft & detail": 0.16,
+   "Motion & animation craft": 0.12,
+   "Composition & staging": 0.08,
+   "Color & grade": 0.08,
+   "Typography & captions": 0.06,
+   "Sound design & mix": 0.1,
+   "VO-illustration sync & entertainment": 0.08,
+   "Accuracy & sourcing": 0.1,
+   "Alaska authenticity & cultural respect": 0.06,
+   "Writing & post quality": 0.04
+  },
+  "weighted_total": 7.02,
+  "hard_blockers": [],
+  "concrete_defects": [
+   {
+    "axis": "Hook & retention",
+    "finding": "The opening shows a thin mint tick, not a bold mint line."
+   },
+   {
+    "axis": "Motion & animation craft",
+    "finding": "Strips for flag 2.8, map 3.7, band 3.8, rulebooks 3.8, chairs 4.1, pen 4.8, highlighter 2.9 percent."
+   },
+   {
+    "axis": "Composition & staging",
+    "finding": "Art occupies the middle third; ILLUSTRATION tag and half-covered window."
+   },
+   {
+    "axis": "VO-illustration sync & entertainment",
+    "finding": "25 VO gaps; long picture holds feel like a narrated slideshow."
+   }
+  ]
+ },
+ "named_open_defects": [
+  "mint line lands near 2s",
+  "pen travel small",
+  "held beats 3 to 7 percent change",
+  "thin ambient sound bed",
+  "ILLUSTRATION tag reads as placeholder",
+  "lower third dark"
+ ]
+}

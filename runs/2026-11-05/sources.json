@@ -1,0 +1,50 @@
+{
+ "run_date": "2026-11-05",
+ "title": "Who Held the Pen",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Opinion: Who wrote UA's AI plan? A chatbot did",
+   "outlet": "Anchorage Daily News (opinion)",
+   "url": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "claims": [
+    "c1",
+    "c2",
+    "c4",
+    "c10",
+    "c11"
+   ],
+   "used_in_film": true,
+   "note": "Opinion by UAA associate professors Gregory Hartley and Joel Potter, November 3rd."
+  },
+  {
+   "id": "s2",
+   "title": "AI policy coming to University of Alaska as student misuse increases",
+   "outlet": "Anchorage Daily News",
+   "url": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "claims": [
+    "c3",
+    "c5",
+    "c6",
+    "c9",
+    "c12"
+   ],
+   "used_in_film": true,
+   "note": "Tim Rockey, October 4th."
+  },
+  {
+   "id": "s3",
+   "title": "University of Alaska regents consider draft AI policy",
+   "outlet": "KTOO",
+   "url": "https://www.ktoo.org/2026/09/16/university-of-alaska-regents-consider-draft-ai-policy/",
+   "claims": [
+    "c1",
+    "c7",
+    "c8",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": "Jamie Diep, September 16th."
+  }
+ ]
+}
