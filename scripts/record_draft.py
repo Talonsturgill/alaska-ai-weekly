@@ -7,25 +7,74 @@ film in front of the owner, which is exactly the state the 2026-08-03 run stoppe
 The gate now asks for this receipt instead, so "delivered" means a draft exists rather
 than a file exists.
 
-Call this IMMEDIATELY after the Gmail connector returns a draft id.
+Call this after the Gmail connector returns a draft id and readback verifies DRAFT.
+For autonomous runs, write the verified result with the file tool and invoke:
+
+  python3 scripts/record_draft.py --input out/dispatch/draft_input.json
+
+The input needs only `draft-id` (plus optional `subject`, `square-url`, `vertical-url`). Leave the
+connected mailbox address OUT of the file and out of every shell command (2026-11-09): the two
+runs that stalled for days on a host permission prompt both had it in a Bash command.
+
+The legacy flag interface remains supported:
 
   python3 scripts/record_draft.py --draft-id <id> --to <connected-profile-address> \\
       --subject "<subject>" [--square-url URL] [--vertical-url URL]
 """
 import argparse, datetime as dt, json, os, sys
+from run_guard import fresh, StaleArtifactError
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT = os.path.join(ROOT, "out", "dispatch")
 
 
-def main():
+FIELDS = frozenset({'draft-id', 'to', 'subject', 'square-url', 'vertical-url'})
+
+
+def load_input(path):
+    """Read current-run connector results as data, never shell source."""
+    def unique(pairs):
+        values = {}
+        for key, value in pairs:
+            if key in values:
+                raise ValueError('duplicate field')
+            values[key] = value
+        return values
+    try:
+        with open(fresh(path)) as fh:
+            values = json.load(fh, object_pairs_hook=unique)
+        if not isinstance(values, dict) or set(values) - FIELDS:
+            raise ValueError('unknown field')
+        if 'draft-id' not in values:
+            raise ValueError('missing field')
+        if any(not isinstance(v, str) or not v.strip() or '\x00' in v for v in values.values()):
+            raise ValueError('invalid value')
+        return {key.replace('-', '_'): value for key, value in values.items()}
+    except (OSError, ValueError, StaleArtifactError):
+        raise ValueError('Draft receipt input is missing, stale, or invalid') from None
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--draft-id", required=True)
-    ap.add_argument("--to", required=True, help="Actual email address from the connected Gmail profile")
+    ap.add_argument("--input", help="Fresh JSON file of the verified connector draft result")
+    ap.add_argument("--draft-id")
+    ap.add_argument("--to", help="OPTIONAL and omitted by the routine: the connected mailbox address "
+                                 "never goes into a shell command or a scratch file")
     ap.add_argument("--subject", default="")
     ap.add_argument("--square-url", default="")
     ap.add_argument("--vertical-url", default="")
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
+    if a.input:
+        if any(getattr(a, key.replace('-', '_')) for key in FIELDS):
+            ap.error('--input cannot be combined with receipt flags')
+        try:
+            values = load_input(a.input)
+        except ValueError as exc:
+            ap.error(str(exc))
+        for key, value in values.items():
+            setattr(a, key, value)
+    if not a.draft_id:
+        ap.error('draft-id is required')
 
     if not a.draft_id.strip():
         print("refusing to write a receipt with no draft id", file=sys.stderr)
@@ -33,7 +82,7 @@ def main():
 
     receipt = {
         "draft_id": a.draft_id,
-        "to": a.to,
+        "to": (a.to or "").strip() or "connected-profile",
         "subject": a.subject,
         "created_at": dt.datetime.now().isoformat(timespec="seconds"),
         "square_url": a.square_url,

@@ -1,0 +1,24 @@
+{
+ "axis_scores": {
+  "Hook & retention": 6.8,
+  "Illustration craft & detail": 7.3,
+  "Motion & animation craft": 6.9,
+  "Composition & staging": 7.1,
+  "Color & grade": 7.0,
+  "Typography & captions": 6.7,
+  "Sound design & mix": 6.5,
+  "VO-illustration sync & entertainment": 6.8,
+  "Accuracy & sourcing": 8.0,
+  "Alaska authenticity & cultural respect": 7.0,
+  "Writing & post quality": 7.5
+ },
+ "weighted_total": 7.056,
+ "concrete_defects": [
+  "plate-over-panel beats at 3 to 4.7 percent motion",
+  "tab strip and chip small at phone size",
+  "same-recording labels tiny",
+  "dome strip identical on shots",
+  "credits card long"
+ ],
+ "hard_blockers": []
+}

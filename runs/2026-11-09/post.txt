@@ -1,0 +1,19 @@
+Judges can't make their own AI transcripts. The court plans one for every hearing.
+
+The rule is containment, and it leaves the risk in place. In a copy of the Alaska Court System's AI policy published by LawSites, version 1.2 from June, staff and judges may not independently use AI to make notes or transcripts of hearings. The policy's example is a clerk running Zoom's AI for a log note.
+
+The same policy says staff and judges will soon get AI transcripts of every hearing. They would come from CourtSmart, the court's recording system, and should be ready by fall. That is a plan, and nothing in the policy says the transcripts are live.
+
+The policy calls them AI generated and not the official court record, and says each will link to the official audio. They are restricted to internal court use and may not be shared with the public.
+
+A party to the case may use form TF-304 to request the official audio.
+
+The policy's stated worry is that a hearing can hold confidential information that couldn't be removed from an AI system, even if the hearing was later sealed.
+
+Keeping the text inside the court contains that worry and doesn't remove it. Close the side doors, open one front door the court controls, and label what comes out.
+
+The policy even notes that the court asked an AI tool to help format an early draft of the policy itself. Formatting only.
+
+Should a party get the AI transcript of their own hearing, and who should check it against the official audio first?
+
+#Alaska #ArtificialIntelligence #LegalTech #AIGovernance #CourtTech

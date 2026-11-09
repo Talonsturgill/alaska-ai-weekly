@@ -1,0 +1,67 @@
+{
+ "run_date": "2026-11-09",
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "note": "4 scouts, outlet indexes read, widened to 30 days"
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "note": "4 scouts, outlet indexes read, widened to 30 days"
+  },
+  {
+   "rung": "widened_window",
+   "attempted": true,
+   "note": "4 scouts, outlet indexes read, widened to 30 days"
+  },
+  {
+   "rung": "carried_leads",
+   "attempted": false,
+   "note": "4 scouts, outlet indexes read, widened to 30 days"
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": false,
+   "note": "4 scouts, outlet indexes read, widened to 30 days"
+  },
+  {
+   "rung": "follow_up",
+   "attempted": false,
+   "note": "4 scouts, outlet indexes read, widened to 30 days"
+  },
+  {
+   "rung": "pegged_explainer",
+   "attempted": false,
+   "note": "4 scouts, outlet indexes read, widened to 30 days"
+  }
+ ],
+ "candidates": [
+  {
+   "title": "DeepGreen underwater AI data center Cook Inlet",
+   "verdict": "runner-up, data center fatigue (6 in 30 days)"
+  },
+  {
+   "title": "Alaska Court System AI policy, AI hearing transcripts walled off from public",
+   "verdict": "LOCKED"
+  },
+  {
+   "title": "Petersburg data center moratorium",
+   "verdict": "rejected, data center fatigue"
+  },
+  {
+   "title": "UAF critical mineral engine AI exploration",
+   "verdict": "rejected, no deployed AI"
+  },
+  {
+   "title": "Anchorage surveillance ordinance",
+   "verdict": "rejected, overlaps Flock exclusion"
+  }
+ ],
+ "locked_story": {
+  "title": "Alaska Court System AI policy: AI transcripts of every hearing, kept inside the court",
+  "found_at_rung": "in_window_sweep",
+  "headline": "Alaska Court System AI policy: AI transcripts of every hearing, kept inside the court"
+ }
+}
