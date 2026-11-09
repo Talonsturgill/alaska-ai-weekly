@@ -129,6 +129,13 @@ document, not of the judge.
   and preflight's required `--top-only` row fail a film whose top quarter of the square is over
   45 percent low-information, a ceiling between the faulted films (48.7 to 56.6) and the clean ones
   (38.2 to 41.2). Texture does not clear it; a subject does.
+- **The set shows Alaska, in a thing drawn, not a word printed** (machine pass 2026-11-09). On 11-09
+  every seat wrote "generic courtroom, no Alaska cue" although a plate read ALASKA COURT SYSTEM, and
+  11-06 carried the axis on one map-pin beat. Put an Alaska thing in the set that stays across shots:
+  a window onto a named range, the state on a map on the wall, spruce outside, a bush plane, a ferry
+  schedule, the town the story happens in. `scripts/alaska_cue_check.py` (inside storyboard_check,
+  Gate 0A) fails a board none of whose beats DRAWS one and advises at one shot. Never Native imagery
+  as decoration; the cultural rules govern what is drawn.
 - **No overlay may occlude a character silhouette.** Compute it, do not eyeball it: the
   hard hat crown sits at `1180 - 454*scale` in scene space. A card that amputates the
   hero's head held for 2.8 seconds is the kind of thing that reads as broken, not as busy.
