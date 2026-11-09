@@ -1,0 +1,98 @@
+{
+  "window": ["2026-05-08", "2026-05-15"],
+  "merged_at": "2026-05-15",
+  "stories": [
+    {
+      "story_id": "stak-energy-north-slope",
+      "story_title": "Stak Energy North Slope AI Data Center — DNR Preliminary Lease Decision",
+      "summary": "On May 13-14, 2026, the Alaska Department of Natural Resources issued a preliminary best-interest decision to lease roughly one square mile of state land off the Dalton Highway (about 25 miles south of major North Slope infrastructure) to Stak Energy for a $500 million data center campus that could draw up to 3 gigawatts for AI and cloud computing. The facility would consume more than twice the natural gas urban Alaska burns for all electrical generation and heating combined; Stak has not secured a firm gas supply, faces a seven-year turbine backlog, and would require 7 million cubic yards of gravel (nearly double Willow's authorization). Public comment period runs through June 15; 1,500 construction jobs and 60 permanent positions projected; operations targeted for 2028. Founder grew up in Wasilla; Stak recently hired the governor's former natural resources commissioner.",
+      "why_it_matters": "This would be one of the largest AI data center proposals in the country and the largest filed in Alaska. It sidesteps the Cook Inlet gas crunch by going to the North Slope. The state's preliminary best-interest finding moved the project from speculation to an active 50-year lease application before the legislature passed any data center governance framework.",
+      "sources": [
+        {"url": "https://www.northernjournal.com/a-huge-data-center-could-rise-on-alaskas-north-slope/", "outlet": "Northern Journal", "pub_date": "2026-05-13", "author": "Nathaniel Herz"},
+        {"url": "https://alaskabeacon.com/2026/05/14/a-huge-data-center-could-rise-on-alaskas-north-slope/", "outlet": "Alaska Beacon", "pub_date": "2026-05-14", "author": "Nathaniel Herz"},
+        {"url": "https://www.countryjournal2020.com/2026/05/one-square-mile-half-billion-dollar.html", "outlet": "Copper River Country Journal", "pub_date": "2026-05-14", "author": "Nathaniel Herz"}
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": true,
+      "background_context": false
+    },
+    {
+      "story_id": "sb250-advances",
+      "story_title": "SB 250 Tobin Data-Center Bill Clears Senate L&C With 1 Do Pass and 3 No Recommendation, Placed on Senate Calendar",
+      "summary": "On May 13, 2026, the Alaska Senate Labor & Commerce Committee voted SB 250 out with one Do Pass and three No Recommendation votes. The bill was placed on the Senate calendar on May 15, five days before the constitutional May 20 adjournment. SB 250, sponsored by Sen. Löki Tobin, would require utilities to recover data-center service costs exclusively from those data centers (not from other ratepayers) and would require legally binding community benefit agreements before data centers can operate.",
+      "why_it_matters": "SB 250 is the only consumer-protection guardrail moving in the legislature with the Air Force May 29 deadline pending and multiple North Slope projects in play. The narrow committee endorsement (only one member willing to attach a Do Pass) signals fragile support heading into the floor.",
+      "sources": [
+        {"url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=SB+250", "outlet": "Alaska State Legislature", "pub_date": "2026-05-15", "author": "official record"},
+        {"url": "https://www.billtrack50.com/billdetail/1974439", "outlet": "BillTrack50", "pub_date": "2026-05-15", "author": "tracking service"}
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": true,
+      "background_context": false
+    },
+    {
+      "story_id": "hb217-senate-action",
+      "story_title": "HB 217 AV Bill Clears Senate Transportation 0-4 No Recommendation, Held in Senate State Affairs",
+      "summary": "On May 12, 2026, the Alaska Senate Transportation Committee voted HB 217 out with four No Recommendation votes. The bill was referred to Senate State Affairs, which heard and held it on May 14. HB 217, sponsored by Rep. Ashley Carrick, requires a human safety operator be physically present in any commercial autonomous vehicle. Teamsters Local 959 supports the bill; the R Street Institute and the Autonomous Vehicle Industry Association testified in opposition.",
+      "why_it_matters": "If passed, HB 217 would be one of the most restrictive commercial AV laws in the U.S. The four no-recommendation votes in Transportation signal real legislative skepticism. With State Affairs holding the bill on May 14, its path to a floor vote before May 20 is uncertain.",
+      "sources": [
+        {"url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=HB+217", "outlet": "Alaska State Legislature", "pub_date": "2026-05-14", "author": "official record"},
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-04/alaska-house-advances-bill-regulating-autonomous-vehicles", "outlet": "Alaska Public Media", "pub_date": "2026-05-04", "author": "APM staff"},
+        {"url": "https://www.rstreet.org/outreach/r-street-testimony-in-opposition-to-ak-house-bill-217/", "outlet": "R Street Institute", "pub_date": "2026-05-12", "author": "Steven Greenhut"}
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": true,
+      "background_context": false
+    },
+    {
+      "story_id": "sb111-right-to-repair",
+      "story_title": "Alaska Senate Passes SB 111 Right to Repair 15-5; House L&C Advances",
+      "summary": "On May 11, 2026, the Alaska Senate passed SB 111, the Consumer Digital Right to Repair Act, by 15-5. The House Labor & Commerce Committee moved the bill out on May 14. Sponsored by Sen. Forrest Dunbar, the bill would require electronics manufacturers to provide parts, tools, and documentation to Alaskan consumers and independent repair shops on the same terms as authorized dealers. The bill covers phones, laptops, security cameras, and baby monitors; vehicles, snowmachines, farm equipment, and medical devices are explicitly excluded.",
+      "why_it_matters": "Alaska's geographic isolation makes authorized service centers expensive and far away. Passage would make Alaska the 13th right-to-repair state. The exclusion of farm and off-road equipment shows the cap on the win.",
+      "sources": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-11/alaska-senate-passed-bill-seeks-to-assert-right-to-repair-for-consumer-electronics", "outlet": "Alaska Public Media", "pub_date": "2026-05-11", "author": "APM staff"},
+        {"url": "https://alaskasenate.org/press/051126_press_release.htm", "outlet": "Alaska Senate (official)", "pub_date": "2026-05-11", "author": "Senate Communications"},
+        {"url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=SB+111", "outlet": "Alaska State Legislature", "pub_date": "2026-05-14", "author": "official record"}
+      ],
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": true,
+      "background_context": false
+    },
+    {
+      "story_id": "north-slope-power-cole",
+      "story_title": "Dermot Cole: North Slope Power / 21CU Plant and Crum-I Squared Capital Pension Investment Connection",
+      "summary": "On May 12, 2026, journalist Dermot Cole reported that the North Slope Borough and Twenty First Century Utilities are pursuing what they describe as the world's largest natural gas power plant (3 GW first phase, expandable to 10 GW) near Prudhoe Bay to power colocated AI data centers and potentially transmit electricity south to the Railbelt. Cole flagged that I Squared Capital, which acquired Twenty First Century Utilities in 2019, was one of three firms that former Revenue Commissioner Adam Crum directed $225 million in state pension investments toward before leaving office.",
+      "why_it_matters": "This is a separate, larger-scale project from Stak Energy and contemplates not just colocation but exporting Slope-generated power south to the Railbelt. The Crum-pension thread, if pursued, could affect whether state pension or borough funds flow into the project.",
+      "sources": [
+        {"url": "https://www.dermotcole.com/reportingfromalaska/2026/5/12/north-slope-maps-plan-for-largest-natural-gas-power-plant-in-the-world", "outlet": "Reporting from Alaska (Dermot Cole)", "pub_date": "2026-05-12", "author": "Dermot Cole"}
+      ],
+      "confidence": "medium",
+      "is_in_window": true,
+      "primary_source": false,
+      "background_context": false
+    },
+    {
+      "story_id": "hb239-ai-csam",
+      "story_title": "HB 239 Omnibus Crime Bill With AI-Generated CSAM Felony Provisions Heard in Senate Finance, Held",
+      "summary": "On May 11, 2026, the Alaska Senate Finance Committee heard the 10-bill omnibus crime package HB 239 but held it without a vote. The package contains provisions, originally from HB 47 (which the House passed 39-0 in February), criminalizing AI-generated child sexual abuse material as a Class B felony, upgradeable to Class A for repeat offenses.",
+      "why_it_matters": "Alaska currently has no specific state criminal statute for AI-generated CSAM. Packaging the provision in an omnibus makes its survival contingent on the broader bill clearing Senate Finance, the floor, and any conference before May 20.",
+      "sources": [
+        {"url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=HB+239", "outlet": "Alaska State Legislature", "pub_date": "2026-05-11", "author": "official record"},
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-12/its-bill-passing-season-heres-what-to-expect-in-the-final-days-of-the-alaska-legislatures-session", "outlet": "Alaska Public Media", "pub_date": "2026-05-12", "author": "APM staff"}
+      ],
+      "confidence": "medium",
+      "is_in_window": true,
+      "primary_source": true,
+      "background_context": false
+    }
+  ],
+  "background_context_only": [
+    {"story_id": "matsu-coal-letter", "note": "May 12 ADN reader letter opposing Mat-Su / Terra Energy coal-fired data center plant; useful background but reader letter, not new news"},
+    {"story_id": "ansep-nome", "note": "ANSEP Nome Acceleration Academy completed inaugural year May 14; on-beat for Alaska Native education but no AI component"},
+    {"story_id": "neh-doge-ruling", "note": "May 7 McMahon ruling on NEH/DOGE ChatGPT grant terminations was the lead frame of the May 11 post, dropping to avoid repeat"},
+    {"story_id": "uaf-diu-mou", "note": "UAF-DIU MOU signed May 8 — covered in last week's post, dropping to avoid repeat"}
+  ]
+}
