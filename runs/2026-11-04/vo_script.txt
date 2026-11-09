@@ -1,0 +1,12 @@
+An A I just found roughly three times as many earthquakes off the Alaska Peninsula, and it's easy to give the A I all the credit. The paper says otherwise.
+Meet Bunk, a seafloor seismometer. Starting in twenty eighteen, seventy-five like him sat in the mud off the Alaska Peninsula, with thirty more on land.
+Analysts had checked by hand the quakes those sensors recorded. Then Barcheck of Cornell and Ruppert of the U S G S, the paper's authors, built on that catalog.
+They took a global deep-learning model, E Q Transformer, that finds quakes and marks when their waves arrive, and fine-tuned it on those hand-checked picks.
+Then they tried several training tricks. A different starting model. Filters. Different splits. None was substantially better.
+What helped was the Alaska data itself. Then they ran it across the continuous recordings, hunting small quakes.
+The result is roughly three times as many earthquakes as the analyst-checked catalog, according to the authors, and the smallest quake it catches reliably dropped by one tenth to four tenths of a magnitude.
+The biggest gains came far offshore and in the outer rise, the bulge where the ocean plate bends before it dives.
+So are the new ones real? The authors say the map of where quakes cluster mirrors earlier observations.
+And the limit. This was one temporary experiment. Roughly three times says nothing about whether the ground shook more. It only says how much more got heard.
+So who earned it? Not a clever trick. Local data improved the model, and that data came from seafloor ears and people with pencils.
+The A I learned Alaska from Alaska's own ears. So will Alaska put ears back on the seafloor?

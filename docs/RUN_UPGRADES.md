@@ -3971,6 +3971,10 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - In-run fixes: VO retimed after the c17 and c19 wording edits, mix LRA 5.3 to 6.2, plate stacking, bone-ground band legibility, paper-wipe exit bug, duplicate plates, overlay Bands and Atmos layer.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-02), six items.
 
+## 2026-11-04 "The Ears Did the Work" (Barcheck and Ruppert ML earthquake catalog, Alaska Peninsula)
+- Shipped: 114 s film, panel median 7.14 against 7.0 (7.056, 7.14, 7.23), no hard blockers, six graded cuts for the standing seat (6.33, 6.58, 6.68, 6.80, 7.02, 7.06). Caption 8.30 against 8.5 on its fifth and final round, zero hard fails, shipped flagged below the bar. Abstract-only story (paper body 403), every figure attributed to the authors, no absolute counts.
+- In-run fixes: Gate 0E cold-read rewrites of the VO, board rebuilt after three critics, claim obligations (fine-tuned, scope 2018 to 2019, no 'more ears' comparison, no causal plate for the ears), plates to literal lines, foreground sensor layer, chip moved, hook banner and Sheet draw order, HeldProp idle, scanning bars, mint sonar rings.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-04), eight items.
 ## 2026-11-06 "Who Wrote the Rules" (University of Alaska AI Engaged plan, op-ed fight over Claude drafting it)
 - Shipped: 142 s film, panel median 7.01 against 7.0 (7.34, 7.01, 6.88), no hard blockers, a thin pass on the thirteenth graded cut. Caption 8.59 against 8.5 on its fourth round, zero hard fails. Regents vote outcome unobtainable (alaska.edu 503), so the film makes no claim about it.
 - In-run fixes: quote card plate overlap and sheet-edge clip on shot 6 (two judges flagged it, one as a hard blocker), room tone raised 3 dB inside its self-test band, characters upgraded with breath, hair and glasses, dot field drawn to scale.
@@ -3984,3 +3988,12 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: Petersburg Borough Assembly data center pause (KFSK, PMPL FAQ), hero ReserveBar as Grid, throughline a wooden height chart. Panel median 7.0 (6.82, 7.00, 7.26) against a 7.0 bar after six cuts, audio gate LRA 7.2. Caption 8.23 at the five-round cap, below the 8.5 bar, disclosed.
 - In-run fixes: VO resynthesised four times after critic findings (utility FAQ framing, plan tense, spoken number, line 10), board rewritten twice, World scale wrapper, top and bottom atmosphere, lock states without a pass colour, mix bed contrast.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-07), five items, three repeat offenders.
+## 2026-11-09 Who Holds the Transcript
+- Shipped: Alaska Court System AI policy v1.2 (copy published by LawSites), the ban on DIY AI hearing transcripts against the court's own planned CourtSmart transcripts, the ink drop for the sealed-hearing worry. Hero Reels (new copper recorder), throughline the transcript page. Panel median 7.13 (7.13, 7.20, 7.13) against the 7.0 bar on the shipping bytes, caption 8.42 after the five round cap.
+- In-run fixes: three Gate 0 rounds (palette recolor, key plant, never-live banner and dashed plan treatment), source gates (text_fit, label_footprint, held_plan) cleared before the render, SFX schedule recast to 15 kinds and under 18% per kind, VO re-synth for wording (the party can request the audio, no searchable, the policy calls them AI generated).
+- Queued: held-figure motion (repeat 4), composition and hero scale (repeat 3), an Alaska cue, editor check before the first synth, honesty strap contrast.
+
+## 2026-11-09 weekly machine pass
+- Shipped: held figures perform on their beats (engine advance lib/figureidle.tsx, IdleFigure with beat cues and StrikeProp, measured on FigureLook) and figure_rig_check as a make_cut source gate; Gate 0A fails a board that never draws Alaska (alaska_cue_check inside storyboard_check); Gate 0F, the editor reads the VO script against claims.json before the first synth, enforced in vo_synth_gemini.py.
+- Engine advance: lib/figureidle.tsx (IdleFigure, figureIdle, headTransform, StrikeProp, strike).
+- Escalated: composition and hero scale (repeat 3; the top-band measure read 11-09 at 33.7 percent against a 45 ceiling while every seat called the top empty, and nothing measures hero scale yet), text-fit-local-coordinate-components (second escalation, not reproduced).

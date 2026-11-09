@@ -3149,6 +3149,49 @@ dispatch_history:
     light_story: night-practical
     metaphor: a gunmetal counter that clicks every three seconds and a consent gate
       that waits for a yes, with a nickel key fob carrying ENROLLED? to YOUR CALL
+- date: '2026-11-04'
+  topic: Machine learning roughly triples the earthquake count along the Alaska Peninsula
+    subduction zone (Barcheck and Ruppert, Earth and Space Science)
+  slug: dispatch-2026-11-04-the-ears-did-the-work
+  key_entities:
+  - Barcheck
+  - Ruppert
+  - Cornell
+  - USGS
+  - EQTransformer
+  - AACSE
+  - Alaska Peninsula
+  - Earth and Space Science
+  - outer rise
+  - Kodiak
+  - Shumagin Islands
+  archetype: stage and seabed explainer with a catalog Sheet throughline
+  palette: oxblood seafloor and stage, glowing mint seafloor ears, bright yellow machine
+    dots, chalk human-checked dots and coral limit plates
+  voice: Gemini Sulafat
+  stance: curious
+  angle: 'The credit belongs to the data, not the algorithm: no training trick won,
+    and Alaska''s own human-checked earthquake picks, recorded by 75 seafloor and
+    30 land seismometers, taught an existing AI picker to find roughly three times
+    as many quakes, most of the gain far offshore.'
+  hero: ListeningMooring
+  cast:
+  - ListeningMooring
+  - ServerMachine
+  - Halibut
+  - HeldProp
+  composition:
+    pov: exploded-diagram
+    motion_vector: horizontal-traverse
+    hero_treatment: multiplicity-swarm
+    layout: stacked-layers
+    register: editorial-schematic
+    palette: oxblood seafloor and stage, glowing mint seafloor ears, bright yellow
+      machine dots, chalk human-checked dots and coral limit plates
+    camera_strategy: locked-drift
+    light_story: dusk-silhouette
+    metaphor: a seafloor ear and a hand-checked catalog sheet that the algorithm's
+      spotlight briefly borrows, then hands back
 - date: '2026-11-06'
   topic: University of Alaska AI Engaged plan, op-ed fight over Claude drafting it,
     one disclosure line
@@ -3224,3 +3267,52 @@ dispatch_history:
     light_story: overcast-soft
     metaphor: a glass gauge measures a mystery crate against a growth chart on a rainy
       dock while a town council decides how tall is too tall
+- date: '2026-11-09'
+  topic: Alaska Court System AI policy v1.2 bans DIY AI hearing transcripts while
+    the court plans its own internal CourtSmart AI transcripts, expected by fall,
+    labeled not the official record
+  slug: dispatch-2026-11-09-who-holds-the-transcript
+  key_entities:
+  - Alaska Court System
+  - CourtSmart
+  - LawSites
+  - LawNext
+  - Westlaw Precision
+  - TF-304
+  - Zoom AI
+  - judicial AI policy
+  - hearing transcripts
+  archetype: instrument-as-subject, a recorder with a face behind a counter of glass
+  palette: oxblood wall panels, walnut wood, ivory sheets, brass hardware, a copper
+    reel recorder and one cobalt ink drop
+  voice: gemini:Sulafat
+  stance: mixed
+  angle: Alaska's court isn't banning AI transcripts, it's deciding who holds them,
+    and keeping the text inside contains the confidentiality worry without removing
+    it
+  hero: Reels
+  cast:
+  - Reels
+  - Tagalong
+  - Person
+  - Binder
+  - GlassPane
+  - Tumbler
+  - Cassette
+  - Form
+  - Door
+  - Key
+  - Page
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: horizontal-traverse
+    hero_treatment: instrument-as-subject
+    layout: fullbleed-split
+    register: tactile-collage
+    palette: oxblood wall panels, walnut wood, ivory sheets, brass hardware, a copper
+      reel recorder and one cobalt ink drop
+    camera_strategy: locked-drift
+    light_story: night-practical
+    metaphor: a court builds one front door for its own AI transcripts and bricks
+      up every side door, and a drop of ink in water shows why a sealed hearing can't
+      be taken back out

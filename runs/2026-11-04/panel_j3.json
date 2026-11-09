@@ -1,0 +1,22 @@
+{
+ "axis_scores": {
+  "Hook & retention": 7.5,
+  "Illustration craft & detail": 7.0,
+  "Motion & animation craft": 6.5,
+  "Composition & staging": 7.5,
+  "Color & grade": 7.5,
+  "Typography & captions": 7.5,
+  "Sound design & mix": 7.0,
+  "VO-illustration sync & entertainment": 7.0,
+  "Accuracy & sourcing": 8.0,
+  "Alaska authenticity & cultural respect": 7.0,
+  "Writing & post quality": 7.5
+ },
+ "weighted_total": 7.23,
+ "concrete_defects": [
+  "banner still crosses the Robot's eyes while fading",
+  "shot 10 first frame near empty",
+  "held figures lack idle life"
+ ],
+ "hard_blockers": []
+}

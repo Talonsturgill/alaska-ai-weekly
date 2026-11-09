@@ -1,0 +1,46 @@
+{
+ "criteria": [
+  {
+   "name": "Hook / scroll-stop",
+   "score": 8.4,
+   "weight": 0.2
+  },
+  {
+   "name": "Point of view / take",
+   "score": 8.5,
+   "weight": 0.18
+  },
+  {
+   "name": "Substance & specificity",
+   "score": 8.4,
+   "weight": 0.16
+  },
+  {
+   "name": "Readability & restraint",
+   "score": 8.3,
+   "weight": 0.12
+  },
+  {
+   "name": "Engagement design (CTA + comment-bait)",
+   "score": 8.6,
+   "weight": 0.12
+  },
+  {
+   "name": "Brand voice & accuracy",
+   "score": 8.4,
+   "weight": 0.12
+  },
+  {
+   "name": "Hashtag craft",
+   "score": 8.3,
+   "weight": 0.1
+  }
+ ],
+ "weighted_total": 8.42,
+ "threshold": 8.5,
+ "ship": false,
+ "hard_fails": [],
+ "weakest_criterion": "Readability & restraint",
+ "round": 5,
+ "note": "Below the 8.5 bar at the five round cap with zero hard fails, shipped as the best round per the runbook."
+}
