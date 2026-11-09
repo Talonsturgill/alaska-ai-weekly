@@ -1,0 +1,382 @@
+{
+ "run_date": "2026-11-07",
+ "fact_check_verdict": "Publish as a live local process story. The Nov 2 reading outcome is unreported. No source says what Petersburg's facility would compute; AI appears only in the original vendor's own marketing.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "On November second, Petersburg's Assembly took up a temporary pause on data center permits.",
+   "on_screen": "NOV 2 \u00b7 ASSEMBLY TAKES UP A PAUSE",
+   "source": "https://www.kfsk.org/2026/11/02/petersburg-borough-assembly-to-discuss-data-center-moratorium-on-monday/",
+   "requires": [
+    "KFSK previewed the meeting. The outcome was not reported as of November 7th. Never say it passed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified",
+   "spoken": "The proposed pause would run through September of next year.",
+   "on_screen": "THROUGH SEPTEMBER 2027",
+   "source": "https://www.kfsk.org/2026/11/02/petersburg-borough-assembly-to-discuss-data-center-moratorium-on-monday/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "It targets data centers that would exceed grid capacity, rely on generators, or use uncontained cooling.",
+   "on_screen": "OVER GRID CAPACITY \u00b7 GENERATORS \u00b7 UNCONTAINED COOLING",
+   "source": "https://www.kfsk.org/2026/11/02/petersburg-borough-assembly-to-discuss-data-center-moratorium-on-monday/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified",
+   "spoken": "November second was only the first of three readings.",
+   "on_screen": "FIRST OF THREE READINGS",
+   "source": "https://www.kfsk.org/2026/11/02/petersburg-borough-assembly-to-discuss-data-center-moratorium-on-monday/",
+   "requires": [
+    "Need two more readings to become law."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified",
+   "spoken": "Petersburg has no data center today.",
+   "on_screen": "DATA CENTERS IN PETERSBURG TODAY \u00b7 0",
+   "source": "https://www.kfsk.org/2026/11/02/petersburg-borough-assembly-to-discuss-data-center-moratorium-on-monday/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified",
+   "spoken": "In September the planning commission asked for a one year pause to study the impacts.",
+   "on_screen": "PLANNERS ASKED \u00b7 1 YEAR",
+   "source": "https://www.kfsk.org/2026/09/21/petersburg-borough-assembly-to-consider-data-center-moratorium-recommendation-tonight/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified",
+   "spoken": "On September twenty first the Assembly tied three to three on it, so it failed.",
+   "on_screen": "SEPT 21 \u00b7 3 TO 3 \u00b7 FAILED",
+   "source": "https://www.kfsk.org/2026/09/28/data-center-moratorium-proposal-fails-in-petersburg-assembly-stalemate/",
+   "requires": [
+    "The Assembly tied, not the Planning Commission."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified",
+   "spoken": "Mayor Bob Lynn said he couldn't support a moratorium.",
+   "on_screen": "\"I CAN'T SUPPORT A MORATORIUM.\" \u00b7 MAYOR BOB LYNN",
+   "source": "https://www.kfsk.org/2026/09/28/data-center-moratorium-proposal-fails-in-petersburg-assembly-stalemate/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified",
+   "spoken": "Vice Mayor Jeigh Stanton Gregor called it a solution in search of a problem.",
+   "on_screen": "\"A SOLUTION IN SEARCH OF A PROBLEM\" \u00b7 JEIGH STANTON GREGOR",
+   "source": "https://www.kfsk.org/2026/09/28/data-center-moratorium-proposal-fails-in-petersburg-assembly-stalemate/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "Rob Schwartz said pause it a little bit.",
+   "on_screen": "\"PAUSE IT A LITTLE BIT.\" \u00b7 ROB SCHWARTZ",
+   "source": "https://www.kfsk.org/2026/09/28/data-center-moratorium-proposal-fails-in-petersburg-assembly-stalemate/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "On October fifth the Assembly unanimously approved a nine month pause to be drafted.",
+   "on_screen": "OCT 5 \u00b7 UNANIMOUS \u00b7 9 MONTHS",
+   "source": "https://www.kfsk.org/2026/10/16/petersburg-assembly-initiates-work-on-potential-moratorium-zoning-rules-for-data-centers/",
+   "requires": [
+    "Cite October 16th article."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified",
+   "spoken": "Stanton Gregor said it had been a pretty divisive issue and he'd love to find consensus.",
+   "on_screen": "\"I'D LOVE TO FIND CONSENSUS.\" \u00b7 STANTON GREGOR",
+   "source": "https://www.kfsk.org/2026/10/16/petersburg-assembly-initiates-work-on-potential-moratorium-zoning-rules-for-data-centers/",
+   "requires": [
+    "Quote is from the October 16th article."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified",
+   "spoken": "The Assembly also unanimously started work on zoning rules.",
+   "on_screen": "ZONING RULES \u00b7 ALSO UNANIMOUS",
+   "source": "https://www.kfsk.org/2026/10/16/petersburg-assembly-initiates-work-on-potential-moratorium-zoning-rules-for-data-centers/",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified",
+   "spoken": "The site is the old Ocean Beauty cannery.",
+   "on_screen": "SITE \u00b7 FORMER OCEAN BEAUTY CANNERY",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified",
+   "spoken": "A private company, Mazzella Alaska, owns the cannery's two megawatt transformer.",
+   "on_screen": "2 MW TRANSFORMER \u00b7 PRIVATELY OWNED",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified",
+   "spoken": "The building would be fifteen hundred to two thousand square feet.",
+   "on_screen": "1,500 TO 2,000 SQ FT",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified",
+   "spoken": "The first plan, from a vendor called Greensparc, was one megawatt using eight and a half million kilowatt hours a year.",
+   "on_screen": "1 MW \u00b7 8,500,000 kWh A YEAR",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's April FAQ. Greensparc deal later did not finalize."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified",
+   "spoken": "At the full two megawatts, seventeen million kilowatt hours a year.",
+   "on_screen": "2 MW \u00b7 17,000,000 kWh A YEAR",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified",
+   "spoken": "The whole cannery used one million sixty four thousand kilowatt hours in 2015.",
+   "on_screen": "CANNERY IN 2015 \u00b7 1,064,400 kWh",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ. Do not say peak."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified",
+   "spoken": "So the full build would use about sixteen times the cannery.",
+   "on_screen": "ABOUT 16X THE CANNERY",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Derived from the FAQ figures c18 and c19, 15.97."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified",
+   "spoken": "The utility says residential power costs twelve point two cents a kilowatt hour.",
+   "on_screen": "RESIDENTIAL \u00b7 12.2 CENTS",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified",
+   "spoken": "The utility puts the Alaska average near thirty cents.",
+   "on_screen": "ALASKA AVERAGE \u00b7 NEAR 30 CENTS (UTILITY FIGURE)",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ. Not cross-checked against EIA."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified",
+   "spoken": "The utility estimates over two million dollars a year in revenue.",
+   "on_screen": "OVER $2M A YEAR \u00b7 UTILITY ESTIMATE",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ. KFSK May 1st reported one to two million."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified",
+   "spoken": "The utility says the data center would lessen planned rate increases.",
+   "on_screen": "UTILITY \u00b7 SMALLER RATE INCREASES",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified",
+   "spoken": "The plan had no diesel generators on site, only batteries for controlled shutdowns.",
+   "on_screen": "NO DIESEL GENERATORS ON SITE \u00b7 BATTERIES",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ. Town grid has diesel backup."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified",
+   "spoken": "Cooling was to be a closed loop, like a car radiator.",
+   "on_screen": "CLOSED LOOP COOLING",
+   "source": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "requires": [
+    "Per the utility's FAQ."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified",
+   "spoken": "The Greensparc deal didn't finalize, but the owner is still pursuing a small project.",
+   "on_screen": "GREENSPARC DEAL \u00b7 NOT FINALIZED",
+   "source": "https://www.kfsk.org/2026/09/28/data-center-moratorium-proposal-fails-in-petersburg-assembly-stalemate/",
+   "requires": [
+    "Per KFSK. No new partner named."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified",
+   "spoken": "Greensparc's own website markets high density AI compute.",
+   "on_screen": "VENDOR PITCH \u00b7 HIGH-DENSITY AI COMPUTE",
+   "source": "https://www.greensparc.com/",
+   "requires": [
+    "Vendor marketing only. Not a statement about what Petersburg would run. No source says what Petersburg would compute."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

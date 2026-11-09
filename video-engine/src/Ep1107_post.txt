@@ -1,0 +1,60 @@
+const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11};
+const SHOT_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
+  const f = useCurrentFrame();
+  const b = (id: number) => {
+    const x = beats.find((y) => y.id === (IDS[id] ?? id));
+    return x ? Math.round(x.at * 30) - from : 0;
+  };
+  const bt = (id: number) => {
+    const x = beats.find((y) => y.id === (IDS[id] ?? id));
+    return x ? Math.round(x.at * 30) : 0;
+  };
+  const Comp = SHOTS[n];
+  const p = {f, from, dur, b, kicks, bt};
+  return Comp ? <Comp p={p} /> : null;
+};
+
+const captions = z.array(z.object({t: z.number(), d: z.number(), text: z.string()}));
+
+export const ep1107Schema = z.object({
+  captions: captions.default([]),
+  scenes: z.array(z.object({from: z.number(), dur: z.number()})).optional(),
+  total: z.number().optional(),
+  beats: z.array(z.object({id: z.number(), at: z.number(), label: z.string()})).optional(),
+  kicks: z.array(z.number()).optional(),
+  mouth: z.array(z.number()).optional(),
+  accents: z.array(z.object({frame: z.number(), word: z.string(), energy: z.number().optional(), lineIdx: z.number().optional()})).optional(),
+  credits: z.object({music: z.string(), sources: z.array(z.string()), site: z.string(), seconds: z.number(), frames: z.number()}).optional(),
+});
+type Props = z.infer<typeof ep1107Schema>;
+
+const FontStyles = () => (
+  <style>{`@font-face{font-family:Fraunces;src:url('${staticFile('fonts/Fraunces-Var.ttf')}') format('truetype');font-weight:100 900;font-display:block;}@font-face{font-family:'JetBrains Mono';src:url('${staticFile('fonts/JetBrainsMono-Bold.ttf')}') format('truetype');font-weight:700 800;font-display:block;}`}</style>
+);
+
+export const Ep1107: React.FC<Props> = ({captions: cues = [], scenes, beats, kicks = [], credits, mouth = [], accents = []}) => {
+  const starts = [0, 8.14, 22.16, 30.98, 44.68, 56.16, 66.7, 73.42, 89.68, 100.6, 107.6, 126.1].map((x) => Math.round(x * 30));
+  const slots = scenes ?? starts.slice(0, -1).map((from, i) => ({from, dur: starts[i + 1] - from}));
+  const end = slots[slots.length - 1].from + slots[slots.length - 1].dur;
+  const bs = beats ?? [];
+  return (
+    <VoiceProvider data={{fps: 30, mouth, accents}}>
+      <AbsoluteFill style={{backgroundColor: C.sky}}>
+        <FontStyles />
+        {slots.map((s, i) => (
+          <Sequence key={i} from={s.from} durationInFrames={s.dur} name={`S${i + 1}`}>
+            <Shot n={SHOT_ORDER[i]} from={s.from} dur={s.dur} beats={bs} kicks={kicks} />
+          </Sequence>
+        ))}
+                <Sequence from={0} durationInFrames={end}><CaptionBar cues={cues} bar="#14222A" ink="#F3EEDD" /></Sequence>
+        {credits && (
+          <Sequence name="CREDITS" from={end} durationInFrames={credits.frames}>
+            <EndCredits data={credits} durationInFrames={credits.frames} />
+          </Sequence>
+        )}
+      </AbsoluteFill>
+    </VoiceProvider>
+  );
+};

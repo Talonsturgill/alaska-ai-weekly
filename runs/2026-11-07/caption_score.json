@@ -1,0 +1,23 @@
+{
+ "final_round": 5,
+ "weighted_total": 8.23,
+ "threshold": 8.5,
+ "ship": false,
+ "note": "At the five-round cap with zero hard fails, best text shipped below the bar",
+ "criteria": {
+  "Hook / scroll-stop": 8,
+  "Point of view / take": 8.5,
+  "Substance & specificity": 8.5,
+  "Readability & restraint": 8,
+  "Engagement design": 8,
+  "Brand voice & accuracy": 8.5,
+  "Hashtag craft": 8
+ },
+ "rounds": [
+  8.03,
+  7.93,
+  8.2,
+  8.23,
+  8.23
+ ]
+}

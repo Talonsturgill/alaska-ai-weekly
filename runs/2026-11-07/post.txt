@@ -1,0 +1,24 @@
+Petersburg has zero data centers and a draft pause on them that needs three readings.
+Rules written for the load work whatever the racks run. None of the draft's tests asks what the machine runs.
+
+Per the utility's FAQ, Mazzella Alaska owns a 2 MW transformer at the old Ocean Beauty cannery. It's a private company. KFSK reports its deal with a vendor called Greensparc didn't finalize. The owner is still pursuing a small project.
+
+The utility's FAQ says the whole cannery used 1,064,400 kilowatt hours in 2015.
+
+Greensparc's plan started at 1 MW and 8.5 million kilowatt hours a year. The full 2 MW build would use 17 million a year. That is about sixteen times the cannery's 2015 use.
+
+On September 21st the Assembly tied three to three on a one year pause. It failed. Vice Mayor Jeigh Stanton Gregor called that pause "a solution in search of a problem."
+
+On October 5th it voted unanimously to draft a nine month pause. November 2nd was the first of three readings. No outcome had been reported as of November 7th.
+
+The draft targets data centers that would exceed grid capacity, rely on generators or use uncontained cooling.
+
+The other side comes from the utility's April FAQ. It says residential power costs 12.2 cents a kilowatt hour against a state average it puts near 30 cents. It estimates over $2 million a year in revenue and smaller rate increases. The Greensparc plan it describes had no diesel generators on site, only batteries and closed loop cooling. The town grid itself has diesel backup.
+
+That plan never finalized. Grid capacity is the test the record doesn't settle.
+
+Greensparc's website pitches AI compute. Nothing in the record says what Petersburg's building would run.
+
+What case would make what a machine computes change a zoning answer?
+
+#Alaska #DataCenters #EnergyPolicy #ArtificialIntelligence #Petersburg

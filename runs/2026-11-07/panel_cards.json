@@ -1,0 +1,81 @@
+{
+ "round": "r6 final",
+ "bar": 7.0,
+ "median": 7.0,
+ "j1": {
+  "weighted_total": 6.82,
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.0,
+   "Typography & captions": 6.5,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 6.5,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.0
+  },
+  "concrete_defects": [
+   "bottom third empty water band",
+   "thin motion on held beats",
+   "cold open lacks a scroll-stopping first second",
+   "figures plainer than props"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "weighted_total": 7.0,
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.0,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "concrete_defects": [
+   "calm hook",
+   "low motion on held figures",
+   "dead lower third",
+   "ambience masked under music"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "weighted_total": 7.26,
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 7.3,
+   "Motion & animation craft": 6.7,
+   "Composition & staging": 6.9,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.8,
+   "Accuracy & sourcing": 8.2,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 7.8
+  },
+  "concrete_defects": [
+   "slow low-stakes hook and long runtime",
+   "held figures read static",
+   "empty lower third",
+   "credits source text small"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "Cold open lacks a scroll-stopping first second",
+  "Held figures with low idle motion",
+  "Empty lower third of the frame",
+  "Figures plainer than props",
+  "Ambience masked under music"
+ ]
+}

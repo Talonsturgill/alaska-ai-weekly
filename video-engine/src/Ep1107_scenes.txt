@@ -1,0 +1,462 @@
+
+const GenStack: React.FC<{x: number; y: number; s?: number; cold?: number; f: number; walk?: number}> = ({x, y, s = 1, cold = 0, f, walk = 0}) => (
+  <g transform={`translate(${x} ${y - Math.abs(Math.sin(walk * 0.5)) * 6 * (walk ? 1 : 0)}) scale(${s})`}>
+    <Shadow x={0} y={4} w={80} />
+    <rect x={-52} y={-120} width={104} height={120} rx={10} fill={cold > 0.5 ? '#9FB4BB' : C.steel} stroke={C.ink} strokeWidth={7} />
+    <rect x={-34} y={-190} width={68} height={72} rx={8} fill={cold > 0.5 ? '#B8CBD2' : '#7E8C97'} stroke={C.ink} strokeWidth={6} />
+    <path d="M -44,-190 Q 0,-232 44,-190 Z" fill={C.fluid} stroke={C.ink} strokeWidth={6} />
+    <rect x={-50} y={-194} width={100} height={12} rx={5} fill={C.fluid} stroke={C.ink} strokeWidth={5} />
+    <circle cx={-14} cy={-160} r={7} fill="#fff" stroke={C.ink} strokeWidth={3} /><circle cx={14} cy={-160} r={7} fill="#fff" stroke={C.ink} strokeWidth={3} />
+    <circle cx={-12} cy={-159} r={3} fill={C.ink} /><circle cx={16} cy={-159} r={3} fill={C.ink} />
+    <line x1={-52} y1={-80} x2={52} y2={-80} stroke={C.ink} strokeWidth={4} opacity={0.5} />
+    {cold < 0.5 && Array.from({length: 3}).map((_, i) => <circle key={i} cx={10 + i * 8} cy={-236 - ((f * 1.2 + i * 24) % 70)} r={8 + i * 3} fill="#3A4650" opacity={0.5 - ((f * 1.2 + i * 24) % 70) / 160} />)}
+  </g>
+);
+
+const House: React.FC<{x: number; y: number; s?: number; lit?: number}> = ({x, y, s = 1, lit = 0}) => (
+  <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <Shadow x={0} y={4} w={90} o={0.25} />
+    <rect x={-70} y={-110} width={140} height={110} fill="#C9B79A" stroke={C.ink} strokeWidth={6} />
+    <polygon points="-86,-110 0,-176 86,-110" fill={C.canneryD} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
+    <rect x={-22} y={-76} width={44} height={44} rx={4} fill={lit > 0.1 ? C.fluid : '#9FB4BB'} stroke={C.ink} strokeWidth={5} />
+  </g>
+);
+
+// ---- S1: the dock --------------------------------------------------------------------------------------------------------------------------
+const S1: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const shade = ease(f, 0, 70);
+  const walkIn = easeIO(f, b(2) - 8, 46);
+  const tw = Math.max(1.5 * bump(f, 8, 20), bump(f, b(3) - 4, 22));
+  const blink = ease(f, 6, 8);
+  return (
+    <Frame p={p} z0={1.04} z1={1.14} oy={1000} cam={track([{t: 0, z: 1.3, fx: 700, fy: 1080}, {t: 22, z: 1.08, fx: 560, fy: 1010}, {t: p.dur, z: 1.16, fx: 540, fy: 1000}])}>
+      <SVG>
+        <World>
+        <Dock f={f} />
+        <g transform="translate(310 1240)">
+          <rect x={-8} y={-300} width={16} height={300} fill={C.plank} stroke={C.ink} strokeWidth={6} />
+          <rect x={-170} y={-420} width={340} height={190} rx={10} fill={C.paper} stroke={C.ink} strokeWidth={7} />
+          <text x={0} y={-290} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={150} fill={C.ink}>0</text>
+          <text x={0} y={-248} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.ink}>DATA CENTERS</text>
+          <Shadow x={0} y={4} w={80} />
+        </g>
+        <polygon points={`${830 - 44},1240 ${830 + 44},1240 ${lerp(830, 250, shade)},1240 ${lerp(830, 300, shade)},1190`} fill={C.shadow} opacity={0.0} />
+        <path d={`M 786,1236 L ${lerp(786, 120, shade)},1236 L ${lerp(786, 120, shade)},1222 L 786,1190 Z`} fill={C.shadow} opacity={0.38 * shade} />
+        <Chart f={f} x={830} y={1240} h={640} />
+        <Crate f={f} x={720} y={1240} s={0.95} flinch={tw} blink={blink} />
+        <Grid f={f} x={480} y={1240} s={1.25} mood="worried" look={-1} rot={-3} level={0.62} />
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const tx = 70 + i * 62;
+          return <Figure key={i} f={f} x={lerp(-90 - i * 40, tx, walkIn)} y={1232} s={0.62} seed={i} arms={Math.floor((f + i * 9) / 18) % 3 === 0 ? 'up' : 'down'} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />;
+        })}
+        </World>
+        <HeldTravel f={f} x={500} y={1010} w={270} h={230} mode="runner" seed={0.37} />
+        <g>
+        <Plate x={540} y={PY} text={"DATA CENTERS IN PETERSBURG TODAY \u00b7 0"} displayLines={["DATA CENTERS IN PETERSBURG", "TODAY \u00b7 0"]} size={30} tone="dark" p={ease(f, b(1), 12) * (1 - ease(f, b(2) - 6, 6))} />
+        <Plate x={540} y={PY} text={"PETERSBURG ASSEMBLY \u00b7 WRITING RULES"} size={26} tone="dark" p={ease(f, b(2), 12) * (1 - ease(f, b(3) - 6, 6))} />
+        <Plate x={540} y={PY} text={"WHAT WOULD IT RUN?"} size={38} tone="glow" p={ease(f, b(3), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S2: the cannery -----------------------------------------------------------------------------------------------------------------------
+const S2: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const drop = springy(f, b(4) - 6, 20);
+  const tagP = ease(f, b(4) + 6, 12);
+  const named = ease(f, b(5), 12);
+  const land = springy(f, b(6) - 8, 18);
+  const roll = easeIO(f, b(7) - 4, 50);
+  const set = springy(f, b(8) - 6, 20);
+  return (
+    <Frame p={p} z0={1.03} z1={1.1} oy={980}>
+      <SVG>
+        <World>
+        <Dock f={f} />
+        <Cannery f={f} x={300} y={1240} s={0.95} steam={false} />
+        <Raven f={f} x={lerp(40, 280, land)} y={lerp(560, 902, land)} s={0.8} flap={1 - land} />
+                <g transform={`translate(${lerp(0, 230, roll)} 0)`}>
+          <g transform="translate(700 1240)"><rect x={-80} y={-90} width={160} height={90} fill={C.plank} stroke={C.ink} strokeWidth={6} /><Shadow x={0} y={4} w={70} /></g>
+        </g>
+        <g transform={`translate(${lerp(960, 985, roll)} ${1246 - roll * 4}) rotate(${Math.sin(f / 14) * 2})`}>
+          <path d="M -110,-30 L 110,-30 L 80,40 L -80,40 Z" fill="#E4EAEC" stroke={C.ink} strokeWidth={6} /><rect x={-14} y={-110} width={90} height={80} fill={C.cannery} stroke={C.ink} strokeWidth={6} />
+        </g>
+        <g transform={`translate(0 ${lerp(-90, 0, set)})`}><Crate f={f} x={760} y={1240} s={0.8} small /></g>
+        <g transform={`translate(0 ${lerp(-420, 0, drop)})`}><Transformer x={500} y={1240} tag={named > 0.5 ? 'MAZZELLA ALASKA' : '2 MW'} tagP={tagP} /></g>
+        </World>
+        <HeldTravel f={f} x={90} y={910} w={420} h={330} mode="runner" seed={0.74} />
+        <g>
+        <Plate x={540} y={PY} text={"2 MW TRANSFORMER PRIVATELY OWNED"} displayLines={["2 MW TRANSFORMER", "PRIVATELY OWNED"]} size={30} tone="dark" p={ease(f, b(4), 12) * (1 - ease(f, b(5) - 6, 6))} />
+        <Plate x={540} y={PY} text={"MAZZELLA ALASKA PRIVATE COMPANY"} displayLines={["MAZZELLA ALASKA", "PRIVATE COMPANY"]} size={30} tone="dark" p={ease(f, b(5), 12) * (1 - ease(f, b(6) - 6, 6))} />
+        <Plate x={540} y={PY} text={"OLD OCEAN BEAUTY CANNERY"} size={28} tone="dark" p={ease(f, b(6), 12) * (1 - ease(f, b(7) - 6, 6))} />
+        <Plate x={540} y={PY} text={"GREENSPARC DEAL NOT FINALIZED"} displayLines={["GREENSPARC DEAL", "NOT FINALIZED"]} size={30} tone="dark" p={ease(f, b(7), 12) * (1 - ease(f, b(8) - 6, 6))} />
+        <Plate x={540} y={PY} text={"STILL PURSUING A SMALL PROJECT"} displayLines={["STILL PURSUING", "A SMALL PROJECT"]} size={30} tone="dark" p={ease(f, b(8), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S3: the meter ---------------------------------------------------------------------------------------------------------------------------
+const S3: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const roll = easeIO(f, b(9), Math.max(30, b(43) - b(9)));
+  const val = Math.round(1064400 * roll);
+  const txt = val.toLocaleString('en-US');
+  const bp = ease(f, b(37), 24);
+  const lamp = ease(f, b(46), 10);
+  const chip = ease(f, b(43), 12);
+  return (
+    <Frame p={p} z0={1.05} z1={1.12} oy={980} bg={C.shadow}>
+      <SVG>
+        <World>
+        <rect data-band="ok" x={0} y={1180} width={W} height={260} fill="#0F1B1A" stroke={C.ink} strokeWidth={6} />
+        {bp > 0.02 && <g opacity={0.5 * bp} transform="translate(540 1180) scale(1.6)"><rect x={-210} y={-230} width={420} height={230} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /><polygon points="-230,-230 0,-330 230,-230" fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="10 8" /></g>}
+        <g transform="translate(540 960)">
+          <Shadow x={0} y={290} w={230} />
+          <circle r={250} fill="#B98B2E" stroke={C.ink} strokeWidth={9} /><circle r={214} fill="#F3E3B0" stroke={C.ink} strokeWidth={6} />
+          {Array.from({length: 24}).map((_, i) => <line key={i} x1={Math.cos(i * 0.2618) * 184} y1={Math.sin(i * 0.2618) * 184} x2={Math.cos(i * 0.2618) * 206} y2={Math.sin(i * 0.2618) * 206} stroke={C.ink} strokeWidth={5} />)}
+          <rect x={-170} y={-52} width={340} height={96} rx={10} fill={C.ink} stroke={C.ink} strokeWidth={5} />
+          <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill="#F3EEDD">{txt}</text>
+          <text x={0} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>kWh</text>
+          <line x1={0} y1={120} x2={Math.cos(-2.2 + roll * 3.6) * 120} y2={120 + Math.sin(-2.2 + roll * 3.6) * 120 - 120 * 0} stroke={C.crimson} strokeWidth={0} />
+        </g>
+        <circle cx={880} cy={800} r={22 + 6 * lamp} fill={C.fluid} stroke={C.ink} strokeWidth={5} opacity={0.4 + 0.6 * lamp} />
+        {chip > 0.02 && <Lab text="PER THE UTILITY'S FAQ" x={540} y={1330} size={24} p={chip} />}
+        </World>
+        <HeldTravel f={f} x={290} y={710} w={500} h={500} mode="runner" seed={1.11} />
+        <g>
+        <Plate x={540} y={PY} text={"CANNERY \u00b7 2015"} size={34} tone="dark" p={ease(f, b(9), 12) * (1 - ease(f, b(37) - 6, 6))} />
+        <Plate x={540} y={PY} text={"THE WHOLE CANNERY"} size={34} tone="dark" p={ease(f, b(37), 12) * (1 - ease(f, b(43) - 6, 6))} />
+        <Plate x={540} y={PY} text={"1,064,400 kWh"} size={38} tone="glow" p={ease(f, b(43), 12) * (1 - ease(f, b(46) - 6, 6))} />
+        <Plate x={540} y={PY} text={"1,064,400 kWh \u00b7 IN 2015"} size={30} tone="dark" p={ease(f, b(46), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S4: the climb -------------------------------------------------------------------------------------------------------------------------
+const S4: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const lad = easeIO(f, b(10) - 6, 40);
+  const climb = easeIO(f, b(10), Math.max(40, b(12) - b(10)));
+  const tick1 = ease(f, b(10) + 18, 10);
+  const tick2 = ease(f, b(39), 12);
+  const drain = easeIO(f, b(11) - 4, 40);
+  const stack = easeIO(f, b(12) - 6, 46);
+  const gy = lerp(1230, 960, climb);
+  return (
+    <Frame p={p} z0={1.04} z1={1.1} oy={1060} cam={track([{t: 0, z: 1.04, fx: 540, fy: 1180}, {t: p.dur, z: 1.1, fx: 560, fy: 880}])}>
+      <SVG>
+        <World>
+        <path d="M 0,560 L 160,480 L 300,540 L 1080,430 L 1080,1500 L 0,1500 Z" fill="#7E9690" stroke={C.ink} strokeWidth={6} opacity={0.5} />
+        <Dock f={f} y={1280} />
+        {Array.from({length: 16}).map((_, i) => {
+          const pr = clamp01(stack * 16 - i);
+          return <g key={i} transform={`translate(${210} ${1262 - i * 50 - (1 - pr) * 140})`} opacity={pr}><rect x={-90} y={-46} width={180} height={46} fill={C.cannery} stroke={C.ink} strokeWidth={5} /><polygon points="-96,-46 0,-76 96,-46" fill={C.canneryD} stroke={C.ink} strokeWidth={4} /></g>;
+        })}
+        <Chart f={f} x={720} y={1280} h={700} ladder={lad} marks={[tick1 > 0.5 ? 120 : -999, tick2 > 0.5 ? 330 : -999].filter((m) => m > 0)} pencilAt={null} />
+        <Crate f={f} x={470} y={1280} s={0.55} small />
+        <path d={`M 470,1260 Q 560,1330 620,${gy + 20}`} fill="none" stroke={C.ink} strokeWidth={9} strokeDasharray={drain > 0.02 ? '0' : '2 14'} opacity={drain > 0.02 ? 1 : 0.4} />
+        <Grid f={f} x={620} y={gy} s={1.0} level={lerp(0.74, 0.34, drain)} mood={drain > 0.5 ? 'uneasy' : 'hopeful'} band={1} pencil={climb} />
+        </World>
+        <HeldTravel f={f} x={676} y={580} w={88} h={700} mode="runner" seed={1.48} />
+        <g>
+        <Plate x={540} y={PY} text={"CANNERY \u00b7 1,064,400 kWh"} size={28} tone="dark" p={ease(f, b(10), 12) * (1 - ease(f, b(39) - 6, 6))} />
+        <Plate x={540} y={PY} text={"1 MW \u00b7 8.5 MILLION kWh PER THE UTILITY'S FAQ"} displayLines={["1 MW \u00b7 8.5 MILLION kWh", "PER THE UTILITY'S FAQ"]} size={28} tone="dark" p={ease(f, b(39), 12) * (1 - ease(f, b(47) - 6, 6))} />
+        <Plate x={540} y={PY} text={"FULL 2 MW BUILD PER THE UTILITY'S FAQ"} displayLines={["FULL 2 MW BUILD", "PER THE UTILITY'S FAQ"]} size={28} tone="dark" p={ease(f, b(47), 12) * (1 - ease(f, b(11) - 6, 6))} />
+        <Plate x={540} y={PY} text={"FULL 2 MW BUILD \u00b7 17,000,000 kWh PER THE UTILITY'S FAQ"} displayLines={["FULL 2 MW BUILD \u00b7 17,000,000 kWh", "PER THE UTILITY'S FAQ"]} size={24} tone="dark" p={ease(f, b(11), 12) * (1 - ease(f, b(12) - 6, 6))} />
+        <Plate x={540} y={PY} text={"ABOUT 16X THE CANNERY FULL 2 MW BUILD"} displayLines={["ABOUT 16X THE CANNERY", "FULL 2 MW BUILD"]} size={34} tone="glow" p={ease(f, b(12), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S5: three to three --------------------------------------------------------------------------------------------------------------------
+const S5: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const jam = bump(f, b(13) + 4, 30);
+  const plate1 = ease(f, b(40), 12);
+  const stamp = springy(f, b(14) - 4, 14);
+  const card = easeIO(f, b(15) - 6, 18);
+  const strain = Math.sin(f * 0.8) * 3 * (f > b(13) ? 1 : 0) * (1 - ease(f, b(14), 8));
+  return (
+    <Frame p={p} z0={1.03} z1={1.08} oy={980} bg={C.ground}>
+      <SVG>
+        <World>
+        <rect data-band="ok" x={0} y={1280} width={W} height={300} fill="#1F312D" stroke={C.ink} strokeWidth={6} />
+        <rect x={80} y={620} width={200} height={300} fill="#9FB4BB" stroke={C.ink} strokeWidth={7} opacity={0.5} />
+        <rect x={800} y={620} width={200} height={300} fill="#9FB4BB" stroke={C.ink} strokeWidth={7} opacity={0.5} />
+        <Chart f={f} x={540} y={1280} h={560} />
+        <g transform={`translate(540 ${760 + jam * 6}) rotate(${jam * 4})`}>
+          <path d="M -50,40 L -50,-20 Q -50,-70 0,-70 Q 50,-70 50,-20 L 50,40" fill="none" stroke={C.ink} strokeWidth={10} strokeDasharray="12 9" strokeLinecap="round" />
+        </g>
+        {[0, 1, 2].map((i) => <Figure key={i} f={f} x={210 + i * 96 + strain} y={1236} s={0.95} seed={i} coat={['#4A6C86', '#6A5A8A', '#5A7A5A'][i]} arms="push" />)}
+        {[0, 1, 2].map((i) => <Figure key={i} f={f} x={870 - i * 96 - strain} y={1236} s={0.95} seed={i + 3} coat={['#8A5A4A', '#4A6C86', '#7A6A3A'][i]} arms="hold" face={-1} />)}
+        {plate1 > 0.02 && <g transform={`translate(540 ${880 - jam * 0}) rotate(${Math.sin(f / 9) * 2})`} opacity={plate1}><line x1={0} y1={-40} x2={0} y2={0} stroke={C.ink} strokeWidth={4} /><rect x={-150} y={0} width={300} height={56} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={5} /><text x={0} y={38} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>1 YEAR PAUSE</text></g>}
+        {stamp > 0.02 && <g transform={`translate(540 1130) rotate(-10) scale(${lerp(2.2, 1, Math.min(1, stamp))})`} opacity={clamp01(stamp * 2)}><rect x={-140} y={-44} width={280} height={88} rx={6} fill="none" stroke={C.crimson} strokeWidth={10} /><text x={0} y={20} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={60} fill={C.crimson}>FAILED</text></g>}
+        <g transform={`translate(${lerp(1400, 540, card)} 1470)`}>
+          <rect x={-24} y={-90} width={48} height={90} fill={C.plank} stroke={C.ink} strokeWidth={5} />
+        </g>
+        </World>
+        <HeldTravel f={f} x={496} y={720} w={88} h={560} mode="runner" seed={1.85} />
+        <g>
+        <Plate x={540} y={PY} text={"SEPT 21 3 TO 3"} displayLines={["SEPT 21", "3 TO 3"]} size={38} tone="glow" p={ease(f, b(13), 12) * (1 - ease(f, b(40) - 6, 6))} />
+        <Plate x={540} y={PY} text={"1 YEAR PAUSE"} size={36} tone="dark" p={ease(f, b(40), 12) * (1 - ease(f, b(14) - 6, 6))} />
+        <Plate x={540} y={PY} text={"1 YEAR PAUSE FAILED"} displayLines={["1 YEAR PAUSE", "FAILED"]} size={36} tone="warn" p={ease(f, b(14), 12) * (1 - ease(f, b(15) - 6, 6))} />
+        <Plate x={540} y={PY} text={"\"A SOLUTION IN SEARCH OF A PROBLEM\" JEIGH STANTON GREGOR \u00b7 VICE MAYOR"} displayLines={["\"A SOLUTION IN SEARCH OF A PROBLEM\"", "JEIGH STANTON GREGOR \u00b7 VICE MAYOR"]} size={22} tone="dark" p={ease(f, b(15), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S6: the noticeboard ----------------------------------------------------------------------------------------------------------------------
+const S6: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const sheet = springy(f, b(16) - 8, 20);
+  const nod = bump(f, b(52), 40);
+  const cal = springy(f, b(17) - 6, 20);
+  const q = ease(f, b(48), 12);
+  const tag = springy(f, b(18) - 4, 22);
+  return (
+    <Frame p={p} z0={1.03} z1={1.1} oy={980} bg="#C8B692">
+      <SVG>
+        <World>
+        <rect data-band="ok" x={110} y={640} width={860} height={720} rx={14} fill="#C2A06A" stroke={C.ink} strokeWidth={9} />
+        {Array.from({length: 60}).map((_, i) => <circle key={i} cx={140 + (i * 137) % 800} cy={670 + (i * 71) % 660} r={3} fill="#9E7C46" opacity={0.7} />)}
+        <g transform={`translate(380 ${lerp(500, 960, sheet)}) rotate(${-3 + (1 - sheet) * 14})`}>
+          <rect x={-190} y={-250} width={380} height={500} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} />
+          <circle cx={0} cy={-232} r={11} fill={C.crimson} stroke={C.ink} strokeWidth={4} />
+          <text x={0} y={-160} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill={C.ink} transform="rotate(-6)">DRAFT</text>
+          {[0, 1, 2].map((i) => <Padlock key={i} x={-110 + i * 110} y={20} s={0.62} state="dotted" />)}
+          {[0, 1, 2, 3].map((i) => <line key={i} x1={-150} y1={120 + i * 26} x2={150 - (i === 3 ? 90 : 0)} y2={120 + i * 26} stroke={C.ink} strokeWidth={4} opacity={0.55} />)}
+        </g>
+        <g transform={`translate(${lerp(1300, 760, cal)} 900) rotate(${3 + (1 - cal) * 10})`}>
+          <rect x={-170} y={-150} width={340} height={300} rx={6} fill="#fff" stroke={C.ink} strokeWidth={6} />
+          <rect x={-170} y={-150} width={340} height={56} rx={6} fill={C.crimson} stroke={C.ink} strokeWidth={6} />
+          <text x={0} y={-110} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.paper}>NOV 2</text>
+          {[0, 1, 2].map((i) => <g key={i}><rect x={-150 + i * 104} y={-60} width={92} height={150} rx={6} fill={i === 0 ? '#E8F1D8' : '#fff'} stroke={C.ink} strokeWidth={5} strokeDasharray={i === 0 ? '0' : '8 7'} /></g>)}
+          <text x={-104} y={36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={78} fill={C.ink} opacity={q}>?</text>
+        </g>
+        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={140 + i * 160} y={1262} s={0.7} seed={i} arms={Math.floor((f + i * 11) / 16) % 3 === 0 ? 'up' : 'down'} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
+        <g transform={`translate(0 ${-nod * 8})`} />
+        </World>
+        <HeldTravel f={f} x={110} y={640} w={860} h={720} mode="runner" seed={2.22} />
+        <g>
+        <Plate x={540} y={PY} text={"OCT 5 \u00b7 UNANIMOUS DRAFT A 9-MONTH PAUSE"} displayLines={["OCT 5 \u00b7 UNANIMOUS", "DRAFT A 9-MONTH PAUSE"]} size={30} tone="dark" p={ease(f, b(16), 12) * (1 - ease(f, b(52) - 6, 6))} />
+        <Plate x={540} y={PY} text={"ALL SIX AGREE DRAFT ONLY"} displayLines={["ALL SIX AGREE", "DRAFT ONLY"]} size={34} tone="dark" p={ease(f, b(52), 12) * (1 - ease(f, b(17) - 6, 6))} />
+        <Plate x={540} y={PY} text={"NOV 2 FIRST OF THREE READINGS"} displayLines={["NOV 2", "FIRST OF THREE READINGS"]} size={30} tone="dark" p={ease(f, b(17), 12) * (1 - ease(f, b(48) - 6, 6))} />
+        <Plate x={540} y={PY} text={"READING 1 OF 3"} size={36} tone="glow" p={ease(f, b(48), 12) * (1 - ease(f, b(18) - 6, 6))} />
+        <Plate x={540} y={PY} text={"NO OUTCOME REPORTED"} size={30} tone="dark" p={ease(f, b(18), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S7: three tests --------------------------------------------------------------------------------------------------------------------------
+const S7: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const sheet = ease(f, b(44), 14);
+  const fill = ease(f, b(44) + 24, 20);
+  const l1 = springy(f, b(19) - 4, 16), l2 = springy(f, b(20) - 4, 16), l3 = springy(f, b(21) - 4, 16);
+  const gen = springy(f, b(20) - 10, 22);
+  const hose = ease(f, b(21) - 8, 14);
+  return (
+    <Frame p={p} z0={1.04} z1={1.12} oy={1000}>
+      <SVG>
+        <World>
+        <Dock f={f} y={1300} />
+        <rect x={500} y={650} width={80} height={650} fill={C.plank} stroke={C.ink} strokeWidth={8} />
+        <g transform={`translate(${lerp(1300, 760, sheet)} 800)`}>
+          <rect x={-130} y={-120} width={260} height={240} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} />
+          {[0, 1, 2].map((i) => <Padlock key={i} x={-74 + i * 74} y={20} s={0.42} state={fill > 0.6 ? 'solid' : 'dotted'} />)}
+        </g>
+        <Padlock x={540} y={760} s={1.2} label="GRID CAPACITY" state="solid" p={l1} />
+        <Padlock x={540} y={980} s={1.2} label="GENERATORS" state="solid" p={l2} />
+        <Padlock x={540} y={1210} s={1.2} label="UNCONTAINED COOLING" state="solid" p={l3} />
+        <g transform={`translate(${lerp(-120, 250, gen)} 0)`}><GenStack x={0} y={1290} f={f} walk={gen < 1 ? f : 0} /></g>
+        {hose > 0.02 && <g transform="translate(860 1290)"><Shadow x={0} y={4} w={60} /><path d="M 0,0 q -10,-80 30,-120 q 30,-30 70,-20" fill="none" stroke={C.ink} strokeWidth={14} strokeLinecap="round" opacity={hose} />{[0, 1, 2].map((i) => <circle key={i} cx={100 + Math.sin(f / 6 + i) * 8} cy={-150 - ((f * 1.5 + i * 25) % 90)} r={14 + i * 3} fill="#F3F7F8" opacity={0.55 * hose} />)}</g>}
+        </World>
+        <HeldTravel f={f} x={500} y={650} w={80} h={650} mode="runner" seed={2.59} />
+        <g>
+        <Plate x={540} y={PY} text={"THE DRAFT'S THREE TESTS"} displayLines={["THE DRAFT'S", "THREE TESTS"]} size={36} tone="dark" p={ease(f, b(44), 12) * (1 - ease(f, b(19) - 6, 6))} />
+        <Plate x={540} y={PY} text={"GRID CAPACITY"} size={40} tone="glow" p={ease(f, b(19), 12) * (1 - ease(f, b(20) - 6, 6))} />
+        <Plate x={540} y={PY} text={"GENERATORS"} size={40} tone="glow" p={ease(f, b(20), 12) * (1 - ease(f, b(21) - 6, 6))} />
+        <Plate x={540} y={PY} text={"UNCONTAINED COOLING"} size={36} tone="glow" p={ease(f, b(21), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S8: the utility's case ---------------------------------------------------------------------------------------------------------------------
+const S8: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const brk = springy(f, b(22) - 4, 14);
+  const lit = ease(f, b(22) + 6, 20);
+  const tags = ease(f, b(23), 16);
+  const bars = ease(f, b(24), 22);
+  const cash = easeIO(f, b(25), 60);
+  const shrink = ease(f, b(26), 26);
+  const homes = [520, 720, 920];
+  return (
+    <Frame p={p} z0={1.03} z1={1.1} oy={1000} cam={track([{t: 0, z: 1.03, fx: 430, fy: 1010}, {t: p.dur, z: 1.08, fx: 650, fy: 1010}])}>
+      <SVG>
+        <World>
+        <rect data-band="ok" x={-20} y={1260} width={1120} height={150} fill="#34524A" stroke={C.ink} strokeWidth={7} />
+        <rect x={-20} y={1260} width={1120} height={22} fill="#6B5A44" />
+        <Transformer x={190} y={1260} s={0.95} lit={lit} />
+        <path d={`M 190,1050 L ${lerp(190, 1000, lit)},${lerp(1050, 1020, lit)}`} stroke={C.ink} strokeWidth={0} />
+        <line x1={270} y1={1075} x2={900} y2={1050} stroke={C.ink} strokeWidth={6} />
+        <line x1={270} y1={1075} x2={900} y2={1050} stroke={C.fluid} strokeWidth={4} opacity={lit} strokeDasharray="14 10" strokeDashoffset={-f * 3} />
+        {[330, 560, 800].map((x, i) => <g key={i}><rect x={x - 8} y={1040 + i * -8} width={16} height={220 + i * 8} fill={C.plank} stroke={C.ink} strokeWidth={5} /><line x1={x - 40} y1={1048 + i * -8} x2={x + 40} y2={1048 + i * -8} stroke={C.ink} strokeWidth={6} /></g>)}
+        {homes.map((x, i) => <House key={i} x={x} y={1260} s={0.62} lit={lit} />)}
+        {homes.map((x, i) => <g key={i} transform={`translate(${x} ${1100 - i * 8})`}><polygon points={`-18,0 18,0 0,${lerp(54, 20, shrink)}`} fill={C.crimson} stroke={C.ink} strokeWidth={4} opacity={0.9} /></g>)}
+        <g transform={`translate(${lerp(300, 880, cash)} ${1050 - cash * 8})`} opacity={cash > 0.01 && cash < 0.99 ? 1 : cash >= 0.99 ? 0.2 : 0}>
+          {[0, 1, 2].map((i) => <rect key={i} x={-i * 36 - 22} y={-30} width={30} height={26} rx={3} fill={C.green} stroke={C.ink} strokeWidth={4} />)}
+        </g>
+        {tags > 0.02 && [0, 1].map((i) => <g key={i} transform={`translate(${i ? 700 : 520} ${1060 + (1 - tags) * -40}) rotate(${Math.sin(f / 12 + i) * 4})`} opacity={tags}><line x1={0} y1={0} x2={0} y2={26} stroke={C.ink} strokeWidth={3} /><rect x={-70} y={26} width={140} height={42} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={4} /><text x={0} y={55} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>{i ? 'AK ~30¢' : '12.2¢'}</text></g>)}
+        {bars > 0.02 && <g transform="translate(130 1260)"><rect x={0} y={-90 * bars} width={70} height={90 * bars} fill={C.fluid} stroke={C.ink} strokeWidth={5} /><rect x={90} y={-250 * bars} width={70} height={250 * bars} fill={C.steel} stroke={C.ink} strokeWidth={5} /></g>}
+        <Chart f={f} x={1010} y={1262} h={420} marks={[90, 220]} ladder={1} />
+        <Figure f={f} x={330} y={1250} s={1.0} coat="#D98A2B" arms={Math.floor(f / 14) % 2 ? 'push' : 'down'} seed={7} />
+        <g transform={`translate(260 1160) rotate(${lerp(-60, 0, brk)})`}><rect x={-6} y={-60} width={12} height={60} fill={C.crimson} stroke={C.ink} strokeWidth={4} /></g>
+        </World>
+        <HeldTravel f={f} x={110} y={1050} w={160} h={210} mode="runner" seed={2.96} />
+        <g>
+        <Plate x={540} y={PY} text={"THE UTILITY'S FAQ FROM APRIL"} displayLines={["THE UTILITY'S FAQ", "FROM APRIL"]} size={32} tone="dark" p={ease(f, b(22), 12) * (1 - ease(f, b(23) - 6, 6))} />
+        <Plate x={540} y={PY} text={"RESIDENTIAL \u00b7 12.2 CENTS PER THE UTILITY'S FAQ"} displayLines={["RESIDENTIAL \u00b7 12.2 CENTS", "PER THE UTILITY'S FAQ"]} size={30} tone="dark" p={ease(f, b(23), 12) * (1 - ease(f, b(24) - 6, 6))} />
+        <Plate x={540} y={PY} text={"ALASKA AVERAGE \u00b7 NEAR 30 CENTS UTILITY FIGURE"} displayLines={["ALASKA AVERAGE \u00b7 NEAR 30 CENTS", "UTILITY FIGURE"]} size={28} tone="dark" p={ease(f, b(24), 12) * (1 - ease(f, b(25) - 6, 6))} />
+        <Plate x={540} y={PY} text={"OVER $2M A YEAR \u00b7 UTILITY ESTIMATE ORIGINAL PLAN"} displayLines={["OVER $2M A YEAR \u00b7 UTILITY ESTIMATE", "ORIGINAL PLAN"]} size={26} tone="dark" p={ease(f, b(25), 12) * (1 - ease(f, b(26) - 6, 6))} />
+        <Plate x={540} y={PY} text={"SMALLER RATE INCREASES UTILITY CLAIM"} displayLines={["SMALLER RATE INCREASES", "UTILITY CLAIM"]} size={32} tone="dark" p={ease(f, b(26), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S9: two answered ----------------------------------------------------------------------------------------------------------------------
+const S9: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const walk = easeIO(f, b(45), 40);
+  const turned = ease(f, b(27), 20);
+  const rad = ease(f, b(28), 16);
+  const g2 = ease(f, b(29), 14);
+  const band = ease(f, b(30), 14);
+  const gx = lerp(-100, 330, walk) - turned * 150;
+  const cold = turned > 0.5 ? 1 : 0;
+  return (
+    <Frame p={p} z0={1.05} z1={1.12} oy={1000}>
+      <SVG>
+        <World>
+        <Dock f={f} y={1300} />
+        <rect x={80} y={760} width={300} height={540} fill={C.cannery} stroke={C.ink} strokeWidth={8} />
+        <rect x={160} y={1020} width={140} height={280} fill={C.canneryD} stroke={C.ink} strokeWidth={7} />
+        <GenStack x={gx} y={1296} f={f} walk={walk < 1 ? f : 0} cold={cold} />
+        <g transform="translate(430 1296)">
+          <Crate f={f} x={0} y={0} s={0.55} small />
+          {rad > 0.02 && <g opacity={rad} transform="translate(60 -60)"><rect x={-34} y={-44} width={68} height={88} rx={6} fill={C.steel} stroke={C.ink} strokeWidth={6} />{Array.from({length: 5}).map((_, i) => <line key={i} x1={-28} y1={-34 + i * 18} x2={28} y2={-34 + i * 18} stroke={C.ink} strokeWidth={4} />)}{[0, 1, 2].map((i) => <circle key={i} cx={Math.sin(f / 5 + i) * 6} cy={-70 - ((f * 1.4 + i * 22) % 80)} r={10 + i * 3} fill="#F3F7F8" opacity={0.6 - ((f * 1.4 + i * 22) % 80) / 160} />)}</g>}
+        </g>
+        <rect x={790} y={700} width={80} height={600} fill={C.plank} stroke={C.ink} strokeWidth={8} />
+        <Padlock x={830} y={840} s={0.8} label="GRID CAPACITY" state="dark" />
+        <Padlock x={830} y={1000} s={0.8} label="GENERATORS" state={turned > 0.9 && g2 > 0.5 ? 'green' : 'solid'} />
+        <Padlock x={830} y={1160} s={0.8} label="COOLING" state={rad > 0.5 && g2 > 0.5 ? 'green' : 'solid'} />
+        <Grid f={f} x={620} y={1296} s={1.0} level={0.5} band={1} pending={band} mood={band > 0.5 ? 'worried' : 'steady'} pencil={band * 0.3} />
+        </World>
+        <HeldTravel f={f} x={80} y={760} w={300} h={540} mode="runner" seed={3.33} />
+        <g>
+        <Plate x={540} y={PY} text={"THE ORIGINAL PLAN PER THE UTILITY'S FAQ"} displayLines={["THE ORIGINAL PLAN", "PER THE UTILITY'S FAQ"]} size={32} tone="dark" p={ease(f, b(45), 12) * (1 - ease(f, b(27) - 6, 6))} />
+        <Plate x={540} y={PY} text={"NO DIESEL GENERATORS ON SITE PER FAQ \u00b7 TOWN GRID HAS BACKUP"} displayLines={["NO DIESEL GENERATORS ON SITE", "PER FAQ \u00b7 TOWN GRID HAS BACKUP"]} size={26} tone="dark" p={ease(f, b(27), 12) * (1 - ease(f, b(28) - 6, 6))} />
+        <Plate x={540} y={PY} text={"CLOSED LOOP COOLING PER FAQ"} displayLines={["CLOSED LOOP COOLING", "PER FAQ"]} size={32} tone="dark" p={ease(f, b(28), 12) * (1 - ease(f, b(29) - 6, 6))} />
+        <Plate x={540} y={PY} text={"2 OF 3 \u00b7 GREENSPARC PLAN NOT FINALIZED"} displayLines={["2 OF 3 \u00b7 GREENSPARC PLAN", "NOT FINALIZED"]} size={28} tone="dark" p={ease(f, b(29), 12) * (1 - ease(f, b(54) - 6, 6))} />
+        <Plate x={540} y={PY} text={"GRID CAPACITY"} size={40} tone="glow" p={ease(f, b(54), 12) * (1 - ease(f, b(30) - 6, 6))} />
+        <Plate x={540} y={PY} text={"GRID CAPACITY \u00b7 NOT SETTLED"} size={28} tone="glow" p={ease(f, b(30), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S10: under the tarp ---------------------------------------------------------------------------------------------------------------------
+const S10: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const yank = springy(f, b(31) - 6, 16);
+  const chip = springy(f, b(32) - 4, 18);
+  const slide = ease(f, b(32) + 20, 20);
+  const peck = bump(f, b(42), 24);
+  const blow = ease(f, b(42) + 12, 26);
+  return (
+    <Frame p={p} z0={1.05} z1={1.13} oy={1020}>
+      <SVG>
+        <World>
+        <Dock f={f} y={1300} />
+        <Crate f={f} x={640} y={1300} s={1.35} tarp2={yank} />
+        <g transform={`translate(${lerp(780, 1100, 0)} ${lerp(1300, 1300, 0)})`} />
+        <g transform={`translate(${lerp(380, 280, yank)} 1300)`}><Grid f={f} x={0} y={0} s={1.15} mood={yank > 0.5 ? 'puzzled' : 'worried'} look={1} rot={yank > 0.5 ? 4 : 0} level={0.5} band={0.6} /></g>
+        <g transform={`translate(${lerp(980, 900, chip)} ${lerp(760, 940, chip)}) rotate(${lerp(8, -4, chip)})`} opacity={chip}>
+          <rect x={-120} y={-170} width={240} height={340} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={6} /><text x={0} y={-124} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>GREENSPARC</text>
+          <rect x={-100} y={-70} width={200} height={50} rx={8} fill={C.fluid} stroke={C.ink} strokeWidth={4} opacity={1 - blow} transform={`translate(${blow * 400} ${-blow * 120}) rotate(${blow * 40})`} />
+          <text x={0} y={-36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={C.ink} opacity={1 - blow} transform={`translate(${blow * 400} ${-blow * 120}) rotate(${blow * 40})`}>AI COMPUTE</text>
+        </g>
+        <g transform={`translate(${lerp(960, 780, slide)} 0)`} />
+        <Raven f={f} x={lerp(1010, 905, ease(f, b(42) - 14, 16))} y={750 + peck * 20} s={0.9} tilt={peck * 20} />
+        </World>
+        <HeldTravel f={f} x={470} y={1010} w={340} h={290} mode="runner" seed={3.70} />
+        <g>
+        <Plate x={540} y={PY} text={"WHAT IT RUNS NOT IN THE RECORD"} displayLines={["WHAT IT RUNS", "NOT IN THE RECORD"]} size={34} tone="glow" p={ease(f, b(31), 12) * (1 - ease(f, b(32) - 6, 6))} />
+        <Plate x={540} y={PY} text={"VENDOR PITCH HIGH-DENSITY AI COMPUTE"} displayLines={["VENDOR PITCH", "HIGH-DENSITY AI COMPUTE"]} size={32} tone="dark" p={ease(f, b(32), 12) * (1 - ease(f, b(42) - 6, 6))} />
+        <Plate x={540} y={PY} text={"NOTHING IN THE RECORD"} size={34} tone="dark" p={ease(f, b(42), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};
+
+// ---- S11: how big -------------------------------------------------------------------------------------------------------------------------------
+const S11: React.FC<SceneProps> = ({p}) => {
+  const {f, b} = p;
+  const wipe = easeIO(f, b(53) - 4, 26);
+  const turn = easeIO(f, b(33), 30);
+  const br = ease(f, b(51), 16);
+  const up = easeIO(f, b(34), 70);
+  const ladder = 1;
+  const pen = ease(f, b(35), 20);
+  const lean = ease(f, b(36) - 6, 16);
+  const tremble = lean * 2.5;
+  return (
+    <Frame p={p} z0={1.04} z1={1.04} oy={1000} cam={track([{t: 0, z: 1.05, fx: 540, fy: 1050}, {t: b(34), z: 1.05, fx: 540, fy: 1050}, {t: p.dur, z: 1.02, fx: 540, fy: 800}])}>
+      <SVG>
+        <World>
+        <g>
+          {Array.from({length: 22}).map((_, i) => <rect key={i} x={20 + i * 50} y={1180 - (i * 37) % 70} width={34} height={60 + (i * 37) % 70} fill="#31484A" stroke={C.ink} strokeWidth={3} opacity={0.9} />)}
+          {Array.from({length: 22}).map((_, i) => <rect key={i} x={30 + i * 50} y={1190 - (i * 37) % 70 + 8} width={10} height={10} fill={C.fluid} opacity={up * (0.4 + 0.5 * Math.abs(Math.sin(f / 20 + i)))} />)}
+          <circle cx={780} cy={1160} r={14} fill={C.shadow} stroke={C.ink} strokeWidth={4} opacity={up} />
+        </g>
+        <Dock f={f} />
+        <g transform="translate(300 1240)"><rect x={-8} y={-300} width={16} height={300} fill={C.plank} stroke={C.ink} strokeWidth={6} /><rect x={-170} y={-420} width={340} height={190} rx={10} fill={C.paper} stroke={C.ink} strokeWidth={7} /><text x={0} y={-290} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={150} fill={C.ink}>0</text></g>
+        <Chart f={f} x={830} y={1240} h={640} marks={[120, 330]} ladder={ladder} pencilAt={lerp(300, 560, pen)} tremble={tremble} />
+        {br > 0.02 && <g transform="translate(700 800)" opacity={br}><path d="M -50,40 L -50,-20 Q -50,-70 0,-70 Q 50,-70 50,-20 L 50,40" fill="none" stroke={C.ink} strokeWidth={10} strokeDasharray="12 9" strokeLinecap="round" /><text x={0} y={90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>?</text></g>}
+        <Crate f={f} x={700} y={1240} s={0.7} small blink={1} />
+        <Grid f={f} x={560} y={1240} s={1.1} mood={up > 0.5 ? 'steady' : 'puzzled'} level={0.6} band={1} look={lean ? 1 : 0} pencil={pen * 0.4} />
+        {[0, 1, 2, 3, 4, 5].map((i) => <Figure key={i} f={f} x={80 + i * 70 + lerp(0, 24 * (i - 2.5) * -0.2, turn)} y={1240} s={0.62} seed={i} arms={Math.floor((f + i * 13) / 20) % 3 === 0 ? 'up' : 'down'} face={turn > 0.5 ? 1 : -1} coat={['#4A6C86', '#6A5A8A', '#5A7A5A', '#8A5A4A', '#4A6C86', '#7A6A3A'][i]} />)}
+        <g transform={`translate(${lerp(-400, 1500, wipe)} 0)`} opacity={wipe > 0.01 && wipe < 0.99 ? 1 : 0}><path d="M 0,420 L 420,420 Q 460,900 380,1500 L 0,1500 Z" fill={C.tarp} stroke={C.ink} strokeWidth={8} /></g>
+        </World>
+        <HeldTravel f={f} x={786} y={600} w={88} h={640} mode="runner" seed={4.07} />
+        <g>
+        <Plate x={540} y={PY} text={"THE DRAFT \u00b7 3 TESTS"} size={34} tone="dark" p={ease(f, b(53), 12) * (1 - ease(f, b(33) - 6, 6))} />
+        <Plate x={540} y={PY} text={"GRID \u00b7 GENERATORS \u00b7 COOLING"} size={28} tone="dark" p={ease(f, b(33), 12) * (1 - ease(f, b(51) - 6, 6))} />
+        <Plate x={540} y={PY} text={"NONE ASKS WHAT IT RUNS"} size={30} tone="dark" p={ease(f, b(51), 12) * (1 - ease(f, b(34) - 6, 6))} />
+        <Plate x={540} y={PY} text={"HOW BIG A CUSTOMER?"} size={38} tone="glow" p={ease(f, b(34), 12) * (1 - ease(f, b(35) - 6, 6))} />
+        <Plate x={540} y={PY} text={"WHAT IT COMPUTES?"} size={34} tone="dark" p={ease(f, b(35), 12) * (1 - ease(f, b(36) - 6, 6))} />
+        <Plate x={540} y={PY} text={"OR WHAT IT DRAWS?"} size={34} tone="glow" p={ease(f, b(36), 12)} />
+        </g>
+      </SVG>
+    </Frame>
+  );
+};

@@ -1,0 +1,94 @@
+{
+ "run_date": "2026-11-07",
+ "title": "What's In The Box",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Petersburg Borough Assembly to discuss data center moratorium on Monday",
+   "outlet": "KFSK, November 2nd, 2026",
+   "url": "https://www.kfsk.org/2026/11/02/petersburg-borough-assembly-to-discuss-data-center-moratorium-on-monday/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5"
+   ],
+   "used_in_film": true,
+   "note": "Local public radio preview of the November 2nd first reading. The outcome was not reported as of November 7th."
+  },
+  {
+   "id": "s2",
+   "title": "Data center moratorium proposal fails in Petersburg Assembly stalemate",
+   "outlet": "KFSK, September 28th, 2026",
+   "url": "https://www.kfsk.org/2026/09/28/data-center-moratorium-proposal-fails-in-petersburg-assembly-stalemate/",
+   "claims": [
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c27"
+   ],
+   "used_in_film": true,
+   "note": "Reports the 3 to 3 tie, the quotes and the Greensparc deal not finalizing."
+  },
+  {
+   "id": "s3",
+   "title": "Petersburg Assembly initiates work on potential moratorium, zoning rules for data centers",
+   "outlet": "KFSK, October 16th, 2026",
+   "url": "https://www.kfsk.org/2026/10/16/petersburg-assembly-initiates-work-on-potential-moratorium-zoning-rules-for-data-centers/",
+   "claims": [
+    "c11",
+    "c12",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": "Reports the October 5th unanimous votes to draft a nine month pause and zoning rules."
+  },
+  {
+   "id": "s4",
+   "title": "Petersburg Assembly to consider data center moratorium recommendation tonight",
+   "outlet": "KFSK, September 21st, 2026",
+   "url": "https://www.kfsk.org/2026/09/21/petersburg-borough-assembly-to-consider-data-center-moratorium-recommendation-tonight/",
+   "claims": [
+    "c6"
+   ],
+   "used_in_film": true,
+   "note": "The Planning Commission's one year pause request."
+  },
+  {
+   "id": "s5",
+   "title": "Data center FAQ",
+   "outlet": "Petersburg Municipal Power & Light, April 28th, 2026 (hosted by KFSK)",
+   "url": "https://www.kfsk.org/wp-content/uploads/2026/04/Data-center-PMPL-FAQ.pdf",
+   "claims": [
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21",
+    "c22",
+    "c23",
+    "c24",
+    "c25",
+    "c26"
+   ],
+   "used_in_film": true,
+   "note": "Primary utility document. Every figure in it is the utility's own and the Greensparc plan it describes did not finalize."
+  },
+  {
+   "id": "s6",
+   "title": "Greensparc",
+   "outlet": "Greensparc company website, checked November 7th, 2026",
+   "url": "https://www.greensparc.com/",
+   "claims": [
+    "c28"
+   ],
+   "used_in_film": true,
+   "note": "Vendor marketing only. It says nothing about what Petersburg's building would run."
+  }
+ ]
+}

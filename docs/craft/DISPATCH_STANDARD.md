@@ -623,6 +623,14 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline strip, a data flow) rather than stars. (2026-11-02)
 - **A paper-wipe transition must start covering the frame.** A rect that began off-screen and slid in never left, and hid the thesis shot for 8 seconds in the first cut. Draw it at x 0, travel it past 1.3 times the width. (2026-11-02)
 
+## 23. Things the 2026-11-07 gates, critics and panel found that were knowable in advance ("What's In The Box")
+- A hand-written SVG stage needs a World wrapper before any scene is authored. Scale the world 1.2 about a ground line at y 1262 so the hero reads at about a third of the frame, then re-check x edges: anything authored beyond x 140 or 940 leaves the frame and label_footprint fails it.
+- The top 420 px and the water under the caption are not free. Draw a top layer (poles, wires, cloud bands, a gull or floatplane) and a foreground (pilings, a boat, rain rings, a buoy) in the shared atmosphere, once, so no scene starts with a blank third.
+- Any HeldTravel sweep over a non-rectangular prop reads as a glass quad. Use the runner bead on small props and clip a sweep to the silhouette on large ones.
+- A state colour must never read as a verdict. Green check rings on two locks read as a passed test with the sound off, and the judge named it twice. Use a neutral ring and a source tag (FAQ), and keep every shackle shut unless the claim says it opened.
+- A plate repeated as a tag two seconds later is a restatement. Check the beat list for the same string in a plate and a prop before the render.
+- Put the unit and the attribution on the number's first plate (12.2 cents, near 30 cents, UTILITY FIGURE, PER THE UTILITY'S FAQ). Bare tags next to identical houses read as two local rates.
+- A board anchored to words needs re-anchoring after every VO edit. This run edited the VO four times and each edit reopened the beat gaps and the evidence plan.
 ## 2026-11-08 panel findings knowable in advance
 - A data mark never overshoots. Spring belongs to props and labels, not to the value a bar encodes.
 - A chart keeps one grammar from first frame to last: if a y axis and comparator open the sequence, they stay on screen when the bars change.
