@@ -990,6 +990,14 @@ breaks a house rule.
    cost-report command separately before this command. Do not loosen permission rules to make
    an inline shell construction pass. This removes this known prompt trigger; it is not a claim
    that the host can never ask about a different operation.
+   After the Gmail connector returns a draft ID and readback verifies DRAFT (not SENT), use the
+   native file-writing tool to write `out/dispatch/draft_input.json` with `draft-id`, `to`,
+   `subject`, `square-url`, and `vertical-url` as string fields taken from that verified result.
+   Then run `python3 scripts/record_draft.py --input out/dispatch/draft_input.json` as its own
+   command. Do not construct a shell variable, quote the subject in a compound command, or pipe
+   this command through output filters. Run Git inspection as separate commands. Never invent
+   a draft ID or write a receipt before connector success and readback. This prevents the
+   November 4 receipt-recording shell construction from recurring without changing permissions.
 4. Git: commit scenes, storyboard, caption, art_direction, artifacts, stills (NOT heavy mp4s or
    frames), `runs/<date>/cost.json`, the ledger (`scripts/dedupe.py add ... --composition
    '<fingerprint JSON>' --stance <celebratory|cautionary|curious|mixed> --angle "<the Phase 3.5
