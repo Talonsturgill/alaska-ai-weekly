@@ -3184,3 +3184,52 @@ dispatch_history:
     register: editorial-schematic
     camera_strategy: dolly-through
     light_story: noon-hard
+- date: '2026-11-09'
+  topic: Alaska Court System AI policy v1.2 bans DIY AI hearing transcripts while
+    the court plans its own internal CourtSmart AI transcripts, expected by fall,
+    labeled not the official record
+  slug: dispatch-2026-11-09-who-holds-the-transcript
+  key_entities:
+  - Alaska Court System
+  - CourtSmart
+  - LawSites
+  - LawNext
+  - Westlaw Precision
+  - TF-304
+  - Zoom AI
+  - judicial AI policy
+  - hearing transcripts
+  archetype: instrument-as-subject, a recorder with a face behind a counter of glass
+  palette: oxblood wall panels, walnut wood, ivory sheets, brass hardware, a copper
+    reel recorder and one cobalt ink drop
+  voice: gemini:Sulafat
+  stance: mixed
+  angle: Alaska's court isn't banning AI transcripts, it's deciding who holds them,
+    and keeping the text inside contains the confidentiality worry without removing
+    it
+  hero: Reels
+  cast:
+  - Reels
+  - Tagalong
+  - Person
+  - Binder
+  - GlassPane
+  - Tumbler
+  - Cassette
+  - Form
+  - Door
+  - Key
+  - Page
+  composition:
+    pov: cross-section-cutaway
+    motion_vector: horizontal-traverse
+    hero_treatment: instrument-as-subject
+    layout: fullbleed-split
+    register: tactile-collage
+    palette: oxblood wall panels, walnut wood, ivory sheets, brass hardware, a copper
+      reel recorder and one cobalt ink drop
+    camera_strategy: locked-drift
+    light_story: night-practical
+    metaphor: a court builds one front door for its own AI transcripts and bricks
+      up every side door, and a drop of ink in water shows why a sealed hearing can't
+      be taken back out

@@ -1,0 +1,160 @@
+{
+ "run_date": "2026-11-09",
+ "story_id": "alaska-court-ai-policy-transcripts",
+ "palette": {
+  "roles": {
+   "wall": "#6B1E24",
+   "wallDark": "#3E0F15",
+   "panel": "#8A3A2A",
+   "floor": "#2C1A14",
+   "hero": "#B87333",
+   "heroDark": "#6E3F1C",
+   "brass": "#D9A441",
+   "paper": "#F4ECD8",
+   "ink": "#14101C",
+   "cobalt": "#1F4BFF",
+   "glass": "#A9BCD0",
+   "skin": "#E3B48C",
+   "accent": "#1F4BFF",
+   "shadow": "#1A0B0D",
+   "audio": "#E07A3C",
+   "seal": "#C41E3A",
+   "glow": "#FFD27A",
+   "green": "#1D7A3C",
+   "lavender": "#C9B6E4"
+  },
+  "mood": "A courtroom after hours: oxblood walls, walnut paneling, cream paper, brass fittings, one cobalt ink spent once per frame. Dry, careful, fair, never a dunk.",
+  "divergence": "Recorded palettes verbatim. 11-06 tangerine office, teal desks, cream legal pads, mint StampBot, magenta ink. 11-02 midnight indigo cab, sodium amber, electric teal stream, gunmetal, bone paper, magenta stamps. 11-01 overcast moss and slate. 10-31 sage and cream chart desk, cobalt sea, brass, vermilion. 10-29 aubergine dusk depot, gold. Honest overlap: cream paper, brass and a cobalt accent were in the 10-31 set. What is new is the ground. This film is oxblood wall panels and walnut under a low brass lamp with a cool grey-blue window rim (NOT teal), a copper-and-walnut recorder hero, a slate-lavender notetaker (NOT mint) and a burnt-orange audio cord (NOT sodium amber). Cobalt is spent only on the ink drop, the AI GENERATED tag and the TF-304 pen line, so the 10-31 cobalt sea never reassembles.",
+  "accent_licence": {
+   "cobalt #1F4BFF": "ONLY the ink drop and its bloom, the AI GENERATED tag and the TF-304 pen line. The ink bottle on the bench is dark glass with a cobalt label sliver, and is out of frame in shot 9 so the bloom is the one cobalt object there.",
+   "seal #C41E3A": "ONLY the SEALED stamp, the NOT THE OFFICIAL RECORD stamp, the NO plates and the NO disc, always on a paper or brass ground, never directly on wall or panel.",
+   "audio burnt orange #E07A3C": "ONLY the audio cassette and the audio speaker.",
+   "glow #FFD27A": "Lamp pool, Reels' record lamp and the lit front door only. No other light is coloured.",
+   "policy green #1D7A3C": "The binder cover, the YES sign and the verification checks only.",
+   "slate lavender #C9B6E4": "Tagalong only.",
+   "copper #B87333 and walnut": "Reels' body is walnut-copper with copper reels and rims, brass grille. Copper is Reels only."
+  }
+ },
+ "light": {
+  "time": "After hours in a courtroom, a low brass desk lamp and a cool grey-blue window",
+  "direction": "One story: warm brass lamp key from lower left at 25 degrees with a cool grey-blue window rim #A9BCD0 from upper right. Cobalt is ink, never light.",
+  "depth": {
+   "1": "z-220 wall, z0 door and Tagalong, z+60 laptop, z+170 bench edge",
+   "2": "z-220 wall, z0 binder and crowd, z+90 key hook",
+   "3": "overhead desk: z-40 desk, z0 page, z+50 magnifier and sign, z+170 edge",
+   "4": "z-220 wall, z0 doors, z+60 phone and arrow, pullback 1.0x to 0.62x with a 0.4 parallax ratio",
+   "5": "z-220 wall, z0 Reels, z+60 ribbon and glass, pullback 1.2x to 0.62x with seven rooms on z-120",
+   "6": "z-220 wall, z0 Reels, z+50 page, z+170 speaker",
+   "7": "z-220 wall, z0 people, z+40 glass pane, z+90 counter",
+   "8": "z-220 wall, z0 Reels, z+60 glass, z+110 posts and rope",
+   "9": "macro stack: window bokeh far, tumbler at z0, bloom inside, tweezers z+90, no rail",
+   "10": "z-220 wall, z0 glass, z+60 key and page, z+110 party",
+   "11": "overhead plan: z-40 plan, z0 doors and Reels room, z+30 front glow; pullback 1.5x to 1.0x",
+   "12": "z-220 wall, z0 binder, z+60 comb",
+   "13": "z-220 wall, z0 glass, z+60 page, z+110 party"
+  },
+  "per_shot": {
+   "1": "Lamp key from lower left, window rim, the NO plate slams into the lamp pool",
+   "2": "Lamp key on the binder as it lands",
+   "3": "Overhead raking lamp pool from the lower left across the page, cool rim at the top right",
+   "4": "Lamp key through the doors, bricks take rim light as they land",
+   "5": "Reels' record lamp blinks as practical, lamp key warms as it wakes",
+   "6": "Even lamp on the labeled page, rim on the casing",
+   "7": "Split key, warm staff side left, cool window side right across the glass",
+   "8": "Cool window dominates behind the frosted glass, rope in warm lamp",
+   "9": "Window backlight from the upper right behind the glass, the one cobalt object blooms, no lamp",
+   "10": "Lamp key returns on the key tag, rim on the glass",
+   "11": "Overhead raking lamp pool from the lower left across the plan, the front door lit with its own glow",
+   "12": "Lamp key on the binder, comb in its rim",
+   "13": "Match shot 1, lamp key from lower left, window rim upper right"
+  }
+ },
+ "shape_language": {
+  "grammar": "ROUND reels, round faces and a round water glass against the RECTILINEAR doors, counter glass and paper. The recorder is a rounded walnut box with two big round reels for eyes; the court's rules are rectangular plates and doors.",
+  "why": "The thesis axis is a machine behind glass and a person in front of it. Round things hold the feeling, rectangles hold the rules, and the turn is a round recorder inside a rectangular door."
+ },
+ "casting": {
+  "hero": "Reels (NEW characterized object built on the FullTapeMachine reel rig, lib/paper.tsx): walnut recorder, two reels as eyes, brass grille mouth, record lamp",
+  "inventory": [
+   {
+    "shot": 1,
+    "subject": "Tagalong (NEW), side door (NEW), bailiff hand (NEW), clerk laptop (NEW), Reels asleep (NEW)"
+   },
+   {
+    "shot": 2,
+    "subject": "binder (NEW), five Person silhouettes (episode-local rig), brass key (NEW)"
+   },
+   {
+    "shot": 3,
+    "subject": "page (NEW), magnifier (NEW), YES sign (NEW), CONFIDENTIAL folder (NEW)"
+   },
+   {
+    "shot": 4,
+    "subject": "three doors (NEW), phone (NEW), arrow, code page, NO disc, bin"
+   },
+   {
+    "shot": 5,
+    "subject": "Reels, seven hearing-room cards, ribbon, tumbler (NEW), ink bottle (NEW)"
+   },
+   {
+    "shot": 6,
+    "subject": "Reels, page, calendar leaf (NEW), audio speaker, brass thread"
+   },
+   {
+    "shot": 7,
+    "subject": "counter, GlassPane (NEW), judge and party (Person), monitor (NEW), TF-304 form (NEW), cassette (NEW)"
+   },
+   {
+    "shot": 8,
+    "subject": "velvet rope and posts, frosted glass, Reels, party hand"
+   },
+   {
+    "shot": 9,
+    "subject": "tumbler, ink bloom, SEALED stamp (NEW), tweezers (NEW)"
+   },
+   {
+    "shot": 10,
+    "subject": "Reels, key tag, page behind glass, party, cassette"
+   },
+   {
+    "shot": 11,
+    "subject": "floor plan, four side doors, front door glow, Reels room"
+   },
+   {
+    "shot": 12,
+    "subject": "binder, sweat drops, tiny comb"
+   },
+   {
+    "shot": 13,
+    "subject": "Reels, glass, party, blank page, Tagalong, gavel"
+   }
+  ],
+  "reason": "CourtSmart is the court's recording system, so the recorder is the actor. No shelf asset is a recorder with a face. Hero is not StampBot or Clicky.",
+  "tagalong": "Tagalong: ROUND body (a small rounded box with round head) in slate lavender, clip mic and notebook, 28 parts, episode-local rig in Ep1109.tsx",
+  "reels_material": "walnut-copper body, copper reels and rims, brass grille and lamp mount"
+ },
+ "motion_language": {
+  "grammar": "Doors slam with overshoot and dust, the ribbon prints with a mouth-flap, the ink blooms slowly, the glass cuts the frame",
+  "hero_moves": [
+   "Reels sleeps in S1 with its reels still, and they snap open at 42.0s",
+   "Reels prints a ribbon from its mouth and the page is stamped",
+   "Reels holds still while the party's cassette slides under the glass"
+  ]
+ },
+ "composition": {
+  "focal_hierarchy": "Reels and the throughline page first, plates second",
+  "negative_space": "The glass window and the ink glass are held with open wall",
+  "safe_area": "Hero action inside y420 to 1300. Captions at y1336 to 1472.",
+  "signature_shot": "Shot 9: window backlight from the upper right behind the glass, a tumbler at about 70 percent of frame height at ground-height lens, a clerk's gloved hand holds tweezers over the rim while a SEALED stamp hovers above, a cobalt drop falls and blooms through the whole glass and the tweezers can't pull any of it back. It is the only cobalt in frame."
+ },
+ "craft_advance": "Two techniques named with pass conditions. (1) The ink bloom: layered radial strands plus a growing translucent core inside the tumbler clip, timed to the confidential beat, passing if the bloom fills at least 60 percent of the glass by the SEALED beat and reads cobalt at thumbnail size. (2) The Reels face rig: reel-eye blink and spin with a mood brow and a mouth-flap on print, passing if the eyes are visibly open and spinning in S5 to S10 and S13. Fallbacks: if the Reels face rig misses its pass condition, fall back to reel-eye spin only with no brow or mouth flap. If the ink bloom is under 60 percent fill, use a layered radial bloom without strands.",
+ "binding_checks": [
+  "cobalt only on the ink drop, AI GENERATED tag and TF-304 pen line",
+  "no coloured light except lamp key, window rim and Reels' lamp",
+  "seal red only on paper or brass ground",
+  "CourtSmart outputs drawn dashed, with a persistent banner A PLAN NOT CONFIRMED LIVE from S5 to S10",
+  "hero is Reels",
+  "no dashes colons or emoji on screen",
+  "no teal, no mint anywhere"
+ ]
+}

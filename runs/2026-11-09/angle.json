@@ -1,0 +1,26 @@
+{
+ "thesis": "Alaska's court isn't banning AI transcripts, it's deciding who holds them: it bans the side doors, builds one front door inside its own recording system, labels what comes out as not the official record, and keeps it internal, a defensible first step that leaves the party with the audio and not the text.",
+ "supporting_facts": [
+  "c11 c12 c13 no DIY AI hearing notes or transcripts, assistants should be removed",
+  "c14 c15 c16 the court's own CourtSmart AI transcripts of all hearings, should be ready by fall (a plan, never live)",
+  "c17 c18 c19 not the official record, links to official audio, internal only",
+  "c28 the court used AI to help format an early draft of its own policy"
+ ],
+ "counterpoint_to_honor": "The lopsided case at full strength (c19 c21): staff and judges get searchable text of every hearing, a party gets audio by filing form TF-304. The court's stated worry (c20) is confidential information that couldn't be removed from an AI system even if a hearing was later sealed. The film leaves open whether a party should get the AI draft of their own hearing.",
+ "falsifiability": "False if the court treated its own transcripts like the DIY tools it bans (official record, public, cut off from the audio), or if the policy ignored its own confidentiality worry for CourtSmart.",
+ "honesty_constraints": [
+  "Never say transcripts are live, launched, late or delayed, only should be ready by fall (c29 cut)",
+  "Version 1.2 June 2026, copy published by LawSites, never issued today",
+  "should stays should (c6, c13)",
+  "c20 is the policy's stated worry about hearings and AI systems, not tied to one rule",
+  "c28 formatting only",
+  "TF-304 is for parties",
+  "no judges-remain-responsible claim, no AVA",
+  "no calendar deadline from 90 and 30 days"
+ ],
+ "cross_challenge": "Analyst 1 (enthusiast) read it as a template to copy, challenged that the 'should' provisions soften it, kept as an honest aside. Analyst 2 (public door) pressed the party-gets-audio-not-text lopsidedness, kept as the Act 3 test. Analyst 3 (strict rule) supplied the control thesis and warned CourtSmart may not solve the sealing worry, so the film claims containment not a fix. All three agreed on the falsifiable observation; the c20 attribution ambiguity was resolved by saying 'the policy's stated worry'.",
+ "runner_ups": {
+  "template": "folded in as the setup and the c28 aside",
+  "public door": "becomes Act 3 test scene"
+ }
+}
