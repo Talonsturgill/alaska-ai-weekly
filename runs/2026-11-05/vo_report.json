@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.994,
+    "heard": "Two University of Alaska professors say a chatbot wrote the plan for how their university will use chatbots. The University's Board of Regents is set to take it up at its November meeting. So who held the pen? And does that change what the plan says? The professors say Anthropics Clawed wrote the first draft and that it wasn't disclosed until October 9th. The University's Technology Chief says he drafted it over the summer at the Regents request. Both accounts could fit together. We didn't find a university response to the Clawed claim. Here's what the plan is responding to. A UAA report on misconduct says 119 of 150 cited students used AI. The same report says AI plagiarism rose 73% last year. Today, the university has no single AI policy across its campuses. If approved, the plan would require all three campuses to have an AI plan. Now the fair case. Another university official explains the human in the loop this way. AI could recommend but a human decides. That official says the school should be deliberate with AI. Using a tool for a first draft isn't a flaw. The test is who reads it and who gets to change it. By the reporting, the draft came together over the summer without enough feedback from faculty and students. That's the part to watch, whoever held the pen. The professors say drop it and that trusting AI to write the AI plan is the wrong approach. So a human decides, a university official says, would you rather know who wrote it or who was consulted?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.011,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 5.7,
+        "voiced_frac": 0.51,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 117.36,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 117.36,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.994,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.996,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.996,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

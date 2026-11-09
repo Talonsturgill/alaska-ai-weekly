@@ -1,0 +1,62 @@
+{
+ "run_date": "2026-11-05",
+ "window_reported_by_gate": 10,
+ "search_budget": {
+  "researchers": 3,
+  "capped": true,
+  "exhausted": true
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "note": "Three scouts Oct 26 to Nov 5, all converged on the UA plan."
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "note": "Scouts read outlet indexes."
+  },
+  {
+   "rung": "widened_window",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "carried_leads",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": true,
+   "note": "NSF and Federal Register queries returned nothing; alaska.edu 503."
+  },
+  {
+   "rung": "follow_up",
+   "attempted": false,
+   "note": "Not needed."
+  },
+  {
+   "rung": "pegged_explainer",
+   "attempted": false,
+   "note": "Not needed."
+  }
+ ],
+ "locked_story": {
+  "found_at_rung": "in_window_sweep",
+  "source_urls": [
+   "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "https://www.ktoo.org/2026/09/16/university-of-alaska-regents-consider-draft-ai-policy/"
+  ],
+  "headline": "UA regents AI Engaged plan, vote scheduled Nov 5, professors say Claude drafted it"
+ },
+ "candidates": [
+  "UA AI Engaged plan",
+  "Senate race AI-company donations (Alaska Beacon)",
+  "Fairbanks Nobody Asked Us town hall",
+  "Kreiss-Tomkins data center moratorium lead",
+  "Suicide Basin drone maps (no AI)"
+ ]
+}

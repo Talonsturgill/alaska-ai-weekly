@@ -95,8 +95,8 @@ export const DocumentFlip: React.FC<{
 
 export const DiplomaPress: React.FC<{
   f: number; x: number; y: number; scale?: number; pull?: number; brake?: number;
-  tokenText?: string; machine?: boolean; examiner?: boolean; draft?: boolean;
-}> = ({f, x, y, scale = 1, pull = 0, brake = 0, tokenText = 'WHO EARNED THIS?', machine = true, examiner = false, draft = false}) => {
+  tokenText?: string; machine?: boolean; examiner?: boolean; draft?: boolean; dieText?: string;
+}> = ({f, x, y, scale = 1, pull = 0, brake = 0, tokenText = 'WHO EARNED THIS?', machine = true, examiner = false, draft = false, dieText}) => {
   const p = ease(pull);
   const bob = Math.sin(f / 24) * 2;
   const dieY = -290 + p * 335 - brake * 14;
@@ -110,7 +110,7 @@ export const DiplomaPress: React.FC<{
     <g transform={`translate(0 ${dieY})`}>
       <rect x={-205} y={-64} width={410} height={128} rx={24} fill={BRASS} stroke={INK} strokeWidth={12}/>
       <rect x={-170} y={-30} width={340} height={62} rx={14} fill={BRASS_L} opacity={0.7}/>
-      <text y={18} textAnchor="middle" fontFamily={BOLD} fontSize={34} fontWeight={900} fill={INK}>{tokenText === 'EARNED' ? 'EARNED' : 'AUTO STAMP?'}</text>
+      <text y={18} textAnchor="middle" fontFamily={BOLD} fontSize={34} fontWeight={900} fill={INK}>{dieText ?? (tokenText === 'EARNED' ? 'EARNED' : 'AUTO STAMP?')}</text>
       <RimLight d="M-178,-43 H175" w={6} opacity={0.7}/>
     </g>
     <g transform="translate(0 152)">

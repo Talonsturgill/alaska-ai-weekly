@@ -1,0 +1,49 @@
+{
+ "judge_id": "J3",
+ "axis_scores": {
+  "Hook & retention": 7.0,
+  "Illustration craft & detail": 7.0,
+  "Motion & animation craft": 6.5,
+  "Composition & staging": 6.5,
+  "Color & grade": 7.5,
+  "Typography & captions": 7.0,
+  "Sound design & mix": 7.0,
+  "VO-illustration sync & entertainment": 6.5,
+  "Accuracy & sourcing": 8.0,
+  "Alaska authenticity & cultural respect": 7.0,
+  "Writing & post quality": 7.5
+ },
+ "weights": {
+  "Hook & retention": 0.12,
+  "Illustration craft & detail": 0.16,
+  "Motion & animation craft": 0.12,
+  "Composition & staging": 0.08,
+  "Color & grade": 0.08,
+  "Typography & captions": 0.06,
+  "Sound design & mix": 0.1,
+  "VO-illustration sync & entertainment": 0.08,
+  "Accuracy & sourcing": 0.1,
+  "Alaska authenticity & cultural respect": 0.06,
+  "Writing & post quality": 0.04
+ },
+ "weighted_total": 7.02,
+ "hard_blockers": [],
+ "concrete_defects": [
+  {
+   "axis": "Hook & retention",
+   "finding": "The opening shows a thin mint tick, not a bold mint line."
+  },
+  {
+   "axis": "Motion & animation craft",
+   "finding": "Strips for flag 2.8, map 3.7, band 3.8, rulebooks 3.8, chairs 4.1, pen 4.8, highlighter 2.9 percent."
+  },
+  {
+   "axis": "Composition & staging",
+   "finding": "Art occupies the middle third; ILLUSTRATION tag and half-covered window."
+  },
+  {
+   "axis": "VO-illustration sync & entertainment",
+   "finding": "25 VO gaps; long picture holds feel like a narrated slideshow."
+  }
+ ]
+}

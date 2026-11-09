@@ -1,0 +1,16 @@
+{
+ "run_date": "2026-11-05",
+ "thesis": "A plan that says a human decides is being judged on who held the pen. The drafting tool matters less than whether faculty and students were in the room, and by the reporting the summer draft had too little of their feedback.",
+ "falsifiable_by": "A record that faculty and students were consulted before the draft was written, or a UA statement that no AI drafted the text and the plan was reviewed line by line by people (c3 c8 c11).",
+ "supporting_facts": [
+  "c3 UA technology chief drafted it over the summer",
+  "c8 too little faculty and student feedback",
+  "c2 c4 professors say Claude drafted, disclosed Oct 9th"
+ ],
+ "counterpoint": "Using an AI to draft is not itself a flaw. The plan's own rule is a human decides (c9), the cheating numbers are real (c5 c6) and the UA response was not found (c11). Honored as the TEST act: the fair case gets its own scene at full strength.",
+ "runner_ups": [
+  "Senate race AI donor money (lost: campaign finance, secondary only)",
+  "Fairbanks town hall (lost: overlaps excluded data-center subject)"
+ ],
+ "stance": "curious"
+}

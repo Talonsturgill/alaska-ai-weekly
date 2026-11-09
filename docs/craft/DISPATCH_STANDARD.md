@@ -646,3 +646,14 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - Cite the supporting claim on every line it truly supports (c22 on "starting in 2018" and "temporary"), or claim density blocks preflight.
 - The region under the captions and the top chrome are judged. Ship a foreground layer and keep any "ILLUSTRATION" chip below the state band.
 - Dates written "2018 TO 2019" on screen, never "2018-19" (a hyphen range reads as a dash).
+
+## 23. Things the 2026-11-05 gates, critics and panel found that were knowable in advance ("Who Held the Pen")
+- **Copying last episode's file keeps its imports.** The new episode imported `./Ep1102Ids`, so every plate and beat ran on the old run's beat table for two cuts and the plates showed two to four seconds early. After copying an episode, `grep -n "Ep1[0-9]*Ids" video-engine/src/EpNNNN.tsx` and make sure only the new id file is imported. (2026-11-05)
+- **The static gates read literal `<Plate>` elements only.** A helper that takes `text={q.text}` leaves plate_overlap, zoom_clip and visible_copy with nothing to measure and they FAIL ("measured NOTHING"). Write literal `<Plate text="..." displayLines={[...]} p={win(f, b(k), b(next))} />` and put `{/* plate-overlap-ok */}` on the line when the plates are sequenced by `win()`. A plate with `displayLines` also needs `text`. (2026-11-05)
+- **A library die label can't be edited from the episode.** DiplomaPress printed AUTO STAMP? on every shot, which read as a rubber stamp on the plan. `dieText` now sets it. Use it. (2026-11-05)
+- **The library press eases `pull` with a cubic, so pass roughly 0.4 for a 0.78 stroke.** A pull of 0.8 slams the die through the paper and hides its own label, which label_footprint fails. (2026-11-05)
+- **Titles on a small sheet must be sized to the sheet.** A 34 px title on a 120 px sheet ran past the card and read as clipped text in three judge cards. Size the string to the box by arithmetic. (2026-11-05)
+- **A one-point-of-view room with the hero at 1.0 leaves the top and bottom bands bare again.** Three seats named it in every round until a top throughline strip and a bottom "who was in the room" strip carried the argument. Plan the two bands in the board. (2026-11-05)
+- **Held beats under 6 percent are the Motion cap.** Wrapping the sheets, stacks, chairs, hands and press in HeldProp with a gain of 3 to 5 lifted Motion by 0.5 over three cuts. Do it at the first build, not after round 2. (2026-11-05)
+- **dispatch_mix squashed the loudness range to 5.1 to 5.9 because its loudnorm target was LRA 7 against a premix of 10.5.** LRA 14 delivers 8.0. (2026-11-05)
+- **Never state a vote result or imply one.** The editor caught AUTO STAMP? next to REGENTS NOVEMBER MEETING as an implied rubber stamp, and "the university says" where the source is one official. (2026-11-05)

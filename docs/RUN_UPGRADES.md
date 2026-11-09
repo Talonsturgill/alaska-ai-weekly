@@ -4001,3 +4001,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: held figures perform on their beats (engine advance lib/figureidle.tsx, IdleFigure with beat cues and StrikeProp, measured on FigureLook) and figure_rig_check as a make_cut source gate; Gate 0A fails a board that never draws Alaska (alaska_cue_check inside storyboard_check); Gate 0F, the editor reads the VO script against claims.json before the first synth, enforced in vo_synth_gemini.py.
 - Engine advance: lib/figureidle.tsx (IdleFigure, figureIdle, headTransform, StrikeProp, strike).
 - Escalated: composition and hero scale (repeat 3; the top-band measure read 11-09 at 33.7 percent against a 45 ceiling while every seat called the top empty, and nothing measures hero scale yet), text-fit-local-coordinate-components (second escalation, not reproduced).
+
+## 2026-11-05 "Who Held the Pen" (UA AI Engaged plan, regents November meeting, two UAA professors say Claude drafted it)
+- Shipped: 114 s film, panel median 7.05 against 7.0 (7.08, 7.05, 7.02), no hard blockers, on the ninth graded cut. Caption 8.54 against 8.5 on its fifth round, zero hard fails. No primary document was reachable (alaska.edu 503) and no vote result is stated, disclosed in the draft.
+- In-run fixes: stale Ep1102Ids import, literal Plate conversion for the static gates, DiplomaPress dieText prop, VO attribution re-synth, dispatch_mix loudnorm LRA 7 to 14 (delivered 5.3 to 8.0), HeldProp idle life, top and bottom bands, ghost die and impact star.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-05), six items. Phase 9 machine pass was due and is run next.

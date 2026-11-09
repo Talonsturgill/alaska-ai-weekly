@@ -78,6 +78,7 @@ import {Ep1101, ep1101Schema} from './Ep1101';
 import {Ep1102, ep1102Schema} from './Ep1102';
 import {Ep1107, ep1107Schema} from './Ep1107';
 import {Ep1104, ep1104Schema} from './Ep1104';
+import {Ep1105, ep1105Schema} from './Ep1105';
 import {Ep1106, ep1106Schema} from './Ep1106';
 import {Ep1108, ep1108Schema} from './Ep1108';
 import {Ep1109, ep1109Schema} from './Ep1109';
@@ -126,6 +127,10 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="GrocerLook" component={GrocerLook} durationInFrames={240} fps={30} width={1080} height={1920}/>
       <Composition id="CalfLook" component={CalfLook} durationInFrames={240} fps={30} width={1080} height={1920}/>
       <Composition id="ProspectLook" component={ProspectLook} durationInFrames={420} fps={30} width={1080} height={1920}/>
+      <Composition id="Dispatch1105"
+        component={Ep1105} durationInFrames={4200}
+        fps={30} width={1080} height={1920} schema={ep1105Schema} defaultProps={{captions: []}}
+        calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??4200})}/>
       <Composition id="Dispatch1107"
         component={Ep1107} durationInFrames={4200}
         fps={30} width={1080} height={1920} schema={ep1107Schema} defaultProps={{captions: []}}

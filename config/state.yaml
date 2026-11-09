@@ -3349,3 +3349,47 @@ dispatch_history:
     metaphor: a court builds one front door for its own AI transcripts and bricks
       up every side door, and a drop of ink in water shows why a sealed hearing can't
       be taken back out
+- date: '2026-11-05'
+  topic: 'University of Alaska ''AI Engaged'' plan: regents set to take it up in November,
+    two UAA professors say Claude drafted it, no UA response found (ADN, KTOO)'
+  slug: dispatch-2026-11-05-who-held-the-pen
+  key_entities:
+  - University of Alaska
+  - Board of Regents
+  - AI Engaged
+  - UAA
+  - Gregory Hartley
+  - Joel Potter
+  - Ben Shier
+  - Stephanie Erickson
+  - Anthropic
+  - Claude
+  - ADN
+  - KTOO
+  archetype: machine-handle vs human-handle approval press
+  palette: burgundy and oak seminar room at dusk, cream sheets, an oxblood brass press,
+    mint machine light and highlighter yellow
+  voice: gemini-tts Sulafat
+  stance: curious
+  angle: A plan that says a human decides is being judged on who held the pen, but
+    by the reporting the better question is who was consulted.
+  hero: DiplomaPress
+  cast:
+  - DiplomaPress
+  - Sheet
+  - Hand
+  - Pen
+  - Stack
+  - TopChair
+  composition:
+    pov: eye-level-immersive
+    motion_vector: vertical-rise
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: burgundy and oak seminar room at dusk, cream sheets, an oxblood brass
+      press, mint machine light and highlighter yellow
+    camera_strategy: slow-orbit-and-push
+    light_story: golden-hour-low-key
+    metaphor: a plan-stamping press with a machine handle and a human handle, and
+      a draft sheet that changes state until it lies unsigned before two dark chairs
