@@ -1,0 +1,24 @@
+{
+ "thesis": "Petersburg isn't deciding whether it wants AI. It's deciding how big a single customer its 12.2 cent hydro grid should take on, and rules written for the load work whatever the racks run.",
+ "supporting_facts": [
+  "Full 2 MW build would use 17,000,000 kWh a year, about 16x the cannery's 1,064,400 kWh in 2015 (c18-c20)",
+  "The pause's three triggers are physical: grid capacity, generators, uncontained cooling (c3); the record never says what the facility would compute (c28)",
+  "Assembly tied 3-3 on Sept 21, then unanimously approved a 9-month pause plus zoning rules Oct 5 (c7,c11,c13)"
+ ],
+ "counterpoint": "The utility says the same load pays: over $2M a year and smaller rate increases at 12.2 cents (c21-c24), and the original plan already had no on-site diesel and closed loop cooling (c25,c26). A pause could cost that. Honest answer: rules set terms, grid capacity is the one trigger the record doesn't settle.",
+ "falsifiable_by": "A use-based trigger added to the rules, or a named workload that shifts the debate to what it computes.",
+ "runner_ups": [
+  "Enthusiast: pause as spec sheet (folded in as counter-scene)",
+  "Skeptic: rules before knowing the workload (folded into the ending question)"
+ ],
+ "stance": "mixed",
+ "guardrails": [
+  "never say the pause passed",
+  "never say Petersburg's facility is AI; vendor marketing only",
+  "attribute utility figures",
+  "16x is full 2MW build only",
+  "tie was the Assembly",
+  "no 'peak'",
+  "no causal link between deal falling through and votes"
+ ]
+}

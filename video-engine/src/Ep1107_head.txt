@@ -1,0 +1,183 @@
+import React from 'react';
+import {AbsoluteFill, Easing, interpolate, Sequence, staticFile, useCurrentFrame} from 'remotion';
+import {z} from 'zod';
+import {GradeLayer} from './lib/lighting';
+import {VoiceProvider, useVoice} from './lib/voice';
+import {cameraKick, kickTransform} from './lib/camera';
+import {EndCredits} from './lib/EndCredits';
+import {assertCropSafe} from './lib/cropsafe';
+import {CaptionBar} from './lib/captions';
+import {MONO, monoW} from './lib/prospect';
+import {IDS} from './Ep1107Ids';
+import {HeldTravel} from './lib/heldidle';
+
+// What's In The Box, 2026-11-07. Palette roles are art_direction.json. GRID is an ice-white glass gauge on boots (ReserveBar's silhouette, hand-drawn here), golden fluid.
+// THE CHART is the throughline, a wooden height chart: blank, ladder and sixteen tick, three lock plates, two green and GRID dark, pencil hovering.
+// Slate-violet is the tarp over the unknown load. Rust is the cannery. Crimson is the FAILED stamp only. Green is a test the utility's plan answered.
+const W = 1080, H = 1920;
+const PY = 604;
+const CAPTION_TOP = 1336;
+const CAP_GUARD = CAPTION_TOP - 36;
+type Beat = {id: number; at: number; label: string};
+
+export const C = {
+  sky: '#B9C9CF', ground: '#2E4640', water: '#5E8A94', hero: '#F4F8FA', glass: '#6E828A', fluid: '#E8B800', crimson: '#C8102E', green: '#2E9E5B',
+  tarp: '#7A6AB0', tarpD: '#51447F', cannery: '#8A4A2B', canneryD: '#5C2F1A', plank: '#6B5A44', paper: '#F3EEDD', ink: '#14222A', shadow: '#1C2B2B', iron: '#B7B0A0', steel: '#6B7A86', rain: '#DDE8EC',
+};
+const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+const EZ = Easing.bezier(0.2, 1.16, 0.3, 1);
+const ease = (f: number, a: number, d = 24) => interpolate(f, [a, a + d], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EZ});
+const easeIO = (f: number, a: number, d = 24) => interpolate(f, [a, a + d], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+const springy = (f: number, a: number, d = 26) => {
+  const k = clamp01((f - a) / d);
+  return k <= 0 ? 0 : 1 - Math.exp(-5.5 * k) * Math.cos(k * 9);
+};
+const bump = (f: number, a: number, d = 14) => {
+  const k = clamp01((f - a) / d);
+  return k <= 0 || k >= 1 ? 0 : Math.sin(k * Math.PI) * (1 - k * 0.3);
+};
+
+type SP = {f: number; from: number; dur: number; b: (id: number) => number; kicks: number[]; bt: (id: number) => number};
+type SceneProps = {p: SP};
+
+const SVG: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, overflow: 'visible'}}>{children}</svg>
+);
+
+const World: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <g>
+    <g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g>
+    <clipPath id="reflclip"><rect data-band="ok" x={0} y={1400} width={W} height={520} /></clipPath>
+    <g clipPath="url(#reflclip)" opacity={0.2} data-band="ok" transform="translate(0 2524) scale(1 -1)"><g transform="translate(540 1262) scale(1.2) translate(-540 -1240)">{children}</g></g>
+  </g>
+);
+
+type Tone = 'dark' | 'plate' | 'warn' | 'glow';
+const TONES: Record<Tone, {fill: string; fg: string; edge: string}> = {
+  dark: {fill: '#14222A', fg: '#F3EEDD', edge: '#F3EEDD'},
+  plate: {fill: C.paper, fg: C.ink, edge: C.ink},
+  warn: {fill: C.paper, fg: C.crimson, edge: C.crimson},
+  glow: {fill: C.fluid, fg: C.ink, edge: C.ink},
+};
+
+/** THE NAMEPLATE: a mono plate sized to its string by arithmetic, clear of the crop lines and the caption band. */
+const Plate: React.FC<{text?: string; displayLines?: string[]; x?: number; y: number; size?: number; tone?: Tone; p?: number; rot?: number; drop?: number}> =
+({text, displayLines, x = 540, y, size = 34, tone = 'dark', p = 1, rot = 0, drop = 0}) => {
+  const ls = displayLines ?? [text ?? ''];
+  const w = Math.min(1020, Math.max(...ls.map((l) => monoW(l, size))) + 56);
+  const h = ls.length * (size + 16) + 14;
+  const yy = Math.min(y, CAP_GUARD - h / 2);
+  assertCropSafe(ls.join(' '), yy - h / 2, yy + h / 2);
+  const t = TONES[tone];
+  const k = clamp01(p);
+  const fr = useCurrentFrame();
+  if (k <= 0.01) return null;
+  const sc = (0.88 + 0.12 * Math.min(1, k * 1.15)) * (1 + 0.01 * Math.sin(fr / 11 + x * 0.01));
+  return (
+    <g opacity={Math.min(1, k * 1.7)} transform={`translate(${x} ${yy - drop * (1 - k)}) rotate(${rot}) scale(${sc})`}>
+      <rect x={-w / 2 + 6} y={-h / 2 + 8} width={w} height={h} rx={6} fill="#000" opacity={0.3} />
+      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={6} fill={t.fill} stroke={t.edge} strokeWidth={4} />
+      {ls.map((l, i) => (
+        <text key={i} x={0} y={-h / 2 + 7 + (size + 16) * (i + 0.5) + size * 0.36} textAnchor="middle" fontFamily={MONO} fontWeight={800}
+          fontSize={size} letterSpacing={1.5} fill={t.fg}>{l}</text>
+      ))}
+    </g>
+  );
+};
+
+/** a sized label: rect sized by monoW, text centred on it. */
+const Lab: React.FC<{text: string; x: number; y: number; size?: number; tone?: Tone; p?: number; rot?: number}> = ({text, x, y, size = 24, tone = 'plate', p = 1, rot = 0}) => {
+  if (p <= 0.01) return null;
+  const w = monoW(text, size) + 28, h = size + 22;
+  const t = TONES[tone];
+  return (
+    <g opacity={clamp01(p * 1.8)} transform={`translate(${x} ${y}) rotate(${rot}) scale(${0.9 + 0.1 * clamp01(p)})`}>
+      <rect x={-w / 2 + 4} y={-h / 2 + 5} width={w} height={h} rx={5} fill="#000" opacity={0.22} />
+      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={5} fill={t.fill} stroke={t.edge} strokeWidth={3} />
+      <text x={0} y={size * 0.36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={size} letterSpacing={0.8} fill={t.fg}>{text}</text>
+    </g>
+  );
+};
+
+
+
+/** overcast rain world: a graded silver sky, far ridges, a water band and rain streaks so no frame is flat. */
+const Atmos: React.FC<{f: number; bg: string}> = ({f, bg}) => {
+  const dark = bg === C.ground || bg === C.shadow;
+  return (
+    <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
+      <defs>
+        <linearGradient id="atm" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={dark ? '#1C2B2B' : '#DCE6EA'} />
+          <stop offset="0.35" stopColor={bg} />
+          <stop offset="0.8" stopColor={dark ? '#14201F' : '#9FB4BB'} />
+          <stop offset="1" stopColor={dark ? '#0C1514' : '#7E979F'} />
+        </linearGradient>
+      </defs>
+      <rect x={0} y={0} width={W} height={H} fill="url(#atm)" />
+      <path d="M0,640 L120,560 L260,610 L420,520 L600,600 L760,540 L920,610 L1080,560 L1080,760 L0,760 Z" fill={dark ? '#0F1B1A' : '#7E9690'} opacity={0.55} />
+      <path d="M0,700 L180,640 L330,690 L520,630 L720,700 L900,650 L1080,700 L1080,820 L0,820 Z" fill={dark ? '#0B1514' : '#5F7C74'} opacity={0.6} />
+      <g opacity={0.9}>
+        <path d="M 0,210 Q 270,262 540,228 T 1080,240" fill="none" stroke={C.ink} strokeWidth={5} />
+        <path d="M 0,262 Q 270,316 540,282 T 1080,296" fill="none" stroke={C.ink} strokeWidth={4} />
+        <path d="M 0,320 Q 270,372 540,340 T 1080,352" fill="none" stroke={C.ink} strokeWidth={4} />
+        {[60, 540, 1020].map((px, i) => <g key={i}><rect x={px - 9} y={170} width={18} height={680} fill={C.plank} stroke={C.ink} strokeWidth={5} /><rect x={px - 60} y={194} width={120} height={14} fill={C.plank} stroke={C.ink} strokeWidth={4} /><rect x={px - 50} y={250} width={100} height={12} fill={C.plank} stroke={C.ink} strokeWidth={4} /></g>)}
+        {[0, 1, 2].map((i) => <ellipse key={i} cx={160 + i * 380 + ((f * (0.3 + i * 0.1)) % 300)} cy={90 + i * 70} rx={170} ry={36} fill="#F3F7F8" opacity={0.55} />)}
+        <g transform={`translate(${((f * 1.4) % 1500) - 200} 130)`}><path d="M 0,0 L 60,-10 L 120,0 L 60,14 Z" fill={C.paper} stroke={C.ink} strokeWidth={4} /><path d="M 30,0 L 60,-40 L 70,0 Z" fill="#E8E2D0" stroke={C.ink} strokeWidth={3} /><circle cx={118} cy={0} r={5} fill={C.ink} /></g>
+        {[0, 1, 2, 3, 4, 5].map((i) => <path key={i} d={`M ${120 + i * 150 + Math.sin(f / 30 + i) * 20},${380 + ((i * 53) % 150)} q 14,-16 28,0 q 14,-16 28,0`} fill="none" stroke={C.ink} strokeWidth={4} strokeLinecap="round" />)}
+      </g>
+      <g>
+        <path d="M -40,1700 Q 200,1640 420,1700 L 380,1830 Q 200,1870 -20,1830 Z" fill={C.canneryD} stroke={C.ink} strokeWidth={8} />
+        <path d="M -30,1700 Q 200,1650 410,1700" fill="none" stroke={C.plank} strokeWidth={10} />
+        <path d="M 900,1640 q 40,40 0,90 q -40,-10 -50,-60 z" fill="none" stroke={C.ink} strokeWidth={8} />
+        <path d="M 760,1700 q 100,40 260,10" fill="none" stroke={C.plank} strokeWidth={10} strokeLinecap="round" />
+      </g>
+      {[0, 1, 2, 3, 4, 5].map((i) => { const k = ((f * 0.7 + i * 23) % 70) / 70; return <ellipse key={i} cx={140 + i * 170} cy={1620 + (i % 3) * 70} rx={10 + k * 46} ry={3 + k * 12} fill="none" stroke="#EAF2F4" strokeWidth={3} opacity={0.6 * (1 - k)} />; })}
+      <g transform={`translate(880 ${1780 + Math.sin(f / 14) * 8})`}><circle r={26} fill={C.crimson} stroke={C.ink} strokeWidth={6} /><rect x={-26} y={-6} width={52} height={12} fill={C.paper} stroke={C.ink} strokeWidth={4} /></g>
+      {[120, 330, 560, 790, 980].map((px, i) => <g key={i}><rect x={px} y={1500 + (i % 2) * 40} width={44} height={460} fill={C.canneryD} stroke={C.ink} strokeWidth={6} opacity={1} /><ellipse cx={px + 15} cy={1500 + (i % 2) * 40} rx={22} ry={8} fill={C.plank} stroke={C.ink} strokeWidth={4} /></g>)}
+      {Array.from({length: 10}).map((_, i) => <path key={i} d={`M ${-40 + i * 130},${1560 + (i % 4) * 90} q 40,-12 80,0 t 80,0`} fill="none" stroke="#EAF2F4" strokeWidth={4} opacity={0.22 + 0.1 * Math.sin(f / 15 + i)} />)}
+      {Array.from({length: 46}).map((_, i) => {
+        const x = (i * 97 + f * 3.2) % 1180 - 50, y = ((i * 211 + f * 26) % 2100) - 100;
+        return <line key={i} x1={x} y1={y} x2={x - 9} y2={y + 36} stroke={C.rain} strokeWidth={2} opacity={0.22} />;
+      })}
+    </svg>
+  );
+};
+
+const CHIP = 'ILLUSTRATION';
+type Cam = {z: number; fx: number; fy: number};
+const Frame: React.FC<{p: SP; cam?: (f: number) => Cam; z0?: number; z1?: number; bloom?: number; vignette?: number; ox?: number; oy?: number; warmth?: number; bg?: string; children: React.ReactNode}> =
+({p, cam, z0 = 1.02, z1 = 1.2, bloom = 0.05, vignette = 0.28, ox = 540, oy = 960, warmth = 0.02, bg = C.sky, children}) => {
+  const jl = kickTransform(p.f, cameraKick(p.f, p.from, p.dur, p.kicks));
+  const t = clamp01(p.f / Math.max(1, p.dur));
+  const c: Cam = cam ? cam(p.f) : {z: lerp(z0, z1, easeIO(p.f, 0, Math.max(1, p.dur))), fx: ox + 50 * Math.sin(p.f / 110) + 30 * t, fy: oy};
+  return (
+    <AbsoluteFill>
+      <Atmos f={p.f} bg={bg} />
+      <div style={{position: 'absolute', inset: 0, background: 'transparent', transform: `translate(${jl.x + 4 * Math.sin(p.f / 23)}px, ${jl.y + 5 * Math.sin(p.f / 17 + 1) + 4 * t}px) translate(${540 - c.fx * c.z}px, ${960 - c.fy * c.z}px) scale(${c.z})`, transformOrigin: '0 0'}}>
+        {children}
+      </div>
+      <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
+        <g data-band="ok">
+          <rect x={50} y={436} width={monoW(CHIP, 20) + 30} height={38} rx={5} fill={C.ink} stroke="#EDE6D3" strokeWidth={2.4} opacity={0.92} />
+          <text x={65} y={462} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1.5} fill="#EDE6D3">{CHIP}</text>
+        </g>
+      </svg>
+      <GradeLayer f={p.f} bloom={bloom + 0.02} vignette={vignette} grain={0.07} warmth={warmth} />
+    </AbsoluteFill>
+  );
+};
+
+const track = (keys: Array<{t: number; z: number; fx: number; fy: number}>) => (f: number): Cam => {
+  const clampC = (c: Cam): Cam => ({z: c.z, fx: Math.max(540 / c.z, Math.min(1080 - 540 / c.z, c.fx)), fy: Math.max(960 / c.z, Math.min(1920 - 960 / c.z, c.fy))});
+  if (f <= keys[0].t) return clampC(keys[0]);
+  for (let i = 1; i < keys.length; i++) {
+    if (f <= keys[i].t) {
+      const a = keys[i - 1], bk = keys[i];
+      const k = Easing.inOut(Easing.cubic)((f - a.t) / Math.max(1, bk.t - a.t));
+      return clampC({z: lerp(a.z, bk.z, k), fx: lerp(a.fx, bk.fx, k), fy: lerp(a.fy, bk.fy, k)});
+    }
+  }
+  return clampC(keys[keys.length - 1]);
+};

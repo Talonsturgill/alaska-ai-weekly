@@ -1,0 +1,45 @@
+{
+ "locked_story": {
+  "headline": "Petersburg, a hydro town at 12 cents, weighs a data center moratorium while a 2 MW cannery transformer waits",
+  "found_at_rung": "in_window_sweep"
+ },
+ "candidates": [
+  {
+   "name": "Petersburg moratorium"
+  },
+  {
+   "name": "JBER armed drone strike"
+  },
+  {
+   "name": "AI employee Senate donations"
+  },
+  {
+   "name": "Governor race data centers"
+  },
+  {
+   "name": "Fairbanks town hall"
+  },
+  {
+   "name": "CRREL camouflage"
+  },
+  {
+   "name": "Anchorage surveillance AO 2026-108"
+  },
+  {
+   "name": "UA regents AI"
+  }
+ ],
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 8
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "candidates_found": 8
+  }
+ ],
+ "uncapped_sweep_done": true
+}
