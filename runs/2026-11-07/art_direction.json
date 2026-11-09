@@ -1,0 +1,101 @@
+{
+ "run_date": "2026-11-07",
+ "story_id": "petersburg-data-center-pause",
+ "palette": {
+  "roles": {
+   "sky": "#B9C9CF",
+   "ground": "#2E4640",
+   "hero": "#F4F8FA",
+   "accent": "#C8102E",
+   "shadow": "#1C2B2B",
+   "paper": "#F3EEDD",
+   "ink": "#14222A",
+   "fluid": "#E8B800",
+   "tarp": "#7A6AB0",
+   "cannery": "#8A4A2B",
+   "water": "#5E8A94",
+   "lockLocked": "#C8102E",
+   "lockAnswered": "#2E9E5B",
+   "glassInterior": "#6E828A",
+   "lockUnresolved": "#1C2B2B",
+   "gateIron": "#B7B0A0",
+   "dockPlank": "#6B5A44"
+  },
+  "mood": "Silver overcast fjord and spruce green. Ice-white glass gauge hero with a mid blue-grey interior (L~50) so the golden fluid (L~80, hue ~46) separates by ~30 L. Slate-violet tarp over the unknown load, brown-rust cannery as the scale yardstick. Crimson is used only on a lock that is shut and untested.",
+  "divergence": "Hero is ice-white glass, not teal or mint (Nov 2 teal #00E0C6, Nov 6 mint StampBot). Fluid gold #E8B800 (hue ~46) sits ~12 degrees from Nov 2's amber #FF9A1F but is a cool lemon-gold against a silver world and appears only inside the gauge, never as light or as a wall; crimson #C8102E (hue ~350) is 33+ degrees from tangerine. Base is daylight silver and spruce, not orange walls or midnight indigo.",
+  "value_targets": {
+   "sky": 80,
+   "water": 55,
+   "ground": 28,
+   "dockPlank": 42,
+   "tarp": 49,
+   "hero": 96,
+   "glassInterior": 50,
+   "fluid": 80,
+   "gateIron": 72,
+   "lockUnresolved": 16
+  }
+ },
+ "light": {
+  "time": "Overcast late-morning rain light",
+  "direction": "Soft top-left diffuse key, cool sky fill, a warm yellow rim only from the gauge fluid, rust-red bounce off the cannery wall",
+  "depth": "FjordBG far ridges at z -400, cannery midground z -120, dock and cast at z 0, rain streaks and foreground rope at z 170 for parallax. Contact shadows under every grounded object, dock planks, crate, chart, boots."
+ },
+ "shape_language": {
+  "grammar": "Tall rounded glass gauge (vertical, fluid) against a hard square tarped crate (the load). Circles for padlocks, rectangles for the council. The chart is a vertical wooden ruler that draws the conflict as a height.",
+  "why": "The film argues size, so the two protagonists are a vessel and a box, and the whole story is whether one fits in the other."
+ },
+ "casting": {
+  "hero": "ReserveBar as Grid (lib/grid.tsx)",
+  "inventory": [
+   {
+    "beats": "all",
+    "subject": "ReserveBar Grid, hopeful then worried, fluid level never numbered, dashed CAPACITY NOT SETTLED top band"
+   },
+   {
+    "beats": "1 to 40",
+    "subject": "ServerMachine under a Tarp, Crate-like, steel tint, focused or nervous only, screen shows a question mark"
+   },
+   {
+    "beats": "throughline",
+    "subject": "HeightChart plus Ladder, Gate with three padlocks"
+   },
+   {
+    "beats": "council",
+    "subject": "six Character figures, Lectern name cards"
+   },
+   {
+    "beats": "act 3",
+    "subject": "CashBlock, GenStack, Cell, ScalePans, Calendar, ClaimChip"
+   },
+   {
+    "beats": "gags",
+    "subject": "Raven and SeaOtter only, both native to the dock"
+   }
+  ],
+  "net_new": "Tarp EXISTS on the shelf (lib/refinery.tsx), reused. Declared advances only: Gate lock rig params, plus Tarp progress/flinch if the existing Tarp lacks them.",
+  "continuity": "ReserveBar last starred 2026-10-17, not in the last two dispatches."
+ },
+ "motion_language": {
+  "grammar": "Everything is weighted and wet. Gauge fluid sloshes with secondary motion, the pencil and ladder overshoot, the tarp breathes and flinches. Padlocks swing and clack.",
+  "hero_moves": [
+   "Grid waddles in on boots carrying a pencil, fluid sloshing",
+   "Grid snap-zoom on a worried face at the 16x reveal",
+   "Grid stretches up the ladder and the pencil trembles at the end"
+  ],
+  "blur": "Directional motion blur only on the 16x totem stack, the whip-pans and the snap-zoom."
+ },
+ "composition": {
+  "staging": "Dock world (open and button), cannery wall with the stacked 16 canneries, council chamber with Lectern, courtroom-style utility stand on the dock.",
+  "safe_area": "Hero action and plates inside x120 to 960 and y450 to 1500 so the 1:1 crop keeps them.",
+  "signature_shot": "Grid on the ladder, pencil trembling past the top of the height chart, sixteen cannery silhouettes stacked behind up the fjord wall, the tarped crate in the lower corner. Chart top sits at y~560 of 1920, inside the 1:1 crop (y420 to 1500). Rain streaks kept out of the focal zone.",
+  "focal_hierarchy": "One acting object per beat. Tarp over machine = the unknown load, rust cannery = the yardstick, gold fluid = the grid's capacity. Lock states by time: at 60s all three locks are crimson, shut, untested. At 95s GENERATORS and COOLING are green with the shackle swung open, GRID is ink-dark (lockUnresolved) with the shackle still shut and a PendingMark. State is carried by shackle shape as well as hue.",
+  "attribution": "UTILITY FIGURE and UTILITY ESTIMATE chips persist on every number from the PMPL FAQ."
+ },
+ "craft_advance": {
+  "system": "Gate lock rig (lib/ballot.tsx) and Tarp params (lib/refinery.tsx)",
+  "api": "Gate locks:[{label,state:'locked'|'answered'|'unresolved'}] with shackle open/shut; Tarp progress and flinch if missing",
+  "how": "Extend the existing Gate. Check Tarp params first and add progress/flinch if absent.",
+  "asset_note": "Register both in ASSET_MANIFEST.md and rerun scripts/asset_index.py."
+ }
+}

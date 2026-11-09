@@ -3979,3 +3979,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 ## 2026-11-06 weekly machine pass
 - Shipped: empty-top-of-square gate before the render, VO-gap air in the audio report (room tone was masked 23.2 dB under the music, not missing), held beats owe a rig before the render, caption cheap-levers brief, Gate 0A stale hero check. No engine advance.
 - Escalated: held-figure stamp strike with squash and settle (lib helper), text-fit-local-coordinate-components.
+
+## 2026-11-07 (What's In The Box)
+- Shipped: Petersburg Borough Assembly data center pause (KFSK, PMPL FAQ), hero ReserveBar as Grid, throughline a wooden height chart. Panel median 7.0 (6.82, 7.00, 7.26) against a 7.0 bar after six cuts, audio gate LRA 7.2. Caption 8.23 at the five-round cap, below the 8.5 bar, disclosed.
+- In-run fixes: VO resynthesised four times after critic findings (utility FAQ framing, plan tense, spoken number, line 10), board rewritten twice, World scale wrapper, top and bottom atmosphere, lock states without a pass colour, mix bed contrast.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-07), five items, three repeat offenders.

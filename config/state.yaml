@@ -3184,3 +3184,43 @@ dispatch_history:
     register: editorial-schematic
     camera_strategy: dolly-through
     light_story: noon-hard
+- date: '2026-11-07'
+  topic: Petersburg Borough Assembly data center pause, the draft's three tests, the
+    2 MW Ocean Beauty cannery transformer, and the question of how big a customer
+    the grid should take (KFSK, PMPL FAQ)
+  slug: whats-in-the-box
+  key_entities:
+  - Petersburg
+  - Mazzella Alaska
+  - Greensparc
+  - PMPL
+  - Ocean Beauty cannery
+  - KFSK
+  - Jeigh Stanton Gregor
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: mixed
+  angle: Petersburg isn't deciding whether it wants AI, it's deciding how big a customer
+    its grid should take, and rules written for the load work whatever the racks run.
+  hero: ReserveBar
+  cast:
+  - ReserveBar
+  - Crate
+  - Tarp
+  - Gate
+  - Raven
+  - Figure
+  composition:
+    pov: eye-level-immersive
+    motion_vector: push-in-only
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: editorial-schematic
+    palette: silver overcast fjord and spruce green with an ice-white glass gauge
+      hero, golden fluid, a slate-violet tarp over the unknown load, a brown-rust
+      cannery and one signal-crimson stamp
+    camera_strategy: push-and-ladder-climb
+    light_story: overcast-soft
+    metaphor: a glass gauge measures a mystery crate against a growth chart on a rainy
+      dock while a town council decides how tall is too tall

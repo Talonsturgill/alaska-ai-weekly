@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.976,
+    "heard": "Petersburg, Alaska has zero data centers. Its assembly is writing rules for one anyway. A private company, Mazella Alaska, owns a two megawatt transformer at the old Ocean Beauty Canary. It's deal with a vendor called Greenspark didn't finalize, but it's still pursuing a small project. The whole canary used 1,064,400 kilowatt hours in 2015 by the utility's numbers. Greenspark's plan started at one megawatt, eight and a half million kilowatt hours. At the full two megawatts, 17 million, about 16 canaries. In September, the assembly tied three to three on a one-year pause, so it failed. Vice mayor Jay Stanton Greger called that pause a solution in search of a problem. But on October 5th, it voted unanimously to draft a nine-month pause. November 2nd was reading one of three, and no outcome has been reported. The draft has three tests, grid capacity, generators, and uncontained cooling. Now the other side, from the utility's own FAQ. It says residential power costs 12.2 cents against a state average near 30, and estimates over $2 million a year in revenue with smaller rate increases. Greenspark's plan had no diesel generators on site and closed loop cooling, so that plan answered two tests, though it never finalized. Grebe capacity is the one the record doesn't settle. Greenspark's website pitches AI compute, but nothing in the record says what Petersberg's building would run. The drafts three tests are about grid, generators, and cooling. None asks what the machine runs, so the question is how big a customer its grid should take. If you wrote a fourth test, would you ask what it computes, or only what it draws?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.049,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 6.92,
+        "voiced_frac": 0.47,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 126.08,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 126.08,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (5 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.963,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.976,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.967,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

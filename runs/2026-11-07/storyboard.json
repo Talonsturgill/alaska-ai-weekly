@@ -1,0 +1,2069 @@
+{
+  "run_date": "2026-11-07",
+  "slug": "whats-in-the-box",
+  "title": "What's In The Box",
+  "concept": "Petersburg, Alaska has no data center, yet its Assembly is writing rules for one, and a private owner is still pursuing a small project at the old Ocean Beauty cannery. The draft pause tests grid capacity, generators and uncontained cooling, so it measures size, not what the machine runs. By the utility's own FAQ the full 2 MW build would use about sixteen cannery's worth a year, and its plan answered two of the three tests while grid capacity is not settled. A glass gauge named Grid stands in for the town's power system, a tarped crate for the unknown load, and a height chart for the question of how big.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 125.52,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "push-in-only",
+    "hero_treatment": "single-organic-hero",
+    "layout": "centered-hero-lowerthird",
+    "register": "editorial-schematic",
+    "palette": "silver overcast fjord and spruce green with an ice-white glass gauge hero, golden fluid, a slate-violet tarp over the unknown load, a brown-rust cannery and one signal-crimson stamp",
+    "camera_strategy": "push-and-ladder-climb",
+    "light_story": "overcast-soft",
+    "metaphor": "a glass gauge measures a mystery crate against a growth chart on a rainy dock while a town council decides how tall is too tall"
+  },
+  "palette": "silver overcast fjord and spruce green with an ice-white glass gauge hero, golden fluid, a slate-violet tarp over the unknown load, a brown-rust cannery and one signal-crimson stamp",
+  "divergence_note": "The last films were tangerine walls over teal desks (11-06), a midnight indigo cab (11-02), an overcast moss slope (11-01), a sage chart desk (10-31) and an aubergine depot (10-29). This one is a rainy silver fjord dock in soft overcast light with an ice-white glass hero, a tarped crate and a wooden height chart. No office, cab, slope, depot or sea cutaway, and its signature object is a growth chart that changes state at every act boundary and lands with the pencil hovering and no line drawn.",
+  "treatment": {
+    "title": "What's In The Box",
+    "summary": "Four pitches converged on the same hero (ReserveBar as Petersburg's grid) and the same honest spine, so the room judged on staging. The Comedian's tarped crate and height chart won scroll-stop and retention (a mystery object and a measurable question from frame one). Grafted: the Dramatist's three locks as the Gate rig and the 95s lock states, the Explainer's sixteen-cannery stack as the scale reveal, and the Enthusiast's honest narrowing (two locks answered by the utility's plan, grid capacity still open). Fairness: the utility's case gets a full named scene and the film never says the pause passed or that the facility is AI. Runner-ups folded in as the closing question."
+  },
+  "angle": {
+    "thesis": "Petersburg isn't deciding whether it wants AI. It's deciding how big a single customer its 12.2 cent hydro grid should take on, and rules written for the load work whatever the racks run.",
+    "supporting_facts": [
+      "Full 2 MW build would use 17,000,000 kWh a year, about 16x the cannery's 1,064,400 kWh in 2015 (c18-c20)",
+      "The pause's three triggers are physical: grid capacity, generators, uncontained cooling (c3); the record never says what the facility would compute (c28)",
+      "Assembly tied 3-3 on Sept 21, then unanimously approved a 9-month pause plus zoning rules Oct 5 (c7,c11,c13)"
+    ],
+    "counterpoint": "The utility says the same load pays: over $2M a year and smaller rate increases at 12.2 cents (c21-c24), and the original plan already had no on-site diesel and closed loop cooling (c25,c26). A pause could cost that. Honest answer: rules set terms, grid capacity is the one trigger the record doesn't settle.",
+    "falsifiable_by": "A use-based trigger added to the rules, or a named workload that shifts the debate to what it computes.",
+    "runner_ups": [
+      "Enthusiast: pause as spec sheet (folded in as counter-scene)",
+      "Skeptic: rules before knowing the workload (folded into the ending question)"
+    ],
+    "stance": "mixed",
+    "guardrails": [
+      "never say the pause passed",
+      "never say Petersburg's facility is AI; vendor marketing only",
+      "attribute utility figures",
+      "16x is full 2MW build only",
+      "tie was the Assembly",
+      "no 'peak'",
+      "no causal link between deal falling through and votes"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "Grid looks up at a blank height chart whose shadow crosses the 0 on a dock sign reading DATA CENTERS IN PETERSBURG TODAY 0 while a tarped crate twitches.",
+    "headline": "WHAT'S IN THE BOX",
+    "motion_by_s": 0.3,
+    "loopback": "The pencil hovers over the chart as a tarped crate peeks up, rhyming with the opening dock frame."
+  },
+  "open_loop": {
+    "plant_t": 6.51,
+    "pay_t": 118.13,
+    "what": "What would the crate run? Planted when the tarp flinches, paid when the crowd turns from the crate to the chart and the film says the question is how big."
+  },
+  "open_loop_2": {
+    "plant_t": 55.86,
+    "pay_t": 101.33,
+    "what": "Which of the three locks stays shut? Planted when the draft sheet pins up with three dotted lock outlines, paid when the grid capacity lock stays dark."
+  },
+  "throughline": {
+    "object": "a wooden height chart",
+    "lands_in_button": "the pencil hovers over the chart with no line drawn",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "blank chart beside the dock sign"
+      },
+      {
+        "at_s": 32.06,
+        "state": "a ladder grows beside the chart and the cannery tick is drawn"
+      },
+      {
+        "at_s": 41.87,
+        "state": "extended by a ladder with a cannery tick and a sixteen tick off the top"
+      },
+      {
+        "at_s": 69.55,
+        "state": "bolted to the chart post with three solid padlocks GRID CAPACITY, GENERATORS, UNCONTAINED COOLING"
+      },
+      {
+        "at_s": 95.63,
+        "state": "GENERATORS and COOLING padlocks lit green, GRID CAPACITY padlock dark"
+      },
+      {
+        "at_s": 125.27,
+        "state": "pencil hovering at the top, no line drawn"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 32.06,
+      "type": "build-on",
+      "what": "a ladder grows beside the chart tick by tick as Grid climbs",
+      "hold_s": 0.6
+    },
+    {
+      "t": 41.87,
+      "type": "scale-pullback",
+      "what": "from one cannery tick to sixteen canneries stacked up the fjord wall",
+      "hold_s": 0.8
+    },
+    {
+      "t": 82.27,
+      "type": "morph-to-chart",
+      "what": "two price tags morphing into a 12.2 bar beside a near 30 bar",
+      "hold_s": 0.8
+    },
+    {
+      "t": 118.13,
+      "type": "scale-pullback",
+      "what": "from Grid's face to the whole town at dusk with the dark third lock",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 2.0
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 0.18
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 2.0
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.18
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.22
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.22
+      },
+      {
+        "at_s": 117.83,
+        "level": 0.1
+      },
+      {
+        "at_s": 118.93,
+        "level": 2.0
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "rain",
+    "build_steps": 4,
+    "dip_at": 117.83,
+    "riser_at": 104.55,
+    "silence_at": 117.83,
+    "payoff_at": 118.13,
+    "button_pattern": "callback",
+    "interrupt_at": 74.0,
+    "extra_dips": [
+      44.42
+    ]
+  },
+  "shots": [
+    {
+      "title": "Zero",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "rainy-dock",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Grid looks up at a blank chart whose shadow crosses the zero on the dock sign while the tarped crate twitches.",
+      "ambient": "rain streaks, the tarp breathes, Grid's fluid sloshes",
+      "hero": {
+        "name": "Grid + tarped crate + height chart + sign",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "35% Grid, 30% crate, 20% chart, 15% sign"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-7.960"
+    },
+    {
+      "title": "The cannery",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "cannery-waterfront",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The tarp's blue carries into the transformer tag. A transformer, a Raven, a crate that rolls away and a small one that stays.",
+      "ambient": "rain, the Raven shakes, the boat bobs",
+      "hero": {
+        "name": "cannery + transformer + Raven + fishing boat + crate",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "30% cannery, 25% transformer, 25% crate, 20% boat"
+      },
+      "id": 2,
+      "start_s": 7.96,
+      "t": "7.960-22.280"
+    },
+    {
+      "title": "The meter",
+      "vo_line": 2,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "eye",
+      "stage": "meter-room",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the meter is the subject and the digits are the motion",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A brass meter in a dim meter room rolls to the cannery's 2015 use.",
+      "ambient": "the needle settles, a bulb flickers",
+      "hero": {
+        "name": "brass meter + dim meter room + lamp",
+        "parts": 34,
+        "zones": 3,
+        "detail_note": "60% meter, 25% room, 15% chip"
+      },
+      "id": 3,
+      "start_s": 22.28,
+      "t": "22.280-32.060"
+    },
+    {
+      "title": "Sixteen",
+      "vo_line": 3,
+      "framing": "alt-vantage",
+      "scale": "extreme-wide",
+      "height": "low",
+      "stage": "fjord-wall",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Grid climbs the ladder while a cable drains its fluid and sixteen canneries stack up behind.",
+      "ambient": "Grid's fluid sloshes, the tower sways, the cable sags",
+      "hero": {
+        "name": "Grid + height chart + ladder + cable + sixteen cannery silhouettes",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "30% Grid, 30% chart, 40% canneries"
+      },
+      "id": 4,
+      "start_s": 32.06,
+      "t": "32.060-44.420"
+    },
+    {
+      "title": "Three to three",
+      "vo_line": 4,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "council-chamber",
+      "pov": "exploded-diagram",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the jam is the stillness",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "One empty bracket jams while three figures push and three hold, then a crimson stamp.",
+      "ambient": "the bracket jams, rain on the window, the figures strain",
+      "hero": {
+        "name": "chart post + one jammed bracket + six figures + stamp",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "35% post, 30% figures, 20% bracket, 15% stamp"
+      },
+      "id": 5,
+      "start_s": 44.42,
+      "t": "44.420-55.860"
+    },
+    {
+      "title": "Draft",
+      "vo_line": 5,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "noticeboard",
+      "pov": "instrument-screen",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "A draft sheet and a reading calendar pin onto a rain-streaked noticeboard.",
+      "ambient": "the sheets flutter, the calendar box pulses",
+      "hero": {
+        "name": "noticeboard + draft sheet + calendar + tag",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "30% board, 30% sheet, 25% calendar, 15% tag"
+      },
+      "id": 6,
+      "start_s": 55.86,
+      "t": "55.860-67.080"
+    },
+    {
+      "title": "Three tests",
+      "vo_line": 6,
+      "framing": "map-territory",
+      "scale": "insert",
+      "height": "high",
+      "stage": "chart-post",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Three padlocks bolt onto the chart post.",
+      "ambient": "the plates settle, the hose steams",
+      "hero": {
+        "name": "three padlocks + chart post + GenStack + hose",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "40% padlocks, 20% post, 20% GenStack, 20% hose"
+      },
+      "id": 7,
+      "start_s": 67.08,
+      "t": "67.080-74.000"
+    },
+    {
+      "title": "The utility's case",
+      "vo_line": 7,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "power-line",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "The breaker's lever carries the three tests' bolts into a switch. The utility worker throws the breaker and the line to the rooftops lights, price tags hang over the roofs, bars rise, cash blocks ride the line and the rate arrows shrink.",
+      "ambient": "the line hums, the bars rise, the cash blocks glide",
+      "hero": {
+        "name": "power line + transformer + rooftops + cash blocks + bars + worker",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "25% line, 25% roofs, 25% cash, 25% bars"
+      },
+      "id": 8,
+      "start_s": 74.0,
+      "t": "74.000-90.040"
+    },
+    {
+      "title": "Two answered",
+      "vo_line": 8,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "dock-door",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Two lock plates glow green with shackles shut and Grid's own band stays dashed.",
+      "ambient": "the radiator puffs, the pending mark spins",
+      "hero": {
+        "name": "GenStack + radiator + two green padlocks + Grid band",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "25% GenStack, 20% radiator, 30% padlocks, 25% Grid"
+      },
+      "id": 9,
+      "start_s": 90.04,
+      "t": "90.040-102.700"
+    },
+    {
+      "title": "Under the tarp",
+      "vo_line": 9,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "crate-corner",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "orbitReveal",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Grid yanks the tarp and finds a second tarp.",
+      "ambient": "the tarp breathes, the brochure flutters",
+      "hero": {
+        "name": "Grid + two tarps + claim chip + brochure",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "35% Grid, 30% tarps, 20% chip, 15% brochure"
+      },
+      "id": 10,
+      "start_s": 102.7,
+      "t": "102.700-109.580"
+    },
+    {
+      "title": "How big",
+      "vo_line": 10,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "dock-chart",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "mask-wipe",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the hero at x540 y1000",
+      "means": "Back on the dock the figures turn to the chart and the pencil hovers, then the camera rises from Grid to the rain-dark town with one dark lock.",
+      "ambient": "the pencil trembles, the crate peeks up, the town lights flicker",
+      "hero": {
+        "name": "six figures + height chart + pencil + fourth bracket + town",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "25% figures, 25% chart, 20% bracket, 30% town"
+      },
+      "id": 11,
+      "start_s": 109.58,
+      "t": "109.580-125.520"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Petersburg, Alaska has zero data centers. Its Assembly is writing rules for one anyway.",
+      "phrase": "Petersburg, Alaska has zero",
+      "shows": "Grid, a glass gauge on boots looks up at the blank height chart whose shadow falls across the zero on the dock sign while the tarp beside it twitches, a plate reads DATA CENTERS IN PETERSBURG TODAY \u00b7 0",
+      "sfx": "clunk",
+      "means": "data centers in petersburg today \u00b7 0",
+      "rehook": "",
+      "draw": {
+        "subject": "Grid, a glass gauge on boots",
+        "action": "looks up at the blank height chart whose shadow falls across the zero on the dock sign while the tarp beside it twitches",
+        "emotion": "worried",
+        "annotation": "DATA CENTERS IN PETERSBURG TODAY \u00b7 0"
+      },
+      "choreo": {
+        "primary": "Grid, a glass gauge on boots looks up at the blank height chart whose shadow falls across the zero on the dock sign while the tarp beside it twitches, a plate reads DATA CENTERS IN PETERSBURG TODAY \u00b7 0",
+        "reaction": "the shadow creeps",
+        "ambient": "rain streaks, the tarp breathes, Grid's fluid sloshes"
+      },
+      "t": "0.000-4.670",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 4.67,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.67
+      },
+      "offset": 4.67,
+      "vo": "Petersburg, Alaska has zero data centers. Its Assembly is writing rules for one anyway.",
+      "phrase": "Assembly is writing rules",
+      "shows": "six Assembly figures file onto the dock and squint at the tarped crate, a plate reads PETERSBURG ASSEMBLY \u00b7 WRITING RULES",
+      "sfx": "thump",
+      "means": "petersburg assembly \u00b7 writing rules",
+      "rehook": "",
+      "draw": {
+        "subject": "six Assembly figures",
+        "action": "file onto the dock and squint at the tarped crate",
+        "emotion": "reading",
+        "annotation": "PETERSBURG ASSEMBLY \u00b7 WRITING RULES"
+      },
+      "choreo": {
+        "primary": "six Assembly figures file onto the dock and squint at the tarped crate, a plate reads PETERSBURG ASSEMBLY \u00b7 WRITING RULES",
+        "reaction": "the figures lean in",
+        "ambient": "rain streaks, the tarp breathes, Grid's fluid sloshes"
+      },
+      "t": "4.670-6.510",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 6.51,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.51
+      },
+      "offset": 6.51,
+      "vo": "Petersburg, Alaska has zero data centers. Its Assembly is writing rules for one anyway.",
+      "phrase": "anyway.",
+      "shows": "the tarped crate flinches and a pair of eyes blinks under the tarp, a plate reads WHAT WOULD IT RUN?",
+      "sfx": "flip",
+      "means": "what would it run?",
+      "rehook": "",
+      "draw": {
+        "subject": "the tarped crate",
+        "action": "flinches and a pair of eyes blinks under the tarp",
+        "emotion": "nervous",
+        "annotation": "WHAT WOULD IT RUN?"
+      },
+      "choreo": {
+        "primary": "the tarped crate flinches and a pair of eyes blinks under the tarp, a plate reads WHAT WOULD IT RUN?",
+        "reaction": "the tarp breathes",
+        "ambient": "rain streaks, the tarp breathes, Grid's fluid sloshes"
+      },
+      "t": "6.510-7.960",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 7.96,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A private company, Mazzella Alaska, owns a two megawatt transformer at the old Ocean Beauty cannery. Its deal with a vendor called Greensparc didn't finalize, but it's still pursuing a small project.",
+      "phrase": "A private company, Mazzella",
+      "shows": "a transformer drops beside the cannery wall and a key tag swings from it, a plate reads 2 MW TRANSFORMER \u00b7 PRIVATELY OWNED",
+      "sfx": "hum",
+      "means": "2 mw transformer \u00b7 privately owned",
+      "rehook": "",
+      "draw": {
+        "subject": "a transformer",
+        "action": "drops beside the cannery wall and a key tag swings from it",
+        "emotion": "reading",
+        "annotation": "2 MW TRANSFORMER \u00b7 PRIVATELY OWNED"
+      },
+      "choreo": {
+        "primary": "a transformer drops beside the cannery wall and a key tag swings from it, a plate reads 2 MW TRANSFORMER \u00b7 PRIVATELY OWNED",
+        "reaction": "the tag swings",
+        "ambient": "rain, the Raven shakes, the boat bobs"
+      },
+      "t": "7.960-10.810",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 10.81,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.85
+      },
+      "offset": 2.85,
+      "vo": "A private company, Mazzella Alaska, owns a two megawatt transformer at the old Ocean Beauty cannery. Its deal with a vendor called Greensparc didn't finalize, but it's still pursuing a small project.",
+      "phrase": "owns a two megawatt",
+      "shows": "a name tag slaps onto the transformer reading MAZZELLA ALASKA, a plate reads MAZZELLA ALASKA \u00b7 PRIVATE COMPANY",
+      "sfx": "clink",
+      "means": "mazzella alaska \u00b7 private company",
+      "rehook": "",
+      "draw": {
+        "subject": "a name tag",
+        "action": "slaps onto the transformer reading MAZZELLA ALASKA",
+        "emotion": "reading",
+        "annotation": "MAZZELLA ALASKA \u00b7 PRIVATE COMPANY"
+      },
+      "choreo": {
+        "primary": "a name tag slaps onto the transformer reading MAZZELLA ALASKA, a plate reads MAZZELLA ALASKA \u00b7 PRIVATE COMPANY",
+        "reaction": "the tag settles",
+        "ambient": "rain, the Raven shakes, the boat bobs"
+      },
+      "t": "10.810-14.270",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 14.27,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 6.31
+      },
+      "offset": 6.31,
+      "vo": "A private company, Mazzella Alaska, owns a two megawatt transformer at the old Ocean Beauty cannery. Its deal with a vendor called Greensparc didn't finalize, but it's still pursuing a small project.",
+      "phrase": "cannery. Its deal with",
+      "shows": "a Raven lands on the rust-brown cannery roof beside the rain-streaked OCEAN BEAUTY sign, a plate reads OLD OCEAN BEAUTY CANNERY",
+      "sfx": "caw",
+      "means": "old ocean beauty cannery",
+      "rehook": "",
+      "draw": {
+        "subject": "a Raven",
+        "action": "lands on the rust-brown cannery roof beside the rain-streaked OCEAN BEAUTY sign",
+        "emotion": "wry",
+        "annotation": "OLD OCEAN BEAUTY CANNERY"
+      },
+      "choreo": {
+        "primary": "a Raven lands on the rust-brown cannery roof beside the rain-streaked OCEAN BEAUTY sign, a plate reads OLD OCEAN BEAUTY CANNERY",
+        "reaction": "the Raven shakes off rain",
+        "ambient": "rain, the Raven shakes, the boat bobs"
+      },
+      "t": "14.270-16.450",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 16.45,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 8.49
+      },
+      "offset": 8.49,
+      "vo": "A private company, Mazzella Alaska, owns a two megawatt transformer at the old Ocean Beauty cannery. Its deal with a vendor called Greensparc didn't finalize, but it's still pursuing a small project.",
+      "phrase": "vendor called Greensparc didn't",
+      "shows": "a crate stenciled GREENSPARC rolls onto a fishing boat that pulls away, a plate reads GREENSPARC DEAL \u00b7 NOT FINALIZED",
+      "sfx": "slide",
+      "means": "greensparc deal \u00b7 not finalized",
+      "rehook": "",
+      "draw": {
+        "subject": "a crate stenciled GREENSPARC",
+        "action": "rolls onto a fishing boat that pulls away",
+        "emotion": "wry",
+        "annotation": "GREENSPARC DEAL \u00b7 NOT FINALIZED"
+      },
+      "choreo": {
+        "primary": "a crate stenciled GREENSPARC rolls onto a fishing boat that pulls away, a plate reads GREENSPARC DEAL \u00b7 NOT FINALIZED",
+        "reaction": "the boat bobs",
+        "ambient": "rain, the Raven shakes, the boat bobs"
+      },
+      "t": "16.450-20.010",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 20.01,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 12.05
+      },
+      "offset": 12.05,
+      "vo": "A private company, Mazzella Alaska, owns a two megawatt transformer at the old Ocean Beauty cannery. Its deal with a vendor called Greensparc didn't finalize, but it's still pursuing a small project.",
+      "phrase": "pursuing a small project.",
+      "shows": "a small tarped crate is set down on the dock by a gloved hand, a plate reads STILL PURSUING A SMALL PROJECT",
+      "sfx": "thud",
+      "means": "still pursuing a small project",
+      "rehook": "",
+      "draw": {
+        "subject": "a small tarped crate",
+        "action": "is set down on the dock by a gloved hand",
+        "emotion": "reading",
+        "annotation": "STILL PURSUING A SMALL PROJECT"
+      },
+      "choreo": {
+        "primary": "a small tarped crate is set down on the dock by a gloved hand, a plate reads STILL PURSUING A SMALL PROJECT",
+        "reaction": "the crate settles",
+        "ambient": "rain, the Raven shakes, the boat bobs"
+      },
+      "t": "20.010-22.280",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 22.28,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The whole cannery used one million sixty four thousand four hundred kilowatt hours in 2015, by the utility's numbers.",
+      "phrase": "The whole cannery used",
+      "shows": "a brass kWh meter in a dim meter room starts rolling its digits up, a plate reads CANNERY \u00b7 2015",
+      "sfx": "tick",
+      "means": "cannery \u00b7 2015",
+      "rehook": "",
+      "draw": {
+        "subject": "a brass kWh meter",
+        "action": "in a dim meter room starts rolling its digits up",
+        "emotion": "reading",
+        "annotation": "CANNERY \u00b7 2015"
+      },
+      "choreo": {
+        "primary": "a brass kWh meter in a dim meter room starts rolling its digits up, a plate reads CANNERY \u00b7 2015",
+        "reaction": "the needle settles",
+        "ambient": "the needle settles, a bulb flickers"
+      },
+      "t": "22.280-23.490",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 23.49,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 1.21
+      },
+      "offset": 1.21,
+      "vo": "The whole cannery used one million sixty four thousand four hundred kilowatt hours in 2015, by the utility's numbers.",
+      "phrase": "used one million sixty",
+      "shows": "a ghost blueprint of the cannery draws itself over the meter, a plate reads THE WHOLE CANNERY",
+      "sfx": "tick",
+      "means": "the whole cannery",
+      "rehook": "",
+      "draw": {
+        "subject": "a ghost blueprint",
+        "action": "of the cannery draws itself over the meter",
+        "emotion": "reading",
+        "annotation": "THE WHOLE CANNERY"
+      },
+      "choreo": {
+        "primary": "a ghost blueprint of the cannery draws itself over the meter, a plate reads THE WHOLE CANNERY",
+        "reaction": "the lines draw",
+        "ambient": "the needle settles, a bulb flickers"
+      },
+      "t": "23.490-25.650",
+      "key": 37
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 25.65,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "The whole cannery used one million sixty four thousand four hundred kilowatt hours in 2015, by the utility's numbers.",
+      "phrase": "thousand four hundred kilowatt",
+      "shows": "the meter digits settle one by one at the last place, a plate reads 1,064,400 kWh \u00b7 PER THE UTILITY'S FAQ",
+      "sfx": "hum",
+      "means": "1,064,400 kwh \u00b7 per the utility's faq",
+      "rehook": "",
+      "draw": {
+        "subject": "the meter digits",
+        "action": "settle one by one at the last place",
+        "emotion": "reading",
+        "annotation": "1,064,400 kWh \u00b7 PER THE UTILITY'S FAQ"
+      },
+      "choreo": {
+        "primary": "the meter digits settle one by one at the last place, a plate reads 1,064,400 kWh \u00b7 PER THE UTILITY'S FAQ",
+        "reaction": "the digits settle",
+        "ambient": "the needle settles, a bulb flickers"
+      },
+      "t": "25.650-27.770",
+      "key": 43
+    },
+    {
+      "id": 12,
+      "shot": 3,
+      "at_s": 27.77,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.49
+      },
+      "offset": 5.49,
+      "vo": "The whole cannery used one million sixty four thousand four hundred kilowatt hours in 2015, by the utility's numbers.",
+      "phrase": "hours in 2015, by",
+      "shows": "the meter lamp clicks on as the digits stop, a plate reads IN 2015",
+      "sfx": "click",
+      "means": "in 2015",
+      "rehook": "",
+      "draw": {
+        "subject": "the meter lamp",
+        "action": "clicks on as the digits stop",
+        "emotion": "reading",
+        "annotation": "IN 2015"
+      },
+      "choreo": {
+        "primary": "the meter lamp clicks on as the digits stop, a plate reads IN 2015",
+        "reaction": "the lamp glows",
+        "ambient": "the needle settles, a bulb flickers"
+      },
+      "t": "27.770-32.060",
+      "key": 46
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 32.06,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Greensparc's plan started at one megawatt, eight and a half million kilowatt hours. At the full two megawatts, seventeen million, about sixteen canneries.",
+      "phrase": "Greensparc's plan started at",
+      "shows": "Grid climbs the ladder on the height chart with the pencil and ticks the cannery mark, a plate reads CANNERY \u00b7 1,064,400 kWh",
+      "sfx": "roll",
+      "means": "cannery \u00b7 1,064,400 kwh",
+      "rehook": "rehook: a new world, Grid climbs the ladder up the fjord wall",
+      "draw": {
+        "subject": "Grid",
+        "action": "climbs the ladder on the height chart with the pencil and ticks the cannery mark",
+        "emotion": "hopeful",
+        "annotation": "CANNERY \u00b7 1,064,400 kWh"
+      },
+      "choreo": {
+        "primary": "Grid climbs the ladder on the height chart with the pencil and ticks the cannery mark, a plate reads CANNERY \u00b7 1,064,400 kWh",
+        "reaction": "Grid climbs",
+        "ambient": "Grid's fluid sloshes, the tower sways, the cable sags"
+      },
+      "t": "32.060-35.070",
+      "key": 10
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 35.07,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "Greensparc's plan started at one megawatt, eight and a half million kilowatt hours. At the full two megawatts, seventeen million, about sixteen canneries.",
+      "phrase": "eight and a half",
+      "shows": "the pencil ticks the one megawatt mark on the chart, a plate reads 1 MW \u00b7 8.5 MILLION kWh \u00b7 PER THE UTILITY'S FAQ",
+      "sfx": "tick",
+      "means": "1 mw \u00b7 8.5 million kwh \u00b7 per the utility's faq",
+      "rehook": "",
+      "draw": {
+        "subject": "the pencil",
+        "action": "ticks the one megawatt mark on the chart",
+        "emotion": "hopeful",
+        "annotation": "1 MW \u00b7 8.5 MILLION kWh \u00b7 PER THE UTILITY'S FAQ"
+      },
+      "choreo": {
+        "primary": "the pencil ticks the one megawatt mark on the chart, a plate reads 1 MW \u00b7 8.5 MILLION kWh \u00b7 PER THE UTILITY'S FAQ",
+        "reaction": "the tick lands",
+        "ambient": "Grid's fluid sloshes, the tower sways, the cable sags"
+      },
+      "t": "35.070-38.630",
+      "key": 39
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 38.63,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.57
+      },
+      "offset": 6.57,
+      "vo": "Greensparc's plan started at one megawatt, eight and a half million kilowatt hours. At the full two megawatts, seventeen million, about sixteen canneries.",
+      "phrase": "megawatts, seventeen million, about",
+      "shows": "the pencil climbs the ladder past the one megawatt mark, a plate reads FULL 2 MW BUILD \u00b7 PER THE UTILITY'S FAQ",
+      "sfx": "roll",
+      "means": "full 2 mw build \u00b7 per the utility's faq",
+      "rehook": "",
+      "draw": {
+        "subject": "the pencil",
+        "action": "climbs the ladder past the one megawatt mark",
+        "emotion": "hopeful",
+        "annotation": "FULL 2 MW BUILD \u00b7 PER THE UTILITY'S FAQ"
+      },
+      "choreo": {
+        "primary": "the pencil climbs the ladder past the one megawatt mark, a plate reads FULL 2 MW BUILD \u00b7 PER THE UTILITY'S FAQ",
+        "reaction": "the pencil climbs",
+        "ambient": "Grid's fluid sloshes, the tower sways, the cable sags"
+      },
+      "t": "38.630-39.830",
+      "key": 47
+    },
+    {
+      "id": 16,
+      "shot": 4,
+      "at_s": 39.83,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 7.77
+      },
+      "offset": 7.77,
+      "vo": "Greensparc's plan started at one megawatt, eight and a half million kilowatt hours. At the full two megawatts, seventeen million, about sixteen canneries.",
+      "phrase": "seventeen million, about sixteen",
+      "shows": "a cable runs from the tarped crate into Grid's base and Grid's fluid starts to drop toward the dashed band, a plate reads FULL 2 MW BUILD \u00b7 17,000,000 kWh \u00b7 PER THE UTILITY'S FAQ",
+      "sfx": "creak",
+      "means": "full 2 mw build \u00b7 17,000,000 kwh \u00b7 per the utility's faq",
+      "rehook": "",
+      "draw": {
+        "subject": "a cable",
+        "action": "runs from the tarped crate into Grid's base and Grid's fluid starts to drop toward the dashed band",
+        "emotion": "uneasy",
+        "annotation": "FULL 2 MW BUILD \u00b7 17,000,000 kWh \u00b7 PER THE UTILITY'S FAQ"
+      },
+      "choreo": {
+        "primary": "a cable runs from the tarped crate into Grid's base and Grid's fluid starts to drop toward the dashed band, a plate reads FULL 2 MW BUILD \u00b7 17,000,000 kWh \u00b7 PER THE UTILITY'S FAQ",
+        "reaction": "the fluid drops",
+        "ambient": "Grid's fluid sloshes, the tower sways, the cable sags"
+      },
+      "t": "39.830-41.870",
+      "key": 11
+    },
+    {
+      "id": 17,
+      "shot": 4,
+      "at_s": 41.87,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 9.81
+      },
+      "offset": 9.81,
+      "vo": "Greensparc's plan started at one megawatt, eight and a half million kilowatt hours. At the full two megawatts, seventeen million, about sixteen canneries.",
+      "phrase": "sixteen canneries.",
+      "shows": "sixteen cannery silhouettes stack up the fjord wall behind Grid while the pencil runs past the top of the chart, a plate reads ABOUT 16X THE CANNERY \u00b7 FULL 2 MW BUILD",
+      "sfx": "boom",
+      "means": "about 16x the cannery \u00b7 full 2 mw build",
+      "rehook": "rehook: sixteen canneries stack up behind Grid on the ladder",
+      "draw": {
+        "subject": "sixteen cannery silhouettes",
+        "action": "stack up the fjord wall behind Grid while the pencil runs past the top of the chart",
+        "emotion": "shock",
+        "annotation": "ABOUT 16X THE CANNERY \u00b7 FULL 2 MW BUILD"
+      },
+      "choreo": {
+        "primary": "sixteen cannery silhouettes stack up the fjord wall behind Grid while the pencil runs past the top of the chart, a plate reads ABOUT 16X THE CANNERY \u00b7 FULL 2 MW BUILD",
+        "reaction": "the tower sways",
+        "ambient": "Grid's fluid sloshes, the tower sways, the cable sags"
+      },
+      "kick": true,
+      "t": "41.870-44.420",
+      "key": 12
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 44.42,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In September, the Assembly tied three to three on a one year pause, so it failed. Vice Mayor Jeigh Stanton Gregor called that pause a solution in search of a problem.",
+      "phrase": "In September, the Assembly",
+      "shows": "an empty padlock bracket on the chart post jams half-shut in the council chamber while three figures push and three hold, a plate reads SEPT 21 \u00b7 3 TO 3",
+      "sfx": "clack",
+      "means": "sept 21 \u00b7 3 to 3",
+      "rehook": "",
+      "draw": {
+        "subject": "an empty padlock bracket",
+        "action": "on the chart post jams half-shut in the council chamber while three figures push and three hold",
+        "emotion": "tense",
+        "annotation": "SEPT 21 \u00b7 3 TO 3"
+      },
+      "choreo": {
+        "primary": "an empty padlock bracket on the chart post jams half-shut in the council chamber while three figures push and three hold, a plate reads SEPT 21 \u00b7 3 TO 3",
+        "reaction": "the locks jam",
+        "ambient": "the bracket jams, rain on the window, the figures strain"
+      },
+      "t": "44.420-48.390",
+      "key": 13
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 48.39,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.97
+      },
+      "offset": 3.97,
+      "vo": "In September, the Assembly tied three to three on a one year pause, so it failed. Vice Mayor Jeigh Stanton Gregor called that pause a solution in search of a problem.",
+      "phrase": "pause, so it failed.",
+      "shows": "a one year plate hangs from the jammed bracket, a plate reads 1 YEAR PAUSE",
+      "sfx": "clack",
+      "means": "1 year pause",
+      "rehook": "",
+      "draw": {
+        "subject": "a one year plate",
+        "action": "hangs from the jammed bracket",
+        "emotion": "tense",
+        "annotation": "1 YEAR PAUSE"
+      },
+      "choreo": {
+        "primary": "a one year plate hangs from the jammed bracket, a plate reads 1 YEAR PAUSE",
+        "reaction": "the plate swings",
+        "ambient": "the bracket jams, rain on the window, the figures strain"
+      },
+      "t": "48.390-49.430",
+      "key": 40
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 49.43,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.01
+      },
+      "offset": 5.01,
+      "vo": "In September, the Assembly tied three to three on a one year pause, so it failed. Vice Mayor Jeigh Stanton Gregor called that pause a solution in search of a problem.",
+      "phrase": "failed. Vice Mayor Jeigh",
+      "shows": "a crimson stamp lands on a one year plate, a plate reads 1 YEAR PAUSE \u00b7 FAILED",
+      "sfx": "stamp",
+      "means": "1 year pause \u00b7 failed",
+      "rehook": "",
+      "draw": {
+        "subject": "a crimson stamp",
+        "action": "lands on a one year plate",
+        "emotion": "stern",
+        "annotation": "1 YEAR PAUSE \u00b7 FAILED"
+      },
+      "choreo": {
+        "primary": "a crimson stamp lands on a one year plate, a plate reads 1 YEAR PAUSE \u00b7 FAILED",
+        "reaction": "the stamp rings",
+        "ambient": "the bracket jams, rain on the window, the figures strain"
+      },
+      "t": "49.430-54.010",
+      "key": 14
+    },
+    {
+      "id": 21,
+      "shot": 5,
+      "at_s": 54.01,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 9.59
+      },
+      "offset": 9.59,
+      "vo": "In September, the Assembly tied three to three on a one year pause, so it failed. Vice Mayor Jeigh Stanton Gregor called that pause a solution in search of a problem.",
+      "phrase": "solution in search of",
+      "shows": "a Lectern name card slides forward carrying a quote, a plate reads \"A SOLUTION IN SEARCH OF A PROBLEM\" \u00b7 JEIGH STANTON GREGOR",
+      "sfx": "slide",
+      "means": "\"a solution in search of a problem\" \u00b7 jeigh stanton gregor",
+      "rehook": "",
+      "draw": {
+        "subject": "a Lectern name card",
+        "action": "slides forward carrying a quote",
+        "emotion": "reading",
+        "annotation": "\"A SOLUTION IN SEARCH OF A PROBLEM\" \u00b7 JEIGH STANTON GREGOR"
+      },
+      "choreo": {
+        "primary": "a Lectern name card slides forward carrying a quote, a plate reads \"A SOLUTION IN SEARCH OF A PROBLEM\" \u00b7 JEIGH STANTON GREGOR",
+        "reaction": "the card settles",
+        "ambient": "the bracket jams, rain on the window, the figures strain"
+      },
+      "t": "54.010-55.860",
+      "key": 15
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 55.86,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But on October fifth, it voted unanimously to draft a nine month pause. November second was reading one of three, and no outcome has been reported.",
+      "phrase": "But on October fifth,",
+      "shows": "a paper sheet is pinned to a rain-streaked noticeboard stamped DRAFT with three dotted lock outlines, a plate reads OCT 5 \u00b7 UNANIMOUS \u00b7 DRAFT A 9-MONTH PAUSE",
+      "sfx": "page",
+      "means": "oct 5 \u00b7 unanimous \u00b7 draft a 9-month pause",
+      "rehook": "rehook: a new world, a rain-streaked noticeboard with a DRAFT sheet",
+      "draw": {
+        "subject": "a paper sheet",
+        "action": "is pinned to a rain-streaked noticeboard stamped DRAFT with three dotted lock outlines",
+        "emotion": "hopeful",
+        "annotation": "OCT 5 \u00b7 UNANIMOUS \u00b7 DRAFT A 9-MONTH PAUSE"
+      },
+      "choreo": {
+        "primary": "a paper sheet is pinned to a rain-streaked noticeboard stamped DRAFT with three dotted lock outlines, a plate reads OCT 5 \u00b7 UNANIMOUS \u00b7 DRAFT A 9-MONTH PAUSE",
+        "reaction": "the sheet flutters",
+        "ambient": "the sheets flutter, the calendar box pulses"
+      },
+      "t": "55.860-58.790",
+      "key": 16
+    },
+    {
+      "id": 23,
+      "shot": 6,
+      "at_s": 58.79,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "But on October fifth, it voted unanimously to draft a nine month pause. November second was reading one of three, and no outcome has been reported.",
+      "phrase": "unanimously to draft a",
+      "shows": "all six figures nod around the noticeboard while the sheet stays stamped DRAFT, a plate reads ALL SIX AGREE \u00b7 DRAFT ONLY",
+      "sfx": "thump",
+      "means": "all six agree \u00b7 draft only",
+      "rehook": "",
+      "draw": {
+        "subject": "all six figures",
+        "action": "nod around the noticeboard while the sheet stays stamped DRAFT",
+        "emotion": "hopeful",
+        "annotation": "ALL SIX AGREE \u00b7 DRAFT ONLY"
+      },
+      "choreo": {
+        "primary": "all six figures nod around the noticeboard while the sheet stays stamped DRAFT, a plate reads ALL SIX AGREE \u00b7 DRAFT ONLY",
+        "reaction": "the figures nod",
+        "ambient": "the sheets flutter, the calendar box pulses"
+      },
+      "t": "58.790-62.230",
+      "key": 52
+    },
+    {
+      "id": 24,
+      "shot": 6,
+      "at_s": 62.23,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 6.37
+      },
+      "offset": 6.37,
+      "vo": "But on October fifth, it voted unanimously to draft a nine month pause. November second was reading one of three, and no outcome has been reported.",
+      "phrase": "November second was reading",
+      "shows": "a Calendar card is pinned beside it with three boxes and the first holds a question mark, a plate reads NOV 2 \u00b7 FIRST OF THREE READINGS",
+      "sfx": "ping",
+      "means": "nov 2 \u00b7 first of three readings",
+      "rehook": "",
+      "draw": {
+        "subject": "a Calendar card",
+        "action": "is pinned beside it with three boxes and the first holds a question mark",
+        "emotion": "reading",
+        "annotation": "NOV 2 \u00b7 FIRST OF THREE READINGS"
+      },
+      "choreo": {
+        "primary": "a Calendar card is pinned beside it with three boxes and the first holds a question mark, a plate reads NOV 2 \u00b7 FIRST OF THREE READINGS",
+        "reaction": "the box pulses",
+        "ambient": "the sheets flutter, the calendar box pulses"
+      },
+      "t": "62.230-63.350",
+      "key": 17
+    },
+    {
+      "id": 25,
+      "shot": 6,
+      "at_s": 63.35,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 7.49
+      },
+      "offset": 7.49,
+      "vo": "But on October fifth, it voted unanimously to draft a nine month pause. November second was reading one of three, and no outcome has been reported.",
+      "phrase": "reading one of three,",
+      "shows": "the first calendar box fills with a question mark, a plate reads READING 1 OF 3",
+      "sfx": "ping",
+      "means": "reading 1 of 3",
+      "rehook": "",
+      "draw": {
+        "subject": "the first calendar box",
+        "action": "fills with a question mark",
+        "emotion": "reading",
+        "annotation": "READING 1 OF 3"
+      },
+      "choreo": {
+        "primary": "the first calendar box fills with a question mark, a plate reads READING 1 OF 3",
+        "reaction": "the box pulses",
+        "ambient": "the sheets flutter, the calendar box pulses"
+      },
+      "t": "63.350-65.050",
+      "key": 48
+    },
+    {
+      "id": 26,
+      "shot": 6,
+      "at_s": 65.05,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 9.19
+      },
+      "offset": 9.19,
+      "vo": "But on October fifth, it voted unanimously to draft a nine month pause. November second was reading one of three, and no outcome has been reported.",
+      "phrase": "outcome has been reported.",
+      "shows": "a small tag drops and hangs from the calendar, a plate reads NO OUTCOME REPORTED",
+      "sfx": "fold",
+      "means": "no outcome reported",
+      "rehook": "",
+      "draw": {
+        "subject": "a small tag",
+        "action": "drops and hangs from the calendar",
+        "emotion": "calm",
+        "annotation": "NO OUTCOME REPORTED"
+      },
+      "choreo": {
+        "primary": "a small tag drops and hangs from the calendar, a plate reads NO OUTCOME REPORTED",
+        "reaction": "the tag swings",
+        "ambient": "the sheets flutter, the calendar box pulses"
+      },
+      "t": "65.050-67.080",
+      "key": 18
+    },
+    {
+      "id": 27,
+      "shot": 7,
+      "at_s": 67.08,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The draft has three tests. Grid capacity, generators, and uncontained cooling.",
+      "phrase": "The draft has three",
+      "shows": "the draft sheet slides in with three dotted lock outlines that fill in solid, a plate reads THE DRAFT'S THREE TESTS",
+      "sfx": "page",
+      "means": "the draft's three tests",
+      "rehook": "",
+      "draw": {
+        "subject": "the draft sheet",
+        "action": "slides in with three dotted lock outlines that fill in solid",
+        "emotion": "reading",
+        "annotation": "THE DRAFT'S THREE TESTS"
+      },
+      "choreo": {
+        "primary": "the draft sheet slides in with three dotted lock outlines that fill in solid, a plate reads THE DRAFT'S THREE TESTS",
+        "reaction": "the outlines fill",
+        "ambient": "the plates settle, the hose steams"
+      },
+      "t": "67.080-69.550",
+      "key": 44
+    },
+    {
+      "id": 28,
+      "shot": 7,
+      "at_s": 69.55,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.47
+      },
+      "offset": 2.47,
+      "vo": "The draft has three tests. Grid capacity, generators, and uncontained cooling.",
+      "phrase": "Grid capacity, generators, and",
+      "shows": "a first padlock bolts onto the chart post labelled GRID CAPACITY, a plate reads GRID CAPACITY",
+      "sfx": "clank",
+      "means": "grid capacity",
+      "rehook": "",
+      "draw": {
+        "subject": "a first padlock",
+        "action": "bolts onto the chart post labelled GRID CAPACITY",
+        "emotion": "reading",
+        "annotation": "GRID CAPACITY"
+      },
+      "choreo": {
+        "primary": "a first padlock bolts onto the chart post labelled GRID CAPACITY, a plate reads GRID CAPACITY",
+        "reaction": "the plate settles",
+        "ambient": "the plates settle, the hose steams"
+      },
+      "t": "69.550-70.890",
+      "key": 19
+    },
+    {
+      "id": 29,
+      "shot": 7,
+      "at_s": 70.89,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 3.81
+      },
+      "offset": 3.81,
+      "vo": "The draft has three tests. Grid capacity, generators, and uncontained cooling.",
+      "phrase": "generators, and uncontained cooling.",
+      "shows": "a second padlock bolts on labelled GENERATORS while a GenStack in a hard hat wobbles beside it, a plate reads GENERATORS",
+      "sfx": "clank",
+      "means": "generators",
+      "rehook": "",
+      "draw": {
+        "subject": "a second padlock",
+        "action": "bolts on labelled GENERATORS while a GenStack in a hard hat wobbles beside it",
+        "emotion": "reading",
+        "annotation": "GENERATORS"
+      },
+      "choreo": {
+        "primary": "a second padlock bolts on labelled GENERATORS while a GenStack in a hard hat wobbles beside it, a plate reads GENERATORS",
+        "reaction": "the hat tips",
+        "ambient": "the plates settle, the hose steams"
+      },
+      "t": "70.890-72.690",
+      "key": 20
+    },
+    {
+      "id": 30,
+      "shot": 7,
+      "at_s": 72.69,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.61
+      },
+      "offset": 5.61,
+      "vo": "The draft has three tests. Grid capacity, generators, and uncontained cooling.",
+      "phrase": "cooling.",
+      "shows": "a third padlock bolts on labelled UNCONTAINED COOLING beside a steaming hose, a plate reads UNCONTAINED COOLING",
+      "sfx": "whirr",
+      "means": "uncontained cooling",
+      "rehook": "",
+      "draw": {
+        "subject": "a third padlock",
+        "action": "bolts on labelled UNCONTAINED COOLING beside a steaming hose",
+        "emotion": "reading",
+        "annotation": "UNCONTAINED COOLING"
+      },
+      "choreo": {
+        "primary": "a third padlock bolts on labelled UNCONTAINED COOLING beside a steaming hose, a plate reads UNCONTAINED COOLING",
+        "reaction": "the steam puffs",
+        "ambient": "the plates settle, the hose steams"
+      },
+      "t": "72.690-74.000",
+      "key": 21
+    },
+    {
+      "id": 31,
+      "shot": 8,
+      "at_s": 74.0,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now the other side, from the utility's own FAQ. It says residential power costs twelve point two cents, against a state average near thirty, and estimates over two million dollars a year in revenue, with smaller rate increases.",
+      "phrase": "Now the other side,",
+      "shows": "the utility worker throws a breaker on the transformer and the line to the rooftops lights, a plate reads THE UTILITY'S FAQ \u00b7 FROM APRIL",
+      "sfx": "clunk",
+      "means": "the utility's faq \u00b7 from april",
+      "rehook": "rehook: side-on cross-section of the power line to the rooftops",
+      "draw": {
+        "subject": "the utility worker",
+        "action": "throws a breaker on the transformer and the line to the rooftops lights",
+        "emotion": "firm",
+        "annotation": "THE UTILITY'S FAQ \u00b7 FROM APRIL"
+      },
+      "choreo": {
+        "primary": "the utility worker throws a breaker on the transformer and the line to the rooftops lights, a plate reads THE UTILITY'S FAQ \u00b7 FROM APRIL",
+        "reaction": "the breaker clacks",
+        "ambient": "the line hums, the bars rise, the cash blocks glide"
+      },
+      "t": "74.000-78.370",
+      "key": 22
+    },
+    {
+      "id": 32,
+      "shot": 8,
+      "at_s": 78.37,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.37
+      },
+      "offset": 4.37,
+      "vo": "Now the other side, from the utility's own FAQ. It says residential power costs twelve point two cents, against a state average near thirty, and estimates over two million dollars a year in revenue, with smaller rate increases.",
+      "phrase": "residential power costs twelve",
+      "shows": "two price tags hang from the line over the roofs, a short bar under the first, a plate reads RESIDENTIAL \u00b7 12.2 CENTS \u00b7 PER THE UTILITY'S FAQ",
+      "sfx": "tick",
+      "means": "residential \u00b7 12.2 cents \u00b7 per the utility's faq",
+      "rehook": "",
+      "draw": {
+        "subject": "two price tags",
+        "action": "hang from the line over the roofs, a short bar under the first",
+        "emotion": "reading",
+        "annotation": "RESIDENTIAL \u00b7 12.2 CENTS \u00b7 PER THE UTILITY'S FAQ"
+      },
+      "choreo": {
+        "primary": "two price tags hang from the line over the roofs, a short bar under the first, a plate reads RESIDENTIAL \u00b7 12.2 CENTS \u00b7 PER THE UTILITY'S FAQ",
+        "reaction": "the tags swing",
+        "ambient": "the line hums, the bars rise, the cash blocks glide"
+      },
+      "t": "78.370-82.270",
+      "key": 23
+    },
+    {
+      "id": 33,
+      "shot": 8,
+      "at_s": 82.27,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 8.27
+      },
+      "offset": 8.27,
+      "vo": "Now the other side, from the utility's own FAQ. It says residential power costs twelve point two cents, against a state average near thirty, and estimates over two million dollars a year in revenue, with smaller rate increases.",
+      "phrase": "average near thirty, and",
+      "shows": "a tall bar rises under the second tag, a plate reads ALASKA AVERAGE \u00b7 NEAR 30 CENTS (UTILITY FIGURE)",
+      "sfx": "slide",
+      "means": "alaska average \u00b7 near 30 cents (utility figure)",
+      "rehook": "",
+      "draw": {
+        "subject": "a tall bar",
+        "action": "rises under the second tag",
+        "emotion": "reading",
+        "annotation": "ALASKA AVERAGE \u00b7 NEAR 30 CENTS (UTILITY FIGURE)"
+      },
+      "choreo": {
+        "primary": "a tall bar rises under the second tag, a plate reads ALASKA AVERAGE \u00b7 NEAR 30 CENTS (UTILITY FIGURE)",
+        "reaction": "the bar rises",
+        "ambient": "the line hums, the bars rise, the cash blocks glide"
+      },
+      "t": "82.270-85.650",
+      "key": 24
+    },
+    {
+      "id": 34,
+      "shot": 8,
+      "at_s": 85.65,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 11.65
+      },
+      "offset": 11.65,
+      "vo": "Now the other side, from the utility's own FAQ. It says residential power costs twelve point two cents, against a state average near thirty, and estimates over two million dollars a year in revenue, with smaller rate increases.",
+      "phrase": "dollars a year in",
+      "shows": "cash blocks ride the line from the cannery back to the roofs, a plate reads OVER $2M A YEAR \u00b7 UTILITY ESTIMATE \u00b7 ORIGINAL PLAN",
+      "sfx": "clink",
+      "means": "over $2m a year \u00b7 utility estimate \u00b7 original plan",
+      "rehook": "",
+      "draw": {
+        "subject": "cash blocks",
+        "action": "ride the line from the cannery back to the roofs",
+        "emotion": "reading",
+        "annotation": "OVER $2M A YEAR \u00b7 UTILITY ESTIMATE \u00b7 ORIGINAL PLAN"
+      },
+      "choreo": {
+        "primary": "cash blocks ride the line from the cannery back to the roofs, a plate reads OVER $2M A YEAR \u00b7 UTILITY ESTIMATE \u00b7 ORIGINAL PLAN",
+        "reaction": "the blocks glide",
+        "ambient": "the line hums, the bars rise, the cash blocks glide"
+      },
+      "t": "85.650-87.630",
+      "key": 25
+    },
+    {
+      "id": 35,
+      "shot": 8,
+      "at_s": 87.63,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 13.63
+      },
+      "offset": 13.63,
+      "vo": "Now the other side, from the utility's own FAQ. It says residential power costs twelve point two cents, against a state average near thirty, and estimates over two million dollars a year in revenue, with smaller rate increases.",
+      "phrase": "smaller rate increases.",
+      "shows": "rate arrows on the rooftops shrink one by one, a plate reads SMALLER RATE INCREASES \u00b7 UTILITY CLAIM",
+      "sfx": "slide",
+      "means": "smaller rate increases \u00b7 utility claim",
+      "rehook": "",
+      "draw": {
+        "subject": "rate arrows",
+        "action": "on the rooftops shrink one by one",
+        "emotion": "reading",
+        "annotation": "SMALLER RATE INCREASES \u00b7 UTILITY CLAIM"
+      },
+      "choreo": {
+        "primary": "rate arrows on the rooftops shrink one by one, a plate reads SMALLER RATE INCREASES \u00b7 UTILITY CLAIM",
+        "reaction": "the arrows shrink",
+        "ambient": "the line hums, the bars rise, the cash blocks glide"
+      },
+      "t": "87.630-90.040",
+      "key": 26
+    },
+    {
+      "id": 36,
+      "shot": 9,
+      "at_s": 90.04,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Greensparc's plan had no diesel generators on site, and closed loop cooling. So that plan answered two tests, though it never finalized. Grid capacity is the one the record doesn't settle.",
+      "phrase": "Greensparc's plan had no",
+      "shows": "a GenStack in a hard hat walks up to the cannery door, a plate reads THE ORIGINAL PLAN \u00b7 PER FAQ",
+      "sfx": "thump",
+      "means": "the original plan \u00b7 per faq",
+      "rehook": "",
+      "draw": {
+        "subject": "a GenStack in a hard hat",
+        "action": "walks up to the cannery door",
+        "emotion": "reading",
+        "annotation": "THE ORIGINAL PLAN \u00b7 PER FAQ"
+      },
+      "choreo": {
+        "primary": "a GenStack in a hard hat walks up to the cannery door, a plate reads THE ORIGINAL PLAN \u00b7 PER FAQ",
+        "reaction": "the stack walks",
+        "ambient": "the radiator puffs, the pending mark spins"
+      },
+      "t": "90.040-91.510",
+      "key": 45
+    },
+    {
+      "id": 37,
+      "shot": 9,
+      "at_s": 91.51,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 1.47
+      },
+      "offset": 1.47,
+      "vo": "Greensparc's plan had no diesel generators on site, and closed loop cooling. So that plan answered two tests, though it never finalized. Grid capacity is the one the record doesn't settle.",
+      "phrase": "diesel generators on site,",
+      "shows": "a GenStack in a hard hat is turned away at the cannery door, a plate reads NO DIESEL GENERATORS ON SITE \u00b7 PER FAQ \u00b7 TOWN GRID HAS BACKUP",
+      "sfx": "clunk",
+      "means": "no diesel generators on site \u00b7 per faq \u00b7 town grid has backup",
+      "rehook": "",
+      "draw": {
+        "subject": "a GenStack in a hard hat",
+        "action": "is turned away at the cannery door",
+        "emotion": "reading",
+        "annotation": "NO DIESEL GENERATORS ON SITE \u00b7 PER FAQ \u00b7 TOWN GRID HAS BACKUP"
+      },
+      "choreo": {
+        "primary": "a GenStack in a hard hat is turned away at the cannery door, a plate reads NO DIESEL GENERATORS ON SITE \u00b7 PER FAQ \u00b7 TOWN GRID HAS BACKUP",
+        "reaction": "the stack cools",
+        "ambient": "the radiator puffs, the pending mark spins"
+      },
+      "t": "91.510-93.290",
+      "key": 27
+    },
+    {
+      "id": 38,
+      "shot": 9,
+      "at_s": 93.29,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.25
+      },
+      "offset": 3.25,
+      "vo": "Greensparc's plan had no diesel generators on site, and closed loop cooling. So that plan answered two tests, though it never finalized. Grid capacity is the one the record doesn't settle.",
+      "phrase": "closed loop cooling. So",
+      "shows": "a car radiator bolted to the crate puffs steam, a plate reads CLOSED LOOP COOLING \u00b7 PER FAQ",
+      "sfx": "whirr",
+      "means": "closed loop cooling \u00b7 per faq",
+      "rehook": "",
+      "draw": {
+        "subject": "a car radiator",
+        "action": "bolted to the crate puffs steam",
+        "emotion": "wry",
+        "annotation": "CLOSED LOOP COOLING \u00b7 PER FAQ"
+      },
+      "choreo": {
+        "primary": "a car radiator bolted to the crate puffs steam, a plate reads CLOSED LOOP COOLING \u00b7 PER FAQ",
+        "reaction": "the radiator puffs",
+        "ambient": "the radiator puffs, the pending mark spins"
+      },
+      "t": "93.290-95.630",
+      "key": 28
+    },
+    {
+      "id": 39,
+      "shot": 9,
+      "at_s": 95.63,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.59
+      },
+      "offset": 5.59,
+      "vo": "Greensparc's plan had no diesel generators on site, and closed loop cooling. So that plan answered two tests, though it never finalized. Grid capacity is the one the record doesn't settle.",
+      "phrase": "answered two tests, though",
+      "shows": "two padlocks light up with a green ring on the chart post with their shackles still shut, a plate reads 2 OF 3 \u00b7 GREENSPARC PLAN \u00b7 NOT FINALIZED",
+      "sfx": "clink",
+      "means": "2 of 3 \u00b7 greensparc plan \u00b7 not finalized",
+      "rehook": "",
+      "draw": {
+        "subject": "two padlocks",
+        "action": "light up with a green ring on the chart post with their shackles still shut",
+        "emotion": "proud",
+        "annotation": "2 OF 3 \u00b7 GREENSPARC PLAN \u00b7 NOT FINALIZED"
+      },
+      "choreo": {
+        "primary": "two padlocks light up with a green ring on the chart post with their shackles still shut, a plate reads 2 OF 3 \u00b7 GREENSPARC PLAN \u00b7 NOT FINALIZED",
+        "reaction": "the plates glow",
+        "ambient": "the radiator puffs, the pending mark spins"
+      },
+      "t": "95.630-99.150",
+      "key": 29
+    },
+    {
+      "id": 40,
+      "shot": 9,
+      "at_s": 99.15,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 9.11
+      },
+      "offset": 9.11,
+      "vo": "Greensparc's plan had no diesel generators on site, and closed loop cooling. So that plan answered two tests, though it never finalized. Grid capacity is the one the record doesn't settle.",
+      "phrase": "Grid capacity is the",
+      "shows": "the dashed band wavers beside the pencil, a plate reads GRID CAPACITY",
+      "sfx": "creak",
+      "means": "grid capacity",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed band",
+        "action": "wavers beside the pencil",
+        "emotion": "worried",
+        "annotation": "GRID CAPACITY"
+      },
+      "choreo": {
+        "primary": "the dashed band wavers beside the pencil, a plate reads GRID CAPACITY",
+        "reaction": "the band wavers",
+        "ambient": "the radiator puffs, the pending mark spins"
+      },
+      "t": "99.150-101.330",
+      "key": 54
+    },
+    {
+      "id": 41,
+      "shot": 9,
+      "at_s": 101.33,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 11.29
+      },
+      "offset": 11.29,
+      "vo": "Greensparc's plan had no diesel generators on site, and closed loop cooling. So that plan answered two tests, though it never finalized. Grid capacity is the one the record doesn't settle.",
+      "phrase": "settle.",
+      "shows": "Grid's own top band stays dashed and a pending mark spins on Grid as the pencil can't mark it, a plate reads GRID CAPACITY \u00b7 NOT SETTLED",
+      "sfx": "creak",
+      "means": "grid capacity \u00b7 not settled",
+      "rehook": "",
+      "draw": {
+        "subject": "Grid's own top band",
+        "action": "stays dashed and a pending mark spins on Grid as the pencil can't mark it",
+        "emotion": "worried",
+        "annotation": "GRID CAPACITY \u00b7 NOT SETTLED"
+      },
+      "choreo": {
+        "primary": "Grid's own top band stays dashed and a pending mark spins on Grid as the pencil can't mark it, a plate reads GRID CAPACITY \u00b7 NOT SETTLED",
+        "reaction": "the band wavers",
+        "ambient": "the radiator puffs, the pending mark spins"
+      },
+      "t": "101.330-102.700",
+      "key": 30
+    },
+    {
+      "id": 42,
+      "shot": 10,
+      "at_s": 102.7,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Greensparc's website pitches A I compute, but nothing in the record says what Petersburg's building would run.",
+      "phrase": "Greensparc's website pitches A",
+      "shows": "Grid yanks the tarp and finds a second tarp underneath, a plate reads WHAT IT RUNS \u00b7 NOT IN THE RECORD",
+      "sfx": "flip",
+      "means": "what it runs \u00b7 not in the record",
+      "rehook": "rehook: Grid yanks the tarp and finds a second tarp",
+      "draw": {
+        "subject": "Grid",
+        "action": "yanks the tarp and finds a second tarp underneath",
+        "emotion": "puzzled",
+        "annotation": "WHAT IT RUNS \u00b7 NOT IN THE RECORD"
+      },
+      "choreo": {
+        "primary": "Grid yanks the tarp and finds a second tarp underneath, a plate reads WHAT IT RUNS \u00b7 NOT IN THE RECORD",
+        "reaction": "the tarp falls",
+        "ambient": "the tarp breathes, the brochure flutters"
+      },
+      "t": "102.700-104.550",
+      "key": 31
+    },
+    {
+      "id": 43,
+      "shot": 10,
+      "at_s": 104.55,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.85
+      },
+      "offset": 1.85,
+      "vo": "Greensparc's website pitches A I compute, but nothing in the record says what Petersburg's building would run.",
+      "phrase": "compute, but nothing in",
+      "shows": "a claim chip pins to a vendor brochure and slides off the crate, a plate reads VENDOR PITCH \u00b7 HIGH-DENSITY AI COMPUTE",
+      "sfx": "ping",
+      "means": "vendor pitch \u00b7 high-density ai compute",
+      "rehook": "",
+      "draw": {
+        "subject": "a claim chip",
+        "action": "pins to a vendor brochure and slides off the crate",
+        "emotion": "wry",
+        "annotation": "VENDOR PITCH \u00b7 HIGH-DENSITY AI COMPUTE"
+      },
+      "choreo": {
+        "primary": "a claim chip pins to a vendor brochure and slides off the crate, a plate reads VENDOR PITCH \u00b7 HIGH-DENSITY AI COMPUTE",
+        "reaction": "the chip slides",
+        "ambient": "the tarp breathes, the brochure flutters"
+      },
+      "t": "104.550-106.010",
+      "key": 32
+    },
+    {
+      "id": 44,
+      "shot": 10,
+      "at_s": 106.01,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "Greensparc's website pitches A I compute, but nothing in the record says what Petersburg's building would run.",
+      "phrase": "nothing in the record",
+      "shows": "a Raven pecks the AI COMPUTE line off the brochure and it blows away leaving the second tarp bare, a plate reads NOTHING IN THE RECORD",
+      "sfx": "caw",
+      "means": "nothing in the record",
+      "rehook": "",
+      "draw": {
+        "subject": "a Raven",
+        "action": "pecks the AI COMPUTE line off the brochure and it blows away leaving the second tarp bare",
+        "emotion": "wry",
+        "annotation": "NOTHING IN THE RECORD"
+      },
+      "choreo": {
+        "primary": "a Raven pecks the AI COMPUTE line off the brochure and it blows away leaving the second tarp bare, a plate reads NOTHING IN THE RECORD",
+        "reaction": "the Raven tilts",
+        "ambient": "the tarp breathes, the brochure flutters"
+      },
+      "t": "106.010-109.580",
+      "key": 42
+    },
+    {
+      "id": 45,
+      "shot": 11,
+      "at_s": 109.58,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The draft's three tests are about grid, generators and cooling. None asks what the machine runs. So the question is how big a customer its grid should take. If you wrote a fourth test, would you ask what it computes, or only what it draws?",
+      "phrase": "The draft's three tests",
+      "shows": "the fallen tarp wipes the frame as the dock returns and the six figures step back from the crate, a plate reads THE DRAFT \u00b7 3 TESTS",
+      "sfx": "swell",
+      "means": "the draft \u00b7 3 tests",
+      "rehook": "",
+      "draw": {
+        "subject": "the fallen tarp",
+        "action": "wipes the frame as the dock returns and the six figures step back from the crate",
+        "emotion": "calm",
+        "annotation": "THE DRAFT \u00b7 3 TESTS"
+      },
+      "choreo": {
+        "primary": "the fallen tarp wipes the frame as the dock returns and the six figures step back from the crate, a plate reads THE DRAFT \u00b7 3 TESTS",
+        "reaction": "the tarp wipes",
+        "ambient": "the pencil trembles, the crate peeks up, the town lights flicker"
+      },
+      "t": "109.580-111.750",
+      "key": 53
+    },
+    {
+      "id": 46,
+      "shot": 11,
+      "at_s": 111.75,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.17
+      },
+      "offset": 2.17,
+      "vo": "The draft's three tests are about grid, generators and cooling. None asks what the machine runs. So the question is how big a customer its grid should take. If you wrote a fourth test, would you ask what it computes, or only what it draws?",
+      "phrase": "grid, generators and cooling.",
+      "shows": "the six figures turn from the crate toward the height chart as the fallen tarp wipes the frame, a plate reads GRID \u00b7 GENERATORS \u00b7 COOLING",
+      "sfx": "thump",
+      "means": "grid \u00b7 generators \u00b7 cooling",
+      "rehook": "",
+      "draw": {
+        "subject": "the six figures",
+        "action": "turn from the crate toward the height chart as the fallen tarp wipes the frame",
+        "emotion": "focused",
+        "annotation": "GRID \u00b7 GENERATORS \u00b7 COOLING"
+      },
+      "choreo": {
+        "primary": "the six figures turn from the crate toward the height chart as the fallen tarp wipes the frame, a plate reads GRID \u00b7 GENERATORS \u00b7 COOLING",
+        "reaction": "the figures turn",
+        "ambient": "the pencil trembles, the crate peeks up, the town lights flicker"
+      },
+      "t": "111.750-114.510",
+      "key": 33
+    },
+    {
+      "id": 47,
+      "shot": 11,
+      "at_s": 114.51,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.93
+      },
+      "offset": 4.93,
+      "vo": "The draft's three tests are about grid, generators and cooling. None asks what the machine runs. So the question is how big a customer its grid should take. If you wrote a fourth test, would you ask what it computes, or only what it draws?",
+      "phrase": "None asks what the",
+      "shows": "the empty fourth bracket is drawn on the chart post as the figures look for a lock that asks what it runs, a plate reads NONE ASKS WHAT IT RUNS",
+      "sfx": "scratch",
+      "means": "none asks what it runs",
+      "rehook": "",
+      "draw": {
+        "subject": "the empty fourth bracket",
+        "action": "is drawn on the chart post as the figures look for a lock that asks what it runs",
+        "emotion": "curious",
+        "annotation": "NONE ASKS WHAT IT RUNS"
+      },
+      "choreo": {
+        "primary": "the empty fourth bracket is drawn on the chart post as the figures look for a lock that asks what it runs, a plate reads NONE ASKS WHAT IT RUNS",
+        "reaction": "the bracket draws",
+        "ambient": "the pencil trembles, the crate peeks up, the town lights flicker"
+      },
+      "t": "114.510-118.130",
+      "key": 51
+    },
+    {
+      "id": 48,
+      "shot": 11,
+      "at_s": 118.13,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 8.55
+      },
+      "offset": 8.55,
+      "vo": "The draft's three tests are about grid, generators and cooling. None asks what the machine runs. So the question is how big a customer its grid should take. If you wrote a fourth test, would you ask what it computes, or only what it draws?",
+      "phrase": "big a customer its",
+      "shows": "Grid straightens up while the rain-dark town stretches out below and the third lock is the only unlit thing, a plate reads HOW BIG A CUSTOMER?",
+      "sfx": "swell",
+      "means": "how big a customer?",
+      "rehook": "",
+      "draw": {
+        "subject": "Grid",
+        "action": "straightens up while the rain-dark town stretches out below and the third lock is the only unlit thing",
+        "emotion": "steady",
+        "annotation": "HOW BIG A CUSTOMER?"
+      },
+      "choreo": {
+        "primary": "Grid straightens up while the rain-dark town stretches out below and the third lock is the only unlit thing, a plate reads HOW BIG A CUSTOMER?",
+        "reaction": "the fluid settles",
+        "ambient": "the pencil trembles, the crate peeks up, the town lights flicker"
+      },
+      "kick": true,
+      "t": "118.130-121.450",
+      "key": 34
+    },
+    {
+      "id": 49,
+      "shot": 11,
+      "at_s": 121.45,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 11.87
+      },
+      "offset": 11.87,
+      "vo": "The draft's three tests are about grid, generators and cooling. None asks what the machine runs. So the question is how big a customer its grid should take. If you wrote a fourth test, would you ask what it computes, or only what it draws?",
+      "phrase": "fourth test, would you",
+      "shows": "an empty fourth bracket sketches a dotted lock labelled WHAT IT COMPUTES?, a plate reads WHAT IT COMPUTES?",
+      "sfx": "scratch",
+      "means": "what it computes?",
+      "rehook": "",
+      "draw": {
+        "subject": "an empty fourth bracket",
+        "action": "sketches a dotted lock labelled WHAT IT COMPUTES?",
+        "emotion": "curious",
+        "annotation": "WHAT IT COMPUTES?"
+      },
+      "choreo": {
+        "primary": "an empty fourth bracket sketches a dotted lock labelled WHAT IT COMPUTES?, a plate reads WHAT IT COMPUTES?",
+        "reaction": "the dotted lock draws",
+        "ambient": "the pencil trembles, the crate peeks up, the town lights flicker"
+      },
+      "t": "121.450-125.270",
+      "key": 35
+    },
+    {
+      "id": 50,
+      "shot": 11,
+      "at_s": 125.27,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 15.69
+      },
+      "offset": 15.69,
+      "vo": "The draft's three tests are about grid, generators and cooling. None asks what the machine runs. So the question is how big a customer its grid should take. If you wrote a fourth test, would you ask what it computes, or only what it draws?",
+      "phrase": "draws?",
+      "shows": "the pencil hovers over the chart with no line drawn while the crate peeks up, a plate reads OR WHAT IT DRAWS?",
+      "sfx": "scratch",
+      "means": "or what it draws?",
+      "rehook": "",
+      "draw": {
+        "subject": "the pencil",
+        "action": "hovers over the chart with no line drawn while the crate peeks up",
+        "emotion": "curious",
+        "annotation": "OR WHAT IT DRAWS?"
+      },
+      "choreo": {
+        "primary": "the pencil hovers over the chart with no line drawn while the crate peeks up, a plate reads OR WHAT IT DRAWS?",
+        "reaction": "the pencil trembles",
+        "ambient": "the pencil trembles, the crate peeks up, the town lights flicker"
+      },
+      "t": "125.270-128.520",
+      "key": 36
+    }
+  ]
+}
