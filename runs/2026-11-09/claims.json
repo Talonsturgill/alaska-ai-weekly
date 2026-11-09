@@ -1,0 +1,412 @@
+{
+ "run_date": "2026-11-09",
+ "fact_check_verdict": "PASS on primary doc (all 12 pages read) plus LawSites corroboration of core rules. CourtSmart item is single-source and forward-looking. Doc is hosted by LawNext, attribute as a copy of the policy published by LawSites. No claim about whether transcripts are live. Nothing about judges remaining responsible. AVA chatbot not tied to the policy.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "A policy written for Alaska's court staff and judges says how they may use artificial intelligence.",
+   "on_screen": "AI POLICY \u00b7 ALASKA COURT SYSTEM",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p1; copy published by LawSites. Never say it was issued today."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "It's version one point two, dated June.",
+   "on_screen": "VERSION 1.2 \u00b7 JUNE 2026",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "Cover: Version 1.2 June 2026. Internal doc, no public release date."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "It applies to every court employee and every judge.",
+   "on_screen": "ALL STAFF + JUDICIAL OFFICERS",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p3: all court staff and judicial officers."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "It allows A I, if people check every answer.",
+   "on_screen": "VERIFY ALL OUTPUT",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p3: must review and verify all outputs before you use it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "Staff must check legal citations and verify factual claims.",
+   "on_screen": "CHECK CITATIONS",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p5 Rule 5."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "For legal research, only A I trained on legal authorities should be used.",
+   "on_screen": "LEGAL-TRAINED AI ONLY",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p3: SHOULD be used, not must."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "The court names Westlaw Precision as a tool it has.",
+   "on_screen": "WESTLAW PRECISION",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p3."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "Staff must never type confidential or personal information into an A I tool.",
+   "on_screen": "NEVER ENTER CONFIDENTIAL INFO",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p4 Rule 2."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "Personal A I accounts can't be used for work.",
+   "on_screen": "NO PERSONAL AI ACCOUNTS",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6 Rule 8."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "Staff can't download A I programs onto court devices.",
+   "on_screen": "NO AI DOWNLOADS ON COURT DEVICES",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6 Rule 9. Court-owned devices only."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "Staff and judges may not use A I on their own to make notes or transcripts of hearings.",
+   "on_screen": "NO DIY AI TRANSCRIPTS",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6 Rule 10 verbatim: You may not independently use AI and GenAI to generate notes or transcripts of live or recorded court hearings."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "The example is a clerk using Zoom's A I transcription for a log note.",
+   "on_screen": "NO ZOOM AI NOTES",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6. The example names court clerks; the ban covers all covered users."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "A I assistants that join a hearing should be removed.",
+   "on_screen": "REMOVE AI ASSISTANTS",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p7 Rule 11: SHOULD be removed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "But the court says its own staff and judges will soon get A I transcripts of all hearings.",
+   "on_screen": "AI TRANSCRIPTS OF ALL HEARINGS",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6: will soon have access to transcripts for all court hearings."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "Those transcripts come automatically from CourtSmart, the court's recording system.",
+   "on_screen": "COURTSMART",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6: generated automatically by CourtSmart as part of our court recording system."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "The policy says they should be ready by fall.",
+   "on_screen": "READY BY FALL 2026",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6: should be available by fall 2026. Plan, not a guarantee. Live status UNVERIFIED, never say they are live or launched."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "The policy calls them A I generated and not the official court record.",
+   "on_screen": "NOT THE OFFICIAL RECORD",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6 verbatim: These transcripts are AI generated and are not the official court record."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "They will link to the official audio.",
+   "on_screen": "LINKS TO OFFICIAL AUDIO",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6: useful links to the official audio record for review."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "They are restricted to internal court use and may not be shared with the public.",
+   "on_screen": "INTERNAL ONLY \u00b7 NOT FOR THE PUBLIC",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6 verbatim: restricted to internal ACS use and may not be shared with the public."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "The policy's reason is that hearings may hold confidential information that couldn't be removed from the A I system, even if a hearing was later sealed.",
+   "on_screen": "SEALED LATER? CAN'T BE PULLED BACK",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p6 verbatim: Hearings may contain confidential or personal information that could not be removed from the AI system even if a party objected or a hearing was later sealed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-primary",
+   "spoken": "Parties can ask for the official audio with form T F three oh four.",
+   "on_screen": "FORM TF-304",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p7: Parties may use form TF-304 to request official audio recordings."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "Version one point two adds mandatory training and a signed form.",
+   "on_screen": "TRAINING + SIGNED FORM",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p7 Rule 14; new to v1.2."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-primary",
+   "spoken": "Current staff get ninety days. New hires get thirty.",
+   "on_screen": "90 DAYS \u00b7 30 DAYS",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p7. Do not compute a calendar deadline."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-primary",
+   "spoken": "A I written code must be reviewed and tested by a human.",
+   "on_screen": "HUMAN REVIEWS THE CODE",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p7 Rule 12."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-primary",
+   "spoken": "A I must not be used to interpret court proceedings.",
+   "on_screen": "NO AI INTERPRETING",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p10."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-primary",
+   "spoken": "Violations can bring discipline, up to firing.",
+   "on_screen": "DISCIPLINE UP TO DISMISSAL",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p12: up to and including dismissal."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-secondary",
+   "spoken": "A national survey of judicial A I policies, published November fifth, lists Alaska as having a policy.",
+   "on_screen": "50-STATE SURVEY \u00b7 NOV 5TH",
+   "source": "https://www.lawnext.com/2026/11/clio-wants-to-bring-ai-to-the-judiciary-but-50-state-survey-reveals-policies-differ-in-whether-they-allow-it.html",
+   "requires": [
+    "LawSites (Bob Ambrogi) Nov 5 2026; Alaska status Policy v1.2. Survey does not mention CourtSmart."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-primary",
+   "spoken": "The policy itself says the court asked an A I tool to help format an early draft of it.",
+   "on_screen": "AI HELPED FORMAT THE POLICY",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "p9-10: court prompted a GenAI tool with a draft of this policy to improve formatting. Formatting only."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "cut-unconfirmed",
+   "spoken": "The transcripts are live.",
+   "on_screen": "NOT CONFIRMED LIVE",
+   "source": "https://www.lawnext.com/wp-content/uploads/2026/10/Alaska-Court-System-AI-Use-Policy-Update-V1.2.pdf",
+   "requires": [
+    "CUT. No source says CourtSmart AI transcripts are live or delayed. Say only expected by fall."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

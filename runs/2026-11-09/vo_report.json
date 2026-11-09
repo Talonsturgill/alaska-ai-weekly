@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.997,
+    "heard": "Alaska's courts won't let staff or judges use AI on their own to transcribe hearings. A clerk can't even run Zoom's AI for a log note. It's one rule in a policy covering every court employee and judge, version 1.2, June, as published by Lawsites. Everything else is a yes, with homework. Check every answer. Never type in confidential details. No personal accounts, no downloads on court devices, humans review the code, no AI interpreting. Break the rules and risk discipline, up to firing. But the same policy says the court's own staff and judges will soon get AI transcripts of every hearing. Keep an eye on who gets to read them. They come from court smart, the court's recording system, and should be ready by fall. The policy calls them AI-generated, not the official record, and says each links to the official audio. Picture one hearing, two people. A judge opens the AI transcript. The party at the table can fill out form TF304 and ask for the audio. The transcripts are restricted to internal court use and may not be shared with the public. The policy stated worry is that a hearing can hold confidential information that couldn't be removed from an AI system, even if the hearing was later sealed. That's containment, not a fix. The court keeps the text inside, and the person who's hearing it was can ask for the tape. So it isn't banning AI transcripts. It's deciding who holds them. Close the side doors, build one front door. And the policy admits one thing about itself. The court asked an AI tool to help format an early draft, formatting only. So should a party get the AI draft of their own hearing?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.007,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 5.92,
+        "voiced_frac": 0.51,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 120.72,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 120.72,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.997,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.997,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

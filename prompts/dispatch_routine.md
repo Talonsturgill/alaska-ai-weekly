@@ -114,7 +114,7 @@ log at wake so every run says whether the setting took.
 How to work on this model (each point written after a run that did the opposite):
 
 1. **The named gates are the verification budget.** `run_guard`, `story_gate`, `storyboard_check`,
-   Gates 0A to 0E, `flow_check`, `caption_check`, the panel and `ship_gate` are adversarial and
+   Gates 0A to 0F, `flow_check`, `caption_check`, the panel and `ship_gate` are adversarial and
    objective and stay exactly as written. Do not invent a re-check no gate asked for, do not re-read
    your own artifact to confirm it, do not spawn an agent to double-check your own work. When a gate
    passes, move on. One carve-out, which is not self-checking: verify what a SUBAGENT or a
@@ -733,6 +733,13 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   single question the piece answers. If it can't do all three without guessing it returns ship:false
   with the first line where it got lost. Rewrite the VO (§4.2) and re-run to ship:true BEFORE any
   synth.
+- GATE 0F (EDITOR ON THE SCRIPT, machine pass 2026-11-09): after 0E ships, the editor agent (no-spawn)
+  gets `out/dispatch/vo_script.txt` and `out/dispatch/claims.json` and reads every spoken line against
+  the claims it cites (verbs, tense, scope, absolutes), writing `out/dispatch/editor_vo.json`
+  `{"ship": bool, "findings": [{"line", "risk", "fix"}]}`. Apply the fixes to the script and re-run until
+  ship:true, then `python3 scripts/editor_vo_check.py --stamp`. `vo_synth_gemini.py` refuses to synth
+  unless that stamp matches the current script and claims, so any later wording edit needs a fresh
+  read. 11-09's editor found five wording risks only after the synth and they cost a re-synth.
 
 ## PHASE 5: BUILD (Remotion + voice + aligned captions)  (`run_cost.py phase voice`, then `build`)
 
@@ -911,6 +918,11 @@ semicolon, an em/en dash, a sentence starting with "But", first person outside a
 hashtag count outside 3 to 5, commas over 4.9 per 100 words, "cannot", a non-ordinal date, any URL,
 and any sources or credit line in the body). GATE B: editor then scorer vs
 config/linkedin_caption_rubric.yaml (ship 8.5, zero hard_fails). Loop until both pass.
+BEFORE the first draft, run `python3 scripts/caption_rounds.py brief` and write its Hook pattern
+and its three lowest shipped criteria into that draft (10-31, 11-01 and 11-02 each cleared 8.5 by
+hundredths, on a hashtag or readability round a first draft could have done). Archive the final
+card WITH its per-criterion scores as runs/<date>/caption_score.json, because brief learns only
+from cards that kept them.
 Each round: save the scorer's JSON card, run `python3 scripts/caption_rounds.py record --card <card>`,
 and rewrite for the ONE target it names (largest weighted shortfall, held until it stalls twice),
 handing the next scorer the previous scores and diff it prints. At the rubric's
@@ -959,6 +971,25 @@ breaks a house rule.
    `--cost-json runs/<date>/cost.json`. Hand the payload to the connected Gmail create_draft
    connector with the actual profile address as `--to`. Verify the new draft's readback is DRAFT and
    not SENT. Never send it.
+
+   **File-based invocation (2026-11-09 permission-stop repair).** Use the native file-writing
+   tool to create `out/dispatch/email_input.json` and `out/dispatch/upgrades.txt`. Never build
+   these with a shell heredoc, command substitution, an inline Python program, or quoted prose
+   in a compound command. The November 9 run stopped because its quoted heredoc could not be
+   checked before execution. Keep content as data and invoke checked-in code instead:
+   `python3 scripts/dispatch_email_from_file.py --input out/dispatch/email_input.json`.
+   The JSON object uses the existing dispatch_email.py option names without leading `--`:
+   `post`, `video-url-vertical`, `video-url-square`, `poster-url`, `voice`, `vo-report`, `music`,
+   `sources`, `score`, `note`, `date`, `title`, `to`, `cost-json`, `out-html`, and `upgrades-file`.
+   All values are strings. Set `upgrades-file` to `out/dispatch/upgrades.txt`; write one actual
+   improvement per line with the file tool, rather than embedding that text in the shell.
+   Use the connected Gmail profile address for `to`, keep these scratch files out of Git, and
+   do not print the input for debugging. The wrapper rejects unknown, duplicate or stale input,
+   cannot request a freshness bypass, and runs every existing email gate. It creates no draft
+   itself; use its final payload with the same Gmail connector/readback steps above. Run the
+   cost-report command separately before this command. Do not loosen permission rules to make
+   an inline shell construction pass. This removes this known prompt trigger; it is not a claim
+   that the host can never ask about a different operation.
 4. Git: commit scenes, storyboard, caption, art_direction, artifacts, stills (NOT heavy mp4s or
    frames), `runs/<date>/cost.json`, the ledger (`scripts/dedupe.py add ... --composition
    '<fingerprint JSON>' --stance <celebratory|cautionary|curious|mixed> --angle "<the Phase 3.5

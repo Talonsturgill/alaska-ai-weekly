@@ -702,6 +702,22 @@ def main():
     except Exception as _e:
         print(f"  [board-sync] could not run ({_e}); shot rows not diffed against beats")
 
+    # ---- 9. THE BOARD SHOWS ALASKA (machine pass 2026-11-09) ----
+    # scripts/alaska_cue_check.py. Every 11-09 seat wrote "no Alaska cue in the visuals" although a
+    # plate read ALASKA COURT SYSTEM: copy is not picture. A board none of whose shots DRAWS an
+    # Alaska place, landscape, species or map fails (the owner's "every film shows one Alaska cue");
+    # a board with one such shot gets an advisory, as 11-06's single map-pin beat did not lift the axis.
+    try:
+        import alaska_cue_check as _ak
+        _ar = _ak.analyze(sb)
+        for _p in _ar["problems"]:
+            problems.append(f"alaska-cue: {_p}")
+        for _w in _ar["warnings"]:
+            print(f"  [alaska-cue-advisory] {_w}")
+        print(f"  [alaska-cue] {len(_ar['shots'])}/{_ar['n_shots']} shots draw Alaska")
+    except Exception as _e:
+        print(f"  [alaska-cue] could not run ({_e}); the board's Alaska cue not checked")
+
     if problems:
         for p in problems:
             print(f"FAIL [storyboard_check] {p}")

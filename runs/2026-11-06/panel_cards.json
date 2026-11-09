@@ -1,0 +1,80 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 7,
+   "Illustration craft & detail": 7,
+   "Motion & animation craft": 7,
+   "Composition & staging": 7,
+   "Color & grade": 8,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7,
+   "VO-illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7,
+   "Writing & post quality": 8
+  },
+  "weighted_total": 7.34,
+  "concrete_defects": [
+   "heroes small, empty upper orange band, thin foot strip",
+   "low measured motion on held beats (pencil marks 2.6%, typewriter 3.3%)",
+   "figures plainer than props",
+   "32 VO gaps over 0.35s with thin SFX layering",
+   "nav chips and mono labels tiny"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7,
+   "Illustration craft & detail": 6.5,
+   "Motion & animation craft": 6,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.25,
+   "Sound design & mix": 6.75,
+   "VO-illustration sync & entertainment": 7,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8
+  },
+  "weighted_total": 7.01,
+  "concrete_defects": [
+   "held props slide or settle, no stamp strike, no idle breath",
+   "faculty figures tiny and plain",
+   "empty orange band, ServerMachine cropped at left edge at 45.8s",
+   "single-hit SFX, no audible ambience evidence",
+   "middle section text heavy"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7,
+   "Illustration craft & detail": 6.5,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 6,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.2,
+   "Sound design & mix": 6.7,
+   "VO-illustration sync & entertainment": 6.5,
+   "Accuracy & sourcing": 8,
+   "Alaska authenticity & cultural respect": 7,
+   "Writing & post quality": 7.5
+  },
+  "weighted_total": 6.88,
+  "concrete_defects": [
+   "empty upper third, heroes low and crowded by caption and foot strip",
+   "held figures read as posed props",
+   "humans below prop finish, repeating dot and desk grids",
+   "single-hit SFX in 2s gaps",
+   "long quote-sheet run reads as narration over infographic"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "hero scale and empty upper orange band",
+  "held-figure motion under 6% on 19 strips",
+  "VO gaps with thin SFX layering",
+  "figure finish below prop finish"
+ ]
+}

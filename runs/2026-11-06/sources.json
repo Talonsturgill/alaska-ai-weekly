@@ -1,0 +1,91 @@
+{
+ "run_date": "2026-11-06",
+ "title": "Who Wrote the Rules",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "University of Alaska Board of Regents to continue strategic future investments at November board meeting",
+   "outlet": "University of Alaska System Office release (EIN Presswire), November 3rd, 2026",
+   "url": "https://www.einpresswire.com/article/954337159/university-of-alaska-board-of-regents-to-continue-strategic-future-investments-at-november-board-meeting",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c23",
+    "c24",
+    "c25"
+   ],
+   "used_in_film": true,
+   "note": "Primary source. The release lists AI guidelines for consideration and does not report any outcome."
+  },
+  {
+   "id": "s2",
+   "title": "University of Alaska regents weigh AI policy as student misuse increases",
+   "outlet": "Anchorage Daily News, October 4th, 2026",
+   "url": "https://www.adn.com/alaska-news/education/2026/10/04/ai-policy-coming-to-university-of-alaska-as-student-misuse-increases/",
+   "claims": [
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13"
+   ],
+   "used_in_film": true,
+   "note": "Misconduct figures are UAA only, from the UAA Dean of Students report via ADN."
+  },
+  {
+   "id": "s3",
+   "title": "Opinion: Who wrote UA's AI plan? A chatbot did",
+   "outlet": "Anchorage Daily News opinion, Gregory Hartley and Joel Potter, November 2026",
+   "url": "https://www.adn.com/opinions/2026/11/03/opinion-who-wrote-uas-ai-plan-a-chatbot-did/",
+   "claims": [
+    "c14",
+    "c15",
+    "c16"
+   ],
+   "used_in_film": true,
+   "note": "OPINION. The Claude drafting claim and the October 9th disclosure date are the authors' claims."
+  },
+  {
+   "id": "s4",
+   "title": "Opinion: Humans, not robots, shaped UA's approach to AI",
+   "outlet": "Anchorage Daily News opinion, five University of Alaska faculty, November 5th, 2026",
+   "url": "https://www.adn.com/opinions/2026/11/05/opinion-humans-not-robots-shaped-uas-approach-to-ai/",
+   "claims": [
+    "c17",
+    "c18",
+    "c19",
+    "c20"
+   ],
+   "used_in_film": true,
+   "note": "OPINION. The rebuttal disputes that AI use was concealed and does not deny that AI was used."
+  },
+  {
+   "id": "s5",
+   "title": "UAF has no unified AI policy",
+   "outlet": "UAF Sun Star student newspaper, October 20th, 2026",
+   "url": "https://www.uafsunstar.com/news/uaf-has-no-unified-ai-policy",
+   "claims": [
+    "c21"
+   ],
+   "used_in_film": true,
+   "note": "Student paper."
+  },
+  {
+   "id": "s6",
+   "title": "University of Alaska regents consider draft AI policy",
+   "outlet": "KTOO and Alaska Public Media, September 2026",
+   "url": "https://alaskapublic.org/news/education/2026-09-18/university-of-alaska-regents-consider-draft-ai-policy",
+   "claims": [
+    "c22"
+   ],
+   "used_in_film": true,
+   "note": "Reporter's paraphrase of Chief Information Technology Officer Ben Shier."
+  }
+ ]
+}
