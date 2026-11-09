@@ -1,0 +1,57 @@
+{
+  "criteria_scores": [
+    {
+      "name": "Hook strength",
+      "weight": 0.15,
+      "raw_score": 9,
+      "weighted_score": 1.35,
+      "notes": "Names three specific installations, two concrete dates (June 5 posted, June 29 bids due), and immediately states the Senate vote has not happened yet, establishing the inverted-sequence tension in the first two sentences. Stops just short of 10 because the 'missing option' (energy-first sequencing) is implied rather than named in the hook itself — it arrives explicitly in paragraph 3."
+    },
+    {
+      "name": "Local relevance",
+      "weight": 0.20,
+      "raw_score": 10,
+      "weighted_score": 2.00,
+      "notes": "Every beat is fully Alaskan and named: Eielson AFB, Clear SFS, JBER, Fairbanks, North Pole Middle School, GVEA, HB 381 in the Alaska Senate, UAF graduate student Marcel Gietzmann-Sanders, Chinook salmon tagging program, Tanana Chiefs Conference drone vaccine delivery to Interior villages, Rep. Genevieve Mina. No imported national story appears in the body."
+    },
+    {
+      "name": "Factual density",
+      "weight": 0.15,
+      "raw_score": 10,
+      "weighted_score": 1.50,
+      "notes": "Specifics appear in nearly every sentence: June 5, June 29, June 19, June 12, three named installations, 34-5 House vote, HB 381, 2029 delivery, 'less than a mile from North Pole Middle School,' 700,000 data points, 13-year tagging program, Animal Biotelemetry, 400+ RHTP proposals, Tanana Chiefs Conference, Rep. Genevieve Mina quote."
+    },
+    {
+      "name": "Source quality",
+      "weight": 0.15,
+      "raw_score": 9,
+      "weighted_score": 1.35,
+      "notes": "All claims trace cleanly to verified_findings.json. RFLP claims backed by two independent local outlets plus SAM.gov confirmation. HB 381 confirmed by three independent outlets. UAF salmon ML confirmed by institutional source plus three independent outlets. One notch below 10: SAM.gov primary is login-walled (confirmed only by secondary outlets), and B2 has an ADN/GovTech authorship overlap."
+    },
+    {
+      "name": "Voice match",
+      "weight": 0.15,
+      "raw_score": 10,
+      "weighted_score": 1.50,
+      "notes": "Reads exactly like the brand descriptor: analytical, takes a position ('The sequence is backwards'), names the structural problem and counter-framing. No banned phrases, no em-dashes, no hashtags, no 'follow us,' no emojis. Register is essayistic throughout."
+    },
+    {
+      "name": "Readability (mobile)",
+      "weight": 0.10,
+      "raw_score": 9,
+      "weighted_score": 0.90,
+      "notes": "415 words lands at the upper bound of the 280-420 target range. Paragraph structure is well-varied: short punchy grafs (P4 is one sentence, P7 is one sentence) balance a slightly denser P3 and P5. No wall-of-text paragraph. One notch below 10 because 415 words leaves no margin and P3 is the most information-dense block."
+    },
+    {
+      "name": "Engagement question",
+      "weight": 0.10,
+      "raw_score": 10,
+      "weighted_score": 1.00,
+      "notes": "Genuinely debatable binary tied to the exact structural tension the post builds toward. No colon before the choices (compliant with punctuation rules). No 'follow us,' no hashtags, no generic prompt."
+    }
+  ],
+  "weighted_total": 9.60,
+  "threshold": 8.0,
+  "ship": true,
+  "one_sentence_fix": "N/A — post clears threshold; if any refinement is warranted, trim 5-10 words from paragraph 3 to pull the word count away from the 420-word ceiling."
+}

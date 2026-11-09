@@ -1,0 +1,13 @@
+"The Air Force posted parcel addresses at Eielson AFB, Clear Space Force Station, and JBER on June 5, and private developer bids are due June 29. The Alaska Senate hasn't voted on the pipeline that would power those parcels yet.
+
+That vote is set for June 19, ten days before bids close. The Glenfarne LNG pipeline, which passed the House 34-5 on June 12, would bring North Slope gas to Cook Inlet utilities by 2029. The Senate has "substantially more skepticism," according to Alaska Public Media. But the Air Force's own March 2026 site analysis flagged JBER parcels as having insufficient power and requiring new Chugach connections. GVEA has already told prospective developers that major loads must connect to its 138-kV line, and that capacity is constrained.
+
+The conventional framing is that Alaska is finally getting serious about AI infrastructure. What's actually happening is that private companies are being asked to price 20-year leases on parcels with no committed power supply, on a federal timeline that doesn't wait for state energy decisions. Some proposed Eielson-adjacent parcels sit less than a mile from North Pole Middle School. Residents near North Pole and Fairbanks have raised questions about permafrost stability, diesel generator air quality, noise, and water use. None of those questions have been answered before the bid deadline.
+
+The sequence is backwards. Bids come first. The energy vote comes second. Community input doesn't appear on the schedule at all.
+
+Meanwhile, the Alaska AI work that's actually proceeding on solid footing looks nothing like a hyperscale data center. UAF graduate student Marcel Gietzmann-Sanders published a peer-reviewed ML model in Animal Biotelemetry this week that uses 700,000 data points from a 13-year Chinook salmon tagging program to predict fish depth distribution, so pollock trawlers can avoid bycatch overages like the ones that shut down the pollock fishery in 2024. The state's Rural Health Transformation Program advanced more than 400 proposals, including Tanana Chiefs Conference drone vaccine delivery and wearable health monitoring for Interior villages. State Rep. Genevieve Mina noted the federal program design "almost directs us to AI." Neither project required solving a megawatt problem first.
+
+If the Senate kills HB 381 on June 19, the Air Force's June 29 bid process continues anyway. Developers will bid on parcels with no viable power timeline, and whatever gets built will define Alaska's AI infrastructure posture for a generation. The inverted sequence isn't a procedural quirk. It's a lock-in mechanism.
+
+Which matters more for Alaska's AI future: getting the federal parcel leases signed, or getting the energy foundation right before anyone signs anything?"
