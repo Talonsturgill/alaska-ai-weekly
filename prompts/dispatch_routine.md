@@ -964,6 +964,25 @@ breaks a house rule.
    `--cost-json runs/<date>/cost.json`. Hand the payload to the connected Gmail create_draft
    connector with the actual profile address as `--to`. Verify the new draft's readback is DRAFT and
    not SENT. Never send it.
+
+   **File-based invocation (2026-11-09 permission-stop repair).** Use the native file-writing
+   tool to create `out/dispatch/email_input.json` and `out/dispatch/upgrades.txt`. Never build
+   these with a shell heredoc, command substitution, an inline Python program, or quoted prose
+   in a compound command. The November 9 run stopped because its quoted heredoc could not be
+   checked before execution. Keep content as data and invoke checked-in code instead:
+   `python3 scripts/dispatch_email_from_file.py --input out/dispatch/email_input.json`.
+   The JSON object uses the existing dispatch_email.py option names without leading `--`:
+   `post`, `video-url-vertical`, `video-url-square`, `poster-url`, `voice`, `vo-report`, `music`,
+   `sources`, `score`, `note`, `date`, `title`, `to`, `cost-json`, `out-html`, and `upgrades-file`.
+   All values are strings. Set `upgrades-file` to `out/dispatch/upgrades.txt`; write one actual
+   improvement per line with the file tool, rather than embedding that text in the shell.
+   Use the connected Gmail profile address for `to`, keep these scratch files out of Git, and
+   do not print the input for debugging. The wrapper rejects unknown, duplicate or stale input,
+   cannot request a freshness bypass, and runs every existing email gate. It creates no draft
+   itself; use its final payload with the same Gmail connector/readback steps above. Run the
+   cost-report command separately before this command. Do not loosen permission rules to make
+   an inline shell construction pass. This removes this known prompt trigger; it is not a claim
+   that the host can never ask about a different operation.
 4. Git: commit scenes, storyboard, caption, art_direction, artifacts, stills (NOT heavy mp4s or
    frames), `runs/<date>/cost.json`, the ledger (`scripts/dedupe.py add ... --composition
    '<fingerprint JSON>' --stance <celebratory|cautionary|curious|mixed> --angle "<the Phase 3.5
