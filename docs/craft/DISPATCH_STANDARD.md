@@ -622,3 +622,13 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **Overlay bands need a light-ground style.** A top strip and bottom band that read on indigo went grey on bone shots. Switch label ink and chip fills when the ground is light. (2026-11-02)
 - **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline strip, a data flow) rather than stars. (2026-11-02)
 - **A paper-wipe transition must start covering the frame.** A rect that began off-screen and slid in never left, and hid the thesis shot for 8 seconds in the first cut. Draw it at x 0, travel it past 1.3 times the width. (2026-11-02)
+
+## 23. Things the 2026-11-04 gates, critics and panel found that were knowable in advance ("The Ears Did the Work")
+- A plate or comparison panel must not assign a cause the claim set doesn't. "THE EARS HEARD IT" and "SAME WIGGLE, MORE EARS" credited detections to extra sensors when the paper credits re-picking the same recordings. Draw the same data twice with two pickers, never an added instrument.
+- Never print a number the claim set forbids even under an illustration chip ("ANALYSTS 3, PICKER 9" read as counts). Use the authors' ratio word ("~3X") and dots.
+- Banners and plates are the TOP draw layer. A prop drawn after a banner (the Sheet) clipped its first letter; a banner that translates onto a face reads as a clip. Fade it in place.
+- Anything labelled sits clear of the Frame camera drift: content near x 100 or x 980 is cropped at the end of a push. Run `label_footprint_check.py --shots <n>` after moving a label.
+- A list-driven Plates helper defeats visible_copy and plate_overlap. Write literal `<Plate text=...>` lines and mark time-gated pairs `plate-overlap-ok`.
+- Cite the supporting claim on every line it truly supports (c22 on "starting in 2018" and "temporary"), or claim density blocks preflight.
+- The region under the captions and the top chrome are judged. Ship a foreground layer and keep any "ILLUSTRATION" chip below the state band.
+- Dates written "2018 TO 2019" on screen, never "2018-19" (a hyphen range reads as a dash).

@@ -1,0 +1,87 @@
+{
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "note": "4 researchers"
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "note": "14+ outlet indexes fetched"
+  },
+  {
+   "rung": "widened_window",
+   "attempted": true,
+   "note": "30 day widen in all beats"
+  },
+  {
+   "rung": "carried_leads",
+   "attempted": true,
+   "note": "none needed"
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": true,
+   "note": "Crossref/army.mil/DOH/FCC primary docs"
+  },
+  {
+   "rung": "follow_up",
+   "attempted": true,
+   "note": "UA Regents AI Engaged considered"
+  },
+  {
+   "rung": "pegged_explainer",
+   "attempted": true,
+   "note": "floor not needed"
+  }
+ ],
+ "candidates": [
+  {
+   "title": "ML triples earthquake count Alaska Peninsula (Barcheck & Ruppert, ESS, 2026-10-28)",
+   "verdict": "LOCKED"
+  },
+  {
+   "title": "11th Airborne armed FPV drone strike JBER",
+   "verdict": "no AI angle"
+  },
+  {
+   "title": "RHTP year 1 $249M",
+   "verdict": "older, 10-22"
+  },
+  {
+   "title": "AI donors Senate race",
+   "verdict": "election-day politics, single outlet"
+  },
+  {
+   "title": "UA Regents AI Engaged",
+   "verdict": "overlaps UAA AI policy 10-05, claim single op-ed"
+  },
+  {
+   "title": "Kodiak spaceport",
+   "verdict": "no AI"
+  },
+  {
+   "title": "FCC $162M Alaska Connect",
+   "verdict": "broadband, unadopted"
+  },
+  {
+   "title": "NSB/TFC donations to Sullivan",
+   "verdict": "single partisan outlet"
+  },
+  {
+   "title": "Beluga-Healy intertie DOE $150M",
+   "verdict": "no AI"
+  },
+  {
+   "title": "UAF critical minerals engine industry backing",
+   "verdict": "award July"
+  }
+ ],
+ "locked_story": {
+  "title": "Machine learning roughly triples the earthquake count for the Alaska Peninsula subduction zone",
+  "found_at_rung": "in_window_sweep",
+  "doi": "10.1029/2026EA005230",
+  "headline": "Machine learning roughly triples the earthquake count along the Alaska Peninsula subduction zone"
+ }
+}

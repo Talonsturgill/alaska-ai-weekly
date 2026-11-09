@@ -3971,6 +3971,10 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - In-run fixes: VO retimed after the c17 and c19 wording edits, mix LRA 5.3 to 6.2, plate stacking, bone-ground band legibility, paper-wipe exit bug, duplicate plates, overlay Bands and Atmos layer.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-02), six items.
 
+## 2026-11-04 "The Ears Did the Work" (Barcheck and Ruppert ML earthquake catalog, Alaska Peninsula)
+- Shipped: 114 s film, panel median 7.14 against 7.0 (7.056, 7.14, 7.23), no hard blockers, six graded cuts for the standing seat (6.33, 6.58, 6.68, 6.80, 7.02, 7.06). Caption 8.30 against 8.5 on its fifth and final round, zero hard fails, shipped flagged below the bar. Abstract-only story (paper body 403), every figure attributed to the authors, no absolute counts.
+- In-run fixes: Gate 0E cold-read rewrites of the VO, board rebuilt after three critics, claim obligations (fine-tuned, scope 2018 to 2019, no 'more ears' comparison, no causal plate for the ears), plates to literal lines, foreground sensor layer, chip moved, hook banner and Sheet draw order, HeldProp idle, scanning bars, mint sonar rings.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-04), eight items.
 ## 2026-11-06 "Who Wrote the Rules" (University of Alaska AI Engaged plan, op-ed fight over Claude drafting it)
 - Shipped: 142 s film, panel median 7.01 against 7.0 (7.34, 7.01, 6.88), no hard blockers, a thin pass on the thirteenth graded cut. Caption 8.59 against 8.5 on its fourth round, zero hard fails. Regents vote outcome unobtainable (alaska.edu 503), so the film makes no claim about it.
 - In-run fixes: quote card plate overlap and sheet-edge clip on shot 6 (two judges flagged it, one as a hard blocker), room tone raised 3 dB inside its self-test band, characters upgraded with breath, hair and glasses, dot field drawn to scale.

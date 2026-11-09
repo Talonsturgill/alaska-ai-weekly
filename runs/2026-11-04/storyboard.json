@@ -1,0 +1,1877 @@
+{
+  "run_date": "2026-11-04",
+  "slug": "the-ears-did-the-work",
+  "title": "The Ears Did the Work",
+  "concept": "An AI picker, EQTransformer, retrained by G. Barcheck (Cornell) and N. A. Ruppert (USGS) on a hand-checked catalog from the 2018 to 2019 Alaska Amphibious Community Seismic Experiment (75 seafloor and 30 land seismometers), found roughly three times as many earthquakes along the Alaska Peninsula than the analyst-checked catalog, per the authors' abstract. No training strategy was substantially better, local data was what improved it, and the biggest gains were far offshore and in the outer rise. The film credits the ears and the pencils, shows the check that passed (same map) and the limit (one temporary experiment, more heard not more shaking), and ends asking whether Alaska keeps putting ears on the seafloor. Bunk, a mint-domed seafloor seismometer, is the hero and the catalog Sheet is the throughline.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 117.66,
+  "fingerprint": {
+    "pov": "exploded-diagram",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "multiplicity-swarm",
+    "layout": "stacked-layers",
+    "register": "editorial-schematic",
+    "palette": "oxblood seafloor and stage, glowing mint seafloor ears, bright yellow machine dots, chalk human-checked dots and coral limit plates",
+    "camera_strategy": "locked-drift",
+    "light_story": "dusk-silhouette",
+    "metaphor": "a seafloor ear and a hand-checked catalog sheet that the algorithm's spotlight briefly borrows, then hands back"
+  },
+  "palette": "oxblood seafloor and stage, glowing mint seafloor ears, bright yellow machine dots, chalk human-checked dots and coral limit plates",
+  "divergence_note": "The last films were a midnight indigo cab with sodium amber and teal (11-02), a storm slate slope with sulphur (11-01), a cream chart desk with cobalt and brass (10-31), an aubergine dusk depot (10-29) and a green-black sonar abyss (10-28). This film is oxblood and wine with mint, gold and chalk, played on a stage over a seafloor cutaway. Its hero is a mint-domed seafloor seismometer, its stage opens front-on with a trapdoor cut rather than a floor cutaway and it closes on an aerial grid, it has no cab, no slope, no desk, no depot and no green-black sonar, and its signature object is a catalog Sheet whose dots go chalk, gold and outline.",
+  "treatment": {
+    "title": "The Robot Takes a Bow",
+    "summary": "Comedian's stage and bow, with the Dramatist's limit scene, the Explainer's waterline and the Enthusiast's Sheet."
+  },
+  "angle": {
+    "thesis": "The credit belongs to the data, not the algorithm: no training trick won, and Alaska's own human-checked earthquake picks, recorded by 75 seafloor and 30 land seismometers, taught an existing AI picker to find roughly three times as many quakes, most of the gain far offshore.",
+    "supporting_facts": [
+      "c11 no training strategy was substantially better",
+      "c12 local waveform data set improved performance",
+      "c14 roughly 3x more earthquakes than the analyst-checked catalog (this 2018-2019 catalog only)",
+      "c16 biggest gains far offshore and outer rise"
+    ],
+    "falsifiability": "False if a training trick clearly beat the others, if extra quakes scattered off known structure, or if gains were not concentrated offshore. Abstract says the opposite on all three. False-positive rate unknown (paper body unreachable).",
+    "counterpoint": "Temporary 2018-2019 experiment, judged from an abstract with no absolute counts. Roughly 3x says nothing about whether seismicity rose or what a permanent network hears today. The expensive part (a dense seafloor array and hand-checked labels) came first. Open question: does Alaska keep putting sensors on the seafloor to feed the recipe?",
+    "second_movement": "The headline reads AI breakthrough, the paper's own finding is data decided it. Credit moves to the people who deployed instruments and checked picks by hand.",
+    "runner_ups": {
+      "dramatist": "what does the AI hear once the seafloor stations are pulled up (kept as the Act 3 TEST and the button question)",
+      "explainer": "falling tide image (kept as the physical comparison for completeness)"
+    },
+    "guardrails": [
+      "roughly, per the authors, no absolute counts",
+      "not an Alaska Earthquake Center product",
+      "no forecast, no causal link to 1938 or 2021 quakes, no 'same segment' without hedge",
+      "banned words gap matters pattern"
+    ],
+    "stance": "curious"
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A spotlit Robot, a squared-off server machine with eyes, takes a bow under falling confetti and a banner reading AI FINDS 3X THE QUAKES while a mint dome blinks under the stage floor.",
+    "headline": "THE ROBOT TAKES A BOW",
+    "motion_by_s": 0.3,
+    "loopback": "Bunk's mint eye closes and opens again, mirroring the first blink under the stage."
+  },
+  "open_loop": {
+    "plant_t": 9.61,
+    "pay_t": 100.54,
+    "what": "What really made the picker better? Planted when the paper says otherwise, paid when the banner swings from AI to LOCAL DATA MADE IT BETTER."
+  },
+  "open_loop_2": {
+    "plant_t": 57.11,
+    "pay_t": 87.462,
+    "what": "Are the new quakes real or noise? Planted with the dotted box on the reel, paid when the ghost map lines up."
+  },
+  "throughline": {
+    "object": "the catalog Sheet",
+    "lands_in_button": "the Sheet's gold dots fade to outlines as the Bunks lift, leaving one question",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "bare with six chalk dots on the curtain"
+      },
+      {
+        "at_s": 22.8,
+        "state": "stamped CHECKED BY HAND"
+      },
+      {
+        "at_s": 40.97,
+        "state": "slides into the Robot tray as the retraining set"
+      },
+      {
+        "at_s": 52.54,
+        "state": "clipped with a LOCAL tab"
+      },
+      {
+        "at_s": 61.68,
+        "state": "gold dots fill in to roughly 3X over the chalk ones"
+      },
+      {
+        "at_s": 84.048,
+        "state": "overlaid by the ghost map and still matching"
+      },
+      {
+        "at_s": 99.33,
+        "state": "margin note 2018 TO 2019 ONLY in coral"
+      },
+      {
+        "at_s": 110.16,
+        "state": "dots faded to outlines as the Bunks lift"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 16.59,
+      "type": "scale-pullback",
+      "what": "from one Bunk to a wave of 75 along the seabed",
+      "hold_s": 0.8
+    },
+    {
+      "t": 61.68,
+      "type": "morph-to-chart",
+      "what": "gold dots fill the Sheet stack up to a 3X numeral",
+      "hold_s": 0.8
+    },
+    {
+      "t": 77.448,
+      "type": "scale-pullback",
+      "what": "from the Sheet to the whole plate cross-section with the outer rise bulge",
+      "hold_s": 0.8
+    },
+    {
+      "t": 100.54,
+      "type": "build-on",
+      "what": "the banner swings from AI to LOCAL DATA and the spotlight finds Bunk and a pencil",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.1
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "at_s": 109.86,
+        "level": 0.1
+      },
+      {
+        "at_s": 110.96,
+        "level": 0.6
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.55
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 109.86,
+    "riser_at": 107.69,
+    "silence_at": 109.86,
+    "payoff_at": 110.16,
+    "button_pattern": "callback",
+    "interrupt_at": 89.48,
+    "extra_dips": [
+      100.54
+    ]
+  },
+  "shots": [
+    {
+      "title": "The bow",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "proscenium-stage",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the Robot at x540 y1000",
+      "means": "A front-on stage where the Robot takes a bow, then a trapdoor cut to Bunk on a seabed plate",
+      "ambient": "confetti falls, the spotlight sweeps, the curtain sways",
+      "hero": {
+        "name": "Robot + proscenium stage + banner + confetti + trapdoor + Sheet + Bunk",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "30% Robot, 25% Bunk, 25% banner, 20% confetti"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-11.720"
+    },
+    {
+      "title": "75 ears",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "seabed-row",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Bunk at x540 y1000",
+      "means": "Bunk wakes, 75 domes light in a wave, 30 shore sensors pop on a strip map",
+      "ambient": "the domes pulse, bubbles rise",
+      "hero": {
+        "name": "Bunk row + seabed + strip map + shore pins + Sheet + dated ring",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "35% Bunks, 25% map, 20% Sheet, 20% pins"
+      },
+      "id": 2,
+      "start_s": 11.72,
+      "t": "11.720-22.800"
+    },
+    {
+      "title": "Checked by hand",
+      "vo_line": 2,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "analyst-desk",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the analyst's pencil at x540 y1000",
+      "means": "an analyst stamps the Sheet and the authors' Cornell and USGS hands slide it away",
+      "ambient": "the pencil scratches, paper rustles, the lamp hums",
+      "hero": {
+        "name": "analyst + pencil + squiggle + Sheet + two sleeve plates + hands",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "30% analyst, 30% squiggle, 20% Sheet, 20% hands"
+      },
+      "id": 3,
+      "start_s": 22.8,
+      "t": "22.800-34.020"
+    },
+    {
+      "title": "Retrained",
+      "vo_line": 3,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "high",
+      "stage": "robot-lab",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the Robot at x540 y1000",
+      "means": "The Sheet slides into the Robot's tray and the worldwide cards drop",
+      "ambient": "the cards flutter, the flags snap",
+      "hero": {
+        "name": "Robot + P and S flags + squiggle + tray + Sheet + worldwide cards",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% Robot, 30% squiggle, 30% tray"
+      },
+      "id": 4,
+      "start_s": 34.02,
+      "t": "34.020-44.240"
+    },
+    {
+      "title": "Photo finish",
+      "vo_line": 4,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "trick-lanes",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "mask-wipe",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the finish line at x540 y1000",
+      "means": "Four training tricks sprint and tie in a photo finish",
+      "ambient": "the lanes streak, confetti falls",
+      "hero": {
+        "name": "four racers + lanes + finish line + medals + meter",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% racers, 30% lanes, 30% finish"
+      },
+      "id": 5,
+      "start_s": 44.24,
+      "t": "44.240-52.540"
+    },
+    {
+      "title": "Alaska data",
+      "vo_line": 5,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "recording-reel",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the reel at x540 y1000",
+      "means": "A reel pours local waveforms into the Robot and gold dots pop out",
+      "ambient": "the reel spins, waveforms ripple",
+      "hero": {
+        "name": "recording reel + waveforms + Robot slot + Sheet tab + Halibut + gold dots",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "35% reel, 30% waveforms, 35% dots"
+      },
+      "id": 6,
+      "start_s": 52.54,
+      "t": "52.540-61.680"
+    },
+    {
+      "title": "Three times",
+      "vo_line": 6,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "sheet-stack",
+      "pov": "instrument-screen",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the Sheet stack at x540 y1000",
+      "means": "The catalog Sheet stack fills with gold to 3X and the size key slides down",
+      "ambient": "the stack sways, dots shimmer",
+      "hero": {
+        "name": "Sheet stack + gold dots + 3X numeral + tag + size key",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% stack, 30% key, 30% tag"
+      },
+      "id": 7,
+      "start_s": 61.68,
+      "t": "61.680-74.600"
+    },
+    {
+      "title": "Outer rise",
+      "vo_line": 7,
+      "framing": "alt-vantage",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "plate-cross-section",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the outer rise at x540 y1000",
+      "means": "Gold dots flare offshore, the plate bends at the outer rise and a gold ring bursts across it",
+      "ambient": "the plate flexes, dots shimmer",
+      "hero": {
+        "name": "plate cross-section + outer rise bulge + gold dots + gold ring",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% plate, 35% dots, 25% Bunk"
+      },
+      "id": 8,
+      "start_s": 74.6,
+      "t": "74.600-81.720"
+    },
+    {
+      "title": "Same map",
+      "vo_line": 8,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "overhead",
+      "stage": "overlay-map",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the overlay at x540 y1000",
+      "means": "A dotted box asks real or noise and the ghost map snaps over the new dots",
+      "ambient": "the ghost shimmers, the dots pulse",
+      "hero": {
+        "name": "overlay map + ghost map + gold and chalk dots + dotted box + Halibut",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "50% map, 30% dots, 20% box"
+      },
+      "id": 9,
+      "start_s": 81.72,
+      "t": "81.720-89.480"
+    },
+    {
+      "title": "The limit",
+      "vo_line": 9,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "seismogram-window",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the seismogram at x540 y1000",
+      "means": "A 2018 to 2019 window, the same wiggle heard by more ears, a coral sign and a crane hook lifting the first dome",
+      "ambient": "the seismogram scrolls, the sign settles",
+      "hero": {
+        "name": "window bar + seismogram + coral sign + crane hook + first dome",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "35% seismogram, 30% sign, 35% crane"
+      },
+      "id": 10,
+      "start_s": 89.48,
+      "t": "89.480-100.540"
+    },
+    {
+      "title": "Credit swings",
+      "vo_line": 10,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "stage-banner",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Bunk at x540 y1000",
+      "means": "The lifted dome carries back onto the stage, the banner swings to LOCAL DATA and the Robot bows to the analyst and Bunk",
+      "ambient": "the banner swings, the spotlight sweeps",
+      "hero": {
+        "name": "banner + spotlight + Bunk + analyst + Sheet + Robot",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "30% banner, 30% Bunk, 20% analyst, 20% Robot"
+      },
+      "id": 11,
+      "start_s": 100.54,
+      "t": "100.540-110.160"
+    },
+    {
+      "title": "Who keeps listening",
+      "vo_line": 11,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "dark-seabed-grid",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the last Bunk at x540 y1000",
+      "means": "An aerial view of the 75 domes going dark under the crane, one left lit with a question",
+      "ambient": "bubbles rise, the question pulses, the ring pulse slows",
+      "hero": {
+        "name": "aerial dome grid + crane + one lit dome + question mark",
+        "parts": 36,
+        "zones": 3,
+        "detail_note": "40% grid, 30% crane, 30% dome"
+      },
+      "id": 12,
+      "start_s": 110.16,
+      "t": "110.160-117.660"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "An A I just found roughly three times as many earthquakes off the Alaska Peninsula, and it's easy to give the A I all the credit. The paper says otherwise.",
+      "phrase": "An A I just",
+      "shows": "the Robot, a squared-off server machine with eyes, takes a bow at the centre of a front-on stage as confetti falls and a banner reads AI FINDS ~3X THE QUAKES beside a catalog Sheet of six chalk dots pinned to the curtain, a plate reads AI FINDS ~3X THE QUAKES",
+      "sfx": "stamp",
+      "means": "ai finds ~3x the quakes",
+      "rehook": "",
+      "draw": {
+        "subject": "the Robot",
+        "action": "takes a bow at the centre of a front-on stage as confetti falls and a banner reads AI FINDS ~3X THE QUAKES beside a catalog Sheet of six chalk dots pinned to the curtain",
+        "emotion": "smug",
+        "annotation": "AI FINDS ~3X THE QUAKES"
+      },
+      "choreo": {
+        "primary": "the Robot, a squared-off server machine with eyes, takes a bow at the centre of a front-on stage as confetti falls and a banner reads AI FINDS ~3X THE QUAKES beside a catalog Sheet of six chalk dots pinned to the curtain, a plate reads AI FINDS ~3X THE QUAKES",
+        "reaction": "the confetti falls",
+        "ambient": "confetti falls, the spotlight sweeps, the curtain sways"
+      },
+      "t": "0.000-3.516",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.516,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.3,
+        "offset": 3.516
+      },
+      "offset": 3.516,
+      "vo": "An A I just found roughly three times as many earthquakes off the Alaska Peninsula, and it's easy to give the A I all the credit. The paper says otherwise.",
+      "phrase": "An A I just",
+      "shows": "the catalog Sheet flutters on the curtain and a scope tag pins to it, a plate reads 2018 TO 2019",
+      "sfx": "page",
+      "means": "2018 to 2019",
+      "rehook": "",
+      "draw": {
+        "subject": "the Sheet",
+        "action": "flutters on the curtain and a scope tag pins to it",
+        "emotion": "curious",
+        "annotation": "2018 TO 2019"
+      },
+      "choreo": {
+        "primary": "the catalog Sheet flutters on the curtain and a scope tag pins to it, a plate reads 2018 TO 2019",
+        "reaction": "the Sheet flutters",
+        "ambient": "confetti falls, the spotlight sweeps, the curtain sways"
+      },
+      "t": "3.516-8.210",
+      "key": 31
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 8.21,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 8.21
+      },
+      "offset": 8.21,
+      "vo": "An A I just found roughly three times as many earthquakes off the Alaska Peninsula, and it's easy to give the A I all the credit. The paper says otherwise.",
+      "phrase": "credit. The paper says",
+      "shows": "the Robot hugs the banner to its chest as a gold crown pops onto its head, a plate reads ALL THE CREDIT?",
+      "sfx": "snap",
+      "means": "all the credit?",
+      "rehook": "",
+      "draw": {
+        "subject": "the Robot",
+        "action": "hugs the banner to its chest as a gold crown pops onto its head",
+        "emotion": "smug",
+        "annotation": "ALL THE CREDIT?"
+      },
+      "choreo": {
+        "primary": "the Robot hugs the banner to its chest as a gold crown pops onto its head, a plate reads ALL THE CREDIT?",
+        "reaction": "the crown wobbles",
+        "ambient": "confetti falls, the spotlight sweeps, the curtain sways"
+      },
+      "t": "8.210-9.610",
+      "key": 2
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 9.61,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.82,
+        "offset": 9.61
+      },
+      "offset": 9.61,
+      "vo": "An A I just found roughly three times as many earthquakes off the Alaska Peninsula, and it's easy to give the A I all the credit. The paper says otherwise.",
+      "phrase": "An A I just",
+      "shows": "a trapdoor swings open under the Robot's spotlight spill and a cut to a seabed plate shows Bunk, a mint-domed seafloor ear, blinking in the dark, a plate reads THE PAPER SAYS OTHERWISE",
+      "sfx": "thud",
+      "means": "the paper says otherwise",
+      "rehook": "",
+      "draw": {
+        "subject": "a trapdoor",
+        "action": "swings open under the Robot's spotlight spill and a cut to a seabed plate shows Bunk blinking in the dark",
+        "emotion": "wry",
+        "annotation": "THE PAPER SAYS OTHERWISE"
+      },
+      "choreo": {
+        "primary": "a trapdoor swings open under the Robot's spotlight spill and a cut to a seabed plate shows Bunk, a mint-domed seafloor ear, blinking in the dark, a plate reads THE PAPER SAYS OTHERWISE",
+        "reaction": "Bunk blinks",
+        "ambient": "confetti falls, the spotlight sweeps, the curtain sways"
+      },
+      "kick": true,
+      "t": "9.610-11.720",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 11.72,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Meet Bunk, a seafloor seismometer. Starting in twenty eighteen, seventy-five like him sat in the mud off the Alaska Peninsula, with thirty more on land.",
+      "phrase": "Meet Bunk, a seafloor",
+      "shows": "Bunk rests in the mud with a mint ring pulsing off his dome, a plate reads BUNK \u00b7 SEAFLOOR SEISMOMETER",
+      "sfx": "blip",
+      "means": "bunk \u00b7 seafloor seismometer",
+      "rehook": "",
+      "draw": {
+        "subject": "Bunk",
+        "action": "rests in the mud with a mint ring pulsing off his dome",
+        "emotion": "curious",
+        "annotation": "BUNK \u00b7 SEAFLOOR SEISMOMETER"
+      },
+      "choreo": {
+        "primary": "Bunk rests in the mud with a mint ring pulsing off his dome, a plate reads BUNK \u00b7 SEAFLOOR SEISMOMETER",
+        "reaction": "the ring pulses",
+        "ambient": "the domes pulse, bubbles rise"
+      },
+      "t": "11.720-14.379",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 14.379,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.24,
+        "offset": 2.659
+      },
+      "offset": 2.659,
+      "vo": "Meet Bunk, a seafloor seismometer. Starting in twenty eighteen, seventy-five like him sat in the mud off the Alaska Peninsula, with thirty more on land.",
+      "phrase": "Meet Bunk, a seafloor",
+      "shows": "a calendar tick flips onto Bunk's ring and a second dome wakes, a plate reads STARTING IN 2018",
+      "sfx": "tick",
+      "means": "starting in 2018",
+      "rehook": "",
+      "draw": {
+        "subject": "a calendar tick",
+        "action": "flips onto Bunk's ring reading STARTING IN 2018 as a second dome wakes",
+        "emotion": "curious",
+        "annotation": "STARTING IN 2018"
+      },
+      "choreo": {
+        "primary": "a calendar tick flips onto Bunk's ring and a second dome wakes, a plate reads STARTING IN 2018",
+        "reaction": "the ring widens",
+        "ambient": "the domes pulse, bubbles rise"
+      },
+      "t": "14.379-16.590",
+      "key": 33
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 16.59,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.87
+      },
+      "offset": 4.87,
+      "vo": "Meet Bunk, a seafloor seismometer. Starting in twenty eighteen, seventy-five like him sat in the mud off the Alaska Peninsula, with thirty more on land.",
+      "phrase": "seventy-five like him sat",
+      "shows": "seventy-five Bunks light up one after another in a wave along the seabed with one late blinker at the end, a plate reads 75 ON THE SEAFLOOR",
+      "sfx": "pop",
+      "means": "75 on the seafloor",
+      "rehook": "",
+      "draw": {
+        "subject": "75 Bunks",
+        "action": "light up one after another in a wave along the seabed with one late blinker at the end",
+        "emotion": "curious",
+        "annotation": "75 ON THE SEAFLOOR"
+      },
+      "choreo": {
+        "primary": "seventy-five Bunks light up one after another in a wave along the seabed with one late blinker at the end, a plate reads 75 ON THE SEAFLOOR",
+        "reaction": "the wave blinks",
+        "ambient": "the domes pulse, bubbles rise"
+      },
+      "t": "16.590-20.830",
+      "key": 5
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 20.83,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 9.11
+      },
+      "offset": 9.11,
+      "vo": "Meet Bunk, a seafloor seismometer. Starting in twenty eighteen, seventy-five like him sat in the mud off the Alaska Peninsula, with thirty more on land.",
+      "phrase": "thirty more on land.",
+      "shows": "thirty shore sensors pop up along the Alaska Peninsula coast on a strip map, a plate reads 30 ON LAND",
+      "sfx": "tick",
+      "means": "30 on land",
+      "rehook": "",
+      "draw": {
+        "subject": "30 shore sensors",
+        "action": "pop up along the Alaska Peninsula coast on a strip map",
+        "emotion": "curious",
+        "annotation": "30 ON LAND"
+      },
+      "choreo": {
+        "primary": "thirty shore sensors pop up along the Alaska Peninsula coast on a strip map, a plate reads 30 ON LAND",
+        "reaction": "the pins pop",
+        "ambient": "the domes pulse, bubbles rise"
+      },
+      "t": "20.830-22.800",
+      "key": 6
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 22.8,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Analysts had checked by hand the quakes those sensors recorded. Then Barcheck of Cornell and Ruppert of the U S G S, the paper's authors, built on that catalog.",
+      "phrase": "Analysts had checked by",
+      "shows": "an analyst pencils a vertical tick on the first arrival of a squiggle and stamps CHECKED BY HAND on the catalog Sheet, a plate reads CHECKED BY HAND",
+      "sfx": "tick",
+      "means": "checked by hand",
+      "rehook": "",
+      "draw": {
+        "subject": "an analyst",
+        "action": "pencils a vertical tick on the first arrival of a squiggle and stamps CHECKED BY HAND on the Sheet",
+        "emotion": "focused",
+        "annotation": "CHECKED BY HAND"
+      },
+      "choreo": {
+        "primary": "an analyst pencils a vertical tick on the first arrival of a squiggle and stamps CHECKED BY HAND on the catalog Sheet, a plate reads CHECKED BY HAND",
+        "reaction": "the stamp rings",
+        "ambient": "the pencil scratches, paper rustles, the lamp hums"
+      },
+      "t": "22.800-27.512",
+      "key": 7
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 27.512,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.42,
+        "offset": 4.712
+      },
+      "offset": 4.712,
+      "vo": "Analysts had checked by hand the quakes those sensors recorded. Then Barcheck of Cornell and Ruppert of the U S G S, the paper's authors, built on that catalog.",
+      "phrase": "Analysts had checked by",
+      "shows": "two hands slide the stamped Sheet off the desk with a Cornell sleeve plate, a plate reads BARCHECK \u00b7 CORNELL",
+      "sfx": "stamp",
+      "means": "barcheck \u00b7 cornell",
+      "rehook": "",
+      "draw": {
+        "subject": "two hands",
+        "action": "slide the stamped Sheet off the desk with a Cornell sleeve plate reading BARCHECK \u00b7 CORNELL",
+        "emotion": "proud",
+        "annotation": "BARCHECK \u00b7 CORNELL"
+      },
+      "choreo": {
+        "primary": "two hands slide the stamped Sheet off the desk with a Cornell sleeve plate, a plate reads BARCHECK \u00b7 CORNELL",
+        "reaction": "the Sheet slides",
+        "ambient": "the pencil scratches, paper rustles, the lamp hums"
+      },
+      "t": "27.512-31.103",
+      "key": 8
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 31.103,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.74,
+        "offset": 8.303
+      },
+      "offset": 8.303,
+      "vo": "Analysts had checked by hand the quakes those sensors recorded. Then Barcheck of Cornell and Ruppert of the U S G S, the paper's authors, built on that catalog.",
+      "phrase": "Analysts had checked by",
+      "shows": "the second hand lifts a USGS sleeve plate into frame as the analyst lets go of the Sheet, a plate reads RUPPERT \u00b7 USGS",
+      "sfx": "stamp",
+      "means": "ruppert \u00b7 usgs",
+      "rehook": "",
+      "draw": {
+        "subject": "the second hand",
+        "action": "lifts a USGS sleeve plate into frame as the analyst lets go",
+        "emotion": "proud",
+        "annotation": "RUPPERT \u00b7 USGS"
+      },
+      "choreo": {
+        "primary": "the second hand lifts a USGS sleeve plate into frame as the analyst lets go of the Sheet, a plate reads RUPPERT \u00b7 USGS",
+        "reaction": "the analyst lets go",
+        "ambient": "the pencil scratches, paper rustles, the lamp hums"
+      },
+      "t": "31.103-34.020",
+      "key": 9
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 34.02,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "They took a global deep-learning model, E Q Transformer, that finds quakes and marks when their waves arrive, and fine-tuned it on those hand-checked picks.",
+      "phrase": "They took a global",
+      "shows": "the Robot flags a squiggle with P and S marks that land at the arrivals while its EQTRANSFORMER plate lights, a plate reads EQTRANSFORMER \u00b7 GLOBAL MODEL",
+      "sfx": "clank",
+      "means": "eqtransformer \u00b7 global model",
+      "rehook": "rehook: the Robot's marks land on the squiggle and the Sheet slides into its tray",
+      "draw": {
+        "subject": "the Robot",
+        "action": "flags a squiggle with P and S marks that land at the arrivals while its EQTRANSFORMER plate lights",
+        "emotion": "focused",
+        "annotation": "EQTRANSFORMER \u00b7 GLOBAL MODEL"
+      },
+      "choreo": {
+        "primary": "the Robot flags a squiggle with P and S marks that land at the arrivals while its EQTRANSFORMER plate lights, a plate reads EQTRANSFORMER \u00b7 GLOBAL MODEL",
+        "reaction": "the flags snap",
+        "ambient": "the cards flutter, the flags snap"
+      },
+      "t": "34.020-36.268",
+      "key": 10
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 36.268,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.22,
+        "offset": 2.248
+      },
+      "offset": 2.248,
+      "vo": "They took a global deep-learning model, E Q Transformer, that finds quakes and marks when their waves arrive, and fine-tuned it on those hand-checked picks.",
+      "phrase": "They took a global",
+      "shows": "wave flags pop onto the squiggle where P and S marks land at the arrival points, a plate reads FINDS QUAKES \u00b7 MARKS ARRIVALS",
+      "sfx": "ping",
+      "means": "finds quakes \u00b7 marks arrivals",
+      "rehook": "",
+      "draw": {
+        "subject": "wave flags",
+        "action": "pop onto the squiggle where P and S marks land at the arrival points",
+        "emotion": "focused",
+        "annotation": "FINDS QUAKES \u00b7 MARKS ARRIVALS"
+      },
+      "choreo": {
+        "primary": "wave flags pop onto the squiggle where P and S marks land at the arrival points, a plate reads FINDS QUAKES \u00b7 MARKS ARRIVALS",
+        "reaction": "the flags snap",
+        "ambient": "the cards flutter, the flags snap"
+      },
+      "t": "36.268-40.970",
+      "key": 11
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 40.97,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.68,
+        "offset": 6.95
+      },
+      "offset": 6.95,
+      "vo": "They took a global deep-learning model, E Q Transformer, that finds quakes and marks when their waves arrive, and fine-tuned it on those hand-checked picks.",
+      "phrase": "They took a global",
+      "shows": "the stamped Sheet slides into the Robot's tray and the Robot's worldwide cards drop away, a plate reads FINE-TUNED ON HAND-CHECKED PICKS",
+      "sfx": "clank",
+      "means": "fine-tuned on hand-checked picks",
+      "rehook": "",
+      "draw": {
+        "subject": "the Sheet",
+        "action": "slides into the Robot's tray and the Robot's worldwide cards drop away",
+        "emotion": "determined",
+        "annotation": "FINE-TUNED ON HAND-CHECKED PICKS"
+      },
+      "choreo": {
+        "primary": "the stamped Sheet slides into the Robot's tray and the Robot's worldwide cards drop away, a plate reads FINE-TUNED ON HAND-CHECKED PICKS",
+        "reaction": "the tray clanks",
+        "ambient": "the cards flutter, the flags snap"
+      },
+      "t": "40.970-44.240",
+      "key": 35
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 44.24,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then they tried several training tricks. A different starting model. Filters. Different splits. None was substantially better.",
+      "phrase": "Then they tried several",
+      "shows": "four tricks line up as caped racers at a starting rail then sprint down four lanes, a plate reads SEVERAL TRAINING TRICKS",
+      "sfx": "whoosh",
+      "means": "several training tricks",
+      "rehook": "",
+      "draw": {
+        "subject": "four tricks",
+        "action": "line up as caped racers at a starting rail then sprint down four lanes",
+        "emotion": "curious",
+        "annotation": "SEVERAL TRAINING TRICKS"
+      },
+      "choreo": {
+        "primary": "four tricks line up as caped racers at a starting rail then sprint down four lanes, a plate reads SEVERAL TRAINING TRICKS",
+        "reaction": "the racers sprint",
+        "ambient": "the lanes streak, confetti falls"
+      },
+      "t": "44.240-48.805",
+      "key": 12
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 48.805,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.55,
+        "offset": 4.565
+      },
+      "offset": 4.565,
+      "vo": "Then they tried several training tricks. A different starting model. Filters. Different splits. None was substantially better.",
+      "phrase": "Then they tried several",
+      "shows": "a starting-model racer, a filter racer and a splits racer pull ahead and fall back in the middle lane, a plate reads STARTING MODEL \u00b7 FILTERS \u00b7 SPLITS",
+      "sfx": "whoosh",
+      "means": "starting model \u00b7 filters \u00b7 splits",
+      "rehook": "",
+      "draw": {
+        "subject": "a starting-model racer",
+        "action": "a filter racer and a splits racer pull ahead and fall back in the middle lane",
+        "emotion": "wry",
+        "annotation": "STARTING MODEL \u00b7 FILTERS \u00b7 SPLITS"
+      },
+      "choreo": {
+        "primary": "a starting-model racer, a filter racer and a splits racer pull ahead and fall back in the middle lane, a plate reads STARTING MODEL \u00b7 FILTERS \u00b7 SPLITS",
+        "reaction": "the lanes streak",
+        "ambient": "the lanes streak, confetti falls"
+      },
+      "t": "48.805-51.610",
+      "key": 37
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 51.61,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 7.37
+      },
+      "offset": 7.37,
+      "vo": "Then they tried several training tricks. A different starting model. Filters. Different splits. None was substantially better.",
+      "phrase": "substantially better.",
+      "shows": "the finish line freezes a photo finish with all four racers tied and blank medals while the meter stays flat, a plate reads NONE SUBSTANTIALLY BETTER",
+      "sfx": "thock",
+      "means": "none substantially better",
+      "rehook": "",
+      "draw": {
+        "subject": "the finish line",
+        "action": "freezes a photo finish with all four tied and blank medals while the meter stays flat",
+        "emotion": "wry",
+        "annotation": "NONE SUBSTANTIALLY BETTER"
+      },
+      "choreo": {
+        "primary": "the finish line freezes a photo finish with all four racers tied and blank medals while the meter stays flat, a plate reads NONE SUBSTANTIALLY BETTER",
+        "reaction": "the meter holds flat",
+        "ambient": "the lanes streak, confetti falls"
+      },
+      "t": "51.610-52.540",
+      "key": 13
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 52.54,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "What helped was the Alaska data itself. Then they ran it across the continuous recordings, hunting small quakes.",
+      "phrase": "What helped was the",
+      "shows": "a recording reel pours a firehose of Alaska waveforms into the Robot's slot while a tab clips onto the Sheet, a plate reads THE ALASKA DATA ITSELF",
+      "sfx": "rush",
+      "means": "the alaska data itself",
+      "rehook": "",
+      "draw": {
+        "subject": "a recording reel",
+        "action": "pours a firehose of Alaska waveforms into the Robot's slot while a tab clips onto the Sheet",
+        "emotion": "determined",
+        "annotation": "THE ALASKA DATA ITSELF"
+      },
+      "choreo": {
+        "primary": "a recording reel pours a firehose of Alaska waveforms into the Robot's slot while a tab clips onto the Sheet, a plate reads THE ALASKA DATA ITSELF",
+        "reaction": "the reel spins",
+        "ambient": "the reel spins, waveforms ripple"
+      },
+      "t": "52.540-57.110",
+      "key": 14
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 57.11,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.5,
+        "offset": 4.57
+      },
+      "offset": 4.57,
+      "vo": "What helped was the Alaska data itself. Then they ran it across the continuous recordings, hunting small quakes.",
+      "phrase": "What helped was the",
+      "shows": "the Halibut nudges a dome and a stray squiggle appears beside a dotted box, a plate reads REAL OR NOISE?",
+      "sfx": "pop",
+      "means": "real or noise?",
+      "rehook": "",
+      "draw": {
+        "subject": "the Halibut",
+        "action": "nudges a dome and a stray squiggle appears beside a dotted box asking REAL OR NOISE?",
+        "emotion": "puzzled",
+        "annotation": "REAL OR NOISE?"
+      },
+      "choreo": {
+        "primary": "the Halibut nudges a dome and a stray squiggle appears beside a dotted box, a plate reads REAL OR NOISE?",
+        "reaction": "the box pulses",
+        "ambient": "the reel spins, waveforms ripple"
+      },
+      "t": "57.110-59.852",
+      "key": 15
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 59.852,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.8,
+        "offset": 7.312
+      },
+      "offset": 7.312,
+      "vo": "What helped was the Alaska data itself. Then they ran it across the continuous recordings, hunting small quakes.",
+      "phrase": "What helped was the",
+      "shows": "gold quake dots pop out of the continuous waveform strip one by one, a plate reads HUNTING SMALL QUAKES",
+      "sfx": "pop",
+      "means": "hunting small quakes",
+      "rehook": "",
+      "draw": {
+        "subject": "gold quake dots",
+        "action": "pop out of the continuous waveform strip one by one",
+        "emotion": "proud",
+        "annotation": "HUNTING SMALL QUAKES"
+      },
+      "choreo": {
+        "primary": "gold quake dots pop out of the continuous waveform strip one by one, a plate reads HUNTING SMALL QUAKES",
+        "reaction": "the dots pop",
+        "ambient": "the reel spins, waveforms ripple"
+      },
+      "t": "59.852-61.680",
+      "key": 50
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 61.68,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The result is roughly three times as many earthquakes as the analyst-checked catalog, according to the authors, and the smallest quake it catches reliably dropped by one tenth to four tenths of a magnitude.",
+      "phrase": "The result is roughly",
+      "shows": "the catalog Sheet stack grows from six chalk dots to a tall stack with gold dots filling in over the chalk ones until a numeral reads ~3X, a plate reads ~3X MORE EARTHQUAKES",
+      "sfx": "knock",
+      "means": "~3x more earthquakes",
+      "rehook": "rehook: gold dots flood the Sheet stack up to 3X",
+      "draw": {
+        "subject": "the Sheet stack",
+        "action": "grows from six chalk dots to a tall stack with gold dots filling in over the chalk ones until a numeral reads 3X",
+        "emotion": "proud",
+        "annotation": "~3X MORE EARTHQUAKES"
+      },
+      "choreo": {
+        "primary": "the catalog Sheet stack grows from six chalk dots to a tall stack with gold dots filling in over the chalk ones until a numeral reads ~3X, a plate reads ~3X MORE EARTHQUAKES",
+        "reaction": "the stack sways",
+        "ambient": "the stack sways, dots shimmer"
+      },
+      "t": "61.680-64.522",
+      "key": 16
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 64.522,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.22,
+        "offset": 2.842
+      },
+      "offset": 2.842,
+      "vo": "The result is roughly three times as many earthquakes as the analyst-checked catalog, according to the authors, and the smallest quake it catches reliably dropped by one tenth to four tenths of a magnitude.",
+      "phrase": "The result is roughly",
+      "shows": "gold dots tick onto the Sheet beside the chalk ones one by one, a plate reads NEW DOTS",
+      "sfx": "tick",
+      "means": "new dots",
+      "rehook": "",
+      "draw": {
+        "subject": "gold dots",
+        "action": "tick onto the Sheet beside the chalk ones one by one",
+        "emotion": "proud",
+        "annotation": "NEW DOTS"
+      },
+      "choreo": {
+        "primary": "gold dots tick onto the Sheet beside the chalk ones one by one, a plate reads NEW DOTS",
+        "reaction": "the dots tick",
+        "ambient": "the stack sways, dots shimmer"
+      },
+      "t": "64.522-67.210",
+      "key": 39
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 67.21,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 5.53
+      },
+      "offset": 5.53,
+      "vo": "The result is roughly three times as many earthquakes as the analyst-checked catalog, according to the authors, and the smallest quake it catches reliably dropped by one tenth to four tenths of a magnitude.",
+      "phrase": "authors, and the smallest",
+      "shows": "a tag swings onto the stack, a plate reads PER THE AUTHORS",
+      "sfx": "stamp",
+      "means": "per the authors",
+      "rehook": "",
+      "draw": {
+        "subject": "a tag",
+        "action": "swings onto the stack reading PER THE AUTHORS",
+        "emotion": "reading",
+        "annotation": "PER THE AUTHORS"
+      },
+      "choreo": {
+        "primary": "a tag swings onto the stack, a plate reads PER THE AUTHORS",
+        "reaction": "the tag swings",
+        "ambient": "the stack sways, dots shimmer"
+      },
+      "t": "67.210-68.450",
+      "key": 17
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 68.45,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 6.77
+      },
+      "offset": 6.77,
+      "vo": "The result is roughly three times as many earthquakes as the analyst-checked catalog, according to the authors, and the smallest quake it catches reliably dropped by one tenth to four tenths of a magnitude.",
+      "phrase": "smallest quake it catches",
+      "shows": "a size key on the Sheet's edge slides down one notch and the newest gold dots are visibly smaller than the chalk ones, a plate reads SMALLEST QUAKE CAUGHT \u00b7 DOWN 0.1 TO 0.4",
+      "sfx": "slide",
+      "means": "smallest quake caught \u00b7 down 0.1 to 0.4",
+      "rehook": "",
+      "draw": {
+        "subject": "a size key",
+        "action": "on the Sheet's edge slides down one notch and the newest gold dots are visibly smaller than the chalk ones",
+        "emotion": "curious",
+        "annotation": "SMALLEST QUAKE CAUGHT \u00b7 DOWN 0.1 TO 0.4"
+      },
+      "choreo": {
+        "primary": "a size key on the Sheet's edge slides down one notch and the newest gold dots are visibly smaller than the chalk ones, a plate reads SMALLEST QUAKE CAUGHT \u00b7 DOWN 0.1 TO 0.4",
+        "reaction": "the key slides",
+        "ambient": "the stack sways, dots shimmer"
+      },
+      "t": "68.450-72.016",
+      "key": 18
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 72.016,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.8,
+        "offset": 10.336
+      },
+      "offset": 10.336,
+      "vo": "The result is roughly three times as many earthquakes as the analyst-checked catalog, according to the authors, and the smallest quake it catches reliably dropped by one tenth to four tenths of a magnitude.",
+      "phrase": "The result is roughly",
+      "shows": "tiny gold dots fill the spaces between the chalk dots, a plate reads SMALLER QUAKES NOW CAUGHT",
+      "sfx": "tick",
+      "means": "smaller quakes now caught",
+      "rehook": "",
+      "draw": {
+        "subject": "tiny gold dots",
+        "action": "fill the gaps between the chalk dots",
+        "emotion": "curious",
+        "annotation": "SMALLER QUAKES NOW CAUGHT"
+      },
+      "choreo": {
+        "primary": "tiny gold dots fill the spaces between the chalk dots, a plate reads SMALLER QUAKES NOW CAUGHT",
+        "reaction": "the dots fill",
+        "ambient": "the stack sways, dots shimmer"
+      },
+      "t": "72.016-74.600",
+      "key": 41
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 74.6,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The biggest gains came far offshore and in the outer rise, the bulge where the ocean plate bends before it dives.",
+      "phrase": "The biggest gains came",
+      "shows": "gold dots flare brightest along the far offshore side and thin toward the land stations, a plate reads BIGGEST GAINS \u00b7 FAR OFFSHORE",
+      "sfx": "ping",
+      "means": "biggest gains \u00b7 far offshore",
+      "rehook": "",
+      "draw": {
+        "subject": "gold dots",
+        "action": "flare brightest along the far offshore side and thin toward the land stations",
+        "emotion": "proud",
+        "annotation": "BIGGEST GAINS \u00b7 FAR OFFSHORE"
+      },
+      "choreo": {
+        "primary": "gold dots flare brightest along the far offshore side and thin toward the land stations, a plate reads BIGGEST GAINS \u00b7 FAR OFFSHORE",
+        "reaction": "the dots flare",
+        "ambient": "the plate flexes, dots shimmer"
+      },
+      "t": "74.600-77.448",
+      "key": 20
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 77.448,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.4,
+        "offset": 2.848
+      },
+      "offset": 2.848,
+      "vo": "The biggest gains came far offshore and in the outer rise, the bulge where the ocean plate bends before it dives.",
+      "phrase": "The biggest gains came",
+      "shows": "the ocean plate bends up at a bulge before diving under the Peninsula in a cross-section, a plate reads OUTER RISE \u00b7 PLATE BENDS BEFORE IT DIVES",
+      "sfx": "rumble",
+      "means": "outer rise \u00b7 plate bends before it dives",
+      "rehook": "",
+      "draw": {
+        "subject": "the ocean plate",
+        "action": "bends up at a bulge before diving under the Peninsula in a cross-section",
+        "emotion": "curious",
+        "annotation": "OUTER RISE \u00b7 PLATE BENDS BEFORE IT DIVES"
+      },
+      "choreo": {
+        "primary": "the ocean plate bends up at a bulge before diving under the Peninsula in a cross-section, a plate reads OUTER RISE \u00b7 PLATE BENDS BEFORE IT DIVES",
+        "reaction": "the plate flexes",
+        "ambient": "the plate flexes, dots shimmer"
+      },
+      "t": "77.448-80.723",
+      "key": 19
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 80.723,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.86,
+        "offset": 6.123
+      },
+      "offset": 6.123,
+      "vo": "The biggest gains came far offshore and in the outer rise, the bulge where the ocean plate bends before it dives.",
+      "phrase": "The biggest gains came",
+      "shows": "gold dots burst in a ring across the outer rise bulge while the land side stays sparse, a plate reads BIGGEST GAINS \u00b7 OUTER RISE",
+      "sfx": "thud",
+      "means": "biggest gains \u00b7 outer rise",
+      "rehook": "",
+      "draw": {
+        "subject": "gold dots",
+        "action": "burst in a ring across the outer rise bulge while the land side stays sparse",
+        "emotion": "proud",
+        "annotation": "BIGGEST GAINS \u00b7 OUTER RISE"
+      },
+      "choreo": {
+        "primary": "gold dots burst in a ring across the outer rise bulge while the land side stays sparse, a plate reads BIGGEST GAINS \u00b7 OUTER RISE",
+        "reaction": "the ring spreads",
+        "ambient": "the plate flexes, dots shimmer"
+      },
+      "t": "80.723-81.720",
+      "key": 42
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 81.72,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So are the new ones real? The authors say the map of where quakes cluster mirrors earlier observations.",
+      "phrase": "So are the new",
+      "shows": "a dotted box wobbles over a stray squiggle as the Halibut peeks in, a plate reads REAL OR NOISE?",
+      "sfx": "pop",
+      "means": "real or noise?",
+      "rehook": "",
+      "draw": {
+        "subject": "a dotted box",
+        "action": "wobbles over a stray squiggle reading REAL OR NOISE? as the Halibut peeks in",
+        "emotion": "puzzled",
+        "annotation": "REAL OR NOISE?"
+      },
+      "choreo": {
+        "primary": "a dotted box wobbles over a stray squiggle as the Halibut peeks in, a plate reads REAL OR NOISE?",
+        "reaction": "the box wobbles",
+        "ambient": "the ghost shimmers, the dots pulse"
+      },
+      "t": "81.720-84.048",
+      "key": 21
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 84.048,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.3,
+        "offset": 2.328
+      },
+      "offset": 2.328,
+      "vo": "So are the new ones real? The authors say the map of where quakes cluster mirrors earlier observations.",
+      "phrase": "So are the new",
+      "shows": "a ghost map of the old catalog snaps over the new gold dots and they land where the old dots cluster, a plate reads LANDS WHERE QUAKES ALREADY CLUSTER",
+      "sfx": "slide",
+      "means": "lands where quakes already cluster",
+      "rehook": "",
+      "draw": {
+        "subject": "a ghost map",
+        "action": "of the old catalog snaps over the new gold dots and they land where the old dots cluster",
+        "emotion": "reading",
+        "annotation": "LANDS WHERE QUAKES ALREADY CLUSTER"
+      },
+      "choreo": {
+        "primary": "a ghost map of the old catalog snaps over the new gold dots and they land where the old dots cluster, a plate reads LANDS WHERE QUAKES ALREADY CLUSTER",
+        "reaction": "the ghost snaps",
+        "ambient": "the ghost shimmers, the dots pulse"
+      },
+      "t": "84.048-87.462",
+      "key": 43
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 87.462,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.74,
+        "offset": 5.742
+      },
+      "offset": 5.742,
+      "vo": "So are the new ones real? The authors say the map of where quakes cluster mirrors earlier observations.",
+      "phrase": "So are the new",
+      "shows": "the dotted box fills in and stays dotted at the edge with a small coral tag, a plate reads CONSISTENT WITH EARLIER MAPS",
+      "sfx": "chime",
+      "means": "consistent with earlier maps",
+      "rehook": "",
+      "draw": {
+        "subject": "the dotted box",
+        "action": "fills in and stays dotted at the edge reading CONSISTENT with a small coral tag FALSE ALARM RATE NOT IN ABSTRACT",
+        "emotion": "reading",
+        "annotation": "CONSISTENT WITH EARLIER MAPS"
+      },
+      "choreo": {
+        "primary": "the dotted box fills in and stays dotted at the edge with a small coral tag, a plate reads CONSISTENT WITH EARLIER MAPS",
+        "reaction": "the box settles",
+        "ambient": "the ghost shimmers, the dots pulse"
+      },
+      "t": "87.462-89.480",
+      "key": 22
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 89.48,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "And the limit. This was one temporary experiment. Roughly three times says nothing about whether the ground shook more. It only says how much more got heard.",
+      "phrase": "And the limit. This",
+      "shows": "a window bar labeled 2018 TO 2019 slides across a seismogram and closes in coral, a plate reads ONE TEMPORARY EXPERIMENT",
+      "sfx": "creak",
+      "means": "one temporary experiment",
+      "rehook": "",
+      "draw": {
+        "subject": "a window bar",
+        "action": "labeled 2018 TO 2019 slides across a seismogram and closes in coral",
+        "emotion": "somber",
+        "annotation": "ONE TEMPORARY EXPERIMENT"
+      },
+      "choreo": {
+        "primary": "a window bar labeled 2018 TO 2019 slides across a seismogram and closes in coral, a plate reads ONE TEMPORARY EXPERIMENT",
+        "reaction": "the bar closes",
+        "ambient": "the seismogram scrolls, the sign settles"
+      },
+      "t": "89.480-92.577",
+      "key": 23
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 92.577,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.28,
+        "offset": 3.097
+      },
+      "offset": 3.097,
+      "vo": "And the limit. This was one temporary experiment. Roughly three times says nothing about whether the ground shook more. It only says how much more got heard.",
+      "phrase": "And the limit. This",
+      "shows": "one seismogram plays twice over the same recording, once with the analysts' three chalk picks and once with the picker's nine gold picks, a plate reads SAME RECORDINGS \u00b7 MORE PICKED",
+      "sfx": "tick",
+      "means": "same recordings \u00b7 more picked",
+      "rehook": "",
+      "draw": {
+        "subject": "one seismogram",
+        "action": "plays twice over the same recording, once with the analysts' three chalk picks and once with the picker's nine gold picks",
+        "emotion": "reading",
+        "annotation": "SAME RECORDINGS \u00b7 MORE PICKED"
+      },
+      "choreo": {
+        "primary": "one seismogram plays twice over the same recording, once with the analysts' three chalk picks and once with the picker's nine gold picks, a plate reads SAME RECORDINGS \u00b7 MORE PICKED",
+        "reaction": "the wiggle repeats",
+        "ambient": "the seismogram scrolls, the sign settles"
+      },
+      "t": "92.577-95.330",
+      "key": 44
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 95.33,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.85
+      },
+      "offset": 5.85,
+      "vo": "And the limit. This was one temporary experiment. Roughly three times says nothing about whether the ground shook more. It only says how much more got heard.",
+      "phrase": "nothing about whether the",
+      "shows": "a coral sign drops over the Sheet's gold stack, a plate reads MORE HEARD \u00b7 NOT PROOF OF MORE SHAKING",
+      "sfx": "clunk",
+      "means": "more heard \u00b7 not proof of more shaking",
+      "rehook": "rehook: a coral sign drops over the gold stack",
+      "draw": {
+        "subject": "a coral sign",
+        "action": "reading MORE HEARD NOT PROOF OF MORE SHAKING drops over the Sheet's gold stack",
+        "emotion": "somber",
+        "annotation": "MORE HEARD \u00b7 NOT PROOF OF MORE SHAKING"
+      },
+      "choreo": {
+        "primary": "a coral sign drops over the Sheet's gold stack, a plate reads MORE HEARD \u00b7 NOT PROOF OF MORE SHAKING",
+        "reaction": "the sign settles",
+        "ambient": "the seismogram scrolls, the sign settles"
+      },
+      "t": "95.330-99.330",
+      "key": 24
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 99.33,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 9.85
+      },
+      "offset": 9.85,
+      "vo": "And the limit. This was one temporary experiment. Roughly three times says nothing about whether the ground shook more. It only says how much more got heard.",
+      "phrase": "heard.",
+      "shows": "a crane hook descends and lifts the first Bunk out of the mud while the Sheet gets a coral margin note, a plate reads 2018 TO 2019 ONLY",
+      "sfx": "clank",
+      "means": "2018 to 2019 only",
+      "rehook": "",
+      "draw": {
+        "subject": "a crane hook",
+        "action": "descends and lifts the first Bunk out of the mud while the Sheet gets a margin note 2018 TO 2019 ONLY",
+        "emotion": "somber",
+        "annotation": "2018 TO 2019 ONLY"
+      },
+      "choreo": {
+        "primary": "a crane hook descends and lifts the first Bunk out of the mud while the Sheet gets a coral margin note, a plate reads 2018 TO 2019 ONLY",
+        "reaction": "the hook lifts",
+        "ambient": "the seismogram scrolls, the sign settles"
+      },
+      "t": "99.330-100.540",
+      "key": 25
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 100.54,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So who earned it? Not a clever trick. Local data improved the model, and that data came from seafloor ears and people with pencils.",
+      "phrase": "So who earned it?",
+      "shows": "the banner swings from AI to LOCAL DATA as the spotlight leaves the Robot and lands on Bunk, a plate reads LOCAL DATA MADE IT BETTER",
+      "sfx": "whoosh",
+      "means": "local data made it better",
+      "rehook": "",
+      "draw": {
+        "subject": "the banner",
+        "action": "swings from AI to LOCAL DATA as the spotlight leaves the Robot",
+        "emotion": "proud",
+        "annotation": "LOCAL DATA MADE IT BETTER"
+      },
+      "choreo": {
+        "primary": "the banner swings from AI to LOCAL DATA as the spotlight leaves the Robot and lands on Bunk, a plate reads LOCAL DATA MADE IT BETTER",
+        "reaction": "the banner swings",
+        "ambient": "the banner swings, the spotlight sweeps"
+      },
+      "kick": true,
+      "t": "100.540-102.945",
+      "key": 26
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 102.945,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.25,
+        "offset": 2.405
+      },
+      "offset": 2.405,
+      "vo": "So who earned it? Not a clever trick. Local data improved the model, and that data came from seafloor ears and people with pencils.",
+      "phrase": "So who earned it?",
+      "shows": "the Robot peeks at the swinging banner and slowly lowers its crown, a plate reads NOT A CLEVER TRICK",
+      "sfx": "snap",
+      "means": "not a clever trick",
+      "rehook": "",
+      "draw": {
+        "subject": "the Robot",
+        "action": "peeks at the swinging banner and slowly lowers its crown",
+        "emotion": "wry",
+        "annotation": "NOT A CLEVER TRICK"
+      },
+      "choreo": {
+        "primary": "the Robot peeks at the swinging banner and slowly lowers its crown, a plate reads NOT A CLEVER TRICK",
+        "reaction": "the crown drops",
+        "ambient": "the banner swings, the spotlight sweeps"
+      },
+      "t": "102.945-107.690",
+      "key": 45
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "at_s": 107.69,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 7.15
+      },
+      "offset": 7.15,
+      "vo": "So who earned it? Not a clever trick. Local data improved the model, and that data came from seafloor ears and people with pencils.",
+      "phrase": "seafloor ears and people",
+      "shows": "the analyst walks on under the spotlight beside Bunk holding the stamped Sheet, a plate reads SEAFLOOR EARS + PEOPLE WITH PENCILS",
+      "sfx": "pop",
+      "means": "seafloor ears + people with pencils",
+      "rehook": "",
+      "draw": {
+        "subject": "the analyst",
+        "action": "walks on under the spotlight beside Bunk holding the stamped Sheet",
+        "emotion": "warm",
+        "annotation": "SEAFLOOR EARS + PEOPLE WITH PENCILS"
+      },
+      "choreo": {
+        "primary": "the analyst walks on under the spotlight beside Bunk holding the stamped Sheet, a plate reads SEAFLOOR EARS + PEOPLE WITH PENCILS",
+        "reaction": "the analyst waves",
+        "ambient": "the banner swings, the spotlight sweeps"
+      },
+      "t": "107.690-109.810",
+      "key": 27
+    },
+    {
+      "id": 39,
+      "shot": 11,
+      "at_s": 109.81,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 9.27
+      },
+      "offset": 9.27,
+      "vo": "So who earned it? Not a clever trick. Local data improved the model, and that data came from seafloor ears and people with pencils.",
+      "phrase": "pencils.",
+      "shows": "the stamped Sheet is handed to the Robot, which bows to the analyst and Bunk instead of the audience, a plate reads HAND-CHECKED PICKS",
+      "sfx": "page",
+      "means": "hand-checked picks",
+      "rehook": "",
+      "draw": {
+        "subject": "the Sheet",
+        "action": "is handed to the Robot, which bows to the analyst and Bunk instead of the audience",
+        "emotion": "warm",
+        "annotation": "HAND-CHECKED PICKS"
+      },
+      "choreo": {
+        "primary": "the stamped Sheet is handed to the Robot, which bows to the analyst and Bunk instead of the audience, a plate reads HAND-CHECKED PICKS",
+        "reaction": "the Robot bows",
+        "ambient": "the banner swings, the spotlight sweeps"
+      },
+      "t": "109.810-110.160",
+      "key": 46
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 110.16,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The A I learned Alaska from Alaska's own ears. So will Alaska put ears back on the seafloor?",
+      "phrase": "The A I learned",
+      "shows": "a crane lifts the 75 domes off the seabed grid one by one in an aerial view as their lights go out, a plate reads THE EARS COME UP",
+      "sfx": "clank",
+      "means": "the ears come up",
+      "rehook": "",
+      "draw": {
+        "subject": "a crane",
+        "action": "lifts the 75 domes off the seabed grid one by one in an aerial view as their lights go out",
+        "emotion": "somber",
+        "annotation": "THE EARS COME UP"
+      },
+      "choreo": {
+        "primary": "a crane lifts the 75 domes off the seabed grid one by one in an aerial view as their lights go out, a plate reads THE EARS COME UP",
+        "reaction": "the lights go out",
+        "ambient": "bubbles rise, the question pulses, the ring pulse slows"
+      },
+      "t": "110.160-113.310",
+      "key": 28
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 113.31,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.42,
+        "offset": 3.15
+      },
+      "offset": 3.15,
+      "vo": "The A I learned Alaska from Alaska's own ears. So will Alaska put ears back on the seafloor?",
+      "phrase": "The A I learned",
+      "shows": "the crane swings clear leaving one dome lit in the grid, a plate reads ONE ARRAY \u00b7 2018 TO 2019",
+      "sfx": "creak",
+      "means": "one array \u00b7 2018 to 2019",
+      "rehook": "",
+      "draw": {
+        "subject": "the crane",
+        "action": "swings clear leaving one dome lit in the grid",
+        "emotion": "somber",
+        "annotation": "ONE ARRAY \u00b7 2018 TO 2019"
+      },
+      "choreo": {
+        "primary": "the crane swings clear leaving one dome lit in the grid, a plate reads ONE ARRAY \u00b7 2018 TO 2019",
+        "reaction": "the hook sways",
+        "ambient": "bubbles rise, the question pulses, the ring pulse slows"
+      },
+      "t": "113.310-116.450",
+      "key": 48
+    },
+    {
+      "id": 42,
+      "shot": 12,
+      "at_s": 116.45,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.29
+      },
+      "offset": 6.29,
+      "vo": "The A I learned Alaska from Alaska's own ears. So will Alaska put ears back on the seafloor?",
+      "phrase": "back on the seafloor?",
+      "shows": "one Bunk tilts toward the camera like an ear with a pulsing question mark over his dome, a plate reads WILL THE EARS GO BACK DOWN?",
+      "sfx": "pop",
+      "means": "will the ears go back down?",
+      "rehook": "",
+      "draw": {
+        "subject": "one Bunk",
+        "action": "tilts toward the camera like an ear with a pulsing question mark over his dome",
+        "emotion": "curious",
+        "annotation": "WILL THE EARS GO BACK DOWN?"
+      },
+      "choreo": {
+        "primary": "one Bunk tilts toward the camera like an ear with a pulsing question mark over his dome, a plate reads WILL THE EARS GO BACK DOWN?",
+        "reaction": "the question pulses",
+        "ambient": "bubbles rise, the question pulses, the ring pulse slows"
+      },
+      "t": "116.450-117.210",
+      "key": 29
+    },
+    {
+      "id": 43,
+      "shot": 12,
+      "at_s": 117.21,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.94,
+        "offset": 7.05
+      },
+      "offset": 7.05,
+      "vo": "The A I learned Alaska from Alaska's own ears. So will Alaska put ears back on the seafloor?",
+      "phrase": "The A I learned",
+      "shows": "Bunk closes his eye and the ring pulse stops then the eye opens again, mirroring the open",
+      "sfx": "blip",
+      "means": "bunk",
+      "rehook": "",
+      "draw": {
+        "subject": "Bunk",
+        "action": "closes his eye and the ring pulse stops, then the eye opens again",
+        "emotion": "warm",
+        "annotation": "BUNK"
+      },
+      "choreo": {
+        "primary": "Bunk closes his eye and the ring pulse stops then the eye opens again, mirroring the open",
+        "reaction": "the eye reopens",
+        "ambient": "bubbles rise, the question pulses, the ring pulse slows"
+      },
+      "t": "117.210-120.660",
+      "key": 30
+    }
+  ]
+}

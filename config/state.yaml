@@ -3149,6 +3149,49 @@ dispatch_history:
     light_story: night-practical
     metaphor: a gunmetal counter that clicks every three seconds and a consent gate
       that waits for a yes, with a nickel key fob carrying ENROLLED? to YOUR CALL
+- date: '2026-11-04'
+  topic: Machine learning roughly triples the earthquake count along the Alaska Peninsula
+    subduction zone (Barcheck and Ruppert, Earth and Space Science)
+  slug: dispatch-2026-11-04-the-ears-did-the-work
+  key_entities:
+  - Barcheck
+  - Ruppert
+  - Cornell
+  - USGS
+  - EQTransformer
+  - AACSE
+  - Alaska Peninsula
+  - Earth and Space Science
+  - outer rise
+  - Kodiak
+  - Shumagin Islands
+  archetype: stage and seabed explainer with a catalog Sheet throughline
+  palette: oxblood seafloor and stage, glowing mint seafloor ears, bright yellow machine
+    dots, chalk human-checked dots and coral limit plates
+  voice: Gemini Sulafat
+  stance: curious
+  angle: 'The credit belongs to the data, not the algorithm: no training trick won,
+    and Alaska''s own human-checked earthquake picks, recorded by 75 seafloor and
+    30 land seismometers, taught an existing AI picker to find roughly three times
+    as many quakes, most of the gain far offshore.'
+  hero: ListeningMooring
+  cast:
+  - ListeningMooring
+  - ServerMachine
+  - Halibut
+  - HeldProp
+  composition:
+    pov: exploded-diagram
+    motion_vector: horizontal-traverse
+    hero_treatment: multiplicity-swarm
+    layout: stacked-layers
+    register: editorial-schematic
+    palette: oxblood seafloor and stage, glowing mint seafloor ears, bright yellow
+      machine dots, chalk human-checked dots and coral limit plates
+    camera_strategy: locked-drift
+    light_story: dusk-silhouette
+    metaphor: a seafloor ear and a hand-checked catalog sheet that the algorithm's
+      spotlight briefly borrows, then hands back
 - date: '2026-11-06'
   topic: University of Alaska AI Engaged plan, op-ed fight over Claude drafting it,
     one disclosure line
