@@ -346,11 +346,11 @@ RAIN_LEVEL = 0.28      # about -36 dBFS RMS: 18 to 20 dB under the VO, 12 under 
 AMBIENCE_SPEC = {
     "rain": {"color": "pink", "seed": 1025,
              "note": "rain (synthesised pink noise, 900 Hz to 7 kHz, audio_arc.ambience)"},
-    "room": {"color": "pink", "seed": 1028, "level": 0.165,
+    "room": {"color": "pink", "seed": 1028, "level": 0.45,
              "drift": "0.92+0.05*sin(2*PI*t/17.3)+0.03*sin(2*PI*t/5.1)",
              "chain": "highpass=f=120,lowpass=f=1400,equalizer=f=120:t=q:w=2:g=5,equalizer=f=3000:t=q:w=1:g=-4",
              "note": "room tone (synthesised pink noise, 120 Hz to 1.4 kHz with a mains body, audio_arc.ambience)"},
-    "wind": {"color": "brown", "seed": 1029, "level": 0.20,
+    "wind": {"color": "brown", "seed": 1029, "level": 0.5,
              "drift": "0.55+0.35*sin(2*PI*t/13.1)+0.10*sin(2*PI*t/4.3)",
              "chain": "highpass=f=180,lowpass=f=2200,equalizer=f=410:t=q:w=12:g=9,equalizer=f=3000:t=q:w=1:g=-4",
              "note": "dusk wind and wire hum (synthesised brown noise, 180 Hz to 2.2 kHz, gusting, audio_arc.ambience)"},
@@ -941,14 +941,14 @@ def main():
          "-ar", str(SR), "-ac", "2", "-t", str(VIDEO_SECS), premix])
 
     p = subprocess.run([FF, "-i", premix, "-af",
-                        "loudnorm=I=-14:TP=-2.0:LRA=14:print_format=json", "-f", "null", "-"],
+                        "loudnorm=I=-14:TP=-2.0:LRA=7:print_format=json", "-f", "null", "-"],
                        capture_output=True, text=True)
     m = re.search(r"\{[^{}]*input_i[^{}]*\}", p.stderr, re.S)
     if not m:
         raise SystemExit("dispatch_mix: loudnorm analysis pass produced no JSON")
     a = json.loads(m.group(0))
     print(f"premix measured: {a['input_i']} LUFS  TP {a['input_tp']}  LRA {a['input_lra']}")
-    ln = (f"loudnorm=I=-14:TP=-2.0:LRA=14:linear=true"
+    ln = (f"loudnorm=I=-14:TP=-2.0:LRA=11:linear=true"
           f":measured_I={a['input_i']}:measured_TP={a['input_tp']}"
           f":measured_LRA={a['input_lra']}:measured_thresh={a['input_thresh']}"
           f":offset={a['target_offset']}:print_format=summary")

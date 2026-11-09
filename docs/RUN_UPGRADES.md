@@ -3984,6 +3984,10 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: empty-top-of-square gate before the render, VO-gap air in the audio report (room tone was masked 23.2 dB under the music, not missing), held beats owe a rig before the render, caption cheap-levers brief, Gate 0A stale hero check. No engine advance.
 - Escalated: held-figure stamp strike with squash and settle (lib helper), text-fit-local-coordinate-components.
 
+## 2026-11-08 (The Ground Takes Notes)
+- Shipped: panel median 7.02 (j1 7.17, editor 7.02, flow 6.57) at round 8, ship_gate PASS, source gates and preflight clear.
+- In-run fixes: honest two-panel chart with y axis and labelled comparator, sliver mapped to the century axis, caption quote punctuation moved inside the closing quote (build_scenes.py, self-test updated), ambience and music dips at VO gaps, loudnorm LRA target widened to 11 so delivered LRA is 7.5, S7 clip and floor cable, dial and tag shading.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-08).
 ## 2026-11-09 Who Holds the Transcript
 - Shipped: Alaska Court System AI policy v1.2 (copy published by LawSites), the ban on DIY AI hearing transcripts against the court's own planned CourtSmart transcripts, the ink drop for the sealed-hearing worry. Hero Reels (new copper recorder), throughline the transcript page. Panel median 7.13 (7.13, 7.20, 7.13) against the 7.0 bar on the shipping bytes, caption 8.42 after the five round cap.
 - In-run fixes: three Gate 0 rounds (palette recolor, key plant, never-live banner and dashed plan treatment), source gates (text_fit, label_footprint, held_plan) cleared before the render, SFX schedule recast to 15 kinds and under 18% per kind, VO re-synth for wording (the party can request the audio, no searchable, the policy calls them AI generated).

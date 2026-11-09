@@ -1,0 +1,73 @@
+{
+ "run_date": "2026-11-08",
+ "title": "The Ground Takes Notes",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Digital twins could help melt mystery of Alaska's thawing permafrost",
+   "outlet": "Penn State News, June 16th, 2026",
+   "url": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "claims": [
+    "c1",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c13",
+    "c15",
+    "c23",
+    "c24",
+    "c25",
+    "c26",
+    "c27"
+   ],
+   "used_in_film": true,
+   "note": "Primary source for the team, the cables, the dates, the NSF support and Xiao's quote."
+  },
+  {
+   "id": "s2",
+   "title": "A digital twin for Arctic permafrost beneath roads",
+   "outlet": "Eos Editors' Highlight, AGU, May 8th, 2026",
+   "url": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "claims": [
+    "c2",
+    "c4",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c12",
+    "c14",
+    "c22"
+   ],
+   "used_in_film": true,
+   "note": "Describes the network inside a heat transfer solver and the independent checks. The paper itself was paywalled and unread."
+  },
+  {
+   "id": "s3",
+   "title": "Arctic infrastructure was built on frozen ground, drones and digital twins can help spot the thaw coming",
+   "outlet": "Ming Xiao via The Conversation, Arctic Today, October 1st, 2026",
+   "url": "https://www.arctictoday.com/arctic-infrastructure-was-built-on-frozen-ground-drones-and-digital-twins-can-help-spot-the-permafrost-thaw-coming/",
+   "claims": [
+    "c11",
+    "c16",
+    "c18",
+    "c19",
+    "c20"
+   ],
+   "used_in_film": true,
+   "note": "An author's essay. The risk percentages come from a separate 2026 study, not the twin."
+  },
+  {
+   "id": "s4",
+   "title": "Permafrost thaw-related infrastructure damage costs in Alaska are projected to double under medium and high emission scenarios",
+   "outlet": "Communications Earth and Environment, March 21st, 2025",
+   "url": "https://www.nature.com/articles/s43247-025-02191-7",
+   "claims": [
+    "c21"
+   ],
+   "used_in_film": false,
+   "note": "Dollar range not voiced in the film."
+  }
+ ]
+}

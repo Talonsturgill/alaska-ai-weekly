@@ -1,0 +1,78 @@
+{
+ "j1": {
+  "axis_scores": {
+   "hook": 7.0,
+   "illustration": 7.0,
+   "motion": 6.8,
+   "composition": 7.3,
+   "color": 7.2,
+   "typography": 7.6,
+   "sound": 7.0,
+   "vo_sync": 6.9,
+   "accuracy": 8.0,
+   "alaska": 7.0,
+   "writing": 7.6
+  },
+  "total": 7.17,
+  "concrete_defects": [
+   "S10 chart bars lack rim light and contact shadow",
+   "held beats 1.9 to 2.7 percent change",
+   "same soil strip under every shot",
+   "S11 held frame near static"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "axis_scores": {
+   "hook": 6.8,
+   "illustration": 6.6,
+   "motion": 6.8,
+   "composition": 6.8,
+   "color": 6.8,
+   "typography": 7.3,
+   "sound": 7.5,
+   "vo_sync": 7.2,
+   "accuracy": 7.6,
+   "alaska": 7.0,
+   "writing": 7.4
+  },
+  "total": 7.02,
+  "concrete_defects": [
+   "S7 tundra and slab unshaded",
+   "repeated soil band 23 percent of every shot",
+   "MID CENTURY plate on y axis",
+   "date plates stacked in f109",
+   "ten-year ribbon extension drawn shorter than 33 months"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "axis_scores": {
+   "hook": 6.5,
+   "illustration": 5.8,
+   "motion": 6.2,
+   "composition": 6.0,
+   "color": 6.0,
+   "typography": 7.0,
+   "sound": 7.0,
+   "vo_sync": 6.5,
+   "accuracy": 8.0,
+   "alaska": 7.0,
+   "writing": 7.5
+  },
+  "total": 6.57,
+  "concrete_defects": [
+   "repeated lower strip on nearly all stills",
+   "flat chart card and Strand finish",
+   "one muted pewter palette",
+   "motion 1.9 to 3.3 percent on held beats"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "held-figure motion under 6 percent",
+  "repeated soil band",
+  "S7 shoreline shading",
+  "generic Utqiagvik skyline"
+ ]
+}

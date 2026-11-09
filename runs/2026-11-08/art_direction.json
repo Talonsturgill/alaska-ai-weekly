@@ -1,0 +1,158 @@
+{
+ "run_date": "2026-11-08",
+ "story_id": "utqiagvik-permafrost-digital-twin",
+ "palette": {
+  "roles": {
+   "sky": "#D8DEE4",
+   "snow": "#EEF2F2",
+   "stone": "#A39A88",
+   "umber": "#5C5446",
+   "umberDeep": "#2E2A24",
+   "ice": "#EEF2F2",
+   "thaw": "#B5583A",
+   "hero": "#6F3DF0",
+   "pulse": "#F4F1FF",
+   "ink": "#0E1020",
+   "paper": "#F4F6F7",
+   "pewter": "#D3D5D6",
+   "steel": "#7A8087",
+   "road": "#5E5A55",
+   "missing": "#FFD21F"
+  },
+  "mood": "A pale overcast section through the ground: a pale grey-white sky, warm stone and umber strata, one saturated violet cable, a single caution-yellow strip reserved for the number nobody published. Quiet, exact, a little tender, never doom.",
+  "divergence": "Recorded palettes. 11-06 tangerine office walls, teal desks, mint hero, magenta ink. 11-02 midnight indigo cab, sodium amber, teal stream, magenta stamps. 11-01 moss green slope, storm slate, sulphur key, lantern gold. 10-31 sage and cream chart desk, cobalt sea, graphite pencil, brass, vermilion. 10-29 aubergine dusk, rose violet snow, ember orange. 10-24 orbital navy, ember amber, ice cyan, peat. 10-17 deep navy cutaway in frost noon. The 06-26 film on this same permafrost story: ice indigo cutaway, ochre active layer, coral thaw front. This film is a pale overcast section in warm stone and umber with bone-white ice and a cool white paper, a saturated violet cable hero, pewter instruments, a black and white newsprint separate-study card and caution yellow on one strip of tape. It breaks all three legs of 10-31's cobalt, graphite and cream, and shares no hue family with any other film above. The one deliberate overlap is a thin terracotta thaw line and drop, a minimal-area callback to the 06-26 coral thaw front on the same story, kept to a few pixels of line. There is no ghost landscape and no dotted twin: 'the model adjusts' is two needle arcs narrowing as ribbon segments feed the solver, where 06-26 and 11-01 redrew a ghost. Its signature object is a record ribbon that is printed above ground, fed into a solver, held against three witness instruments, shown as a stub beside a slab, shrunk to a sliver on a century axis and extended as ten long-dashed years.",
+  "accent_licence": {
+   "caution yellow #FFD21F": "ONLY the tape over the accuracy dial, on screen from frame 1 of S1 as the hook (the taped dial, top left) and continuously from beat 9 (19.2s) to the end of beat 14 (34.1s), and again from beat 33 (74.8s) until the tear completes in beat 37, never in beat 38 or later. The dial is pewter. Every shot where the taped dial is on screen shows the tape: S2, S3, S8. S12 shows the dial as empty glass with no tape.",
+   "violet #6F3DF0": "Strand only (body and plug). Rulers, calipers and instruments are steel or pewter.",
+   "terracotta #B5583A": "Thaw only: the thaw line and the single thaw drop in beats 1 and 2, and they return in S13 where the cold open is revisited, in a few pixels of line. A deliberate minimal callback to the 06-26 coral thaw front on this same story. Never a brand accent, never the oven.",
+   "white pulse": "Strand's travelling pulse, the beads in beat 21, and every practical light (all white, including the lab oven window).",
+   "monochrome separate study": "The separate-study card is black ink on cool-white newsprint, with a black border and hatch bars. It owns no hue so it can never fuse with the twin or Strand. Curve = ink, bars = ink hatch on pewter, the NOT THE TWIN tag = ink on paper.",
+   "line grammars": "Long dashes (14 on, 9 off) belong only to the ribbon's ten extra years and the next cable. A strike-through belongs only to the ROAD FAILURE tag in beat 32 (a solid tag). The MID-CENTURY marker is a solid ink hairline. No dotted ghost exists in this film.",
+   "Knot": "Compact cluster: paper-white nodes, steel links, ink eyes and outlines. No hue.",
+   "record ribbon": "The ribbon is paper #F4F6F7 with umber ink ticks (#5C5446) and a black outline. The separate-study card is a slightly greyer newsprint (#E4E6E7) so the two never share a surface."
+  }
+ },
+ "light": {
+  "time": "Overcast late morning, early November on the North Slope",
+  "direction": "One story: a flat, shadowless overcast key from straight above (about 80 degrees), no direct sun, soft contact shadows only. Contrast comes from practical lights, each white and each declared per shot.",
+  "depth": {
+   "1": "z-200 sky and road slab, z0 strata and Strand, z+120 ice lenses",
+   "2": "z-160 road and sky, z0 field table and box, z+100 ribbon and calipers",
+   "3": "z-80 wall, z0 plates, z+90 ribbon tail and dial",
+   "4": "z-160 room wall, z0 HEAT box, z+70 Knot and dials, z+140 ribbon",
+   "5": "z-60 bench, z0 dials, z+90 beads and tag",
+   "6": "z-100 wall, z0 three instruments, z+80 printed line",
+   "7": "world layer z-300 shoreline and z-100 slab scale together, FOREGROUND LAYER z+200 Strand trench strip and tags fixed in screen space",
+   "8": "z-120 wall, z0 dial, z+90 plates and tape",
+   "9": "z-60 ribbon, z0 frame, z+80 plate",
+   "10": "z-100 chart card, z0 curve and bars, z+60 labels",
+   "11": "z-100 axis, z0 bars, z+90 sliver",
+   "12": "z-60 ribbon, z0 quote, z+90 ticks",
+   "13": "z-200 sky, z0 strata and Strand, z+100 ruler and cable"
+  },
+  "key_note": "Flat overcast key. Every practical is white. No honey, amber or sodium wash anywhere.",
+  "per_shot": {
+   "1": "overcast key from above 80 degrees, cool fill, practical: Strand's white pulse",
+   "2": "open overcast sky over the field table, practical: the interrogator box's pale white lamp",
+   "3": "flat diffuse wall light from upper left 60 degrees, soft fill, no practicals",
+   "4": "cool white lamp over the solver box from above, practical: the porthole rim (white), a faint steel bounce",
+   "5": "top diffuse macro light 75 degrees, practical: the white beads",
+   "6": "top diffuse light, three white practicals: drum LED, thermistor beads, oven window",
+   "7": "overcast key only, no practicals, the shoreline strip softly lit flat",
+   "8": "overcast dimmed to 40 percent, a white practical spotlight pool of about 5600K on the dial, tape lit from the pool",
+   "9": "one white desk lamp from upper left 55 degrees, soft contact shadow under the frame",
+   "10": "flat paper light from above, no shadows beyond card edges",
+   "11": "flat diffuse light, no practicals",
+   "12": "top diffuse light, practical: the ribbon's own white glow as ticks light",
+   "13": "same overcast key as shot 1, practical: Strand's pulse and the cursor tick"
+  }
+ },
+ "shape_language": {
+  "grammar": "LONG and ROUND against HARD and RECTILINEAR: Strand is a long horizontal rounded line with a round-cornered plug head, set against the road slab, strata, solver box, plates and tags. Knot is a compact cluster of small circles joined by short straight lines so it contrasts with Strand's long soft line.",
+  "why": "The story is a continuous measurement line under a short test. A long violet line lying under a heavy gray slab is the thesis as a silhouette, and no recent hero is long and horizontal.",
+  "vertical_frame_rule": "Strand is never thinner than 40 px at 1080 wide and its 132 by 116 px plug head is always face-on and fully inside y 440 to 1300 whenever Strand appears. In S7 Strand is drawn on a SCREEN-SPACE FOREGROUND LAYER outside the parallax stack: a trench strip spanning y 1160 to 1300 with the plug face inside it and nothing of Strand's face below y 1300, while only the world (slab, shoreline) scales. The floor-port peeks in S3 and S6 obey the same ceiling: plug face fully inside y 440 to 1300. The second cable in S1 is a plain violet run with no face. Strand appears in S1, S2, S3, S6, S7 and S13 and is absent from S4, S5, S8, S9, S10, S11 and S12 by design."
+ },
+ "casting": {
+  "hero": "Strand (NET-NEW, lib/strand.tsx): a violet fiber cable with a white pulse and a round plug head carrying a face. Acknowledged: 10-31 had Pip travelling a cable. Strand differs in silhouette (a long horizontal body with a round plug and a face on the cable itself, not a token riding it), in color (violet on bone-white and umber, none of 10-31's cobalt, graphite and cream) and in business (it wakes, peeks under the tape, feeds the printed line up from a floor port, bends under the tags and looks into the lens).",
+  "net_new_reason": "Knot (NET-NEW, same file) is the neural network the story is about, a compact angular cluster with eyes, the only shape with no precedent on the shelf.",
+  "inventory": [
+   {
+    "shot": 1,
+    "subject": "road slab, soil strata, Strand x2, 1 KM ruler, blank ribbon"
+   },
+   {
+    "shot": 2,
+    "subject": "field table, interrogator box, ribbon, date plate, calipers and road ruler, taped dial, Strand's plug face at the ground hole left, looking at the box"
+   },
+   {
+    "shot": 3,
+    "subject": "plate wall, two plates with eyelets, ribbon tail, taped dial, Strand peeking from a floor port at bottom center"
+   },
+   {
+    "shot": 4,
+    "subject": "HEAT solver, Knot, two dials, two jars, ribbon intake"
+   },
+   {
+    "shot": 5,
+    "subject": "two needle dials with arcs, ribbon, beads, blank tag"
+   },
+   {
+    "shot": 6,
+    "subject": "seismometer drum, thermistor string, lab oven, printed line fed up by Strand from a floor port"
+   },
+   {
+    "shot": 7,
+    "subject": "road slab, shoreline strip, tags, caliper span, thermometer, ribbon stub, Strand on a foreground layer"
+   },
+   {
+    "shot": 8,
+    "subject": "taped dial, light pool, two engraved plates, label plate, ribbon stub"
+   },
+   {
+    "shot": 9,
+    "subject": "steel frame, ribbon, small plate"
+   },
+   {
+    "shot": 10,
+    "subject": "newsprint chart card, curve, three bars"
+   },
+   {
+    "shot": 11,
+    "subject": "century axis, bars, ribbon sliver"
+   },
+   {
+    "shot": 12,
+    "subject": "ribbon, typed quote, ten dashed ticks, blank tag, empty dial"
+   },
+   {
+    "shot": 13,
+    "subject": "Strand, ruler, dashed cable, cursor, work order"
+   }
+  ]
+ },
+ "motion_language": {
+  "grammar": "Everything on the ground-data line moves along it: the pulse travels, beads patter, the ribbon prints and feeds. Tags drop with anticipation and overshoot.",
+  "hero_moves": [
+   "Strand's eyes snap open and it ripples at 0.6s",
+   "Strand peeks under the dial's tape corner",
+   "Strand bends under the tags",
+   "Strand looks into the lens on the question"
+  ]
+ },
+ "composition": {
+  "focal_hierarchy": "Strand first, the dial second, tags third",
+  "negative_space": "Shot 12's open trench and the far end of the ruler",
+  "safe_area": "One band rule: plates, faces and hero action live in y 440 to 1300. The CaptionBar owns y 1336 to 1472. Every other band (y below 440, y 1300 to 1336, y 1472 to 1500, y above 1500) is decorative free canvas only, never a plate or a face.",
+  "signature_shot": "Shot 7: the One-Road Ruler. A caliper span lights on one road slab, the camera rises and the world (slab and long painted shoreline) shrinks until the slab is a pixel, while Strand stays on a fixed foreground layer, 40 px thick with its face in frame. The dial is NOT in this shot, so the empty window is saved for shot 8."
+ },
+ "craft_advance": "none needed by this film, the net-new Strand and Knot are in one small lib file and registered in ASSET_MANIFEST.md",
+ "binding_checks": [
+  "accent licence respected beat by beat with the yellow time ranges",
+  "one light story (overcast) with per-shot practicals, all white",
+  "hero is Strand, absent shots are named",
+  "no digits ever drawn in the accuracy window",
+  "no dotted ghost anywhere",
+  "MID-CENTURY drawn as a solid ink hairline with the label written MID CENTURY",
+  "no dashes colons or emoji on screen"
+ ]
+}

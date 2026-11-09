@@ -1,0 +1,12 @@
+A road in Utqiagvik, Alaska, sits on frozen ground. Under it, researchers buried two fiber optic cables, each one kilometer long.
+They recorded temperature and seismic data from September twenty twenty one to June twenty twenty four. The data came from one hundred meters of that road.
+Penn State led a team that built a digital twin from that data, with Dmitry Nicolsky of the University of Alaska Fairbanks as a co-author. And there's one number about it the public summaries don't give. Hold that thought.
+A neural network sits inside a physics solver, a heat transfer model, and estimates the soil's unfrozen water content and thermal conductivity.
+Those soil properties are uncertain, so the model can update them. Penn State's Ming Xiao writes that as new data arrives, the twin adjusts. Keep one more number in mind. The team named it.
+It was checked against separate seismic data, borehole temperatures and lab measurements.
+Here's the fair case against it. It was tested on one road in one town. It predicts ground temperature and soil properties, not when a road will fail.
+It's a research framework, and the sources report no deployment. The public summaries report no accuracy number. That's the number I promised. There isn't one.
+So it holds up as a method. The claim stays small.
+A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.
+Xiao said, quote, if we have, say, ten more years of data, that would be extremely valuable. Ten years. That's the other number.
+So the model isn't the hard part. The record is. Who lays the next cable, and who pays?
