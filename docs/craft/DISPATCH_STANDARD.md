@@ -81,6 +81,18 @@ document, not of the judge.
   shipped none and the panel named the same strips held_plan had. Two shadow HeldTravels on a
   scratch copy of Ep1106 lifted three of its held strips (2.9, 3.4, 5.1) over 6 percent. Put
   `gain={0}` on the rig where the stillness is the point.
+- **A held FIGURE performs on its beats: `<IdleFigure cues>` and `<StrikeProp>`** (`lib/figureidle.tsx`,
+  machine pass 2026-11-09, held-figure motion repeat 4: Motion the lowest axis on 10 of 15 cards from
+  10-28 to 11-09, "held figures show no weight shift"). A light sweep on a prop clears held_plan and
+  leaves the people statues. Keep the episode's own figure drawing and wrap every use in
+  `<IdleFigure f x footY h seed cues={[p.b(id), ...]}>`, the cues being the beats the figure is on
+  screen for: it commits to the other hip on each, five frames early so the evidence strip on the beat
+  sees it, the head following late and the off arm lifting (a function child gets the pose for its
+  own head and arms). A stamp, gavel, binder or door that lands goes in `<StrikeProp at>`:
+  anticipation, squash on contact, one overshoot. On FigureLook the 11-09 Person moves 0.18 percent
+  of the frame on its beat strips and 1.19 wrapped (`python3 scripts/figure_look_check.py`).
+  `scripts/figure_rig_check.py` (a make_cut source gate) fails a component taking `skin`, or the
+  art-direction hero, that draws no lib rig.
 - **The weight shift is applied ABOVE the feet.** Applying it at the character root slides
   the boots and their contact shadows along the ground, which reads as skating. Torso
   carries the full shift, legs about a third, boots stay planted.

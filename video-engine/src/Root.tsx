@@ -84,6 +84,7 @@ import { EvidenceLook } from './EvidenceLook';
 import {RigLook, RigHoldLook, RigLightLook} from './RigLook';
 import {HeldPropLook} from './HeldPropLook';
 import {HeldTravelLook} from './HeldTravelLook';
+import {FigureLook} from './FigureLook';
 import {EyeLook} from './EyeLook';
 
 const standoffSchema = z.object({
@@ -107,6 +108,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="RigLightLook" component={RigLightLook} durationInFrames={120} fps={30} width={1080} height={1920}/>
       <Composition id="HeldPropLook" component={HeldPropLook} durationInFrames={600} fps={30} width={1080} height={1920}/>
       <Composition id="HeldTravelLook" component={HeldTravelLook} durationInFrames={240} fps={30} width={1080} height={1920} defaultProps={{mode: 'sweep' as const}}/>
+      <Composition id="FigureLook" component={FigureLook} durationInFrames={240} fps={30} width={1080} height={1920} defaultProps={{mode: 'rig' as const}}/>
       <Composition id="EyeLook" component={EyeLook} durationInFrames={600} fps={30} width={1080} height={1920}/>
       <Composition id="FlightCrateLook" component={FlightCrateLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="ResearchAssetLook0912" component={ResearchAssetLook0912} durationInFrames={90} fps={30} width={1080} height={1920}/>
