@@ -623,6 +623,12 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline strip, a data flow) rather than stars. (2026-11-02)
 - **A paper-wipe transition must start covering the frame.** A rect that began off-screen and slid in never left, and hid the thesis shot for 8 seconds in the first cut. Draw it at x 0, travel it past 1.3 times the width. (2026-11-02)
 
+## 2026-11-08 panel findings knowable in advance
+- A data mark never overshoots. Spring belongs to props and labels, not to the value a bar encodes.
+- A chart keeps one grammar from first frame to last: if a y axis and comparator open the sequence, they stay on screen when the bars change.
+- A comparator column carries its own x label, and a plate never sits on an axis rule or a tick label.
+- A quote burned into a caption keeps its period inside the closing quote and its source casing.
+- Raising ambience alone narrows delivered LRA. Pair it with dips at the VO gaps and read the premix LRA.
 ## 23. Things the 2026-11-04 gates, critics and panel found that were knowable in advance ("The Ears Did the Work")
 - A plate or comparison panel must not assign a cause the claim set doesn't. "THE EARS HEARD IT" and "SAME WIGGLE, MORE EARS" credited detections to extra sensors when the paper credits re-picking the same recordings. Draw the same data twice with two pickers, never an added instrument.
 - Never print a number the claim set forbids even under an illustration chip ("ANALYSTS 3, PICKER 9" read as counts). Use the authors' ratio word ("~3X") and dots.

@@ -1,0 +1,9 @@
+{"rungs":[{"rung":"in_window_sweep","attempted":true},{"rung":"outlet_index_sweep","attempted":true},{"rung":"widened_window","attempted":true}],
+"candidates":[
+{"headline":"Utqiagvik permafrost physics-informed digital twin (Penn State, UAF Nicolsky)","verdict":"locked"},
+{"headline":"NOAA Bering Sea cod assessment and ML otolith aging","verdict":"runner-up, AI link not operational for cod"},
+{"headline":"Skydio drone relay wins 11th Airborne Angel Ascent","verdict":"AI link weak"},
+{"headline":"USGS 96 Tcf North Slope gas and data center pitches","verdict":"AI link indirect, heavily covered"},
+{"headline":"Anchorage surveillance ordinance AO 2026-108","verdict":"same thread as 10-10"},
+{"headline":"Tribal drone pilots fuel tank farm mapping","verdict":"no AI"}],
+"locked_story":{"headline":"A neural network inside a physics model is learning the permafrost under an Utqiagvik road","found_at_rung":"widened_window"}}

@@ -1,0 +1,393 @@
+{
+ "run_date": "2026-11-08",
+ "fact_check_verdict": "Publish as a peer-reviewed research framework tested on one road transect. No accuracy figure is public, nothing says it is deployed. The risk percentages belong to a separate study of the Arctic Coastal Plain, and the dollar range to a 2025 study. Wainwright drone claim and 'can't be measured' wording were cut.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified",
+   "spoken": "A road in Utqiagvik sits on frozen ground.",
+   "on_screen": "UTQIAGVIK ROAD EMBANKMENT",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified",
+   "spoken": "Researchers buried two fiber optic cables there, each one kilometer long.",
+   "on_screen": "1 KM EACH",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified",
+   "spoken": "The cables recorded temperature and seismic data from September 2021 to June 2024.",
+   "on_screen": "SEPT 2021 TO JUNE 2024",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified",
+   "spoken": "The data came from a one hundred meter stretch of road.",
+   "on_screen": "100 METERS",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [
+    "Say 100 meters, never about. Do not imply the whole cable length."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified",
+   "spoken": "A team led by Penn State built a digital twin from that data.",
+   "on_screen": "PENN STATE \u00b7 DIGITAL TWIN",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [
+    "Say led by Penn State, never that Xiao is lead author."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified",
+   "spoken": "U A F's Dmitry Nicolsky is a co-author.",
+   "on_screen": "DMITRY NICOLSKY",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified",
+   "spoken": "The model puts a neural network inside a physics solver.",
+   "on_screen": "NEURAL NETWORK",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified",
+   "spoken": "The physics solver is a heat transfer model.",
+   "on_screen": "HEAT TRANSFER SOLVER",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified",
+   "spoken": "The network estimates the soil's unfrozen water content and thermal conductivity.",
+   "on_screen": "UNFROZEN WATER",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [
+    "Say estimates or infers. Never say these can't be measured."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified",
+   "spoken": "Those soil properties are uncertain, so the model can update them.",
+   "on_screen": "UNCERTAIN SOIL PROPERTIES",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [
+    "Attribute the sentence to the Eos editor's highlight."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified",
+   "spoken": "Penn State's Ming Xiao writes that as new data arrives, the twin adjusts.",
+   "on_screen": "NEW DATA IN \u00b7 MODEL ADJUSTS",
+   "source": "https://www.arctictoday.com/arctic-infrastructure-was-built-on-frozen-ground-drones-and-digital-twins-can-help-spot-the-permafrost-thaw-coming/",
+   "requires": [
+    "Xiao wrote this in a published essay. Attribute as written, not as an interview quote."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified",
+   "spoken": "The team checked it against separate seismic data, borehole temperatures and lab measurements.",
+   "on_screen": "BOREHOLE",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [
+    "Qualitative only. No accuracy number."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified",
+   "spoken": "Penn State says predictions matched later field measurements more closely as the twin updated.",
+   "on_screen": "MATCHED LATER FIELD DATA MORE CLOSELY",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [
+    "Paraphrase of Penn State. State no number."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified",
+   "spoken": "The paper was published in the Journal of Geophysical Research, Earth Surface, in 2026.",
+   "on_screen": "JGR EARTH SURFACE \u00b7 2026",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified",
+   "spoken": "The work was supported by the U.S. National Science Foundation.",
+   "on_screen": "NSF-SUPPORTED",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified",
+   "spoken": "Xiao's essay says Arctic temperatures are rising two to three times faster than the global average.",
+   "on_screen": "2 TO 3 TIMES FASTER",
+   "source": "https://www.arctictoday.com/arctic-infrastructure-was-built-on-frozen-ground-drones-and-digital-twins-can-help-spot-the-permafrost-thaw-coming/",
+   "requires": [
+    "Attribute to the essay."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified",
+   "spoken": "In Utqiagvik, a bluff partly collapsed in twenty twenty three and twenty twenty four.",
+   "on_screen": "BLUFF COLLAPSE 2023 AND 2024",
+   "source": "https://cleantechnica.com/2026/10/20/arctic-infrastructure-was-built-on-frozen-ground-thats-starting-to-thaw-drones-can-help-spot-the-permafrost-changes-coming/",
+   "requires": [
+    "Say the eroding edge came close to roads and buildings."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified",
+   "spoken": "A separate study by Xiao's team looked at the whole Arctic Coastal Plain.",
+   "on_screen": "SEPARATE STUDY \u00b7 ARCTIC COASTAL PLAIN",
+   "source": "https://www.arctictoday.com/arctic-infrastructure-was-built-on-frozen-ground-drones-and-digital-twins-can-help-spot-the-permafrost-thaw-coming/",
+   "requires": [
+    "Not the digital twin. Keep the two apart."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified",
+   "spoken": "Under high emissions, it projects less than ten percent of infrastructure at risk by mid century.",
+   "on_screen": "UNDER 10% AT RISK",
+   "source": "https://www.arctictoday.com/arctic-infrastructure-was-built-on-frozen-ground-drones-and-digital-twins-can-help-spot-the-permafrost-thaw-coming/",
+   "requires": [
+    "Scenario: high emissions. Projection from the separate study."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified",
+   "spoken": "By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+   "on_screen": "2090S \u00b7 80% BUILDINGS",
+   "source": "https://www.arctictoday.com/arctic-infrastructure-was-built-on-frozen-ground-drones-and-digital-twins-can-help-spot-the-permafrost-thaw-coming/",
+   "requires": [
+    "Under high emissions only. Projection from the separate study, ranges 80 to 83, 58 to 60, 87 to 90."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified",
+   "spoken": "A 2025 study put permafrost thaw losses to Alaska buildings and roads at thirty seven to fifty one billion dollars.",
+   "on_screen": "$37B TO $51B",
+   "source": "https://www.nature.com/articles/s43247-025-02191-7",
+   "requires": [
+    "Low end medium emissions, high end high emissions. Period 2015-2024 to 2055-2064. Not by 2100, not per year."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified",
+   "spoken": "The twin was tested on one road in one town.",
+   "on_screen": "ONE ROAD",
+   "source": "https://eos.org/editor-highlights/a-digital-twin-for-arctic-permafrost-beneath-roads",
+   "requires": [
+    "No other site appears in the sources."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified",
+   "spoken": "It predicts ground temperature and soil properties, not when a road will fail.",
+   "on_screen": "NOT ROAD FAILURE",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified",
+   "spoken": "It is a research framework the team plans to keep refining, not a system anyone has deployed.",
+   "on_screen": "RESEARCH FRAMEWORK",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [
+    "Nothing says it is deployed. Say the sources report no deployment."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified",
+   "spoken": "Xiao said ten more years of data would be extremely valuable.",
+   "on_screen": "10 MORE YEARS OF DATA",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [
+    "Quote: If we have, say, 10 more years of data, that would be extremely valuable."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified",
+   "spoken": "The public summaries report no accuracy number for the model.",
+   "on_screen": "NO ACCURACY NUMBER IN PUBLIC SUMMARIES",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [
+    "The paper itself is paywalled and unread. Say public summaries, never the paper."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified",
+   "spoken": "The sources say this is the team's first attempt to apply a digital twin to their earlier monitoring work.",
+   "on_screen": "FIRST DIGITAL-TWIN ATTEMPT FOR THEIR MONITORING WORK",
+   "source": "https://www.psu.edu/news/research/story/digital-twins-could-help-melt-mystery-alaskas-thawing-permafrost",
+   "requires": [
+    "Not the first permafrost twin anywhere."
+   ],
+   "note": "",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

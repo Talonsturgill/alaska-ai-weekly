@@ -532,7 +532,9 @@ def _apply_caption_quotes(caps, quotes):
         for c in caps:
             m = pat.search(c["text"])
             if m:
-                c["text"] = c["text"][:m.start()] + '"' + m.group(0) + '"' + c["text"][m.end():]
+                _rest = c["text"][m.end():]
+                _pun = _rest[:1] if _rest[:1] in (".", ",") else ""
+                c["text"] = c["text"][:m.start()] + '"' + m.group(0) + _pun + '"' + _rest[len(_pun):]
                 found = True
         if not found:
             toks = q.split()
@@ -543,7 +545,9 @@ def _apply_caption_quotes(caps, quotes):
                     if (at.lower().endswith(head.lower()) and bt.lower().startswith(tail.lower())
                             and (len(bt) == len(tail) or not bt[len(tail)].isalnum())):
                         a["text"] = at[:len(at) - len(head)] + '"' + at[len(at) - len(head):]
-                        b["text"] = bt[:len(tail)] + '"' + bt[len(tail):]
+                        _rest = bt[len(tail):]
+                        _pun = _rest[:1] if _rest[:1] in (".", ",") else ""
+                        b["text"] = bt[:len(tail)] + _pun + '"' + _rest[len(_pun):]
                         found = True
                         break
                 if found:
@@ -739,6 +743,8 @@ def _source_labels(srcs):
             lab = "NSF EPSCOR"
         elif "muni.org" in url:
             lab = "MUNI.ORG AO 2026-108 AND 108(S)"
+        elif "eos.org" in url:
+            lab = "AGU EOS HIGHLIGHT"   # EOS.ORG defeats the rendered OCR at credit size (2026-11-08)
         else:
             host = re.sub(r"^www\.", "", urlparse(url).netloc)
             lab = host.upper()
@@ -934,11 +940,11 @@ def main():
 def _self_test_quotes():
     cases = [
         ([{"text": "I'm a big believer in data centers,"}], ["I'm a big believer in data centers"],
-         ['"I\'m a big believer in data centers",'], []),
+         ['"I\'m a big believer in data centers,"'], []),
         ([{"text": "Taylor said, we need to embrace it."}], ["we need to embrace it"],
-         ['Taylor said, "we need to embrace it".'], []),
+         ['Taylor said, "we need to embrace it."'], []),
         ([{"text": "he said, we need"}, {"text": "to embrace it. Then"}], ["we need to embrace it"],
-         ['he said, "we need', 'to embrace it". Then'], []),
+         ['he said, "we need', 'to embrace it." Then'], []),
         ([{"text": '"we need to embrace it" again'}], ["we need to embrace it"],
          ['"we need to embrace it" again'], []),
         ([{"text": "nothing to see"}], ["absent phrase"], ["nothing to see"], ["absent phrase"]),

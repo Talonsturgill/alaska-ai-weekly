@@ -1,0 +1,2151 @@
+{
+  "run_date": "2026-11-08",
+  "slug": "the-ground-takes-notes",
+  "title": "The Ground Takes Notes",
+  "concept": "Under one Utqiagvik road two kilometer fiber cables recorded temperature and seismic data from September 2021 to June 2024, and a Penn State led team with UAF's Dmitry Nicolsky built a digital twin that puts a neural network inside a heat transfer physics solver to estimate uncertain soil properties and adjust as data arrives. The film gives the fair case against it its own scene, one road in one town, temperature not road failure, a research framework with no reported deployment and no accuracy number in the public summaries, then shows a separate study's risk curve and Xiao's ten more years. A long violet cable named Strand is the hero and a record ribbon the throughline, ending long-dashed and open on who lays the next cable and who pays.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 127.88,
+  "fingerprint": {
+    "pov": "exploded-diagram",
+    "motion_vector": "scroll-data",
+    "hero_treatment": "single-organic-hero",
+    "layout": "grid-modular",
+    "register": "overcast-section",
+    "palette": "pale overcast snow light, warm stone and umber strata, bone-white ice, a thin terracotta thaw line, a saturated violet fiber cable hero with a white pulse, pewter instruments, a black-and-white newsprint separate-study card and caution yellow tape reserved for the missing number",
+    "camera_strategy": "lateral-travel",
+    "light_story": "overcast-snow-light",
+    "metaphor": "a violet fiber cable with a face that feels the ground, a paper record ribbon that is printed, fed into a solver, narrowed on two needle dials, held against three witnesses, shrunk to a sliver beside a separate study and extended as ten dashed years, and a dial whose window stays empty because no accuracy number is public"
+  },
+  "palette": "pale overcast snow light, warm stone and umber strata, bone-white ice, a thin terracotta thaw line, a saturated violet fiber cable hero with a white pulse, pewter instruments, a black-and-white newsprint separate-study card and caution yellow tape reserved for the missing number",
+  "divergence_note": "Recorded palettes. 11-06 tangerine office walls, teal desks, mint hero, magenta ink. 11-02 midnight indigo cab, sodium amber, teal stream, magenta stamps. 11-01 moss green slope, storm slate, sulphur key, lantern gold. 10-31 sage and cream chart desk, cobalt sea, graphite pencil, brass, vermilion. 10-29 aubergine dusk, rose violet snow, ember orange. 10-24 orbital navy, ember amber, ice cyan, peat. 10-17 deep navy cutaway in frost noon. The 06-26 film on this same permafrost story: ice indigo cutaway, ochre active layer, coral thaw front. This film is a pale overcast section in warm stone and umber with bone-white ice and a cool white paper, a saturated violet cable hero, pewter instruments, a black and white newsprint separate-study card and caution yellow on one strip of tape. It breaks all three legs of 10-31's cobalt, graphite and cream, and shares no hue family with any other film above. The one deliberate overlap is a thin terracotta thaw line and drop, a minimal-area callback to the 06-26 coral thaw front on the same story, kept to a few pixels of line. There is no ghost landscape and no dotted twin: 'the model adjusts' is two needle arcs narrowing as ribbon segments feed the solver, where 06-26 and 11-01 redrew a ghost. Its signature object is a record ribbon that is printed above ground, fed into a solver, held against three witness instruments, shown as a stub beside a slab, shrunk to a sliver on a century axis and extended as ten long-dashed years.",
+  "treatment": {
+    "title": "The Ground Takes Notes",
+    "summary": "All four pitches independently chose a buried fiber cable with a face, Strand, as hero and a Test scene of tags against the twin. The Dramatist's structure won (Record Ribbon throughline, loop A paid by an empty accuracy plate at the Test, loop B paid by Xiao's ten more years). Grafts: the Explainer's kilometer ruler with one lit tenth in the cold open and its calipers 100 METERS, the Comedian's three referees as inspection stickers, and the closing question asking who lays the next cable and who pays. The Comedian's ice cube was cut as decorative, with no data behind it. Doom borrowing rejected, the separate study is a black and white newsprint card, labelled. Revised after the Gate 0 critics: no ghost landscape (the ribbon feeds a solver and two needle arcs narrow), loop B plants a blank question-mark tag, the Test is staged as pictures, 'who pays' gets a blank work order."
+  },
+  "angle": {
+    "thesis": "A neural network inside a physics solver, fed by buried fiber under one Utqiagvik road, learns the hidden soil as data arrives, and the work now isn't the algorithm, it's the years of record and the fiber in the ground before the steep part of the thaw curve arrives.",
+    "falsifiable_by": "A public accuracy number or second site showing the twin drifting from borehole and field checks (c12, c13, c22, c26), or a sourced deployment (c24).",
+    "supporting_facts": [
+      "c7+c8+c9 physics carries what's known, network estimates the uncertain soil",
+      "c2+c3+c4 two 1 km cables, Sept 2021 to June 2024, 100 meters",
+      "c11 as new data arrives the twin adjusts"
+    ],
+    "counterpoint_scene": "THE TEST: one road, one town, 100 meters, no public accuracy number, predicts temperature not failure, not deployed (c22 to c26); drawn at full strength, the model survives as a method and narrows as a tool.",
+    "second_movement": "c25 ten more years of data vs the SEPARATE study's risk curve (c18 to c20): low until mid-century, steep in the 2090s, so the record has to start now. c21 dollar range from a 2025 study.",
+    "valence": "cautiously positive, earned",
+    "cross_challenge": "Enthusiast was challenged for treating qualitative validation as proof (kept, but the Test scene names it). Dramatist's 'race' turn adopted; its borrowed doom rejected, the risk numbers are labelled separate. Builder's ask ('who lays the next fiber and who pays for the decade of data') adopted as the button question.",
+    "runner_ups": [
+      "pure skeptic: one road is not a coast (lost: wins no honest ground the Test scene doesn't already take)",
+      "pure upside: AI predicts permafrost (lost: false, the twin predicts temperature on one stretch)"
+    ],
+    "guardrails": [
+      "led by Penn State, never lead author",
+      "estimates/infers, never can't be measured",
+      "100 meters",
+      "risk % and $ are SEPARATE studies, high emissions only",
+      "public summaries report no accuracy number, never 'the paper'",
+      "no named agencies or deployments",
+      "never Wainwright drones"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "One terracotta thaw drop falls through a road slab in a pale overcast soil cutaway and lands on a cable with a face, its eyes snap open, a plate reads UTQIAGVIK ROAD EMBANKMENT.",
+    "headline": "THE GROUND TAKES NOTES",
+    "motion_by_s": 0.3,
+    "loopback": "The cold open framing returns with the ribbon running off frame and a dashed second cable unspooling while Strand looks into the lens."
+  },
+  "open_loop": {
+    "plant_t": 19.23,
+    "pay_t": 85.59,
+    "what": "What is the number nobody published? Planted with a pewter dial taped shut in the corner, paid when the tape peels and the accuracy window is plain empty glass."
+  },
+  "open_loop_2": {
+    "plant_t": 53.53,
+    "pay_t": 116.73,
+    "what": "What is the one more number? Planted with a blank tag marked with a question mark, paid when Xiao's ten more years of data flips the tag to 10 beside the empty dial."
+  },
+  "throughline": {
+    "object": "a record ribbon",
+    "lands_in_button": "the ribbon runs off frame long-dashed with a blinking cursor, the record the next cable has to start",
+    "states": [
+      {
+        "at_s": 9.21,
+        "state": "STUB, a blank ribbon sliding out of Strand's plug"
+      },
+      {
+        "at_s": 34.12,
+        "state": "FED into the solver intake slot"
+      },
+      {
+        "at_s": 63.62,
+        "state": "MEASURED, thin beside one road slab and a long shoreline"
+      },
+      {
+        "at_s": 92.78,
+        "state": "A hairline pinned to the left edge of the separate study card"
+      },
+      {
+        "at_s": 105.17,
+        "state": "A SLIVER on the century axis"
+      },
+      {
+        "at_s": 112.07,
+        "state": "DASHED, ten unlit years of long-dashed ticks"
+      },
+      {
+        "at_s": 123.25,
+        "state": "OPEN, running off frame with a blinking cursor"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 9.21,
+      "type": "scale-pullback",
+      "what": "from Strand's plug to a kilometer ruler with ten ticks",
+      "hold_s": 0.8
+    },
+    {
+      "t": 63.62,
+      "type": "scale-pullback",
+      "what": "from one road slab to a long painted shoreline strip",
+      "hold_s": 0.8
+    },
+    {
+      "t": 92.78,
+      "type": "morph-to-chart",
+      "what": "a black-bordered newsprint chart card with a curve flat to mid century then a cliff and three bars",
+      "hold_s": 0.8
+    },
+    {
+      "t": 105.17,
+      "type": "scale-pullback",
+      "what": "from 33 months of ribbon to a sliver on the century axis",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 2,
+        "offset": 0.0,
+        "level": 1.5
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.6
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.35
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.3
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.3
+      },
+      {
+        "at_s": 85.19,
+        "level": 0.1
+      },
+      {
+        "at_s": 86.39,
+        "level": 1.8
+      },
+      {
+        "at_s": 15.95,
+        "level": 0.08
+      },
+      {
+        "at_s": 16.92,
+        "level": 0.3
+      },
+      {
+        "at_s": 19.49,
+        "level": 0.08
+      },
+      {
+        "at_s": 20.32,
+        "level": 0.3
+      },
+      {
+        "at_s": 33.13,
+        "level": 0.08
+      },
+      {
+        "at_s": 34.12,
+        "level": 0.3
+      },
+      {
+        "at_s": 42.71,
+        "level": 0.08
+      },
+      {
+        "at_s": 43.94,
+        "level": 0.3
+      },
+      {
+        "at_s": 47.43,
+        "level": 0.08
+      },
+      {
+        "at_s": 48.28,
+        "level": 0.3
+      },
+      {
+        "at_s": 56.75,
+        "level": 0.08
+      },
+      {
+        "at_s": 58.0,
+        "level": 0.3
+      },
+      {
+        "at_s": 62.49,
+        "level": 0.08
+      },
+      {
+        "at_s": 63.62,
+        "level": 0.3
+      },
+      {
+        "at_s": 68.79,
+        "level": 0.08
+      },
+      {
+        "at_s": 69.7,
+        "level": 0.3
+      },
+      {
+        "at_s": 73.91,
+        "level": 0.08
+      },
+      {
+        "at_s": 74.78,
+        "level": 0.3
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.2
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 0.16
+      },
+      {
+        "at_s": 90.96,
+        "level": 0.06
+      },
+      {
+        "at_s": 92.78,
+        "level": 0.2
+      },
+      {
+        "at_s": 107.68,
+        "level": 0.06
+      },
+      {
+        "at_s": 109.48,
+        "level": 0.2
+      },
+      {
+        "at_s": 115.3,
+        "level": 0.06
+      },
+      {
+        "at_s": 116.78,
+        "level": 0.2
+      },
+      {
+        "at_s": 119.16,
+        "level": 0.06
+      },
+      {
+        "at_s": 120.62,
+        "level": 0.2
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": [
+      "room",
+      "wind"
+    ],
+    "build_steps": 4,
+    "dip_at": 85.19,
+    "riser_at": 81.57,
+    "silence_at": 85.19,
+    "payoff_at": 85.59,
+    "button_pattern": "callback",
+    "interrupt_at": 63.62,
+    "extra_dips": [
+      109.48,
+      91.06,
+      107.78,
+      115.4
+    ]
+  },
+  "shots": [
+    {
+      "title": "A road, a cable",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "road-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "Strand head at x790 y920",
+      "means": "A thaw drop wakes Strand under a Utqiagvik road, two kilometer cables unspool, a ruler pulls out and a blank ribbon slides from the plug.",
+      "ambient": "the pulse runs, ice glints, the thaw line wobbles",
+      "hero": {
+        "name": "Strand + road slab + soil strata + ruler + ice lenses",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "30% Strand, 30% strata, 20% slab, 20% ruler"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-10.820"
+    },
+    {
+      "title": "The field station",
+      "vo_line": 1,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "field-table",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the box at x300 y900",
+      "means": "Above ground the interrogator box prints the ribbon, a date plate spans 2021 to 2024, calipers pick out 100 meters, a taped dial hangs in the corner.",
+      "ambient": "the lamp glows, the ribbon prints, the pen scribbles",
+      "hero": {
+        "name": "interrogator box + ribbon + date plate + calipers + taped dial",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "30% box, 25% ribbon, 25% calipers, 20% dial"
+      },
+      "id": 2,
+      "start_s": 10.82,
+      "t": "10.820-20.320"
+    },
+    {
+      "title": "Who built it",
+      "vo_line": 2,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "plate-wall",
+      "pov": "exploded-diagram",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "static:plates hold while the ribbon tail moves",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the dial at x540 y1000",
+      "means": "Penn State and UAF plates drop in, the ribbon tail threads through each eyelet to a doorway, the taped dial swings to center and Strand peeks from a floor port.",
+      "ambient": "the plates sway, the ribbon tail drifts",
+      "hero": {
+        "name": "plates + ribbon tail + taped dial + Strand",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "35% plates, 25% ribbon, 20% dial, 20% Strand"
+      },
+      "id": 3,
+      "start_s": 20.32,
+      "t": "20.320-34.120"
+    },
+    {
+      "title": "Network in solver",
+      "vo_line": 3,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "low",
+      "stage": "solver-room",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the solver at x540 y880",
+      "means": "The ribbon comes through the doorway into the heat solver intake, Knot drops into its porthole and two dials swing.",
+      "ambient": "the dials twitch, rivets pop, steam puffs",
+      "hero": {
+        "name": "HEAT solver + Knot + dials + jars + ribbon",
+        "parts": 60,
+        "zones": 3,
+        "detail_note": "35% solver, 25% Knot, 25% dials, 15% ribbon"
+      },
+      "id": 4,
+      "start_s": 34.12,
+      "t": "34.120-43.940"
+    },
+    {
+      "title": "It adjusts",
+      "vo_line": 4,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "high",
+      "stage": "needle-bench",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the dials at x540 y800",
+      "means": "Two needle arcs wobble wide, ribbon segments pass through and the arcs tighten, a blank question tag swings in.",
+      "ambient": "the needles breathe, the beads patter",
+      "hero": {
+        "name": "two needle dials + ribbon + beads + blank tag",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "35% dials, 25% ribbon, 25% beads, 15% tag"
+      },
+      "id": 5,
+      "start_s": 43.94,
+      "t": "43.940-58.000"
+    },
+    {
+      "title": "Three witnesses",
+      "vo_line": 5,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "witness-bench",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the instruments at x540 y900",
+      "means": "Strand feeds the printed line up from a floor port and a seismometer drum, a borehole thermistor string and a lab oven each brighten as it passes.",
+      "ambient": "the instruments hum, Strand breathes",
+      "hero": {
+        "name": "seismometer drum + thermistor string + lab oven + printed line + Strand",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "25% drum, 25% string, 20% oven, 15% line, 15% Strand"
+      },
+      "id": 6,
+      "start_s": 58.0,
+      "t": "58.000-63.620"
+    },
+    {
+      "title": "The one road ruler",
+      "vo_line": 6,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "shore-stage",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "Strand head at x540 y1180",
+      "means": "The camera rises from one road slab to a long painted shoreline while Strand holds on a foreground layer, a caliper span lights, a thermometer swings, a tag is struck through.",
+      "ambient": "the strip drifts, the slab sits, Strand bends",
+      "hero": {
+        "name": "road slab + shoreline strip + tags + Strand + caliper span",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "30% strip, 25% slab, 20% tags, 25% Strand"
+      },
+      "id": 7,
+      "start_s": 63.62,
+      "t": "63.620-74.780"
+    },
+    {
+      "title": "The empty window",
+      "vo_line": 7,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "audit-stage",
+      "pov": "instrument-screen",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the light pool holds the dial",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the dial at x540 y880",
+      "means": "The taped dial rolls into white light, two engraved plates clip on, the label reads ACCURACY and the tape tears to empty glass.",
+      "ambient": "the light breathes, the glass shines",
+      "hero": {
+        "name": "taped dial + light pool + engraved plates",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "45% dial, 30% light, 25% plates"
+      },
+      "id": 8,
+      "start_s": 74.78,
+      "t": "74.780-87.380"
+    },
+    {
+      "title": "Small claim",
+      "vo_line": 8,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "verdict-card",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the frame at x540 y900",
+      "means": "A steel frame snaps around the first tenth of the ribbon and a small plate snaps under it.",
+      "ambient": "the frame rivets settle, the ribbon edge flutters",
+      "hero": {
+        "name": "steel frame + ribbon + small plate",
+        "parts": 30,
+        "zones": 3,
+        "detail_note": "50% frame, 30% ribbon, 20% plate"
+      },
+      "id": 9,
+      "start_s": 87.38,
+      "t": "87.380-92.780"
+    },
+    {
+      "title": "A separate clock",
+      "vo_line": 9,
+      "framing": "data-panel",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "chart-paper",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the chart at x540 y880",
+      "means": "A black-bordered newsprint chart card, a curve flat then a cliff, then a hard cut inside the shot to a bare century axis where the ribbon shrinks to a sliver and the roads and pipelines bars climb.",
+      "ambient": "the curve glows, bars rise, the sliver pulses",
+      "hero": {
+        "name": "newsprint chart card + curve + bars then a bare century axis + ribbon sliver",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "35% chart, 30% curve, 20% bars, 15% sliver"
+      },
+      "id": 10,
+      "start_s": 92.78,
+      "t": "92.780-109.480"
+    },
+    {
+      "title": "Ten more years",
+      "vo_line": 10,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "eye",
+      "stage": "record-ribbon",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the ribbon at x540 y930",
+      "means": "Xiao's quote types on the ribbon, ten dashed years extend, the blank tag flips to 10 beside the empty dial.",
+      "ambient": "the letters land, the ticks blink",
+      "hero": {
+        "name": "ribbon + typed quote + ten ticks + tag + empty dial",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "30% ribbon, 30% quote, 20% ticks, 20% tag"
+      },
+      "id": 11,
+      "start_s": 109.48,
+      "t": "109.480-120.620"
+    },
+    {
+      "title": "Who lays the next",
+      "vo_line": 11,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "ground",
+      "stage": "road-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Strand head at x790 y920",
+      "means": "The cold open returns, the ribbon runs off frame, a dashed cable unspools, Strand looks up, a blank work order clips on.",
+      "ambient": "the pulse runs, the cursor blinks",
+      "hero": {
+        "name": "Strand + ruler + dashed cable + cursor + work order",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "30% Strand, 25% ruler, 25% cable, 20% cursor"
+      },
+      "id": 12,
+      "start_s": 120.62,
+      "t": "120.620-127.880"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A road in Utqiagvik, Alaska, sits on frozen ground. Under it, researchers buried two fiber optic cables, each one kilometer long.",
+      "phrase": "A road in Utqiagvik,",
+      "shows": "Strand wakes in a pale overcast soil cutaway as one terracotta thaw drop falls through the road and lands on its plug, its eyes snap open, a plate reads UTQIAGVIK ROAD EMBANKMENT",
+      "sfx": "pop",
+      "means": "utqiagvik road embankment",
+      "rehook": "",
+      "draw": {
+        "subject": "Strand",
+        "action": "wakes in a pale overcast soil cutaway as one terracotta thaw drop falls through the road and lands on its plug, its eyes snap open",
+        "emotion": "startled",
+        "annotation": "UTQIAGVIK ROAD EMBANKMENT"
+      },
+      "choreo": {
+        "primary": "Strand wakes in a pale overcast soil cutaway as one terracotta thaw drop falls through the road and lands on its plug, its eyes snap open, a plate reads UTQIAGVIK ROAD EMBANKMENT",
+        "reaction": "the cable ripples",
+        "ambient": "the pulse runs, ice glints, the thaw line wobbles"
+      },
+      "t": "0.000-4.690",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 4.69,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.69
+      },
+      "offset": 4.69,
+      "vo": "A road in Utqiagvik, Alaska, sits on frozen ground. Under it, researchers buried two fiber optic cables, each one kilometer long.",
+      "phrase": "Under it, researchers buried",
+      "shows": "two cables unspool side by side through the soil under the road slab, the near one Strand with a face and the second a plain violet run, a plate reads 2 CABLES",
+      "sfx": "whoosh",
+      "means": "2 cables",
+      "rehook": "",
+      "draw": {
+        "subject": "two cables",
+        "action": "unspool side by side through the soil under the road slab, the near one Strand with a face and the second a plain violet run",
+        "emotion": "proud",
+        "annotation": "2 CABLES"
+      },
+      "choreo": {
+        "primary": "two cables unspool side by side through the soil under the road slab, the near one Strand with a face and the second a plain violet run, a plate reads 2 CABLES",
+        "reaction": "the cables settle",
+        "ambient": "the pulse runs, ice glints, the thaw line wobbles"
+      },
+      "t": "4.690-9.210",
+      "key": 3
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 9.21,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 9.21
+      },
+      "offset": 9.21,
+      "vo": "A road in Utqiagvik, Alaska, sits on frozen ground. Under it, researchers buried two fiber optic cables, each one kilometer long.",
+      "phrase": "kilometer long.",
+      "shows": "a ruler pulls out along one cable with ten ticks while a blank paper ribbon slides from its plug, a plate reads 1 KM EACH",
+      "sfx": "ping",
+      "means": "1 km each",
+      "rehook": "",
+      "draw": {
+        "subject": "a ruler",
+        "action": "pulls out along one cable with ten ticks while a blank paper ribbon slides from its plug",
+        "emotion": "reading",
+        "annotation": "1 KM EACH"
+      },
+      "choreo": {
+        "primary": "a ruler pulls out along one cable with ten ticks while a blank paper ribbon slides from its plug, a plate reads 1 KM EACH",
+        "reaction": "the ruler locks",
+        "ambient": "the pulse runs, ice glints, the thaw line wobbles"
+      },
+      "t": "9.210-10.820",
+      "key": 4
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 10.82,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "They recorded temperature and seismic data from September twenty twenty one to June twenty twenty four. The data came from one hundred meters of that road.",
+      "phrase": "They recorded temperature and",
+      "shows": "a fiber interrogator box on a field table at the road edge lights its lamp as the cable rises into it and the paper ribbon starts to print, a plate reads FIELD STATION",
+      "sfx": "clunk",
+      "means": "field station",
+      "rehook": "",
+      "draw": {
+        "subject": "a fiber interrogator box",
+        "action": "on a field table at the road edge lights its lamp as the cable rises into it and the paper ribbon starts to print",
+        "emotion": "focused",
+        "annotation": "FIELD STATION"
+      },
+      "choreo": {
+        "primary": "a fiber interrogator box on a field table at the road edge lights its lamp as the cable rises into it and the paper ribbon starts to print, a plate reads FIELD STATION",
+        "reaction": "the lamp glows",
+        "ambient": "the lamp glows, the ribbon prints, the pen scribbles"
+      },
+      "t": "10.820-14.270",
+      "key": 5
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 14.27,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.45
+      },
+      "offset": 3.45,
+      "vo": "They recorded temperature and seismic data from September twenty twenty one to June twenty twenty four. The data came from one hundred meters of that road.",
+      "phrase": "to June twenty twenty",
+      "shows": "a date plate flips to SEPT 2021 then spins to JUNE 2024 while the ribbon inks thirty three months, a plate reads SEPT 2021 TO JUNE 2024",
+      "sfx": "clink",
+      "means": "sept 2021 to june 2024",
+      "rehook": "",
+      "draw": {
+        "subject": "a date plate",
+        "action": "flips to SEPT 2021 then spins to JUNE 2024 while the ribbon inks thirty three months",
+        "emotion": "reading",
+        "annotation": "SEPT 2021 TO JUNE 2024"
+      },
+      "choreo": {
+        "primary": "a date plate flips to SEPT 2021 then spins to JUNE 2024 while the ribbon inks thirty three months, a plate reads SEPT 2021 TO JUNE 2024",
+        "reaction": "the plate settles",
+        "ambient": "the lamp glows, the ribbon prints, the pen scribbles"
+      },
+      "t": "14.270-17.770",
+      "key": 7
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 17.77,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 6.95
+      },
+      "offset": 6.95,
+      "vo": "They recorded temperature and seismic data from September twenty twenty one to June twenty twenty four. The data came from one hundred meters of that road.",
+      "phrase": "hundred meters of that",
+      "shows": "steel calipers snap open over the first tenth of a long road ruler labelled 100 METERS, a plate reads 100 METERS",
+      "sfx": "clank",
+      "means": "100 meters",
+      "rehook": "",
+      "draw": {
+        "subject": "steel calipers",
+        "action": "snap open over the first tenth of a long road ruler labelled 100 METERS",
+        "emotion": "firm",
+        "annotation": "100 METERS"
+      },
+      "choreo": {
+        "primary": "steel calipers snap open over the first tenth of a long road ruler labelled 100 METERS, a plate reads 100 METERS",
+        "reaction": "the ruler dims",
+        "ambient": "the lamp glows, the ribbon prints, the pen scribbles"
+      },
+      "t": "17.770-19.230",
+      "key": 8
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 19.23,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 8.41
+      },
+      "offset": 8.41,
+      "vo": "They recorded temperature and seismic data from September twenty twenty one to June twenty twenty four. The data came from one hundred meters of that road.",
+      "phrase": "road.",
+      "shows": "a pewter dial hangs in the corner with a caution-yellow strip of tape over its window, a plate reads ?",
+      "sfx": "pop",
+      "means": "?",
+      "rehook": "",
+      "draw": {
+        "subject": "a pewter dial",
+        "action": "hangs in the corner with a caution-yellow strip of tape over its window",
+        "emotion": "puzzled",
+        "annotation": "?"
+      },
+      "choreo": {
+        "primary": "a pewter dial hangs in the corner with a caution-yellow strip of tape over its window, a plate reads ?",
+        "reaction": "the dial swings",
+        "ambient": "the lamp glows, the ribbon prints, the pen scribbles"
+      },
+      "t": "19.230-20.320",
+      "key": 9
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 20.32,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Penn State led a team that built a digital twin from that data, with Dmitry Nicolsky of the University of Alaska Fairbanks as a co-author. And there's one number about it the public summaries don't give. Hold that thought.",
+      "phrase": "Penn State led a",
+      "shows": "a plate wall slides in with a PENN STATE plate while the ribbon tail runs across it toward a doorway, a plate reads PENN STATE \u00b7 DIGITAL TWIN",
+      "sfx": "whoosh",
+      "means": "penn state \u00b7 digital twin",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate wall",
+        "action": "slides in with a PENN STATE plate while the ribbon tail runs across it toward a doorway",
+        "emotion": "curious",
+        "annotation": "PENN STATE \u00b7 DIGITAL TWIN"
+      },
+      "choreo": {
+        "primary": "a plate wall slides in with a PENN STATE plate while the ribbon tail runs across it toward a doorway, a plate reads PENN STATE \u00b7 DIGITAL TWIN",
+        "reaction": "the plate settles",
+        "ambient": "the plates sway, the ribbon tail drifts"
+      },
+      "t": "20.320-24.270",
+      "key": 10
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 24.27,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.95
+      },
+      "offset": 3.95,
+      "vo": "Penn State led a team that built a digital twin from that data, with Dmitry Nicolsky of the University of Alaska Fairbanks as a co-author. And there's one number about it the public summaries don't give. Hold that thought.",
+      "phrase": "Dmitry Nicolsky of the",
+      "shows": "a plate drops beside it as the ribbon tail threads through its eyelet naming the UAF co-author, a plate reads DMITRY NICOLSKY",
+      "sfx": "clink",
+      "means": "dmitry nicolsky",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate",
+        "action": "drops beside it as the ribbon tail threads through its eyelet naming the UAF co-author",
+        "emotion": "reading",
+        "annotation": "DMITRY NICOLSKY"
+      },
+      "choreo": {
+        "primary": "a plate drops beside it as the ribbon tail threads through its eyelet naming the UAF co-author, a plate reads DMITRY NICOLSKY",
+        "reaction": "the plate swings",
+        "ambient": "the plates sway, the ribbon tail drifts"
+      },
+      "t": "24.270-25.630",
+      "key": 11
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 25.63,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.31
+      },
+      "offset": 5.31,
+      "vo": "Penn State led a team that built a digital twin from that data, with Dmitry Nicolsky of the University of Alaska Fairbanks as a co-author. And there's one number about it the public summaries don't give. Hold that thought.",
+      "phrase": "University of Alaska Fairbanks",
+      "shows": "a second plate drops below it as the ribbon tail threads through its eyelet, a plate reads UNIVERSITY OF ALASKA FAIRBANKS",
+      "sfx": "pop",
+      "means": "university of alaska fairbanks",
+      "rehook": "",
+      "draw": {
+        "subject": "a second plate",
+        "action": "drops below it as the ribbon tail threads through its eyelet",
+        "emotion": "reading",
+        "annotation": "UNIVERSITY OF ALASKA FAIRBANKS"
+      },
+      "choreo": {
+        "primary": "a second plate drops below it as the ribbon tail threads through its eyelet, a plate reads UNIVERSITY OF ALASKA FAIRBANKS",
+        "reaction": "the plate swings",
+        "ambient": "the plates sway, the ribbon tail drifts"
+      },
+      "t": "25.630-29.290",
+      "key": 12
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 29.29,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 8.97
+      },
+      "offset": 8.97,
+      "vo": "Penn State led a team that built a digital twin from that data, with Dmitry Nicolsky of the University of Alaska Fairbanks as a co-author. And there's one number about it the public summaries don't give. Hold that thought.",
+      "phrase": "number about it the",
+      "shows": "the taped dial swings to center as Strand peeks under the corner of the tape, a plate reads HOW CLOSE DOES IT GET?",
+      "sfx": "creak",
+      "means": "how close does it get?",
+      "rehook": "rehook: the taped dial swings to center and Strand peeks under it",
+      "draw": {
+        "subject": "the taped dial",
+        "action": "swings to center as Strand peeks under the corner of the tape",
+        "emotion": "puzzled",
+        "annotation": "HOW CLOSE DOES IT GET?"
+      },
+      "choreo": {
+        "primary": "the taped dial swings to center as Strand peeks under the corner of the tape, a plate reads HOW CLOSE DOES IT GET?",
+        "reaction": "the tape lifts",
+        "ambient": "the plates sway, the ribbon tail drifts"
+      },
+      "t": "29.290-34.120",
+      "key": 13
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 34.12,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A neural network sits inside a physics solver, a heat transfer model, and estimates the soil's unfrozen water content and thermal conductivity.",
+      "phrase": "A neural network sits",
+      "shows": "the HEAT solver slides in with a camera pull while the ribbon end feeds into its intake slot, a plate reads HEAT TRANSFER SOLVER",
+      "sfx": "clunk",
+      "means": "heat transfer solver",
+      "rehook": "",
+      "draw": {
+        "subject": "the HEAT solver",
+        "action": "slides in with a camera pull while the ribbon end feeds into its intake slot",
+        "emotion": "focused",
+        "annotation": "HEAT TRANSFER SOLVER"
+      },
+      "choreo": {
+        "primary": "the HEAT solver slides in with a camera pull while the ribbon end feeds into its intake slot, a plate reads HEAT TRANSFER SOLVER",
+        "reaction": "the box settles",
+        "ambient": "the dials twitch, rivets pop, steam puffs"
+      },
+      "t": "34.120-35.390",
+      "key": 15
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 35.39,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 1.27
+      },
+      "offset": 1.27,
+      "vo": "A neural network sits inside a physics solver, a heat transfer model, and estimates the soil's unfrozen water content and thermal conductivity.",
+      "phrase": "inside a physics solver,",
+      "shows": "Knot a six node network with eyes drops into the porthole and settles, a plate reads NEURAL NETWORK",
+      "sfx": "pop",
+      "means": "neural network",
+      "rehook": "",
+      "draw": {
+        "subject": "Knot",
+        "action": "a six node network with eyes drops into the porthole and settles",
+        "emotion": "curious",
+        "annotation": "NEURAL NETWORK"
+      },
+      "choreo": {
+        "primary": "Knot a six node network with eyes drops into the porthole and settles, a plate reads NEURAL NETWORK",
+        "reaction": "the network settles",
+        "ambient": "the dials twitch, rivets pop, steam puffs"
+      },
+      "t": "35.390-38.970",
+      "key": 16
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 38.97,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.85
+      },
+      "offset": 4.85,
+      "vo": "A neural network sits inside a physics solver, a heat transfer model, and estimates the soil's unfrozen water content and thermal conductivity.",
+      "phrase": "estimates the soil's unfrozen",
+      "shows": "the UNFROZEN WATER dial swings its needle as a fogged jar brightens, a plate reads UNFROZEN WATER",
+      "sfx": "tick",
+      "means": "unfrozen water",
+      "rehook": "",
+      "draw": {
+        "subject": "the UNFROZEN WATER dial",
+        "action": "swings its needle as a fogged jar brightens",
+        "emotion": "focused",
+        "annotation": "UNFROZEN WATER"
+      },
+      "choreo": {
+        "primary": "the UNFROZEN WATER dial swings its needle as a fogged jar brightens, a plate reads UNFROZEN WATER",
+        "reaction": "the jar brightens",
+        "ambient": "the dials twitch, rivets pop, steam puffs"
+      },
+      "t": "38.970-41.790",
+      "key": 17
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 41.79,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 7.67
+      },
+      "offset": 7.67,
+      "vo": "A neural network sits inside a physics solver, a heat transfer model, and estimates the soil's unfrozen water content and thermal conductivity.",
+      "phrase": "thermal conductivity.",
+      "shows": "the CONDUCTIVITY dial swings its needle as the second jar brightens, a plate reads THERMAL CONDUCTIVITY",
+      "sfx": "tick",
+      "means": "thermal conductivity",
+      "rehook": "",
+      "draw": {
+        "subject": "the CONDUCTIVITY dial",
+        "action": "swings its needle as the second jar brightens",
+        "emotion": "focused",
+        "annotation": "THERMAL CONDUCTIVITY"
+      },
+      "choreo": {
+        "primary": "the CONDUCTIVITY dial swings its needle as the second jar brightens, a plate reads THERMAL CONDUCTIVITY",
+        "reaction": "the jar brightens",
+        "ambient": "the dials twitch, rivets pop, steam puffs"
+      },
+      "t": "41.790-43.940",
+      "key": 18
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 43.94,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Those soil properties are uncertain, so the model can update them. Penn State's Ming Xiao writes that as new data arrives, the twin adjusts. Keep one more number in mind. The team named it.",
+      "phrase": "Those soil properties are",
+      "shows": "the two needles swing through wide pale arcs, a plate reads UNCERTAIN SOIL PROPERTIES",
+      "sfx": "creak",
+      "means": "uncertain soil properties",
+      "rehook": "",
+      "draw": {
+        "subject": "the two needles",
+        "action": "swing through wide pale arcs",
+        "emotion": "puzzled",
+        "annotation": "UNCERTAIN SOIL PROPERTIES"
+      },
+      "choreo": {
+        "primary": "the two needles swing through wide pale arcs, a plate reads UNCERTAIN SOIL PROPERTIES",
+        "reaction": "the needles wobble",
+        "ambient": "the needles breathe, the beads patter"
+      },
+      "t": "43.940-48.230",
+      "key": 19
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 48.23,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.29
+      },
+      "offset": 4.29,
+      "vo": "Those soil properties are uncertain, so the model can update them. Penn State's Ming Xiao writes that as new data arrives, the twin adjusts. Keep one more number in mind. The team named it.",
+      "phrase": "Penn State's Ming Xiao",
+      "shows": "an essay byline drops onto the ribbon and threads the first bead into the intake, a plate reads XIAO \u00b7 PUBLISHED ESSAY",
+      "sfx": "snap",
+      "means": "xiao \u00b7 published essay",
+      "rehook": "",
+      "draw": {
+        "subject": "an essay byline",
+        "action": "drops onto the ribbon and threads the first bead into the intake",
+        "emotion": "reading",
+        "annotation": "XIAO \u00b7 PUBLISHED ESSAY"
+      },
+      "choreo": {
+        "primary": "an essay byline drops onto the ribbon and threads the first bead into the intake, a plate reads XIAO \u00b7 PUBLISHED ESSAY",
+        "reaction": "the byline settles",
+        "ambient": "the needles breathe, the beads patter"
+      },
+      "t": "48.230-50.630",
+      "key": 20
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 50.63,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 6.69
+      },
+      "offset": 6.69,
+      "vo": "Those soil properties are uncertain, so the model can update them. Penn State's Ming Xiao writes that as new data arrives, the twin adjusts. Keep one more number in mind. The team named it.",
+      "phrase": "data arrives, the twin",
+      "shows": "white beads patter along the ribbon into the intake while the needle arcs shrink step by step, a plate reads NEW DATA IN \u00b7 MODEL ADJUSTS",
+      "sfx": "tick",
+      "means": "new data in \u00b7 model adjusts",
+      "rehook": "",
+      "draw": {
+        "subject": "white beads",
+        "action": "patter along the ribbon into the intake while the needle arcs shrink step by step",
+        "emotion": "proud",
+        "annotation": "NEW DATA IN \u00b7 MODEL ADJUSTS"
+      },
+      "choreo": {
+        "primary": "white beads patter along the ribbon into the intake while the needle arcs shrink step by step, a plate reads NEW DATA IN \u00b7 MODEL ADJUSTS",
+        "reaction": "the arcs tighten",
+        "ambient": "the needles breathe, the beads patter"
+      },
+      "t": "50.630-53.530",
+      "key": 21
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 53.53,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 9.59
+      },
+      "offset": 9.59,
+      "vo": "Those soil properties are uncertain, so the model can update them. Penn State's Ming Xiao writes that as new data arrives, the twin adjusts. Keep one more number in mind. The team named it.",
+      "phrase": "Keep one more number",
+      "shows": "a blank paper tag marked with a question mark swings in beside the ribbon, a plate reads ONE MORE NUMBER",
+      "sfx": "pop",
+      "means": "one more number",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank paper tag marked with a question mark",
+        "action": "swings in beside the ribbon",
+        "emotion": "curious",
+        "annotation": "ONE MORE NUMBER"
+      },
+      "choreo": {
+        "primary": "a blank paper tag marked with a question mark swings in beside the ribbon, a plate reads ONE MORE NUMBER",
+        "reaction": "the tag swings",
+        "ambient": "the needles breathe, the beads patter"
+      },
+      "t": "53.530-58.000",
+      "key": 23
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 58.0,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It was checked against separate seismic data, borehole temperatures and lab measurements.",
+      "phrase": "It was checked against",
+      "shows": "a bench of three witness instruments slides in while Strand feeds the printed line up from a floor port and the seismometer drum brightens as it passes, a plate reads SEISMIC",
+      "sfx": "tick",
+      "means": "seismic",
+      "rehook": "rehook: three witness instruments slide in and light one by one",
+      "draw": {
+        "subject": "a bench of three witness instruments",
+        "action": "slides in while Strand feeds the printed line up from a floor port and the seismometer drum brightens as it passes",
+        "emotion": "proud",
+        "annotation": "SEISMIC"
+      },
+      "choreo": {
+        "primary": "a bench of three witness instruments slides in while Strand feeds the printed line up from a floor port and the seismometer drum brightens as it passes, a plate reads SEISMIC",
+        "reaction": "the drum lights",
+        "ambient": "the instruments hum, Strand breathes"
+      },
+      "t": "58.000-60.590",
+      "key": 25
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 60.59,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.59
+      },
+      "offset": 2.59,
+      "vo": "It was checked against separate seismic data, borehole temperatures and lab measurements.",
+      "phrase": "borehole temperatures and lab",
+      "shows": "the borehole thermistor string brightens bead by bead, a plate reads BOREHOLE",
+      "sfx": "chime",
+      "means": "borehole",
+      "rehook": "",
+      "draw": {
+        "subject": "the borehole thermistor string",
+        "action": "brightens bead by bead",
+        "emotion": "proud",
+        "annotation": "BOREHOLE"
+      },
+      "choreo": {
+        "primary": "the borehole thermistor string brightens bead by bead, a plate reads BOREHOLE",
+        "reaction": "the string lights",
+        "ambient": "the instruments hum, Strand breathes"
+      },
+      "t": "60.590-61.830",
+      "key": 26
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 61.83,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.83
+      },
+      "offset": 3.83,
+      "vo": "It was checked against separate seismic data, borehole temperatures and lab measurements.",
+      "phrase": "lab measurements.",
+      "shows": "the lab oven brightens its window, a plate reads LAB",
+      "sfx": "pop",
+      "means": "lab",
+      "rehook": "",
+      "draw": {
+        "subject": "the lab oven",
+        "action": "brightens its window",
+        "emotion": "proud",
+        "annotation": "LAB"
+      },
+      "choreo": {
+        "primary": "the lab oven brightens its window, a plate reads LAB",
+        "reaction": "the oven lights",
+        "ambient": "the instruments hum, Strand breathes"
+      },
+      "t": "61.830-63.620",
+      "key": 27
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 63.62,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the fair case against it. It was tested on one road in one town. It predicts ground temperature and soil properties, not when a road will fail.",
+      "phrase": "Here's the fair case",
+      "shows": "the camera rises and pulls back from one road slab to a long painted shoreline while a short ribbon stub lies beside the slab, a plate reads THE FAIR CASE AGAINST",
+      "sfx": "whoosh",
+      "means": "the fair case against",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "rises and pulls back from one road slab to a long painted shoreline while a short ribbon stub lies beside the slab",
+        "emotion": "somber",
+        "annotation": "THE FAIR CASE AGAINST"
+      },
+      "choreo": {
+        "primary": "the camera rises and pulls back from one road slab to a long painted shoreline while a short ribbon stub lies beside the slab, a plate reads THE FAIR CASE AGAINST",
+        "reaction": "the shoreline unrolls",
+        "ambient": "the strip drifts, the slab sits, Strand bends"
+      },
+      "t": "63.620-67.050",
+      "key": 28
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 67.05,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 3.43
+      },
+      "offset": 3.43,
+      "vo": "Here's the fair case against it. It was tested on one road in one town. It predicts ground temperature and soil properties, not when a road will fail.",
+      "phrase": "one road in one",
+      "shows": "a caliper span snaps onto the road slab against the long shoreline, a plate reads ONE ROAD",
+      "sfx": "thud",
+      "means": "one road",
+      "rehook": "",
+      "draw": {
+        "subject": "a caliper span",
+        "action": "snaps onto the road slab against the long shoreline",
+        "emotion": "somber",
+        "annotation": "ONE ROAD"
+      },
+      "choreo": {
+        "primary": "a caliper span snaps onto the road slab against the long shoreline, a plate reads ONE ROAD",
+        "reaction": "the tag lands",
+        "ambient": "the strip drifts, the slab sits, Strand bends"
+      },
+      "t": "67.050-68.450",
+      "key": 29
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 68.45,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.83
+      },
+      "offset": 4.83,
+      "vo": "Here's the fair case against it. It was tested on one road in one town. It predicts ground temperature and soil properties, not when a road will fail.",
+      "phrase": "town. It predicts ground",
+      "shows": "a second tag drops beside it as Strand bends to span the slab and comes up short of the shoreline, a plate reads ONE TOWN",
+      "sfx": "thud",
+      "means": "one town",
+      "rehook": "",
+      "draw": {
+        "subject": "a second tag",
+        "action": "drops beside it as Strand bends to span the slab and comes up short of the shoreline",
+        "emotion": "somber",
+        "annotation": "ONE TOWN"
+      },
+      "choreo": {
+        "primary": "a second tag drops beside it as Strand bends to span the slab and comes up short of the shoreline, a plate reads ONE TOWN",
+        "reaction": "Strand bends",
+        "ambient": "the strip drifts, the slab sits, Strand bends"
+      },
+      "t": "68.450-69.830",
+      "key": 30
+    },
+    {
+      "id": 26,
+      "shot": 7,
+      "at_s": 69.83,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 6.21
+      },
+      "offset": 6.21,
+      "vo": "Here's the fair case against it. It was tested on one road in one town. It predicts ground temperature and soil properties, not when a road will fail.",
+      "phrase": "predicts ground temperature and",
+      "shows": "a thermometer needle swings up while the ribbon stub gains a tick at its tip, a plate reads TEMPERATURE",
+      "sfx": "clank",
+      "means": "temperature",
+      "rehook": "",
+      "draw": {
+        "subject": "a thermometer needle",
+        "action": "swings up while the ribbon stub gains a tick at its tip",
+        "emotion": "somber",
+        "annotation": "TEMPERATURE"
+      },
+      "choreo": {
+        "primary": "a thermometer needle swings up while the ribbon stub gains a tick at its tip, a plate reads TEMPERATURE",
+        "reaction": "the strip dips",
+        "ambient": "the strip drifts, the slab sits, Strand bends"
+      },
+      "t": "69.830-72.530",
+      "key": 31
+    },
+    {
+      "id": 27,
+      "shot": 7,
+      "at_s": 72.53,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 8.91
+      },
+      "offset": 8.91,
+      "vo": "Here's the fair case against it. It was tested on one road in one town. It predicts ground temperature and soil properties, not when a road will fail.",
+      "phrase": "not when a road",
+      "shows": "a tag reading ROAD FAILURE drops beside it and a strike-through crosses it, a plate reads NOT ROAD FAILURE",
+      "sfx": "crack",
+      "means": "not road failure",
+      "rehook": "",
+      "draw": {
+        "subject": "a tag reading ROAD FAILURE",
+        "action": "drops beside it and a strike-through crosses it",
+        "emotion": "somber",
+        "annotation": "NOT ROAD FAILURE"
+      },
+      "choreo": {
+        "primary": "a tag reading ROAD FAILURE drops beside it and a strike-through crosses it, a plate reads NOT ROAD FAILURE",
+        "reaction": "the tag cracks",
+        "ambient": "the strip drifts, the slab sits, Strand bends"
+      },
+      "t": "72.530-74.780",
+      "key": 32
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 74.78,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It's a research framework, and the sources report no deployment. The public summaries report no accuracy number. That's the number I promised. There isn't one.",
+      "phrase": "It's a research framework,",
+      "shows": "the taped dial rolls into a pool of white light as an engraved plate clips onto its housing, a plate reads RESEARCH FRAMEWORK",
+      "sfx": "thud",
+      "means": "research framework",
+      "rehook": "",
+      "draw": {
+        "subject": "the taped dial",
+        "action": "rolls into a pool of white light as an engraved plate clips onto its housing",
+        "emotion": "somber",
+        "annotation": "RESEARCH FRAMEWORK"
+      },
+      "choreo": {
+        "primary": "the taped dial rolls into a pool of white light as an engraved plate clips onto its housing, a plate reads RESEARCH FRAMEWORK",
+        "reaction": "the plate clips on",
+        "ambient": "the light breathes, the glass shines"
+      },
+      "t": "74.780-78.170",
+      "key": 33
+    },
+    {
+      "id": 29,
+      "shot": 8,
+      "at_s": 78.17,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.39
+      },
+      "offset": 3.39,
+      "vo": "It's a research framework, and the sources report no deployment. The public summaries report no accuracy number. That's the number I promised. There isn't one.",
+      "phrase": "deployment. The public summaries",
+      "shows": "a second engraved plate snaps onto the dial housing beside the ribbon stub, a plate reads NO DEPLOYMENT REPORTED",
+      "sfx": "clunk",
+      "means": "no deployment reported",
+      "rehook": "",
+      "draw": {
+        "subject": "a second engraved plate",
+        "action": "snaps onto the dial housing beside the ribbon stub",
+        "emotion": "calm",
+        "annotation": "NO DEPLOYMENT REPORTED"
+      },
+      "choreo": {
+        "primary": "a second engraved plate snaps onto the dial housing beside the ribbon stub, a plate reads NO DEPLOYMENT REPORTED",
+        "reaction": "the plate clips on",
+        "ambient": "the light breathes, the glass shines"
+      },
+      "t": "78.170-79.370",
+      "key": 34
+    },
+    {
+      "id": 30,
+      "shot": 8,
+      "at_s": 79.37,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.59
+      },
+      "offset": 4.59,
+      "vo": "It's a research framework, and the sources report no deployment. The public summaries report no accuracy number. That's the number I promised. There isn't one.",
+      "phrase": "The public summaries report",
+      "shows": "the dial label plate swivels into view, a plate reads ACCURACY",
+      "sfx": "slide",
+      "means": "accuracy",
+      "rehook": "",
+      "draw": {
+        "subject": "the dial label plate",
+        "action": "swivels into view",
+        "emotion": "reading",
+        "annotation": "ACCURACY"
+      },
+      "choreo": {
+        "primary": "the dial label plate swivels into view, a plate reads ACCURACY",
+        "reaction": "the label settles",
+        "ambient": "the light breathes, the glass shines"
+      },
+      "kick": true,
+      "t": "79.370-81.570",
+      "key": 35
+    },
+    {
+      "id": 31,
+      "shot": 8,
+      "at_s": 81.57,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 6.79
+      },
+      "offset": 6.79,
+      "vo": "It's a research framework, and the sources report no deployment. The public summaries report no accuracy number. That's the number I promised. There isn't one.",
+      "phrase": "number. That's the number",
+      "shows": "the tape lifts at a corner and tears slowly from the window over the ribbon stub's blank end, a plate reads NO ACCURACY NUMBER IN PUBLIC SUMMARIES",
+      "sfx": "scratch",
+      "means": "no accuracy number in public summaries",
+      "rehook": "",
+      "draw": {
+        "subject": "the tape",
+        "action": "lifts at a corner and tears slowly from the window over the ribbon stub's blank end",
+        "emotion": "puzzled",
+        "annotation": "NO ACCURACY NUMBER IN PUBLIC SUMMARIES"
+      },
+      "choreo": {
+        "primary": "the tape lifts at a corner and tears slowly from the window over the ribbon stub's blank end, a plate reads NO ACCURACY NUMBER IN PUBLIC SUMMARIES",
+        "reaction": "the tape tears",
+        "ambient": "the light breathes, the glass shines"
+      },
+      "t": "81.570-85.590",
+      "key": 36
+    },
+    {
+      "id": 32,
+      "shot": 8,
+      "at_s": 85.59,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 10.81
+      },
+      "offset": 10.81,
+      "vo": "It's a research framework, and the sources report no deployment. The public summaries report no accuracy number. That's the number I promised. There isn't one.",
+      "phrase": "isn't one.",
+      "shows": "the dial window opens to plain empty glass under the light, a plate reads THERE ISN'T ONE",
+      "sfx": "creak",
+      "means": "there isn't one",
+      "rehook": "",
+      "draw": {
+        "subject": "the dial window",
+        "action": "opens to plain empty glass under the light",
+        "emotion": "calm",
+        "annotation": "THERE ISN'T ONE"
+      },
+      "choreo": {
+        "primary": "the dial window opens to plain empty glass under the light, a plate reads THERE ISN'T ONE",
+        "reaction": "the glass shines",
+        "ambient": "the light breathes, the glass shines"
+      },
+      "t": "85.590-88.170",
+      "key": 38
+    },
+    {
+      "id": 33,
+      "shot": 9,
+      "at_s": 88.17,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.79
+      },
+      "offset": 0.79,
+      "vo": "So it holds up as a method. The claim stays small.",
+      "phrase": "holds up as a",
+      "shows": "the steel frame snaps around the first tenth of the ribbon, a plate reads HOLDS UP AS A METHOD",
+      "sfx": "snap",
+      "means": "holds up as a method",
+      "rehook": "",
+      "draw": {
+        "subject": "the steel frame",
+        "action": "snaps around the first tenth of the ribbon",
+        "emotion": "firm",
+        "annotation": "HOLDS UP AS A METHOD"
+      },
+      "choreo": {
+        "primary": "the steel frame snaps around the first tenth of the ribbon, a plate reads HOLDS UP AS A METHOD",
+        "reaction": "the frame rings",
+        "ambient": "the frame rivets settle, the ribbon edge flutters"
+      },
+      "t": "88.170-90.030",
+      "key": 40
+    },
+    {
+      "id": 34,
+      "shot": 9,
+      "at_s": 90.03,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.65
+      },
+      "offset": 2.65,
+      "vo": "So it holds up as a method. The claim stays small.",
+      "phrase": "claim stays small.",
+      "shows": "a small plate snaps under the frame, a plate reads THE CLAIM STAYS SMALL",
+      "sfx": "tick",
+      "means": "the claim stays small",
+      "rehook": "",
+      "draw": {
+        "subject": "a small plate",
+        "action": "snaps under the frame",
+        "emotion": "calm",
+        "annotation": "THE CLAIM STAYS SMALL"
+      },
+      "choreo": {
+        "primary": "a small plate snaps under the frame, a plate reads THE CLAIM STAYS SMALL",
+        "reaction": "the plate snaps",
+        "ambient": "the frame rivets settle, the ribbon edge flutters"
+      },
+      "t": "90.030-92.780",
+      "key": 41
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 92.78,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+      "phrase": "A separate study of",
+      "shows": "a black-bordered newsprint chart card slides over the scene with a SEPARATE STUDY stamp while a hairline of ribbon stays pinned at its left edge, a plate reads SEPARATE STUDY \u00b7 ARCTIC COASTAL PLAIN",
+      "sfx": "page",
+      "means": "separate study \u00b7 arctic coastal plain",
+      "rehook": "rehook: a black-bordered newsprint chart card slides over the whole scene",
+      "draw": {
+        "subject": "a black-bordered newsprint chart card",
+        "action": "slides over the scene with a SEPARATE STUDY stamp while a hairline of ribbon stays pinned at its left edge",
+        "emotion": "reading",
+        "annotation": "SEPARATE STUDY \u00b7 ARCTIC COASTAL PLAIN"
+      },
+      "choreo": {
+        "primary": "a black-bordered newsprint chart card slides over the scene with a SEPARATE STUDY stamp while a hairline of ribbon stays pinned at its left edge, a plate reads SEPARATE STUDY \u00b7 ARCTIC COASTAL PLAIN",
+        "reaction": "the card settles",
+        "ambient": "the curve glows, bars rise, the sliver pulses"
+      },
+      "t": "92.780-94.470",
+      "key": 42
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 94.47,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.69
+      },
+      "offset": 1.69,
+      "vo": "A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+      "phrase": "Plain, not this twin,",
+      "shows": "a tag stamps onto the chart corner, a plate reads NOT THE TWIN",
+      "sfx": "snap",
+      "means": "not the twin",
+      "rehook": "",
+      "draw": {
+        "subject": "a tag",
+        "action": "stamps onto the chart corner",
+        "emotion": "firm",
+        "annotation": "NOT THE TWIN"
+      },
+      "choreo": {
+        "primary": "a tag stamps onto the chart corner, a plate reads NOT THE TWIN",
+        "reaction": "the tag sticks",
+        "ambient": "the curve glows, bars rise, the sliver pulses"
+      },
+      "t": "94.470-96.530",
+      "key": 43
+    },
+    {
+      "id": 37,
+      "shot": 10,
+      "at_s": 96.53,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.75
+      },
+      "offset": 3.75,
+      "vo": "A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+      "phrase": "projects under high emissions",
+      "shows": "a stamp lands on the chart axis corner, a plate reads HIGH EMISSIONS ONLY",
+      "sfx": "stamp",
+      "means": "high emissions only",
+      "rehook": "",
+      "draw": {
+        "subject": "a stamp",
+        "action": "lands on the chart axis corner",
+        "emotion": "firm",
+        "annotation": "HIGH EMISSIONS ONLY"
+      },
+      "choreo": {
+        "primary": "a stamp lands on the chart axis corner, a plate reads HIGH EMISSIONS ONLY",
+        "reaction": "the stamp rings",
+        "ambient": "the curve glows, bars rise, the sliver pulses"
+      },
+      "t": "96.530-97.930",
+      "key": 44
+    },
+    {
+      "id": 38,
+      "shot": 10,
+      "at_s": 97.93,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.15
+      },
+      "offset": 5.15,
+      "vo": "A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+      "phrase": "less than ten percent",
+      "shows": "the curve runs flat and low across the chart past a UNDER 10 PERCENT marker, a plate reads UNDER 10% AT RISK",
+      "sfx": "ping",
+      "means": "under 10% at risk",
+      "rehook": "",
+      "draw": {
+        "subject": "the curve",
+        "action": "runs flat and low across the chart past a UNDER 10 PERCENT marker",
+        "emotion": "reading",
+        "annotation": "UNDER 10% AT RISK"
+      },
+      "choreo": {
+        "primary": "the curve runs flat and low across the chart past a UNDER 10 PERCENT marker, a plate reads UNDER 10% AT RISK",
+        "reaction": "the curve runs",
+        "ambient": "the curve glows, bars rise, the sliver pulses"
+      },
+      "t": "97.930-102.370",
+      "key": 45
+    },
+    {
+      "id": 39,
+      "shot": 10,
+      "at_s": 102.37,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 9.59
+      },
+      "offset": 9.59,
+      "vo": "A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+      "phrase": "twenty ninetys, about eighty",
+      "shows": "the curve bends into a cliff and the buildings bar climbs, a plate reads 2090S \u00b7 80% BUILDINGS",
+      "sfx": "whoosh",
+      "means": "2090s \u00b7 80% buildings",
+      "rehook": "",
+      "draw": {
+        "subject": "the curve",
+        "action": "bends into a cliff and the buildings bar climbs",
+        "emotion": "alarmed",
+        "annotation": "2090S \u00b7 80% BUILDINGS"
+      },
+      "choreo": {
+        "primary": "the curve bends into a cliff and the buildings bar climbs, a plate reads 2090S \u00b7 80% BUILDINGS",
+        "reaction": "the bar climbs",
+        "ambient": "the curve glows, bars rise, the sliver pulses"
+      },
+      "kick": true,
+      "t": "102.370-105.170",
+      "key": 47
+    },
+    {
+      "id": 40,
+      "shot": 10,
+      "at_s": 105.17,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 12.39
+      },
+      "offset": 12.39,
+      "vo": "A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+      "phrase": "sixty percent of roads",
+      "shows": "the roads bar climbs while the ribbon shrinks to a sliver on the century axis, a plate reads 60% ROADS",
+      "sfx": "tick",
+      "means": "60% roads",
+      "rehook": "",
+      "draw": {
+        "subject": "the roads bar",
+        "action": "climbs while the ribbon shrinks to a sliver on the century axis",
+        "emotion": "reading",
+        "annotation": "60% ROADS"
+      },
+      "choreo": {
+        "primary": "the roads bar climbs while the ribbon shrinks to a sliver on the century axis, a plate reads 60% ROADS",
+        "reaction": "the sliver glows",
+        "ambient": "the curve glows, bars rise, the sliver pulses"
+      },
+      "t": "105.170-106.650",
+      "key": 48
+    },
+    {
+      "id": 41,
+      "shot": 10,
+      "at_s": 106.65,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 13.87
+      },
+      "offset": 13.87,
+      "vo": "A separate study of the Arctic Coastal Plain, not this twin, projects under high emissions less than ten percent of infrastructure at risk by mid century. By the twenty ninetys, about eighty percent of buildings, sixty percent of roads and ninety percent of pipelines.",
+      "phrase": "ninety percent of pipelines.",
+      "shows": "the pipelines bar climbs, a plate reads 90% PIPELINES",
+      "sfx": "tick",
+      "means": "90% pipelines",
+      "rehook": "",
+      "draw": {
+        "subject": "the pipelines bar",
+        "action": "climbs",
+        "emotion": "reading",
+        "annotation": "90% PIPELINES"
+      },
+      "choreo": {
+        "primary": "the pipelines bar climbs, a plate reads 90% PIPELINES",
+        "reaction": "the bar climbs",
+        "ambient": "the curve glows, bars rise, the sliver pulses"
+      },
+      "t": "106.650-109.480",
+      "key": 49
+    },
+    {
+      "id": 42,
+      "shot": 11,
+      "at_s": 109.48,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Xiao said, quote, if we have, say, ten more years of data, that would be extremely valuable. Ten years. That's the other number.",
+      "phrase": "Xiao said, quote, if",
+      "shows": "a typewriter types Xiao's quote across the ribbon, a plate reads PENN STATE \u00b7 XIAO",
+      "sfx": "tap",
+      "means": "penn state \u00b7 xiao",
+      "rehook": "",
+      "draw": {
+        "subject": "a typewriter",
+        "action": "types Xiao's quote across the ribbon",
+        "emotion": "calm",
+        "annotation": "PENN STATE \u00b7 XIAO"
+      },
+      "choreo": {
+        "primary": "a typewriter types Xiao's quote across the ribbon, a plate reads PENN STATE \u00b7 XIAO",
+        "reaction": "the letters land",
+        "ambient": "the letters land, the ticks blink"
+      },
+      "t": "109.480-112.070",
+      "key": 50
+    },
+    {
+      "id": 43,
+      "shot": 11,
+      "at_s": 112.07,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.59
+      },
+      "offset": 2.59,
+      "vo": "Xiao said, quote, if we have, say, ten more years of data, that would be extremely valuable. Ten years. That's the other number.",
+      "phrase": "ten more years of",
+      "shows": "ten dashed year ticks extend beyond June 2024 on the ribbon, a plate reads 10 MORE YEARS OF DATA",
+      "sfx": "tick",
+      "means": "10 more years of data",
+      "rehook": "",
+      "draw": {
+        "subject": "ten dashed year ticks",
+        "action": "extend beyond June 2024 on the ribbon",
+        "emotion": "hopeful",
+        "annotation": "10 MORE YEARS OF DATA"
+      },
+      "choreo": {
+        "primary": "ten dashed year ticks extend beyond June 2024 on the ribbon, a plate reads 10 MORE YEARS OF DATA",
+        "reaction": "the ticks blink",
+        "ambient": "the letters land, the ticks blink"
+      },
+      "t": "112.070-116.730",
+      "key": 51
+    },
+    {
+      "id": 44,
+      "shot": 11,
+      "at_s": 116.73,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 7.25
+      },
+      "offset": 7.25,
+      "vo": "Xiao said, quote, if we have, say, ten more years of data, that would be extremely valuable. Ten years. That's the other number.",
+      "phrase": "Ten years. That's the",
+      "shows": "the blank tag flips to 10 beside the empty dial, a plate reads THE OTHER NUMBER",
+      "sfx": "stamp",
+      "means": "the other number",
+      "rehook": "",
+      "draw": {
+        "subject": "the blank tag",
+        "action": "flips to 10 beside the empty dial",
+        "emotion": "hopeful",
+        "annotation": "THE OTHER NUMBER"
+      },
+      "choreo": {
+        "primary": "the blank tag flips to 10 beside the empty dial, a plate reads THE OTHER NUMBER",
+        "reaction": "the tag locks",
+        "ambient": "the letters land, the ticks blink"
+      },
+      "t": "116.730-120.620",
+      "key": 53
+    },
+    {
+      "id": 45,
+      "shot": 12,
+      "at_s": 120.62,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the model isn't the hard part. The record is. Who lays the next cable, and who pays?",
+      "phrase": "So the model isn't",
+      "shows": "the cutaway returns to the cold open with the ruler and the lit 100 meters, a plate reads THE MODEL ISN'T THE HARD PART",
+      "sfx": "whoosh",
+      "means": "the model isn't the hard part",
+      "rehook": "",
+      "draw": {
+        "subject": "the cutaway",
+        "action": "returns to the cold open with the ruler and the lit 100 meters",
+        "emotion": "calm",
+        "annotation": "THE MODEL ISN'T THE HARD PART"
+      },
+      "choreo": {
+        "primary": "the cutaway returns to the cold open with the ruler and the lit 100 meters, a plate reads THE MODEL ISN'T THE HARD PART",
+        "reaction": "the ruler returns",
+        "ambient": "the pulse runs, the cursor blinks"
+      },
+      "t": "120.620-123.250",
+      "key": 54
+    },
+    {
+      "id": 46,
+      "shot": 12,
+      "at_s": 123.25,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.63
+      },
+      "offset": 2.63,
+      "vo": "So the model isn't the hard part. The record is. Who lays the next cable, and who pays?",
+      "phrase": "record is. Who lays",
+      "shows": "the dashed ribbon runs off frame with a blinking cursor tick, a plate reads THE RECORD IS",
+      "sfx": "tick",
+      "means": "the record is",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed ribbon",
+        "action": "runs off frame with a blinking cursor tick",
+        "emotion": "hopeful",
+        "annotation": "THE RECORD IS"
+      },
+      "choreo": {
+        "primary": "the dashed ribbon runs off frame with a blinking cursor tick, a plate reads THE RECORD IS",
+        "reaction": "the cursor blinks",
+        "ambient": "the pulse runs, the cursor blinks"
+      },
+      "t": "123.250-125.030",
+      "key": 55
+    },
+    {
+      "id": 47,
+      "shot": 12,
+      "at_s": 125.03,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.41
+      },
+      "offset": 4.41,
+      "vo": "So the model isn't the hard part. The record is. Who lays the next cable, and who pays?",
+      "phrase": "Who lays the next",
+      "shows": "a second dashed cable unspools toward the horizon while Strand looks into the lens, a plate reads WHO LAYS THE NEXT CABLE?",
+      "sfx": "chime",
+      "means": "who lays the next cable?",
+      "rehook": "",
+      "draw": {
+        "subject": "a second dashed cable",
+        "action": "unspools toward the horizon while Strand looks into the lens",
+        "emotion": "hopeful",
+        "annotation": "WHO LAYS THE NEXT CABLE?"
+      },
+      "choreo": {
+        "primary": "a second dashed cable unspools toward the horizon while Strand looks into the lens, a plate reads WHO LAYS THE NEXT CABLE?",
+        "reaction": "Strand looks up",
+        "ambient": "the pulse runs, the cursor blinks"
+      },
+      "t": "125.030-127.530",
+      "key": 56
+    },
+    {
+      "id": 48,
+      "shot": 12,
+      "at_s": 127.53,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.91
+      },
+      "offset": 6.91,
+      "vo": "So the model isn't the hard part. The record is. Who lays the next cable, and who pays?",
+      "phrase": "pays?",
+      "shows": "a blank work-order tag clips onto the dashed cable end, a plate reads AND WHO PAYS?",
+      "sfx": "pop",
+      "means": "and who pays?",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank work-order tag",
+        "action": "clips onto the dashed cable end",
+        "emotion": "hopeful",
+        "annotation": "AND WHO PAYS?"
+      },
+      "choreo": {
+        "primary": "a blank work-order tag clips onto the dashed cable end, a plate reads AND WHO PAYS?",
+        "reaction": "the tag swings",
+        "ambient": "the pulse runs, the cursor blinks"
+      },
+      "t": "127.530-130.880",
+      "key": 57
+    }
+  ]
+}
