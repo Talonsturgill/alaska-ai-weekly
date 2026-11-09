@@ -35,6 +35,17 @@ class RecordDraftTest(unittest.TestCase):
             self.assertEqual(actual[key.replace('-', '_')], value)
         fresh.assert_called_once_with(str(self.path))
 
+    def test_address_is_optional_and_never_needed(self):
+        # 2026-11-09: the routine keeps the owner's mailbox out of files and shell commands.
+        values = {k: v for k, v in self.values.items() if k != 'to'}
+        self.path.write_text(json.dumps(values))
+        with patch.object(receipt, 'fresh', side_effect=lambda p: p):
+            self.assertEqual(self.invoke(['--input', str(self.path)]), 0)
+        actual = json.loads((self.out / 'gmail_draft_receipt.json').read_text())
+        self.assertEqual(actual['draft_id'], 'r-123')
+        self.assertEqual(actual['to'], 'connected-profile')
+        self.assertEqual(self.invoke(['--draft-id', 'r-789']), 0)
+
     def test_legacy_flags_still_work(self):
         self.assertEqual(self.invoke(['--draft-id', 'r-456', '--to', 'test@example.com']), 0)
 

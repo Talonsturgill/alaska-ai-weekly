@@ -17,7 +17,9 @@ FIELDS = frozenset({
     'vo-report', 'music', 'sources', 'score', 'note', 'cost-json', 'date',
     'title', 'to', 'out-html', 'upgrades-file',
 })
-REQUIRED = frozenset({'post', 'video-url-vertical', 'video-url-square', 'sources', 'to'})
+# 'to' is accepted for old inputs but never required: the routine keeps the owner's address out
+# of every file and shell command and types it only into the Gmail create_draft call.
+REQUIRED = frozenset({'post', 'video-url-vertical', 'video-url-square', 'sources'})
 
 
 def unique_object(pairs):

@@ -12,6 +12,10 @@ For autonomous runs, write the verified result with the file tool and invoke:
 
   python3 scripts/record_draft.py --input out/dispatch/draft_input.json
 
+The input needs only `draft-id` (plus optional `subject`, `square-url`, `vertical-url`). Leave the
+connected mailbox address OUT of the file and out of every shell command (2026-11-09): the two
+runs that stalled for days on a host permission prompt both had it in a Bash command.
+
 The legacy flag interface remains supported:
 
   python3 scripts/record_draft.py --draft-id <id> --to <connected-profile-address> \\
@@ -41,7 +45,7 @@ def load_input(path):
             values = json.load(fh, object_pairs_hook=unique)
         if not isinstance(values, dict) or set(values) - FIELDS:
             raise ValueError('unknown field')
-        if not {'draft-id', 'to'}.issubset(values):
+        if 'draft-id' not in values:
             raise ValueError('missing field')
         if any(not isinstance(v, str) or not v.strip() or '\x00' in v for v in values.values()):
             raise ValueError('invalid value')
@@ -54,7 +58,8 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", help="Fresh JSON file of the verified connector draft result")
     ap.add_argument("--draft-id")
-    ap.add_argument("--to", help="Actual email address from the connected Gmail profile")
+    ap.add_argument("--to", help="OPTIONAL and omitted by the routine: the connected mailbox address "
+                                 "never goes into a shell command or a scratch file")
     ap.add_argument("--subject", default="")
     ap.add_argument("--square-url", default="")
     ap.add_argument("--vertical-url", default="")
@@ -68,8 +73,8 @@ def main(argv=None):
             ap.error(str(exc))
         for key, value in values.items():
             setattr(a, key, value)
-    if not a.draft_id or not a.to or not a.to.strip():
-        ap.error('draft-id and to are required')
+    if not a.draft_id:
+        ap.error('draft-id is required')
 
     if not a.draft_id.strip():
         print("refusing to write a receipt with no draft id", file=sys.stderr)
@@ -77,7 +82,7 @@ def main(argv=None):
 
     receipt = {
         "draft_id": a.draft_id,
-        "to": a.to,
+        "to": (a.to or "").strip() or "connected-profile",
         "subject": a.subject,
         "created_at": dt.datetime.now().isoformat(timespec="seconds"),
         "square_url": a.square_url,

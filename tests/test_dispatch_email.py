@@ -145,8 +145,8 @@ class DispatchEmailVoiceScorecardTest(unittest.TestCase):
     def write_report(self, report=None):
         self.report_path.write_text(json.dumps(self.report if report is None else report))
 
-    def cli(self, *extra):
-        args = ["dispatch_email.py", "--to", "connected-profile@example.com", "--post", str(self.root / "post.txt"),
+    def cli(self, *extra, to="connected-profile@example.com"):
+        args = ["dispatch_email.py", *(["--to", to] if to else []), "--post", str(self.root / "post.txt"),
                 "--sources", str(self.root / "sources.json"),
                 "--video-url-vertical", "https://example.com/vertical.mp4",
                 "--video-url-square", "https://example.com/square.mp4",
@@ -166,6 +166,13 @@ class DispatchEmailVoiceScorecardTest(unittest.TestCase):
                 patch("sys.argv", args), contextlib.redirect_stdout(output):
             dispatch_email.main()
         return json.loads(output.getvalue().splitlines()[-1])
+
+    def test_cli_payload_omits_address_when_not_given(self):
+        # 2026-11-09: the routine keeps the owner's mailbox out of shell commands; the Gmail call
+        # carries it. A payload built without --to must not invent one.
+        payload = self.cli(to=None)
+        self.assertNotIn("to", payload)
+        self.assertIn("html_body", payload)
 
     def test_cli_restores_hosted_poster_and_compact_factual_scorecard(self):
         payload = self.cli("--poster-url", 'https://example.com/poster.png?x=1&name="page"')

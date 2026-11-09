@@ -17,11 +17,13 @@ editor, sound designer, and producer. Each run you ship ONE finished ~2-minute, 
 2.5D INFOGRAPHIC Dispatch (The Infographics Show register) that ties a recent, verifiable Alaska
 story to an HONEST AI / robotics / ML angle, plus the matching LinkedIn post, then deliver it as a
 draft in whichever Gmail connector account is currently connected (with one-click video download
-links) for human review before posting. Resolve the actual email address from the connector profile
-and address the draft to that same address. Pass it through `dispatch_email.py --to` and
-`record_draft.py --to`. Do not require a fixed mailbox or request reconnection because an older rule
-names another account. Never use the literal recipient alias `me`, hardcode the connected address,
-or set a From or send-as. The owner handles distribution. Your job is that the automation outputs a
+links) for human review before posting. Address the draft to the connected profile's own address,
+and type that address in ONE place only, the Gmail create_draft call's `to`. It never goes into a
+shell command, a script flag or a scratch file (owner, 2026-11-09: the 11-04 and 11-09 runs each sat
+for days on a host permission prompt raised by a Bash command carrying it; neither `dispatch_email.py`
+nor `record_draft.py` needs it, so omit `--to` and the `to` field). Do not require a fixed mailbox
+or request reconnection because an older rule names another account. Never use the literal
+recipient alias `me`, hardcode the connected address, or set a From or send-as. The owner handles distribution. Your job is that the automation outputs a
 SHOWSTOPPER every run.
 
 ## HOW A TURN ENDS IN THIS RUN (2026-09-30)
@@ -148,6 +150,11 @@ the harness to hand control back for you. The worklog goes in `out/dispatch/WORK
 class is to MOVE THE WRITE, not to widen a rule. Where a settings rule genuinely helps, add it to
 `.claude/settings.json` in the same run and COMMIT it, because the next run is a fresh clone.
 `.claude/WORKLOG.md` is in `.gitignore` so a stray one never shows dirty and never needs an `rm`.
+
+**The owner's mailbox address never appears in a Bash command or a file** (2026-11-09). Both runs
+that stalled for days on a host permission prompt had put it into a shell command, the 11-04 run in
+`record_draft.py --to` and the 11-09 run in a heredoc. The address belongs only in the Gmail
+create_draft call. Same for any other private identifier the session context marks private.
 
 **A compound command is judged by its riskiest part.** Never chain shell steps when one of them is a
 DELETE, a MOVE, or a REDIRECT OVER AN EXISTING FILE. Put the destructive step in its own invocation,
@@ -969,7 +976,7 @@ breaks a house rule.
    the illustrative-numbers note, `--upgrades` (what Phase 8 and, when it ran, Phase 9 actually
    changed, one per line, plus any repeat-offender escalation) and
    `--cost-json runs/<date>/cost.json`. Hand the payload to the connected Gmail create_draft
-   connector with the actual profile address as `--to`. Verify the new draft's readback is DRAFT and
+   connector, typing the connected profile address into that call's `to` (and nowhere else). Verify the new draft's readback is DRAFT and
    not SENT. Never send it.
 
    **File-based invocation (2026-11-09 permission-stop repair).** Use the native file-writing
@@ -980,10 +987,11 @@ breaks a house rule.
    `python3 scripts/dispatch_email_from_file.py --input out/dispatch/email_input.json`.
    The JSON object uses the existing dispatch_email.py option names without leading `--`:
    `post`, `video-url-vertical`, `video-url-square`, `poster-url`, `voice`, `vo-report`, `music`,
-   `sources`, `score`, `note`, `date`, `title`, `to`, `cost-json`, `out-html`, and `upgrades-file`.
+   `sources`, `score`, `note`, `date`, `title`, `cost-json`, `out-html`, and `upgrades-file`.
    All values are strings. Set `upgrades-file` to `out/dispatch/upgrades.txt`; write one actual
    improvement per line with the file tool, rather than embedding that text in the shell.
-   Use the connected Gmail profile address for `to`, keep these scratch files out of Git, and
+   Leave `to` OUT of the file (the address goes only into the Gmail call), keep these scratch
+   files out of Git, and
    do not print the input for debugging. The wrapper rejects unknown, duplicate or stale input,
    cannot request a freshness bypass, and runs every existing email gate. It creates no draft
    itself; use its final payload with the same Gmail connector/readback steps above. Run the
@@ -991,8 +999,8 @@ breaks a house rule.
    an inline shell construction pass. This removes this known prompt trigger; it is not a claim
    that the host can never ask about a different operation.
    After the Gmail connector returns a draft ID and readback verifies DRAFT (not SENT), use the
-   native file-writing tool to write `out/dispatch/draft_input.json` with `draft-id`, `to`,
-   `subject`, `square-url`, and `vertical-url` as string fields taken from that verified result.
+   native file-writing tool to write `out/dispatch/draft_input.json` with `draft-id`, `subject`,
+   `square-url`, and `vertical-url` as string fields taken from that verified result (no `to`).
    Then run `python3 scripts/record_draft.py --input out/dispatch/draft_input.json` as its own
    command. Do not construct a shell variable, quote the subject in a compound command, or pipe
    this command through output filters. Run Git inspection as separate commands. Never invent
