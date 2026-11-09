@@ -3979,3 +3979,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 ## 2026-11-06 weekly machine pass
 - Shipped: empty-top-of-square gate before the render, VO-gap air in the audio report (room tone was masked 23.2 dB under the music, not missing), held beats owe a rig before the render, caption cheap-levers brief, Gate 0A stale hero check. No engine advance.
 - Escalated: held-figure stamp strike with squash and settle (lib helper), text-fit-local-coordinate-components.
+
+## 2026-11-08 (The Ground Takes Notes)
+- Shipped: panel median 7.02 (j1 7.17, editor 7.02, flow 6.57) at round 8, ship_gate PASS, source gates and preflight clear.
+- In-run fixes: honest two-panel chart with y axis and labelled comparator, sliver mapped to the century axis, caption quote punctuation moved inside the closing quote (build_scenes.py, self-test updated), ambience and music dips at VO gaps, loudnorm LRA target widened to 11 so delivered LRA is 7.5, S7 clip and floor cable, dial and tag shading.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-08).

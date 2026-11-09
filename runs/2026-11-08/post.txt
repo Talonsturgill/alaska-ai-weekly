@@ -1,0 +1,33 @@
+Two 1 km cables. 100 meters of data. No accuracy number in the public summaries.
+The model is not the hard part. The record is.
+
+Researchers buried two fiber optic cables under a road embankment in Utqiagvik.
+Each is 1 km long.
+
+A team led by Penn State built a digital twin from that data.
+UAF's Dmitry Nicolsky is a co-author.
+The data came from 100 meters of that road, recorded from September 2021 to June 2024.
+
+The twin puts a neural network inside a heat transfer physics solver.
+The network estimates unfrozen water content and thermal conductivity.
+Eos editors call those soil properties uncertain.
+Penn State's Ming Xiao writes that as new data arrives, the twin adjusts.
+It was checked against separate seismic data, borehole temperatures and lab measurements.
+
+Now the test.
+It was tested on one road in one town.
+It predicts ground temperature and soil properties, not when a road will fail.
+The sources report no deployment.
+The public summaries report no accuracy number.
+
+The risk curve comes from a separate study of the Arctic Coastal Plain, not this twin.
+Under high emissions it projects less than 10% of infrastructure at risk by mid century.
+By the 2090s it projects about 80% of buildings, 60% of roads and 90% of pipelines.
+
+Xiao says, "If we have, say, 10 more years of data, that would be extremely valuable."
+That decade of record is the real build.
+
+Which Alaska road, runway or pipeline should get the next fiber line?
+Who should pay for the decade of data?
+
+#Alaska #ArtificialIntelligence #Permafrost #DigitalTwin

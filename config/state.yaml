@@ -3184,3 +3184,36 @@ dispatch_history:
     register: editorial-schematic
     camera_strategy: dolly-through
     light_story: noon-hard
+- date: '2026-11-08'
+  topic: Permafrost digital twin under a Utqiagvik road
+  slug: dispatch-2026-11-08
+  key_entities:
+  - Penn State
+  - University of Alaska Fairbanks
+  - Utqiagvik
+  - Dmitry Nicolsky
+  - Ming Xiao
+  archetype: explainer with an honest absence
+  palette: pale overcast snow light, warm stone and umber, violet cable hero, pewter
+    instruments, terracotta thaw line, caution yellow tape
+  voice: Sulafat
+  stance: curious
+  angle: A neural network inside a physics solver, fed by buried fiber under one Utqiagvik
+    road, learns the hidden soil as data arrives, and the work now is the years of
+    record and the fiber in the ground.
+  hero: Strand
+  cast:
+  - Strand
+  - Knot
+  - Dial
+  - Ribbon
+  - NumTag
+  - Heat
+  composition:
+    pov: exploded-diagram
+    motion_vector: scroll-data
+    hero_treatment: single-organic-hero
+    layout: grid-modular
+    register: overcast-section
+    camera_strategy: lateral-travel
+    light_story: overcast-snow-light
