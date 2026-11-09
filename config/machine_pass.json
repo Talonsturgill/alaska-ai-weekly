@@ -1,17 +1,18 @@
 {
   "last_pass": {
-    "date": "2026-11-06",
+    "date": "2026-11-09",
     "shipped": [
-      "empty top of the square gated before the render (dead_space, preflight row)",
-      "ambience and VO gap air in audio_report",
-      "held beats owe a rig before the render (held_plan gate)",
-      "caption cheap levers brief before the first draft",
-      "Gate 0A fails stale hero or centered field after restage"
+      "lib/figureidle.tsx, IdleFigure and StrikeProp, so held figures shift weight and a stamp or door lands",
+      "figure_rig_check as a make_cut source gate, a film whose people only breathe is stopped before the render",
+      "Gate 0A fails a board that never draws Alaska (alaska_cue_check)",
+      "Gate 0F, editor_vo_check, the editor reads the script against the claims before the first synth",
+      "vo_synth_gemini refuses to run until Gate 0F has stamped the current script"
     ],
-    "engine_advance": "none",
+    "engine_advance": "lib/figureidle.tsx (IdleFigure, figureIdle, headTransform, StrikeProp, strike), measured 6.6x on a figure and 2.3x on a stamp inside the evidence strip on the beat",
     "escalated": [
-      "held-figure motion stamp strike with squash and settle (lib helper, next engine advance)",
-      "text-fit-local-coordinate-components (10-29)"
+      "composition hero scale (repeat 3, second escalation): nothing measures hero size and the top-band gate read 33.7 percent on a film every seat called empty, because the wall panels count as information. Next pass, measure the hero's own bounding rect from held_beat_probe's frames and calibrate the floor on the first two films that use it.",
+      "text-fit-local-coordinate-components (second escalation): could not be reproduced this week on two scratch builds, the speculative fix was reverted rather than shipped unseen",
+      "honesty-strap-contrast (repeat 1): not reached, the repeat offenders came first"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
