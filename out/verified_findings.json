@@ -1,0 +1,112 @@
+{
+  "_validation_note": "Validation completed 2026-05-23. Window: 2026-05-16 to 2026-05-23. 7 stories assessed; 4 verified, 3 dropped. Key strips: $1M civil penalty claim (HB 239, not on any source); $46B LNG figure (unverified); Cook Inlet/data-center nexus (not in LNG adjournment sources — must use background context from ADN May 5 if needed). Stories 5, 6, 7 dropped.",
+  "verified_stories": [
+    {
+      "story_title": "SB 250 Data-Center Utility Bill Passes Senate, Dies in House at Adjournment",
+      "verification_status": "verified",
+      "needs_softening": true,
+      "softening_note": "Say 'did not advance past House committee before adjournment' not 'died.' ADN adjournment article does NOT mention SB 250 — cannot be used to corroborate SB 250 specifics.",
+      "confirmed_claims": [
+        "SB 250 relates to utility service for data centers (sponsored by Sen. Löki Tobin)",
+        "Senate passed SB 250 Y14 N5 E1 on May 16, 2026",
+        "House Community and Regional Affairs committee heard and held SB 250 on May 18, 2026",
+        "Bill did not advance past House committee before session adjourned May 20"
+      ],
+      "sources": [
+        {"url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=SB+250", "outlet": "Alaska State Legislature (primary)", "pub_date": "2026-05-18", "in_window": true},
+        {"url": "https://www.billtrack50.com/billdetail/1974439", "outlet": "BillTrack50", "pub_date": "2026-05-18", "in_window": true}
+      ]
+    },
+    {
+      "story_title": "Legislature Passes HB 239 Criminalizing AI-Generated Child Sexual Abuse Material; Bill Awaits Dunleavy",
+      "verification_status": "needs_softening",
+      "needs_softening": true,
+      "softening_note": "CORRECTION: Senate passed May 19 (not May 20). House passed 39-1 on May 20. STRIP: $1 million civil penalty per incident claim — NOT found on any fetched source. Governor's office flagged concerns is confirmed.",
+      "confirmed_claims": [
+        "HB 239 passed the Alaska Senate 20-0 on May 19, 2026",
+        "HB 239 passed the Alaska House with concurrence 39-1 on May 20, 2026",
+        "Bill criminalizes AI-generated obscene child sexual abuse material",
+        "Bill raises Alaska age of sexual consent to 18",
+        "Governor's office expressed concerns about inadequate deliberation and potential legal problems",
+        "Bill awaiting governor's action (sign, veto, or allow to become law without signature)"
+      ],
+      "stripped_claims": [
+        "$1 million civil penalty per incident on AI platforms — NOT FOUND on any source, do not use"
+      ],
+      "sources": [
+        {"url": "https://www.akleg.gov/Basis/Bill/Detail/34?Root=HB+239", "outlet": "Alaska State Legislature (primary)", "pub_date": "2026-05-20", "in_window": true},
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-20/alaska-legislature-passes-sweeping-crime-bill-raising-age-of-consent-to-18-on-last-day-of-session", "outlet": "Alaska Public Media", "pub_date": "2026-05-20", "in_window": true},
+        {"url": "https://www.adn.com/politics/alaska-legislature/2026/05/20/alaska-legislature-passes-sweeping-crime-and-public-safety-bill/", "outlet": "Anchorage Daily News", "pub_date": "2026-05-21", "in_window": true}
+      ]
+    },
+    {
+      "story_title": "Alaska Legislature Adjourns Regular Session, Opens Special Session on LNG Pipeline",
+      "verification_status": "needs_softening",
+      "needs_softening": true,
+      "softening_note": "STRIP: '$46 billion LNG pipeline' figure — not found on any fetched source. STRIP: 'Cook Inlet gas supply depleted for data centers' — not in LNG/adjournment sources. If connecting LNG to data center energy supply, writer must use background context from ADN May 5 article (Chugach/GVEA Cook Inlet gas statements) and label it as such. Core facts verified: Legislature adjourned May 20, special session opened May 21 on Alaska LNG pipeline tax breaks.",
+      "confirmed_claims": [
+        "Alaska Legislature adjourned regular session on May 20, 2026",
+        "Governor Dunleavy called a special session beginning May 21, 2026 focused on the Alaska LNG project",
+        "Special session centers on replacing a roughly $1 billion annual property tax with a volume-based throughput tax",
+        "Three competing LNG tax proposals: governor's (6-cent volumetric), House substitute (15-cent plus Fairbanks spur line and $40M community impact fund), Senate substitute (40-cent)"
+      ],
+      "stripped_claims": [
+        "'$46 billion LNG pipeline' — dollar figure not found in any fetched source",
+        "'Cook Inlet gas supply depleted for data centers' — not in any fetched LNG/adjournment source (use ADN May 5 as background context if needed)"
+      ],
+      "sources": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-21/alaska-lawmakers-adjourn-one-session-and-begin-another-to-mull-tax-breaks-for-lng-project", "outlet": "Alaska Public Media", "pub_date": "2026-05-21", "in_window": true},
+        {"url": "https://www.adn.com/politics/alaska-legislature/2026/05/21/alaska-legislature-adjourns-with-eye-toward-special-session/", "outlet": "Anchorage Daily News", "pub_date": "2026-05-21", "in_window": true},
+        {"url": "https://www.adn.com/business-economy/energy/2026/05/16/lawmakers-race-to-advance-alaska-lng-bill-before-session-concludes/", "outlet": "Anchorage Daily News", "pub_date": "2026-05-16", "in_window": true}
+      ]
+    },
+    {
+      "story_title": "Alaska Autonomous Vehicle Bill (HB 217) Stalls in Senate, Dies at Adjournment",
+      "verification_status": "needs_softening",
+      "needs_softening": true,
+      "softening_note": "CORRECTION: House vote was Y39 E1 (39 yes, 1 excused) — not '39-1' which implies a no vote. Senate State Affairs committee 2-Do Not Pass / 1-Do Pass on May 17 confirmed. Bill did not advance past Senate committee before adjournment May 20.",
+      "confirmed_claims": [
+        "HB 217 addresses autonomous vehicle regulation and commercial driver licensing in Alaska",
+        "Senate State Affairs Committee issued 2-Do Not Pass / 1-Do Pass report on May 17, 2026",
+        "House passed HB 217 Y39 E1 (39 yes, 1 excused) on April 30, 2026",
+        "Bill did not advance past Senate committee before session adjourned May 20, 2026"
+      ],
+      "stripped_claims": [
+        "'passed House 39-1' — correct to 'Y39 E1' (no member voted against; 1 excused)"
+      ],
+      "sources": [
+        {"url": "https://www.akleg.gov/basis/Bill/Detail/34?Root=HB217", "outlet": "Alaska State Legislature (primary)", "pub_date": "2026-05-17", "in_window": true},
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-05-04/alaska-house-advances-bill-regulating-autonomous-vehicles", "outlet": "Alaska Public Media (background context, outside window)", "pub_date": "2026-05-04", "in_window": false, "background_context": true}
+      ]
+    }
+  ],
+  "dropped_stories": [
+    {"story_title": "Alaska Native Language Task Force Bill (SB 287)", "reason": "LegiScan returned HTTP 403; zero verifiable in-window sources."},
+    {"story_title": "NOAA 2026 Bering Sea Bottom Trawl Survey", "reason": "Not an AI/technology story. Dropped on scope grounds."},
+    {"story_title": "Sealaska Heritage AI-Powered Tlingit Language Translator", "reason": "Single source; Juneau Empire URL returns HTTP 404. Cannot verify."}
+  ],
+  "background_context_available": [
+    {
+      "item": "Chugach Electric / Golden Valley Electric Cook Inlet gas supply warning",
+      "source": "ADN May 5, 2026 — https://www.adn.com/alaska-news/military/2026/05/05/the-military-wants-to-host-data-centers-in-alaska-raising-questions-about-whether-theres-enough-gas-to-power-them/",
+      "note": "Outside window. Use as background context if connecting LNG special session to data center energy supply."
+    },
+    {
+      "item": "Air Force data center solicitation at JBER/Eielson/Clear — May 29 proposal deadline",
+      "source": "U.S. Air Force, April 10, 2026 — https://www.af.mil/News/Article-Display/Article/4456660/daf-takes-steps-for-potential-alaskan-ai-data-centers/",
+      "note": "Outside window. Live upcoming deadline (6 days out). Use as context for stakes."
+    },
+    {
+      "item": "Stak Energy North Slope data center DNR preliminary lease",
+      "source": "ADN May 18, Northern Journal May 13 — already covered in Vol. 03. Public comment through June 15.",
+      "note": "In window (ADN May 18) but substantively already covered in Vol. 03 (May 15 post). Use as supporting context only."
+    }
+  ],
+  "validation_warnings": [
+    "HB 239: Senate passage date was May 19, not May 20. Correct in post.",
+    "HB 217: House vote was Y39 E1 (no member voted against), not 39-1.",
+    "LNG story: $46B figure unverified; Cook Inlet/data center nexus must use ADN May 5 background context if used at all.",
+    "HB 239: $1M civil penalty claim is unverified and must be stripped entirely.",
+    "ADN adjournment article cannot corroborate SB 250 specifics — it doesn't mention the bill."
+  ]
+}
