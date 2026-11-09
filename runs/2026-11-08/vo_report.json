@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.988,
+    "heard": "A road in Utkiakvik, Alaska, sits on frozen ground. Under it, researchers buried two fiber optic cables, each one kilometer long. They recorded temperature and seismic data from September 2021 to June 2024. The data came from 100 meters of that road. Penn State led a team that built a digital twin from that data, with Dimitri Nikolsky of the University of Alaska Fairbanks as a co-author. And there's one number about it the public summaries don't give. Hold that thought. A neural network sits inside a physics solver, a heat transfer model, and estimates the soil's unfrozen water content and thermal conductivity. Those soil properties are uncertain, so the model can update them. Penn State's Ming Xiao writes that as new data arrives, the twin adjusts. Keep one more number in mind. The team named it. It was checked against separate seismic data, borehole temperatures and lab measurements. Here's the fair case against it. It was tested on one road in one town. It predicts ground temperature and soil properties, not when a road will fail. It's a research framework, and the sources report no deployment. The public summaries report no accuracy number. That's the number I promised. There isn't one. So it holds up as a method. The claims stay small. A separate study of the Arctic coastal plain, not this twin, projects under high emissions less than 10% of infrastructure at risk by mid-century. By the 2090s, about 80% of buildings, 60% of roads, and 90% of pipelines. Xiao said, quote, if we have, say, 10 more years of data, that would be extremely valuable. 10 years. That's the other number. So the model isn't the hard part, the record is. Who lays the next cable? And who pays?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.023,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 5.28,
+        "voiced_frac": 0.48,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 128.4,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 128.4,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.987,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.987,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}
