@@ -19,8 +19,12 @@ import argparse, base64, json, datetime as dt, math, re, subprocess, sys
 from html import escape
 from pathlib import Path
 
-# Owner, 2026-09-13: use the connected Gmail profile's actual address via --to.
+# Owner, 2026-09-13: the draft goes to the connected Gmail profile's actual address.
 # The literal alias "me" is rejected by Gmail. No fixed mailbox or From override.
+# 2026-11-09: --to is OPTIONAL and the routine omits it. The address is the owner's private
+# mailbox, and both runs that stalled for days on a host permission prompt (11-04, 11-09) had
+# put it into a shell command. Nothing here reads it back: the payload only carries it to the
+# Gmail create_draft call, which the run fills in itself. Keep the address out of Bash and files.
 # Run-freshness guard: refuse to email a PREVIOUS run's scratch (see run_guard.py
 # for the 07-18/07-19 stale-artifact incidents this prevents). Import from the
 # sibling scripts/ dir regardless of the caller's cwd.
@@ -507,7 +511,9 @@ def main():
                          "goes in Run notes, so the owner sees what each run cost and where it went.")
     ap.add_argument("--temporary", action="store_true", help="flag download links as temporary (~1h)")
     ap.add_argument("--date", default=dt.date.today().isoformat()); ap.add_argument("--title", default="")
-    ap.add_argument("--to", required=True, help="Actual email address from the connected Gmail profile")
+    ap.add_argument("--to", default="",
+                    help="OPTIONAL, and the routine omits it. Put the connected profile address only in the "
+                         "Gmail create_draft call, never in a shell command or a scratch file.")
     ap.add_argument("--out-html", default="")
     ap.add_argument("--no-freshness-check", action="store_true",
                     help="bypass the run-freshness guard (deliberate manual/standalone use only; "
@@ -573,7 +579,9 @@ def main():
                  json.dumps(copy_check, indent=2))
     if a.out_html:
         Path(a.out_html).write_text(html); print("wrote", a.out_html)
-    payload = {"subject": subject, "to": a.to, "html_body": html}
+    payload = {"subject": subject, "html_body": html}
+    if a.to.strip():
+        payload["to"] = a.to.strip()
     print(json.dumps(payload))   # LAST line = the draft payload for Gmail create_draft
 
 if __name__ == "__main__":

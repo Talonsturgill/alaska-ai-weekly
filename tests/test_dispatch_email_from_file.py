@@ -33,6 +33,12 @@ class FileDeliveryTest(unittest.TestCase):
         self.assertNotIn('--no-freshness-check', command)
         self.assertEqual(command[:2], [sys.executable, str(Path(delivery.__file__).with_name('dispatch_email.py'))])
 
+    def test_address_is_optional(self):
+        # 2026-11-09: the owner's mailbox stays out of the input file; the Gmail call carries it.
+        values = {k: v for k, v in self.values.items() if k != 'to'}
+        command = self.build(values)
+        self.assertFalse(any(arg.startswith('--to=') for arg in command))
+
     def test_upgrades_loaded_as_data_with_freshness_check(self):
         upgrades = Path(self.tmp.name) / 'upgrades.txt'
         upgrades.write_text("Literal $HOME and quotes ' retained\nSecond fix")
