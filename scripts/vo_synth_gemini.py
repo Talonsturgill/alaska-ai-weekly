@@ -563,6 +563,11 @@ def main():
     # vo_lines.json is irrelevant before this script has produced the new voice.
     subprocess.run([sys.executable, os.path.join(HERE, "vo_claims_check.py"),
                     "--before-synth"], check=True)
+    # GATE 0F (machine pass 2026-11-09): the editor reads the script against claims.json BEFORE a
+    # TTS call is spent. 11-09's five wording fixes arrived after the synth and cost a re-synth.
+    # editor_vo_check exits 1 with the remedy when the stamped verdict is missing, ship false, or
+    # older than the current vo_script.txt or claims.json.
+    subprocess.run([sys.executable, os.path.join(HERE, "editor_vo_check.py")], check=True)
     os.makedirs(AUD, exist_ok=True)
     with open(os.path.join(OUT, "vo_direction.json")) as stream:
         plan = json.load(stream)

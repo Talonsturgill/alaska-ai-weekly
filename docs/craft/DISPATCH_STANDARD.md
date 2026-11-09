@@ -81,6 +81,18 @@ document, not of the judge.
   shipped none and the panel named the same strips held_plan had. Two shadow HeldTravels on a
   scratch copy of Ep1106 lifted three of its held strips (2.9, 3.4, 5.1) over 6 percent. Put
   `gain={0}` on the rig where the stillness is the point.
+- **A held FIGURE performs on its beats: `<IdleFigure cues>` and `<StrikeProp>`** (`lib/figureidle.tsx`,
+  machine pass 2026-11-09, held-figure motion repeat 4: Motion the lowest axis on 10 of 15 cards from
+  10-28 to 11-09, "held figures show no weight shift"). A light sweep on a prop clears held_plan and
+  leaves the people statues. Keep the episode's own figure drawing and wrap every use in
+  `<IdleFigure f x footY h seed cues={[p.b(id), ...]}>`, the cues being the beats the figure is on
+  screen for: it commits to the other hip on each, five frames early so the evidence strip on the beat
+  sees it, the head following late and the off arm lifting (a function child gets the pose for its
+  own head and arms). A stamp, gavel, binder or door that lands goes in `<StrikeProp at>`:
+  anticipation, squash on contact, one overshoot. On FigureLook the 11-09 Person moves 0.18 percent
+  of the frame on its beat strips and 1.19 wrapped (`python3 scripts/figure_look_check.py`).
+  `scripts/figure_rig_check.py` (a make_cut source gate) fails a component taking `skin`, or the
+  art-direction hero, that draws no lib rig.
 - **The weight shift is applied ABOVE the feet.** Applying it at the character root slides
   the boots and their contact shadows along the ground, which reads as skating. Torso
   carries the full shift, legs about a third, boots stay planted.
@@ -117,6 +129,13 @@ document, not of the judge.
   and preflight's required `--top-only` row fail a film whose top quarter of the square is over
   45 percent low-information, a ceiling between the faulted films (48.7 to 56.6) and the clean ones
   (38.2 to 41.2). Texture does not clear it; a subject does.
+- **The set shows Alaska, in a thing drawn, not a word printed** (machine pass 2026-11-09). On 11-09
+  every seat wrote "generic courtroom, no Alaska cue" although a plate read ALASKA COURT SYSTEM, and
+  11-06 carried the axis on one map-pin beat. Put an Alaska thing in the set that stays across shots:
+  a window onto a named range, the state on a map on the wall, spruce outside, a bush plane, a ferry
+  schedule, the town the story happens in. `scripts/alaska_cue_check.py` (inside storyboard_check,
+  Gate 0A) fails a board none of whose beats DRAWS one and advises at one shot. Never Native imagery
+  as decoration; the cultural rules govern what is drawn.
 - **No overlay may occlude a character silhouette.** Compute it, do not eyeball it: the
   hard hat crown sits at `1180 - 454*scale` in scene space. A card that amputates the
   hero's head held for 2.8 seconds is the kind of thing that reads as broken, not as busy.

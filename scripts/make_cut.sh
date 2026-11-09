@@ -128,6 +128,11 @@ step staging          0 python3 scripts/staging_check.py
 # fails the source gates when a HELD strip sits in a shot that carries no rig (gain={0} on a rig is
 # an explicit opt-out). Held strips in rigged shots stay a NOTE: the remedy, not a number, is owed.
 step held_plan        2 python3 scripts/held_beat_check.py --source --gate
+# Machine pass 2026-11-09 (held-figure motion, repeat 4: every seat scored Motion 6.5 to 6.8 on 11-09,
+# "held figures show no weight shift"). held_plan passed because a light sweep on a prop counted
+# while the hand-rolled Person and the hero only breathed. A figure taking `skin`, and the hero named
+# in art_direction.json, must draw a lib rig (lib/figureidle.tsx IdleFigure with the beat cues).
+step figure_rig       2 python3 scripts/figure_rig_check.py
 # Machine pass 2026-11-06, a repeat offender (empty top of the square named by every seat on 10-31,
 # 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
 # 420 to 690); this fails the source gates when the film mean is over the ceiling calibrated on eight

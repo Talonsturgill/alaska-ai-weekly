@@ -114,7 +114,7 @@ log at wake so every run says whether the setting took.
 How to work on this model (each point written after a run that did the opposite):
 
 1. **The named gates are the verification budget.** `run_guard`, `story_gate`, `storyboard_check`,
-   Gates 0A to 0E, `flow_check`, `caption_check`, the panel and `ship_gate` are adversarial and
+   Gates 0A to 0F, `flow_check`, `caption_check`, the panel and `ship_gate` are adversarial and
    objective and stay exactly as written. Do not invent a re-check no gate asked for, do not re-read
    your own artifact to confirm it, do not spawn an agent to double-check your own work. When a gate
    passes, move on. One carve-out, which is not self-checking: verify what a SUBAGENT or a
@@ -733,6 +733,13 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   single question the piece answers. If it can't do all three without guessing it returns ship:false
   with the first line where it got lost. Rewrite the VO (§4.2) and re-run to ship:true BEFORE any
   synth.
+- GATE 0F (EDITOR ON THE SCRIPT, machine pass 2026-11-09): after 0E ships, the editor agent (no-spawn)
+  gets `out/dispatch/vo_script.txt` and `out/dispatch/claims.json` and reads every spoken line against
+  the claims it cites (verbs, tense, scope, absolutes), writing `out/dispatch/editor_vo.json`
+  `{"ship": bool, "findings": [{"line", "risk", "fix"}]}`. Apply the fixes to the script and re-run until
+  ship:true, then `python3 scripts/editor_vo_check.py --stamp`. `vo_synth_gemini.py` refuses to synth
+  unless that stamp matches the current script and claims, so any later wording edit needs a fresh
+  read. 11-09's editor found five wording risks only after the synth and they cost a re-synth.
 
 ## PHASE 5: BUILD (Remotion + voice + aligned captions)  (`run_cost.py phase voice`, then `build`)
 
