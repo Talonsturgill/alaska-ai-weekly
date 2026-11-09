@@ -1,0 +1,22 @@
+An AI found roughly 3x the quakes off the Peninsula, in one 2018 to 2019 catalog.
+The win is Alaska's data. No training strategy was substantially better, and local data to learn from improved the model.
+
+Two scientists did the work, G. Barcheck of Cornell and N. A. Ruppert of the USGS. They fine-tuned an existing deep-learning model called EQTransformer. The paper was published online October 28th in Earth and Space Science.
+
+They started from a catalog that human analysts had already checked. It came from an experiment with 75 seismometers on the seafloor and 30 on land. The array spanned about 700 kilometers from Kodiak to the Shumagin Islands and ran from 2018 to 2019.
+
+Then they tested a different starting model, waveform filters and different data splits. None was substantially better than the others. The checked picks and the local recordings were the inputs that counted.
+
+According to the authors, the result is roughly three times as many earthquakes as the analyst-checked catalog.
+
+The smallest quake it reliably catches dropped by 0.1 to 0.4 magnitude units, depending on the region. The biggest gains came far offshore and in the outer rise, the bulge where the ocean plate bends before it dives.
+
+With the extra small quakes, the map of where earthquakes cluster still matches earlier observations. That is a consistency check, not proof that every pick is real.
+
+The scope is narrow. The roughly 3x describes one catalog from 2018 and 2019.
+
+It says nothing about whether the ground shook more, and nothing here is a forecast. This read rests on the paper's abstract, because the full text wasn't reachable.
+
+If Alaska's own recordings are what made the model better, should seafloor seismometers off the Peninsula be standing infrastructure instead of a one-off experiment? Who should carry that cost?
+
+#Alaska #Seismology #EarthquakeScience #MachineLearning

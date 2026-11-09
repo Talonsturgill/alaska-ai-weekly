@@ -1,0 +1,304 @@
+{
+ "run_date": "2026-11-04",
+ "fact_check_verdict": "Abstract-level only (paper body 403). Say roughly 3x per the authors, never absolute counts. Not a claim about AEC. Do not claim long-run seismicity tripled.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "Two scientists built a machine-learning earthquake catalog for the Alaska Peninsula.",
+   "on_screen": "ML EARTHQUAKE CATALOG \u00b7 ALASKA PENINSULA",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Attribute to the study."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "They are G. Barcheck of Cornell and N. A. Ruppert of the U S G S.",
+   "on_screen": "BARCHECK \u00b7 CORNELL  RUPPERT \u00b7 USGS",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Initials only."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "It was published online October twenty-eighth in Earth and Space Science.",
+   "on_screen": "EARTH AND SPACE SCIENCE \u00b7 OCT 28",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Say published online."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The data come from a seafloor experiment in twenty eighteen and twenty nineteen.",
+   "on_screen": "AACSE \u00b7 2018 TO 2019",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "That experiment put seismometers on land and on the seafloor.",
+   "on_screen": "LAND + OCEAN-BOTTOM SEISMOMETERS",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "It used 105 broadband seismometers, thirty on land and seventy-five on the ocean floor.",
+   "on_screen": "30 LAND \u00b7 75 SEAFLOOR",
+   "source": "https://api.crossref.org/works/10.1785/0220200189",
+   "requires": [
+    "From Barcheck et al 2020 SRL, the experiment description, not the 2026 paper."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "The array covered about seven hundred kilometers of the subduction zone, from Kodiak to the Shumagin Islands.",
+   "on_screen": "~700 KM \u00b7 KODIAK TO SHUMAGINS",
+   "source": "https://api.crossref.org/works/10.1785/0220200189",
+   "requires": [
+    "Kodiak/Shumagin from FDSN network page XO_2018; 700 km from SRL abstract."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "Human analysts had already checked the earthquakes that experiment recorded.",
+   "on_screen": "ANALYST-CHECKED CATALOG",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "The team used those human-checked picks to train a model called EQTransformer.",
+   "on_screen": "TRAINED ON HUMAN PICKS \u00b7 EQTRANSFORMER",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "EQTransformer is pre-existing (Mousavi et al 2020); authors fine-tuned it."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "EQTransformer is a deep-learning model that finds earthquakes and picks their arrivals in the same pass.",
+   "on_screen": "DEEP LEARNING \u00b7 DETECT + PICK",
+   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7415159/",
+   "requires": [
+    "Mousavi et al 2020 Nature Communications."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "They tried several training strategies, and none was substantially better than the others.",
+   "on_screen": "NO TRAINING TRICK WON",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Strategies named in the abstract: choice of pre-trained starting model, addition of waveform bandpass filtering, and choice of random metadata split. Verbatim: 'We evaluate the effect of choice of pre-trained starting model, addition of waveform bandpass filtering, and choice of random metadata split.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "What improved the model was simply local data to learn from.",
+   "on_screen": "LOCAL DATA IMPROVED IT",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Word ban: avoid 'matters'. Verbatim: 'simply having a local waveform data set to fine-tune the picking model substantially improves performance'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "Then they ran the model across the continuous recordings to find new small earthquakes.",
+   "on_screen": "CONTINUOUS DATA \u00b7 NEW SMALL QUAKES",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "The machine-learning catalog has roughly three times as many earthquakes as the analyst-checked catalog.",
+   "on_screen": "~3X MORE EARTHQUAKES",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Say 'roughly', 'according to the authors'. No absolute counts. Applies to this 2018-2019 catalog only."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "The smallest quake it reliably catches got smaller by one tenth to four tenths of a magnitude unit.",
+   "on_screen": "COMPLETENESS DOWN 0.1 TO 0.4",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Mc is regionally variable."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "Detection improved most far offshore and in the outer rise.",
+   "on_screen": "BIGGEST GAINS \u00b7 FAR OFFSHORE \u00b7 OUTER RISE",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-secondary",
+   "spoken": "The outer rise is the bulge where the ocean plate bends before it dives.",
+   "on_screen": "OUTER RISE \u00b7 PLATE BENDS BEFORE IT DIVES",
+   "source": "https://en.wikipedia.org/wiki/Outer_rise",
+   "requires": [
+    "Explainer, secondary."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "With the extra small quakes, the map of where earthquakes cluster still matches earlier observations.",
+   "on_screen": "SAME MAP AS BEFORE",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Word ban: 'patterns' is banned in spoken copy."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "In twenty twenty-one a magnitude eight point two earthquake struck near Chignik.",
+   "on_screen": "2021 \u00b7 M8.2 \u00b7 CHIGNIK",
+   "source": "https://earthquake.usgs.gov/earthquakes/eventpage/ak0219neiszm",
+   "requires": [
+    "USGS event ak0219neiszm, mww 8.2, 2021-07-29 06:15 UTC."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "In nineteen thirty-eight the same stretch produced a magnitude eight point two earthquake near the Semidi Islands.",
+   "on_screen": "1938 \u00b7 M8.2 \u00b7 SEMIDI ISLANDS",
+   "source": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=1938-01-01&endtime=1965-01-01&minmagnitude=7.8&minlatitude=50&maxlatitude=62&minlongitude=-180&maxlongitude=-140",
+   "requires": [
+    "USGS M8.23. Do not say 'same segment' without hedge."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-secondary",
+   "spoken": "The authors list funding from the National Science Foundation and the U S G S.",
+   "on_screen": "FUNDERS \u00b7 NSF \u00b7 USGS",
+   "source": "https://api.crossref.org/works/10.1029/2026EA005230",
+   "requires": [
+    "Crossref funder metadata; say 'metadata lists'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "The instruments ran from May 2018 through August 2019.",
+   "on_screen": "MAY 2018 TO AUG 2019",
+   "source": "https://api.crossref.org/works/10.1785/0220200189",
+   "requires": [
+    "From the 2020 AACSE SRL experiment abstract. Supports calling it a 2018 to 2019 experiment."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}
