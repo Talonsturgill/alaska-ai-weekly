@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.972,
+    "heard": "Someone asked to take a number for cookin' lit. Anita Massachusetts Company asked federal regulators, FERC, for a permit to study an underwater data center there. The plan calls for 66 seabed pods and about 330 to 350 tidal turbines, about 100 megawatts, mostly for the data center, and a proposed three-and-a-half mile cable to Nikiske. A preliminary permit only lets the holder study the site and claim first place in line to apply for a license. As the company put it, a preliminary permit doesn't give us permission to build anything. The formal deadline for objections was 5 p.m. Eastern on November 2nd. Kenai Peninsula Boromayer Peter Michici called the company's approach sloppy. He said he hadn't had an email, letter, or call from it. The company said it was too early to reach out before the engineering and biology work is done on paper. A commercial fisheries alliance says the proposal didn't assess effects on more than 1,300 active permits and the Center for Biological Diversity filed to intervene. In fairness to the company, a study is how anyone gets answers and this permit wouldn't allow construction. Cookin' lit belugas have been listed as endangered since 2008. Noah's best estimate is 331 whales, down from about 1,300 in 1979. With a population that small, the question isn't whether to study. It's who's in the room when the study is designed? Fork hasn't ruled yet, so should the bro, the fleet, and Noah's beluga scientists help write the study terms?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.055,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 7.12,
+        "voiced_frac": 0.54,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 112.72,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 112.72,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.985,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.972,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.982,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

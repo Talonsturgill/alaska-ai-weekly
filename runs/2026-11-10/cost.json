@@ -1,0 +1,210 @@
+{
+ "transcript_usd": 40.45,
+ "cli_total_usd": 0.66,
+ "outside_transcripts_usd": -39.79,
+ "price_rows_to_check": [
+  "claude-sonnet-5-5"
+ ],
+ "unpriced_models": [],
+ "calls": 335,
+ "main_context": {
+  "peak": 660639,
+  "mean": 409248,
+  "compactions": []
+ },
+ "by_phase": {
+  "before first phase": {
+   "calls": 6,
+   "usd": 0.47,
+   "input": 12,
+   "write_5m": 0,
+   "write_1h": 89853,
+   "read": 477762,
+   "output": 1675,
+   "thinking": 384,
+   "web_search": 0
+  },
+  "preflight": {
+   "calls": 17,
+   "usd": 0.57,
+   "input": 38,
+   "write_5m": 0,
+   "write_1h": 18368,
+   "read": 2194443,
+   "output": 6065,
+   "thinking": 1515,
+   "web_search": 0
+  },
+  "voice": {
+   "calls": 22,
+   "usd": 1.28,
+   "input": 42,
+   "write_5m": 78049,
+   "write_1h": 38910,
+   "read": 2641737,
+   "output": 13414,
+   "thinking": 5680,
+   "web_search": 0
+  },
+  "gate0": {
+   "calls": 131,
+   "usd": 18.0,
+   "input": 256,
+   "write_5m": 779623,
+   "write_1h": 749325,
+   "read": 33972408,
+   "output": 251929,
+   "thinking": 111062,
+   "web_search": 0
+  },
+  "caption": {
+   "calls": 152,
+   "usd": 19.11,
+   "input": 339,
+   "write_5m": 1050577,
+   "write_1h": 166853,
+   "read": 45904014,
+   "output": 167041,
+   "thinking": 63318,
+   "web_search": 0
+  },
+  "deliver": {
+   "calls": 7,
+   "usd": 1.02,
+   "input": 13,
+   "write_5m": 0,
+   "write_1h": 4676,
+   "read": 4604817,
+   "output": 2852,
+   "thinking": 729,
+   "web_search": 0
+  }
+ },
+ "by_agent": {
+  "main": {
+   "calls": 213,
+   "usd": 27.55,
+   "input": 414,
+   "write_5m": 0,
+   "write_1h": 1067985,
+   "read": 86101531,
+   "output": 265728,
+   "thinking": 92254,
+   "web_search": 0
+  },
+  "editor": {
+   "calls": 27,
+   "usd": 2.45,
+   "input": 62,
+   "write_5m": 336525,
+   "write_1h": 0,
+   "read": 607857,
+   "output": 32068,
+   "thinking": 17514,
+   "web_search": 0,
+   "spawns": 8
+  },
+  "storyboard-critic": {
+   "calls": 27,
+   "usd": 3.8,
+   "input": 54,
+   "write_5m": 536487,
+   "write_1h": 0,
+   "read": 847880,
+   "output": 47367,
+   "thinking": 25408,
+   "web_search": 0,
+   "spawns": 8
+  },
+  "flow-critic": {
+   "calls": 22,
+   "usd": 2.16,
+   "input": 48,
+   "write_5m": 406101,
+   "write_1h": 0,
+   "read": 707978,
+   "output": 45484,
+   "thinking": 26750,
+   "web_search": 0,
+   "spawns": 6
+  },
+  "scorer": {
+   "calls": 46,
+   "usd": 4.5,
+   "input": 122,
+   "write_5m": 629136,
+   "write_1h": 0,
+   "read": 1529935,
+   "output": 52329,
+   "thinking": 20762,
+   "web_search": 0,
+   "spawns": 11
+  }
+ },
+ "by_model": {
+  "claude-sonnet-5-5": {
+   "calls": 124,
+   "usd": 10.4,
+   "input": 242,
+   "write_5m": 243136,
+   "write_1h": 437548,
+   "read": 29714665,
+   "output": 210011,
+   "thinking": 86355,
+   "web_search": 0
+  },
+  "claude-opus-5-5": {
+   "calls": 211,
+   "usd": 30.05,
+   "input": 458,
+   "write_5m": 1665113,
+   "write_1h": 630437,
+   "read": 60080516,
+   "output": 232965,
+   "thinking": 96333,
+   "web_search": 0
+  }
+ },
+ "phase_marks": [
+  {
+   "phase": "preflight",
+   "t": 1794317934.32122,
+   "at": "2026-11-10T13:38:54+00:00"
+  },
+  {
+   "phase": "voice",
+   "t": 1794319349.560191,
+   "at": "2026-11-10T14:02:29+00:00"
+  },
+  {
+   "phase": "gate0",
+   "t": 1794320249.534208,
+   "at": "2026-11-10T14:17:29+00:00"
+  },
+  {
+   "phase": "gate0",
+   "t": 1794320554.104941,
+   "at": "2026-11-10T14:22:34+00:00"
+  },
+  {
+   "phase": "gate0",
+   "t": 1794320885.368264,
+   "at": "2026-11-10T14:28:05+00:00"
+  },
+  {
+   "phase": "caption",
+   "t": 1794326347.706037,
+   "at": "2026-11-10T15:59:07+00:00"
+  },
+  {
+   "phase": "deliver",
+   "t": 1794332861.082835,
+   "at": "2026-11-10T17:47:41+00:00"
+  }
+ ],
+ "run_id": "2026-11-10",
+ "session": "b5f2d387-3b9f-5b7a-862d-706e7de64fa3",
+ "remote_session": "session_0169DKhhK8sfNVGT9cboKnjK",
+ "generated_at": "2026-11-10T18:00:05+00:00",
+ "line": "This session cost $0.66 by Claude Code's own count. The transcripts account for $40.45, $27.55 in the main loop and $12.91 in subagents. Costliest phases were caption at $19.11, gate0 at $18.00, voice at $1.28. The main context peaked at 660K tokens with 0 compactions. A price row needs checking for claude-sonnet-5-5."
+}
