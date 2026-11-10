@@ -80,7 +80,7 @@ export const TakeANumberMachine: React.FC<{
       <path d="M -112,-210 q 112,22 224,0" fill="none" stroke="#FFFFFF" strokeWidth={5} opacity={0.28} />
       {[-110, 110].map((sx) => [-270, -34].map((sy) => <circle key={`${sx}${sy}`} cx={sx} cy={sy} r={6} fill={BRASS} stroke={INK} strokeWidth={3} />))}
       <rect x={-84} y={-190} width={168} height={70} rx={10} fill="#1B2342" stroke={INK} strokeWidth={6} />
-      <text y={-143} textAnchor="middle" fontFamily={mono} fontWeight={900} fontSize={26} letterSpacing={3} fill={PAPER}>TAKE A NUMBER</text>
+      <text y={-143} textAnchor="middle" fontFamily={mono} fontWeight={900} fontSize={20} letterSpacing={1} fill={PAPER}>TAKE A NUMBER</text>
       <rect x={-64} y={-98} width={128} height={22} rx={6} fill={INK} stroke={INK} strokeWidth={4} />
       <g transform={`translate(0 ${-86 + 62 * pr})`}>
         <rect x={-48} y={-4} width={96} height={80} fill={PAPER} stroke={INK} strokeWidth={4} opacity={pr > 0.02 ? 1 : 0} />

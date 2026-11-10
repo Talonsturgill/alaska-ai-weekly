@@ -170,8 +170,8 @@ const Atmos: React.FC<{f: number; mode: Mode}> = ({f, mode}) => {
       <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
         <defs><radialGradient id="lamp" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stopColor="#FFFBD0" stopOpacity={0.9} /><stop offset="0.6" stopColor={C.lemon} stopOpacity={0.55} /><stop offset="1" stopColor={C.lemonD} stopOpacity={0} /></radialGradient></defs>
         <rect width={W} height={H} fill="#2E2A3C" />
-        <rect x={60} y={480} width={960} height={820} rx={16} fill={C.wood} stroke={C.ink} strokeWidth={8} />
-        {Array.from({length: 9}).map((_, i) => <path key={i} d={`M 70,${520 + i * 90} H 1010`} stroke={C.woodD} strokeWidth={3} opacity={0.45} />)}
+        <rect data-band="ok" x={60} y={480} width={960} height={1500} rx={16} fill={C.wood} stroke={C.ink} strokeWidth={8} />
+        <g data-band="ok">{Array.from({length: 16}).map((_, i) => <path key={i} d={`M 70,${520 + i * 90} H 1010`} stroke={C.woodD} strokeWidth={3} opacity={0.45} />)}</g>
         <ellipse cx={540} cy={940} rx={470} ry={430} fill="url(#lamp)" />
         <rect x={lerp(-300, 1300, sw)} y={0} width={160} height={H} fill="#FFFBD0" opacity={0.05} transform="skewX(-14)" />
       </svg>
@@ -518,6 +518,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
             </g>
           );
         })}
+        {f >= at(8) && <rect x={48} y={296} width={monoW('PROPOSED · FERC HAS NOT RULED', 20, 2) + 26} height={32} rx={6} fill="#0B1226" opacity={0.92} />}
         {f >= at(8) && <text x={60} y={318} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={2} fill={C.lemon} opacity={0.95}>PROPOSED · FERC HAS NOT RULED</text>}
         <line x1={44} y1={270} x2={1020} y2={270} stroke={C.paper} strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
         <circle cx={44 + Math.max(0, cur) * 164 + 77} cy={270} r={9} fill={C.paper} />
@@ -702,11 +703,11 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={0} y={1150} width={1080} height={770} fill="#3A2E3E" />
         {Array.from({length: 8}).map((_, i) => <path key={`cb${i}`} d={`M 0,${1180 + i * 90} H 1080`} stroke="#2A2030" strokeWidth={4} />)}
         {[0, 1, 2, 3, 4].map((i) => <Ghost key={i} x={lerp(330 + i * 50, 250 + i * 40, front) + 8 * Math.sin(f / 9 + i)} y={930} s={0.8} f={f} seed={i} o={0.5} />)}
-        <g transform={`translate(${lerp(660, 420, front)} 900)`}>
+        <g transform={`translate(${lerp(400, 300, front)} 940)`}>
           <Person x={0} y={0} s={0.8} dress="suit" f={f} seed={2.1} />
         </g>
         <g opacity={clamp01(quote < 0.5 ? 1 - quote * 2 : 0)}>
-          <g transform={`translate(730 ${lerp(760, 720, grow)})`} opacity={1}>
+          <g transform={`translate(760 ${lerp(860, 820, grow)})`} opacity={1}>
             {tear < 0.02 && f > b(12) + 40 ? <Ticket x={0} y={0} s={2.6} /> : (
             <g>
             <g transform={`translate(${-34 * tear} 0) rotate(${-5 * tear})`}>
@@ -783,11 +784,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
 // ---- S7: the mayor, the empty mailbox, the queue already formed ----------------------------------------------------------------------------------------
 const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [18, 19, 20, 46];
+  const K = [18, 19, 20];
   const open = ease(f, b(18) + 6, 20);
   const shake = Math.sin(clamp01((f - b(19)) / 30) * Math.PI * 4) * (1 - clamp01((f - b(19) - 30) / 10)) * (f > b(19) ? 1 : 0);
   const phone = easeIO(f, b(20), 36);
-  const turn = easeIO(f, b(46), 30);
+  const turn = easeIO(f, b(20) + 75, 30);
   const QUOTE2 = `"Sloppy is the way I would describe this approach" MAYOR PETER MICCICHE`;
   return (
     <Frame p={p} mode="shore" z0={1.04} z1={1.1} oy={1000}>
@@ -797,7 +798,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         {[0, 1, 2, 3].map((i) => <Ghost key={i} x={120 + i * 56} y={1040} s={0.62} f={f} seed={i} o={0.35 + 0.5 * turn} />)}
         <g transform="translate(150 1030)" opacity={0.35 + 0.6 * turn}><Ticket s={0.28} /></g>
         <g transform={`translate(620 790)`}>
-          <Person x={0} y={0} s={1.55} dress="parka" skin={C.skin2} f={f} seed={1.1} cues={[b(18), b(19), b(20), b(46)]} flip={turn > 0.5 ? -1 : 1} armUp={open * 0.5} mood={turn > 0.4 ? 'surprised' : 'stern'} look={-shake} />
+          <Person x={0} y={0} s={1.55} dress="parka" skin={C.skin2} f={f} seed={1.1} cues={[b(18), b(19), b(20), b(20) + 75]} flip={turn > 0.5 ? -1 : 1} armUp={open * 0.5} mood={turn > 0.4 ? 'surprised' : 'stern'} look={-shake} />
         </g>
         <Mailbox x={900} y={990} s={1.35} open={open} f={f} />
         <Tray x={900} y={860} s={1.1} f={f} />
@@ -807,7 +808,6 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={585} text="MAYOR PETER MICCICHE" size={34} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="CALLED IT SLOPPY" size={44} tone="warn" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} displayLines={['NO EMAIL, LETTER', 'OR CALL, HE SAYS']} text="NO EMAIL, LETTER OR CALL, HE SAYS" size={34} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={862} text="THE APPLICATION WAS ALREADY FILED" size={28} tone="glow" p={vis(f, b, K, 3)} />
         <HeldTravel f={f} x={800} y={720} w={200} h={240} mode="sweep" seed={7} strength={0.08} rx={40} />
       </SVG>
     </Frame>
@@ -908,8 +908,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${lerp(230, 760, easeIO(f, b(27) + 50, 40))} ${lerp(1030, 1130, easeIO(f, b(27) + 50, 40))})`}><Ticket s={0.3} rot={-10} /></g>
         <g transform="translate(900 960)"><Lever x={0} y={0} s={0.8} lock={1} tug={tug} f={f} /></g>
         <g transform="translate(900 720)"><rect x={-70} y={-60} width={140} height={110} rx={6} fill="#0B1226" stroke={C.ink} strokeWidth={6} /><text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={2} fill={C.paper} opacity={0.5}>LICENSE</text></g>
-        <g transform={`translate(${lerp(830, 870, tug)} ${lerp(900, 880, tug)})`}><Hand x={0} y={0} s={0.45} rot={60} /></g>
-        <g transform="translate(770 800)"><Person x={0} y={0} s={0.75} dress="suit" f={f} seed={2.1} armUp={0.3 + 0.5 * tug} cues={[b(26), b(27), b(28)]} /></g>
+        <g transform={`translate(${lerp(850, 880, tug)} ${lerp(990, 960, tug)})`}><Hand x={0} y={0} s={0.45} rot={60} /></g>
+        <g transform="translate(790 930)"><Person x={0} y={0} s={0.75} dress="suit" f={f} seed={2.1} armUp={0.3 + 0.5 * tug} cues={[b(26), b(27), b(28)]} /></g>
         <Plate x={540} y={585} text="THE COMPANY'S BEST CASE" size={36} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="A STUDY IS HOW YOU GET ANSWERS" size={30} tone="dark" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="PERMIT ALLOWS NO CONSTRUCTION" size={32} tone="dark" p={vis(f, b, K, 2)} />
@@ -940,7 +940,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} mode="chart" z0={1.02} z1={1.06} oy={960}>
       <SVG>
         <defs><linearGradient id="col11" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2B5F78" /><stop offset="1" stopColor="#152A3E" /></linearGradient></defs>
-        <rect x={60} y={600} width={960} height={720} rx={14} fill="url(#col11)" stroke={C.ink} strokeWidth={6} />
+        <rect data-band="ok" x={60} y={600} width={960} height={1300} rx={14} fill="url(#col11)" stroke={C.ink} strokeWidth={6} />
+        <g data-band="ok">{Array.from({length: 6}).map((_, i) => <path key={`sc${i}`} d={`M 80,${1500 + i * 60} Q 540,${1470 + i * 60} 1000,${1500 + i * 60}`} stroke="#3F6A8C" strokeWidth={3} fill="none" opacity={0.5} />)}</g>
         <g transform="translate(540 860)" opacity={patch * lens}>
           <circle r={210} fill="#122638" stroke={C.ink} strokeWidth={10} />
           <circle r={210} fill="none" stroke="#FFFFFF" strokeWidth={4} opacity={0.4} />
