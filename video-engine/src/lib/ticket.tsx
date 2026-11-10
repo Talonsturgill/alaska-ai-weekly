@@ -54,8 +54,8 @@ export const Ticket: React.FC<{
           {[-100, 100].map((nx) => [-60, -10, 40, 90].map((ny) => <circle key={`${nx}${ny}`} cx={nx} cy={ny} r={9} fill="#1B2342" />))}
           {stamps.map((t, i) => (
             <g key={t} transform={`translate(${i % 2 ? 12 : -10} ${50 + 34 * i}) rotate(${i % 2 ? 9 : -11}) scale(${0.7 + 0.3 * Math.min(1, stampK)})`} opacity={Math.min(1, stampK * 2)}>
-              <rect x={-84} y={-17} width={168} height={34} rx={4} fill="none" stroke={VERM_D} strokeWidth={5} />
-              <text y={7} textAnchor="middle" fontFamily={mono} fontWeight={900} fontSize={t.length > 11 ? 14 : 17} fill={VERM_D}>{t}</text>
+              <rect x={-84} y={-17} width={168} height={34} rx={4} fill="none" stroke={INK} strokeWidth={5} />
+              <text y={7} textAnchor="middle" fontFamily={mono} fontWeight={900} fontSize={t.length > 11 ? 14 : 17} fill={INK}>{t}</text>
             </g>
           ))}
         </g>

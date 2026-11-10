@@ -20,7 +20,7 @@ W = lambda w, n=1: (w, n)
 # key, line, anchor, sfx, subject, action, emotion, annotation (plate text), reaction, rehook
 B = [
  (1, 0, 0.0, "slide", "the take-a-number machine", "shakes on the dusk Cook Inlet shingle behind two brass posts and a rope as its flip sign snaps over", "patient", "COOK INLET", "the sign flips", ""),
- (2, 0, W("number"), "tick", "a vermilion ticket", "curls out of the dispenser slot printed P-15423", "curious", "FERC P-15423", "the ticket curls", ""),
+ (2, 0, W("number"), "tick", "a vermilion ticket", "curls out of the dispenser slot printed P-15423", "curious", "PRELIMINARY PERMIT · FERC P-15423", "the ticket curls", ""),
  (3, 0, 0.72, "hush", "an empty queue rope", "sways between two brass posts while a second ticket peeks from the slot reading NEXT and a moose stands far off by the spruce", "calm", "NEXT?", "the rope sways", "plant: who else gets a number"),
  (4, 1, 0.0, "creak", "a suited applicant silhouette", "steps up to a counter window with a case tagged NEEDHAM MA and slides the ticket across", "hopeful", "DEEPGREEN COOK INLET SPV LLC", "the case swings", ""),
  (43, 1, 0.2, "slide", "a clerk silhouette", "rises behind the window glass and takes the ticket", "stern", "FEDERAL REGULATORS", "the glass fogs", ""),
@@ -46,7 +46,7 @@ B = [
  (19, 7, W("sloppy"), "tap", "the mayor", "checks the tray and shakes his head over a company folder", "stern", "CALLED IT SLOPPY", "the head shakes", ""),
  (20, 7, W("email"), "tap", "a silent dark phone", "is lifted by the mayor and dropped back on the tray", "wry", "NO EMAIL, LETTER OR CALL, HE SAYS", "the phone stays dark", ""),
  (46, 7, 0.86, "whoosh", "the mayor", "turns to see a ghost queue already formed on the shore behind him", "surprised", "A QUEUE ALREADY FORMED", "the queue holds", ""),
- (21, 8, 0.0, "page", "the applicant", "holds the ticket and turns a calendar page at the counter window to TOO EARLY", "calm", "COMPANY: TOO EARLY TO CONTACT OFFICIALS", "the page flips", "rehook: the applicant turns a calendar page to TOO EARLY"),
+ (21, 8, 0.0, "page", "the applicant", "holds the ticket and turns a calendar page at the counter window to TOO EARLY", "calm", "COMPANY SAYS TOO EARLY TO CONTACT OFFICIALS", "the page flips", "rehook: the applicant turns a calendar page to TOO EARLY"),
  (47, 8, 0.92, "pop", "a second ticket", "slides out of a slot beside the counter reading NEXT", "curious", "NEXT?", "the ticket peeks", ""),
  (22, 8, W("engineering"), "scratch", "paper blueprints and a fish chart", "get a pencil line drawn across them as a rubber band snaps around the roll", "reading", "ON PAPER FIRST", "the pencil draws", ""),
  (23, 9, 0.0, "pop", "a pegboard of blue permit tags", "pins on tag by tag into a wall behind the ticket pinned at its head", "alarmed", "1,300+ ACTIVE PERMITS · FISHERIES ALLIANCE", "the tags click on", ""),
@@ -58,15 +58,15 @@ B = [
  (29, 11, 0.0, "swell", "a beluga silhouette", "glides in a round patch of water that matches the magnifier lens", "calm", "COOK INLET BELUGAS", "the whale glides", ""),
  (48, 11, 0.12, "tick", "a date tab", "rolls to 2008 as the whale turns and a corner tab shows the ticket", "somber", "ENDANGERED SINCE 2008", "the tab lands", ""),
  (30, 11, W("NOAA's"), "hush", "a field of white dots", "drains in eased cohorts from a full 1979 field to a lit compact block", "somber", "331 WHALES · RANGE 290 TO 386", "the dots drain", ""),
- (31, 11, W("down"), "hum", "a ghost outline of 1,300 dots", "holds around the lit block beside a strip of blue permit tags", "somber", "ABOUT 1,300 BELUGAS · 1979", "the outline holds", ""),
+ (31, 11, W("down"), "hum", "a ghost outline of 1,300 dots", "holds around the lit block beside a strip of blue permit tags", "somber", "ABOUT 1,300 IN 1979", "the outline holds", ""),
  (32, 11, W("nineteen"), "stamp", "a NOT THE SAME stamp", "drops between the white dots and the blue permit tags and holds", "firm", "NOT THE SAME 1,300", "the stamp rings", ""),
- (33, 12, 0.0, "slide", "a long study table", "slides into the top-down frame with the 331 block pressed at its edge", "reading", "331 WHALES", "the table settles", "rehook: a long table slides in with the small block at its edge"),
+ (33, 12, 0.0, "slide", "a long study table", "slides into the top-down frame with the 331 block pressed at its edge, keeping a soft rippled water edge where it meets the table", "reading", "331 WHALES", "the table settles", "rehook: a long table slides in with the small block at its edge"),
  (40, 12, W("whether"), "page", "a blank binder", "lands on the table with a question mark on its cover", "curious", "NOT WHETHER, WHO", "the binder lands", ""),
  (34, 12, W("room"), "creak", "three chairs", "pull out from the table empty with plates BOROUGH, FLEET and NOAA", "hopeful", "WHO'S IN THE ROOM?", "the chairs pull out", ""),
  (49, 12, W("designed"), "tick", "a pencil", "writes STUDY TERMS across the binder cover", "hopeful", "WHEN THE STUDY IS DESIGNED", "the pencil writes", ""),
  (36, 13, 0.0, "hum", "the machine sign", "flips all the way to NOT YET after one false start and holds while the rope sways", "curious", "FERC HAS NOT RULED", "the sign holds", ""),
  (41, 13, W("borough"), "creak", "three silhouettes", "walk up and stop outside the rope at the brass posts looking at the NEXT ticket, a parka, a boat cap and a field jacket, none reaching for it", "hopeful", "BOROUGH · FLEET · NOAA", "the silhouettes stop", ""),
- (35, 13, W("help"), "page", "the vermilion ticket", "ticket P-15423 with its number legible splits along its perforation into STUDY and OUTREACH halves and rests on the rope", "hopeful", "STUDY + OUTREACH", "the halves part", ""),
+ (35, 13, W("help"), "page", "the vermilion ticket", "with its number P-15423 legible splits along its perforation into STUDY and OUTREACH halves and rests on the rope", "hopeful", "STUDY + OUTREACH", "the halves part", ""),
  (37, 13, W("terms"), "tick", "the machine", "clacks once more as a moose ambles along the shingle behind the silhouettes and pauses outside the far end of the rope while the sign flips to NEXT", "wry", "WHO HELPS WRITE THE TERMS?", "the sign flips", ""),
 ]
 
@@ -107,7 +107,7 @@ HERO = {
  9: ("pegboard of tags + ticket pinned at its head + bare peg gap + folder", "70% pegboard, 20% gap, 10% folder"),
  10: ("applicant + binder + magnifier + seabed chart + padlocked lever", "65% binder and chart, 20% applicant, 15% lever"),
  11: ("dot field + lit block + blue tags + stamp + beluga", "65% dots and block, 25% stamp and tags, 10% beluga"),
- 12: ("study table + blank binder + three chairs + pencil", "60% table and binder, 30% chairs, 10% pencil"),
+ 12: ("study table + blank binder + three chairs + pencil", "60% table and binder, 30% chairs, 10% pencil, the 331 block keeps a soft rippled water edge"),
  13: ("machine + split ticket + rope + three silhouettes + moose", "60% machine and split ticket, 25% rope and silhouettes, 15% moose and far shore"),
 }
 PARTS = {1: 46, 2: 52, 3: 48, 4: 40, 5: 48, 6: 44, 7: 52, 8: 44, 9: 60, 10: 46, 11: 54, 12: 44, 13: 50}
@@ -210,7 +210,7 @@ def build():
                             {"at_s": b_at(6), "state": "stamped PRELIMINARY PERMIT at the FERC window"},
                             {"at_s": b_at(12), "state": "half-torn along its perforation, flaps open on a still-joined stub, printed not stamped"},
                             {"at_s": b_at(17), "state": "pinned behind the dropped docket shutter"},
-                            {"at_s": b_at(21), "state": "slid back out under the shutter into the applicant's hand at the counter"},
+                            {"at_s": b_at(21), "state": "back in the applicant's hand at the counter"},
                             {"at_s": b_at(23), "state": "pinned at the head of the pegboard ahead of 1,300 blue tags"},
                             {"at_s": b_at(28), "state": "under the magnifier on the lemon desk beside the padlocked lever"},
                             {"at_s": b_at(35), "state": "split in two, STUDY and OUTREACH"}]},
