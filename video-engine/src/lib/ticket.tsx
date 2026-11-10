@@ -65,8 +65,8 @@ export const Ticket: React.FC<{
 };
 
 export const TakeANumberMachine: React.FC<{
-  f: number; x?: number; y?: number; s?: number; flip?: number; print?: number; shake?: number; sign?: string; mono?: string;
-}> = ({f, x = 0, y = 0, s = 1, flip = 0, print = 0, shake = 0, sign = 'P-15423', mono = "'JetBrains Mono', monospace"}) => {
+  f: number; x?: number; y?: number; s?: number; flip?: number; print?: number; shake?: number; sign?: string; head?: string; mono?: string;
+}> = ({f, x = 0, y = 0, s = 1, flip = 0, print = 0, shake = 0, sign = 'P-15423', head = 'NOW SERVING', mono = "'JetBrains Mono', monospace"}) => {
   const k = Math.max(0, Math.min(1, flip));
   const pr = Math.max(0, Math.min(1, print));
   const sh = shake * 5 * Math.sin(f * 2.1);
@@ -93,7 +93,7 @@ export const TakeANumberMachine: React.FC<{
         <rect x={-6} y={0} width={12} height={58} fill={INK} />
         <g transform={`translate(0 -2) scale(1 ${Math.abs(Math.cos(k * Math.PI))})`}>
           <rect x={-116} y={-64} width={232} height={72} rx={10} fill={k > 0.5 ? BRASS : PAPER} stroke={INK} strokeWidth={7} />
-          <text y={-40} textAnchor="middle" fontFamily={mono} fontWeight={900} fontSize={16} letterSpacing={2} fill={INK}>NOW SERVING</text>
+          <text y={-40} textAnchor="middle" fontFamily={mono} fontWeight={900} fontSize={16} letterSpacing={2} fill={INK}>{head}</text>
           <text y={-10} textAnchor="middle" fontFamily={mono} fontWeight={900} fontSize={sign.length > 9 ? 22 : 28} letterSpacing={1} fill={INK}>{sign}</text>
         </g>
       </g>
