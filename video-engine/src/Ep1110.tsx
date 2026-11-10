@@ -544,7 +544,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${lerp(540, 260, nxt)} ${lerp(1040, 1220, nxt)})`} opacity={nxt}><Ticket s={0.34} num="NEXT" rot={-10} /></g>
         <Posts x1={130} x2={950} y={1500} f={f} />
         <Posts x1={150} x2={420} y={1360} f={f + 10} />
-        <HeldTravel f={f} x={340} y={730} w={400} h={430} mode="sweep" seed={1} />
+        <HeldTravel f={f} x={378} y={910} w={324} h={350} mode="sweep" seed={1} strength={0.16} rx={30} />
         <Plate x={540} y={585} text="COOK INLET" size={44} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} displayLines={['PRELIMINARY PERMIT', '· FERC P-15423']} text="PRELIMINARY PERMIT · FERC P-15423" size={34} tone="glow" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="NEXT?" size={52} p={vis(f, b, K, 2)} />
@@ -590,7 +590,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={772} text="FERC" size={50} tone="glow" p={vis(f, b, K, 2)} />
         <Plate x={540} y={854} text="PRELIMINARY PERMIT" size={38} tone="plate" p={vis(f, b, K, 3)} />
         <Plate x={540} y={940} displayLines={['PROPOSED ·', 'UNDERWATER DATA CENTER']} text="PROPOSED · UNDERWATER DATA CENTER" size={32} p={vis(f, b, K, 4)} />
-        <HeldTravel f={f} x={170} y={620} w={760} h={480} mode="sweep" seed={2} />
+        <HeldTravel f={f} x={160} y={610} w={780} h={500} mode="sweep" seed={2} strength={0.12} />
       </SVG>
     </Frame>
   );
@@ -599,7 +599,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
 // ---- S3: the seabed -------------------------------------------------------------------------------------------------------------------------------
 const Pod: React.FC<{x: number; y: number; s?: number; draw: number; f: number; seed: number}> = ({x, y, s = 1, draw, f, seed}) => (
   <g transform={`translate(${x} ${y + 3 * Math.sin(f / 21 + seed)}) scale(${s})`} opacity={clamp01(draw * 2)}>
-    <path d="M -70,-44 L 0,-82 L 70,-44 V 44 L 0,82 L -70,44 Z" fill="#183858" fillOpacity={0.3 * draw} stroke={C.paper} strokeWidth={6} strokeDasharray="14 9" strokeDashoffset={(1 - draw) * 200} />
+    <path d="M -70,-44 L 0,-82 L 70,-44 V 44 L 0,82 L -70,44 Z" fill="#2B5F86" fillOpacity={0.5 * draw} stroke={C.paper} strokeWidth={8} strokeDasharray="16 9" strokeDashoffset={(1 - draw) * 200} />
     <path d="M -44,-40 H 44 V 40 H -44 Z" fill="none" stroke={C.paper} strokeWidth={3.5} strokeDasharray="10 7" opacity={0.8} />
   </g>
 );
@@ -627,7 +627,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         {pods.map((q) => <Pod key={q.i} x={q.x} y={q.y} s={0.62} draw={draw(q.i)} f={f} seed={q.i} />)}
         {pods.filter((q) => q.i % 3 === 0).map((q, j) => <Turbine key={q.i} x={q.x + 40} y={q.y - 190} s={0.7} up={up(j)} f={f} seed={j} />)}
         <g opacity={ease(f, b(8) + 30, 18)}><text x={540} y={1290} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={72} fill={C.paper} stroke={C.ink} strokeWidth={4}>66</text></g>
-        <HeldTravel f={f} x={120} y={900} w={840} h={420} mode="sweep" seed={3} />
+        <HeldTravel f={f} x={100} y={960} w={880} h={380} mode="sweep" seed={3} strength={0.1} />
         <Plate x={540} y={585} text="PROPOSED · 66 SUBSEA PODS" size={34} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="PODS ON THE SEABED" size={36} p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="PROPOSED · 330 TO 350 TURBINES" size={32} p={vis(f, b, K, 2)} />
@@ -666,7 +666,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <path d={path} fill="none" stroke={C.ink} strokeWidth={22} strokeLinecap="round" pathLength={100} strokeDasharray={`${cab * 100} 100`} />
         <path d={path} fill="none" stroke={C.paper} strokeWidth={9} strokeLinecap="round" pathLength={100} strokeDasharray={`${cab * 7} 6`} strokeDashoffset={-f * 0.5} opacity={cab > 0.02 ? 1 : 0} />
         <g transform="translate(880 920)" opacity={ease(f, b(11) + 40, 18)}><circle r={20} fill={C.verm} stroke={C.ink} strokeWidth={6} /><circle r={6} fill={C.paper} /><Lab text="NIKISKI" x={-10} y={-50} size={20} tone="dark" p={1} /></g>
-        <HeldTravel f={f} x={200} y={900} w={700} h={420} mode="sweep" seed={4} />
+        <HeldTravel f={f} x={250} y={940} w={640} h={200} mode="runner" seed={4} path={[[250, 1120], [400, 1080], [560, 1150], [720, 1040], [880, 940]]} />
         <Plate x={540} y={585} text="ABOUT 100 MW" size={50} tone="glow" p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="MOSTLY THE DATA CENTER" size={36} p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="ABOUT 3.5 MILES · NIKISKI" size={36} p={vis(f, b, K, 2)} />
@@ -727,7 +727,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Plate x={315} y={750} text="LICENSE · APPLY LATER" size={26} p={vis(f, b, K, 2)} />
         <Plate x={540} y={832} text="THE COMPANY'S OWN WORDS" size={34} p={vis(f, b, K, 3)} />
         <Plate x={540} y={1240} text="BUILD · LOCKED" size={44} tone="plate" p={vis(f, b, K, 4)} />
-        <HeldTravel f={f} x={330} y={760} w={420} h={450} mode="sweep" seed={5} />
+        <HeldTravel f={f} x={513} y={464} w={414} h={552} mode="sweep" seed={5} strength={0.16} />
       </SVG>
     </Frame>
   );
@@ -797,7 +797,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={668} text="CALLED IT SLOPPY" size={44} tone="warn" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} displayLines={['NO EMAIL, LETTER', 'OR CALL, HE SAYS']} text="NO EMAIL, LETTER OR CALL, HE SAYS" size={34} p={vis(f, b, K, 2)} />
         <Plate x={540} y={862} text="A QUEUE ALREADY FORMED" size={32} tone="glow" p={vis(f, b, K, 3)} />
-        <HeldTravel f={f} x={540} y={780} w={420} h={420} mode="sweep" seed={7} />
+        <HeldTravel f={f} x={780} y={700} w={250} h={300} mode="sweep" seed={7} strength={0.16} rx={40} />
       </SVG>
     </Frame>
   );
@@ -830,7 +830,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={585} displayLines={['COMPANY SAYS TOO EARLY', 'TO CONTACT OFFICIALS']} text="COMPANY SAYS TOO EARLY TO CONTACT OFFICIALS" size={32} p={vis(f, b, K, 0)} />
         <Plate x={540} y={690} text="NEXT?" size={50} p={vis(f, b, K, 1)} />
         <Plate x={540} y={800} text="ON PAPER FIRST" size={46} p={vis(f, b, K, 2)} />
-        <HeldTravel f={f} x={580} y={650} w={420} h={380} mode="sweep" seed={8} />
+        <HeldTravel f={f} x={560} y={640} w={440} h={400} mode="sweep" seed={8} strength={0.12} />
       </SVG>
     </Frame>
   );
@@ -866,7 +866,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={585} displayLines={['1,300+ ACTIVE PERMITS', '· FISHERIES ALLIANCE']} text="1,300+ ACTIVE PERMITS · FISHERIES ALLIANCE" size={32} p={vis(f, b, K, 0)} />
         <Plate x={540} y={690} text="DIDN'T ASSESS EFFECTS" size={38} p={vis(f, b, K, 1)} />
         <Plate x={540} y={820} displayLines={['CENTER FOR BIOLOGICAL', 'DIVERSITY · INTERVENOR']} text="CENTER FOR BIOLOGICAL DIVERSITY · INTERVENOR" size={30} p={vis(f, b, K, 2)} />
-        <HeldTravel f={f} x={80} y={630} w={920} h={620} mode="sweep" seed={9} />
+        <HeldTravel f={f} x={70} y={620} w={940} h={640} mode="sweep" seed={9} strength={0.1} />
       </SVG>
     </Frame>
   );
@@ -899,7 +899,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={585} text="THE COMPANY'S BEST CASE" size={36} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="A STUDY IS HOW YOU GET ANSWERS" size={30} tone="dark" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="PERMIT ALLOWS NO CONSTRUCTION" size={32} tone="dark" p={vis(f, b, K, 2)} />
-        <HeldTravel f={f} x={130} y={560} w={820} h={620} mode="sweep" seed={10} />
+        <HeldTravel f={f} x={384} y={820} w={312} h={280} mode="sweep" seed={10} strength={0.16} />
       </SVG>
     </Frame>
   );
@@ -956,7 +956,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={750} text="331 WHALES · RANGE 290 TO 386" size={34} tone="glow" p={vis(f, b, K, 2)} />
         <Plate x={540} y={832} text="ABOUT 1,300 IN 1979" size={38} p={vis(f, b, K, 3)} />
         <Plate x={540} y={1230} text="NOT THE SAME 1,300" size={40} tone="plate" p={vis(f, b, K, 4)} />
-        <HeldTravel f={f} x={90} y={740} w={900} h={480} mode="sweep" seed={11} />
+        <HeldTravel f={f} x={92} y={622} w={880} h={462} mode="sweep" seed={11} strength={0.08} />
       </SVG>
     </Frame>
   );
@@ -980,19 +980,18 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <path d={`M -60,60 L ${-60 + 130 * write},60`} stroke={C.ink} strokeWidth={5} /></g>
           <g transform="translate(60 -10)" opacity={write > 0.02 ? 1 : 0}><Pencil x={-60 + 130 * write} y={60} rot={30} s={0.8} /></g>
           <g transform="translate(260 -110)"><Ticket s={0.3} rot={8} /></g>
-          <Chair x={-200} y={-250} s={1} out={0} label="BOROUGH" />
         </g>
         <g transform={`translate(${lerp(-640, 540, slide)} 840)`}>
-          <Chair x={-220} y={-250} s={0.95} out={-out * 0.35} label="BOROUGH" />
-          <Chair x={0} y={-250} s={0.95} out={-out * 0.35} label="FLEET" />
-          <Chair x={220} y={-250} s={0.95} out={-out * 0.35} label="NOAA" />
+          <Chair x={-220} y={-150} s={0.95} out={-out * 0.35} label="BOROUGH" />
+          <Chair x={0} y={-150} s={0.95} out={-out * 0.35} label="FLEET" />
+          <Chair x={220} y={-150} s={0.95} out={-out * 0.35} label="NOAA" />
         </g>
-        <g transform={`translate(${lerp(300, 130, slide)} ${lerp(760, 620, slide)})`}><ellipse cx={0} cy={0} rx={96} ry={92} fill="#122638" stroke="#9FC4DC" strokeWidth={4} opacity={0.8} />{Array.from({length: 331}).map((_, i) => <circle key={i} cx={(i % 19) * 7 - 60} cy={Math.floor(i / 19) * 7 - 60} r={2.8} fill={C.whale} />)}</g>
+        <g transform={`translate(${lerp(300, 200, slide)} ${lerp(1200, 1130, slide)})`}><ellipse cx={0} cy={0} rx={96} ry={92} fill="#122638" stroke="#9FC4DC" strokeWidth={4} opacity={0.8} />{Array.from({length: 331}).map((_, i) => <circle key={i} cx={(i % 19) * 7 - 60} cy={Math.floor(i / 19) * 7 - 60} r={2.8} fill={C.whale} />)}</g>
         <Plate x={540} y={585} text="331 WHALES" size={40} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="NOT WHETHER, WHO" size={44} tone="glow" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="WHO'S IN THE ROOM?" size={44} p={vis(f, b, K, 2)} />
         <Plate x={540} y={832} displayLines={['WHEN THE STUDY', 'IS DESIGNED']} text="WHEN THE STUDY IS DESIGNED" size={34} p={vis(f, b, K, 3)} />
-        <HeldTravel f={f} x={190} y={770} w={700} h={380} mode="shadow" seed={12} />
+        <HeldTravel f={f} x={180} y={650} w={720} h={380} mode="shadow" seed={12} strength={0.2} />
       </SVG>
     </Frame>
   );
@@ -1029,7 +1028,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={668} text="BOROUGH · FLEET · NOAA" size={38} tone="glow" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="STUDY + OUTREACH" size={44} p={vis(f, b, K, 2)} />
         <Plate x={540} y={832} displayLines={['WHO HELPS WRITE', 'THE TERMS?']} text="WHO HELPS WRITE THE TERMS?" size={42} tone="plate" p={vis(f, b, K, 3)} />
-        <HeldTravel f={f} x={340} y={730} w={400} h={430} mode="sweep" seed={13} />
+        <HeldTravel f={f} x={378} y={910} w={324} h={350} mode="sweep" seed={13} strength={0.16} rx={30} />
       </SVG>
     </Frame>
   );
