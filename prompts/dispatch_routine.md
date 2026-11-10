@@ -54,8 +54,12 @@ with `facebookMediaType: VIDEO` and published state, never the truncating REELS 
 Keep YouTube title and description separate and respect current platform limits. An unavailable
 square cut is a format blocker, not permission to invent unreviewed media.
 
-Use the existing final caption and first-comment sources/credits as the starting copy. Keep all
-source attribution and rights restrictions. Add a short factual CTA to https://alaskaaihq.com/ in the
+Use a concise final caption, without duplicating source links or music credits already present
+in the released video. Do not copy the production source/credit block into the caption or first
+comment by default. Verify the actual license: include an external credit/link only when its
+terms require that placement or the released media lacks required attribution. Keep source and
+license records in the existing production/archive evidence. For carousels, preserve attribution
+required by their media and licenses. This owner update controls over older caption templates. Add a short factual CTA to https://alaskaaihq.com/ in the
 platform caption/description or supported first comment, respecting that platform's length
 limit and the existing prose checks. Do not add claims, promises or endorsements. A bare URL in
 an Instagram/TikTok caption is not a clickable link: do not claim a link sticker, link-in-bio
