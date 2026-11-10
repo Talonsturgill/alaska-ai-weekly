@@ -726,12 +726,12 @@ const S5: React.FC<SceneProps> = ({p}) => {
             )}
           </g>
         </g>
-        <g transform={`translate(${lerp(990, 940, reach)} 860)`} opacity={ease(f, b(44) - 6, 16)}>
+        <g transform={`translate(${lerp(1010, 980, reach)} 1040)`} opacity={ease(f, b(44) - 6, 16)}>
           <rect x={-90} y={-130} width={180} height={230} rx={8} fill="#0B1226" stroke={C.paper} strokeWidth={6} />
           <text y={-60} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} letterSpacing={3} fill={C.paper} opacity={0.5}>LICENSE</text>
           <path d="M -60,0 H 60" stroke={C.paper} strokeWidth={4} strokeDasharray="8 8" opacity={0.4} />
         </g>
-        <g transform={`translate(${lerp(820, 940, reach)} ${lerp(1150, 1190, reach)})`} opacity={front > 0.2 ? 1 : 0}><Ticket s={0.34} rot={-8} /></g>
+        <g transform={`translate(${lerp(700, 900, reach)} ${lerp(1200, 1190, reach)})`} opacity={front > 0.2 ? 1 : 0}><Ticket s={0.34} rot={-8} /></g>
         <QuoteCard text={QUOTE} head="THE COMPANY'S WORDS" x={540} y={lerp(1090, 1020, quote)} size={32} wrap={27} typed={type} p={quote} />
         <g transform="translate(160 840)" opacity={ease(f, b(14) - 10, 16)}><Lever x={0} y={0} s={0.9} lock={lock} f={f} /></g>
         <Plate x={305} y={585} text="STUDY PRIORITY ONLY" size={28} p={vis(f, b, K, 0)} />
