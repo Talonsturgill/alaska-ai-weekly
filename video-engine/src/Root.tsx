@@ -82,6 +82,7 @@ import {Ep1105, ep1105Schema} from './Ep1105';
 import {Ep1106, ep1106Schema} from './Ep1106';
 import {Ep1108, ep1108Schema} from './Ep1108';
 import {Ep1109, ep1109Schema} from './Ep1109';
+import {Ep1110, ep1110Schema} from './Ep1110';
 import {ResearchAssetLook0912} from './ResearchAssetLook0912';
 import {FlightCrateLook} from './FlightCrateLook';
 import { EvidenceLook } from './EvidenceLook';
@@ -142,6 +143,10 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="Dispatch1104"
         component={Ep1104} durationInFrames={4200}
         fps={30} width={1080} height={1920} schema={ep1104Schema} defaultProps={{captions: []}}
+        calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??4200})}/>
+      <Composition id="Dispatch1110"
+        component={Ep1110} durationInFrames={4200}
+        fps={30} width={1080} height={1920} schema={ep1110Schema} defaultProps={{captions: []}}
         calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??4200})}/>
       <Composition id="Dispatch1109"
         component={Ep1109} durationInFrames={4200}
