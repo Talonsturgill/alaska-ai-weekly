@@ -4006,3 +4006,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: 114 s film, panel median 7.05 against 7.0 (7.08, 7.05, 7.02), no hard blockers, on the ninth graded cut. Caption 8.54 against 8.5 on its fifth round, zero hard fails. No primary document was reachable (alaska.edu 503) and no vote result is stated, disclosed in the draft.
 - In-run fixes: stale Ep1102Ids import, literal Plate conversion for the static gates, DiplomaPress dieText prop, VO attribution re-synth, dispatch_mix loudnorm LRA 7 to 14 (delivered 5.3 to 8.0), HeldProp idle life, top and bottom bands, ghost die and impact star.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-05), six items. Phase 9 machine pass was due and is run next.
+
+## 2026-11-10 "Take a Number" (DeepGreen subsea data center, FERC P-15423, after the November 2nd objection deadline)
+- Shipped: resumed the same edition from the PR 180 archive after the owner topped up Gemini (the first session stopped on HTTP 402). VO 112.7 s (Gemini Sulafat, 3 clean takes). Full panel median 7.25 against 7.0 (J1 7.20, J2 7.32, J3 7.25), no hard blockers, on the fourth graded cut. Caption capped at round 5 at 8.45 against 8.5, zero hard fails, shipped as below the bar per the rubric cap.
+- In-run fixes: Gate 0E/0F re-read (one scope fix), Gate 0B to 0D three to five rounds, caption_fixups article key, credit labels NOAA FISHERIES and FEDERAL REGISTER in build_scenes.py, HeldTravel boxes tightened, accuracy relabels (1979 field, NOAA best estimate, OBJECTIONS CLOSED, APPLIED FOR, filed to intervene), lib/ticket.tsx (TakeANumberMachine with a head line, Ticket) registered.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-10), seven items, held beats a repeat offender.

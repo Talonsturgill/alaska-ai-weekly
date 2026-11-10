@@ -743,6 +743,10 @@ def _source_labels(srcs):
             lab = "NSF EPSCOR"
         elif "muni.org" in url:
             lab = "MUNI.ORG AO 2026-108 AND 108(S)"
+        elif "fisheries.noaa.gov" in url:
+            lab = "NOAA FISHERIES"      # FISHERIES.NOAA.GOV failed rendered OCR at credit size (2026-11-10)
+        elif "federalregister.gov" in url:
+            lab = "FEDERAL REGISTER"    # the public-inspection host is long and reads as a URL, not a source
         elif "eos.org" in url:
             lab = "AGU EOS HIGHLIGHT"   # EOS.ORG defeats the rendered OCR at credit size (2026-11-08)
         else:

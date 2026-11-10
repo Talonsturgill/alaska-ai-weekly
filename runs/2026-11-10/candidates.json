@@ -1,0 +1,43 @@
+{
+ "window_days": 10,
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "evidence": "two beat researchers, 20 searches each, 2026-10-31 to 2026-11-10"
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "evidence": "ADN, KTOO, KUAC, KYUK, Alaska Public Media, Alaska's News Source indexes fetched by researchers"
+  }
+ ],
+ "candidates": [
+  {
+   "title": "DeepGreen subsea tidal AI data center, Cook Inlet, FERC P-15423",
+   "verdict": "locked",
+   "dedupe": "FRESH with distinctive entities"
+  },
+  {
+   "title": "InvestNorth tokenized data center financing (AKDC/AIDEA/Plural)",
+   "verdict": "runner-up",
+   "reason": "release says no offering exists, thin on AI, adjacent to many covered data center items"
+  },
+  {
+   "title": "Anchorage Assembly surveillance ordinance AO 2026-108(S)",
+   "verdict": "runner-up",
+   "reason": "no primary text, AI provisions unverified"
+  },
+  {
+   "title": "UA regents delay AI statement of intent",
+   "verdict": "rejected",
+   "reason": "same subject as 11-05 and 11-06 dispatches"
+  }
+ ],
+ "locked_story": {
+  "title": "A tidal-powered underwater AI data center proposed for Cook Inlet beluga habitat: FERC preliminary permit P-15423, fishermen, the borough and Alaska Energy Authority object",
+  "found_at_rung": "in_window_sweep",
+  "date": "2026-11-02",
+  "headline": "A tidal-powered underwater AI data center proposed for Cook Inlet beluga habitat: FERC preliminary permit P-15423, fishermen, the borough and Alaska Energy Authority object"
+ }
+}

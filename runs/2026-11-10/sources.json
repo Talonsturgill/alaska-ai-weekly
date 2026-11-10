@@ -1,0 +1,11 @@
+{
+ "run_date": "2026-11-10",
+ "title": "Take a Number",
+ "sources": [
+  {"id": "s1", "title": "FERC notice of preliminary permit application, DeepGreen Cook Inlet SPV LLC, P-15423", "outlet": "Federal Register public inspection", "url": "https://public-inspection.federalregister.gov/2026-18151.pdf", "claims": ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"], "used_in_film": true, "note": "Primary notice. A proposal, nothing approved or built."},
+  {"id": "s2", "title": "Alaska fishing and wildlife groups raise alarm over proposal for underwater Cook Inlet data center", "outlet": "Anchorage Daily News", "url": "https://www.adn.com/alaska-journal/news/2026/10/04/alaska-fishing-and-wildlife-groups-raise-alarm-over-proposal-for-underwater-cook-inlet-data-center/", "claims": ["c9", "c13"], "used_in_film": true, "note": "Company quote and the fisheries alliance objection, attributed."},
+  {"id": "s3", "title": "Sloppy is the way I would describe this approach", "outlet": "Alaska's News Source", "url": "https://www.alaskasnewssource.com/2026/10/28/sloppy-is-way-i-would-describe-this-approach-unknown-plans-an-underwater-data-center-cook-inlet/", "claims": ["c10", "c11", "c12", "c18", "c19"], "used_in_film": true, "note": "Mayor and company statements, intervention, FERC has not ruled."},
+  {"id": "s4", "title": "Beluga whale species profile", "outlet": "NOAA Fisheries", "url": "https://www.fisheries.noaa.gov/species/beluga-whale", "claims": ["c14", "c16"], "used_in_film": true, "note": "Endangered listing and the 1979 population."},
+  {"id": "s5", "title": "New abundance estimate for endangered Cook Inlet beluga whales", "outlet": "NOAA Fisheries", "url": "https://www.fisheries.noaa.gov/feature-story/new-abundance-estimate-endangered-cook-inlet-beluga-whales", "claims": ["c15"], "used_in_film": true, "note": "331 whales, range 290 to 386."}
+ ]
+}

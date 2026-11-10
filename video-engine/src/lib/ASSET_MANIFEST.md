@@ -1015,3 +1015,7 @@ For any story about a paper trail, a deal or an announcement whose terms are sta
 - `ScalePans` — `fiber.tsx` — a brass two-pan scale on a stage with `tilt` -1..1, children for each pan and optional pan labels.
 - `Keyhole`, `Postcard`, `Phone`, `Sign`, `Doc`, `Magnifier`, `DeskNear`, `Pin`, `AlaskaShape` (wraps `AK_PATH`), `WestCoast` — `fiber.tsx` — chart-room props. `DeskNear` is the lower-third near plane of rolled chart edges, pencil and ruler.
 - Episode-local in `Ep1031.tsx`, candidates for promotion: `PencilLine`, `Chart`, `SeaWindow`, `Hat`, `WordTag`, `Stage`, `Lab`, `Plate`.
+
+# The ticket kit (2026-11-10, "Take a Number") — `lib/ticket.tsx`
+- `TakeANumberMachine` (`ticket.tsx`) — NET-NEW 2026-11-10, HERO of "Take a Number". A fat faceless vermilion deli-counter dispenser with a split-flap sign on a post. Params: `flip` 0..1 (the sign flips), `print` 0..1 (a ticket slides out of the slot), `shake` 0..1 (the clack), `head` (the sign's top line, default NOW SERVING) and `sign` (its value). Drawn at its base so it stands on any ground line; wrap in HeldProp for idle life. Signs are status claims: write only what the record supports. Reuse for any permit, queue or place-in-line story.
+- `Ticket` (`ticket.tsx`) — NET-NEW 2026-11-10, the throughline. A cream stub with a vermilion header band, serrated notches, a number, optional slate-ink stamps (`stamps`, `stampK`), a `split` 0..1 that tears it into two labelled halves (`labels`), `curl` and a dashed `ghost` mode.

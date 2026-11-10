@@ -1,0 +1,74 @@
+{
+ "run_date": "2026-11-10",
+ "story_id": "deepgreen-cook-inlet-after-the-deadline",
+ "treatment": {
+  "winner": "TAKE A NUMBER (dramatist base)",
+  "grafts": [
+   "explainer: permit mechanism panel with BUILD padlocked, 1,300 vs 331 dot field and the NOT THE SAME 1,300 stamp",
+   "comedian: moose unmoved on the far shore, returns holding a number",
+   "enthusiast: chairs sliding to the table, ticket split into STUDY and OUTREACH"
+  ],
+  "judge_reasoning": "All four pitches converged on the take-a-number ticket, which carries the angle (order, not whether) in one object any Alaskan has stood in line for. The dramatist's shore dispenser and loop back to an empty queue gives the cleanest bookend. The explainer's dot field is the hardest-landing number drawn physical. The comedian's gags stay off the whales and the named people. The enthusiast supplies the fair upside so the Test scene reads as a case and not a strawman."
+ },
+ "palette": {
+  "sky": "#3A3354 true violet blue hour, rising to #54506E at a pale horizon band",
+  "ground": "#2C4A57 shingle slate",
+  "hero": "#D6372B ticket vermilion",
+  "accent": "#F2E8D0 paper cream",
+  "shadow": "#0B1226",
+  "test_light": "#EEE27A acid lemon, hue near 57 degrees, lit by a lamp cone and window, paper pure white with slate ink inside it",
+  "fleet": "#2F6FB5 fleet blue (permit tags only)",
+  "whale": "#EAF2F4 beluga white (whale dots only)",
+  "mood": "cold blue hour, one acid lemon lamp for the applicant best case, back to blue hour",
+  "divergence": "11-09 oxblood and walnut, 11-08 permafrost, 11-07 transformer teal, 11-06 tangerine office, 11-02 midnight indigo cab with sodium amber. This film moves the sky off 11-02 indigo to a true violet and never uses amber: its warm moment is a pale lemon daylight, its hero is a vermilion machine on slate shingle, and the cream paper is the only recurring neutral. No teal desk, no oxblood. Revised 2026-11-10: sky moved off 11-02 indigo to slate violet, vermilion belongs to the machine and ticket only, stamps are ink slate or cream, never red."
+ },
+ "light": {
+  "time_of_day": "blue-hour dusk on the Nikiski shore, then an interior daylight beat for the Test",
+  "direction": "low key light from camera-left off the water, cool rim from behind the machine",
+  "key_fill_rim": "key pale lemon only in the Test, otherwise cold violet fill (#3A3354 family) with a vermilion bounce from the machine onto the shingle",
+  "depth": "three stage3d planes: foreground rope and posts, midground machine and queue, far shore silhouettes and ridge, with a haze plane between",
+  "per_shot": {
+   "1": "blue-hour shore key from camera-left off the water, cool rim, vermilion bounce from the machine; low camera behind the rope so the posts frame it",
+   "2": "one practical tube lamp inside the counter, cool window light with the tide behind the glass",
+   "3": "caustic shafts from the surface with haze falloff into dark slate seabed",
+   "4": "flat chart plane on purpose, no depth, cool overhead",
+   "5": "macro close, ticket lit by the counter lamp, hard rim",
+   "6": "the practical tube lamp over the docket window dies when the shutter drops, which is the deadline as a light event",
+   "7": "the same blue-hour shore key with the far ridge for geography",
+   "8": "counter lamp and window as shot 2",
+   "9": "flat cool overhead fluorescent, rectilinear",
+   "10": "the lemon room: lamp cone over a desk seen from above, a window onto water; lemon drains out as shot 11 water floods in via a round lens match",
+   "11": "top-down dusk water, white dots self-lit, blue tags flat",
+   "12": "a single cool pendant lamp over the chair side throws three chair shadows across the table, camera tilted a few degrees off pure overhead so the table edge recedes and the empty seats read as places",
+   "13": "blue-hour shore as shot 1, with the vermilion machine and its bounce on the shingle, the split P-15423 halves on the rope and the NEXT ticket as the only warm notes"
+  }
+ },
+ "shape_language": "Rectilinear, perforated and stamped paper against round organic water and animal shapes. The machine is a fat vertical box, the whales are soft ovals, proposed hardware is dashed ghost outlines. The contrast is bureaucracy against tide. There is always one curve in a frame of rectangles: tide behind the counter glass, a tide clock beside the wall clock, the inlet through the spruce at the mailbox, a water curve on the pegboard, the window onto water in the lemon room. The cable on the chart follows a curved tidal contour and the 331 block at the table edge has a soft water edge.",
+ "casting": {
+  "hero": "TakeANumberMachine (net-new, lib/ticket.tsx), a face-less fat red deli-counter dispenser with a NOW SERVING flip sign, no face, posture and clack carry it",
+  "throughline": "cream ticket P-15423 with a vermilion header band, slate stamp ink on the cream body, in six states",
+  "supporting": [
+   "Character rig (parka mayor, suit applicant, worker fleet hand, field-jacket scientist) as silhouettes and stand-ins, never named real faces",
+   "Moose (fauna.tsx) the unmoved far-shore witness",
+   "Beluga (fauna.tsx) only as a calm silhouette and as dots, never a joke, never touched by hardware",
+   "FishingBoat (vehicles.tsx) far in the water",
+   "Stamp and BoxLabel kit",
+   "subsea pod ghost (dashed outline, no face)",
+   "FERC clerk silhouette who stamps and glances at the empty rope",
+   "mayor silhouette who opens the empty mailbox",
+   "field-jacket silhouette who pins the INTERVENE folder"
+  ],
+  "reasons": "The shelf covers every actor. The machine is the one gap, a reusable prop that can serve future permit and queue stories. Heroes of the last two films (StampBot, Reels, Strand) are not used.",
+  "machine_sign": "The shore machine sign carries queue states only: P-15423 at the open, NOT YET at shot 13, NEXT at the moose. The deadline has its own small docket sign that flips to CLOSED over the window at the shutter drop."
+ },
+ "motion_language": "The dispenser clacks and shudders with squash and overshoot on every ticket. Paper entrances anticipate, overshoot and settle. The dot field drains with eased cohorts. Held figures use IdleFigure cues, held props use HeldProp and HeldTravel.",
+ "composition": {
+  "focal_hierarchy": "each shot names one 55 to 70 percent hero, a 20 to 30 percent support and 10 to 15 percent world",
+  "negative_space": "the empty queue rope at the open and the close, held as the quiet beat",
+  "safe_area": "hero and plates within y 420 to 1500 of the 9:16 master, sky and water above and shingle below stage the vertical",
+  "signature_shot": "the 1979 field of 1,300 white dots draining down to a 331 block while the NOT THE SAME 1,300 stamp parts them from the fleet's permit tags",
+  "stamp_cap": "Two stamps only, PRELIMINARY PERMIT and NOT THE SAME. Everything else is native to the ticket: perforation tears, bare unpinned pegs, a rubber band, a pencil. Stamp ink is slate on the cream body of the ticket (the vermilion band is only its header) and on cream paper, never red.",
+  "declined_note": "Critic note declined with measurement: the closing shore is not emptied of people because the VO names the borough, fleet and NOAA at that moment and the three silhouettes stop at the rope without sitting, so the question stays a question."
+ },
+ "craft_advance": "none this film needs beyond the net-new TakeANumberMachine asset"
+}

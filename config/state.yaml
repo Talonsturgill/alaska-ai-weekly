@@ -3393,3 +3393,49 @@ dispatch_history:
     light_story: golden-hour-low-key
     metaphor: a plan-stamping press with a machine handle and a human handle, and
       a draft sheet that changes state until it lies unsigned before two dark chairs
+- date: '2026-11-10'
+  topic: DeepGreen subsea AI data center study permit for Cook Inlet (FERC P-15423)
+    after the November 2nd objection deadline, borough mayor says no contact, fisheries
+    and conservation objections, 331 belugas
+  slug: take-a-number
+  key_entities:
+  - DeepGreen
+  - FERC
+  - P-15423
+  - Nikiski
+  - Cook Inlet belugas
+  - tidal turbines
+  - subsea data center
+  - Micciche
+  - Kenai Peninsula Borough
+  - Alaska Commercial Fisheries Conservation Alliance
+  - Center for Biological Diversity
+  - NOAA
+  archetype: take-a-number machine on a blue-hour shore, ticket throughline
+  palette: blue-hour violet shore, vermilion dispenser, acid lemon Test, fleet blue
+    tags, white beluga dots
+  voice: Gemini Sulafat
+  stance: mixed
+  angle: 'The Cook Inlet fight isn''t yet about whether a subsea AI data center belongs
+    there. It''s about order: DeepGreen claimed a place in line at FERC before it
+    talked to the people who share the water.'
+  hero: TakeANumberMachine
+  cast:
+  - TakeANumberMachine
+  - Ticket
+  - Person
+  - Moose
+  - Beluga
+  - Ghost
+  composition:
+    pov: top-down-map
+    motion_vector: assemble-build
+    hero_treatment: structure-as-subject
+    layout: stacked-layers
+    register: paper-and-stamp
+    palette: blue-hour true violet shore, shingle slate, a vermilion dispenser, one
+      acid lemon lamp for the Test, fleet blue permit tags and white beluga dots
+    camera_strategy: locked-drift
+    light_story: blue-hour-then-lemon-daylight
+    metaphor: 'a take-a-number machine on the Nikiski shore: the permit is a place
+      in line, and the film asks who else is handed a number before the study is written'
