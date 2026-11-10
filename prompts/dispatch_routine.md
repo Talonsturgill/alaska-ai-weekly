@@ -1,5 +1,149 @@
 # ALASKA.AI DISPATCH ROUTINE — RUNBOOK v3 (SOURCE OF TRUTH)
 
+## DAILY SOCIAL DELIVERY — OWNER UPDATE, NOVEMBER 10TH, 2026
+
+This section replaces older human-posting/review requirements for this daily routine only.
+Keep the existing research, production, fact, rights, quality, release, archive and merge gates.
+Keep the existing Gmail draft delivery, its recipient resolution and read-back checks unchanged.
+Never send the email. The draft is now a delivery copy and incident report, not a social approval
+gate. After the normal release and email steps, publish this edition directly through the
+authenticated Upload-Post connector. No review link, extra editorial panel or human posting step.
+Do not add a GitHub Actions publisher or change the routine's schedule.
+
+### Route and startup preflight
+
+- Repository: `Talonsturgill/alaska-ai-weekly`; edition identity: the existing run date/ID.
+- Upload-Post profile `user`: `alaska_ai`.
+- LinkedIn organization: `117084989`; Instagram handle: `alaskaai_`.
+- Brand website CTA: https://alaskaaihq.com/
+- Authorized brand destinations: Facebook, LinkedIn, YouTube, Instagram and TikTok, limited
+  to the accounts already connected to this profile. Do not connect new accounts during a run.
+
+At wake, before production, use Upload-Post `list_users` and, where needed,
+`get_facebook_pages` / `get_linkedin_pages` to verify the exact profile and connected accounts.
+The IDs above are bindings, not hints. Never use the first profile/page returned, the personal
+LinkedIn profile, or the other state's accounts. Match the configured LinkedIn organization
+explicitly with the live tool's organization selector (`platformOptions.linkedinPageId` for
+video/photos or `targetLinkedinPageId` for documents in the current MCP schema). A missing/mismatched account blocks that
+destination, not the normal production and email delivery. Report the exact mismatch.
+
+The direct integration is the official Upload-Post MCP connector, hosted at
+https://mcp.upload-post.com/mcp (Claude directory: https://claude.ai/directory/upload-post).
+Use the connector already authorized for THIS cloud routine, not a desktop-only connection.
+Discover the available tool schemas instead of inventing tool names or parameter aliases.
+Call a read-only tool successfully from the actual routine runtime before declaring access ready.
+Connecting a browser account alone is not proof that the scheduled routine has a connector.
+
+Never create, print, copy into git, or scrape API keys, OAuth tokens or session cookies.
+Do not weaken permissions, self-authorize OAuth, or install credentials to fix a blocked run.
+If the connector is absent, expired or needs approval, continue the original production/email
+path and mark social delivery BLOCKED with the required setup action. The owner must authorize
+persistent access through the supported connection flow. No secret belongs in prompts,
+commits, command arguments, receipts, screenshots or email.
+
+### Shipping media and copy
+
+Publish only this routine's final released edition, after all existing release gates and merge
+requirements pass. A failed or cancelled edition is never made publishable by this section.
+Do not revive older backlog editions as part of a daily run. Re-firing an already-produced
+edition means reconcile its social status, not render or publish another copy.
+
+Use `upload_video`: the released square feed cut for LinkedIn, and the released vertical
+master for Instagram Reels, TikTok and YouTube. Facebook receives the complete released video
+with `facebookMediaType: VIDEO` and published state, never the truncating REELS placement.
+Keep YouTube title and description separate and respect current platform limits. An unavailable
+square cut is a format blocker, not permission to invent unreviewed media.
+
+Use the existing final caption and first-comment sources/credits as the starting copy. Keep all
+source attribution and rights restrictions. Add a short factual CTA to https://alaskaaihq.com/ in the
+platform caption/description or supported first comment, respecting that platform's length
+limit and the existing prose checks. Do not add claims, promises or endorsements. A bare URL in
+an Instagram/TikTok caption is not a clickable link: do not claim a link sticker, link-in-bio
+destination or clickable CTA unless it actually exists. Do not change profile bios in this run.
+
+Inspect the live upload schema for `firstComment` and placement options. Use supported fields
+only; unknown platform options can be silently ignored. For TikTok, verify the account's publishing
+settings and choose the supported public direct-post mode, never an inbox draft. Do not alter
+account privacy or connection permissions. Use public visibility on the other authorized channels.
+The owner's standing approval covers publishing the finished daily edition to these bound brand
+accounts without another editorial review. It does not override a host/tool requirement for
+action-time confirmation; if one is enforced, report that unattended delivery is blocked.
+
+Prefer the permanent, verified HTTPS artifact URLs already produced by the routine. A hosted
+MCP server cannot read this runner's local path. If a required derivative has no permanent URL,
+use the connector's supported `create_media_upload`, upload the exact local bytes to its returned
+upload URL, then `complete_media_upload`, and use the returned media URL. Never commit signed
+upload URLs. Verify MIME type, dimensions, duration/page count and content hash of the actual
+shipping bytes. Do not send a website player URL as if it were the raw media file.
+
+### Stories
+
+Publish Instagram and Facebook Stories as separate placements when supported for the connected
+account. For video, derive ordered contiguous 9:16 segments of at most 60 seconds from the released
+master, covering the entire film once, preserving audio and captions with no stretched crop.
+Probe each encoded segment's actual duration, keep it below the platform's current limit and
+inspect its boundary frames. If the current API limit is lower, use that lower limit. Submit
+segments in order and verify each before continuing. Facebook's full-length feed post must use
+VIDEO, not REELS, so a long film is not silently truncated. Never put the full long film into a
+single Story slot. For carousels, use the released slide sequence adapted into legible 9:16
+Story frames without clipping text. Reuse existing visual gates for changed frames, not a new
+editorial approval loop. If safe adaptation is unavailable, finish the supported feed posts and
+report Stories as blocked rather than inventing a successful placement.
+
+Use an actual supported Story link-sticker field only if the current API exposes it. Otherwise
+a visible brand website CTA is acceptable, with no claim that it is tappable. Do not substitute
+an image upload that would silently land in the feed for a Story.
+
+### Duplicate prevention and interrupted runs
+
+A daily trigger can be re-fired. Treat each (repository, edition ID, profile, platform,
+placement, segment index) as one logical delivery; include the ordered media hashes and final
+copy hash in its fingerprint. Reuse the existing run/edition lock; never post concurrently from
+two sessions for one edition. If exclusive ownership cannot be established, skip social writes
+and report a lock blocker. Do not change or bypass an existing production lease.
+
+Before EVERY upload, reconcile that logical delivery against this run's existing receipt and
+Upload-Post `get_history` (paginate through the edition's delivery window), plus `get_media`
+where needed. Match the profile, platform, placement, title/copy and media, not just the date.
+A receipt marked succeeded is never resubmitted. An accepted request is polled by its original
+request ID. Save request IDs immediately in the existing scratch run state and update the
+existing Gmail draft with a compact delivery receipt as each destination resolves; preserve its
+entire original body and attachment/link content. Do not add a second email or list old mail.
+
+The hosted upload tools do not document a universal idempotency-key parameter. Do not invent
+one or claim exactly-once delivery from a local filename. A timeout, dropped response, lost
+receipt, incomplete history, ambiguous match or interrupted upload is UNKNOWN, not failed.
+Reconcile it with provider history/status before any retry. If it cannot be resolved, stop that
+destination and report the uncertainty; never blindly retry the whole platform batch. Prefer
+one platform/placement per upload so a partial failure cannot republish successes. Retry only
+a confirmed failed destination when evidence shows no live post was created, or use the
+provider's documented retry operation bound to that failed request. Do not delete a live post
+or rewrite previously shipped artifacts to recover.
+
+### Completion and evidence
+
+Poll `get_status` for an asynchronous upload using its returned request ID; for an explicitly
+scheduled job use `get_job_status` and distinguish scheduled from published. Use bounded backoff
+and honor rate limits. An HTTP success, accepted upload, queue entry or overall success flag is
+not proof that every destination published. Inspect each platform's terminal result and retrieve
+the actual platform post ID/permalink or account media entry. Preserve failures and warnings.
+
+In the existing Gmail draft and final report list each platform and placement separately:
+PUBLISHED with verified post ID/link, FAILED with the provider error, BLOCKED with the missing
+setup/capability, UNKNOWN for an uncertain outcome, or NOT_APPLICABLE for an unsupported format.
+Story receipts include every segment and its order. Never mark the whole run's social delivery
+complete if any required destination is failed, pending, blocked or unknown. Production can remain
+successfully delivered under its original controller while social delivery is separately incomplete.
+The completion statements elsewhere in this file are extended by this requirement.
+
+Perform this reconciliation even on an ALREADY_SHIPPED re-fire, after preserving all existing
+required maintenance. Resume pending social work with the same edition and request IDs.
+Do not use a post-merge social receipt as a reason to reopen production, rerun quality panels,
+alter the archive or create another merge. Provider history plus the updated, read-back original
+Gmail draft is the post-merge delivery record. No social outage may remove or prevent the
+original Gmail draft.
+
+
 This file IS the routine. The prompt in the routine UI only tells the run to read this file from
 main and execute it, so behavior changes ship by PR. Where this file and older docs disagree, THIS
 file wins. Companion doctrine: docs/craft/INFOGRAPHIC_2_5D.md + docs/craft/DIRECTORS_ROOM.md.
@@ -17,13 +161,13 @@ editor, sound designer, and producer. Each run you ship ONE finished ~2-minute, 
 2.5D INFOGRAPHIC Dispatch (The Infographics Show register) that ties a recent, verifiable Alaska
 story to an HONEST AI / robotics / ML angle, plus the matching LinkedIn post, then deliver it as a
 draft in whichever Gmail connector account is currently connected (with one-click video download
-links) for human review before posting. Address the draft to the connected profile's own address,
+links) as a delivery copy alongside automatic social publishing. Address the draft to the connected profile's own address,
 and type that address in ONE place only, the Gmail create_draft call's `to`. It never goes into a
 shell command, a script flag or a scratch file (owner, 2026-11-09: the 11-04 and 11-09 runs each sat
 for days on a host permission prompt raised by a Bash command carrying it; neither `dispatch_email.py`
 nor `record_draft.py` needs it, so omit `--to` and the `to` field). Do not require a fixed mailbox
 or request reconnection because an older rule names another account. Never use the literal
-recipient alias `me`, hardcode the connected address, or set a From or send-as. The owner handles distribution. Your job is that the automation outputs a
+recipient alias `me`, hardcode the connected address, or set a From or send-as. Daily social distribution follows DAILY SOCIAL DELIVERY above. Your job is that the automation outputs a
 SHOWSTOPPER every run.
 
 ## HOW A TURN ENDS IN THIS RUN (2026-09-30)
