@@ -51,7 +51,7 @@ B = [
  (22, 8, W("engineering"), "scratch", "paper blueprints and a fish chart", "get a pencil line drawn across them as a rubber band snaps around the roll", "reading", "ON PAPER FIRST", "the pencil draws", ""),
  (23, 9, 0.0, "pop", "a pegboard of blue permit tags", "pins on tag by tag into a wall behind the ticket pinned at its head", "alarmed", "1,300+ ACTIVE PERMITS · FISHERIES ALLIANCE", "the tags click on", ""),
  (24, 9, W("assess"), "tap", "a dashed gap of unpinned pegs", "outlines itself in the middle of the tag wall", "stern", "ALLIANCE SAYS NOT ASSESSED", "the gap pulses", ""),
- (25, 9, W("Center"), "clink", "a field-jacket silhouette", "steps up and pins a folder tabbed INTERVENE beside the tags", "firm", "CENTER FOR BIOLOGICAL DIVERSITY · INTERVENOR", "the folder pins", ""),
+ (25, 9, W("Center"), "clink", "a field-jacket silhouette", "steps up and pins a folder tabbed INTERVENE beside the tags", "firm", "CENTER FOR BIOLOGICAL DIVERSITY · FILED TO INTERVENE", "the folder pins", ""),
  (26, 10, 0.0, "chime", "a pale lemon lamp cone", "snaps on over a desk seen from above as the applicant slides a binder across it", "hopeful", "THE COMPANY'S BEST CASE", "the lamp glows", "rehook: the light snaps to lemon over a desk from above"),
  (27, 10, W("answers"), "page", "the applicant", "turns binder pages while a magnifier sweeps a seabed chart that fills in as he goes", "focused", "A STUDY IS HOW YOU GET ANSWERS", "the chart fills", ""),
  (28, 10, W("permit"), "clunk", "the applicant", "tugs the padlocked BUILD lever once and lets it go with the ticket under the magnifier", "calm", "PERMIT ALLOWS NO CONSTRUCTION", "the lock holds", ""),
@@ -221,7 +221,7 @@ def build():
         "tail_s": 3.0, "audio_arc": {"bed": [
             {"line": 0, "offset": 0.0, "level": 1.4}, {"line": 2, "offset": 0.0, "level": 0.6}, {"line": 4, "offset": 0.0, "level": 1.6},
             {"line": 6, "offset": 0.0, "level": 0.4}, {"line": 8, "offset": 0.0, "level": 1.2}, {"line": 10, "offset": 0.0, "level": 0.5},
-            {"at_s": 63.25, "level": 0.3}, {"at_s": 64.3, "level": 1.1}, {"at_s": 74.3, "level": 0.3}, {"at_s": 75.5, "level": 0.6},
+            {"at_s": 63.3, "level": 0.1}, {"at_s": 64.25, "level": 1.1}, {"at_s": 74.4, "level": 0.1}, {"at_s": 75.45, "level": 0.6}, {"at_s": 94.6, "level": 0.15}, {"at_s": 95.6, "level": 1.4},
             {"line": 11, "offset": 0.0, "level": 1.6},
             {"at_s": round(b_at(34) - 0.3, 3), "level": 0.12}, {"at_s": round(b_at(34) + 0.8, 3), "level": 2.0},
             {"from_end": 2.6, "level": 0.9}, {"from_end": 0.4, "level": 0.0}],

@@ -657,3 +657,13 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **Held beats under 6 percent are the Motion cap.** Wrapping the sheets, stacks, chairs, hands and press in HeldProp with a gain of 3 to 5 lifted Motion by 0.5 over three cuts. Do it at the first build, not after round 2. (2026-11-05)
 - **dispatch_mix squashed the loudness range to 5.1 to 5.9 because its loudnorm target was LRA 7 against a premix of 10.5.** LRA 14 delivers 8.0. (2026-11-05)
 - **Never state a vote result or imply one.** The editor caught AUTO STAMP? next to REGENTS NOVEMBER MEETING as an implied rubber stamp, and "the university says" where the source is one official. (2026-11-05)
+
+## 24. Things the 2026-11-10 gates, critics and panel found that were knowable in advance ("Take a Number")
+- **A date tab never sits on a count from another year.** A 2008 listing tab on the 1979 field of 1,300 dots read as 1,300 whales in 2008 to the editor and the judge. Label every count with its own year and source (1979 · ABOUT 1,300, 331 · NOAA BEST ESTIMATE) and keep listing dates off population art. (2026-11-10)
+- **Two equal numbers about different things are drawn as two labelled blocks, never as a riddle stamp.** NOT THE SAME 1,300 beside one column of tags read as permits replacing whales. Draw both quantities, each labelled, split by a divider. (2026-11-10)
+- **A sign is a status claim.** NOW SERVING P-15423 on a queue machine and CLOSED on a docket shutter read as FERC acting on the application and the case being closed. Write what is true (FIRST IN LINE, OBJECTIONS CLOSED, DEADLINE PASSED, FERC RULING NOT YET). (2026-11-10)
+- **Every banner traces to a claim.** A QUEUE ALREADY FORMED was the film's own metaphor printed as a fact. Metaphor stays in the picture, plates carry the record. (2026-11-10)
+- **caption_fixups match the article too.** "hundred megawatts" -> "100 MW" left "About a 100 MW" on screen, a hard blocker. Map "a hundred megawatts" as its own, longer key. (2026-11-10)
+- **HeldTravel boxes hug the prop.** Box-sized sweeps over empty scenery read as diagonal glare slabs on 10 of 13 shots. Size the box to the prop and keep strength at 0.1 to 0.16 over large areas. (2026-11-10)
+- **Credit source labels are names, not hosts.** FISHERIES.NOAA.GOV failed rendered OCR at credit size; build_scenes now writes NOAA FISHERIES and FEDERAL REGISTER. (2026-11-10)
+- **A fact-check on_screen string may not contain a colon.** c12's approved string had one, so claims_contract and visible_copy contradicted each other until the record was rewritten. (2026-11-10)

@@ -203,6 +203,7 @@ const Atmos: React.FC<{f: number; mode: Mode}> = ({f, mode}) => {
         <rect width={W} height={H} fill="url(#rmg)" />
         <rect data-band="ok" x={0} y={1180} width={W} height={740} fill="#2A2440" />
         <rect x={0} y={1176} width={W} height={10} fill="#0B1226" />
+        <g data-band="ok">{Array.from({length: 12}).map((_, i) => <path key={i} d={`M ${i * 110 - 120},1920 L ${300 + i * 45},1186`} stroke="#1B1830" strokeWidth={3} opacity={0.6} />)}{Array.from({length: 6}).map((_, i) => <path key={`h${i}`} d={`M 0,${1260 + i * 110} H 1080`} stroke="#1B1830" strokeWidth={3} opacity={0.5} />)}</g>
       </svg>
     );
   }
@@ -224,6 +225,7 @@ const Atmos: React.FC<{f: number; mode: Mode}> = ({f, mode}) => {
       <rect x={0} y={1182} width={W} height={10} fill={C.ink} />
       {Array.from({length: 30}).map((_, i) => <ellipse key={i} cx={(i * 97) % 1080} cy={1250 + ((i * 53) % 320)} rx={14 + (i % 4) * 8} ry={5 + (i % 3) * 2} fill={C.groundD} opacity={0.75} />)}
       <ellipse cx={540} cy={1180} rx={520} ry={150} fill="url(#bounce)" />
+      <g data-band="ok">{Array.from({length: 14}).map((_, i) => <ellipse key={`fs${i}`} cx={(i * 173 + 40) % 1100} cy={1560 + ((i * 89) % 330)} rx={40 + (i % 4) * 18} ry={16 + (i % 3) * 6} fill="#24404C" stroke={C.ink} strokeWidth={3} />)}<path d="M 0,1530 Q 540,1490 1080,1540" stroke="#1A2F38" strokeWidth={10} fill="none" opacity={0.6} /></g>
     </svg>
   );
 };
@@ -308,7 +310,7 @@ const Clock: React.FC<{x: number; y: number; s?: number; hand: number; f: number
     <circle r={120} fill={C.paper} stroke={C.ink} strokeWidth={9} />
     {Array.from({length: 12}).map((_, i) => <line key={i} x1={0} y1={-98} x2={0} y2={-112} stroke={C.ink} strokeWidth={6} transform={`rotate(${i * 30})`} />)}
     <line x1={0} y1={0} x2={0} y2={-64} stroke={C.ink} strokeWidth={9} strokeLinecap="round" transform={`rotate(${150})`} />
-    <line x1={0} y1={0} x2={0} y2={-96} stroke={C.ink} strokeWidth={6} strokeLinecap="round" transform={`rotate(${lerp(-40, 150, hand) + 2 * Math.sin(f / 4) * (1 - hand)})`} />
+    <line x1={0} y1={0} x2={0} y2={-96} stroke={C.ink} strokeWidth={6} strokeLinecap="round" transform={`rotate(${lerp(-90, 0, hand) + 2 * Math.sin(f / 4) * (1 - hand)})`} />
     <circle r={9} fill={C.ink} />
   </g>
 );
@@ -335,11 +337,11 @@ const GlassWindow: React.FC<{x: number; y: number; w: number; h: number; f: numb
   </g>
 );
 
-const Counter: React.FC<{x: number; y: number; w?: number}> = ({x, y, w = 760}) => (
+const Counter: React.FC<{x: number; y: number; w?: number; label?: string}> = ({x, y, w = 760, label = 'FERC'}) => (
   <g>
     <rect x={x - w / 2} y={y} width={w} height={30} rx={6} fill={C.wood} stroke={C.ink} strokeWidth={7} />
     <rect x={x - w / 2 + 14} y={y + 30} width={w - 28} height={260} fill="#2A2038" stroke={C.ink} strokeWidth={7} />
-    <text x={x} y={y + 190} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={40} letterSpacing={6} fill="#F2E8D0" opacity={0.85}>FERC</text>
+    <text x={x} y={y + 190} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={40} letterSpacing={6} fill="#F2E8D0" opacity={0.85}>{label}</text>
   </g>
 );
 
@@ -516,7 +518,7 @@ const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
             </g>
           );
         })}
-        {f >= at(8) && f < at(36) && <text x={60} y={318} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={2} fill={C.lemon} opacity={0.95}>PROPOSED · FERC HAS NOT RULED</text>}
+        {f >= at(8) && <text x={60} y={318} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={2} fill={C.lemon} opacity={0.95}>PROPOSED · FERC HAS NOT RULED</text>}
         <line x1={44} y1={270} x2={1020} y2={270} stroke={C.paper} strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
         <circle cx={44 + Math.max(0, cur) * 164 + 77} cy={270} r={9} fill={C.paper} />
       </g>
@@ -539,7 +541,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Spruces y={1180} n={7} seed={7} f={f} x0={660} x1={1120} scale={0.9} />
         <g transform="translate(980 1160)" opacity={0.9}><Moose x={0} y={0} scale={0.42} f={f} facing={-1} emotion="calm" /></g>
         <HeldProp f={f} px={540} py={1190} w={360} h={470} seed={1.3} kind="rest">
-          <TakeANumberMachine f={f} x={540} y={1270} s={1.25} head="FIRST IN LINE" flip={flip} print={pr} shake={Math.max(0, 1 - ease(f, b(1), 18)) * (f > b(1) ? 1 : 0)} sign="P-15423" />
+          <TakeANumberMachine f={f} x={540} y={1270} s={1.25} head="APPLIED FOR" flip={flip} print={pr} shake={Math.max(0, 1 - ease(f, b(1), 18)) * (f > b(1) ? 1 : 0)} sign="P-15423" />
         </HeldProp>
         <Ticket x={lerp(540, 700, tk)} y={lerp(1230, 1300, tk) + 10 * Math.sin(f / 10)} s={0.46} rot={lerp(0, 14, tk)} curl={1 - tk} />
         <g transform={`translate(${lerp(540, 260, nxt)} ${lerp(1040, 1220, nxt)})`} opacity={nxt}><Ticket s={0.34} num="NEXT" rot={-10} /></g>
@@ -585,7 +587,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         </g>
         <Ticket x={lerp(400, 640, slide)} y={lerp(1090, 1090, slide) + 30 * Math.sin(slide * 3.14)} s={0.42} stamps={stampDown > 0.2 ? ['PRELIMINARY PERMIT'] : []} stampK={stampDown} rot={lerp(-8, 0, slide)} />
         <g transform={`translate(660 ${lerp(900, 1040, stampDown)})`} opacity={rise}><rect x={-40} y={-14} width={80} height={40} rx={8} fill={C.slate} stroke={C.ink} strokeWidth={6} /><rect x={-10} y={-64} width={20} height={52} rx={6} fill={C.woodD} stroke={C.ink} strokeWidth={5} /></g>
-        <g transform="translate(240 760)" opacity={0.9}><TakeANumberMachine f={f} x={0} y={0} s={0.28} head="FIRST IN LINE" sign="P-15423" /></g>
+        <g transform="translate(240 760)" opacity={0.9}><TakeANumberMachine f={f} x={0} y={0} s={0.28} head="APPLIED FOR" sign="P-15423" /></g>
         <Plate x={540} y={585} displayLines={['DEEPGREEN', 'COOK INLET SPV LLC']} text="DEEPGREEN COOK INLET SPV LLC" size={32} p={vis(f, b, K, 0)} />
         <Plate x={540} y={690} text="FEDERAL REGULATORS" size={34} p={vis(f, b, K, 1)} />
         <Plate x={540} y={772} text="FERC" size={50} tone="glow" p={vis(f, b, K, 2)} />
@@ -628,7 +630,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         {pods.map((q) => <Pod key={q.i} x={q.x} y={q.y} s={0.62} draw={draw(q.i)} f={f} seed={q.i} />)}
         {pods.filter((q) => q.i % 3 === 0).map((q, j) => <Turbine key={q.i} x={q.x + 40} y={q.y - 190} s={0.7} up={up(j)} f={f} seed={j} />)}
         <Lab text="66 PROPOSED PODS" x={540} y={1300} size={22} tone="dark" p={ease(f, b(38), 18)} />
-        <HeldTravel f={f} x={100} y={960} w={880} h={380} mode="sweep" seed={3} strength={0.1} />
+        <HeldTravel f={f} x={150} y={1000} w={760} h={60} mode="runner" seed={3} path={[[150, 1030], [910, 1030]]} />
         <Plate x={540} y={585} text="PROPOSED · 66 SUBSEA PODS" size={34} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="PODS ON THE SEABED" size={36} p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="PROPOSED · 330 TO 350 TURBINES" size={32} p={vis(f, b, K, 2)} />
@@ -648,7 +650,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const pulse = clamp01((f - b(11) - 60) / 40) % 1;
   const path = 'M 230,1250 C 380,1200 520,1300 680,1210 S 840,1120 880,1090';
   return (
-    <Frame p={p} mode="chart" z0={1.02} z1={1.07} oy={980}>
+    <Frame p={p} mode="chart" cam={(fr: number) => ({z: 1.08, fx: lerp(420, 700, easeIO(fr, b(11), 60)), fy: lerp(900, 1000, easeIO(fr, b(39), 60))})}>
       <SVG>
         {[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M -20,${980 + i * 90} C 200,${940 + i * 90} 420,${1020 + i * 90} 640,${960 + i * 92} S 760,${900 + i * 80} 800,${860 + i * 70}`} fill="none" stroke="#5B8DB0" strokeWidth={3} opacity={0.5 - i * 0.06} strokeDasharray={i % 2 ? '10 8' : undefined} />)}
         <path data-band="ok" d="M 760,1920 L 790,1500 Q 820,1220 880,1060 Q 940,900 1080,820 L 1080,1920 Z" fill="#E8D9A8" stroke={C.ink} strokeWidth={6} />
@@ -697,23 +699,25 @@ const S5: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} mode="room" z0={1.03} z1={1.1} oy={980}>
       <SVG>
-        {[0, 1, 2, 3, 4].map((i) => <Ghost key={i} x={lerp(330 + i * 50, 250 + i * 40, front)} y={930} s={0.8} f={f} seed={i} o={0.5} />)}
+        <rect data-band="ok" x={0} y={1150} width={1080} height={770} fill="#3A2E3E" />
+        {Array.from({length: 8}).map((_, i) => <path key={`cb${i}`} d={`M 0,${1180 + i * 90} H 1080`} stroke="#2A2030" strokeWidth={4} />)}
+        {[0, 1, 2, 3, 4].map((i) => <Ghost key={i} x={lerp(330 + i * 50, 250 + i * 40, front) + 8 * Math.sin(f / 9 + i)} y={930} s={0.8} f={f} seed={i} o={0.5} />)}
         <g transform={`translate(${lerp(660, 420, front)} 900)`}>
           <Person x={0} y={0} s={0.8} dress="suit" f={f} seed={2.1} />
         </g>
         <g opacity={clamp01(quote < 0.5 ? 1 - quote * 2 : 0)}>
-          <g transform={`translate(720 ${lerp(780, 740, grow)})`} opacity={1}>
-            {tear < 0.02 && f > b(12) + 40 ? <Ticket x={0} y={0} s={2.3} /> : (
+          <g transform={`translate(730 ${lerp(760, 720, grow)})`} opacity={1}>
+            {tear < 0.02 && f > b(12) + 40 ? <Ticket x={0} y={0} s={2.6} /> : (
             <g>
             <g transform={`translate(${-34 * tear} 0) rotate(${-5 * tear})`}>
               <clipPath id="t5l"><rect x={-180} y={-250} width={180} height={500} /></clipPath>
-              <g clipPath="url(#t5l)"><Ticket x={0} y={0} s={2.3} /></g>
+              <g clipPath="url(#t5l)"><Ticket x={0} y={0} s={2.6} /></g>
               <rect x={-170} y={214} width={160} height={46} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={5} opacity={tear} />
               <text x={-90} y={246} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} fill={C.ink} opacity={tear}>STUDY</text>
             </g>
             <g transform={`translate(${34 * tear} 0) rotate(${5 * tear})`}>
               <clipPath id="t5r"><rect x={0} y={-250} width={180} height={500} /></clipPath>
-              <g clipPath="url(#t5r)"><Ticket x={0} y={0} s={2.3} /></g>
+              <g clipPath="url(#t5r)"><Ticket x={0} y={0} s={2.6} /></g>
               <rect x={10} y={214} width={170} height={46} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={5} opacity={tear} />
               <text x={95} y={244} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={16} fill={C.ink} opacity={tear}>PLACE IN LINE</text>
             </g>
@@ -764,7 +768,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(160 1150)"><circle r={44} fill="#173246" stroke={C.ink} strokeWidth={7} /><path d={`M -40,0 Q -20,${-18 + 14 * Math.sin(f / 12)} 0,0 T 40,0`} fill="none" stroke="#9FC4DC" strokeWidth={6} /><Lab text="TIDE" x={0} y={78} size={16} tone="dark" p={1} /></g>
         <Calendar x={290} y={1230} s={0.55} f={f} line1="NOVEMBER" line2="2ND" flip={leaf} />
         <g transform="translate(560 1200)"><rect x={-120} y={-34} width={240} height={68} rx={8} fill={shut > 0.5 ? C.brass : C.paper} stroke={C.ink} strokeWidth={6} /><text y={-8} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} letterSpacing={2} fill={C.ink}>OBJECTIONS</text><text y={20} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={C.ink}>{shut > 0.5 && f > b(17) + 14 ? 'DEADLINE PASSED' : 'OPEN'}</text></g>
-        <g transform="translate(900 1260)"><TakeANumberMachine f={f} x={0} y={0} s={0.5} head="FIRST IN LINE" sign={'P-15423'} /></g>
+        <g transform="translate(900 1260)"><TakeANumberMachine f={f} x={0} y={0} s={0.5} head="APPLIED FOR" sign={'P-15423'} /></g>
         <g transform="translate(780 1230)" opacity={0.95}><Ticket s={0.24} num="NEXT" rot={-8} /></g>
         <g transform={`translate(${lerp(1160, 700, slip)} ${lerp(1010, 1050, slip)})`} opacity={slip > 0.02 && shut < 0.6 ? 1 : 0}><BlueTag x={0} y={0} s={1.8} rot={-10} /><Folder x={60} y={30} s={0.5} rot={8} tab="INTERVENE" /></g>
         <Plate x={540} y={585} text="DEADLINE FOR OBJECTIONS" size={34} p={vis(f, b, K, 0)} />
@@ -803,8 +807,8 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={585} text="MAYOR PETER MICCICHE" size={34} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="CALLED IT SLOPPY" size={44} tone="warn" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} displayLines={['NO EMAIL, LETTER', 'OR CALL, HE SAYS']} text="NO EMAIL, LETTER OR CALL, HE SAYS" size={34} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={862} text="A QUEUE ALREADY FORMED" size={32} tone="glow" p={vis(f, b, K, 3)} />
-        <HeldTravel f={f} x={780} y={700} w={250} h={300} mode="sweep" seed={7} strength={0.16} rx={40} />
+        <Plate x={540} y={862} text="THE APPLICATION WAS ALREADY FILED" size={28} tone="glow" p={vis(f, b, K, 3)} />
+        <HeldTravel f={f} x={800} y={720} w={200} h={240} mode="sweep" seed={7} strength={0.08} rx={40} />
       </SVG>
     </Frame>
   );
@@ -823,7 +827,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <GlassWindow x={560} y={640} w={440} h={400} f={f} />
         <g transform="translate(830 1000)"><Mailbox x={0} y={0} s={0.55} open={0} f={f} /></g>
-        <Counter x={540} y={1130} w={900} />
+        <Counter x={540} y={1130} w={900} label="PUBLIC COUNTER" />
         <g transform="translate(330 960)"><Person x={0} y={0} s={1.15} dress="suit" f={f} seed={2.1} armUp={turn * 0.5} /></g>
         <g transform={`translate(${lerp(820, 420, easeIO(f, 0, 40))} ${lerp(1010, 1000, easeIO(f, 0, 40))})`}><Ticket s={0.34} rot={-6} /></g>
         <g transform={`translate(560 ${lerp(980, 930, turn)})`}><Calendar x={0} y={0} s={1.15} f={f} line1="LATER" line2="TOO EARLY" flip={turn} /></g>
@@ -873,7 +877,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${lerp(960, 810, fold)} ${lerp(960, 880, fold)})`} opacity={fold}><Folder x={0} y={0} s={0.7} rot={-6} tab="INTERVENE" /></g>
         <Plate x={540} y={585} displayLines={['1,300+ ACTIVE PERMITS', '· FISHERIES ALLIANCE']} text="1,300+ ACTIVE PERMITS · FISHERIES ALLIANCE" size={32} p={vis(f, b, K, 0)} />
         <Plate x={540} y={690} text="ALLIANCE SAYS NOT ASSESSED" size={34} p={vis(f, b, K, 1)} />
-        <Plate x={540} y={820} displayLines={['CENTER FOR BIOLOGICAL', 'DIVERSITY · INTERVENOR']} text="CENTER FOR BIOLOGICAL DIVERSITY · INTERVENOR" size={30} p={vis(f, b, K, 2)} />
+        <Plate x={540} y={820} displayLines={['CENTER FOR BIOLOGICAL DIVERSITY', '· FILED TO INTERVENE']} text="CENTER FOR BIOLOGICAL DIVERSITY · FILED TO INTERVENE" size={30} p={vis(f, b, K, 2)} />
         <HeldTravel f={f} x={70} y={620} w={940} h={640} mode="sweep" seed={9} strength={0.1} />
       </SVG>
     </Frame>
@@ -890,6 +894,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} mode="lemon" z0={1.02} z1={1.06} oy={940}>
       <SVG>
+        {Array.from({length: 18}).map((_, i) => <circle key={`m${i}`} cx={300 + ((i * 97 + f * (0.6 + (i % 3) * 0.3)) % 480)} cy={620 + ((i * 131) % 560) + 14 * Math.sin(f / 30 + i)} r={2 + (i % 3)} fill="#FFFBD0" opacity={0.5} />)}
         <rect x={120} y={540} width={260} height={200} rx={8} fill="#9FC4DC" stroke={C.ink} strokeWidth={8} />
         <Tide x={128} y={548} w={244} h={184} f={f} />
         <g transform={`translate(${lerp(340, 540, slide)} 950)`}><Binder x={0} y={0} s={1.3} pages={pages} title="STUDY" /></g>
@@ -900,11 +905,11 @@ const S10: React.FC<SceneProps> = ({p}) => {
           {Array.from({length: 24}).map((_, i) => <circle key={i} cx={-220 + (i % 8) * 62} cy={-80 + Math.floor(i / 8) * 70} r={8} fill={C.slate} opacity={clamp01(pages * 3 - i / 8)} />)}
         </g>
         <g transform={`translate(${lerp(300, 760, easeIO(f, b(27), 80))} ${lerp(1080, 1130, easeIO(f, b(27), 80))})`}><Magnifier x={0} y={0} s={1.0} rot={-20} /></g>
-        <g transform="translate(230 1030)"><Ticket s={0.34} rot={-10} /></g>
+        <g transform={`translate(${lerp(230, 760, easeIO(f, b(27) + 50, 40))} ${lerp(1030, 1130, easeIO(f, b(27) + 50, 40))})`}><Ticket s={0.3} rot={-10} /></g>
         <g transform="translate(900 960)"><Lever x={0} y={0} s={0.8} lock={1} tug={tug} f={f} /></g>
         <g transform="translate(900 720)"><rect x={-70} y={-60} width={140} height={110} rx={6} fill="#0B1226" stroke={C.ink} strokeWidth={6} /><text y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={2} fill={C.paper} opacity={0.5}>LICENSE</text></g>
-        <g transform={`translate(${lerp(1040, 960, tug)} 930)`}><Hand x={0} y={0} s={0.6} rot={-90} /></g>
-        <g transform="translate(300 760)"><Person x={0} y={0} s={0.75} dress="suit" f={f} seed={2.1} armUp={0.2} /></g>
+        <g transform={`translate(${lerp(830, 870, tug)} ${lerp(900, 880, tug)})`}><Hand x={0} y={0} s={0.45} rot={60} /></g>
+        <g transform="translate(770 800)"><Person x={0} y={0} s={0.75} dress="suit" f={f} seed={2.1} armUp={0.3 + 0.5 * tug} cues={[b(26), b(27), b(28)]} /></g>
         <Plate x={540} y={585} text="THE COMPANY'S BEST CASE" size={36} tone="dark" p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="A STUDY IS HOW YOU GET ANSWERS" size={30} tone="dark" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="PERMIT ALLOWS NO CONSTRUCTION" size={32} tone="dark" p={vis(f, b, K, 2)} />
@@ -918,7 +923,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
 const FIELD = Array.from({length: 1300}).map((_, i) => {
   const c = i % 50, r = Math.floor(i / 50);
   const bc = i % 19, br = Math.floor(i / 19);
-  return {fx: 100 + c * 17.5, fy: 660 + r * 15.5, bx: 150 + bc * 13, by: 700 + br * 13, keep: i < 331, o: h01(i, 3)};
+  return {fx: 100 + c * 17.5 + (h01(i, 1) - 0.5) * 9, fy: 660 + r * 15.5 + (h01(i, 2) - 0.5) * 8, bx: 150 + bc * 13, by: 700 + br * 13, keep: i < 331, o: h01(i, 3)};
 });
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
@@ -934,7 +939,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} mode="chart" z0={1.02} z1={1.06} oy={960}>
       <SVG>
-        <defs><linearGradient id="col11" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1F4E66" /><stop offset="1" stopColor="#0C1B2C" /></linearGradient></defs>
+        <defs><linearGradient id="col11" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#2B5F78" /><stop offset="1" stopColor="#152A3E" /></linearGradient></defs>
         <rect x={60} y={600} width={960} height={720} rx={14} fill="url(#col11)" stroke={C.ink} strokeWidth={6} />
         <g transform="translate(540 860)" opacity={patch * lens}>
           <circle r={210} fill="#122638" stroke={C.ink} strokeWidth={10} />
@@ -947,7 +952,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
           const y = d.keep ? lerp(d.fy, d.by, drain) : d.fy;
           return <circle key={i} cx={x} cy={y} r={d.keep && drain > 0.6 ? 5.6 : 5} fill={C.whale} opacity={field * stay * (lens < 0.3 ? 1 : 0)} />;
         })}
-        <g opacity={field * (lens < 0.3 ? 1 : 0)}><Lab text="1979 · ABOUT 1,300 WHALES" x={250} y={1066} size={18} tone="dark" p={1} /></g>
+        <g opacity={field * (lens < 0.3 ? 1 : 0)}><Lab text="1979 · ABOUT 1,300 WHALES" x={250} y={1082} size={18} tone="dark" p={1} /></g>
         <g opacity={ghost}><rect x={92} y={652} width={50 * 17.5 + 6} height={26 * 15.5 + 6} fill="none" stroke={C.paper} strokeWidth={4} strokeDasharray="14 10" strokeDashoffset={-f} opacity={0.7} /></g>
         <g opacity={drain > 0.8 ? 1 : 0}><rect x={142} y={692} width={19 * 13 + 8} height={18 * 13 + 8} fill="none" stroke={C.lemon} strokeWidth={4} /><Lab text="331 · NOAA BEST ESTIMATE" x={530} y={760} size={18} tone="glow" p={1} /></g>
         <g><rect x={70} y={1100} width={940 * div} height={14} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={4} /></g>
@@ -1017,7 +1022,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={585} text="331 WHALES" size={40} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="NOT WHETHER, WHO" size={44} tone="glow" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="WHO'S IN THE ROOM?" size={44} p={vis(f, b, K, 2)} />
-        <Plate x={540} y={832} text="WHEN THE STUDY IS DESIGNED" size={32} p={vis(f, b, K, 3)} />
+        <Plate x={540} y={500} text="WHEN THE STUDY IS DESIGNED" size={30} p={vis(f, b, K, 3)} />
         <HeldTravel f={f} x={340} y={840} w={400} h={280} mode="sweep" seed={12} strength={0.14} />
       </SVG>
     </Frame>
@@ -1042,7 +1047,8 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <HeldProp f={f} px={300} py={1190} w={320} h={430} seed={2.3} kind="rest">
           <TakeANumberMachine f={f} x={300} y={1312} s={1.0} flip={ease(f, b(36), 24) * (hover > 0.3 ? 1 : 0.3)} head={head} sign={moose > 0.4 ? 'NEXT' : 'NOT YET'} shake={clack > 0.1 && clack < 0.9 ? 1 : 0} />
         </HeldProp>
-        <Posts x1={90} x2={990} y={1500} f={f} />
+        <g transform={`translate(${lerp(1240, 1030, moose)} 1400)`} opacity={moose > 0.02 ? 1 : 0}><Moose x={0} y={0} scale={0.42} f={f} facing={-1} emotion="calm" /></g>
+        <Posts x1={90} x2={960} y={1500} f={f} />
         <g transform={`translate(${lerp(300, 690, ease(f, b(35) - 20, 30))} ${lerp(1240, 1050, ease(f, b(35) - 20, 30))})`} opacity={ease(f, b(35) - 20, 12)}>
           <Ticket x={0} y={0} s={0.85} split={split} rot={lerp(-4, 0, split)} />
         </g>
@@ -1052,12 +1058,10 @@ const S13: React.FC<SceneProps> = ({p}) => {
             <Person x={0} y={0} s={0.6} dress={q.d} skin={i === 0 ? C.skin2 : C.skin} f={f + i * 7} seed={i * 1.7 + 1} flip={-1} cues={[b(41), b(37)]} />
           </g>
         ))}
-        <g transform={`translate(${lerp(1240, 1010, moose)} 1430)`} opacity={moose > 0.02 ? 1 : 0}><Moose x={0} y={0} scale={0.45} f={f} facing={-1} emotion="calm" /></g>
         <Plate x={540} y={585} text="FERC HAS NOT RULED" size={40} p={vis(f, b, K, 0)} />
         <Plate x={540} y={668} text="BOROUGH · FLEET · NOAA" size={38} tone="glow" p={vis(f, b, K, 1)} />
         <Plate x={540} y={750} text="STUDY + OUTREACH" size={44} p={vis(f, b, K, 2)} />
         <Plate x={540} y={832} displayLines={['WHO HELPS WRITE', 'THE TERMS?']} text="WHO HELPS WRITE THE TERMS?" size={42} tone="plate" p={vis(f, b, K, 3)} />
-        <HeldTravel f={f} x={150} y={930} w={300} h={330} mode="sweep" seed={13} strength={0.16} rx={30} />
       </SVG>
     </Frame>
   );
