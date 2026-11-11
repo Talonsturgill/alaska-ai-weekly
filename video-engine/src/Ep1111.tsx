@@ -437,6 +437,15 @@ const wrapText = (t: string, n: number) => {
   return out;
 };
 
+/** a powerline crossing the top of the frame: poles with crossbars and sagging, frosted wires. */
+const Powerline: React.FC<{f: number; xs: number[]; top?: number; base?: number}> = ({f, xs, top = 470, base = 1062}) => (
+  <g>
+    {xs.map((x) => <g key={x}><rect x={x - 9} y={top} width={18} height={base - top} fill="#4E5156" stroke={C.line} strokeWidth={4} /><rect x={x - 60} y={top + 20} width={120} height={14} fill="#4E5156" stroke={C.line} strokeWidth={3} />{[-50, 0, 50].map((dx) => <circle key={dx} cx={x + dx} cy={top + 16} r={6} fill={C.rime} stroke={C.line} strokeWidth={2} />)}</g>)}
+    {xs.slice(0, -1).map((x, i) => [-50, 0, 50].map((dx) => <path key={`${i}${dx}`} d={`M ${x + dx},${top + 16} Q ${(x + xs[i + 1]) / 2 + dx},${top + 90 + 6 * Math.sin(f / 20 + i)} ${xs[i + 1] + dx},${top + 16}`} stroke={C.line} strokeWidth={3} fill="none" />))}
+    {[-1200, 2280].map((x) => [-50, 0, 50].map((dx) => <path key={`e${x}${dx}`} d={`M ${x < 0 ? xs[0] + dx : xs[xs.length - 1] + dx},${top + 16} Q ${x < 0 ? xs[0] / 2 + dx : (xs[xs.length - 1] + 1080) / 2 + dx},${top + 80} ${x < 0 ? -20 : 1100},${top + 30}`} stroke={C.line} strokeWidth={3} fill="none" />))}
+  </g>
+);
+
 // ---- shared set pieces ------------------------------------------------------------------------------------------------------------------------------
 /** a frosted window frame seen from inside a Fairbanks home: jagged rime fringe across the top and down the sides. */
 const FrostWindow: React.FC<{f: number; o?: number}> = ({f, o = 1}) => (
@@ -663,10 +672,10 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={1250} text="SENSORS KEPT CLEAR" size={38} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>}>
       <SVG>
-        <HeldProp f={f} px={420} py={900} w={700} h={420} seed={2.2} kind="rest">
-          <RoofPuck x={420} y={1020} f={f} scale={3.0} frost={lerp(0.7, 0.15, heat)} clearRing={lerp(0.2, 1, heat)} mode="clear" emotion={open > 0.5 ? 'relieved' : 'alert'} glow={heat} open={0.7 + 0.3 * open} seed={5} />
+        <HeldProp f={f} px={420} py={840} w={700} h={420} seed={2.2} kind="rest">
+          <RoofPuck x={420} y={960} f={f} scale={3.0} frost={lerp(0.7, 0.15, heat)} clearRing={lerp(0.2, 1, heat)} mode="clear" emotion={open > 0.5 ? 'relieved' : 'alert'} glow={heat} open={0.7 + 0.3 * open} seed={5} />
         </HeldProp>
-        <g transform="translate(420 1020) scale(1.3636) translate(-420 -1080)">
+        <g transform="translate(420 960) scale(1.3636) translate(-420 -1080)">
           <g opacity={part * (1 - ease(f, b(20) - 10, 20))}>
             <path d="M 140,1080 C 140,930 260,830 420,830 C 580,830 700,930 700,1080 Z" fill="#14181D" stroke={C.line} strokeWidth={7} />
             {['CAMERA', 'RADAR', 'LIDAR'].map((t, i) => (
@@ -685,7 +694,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           const k = ((f * 0.03 + i / 14) % 1);
           return <path key={i} d={`M ${200 + i * 32},${560 + k * 300} l 8,18`} stroke={C.white} strokeWidth={4} opacity={sleet * (1 - k)} />;
         })}
-        <Lab text="CAMERAS · RADAR · LIDAR" x={420} y={1140} size={26} p={vis(f, b, K, 1)} />
+        <Lab text="CAMERAS · RADAR · LIDAR" x={420} y={1080} size={26} p={vis(f, b, K, 1)} />
         <HeldTravel f={f} x={40} y={680} w={760} h={360} seed={5} strength={0.2} rx={20} />
       </SVG>
     </Frame>
@@ -832,7 +841,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const pull = easeIO(f, b(29) - 6, 70);
   const tick = clamp01((f - b(30)) / 45);
   const PX = 640, PY = 900;
-  const cam = track([{t: 0, z: 2.4, fx: PX, fy: PY - 40}, {t: b(29) - 6, z: 2.4, fx: PX, fy: PY - 40}, {t: b(29) + 64, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.03, fx: 540, fy: 960}]);
+  const cam = track([{t: 0, z: 2.8, fx: PX, fy: PY + 120}, {t: b(29) - 6, z: 2.8, fx: PX, fy: PY + 110}, {t: b(29) + 64, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.03, fx: 540, fy: 960}]);
   const dark = ease(f, b(30) - 6, 20);
   return (
     <Frame p={p} mode="field" cam={cam} warmth={0.05}
@@ -897,6 +906,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Spruces y={1062} n={8} seed={9} f={f + gust * 40} x0={-40} x1={1120} scale={1.25} o={0.7} />
+        <Powerline f={f + gust * 60} xs={[140, 620]} top={480} />
         <path d="M 0,1150 Q 540,1110 1080,1150 L 1080,1920 L 0,1920 Z" fill={C.snow} />
         <ellipse cx={360} cy={1180} rx={250} ry={70} fill={C.ground} />
         <g transform={`translate(360 ${lerp(700, 1150, fold)}) rotate(${lerp(-6, 2, fold)}) scale(${lerp(1.3, 1, fold)} ${lerp(1.3, 0.45, fold)})`}>
@@ -910,8 +920,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
           const k = clamp01(gust * 1.6 - i / 30);
           return <path key={i} d={`M ${lerp(-100, 1180, k)},${600 + (i * 41) % 500} l 90,8`} stroke={C.white} strokeWidth={5} opacity={Math.sin(Math.PI * k) * 0.7} />;
         })}
-        <HeldProp f={f} px={780} py={820} w={420} h={300} seed={3.3} kind="rest">
-          <RoofPuck x={780} y={900} f={f} scale={1.6} frost={lerp(0, 0.3, gust)} clearRing={lerp(1, 0.75, gust)} mode="clear" emotion={gust > 0.4 ? 'wary' : 'relieved'} glow={0.2} open={1 - 0.3 * gust} seed={10} />
+        <CarSil x={800} y={1062} s={1.35} f={f} />
+        <HeldProp f={f} px={780} py={740} w={420} h={300} seed={3.3} kind="rest">
+          <RoofPuck x={780} y={820} f={f} scale={1.6} frost={lerp(0, 0.3, gust)} clearRing={lerp(1, 0.75, gust)} mode="clear" emotion={gust > 0.4 ? 'wary' : 'relieved'} glow={0.2} open={1 - 0.3 * gust} seed={10} />
         </HeldProp>
         <HeldTravel f={f} x={190} y={1050} w={340} h={200} seed={9} strength={0.2} rx={20} />
       </SVG>
@@ -936,6 +947,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Spruces y={1062} n={12} seed={11} f={f} x0={-40} x1={1120} scale={0.9} o={0.55} />
+        <Powerline f={f} xs={[120, 960]} top={450} base={900} />
         <path d="M -20,860 Q 300,800 540,820 T 1100,850 L 1100,1062 L -20,1062 Z" fill={C.snow} stroke={C.snowD} strokeWidth={3} />
         <path d="M 0,1300 L 1080,1240 L 1080,1400 L 0,1460 Z" fill={C.ground} />
         <Billboard x={540} y={780} up={up3} f={f} w={400} h={200} post={60} />
@@ -952,8 +964,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <text x={270} y={900 + rise(up1, 300)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={C.ink} opacity={up1 > 0.02 ? 1 : 0}>WHAT IF</text>
         <text x={270} y={1150 + rise(up1, 300)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} fill={C.ink} opacity={frame > 0.3 ? 1 : 0}>"STALL OUT"</text>
         <Billboard x={810} y={1170} up={up2} f={f} w={380} h={230} post={170} />
-        <text x={810} y={1045 + rise(up2, 230)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>"SHOULDN'T BE</text>
-        <text x={810} y={1085 + rise(up2, 230)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>ALLOWED"</text>
+        <text x={790} y={1045 + rise(up2, 230)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>"SHOULDN'T BE</text>
+        <text x={790} y={1085 + rise(up2, 230)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>ALLOWED"</text>
         <g transform="translate(990 1300)"><RoofPuck x={0} y={0} f={f} scale={0.42} frost={0.5} clearRing={0.5} mode="clear" emotion="tense" look={-0.8} rimGlow={0.6} seed={11} /></g>
         <HeldTravel f={f} x={60} y={580} w={960} h={600} seed={10} strength={0.2} rx={20} />
       </SVG>
@@ -1003,7 +1015,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         })}
         <Flakes f={f} n={50} speed={2} o={0.7} y0={420} y1={1700} />
         <Hood f={f} hazard={pull > 0.6 ? 0.7 : 0} leaves={leaves} />
-        <Lab text="CITY SERVICE" x={300} y={480} size={22} tone="dark" p={1} />
+        <Lab text="CITY SERVICE" x={540} y={490} size={22} tone="dark" p={1} />
         {/* the VALIDATED LIMIT gauge, a lit instrument with a bezel and depth */}
         <g transform="translate(880 900)">
           <circle cx={10} cy={14} r={112} fill="#000" opacity={0.25} />
@@ -1089,7 +1101,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const creep = easeIO(f, b(48) - 4, 60);
   const rise2 = easeIO(f, b(49) - 4, 90);
   const CX = 330, CY = 1260;
-  const cam = track([{t: 0, z: 3.0, fx: CX, fy: CY - 120}, {t: b(49) - 34, z: 3.0, fx: CX, fy: CY - 110}, {t: b(49) + 56, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.0, fx: 540, fy: 960}]);
+  const cam = track([{t: 0, z: 3.0, fx: CX, fy: CY + 10}, {t: b(49) - 34, z: 3.0, fx: CX, fy: CY + 20}, {t: b(49) + 56, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.0, fx: 540, fy: 960}]);
   return (
     <Frame p={p} mode="night" cam={cam} vignette={0.4}
       overlay={<>
