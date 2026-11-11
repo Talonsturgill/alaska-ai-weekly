@@ -1,18 +1,17 @@
 {
   "last_pass": {
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "shipped": [
-      "lib/figureidle.tsx, IdleFigure and StrikeProp, so held figures shift weight and a stamp or door lands",
-      "figure_rig_check as a make_cut source gate, a film whose people only breathe is stopped before the render",
-      "Gate 0A fails a board that never draws Alaska (alaska_cue_check)",
-      "Gate 0F, editor_vo_check, the editor reads the script against the claims before the first synth",
-      "vo_synth_gemini refuses to run until Gate 0F has stamped the current script"
+      "held_beat_check no longer accepts a motion rig turned down to a token (held_plan gate)",
+      "dead_space_check floor gate, a film whose floor under the caption bar is over 68 percent empty is stopped before the render",
+      "board_claims_check, Gate 0A reads every board plate against claims.json before the 0B to 0D critics",
+      "ui_chrome_check, a copied row of state chips at the top of the frame fails the source gates",
+      "lib FigureFinish engine advance, rim, far-side shade and floor shadow for hand-rolled figures (not enforced yet)"
     ],
-    "engine_advance": "lib/figureidle.tsx (IdleFigure, figureIdle, headTransform, StrikeProp, strike), measured 6.6x on a figure and 2.3x on a stamp inside the evidence strip on the beat",
+    "engine_advance": "lib FigureFinish in lib/figureidle.tsx, lights 41 percent of a figure's pixels on the look-dev stand and changes 0.00 percent of the surround",
     "escalated": [
-      "composition hero scale (repeat 3, second escalation): nothing measures hero size and the top-band gate read 33.7 percent on a film every seat called empty, because the wall panels count as information. Next pass, measure the hero's own bounding rect from held_beat_probe's frames and calibrate the floor on the first two films that use it.",
-      "text-fit-local-coordinate-components (second escalation): could not be reproduced this week on two scratch builds, the speculative fix was reverted rather than shipped unseen",
-      "honesty-strap-contrast (repeat 1): not reached, the repeat offenders came first"
+      "caption-scorer-hair-under-bar (repeat 4): the 11-11 rounds were never recorded through caption_rounds.py. Next step, caption_rounds.py writes runs/<date>/caption_score.json from the ledger with every round's card and the archive step fails when the ledger is missing.",
+      "upload-parallel-race (11-11): not reached, a single batch upload entry point is still wanted"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

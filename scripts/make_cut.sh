@@ -137,7 +137,14 @@ step figure_rig       2 python3 scripts/figure_rig_check.py
 # 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
 # 420 to 690); this fails the source gates when the film mean is over the ceiling calibrated on eight
 # shipped films. On Ep1106 it reads 55.6% before the render against 55.9% on the delivered square.
+# Machine pass 2026-11-11 (dead-lower-third, repeat 2): the same step fails the FLOOR of the tall
+# frame, master y 1468 to 1920 under the caption bar, over 68%; Ep1111 reads 77.0% before the render
+# against 77.1% on its delivered master.
 step top_band         2 python3 scripts/dead_space_check.py --plan
+# Machine pass 2026-11-11 (dev-ui-chrome-on-screen): every episode from Ep1102 to Ep1110 copied a
+# TOPS progress tracker, a row of state chips lit beat by beat, and the panel read it as app UI on
+# 11-04, 11-05, 11-06 and 11-11 (a lost round). Reads the episode source only.
+step ui_chrome        2 python3 scripts/ui_chrome_check.py
 
 if [ ${#SOURCE_FAILS[@]} -gt 0 ]; then
   say "make_cut: STOPPED after the source gates, ${#SOURCE_FAILS[@]} failed: ${SOURCE_FAILS[*]}. Fix them all, then relaunch ($(( $(date +%s) - T0 ))s)."

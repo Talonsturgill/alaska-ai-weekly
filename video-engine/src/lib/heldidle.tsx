@@ -183,6 +183,14 @@ export const HeldProp: React.FC<{
 //            a wire, a rail), for a held thing that is a line. It moves less area than a sweep, so
 //            pair it with a sweep on the thing the line feeds.
 //
+// STRENGTH AND GROUND (machine pass 2026-11-11). Leave `strength` at its default. Ep1110 drew every
+// HeldTravel at 0.08 to 0.16 and Ep1111 at 0.2, and held_plan still named 18 of 42 strips: a sweep
+// under 0.3 moves fewer pixels than the measure's 12/255 step on most grounds. On a WHITE or PALE
+// ground (snow, whiteout, paper) a light sweep moves nothing at any strength; use mode="shadow".
+// On a scratch Ep1111 the default strength took held_plan from 18 strips to 12, and a shadow on the
+// S6 whiteout took it to 10. held_beat_check's source gate counts a rig under strength 0.3, or at a
+// gain between 0 and 1, as no rig at all.
+//
 // SAFE FOR THE TEXT GATES BY CONSTRUCTION. It draws no <text>, it is pointer-events none, which
 // takes it out of document.elementsFromPoint, so label_footprint_check never reads it as art over a
 // label, and its group opacity is capped under 0.4, the cover threshold that check uses anyway.

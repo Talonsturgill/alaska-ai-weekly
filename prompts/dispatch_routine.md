@@ -932,6 +932,10 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   structure, flow block, and `scripts/board_sync_check.py`: shots[] rows that disagree with their
   beats FAIL, and every `[board-sync-advisory]` line, painted text quoted differently in `shows`
   and `draw.annotation` or a stale shot `means`, is cleared BEFORE Gate 0B reads the board).
+  Since 2026-11-11 it also runs `scripts/board_claims_check.py`: every beat with a plate carries
+  `claims`, the claims.json ids it shows (`["narration"]` for a framing line that asserts nothing),
+  and a status word on a plate (CLOSED, APPROVED, VALIDATED, NOW SERVING) must be said by a cited
+  claim. Read its `[board-claims-note]` lines before the critics do.
 - GATE 0A': `python3 scripts/caption_band_check.py` exit 0, a SOURCE gate run BEFORE the render. It
   refuses raw `<rect>`/`<text>` in the open-caption band and any Plate whose authored y is not its
   rendered y. Background that belongs under the caption card declares `data-band="ok"`; never mark

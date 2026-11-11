@@ -80,7 +80,18 @@ document, not of the judge.
   shot that draws no HeldTravel or HeldProp fails the source gates, because nine films in a row
   shipped none and the panel named the same strips held_plan had. Two shadow HeldTravels on a
   scratch copy of Ep1106 lifted three of its held strips (2.9, 3.4, 5.1) over 6 percent. Put
-  `gain={0}` on the rig where the stillness is the point.
+  `gain={0}` on the rig where the stillness is the point. A TOKEN rig does not count (machine pass
+  2026-11-11, repeat 3): a HeldTravel under strength 0.3, or any rig at a gain between 0 and 1, is
+  read as no rig, because Ep1110 drew its sweeps at 0.08 to 0.16 and Ep1111 at 0.2 and both still had
+  18 to 26 held strips. On a scratch Ep1111 the default strength took held_plan from 18 to 12, and a
+  shadow instead of a light sweep on the S6 whiteout took it to 10. A light sweep on snow or paper
+  moves nothing; use mode="shadow" there.
+- **A figure gets the same light as the props: `<FigureFinish>`** (`lib/figureidle.tsx`, machine pass
+  2026-11-11, "figures plainer than props" on 11-06, 11-07, 11-10 and every round of 11-11). Wrap each
+  hand-rolled figure, outside its IdleFigure, with its foot line, drawn size and ink width: a rim just
+  inside the outline on the key side, a core shade on the far side and a floor shadow, clipped to
+  the drawing (`python3 scripts/figure_finish_check.py`: 41 percent of the figure lit or shaded,
+  nothing outside it). Match `keySide` to the scene's key light.
 - **A held FIGURE performs on its beats: `<IdleFigure cues>` and `<StrikeProp>`** (`lib/figureidle.tsx`,
   machine pass 2026-11-09, held-figure motion repeat 4: Motion the lowest axis on 10 of 15 cards from
   10-28 to 11-09, "held figures show no weight shift"). A light sweep on a prop clears held_plan and
@@ -129,6 +140,13 @@ document, not of the judge.
   and preflight's required `--top-only` row fail a film whose top quarter of the square is over
   45 percent low-information, a ceiling between the faulted films (48.7 to 56.6) and the clean ones
   (38.2 to 41.2). Texture does not clear it; a subject does.
+- **And the floor under the caption bar is judged too** (machine pass 2026-11-11, dead lower third
+  named on 11-02, 11-05, 11-07, 11-09 and on four shots of 11-10). The square stops at y 1500, so the
+  band from the caption bar's bottom (y 1472) to 1920 is seen only on the 9:16 master, which is what
+  the panel watches. Give it a job: the ground the hero stands on, a desk edge, a chart sheet, the
+  foot of a throughline object, varied by act. The same `dead_space_check.py --plan` step fails a film
+  whose master y 1468 to 1920 is over 68 percent low-information, just above the worst film the panel
+  did not fault (11-01, 66.6) of fourteen measured; 11-09 (84.8), 11-10 (70.5) and 11-11 (77.1) fail.
 - **The set shows Alaska, in a thing drawn, not a word printed** (machine pass 2026-11-09). On 11-09
   every seat wrote "generic courtroom, no Alaska cue" although a plate read ALASKA COURT SYSTEM, and
   11-06 carried the axis on one map-pin beat. Put an Alaska thing in the set that stays across shots:
@@ -620,7 +638,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A plate may not sit over text the scene itself draws.** The ALLEGED plate covered NOT ENROLLED on the phone in three judge cards. When the prop already says the words, drop the plate. (2026-11-02)
 - **plate_overlap reads source geometry, not time.** Two plates at one y fail even when they crossfade. Stack plates at their own y (start the stack below y 530 so the ILLUSTRATION tag stays clear) and retire one before the next lands. (2026-11-02)
 - **Overlay bands need a light-ground style.** A top strip and bottom band that read on indigo went grey on bone shots. Switch label ink and chip fills when the ground is light. (2026-11-02)
-- **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline strip, a data flow) rather than stars. (2026-11-02)
+- **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline object, a data flow) rather than stars. (2026-11-02; since 2026-11-11 never a row of state chips lit by progress, which `ui_chrome_check.py` fails: the panel read that tracker as app UI on 11-04, 11-05, 11-06 and 11-11.)
 - **A paper-wipe transition must start covering the frame.** A rect that began off-screen and slid in never left, and hid the thesis shot for 8 seconds in the first cut. Draw it at x 0, travel it past 1.3 times the width. (2026-11-02)
 
 ## 23. Things the 2026-11-07 gates, critics and panel found that were knowable in advance ("What's In The Box")
@@ -653,7 +671,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A library die label can't be edited from the episode.** DiplomaPress printed AUTO STAMP? on every shot, which read as a rubber stamp on the plan. `dieText` now sets it. Use it. (2026-11-05)
 - **The library press eases `pull` with a cubic, so pass roughly 0.4 for a 0.78 stroke.** A pull of 0.8 slams the die through the paper and hides its own label, which label_footprint fails. (2026-11-05)
 - **Titles on a small sheet must be sized to the sheet.** A 34 px title on a 120 px sheet ran past the card and read as clipped text in three judge cards. Size the string to the box by arithmetic. (2026-11-05)
-- **A one-point-of-view room with the hero at 1.0 leaves the top and bottom bands bare again.** Three seats named it in every round until a top throughline strip and a bottom "who was in the room" strip carried the argument. Plan the two bands in the board. (2026-11-05)
+- **A one-point-of-view room with the hero at 1.0 leaves the top and bottom bands bare again.** Three seats named it in every round until a top throughline strip and a bottom "who was in the room" strip carried the argument. Plan the two bands in the board, as drawn objects and never a row of state chips (`ui_chrome_check.py`, 2026-11-11). (2026-11-05)
 - **Held beats under 6 percent are the Motion cap.** Wrapping the sheets, stacks, chairs, hands and press in HeldProp with a gain of 3 to 5 lifted Motion by 0.5 over three cuts. Do it at the first build, not after round 2. (2026-11-05)
 - **dispatch_mix squashed the loudness range to 5.1 to 5.9 because its loudnorm target was LRA 7 against a premix of 10.5.** LRA 14 delivers 8.0. (2026-11-05)
 - **Never state a vote result or imply one.** The editor caught AUTO STAMP? next to REGENTS NOVEMBER MEETING as an implied rubber stamp, and "the university says" where the source is one official. (2026-11-05)
@@ -664,7 +682,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A sign is a status claim.** NOW SERVING P-15423 on a queue machine and CLOSED on a docket shutter read as FERC acting on the application and the case being closed. Write what is true (FIRST IN LINE, OBJECTIONS CLOSED, DEADLINE PASSED, FERC RULING NOT YET). (2026-11-10)
 - **Every banner traces to a claim.** A QUEUE ALREADY FORMED was the film's own metaphor printed as a fact. Metaphor stays in the picture, plates carry the record. (2026-11-10)
 - **caption_fixups match the article too.** "hundred megawatts" -> "100 MW" left "About a 100 MW" on screen, a hard blocker. Map "a hundred megawatts" as its own, longer key. (2026-11-10)
-- **HeldTravel boxes hug the prop.** Box-sized sweeps over empty scenery read as diagonal glare slabs on 10 of 13 shots. Size the box to the prop and keep strength at 0.1 to 0.16 over large areas. (2026-11-10)
+- **HeldTravel boxes hug the prop.** Box-sized sweeps over empty scenery read as diagonal glare slabs on 10 of 13 shots. Size the box to the prop, at the lib's default strength, and use mode="shadow" over a large or pale area. (2026-11-10; the 0.1 to 0.16 strength this line first advised is what left 18 of 42 strips held on 11-11, and since 2026-11-11 the held_plan gate counts a rig under strength 0.3 as no rig.)
 - **Credit source labels are names, not hosts.** FISHERIES.NOAA.GOV failed rendered OCR at credit size; build_scenes now writes NOAA FISHERIES and FEDERAL REGISTER. (2026-11-10)
 - **A fact-check on_screen string may not contain a colon.** c12's approved string had one, so claims_contract and visible_copy contradicted each other until the record was rewritten. (2026-11-10)
 

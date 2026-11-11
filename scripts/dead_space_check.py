@@ -153,7 +153,53 @@ def print_top_band(film, named, failed, fail_top=FAIL_TOP, where="the square"):
         print(f"  TOP BAND FAILED: {film * 100:.1f}% is over the {fail_top * 100:.0f}% ceiling. {TOP_REMEDY}.")
 
 
-def plan_top_band(plan_path, scenes_path, fail_top=FAIL_TOP):
+# ---- THE FLOOR OF THE TALL FRAME (machine pass 2026-11-11) -------------------------------------
+# Queue: dead-lower-third (11-10, repeat 2; "dead lower thirds in shots 4, 6, 11, 12", "bottom 30 to
+# 35 percent empty floor" 11-09, "bottom third empty water band" 11-07, "bottom 15 percent dead dark"
+# 11-05, "large empty strip beneath the bottom band" 11-02). The top-band gate reads the square, and
+# the square ends at master y 1500, so nothing measured the band UNDER the caption bar (which ends at
+# y 1472) that the panel watches on the 9:16 master.
+#
+# The measure: the low-information share of master y 1468 to 1920, structure map on the whole frame.
+# Calibrated on fourteen shipped masters, one frame a second, credits tail dropped:
+#   named by the panel for an empty floor:  11-09 84.8%, 11-10 70.5%, 11-07 61.6%, 11-02 52.5%, 11-05 41.0%
+#   not named:  11-01 66.6% (named for a repeated strata floor), 10-24 56.8%, 10-29 56.7%,
+#               10-31 53.3%, 11-06 46.8%, 10-26 40.9%, 11-04 37.6%; and 11-11 77.1%
+# The groups overlap below 67 percent, so like every ceiling in this file it is a RATCHET set just
+# above the worst film the panel did not fault (66.6), not a target: it fails the floor of 11-09,
+# 11-10 and 11-11, the three emptiest of the fourteen and the three most recent.
+BOTTOM_Y0, BOTTOM_Y1 = 1468, 1920
+FAIL_BOTTOM = 0.68
+SHOT_BOTTOM_NOTE = 0.80
+BOTTOM_REMEDY = ("Give the floor a job, not a texture: a foreground plane under the caption bar (the "
+                 "ground the hero stands on, a desk edge, shore stones, a chart sheet, the bottom of a "
+                 "throughline strip) between master y 1468 and 1920, varied by act so it never repeats "
+                 "under every shot")
+
+
+def bottom_band_fraction(im, thresh=5.0):
+    """Low-information share of master y 1468 to 1920 of a 9:16 frame (PIL image or path); None for
+    a square, which never shows that band."""
+    from PIL import Image
+    if isinstance(im, str):
+        im = Image.open(im)
+    if im.height <= im.width:
+        return None
+    lm = _low_map(im, thresh=thresh)
+    h = lm.shape[0]
+    return float(lm[int(h * BOTTOM_Y0 / 1920.0):int(h * BOTTOM_Y1 / 1920.0)].mean())
+
+
+def print_bottom_band(film, named, failed, fail_bottom=FAIL_BOTTOM, where="the master"):
+    print(f"FLOOR OF THE TALL FRAME (master y {BOTTOM_Y0} to {BOTTOM_Y1}), {where}: {film * 100:.1f}% "
+          f"low-information (ceiling {fail_bottom * 100:.0f}%)")
+    if named:
+        print("  emptiest floors, worst first: " + ", ".join(f"S{n} ({m * 100:.0f}%)" for n, m in named))
+    if failed:
+        print(f"  FLOOR FAILED: {film * 100:.1f}% is over the {fail_bottom * 100:.0f}% ceiling. {BOTTOM_REMEDY}.")
+
+
+def plan_top_band(plan_path, scenes_path, fail_top=FAIL_TOP, fail_bottom=FAIL_BOTTOM):
     """Gate the pre-render plan held_beat_check --source writes (Chrome frames of the real
     composition, before a frame of the full render is spent).
 
@@ -178,7 +224,19 @@ def plan_top_band(plan_path, scenes_path, fail_top=FAIL_TOP):
         print("top band (plan): measured NOTHING")
         return 2
     print_top_band(film, named, failed, fail_top, where=f"{len(vals)} pre-render Chrome frames")
-    return 1 if failed else 0
+    # The floor (2026-11-11), from the same frames. A plan written before the floor was measured
+    # carries no "bottom" and says so rather than passing silently.
+    lows = [(int(s["frame"]), float(s["bottom"])) for s in plan.get("samples", [])
+            if isinstance(s.get("bottom"), (int, float))]
+    b_failed = False
+    if lows:
+        b_film, b_named, b_failed = top_band_verdict(lows, scenes, fail_bottom, SHOT_BOTTOM_NOTE)
+        if b_film is not None:
+            print_bottom_band(b_film, b_named, b_failed, fail_bottom,
+                              where=f"{len(lows)} pre-render Chrome frames")
+    else:
+        print("floor (plan): NOT MEASURED, the plan carries no bottom samples; rerun held_beat_check --source")
+    return 1 if (failed or b_failed) else 0
 
 
 def _self_test():
@@ -209,8 +267,30 @@ def _self_test():
     assert abs(off_square - empty) < 1e-6, "a band drawn above y 420 changed the square's top"
     assert abs(sq - filled) < 1e-6, "a square input did not pass through"
     assert fail_e and not fail_f, "verdict did not separate the flat top from the filled one"
+    floor_empty = bottom_band_fraction(base.crop((0, 0, 1080, 1920)).copy())
+    flat = Image.new("RGB", (1080, 1920), (217, 100, 26))
+    ImageDraw.Draw(flat).rectangle((68, 1336, 1012, 1472), fill=(10, 20, 24))   # the caption bar
+    floor_flat = bottom_band_fraction(flat)
+    assert bottom_band_fraction(square_of(base)) is None, "a square has no tall-frame floor"
+    assert floor_flat > FAIL_BOTTOM, f"a flat floor under the caption bar read {floor_flat:.2f}"
+    assert floor_empty < FAIL_BOTTOM, f"a busy floor read {floor_empty:.2f}"
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        plan = os.path.join(td, "plan.json")
+        json.dump({"samples": [{"frame": f, "top": filled, "bottom": floor_flat} for f in (0, 30, 60, 90)]},
+                  open(plan, "w"))
+        import contextlib
+        import io
+        with contextlib.redirect_stdout(io.StringIO()):
+            flat_code = plan_top_band(plan, os.path.join(td, "none.json"))
+        json.dump({"samples": [{"frame": f, "top": filled, "bottom": floor_empty} for f in (0, 30, 60, 90)]},
+                  open(plan, "w"))
+        with contextlib.redirect_stdout(io.StringIO()):
+            busy_code = plan_top_band(plan, os.path.join(td, "none.json"))
+    assert flat_code == 1 and busy_code == 0, f"plan floor verdicts {flat_code}, {busy_code}"
     print(f"dead_space_check self-test: PASS (flat top {empty * 100:.0f}%, subject up top "
-          f"{filled * 100:.0f}%, band above y 420 ignored, credits excluded)")
+          f"{filled * 100:.0f}%, band above y 420 ignored, credits excluded; flat floor "
+          f"{floor_flat * 100:.0f}% fails, busy floor {floor_empty * 100:.0f}% passes the plan)")
     return 0
 
 
