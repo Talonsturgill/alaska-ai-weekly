@@ -904,7 +904,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Plate x={320} y={1205} text="ONE RESIDENT EXPECTS" size={32} tone="dark" p={ease(f, b(34), 12) * (1 - ease(f, b(35) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
         <Plate x={540} y={730} text={'"STALL OUT" · WHAT IF'} size={32} tone="warn" p={ease(f, b(35), 10) * (1 - ease(f, b(36) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
         <Plate x={540} y={810} text={'"SHOULDN\'T BE ALLOWED"'} size={28} tone="dark" p={ease(f, b(36), 10) * (1 - ease(f, b(37) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={1275} text={'THE MAYOR · "A GREAT OPPORTUNITY"'} size={28} tone="dark" p={ease(f, b(37), 12)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1270} text={'THE MAYOR · "A GREAT OPPORTUNITY"'} size={28} tone="dark" p={ease(f, b(37), 12)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>} mode="fog" cam={cam}>
       <SVG>
         <Spruces y={1062} n={12} seed={11} f={f} x0={-40} x1={1120} scale={0.7} o={0.55} />
@@ -960,7 +960,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
           return <ellipse key={i} cx={540} cy={1500} rx={(120 + 600 * k) * sz} ry={(40 + 200 * k) * sz} fill="none" stroke={C.amber} strokeWidth={6 - 4 * k} opacity={(1 - k) * (1 - 0.5 * thin)} />;
         })}
         <Hood f={f} hazard={pull > 0.6 ? 0.7 : 0} leaves={leaves} />
-        <Lab text="CITY SERVICE" x={540} y={830} size={22} tone="dark" p={1} />
+        <Lab text="CITY SERVICE" x={540} y={905} size={22} tone="dark" p={1} />
         {/* the VALIDATED LIMIT gauge on the HUD */}
         <g transform="translate(860 1070)">
           <circle r={100} fill={C.paper} stroke={C.line} strokeWidth={7} />
