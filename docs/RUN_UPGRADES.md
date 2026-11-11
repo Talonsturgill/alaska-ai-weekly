@@ -4016,3 +4016,7 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: VO 128.6 s (Gemini Sulafat). Three-seat panel median 7.13 (7.13, 7.18, 6.87) against the 7.0 bar, no hard blockers, editor ship. Caption hit the five-round cap at 8.38 below the 8.5 bar, zero hard fails.
 - In-run fixes: upload_video.py now fetches depth 1 and builds the media commit with plumbing (no checkout), after a full fetch and worktree checkout of the media branch filled the container disk; removed the on-screen state strip; mix bed arc widened for LRA 6.7; board and Gate 0B to 0D three rounds.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-11), seven items.
+
+## 2026-11-11 weekly machine pass
+- Shipped: held_beat_check token-rig fix, dead_space_check floor gate, board_claims_check in Gate 0A, ui_chrome_check, lib FigureFinish (engine advance, not yet enforced). Verified by running every listed self-test and gate, tsc and runbook_check all exit 0.
+- Escalated: caption scorer just under the bar (the round ledger must write the archived card), upload batch entry point.
