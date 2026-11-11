@@ -236,3 +236,89 @@ export const StrikeProp: React.FC<{
     </g>
   );
 };
+
+// =============================================================================
+// FigureFinish: A HAND-ROLLED FIGURE GETS THE PROPS' LIGHT (engine advance, machine pass 2026-11-11)
+//
+// WHY THIS EXISTS. "Figures plainer than props" is the panel's standing illustration finding: named
+// on 11-06 ("humans below prop finish"), 11-07, 11-10 ("character finish lags the props", three
+// seats) and 11-11 ("figures, trees and road flat fills", "parka figure plainer than props", every
+// round), with Illustration craft 6.5 to 7.0. The props carry a key light, a rim and a contact
+// shadow because each episode's asset kit drew them; every episode's `Person` is a flat fill with an
+// outline, so the cast reads a finish level below the set. This wraps ANY figure (drawn unchanged,
+// same coordinates, like IdleFigure) and lights it from the house key through an SVG filter on the
+// figure's own alpha, so it never paints outside the drawing and never duplicates a <text>:
+//   - a RIM: a thin warm band just inside the outline on the key side (`outline` sets the inset);
+//   - a CORE SHADE: a soft dark falloff across the far side, so a flat torso turns into a form;
+//   - a CONTACT SHADOW: a soft ellipse on the floor under the feet, drawn behind the figure.
+//
+//   <FigureFinish x={540} footY={1180} w={200} h={300}>
+//     <IdleFigure f={f} x={540} footY={1180} h={300} cues={beats}>{(pose) => <Person ... />}</IdleFigure>
+//   </FigureFinish>
+//
+// keySide is the house key (left) unless the scene's light is on the right. rim and shade are
+// strengths 0..1 (defaults 0.7 and 0.42); contact 0 drops the floor shadow for a figure that is
+// already standing in one. Deterministic, no hooks, no Math.random.
+// =============================================================================
+
+export const FigureFinish: React.FC<{
+  /** foot line centre and drawn size of the figure, in the parent's px */
+  x: number;
+  footY: number;
+  w: number;
+  h: number;
+  keySide?: 'left' | 'right';
+  rim?: number;
+  shade?: number;
+  contact?: number;
+  rimColor?: string;
+  shadeColor?: string;
+  /** the figure's outline width in the parent's px; the rim sits just inside it (default w * 0.05) */
+  outline?: number;
+  children: React.ReactNode;
+}> = ({x, footY, w, h, keySide = 'left', rim = 0.7, shade = 0.42, contact = 0.5, rimColor = '#FFE7B8', shadeColor = '#0E0A16', outline, children}) => {
+  const dir = keySide === 'left' ? 1 : -1;
+  const inset = outline ?? Math.max(2, w * 0.05);
+  const rimW = Math.max(3, Math.min(9, w * 0.03));
+  const coreW = Math.max(12, w * 0.32);
+  const id = `figfinish-${Math.round(x)}-${Math.round(footY)}-${Math.round(w)}`;
+  const pad = Math.max(w, h) * 0.2;
+  return (
+    <g>
+      {contact > 0 && (
+        <g style={{pointerEvents: 'none'}}>
+          <ellipse cx={x + dir * w * 0.12} cy={footY + 2} rx={w * 0.62} ry={Math.max(6, w * 0.07)} fill={shadeColor} opacity={0.22 * contact} />
+          <ellipse cx={x + dir * w * 0.05} cy={footY + 1} rx={w * 0.38} ry={Math.max(4, w * 0.04)} fill={shadeColor} opacity={0.45 * contact} />
+        </g>
+      )}
+      <defs>
+        <filter id={id} filterUnits="userSpaceOnUse" x={x - w / 2 - pad} y={footY - h - pad} width={w + 2 * pad} height={h + 2 * pad} colorInterpolationFilters="sRGB">
+          {/* key-side rim: a thin band just INSIDE the outline on the key side, never outside the drawing.
+              band = (alpha out alpha shifted inset+rimW away from the key) out (alpha out alpha shifted inset) */}
+          <feOffset in="SourceAlpha" dx={dir * inset} dy={inset * 0.5} result="inShift" />
+          <feComposite in="SourceAlpha" in2="inShift" operator="out" result="inEdge" />
+          <feOffset in="SourceAlpha" dx={dir * (inset + rimW)} dy={(inset + rimW) * 0.5} result="rimShift" />
+          <feComposite in="SourceAlpha" in2="rimShift" operator="out" result="outEdge" />
+          <feComposite in="outEdge" in2="inEdge" operator="out" result="rimBand" />
+          <feGaussianBlur in="rimBand" stdDeviation={0.8} result="rimBlur" />
+          <feComposite in="rimBlur" in2="SourceAlpha" operator="in" result="rimSoft" />
+          <feFlood floodColor={rimColor} floodOpacity={rim} />
+          <feComposite in2="rimSoft" operator="in" result="rimLit" />
+          {/* far side: the silhouette minus itself shifted toward the key, blurred into a falloff */}
+          <feOffset in="SourceAlpha" dx={-dir * coreW} dy={0} result="coreShift" />
+          <feComposite in="SourceAlpha" in2="coreShift" operator="out" result="coreBand" />
+          <feGaussianBlur in="coreBand" stdDeviation={coreW * 0.45} result="coreSoft" />
+          <feComposite in="coreSoft" in2="SourceAlpha" operator="in" result="coreClip" />
+          <feFlood floodColor={shadeColor} floodOpacity={shade} />
+          <feComposite in2="coreClip" operator="in" result="coreDark" />
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="coreDark" />
+            <feMergeNode in="rimLit" />
+          </feMerge>
+        </filter>
+      </defs>
+      <g filter={`url(#${id})`}>{children}</g>
+    </g>
+  );
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Easing, interpolate, useCurrentFrame} from 'remotion';
-import {IdleFigure, StrikeProp, headTransform, type FigurePose} from './lib/figureidle';
+import {FigureFinish, IdleFigure, StrikeProp, headTransform, type FigurePose} from './lib/figureidle';
 
 // =============================================================================
 // FigureLook: the measuring stand for lib/figureidle.tsx (machine pass 2026-11-09).
@@ -11,6 +11,8 @@ import {IdleFigure, StrikeProp, headTransform, type FigurePose} from './lib/figu
 // <StrikeProp>. scripts/figure_look_check.py renders the frames either side of every cue through the
 // held_beat_check Chrome path and measures the same camera-solved whole-frame change, one subject
 // drawn at a time (`subject`), so each number is on the panel's own scale.
+// 'finish' (machine pass 2026-11-11) is 'rig' with the Person inside lib <FigureFinish>, measured by
+// scripts/figure_finish_check.py against 'rig' for the tonal range across the figure.
 // =============================================================================
 
 const INK = '#14101C';
@@ -58,7 +60,7 @@ const Stamp: React.FC = () => (
   </g>
 );
 
-export const FigureLook: React.FC<{mode?: 'bare' | 'rig'; subject?: 'both' | 'figure' | 'stamp'}> = ({mode = 'bare', subject = 'both'}) => {
+export const FigureLook: React.FC<{mode?: 'bare' | 'rig' | 'finish'; subject?: 'both' | 'figure' | 'stamp'}> = ({mode = 'bare', subject = 'both'}) => {
   const f = useCurrentFrame();
   // the bare stamp eases down into place on each cue: a prop that slides rather than acts
   const last = CUES.filter((c) => c - 9 <= f).pop() ?? CUES[0];
@@ -69,14 +71,22 @@ export const FigureLook: React.FC<{mode?: 'bare' | 'rig'; subject?: 'both' | 'fi
         <rect width={1080} height={1920} fill="#6B1E24" />
         <rect y={1300} width={1080} height={620} fill="#3B2315" />
         <rect x={700} y={1060} width={220} height={240} fill="#F4ECD8" stroke={INK} strokeWidth={6} />
-        {subject !== 'stamp' && (mode === 'rig' ? (
+        {subject !== 'stamp' && mode === 'finish' && (
+          // machine pass 2026-11-11: the same rigged Person lit by lib FigureFinish (rim, core shade, floor shadow)
+          <FigureFinish x={290} footY={1300} w={190} h={330}>
+            <IdleFigure f={f} x={290} footY={1300} h={330} seed={2} cues={CUES}>
+              {(pose) => <Person x={290} y={1100} s={1.4} f={f} pose={pose} />}
+            </IdleFigure>
+          </FigureFinish>
+        )}
+        {subject !== 'stamp' && mode !== 'finish' && (mode === 'rig' ? (
           <IdleFigure f={f} x={290} footY={1300} h={330} seed={2} cues={CUES}>
             {(pose) => <Person x={290} y={1100} s={1.4} f={f} pose={pose} />}
           </IdleFigure>
         ) : (
           <Person x={290} y={1100} s={1.4} f={f} />
         ))}
-        {subject !== 'figure' && (mode === 'rig' ? (
+        {subject !== 'figure' && (mode !== 'bare' ? (
           <StrikeProp f={f} at={CUES} px={810} py={1058}><Stamp /></StrikeProp>
         ) : (
           <g transform={`translate(0 ${-40 * (1 - k)})`}><Stamp /></g>

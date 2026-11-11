@@ -86,6 +86,12 @@ document, not of the judge.
   18 to 26 held strips. On a scratch Ep1111 the default strength took held_plan from 18 to 12, and a
   shadow instead of a light sweep on the S6 whiteout took it to 10. A light sweep on snow or paper
   moves nothing; use mode="shadow" there.
+- **A figure gets the same light as the props: `<FigureFinish>`** (`lib/figureidle.tsx`, machine pass
+  2026-11-11, "figures plainer than props" on 11-06, 11-07, 11-10 and every round of 11-11). Wrap each
+  hand-rolled figure, outside its IdleFigure, with its foot line, drawn size and ink width: a rim just
+  inside the outline on the key side, a core shade on the far side and a floor shadow, clipped to
+  the drawing (`python3 scripts/figure_finish_check.py`: 41 percent of the figure lit or shaded,
+  nothing outside it). Match `keySide` to the scene's key light.
 - **A held FIGURE performs on its beats: `<IdleFigure cues>` and `<StrikeProp>`** (`lib/figureidle.tsx`,
   machine pass 2026-11-09, held-figure motion repeat 4: Motion the lowest axis on 10 of 15 cards from
   10-28 to 11-09, "held figures show no weight shift"). A light sweep on a prop clears held_plan and
