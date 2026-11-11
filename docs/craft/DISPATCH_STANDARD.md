@@ -138,7 +138,7 @@ document, not of the judge.
   named on 11-02, 11-05, 11-07, 11-09 and on four shots of 11-10). The square stops at y 1500, so the
   band from the caption bar's bottom (y 1472) to 1920 is seen only on the 9:16 master, which is what
   the panel watches. Give it a job: the ground the hero stands on, a desk edge, a chart sheet, the
-  foot of a throughline strip, varied by act. The same `dead_space_check.py --plan` step fails a film
+  foot of a throughline object, varied by act. The same `dead_space_check.py --plan` step fails a film
   whose master y 1468 to 1920 is over 68 percent low-information, just above the worst film the panel
   did not fault (11-01, 66.6) of fourteen measured; 11-09 (84.8), 11-10 (70.5) and 11-11 (77.1) fail.
 - **The set shows Alaska, in a thing drawn, not a word printed** (machine pass 2026-11-09). On 11-09
@@ -632,7 +632,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A plate may not sit over text the scene itself draws.** The ALLEGED plate covered NOT ENROLLED on the phone in three judge cards. When the prop already says the words, drop the plate. (2026-11-02)
 - **plate_overlap reads source geometry, not time.** Two plates at one y fail even when they crossfade. Stack plates at their own y (start the stack below y 530 so the ILLUSTRATION tag stays clear) and retire one before the next lands. (2026-11-02)
 - **Overlay bands need a light-ground style.** A top strip and bottom band that read on indigo went grey on bone shots. Switch label ink and chip fills when the ground is light. (2026-11-02)
-- **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline strip, a data flow) rather than stars. (2026-11-02)
+- **Hero art at 1.0 scale leaves the 9:16 top and bottom thirds empty.** Cast heroes at 1.2 to 1.5 times, and give the top and bottom bands a story job (a throughline object, a data flow) rather than stars. (2026-11-02; since 2026-11-11 never a row of state chips lit by progress, which `ui_chrome_check.py` fails: the panel read that tracker as app UI on 11-04, 11-05, 11-06 and 11-11.)
 - **A paper-wipe transition must start covering the frame.** A rect that began off-screen and slid in never left, and hid the thesis shot for 8 seconds in the first cut. Draw it at x 0, travel it past 1.3 times the width. (2026-11-02)
 
 ## 23. Things the 2026-11-07 gates, critics and panel found that were knowable in advance ("What's In The Box")
@@ -665,7 +665,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A library die label can't be edited from the episode.** DiplomaPress printed AUTO STAMP? on every shot, which read as a rubber stamp on the plan. `dieText` now sets it. Use it. (2026-11-05)
 - **The library press eases `pull` with a cubic, so pass roughly 0.4 for a 0.78 stroke.** A pull of 0.8 slams the die through the paper and hides its own label, which label_footprint fails. (2026-11-05)
 - **Titles on a small sheet must be sized to the sheet.** A 34 px title on a 120 px sheet ran past the card and read as clipped text in three judge cards. Size the string to the box by arithmetic. (2026-11-05)
-- **A one-point-of-view room with the hero at 1.0 leaves the top and bottom bands bare again.** Three seats named it in every round until a top throughline strip and a bottom "who was in the room" strip carried the argument. Plan the two bands in the board. (2026-11-05)
+- **A one-point-of-view room with the hero at 1.0 leaves the top and bottom bands bare again.** Three seats named it in every round until a top throughline strip and a bottom "who was in the room" strip carried the argument. Plan the two bands in the board, as drawn objects and never a row of state chips (`ui_chrome_check.py`, 2026-11-11). (2026-11-05)
 - **Held beats under 6 percent are the Motion cap.** Wrapping the sheets, stacks, chairs, hands and press in HeldProp with a gain of 3 to 5 lifted Motion by 0.5 over three cuts. Do it at the first build, not after round 2. (2026-11-05)
 - **dispatch_mix squashed the loudness range to 5.1 to 5.9 because its loudnorm target was LRA 7 against a premix of 10.5.** LRA 14 delivers 8.0. (2026-11-05)
 - **Never state a vote result or imply one.** The editor caught AUTO STAMP? next to REGENTS NOVEMBER MEETING as an implied rubber stamp, and "the university says" where the source is one official. (2026-11-05)
