@@ -315,9 +315,9 @@ const PUCK_AMBER = '#F2A33A';
 export const RoofPuck: React.FC<{
   x: number; y: number; scale?: number; f: number;
   frost?: number; clearRing?: number; mode?: PuckMode; emotion?: PuckEmotion; glow?: number;
-  qmark?: number; look?: number; open?: number; body?: string; rim?: string; seed?: number;
+  qmark?: number; look?: number; open?: number; body?: string; rim?: string; seed?: number; rimGlow?: number;
 }> = ({x, y, scale = 1, f, frost = 0, clearRing = 0, mode = 'clear', emotion = 'alert', glow = 0,
-      qmark = 0, look = 0, open = 1, body = '#2A2F36', rim = RIME, seed = 0}) => {
+      qmark = 0, look = 0, open = 1, body = '#2A2F36', rim = RIME, seed = 0, rimGlow = 0}) => {
   const id = uid(`puck${x}${y}${seed}`);
   const t = tones(body);
   const v = vitals(f, seed + 3.1, 0.6);
@@ -339,16 +339,18 @@ export const RoofPuck: React.FC<{
   }).join(' ');
   const rimePath = `M -140,-130 L ${frontX},-130 ${spikes} L ${frontX},4 L -140,4 Z`;
   const clearR = ER + 6 + 64 * cr;
-  const qPath = `M ${EX - 18},${EY - 46} C ${EX - 18},${EY - 70} ${EX + 26},${EY - 70} ${EX + 26},${EY - 48} C ${EX + 26},${EY - 30} ${EX + 4},${EY - 30} ${EX + 4},${EY - 14} M ${EX + 4},${EY - 2} L ${EX + 4},${EY + 2}`;
+  // the wiped question mark spans the dome: its hook arcs over the eye and its dot lands on the mount
+  const qPath = `M ${EX - 70},${EY - 20} C ${EX - 70},${EY - 62} ${EX + 72},${EY - 62} ${EX + 72},${EY - 16} C ${EX + 72},${EY + 14} ${EX + 30},${EY + 18} ${EX + 30},${EY + 40} M ${EX + 30},${EY + 54} L ${EX + 30},${EY + 56}`;
+  const breath = 1 + 0.018 * Math.sin(f / 17 + seed) + 0.006 * Math.sin(f / 5.3 + seed * 2);
   return (
-    <g transform={`translate(${x},${y + v.bob * 0.5}) scale(${scale})`}>
+    <g transform={`translate(${x},${y + v.bob * 0.5}) scale(${scale * (2 - breath)} ${scale * breath})`}>
       <defs>
         <FormGradient id={id} t={t} />
         <clipPath id={`${id}_d`}><path d={dome} /></clipPath>
         <mask id={`${id}_m`}>
           <rect x={-160} y={-160} width={320} height={180} fill="#fff" />
           <circle cx={EX} cy={EY} r={clearR} fill="#000" />
-          {qmark > 0.01 && <path d={qPath} stroke="#000" strokeWidth={18} strokeLinecap="round" fill="none" pathLength={1} strokeDasharray={`${qmark} 1`} />}
+          {qmark > 0.01 && <path d={qPath} stroke="#000" strokeWidth={24} strokeLinecap="round" fill="none" pathLength={1} strokeDasharray={`${qmark} 1`} />}
         </mask>
       </defs>
       <ContactShadow cx={0} cy={6} rx={150} ry={16} opacity={0.4} />
@@ -400,6 +402,7 @@ export const RoofPuck: React.FC<{
           </g>
         </g>
       )}
+      {rimGlow > 0.01 && <path d="M -126,-6 C -122,-76 -72,-118 0,-118 C 72,-118 122,-76 126,-6" fill="none" stroke={rim} strokeWidth={22} opacity={0.25 * rimGlow} strokeLinecap="round" />}
       {/* hoarfrost rim: the brightest neutral, always on the dome edge */}
       <path d="M -122,-14 C -118,-72 -70,-112 0,-112 C 70,-112 118,-72 122,-14" fill="none" stroke={rim} strokeWidth={5} opacity={0.75} strokeLinecap="round" />
       {Array.from({length: 9}).map((_, i) => {

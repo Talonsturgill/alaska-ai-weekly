@@ -168,11 +168,12 @@ const Atmos: React.FC<{f: number; mode: Mode}> = ({f, mode}) => {
   if (mode === 'kitchen') {
     return (
       <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
-        <rect width={W} height={H} fill="#BDB4AA" />
+        <rect width={W} height={H} fill="#CDBFB2" />
         <rect x={120} y={360} width={840} height={620} rx={10} fill={C.fog} stroke={C.line} strokeWidth={10} />
         <rect x={120} y={360} width={840} height={620} rx={10} fill={C.cream} opacity={0.35} />
         <path d="M 540,360 V 980 M 120,670 H 960" stroke={C.line} strokeWidth={8} />
-        <circle cx={760} cy={520} r={90} fill={C.sun} opacity={0.55} />
+        <circle cx={760} cy={520} r={90} fill={C.sun} opacity={0.75} />
+        <circle cx={760} cy={520} r={200} fill={C.sun} opacity={0.2} />
         <rect data-band="ok" x={0} y={1040} width={W} height={880} fill={C.wood} />
         <g data-band="ok">{Array.from({length: 9}).map((_, i) => <path key={i} d={`M 0,${1090 + i * 95} H 1080`} stroke={C.woodD} strokeWidth={3} opacity={0.4} />)}</g>
         <rect x={0} y={1036} width={W} height={10} fill={C.line} />
@@ -191,8 +192,13 @@ const Atmos: React.FC<{f: number; mode: Mode}> = ({f, mode}) => {
   if (mode === 'white') {
     return (
       <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0}}>
-        <rect width={W} height={H} fill={C.hud} />
-        {Array.from({length: 30}).map((_, i) => <path key={i} d={`M ${(i * 137 + f * 9) % 1300 - 100},${300 + (i * 61) % 1300} l 120,18`} stroke="#E4E0DA" strokeWidth={6} opacity={0.8} />)}
+        <defs><linearGradient id="whg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E9E1D8" /><stop offset="0.45" stopColor="#F3EEE7" /><stop offset="1" stopColor="#E2DAD0" /></linearGradient></defs>
+        <rect width={W} height={H} fill="url(#whg)" />
+        <circle cx={820} cy={560} r={160} fill={C.sun} opacity={0.22} />
+        <circle cx={820} cy={560} r={46} fill={C.sun} opacity={0.35} />
+        <path d="M 0,700 L 90,640 L 160,690 L 240,610 L 330,680 L 420,630 L 520,690 L 610,620 L 700,680 L 800,640 L 900,690 L 1000,630 L 1080,680 L 1080,760 L 0,760 Z" fill="#D8D0C6" opacity={0.7} />
+        {Array.from({length: 34}).map((_, i) => <path key={i} d={`M ${(i * 137 + f * 9) % 1300 - 100},${300 + (i * 61) % 1300} l 120,18`} stroke="#DCD5CC" strokeWidth={6} opacity={0.8} />)}
+        {Array.from({length: 22}).map((_, i) => <path key={`n${i}`} d={`M ${(i * 211 + f * 16) % 1400 - 200},${420 + (i * 83) % 1200} l 200,30`} stroke="#FFFFFF" strokeWidth={10} opacity={0.5} />)}
       </svg>
     );
   }
@@ -240,9 +246,9 @@ const Atmos: React.FC<{f: number; mode: Mode}> = ({f, mode}) => {
         <radialGradient id="fogsun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stopColor={C.sun} stopOpacity={0.95} /><stop offset="0.5" stopColor={C.sun} stopOpacity={0.35} /><stop offset="1" stopColor={C.sun} stopOpacity={0} /></radialGradient>
       </defs>
       <rect width={W} height={H} fill="url(#fogsky)" />
-      <circle cx={820} cy={860} r={230} fill="url(#fogsun)" />
-      <circle cx={820} cy={860} r={56} fill="#F1CDB8" opacity={0.9} />
-      {[0, 1, 2].map((i) => <rect key={i} x={-200 + ((f * (0.6 + i * 0.3) + i * 400) % 1500)} y={780 + i * 70} width={700} height={60} rx={30} fill="#E9E4E1" opacity={0.35} />)}
+      <circle cx={820} cy={600} r={260} fill="url(#fogsun)" />
+      <circle cx={820} cy={600} r={60} fill="#F1CDB8" opacity={0.9} />
+      {[0, 1, 2].map((i) => <rect key={i} x={-200 + ((f * (0.6 + i * 0.3) + i * 400) % 1500)} y={560 + i * 110} width={700} height={60} rx={30} fill="#E9E4E1" opacity={0.4} />)}
       <rect data-band="ok" x={0} y={1060} width={W} height={860} fill={C.snow} />
       <rect x={0} y={1056} width={W} height={8} fill={C.snowD} />
     </svg>
@@ -356,15 +362,17 @@ const WheelHands: React.FC<{x: number; y: number; s?: number; on: number; f: num
 
 const rise = (up: number, h: number) => (1 - clamp01(up)) * (h + 220);
 /** a roadside billboard on two posts; `up` 0..1 rolls it up out of the snowbank. Its lamp is paper-white. */
-const Billboard: React.FC<{x: number; y: number; w?: number; h?: number; up: number; f: number; children?: React.ReactNode; shake?: number}> = ({x, y, w = 420, h = 260, up, f, children, shake = 0}) => {
+const Billboard: React.FC<{x: number; y: number; w?: number; h?: number; up: number; f: number; children?: React.ReactNode; shake?: number; post?: number}> = ({x, y, w = 420, h = 260, up, f, children, shake = 0, post = 220}) => {
   const k = clamp01(up);
   const rs = rise(k, h);
   return (
     <g transform={`translate(${x + shake * 4 * Math.sin(f * 1.3)} ${y + rs})`} opacity={k > 0.01 ? 1 : 0}>
-      {[-w * 0.3, w * 0.3].map((px) => <rect key={px} x={px - 9} y={0} width={18} height={220} fill="#3A424B" stroke={C.line} strokeWidth={4} />)}
-      <rect x={-w / 2 - 6} y={-h + 6} width={w} height={h} fill="#000" opacity={0.25} />
-      <rect x={-w / 2} y={-h} width={w} height={h} rx={6} fill={C.paper} stroke={C.line} strokeWidth={7} />
-      <path d={`M ${-w / 2 + 14},${-h + 14} h ${w - 28}`} stroke={C.rime} strokeWidth={6} opacity={0.8} />
+      <path d={`M ${-w / 2},${post} L ${w / 2},${post} L ${w / 2 + 160},${post + 40} L ${-w / 2 + 160},${post + 40} Z`} fill={C.line} opacity={0.18} />
+      {[-w * 0.3, w * 0.3].map((px) => <g key={px}><rect x={px - 14} y={0} width={28} height={post} fill="#3A424B" stroke={C.line} strokeWidth={5} /><rect x={px + 4} y={0} width={8} height={post} fill="#252B31" /></g>)}
+      <rect x={-w / 2 + 14} y={-h + 14} width={w} height={h} rx={6} fill="#252B31" stroke={C.line} strokeWidth={5} />
+      <rect x={-w / 2} y={-h} width={w} height={h} rx={6} fill={C.paper} stroke={C.line} strokeWidth={8} />
+      <rect x={-w / 2 + 10} y={-h + 10} width={w - 20} height={h - 20} rx={4} fill="none" stroke="#B9B09B" strokeWidth={3} />
+      <path d={`M ${-w / 2 - 4},${-h + 2} ${Array.from({length: 12}).map((_, i) => `q ${w / 24},${-14 - 6 * Math.abs(Math.sin(i * 2.1))} ${w / 12},0`).join(' ')}`} fill={C.rime} stroke={C.line} strokeWidth={3} />
       <g transform={`translate(0 ${-h - 22})`}><rect x={-60} y={-8} width={120} height={14} rx={6} fill={C.white} stroke={C.line} strokeWidth={3} /><path d={`M -60,6 L ${-w / 2},${h * 0.5} L ${w / 2},${h * 0.5} L 60,6 Z`} fill={C.white} opacity={0.12} /></g>
       <g transform={`translate(0 ${-h / 2})`}>{children}</g>
     </g>
@@ -429,86 +437,57 @@ const wrapText = (t: string, n: number) => {
   return out;
 };
 
-// ---- bands: the puck tracker on top, six numbered states of the throughline -------------------------------------------------------------------
-const PS: Array<{frost: number; cr: number; mode: PuckMode; emo: PuckEmotion; glow: number}> = [
-  {frost: 1, cr: 0, mode: 'blind', emo: 'sleepy', glow: 0}, {frost: 0.7, cr: 0.2, mode: 'clear', emo: 'alert', glow: 0}, {frost: 0.15, cr: 1, mode: 'clear', emo: 'relieved', glow: 1},
-  {frost: 0.3, cr: 0.6, mode: 'backup', emo: 'determined', glow: 1}, {frost: 0, cr: 1, mode: 'clear', emo: 'chatty', glow: 0.6}, {frost: 0.5, cr: 0.5, mode: 'clear', emo: 'pensive', glow: 0.3},
-];
-const TOPS = [{k: 3, t: 'RIMED'}, {k: 13, t: 'ONE ARC'}, {k: 20, t: 'HEATED'}, {k: 23, t: 'BACKUP'}, {k: 28, t: 'CLEAN'}, {k: 47, t: 'HALF'}];
-const Bands: React.FC<{beats: Beat[]}> = ({beats}) => {
-  const f = useCurrentFrame();
-  const at = (k: number) => {
-    const x = beats.find((y) => y.id === (IDS[k] ?? k));
-    return x ? Math.round(x.at * 30) : 99999;
-  };
-  const cur = TOPS.filter((q) => f >= at(q.k)).length - 1;
-  return (
-    <svg width={W} height={H} viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, pointerEvents: 'none'}}>
-      <g data-band="ok">
-        <rect x={40} y={118} width={monoW('THE ROOF PUCK · WAYMO SENSOR DOME', 20, 3) + 40} height={46} rx={8} fill="#12161A" opacity={0.85} />
-        <text x={60} y={150} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={3} fill={C.rime}>THE ROOF PUCK · WAYMO SENSOR DOME</text>
-        {TOPS.map((q, i) => {
-          const x = 44 + i * 164, on = i <= cur, now = i === cur;
-          return (
-            <g key={i} transform={`translate(${x} 530)`}>
-              <rect x={0} y={-28} width={154} height={56} rx={10} fill={now ? C.paper : on ? '#3A424B' : '#1E242A'} stroke={now ? C.line : C.rime} strokeWidth={now ? 5 : 3} opacity={on ? 0.96 : 0.8} />
-              <text x={77} y={7} textAnchor="middle" fontFamily={MONO} fontSize={20} fontWeight={900} fill={now ? C.ink : C.rime}>{q.t}</text>
-            </g>
-          );
-        })}
-        <line x1={44} y1={578} x2={1020} y2={578} stroke={C.rime} strokeWidth={3} strokeDasharray="6 10" opacity={0.7} />
-        {cur >= 0 && <g transform={`translate(${44 + cur * 164 + 77} 628)`}><RoofPuck x={0} y={0} f={f} scale={0.2} frost={PS[cur].frost} clearRing={PS[cur].cr} mode={PS[cur].mode} emotion={PS[cur].emo} glow={PS[cur].glow} seed={20} /></g>}
-      </g>
-    </svg>
-  );
-};
+// ---- shared set pieces ------------------------------------------------------------------------------------------------------------------------------
+/** a frosted window frame seen from inside a Fairbanks home: jagged rime fringe across the top and down the sides. */
+const FrostWindow: React.FC<{f: number; o?: number}> = ({f, o = 1}) => (
+  <g opacity={o}>
+    <path d={`M 0,300 H 1080 V 470 ${Array.from({length: 18}).map((_, i) => `L ${1080 - (i + 0.5) * 60},${470 + 40 + 60 * Math.abs(Math.sin(i * 1.7 + 0.4)) + 6 * Math.sin(f / 30 + i)} L ${1080 - (i + 1) * 60},${470 + 10 * Math.abs(Math.sin(i))}`).join(' ')} L 0,470 Z`} fill={C.rime} opacity={0.92} />
+    {Array.from({length: 18}).map((_, i) => <path key={i} d={`M ${30 + i * 60},480 l 10,30 l -14,12 l 18,26`} stroke="#B9B2A6" strokeWidth={3} fill="none" />)}
+    <path d={`M 0,470 ${Array.from({length: 10}).map((_, i) => `L ${36 + 30 * Math.abs(Math.sin(i * 2.3))},${520 + i * 70} L 0,${555 + i * 70}`).join(' ')} Z`} fill={C.rime} opacity={0.85} />
+    <path d={`M 1080,470 ${Array.from({length: 10}).map((_, i) => `L ${1044 - 30 * Math.abs(Math.sin(i * 1.9))},${520 + i * 70} L 1080,${555 + i * 70}`).join(' ')} Z`} fill={C.rime} opacity={0.85} />
+    <rect x={0} y={292} width={1080} height={16} fill={C.woodD} />
+  </g>
+);
 
-// ---- S1: the mirror road, a resident's window, the frosted puck wipes a question mark --------------------------------------------------------------
+// ---- S1: the hook. A frosted puck wipes a question mark, the camera pulls back to the mirror road ----------------------------------------------------
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [1, 3, 4, 5];
-  const sweep = easeIO(f, b(1), 50);
-  const mirror = easeIO(f, b(1) + 30, 40);
-  const settle = springy(f, b(3) - 6, 24);
-  const wipe = easeIO(f, b(4) - 4, 22);
-  const refreeze = easeIO(f, b(5), 30);
+  const wipe = easeIO(f, 2, 40);
+  const sweep = easeIO(f, 10, 60);
+  const mirror = easeIO(f, 40, 50);
+  const opened = ease(f, b(4) + 4, 12);
+  const refreeze = easeIO(f, b(5), 34);
   const q = wipe * (1 - refreeze);
-  const opened = ease(f, b(4) + 8, 12);
-  const handWipe = easeIO(f, 0, 40);
-  const blackout = 1 - ease(f, 0, 30);
+  const handWipe = easeIO(f, 46, 60);
+  const cam = track([{t: 0, z: 2.1, fx: 540, fy: 1070}, {t: 40, z: 2.1, fx: 540, fy: 1070}, {t: 100, z: 1.05, fx: 540, fy: 1000}, {t: b(4), z: 1.08, fx: 540, fy: 1010},
+    {t: b(4) + 20, z: 1.35, fx: 540, fy: 1060}, {t: b(5), z: 1.4, fx: 540, fy: 1060}, {t: b(5) + 30, z: 1.75, fx: 540, fy: 1080}, {t: p.dur, z: 1.8, fx: 540, fy: 1080}]);
   return (
-    <Frame p={p} overlay={<>
+    <Frame p={p} mode="fog" cam={cam} overlay={<>
+        <FrostWindow f={f} o={1 - 0.5 * ease(f, b(4), 30)} />
+        <Lab text="ILLUSTRATIVE" x={900} y={1290} size={18} tone="dark" p={ease(f, b(3), 12) * (1 - ease(f, b(5) - 10, 8))} />
         <Plate x={540} y={1210} text="A FAIRBANKS RESIDENT ASKED" size={36} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={760} text="WAYMO SELF-DRIVING CAR" size={36} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={870} text="DO THEY KNOW?" size={52} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={300} y={1100} text="BLACK ICE" size={34} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="fog" z0={1.05} z1={1.12} oy={1000}>
+        <Plate x={540} y={760} text="DO THEY KNOW?" size={56} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1210} text="BLACK ICE" size={44} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <Spruces y={1062} n={8} seed={2} f={f} x0={-40} x1={380} scale={0.9} fill={C.spruce} o={0.75} />
-        <Spruces y={1062} n={7} seed={7} f={f} x0={700} x1={1120} scale={0.8} fill={C.spruce} o={0.75} />
+        <Spruces y={1062} n={9} seed={2} f={f} x0={-40} x1={400} scale={1.35} o={0.8} />
+        <Spruces y={1062} n={7} seed={7} f={f} x0={680} x1={1120} scale={1.2} o={0.8} />
         <Road f={f} speed={0.4} mirror={mirror} glint={sweep} />
-        {/* the mirror: the puck's upside-down reflection in the black ice */}
-        <g opacity={0.45 * mirror} transform="translate(540 1440) scale(0.9 -0.5)"><CarSil x={0} y={0} s={0.9} f={f} /><RoofPuck x={0} y={-176} f={f} scale={0.55} frost={1} mode="blind" emotion="sleepy" seed={9} /></g>
+        {/* the mirror: car and puck reflected upside down from the ground line */}
+        <g opacity={0.42 * mirror} transform="translate(540 1300) scale(1 -0.55)"><CarSil x={0} y={0} s={0.9} f={f} /><RoofPuck x={0} y={-176} f={f} scale={1.1} frost={1} mode="blind" emotion="sleepy" qmark={q} seed={9} /></g>
         <HeldProp f={f} px={540} py={1180} w={500} h={300} seed={1.1} kind="rest">
-          <g transform={`translate(0 ${(1 - settle) * -30})`}>
-            <CarSil x={540} y={1300} s={0.9} f={f} />
-            <RoofPuck x={540} y={1124} f={f} scale={1.1} frost={1} clearRing={0} mode={opened > 0.5 && refreeze < 0.6 ? 'clear' : 'blind'} emotion={refreeze > 0.4 ? 'wary' : opened > 0.5 ? 'startled' : 'sleepy'} qmark={q} look={refreeze > 0.4 ? 0.3 : 0} seed={1} />
-          </g>
+          <CarSil x={540} y={1300} s={0.9} f={f} />
+          <RoofPuck x={540} y={1124} f={f} scale={1.1} frost={1} clearRing={0.08 * Math.sin(f / 9) ** 2} mode={opened > 0.5 && refreeze < 0.6 ? 'clear' : 'blind'} emotion={refreeze > 0.4 ? 'wary' : opened > 0.5 ? 'startled' : 'sleepy'} qmark={q} look={refreeze > 0.4 ? 0.4 : 0} rimGlow={0.4} seed={1} />
         </HeldProp>
-        {/* the headlight sweep */}
-        <path d={`M -60,${1080 + 30 * Math.sin(sweep * 3)} L ${lerp(-200, 1300, sweep)},1500 L ${lerp(-40, 1500, sweep)},1500 Z`} fill={C.white} opacity={0.22 * Math.sin(Math.PI * sweep)} />
-        {/* a resident's mittened hand wipes the frosted window in the foreground */}
-        <g opacity={1 - ease(f, b(3) - 10, 20)}>
-          <rect x={0} y={300} width={1080} height={1010} fill={C.rime} opacity={0.55 * (1 - handWipe * 0.8)} />
-          <g transform={`translate(${lerp(120, 860, handWipe)} ${lerp(980, 760, handWipe)}) rotate(${-20 + 30 * handWipe})`}>
-            <rect x={-60} y={-50} width={120} height={110} rx={50} fill="#7A5A44" stroke={C.line} strokeWidth={7} />
-            <rect x={-74} y={-20} width={36} height={60} rx={18} fill="#7A5A44" stroke={C.line} strokeWidth={6} />
-            <rect x={-52} y={56} width={104} height={200} rx={20} fill={C.parka} stroke={C.line} strokeWidth={7} />
-            <path d="M -52,70 h 104" stroke={C.rime} strokeWidth={10} />
-          </g>
+        <path d={`M -60,${1080 + 30 * Math.sin(sweep * 3)} L ${lerp(-200, 1300, sweep)},1500 L ${lerp(-40, 1500, sweep)},1500 Z`} fill={C.white} opacity={0.24 * Math.sin(Math.PI * sweep)} />
+        {/* the resident's mittened hand wiping the window in the foreground */}
+        <g transform={`translate(${lerp(-60, 210, handWipe)} ${lerp(1060, 880, handWipe) + 20 * Math.sin(f / 7) * (1 - handWipe)}) rotate(${-30 + 40 * handWipe})`} opacity={1 - ease(f, b(4), 20)}>
+          <rect x={-60} y={-50} width={120} height={110} rx={50} fill="#7A5A44" stroke={C.line} strokeWidth={7} />
+          <rect x={-74} y={-20} width={36} height={60} rx={18} fill="#7A5A44" stroke={C.line} strokeWidth={6} />
+          <rect x={-52} y={56} width={104} height={260} rx={20} fill={C.parka} stroke={C.line} strokeWidth={7} />
+          <path d="M -52,70 h 104" stroke={C.rime} strokeWidth={10} />
         </g>
-        <rect x={0} y={0} width={W} height={H} fill="#000" opacity={0.9 * blackout} />
-        <Lab text="ILLUSTRATIVE" x={900} y={1290} size={18} tone="dark" p={mirror} />
       </SVG>
     </Frame>
   );
@@ -522,45 +501,44 @@ const S2: React.FC<SceneProps> = ({p}) => {
   const pin = springy(f, b(7) - 6, 22);
   const cones = ease(f, b(8) - 4, 26);
   const drum = easeIO(f, b(8) + 30, 40);
-  const odo = clamp01((f - b(8)) / 30);
+  const odo = clamp01((f - b(8)) / 24);
   const glow = clamp01(1 - Math.abs(f - b(8) - 6) / 12);
-  const scroll = easeIO(f, b(6) + 20, 60);
+  const steam = (f % 90) / 90;
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={720} y={730} text="NOVEMBER 5TH" size={40} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={700} y={830} text="THIS SEASON · ALASKA" size={34} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={700} y={960} displayLines={['CLOSED-COURSE TESTS', '· HEAVY SNOWFALL DATA']} text="CLOSED-COURSE TESTS · HEAVY SNOWFALL DATA" size={32} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="kitchen" z0={1.02} z1={1.08} ox={460} oy={980}>
+    <Frame p={p} mode="kitchen" z0={1.02} z1={1.07} ox={460} oy={960} overlay={<>
+        <Plate x={770} y={1120} text="NOVEMBER 5TH" size={40} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={770} y={1120} text="THIS SEASON · ALASKA" size={34} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={770} y={1120} displayLines={['CLOSED-COURSE TESTS ·', 'HEAVY SNOWFALL DATA']} text="CLOSED-COURSE TESTS · HEAVY SNOWFALL DATA" size={32} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        {/* the puck, small and graphite, reflected in the window glass */}
-        <g opacity={0.55}><CarSil x={780} y={790} s={0.45} f={f} /><RoofPuck x={780} y={702} f={f} scale={0.45} frost={0.8} clearRing={0.1} mode="blind" emotion="sleepy" seed={2} /></g>
-        <rect x={120} y={360} width={840} height={620} fill={C.cream} opacity={0.18} />
+        <g opacity={0.6}><CarSil x={780} y={800} s={0.45} f={f} /><RoofPuck x={780} y={712} f={f} scale={0.45} frost={0.8} clearRing={0.1} mode="blind" emotion="sleepy" seed={2} /></g>
         <path d="M 160,940 L 400,400" stroke="#FFFFFF" strokeWidth={10} opacity={0.2} />
-        <ellipse cx={420} cy={1600} rx={260} ry={40} fill="#000" opacity={0.25} />
+        {/* a mug steaming on the sill: the room is warm */}
+        <g transform="translate(250 1010)"><rect x={-40} y={-60} width={80} height={70} rx={10} fill="#8C7B6A" stroke={C.line} strokeWidth={5} /><path d="M 40,-44 q 26,6 0,30" stroke={C.line} strokeWidth={6} fill="none" />{[0, 1].map((i) => <path key={i} d={`M ${-10 + i * 20},${-70 - steam * 60} q 10,-14 0,-28`} stroke={C.white} strokeWidth={5} fill="none" opacity={1 - steam} />)}</g>
+        <ellipse cx={380} cy={1330} rx={220} ry={34} fill="#000" opacity={0.25} />
         <g transform={`translate(${lerp(-200, 0, slide)} 0)`}>
-          <Phone x={400} y={1240} s={1.0} rot={-4}>
-            <g transform={`translate(0 ${-40 * scroll})`}>
-              <rect x={-150} y={-280} width={300} height={30} rx={6} fill={C.graphite} />
-              <rect x={-150} y={-236} width={120} height={34} rx={6} fill={C.paper} stroke={C.line} strokeWidth={3} />
-              <text x={-90} y={-212} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>NOV 5</text>
-              {[0, 1, 2].map((i) => <rect key={i} x={-150} y={-180 + i * 26} width={300 - i * 50} height={12} rx={6} fill="#B9B2A6" />)}
-              <g transform="translate(-130 -80) scale(0.26)"><path d={AK_PATH} fill={C.snow} stroke={C.line} strokeWidth={10} /></g>
-              <Pin x={0} y={-10} drop={pin} s={0.7} wide={0.32} />
-              <g opacity={cones}>{[0, 1, 2, 3, 4, 5].map((i) => {
-                const a = (i / 6) * Math.PI * 2;
-                const lit = clamp01(cones * 6 - i);
-                return <path key={i} d={`M ${-60 + 50 * Math.cos(a)},${130 + 22 * Math.sin(a)} l 10,-26 l 10,26 Z`} fill={lit > 0.5 ? C.amber : C.snowD} stroke={C.line} strokeWidth={3} />;
-              })}</g>
-              <g transform="translate(80 140)" opacity={drum > 0.01 ? 1 : 0}>
-                <rect x={-40} y={-50} width={80} height={100} rx={16} fill={C.snow} stroke={C.line} strokeWidth={4} />
-                <rect x={-36} y={46 - 92 * drum} width={72} height={92 * drum} rx={12} fill={C.white} />
-                {[0, 1, 2, 3].map((i) => <circle key={i} cx={-20 + i * 14} cy={-60 - ((f * 2 + i * 20) % 50)} r={4} fill={C.white} stroke={C.snowD} strokeWidth={1.5} />)}
-              </g>
+          <Phone x={370} y={1010} s={0.9} rot={-4}>
+            <rect x={-150} y={-280} width={300} height={30} rx={6} fill={C.graphite} />
+            <text x={0} y={-218} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.ink}>NOVEMBER 5TH</text>
+            {[0, 1].map((i) => <rect key={i} x={-150} y={-190 + i * 26} width={300 - i * 60} height={12} rx={6} fill="#B9B2A6" />)}
+            <g transform="translate(-130 -130) scale(0.26)"><path d={AK_PATH} fill={C.snow} stroke={C.line} strokeWidth={10} /></g>
+            <Pin x={0} y={-30} drop={pin} s={0.6} wide={0.5} />
+            <text x={0} y={70} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink} opacity={pin}>ALASKA</text>
+            <g opacity={cones}>{[0, 1, 2, 3, 4, 5].map((i) => {
+              const a = (i / 6) * Math.PI * 2;
+              const lit = clamp01(cones * 6 - i);
+              return <path key={i} d={`M ${-80 + 50 * Math.cos(a)},${150 + 22 * Math.sin(a)} l 10,-26 l 10,26 Z`} fill={lit > 0.5 ? C.amber : C.snowD} stroke={C.line} strokeWidth={3} />;
+            })}</g>
+            <g transform="translate(70 150)" opacity={drum > 0.01 ? 1 : 0}>
+              <rect x={-40} y={-50} width={80} height={100} rx={16} fill={C.snow} stroke={C.line} strokeWidth={4} />
+              <rect x={-36} y={46 - 92 * drum} width={72} height={92 * drum} rx={12} fill={C.white} />
+              {[0, 1, 2, 3].map((i) => <circle key={i} cx={-20 + i * 14} cy={-60 - ((f * 2 + i * 20) % 50)} r={4} fill={C.white} stroke={C.snowD} strokeWidth={1.5} />)}
             </g>
+            {/* the loop-one plant: a small blank counter in the post, it rolls and glows once */}
+            <Odometer x={0} y={250} s={0.5} roll={odo} f={f} glow={glow} />
           </Phone>
         </g>
-        <Odometer x={820} y={1200} s={0.6} roll={odo} f={f} glow={glow} />
-        <HeldTravel f={f} x={210} y={910} w={380} h={660} seed={2} strength={0.2} rx={20} />
+        <HeldTravel f={f} x={200} y={710} w={340} h={600} seed={2} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
@@ -574,73 +552,96 @@ const S3: React.FC<SceneProps> = ({p}) => {
   const card = easeIO(f, b(11) - 12, 24);
   const snap = springy(f, b(11) + 6, 18);
   const banner = springy(f, b(12) - 4, 26);
-  const FX = 600, FY = 900;
-  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: b(11) + 6, z: 1.0, fx: 540, fy: 960}, {t: b(12) + 10, z: 1.45, fx: FX, fy: FY + 40}, {t: p.dur, z: 1.5, fx: FX, fy: FY + 40}]);
+  const FX = 600, FY = 730;
+  const cam = track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: b(11) + 6, z: 1.0, fx: 540, fy: 960}, {t: b(12) + 10, z: 1.2, fx: 620, fy: 840}, {t: p.dur, z: 1.22, fx: 620, fy: 840}]);
   const tap = Math.max(0, Math.sin((f - b(10)) / 4)) * (f > b(10) && f < b(10) + 30 ? 1 : 0);
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={540} y={730} text="THE POST SAYS ONLY ALASKA" size={36} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={820} text="GOVERNOR'S POST · FAIRBANKS" size={36} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={1240} text={'"NO BETTER PROVING GROUND"'} size={22} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="map" cam={cam}>
+    <Frame p={p} mode="map" cam={cam} overlay={<>
+        <Plate x={540} y={1250} text="THE POST SAYS ONLY ALASKA" size={36} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} text="GOVERNOR'S POST · FAIRBANKS" size={36} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} text={'"NO BETTER PROVING GROUND"'} size={30} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <g transform="translate(80 640) scale(0.92)"><path d={AK_PATH} fill={C.snow} stroke={C.line} strokeWidth={6} /><path d={AK_PATH} fill="none" stroke={C.rime} strokeWidth={14} opacity={0.5} /></g>
-        <Pin x={FX - 40} y={FY + 10} drop={drop} s={1.1} wide={1 - snap} />
-        {/* the governor's card slides over and its pin snaps to Fairbanks as one dot */}
-        <g transform={`translate(${lerp(1300, 820, card)} 1180) rotate(${lerp(10, 4, card)})`}>
-          <rect x={-170} y={-110} width={340} height={220} rx={12} fill={C.white} stroke={C.line} strokeWidth={6} />
-          <rect x={-170} y={-110} width={340} height={44} rx={12} fill={C.graphite} />
-          {[0, 1, 2].map((i) => <rect key={i} x={-140} y={-40 + i * 34} width={280 - i * 40} height={14} rx={7} fill="#B9B2A6" />)}
+        <g transform="translate(80 470) scale(0.92)"><path d={AK_PATH} fill={C.snow} stroke={C.line} strokeWidth={6} /><path d={AK_PATH} fill="none" stroke={C.rime} strokeWidth={14} opacity={0.5} /></g>
+        <Pin x={lerp(560, FX, snap)} y={lerp(830, FY, snap)} drop={drop} s={1.1} wide={1 - snap} />
+        {/* the governor's card, painted metal with a bevel */}
+        <g transform={`translate(${lerp(1300, 820, card)} 1000) rotate(${lerp(10, 4, card)})`}>
+          <rect x={-146} y={-94} width={300} height={200} rx={12} fill="#252B31" />
+          <rect x={-150} y={-100} width={300} height={200} rx={12} fill="#5E6670" stroke={C.line} strokeWidth={6} />
+          <rect x={-136} y={-86} width={272} height={172} rx={8} fill={C.white} stroke="#3A424B" strokeWidth={3} />
+          <rect x={-136} y={-86} width={272} height={36} rx={8} fill={C.graphite} />
+          {[0, 1, 2].map((i) => <rect key={i} x={-116} y={-34 + i * 32} width={232 - i * 40} height={12} rx={6} fill="#B9B2A6" />)}
+          {[-136, 124].map((sx) => <circle key={sx} cx={sx + 6} cy={-80} r={5} fill="#9AA2AC" stroke={C.line} strokeWidth={2} />)}
         </g>
         <circle cx={FX} cy={FY} r={14 * snap} fill={C.ink} stroke={C.white} strokeWidth={4} />
         <circle cx={FX} cy={FY} r={14 + 30 * snap * (0.5 + 0.5 * Math.sin(f / 8))} fill="none" stroke={C.ink} strokeWidth={3} opacity={0.4 * snap} />
-        {/* frost-rimmed cloth banner snapping taut */}
-        <g transform={`translate(${FX} ${FY - 120}) scale(${banner} 1)`} opacity={clamp01(banner * 2)}>
-          <path d={`M -200,-34 Q 0,${-44 + 8 * Math.sin(f / 7)} 200,-34 L 200,34 Q 0,${24 + 8 * Math.sin(f / 7)} -200,34 Z`} fill={C.paper} stroke={C.line} strokeWidth={5} />
-          <path d="M -196,-30 l 12,10 l 10,-8 l 12,10 l 10,-8 l 12,10" stroke={C.rime} strokeWidth={4} fill="none" />
+        {/* frost-rimmed cloth banner with fold shading, carrying the governor's post */}
+        <g transform={`translate(${FX} ${FY - 140}) scale(${banner} 1)`} opacity={clamp01(banner * 2)}>
+          <path d={`M -280,-40 Q 0,${-52 + 8 * Math.sin(f / 7)} 280,-40 L 280,40 Q 0,${28 + 8 * Math.sin(f / 7)} -280,40 Z`} fill={C.paper} stroke={C.line} strokeWidth={6} />
+          {[-210, -110, 0, 110, 210].map((fx, i) => <path key={fx} d={`M ${fx},-44 Q ${fx + 18},0 ${fx},40`} stroke={i % 2 ? '#B9AF98' : '#E8E0CC'} strokeWidth={14} fill="none" opacity={0.6} />)}
+          <path d="M -276,-36 l 14,12 l 12,-10 l 14,12 l 12,-10 l 14,12 l 12,-10 M 276,-36 l -14,12 l -12,-10 l -14,12 l -12,-10" stroke={C.rime} strokeWidth={5} fill="none" />
+          {[-250, 250].map((cx) => <path key={cx} d={`M ${cx},28 l 4,-10 l 4,10 l -10,-6 h 12 Z`} fill={C.rime} stroke="#B9B2A6" strokeWidth={1.5} />)}
+          <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} letterSpacing={1} fill={C.ink}>GOVERNOR'S POST · FAIRBANKS</text>
         </g>
-        <g transform={`translate(240 1250) rotate(${-8 * tap})`}><RoofPuck x={0} y={0} f={f} scale={0.55} frost={0.75} clearRing={0.15} mode="clear" emotion="wary" look={0.8} seed={3} /></g>
-        <HeldTravel f={f} x={80} y={640} w={920} h={640} seed={3} strength={0.2} rx={20} />
+        <g transform={`translate(330 1060) rotate(${-8 * tap})`}><RoofPuck x={0} y={0} f={f} scale={0.55} frost={0.75} clearRing={0.15} mode="clear" emotion="wary" look={0.8} seed={3} /></g>
+        <HeldTravel f={f} x={80} y={470} w={920} h={640} seed={3} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
 };
 
-// ---- S4: three kinds of work as three lanes, high crane over the fogged road ------------------------------------------------------------------------
+// ---- S4: three kinds of work as three lanes under an overhead gantry -----------------------------------------------------------------------------
+const HZ = 860;
 const S4: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [13, 14, 15, 16, 17];
-  const card = easeIO(f, b(13), 22);
-  const lane = (i: number) => springy(f, b([14, 15, 16][i]) - 4, 22);
-  const l3 = springy(f, b(17) - 4, 22);
+  const l1 = springy(f, b(15) - 4, 22), l2 = springy(f, b(16) - 4, 22), l3 = springy(f, b(17) - 4, 22);
+  const gantry = springy(f, b(14) - 6, 24);
   const tapA = Math.max(0, Math.sin((f - b(15)) / 6)) * clamp01((f - b(15)) / 10);
-  const cam = track([{t: 0, z: 1.25, fx: 540, fy: 1100}, {t: b(14), z: 1.0, fx: 540, fy: 980}, {t: p.dur, z: 1.04, fx: 540, fy: 980}]);
+  const cam = track([{t: 0, z: 1.25, fx: 540, fy: 1100}, {t: b(14), z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.04, fx: 540, fy: 960}]);
+  const lit = [l1, l2, l3];
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={540} y={1230} text="QUOTED BY TV STATION" size={34} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={730} text="THREE KINDS OF WORK" size={38} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="fog" cam={cam}>
+    <Frame p={p} mode="fog" cam={cam} overlay={<>
+        <Plate x={540} y={800} text="QUOTED BY TV STATION" size={34} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={800} text="THREE KINDS OF WORK" size={38} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={800} text="MANUAL DATA COLLECTION" size={34} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={800} text="SPECIALIST AT THE WHEEL" size={34} tone="plate" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={800} text="LIMITED STRUCTURED TESTING" size={32} tone="plate" p={vis(f, b, K, 4)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <Spruces y={1062} n={10} seed={4} f={f} x0={-40} x1={1120} scale={0.6} o={0.6} />
-        {/* three lanes already laid in the road; each fills with its content */}
-        <path d="M 380,1062 L 700,1062 L 1080,1700 L 0,1700 Z" fill={C.ground} stroke={C.line} strokeWidth={4} />
-        {[0, 1].map((i) => <path key={i} d={`M ${487 + i * 106},1062 L ${360 + i * 360},1700`} stroke={C.rime} strokeWidth={6} strokeDasharray="30 22" />)}
-        {[0, 1, 2].map((i) => <path key={i} d={`M ${380 + i * 106},1062 L ${487 + i * 106},1062 L ${360 + i * 360},1700 L ${0 + i * 360},1700 Z`} fill={C.rime} opacity={0.12 * (i < 2 ? lane(i + 1) : l3)} />)}
-        <path d="M 380,1062 L 700,1062 L 1080,1700 L 0,1700 Z" fill="none" stroke={C.rime} strokeWidth={3} opacity={0.5 * lane(0)} />
-        {/* lane 1: a person at the roadside with a handheld logger */}
-        <g opacity={clamp01(lane(1) * 2)} transform={`translate(0 ${(1 - lane(1)) * 60})`}><Person x={170} y={1330} s={0.75} f={f} seed={1.4} armUp={0.5 * tapA} cues={[b(15), b(15) + 20]} /></g>
-        {/* lane 2: the car with the puck, a specialist's hands on the wheel (inset) */}
-        <g transform={`translate(${lerp(560, 540, card)} 0)`}>
-          <CarSil x={540} y={1560} s={0.62} f={f} roll={f / 40} />
-          <RoofPuck x={540} y={1440} f={f} scale={0.6} frost={0.7} clearRing={0.2} mode="clear" emotion="alert" seed={4} />
+        <rect x={0} y={HZ} width={W} height={1060} fill={C.snow} />
+        <Spruces y={HZ} n={12} seed={4} f={f} x0={-40} x1={1120} scale={0.75} o={0.7} />
+        <path d={`M 430,${HZ} L 650,${HZ} L 1200,1700 L -120,1700 Z`} fill={C.ground} stroke={C.line} strokeWidth={4} />
+        {[0, 1].map((i) => <path key={i} d={`M ${503 + i * 74},${HZ} L ${320 + i * 440},1700`} stroke={C.rime} strokeWidth={7} strokeDasharray="34 24" strokeDashoffset={-f * 3} />)}
+        {[0, 1, 2].map((i) => <path key={i} d={`M ${430 + i * 74},${HZ} L ${503 + i * 74},${HZ} L ${320 + i * 440},1700 L ${-120 + i * 440},1700 Z`} fill={C.rime} opacity={0.14 * lit[i]} />)}
+        {/* the overhead gantry: three lane signs that light as each lane fills */}
+        <g transform={`translate(0 ${(1 - gantry) * -260})`}>
+          {[70, 1010].map((gx) => <g key={gx}><rect x={gx - 16} y={470} width={32} height={HZ - 470} fill="#3A424B" stroke={C.line} strokeWidth={5} /><rect x={gx + 4} y={470} width={8} height={HZ - 470} fill="#252B31" /></g>)}
+          <rect x={40} y={462} width={1000} height={36} fill="#3A424B" stroke={C.line} strokeWidth={5} />
+          {[0, 1, 2].map((i) => {
+            const on = lit[i];
+            const cx = 220 + i * 320;
+            return (
+              <g key={i} transform={`translate(${cx} 590)`}>
+                <rect x={-140} y={-80} width={280} height={160} rx={10} fill={on > 0.5 ? C.white : '#5E6670'} stroke={C.line} strokeWidth={6} />
+                <rect x={-130} y={-70} width={260} height={140} rx={6} fill="none" stroke={on > 0.5 ? '#B9B09B' : '#4A525C'} strokeWidth={3} />
+                {i === 0 && <g stroke={C.ink} strokeWidth={6} fill="none"><circle cx={-10} cy={-30} r={18} /><path d="M -10,-12 V 40 M -10,0 L 30,-10" /><rect x={28} y={-30} width={26} height={36} rx={4} /></g>}
+                {i === 1 && <g stroke={C.ink} strokeWidth={8} fill="none"><circle r={44} /><path d="M -44,0 H 44 M 0,0 V 44" /></g>}
+                {i === 2 && <g fill={C.ink}>{[-50, 0, 50].map((cxx) => <path key={cxx} d={`M ${cxx - 16},40 L ${cxx},-30 L ${cxx + 16},40 Z`} />)}</g>}
+                <rect x={-140} y={-80} width={280} height={160} rx={10} fill={C.white} opacity={on > 0.5 ? 0.12 + 0.08 * Math.sin(f / 7) : 0} />
+              </g>
+            );
+          })}
         </g>
-        <g opacity={clamp01(lane(2) * 2)} transform="translate(540 1200)"><circle r={86} fill={C.fog} stroke={C.line} strokeWidth={5} /><WheelHands x={0} y={10} s={0.55} on={lane(2)} f={f} /></g>
+        {/* lane 1: a person at the roadside with a handheld logger */}
+        <g opacity={clamp01(l1 * 2)} transform={`translate(0 ${(1 - l1) * 60})`}><Person x={200} y={1040} s={0.95} f={f} seed={1.4} armUp={0.5 + 0.3 * tapA} cues={[b(15), b(15) + 20, b(15) + 40]} /></g>
+        {/* lane 2: the car with the puck, a specialist's hands on the wheel */}
+        <CarSil x={560} y={1230} s={0.62} f={f} roll={f / 40} />
+        <RoofPuck x={560} y={1112} f={f} scale={0.6} frost={0.7} clearRing={0.2} mode="clear" emotion="alert" seed={4} />
+        <g opacity={clamp01(l2 * 2)} transform="translate(560 960)"><circle r={92} fill={C.fog} stroke={C.line} strokeWidth={6} /><WheelHands x={0} y={10} s={0.6} on={l2} f={f} /></g>
         {/* lane 3: a closed course of cones */}
-        <g opacity={clamp01(l3 * 2)}>{[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M ${820 + i * 40 - 10},${1500 - (i % 2) * 40} l 14,-40 l 14,40 Z`} fill={C.amber} stroke={C.line} strokeWidth={3} transform={`rotate(${4 * Math.sin(f / 9 + i)} ${830 + i * 40} ${1500})`} />)}<path d="M 800,1520 q 100,-70 210,0" stroke={C.rime} strokeWidth={4} strokeDasharray="10 8" fill="none" /></g>
-        <Lab text="MANUAL DATA COLLECTION" x={300} y={1120} size={24} p={vis(f, b, K, 2)} />
-        <Lab text="SPECIALIST AT THE WHEEL" x={540} y={1060} size={24} p={vis(f, b, K, 3)} />
-        <Lab text="LIMITED STRUCTURED TESTING" x={760} y={1300} size={24} p={vis(f, b, K, 4)} />
-        <HeldTravel f={f} x={0} y={1062} w={1080} h={640} mode="shadow" seed={4} strength={0.2} rx={20} />
+        <g opacity={clamp01(l3 * 2)} transform="translate(860 1180) scale(1.6)">{[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M ${i * 30 - 70},${-(i % 2) * 30} l 12,-34 l 12,34 Z`} fill={C.amber} stroke={C.line} strokeWidth={3} transform={`rotate(${4 * Math.sin(f / 9 + i)} ${i * 30 - 58} 0)`} />)}<path d="M -80,14 q 80,-56 170,0" stroke={C.rime} strokeWidth={4} strokeDasharray="10 8" fill="none" /></g>
+        <HeldTravel f={f} x={0} y={HZ} w={1080} h={640} mode="shadow" seed={4} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
@@ -656,46 +657,50 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const open = ease(f, b(21) - 4, 14);
   const sleet = clamp01((f - b(21)) / 10);
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={760} y={730} displayLines={['SIXTH-GENERATION', 'WAYMO DRIVER']} text="SIXTH-GENERATION WAYMO DRIVER" size={32} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={870} text="HEATERS · MICRO-WIPERS" size={34} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={1240} text="SENSORS KEPT CLEAR" size={36} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="fog" z0={1.05} z1={1.12} ox={460} oy={900}>
+    <Frame p={p} mode="fog" z0={1.03} z1={1.08} ox={460} oy={900} overlay={<>
+        <Plate x={800} y={560} displayLines={['SIXTH-GENERATION', 'WAYMO DRIVER']} text="SIXTH-GENERATION WAYMO DRIVER" size={32} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} text="HEATERS · MICRO-WIPERS" size={36} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} text="SENSORS KEPT CLEAR" size={38} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <rect x={0} y={300} width={W} height={760} fill={C.fog} opacity={0.6} />
-        <HeldProp f={f} px={420} py={940} w={600} h={420} seed={2.2} kind="rest">
-          <RoofPuck x={420} y={1080} f={f} scale={2.2} frost={lerp(0.7, 0.15, heat)} clearRing={lerp(0.2, 1, heat)} mode="clear" emotion={open > 0.5 ? 'relieved' : 'alert'} glow={heat} open={0.7 + 0.3 * open} seed={5} />
+        <HeldProp f={f} px={420} py={900} w={700} h={420} seed={2.2} kind="rest">
+          <RoofPuck x={420} y={1020} f={f} scale={3.0} frost={lerp(0.7, 0.15, heat)} clearRing={lerp(0.2, 1, heat)} mode="clear" emotion={open > 0.5 ? 'relieved' : 'alert'} glow={heat} open={0.7 + 0.3 * open} seed={5} />
         </HeldProp>
-        {/* the cutaway: the front shell slides off and three sensor layers light inside */}
-        <g opacity={part * (1 - ease(f, b(20) - 10, 20))}>
-          <path d="M 140,1080 C 140,930 260,830 420,830 C 580,830 700,930 700,1080 Z" fill="#14181D" stroke={C.line} strokeWidth={7} />
-          {['CAMERA', 'RADAR', 'LIDAR'].map((t, i) => (
-            <g key={t} transform={`translate(420 ${1030 - i * 62})`} opacity={0.4 + 0.6 * layers[i]}>
-              <rect x={-200 + i * 30} y={-24} width={400 - i * 60} height={48} rx={18} fill={layers[i] > 0.5 ? C.amber : '#3A424B'} stroke={C.line} strokeWidth={4} />
-              <circle cx={-170 + i * 30} cy={0} r={10} fill={C.line} />
-            </g>
-          ))}
-        </g>
-        <g transform={`translate(${lerp(420, 980, part)} ${lerp(0, -60, part)}) rotate(${18 * part} 420 1080)`} opacity={1 - ease(f, b(20) - 10, 20)}>
-          <path d="M 140,1080 C 140,930 260,830 420,830 C 580,830 700,930 700,1080 Z" transform="translate(-420 0)" fill={C.graphite} stroke={C.line} strokeWidth={7} opacity={part > 0.02 ? 1 : 0} />
+        <g transform="translate(420 1020) scale(1.3636) translate(-420 -1080)">
+          <g opacity={part * (1 - ease(f, b(20) - 10, 20))}>
+            <path d="M 140,1080 C 140,930 260,830 420,830 C 580,830 700,930 700,1080 Z" fill="#14181D" stroke={C.line} strokeWidth={7} />
+            {['CAMERA', 'RADAR', 'LIDAR'].map((t, i) => (
+              <g key={t} transform={`translate(420 ${1030 - i * 62})`} opacity={0.4 + 0.6 * layers[i]}>
+                <rect x={-200 + i * 30} y={-24} width={400 - i * 60} height={48} rx={18} fill={layers[i] > 0.5 ? C.amber : '#3A424B'} stroke={C.line} strokeWidth={4} />
+                <rect x={-190 + i * 30} y={-20} width={380 - i * 60} height={12} rx={6} fill="#FFFFFF" opacity={0.2} />
+                <circle cx={-170 + i * 30} cy={0} r={10} fill={C.line} />
+              </g>
+            ))}
+          </g>
+          <g transform={`translate(${lerp(420, 980, part)} ${lerp(0, -60, part)}) rotate(${18 * part} 420 1080)`} opacity={1 - ease(f, b(20) - 10, 20)}>
+            <path d="M 140,1080 C 140,930 260,830 420,830 C 580,830 700,930 700,1080 Z" transform="translate(-420 0)" fill={C.graphite} stroke={C.line} strokeWidth={7} opacity={part > 0.02 ? 1 : 0} />
+          </g>
         </g>
         {Array.from({length: 14}).map((_, i) => {
           const k = ((f * 0.03 + i / 14) % 1);
-          return <path key={i} d={`M ${300 + i * 22},${700 + k * 300} l 8,18`} stroke={C.white} strokeWidth={4} opacity={sleet * (1 - k)} />;
+          return <path key={i} d={`M ${200 + i * 32},${560 + k * 300} l 8,18`} stroke={C.white} strokeWidth={4} opacity={sleet * (1 - k)} />;
         })}
-        <Lab text="CAMERAS · RADAR · LIDAR" x={420} y={1180} size={26} p={vis(f, b, K, 1)} />
-        <HeldTravel f={f} x={140} y={820} w={560} h={270} seed={5} strength={0.2} rx={20} />
+        <Lab text="CAMERAS · RADAR · LIDAR" x={420} y={1140} size={26} p={vis(f, b, K, 1)} />
+        <HeldTravel f={f} x={40} y={680} w={760} h={360} seed={5} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
 };
 
 /** the dot road seen from the puck: returns drawn as dots receding to a white wall. `thin` 0..1 thins them, `drift` steers to the shoulder. */
-const DotRoad: React.FC<{f: number; draw: number; thin?: number; drift?: number; wall?: number}> = ({f, draw, thin = 0, drift = 0, wall = 0.5}) => (
+const DotRoad: React.FC<{f: number; draw: number; thin?: number; drift?: number; wall?: number; far?: number}> = ({f, draw, thin = 0, drift = 0, wall = 0.5, far = 720}) => (
   <g>
+    {/* the road surface under the returns: ruts and drift, so the lower third is a place */}
+    {[-3, -1.6, -0.5, 0.5, 1.6, 3].map((k, i) => <path key={i} d={`M ${540 + k * 8},${far + 30} L ${540 + k * 190},1700`} stroke="#D9D2C8" strokeWidth={10 + Math.abs(k) * 4} opacity={0.55} />)}
+    {Array.from({length: 14}).map((_, i) => <path key={`d${i}`} d={`M ${(i * 151 + f * 1.5) % 1180 - 60},${1300 + (i * 37) % 360} q 50,-14 110,0`} stroke="#D2CBC1" strokeWidth={7} fill="none" opacity={0.7} />)}
     {Array.from({length: 16}).map((_, row) => {
       const k = row / 15;
-      const y = 1500 - Math.pow(k, 0.8) * 560;
+      const y = 1500 - Math.pow(k, 0.8) * (1500 - far - 40);
       const half = 420 * (1 - k * 0.85);
       return Array.from({length: 7}).map((__, i) => {
         const keep = h01(row, i) > thin * (0.3 + k);
@@ -705,8 +710,8 @@ const DotRoad: React.FC<{f: number; draw: number; thin?: number; drift?: number;
         return <circle key={`${row}-${i}`} cx={x} cy={y} r={(10 - 7 * k) * (0.85 + 0.15 * Math.sin(f / 6 + row))} fill={C.amber} opacity={show * (1 - k * 0.6)} />;
       });
     })}
-    <rect x={0} y={860} width={W} height={110} fill={C.hud} opacity={wall} />
-    <path d="M 0,940 H 1080" stroke="#CFCAC2" strokeWidth={4} strokeDasharray="18 14" opacity={wall} />
+    <rect x={0} y={far - 80} width={W} height={130} fill={C.hud} opacity={wall} />
+    <path d={`M 0,${far} H 1080`} stroke="#CFCAC2" strokeWidth={4} strokeDasharray="18 14" opacity={wall} />
   </g>
 );
 
@@ -727,6 +732,15 @@ const Hood: React.FC<{f: number; hazard?: number; leaves?: number}> = ({f, hazar
   );
 };
 
+/** a small inset of the puck itself in the HUD corner, so its state stays on screen in the first-person shots. */
+const PuckInset: React.FC<{f: number; frost: number; mode: PuckMode; emo: PuckEmotion; seed: number}> = ({f, frost, mode, emo, seed}) => (
+  <g transform="translate(880 1150)">
+    <circle r={124} fill="#2A2F36" opacity={0.18} />
+    <circle r={124} fill="none" stroke="#8C867E" strokeWidth={4} />
+    <RoofPuck x={0} y={60} f={f} scale={0.62} frost={frost} clearRing={1 - frost} mode={mode} emotion={emo} rimGlow={0.5} seed={seed} />
+  </g>
+);
+
 // ---- S6: the puck's own view, the whiteout and the returns that draw the road ----------------------------------------------------------------------
 const S6: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
@@ -734,23 +748,24 @@ const S6: React.FC<SceneProps> = ({p}) => {
   const white = ease(f, b(22), 12);
   const draw = easeIO(f, b(23) - 4, 40);
   const ring = clamp01((f - b(23)) / 20);
+  const creep = easeIO(f, 0, p.dur);
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={540} y={730} text="CAMERAS IN A WHITEOUT" size={38} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={860} displayLines={['ONE SENSOR BLIND ·', 'ANOTHER BACKS IT UP']} text="ONE SENSOR BLIND · ANOTHER BACKS IT UP" size={34} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="white" z0={1.0} z1={1.0} vignette={0.12}>
+    <Frame p={p} mode="white" z0={1.0} z1={1.03} vignette={0.12} overlay={<>
+        <Plate x={540} y={1250} text="CAMERAS IN A WHITEOUT" size={38} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} displayLines={['ONE SENSOR BLIND ·', 'ANOTHER BACKS IT UP']} text="ONE SENSOR BLIND · ANOTHER BACKS IT UP" size={34} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
         <rect x={0} y={0} width={W} height={H} fill="#BDB8B2" opacity={1 - white} />
-        <DotRoad f={f} draw={draw} wall={0.7} />
+        <DotRoad f={f} draw={draw} wall={0.7} far={720} />
         {[0, 1, 2].map((i) => {
           const k = ((f / 36 + i / 3) % 1);
           return <ellipse key={i} cx={540} cy={1500} rx={120 + 600 * k} ry={40 + 200 * k} fill="none" stroke={C.amber} strokeWidth={6 - 4 * k} opacity={ring * (1 - k)} />;
         })}
+        <Flakes f={f} n={60} speed={2.2} o={0.8} y0={420} y1={1700} />
         <Hood f={f} />
-        {/* HUD reticle and the puck inset in its backup state */}
-        <g opacity={0.9}><path d="M 70,330 h 60 M 70,330 v 60 M 1010,330 h -60 M 1010,330 v 60" stroke="#8C867E" strokeWidth={5} /></g>
-        <g transform="translate(880 1140)"><circle r={120} fill="#2A2F36" opacity={0.15} /><RoofPuck x={0} y={60} f={f} scale={0.6} frost={0.3} clearRing={0.6} mode={ring > 0.05 ? 'backup' : 'blind'} emotion="determined" seed={6} /></g>
-        <HeldTravel f={f} x={0} y={860} w={1080} h={640} seed={6} strength={0.2} rx={20} />
+        <g opacity={0.9}><path d="M 70,470 h 60 M 70,470 v 60 M 1010,470 h -60 M 1010,470 v 60" stroke="#8C867E" strokeWidth={5} /></g>
+        <PuckInset f={f} frost={lerp(0.3, 0.5, creep)} mode={ring > 0.05 ? 'backup' : 'blind'} emo="determined" seed={6} />
+        <HeldTravel f={f} x={0} y={720} w={1080} h={780} seed={6} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
@@ -764,41 +779,51 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const g = [0, 1, 2, 3].map((i) => springy(f, b(25) + 20 + i * 10, 18));
   const pour = easeIO(f, b(27) - 4, 50);
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={540} y={730} text="TRACTION · EACH WHEEL" size={38} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={830} text="SIMULATED BLACK ICE" size={38} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="under" z0={1.03} z1={1.09} oy={980}>
+    <Frame p={p} mode="under" z0={1.03} z1={1.08} oy={960} overlay={<>
+        <Plate x={540} y={760} text="TRACTION · EACH WHEEL" size={38} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={760} text="SIMULATED BLACK ICE" size={38} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <rect x={0} y={lerp(300, 0, drop)} width={W} height={300} fill={C.graphite} stroke={C.line} strokeWidth={6} />
+        {/* the underside: chassis, axles and exhaust, lit from the snow below */}
+        <g transform={`translate(0 ${lerp(-200, 0, drop)})`}>
+          <rect x={-20} y={300} width={1120} height={250} fill={C.graphite} stroke={C.line} strokeWidth={6} />
+          <rect x={-20} y={520} width={1120} height={30} fill="#3A424B" />
+          {[160, 400, 680, 920].map((ax) => <rect key={ax} x={ax - 20} y={420} width={40} height={160} fill="#3A424B" stroke={C.line} strokeWidth={4} />)}
+          <rect x={100} y={470} width={880} height={26} rx={12} fill="#4A525C" stroke={C.line} strokeWidth={4} />
+          <rect x={380} y={360} width={320} height={70} rx={14} fill="#252B31" stroke={C.line} strokeWidth={4} />
+          {Array.from({length: 8}).map((_, i) => <circle key={i} cx={420 + i * 36} cy={395} r={6} fill="#5E6670" />)}
+        </g>
         {[160, 400, 680, 920].map((wx, i) => (
           <g key={wx}>
-            <g transform={`translate(${wx} 1000) rotate(${f * 2 + i * 20})`}><circle r={86} fill="#0B0E10" stroke={C.line} strokeWidth={8} /><circle r={36} fill="#3A424B" /><path d="M -30,0 H 30 M 0,-30 V 30" stroke="#12161A" strokeWidth={6} /></g>
-            <path d={`M ${wx - 120},1086 l 30,-8 l 26,12 l 40,-14 l 30,10 l 30,-6`} stroke={C.rime} strokeWidth={4} fill="none" />
-            <g transform={`translate(${wx} ${760 + (1 - g[i]) * 40}) scale(${g[i]})`} opacity={clamp01(g[i] * 2)}>
+            <g transform={`translate(${wx} 900) rotate(${f * 2 + i * 20})`}><circle r={86} fill="#0B0E10" stroke={C.line} strokeWidth={8} /><circle r={36} fill="#3A424B" /><path d="M -30,0 H 30 M 0,-30 V 30" stroke="#12161A" strokeWidth={6} /></g>
+            <ellipse cx={wx} cy={990} rx={100} ry={14} fill="#000" opacity={0.4} />
+            <path d={`M ${wx - 120},986 l 30,-8 l 26,12 l 40,-14 l 30,10 l 30,-6`} stroke={C.rime} strokeWidth={4} fill="none" />
+            <g transform={`translate(${wx} ${620 + (1 - g[i]) * 40}) scale(${g[i]})`} opacity={clamp01(g[i] * 2)}>
+              <circle r={66} fill="#252B31" />
               <circle r={62} fill={C.paper} stroke={C.line} strokeWidth={6} />
               <path d="M -46,10 A 48,48 0 0 1 46,10" stroke={C.snowD} strokeWidth={6} fill="none" />
               <line x1={0} y1={10} x2={44 * Math.cos(-Math.PI / 2 + 0.6 * Math.sin(f / 9 + i))} y2={10 + 44 * Math.sin(-Math.PI / 2 + 0.6 * Math.sin(f / 9 + i))} stroke={C.amber} strokeWidth={7} strokeLinecap="round" />
               <circle cy={10} r={7} fill={C.line} />
+              <path d="M -40,-36 A 54,54 0 0 1 30,-46" stroke="#FFFFFF" strokeWidth={5} fill="none" opacity={0.5} />
             </g>
           </g>
         ))}
-        {/* the simulated glass road poured from a grid */}
-        <g opacity={clamp01(pour * 3)} transform="translate(0 0)">
-          <rect x={190} y={1150} width={700} height={170} rx={8} fill="#1E242A" stroke={C.rime} strokeWidth={4} strokeDasharray="12 8" />
-          {Array.from({length: 13}).map((_, i) => <path key={i} d={`M ${190 + i * 58},1150 V 1320`} stroke="#3A424B" strokeWidth={2} />)}
-          <rect x={200} y={1300 - 140 * pour} width={680} height={140 * pour} fill="#7F8E9A" opacity={0.55} />
-          <path d={`M 200,${1300 - 140 * pour} Q 540,${1290 - 140 * pour + 10 * Math.sin(f / 6)} 880,${1300 - 140 * pour}`} stroke={C.white} strokeWidth={4} fill="none" opacity={0.7} />
-          <Lab text="SIMULATION" x={790} y={1180} size={20} tone="dark" p={pour} />
+        <g opacity={clamp01(pour * 3)}>
+          <rect x={190} y={1070} width={700} height={170} rx={8} fill="#1E242A" stroke={C.rime} strokeWidth={4} strokeDasharray="12 8" />
+          {Array.from({length: 13}).map((_, i) => <path key={i} d={`M ${190 + i * 58},1070 V 1240`} stroke="#3A424B" strokeWidth={2} />)}
+          <rect x={200} y={1230 - 150 * pour} width={680} height={150 * pour} fill="#7F8E9A" opacity={0.55} />
+          <path d={`M 200,${1230 - 150 * pour} Q 540,${1220 - 150 * pour + 10 * Math.sin(f / 6)} 880,${1230 - 150 * pour}`} stroke={C.white} strokeWidth={4} fill="none" opacity={0.7} />
+          <Lab text="SIMULATION" x={790} y={1100} size={20} tone="dark" p={pour} />
         </g>
-        <g transform="translate(160 1240)"><RoofPuck x={0} y={0} f={f} scale={0.42} frost={0.1} clearRing={1} mode="wheel" emotion="alert" look={0.6} seed={7} /></g>
-        <HeldTravel f={f} x={100} y={700} w={880} h={130} seed={7} strength={0.2} rx={20} />
+        <g transform="translate(110 1200)"><RoofPuck x={0} y={0} f={f} scale={0.42} frost={0.1} clearRing={1} mode="wheel" emotion="alert" look={0.6} rimGlow={0.4} seed={7} /></g>
+        <HeldTravel f={f} x={100} y={560} w={880} h={130} seed={7} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
 };
 
 // ---- S8: the weather station, then the pullback to an abstract snow field of pings ----------------------------------------------------------------
-const PINGS = Array.from({length: 46}).map((_, i) => ({x: 90 + h01(i, 3) * 900, y: 480 + h01(i, 7) * 820}));
+const PINGS = Array.from({length: 46}).map((_, i) => ({x: 90 + h01(i, 3) * 900, y: 480 + h01(i, 7) * 820, far: h01(i, 9) > 0.55}));
 const PATCH = {x: 300, y: 1060, r: 130};
 const S8: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
@@ -812,35 +837,38 @@ const S8: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} mode="field" cam={cam} warmth={0.05}
       overlay={<>
-        <Plate x={540} y={730} text="MOBILE WEATHER STATION" size={34} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={1230} displayLines={['SHARED ACROSS THE FLEET', '· ILLUSTRATIVE']} text="SHARED ACROSS THE FLEET · ILLUSTRATIVE" size={32} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={560} y={880} displayLines={['WAYMO SAYS · TENS OF', 'THOUSANDS OF MILES ·', 'SNOWY REGIONS ELSEWHERE']} text="WAYMO SAYS · TENS OF THOUSANDS OF MILES · SNOWY REGIONS ELSEWHERE" size={30} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} text="MOBILE WEATHER STATION" size={34} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} displayLines={['SHARED ACROSS THE FLEET ·', 'ILLUSTRATIVE']} text="SHARED ACROSS THE FLEET · ILLUSTRATIVE" size={32} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={560} y={600} displayLines={['WAYMO SAYS · TENS OF', 'THOUSANDS OF MILES ·', 'SNOWY REGIONS ELSEWHERE']} text="WAYMO SAYS · TENS OF THOUSANDS OF MILES · SNOWY REGIONS ELSEWHERE" size={30} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>}>
       <SVG>
-        {/* the dark silent patch with the Fairbanks pin */}
+        {/* far layer of the field: smaller, fainter pings with slow parallax */}
+        <g transform={`translate(${-20 * pull} ${-10 * pull})`} opacity={0.55}>
+          {PINGS.filter((q) => q.far).map((q, i) => {
+            const k = ((f / 60 + h01(i, 2)) % 1);
+            return <g key={i} opacity={clamp01(pull * 3 - h01(i, 5) * 2)}><circle cx={q.x} cy={q.y} r={4} fill={C.amber} /><circle cx={q.x} cy={q.y} r={6 + 24 * k} fill="none" stroke={C.amber} strokeWidth={2} opacity={1 - k} /></g>;
+          })}
+        </g>
         <circle cx={PATCH.x} cy={PATCH.y} r={PATCH.r} fill={C.ground} opacity={0.85 * dark} />
-        <g opacity={dark}><Pin x={PATCH.x} y={PATCH.y + 20} drop={1} s={0.8} /><Lab text="FAIRBANKS" x={PATCH.x} y={PATCH.y + 70} size={20} tone="dark" p={dark} /></g>
-        {/* pings answering across the field, everywhere except the patch */}
-        {PINGS.map((q, i) => {
+        <g opacity={dark}><Pin x={PATCH.x} y={PATCH.y + 20} drop={1} s={0.8} /></g>
+        {PINGS.filter((q) => !q.far).map((q, i) => {
           if (dark > 0.3 && Math.hypot(q.x - PATCH.x, q.y - PATCH.y) < PATCH.r + 20) return null;
           const k = ((f / 50 + h01(i, 1)) % 1);
           const on = clamp01(pull * 3 - h01(i, 5) * 2);
           return (
             <g key={i} opacity={on}>
-              <circle cx={q.x} cy={q.y} r={7} fill={C.amber} />
-              <circle cx={q.x} cy={q.y} r={10 + 40 * k} fill="none" stroke={C.amber} strokeWidth={3} opacity={1 - k} />
+              <circle cx={q.x} cy={q.y + 6} r={9} fill={C.line} opacity={0.25} />
+              <circle cx={q.x} cy={q.y} r={9} fill={C.amber} stroke={C.line} strokeWidth={2} />
+              <circle cx={q.x} cy={q.y} r={12 + 46 * k} fill="none" stroke={C.amber} strokeWidth={3} opacity={1 - k} />
             </g>
           );
         })}
-        {/* drawn mile markers ticking elsewhere, labelled ILLUSTRATIVE, and the blank counter re-seeded in a corner */}
         <g opacity={tick > 0 ? 1 : 0}>
-          {[[640, 1180], [760, 1120], [880, 1180], [700, 1260], [820, 1300]].map(([mx, my], i) => (
+          {[[640, 1100], [760, 1040], [880, 1100], [700, 1180], [820, 1220]].map(([mx, my], i) => (
             <g key={i} transform={`translate(${mx} ${my}) scale(${clamp01(tick * 5 - i)})`}><path d="M 0,-16 L 4,-4 L 16,0 L 4,4 L 0,16 L -4,4 L -16,0 L -4,-4 Z" fill={C.white} stroke={C.line} strokeWidth={3} /></g>
           ))}
-          <Lab text="ILLUSTRATIVE" x={780} y={1360} size={18} tone="dark" p={tick} />
-          <Odometer x={180} y={1280} s={0.45} roll={tick} f={f} />
+          <Lab text="ILLUSTRATIVE" x={780} y={980} size={18} tone="dark" p={tick} />
         </g>
-        {/* the clean warm puck with a vane and a thermometer, pinging */}
         <g transform={`translate(${PX} ${PY})`}>
           <ellipse cx={0} cy={90} rx={130} ry={40} fill={C.sun} opacity={0.35 * (1 - pull)} />
           <CarSil x={0} y={180} s={0.32} f={f} />
@@ -849,6 +877,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <g transform={`translate(-26 ${82 - 26 * vane}) scale(${vane})`}><rect x={-4} y={-34} width={8} height={30} rx={4} fill={C.white} stroke={C.line} strokeWidth={2} /><circle cy={-4} r={6} fill={C.amber} stroke={C.line} strokeWidth={2} /></g>
           {[0, 1].map((i) => { const k = ((f / 30 + i / 2) % 1); return <circle key={i} cx={0} cy={60} r={20 + 70 * k} fill="none" stroke={C.amber} strokeWidth={3} opacity={vane * (1 - k)} />; })}
         </g>
+        <Flakes f={f} n={30} speed={0.8} o={0.6} y0={420} y1={1500} />
         <HeldTravel f={f} x={60} y={460} w={960} h={860} mode="shadow" seed={8} strength={0.2} rx={20} />
       </SVG>
     </Frame>
@@ -859,30 +888,30 @@ const S8: React.FC<SceneProps> = ({p}) => {
 const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [32, 33];
-  const fold = easeIO(f, b(32) - 6, 26);
+  const fold = easeIO(f, b(32) - 6, 24);
   const gust = easeIO(f, b(33) - 4, 30);
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={400} y={730} text="AN ANSWER ON PAPER" size={38} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={1240} text="HOLD THAT THOUGHT" size={38} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="fog" z0={1.02} z1={1.06} oy={940}>
+    <Frame p={p} mode="fog" z0={1.02} z1={1.06} oy={940} overlay={<>
+        <Plate x={400} y={1250} text="AN ANSWER ON PAPER" size={38} tone="plate" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1250} text="HOLD THAT THOUGHT" size={38} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <Spruces y={1062} n={8} seed={9} f={f + gust * 40} x0={-40} x1={1120} scale={0.7} o={0.6} />
+        <Spruces y={1062} n={8} seed={9} f={f + gust * 40} x0={-40} x1={1120} scale={1.25} o={0.7} />
         <path d="M 0,1150 Q 540,1110 1080,1150 L 1080,1920 L 0,1920 Z" fill={C.snow} />
         <ellipse cx={360} cy={1180} rx={250} ry={70} fill={C.ground} />
-        {/* the sheet folds down and lands on the dark patch */}
-        <g transform={`translate(360 ${lerp(820, 1150, fold)}) rotate(${lerp(-6, 2, fold)}) scale(${lerp(1.3, 1, fold)} ${lerp(1.3, 0.45, fold)})`}>
+        <g transform={`translate(360 ${lerp(700, 1150, fold)}) rotate(${lerp(-6, 2, fold)}) scale(${lerp(1.3, 1, fold)} ${lerp(1.3, 0.45, fold)})`}>
           <rect x={-170} y={-120} width={340} height={240} rx={6} fill={C.paper} stroke={C.line} strokeWidth={6} />
+          <path d="M 0,-120 V 120" stroke="#B9AF98" strokeWidth={6} opacity={0.7} />
+          <rect x={0} y={-120} width={170} height={240} fill="#000" opacity={0.06} />
           {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={-140} y={-90 + i * 36} width={280 - (i % 2) * 70} height={12} rx={6} fill="#B9B2A6" />)}
           <path d={`M 170,-120 l -40,0 l 40,40 Z`} fill={C.rime} stroke={C.line} strokeWidth={3} transform={`rotate(${8 * Math.sin(f / 7)} 170 -120)`} />
         </g>
-        {/* spindrift of the gust */}
         {Array.from({length: 22}).map((_, i) => {
           const k = clamp01(gust * 1.6 - i / 30);
-          return <path key={i} d={`M ${lerp(-100, 1180, k)},${700 + (i * 41) % 500} l 90,8`} stroke={C.white} strokeWidth={5} opacity={Math.sin(Math.PI * k) * 0.7} />;
+          return <path key={i} d={`M ${lerp(-100, 1180, k)},${600 + (i * 41) % 500} l 90,8`} stroke={C.white} strokeWidth={5} opacity={Math.sin(Math.PI * k) * 0.7} />;
         })}
-        <HeldProp f={f} px={780} py={900} w={360} h={300} seed={3.3} kind="rest">
-          <RoofPuck x={780} y={1000} f={f} scale={1.25} frost={lerp(0, 0.25, gust)} clearRing={lerp(1, 0.8, gust)} mode="clear" emotion={gust > 0.4 ? 'wary' : 'relieved'} glow={0.2} open={1 - 0.3 * gust} seed={10} />
+        <HeldProp f={f} px={780} py={820} w={420} h={300} seed={3.3} kind="rest">
+          <RoofPuck x={780} y={900} f={f} scale={1.6} frost={lerp(0, 0.3, gust)} clearRing={lerp(1, 0.75, gust)} mode="clear" emotion={gust > 0.4 ? 'wary' : 'relieved'} glow={0.2} open={1 - 0.3 * gust} seed={10} />
         </HeldProp>
         <HeldTravel f={f} x={190} y={1050} w={340} h={200} seed={9} strength={0.2} rx={20} />
       </SVG>
@@ -898,41 +927,56 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const tail = clamp01(1 - Math.abs(f - b(35) - 6) / 8);
   const up2 = springy(f, b(36) - 6, 18);
   const up3 = springy(f, b(37) - 8, 26);
-  const cam = track([{t: 0, z: 1.12, fx: 330, fy: 900}, {t: b(36) - 6, z: 1.12, fx: 360, fy: 900}, {t: b(37), z: 1.0, fx: 540, fy: 940}, {t: p.dur, z: 1.03, fx: 560, fy: 940}]);
+  const cam = track([{t: 0, z: 1.12, fx: 330, fy: 960}, {t: b(36) - 6, z: 1.12, fx: 380, fy: 960}, {t: b(37), z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.03, fx: 560, fy: 960}]);
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={320} y={1205} text="ONE RESIDENT EXPECTS" size={32} tone="dark" p={ease(f, b(34), 12) * (1 - ease(f, b(35) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={730} text={'"STALL OUT" · WHAT IF'} size={32} tone="warn" p={ease(f, b(35), 10) * (1 - ease(f, b(36) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={810} text={'"SHOULDN\'T BE ALLOWED"'} size={28} tone="dark" p={ease(f, b(36), 10) * (1 - ease(f, b(37) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={1270} text={'THE MAYOR · "A GREAT OPPORTUNITY"'} size={28} tone="dark" p={ease(f, b(37), 12)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="fog" cam={cam}>
+    <Frame p={p} mode="fog" cam={cam} overlay={<>
+        <Plate x={540} y={1260} text="ONE RESIDENT EXPECTS" size={34} tone="dark" p={ease(f, b(34), 12) * (1 - ease(f, b(35) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1260} text={'"STALL OUT" · WHAT IF'} size={34} tone="warn" p={ease(f, b(35), 10) * (1 - ease(f, b(36) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1260} text={'"SHOULDN\'T BE ALLOWED"'} size={30} tone="dark" p={ease(f, b(36), 10) * (1 - ease(f, b(37) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <Spruces y={1062} n={12} seed={11} f={f} x0={-40} x1={1120} scale={0.7} o={0.55} />
+        <Spruces y={1062} n={12} seed={11} f={f} x0={-40} x1={1120} scale={0.9} o={0.55} />
+        <path d="M -20,860 Q 300,800 540,820 T 1100,850 L 1100,1062 L -20,1062 Z" fill={C.snow} stroke={C.snowD} strokeWidth={3} />
         <path d="M 0,1300 L 1080,1240 L 1080,1400 L 0,1460 Z" fill={C.ground} />
-        <Billboard x={300} y={1180} up={up1} f={f} w={440} h={340}>
-          {/* the thought-frame: the worry, a car stopped on a shoulder, crimson once, dim white hazards */}
+        <Billboard x={540} y={780} up={up3} f={f} w={400} h={200} post={60} />
+        <text x={540} y={640 + rise(up3, 200)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={C.ink} opacity={up3 > 0.02 ? 1 : 0}>THE MAYOR</text>
+        <text x={540} y={690 + rise(up3, 200)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={C.ink} opacity={up3 > 0.02 ? 1 : 0}>"A GREAT</text>
+        <text x={540} y={730 + rise(up3, 200)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={C.ink} opacity={up3 > 0.02 ? 1 : 0}>OPPORTUNITY"</text>
+        <Billboard x={270} y={1170} up={up1} f={f} w={420} h={300} post={170}>
           <g transform={`scale(${frame})`} opacity={clamp01(frame * 2)}>
-            <rect x={-190} y={-96} width={380} height={190} rx={70} fill={C.fog} stroke={C.ink} strokeWidth={5} strokeDasharray="16 10" />
-            <path d="M -170,60 L 170,40" stroke={C.ground} strokeWidth={30} />
-            <CarSil x={-10} y={50} s={0.38} f={f} tail={tail} hazard={frame > 0.5 ? 0.6 : 0} />
+            <rect x={-180} y={-80} width={360} height={150} rx={60} fill={C.fog} stroke={C.ink} strokeWidth={5} strokeDasharray="16 10" />
+            <path d="M -160,48 L 160,32" stroke={C.ground} strokeWidth={26} />
+            <CarSil x={-10} y={40} s={0.34} f={f} tail={tail} hazard={frame > 0.5 ? 0.6 : 0} />
           </g>
         </Billboard>
-        <Billboard x={760} y={1150} up={up2} f={f} w={400} h={220} />
-        <Billboard x={540} y={820} up={up3} f={f} w={420} h={200}>
-          <path d={`M 150,-90 q 30,${20 + 10 * Math.sin(f / 5)} 10,60`} stroke={C.ink} strokeWidth={8} fill="none" />
-        </Billboard>
-        <text x={300} y={880 + rise(up1, 340)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={C.ink} opacity={up1 > 0.02 ? 1 : 0}>WHAT IF</text>
-        <text x={760} y={1035 + rise(up2, 220)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>"SHOULDN'T BE</text>
-        <text x={760} y={1075 + rise(up2, 220)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>ALLOWED"</text>
-        <text x={540} y={690 + rise(up3, 200)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={C.ink} opacity={up3 > 0.02 ? 1 : 0}>THE MAYOR</text>
-        <text x={540} y={740 + rise(up3, 200)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={C.ink} opacity={up3 > 0.02 ? 1 : 0}>"A GREAT</text>
-        <text x={540} y={778 + rise(up3, 200)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={C.ink} opacity={up3 > 0.02 ? 1 : 0}>OPPORTUNITY"</text>
-        <g transform="translate(980 1330)"><RoofPuck x={0} y={0} f={f} scale={0.42} frost={0.25} clearRing={0.8} mode="clear" emotion="tense" look={-0.8} seed={11} /></g>
-        <HeldTravel f={f} x={80} y={840} w={920} h={340} seed={10} strength={0.2} rx={20} />
+        <text x={270} y={900 + rise(up1, 300)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} letterSpacing={2} fill={C.ink} opacity={up1 > 0.02 ? 1 : 0}>WHAT IF</text>
+        <text x={270} y={1150 + rise(up1, 300)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} fill={C.ink} opacity={frame > 0.3 ? 1 : 0}>"STALL OUT"</text>
+        <Billboard x={810} y={1170} up={up2} f={f} w={380} h={230} post={170} />
+        <text x={810} y={1045 + rise(up2, 230)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>"SHOULDN'T BE</text>
+        <text x={810} y={1085 + rise(up2, 230)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={28} fill={C.ink} opacity={up2 > 0.02 ? 1 : 0}>ALLOWED"</text>
+        <g transform="translate(990 1300)"><RoofPuck x={0} y={0} f={f} scale={0.42} frost={0.5} clearRing={0.5} mode="clear" emotion="tense" look={-0.8} rimGlow={0.6} seed={11} /></g>
+        <HeldTravel f={f} x={60} y={580} w={960} h={600} seed={10} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
 };
+
+/** a skyline glimpse modelled as lit buildings with side faces and windows (generic, not Fairbanks). */
+const Skyline: React.FC<{y: number; f: number}> = ({y, f}) => (
+  <g>
+    {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+      const x = 130 + i * 106, h = 90 + h01(i, 4) * 170, w = 74;
+      return (
+        <g key={i}>
+          <rect x={x + w} y={y - h + 10} width={22} height={h - 10} fill="#9C958D" />
+          <rect x={x} y={y - h} width={w} height={h} fill="#B9B2A9" stroke="#8C867E" strokeWidth={3} />
+          <path d={`M ${x},${y - h} l 22,10 h ${w} l -22,-10 Z`} fill="#CFC8BF" />
+          {Array.from({length: Math.floor(h / 30)}).map((_, r) => [0, 1, 2].map((c) => <rect key={`${r}-${c}`} x={x + 10 + c * 22} y={y - h + 14 + r * 30} width={12} height={14} fill={h01(i * 7 + r, c) > 0.6 ? '#E9D9B8' : '#A39C93'} opacity={0.9} />))}
+        </g>
+      );
+    })}
+  </g>
+);
 
 // ---- S11: when winter wins, back in the puck's view, the gauge crosses its limit and the car pulls over --------------------------------------------
 const S11: React.FC<SceneProps> = ({p}) => {
@@ -942,35 +986,39 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const thin = easeIO(f, b(41) - 4, 40);
   const pull = easeIO(f, b(41), 50);
   const leaves = easeIO(f, b(41) + 20, 60);
-  // the dolly decelerates to a dead stop as the car pulls over
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 960}, {t: b(41), z: 1.08, fx: 560, fy: 1000}, {t: b(41) + 50, z: 1.1, fx: 600, fy: 1010}, {t: p.dur, z: 1.1, fx: 600, fy: 1010}]);
   const ang = lerp(-60, 50, needle);
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={540} y={730} displayLines={['WEATHER BEYOND VALIDATED', '· VALIDATED LIMIT']} text="WEATHER BEYOND VALIDATED · VALIDATED LIMIT" size={32} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={1250} displayLines={['ITS OWN POST · IN ITS CITIES', '· PAUSE FOR HOURS OR DAYS']} text="ITS OWN POST · IN ITS CITIES · PAUSE FOR HOURS OR DAYS" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="white" cam={cam} vignette={0.12}>
+    <Frame p={p} mode="white" cam={cam} vignette={0.12} overlay={<>
+        <Plate x={540} y={1240} displayLines={['WEATHER BEYOND VALIDATED ·', 'VALIDATED LIMIT']} text="WEATHER BEYOND VALIDATED · VALIDATED LIMIT" size={32} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={1220} displayLines={['ITS OWN POST', 'IN ITS CITIES', 'PAUSE FOR HOURS OR DAYS']} text="ITS OWN POST · IN ITS CITIES · PAUSE FOR HOURS OR DAYS" size={30} tone="dark" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        {/* a generic city skyline glimpse behind the dot road (not Fairbanks) */}
-        <g opacity={0.35}>{[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <rect key={i} x={150 + i * 100} y={860 - (60 + h01(i, 4) * 140)} width={80} height={60 + h01(i, 4) * 140} fill="#B9B4AD" />)}</g>
-        <DotRoad f={f} draw={1} thin={thin} drift={pull} wall={0.6 + 0.3 * thin} />
+        <g opacity={0.8}><Skyline y={700} f={f} /></g>
+        <DotRoad f={f} draw={1} thin={thin} drift={pull} wall={0.5 + 0.3 * thin} far={720} />
         {[0, 1, 2].map((i) => {
           const k = ((f / 36 + i / 3) % 1);
           const sz = 1 - 0.7 * thin;
           return <ellipse key={i} cx={540} cy={1500} rx={(120 + 600 * k) * sz} ry={(40 + 200 * k) * sz} fill="none" stroke={C.amber} strokeWidth={6 - 4 * k} opacity={(1 - k) * (1 - 0.5 * thin)} />;
         })}
+        <Flakes f={f} n={50} speed={2} o={0.7} y0={420} y1={1700} />
         <Hood f={f} hazard={pull > 0.6 ? 0.7 : 0} leaves={leaves} />
-        <Lab text="CITY SERVICE" x={540} y={905} size={22} tone="dark" p={1} />
-        {/* the VALIDATED LIMIT gauge on the HUD */}
-        <g transform="translate(860 1070)">
-          <circle r={100} fill={C.paper} stroke={C.line} strokeWidth={7} />
-          <path d="M -86,30 A 92,92 0 0 1 86,30" stroke={C.snowD} strokeWidth={10} fill="none" />
-          <line x1={0} y1={0} x2={98 * Math.sin(Math.PI * 0.2)} y2={-98 * Math.cos(Math.PI * 0.2)} stroke={C.ink} strokeWidth={5} strokeDasharray="10 8" />
-          <line x1={0} y1={10} x2={84 * Math.sin(ang * Math.PI / 180)} y2={10 - 84 * Math.cos(ang * Math.PI / 180)} stroke={C.amber} strokeWidth={8} strokeLinecap="round" />
+        <Lab text="CITY SERVICE" x={300} y={480} size={22} tone="dark" p={1} />
+        {/* the VALIDATED LIMIT gauge, a lit instrument with a bezel and depth */}
+        <g transform="translate(880 900)">
+          <circle cx={10} cy={14} r={112} fill="#000" opacity={0.25} />
+          <circle r={112} fill="#3A424B" stroke={C.line} strokeWidth={6} />
+          <circle r={96} fill={C.paper} stroke={C.line} strokeWidth={4} />
+          <path d="M -78,28 A 84,84 0 0 1 78,28" stroke={C.snowD} strokeWidth={10} fill="none" />
+          <path d={`M ${84 * Math.sin(Math.PI * 0.2)},${-84 * Math.cos(Math.PI * 0.2)} A 84,84 0 0 1 78,28`} stroke={C.amber} strokeWidth={10} fill="none" opacity={0.5} />
+          <line x1={0} y1={0} x2={90 * Math.sin(Math.PI * 0.2)} y2={-90 * Math.cos(Math.PI * 0.2)} stroke={C.ink} strokeWidth={5} strokeDasharray="10 8" />
+          <line x1={0} y1={10} x2={76 * Math.sin(ang * Math.PI / 180)} y2={10 - 76 * Math.cos(ang * Math.PI / 180)} stroke={C.amber} strokeWidth={8} strokeLinecap="round" />
           <circle cy={10} r={10} fill={C.line} />
+          <path d="M -70,-50 A 86,86 0 0 1 20,-84" stroke="#FFFFFF" strokeWidth={8} fill="none" opacity={0.45} />
         </g>
-        <Lab text="VALIDATED LIMIT" x={860} y={940} size={20} tone="plate" p={1} />
-        <HeldTravel f={f} x={0} y={860} w={1080} h={640} seed={11} strength={0.2} rx={20} />
+        <Lab text="VALIDATED LIMIT" x={880} y={760} size={20} tone="plate" p={1} />
+        <PuckInset f={f} frost={lerp(0.5, 0.75, thin)} mode={thin > 0.6 ? 'blind' : 'backup'} emo="flat" seed={13} />
+        <HeldTravel f={f} x={0} y={720} w={1080} h={780} seed={11} strength={0.2} rx={20} />
       </SVG>
     </Frame>
   );
@@ -979,28 +1027,32 @@ const S11: React.FC<SceneProps> = ({p}) => {
 // ---- S12: locked overhead on the dashboard clipboard, no count, no dates, a pen that does not write ------------------------------------------------
 const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const K = [42, 43, 44, 45, 46];
-  const frost = easeIO(f, b(42), 50);
-  const flipAway = easeIO(f, b(43) - 24, 18);
-  const roll = clamp01((f - b(43)) / 40);
-  const calFlip = ease(f, b(43) - 20, 16);
+  const frost = easeIO(f, b(42), 40);
+  const flipAway = easeIO(f, b(42) + 44, 16);
+  const roll = clamp01((f - b(42) - 50) / 40);
+  const calFlip = ease(f, b(42) + 56, 16);
   const thump = springy(f, b(44) - 4, 16);
   const typed = clamp01((f - b(45)) / 50);
   const lower = easeIO(f, b(45) + 10, 40);
   const lift = easeIO(f, b(46) + 10, 30);
   const penY = lerp(lerp(760, 1080, lower), 800, lift);
   const q = 'DRIVERLESS CARS PLANNED?';
+  const s1 = b(42) + 48;
   return (
-    <Frame p={p} overlay={<>
-        <Plate x={540} y={730} text="IS PAPER ENOUGH?" size={40} tone="dark" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={730} text="HOW MANY CARS?" size={40} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={730} text="NO COUNT · NO DATES" size={44} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={730} text="A REPORTER ASKED · DRIVERLESS?" size={32} tone="plate" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={730} text="NOT YET ANSWERED" size={40} tone="dark" p={vis(f, b, K, 4)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-      </>} mode="cab" z0={1.0} z1={1.0}>
+    <Frame p={p} mode="cab" z0={1.0} z1={1.0} overlay={<>
+        <Plate x={540} y={560} text="IS PAPER ENOUGH?" size={40} tone="dark" p={ease(f, b(42), 12) * (1 - ease(f, s1 - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={560} text="NO COUNT · NO DATES" size={44} tone="glow" p={ease(f, s1, 12) * (1 - ease(f, b(45) - 10, 8))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={560} text="A REPORTER ASKED · DRIVERLESS?" size={32} tone="plate" p={ease(f, b(45), 12) * (1 - ease(f, b(46) - 8, 6))} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={560} text="NOT YET ANSWERED" size={40} tone="dark" p={f >= b(46) ? 1 : 0} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+      </>}>
       <SVG>
-        <path d="M 0,300 H 1080 V 420 Q 540,380 0,420 Z" fill="#20252B" />
-        {/* the clipboard, locked overhead */}
+        {/* the windshield above the dash: fog daylight and the road ahead */}
+        <rect x={0} y={300} width={W} height={360} fill={C.fog} />
+        <circle cx={820} cy={430} r={70} fill={C.sun} opacity={0.6} />
+        <path d="M 470,660 L 610,660 L 760,500 L 560,440 Z" fill={C.ground} opacity={0.5} />
+        <path d="M 0,520 Q 300,480 540,500 T 1080,520 L 1080,660 L 0,660 Z" fill={C.snow} opacity={0.8} />
+        {[0, 1].map((i) => <path key={i} d={`M ${200 + i * 420},650 l 260,-40`} stroke={C.line} strokeWidth={10} strokeLinecap="round" />)}
+        <path d="M 0,640 Q 540,600 1080,640 L 1080,720 L 0,720 Z" fill="#20252B" stroke={C.line} strokeWidth={6} />
         <g transform={`translate(500 ${1010 - 8 * Math.sin(Math.PI * thump)})`}>
           <rect x={-330} y={-300} width={660} height={610} rx={20} fill={C.woodD} stroke={C.line} strokeWidth={8} />
           <rect x={-300} y={-270} width={600} height={560} rx={6} fill={C.white} stroke={C.line} strokeWidth={4} />
@@ -1010,14 +1062,15 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <rect x={-260} y={60} width={520} height={74} rx={6} fill="none" stroke={C.snowD} strokeWidth={4} />
           <text x={-244} y={110} fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.ink}>{q.slice(0, Math.round(typed * q.length))}</text>
           <path d="M -260,230 H 260" stroke={C.snowD} strokeWidth={4} />
-          {/* the paper answer lies on top, frosts over edge to edge, then flips away */}
           <g transform={`scale(1 ${Math.max(0.02, 1 - flipAway)})`} opacity={flipAway > 0.97 ? 0 : 1}>
             <rect x={-290} y={-262} width={580} height={540} rx={6} fill={C.paper} stroke={C.line} strokeWidth={5} />
+            <path d="M 0,-262 V 278" stroke="#B9AF98" strokeWidth={6} opacity={0.6} />
             {[0, 1, 2, 3, 4, 5].map((i) => <rect key={i} x={-250} y={-220 + i * 60} width={500 - (i % 2) * 120} height={16} rx={8} fill="#B9B2A6" />)}
             <rect x={-290} y={-262} width={580 * frost} height={540} fill={C.rime} opacity={0.92} />
             {Array.from({length: 10}).map((_, i) => <path key={i} d={`M ${-290 + 580 * frost},${-250 + i * 52} l -18,14 l 14,8 l -10,12`} stroke="#B9B2A6" strokeWidth={3} fill="none" opacity={frost > 0.05 && frost < 0.98 ? 1 : 0} />)}
           </g>
         </g>
+        <Lab text="HOW MANY CARS?" x={360} y={790} size={22} tone="plate" p={ease(f, b(43), 10)} />
         <g transform={`translate(660 ${penY}) rotate(28)`}>
           <rect x={-10} y={-170} width={20} height={170} rx={6} fill={C.graphite} stroke={C.line} strokeWidth={4} />
           <path d="M -10,0 L 0,26 L 10,0 Z" fill={C.ink} />
@@ -1034,9 +1087,9 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [47, 48, 49];
   const creep = easeIO(f, b(48) - 4, 60);
-  const rise = easeIO(f, b(49) - 4, 90);
+  const rise2 = easeIO(f, b(49) - 4, 90);
   const CX = 330, CY = 1260;
-  const cam = track([{t: 0, z: 3.0, fx: CX, fy: CY - 120}, {t: b(49) - 4, z: 3.0, fx: CX, fy: CY - 110}, {t: b(49) + 86, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.0, fx: 540, fy: 960}]);
+  const cam = track([{t: 0, z: 3.0, fx: CX, fy: CY - 120}, {t: b(49) - 34, z: 3.0, fx: CX, fy: CY - 110}, {t: b(49) + 56, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.0, fx: 540, fy: 960}]);
   return (
     <Frame p={p} mode="night" cam={cam} vignette={0.4}
       overlay={<>
@@ -1045,21 +1098,18 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={760} displayLines={['WHAT WOULD YOU', 'WANT PROVEN?']} text="WHAT WOULD YOU WANT PROVEN?" size={44} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>}>
       <SVG>
-        {/* the vast dark road */}
         <path d="M 0,1150 L 1080,1050 L 1080,1500 L 0,1700 Z" fill="#12161A" />
         <path d="M 0,1400 L 1080,1270" stroke="#2A2F36" strokeWidth={6} strokeDasharray="40 30" />
-        {/* the lamp: cold hoarfrost LED white, a tight pool around the car */}
-        <rect x={CX + 120} y={760} width={12} height={560} fill="#20252B" />
-        <path d={`M ${CX + 126},770 h -60`} stroke="#20252B" strokeWidth={10} />
-        <rect x={CX + 40} y={762} width={50} height={16} rx={6} fill={C.led} />
-        <path d={`M ${CX + 50},778 L ${CX - 200},${CY + 40} L ${CX + 300},${CY + 40} L ${CX + 80},778 Z`} fill={C.led} opacity={0.1} />
-        <ellipse cx={CX + 40} cy={CY + 30} rx={260} ry={60} fill={C.led} opacity={0.14} />
-        {/* the mirror of frame one: the car reflected upside down in black ice */}
-        <g opacity={0.35} transform={`translate(${CX} ${CY + 40}) scale(1 -0.55)`}><CarSil x={0} y={0} s={0.5} f={f} /><RoofPuck x={0} y={-98} f={f} scale={0.3} frost={0.5} clearRing={0.5} mode="clear" emotion="pensive" glow={0.4} seed={12} /></g>
+        <rect x={CX + 120} y={560} width={14} height={760} fill="#20252B" />
+        <path d={`M ${CX + 127},570 h -70`} stroke="#20252B" strokeWidth={12} />
+        <rect x={CX + 30} y={562} width={56} height={18} rx={6} fill={C.led} />
+        <path d={`M ${CX + 40},580 L ${CX - 220},${CY + 40} L ${CX + 320},${CY + 40} L ${CX + 76},580 Z`} fill={C.led} opacity={0.1} />
+        <ellipse cx={CX + 50} cy={CY + 30} rx={280} ry={64} fill={C.led} opacity={0.16} />
+        <g opacity={0.35} transform={`translate(${CX} ${CY + 30}) scale(1 -0.55)`}><CarSil x={0} y={0} s={0.5} f={f} /><RoofPuck x={0} y={-98} f={f} scale={0.3} frost={0.5} clearRing={0.5} mode="clear" emotion="pensive" glow={0.4} seed={12} /></g>
         <CarSil x={CX} y={CY + 30} s={0.5} f={f} />
-        <RoofPuck x={CX} y={CY - 68} f={f} scale={0.3} frost={lerp(0.5, 0.7, creep)} clearRing={lerp(0.5, 0.35, creep)} mode="clear" emotion={creep > 0.5 ? 'tense' : 'pensive'} glow={0.4} look={rise > 0.3 ? 0 : 0.6} seed={12} />
+        <RoofPuck x={CX} y={CY - 68} f={f} scale={0.3} frost={lerp(0.5, 0.7, creep)} clearRing={lerp(0.5, 0.35, creep)} mode="clear" emotion={creep > 0.5 ? 'tense' : 'pensive'} glow={0.5} rimGlow={1} look={rise2 > 0.3 ? 0 : 0.6} seed={12} />
         <Flakes f={f} n={50} speed={0.6} o={0.5} />
-        <HeldTravel f={f} x={180} y={1150} w={300} h={160} seed={13} strength={0.2} rx={20} />
+        <HeldTravel f={f} x={180} y={1150} w={300} h={160} seed={13} strength={0.2} rx={20} color={C.led} />
       </SVG>
     </Frame>
   );
@@ -1115,7 +1165,6 @@ export const Ep1111: React.FC<Props> = ({captions: cues = [], scenes, beats, kic
             <Shot n={SHOT_ORDER[i]} from={s.from} dur={s.dur} beats={bs} kicks={kicks} />
           </Sequence>
         ))}
-        <Sequence from={0} durationInFrames={end}><Bands beats={bs} /></Sequence>
         <Sequence from={0} durationInFrames={end}><CaptionBar cues={cues} bar="#12161A" ink="#E8E1D2" /></Sequence>
         {credits && (
           <Sequence name="CREDITS" from={end} durationInFrames={credits.frames}>
