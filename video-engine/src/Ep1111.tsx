@@ -893,7 +893,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
           );
         })}</g>
         <defs><radialGradient id="pvig" cx={PATCH.x / 1080} cy={PATCH.y / 1920} r="0.75"><stop offset="0.18" stopColor={C.line} stopOpacity={0} /><stop offset="1" stopColor={C.line} stopOpacity={0.45} /></radialGradient></defs>
-        <rect x={0} y={0} width={1080} height={1920} fill="url(#pvig)" opacity={dark} />
+        <rect x={0} y={0} width={1080} height={1330} fill="url(#pvig)" opacity={dark} />
         <g opacity={tick > 0 ? 1 : 0}>
           {[[640, 1100], [760, 1040], [880, 1100], [700, 1180], [820, 1220]].map(([mx, my], i) => (
             <g key={i} transform={`translate(${mx} ${my}) scale(${clamp01(tick * 5 - i)})`}><path d="M 0,-16 L 4,-4 L 16,0 L 4,4 L 0,16 L -4,4 L -16,0 L -4,-4 Z" fill={C.white} stroke={C.line} strokeWidth={3} /></g>
