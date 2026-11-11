@@ -289,3 +289,134 @@ export const SeismicStation: React.FC<{
     </g>
   );
 };
+
+// ---- the ROOF PUCK: a car's roof sensor dome with a face (NET-NEW 2026-11-11, "The Roof Puck") ----
+// Shape language: a SMOOTH graphite dome and soft round rings against JAGGED crystalline rime.
+// Every state of the throughline is a param combo, so a film reads who is winning (machine or
+// winter) from the silhouette of the frost.
+//   frost 0..1      how far the jagged rime has crept across the dome (it grows from the left,
+//                   so 0.5 reads as half frosted, half clear)
+//   clearRing 0..1  the heated clear ring melted around the lens eye
+//   mode            'blind'  the lens is blanked white (frost or whiteout)
+//                   'backup' the lens is blanked and amber radar/lidar rings pulse out from it
+//                   'wheel'  four small traction readouts glow on the ring (the traction shot)
+//                   'clear'  the lens is open and dark, nothing extra
+//   emotion         sets lid and wiper-brow pose
+//   glow 0..1       amber heater ring (a live mechanism: the only place amber belongs)
+//   qmark 0..1      a micro wiper wipes a question mark through the rime (0 none, 1 fully wiped)
+//   look -1..1      iris shift, open 0..1 multiplies the lid (blink, squint)
+// Drawn with (x, y) at the centre of its base, the dome rising above it. About 260 px wide at scale 1.
+export type PuckMode = 'blind' | 'backup' | 'wheel' | 'clear';
+export type PuckEmotion = 'sleepy' | 'alert' | 'startled' | 'wary' | 'relieved' | 'determined' | 'pensive' | 'chatty' | 'tense' | 'flat';
+const PUCK_LID: Record<PuckEmotion, number> = {sleepy: 0.25, alert: 0.95, startled: 1.15, wary: 0.55, relieved: 0.8, determined: 0.6, pensive: 0.6, chatty: 0.9, tense: 0.5, flat: 0.45};
+const PUCK_BROW: Record<PuckEmotion, number> = {sleepy: -6, alert: 8, startled: 22, wary: -14, relieved: 10, determined: -20, pensive: -4, chatty: 14, tense: -18, flat: 0};
+const RIME = '#E8E1D2';
+const PUCK_AMBER = '#F2A33A';
+export const RoofPuck: React.FC<{
+  x: number; y: number; scale?: number; f: number;
+  frost?: number; clearRing?: number; mode?: PuckMode; emotion?: PuckEmotion; glow?: number;
+  qmark?: number; look?: number; open?: number; body?: string; rim?: string; seed?: number; rimGlow?: number;
+}> = ({x, y, scale = 1, f, frost = 0, clearRing = 0, mode = 'clear', emotion = 'alert', glow = 0,
+      qmark = 0, look = 0, open = 1, body = '#2A2F36', rim = RIME, seed = 0, rimGlow = 0}) => {
+  const id = uid(`puck${x}${y}${seed}`);
+  const t = tones(body);
+  const v = vitals(f, seed + 3.1, 0.6);
+  const fr = Math.max(0, Math.min(1, frost));
+  const cr = Math.max(0, Math.min(1, clearRing));
+  const gl = Math.max(0, Math.min(1, glow));
+  const blind = mode === 'blind' || mode === 'backup';
+  const blink = ((f + Math.round(seed * 53)) % 150) > 145 ? 0.1 : 1;
+  const lid = Math.max(0.06, Math.min(1.2, PUCK_LID[emotion] * open * blink));
+  const brow = PUCK_BROW[emotion] + 3 * Math.sin(f / 13 + seed);
+  const EX = 0, EY = -58, ER = 34;               // lens eye centre and radius
+  const dome = 'M -128,0 C -128,-70 -76,-118 0,-118 C 76,-118 128,-70 128,0 Z';
+  // jagged rime: fern spikes along a front that advances with `frost`
+  const frontX = -140 + 280 * fr;
+  const spikes = Array.from({length: 14}).map((_, i) => {
+    const yy = -118 + i * 9.2;
+    const jag = 10 + 14 * Math.abs(Math.sin(i * 2.3 + seed));
+    return `L ${frontX + (i % 2 ? jag : -jag * 0.4)},${yy}`;
+  }).join(' ');
+  const rimePath = `M -140,-130 L ${frontX},-130 ${spikes} L ${frontX},4 L -140,4 Z`;
+  const clearR = ER + 6 + 64 * cr;
+  // the wiped question mark spans the dome: its hook arcs over the eye and its dot lands on the mount
+  const qPath = `M ${EX - 70},${EY - 20} C ${EX - 70},${EY - 62} ${EX + 72},${EY - 62} ${EX + 72},${EY - 16} C ${EX + 72},${EY + 14} ${EX + 30},${EY + 18} ${EX + 30},${EY + 40} M ${EX + 30},${EY + 54} L ${EX + 30},${EY + 56}`;
+  const breath = 1 + 0.018 * Math.sin(f / 17 + seed) + 0.006 * Math.sin(f / 5.3 + seed * 2);
+  return (
+    <g transform={`translate(${x},${y + v.bob * 0.5}) scale(${scale * (2 - breath)} ${scale * breath})`}>
+      <defs>
+        <FormGradient id={id} t={t} />
+        <clipPath id={`${id}_d`}><path d={dome} /></clipPath>
+        <mask id={`${id}_m`}>
+          <rect x={-160} y={-160} width={320} height={180} fill="#fff" />
+          <circle cx={EX} cy={EY} r={clearR} fill="#000" />
+          {qmark > 0.01 && <path d={qPath} stroke="#000" strokeWidth={24} strokeLinecap="round" fill="none" pathLength={1} strokeDasharray={`${qmark} 1`} />}
+        </mask>
+      </defs>
+      <ContactShadow cx={0} cy={6} rx={150} ry={16} opacity={0.4} />
+      {/* backup rings: amber radar and lidar arcs pulsing out (behind the dome) */}
+      {mode === 'backup' && [0, 1, 2, 3].map((i) => {
+        const k = ((f / 40 + i / 4) % 1);
+        return <circle key={i} cx={EX} cy={EY} r={60 + 260 * k} fill="none" stroke={PUCK_AMBER} strokeWidth={6 - 4 * k} opacity={(1 - k) * 0.85} strokeDasharray={i % 2 ? '18 12' : undefined} />;
+      })}
+      {/* mount plate and roof rail */}
+      <rect x={-150} y={-6} width={300} height={22} rx={10} fill={t.core} stroke={INK} strokeWidth={6} />
+      {[-110, -40, 40, 110].map((bx) => <circle key={bx} cx={bx} cy={5} r={4} fill={t.key} stroke={INK} strokeWidth={2} />)}
+      {/* the smooth graphite dome */}
+      <path d={dome} fill={`url(#${id})`} stroke={INK} strokeWidth={7} />
+      <path d="M -96,-30 C -92,-74 -54,-100 -14,-104" fill="none" stroke="#FFFFFF" strokeWidth={8} opacity={0.16} strokeLinecap="round" />
+      {/* side sensor windows (radar, lidar) */}
+      <rect x={-112} y={-40} width={30} height={22} rx={8} fill="#14181D" stroke={INK} strokeWidth={4} />
+      <rect x={82} y={-40} width={30} height={22} rx={8} fill="#14181D" stroke={INK} strokeWidth={4} />
+      <circle cx={-97} cy={-29} r={4} fill={mode === 'backup' ? PUCK_AMBER : '#3B444F'} />
+      <circle cx={97} cy={-29} r={4} fill={mode === 'backup' ? PUCK_AMBER : '#3B444F'} />
+      {/* heater ring (amber, live mechanism only) */}
+      {gl > 0.01 && <circle cx={EX} cy={EY} r={ER + 14} fill="none" stroke={PUCK_AMBER} strokeWidth={10} opacity={0.35 + 0.55 * gl * (0.85 + 0.15 * Math.sin(f / 6))} />}
+      {gl > 0.01 && <circle cx={EX} cy={EY} r={ER + 30} fill={PUCK_AMBER} opacity={0.08 * gl} />}
+      {/* lens eye */}
+      <circle cx={EX} cy={EY} r={ER + 6} fill="#14181D" stroke={INK} strokeWidth={6} />
+      <g transform={`translate(${EX} ${EY}) scale(1 ${Math.min(1, lid)})`}>
+        <circle r={ER} fill={blind ? '#F4F1EA' : '#0B0E10'} stroke={INK} strokeWidth={4} />
+        {!blind && <circle cx={look * 10} cy={-2} r={ER * 0.55} fill="#1E2A36" />}
+        {!blind && <circle cx={look * 10} cy={-2} r={ER * 0.28} fill="#05070A" />}
+        {!blind && <circle cx={look * 10 - 9} cy={-12} r={6} fill="#FFFFFF" opacity={0.85} />}
+        {blind && <path d={`M ${-ER * 0.6},0 h ${ER * 1.2}`} stroke="#C9C3B8" strokeWidth={4} opacity={0.6} />}
+      </g>
+      {/* traction readouts on the ring */}
+      {mode === 'wheel' && [-1, -0.35, 0.35, 1].map((k, i) => (
+        <g key={i} transform={`translate(${EX + k * 70} ${EY + 44 - Math.abs(k) * 10})`}>
+          <circle r={9} fill="#14181D" stroke={INK} strokeWidth={3} />
+          <line x1={0} y1={0} x2={6 * Math.sin(f / 9 + i)} y2={-6} stroke={PUCK_AMBER} strokeWidth={3} strokeLinecap="round" />
+        </g>
+      ))}
+      {/* jagged rime, masked by the heated clear ring and the wiped question mark */}
+      {fr > 0.01 && (
+        <g clipPath={`url(#${id}_d)`}>
+          <g mask={`url(#${id}_m)`}>
+            <path d={rimePath} fill={rim} opacity={0.92} stroke="#B9B2A6" strokeWidth={2} />
+            {Array.from({length: 12}).map((_, i) => {
+              const fx = -120 + i * 22;
+              if (fx > frontX) return null;
+              return <path key={i} d={`M ${fx},-4 l 6,-26 l 6,14 l 8,-34 l 6,22 l 7,-16`} fill="none" stroke="#C9C3B8" strokeWidth={2.5} />;
+            })}
+          </g>
+        </g>
+      )}
+      {rimGlow > 0.01 && <path d="M -126,-6 C -122,-76 -72,-118 0,-118 C 72,-118 122,-76 126,-6" fill="none" stroke={rim} strokeWidth={22} opacity={0.25 * rimGlow} strokeLinecap="round" />}
+      {/* hoarfrost rim: the brightest neutral, always on the dome edge */}
+      <path d="M -122,-14 C -118,-72 -70,-112 0,-112 C 70,-112 118,-72 122,-14" fill="none" stroke={rim} strokeWidth={5} opacity={0.75} strokeLinecap="round" />
+      {Array.from({length: 9}).map((_, i) => {
+        const a = Math.PI * (0.08 + i * 0.105);
+        const rx = -Math.cos(a) * 124, ry = -Math.sin(a) * 112;
+        return <path key={i} d={`M ${rx},${ry} l ${-4 + (i % 3) * 3},-9 l 5,4 l 3,-8`} fill="none" stroke={rim} strokeWidth={3} strokeLinecap="round" />;
+      })}
+      {/* wiper-arm eyebrows (the micro wipers) */}
+      {[-1, 1].map((side) => (
+        <g key={side} transform={`translate(${EX + side * 30} ${EY - ER - 12}) rotate(${side * -brow})`}>
+          <rect x={side < 0 ? -34 : 0} y={-4} width={34} height={8} rx={4} fill="#14181D" stroke={INK} strokeWidth={3} />
+          <circle cx={0} cy={0} r={4.5} fill={t.key} stroke={INK} strokeWidth={2} />
+        </g>
+      ))}
+    </g>
+  );
+};

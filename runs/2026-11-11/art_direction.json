@@ -1,0 +1,179 @@
+{
+ "run_date": "2026-11-11",
+ "story_id": "waymo-fairbanks-black-ice",
+ "treatment": {
+  "winner": "THE ROOF PUCK (dramatist base)",
+  "grafts": [
+   "comedian: the micro wiper clears a frost patch shaped like a question mark that freezes back behind it, at the open, and frost creeps back toward the eye at the button",
+   "explainer: the three kinds of work as three lanes (a roadside logger, a specialist at the wheel, a cone course), four traction gauges under the wheels, a glass road poured digitally under a SIMULATION label",
+   "enthusiast: one warm weather-station puck pulling back to an abstract snow field of unnumbered pings, ILLUSTRATIVE"
+  ],
+  "judge_reasoning": "The residents' question is about seeing, and the thing that sees is the roof sensor puck, so the hero is the eye of the car with a face and the car stays a dark silhouette. Every mechanism Waymo published (heaters, micro wipers, stated backup sensing, traction under each wheel, simulated ice) is a state change on that one object, which makes the design legible without a single photoreal vehicle. The skeptics get their own roadside billboards at full strength, and the film concedes that every answer so far is on paper. The button leaves the puck half frosted on a vast dark road: the winter is the test."
+ },
+ "palette": {
+  "sky": "#E9B7A0 low pink-gold sun behind #D8D2CF milky ice fog (Fairbanks ice-fog noon)",
+  "ground": "#12161A ice-black road, snowbank shadow and car silhouette",
+  "hero": "#2A2F36 graphite puck body, the darkest solid on the car roof; #E8E1D2 hoarfrost ONLY on the puck rim and the rime",
+  "paper": "#D9D0BC, a step darker than hoarfrost, for the blog, map, billboards, sheet and clipboard, with #2A1426 plum ink for all text",
+  "accent": "#F2A33A sodium amber ONLY on live mechanisms: heater ring, lit lens ring, radar and lidar returns and rings, traction needles. NEVER the world's key light",
+  "pressure": "#B3232F deep crimson, spent ONCE, the tail light inside the skeptic's thought-frame at the stall-out line (89.15 s)",
+  "shadow": "#12161A",
+  "mood": "a bright, milky Fairbanks noon that dims to whiteout and ends in one lamp at night; curious and hopeful, amber only where a machine is working",
+  "why": "Fog-filtered pink-gold reads as Interior Alaska winter daylight, which is the honest setting of the test and warm enough for a hopeful valence. The paper step and plum ink keep text off the hoarfrost hero so the puck owns the lightest value.",
+  "divergence": "11-10 was a true violet blue hour with a vermilion machine and an acid lemon lamp, 11-08 permafrost, 11-07 transformer teal, 11-06 tangerine office, and 11-02 keyed its whole cab in sodium amber. No violet or purple surfaces or light anywhere, plum is ink only. No lemon at all. Amber is emitted light on mechanisms only, never the key, so it does not repeat 11-02. Recorded overlap: 11-09's oxblood courtroom sits in the crimson family; here crimson is one emitted tail light, once, not a surface or a world.",
+  "snow": "#CFC9C0 snow and snowbanks, a separate darker neutral so the hoarfrost rim is the brightest neutral in frame",
+  "value_check": "the graphite body silhouettes against the #D8D2CF fog and the hoarfrost rim is the brightest neutral; checked on a grayscale thumbnail of shots 1 and 8 at build"
+ },
+ "light": {
+  "time_of_day": "ice-fog noon with a low sun (act 1), whiteout white (shots 5 to 6 and the return in shot 11), then night under a single practical lamp (shot 13)",
+  "arc": "low sun behind fog, then whiteout white, then one lamp with a tight pool around the puck. WHY: the light is the winter's argument, it goes from a fair test to the worst case to an open question",
+  "direction": "low pink-gold sun backlighting the fog from camera-right at road height in act 1, hoarfrost rim from the sun on the puck dome, amber self-light from mechanisms",
+  "key_fill_rim": "act 1 key is the fogged sun, milky fill, hoarfrost rim; whiteout is shadowless white; the button key is one lamp, everything outside its pool falls to ice-black",
+  "depth": "three stage3d planes on every road shot: foreground snowbank and broken ice, midground car silhouette and puck, far spruce and powerline silhouettes dissolving into fog, with a fog plane between each",
+  "per_shot": {
+   "1": "low pink-gold sun behind fog, a mittened hand wiping a frosted window in the foreground, a headlight sweep rakes the road and turns it to a mirror, hoarfrost rim on the frosted puck",
+   "2": "warm interior made pale: fog-lit kitchen, pale cream #EFE6D2 window light, phone screen #F4F1EA, the puck small and graphite in the window glass",
+   "3": "flat paper map plane on purpose, soft fog daylight overhead, the pin's halo the only light event",
+   "4": "high crane over a three-lane road in fog daylight, each lane brightens as it locks, the low sun a smear on the horizon",
+   "5": "cutaway of the puck in diffuse fog light, its internal heater coils glowing amber as the only warm source",
+   "6": "the puck's first-person view: the frame floods shadowless white, amber returns draw the dot road, nothing else lit",
+   "7": "low under-car angle in reflected snow light, four amber traction needles, the simulated glass road in a cool grid box labelled SIMULATION",
+   "8": "the clean puck lit warm by the low sun, then a pullback to an abstract snow-field texture with no geography, pings as small amber points, no numbers",
+   "9": "roadside frame against fog, the sheet lit flat like paper, a gust's spindrift dims the low sun for a beat as frost creeps onto the eye rim",
+   "10": "three billboards against the fogged sun, paper-white #F4F1EA lamps, the thought-frame's crimson #B3232F blink the only red of the film, then half a second of silence",
+   "11": "back in the puck's view, whiteout white, the VALIDATED LIMIT gauge on the HUD with an amber needle, amber rings shrinking, a generic city skyline glimpse, the car's dim white #E6E9EC hazards strobing on the shoulder",
+   "12": "inside the cab, dashboard glow and fog daylight through the windshield, the clipboard lit flat, frost growing across the paper",
+   "13": "evening, one cold hoarfrost LED lamp #EEF2F5 with a tight pool around the car and puck; the puck's amber heater glow is the only warm point; the car reflected upside down in black ice, the mirror of frame one"
+  },
+  "light_story": "ice-fog noon (act 1), whiteout (shots 5, 6 and 11), one cold LED lamp in the evening (shot 13)"
+ },
+ "shape_language": "PRIMARY axis: the smooth domed puck and its soft round rings, lens and gauges against jagged crystalline rime, fern frost and broken ice. Every state change is round smoothness winning or losing ground to jagged crystal. SECONDARY: the rectilinear road, lanes, billboards, phone and paper. WHY: the story is a machine meeting a winter, so the machine is drawn smooth and the winter is drawn jagged, and a muted viewer can read who is winning from the silhouette of the frost.",
+ "casting": {
+  "hero": "RoofPuck (net-new, lib/sensors.tsx), the roof sensor dome with a face: two tiny wiper-arm eyebrows, a frost-rimmed brow, a round lens eye that opens, narrows or goes blind white. Graphite #2A2F36 body, hoarfrost rim. Params frost 0..1, clearRing 0..1, mode 'blind'|'backup'|'wheel'|'clear', emotion, glow. Reusable for any sensor, camera or vehicle-autonomy story.",
+  "puck_states": {
+   "S1": {
+    "name": "rimed and blind",
+    "frost": 1.0,
+    "clearRing": 0.0,
+    "mode": "blind",
+    "emotion": "sleepy",
+    "glow": 0.0,
+    "at": "2.75 s"
+   },
+   "S2": {
+    "name": "one wiper arc clear, eye open",
+    "frost": 0.7,
+    "clearRing": 0.2,
+    "mode": "blind",
+    "emotion": "alert",
+    "glow": 0.0,
+    "at": "27.56 s"
+   },
+   "S3": {
+    "name": "heated clear ring",
+    "frost": 0.15,
+    "clearRing": 1.0,
+    "mode": "clear",
+    "emotion": "relieved",
+    "glow": 1.0,
+    "at": "49.1 s"
+   },
+   "S4": {
+    "name": "whiteout, camera blind, backup rings glowing (Waymo's stated design, c19, not observed behaviour)",
+    "frost": 0.3,
+    "clearRing": 0.6,
+    "mode": "backup",
+    "emotion": "determined",
+    "glow": 1.0,
+    "at": "57.2 s"
+   },
+   "S5": {
+    "name": "clean and warm-lit at the weather station, then regressing as a gust frosts the eye rim at 85.3 s (frost 0.25, clearRing 0.8)",
+    "frost": 0.0,
+    "clearRing": 1.0,
+    "mode": "clear",
+    "emotion": "chatty",
+    "glow": 0.6,
+    "at": "68.94 s"
+   },
+   "S6": {
+    "name": "half frosted, half clear, frost creeping toward the eye at 122.7 s",
+    "frost": 0.5,
+    "clearRing": 0.5,
+    "mode": "clear",
+    "emotion": "pensive",
+    "glow": 0.3,
+    "at": "120.46 s"
+   },
+   "wheel_note": "mode 'wheel' is kept for the traction shot (shot 7), where the puck's ring shows four wheel readings"
+  },
+  "supporting": [
+   "a dark rounded car silhouette (set dressing only, never painted as a photoreal Waymo vehicle)",
+   "a mittened resident's hand at a frosted window (c25), no face",
+   "Character rig silhouettes: a parka figure with a handheld logger (manual data collection, c12), a specialist's hands at the wheel in the lanes shot only (c13), the specialist's clipboard and pen (c16, c30), never named real faces",
+   "roadside billboards carrying the residents' and the mayor's words verbatim in straight quotes (c26, c29, c27), no portraits",
+   "a thought-frame billboard with a WHAT IF BoxLabel, the stalled car drawn as the skeptic's worry (c26), never as an observed event",
+   "a blank odometer-style counter and a blank calendar (c30)",
+   "a phone with the blog post (c2, c3, c5), a governor's post card (c6, c7), a TV-station card (c11)",
+   "spruce and powerline silhouettes from the shared biomes",
+   "BoxLabel kit for plates"
+  ],
+  "reasons": "The shelf has no sensor or autonomous-vehicle asset. The roof puck is the one gap, built as a reusable library asset. Yesterday's TakeANumberMachine and the recent StampBot, Reels and Strand heroes are not used. dedupe.py check returned FRESH for RoofPuck. Alaska Native subjects: none."
+ },
+ "claim_map": {
+  "A FAIRBANKS RESIDENT ASKED (mittened hand)": "c25",
+  "BLACK ICE (illustrative corner tag, mirror road)": "c25, ILLUSTRATIVE",
+  "WAYMO SELF-DRIVING CAR": "c1",
+  "NOVEMBER 5TH": "c2",
+  "CLOSED-COURSE TESTS · HEAVY SNOWFALL DATA": "c3, c4",
+  "GOVERNOR'S POST · FAIRBANKS": "c6",
+  "\"NO BETTER PROVING GROUND\"": "c7",
+  "QUOTED BY TV STATION": "c11",
+  "THREE KINDS OF WORK": "c11",
+  "MANUAL DATA COLLECTION (roadside person with a handheld logger)": "c12",
+  "SPECIALIST AT THE WHEEL (hands on the wheel, lane 2 only)": "c13",
+  "LIMITED STRUCTURED TESTING": "c14",
+  "SIXTH-GENERATION WAYMO DRIVER": "c15, c17",
+  "CAMERAS · RADAR · LIDAR": "c17",
+  "HEATERS · MICRO-WIPERS, SENSORS KEPT CLEAR": "c18",
+  "CAMERAS IN A WHITEOUT, ONE SENSOR BLIND · ANOTHER BACKS IT UP": "c19 (stated design)",
+  "TRACTION · EACH WHEEL": "c20",
+  "SIMULATED BLACK ICE · SIMULATION": "c21",
+  "MOBILE WEATHER STATION, SHARED ACROSS THE FLEET · ILLUSTRATIVE": "c23",
+  "AN ANSWER ON PAPER": "c17 to c21, narration",
+  "ONE RESIDENT EXPECTS, \"STALL OUT\" · WHAT IF": "c26",
+  "\"SHOULDN'T BE ALLOWED\"": "c29",
+  "HOW MANY CARS?, NO COUNT · NO DATES": "c30",
+  "HOLD THAT THOUGHT, IS PAPER ENOUGH?, WAYMO'S POST IS A CLAIM, THIS WINTER IS THE TEST, WHAT WOULD YOU WANT PROVEN?": "narration, no fact asserted",
+  "WAYMO SAYS · TENS OF THOUSANDS OF MILES · SNOWY REGIONS ELSEWHERE (ILLUSTRATIVE only on the drawn markers)": "c22",
+  "WEATHER BEYOND VALIDATED · VALIDATED LIMIT, ITS OWN POST · IN ITS CITIES · PAUSE FOR HOURS OR DAYS, CITY SERVICE": "c24",
+  "DO THEY KNOW? (short form of the quote)": "c25",
+  "A REPORTER ASKED · DRIVERLESS?, DRIVERLESS CARS PLANNED?, NOT YET ANSWERED": "c16",
+  "THE MAYOR · \"A GREAT OPPORTUNITY\"": "c27",
+  "THIS SEASON · ALASKA, THE POST SAYS ONLY ALASKA": "c3, c5"
+ },
+ "motion_language": "The puck breathes on its mount, its wiper eyebrows twitch on effort and its lens iris dilates and narrows with springs, never linear. Frost creeps in as jagged fern growth and melts in smooth rings from the heater outward. Lanes, gauges and billboards enter with anticipation, overshoot and settle. The whole frame jolts only on the three board kicks.",
+ "composition": {
+  "focal_hierarchy": "each shot names one 55 to 70 percent hero, a 20 to 30 percent support and 10 to 15 percent world; the puck is off-center in shots 2, 5, 9 and 13",
+  "info_placement": "plates live where the information lives: on objects (puck, lanes, map pins, clipboard), on the phone screen, on billboards, in the puck's HUD, in side plates left or right, and in the lower third only on a minority of beats",
+  "negative_space": "the vast dark road around one small car under one lamp at the close, and the half second of silence after the crimson blink",
+  "safe_area": "hero and plates within y 420 to 1500 of the 9:16 master, fog sky above and road and snowbank below stage the vertical",
+  "signature_shot": "the cold open: a mittened hand wipes a frosted window, a headlight sweeps a dry-looking road, the road becomes a mirror holding the frosted puck upside down, then one micro wiper clears a question-mark arc and the eye opens on 'Do they know to look for black ice?'",
+  "stamp_cap": "No rubber stamps. Plates are BoxLabels, billboard quotes, the sheet and the clipboard. Added labels on drawn things are SIMULATION on the glass road, VALIDATED LIMIT on the gauge line, WHAT IF on the thought-frame and ILLUSTRATIVE on the fleet field, the mile markers and the mirror road.",
+  "honesty": "Nothing says Waymo named Fairbanks: the post plate reads ALASKA and the Fairbanks pin arrives with the governor's card. The whiteout backup is Waymo's stated design (c19), not observed behaviour. The stalled car is the skeptic's worry in a thought-frame, not an event. The fleet field has no geography and no number, and the counter reads blank. No driverless claim and no timeline: the pen never writes. The billboard row has no figures. The thought-frame shoulder and the shot 11 shoulder are the same composition, so the worry and the stated pause are drawn as one place."
+ },
+ "craft_advance": "the net-new RoofPuck sensor asset with a face, frost and clear-ring states; nothing else this film needs",
+ "practicals": {
+  "shot_1_headlight": "#F4F1EA cold white headlight sweep",
+  "shot_2_interior": "fog-lit kitchen, pale cream #EFE6D2 window light and the phone screen #F4F1EA; no amber",
+  "shot_5_heater": "#F2A33A amber heater coils (a live mechanism)",
+  "shot_6_returns": "#F2A33A amber radar and lidar returns",
+  "shot_7_gauges": "#F2A33A amber traction needles",
+  "shot_10_billboard_lamps": "#F4F1EA paper-white billboard lamps",
+  "shot_10_tail_light": "#B3232F crimson, once",
+  "shot_11_hazards": "#E6E9EC dim white strobe hazards, not amber, not crimson",
+  "shot_11_gauge": "VALIDATED LIMIT gauge on the puck HUD in shot 11, its needle #F2A33A, the dashed limit line plum #2A1426 on a paper #D9D0BC dial, lit by the whiteout",
+  "shot_12_dash": "#EFE6D2 pale cream dash glow plus fog daylight",
+  "shot_13_lamp": "#EEF2F5 cold hoarfrost LED white, NOT sodium, so the puck's amber heater glow is the only warm point"
+ }
+}

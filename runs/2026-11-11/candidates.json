@@ -1,0 +1,20 @@
+{
+  "locked_story": {
+    "headline": "Waymo brings robotaxi winter testing to Fairbanks, Alaska's cold, ice and dark become training data for an AI driver",
+    "found_at_rung": "in_window_sweep"
+  },
+  "rungs": [
+    {"rung": "in_window_sweep", "attempted": true, "candidates_found": 9}
+  ],
+  "candidates": [
+    {"title": "Waymo winter testing in Fairbanks", "verdict": "LOCKED"},
+    {"title": "STAK Energy final DNR decision, North Slope", "verdict": "held, data center thread"},
+    {"title": "Alaska Data Corporation and InvestNorth", "verdict": "held, AIDEA thread"},
+    {"title": "Anchorage Assembly surveillance rules", "verdict": "weak AI angle"},
+    {"title": "Kenai digital tower", "verdict": "weak AI angle"},
+    {"title": "Angel Ascent Fort Wainwright drones", "verdict": "no AI"},
+    {"title": "AI donations Senate race", "verdict": "excluded politics"},
+    {"title": "UA regents delay AI statement", "verdict": "excluded"},
+    {"title": "Rural Health Transformation award", "verdict": "no AI"}
+  ]
+}

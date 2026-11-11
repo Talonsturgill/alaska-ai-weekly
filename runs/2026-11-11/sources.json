@@ -1,0 +1,67 @@
+{
+ "run_date": "2026-11-11",
+ "title": "The Roof Puck",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "How the Waymo Driver Manages Severe Winter Weather",
+   "outlet": "Waymo blog (company, primary)",
+   "url": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "claims": [
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21",
+    "c22",
+    "c23",
+    "c24",
+    "c31"
+   ],
+   "used_in_film": true,
+   "note": "Company statement, November 5th. Names Alaska, never Fairbanks."
+  },
+  {
+   "id": "s2",
+   "title": "Snow, ice and no driver? Waymo's robotaxis face the ultimate winter test",
+   "outlet": "FOX Weather",
+   "url": "https://www.foxweather.com/extreme-weather/self-driving-cars-prepare-alaska-perilous-winter-climate",
+   "claims": [
+    "c1",
+    "c6",
+    "c7",
+    "c8"
+   ],
+   "used_in_film": true,
+   "note": "Carries the governor's social post naming Fairbanks, Ojai and Hyundai Ioniq."
+  },
+  {
+   "id": "s3",
+   "title": "Waymo tests self-driving cars in Fairbanks climate",
+   "outlet": "Alaska's News Source (KTUU/KTVF)",
+   "url": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "claims": [
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c25",
+    "c26",
+    "c27",
+    "c28",
+    "c29",
+    "c30"
+   ],
+   "used_in_film": true,
+   "note": "Local reporting, Waymo statement, GVEA, mayor and residents. Page stamp November 10th."
+  }
+ ]
+}

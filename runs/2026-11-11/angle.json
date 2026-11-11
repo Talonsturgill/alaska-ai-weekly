@@ -1,0 +1,19 @@
+{
+  "run_date": "2026-11-11",
+  "story_id": "waymo-fairbanks-black-ice",
+  "thesis": "Fairbanks residents asked the right question, 'do they know to look for black ice', and Waymo's own published design answers it with a stack of specific mechanisms. What nobody has shown yet is whether that stack works at minus thirty, so the Fairbanks winter is the experiment, and the honest way to run it is exactly what Waymo's statement describes, slowly, with a specialist at the wheel.",
+  "falsifier": "False if the record shows the Fairbanks work is driverless public service (the statement says a specialist at the wheel, c13), or if Waymo's blog said nothing specific about ice (it names heaters, micro-wipers, traction under each wheel and simulated black ice, c17 to c20).",
+  "supporting_facts": [
+    {"claims": ["c3", "c6", "c11"], "fact": "The blog says Alaska, the governor's post and KTUU say Fairbanks, and the company statement lists three kinds of work."},
+    {"claims": ["c17", "c18", "c19", "c20"], "fact": "The published design has an answer to each of the residents' worries, heated sensors, redundant sensing, per-wheel traction and simulated ice."},
+    {"claims": ["c13", "c14", "c16", "c31"], "fact": "The test described is cautious by construction, a specialist at the wheel, limited structured testing, and unanswered questions about driverless plans."}
+  ],
+  "fair_counterpoint": "Residents' worry is not naive. Howe asks whether the testers know black ice, Jackson expects stalls at minus thirty. A design page is a claim, not a result, and the same blog says service can pause for hours or days when weather passes what the system is validated for. Nothing in the reports says how many cars, what dates, or whether driverless service is intended.",
+  "valence": "curious, leaning hopeful. Alaska as the place where an AI driver gets its hardest winter exam, with the residents' skepticism treated as the exam's first question.",
+  "second_movement": {
+    "recontextualizing_fact": "c22 and c23. Each Waymo car is a mobile weather station, sharing what it sees across the fleet, so a winter spent in Fairbanks isn't one car learning, it is the whole fleet learning. And c24 says the other side of that, the company will pause service for hours or days when the weather beats its validation.",
+    "test": "Draw the skeptics at full strength as their own scene. Howe's black ice question, Jackson's stalled car at minus thirty, Woolwine's no. Then let the film narrow honestly. The design page answers the question on paper, the test exists because paper isn't enough, and the reports don't say how many cars or when."
+  },
+  "runner_ups": ["data center / grid story (STAK final decision, covered thread, stance skew)", "pure explainer of lidar (no Alaska stake)"],
+  "guardrails": ["no 'gap' 'matters' 'pattern'", "never say Waymo said Fairbanks, the blog says Alaska, Fairbanks is the governor and KTUU", "never claim driverless in Fairbanks or any timeline", "Bonelli had not yet responded, never declined", "charging claim attributed to a Facebook post plus GVEA official first hand", "no recall claim (not fact-checked)", "illustrative numbers only where from claims"]
+}

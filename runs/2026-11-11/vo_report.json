@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.997,
+    "heard": "A Fairbanks resident asked about the people testing Waymo's self-driving cars. Do they know to look for black ice? On November 5th, Waymo posted that this season in Alaska, it will run closed course tests and collect heavy snowfall data. Its post says only Alaska. The governor's post names Fairbanks and says there's no better proving ground for winter driving. In a statement quoted by a TV station, Waymo lists three kinds of work in Fairbanks, manual data collection, autonomous driving with a specialist at the wheel, and limited structured testing. Waymo's post says the 6th generation driver has cameras, radar, and lidar, with built-in heaters and micro-wipers to keep sensors clear in icy conditions. Waymo says if cameras struggle in a blinding whiteout, another sensing system backs them up. The car measures traction changes under each wheel. Waymo also recreates black ice in simulation. Waymo says each car acts as a mobile weather station, sharing what it sees across the fleet. The company says it has logged tens of thousands of real-world miles in snowy regions elsewhere. So there's an answer on paper. Hold that thought. One resident expects the cars to stall out on the sides of roads. Another says they shouldn't be allowed. The mayor called it a great opportunity. Waymo's own post says whether beyond what its system is validated for can cause service in its cities for hours or even days. So is paper enough? The reports don't say how many cars are in Fairbanks or on what dates. A reporter asked whether driverless cars are planned there. Waymo hadn't yet answered. Waymo's post is a claim. This winter is the test. What would you want proven before one drives with nobody at the wheel?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.007,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 7.65,
+        "voiced_frac": 0.48,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 129.04,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 129.04,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.997,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.978,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

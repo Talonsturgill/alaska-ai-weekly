@@ -1,0 +1,2295 @@
+{
+  "run_date": "2026-11-11",
+  "slug": "the-roof-puck",
+  "title": "The Roof Puck",
+  "concept": "Waymo posted on November 5th that it will run closed-course tests and collect heavy snowfall data in Alaska this season. The governor's post names Fairbanks, and a statement quoted by a TV station lists three kinds of work there, manual data collection, autonomous driving with a specialist at the wheel and limited structured testing. A Fairbanks resident asked whether the testers know to look for black ice. The film answers with Waymo's published design drawn as states of one roof sensor puck with a face, heated sensors and micro wipers, a stated backup sensing system in a whiteout, traction under each wheel, simulated black ice and a fleet that shares the weather, then gives the skeptics full strength on roadside billboards and concedes that the answer so far is on paper. Waymo's own post says service can pause for hours or days, the reports give no car count and no dates, the driverless question is unanswered, and the button leaves the puck half frosted on a vast dark road. This winter is the test.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 128.6,
+  "fingerprint": {
+    "pov": "macro-closeup",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "single-object-void",
+    "register": "naturalistic-scene",
+    "palette": "ice-fog noon, pink-gold low sun behind milky fog, ice-black ground, hoarfrost puck, plum ink on paper, sodium amber on live mechanisms only, a single crimson taillight",
+    "camera_strategy": "dolly-through",
+    "light_story": "ice-fog noon, whiteout, single lamp in the evening",
+    "metaphor": "the roof sensor puck as the car's eye: every mechanism Waymo published is a state of that one smooth face against jagged rime, and the winter decides which state it ends in"
+  },
+  "palette": "ice-fog noon, pink-gold low sun behind milky fog, ice-black ground, hoarfrost puck, plum ink on paper, sodium amber on live mechanisms only, a single crimson taillight",
+  "divergence_note": "The last films were a true violet shore with a vermilion ticket machine and an acid lemon lamp (11-10), an oxblood courtroom (11-09), a permafrost road (11-08), a teal transformer yard (11-07) and a tangerine office (11-06); 11-02 keyed its whole cab in sodium amber. This film is a Fairbanks ice-fog noon, a pink-gold low sun behind milky fog over ice-black ground, with no lemon and no violet, amber only as emitted light on live mechanisms and never the key, and one deep crimson tail light, not vermilion. Its light arcs from low sun to whiteout white to one lamp at night. Its shape contrast is a smooth domed puck and soft rings against jagged rime and broken ice, its throughline is the puck's frost state, and it ends on a crane-up to one small car on a vast road, not an eye-level bookend.",
+  "treatment": {
+    "title": "The Roof Puck",
+    "summary": "The residents' question is about seeing, and the thing that sees is the roof sensor puck, so the hero is the eye of the car with a face and the car stays a dark silhouette. Every mechanism Waymo published (heaters, micro wipers, stated backup sensing, traction under each wheel, simulated ice) is a state change on that one object, which makes the design legible without a single photoreal vehicle. The skeptics get their own roadside billboards at full strength, and the film concedes that every answer so far is on paper. The button leaves the puck half frosted on a vast dark road: the winter is the test."
+  },
+  "angle": {
+    "run_date": "2026-11-11",
+    "story_id": "waymo-fairbanks-black-ice",
+    "thesis": "Fairbanks residents asked the right question, 'do they know to look for black ice', and Waymo's own published design answers it with a stack of specific mechanisms. What nobody has shown yet is whether that stack works at minus thirty, so the Fairbanks winter is the experiment, and the honest way to run it is exactly what Waymo's statement describes, slowly, with a specialist at the wheel.",
+    "falsifier": "False if the record shows the Fairbanks work is driverless public service (the statement says a specialist at the wheel, c13), or if Waymo's blog said nothing specific about ice (it names heaters, micro-wipers, traction under each wheel and simulated black ice, c17 to c20).",
+    "supporting_facts": [
+      {
+        "claims": [
+          "c3",
+          "c6",
+          "c11"
+        ],
+        "fact": "The blog says Alaska, the governor's post and KTUU say Fairbanks, and the company statement lists three kinds of work."
+      },
+      {
+        "claims": [
+          "c17",
+          "c18",
+          "c19",
+          "c20"
+        ],
+        "fact": "The published design has an answer to each of the residents' worries, heated sensors, redundant sensing, per-wheel traction and simulated ice."
+      },
+      {
+        "claims": [
+          "c13",
+          "c14",
+          "c16",
+          "c31"
+        ],
+        "fact": "The test described is cautious by construction, a specialist at the wheel, limited structured testing, and unanswered questions about driverless plans."
+      }
+    ],
+    "fair_counterpoint": "Residents' worry is not naive. Howe asks whether the testers know black ice, Jackson expects stalls at minus thirty. A design page is a claim, not a result, and the same blog says service can pause for hours or days when weather passes what the system is validated for. Nothing in the reports says how many cars, what dates, or whether driverless service is intended.",
+    "valence": "curious, leaning hopeful. Alaska as the place where an AI driver gets its hardest winter exam, with the residents' skepticism treated as the exam's first question.",
+    "second_movement": {
+      "recontextualizing_fact": "c22 and c23. Each Waymo car is a mobile weather station, sharing what it sees across the fleet, so a winter spent in Fairbanks isn't one car learning, it is the whole fleet learning. And c24 says the other side of that, the company will pause service for hours or days when the weather beats its validation.",
+      "test": "Draw the skeptics at full strength as their own scene. Howe's black ice question, Jackson's stalled car at minus thirty, Woolwine's no. Then let the film narrow honestly. The design page answers the question on paper, the test exists because paper isn't enough, and the reports don't say how many cars or when."
+    },
+    "runner_ups": [
+      "data center / grid story (STAK final decision, covered thread, stance skew)",
+      "pure explainer of lidar (no Alaska stake)"
+    ],
+    "guardrails": [
+      "no 'gap' 'matters' 'pattern'",
+      "never say Waymo said Fairbanks, the blog says Alaska, Fairbanks is the governor and KTUU",
+      "never claim driverless in Fairbanks or any timeline",
+      "Bonelli had not yet responded, never declined",
+      "charging claim attributed to a Facebook post plus GVEA official first hand",
+      "no recall claim (not fact-checked)",
+      "illustrative numbers only where from claims"
+    ]
+  },
+  "claim_map": {
+    "1": [
+      "c25"
+    ],
+    "3": [
+      "c1"
+    ],
+    "4": [
+      "c25"
+    ],
+    "5": [
+      "c25"
+    ],
+    "6": [
+      "c2"
+    ],
+    "7": [
+      "c3",
+      "c5"
+    ],
+    "8": [
+      "c3",
+      "c4",
+      "c30"
+    ],
+    "10": [
+      "c5"
+    ],
+    "11": [
+      "c6"
+    ],
+    "12": [
+      "c7"
+    ],
+    "13": [
+      "c11"
+    ],
+    "14": [
+      "c11"
+    ],
+    "15": [
+      "c12"
+    ],
+    "16": [
+      "c13"
+    ],
+    "17": [
+      "c14"
+    ],
+    "18": [
+      "c15",
+      "c17"
+    ],
+    "19": [
+      "c17"
+    ],
+    "20": [
+      "c18"
+    ],
+    "21": [
+      "c18"
+    ],
+    "22": [
+      "c19"
+    ],
+    "23": [
+      "c19"
+    ],
+    "25": [
+      "c20"
+    ],
+    "27": [
+      "c21"
+    ],
+    "28": [
+      "c23"
+    ],
+    "29": [
+      "c23"
+    ],
+    "30": [
+      "c22"
+    ],
+    "32": [
+      "c17",
+      "c18",
+      "c19",
+      "c20",
+      "c21"
+    ],
+    "33": [
+      "narration"
+    ],
+    "34": [
+      "c26"
+    ],
+    "35": [
+      "c26"
+    ],
+    "36": [
+      "c29"
+    ],
+    "37": [
+      "c27",
+      "c13"
+    ],
+    "39": [
+      "c24"
+    ],
+    "41": [
+      "c24"
+    ],
+    "42": [
+      "narration"
+    ],
+    "43": [
+      "c30"
+    ],
+    "44": [
+      "c30"
+    ],
+    "45": [
+      "c16"
+    ],
+    "46": [
+      "c16"
+    ],
+    "47": [
+      "c2",
+      "narration"
+    ],
+    "48": [
+      "narration"
+    ],
+    "49": [
+      "narration"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A mittened hand wipes a frosted window, a headlight sweeps a dry-looking road and it turns into a mirror holding a frosted roof puck upside down.",
+    "headline": "DO THEY KNOW BLACK ICE?",
+    "motion_by_s": 0.3,
+    "loopback": "The button returns to a road at night under one lamp, the question-mark frost creeping back over the puck, and rises away to one small car reflected upside down in black ice, the mirror of frame one."
+  },
+  "open_loop": {
+    "plant_t": 13.71,
+    "pay_t": 112.65,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "tick",
+    "what": "How many cars, and when? Planted as a quiet blank odometer rolling in the corner of the phone with its own tick and a 0.4 s glow, paid when the same counter and a new blank calendar hold empty on the specialist's clipboard, NO COUNT, NO DATES."
+  },
+  "open_loop_2": {
+    "plant_t": 57.23,
+    "pay_t": 102.11,
+    "what": "What does the system do when winter wins? Planted when the backup returns draw the road as dots thinning toward a dashed white wall, paid on the same dot road as the rings shrink, the car eases to the shoulder with hazards blinking and calendar leaves stack like snow, PAUSE FOR HOURS OR DAYS."
+  },
+  "throughline": {
+    "object": "the RoofPuck",
+    "lands_in_button": "the puck sits half frosted and half clear under a single lamp, frost creeping toward its eye",
+    "param_states": {
+      "1": {
+        "name": "rimed and blind",
+        "frost": 1.0,
+        "clearRing": 0.0,
+        "mode": "blind",
+        "emotion": "sleepy",
+        "glow": 0.0
+      },
+      "2": {
+        "name": "one wiper arc clear, eye open",
+        "frost": 0.7,
+        "clearRing": 0.2,
+        "mode": "blind",
+        "emotion": "alert",
+        "glow": 0.0
+      },
+      "3": {
+        "name": "heated clear ring",
+        "frost": 0.15,
+        "clearRing": 1.0,
+        "mode": "wheel",
+        "emotion": "relieved",
+        "glow": 1.0
+      },
+      "4": {
+        "name": "whiteout, camera blind, backup rings glowing",
+        "frost": 0.3,
+        "clearRing": 0.6,
+        "mode": "backup",
+        "emotion": "determined",
+        "glow": 1.0
+      },
+      "5": {
+        "name": "clean and warm-lit",
+        "frost": 0.0,
+        "clearRing": 1.0,
+        "mode": "wheel",
+        "emotion": "chatty",
+        "glow": 0.6
+      },
+      "6": {
+        "name": "half frosted, half clear",
+        "frost": 0.5,
+        "clearRing": 0.5,
+        "mode": "wheel",
+        "emotion": "pensive",
+        "glow": 0.3
+      }
+    },
+    "states": [
+      {
+        "at_s": 2.75,
+        "state": "S1 rimed and blind (frost 1.0, clearRing 0.0, mode blind)"
+      },
+      {
+        "at_s": 27.56,
+        "state": "S2 one wiper arc clear, eye open (frost 0.7, clearRing 0.2)"
+      },
+      {
+        "at_s": 49.03,
+        "state": "S3 heated clear ring (frost 0.15, clearRing 1.0, glow 1.0)"
+      },
+      {
+        "at_s": 57.23,
+        "state": "S4 whiteout, camera blind, backup rings glowing, Waymo's stated design (frost 0.3, clearRing 0.6, mode backup)"
+      },
+      {
+        "at_s": 68.94,
+        "state": "S5 clean and warm-lit at the weather station (frost 0.0, clearRing 1.0, glow 0.6)"
+      },
+      {
+        "at_s": 84.17,
+        "state": "S5 regressing, a gust frosts the rim of the clear eye as doubt enters (frost 0.25, clearRing 0.8)"
+      },
+      {
+        "at_s": 120.46,
+        "state": "S6 half frosted, half clear under one lamp (frost 0.5, clearRing 0.5)"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 21.95,
+      "type": "scale-pullback",
+      "what": "the statewide pin gives way to Fairbanks as one dot, the camera craning down the map",
+      "hold_s": 0.8
+    },
+    {
+      "t": 31.41,
+      "type": "build-on",
+      "what": "one fogged road splits into three lanes that lock in one by one",
+      "hold_s": 0.8
+    },
+    {
+      "t": 72.95,
+      "type": "scale-pullback",
+      "what": "from one weather-station puck to an abstract snow field of unnumbered pings",
+      "hold_s": 0.8
+    },
+    {
+      "t": 124.77,
+      "type": "scale-pullback",
+      "what": "from the half-frosted puck to one small car on a vast dark Fairbanks road under one lamp",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 1.5
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 0.35
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "at_s": 89.45,
+        "level": 0.1
+      },
+      {
+        "at_s": 90.05,
+        "level": 0.8
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "at_s": 112.65,
+        "level": 1.4
+      },
+      {
+        "line": 13,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "at_s": 122.19,
+        "level": 0.12
+      },
+      {
+        "at_s": 123.29,
+        "level": 2.0
+      },
+      {
+        "at_s": 119.1,
+        "level": 0.15
+      },
+      {
+        "at_s": 120.3,
+        "level": 0.9
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 122.19,
+    "riser_at": 106.62,
+    "silence_at": 122.19,
+    "payoff_at": 122.69,
+    "button_pattern": "callback",
+    "interrupt_at": 54.2,
+    "extra_dips": [
+      89.45,
+      102.11
+    ]
+  },
+  "shots": [
+    {
+      "title": "The mirror road",
+      "vo_line": 0,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "ground",
+      "stage": "mirror-road-fog",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the puck reflection at x540 y1080",
+      "means": "A resident wipes a window, a headlight finds a road that is really a mirror and a frosted puck wipes one question mark clear",
+      "ambient": "wind over the road, frost ferns crunch, the headlight hums",
+      "hero": {
+        "name": "roof puck + mirror road + headlight beam + mittened hand + question-mark frost patch",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "55% puck and reflection, 25% road, 20% window and hand"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-8.660"
+    },
+    {
+      "title": "The post",
+      "vo_line": 1,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "high",
+      "stage": "warm-kitchen-phone",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the phone at x380 y1000 and the puck reflection at x780 y700",
+      "means": "A phone on a warm kitchen table shows the dated blog post, a pin lands wide on Alaska, cones and a snow drum light, the puck small in the window glass",
+      "ambient": "a kettle ticks in the kitchen, the screen scrolls, wind at the glass",
+      "hero": {
+        "name": "phone + blog post + Alaska pin + cone loop + snow drum + small reflected puck",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "60% phone, 25% screen graphics, 15% reflected puck"
+      },
+      "id": 2,
+      "start_s": 8.66,
+      "t": "8.660-18.420"
+    },
+    {
+      "title": "Alaska and Fairbanks",
+      "vo_line": 2,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "alaska-paper-map",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the Fairbanks pin at x600 y860",
+      "means": "The post's pin stays wide on Alaska, then the camera cranes down from the statewide pin until Fairbanks is one dot under the governor's card",
+      "ambient": "the map paper settles, the pins wobble",
+      "hero": {
+        "name": "Alaska paper map + two pins + two post cards + cloth banner",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "60% map and pins, 30% cards, 10% banner"
+      },
+      "id": 3,
+      "start_s": 18.42,
+      "t": "18.420-27.560"
+    },
+    {
+      "title": "Three kinds of work",
+      "vo_line": 3,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "three-lane-road",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown+dollyThrough",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the three lanes at x540 y980",
+      "means": "The road splits into three lanes, a roadside logger, a specialist at the wheel, a cone course",
+      "ambient": "tires hiss on packed snow, lane lines lock",
+      "hero": {
+        "name": "three lanes + car silhouette with puck + roadside logger + specialist hands + cones",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% lanes, 25% car and puck, 15% figures and cones"
+      },
+      "id": 4,
+      "start_s": 27.56,
+      "t": "27.560-42.120"
+    },
+    {
+      "title": "Inside the puck",
+      "vo_line": 4,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "puck-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the puck cutaway at x420 y940",
+      "means": "The puck opens, three sensor layers light and amber heaters melt a clear ring around its eye",
+      "ambient": "heater coils tick, meltwater drips, sleet bounces",
+      "hero": {
+        "name": "puck cutaway + sensor layers + heater coils + micro wipers",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "65% cutaway, 25% coils and wipers, 10% sleet"
+      },
+      "id": 5,
+      "start_s": 42.12,
+      "t": "42.120-54.200"
+    },
+    {
+      "title": "The whiteout",
+      "vo_line": 5,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "puck-pov-whiteout",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the puck's own eye holds still while the returns move",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the dot road vanishing at x540 y880",
+      "means": "From inside the puck the view goes white and radar and lidar returns draw the road as dots",
+      "ambient": "the whiteout roars, returns pulse",
+      "hero": {
+        "name": "white field + radar and lidar returns + dot road + white wall",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "55% dot road, 30% returns, 15% white wall"
+      },
+      "id": 6,
+      "start_s": 54.2,
+      "t": "54.200-61.140"
+    },
+    {
+      "title": "Under each wheel",
+      "vo_line": 6,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "ground",
+      "stage": "under-car-ice",
+      "pov": "cross-section-cutaway",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the four gauges at x540 y920",
+      "means": "Under the car four traction gauges rise and a simulated glass road is poured",
+      "ambient": "the ice creaks under the tires, the needles swing",
+      "hero": {
+        "name": "four wheels + traction gauges + broken glazed ice + simulation box",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "55% gauges, 30% wheels and ice, 15% simulation box"
+      },
+      "id": 7,
+      "start_s": 61.14,
+      "t": "61.140-68.940"
+    },
+    {
+      "title": "The weather station",
+      "vo_line": 7,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "snow-field-abstract",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the pings at x620 y960",
+      "means": "One warm clean puck pings and the camera pulls back to an abstract snow field of unnumbered pings",
+      "ambient": "the vane spins, pings cross the snow field",
+      "hero": {
+        "name": "warm weather-station puck + abstract snow field of pings + mile markers",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "55% pings, 30% puck, 15% markers"
+      },
+      "id": 8,
+      "start_s": 68.94,
+      "t": "68.940-82.340"
+    },
+    {
+      "title": "On paper",
+      "vo_line": 8,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "roadside-sheet",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the gust is the move",
+      "transition_in": "morph",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the sheet at x360 y900 and the puck at x760 y820",
+      "means": "The design folds into one sheet that lands on the dark silent patch and a gust frosts the rim of the puck's eye",
+      "ambient": "the sheet flaps on its frame, a gust hisses",
+      "hero": {
+        "name": "paper sheet + dark silent patch + puck with frosting rim",
+        "parts": 38,
+        "zones": 3,
+        "detail_note": "50% sheet, 40% puck, 10% patch"
+      },
+      "id": 9,
+      "start_s": 82.34,
+      "t": "82.340-87.000"
+    },
+    {
+      "title": "The test",
+      "vo_line": 9,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "billboard-row",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the middle billboard at x540 y860",
+      "means": "Three roadside billboards carry the skeptics and the mayor, one holds a worried thought-frame with a crimson blink on a shoulder under dim white hazards",
+      "ambient": "wind on the billboards, a car idles",
+      "hero": {
+        "name": "three billboards + thought-frame car silhouette",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "65% billboards, 35% thought-frame"
+      },
+      "id": 10,
+      "start_s": 87.0,
+      "t": "87.000-97.560"
+    },
+    {
+      "title": "When winter wins",
+      "vo_line": 11,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "puck-pov-return",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the dot road at x540 y900 and the car at x700 y1100",
+      "means": "The dot road returns, the needle crosses VALIDATED LIMIT, the rings shrink and the dolly decelerates to a dead stop as the car pulls onto the shoulder",
+      "ambient": "returns pulse, the hazards tick, snow settles",
+      "hero": {
+        "name": "dot road + VALIDATED LIMIT gauge + shrinking rings + car on the shoulder + calendar leaves",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% dot road and rings, 30% car and leaves, 20% gauge"
+      },
+      "id": 11,
+      "start_s": 97.56,
+      "t": "97.560-106.620"
+    },
+    {
+      "title": "No count, no dates",
+      "vo_line": 12,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "overhead",
+      "stage": "dashboard-clipboard",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:locked overhead so the pen's non-move is the only motion",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the clipboard at x440 y980",
+      "means": "On the dashboard the paper frosts, the clipboard counter and calendar stay blank and the pen hovers over an unanswered question",
+      "ambient": "the heater fan hums, the drums settle, the pen scratches nothing",
+      "hero": {
+        "name": "dashboard + frosted sheet + clipboard counter and calendar + specialist pen",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "60% clipboard, 25% pen, 15% frosted sheet"
+      },
+      "id": 12,
+      "start_s": 106.62,
+      "t": "106.620-120.460"
+    },
+    {
+      "title": "The button",
+      "vo_line": 14,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "night-road-lamp",
+      "pov": "orbital-aerial",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the small car at x300 y1240 under the lamp",
+      "means": "Under one lamp the puck sits half frosted, frost creeps toward its eye and the camera rises to one small car on a vast dark road, reflected upside down in black ice, the mirror of frame one",
+      "ambient": "the lamp buzzes, snow falls, wind over the road",
+      "hero": {
+        "name": "half-frosted puck + single lamp + small car + vast dark road",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% road and dark, 35% car and puck, 20% lamp pool"
+      },
+      "id": 13,
+      "start_s": 120.46,
+      "t": "120.460-128.600"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A Fairbanks resident asked about the people testing Waymo's self-driving cars. Do they know to look for black ice?",
+      "phrase": "A Fairbanks resident asked",
+      "shows": "a mittened hand wipes a frosted window and through it a headlight sweeps a dry-looking road that turns to a mirror holding the roof puck upside down, a plate reads A FAIRBANKS RESIDENT ASKED",
+      "sfx": "whoosh",
+      "means": "a fairbanks resident asked",
+      "rehook": "",
+      "draw": {
+        "subject": "a mittened hand",
+        "action": "wipes a frosted window and through it a headlight sweeps a dry-looking road that turns to a mirror holding the roof puck upside down",
+        "emotion": "uneasy",
+        "annotation": "A FAIRBANKS RESIDENT ASKED"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "a mittened hand wipes a frosted window and through it a headlight sweeps a dry-looking road that turns to a mirror holding the roof puck upside down, a plate reads A FAIRBANKS RESIDENT ASKED",
+        "reaction": "the reflection shivers",
+        "ambient": "wind over the road, frost ferns crunch, the headlight hums"
+      },
+      "t": "0.000-2.750",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.75,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.75
+      },
+      "offset": 2.75,
+      "vo": "A Fairbanks resident asked about the people testing Waymo's self-driving cars. Do they know to look for black ice?",
+      "phrase": "testing Waymo's self-driving cars.",
+      "shows": "the roof puck settles rimed in frost onto a dark car silhouette in the fog, its lens eye blind white under a jagged frost brow, a plate reads ILLUSTRATIVE",
+      "sfx": "thump",
+      "means": "illustrative",
+      "rehook": "",
+      "draw": {
+        "subject": "the roof puck",
+        "action": "settles rimed in frost onto a dark car silhouette in the fog, its lens eye blind white under a jagged frost brow",
+        "emotion": "sleepy",
+        "annotation": "ILLUSTRATIVE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the roof puck settles rimed in frost onto a dark car silhouette in the fog, its lens eye blind white under a jagged frost brow, a plate reads ILLUSTRATIVE",
+        "reaction": "frost ferns creep",
+        "ambient": "wind over the road, frost ferns crunch, the headlight hums"
+      },
+      "t": "2.750-5.770",
+      "key": 3
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 5.77,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 5.77
+      },
+      "offset": 5.77,
+      "vo": "A Fairbanks resident asked about the people testing Waymo's self-driving cars. Do they know to look for black ice?",
+      "phrase": "Do they know to",
+      "shows": "the puck's micro wiper drags one arc through the rime in the shape of a question mark and the lens eye blinks open, a plate reads DO THEY KNOW?",
+      "sfx": "slide",
+      "means": "do they know?",
+      "rehook": "",
+      "draw": {
+        "subject": "the puck's micro wiper",
+        "action": "drags one arc through the rime in the shape of a question mark and the lens eye blinks open",
+        "emotion": "startled",
+        "annotation": "DO THEY KNOW?"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "the puck's micro wiper drags one arc through the rime in the shape of a question mark and the lens eye blinks open, a plate reads DO THEY KNOW?",
+        "reaction": "the eyebrows jump",
+        "ambient": "wind over the road, frost ferns crunch, the headlight hums"
+      },
+      "kick": true,
+      "t": "5.770-6.990",
+      "key": 4
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 6.99,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.99
+      },
+      "offset": 6.99,
+      "vo": "A Fairbanks resident asked about the people testing Waymo's self-driving cars. Do they know to look for black ice?",
+      "phrase": "black ice?",
+      "shows": "the question-mark patch freezes back over behind the wiper in jagged crystals while the puck squints down at the mirror road, a plate reads BLACK ICE",
+      "sfx": "crunch",
+      "means": "black ice",
+      "rehook": "",
+      "draw": {
+        "subject": "the question-mark patch",
+        "action": "freezes back over behind the wiper in jagged crystals while the puck squints down at the mirror road",
+        "emotion": "wary",
+        "annotation": "BLACK ICE"
+      },
+      "plate_at": "corner-tag",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "the question-mark patch freezes back over behind the wiper in jagged crystals while the puck squints down at the mirror road, a plate reads BLACK ICE",
+        "reaction": "the frost crunches back",
+        "ambient": "wind over the road, frost ferns crunch, the headlight hums"
+      },
+      "t": "6.990-8.660",
+      "key": 5
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 8.66,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On November fifth, Waymo posted that this season in Alaska, it will run closed-course tests and collect heavy snowfall data.",
+      "phrase": "On November fifth, Waymo",
+      "shows": "a phone in a warm kitchen slides across a table and lights up with Waymo's blog post and its date tab while the puck sits small, reflected in the window glass behind it, a plate reads NOVEMBER 5TH",
+      "sfx": "page",
+      "means": "november 5th",
+      "rehook": "",
+      "draw": {
+        "subject": "a phone in a warm kitchen",
+        "action": "slides across a table and lights up with Waymo's blog post and its date tab while the puck sits small, reflected in the window glass behind it",
+        "emotion": "curious",
+        "annotation": "NOVEMBER 5TH"
+      },
+      "plate_at": "phone-screen",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a phone in a warm kitchen slides across a table and lights up with Waymo's blog post and its date tab while the puck sits small, reflected in the window glass behind it, a plate reads NOVEMBER 5TH",
+        "reaction": "the screen scrolls",
+        "ambient": "a kettle ticks in the kitchen, the screen scrolls, wind at the glass"
+      },
+      "t": "8.660-12.190",
+      "key": 6
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 12.19,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "On November fifth, Waymo posted that this season in Alaska, it will run closed-course tests and collect heavy snowfall data.",
+      "phrase": "Alaska, it will run",
+      "shows": "a pin on the phone screen drops onto an Alaska outline and lands wide across the whole state, a plate reads THIS SEASON \u00b7 ALASKA",
+      "sfx": "pop",
+      "means": "this season \u00b7 alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "a pin on the phone screen",
+        "action": "drops onto an Alaska outline and lands wide across the whole state",
+        "emotion": "curious",
+        "annotation": "THIS SEASON \u00b7 ALASKA"
+      },
+      "plate_at": "phone-screen",
+      "claims": [
+        "c3",
+        "c5"
+      ],
+      "choreo": {
+        "primary": "a pin on the phone screen drops onto an Alaska outline and lands wide across the whole state, a plate reads THIS SEASON \u00b7 ALASKA",
+        "reaction": "the pin wobbles",
+        "ambient": "a kettle ticks in the kitchen, the screen scrolls, wind at the glass"
+      },
+      "t": "12.190-13.710",
+      "key": 7
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 13.71,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 5.05
+      },
+      "offset": 5.05,
+      "vo": "On November fifth, Waymo posted that this season in Alaska, it will run closed-course tests and collect heavy snowfall data.",
+      "phrase": "closed-course tests and collect",
+      "shows": "a small cone loop on the screen lights cone by cone, then a snow data drum fills beside it while a small blank counter on the post rolls and glows once, a plate reads CLOSED-COURSE TESTS \u00b7 HEAVY SNOWFALL DATA",
+      "sfx": "tick",
+      "means": "closed-course tests \u00b7 heavy snowfall data",
+      "rehook": "",
+      "draw": {
+        "subject": "a small cone loop on the screen",
+        "action": "lights cone by cone, then a snow data drum fills beside it while a small blank counter on the post rolls and glows once",
+        "emotion": "puzzled",
+        "annotation": "CLOSED-COURSE TESTS \u00b7 HEAVY SNOWFALL DATA"
+      },
+      "plate_at": "phone-screen",
+      "claims": [
+        "c3",
+        "c4",
+        "c30"
+      ],
+      "choreo": {
+        "primary": "a small cone loop on the screen lights cone by cone, then a snow data drum fills beside it while a small blank counter on the post rolls and glows once, a plate reads CLOSED-COURSE TESTS \u00b7 HEAVY SNOWFALL DATA",
+        "reaction": "the drum fills",
+        "ambient": "a kettle ticks in the kitchen, the screen scrolls, wind at the glass"
+      },
+      "t": "13.710-18.420",
+      "key": 8
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 18.42,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Its post says only Alaska. The governor's post names Fairbanks, and says there's no better proving ground for winter driving.",
+      "phrase": "Its post says only",
+      "shows": "the post's Alaska plate drops onto a paper map with its blurred state-wide pin and the puck taps it with a wiper eyebrow, a plate reads THE POST SAYS ONLY ALASKA",
+      "sfx": "thud",
+      "means": "the post says only alaska",
+      "rehook": "",
+      "draw": {
+        "subject": "the post's Alaska plate",
+        "action": "drops onto a paper map with its blurred state-wide pin and the puck taps it with a wiper eyebrow",
+        "emotion": "careful",
+        "annotation": "THE POST SAYS ONLY ALASKA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "the post's Alaska plate drops onto a paper map with its blurred state-wide pin and the puck taps it with a wiper eyebrow, a plate reads THE POST SAYS ONLY ALASKA",
+        "reaction": "the pin stays wide",
+        "ambient": "the map paper settles, the pins wobble"
+      },
+      "t": "18.420-21.950",
+      "key": 10
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 21.95,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "Its post says only Alaska. The governor's post names Fairbanks, and says there's no better proving ground for winter driving.",
+      "phrase": "names Fairbanks, and says",
+      "shows": "a governor's post card slides over the map and its pin snaps down onto Fairbanks, a plate reads GOVERNOR'S POST \u00b7 FAIRBANKS",
+      "sfx": "pop",
+      "means": "governor's post \u00b7 fairbanks",
+      "rehook": "",
+      "draw": {
+        "subject": "a governor's post card",
+        "action": "slides over the map and its pin snaps down onto Fairbanks",
+        "emotion": "bright",
+        "annotation": "GOVERNOR'S POST \u00b7 FAIRBANKS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a governor's post card slides over the map and its pin snaps down onto Fairbanks, a plate reads GOVERNOR'S POST \u00b7 FAIRBANKS",
+        "reaction": "the pin snaps",
+        "ambient": "the map paper settles, the pins wobble"
+      },
+      "t": "21.950-24.970",
+      "key": 11
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 24.97,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 6.55
+      },
+      "offset": 6.55,
+      "vo": "Its post says only Alaska. The governor's post names Fairbanks, and says there's no better proving ground for winter driving.",
+      "phrase": "proving ground for winter",
+      "shows": "a frost-rimmed cloth banner unrolls and snaps taut over the Fairbanks dot as the camera finishes craning down, a plate reads \"NO BETTER PROVING GROUND\"",
+      "sfx": "snap",
+      "means": "\"no better proving ground\"",
+      "rehook": "",
+      "draw": {
+        "subject": "a frost-rimmed cloth banner",
+        "action": "unrolls and snaps taut over the Fairbanks dot as the camera finishes craning down",
+        "emotion": "bright",
+        "annotation": "\"NO BETTER PROVING GROUND\""
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a frost-rimmed cloth banner unrolls and snaps taut over the Fairbanks dot as the camera finishes craning down, a plate reads \"NO BETTER PROVING GROUND\"",
+        "reaction": "the cloth snaps",
+        "ambient": "the map paper settles, the pins wobble"
+      },
+      "t": "24.970-27.560",
+      "key": 12
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 27.56,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In a statement quoted by a TV station, Waymo lists three kinds of work in Fairbanks. Manual data collection, autonomous driving with a specialist at the wheel, and limited structured testing.",
+      "phrase": "In a statement quoted",
+      "shows": "the puck on its car silhouette rides up to the head of a fog-white road as the camera cranes over it and a TV-station card slides in, a plate reads QUOTED BY TV STATION",
+      "sfx": "whoosh",
+      "means": "quoted by tv station",
+      "rehook": "rehook: the camera cranes over the puck at the head of a fogged road",
+      "draw": {
+        "subject": "the puck on its car silhouette",
+        "action": "rides up to the head of a fog-white road as the camera cranes over it and a TV-station card slides in",
+        "emotion": "alert",
+        "annotation": "QUOTED BY TV STATION"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "the puck on its car silhouette rides up to the head of a fog-white road as the camera cranes over it and a TV-station card slides in, a plate reads QUOTED BY TV STATION",
+        "reaction": "snow plumes behind",
+        "ambient": "tires hiss on packed snow, lane lines lock"
+      },
+      "t": "27.560-31.410",
+      "key": 13
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 31.41,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.85
+      },
+      "offset": 3.85,
+      "vo": "In a statement quoted by a TV station, Waymo lists three kinds of work in Fairbanks. Manual data collection, autonomous driving with a specialist at the wheel, and limited structured testing.",
+      "phrase": "three kinds of work",
+      "shows": "three lanes already laid in the road click and fill with content one by one, a roadside logger, a wheel, a cone course, a plate reads THREE KINDS OF WORK",
+      "sfx": "click",
+      "means": "three kinds of work",
+      "rehook": "",
+      "draw": {
+        "subject": "three lanes already laid in the road",
+        "action": "click and fill with content one by one, a roadside logger, a wheel, a cone course",
+        "emotion": "focused",
+        "annotation": "THREE KINDS OF WORK"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "three lanes already laid in the road click and fill with content one by one, a roadside logger, a wheel, a cone course, a plate reads THREE KINDS OF WORK",
+        "reaction": "the lane lines lock",
+        "ambient": "tires hiss on packed snow, lane lines lock"
+      },
+      "t": "31.410-33.830",
+      "key": 14
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 33.83,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.27
+      },
+      "offset": 6.27,
+      "vo": "In a statement quoted by a TV station, Waymo lists three kinds of work in Fairbanks. Manual data collection, autonomous driving with a specialist at the wheel, and limited structured testing.",
+      "phrase": "Manual data collection, autonomous",
+      "shows": "the first lane fills as a person in a parka steps in at the roadside holding a handheld logger and taps it, a plate reads MANUAL DATA COLLECTION",
+      "sfx": "tap",
+      "means": "manual data collection",
+      "rehook": "",
+      "draw": {
+        "subject": "the first lane",
+        "action": "fills as a person in a parka steps in at the roadside holding a handheld logger and taps it",
+        "emotion": "focused",
+        "annotation": "MANUAL DATA COLLECTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "the first lane fills as a person in a parka steps in at the roadside holding a handheld logger and taps it, a plate reads MANUAL DATA COLLECTION",
+        "reaction": "the logger blinks",
+        "ambient": "tires hiss on packed snow, lane lines lock"
+      },
+      "t": "33.830-36.010",
+      "key": 15
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 36.01,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 8.45
+      },
+      "offset": 8.45,
+      "vo": "In a statement quoted by a TV station, Waymo lists three kinds of work in Fairbanks. Manual data collection, autonomous driving with a specialist at the wheel, and limited structured testing.",
+      "phrase": "autonomous driving with a",
+      "shows": "the second lane fills as a specialist silhouette's hands slide onto the wheel while the puck steers, a plate reads SPECIALIST AT THE WHEEL",
+      "sfx": "slide",
+      "means": "specialist at the wheel",
+      "rehook": "",
+      "draw": {
+        "subject": "the second lane",
+        "action": "fills as a specialist silhouette's hands slide onto the wheel while the puck steers",
+        "emotion": "focused",
+        "annotation": "SPECIALIST AT THE WHEEL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "the second lane fills as a specialist silhouette's hands slide onto the wheel while the puck steers, a plate reads SPECIALIST AT THE WHEEL",
+        "reaction": "the hands hover",
+        "ambient": "tires hiss on packed snow, lane lines lock"
+      },
+      "t": "36.010-39.110",
+      "key": 16
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 39.11,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 11.55
+      },
+      "offset": 11.55,
+      "vo": "In a statement quoted by a TV station, Waymo lists three kinds of work in Fairbanks. Manual data collection, autonomous driving with a specialist at the wheel, and limited structured testing.",
+      "phrase": "limited structured testing.",
+      "shows": "the third lane lights as a closed course of cones with a short taped loop, a plate reads LIMITED STRUCTURED TESTING",
+      "sfx": "tick",
+      "means": "limited structured testing",
+      "rehook": "",
+      "draw": {
+        "subject": "the third lane",
+        "action": "lights as a closed course of cones with a short taped loop",
+        "emotion": "careful",
+        "annotation": "LIMITED STRUCTURED TESTING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the third lane lights as a closed course of cones with a short taped loop, a plate reads LIMITED STRUCTURED TESTING",
+        "reaction": "the cones wobble",
+        "ambient": "tires hiss on packed snow, lane lines lock"
+      },
+      "t": "39.110-42.120",
+      "key": 17
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 42.12,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Waymo's post says the sixth generation driver has cameras, radar and lidar, with built in heaters and micro wipers to keep sensors clear in icy conditions.",
+      "phrase": "Waymo's post says the",
+      "shows": "the puck splits open into a cutaway as the camera pushes into its smooth shell, a plate reads SIXTH-GENERATION WAYMO DRIVER",
+      "sfx": "whoosh",
+      "means": "sixth-generation waymo driver",
+      "rehook": "rehook: the puck splits open into a cutaway",
+      "draw": {
+        "subject": "the puck",
+        "action": "splits open into a cutaway as the camera pushes into its smooth shell",
+        "emotion": "proud",
+        "annotation": "SIXTH-GENERATION WAYMO DRIVER"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c15",
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the puck splits open into a cutaway as the camera pushes into its smooth shell, a plate reads SIXTH-GENERATION WAYMO DRIVER",
+        "reaction": "the shell halves part",
+        "ambient": "heater coils tick, meltwater drips, sleet bounces"
+      },
+      "t": "42.120-45.610",
+      "key": 18
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 45.61,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.49
+      },
+      "offset": 3.49,
+      "vo": "Waymo's post says the sixth generation driver has cameras, radar and lidar, with built in heaters and micro wipers to keep sensors clear in icy conditions.",
+      "phrase": "cameras, radar and lidar,",
+      "shows": "three sensor layers light in turn inside the cutaway, camera, radar, lidar, a plate reads CAMERAS \u00b7 RADAR \u00b7 LIDAR",
+      "sfx": "click",
+      "means": "cameras \u00b7 radar \u00b7 lidar",
+      "rehook": "",
+      "draw": {
+        "subject": "three sensor layers",
+        "action": "light in turn inside the cutaway, camera, radar, lidar",
+        "emotion": "focused",
+        "annotation": "CAMERAS \u00b7 RADAR \u00b7 LIDAR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "three sensor layers light in turn inside the cutaway, camera, radar, lidar, a plate reads CAMERAS \u00b7 RADAR \u00b7 LIDAR",
+        "reaction": "each layer clicks in",
+        "ambient": "heater coils tick, meltwater drips, sleet bounces"
+      },
+      "t": "45.610-49.030",
+      "key": 19
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 49.03,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 6.91
+      },
+      "offset": 6.91,
+      "vo": "Waymo's post says the sixth generation driver has cameras, radar and lidar, with built in heaters and micro wipers to keep sensors clear in icy conditions.",
+      "phrase": "heaters and micro wipers",
+      "shows": "amber heater coils glow and melt the jagged rime into a smooth clear ring around the eye while the micro wipers flick, a plate reads HEATERS \u00b7 MICRO-WIPERS",
+      "sfx": "sizzle",
+      "means": "heaters \u00b7 micro-wipers",
+      "rehook": "",
+      "draw": {
+        "subject": "amber heater coils",
+        "action": "glow and melt the jagged rime into a smooth clear ring around the eye while the micro wipers flick",
+        "emotion": "relieved",
+        "annotation": "HEATERS \u00b7 MICRO-WIPERS"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "amber heater coils glow and melt the jagged rime into a smooth clear ring around the eye while the micro wipers flick, a plate reads HEATERS \u00b7 MICRO-WIPERS",
+        "reaction": "meltwater beads",
+        "ambient": "heater coils tick, meltwater drips, sleet bounces"
+      },
+      "t": "49.030-51.690",
+      "key": 20
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 51.69,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 9.57
+      },
+      "offset": 9.57,
+      "vo": "Waymo's post says the sixth generation driver has cameras, radar and lidar, with built in heaters and micro wipers to keep sensors clear in icy conditions.",
+      "phrase": "clear in icy conditions.",
+      "shows": "the lens eye opens wide and clear inside its heated ring as sleet bounces off, a plate reads SENSORS KEPT CLEAR",
+      "sfx": "pop",
+      "means": "sensors kept clear",
+      "rehook": "",
+      "draw": {
+        "subject": "the lens eye",
+        "action": "opens wide and clear inside its heated ring as sleet bounces off",
+        "emotion": "confident",
+        "annotation": "SENSORS KEPT CLEAR"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "the lens eye opens wide and clear inside its heated ring as sleet bounces off, a plate reads SENSORS KEPT CLEAR",
+        "reaction": "sleet bounces",
+        "ambient": "heater coils tick, meltwater drips, sleet bounces"
+      },
+      "t": "51.690-54.200",
+      "key": 21
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 54.2,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Waymo says if cameras struggle in a blinding whiteout, another sensing system backs them up.",
+      "phrase": "Waymo says if cameras",
+      "shows": "the puck's own view floods white as the camera layer goes blind in a whiteout, a plate reads CAMERAS IN A WHITEOUT",
+      "sfx": "whoosh",
+      "means": "cameras in a whiteout",
+      "rehook": "",
+      "draw": {
+        "subject": "the puck's own view",
+        "action": "floods white as the camera layer goes blind in a whiteout",
+        "emotion": "alarmed",
+        "annotation": "CAMERAS IN A WHITEOUT"
+      },
+      "plate_at": "hud",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "the puck's own view floods white as the camera layer goes blind in a whiteout, a plate reads CAMERAS IN A WHITEOUT",
+        "reaction": "the view blanks",
+        "ambient": "the whiteout roars, returns pulse"
+      },
+      "t": "54.200-57.230",
+      "key": 22
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 57.23,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.03
+      },
+      "offset": 3.03,
+      "vo": "Waymo says if cameras struggle in a blinding whiteout, another sensing system backs them up.",
+      "phrase": "whiteout, another sensing system",
+      "shows": "amber radar and lidar returns pulse across the white and draw the road ahead as dots, which thin out toward a dashed white wall, a plate reads ONE SENSOR BLIND \u00b7 ANOTHER BACKS IT UP",
+      "sfx": "pulse",
+      "means": "one sensor blind \u00b7 another backs it up",
+      "rehook": "",
+      "draw": {
+        "subject": "amber radar and lidar returns",
+        "action": "pulse across the white and draw the road ahead as dots, which thin out toward a dashed white wall",
+        "emotion": "determined",
+        "annotation": "ONE SENSOR BLIND \u00b7 ANOTHER BACKS IT UP"
+      },
+      "plate_at": "hud",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "amber radar and lidar returns pulse across the white and draw the road ahead as dots, which thin out toward a dashed white wall, a plate reads ONE SENSOR BLIND \u00b7 ANOTHER BACKS IT UP",
+        "reaction": "the dots draw",
+        "ambient": "the whiteout roars, returns pulse"
+      },
+      "kick": true,
+      "t": "57.230-61.140",
+      "key": 23
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 61.14,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The car measures traction changes under each wheel. Waymo also recreates black ice in simulation.",
+      "phrase": "The car measures traction",
+      "shows": "the camera drops under the car silhouette to four wheels on broken glazed ice as four traction gauges rise above them, a plate reads TRACTION \u00b7 EACH WHEEL",
+      "sfx": "clunk",
+      "means": "traction \u00b7 each wheel",
+      "rehook": "rehook: the camera drops under the car to four wheels on glazed ice",
+      "draw": {
+        "subject": "the camera",
+        "action": "drops under the car silhouette to four wheels on broken glazed ice as four traction gauges rise above them",
+        "emotion": "tense",
+        "annotation": "TRACTION \u00b7 EACH WHEEL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "the camera drops under the car silhouette to four wheels on broken glazed ice as four traction gauges rise above them, a plate reads TRACTION \u00b7 EACH WHEEL",
+        "reaction": "the needles swing",
+        "ambient": "the ice creaks under the tires, the needles swing"
+      },
+      "t": "61.140-65.550",
+      "key": 25
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 65.55,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.41
+      },
+      "offset": 4.41,
+      "vo": "The car measures traction changes under each wheel. Waymo also recreates black ice in simulation.",
+      "phrase": "recreates black ice in",
+      "shows": "a digital grid pours a glass road out of light in a box labelled SIMULATION while the puck watches its own reflection, a plate reads SIMULATED BLACK ICE \u00b7 SIMULATION",
+      "sfx": "cascade",
+      "means": "simulated black ice \u00b7 simulation",
+      "rehook": "",
+      "draw": {
+        "subject": "a digital grid",
+        "action": "pours a glass road out of light in a box labelled SIMULATION while the puck watches its own reflection",
+        "emotion": "curious",
+        "annotation": "SIMULATED BLACK ICE \u00b7 SIMULATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "a digital grid pours a glass road out of light in a box labelled SIMULATION while the puck watches its own reflection, a plate reads SIMULATED BLACK ICE \u00b7 SIMULATION",
+        "reaction": "the glass ripples",
+        "ambient": "the ice creaks under the tires, the needles swing"
+      },
+      "t": "65.550-68.940",
+      "key": 27
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 68.94,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Waymo says each car acts as a mobile weather station, sharing what it sees across the fleet. The company says it has logged tens of thousands of real world miles in snowy regions elsewhere.",
+      "phrase": "Waymo says each car",
+      "shows": "the clean puck glows warm, sprouts a tiny vane and thermometer and sends out a ping, a plate reads MOBILE WEATHER STATION",
+      "sfx": "ping",
+      "means": "mobile weather station",
+      "rehook": "",
+      "draw": {
+        "subject": "the clean puck",
+        "action": "glows warm, sprouts a tiny vane and thermometer and sends out a ping",
+        "emotion": "chatty",
+        "annotation": "MOBILE WEATHER STATION"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "the clean puck glows warm, sprouts a tiny vane and thermometer and sends out a ping, a plate reads MOBILE WEATHER STATION",
+        "reaction": "the vane spins",
+        "ambient": "the vane spins, pings cross the snow field"
+      },
+      "t": "68.940-72.950",
+      "key": 28
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 72.95,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.01
+      },
+      "offset": 4.01,
+      "vo": "Waymo says each car acts as a mobile weather station, sharing what it sees across the fleet. The company says it has logged tens of thousands of real world miles in snowy regions elsewhere.",
+      "phrase": "sharing what it sees",
+      "shows": "the camera pulls back from one puck to an abstract snow field of unnumbered pings answering each other, a plate reads SHARED ACROSS THE FLEET \u00b7 ILLUSTRATIVE",
+      "sfx": "whoosh",
+      "means": "shared across the fleet \u00b7 illustrative",
+      "rehook": "rehook: the camera pulls back from one puck to a field of pings",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back from one puck to an abstract snow field of unnumbered pings answering each other",
+        "emotion": "warm",
+        "annotation": "SHARED ACROSS THE FLEET \u00b7 ILLUSTRATIVE"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "the camera pulls back from one puck to an abstract snow field of unnumbered pings answering each other, a plate reads SHARED ACROSS THE FLEET \u00b7 ILLUSTRATIVE",
+        "reaction": "the pings cross",
+        "ambient": "the vane spins, pings cross the snow field"
+      },
+      "t": "72.950-77.810",
+      "key": 29
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 77.81,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 8.87
+      },
+      "offset": 8.87,
+      "vo": "Waymo says each car acts as a mobile weather station, sharing what it sees across the fleet. The company says it has logged tens of thousands of real world miles in snowy regions elsewhere.",
+      "phrase": "of thousands of real",
+      "shows": "the snow field of pings answers everywhere except one dark silent patch carrying the Fairbanks pin, while drawn snowflake mile markers tick elsewhere, a plate reads WAYMO SAYS \u00b7 TENS OF THOUSANDS OF MILES \u00b7 SNOWY REGIONS ELSEWHERE",
+      "sfx": "tick",
+      "means": "waymo says \u00b7 tens of thousands of miles \u00b7 snowy regions elsewhere",
+      "rehook": "",
+      "draw": {
+        "subject": "the snow field of pings",
+        "action": "answers everywhere except one dark silent patch carrying the Fairbanks pin, while drawn snowflake mile markers tick elsewhere",
+        "emotion": "quiet",
+        "annotation": "WAYMO SAYS \u00b7 TENS OF THOUSANDS OF MILES \u00b7 SNOWY REGIONS ELSEWHERE"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the snow field of pings answers everywhere except one dark silent patch carrying the Fairbanks pin, while drawn snowflake mile markers tick elsewhere, a plate reads WAYMO SAYS \u00b7 TENS OF THOUSANDS OF MILES \u00b7 SNOWY REGIONS ELSEWHERE",
+        "reaction": "the markers tick",
+        "ambient": "the vane spins, pings cross the snow field"
+      },
+      "t": "77.810-82.340",
+      "key": 30
+    },
+    {
+      "id": 27,
+      "shot": 9,
+      "at_s": 82.34,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So there's an answer on paper. Hold that thought.",
+      "phrase": "So there's an answer",
+      "shows": "the whole design folds down into a single sheet that lands on the dark silent patch, a plate reads AN ANSWER ON PAPER",
+      "sfx": "fold",
+      "means": "an answer on paper",
+      "rehook": "",
+      "draw": {
+        "subject": "the whole design",
+        "action": "folds down into a single sheet that lands on the dark silent patch",
+        "emotion": "hopeful",
+        "annotation": "AN ANSWER ON PAPER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17",
+        "c18",
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "choreo": {
+        "primary": "the whole design folds down into a single sheet that lands on the dark silent patch, a plate reads AN ANSWER ON PAPER",
+        "reaction": "the sheet settles",
+        "ambient": "the sheet flaps on its frame, a gust hisses"
+      },
+      "t": "82.340-84.170",
+      "key": 32
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 84.17,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 1.83
+      },
+      "offset": 1.83,
+      "vo": "So there's an answer on paper. Hold that thought.",
+      "phrase": "paper. Hold that thought.",
+      "shows": "a gust sweeps across the puck and jagged frost creeps back over the rim of its clear eye, a plate reads HOLD THAT THOUGHT",
+      "sfx": "hush",
+      "means": "hold that thought",
+      "rehook": "",
+      "draw": {
+        "subject": "a gust",
+        "action": "sweeps across the puck and jagged frost creeps back over the rim of its clear eye",
+        "emotion": "uneasy",
+        "annotation": "HOLD THAT THOUGHT"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a gust sweeps across the puck and jagged frost creeps back over the rim of its clear eye, a plate reads HOLD THAT THOUGHT",
+        "reaction": "the eye narrows",
+        "ambient": "the sheet flaps on its frame, a gust hisses"
+      },
+      "t": "84.170-87.000",
+      "key": 33
+    },
+    {
+      "id": 29,
+      "shot": 10,
+      "at_s": 87.0,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "One resident expects the cars to stall out on the sides of roads. Another says they shouldn't be allowed.",
+      "phrase": "One resident expects the",
+      "shows": "a first roadside billboard rolls up out of the snowbank on its posts, a plate reads ONE RESIDENT EXPECTS",
+      "sfx": "creak",
+      "means": "one resident expects",
+      "rehook": "",
+      "draw": {
+        "subject": "a first roadside billboard",
+        "action": "rolls up out of the snowbank on its posts",
+        "emotion": "worried",
+        "annotation": "ONE RESIDENT EXPECTS"
+      },
+      "plate_at": "billboard",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a first roadside billboard rolls up out of the snowbank on its posts, a plate reads ONE RESIDENT EXPECTS",
+        "reaction": "the billboard shudders",
+        "ambient": "wind on the billboards, a car idles"
+      },
+      "t": "87.000-89.150",
+      "key": 34
+    },
+    {
+      "id": 30,
+      "shot": 10,
+      "at_s": 89.15,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 2.15
+      },
+      "offset": 2.15,
+      "vo": "One resident expects the cars to stall out on the sides of roads. Another says they shouldn't be allowed.",
+      "phrase": "stall out on the",
+      "shows": "a thought-frame on the billboard slams in showing a worried car silhouette stopped on a roadside shoulder, its tail light blinking crimson once under dim white hazards, the same shoulder the puck's view will land on, then everything holds silent, a plate reads \"STALL OUT\" \u00b7 WHAT IF",
+      "sfx": "blip",
+      "means": "\"stall out\" \u00b7 what if",
+      "rehook": "rehook: one crimson tail light blinks inside a worried thought-frame",
+      "draw": {
+        "subject": "a thought-frame on the billboard",
+        "action": "slams in showing a worried car silhouette stopped on a roadside shoulder, its tail light blinking crimson once under dim white hazards, the same shoulder the puck's view will land on, then everything holds silent",
+        "emotion": "stern",
+        "annotation": "\"STALL OUT\" \u00b7 WHAT IF"
+      },
+      "plate_at": "billboard",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a thought-frame on the billboard slams in showing a worried car silhouette stopped on a roadside shoulder, its tail light blinking crimson once under dim white hazards, the same shoulder the puck's view will land on, then everything holds silent, a plate reads \"STALL OUT\" \u00b7 WHAT IF",
+        "reaction": "the tail light blinks",
+        "ambient": "wind on the billboards, a car idles"
+      },
+      "kick": true,
+      "t": "89.150-92.350",
+      "key": 35
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 92.35,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.35
+      },
+      "offset": 5.35,
+      "vo": "One resident expects the cars to stall out on the sides of roads. Another says they shouldn't be allowed.",
+      "phrase": "shouldn't be allowed.",
+      "shows": "a second billboard slams up beside the first as the puck holds still on its mount, a plate reads \"SHOULDN'T BE ALLOWED\"",
+      "sfx": "thud",
+      "means": "\"shouldn't be allowed\"",
+      "rehook": "",
+      "draw": {
+        "subject": "a second billboard",
+        "action": "slams up beside the first as the puck holds still on its mount",
+        "emotion": "stern",
+        "annotation": "\"SHOULDN'T BE ALLOWED\""
+      },
+      "plate_at": "billboard",
+      "claims": [
+        "c29"
+      ],
+      "choreo": {
+        "primary": "a second billboard slams up beside the first as the puck holds still on its mount, a plate reads \"SHOULDN'T BE ALLOWED\"",
+        "reaction": "the billboard rattles",
+        "ambient": "wind on the billboards, a car idles"
+      },
+      "t": "92.350-94.120",
+      "key": 36
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 94.12,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The mayor called it a great opportunity.",
+      "phrase": "The mayor called it",
+      "shows": "a third billboard rolls up and its ribbon flips in the wind, a plate reads THE MAYOR \u00b7 \"A GREAT OPPORTUNITY\"",
+      "sfx": "flip",
+      "means": "the mayor \u00b7 \"a great opportunity\"",
+      "rehook": "",
+      "draw": {
+        "subject": "a third billboard",
+        "action": "rolls up and its ribbon flips in the wind",
+        "emotion": "hopeful",
+        "annotation": "THE MAYOR \u00b7 \"A GREAT OPPORTUNITY\""
+      },
+      "plate_at": "billboard",
+      "claims": [
+        "c27",
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a third billboard rolls up and its ribbon flips in the wind, a plate reads THE MAYOR \u00b7 \"A GREAT OPPORTUNITY\"",
+        "reaction": "the ribbon flutters",
+        "ambient": "wind on the billboards, a car idles"
+      },
+      "t": "94.120-97.560",
+      "key": 37
+    },
+    {
+      "id": 33,
+      "shot": 11,
+      "at_s": 97.56,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Waymo's own post says weather beyond what its system is validated for can pause service in its cities for hours or even days.",
+      "phrase": "Waymo's own post says",
+      "shows": "the puck's dot road from the whiteout returns and a gauge needle swings past a dashed line labelled VALIDATED LIMIT, a plate reads WEATHER BEYOND VALIDATED \u00b7 VALIDATED LIMIT",
+      "sfx": "swell",
+      "means": "weather beyond validated \u00b7 validated limit",
+      "rehook": "",
+      "draw": {
+        "subject": "the puck's dot road from the whiteout",
+        "action": "returns and a gauge needle swings past a dashed line labelled VALIDATED LIMIT",
+        "emotion": "wary",
+        "annotation": "WEATHER BEYOND VALIDATED \u00b7 VALIDATED LIMIT"
+      },
+      "plate_at": "hud",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "the puck's dot road from the whiteout returns and a gauge needle swings past a dashed line labelled VALIDATED LIMIT, a plate reads WEATHER BEYOND VALIDATED \u00b7 VALIDATED LIMIT",
+        "reaction": "the needle climbs",
+        "ambient": "returns pulse, the hazards tick, snow settles"
+      },
+      "t": "97.560-102.110",
+      "key": 39
+    },
+    {
+      "id": 34,
+      "shot": 11,
+      "at_s": 102.11,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.55
+      },
+      "offset": 4.55,
+      "vo": "Waymo's own post says weather beyond what its system is validated for can pause service in its cities for hours or even days.",
+      "phrase": "pause service in its",
+      "shows": "the backup rings shrink as the dots thin into the white wall in front of a generic city skyline under a HUD label CITY SERVICE, the car eases onto the same shoulder as the worry's thought-frame with dim white hazards strobing, and calendar leaves stack like snow on its hood, a plate reads ITS OWN POST \u00b7 IN ITS CITIES \u00b7 PAUSE FOR HOURS OR DAYS",
+      "sfx": "stop",
+      "means": "its own post \u00b7 in its cities \u00b7 pause for hours or days",
+      "rehook": "",
+      "draw": {
+        "subject": "the backup rings",
+        "action": "shrink as the dots thin into the white wall in front of a generic city skyline under a HUD label CITY SERVICE, the car eases onto the same shoulder as the worry's thought-frame with dim white hazards strobing, and calendar leaves stack like snow on its hood",
+        "emotion": "sober",
+        "annotation": "ITS OWN POST \u00b7 IN ITS CITIES \u00b7 PAUSE FOR HOURS OR DAYS"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "the backup rings shrink as the dots thin into the white wall in front of a generic city skyline under a HUD label CITY SERVICE, the car eases onto the same shoulder as the worry's thought-frame with dim white hazards strobing, and calendar leaves stack like snow on its hood, a plate reads ITS OWN POST \u00b7 IN ITS CITIES \u00b7 PAUSE FOR HOURS OR DAYS",
+        "reaction": "the leaves pile",
+        "ambient": "returns pulse, the hazards tick, snow settles"
+      },
+      "t": "102.110-106.620",
+      "key": 41
+    },
+    {
+      "id": 35,
+      "shot": 12,
+      "at_s": 106.62,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So is paper enough? The reports don't say how many cars are in Fairbanks, or on what dates.",
+      "phrase": "So is paper enough?",
+      "shows": "the paper sheet slides onto a dashboard and frosts over edge to edge as the camera cuts into the cab, a plate reads IS PAPER ENOUGH?",
+      "sfx": "riser",
+      "means": "is paper enough?",
+      "rehook": "rehook: the paper answer frosts over on the dashboard",
+      "draw": {
+        "subject": "the paper sheet",
+        "action": "slides onto a dashboard and frosts over edge to edge as the camera cuts into the cab",
+        "emotion": "uncertain",
+        "annotation": "IS PAPER ENOUGH?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the paper sheet slides onto a dashboard and frosts over edge to edge as the camera cuts into the cab, a plate reads IS PAPER ENOUGH?",
+        "reaction": "the frost spreads",
+        "ambient": "the heater fan hums, the drums settle, the pen scratches nothing"
+      },
+      "t": "106.620-109.990",
+      "key": 42
+    },
+    {
+      "id": 36,
+      "shot": 12,
+      "at_s": 109.99,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "So is paper enough? The reports don't say how many cars are in Fairbanks, or on what dates.",
+      "phrase": "how many cars are",
+      "shows": "the odometer counter on a specialist's clipboard rolls its drums and lands on blanks beside a calendar that has already flipped up blank, a plate reads HOW MANY CARS?",
+      "sfx": "roll",
+      "means": "how many cars?",
+      "rehook": "",
+      "draw": {
+        "subject": "the odometer counter on a specialist's clipboard",
+        "action": "rolls its drums and lands on blanks beside a calendar that has already flipped up blank",
+        "emotion": "puzzled",
+        "annotation": "HOW MANY CARS?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c30"
+      ],
+      "choreo": {
+        "primary": "the odometer counter on a specialist's clipboard rolls its drums and lands on blanks beside a calendar that has already flipped up blank, a plate reads HOW MANY CARS?",
+        "reaction": "the drums settle",
+        "ambient": "the heater fan hums, the drums settle, the pen scratches nothing"
+      },
+      "t": "109.990-112.650",
+      "key": 43
+    },
+    {
+      "id": 37,
+      "shot": 12,
+      "at_s": 112.65,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 6.03
+      },
+      "offset": 6.03,
+      "vo": "So is paper enough? The reports don't say how many cars are in Fairbanks, or on what dates.",
+      "phrase": "dates.",
+      "shows": "the counter and the calendar thump down together on the clipboard, both empty, a plate reads NO COUNT \u00b7 NO DATES",
+      "sfx": "thump",
+      "means": "no count \u00b7 no dates",
+      "rehook": "",
+      "draw": {
+        "subject": "the counter and the calendar",
+        "action": "thump down together on the clipboard, both empty",
+        "emotion": "flat",
+        "annotation": "NO COUNT \u00b7 NO DATES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c30"
+      ],
+      "choreo": {
+        "primary": "the counter and the calendar thump down together on the clipboard, both empty, a plate reads NO COUNT \u00b7 NO DATES",
+        "reaction": "the clipboard bounces",
+        "ambient": "the heater fan hums, the drums settle, the pen scratches nothing"
+      },
+      "t": "112.650-114.020",
+      "key": 44
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 114.02,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A reporter asked whether driverless cars are planned there. Waymo hadn't yet answered.",
+      "phrase": "A reporter asked whether",
+      "shows": "the words DRIVERLESS CARS PLANNED? type across a field on the clipboard as the specialist's pen lowers toward it, a plate reads A REPORTER ASKED \u00b7 DRIVERLESS?",
+      "sfx": "type",
+      "means": "a reporter asked \u00b7 driverless?",
+      "rehook": "",
+      "draw": {
+        "subject": "the words DRIVERLESS CARS PLANNED?",
+        "action": "type across a field on the clipboard as the specialist's pen lowers toward it",
+        "emotion": "curious",
+        "annotation": "A REPORTER ASKED \u00b7 DRIVERLESS?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the words DRIVERLESS CARS PLANNED? type across a field on the clipboard as the specialist's pen lowers toward it, a plate reads A REPORTER ASKED \u00b7 DRIVERLESS?",
+        "reaction": "the pen lowers",
+        "ambient": "the heater fan hums, the drums settle, the pen scratches nothing"
+      },
+      "t": "114.020-117.770",
+      "key": 45
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 117.77,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 3.75
+      },
+      "offset": 3.75,
+      "vo": "A reporter asked whether driverless cars are planned there. Waymo hadn't yet answered.",
+      "phrase": "Waymo hadn't yet answered.",
+      "shows": "the specialist's pen hovers over the blank answer line and lifts away without writing, a plate reads NOT YET ANSWERED",
+      "sfx": "hush",
+      "means": "not yet answered",
+      "rehook": "",
+      "draw": {
+        "subject": "the specialist's pen",
+        "action": "hovers over the blank answer line and lifts away without writing",
+        "emotion": "flat",
+        "annotation": "NOT YET ANSWERED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the specialist's pen hovers over the blank answer line and lifts away without writing, a plate reads NOT YET ANSWERED",
+        "reaction": "the pen lifts",
+        "ambient": "the heater fan hums, the drums settle, the pen scratches nothing"
+      },
+      "t": "117.770-120.460",
+      "key": 46
+    },
+    {
+      "id": 40,
+      "shot": 13,
+      "at_s": 120.46,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Waymo's post is a claim. This winter is the test. What would you want proven before one drives with nobody at the wheel?",
+      "phrase": "Waymo's post is a",
+      "shows": "the roof puck settles half frosted and half clear in a tight pool of light under a single lamp at night, a plate reads WAYMO'S POST IS A CLAIM",
+      "sfx": "hum",
+      "means": "waymo's post is a claim",
+      "rehook": "",
+      "draw": {
+        "subject": "the roof puck",
+        "action": "settles half frosted and half clear in a tight pool of light under a single lamp at night",
+        "emotion": "pensive",
+        "annotation": "WAYMO'S POST IS A CLAIM"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c2",
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the roof puck settles half frosted and half clear in a tight pool of light under a single lamp at night, a plate reads WAYMO'S POST IS A CLAIM",
+        "reaction": "the lamp buzzes",
+        "ambient": "the lamp buzzes, snow falls, wind over the road"
+      },
+      "t": "120.460-122.690",
+      "key": 47
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 122.69,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 2.23
+      },
+      "offset": 2.23,
+      "vo": "Waymo's post is a claim. This winter is the test. What would you want proven before one drives with nobody at the wheel?",
+      "phrase": "This winter is the",
+      "shows": "jagged frost creeps over the clear half toward the eye, a plate reads THIS WINTER IS THE TEST",
+      "sfx": "crack",
+      "means": "this winter is the test",
+      "rehook": "",
+      "draw": {
+        "subject": "jagged frost",
+        "action": "creeps over the clear half toward the eye",
+        "emotion": "tense",
+        "annotation": "THIS WINTER IS THE TEST"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "jagged frost creeps over the clear half toward the eye, a plate reads THIS WINTER IS THE TEST",
+        "reaction": "the eye narrows",
+        "ambient": "the lamp buzzes, snow falls, wind over the road"
+      },
+      "t": "122.690-124.770",
+      "key": 48
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 124.77,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 4.31
+      },
+      "offset": 4.31,
+      "vo": "Waymo's post is a claim. This winter is the test. What would you want proven before one drives with nobody at the wheel?",
+      "phrase": "What would you want",
+      "shows": "the camera rises and pulls back from the puck to one small car lower left on a vast dark Fairbanks road under the lamp, a plate reads WHAT WOULD YOU WANT PROVEN?",
+      "sfx": "whoosh",
+      "means": "what would you want proven?",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "rises and pulls back from the puck to one small car lower left on a vast dark Fairbanks road under the lamp",
+        "emotion": "searching",
+        "annotation": "WHAT WOULD YOU WANT PROVEN?"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the camera rises and pulls back from the puck to one small car lower left on a vast dark Fairbanks road under the lamp, a plate reads WHAT WOULD YOU WANT PROVEN?",
+        "reaction": "the road glints",
+        "ambient": "the lamp buzzes, snow falls, wind over the road"
+      },
+      "t": "124.770-128.600",
+      "key": 49
+    }
+  ]
+}

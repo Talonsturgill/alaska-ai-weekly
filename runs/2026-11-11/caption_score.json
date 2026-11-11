@@ -1,0 +1,25 @@
+{
+ "run_date": "2026-11-11",
+ "rounds": 5,
+ "weighted_total": 8.38,
+ "threshold": 8.5,
+ "ship": false,
+ "note": "cap reached, zero hard fails, best round shipped, below the bar",
+ "criteria": {
+  "Hook / scroll-stop": 8.5,
+  "Point of view / take": 8.5,
+  "Substance & specificity": 8.5,
+  "Readability & restraint": 8.0,
+  "Engagement design (CTA + comment-bait)": 8.5,
+  "Brand voice & accuracy": 8.0,
+  "Hashtag craft": 8.5
+ },
+ "round_totals": [
+  7.83,
+  8.08,
+  8.23,
+  8.32,
+  8.38
+ ],
+ "hard_fails": []
+}

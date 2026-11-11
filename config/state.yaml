@@ -3439,3 +3439,43 @@ dispatch_history:
     light_story: blue-hour-then-lemon-daylight
     metaphor: 'a take-a-number machine on the Nikiski shore: the permit is a place
       in line, and the film asks who else is handed a number before the study is written'
+- date: '2026-11-11'
+  topic: Waymo winter testing in Fairbanks, the black ice question answered on paper
+    while the test is still open (Waymo blog, FOX Weather, Alaska's News Source)
+  slug: the-roof-puck
+  key_entities:
+  - Waymo
+  - Fairbanks
+  - Dunleavy
+  - Golden Valley Electric Association
+  - Alaska's News Source
+  - FOX Weather
+  - robotaxi
+  - winter testing
+  - Mindy O'Neall
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: curious
+  angle: A design page is a claim and a Fairbanks winter with a specialist at the
+    wheel is where it gets tested, the deciding driverless question is still open.
+  hero: RoofPuck
+  cast:
+  - RoofPuck
+  - Waymo car silhouette
+  - billboard row
+  - clipboard
+  composition:
+    pov: macro-closeup
+    motion_vector: radial-emanate
+    hero_treatment: instrument-as-subject
+    layout: single-object-void
+    register: naturalistic-scene
+    palette: ice-fog noon, pink-gold low sun behind milky fog, ice-black ground, hoarfrost
+      puck, plum ink on paper, sodium amber on live mechanisms only, a single crimson
+      taillight
+    camera_strategy: dolly-through
+    light_story: ice-fog noon, whiteout, single lamp in the evening
+    metaphor: 'the roof sensor puck as the car''s eye: every mechanism Waymo published
+      is a state of that one smooth face against jagged rime, and the winter decides
+      which state it ends in'
