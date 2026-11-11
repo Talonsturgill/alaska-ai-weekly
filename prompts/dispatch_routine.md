@@ -718,6 +718,30 @@ runner-up angles and why they lost. Phase 4 EXECUTES it and never re-litigates i
 
 ## PHASE 4: THE DIRECTORS ROOM  (`run_cost.py phase directors`)
 
+### Optional weekly presentation feedback
+
+Before assigning the director/planner, run
+`python3 scripts/read_social_feedback.py --generator alaska_video --repo-dir .`.
+Use only its sanitized output, never the private brief or fetched repository. `[]`, denied
+access, malformed/expired advice or a timeout means continue normally without an experiment.
+Do not install credentials, widen access, retry through another identity or block production.
+Pass a valid action to the existing director/planner and only the relevant copy/visual agent.
+It is one optional creative experiment for the current ISO week, not a new assignment or gate.
+Read this week's earlier `runs/<date>/social_feedback.json` records before adoption. Reuse the same action
+when suitable; never switch to a different action during that week or add a second experiment.
+Facts, sourcing, quality, privacy, voice, rights, production, schedule and distribution rules
+always win. Do not retrofit locked production or change a sourced claim to fit the advice.
+The planner makes an explicit apply/decline decision; the relevant agent carries an accepted
+action into its existing plan and the final artifact is checked for actual adoption.
+Track that decision in the existing run planning state. At the normal archive step, write
+`runs/<date>/social_feedback.json` as `[]` when there was no valid action, otherwise a one-item JSON list
+containing only the reader's `field`, `change`, `week`, `brief_sha256`, plus `status`
+(`applied` or `not_applied`) and `reason` (`applied`, `guardrail_conflict`, `not_relevant`,
+`production_locked` or `weekly_action_locked`). Mark applied only after checking the released
+artifact; keep the final disposition with the shipped run for next week's outcome comparison.
+No free-text rationale, private metrics, evidence IDs, raw reports or copied brief belongs in
+public run records, prompts, PRs, captions or worker packets. Do not change any delivery step.
+
 ### 4.1 The writers-room panel
 
 No-spawn agents, ONE PITCH EACH, before any storyboard. Each pitch: LOGLINE; COLD OPEN (the first 3
