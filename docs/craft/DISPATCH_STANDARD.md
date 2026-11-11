@@ -134,6 +134,13 @@ document, not of the judge.
   and preflight's required `--top-only` row fail a film whose top quarter of the square is over
   45 percent low-information, a ceiling between the faulted films (48.7 to 56.6) and the clean ones
   (38.2 to 41.2). Texture does not clear it; a subject does.
+- **And the floor under the caption bar is judged too** (machine pass 2026-11-11, dead lower third
+  named on 11-02, 11-05, 11-07, 11-09 and on four shots of 11-10). The square stops at y 1500, so the
+  band from the caption bar's bottom (y 1472) to 1920 is seen only on the 9:16 master, which is what
+  the panel watches. Give it a job: the ground the hero stands on, a desk edge, a chart sheet, the
+  foot of a throughline strip, varied by act. The same `dead_space_check.py --plan` step fails a film
+  whose master y 1468 to 1920 is over 68 percent low-information, just above the worst film the panel
+  did not fault (11-01, 66.6) of fourteen measured; 11-09 (84.8), 11-10 (70.5) and 11-11 (77.1) fail.
 - **The set shows Alaska, in a thing drawn, not a word printed** (machine pass 2026-11-09). On 11-09
   every seat wrote "generic courtroom, no Alaska cue" although a plate read ALASKA COURT SYSTEM, and
   11-06 carried the axis on one map-pin beat. Put an Alaska thing in the set that stays across shots:

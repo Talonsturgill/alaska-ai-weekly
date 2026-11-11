@@ -137,6 +137,9 @@ step figure_rig       2 python3 scripts/figure_rig_check.py
 # 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
 # 420 to 690); this fails the source gates when the film mean is over the ceiling calibrated on eight
 # shipped films. On Ep1106 it reads 55.6% before the render against 55.9% on the delivered square.
+# Machine pass 2026-11-11 (dead-lower-third, repeat 2): the same step fails the FLOOR of the tall
+# frame, master y 1468 to 1920 under the caption bar, over 68%; Ep1111 reads 77.0% before the render
+# against 77.1% on its delivered master.
 step top_band         2 python3 scripts/dead_space_check.py --plan
 
 if [ ${#SOURCE_FAILS[@]} -gt 0 ]; then

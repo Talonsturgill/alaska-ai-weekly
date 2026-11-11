@@ -197,7 +197,9 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
             if not (os.path.exists(pa) and os.path.exists(pb)):
                 continue
             a, b = Image.open(pa).convert("RGB"), Image.open(pb).convert("RGB")
-            tops.append({"frame": f0, "top": round(dsc.top_band_fraction(a), 4)})
+            bottom = dsc.bottom_band_fraction(a)
+            tops.append({"frame": f0, "top": round(dsc.top_band_fraction(a), 4),
+                         **({"bottom": round(bottom, 4)} if bottom is not None else {})})
             if _wholesale(a, b):
                 straddled.append(name)      # a beat-internal cut: build_evidence slides off it
                 continue
@@ -207,7 +209,7 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
                 low.append((name, beat, shot_at(props, t0), t0, round(pct, 1)))
     with open(os.path.join(out_dir, "top_band_plan.json"), "w") as fh:
         json.dump({"source": os.path.relpath(os.path.abspath(source), REPO),
-                   "measure": "dead_space_check.top_band_fraction on Chrome frame 1 of each strip",
+                   "measure": "dead_space_check.top_band_fraction and bottom_band_fraction on Chrome frame 1 of each strip",
                    "samples": tops}, fh, indent=1)
     return sorted(low, key=lambda x: (x[4], x[0])), measured, straddled
 
