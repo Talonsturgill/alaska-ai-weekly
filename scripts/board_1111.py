@@ -20,7 +20,7 @@ W = lambda w, n=1: (w, n)
 # key, line, anchor, sfx, subject, action, emotion, annotation (plate text), reaction, rehook
 B = [
  (1, 0, 0.0, "whoosh", "a mittened hand", "wipes a frosted window and through it a headlight sweeps a dry-looking road that turns to a mirror holding the roof puck upside down", "uneasy", "A FAIRBANKS RESIDENT ASKED", "the reflection shivers", ""),
- (3, 0, W("testing"), "scratch", "the roof puck", "settles rimed in frost onto a dark car silhouette in the fog, its lens eye blind white under a jagged frost brow", "sleepy", "WAYMO SELF-DRIVING CAR", "frost ferns creep", ""),
+ (3, 0, W("testing"), "thump", "the roof puck", "settles rimed in frost onto a dark car silhouette in the fog, its lens eye blind white under a jagged frost brow", "sleepy", "WAYMO SELF-DRIVING CAR", "frost ferns creep", ""),
  (4, 0, W("Do"), "slide", "the puck's micro wiper", "drags one arc through the rime in the shape of a question mark and the lens eye blinks open", "startled", "DO THEY KNOW?", "the eyebrows jump", ""),
  (5, 0, W("black"), "crunch", "the question-mark patch", "freezes back over behind the wiper in jagged crystals while the puck squints down at the mirror road", "wary", "BLACK ICE", "the frost crunches back", ""),
  (6, 1, 0.0, "page", "a phone in a warm kitchen", "slides across a table and lights up with Waymo's blog post and its date tab while the puck sits small, reflected in the window glass behind it", "curious", "NOVEMBER 5TH", "the screen scrolls", ""),
@@ -59,7 +59,7 @@ B = [
  (45, 13, 0.0, "type", "the words DRIVERLESS CARS PLANNED?", "type across a field on the clipboard as the specialist's pen lowers toward it", "curious", "A REPORTER ASKED · DRIVERLESS?", "the pen lowers", ""),
  (46, 13, W("Waymo"), "hush", "the specialist's pen", "hovers over the blank answer line and lifts away without writing", "flat", "NOT YET ANSWERED", "the pen lifts", ""),
  (47, 14, 0.0, "hum", "the roof puck", "settles half frosted and half clear in a tight pool of light under a single lamp at night", "pensive", "WAYMO'S POST IS A CLAIM", "the lamp buzzes", ""),
- (48, 14, W("This"), "crunch", "jagged frost", "creeps over the clear half toward the eye", "tense", "THIS WINTER IS THE TEST", "the eye narrows", ""),
+ (48, 14, W("This"), "crack", "jagged frost", "creeps over the clear half toward the eye", "tense", "THIS WINTER IS THE TEST", "the eye narrows", ""),
  (49, 14, W("What"), "whoosh", "the camera", "rises and pulls back from the puck to one small car lower left on a vast dark Fairbanks road under the lamp", "searching", "WHAT WOULD YOU WANT PROVEN?", "the road glints", ""),
 ]
 
