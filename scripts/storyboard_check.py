@@ -718,6 +718,27 @@ def main():
     except Exception as _e:
         print(f"  [alaska-cue] could not run ({_e}); the board's Alaska cue not checked")
 
+    # ---- 10. EVERY PLATE CITES ITS CLAIM (machine pass 2026-11-11) ----
+    # scripts/board_claims_check.py. Gate 0B to 0D took three to five critic rounds on 11-10 and three
+    # on 11-11, mostly board text checked against the claims by hand (A QUEUE ALREADY FORMED, CLOSED,
+    # WAYMO STATEMENT). A plate with no claim id, an id claims.json lacks, or a status word none of its
+    # claims says fails here, before a critic reads the board. Boards before 11-11 are not checked.
+    try:
+        import board_claims_check as _bc
+        _cl_path = Path(sb_path).parent / "claims.json"
+        if _cl_path.exists():
+            _cr = _bc.analyze(sb, json.loads(_cl_path.read_text()))
+            for _p in _cr["problems"]:
+                problems.append(f"board-claims: {_p}")
+            for _n in _cr["notes"]:
+                print(f"  [board-claims-note] {_n}")
+            print(f"  [board-claims] {_cr['checked']} plates read against claims.json"
+                  + (f" ({_cr['skipped']}, not checked)" if _cr["skipped"] else ""))
+        elif str(sb.get("run_date") or "") >= _bc.FIRST_DATE:
+            problems.append(f"board-claims: no claims.json beside {sb_path}; Gate 0A runs after Phase 2's fact-check")
+    except Exception as _e:
+        print(f"  [board-claims] could not run ({_e}); plates not read against the claims")
+
     if problems:
         for p in problems:
             print(f"FAIL [storyboard_check] {p}")
