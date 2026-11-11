@@ -128,7 +128,9 @@ def held_solved(strips, video, floor=HELD_FLOOR):
 
 
 REMEDY = ("give each held thing a TRAVELLING element, <HeldTravel> from lib/heldidle.tsx (a sweep "
-          "across it, a runner along its cord or rail, a shadow drifting over it), not a camera move")
+          "across it, a runner along its cord or rail, a shadow drifting over it), at the lib's default "
+          "strength and mode=\"shadow\" on a white or pale ground, where a light sweep moves nothing; "
+          "not a camera move")
 
 
 def plan_windows(out_dir=os.path.join(REPO, "out", "dispatch")):
@@ -211,11 +213,69 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
 
 
 TREATMENTS = ("HeldTravel", "HeldProp")
+# A HeldTravel under this group opacity, or any rig at 0 < gain < 1, is a TOKEN rig (machine pass
+# 2026-11-11). The lib defaults are 0.38 for a sweep or runner and 0.30 for a shadow.
+WORKING_STRENGTH = 0.3
+
+
+def _rig_tags(body):
+    """[(tag, attribute_text)] for every <HeldTravel ...> and <HeldProp ...> opening tag in `body`,
+    reading attributes with balanced braces so an arrow function inside a prop cannot end the tag."""
+    out = []
+    for m in re.finditer(r"<(%s)\b" % "|".join(TREATMENTS), body):
+        i, depth = m.end(), 0
+        while i < len(body):
+            c = body[i]
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+            elif c == ">" and depth == 0:
+                break
+            i += 1
+        out.append((m.group(1), body[m.end():i]))
+    return out
+
+
+def _num(attrs, name):
+    m = re.search(r"\b%s=\{\s*([0-9]*\.?[0-9]+)\s*\}" % name, attrs)
+    return float(m.group(1)) if m else None
+
+
+def rig_working(tag, attrs):
+    """True when a rig is drawn at working strength, or switched off on purpose with gain={0}.
+
+    WHY (machine pass 2026-11-11; queue: held-beats-under-six-percent, repeat 3 on 11-05, 11-08, 11-10
+    and 11-11). The 11-06 gate asked for a rig in any shot with a held strip, and the films complied
+    with a rig turned down to a token: all twelve HeldTravels on Ep1111 at strength 0.2, Ep1110's at
+    0.08 to 0.16, Ep1108's HeldProps at gain 0.4 to 0.8. held_plan named 18 of 42 Ep1111 strips and the
+    panel capped Motion at 6.5 to 7.2 on all three cuts. Restoring the lib default strength on a
+    scratch copy of Ep1111 took held_plan from 18 to 12 strips, and turning the S6 whiteout sweep into
+    a shadow took it to 10 (S6 2.9 and 3.6 cleared 6). A literal strength or gain is read; an
+    expression is trusted, because the source cannot say what it evaluates to."""
+    gain = _num(attrs, "gain")
+    if gain is not None:
+        if gain == 0:
+            return True                 # an explicit held-breath beat: the stillness is the point
+        if gain < 1:
+            return False
+    if tag == "HeldTravel":
+        strength = _num(attrs, "strength")
+        if strength is not None and strength < WORKING_STRENGTH:
+            return False
+    return True
+
+
+def _has_working_rig(body, rigged_comps=()):
+    if any(rig_working(t, a) for t, a in _rig_tags(body)):
+        return True
+    return any(re.search(r"<%s\b" % c, body) for c in rigged_comps)
 
 
 def treated_shots(source):
     """{shot_number: bool} for each `const S<n>: React.FC<SceneProps>` in the episode: True when the
-    shot draws a lib held-motion rig, directly or through a component of the same file that does.
+    shot draws a lib held-motion rig AT WORKING STRENGTH (rig_working), directly or through a
+    component of the same file that does.
 
     WHY (machine pass 2026-11-06; queue: held-beats-under-six-percent, repeat 3 after 11-02 and
     11-06). held_plan named 18 of 48 strips on 11-06 before the render and the panel named 19 after
@@ -225,7 +285,8 @@ def treated_shots(source):
     (3.4), the pencil marks (2.9) and the faculty (5.1) strips over 6 percent. So the gate does not
     demand a number, it demands the known remedy where the measure names a held beat: a held strip
     in a shot that carries no rig fails the source gates. `gain={0}` on a rig is an explicit, visible
-    decision that the stillness is the point, and counts."""
+    decision that the stillness is the point, and counts. A token rig (strength under 0.3, or gain
+    between 0 and 1) does not count, since 2026-11-11 (see rig_working)."""
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from shot_map import scene_bodies
     src = open(source).read()
@@ -233,11 +294,11 @@ def treated_shots(source):
     rigged = set()
     for i, (name, a) in enumerate(comps):
         body = src[a:comps[i + 1][1] if i + 1 < len(comps) else len(src)]
-        if not re.match(r"S\d+$", name) and any(f"<{t}" in body for t in TREATMENTS):
+        if not re.match(r"S\d+$", name) and _has_working_rig(body):
             rigged.add(name)
     out = {}
     for name, body in scene_bodies(source).items():
-        out[int(name[1:])] = any(f"<{t}" in body for t in TREATMENTS + tuple(sorted(rigged)))
+        out[int(name[1:])] = _has_working_rig(body, sorted(rigged))
     return out
 
 
@@ -300,14 +361,19 @@ def _self_test():
           "const S1: React.FC<SceneProps> = ({p}) => <g><HeldTravel f={p.f} x={1} y={1} w={2} h={2} /></g>;\n"
           "const S2: React.FC<SceneProps> = ({p}) => <g><Desk f={p.f} /></g>;\n"
           "const S3: React.FC<SceneProps> = ({p}) => <g><Lamp f={p.f} /></g>;\n"
-          "const S4: React.FC<SceneProps> = ({p}) => <g><HeldProp f={p.f} gain={0}><Desk f={p.f} /></HeldProp></g>;\n")
+          "const S4: React.FC<SceneProps> = ({p}) => <g><HeldProp f={p.f} gain={0}><Desk f={p.f} /></HeldProp></g>;\n"
+          "const S5: React.FC<SceneProps> = ({p}) => <g><HeldTravel f={p.f} x={1} y={1} w={2} h={2} strength={0.2} rx={20} /></g>;\n"
+          "const S6: React.FC<SceneProps> = ({p}) => <g><HeldProp f={p.f} px={1} py={1} w={2} h={2} gain={0.5}><Desk f={p.f} /></HeldProp></g>;\n"
+          "const S7: React.FC<SceneProps> = ({p}) => <g><HeldTravel f={p.f} x={1} y={1} w={2} h={2} mode=\"shadow\" path={[0, 1].map((i) => [i, i])} strength={0.3} /></g>;\n"
+          "const S8: React.FC<SceneProps> = ({p}) => <g><HeldProp f={p.f} px={1} py={1} w={2} h={2} gain={2.5}><Desk f={p.f} /></HeldProp></g>;\n")
     with tempfile.NamedTemporaryFile("w", suffix=".tsx", delete=False) as fh:
         fh.write(ep)
     try:
         rig = treated_shots(fh.name)
     finally:
         os.remove(fh.name)
-    assert rig == {1: True, 2: False, 3: True, 4: True}, f"treated_shots read {rig}"
+    assert rig == {1: True, 2: False, 3: True, 4: True, 5: False, 6: False, 7: True, 8: True}, \
+        f"treated_shots read {rig}"
     print(f"held_beat_check self-test: PASS (push only {still:.2f}%, push plus prop {moving:.2f}%, "
           f"caption only {caption_only:.2f}%)")
     return 0
@@ -424,9 +490,10 @@ def main_source(argv):
         # Names first: make_cut keeps the first 200 characters of the last line.
         if bare:
             print(f"UNTREATED: {len(low)} of {measured} strips HELD under {a.held_floor:g}% before the render, "
-                  f"and shot(s) {', '.join(f'S{s}' for s in bare)} carry no HeldTravel or HeldProp: "
+                  f"and shot(s) {', '.join(f'S{s}' for s in bare)} carry no HeldTravel or HeldProp at working strength: "
                   + ", ".join(f"S{shot} {name} {pct:.1f}" for name, _b, shot, _t, pct in low if shot in bare)
-                  + f" ({REMEDY}; gain={{0}} on the rig if the stillness is the point)")
+                  + f" (a strength under {WORKING_STRENGTH:g} or a gain between 0 and 1 is a token and does not count; "
+                  f"{REMEDY}; gain={{0}} on the rig if the stillness is the point)")
             worst = max(worst, 1)
             continue
         print(f"{len(low)} of {measured} strips HELD under {a.held_floor:g}% before the render: "

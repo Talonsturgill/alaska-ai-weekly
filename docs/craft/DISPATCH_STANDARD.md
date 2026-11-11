@@ -80,7 +80,12 @@ document, not of the judge.
   shot that draws no HeldTravel or HeldProp fails the source gates, because nine films in a row
   shipped none and the panel named the same strips held_plan had. Two shadow HeldTravels on a
   scratch copy of Ep1106 lifted three of its held strips (2.9, 3.4, 5.1) over 6 percent. Put
-  `gain={0}` on the rig where the stillness is the point.
+  `gain={0}` on the rig where the stillness is the point. A TOKEN rig does not count (machine pass
+  2026-11-11, repeat 3): a HeldTravel under strength 0.3, or any rig at a gain between 0 and 1, is
+  read as no rig, because Ep1110 drew its sweeps at 0.08 to 0.16 and Ep1111 at 0.2 and both still had
+  18 to 26 held strips. On a scratch Ep1111 the default strength took held_plan from 18 to 12, and a
+  shadow instead of a light sweep on the S6 whiteout took it to 10. A light sweep on snow or paper
+  moves nothing; use mode="shadow" there.
 - **A held FIGURE performs on its beats: `<IdleFigure cues>` and `<StrikeProp>`** (`lib/figureidle.tsx`,
   machine pass 2026-11-09, held-figure motion repeat 4: Motion the lowest axis on 10 of 15 cards from
   10-28 to 11-09, "held figures show no weight shift"). A light sweep on a prop clears held_plan and
@@ -664,7 +669,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **A sign is a status claim.** NOW SERVING P-15423 on a queue machine and CLOSED on a docket shutter read as FERC acting on the application and the case being closed. Write what is true (FIRST IN LINE, OBJECTIONS CLOSED, DEADLINE PASSED, FERC RULING NOT YET). (2026-11-10)
 - **Every banner traces to a claim.** A QUEUE ALREADY FORMED was the film's own metaphor printed as a fact. Metaphor stays in the picture, plates carry the record. (2026-11-10)
 - **caption_fixups match the article too.** "hundred megawatts" -> "100 MW" left "About a 100 MW" on screen, a hard blocker. Map "a hundred megawatts" as its own, longer key. (2026-11-10)
-- **HeldTravel boxes hug the prop.** Box-sized sweeps over empty scenery read as diagonal glare slabs on 10 of 13 shots. Size the box to the prop and keep strength at 0.1 to 0.16 over large areas. (2026-11-10)
+- **HeldTravel boxes hug the prop.** Box-sized sweeps over empty scenery read as diagonal glare slabs on 10 of 13 shots. Size the box to the prop, at the lib's default strength, and use mode="shadow" over a large or pale area. (2026-11-10; the 0.1 to 0.16 strength this line first advised is what left 18 of 42 strips held on 11-11, and since 2026-11-11 the held_plan gate counts a rig under strength 0.3 as no rig.)
 - **Credit source labels are names, not hosts.** FISHERIES.NOAA.GOV failed rendered OCR at credit size; build_scenes now writes NOAA FISHERIES and FEDERAL REGISTER. (2026-11-10)
 - **A fact-check on_screen string may not contain a colon.** c12's approved string had one, so claims_contract and visible_copy contradicted each other until the record was rewritten. (2026-11-10)
 
