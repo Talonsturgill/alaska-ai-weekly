@@ -360,13 +360,13 @@ const WheelHands: React.FC<{x: number; y: number; s?: number; on: number; f: num
   </g>
 );
 
-const rise = (up: number, h: number) => (1 - clamp01(up)) * (h + 220);
+const rise = (up: number, h: number) => (1 - Math.min(1.12, Math.max(0, up))) * (h + 220);
 /** a roadside billboard on two posts; `up` 0..1 rolls it up out of the snowbank. Its lamp is paper-white. */
 const Billboard: React.FC<{x: number; y: number; w?: number; h?: number; up: number; f: number; children?: React.ReactNode; shake?: number; post?: number}> = ({x, y, w = 420, h = 260, up, f, children, shake = 0, post = 220}) => {
   const k = clamp01(up);
-  const rs = rise(k, h);
+  const rs = rise(up, h);
   return (
-    <g transform={`translate(${x + shake * 4 * Math.sin(f * 1.3)} ${y + rs})`} opacity={k > 0.01 ? 1 : 0}>
+    <g transform={`translate(${x + shake * 4 * Math.sin(f * 1.3)} ${y + rs}) rotate(${0.8 * Math.sin(f / 23 + x)})`} opacity={k > 0.01 ? 1 : 0}>
       <path d={`M ${-w / 2},${post} L ${w / 2},${post} L ${w / 2 + 160},${post + 40} L ${-w / 2 + 160},${post + 40} Z`} fill={C.line} opacity={0.18} />
       {[-w * 0.3, w * 0.3].map((px) => <g key={px}><rect x={px - 14} y={0} width={28} height={post} fill="#3A424B" stroke={C.line} strokeWidth={5} /><rect x={px + 4} y={0} width={8} height={post} fill="#252B31" /></g>)}
       <rect x={-w / 2 + 14} y={-h + 14} width={w} height={h} rx={6} fill="#252B31" stroke={C.line} strokeWidth={5} />
@@ -374,6 +374,7 @@ const Billboard: React.FC<{x: number; y: number; w?: number; h?: number; up: num
       <rect x={-w / 2 + 10} y={-h + 10} width={w - 20} height={h - 20} rx={4} fill="none" stroke="#B9B09B" strokeWidth={3} />
       <path d={`M ${-w / 2 - 4},${-h + 2} ${Array.from({length: 12}).map((_, i) => `q ${w / 24},${-14 - 6 * Math.abs(Math.sin(i * 2.1))} ${w / 12},0`).join(' ')}`} fill={C.rime} stroke={C.line} strokeWidth={3} />
       <g transform={`translate(0 ${-h - 22})`}><rect x={-60} y={-8} width={120} height={14} rx={6} fill={C.white} stroke={C.line} strokeWidth={3} /><path d={`M -60,6 L ${-w / 2},${h * 0.5} L ${w / 2},${h * 0.5} L 60,6 Z`} fill={C.white} opacity={0.12} /></g>
+      <path d={`M ${w / 2},${-h} l -46,0 l 46,${36 + 10 * Math.sin(f / 5 + x)} Z`} fill={C.rime} stroke={C.line} strokeWidth={3} transform={`rotate(${10 * Math.sin(f / 4 + x)} ${w / 2} ${-h})`} />
       <g transform={`translate(0 ${-h / 2})`}>{children}</g>
     </g>
   );
@@ -441,7 +442,7 @@ const wrapText = (t: string, n: number) => {
 const Powerline: React.FC<{f: number; xs: number[]; top?: number; base?: number}> = ({f, xs, top = 470, base = 1062}) => (
   <g>
     {xs.map((x) => <g key={x}><rect x={x - 9} y={top} width={18} height={base - top} fill="#4E5156" stroke={C.line} strokeWidth={4} /><rect x={x - 60} y={top + 20} width={120} height={14} fill="#4E5156" stroke={C.line} strokeWidth={3} />{[-50, 0, 50].map((dx) => <circle key={dx} cx={x + dx} cy={top + 16} r={6} fill={C.rime} stroke={C.line} strokeWidth={2} />)}</g>)}
-    {xs.slice(0, -1).map((x, i) => [-50, 0, 50].map((dx) => <path key={`${i}${dx}`} d={`M ${x + dx},${top + 16} Q ${(x + xs[i + 1]) / 2 + dx},${top + 90 + 6 * Math.sin(f / 20 + i)} ${xs[i + 1] + dx},${top + 16}`} stroke={C.line} strokeWidth={3} fill="none" />))}
+    {xs.slice(0, -1).map((x, i) => [-50, 0, 50].map((dx) => <path key={`${i}${dx}`} d={`M ${x + dx},${top + 16} Q ${(x + xs[i + 1]) / 2 + dx + 14 * Math.sin(f / 13 + i)},${top + 90 + 18 * Math.sin(f / 17 + i + dx)} ${xs[i + 1] + dx},${top + 16}`} stroke={C.line} strokeWidth={3} fill="none" />))}
     {[-1200, 2280].map((x) => [-50, 0, 50].map((dx) => <path key={`e${x}${dx}`} d={`M ${x < 0 ? xs[0] + dx : xs[xs.length - 1] + dx},${top + 16} Q ${x < 0 ? xs[0] / 2 + dx : (xs[xs.length - 1] + 1080) / 2 + dx},${top + 80} ${x < 0 ? -20 : 1100},${top + 30}`} stroke={C.line} strokeWidth={3} fill="none" />))}
   </g>
 );
@@ -462,7 +463,8 @@ const FrostWindow: React.FC<{f: number; o?: number}> = ({f, o = 1}) => (
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [1, 3, 4, 5];
-  const wipe = easeIO(f, 2, 40);
+  const wipe = easeIO(f, 8, 26);
+  const arm = f < 8 ? -12 * Math.sin((f / 8) * Math.PI / 2) : -12 + 192 * springy(f, 8, 30);
   const sweep = easeIO(f, 10, 60);
   const mirror = easeIO(f, 40, 50);
   const opened = ease(f, b(4) + 4, 12);
@@ -480,8 +482,9 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Plate x={540} y={1210} text="BLACK ICE" size={44} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>}>
       <SVG>
-        <Spruces y={1062} n={9} seed={2} f={f} x0={-40} x1={400} scale={1.35} o={0.8} />
-        <Spruces y={1062} n={7} seed={7} f={f} x0={680} x1={1120} scale={1.2} o={0.8} />
+        <Spruces y={1062} n={9} seed={2} f={f} x0={-40} x1={400} scale={1.9} o={0.8} />
+        <Spruces y={1062} n={7} seed={7} f={f} x0={680} x1={1120} scale={1.75} o={0.8} />
+        <Powerline f={f} xs={[330, 900]} top={600} base={1062} />
         <Road f={f} speed={0.4} mirror={mirror} glint={sweep} />
         {/* the mirror: car and puck reflected upside down from the ground line */}
         <g opacity={0.42 * mirror} transform="translate(540 1300) scale(1 -0.55)"><CarSil x={0} y={0} s={0.9} f={f} /><RoofPuck x={0} y={-176} f={f} scale={1.1} frost={1} mode="blind" emotion="sleepy" qmark={q} seed={9} /></g>
@@ -489,6 +492,17 @@ const S1: React.FC<SceneProps> = ({p}) => {
           <CarSil x={540} y={1300} s={0.9} f={f} />
           <RoofPuck x={540} y={1124} f={f} scale={1.1} frost={1} clearRing={0.08 * Math.sin(f / 9) ** 2} mode={opened > 0.5 && refreeze < 0.6 ? 'clear' : 'blind'} emotion={refreeze > 0.4 ? 'wary' : opened > 0.5 ? 'startled' : 'sleepy'} qmark={q} look={refreeze > 0.4 ? 0.4 : 0} rimGlow={0.4} seed={1} />
         </HeldProp>
+        {/* the micro wiper: a big blade sweeps the dome, winds back first, overshoots and settles; frost sprays off its tip */}
+        <g transform={`translate(540 1060) rotate(${arm - 90})`} opacity={1 - ease(f, 90, 20)}>
+          <rect x={-8} y={-8} width={150} height={16} rx={8} fill="#14181D" stroke={C.line} strokeWidth={4} />
+          <rect x={60} y={-14} width={84} height={10} rx={5} fill="#3A424B" />
+          <circle r={12} fill="#3A424B" stroke={C.line} strokeWidth={4} />
+        </g>
+        {Array.from({length: 18}).map((_, i) => {
+          const k = clamp01((f - 8 - i * 1.2) / 24);
+          const a = ((arm - 90 + 20 - i * 6) * Math.PI) / 180;
+          return <circle key={i} cx={540 + Math.cos(a) * (150 + 120 * k)} cy={1060 + Math.sin(a) * (150 + 120 * k) + 60 * k * k} r={6 - 4 * k} fill={C.rime} opacity={k > 0 && k < 1 ? 1 - k : 0} />;
+        })}
         <path d={`M -60,${1080 + 30 * Math.sin(sweep * 3)} L ${lerp(-200, 1300, sweep)},1500 L ${lerp(-40, 1500, sweep)},1500 Z`} fill={C.white} opacity={0.24 * Math.sin(Math.PI * sweep)} />
         {/* the resident's mittened hand wiping the window in the foreground */}
         <g transform={`translate(${lerp(-60, 210, handWipe)} ${lerp(1060, 880, handWipe) + 20 * Math.sin(f / 7) * (1 - handWipe)}) rotate(${-30 + 40 * handWipe})`} opacity={1 - ease(f, b(4), 20)}>
@@ -521,6 +535,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <g opacity={0.6}><CarSil x={780} y={800} s={0.45} f={f} /><RoofPuck x={780} y={712} f={f} scale={0.45} frost={0.8} clearRing={0.1} mode="blind" emotion="sleepy" seed={2} /></g>
+        <clipPath id="kwin"><rect x={124} y={364} width={832} height={612} /></clipPath>
+        <g clipPath="url(#kwin)"><Spruces y={990} n={9} seed={21} f={f} x0={100} x1={980} scale={1.5} o={0.55} /><Flakes f={f} n={24} speed={0.7} o={0.6} y0={360} y1={980} /></g>
+        <path d={`M 120,368 ${Array.from({length: 20}).map((_, i) => `l 21,${26 + 22 * Math.abs(Math.sin(i * 1.9))} l 21,${-26 - 22 * Math.abs(Math.sin(i * 1.9))}`).join(' ')}`} fill={C.rime} stroke="#B9B2A6" strokeWidth={2} />
         <path d="M 160,940 L 400,400" stroke="#FFFFFF" strokeWidth={10} opacity={0.2} />
         {/* a mug steaming on the sill: the room is warm */}
         <g transform="translate(250 1010)"><rect x={-40} y={-60} width={80} height={70} rx={10} fill="#8C7B6A" stroke={C.line} strokeWidth={5} /><path d="M 40,-44 q 26,6 0,30" stroke={C.line} strokeWidth={6} fill="none" />{[0, 1].map((i) => <path key={i} d={`M ${-10 + i * 20},${-70 - steam * 60} q 10,-14 0,-28`} stroke={C.white} strokeWidth={5} fill="none" opacity={1 - steam} />)}</g>
@@ -702,7 +719,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
 };
 
 /** the dot road seen from the puck: returns drawn as dots receding to a white wall. `thin` 0..1 thins them, `drift` steers to the shoulder. */
-const DotRoad: React.FC<{f: number; draw: number; thin?: number; drift?: number; wall?: number; far?: number}> = ({f, draw, thin = 0, drift = 0, wall = 0.5, far = 720}) => (
+const DotRoad: React.FC<{f: number; draw: number; thin?: number; drift?: number; wall?: number; far?: number; pulse?: number}> = ({f, draw, thin = 0, drift = 0, wall = 0.5, far = 720, pulse = 0}) => (
   <g>
     {/* the road surface under the returns: ruts and drift, so the lower third is a place */}
     {[-3, -1.6, -0.5, 0.5, 1.6, 3].map((k, i) => <path key={i} d={`M ${540 + k * 8},${far + 30} L ${540 + k * 190},1700`} stroke="#D9D2C8" strokeWidth={10 + Math.abs(k) * 4} opacity={0.55} />)}
@@ -716,7 +733,8 @@ const DotRoad: React.FC<{f: number; draw: number; thin?: number; drift?: number;
         const show = clamp01(draw * 16 - row);
         if (!keep) return null;
         const x = 540 + drift * 220 * (1 - k) + (i - 3) / 3 * half;
-        return <circle key={`${row}-${i}`} cx={x} cy={y} r={(10 - 7 * k) * (0.85 + 0.15 * Math.sin(f / 6 + row))} fill={C.amber} opacity={show * (1 - k * 0.6)} />;
+        const wave = pulse * Math.max(0, 1 - Math.abs(((f / 2.2) % 22) - row) / 2.5);
+        return <circle key={`${row}-${i}`} cx={x} cy={y} r={(10 - 7 * k) * (0.85 + 0.15 * Math.sin(f / 6 + row) + 0.9 * wave)} fill={C.amber} opacity={show * Math.min(1, (1 - k * 0.6) + wave)} />;
       });
     })}
     <rect x={0} y={far - 80} width={W} height={130} fill={C.hud} opacity={wall} />
@@ -765,7 +783,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <rect x={0} y={0} width={W} height={H} fill="#BDB8B2" opacity={1 - white} />
-        <DotRoad f={f} draw={draw} wall={0.7} far={720} />
+        <DotRoad f={f} draw={draw} wall={0.7} far={720} pulse={ring} />
+        {Array.from({length: 26}).map((_, i) => <path key={i} d={`M ${(i * 173 + f * 22) % 1500 - 300},${440 + (i * 97) % 1200} l 260,46`} stroke="#FFFFFF" strokeWidth={8 + (i % 3) * 4} opacity={0.6} strokeLinecap="round" />)}
         {[0, 1, 2].map((i) => {
           const k = ((f / 36 + i / 3) % 1);
           return <ellipse key={i} cx={540} cy={1500} rx={120 + 600 * k} ry={40 + 200 * k} fill="none" stroke={C.amber} strokeWidth={6 - 4 * k} opacity={ring * (1 - k)} />;
@@ -843,6 +862,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const PX = 640, PY = 900;
   const cam = track([{t: 0, z: 2.8, fx: PX, fy: PY + 120}, {t: b(29) - 6, z: 2.8, fx: PX, fy: PY + 110}, {t: b(29) + 64, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.03, fx: 540, fy: 960}]);
   const dark = ease(f, b(30) - 6, 20);
+  const near = 26 * pull;
   return (
     <Frame p={p} mode="field" cam={cam} warmth={0.05}
       overlay={<>
@@ -860,7 +880,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         </g>
         <circle cx={PATCH.x} cy={PATCH.y} r={PATCH.r} fill={C.ground} opacity={0.85 * dark} />
         <g opacity={dark}><Pin x={PATCH.x} y={PATCH.y + 20} drop={1} s={0.8} /></g>
-        {PINGS.filter((q) => !q.far).map((q, i) => {
+        <g transform={`translate(${near} ${near * 0.5})`}>{PINGS.filter((q) => !q.far).map((q, i) => {
           if (dark > 0.3 && Math.hypot(q.x - PATCH.x, q.y - PATCH.y) < PATCH.r + 20) return null;
           const k = ((f / 50 + h01(i, 1)) % 1);
           const on = clamp01(pull * 3 - h01(i, 5) * 2);
@@ -871,7 +891,9 @@ const S8: React.FC<SceneProps> = ({p}) => {
               <circle cx={q.x} cy={q.y} r={12 + 46 * k} fill="none" stroke={C.amber} strokeWidth={3} opacity={1 - k} />
             </g>
           );
-        })}
+        })}</g>
+        <defs><radialGradient id="pvig" cx={PATCH.x / 1080} cy={PATCH.y / 1920} r="0.75"><stop offset="0.18" stopColor={C.line} stopOpacity={0} /><stop offset="1" stopColor={C.line} stopOpacity={0.45} /></radialGradient></defs>
+        <rect x={0} y={0} width={1080} height={1920} fill="url(#pvig)" opacity={dark} />
         <g opacity={tick > 0 ? 1 : 0}>
           {[[640, 1100], [760, 1040], [880, 1100], [700, 1180], [820, 1220]].map(([mx, my], i) => (
             <g key={i} transform={`translate(${mx} ${my}) scale(${clamp01(tick * 5 - i)})`}><path d="M 0,-16 L 4,-4 L 16,0 L 4,4 L 0,16 L -4,4 L -16,0 L -4,-4 Z" fill={C.white} stroke={C.line} strokeWidth={3} /></g>
@@ -947,7 +969,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Spruces y={1062} n={12} seed={11} f={f} x0={-40} x1={1120} scale={0.9} o={0.55} />
-        <Powerline f={f} xs={[120, 960]} top={450} base={900} />
+        <Powerline f={f} xs={[300, 960]} top={450} base={900} />
         <path d="M -20,860 Q 300,800 540,820 T 1100,850 L 1100,1062 L -20,1062 Z" fill={C.snow} stroke={C.snowD} strokeWidth={3} />
         <path d="M 0,1300 L 1080,1240 L 1080,1400 L 0,1460 Z" fill={C.ground} />
         <Billboard x={540} y={780} up={up3} f={f} w={400} h={200} post={60} />
@@ -1120,7 +1142,8 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <g opacity={0.35} transform={`translate(${CX} ${CY + 30}) scale(1 -0.55)`}><CarSil x={0} y={0} s={0.5} f={f} /><RoofPuck x={0} y={-98} f={f} scale={0.3} frost={0.5} clearRing={0.5} mode="clear" emotion="pensive" glow={0.4} seed={12} /></g>
         <CarSil x={CX} y={CY + 30} s={0.5} f={f} />
         <RoofPuck x={CX} y={CY - 68} f={f} scale={0.3} frost={lerp(0.5, 0.7, creep)} clearRing={lerp(0.5, 0.35, creep)} mode="clear" emotion={creep > 0.5 ? 'tense' : 'pensive'} glow={0.5} rimGlow={1} look={rise2 > 0.3 ? 0 : 0.6} seed={12} />
-        <Flakes f={f} n={50} speed={0.6} o={0.5} />
+        <g opacity={0.55}><Powerline f={f} xs={[80, 1000]} top={470} base={1150} /></g>
+        <Flakes f={f} n={70} speed={0.6} o={0.6} />
         <HeldTravel f={f} x={180} y={1150} w={300} h={160} seed={13} strength={0.2} rx={20} color={C.led} />
       </SVG>
     </Frame>
