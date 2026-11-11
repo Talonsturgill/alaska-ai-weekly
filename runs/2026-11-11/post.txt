@@ -1,0 +1,20 @@
+Waymo lists three kinds of work in Fairbanks, and no report says how many cars or when.
+A winter with a specialist at the wheel mostly shows what the car does with a human backstop.
+
+Waymo posted on November 5th that this season in Alaska it will run closed-course tests and collect heavy snowfall data. Governor Dunleavy's social media post names Fairbanks and says there's no better proving ground for winter driving.
+
+In a statement quoted by Alaska's News Source, Waymo describes the work. Manual data collection. Autonomous driving with a specialist at the wheel. Limited structured testing.
+
+The paper answer to black ice is specific. Waymo's post says its sixth-generation driver uses cameras, radar and lidar, with built-in heaters and micro-wipers to keep sensors clear in icy conditions.
+
+If cameras struggle in a blinding whiteout, another sensing system backs them up. The car measures traction changes under each wheel, and Waymo recreates black ice in simulation.
+
+Paper is where the skeptics start. One Fairbanks resident asked if the testers know to look for black ice. Another expects the cars to stall out on the sides of roads. A third says they shouldn't be allowed. The mayor called it a great opportunity.
+
+Waymo's own post says weather beyond what its system is validated for can pause service in its cities for hours or even days.
+
+The question that decides driverless is the one still open. Waymo hadn't yet answered the station's question on whether it plans driverless cars there.
+
+What would you want proven in Fairbanks before one drives with nobody at the wheel?
+
+#ArtificialIntelligence #SelfDrivingCars #Alaska #Fairbanks #WinterDriving

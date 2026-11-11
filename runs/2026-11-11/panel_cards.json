@@ -1,0 +1,81 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 7.2,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 7.2,
+   "Composition & staging": 7.2,
+   "Color & grade": 7.0,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "weighted_total": 7.13,
+  "concrete_defects": [
+   "ping field has no depth planes",
+   "opening wipe soft at 4.4 percent",
+   "whiteout shot low energy",
+   "clipboard stack sags 112 to 120s",
+   "figures, trees and road flat fills"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 7.5
+  },
+  "weighted_total": 7.18,
+  "concrete_defects": [
+   "translucent band at 8.2s in shot 1",
+   "held cards at 4 to 6 percent change",
+   "parka figure plainer than props",
+   "shot 11 crowded",
+   "long run with 32 VO gaps"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 6.5,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 6.5,
+   "Color & grade": 6.5,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 7.5
+  },
+  "weighted_total": 6.87,
+  "concrete_defects": [
+   "ghosted layer band in shot 1",
+   "flat puck and car shading",
+   "parka figure plain, dead space above gantry",
+   "low motion 106 to 118s",
+   "washed out whiteout and sparse ping field"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "held beats under six percent with camera solved out (18 strips)",
+  "uneven illustration finish, flat figures trees and road",
+  "ping field depth",
+  "low-energy whiteout shot",
+  "caption cue splits at 37.7s and 46.1s"
+ ]
+}

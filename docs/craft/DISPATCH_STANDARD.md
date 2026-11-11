@@ -667,3 +667,11 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - **HeldTravel boxes hug the prop.** Box-sized sweeps over empty scenery read as diagonal glare slabs on 10 of 13 shots. Size the box to the prop and keep strength at 0.1 to 0.16 over large areas. (2026-11-10)
 - **Credit source labels are names, not hosts.** FISHERIES.NOAA.GOV failed rendered OCR at credit size; build_scenes now writes NOAA FISHERIES and FEDERAL REGISTER. (2026-11-10)
 - **A fact-check on_screen string may not contain a colon.** c12's approved string had one, so claims_contract and visible_copy contradicted each other until the record was rewritten. (2026-11-10)
+
+## 2026-11-11 additions (The Roof Puck panel findings, knowable in advance)
+- Never ship a state selector, chip strip or dev tracker on screen. The first panel read a six-chip puck-state strip as debug UI and spent the whole upper third on it. Put state in the hero, not in chrome.
+- The upper third of the 9:16 frame is set space. Raise the hero or add real set pieces (powerlines, gantry, windows, skyline) so no band reads as dead sky.
+- Every plate and banner that the board names must carry its text in the render. An empty cloth banner under a governor beat was an editor blocker.
+- A caption box can cover the lane figure or the payoff plate. Keep figures above the caption band and check plates against it.
+- Geometry that names a place must not put Fairbanks on a source that only says Alaska. Labels on silent patches and pins follow the attribution of the claim they sit beside.
+- Mix bed arcs that dip in every gap flatten LRA below 6.0. Keep at least two real swells in the arc.

@@ -95,11 +95,41 @@ def via_github(file, name):
         exists = sh(["git", "-C", root, "ls-remote", "--exit-code", "--heads",
                      "origin", branch]).returncode == 0
         if exists:
-            fetched = sh(["git", "-C", root, "fetch", "origin",
+            # DEPTH 1 (2026-11-11): the media branch carries every run's videos, and a full
+            # fetch pulled tens of GB, filled the container disk and killed the upload.
+            # A fast-forward push only needs the tip commit.
+            fetched = sh(["git", "-C", root, "fetch", "--depth=1", "origin",
                           f"+refs/heads/{branch}:refs/remotes/origin/{branch}"])
             if fetched.returncode != 0:
                 raise RuntimeError("git fetch media branch failed: " +
                                    (fetched.stderr or fetched.stdout)[-300:])
+        if exists:
+            # PLUMBING, NO CHECKOUT (2026-11-11). The media branch's tree holds every video ever
+            # uploaded (tens of GB). `git worktree add` checked all of it out into /tmp and filled
+            # the container disk. Build the new commit straight from the tip's tree instead:
+            # nothing is materialised, and only the one new blob is pushed.
+            tip = sh(["git", "-C", root, "rev-parse", f"refs/remotes/origin/{branch}"]).stdout.strip()
+            idx = os.path.join(wt, "media_index")
+            env = dict(os.environ, GIT_INDEX_FILE=idx)
+            def g(*args, **kw):
+                return subprocess.run(["git", "-C", root, *args], capture_output=True, text=True, env=env, **kw)
+            if g("read-tree", tip).returncode != 0:
+                raise RuntimeError("git read-tree failed")
+            blob = sh(["git", "-C", root, "hash-object", "-w", file]).stdout.strip()
+            if not blob: raise RuntimeError("git hash-object failed")
+            if g("update-index", "--add", "--cacheinfo", f"100644,{blob},media/{name}").returncode != 0:
+                raise RuntimeError("git update-index failed")
+            tree = g("write-tree").stdout.strip()
+            cenv = dict(os.environ, GIT_AUTHOR_NAME="Alaska.Ai routine", GIT_AUTHOR_EMAIL=media_email(),
+                        GIT_COMMITTER_NAME="Alaska.Ai routine", GIT_COMMITTER_EMAIL=media_email())
+            ct = subprocess.run(["git", "-C", root, "commit-tree", tree, "-p", tip, "-m", f"dispatch media: {name}"],
+                                capture_output=True, text=True, env=cenv)
+            commit = ct.stdout.strip()
+            if ct.returncode != 0 or not commit:
+                raise RuntimeError("git commit-tree failed: " + (ct.stderr or "")[-300:])
+            p = sh(["git", "-C", root, "push", "origin", f"{commit}:refs/heads/{branch}"])
+            if p.returncode != 0: raise RuntimeError("git push failed: " + p.stderr[-300:])
+            return f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/media/{name}"
         add_cmd = ["git", "-C", root, "worktree", "add", "--force", "--detach", wt]
         if exists:
             add_cmd.append(f"origin/{branch}")

@@ -4011,3 +4011,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: resumed the same edition from the PR 180 archive after the owner topped up Gemini (the first session stopped on HTTP 402). VO 112.7 s (Gemini Sulafat, 3 clean takes). Full panel median 7.25 against 7.0 (J1 7.20, J2 7.32, J3 7.25), no hard blockers, on the fourth graded cut. Caption capped at round 5 at 8.45 against 8.5, zero hard fails, shipped as below the bar per the rubric cap.
 - In-run fixes: Gate 0E/0F re-read (one scope fix), Gate 0B to 0D three to five rounds, caption_fixups article key, credit labels NOAA FISHERIES and FEDERAL REGISTER in build_scenes.py, HeldTravel boxes tightened, accuracy relabels (1979 field, NOAA best estimate, OBJECTIONS CLOSED, APPLIED FOR, filed to intervene), lib/ticket.tsx (TakeANumberMachine with a head line, Ticket) registered.
 - Queued: see docs/MACHINE_QUEUE.md (2026-11-10), seven items, held beats a repeat offender.
+
+## 2026-11-11 "The Roof Puck" (Waymo winter testing in Fairbanks)
+- Shipped: VO 128.6 s (Gemini Sulafat). Three-seat panel median 7.13 (7.13, 7.18, 6.87) against the 7.0 bar, no hard blockers, editor ship. Caption hit the five-round cap at 8.38 below the 8.5 bar, zero hard fails.
+- In-run fixes: upload_video.py now fetches depth 1 and builds the media commit with plumbing (no checkout), after a full fetch and worktree checkout of the media branch filled the container disk; removed the on-screen state strip; mix bed arc widened for LRA 6.7; board and Gate 0B to 0D three rounds.
+- Queued: see docs/MACHINE_QUEUE.md (2026-11-11), seven items.

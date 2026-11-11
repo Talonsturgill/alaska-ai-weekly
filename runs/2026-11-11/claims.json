@@ -1,0 +1,440 @@
+{
+ "run_date": "2026-11-11",
+ "fact_check_verdict": "Publish as winter testing that Waymo and its statement describe, not as a deployment. Waymo's blog names only Alaska, Fairbanks comes from the governor's post and KTUU. Waymo had not answered on timeline, why Fairbanks or driverless plans. No fleet size, dates or permits reported. All quotes read from raw page text.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Waymo is a company that builds self-driving cars.",
+   "on_screen": null,
+   "source": "https://www.foxweather.com/extreme-weather/self-driving-cars-prepare-alaska-perilous-winter-climate",
+   "requires": [
+    "Fox: 'one of the world's leading autonomous vehicle companies'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "On November 5th, Waymo published a blog post about winter driving.",
+   "on_screen": "NOVEMBER 5TH",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog dated November 5, 2026."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "The post says Waymo will do closed-course tests in Alaska this season.",
+   "on_screen": "CLOSED-COURSE TESTS \u00b7 ALASKA",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Verbatim: 'This season in Alaska, for example, we'll be conducting closed-course evaluations and heavy snowfall data collection'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "It will also collect heavy snowfall data there.",
+   "on_screen": "HEAVY SNOWFALL DATA",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Same sentence."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "The post names the place only as Alaska.",
+   "on_screen": "ALASKA",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "The word Fairbanks does not appear on the blog page (raw text checked)."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Governor Dunleavy named Fairbanks in a social media post.",
+   "on_screen": "FAIRBANKS",
+   "source": "https://www.foxweather.com/extreme-weather/self-driving-cars-prepare-alaska-perilous-winter-climate",
+   "requires": [
+    "Fox: Dunleavy wrote on social media; quote includes 'proving ground for winter driving than Fairbanks'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "The governor said there is no better proving ground for winter driving than Fairbanks.",
+   "on_screen": "\"NO BETTER PROVING GROUND\"",
+   "source": "https://www.foxweather.com/extreme-weather/self-driving-cars-prepare-alaska-perilous-winter-climate",
+   "requires": [
+    "Verbatim in Fox: \"there is no better proving ground for winter driving than Fairbanks,\" Dunleavy wrote on social media."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "He said Waymo will test its Ojai and Hyundai Ioniq vehicles there.",
+   "on_screen": "OJAI \u00b7 HYUNDAI IONIQ",
+   "source": "https://www.foxweather.com/extreme-weather/self-driving-cars-prepare-alaska-perilous-winter-climate",
+   "requires": [
+    "Fox: 'Dunleavy said Waymo will test its Ojai and Hyundai IONIQ vehicles in Fairbanks'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "A Facebook post showed Waymo cars charging in the Golden Valley Electric parking lot.",
+   "on_screen": "GVEA PARKING LOT",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU: a Facebook post 'claiming to show them charging'. Frame as a post that showed or claimed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "An official at Golden Valley Electric said she saw the cars using its chargers herself.",
+   "on_screen": "SEEN FIRST HAND",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU: Ashley Bradish, Director of External Affairs and Public Relations, 'confirmed that she has personally seen the vehicles using their stations'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Waymo's statement lists three kinds of work in Fairbanks.",
+   "on_screen": "THREE KINDS OF WORK",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU quotes Bonelli statement: manual data collection, autonomous driving with a specialist at the wheel, and limited structured testing in Fairbanks."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "One is manual data collection, with a person driving.",
+   "on_screen": "MANUAL DATA COLLECTION",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "Statement says 'manual data collection'. 'with a person driving' is the plain meaning of manual; keep on screen to the verbatim words."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Another is autonomous driving with a specialist at the wheel.",
+   "on_screen": "SPECIALIST AT THE WHEEL",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "Verbatim from Waymo statement."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "The third is limited structured testing.",
+   "on_screen": "LIMITED STRUCTURED TESTING",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "Verbatim from Waymo statement."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Waymo says the work will refine the sixth-generation driver this winter.",
+   "on_screen": "SIXTH-GENERATION WAYMO DRIVER",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "Statement: 'further refine critical cold-weather capabilities of the sixth-generation Waymo Driver this winter'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "The reporter asked about the timeline, why Fairbanks, and driverless plans, and Waymo hadn't answered yet.",
+   "on_screen": "NOT YET ANSWERED",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU: Bonelli 'has not yet responded' to questions on timeline, why Fairbanks, and intention to operate driverless cars."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "The sixth-generation driver uses cameras, radar and lidar.",
+   "on_screen": "CAMERAS \u00b7 RADAR \u00b7 LIDAR",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog verbatim: 'uses cameras, radar, and lidar to navigate the world around it'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "Built-in heaters and tiny wipers keep those sensors clear in icy conditions.",
+   "on_screen": "HEATERS \u00b7 MICRO-WIPERS",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog verbatim: 'built-in heaters and micro-wipers keep sensors clear in icy conditions'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "If one sensor is blinded, like cameras in a whiteout, another is there to back it up.",
+   "on_screen": "ONE SENSOR BLIND \u00b7 ANOTHER BACKS IT UP",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog: 'if one sensor is challenged, such as cameras during a blinding whiteout, another sensing system is there to back it up'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "As the car moves, it measures traction changes under each wheel.",
+   "on_screen": "TRACTION \u00b7 EACH WHEEL",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog: 'it measures real-time traction changes under each wheel, automatically adjusting steering, braking, and acceleration'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-primary",
+   "spoken": "Waymo also uses simulation to recreate black ice and whiteouts.",
+   "on_screen": "SIMULATED BLACK ICE",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog: 'simulation testing to recreate challenging conditions like black ice and whiteouts digitally'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "Waymo says it already drove tens of thousands of snow miles in New York, Michigan and the Sierra Nevada.",
+   "on_screen": "TENS OF THOUSANDS OF MILES",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog: 'accumulating tens of thousands of real-world miles across Upstate New York, Michigan's Upper Peninsula and the Sierra Nevada'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-primary",
+   "spoken": "Each Waymo car acts as a mobile weather station and shares what it sees across the fleet.",
+   "on_screen": "MOBILE WEATHER STATION",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog: 'Each Waymo vehicle acts as a mobile weather station, sharing real-time insights across our fleet'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-primary",
+   "spoken": "Waymo says weather past what its system is validated for can pause service for hours or days.",
+   "on_screen": "PAUSE FOR HOURS OR DAYS",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog: pauses 'may last for hours or even days'; applies to public service in its cities."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "A Fairbanks resident named Katrina Howe asked whether the testers know to look for black ice.",
+   "on_screen": "\"DO THEY KNOW TO LOOK FOR BLACK ICE?\"",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU quote: 'Do they know to look for black ice?'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Another resident, Gwen Jackson, said she expects the cars to stall out on the sides of roads.",
+   "on_screen": "\"STALL OUT\"",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU: 'I feel like they'll probably just stall out and be on the sides of the roads'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Mayor Mindy O'Neall called it a great opportunity for Fairbanks to be a testing ground.",
+   "on_screen": "\"A GREAT OPPORTUNITY\"",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU verbatim: 'I think it's a great opportunity for Fairbanks to be a testing ground.'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "The mayor said Fairbanks has been a winter testing ground for a long time through its economic development group.",
+   "on_screen": "FEDC \u00b7 WINTER TESTING GROUND",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU, mayor: 'We've been a winter testing ground for a long time through FEDC (Fairbanks Economic Development Corporation)'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "Resident Charlie Woolwine said he doesn't think they're safe and they shouldn't be allowed.",
+   "on_screen": "\"SHOULDN'T BE ALLOWED\"",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "KTUU verbatim."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c30",
+   "status": "verified-secondary-read-in-full",
+   "spoken": "The reports don't say how many cars are in Fairbanks or on what dates.",
+   "on_screen": "NO COUNT \u00b7 NO DATES",
+   "source": "https://www.alaskasnewssource.com/2026/11/11/waymo-tests-self-driving-cars-fairbanks-climate/",
+   "requires": [
+    "Absence in KTUU, Fox, and the Waymo blog (raw text read). Use 'the reports don't say'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c31",
+   "status": "verified-primary",
+   "spoken": "Waymo's blog says it validates the system with trained human drivers behind the wheel in snowy metros.",
+   "on_screen": "HUMAN DRIVERS BEHIND THE WHEEL",
+   "source": "https://waymo.com/blog/2026/11/winter-weather-preparedness/",
+   "requires": [
+    "Blog: 'validating the system with trained human drivers behind the wheel in snowy metros'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

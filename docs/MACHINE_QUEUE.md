@@ -275,3 +275,12 @@ the pass can't fix safely stays open with ` | escalated <date>: <why>` and goes 
 - [ ] 2026-11-10 | repeat: 2 | dead-lower-third | evidence: flow critic and judge named a flat lower third on 5 to 6 of 13 shots in rounds 1 to 3 | fix: a lib Floor kit (shore stones, planks, chart sheet) every scene mounts by default, measured by dead_space on y 1468 to 1920
 - [ ] 2026-11-10 | repeat: 3 | held-beats-under-six-percent | evidence: 19 to 26 of 48 strips under 6 percent with the camera solved out in every cut; Motion 6.0 to 6.7 | fix: as queued 11-05 and 11-08
 - [ ] 2026-11-10 | repeat: 1 | gate0-critic-rounds | evidence: Gate 0B, 0C and 0D took three to five rounds each, mostly on board text the scenes did not yet show | fix: a board lint for status words on signs and banners without a claim id before the critics read it
+
+## 2026-11-11 (The Roof Puck)
+- [ ] 2026-11-11 | repeat: 0 | media-branch-fetch-fills-disk | evidence: upload_video.py fetched the whole dispatch-media branch (tens of GB of past videos), five parallel uploads left 22 GB of tmp packs and filled the container disk twice | fix: SHIPPED in run, depth-1 fetch plus plumbing commit with no worktree checkout; queue a media-branch prune or a separate media repo so the tip tree stops growing
+- [ ] 2026-11-11 | repeat: 0 | upload-parallel-race | evidence: five parallel upload_video.py calls raced on one branch and one clone | fix: a single batch upload entry point that pushes all five files in one commit
+- [ ] 2026-11-11 | repeat: 0 | dev-ui-chrome-on-screen | evidence: the RoofPuck state tracker (six-chip strip plus ILLUSTRATION tag) shipped to the first panel as on-screen UI and cost a round | fix: a preflight lint that fails any episode strip of chips in the top band that is not a plate
+- [ ] 2026-11-11 | repeat: 3 | held-beats-under-six-percent | evidence: 18 to 28 of 42 strips under 6 percent with the camera solved out in all three cuts; Motion 6.5 to 7.2 | fix: as queued 11-05, 11-08 and 11-10
+- [ ] 2026-11-11 | repeat: 4 | caption-scorer-hair-under-bar | evidence: caption rounds 7.83, 8.08, 8.23, 8.32, 8.38 hit the five-round cap below 8.5 with zero hard fails | fix: as queued 11-05
+- [ ] 2026-11-11 | repeat: 2 | gate0-critic-rounds | evidence: Gate 0B, 0C and 0D each took two rounds and a third set of paper edits | fix: as queued 11-10
+- [ ] 2026-11-11 | repeat: 1 | illustration-figure-parity | evidence: judges named flat figures, trees and road against shaded props in every round | fix: a lib figure rim and contact shadow kit
