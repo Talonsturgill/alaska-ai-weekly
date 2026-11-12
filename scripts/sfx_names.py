@@ -19,6 +19,7 @@ time with a message about tick and nothing about which board names had fallen th
 Known names map exactly as before.
 
     python3 scripts/sfx_names.py --self-test
+    python3 scripts/sfx_names.py --board out/dispatch/storyboard.json   # Gate 0A, also in storyboard_check
 """
 import difflib
 import sys
@@ -34,7 +35,22 @@ BY_NAME = {"whoosh": "whoosh", "sizzle": "paper", "snap": "snap", "slide": "crea
            "alarm": "klaxon", "swell": "whoosh", "sting": "boom", "tap": "tick", "thock": "tick", "bloom": "chime", "ping": "ding",
            "bell": "ding", "hush": "paper", "rumble": "boom", "crunch": "paper", "pulse": "ding", "crack": "snap", "clank": "clank",
            "punch": "pop", "knock": "thud", "drone": "creak", "roll": "chain", "flip": "paper", "stop": "clank", "heavy": "boom",
-           "fold": "paper", "type": "tick", "pop": "pop", "clink": "ding", "chime": "chime", "thud": "thud", "boom": "boom"}
+           "fold": "paper", "type": "tick", "pop": "pop", "clink": "ding", "chime": "chime", "thud": "thud", "boom": "boom",
+           # machine pass 2026-11-12 (queue sfx-name-table-and-family-ceiling, repeat 1, and the 11-07
+           # sfx_names table item). Every bank kind is a name for itself: "ding", "paper" and "chain"
+           # were not in this table, so 51 shipped beats that named a bank kind exactly were walked to
+           # whatever kind was least used. Then the descriptive names shipped boards have used
+           # since 10-06 that fell through (counted over runs/*/storyboard.json), each to the kind it
+           # sounds like. clack and squeak are the 11-12 names dispatch_mix rejected.
+           "ding": "ding", "paper": "paper", "chain": "chain", "klaxon": "klaxon",
+           "swoosh": "whoosh", "swish": "whoosh", "swing": "whoosh", "rush": "whoosh", "clack": "tick",
+           "tock": "tick", "pebble": "tick", "squeak": "creak", "scrape": "creak", "buzz": "creak",
+           "rattle": "chain", "ratchet": "chain", "coins": "chain", "ching": "ding", "ring": "ding",
+           "glass": "ding", "shimmer": "chime", "drip": "pop", "bubble": "pop", "boing": "pop",
+           "splat": "thud", "boots": "thud", "step": "thud", "footstep": "thud", "door": "thud",
+           "slam": "stamp", "press": "stamp", "pin": "snap", "flap": "paper", "flutter": "paper",
+           "rustle": "paper", "scribble": "paper", "pencil": "paper", "tear": "paper", "hiss": "paper",
+           "stinger": "boom"}
 ALT = {"sub": ["thud", "stamp", "boom"], "metal": ["clank", "chain"], "bell": ["chime", "ding"], "click": ["tick"], "blip": ["pop"],
        "pluck": ["snap"], "air": ["whoosh"], "texture": ["paper", "creak"]}
 
@@ -151,6 +167,87 @@ def names_for_kind(beats, kinds, kind):
     return sorted({head(b["sfx"]) for b in beats if kinds.get(b["id"]) == kind})
 
 
+# THE SCHEDULE'S PALETTE RULES, READ ON THE BOARD (machine pass 2026-11-12, queue item
+# sfx-name-table-and-family-ceiling). dispatch_mix.check_schedule holds a film to at least
+# max(8, 30 percent) distinct kinds, no kind over 18 percent and the top four under 55 percent, but
+# it runs in the mix, after the render: on 11-12 the tick ceiling forced a recast of eleven beats
+# once the frames already existed, and two names the table lacked surfaced there too. The kinds
+# follow from the board alone (this module's walk plus the board's riser_at), so storyboard_check
+# runs the same rules at Gate 0A. The numbers are dispatch_mix's; the self-test fails if they drift.
+PALETTE_MIN_EVENTS = 12
+SINGLE_KIND_CEILING = 0.18
+TOP_FOUR_CEILING = 0.55
+
+
+OBJECT_KINDS = len([k for k in FAM if k != "riser" and KIND_CLASS.get(k, "object") == "object"])
+
+
+def want_distinct(n):
+    return max(8, round(n * 0.30))
+
+
+def _onset(beat):
+    v = beat.get("at_s", beat.get("t"))
+    return float(v.split("-", 1)[0]) if isinstance(v, str) else float(v)
+
+
+def riser_beat_of(board):
+    """The riser's beat, exactly as dispatch_mix.riser_beat_id picks it (nearest audio_arc.riser_at,
+    ties to the earlier beat). None when the board names no riser_at."""
+    try:
+        at = float((board.get("audio_arc") or {}).get("riser_at"))
+    except (TypeError, ValueError):
+        return None
+    beats = board.get("beats") or []
+    if not beats:
+        return None
+    return min(beats, key=lambda b: (abs(_onset(b) - at), _onset(b)))["id"]
+
+
+def palette_problems(kind_list, names_on=lambda kind: []):
+    """The palette half of dispatch_mix.check_schedule, as messages (empty when it would pass)."""
+    from collections import Counter
+    n, out = len(kind_list), []
+    if n < PALETTE_MIN_EVENTS:
+        return out
+    kinds = Counter(kind_list)
+    need = want_distinct(n)
+    if len(kinds) < need:
+        out.append(f"only {len(kinds)} distinct sfx kinds across {n} beats; the mix needs >= {need}. "
+                   f"Unused in the bank: {sorted(set(FAM) - set(kinds) - {'riser'})}."
+                   + (f" The walk reaches {OBJECT_KINDS} object kinds plus the riser, so a board of this "
+                      f"many object beats can't pass the mix: merge beats or give an animal beat its sound."
+                      if need > OBJECT_KINDS + 1 else ""))
+    top, c = kinds.most_common(1)[0]
+    if c / n > SINGLE_KIND_CEILING:
+        out.append(f"'{top}' carries {c} of {n} beats ({c/n:.0%}), over the mix's 18% ceiling. Board sfx "
+                   f"names on '{top}': {', '.join(names_on(top)) or 'none'}. Rename some beats to another kind.")
+    heavy = sum(x for _, x in kinds.most_common(4))
+    if heavy / n > TOP_FOUR_CEILING:
+        out.append(f"the top four kinds carry {heavy} of {n} beats ({heavy/n:.0%}), over the mix's 55% ceiling.")
+    return out
+
+
+def board_report(board):
+    """{'problems', 'notes', 'kinds'} for a storyboard: every beat names a sound the table knows,
+    and the kinds the mix will cast pass its palette rules. Gate 0A, scripts/storyboard_check.py."""
+    beats = [b for b in (board.get("beats") or []) if isinstance(b, dict)]
+    problems, notes = [], []
+    missing = [b.get("id") for b in beats if not str(b.get("sfx") or "").strip()]
+    if missing:
+        problems.append(f"beats {', '.join(map(str, missing))} name no sfx")
+    beats = [b for b in beats if str(b.get("sfx") or "").strip() and "id" in b]
+    if not beats:
+        return {"problems": problems, "notes": notes, "kinds": {}}
+    kinds, unknown = kinds_by_beat(beats, riser_beat_of(board))
+    problems += unknown_report(unknown)
+    problems += palette_problems([kinds[b["id"]] for b in beats],
+                                 lambda k: names_for_kind(beats, kinds, k))
+    for bid, nm in class_conflicts(beats):
+        notes.append(f"beat {bid} names the animal sound '{nm}' but declares sfx_class object")
+    return {"problems": problems, "notes": notes, "kinds": kinds}
+
+
 def self_test():
     ok = True
 
@@ -194,6 +291,31 @@ def self_test():
     tagged = [{"id": 1, "sfx": "caw", "sfx_class": "object"}]
     expect("a caw on a beat declared object plays an object kind and is reported",
            kind_class(kinds_by_beat(tagged, None)[0][1]) == "object" and class_conflicts(tagged) == [(1, "caw")])
+    # The board check (2026-11-12).
+    import os
+    import re
+    mix = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "dispatch_mix.py")).read()
+    expect("the palette numbers are dispatch_mix.check_schedule's own",
+           all(x in mix for x in ("if n >= 12:", "max(8, round(n * 0.30))", "c / n > 0.18", "heavy / n > 0.55")))
+    expect("every bank kind but the animal ones and the riser is a known name for itself",
+           all(BY_NAME.get(k) == k for k in FAM if k not in KIND_CLASS and k != "riser"))
+    expect("clack and squeak (11-12) are known", known("clack") and known("squeak"))
+    names = ["thud", "tick", "whoosh", "ding", "paper", "snap", "chime", "clank", "pop", "creak",
+             "stamp", "boom", "chain", "klaxon"]
+    good = {"audio_arc": {"riser_at": 30.0},
+            "beats": [{"id": i + 1, "at_s": 2.5 * i, "sfx": names[i % len(names)]} for i in range(42)]}
+    rep = board_report(good)
+    expect("a board spread across the bank passes", rep["problems"] == [])
+    expect("the board's riser lands on the beat nearest riser_at", rep["kinds"][13] == "riser")
+    ticky = {"audio_arc": {"riser_at": 30.0},
+             "beats": [dict(b, sfx=("clack" if b["id"] % 4 == 0 else b["sfx"])) for b in good["beats"]]}
+    tr = board_report(ticky)
+    expect("eleven clacks in 42 beats fail the 18% ceiling and name clack",
+           any("over the mix's 18% ceiling" in p and "clack" in p for p in tr["problems"]))
+    unk = board_report({"audio_arc": {}, "beats": [{"id": 1, "at_s": 0, "sfx": "zorp"}, {"id": 2, "at_s": 3}]})
+    expect("an unknown name and a missing sfx fail with the beat ids",
+           any("'zorp' (beats 1)" in p for p in unk["problems"]) and any("beats 2 name no sfx" in p for p in unk["problems"]))
+    expect("palette messages are worded for the board", re.search(r"18% ceiling", " ".join(tr["problems"])) is not None)
     print("sfx_names self-test: " + ("PASS" if ok else "FAIL"))
     return 0 if ok else 1
 
@@ -201,4 +323,14 @@ def self_test():
 if __name__ == "__main__":
     if "--self-test" in sys.argv:
         sys.exit(self_test())
+    if len(sys.argv) > 2 and sys.argv[1] == "--board":
+        import json
+        r = board_report(json.load(open(sys.argv[2])))
+        for p in r["problems"]:
+            print("FAIL " + p)
+        for n_ in r["notes"]:
+            print("NOTE " + n_)
+        print(f"sfx board check: {len(r['kinds'])} beats, {len(set(r['kinds'].values()))} kinds, "
+              + ("FAIL" if r["problems"] else "PASS"))
+        sys.exit(1 if r["problems"] else 0)
     print(__doc__)

@@ -964,6 +964,12 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   `claims`, the claims.json ids it shows (`["narration"]` for a framing line that asserts nothing),
   and a status word on a plate (CLOSED, APPROVED, VALIDATED, NOW SERVING) must be said by a cited
   claim. Read its `[board-claims-note]` lines before the critics do.
+  Since 2026-11-12 it also runs `scripts/template_slot_check.py` (3 or more shots whose framing,
+  pov, layout, motion and hero treatment repeat 4 of 5 fields at the aligned slot of either of the
+  last two shipped boards FAIL, the "relabel of the last film's template" read Gate 0B made of
+  11-12 v1) and `scripts/sfx_names.py` board_report (every beat's sfx name is in the table, and
+  the kinds the mix will cast pass its distinct-kind, 18 percent and top-four ceilings), so
+  neither waits for a critic or for the mix after the render.
 - GATE 0A': `python3 scripts/caption_band_check.py` exit 0, a SOURCE gate run BEFORE the render. It
   refuses raw `<rect>`/`<text>` in the open-caption band and any Plate whose authored y is not its
   rendered y. Background that belongs under the caption card declares `data-band="ok"`; never mark
@@ -1008,6 +1014,10 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
       CONTRAST rule, sparse VETTED inline tags, the RUNTIME-ANCHORED pace paragraph from step 7
       verbatim). Emotion lives in the NOTES, not tags. Respell tricky proper nouns phonetically in
       the transcript only (AIDEA -> "eye-DEE-uh"); the real spelling stays on screen.
+      After any script edit, `python3 scripts/vo_plan_sync.py` copies the new words into the plan's
+      lines[] and its prompt transcript, keeping each tag on its surviving word (2026-11-12; the
+      synth runs the same sync itself). `vo_synth_gemini.py --dry-run` runs every precheck and
+      prints the prompt with no TTS call; `--help` runs nothing.
    b. SYNTH + SOUND CHECK in the background: `python3 scripts/vo_synth_gemini.py` renders the WHOLE
       passage in one call (voice Sulafat; gemini-3.1-flash-tts-preview, auto-fallback to
       gemini-2.5-pro on the random 500), VO_TAKES takes, keeps the BEST by scripts/vo_soundcheck.py,

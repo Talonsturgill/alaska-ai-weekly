@@ -4025,3 +4025,7 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 - Shipped: 113.2s film, hero the stake tag with a raven witness, a clothesline device, an overhead-free ruler comparison of 15 against 50. Final panel 7.11, 7.02, 6.94, median 7.02 against the 7.0 bar, no hard blockers; ship_gate PASS after one blocked round. Caption 8.55 at round 4, zero hard fails.
 - In-run fixes: Northern Alaska Environmental Center (not Northern Journal) is the c31 source, re-read on the live page; reordered VO line 10 so the missing-word payoff lands after 85s; shot 11 rebuilt inside the stake world after judge and flow critic called it the weakest frame; on-screen dates ordinal, attribution plates (ADN, STAK, WORLD OIL, ENV. CENTER COUNT), flyer moved off the lease tag after the editor's misattribution finding.
 - Queued: docs/MACHINE_QUEUE.md (2026-11-12), seven items, gate0-critic-rounds is repeat 3.
+
+## 2026-11-12 weekly machine pass
+- Shipped: template_slot_check in Gate 0A, sfx_names board_report in Gate 0A, vo_plan_sync, vo_synth_gemini --help and --dry-run, tracked pycache removed. Verified by running every listed self-test and gate, storyboard_check on the shipped board and runbook_check, all exit 0.
+- Escalated: the Gate 0B to 0D critic round cap (panel protocol). mix-distinct-kinds-unreachable queued with a concrete next step. Not worked this pass, still queued: raven and held figure idle, empty top third, Composition hero scale.
