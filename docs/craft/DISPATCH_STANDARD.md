@@ -693,3 +693,11 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - A caption box can cover the lane figure or the payoff plate. Keep figures above the caption band and check plates against it.
 - Geometry that names a place must not put Fairbanks on a source that only says Alaska. Labels on silent patches and pins follow the attribution of the claim they sit beside.
 - Mix bed arcs that dip in every gap flatten LRA below 6.0. Keep at least two real swells in the arc.
+
+
+## 2026-11-12 additions (knowable in advance, from the Ep1112 panel and source gates)
+- A plate that carries a claim names its source on the plate (ADN, STAK, WORLD OIL, ENV. CENTER) and a reported deal says REPORTED. A figure that comes from an advocacy group is never drawn next to a different outlet's tag.
+- Never draw a card, chip or tab onto the hero object when the claim is about someone else (the advocacy flyer touching the lease tag read as the state's own wording).
+- Macro zooms crop the world: keep the hero object fully in or fully out of frame, and keep the lone figure above master y 1336 under the push.
+- Plates in the top band collide with the ILLUSTRATION chip and the top labels of any card in the zoom; place card labels low on the card or plates clear of y 440 to 550 before authoring.
+- A lone figure needs a visible idle (breath, head turn, weight shift) on every held beat, three judges named it on every card.

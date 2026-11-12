@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 1,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.968,
+    "heard": "Alaska just approved a 50-year state land lease near dead horse, and the notice never uses one word. On November 10th, the state approved it for stack energy, under case ADL 422741. It covers about 715 acres, about 26 miles south of dead horse. The notice calls it a gas-powered data center, with high-performance computing units. The daily news reports it would burn north-slope gas, in a 1-3 gigawatt system not tied to the rail belt grid. Stacks as it expects no impact on the public grid or rainpares, that's a company claim. On November 5th, World Oil reported a 15-year gas sale agreement for the campus. That's a second clock, so keep it beside the lease. The state got 1,205 comments, and the daily news says most were opposed. The governor-elect said he would support a data center construction moratorium in Alaska, a statement of support and not an action, and the report doesn't tie it to this lease. Here's the real tension. A project can power itself and still ask the state for something very large, and that is 50 years of land. Now, that word. The Northern Alaska Environmental Center, an advocacy group, lists artificial intelligence computing among the possible uses, but the notice never uses AI. So the argument is land, gas, and a half a century. The reported gas agreement runs 15 years, and the lease runs 50. What quests for reconsideration or do November 30th? If a project powers itself and stays off the grid, what should Alaska ask of it in return for 50 years of state land?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.064,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.93,
+        "voiced_frac": 0.46,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 113.68,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 113.68,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.98,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.968,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.966,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

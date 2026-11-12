@@ -1,0 +1,300 @@
+{
+ "run_date": "2026-11-12",
+ "fact_check_verdict": "Publish as a state land decision for a gas-powered computing campus. The state notice says data center and high-performance computing and never says AI. Only the Northern Alaska Environmental Center uses the phrase artificial intelligence computing. Do not say the state or STAK says it is for AI. No size comparison is sourced, so none is made. Exxon appears only in World Oil.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "Alaska's Department of Natural Resources approved a 50-year land lease on November 10th.",
+   "on_screen": "APPROVED NOV 10",
+   "source": "https://alaskapublic.org/news/economy/energy/2026-11-11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic",
+   "requires": [
+    "Tuesday, November 10, 2026."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "The decision is filed under state case number A D L 4 2 2 7 4 1.",
+   "on_screen": "ADL 422741",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Number appears in the state public notice."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "The company is STAK Energy.",
+   "on_screen": "STAK ENERGY",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Notice lists lessee as STAK Energy Corporation."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The lease runs 50 years.",
+   "on_screen": "50-YEAR LEASE",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Notice calls it a 50-year negotiated state land lease."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "It covers about 715 acres of state land.",
+   "on_screen": "ABOUT 715 ACRES",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Notice gives 715.4 acres, ADN says about 715."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "The site is about 26 miles south of Deadhorse.",
+   "on_screen": "26 MILES SOUTH OF DEADHORSE",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Notice says about 26 miles south of Deadhorse."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "It sits about one mile west of the Dalton Highway.",
+   "on_screen": "1 MILE FROM DALTON HWY",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Notice says one mile west of the Dalton Highway."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "The state notice calls it a commercial natural gas powered data center.",
+   "on_screen": "GAS-POWERED DATA CENTER",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Notice phrase: commercial natural gas-powered data center facility."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "The notice says it holds modular high performance computing units.",
+   "on_screen": "HIGH-PERFORMANCE COMPUTING",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Notice phrase: modular high-performance computing units. The notice does not use the word AI."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-secondary",
+   "spoken": "The Anchorage Daily News reports one to three gigawatts of generation.",
+   "on_screen": "1 TO 3 GW",
+   "source": "https://www.adn.com/business-economy/2026/11/11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic/",
+   "requires": [
+    "ADN: will operate a 1-3 gigawatt generation system. Attribute to ADN."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-secondary",
+   "spoken": "It would not connect to the Railbelt power grid.",
+   "on_screen": "OFF-GRID",
+   "source": "https://www.adn.com/business-economy/2026/11/11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic/",
+   "requires": [
+    "ADN: would not be tied into the electrical grid that covers Alaska's Railbelt."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-secondary",
+   "spoken": "It would burn gas produced on the North Slope.",
+   "on_screen": "NORTH SLOPE GAS",
+   "source": "https://www.adn.com/business-economy/2026/11/11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic/",
+   "requires": [
+    "ADN: fired with gas produced locally on the North Slope."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-secondary",
+   "spoken": "World Oil reported a 15-year gas sale agreement on November 5th.",
+   "on_screen": "15-YEAR GAS DEAL",
+   "source": "https://worldoil.com/news/2026/11/5/exxonmobil-to-supply-north-slope-gas-for-3-gw-alaska-power-campus-under-15-year-deal/",
+   "requires": [
+    "Article dated Nov 5. No signing date given, so say reported, not signed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-secondary",
+   "spoken": "STAK says it expects no impact on the public grid or ratepayers.",
+   "on_screen": "STAK SAYS NO RATEPAYER IMPACT",
+   "source": "https://worldoil.com/news/2026/11/5/exxonmobil-to-supply-north-slope-gas-for-3-gw-alaska-power-campus-under-15-year-deal/",
+   "requires": [
+    "Company claim, attribute to STAK."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-secondary",
+   "spoken": "The state received 1,205 public comments.",
+   "on_screen": "1,205 COMMENTS",
+   "source": "https://northern.org/news/a-50-year-bet-on-the-north-slope-what-alaska-approved-for-stak-and-what-comes-next/",
+   "requires": [
+    "Northern Alaska Environmental Center: DNR received 1,205 public comments. ADN says more than 1,200."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-secondary",
+   "spoken": "The Anchorage Daily News says most were opposed.",
+   "on_screen": "MOSTLY OPPOSED",
+   "source": "https://www.adn.com/business-economy/2026/11/11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic/",
+   "requires": [
+    "ADN: most in opposition. No percentage."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-secondary",
+   "spoken": "Requests for reconsideration are due November 30th.",
+   "on_screen": "RECONSIDERATION DUE NOV 30",
+   "source": "https://northern.org/news/a-50-year-bet-on-the-north-slope-what-alaska-approved-for-stak-and-what-comes-next/",
+   "requires": [
+    "Northern Alaska Environmental Center: deadline November 30, 2026. ADN: 20-day period."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-secondary",
+   "spoken": "Governor-elect Kreiss-Tomkins said he would support a moratorium on data center construction.",
+   "on_screen": "INCOMING GOVERNOR BACKS MORATORIUM",
+   "source": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "requires": [
+    "ADN: said he would support a moratorium on data center construction in Alaska. A statement of support, not an action. Not tied to STAK."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "verified-secondary",
+   "spoken": "Alaska Public reports initial site work is estimated at 500 million dollars.",
+   "on_screen": "$500M ESTIMATED SITE WORK",
+   "source": "https://alaskapublic.org/news/economy/energy/2026-11-11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic",
+   "requires": [
+    "Estimate, single source."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c31",
+   "status": "verified-secondary-reread",
+   "spoken": "The Northern Alaska Environmental Center, an advocacy group, lists artificial intelligence computing among the possible uses.",
+   "on_screen": "ENVIRONMENTAL CENTER LISTS \"ARTIFICIAL INTELLIGENCE COMPUTING\"",
+   "source": "https://northern.org/news/a-50-year-bet-on-the-north-slope-what-alaska-approved-for-stak-and-what-comes-next/",
+   "requires": [
+    "Re-read on the live page: The electricity would support uses including hyperscale data centers, artificial intelligence computing, cloud computing and related industrial uses. Publisher is the Northern Alaska Environmental Center (byline Alaskans for Data Center Accountability). The page never calls itself Northern Alaska Environmental Center. It lists AI computing among uses, it does not say the campus is for AI alone."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c32",
+   "status": "verified-primary",
+   "spoken": "The state notice never uses the word AI.",
+   "on_screen": "NOTICE TEXT: NO \"AI\"",
+   "source": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "requires": [
+    "Fact-checker read the notice text and found no AI wording."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

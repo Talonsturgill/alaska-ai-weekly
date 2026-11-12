@@ -1,0 +1,11 @@
+{
+ "thesis": "Alaska approved a 50-year lease for a gas-fired computing campus that powers itself off the Railbelt grid, and the state's own notice never says AI, so the real argument is about land, gas and half a century, and the design only wins if it holds.",
+ "falsifiability": "False if a primary record (the state notice or a STAK statement) describes the campus as AI, if it ties into the Railbelt grid or lands a cost on ratepayers, or if the lease is undone by reconsideration before November 30th.",
+ "supporting_facts": ["c9 and c10 (state notice: data center, high performance computing)", "c32 (notice never uses AI, only Northern Journal says it, c31)", "c13 and c15 (off-grid, North Slope gas, per ADN)", "c4 and c5 (50 years, about 715 acres)"],
+ "fair_counterpoint": "1,205 comments, most opposed per ADN (c21, c22), no ratepayer impact is STAK's own claim (c20), and the incoming governor says he would support a moratorium (c27, not tied to STAK). A half century committed on the way out of one administration gets ahead of the public. The explainer must not read as helping the developer reframe the debate.",
+ "closing_question": "If a project powers itself and never touches the grid, what should Alaska ask of it in return for 50 years of state land?",
+ "runner_ups": ["Pure vocabulary angle (what the notice doesn't say), lost because it risks pedantry", "Pure win angle (sell Slope gas), lost because its supports are single-sourced"],
+ "stance": "mixed",
+ "second_movement": "The paperwork says computing, not AI, and the 15-year gas deal World Oil reported is shorter than the 50-year land term.",
+ "guardrails": ["Never say the state or STAK calls it AI", "Attribute 1 to 3 GW to ADN, no ratepayer impact to STAK, $500M as an estimate", "No Exxon unless attributed to World Oil, no size comparison, gas deal reported not signed"]
+}

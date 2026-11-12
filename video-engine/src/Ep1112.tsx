@@ -314,9 +314,9 @@ const NoticeCard: React.FC<WP> = ({f, b}) => {
     <g transform={`translate(${cx - 430} ${-900 * out}) rotate(${-26 * out} 430 760)`}>
       <HeldProp f={f} px={430} py={950} w={480} h={420} seed={2.1} kind="hang">
         <Card x={430} w={480} h={430} tilt={1.2 * Math.sin(f / 40)}>
-          <rect x={-200} y={34} width={190} height={34} rx={5} fill={C.paperD} stroke={C.ink} strokeWidth={3} />
-          <text x={-105} y={59} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1.5} fill={C.ink}>NOV 10</text>
-          <Ink x={-200} y={92} w={380} n={2} gap={32} o={0.35} />
+          <rect x={-200} y={80} width={150} height={38} rx={5} fill={C.paperD} stroke={C.ink} strokeWidth={3} />
+          <text x={-125} y={106} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} letterSpacing={1} fill={C.ink}>NOV 10TH</text>
+          <Ink x={-200} y={128} w={380} n={1} gap={32} o={0.35} />
           <rect x={-206} y={150 - 6} width={392 * (win1 ? hi1 : 1)} height={36} rx={4} fill="#FFE66B" opacity={win1 ? 0.78 : 0.0} />
           <rect x={-210} y={144} width={420} height={44} fill="none" />
           <text x={-196} y={176} fontFamily={MONO} fontWeight={800} fontSize={25} fill={C.ink}>GAS-POWERED DATA CENTER</text>
@@ -444,7 +444,7 @@ const CutawayCard: React.FC<WP> = ({f, b}) => {
             <line x1={0} y1={6} x2={40 * Math.sin(lerp(-1.2, 0.9, needle))} y2={6 - 40 * Math.cos(lerp(-1.2, 0.9, needle))} stroke={C.line} strokeWidth={6} strokeLinecap="round" />
             <circle cy={6} r={7} fill={C.line} />
           </g>
-          <g transform={`translate(-170 ${200 - 10 * (1 - badge)})`} opacity={badge}>
+          <g transform={`translate(-170 ${200 - 10 * (1 - badge)})`} opacity={badge * (1 - ease(f, b(15) - 6, 10))}>
             <rect x={-44} y={0} width={88} height={34} rx={4} fill={C.news} stroke={C.line} strokeWidth={4} />
             <text x={0} y={24} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={2} fill={C.ink}>ADN</text>
           </g>
@@ -457,11 +457,11 @@ const CutawayCard: React.FC<WP> = ({f, b}) => {
           {/* tabs clipped to the card's lower edge */}
           <g transform={`translate(-110 ${400 - 28 * (1 - tab1)})`} opacity={tab1}>
             <rect x={-96} y={0} width={190} height={46} rx={5} fill={C.white} stroke={C.line} strokeWidth={4} />
-            <text x={0} y={31} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={C.ink}>STAK SAYS</text>
+            <text x={0} y={31} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={21} fill={C.ink}>STAK SAYS</text>
           </g>
           <g transform={`translate(120 ${400 - 28 * (1 - tab2)}) rotate(${6 * tab2})`} opacity={tab2}>
             <rect x={-80} y={0} width={160} height={46} rx={5} fill={C.paperD} stroke={C.line} strokeWidth={4} />
-            <text x={0} y={31} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={2} fill={C.ink}>CLAIM</text>
+            <text x={0} y={31} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} letterSpacing={2} fill={C.ink}>CLAIM</text>
           </g>
         </Card>
       </HeldProp>
@@ -481,7 +481,7 @@ const Clipping: React.FC<WP> = ({f, b}) => {
           <rect x={-210} y={30} width={420} height={56} fill={C.ink} />
           <text x={0} y={70} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} letterSpacing={6} fill={C.news}>WORLD OIL</text>
           <rect x={-210} y={96} width={140} height={32} rx={4} fill={C.paperD} stroke={C.ink} strokeWidth={3} />
-          <text x={-140} y={119} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>NOV 5</text>
+          <text x={-140} y={119} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>NOV 5TH</text>
           <Ink x={-210} y={150} w={420} n={6} gap={30} o={0.42} />
           <rect x={-210} y={150} width={140} height={110} fill={C.snowS} stroke={C.ink} strokeWidth={3} opacity={0.0} />
         </Card>
@@ -668,11 +668,12 @@ const Reticle: React.FC<WP> = ({f, b}) => {
     <g>
       {/* the advocacy group's flyer, its own card at the right end of the line, with the phrase on it */}
       <g transform={`translate(${lerp(300, 0, flyer)} 0)`} opacity={flyer}>
-        <Card x={790} w={140} h={250} sag={30} tilt={2 * Math.sin(f / 29)}>
-          <rect x={-64} y={34} width={128} height={38} rx={4} fill={C.dusk} />
-          <text x={0} y={59} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} letterSpacing={0.6} fill={C.white}>ADVOCACY</text>
-          <text x={0} y={112} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.ink}>AI COMPUTING</text>
-          <Ink x={-56} y={134} w={110} n={3} gap={26} o={0.35} />
+        <Card x={780} w={140} h={206} sag={30} tilt={2 * Math.sin(f / 29)}>
+          <text x={0} y={116} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.ink}>ARTIFICIAL</text>
+          <text x={0} y={134} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.ink}>INTELLIGENCE</text>
+          <text x={0} y={152} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={12} fill={C.ink}>COMPUTING</text>
+          <rect x={-64} y={162} width={128} height={30} rx={4} fill={C.dusk} />
+          <text x={0} y={183} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={14} letterSpacing={0.6} fill={C.white}>ADVOCACY</text>
         </Card>
       </g>
       {/* the marker stick held in the raven's beak, and the reticle ring on the notice */}
@@ -681,9 +682,9 @@ const Reticle: React.FC<WP> = ({f, b}) => {
       <circle cx={rx} cy={ry} r={r} fill="none" stroke={C.line} strokeWidth={14} />
       <circle cx={rx} cy={ry} r={r} fill="none" stroke={C.paper} strokeWidth={7} strokeDasharray={lock > 0.5 ? '0' : '18 10'} />
       <path d={`M ${rx - r - 18},${ry} H ${rx - r + 22} M ${rx + r - 22},${ry} H ${rx + r + 18} M ${rx},${ry - r - 18} V ${ry - r + 22} M ${rx},${ry + r - 22} V ${ry + r + 18}`} stroke={C.line} strokeWidth={6} />
-      <g opacity={lock} transform={`translate(${rx} ${ry - r - 44})`}>
+      <g opacity={lock} transform={`translate(${rx - 20} ${ry + r + 42})`}>
         <rect x={-92} y={-26} width={184} height={52} rx={6} fill={C.white} stroke={C.line} strokeWidth={5} />
-        <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} letterSpacing={1} fill={C.ink}>0 MATCHES</text>
+        <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={17} letterSpacing={1} fill={C.ink}>NOT IN NOTICE</text>
       </g>
     </g>
   );
@@ -694,7 +695,7 @@ const RulerWorld: React.FC<WP> = ({f, b}) => {
   const inn = easeIO(f, b(35) - 6, 30);
   if (inn <= 0.01) return null;
   const unit = 14;                 // px per tick
-  const x1 = 790;                  // both cords start at the tag side and run left
+  const x1 = 724;                  // both cords start at the tag's left edge and run left
   const long = easeIO(f, b(36), 50);
   const short = easeIO(f, b(37), 30);
   const sway = Math.sin(f / 6) * 3 * short;
@@ -724,7 +725,6 @@ const RulerWorld: React.FC<WP> = ({f, b}) => {
         </g>
       )}
       {/* the tag's end of each cord */}
-      <rect x={x1 - 6} y={1098} width={14} height={70} rx={4} fill={C.steelD} stroke={C.line} strokeWidth={4} />
     </g>
   );
 };
@@ -786,7 +786,7 @@ const Marker: React.FC<WP> = ({f, b}) => {
   );
 };
 
-const World: React.FC<WP> = ({f, b}) => {
+const World: React.FC<WP & {ruler?: boolean}> = ({f, b, ruler = false}) => {
   const lean = 7 * easeIO(f, b(28), 40) + 3 * easeIO(f, b(38), 30);
   return (
     <g>
@@ -802,11 +802,12 @@ const World: React.FC<WP> = ({f, b}) => {
       <Flags f={f} b={b} />
       <CompanySign f={f} b={b} />
       <Stake f={f} lean={lean} />
-      <SecondCord f={f} b={b} />
+      {!ruler && <SecondCord f={f} b={b} />}
       <Tag f={f} b={b} lean={lean} />
       <GovCard f={f} b={b} />
       <PaperFall f={f} b={b} />
       <Slips2 f={f} b={b} />
+      {ruler && <RulerWorld f={f} b={b} />}
       <Marker f={f} b={b} />
       <Reticle f={f} b={b} />
       <RavenJob f={f} b={b} />
@@ -886,7 +887,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
 const S4: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [9, 10, 11];
-  const cam = track([{t: 0, z: 1.4, fx: 560, fy: 1000}, {t: p.dur, z: 1.46, fx: 566, fy: 1000}]);
+  const cam = track([{t: 0, z: 1.4, fx: 560, fy: 1060}, {t: p.dur, z: 1.46, fx: 566, fy: 1060}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate x={540} y={520} text="GAS-POWERED DATA CENTER · STATE NOTICE" size={30} tone="glow" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
@@ -901,7 +902,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
 const S5: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [12, 13, 14, 15, 16];
-  const cam = track([{t: 0, z: 1.4, fx: 560, fy: 1000}, {t: p.dur, z: 1.46, fx: 566, fy: 1000}]);
+  const cam = track([{t: 0, z: 1.4, fx: 560, fy: 1060}, {t: p.dur, z: 1.46, fx: 566, fy: 1060}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate x={540} y={600} text="NORTH SLOPE GAS · ADN" size={36} tone="glow" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
@@ -955,7 +956,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <Plate displayLines={['GOV-ELECT WOULD SUPPORT', 'DATA CENTER MORATORIUM · ADN']} text="GOV-ELECT WOULD SUPPORT DATA CENTER MORATORIUM · ADN" x={540} y={580} size={30} tone="glow" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
         <Plate x={540} y={580} text="DATA CENTER CONSTRUCTION" size={34} tone="glow" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
         <Plate displayLines={['STATEMENT OF SUPPORT', 'NOT AN ACTION']} text="STATEMENT OF SUPPORT · NOT AN ACTION" x={540} y={580} size={34} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={580} text="NOT TIED TO THIS LEASE · ADN" size={34} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={540} y={580} text="NO LINK TO THIS LEASE IN ADN REPORT" size={30} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>}>
       <SVG><World f={f} b={b} /><HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={28} strength={0.4} rx={20} mode="shadow" /></SVG>
     </Frame>
@@ -980,13 +981,13 @@ const S9: React.FC<SceneProps> = ({p}) => {
 const S10: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [32, 44, 33, 34];
-  const cam = track([{t: 0, z: 1.4, fx: 560, fy: 1000}, {t: p.dur, z: 1.46, fx: 566, fy: 1000}]);
+  const cam = track([{t: 0, z: 1.4, fx: 560, fy: 1060}, {t: p.dur, z: 1.46, fx: 566, fy: 1060}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
-        <Plate x={540} y={500} text="THE MISSING WORD" size={46} tone="glow" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={500} text="NORTHERN ALASKA ENV. CENTER" size={30} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate displayLines={['ADVOCACY GROUP LISTS', '"ARTIFICIAL INTELLIGENCE COMPUTING"']} text={'ADVOCACY GROUP LISTS "ARTIFICIAL INTELLIGENCE COMPUTING"'} x={540} y={500} size={30} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
-        <Plate x={540} y={500} text={'NOTICE TEXT · NO "AI"'} size={44} tone="glow" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={560} y={500} text="THE MISSING WORD" size={46} tone="glow" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={560} y={500} text="NORTHERN ALASKA ENV. CENTER" size={30} tone="plate" p={vis(f, b, K, 1)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate displayLines={['ADVOCACY GROUP LISTS', '"ARTIFICIAL INTELLIGENCE COMPUTING"']} text={'ADVOCACY GROUP LISTS "ARTIFICIAL INTELLIGENCE COMPUTING"'} x={560} y={500} size={26} tone="plate" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
+        <Plate x={560} y={500} text={'NOTICE TEXT · NO "AI"'} size={44} tone="glow" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>}>
       <SVG><World f={f} b={b} /><HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={30} strength={0.4} rx={20} mode="shadow" /></SVG>
     </Frame>
@@ -1004,7 +1005,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <Plate displayLines={['15-YR GAS SALE AGREEMENT', 'REPORTED']} text="15-YR GAS SALE AGREEMENT · REPORTED" x={540} y={560} size={34} tone="glow" p={vis(f, b, K, 2)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
         <Plate x={540} y={560} text="50-YEAR LEASE" size={48} tone="dark" p={vis(f, b, K, 3)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}
       </>}>
-      <SVG><TopView f={f} b={b} /><HeldTravel f={f} x={0} y={1000} w={1080} h={300} seed={31} strength={0.4} rx={20} mode="shadow" /></SVG>
+      <SVG><World f={f} b={b} ruler /><HeldTravel f={f} x={0} y={1000} w={1080} h={300} seed={31} strength={0.4} rx={20} mode="shadow" /></SVG>
     </Frame>
   );
 };
@@ -1013,7 +1014,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const K = [39, 45, 40, 42, 43];
   const cam = track([{t: 0, z: 1.0, fx: 640, fy: 960}, {t: b(40), z: 1.1, fx: 760, fy: 1030}, {t: p.dur, z: 1.14, fx: 780, fy: 1050}]);
-  const black = ease(f, b(43) + 24, 6);
+  const black = 0;
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate x={540} y={520} text="RECONSIDERATION DUE NOV 30" size={32} tone="glow" p={vis(f, b, K, 0)} /> {/* plate-overlap-ok: sequenced, one retires before the next lands */}

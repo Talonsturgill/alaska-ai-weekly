@@ -4020,3 +4020,8 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 ## 2026-11-11 weekly machine pass
 - Shipped: held_beat_check token-rig fix, dead_space_check floor gate, board_claims_check in Gate 0A, ui_chrome_check, lib FigureFinish (engine advance, not yet enforced). Verified by running every listed self-test and gate, tsc and runbook_check all exit 0.
 - Escalated: caption scorer just under the bar (the round ledger must write the archived card), upload batch entry point.
+
+## 2026-11-12 Dispatch "Fifty Years, One Word Short" (Alaska DNR 50-year lease for the STAK Energy data center)
+- Shipped: 113.2s film, hero the stake tag with a raven witness, a clothesline device, an overhead-free ruler comparison of 15 against 50. Final panel 7.11, 7.02, 6.94, median 7.02 against the 7.0 bar, no hard blockers; ship_gate PASS after one blocked round. Caption 8.55 at round 4, zero hard fails.
+- In-run fixes: Northern Alaska Environmental Center (not Northern Journal) is the c31 source, re-read on the live page; reordered VO line 10 so the missing-word payoff lands after 85s; shot 11 rebuilt inside the stake world after judge and flow critic called it the weakest frame; on-screen dates ordinal, attribution plates (ADN, STAK, WORLD OIL, ENV. CENTER COUNT), flyer moved off the lease tag after the editor's misattribution finding.
+- Queued: docs/MACHINE_QUEUE.md (2026-11-12), seven items, gate0-critic-rounds is repeat 3.

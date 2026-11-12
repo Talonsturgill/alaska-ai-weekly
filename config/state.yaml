@@ -3479,3 +3479,55 @@ dispatch_history:
     metaphor: 'the roof sensor puck as the car''s eye: every mechanism Waymo published
       is a state of that one smooth face against jagged rime, and the winter decides
       which state it ends in'
+- date: '2026-11-12'
+  topic: DNR 50-year lease for STAK Energy's gas-powered North Slope data center (ADL
+    422741), the notice never says AI, 15-year reported gas deal against the 50-year
+    lease, 1,205 comments, reconsideration due November 30th (ADN, Alaska Public Media,
+    World Oil, Northern Alaska Environmental Center)
+  slug: dispatch-2026-11-12-fifty-years-one-word-short
+  key_entities:
+  - STAK Energy
+  - ADL 422741
+  - Alaska Department of Natural Resources
+  - North Slope
+  - Dalton Highway
+  - Deadhorse
+  - Northern Alaska Environmental Center
+  - World Oil
+  - Anchorage Daily News
+  - Railbelt
+  - data center lease
+  - reconsideration
+  archetype: ''
+  palette: 'lifted dusk dome #1B3A55 under a pale rose horizon line, trampled glacier
+    snow, raven black, parchment #D6C9A8 with charcoal text #1B2230, fluorescent lime
+    survey flagging #B8F23A on the stake tag alone, brick red #C0272D on the crate
+    tabs alone'
+  voice: gemini:Sulafat
+  stance: mixed
+  angle: Alaska approved a 50-year lease for a gas-fired computing campus that powers
+    itself off the Railbelt grid, and the state's own notice never says AI, so the
+    real argument is about land, gas and half a century, and the design only wins
+    if it holds.
+  hero: StakeTag
+  cast:
+  - StakeTag
+  - Raven
+  - StateLetter
+  - HangTag
+  - Cable
+  - Calendar
+  composition:
+    pov: ground-level-side
+    motion_vector: assemble-build
+    hero_treatment: structure-as-subject
+    layout: clothesline-layers
+    register: naturalistic-scene
+    palette: 'lifted dusk dome #1B3A55 under a pale rose horizon line, trampled glacier
+      snow, raven black, parchment #D6C9A8 with charcoal text #1B2230, fluorescent
+      lime survey flagging #B8F23A on the stake tag alone, brick red #C0272D on the
+      crate tabs alone'
+    camera_strategy: static-lock
+    light_story: rose-line dusk, paper-lit cutaways, a hard cut to black
+    metaphor: a survey stake whose tag the lease, the gas deal and the public each
+      pull on, watched by a raven

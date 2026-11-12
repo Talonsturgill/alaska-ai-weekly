@@ -1,0 +1,60 @@
+{
+ "run_date": "2026-11-12",
+ "title": "Fifty Years, One Word Short",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Alaska DNR public notice, Final Finding and Decision, ADL 422741",
+   "outlet": "State of Alaska Online Public Notices (primary)",
+   "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=225835",
+   "claims": ["c2", "c3", "c4", "c5", "c7", "c8", "c9", "c10", "c32"],
+   "used_in_film": true,
+   "note": "State notice. Says gas-powered data center and high-performance computing units, never AI."
+  },
+  {
+   "id": "s2",
+   "title": "Alaska approves 50-year land lease for large natural gas-powered data center in the Arctic",
+   "outlet": "Anchorage Daily News (Alaska Beacon, James Brooks)",
+   "url": "https://www.adn.com/business-economy/2026/11/11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic/",
+   "claims": ["c11", "c13", "c15", "c22", "c24"],
+   "used_in_film": true,
+   "note": "Reports 1 to 3 gigawatts, North Slope gas, no Railbelt tie, most comments opposed."
+  },
+  {
+   "id": "s3",
+   "title": "Alaska approves 50-year land lease for large natural gas-powered data center in the Arctic",
+   "outlet": "Alaska Public Media (Alaska Beacon republish)",
+   "url": "https://alaskapublic.org/news/economy/energy/2026-11-11/alaska-approves-50-year-land-lease-for-large-natural-gas-powered-data-center-in-the-arctic",
+   "claims": ["c1", "c29"],
+   "used_in_film": true,
+   "note": "Approval date November 10th, site work estimate."
+  },
+  {
+   "id": "s4",
+   "title": "ExxonMobil to supply North Slope gas for 3-GW Alaska power campus under 15-year deal",
+   "outlet": "World Oil (trade press, company-supplied claims)",
+   "url": "https://worldoil.com/news/2026/11/5/exxonmobil-to-supply-north-slope-gas-for-3-gw-alaska-power-campus-under-15-year-deal/",
+   "claims": ["c16", "c20"],
+   "used_in_film": true,
+   "note": "Reported 15-year gas sale agreement, dated November 5th. Reported, not signed. No ratepayer impact is STAK's claim."
+  },
+  {
+   "id": "s5",
+   "title": "A 50-year bet on the North Slope, what Alaska approved for STAK and what comes next",
+   "outlet": "Northern Alaska Environmental Center (advocacy, byline Alaskans for Data Center Accountability)",
+   "url": "https://northern.org/news/a-50-year-bet-on-the-north-slope-what-alaska-approved-for-stak-and-what-comes-next/",
+   "claims": ["c21", "c23", "c31"],
+   "used_in_film": true,
+   "note": "Advocacy source. 1,205 comments, November 30th deadline, lists AI computing among possible uses."
+  },
+  {
+   "id": "s6",
+   "title": "Dunleavy pushes for data centers to come to Alaska as he prepares to leave office",
+   "outlet": "Anchorage Daily News (Iris Samuels)",
+   "url": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "claims": ["c27"],
+   "used_in_film": true,
+   "note": "Governor-elect said he would support a moratorium on data center construction in Alaska. A statement of support, not tied to STAK."
+  }
+ ]
+}
