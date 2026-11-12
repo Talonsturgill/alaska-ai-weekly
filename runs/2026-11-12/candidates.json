@@ -1,0 +1,17 @@
+{
+  "locked_story": {
+    "headline": "DNR signs a 50-year lease for STAK Energy's 1 to 3 GW gas-fired North Slope data center campus, the state's first, with the AI question still open",
+    "found_at_rung": "in_window_sweep"
+  },
+  "rungs": [
+    {"rung": "in_window_sweep", "attempted": true, "candidates_found": 9}
+  ],
+  "candidates": [
+    {"title": "STAK Energy North Slope lease, DNR final decision ADL 422741", "verdict": "LOCKED"},
+    {"title": "Alaska Data Corp and InvestNorth tokenized platform", "verdict": "runner-up, single primary missing"},
+    {"title": "Anchorage Assembly police surveillance AO 2026-108(S)", "verdict": "weak AI angle"},
+    {"title": "Senate race AI-employee donations", "verdict": "excluded politics, single source"},
+    {"title": "Halibut epigenetic clock", "verdict": "no AI"},
+    {"title": "SEARHC Mayo network", "verdict": "no AI"}
+  ]
+}

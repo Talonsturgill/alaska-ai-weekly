@@ -1,0 +1,2215 @@
+{
+  "run_date": "2026-11-12",
+  "slug": "fifty-years-one-word-short",
+  "title": "Fifty Years, One Word Short",
+  "concept": "On November 10th Alaska's Department of Natural Resources approved a 50-year lease of about 715 acres for STAK Energy's gas-powered data center on the North Slope, case ADL 422741. The notice says data center and high-performance computing and never says AI, the Northern Alaska Environmental Center, an advocacy group, lists artificial intelligence computing among the possible uses. ADN reports 1 to 3 gigawatts, North Slope gas and no Railbelt connection, STAK says no ratepayer impact, World Oil reported a 15-year gas deal, the state got 1,205 comments and ADN says most were opposed, the governor-elect says he would support a moratorium and reconsideration is due November 30th. The film draws all of it on one survey stake tag with a raven as witness, lets the 1,205 comments fall as paper snow onto the line, and ends on a hard cut at the tag with an empty IN RETURN line.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 113.24,
+  "fingerprint": {
+    "pov": "ground-level-side",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "structure-as-subject",
+    "layout": "clothesline-layers",
+    "register": "naturalistic-scene",
+    "palette": "lifted dusk dome #1B3A55 under a pale rose horizon line, trampled glacier snow, raven black, parchment #D6C9A8 with charcoal text #1B2230, fluorescent lime survey flagging #B8F23A on the stake tag alone, brick red #C0272D on the crate tabs alone",
+    "camera_strategy": "static-lock",
+    "light_story": "rose-line dusk, paper-lit cutaways, a hard cut to black",
+    "metaphor": "a survey stake whose tag the lease, the gas deal and the public each pull on, watched by a raven"
+  },
+  "palette": "lifted dusk dome #1B3A55 under a pale rose horizon line, trampled glacier snow, raven black, parchment #D6C9A8 with charcoal text #1B2230, fluorescent lime survey flagging #B8F23A on the stake tag alone, brick red #C0272D on the crate tabs alone",
+  "divergence_note": "The last films were pink-gold ice fog with amber (11-11), a violet shore with vermilion and lemon (11-10), an oxblood courtroom (11-09), a permafrost road (11-08), a teal transformer yard (11-07) and a tangerine office (11-06). This film is a lifted blue dusk with a rose horizon line over trampled snow, with fluorescent lime survey flagging on one object (breaking the three-run warm accent streak) and red only on the crate tabs. Its hero is the stake tag with a raven as supporting witness, its device is a clothesline that carries every document, its comments arrive as paper snow, its Test is slips weighing the line down, and it ends on a hard cut with the stake still leaning, no crane-up and no lamp pool. Honest cost: seven of twelve shots stay at the stake and the macro and overhead stages are camera framings of the same pieces.",
+  "treatment": {
+    "title": "Fifty Years, One Word Short",
+    "summary": "The question the state paperwork raises is about time and words, so the hero is a witness that outlives seasons, a raven, and the throughline is a survey stake tag that the lease, the gas deal and the public each pull on. A neutral animal hero keeps the film from implying an AI the state never wrote. The Mailroom gives the 1,205 comments the longest held scene of the film."
+  },
+  "angle": {
+    "thesis": "Alaska approved a 50-year lease for a gas-fired computing campus that powers itself off the Railbelt grid, and the state's own notice never says AI, so the real argument is about land, gas and half a century, and the design only wins if it holds.",
+    "falsifiability": "False if a primary record (the state notice or a STAK statement) describes the campus as AI, if it ties into the Railbelt grid or lands a cost on ratepayers, or if the lease is undone by reconsideration before November 30th.",
+    "supporting_facts": [
+      "c9 and c10 (state notice: data center, high performance computing)",
+      "c32 (notice never uses AI, only Northern Journal says it, c31)",
+      "c13 and c15 (off-grid, North Slope gas, per ADN)",
+      "c4 and c5 (50 years, about 715 acres)"
+    ],
+    "fair_counterpoint": "1,205 comments, most opposed per ADN (c21, c22), no ratepayer impact is STAK's own claim (c20), and the incoming governor says he would support a moratorium (c27, not tied to STAK). A half century committed on the way out of one administration gets ahead of the public. The explainer must not read as helping the developer reframe the debate.",
+    "closing_question": "If a project powers itself and never touches the grid, what should Alaska ask of it in return for 50 years of state land?",
+    "runner_ups": [
+      "Pure vocabulary angle (what the notice doesn't say), lost because it risks pedantry",
+      "Pure win angle (sell Slope gas), lost because its supports are single-sourced"
+    ],
+    "stance": "mixed",
+    "second_movement": "The paperwork says computing, not AI, and the 15-year gas deal World Oil reported is shorter than the 50-year land term.",
+    "guardrails": [
+      "Never say the state or STAK calls it AI",
+      "Attribute 1 to 3 GW to ADN, no ratepayer impact to STAK, $500M as an estimate",
+      "No Exxon unless attributed to World Oil, no size comparison, gas deal reported not signed"
+    ]
+  },
+  "claim_map": {
+    "45": [
+      "narration"
+    ],
+    "44": [
+      "c31"
+    ],
+    "1": [
+      "c32"
+    ],
+    "2": [
+      "c4"
+    ],
+    "3": [
+      "c7"
+    ],
+    "4": [
+      "c1"
+    ],
+    "5": [
+      "c3"
+    ],
+    "6": [
+      "c2"
+    ],
+    "7": [
+      "c5"
+    ],
+    "8": [
+      "c7"
+    ],
+    "9": [
+      "c9"
+    ],
+    "10": [
+      "c10"
+    ],
+    "11": [
+      "c32"
+    ],
+    "12": [
+      "c15"
+    ],
+    "13": [
+      "c11"
+    ],
+    "14": [
+      "c13"
+    ],
+    "15": [
+      "c20"
+    ],
+    "16": [
+      "c20"
+    ],
+    "17": [
+      "c16"
+    ],
+    "18": [
+      "c16"
+    ],
+    "19": [
+      "narration"
+    ],
+    "20": [
+      "narration"
+    ],
+    "21": [
+      "c21"
+    ],
+    "22": [
+      "c22"
+    ],
+    "23": [
+      "c22"
+    ],
+    "24": [
+      "c27"
+    ],
+    "25": [
+      "c27"
+    ],
+    "26": [
+      "c27"
+    ],
+    "27": [
+      "c27"
+    ],
+    "28": [
+      "narration"
+    ],
+    "29": [
+      "narration"
+    ],
+    "30": [
+      "c32"
+    ],
+    "31": [
+      "c4",
+      "c5"
+    ],
+    "32": [
+      "narration"
+    ],
+    "33": [
+      "c31"
+    ],
+    "34": [
+      "c32"
+    ],
+    "35": [
+      "narration"
+    ],
+    "36": [
+      "c4"
+    ],
+    "37": [
+      "c16"
+    ],
+    "38": [
+      "c4"
+    ],
+    "39": [
+      "c23"
+    ],
+    "40": [
+      "narration"
+    ],
+    "41": [
+      "narration"
+    ],
+    "42": [
+      "narration"
+    ],
+    "43": [
+      "c4"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A raven drops out of blue dusk onto a lone survey stake and a stamp slams onto its blank orange tag.",
+    "headline": "ONE WORD NOT IN THE NOTICE",
+    "motion_by_s": 0.3,
+    "loopback": "Frame 1 is the raven pecking a blank tag, the last frame is the raven tapping the blank IN RETURN line on the same tag, the lean unrecovered, then a hard cut to black."
+  },
+  "open_loop": {
+    "plant_t": 3.95,
+    "pay_t": 88.55,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "tick",
+    "what": "Which word is missing from the paperwork? Planted as a hollow word-shaped hole on a card beside the tag, paid when the reticle locks on empty paper, NOTICE TEXT \u00b7 NO AI."
+  },
+  "open_loop_2": {
+    "plant_t": 48.03,
+    "pay_t": 99.55,
+    "what": "What is the second clock? Planted as a clock opening under the short gas cord, paid when the 15-year cord ends inside the frame and the 50-year lease cord runs off its edge."
+  },
+  "throughline": {
+    "object": "the stake tag",
+    "lands_in_button": "the stake still leans, both cords are still on the tag and a new empty IN RETURN line asks the closing question before the cut",
+    "param_states": {
+      "1": {
+        "name": "blank, spinning",
+        "cords": 0
+      },
+      "2": {
+        "name": "stamped 50-YEAR LEASE, one taut cord",
+        "cords": 1
+      },
+      "3": {
+        "name": "second cord clipped on, 15-YR REPORTED, end coiled",
+        "cords": 2
+      },
+      "4": {
+        "name": "slips snagged on its strings, stake leaning",
+        "cords": 2
+      },
+      "5": {
+        "name": "leaning, with an empty IN RETURN line",
+        "cords": 2
+      }
+    },
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "T1 blank, spinning"
+      },
+      {
+        "at_s": 1.93,
+        "state": "T2 stamped 50-YEAR LEASE, one taut cord"
+      },
+      {
+        "at_s": 16.36,
+        "state": "T2b the tag gains an acreage band as the survey flags close around the stake"
+      },
+      {
+        "at_s": 44.41,
+        "state": "T3 second cord clipped on, 15-YR REPORTED, end coiled"
+      },
+      {
+        "at_s": 68.32,
+        "state": "T4 slips snagged on its strings, stake leaning"
+      },
+      {
+        "at_s": 99.55,
+        "state": "T4b the lean deepens toward the long cord as it lays out on the ruler"
+      },
+      {
+        "at_s": 108.59,
+        "state": "T5 leaning, with an empty IN RETURN line"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 16.36,
+      "type": "build-on",
+      "what": "survey flags plant themselves and a dotted square closes around the stake",
+      "hold_s": 0.8
+    },
+    {
+      "t": 27.87,
+      "type": "build-on",
+      "what": "a gas cutaway card swings in with a pipe feeding a generator hall",
+      "hold_s": 0.8
+    },
+    {
+      "t": 51.24,
+      "type": "build-on",
+      "what": "a mailbox flap bangs open and slips spill until the tally reads 1,205",
+      "hold_s": 0.8
+    },
+    {
+      "t": 90.92,
+      "type": "scale-pullback",
+      "what": "from the cords on the tag to both cords on one overhead ruler",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "at_s": 110.43,
+        "level": 0.12
+      },
+      {
+        "at_s": 111.53,
+        "level": 2.0
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 110.43,
+    "riser_at": 99.55,
+    "silence_at": 110.43,
+    "payoff_at": 110.93,
+    "button_pattern": "callback",
+    "interrupt_at": 51.24,
+    "extra_dips": [
+      68.32,
+      101.22
+    ]
+  },
+  "shots": [
+    {
+      "title": "The stake",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "stake-world-dusk",
+      "pov": "ground-level-side",
+      "layout": "clothesline-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the stake and tag at x700 y1000",
+      "means": "A raven pecks the blank orange tag, a stamp slams onto it and a hollow card clips onto the cord",
+      "ambient": "wind over snow, the tag creaks, the cord hums",
+      "hero": {
+        "name": "the raven + rubber stamp + stake tag + hollow card",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% stake tag and stamp, 25% raven, 25% hollow card"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-8.640"
+    },
+    {
+      "title": "The notice",
+      "vo_line": 1,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "stake-world-dusk",
+      "pov": "ground-level-side",
+      "layout": "clothesline-layers",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the notice card at x440 y900",
+      "means": "A state notice card slides along the cord, a company sign knocks into the snow and the case number locks",
+      "ambient": "paper settles on the cord, the digits tick",
+      "hero": {
+        "name": "state notice card + company sign + case ticker",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "55% notice card, 25% sign, 20% case ticker"
+      },
+      "id": 2,
+      "start_s": 8.64,
+      "t": "8.640-16.360"
+    },
+    {
+      "title": "The site",
+      "vo_line": 2,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "stake-world-dusk",
+      "pov": "ground-level-side",
+      "layout": "clothesline-layers",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the flags and the dotted square are the move",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the stake and tag at x700 y1000",
+      "means": "Survey flags plant themselves and a dotted square draws on the snow, then a map tab clips on with its offset line",
+      "ambient": "snow crunches, flags flutter, a pen scratches",
+      "hero": {
+        "name": "survey flags + dotted square + map tab",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% square and flags, 30% map tab, 25% snow"
+      },
+      "id": 3,
+      "start_s": 16.36,
+      "t": "16.360-22.140"
+    },
+    {
+      "title": "What it says",
+      "vo_line": 3,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "notice-macro",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the notice card at x440 y900",
+      "means": "The raven drags a highlighter across two lines of the notice and the hollow card glows",
+      "ambient": "the highlighter squeaks, wind at the page edge",
+      "hero": {
+        "name": "the raven + highlighter + notice card + hollow card",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "55% card, 25% raven and bar, 20% hollow card"
+      },
+      "id": 4,
+      "start_s": 22.14,
+      "t": "22.140-27.870"
+    },
+    {
+      "title": "Its own power",
+      "vo_line": 4,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "gas-cutaway-macro",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the cutaway card at x440 y920",
+      "means": "A gas cutaway card swings in, a gauge reads, the dashed cable lunges and stops short and a company tab clips on",
+      "ambient": "the generator hums, the cable creaks, a socket hangs",
+      "hero": {
+        "name": "gas cutaway card + gauge needle + dashed cable + speech tab + claim tab",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "55% cutaway card, 25% cable and socket, 20% tabs"
+      },
+      "id": 5,
+      "start_s": 27.87,
+      "t": "27.870-41.980"
+    },
+    {
+      "title": "The second clock",
+      "vo_line": 6,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "ground",
+      "stage": "stake-world-dusk",
+      "pov": "ground-level-side",
+      "layout": "clothesline-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the cords at x560 y980",
+      "means": "A newsprint clipping slides in, a short second cord clips onto the tag with its end coiled and a clock opens",
+      "ambient": "the cords creak, a clock ticks",
+      "hero": {
+        "name": "newsprint clipping + short second cord + clock face",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "45% cords, 30% clipping, 25% clock"
+      },
+      "id": 6,
+      "start_s": 41.98,
+      "t": "41.980-51.240"
+    },
+    {
+      "title": "The public",
+      "vo_line": 7,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "paper-fall-snowfield",
+      "pov": "eye-level-immersive",
+      "layout": "clothesline-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:locked so the slips do the moving",
+      "transition_in": "carried-element",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the mailbox at x340 y1040 and the stake at x700 y1000",
+      "means": "A mailbox stands up beside the stake and spills slips, the tally rolls and red-tabbed slips fill a crate",
+      "ambient": "wind, slips slide and thump, the tally clicks",
+      "hero": {
+        "name": "mailbox + tally counter + newspaper masthead + red tabs + falling slips",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "50% mailbox and slips, 25% crate, 25% tally"
+      },
+      "id": 7,
+      "start_s": 51.24,
+      "t": "51.240-57.760"
+    },
+    {
+      "title": "A statement, not an action",
+      "vo_line": 8,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "stake-world-dusk",
+      "pov": "ground-level-side",
+      "layout": "clothesline-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the card on its string is the move",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the stake and tag at x700 y1000",
+      "means": "A plain card on a string swings toward the tag and hangs short of it with a tab clipped on",
+      "ambient": "the string creaks, wind in the card",
+      "hero": {
+        "name": "plain card on a string + card string + small tab",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "50% card and string, 30% tag, 20% raven"
+      },
+      "id": 8,
+      "start_s": 57.76,
+      "t": "57.760-68.320"
+    },
+    {
+      "title": "The real tension",
+      "vo_line": 9,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "stake-world-dusk",
+      "pov": "ground-level-side",
+      "layout": "clothesline-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the lean of the stake is the move",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the stake and tag at x700 y1000",
+      "means": "The stake leans as slips snag, the raven drops a slip on the cord and the lease cord runs left past seasonal markers",
+      "ambient": "the stake creaks, slips rustle, the cord groans",
+      "hero": {
+        "name": "the stake + the raven + lease cord + seasonal markers",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% stake and slips, 30% cord and markers, 20% raven"
+      },
+      "id": 9,
+      "start_s": 68.32,
+      "t": "68.320-78.500"
+    },
+    {
+      "title": "The missing word",
+      "vo_line": 10,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "notice-macro",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the reticle at x440 y900",
+      "means": "The raven drags a search reticle across the notice, an advocacy chip clips into its circle and it locks on empty paper",
+      "ambient": "the reticle whirs, paper rustles",
+      "hero": {
+        "name": "the raven + search reticle + name tab + advocacy chip",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "55% card and reticle, 25% chip, 20% raven"
+      },
+      "id": 10,
+      "start_s": 78.5,
+      "t": "78.500-90.920"
+    },
+    {
+      "title": "One ruler",
+      "vo_line": 11,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "ruler-on-snow",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the ruler at x540 y1100",
+      "means": "A ruler unrolls on the snow in front of the stake and both cords lay along it, fifteen ticks against fifty, while the camera trucks along",
+      "ambient": "wind, the ruler unrolls, a cord settles",
+      "hero": {
+        "name": "a ruler + lease cord + gas cord + the stake",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% cords and ruler, 30% stake and tag, 20% snow"
+      },
+      "id": 11,
+      "start_s": 90.92,
+      "t": "90.920-101.220"
+    },
+    {
+      "title": "The question",
+      "vo_line": 12,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "stake-world-dusk",
+      "pov": "ground-level-side",
+      "layout": "clothesline-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:the beak and the hard cut are the move",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the stake and tag at x700 y1000",
+      "means": "A calendar tab rings November 30th, the tag turns to an empty IN RETURN line and the raven taps it and looks into the lens before a hard cut to black",
+      "ambient": "the cord creaks, a beak taps, silence",
+      "hero": {
+        "name": "calendar tab + the tag + the raven + the cords",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "50% tag, 30% raven, 20% calendar tab"
+      },
+      "id": 12,
+      "start_s": 101.22,
+      "t": "101.220-113.240"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska just approved a fifty year state land lease near Deadhorse, and the notice never uses one word.",
+      "phrase": "Alaska just approved a",
+      "shows": "a raven drops onto the snow at the foot of a survey stake and pecks the blank orange tag, which spins on its cord, a plate reads ONE WORD NOT IN THE NOTICE",
+      "sfx": "whoosh",
+      "means": "one word not in the notice",
+      "rehook": "",
+      "draw": {
+        "subject": "a raven",
+        "action": "drops onto the snow at the foot of a survey stake and pecks the blank orange tag, which spins on its cord",
+        "emotion": "watchful",
+        "annotation": "ONE WORD NOT IN THE NOTICE"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "a raven drops onto the snow at the foot of a survey stake and pecks the blank orange tag, which spins on its cord, a plate reads ONE WORD NOT IN THE NOTICE",
+        "reaction": "the tag spins",
+        "ambient": "wind over snow, the tag creaks, the cord hums"
+      },
+      "t": "0.000-1.930",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.93,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 1.93
+      },
+      "offset": 1.93,
+      "vo": "Alaska just approved a fifty year state land lease near Deadhorse, and the notice never uses one word.",
+      "phrase": "fifty year state land",
+      "shows": "a rubber stamp slams onto the tag and the cord pulls taut toward the left edge, a plate reads 50-YEAR LEASE",
+      "sfx": "stamp",
+      "means": "50-year lease",
+      "rehook": "",
+      "draw": {
+        "subject": "a rubber stamp",
+        "action": "slams onto the tag and the cord pulls taut toward the left edge",
+        "emotion": "firm",
+        "annotation": "50-YEAR LEASE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "a rubber stamp slams onto the tag and the cord pulls taut toward the left edge, a plate reads 50-YEAR LEASE",
+        "reaction": "the cord hums",
+        "ambient": "wind over snow, the tag creaks, the cord hums"
+      },
+      "kick": true,
+      "t": "1.930-3.950",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 3.95,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.95
+      },
+      "offset": 3.95,
+      "vo": "Alaska just approved a fifty year state land lease near Deadhorse, and the notice never uses one word.",
+      "phrase": "Deadhorse, and the notice",
+      "shows": "a hollow card clips onto the cord with a word-shaped hole cut through it and its edge glows once, a plate reads NEAR DEADHORSE",
+      "sfx": "tick",
+      "means": "near deadhorse",
+      "rehook": "",
+      "draw": {
+        "subject": "a hollow card",
+        "action": "clips onto the cord with a word-shaped hole cut through it and its edge glows once",
+        "emotion": "curious",
+        "annotation": "NEAR DEADHORSE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a hollow card clips onto the cord with a word-shaped hole cut through it and its edge glows once, a plate reads NEAR DEADHORSE",
+        "reaction": "the card glows",
+        "ambient": "wind over snow, the tag creaks, the cord hums"
+      },
+      "t": "3.950-8.640",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 8.64,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On November tenth the state approved it for STAK Energy, under case A D L four two two seven four one.",
+      "phrase": "On November tenth the",
+      "shows": "a state notice card slides along the cord and clips beside the hollow card with its date tab, a plate reads APPROVED NOV 10",
+      "sfx": "page",
+      "means": "approved nov 10",
+      "rehook": "",
+      "draw": {
+        "subject": "a state notice card",
+        "action": "slides along the cord and clips beside the hollow card with its date tab",
+        "emotion": "formal",
+        "annotation": "APPROVED NOV 10"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a state notice card slides along the cord and clips beside the hollow card with its date tab, a plate reads APPROVED NOV 10",
+        "reaction": "the card settles",
+        "ambient": "paper settles on the cord, the digits tick"
+      },
+      "t": "8.640-11.050",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 11.05,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.41
+      },
+      "offset": 2.41,
+      "vo": "On November tenth the state approved it for STAK Energy, under case A D L four two two seven four one.",
+      "phrase": "STAK Energy, under case",
+      "shows": "a plain company sign knocks into the snow beside the stake and rocks once, a plate reads STAK ENERGY",
+      "sfx": "thud",
+      "means": "stak energy",
+      "rehook": "",
+      "draw": {
+        "subject": "a plain company sign",
+        "action": "knocks into the snow beside the stake and rocks once",
+        "emotion": "plain",
+        "annotation": "STAK ENERGY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a plain company sign knocks into the snow beside the stake and rocks once, a plate reads STAK ENERGY",
+        "reaction": "the sign rocks",
+        "ambient": "paper settles on the cord, the digits tick"
+      },
+      "t": "11.050-12.510",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 12.51,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.87
+      },
+      "offset": 3.87,
+      "vo": "On November tenth the state approved it for STAK Energy, under case A D L four two two seven four one.",
+      "phrase": "case A D L",
+      "shows": "a case-number ticker on the notice rolls its digits and locks on the number, a plate reads ADL 422741",
+      "sfx": "thud",
+      "means": "adl 422741",
+      "rehook": "",
+      "draw": {
+        "subject": "a case-number ticker on the notice",
+        "action": "rolls its digits and locks on the number",
+        "emotion": "precise",
+        "annotation": "ADL 422741"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a case-number ticker on the notice rolls its digits and locks on the number, a plate reads ADL 422741",
+        "reaction": "the digits lock",
+        "ambient": "paper settles on the cord, the digits tick"
+      },
+      "t": "12.510-16.360",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 16.36,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It covers about seven hundred fifteen acres, about twenty six miles south of Deadhorse.",
+      "phrase": "It covers about seven",
+      "shows": "survey flags drop one by one around the stake and a dotted square closes between them across the snow, a plate reads ABOUT 715 ACRES",
+      "sfx": "pop",
+      "means": "about 715 acres",
+      "rehook": "",
+      "draw": {
+        "subject": "survey flags",
+        "action": "drop one by one around the stake and a dotted square closes between them across the snow",
+        "emotion": "careful",
+        "annotation": "ABOUT 715 ACRES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "survey flags drop one by one around the stake and a dotted square closes between them across the snow, a plate reads ABOUT 715 ACRES",
+        "reaction": "the square closes",
+        "ambient": "snow crunches, flags flutter, a pen scratches"
+      },
+      "t": "16.360-19.350",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 19.35,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.99
+      },
+      "offset": 2.99,
+      "vo": "It covers about seven hundred fifteen acres, about twenty six miles south of Deadhorse.",
+      "phrase": "twenty six miles south",
+      "shows": "a map tab slides along the cord and drops a Deadhorse dot and an offset line running south across a small Alaska outline, a plate reads 26 MILES SOUTH OF DEADHORSE",
+      "sfx": "slide",
+      "means": "26 miles south of deadhorse",
+      "rehook": "",
+      "draw": {
+        "subject": "a map tab",
+        "action": "slides along the cord and drops a Deadhorse dot and an offset line running south across a small Alaska outline",
+        "emotion": "careful",
+        "annotation": "26 MILES SOUTH OF DEADHORSE"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a map tab slides along the cord and drops a Deadhorse dot and an offset line running south across a small Alaska outline, a plate reads 26 MILES SOUTH OF DEADHORSE",
+        "reaction": "the line extends",
+        "ambient": "snow crunches, flags flutter, a pen scratches"
+      },
+      "t": "19.350-23.057",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 4,
+      "at_s": 23.057,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.16,
+        "offset": 0.917
+      },
+      "offset": 0.917,
+      "vo": "The notice calls it a gas powered data center with high performance computing units.",
+      "phrase": "The notice calls it",
+      "shows": "the notice card types its first line while the raven drags a highlighter bar across it, a plate reads GAS-POWERED DATA CENTER \u00b7 STATE NOTICE",
+      "sfx": "page",
+      "means": "gas-powered data center \u00b7 state notice",
+      "rehook": "",
+      "draw": {
+        "subject": "the notice card",
+        "action": "types its first line while the raven drags a highlighter bar across it",
+        "emotion": "flat",
+        "annotation": "GAS-POWERED DATA CENTER \u00b7 STATE NOTICE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "the notice card types its first line while the raven drags a highlighter bar across it, a plate reads GAS-POWERED DATA CENTER \u00b7 STATE NOTICE",
+        "reaction": "the bar sweeps",
+        "ambient": "the highlighter squeaks, wind at the page edge"
+      },
+      "t": "23.057-25.310",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 25.31,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.17
+      },
+      "offset": 3.17,
+      "vo": "The notice calls it a gas powered data center with high performance computing units.",
+      "phrase": "high performance computing units.",
+      "shows": "the raven slides the highlighter bar down to a second line, a plate reads HIGH-PERFORMANCE COMPUTING \u00b7 STATE NOTICE",
+      "sfx": "creak",
+      "means": "high-performance computing \u00b7 state notice",
+      "rehook": "",
+      "draw": {
+        "subject": "the raven",
+        "action": "slides the highlighter bar down to a second line",
+        "emotion": "focused",
+        "annotation": "HIGH-PERFORMANCE COMPUTING \u00b7 STATE NOTICE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "the raven slides the highlighter bar down to a second line, a plate reads HIGH-PERFORMANCE COMPUTING \u00b7 STATE NOTICE",
+        "reaction": "the bar jumps",
+        "ambient": "the highlighter squeaks, wind at the page edge"
+      },
+      "t": "25.310-26.550",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 26.55,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.41
+      },
+      "offset": 4.41,
+      "vo": "The notice calls it a gas powered data center with high performance computing units.",
+      "phrase": "units.",
+      "shows": "the hollow card swings once on its clip and the raven turns to it, a plate reads STILL NO SUCH WORD",
+      "sfx": "blip",
+      "means": "still no such word",
+      "rehook": "",
+      "draw": {
+        "subject": "the hollow card",
+        "action": "swings once on its clip and the raven turns to it",
+        "emotion": "curious",
+        "annotation": "STILL NO SUCH WORD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "the hollow card swings once on its clip and the raven turns to it, a plate reads STILL NO SUCH WORD",
+        "reaction": "the card swings",
+        "ambient": "the highlighter squeaks, wind at the page edge"
+      },
+      "t": "26.550-27.870",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 5,
+      "at_s": 27.87,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The Daily News reports it would burn North Slope gas, in a one to three gigawatt system not tied to the Railbelt grid.",
+      "phrase": "The Daily News reports",
+      "shows": "a gas cutaway card swings in on the cord with a pipe feeding a squat generator hall, a plate reads NORTH SLOPE GAS \u00b7 ADN",
+      "sfx": "whoosh",
+      "means": "north slope gas \u00b7 adn",
+      "rehook": "",
+      "draw": {
+        "subject": "a gas cutaway card",
+        "action": "swings in on the cord with a pipe feeding a squat generator hall",
+        "emotion": "steady",
+        "annotation": "NORTH SLOPE GAS \u00b7 ADN"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a gas cutaway card swings in on the cord with a pipe feeding a squat generator hall, a plate reads NORTH SLOPE GAS \u00b7 ADN",
+        "reaction": "the card swings",
+        "ambient": "the generator hums, the cable creaks, a socket hangs"
+      },
+      "t": "27.870-31.750",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 31.75,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.88
+      },
+      "offset": 3.88,
+      "vo": "The Daily News reports it would burn North Slope gas, in a one to three gigawatt system not tied to the Railbelt grid.",
+      "phrase": "one to three gigawatt",
+      "shows": "a gauge needle swings across the hall's dial under a newsprint badge, a plate reads 1 TO 3 GW \u00b7 ADN",
+      "sfx": "hum",
+      "means": "1 to 3 gw \u00b7 adn",
+      "rehook": "",
+      "draw": {
+        "subject": "a gauge needle",
+        "action": "swings across the hall's dial under a newsprint badge",
+        "emotion": "steady",
+        "annotation": "1 TO 3 GW \u00b7 ADN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a gauge needle swings across the hall's dial under a newsprint badge, a plate reads 1 TO 3 GW \u00b7 ADN",
+        "reaction": "the needle settles",
+        "ambient": "the generator hums, the cable creaks, a socket hangs"
+      },
+      "t": "31.750-33.810",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 33.81,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.94
+      },
+      "offset": 5.94,
+      "vo": "The Daily News reports it would burn North Slope gas, in a one to three gigawatt system not tied to the Railbelt grid.",
+      "phrase": "tied to the Railbelt",
+      "shows": "a dashed cable swings toward a utility-pole socket in the card's corner and snaps back a hand-width short, a plate reads OFF-GRID \u00b7 ADN",
+      "sfx": "snap",
+      "means": "off-grid \u00b7 adn",
+      "rehook": "rehook: the dashed cable lunges at the Railbelt socket and stops a hand-width short",
+      "draw": {
+        "subject": "a dashed cable",
+        "action": "swings toward a utility-pole socket in the card's corner and snaps back a hand-width short",
+        "emotion": "stubborn",
+        "annotation": "OFF-GRID \u00b7 ADN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a dashed cable swings toward a utility-pole socket in the card's corner and snaps back a hand-width short, a plate reads OFF-GRID \u00b7 ADN",
+        "reaction": "the cable stops",
+        "ambient": "the generator hums, the cable creaks, a socket hangs"
+      },
+      "t": "33.810-36.020",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 36.02,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "STAK says it expects no impact on the public grid or ratepayers. That's a company claim.",
+      "phrase": "STAK says it expects",
+      "shows": "a speech tab drops onto the cutaway card and swings with the company's words, a plate reads STAK SAYS NO IMPACT \u00b7 PUBLIC GRID",
+      "sfx": "pop",
+      "means": "stak says no impact \u00b7 public grid",
+      "rehook": "",
+      "draw": {
+        "subject": "a speech tab",
+        "action": "drops onto the cutaway card and swings with the company's words",
+        "emotion": "assured",
+        "annotation": "STAK SAYS NO IMPACT \u00b7 PUBLIC GRID"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a speech tab drops onto the cutaway card and swings with the company's words, a plate reads STAK SAYS NO IMPACT \u00b7 PUBLIC GRID",
+        "reaction": "the tab wobbles",
+        "ambient": "the generator hums, the cable creaks, a socket hangs"
+      },
+      "t": "36.020-40.210",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 40.21,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.19
+      },
+      "offset": 4.19,
+      "vo": "STAK says it expects no impact on the public grid or ratepayers. That's a company claim.",
+      "phrase": "company claim.",
+      "shows": "a CLAIM tab snaps on beneath the speech tab and the tab tips under it, a plate reads A COMPANY CLAIM",
+      "sfx": "snap",
+      "means": "a company claim",
+      "rehook": "",
+      "draw": {
+        "subject": "a CLAIM tab",
+        "action": "snaps on beneath the speech tab and the tab tips under it",
+        "emotion": "wry",
+        "annotation": "A COMPANY CLAIM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a CLAIM tab snaps on beneath the speech tab and the tab tips under it, a plate reads A COMPANY CLAIM",
+        "reaction": "the tab tilts",
+        "ambient": "the generator hums, the cable creaks, a socket hangs"
+      },
+      "t": "40.210-41.980",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 41.98,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On November fifth, World Oil reported a fifteen year gas sale agreement for the campus. That's a second clock, so keep it beside the lease.",
+      "phrase": "On November fifth, World",
+      "shows": "a newsprint clipping slides in on the cord with a masthead and a date tab, a plate reads WORLD OIL \u00b7 REPORTED NOV 5",
+      "sfx": "page",
+      "means": "world oil \u00b7 reported nov 5",
+      "rehook": "",
+      "draw": {
+        "subject": "a newsprint clipping",
+        "action": "slides in on the cord with a masthead and a date tab",
+        "emotion": "reading",
+        "annotation": "WORLD OIL \u00b7 REPORTED NOV 5"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a newsprint clipping slides in on the cord with a masthead and a date tab, a plate reads WORLD OIL \u00b7 REPORTED NOV 5",
+        "reaction": "the clipping swings",
+        "ambient": "the cords creak, a clock ticks"
+      },
+      "t": "41.980-44.410",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 44.41,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.43
+      },
+      "offset": 2.43,
+      "vo": "On November fifth, World Oil reported a fifteen year gas sale agreement for the campus. That's a second clock, so keep it beside the lease.",
+      "phrase": "fifteen year gas sale",
+      "shows": "a short second cord snaps onto the tag and its far end swings down into a coil, a plate reads 15-YR GAS SALE AGREEMENT \u00b7 REPORTED",
+      "sfx": "snap",
+      "means": "15-yr gas sale agreement \u00b7 reported",
+      "rehook": "",
+      "draw": {
+        "subject": "a short second cord",
+        "action": "snaps onto the tag and its far end swings down into a coil",
+        "emotion": "tense",
+        "annotation": "15-YR GAS SALE AGREEMENT \u00b7 REPORTED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a short second cord snaps onto the tag and its far end swings down into a coil, a plate reads 15-YR GAS SALE AGREEMENT \u00b7 REPORTED",
+        "reaction": "the coil sways",
+        "ambient": "the cords creak, a clock ticks"
+      },
+      "t": "44.410-48.030",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 48.03,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 6.05
+      },
+      "offset": 6.05,
+      "vo": "On November fifth, World Oil reported a fifteen year gas sale agreement for the campus. That's a second clock, so keep it beside the lease.",
+      "phrase": "second clock, so keep",
+      "shows": "a clock face opens at the cord's coiled end and its hand starts to tick, a plate reads HOW LONG?",
+      "sfx": "riser",
+      "means": "how long?",
+      "rehook": "",
+      "draw": {
+        "subject": "a clock face",
+        "action": "opens at the cord's coiled end and its hand starts to tick",
+        "emotion": "uneasy",
+        "annotation": "HOW LONG?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a clock face opens at the cord's coiled end and its hand starts to tick, a plate reads HOW LONG?",
+        "reaction": "the hand ticks",
+        "ambient": "the cords creak, a clock ticks"
+      },
+      "t": "48.030-51.240",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 7,
+      "at_s": 51.24,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The state got one thousand two hundred five comments, and the Daily News says most were opposed.",
+      "phrase": "The state got one",
+      "shows": "paper slips fall out of the dusk like snow and pile onto the clothesline and the snow around the stake, a plate reads THE PUBLIC COMMENTED",
+      "sfx": "thud",
+      "means": "the public commented",
+      "rehook": "",
+      "draw": {
+        "subject": "paper slips",
+        "action": "fall out of the dusk like snow and pile onto the clothesline and the snow around the stake",
+        "emotion": "overwhelmed",
+        "annotation": "THE PUBLIC COMMENTED"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "paper slips fall out of the dusk like snow and pile onto the clothesline and the snow around the stake, a plate reads THE PUBLIC COMMENTED",
+        "reaction": "the slips settle",
+        "ambient": "wind, slips slide and thump, the tally clicks"
+      },
+      "t": "51.240-52.030",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 52.03,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.79
+      },
+      "offset": 0.79,
+      "vo": "The state got one thousand two hundred five comments, and the Daily News says most were opposed.",
+      "phrase": "one thousand two hundred",
+      "shows": "a tally counter rolls its drums as slips pile around the raven's feet, a plate reads 1,205 COMMENTS \u00b7 ENV. CENTER COUNT",
+      "sfx": "cascade",
+      "means": "1,205 comments \u00b7 env. center count",
+      "rehook": "",
+      "draw": {
+        "subject": "a tally counter",
+        "action": "rolls its drums as slips pile around the raven's feet",
+        "emotion": "overwhelmed",
+        "annotation": "1,205 COMMENTS \u00b7 ENV. CENTER COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "a tally counter rolls its drums as slips pile around the raven's feet, a plate reads 1,205 COMMENTS \u00b7 ENV. CENTER COUNT",
+        "reaction": "the drums settle",
+        "ambient": "wind, slips slide and thump, the tally clicks"
+      },
+      "kick": true,
+      "t": "52.030-55.030",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 55.03,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.79
+      },
+      "offset": 3.79,
+      "vo": "The state got one thousand two hundred five comments, and the Daily News says most were opposed.",
+      "phrase": "Daily News says most",
+      "shows": "a newspaper masthead drops onto the side of a crate beside the mailbox, a plate reads ANCHORAGE DAILY NEWS",
+      "sfx": "pop",
+      "means": "anchorage daily news",
+      "rehook": "",
+      "draw": {
+        "subject": "a newspaper masthead",
+        "action": "drops onto the side of a crate beside the mailbox",
+        "emotion": "plain",
+        "annotation": "ANCHORAGE DAILY NEWS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a newspaper masthead drops onto the side of a crate beside the mailbox, a plate reads ANCHORAGE DAILY NEWS",
+        "reaction": "the masthead rocks",
+        "ambient": "wind, slips slide and thump, the tally clicks"
+      },
+      "t": "55.030-56.430",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 56.43,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 5.19
+      },
+      "offset": 5.19,
+      "vo": "The state got one thousand two hundred five comments, and the Daily News says most were opposed.",
+      "phrase": "opposed.",
+      "shows": "red tabs snap onto the slips one by one and the crate overflows with red-tabbed slips, a plate reads MOSTLY OPPOSED \u00b7 ADN",
+      "sfx": "clank",
+      "means": "mostly opposed \u00b7 adn",
+      "rehook": "rehook: red tabs snap onto the slips and the crate overflows",
+      "draw": {
+        "subject": "red tabs",
+        "action": "snap onto the slips one by one and the crate overflows with red-tabbed slips",
+        "emotion": "firm",
+        "annotation": "MOSTLY OPPOSED \u00b7 ADN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "red tabs snap onto the slips one by one and the crate overflows with red-tabbed slips, a plate reads MOSTLY OPPOSED \u00b7 ADN",
+        "reaction": "the crate overflows",
+        "ambient": "wind, slips slide and thump, the tally clicks"
+      },
+      "t": "56.430-57.760",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 57.76,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The governor-elect said he would support a data center construction moratorium in Alaska, a statement of support and not an action, and the report doesn't tie it to this lease.",
+      "phrase": "The governor-elect said he",
+      "shows": "a plain card on its own small post slides in beside the stake and drops onto its post, apart from the tag, a plate reads GOV-ELECT WOULD SUPPORT DATA CENTER MORATORIUM \u00b7 ADN",
+      "sfx": "slide",
+      "means": "gov-elect would support data center moratorium \u00b7 adn",
+      "rehook": "",
+      "draw": {
+        "subject": "a plain card on its own small post",
+        "action": "slides in beside the stake and drops onto its post, apart from the tag",
+        "emotion": "careful",
+        "annotation": "GOV-ELECT WOULD SUPPORT DATA CENTER MORATORIUM \u00b7 ADN"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "a plain card on its own small post slides in beside the stake and drops onto its post, apart from the tag, a plate reads GOV-ELECT WOULD SUPPORT DATA CENTER MORATORIUM \u00b7 ADN",
+        "reaction": "the card rocks",
+        "ambient": "the string creaks, wind in the card"
+      },
+      "t": "57.760-60.430",
+      "key": 24
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 60.43,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.67
+      },
+      "offset": 2.67,
+      "vo": "The governor-elect said he would support a data center construction moratorium in Alaska, a statement of support and not an action, and the report doesn't tie it to this lease.",
+      "phrase": "construction moratorium in Alaska,",
+      "shows": "the card's post creaks and tips a degree under the card, a plate reads DATA CENTER CONSTRUCTION",
+      "sfx": "creak",
+      "means": "data center construction",
+      "rehook": "",
+      "draw": {
+        "subject": "the card's post",
+        "action": "creaks and tips a degree under the card",
+        "emotion": "careful",
+        "annotation": "DATA CENTER CONSTRUCTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "the card's post creaks and tips a degree under the card, a plate reads DATA CENTER CONSTRUCTION",
+        "reaction": "the string stretches",
+        "ambient": "the string creaks, wind in the card"
+      },
+      "t": "60.430-64.530",
+      "key": 25
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 64.53,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 6.77
+      },
+      "offset": 6.77,
+      "vo": "The governor-elect said he would support a data center construction moratorium in Alaska, a statement of support and not an action, and the report doesn't tie it to this lease.",
+      "phrase": "action, and the report",
+      "shows": "a small tab snaps onto the card's lower edge, a plate reads STATEMENT OF SUPPORT \u00b7 NOT AN ACTION",
+      "sfx": "pop",
+      "means": "statement of support \u00b7 not an action",
+      "rehook": "",
+      "draw": {
+        "subject": "a small tab",
+        "action": "snaps onto the card's lower edge",
+        "emotion": "careful",
+        "annotation": "STATEMENT OF SUPPORT \u00b7 NOT AN ACTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "a small tab snaps onto the card's lower edge, a plate reads STATEMENT OF SUPPORT \u00b7 NOT AN ACTION",
+        "reaction": "the tab snaps on",
+        "ambient": "the string creaks, wind in the card"
+      },
+      "t": "64.530-65.530",
+      "key": 26
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 65.53,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 7.77
+      },
+      "offset": 7.77,
+      "vo": "The governor-elect said he would support a data center construction moratorium in Alaska, a statement of support and not an action, and the report doesn't tie it to this lease.",
+      "phrase": "report doesn't tie it",
+      "shows": "the card swings on its post with no line to the tag, a plate reads NO LINK TO THIS LEASE IN ADN REPORT",
+      "sfx": "hush",
+      "means": "no link to this lease in adn report",
+      "rehook": "",
+      "draw": {
+        "subject": "the card",
+        "action": "swings on its post with no line to the tag",
+        "emotion": "plain",
+        "annotation": "NO LINK TO THIS LEASE IN ADN REPORT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "the card swings on its post with no line to the tag, a plate reads NO LINK TO THIS LEASE IN ADN REPORT",
+        "reaction": "the card sways",
+        "ambient": "the string creaks, wind in the card"
+      },
+      "t": "65.530-68.320",
+      "key": 27
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 68.32,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the real tension. A project can power itself and still ask the state for something very large, and that is fifty years of land.",
+      "phrase": "Here's the real tension.",
+      "shows": "the stake leans as slips snag on its strings and the orange tag bends, a plate reads THE REAL TENSION",
+      "sfx": "creak",
+      "means": "the real tension",
+      "rehook": "",
+      "draw": {
+        "subject": "the stake",
+        "action": "leans as slips snag on its strings and the orange tag bends",
+        "emotion": "strained",
+        "annotation": "THE REAL TENSION"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the stake leans as slips snag on its strings and the orange tag bends, a plate reads THE REAL TENSION",
+        "reaction": "the stake leans",
+        "ambient": "the stake creaks, slips rustle, the cord groans"
+      },
+      "t": "68.320-71.450",
+      "key": 28
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 71.45,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.13
+      },
+      "offset": 3.13,
+      "vo": "Here's the real tension. A project can power itself and still ask the state for something very large, and that is fifty years of land.",
+      "phrase": "power itself and still",
+      "shows": "the raven pulls one slip from the heap and drops it onto the lease cord, a plate reads IF IT POWERS ITSELF \u00b7 OFF-GRID PER ADN",
+      "sfx": "page",
+      "means": "if it powers itself \u00b7 off-grid per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "the raven",
+        "action": "pulls one slip from the heap and drops it onto the lease cord",
+        "emotion": "watchful",
+        "annotation": "IF IT POWERS ITSELF \u00b7 OFF-GRID PER ADN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the raven pulls one slip from the heap and drops it onto the lease cord, a plate reads IF IT POWERS ITSELF \u00b7 OFF-GRID PER ADN",
+        "reaction": "the slip swings",
+        "ambient": "the stake creaks, slips rustle, the cord groans"
+      },
+      "t": "71.450-76.250",
+      "key": 29
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 76.25,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 7.93
+      },
+      "offset": 7.93,
+      "vo": "Here's the real tension. A project can power itself and still ask the state for something very large, and that is fifty years of land.",
+      "phrase": "fifty years of land.",
+      "shows": "the lease cord runs left past a row of small seasonal markers with the slips snagged only at its near end, a plate reads 50 YEARS \u00b7 ABOUT 715 ACRES",
+      "sfx": "creak",
+      "means": "50 years \u00b7 about 715 acres",
+      "rehook": "",
+      "draw": {
+        "subject": "the lease cord",
+        "action": "runs left past a row of small seasonal markers with the slips snagged only at its near end",
+        "emotion": "grave",
+        "annotation": "50 YEARS \u00b7 ABOUT 715 ACRES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4",
+        "c5"
+      ],
+      "choreo": {
+        "primary": "the lease cord runs left past a row of small seasonal markers with the slips snagged only at its near end, a plate reads 50 YEARS \u00b7 ABOUT 715 ACRES",
+        "reaction": "the markers rattle",
+        "ambient": "the stake creaks, slips rustle, the cord groans"
+      },
+      "t": "76.250-78.500",
+      "key": 31
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 78.5,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now that word. The Northern Alaska Environmental Center, an advocacy group, lists artificial intelligence computing among the possible uses, but the notice never uses A I.",
+      "phrase": "Now that word. The",
+      "shows": "the raven drags a search reticle across the notice card, a plate reads THE MISSING WORD",
+      "sfx": "whoosh",
+      "means": "the missing word",
+      "rehook": "",
+      "draw": {
+        "subject": "the raven",
+        "action": "drags a search reticle across the notice card",
+        "emotion": "hunting",
+        "annotation": "THE MISSING WORD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the raven drags a search reticle across the notice card, a plate reads THE MISSING WORD",
+        "reaction": "the reticle drifts",
+        "ambient": "the reticle whirs, paper rustles"
+      },
+      "t": "78.500-80.610",
+      "key": 32
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 80.61,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.11
+      },
+      "offset": 2.11,
+      "vo": "Now that word. The Northern Alaska Environmental Center, an advocacy group, lists artificial intelligence computing among the possible uses, but the notice never uses A I.",
+      "phrase": "Northern Alaska Environmental Center,",
+      "shows": "a name tab drops onto the reticle stick naming the group, a plate reads NORTHERN ALASKA ENV. CENTER",
+      "sfx": "click",
+      "means": "northern alaska env. center",
+      "rehook": "",
+      "draw": {
+        "subject": "a name tab",
+        "action": "drops onto the reticle stick naming the group",
+        "emotion": "plain",
+        "annotation": "NORTHERN ALASKA ENV. CENTER"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c31"
+      ],
+      "choreo": {
+        "primary": "a name tab drops onto the reticle stick naming the group, a plate reads NORTHERN ALASKA ENV. CENTER",
+        "reaction": "the tab clips",
+        "ambient": "the reticle whirs, paper rustles"
+      },
+      "t": "80.610-83.930",
+      "key": 44
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 83.93,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 5.43
+      },
+      "offset": 5.43,
+      "vo": "Now that word. The Northern Alaska Environmental Center, an advocacy group, lists artificial intelligence computing among the possible uses, but the notice never uses A I.",
+      "phrase": "lists artificial intelligence computing",
+      "shows": "an advocacy chip drops into the reticle's empty circle, a plate reads ADVOCACY GROUP LISTS \"ARTIFICIAL INTELLIGENCE COMPUTING\"",
+      "sfx": "pop",
+      "means": "advocacy group lists \"artificial intelligence computing\"",
+      "rehook": "",
+      "draw": {
+        "subject": "an advocacy chip",
+        "action": "drops into the reticle's empty circle",
+        "emotion": "plain",
+        "annotation": "ADVOCACY GROUP LISTS \"ARTIFICIAL INTELLIGENCE COMPUTING\""
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c31"
+      ],
+      "choreo": {
+        "primary": "an advocacy chip drops into the reticle's empty circle, a plate reads ADVOCACY GROUP LISTS \"ARTIFICIAL INTELLIGENCE COMPUTING\"",
+        "reaction": "the chip settles",
+        "ambient": "the reticle whirs, paper rustles"
+      },
+      "t": "83.930-88.550",
+      "key": 33
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 88.55,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 10.05
+      },
+      "offset": 10.05,
+      "vo": "Now that word. The Northern Alaska Environmental Center, an advocacy group, lists artificial intelligence computing among the possible uses, but the notice never uses A I.",
+      "phrase": "never uses A I.",
+      "shows": "the reticle closes and locks on empty paper, a plate reads NOTICE TEXT \u00b7 NO \"AI\"",
+      "sfx": "blip",
+      "means": "notice text \u00b7 no \"ai\"",
+      "rehook": "",
+      "draw": {
+        "subject": "the reticle",
+        "action": "closes and locks on empty paper",
+        "emotion": "flat",
+        "annotation": "NOTICE TEXT \u00b7 NO \"AI\""
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "the reticle closes and locks on empty paper, a plate reads NOTICE TEXT \u00b7 NO \"AI\"",
+        "reaction": "the ring locks",
+        "ambient": "the reticle whirs, paper rustles"
+      },
+      "t": "88.550-90.920",
+      "key": 34
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 90.92,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the argument is land, gas and half a century. The reported gas agreement runs fifteen years, and the lease runs fifty.",
+      "phrase": "So the argument is",
+      "shows": "a ruler unrolls along the snow under the cords as the camera trucks along it, a plate reads LAND \u00b7 GAS \u00b7 HALF A CENTURY",
+      "sfx": "whoosh",
+      "means": "land \u00b7 gas \u00b7 half a century",
+      "rehook": "rehook: a ruler unrolls under the cords and the camera trucks along it",
+      "draw": {
+        "subject": "a ruler",
+        "action": "unrolls along the snow under the cords as the camera trucks along it",
+        "emotion": "grave",
+        "annotation": "LAND \u00b7 GAS \u00b7 HALF A CENTURY"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a ruler unrolls along the snow under the cords as the camera trucks along it, a plate reads LAND \u00b7 GAS \u00b7 HALF A CENTURY",
+        "reaction": "the ruler unrolls",
+        "ambient": "wind, the ruler unrolls, a cord settles"
+      },
+      "t": "90.920-94.210",
+      "key": 35
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 94.21,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.29
+      },
+      "offset": 3.29,
+      "vo": "So the argument is land, gas and half a century. The reported gas agreement runs fifteen years, and the lease runs fifty.",
+      "phrase": "century. The reported gas",
+      "shows": "the lease cord lays itself along all fifty ticks of the ruler, a plate reads HALF A CENTURY",
+      "sfx": "thud",
+      "means": "half a century",
+      "rehook": "",
+      "draw": {
+        "subject": "the lease cord",
+        "action": "lays itself along all fifty ticks of the ruler",
+        "emotion": "grave",
+        "annotation": "HALF A CENTURY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "the lease cord lays itself along all fifty ticks of the ruler, a plate reads HALF A CENTURY",
+        "reaction": "the cord settles",
+        "ambient": "wind, the ruler unrolls, a cord settles"
+      },
+      "t": "94.210-96.910",
+      "key": 36
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 96.91,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.99
+      },
+      "offset": 5.99,
+      "vo": "So the argument is land, gas and half a century. The reported gas agreement runs fifteen years, and the lease runs fifty.",
+      "phrase": "fifteen years, and the",
+      "shows": "the gas cord lays along its fifteen ticks and runs on as a faint dashed line, a plate reads 15-YR GAS SALE AGREEMENT \u00b7 REPORTED",
+      "sfx": "slide",
+      "means": "15-yr gas sale agreement \u00b7 reported",
+      "rehook": "",
+      "draw": {
+        "subject": "the gas cord",
+        "action": "lays along its fifteen ticks and runs on as a faint dashed line",
+        "emotion": "tense",
+        "annotation": "15-YR GAS SALE AGREEMENT \u00b7 REPORTED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the gas cord lays along its fifteen ticks and runs on as a faint dashed line, a plate reads 15-YR GAS SALE AGREEMENT \u00b7 REPORTED",
+        "reaction": "the dashes sway",
+        "ambient": "wind, the ruler unrolls, a cord settles"
+      },
+      "t": "96.910-99.550",
+      "key": 37
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "at_s": 99.55,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 8.63
+      },
+      "offset": 8.63,
+      "vo": "So the argument is land, gas and half a century. The reported gas agreement runs fifteen years, and the lease runs fifty.",
+      "phrase": "fifty.",
+      "shows": "the stake leans toward the long cord as the raven tilts its head, a plate reads 50-YEAR LEASE",
+      "sfx": "riser",
+      "means": "50-year lease",
+      "rehook": "",
+      "draw": {
+        "subject": "the stake",
+        "action": "leans toward the long cord as the raven tilts its head",
+        "emotion": "grave",
+        "annotation": "50-YEAR LEASE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "the stake leans toward the long cord as the raven tilts its head, a plate reads 50-YEAR LEASE",
+        "reaction": "the stake leans",
+        "ambient": "wind, the ruler unrolls, a cord settles"
+      },
+      "kick": true,
+      "t": "99.550-101.220",
+      "key": 38
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 101.22,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Requests for reconsideration are due November thirtieth.",
+      "phrase": "Requests for reconsideration are",
+      "shows": "a calendar tab clips onto the cord and a lamp-white ring draws around the 30th, a plate reads RECONSIDERATION DUE NOV 30",
+      "sfx": "clank",
+      "means": "reconsideration due nov 30",
+      "rehook": "",
+      "draw": {
+        "subject": "a calendar tab",
+        "action": "clips onto the cord and a lamp-white ring draws around the 30th",
+        "emotion": "urgent",
+        "annotation": "RECONSIDERATION DUE NOV 30"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "a calendar tab clips onto the cord and a lamp-white ring draws around the 30th, a plate reads RECONSIDERATION DUE NOV 30",
+        "reaction": "the ring closes",
+        "ambient": "the cord creaks, a beak taps, silence"
+      },
+      "t": "101.220-105.120",
+      "key": 39
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 105.12,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "If a project powers itself and stays off the grid, what should Alaska ask of it in return for fifty years of state land?",
+      "phrase": "If a project powers",
+      "shows": "the raven hops a step along the snow toward the tag and lifts its head, a plate reads ONE QUESTION",
+      "sfx": "hum",
+      "means": "one question",
+      "rehook": "",
+      "draw": {
+        "subject": "the raven",
+        "action": "hops a step along the snow toward the tag and lifts its head",
+        "emotion": "direct",
+        "annotation": "ONE QUESTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the raven hops a step along the snow toward the tag and lifts its head, a plate reads ONE QUESTION",
+        "reaction": "the head lifts",
+        "ambient": "the cord creaks, a beak taps, silence"
+      },
+      "t": "105.120-108.590",
+      "key": 45
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 108.59,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 3.47
+      },
+      "offset": 3.47,
+      "vo": "If a project powers itself and stays off the grid, what should Alaska ask of it in return for fifty years of state land?",
+      "phrase": "what should Alaska ask",
+      "shows": "the tag turns toward the camera showing a new ruled line, a plate reads WHAT SHOULD ALASKA ASK?",
+      "sfx": "hush",
+      "means": "what should alaska ask?",
+      "rehook": "",
+      "draw": {
+        "subject": "the tag",
+        "action": "turns toward the camera showing a new ruled line",
+        "emotion": "open",
+        "annotation": "WHAT SHOULD ALASKA ASK?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the tag turns toward the camera showing a new ruled line, a plate reads WHAT SHOULD ALASKA ASK?",
+        "reaction": "the tag swings",
+        "ambient": "the cord creaks, a beak taps, silence"
+      },
+      "t": "108.590-110.930",
+      "key": 40
+    },
+    {
+      "id": 42,
+      "shot": 12,
+      "at_s": 110.93,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 5.81
+      },
+      "offset": 5.81,
+      "vo": "If a project powers itself and stays off the grid, what should Alaska ask of it in return for fifty years of state land?",
+      "phrase": "return for fifty years",
+      "shows": "the raven taps the empty line with its beak and turns its head to look into the lens, a plate reads IN RETURN",
+      "sfx": "thud",
+      "means": "in return",
+      "rehook": "",
+      "draw": {
+        "subject": "the raven",
+        "action": "taps the empty line with its beak and turns its head to look into the lens",
+        "emotion": "direct",
+        "annotation": "IN RETURN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the raven taps the empty line with its beak and turns its head to look into the lens, a plate reads IN RETURN",
+        "reaction": "the beak taps",
+        "ambient": "the cord creaks, a beak taps, silence"
+      },
+      "t": "110.930-111.510",
+      "key": 42
+    },
+    {
+      "id": 43,
+      "shot": 12,
+      "at_s": 111.51,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 6.39
+      },
+      "offset": 6.39,
+      "vo": "If a project powers itself and stays off the grid, what should Alaska ask of it in return for fifty years of state land?",
+      "phrase": "fifty years of state",
+      "shows": "the cords sway as the stake leans a degree further and the frame cuts hard to black, a plate reads 50 YEARS OF STATE LAND",
+      "sfx": "thud",
+      "means": "50 years of state land",
+      "rehook": "",
+      "draw": {
+        "subject": "the cords",
+        "action": "sway as the stake leans a degree further and the frame cuts hard to black",
+        "emotion": "grave",
+        "annotation": "50 YEARS OF STATE LAND"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "the cords sway as the stake leans a degree further and the frame cuts hard to black, a plate reads 50 YEARS OF STATE LAND",
+        "reaction": "the cords sway",
+        "ambient": "the cord creaks, a beak taps, silence"
+      },
+      "t": "111.510-113.240",
+      "key": 43
+    }
+  ]
+}

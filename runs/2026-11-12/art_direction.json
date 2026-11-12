@@ -1,0 +1,100 @@
+{
+ "run_date": "2026-11-12",
+ "story_id": "stak-north-slope-lease",
+ "treatment": {
+  "winner": "FIFTY YEARS, ONE WORD SHORT (dramatist base)",
+  "grafts": [
+   "explainer: a 50-tick land term laid against a 15-tick reported gas deal on one ruler, both fully in frame, no derived number (the Chronometer is cut, the cords carry time)",
+   "comedian: a search reticle sweeps the notice for the letters AI and finds NO MATCH",
+   "enthusiast: a dashed cable that stops one hand-width short of a Railbelt socket, the off-grid design drawn as an upside with its condition"
+  ],
+  "judge_reasoning": "The question the state paperwork raises is about time and words, so the hero is a witness that outlives seasons, a raven, and the throughline is a survey stake tag that the lease, the gas deal and the public each pull on. A neutral animal hero keeps the film from implying an AI the state never wrote. The Mailroom gives the 1,205 comments the longest held scene of the film."
+ },
+ "palette": {
+  "sky": "#1B3A55 lifted polar dusk dome with a long low #1F4E6B band rising to a pale rose #C98A8F civil-twilight line at the horizon",
+  "ground": "#DCE6EE wind-packed blue-white snow with #8FA6BA shadow planes",
+  "hero": "#15171D raven black with #5B6FA3 sheen",
+  "paper": "#D6C9A8 aged state-notice paper with #1B2230 ink, every paper element on snow carries a #8FA6BA keyline shadow plane",
+  "accent": "#FF6A1A survey-flagging orange ONLY on the stake tag, its cords and ribbon, the one object the film is about",
+  "pressure": "#C0272D stamp red, spent ONLY on the MOSTLY OPPOSED tray stamps inside the Mailroom, never on the tag, the stake or the slips that load it (those stay plain paper and ink)",
+  "shadow": "#0A1620 for cast shadows only",
+  "mood": "cold clear dusk rising to a pale rose horizon line, orange only where the film's question lives, red only in the Mailroom tray",
+  "why": "The North Slope in November is a long low blue-to-rose civil twilight over wind-packed snow, so the world is honest. One saturated orange object (survey flagging) gives the eye a single place to follow, and the red tray is held back so the Mailroom lands.",
+  "divergence": "Honest record: a deep indigo dusk is in the family of 11-02's midnight cab, but this film is an exterior over snow with a rose horizon, not an interior. Survey orange (about 22 degrees) sits between 11-10's vermilion and 11-11's sodium amber, so the warm accent is NOT a hue departure, it is justified because survey flagging is that colour and it marks the one object the film is about. The pressure red is the same family as 11-11's crimson and is confined to one tray for one beat. The divergence is the world, snow-and-dusk exterior, the raven-and-stake cast, the cord-and-ruler device and the mailroom, not the accent hue.",
+  "snow": "#DCE6EE",
+  "value_check": "darkest to lightest, measured by L*: cast shadow #0A1620, raven #15171D, sky dome #1B3A55 (raven is staged against the horizon band and the snow planes in every act 1 frame, and against the lifted dome only with its blue rim light), ink #1B2230, snow shadow #8FA6BA, paper #D6C9A8 (about 14 L* below snow), snow #DCE6EE. Saturated: orange tag only on the stake, red only on the Mailroom tray."
+ },
+ "light": {
+  "time_of_day": "blue dusk with a rose horizon line throughout (the stake world), paper-lit macro cutaways (gas card, notice), a flat overhead snow plane for the ruler, and a hard cut to black",
+  "arc": "open dusk to flat paper-lit cutaways to the same dusk, ending on a hard cut to black at the tag. WHY: the film is a single evening at a single stake and it refuses to resolve, so the light does not resolve either",
+  "direction": "horizon glow from camera-left behind the stake, blue sky-dome fill, orange tag lit by reflection of the horizon glow (flagging tape does not emit)",
+  "per_shot": {
+   "1": "horizon glow backlights the stake, orange tag catches a rim of rose",
+   "2": "cold dusk fill on the letter, keyline shadow plane on the snow",
+   "3": "flat map light, pin casts a short blue shadow",
+   "4": "page lit from above by the horizon, highlighter is a flat bar",
+   "5": "cutaway lit by the generator's own interior light, warm work-lamp #F4EBD2, no orange",
+   "6": "horizon glow low across the cords, long shadows toward camera-right",
+   "7": "shadowless fluorescent #E9EEF1, depth by a falloff from bright foreground slips to a dim back wall and stacked tray planes",
+   "8": "same fluorescent, card on the counter casts a soft overhead shadow",
+   "9": "dusk again, stake leans into the horizon glow, the tag loses its rim as it bends",
+   "10": "page lit by the reticle ring's own pale glow, no orange",
+   "11": "low horizon glow along the ruler, both cords fully legible",
+   "12": "the dusk horizon glow fades low behind the stake, the leaning stake and its orange tag keep the last reflected rose on their edges, and the frame hard-cuts to black"
+  },
+  "depth_approach": "lib/stage3d planes, three snow ridges and a thin Dalton road in parallax for the exterior shots, stacked tray and slip planes with falloff for the Mailroom, a flat map plane with a raised pin for shot 3"
+ },
+ "shape_language": "PRIMARY axis: the raven's smooth feathered curves and the stake's single straight vertical against the long flat horizontal of tundra and the cord's catenary sag. SECONDARY: rectilinear paper, slips and notice sheets. WHY: one upright object in a flat land is the image of a claim staked, and the sag of the cords is where the tension is read.",
+ "casting": {
+  "hero": "THE STAKE TAG is the declared hero and throughline (a HangTag on a local Stake component built in the episode file, params lean 0..1, load 0..1, tag state 1..5, cords 0..2). The Raven is a SUPPORTING witness with one named limited role per act: lands on the stake (act 1), reads the notice (act 2), is buried to its feet by slips (Mailroom), drags the reticle (missing word), lands on the straightened stake (close). It is drawn as ordinary fauna, not as a cultural or mythic Raven figure, with no Native visual motifs or iconography.",
+  "throughline": "HangTag on a wooden survey stake (prospect.tsx), five states, blank wind-flipped, stamped 50-YEAR LEASE and ABOUT 715 ACRES, roped with a shorter 15-YEAR cord, overloaded by comment slips, retagged with the closing question.",
+  "supporting": [
+   "StateLetter (paper.tsx)",
+   "SearchReticle (vision.tsx), ink #1B2230",
+   "TallyCounter (props.tsx)",
+   "Calendar (depot.tsx)",
+   "Cable (refinery.tsx)",
+   "TundraBG, PaperOfficeBG"
+  ],
+  "net_new": "none. The Stake is a local component in video-engine/src/Ep1112.tsx. dedupe.py check --hero Raven returned FRESH."
+ },
+ "claim_map": {
+  "APPROVED NOV 10": "c1",
+  "ADL 422741": "c2",
+  "STAK ENERGY": "c3",
+  "50-YEAR LEASE": "c4",
+  "ABOUT 715 ACRES": "c5",
+  "26 MILES SOUTH OF DEADHORSE": "c7",
+  "1 MILE FROM DALTON HWY": "c8",
+  "GAS-POWERED DATA CENTER": "c9",
+  "HIGH-PERFORMANCE COMPUTING": "c10",
+  "1 TO 3 GW (ADN)": "c11",
+  "OFF-GRID": "c13",
+  "NORTH SLOPE GAS": "c15",
+  "15-YEAR GAS DEAL (WORLD OIL, REPORTED)": "c16",
+  "STAK SAYS NO RATEPAYER IMPACT": "c20",
+  "1,205 COMMENTS": "c21",
+  "MOSTLY OPPOSED (ADN)": "c22",
+  "RECONSIDERATION DUE NOV 30": "c23",
+  "INCOMING GOVERNOR BACKS MORATORIUM": "c27",
+  "$500M ESTIMATED SITE WORK": "c29",
+  "NORTHERN JOURNAL: ARTIFICIAL INTELLIGENCE COMPUTING": "c31",
+  "NOTICE TEXT: NO AI": "c32"
+ },
+ "motion_language": "The raven breathes, shifts weight on its perch and head-tilts on every discovery. Cords sag and snap taut on springs, never linear. Slips fall with deterministic hash scatter and settle. The stake leans under load and recovers. The whole frame jolts only on the three board kicks.",
+ "composition": {
+  "focal_hierarchy": "each shot names one 55 to 70 percent hero, a 20 to 30 percent support and 10 to 15 percent world; the stake is off-center in shots 1, 5 and the close",
+  "info_placement": "plates live on objects (the tag, the notice, the slips, the calendar), on the notice sheet, in the reticle HUD and in side plates, with the lower third on a minority of beats",
+  "negative_space": "the long flat snow plain right of the cards and the black after the hard cut",
+  "safe_area": "hero and plates within y 420 to 1500 of the 9:16 master",
+  "signature_shot": "the 50-tick lease cord and the 15-tick reported gas cord both fully in frame on one ruler so the count can be held and compared, then the camera pulls back as the stake leans toward the long cord and the raven tilts its head"
+ },
+ "practicals": {
+  "stake_tag": "#FF6A1A survey orange lit by reflection only, never self-lit",
+  "reticle": "#E8DDC2 ring with #1B2230 ink, no orange, no plum",
+  "lamp_close": "none, the close is a hard cut to black",
+  "mailroom_tray": "#C0272D stamps on the MOSTLY OPPOSED tray only",
+  "truck": "none"
+ },
+ "craft_advance": "none, the shelf covers this film"
+}
