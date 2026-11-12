@@ -739,6 +739,39 @@ def main():
     except Exception as _e:
         print(f"  [board-claims] could not run ({_e}); plates not read against the claims")
 
+    # ---- 11. NOT A RELABEL OF A RECENT FILM'S SHOT TEMPLATE (machine pass 2026-11-12) ----
+    # scripts/template_slot_check.py. Gate 0B called 11-12's v1 "a relabel of 11-11's template" and
+    # the board and scenes were rebuilt after the source gates were green. The film fingerprint above
+    # passed v1; the slot-by-slot shot grammar (4 of 5 fields at the aligned slot, 3 slots or more
+    # against either of the last two shipped boards) fails it, and every other shipped board since
+    # 10-03 except 10-17, which 0B flagged the same way, passes.
+    try:
+        import template_slot_check as _ts
+        _tr = _ts.analyze(sb)
+        for _p in _tr["problems"]:
+            problems.append(f"template-slots: {_p}")
+        for _w in _tr["warnings"]:
+            print(f"  [template-slots-advisory] {_w}")
+        print("  [template-slots] " + (", ".join(f"{d}: {n} slots repeat" for d, n in _tr["compared"])
+                                       or "no shipped board to compare"))
+    except Exception as _e:
+        print(f"  [template-slots] could not run ({_e}); shot grammar not compared slot by slot")
+
+    # ---- 12. THE BOARD'S SOUNDS PASS THE MIX BEFORE ANYTHING IS DRAWN (machine pass 2026-11-12) ----
+    # scripts/sfx_names.py board_report. On 11-12 dispatch_mix rejected two names the table lacked
+    # and its 18 percent single-kind ceiling forced a recast of eleven beats after the render. The
+    # kinds follow from the board alone, so the mix's palette rules and unknown names fail here.
+    try:
+        import sfx_names as _sn
+        _xr = _sn.board_report(sb)
+        for _p in _xr["problems"]:
+            problems.append(f"sfx: {_p}")
+        for _n in _xr["notes"]:
+            print(f"  [sfx-note] {_n}")
+        print(f"  [sfx] {len(_xr['kinds'])} beats cast to {len(set(_xr['kinds'].values()))} bank kinds")
+    except Exception as _e:
+        print(f"  [sfx] could not run ({_e}); board sounds not checked against the mix")
+
     if problems:
         for p in problems:
             print(f"FAIL [storyboard_check] {p}")

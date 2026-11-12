@@ -34,6 +34,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import vo_soundcheck as sc
+import vo_plan_sync
 from dispatch_captions import word_document
 
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -559,6 +560,20 @@ def _require_checked_transcript(lines, prompt):
 
 
 def main():
+    # --help and --dry-run (machine pass 2026-11-12, queue item vo-synth-has-no-help): on 11-04
+    # `vo_synth_gemini.py --help` ran a real synth and had to be killed. Any unknown flag now stops
+    # here too, before a key is read or a take is spent.
+    args = sys.argv[1:]
+    if any(a in ("-h", "--help") for a in args):
+        print(__doc__)
+        print("Flags:\n  --help, -h   this text; nothing runs\n"
+              "  --dry-run    the prechecks and prompt repairs only; prints the prompt Gemini would be "
+              "sent and exits, no key read, no TTS call")
+        return 0
+    unknown = [a for a in args if a != "--dry-run"]
+    if unknown:
+        raise SystemExit(f"vo_synth_gemini: unknown argument(s) {unknown}; see --help. No Gemini call was made.")
+    dry = "--dry-run" in args
     # Always run before credentials, takes, retries or any Gemini API spend. Old
     # vo_lines.json is irrelevant before this script has produced the new voice.
     subprocess.run([sys.executable, os.path.join(HERE, "vo_claims_check.py"),
@@ -580,13 +595,18 @@ def main():
     # unchanged. Only genuinely new or edited lines lose their per-line notes.
     _want, _fixes = _reconcile_plan_with_script(lines)
     if _want is not None:
-        by_text = {_strip_tags(l["text"]).strip(): l for l in plan["lines"]}
-        plan["lines"] = [
-            dict(by_text[w], idx=i) if w in by_text
-            else {"idx": i, "text": w, "intent": "", "emphasis": "", "energy": 3, "tags": []}
-            for i, w in enumerate(_want)
-        ]
+        # scripts/vo_plan_sync.py (machine pass 2026-11-12): an edited line keeps its direction
+        # and each inline tag whose word survived the edit; it used to lose every tag.
+        plan["lines"], _sync_notes = vo_plan_sync.sync_lines(plan["lines"], _want)
+        _fixes = list(_fixes) + _sync_notes
         lines = [_strip_tags(l["text"]) for l in plan["lines"]]
+    # THE PROMPT'S TRANSCRIPT FOLLOWS THE PLAN LINES (machine pass 2026-11-12, vo-plan-text-drift).
+    # 11-12 refused three synths at the precheck below because the script edit had reached lines[]
+    # but not assembled_prompt, which is what the model is sent. The rewrite is mechanical and keeps
+    # the director's notes and any tag on a line whose words did not change.
+    prompt, _pnote = vo_plan_sync.sync_prompt(prompt, plan["lines"])
+    if _pnote:
+        _fixes = list(_fixes) + [_pnote]
     # PRONUNCIATION BELONGS IN THE NOTES, NEVER IN THE TRANSCRIPT (added 2026-08-07).
     # docs/craft/VO_DIRECTION.md asks the director to respell tricky proper nouns
     # phonetically. Until today that respelling was written INTO the transcript, where
@@ -609,6 +629,10 @@ def main():
     for _f in _fixes:
         print(f"  !! PROMPT REPAIRED: {_f}")
     _require_checked_transcript(lines, prompt)
+    if dry:
+        print(prompt)
+        print(f"vo_synth_gemini --dry-run: {len(lines)} lines pass the precheck; no Gemini call was made.")
+        return 0
     spoken = " ".join(lines)
     tags = sorted({t for l in plan["lines"] for t in l.get("tags", [])})
 

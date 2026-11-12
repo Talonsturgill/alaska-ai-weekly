@@ -1,17 +1,15 @@
 {
   "last_pass": {
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "shipped": [
-      "held_beat_check no longer accepts a motion rig turned down to a token (held_plan gate)",
-      "dead_space_check floor gate, a film whose floor under the caption bar is over 68 percent empty is stopped before the render",
-      "board_claims_check, Gate 0A reads every board plate against claims.json before the 0B to 0D critics",
-      "ui_chrome_check, a copied row of state chips at the top of the frame fails the source gates",
-      "lib FigureFinish engine advance, rim, far-side shade and floor shadow for hand-rolled figures (not enforced yet)"
+      "template_slot_check, Gate 0A fails a storyboard that repeats a recent film's shot grammar slot by slot (the 11-12 v1 relabel Gate 0B caught)",
+      "sfx_names board_report, Gate 0A checks every beat's sound against the mix's name table and variety limits before the render, and 51 mis-mapped bank names now map to themselves",
+      "vo_plan_sync, a script edit now carries into the voice plan and prompt while keeping each line's delivery tags",
+      "vo_synth_gemini --help and --dry-run, an unknown flag no longer starts a paid synth",
+      "tracked __pycache__ files removed from git"
     ],
-    "engine_advance": "lib FigureFinish in lib/figureidle.tsx, lights 41 percent of a figure's pixels on the look-dev stand and changes 0.00 percent of the surround",
     "escalated": [
-      "caption-scorer-hair-under-bar (repeat 4): the 11-11 rounds were never recorded through caption_rounds.py. Next step, caption_rounds.py writes runs/<date>/caption_score.json from the ledger with every round's card and the archive step fails when the ledger is missing.",
-      "upload-parallel-race (11-11): not reached, a single batch upload entry point is still wanted"
+      "gate0-critic-rounds cap (panel protocol, owner decision): may a Gate 0 critic's third ship:false be declined with a recorded proportion note"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
