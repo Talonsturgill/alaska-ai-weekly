@@ -553,13 +553,31 @@ def cmd_check(a):
     print("  you may upload, email and merge.")
 
 
+def judge_totals(raw):
+    """--judges is the three seats' numeric TOTALS, never their names (2026-11-13: a run passed
+    `--judges j1,j2,j3`, got a bare ValueError traceback, and lost a cycle reading the source).
+    A usage error is argparse's exit 2, so it is not logged as an editing round."""
+    out = []
+    for tok in (x.strip() for x in raw.split(",")):
+        if not tok:
+            continue
+        try:
+            out.append(float(tok))
+        except ValueError:
+            raise argparse.ArgumentTypeError(
+                f"{tok!r} is not a number. --judges takes the three judges' numeric TOTALS from "
+                f"their cards, comma-separated (e.g. --judges 7.13,7.20,7.13), not seat names.")
+    return ",".join(str(v) for v in out)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("record", help="bind a passing panel verdict to the current bytes")
     r.add_argument("--median", type=float, default=None)
-    r.add_argument("--judges", type=str, default="", help="comma-separated, need 3")
+    r.add_argument("--judges", type=judge_totals, default="",
+                   help="the three judges' numeric totals, comma-separated (e.g. 7.13,7.20,7.13)")
     r.add_argument("--notes", type=str, default="")
     r.set_defaults(fn=cmd_record)
     c = sub.add_parser("check", help="the hard gate. run before upload/email/merge")
