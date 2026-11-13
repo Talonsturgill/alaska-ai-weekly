@@ -1196,7 +1196,9 @@ Each round: save the scorer's JSON card, run `python3 scripts/caption_rounds.py 
 and rewrite for the ONE target it names (largest weighted shortfall, held until it stalls twice),
 handing the next scorer the previous scores and diff it prints. At the rubric's
 `max_revision_cycles` with zero hard fails it prints STOP and the best round: ship that text and put
-its card in the email as below the bar. A hard fail is never capped.
+its card in the email as below the bar. A hard fail is never capped. Before archiving the final
+card, `python3 scripts/caption_rounds.py verify` exits 0 (the card is a recorded round; preflight
+runs it too, advisory).
 dispatch_email.py also lints the exact string it embeds and exits 2 rather than build a draft that
 breaks a house rule.
 
