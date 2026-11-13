@@ -1,0 +1,2240 @@
+{
+  "run_date": "2026-11-13",
+  "slug": "the-faucet-before-the-water",
+  "title": "The Faucet Before the Water",
+  "concept": "On November 9th the governor announced InvestNorth, a state-sponsored financing platform pitched at data centers, built with Plural of San Francisco on top of Alaska Data Corp, an AIDEA company that AIDEA's board voted $20 million in January. Tokenization is a digital record of who owns a stake. Some deals may be reserved for Alaskans, no offering is open and terms aren't decided, and by the sources reviewed here none names an AI project. The Daily News counts at least seven meetings with Plural's chief executive and a critic calls it public money to Lower 48 corporations. AIDEA's board meets again December 4th and on December 7th Jonathan Kreiss-Tomkins becomes governor and says he would support a pause on data center construction until there are rules. The film draws all of it as a brass faucet with a face at the end of a pipe with nothing to pour, and ends on a hard cut at a dust speck that does not fall.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 119.2,
+  "fingerprint": {
+    "pov": "low-lateral-along-pipe",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "character-as-subject",
+    "layout": "pipe-perspective",
+    "register": "naturalistic-scene",
+    "palette": "overcast pewter-sage sky rising to light straw, wet gravel with puddle glints, far spruce green, brushed brass reserved for Drip, galvanized grey pail, cream notice sheets with slate type, tomato reserved for the Rulebook and circled dates, electric mint reserved for the AI slip",
+    "camera_strategy": "dolly-along",
+    "light_story": "overcast gravel-lot day, paper-lit cutaways, a hard cut to black",
+    "metaphor": "a brass faucet at the end of a long pipe with nothing yet to pour, a rulebook always arriving last"
+  },
+  "palette": "overcast pewter-sage sky rising to light straw, wet gravel with puddle glints, far spruce green, brushed brass reserved for Drip, galvanized grey pail, cream notice sheets with slate type, tomato reserved for the Rulebook and circled dates, electric mint reserved for the AI slip",
+  "divergence_note": "The last films were a lime stake tag on raven dusk (11-12), pink-gold ice fog with amber (11-11), a violet shore with vermilion and lemon (11-10), an oxblood courtroom (11-09) and a permafrost road (11-08). This film is an overcast pewter-sage gravel lot under the Chugach with brushed brass on one hero, tomato red on one binder and mint on one slip, with no lime, no pink-gold and no plum. Its hero is a brass spigot with a face rather than a stake, tag or puck, its device is a pipe in perspective that the camera runs along, its tokenization is a coat check, and it ends on a speck that does not fall. Honest cost: several shots stay on the same lot.",
+  "treatment": {
+    "title": "The Faucet Before the Water",
+    "summary": "Two of three returned pitches independently reached a faucet or spigot before the water, because the angle is about order, not a verdict. A personified fixture with a want and nothing to pour is a neutral hero that implies no AI project the sources never name. The calendar gives the film a clock the viewer can check. The Test keeps the critic's card held unjoked. Showrunner synthesis, the scorer step was skipped because the pitches converged."
+  },
+  "angle": {
+    "thesis": "Alaska built the money pipe before there was anything to pour through it, and the live question isn't build versus pause, it's order: do the rules come first, or the money?",
+    "supporting_facts": [
+      "AIDEA owns Alaska Data Corp and its board voted it $20 million, yet no offering is open and terms aren't decided (c3, c5, c9, c10).",
+      "By our read of the sources reviewed, none names an AI project or customer. AI is the pitch, from Plural's CEO (c14, c15).",
+      "Dunleavy says do it right (c13). Kreiss-Tomkins would support a pause until comprehensive rules (c16, c17). Both are arguing about rules."
+    ],
+    "counterpoint_to_honor": "The Daily News counts at least seven meetings with Plural's CEO, the board meets again December 4th, and critic Aubrey Wieber calls it public money moving to Lower 48 corporations (c12, c18, c19). That gets its own scene at full strength. The reply is that nothing locked exists yet, and the residents-only option (c8, may) is the real Alaska-first upside, if it is written down.",
+    "falsifier": "False if, before December 7th, an offering opens, terms are set, or an AI project or customer is named, or if the December 4th board adds money (c9, c10, c15, c18).",
+    "runner_ups": [
+      "Ownership plumbing outlasts the handover (contrarian): folded in as the Alaska-first upside, not the thesis.",
+      "Enthusiast conditional win: folded into the turn.",
+      "Dunleavy versus Kreiss-Tomkins build versus pause: rejected as the binary all three analysts say misses the story."
+    ],
+    "stance": "mixed",
+    "guardrails": [
+      "would support, never pledged (c17)",
+      "at least one more meeting on December 4th, never final (c18)",
+      "may on residents-only (c8)",
+      "c15 is our read of the sources reviewed",
+      "attribute c11, c12, c19 to the Daily News, c19 as the critic's view",
+      "no Brefczynski quote, no crypto price or yield claims, no AI project claim",
+      "the three analysts converged, so the cross-challenge was the guardrail pass"
+    ]
+  },
+  "claim_map": {
+    "1": [
+      "c9"
+    ],
+    "2": [
+      "narration"
+    ],
+    "3": [
+      "c9"
+    ],
+    "4": [
+      "c1"
+    ],
+    "5": [
+      "c2"
+    ],
+    "6": [
+      "c2"
+    ],
+    "7": [
+      "c3"
+    ],
+    "8": [
+      "c3"
+    ],
+    "9": [
+      "c5"
+    ],
+    "10": [
+      "c5"
+    ],
+    "11": [
+      "c6"
+    ],
+    "12": [
+      "c6"
+    ],
+    "13": [
+      "c7"
+    ],
+    "14": [
+      "c7"
+    ],
+    "15": [
+      "c7"
+    ],
+    "16": [
+      "c8"
+    ],
+    "17": [
+      "c8"
+    ],
+    "18": [
+      "c9"
+    ],
+    "19": [
+      "c10"
+    ],
+    "20": [
+      "c9"
+    ],
+    "21": [
+      "c14"
+    ],
+    "22": [
+      "c14"
+    ],
+    "23": [
+      "narration"
+    ],
+    "24": [
+      "c15"
+    ],
+    "25": [
+      "c15"
+    ],
+    "26": [
+      "c11"
+    ],
+    "27": [
+      "c11"
+    ],
+    "28": [
+      "c12"
+    ],
+    "29": [
+      "c19"
+    ],
+    "30": [
+      "c19"
+    ],
+    "31": [
+      "c19"
+    ],
+    "32": [
+      "c18"
+    ],
+    "33": [
+      "c18"
+    ],
+    "34": [
+      "c13"
+    ],
+    "35": [
+      "c16"
+    ],
+    "36": [
+      "c16"
+    ],
+    "37": [
+      "c17"
+    ],
+    "38": [
+      "c17"
+    ],
+    "39": [
+      "narration"
+    ],
+    "40": [
+      "narration"
+    ],
+    "41": [
+      "narration"
+    ],
+    "42": [
+      "narration"
+    ],
+    "43": [
+      "c19"
+    ],
+    "44": [
+      "c16"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A brass spigot with a face stands at the end of a long pipe on a frozen lot, lifts its handle like a brow and coughs one puff of dust.",
+    "headline": "ALASKA BUILT THE FAUCET FIRST",
+    "motion_by_s": 0.3,
+    "loopback": "Frame 1 is Drip coughing dust at the end of the pipe, the last frame is Drip with a padlock key at his feet and a speck hanging on his lip that does not fall, then a hard cut to black."
+  },
+  "open_loop": {
+    "plant_t": 6.89,
+    "pay_t": 118.83,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "tick",
+    "what": "What will come out of the faucet first, rules or money? Planted as a speck that hangs on the lip, paid when the speck hangs again after rules first or money first and the frame cuts to black."
+  },
+  "open_loop_2": {
+    "plant_t": 47.43,
+    "pay_t": 110.67,
+    "what": "Does MAY become IS? Planted as a flickering neon MAY on the residents-only window, paid when the plank tag says until comprehensive rules, so the word stays a may until someone writes it down."
+  },
+  "throughline": {
+    "object": "Drip, the brass spigot",
+    "lands_in_button": "Drip stands polished and still dry with a padlock key at his feet and a speck on his lip before the cut",
+    "param_states": {
+      "1": {
+        "name": "bare and dry, ribbon on, one dust cough"
+      },
+      "2": {
+        "name": "plumbed in, Plural clamp on, still dry"
+      },
+      "3": {
+        "name": "tagged NO OFFERINGS YET and TERMS NOT DECIDED, rime on the brass"
+      },
+      "4": {
+        "name": "handle quarter turned, a rules plate screwed beside it"
+      },
+      "5": {
+        "name": "polished again, still dry, padlock key at his feet"
+      }
+    },
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "D1 bare and dry, ribbon on, one dust cough"
+      },
+      {
+        "at_s": 37.18,
+        "state": "D2 plumbed in, Plural clamp on, still dry"
+      },
+      {
+        "at_s": 69.9,
+        "state": "D3 tagged NO OFFERINGS YET and TERMS NOT DECIDED, rime on the brass"
+      },
+      {
+        "at_s": 101.42,
+        "state": "D4 handle quarter turned, a rules plate screwed beside it"
+      },
+      {
+        "at_s": 118.55,
+        "state": "D5 polished again, still dry, padlock key at his feet"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 2.73,
+      "type": "scale-pullback",
+      "what": "the pipe unrolls from Drip's neck to the horizon across the frozen lot",
+      "hold_s": 0.8
+    },
+    {
+      "t": 25.58,
+      "type": "build-on",
+      "what": "twenty bags drop one by one into the booth's funnel",
+      "hold_s": 0.8
+    },
+    {
+      "t": 37.18,
+      "type": "build-on",
+      "what": "the booth wall peels open into a coat check",
+      "hold_s": 0.8
+    },
+    {
+      "t": 76.35,
+      "type": "scale-pullback",
+      "what": "seven coffee rings stamp onto a map of the Lower 48",
+      "hold_s": 0.8
+    },
+    {
+      "t": 84.79,
+      "type": "scale-pullback",
+      "what": "the pipe's far end tilts toward a crate on the Lower 48 outline",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 3.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 0.4
+      },
+      {
+        "line": 14,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 15,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "at_s": 118.33,
+        "level": 0.12
+      },
+      {
+        "at_s": 119.43,
+        "level": 2.0
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 118.33,
+    "riser_at": 112.4,
+    "silence_at": 118.33,
+    "payoff_at": 118.83,
+    "button_pattern": "callback",
+    "interrupt_at": 78.68,
+    "extra_dips": [
+      90.4,
+      101.42
+    ]
+  },
+  "shots": [
+    {
+      "title": "The faucet",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "ground",
+      "stage": "gravel-lot-day",
+      "pov": "low-lateral-along-pipe",
+      "layout": "pipe-perspective",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "character-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "Drip at x700 y1000",
+      "means": "Drip coughs dust, the pipe unrolls to the horizon and one speck hangs on his lip",
+      "ambient": "wind over frozen lot, a sign creaks, a dry hiss",
+      "hero": {
+        "name": "Drip + the pipe + the COMING SOON sign",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% Drip, 30% pipe, 20% sign"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-9.860"
+    },
+    {
+      "title": "The announcement",
+      "vo_line": 1,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "gravel-lot-day",
+      "pov": "low-lateral-along-pipe",
+      "layout": "pipe-perspective",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the calendar at x440 y900",
+      "means": "A calendar page slams on the pipe, a plaque clips on and a server hall ghosts in at the far end",
+      "ambient": "paper snaps, brass rings, wind",
+      "hero": {
+        "name": "calendar page + brass plaque + server hall",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% calendar and plaque, 30% pipe, 25% hall"
+      },
+      "id": 2,
+      "start_s": 9.86,
+      "t": "9.860-20.220"
+    },
+    {
+      "title": "The company",
+      "vo_line": 2,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "pump-and-booth",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the booth at x540 y1000",
+      "means": "A pump house and a booth drop in and twenty bags thud into its funnel",
+      "ambient": "a pump thumps, bags thud, a flag snaps",
+      "hero": {
+        "name": "pump house + booth + twenty bags + gauge",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "50% booth and bags, 30% pump house, 20% gauge"
+      },
+      "id": 3,
+      "start_s": 20.22,
+      "t": "20.220-32.460"
+    },
+    {
+      "title": "The partner",
+      "vo_line": 4,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "gravel-lot-day",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the clamp at x540 y1000",
+      "means": "A cable car clamp locks onto the pipe and Bucket tilts to look at it",
+      "ambient": "metal dings, wind",
+      "hero": {
+        "name": "cable car clamp + Bucket + pipe",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "50% clamp, 30% Bucket, 20% pipe"
+      },
+      "id": 4,
+      "start_s": 32.46,
+      "t": "32.460-37.180"
+    },
+    {
+      "title": "The ticket",
+      "vo_line": 5,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "coat-check-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:the peeling wall and the ticket are the move",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Marge at x540 y980",
+      "means": "The booth wall peels open into a coat check and a ticket outlasts the coat",
+      "ambient": "a ledger scratches, paper slides, a stamp thuds",
+      "hero": {
+        "name": "coat check + Marge + ledger + ticket + parka",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "50% Marge and counter, 30% ledger, 20% ticket"
+      },
+      "id": 5,
+      "start_s": 37.18,
+      "t": "37.180-43.720"
+    },
+    {
+      "title": "The word may",
+      "vo_line": 6,
+      "framing": "alt-vantage",
+      "scale": "close",
+      "height": "low",
+      "stage": "gravel-lot-day",
+      "pov": "dog-door-low",
+      "layout": "pipe-perspective",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the flicker of the neon is the move",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the window at x540 y1040",
+      "means": "A dog door ticket window opens under a flickering neon MAY",
+      "ambient": "a neon buzz, a motel sign flickers",
+      "hero": {
+        "name": "dog-door window + neon MAY + pipe wall",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% window and neon, 30% pipe wall, 20% snow"
+      },
+      "id": 6,
+      "start_s": 43.72,
+      "t": "43.720-55.040"
+    },
+    {
+      "title": "The pitch",
+      "vo_line": 8,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "billboard-row",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the billboard at x540 y960",
+      "means": "A billboard unfurls with the CEO's line and a glass finds a blank slip",
+      "ambient": "a billboard flaps, the pipe thrums, paper rustles",
+      "hero": {
+        "name": "billboard + speech balloon + magnifying glass + mint slip + Bucket",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "45% billboard, 30% glass and slip, 25% Bucket"
+      },
+      "id": 7,
+      "start_s": 55.04,
+      "t": "55.040-69.900"
+    },
+    {
+      "title": "The count",
+      "vo_line": 10,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "table-and-map",
+      "pov": "overhead-flat",
+      "layout": "grid-modular",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the rings stamping are the move",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the map at x540 y1000",
+      "means": "A masthead, a date stamp and seven coffee rings land on a map",
+      "ambient": "a table creaks, rings thud, paper settles",
+      "hero": {
+        "name": "table + masthead + date stamp + seven coffee rings + map",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% map and rings, 30% masthead and stamp, 20% table"
+      },
+      "id": 8,
+      "start_s": 69.9,
+      "t": "69.900-78.680"
+    },
+    {
+      "title": "The strongest case",
+      "vo_line": 11,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "table-and-map",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:held on purpose so the card gets no camera tricks",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the card at x540 y960",
+      "means": "A plain card is held, the pipe tilts toward a Lower 48 crate and the scale pan tips",
+      "ambient": "silence, a scale creaks",
+      "hero": {
+        "name": "plain card + tilting pipe end + Lower 48 crate + scale",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% card, 35% pipe and crate, 20% scale"
+      },
+      "id": 9,
+      "start_s": 78.68,
+      "t": "78.680-90.400"
+    },
+    {
+      "title": "The clock",
+      "vo_line": 12,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "ground",
+      "stage": "calendar-wall",
+      "pov": "ground-level-side",
+      "layout": "stacked-layers",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the calendar at x440 y920",
+      "means": "A wall calendar circles December 4th and a roadside sign says do it right",
+      "ambient": "a calendar flaps, a sign creaks",
+      "hero": {
+        "name": "wall calendar + meeting stub + roadside sign + Rulebook",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% calendar, 30% sign, 20% stubs"
+      },
+      "id": 10,
+      "start_s": 90.4,
+      "t": "90.400-101.420"
+    },
+    {
+      "title": "The handover",
+      "vo_line": 14,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "calendar-wall",
+      "pov": "low-lateral-along-pipe",
+      "layout": "pipe-perspective",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the signs at x540 y1000",
+      "means": "The calendar rips to December and a second sign swings in",
+      "ambient": "pages tear, signs swing, wind",
+      "hero": {
+        "name": "calendar + two roadside signs + plank tag",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% calendar, 40% signs, 15% tag"
+      },
+      "id": 11,
+      "start_s": 101.42,
+      "t": "101.420-112.400"
+    },
+    {
+      "title": "The order",
+      "vo_line": 15,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "gravel-lot-day",
+      "pov": "ground-level-side",
+      "layout": "pipe-perspective",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "character-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Drip at x700 y1000",
+      "means": "Both signs point at the blank Rulebook, a key lands and a speck hangs before the cut",
+      "ambient": "wind, a key clinks, a dry hiss, silence",
+      "hero": {
+        "name": "Drip + two signs + Rulebook + padlock key + Bucket + dust speck",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% Drip, 30% signs and Rulebook, 30% key and Bucket"
+      },
+      "id": 12,
+      "start_s": 112.4,
+      "t": "112.400-119.200"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska just built a faucet for infrastructure money, pitched at data centers, and nothing is coming out yet.",
+      "phrase": "Alaska just built a",
+      "shows": "Drip, a brass spigot with a face lifts his handle like a brow and coughs one puff of dust beside a COMING SOON sign that swings on its stake with a row of spruce and the Chugach range behind, a plate reads NOTHING COMING OUT YET",
+      "sfx": "thump",
+      "means": "nothing coming out yet",
+      "rehook": "",
+      "draw": {
+        "subject": "Drip, a brass spigot with a face",
+        "action": "lifts his handle like a brow and coughs one puff of dust beside a COMING SOON sign that swings on its stake with a row of spruce and the Chugach range behind",
+        "emotion": "hopeful",
+        "annotation": "NOTHING COMING OUT YET"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "Drip, a brass spigot with a face lifts his handle like a brow and coughs one puff of dust beside a COMING SOON sign that swings on its stake with a row of spruce and the Chugach range behind, a plate reads NOTHING COMING OUT YET",
+        "reaction": "the sign swings",
+        "ambient": "wind over frozen lot, a sign creaks, a dry hiss"
+      },
+      "t": "0.000-2.730",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.73,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.73
+      },
+      "offset": 2.73,
+      "vo": "Alaska just built a faucet for infrastructure money, pitched at data centers, and nothing is coming out yet.",
+      "phrase": "infrastructure money, pitched at",
+      "shows": "a fat pipe drops from Drip's neck and rolls out across the gravel lot toward the Chugach, a plate reads A PIPE TO THE HORIZON",
+      "sfx": "slide",
+      "means": "a pipe to the horizon",
+      "rehook": "",
+      "draw": {
+        "subject": "a fat pipe",
+        "action": "drops from Drip's neck and rolls out across the gravel lot toward the Chugach",
+        "emotion": "eager",
+        "annotation": "A PIPE TO THE HORIZON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a fat pipe drops from Drip's neck and rolls out across the gravel lot toward the Chugach, a plate reads A PIPE TO THE HORIZON",
+        "reaction": "the pipe unrolls",
+        "ambient": "wind over frozen lot, a sign creaks, a dry hiss"
+      },
+      "t": "2.730-6.890",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 6.89,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.89
+      },
+      "offset": 6.89,
+      "vo": "Alaska just built a faucet for infrastructure money, pitched at data centers, and nothing is coming out yet.",
+      "phrase": "nothing is coming out",
+      "shows": "a single dust speck gathers on Drip's lip, hangs and does not fall, a plate reads NO OFFERINGS YET",
+      "sfx": "drip",
+      "means": "no offerings yet",
+      "rehook": "",
+      "draw": {
+        "subject": "a single dust speck",
+        "action": "gathers on Drip's lip, hangs and does not fall",
+        "emotion": "patient",
+        "annotation": "NO OFFERINGS YET"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "a single dust speck gathers on Drip's lip, hangs and does not fall, a plate reads NO OFFERINGS YET",
+        "reaction": "the speck hangs",
+        "ambient": "wind over frozen lot, a sign creaks, a dry hiss"
+      },
+      "t": "6.890-9.860",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 9.86,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On November ninth, the governor announced InvestNorth, a state sponsored platform to finance infrastructure, pitched at data centers.",
+      "phrase": "On November ninth, the",
+      "shows": "a wall calendar page slams onto the pipe and a red ring draws around the ninth, a plate reads NOV 9 INVESTNORTH",
+      "sfx": "slam",
+      "means": "nov 9 investnorth",
+      "rehook": "",
+      "draw": {
+        "subject": "a wall calendar page",
+        "action": "slams onto the pipe and a red ring draws around the ninth",
+        "emotion": "official",
+        "annotation": "NOV 9 INVESTNORTH"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a wall calendar page slams onto the pipe and a red ring draws around the ninth, a plate reads NOV 9 INVESTNORTH",
+        "reaction": "the ring closes",
+        "ambient": "paper snaps, brass rings, wind"
+      },
+      "kick": true,
+      "t": "9.860-14.150",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 14.15,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.29
+      },
+      "offset": 4.29,
+      "vo": "On November ninth, the governor announced InvestNorth, a state sponsored platform to finance infrastructure, pitched at data centers.",
+      "phrase": "state sponsored platform to",
+      "shows": "a brass plaque clips onto the pipe and swings once, a plate reads STATE-SPONSORED FINANCING PLATFORM",
+      "sfx": "ching",
+      "means": "state-sponsored financing platform",
+      "rehook": "",
+      "draw": {
+        "subject": "a brass plaque",
+        "action": "clips onto the pipe and swings once",
+        "emotion": "formal",
+        "annotation": "STATE-SPONSORED FINANCING PLATFORM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a brass plaque clips onto the pipe and swings once, a plate reads STATE-SPONSORED FINANCING PLATFORM",
+        "reaction": "the plaque swings",
+        "ambient": "paper snaps, brass rings, wind"
+      },
+      "t": "14.150-18.110",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 18.11,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 8.25
+      },
+      "offset": 8.25,
+      "vo": "On November ninth, the governor announced InvestNorth, a state sponsored platform to finance infrastructure, pitched at data centers.",
+      "phrase": "data centers.",
+      "shows": "a faint server hall ghosts in beside a spruce row at the far end of the pipe and flickers, a plate reads PITCHED AT DATA CENTERS",
+      "sfx": "buzz",
+      "means": "pitched at data centers",
+      "rehook": "",
+      "draw": {
+        "subject": "a faint server hall",
+        "action": "ghosts in beside a spruce row at the far end of the pipe and flickers",
+        "emotion": "distant",
+        "annotation": "PITCHED AT DATA CENTERS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a faint server hall ghosts in beside a spruce row at the far end of the pipe and flickers, a plate reads PITCHED AT DATA CENTERS",
+        "reaction": "the hall flickers",
+        "ambient": "paper snaps, brass rings, wind"
+      },
+      "t": "18.110-20.220",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 20.22,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "AIDEA, the state's development authority, owns a company called Alaska Data Corp.",
+      "phrase": "AIDEA, the state's development",
+      "shows": "a pump house with an AIDEA flag thumps down at the far end of the pipe and its flag snaps taut, a plate reads AIDEA",
+      "sfx": "whoosh",
+      "means": "aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "a pump house with an AIDEA flag",
+        "action": "thumps down at the far end of the pipe and its flag snaps taut",
+        "emotion": "proud",
+        "annotation": "AIDEA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a pump house with an AIDEA flag thumps down at the far end of the pipe and its flag snaps taut, a plate reads AIDEA",
+        "reaction": "the flag snaps",
+        "ambient": "a pump thumps, bags thud, a flag snaps"
+      },
+      "t": "20.220-24.090",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 24.09,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.87
+      },
+      "offset": 3.87,
+      "vo": "AIDEA, the state's development authority, owns a company called Alaska Data Corp.",
+      "phrase": "Alaska Data Corp.",
+      "shows": "a small booth drops beside the pump house with a sign painted over its door, a plate reads ALASKA DATA CORP",
+      "sfx": "clink",
+      "means": "alaska data corp",
+      "rehook": "",
+      "draw": {
+        "subject": "a small booth",
+        "action": "drops beside the pump house with a sign painted over its door",
+        "emotion": "plain",
+        "annotation": "ALASKA DATA CORP"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a small booth drops beside the pump house with a sign painted over its door, a plate reads ALASKA DATA CORP",
+        "reaction": "the booth settles",
+        "ambient": "a pump thumps, bags thud, a flag snaps"
+      },
+      "t": "24.090-25.580",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 25.58,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In January, AIDEA's board voted that company twenty million dollars to run on.",
+      "phrase": "In January, AIDEA's board",
+      "shows": "twenty fat bags drop one by one into the booth's funnel and the booth shudders, a plate reads $20 MILLION",
+      "sfx": "coins",
+      "means": "$20 million",
+      "rehook": "",
+      "draw": {
+        "subject": "twenty fat bags",
+        "action": "drop one by one into the booth's funnel and the booth shudders",
+        "emotion": "heavy",
+        "annotation": "$20 MILLION"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "twenty fat bags drop one by one into the booth's funnel and the booth shudders, a plate reads $20 MILLION",
+        "reaction": "the funnel shudders",
+        "ambient": "a pump thumps, bags thud, a flag snaps"
+      },
+      "t": "25.580-29.364",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 29.364,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.55,
+        "offset": 3.784
+      },
+      "offset": 3.784,
+      "vo": "In January, AIDEA's board voted that company twenty million dollars to run on.",
+      "phrase": "In January, AIDEA's board",
+      "shows": "a gauge on the booth swings to a label that reads TO RUN ON, a plate reads JANUARY \u00b7 TO RUN ON",
+      "sfx": "ping",
+      "means": "january \u00b7 to run on",
+      "rehook": "",
+      "draw": {
+        "subject": "a gauge on the booth",
+        "action": "swings to a label that reads TO RUN ON",
+        "emotion": "steady",
+        "annotation": "JANUARY \u00b7 TO RUN ON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "a gauge on the booth swings to a label that reads TO RUN ON, a plate reads JANUARY \u00b7 TO RUN ON",
+        "reaction": "the needle settles",
+        "ambient": "a pump thumps, bags thud, a flag snaps"
+      },
+      "t": "29.364-32.460",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 32.46,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The platform was built with a San Francisco company called Plural.",
+      "phrase": "The platform was built",
+      "shows": "a cable car clamp slides onto the side of the pipe and locks with a ding, a plate reads BUILT WITH PLURAL",
+      "sfx": "clip",
+      "means": "built with plural",
+      "rehook": "",
+      "draw": {
+        "subject": "a cable car clamp",
+        "action": "slides onto the side of the pipe and locks with a ding",
+        "emotion": "bright",
+        "annotation": "BUILT WITH PLURAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a cable car clamp slides onto the side of the pipe and locks with a ding, a plate reads BUILT WITH PLURAL",
+        "reaction": "the clamp dings",
+        "ambient": "metal dings, wind"
+      },
+      "t": "32.460-35.870",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 35.87,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.41
+      },
+      "offset": 3.41,
+      "vo": "The platform was built with a San Francisco company called Plural.",
+      "phrase": "Plural.",
+      "shows": "Bucket, a dented pail with a face tilts to look at the clamp, a plate reads SAN FRANCISCO",
+      "sfx": "squeak",
+      "means": "san francisco",
+      "rehook": "",
+      "draw": {
+        "subject": "Bucket, a dented pail with a face",
+        "action": "tilts to look at the clamp",
+        "emotion": "wary",
+        "annotation": "SAN FRANCISCO"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "Bucket, a dented pail with a face tilts to look at the clamp, a plate reads SAN FRANCISCO",
+        "reaction": "the pail tilts",
+        "ambient": "metal dings, wind"
+      },
+      "t": "35.870-37.180",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 37.18,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It will use tokenization, a digital record of who owns a stake, like a coat check ticket.",
+      "phrase": "It will use tokenization,",
+      "shows": "the booth wall peels open into a coat check where Marge stands behind a half door, a plate reads TOKENIZATION",
+      "sfx": "whoosh",
+      "means": "tokenization",
+      "rehook": "rehook: the booth wall peels open into a coat check",
+      "draw": {
+        "subject": "the booth wall",
+        "action": "peels open into a coat check where Marge stands behind a half door",
+        "emotion": "plain",
+        "annotation": "TOKENIZATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "the booth wall peels open into a coat check where Marge stands behind a half door, a plate reads TOKENIZATION",
+        "reaction": "the wall peels",
+        "ambient": "a ledger scratches, paper slides, a stamp thuds"
+      },
+      "t": "37.180-39.530",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 39.53,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.35
+      },
+      "offset": 2.35,
+      "vo": "It will use tokenization, a digital record of who owns a stake, like a coat check ticket.",
+      "phrase": "record of who owns",
+      "shows": "Marge writes a numbered ticket into a ledger and stamps it, a plate reads A RECORD OF WHO OWNS A STAKE",
+      "sfx": "scribble",
+      "means": "a record of who owns a stake",
+      "rehook": "",
+      "draw": {
+        "subject": "Marge",
+        "action": "writes a numbered ticket into a ledger and stamps it",
+        "emotion": "literal",
+        "annotation": "A RECORD OF WHO OWNS A STAKE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "Marge writes a numbered ticket into a ledger and stamps it, a plate reads A RECORD OF WHO OWNS A STAKE",
+        "reaction": "the ledger stamps",
+        "ambient": "a ledger scratches, paper slides, a stamp thuds"
+      },
+      "t": "39.530-41.990",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 41.99,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.81
+      },
+      "offset": 4.81,
+      "vo": "It will use tokenization, a digital record of who owns a stake, like a coat check ticket.",
+      "phrase": "coat check ticket.",
+      "shows": "a parka lifts out of the picture while the ticket stays on the counter, a plate reads THE TICKET IS THE RECORD",
+      "sfx": "flutter",
+      "means": "the ticket is the record",
+      "rehook": "",
+      "draw": {
+        "subject": "a parka",
+        "action": "lifts out of the picture while the ticket stays on the counter",
+        "emotion": "light",
+        "annotation": "THE TICKET IS THE RECORD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a parka lifts out of the picture while the ticket stays on the counter, a plate reads THE TICKET IS THE RECORD",
+        "reaction": "the ticket stays",
+        "ambient": "a ledger scratches, paper slides, a stamp thuds"
+      },
+      "t": "41.990-43.720",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 6,
+      "at_s": 43.72,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Some deals may be reserved for Alaska residents. May.",
+      "phrase": "Some deals may be",
+      "shows": "a dog-door-sized window slides open in the pipe wall under a neon tag, a plate reads SOME DEALS MAY BE ALASKANS ONLY",
+      "sfx": "knock",
+      "means": "some deals may be alaskans only",
+      "rehook": "",
+      "draw": {
+        "subject": "a dog-door-sized window",
+        "action": "slides open in the pipe wall under a neon tag",
+        "emotion": "tentative",
+        "annotation": "SOME DEALS MAY BE ALASKANS ONLY"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "a dog-door-sized window slides open in the pipe wall under a neon tag, a plate reads SOME DEALS MAY BE ALASKANS ONLY",
+        "reaction": "the window opens",
+        "ambient": "a neon buzz, a motel sign flickers"
+      },
+      "t": "43.720-47.430",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 47.43,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 3.71
+      },
+      "offset": 3.71,
+      "vo": "Some deals may be reserved for Alaska residents. May.",
+      "phrase": "May.",
+      "shows": "the neon word MAY flickers like a motel sign and one letter drops out, a plate reads MAY",
+      "sfx": "buzz",
+      "means": "may",
+      "rehook": "",
+      "draw": {
+        "subject": "the neon word MAY",
+        "action": "flickers like a motel sign and one letter drops out",
+        "emotion": "uncertain",
+        "annotation": "MAY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "the neon word MAY flickers like a motel sign and one letter drops out, a plate reads MAY",
+        "reaction": "the sign flickers",
+        "ambient": "a neon buzz, a motel sign flickers"
+      },
+      "t": "47.430-49.040",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 49.04,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But nothing is open to investors, and the terms haven't been decided.",
+      "phrase": "But nothing is open",
+      "shows": "an OPEN sign on Drip's neck flips over and its back reads NO OFFERINGS YET, a plate reads NO OFFERINGS YET",
+      "sfx": "flip",
+      "means": "no offerings yet",
+      "rehook": "",
+      "draw": {
+        "subject": "an OPEN sign on Drip's neck",
+        "action": "flips over and its back reads NO OFFERINGS YET",
+        "emotion": "caught",
+        "annotation": "NO OFFERINGS YET"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "an OPEN sign on Drip's neck flips over and its back reads NO OFFERINGS YET, a plate reads NO OFFERINGS YET",
+        "reaction": "the sign flips",
+        "ambient": "a neon buzz, a motel sign flickers"
+      },
+      "t": "49.040-52.070",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 52.07,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.03
+      },
+      "offset": 3.03,
+      "vo": "But nothing is open to investors, and the terms haven't been decided.",
+      "phrase": "terms haven't been decided.",
+      "shows": "a torn price tag swings from Drip's handle with the price ripped off, a plate reads TERMS NOT DECIDED",
+      "sfx": "rattle",
+      "means": "terms not decided",
+      "rehook": "",
+      "draw": {
+        "subject": "a torn price tag",
+        "action": "swings from Drip's handle with the price ripped off",
+        "emotion": "blank",
+        "annotation": "TERMS NOT DECIDED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a torn price tag swings from Drip's handle with the price ripped off, a plate reads TERMS NOT DECIDED",
+        "reaction": "the tag swings",
+        "ambient": "a neon buzz, a motel sign flickers"
+      },
+      "t": "52.070-52.970",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 52.97,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.93
+      },
+      "offset": 3.93,
+      "vo": "But nothing is open to investors, and the terms haven't been decided.",
+      "phrase": "decided.",
+      "shows": "Bucket looks into his own empty pail, a plate reads NOTHING OPEN",
+      "sfx": "hush",
+      "means": "nothing open",
+      "rehook": "",
+      "draw": {
+        "subject": "Bucket",
+        "action": "looks into his own empty pail",
+        "emotion": "tired",
+        "annotation": "NOTHING OPEN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "Bucket looks into his own empty pail, a plate reads NOTHING OPEN",
+        "reaction": "the pail echoes",
+        "ambient": "a neon buzz, a motel sign flickers"
+      },
+      "t": "52.970-55.040",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 55.04,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Plural's chief executive calls the infrastructure behind AI one of the largest capital needs in a generation.",
+      "phrase": "Plural's chief executive calls",
+      "shows": "a billboard drops onto the pipe and swings open a speech balloon in its corner, a plate reads PLURAL CEO \u00b7 THE PITCH",
+      "sfx": "swing",
+      "means": "plural ceo \u00b7 the pitch",
+      "rehook": "",
+      "draw": {
+        "subject": "a billboard",
+        "action": "drops onto the pipe and swings open a speech balloon in its corner",
+        "emotion": "grand",
+        "annotation": "PLURAL CEO \u00b7 THE PITCH"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "a billboard drops onto the pipe and swings open a speech balloon in its corner, a plate reads PLURAL CEO \u00b7 THE PITCH",
+        "reaction": "the billboard unfurls",
+        "ambient": "a billboard flaps, the pipe thrums, paper rustles"
+      },
+      "t": "55.040-59.350",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 59.35,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.31
+      },
+      "offset": 4.31,
+      "vo": "Plural's chief executive calls the infrastructure behind AI one of the largest capital needs in a generation.",
+      "phrase": "largest capital needs in",
+      "shows": "the speech balloon swells and the whole pipe thrums once, a plate reads ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION",
+      "sfx": "bell",
+      "means": "one of the largest capital needs in a generation",
+      "rehook": "",
+      "draw": {
+        "subject": "the speech balloon",
+        "action": "swells and the whole pipe thrums once",
+        "emotion": "bold",
+        "annotation": "ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the speech balloon swells and the whole pipe thrums once, a plate reads ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION",
+        "reaction": "the pipe thrums",
+        "ambient": "a billboard flaps, the pipe thrums, paper rustles"
+      },
+      "t": "59.350-62.340",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 62.34,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That's the pitch. Not one of the sources reviewed here names an AI project.",
+      "phrase": "That's the pitch. Not",
+      "shows": "a magnifying glass sweeps across a pile of state paperwork, a plate reads THAT'S THE PITCH",
+      "sfx": "tap",
+      "means": "that's the pitch",
+      "rehook": "rehook: a magnifying glass sweeps the paperwork pile",
+      "draw": {
+        "subject": "a magnifying glass",
+        "action": "sweeps across a pile of state paperwork",
+        "emotion": "searching",
+        "annotation": "THAT'S THE PITCH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a magnifying glass sweeps across a pile of state paperwork, a plate reads THAT'S THE PITCH",
+        "reaction": "the glass sweeps",
+        "ambient": "a billboard flaps, the pipe thrums, paper rustles"
+      },
+      "t": "62.340-65.830",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 65.83,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.49
+      },
+      "offset": 3.49,
+      "vo": "That's the pitch. Not one of the sources reviewed here names an AI project.",
+      "phrase": "sources reviewed here names",
+      "shows": "Bucket raises one eyebrow at the slip, a plate reads SOURCES REVIEWED HERE",
+      "sfx": "hush",
+      "means": "sources reviewed here",
+      "rehook": "",
+      "draw": {
+        "subject": "Bucket",
+        "action": "raises one eyebrow at the slip",
+        "emotion": "dry",
+        "annotation": "SOURCES REVIEWED HERE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "Bucket raises one eyebrow at the slip, a plate reads SOURCES REVIEWED HERE",
+        "reaction": "the brow lifts",
+        "ambient": "a billboard flaps, the pipe thrums, paper rustles"
+      },
+      "t": "65.830-67.850",
+      "key": 25
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 67.85,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 5.51
+      },
+      "offset": 5.51,
+      "vo": "That's the pitch. Not one of the sources reviewed here names an AI project.",
+      "phrase": "project.",
+      "shows": "a mint slip drops under the glass and lands blank with nothing written on it, a plate reads NO AI PROJECT NAMED",
+      "sfx": "shimmer",
+      "means": "no ai project named",
+      "rehook": "",
+      "draw": {
+        "subject": "a mint slip",
+        "action": "drops under the glass and lands blank with nothing written on it",
+        "emotion": "empty",
+        "annotation": "NO AI PROJECT NAMED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a mint slip drops under the glass and lands blank with nothing written on it, a plate reads NO AI PROJECT NAMED",
+        "reaction": "the slip glows",
+        "ambient": "a billboard flaps, the pipe thrums, paper rustles"
+      },
+      "kick": true,
+      "t": "67.850-69.900",
+      "key": 24
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 69.9,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The Daily News says the governor first met Plural's chief executive in June 2025, and counts at least seven meetings in all.",
+      "phrase": "The Daily News says",
+      "shows": "a newsprint masthead drops onto a bare table beside the pipe, a plate reads THE DAILY NEWS",
+      "sfx": "thock",
+      "means": "the daily news",
+      "rehook": "",
+      "draw": {
+        "subject": "a newsprint masthead",
+        "action": "drops onto a bare table beside the pipe",
+        "emotion": "plain",
+        "annotation": "THE DAILY NEWS"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a newsprint masthead drops onto a bare table beside the pipe, a plate reads THE DAILY NEWS",
+        "reaction": "the masthead settles",
+        "ambient": "a table creaks, rings thud, paper settles"
+      },
+      "t": "69.900-73.770",
+      "key": 26
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 73.77,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.87
+      },
+      "offset": 3.87,
+      "vo": "The Daily News says the governor first met Plural's chief executive in June 2025, and counts at least seven meetings in all.",
+      "phrase": "June 2025, and counts",
+      "shows": "a date stamp lands on the table beside the masthead, a plate reads FIRST MET JUNE 2025",
+      "sfx": "press",
+      "means": "first met june 2025",
+      "rehook": "",
+      "draw": {
+        "subject": "a date stamp",
+        "action": "lands on the table beside the masthead",
+        "emotion": "firm",
+        "annotation": "FIRST MET JUNE 2025"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a date stamp lands on the table beside the masthead, a plate reads FIRST MET JUNE 2025",
+        "reaction": "the stamp lands",
+        "ambient": "a table creaks, rings thud, paper settles"
+      },
+      "t": "73.770-76.350",
+      "key": 27
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 76.35,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 6.45
+      },
+      "offset": 6.45,
+      "vo": "The Daily News says the governor first met Plural's chief executive in June 2025, and counts at least seven meetings in all.",
+      "phrase": "seven meetings in all.",
+      "shows": "seven coffee rings stamp onto a map one by one with four landing on Washington, a plate reads AT LEAST 7 MEETINGS",
+      "sfx": "thud",
+      "means": "at least 7 meetings",
+      "rehook": "rehook: seven coffee rings stamp onto a map",
+      "draw": {
+        "subject": "seven coffee rings",
+        "action": "stamp onto a map one by one with four landing on Washington",
+        "emotion": "heavy",
+        "annotation": "AT LEAST 7 MEETINGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "seven coffee rings stamp onto a map one by one with four landing on Washington, a plate reads AT LEAST 7 MEETINGS",
+        "reaction": "the rings stamp",
+        "ambient": "a table creaks, rings thud, paper settles"
+      },
+      "t": "76.350-78.680",
+      "key": 28
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 78.68,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A critic quoted by the Daily News, the founder of an advocacy group, calls it using AIDEA to move hundreds of millions of public dollars to Lower forty eight corporations.",
+      "phrase": "A critic quoted by",
+      "shows": "a plain card drops onto a bare table and is held without a joke, a plate reads A CRITIC \u00b7 THE DAILY NEWS",
+      "sfx": "stop",
+      "means": "a critic \u00b7 the daily news",
+      "rehook": "",
+      "draw": {
+        "subject": "a plain card",
+        "action": "drops onto a bare table and is held without a joke",
+        "emotion": "grave",
+        "annotation": "A CRITIC \u00b7 THE DAILY NEWS"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a plain card drops onto a bare table and is held without a joke, a plate reads A CRITIC \u00b7 THE DAILY NEWS",
+        "reaction": "the card holds",
+        "ambient": "silence, a scale creaks"
+      },
+      "t": "78.680-81.870",
+      "key": 29
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 81.87,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "A critic quoted by the Daily News, the founder of an advocacy group, calls it using AIDEA to move hundreds of millions of public dollars to Lower forty eight corporations.",
+      "phrase": "advocacy group, calls it",
+      "shows": "a name tab lands on the plain card and sticks, a plate reads ADVOCACY GROUP FOUNDER",
+      "sfx": "clack",
+      "means": "advocacy group founder",
+      "rehook": "",
+      "draw": {
+        "subject": "a name tab",
+        "action": "lands on the plain card and sticks",
+        "emotion": "plain",
+        "annotation": "ADVOCACY GROUP FOUNDER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a name tab lands on the plain card and sticks, a plate reads ADVOCACY GROUP FOUNDER",
+        "reaction": "the tab clips",
+        "ambient": "silence, a scale creaks"
+      },
+      "t": "81.870-84.790",
+      "key": 43
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 84.79,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.11
+      },
+      "offset": 6.11,
+      "vo": "A critic quoted by the Daily News, the founder of an advocacy group, calls it using AIDEA to move hundreds of millions of public dollars to Lower forty eight corporations.",
+      "phrase": "hundreds of millions of",
+      "shows": "the pipe's far end tilts toward a crate on a Lower 48 outline, a plate reads LOWER 48 CORPORATIONS",
+      "sfx": "roll",
+      "means": "lower 48 corporations",
+      "rehook": "",
+      "draw": {
+        "subject": "the pipe's far end",
+        "action": "tilts toward a crate on a Lower 48 outline",
+        "emotion": "strained",
+        "annotation": "LOWER 48 CORPORATIONS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "the pipe's far end tilts toward a crate on a Lower 48 outline, a plate reads LOWER 48 CORPORATIONS",
+        "reaction": "the pipe tilts",
+        "ambient": "silence, a scale creaks"
+      },
+      "t": "84.790-87.210",
+      "key": 30
+    },
+    {
+      "id": 32,
+      "shot": 9,
+      "at_s": 87.21,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 8.53
+      },
+      "offset": 8.53,
+      "vo": "A critic quoted by the Daily News, the founder of an advocacy group, calls it using AIDEA to move hundreds of millions of public dollars to Lower forty eight corporations.",
+      "phrase": "Lower forty eight corporations.",
+      "shows": "a scale pan tips and holds under the crate, a plate reads THE CRITIC'S VIEW",
+      "sfx": "creak",
+      "means": "the critic's view",
+      "rehook": "",
+      "draw": {
+        "subject": "a scale pan",
+        "action": "tips and holds under the crate",
+        "emotion": "grave",
+        "annotation": "THE CRITIC'S VIEW"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a scale pan tips and holds under the crate, a plate reads THE CRITIC'S VIEW",
+        "reaction": "the pan holds",
+        "ambient": "silence, a scale creaks"
+      },
+      "t": "87.210-90.400",
+      "key": 31
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 90.4,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "AIDEA's board has at least one more meeting, on December fourth.",
+      "phrase": "AIDEA's board has at",
+      "shows": "a wall calendar slides in with one page circled red, a plate reads AIDEA BOARD DEC 4",
+      "sfx": "ring",
+      "means": "aidea board dec 4",
+      "rehook": "",
+      "draw": {
+        "subject": "a wall calendar",
+        "action": "slides in with one page circled red",
+        "emotion": "urgent",
+        "annotation": "AIDEA BOARD DEC 4"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a wall calendar slides in with one page circled red, a plate reads AIDEA BOARD DEC 4",
+        "reaction": "the page circles",
+        "ambient": "a calendar flaps, a sign creaks"
+      },
+      "t": "90.400-91.570",
+      "key": 32
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 91.57,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 1.17
+      },
+      "offset": 1.17,
+      "vo": "AIDEA's board has at least one more meeting, on December fourth.",
+      "phrase": "least one more meeting,",
+      "shows": "a meeting stub hangs on the pipe beside a second stub, a plate reads AT LEAST ONE MORE MEETING",
+      "sfx": "clack",
+      "means": "at least one more meeting",
+      "rehook": "",
+      "draw": {
+        "subject": "a meeting stub",
+        "action": "hangs on the pipe beside a second stub",
+        "emotion": "plain",
+        "annotation": "AT LEAST ONE MORE MEETING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a meeting stub hangs on the pipe beside a second stub, a plate reads AT LEAST ONE MORE MEETING",
+        "reaction": "the stub swings",
+        "ambient": "a calendar flaps, a sign creaks"
+      },
+      "t": "91.570-95.280",
+      "key": 33
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 95.28,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "If there is an opportunity for data centers here, the outgoing governor said, let's do it right.",
+      "phrase": "If there is an",
+      "shows": "a roadside sign swings into frame beside the pipe, a plate reads LET'S DO IT RIGHT",
+      "sfx": "swing",
+      "means": "let's do it right",
+      "rehook": "rehook: a roadside sign swings in and the governor says do it right",
+      "draw": {
+        "subject": "a roadside sign",
+        "action": "swings into frame beside the pipe",
+        "emotion": "steady",
+        "annotation": "LET'S DO IT RIGHT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a roadside sign swings into frame beside the pipe, a plate reads LET'S DO IT RIGHT",
+        "reaction": "the sign swings",
+        "ambient": "a calendar flaps, a sign creaks"
+      },
+      "t": "95.280-98.090",
+      "key": 34
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 98.09,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.81
+      },
+      "offset": 2.81,
+      "vo": "If there is an opportunity for data centers here, the outgoing governor said, let's do it right.",
+      "phrase": "outgoing governor said, let's",
+      "shows": "the Rulebook, a binder with one eye arrives out of breath with its rings flapping, a plate reads OUTGOING GOVERNOR",
+      "sfx": "creak",
+      "means": "outgoing governor",
+      "rehook": "",
+      "draw": {
+        "subject": "the Rulebook, a binder with one eye",
+        "action": "arrives out of breath with its rings flapping",
+        "emotion": "late",
+        "annotation": "OUTGOING GOVERNOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the Rulebook, a binder with one eye arrives out of breath with its rings flapping, a plate reads OUTGOING GOVERNOR",
+        "reaction": "the rings flap",
+        "ambient": "a calendar flaps, a sign creaks"
+      },
+      "t": "98.090-101.420",
+      "key": 35
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 101.42,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On December seventh, Jonathan Kreiss-Tomkins becomes governor, and he says he would support a pause on data center construction until the state adopts comprehensive rules.",
+      "phrase": "On December seventh, Jonathan",
+      "shows": "the calendar rips over to December and a red ring draws around the seventh, a plate reads NEW GOVERNOR DEC 7",
+      "sfx": "tear",
+      "means": "new governor dec 7",
+      "rehook": "",
+      "draw": {
+        "subject": "the calendar",
+        "action": "rips over to December and a red ring draws around the seventh",
+        "emotion": "urgent",
+        "annotation": "NEW GOVERNOR DEC 7"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the calendar rips over to December and a red ring draws around the seventh, a plate reads NEW GOVERNOR DEC 7",
+        "reaction": "the ring closes",
+        "ambient": "pages tear, signs swing, wind"
+      },
+      "t": "101.420-104.690",
+      "key": 36
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "at_s": 104.69,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.27
+      },
+      "offset": 3.27,
+      "vo": "On December seventh, Jonathan Kreiss-Tomkins becomes governor, and he says he would support a pause on data center construction until the state adopts comprehensive rules.",
+      "phrase": "governor, and he says",
+      "shows": "a nameplate slides onto the calendar page, a plate reads KREISS-TOMKINS \u00b7 GOVERNOR",
+      "sfx": "ding",
+      "means": "kreiss-tomkins \u00b7 governor",
+      "rehook": "",
+      "draw": {
+        "subject": "a nameplate",
+        "action": "slides onto the calendar page",
+        "emotion": "firm",
+        "annotation": "KREISS-TOMKINS \u00b7 GOVERNOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a nameplate slides onto the calendar page, a plate reads KREISS-TOMKINS \u00b7 GOVERNOR",
+        "reaction": "the nameplate settles",
+        "ambient": "pages tear, signs swing, wind"
+      },
+      "t": "104.690-107.070",
+      "key": 44
+    },
+    {
+      "id": 39,
+      "shot": 11,
+      "at_s": 107.07,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 5.65
+      },
+      "offset": 5.65,
+      "vo": "On December seventh, Jonathan Kreiss-Tomkins becomes governor, and he says he would support a pause on data center construction until the state adopts comprehensive rules.",
+      "phrase": "pause on data center",
+      "shows": "a second sign swings in beside the first, a plate reads WOULD SUPPORT A PAUSE",
+      "sfx": "swish",
+      "means": "would support a pause",
+      "rehook": "",
+      "draw": {
+        "subject": "a second sign",
+        "action": "swings in beside the first",
+        "emotion": "careful",
+        "annotation": "WOULD SUPPORT A PAUSE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "a second sign swings in beside the first, a plate reads WOULD SUPPORT A PAUSE",
+        "reaction": "the sign swings",
+        "ambient": "pages tear, signs swing, wind"
+      },
+      "t": "107.070-110.670",
+      "key": 37
+    },
+    {
+      "id": 40,
+      "shot": 11,
+      "at_s": 110.67,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 9.25
+      },
+      "offset": 9.25,
+      "vo": "On December seventh, Jonathan Kreiss-Tomkins becomes governor, and he says he would support a pause on data center construction until the state adopts comprehensive rules.",
+      "phrase": "rules.",
+      "shows": "a plank tag clips under the second sign, a plate reads UNTIL COMPREHENSIVE RULES",
+      "sfx": "clip",
+      "means": "until comprehensive rules",
+      "rehook": "",
+      "draw": {
+        "subject": "a plank tag",
+        "action": "clips under the second sign",
+        "emotion": "careful",
+        "annotation": "UNTIL COMPREHENSIVE RULES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "a plank tag clips under the second sign, a plate reads UNTIL COMPREHENSIVE RULES",
+        "reaction": "the tag clips",
+        "ambient": "pages tear, signs swing, wind"
+      },
+      "t": "110.670-112.400",
+      "key": 38
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 112.4,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the fight isn't build versus pause. It's order. Rules first, or money first?",
+      "phrase": "So the fight isn't",
+      "shows": "both signs swing together to point at the blank Rulebook, a plate reads THE FIGHT IS ORDER",
+      "sfx": "riser",
+      "means": "the fight is order",
+      "rehook": "",
+      "draw": {
+        "subject": "both signs",
+        "action": "swing together to point at the blank Rulebook",
+        "emotion": "pointed",
+        "annotation": "THE FIGHT IS ORDER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "both signs swing together to point at the blank Rulebook, a plate reads THE FIGHT IS ORDER",
+        "reaction": "the signs point",
+        "ambient": "wind, a key clinks, a dry hiss, silence"
+      },
+      "t": "112.400-115.910",
+      "key": 39
+    },
+    {
+      "id": 42,
+      "shot": 12,
+      "at_s": 115.91,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 3.51
+      },
+      "offset": 3.51,
+      "vo": "So the fight isn't build versus pause. It's order. Rules first, or money first?",
+      "phrase": "order. Rules first, or",
+      "shows": "Drip turns his handle a quarter and stops, a plate reads RULES FIRST, OR MONEY FIRST",
+      "sfx": "thud",
+      "means": "rules first, or money first",
+      "rehook": "",
+      "draw": {
+        "subject": "Drip",
+        "action": "turns his handle a quarter and stops",
+        "emotion": "hesitant",
+        "annotation": "RULES FIRST, OR MONEY FIRST"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Drip turns his handle a quarter and stops, a plate reads RULES FIRST, OR MONEY FIRST",
+        "reaction": "the handle stops",
+        "ambient": "wind, a key clinks, a dry hiss, silence"
+      },
+      "kick": true,
+      "t": "115.910-118.550",
+      "key": 40
+    },
+    {
+      "id": 43,
+      "shot": 12,
+      "at_s": 118.55,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 6.15
+      },
+      "offset": 6.15,
+      "vo": "So the fight isn't build versus pause. It's order. Rules first, or money first?",
+      "phrase": "money first?",
+      "shows": "a padlock key drops at Drip's feet beside Bucket, a plate reads WHO WRITES IT DOWN FIRST",
+      "sfx": "clink",
+      "means": "who writes it down first",
+      "rehook": "",
+      "draw": {
+        "subject": "a padlock key",
+        "action": "drops at Drip's feet beside Bucket",
+        "emotion": "quiet",
+        "annotation": "WHO WRITES IT DOWN FIRST"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a padlock key drops at Drip's feet beside Bucket, a plate reads WHO WRITES IT DOWN FIRST",
+        "reaction": "the key lands",
+        "ambient": "wind, a key clinks, a dry hiss, silence"
+      },
+      "t": "118.550-118.830",
+      "key": 41
+    },
+    {
+      "id": 44,
+      "shot": 12,
+      "at_s": 118.83,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 6.43
+      },
+      "offset": 6.43,
+      "vo": "So the fight isn't build versus pause. It's order. Rules first, or money first?",
+      "phrase": "first?",
+      "shows": "the dust speck hangs on Drip's lip and does not fall as the frame cuts hard to black, a plate reads RULES FIRST, OR MONEY FIRST",
+      "sfx": "hush",
+      "means": "rules first, or money first",
+      "rehook": "",
+      "draw": {
+        "subject": "the dust speck",
+        "action": "hangs on Drip's lip and does not fall as the frame cuts hard to black",
+        "emotion": "open",
+        "annotation": "RULES FIRST, OR MONEY FIRST"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the dust speck hangs on Drip's lip and does not fall as the frame cuts hard to black, a plate reads RULES FIRST, OR MONEY FIRST",
+        "reaction": "the speck hangs",
+        "ambient": "wind, a key clinks, a dry hiss, silence"
+      },
+      "t": "118.830-119.200",
+      "key": 42
+    }
+  ]
+}

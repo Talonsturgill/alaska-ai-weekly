@@ -4,7 +4,9 @@
    "idx": 0,
    "text": "Alaska just built a faucet for infrastructure money, pitched at data centers, and nothing is coming out yet.",
    "claims": [
-    "c9"
+    "c2",
+    "c9",
+    "c10"
    ]
   },
   {
@@ -17,14 +19,14 @@
   },
   {
    "idx": 2,
-   "text": "It runs through Alaska Data Corp, owned by the state's development authority, AIDEA.",
+   "text": "AIDEA, the state's development authority, owns a company called Alaska Data Corp.",
    "claims": [
     "c3"
    ]
   },
   {
    "idx": 3,
-   "text": "In January, AIDEA's board voted that company twenty million dollars.",
+   "text": "In January, AIDEA's board voted that company twenty million dollars to run on.",
    "claims": [
     "c5"
    ]
@@ -60,7 +62,7 @@
   },
   {
    "idx": 8,
-   "text": "Plural's chief executive calls AI infrastructure one of the largest capital needs in a generation.",
+   "text": "Plural's chief executive calls the infrastructure behind AI one of the largest capital needs in a generation.",
    "claims": [
     "c14"
    ]
@@ -82,7 +84,7 @@
   },
   {
    "idx": 11,
-   "text": "A critic calls it using AIDEA to move hundreds of millions of public dollars to Lower forty eight corporations.",
+   "text": "A critic quoted by the Daily News, the founder of an advocacy group, calls it using AIDEA to move hundreds of millions of public dollars to Lower forty eight corporations.",
    "claims": [
     "c19"
    ]
@@ -103,7 +105,7 @@
   },
   {
    "idx": 14,
-   "text": "On December seventh, Jonathan Kreiss-Tomkins becomes governor, and he would support a pause on data center construction until the state adopts rules.",
+   "text": "On December seventh, Jonathan Kreiss-Tomkins becomes governor, and he says he would support a pause on data center construction until the state adopts comprehensive rules.",
    "claims": [
     "c16",
     "c17"

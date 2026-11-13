@@ -11,29 +11,35 @@
   "judge_reasoning": "Two of three returned pitches independently reached a faucet or spigot before the water, because the angle is about order, not a verdict. A personified fixture with a want and nothing to pour is a neutral hero that implies no AI project the sources never name. The calendar gives the film a clock the viewer can check. The Test keeps the critic's card held unjoked. Showrunner synthesis, the scorer step was skipped because the pitches converged."
  },
  "palette": {
-  "sky": "#14263F blue-hour dome lifting to #3A5A70 ink-teal at the horizon",
-  "ground": "#DCE6EE wind-packed snow with #8FA6BA shadow planes",
+  "sky": "#8FA39A overcast pewter-sage lifting to pale straw #D8CFA3 at the horizon",
+  "ground": "#6B6A5E wet gravel lot with puddle glints",
+  "far": "#24402F spruce row and Chugach silhouettes",
   "hero": "#C9A24B brushed brass, spent ONLY on Drip and his pipe fittings",
   "bucket": "#9AA3AB galvanized pail grey",
   "rulebook": "#D8432F tomato red, spent ONLY on the Rulebook and circled calendar dates",
   "paper": "#E8DFC8 notice paper with #1B2230 ink",
   "accent": "#5EEAD0 fluorescent mint ONLY on the AI slip, the pitch",
-  "shadow": "#0A1620 for cast shadows only",
-  "mood": "cold clear blue hour over a frozen lot, brass and mint where the question lives",
-  "why": "A blue-hour lot is honest for November, one gleaming brass object gives the eye a single place to follow, and mint is held for the one word the sources only use as a pitch.",
-  "divergence": "Honest record: blue dusk is in the family of 11-12 and 11-11. The departure is brass plus mint on a frozen lot with a tomato-red rulebook, no lime, no pink-gold, no plum. The world is a roadside lot with a pipe running to the horizon, not a tundra stake or a rooftop."
+  "shadow": "#1A1C1A for cast shadows only",
+  "mood": "flat honest November overcast over a gravel lot, brass and mint where the question lives",
+  "why": "An Anchorage lot in November is gray gravel under cloud with spruce and mountains behind, so the world is honest. One gleaming brass object gives the eye a single place to follow.",
+  "divergence": "The last three films were raven dusk with lime (11-12), pink-gold ice fog with amber (11-11) and violet shore with vermilion (11-10). This is overcast pewter-sage gravel by day with brass, red and mint, no dusk, no lime, no pink-gold, no plum."
  },
  "light": {
-  "time_of_day": "blue hour throughout the lot, flat paper light for cutaways, one glowing mint slip, a hard cut to black at the button",
-  "arc": "dusk blue to cool paper cutaways to the same dusk, the sign at the lot gaining a new suffix each act",
-  "direction": "horizon glow from camera-left, brass lit by reflection only",
-  "depth_approach": "lib/stage3d planes, three snow ridges parallax behind the lot, a long pipe receding in perspective, stacked paper planes for the Dry Hearing"
+  "time_of_day": "flat overcast day on the lot, paper-lit cutaways, one glowing mint slip, a hard cut to black",
+  "arc": "overcast day to cool paper cutaways to the same overcast, the sign gaining a suffix each act",
+  "direction": "soft top light from the cloud, brass lit by reflection of the sky, long soft shadows on gravel",
+  "depth_approach": "lib/stage3d planes, spruce row and Chugach ridges in parallax behind the lot, a long pipe receding in perspective, stacked paper planes for the Dry Hearing"
  },
  "shape_language": "PRIMARY axis: Drip's round eyes and curved neck against the long straight horizontal of the pipe to the horizon. SECONDARY: rectilinear paper, calendar pages and signs. WHY: a curved hopeful face at the end of a hard straight line is the image of a faucet before the water.",
  "casting": {
   "hero": "DRIP, a brass yard spigot with a face (local component in the episode file, handle brow, neck eyes), the declared hero and throughline, five states",
   "throughline": "Drip: brand new and dry, plumbed in, tagged, cap off with the AI slip, polished and dry with the padlock key at his feet",
-  "supporting": ["BUCKET, a dented galvanized pail with a tired kind face, reaction shots, never a person or a named group", "THE RULEBOOK, a three-ring binder with one eye, always arriving last", "tear-off calendar", "COMING SOON sign"],
+  "supporting": [
+   "BUCKET, a dented galvanized pail with a tired kind face, reaction shots, never a person or a named group",
+   "THE RULEBOOK, a three-ring binder with one eye, always arriving last",
+   "tear-off calendar",
+   "COMING SOON sign"
+  ],
   "net_new": "none from the shelf, Drip, Bucket and Rulebook are local components in the episode file"
  },
  "claim_map": {
