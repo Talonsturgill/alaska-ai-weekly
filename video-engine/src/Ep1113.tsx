@@ -410,7 +410,7 @@ const Lot: React.FC<WP & {act?: number; pipe?: number; tilt?: number; state?: nu
     )}
     {bucket && <Bucket f={f} x={DX - 208} y={GY + 24} scale={0.9} brow={worry * 0.8} tilt={0} />}
     {children}
-    <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={30 + act} strength={0.4} rx={20} mode="shadow" />
+    <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={30 + act} strength={0.4} rx={20} mode="sweep" />
     <Flurry f={f} amt={flurry} />
   </g>
 );
@@ -465,7 +465,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
           <rect x={-170} y={-190} width={340} height={380} fill="none" stroke={C.woodD} strokeWidth={14} />
           <path d="M 0,-190 V 190 M -170,0 H 170" stroke={C.woodD} strokeWidth={8} />
         </g>
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={32} strength={0.4} rx={20} mode="shadow" />
+        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={32} strength={0.4} rx={20} mode="sweep" />
         {/* a press podium with a state seal on an empty floor */}
         <g transform={`translate(${520} ${1290 - 140 * (1 - thump)})`}>
           <ellipse cx={0} cy={6} rx={150} ry={18} fill="#000" opacity={0.3} />
@@ -478,7 +478,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
           <circle cx={146} cy={-362} r={10} fill={C.steel} stroke={C.line} strokeWidth={4} />
           {/* a brass banner drops from the podium front and swings open */}
           <g transform={`translate(0 ${-70 + 40 * (1 - ease(f, b(5), 14))}) rotate(${(1 - ease(f, b(5), 18)) * 14})`} opacity={ease(f, b(5), 8)}>
-            <rect x={-92} y={-30} width={184} height={74} rx={5} fill={C.brassL} stroke={C.line} strokeWidth={5} />
+            <rect x={-92} y={-30} width={184} height={74} rx={5} fill={C.paper} stroke={C.line} strokeWidth={5} />
             <text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>INVESTNORTH</text>
             <text x={0} y={28} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.ink}>STATE-SPONSORED</text>
           </g>
@@ -543,8 +543,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const cough = clamp01(1 - Math.abs(f - b(11) - 14) / 14) * ease(f, b(11), 6);
   return (
     <Frame p={p} cam={cam} overlay={<>
-        <Plate text="BUILT WITH PLURAL" x={540} y={620} size={44} tone="glow" p={vis(f, b, [11, 12], 0)} />
-        <Plate text="SAN FRANCISCO" x={540} y={620} size={46} tone="dark" p={vis(f, b, [11, 12], 1)} /> {/* plate-overlap-ok: sequenced */}
+        <Plate text="SAN FRANCISCO" x={540} y={620} size={46} tone="dark" p={vis(f, b, [11, 12], 0)} />
+        <Plate text="BUILT WITH PLURAL" x={540} y={620} size={44} tone="glow" p={vis(f, b, [11, 12], 1)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
         <Lot f={f} b={b} act={3} state={2} showSign={false} cough={cough} brow={cough * 0.5} rb={0.2} bucket={false}>
@@ -579,7 +579,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Backdrop f={f} act={4} />
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={34} strength={0.4} rx={20} mode="shadow" />
+        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={34} strength={0.4} rx={20} mode="sweep" />
         <g transform="translate(540 1150)">
           <rect x={-260} y={-360} width={520} height={360} fill={C.paper} stroke={C.line} strokeWidth={6} />
           <rect x={-250} y={-350} width={500} height={340} fill={C.paperD} opacity={0.5} />
@@ -666,8 +666,8 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <Plate displayLines={['PLURAL CEO', 'THE PITCH']} text="PLURAL CEO · THE PITCH" x={540} y={620} size={38} tone="glow" p={ease(f, b(21), 12) * (1 - ease(f, b(22) - 8, 8))} />
         <Plate displayLines={['ONE OF THE LARGEST CAPITAL', 'NEEDS IN A GENERATION']} text="ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION" x={540} y={620} size={30} tone="dark" p={ease(f, b(22), 12) * (1 - ease(f, b(23) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="THAT'S THE PITCH" x={540} y={620} size={46} tone="plate" p={ease(f, b(23), 12) * (1 - ease(f, b(24) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-        <Plate displayLines={['NONE NAMED IN SOURCES', 'REVIEWED HERE']} text="NONE NAMED IN SOURCES REVIEWED HERE" x={540} y={620} size={34} tone="warn" p={ease(f, b(24), 12) * (1 - ease(f, b(25) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-        <Plate text="NO AI PROJECT NAMED" x={540} y={620} size={44} tone="glow" p={ease(f, b(25), 12)} /> {/* plate-overlap-ok: sequenced */}
+        <Plate text="NO AI PROJECT NAMED" x={540} y={620} size={44} tone="warn" p={ease(f, b(24), 12) * (1 - ease(f, b(25) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
+        <Plate displayLines={['IN SOURCES', 'REVIEWED HERE']} text="IN SOURCES REVIEWED HERE" x={540} y={620} size={40} tone="glow" p={ease(f, b(25), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
         <Lot f={f} b={b} act={6} state={3} lock={1} showSign={false} rb={0.4} worry={ease(f, b(25), 10) * 0.5}>
@@ -713,7 +713,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Backdrop f={f} act={7} />
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={37} strength={0.4} rx={20} mode="shadow" />
+        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={37} strength={0.4} rx={20} mode="sweep" />
         <g transform="translate(540 1220)">
           <rect x={-420} y={-30} width={840} height={110} fill={C.woodD} stroke={C.line} strokeWidth={6} />
           <path d="M -380,-30 L -330,-300 L 330,-300 L 380,-30 Z" fill={C.paperD} stroke={C.line} strokeWidth={6} />
@@ -768,7 +768,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Backdrop f={f} act={8} />
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={38} strength={0.4} rx={20} mode="shadow" />
+        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={38} strength={0.4} rx={20} mode="sweep" />
         {/* the Lower 48 outline on the ground plane at the left, with a crate */}
         <g transform="translate(150 1260)" opacity={ease(f, b(30) - 20, 20)}>
           <path d="M -150,0 L -90,-30 L 20,-26 L 130,-34 L 150,10 L 90,36 L -20,26 L -100,36 Z" fill={C.paperD} stroke={C.line} strokeWidth={5} />
@@ -788,6 +788,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Drip f={f} state={3} worry={0.4 + 0.5 * ease(f, b(31), 14)} brow={-0.3} />
         <Padlock p={1} f={f} />
         <Bucket f={f} x={DX - 208} y={GY + 24} scale={0.9} brow={0.6} />
+        <Rulebook f={f} x={430} y={1290} scale={0.5} run={0} />
         {/* Drip turns to watch his own pipe point away */}
       </SVG>
     </Frame>
@@ -802,7 +803,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Plate text="AIDEA BOARD" x={540} y={620} size={46} tone="glow" p={ease(f, b(32), 12) * (1 - ease(f, b(33) - 8, 8))} />
         <Plate displayLines={['AT LEAST ONE MORE', 'MEETING DEC 4']} text="AT LEAST ONE MORE MEETING DEC 4" x={540} y={620} size={38} tone="warn" p={ease(f, b(33), 12) * (1 - ease(f, b(34) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="DATA CENTERS HERE" x={540} y={620} size={42} tone="dark" p={ease(f, b(34), 12) * (1 - ease(f, b(35) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-        <Plate text="LET'S DO IT RIGHT" x={540} y={620} size={48} tone="plate" p={ease(f, b(35), 12)} /> {/* plate-overlap-ok: sequenced */}
+        <Plate displayLines={['OUTGOING GOVERNOR', 'DO IT RIGHT']} text="OUTGOING GOVERNOR · DO IT RIGHT" x={540} y={620} size={38} tone="plate" p={ease(f, b(35), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
         {/* an empty boardroom, cool top light, chairs dropping in */}
@@ -820,8 +821,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
             </g>
           ))}
         </g>
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={40} strength={0.4} rx={20} mode="shadow" />
-        <HeldTravel f={f} x={0} y={1100} w={1080} h={500} seed={41} strength={0.4} rx={20} mode="shadow" />
+        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={40} strength={0.4} rx={20} mode="sweep" />
+        <HeldTravel f={f} x={0} y={1100} w={1080} h={500} seed={41} strength={0.4} rx={20} mode="sweep" />
         {/* a roadside sign swings into the boardroom window, two planks */}
         <Sign x={880} y={1010} w={300} h={110} lines={['DATA CENTERS', 'HERE']} p={ease(f, b(34), 14)} f={f} />
         <Sign x={880} y={1110} w={300} h={90} lines={['DO IT RIGHT']} p={ease(f, b(35), 12)} f={f} tone={C.brassL} />
@@ -839,15 +840,15 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const flick = Math.sin(f / 3) > 0.1 ? 1 : 0.3;
   return (
     <Frame p={p} cam={cam} overlay={<>
-        <Plate text="STILL BLANK" x={540} y={620} size={46} tone="warn" p={ease(f, b(36), 12) * (1 - ease(f, b(44) - 8, 8))} />
-        <Plate text="NEW GOVERNOR DEC 7" x={540} y={620} size={44} tone="glow" p={ease(f, b(44), 12) * (1 - ease(f, b(37) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
+        <Plate text="NEW GOVERNOR DEC 7" x={540} y={620} size={44} tone="glow" p={ease(f, b(36), 12) * (1 - ease(f, b(44) - 8, 8))} />
+        <Plate text="KREISS-TOMKINS · GOVERNOR" x={540} y={620} size={32} tone="dark" p={ease(f, b(44), 12) * (1 - ease(f, b(37) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="WOULD SUPPORT A PAUSE" x={540} y={620} size={42} tone="dark" p={ease(f, b(37), 12) * (1 - ease(f, b(38) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate displayLines={['UNTIL COMPREHENSIVE', 'RULES']} text="UNTIL COMPREHENSIVE RULES" x={540} y={620} size={40} tone="plate" p={ease(f, b(38), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
         <Lot f={f} b={b} act={10} state={ f > b(37) ? 4 : 3 } lock={1} brow={ease(f, b(37), 14) * 0.5} worry={0.4} showSign={false} tag={false} rb={0.4 + 0.6 * easeIO(f, b(36) - 30, 50)} flurry={ease(f, b(36), 30)}>
           <g transform={`translate(${290} ${900})`}>
-            <Calendar x={0} y={0} month="DECEMBER" ring={ease(f, b(44) + 8, 14)} ringAt={6} f={f} sway={-6 * rip + 4} scale={0.8} />
+            <Calendar x={0} y={0} month="DECEMBER" ring={ease(f, b(36) + 8, 14)} ringAt={6} f={f} sway={-6 * rip + 4} scale={0.8} />
           </g>
           <g transform={`translate(${470} ${1100 - 60 * (1 - ease(f, b(44), 12))})`} opacity={ease(f, b(44), 8)}>
             <rect x={-90} y={-24} width={180} height={48} rx={5} fill={C.brassL} stroke={C.line} strokeWidth={5} />
@@ -860,7 +861,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
           </g>
           {/* the stenciled MAY flickers back on the dog-door window */}
           <g transform={`translate(${380} ${1118})`} opacity={ease(f, b(38), 10)}>
-            <text x={0} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} letterSpacing={4} opacity={flick}>MA</text>
+            <text x={-20} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} letterSpacing={4}>MA</text>
+            <text x={14} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} transform={`translate(${60 * (1 - easeIO(f, b(38), 22))} ${180 * (1 - easeIO(f, b(38), 22))})`}>Y</text>
           </g>
         </Lot>
       </SVG>
@@ -890,7 +892,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <path d="M 18,0 H 60 M 46,0 V 14 M 56,0 V 12" stroke={C.brassL} strokeWidth={8} strokeLinecap="round" />
           </g>
           <g transform={`translate(${380} ${1118})`}>
-            <text x={0} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} letterSpacing={4} opacity={Math.sin(f / 3) > 0.1 ? 1 : 0.3}>MA</text>
+            <text x={-20} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} letterSpacing={4}>MAY</text>
           </g>
         </Lot>
       </SVG>
