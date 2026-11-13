@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.977,
+    "heard": "Alaska just built a faucet for infrastructure money, pitched at data centers, and nothing is coming out yet. On November 9th, Governor Dunlevy announced Invest North, a state-sponsored platform to finance infrastructure, pitched at data centers. Idea, the state's development authority, owns a company called Alaska Data Corp. In January, ideas board voted that company $20 million to run on. The platform was built with a San Francisco company called Plural. It will use tokenization, a digital record of who owns a stake, like a co-check ticket. Some deals may be reserved for Alaska residents. May. But nothing is open to investors, and the terms haven't been decided. Plural's chief executive calls the infrastructure behind AI one of the largest capital needs in a generation. That's the pitch. Not one of the sources reviewed here names an AI project. The Daily News says the Governor first met Plural's chief executive in June 2025, and counts at least seven meetings in all. An advocacy group founder quoted by The Daily News calls the push using AI to move hundreds of millions of public dollars to lower 48 corporations. AI does board has at least one more meeting on December 4th. If there is an opportunity for data centers here, don't leave, he said, let's do it right. On December 7th, Jonathan Christomkins is set to become Governor, and he says he would support a pause on data center construction until the state adopts comprehensive rules. So the real question is order, rules first, or money first.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.047,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.64,
+        "voiced_frac": 0.48,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 121.6,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 121.6,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (7 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.977,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.983,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.973,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

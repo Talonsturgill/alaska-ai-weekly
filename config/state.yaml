@@ -3531,3 +3531,44 @@ dispatch_history:
     light_story: rose-line dusk, paper-lit cutaways, a hard cut to black
     metaphor: a survey stake whose tag the lease, the gas deal and the public each
       pull on, watched by a raven
+- date: '2026-11-13'
+  topic: InvestNorth and Alaska Data Corp, the AIDEA subsidiary and Plural platform
+    for tokenized stakes in data centers, no offering open, terms undecided, rules
+    first or money first (ADN, KTOO, Must Read Alaska, PR Newswire, AIDEA resolution
+    G26-03)
+  slug: the-faucet-before-the-water
+  key_entities:
+  - InvestNorth
+  - Alaska Data Corp
+  - Plural
+  - tokenization
+  - AssetOS
+  - AIDEA
+  - Dunleavy
+  - Kreiss-Tomkins
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: mixed
+  angle: Alaska built the money pipe before there was anything to pour through it,
+    and the live question is order, rules first or money first
+  hero: Drip
+  cast:
+  - Drip
+  - Bucket
+  - Rulebook
+  - Marge
+  composition:
+    pov: low-lateral-along-pipe
+    motion_vector: horizontal-traverse
+    hero_treatment: character-as-subject
+    layout: pipe-perspective
+    register: naturalistic-scene
+    palette: overcast pewter-sage sky rising to light straw, wet gravel with puddle
+      glints, far spruce green, brushed brass reserved for Drip, galvanized grey pail,
+      cream notice sheets with warm graphite type, tomato reserved for the Rulebook
+      and circled dates, mint reserved for the AI slip
+    camera_strategy: dolly-along
+    light_story: overcast gravel-lot day, paper-lit cutaways, a hard cut to black
+    metaphor: a brass faucet at the end of a long pipe with nothing yet to pour, a
+      rulebook always arriving last

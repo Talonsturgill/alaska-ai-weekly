@@ -132,7 +132,7 @@ const Backdrop: React.FC<{f: number; act?: number}> = ({f, act = 0}) => (
       </linearGradient>
     </defs>
     <path d="M -40,-60 H 1120 V 1010 H -40 Z" fill="url(#sky113)" />
-    {[[160, 520, 150], [520, 470, 190], [860, 560, 170], [300, 650, 120], [720, 660, 140], [980, 470, 110]].map(([cx, cy, r], i) => (
+    {[[380, 560, 150], [620, 470, 190], [860, 560, 170], [300, 650, 120], [720, 660, 140], [980, 470, 110]].map(([cx, cy, r], i) => (
       <g key={`c${i}`} transform={`translate(${cx + 8 * Math.sin(f / 90 + i)} ${cy})`}>
         <ellipse cx={0} cy={0} rx={r} ry={r * 0.32} fill={C.skyL} stroke={C.line} strokeWidth={3} opacity={0.92} />
         <ellipse cx={-r * 0.35} cy={-r * 0.18} rx={r * 0.5} ry={r * 0.26} fill={C.white} stroke={C.line} strokeWidth={3} />
@@ -436,7 +436,7 @@ const Lot: React.FC<WP & {act?: number; pipe?: number; tilt?: number; state?: nu
     )}
     {bucket && <Bucket f={f} x={DX - 208} y={GY + 24} scale={0.9} brow={worry * 0.8} tilt={0} />}
     {children}
-    <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={30 + act} strength={0.4} rx={20} mode="sweep" />
+    <HeldTravel f={f} x={-60} y={-100} w={1200} h={2120} seed={30 + act} strength={0.4} rx={20} mode="sweep" />
     <Flurry f={f} amt={flurry} />
   </g>
 );
@@ -491,7 +491,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
           <rect x={-170} y={-190} width={340} height={380} fill="none" stroke={C.woodD} strokeWidth={14} />
           <path d="M 0,-190 V 190 M -170,0 H 170" stroke={C.woodD} strokeWidth={8} />
         </g>
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={32} strength={0.4} rx={20} mode="sweep" />
+        <HeldTravel f={f} x={-60} y={-100} w={1200} h={2120} seed={32} strength={0.4} rx={20} mode="sweep" />
         {/* a press podium with a state seal on an empty floor */}
         <g transform={`translate(${520} ${1290 - 140 * (1 - thump)})`}>
           <ellipse cx={0} cy={6} rx={150} ry={18} fill="#000" opacity={0.3} />
@@ -605,7 +605,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Backdrop f={f} act={4} />
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={34} strength={0.4} rx={20} mode="sweep" />
+        <HeldTravel f={f} x={-60} y={-100} w={1200} h={2120} seed={34} strength={0.4} rx={20} mode="sweep" />
         <g transform="translate(540 1150)">
           <rect x={-260} y={-360} width={520} height={360} fill={C.paper} stroke={C.line} strokeWidth={6} />
           <rect x={-250} y={-350} width={500} height={340} fill={C.paperD} opacity={0.5} />
@@ -685,7 +685,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
 
 const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const cam = track([{t: 0, z: 1.2, fx: 420, fy: 1040}, {t: p.dur, z: 1.26, fx: 560, fy: 1040}]);
+  const cam = track([{t: 0, z: 1.2, fx: 500, fy: 1040}, {t: p.dur, z: 1.26, fx: 580, fy: 1040}]);
   const glassX = lerp(160, 520, easeIO(f, b(24), 30));
   return (
     <Frame p={p} cam={cam} overlay={<>
@@ -698,7 +698,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Lot f={f} b={b} act={6} state={3} lock={1} showSign={false} rb={0.4} worry={ease(f, b(25), 10) * 0.5}>
           {/* a billboard on the pipe with a speech balloon */}
-          <g transform={`translate(${110} ${1190 - 360 * (1 - ease(f, b(21), 16))})`}>
+          <g transform={`translate(${190} ${1190 - 360 * (1 - ease(f, b(21), 16))})`}>
             <path d="M -10,0 L 10,0 L 10,-110 L -10,-110 Z M 230,0 L 250,0 L 250,-110 L 230,-110 Z" fill={C.woodD} stroke={C.line} strokeWidth={4} />
             <rect x={-40} y={-300} width={320} height={200} rx={8} fill={C.paper} stroke={C.line} strokeWidth={6} />
             <path d={`M 40,-120 L 20,-90 L 80,-120 Z`} fill={C.paper} stroke={C.line} strokeWidth={5} />
@@ -741,7 +741,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Backdrop f={f} act={7} />
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={37} strength={0.4} rx={20} mode="sweep" />
+        <HeldTravel f={f} x={-60} y={-100} w={1200} h={2120} seed={37} strength={0.4} rx={20} mode="sweep" />
         <g transform="translate(540 1220)">
           <rect x={-420} y={-30} width={840} height={110} fill={C.woodD} stroke={C.line} strokeWidth={6} />
           <path d="M -380,-30 L -330,-300 L 330,-300 L 380,-30 Z" fill={C.paperD} stroke={C.line} strokeWidth={6} />
@@ -796,7 +796,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Backdrop f={f} act={8} />
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={38} strength={0.4} rx={20} mode="sweep" />
+        <HeldTravel f={f} x={-60} y={-100} w={1200} h={2120} seed={38} strength={0.4} rx={20} mode="sweep" />
         {/* the Lower 48 outline on the ground plane at the left, with a crate */}
         <g transform="translate(150 1260)" opacity={ease(f, b(30) - 20, 20)}>
           <path d="M -150,0 L -90,-30 L 20,-26 L 130,-34 L 150,10 L 90,36 L -20,26 L -100,36 Z" fill={C.paperD} stroke={C.line} strokeWidth={5} />
@@ -849,8 +849,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
             </g>
           ))}
         </g>
-        <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={40} strength={0.4} rx={20} mode="sweep" />
-        <HeldTravel f={f} x={0} y={1100} w={1080} h={500} seed={41} strength={0.4} rx={20} mode="sweep" />
+        <HeldTravel f={f} x={-60} y={-100} w={1200} h={2120} seed={40} strength={0.4} rx={20} mode="sweep" />
+        <HeldTravel f={f} x={-60} y={-100} w={1200} h={2120} seed={41} strength={0.4} rx={20} mode="sweep" />
         {/* a roadside sign swings into the boardroom window, two planks */}
         <Sign x={880} y={1010} w={300} h={110} lines={['DATA CENTERS', 'HERE']} p={ease(f, b(34), 14)} f={f} />
         <Sign x={880} y={1110} w={300} h={90} lines={['DO IT RIGHT']} p={ease(f, b(35), 12)} f={f} tone={C.brassL} />
@@ -875,15 +875,15 @@ const S11: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Lot f={f} b={b} act={10} state={ f > b(37) ? 4 : 3 } lock={1} brow={ease(f, b(37), 14) * 0.5} worry={0.4} showSign={false} tag={false} fallen={f < b(37) + 4} rb={0.4 + 0.6 * easeIO(f, b(36) - 30, 50)} flurry={ease(f, b(36), 30)}>
-          <g transform={`translate(${150} ${1010})`}>
-            <Calendar x={0} y={0} month="DECEMBER" ring={ease(f, b(36) + 8, 14)} ringAt={6} f={f} sway={-6 * rip + 4} scale={0.7} />
+          <g transform={`translate(${250} ${1020})`}>
+            <Calendar x={0} y={0} month="DECEMBER" ring={ease(f, b(36) + 8, 14)} ringAt={6} f={f} sway={-6 * rip + 4} scale={0.6} />
           </g>
           <g transform={`translate(${300} ${1270 - 60 * (1 - ease(f, b(44), 12))})`} opacity={ease(f, b(44), 8)}>
             <rect x={-90} y={-24} width={180} height={48} rx={5} fill={C.brassL} stroke={C.line} strokeWidth={5} />
             <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.ink}>GOVERNOR</text>
           </g>
-          <Sign x={450} y={1130} w={280} h={150} lines={['WOULD SUPPORT', 'A PAUSE']} p={ease(f, b(37) + 10, 14)} f={f} />
-          <g opacity={ease(f, b(38), 10)} transform={`translate(${450} ${1160 + 6 * Math.sin(f / 10)})`}>
+          <Sign x={500} y={1130} w={280} h={150} lines={['WOULD SUPPORT', 'A PAUSE']} p={ease(f, b(37) + 10, 14)} f={f} />
+          <g opacity={ease(f, b(38), 10)} transform={`translate(${500} ${1160 + 6 * Math.sin(f / 10)})`}>
             <rect x={-90} y={-18} width={180} height={36} rx={4} fill={C.wood} stroke={C.line} strokeWidth={4} />
             <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.paper}>UNTIL RULES</text>
           </g>

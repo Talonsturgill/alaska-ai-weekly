@@ -1,0 +1,78 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.2,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.0
+  },
+  "concrete_defects": [
+   "Opener has no pattern interrupt",
+   "clouds are clip-art and sit behind the ILLUSTRATION tag",
+   "lower third is empty ground",
+   "held figures have thin idle life",
+   "light shafts grey the palette"
+  ],
+  "hard_blockers": []
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.0,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.5
+  },
+  "concrete_defects": [
+   "characters plainer than props, little rim light",
+   "ILLUSTRATION tag overlaps a cloud",
+   "clouds read as clip-art",
+   "foreground pebbles repeated",
+   "same lot reused for long stretches"
+  ],
+  "hard_blockers": []
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.0,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO-illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 7.5,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.0
+  },
+  "concrete_defects": [
+   "bottom third pebble field is dead space",
+   "ILLUSTRATION tag on a cloud edge",
+   "characters thin next to props",
+   "credits card plain black with small type",
+   "beds are synthesized noise"
+  ],
+  "hard_blockers": []
+ },
+ "named_open_defects": [
+  "cloud and tag overlap",
+  "character finish below prop finish",
+  "pebble floor repetitive",
+  "credits type small",
+  "opener lacks a strong interrupt"
+ ]
+}

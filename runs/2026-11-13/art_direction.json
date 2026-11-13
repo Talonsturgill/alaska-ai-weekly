@@ -18,13 +18,13 @@
   "bucket": "#7E868D darker galvanized pail, a squat dented trapezoid so the only round bright silhouette in frame is Drip",
   "rulebook": "#D8432F tomato red, spent ONLY on the Rulebook and circled calendar dates",
   "paper": "#D9D0B8 notice paper with #2A2620 warm graphite type, pulled below the brass highlight so the lightest value in a Drip shot is the brass specular",
-  "accent": "#5EEAD0 fluorescent mint ONLY on the AI slip, the pitch",
+  "accent": "#5EEAD0 mint ONLY on the AI slip, the pitch",
   "shadow": "#1A1C1A for cast shadows only",
   "mood": "flat honest November overcast over a gravel lot, brass and mint where the question lives",
   "why": "An Anchorage lot in November is gray gravel under cloud with spruce and mountains behind, so the world is honest. One gleaming brass object gives the eye a single place to follow.",
-  "divergence": "The last three films were raven dusk with lime (11-12), pink-gold ice fog with amber (11-11) and violet shore with vermilion (11-10). This is overcast pewter-sage gravel by day with brass, red and mint, no dusk, no lime, no pink-gold, no plum. Honest overlap: the Rulebook's tomato #D8432F is in the red family of 11-10 vermilion, 11-11 crimson and 11-12 stamp red. It is confined to one binder and the circled dates, and the film's one warm brass hero and mint slip carry the colour story. The ink moves to warm graphite #2A2620.",
+  "divergence": "The last three films were raven dusk with lime (11-12), pink-gold ice fog with amber (11-11) and violet shore with vermilion (11-10). This is overcast pewter-sage gravel by day with brass, red and mint, no dusk, no lime, no pink-gold, no plum. Honest overlap: the Rulebook's tomato #D8432F is in the red family of 11-10 vermilion, 11-11 crimson and 11-12 stamp red. It is confined to one binder and the circled dates, and the film's one warm brass hero and mint slip carry the colour story. The ink moves to warm graphite #2A2620. Brass is also near 11-11's sodium amber in hue family, spent here on one hero only.",
   "value_check": "L* approximately: gravel #6B6A5E 44, spruce #24402F 24, graphite #2A2620 17, pail #7E868D 55, sky #8FA39A 64, brass #C9A24B 68 with a specular #F2DE9A about 88 and a core shadow #6E5420 about 38, paper #D9D0B8 about 83. Drip and the pail are staged against the dark spruce row or the gravel from a raised eye line, never against open sky.",
-  "ground_state": "wet thawed gravel with puddle glints from the first frame, no frost. A first light flurry starts at the Rulebook's arrival (beat 36) and dusts the lot by the button, the only snow in the film."
+  "ground_state": "wet thawed gravel with puddle glints from the first frame, no frost. A first light flurry starts at the Rulebook's arrival (beat 37, 101.42s) and dusts the lot by the button, the only snow in the film."
  },
  "light": {
   "time_of_day": "flat overcast day on the lot with the straw horizon band behind, paper-lit cutaways, one glowing mint slip, a hard cut to black",
@@ -38,9 +38,9 @@
    "5": "cutaway lit by the counter lamp, warm work-lamp light, no mint",
    "6": "low overcast, the stencil paint matte, padlock steel highlight",
    "7": "billboard flat-lit, the mint slip the only emissive object",
-   "8": "overhead flat paper light on the ledger, soft ring shadows",
+   "8": "overhead flat paper light on the ledger, soft ring shadows, Drip as a small corner inset lit by the lot's overcast",
    "9": "greying overcast, the straw band narrowing behind the lifting pipe",
-   "10": "boardroom, cool top window light, red ring the only saturated mark",
+   "10": "boardroom, cool top window light, Drip seen small at the window lit by the lot's overcast and straw rim, red ring the only saturated mark",
    "11": "darker overcast, the first flurry lit by the straw band's last rim",
    "12": "darkest overcast, brass specular on Drip, the speck catches the last straw rim before the hard cut"
   },
@@ -49,12 +49,12 @@
  "shape_language": "PRIMARY axis: Drip's round eyes and curved neck against the long straight horizontal of the pipe to the horizon. SECONDARY: rectilinear paper, calendar pages and signs. WHY: a curved hopeful face at the end of a hard straight line is the image of a faucet before the water.",
  "casting": {
   "hero": "DRIP, a brass yard spigot with a face (local component in the episode file, handle brow, neck eyes), the declared hero and throughline, five states staged where he is on screen",
-  "throughline": "Drip: bare and dry over an empty pail, plumbed in with a second cough, padlocked and tagged with brass dulled, handle quarter turned toward the arriving Rulebook, polished and still dry with the key at his feet",
+  "throughline": "Drip: bare and dry over an empty pail, plumbed in with a second cough, padlocked and tagged with brass dulled, handle quarter turned toward the Rulebook beside him, still dulled and dry with the key at his feet",
   "supporting": [
    "BUCKET, a squat dented trapezoid pail with a tired kind face, the would-be Alaskan investor waiting under the dry spout from shot 1 to shot 12, never a person or a named group",
    "THE RULEBOOK, a tomato-red three-ring binder with one eye, a tiny speck walking toward Drip from the spruce row in shot 1 and arriving out of breath at 101s",
    "MARGE, an ordinary coat check clerk in a parka (local figure in the episode file, no likeness of anyone real), her ledger blank until the ticket",
-   "local props in the episode file, none from the shelf: pump house with AIDEA flag, booth with funnel, twenty bags, gauge, cable car clamp, billboard and speech balloon, magnifying glass and mint slip, ledger, masthead, two cup nameplates, seven coffee rings, Lower 48 outline and crate, boardroom table and chairs, wall calendar, roadside signs, plank tag, padlock and key, dust speck"
+   "local props in the episode file, none from the shelf: pump house with AIDEA flag, booth with funnel, twenty bags, gauge, cable car clamp, billboard and speech balloon, magnifying glass and mint slip, ledger, masthead, two cup nameplates, seven coffee rings, Lower 48 outline and crate, boardroom table and chairs, wall calendar, roadside signs, plank tag, padlock and key, dust speck, press podium with state seal and a notice-paper banner, ghost server hall in the window, OPEN flip sign, torn price tag, paperwork pile, name tab, governor nameplate and post, second sign over the gate, coat, hook and half door"
   ],
   "net_new": "none from the shelf, every named prop is local to Ep1113.tsx. dedupe.py check --hero Drip returned FRESH"
  },
@@ -71,15 +71,20 @@
   "FIRST MET JUNE 2025": "c11",
   "AT LEAST 7 MEETINGS": "c12",
   "LET'S DO IT RIGHT": "c13",
-  "ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION": "c14",
   "NO AI PROJECT NAMED": "c15",
   "NEW GOVERNOR DEC 7": "c16",
   "WOULD SUPPORT A PAUSE": "c17",
   "AIDEA BOARD DEC 4": "c18",
   "CRITIC: LOWER 48 CORPORATIONS": "c19",
   "WAITING ON THE FIRST DROP": "narration",
-  "NONE NAMED IN SOURCES REVIEWED HERE": "c15",
-  "CRITIC: HUNDREDS OF MILLIONS": "c19"
+  "CRITIC: HUNDREDS OF MILLIONS": "c19",
+  "SOURCES NAME NO AI PROJECT": "c15",
+  "AI IS THE PITCH": "c14",
+  "CRITIC \u00b7 VIA THE DAILY NEWS": "c19",
+  "\"LET'S DO IT RIGHT\" \u00b7 DUNLEAVY": "c13",
+  "RULES FIRST, OR MONEY FIRST?": "narration",
+  "ADVOCACY GROUP FOUNDER": "c19",
+  "THE PITCH, NOT A PROJECT": "c14"
  },
  "motion_language": "Drip leans toward whoever walks up, coughs dust, and his handle lifts like a brow. Signs swing on springs. Calendar pages tear with anticipation and fall. Bags thump with squash. The whole frame jolts only on the three board kicks.",
  "composition": {
@@ -92,7 +97,7 @@
  "practicals": {
   "brass": "#C9A24B lit by the straw band's warm rim",
   "ai_slip": "#5EEAD0 mint glow, the only emissive object",
-  "stencil": "the word MAY is stenciled matte paint on the dog-door window, not a lit sign",
+  "stencil": "the word MAY is stenciled matte paint on the dog-door window, a letter drops in shot 6 and blows back up the gravel to stick again in shot 11, never a lit sign",
   "calendar_red": "#D8432F on circled dates and the Rulebook only"
  },
  "craft_advance": "none, the shelf covers this film"
