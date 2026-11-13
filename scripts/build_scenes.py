@@ -696,6 +696,8 @@ CREDITS_MIN_S = 10.0
 # is added ON TOP of the floor so the readable window is the full ten seconds.
 CREDITS_TAIL_S = 2.3          # EndCredits: 0.3 fade-in + 0.4 body-out + 1.6 mark sign-off
 CREDITS_S = CREDITS_MIN_S + CREDITS_TAIL_S
+CREDITS_SRC_MAX = 36          # source-line ceiling, px (historical default 22)
+CREDITS_MUSIC_MAX = 34        # licence-line ceiling, px (historical default 32)
 
 def _source_labels(srcs):
     """Group sources.json into lines a person can read off a phone in six seconds.
@@ -797,7 +799,13 @@ def _credits():
     # six lines is what fits above the licence strap at a size a phone can read
     if len(labels) > 6:
         labels = labels[:5] + [f"AND {len(labels) - 5} MORE AT ALASKAAIHQ.COM"]
+    # CREDITS TYPE SIZED FOR A PHONE (2026-11-13 machine pass). All three 11-13 judges, and
+    # seats on 10-31 and 11-12, called the source lines unreadable at phone size: they were
+    # capped at 22px, about 5px tall in a 270px feed thumbnail. These ceilings ride in the data
+    # so every new episode gets them without a prop; lib/EndCredits.tsx still fits each line
+    # to the safe width, and credits_check.py measures and OCRs the rows at these sizes.
     return {"music": music, "sources": labels, "site": "alaskaaihq.com",
+            "srcMax": CREDITS_SRC_MAX, "musicMax": CREDITS_MUSIC_MAX,
             "seconds": CREDITS_S, "frames": round(CREDITS_S * FPS)}
 
 
