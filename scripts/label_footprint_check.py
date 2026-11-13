@@ -111,7 +111,8 @@ def aggregate(data):
             if not run:
                 run = {"id": lid, "shot": s["shot"], "text": lab["text"], "first": s["frame"],
                        "last": s["frame"], "kind": st, "kind_class": "hide" if st == "hidden" else "defect",
-                       "max_frac": 0.0, "by": {}, "side": {}, "box": lab.get("box"), "samples": 0}
+                       "max_frac": 0.0, "by": {}, "side": {}, "box": lab.get("box"), "samples": 0,
+                       "by_box": {}}
                 open_runs[lid] = run
             run["last"] = s["frame"]
             run["samples"] += 1
@@ -121,6 +122,10 @@ def aggregate(data):
             run["max_frac"] = max(run["max_frac"], lab.get("frac", 0))
             if lab.get("by"):
                 run["by"][lab["by"]] = run["by"].get(lab["by"], 0) + 1
+                if lab.get("byBox"):
+                    run["by_box"][lab["by"]] = lab["byBox"]
+                if lab.get("frac", 0) >= run["max_frac"]:
+                    run["box"] = lab.get("box") or run["box"]
             if lab.get("side"):
                 run["side"][lab["side"]] = run["side"].get(lab["side"], 0) + 1
         for lid in list(open_runs):
@@ -143,7 +148,21 @@ def describe(run):
     if run["kind"] == "hidden":
         return head + f": covered {round(run['max_frac'] * 100)} percent, so not shown at all, by {top(run['by'])}"
     return head + (f": {round(run['max_frac'] * 100)} percent covered on its {top(run['side'])} side "
-                   f"by {top(run['by'])}")
+                   f"by {top(run['by'])}") + where(run)
+
+
+def where(run):
+    """Screen y of the label and of what covers it (machine pass 2026-11-13, repeat offender
+    label-footprint-vs-plates-in-macro-shots: 11-12 and 11-13 spent seven and eight make_cut
+    relaunches moving a label or a plate blind, each move landing on the next collision). The
+    boxes are projected, so they already carry the camera; the fix is arithmetic on them."""
+    lab, occ = run.get("box"), (run.get("by_box") or {}).get(top(run["by"]))
+    bits = []
+    if lab:
+        bits.append(f"label x {lab[0]}-{lab[2]} y {lab[1]}-{lab[3]}")
+    if occ:
+        bits.append(f"cover x {occ[0]}-{occ[2]} y {occ[1]}-{occ[3]}")
+    return ("; on screen " + ", ".join(bits)) if bits else ""
 
 
 REMEDY = {
@@ -232,6 +251,11 @@ def self_test():
     d = {"samples": series(range(0, 30, 3), lambda f: [lab(1, 0.5, on=2)]), "frames": 10, "step": 3}
     f, n, _ = aggregate(d)
     expect("a label hit on fewer than 3 glyph points is not graded for cover", not f and not n)
+    d = {"samples": series(range(0, 30, 3), lambda f: [dict(lab(1, 0.3), box=[100, 800, 400, 840],
+                                                            byBox=[80, 780, 600, 900])]), "frames": 10, "step": 3}
+    f, n, _ = aggregate(d)
+    expect("a clipped fail prints the label's and the cover's screen y",
+           len(f) == 1 and "label x 100-400 y 800-840" in describe(f[0]) and "cover x 80-600 y 780-900" in describe(f[0]))
 
     # The browser half: a fixture episode with one defect of each kind and two controls.
     if not os.path.exists(FIXTURE):
@@ -253,6 +277,8 @@ def self_test():
            any(r["text"] == "UNDER THE CARD" and r["kind"] == "hidden" for r in n))
     expect("fixture: the plate's own rect never counts against its text", not any(r["text"] == "ON ITS PLATE" for r in f + n))
     expect("fixture: exactly two fails", len(f) == 2)
+    expect("fixture: the clipped sign names where its cover sits on screen",
+           any(r["text"] == "BOROUGH LAND" and "cover x" in describe(r) for r in f))
     print("label_footprint_check self-test: " + ("PASS" if ok else "FAIL"))
     return 0 if ok else 1
 
