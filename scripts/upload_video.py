@@ -70,10 +70,27 @@ def media_email():
     return e
 
 
+def hosted_sibling(file):
+    """The encoder's host-sized twin of `file` (<stem>_hosted<ext>), or None.
+
+    2026-11-13: the 9:16 master encoded to 106.8 MB and this script refused it, correctly, but
+    the refusal said only "encode smaller", while encode_deliverables.sh had ALREADY written a
+    full-resolution dispatch_master_hosted.mp4 under the host limit. The run lost a cycle finding
+    it. The refusal still stands; it now names the file to upload instead."""
+    stem, ext = os.path.splitext(file)
+    if stem.endswith("_hosted"):
+        return None
+    twin = f"{stem}_hosted{ext}"
+    return twin if os.path.exists(twin) else None
+
+
 def via_github(file, name):
     """git-push the file to the dispatch-media branch; return its permanent raw URL."""
     if os.path.getsize(file) > 99 * 1024 * 1024:
-        raise RuntimeError("file >99MB exceeds GitHub's push limit; encode smaller or use rclone")
+        twin = hosted_sibling(file)
+        hint = (f" The encoder's host-sized cut is {twin}; upload that (named dispatch-<date>-dispatch_master_hosted.mp4, as shipped runs name it)."
+                if twin else "")
+        raise RuntimeError("file >99MB exceeds GitHub's push limit; encode smaller or use rclone." + hint)
     root = sh(["git", "rev-parse", "--show-toplevel"]).stdout.strip()
     if not root: raise RuntimeError("not inside a git repo")
     origin = sh(["git", "-C", root, "remote", "get-url", "origin"]).stdout.strip()
@@ -239,7 +256,12 @@ def _self_test():
         except RuntimeError:
             pass
         assert ensure_ext(default_name("a/b.mp4", stamp), "a/b.mp4") == "dispatch-2026-10-26-b.mp4"
-    print("upload_video self-test: PASS (default name carries the run id; unstamped refuses)")
+        master = os.path.join(tmp, "dispatch_master.mp4")
+        assert hosted_sibling(master) is None
+        open(os.path.join(tmp, "dispatch_master_hosted.mp4"), "w").close()
+        assert hosted_sibling(master) == os.path.join(tmp, "dispatch_master_hosted.mp4")
+        assert hosted_sibling(os.path.join(tmp, "dispatch_master_hosted.mp4")) is None
+    print("upload_video self-test: PASS (default name carries the run id; unstamped refuses; an oversize refusal names the hosted cut)")
     return 0
 
 

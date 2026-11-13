@@ -1220,7 +1220,8 @@ breaks a house rule.
    96k) and the poster thumb, all H.264 High, faststart, AAC 48k, -14 LUFS, each < 100 MB, with the
    ffprobe asserts (1080x1920, 1080x1080, 720x1280; thumb < 100 KB). Never a 1080x1350 "feed" cut.
 2. Upload the two full cuts, the poster (frame 0), the 720p rendition and the poster thumb via
-   upload_video.py and verify HTTP 200 permanent links for ALL of them. MEDIA NAMES ARE
+   upload_video.py (the 9:16 cut to host is `dispatch_master_hosted.mp4`, the full-resolution
+   cut the encoder fitted under the host limit; the raw master can exceed GitHub's 99 MB) and verify HTTP 200 permanent links for ALL of them. MEDIA NAMES ARE
    DETERMINISTIC: `dispatch-<date>-<basename>`, so a re-upload overwrites the same path and the URL
    never changes. Never "fix" a bad entry with a new name or id; reuse them and overwrite.
 2b. PUBLISH TO THE SITE FEED: `python3 scripts/publish_feed.py --id <run-slug> --date <date> --title

@@ -171,4 +171,12 @@ if [ "$SQUARE_H" -gt "$SQUARE_W" ]; then
   exit 1
 fi
 echo "  OK  the LinkedIn cut is not taller than wide, so it stays in the main feed"
+# NAME THE FILES TO UPLOAD (2026-11-13). The 9:16 master was 106.8 MB and the run handed it to
+# upload_video.py, which refused it at GitHub's 99 MB limit, while the full-resolution hosted cut
+# this script had already written sat unused. The 9:16 deliverable to HOST is the hosted cut.
+echo "upload these with scripts/upload_video.py (default name dispatch-<run id>-<basename>):"
+echo "  9:16   $HOSTED"
+for f in dispatch_square.mp4 dispatch_master_720.mp4 poster.png poster_thumb.jpg; do
+  echo "         $OUT/$f"
+done
 python3 scripts/render_provenance.py finish-encode
