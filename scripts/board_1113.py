@@ -40,7 +40,7 @@ B = [
  (18, 7, 0.0, "clank", "Drip", "flips the OPEN sign on his neck to NO OFFERINGS YET while a padlock snaps onto his handle", "caught", "NO OFFERINGS YET", "the lock snaps", ""),
  (19, 7, W("terms"), "rattle", "a torn price tag", "swings from the padlock with the price ripped off while Bucket looks up at it", "blank", "TERMS NOT DECIDED", "the tag swings", ""),
  (21, 8, 0.0, "swing", "a billboard", "drops onto the pipe and swings open a speech balloon in its corner", "grand", "PLURAL CEO · THE PITCH", "the billboard opens", ""),
- (22, 8, W("largest"), "thump", "the speech balloon", "swells and the whole pipe thrums once under Drip", "bold", "ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION", "the pipe thrums", ""),
+ (22, 8, W("largest"), "thump", "the speech balloon", "swells and the whole pipe thrums once under Drip", "bold", "THE PITCH, NOT A PROJECT", "the pipe thrums", ""),
  (23, 9, 0.0, "shimmer", "a mint slip", "glows up out of a paperwork pile before anyone touches it", "empty", "THAT'S THE PITCH", "the slip glows", "rehook: a mint slip glows up out of the paperwork pile"),
  (24, 9, W("here"), "tap", "a magnifying glass", "sweeps across the mint slip and finds it blank", "searching", "SOURCES NAME NO AI PROJECT", "the glass sweeps", ""),
  (25, 9, W("project"), "hush", "Bucket", "raises one eyebrow at the blank slip", "dry", "AI IS THE PITCH", "the brow lifts", ""),
@@ -69,7 +69,7 @@ PLATE_AT = {i: "on-object" for i in range(1, 46)}
 PLATE_AT.update({1: "lower-third", 4: "side-plate-right", 10: "side-plate-left", 21: "side-plate-left", 26: "side-plate-right", 29: "lower-third", 32: "side-plate-right", 36: "side-plate-left", 41: "lower-third", 42: "lower-third"})
 CLAIM_MAP = {1: ["c9"], 2: ["narration"], 3: ["narration"], 4: ["c1"], 5: ["c2"], 6: ["c2"], 7: ["c3"], 8: ["c3"], 9: ["c5"], 10: ["c5"], 45: ["c5"],
              11: ["c6"], 12: ["c6"], 13: ["c7"], 14: ["c7"], 15: ["c7"], 16: ["c8"], 17: ["c8"], 18: ["c9"], 19: ["c10"],
-             21: ["c14"], 22: ["c14"], 23: ["narration"], 24: ["c15"], 25: ["c14"], 26: ["c11"], 27: ["c11"], 28: ["c12"], 29: ["c19"],
+             21: ["c14"], 22: ["c14", "c15"], 23: ["narration"], 24: ["c15"], 25: ["c14"], 26: ["c11"], 27: ["c11"], 28: ["c12"], 29: ["c19"],
              30: ["c19"], 31: ["c19"], 32: ["c18"], 33: ["c18"], 34: ["c13"], 35: ["c13"], 36: ["c16"], 37: ["c17"], 38: ["c17"],
              39: ["narration"], 40: ["narration"], 41: ["narration"], 42: ["narration"], 43: ["c19"], 44: ["c16"]}
 

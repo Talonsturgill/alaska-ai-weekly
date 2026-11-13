@@ -131,7 +131,7 @@ const Backdrop: React.FC<{f: number; act?: number}> = ({f, act = 0}) => (
         <stop offset="1" stopColor={C.skyL} />
       </linearGradient>
     </defs>
-    <path d="M -40,300 H 1120 V 1010 H -40 Z" fill="url(#sky113)" />
+    <path d="M -40,-60 H 1120 V 1010 H -40 Z" fill="url(#sky113)" />
     {[[160, 520, 150], [520, 470, 190], [860, 560, 170], [300, 650, 120], [720, 660, 140], [980, 470, 110]].map(([cx, cy, r], i) => (
       <g key={`c${i}`} transform={`translate(${cx + 8 * Math.sin(f / 90 + i)} ${cy})`}>
         <ellipse cx={0} cy={0} rx={r} ry={r * 0.32} fill={C.skyL} stroke={C.line} strokeWidth={3} opacity={0.92} />
@@ -141,8 +141,8 @@ const Backdrop: React.FC<{f: number; act?: number}> = ({f, act = 0}) => (
       </g>
     ))}
     {/* the Chugach as a long low serrated line with snow caps */}
-    <path d="M -40,990 L 90,900 L 190,950 L 330,840 L 430,930 L 560,870 L 700,950 L 840,880 L 960,940 L 1120,900 L 1120,1030 L -40,1030 Z" fill={C.ridge} stroke={C.line} strokeWidth={3} />
-    <path d="M 330,840 L 296,880 L 328,870 L 350,894 L 380,868 L 404,884 Z M 560,870 L 530,904 L 558,894 L 580,912 L 606,892 Z M 840,880 L 812,912 L 840,904 L 862,918 L 888,900 Z" fill={C.ridgeS} />
+    <path d="M -40,990 L 90,760 L 190,860 L 330,620 L 430,800 L 560,680 L 700,840 L 840,660 L 960,790 L 1120,700 L 1120,1030 L -40,1030 Z" fill={C.ridge} stroke={C.line} strokeWidth={3} />
+    <path d="M 330,620 L 290,690 L 326,672 L 350,716 L 384,668 L 412,700 Z M 560,680 L 524,744 L 556,724 L 582,756 L 612,720 Z M 840,660 L 800,730 L 838,712 L 864,748 L 896,708 Z M 90,760 L 60,816 L 92,800 L 120,832 Z" fill={C.ridgeS} />
     {/* spruce row with a little life in the tops */}
     {Array.from({length: 22}).map((_, i) => {
       const x = -20 + i * 52 + h01(i) * 14, hh = 70 + h01(i, 3) * 54, sw = 3 * Math.sin(f / 40 + i);
@@ -159,18 +159,38 @@ const Backdrop: React.FC<{f: number; act?: number}> = ({f, act = 0}) => (
     {Array.from({length: 26}).map((_, i) => (
       <ellipse key={`g${i}`} cx={30 + ((i * 97 + act * 53) % 1020)} cy={1180 + ((i * 61) % 520)} rx={10 + (i % 4) * 3} ry={5} fill={i % 2 ? C.gravelL : C.gravelD} opacity={0.7} />
     ))}
-    <path d="M -40,1480 Q 300,1450 600,1478 T 1120,1470 L 1120,1506 Q 600,1514 300,1498 T -40,1512 Z" fill={C.gravelD} stroke={C.line} strokeWidth={3} />
-    <path d="M -40,1600 Q 300,1570 560,1600 T 1120,1590" fill="none" stroke={C.gravelD} strokeWidth={14} opacity={0.7} />
-    <path d="M -40,1760 Q 360,1730 640,1764 T 1120,1750" fill="none" stroke={C.gravelD} strokeWidth={16} opacity={0.7} />
-    {Array.from({length: 30}).map((_, i) => {
-      const x = 40 + ((i * 137 + act * 71) % 1000), y = 1530 + ((i * 89 + act * 37) % 360), r = 14 + (i % 5) * 5;
-      return (
-        <g key={`r${i}`}>
-          <ellipse cx={x} cy={y} rx={r * 1.5} ry={r} fill={i % 3 ? C.gravelL : C.gravelD} stroke={C.line} strokeWidth={3} />
-          <path d={`M ${x - r},${y - r * 0.3} Q ${x},${y - r * 0.9} ${x + r * 0.8},${y - r * 0.4}`} fill="none" stroke={C.white} strokeWidth={3} opacity={0.5} />
-        </g>
-      );
-    })}
+    {act % 3 === 0 && (
+      <g>
+        <path d="M -40,1480 Q 300,1450 600,1478 T 1120,1470 L 1120,1506 Q 600,1514 300,1498 T -40,1512 Z" fill={C.gravelD} stroke={C.line} strokeWidth={3} />
+        {Array.from({length: 14}).map((_, i) => {
+          const x = 60 + ((i * 197 + act * 71) % 960), y = 1540 + ((i * 89 + act * 37) % 340), r = 16 + (i % 4) * 7;
+          return (
+            <g key={`r${i}`}>
+              <ellipse cx={x} cy={y} rx={r * 1.5} ry={r} fill={i % 3 ? C.gravelL : C.gravelD} stroke={C.line} strokeWidth={3} />
+              <path d={`M ${x - r},${y - r * 0.3} Q ${x},${y - r * 0.9} ${x + r * 0.8},${y - r * 0.4}`} fill="none" stroke={C.white} strokeWidth={3} opacity={0.5} />
+            </g>
+          );
+        })}
+      </g>
+    )}
+    {act % 3 === 1 && (
+      <g>
+        {Array.from({length: 7}).map((_, i) => (
+          <path key={`pl${i}`} d={`M -40,${1490 + i * 62} L 1120,${1480 + i * 62} L 1120,${1534 + i * 62} L -40,${1544 + i * 62} Z`} fill={i % 2 ? C.wood : C.woodD} stroke={C.line} strokeWidth={4} />
+        ))}
+        {Array.from({length: 18}).map((_, i) => <circle key={`n${i}`} cx={60 + (i % 9) * 120} cy={1510 + Math.floor(i / 9) * 190} r={7} fill={C.steelD} stroke={C.line} strokeWidth={3} />)}
+      </g>
+    )}
+    {act % 3 === 2 && (
+      <g>
+        <path d="M -40,1490 Q 300,1470 600,1490 T 1120,1484 L 1120,1920 L -40,1920 Z" fill={C.spruce} stroke={C.line} strokeWidth={4} opacity={0.85} />
+        {Array.from({length: 26}).map((_, i) => {
+          const x = 20 + i * 42 + h01(i, act) * 14, y = 1530 + ((i * 71) % 330), hh = 60 + h01(i, 4) * 70;
+          return <path key={`g${i}`} d={`M ${x},${y} q ${-12 + h01(i, 8) * 10},${-hh * 0.6} ${6 + 8 * Math.sin(i)},${-hh} M ${x},${y} q 10,${-hh * 0.5} ${18},${-hh * 0.9}`} fill="none" stroke={C.spruceL} strokeWidth={6} strokeLinecap="round" />;
+        })}
+        <ellipse cx={380} cy={1700} rx={160} ry={26} fill={C.puddle} stroke={C.line} strokeWidth={4} opacity={0.8} />
+      </g>
+    )}
   </g>
 );
 
@@ -222,7 +242,7 @@ const Drip: React.FC<{f: number; x?: number; y?: number; scale?: number; state?:
         <path d={`M -10,40 Q 8,${46 + 10 * brow - 14 * worry} 26,40`} stroke={C.line} strokeWidth={5} fill="none" strokeLinecap="round" />
       </g>
       {/* handle lever as a brow, on top of the neck */}
-      <g transform={`translate(-100 -304) rotate(${-16 + 34 * brow})`}>
+      <g transform={`translate(-100 -304) rotate(${-16 + 34 * brow + 4 * Math.sin(f / 13)})`}>
         <path d="M -8,0 L 120,-8 L 120,8 L -8,16 Z" fill={C.brassL} stroke={C.line} strokeWidth={5} />
         <circle cx={120} cy={0} r={14} fill={C.brass} stroke={C.line} strokeWidth={5} />
       </g>
@@ -283,7 +303,7 @@ const Rulebook: React.FC<{f: number; x: number; y: number; scale?: number; run?:
   );
 };
 
-const CommingSoon: React.FC<{f: number; suffix?: string; x?: number; y?: number}> = ({f, suffix = '', x = 230, y = 1130}) => {
+const CommingSoon: React.FC<{f: number; suffix?: string; x?: number; y?: number}> = ({f, suffix = '', x = 330, y = 1195}) => {
   const sw = 4 * Math.sin(f / 30);
   return (
     <g transform={`translate(${x} ${y})`}>
@@ -410,7 +430,7 @@ const Lot: React.FC<WP & {act?: number; pipe?: number; tilt?: number; state?: nu
     )}
     {fallen && (
       <g transform={`translate(${440} ${1262}) rotate(${-24 + 3 * Math.sin(f / 9)})`}>
-        <rect x={-34} y={-44} width={68} height={72} rx={8} fill={C.paper} stroke={C.line} strokeWidth={4} />
+        <rect x={-44} y={-44} width={88} height={72} rx={8} fill={C.paper} stroke={C.line} strokeWidth={4} />
         <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={54} fill={C.ink}>Y</text>
       </g>
     )}
@@ -425,7 +445,7 @@ const Lot: React.FC<WP & {act?: number; pipe?: number; tilt?: number; state?: nu
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const cough = clamp01(1 - Math.abs(f - b(1) - 16) / 14) * ease(f, b(1), 6);
-  const cam = track([{t: 0, z: 1.3, fx: 700, fy: 1050}, {t: p.dur, z: 1.2, fx: 600, fy: 1040}]);
+  const cam = track([{t: 0, z: 1.22, fx: 640, fy: 1050}, {t: p.dur, z: 1.18, fx: 620, fy: 1040}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate displayLines={['ALASKA BUILT THE', 'FAUCET FIRST']} text="ALASKA BUILT THE FAUCET FIRST" x={540} y={620} size={50} tone="glow" p={ease(f, 0, 10) * (1 - ease(f, b(2) - 6, 8))} />
@@ -456,7 +476,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <path d="M -40,300 H 1120 V 1090 H -40 Z" fill={C.paper} stroke={C.line} strokeWidth={4} />
         <path d="M -40,1090 H 1120 V 1920 H -40 Z" fill={C.woodD} stroke={C.line} strokeWidth={4} />
         {Array.from({length: 9}).map((_, i) => <path key={i} d={`M ${-40 + i * 150},1090 L ${-120 + i * 190},1920`} stroke={C.wood} strokeWidth={4} opacity={0.6} />)}
-        <Calendar x={200} y={760 - 60 * (1 - thump)} month="NOVEMBER" ring={ease(f, b(4) + 8, 14)} ringAt={8} f={f} sway={(1 - thump) * -8} scale={0.9} />
+        <Calendar x={200} y={900 - 60 * (1 - thump)} month="NOVEMBER" ring={ease(f, b(4) + 8, 14)} ringAt={8} f={f} sway={(1 - thump) * -8} scale={0.9} />
         {/* the window opens onto the lot */}
         <g transform="translate(830 760)">
           <rect x={-170} y={-190} width={340} height={380} fill={C.sky} stroke={C.line} strokeWidth={8} />
@@ -532,10 +552,10 @@ const S3: React.FC<SceneProps> = ({p}) => {
           {Array.from({length: 20}).map((_, i) => {
             const t = clamp01((f - bagsAt(i)) / 10);
             if (t <= 0 || f > bagsAt(i) + 16) return null;
-            return <rect key={i} x={500 + (i % 5) * 6} y={780 + t * 340} width={34} height={30} rx={6} fill={C.brassL} stroke={C.line} strokeWidth={4} transform={`rotate(${(i % 4) * 8 - 12})`} />;
+            return <rect key={i} x={500 + (i % 5) * 6} y={780 + t * 215} width={34} height={30} rx={6} fill={C.brassL} stroke={C.line} strokeWidth={4} transform={`rotate(${(i % 4) * 8 - 12})`} />;
           })}
           {Array.from({length: 20}).map((_, i) => (
-            f > bagsAt(i) + 16 ? <rect key={`s${i}`} x={448 + (i % 10) * 16} y={1090 - Math.floor(i / 10) * 14} width={14} height={12} rx={3} fill={C.brassL} stroke={C.line} strokeWidth={2} /> : null
+            f > bagsAt(i) + 16 ? <rect key={`s${i}`} x={448 + (i % 10) * 16} y={1175 - Math.floor(i / 10) * 14} width={14} height={12} rx={3} fill={C.brassL} stroke={C.line} strokeWidth={2} /> : null
           ))}
         </Lot>
       </SVG>
@@ -670,21 +690,21 @@ const S7: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate displayLines={['PLURAL CEO', 'THE PITCH']} text="PLURAL CEO · THE PITCH" x={540} y={620} size={38} tone="glow" p={ease(f, b(21), 12) * (1 - ease(f, b(22) - 8, 8))} />
-        <Plate displayLines={['ONE OF THE LARGEST CAPITAL', 'NEEDS IN A GENERATION']} text="ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION" x={540} y={620} size={30} tone="dark" p={ease(f, b(22), 12) * (1 - ease(f, b(23) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
+        <Plate text="THE PITCH, NOT A PROJECT" x={540} y={620} size={38} tone="dark" p={ease(f, b(22), 12) * (1 - ease(f, b(23) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="THAT'S THE PITCH" x={540} y={620} size={46} tone="plate" p={ease(f, b(23), 12) * (1 - ease(f, b(24) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate displayLines={['SOURCES NAME', 'NO AI PROJECT']} text="SOURCES NAME NO AI PROJECT" x={540} y={620} size={40} tone="warn" p={ease(f, b(24), 12) * (1 - ease(f, b(25) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="AI IS THE PITCH" x={540} y={620} size={46} tone="glow" p={ease(f, b(25), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
-        <Lot f={f} b={b} act={6} state={3} lock={1} showSign={false} rb={0.4} fallen worry={ease(f, b(25), 10) * 0.5}>
+        <Lot f={f} b={b} act={6} state={3} lock={1} showSign={false} rb={0.4} worry={ease(f, b(25), 10) * 0.5}>
           {/* a billboard on the pipe with a speech balloon */}
-          <g transform={`translate(${300} ${1100 - 360 * (1 - ease(f, b(21), 16))})`}>
+          <g transform={`translate(${110} ${1190 - 360 * (1 - ease(f, b(21), 16))})`}>
             <path d="M -10,0 L 10,0 L 10,-110 L -10,-110 Z M 230,0 L 250,0 L 250,-110 L 230,-110 Z" fill={C.woodD} stroke={C.line} strokeWidth={4} />
             <rect x={-40} y={-300} width={320} height={200} rx={8} fill={C.paper} stroke={C.line} strokeWidth={6} />
             <path d={`M 40,-120 L 20,-90 L 80,-120 Z`} fill={C.paper} stroke={C.line} strokeWidth={5} />
             <g transform={`scale(${1 + 0.06 * ease(f, b(22), 10)} ${1 + 0.06 * ease(f, b(22), 10)})`}>
               {['ONE OF THE', 'LARGEST CAPITAL', 'NEEDS IN A', 'GENERATION'].map((l, i) => (
-                <text key={i} x={120} y={-252 + i * 38} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={27} fill={C.ink}>{l}</text>
+                <text key={i} x={120} y={-252 + i * 38} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={27} fill={C.ink} opacity={ease(f, b(21) + 22, 8)}>{l}</text>
               ))}
             </g>
           </g>
@@ -855,15 +875,15 @@ const S11: React.FC<SceneProps> = ({p}) => {
       </>}>
       <SVG>
         <Lot f={f} b={b} act={10} state={ f > b(37) ? 4 : 3 } lock={1} brow={ease(f, b(37), 14) * 0.5} worry={0.4} showSign={false} tag={false} fallen={f < b(37) + 4} rb={0.4 + 0.6 * easeIO(f, b(36) - 30, 50)} flurry={ease(f, b(36), 30)}>
-          <g transform={`translate(${290} ${900})`}>
-            <Calendar x={0} y={0} month="DECEMBER" ring={ease(f, b(36) + 8, 14)} ringAt={6} f={f} sway={-6 * rip + 4} scale={0.8} />
+          <g transform={`translate(${150} ${1010})`}>
+            <Calendar x={0} y={0} month="DECEMBER" ring={ease(f, b(36) + 8, 14)} ringAt={6} f={f} sway={-6 * rip + 4} scale={0.7} />
           </g>
-          <g transform={`translate(${470} ${1100 - 60 * (1 - ease(f, b(44), 12))})`} opacity={ease(f, b(44), 8)}>
+          <g transform={`translate(${300} ${1270 - 60 * (1 - ease(f, b(44), 12))})`} opacity={ease(f, b(44), 8)}>
             <rect x={-90} y={-24} width={180} height={48} rx={5} fill={C.brassL} stroke={C.line} strokeWidth={5} />
             <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.ink}>GOVERNOR</text>
           </g>
-          <Sign x={660} y={1040} w={300} h={170} lines={['WOULD SUPPORT', 'A PAUSE']} p={ease(f, b(37), 14)} f={f} />
-          <g opacity={ease(f, b(38), 10)} transform={`translate(${660} ${1060 + 6 * Math.sin(f / 10)})`}>
+          <Sign x={450} y={1130} w={280} h={150} lines={['WOULD SUPPORT', 'A PAUSE']} p={ease(f, b(37) + 10, 14)} f={f} />
+          <g opacity={ease(f, b(38), 10)} transform={`translate(${450} ${1160 + 6 * Math.sin(f / 10)})`}>
             <rect x={-90} y={-18} width={180} height={36} rx={4} fill={C.wood} stroke={C.line} strokeWidth={4} />
             <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.paper}>UNTIL RULES</text>
           </g>
@@ -891,7 +911,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Plate displayLines={['RULES FIRST,', 'OR MONEY FIRST?']} text="RULES FIRST, OR MONEY FIRST?" x={540} y={620} size={46} tone="warn" p={ease(f, b(42), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
-        <Lot f={f} b={b} act={11} state={ f > b(42) ? 5 : 4 } lock={1} brow={ease(f, b(41), 14) * 0.8} bead={1} showSign={f > b(41) + 22} suffix="(RULES?)" worry={0.2} rb={1} flurry={1} tag={false}>
+        <Lot f={f} b={b} act={11} state={ f > b(42) ? 5 : 4 } lock={1} brow={ease(f, b(41), 14) * 0.8} bead={1} showSign={false} suffix="(RULES?)" worry={0.2} rb={1} flurry={1} tag={false}>
           <Sign x={470} y={1100} w={220} h={110} lines={['DATA CENTERS', 'HERE']} p={ease(f, b(41) + 18, 10)} f={f} />
           <Sign x={700} y={1110} w={220} h={110} lines={['WOULD SUPPORT', 'A PAUSE']} p={ease(f, b(41) + 18, 10)} f={f} />
           {/* the padlock key drops at Drip's feet beside the pail */}
