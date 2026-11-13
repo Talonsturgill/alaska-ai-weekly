@@ -33,7 +33,7 @@
   {
    "id": "c3",
    "status": "verified-primary",
-   "spoken": "The state's development authority, AIDEA, owns a new company called Alaska Data Corp.",
+   "spoken": "AIDEA, the state's development authority, owns a company called Alaska Data Corp.",
    "on_screen": "ALASKA DATA CORP",
    "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
    "requires": [
@@ -173,7 +173,7 @@
   {
    "id": "c14",
    "status": "verified-primary",
-   "spoken": "Plural's chief executive called AI infrastructure one of the largest capital needs in a generation.",
+   "spoken": "Plural's chief executive calls the infrastructure behind AI one of the largest capital needs in a generation.",
    "on_screen": "\"ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION\"",
    "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
    "requires": [

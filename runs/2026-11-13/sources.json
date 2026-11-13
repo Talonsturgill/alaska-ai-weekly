@@ -1,0 +1,51 @@
+{
+ "run_date": "2026-11-13",
+ "title": "The Faucet Before the Water",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "State of Alaska launches InvestNorth, an online platform to finance infrastructure and open the door to citizen participation",
+   "outlet": "Plural and AIDEA joint release via PR Newswire, November 9th (issuer, primary)",
+   "url": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "claims": ["c1", "c2", "c3", "c6", "c9", "c10", "c13", "c14"],
+   "used_in_film": true,
+   "note": "Names the platform, AKDC as a wholly owned AIDEA subsidiary, Plural's AssetOS, the CEO's AI line, the governor's let's do it right line, and states no offering is being made and terms are not determined. Contains no dollar figure."
+  },
+  {
+   "id": "s2",
+   "title": "AIDEA Resolution G26-03, Tokenization Marketing Platform, signed January 21st, 2026",
+   "outlet": "Alaska Industrial Development and Export Authority board packet (primary)",
+   "url": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/012126/Signed_Resolution_G26-03_Tokenization_Marketing_Platform_01212026.pdf?ver=WYBOKpMsXILJo-1UHRyZaQ%3d%3d",
+   "claims": ["c5"],
+   "used_in_film": true,
+   "note": "Section 2 transfers $20,000,000 to the subsidiary as equity and working capital for operations and an inquiry. It is the subsidiary's capitalization, not the size of an InvestNorth fund."
+  },
+  {
+   "id": "s3",
+   "title": "Dunleavy pushes for data centers to come to Alaska as he prepares to leave office",
+   "outlet": "Anchorage Daily News, Iris Samuels, November 11th",
+   "url": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "claims": ["c11", "c12", "c17", "c19"],
+   "used_in_film": true,
+   "note": "Single source for the June 2025 first meeting, the at least seven meetings, the critic's view, and Kreiss-Tomkins saying he would support a moratorium until a comprehensive regulatory package. Attributed to the Daily News on screen."
+  },
+  {
+   "id": "s4",
+   "title": "Weeks before Alaska gets a new governor, its economic development arm goes on a spending spree",
+   "outlet": "Anchorage Press via KTOO, Max Graham, November 12th",
+   "url": "https://www.ktoo.org/2026/11/12/weeks-before-alaska-gets-a-new-governor-its-economic-development-arm-goes-on-a-spending-spree/",
+   "claims": ["c16", "c18"],
+   "used_in_film": true,
+   "note": "The December 7th change of governor and the board's at least one more meeting on December 4th."
+  },
+  {
+   "id": "s5",
+   "title": "Dunleavy announces two new initiatives to attract data center investment",
+   "outlet": "Must Read Alaska, November 10th",
+   "url": "https://mustreadalaska.com/dunleavy-announces-two-new-initiatives-to-attract-data-center-investment/",
+   "claims": ["c7", "c8", "c9", "c10"],
+   "used_in_film": true,
+   "note": "Tokenization as digital records of ownership, certain opportunities potentially reserved for Alaska residents, and no investment offering currently available. Its wording of the CEO quote differs from the release and is not used."
+  }
+ ]
+}

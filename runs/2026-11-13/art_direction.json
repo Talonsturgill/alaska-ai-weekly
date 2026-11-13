@@ -15,32 +15,48 @@
   "ground": "#6B6A5E wet gravel lot with puddle glints",
   "far": "#24402F spruce row and Chugach silhouettes",
   "hero": "#C9A24B brushed brass, spent ONLY on Drip and his pipe fittings",
-  "bucket": "#9AA3AB galvanized pail grey",
+  "bucket": "#7E868D darker galvanized pail, a squat dented trapezoid so the only round bright silhouette in frame is Drip",
   "rulebook": "#D8432F tomato red, spent ONLY on the Rulebook and circled calendar dates",
-  "paper": "#E8DFC8 notice paper with #1B2230 ink",
+  "paper": "#D9D0B8 notice paper with #2A2620 warm graphite type, pulled below the brass highlight so the lightest value in a Drip shot is the brass specular",
   "accent": "#5EEAD0 fluorescent mint ONLY on the AI slip, the pitch",
   "shadow": "#1A1C1A for cast shadows only",
   "mood": "flat honest November overcast over a gravel lot, brass and mint where the question lives",
   "why": "An Anchorage lot in November is gray gravel under cloud with spruce and mountains behind, so the world is honest. One gleaming brass object gives the eye a single place to follow.",
-  "divergence": "The last three films were raven dusk with lime (11-12), pink-gold ice fog with amber (11-11) and violet shore with vermilion (11-10). This is overcast pewter-sage gravel by day with brass, red and mint, no dusk, no lime, no pink-gold, no plum."
+  "divergence": "The last three films were raven dusk with lime (11-12), pink-gold ice fog with amber (11-11) and violet shore with vermilion (11-10). This is overcast pewter-sage gravel by day with brass, red and mint, no dusk, no lime, no pink-gold, no plum. Honest overlap: the Rulebook's tomato #D8432F is in the red family of 11-10 vermilion, 11-11 crimson and 11-12 stamp red. It is confined to one binder and the circled dates, and the film's one warm brass hero and mint slip carry the colour story. The ink moves to warm graphite #2A2620.",
+  "value_check": "L* approximately: gravel #6B6A5E 44, spruce #24402F 24, graphite #2A2620 17, pail #7E868D 55, sky #8FA39A 64, brass #C9A24B 68 with a specular #F2DE9A about 88 and a core shadow #6E5420 about 38, paper #D9D0B8 about 83. Drip and the pail are staged against the dark spruce row or the gravel from a raised eye line, never against open sky.",
+  "ground_state": "wet thawed gravel with puddle glints from the first frame, no frost. A first light flurry starts at the Rulebook's arrival (beat 36) and dusts the lot by the button, the only snow in the film."
  },
  "light": {
-  "time_of_day": "flat overcast day on the lot, paper-lit cutaways, one glowing mint slip, a hard cut to black",
-  "arc": "overcast day to cool paper cutaways to the same overcast, the sign gaining a suffix each act",
-  "direction": "soft top light from the cloud, brass lit by reflection of the sky, long soft shadows on gravel",
-  "depth_approach": "lib/stage3d planes, spruce row and Chugach ridges in parallax behind the lot, a long pipe receding in perspective, stacked paper planes for the Dry Hearing"
+  "time_of_day": "flat overcast day on the lot with the straw horizon band behind, paper-lit cutaways, one glowing mint slip, a hard cut to black",
+  "arc": "the cloud ceiling lowers and the straw band narrows each act, so the lot goes from open overcast (act 1) to grey flat (act 2) to a darker grey (act 3) and a first flurry in act 4, a clock you can see",
+  "direction": "soft top light from the cloud with soft contact shadows only, brass lit from the straw horizon band as a warm rim from camera-left so it stays gold",
+  "per_shot": {
+   "1": "open overcast, straw band wide, brass rim camera-left",
+   "2": "warm interior paper light from the high hall windows, a cool window onto the lot",
+   "3": "overcast, pump house and booth flat-lit, flag the only motion",
+   "4": "macro, brass rim on the clamp and Drip's neck",
+   "5": "cutaway lit by the counter lamp, warm work-lamp light, no mint",
+   "6": "low overcast, the stencil paint matte, padlock steel highlight",
+   "7": "billboard flat-lit, the mint slip the only emissive object",
+   "8": "overhead flat paper light on the ledger, soft ring shadows",
+   "9": "greying overcast, the straw band narrowing behind the lifting pipe",
+   "10": "boardroom, cool top window light, red ring the only saturated mark",
+   "11": "darker overcast, the first flurry lit by the straw band's last rim",
+   "12": "darkest overcast, brass specular on Drip, the speck catches the last straw rim before the hard cut"
+  },
+  "depth_approach": "lib/stage3d planes, spruce row and Chugach ridges in parallax behind the lot, a long pipe receding in perspective, stacked interior planes for the hall, coat check and boardroom"
  },
  "shape_language": "PRIMARY axis: Drip's round eyes and curved neck against the long straight horizontal of the pipe to the horizon. SECONDARY: rectilinear paper, calendar pages and signs. WHY: a curved hopeful face at the end of a hard straight line is the image of a faucet before the water.",
  "casting": {
-  "hero": "DRIP, a brass yard spigot with a face (local component in the episode file, handle brow, neck eyes), the declared hero and throughline, five states",
-  "throughline": "Drip: brand new and dry, plumbed in, tagged, cap off with the AI slip, polished and dry with the padlock key at his feet",
+  "hero": "DRIP, a brass yard spigot with a face (local component in the episode file, handle brow, neck eyes), the declared hero and throughline, five states staged where he is on screen",
+  "throughline": "Drip: bare and dry over an empty pail, plumbed in with a second cough, padlocked and tagged with brass dulled, handle quarter turned toward the arriving Rulebook, polished and still dry with the key at his feet",
   "supporting": [
-   "BUCKET, a dented galvanized pail with a tired kind face, reaction shots, never a person or a named group",
-   "THE RULEBOOK, a three-ring binder with one eye, always arriving last",
-   "tear-off calendar",
-   "COMING SOON sign"
+   "BUCKET, a squat dented trapezoid pail with a tired kind face, the would-be Alaskan investor waiting under the dry spout from shot 1 to shot 12, never a person or a named group",
+   "THE RULEBOOK, a tomato-red three-ring binder with one eye, a tiny speck walking toward Drip from the spruce row in shot 1 and arriving out of breath at 101s",
+   "MARGE, an ordinary coat check clerk in a parka (local figure in the episode file, no likeness of anyone real), her ledger blank until the ticket",
+   "local props in the episode file, none from the shelf: pump house with AIDEA flag, booth with funnel, twenty bags, gauge, cable car clamp, billboard and speech balloon, magnifying glass and mint slip, ledger, masthead, two cup nameplates, seven coffee rings, Lower 48 outline and crate, boardroom table and chairs, wall calendar, roadside signs, plank tag, padlock and key, dust speck"
   ],
-  "net_new": "none from the shelf, Drip, Bucket and Rulebook are local components in the episode file"
+  "net_new": "none from the shelf, every named prop is local to Ep1113.tsx. dedupe.py check --hero Drip returned FRESH"
  },
  "claim_map": {
   "NOV 9 INVESTNORTH": "c1",
@@ -60,7 +76,10 @@
   "NEW GOVERNOR DEC 7": "c16",
   "WOULD SUPPORT A PAUSE": "c17",
   "AIDEA BOARD DEC 4": "c18",
-  "CRITIC: LOWER 48 CORPORATIONS": "c19"
+  "CRITIC: LOWER 48 CORPORATIONS": "c19",
+  "WAITING ON THE FIRST DROP": "narration",
+  "NONE NAMED IN SOURCES REVIEWED HERE": "c15",
+  "CRITIC: HUNDREDS OF MILLIONS": "c19"
  },
  "motion_language": "Drip leans toward whoever walks up, coughs dust, and his handle lifts like a brow. Signs swing on springs. Calendar pages tear with anticipation and fall. Bags thump with squash. The whole frame jolts only on the three board kicks.",
  "composition": {
@@ -68,12 +87,13 @@
   "info_placement": "plates live on objects (signs, tags, calendar pages, the critic card), lower third on a minority of beats",
   "negative_space": "the long empty lot and the black after the hard cut",
   "safe_area": "hero and plates within y 420 to 1500 of the 9:16 master",
-  "signature_shot": "the pipe pulled back to the horizon with Drip tiny at the end, a dry hiss and one dust speck, then the camera lands on the padlock key at his feet"
+  "signature_shot": "shot 12 as one move: macro on the padlock key at Drip's feet, then a low pull back along the pipe until Drip is small at its end against the spruce row, the pail empty under his lip, the speck hanging and a hard cut to black, rhyming with the shot 1 pipe reveal"
  },
  "practicals": {
-  "brass": "#C9A24B lit by reflection only",
+  "brass": "#C9A24B lit by the straw band's warm rim",
   "ai_slip": "#5EEAD0 mint glow, the only emissive object",
-  "calendar_red": "#D8432F on circled dates only"
+  "stencil": "the word MAY is stenciled matte paint on the dog-door window, not a lit sign",
+  "calendar_red": "#D8432F on circled dates and the Rulebook only"
  },
  "craft_advance": "none, the shelf covers this film"
 }
