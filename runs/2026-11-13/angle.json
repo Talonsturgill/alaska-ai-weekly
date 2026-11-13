@@ -1,0 +1,25 @@
+{
+ "thesis": "Alaska built the money pipe before there was anything to pour through it, and the live question isn't build versus pause, it's order: do the rules come first, or the money?",
+ "supporting_facts": [
+  "AIDEA owns Alaska Data Corp and its board voted it $20 million, yet no offering is open and terms aren't decided (c3, c5, c9, c10).",
+  "By our read of the sources reviewed, none names an AI project or customer. AI is the pitch, from Plural's CEO (c14, c15).",
+  "Dunleavy says do it right (c13). Kreiss-Tomkins would support a pause until comprehensive rules (c16, c17). Both are arguing about rules."
+ ],
+ "counterpoint_to_honor": "The Daily News counts at least seven meetings with Plural's CEO, the board meets again December 4th, and critic Aubrey Wieber calls it public money moving to Lower 48 corporations (c12, c18, c19). That gets its own scene at full strength. The reply is that nothing locked exists yet, and the residents-only option (c8, may) is the real Alaska-first upside, if it is written down.",
+ "falsifier": "False if, before December 7th, an offering opens, terms are set, or an AI project or customer is named, or if the December 4th board adds money (c9, c10, c15, c18).",
+ "runner_ups": [
+  "Ownership plumbing outlasts the handover (contrarian): folded in as the Alaska-first upside, not the thesis.",
+  "Enthusiast conditional win: folded into the turn.",
+  "Dunleavy versus Kreiss-Tomkins build versus pause: rejected as the binary all three analysts say misses the story."
+ ],
+ "stance": "mixed",
+ "guardrails": [
+  "would support, never pledged (c17)",
+  "at least one more meeting on December 4th, never final (c18)",
+  "may on residents-only (c8)",
+  "c15 is our read of the sources reviewed",
+  "attribute c11, c12, c19 to the Daily News, c19 as the critic's view",
+  "no Brefczynski quote, no crypto price or yield claims, no AI project claim",
+  "the three analysts converged, so the cross-challenge was the guardrail pass"
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Alaska just built a faucet for infrastructure money, pitched at data centers, and nothing is coming out yet.",
+   "claims": [
+    "c9"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "On November ninth, the governor announced InvestNorth, a state sponsored platform to finance infrastructure, pitched at data centers.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "It runs through Alaska Data Corp, owned by the state's development authority, AIDEA.",
+   "claims": [
+    "c3"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "In January, AIDEA's board voted that company twenty million dollars.",
+   "claims": [
+    "c5"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "The platform was built with a San Francisco company called Plural.",
+   "claims": [
+    "c6"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "It will use tokenization, a digital record of who owns a stake, like a coat check ticket.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "Some deals may be reserved for Alaska residents. May.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "But nothing is open to investors, and the terms haven't been decided.",
+   "claims": [
+    "c9",
+    "c10"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "Plural's chief executive calls AI infrastructure one of the largest capital needs in a generation.",
+   "claims": [
+    "c14"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "That's the pitch. Not one of the sources reviewed here names an AI project.",
+   "claims": [
+    "c15"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "The Daily News says the governor first met Plural's chief executive in June 2025, and counts at least seven meetings in all.",
+   "claims": [
+    "c11",
+    "c12"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "A critic calls it using AIDEA to move hundreds of millions of public dollars to Lower forty eight corporations.",
+   "claims": [
+    "c19"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "AIDEA's board has at least one more meeting, on December fourth.",
+   "claims": [
+    "c18"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "If there is an opportunity for data centers here, the outgoing governor said, let's do it right.",
+   "claims": [
+    "c13"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "On December seventh, Jonathan Kreiss-Tomkins becomes governor, and he would support a pause on data center construction until the state adopts rules.",
+   "claims": [
+    "c16",
+    "c17"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "So the fight isn't build versus pause. It's order. Rules first, or money first?",
+   "claims": []
+  }
+ ],
+ "caption_fixups": {
+  "nine oh seven": "907",
+  "forty eight": "48",
+  "November ninth": "November 9th",
+  "December fourth": "December 4th",
+  "December seventh": "December 7th",
+  "twenty million": "$20 million",
+  "twenty million dollars": "$20 million"
+ },
+ "caption_quotes": []
+}

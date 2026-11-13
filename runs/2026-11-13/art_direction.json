@@ -1,0 +1,73 @@
+{
+ "run_date": "2026-11-13",
+ "story_id": "investnorth-alaska-data-corp",
+ "treatment": {
+  "winner": "THE FAUCET BEFORE THE WATER (comedian base)",
+  "grafts": [
+   "dramatist: a tear-off calendar as the pressure clock, Dec 4 and Dec 7 the only circled pages, and the dog-door residents-only tag (MAY)",
+   "enthusiast: the residents-only option drawn as the one Alaska-first upside, valuable only if written down",
+   "explainer: tokenization drawn as a coat-check clerk (Marge) whose ticket is the record of who owns a stake, no coin or chart imagery, and the $20 million drawn as twenty fixed bags never scaled against anything or called idle"
+  ],
+  "judge_reasoning": "Two of three returned pitches independently reached a faucet or spigot before the water, because the angle is about order, not a verdict. A personified fixture with a want and nothing to pour is a neutral hero that implies no AI project the sources never name. The calendar gives the film a clock the viewer can check. The Test keeps the critic's card held unjoked. Showrunner synthesis, the scorer step was skipped because the pitches converged."
+ },
+ "palette": {
+  "sky": "#14263F blue-hour dome lifting to #3A5A70 ink-teal at the horizon",
+  "ground": "#DCE6EE wind-packed snow with #8FA6BA shadow planes",
+  "hero": "#C9A24B brushed brass, spent ONLY on Drip and his pipe fittings",
+  "bucket": "#9AA3AB galvanized pail grey",
+  "rulebook": "#D8432F tomato red, spent ONLY on the Rulebook and circled calendar dates",
+  "paper": "#E8DFC8 notice paper with #1B2230 ink",
+  "accent": "#5EEAD0 fluorescent mint ONLY on the AI slip, the pitch",
+  "shadow": "#0A1620 for cast shadows only",
+  "mood": "cold clear blue hour over a frozen lot, brass and mint where the question lives",
+  "why": "A blue-hour lot is honest for November, one gleaming brass object gives the eye a single place to follow, and mint is held for the one word the sources only use as a pitch.",
+  "divergence": "Honest record: blue dusk is in the family of 11-12 and 11-11. The departure is brass plus mint on a frozen lot with a tomato-red rulebook, no lime, no pink-gold, no plum. The world is a roadside lot with a pipe running to the horizon, not a tundra stake or a rooftop."
+ },
+ "light": {
+  "time_of_day": "blue hour throughout the lot, flat paper light for cutaways, one glowing mint slip, a hard cut to black at the button",
+  "arc": "dusk blue to cool paper cutaways to the same dusk, the sign at the lot gaining a new suffix each act",
+  "direction": "horizon glow from camera-left, brass lit by reflection only",
+  "depth_approach": "lib/stage3d planes, three snow ridges parallax behind the lot, a long pipe receding in perspective, stacked paper planes for the Dry Hearing"
+ },
+ "shape_language": "PRIMARY axis: Drip's round eyes and curved neck against the long straight horizontal of the pipe to the horizon. SECONDARY: rectilinear paper, calendar pages and signs. WHY: a curved hopeful face at the end of a hard straight line is the image of a faucet before the water.",
+ "casting": {
+  "hero": "DRIP, a brass yard spigot with a face (local component in the episode file, handle brow, neck eyes), the declared hero and throughline, five states",
+  "throughline": "Drip: brand new and dry, plumbed in, tagged, cap off with the AI slip, polished and dry with the padlock key at his feet",
+  "supporting": ["BUCKET, a dented galvanized pail with a tired kind face, reaction shots, never a person or a named group", "THE RULEBOOK, a three-ring binder with one eye, always arriving last", "tear-off calendar", "COMING SOON sign"],
+  "net_new": "none from the shelf, Drip, Bucket and Rulebook are local components in the episode file"
+ },
+ "claim_map": {
+  "NOV 9 INVESTNORTH": "c1",
+  "STATE-SPONSORED FINANCING PLATFORM": "c2",
+  "ALASKA DATA CORP": "c3",
+  "$20 MILLION IN JANUARY": "c5",
+  "BUILT WITH PLURAL": "c6",
+  "TOKENIZED OWNERSHIP": "c7",
+  "SOME DEALS MAY BE ALASKANS ONLY": "c8",
+  "NO OFFERINGS YET": "c9",
+  "TERMS NOT DECIDED": "c10",
+  "FIRST MET JUNE 2025": "c11",
+  "AT LEAST 7 MEETINGS": "c12",
+  "LET'S DO IT RIGHT": "c13",
+  "ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION": "c14",
+  "NO AI PROJECT NAMED": "c15",
+  "NEW GOVERNOR DEC 7": "c16",
+  "WOULD SUPPORT A PAUSE": "c17",
+  "AIDEA BOARD DEC 4": "c18",
+  "CRITIC: LOWER 48 CORPORATIONS": "c19"
+ },
+ "motion_language": "Drip leans toward whoever walks up, coughs dust, and his handle lifts like a brow. Signs swing on springs. Calendar pages tear with anticipation and fall. Bags thump with squash. The whole frame jolts only on the three board kicks.",
+ "composition": {
+  "focal_hierarchy": "each shot names one 55 to 70 percent hero, a 20 to 30 percent support and 10 to 15 percent world",
+  "info_placement": "plates live on objects (signs, tags, calendar pages, the critic card), lower third on a minority of beats",
+  "negative_space": "the long empty lot and the black after the hard cut",
+  "safe_area": "hero and plates within y 420 to 1500 of the 9:16 master",
+  "signature_shot": "the pipe pulled back to the horizon with Drip tiny at the end, a dry hiss and one dust speck, then the camera lands on the padlock key at his feet"
+ },
+ "practicals": {
+  "brass": "#C9A24B lit by reflection only",
+  "ai_slip": "#5EEAD0 mint glow, the only emissive object",
+  "calendar_red": "#D8432F on circled dates only"
+ },
+ "craft_advance": "none, the shelf covers this film"
+}
