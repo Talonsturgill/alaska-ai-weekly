@@ -1,0 +1,43 @@
+{
+ "weighted_total": 8.39,
+ "ship": false,
+ "hard_fails": [],
+ "criteria": [
+  {
+   "name": "Hook / scroll-stop",
+   "score": 8.3,
+   "weight": 0.2
+  },
+  {
+   "name": "Point of view / take",
+   "score": 8.5,
+   "weight": 0.18
+  },
+  {
+   "name": "Substance & specificity",
+   "score": 8.6,
+   "weight": 0.16
+  },
+  {
+   "name": "Readability & restraint",
+   "score": 8.2,
+   "weight": 0.12
+  },
+  {
+   "name": "Engagement design (CTA + comment-bait)",
+   "score": 8.4,
+   "weight": 0.12
+  },
+  {
+   "name": "Brand voice & accuracy",
+   "score": 8.4,
+   "weight": 0.12
+  },
+  {
+   "name": "Hashtag craft",
+   "score": 8.2,
+   "weight": 0.1
+  }
+ ],
+ "note": "round 5 of 5, shipped below the bar with zero hard fails (rounds 8.11, 8.14, 8.32, 8.35, 8.39)"
+}

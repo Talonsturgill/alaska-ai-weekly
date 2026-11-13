@@ -4029,3 +4029,6 @@ Shipped: NuSun shipping tag with four blank lines (size, site, price, date) on A
 ## 2026-11-12 weekly machine pass
 - Shipped: template_slot_check in Gate 0A, sfx_names board_report in Gate 0A, vo_plan_sync, vo_synth_gemini --help and --dry-run, tracked pycache removed. Verified by running every listed self-test and gate, storyboard_check on the shipped board and runbook_check, all exit 0.
 - Escalated: the Gate 0B to 0D critic round cap (panel protocol). mix-distinct-kinds-unreachable queued with a concrete next step. Not worked this pass, still queued: raven and held figure idle, empty top third, Composition hero scale.
+
+## 2026-11-13 The Faucet Before the Water (InvestNorth and Alaska Data Corp)
+Shipped: panel median 7.01 (6.946, 7.01, 7.01) at the 7.0 bar after four rounds, no hard blockers. Caption 8.39 after the five-round cap (below the 8.5 bar, zero hard fails). In-run fixes: palette world changed after Gate 0A (blue dusk repeated), board restaged after two Gate 0 critic rounds (journey down the pipe, Drip on screen across states), VO re-synthesized after Gate 0F attribution findings (Dunleavy named, the single-note critic name removed), full-frame HeldTravel, varied floors, taller mountains. Queued for the machine pass: 7 items (repeat offenders gate0-critic-rounds, label-footprint-vs-plates-in-macro-shots, caption-scorer-hair-under-bar).

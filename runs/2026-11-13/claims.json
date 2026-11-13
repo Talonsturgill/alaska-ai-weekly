@@ -1,0 +1,258 @@
+{
+ "run_date": "2026-11-13",
+ "fact_check_verdict": "Publish as a state financing announcement pitched as AI-era infrastructure. No source says AKDC or InvestNorth will host, build or finance a specific AI project or customer. AI appears only as the pitch (MRA wording and Plural CEO quote). Say 'would support' for Kreiss-Tomkins, never 'pledged'. Say 'at least one more meeting' on December 4th, never 'final'. Do not put the Brefczynski quote on screen, the sources word it differently. Single-source items carry an ADN attribution. CORRECTIONS from validator B: the $20M dates to AIDEA resolution G26-03 of January 21st (capitalization of the subsidiary for operations and an inquiry, not an InvestNorth fund). 'Formed in March' is cut because the January resolution says the subsidiary already existed. Use the PR Newswire wording of the Silver quote. Jan 21 minutes show a deputy director naming data centers and AI as the opportunity, so AI is the backers' framing, and no source names an AI project or customer.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "On November 9th, Governor Dunleavy announced InvestNorth.",
+   "on_screen": "NOV 9 INVESTNORTH",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "requires": [
+    "MRA: announced November 9, 2026. Crypto Briefing dated Nov 9. ADN: the Monday announcement."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-secondary",
+   "spoken": "InvestNorth is a state-sponsored platform to finance infrastructure, pitched at data centers.",
+   "on_screen": "STATE-SPONSORED FINANCING PLATFORM",
+   "source": "https://cryptobriefing.com/alaska-tokenized-infrastructure-deals/",
+   "requires": [
+    "Crypto Briefing: a state-sponsored infrastructure financing platform."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "AIDEA, the state's development authority, owns a company called Alaska Data Corp.",
+   "on_screen": "ALASKA DATA CORP",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "requires": [
+    "ADN: AIDEA is the sole owner of Alaska Data Corp. LLC."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "In January, AIDEA's board voted twenty million dollars into it.",
+   "on_screen": "$20 MILLION IN JANUARY",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/012126/Signed_Resolution_G26-03_Tokenization_Marketing_Platform_01212026.pdf?ver=WYBOKpMsXILJo-1UHRyZaQ%3d%3d",
+   "requires": [
+    "Signed AIDEA Resolution G26-03, January 21, 2026, Section 2: transfer of $20,000,000 to ADC LLC as equity and working capital. Capitalization for operations and the inquiry, NOT the size of an InvestNorth fund. Not in the Nov 9 release."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "The platform was built with a San Francisco company called Plural.",
+   "on_screen": "BUILT WITH PLURAL",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "requires": [
+    "MRA: operates on the company's AssetOS platform. KTOO: San Francisco-based."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-secondary",
+   "spoken": "It will use tokenization, which records who owns a stake as a digital record.",
+   "on_screen": "TOKENIZED OWNERSHIP",
+   "source": "https://cryptobriefing.com/alaska-tokenized-infrastructure-deals/",
+   "requires": [
+    "Crypto Briefing and MRA: tokenization digitizes ownership interests."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-secondary",
+   "spoken": "Some deals may be reserved for Alaska residents.",
+   "on_screen": "SOME DEALS MAY BE ALASKANS ONLY",
+   "source": "https://mustreadalaska.com/dunleavy-announces-two-new-initiatives-to-attract-data-center-investment/",
+   "requires": [
+    "MRA: potentially reserved exclusively for Alaska residents. Keep the hedge may."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "Right now, nothing is open to investors.",
+   "on_screen": "NO OFFERINGS YET",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "requires": [
+    "MRA: No investment offering is currently available. KTOO: lists no offerings yet."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "The structure, timing and terms of any future offering haven't been decided.",
+   "on_screen": "TERMS NOT DECIDED",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "requires": [
+    "MRA: structure, timing and terms of any future offerings have not been determined."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-secondary",
+   "spoken": "The governor first met Plural's chief executive in June 2025.",
+   "on_screen": "FIRST MET JUNE 2025",
+   "source": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "requires": [
+    "ADN only: first met Silver in San Francisco in June 2025. Attribute to the Daily News."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-secondary",
+   "spoken": "The Daily News counts at least seven meetings in all.",
+   "on_screen": "AT LEAST 7 MEETINGS",
+   "source": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "requires": [
+    "ADN only: at least seven times, including four in Washington, D.C."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "Dunleavy said, if there is an opportunity for data centers here, let's do it right.",
+   "on_screen": "\"LET'S DO IT RIGHT\"",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "requires": [
+    "ADN and MRA verbatim: If there is an opportunity for data centers here in Alaska, let's do it right."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "Plural's chief executive calls the infrastructure behind AI one of the largest capital needs in a generation.",
+   "on_screen": "\"ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION\"",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "requires": [
+    "PR Newswire Nov 9 release, attributed to Adam Silver: The infrastructure behind AI is one of the largest capital needs in a generation. MRA's different wording must NOT be used. This is the pitch, not a project."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-secondary",
+   "spoken": "Not one of the sources reviewed here names an AI project.",
+   "on_screen": "NO AI PROJECT NAMED",
+   "source": "https://akdc.com/",
+   "requires": [
+    "Fact-check finding: akdc.com says energy-efficient digital infrastructure and never mentions AI. ADN and KTOO never mention AI. Frame as our read of the sources reviewed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-secondary",
+   "spoken": "Jonathan Kreiss-Tomkins is set to become governor on December 7th.",
+   "on_screen": "NEW GOVERNOR DEC 7",
+   "source": "https://www.ktoo.org/2026/11/12/weeks-before-alaska-gets-a-new-governor-its-economic-development-arm-goes-on-a-spending-spree/",
+   "requires": [
+    "KTOO: Dec. 7, when Democrat Jonathan Kreiss-Tomkins is set to become Alaska's next governor."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-secondary",
+   "spoken": "He says he would support a pause on data center construction until the state adopts comprehensive rules.",
+   "on_screen": "WOULD SUPPORT A PAUSE",
+   "source": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "requires": [
+    "ADN: said he would support a moratorium on data center construction in Alaska until the state adopts a comprehensive regulatory package. Never say pledged."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-secondary",
+   "spoken": "AIDEA's board has at least one more meeting before then, on December 4th.",
+   "on_screen": "AIDEA BOARD DEC 4",
+   "source": "https://www.ktoo.org/2026/11/12/weeks-before-alaska-gets-a-new-governor-its-economic-development-arm-goes-on-a-spending-spree/",
+   "requires": [
+    "KTOO: at least one more meeting, on Dec. 4, before a new governor takes office. Never say final."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-secondary",
+   "spoken": "An advocacy group founder quoted by the Daily News calls the push using AIDEA to move hundreds of millions of public dollars to Lower 48 corporations.",
+   "on_screen": "CRITIC: LOWER 48 CORPORATIONS",
+   "source": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "requires": [
+    "ADN only, an opinion from an advocacy-group founder. Attribute as the critic's view."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

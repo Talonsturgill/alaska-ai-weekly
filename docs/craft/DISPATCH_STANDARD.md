@@ -701,3 +701,13 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - Macro zooms crop the world: keep the hero object fully in or fully out of frame, and keep the lone figure above master y 1336 under the push.
 - Plates in the top band collide with the ILLUSTRATION chip and the top labels of any card in the zoom; place card labels low on the card or plates clear of y 440 to 550 before authoring.
 - A lone figure needs a visible idle (breath, head turn, weight shift) on every held beat, three judges named it on every card.
+
+## 2026-11-13 additions (knowable in advance, from the Ep1113 panel and source gates)
+- A HeldTravel box with a hard edge reads as a pale rectangle across the art in every frame (three judges named the seam). Give it the whole frame, x -60 y -100 w 1200 h 2120, so its edges sit off screen, and use mode "sweep" on mid-tone ground.
+- Paint the sky from above the top edge of the frame (y -60) so no flat strip shows above the gradient, and keep clouds out of the box x under 280, y 400 to 530 where the ILLUSTRATION chip sits.
+- The floor is varied per shot (gravel, boardwalk planks, grass by act), because one repeated stone strip under every outdoor shot was named in every round as dead space.
+- Mountains and big background shapes go high enough to fill the top third, a flat empty sky was named on all three cards.
+- A named person on camera needs two sources or the ADN page text in the claim's `requires`. 11-13 nearly put an unconfirmed name in the VO and the editor caught it at Gate 0F. Use the role (an advocacy group founder) until the name is read from the page.
+- A palette string shares tokens with the last two boards (alone, only, red, fluorescent, ink, paper, pale) and fails Gate 0A as a repeat. Write the colour world in words the last two boards didn't use.
+- Plates are placed at world y so that at the shot's zoom they land under screen y 690. Calendars, signs and billboards in the same world band collide with the plate stack at y 620 and fail label_footprint.
+- A sign, banner or billboard never sits in front of Drip's or Bucket's face, and one object carries a given sentence (the billboard OR the plate OR the caption, not three).

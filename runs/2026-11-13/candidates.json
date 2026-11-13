@@ -1,0 +1,17 @@
+{
+  "locked_story": {
+    "headline": "Weeks before leaving office, Dunleavy launches InvestNorth and Alaska Data Corp (AIDEA subsidiary, Plural platform) to let Alaskans buy tokenized stakes in data centers that do not exist yet",
+    "found_at_rung": "in_window_sweep"
+  },
+  "rungs": [
+    {"rung": "in_window_sweep", "attempted": true, "candidates_found": 8},
+    {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 4}
+  ],
+  "candidates": [
+    {"title": "InvestNorth and Alaska Data Corp tokenized data center platform (ADN 11-11, Anchorage Press via KTOO 11-12, Must Read Alaska 11-10, CryptoBriefing 11-09)", "verdict": "LOCKED"},
+    {"title": "Senate race AI-employee donations", "verdict": "politics, single fetched copy"},
+    {"title": "AIDEA GeoAlaska Mount Augustine geothermal $10M", "verdict": "no AI angle"},
+    {"title": "Alaska Guard Mongolia UAS training", "verdict": "out of window, no AI"},
+    {"title": "UA $86.2M grants restored", "verdict": "no AI"}
+  ]
+}
