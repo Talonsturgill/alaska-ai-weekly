@@ -1,15 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-11-12",
+    "date": "2026-11-13",
     "shipped": [
-      "template_slot_check, Gate 0A fails a storyboard that repeats a recent film's shot grammar slot by slot (the 11-12 v1 relabel Gate 0B caught)",
-      "sfx_names board_report, Gate 0A checks every beat's sound against the mix's name table and variety limits before the render, and 51 mis-mapped bank names now map to themselves",
-      "vo_plan_sync, a script edit now carries into the voice plan and prompt while keeping each line's delivery tags",
-      "vo_synth_gemini --help and --dry-run, an unknown flag no longer starts a paid synth",
-      "tracked __pycache__ files removed from git"
+      "credits source lines sized for a phone: build_scenes writes srcMax/musicMax into the credits data, EndCredits and credits_check read them",
+      "the 9:16 upload names dispatch_master_hosted.mp4: upload_video's 99 MB refusal names the hosted twin, the encoder prints the upload list, runbook step 2 names it",
+      "ship_gate record --judges rejects seat names with a usage error and says it takes three numeric totals",
+      "label_footprint prints the label's and the cover's on-screen boxes, and make_cut --source-only honours LABEL_SHOTS",
+      "caption_rounds verify, an advisory preflight row: the final caption card must be a round the ledger recorded"
     ],
     "escalated": [
-      "gate0-critic-rounds cap (panel protocol, owner decision): may a Gate 0 critic's third ship:false be declined with a recorded proportion note"
+      "caption-scorer-hair-under-bar (second time, owner decision): whether the 8.5 caption bar stays for fact-bound captions",
+      "gate0-critic-rounds cap (second time, panel protocol, owner decision): may a Gate 0 critic be capped at one round plus the panel"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

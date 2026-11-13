@@ -63,7 +63,7 @@ function measureLabels() {
     const mine = own(t);
     const cols = Math.max(4, Math.min(48, Math.round(r.width / 7)));
     let onText = 0, covered = 0, left = 0, right = 0;
-    const by = new Map();
+    const by = new Map(), byBox = new Map();
     for (const fy of [0.48, 0.72]) {
       for (let i = 0; i < cols; i++) {
         const x = r.left + (i + 0.5) * r.width / cols, y = r.top + fy * r.height;
@@ -86,6 +86,7 @@ function measureLabels() {
           if (i < cols / 2) left++; else right++;
           const d = describe(e);
           by.set(d, (by.get(d) || 0) + 1);
+          if (!byBox.has(d)) byBox.set(d, [Math.round(er.left), Math.round(er.top), Math.round(er.right), Math.round(er.bottom)]);
           break;
         }
       }
@@ -94,7 +95,7 @@ function measureLabels() {
     if (!cut && frac === 0) { out.push({id: idOf(t), text, frac: 0, cut: false, onText}); continue; }
     const top = [...by.entries()].sort((a, b) => b[1] - a[1])[0];
     out.push({id: idOf(t), text, frac, cut, onText, side: left >= right ? 'left' : 'right',
-      by: top ? top[0] : null, box: [Math.round(r.left), Math.round(r.top), Math.round(r.right), Math.round(r.bottom)]});
+      by: top ? top[0] : null, byBox: top ? byBox.get(top[0]) : null, box: [Math.round(r.left), Math.round(r.top), Math.round(r.right), Math.round(r.bottom)]});
   }
   return out;
 }

@@ -118,12 +118,15 @@ def credit_rows(cred):
     raw = cred['music'].upper()
     split = raw.rfind(', LICENSED')
     music = [raw[:split], raw[split + 2:]] if split > 0 else [raw]
-    source_size = min(fit_size(s, MAXW, 22, track=.8) for s in sources)
-    music_size = min(fit_size(s, MAXW, 32, track=.6) for s in music)
+    # the ceilings EndCredits uses: the data's own (build_scenes writes them from 2026-11-13),
+    # else the historical 22 / 32
+    source_size = min(fit_size(s, MAXW, float(cred.get('srcMax') or 22), track=.8) for s in sources)
+    music_size = min(fit_size(s, MAXW, float(cred.get('musicMax') or 32), track=.6) for s in music)
+    gap = 22 + source_size          # EndCredits srcGap: 44 at the historical 22px
     return ([{'text': site, 'y': 740, 'size': fit_size(site, MAXW, 40, track=1.4), 'track': 1.4}]
-            + [{'text': s, 'y': 914 + i * source_size * 1.9, 'size': source_size, 'track': .8}
+            + [{'text': s, 'y': 870 + gap + i * source_size * 1.9, 'size': source_size, 'track': .8}
                for i, s in enumerate(sources)]
-            + [{'text': s, 'y': 966 + len(sources) * source_size * 1.9 + i * music_size * 1.5,
+            + [{'text': s, 'y': 870 + gap + 52 + len(sources) * source_size * 1.9 + i * music_size * 1.5,
                 'size': music_size, 'track': .6} for i, s in enumerate(music)])
 
 

@@ -1196,7 +1196,9 @@ Each round: save the scorer's JSON card, run `python3 scripts/caption_rounds.py 
 and rewrite for the ONE target it names (largest weighted shortfall, held until it stalls twice),
 handing the next scorer the previous scores and diff it prints. At the rubric's
 `max_revision_cycles` with zero hard fails it prints STOP and the best round: ship that text and put
-its card in the email as below the bar. A hard fail is never capped.
+its card in the email as below the bar. A hard fail is never capped. Before archiving the final
+card, `python3 scripts/caption_rounds.py verify` exits 0 (the card is a recorded round; preflight
+runs it too, advisory).
 dispatch_email.py also lints the exact string it embeds and exits 2 rather than build a draft that
 breaks a house rule.
 
@@ -1220,7 +1222,8 @@ breaks a house rule.
    96k) and the poster thumb, all H.264 High, faststart, AAC 48k, -14 LUFS, each < 100 MB, with the
    ffprobe asserts (1080x1920, 1080x1080, 720x1280; thumb < 100 KB). Never a 1080x1350 "feed" cut.
 2. Upload the two full cuts, the poster (frame 0), the 720p rendition and the poster thumb via
-   upload_video.py and verify HTTP 200 permanent links for ALL of them. MEDIA NAMES ARE
+   upload_video.py (the 9:16 cut to host is `dispatch_master_hosted.mp4`, the full-resolution
+   cut the encoder fitted under the host limit; the raw master can exceed GitHub's 99 MB) and verify HTTP 200 permanent links for ALL of them. MEDIA NAMES ARE
    DETERMINISTIC: `dispatch-<date>-<basename>`, so a re-upload overwrites the same path and the URL
    never changes. Never "fix" a bad entry with a new name or id; reuse them and overwrite.
 2b. PUBLISH TO THE SITE FEED: `python3 scripts/publish_feed.py --id <run-slug> --date <date> --title

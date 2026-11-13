@@ -24,6 +24,7 @@ config/linkedin_caption_rubric.yaml and never written.
     python3 scripts/caption_rounds.py record --card out/dispatch/caption_card.json   # after each scorer card
     python3 scripts/caption_rounds.py status       # the target, the diff for the next scorer, STOP or GO
     python3 scripts/caption_rounds.py brief        # BEFORE the first draft: Hook pattern + lowest criteria
+    python3 scripts/caption_rounds.py verify       # the final card is a recorded round (preflight, advisory)
     python3 scripts/caption_rounds.py --self-test
 
 Exit codes: 0 = SHIP (passed) or STOP (cap reached, ship the named best round), 3 = GO (rewrite
@@ -169,6 +170,38 @@ def status(ledger=LEDGER, rubric=RUBRIC, post=POST):
     return code
 
 
+CARD = os.path.join(REPO, "out", "dispatch", "caption_score.json")
+
+
+def verify(card_path=CARD, ledger=LEDGER, rubric=RUBRIC):
+    """THE FINAL CARD MUST BE A ROUND THE LEDGER SAW (machine pass 2026-11-13; queue:
+    caption-scorer-hair-under-bar, repeat 5). 11-11 and 11-13 each shipped a card reading "round 5
+    of 5, below the bar" while caption_rounds.json held none and one round respectively, so the
+    one-target rule never ran and the per-round cards a root cause needs were gone both times.
+    (0, msg) when the final card's scores are a recorded round, and a below-bar card sits on a
+    ledger that reached the rubric's cap; (1, msg) naming what is missing otherwise."""
+    thr, cap, weights = rubric_numbers(rubric)
+    if not os.path.exists(card_path):
+        return 0, f"no final caption card at {card_path} yet; nothing to verify"
+    card = json.load(open(card_path))
+    scores = card_scores(card, weights)
+    tot = total(scores, weights)
+    rounds = load(ledger)["rounds"]
+    seen = [i + 1 for i, r in enumerate(rounds)
+            if all(abs(r["scores"][n] - scores[n]) < 1e-6 for n in weights)]
+    problems = []
+    if not seen:
+        problems.append(f"the final card ({tot:.2f}) is not any round in the ledger ({len(rounds)} recorded); "
+                        f"run `caption_rounds.py record --card <card>` after EVERY scorer card")
+    if tot < thr and not card.get("hard_fails") and len(rounds) < cap:
+        problems.append(f"the card ships below the {thr} bar but the ledger recorded {len(rounds)} of the "
+                        f"{cap} rounds the STOP rule needs; record each round, then follow status's target")
+    if problems:
+        return 1, "caption_rounds verify: FAIL\n  " + "\n  ".join(problems)
+    return 0, (f"caption_rounds verify: ok, the final card is round {seen[-1]} of {len(rounds)} recorded "
+               f"({tot:.2f}, bar {thr})")
+
+
 def rubric_anchors(path=RUBRIC):
     """({criterion name: its '10' anchor text}, the Hook pattern line) read from the rubric YAML."""
     text = open(path).read()
@@ -280,9 +313,19 @@ def _self_test():
         os.remove(ledger)
         d = rnd({}, "ok")
         assert decide(d, thr, cap, weights)[0] == 0
+        # verify: the final card must be a recorded round, and a below-bar card needs the full cap
+        assert verify(card, ledger)[0] == 0, verify(card, ledger)
+        os.remove(ledger)
+        rnd({hook: 8.0}, "low")
+        code, msg = verify(card, ledger)
+        assert code == 1 and "below the" in msg, msg
+        score({hook: 8.1})
+        code, msg = verify(card, ledger)
+        assert code == 1 and "not any round" in msg, msg
+        assert verify(os.path.join(tmp, "absent.json"), ledger)[0] == 0
         print("caption_rounds self-test: PASS (target = largest weighted shortfall, held until it stalls twice; "
               f"STOP at the rubric's {cap} cycles with the best clean round; hard fails never capped; "
-              "brief names the Hook pattern and the shipped cards' lowest criteria)")
+              "brief names the Hook pattern and the shipped cards' lowest criteria; verify refuses an unrecorded final card)")
         return 0
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
@@ -292,12 +335,16 @@ def main():
     if "--self-test" in sys.argv:
         return _self_test()
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("action", choices=["record", "status", "brief"])
+    ap.add_argument("action", choices=["record", "status", "brief", "verify"])
     ap.add_argument("--card")
     a = ap.parse_args()
     try:
         if a.action == "brief":
             return brief()
+        if a.action == "verify":
+            code, msg = verify(a.card or CARD)
+            print(msg)
+            return code
         if a.action == "record":
             if not a.card:
                 ap.error("record needs --card <scorer JSON>")

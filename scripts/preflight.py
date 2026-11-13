@@ -174,6 +174,11 @@ CHECKS = [
     # and red on exactly the two that shook, so it has never failed a film the owner liked.
     ("the camera does not jolt on every beat",
      [sys.executable, "scripts/jolt_check.py"], True),
+    # Machine pass 2026-11-13 (caption-scorer-hair-under-bar, repeat 5): 11-11 and 11-13 shipped a
+    # "round 5 of 5" caption card with none and one round in caption_rounds.json, so the one-target
+    # rule never ran and the evidence for the plateau was lost. ADVISORY: bookkeeping, not the film.
+    ("the final caption card is a round the ledger recorded",
+     [sys.executable, "scripts/caption_rounds.py", "verify"], False),
 ]
 
 

@@ -44,6 +44,11 @@ export type CreditsData = {
   sources: string[];
   /** where to send people */
   site: string;
+  /** Optional type ceilings carried IN THE DATA (2026-11-13 machine pass). build_scenes.py writes
+   *  them for every new film, so a fresh episode gets phone-legible credits without remembering a
+   *  prop; an episode whose data lacks them renders at the historical 22 / 32. */
+  srcMax?: number;
+  musicMax?: number;
 };
 
 const MONO = 'JetBrains Mono, ui-monospace, Menlo, monospace';
@@ -62,8 +67,13 @@ const fitSize = (s: string, maxW: number, ideal: number, floor = 13, track = 0) 
 // srcMax / musicMax: optional ceilings for the source and licence lines. Defaults are the historical 22 / 32, so every
 // episode that does not pass them renders exactly as before. Both stay fitted to MAXW, so a larger ceiling can never overflow.
 export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; paperDesk?: boolean; srcMax?: number; musicMax?: number}> = ({
-  data, durationInFrames, paperDesk = false, srcMax = 22, musicMax = 32,
+  data, durationInFrames, paperDesk = false, srcMax: srcMaxProp, musicMax: musicMaxProp,
 }) => {
+  // CREDITS TYPE TOO SMALL AT PHONE SIZE (2026-11-13, all three judges; also 10-31 and 11-12).
+  // Sources were capped at 22px, about 5px tall in a 270px-wide feed thumbnail. A prop wins, then
+  // the data's ceiling, then the historical default, so no shipped episode re-renders differently.
+  const srcMax = srcMaxProp ?? data.srcMax ?? 22;
+  const musicMax = musicMaxProp ?? data.musicMax ?? 32;
   const f = useCurrentFrame();
   // TWO FADES, because the mark is a SIGN-OFF and not a header (owner, 2026-08-09).
   // The body (site, sources, licence) clears first and the mark holds alone, then fades out
@@ -107,6 +117,9 @@ export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; 
   const top = 620;
   const srcTop = top + 250;
   const lineH = srcSize * 1.9;
+  // the first source sits one line under the SOURCES label; 44 at the historical 22px, and it
+  // grows with the type so a larger source line never crowds the label (credits_check mirrors it)
+  const srcGap = 22 + srcSize;
 
   // the mark eases to TRUE frame centre, derived rather than offset, so moving the block
   // above never drags the sign-off off-centre with it
@@ -159,14 +172,14 @@ export const EndCredits: React.FC<{data: CreditsData; durationInFrames: number; 
         <text x={W / 2} y={srcTop} textAnchor="middle" fontFamily={MONO} fontSize={srcSize * 0.86}
               fontWeight={700} fill={DIM} letterSpacing={2.4}>SOURCES</text>
         {data.sources.map((s, i) => (
-          <text key={i} x={W / 2} y={srcTop + 44 + i * lineH} textAnchor="middle"
+          <text key={i} x={W / 2} y={srcTop + srcGap + i * lineH} textAnchor="middle"
                 fontFamily={MONO} fontSize={srcSize} fontWeight={700} fill={BONE}
                 letterSpacing={0.8}>{s.toUpperCase()}</text>
         ))}
 
         {/* the licence condition, last and unmissable */}
         {musicLines.map((l, i) => (
-          <text key={i} x={W / 2} y={srcTop + 96 + data.sources.length * lineH + i * (musicSize * 1.5)}
+          <text key={i} x={W / 2} y={srcTop + srcGap + 52 + data.sources.length * lineH + i * (musicSize * 1.5)}
                 textAnchor="middle" fontFamily={MONO} fontSize={musicSize} fontWeight={700}
                 fill={BONE} letterSpacing={0.6}>{l}</text>
         ))}

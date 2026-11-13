@@ -111,7 +111,16 @@ step claims_contract   2 python3 scripts/claims_contract_check.py
 # because each models one source relationship and none models a label against ART or reads the
 # Frame camera. This renders the composition in Chrome every third frame (about a minute) and
 # fails a label cut for 0.5 s or more. `--shots 7,13` re-checks named shots in seconds.
-step label_footprint   2 python3 scripts/label_footprint_check.py
+# Machine pass 2026-11-13 (repeat offender label-footprint-vs-plates-in-macro-shots): 11-12 and
+# 11-13 relaunched the source gates seven and eight times on this one class, paying the whole film
+# each time. `LABEL_SHOTS=4,9 make_cut.sh --source-only` re-checks only the shots being edited; a
+# full make_cut ignores it and always checks every shot, so nothing ships on a partial check.
+if [ $SOURCE_ONLY = 1 ] && [ -n "${LABEL_SHOTS:-}" ]; then
+  say "  ..    label_footprint on shots ${LABEL_SHOTS} only (LABEL_SHOTS, --source-only)"
+  step label_footprint 2 python3 scripts/label_footprint_check.py --shots "$LABEL_SHOTS"
+else
+  step label_footprint 2 python3 scripts/label_footprint_check.py
+fi
 # Machine pass 2026-10-23: a beat too short for its evidence strip failed build_evidence AFTER the
 # render on 10-15, 10-17 (twice) and 10-22. The strip plan reads only the board, vo_lines.json and
 # the props, so resolve it here, naming every short beat at once.
