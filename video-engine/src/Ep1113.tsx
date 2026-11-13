@@ -244,7 +244,7 @@ const Drip: React.FC<{f: number; x?: number; y?: number; scale?: number; state?:
 
 /** BUCKET: a dented galvanized pail with a tired kind face. */
 const Bucket: React.FC<{f: number; x: number; y: number; scale?: number; brow?: number; tilt?: number}> = ({f, x, y, scale = 1, brow = 0, tilt = 0}) => (
-  <g transform={`translate(${x} ${y}) scale(${scale}) rotate(${tilt})`}>
+  <g transform={`translate(${x} ${y - 3 * Math.abs(Math.sin(f / 21))}) scale(${scale}) rotate(${tilt + 1.6 * Math.sin(f / 28)})`}>
     <ellipse cx={4} cy={6} rx={78} ry={14} fill="#000" opacity={0.28} />
     <path d="M -60,-130 L 60,-130 L 48,0 L -48,0 Z" fill={C.pail} stroke={C.line} strokeWidth={5} />
     <path d="M -60,-130 L -38,-130 L -28,0 L -48,0 Z" fill={C.pailD} opacity={0.5} />
@@ -290,7 +290,7 @@ const CommingSoon: React.FC<{f: number; suffix?: string; x?: number; y?: number}
       <path d="M -4,0 L 4,0 L 4,-170 L -4,-170 Z" fill={C.wood} stroke={C.line} strokeWidth={4} />
       <g transform={`translate(0 -170) rotate(${sw})`}>
         <path d="M -110,-70 L 110,-70 L 110,10 L -110,10 Z" fill={C.paper} stroke={C.line} strokeWidth={5} />
-        <text x={0} y={-40} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.ink} letterSpacing={1}>COMING SOON</text>
+        <text x={0} y={-40} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.ink} letterSpacing={1}>NOT YET OPEN</text>
         {suffix && <text x={0} y={-12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.tomato} letterSpacing={1}>{suffix}</text>}
       </g>
     </g>
@@ -385,14 +385,14 @@ const Flurry: React.FC<{f: number; amt: number}> = ({f, amt}) => {
 };
 
 const Lot: React.FC<WP & {act?: number; pipe?: number; tilt?: number; state?: number; cough?: number; brow?: number; bead?: number; worry?: number; suffix?: string; showSign?: boolean;
-  tag?: boolean; rb?: number; lock?: number; flurry?: number; bucket?: boolean; drip?: boolean; dull?: number; children?: React.ReactNode}> =
-({f, act = 0, pipe = 1, tilt = 0, state = 1, cough = 0, brow = 0, bead = 1, worry = 0, suffix = '', showSign = true, tag = true, rb = 0, lock = 0, flurry = 0, bucket = true, drip = true, children}) => (
+  tag?: boolean; fallen?: boolean; rb?: number; lock?: number; flurry?: number; bucket?: boolean; drip?: boolean; dull?: number; children?: React.ReactNode}> =
+({f, act = 0, pipe = 1, tilt = 0, state = 1, cough = 0, brow = 0, bead = 1, worry = 0, suffix = '', showSign = true, tag = true, fallen = false, rb = 0, lock = 0, flurry = 0, bucket = true, drip = true, children}) => (
   <g>
     <Backdrop f={f} act={act} />
     <Pipe grow={pipe} tilt={tilt} />
     {showSign && <CommingSoon f={f} suffix={suffix} />}
     {/* the Rulebook, a tiny red speck walking in from the spruce row, bigger every time we return */}
-    {rb > 0.001 && <Rulebook f={f} x={lerp(110, 470, rb)} y={lerp(1040, 1300, rb)} scale={lerp(0.1, 1.0, rb)} run={rb > 0.95 ? 1 : 0} />}
+    {rb > 0.001 && <Rulebook f={f} x={lerp(110, 470, rb)} y={lerp(1040, 1300, rb)} scale={lerp(0.2, 1.0, rb)} run={rb > 0.95 ? 1 : 0} />}
     {drip && <Drip f={f} state={state} cough={cough} brow={brow} bead={bead} worry={worry} />}
     {drip && state >= 2 && (
       <g transform={`translate(${DX - 150} ${1112})`}>
@@ -408,6 +408,12 @@ const Lot: React.FC<WP & {act?: number; pipe?: number; tilt?: number; state?: nu
         <text x={0} y={50} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.ink}>NO OFFERINGS</text>
       </g>
     )}
+    {fallen && (
+      <g transform={`translate(${440} ${1262}) rotate(${-24 + 3 * Math.sin(f / 9)})`}>
+        <rect x={-34} y={-44} width={68} height={72} rx={8} fill={C.paper} stroke={C.line} strokeWidth={4} />
+        <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={54} fill={C.ink}>Y</text>
+      </g>
+    )}
     {bucket && <Bucket f={f} x={DX - 208} y={GY + 24} scale={0.9} brow={worry * 0.8} tilt={0} />}
     {children}
     <HeldTravel f={f} x={0} y={700} w={1080} h={600} seed={30 + act} strength={0.4} rx={20} mode="sweep" />
@@ -419,7 +425,7 @@ const Lot: React.FC<WP & {act?: number; pipe?: number; tilt?: number; state?: nu
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const cough = clamp01(1 - Math.abs(f - b(1) - 16) / 14) * ease(f, b(1), 6);
-  const cam = track([{t: 0, z: 1.02, fx: 700, fy: 960}, {t: p.dur, z: 1.0, fx: 560, fy: 960}]);
+  const cam = track([{t: 0, z: 1.3, fx: 700, fy: 1050}, {t: p.dur, z: 1.2, fx: 600, fy: 1040}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate displayLines={['ALASKA BUILT THE', 'FAUCET FIRST']} text="ALASKA BUILT THE FAUCET FIRST" x={540} y={620} size={50} tone="glow" p={ease(f, 0, 10) * (1 - ease(f, b(2) - 6, 8))} />
@@ -598,7 +604,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             <circle cx={0} cy={-6} r={16} fill={C.paperD} stroke={C.line} strokeWidth={4} />
           </g>
           <rect x={-250} y={-90} width={500} height={90} fill={C.woodD} stroke={C.line} strokeWidth={6} />
-          <g transform="translate(120 -90)" opacity={peel}>
+          <g transform={`translate(120 ${-90 + 4 * Math.sin(f / 14)}) rotate(${1.5 * Math.sin(f / 22)})`} opacity={peel}>
             <path d="M -50,0 L -42,-100 Q 0,-130 42,-100 L 50,0 Z" fill={C.steel} stroke={C.line} strokeWidth={5} />
             <circle cx={0} cy={-132} r={34} fill={C.paperD} stroke={C.line} strokeWidth={5} />
             <circle cx={-12} cy={-136} r={5} fill={C.ink} /><circle cx={12} cy={-136} r={5} fill={C.ink} />
@@ -634,7 +640,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
         <Plate text="TERMS NOT DECIDED" x={540} y={620} size={42} tone="warn" p={ease(f, b(19), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
-        <Lot f={f} b={b} act={5} state={ f > b(18) ? 3 : 2 } brow={ease(f, b(18), 10) * 0.7} worry={ease(f, b(19), 12)} lock={lock} showSign={false} rb={0.3} tag={false}>
+        <Lot f={f} b={b} act={5} state={ f > b(18) ? 3 : 2 } brow={ease(f, b(18), 10) * 0.7} worry={ease(f, b(19), 12)} lock={lock} showSign={false} rb={0.3} tag={false} fallen={f > b(17) + 24}>
           {/* a dog-door sized window in the pipe wall with a stenciled word, daylight honest */}
           <g transform={`translate(${380} ${1118})`}>
             <rect x={-60} y={-44} width={120} height={88} rx={10} fill={C.gravelD} stroke={C.line} strokeWidth={5} />
@@ -659,25 +665,27 @@ const S6: React.FC<SceneProps> = ({p}) => {
 
 const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const cam = track([{t: 0, z: 1.0, fx: 420, fy: 980}, {t: p.dur, z: 1.04, fx: 520, fy: 990}]);
+  const cam = track([{t: 0, z: 1.2, fx: 420, fy: 1040}, {t: p.dur, z: 1.26, fx: 560, fy: 1040}]);
   const glassX = lerp(160, 520, easeIO(f, b(24), 30));
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate displayLines={['PLURAL CEO', 'THE PITCH']} text="PLURAL CEO · THE PITCH" x={540} y={620} size={38} tone="glow" p={ease(f, b(21), 12) * (1 - ease(f, b(22) - 8, 8))} />
         <Plate displayLines={['ONE OF THE LARGEST CAPITAL', 'NEEDS IN A GENERATION']} text="ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION" x={540} y={620} size={30} tone="dark" p={ease(f, b(22), 12) * (1 - ease(f, b(23) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="THAT'S THE PITCH" x={540} y={620} size={46} tone="plate" p={ease(f, b(23), 12) * (1 - ease(f, b(24) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-        <Plate text="NO AI PROJECT NAMED" x={540} y={620} size={44} tone="warn" p={ease(f, b(24), 12) * (1 - ease(f, b(25) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-        <Plate displayLines={['IN SOURCES', 'REVIEWED HERE']} text="IN SOURCES REVIEWED HERE" x={540} y={620} size={40} tone="glow" p={ease(f, b(25), 12)} /> {/* plate-overlap-ok: sequenced */}
+        <Plate displayLines={['SOURCES NAME', 'NO AI PROJECT']} text="SOURCES NAME NO AI PROJECT" x={540} y={620} size={40} tone="warn" p={ease(f, b(24), 12) * (1 - ease(f, b(25) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
+        <Plate text="AI IS THE PITCH" x={540} y={620} size={46} tone="glow" p={ease(f, b(25), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
-        <Lot f={f} b={b} act={6} state={3} lock={1} showSign={false} rb={0.4} worry={ease(f, b(25), 10) * 0.5}>
+        <Lot f={f} b={b} act={6} state={3} lock={1} showSign={false} rb={0.4} fallen worry={ease(f, b(25), 10) * 0.5}>
           {/* a billboard on the pipe with a speech balloon */}
           <g transform={`translate(${300} ${1100 - 360 * (1 - ease(f, b(21), 16))})`}>
             <path d="M -10,0 L 10,0 L 10,-110 L -10,-110 Z M 230,0 L 250,0 L 250,-110 L 230,-110 Z" fill={C.woodD} stroke={C.line} strokeWidth={4} />
             <rect x={-40} y={-300} width={320} height={200} rx={8} fill={C.paper} stroke={C.line} strokeWidth={6} />
             <path d={`M 40,-120 L 20,-90 L 80,-120 Z`} fill={C.paper} stroke={C.line} strokeWidth={5} />
             <g transform={`scale(${1 + 0.06 * ease(f, b(22), 10)} ${1 + 0.06 * ease(f, b(22), 10)})`}>
-              <Lines x={-10} y={-260} w={260} n={4} gap={36} o={0.5} />
+              {['ONE OF THE', 'LARGEST CAPITAL', 'NEEDS IN A', 'GENERATION'].map((l, i) => (
+                <text key={i} x={120} y={-252 + i * 38} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={27} fill={C.ink}>{l}</text>
+              ))}
             </g>
           </g>
           {/* the mint slip glows up out of the paperwork first, then the glass finds it blank */}
@@ -747,7 +755,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         {/* Drip in the corner, his brass dulling a notch with each ring */}
         <g opacity={0.97}>
           <g transform={`translate(0 0)`}>
-            <Drip f={f} x={930} y={1630} scale={0.55} state={3} worry={0.5 + 0.1 * nRings} brow={-0.3} bead={1} />
+            <Drip f={f} x={900} y={1560} scale={0.85} state={3} worry={0.5 + 0.1 * nRings} brow={-0.3} bead={1} />
           </g>
         </g>
       </SVG>
@@ -761,7 +769,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const cam = track([{t: 0, z: 1.18, fx: 700, fy: 1020}, {t: p.dur, z: 1.0, fx: 540, fy: 1000}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
-        <Plate displayLines={['A CRITIC', 'THE DAILY NEWS']} text="A CRITIC · THE DAILY NEWS" x={540} y={620} size={40} tone="glow" p={ease(f, b(29), 12) * (1 - ease(f, b(43) - 8, 8))} />
+        <Plate displayLines={['CRITIC · VIA', 'THE DAILY NEWS']} text="CRITIC · VIA THE DAILY NEWS" x={540} y={620} size={40} tone="glow" p={ease(f, b(29), 12) * (1 - ease(f, b(43) - 8, 8))} />
         <Plate displayLines={['ADVOCACY GROUP', 'FOUNDER']} text="ADVOCACY GROUP FOUNDER" x={540} y={620} size={40} tone="plate" p={ease(f, b(43), 12) * (1 - ease(f, b(30) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate displayLines={['CRITIC · HUNDREDS', 'OF MILLIONS']} text="CRITIC · HUNDREDS OF MILLIONS" x={540} y={620} size={40} tone="warn" p={ease(f, b(30), 12) * (1 - ease(f, b(31) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate displayLines={['CRITIC · LOWER 48', 'CORPORATIONS']} text="CRITIC · LOWER 48 CORPORATIONS" x={540} y={620} size={40} tone="dark" p={ease(f, b(31), 12)} /> {/* plate-overlap-ok: sequenced */}
@@ -803,7 +811,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Plate text="AIDEA BOARD" x={540} y={620} size={46} tone="glow" p={ease(f, b(32), 12) * (1 - ease(f, b(33) - 8, 8))} />
         <Plate displayLines={['AT LEAST ONE MORE', 'MEETING DEC 4']} text="AT LEAST ONE MORE MEETING DEC 4" x={540} y={620} size={38} tone="warn" p={ease(f, b(33), 12) * (1 - ease(f, b(34) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="DATA CENTERS HERE" x={540} y={620} size={42} tone="dark" p={ease(f, b(34), 12) * (1 - ease(f, b(35) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-        <Plate displayLines={['OUTGOING GOVERNOR', 'DO IT RIGHT']} text="OUTGOING GOVERNOR · DO IT RIGHT" x={540} y={620} size={38} tone="plate" p={ease(f, b(35), 12)} /> {/* plate-overlap-ok: sequenced */}
+        <Plate displayLines={['"LET\'S DO IT RIGHT"', 'DUNLEAVY']} text={'"LET\'S DO IT RIGHT" · DUNLEAVY'} x={540} y={620} size={40} tone="plate" p={ease(f, b(35), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
         {/* an empty boardroom, cool top light, chairs dropping in */}
@@ -827,7 +835,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <Sign x={880} y={1010} w={300} h={110} lines={['DATA CENTERS', 'HERE']} p={ease(f, b(34), 14)} f={f} />
         <Sign x={880} y={1110} w={300} h={90} lines={['DO IT RIGHT']} p={ease(f, b(35), 12)} f={f} tone={C.brassL} />
         {/* Drip waits in the window and his handle lifts at the second plank */}
-        <Drip f={f} x={930} y={1560} scale={0.5} state={3} brow={ease(f, b(35), 10)} worry={0.3} />
+        <Drip f={f} x={900} y={1540} scale={0.85} state={3} brow={ease(f, b(35), 10)} worry={0.3} />
       </SVG>
     </Frame>
   );
@@ -835,7 +843,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
 
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const cam = track([{t: 0, z: 1.0, fx: 560, fy: 990}, {t: p.dur, z: 1.05, fx: 520, fy: 1000}]);
+  const cam = track([{t: 0, z: 1.18, fx: 600, fy: 1040}, {t: p.dur, z: 1.24, fx: 560, fy: 1040}]);
   const rip = ease(f, b(44), 14);
   const flick = Math.sin(f / 3) > 0.1 ? 1 : 0.3;
   return (
@@ -846,7 +854,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <Plate displayLines={['UNTIL COMPREHENSIVE', 'RULES']} text="UNTIL COMPREHENSIVE RULES" x={540} y={620} size={40} tone="plate" p={ease(f, b(38), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
-        <Lot f={f} b={b} act={10} state={ f > b(37) ? 4 : 3 } lock={1} brow={ease(f, b(37), 14) * 0.5} worry={0.4} showSign={false} tag={false} rb={0.4 + 0.6 * easeIO(f, b(36) - 30, 50)} flurry={ease(f, b(36), 30)}>
+        <Lot f={f} b={b} act={10} state={ f > b(37) ? 4 : 3 } lock={1} brow={ease(f, b(37), 14) * 0.5} worry={0.4} showSign={false} tag={false} fallen={f < b(37) + 4} rb={0.4 + 0.6 * easeIO(f, b(36) - 30, 50)} flurry={ease(f, b(36), 30)}>
           <g transform={`translate(${290} ${900})`}>
             <Calendar x={0} y={0} month="DECEMBER" ring={ease(f, b(36) + 8, 14)} ringAt={6} f={f} sway={-6 * rip + 4} scale={0.8} />
           </g>
@@ -860,9 +868,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
             <text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill={C.paper}>UNTIL RULES</text>
           </g>
           {/* the stenciled MAY flickers back on the dog-door window */}
-          <g transform={`translate(${380} ${1118})`} opacity={ease(f, b(38), 10)}>
+          <g transform={`translate(${380} ${1118})`} opacity={ease(f, b(37) - 6, 10)}>
             <text x={-20} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} letterSpacing={4}>MA</text>
-            <text x={14} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} transform={`translate(${60 * (1 - easeIO(f, b(38), 22))} ${180 * (1 - easeIO(f, b(38), 22))})`}>Y</text>
+            <text x={14} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} transform={`translate(${60 * (1 - easeIO(f, b(37), 22))} ${180 * (1 - easeIO(f, b(37), 22))})`}>Y</text>
           </g>
         </Lot>
       </SVG>
@@ -873,14 +881,14 @@ const S11: React.FC<SceneProps> = ({p}) => {
 const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const pull = easeIO(f, b(40) - 20, 70);
-  const cam = track([{t: 0, z: 1.6, fx: DX - 70, fy: 1290}, {t: b(40) - 10, z: 1.5, fx: DX - 70, fy: 1250}, {t: b(41) + 20, z: 1.12, fx: 600, fy: 1050}, {t: p.dur, z: 1.0, fx: 560, fy: 1000}]);
+  const cam = track([{t: 0, z: 1.6, fx: DX - 70, fy: 1290}, {t: b(40) - 10, z: 1.5, fx: DX - 70, fy: 1250}, {t: b(41) + 20, z: 1.12, fx: 600, fy: 1050}, {t: p.dur - 40, z: 1.18, fx: 640, fy: 1020}, {t: p.dur - 8, z: 1.9, fx: DX - 190, fy: GY - 235}]);
   const out = ease(f, p.dur - 10, 8);
   return (
     <Frame p={p} cam={cam} overlay={<>
         <Plate displayLines={['BUILD VS PAUSE']} text="BUILD VS PAUSE" x={540} y={620} size={50} tone="glow" p={ease(f, b(39), 12) * (1 - ease(f, b(40) - 8, 8))} />
         <Plate text="ORDER" x={540} y={620} size={80} tone="dark" p={ease(f, b(40), 12) * (1 - ease(f, b(41) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
         <Plate text="RULES FIRST" x={540} y={620} size={60} tone="plate" p={ease(f, b(41), 12) * (1 - ease(f, b(42) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-        <Plate displayLines={['RULES FIRST,', 'OR MONEY FIRST']} text="RULES FIRST, OR MONEY FIRST" x={540} y={620} size={46} tone="warn" p={ease(f, b(42), 12)} /> {/* plate-overlap-ok: sequenced */}
+        <Plate displayLines={['RULES FIRST,', 'OR MONEY FIRST?']} text="RULES FIRST, OR MONEY FIRST?" x={540} y={620} size={46} tone="warn" p={ease(f, b(42), 12)} /> {/* plate-overlap-ok: sequenced */}
       </>}>
       <SVG>
         <Lot f={f} b={b} act={11} state={ f > b(42) ? 5 : 4 } lock={1} brow={ease(f, b(41), 14) * 0.8} bead={1} showSign={f > b(41) + 22} suffix="(RULES?)" worry={0.2} rb={1} flurry={1} tag={false}>
@@ -891,7 +899,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <circle r={18} fill="none" stroke={C.brassL} strokeWidth={9} />
             <path d="M 18,0 H 60 M 46,0 V 14 M 56,0 V 12" stroke={C.brassL} strokeWidth={8} strokeLinecap="round" />
           </g>
-          <g transform={`translate(${380} ${1118})`}>
+          <g transform={`translate(${380} ${1118})`} opacity={ease(f, b(41) + 20, 8)}>
             <text x={-20} y={-90} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink} letterSpacing={4}>MAY</text>
           </g>
         </Lot>
