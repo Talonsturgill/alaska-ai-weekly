@@ -566,7 +566,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
 /** S2, the plane banks over the pack ice and the pod fires color and thermal together */
 const S2: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const px = lerp(260, 820, f / p.dur);
+  const px = lerp(330, 760, f / p.dur);
   const py = 840 + 30 * Math.sin(f / 30);
   const alt = ease(f, b(5), 14);
   return (
@@ -579,8 +579,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
         {/* the plane's shadow sliding over a floe */}
         <ellipse cx={px - 120} cy={1280} rx={170} ry={26} fill="#0C2434" opacity={0.22} />
         <g transform={`rotate(-6 ${px} ${py})`}>
-          <BushPlane x={px} y={py} scale={1.5} f={f} mode="fly" body={C.plane} />
-          <SurveyPod x={px + 10} y={py + 54} scale={0.55} f={f} text="2019 ARTICLE · ARTIFICIAL INTELLIGENCE" plateSize={18} shutter={b(4)} />
+          <BushPlane x={px} y={py} scale={2.1} f={f} mode="fly" body={C.plane} />
+          <SurveyPod x={px + 14} y={py + 76} scale={0.75} f={f} text="2019 ARTICLE · ARTIFICIAL INTELLIGENCE" plateSize={18} shutter={b(4)} />
         </g>
         {/* the altimeter line and tag */}
         <g opacity={alt}>
@@ -590,7 +590,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
             <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.ink}>1,000 FT</text>
           </g>
         </g>
-        <HeldTravel f={f} x={40} y={1150} w={520} h={260} seed={12} strength={0.32} rx={120} mode="shadow" />
+        <HeldTravel f={f} x={px - 80} y={1218} w={190} h={60} seed={12} strength={0.3} rx={14} mode="sweep" />
       </SVG>
     </Frame>
   );
@@ -708,7 +708,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <text x={-240} y={-170} fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>COLOR</text>
         </g>
         {/* thermal frame */}
-        <g transform={`translate(${rx} 960)`} opacity={0.65 + slide * 0.35} style={{mixBlendMode: slide > 0.98 ? 'screen' : 'normal'}}>
+        <g transform={`translate(${rx} 960)`} opacity={1 - slide * 0.45}>
           <rect x={-260} y={-200} width={520} height={400} fill={C.vio} stroke={C.line} strokeWidth={6} />
           <path d="M -260,-40 q 180,-30 520,10" stroke="#5A2E82" strokeWidth={22} fill="none" />
           <ellipse cx={20} cy={60} rx={40} ry={22} fill={C.coral} opacity={0.9} />
@@ -718,9 +718,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
         {/* the click as they lock */}
         {slide > 0.98 && f < b(11) + 44 && <rect x={280} y={760} width={520} height={400} fill="none" stroke="#FFFFFF" strokeWidth={8} opacity={1 - (f - b(11) - 30) / 14} />}
         <g opacity={box}>
-          <RingedSeal x={560} y={1036} scale={0.42} f={f} thermal={0.6} emotion="calm" seed={5} />
+          <RingedSeal x={540} y={1050} scale={0.75} f={f} thermal={0.7} emotion="calm" seed={5} />
         </g>
-        <DetBox x={560} y={1018} w={150} h={90} k={box} />
+        <DetBox x={548} y={1010} w={260} h={130} k={box} />
         <NearStrip f={f} y={1560} seed={1} />
         <HeldTravel f={f} x={290} y={770} w={500} h={380} seed={15} strength={0.4} rx={8} mode="shadow" />
       </SVG>
@@ -928,7 +928,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <circle cx={0} cy={-100} r={10} fill={C.ink} opacity={env} />
           <Envelope x={0} y={40} s={0.9} sheet={sheet} p={env} />
         </g>
-        <HeldTravel f={f} x={140} y={640} w={480} h={640} seed={19} strength={0.4} rx={6} mode="shadow" />
+        <HeldTravel f={f} x={140} y={720} w={480} h={640} seed={19} strength={0.3} rx={6} mode="shadow" />
       </SVG>
     </Frame>
   );
@@ -952,7 +952,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         {/* the two pages, which part like doors onto the floe */}
         <g transform={`translate(${-part * 560} 0)`}>
           <rect data-band="ok" x={-200} y={-200} width={740} height={2320} fill={C.deskD} />
-          <g transform={`translate(${lerp(-400, 280, pages)} 1000)`}>
+          <g transform={`translate(${lerp(-400, 280, pages)} 1060)`}>
             <rect x={-230} y={-340} width={460} height={680} fill="#FFFFFF" stroke={C.line} strokeWidth={6} />
             <text x={-200} y={-290} fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>THE ORDER · SEC. 3(A)</text>
             {Array.from({length: 10}).map((_, i) => <rect key={i} x={-200} y={-250 + i * 30} width={i % 4 === 3 ? 220 : 400} height={9} fill={C.paperD} />)}
@@ -964,7 +964,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         </g>
         <g transform={`translate(${part * 560} 0)`}>
           <rect data-band="ok" x={540} y={-200} width={740} height={2320} fill={C.deskD} />
-          <g transform={`translate(${lerp(1480, 800, pages)} 1000)`}>
+          <g transform={`translate(${lerp(1480, 800, pages)} 1060)`}>
             <rect x={-230} y={-340} width={460} height={680} fill="#FFFFFF" stroke={C.line} strokeWidth={6} />
             <text x={-200} y={-290} fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>15 U.S.C. 9401(3)</text>
             {Array.from({length: 4}).map((_, i) => <rect key={i} x={-200} y={-250 + i * 30} width={400} height={9} fill={C.paperD} />)}
@@ -976,7 +976,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <g opacity={1 - part}><NearStrip f={f} y={1560} seed={3} dark={false} /></g>
         {/* the ink line joining the matched phrases */}
         <g opacity={1 - part}>
-          <path d={`M 492,1118 C 540,${1130} 560,${920} ${lerp(492, 590, line)},${lerp(1118, 912, line)}`} stroke={C.ink} strokeWidth={6} fill="none" strokeDasharray={`${line * 900} 900`} />
+          <path d={`M 492,1178 C 540,${1190} 560,${980} ${lerp(492, 590, line)},${lerp(1178, 972, line)}`} stroke={C.ink} strokeWidth={6} fill="none" strokeDasharray={`${line * 900} 900`} />
         </g>
         {/* the gold plate on a chain spins to its back face */}
         <g opacity={1 - part}>
@@ -1055,7 +1055,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
           </g>
           <DetBox x={150 - 345 * Math.sin(tagAng * Math.PI / 180)} y={450 + 345} w={200} h={130} k={boxK} />
         </UnderWing>
-        <HeldTravel f={f} x={300} y={860} w={480} h={110} seed={22} strength={0.4} rx={14} mode="sweep" />
+        <HeldTravel f={f} x={290} y={900} w={500} h={90} seed={22} strength={0.35} rx={10} mode="sweep" />
       </SVG>
     </Frame>
   );
