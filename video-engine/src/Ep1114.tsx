@@ -1039,7 +1039,7 @@ const TwoSigns: React.FC<{p: SP; tight?: boolean}> = ({p, tight = false}) => {
   const turns = tight ? (f > B(48) - 10 ? Math.sin((f - B(48) + 10) / 9) : 0) : 0;
   const gust = ease(f, B(47), 30) * (1 - ease(f, B(47) + 50, 30));
   return (
-    <Frame p={p} cam={tight ? () => ({z: 1.16, fx: 540, fy: 1010}) : undefined} z0={1.0} z1={1.0} oy={960} overlay={<>
+    <Frame p={p} cam={tight ? () => ({z: 1.08, fx: 540, fy: 1000}) : undefined} z0={1.0} z1={1.0} oy={960} overlay={<>
       <Plate text={'"A NEW ERA"'} x={540} y={500} size={30} tone="plate" p={tight ? 0 : ease(f, B(32), 12) * (1 - ease(f, B(33) - 8, 8))} />
       <Plate text="THE ORDER'S CASE" x={540} y={500} size={30} tone="plate" p={tight ? 0 : ease(f, B(47), 12) * (1 - ease(f, B(32) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
       <Plate text="THE DEAN'S DOUBT" x={540} y={500} size={30} tone="plate" p={tight ? ease(f, B(48), 12) * (1 - ease(f, B(34) - 8, 8)) : 0} /> {/* plate-overlap-ok: sequenced */}
@@ -1047,16 +1047,16 @@ const TwoSigns: React.FC<{p: SP; tight?: boolean}> = ({p, tight = false}) => {
     </>}>
       <SVG>
         <IceWorld f={f} hz={720} seed={7} drift={0.05} />
-        <SignPost f={f} x={250} boardY={560} foot={1200} w={420} h={300} open={L} head="THE ORDER · SEPT 29" seed={1}
+        <SignPost f={f} x={250} boardY={640} foot={1200} w={400} h={300} open={L} head="THE ORDER · SEPT 29" seed={1}
           lines={['"NOT MERELY', 'ARTIFICIAL', 'INTELLIGENCE"']} glint={glint} />
-        <SignPost f={f} x={830} boardY={560} foot={1200} w={420} h={300} open={R} head="TILLIPMAN · GWU" seed={2}
+        <SignPost f={f} x={830} boardY={640} foot={1200} w={400} h={300} open={R} head="TILLIPMAN · GWU" seed={2}
           lines={['NO PURPOSE', 'OTHER THAN', 'REBRANDING']} glint={glint} />
         {/* the attribution cards slide in under each quote the same way */}
-        <g opacity={ease(f, B(44), 12)} transform={`translate(830 ${900 + settle(f, B(44) + 12, 6)})`}>
+        <g opacity={ease(f, B(44), 12)} transform={`translate(830 ${985 + settle(f, B(44) + 12, 6)})`}>
           <rect x={-200} y={-24} width={400} height={48} rx={6} fill={C.paper} stroke={C.line} strokeWidth={4} />
           <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>ASSOC. DEAN · VIA GOVCIO</text>
         </g>
-        <g opacity={ease(f, B(43), 12)} transform={`translate(250 ${900 + settle(f, B(43) + 12, 6)})`}>
+        <g opacity={ease(f, B(43), 12)} transform={`translate(250 ${985 + settle(f, B(43) + 12, 6)})`}>
           <rect x={-200} y={-24} width={400} height={48} rx={6} fill={C.paper} stroke={C.line} strokeWidth={4} />
           <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>CALLS FOR A DEFINITION</text>
         </g>
