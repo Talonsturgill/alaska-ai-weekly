@@ -1,16 +1,14 @@
 {
   "last_pass": {
-    "date": "2026-11-13",
+    "date": "2026-11-14",
     "shipped": [
-      "credits source lines sized for a phone: build_scenes writes srcMax/musicMax into the credits data, EndCredits and credits_check read them",
-      "the 9:16 upload names dispatch_master_hosted.mp4: upload_video's 99 MB refusal names the hosted twin, the encoder prints the upload list, runbook step 2 names it",
-      "ship_gate record --judges rejects seat names with a usage error and says it takes three numeric totals",
-      "label_footprint prints the label's and the cover's on-screen boxes, and make_cut --source-only honours LABEL_SHOTS",
-      "caption_rounds verify, an advisory preflight row: the final caption card must be a round the ledger recorded"
+      "speech-priority-dead-air: the speech-priority stage releases at 60 dB/s across narration-free windows and keeps 10 dB/s under narration, so 11-14's four dead-air gaps measure 0 on a remix with the 18 dB margin intact (c8d97d0)",
+      "vo-length-model-overshoots: vo_length_estimate refits seconds from words and sentences over the shipped archive (LOO MAE 6.3 s, was 16.2 s), dispatch_vo_words_band re-derived to 268-291 (0bce9db)",
+      "worker-restart-kills-bg-jobs: wait_for reports WEDGED as soon as a job's pid vanishes with no .done, run_bg writes the exact relaunch line (6388b60), and the self-test tolerates a heartbeat racing its teardown"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (second time, owner decision): whether the 8.5 caption bar stays for fact-bound captions",
-      "gate0-critic-rounds cap (second time, panel protocol, owner decision): may a Gate 0 critic be capped at one round plus the panel"
+      "caption-scorer-hair-under-bar (owner decision, still open): whether the 8.5 caption bar stays for fact-bound captions",
+      "gate0-critic-rounds cap (owner decision, still open): may a Gate 0 critic be capped at one round plus the panel"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

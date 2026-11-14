@@ -19,7 +19,15 @@ EXIT CODES, so a caller never has to parse prose:
   0  the job finished and exited 0
   1  the job finished and exited non-zero (the log tail says why)
   3  still running when this call's time ran out. Call it again, nothing is wrong
-  4  WEDGED. The heartbeat is stale and no .done exists, so the job died without finishing
+  4  WEDGED. The heartbeat is stale, or the job's process is gone, and no .done exists, so the
+     job died without finishing. It prints the exact relaunch line run_bg.sh recorded.
+
+VANISHED IS WEDGED, AND IS SAID AT ONCE (machine pass 2026-11-14, queue: worker-restart-kills-bg-
+jobs). A session worker restart killed 11-14's running make_cut: no .done, and the next wait
+learned nothing until the heartbeat went 90 s stale, then had to rebuild the launch line by hand.
+run_bg.sh already detaches with setsid; what a restart that takes the container's processes leaves
+is a PID that no longer exists. So a dead PID with no .done is reported on the first poll, with
+the relaunch line from <name>.cmd.
   2  bad arguments, or no such job was ever launched
 """
 import argparse
@@ -37,6 +45,29 @@ def tail(path, n):
     except OSError:
         return []
     return lines[-n:]
+
+
+def pid_alive(base):
+    """False only when <name>.pid names a process that no longer exists."""
+    try:
+        pid = int(open(base + ".pid").read().strip())
+    except (OSError, ValueError):
+        return True
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
+def relaunch_hint(base):
+    try:
+        line = open(base + ".cmd").read().strip()
+    except OSError:
+        line = ""
+    return f"Relaunch: {line}" if line else "Relaunch it with the same run_bg.sh line."
 
 
 def main(argv=None):
@@ -68,13 +99,23 @@ def main(argv=None):
             for line in (tail(a.show, 200) if shown else tail(log, a.tail)):
                 print("  " + line)
             return 0 if code == 0 else 1
+        if not pid_alive(base):
+            time.sleep(0.5)   # the job writes .done just before its process exits
+            if not os.path.exists(done):
+                print(f"wait_for: '{a.name}' is WEDGED. Its process (PID in {base}.pid) is gone and "
+                      f"there is no .done, so it was killed before finishing (a worker restart or a "
+                      f"kill). Read {log}. {relaunch_hint(base)}")
+                for line in tail(log, a.tail):
+                    print("  " + line)
+                return 4
+            continue
         try:
             stale = time.time() - os.path.getmtime(beat)
         except OSError:
             stale = WEDGED_S + 1
         if stale > WEDGED_S:
             print(f"wait_for: '{a.name}' is WEDGED. Heartbeat {stale:.0f}s old and no .done. "
-                  f"Read {log}, kill by the PID in {base}.pid, then relaunch.")
+                  f"Read {log}, kill by the PID in {base}.pid, then relaunch. {relaunch_hint(base)}")
             for line in tail(log, a.tail):
                 print("  " + line)
             return 4
@@ -94,7 +135,8 @@ def self_test():
     os.makedirs(scratch, exist_ok=True)
     runbg = os.path.join(repo, "scripts", "run_bg.sh")
     checks = []
-    with tempfile.TemporaryDirectory(dir=scratch) as d:
+    # A killed job's heartbeat writer can race the teardown; cleanup errors are not test results.
+    with tempfile.TemporaryDirectory(dir=scratch, ignore_cleanup_errors=True) as d:
         subprocess.run(["bash", runbg, d, "ok", "--", "bash", "-c", "echo hello; exit 0"],
                        check=True, capture_output=True)
         checks.append((main([d, "ok", "--timeout", "20", "--poll", "0.2"]) == 0, "a clean job exits 0"))
@@ -110,6 +152,16 @@ def self_test():
         checks.append((main([d, "dead", "--timeout", "5", "--poll", "0.2"]) == 4,
                        "a stale heartbeat with no .done is wedged"))
         checks.append((main([d, "never", "--timeout", "1"]) == 2, "an unknown job exits 2"))
+        subprocess.run(["bash", runbg, d, "gone", "--", "python3", "-c", "import time; time.sleep(60)"],
+                       check=True, capture_output=True)
+        gone = open(os.path.join(d, "gone.pid")).read().strip()
+        subprocess.run(["pkill", "-KILL", "-s", gone], capture_output=True)   # the whole session, as a restart does
+        time.sleep(0.3)
+        t0 = time.time()
+        checks.append((main([d, "gone", "--timeout", "30", "--poll", "0.2"]) == 4 and time.time() - t0 < 10,
+                       "a killed job with a fresh heartbeat is wedged on the first polls, not after 90 s"))
+        cmd = open(os.path.join(d, "gone.cmd")).read()
+        checks.append(("run_bg.sh" in cmd and " gone -- python3 -c" in cmd, "run_bg.sh records the relaunch line"))
         pid = open(os.path.join(d, "slow.pid")).read().strip()
         subprocess.run(["pkill", "-P", pid], capture_output=True)
         subprocess.run(["kill", pid], capture_output=True)

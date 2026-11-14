@@ -50,9 +50,13 @@ PIDF="$MARKER_DIR/$NAME.pid"
 HB="$MARKER_DIR/$NAME.heartbeat"
 DONE="$MARKER_DIR/$NAME.done"
 READY="$MARKER_DIR/$NAME.ready"
+CMDF="$MARKER_DIR/$NAME.cmd"
 rm -f "$DONE" "$READY"
 : > "$LOG"
 touch "$HB"
+# The exact relaunch line, so wait_for can print it when the job vanishes (machine pass 2026-11-14:
+# a session worker restart took 11-14's make_cut with it and the run had to reconstruct the call).
+{ printf 'bash %q %q %q --' "$0" "$MARKER_DIR" "$NAME"; printf ' %q' "$@"; printf '\n'; } > "$CMDF"
 
 # macOS has no setsid executable. Python exposes the same session primitive, so
 # keep one real detached process on both hosts instead of announcing a dead PID.
