@@ -64,6 +64,7 @@ import {Ep1017, ep1017Schema} from './Ep1017';
 import {Ep1018, ep1018Schema} from './Ep1018';
 import {Ep1020, ep1020Schema} from './Ep1020';
 import {CalfLook} from './CalfLook';
+import {SealLook} from './SealLook';
 import {ProspectLook} from './ProspectLook';
 import {Ep1021, ep1021Schema} from './Ep1021';
 import {Ep1022, ep1022Schema} from './Ep1022';
@@ -130,6 +131,7 @@ export const RemotionRoot: React.FC = () => {
         calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??3900})}/>
       <Composition id="GrocerLook" component={GrocerLook} durationInFrames={240} fps={30} width={1080} height={1920}/>
       <Composition id="CalfLook" component={CalfLook} durationInFrames={240} fps={30} width={1080} height={1920}/>
+      <Composition id="SealLook" component={SealLook} durationInFrames={180} fps={30} width={1080} height={1920}/>
       <Composition id="ProspectLook" component={ProspectLook} durationInFrames={420} fps={30} width={1080} height={1920}/>
       <Composition id="Dispatch1105"
         component={Ep1105} durationInFrames={4200}
