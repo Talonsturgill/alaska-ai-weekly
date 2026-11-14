@@ -25,7 +25,7 @@ export const SealLook: React.FC = () => {
         {S === 2 && (<>
           <SurveyPod x={540} y={300} f={f} scale={1.5} text="2019 · ARTIFICIAL INTELLIGENCE" plateSize={22} shutter={120} />
           <SurveyPod x={540} y={900} f={f} scale={1.5} text="SUPER INTELLIGENCE" gold plateGrow={1.5} lookDown={1} />
-          <SurveyPod x={540} y={1450} f={f} scale={1.5} text="SUPER INTELLIGENCE" backText="SAME LEGAL DEFINITION" gold plateSpin={0.25 + (f - 120) / 400} />
+          <SurveyPod x={540} y={1450} f={f} scale={1.5} text="SUPER INTELLIGENCE" backText="SAME LEGAL DEFINITION" gold plateSpin={0.25} tilt={8} />
         </>)}
       </svg>
     </AbsoluteFill>

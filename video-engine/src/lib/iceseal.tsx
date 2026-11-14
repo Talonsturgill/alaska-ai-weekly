@@ -2,6 +2,7 @@ import React from 'react';
 import {INK} from './Character';
 import {tones, FormGradient, RimLight, ContactShadow} from './lighting';
 import {MONO, monoW} from './prospect';
+import {AK_PATH} from './akmap';
 
 // ============================================================================================
 // ICE SEAL FAMILY (NET-NEW 2026-11-14, "Two Pixels, One New Name").
@@ -20,7 +21,7 @@ const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
  *  - look -1..1 turns the head (back toward the tail / toward the viewer)
  *  - emotion calm | curious | squint (lids and brow)
  *  - pixels 0..1 collapses the seal into two warm pixels on the ice (the survey's-eye view)
- *  - thermal 0..1 lays the IR heat glow over the body (magenta to citron, hot at the core)
+ *  - thermal 0..1 lays the IR heat glow over the body (magenta to coral to white-hot, hottest at the face and chest)
  * Idles: breath, blink (seeded), whisker twitch, a slow hind-flipper curl. Origin is the belly
  * contact point; the contact shadow is drawn by the asset.
  */
@@ -66,12 +67,19 @@ export const RingedSeal: React.FC<{
             {/* pale belly, inside the outline */}
             <path d="M-134,-2 C-60,6 20,4 96,-8 C92,0 84,2 74,2 L-136,4 Z" fill={`url(#${id}b)`} opacity={0.9} />
             {/* ring rosettes: pale rings with dark centres, the species read */}
-            {[[-112, -36, 10], [-80, -54, 12], [-42, -64, 12], [-2, -66, 12], [36, -60, 11], [-96, -18, 9], [-60, -32, 10], [-20, -40, 11], [18, -38, 10], [56, -34, 9], [-36, -14, 8], [6, -16, 8]].map(([rx, ry, rr], i) => (
-              <g key={i}>
-                <ellipse cx={rx} cy={ry} rx={rr} ry={rr * 0.72} fill="none" stroke="#C9C6CE" strokeWidth={3.2} opacity={0.9} />
-                <ellipse cx={rx + 1} cy={ry + 1} rx={rr * 0.42} ry={rr * 0.3} fill={t.shade} opacity={0.75} />
-              </g>
-            ))}
+            {[[-112, -36, 10], [-84, -56, 13], [-44, -66, 11], [-4, -68, 13], [34, -62, 10], [-98, -18, 8], [-64, -36, 11], [-24, -44, 9], [14, -40, 12], [54, -36, 8], [-40, -16, 7], [4, -18, 6], [72, -54, 7], [-128, -20, 6], [-58, -58, 6]].map(([rx, ry, rr], i) => {
+              const j = 0.75 + 0.45 * (((i * 37) % 11) / 10);
+              const r0 = rr * j;
+              const rot = ((i * 53) % 60) - 30;
+              const broken = i % 4 === 3 && rr >= 11;
+              return (
+                <g key={i} transform={`rotate(${rot} ${rx} ${ry})`}>
+                  <ellipse cx={rx} cy={ry} rx={r0} ry={r0 * 0.7} fill="none" stroke="#C9C6CE" strokeWidth={2.2 + (i % 3) * 0.7} opacity={0.9}
+                    strokeDasharray={broken ? `${r0 * 2.2} ${r0 * 1.2}` : undefined} />
+                  <ellipse cx={rx + 1} cy={ry + 1} rx={r0 * 0.42} ry={r0 * 0.3} fill={t.shade} opacity={0.7} />
+                </g>
+              );
+            })}
             <RimLight d="M-140,-40 C-90,-74 -20,-82 30,-78" w={4} opacity={0.6} />
           </g>
           {/* fore flipper, clawed, planted */}
@@ -100,7 +108,10 @@ export const RingedSeal: React.FC<{
               <circle cx={-3} cy={-4} r={3.4} fill="#FFFFFF" opacity={0.95} />
               <circle cx={3} cy={3} r={1.4} fill="#FFFFFF" opacity={0.6} />
               {lidAmt > 0.02 && (
-                <path d={`M-12,-12 h24 v${24 * lidAmt} q-12,6 -24,0 Z`} fill={t.core} stroke={INK} strokeWidth={2.4} />
+                <g>
+                  <path d={`M-13.5,0 A13.5,14.5 0 0 1 13.5,0 L13.5,${-14.5 + 29 * lidAmt} Q0,${-14.5 + 29 * lidAmt + 5} -13.5,${-14.5 + 29 * lidAmt} Z`} fill={t.base} stroke="none" />
+                  <path d={`M-13.5,${-14.5 + 29 * lidAmt} Q0,${-14.5 + 29 * lidAmt + 5} 13.5,${-14.5 + 29 * lidAmt}`} fill="none" stroke={INK} strokeWidth={2.6} strokeLinecap="round" />
+                </g>
               )}
               {emotion === 'curious' && <path d="M-10,-17 q10,-7 20,-1" stroke={INK} strokeWidth={3} fill="none" strokeLinecap="round" />}
             </g>
@@ -111,20 +122,20 @@ export const RingedSeal: React.FC<{
       {/* the survey's-eye view: two warm pixels on the ice */}
       {px > 0.01 && (
         <g opacity={px}>
-          <rect x={-16} y={-34} width={16} height={16} fill={th > 0.5 ? '#FFB347' : '#3E3D45'} />
-          <rect x={0} y={-34} width={16} height={16} fill={th > 0.5 ? '#FFE066' : '#55545C'} />
+          <rect x={-16} y={-34} width={16} height={16} fill={th > 0.5 ? '#FF8A3D' : '#3E3D45'} />
+          <rect x={0} y={-34} width={16} height={16} fill={th > 0.5 ? '#FFF4E6' : '#55545C'} />
         </g>
       )}
       {/* thermal glow over the body: hot core, magenta edge */}
       {th > 0.01 && bodyOp > 0.01 && (
         <g opacity={th * bodyOp} style={{mixBlendMode: 'screen'}}>
-          <radialGradient id={`${id}th`} cx="50%" cy="60%" r="55%">
-            <stop offset="0%" stopColor="#FFE066" />
+          <radialGradient id={`${id}th`} cx="72%" cy="45%" r="60%">
+            <stop offset="0%" stopColor="#FFF4E6" />
             <stop offset="40%" stopColor="#FF8A3D" />
             <stop offset="75%" stopColor="#E0408A" />
             <stop offset="100%" stopColor="#3A1E5C" stopOpacity={0} />
           </radialGradient>
-          <ellipse cx={-10} cy={-40} rx={170} ry={70} fill={`url(#${id}th)`} />
+          <ellipse cx={0} cy={-50 - lf * 20} rx={180} ry={78 + lf * 14} fill={`url(#${id}th)`} />
         </g>
       )}
     </g>
@@ -140,20 +151,24 @@ export const podPlateW = (text: string, size: number) => monoW(text, size) + 40;
  * text is a prop. Origin is the top of the mounting strut.
  *  - text: the nameplate string; plateGrow 1..N swells the plate while the lenses keep their size
  *  - plateSpin 0..1 spins the plate about its vertical axis like a coin (0.5 = edge-on, 1 = back face)
- *  - backText: the string on the plate's back face; edge 0..1 holds the plate standing on its edge
+ *  - backText: the string on the plate's back face (plateSpin 0.25 or 0.75 holds it edge-on)
  *  - look -1..1 slides the pupils; lookDown 0..1 tilts the lenses toward the plate (the puzzled glance)
  *  - shutter: the frame number of a shutter click (a flash and a squash)
- *  - gold: draws the plate in gold leaf (the SUPER INTELLIGENCE decal) instead of steel
+ *  - gold: draws the plate in gold leaf (the SUPER INTELLIGENCE decal) instead of steel, as METAL
+ *  - tilt: degrees the whole capsule tilts about its strut (a glance reads at film scale)
+ *  - alaska: stencils an Alaska outline on the capsule; plateOnly draws just the plate on its bolts
+ *  - edge-on (plateSpin 0.25 or 0.75): the plate's thickness shows as a solid rim band, not a sliver
  */
 export const SurveyPod: React.FC<{
   x: number; y: number; scale?: number; f: number;
   text?: string; backText?: string; plateGrow?: number; plateSpin?: number; gold?: boolean;
   look?: number; lookDown?: number; shutter?: number; plateSize?: number; strut?: boolean;
-}> = ({x, y, scale = 1, f, text = '', backText = '', plateGrow = 1, plateSpin = 0, gold = false, look = 0, lookDown = 0, shutter = -999, plateSize = 26, strut = true}) => {
+  tilt?: number; alaska?: boolean; plateOnly?: boolean;
+}> = ({x, y, scale = 1, f, text = '', backText = '', plateGrow = 1, plateSpin = 0, gold = false, look = 0, lookDown = 0, shutter = -999, plateSize = 26, strut = true, tilt = 0, alaska = true, plateOnly = false}) => {
   const id = uid(`pod${x}${y}`);
-  const enamel = tones('#E9E4D8');
+  const enamel = {...tones('#E9E4D8'), core: '#B8B0A0'};
   const steel = tones('#9AA4AD');
-  const goldT = tones('#D9A520');
+  const goldT = {...tones('#D9A520'), core: '#8A6410', key: '#F3D27A'};
   const sinceShot = f - shutter;
   const flash = sinceShot >= 0 && sinceShot < 8 ? 1 - sinceShot / 8 : 0;
   const squash = sinceShot >= 0 && sinceShot < 10 ? Math.sin((sinceShot / 10) * Math.PI) * 0.06 : 0;
@@ -180,13 +195,14 @@ export const SurveyPod: React.FC<{
     <g transform={`translate(${x},${y + bob}) scale(${scale})`}>
       <FormGradient id={id} t={enamel} />
       <FormGradient id={`${id}p`} t={pT} />
-      {strut && (
+      <g transform={`rotate(${tilt} 0 -26)`}>
+      {strut && !plateOnly && (
         <g>
           <rect x={-14} y={-40} width={28} height={44} rx={4} fill={steel.core} stroke={INK} strokeWidth={4} />
           <circle cx={0} cy={-26} r={4} fill={steel.key} stroke={INK} strokeWidth={2} />
         </g>
       )}
-      <g transform={`scale(${1 + squash},${1 - squash})`}>
+      {!plateOnly && <g transform={`scale(${1 + squash},${1 - squash})`}>
         {/* the capsule */}
         <path d="M-120,0 h240 q30,0 30,34 q0,40 -40,48 h-220 q-40,-8 -40,-48 q0,-34 30,-34 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
         <path d="M-118,74 h236" stroke={enamel.shade} strokeWidth={4} opacity={0.7} />
@@ -196,8 +212,10 @@ export const SurveyPod: React.FC<{
         {lens(58, '#6D3FB0', '#5A6470')}
         <text x={-58} y={74} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill="#2B2F36" letterSpacing={1}>COLOR</text>
         <text x={58} y={74} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill="#2B2F36" letterSpacing={1}>THERMAL</text>
-        {flash > 0 && <circle cx={-58} cy={18} r={44 + 30 * (1 - flash)} fill="#FFFFFF" opacity={0.7 * flash} />}
-      </g>
+        {alaska && <path d={AK_PATH} transform="translate(-40,44) scale(0.08)" fill="#2B2F36" opacity={0.75} />}
+        {flash > 0 && <circle cx={-58} cy={18} r={44 + 30 * (1 - flash)} fill="#BFE6FF" opacity={0.75 * flash} />}
+        {flash > 0 && <circle cx={58} cy={18} r={44 + 30 * (1 - flash)} fill="#C9A6FF" opacity={0.75 * flash} />}
+      </g>}
       {/* the NAMEPLATE: riveted, hung under the capsule on two bolts, grows and spins as a prop */}
       <g transform={`translate(0,${96 + (plateGrow - 1) * ph * 0.5}) scale(${plateGrow})`}>
         <path d="M-50,-14 v-6 M50,-14 v-6" stroke={INK} strokeWidth={5} strokeLinecap="round" />
@@ -208,11 +226,20 @@ export const SurveyPod: React.FC<{
             <circle key={i} cx={rx} cy={ry} r={3.6} fill={pT.key} stroke={INK} strokeWidth={1.8} />
           ))}
           {gold && <path d={`M${-pw / 2 + 20},-6 l${pw * 0.22},0`} stroke="#FFF3B0" strokeWidth={3} opacity={0.8} strokeLinecap="round" />}
+          {gold && Math.abs(sx) > 0.25 && <path d={`M${-pw / 2 + 8},${ph - 22} h${pw - 16}`} stroke={goldT.core} strokeWidth={4} opacity={0.6} />}
           {Math.abs(sx) > 0.25 && (
             <text x={0} y={-14 + ph / 2 + plateSize * 0.36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={plateSize}
               letterSpacing={1.5} fill={gold ? '#3A2A06' : '#1B2026'}>{face}</text>
           )}
         </g>
+        {/* the plate's thickness: a solid rim band that widens as the face turns edge-on */}
+        {Math.abs(sx) < 0.35 && (
+          <g opacity={1 - Math.abs(sx) / 0.35}>
+            <rect x={-9} y={-14} width={18} height={ph} rx={3} fill={pT.core} stroke={INK} strokeWidth={3.5} />
+            <path d={`M-3,-8 v${ph - 12}`} stroke={pT.key} strokeWidth={3} opacity={0.85} strokeLinecap="round" />
+          </g>
+        )}
+      </g>
       </g>
     </g>
   );

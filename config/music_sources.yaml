@@ -130,6 +130,23 @@ pool:
     credit: '"Long Note Two" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
     mood: [delicate, pondering, reflective, curious]
 
+  # ADDED 2026-11-14. Every curious/wonder track had played within the last twenty runs, so the
+  # branch could not meet "never a recent track". URLs verified 206 on a range request that day.
+  - title: Ice Flow
+    composer: Kevin MacLeod
+    source: incompetech.com
+    url: https://incompetech.com/music/royalty-free/mp3-royaltyfree/Ice%20Flow.mp3
+    license: CC BY 4.0
+    credit: '"Ice Flow" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [wonder, curious, wintry, delicate]
+  - title: Light Thought var 1
+    composer: Kevin MacLeod
+    source: incompetech.com
+    url: https://incompetech.com/music/royalty-free/mp3-royaltyfree/Light%20Thought%20var%201.mp3
+    license: CC BY 4.0
+    credit: '"Light Thought var 1" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [curious, pondering, light, delicate]
+
 angle_to_mood:
   celebratory: [uplifting, hopeful, warm, celebratory]
   cautionary: [tense, urgent, somber, driving]
