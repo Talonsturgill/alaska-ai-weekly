@@ -293,7 +293,10 @@ def main():
 
     lra = m.get("lra", 0.0)
     windows = short_term(a.delivered) if lra > 9.0 else None
-    diagnosis, lra_windows = diagnose(lra, gaps, last_word, windows)
+    _, lra_windows = diagnose(lra, gaps, last_word, windows)
+    diagnosis = (f"LRA is {lra} LU, reported as descriptive evidence only. "
+                 "Never attenuate narration or increase background through speech to chase LRA. "
+                 "Use the measured speech-priority report for narration/background balance.")
 
     # PROVE THE MEASUREMENT COVERS THE MASTER, DO NOT ASSERT IT (2026-08-08).
     # The square is a video-only crop of the 9:16 master, so the two carry byte-identical
@@ -339,11 +342,11 @@ def main():
         "delivered_i": m.get("i"),
         "delivered_tp": m.get("tp"),
         "delivered_lra": lra,
-        "targets": {"i": -14.0, "tp_max": -1.0, "lra": [6.0, 9.0]},
+        "targets": {"i": -14.0, "tp_max": -1.0},
+        "lra_advisory_only": True,
         "pass": {
             "loudness": abs(m.get("i", 0) + 14.0) <= 1.0,
             "true_peak": m.get("tp", 0) <= -1.0,
-            "lra": 6.0 <= lra <= 9.0,
         },
         "vo_gaps_ge_0_35s": len(gaps),
         "vo_gaps_ge_0_50s": len(long_gaps),
@@ -352,6 +355,22 @@ def main():
         "longest_gaps": sorted(gaps, key=lambda g: -g["len"])[:8],
         "diagnosis": diagnosis,
     }
+    priority_path = os.path.join(OUT, "audio", "speech_priority.json")
+    try:
+        import hashlib
+        priority = json.load(open(priority_path))
+        with open(os.path.join(OUT, "audio", "master.wav"), "rb") as source:
+            digest = hashlib.sha256()
+            for chunk in iter(lambda: source.read(1024 * 1024), b""):
+                digest.update(chunk)
+            master_hash = digest.hexdigest()
+        if priority.get("pass") is not True or priority.get("master_sha256") != master_hash:
+            raise ValueError("failed or stale speech-priority evidence")
+        rep["speech_priority"] = priority
+        rep["pass"]["speech_priority"] = True
+    except (OSError, ValueError) as exc:
+        rep["speech_priority"] = {"pass": False, "error": str(exc)}
+        rep["pass"]["speech_priority"] = False
     if lra_windows:
         rep["lra_windows"] = lra_windows
     # THE HIT LIST RIDES IN THE PACK (2026-10-02). A judge marked Sound down with "nothing confirms

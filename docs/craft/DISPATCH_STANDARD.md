@@ -711,3 +711,20 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - A palette string shares tokens with the last two boards (alone, only, red, fluorescent, ink, paper, pale) and fails Gate 0A as a repeat. Write the colour world in words the last two boards didn't use.
 - Plates are placed at world y so that at the shot's zoom they land under screen y 690. Calendars, signs and billboards in the same world band collide with the plate stack at y 620 and fail label_footprint.
 - A sign, banner or billboard never sits in front of Drip's or Bucket's face, and one object carries a given sentence (the billboard OR the plate OR the caption, not three).
+
+
+## Speech intelligibility correction (owner report, 2026-11-14)
+
+This supersedes older advice to deepen the VO arc or lift the bed to achieve LRA 6 to 9.
+The November 13th delivered master passed -13.99 LUFS, -2.28 dBTP and LRA 6.60,
+yet the owner reported a TikTok viewer could not hear the voice over the background.
+Whole-mix loudness is not a voice-to-background measurement.
+
+- Preserve narration level; do not apply the music arc to the narrator.
+- Measure the combined music, effects and ambience against speech, not just the music.
+- The mixer's speech-priority stage attenuates background to a measured 18 dB minimum
+  margin during speech, with mono compatibility and smooth recovery into real gaps.
+- Include the generated measured evidence. Never label an absent measurement a pass.
+- Listen on phone-like playback when available, particularly the opening, quiet speech
+  and strongest effects. Explicitly disclose unavailable listening capability.
+- LRA is advisory. Clarity wins over dramatic range or an audible ambience score.

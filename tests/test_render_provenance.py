@@ -1,4 +1,5 @@
 import os
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -45,6 +46,7 @@ class ReceiptTests(unittest.TestCase):
         self.addCleanup(self.environment.stop)
         for name in {*rp.RENDER_REQUIRED, *rp.MIX_REQUIRED, *rp.ENCODE_PATTERNS}:
             self.make(name, 'input: ' + name)
+        self.make('out/dispatch/storyboard.json', '{"beats": []}')
         self.props = self.root / 'out/dispatch/episode_props.json'
         self.video = self.make('out/dispatch/render.mp4', 'video A')
         self.vo = self.make('out/dispatch/audio/vo.wav', 'voice A')
@@ -70,7 +72,23 @@ class ReceiptTests(unittest.TestCase):
     def complete_mix(self, wav=None):
         wav = wav or self.wav
         rp.begin_mix(wav, self.vo, [self.music], self.root)
+        (wav.parent / 'speech_priority.json').write_text(json.dumps({'pass': True, 'master_sha256': rp.sha(wav)}))
         return rp.finish_mix(wav, self.root)
+
+    def test_speech_priority_required_and_bound(self):
+        rp.begin_mix(self.wav, self.vo, [self.music], self.root)
+        with self.assertRaises((ValueError, OSError)):
+            rp.finish_mix(self.wav, self.root)
+        report = self.wav.parent / 'speech_priority.json'
+        for data in ({'pass': False, 'master_sha256': rp.sha(self.wav)},
+                     {'pass': True, 'master_sha256': 'stale'}):
+            report.write_text(json.dumps(data))
+            with self.assertRaisesRegex(ValueError, 'speech-priority'):
+                rp.finish_mix(self.wav, self.root)
+        data = self.complete_mix()
+        report.write_text('{}')
+        with self.assertRaisesRegex(ValueError, 'contents changed'):
+            rp.check_mix(data, self.root)
 
     def outputs(self):
         for name in rp.DELIVERABLES:

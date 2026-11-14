@@ -23,7 +23,7 @@ RENDER_PATTERNS = ('video-engine/src/**/*', 'video-engine/public/**/*',
                    'video-engine/node_modules/.package-lock.json',
                    'out/dispatch/captions.json', 'scripts/build_scenes.py',
                    *RENDER_REQUIRED)
-MIX_REQUIRED = ('scripts/dispatch_mix.py', 'scripts/sfx_names.py', 'scripts/sfx_bank.py', 'scripts/mix_aac_check.py',
+MIX_REQUIRED = ('scripts/speech_priority.py', 'scripts/dispatch_mix.py', 'scripts/sfx_names.py', 'scripts/sfx_bank.py', 'scripts/mix_aac_check.py',
                 'out/dispatch/vo_lines.json', 'out/dispatch/episode_props.json',
                 'out/dispatch/storyboard.json')
 MIX_PATTERNS = (*MIX_REQUIRED, 'out/dispatch/music_credit.json',
@@ -293,7 +293,11 @@ def finish_mix(wav, root=ROOT):
     data = read(receipt_path(wav, 'mix'))
     require_state(data, 'mix', 'mixing')
     check_mix_inputs(data, root)
-    data.update(state='complete', output=binding(wav))
+    priority_path = Path(wav).parent / 'speech_priority.json'
+    priority = read(priority_path)
+    if priority.get('pass') is not True or priority.get('master_sha256') != sha(wav):
+        raise ValueError('missing, failed or stale speech-priority report')
+    data.update(state='complete', output=binding(wav), speech_priority=binding(priority_path))
     write(receipt_path(wav, 'mix'), data)
     return data
 
@@ -302,6 +306,7 @@ def check_mix(data, root=ROOT):
     require_state(data, 'mix', 'complete')
     check_mix_inputs(data, root)
     check_binding(data['output'])
+    check_binding(data['speech_priority'])
 
 
 def begin_encode(video, wav, root=ROOT):
