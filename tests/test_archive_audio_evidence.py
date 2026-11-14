@@ -13,7 +13,8 @@ class AudioArchiveTests(unittest.TestCase):
         self.root = Path(self.tmp.name).resolve()
         for name in {*rp.RENDER_REQUIRED, *rp.MIX_REQUIRED, *rp.ENCODE_PATTERNS}:
             self.put(name, 'input ' + name)
-        self.put('out/dispatch/storyboard.json', '{"beats": []}')
+        self.put('out/dispatch/storyboard.json', '{"run_date": "2026-11-15", "beats": []}')
+        self.put('out/dispatch/.run_stamp.json', '{"run_id": "2026-11-15"}')
         props = self.root / 'out/dispatch/episode_props.json'
         video = self.put('out/dispatch/render.mp4', 'render')
         vo = self.put('out/dispatch/audio/vo.wav', 'voice')
@@ -75,3 +76,29 @@ class AudioArchiveTests(unittest.TestCase):
     def test_invalid_date_cannot_escape_archive(self):
         with self.assertRaises(ValueError):
             archive('../escape', self.root)
+
+    def test_wrong_edition_preserves_existing_evidence(self):
+        previous = self.put('runs/2026-11-14/audio_evidence.json', 'prior edition evidence')
+        with self.assertRaisesRegex(ValueError, 'archive date does not match'):
+            archive('2026-11-14', self.root)
+        self.assertEqual(previous.read_text(), 'prior edition evidence')
+
+    def test_missing_or_mismatched_stamp_preserves_existing_evidence(self):
+        previous = self.put('runs/2026-11-15/audio_evidence.json', 'existing evidence')
+        stamp = self.root / 'out/dispatch/.run_stamp.json'
+        for content in (None, '{"run_id": "2026-11-16"}', '{}'):
+            with self.subTest(content=content):
+                if content is None:
+                    stamp.unlink()
+                else:
+                    stamp.write_text(content)
+                with self.assertRaises(ValueError):
+                    archive('2026-11-15', self.root)
+                self.assertEqual(previous.read_text(), 'existing evidence')
+
+    def test_relabeling_board_and_stamp_cannot_relabel_finished_delivery(self):
+        self.put('out/dispatch/storyboard.json', '{"run_date": "2026-11-16", "beats": []}')
+        self.put('out/dispatch/.run_stamp.json', '{"run_id": "2026-11-16"}')
+        with self.assertRaisesRegex(ValueError, 'stale delivery'):
+            archive('2026-11-16', self.root)
+        self.assertFalse((self.root / 'runs').exists())

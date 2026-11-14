@@ -10,8 +10,10 @@ import json
 from pathlib import Path
 try:
     from . import render_provenance as rp
+    from .run_stamp import board_run_id
 except ImportError:
     import render_provenance as rp
+    from run_stamp import board_run_id
 
 
 def archive(date, root=rp.ROOT):
@@ -22,6 +24,12 @@ def archive(date, root=rp.ROOT):
     ok, why = rp.check_delivery(root)
     if not ok:
         raise ValueError('cannot archive stale delivery: ' + why)
+    # check_delivery above verifies the board against the mix's source hash.
+    # Match both that bound run identity and the current stamp before touching an archive.
+    run_date = board_run_id(rp.read(out / 'storyboard.json'), 'audio archive',
+                            stamp=str(out / '.run_stamp.json'))
+    if run_date != date:
+        raise ValueError('archive date does not match the provenance-bound run: ' + run_date)
     delivery = rp.read(out / 'delivery_sources.json')
     report = rp.read(root / 'out/evidence/audio_report.json')
     measured = report.get('measured_on')
