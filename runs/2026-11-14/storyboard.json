@@ -1,0 +1,2409 @@
+{
+  "run_date": "2026-11-14",
+  "slug": "two-pixels-one-new-name",
+  "title": "Two Pixels, One New Name",
+  "concept": "NOAA's Alaska Fisheries Science Center page on its research tools, last updated November 6th, now calls its seal and polar bear detectors and its ear stone aging tool super intelligence. NOAA survey planes shoot color and thermal photos together from 1,000 feet, a seal can be as small as two pixels, a million images may hold 7,000 to 9,000 animals, and finding them by hand took a year. NOAA's own 2019 article calls the same seal work artificial intelligence. A September 29th executive order told agencies to say super intelligence instead, and for now defines it as what the law already calls artificial intelligence, with a proposed new definition due November 28th. The order's case and a procurement law dean's doubt get equal signs on one floe, the page gives no accuracy figure, and the film ends on the same two pixels it opened on.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 122.4,
+  "fingerprint": {
+    "pov": "aerial-oblique",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "centered-hero",
+    "register": "naturalistic-scene",
+    "palette": "bright noon sunshine on clear Arctic blue #BFE3F2 to haze #F4FBFD, pack ice #F2F7F9 with blue shadow planes #A9C7D6, cobalt leads #123B57, smoky ringed seal #6B6A73 with ash-ivory rings #C9C6CE, enamel camera pod #E9E4D8 with a #B8B0A0 core, a thermal ramp violet to magenta to coral to white-hot only inside heat frames, metallic gold leaf #D9A520 only on the SUPER INTELLIGENCE nameplates, document ivory #EFE8D6 with ink #232A33",
+    "camera_strategy": "zoom-through",
+    "light_story": "bright warm noon sunshine on the ice, a glowing thermal survey view, warm cream lamp-lit paper interiors",
+    "metaphor": "a survey camera whose nameplate keeps growing while its lenses never change size, over a seal that is still two pixels"
+  },
+  "signature_shot": 13,
+  "palette": "bright noon sunshine on clear Arctic blue #BFE3F2 to haze #F4FBFD, pack ice #F2F7F9 with blue shadow planes #A9C7D6, cobalt leads #123B57, smoky ringed seal #6B6A73 with ash-ivory rings #C9C6CE, enamel camera pod #E9E4D8 with a #B8B0A0 core, a thermal ramp violet to magenta to coral to white-hot only inside heat frames, metallic gold leaf #D9A520 only on the SUPER INTELLIGENCE nameplates, document ivory #EFE8D6 with ink #232A33",
+  "divergence_note": "The last films were a brass faucet on an overcast pewter-sage gravel lot (11-13), a flagging-orange stake tag on raven polar dusk (11-12), a roof puck in pink-gold ice fog (11-11) and a vermilion take-a-number machine on a violet shore (11-10). This film is high-noon white pack ice with cobalt leads, a thermal violet survey view and gold leaf on exactly one nameplate. Its hero is a living animal, a ringed seal, not an object, its AI presence is a twin-lens survey camera, its device is a zoom through two pixels and a plate that grows while the lenses never change, and its test is two identical signs on one floe. Honest overlaps: 11-12 also had blue-white snow with blue shadow planes, answered here by a high-key noon sky and cobalt leads in every exterior. 11-10 had a violet shore, and violet here lives only inside the thermal frames. Shots 6 and 12 share the under-wing set as a deliberate callback.",
+  "treatment": {
+    "title": "Two Pixels, One New Name",
+    "summary": "Explainer winner 'Two Pixels, One New Name' with grafts: a two-pixel thermal seal is the cold open and the button; the survey camera pod's riveted nameplate is the throughline; the color and thermal frames slide into register as the mechanism cutaway; Act 3 is two identical signposts frozen into one floe with the pod dead center.",
+    "judge_reasoning": "Explainer pitch won (48 of 60): the only pitch that draws the mechanism, c21 lands on the act boundary, both loops legal with margin, Act 3 gives c20 and c23 identical size and light and the turn refuses to pick a side. Grafts: B's stamp that leaves machine learning showing (cut for length, c24 kept off screen), A's plate that grows while the lens keeps its size, A's sweating microscope and the ONE OF THESE IS A SEAL tile, D's seal watching both signs, D's puzzled glance, B's seal looking up at the lens in the button."
+  },
+  "angle": {
+    "thesis": "Alaska's seal finder didn't get smarter on November 6th, it got a bigger name: by the order's own definition 'super intelligence' means exactly what the law calls artificial intelligence, and the real feat, finding two-pixel seals and reading ear stones ten times faster than a microscope, never needed the promotion.",
+    "supporting_facts": [
+      "The page now says super intelligence for the seal, polar bear and otolith tools (c2, c3, c10, c12), while NOAA's own 2019 and 2024 articles about the same work say artificial intelligence and deep learning (c11, c15), and GAIA states its former name outright (c16, c17).",
+      "Sec. 3(a) defines Super Intelligence as the technologies covered by the statutory definition of artificial intelligence (c21), and the page backs the new word with no new capability claim: seal detection still 'developed', aging still 'could revolutionize', no accuracy figure anywhere (c3, c14, c26).",
+      "The capability is real and Alaskan: seals as small as two pixels (c8) in millions of color and thermal images (c5, c6), 7,000 to 9,000 animals per million images (c7), a year of hand search after each season before automation (c9), ear stones in 30 to 50 seconds, more than ten times faster than a microscope (c13, c14)."
+    ],
+    "counterpoint_to_honor": "The administration's own case, in its own words: these systems 'increasingly represent not merely artificial intelligence, but a new era' (c20), and the order asks for a capability-based federal definition by November 28th (c22). A name built for ambition is a legitimate policy choice, and an agency page that follows a lawful directive is doing its job. Tillipman's 'no purpose other than rebranding' (c23) is shown at equal weight, attributed. The film takes no side on the politics; the tools are the constant across both views. November 28th is the closing open question, not the thesis.",
+    "falsifier": "False today if the order gives SI any operative meaning beyond 15 U.S.C. 9401(3) (c21), or if the updated page backs the new term with capability evidence (accuracy figures, new tasks) the 2019 and 2024 NOAA articles didn't have (c26, c11, c15). Could become false on November 28th if the proposed definition sets a bar these tools fail.",
+    "second_movement": "Act two turns on c21: the order that renamed everything defines the new word as the old legal one, machine learning still sits in the page heading (c24), and GAIA kept its letters while changing what they stand for (c17). Act four turns forward: a definition due November 28th that doesn't exist yet (c22).",
+    "runner_ups": [
+      "A (enthusiast) pure wonder at the tools: kept as Act 1 and the button, rejected as thesis because it ignores the definition.",
+      "B (skeptic) cost to public clarity: withdrawn in cross-challenge, no claim shows anyone confused; kept only as the observable two-names inconsistency.",
+      "C (contrarian) the name moved before the definition, Nov 28 decides: conceded its falsifier may not be checkable while the film is live; kept as the closing open question."
+    ],
+    "stance": "curious",
+    "guardrails": [
+      "never quote the AFSC page's old wording, no archived copy (verdict)",
+      "never 'every mention was replaced', machine learning survives (c24)",
+      "the page names no order; say the order requires it and the page now says it",
+      "30 to 50 seconds is fish, never rockfish (c13)",
+      "millions of images collected, not processed (c5)",
+      "a year by hand was BEFORE automation, 2019 article, past tense (c9); never claim the year is now automated to a given speed",
+      "no accuracy figure on the page (c26), say 'the page gives no accuracy figure'",
+      "GAIA is Northeast plus Alaska centers, not Alaska-only (c16)",
+      "Nov 28 is proposed legislative language to the President, not law, not yet written (c22)",
+      "no Trump 'artificial anything' quote, no Navy memo, no Truth Social post",
+      "no mockery of the order or the President; c20 gets a straight scene"
+    ]
+  },
+  "claim_map": {
+    "1": [
+      "c8"
+    ],
+    "2": [
+      "c4"
+    ],
+    "46": [
+      "c8"
+    ],
+    "3": [
+      "c5",
+      "c6"
+    ],
+    "4": [
+      "c6"
+    ],
+    "5": [
+      "c6"
+    ],
+    "6": [
+      "c7"
+    ],
+    "7": [
+      "c7"
+    ],
+    "8": [
+      "narration"
+    ],
+    "9": [
+      "c9"
+    ],
+    "10": [
+      "c9"
+    ],
+    "11": [
+      "c6"
+    ],
+    "12": [
+      "c10"
+    ],
+    "13": [
+      "c3"
+    ],
+    "14": [
+      "c1"
+    ],
+    "15": [
+      "c2"
+    ],
+    "16": [
+      "c3"
+    ],
+    "17": [
+      "narration"
+    ],
+    "18": [
+      "c12"
+    ],
+    "19": [
+      "c12"
+    ],
+    "20": [
+      "c13"
+    ],
+    "21": [
+      "c14"
+    ],
+    "22": [
+      "c11"
+    ],
+    "23": [
+      "c11"
+    ],
+    "24": [
+      "c18"
+    ],
+    "25": [
+      "c18"
+    ],
+    "26": [
+      "c19"
+    ],
+    "27": [
+      "c22"
+    ],
+    "42": [
+      "c22"
+    ],
+    "28": [
+      "c21"
+    ],
+    "29": [
+      "c21"
+    ],
+    "30": [
+      "narration"
+    ],
+    "31": [
+      "c20"
+    ],
+    "43": [
+      "c22"
+    ],
+    "32": [
+      "c20"
+    ],
+    "33": [
+      "c23"
+    ],
+    "44": [
+      "c23"
+    ],
+    "34": [
+      "narration"
+    ],
+    "35": [
+      "c26"
+    ],
+    "45": [
+      "c26"
+    ],
+    "36": [
+      "c26"
+    ],
+    "37": [
+      "narration"
+    ],
+    "38": [
+      "c22"
+    ],
+    "39": [
+      "c8"
+    ],
+    "40": [
+      "narration"
+    ],
+    "47": [
+      "narration"
+    ],
+    "48": [
+      "narration"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "A cold violet thermal frame of sea ice with two orange pixels that blink on at 0.3 s and a ring that snaps around them.",
+    "headline": "AS SMALL AS 2 PIXELS",
+    "motion_by_s": 0.3,
+    "loopback": "Frame 1 is two orange pixels blinking on a thermal frame of ice, the last frame is the same two pixels after the seal folds back into them."
+  },
+  "open_loop": {
+    "plant_t": 17.19,
+    "pay_t": 118.1,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "pin",
+    "what": "Which tile is the seal? Planted as ONE OF THESE IS A SEAL on a dark tile in the million-tile wall, reminded when the 2019 article's seal photo wears the same pin tag, paid when the camera cranes into that same tagged tile and the seal rises out of it to look up at the lens."
+  },
+  "open_loop_2": {
+    "plant_t": 38.41,
+    "pay_t": 109.04,
+    "what": "Did it get smarter? Planted as the pod glancing down at its new gold plate under DID IT GET SMARTER, paid when the accuracy tag swings down blank, the detector box finds nothing to box and the pod looks up at its own plate under NOTHING ON THE PAGE SHOWS SMARTER."
+  },
+  "throughline": {
+    "object": "the SurveyPod's nameplate",
+    "lands_in_button": "the plate stands on its edge, neither face showing, as the seal looks up at the unchanged lens",
+    "states": [
+      {
+        "at_s": 7.73,
+        "state": "P1 plain blank steel plate"
+      },
+      {
+        "at_s": 35.65,
+        "state": "P2 stamped gold, SUPER INTELLIGENCE, swollen while the lenses keep their size"
+      },
+      {
+        "at_s": 73.64,
+        "state": "P3 spun to its back face, SAME LEGAL DEFINITION"
+      },
+      {
+        "at_s": 112.93,
+        "state": "P4 swollen once more against the unchanged lenses, A BIGGER NAME"
+      },
+      {
+        "at_s": 114.58,
+        "state": "P5 settled on its edge, neither face showing, while the definition is due"
+      },
+      {
+        "at_s": 118.1,
+        "state": "P5 still on its edge as the seal looks up at the unchanged lens"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 4.11,
+      "type": "scale-pullback",
+      "what": "the two pixels open up into a whole ringed seal as the camera pushes through them",
+      "hold_s": 0.8
+    },
+    {
+      "t": 12.82,
+      "type": "build-on",
+      "what": "the photo tiles stack up until the wall fills the frame",
+      "hold_s": 0.8
+    },
+    {
+      "t": 50.13,
+      "type": "build-on",
+      "what": "ten ear stones clatter into the tray while the person at the microscope finishes one",
+      "hold_s": 0.8
+    },
+    {
+      "t": 67.35,
+      "type": "scale-pullback",
+      "what": "one browser window pulls back into a wall of browser windows all typing the new words",
+      "hold_s": 0.8
+    },
+    {
+      "t": 82.86,
+      "type": "build-on",
+      "what": "the two identical signs open the same way on one locked floe",
+      "hold_s": 0.8
+    },
+    {
+      "t": 118.1,
+      "type": "scale-pullback",
+      "what": "the camera cranes down from the pod's lens to the seal rising out of her tile",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 2.0
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 1.8
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 13,
+        "offset": 0.0,
+        "level": 1.5
+      },
+      {
+        "line": 15,
+        "offset": 0.0,
+        "level": 2.0
+      },
+      {
+        "at_s": 117.6,
+        "level": 0.12
+      },
+      {
+        "at_s": 118.7,
+        "level": 1.8
+      },
+      {
+        "from_end": 2.6,
+        "level": 0.9
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 117.6,
+    "riser_at": 112.93,
+    "silence_at": 117.6,
+    "payoff_at": 118.1,
+    "button_pattern": "callback",
+    "interrupt_at": 59.34,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "Two pixels",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "thermal-ice",
+      "pov": "thermal-frame-zoom",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "character-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the seal at x540 y980",
+      "means": "Two orange pixels blink on a thermal frame of sea ice and resolve into a ringed seal who squints at us",
+      "ambient": "wind over ice, a thin electronic hum",
+      "hero": {
+        "name": "two pixels + ring + stake tag + RingedSeal",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% seal, 30% thermal ice, 20% ring and plate"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-6.060"
+    },
+    {
+      "title": "The survey plane",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "pack-ice-aerial",
+      "pov": "aerial-oblique",
+      "layout": "diagonal-depth",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the plane at x540 y860",
+      "means": "A bush plane banks over the pack ice and the twin-lens pod under it fires color and thermal together from 1,000 ft",
+      "ambient": "a prop drone, wind, ice creaks",
+      "hero": {
+        "name": "bush plane + SurveyPod + pack ice + leads + altimeter tag",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% plane and pod, 35% ice and leads, 20% altimeter tag"
+      },
+      "id": 2,
+      "start_s": 6.06,
+      "t": "6.060-12.820"
+    },
+    {
+      "title": "A million photos",
+      "vo_line": 2,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "tile-wall",
+      "pov": "flat-on-wall",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the tile wall at x540 y960",
+      "means": "A wall of photo tiles stacks up, a few glow coral, and one dark tile gets a tag that says one of these is a seal",
+      "ambient": "paper riffles, a room tone",
+      "hero": {
+        "name": "photo tiles + scatter of tiles + dark tile + pin tag",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "60% tiles, 25% glowing tiles, 15% tag"
+      },
+      "id": 3,
+      "start_s": 12.82,
+      "t": "12.820-18.820"
+    },
+    {
+      "title": "By hand",
+      "vo_line": 3,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "analyst-desk",
+      "pov": "over-shoulder",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "character-as-subject",
+      "camera": "static:the falling months and the toppling prints are the move",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the analyst at x420 y1000",
+      "means": "An analyst squints into a magnifier by a window onto the ice while the calendar sheds a year and the prints topple",
+      "ambient": "a desk lamp buzz, pages turn, a clock",
+      "hero": {
+        "name": "analyst + magnifier + stack of prints + calendar + wall map of Alaska + window onto the ice",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% analyst, 30% calendar and prints, 25% map and window"
+      },
+      "id": 4,
+      "start_s": 18.82,
+      "t": "18.820-24.580"
+    },
+    {
+      "title": "The mechanism",
+      "vo_line": 4,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "register-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the frames at x540 y960",
+      "means": "A color frame and a thermal frame slide into register inside an Alaska outline and a detector box snaps around a warm seal",
+      "ambient": "a soft electronic hum, a lock click",
+      "hero": {
+        "name": "color frame + thermal frame + detector box + seal + credit plate + Alaska outline border",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% frames, 30% box and seal, 20% plate"
+      },
+      "id": 5,
+      "start_s": 24.58,
+      "t": "24.580-30.880"
+    },
+    {
+      "title": "The new plate",
+      "vo_line": 5,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "pod-under-wing",
+      "pov": "low-under-belly",
+      "layout": "centered-hero",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the pod at x540 y880",
+      "means": "Under the wing the pod's 2019 plate is stamped gold and swells while the lenses stay the same size, and the pod glances down",
+      "ambient": "a prop drone, wind, a stamp thud",
+      "hero": {
+        "name": "SurveyPod + gold stamp + date tag + wing",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "55% pod and plate, 25% stamp, 20% calendar"
+      },
+      "id": 6,
+      "start_s": 30.88,
+      "t": "30.880-40.300"
+    },
+    {
+      "title": "The ear stone race",
+      "vo_line": 7,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "lab-bench",
+      "pov": "bench-level-side",
+      "layout": "split-race",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the reader at x400 y1000",
+      "means": "An ear stone reader with its own gold plate reads stones under near infrared light while a person works a microscope beside it",
+      "ambient": "a lab room tone, stones click, a stopwatch",
+      "hero": {
+        "name": "ear stone reader + microscope + ear stones + stopwatch + near infrared light + person's hand",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "45% reader, 30% microscope and hand, 25% stopwatch and stones"
+      },
+      "id": 7,
+      "start_s": 40.3,
+      "t": "40.300-53.520"
+    },
+    {
+      "title": "The 2019 article",
+      "vo_line": 8,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "article-wall",
+      "pov": "flat-on-wall",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the swinging frame and the string are the move",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the article at x540 y900",
+      "means": "A framed 2019 NOAA article swings on a hook and an ink string pins its seal photo to the gold plate",
+      "ambient": "a room tone, a frame creaks on a hook",
+      "hero": {
+        "name": "framed 2019 NOAA article + ink string + window with the pod's gold plate",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% article, 25% string, 20% window"
+      },
+      "id": 8,
+      "start_s": 53.52,
+      "t": "53.520-59.340"
+    },
+    {
+      "title": "The order",
+      "vo_line": 9,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "high",
+      "stage": "order-desk",
+      "pov": "overhead-flat",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the order at x540 y980",
+      "means": "An executive order slides onto a desk, a word card flips, browser windows multiply and an empty envelope pins up for Nov 28",
+      "ambient": "a desk room tone, paper slides, keys tap",
+      "hero": {
+        "name": "executive order document + word card + browser window + empty envelope + blank sheet + lamp",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% document, 30% card and browsers, 25% envelope"
+      },
+      "id": 9,
+      "start_s": 59.34,
+      "t": "59.340-73.640"
+    },
+    {
+      "title": "Same legal definition",
+      "vo_line": 11,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "definition-cutaway",
+      "pov": "flat-on-pages",
+      "layout": "side-by-side",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the plate at x540 y860",
+      "means": "The order's page and the statute page slide side by side, the gold plate spins to its back and an ink line joins the matching words",
+      "ambient": "paper slides, a coin spin, a pen scratch",
+      "hero": {
+        "name": "two pages + gold plate on a chain + ink line",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "45% pages, 35% plate, 20% line"
+      },
+      "id": 10,
+      "start_s": 73.64,
+      "t": "73.640-82.860"
+    },
+    {
+      "title": "Two signs",
+      "vo_line": 13,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "two-sign-floe",
+      "pov": "low-ice-level",
+      "layout": "symmetric-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:a locked symmetric frame so neither sign is favoured",
+      "transition_in": "whip-pan",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the pod at x540 y940",
+      "means": "One locked symmetric floe, the pod on a tripod dead center, two identical signs open the same way to the order's words and the dean's",
+      "ambient": "wind over ice, wood knocks, a board swings",
+      "hero": {
+        "name": "left signpost's board + right signpost's board + quote cards + sub-card + SurveyPod on a tripod + gust + floe",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "40% signs, 35% pod, 25% seal and ice"
+      },
+      "id": 11,
+      "start_s": 82.86,
+      "t": "82.860-95.420"
+    },
+    {
+      "title": "The other sign",
+      "vo_line": 14,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "two-sign-floe",
+      "pov": "seal-eye-level",
+      "layout": "symmetric-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "character-as-subject",
+      "camera": "static:a tighter locked symmetric frame where the seal turning is the move",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the seal at x540 y1150",
+      "means": "A tighter symmetric frame at the seal's eye level, both signs still at equal size, the right sign opens to the dean's words and the seal turns between them",
+      "ambient": "wind over ice, a board swings, snow hiss",
+      "hero": {
+        "name": "right signpost's board + RingedSeal + name card + left signpost's board",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% seal, 30% each sign"
+      },
+      "id": 12,
+      "start_s": 95.42,
+      "t": "95.420-104.060"
+    },
+    {
+      "title": "A bigger name",
+      "vo_line": 15,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "pod-under-wing",
+      "pov": "low-under-belly",
+      "layout": "centered-hero",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the pod at x540 y880",
+      "means": "Back under the wing a blank accuracy tag swings down, the detector box finds nothing and the gold plate swells again",
+      "ambient": "a prop drone, wind, a chain clinks",
+      "hero": {
+        "name": "SurveyPod + blank tag + detector box + gold plate + wing",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% pod, 30% plate, 20% tag and box"
+      },
+      "id": 13,
+      "start_s": 104.06,
+      "t": "104.060-114.580"
+    },
+    {
+      "title": "Still two pixels",
+      "vo_line": 17,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "high",
+      "stage": "thermal-ice",
+      "pov": "crane-into-tile",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "character-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the seal at x540 y1080",
+      "means": "The plate settles on its edge, the camera cranes into the tagged tile and the seal rises to look up at the lens, then folds into two pixels",
+      "ambient": "wind over ice, a thin hum, a held tone",
+      "hero": {
+        "name": "thermal timestamp counter + gold plate on its edge + tagged tile + RingedSeal + two pixels",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% seal, 30% pod and plate, 25% counter"
+      },
+      "id": 14,
+      "start_s": 114.58,
+      "t": "114.580-122.400"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On Arctic sea ice, a seal can be as small as two pixels.",
+      "phrase": "On Arctic sea ice,",
+      "shows": "two orange pixels blink on a violet thermal frame of sea ice and a ring snaps around them with overshoot, a plate reads AS SMALL AS 2 PIXELS",
+      "sfx": "pop",
+      "means": "as small as 2 pixels",
+      "rehook": "",
+      "draw": {
+        "subject": "two orange pixels",
+        "action": "blink on a violet thermal frame of sea ice and a ring snaps around them with overshoot",
+        "emotion": "curious",
+        "annotation": "AS SMALL AS 2 PIXELS"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "two orange pixels blink on a violet thermal frame of sea ice and a ring snaps around them with overshoot, a plate reads AS SMALL AS 2 PIXELS",
+        "reaction": "the ring snaps",
+        "ambient": "wind over ice, a thin electronic hum"
+      },
+      "t": "0.000-1.230",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 1.23,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 1.23
+      },
+      "offset": 1.23,
+      "vo": "On Arctic sea ice, a seal can be as small as two pixels.",
+      "phrase": "ice, a seal can",
+      "shows": "a small stake tag drops onto the ice beside the pixels as the camera starts its push toward them, a plate reads ARCTIC SEA ICE",
+      "sfx": "thump",
+      "means": "arctic sea ice",
+      "rehook": "",
+      "draw": {
+        "subject": "a small stake tag",
+        "action": "drops onto the ice beside the pixels as the camera starts its push toward them",
+        "emotion": "plain",
+        "annotation": "ARCTIC SEA ICE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "a small stake tag drops onto the ice beside the pixels as the camera starts its push toward them, a plate reads ARCTIC SEA ICE",
+        "reaction": "the tag lands",
+        "ambient": "wind over ice, a thin electronic hum"
+      },
+      "t": "1.230-4.110",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 4.11,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.11
+      },
+      "offset": 4.11,
+      "vo": "On Arctic sea ice, a seal can be as small as two pixels.",
+      "phrase": "pixels.",
+      "shows": "the RingedSeal, a ringed seal on the ice rises out of the two pixels as the camera pushes through them, lifts her head and squints up at us, a plate reads THE SEAL",
+      "sfx": "bloom",
+      "means": "the seal",
+      "rehook": "",
+      "draw": {
+        "subject": "the RingedSeal, a ringed seal on the ice",
+        "action": "rises out of the two pixels as the camera pushes through them, lifts her head and squints up at us",
+        "emotion": "curious",
+        "annotation": "THE SEAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "the RingedSeal, a ringed seal on the ice rises out of the two pixels as the camera pushes through them, lifts her head and squints up at us, a plate reads THE SEAL",
+        "reaction": "the seal squints",
+        "ambient": "wind over ice, a thin electronic hum"
+      },
+      "t": "4.110-6.060",
+      "key": 46
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 6.06,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "NOAA's survey planes shoot color and thermal photos together, from a thousand feet.",
+      "phrase": "NOAA's survey planes shoot",
+      "shows": "a bush plane with the SurveyPod under its belly banks across the frame over white pack ice and cobalt leads, its shadow sliding over a floe, a plate reads NOAA SURVEY PLANE",
+      "sfx": "whirr",
+      "means": "noaa survey plane",
+      "rehook": "",
+      "draw": {
+        "subject": "a bush plane with the SurveyPod under its belly",
+        "action": "banks across the frame over white pack ice and cobalt leads, its shadow sliding over a floe",
+        "emotion": "eager",
+        "annotation": "NOAA SURVEY PLANE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5",
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a bush plane with the SurveyPod under its belly banks across the frame over white pack ice and cobalt leads, its shadow sliding over a floe, a plate reads NOAA SURVEY PLANE",
+        "reaction": "the plane banks",
+        "ambient": "a prop drone, wind, ice creaks"
+      },
+      "t": "6.060-7.730",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 7.73,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 1.67
+      },
+      "offset": 1.67,
+      "vo": "NOAA's survey planes shoot color and thermal photos together, from a thousand feet.",
+      "phrase": "color and thermal photos",
+      "shows": "the SurveyPod, a twin-lens belly camera snaps its shutter and a blue flash and a violet flash burst out of its two lenses as the capsule squashes, its plate still blank steel, a plate reads COLOR + THERMAL \u00b7 TOGETHER",
+      "sfx": "click",
+      "means": "color + thermal \u00b7 together",
+      "rehook": "",
+      "draw": {
+        "subject": "the SurveyPod, a twin-lens belly camera",
+        "action": "snaps its shutter and a blue flash and a violet flash burst out of its two lenses as the capsule squashes, its plate still blank steel",
+        "emotion": "focused",
+        "annotation": "COLOR + THERMAL \u00b7 TOGETHER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "the SurveyPod, a twin-lens belly camera snaps its shutter and a blue flash and a violet flash burst out of its two lenses as the capsule squashes, its plate still blank steel, a plate reads COLOR + THERMAL \u00b7 TOGETHER",
+        "reaction": "the shutter squashes",
+        "ambient": "a prop drone, wind, ice creaks"
+      },
+      "t": "7.730-10.790",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 10.79,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.73
+      },
+      "offset": 4.73,
+      "vo": "NOAA's survey planes shoot color and thermal photos together, from a thousand feet.",
+      "phrase": "thousand feet.",
+      "shows": "an altimeter tag drops on a line from the plane to the ice and swings to a stop, a plate reads 1,000 FT",
+      "sfx": "ping",
+      "means": "1,000 ft",
+      "rehook": "",
+      "draw": {
+        "subject": "an altimeter tag",
+        "action": "drops on a line from the plane to the ice and swings to a stop",
+        "emotion": "plain",
+        "annotation": "1,000 FT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "an altimeter tag drops on a line from the plane to the ice and swings to a stop, a plate reads 1,000 FT",
+        "reaction": "the tag swings",
+        "ambient": "a prop drone, wind, ice creaks"
+      },
+      "t": "10.790-12.820",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 12.82,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In a million images, there may be seven to nine thousand animals.",
+      "phrase": "In a million images,",
+      "shows": "a wall of photo tiles stacks up tile by tile until it fills the frame, white ice in every one, a plate reads 1,000,000 IMAGES",
+      "sfx": "paper",
+      "means": "1,000,000 images",
+      "rehook": "",
+      "draw": {
+        "subject": "a wall of photo tiles",
+        "action": "stacks up tile by tile until it fills the frame, white ice in every one",
+        "emotion": "overwhelmed",
+        "annotation": "1,000,000 IMAGES"
+      },
+      "plate_at": "side-plate-left",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a wall of photo tiles stacks up tile by tile until it fills the frame, white ice in every one, a plate reads 1,000,000 IMAGES",
+        "reaction": "the tiles stack",
+        "ambient": "paper riffles, a room tone"
+      },
+      "t": "12.820-15.350",
+      "key": 6
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 15.35,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.53
+      },
+      "offset": 2.53,
+      "vo": "In a million images, there may be seven to nine thousand animals.",
+      "phrase": "seven to nine thousand",
+      "shows": "a scatter of tiles lights up one at a time in coral heat, a few among thousands, a plate reads MAY BE 7,000 TO 9,000 ANIMALS",
+      "sfx": "pop",
+      "means": "may be 7,000 to 9,000 animals",
+      "rehook": "",
+      "draw": {
+        "subject": "a scatter of tiles",
+        "action": "lights up one at a time in coral heat, a few among thousands",
+        "emotion": "hopeful",
+        "annotation": "MAY BE 7,000 TO 9,000 ANIMALS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a scatter of tiles lights up one at a time in coral heat, a few among thousands, a plate reads MAY BE 7,000 TO 9,000 ANIMALS",
+        "reaction": "the tiles glow",
+        "ambient": "paper riffles, a room tone"
+      },
+      "t": "15.350-17.190",
+      "key": 7
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 17.19,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 4.37
+      },
+      "offset": 4.37,
+      "vo": "In a million images, there may be seven to nine thousand animals.",
+      "phrase": "animals.",
+      "shows": "one dark tile gets a boxed tag on a pin that swings and settles, a plate reads ONE OF THESE IS A SEAL",
+      "sfx": "pin",
+      "means": "one of these is a seal",
+      "rehook": "",
+      "draw": {
+        "subject": "one dark tile",
+        "action": "gets a boxed tag on a pin that swings and settles",
+        "emotion": "teasing",
+        "annotation": "ONE OF THESE IS A SEAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "one dark tile gets a boxed tag on a pin that swings and settles, a plate reads ONE OF THESE IS A SEAL",
+        "reaction": "the tag swings",
+        "ambient": "paper riffles, a room tone"
+      },
+      "t": "17.190-18.820",
+      "key": 8
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 18.82,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "By hand, finding them took NOAA's team a year after every season.",
+      "phrase": "By hand, finding them",
+      "shows": "an analyst at a desk leans into a magnifier over a stack of prints by a window onto the ice and a wall map of Alaska while the calendar sheds its months, a plate reads NOAA, 2019 \u00b7 A YEAR BY HAND",
+      "sfx": "flip",
+      "means": "noaa, 2019 \u00b7 a year by hand",
+      "rehook": "",
+      "draw": {
+        "subject": "an analyst at a desk",
+        "action": "leans into a magnifier over a stack of prints by a window onto the ice and a wall map of Alaska while the calendar sheds its months",
+        "emotion": "tired",
+        "annotation": "NOAA, 2019 \u00b7 A YEAR BY HAND"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "an analyst at a desk leans into a magnifier over a stack of prints by a window onto the ice and a wall map of Alaska while the calendar sheds its months, a plate reads NOAA, 2019 \u00b7 A YEAR BY HAND",
+        "reaction": "the months fall",
+        "ambient": "a desk lamp buzz, pages turn, a clock"
+      },
+      "t": "18.820-23.230",
+      "key": 9
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 23.23,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.41
+      },
+      "offset": 4.41,
+      "vo": "By hand, finding them took NOAA's team a year after every season.",
+      "phrase": "season.",
+      "shows": "the stack of prints topples into a tray as the last month falls and the analyst rubs his eyes, a plate reads AFTER EVERY SEASON",
+      "sfx": "thud",
+      "means": "after every season",
+      "rehook": "",
+      "draw": {
+        "subject": "the stack of prints",
+        "action": "topples into a tray as the last month falls and the analyst rubs his eyes",
+        "emotion": "weary",
+        "annotation": "AFTER EVERY SEASON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "the stack of prints topples into a tray as the last month falls and the analyst rubs his eyes, a plate reads AFTER EVERY SEASON",
+        "reaction": "the stack topples",
+        "ambient": "a desk lamp buzz, pages turn, a clock"
+      },
+      "t": "23.230-24.580",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 5,
+      "at_s": 24.58,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "NOAA's Alaska scientists developed software with Microsoft AI to find them.",
+      "phrase": "NOAA's Alaska scientists developed",
+      "shows": "a color frame and a thermal frame slide across each other from opposite edges inside an Alaska outline border and lock with a click, a plate reads COLOR FRAME \u00b7 THERMAL FRAME",
+      "sfx": "slide",
+      "means": "color frame \u00b7 thermal frame",
+      "rehook": "",
+      "draw": {
+        "subject": "a color frame and a thermal frame",
+        "action": "slide across each other from opposite edges inside an Alaska outline border and lock with a click",
+        "emotion": "precise",
+        "annotation": "COLOR FRAME \u00b7 THERMAL FRAME"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a color frame and a thermal frame slide across each other from opposite edges inside an Alaska outline border and lock with a click, a plate reads COLOR FRAME \u00b7 THERMAL FRAME",
+        "reaction": "the frames lock",
+        "ambient": "a soft electronic hum, a lock click"
+      },
+      "t": "24.580-26.930",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 26.93,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.35
+      },
+      "offset": 2.35,
+      "vo": "NOAA's Alaska scientists developed software with Microsoft AI to find them.",
+      "phrase": "software with Microsoft AI",
+      "shows": "a detector box snaps around the warm blob with overshoot and the seal inside it blinks, a plate reads SEAL HEAT SIGNATURES",
+      "sfx": "snap",
+      "means": "seal heat signatures",
+      "rehook": "",
+      "draw": {
+        "subject": "a detector box",
+        "action": "snaps around the warm blob with overshoot and the seal inside it blinks",
+        "emotion": "proud",
+        "annotation": "SEAL HEAT SIGNATURES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a detector box snaps around the warm blob with overshoot and the seal inside it blinks, a plate reads SEAL HEAT SIGNATURES",
+        "reaction": "the box snaps",
+        "ambient": "a soft electronic hum, a lock click"
+      },
+      "t": "26.930-27.910",
+      "key": 12
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 27.91,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.33
+      },
+      "offset": 3.33,
+      "vo": "NOAA's Alaska scientists developed software with Microsoft AI to find them.",
+      "phrase": "Microsoft AI to find",
+      "shows": "a small credit plate clips onto the corner of the locked frames and rocks once, a plate reads DEVELOPED WITH MICROSOFT AI",
+      "sfx": "ding",
+      "means": "developed with microsoft ai",
+      "rehook": "",
+      "draw": {
+        "subject": "a small credit plate",
+        "action": "clips onto the corner of the locked frames and rocks once",
+        "emotion": "plain",
+        "annotation": "DEVELOPED WITH MICROSOFT AI"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a small credit plate clips onto the corner of the locked frames and rocks once, a plate reads DEVELOPED WITH MICROSOFT AI",
+        "reaction": "the plate rocks",
+        "ambient": "a soft electronic hum, a lock click"
+      },
+      "t": "27.910-30.880",
+      "key": 13
+    },
+    {
+      "id": 15,
+      "shot": 6,
+      "at_s": 30.88,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Their page on these tools, last updated November 6th, now calls it super intelligence.",
+      "phrase": "Their page on these",
+      "shows": "the SurveyPod swings back into frame under the wing with its plain steel plate still blank, a plate reads NOAA \u00b7 ALASKA FISHERIES SCIENCE CENTER",
+      "sfx": "whoosh",
+      "means": "noaa \u00b7 alaska fisheries science center",
+      "rehook": "",
+      "draw": {
+        "subject": "the SurveyPod",
+        "action": "swings back into frame under the wing with its plain steel plate still blank",
+        "emotion": "plain",
+        "annotation": "NOAA \u00b7 ALASKA FISHERIES SCIENCE CENTER"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the SurveyPod swings back into frame under the wing with its plain steel plate still blank, a plate reads NOAA \u00b7 ALASKA FISHERIES SCIENCE CENTER",
+        "reaction": "the pod swings",
+        "ambient": "a prop drone, wind, a stamp thud"
+      },
+      "t": "30.880-32.890",
+      "key": 14
+    },
+    {
+      "id": 16,
+      "shot": 6,
+      "at_s": 32.89,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 2.01
+      },
+      "offset": 2.01,
+      "vo": "Their page on these tools, last updated November 6th, now calls it super intelligence.",
+      "phrase": "updated November 6th, now",
+      "shows": "a date tag clipped to the pod's strut swings once on its clip, reading LAST UPDATED NOV 6, a plate reads PAGE LAST UPDATED NOV 6",
+      "sfx": "clip",
+      "means": "page last updated nov 6",
+      "rehook": "",
+      "draw": {
+        "subject": "a date tag clipped to the pod's strut",
+        "action": "swings once on its clip, reading LAST UPDATED NOV 6",
+        "emotion": "plain",
+        "annotation": "PAGE LAST UPDATED NOV 6"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a date tag clipped to the pod's strut swings once on its clip, reading LAST UPDATED NOV 6, a plate reads PAGE LAST UPDATED NOV 6",
+        "reaction": "the tag swings",
+        "ambient": "a prop drone, wind, a stamp thud"
+      },
+      "t": "32.890-35.650",
+      "key": 15
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 35.65,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.77
+      },
+      "offset": 4.77,
+      "vo": "Their page on these tools, last updated November 6th, now calls it super intelligence.",
+      "phrase": "super intelligence.",
+      "shows": "a gold stamp slams onto the pod's blank plate and leaves it gold, then the plate swells while both lenses stay exactly the same size, a plate reads THE PAGE NOW SAYS SUPER INTELLIGENCE",
+      "sfx": "slam",
+      "means": "the page now says super intelligence",
+      "rehook": "rehook: the gold stamp slams and the plate swells while the lenses stay the same size",
+      "draw": {
+        "subject": "a gold stamp",
+        "action": "slams onto the pod's blank plate and leaves it gold, then the plate swells while both lenses stay exactly the same size",
+        "emotion": "startled",
+        "annotation": "THE PAGE NOW SAYS SUPER INTELLIGENCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a gold stamp slams onto the pod's blank plate and leaves it gold, then the plate swells while both lenses stay exactly the same size, a plate reads THE PAGE NOW SAYS SUPER INTELLIGENCE",
+        "reaction": "the plate swells",
+        "ambient": "a prop drone, wind, a stamp thud"
+      },
+      "kick": true,
+      "t": "35.650-38.410",
+      "key": 16
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 38.41,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.65
+      },
+      "offset": 0.65,
+      "vo": "So did it get smarter?",
+      "phrase": "did it get smarter?",
+      "shows": "the SurveyPod tilts its whole capsule to glance down at its swollen gold plate, then swings back to the ice and keeps scanning, a plate reads DID IT GET SMARTER?",
+      "sfx": "whirr",
+      "means": "did it get smarter?",
+      "rehook": "",
+      "draw": {
+        "subject": "the SurveyPod",
+        "action": "tilts its whole capsule to glance down at its swollen gold plate, then swings back to the ice and keeps scanning",
+        "emotion": "puzzled",
+        "annotation": "DID IT GET SMARTER?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the SurveyPod tilts its whole capsule to glance down at its swollen gold plate, then swings back to the ice and keeps scanning, a plate reads DID IT GET SMARTER?",
+        "reaction": "the capsule tilts",
+        "ambient": "a prop drone, wind, a stamp thud"
+      },
+      "t": "38.410-40.300",
+      "key": 17
+    },
+    {
+      "id": 19,
+      "shot": 7,
+      "at_s": 40.3,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The same page says the center ages fish with super intelligence and near infrared light, reading an ear stone in thirty to fifty seconds, more than ten times faster than a person at a microscope.",
+      "phrase": "The same page says",
+      "shows": "an ear stone reader with one lens eye and its own gold plate drops onto a lab bench beside a plain brass microscope, under a window onto the ice, a plate reads SUPER INTELLIGENCE \u00b7 AGING FISH",
+      "sfx": "thud",
+      "means": "super intelligence \u00b7 aging fish",
+      "rehook": "",
+      "draw": {
+        "subject": "an ear stone reader with one lens eye and its own gold plate",
+        "action": "drops onto a lab bench beside a plain brass microscope, under a window onto the ice",
+        "emotion": "eager",
+        "annotation": "SUPER INTELLIGENCE \u00b7 AGING FISH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "an ear stone reader with one lens eye and its own gold plate drops onto a lab bench beside a plain brass microscope, under a window onto the ice, a plate reads SUPER INTELLIGENCE \u00b7 AGING FISH",
+        "reaction": "the bench jumps",
+        "ambient": "a lab room tone, stones click, a stopwatch"
+      },
+      "t": "40.300-44.210",
+      "key": 18
+    },
+    {
+      "id": 20,
+      "shot": 7,
+      "at_s": 44.21,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.91
+      },
+      "offset": 3.91,
+      "vo": "The same page says the center ages fish with super intelligence and near infrared light, reading an ear stone in thirty to fifty seconds, more than ten times faster than a person at a microscope.",
+      "phrase": "near infrared light, reading",
+      "shows": "a band of near infrared light sweeps across a tiny ear stone in the reader's tray, a plate reads NEAR INFRARED",
+      "sfx": "ping",
+      "means": "near infrared",
+      "rehook": "",
+      "draw": {
+        "subject": "a band of near infrared light",
+        "action": "sweeps across a tiny ear stone in the reader's tray",
+        "emotion": "focused",
+        "annotation": "NEAR INFRARED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a band of near infrared light sweeps across a tiny ear stone in the reader's tray, a plate reads NEAR INFRARED",
+        "reaction": "the light sweeps",
+        "ambient": "a lab room tone, stones click, a stopwatch"
+      },
+      "t": "44.210-47.570",
+      "key": 19
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 47.57,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 7.27
+      },
+      "offset": 7.27,
+      "vo": "The same page says the center ages fish with super intelligence and near infrared light, reading an ear stone in thirty to fifty seconds, more than ten times faster than a person at a microscope.",
+      "phrase": "thirty to fifty seconds,",
+      "shows": "a stopwatch ticks round as the stone drops into a done tray, a plate reads 30 TO 50 SECONDS PER EAR STONE",
+      "sfx": "tick",
+      "means": "30 to 50 seconds per ear stone",
+      "rehook": "",
+      "draw": {
+        "subject": "a stopwatch",
+        "action": "ticks round as the stone drops into a done tray",
+        "emotion": "brisk",
+        "annotation": "30 TO 50 SECONDS PER EAR STONE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a stopwatch ticks round as the stone drops into a done tray, a plate reads 30 TO 50 SECONDS PER EAR STONE",
+        "reaction": "the hand sweeps",
+        "ambient": "a lab room tone, stones click, a stopwatch"
+      },
+      "t": "47.570-50.130",
+      "key": 20
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 50.13,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 9.83
+      },
+      "offset": 9.83,
+      "vo": "The same page says the center ages fish with super intelligence and near infrared light, reading an ear stone in thirty to fifty seconds, more than ten times faster than a person at a microscope.",
+      "phrase": "ten times faster than",
+      "shows": "ten ear stones clatter into the reader's tray one after another while a person's hand at the microscope turns the focus knob on one stone, a plate reads 10X+ FASTER THAN A PERSON AT A MICROSCOPE",
+      "sfx": "coins",
+      "means": "10x+ faster than a person at a microscope",
+      "rehook": "",
+      "draw": {
+        "subject": "ten ear stones",
+        "action": "clatter into the reader's tray one after another while a person's hand at the microscope turns the focus knob on one stone",
+        "emotion": "steady",
+        "annotation": "10X+ FASTER THAN A PERSON AT A MICROSCOPE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "ten ear stones clatter into the reader's tray one after another while a person's hand at the microscope turns the focus knob on one stone, a plate reads 10X+ FASTER THAN A PERSON AT A MICROSCOPE",
+        "reaction": "the stones clatter",
+        "ambient": "a lab room tone, stones click, a stopwatch"
+      },
+      "t": "50.130-53.520",
+      "key": 21
+    },
+    {
+      "id": 23,
+      "shot": 8,
+      "at_s": 53.52,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But NOAA's own two thousand nineteen article calls the seal work artificial intelligence.",
+      "phrase": "But NOAA's own two",
+      "shows": "a framed 2019 NOAA article drops onto a wall hook and swings, its headline over a seal photo that wears the same pin tag, a plate reads 2019 \u00b7 \"ARTIFICIAL INTELLIGENCE\"",
+      "sfx": "page",
+      "means": "2019 \u00b7 \"artificial intelligence\"",
+      "rehook": "",
+      "draw": {
+        "subject": "a framed 2019 NOAA article",
+        "action": "drops onto a wall hook and swings, its headline over a seal photo that wears the same pin tag",
+        "emotion": "plain",
+        "annotation": "2019 \u00b7 \"ARTIFICIAL INTELLIGENCE\""
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a framed 2019 NOAA article drops onto a wall hook and swings, its headline over a seal photo that wears the same pin tag, a plate reads 2019 \u00b7 \"ARTIFICIAL INTELLIGENCE\"",
+        "reaction": "the frame swings",
+        "ambient": "a room tone, a frame creaks on a hook"
+      },
+      "t": "53.520-56.790",
+      "key": 22
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 56.79,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.27
+      },
+      "offset": 3.27,
+      "vo": "But NOAA's own two thousand nineteen article calls the seal work artificial intelligence.",
+      "phrase": "seal work artificial intelligence.",
+      "shows": "a dark ink string pins from the article's seal photo across to the window where the pod's gold plate glints, a plate reads SAME SEAL WORK",
+      "sfx": "clip",
+      "means": "same seal work",
+      "rehook": "",
+      "draw": {
+        "subject": "a dark ink string",
+        "action": "pins from the article's seal photo across to the window where the pod's gold plate glints",
+        "emotion": "pointed",
+        "annotation": "SAME SEAL WORK"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a dark ink string pins from the article's seal photo across to the window where the pod's gold plate glints, a plate reads SAME SEAL WORK",
+        "reaction": "the string pins",
+        "ambient": "a room tone, a frame creaks on a hook"
+      },
+      "t": "56.790-59.340",
+      "key": 23
+    },
+    {
+      "id": 25,
+      "shot": 9,
+      "at_s": 59.34,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On September 29th, an executive order told federal agencies to say super intelligence instead of artificial intelligence, on their websites too.",
+      "phrase": "On September 29th, an",
+      "shows": "an executive order document slides onto a desk under a lamp and its seal presses itself into the page, a plate reads EXECUTIVE ORDER \u00b7 SEPT 29",
+      "sfx": "press",
+      "means": "executive order \u00b7 sept 29",
+      "rehook": "rehook: the executive order slides onto the desk and its seal presses itself",
+      "draw": {
+        "subject": "an executive order document",
+        "action": "slides onto a desk under a lamp and its seal presses itself into the page",
+        "emotion": "formal",
+        "annotation": "EXECUTIVE ORDER \u00b7 SEPT 29"
+      },
+      "plate_at": "side-plate-right",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "an executive order document slides onto a desk under a lamp and its seal presses itself into the page, a plate reads EXECUTIVE ORDER \u00b7 SEPT 29",
+        "reaction": "the seal presses",
+        "ambient": "a desk room tone, paper slides, keys tap"
+      },
+      "kick": true,
+      "t": "59.340-63.910",
+      "key": 24
+    },
+    {
+      "id": 26,
+      "shot": 9,
+      "at_s": 63.91,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 4.57
+      },
+      "offset": 4.57,
+      "vo": "On September 29th, an executive order told federal agencies to say super intelligence instead of artificial intelligence, on their websites too.",
+      "phrase": "super intelligence instead of",
+      "shows": "a word card on the order's page flips from ARTIFICIAL INTELLIGENCE to SUPER INTELLIGENCE, a plate reads SAY SUPER INTELLIGENCE",
+      "sfx": "flip",
+      "means": "say super intelligence",
+      "rehook": "",
+      "draw": {
+        "subject": "a word card on the order's page",
+        "action": "flips from ARTIFICIAL INTELLIGENCE to SUPER INTELLIGENCE",
+        "emotion": "formal",
+        "annotation": "SAY SUPER INTELLIGENCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a word card on the order's page flips from ARTIFICIAL INTELLIGENCE to SUPER INTELLIGENCE, a plate reads SAY SUPER INTELLIGENCE",
+        "reaction": "the card flips",
+        "ambient": "a desk room tone, paper slides, keys tap"
+      },
+      "t": "63.910-67.350",
+      "key": 25
+    },
+    {
+      "id": 27,
+      "shot": 9,
+      "at_s": 67.35,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 8.01
+      },
+      "offset": 8.01,
+      "vo": "On September 29th, an executive order told federal agencies to say super intelligence instead of artificial intelligence, on their websites too.",
+      "phrase": "websites too.",
+      "shows": "a browser window types the new words and the camera pulls back as it multiplies into a wall of browser windows all typing them, a plate reads WEBSITES \u00b7 REPORTS",
+      "sfx": "type",
+      "means": "websites \u00b7 reports",
+      "rehook": "",
+      "draw": {
+        "subject": "a browser window",
+        "action": "types the new words and the camera pulls back as it multiplies into a wall of browser windows all typing them",
+        "emotion": "plain",
+        "annotation": "WEBSITES \u00b7 REPORTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a browser window types the new words and the camera pulls back as it multiplies into a wall of browser windows all typing them, a plate reads WEBSITES \u00b7 REPORTS",
+        "reaction": "the windows multiply",
+        "ambient": "a desk room tone, paper slides, keys tap"
+      },
+      "t": "67.350-69.140",
+      "key": 26
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 69.14,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A proposed new definition is due to the President by November 28th.",
+      "phrase": "A proposed new definition",
+      "shows": "an open envelope with one blank sheet inside pins onto the desk board, a plate reads PROPOSED NEW DEFINITION DUE NOV 28",
+      "sfx": "snap",
+      "means": "proposed new definition due nov 28",
+      "rehook": "",
+      "draw": {
+        "subject": "an open envelope with one blank sheet inside",
+        "action": "pins onto the desk board",
+        "emotion": "waiting",
+        "annotation": "PROPOSED NEW DEFINITION DUE NOV 28"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "an open envelope with one blank sheet inside pins onto the desk board, a plate reads PROPOSED NEW DEFINITION DUE NOV 28",
+        "reaction": "the envelope pins",
+        "ambient": "a desk room tone, paper slides, keys tap"
+      },
+      "t": "69.140-70.870",
+      "key": 27
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 70.87,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.73
+      },
+      "offset": 1.73,
+      "vo": "A proposed new definition is due to the President by November 28th.",
+      "phrase": "due to the President",
+      "shows": "a blank sheet slides half out of the empty envelope with nothing written on it, a plate reads DUE TO THE PRESIDENT \u00b7 NOT PUBLIC YET",
+      "sfx": "slide",
+      "means": "due to the president \u00b7 not public yet",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank sheet",
+        "action": "slides half out of the empty envelope with nothing written on it",
+        "emotion": "plain",
+        "annotation": "DUE TO THE PRESIDENT \u00b7 NOT PUBLIC YET"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a blank sheet slides half out of the empty envelope with nothing written on it, a plate reads DUE TO THE PRESIDENT \u00b7 NOT PUBLIC YET",
+        "reaction": "the sheet slides",
+        "ambient": "a desk room tone, paper slides, keys tap"
+      },
+      "t": "70.870-73.640",
+      "key": 42
+    },
+    {
+      "id": 30,
+      "shot": 10,
+      "at_s": 73.64,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "For now, the order defines super intelligence as the same technology the law already calls artificial intelligence.",
+      "phrase": "For now, the order",
+      "shows": "two pages and the gold plate on a chain slide in side by side as the gold plate spins like a coin and lands on its back face, a plate reads SAME LEGAL DEFINITION",
+      "sfx": "roll",
+      "means": "same legal definition",
+      "rehook": "",
+      "draw": {
+        "subject": "two pages and the gold plate on a chain",
+        "action": "slide in side by side as the gold plate spins like a coin and lands on its back face",
+        "emotion": "plain",
+        "annotation": "SAME LEGAL DEFINITION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "two pages and the gold plate on a chain slide in side by side as the gold plate spins like a coin and lands on its back face, a plate reads SAME LEGAL DEFINITION",
+        "reaction": "the plate spins",
+        "ambient": "paper slides, a coin spin, a pen scratch"
+      },
+      "t": "73.640-77.930",
+      "key": 28
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 77.93,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.29
+      },
+      "offset": 4.29,
+      "vo": "For now, the order defines super intelligence as the same technology the law already calls artificial intelligence.",
+      "phrase": "law already calls artificial",
+      "shows": "an ink line draws on from a phrase on the order's page to the matching phrase on the statute page, a plate reads SEC. 3(A) \u00b7 15 U.S.C. 9401(3)",
+      "sfx": "scratch",
+      "means": "sec. 3(a) \u00b7 15 u.s.c. 9401(3)",
+      "rehook": "",
+      "draw": {
+        "subject": "an ink line",
+        "action": "draws on from a phrase on the order's page to the matching phrase on the statute page",
+        "emotion": "plain",
+        "annotation": "SEC. 3(A) \u00b7 15 U.S.C. 9401(3)"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "an ink line draws on from a phrase on the order's page to the matching phrase on the statute page, a plate reads SEC. 3(A) \u00b7 15 U.S.C. 9401(3)",
+        "reaction": "the line draws on",
+        "ambient": "paper slides, a coin spin, a pen scratch"
+      },
+      "t": "77.930-81.000",
+      "key": 29
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 81.0,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The case for it?",
+      "phrase": "The case for it?",
+      "shows": "the two pages part like doors onto a white floe and a gust of wind blows through, a plate reads TWO VIEWS",
+      "sfx": "flap",
+      "means": "two views",
+      "rehook": "",
+      "draw": {
+        "subject": "the two pages",
+        "action": "part like doors onto a white floe and a gust of wind blows through",
+        "emotion": "even",
+        "annotation": "TWO VIEWS"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the two pages part like doors onto a white floe and a gust of wind blows through, a plate reads TWO VIEWS",
+        "reaction": "the pages part",
+        "ambient": "paper slides, a coin spin, a pen scratch"
+      },
+      "t": "81.000-82.860",
+      "key": 30
+    },
+    {
+      "id": 33,
+      "shot": 11,
+      "at_s": 82.86,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The order says these systems increasingly represent not merely artificial intelligence, but a new era of super intelligence. And it calls for a definition that reflects the capabilities the order describes.",
+      "phrase": "The order says these",
+      "shows": "the left signpost's board swings open into an ivory quote card on a locked symmetric floe with the SurveyPod on a tripod dead center, a plate reads \"NOT MERELY ARTIFICIAL INTELLIGENCE\"",
+      "sfx": "creak",
+      "means": "\"not merely artificial intelligence\"",
+      "rehook": "",
+      "draw": {
+        "subject": "the left signpost's board",
+        "action": "swings open into an ivory quote card on a locked symmetric floe with the SurveyPod on a tripod dead center",
+        "emotion": "earnest",
+        "annotation": "\"NOT MERELY ARTIFICIAL INTELLIGENCE\""
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "the left signpost's board swings open into an ivory quote card on a locked symmetric floe with the SurveyPod on a tripod dead center, a plate reads \"NOT MERELY ARTIFICIAL INTELLIGENCE\"",
+        "reaction": "the board swings",
+        "ambient": "wind over ice, wood knocks, a board swings"
+      },
+      "t": "82.860-84.870",
+      "key": 31
+    },
+    {
+      "id": 34,
+      "shot": 11,
+      "at_s": 84.87,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.01
+      },
+      "offset": 2.01,
+      "vo": "The order says these systems increasingly represent not merely artificial intelligence, but a new era of super intelligence. And it calls for a definition that reflects the capabilities the order describes.",
+      "phrase": "represent not merely artificial",
+      "shows": "a gust lifts loose snow across the floe between the two signs and the pod's plate sways, a plate reads THE ORDER'S CASE",
+      "sfx": "whoosh",
+      "means": "the order's case",
+      "rehook": "",
+      "draw": {
+        "subject": "a gust",
+        "action": "lifts loose snow across the floe between the two signs and the pod's plate sways",
+        "emotion": "even",
+        "annotation": "THE ORDER'S CASE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a gust lifts loose snow across the floe between the two signs and the pod's plate sways, a plate reads THE ORDER'S CASE",
+        "reaction": "the snow lifts",
+        "ambient": "wind over ice, wood knocks, a board swings"
+      },
+      "t": "84.870-88.370",
+      "key": 47
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 88.37,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 5.51
+      },
+      "offset": 5.51,
+      "vo": "The order says these systems increasingly represent not merely artificial intelligence, but a new era of super intelligence. And it calls for a definition that reflects the capabilities the order describes.",
+      "phrase": "era of super intelligence.",
+      "shows": "one noon glint sweeps across BOTH signs together, a plate reads \"A NEW ERA\"",
+      "sfx": "shimmer",
+      "means": "\"a new era\"",
+      "rehook": "",
+      "draw": {
+        "subject": "one noon glint",
+        "action": "sweeps across BOTH signs together",
+        "emotion": "even",
+        "annotation": "\"A NEW ERA\""
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "one noon glint sweeps across BOTH signs together, a plate reads \"A NEW ERA\"",
+        "reaction": "the glint sweeps",
+        "ambient": "wind over ice, wood knocks, a board swings"
+      },
+      "t": "88.370-90.950",
+      "key": 32
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 90.95,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 8.09
+      },
+      "offset": 8.09,
+      "vo": "The order says these systems increasingly represent not merely artificial intelligence, but a new era of super intelligence. And it calls for a definition that reflects the capabilities the order describes.",
+      "phrase": "calls for a definition",
+      "shows": "a sub-card slides into the left sign's frame under the quote and settles, the same entrance the right card gets, a plate reads CALLS FOR A DEFINITION",
+      "sfx": "slide",
+      "means": "calls for a definition",
+      "rehook": "",
+      "draw": {
+        "subject": "a sub-card",
+        "action": "slides into the left sign's frame under the quote and settles, the same entrance the right card gets",
+        "emotion": "even",
+        "annotation": "CALLS FOR A DEFINITION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a sub-card slides into the left sign's frame under the quote and settles, the same entrance the right card gets, a plate reads CALLS FOR A DEFINITION",
+        "reaction": "the card settles",
+        "ambient": "wind over ice, wood knocks, a board swings"
+      },
+      "t": "90.950-95.420",
+      "key": 43
+    },
+    {
+      "id": 37,
+      "shot": 12,
+      "at_s": 95.42,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "An associate dean for procurement law at George Washington University told GovCIO Media she knows of no purpose other than rebranding.",
+      "phrase": "An associate dean for",
+      "shows": "the right signpost's board swings open the same way into a matching card the same size in the same light, a plate reads NO PURPOSE OTHER THAN REBRANDING",
+      "sfx": "creak",
+      "means": "no purpose other than rebranding",
+      "rehook": "rehook: the right sign swings open the same way into the dean's words",
+      "draw": {
+        "subject": "the right signpost's board",
+        "action": "swings open the same way into a matching card the same size in the same light",
+        "emotion": "even",
+        "annotation": "NO PURPOSE OTHER THAN REBRANDING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "the right signpost's board swings open the same way into a matching card the same size in the same light, a plate reads NO PURPOSE OTHER THAN REBRANDING",
+        "reaction": "the board swings",
+        "ambient": "wind over ice, a board swings, snow hiss"
+      },
+      "t": "95.420-97.530",
+      "key": 33
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 97.53,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 2.11
+      },
+      "offset": 2.11,
+      "vo": "An associate dean for procurement law at George Washington University told GovCIO Media she knows of no purpose other than rebranding.",
+      "phrase": "George Washington University told",
+      "shows": "a name card slides into the right sign's frame under the card and settles, a plate reads ASSOC. DEAN \u00b7 VIA GOVCIO",
+      "sfx": "slide",
+      "means": "assoc. dean \u00b7 via govcio",
+      "rehook": "",
+      "draw": {
+        "subject": "a name card",
+        "action": "slides into the right sign's frame under the card and settles",
+        "emotion": "plain",
+        "annotation": "ASSOC. DEAN \u00b7 VIA GOVCIO"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "a name card slides into the right sign's frame under the card and settles, a plate reads ASSOC. DEAN \u00b7 VIA GOVCIO",
+        "reaction": "the card settles",
+        "ambient": "wind over ice, a board swings, snow hiss"
+      },
+      "t": "97.530-100.950",
+      "key": 44
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 100.95,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 5.53
+      },
+      "offset": 5.53,
+      "vo": "An associate dean for procurement law at George Washington University told GovCIO Media she knows of no purpose other than rebranding.",
+      "phrase": "knows of no purpose",
+      "shows": "the RingedSeal lifts her head toward the right sign, the same lift she gave the left, a plate reads THE DEAN'S DOUBT",
+      "sfx": "flutter",
+      "means": "the dean's doubt",
+      "rehook": "",
+      "draw": {
+        "subject": "the RingedSeal",
+        "action": "lifts her head toward the right sign, the same lift she gave the left",
+        "emotion": "curious",
+        "annotation": "THE DEAN'S DOUBT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the RingedSeal lifts her head toward the right sign, the same lift she gave the left, a plate reads THE DEAN'S DOUBT",
+        "reaction": "the head lifts",
+        "ambient": "wind over ice, a board swings, snow hiss"
+      },
+      "t": "100.950-102.610",
+      "key": 48
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 102.61,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 7.19
+      },
+      "offset": 7.19,
+      "vo": "An associate dean for procurement law at George Washington University told GovCIO Media she knows of no purpose other than rebranding.",
+      "phrase": "rebranding.",
+      "shows": "the RingedSeal turns her head from one sign to the other and back, the same number of times each way, a plate reads SAME TOOLS \u00b7 BOTH SIDES",
+      "sfx": "tap",
+      "means": "same tools \u00b7 both sides",
+      "rehook": "",
+      "draw": {
+        "subject": "the RingedSeal",
+        "action": "turns her head from one sign to the other and back, the same number of times each way",
+        "emotion": "curious",
+        "annotation": "SAME TOOLS \u00b7 BOTH SIDES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the RingedSeal turns her head from one sign to the other and back, the same number of times each way, a plate reads SAME TOOLS \u00b7 BOTH SIDES",
+        "reaction": "the head turns",
+        "ambient": "wind over ice, a board swings, snow hiss"
+      },
+      "t": "102.610-104.060",
+      "key": 34
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 104.06,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Meanwhile, the page gives no accuracy figure for any of these tools.",
+      "phrase": "Meanwhile, the page gives",
+      "shows": "a blank tag on a chain swings down from the pod's mount under the wing and stops, a plate reads ACCURACY \u00b7 NOT GIVEN",
+      "sfx": "clank",
+      "means": "accuracy \u00b7 not given",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank tag on a chain",
+        "action": "swings down from the pod's mount under the wing and stops",
+        "emotion": "flat",
+        "annotation": "ACCURACY \u00b7 NOT GIVEN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a blank tag on a chain swings down from the pod's mount under the wing and stops, a plate reads ACCURACY \u00b7 NOT GIVEN",
+        "reaction": "the tag stops",
+        "ambient": "a prop drone, wind, a chain clinks"
+      },
+      "t": "104.060-106.570",
+      "key": 35
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 106.57,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 2.51
+      },
+      "offset": 2.51,
+      "vo": "Meanwhile, the page gives no accuracy figure for any of these tools.",
+      "phrase": "figure for any of",
+      "shows": "the detector box tries to snap around the blank tag, finds nothing to box and springs open, a plate reads NO ACCURACY FIGURE ON THE PAGE",
+      "sfx": "snap",
+      "means": "no accuracy figure on the page",
+      "rehook": "",
+      "draw": {
+        "subject": "the detector box",
+        "action": "tries to snap around the blank tag, finds nothing to box and springs open",
+        "emotion": "searching",
+        "annotation": "NO ACCURACY FIGURE ON THE PAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "the detector box tries to snap around the blank tag, finds nothing to box and springs open, a plate reads NO ACCURACY FIGURE ON THE PAGE",
+        "reaction": "the box springs open",
+        "ambient": "a prop drone, wind, a chain clinks"
+      },
+      "t": "106.570-109.040",
+      "key": 45
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "at_s": 109.04,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So nothing on the page shows the software got smarter. It got a bigger name.",
+      "phrase": "So nothing on the",
+      "shows": "the SurveyPod tilts its capsule to look up at its own gold plate, a plate reads NOTHING ON THE PAGE SHOWS SMARTER",
+      "sfx": "whirr",
+      "means": "nothing on the page shows smarter",
+      "rehook": "",
+      "draw": {
+        "subject": "the SurveyPod",
+        "action": "tilts its capsule to look up at its own gold plate",
+        "emotion": "dry",
+        "annotation": "NOTHING ON THE PAGE SHOWS SMARTER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "the SurveyPod tilts its capsule to look up at its own gold plate, a plate reads NOTHING ON THE PAGE SHOWS SMARTER",
+        "reaction": "the capsule tilts",
+        "ambient": "a prop drone, wind, a chain clinks"
+      },
+      "t": "109.040-112.930",
+      "key": 36
+    },
+    {
+      "id": 44,
+      "shot": 13,
+      "at_s": 112.93,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 3.89
+      },
+      "offset": 3.89,
+      "vo": "So nothing on the page shows the software got smarter. It got a bigger name.",
+      "phrase": "bigger name.",
+      "shows": "the gold plate swells once more against the lenses, which never change size, a plate reads A BIGGER NAME",
+      "sfx": "ring",
+      "means": "a bigger name",
+      "rehook": "",
+      "draw": {
+        "subject": "the gold plate",
+        "action": "swells once more against the lenses, which never change size",
+        "emotion": "plain",
+        "annotation": "A BIGGER NAME"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the gold plate swells once more against the lenses, which never change size, a plate reads A BIGGER NAME",
+        "reaction": "the plate swells",
+        "ambient": "a prop drone, wind, a chain clinks"
+      },
+      "kick": true,
+      "t": "112.930-114.580",
+      "key": 37
+    },
+    {
+      "id": 45,
+      "shot": 14,
+      "at_s": 114.58,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The proposed definition isn't due until November 28th.",
+      "phrase": "The proposed definition isn't",
+      "shows": "a thermal timestamp counter ticks toward 11-28 as the gold plate wobbles and settles on its edge, neither face showing, a plate reads PROPOSED DEFINITION \u00b7 DUE NOV 28",
+      "sfx": "tick",
+      "means": "proposed definition \u00b7 due nov 28",
+      "rehook": "",
+      "draw": {
+        "subject": "a thermal timestamp counter",
+        "action": "ticks toward 11-28 as the gold plate wobbles and settles on its edge, neither face showing",
+        "emotion": "waiting",
+        "annotation": "PROPOSED DEFINITION \u00b7 DUE NOV 28"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a thermal timestamp counter ticks toward 11-28 as the gold plate wobbles and settles on its edge, neither face showing, a plate reads PROPOSED DEFINITION \u00b7 DUE NOV 28",
+        "reaction": "the plate settles on its edge",
+        "ambient": "wind over ice, a thin hum, a held tone"
+      },
+      "t": "114.580-118.100",
+      "key": 38
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "at_s": 118.1,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A seal can still be two pixels. What should the new name have to prove?",
+      "phrase": "A seal can still",
+      "shows": "the camera cranes down from the pod's lens into the tagged tile, the frames slide into register and the RingedSeal rises out of the same tile and looks up at the lens, a plate reads A SEAL CAN STILL BE 2 PIXELS",
+      "sfx": "pop",
+      "means": "a seal can still be 2 pixels",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "cranes down from the pod's lens into the tagged tile, the frames slide into register and the RingedSeal rises out of the same tile and looks up at the lens",
+        "emotion": "curious",
+        "annotation": "A SEAL CAN STILL BE 2 PIXELS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "the camera cranes down from the pod's lens into the tagged tile, the frames slide into register and the RingedSeal rises out of the same tile and looks up at the lens, a plate reads A SEAL CAN STILL BE 2 PIXELS",
+        "reaction": "the seal looks up",
+        "ambient": "wind over ice, a thin hum, a held tone"
+      },
+      "t": "118.100-120.590",
+      "key": 39
+    },
+    {
+      "id": 47,
+      "shot": 14,
+      "at_s": 120.59,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 2.49
+      },
+      "offset": 2.49,
+      "vo": "A seal can still be two pixels. What should the new name have to prove?",
+      "phrase": "What should the new",
+      "shows": "the RingedSeal folds back into two orange pixels on the violet thermal frame, a plate reads WHAT SHOULD THE NEW NAME HAVE TO PROVE?",
+      "sfx": "bloop",
+      "means": "what should the new name have to prove?",
+      "rehook": "",
+      "draw": {
+        "subject": "the RingedSeal",
+        "action": "folds back into two orange pixels on the violet thermal frame",
+        "emotion": "open",
+        "annotation": "WHAT SHOULD THE NEW NAME HAVE TO PROVE?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the RingedSeal folds back into two orange pixels on the violet thermal frame, a plate reads WHAT SHOULD THE NEW NAME HAVE TO PROVE?",
+        "reaction": "the pixels blink",
+        "ambient": "wind over ice, a thin hum, a held tone"
+      },
+      "t": "120.590-122.400",
+      "key": 40
+    }
+  ]
+}

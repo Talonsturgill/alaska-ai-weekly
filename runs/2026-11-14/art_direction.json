@@ -1,0 +1,68 @@
+{
+ "run_date": "2026-11-14",
+ "story_id": "noaa-afsc-super-intelligence-rename",
+ "treatment": "Explainer winner 'Two Pixels, One New Name' with grafts: a two-pixel thermal seal is the cold open and the button; the survey camera pod's riveted nameplate is the throughline; the color and thermal frames slide into register as the mechanism cutaway; Act 3 is two identical signposts frozen into one floe with the pod dead center.",
+ "palette": {
+  "sky": "#BFE3F2 high clear Arctic spring noon, lifting to #F4FBFD at the horizon haze",
+  "ice": "#F2F7F9 pack ice with #A9C7D6 blue shadow planes and #6E97AE pressure-ridge cores",
+  "water": "#123B57 open leads, deep cobalt ink-blue with #2E6F8E glints",
+  "hero": "#6B6A73 ringed-seal smoke with #C9C6CE ash-ivory rings and a #3E3D45 back",
+  "pod": "#E9E4D8 enamel survey pod with a #B8B0A0 core shadow and #2B2F36 lens bezels; staged against cobalt leads #123B57 or #6E97AE ridge cores, never against bare ice or open sky alone",
+  "thermal": "IRVision ramp #3A1E5C violet to #E0408A magenta to #FF8A3D coral to #FFF4E6 white-hot, ONLY inside thermal frames and the two pixels (coral plus white-hot, never yellow)",
+  "accent": "#D9A520 gold leaf drawn as METAL (dark core #8A6410, mid #D9A520, a narrow specular streak), spent ONLY on the SUPER INTELLIGENCE nameplates (the pod's and the ear stone reader's) and the stamp; never beside the hot-end pixels in one quadrant",
+  "paper": "#EFE8D6 document cream with #232A33 ink for the order, the 2019 article, the calendar",
+  "shadow": "#0C2434 for cast shadows only",
+  "mood": "bright, clean, high-noon clarity; the cold world is the truth and the gold word is the only thing that glitters",
+  "why": "Diverges from 11-13 (overcast pewter sage, brass, tomato) and 11-12 (low-key polar dusk dome, raven black, flagging orange): this is a high-key noon world, cobalt leads and pressure-ridge cores in every exterior, the thermal ramp is the AI's way of seeing and gold is reserved for the label the story is about. Honest overlaps: 11-12 also had blue-white snow with blue shadow planes (answered by the high-key sky and cobalt leads), and 11-10 had a violet shore (violet here lives only inside thermal frames).",
+  "roles_extra": "ink string, envelope, statute page, blank sheet and word card all from document ivory #EFE8D6 and ink #232A33; the 2019 marks in #6E97AE; no unlisted red anywhere"
+ },
+ "light": {
+  "time": "spring noon over the Arctic pack, sun high and slightly left",
+  "key": "hard high key from upper left, short crisp contact shadows on the ice",
+  "fill": "blue sky bounce from below, cool, keeps seal and pod readable",
+  "rim": "white-hot rim on the seal's back from the ice glare, gold rim only on the nameplate",
+  "depth": "three planes per exterior: far pressure ridges and haze, mid floe with the subject, near ice rubble and a lead edge under the caption band; interior beats (lab bench, document desk) use a cream wall with a window onto the ice so Alaska stays in frame",
+  "season_note": "The exteriors are drawn in the spring survey season, when the survey photos are taken, not the November publication date.",
+  "per_shot": {
+   "1": "thermal: self-lit heat ramp, no key, no cast shadows, depth from heat falloff and a #3A1E5C vignette; the noon key comes in as the seal resolves at beat id 3 (4.31 s)",
+   "2": "exterior ice: hard upper-left noon key, short contact shadows, the plane's shadow on a floe",
+   "3": "flat-on wall of photos lit evenly, tiles self-lit only where they glow coral",
+   "4": "interior: cool window key from the ice (wins) plus a warm desk lamp fill",
+   "5": "cutaway: frames self-lit on an ink panel, no cast shadows",
+   "6": "under the wing: sky bounce key from below, wing shadow across the top, gold specular on the plate",
+   "7": "interior: cool window key (wins), warm lamp fill on the bench",
+   "8": "interior: cool window key (wins), frame shadow on the wall",
+   "9": "overhead desk: warm lamp key (wins here, it's the order's desk, not AFSC), soft shadows",
+   "10": "paper cutaway: even ivory light, the gold plate's specular only",
+   "11": "exterior ice: the same hard noon key on both signs, identical shadows, a single glint crosses both cards at once",
+   "12": "under the wing: as shot 6, a touch cooler",
+   "13": "thermal again, self-lit, then the noon key for the seal's rise, then thermal for the fold"
+  }
+ },
+ "shape_language": "Soft ovals and teardrops for the seal and the floes (the living, patient work) and the pod's rounded pill body (the soft working camera), against the hard riveted rectangle of the nameplate, the order and the pages (the paperwork). The nameplate is the one shape that grows; the lens is the one shape that never changes size.",
+ "casting": {
+  "hero": "RingedSeal, NET-NEW reusable library asset (lib/iceseal.tsx): slate body with pale ring rosettes, big dark eyes, whiskers, fore flippers with claws, idle breath and blink, emotions calm/curious/squint, a `pixels` mode that renders the seal as two warm pixels and a `thermal` glow variant. The shelf had only an unfilled dashed contour.",
+  "supporting": "SurveyPod, NET-NEW (lib/iceseal.tsx): twin-lens color + thermal belly camera with lens eyes, a riveted nameplate whose text is the throughline, an Alaska outline stencilled on the capsule. It lives UNDER THE PLANE (shots 2, 6, 12); on the floe test (shot 11) it stands on a survey tripod with contact shadows; never on the ice by itself. BushPlane (shelf) with an Alaska outline on the tail. IRVision look for thermal frames. Episode-local props: the analyst (a generic figure, not a likeness, wrapped in IdleFigure and FigureFinish), the ear stone reader (its own gold plate), a plain brass microscope worked by a person's hand, two identical signposts, the open empty envelope, the statute page, the word card, the browser windows, the thermal timestamp counter.",
+  "no": "No human portraits of real people. Tillipman appears only as an attributed card. The order appears as a document on a signpost, never as a caricature."
+ },
+ "motion_language": "The world drifts slowly (ice floes, haze, plane parallax); the work is precise (frames slide into register and lock with a click, a detector box snaps with overshoot); the label moves big and showy (stamp slam with squash, nameplate swelling, coin spin). Hero moves with motion blur: the plane pass, the stamp, the coin spin.",
+ "composition": {
+  "focal_hierarchy": "seal or pod first, the plate second, everything else third",
+  "negative_space": "the empty white ice IS the subject in the million-tile beat; use it deliberately once, never as dead fill elsewhere",
+  "safe_area": "hero and plates inside y 420 to 1500 for the 1:1 crop; the floe and lead edge stage the lower band under captions; sky haze and ridges above",
+  "signature_shot": "Shot 13 owns it (107.90 s to the end). Keyed by storyboard beat id: beat 43 at 107.90 s, the pod's gold plate wobbles and settles on its edge over the thermal timestamp counter, scale 1.0; beat 44 at 112.08 s, the camera cranes into the tagged tile, the tile fills the frame at about 6x, the color and thermal frames slide into register inside it, the RingedSeal draws with pixels 1 falling to 0 over 0.8 s as lift goes 0 to 1 and she looks up at the lens; beat 45 at 115.05 s, pixels back to 1, thermal 1, the frame back to violet with the two pixels, held through the tail. Shot 1 is a short preview of the last step.",
+  "plate_cap": "pod scale x plateGrow x podPlateW(text) at or under 900 px, checked: shot 6 gold face plateSize 20 (podPlateW about 305), scale 1.8, grow 1.45, 796 px; shot 12 plateSize 20, scale 1.6, grow 1.57, 766 px; shot 13 plateSize 24 scale 1.2, about 440 px; shot 11 scale 0.8 about 290 px; the reader's plate in shot 7 is a fixed 236 px",
+  "alaska_cue": "An Alaska outline stencilled on the pod capsule and the plane's tail (shots 2, 6, 11, 12, 13), the tile wall frame corner (3), the cutaway border (5), a wall map and a window onto the ice in the AFSC-side interiors (4, 7, 8); no named coast."
+ },
+ "practicals": "Every on-screen number is from claims.json with its hedge (MAY BE, 2019, BY HAND past tense). Labels say ARCTIC SEA ICE, never a named sound or coast.",
+ "craft_advance": "none required beyond the net-new RingedSeal and SurveyPod assets",
+ "value_check": {
+  "sky_BFE3F2": "L* 88",
+  "ice_F2F7F9": "L* 97",
+  "pod_enamel_E9E4D8": "L* 91 with core B8B0A0 L* 72, so the pod reads by value only against cobalt #123B57 (L* 23) or ridge cores #6E97AE (L* 60)",
+  "seal_6B6A73": "L* 45",
+  "gold_D9A520": "L* 70 mid, core L* 45",
+  "thermal_field_3A1E5C": "L* 18",
+  "ink_232A33": "L* 17"
+ }
+}

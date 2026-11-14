@@ -1,0 +1,199 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 7.3,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.3,
+   "Composition & staging": 7.4,
+   "Color & grade": 7.3,
+   "Typography & captions": 7.6,
+   "Sound design & mix": 6.8,
+   "VO–illustration sync & entertainment": 7.2,
+   "Accuracy & sourcing": 8.3,
+   "Alaska authenticity & cultural respect": 7.4,
+   "Writing & post quality": 7.8
+  },
+  "weighted_total": 7.23,
+  "calculation": "(7.3x0.12)+(7.0x0.16)+(6.3x0.12)+(7.4x0.08)+(7.3x0.08)+(7.6x0.06)+(6.8x0.10)+(7.2x0.08)+(8.3x0.10)+(7.4x0.06)+(7.8x0.04) = 0.876+1.12+0.756+0.592+0.584+0.456+0.68+0.576+0.83+0.444+0.312 = 7.226",
+  "hard_blockers": [],
+  "hard_blocker_review": "None found. I checked the delivered audio_report: I=-13.71 against a -14 target, TP=-2.64 against a -1.0 ceiling, and speech_priority passes with a minimum margin of 18.0 dB. The music credit is on screen at 131.8s: \"ICE FLOW\" KEVIN MACLEOD (INCOMPETECH.COM) LICENSED UNDER CC BY 4.0. Captions: 36 cues run from 0.0 to 123.24s. The only uncaptioned stretch, 4.7 to 6.06s, is a VO gap. Every caption I read in the stills and strips matches caption_cues.json word for word. I found no typo in any plate I transcribed, including AS SMALL AS 2 PIXELS, MAY BE 7,000 TO 9,000 ANIMALS, ONE OF THESE IS A SEAL, 10X+ FASTER THAN A PERSON AT A MICROSCOPE, DUE TO THE PRESIDENT NOT PUBLIC YET, NOTHING ON THE PAGE SHOWS SMARTER and A BIGGER NAME. The numbers on screen match the VO. Palette: violet thermal, ice blue and wood brown; the blue is there for a reason (sea ice). preflight.py was not run inside this pack, so I could not check that blocker myself.",
+  "concrete_defects": [
+   "39.8s and 114.1s (f039.8, f114.1): a translucent rectangle sits over the gold SUPER INTELLIGENCE plate. It looks like a mis-sized glare or highlight layer. It washes out 'SUPER' and leaves a hard-edged pale box hanging off the lower right of the plate at 114.1s.",
+   "114.1s (f114.1): a lone coral detector-box corner bracket floats in empty sky to the left of the pod, around x270 y720. It is left over from the beat-42 box that springs open.",
+   "35.85s (filmstrip_a_gold_stamp_17, frame 8): the stamp body covers the middle of the word, so the plate reads 'SUPER IN_LLIGENCE' for a frame or two. Hold the reveal until the stamp clears.",
+   "19.0-23.6s (filmstrip_an_analyst_at_a_desk_10, measured 5.7% change): the analyst is effectively frozen, with no breath, weight shift or magnifier move across 8 frames. His face is hidden by the hat, and his body and head carry a pale vertical streak overlay (f024.4) that reads as a render artifact, not a rim light. He is plainer than the props around him.",
+   "0.2-1.4s (filmstrip_two_orange_pixels_1, measured 1.4% change): the first second is a static violet frame with a blinking pixel pair. The scroll stop rests on the caption text, not on motion.",
+   "83-103s, shot 11-12 signpost floe (filmstrips 33-40, measured 2.3-5.7% change): about 20 seconds on one locked symmetric frame with only small head turns from the seal. This is the film's saggiest stretch.",
+   "18.3s (f018.3): a lighter translucent panel covers the right third of the tile wall (edge near x965), and the ONE OF THESE IS A SEAL card partly hides an orange dot tile.",
+   "73.2s (f073.2): faint SUPER INTELLIGENCE browser tiles show through behind the caption plate at y~1415, and the tile grid has an empty slot in its top row.",
+   "Audio: 4 of 25 VO gaps are digital quiet under -55 dBFS (19.48s, 29.82s, 82.12s, 103.24s). The ambience bed drops out there, and the only ambience layers are synthesised brown noise."
+  ],
+  "top_3_fixes": [
+   "Remove the stray glare rectangle on the gold plate (39.8s, 114.1s) and the orphan coral bracket at 114.1s. Gate the stamp reveal so the plate never shows a cut-off word (35.85s).",
+   "Give the analyst (19-24s) idle life: breath, a head bob over the magnifier, a hand move. Remove the streak overlay on his figure. Break up the 83-103s signpost floe with one more motivated move, for example snow drift across the signs, the pod swaying, or the seal shuffling.",
+   "Run the ambience bed continuously so no VO gap falls below -55 dBFS (19.48, 29.82, 82.12, 103.24s), and add one motivated foley layer (wind on the plates, the chain clink) under the floe scenes."
+  ],
+  "would_ship": true
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.3,
+   "Motion & animation craft": 6.6,
+   "Composition & staging": 7.1,
+   "Color & grade": 7.6,
+   "Typography & captions": 6.8,
+   "Sound design & mix": 6.4,
+   "VO–illustration sync & entertainment": 7.3,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 7.6
+  },
+  "weighted_total": 7.21,
+  "calculation": "(7.0x0.12)+(7.3x0.16)+(6.6x0.12)+(7.1x0.08)+(7.6x0.08)+(6.8x0.06)+(6.4x0.10)+(7.3x0.08)+(8.5x0.10)+(7.5x0.06)+(7.6x0.04) = 0.84+1.168+0.792+0.568+0.608+0.408+0.64+0.584+0.85+0.45+0.304 = 7.212",
+  "drift_note": "No axis moved by more than 1.0 from my cut 2 card. Each move follows a change I can see in the new pack, so the film moved and my standard did not: Hook +0.2 (the pixel blink is now visible), Illustration +0.1 (the door pages are outlined, the right board sits under a tarp), Composition -0.1 and Typography -0.2 (a new plate collision at 81.2s, see defects), Sound -0.2 (dead-air gaps rose from 3 to 4 by measurement).",
+  "hard_blockers": [],
+  "hard_blocker_review": "Audio: I=-13.71 against a -14 target, TP=-2.64 under the -1.0 ceiling (more headroom than cut 2's -1.38), speech_priority pass with an 18.0 dB minimum margin. The music credit is on the credits card ('ICE FLOW' Kevin MacLeod, CC BY 4.0). caption_cues.json has 37 cues tracking the VO, and they are legible in every still. On-screen numbers and dates match the captions. No cultural content. ONE ITEM FOR THE ORCHESTRATOR TO CHECK AGAINST preflight: filmstrip_the_two_pages_32 (centre 81.2s) shows the dark 'TWO VIEWS' plate sitting ON TOP of the gold 'SAME LEGAL DEFINITION' plate in all eight frames, covering the top of its letters. That is type on type. preflight's plate_overlap_check is not in the pack. If preflight flags it, it is a hard blocker under clause 1. If preflight passes it as a sub-second handover, it is still a visible defect, and I have charged it to Typography and Composition rather than calling a blocker I can't confirm.",
+  "concrete_defects": [
+   "Shot 10, about 80.9-81.5s (filmstrip_the_two_pages_32): the 'TWO VIEWS' plate overlaps the gold 'SAME LEGAL DEFINITION' plate and cuts across its cap-height. Fix: clear the gold plate before 'TWO VIEWS' enters, or put 'TWO VIEWS' lower, as cut 1 did at f080.0.",
+   "Audio, 19.48s, 29.82s, 82.12s, 103.24s: four gaps measure below the -55 dBFS dead-air floor (quietest -59.6), up from 3 in cut 2 and 1 in cut 1. I accept the stated cause (the speech-priority release can't recover inside sub-second gaps) and grade what is measured: digital silence four times, one of them right after the dean's line lands. Fix: add a gap-aware release, or a separate ungated room-tone layer under the speech-priority stage at about -45 dBFS that the ducker does not touch.",
+   "Shot 4, 18.8-23.7s (filmstrip_an_analyst_at_a_desk_10, measured 5.7%, was 5.4%): the 'stronger lean and breath' still does not read at strip scale. Across eight frames the figure is effectively unchanged, and the visible deltas are the wall print and the mug steam. Fix: a lean of 6-10 px toward the magnifier, with a breath of 3% scale on the torso, eased over about 1.5s.",
+   "Shot 12, 100.9-103.2s (filmstrip_the_ringedseal_39, 3.3%; filmstrip_the_ringedseal_40, 4.3%; both essentially unchanged from cut 2): the 'wider head turn with holds' is not visible. The head tilts a few pixels at most and never clearly addresses either board. Fix: rotate the head 25-35 degrees to the left board, hold, then to the right board, hold. If the rig can't rotate, swap to a three-quarter head drawing.",
+   "Shot 5, 30.4s (f030.4): the heat is now aligned and the corner streak is gone, but a grey translucent ellipse still sits over the seal's head inside the detector box, and a soft white blur remains under the 'DEVELOPED WITH MICROSOFT AI' plate. Fix: remove both leftover overlay layers.",
+   "Ending, 122.0-123.9s (f122.0, f123.9): the '11-28' numeral still floats alone top right on the violet field with no plate or label, so it reads as stray text. The end frame is also mostly empty. Fix: anchor '11-28' to a labelled counter (for example 'DEFINITION DUE') or drop it, and stage the ring a little larger and higher.",
+   "Typography system-wide: every plate and caption is still in the JetBrains mono face, with no Fraunces display face on the hero plates. Fix: set 'SUPER INTELLIGENCE' and 'A BIGGER NAME' in Fraunces."
+  ],
+  "top_3_fixes": [
+   "Resolve the 'TWO VIEWS' / 'SAME LEGAL DEFINITION' plate collision at 81.2s, and confirm plate_overlap_check passes on the new cut.",
+   "Put an ungated room-tone layer under the speech-priority stage so none of the four gaps (19.48s, 29.82s, 82.12s, 103.24s) falls below -55 dBFS.",
+   "Make the two held-figure performances readable: the analyst's lean and breath (shot 4) and the seal's sign-to-sign head turn with holds (shot 12). Both strips are unchanged from cut 2."
+  ],
+  "would_ship": true,
+  "fix_verification": [
+   {
+    "fix": "button folds back to two pixels on the thermal frame with a ring",
+    "verified": true,
+    "evidence": "filmstrip_the_ringedseal_47 shows the seal blink and the frame start to dissolve. f122.0 and f123.9 show the ring and the 2-pixel mark on the violet thermal field, so the open and close bookend. The stray '11-28' remains (defect)."
+   },
+   {
+    "fix": "tile tag and seal payoff",
+    "verified": true,
+    "evidence": "f018.3: 'ONE OF THESE IS A SEAL' is larger and clean over the tiles. filmstrip_the_camera_46 and filmstrip_the_ringedseal_47: the seal resolves out of the tagged tile and the stake tag carries through."
+   },
+   {
+    "fix": "parting door pages outlined",
+    "verified": true,
+    "evidence": "filmstrip_the_two_pages_32: the pages part as outlined paper panels onto the ice. The grey unoutlined slab from cut 2 f082.4 is gone (f082.4 now shows a clean floe). It introduced the plate collision (defect)."
+   },
+   {
+    "fix": "right sign face-on under a tarp until it opens",
+    "verified": true,
+    "evidence": "f092.8: the right board is face-on under a blue tarp with ink folds; it is open in f102.5 and f103.6."
+   },
+   {
+    "fix": "S5 heat aligned on the seal, corner streak gone",
+    "verified": "partial",
+    "evidence": "f030.4: the heat ellipse is centred on the seal and the lower-left corner streak is gone. A grey ghost ellipse over the head and a blur under the plate remain."
+   },
+   {
+    "fix": "stronger analyst lean and breath",
+    "verified": false,
+    "evidence": "filmstrip_an_analyst_at_a_desk_10 measures 5.7% against 5.4% in cut 2, and the figure is visually unchanged across the strip."
+   },
+   {
+    "fix": "wider seal head turn with holds",
+    "verified": false,
+    "evidence": "filmstrip_the_ringedseal_39 (3.3%) and 40 (4.3%) match cut 2, with no readable turn toward either board."
+   },
+   {
+    "fix": "frame 1 to 18 pixel blink",
+    "verified": true,
+    "evidence": "filmstrip_two_orange_pixels_1: the pixels go from dim in frames 1-3 to bright orange and white in frames 4-6 and dim again in 7-8. A visible blink inside the ring."
+   },
+   {
+    "fix": "'A NEW ERA' clears when the order's call lands",
+    "verified": true,
+    "evidence": "f092.8 (cue 'the capabilities the order describes') has no 'A NEW ERA' plate, which was present at the same beat in cut 2 (f094.9)."
+   },
+   {
+    "fix": "floating date plate removed",
+    "verified": "partial",
+    "evidence": "No date plate in the S13 pod frames (f112.3, f114.1). But a bare '11-28' numeral still floats in the end frames f122.0 and f123.9."
+   }
+  ]
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 6.5,
+   "VO–illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8.0
+  },
+  "weighted_total": 7.17,
+  "calculation": "(7.0x0.12)+(7.0x0.16)+(6.5x0.12)+(7.0x0.08)+(7.5x0.08)+(7.5x0.06)+(6.5x0.10)+(7.5x0.08)+(8.0x0.10)+(7.5x0.06)+(8.0x0.04) = 0.84+1.12+0.78+0.56+0.60+0.45+0.65+0.60+0.80+0.45+0.32 = 7.17",
+  "threshold": 7.0,
+  "hard_blockers": [],
+  "hard_blocker_review": {
+   "preflight/plated text/type-on-type": "pass, but see the defect at 73.2s, where tile labels show faintly through the caption band. The caption itself still reads.",
+   "factual/unverifiable claim": "pass on the pack. Each spoken claim is tied to the three credited sources (NOAA Fisheries, whitehouse.gov, GovCIO Media), and the honest turn, 'The case for it?' at 81.0s, is present.",
+   "typo/wrong number on screen": "pass. I transcribed and checked AS SMALL AS 2 PIXELS, 1,000 FT, 7,000 TO 9,000, NOV 6, 10X+ FASTER, SEPT 29, November 28th and 11-28, and all agree with the caption cues. 'SUPER IN?LLIGENCE' at 35.85s is the stamp briefly covering the plate as it lands. It is not a typo.",
+   "audio gate": "pass. I=-13.71 against a -14 target, TP=-2.64, under the -1.0 maximum, and speech_priority passes with a 18.0 dB minimum margin.",
+   "captions": "pass. There are 36 cues, they are legible at phone size, and they are built from forced alignment.",
+   "cultural": "pass. There is no Native iconography or language, and the tone is not saviorist.",
+   "palette": "pass. The violet thermal frame, ice white and lab tan are motivated by the thermal-camera story. Blue is not used as a default."
+  },
+  "concrete_defects": [
+   "Shot 13, 109-114s (f112.3, f114.1, filmstrip_the_gold_plate_44): a translucent white smear sits over the left half of the gold SUPER INTELLIGENCE plate, washing out 'SUPER'. A second ghost rectangle sits over the plate's right end at x630-790, y960-1050. It persists through all 8 frames, so it is a compositing leftover, not motion blur.",
+   "Shot 13, 104-118s (f114.1): a stray orange corner bracket floats at about x250-290, y705-745. It is left over from the detector box that 'springs open' at beat 42 and was never cleared.",
+   "Shot 13 (f114.1): the ACCURACY tag's dashed hanging line runs straight up into the ILLUSTRATION chip, so the tag reads as hanging from the disclosure label. Either move the tag's anchor to the beam or move the chip.",
+   "Shot 9, 73.2s (f073.2): the bottom grid of SUPER INTELLIGENCE browser tiles extends under the caption band, and tile labels show faintly through the caption box. The grid's first row is also missing its second tile.",
+   "Shot 4, 18.8-24.5s (f024.4, filmstrip_an_analyst_at_a_desk_10, 5.7% change): the analyst, the film's only human, has no facial features and his body sits on the desk plane like a pawn. He is held almost motionless for about 5s, with no breath or weight shift beyond the magnifier, and his finish lags the seal and the SurveyPod in other shots.",
+   "Open, 0-4.1s (filmstrip_two_orange_pixels_1, 1.4% change): the first 4 seconds are a near-empty violet frame with a 2-pixel blink in a ring. The concept is strong, but the scroll-stop is visually tiny. The seal reveal at 4.1s carries the real hook.",
+   "Shot 11, 83-95s (f083.0, f092.8, f094.9): the right signpost board stays blank for about 12s while the left card plays out, so half the hero frame is a dead flat blue rectangle.",
+   "Ending, 120.6-123.9s (f122.0, f123.9): the closing question plays over an almost empty violet field. The only elements are a ring and the floating '11-28', with the ILLUSTRATION chip still showing. The payoff frame is the thinnest image in the film.",
+   "Audio (audio_report gap_beds_summary): 4 of 25 VO gaps fall to digital quiet, under -55 dBFS, at 19.48s, 29.82s, 82.12s and 103.24s. The ambience bed drops out exactly where it should hold the room.",
+   "Many 9:16 frames (f012.3, f034.2, f039.8, f112.3): the top 30-40% is plain sky with the subject stacked in the middle band. The 9:16 vertical space is underused."
+  ],
+  "top_3_fixes": [
+   "Clean up the shot 13 composite, 104-118s: remove the white smear and ghost rectangle over the gold plate, clear the leftover orange detector bracket after beat 42, and re-anchor the ACCURACY tag so its line does not run into the ILLUSTRATION chip. This is the punchline frame ('It got a bigger name') and it currently carries the film's most visible artifacts.",
+   "Give the analyst, 18.8-24.5s, finish parity and life: minimal face, shading at the same level as the seal and pod, correct seating behind the desk, a breath/weight-shift idle, and an eye-rub or lean cycle. Also add the seal-style idle to other held beats.",
+   "Hold the ambience bed through the four dead-air gaps (19.48, 29.82, 82.12 and 103.24s), and strengthen the open: make the 2-pixel blink land bigger in the first second with a zoom kick or a thermal sweep, and bring a visual element into the near-empty end card at 120-124s, for example the seal silhouette ghosting in the ring."
+  ],
+  "would_ship": true
+ },
+ "named_open_defects": [
+  "39.8s and 114.1s (f039.8, f114.1): a translucent rectangle sits over the gold SUPER INTELLIGENCE plate. It looks like a mis-sized glare or highlight layer. It washes out 'SUPER' and leaves a hard-edged pale box hanging off the lower right of the plate at 114.1s.",
+  "114.1s (f114.1): a lone coral detector-box corner bracket floats in empty sky to the left of the pod, around x270 y720. It is left over from the beat-42 box that springs open.",
+  "35.85s (filmstrip_a_gold_stamp_17, frame 8): the stamp body covers the middle of the word, so the plate reads 'SUPER IN_LLIGENCE' for a frame or two. Hold the reveal until the stamp clears.",
+  "19.0-23.6s (filmstrip_an_analyst_at_a_desk_10, measured 5.7% change): the analyst is effectively frozen, with no breath, weight shift or magnifier move across 8 frames. His face is hidden by the hat, and his body and head carry a pale vertical streak overlay (f024.4) that reads as a render artifact, not a rim light. He is plainer than the props around him.",
+  "0.2-1.4s (filmstrip_two_orange_pixels_1, measured 1.4% change): the first second is a static violet frame with a blinking pixel pair. The scroll stop rests on the caption text, not on motion.",
+  "83-103s, shot 11-12 signpost floe (filmstrips 33-40, measured 2.3-5.7% change): about 20 seconds on one locked symmetric frame with only small head turns from the seal. This is the film's saggiest stretch.",
+  "18.3s (f018.3): a lighter translucent panel covers the right third of the tile wall (edge near x965), and the ONE OF THESE IS A SEAL card partly hides an orange dot tile.",
+  "73.2s (f073.2): faint SUPER INTELLIGENCE browser tiles show through behind the caption plate at y~1415, and the tile grid has an empty slot in its top row.",
+  "Audio: 4 of 25 VO gaps are digital quiet under -55 dBFS (19.48s, 29.82s, 82.12s, 103.24s). The ambience bed drops out there, and the only ambience layers are synthesised brown noise.",
+  "Shot 10, about 80.9-81.5s (filmstrip_the_two_pages_32): the 'TWO VIEWS' plate overlaps the gold 'SAME LEGAL DEFINITION' plate and cuts across its cap-height. Fix: clear the gold plate before 'TWO VIEWS' enters, or put 'TWO VIEWS' lower, as cut 1 did at f080.0.",
+  "Audio, 19.48s, 29.82s, 82.12s, 103.24s: four gaps measure below the -55 dBFS dead-air floor (quietest -59.6), up from 3 in cut 2 and 1 in cut 1. I accept the stated cause (the speech-priority release can't recover inside sub-second gaps) and grade what is measured: digital silence four times, one of them right after the dean's line lands. Fix: add a gap-aware release, or a separate ungated room-tone layer under the speech-priority stage at about -45 dBFS that the ducker does not touch.",
+  "Shot 4, 18.8-23.7s (filmstrip_an_analyst_at_a_desk_10, measured 5.7%, was 5.4%): the 'stronger lean and breath' still does not read at strip scale. Across eight frames the figure is effectively unchanged, and the visible deltas are the wall print and the mug steam. Fix: a lean of 6-10 px toward the magnifier, with a breath of 3% scale on the torso, eased over about 1.5s.",
+  "Shot 12, 100.9-103.2s (filmstrip_the_ringedseal_39, 3.3%; filmstrip_the_ringedseal_40, 4.3%; both essentially unchanged from cut 2): the 'wider head turn with holds' is not visible. The head tilts a few pixels at most and never clearly addresses either board. Fix: rotate the head 25-35 degrees to the left board, hold, then to the right board, hold. If the rig can't rotate, swap to a three-quarter head drawing.",
+  "Shot 5, 30.4s (f030.4): the heat is now aligned and the corner streak is gone, but a grey translucent ellipse still sits over the seal's head inside the detector box, and a soft white blur remains under the 'DEVELOPED WITH MICROSOFT AI' plate. Fix: remove both leftover overlay layers.",
+  "Ending, 122.0-123.9s (f122.0, f123.9): the '11-28' numeral still floats alone top right on the violet field with no plate or label, so it reads as stray text. The end frame is also mostly empty. Fix: anchor '11-28' to a labelled counter (for example 'DEFINITION DUE') or drop it, and stage the ring a little larger and higher.",
+  "Typography system-wide: every plate and caption is still in the JetBrains mono face, with no Fraunces display face on the hero plates. Fix: set 'SUPER INTELLIGENCE' and 'A BIGGER NAME' in Fraunces.",
+  "Shot 13, 109-114s (f112.3, f114.1, filmstrip_the_gold_plate_44): a translucent white smear sits over the left half of the gold SUPER INTELLIGENCE plate, washing out 'SUPER'. A second ghost rectangle sits over the plate's right end at x630-790, y960-1050. It persists through all 8 frames, so it is a compositing leftover, not motion blur.",
+  "Shot 13, 104-118s (f114.1): a stray orange corner bracket floats at about x250-290, y705-745. It is left over from the detector box that 'springs open' at beat 42 and was never cleared.",
+  "Shot 13 (f114.1): the ACCURACY tag's dashed hanging line runs straight up into the ILLUSTRATION chip, so the tag reads as hanging from the disclosure label. Either move the tag's anchor to the beam or move the chip.",
+  "Shot 9, 73.2s (f073.2): the bottom grid of SUPER INTELLIGENCE browser tiles extends under the caption band, and tile labels show faintly through the caption box. The grid's first row is also missing its second tile.",
+  "Shot 4, 18.8-24.5s (f024.4, filmstrip_an_analyst_at_a_desk_10, 5.7% change): the analyst, the film's only human, has no facial features and his body sits on the desk plane like a pawn. He is held almost motionless for about 5s, with no breath or weight shift beyond the magnifier, and his finish lags the seal and the SurveyPod in other shots.",
+  "Open, 0-4.1s (filmstrip_two_orange_pixels_1, 1.4% change): the first 4 seconds are a near-empty violet frame with a 2-pixel blink in a ring. The concept is strong, but the scroll-stop is visually tiny. The seal reveal at 4.1s carries the real hook.",
+  "Shot 11, 83-95s (f083.0, f092.8, f094.9): the right signpost board stays blank for about 12s while the left card plays out, so half the hero frame is a dead flat blue rectangle.",
+  "Ending, 120.6-123.9s (f122.0, f123.9): the closing question plays over an almost empty violet field. The only elements are a ring and the floating '11-28', with the ILLUSTRATION chip still showing. The payoff frame is the thinnest image in the film.",
+  "Audio (audio_report gap_beds_summary): 4 of 25 VO gaps fall to digital quiet, under -55 dBFS, at 19.48s, 29.82s, 82.12s and 103.24s. The ambience bed drops out exactly where it should hold the room.",
+  "Many 9:16 frames (f012.3, f034.2, f039.8, f112.3): the top 30-40% is plain sky with the subject stacked in the middle band. The 9:16 vertical space is underused."
+ ]
+}

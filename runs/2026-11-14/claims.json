@@ -1,0 +1,388 @@
+{
+ "run_date": "2026-11-14",
+ "fact_check_verdict": "Publish as a wording change on a NOAA Alaska Fisheries Science Center page that now says 'super intelligence' for machine learning tools its own linked articles call artificial intelligence, after EO 14434 of September 29th. NO archived before-copy of the AFSC page was retrieved, so never quote its old wording and never say 'every mention was replaced' (machine learning survives in the heading and the electronic monitoring sentence). The rename is PROVEN for GAIA ('previously known as Geospatial Artificial Intelligence for Animals', NOAA project page updated the same day) and by the linked 2019 and 2024 NOAA articles still saying artificial intelligence. The page itself names no order and no author of the change, so the link to the order is our inference from timing and the order text; say the order requires it, and the page now says it. 30 to 50 seconds per otolith names no species, never say rockfish with that number. No accuracy figures exist on the page. Seal and polar bear detection is 'developed'; otolith aging 'could revolutionize'. The order defines SI as the existing statutory AI definition (Sec. 3a), and the proposed SI definition is due November 28th and does not exist yet. Trump 'artificial anything' quote is single-source (GovCIO) and is NOT used on screen. Navy memo and the Truth Social post are cut.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "NOAA's Alaska Fisheries Science Center has a page about the tools it uses to study Alaska's seas.",
+   "on_screen": "NOAA \u00b7 ALASKA FISHERIES SCIENCE CENTER",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "labelled non-quotation: page title 'Innovative Technologies Expand Research Capabilities in Alaska Marine Ecosystems'",
+   "requires": [
+    "Page is by the Alaska Fisheries Science Center."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "On November 6th, that page was updated.",
+   "on_screen": "PAGE LAST UPDATED NOV 6",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"Last updated by Alaska Fisheries Science Center on November 06, 2026\"",
+   "requires": [
+    "The line only says when it was last edited, not what changed."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "It now calls its seal-finding software super intelligence.",
+   "on_screen": "THE PAGE NOW SAYS SUPER INTELLIGENCE",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"With Microsoft AI, we have also developed super intelligence to detect seals and polar bears on sea ice in millions of color and thermal images collected during Arctic aerial surveys.\"",
+   "requires": [
+    "Developed (finished), with Microsoft AI. Never 'every mention replaced'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The job is finding seals and polar bears on sea ice.",
+   "on_screen": "SEALS AND POLAR BEARS ON SEA ICE",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"super intelligence to detect seals and polar bears on sea ice\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "In millions of color and thermal photos taken from Arctic survey planes.",
+   "on_screen": "MILLIONS OF COLOR + THERMAL IMAGES",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"in millions of color and thermal images collected during Arctic aerial surveys\"",
+   "requires": [
+    "Millions is images COLLECTED, not images processed by the model."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "The planes shoot color and thermal pictures at the same time, from a thousand feet.",
+   "on_screen": "1,000 FT",
+   "source": "https://www.fisheries.noaa.gov/feature-story/developing-artificial-intelligence-find-ice-seals-and-polar-bears-sky",
+   "verbatim_source": "\"The aerial surveys for seals and polar bears simultaneously collect color and thermal imagery from 1000 feet.\"",
+   "requires": [
+    "NOAA feature story, 2019, last updated January 5th, 2024."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "In one million images, NOAA says there may be seven to nine thousand animals.",
+   "on_screen": "MAY BE 7,000 TO 9,000 ANIMALS",
+   "source": "https://www.fisheries.noaa.gov/feature-story/developing-artificial-intelligence-find-ice-seals-and-polar-bears-sky",
+   "verbatim_source": "\"In one million images, there may be 7,000-9,000 animals.\"",
+   "requires": [
+    "'may be', an estimate. 2019 NOAA story."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "A seal can be as small as two pixels.",
+   "on_screen": "AS SMALL AS 2 PIXELS",
+   "source": "https://www.fisheries.noaa.gov/feature-story/developing-artificial-intelligence-find-ice-seals-and-polar-bears-sky",
+   "verbatim_source": "\"like seals that can be as small as two pixels\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "Finding the animals by hand took the team a year after each survey season.",
+   "on_screen": "BY HAND \u00b7 A YEAR",
+   "source": "https://www.fisheries.noaa.gov/feature-story/developing-artificial-intelligence-find-ice-seals-and-polar-bears-sky",
+   "verbatim_source": "\"It took us a year to find the animals in the images after the survey season.\"",
+   "requires": [
+    "Past tense, before the automated system. 2019 NOAA story."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "The software also reads seal heat signatures in infrared images.",
+   "on_screen": "SEAL HEAT SIGNATURES",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"We've also trained super intelligence-enabled models to detect heat signatures of seals in infrared imagery to aid in aerial surveys of the Arctic.\"",
+   "requires": [
+    "Seals only in this sentence."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "NOAA's own two thousand nineteen article about the same seal work calls it artificial intelligence.",
+   "on_screen": "2019 \u00b7 \"ARTIFICIAL INTELLIGENCE\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/developing-artificial-intelligence-find-ice-seals-and-polar-bears-sky",
+   "verbatim_source": "\"Developing Artificial Intelligence To Find Ice Seals And Polar Bears From The Sky\"",
+   "requires": [
+    "Article title. Published October 17th, 2019, last updated January 5th, 2024."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "The same page now ages fish with super intelligence too.",
+   "on_screen": "SUPER INTELLIGENCE \u00b7 AGING FISH",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"We are using super intelligence and near-Infrared analysis of otoliths (ear stones) to age long-lived rockfish.\"",
+   "requires": [
+    "The rockfish sentence. Do NOT attach the 30 to 50 seconds figure to rockfish."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "It reads a fish's ear stone in thirty to fifty seconds.",
+   "on_screen": "30 TO 50 SECONDS PER EAR STONE",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"With this new technology, scientists can determine fish ages faster\u2014 30\u201350 seconds per otolith, more than 10 times faster than humans using microscopes.\"",
+   "requires": [
+    "No species named in the sentence. Say fish, never rockfish."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "That's more than ten times faster than a person at a microscope.",
+   "on_screen": "10X+ FASTER THAN A MICROSCOPE",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"more than 10 times faster than humans using microscopes\"",
+   "requires": [
+    "The page says success 'could revolutionize' aging, so not proven at scale."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "NOAA's two thousand twenty four article on the rockfish work calls it artificial intelligence, a kind of machine learning called deep learning.",
+   "on_screen": "2024 \u00b7 \"DEEP LEARNING\"",
+   "source": "https://www.fisheries.noaa.gov/feature-story/innovative-technology-helps-scientists-better-estimate-ages-long-lived-rockfish",
+   "verbatim_source": "labelled non-quotation: the July 24th, 2024 NOAA feature says 'artificial intelligence' and 'a type of machine learning called deep learning'",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "A NOAA whale-spotting project changed its name the same day.",
+   "on_screen": "GAIA \u00b7 SAME DAY",
+   "source": "https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/geospatial-artificial-intelligence-animals",
+   "verbatim_source": "labelled non-quotation: project page last updated by Northeast Fisheries Science Center on 11/06/2026",
+   "requires": [
+    "Led by Northeast and Alaska Fisheries Science Centers, not Alaska-only. Whales and other marine mammals from space, satellite imagery."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "It was Geospatial Artificial Intelligence for Animals. Now the A I stands for Analysis of Imagery.",
+   "on_screen": "\"PREVIOUSLY KNOWN AS GEOSPATIAL ARTIFICIAL INTELLIGENCE FOR ANIMALS\"",
+   "source": "https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/geospatial-artificial-intelligence-animals",
+   "verbatim_source": "\"(previously known as Geospatial Artificial Intelligence for Animals)\"",
+   "requires": [
+    "New name 'Geospatial Analysis of Imagery for Animals' per the AFSC page."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "On September 29th, an executive order told federal agencies to say super intelligence instead of artificial intelligence.",
+   "on_screen": "EXECUTIVE ORDER \u00b7 SEPT 29",
+   "source": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+   "verbatim_source": "\"To the maximum extent permitted by law, executive departments and agencies (agencies) shall use \"Super Intelligence\" and \"SI\" in place of \"Artificial Intelligence\" and \"AI\" in official correspondence, public communications, websites, reports, policy documents, and other non-statutory documents within the executive branch.\"",
+   "requires": [
+    "EO 14434, 'Inaugurating the Era of Super Intelligence'. The AFSC page names no order; the link is the order's requirement plus the page's timing."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "On websites, in reports, in public communications.",
+   "on_screen": "WEBSITES \u00b7 REPORTS",
+   "source": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+   "verbatim_source": "\"in official correspondence, public communications, websites, reports, policy documents, and other non-statutory documents\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "The order says these systems increasingly represent not merely artificial intelligence, but a new era of super intelligence.",
+   "on_screen": "\"NOT MERELY ARTIFICIAL INTELLIGENCE\"",
+   "source": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+   "verbatim_source": "\"they increasingly represent not merely artificial intelligence, but a new era of Super Intelligence.\"",
+   "requires": [
+    "The administration's own case, presented fairly."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-primary",
+   "spoken": "But the order defines super intelligence as the same technology the law already calls artificial intelligence.",
+   "on_screen": "SAME LEGAL DEFINITION",
+   "source": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+   "verbatim_source": "\"the terms \"Super Intelligence\" and \"SI\" mean the technologies and systems encompassed by the term \"artificial intelligence\" as defined in section 9401(3) of title 15, United States Code.\"",
+   "requires": [
+    "Sec. 3(a), 'except where otherwise provided by law'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "A proposed new definition is due to the President by November 28th.",
+   "on_screen": "DUE TO THE PRESIDENT \u00b7 NOT PUBLIC YET",
+   "source": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/",
+   "verbatim_source": "\"Within 60 days of the date of this order, the Assistant to the President for Science and Technology (APST), in consultation with the heads of other agencies as the APST deems appropriate, shall submit to the President proposed legislative language to establish a Federal definition of \"Super Intelligence\" and \"SI\" that reflects the capabilities described in section 1 of this order.\"",
+   "requires": [
+    "Proposed legislative language, not law. Has not happened yet (today November 14th)."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-secondary",
+   "spoken": "An associate dean for procurement law at George Washington University told GovCIO Media she knows of no purpose other than rebranding.",
+   "on_screen": "NO PURPOSE OTHER THAN REBRANDING \u00b7 ASSOC. DEAN \u00b7 VIA GOVCIO",
+   "source": "https://govciomedia.com/heres-whats-going-on-with-governments-super-intelligence-term/",
+   "verbatim_source": "\"I am not aware of it having any purpose other than rebranding.\"",
+   "requires": [
+    "Jessica Tillipman, associate dean for government procurement law, George Washington University, to GovCIO Media, November 4th."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-primary",
+   "spoken": "Machine learning still appears on the page, in its heading and its fishing boat camera work.",
+   "on_screen": "\"MACHINE LEARNING\" STILL ON THE PAGE",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "\"Alaska Fisheries Science Center is modernizing fishery monitoring by developing electronic monitoring systems and using machine learning to automate processing of images collected onboard fishing vessels.\"",
+   "requires": [
+    "Heading 'Leveraging Super Intelligence and Machine Learning'. Electronic monitoring is 'developing'."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-primary",
+   "spoken": "The project began with a call to jury duty and a Microsoft hackathon.",
+   "on_screen": "JURY DUTY \u00b7 A HACKATHON",
+   "source": "https://www.fisheries.noaa.gov/feature-story/developing-artificial-intelligence-find-ice-seals-and-polar-bears-sky",
+   "verbatim_source": "\"Several million photos that might contain polar bears; a call to jury duty; and a Microsoft Hackathon.\"",
+   "requires": [
+    "2019 NOAA story. One of the jurors was Microsoft engineer Peter Baer; 2018 hackathon."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-primary",
+   "spoken": "The page gives no accuracy figure for any of these tools.",
+   "on_screen": "ACCURACY \u00b7 NOT GIVEN",
+   "source": "https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/innovative-technologies-expand-research-capabilities-alaska-marine-ecosystems",
+   "verbatim_source": "labelled non-quotation: validator searched the full page; numbers present are 30 to 50 seconds, 10 times, millions, 40 percent (uncrewed vehicles), 23 sites, 33 traits, 34,000 species; none is an accuracy figure",
+   "requires": [
+    "Absence checked on the full primary page."
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

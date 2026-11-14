@@ -728,3 +728,21 @@ Whole-mix loudness is not a voice-to-background measurement.
 - Listen on phone-like playback when available, particularly the opening, quiet speech
   and strongest effects. Explicitly disclose unavailable listening capability.
 - LRA is advisory. Clarity wins over dramatic range or an audible ambience score.
+
+## Things the 2026-11-14 panel found that were knowable in advance
+
+- **A throughline that implies page history needs proof of that history.** Cut 1 stamped a steel
+  "2019 ARTICLE · ARTIFICIAL INTELLIGENCE" plate gold beside a calendar tearing to NOV 6, and the
+  editor read it as the NOAA page changing that day, which no archived copy proved. When the
+  fact-check verdict says "no before-copy", the prop starts blank (or neutral) and the old wording
+  lives only on the source that actually carries it.
+- **A HeldTravel box is a prop's box, never the frame's.** A 1080 px sweep or shadow paints a
+  visible band (white on violet, grey on ice); five shots of cut 0 carried one. Size the rig to the
+  held prop and round its corners.
+- **A plate that grows must keep its top edge.** SurveyPod's plate scaled about its centre and rose
+  over the lens labels when it swelled; the lib now pins the plate top (`84 + 14 * plateGrow`).
+- **A quoted fragment must survive being read alone.** "ANY PURPOSE OTHER THAN REBRANDING" in
+  quote marks reads as the opposite of the speaker's point; paraphrase without quote marks or set
+  the whole sentence. Same for a VO quote cut before its last words ("a new era" of Super
+  Intelligence).
+- **A title in the VO is the source's title.** "A procurement law dean" promoted an associate dean.

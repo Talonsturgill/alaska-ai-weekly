@@ -1,0 +1,158 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "On Arctic sea ice, a seal can be as small as two pixels.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "NOAA's survey planes shoot color and thermal photos together, from a thousand feet.",
+   "claims": [
+    "c6",
+    "c5"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "In a million images, there may be seven to nine thousand animals.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "By hand, finding them took NOAA's team a year after every season.",
+   "claims": [
+    "c9"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "NOAA's Alaska scientists developed software with Microsoft AI to find them.",
+   "claims": [
+    "c1",
+    "c3"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "Their page on these tools, last updated November 6th, now calls it super intelligence.",
+   "claims": [
+    "c2",
+    "c3"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "So did it get smarter?",
+   "claims": [
+    "narration"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "The same page says the center ages fish with super intelligence and near infrared light, reading an ear stone in thirty to fifty seconds, more than ten times faster than a person at a microscope.",
+   "claims": [
+    "c12",
+    "c13",
+    "c14"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "But NOAA's own two thousand nineteen article calls the seal work artificial intelligence.",
+   "claims": [
+    "c11"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "On September 29th, an executive order told federal agencies to say super intelligence instead of artificial intelligence, on their websites too.",
+   "claims": [
+    "c18",
+    "c19"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "A proposed new definition is due to the President by November 28th.",
+   "claims": [
+    "c22"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "For now, the order defines super intelligence as the same technology the law already calls artificial intelligence.",
+   "claims": [
+    "c21"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "The case for it?",
+   "claims": [
+    "narration"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "The order says these systems increasingly represent not merely artificial intelligence, but a new era of super intelligence. And it calls for a definition that reflects the capabilities the order describes.",
+   "claims": [
+    "c20",
+    "c22"
+   ]
+  },
+  {
+   "idx": 14,
+   "text": "An associate dean for procurement law at George Washington University told GovCIO Media she knows of no purpose other than rebranding.",
+   "claims": [
+    "c23"
+   ]
+  },
+  {
+   "idx": 15,
+   "text": "Meanwhile, the page gives no accuracy figure for any of these tools.",
+   "claims": [
+    "c26"
+   ]
+  },
+  {
+   "idx": 16,
+   "text": "So nothing on the page shows the software got smarter. It got a bigger name.",
+   "claims": [
+    "narration"
+   ]
+  },
+  {
+   "idx": 17,
+   "text": "The proposed definition isn't due until November 28th.",
+   "claims": [
+    "c22"
+   ]
+  },
+  {
+   "idx": 18,
+   "text": "A seal can still be two pixels. What should the new name have to prove?",
+   "claims": [
+    "c8"
+   ]
+  }
+ ],
+ "caption_fixups": {
+  "two thousand nineteen": "2019",
+  "seven to nine thousand": "7,000 to 9,000",
+  "thirty to fifty": "30 to 50",
+  "a thousand feet": "1,000 feet",
+  "a million": "1 million",
+  "A I": "AI"
+ },
+ "caption_quotes": [
+  "not merely artificial intelligence, but a new era of super intelligence"
+ ],
+ "caption_split_after": [
+  "federal agencies"
+ ]
+}

@@ -1,0 +1,26 @@
+A seal can be as small as two pixels. NOAA now calls the software that finds it super intelligence.
+The name moved. The science behind it didn't.
+
+NOAA's Alaska Fisheries Science Center keeps a page on its research tools. Last updated November 6th, it now calls its seal and polar bear detectors super intelligence. A tool that ages fish from their ear stones gets the same word.
+
+The capability is real, and it's Alaska's.
+Survey planes shoot color and thermal photos together from 1,000 feet.
+NOAA says a million images may hold 7,000 to 9,000 animals.
+Finding them by hand once took a year after every season.
+The ear stone tool reads one in 30 to 50 seconds.
+That's more than ten times faster than a person at a microscope.
+
+NOAA's own 2019 article on the seal work calls it artificial intelligence. A NOAA whale project updated the same day says it was "previously known as Geospatial Artificial Intelligence for Animals."
+
+A September 29th executive order tells federal agencies to say super intelligence instead, on websites and in reports.
+The same order defines super intelligence as the technology the law already calls artificial intelligence.
+
+The administration's case is that these systems "increasingly represent not merely artificial intelligence, but a new era of Super Intelligence." An associate dean for procurement law at George Washington University told GovCIO Media she knows of no purpose other than rebranding.
+
+The page gives no accuracy figure for any of these tools.
+A proposed federal definition is due to the President by November 28th.
+Until a definition becomes law, the new word adds no capability the law recognizes.
+
+If that definition sets a real capability bar, should Alaska's seal and fish tools have to clear it before they carry the word?
+
+#ArtificialIntelligence #Alaska #NOAAFisheries #ComputerVision #ArcticResearch

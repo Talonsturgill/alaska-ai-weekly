@@ -3572,3 +3572,47 @@ dispatch_history:
     light_story: overcast gravel-lot day, paper-lit cutaways, a hard cut to black
     metaphor: a brass faucet at the end of a long pipe with nothing yet to pour, a
       rulebook always arriving last
+- date: '2026-11-14'
+  topic: NOAA Alaska Fisheries Science Center relabels its seal, polar bear and otolith
+    AI tools as super intelligence under Executive Order 14434
+  slug: two-pixels-one-new-name
+  key_entities:
+  - NOAA Fisheries
+  - Alaska Fisheries Science Center
+  - Executive Order 14434
+  - GovCIO Media
+  - George Washington University
+  archetype: ''
+  palette: ''
+  voice: ''
+  stance: curious
+  angle: 'Alaska''s seal finder didn''t get smarter on November 6th, it got a bigger
+    name: by the order''s own definition ''super intelligence'' means exactly what
+    the law calls artificial intelligence, and the real feat, finding two-pixel seals
+    and reading ear stones ten times faster than a microscope, never needed the promotion.'
+  hero: RingedSeal
+  cast:
+  - SurveyPod
+  - BushPlane
+  - Analyst
+  - SignPost
+  - Microscope
+  - Envelope
+  - Reader
+  composition:
+    pov: aerial-oblique
+    motion_vector: radial-emanate
+    hero_treatment: instrument-as-subject
+    layout: centered-hero
+    register: naturalistic-scene
+    palette: 'bright noon sunshine on clear Arctic blue #BFE3F2 to haze #F4FBFD, pack
+      ice #F2F7F9 with blue shadow planes #A9C7D6, cobalt leads #123B57, smoky ringed
+      seal #6B6A73 with ash-ivory rings #C9C6CE, enamel camera pod #E9E4D8 with a
+      #B8B0A0 core, a thermal ramp violet to magenta to coral to white-hot only inside
+      heat frames, metallic gold leaf #D9A520 only on the SUPER INTELLIGENCE nameplates,
+      document ivory #EFE8D6 with ink #232A33'
+    camera_strategy: zoom-through
+    light_story: bright warm noon sunshine on the ice, a glowing thermal survey view,
+      warm cream lamp-lit paper interiors
+    metaphor: a survey camera whose nameplate keeps growing while its lenses never
+      change size, over a seal that is still two pixels
