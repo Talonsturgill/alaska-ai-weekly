@@ -71,7 +71,7 @@ B = [
 PLATE_AT = {i: "on-object" for i in range(1, 49)}
 PLATE_AT.update({1: "lower-third", 6: "side-plate-left", 9: "side-plate-right", 14: "lower-third", 24: "side-plate-right", 30: "lower-third", 40: "lower-third"})
 CLAIM_MAP = {1: ["c8"], 2: ["c4"], 46: ["c8"], 3: ["c5", "c6"], 4: ["c6"], 5: ["c6"], 6: ["c7"], 7: ["c7"], 8: ["narration"], 9: ["c9"], 10: ["c9"],
-             11: ["c6"], 12: ["c10"], 13: ["c3"], 14: ["c1", "c11"], 15: ["c2"], 16: ["c3"], 17: ["narration"], 18: ["c12"], 19: ["c12"],
+             11: ["c6"], 12: ["c10"], 13: ["c3"], 14: ["c1"], 15: ["c2"], 16: ["c3"], 17: ["narration"], 18: ["c12"], 19: ["c12"],
              20: ["c13"], 21: ["c14"], 22: ["c11"], 23: ["c11"], 24: ["c18"], 25: ["c18"], 26: ["c19"], 27: ["c22"], 42: ["c22"], 28: ["c21"],
              29: ["c21"], 30: ["narration"], 31: ["c20"], 43: ["c22"], 32: ["c20"], 33: ["c23"], 44: ["c23"], 34: ["narration"], 35: ["c26"], 45: ["c26"],
              36: ["c26"], 37: ["narration"], 38: ["c22"], 39: ["c8"], 40: ["narration"], 47: ["narration"], 48: ["narration"]}
@@ -232,13 +232,13 @@ def build():
             {"t": b_at(39), "type": "scale-pullback", "what": "the camera cranes down from the pod's lens to the seal rising out of her tile", "hold_s": 0.8}],
         "tail_s": 2.0, "audio_arc": {"bed": [
             {"line": 0, "offset": 0.0, "level": 0.5}, {"line": 1, "offset": 0.0, "level": 1.4}, {"line": 4, "offset": 0.0, "level": 2.0},
-            {"line": 6, "offset": 0.0, "level": 0.3}, {"line": 7, "offset": 0.0, "level": 1.8}, {"line": 9, "offset": 0.0, "level": 1.2},
-            {"line": 12, "offset": 0.0, "level": 0.3}, {"line": 13, "offset": 0.0, "level": 1.5}, {"line": 15, "offset": 0.0, "level": 2.0},
+            {"line": 6, "offset": 0.0, "level": 0.8}, {"line": 7, "offset": 0.0, "level": 1.8}, {"line": 9, "offset": 0.0, "level": 1.2},
+            {"line": 12, "offset": 0.0, "level": 0.8}, {"line": 13, "offset": 0.0, "level": 1.5}, {"line": 15, "offset": 0.0, "level": 2.0},
             {"at_s": round(b_at(39) - 0.5, 3), "level": 0.12}, {"at_s": round(b_at(39) + 0.6, 3), "level": 1.8},
             {"from_end": 2.6, "level": 0.9}, {"from_end": 0.4, "level": 0.0}],
             "ambience": "wind",
             "build_steps": 4, "dip_at": round(b_at(39) - 0.5, 3), "riser_at": round(b_at(37), 3), "silence_at": round(b_at(39) - 0.5, 3),
-            "payoff_at": b_at(39), "button_pattern": "callback", "interrupt_at": b_at(24), "extra_dips": [b_at(28), b_at(35)]},
+            "payoff_at": b_at(39), "button_pattern": "callback", "interrupt_at": b_at(24), "extra_dips": []},
         "shots": shots, "beats": beats,
     }
     board["throughline"]["states"].sort(key=lambda x: x["at_s"])
