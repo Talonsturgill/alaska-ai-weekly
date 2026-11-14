@@ -9,8 +9,8 @@ dispatch_seconds_band:
 - 112
 - 130
 dispatch_vo_words_band:
-- 200
-- 220
+- 268
+- 291
 dispatch_history:
 - date: 2026-06-24
   topic: Cook Inlet beluga acoustic AI (NOAA + Microsoft AI for Good)
