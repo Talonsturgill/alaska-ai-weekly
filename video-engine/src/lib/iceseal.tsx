@@ -210,14 +210,14 @@ export const SurveyPod: React.FC<{
         <RimLight d="M-112,6 h224" w={4} opacity={0.6} />
         {lens(-58, '#3E8FD0', '#5A6470')}
         {lens(58, '#6D3FB0', '#5A6470')}
-        <text x={-58} y={74} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill="#2B2F36" letterSpacing={1}>COLOR</text>
-        <text x={58} y={74} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill="#2B2F36" letterSpacing={1}>THERMAL</text>
-        {alaska && <path d={AK_PATH} transform="translate(-40,44) scale(0.08)" fill="#2B2F36" opacity={0.75} />}
+        <text x={-58} y={68} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill="#2B2F36" letterSpacing={1}>COLOR</text>
+        <text x={58} y={68} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill="#2B2F36" letterSpacing={1}>THERMAL</text>
+        {alaska && <path d={AK_PATH} transform="translate(96,30) scale(0.05)" fill="#2B2F36" opacity={0.8} />}
         {flash > 0 && <circle cx={-58} cy={18} r={44 + 30 * (1 - flash)} fill="#BFE6FF" opacity={0.75 * flash} />}
         {flash > 0 && <circle cx={58} cy={18} r={44 + 30 * (1 - flash)} fill="#C9A6FF" opacity={0.75 * flash} />}
       </g>}
       {/* the NAMEPLATE: riveted, hung under the capsule on two bolts, grows and spins as a prop */}
-      <g transform={`translate(0,${96 + (plateGrow - 1) * ph * 0.5}) scale(${plateGrow})`}>
+      <g transform={`translate(0,${84 + 14 * plateGrow}) scale(${plateGrow})`}>
         <path d="M-50,-14 v-6 M50,-14 v-6" stroke={INK} strokeWidth={5} strokeLinecap="round" />
         <g transform={`scale(${Math.max(0.04, Math.abs(sx))},1)`}>
           <rect x={-pw / 2 + 5} y={-10} width={pw} height={ph} rx={6} fill="#000" opacity={0.25} />

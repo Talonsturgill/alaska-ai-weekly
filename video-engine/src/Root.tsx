@@ -154,7 +154,7 @@ export const RemotionRoot: React.FC = () => {
         component={Ep1113} durationInFrames={4200}
         fps={30} width={1080} height={1920} schema={ep1113Schema} defaultProps={{captions: []}}
         calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??4200})}/>
-      <Composition id="Dispatch1113"
+      <Composition id="Dispatch1114"
         component={Ep1114} durationInFrames={4200}
         fps={30} width={1080} height={1920} schema={ep1114Schema} defaultProps={{captions: []}}
         calculateMetadata={({props})=>({durationInFrames:(props as {total?:number}).total??4200})}/>
