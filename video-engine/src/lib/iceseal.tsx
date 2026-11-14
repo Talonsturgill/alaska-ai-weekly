@@ -43,7 +43,7 @@ export const RingedSeal: React.FC<{
   const lidAmt = Math.max(lid, blink);
   const whisk = 2 * Math.sin(f / 7 + seed);
   const curl = 8 * Math.sin(f / 26 + seed);
-  const headRot = -lf * 28 + look * 10;
+  const headRot = -lf * 28 + look * 24;
   const lk = Math.max(-1, Math.min(1, look));
   // the body fades out as the pixel view fades in, so a cross-fade reads as a resolve
   const bodyOp = 1 - px;

@@ -183,10 +183,10 @@ const IceWorld: React.FC<{f: number; hz?: number; seed?: number; drift?: number;
         <g>
           {/* near rubble under the caption band */}
           {Array.from({length: 11}).map((_, i) => {
-            const x = -40 + i * 110 + h01(i, seed + 5) * 40, y = 1520 + h01(i, seed + 6) * 300, s = 50 + h01(i, seed + 8) * 50;
+            const x = -40 + i * 110 + h01(i, seed + 5) * 40, y = 1520 + h01(i, seed + 6) * 300, s = 40 + h01(i, seed + 8) * 70;
             return (
               <g key={`rb${i}`}>
-                <path d={`M ${x - s},${y + s * 0.4} L ${x - s * 0.6},${y - s * 0.5} L ${x + s * 0.3},${y - s * 0.7} L ${x + s},${y - s * 0.1} L ${x + s * 0.8},${y + s * 0.45} Z`} fill={C.ice} stroke={C.line} strokeWidth={4} strokeLinejoin="round" />
+                <path d={`M ${x - s},${y + s * 0.4} L ${x - s * (0.4 + h01(i, seed + 14) * 0.4)},${y - s * (0.3 + h01(i, seed + 15) * 0.5)} L ${x + s * 0.3},${y - s * (0.5 + h01(i, seed + 16) * 0.4)} L ${x + s},${y - s * 0.1} L ${x + s * 0.8},${y + s * 0.45} Z`} fill={C.ice} stroke={C.line} strokeWidth={4} strokeLinejoin="round" />
                 <path d={`M ${x + s * 0.3},${y - s * 0.7} L ${x + s},${y - s * 0.1} L ${x + s * 0.8},${y + s * 0.45} L ${x + s * 0.2},${y + s * 0.1} Z`} fill={C.iceS} />
                 <path d={`M ${x - s * 0.6},${y - s * 0.5} L ${x + s * 0.3},${y - s * 0.7}`} stroke="#FFFFFF" strokeWidth={4} opacity={0.9} />
               </g>
@@ -265,38 +265,59 @@ const Room: React.FC<{f: number; win?: [number, number, number, number]; map?: [
 );
 
 // ---- the cast --------------------------------------------------------------------------------------------------------------------------------------
-/** the analyst: a generic seated figure seen three-quarter from behind (not a likeness), wrapped in the figure rig. */
-const Analyst: React.FC<{f: number; x: number; y: number; s?: number; lean?: number; rub?: number; cues?: number[]}> = ({f, x, y, s = 1, lean = 0, rub = 0, cues = []}) => (
-  <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <FigureFinish x={0} footY={150} w={170} h={320} keySide="right">
-      <IdleFigure f={f} x={0} footY={150} h={320} seed={3} cues={cues}>
-        {(pose) => (
-          <g>
-            {/* chair back */}
-            <rect x={-80} y={-20} width={160} height={170} rx={20} fill={C.deskD} stroke={C.line} strokeWidth={6} />
-            {/* torso in a cobalt fleece */}
-            <g transform={`rotate(${lean * 12} 0 120)`}>
-              <path d="M -66,130 Q -76,0 -40,-40 Q 0,-60 40,-40 Q 76,0 66,130 Z" fill={C.plane} stroke={C.line} strokeWidth={7} strokeLinejoin="round" />
-              <path d="M 30,-30 Q 60,20 56,120" stroke="#5FA0C0" strokeWidth={6} fill="none" opacity={0.6} />
-              {/* arm reaching to the magnifier, and the other rubbing the eyes on the beat */}
-              <g transform={`rotate(${-30 - rub * 60 + pose.armR * 0.5} 50 -20)`}>
-                <rect x={44} y={-26} width={28} height={110} rx={14} fill={C.plane} stroke={C.line} strokeWidth={6} />
-                <circle cx={58} cy={90} r={15} fill={C.skin} stroke={C.line} strokeWidth={5} />
-              </g>
-              {/* head, back three-quarter, toque */}
-              <g transform={`translate(0 ${-78}) rotate(${pose.headRot * 0.6 + lean * 8})`}>
-                <circle r={46} fill={C.skin} stroke={C.line} strokeWidth={7} />
-                <path d="M -46,-6 Q -40,-60 0,-62 Q 44,-60 46,-6 Q 20,-20 -46,-6 Z" fill={C.ink} stroke={C.line} strokeWidth={5} />
-                <path d="M -40,-30 Q 0,-46 40,-30" stroke={C.gold === '' ? C.ink : '#5FA0C0'} strokeWidth={8} fill="none" />
-                <circle cx={-44} cy={6} r={9} fill={C.skin} stroke={C.line} strokeWidth={4} />
+/** the analyst: a generic seated figure seen three-quarter from behind (not a likeness), wrapped in the figure rig,
+ *  form-shaded like the props, breathing and leaning into the magnifier, a profile cue on the far cheek. */
+const Analyst: React.FC<{f: number; x: number; y: number; s?: number; lean?: number; rub?: number; cues?: number[]}> = ({f, x, y, s = 1, lean = 0, rub = 0, cues = []}) => {
+  const breath = 1 + 0.03 * Math.sin(f / 13);
+  const bob = 4 * Math.sin(f / 21) + 3 * Math.sin(f / 7.3);
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <ellipse cx={20} cy={156} rx={130} ry={16} fill="#0C2434" opacity={0.35} />
+      <FigureFinish x={0} footY={150} w={170} h={320} keySide="right">
+        <IdleFigure f={f} x={0} footY={150} h={320} seed={3} cues={cues}>
+          {(pose) => (
+            <g>
+              <defs>
+                <linearGradient id="anlFleece" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stopColor="#1F4F69" />
+                  <stop offset="0.55" stopColor={C.plane} />
+                  <stop offset="1" stopColor="#5FA0C0" />
+                </linearGradient>
+              </defs>
+              <rect x={-80} y={-20} width={160} height={170} rx={20} fill={C.deskD} stroke={C.line} strokeWidth={6} />
+              <path d="M -70,0 q 70,-14 140,0" stroke="#3E6A86" strokeWidth={6} fill="none" />
+              <g transform={`rotate(${lean * 14 + 2 * Math.sin(f / 30)} 0 120) scale(1 ${breath})`} style={{transformOrigin: '0px 120px'}}>
+                <path d="M -66,130 Q -76,0 -40,-40 Q 0,-60 40,-40 Q 76,0 66,130 Z" fill="url(#anlFleece)" stroke={C.line} strokeWidth={7} strokeLinejoin="round" />
+                <path d="M -20,-40 V 120" stroke="#163C52" strokeWidth={5} opacity={0.6} />
+                <path d="M -60,40 q 60,14 120,0" stroke="#163C52" strokeWidth={5} opacity={0.5} fill="none" />
+                {/* upper arm and forearm reaching to the magnifier, the other hand rubbing the eyes on the beat */}
+                <g transform={`rotate(${-40 + pose.armR * 0.4 + 6 * Math.sin(f / 26)} 48 -20)`}>
+                  <rect x={36} y={-28} width={30} height={84} rx={15} fill="url(#anlFleece)" stroke={C.line} strokeWidth={6} />
+                  <g transform={`translate(51 50) rotate(${-50 - rub * 40})`}>
+                    <rect x={-14} y={-6} width={28} height={74} rx={14} fill="url(#anlFleece)" stroke={C.line} strokeWidth={6} />
+                    <ellipse cx={0} cy={74} rx={16} ry={14} fill={C.skin} stroke={C.line} strokeWidth={5} />
+                    <path d="M -6,70 q 6,8 14,2" stroke="#9A6A4E" strokeWidth={3} fill="none" />
+                  </g>
+                </g>
+                {/* head, back three-quarter, toque, profile cue on the far cheek */}
+                <g transform={`translate(0 ${-78 + bob * 0.5}) rotate(${pose.headRot * 0.6 + lean * 10 + bob * 0.6})`}>
+                  <circle r={46} fill={C.skin} stroke={C.line} strokeWidth={7} />
+                  <path d="M 30,-6 q 22,10 18,30 q -8,6 -16,0" fill="#B97E5C" stroke={C.line} strokeWidth={4} />
+                  <path d="M 42,8 l 10,6 l -8,4" fill={C.skin} stroke={C.line} strokeWidth={3} />
+                  <path d="M -30,20 q 30,24 62,4" stroke="#9A6A4E" strokeWidth={4} fill="none" opacity={0.6} />
+                  <path d="M -46,-6 Q -40,-60 0,-62 Q 44,-60 46,-6 Q 20,-20 -46,-6 Z" fill={C.ink} stroke={C.line} strokeWidth={5} />
+                  <path d="M -40,-30 Q 0,-46 40,-30" stroke="#5FA0C0" strokeWidth={8} fill="none" />
+                  <circle cx={0} cy={-64} r={10} fill="#5FA0C0" stroke={C.line} strokeWidth={4} />
+                  <circle cx={-44} cy={6} r={9} fill={C.skin} stroke={C.line} strokeWidth={4} />
+                </g>
               </g>
             </g>
-          </g>
-        )}
-      </IdleFigure>
-    </FigureFinish>
-  </g>
-);
+          )}
+        </IdleFigure>
+      </FigureFinish>
+    </g>
+  );
+};
 
 /** a survey tripod with feet on the ice (the pod stands on it for the floe test) */
 const Tripod: React.FC<{x: number; top: number; foot: number}> = ({x, top, foot}) => (
@@ -464,6 +485,17 @@ const UnderWing: React.FC<{f: number; children?: React.ReactNode}> = ({f, childr
     {[0, 1].map((i) => (
       <ellipse key={i} cx={((f * 0.9 + i * 700) % 1700) - 300} cy={1000 + i * 120} rx={180} ry={30} fill="#FFFFFF" opacity={0.75} />
     ))}
+    {/* the plane's own shadow on the floe below, and pressure-ridge blocks in the near ice */}
+    <path d={`M ${300 + 40 * Math.sin(f / 50)},1620 l 260,-30 l 220,40 l -480,20 Z`} fill="#0C2434" opacity={0.18} />
+    {Array.from({length: 7}).map((_, i) => {
+      const bx = 60 + i * 160 + 30 * Math.sin(i * 2.3), by = 1700 + (i % 3) * 70, r = 40 + (i % 4) * 14;
+      return (
+        <g key={`ub${i}`}>
+          <path d={`M ${bx - r},${by + r * 0.3} L ${bx - r * 0.3},${by - r * 0.7} L ${bx + r},${by - r * 0.2} L ${bx + r * 0.6},${by + r * 0.4} Z`} fill={C.ice} stroke={C.line} strokeWidth={4} />
+          <path d={`M ${bx - r * 0.3},${by - r * 0.7} L ${bx + r},${by - r * 0.2} L ${bx + r * 0.2},${by + r * 0.1} Z`} fill={C.iceC} opacity={0.7} />
+        </g>
+      );
+    })}
     {/* the wing underside across the top */}
     <path d="M -200,280 L 1280,330 L 1280,470 L -200,430 Z" fill={C.plane} stroke={C.line} strokeWidth={7} />
     <path d="M -200,420 L 1280,458" stroke="#0E3247" strokeWidth={14} opacity={0.6} />
@@ -478,7 +510,7 @@ const TearCal: React.FC<{x: number; y: number; s?: number; page: string; tear: n
   <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-70} y={0} width={140} height={150} rx={8} fill={C.paper} stroke={C.line} strokeWidth={5} />
     <rect x={-70} y={0} width={140} height={36} rx={8} fill={C.ink} />
-    <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.paper}>PAGE</text>
+    <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={C.paper}>LAST UPDATED</text>
     <text x={0} y={112} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.ink}>{page}</text>
     {tear < 1 && (
       <g transform={`translate(${tear * 120} ${tear * 260}) rotate(${tear * 70})`} opacity={1 - tear}>
@@ -531,11 +563,12 @@ const DeskNearPlane: React.FC<{f: number; y?: number; warm?: boolean}> = ({f, y 
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const res = easeIO(f, b(46) - 12, 26);
-  const ring = ease(f, 8, 14);
+  const ring = ease(f, 0, 9);
+  const pulse = 1 + 0.25 * Math.max(0, Math.sin(f / 4)) * (1 - ease(f, 40, 20));
   const cam = track([{t: 0, z: 1.0, fx: 540, fy: 1000}, {t: b(2), z: 1.04, fx: 540, fy: 1000}, {t: b(46), z: 1.32, fx: 560, fy: 1040}, {t: p.dur, z: 1.4, fx: 570, fy: 1040}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
-      <Plate text="AS SMALL AS 2 PIXELS" x={540} y={600} size={44} tone="dark" p={ease(f, 6, 10)} />
+      <Plate text="AS SMALL AS 2 PIXELS" x={540} y={600} size={44} tone="dark" p={ease(f, 0, 8)} />
       <Plate text="THE SEAL" x={540} y={1250} size={30} tone="plate" p={ease(f, b(46) + 6, 12)} />
     </>}>
       <SVG>
@@ -543,12 +576,12 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <RingedSeal x={540} y={1110} scale={2.1} f={f} pixels={1 - res} thermal={1 - res * 0.8} lift={res * 0.8} emotion={res > 0.7 ? 'squint' : 'calm'} seed={2} />
         <Thermal f={f} op={1 - res} />
         {/* the two pixels on the thermal frame */}
-        <g opacity={(1 - res) * ease(f, 9, 2)}>
-          <rect x={524} y={1036} width={18} height={18} fill={C.coral} />
-          <rect x={542} y={1036} width={18} height={18} fill={C.hot} />
+        <g opacity={1 - res} transform={`translate(542 1045) scale(${pulse}) translate(-542 -1045)`}>
+          <rect x={506} y={1027} width={36} height={36} fill={C.coral} />
+          <rect x={542} y={1027} width={36} height={36} fill={C.hot} />
         </g>
         <g opacity={1 - res * 0.7}>
-          <circle cx={542} cy={1045} r={lerp(120, 70, ring) + 8 * Math.sin(f / 6)} fill="none" stroke={C.hot} strokeWidth={6} opacity={ring} />
+          <circle cx={542} cy={1045} r={lerp(220, 90, ring) + 8 * Math.sin(f / 6)} fill="none" stroke={C.hot} strokeWidth={8} opacity={ring} />
         </g>
         {/* the stake tag that lands on the ice */}
         <g transform={`translate(780 ${lerp(1000, 1180, ease(f, b(2), 10))})`} opacity={ease(f, b(2), 4) * (0.25 + 0.75 * res)}>
@@ -580,7 +613,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <ellipse cx={px - 120} cy={1280} rx={170} ry={26} fill="#0C2434" opacity={0.22} />
         <g transform={`rotate(-6 ${px} ${py})`}>
           <BushPlane x={px} y={py} scale={2.1} f={f} mode="fly" body={C.plane} />
-          <SurveyPod x={px + 14} y={py + 76} scale={0.75} f={f} text="2019 ARTICLE · ARTIFICIAL INTELLIGENCE" plateSize={18} shutter={b(4)} />
+          <SurveyPod x={px + 14} y={py + 76} scale={0.75} f={f} text="" plateSize={18} shutter={b(4)} />
         </g>
         {/* the altimeter line and tag */}
         <g opacity={alt}>
@@ -616,7 +649,7 @@ const TileWall: React.FC<{f: number; build: number; glow: number; tagK: number; 
       {frameAK && <AKMark x={TX + 4} y={TY + ROWS * (TH + TG) - 6} s={0.08} fill="#6E97AE" stroke="#6E97AE" op={0.9} />}
       {(() => {
         const {x, y} = tilePos(DARK);
-        return <PinTag x={x + TW * 0.5} y={y + TH * 0.55} p={tagK} f={f} />;
+        return <PinTag x={x + TW * 0.5} y={y + TH * 0.55} s={1.5} p={tagK} f={f} />;
       })()}
     </g>
   );
@@ -626,7 +659,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.08} z1={1.0} oy={960} bg="#1B2A36" overlay={<>
       <Plate text="1,000,000 IMAGES" x={540} y={560} size={40} tone="dark" p={vis(f, b, [6, 7], 0)} />
-      <Plate text="MAY BE 7,000 TO 9,000 ANIMALS" x={540} y={560} size={36} tone="dark" p={vis(f, b, [6, 7], 1) * (1 - ease(f, b(8) + 30, 8))} /> {/* plate-overlap-ok: sequenced */}
+      <Plate text="MAY BE 7,000 TO 9,000 ANIMALS" x={540} y={560} size={36} tone="dark" p={vis(f, b, [6, 7], 1)} /> {/* plate-overlap-ok: sequenced */}
     </>}>
       <SVG>
         <TileWall f={f} build={easeIO(f, b(6), 70)} glow={ease(f, b(7), 40)} tagK={ease(f, b(8), 14)} />
@@ -672,6 +705,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {/* desk lamp */}
         <path d="M 980,1180 L 940,980 L 1010,900" stroke={C.line} strokeWidth={12} fill="none" />
         <path d="M 980,880 l 70,40 l -40,40 Z" fill={C.ink} />
+        <DeskNearPlane f={f} y={1560} />
         <Analyst f={f} x={360} y={1230} s={1.15} lean={0.5 + 0.2 * Math.sin(f / 30)} rub={ease(f, b(10) + 6, 12) * (1 - ease(f, b(10) + 40, 14))} cues={[b(9), b(10)]} />
         {/* the magnifier over a print */}
         <g transform={`translate(${560 + 20 * Math.sin(f / 24)} 1230)`}>
@@ -700,29 +734,27 @@ const S5: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2320} fill="#13202B" />
         <AKMark x={40} y={620} s={1.0} stroke="#2E4F66" op={0.9} />
-        {/* color frame */}
-        <g transform={`translate(${lx} 960)`} opacity={1 - slide * 0.35}>
-          <rect x={-260} y={-200} width={520} height={400} fill={C.ice} stroke={C.line} strokeWidth={6} />
-          <path d="M -260,-40 q 180,-30 520,10" stroke={C.lead} strokeWidth={22} fill="none" />
-          <ellipse cx={20} cy={60} rx={24} ry={10} fill="#4A4950" />
-          <text x={-240} y={-170} fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>COLOR</text>
+        {/* color frame: real ice with a lit seal */}
+        <g transform={`translate(${lx} 960)`} opacity={1 - slide * 0.25}>
+          <rect x={-430} y={-320} width={860} height={640} fill={C.ice} stroke={C.line} strokeWidth={7} />
+          <path d="M -430,-90 q 260,-50 860,20 L 430,-40 q -560,-60 -860,0 Z" fill={C.lead} stroke={C.line} strokeWidth={3} />
+          <path d="M -430,200 q 300,-30 860,10" stroke={C.iceS} strokeWidth={26} fill="none" opacity={0.8} />
+          <g transform="translate(0 150)"><RingedSeal x={0} y={0} scale={0.9} f={f} seed={5} /></g>
+          <text x={-400} y={-280} fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.ink}>COLOR</text>
         </g>
-        {/* thermal frame */}
-        <g transform={`translate(${rx} 960)`} opacity={1 - slide * 0.45}>
-          <rect x={-260} y={-200} width={520} height={400} fill={C.vio} stroke={C.line} strokeWidth={6} />
-          <path d="M -260,-40 q 180,-30 520,10" stroke="#5A2E82" strokeWidth={22} fill="none" />
-          <ellipse cx={20} cy={60} rx={40} ry={22} fill={C.coral} opacity={0.9} />
-          <ellipse cx={24} cy={58} rx={16} ry={9} fill={C.hot} />
-          <text x={100} y={-170} fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.hot}>THERMAL</text>
+        {/* thermal frame: violet field and a white-hot ramp around her */}
+        <g transform={`translate(${rx} 960)`} opacity={1 - slide * 0.5}>
+          <rect x={-430} y={-320} width={860} height={640} fill={C.vio} stroke={C.line} strokeWidth={7} />
+          <path d="M -430,-90 q 260,-50 860,20" stroke="#5A2E82" strokeWidth={40} fill="none" />
+          <ellipse cx={20} cy={120} rx={190} ry={80} fill={C.mag} opacity={0.55} />
+          <ellipse cx={30} cy={115} rx={120} ry={52} fill={C.coral} opacity={0.85} />
+          <ellipse cx={60} cy={105} rx={52} ry={26} fill={C.hot} />
+          <text x={240} y={-280} fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.hot}>THERMAL</text>
         </g>
-        {/* the click as they lock */}
-        {slide > 0.98 && f < b(11) + 44 && <rect x={280} y={760} width={520} height={400} fill="none" stroke="#FFFFFF" strokeWidth={8} opacity={1 - (f - b(11) - 30) / 14} />}
-        <g opacity={box}>
-          <RingedSeal x={540} y={1050} scale={0.75} f={f} thermal={0.7} emotion="calm" seed={5} />
-        </g>
-        <DetBox x={548} y={1010} w={260} h={130} k={box} />
+        {slide > 0.98 && f < b(11) + 44 && <rect x={110} y={640} width={860} height={640} fill="none" stroke="#FFFFFF" strokeWidth={10} opacity={1 - (f - b(11) - 30) / 14} />}
+        <DetBox x={556} y={1060} w={360} h={190} k={box} />
         <NearStrip f={f} y={1560} seed={1} />
-        <HeldTravel f={f} x={290} y={770} w={500} h={380} seed={15} strength={0.4} rx={8} mode="shadow" />
+        <HeldTravel f={f} x={130} y={1210} w={420} h={60} seed={15} strength={0.4} rx={20} mode="sweep" />
       </SVG>
     </Frame>
   );
@@ -749,9 +781,9 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <g transform={`translate(${lerp(1300, 540, swing) + settle(f, b(14) + 22, 10)} 0)`}>
             <path d="M 0,440 L 0,640" stroke={C.line} strokeWidth={18} />
             <path d="M 0,440 L 0,640" stroke={C.iceC} strokeWidth={9} />
-            <TearCal x={-360} y={560} s={1} page="NOV 6" tear={ease(f, b(15), 18)} />
+            <g transform={`rotate(${settle(f, b(15), 10)} -360 550)`}><TearCal x={-360} y={560} s={1} page="NOV 6" tear={1} /></g>
             <path d="M -300,566 L -10,520" stroke={C.ink} strokeWidth={4} />
-            <SurveyPod x={0} y={700} scale={1.8} f={f} text={hit ? 'SUPER INTELLIGENCE' : '2019 ARTICLE · ARTIFICIAL INTELLIGENCE'} plateSize={hit ? 20 : 16}
+            <SurveyPod x={0} y={700} scale={1.8} f={f} text={hit ? 'SUPER INTELLIGENCE' : ''} plateSize={20}
               gold={hit} plateGrow={grow} tilt={glance * 9} lookDown={glance} shutter={b(14) + 30} />
           </g>
           {/* the gold stamp */}
@@ -851,7 +883,15 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <PinTag x={-100} y={500} s={0.6} p={1} f={f} />
           {Array.from({length: 6}).map((_, i) => <rect key={i} x={80} y={320 + i * 30} width={160} height={10} fill={C.paperD} />)}
         </g>
-        <DeskNearPlane f={f} y={1500} />
+        {/* a row of survey drawers, its own lower third */}
+        <rect data-band="ok" x={-200} y={1500} width={1480} height={600} fill={C.deskD} stroke={C.line} strokeWidth={6} />
+        {Array.from({length: 6}).map((_, i) => (
+          <g key={`dr${i}`} transform={`translate(${20 + (i % 3) * 350} ${1530 + Math.floor(i / 3) * 190})`}>
+            <rect x={0} y={0} width={320} height={160} rx={8} fill="#2B4F66" stroke={C.line} strokeWidth={5} />
+            <rect x={110} y={60} width={100} height={22} rx={10} fill="#8FA8B6" stroke={C.line} strokeWidth={3} />
+            <rect x={120} y={110} width={80} height={30} fill={C.paper} stroke={C.line} strokeWidth={2} />
+          </g>
+        ))}
         {/* the ink string from the photo to the window */}
         <path d={`M 360,1000 Q 600,${1060 + 40 * Math.sin(f / 20)} ${lerp(360, 790, str)},${lerp(1000, 1110, str)}`} stroke={C.ink} strokeWidth={5} fill="none" opacity={str > 0 ? 1 : 0} />
         <circle cx={360} cy={1000} r={10} fill={C.ink} opacity={str > 0 ? 1 : 0} />
@@ -875,9 +915,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam} bg={C.warmDesk} overlay={<>
       <Plate text="EXECUTIVE ORDER · SEPT 29" x={540} y={560} size={36} tone="plate" p={vis(f, b, [24, 25, 26, 27, 42], 0)} />
       <Plate text="SAY SUPER INTELLIGENCE" x={540} y={560} size={36} tone="dark" p={vis(f, b, [24, 25, 26, 27, 42], 1)} /> {/* plate-overlap-ok: sequenced */}
-      <Plate displayLines={['WEBSITES · REPORTS ·', 'PUBLIC COMMUNICATIONS']} text="WEBSITES · REPORTS · PUBLIC COMMUNICATIONS" x={540} y={580} size={32} tone="dark" p={vis(f, b, [24, 25, 26, 27, 42], 2)} /> {/* plate-overlap-ok: sequenced */}
+      <Plate text="WEBSITES · REPORTS" x={540} y={560} size={36} tone="dark" p={vis(f, b, [24, 25, 26, 27, 42], 2)} /> {/* plate-overlap-ok: sequenced */}
       <Plate displayLines={['PROPOSED NEW DEFINITION', 'DUE NOV 28']} text="PROPOSED NEW DEFINITION DUE NOV 28" x={540} y={580} size={34} tone="warn" p={vis(f, b, [24, 25, 26, 27, 42], 3)} /> {/* plate-overlap-ok: sequenced */}
-      <Plate displayLines={['DUE TO THE PRESIDENT', 'NOT WRITTEN YET']} text="DUE TO THE PRESIDENT · NOT WRITTEN YET" x={540} y={580} size={34} tone="warn" p={vis(f, b, [24, 25, 26, 27, 42], 4)} /> {/* plate-overlap-ok: sequenced */}
+      <Plate displayLines={['DUE TO THE PRESIDENT', 'NOT PUBLIC YET']} text="DUE TO THE PRESIDENT · NOT PUBLIC YET" x={540} y={580} size={34} tone="warn" p={vis(f, b, [24, 25, 26, 27, 42], 4)} /> {/* plate-overlap-ok: sequenced */}
     </>}>
       <SVG>
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2320} fill={C.warmDesk} />
@@ -943,8 +983,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const part = easeIO(f, b(30), 26);
   return (
     <Frame p={p} z0={1.0} z1={1.06} bg={C.deskD} overlay={<>
-      <Plate text="SEC. 3(A) · 15 U.S.C. 9401(3)" x={540} y={560} size={34} tone="plate" p={vis(f, b, [28, 29, 30], 1)} />
-      <Plate text="TWO VIEWS" x={540} y={1250} size={36} tone="dark" p={ease(f, b(30), 12)} /> {/* plate-overlap-ok: sequenced */}
+      <Plate text="SEC. 3(A) · 15 U.S.C. 9401(3)" x={540} y={560} size={34} tone="plate" p={vis(f, b, [28, 29, 30], 1)} /> {/* plate-overlap-ok: sequenced */}
+      <Plate text="TWO VIEWS" x={540} y={560} size={40} tone="dark" p={ease(f, b(30), 12)} /> {/* plate-overlap-ok: sequenced */}
     </>}>
       <SVG>
         <IceWorld f={f} hz={760} seed={6} />
@@ -989,39 +1029,49 @@ const S10: React.FC<SceneProps> = ({p}) => {
 };
 
 /** S11, one locked symmetric floe: two identical signs open the same way, the pod on a tripod dead center, the seal turns between them */
-const S11: React.FC<SceneProps> = ({p}) => {
+const TwoSigns: React.FC<{p: SP; tight?: boolean}> = ({p, tight = false}) => {
   const {f, b} = p;
-  const L = ease(f, b(31), 18), R = ease(f, b(33), 18);
-  const glint = clamp01((f - b(32)) / 30);
-  const turns = f > b(34) ? Math.sin((f - b(34)) / 11) : 0;
+  const bt0 = p.bt;
+  // in the tight frame the beats of the wide frame are in the past: read them from absolute time
+  const B = (id: number) => (tight ? bt0(id) - p.from : b(id));
+  const L = ease(f, B(31), 18), R = ease(f, B(33), 18);
+  const glint = clamp01((f - B(32)) / 30);
+  const turns = tight ? (f > B(48) - 10 ? Math.sin((f - B(48) + 10) / 9) : 0) : 0;
+  const gust = ease(f, B(47), 30) * (1 - ease(f, B(47) + 50, 30));
   return (
-    <Frame p={p} z0={1.0} z1={1.0} oy={960} overlay={<>
-      <Plate text={'"A NEW ERA" · THE ORDER'} x={540} y={500} size={30} tone="plate" p={ease(f, b(32), 12) * (1 - ease(f, b(33) - 8, 8))} />
-      <Plate text="SAME TOOLS · BOTH SIDES" x={540} y={500} size={30} tone="dark" p={ease(f, b(34), 12)} /> {/* plate-overlap-ok: sequenced */}
+    <Frame p={p} cam={tight ? () => ({z: 1.16, fx: 540, fy: 1010}) : undefined} z0={1.0} z1={1.0} oy={960} overlay={<>
+      <Plate text={'"A NEW ERA"'} x={540} y={500} size={30} tone="plate" p={tight ? 0 : ease(f, B(32), 12) * (1 - ease(f, B(33) - 8, 8))} />
+      <Plate text="THE ORDER'S CASE" x={540} y={500} size={30} tone="plate" p={tight ? 0 : ease(f, B(47), 12) * (1 - ease(f, B(32) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
+      <Plate text="THE DEAN'S DOUBT" x={540} y={500} size={30} tone="plate" p={tight ? ease(f, B(48), 12) * (1 - ease(f, B(34) - 8, 8)) : 0} /> {/* plate-overlap-ok: sequenced */}
+      <Plate text="SAME TOOLS · BOTH SIDES" x={540} y={500} size={30} tone="dark" p={tight ? ease(f, B(34), 12) : 0} /> {/* plate-overlap-ok: sequenced */}
     </>}>
       <SVG>
         <IceWorld f={f} hz={720} seed={7} drift={0.05} />
         <SignPost f={f} x={250} boardY={560} foot={1200} w={420} h={300} open={L} head="THE ORDER · SEPT 29" seed={1}
           lines={['"NOT MERELY', 'ARTIFICIAL', 'INTELLIGENCE"']} glint={glint} />
         <SignPost f={f} x={830} boardY={560} foot={1200} w={420} h={300} open={R} head="TILLIPMAN · GWU" seed={2}
-          lines={['"ANY PURPOSE', 'OTHER THAN', 'REBRANDING"']} glint={glint} />
+          lines={['NO PURPOSE', 'OTHER THAN', 'REBRANDING']} glint={glint} />
         {/* the attribution cards slide in under each quote the same way */}
-        <g opacity={ease(f, b(44), 12)} transform={`translate(830 ${900 + settle(f, b(44) + 12, 6)})`}>
+        <g opacity={ease(f, B(44), 12)} transform={`translate(830 ${900 + settle(f, B(44) + 12, 6)})`}>
           <rect x={-200} y={-24} width={400} height={48} rx={6} fill={C.paper} stroke={C.line} strokeWidth={4} />
-          <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>PROCUREMENT LAW · GWU</text>
+          <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>ASSOC. DEAN · VIA GOVCIO</text>
         </g>
-        <g opacity={ease(f, b(43), 12)} transform={`translate(250 ${900 + settle(f, b(43) + 12, 6)})`}>
+        <g opacity={ease(f, B(43), 12)} transform={`translate(250 ${900 + settle(f, B(43) + 12, 6)})`}>
           <rect x={-200} y={-24} width={400} height={48} rx={6} fill={C.paper} stroke={C.line} strokeWidth={4} />
-          <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>EXECUTIVE ORDER · SEPT 29</text>
+          <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.ink}>CALLS FOR A DEFINITION</text>
         </g>
         <Tripod x={540} top={840} foot={1200} />
         <SurveyPod x={540} y={700} scale={0.8} f={f} gold text="SUPER INTELLIGENCE" plateSize={24} />
         <RingedSeal x={540} y={1290} scale={1.1} f={f} look={turns} lift={0.6} emotion="curious" seed={8} />
-        <HeldTravel f={f} x={40} y={560} w={420} h={300} seed={21} strength={0.4} rx={10} mode="shadow" />
+        {gust > 0 && Array.from({length: 14}).map((_, i) => <ellipse key={`gs${i}`} cx={(i * 83 + (f - B(47)) * 14) % 1200 - 60} cy={1150 + (i % 4) * 30 - gust * 40} rx={26} ry={6} fill="#FFFFFF" opacity={0.7 * gust} />)}
+        <HeldTravel f={f} x={440} y={680} w={200} h={70} seed={21} strength={0.4} rx={14} mode="sweep" />
       </SVG>
     </Frame>
   );
 };
+
+const S11: React.FC<SceneProps> = ({p}) => <TwoSigns p={p} />;
+const S11b: React.FC<SceneProps> = ({p}) => <TwoSigns p={p} tight />;
 
 /** S12, back under the wing: the blank accuracy tag, the detector box finds nothing, the plate swells again */
 const S12: React.FC<SceneProps> = ({p}) => {
@@ -1064,49 +1114,53 @@ const S12: React.FC<SceneProps> = ({p}) => {
  *  the seal rises out of it and looks up at the lens, then folds back into two pixels */
 const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const edge = easeIO(f, b(38), 30);
-  const wob = edge > 0.98 ? 3 * Math.sin((f - b(38)) / 4) * Math.exp(-(f - b(38) - 30) / 20) : 0;
+  const edge = easeIO(f, 0, 14);
+  const wob = edge > 0.98 ? 3 * Math.sin(f / 4) * Math.exp(-Math.max(0, f - 14) / 20) : 0;
   const dive = easeIO(f, b(39) - 6, 30);
-  const rise = easeIO(f, b(39) + 20, 26);
-  const fold = easeIO(f, b(40) + 6, 24);
-  const day = '11-' + String(Math.min(28, 14 + Math.floor(clamp01((f - b(38)) / 110) * 14))).padStart(2, '0');
+  const rise = easeIO(f, b(39) + 4, 18);
+  const fold = easeIO(f, p.dur - 24, 18);
+  const day = '11-' + String(Math.min(28, 14 + Math.floor(clamp01(f / 110) * 14))).padStart(2, '0');
   const tz = lerp(1, 6.2, dive);
   const {x: tx, y: ty} = tilePos(DARK);
   const cx = tx + TW * 0.5, cy = ty + TH * 0.5;
+  const inside = clamp01((dive - 0.85) * 7);
   return (
     <Frame p={p} z0={1.0} z1={1.0} bg={C.vio} overlay={<>
-      <Plate displayLines={['PROPOSED DEFINITION', 'DUE NOV 28']} text="PROPOSED DEFINITION · DUE NOV 28" x={540} y={1240} size={30} tone="dark" p={ease(f, b(38) + 4, 12) * (1 - ease(f, b(39) - 10, 8))} />
+      <Plate displayLines={['PROPOSED DEFINITION', 'DUE NOV 28']} text="PROPOSED DEFINITION · DUE NOV 28" x={540} y={1240} size={30} tone="dark" p={ease(f, 6, 12) * (1 - ease(f, b(39) - 10, 8))} />
       <Plate text="A SEAL CAN STILL BE 2 PIXELS" x={540} y={1250} size={32} tone="plate" p={ease(f, b(39) + 24, 12) * (1 - ease(f, b(40) - 8, 8))} /> {/* plate-overlap-ok: sequenced */}
-      <Plate displayLines={['WHAT SHOULD THE NEW NAME', 'HAVE TO PROVE?']} text="WHAT SHOULD THE NEW NAME HAVE TO PROVE?" x={540} y={1220} size={34} tone="warn" p={ease(f, b(40), 12)} /> {/* plate-overlap-ok: sequenced */}
     </>}>
       <SVG>
-        {/* the thermal frame with the pod above and its plate settling on its edge */}
-        <g opacity={1 - dive + fold}>
+        {/* the thermal frame, the tile wall seen through it, and the pod above, opaque, its plate settling on its edge */}
+        <g opacity={1 - inside + fold}>
           <Thermal f={f} op={1} stamp={dive < 0.5 || fold > 0.5 ? day : undefined} />
+        </g>
+        <g transform={`translate(${cx} ${cy}) scale(${tz}) translate(${-cx} ${-cy})`} opacity={(0.35 + 0.65 * dive) * (1 - inside)}>
+          <TileWall f={f} build={1} glow={1} tagK={1 - clamp01(dive * 4)} frameAK={false} />
         </g>
         <g opacity={1 - dive}>
           <SurveyPod x={540} y={560} scale={1.2} f={f} gold text="SUPER INTELLIGENCE" plateSize={24} plateSpin={0.25 * edge} tilt={wob} />
         </g>
-        {/* the tile wall seen through the thermal frame, the tagged tile, and the dive into it */}
-        <g transform={`translate(${cx} ${cy}) scale(${tz}) translate(${-cx} ${-cy})`} opacity={(0.35 + 0.65 * dive) * (1 - fold)}>
-          <TileWall f={f} build={1} glow={1} tagK={1 - dive} frameAK={false} />
-        </g>
-        {/* inside the tile: the ice, the seal rising out of her two pixels and looking up at the lens */}
-        <g opacity={clamp01((dive - 0.85) * 7) * (1 - fold)}>
+        {/* inside the tile: the ice, the stake tag from the open, the pod above, and the seal rising out of her two pixels to look up at the lens */}
+        <g opacity={inside * (1 - fold)}>
           <IceWorld f={f} hz={700} seed={9} />
           <PinTag x={300} y={820} s={1.0} p={1} f={f} />
+          <g transform="translate(860 1180)">
+            <ellipse cx={0} cy={60} rx={30} ry={7} fill="#0C2434" opacity={0.3} />
+            <path d="M 0,60 V -20" stroke={C.line} strokeWidth={6} />
+            <rect x={-116} y={-70} width={232} height={48} rx={5} fill={C.paper} stroke={C.line} strokeWidth={4} />
+            <text x={0} y={-38} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.ink}>ARCTIC SEA ICE</text>
+          </g>
           <SurveyPod x={540} y={330} scale={1.0} f={f} gold text="SUPER INTELLIGENCE" plateSize={24} plateSpin={0.25} lookDown={1} />
         </g>
-        <RingedSeal x={560} y={1120} scale={2.0} f={f} pixels={clamp01(1 - rise + fold)} thermal={fold} lift={rise * (1 - fold)} look={-0.2} emotion="curious" seed={10}
-        />
-        <HeldTravel f={f} x={380} y={1000} w={360} h={160} seed={23} strength={0.3} rx={60} mode="shadow" />
+        <RingedSeal x={540} y={1150} scale={2.0} f={f} pixels={clamp01(1 - rise + fold)} thermal={fold} lift={rise * (1 - fold)} look={-0.3 * rise} emotion="curious" seed={10} />
+        <HeldTravel f={f} x={380} y={1030} w={360} h={160} seed={23} strength={0.3} rx={60} mode="shadow" />
       </SVG>
     </Frame>
   );
 };
 
-const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S12, 13: S13};
-const SHOT_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+const SHOTS: Record<number, React.FC<SceneProps>> = {1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8, 9: S9, 10: S10, 11: S11, 12: S11b, 13: S12, 14: S13};
+const SHOT_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 type Beat = {id: number; at: number; label: string};
 const Shot: React.FC<{n: number; from: number; dur: number; beats: Beat[]; kicks: number[]}> = ({n, from, dur, beats, kicks}) => {
