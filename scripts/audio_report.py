@@ -17,6 +17,10 @@ So nothing in this file is typed by hand. Every number comes from words.json and
 and the diagnosis is derived from those numbers rather than asserted alongside them.
 """
 import argparse
+try:
+    from .render_provenance import sha
+except ImportError:
+    from render_provenance import sha
 import json
 import os
 import re
@@ -335,6 +339,7 @@ def main():
 
     rep = {
         "measured_on": os.path.basename(a.delivered),
+        "measured_sha256": sha(a.delivered),
         "also_covers_master": same,
         "master_measured": master_metrics,
         "master_identity": same_note,

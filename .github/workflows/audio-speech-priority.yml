@@ -6,6 +6,8 @@ on:
       - 'scripts/dispatch_mix.py'
       - 'scripts/render_provenance.py'
       - 'scripts/audio_report.py'
+      - 'scripts/archive_audio_evidence.py'
+      - 'tests/test_archive_audio_evidence.py'
       - 'tests/test_speech_priority.py'
       - 'tests/test_render_provenance.py'
       - '.github/workflows/audio-speech-priority.yml'
@@ -16,6 +18,8 @@ on:
       - 'scripts/dispatch_mix.py'
       - 'scripts/render_provenance.py'
       - 'scripts/audio_report.py'
+      - 'scripts/archive_audio_evidence.py'
+      - 'tests/test_archive_audio_evidence.py'
       - 'tests/test_speech_priority.py'
       - 'tests/test_render_provenance.py'
       - '.github/workflows/audio-speech-priority.yml'
@@ -35,3 +39,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_render_provenance.py'
       - run: python -m unittest discover -s tests -p 'test_mix_aac_check.py'
       - run: python scripts/audio_report.py --self-test
+      - run: python -m unittest discover -s tests -p 'test_archive_audio_evidence.py'

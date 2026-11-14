@@ -1288,6 +1288,12 @@ breaks a house rule.
    COMMITTED, and never `git add -f` it (2026-10-02: four runs force-added scratch, and the 09-30
    lock arrived in the next clone without its receipt, so run_guard refused and no film shipped).
    Evidence that must survive goes in `archive/` or `runs/<date>/`. `.githooks/pre-commit` refuses it.
+   After the FINAL encode and audio_report.py measurement, before committing the run, execute
+   `python3 scripts/archive_audio_evidence.py --date <date>`. Commit its
+   `runs/<date>/audio_evidence.json`: measured audio, speech-priority report and delivery provenance
+   bound to final file hashes. If stale or absent, regenerate the final audio report and retry;
+   never fabricate a pass or rerender/repost solely to archive evidence. This is not a listening
+   review or provider publication receipt. Do not archive media bytes.
    That includes the FINAL panel's three cards, as `runs/<date>/panel_cards.json` beside the
    verdict: `{"j1": {...}, "j2": {...}, "j3": {...}, "named_open_defects": [...]}`, each seat with
    its `axis_scores`, `concrete_defects` and `hard_blockers`. `scripts/week_digest.py` counts the
