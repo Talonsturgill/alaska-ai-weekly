@@ -59,7 +59,12 @@ def pid_alive(base):
         return False
     except PermissionError:
         return True
-    return True
+    # A killed job whose parent never reaps it lingers as a zombie, and kill(pid, 0) still succeeds.
+    try:
+        stat = open("/proc/%d/stat" % pid).read()
+        return stat[stat.rindex(")") + 2:].split()[0] != "Z"
+    except (OSError, ValueError, IndexError):
+        return True
 
 
 def relaunch_hint(base):
