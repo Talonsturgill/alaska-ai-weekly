@@ -1,0 +1,11 @@
+{"criteria": [
+ {"name": "Hook / scroll-stop", "score": 9, "weight": 0.20},
+ {"name": "Point of view / take", "score": 8, "weight": 0.18},
+ {"name": "Substance & specificity", "score": 9, "weight": 0.16},
+ {"name": "Readability & restraint", "score": 8, "weight": 0.12},
+ {"name": "Engagement design (CTA + comment-bait)", "score": 8, "weight": 0.12},
+ {"name": "Brand voice & accuracy", "score": 9, "weight": 0.12},
+ {"name": "Hashtag craft", "score": 9, "weight": 0.10}],
+ "weighted_total": 8.58, "threshold": 8.5, "ship": true, "hard_fails": [],
+ "weakest_criterion": "Point of view / take",
+ "one_sentence_fix": "Add one flat sentence before the closing question saying what the rename costs."}
