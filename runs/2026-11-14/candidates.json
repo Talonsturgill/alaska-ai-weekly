@@ -1,0 +1,24 @@
+{
+ "locked_story": {
+  "headline": "NOAA's Alaska Fisheries Science Center page now calls its seal, polar bear and otolith machine learning tools 'super intelligence' after the September 29th executive order renaming AI, updated November 6th",
+  "found_at_rung": "in_window_sweep"
+ },
+ "rungs": [
+  {"rung": "in_window_sweep", "attempted": true, "candidates_found": 18},
+  {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 6}
+ ],
+ "candidates": [
+  {"title": "NOAA AFSC innovative technologies page renamed AI to super intelligence (NOAA page updated Nov 6, GovCIO Nov 4)", "verdict": "LOCKED"},
+  {"title": "APU, IPHC, NOAA halibut epigenetic clock from fin clips (Alaska Sea Grant Nov 9)", "verdict": "win, but source never says ML, folded in as possible contrast only"},
+  {"title": "176th Air Defense Squadron redesignated Battle Management Control Squadron, cloud C2 with some AI (CBN Nov 10)", "verdict": "AI claim single national source, unit release never says AI"},
+  {"title": "Bristol Bay 2027 sockeye forecast 49.31M, model runs 13 percent low (ADN Nov 12)", "verdict": "forecast is not ML, drone CV project out of window"},
+  {"title": "Earth's Future Alaska glacier projection with XGBoost for small glaciers", "verdict": "primary 403, 27 days old"},
+  {"title": "UAF Sand Point 2020 tsunami slow slip (GI Nov 12)", "verdict": "no AI angle"},
+  {"title": "Fort Wainwright Angel Ascent drone fixes (army.mil Nov 2)", "verdict": "no AI"},
+  {"title": "DNR Houston land transfer cut to 6,800 acres", "verdict": "data center land fight, covered 10-20"},
+  {"title": "Dunleavy vs Kreiss-Tomkins data center pause", "verdict": "covered 11-13"},
+  {"title": "Alaska SBDC small business AI use (akbizmag Oct 19)", "verdict": "26 days old, trade feature"},
+  {"title": "FAA nationwide ground stop Nov 13", "verdict": "no AI"},
+  {"title": "SEARHC joins Mayo Clinic Care Network", "verdict": "no AI deployment"}
+ ]
+}

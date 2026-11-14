@@ -1,0 +1,30 @@
+{
+ "thesis": "Alaska's seal finder didn't get smarter on November 6th, it got a bigger name: by the order's own definition 'super intelligence' means exactly what the law calls artificial intelligence, and the real feat, finding two-pixel seals and reading ear stones ten times faster than a microscope, never needed the promotion.",
+ "supporting_facts": [
+  "The page now says super intelligence for the seal, polar bear and otolith tools (c2, c3, c10, c12), while NOAA's own 2019 and 2024 articles about the same work say artificial intelligence and deep learning (c11, c15), and GAIA states its former name outright (c16, c17).",
+  "Sec. 3(a) defines Super Intelligence as the technologies covered by the statutory definition of artificial intelligence (c21), and the page backs the new word with no new capability claim: seal detection still 'developed', aging still 'could revolutionize', no accuracy figure anywhere (c3, c14, c26).",
+  "The capability is real and Alaskan: seals as small as two pixels (c8) in millions of color and thermal images (c5, c6), 7,000 to 9,000 animals per million images (c7), a year of hand search after each season before automation (c9), ear stones in 30 to 50 seconds, more than ten times faster than a microscope (c13, c14)."
+ ],
+ "counterpoint_to_honor": "The administration's own case, in its own words: these systems 'increasingly represent not merely artificial intelligence, but a new era' (c20), and the order asks for a capability-based federal definition by November 28th (c22). A name built for ambition is a legitimate policy choice, and an agency page that follows a lawful directive is doing its job. Tillipman's 'no purpose other than rebranding' (c23) is shown at equal weight, attributed. The film takes no side on the politics; the tools are the constant across both views. November 28th is the closing open question, not the thesis.",
+ "falsifier": "False today if the order gives SI any operative meaning beyond 15 U.S.C. 9401(3) (c21), or if the updated page backs the new term with capability evidence (accuracy figures, new tasks) the 2019 and 2024 NOAA articles didn't have (c26, c11, c15). Could become false on November 28th if the proposed definition sets a bar these tools fail.",
+ "second_movement": "Act two turns on c21: the order that renamed everything defines the new word as the old legal one, machine learning still sits in the page heading (c24), and GAIA kept its letters while changing what they stand for (c17). Act four turns forward: a definition due November 28th that doesn't exist yet (c22).",
+ "runner_ups": [
+  "A (enthusiast) pure wonder at the tools: kept as Act 1 and the button, rejected as thesis because it ignores the definition.",
+  "B (skeptic) cost to public clarity: withdrawn in cross-challenge, no claim shows anyone confused; kept only as the observable two-names inconsistency.",
+  "C (contrarian) the name moved before the definition, Nov 28 decides: conceded its falsifier may not be checkable while the film is live; kept as the closing open question."
+ ],
+ "stance": "curious",
+ "guardrails": [
+  "never quote the AFSC page's old wording, no archived copy (verdict)",
+  "never 'every mention was replaced', machine learning survives (c24)",
+  "the page names no order; say the order requires it and the page now says it",
+  "30 to 50 seconds is fish, never rockfish (c13)",
+  "millions of images collected, not processed (c5)",
+  "a year by hand was BEFORE automation, 2019 article, past tense (c9); never claim the year is now automated to a given speed",
+  "no accuracy figure on the page (c26), say 'the page gives no accuracy figure'",
+  "GAIA is Northeast plus Alaska centers, not Alaska-only (c16)",
+  "Nov 28 is proposed legislative language to the President, not law, not yet written (c22)",
+  "no Trump 'artificial anything' quote, no Navy memo, no Truth Social post",
+  "no mockery of the order or the President; c20 gets a straight scene"
+ ]
+}
