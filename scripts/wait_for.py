@@ -135,7 +135,8 @@ def self_test():
     os.makedirs(scratch, exist_ok=True)
     runbg = os.path.join(repo, "scripts", "run_bg.sh")
     checks = []
-    with tempfile.TemporaryDirectory(dir=scratch) as d:
+    # A killed job's heartbeat writer can race the teardown; cleanup errors are not test results.
+    with tempfile.TemporaryDirectory(dir=scratch, ignore_cleanup_errors=True) as d:
         subprocess.run(["bash", runbg, d, "ok", "--", "bash", "-c", "echo hello; exit 0"],
                        check=True, capture_output=True)
         checks.append((main([d, "ok", "--timeout", "20", "--poll", "0.2"]) == 0, "a clean job exits 0"))
