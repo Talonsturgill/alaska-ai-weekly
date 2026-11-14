@@ -943,9 +943,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const part = easeIO(f, b(30), 26);
   return (
     <Frame p={p} z0={1.0} z1={1.06} bg={C.deskD} overlay={<>
-      <Plate text="SAME LEGAL DEFINITION" x={540} y={560} size={40} tone="gold" p={vis(f, b, [28, 29, 30], 0)} />
-      <Plate text="SEC. 3(A) · 15 U.S.C. 9401(3)" x={540} y={560} size={34} tone="plate" p={vis(f, b, [28, 29, 30], 1)} /> {/* plate-overlap-ok: sequenced */}
-      <Plate text="TWO VIEWS" x={540} y={1250} size={36} tone="dark" p={ease(f, b(30), 12)} />
+      <Plate text="SEC. 3(A) · 15 U.S.C. 9401(3)" x={540} y={1250} size={30} tone="plate" p={vis(f, b, [28, 29, 30], 1)} />
+      <Plate text="TWO VIEWS" x={540} y={1250} size={36} tone="dark" p={ease(f, b(30), 12)} /> {/* plate-overlap-ok: sequenced */}
     </>}>
       <SVG>
         <IceWorld f={f} hz={760} seed={6} />
@@ -980,8 +979,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
         </g>
         {/* the gold plate on a chain spins to its back face */}
         <g opacity={1 - part}>
-          <path d="M 540,-40 L 540,700" stroke={C.ink} strokeWidth={5} strokeDasharray="14 8" />
-          <SurveyPod x={540} y={620} scale={1.5} f={f} plateOnly gold text="SUPER INTELLIGENCE" backText="SAME LEGAL DEFINITION" plateSpin={0.5 * spin} plateSize={24} />
+          <path d="M 540,-40 L 540,560" stroke={C.ink} strokeWidth={5} strokeDasharray="14 8" />
+          <SurveyPod x={540} y={440} scale={1.5} f={f} plateOnly gold text="SUPER INTELLIGENCE" backText="SAME LEGAL DEFINITION" plateSpin={0.5 * spin} plateSize={24} />
         </g>
         <HeldTravel f={f} x={570} y={660} w={460} h={680} seed={20} strength={0.35} rx={6} mode="shadow" />
       </SVG>
