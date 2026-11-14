@@ -943,7 +943,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const part = easeIO(f, b(30), 26);
   return (
     <Frame p={p} z0={1.0} z1={1.06} bg={C.deskD} overlay={<>
-      <Plate text="SEC. 3(A) · 15 U.S.C. 9401(3)" x={540} y={1250} size={30} tone="plate" p={vis(f, b, [28, 29, 30], 1)} />
+      <Plate text="SEC. 3(A) · 15 U.S.C. 9401(3)" x={540} y={560} size={34} tone="plate" p={vis(f, b, [28, 29, 30], 1)} />
       <Plate text="TWO VIEWS" x={540} y={1250} size={36} tone="dark" p={ease(f, b(30), 12)} /> {/* plate-overlap-ok: sequenced */}
     </>}>
       <SVG>
