@@ -1,14 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-11-14",
+    "date": "2026-11-15",
     "shipped": [
-      "speech-priority-dead-air: the speech-priority stage releases at 60 dB/s across narration-free windows and keeps 10 dB/s under narration, so 11-14's four dead-air gaps measure 0 on a remix with the 18 dB margin intact (c8d97d0)",
-      "vo-length-model-overshoots: vo_length_estimate refits seconds from words and sentences over the shipped archive (LOO MAE 6.3 s, was 16.2 s), dispatch_vo_words_band re-derived to 268-291 (0bce9db)",
-      "worker-restart-kills-bg-jobs: wait_for reports WEDGED as soon as a job's pid vanishes with no .done, run_bg writes the exact relaunch line (6388b60), and the self-test tolerates a heartbeat racing its teardown"
+      "heldtravel-glare: HeldTravel wrap form masks a held-prop sweep or shadow to the prop's own drawn pixels (outside the prop 0.000 percent against 8.666 bare, lift +2.48), held_beat_check --source NOTEs every bare-box rig, the contradictory standard lines superseded by one wrap rule (engine advance)",
+      "rotating-label-reads-wrong: label_footprint probe records each label's screen turn and mirror, the check FAILS a label turned past 100 degrees or mirrored for 0.5 s (names the 11-15 timer on pre-fix source, clean on the shipped film)",
+      "claim-cite-on-plate: claims_contract_check enforces 'label X, Y' prose requires whenever the claim's card is drawn, including claims with a contract (fails 4 of 5 named plates on pre-fix 11-15)",
+      "dedupe-token-collision: act and public are stop tokens; dedupe.py check --asof replays the ledger as of a date, and dedupe_selftest (failing on the calendar alone) pins each case to its measured day"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (owner decision, still open): whether the 8.5 caption bar stays for fact-bound captions",
-      "gate0-critic-rounds cap (owner decision, still open): may a Gate 0 critic be capped at one round plus the panel"
+      "caption-scorer-hair-under-bar (owner decision, still open, repeat 6): whether the 8.5 caption bar stays for fact-bound captions",
+      "gate0-critic-rounds cap (owner decision, still open, repeat 4): may a Gate 0 critic be capped at one round plus the panel",
+      "held-figure idle on Motion (not reached, lowest axis on 33 of 48 cards): next step, measure held strips against IdleFigure cue windows on Ep1115 and add a seeded between-cue weight shift proved on FigureLook"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

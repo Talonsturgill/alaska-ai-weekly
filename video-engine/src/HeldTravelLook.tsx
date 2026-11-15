@@ -31,7 +31,13 @@ const Sheet: React.FC = () => (
   </g>
 );
 
-export const HeldTravelLook: React.FC<{mode?: TravelMode | 'none'}> = ({mode = 'none'}) => {
+// 'wrap' and 'loose' (machine pass 2026-11-15, heldtravel-glare): the same sweep through a box 1.9x the
+// sheet's width and 1.6x its height, the hand-typed box that drifted from its prop on 11-14 and
+// 11-15. 'loose' is the self-closing form and paints the quad outside the sheet; 'wrap' passes the
+// sheet as children, so the sweep is masked to the sheet's own pixels and paints nothing outside it.
+const LOOSE = {x: 110, y: 660, w: 860, h: 520};
+
+export const HeldTravelLook: React.FC<{mode?: TravelMode | 'none' | 'wrap' | 'loose'}> = ({mode = 'none'}) => {
   const f = useCurrentFrame();
   const cord: [number, number][] = [[120, 300], [200, 520], [330, 640], [420, 760]];
   return (
@@ -41,8 +47,11 @@ export const HeldTravelLook: React.FC<{mode?: TravelMode | 'none'}> = ({mode = '
         <rect y={1300} width={1080} height={620} fill="#b48a55" />
         <polyline points={cord.map((p) => p.join(',')).join(' ')} fill="none" stroke={INK} strokeWidth={8} />
         <HeldProp f={f} px={540} py={760} w={460} h={320} kind="hang" seed={2}>
-          <Sheet />
-          {mode !== 'none' && mode !== 'runner' && <HeldTravel f={f} x={310} y={760} w={460} h={320} mode={mode} seed={1} />}
+          {mode === 'wrap' ? (
+            <HeldTravel f={f} {...LOOSE} mode="sweep" seed={1}><Sheet /></HeldTravel>
+          ) : <Sheet />}
+          {mode === 'loose' && <HeldTravel f={f} {...LOOSE} mode="sweep" seed={1} />}
+          {(mode === 'sweep' || mode === 'shadow') && <HeldTravel f={f} x={310} y={760} w={460} h={320} mode={mode} seed={1} />}
         </HeldProp>
         {mode === 'runner' && <HeldTravel f={f} x={120} y={300} w={300} h={460} mode="runner" path={cord} seed={1} />}
       </svg>
