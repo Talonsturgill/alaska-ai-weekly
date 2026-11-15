@@ -1,0 +1,44 @@
+{
+ "criteria": [
+  {
+   "name": "Hook / scroll-stop",
+   "score": 8.5,
+   "weight": 0.2
+  },
+  {
+   "name": "Point of view / take",
+   "score": 8.5,
+   "weight": 0.18
+  },
+  {
+   "name": "Substance & specificity",
+   "score": 8.5,
+   "weight": 0.16
+  },
+  {
+   "name": "Readability & restraint",
+   "score": 8.5,
+   "weight": 0.12
+  },
+  {
+   "name": "Engagement design (CTA + comment-bait)",
+   "score": 8.5,
+   "weight": 0.12
+  },
+  {
+   "name": "Brand voice & accuracy",
+   "score": 8.5,
+   "weight": 0.12
+  },
+  {
+   "name": "Hashtag craft",
+   "score": 8.5,
+   "weight": 0.1
+  }
+ ],
+ "weighted_total": 8.5,
+ "hard_fails": [],
+ "weakest_criterion": "Point of view / take",
+ "one_sentence_fix": "Optional, meet the request-count rebuttal in the take.",
+ "pass": true
+}

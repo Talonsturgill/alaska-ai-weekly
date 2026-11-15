@@ -746,3 +746,14 @@ Whole-mix loudness is not a voice-to-background measurement.
   the whole sentence. Same for a VO quote cut before its last words ("a new era" of Super
   Intelligence).
 - **A title in the VO is the source's title.** "A procurement law dean" promoted an associate dean.
+
+## Things the 2026-11-15 gates, critics and panel found that were knowable in advance ("The Slot Without an Edge")
+- **A label on a part that rotates turns upside down.** The 60 sand timer flipped and read "09" under CURRENT RULE · 60 WORKING DAYS for 4.5 s, the editor's hard blocker. Put a number on the base or draw it outside the rotation (`Timer noLabel` plus an upright plate).
+- **A current-law plate carries its citation.** Each claim that says "label CURRENT RULE, 2 AAC ..." or "label AS 40.25..." needs that cite on the plate, not only in the claim. Keep the plate's `text` equal to the claim's `on_screen` and add the cite as a `displayLines` row so claims_contract still finds the literal.
+- **A proposed rule is never drawn as hardware.** A faceplate bolted on bolt by bolt read as enacted to Gate 0B. Draw a draft as pencil on clipped tracing vellum, dashed, with pencilled bolt circles and a DRAFT tab (`Flap faceplate`, lib/recordslot.tsx).
+- **A picture that admits or refuses something is a ruling.** A note on the clerk's stack read as the AI-drafted request getting in; a robot's real stack beside a person's read as the tool being allowed. Keep the undecided thing undecided on screen (caught half in the slot), and draw a hypothetical as a dashed ghost labelled IF ALLOWED.
+- **Two films in a row with a metal fixture that has a face is a template.** Gate 0B called a faced letterbox a relabel of 11-13's faucet even at night and in gunmetal. Check the last two heroes' IDIOM (faced fixture, two-accent grammar), not just the asset name, and let people carry the feeling when the idiom repeats.
+- **Edge signage under a zoomed camera is a label_footprint FAIL.** The JUNEAU sign at x 70 was cut in every pushed door shot. Hide it (`DoorWorld sign={false}`) wherever the camera's visible span starts right of it.
+- **Draw order inside a world component hides episode labels.** InsideDoor drew its basket after its children and the basket wire crossed the 30 timer's label. Give a world component a switch for its foreground props.
+- **An overhead desk where props land on their own is the film's weakest frame.** The flow critic named it at 2.0 to 7 percent motion. A hand places each prop (`ReachArm`), the lamp pool moves, window rain runs across the desk.
+- **A cross-section needs a person, a ground in the lower third and labels one at a time.** The first cut had a sausage for a gloved hand, a flat black lower third and six plates in one frame over the robot's face.

@@ -3616,3 +3616,50 @@ dispatch_history:
       warm cream lamp-lit paper interiors
     metaphor: a survey camera whose nameplate keeps growing while its lenses never
       change size, over a seal that is still two pixels
+- date: '2026-11-15'
+  topic: 'Alaska Department of Administration proposed Public Records Act rule changes
+    (notice November 11th): per the Juneau Empire the draft bars requests filed through
+    third party services or automated tools including AI, caps work at 250 documents
+    or 15 staff hours, cuts the appeal window 60 to 30 working days and gives residents
+    priority, nothing reported says why or where a tool ends'
+  slug: the-slot-without-an-edge
+  key_entities:
+  - Department of Administration
+  - records requests
+  - automated tools
+  - Juneau Empire
+  - 2 AAC 96
+  - AS 40.25
+  - resident priority
+  - public records
+  archetype: explainer-open-question
+  palette: rain-black Juneau night, sodium amber, gunmetal letterbox, pencil on vellum,
+    glacier-cyan screens, oak interior
+  voice: Gemini Sulafat
+  stance: curious
+  angle: As the Juneau Empire reports it, Alaska's draft records rule would police
+    how a request arrives instead of how much work it makes, and since its own caps
+    already limit the work whatever tool filed it, the line it draws around AI needs
+    a definition and a reason the public hasn't been shown.
+  hero: Flap
+  cast:
+  - Flap
+  - Tote
+  composition:
+    pov: slot-height-closeup
+    motion_vector: vertical-descent
+    hero_treatment: data-as-subject
+    layout: offset-thirds
+    register: night-noir-storybook
+    palette: 'rain-black Juneau night #142420, slate stone #3A4A5C lifted to #5E7385
+      under one sodium amber wall lamp #F2A541, a blackened gunmetal letterbox #4A4F57
+      with a nickel lip #B9BEC4 on a near-black door #1E2A26, translucent tracing
+      vellum #E6EEF2 drawn in lead pencil #3A4652 for everything PROPOSED, glacier-cyan
+      #9FE7FF on screens where AI shows, request paper #F3E9D2, an oak interior #6B4A2E
+      under a jade-shaded desk lamp'
+    camera_strategy: push-and-crane-through
+    light_story: one sodium amber lamp raking a rain-black door outside, a warm green-shaded
+      desk lamp inside for the fair case
+    metaphor: a letterbox that has always swallowed any question gets a pencilled
+      draft template clipped beside it whose fourth edge is a dashed line nobody has
+      inked

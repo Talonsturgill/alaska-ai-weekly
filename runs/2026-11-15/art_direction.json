@@ -1,0 +1,84 @@
+{
+ "run_date": "2026-11-15",
+ "story_id": "alaska-doa-public-records-draft-automated-tools",
+ "treatment": "Dramatist winner 'The Slot Without an Edge', restaged after Gates 0B to 0D. A FACELESS gunmetal letterbox in the street door of a state office in Juneau on a rain-black night has always taken any question, even a spoken balloon. The proposed rule is a sheet of tracing vellum clipped beside the slot, a pencilled form-shaped outline whose fourth edge is a dashed line, pencilled bolt circles, a DRAFT tab and a BLANK hang tag. A service envelope and Tote the courier robot stop and wait at the pencil line (the reported verb, submitting through), a person drafts with an ice-cyan phone helper, fixes its mistake and carries the note to the slot where it presses at the dashed edge, neither in nor out. The crane through the slot shows the volume caps as a DRAFT tape line, a candle and an hour meter. Two same-size cards on the railing hold the residents draft and the statute's words, level, no verdict. The night clerk works the stack in a warm room for the fair case. The signature is the door in cross-section: one real stack stops at the 250 line beside a dashed ghost of Tote's, labelled VOLUME, A KNOWN PERSON and WHAT DOES THE TOOL LINE ADD?. The button holds the balloon at the threshold.",
+ "palette": {
+  "night": "#142420 rain-black, the night beyond the lamp",
+  "stone": "#3A4A5C slate stone wall L* 30, never directly behind the letterbox",
+  "door": "#1E2A26 near-black door leaf L* 15 behind the letterbox so it reads by mass",
+  "lamp": "#F2A541 sodium amber, the one exterior key",
+  "hero": "#4A4F57 blackened gunmetal letterbox L* 33, nickel lip #B9BEC4 L* 77, faceless",
+  "proposed": "#E6EEF2 tracing vellum L* 94 drawn in lead pencil #3A4652 L* 30: every PROPOSED thing is pencil on vellum, dashed, never inked or bolted; PROPOSED plates carry a dashed pencil border",
+  "ai": "#9FE7FF glacier-cyan L* 88, ONLY on screens (the phone helper's face, Tote's screen face and antenna light); Tote's body is graphite #8C96A0",
+  "paper": "#F3E9D2 request paper L* 93; the blank tag is cool #D7DEE2 L* 88 so it never reads as a request",
+  "interior": "#6B4A2E oak and #E8C27A warm lamp pool, the clerk's room is the one warm interior",
+  "ink": "#14181E outlines",
+  "mood": "a rainy Juneau night at one door, intimate, curious, never sinister",
+  "divergence": "11-13 had a brass faucet WITH A FACE on overcast daylight gravel and a mint-AI tomato-rule accent grammar; this film is night, a FACELESS gunmetal letterbox, pencil-grey vellum for the rule and glacier-cyan only on screens for AI. 11-14 had a nameplate on its hero and two equal signs; here the rule is visibly a draft and the comparison has one real stack and one dashed ghost. No sage, pewter, violet, mint, red or snow. Glacier-cyan #9FE7FF shares a hue family with 11-14's #BFE3F2 sky, kept to small screen glyphs only, never a field."
+ },
+ "light": {
+  "time": "late evening in November rain, full dark outside",
+  "key": "sodium amber from a wall lamp at upper left, raking the door so the nickel lip catches it",
+  "fill": "cool rain-slate bounce from the wet step",
+  "rim": "cream rim from the wired-glass panel lit from inside",
+  "depth": "tones() and RimLight on every hero, ContactShadow under people, Tote and props, puddle sheen, rain in two planes (far drizzle across the whole frame including the top band, near fat streaks in the lamp cone)",
+  "per_shot": {
+   "1,2,4,6,7,10,14": "exterior, sodium key upper left, the dashed edge's glow and the cutout glow are self-lit amber and never replace the key",
+   "3": "the wired glass is backlit cream from inside, the lamp rakes the notice",
+   "5,11,12": "the clerk's jade-shaded desk lamp keys warm from upper left, screens self-lit glacier-cyan only on the AI helper, the portal screen self-lit cool white",
+   "8,9": "inside the door, warm spill from the clerk's room enters from the left as the key, the slot glows amber above from the street lamp",
+   "13": "split key, sodium on the outside half, warm spill on the inside half"
+  }
+ },
+ "shape_language": "The letterbox, the balloon and the people are ROUNDED: open, the way a request is today. Everything PROPOSED is HARD and RECTILINEAR but only PENCILLED on vellum (crisp corners, rx 4 or less), dashed, never inked or fastened. The one shape that never resolves is the cutout's fourth edge, dashed. Tote is a compact rounded box so it sits with the soft side.",
+ "casting": {
+  "hero": "Flap (lib/recordslot.tsx), cast FACELESS (face={false}): a gunmetal door letterbox whose flap is the one moving part. Reason: the angle needs the CHANNEL drawn as a thing you can watch; the people carry the emotion, so the fixture is not a talking character like 11-13's faucet. Its `faceplate` prop now draws the PROPOSED rule as a clipped tracing-vellum template with a pencilled outline, pencilled bolt circles, a DRAFT tab and a BLANK hang tag; `sketch` pencils the outline in.",
+  "ai_presence": "Tote (lib/recordslot.tsx), a graphite courier robot with a glacier-cyan screen face that only ever carries and is only ever shown WAITING at the pencil line or as a dashed ghost IF ALLOWED, never let in. Plus a phone helper face (glacier-cyan) that drafts while the person sends.",
+  "supporting": "The requester in a rain shell (awning, street, over-shoulder) and the night clerk in a warm room, both the episode's own figures wrapped in IdleFigure and FigureFinish, carry the feeling. The Question balloon and note is the throughline.",
+  "freshness": "dedupe hero Flap (new). Last two heroes Drip, RingedSeal."
+ },
+ "motion_language": "Rain never stops, in two planes, so no outdoor frame is still. The vellum lifts and settles as the binder clips snap; a pencil sketches its outline on; the bolt circles are drawn, never fired. The letterbox's only life is breath, the flap's swing, the gulp squash and the travelling lip glint. The people carry the acting: the requester trims, fixes, carries and hesitates; the clerk lifts pages and turns the placard. Papers land with a squash and settle; Tote rolls with wheel spin and a satchel swing and stops to wait. Motion blur on the balloon's drift, the crane through the slot and the stack's drop. At most three frame kicks on the board.",
+ "composition": {
+  "focal_hierarchy": "the Question or the dashed edge first, the person or clerk second, plates third",
+  "negative_space": "only the cold open's dark beyond the lamp cone is sanctioned; every other band has a job",
+  "safe_area": "hero action and every plate inside y 420 to 1500, plates under y 690 or between 1180 and 1300",
+  "bands": {
+   "1": "top: lamp bracket, lit glass panel, rain; bottom: wet nickel lip beads, door kickplate",
+   "2": "top: Mount Juneau's shoulder, spruce ridge, rooftops with lit windows, low cloud; bottom: wet street with lamp reflections, newspaper box",
+   "3": "top: wired-glass mesh with the hillside reflected; bottom: door handle and kickplate",
+   "4": "top: lamp and glass panel; bottom: wet step, doormat, Tote's shadow",
+   "5": "top: the window onto the hillside and the lamp shade rim; bottom: desk front, keyboard, an in-tray",
+   "6": "top: the awning scallops and hillside; bottom: wet step and puddle",
+   "7": "top: binder clips and vellum grid; bottom: the nickel lip and rain beads",
+   "8": "top: the slot's inner hood and falling note with the amber glow; bottom: floor boards with dropped requests",
+   "9": "top: shelf brackets and the state law plaque; bottom: the denial slip on the shelf lip and the floor",
+   "10": "top: the lamp and wet stone; bottom: the steps and a downpipe gurgling",
+   "11": "top: window onto the hillside and the clock; bottom: desk front and the stack",
+   "12": "top: lamp shade rim and calendar head; bottom: tray and stamp pad",
+   "13": "top: rain over the roof edge and the inner hood; bottom: the step outside and the floor inside",
+   "14": "top: awning scallops and the lamp; bottom: the person's shoulder and the wet step"
+  },
+  "alaska_cue": {
+   "1,4,7": "the JUNEAU street sign on the lamp post in frame left",
+   "2,6,10,14": "Mount Juneau's dark shoulder and spruce over the rooftops, the JUNEAU sign",
+   "3": "the spruce hillside reflected in the wired glass",
+   "5,12": "the state seal at the head of the official form and the state letterhead on the desk calendar",
+   "8,9": "an Alaska outline on the state law plaque",
+   "11": "the window onto Juneau's spruce hillside",
+   "13": "the JUNEAU sign on the outside half"
+  },
+  "signature_shot": "Shot 13 'Same line', beat ids 39 to 42 (keys 36, 37, 44, 38), 102.94 to 115.38 s: the door in cross-section; a stack of hand-filled official forms posted by a gloved hand drops to the 250 tape line beside a dashed ghost of Tote's labelled IF ALLOWED, then VOLUME, A KNOWN PERSON IF A PORTAL IS REQUIRED and TOOL LINE light in turn and the blank tag swings into the middle; the question note stays out of both stacks.",
+  "framing": "whenever the template is up the letterbox sits at x 400 to 450 so letterbox plus template plus tag stays inside x 60 to 1020"
+ },
+ "practicals": "Every draft provision says PROPOSED and carries PER JUNEAU EMPIRE once per group. The REASON tag stays BLANK all film. Nothing is ever shown refused or let in by the draft: the service envelope, Tote and the note WAIT at the pencil line; Tote's stack is a dashed ghost IF ALLOWED. c19 lives on its own placard in the clerk's room. No meter shows a zero or FREE. c15 and c16 sit on two same-size cards at the same height and light with no verdict mark, and c16's card carries WITH EXCEPTIONS. The button holds the balloon at the threshold, it never sails through.",
+ "craft_advance": "none required beyond the net-new Flap and Tote assets",
+ "value_check": {
+  "night_142420": "L* 13",
+  "lamp_F2A541": "L* 74",
+  "paper_F3E9D2": "L* 93",
+  "gunmetal_4A4F57": "L* 33 with nickel lip B9BEC4 L* 77, so Flap reads by its lit lip and rivets against the L* 13 night",
+  "vellum_E6EEF2": "L* 94 drawn with pencil 3A4652 L* 30",
+  "glacier_cyan_9FE7FF": "L* 88 against L* 13 night and L* 18 screen glass",
+  "vellum_composited": "vellum #E6EEF2 at 0.62 over the L* 15 door composites to about L* 62, so the L* 93 request note with its ink outline and contact shadow reads clear of it"
+ }
+}
