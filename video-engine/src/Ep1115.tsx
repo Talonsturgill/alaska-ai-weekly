@@ -1023,7 +1023,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
     : {k: ease(f, b(43), 10) * (1 - ease(f, b(35) + 4, 12)), x: lerp(820, 380, slide), y: lerp(1010, 1110, slide)};
   return (
     <Frame p={p} cam={cam} bg={C.oak} warmth={0.08} overlay={<>
-      <Plate displayLines={['PROPOSED ·', 'PUBLIC INTEREST WAIVER STAYS']} text="PROPOSED · PUBLIC INTEREST WAIVER STAYS" x={540} y={600} size={34} tone="prop" p={ease(f, b(32), 6) * (1 - ease(f, b(34) - 6, 6))} />
+      <Plate displayLines={['PROPOSED ·', 'PUBLIC INTEREST WAIVER STAYS']} text="PROPOSED · PUBLIC INTEREST WAIVER STAYS" x={450} y={600} size={34} tone="prop" p={ease(f, b(32), 6) * (1 - ease(f, b(34) - 6, 6))} />
       <Plate displayLines={['10 WORKING DAYS TO RESPOND ·', 'UNCHANGED, PER JUNEAU EMPIRE']} text="10 WORKING DAYS TO RESPOND · UNCHANGED" x={540} y={1180} size={34} tone="warm" p={ease(f, b(33) + 6, 6) * (1 - ease(f, b(34) - 6, 6))} />
       <Plate text="COULD · A KNOWN PERSON BEHIND EACH REQUEST" x={540} y={1270} size={30} tone="warm" p={ease(f, b(34) + 6, 6) * (1 - ease(f, b(43) - 6, 6))} />
       <Plate displayLines={['PROPOSED ·', 'REJECT REQUESTS FOR COMMERCIAL GAIN']} text="PROPOSED · REJECT REQUESTS FOR COMMERCIAL GAIN" x={540} y={700} size={34} tone="prop" p={ease(f, b(43) + 4, 6)} />
