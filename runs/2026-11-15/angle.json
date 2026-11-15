@@ -1,0 +1,26 @@
+{
+ "thesis": "As the Juneau Empire reports it, Alaska's draft records rule would police how a request arrives instead of how much work it makes, and since its own caps already limit the work whatever tool filed it, the line it draws around AI needs a definition and a reason the public hasn't been shown.",
+ "supporting_facts": [
+  "Today's rules don't care about the channel: a spoken request is valid and an agency can't deny one for skipping its form (c4, c5), and state law says every person has a right to inspect a public record, with exceptions (c16).",
+  "The draft adds a channel rule where there wasn't one: no requests submitted through third party services or automated tools, including AI, and agencies could require their own forms or portals (c2, c3, PROPOSED, per Juneau Empire).",
+  "The same draft already limits volume directly: stop at 250 documents or 15 staff hours, pay for all hours once past five a month, no copies of whole databases, reject requests for commercial gain (c6, c7, c13, c17), and no source gives any reason for the AI clause."
+ ],
+ "counterpoint_to_honor": "The agency's fair case, at full strength and in its own scene: records staff hours are finite, the department's stated aim is efficiency at no added cost (c19, a general aim, never presented as the AI clause's reason), the 10 working day clock is unchanged (c12), the public interest fee waiver stays (c9), and a state can sensibly want an accountable person on the other end of every request through one known channel (c3), which also makes the commercial gain and personal information screens (c13, c14) workable.",
+ "falsifier": "The thesis is false if the proposed regulation text (not yet readable, notice 225838 returns 403) defines 'automated tool' narrowly, for example bulk filing with no human involved, so that a person who drafts with AI and submits through the official portal is plainly allowed, or if the department shows a flood of machine-filed requests the 250 document and 15 hour caps couldn't handle.",
+ "second_movement": "The AI clause isn't the whole draft. Recontextualise it with the rest of the package: caps, all-hours fees, a shorter appeal window (60 to 30 working days, c10, c11) while the agency's 10 day clock stays put, resident priority (c15) beside the statute's 'every person' (c16). The test scene gives the agency its full case, then asks the narrow question: what does the tool line do that the caps don't?",
+ "runner_ups": [
+  {"angle": "A (AI-first): the line moves from what a citizen asks to what a citizen used, the wrong place to draw it.", "why_lost": "Cross-challenge: B and C showed 'wrong place' is a verdict the record can't carry, since the text may define the term narrowly and 'submitting through' may not reach AI drafting. Kept its strongest picture, AI help makes a narrower request, as a stated upside, not a ruling."},
+  {"angle": "B (agency's fair case): most of the draft is a coherent workload trade, and only the AI clause goes unexplained.", "why_lost": "Cross-challenge: A noted it undersells that the caps make the tool line redundant for volume, and C that 'coherent' credits caps the film can't evaluate. Its fair case became the Act 3 test scene and its appeal-window asymmetry joined the second movement."},
+  {"angle": "C (structural): the draft changes the question from what you ask to how it arrives without saying where 'automated tool' ends.", "why_lost": "Won on falsifiability and became the spine, with A's upside and B's fair case grafted in. A challenged it as too dry for two minutes, answered by drawing the channel as a physical slot the film can watch."}
+ ],
+ "cross_challenge": "One full round run by the showrunner across the three cards. A to B: credulous on 'efficiency' for the caps. B to A: booster in calling the line wrong before the text is seen. C to both: 'submitting through' is not 'drafted with', so neither may say the state bans AI help. A to C: a missing definition is a footnote unless the film shows why it touches a real person. Resolution: the thesis is a question with a falsifier, the upside is drawn honestly, the fair case gets a scene.",
+ "stance": "curious",
+ "guardrails": [
+  "Every draft provision is spoken PROPOSED or DRAFT and attributed to the Juneau Empire at least once per group.",
+  "Never give a reason for the AI clause, never tie c19 to it.",
+  "Never say the state bans AI help or AI drafting; the reported words are 'submitting through'.",
+  "Never call the residency priority or anything else illegal; show the statute's words beside the draft and stop.",
+  "Never say the first five hours are free today; five hours is the fee trigger in state law.",
+  "No comment deadline, no named official, never say the rule copies HB 377."
+ ]
+}

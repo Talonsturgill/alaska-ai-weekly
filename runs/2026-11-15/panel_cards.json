@@ -1,0 +1,160 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.5,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 7.4,
+   "Color & grade": 7.9,
+   "Typography & captions": 7.7,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.4,
+   "Accuracy & sourcing": 8.6,
+   "Alaska authenticity & cultural respect": 7.6,
+   "Writing & post quality": 8.0
+  },
+  "weighted_total": 7.49,
+  "hard_blockers": [],
+  "concrete_defects": [
+   {
+    "t": "101.9-102.9",
+    "axis": "Motion & animation craft",
+    "defect": "dollar request drop and tray rock not visible in its strip"
+   },
+   {
+    "t": "89.8-92.4",
+    "axis": "Illustration craft & detail",
+    "defect": "clerk's reaching arm is an unjointed tube crossing the caption band"
+   },
+   {
+    "t": "78.4-89.3",
+    "axis": "Motion & animation craft",
+    "defect": "clerk held with no breath or weight shift"
+   },
+   {
+    "t": "106.2-114.9",
+    "axis": "VO\u2013illustration sync & entertainment",
+    "defect": "gloved hand stops short of the slot"
+   },
+   {
+    "t": "86.0",
+    "axis": "Composition & staging",
+    "defect": "clerk head reads semi-transparent"
+   },
+   {
+    "t": "whole film",
+    "axis": "Typography & captions",
+    "defect": "no display face on the question plates"
+   }
+  ],
+  "would_ship": true
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.3,
+   "Illustration craft & detail": 7.4,
+   "Motion & animation craft": 6.6,
+   "Composition & staging": 7.3,
+   "Color & grade": 7.8,
+   "Typography & captions": 7.6,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.4,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 8.2
+  },
+  "weighted_total": 7.47,
+  "hard_blockers": [],
+  "concrete_defects": [
+   {
+    "t": "25.3",
+    "axis": "Composition & staging",
+    "defect": "Tote's entrance partly behind a plate"
+   },
+   {
+    "t": "35.9, 103-113",
+    "axis": "Motion & animation craft",
+    "defect": "held figures without idle life"
+   },
+   {
+    "t": "106.4",
+    "axis": "VO\u2013illustration sync & entertainment",
+    "defect": "gloved hand and sealed form not readable"
+   },
+   {
+    "t": "86.0",
+    "axis": "Illustration craft & detail",
+    "defect": "clerk translucent arm layers, floating pen"
+   },
+   {
+    "t": "64.7, 86.0, 114.9",
+    "axis": "Composition & staging",
+    "defect": "bottom 35 to 40 percent sparse floor"
+   },
+   {
+    "t": "throughout",
+    "axis": "Sound design & mix",
+    "defect": "synthesized ambience, thin bed"
+   }
+  ],
+  "would_ship": true
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.5,
+   "Color & grade": 7.8,
+   "Typography & captions": 7.8,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.3,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.8,
+   "Writing & post quality": 8.0
+  },
+  "weighted_total": 7.35,
+  "hard_blockers": [],
+  "concrete_defects": [
+   {
+    "t": "43.0",
+    "axis": "Illustration craft & detail",
+    "defect": "reaching arm has no hand, note cut on a mask line"
+   },
+   {
+    "t": "106.2",
+    "axis": "Illustration craft & detail",
+    "defect": "arm ends flat, stray rectangle on the door column"
+   },
+   {
+    "t": "64.7",
+    "axis": "Illustration craft & detail",
+    "defect": "HeldTravel sheen box visible over the basket"
+   },
+   {
+    "t": "86.0",
+    "axis": "Illustration craft & detail",
+    "defect": "specular sweep across the clerk"
+   },
+   {
+    "t": "100.4-106.4",
+    "axis": "Motion & animation craft",
+    "defect": "near-frozen strips at 2.5 to 4.9 percent"
+   },
+   {
+    "t": "116-128",
+    "axis": "Composition & staging",
+    "defect": "phone face half behind the caption"
+   }
+  ],
+  "would_ship": true
+ },
+ "named_open_defects": [
+  "held figures without idle life (clerk, person, Tote)",
+  "hands missing or tube-like on reaching arms (shots 6, 12, 13)",
+  "dollar request drop and tray rock not landing in its strip",
+  "HeldTravel sheen box over the basket (shot 8)",
+  "no display face on question plates",
+  "synthesized ambience"
+ ]
+}

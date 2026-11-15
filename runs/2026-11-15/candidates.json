@@ -1,0 +1,23 @@
+{
+ "locked_story": {
+  "headline": "Alaska Department of Administration proposes Public Records Act rule changes (notice published November 11th) that would bar records requests submitted through third-party services or automated tools, including artificial intelligence, let agencies stop after 250 documents or 15 staff hours, and give Alaska residents priority (Juneau Empire, November 14th)",
+  "found_at_rung": "in_window_sweep"
+ },
+ "rungs": [
+  {"rung": "in_window_sweep", "attempted": true, "candidates_found": 14},
+  {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 9},
+  {"rung": "primary_source_mining", "attempted": true, "candidates_found": 2, "note": "NSF API has no Alaska awards after 08/27; Online Public Notices search confirmed DOA notice 225838; akleg prefiles not yet posted"}
+ ],
+ "candidates": [
+  {"title": "DOA proposed Public Records Act regulations: no requests via automated tools including AI, 250 document / 15 hour cap, resident priority (Juneau Empire Nov 14; state notice Nov 11)", "verdict": "LOCKED", "why": "the only in-window item where Alaska government writes AI directly into a rule; genuine open question; not a data center story"},
+  {"title": "APU / IPHC / NOAA epigenetic clock to age halibut from a fin clip (Alaska Sea Grant Nov 9)", "verdict": "runner-up", "why": "celebratory, but a statistical model the source never calls AI, and ear-stone aging was on screen yesterday (11-14)"},
+  {"title": "FAA nationwide ground stop, Alaska split screen (Nov 13)", "verdict": "rejected", "why": "no AI angle; a telecom failure"},
+  {"title": "UAF Grapenthin 2020 Aleutian tsunami slow slip (Nov 12)", "verdict": "rejected", "why": "physics modeling, no ML"},
+  {"title": "UAF drillers and the 2026 Nobel (Nov 5)", "verdict": "rejected", "why": "ML link is IceCube's later analysis, not Alaska's"},
+  {"title": "BBRSDA NFWF automated Naknek sonar count (National Fisherman Nov 13)", "verdict": "rejected", "why": "scope conflict between trade story and NFWF slate, AI unconfirmed, near the CFC26 sonar film"},
+  {"title": "SEARHC joins Mayo Clinic Care Network (Nov 10)", "verdict": "rejected", "why": "telehealth, not AI"},
+  {"title": "UA $86.2M frozen grants restored (Nov 10)", "verdict": "rejected", "why": "no AI angle"},
+  {"title": "Coast Guard Storis 82nd parallel patrol (Nov 10)", "verdict": "rejected", "why": "no AI angle"},
+  {"title": "AI-industry donations in the Senate race (Nov 3)", "verdict": "unverifiable", "why": "all copies 403"}
+ ]
+}

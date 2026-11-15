@@ -1,0 +1,2393 @@
+{
+  "run_date": "2026-11-15",
+  "slug": "the-slot-without-an-edge",
+  "title": "The Slot Without an Edge",
+  "concept": "Under Alaska's current rules a records request can be spoken out loud and can't be refused for skipping the form. On November 11th the Department of Administration posted proposed changes, and per the Juneau Empire the draft would bar requests filed through third party services or automated tools, including AI, let agencies require their own forms or portals, stop work at 250 documents or 15 staff hours, charge for all of it once past five hours a month, cut the appeal window from 60 to 30 working days and give residents priority over nonresidents. Nothing reported says why the AI line is there. Drawn as a faceless gunmetal letterbox in a Juneau door with a pencilled DRAFT template on tracing vellum clipped beside it whose fourth edge is dashed, AUTOMATED TOOL = ?. A service envelope and a courier robot wait at the pencil line, a person drafts with an AI helper and carries the note to the slot where it stays half in, the night clerk gets the fair case, and in a door cross-section a stack of hand-filled forms meets the 250 line beside a dashed ghost IF ALLOWED. The film ends on the question of where a tool ends.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 127.26,
+  "fingerprint": {
+    "pov": "slot-height-closeup",
+    "motion_vector": "vertical-descent",
+    "hero_treatment": "data-as-subject",
+    "layout": "offset-thirds",
+    "register": "night-noir-storybook",
+    "palette": "rain-black Juneau night #142420, slate stone #3A4A5C lifted to #5E7385 under one sodium amber wall lamp #F2A541, a blackened gunmetal letterbox #4A4F57 with a nickel lip #B9BEC4 on a near-black door #1E2A26, translucent tracing vellum #E6EEF2 drawn in lead pencil #3A4652 for everything PROPOSED, glacier-cyan #9FE7FF on screens where AI shows, request paper #F3E9D2, an oak interior #6B4A2E under a jade-shaded desk lamp",
+    "camera_strategy": "push-and-crane-through",
+    "light_story": "one sodium amber lamp raking a rain-black door outside, a warm green-shaded desk lamp inside for the fair case",
+    "metaphor": "a letterbox that has always swallowed any question gets a pencilled draft template clipped beside it whose fourth edge is a dashed line nobody has inked"
+  },
+  "signature_shot": 13,
+  "palette": "rain-black Juneau night #142420, slate stone #3A4A5C lifted to #5E7385 under one sodium amber wall lamp #F2A541, a blackened gunmetal letterbox #4A4F57 with a nickel lip #B9BEC4 on a near-black door #1E2A26, translucent tracing vellum #E6EEF2 drawn in lead pencil #3A4652 for everything PROPOSED, glacier-cyan #9FE7FF on screens where AI shows, request paper #F3E9D2, an oak interior #6B4A2E under a jade-shaded desk lamp",
+  "divergence_note": "The last films were high-noon white sea ice with cobalt leads and a survey camera (11-14), a brass faucet with a face on an overcast pewter-sage gravel lot (11-13), a survey stake tag on rose dusk snow with a raven (11-12) and a vermilion take-a-number machine on a violet shore (11-10). This film is full night at one Juneau door, one sodium lamp, a FACELESS gunmetal letterbox, and the proposed rule drawn as graphite pencil on clipped tracing vellum with dashed edges and pencilled bolts, never hardware. The people (a requester and a night clerk) carry the feeling. Honest overlaps: 11-13 was also wet and had a metal fixture as its hero with a face and a two-accent grammar (mint AI, tomato rule), answered here by night, no face on the fixture, pencil-grey for the rule and ice-cyan only on screens for AI. 11-14 had a plate on its hero and two equal signs, answered by a template that is visibly a draft and a cross-section where one stack is only a dashed ghost. 11-10 had a machine that dispenses, so the letterbox only receives.",
+  "treatment": {
+    "title": "The Slot Without an Edge",
+    "summary": "Dramatist winner 'The Slot Without an Edge', restaged after Gates 0B to 0D. A FACELESS gunmetal letterbox in the street door of a state office in Juneau on a rain-black night has always taken any question, even a spoken balloon. The proposed rule is a sheet of tracing vellum clipped beside the slot, a pencilled form-shaped outline whose fourth edge is a dashed line, pencilled bolt circles, a DRAFT tab and a BLANK hang tag. A service envelope and Tote the courier robot stop and wait at the pencil line (the reported verb, submitting through), a person drafts with an ice-cyan phone helper, fixes its mistake and carries the note to the slot where it presses at the dashed edge, neither in nor out. The crane through the slot shows the volume caps as a DRAFT tape line, a candle and an hour meter. Two same-size cards on the railing hold the residents draft and the statute's words, level, no verdict. The night clerk works the stack in a warm room for the fair case. The signature is the door in cross-section: one real stack stops at the 250 line beside a dashed ghost of Tote's, labelled VOLUME, A KNOWN PERSON and WHAT DOES THE TOOL LINE ADD?. The button holds the balloon at the threshold.",
+    "judge_reasoning": "Dramatist pitch won (47 of 60): the only retention plan with every loop explicit and legal, an Act 3 that is a real test where the clerk's case gets its own scene and then both same-size envelopes stop at the same 250 line, an AI presence that only submits through (the reported verb), and the falsifier drawn on screen. Grafts: the Enthusiast's honest AI drafting upside with the person fixing the helper's mistake and carrying it to the slot, the Explainer's crane through the slot and VOLUME label, the Comedian's statute (now on a level card, not carved). Restaged at Gate 0: faceless letterbox, the rule as a pencilled draft, nothing shown admitted or refused."
+  },
+  "angle": {
+    "thesis": "As the Juneau Empire reports it, Alaska's draft records rule would police how a request arrives instead of how much work it makes, and since its own caps already limit the work whatever tool filed it, the line it draws around AI needs a definition and a reason the public hasn't been shown.",
+    "supporting_facts": [
+      "Today's rules don't care about the channel: a spoken request is valid and an agency can't deny one for skipping its form (c4, c5), and state law says every person has a right to inspect a public record, with exceptions (c16).",
+      "The draft adds a channel rule where there wasn't one: no requests submitted through third party services or automated tools, including AI, and agencies could require their own forms or portals (c2, c3, PROPOSED, per Juneau Empire).",
+      "The same draft already limits volume directly: stop at 250 documents or 15 staff hours, pay for all hours once past five a month, no copies of whole databases, reject requests for commercial gain (c6, c7, c13, c17), and no source gives any reason for the AI clause."
+    ],
+    "counterpoint_to_honor": "The agency's fair case, at full strength and in its own scene: records staff hours are finite, the department's stated aim is efficiency at no added cost (c19, a general aim, never presented as the AI clause's reason), the 10 working day clock is unchanged (c12), the public interest fee waiver stays (c9), and a state can sensibly want an accountable person on the other end of every request through one known channel (c3), which also makes the commercial gain and personal information screens (c13, c14) workable.",
+    "falsifier": "The thesis is false if the proposed regulation text (not yet readable, notice 225838 returns 403) defines 'automated tool' narrowly, for example bulk filing with no human involved, so that a person who drafts with AI and submits through the official portal is plainly allowed, or if the department shows a flood of machine-filed requests the 250 document and 15 hour caps couldn't handle.",
+    "second_movement": "The AI clause isn't the whole draft. Recontextualise it with the rest of the package: caps, all-hours fees, a shorter appeal window (60 to 30 working days, c10, c11) while the agency's 10 day clock stays put, resident priority (c15) beside the statute's 'every person' (c16). The test scene gives the agency its full case, then asks the narrow question: what does the tool line do that the caps don't?",
+    "runner_ups": [
+      {
+        "angle": "A (AI-first): the line moves from what a citizen asks to what a citizen used, the wrong place to draw it.",
+        "why_lost": "Cross-challenge: B and C showed 'wrong place' is a verdict the record can't carry, since the text may define the term narrowly and 'submitting through' may not reach AI drafting. Kept its strongest picture, AI help makes a narrower request, as a stated upside, not a ruling."
+      },
+      {
+        "angle": "B (agency's fair case): most of the draft is a coherent workload trade, and only the AI clause goes unexplained.",
+        "why_lost": "Cross-challenge: A noted it undersells that the caps make the tool line redundant for volume, and C that 'coherent' credits caps the film can't evaluate. Its fair case became the Act 3 test scene and its appeal-window asymmetry joined the second movement."
+      },
+      {
+        "angle": "C (structural): the draft changes the question from what you ask to how it arrives without saying where 'automated tool' ends.",
+        "why_lost": "Won on falsifiability and became the spine, with A's upside and B's fair case grafted in. A challenged it as too dry for two minutes, answered by drawing the channel as a physical slot the film can watch."
+      }
+    ],
+    "cross_challenge": "One full round run by the showrunner across the three cards. A to B: credulous on 'efficiency' for the caps. B to A: booster in calling the line wrong before the text is seen. C to both: 'submitting through' is not 'drafted with', so neither may say the state bans AI help. A to C: a missing definition is a footnote unless the film shows why it touches a real person. Resolution: the thesis is a question with a falsifier, the upside is drawn honestly, the fair case gets a scene.",
+    "stance": "curious",
+    "guardrails": [
+      "Every draft provision is spoken PROPOSED or DRAFT and attributed to the Juneau Empire at least once per group.",
+      "Never give a reason for the AI clause, never tie c19 to it.",
+      "Never say the state bans AI help or AI drafting; the reported words are 'submitting through'.",
+      "Never call the residency priority or anything else illegal; show the statute's words beside the draft and stop.",
+      "Never say the first five hours are free today; five hours is the fee trigger in state law.",
+      "No comment deadline, no named official, never say the rule copies HB 377."
+    ]
+  },
+  "claim_map": {
+    "1": [
+      "c5"
+    ],
+    "2": [
+      "c5"
+    ],
+    "3": [
+      "narration"
+    ],
+    "4": [
+      "c4"
+    ],
+    "5": [
+      "c1"
+    ],
+    "6": [
+      "c1"
+    ],
+    "7": [
+      "c2"
+    ],
+    "8": [
+      "c2"
+    ],
+    "9": [
+      "c2"
+    ],
+    "10": [
+      "c2"
+    ],
+    "11": [
+      "narration"
+    ],
+    "12": [
+      "c3"
+    ],
+    "47": [
+      "c3"
+    ],
+    "13": [
+      "narration"
+    ],
+    "14": [
+      "narration"
+    ],
+    "15": [
+      "narration"
+    ],
+    "16": [
+      "narration"
+    ],
+    "17": [
+      "c2"
+    ],
+    "18": [
+      "c2"
+    ],
+    "19": [
+      "narration"
+    ],
+    "20": [
+      "c6"
+    ],
+    "42": [
+      "c6"
+    ],
+    "21": [
+      "c6"
+    ],
+    "22": [
+      "c7"
+    ],
+    "23": [
+      "c8"
+    ],
+    "24": [
+      "c11"
+    ],
+    "25": [
+      "c10"
+    ],
+    "26": [
+      "c15"
+    ],
+    "27": [
+      "c16"
+    ],
+    "28": [
+      "narration"
+    ],
+    "29": [
+      "narration"
+    ],
+    "30": [
+      "c19"
+    ],
+    "31": [
+      "c19"
+    ],
+    "32": [
+      "c9"
+    ],
+    "33": [
+      "c12"
+    ],
+    "34": [
+      "c3"
+    ],
+    "43": [
+      "c13"
+    ],
+    "35": [
+      "c13"
+    ],
+    "36": [
+      "c6"
+    ],
+    "37": [
+      "c6"
+    ],
+    "44": [
+      "c2"
+    ],
+    "38": [
+      "c2"
+    ],
+    "39": [
+      "narration"
+    ],
+    "45": [
+      "narration"
+    ],
+    "46": [
+      "narration"
+    ],
+    "40": [
+      "narration"
+    ],
+    "41": [
+      "narration"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "Rain streaks through one sodium lamp cone onto a dark door and a faceless gunmetal letterbox, a cream question balloon drifts in from the dark, and a pencil starts sketching a dashed outline beside the slot.",
+    "headline": "ASK OUT LOUD \u00b7 IT COUNTS",
+    "motion_by_s": 0.4,
+    "loopback": "Frame 1 is the question balloon drifting into the lamp cone toward the letterbox, the last image is the same balloon holding beside the person's note at the threshold between the open slot and the dashed pencil edge, neither in nor out."
+  },
+  "open_loop": {
+    "plant_t": 16.92,
+    "pay_t": 113.05,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "snap",
+    "what": "Why is the AI line there? Planted as a BLANK tag folded behind a clip on the draft template as it lands, dropped open under NOTHING REPORTED SAYS WHY, held on as the voice says hold on to that, kept in frame on the template in shots 4, 7 and 14 and spilling its glow in shot 8, paid when the same tag swings into the middle of the cross-section, still blank, as the voice says nothing reported says."
+  },
+  "open_loop_2": {
+    "plant_t": 43.52,
+    "pay_t": 123.91,
+    "what": "Is the person with the AI helper an automated tool? Planted as the folded note pressing at the dashed edge under AUTOMATED TOOL = ?, carried through the middle caught half in the slot, seen from inside in shot 8 and behind the clerk in shot 11, paid in two moves, the ruler traces the edge solid under IF DEFINED NARROWLY, then on where a tool ends it breaks back into dashes, handing the question to the viewer."
+  },
+  "throughline": {
+    "object": "the Question, a cream balloon that becomes a folded note",
+    "lands_in_button": "the balloon holds beside the person's note at the threshold, neither in nor out, as it drifted in frame 1",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "Q1 a spoken balloon, gulped"
+      },
+      {
+        "at_s": 8.69,
+        "state": "Q1b a napkin note on any paper, swallowed"
+      },
+      {
+        "at_s": 41.47,
+        "state": "Q2 a trimmed note, fixed by hand, carried to the slot by the person"
+      },
+      {
+        "at_s": 43.52,
+        "state": "Q3 the folded note pressing at the dashed edge, neither in nor out"
+      },
+      {
+        "at_s": 49.58,
+        "state": "Q3b caught half in the slot, seen from inside the door"
+      },
+      {
+        "at_s": 78.36,
+        "state": "Q4 still caught in the door slot behind the clerk, glanced at, not taken"
+      },
+      {
+        "at_s": 106.01,
+        "state": "Q5 not in either stack: the forms stack and a dashed ghost stack meet the 250 line while the question stays out"
+      },
+      {
+        "at_s": 120.82,
+        "state": "Q5b still caught in the slot, the person's finger on it, not pushing"
+      },
+      {
+        "at_s": 126.07,
+        "state": "Q6 a balloon again, holding beside the note at the threshold"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 6.68,
+      "type": "scale-pullback",
+      "what": "the cut across the road shows the whole lit door, the lamp, the JUNEAU sign and the street in the rain",
+      "hold_s": 0.8
+    },
+    {
+      "t": 49.58,
+      "type": "build-on",
+      "what": "the crane through the slot reveals the basket, the tape line, the candle and the meter inside the door",
+      "hold_s": 0.8
+    },
+    {
+      "t": 102.94,
+      "type": "scale-pullback",
+      "what": "the door splits open into a cross-section, outside and inside at once",
+      "hold_s": 0.8
+    },
+    {
+      "t": 106.01,
+      "type": "build-on",
+      "what": "the person's stack lands at the 250 line beside a dashed ghost stack",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 1.8
+      },
+      {
+        "line": 14,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 18,
+        "offset": 0.0,
+        "level": 1.9
+      },
+      {
+        "at_s": 125.57,
+        "level": 0.12
+      },
+      {
+        "at_s": 126.57,
+        "level": 1.6
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "rain",
+    "build_steps": 4,
+    "dip_at": 125.57,
+    "riser_at": 102.94,
+    "silence_at": 125.57,
+    "payoff_at": 126.07,
+    "button_pattern": "callback",
+    "interrupt_at": 16.92,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "The slot eats a question",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "door-night",
+      "pov": "slot-height-closeup",
+      "layout": "centered-hero",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the letterbox at x540 y900",
+      "means": "Out of the dark rain a spoken question balloon drifts into the lamp cone and the letterbox gulps it while a pencil starts a dashed outline beside it",
+      "ambient": "rain on a door, a gutter drip",
+      "hero": {
+        "name": "letterbox + question balloon + pencil outline + sodium lamp + rain",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% letterbox, 25% balloon, 25% lamp cone and pencil line"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-6.680"
+    },
+    {
+      "title": "The door in Juneau",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "street-night",
+      "pov": "across-the-road",
+      "layout": "vertical-stack",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "character-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the door at x540 y900",
+      "means": "From across the road the lit state office door under the lamp and the JUNEAU sign, a person crosses and posts a napkin note",
+      "ambient": "rain on a street, tires hiss far off",
+      "hero": {
+        "name": "street door + person + napkin note",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "40% door and lamp, 30% person, 30% hillside and street"
+      },
+      "id": 2,
+      "start_s": 6.68,
+      "t": "6.680-10.640"
+    },
+    {
+      "title": "The notice",
+      "vo_line": 2,
+      "framing": "push-detail",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "door-panel",
+      "pov": "flat-on-glass",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the notice slapping on and its tape snapping is the move",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the notice at x540 y900",
+      "means": "A printed notice slaps onto the wired glass, the hillside reflected in it, NOV 11TH, with a department tag pinned under it",
+      "ambient": "rain on glass, tape tear",
+      "hero": {
+        "name": "printed notice + tape corners + department tag + wired glass + hillside reflection",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% notice, 25% glass panel, 20% tag"
+      },
+      "id": 3,
+      "start_s": 10.64,
+      "t": "10.640-16.920"
+    },
+    {
+      "title": "The draft template",
+      "vo_line": 3,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "door-night",
+      "pov": "slot-height-three-quarter",
+      "layout": "offset-thirds",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the vellum at x700 y920",
+      "means": "Tracing vellum with a pencilled outline is clipped beside the slot, a service envelope and Tote both stop at its line, a blank tag drops",
+      "ambient": "rain, clips snap, wheel squeak",
+      "hero": {
+        "name": "tracing vellum + envelope + Tote + blank hang tag",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% vellum and letterbox, 30% Tote, 30% envelope and tag"
+      },
+      "id": 4,
+      "start_s": 16.92,
+      "t": "16.920-31.120"
+    },
+    {
+      "title": "Forms or portals",
+      "vo_line": 5,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "clerk-desk-screen",
+      "pov": "over-desk-screen",
+      "layout": "fullbleed-split",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the screen at x540 y900",
+      "means": "On the clerk's desk in Juneau a screen boots an official form with the state seal, then folds it into a portal login",
+      "ambient": "a warm room tone, a screen hum",
+      "hero": {
+        "name": "screen + official form + state seal + portal login + desk",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% screen, 25% form, 20% desk"
+      },
+      "id": 5,
+      "start_s": 31.12,
+      "t": "31.120-35.660"
+    },
+    {
+      "title": "The helper",
+      "vo_line": 6,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "awning",
+      "pov": "over-shoulder-phone",
+      "layout": "split-race",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "character-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the person at x420 y980",
+      "means": "Under the awning a person's phone helper trims a rambling scroll to one line, the person fixes it by hand and carries it to the slot",
+      "ambient": "rain on an awning, a phone tick",
+      "hero": {
+        "name": "person + phone + ice-cyan helper + scroll + pencil + note + awning",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% person, 30% phone and scroll, 25% awning and door"
+      },
+      "id": 6,
+      "start_s": 35.66,
+      "t": "35.660-43.520"
+    },
+    {
+      "title": "The dashed edge",
+      "vo_line": 8,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "vellum",
+      "pov": "macro-vellum",
+      "layout": "centered-hero",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the edge at x540 y900",
+      "means": "The folded note presses at the dashed pencil edge, which neither blocks it nor lets it through, under AUTOMATED TOOL = ?",
+      "ambient": "a low hum, rain far off",
+      "hero": {
+        "name": "folded note + dashed fourth edge",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% edge, 30% note, 20% vellum"
+      },
+      "id": 7,
+      "start_s": 43.52,
+      "t": "43.520-49.580"
+    },
+    {
+      "title": "Inside the door",
+      "vo_line": 9,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "high",
+      "stage": "inside-door",
+      "pov": "crane-through-slot",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the basket at x540 y960",
+      "means": "The camera cranes through the slot to a wire basket where the stack stops at a DRAFT tape line, a 15 hour candle and an hour meter",
+      "ambient": "rain muffled through a door, paper settling",
+      "hero": {
+        "name": "wire basket + request stack + DRAFT tape line + candle + hour meter + law plaque",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% basket and stack, 30% meter, 30% candle"
+      },
+      "id": 8,
+      "start_s": 49.58,
+      "t": "49.580-65.220"
+    },
+    {
+      "title": "The appeal timers",
+      "vo_line": 12,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "inside-door",
+      "pov": "shelf-level-side",
+      "layout": "side-by-side",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the timers turning and landing are the move",
+      "transition_in": "carried-element",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the timers at x540 y920",
+      "means": "A tall 60 timer turns over and a squat 30 timer with a DRAFT tag is set beside it",
+      "ambient": "a room tone, sand pouring",
+      "hero": {
+        "name": "tall sand timer + squat sand timer + DRAFT tag + denial slip + shelf",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% timers, 30% slip, 20% shelf"
+      },
+      "id": 9,
+      "start_s": 65.22,
+      "t": "65.220-70.720"
+    },
+    {
+      "title": "Two cards",
+      "vo_line": 13,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "low",
+      "stage": "railing-night",
+      "pov": "railing-low-side",
+      "layout": "symmetric-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:a locked level frame so neither card is favoured",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the cards at x540 y900",
+      "means": "Outside on the green railing two same-size cards slide up and stop level, the residents draft and the statute's words",
+      "ambient": "rain on a railing, a downpipe gurgle",
+      "hero": {
+        "name": "card + green stair railing",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% cards, 30% railing, 20% steps and rain"
+      },
+      "id": 10,
+      "start_s": 70.72,
+      "t": "70.720-78.360"
+    },
+    {
+      "title": "The clerk's side",
+      "vo_line": 14,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "clerk-room",
+      "pov": "desk-eye-level",
+      "layout": "centered-hero",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "character-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "crossfade",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the clerk at x540 y980",
+      "means": "In a warm lamp-lit room the clerk works through the stack while a candle burns down and turns the STATED AIM placard toward us",
+      "ambient": "a warm room tone, rain on a window",
+      "hero": {
+        "name": "night clerk + oak desk + green lamp + candle + placard + window + stack",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "45% clerk, 30% desk and placard, 25% window and candle"
+      },
+      "id": 11,
+      "start_s": 78.36,
+      "t": "78.360-89.780"
+    },
+    {
+      "title": "What the draft keeps",
+      "vo_line": 16,
+      "framing": "map-territory",
+      "scale": "close",
+      "height": "high",
+      "stage": "clerk-room",
+      "pov": "overhead-desk",
+      "layout": "grid-modular",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:an overhead locked desk where four props land in turn",
+      "transition_in": "carried-element",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the desk at x540 y920",
+      "means": "From above the desk a waiver stamp lands, the calendar holds at 10, a portrait card snaps into the portal and a dollar request drops into a tray",
+      "ambient": "a room tone, a stamp, a click",
+      "hero": {
+        "name": "waiver stamp + calendar + portal screen + portrait card + dollar request + tray",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "30% stamp, 25% calendar, 25% portal, 20% tray"
+      },
+      "id": 12,
+      "start_s": 89.78,
+      "t": "89.780-102.940"
+    },
+    {
+      "title": "Same line",
+      "vo_line": 18,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "door-cutaway",
+      "pov": "cross-section",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the cross-section at x540 y940",
+      "means": "The door in cross-section, rain outside and the basket inside, the person's stack stops at the 250 line beside a dashed ghost of Tote's",
+      "ambient": "rain outside, paper inside, a thud through the door",
+      "hero": {
+        "name": "door cross-section + rain + basket + person's stack + dashed ghost stack + 250 line + labels + blank tag",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "40% stacks, 30% door section, 30% labels and tag"
+      },
+      "id": 13,
+      "start_s": 102.94,
+      "t": "102.940-115.380"
+    },
+    {
+      "title": "Where a tool ends",
+      "vo_line": 20,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "awning",
+      "pov": "over-shoulder-door",
+      "layout": "offset-thirds",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the vellum at x640 y920",
+      "means": "Over the person's shoulder a ruler traces the dashed edge solid, it breaks back into dashes, and the balloon stops at the threshold",
+      "ambient": "rain on an awning, a pencil scratch, a soft hum",
+      "hero": {
+        "name": "dashed fourth edge + phone + question balloon",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% vellum and edge, 30% balloon, 30% phone and shoulder"
+      },
+      "id": 14,
+      "start_s": 115.38,
+      "t": "115.380-127.260"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Under Alaska's current rules, a records request can be as simple as asking out loud.",
+      "phrase": "Under Alaska's current rules,",
+      "shows": "a cream speech balloon with a question mark drifts out of the dark rain into the lamp cone and the faceless gunmetal letterbox's flap snaps open and gulps it as a pencil starts sketching a dashed outline beside the slot, a plate reads ASK OUT LOUD \u00b7 IT COUNTS",
+      "sfx": "pop",
+      "means": "ask out loud \u00b7 it counts",
+      "rehook": "",
+      "draw": {
+        "subject": "a cream speech balloon with a question mark",
+        "action": "drifts out of the dark rain into the lamp cone and the faceless gunmetal letterbox's flap snaps open and gulps it as a pencil starts sketching a dashed outline beside the slot",
+        "emotion": "curious",
+        "annotation": "ASK OUT LOUD \u00b7 IT COUNTS"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "a cream speech balloon with a question mark drifts out of the dark rain into the lamp cone and the faceless gunmetal letterbox's flap snaps open and gulps it as a pencil starts sketching a dashed outline beside the slot, a plate reads ASK OUT LOUD \u00b7 IT COUNTS",
+        "reaction": "the flap snaps",
+        "ambient": "rain on a door, a gutter drip"
+      },
+      "t": "0.000-3.930",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.93,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.93
+      },
+      "offset": 3.93,
+      "vo": "Under Alaska's current rules, a records request can be as simple as asking out loud.",
+      "phrase": "simple as asking out",
+      "shows": "the letterbox flap smacks shut and rattles once while rain beads drip off its nickel lip and the pencil line keeps drawing, a plate reads CURRENT RULE \u00b7 ORAL REQUESTS COUNT",
+      "sfx": "flap",
+      "means": "current rule \u00b7 oral requests count",
+      "rehook": "",
+      "draw": {
+        "subject": "the letterbox flap",
+        "action": "smacks shut and rattles once while rain beads drip off its nickel lip and the pencil line keeps drawing",
+        "emotion": "satisfied",
+        "annotation": "CURRENT RULE \u00b7 ORAL REQUESTS COUNT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "the letterbox flap smacks shut and rattles once while rain beads drip off its nickel lip and the pencil line keeps drawing, a plate reads CURRENT RULE \u00b7 ORAL REQUESTS COUNT",
+        "reaction": "the flap rattles",
+        "ambient": "rain on a door, a gutter drip"
+      },
+      "t": "3.930-6.680",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 2,
+      "at_s": 6.68,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "An agency can't refuse you just for skipping its form.",
+      "phrase": "An agency can't refuse",
+      "shows": "the street door of a state office building in Juneau seen from across the road stands lit in the rain under the lamp and the JUNEAU street sign while a person in a rain shell crosses to it, a plate reads JUNEAU \u00b7 A STATE OFFICE DOOR",
+      "sfx": "whoosh",
+      "means": "juneau \u00b7 a state office door",
+      "rehook": "",
+      "draw": {
+        "subject": "the street door of a state office building in Juneau seen from across the road",
+        "action": "stands lit in the rain under the lamp and the JUNEAU street sign while a person in a rain shell crosses to it",
+        "emotion": "calm",
+        "annotation": "JUNEAU \u00b7 A STATE OFFICE DOOR"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the street door of a state office building in Juneau seen from across the road stands lit in the rain under the lamp and the JUNEAU street sign while a person in a rain shell crosses to it, a plate reads JUNEAU \u00b7 A STATE OFFICE DOOR",
+        "reaction": "the person crosses",
+        "ambient": "rain on a street, tires hiss far off"
+      },
+      "t": "6.680-8.690",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 8.69,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.01
+      },
+      "offset": 2.01,
+      "vo": "An agency can't refuse you just for skipping its form.",
+      "phrase": "skipping its form.",
+      "shows": "a napkin note in the person's hand slides into the letterbox and the flap swallows it, a plate reads CURRENT RULE \u00b7 NO DENIAL FOR SKIPPING THE FORM",
+      "sfx": "paper",
+      "means": "current rule \u00b7 no denial for skipping the form",
+      "rehook": "",
+      "draw": {
+        "subject": "a napkin note in the person's hand",
+        "action": "slides into the letterbox and the flap swallows it",
+        "emotion": "relieved",
+        "annotation": "CURRENT RULE \u00b7 NO DENIAL FOR SKIPPING THE FORM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "a napkin note in the person's hand slides into the letterbox and the flap swallows it, a plate reads CURRENT RULE \u00b7 NO DENIAL FOR SKIPPING THE FORM",
+        "reaction": "the note goes in",
+        "ambient": "rain on a street, tires hiss far off"
+      },
+      "t": "8.690-10.640",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 3,
+      "at_s": 10.64,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On November 11th, the state's Department of Administration posted proposed changes.",
+      "phrase": "On November 11th, the",
+      "shows": "a printed notice slaps flat onto the wired-glass door panel, the spruce hillside reflected in the glass, and its tape corners snap down one by one, a plate reads NOTICE OF PROPOSED CHANGES \u00b7 NOV 11TH",
+      "sfx": "stamp",
+      "means": "notice of proposed changes \u00b7 nov 11th",
+      "rehook": "",
+      "draw": {
+        "subject": "a printed notice",
+        "action": "slaps flat onto the wired-glass door panel, the spruce hillside reflected in the glass, and its tape corners snap down one by one",
+        "emotion": "plain",
+        "annotation": "NOTICE OF PROPOSED CHANGES \u00b7 NOV 11TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a printed notice slaps flat onto the wired-glass door panel, the spruce hillside reflected in the glass, and its tape corners snap down one by one, a plate reads NOTICE OF PROPOSED CHANGES \u00b7 NOV 11TH",
+        "reaction": "the tape snaps",
+        "ambient": "rain on glass, tape tear"
+      },
+      "t": "10.640-13.310",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 3,
+      "at_s": 13.31,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.67
+      },
+      "offset": 2.67,
+      "vo": "On November 11th, the state's Department of Administration posted proposed changes.",
+      "phrase": "Administration posted proposed changes.",
+      "shows": "a small department tag pins under the notice and swings once on its tack, a plate reads DEPARTMENT OF ADMINISTRATION",
+      "sfx": "pin",
+      "means": "department of administration",
+      "rehook": "",
+      "draw": {
+        "subject": "a small department tag",
+        "action": "pins under the notice and swings once on its tack",
+        "emotion": "plain",
+        "annotation": "DEPARTMENT OF ADMINISTRATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a small department tag pins under the notice and swings once on its tack, a plate reads DEPARTMENT OF ADMINISTRATION",
+        "reaction": "the tag swings",
+        "ambient": "rain on glass, tape tear"
+      },
+      "t": "13.310-16.920",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 4,
+      "at_s": 16.92,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Under the draft, the Juneau Empire reports, nobody could file through third party services or automated tools, including A I.",
+      "phrase": "Under the draft, the",
+      "shows": "a sheet of tracing vellum with a pencilled form-shaped outline is clipped to the door beside the slot with two binder clips that snap shut, its bolt holes only pencilled circles, a DRAFT tab in its corner and a blank tag folded up behind one clip, a plate reads PROPOSED \u00b7 A DRAFT, PER JUNEAU EMPIRE",
+      "sfx": "snap",
+      "means": "proposed \u00b7 a draft, per juneau empire",
+      "rehook": "",
+      "draw": {
+        "subject": "a sheet of tracing vellum with a pencilled form-shaped outline",
+        "action": "is clipped to the door beside the slot with two binder clips that snap shut, its bolt holes only pencilled circles, a DRAFT tab in its corner and a blank tag folded up behind one clip",
+        "emotion": "tense",
+        "annotation": "PROPOSED \u00b7 A DRAFT, PER JUNEAU EMPIRE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a sheet of tracing vellum with a pencilled form-shaped outline is clipped to the door beside the slot with two binder clips that snap shut, its bolt holes only pencilled circles, a DRAFT tab in its corner and a blank tag folded up behind one clip, a plate reads PROPOSED \u00b7 A DRAFT, PER JUNEAU EMPIRE",
+        "reaction": "the clips snap",
+        "ambient": "rain, clips snap, wheel squeak"
+      },
+      "kick": true,
+      "t": "16.920-21.190",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 4,
+      "at_s": 21.19,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 4.27
+      },
+      "offset": 4.27,
+      "vo": "Under the draft, the Juneau Empire reports, nobody could file through third party services or automated tools, including A I.",
+      "phrase": "third party services or",
+      "shows": "an envelope with a courier service sticker slides up to the pencilled outline and stops at the line, waiting, a plate reads PROPOSED \u00b7 NO THIRD PARTY SERVICES",
+      "sfx": "slide",
+      "means": "proposed \u00b7 no third party services",
+      "rehook": "",
+      "draw": {
+        "subject": "an envelope with a courier service sticker",
+        "action": "slides up to the pencilled outline and stops at the line, waiting",
+        "emotion": "unsure",
+        "annotation": "PROPOSED \u00b7 NO THIRD PARTY SERVICES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "an envelope with a courier service sticker slides up to the pencilled outline and stops at the line, waiting, a plate reads PROPOSED \u00b7 NO THIRD PARTY SERVICES",
+        "reaction": "the envelope stops",
+        "ambient": "rain, clips snap, wheel squeak"
+      },
+      "t": "21.190-23.150",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 4,
+      "at_s": 23.15,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.23
+      },
+      "offset": 6.23,
+      "vo": "Under the draft, the Juneau Empire reports, nobody could file through third party services or automated tools, including A I.",
+      "phrase": "automated tools, including A",
+      "shows": "Tote, a graphite courier robot with an ice-cyan screen face rolls up the wet step under the JUNEAU street sign, raises its envelope to the outline and stops at the PROPOSED line, waiting, a plate reads PROPOSED \u00b7 NO REQUESTS VIA AUTOMATED TOOLS OR AI",
+      "sfx": "whirr",
+      "means": "proposed \u00b7 no requests via automated tools or ai",
+      "rehook": "",
+      "draw": {
+        "subject": "Tote, a graphite courier robot with an ice-cyan screen face",
+        "action": "rolls up the wet step under the JUNEAU street sign, raises its envelope to the outline and stops at the PROPOSED line, waiting",
+        "emotion": "eager",
+        "annotation": "PROPOSED \u00b7 NO REQUESTS VIA AUTOMATED TOOLS OR AI"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "Tote, a graphite courier robot with an ice-cyan screen face rolls up the wet step under the JUNEAU street sign, raises its envelope to the outline and stops at the PROPOSED line, waiting, a plate reads PROPOSED \u00b7 NO REQUESTS VIA AUTOMATED TOOLS OR AI",
+        "reaction": "the robot stops",
+        "ambient": "rain, clips snap, wheel squeak"
+      },
+      "t": "23.150-26.560",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 26.56,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Nothing reported says why. Hold on to that.",
+      "phrase": "Nothing reported says why.",
+      "shows": "the blank hang tag unfolds from behind its clip, drops on its string and swings toward the camera with nothing written on it, a plate reads NOTHING REPORTED SAYS WHY",
+      "sfx": "creak",
+      "means": "nothing reported says why",
+      "rehook": "rehook: a blank tag drops and swings into the lens as the voice says hold on to that",
+      "draw": {
+        "subject": "the blank hang tag",
+        "action": "unfolds from behind its clip, drops on its string and swings toward the camera with nothing written on it",
+        "emotion": "waiting",
+        "annotation": "NOTHING REPORTED SAYS WHY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the blank hang tag unfolds from behind its clip, drops on its string and swings toward the camera with nothing written on it, a plate reads NOTHING REPORTED SAYS WHY",
+        "reaction": "the tag swings",
+        "ambient": "rain, clips snap, wheel squeak"
+      },
+      "t": "26.560-29.170",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 29.17,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.61
+      },
+      "offset": 2.61,
+      "vo": "Nothing reported says why. Hold on to that.",
+      "phrase": "Hold on to that.",
+      "shows": "the blank tag's string chinks against a binder clip as the tag turns face on, still blank, a plate reads HOLD ON TO THAT",
+      "sfx": "clink",
+      "means": "hold on to that",
+      "rehook": "",
+      "draw": {
+        "subject": "the blank tag's string",
+        "action": "chinks against a binder clip as the tag turns face on, still blank",
+        "emotion": "wary",
+        "annotation": "HOLD ON TO THAT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the blank tag's string chinks against a binder clip as the tag turns face on, still blank, a plate reads HOLD ON TO THAT",
+        "reaction": "the tag turns",
+        "ambient": "rain, clips snap, wheel squeak"
+      },
+      "t": "29.170-31.120",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 5,
+      "at_s": 31.12,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Agencies could also require their own forms or portals.",
+      "phrase": "Agencies could also require",
+      "shows": "a screen on the clerk's desk in Juneau boots up showing an official request form with the state seal at its head, a plate reads PROPOSED \u00b7 OFFICIAL FORMS OR PORTALS ONLY",
+      "sfx": "blip",
+      "means": "proposed \u00b7 official forms or portals only",
+      "rehook": "",
+      "draw": {
+        "subject": "a screen on the clerk's desk in Juneau",
+        "action": "boots up showing an official request form with the state seal at its head",
+        "emotion": "plain",
+        "annotation": "PROPOSED \u00b7 OFFICIAL FORMS OR PORTALS ONLY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a screen on the clerk's desk in Juneau boots up showing an official request form with the state seal at its head, a plate reads PROPOSED \u00b7 OFFICIAL FORMS OR PORTALS ONLY",
+        "reaction": "the screen boots",
+        "ambient": "a warm room tone, a screen hum"
+      },
+      "t": "31.120-34.250",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 34.25,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.13
+      },
+      "offset": 3.13,
+      "vo": "Agencies could also require their own forms or portals.",
+      "phrase": "portals.",
+      "shows": "the form on the screen folds into a portal login box with a blinking cursor, a plate reads FORM \u00b7 OR PORTAL",
+      "sfx": "snap",
+      "means": "form \u00b7 or portal",
+      "rehook": "",
+      "draw": {
+        "subject": "the form on the screen",
+        "action": "folds into a portal login box with a blinking cursor",
+        "emotion": "plain",
+        "annotation": "FORM \u00b7 OR PORTAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "the form on the screen folds into a portal login box with a blinking cursor, a plate reads FORM \u00b7 OR PORTAL",
+        "reaction": "the form folds",
+        "ambient": "a warm room tone, a screen hum"
+      },
+      "t": "34.250-35.660",
+      "key": 47
+    },
+    {
+      "id": 14,
+      "shot": 6,
+      "at_s": 35.66,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Picture someone asking an A I helper to trim a rambling question.",
+      "phrase": "Picture someone asking an",
+      "shows": "a person in a rain shell under the door's awning lifts a phone whose screen shows a small ice-cyan helper face, the Juneau spruce hillside behind the awning, a plate reads AN AI HELPER \u00b7 ILLUSTRATION",
+      "sfx": "swish",
+      "means": "an ai helper \u00b7 illustration",
+      "rehook": "",
+      "draw": {
+        "subject": "a person in a rain shell under the door's awning",
+        "action": "lifts a phone whose screen shows a small ice-cyan helper face, the Juneau spruce hillside behind the awning",
+        "emotion": "hopeful",
+        "annotation": "AN AI HELPER \u00b7 ILLUSTRATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a person in a rain shell under the door's awning lifts a phone whose screen shows a small ice-cyan helper face, the Juneau spruce hillside behind the awning, a plate reads AN AI HELPER \u00b7 ILLUSTRATION",
+        "reaction": "the screen wakes",
+        "ambient": "rain on an awning, a phone tick"
+      },
+      "t": "35.660-37.910",
+      "key": 13
+    },
+    {
+      "id": 15,
+      "shot": 6,
+      "at_s": 37.91,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.25
+      },
+      "offset": 2.25,
+      "vo": "Picture someone asking an A I helper to trim a rambling question.",
+      "phrase": "trim a rambling question.",
+      "shows": "a long rambling paper scroll unrolls off the phone and the helper snips it down to one short line, a plate reads TRIMMED TO ONE QUESTION",
+      "sfx": "scratch",
+      "means": "trimmed to one question",
+      "rehook": "",
+      "draw": {
+        "subject": "a long rambling paper scroll",
+        "action": "unrolls off the phone and the helper snips it down to one short line",
+        "emotion": "busy",
+        "annotation": "TRIMMED TO ONE QUESTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a long rambling paper scroll unrolls off the phone and the helper snips it down to one short line, a plate reads TRIMMED TO ONE QUESTION",
+        "reaction": "the scroll drops",
+        "ambient": "rain on an awning, a phone tick"
+      },
+      "t": "37.910-40.220",
+      "key": 14
+    },
+    {
+      "id": 16,
+      "shot": 6,
+      "at_s": 40.22,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "They fix its mistake, and send it in themselves.",
+      "phrase": "They fix its mistake,",
+      "shows": "the person's pencil crosses out one wrong word on the short note and writes over it, a plate reads FIXED BY HAND",
+      "sfx": "scribble",
+      "means": "fixed by hand",
+      "rehook": "",
+      "draw": {
+        "subject": "the person's pencil",
+        "action": "crosses out one wrong word on the short note and writes over it",
+        "emotion": "focused",
+        "annotation": "FIXED BY HAND"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the person's pencil crosses out one wrong word on the short note and writes over it, a plate reads FIXED BY HAND",
+        "reaction": "the pencil scratches",
+        "ambient": "rain on an awning, a phone tick"
+      },
+      "t": "40.220-41.470",
+      "key": 15
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 41.47,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 1.25
+      },
+      "offset": 1.25,
+      "vo": "They fix its mistake, and send it in themselves.",
+      "phrase": "send it in themselves.",
+      "shows": "the person's hand folds the note and carries it to the slot, a plate reads CARRIED BY THE PERSON",
+      "sfx": "fold",
+      "means": "carried by the person",
+      "rehook": "",
+      "draw": {
+        "subject": "the person's hand",
+        "action": "folds the note and carries it to the slot",
+        "emotion": "steady",
+        "annotation": "CARRIED BY THE PERSON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the person's hand folds the note and carries it to the slot, a plate reads CARRIED BY THE PERSON",
+        "reaction": "the hand reaches",
+        "ambient": "rain on an awning, a phone tick"
+      },
+      "t": "41.470-43.520",
+      "key": 16
+    },
+    {
+      "id": 18,
+      "shot": 7,
+      "at_s": 43.52,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Is that an automated tool? The draft, as reported, doesn't say.",
+      "phrase": "Is that an automated",
+      "shows": "the folded note nudges against the dashed pencil edge of the outline, which neither blocks it nor lets it through, a plate reads AUTOMATED TOOL = ?",
+      "sfx": "hum",
+      "means": "automated tool = ?",
+      "rehook": "",
+      "draw": {
+        "subject": "the folded note",
+        "action": "nudges against the dashed pencil edge of the outline, which neither blocks it nor lets it through",
+        "emotion": "puzzled",
+        "annotation": "AUTOMATED TOOL = ?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the folded note nudges against the dashed pencil edge of the outline, which neither blocks it nor lets it through, a plate reads AUTOMATED TOOL = ?",
+        "reaction": "the note presses",
+        "ambient": "a low hum, rain far off"
+      },
+      "t": "43.520-46.850",
+      "key": 17
+    },
+    {
+      "id": 19,
+      "shot": 7,
+      "at_s": 46.85,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.33
+      },
+      "offset": 3.33,
+      "vo": "Is that an automated tool? The draft, as reported, doesn't say.",
+      "phrase": "reported, doesn't say.",
+      "shows": "the dashed fourth edge flickers dash by dash as the note hovers at it, a plate reads NOT DEFINED IN THE REPORT",
+      "sfx": "buzz",
+      "means": "not defined in the report",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed fourth edge",
+        "action": "flickers dash by dash as the note hovers at it",
+        "emotion": "unsure",
+        "annotation": "NOT DEFINED IN THE REPORT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the dashed fourth edge flickers dash by dash as the note hovers at it, a plate reads NOT DEFINED IN THE REPORT",
+        "reaction": "the dashes flicker",
+        "ambient": "a low hum, rain far off"
+      },
+      "t": "46.850-49.580",
+      "key": 18
+    },
+    {
+      "id": 20,
+      "shot": 8,
+      "at_s": 49.58,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A I isn't the whole draft.",
+      "phrase": "A I isn't the",
+      "shows": "the camera cranes down through the slot past the folded note caught half in and half out, lit by the dashed edge's amber glow, into the dark inside of the door and a wire basket, a plate reads AI ISN'T THE WHOLE DRAFT",
+      "sfx": "swoosh",
+      "means": "ai isn't the whole draft",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "cranes down through the slot past the folded note caught half in and half out, lit by the dashed edge's amber glow, into the dark inside of the door and a wire basket",
+        "emotion": "curious",
+        "annotation": "AI ISN'T THE WHOLE DRAFT"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the camera cranes down through the slot past the folded note caught half in and half out, lit by the dashed edge's amber glow, into the dark inside of the door and a wire basket, a plate reads AI ISN'T THE WHOLE DRAFT",
+        "reaction": "the basket swings",
+        "ambient": "rain muffled through a door, paper settling"
+      },
+      "t": "49.580-52.870",
+      "key": 19
+    },
+    {
+      "id": 21,
+      "shot": 8,
+      "at_s": 52.87,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.61
+      },
+      "offset": 0.61,
+      "vo": "The Empire reports agencies could stop work after 250 documents, or 15 staff hours.",
+      "phrase": "reports agencies could stop",
+      "shows": "a stack of request pages climbs in the wire basket toward a strip of masking tape on the wall marked DRAFT, a plate reads PER JUNEAU EMPIRE",
+      "sfx": "thump",
+      "means": "per juneau empire",
+      "rehook": "",
+      "draw": {
+        "subject": "a stack of request pages",
+        "action": "climbs in the wire basket toward a strip of masking tape on the wall marked DRAFT",
+        "emotion": "strained",
+        "annotation": "PER JUNEAU EMPIRE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a stack of request pages climbs in the wire basket toward a strip of masking tape on the wall marked DRAFT, a plate reads PER JUNEAU EMPIRE",
+        "reaction": "the stack climbs",
+        "ambient": "rain muffled through a door, paper settling"
+      },
+      "t": "52.870-55.330",
+      "key": 20
+    },
+    {
+      "id": 22,
+      "shot": 8,
+      "at_s": 55.33,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 3.07
+      },
+      "offset": 3.07,
+      "vo": "The Empire reports agencies could stop work after 250 documents, or 15 staff hours.",
+      "phrase": "250 documents, or 15",
+      "shows": "the stack reaches the masking-tape line and stops dead as the tape flutters, a plate reads PROPOSED \u00b7 STOP AT 250 DOCUMENTS OR 15 HOURS",
+      "sfx": "click",
+      "means": "proposed \u00b7 stop at 250 documents or 15 hours",
+      "rehook": "",
+      "draw": {
+        "subject": "the stack",
+        "action": "reaches the masking-tape line and stops dead as the tape flutters",
+        "emotion": "strained",
+        "annotation": "PROPOSED \u00b7 STOP AT 250 DOCUMENTS OR 15 HOURS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "the stack reaches the masking-tape line and stops dead as the tape flutters, a plate reads PROPOSED \u00b7 STOP AT 250 DOCUMENTS OR 15 HOURS",
+        "reaction": "the stack stops",
+        "ambient": "rain muffled through a door, paper settling"
+      },
+      "t": "55.330-57.990",
+      "key": 42
+    },
+    {
+      "id": 23,
+      "shot": 8,
+      "at_s": 57.99,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 5.73
+      },
+      "offset": 5.73,
+      "vo": "The Empire reports agencies could stop work after 250 documents, or 15 staff hours.",
+      "phrase": "staff hours.",
+      "shows": "a 15 hour candle burns down one notch beside the basket and a wax drop falls, a plate reads STAFF HOURS RUN DOWN",
+      "sfx": "drip",
+      "means": "staff hours run down",
+      "rehook": "",
+      "draw": {
+        "subject": "a 15 hour candle",
+        "action": "burns down one notch beside the basket and a wax drop falls",
+        "emotion": "tired",
+        "annotation": "STAFF HOURS RUN DOWN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a 15 hour candle burns down one notch beside the basket and a wax drop falls, a plate reads STAFF HOURS RUN DOWN",
+        "reaction": "the wax drops",
+        "ambient": "rain muffled through a door, paper settling"
+      },
+      "t": "57.990-59.640",
+      "key": 21
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 59.64,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Past five hours a month, you'd pay for all of it, the first five included.",
+      "phrase": "Past five hours a",
+      "shows": "an hour meter rolls past 5 and the first five tiles flip along with every tile after, a plate reads PROPOSED \u00b7 PAST 5 HOURS, PAY FOR ALL OF IT",
+      "sfx": "roll",
+      "means": "proposed \u00b7 past 5 hours, pay for all of it",
+      "rehook": "",
+      "draw": {
+        "subject": "an hour meter",
+        "action": "rolls past 5 and the first five tiles flip along with every tile after",
+        "emotion": "wincing",
+        "annotation": "PROPOSED \u00b7 PAST 5 HOURS, PAY FOR ALL OF IT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "an hour meter rolls past 5 and the first five tiles flip along with every tile after, a plate reads PROPOSED \u00b7 PAST 5 HOURS, PAY FOR ALL OF IT",
+        "reaction": "the tiles flip",
+        "ambient": "rain muffled through a door, paper settling"
+      },
+      "t": "59.640-63.010",
+      "key": 22
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 63.01,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "Past five hours a month, you'd pay for all of it, the first five included.",
+      "phrase": "first five included.",
+      "shows": "a small state law plaque with an Alaska outline clips on beside the meter and rocks once, a plate reads STATE LAW \u00b7 FEES START PAST 5 HOURS A MONTH",
+      "sfx": "clink",
+      "means": "state law \u00b7 fees start past 5 hours a month",
+      "rehook": "",
+      "draw": {
+        "subject": "a small state law plaque with an Alaska outline",
+        "action": "clips on beside the meter and rocks once",
+        "emotion": "plain",
+        "annotation": "STATE LAW \u00b7 FEES START PAST 5 HOURS A MONTH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "a small state law plaque with an Alaska outline clips on beside the meter and rocks once, a plate reads STATE LAW \u00b7 FEES START PAST 5 HOURS A MONTH",
+        "reaction": "the plaque rocks",
+        "ambient": "rain muffled through a door, paper settling"
+      },
+      "t": "63.010-65.220",
+      "key": 23
+    },
+    {
+      "id": 26,
+      "shot": 9,
+      "at_s": 65.22,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The appeal window would drop from 60 working days to 30.",
+      "phrase": "The appeal window would",
+      "shows": "a tall sand timer marked 60 turns over on a shelf as a denial slip drops beside it, a plate reads CURRENT RULE \u00b7 60 WORKING DAYS TO APPEAL",
+      "sfx": "swing",
+      "means": "current rule \u00b7 60 working days to appeal",
+      "rehook": "",
+      "draw": {
+        "subject": "a tall sand timer marked 60",
+        "action": "turns over on a shelf as a denial slip drops beside it",
+        "emotion": "plain",
+        "annotation": "CURRENT RULE \u00b7 60 WORKING DAYS TO APPEAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a tall sand timer marked 60 turns over on a shelf as a denial slip drops beside it, a plate reads CURRENT RULE \u00b7 60 WORKING DAYS TO APPEAL",
+        "reaction": "the timer turns",
+        "ambient": "a room tone, sand pouring"
+      },
+      "t": "65.220-69.030",
+      "key": 24
+    },
+    {
+      "id": 27,
+      "shot": 9,
+      "at_s": 69.03,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.81
+      },
+      "offset": 3.81,
+      "vo": "The appeal window would drop from 60 working days to 30.",
+      "phrase": "30.",
+      "shows": "a squat sand timer marked 30 with a DRAFT tag is set down upright beside the tall one, its sand held still, a plate reads PROPOSED \u00b7 APPEAL WINDOW 60 TO 30 WORKING DAYS",
+      "sfx": "thunk",
+      "means": "proposed \u00b7 appeal window 60 to 30 working days",
+      "rehook": "rehook: a squat 30 timer with a DRAFT tag lands beside the running 60",
+      "draw": {
+        "subject": "a squat sand timer marked 30 with a DRAFT tag",
+        "action": "is set down upright beside the tall one, its sand held still",
+        "emotion": "startled",
+        "annotation": "PROPOSED \u00b7 APPEAL WINDOW 60 TO 30 WORKING DAYS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a squat sand timer marked 30 with a DRAFT tag is set down upright beside the tall one, its sand held still, a plate reads PROPOSED \u00b7 APPEAL WINDOW 60 TO 30 WORKING DAYS",
+        "reaction": "the timer lands",
+        "ambient": "a room tone, sand pouring"
+      },
+      "kick": true,
+      "t": "69.030-70.720",
+      "key": 25
+    },
+    {
+      "id": 28,
+      "shot": 10,
+      "at_s": 70.72,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Residents could get priority over nonresidents, though state law says every person has a right to inspect a public record.",
+      "phrase": "Residents could get priority",
+      "shows": "a card on the green stair railing outside slides up the rail in the rain and stops level, a plate reads PROPOSED \u00b7 RESIDENTS GET PRIORITY",
+      "sfx": "slide",
+      "means": "proposed \u00b7 residents get priority",
+      "rehook": "",
+      "draw": {
+        "subject": "a card on the green stair railing outside",
+        "action": "slides up the rail in the rain and stops level",
+        "emotion": "plain",
+        "annotation": "PROPOSED \u00b7 RESIDENTS GET PRIORITY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a card on the green stair railing outside slides up the rail in the rain and stops level, a plate reads PROPOSED \u00b7 RESIDENTS GET PRIORITY",
+        "reaction": "the card slides",
+        "ambient": "rain on a railing, a downpipe gurgle"
+      },
+      "t": "70.720-74.750",
+      "key": 26
+    },
+    {
+      "id": 29,
+      "shot": 10,
+      "at_s": 74.75,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.03
+      },
+      "offset": 4.03,
+      "vo": "Residents could get priority over nonresidents, though state law says every person has a right to inspect a public record.",
+      "phrase": "every person has a",
+      "shows": "a second card the same size on printed stock slides up the rail and stops level beside the pencilled vellum card, the same height in the same light, a plate reads STATE LAW \u00b7 \"EVERY PERSON HAS A RIGHT TO INSPECT\" \u00b7 WITH EXCEPTIONS",
+      "sfx": "slide",
+      "means": "state law \u00b7 \"every person has a right to inspect\" \u00b7 with exceptions",
+      "rehook": "",
+      "draw": {
+        "subject": "a second card the same size on printed stock",
+        "action": "slides up the rail and stops level beside the pencilled vellum card, the same height in the same light",
+        "emotion": "plain",
+        "annotation": "STATE LAW \u00b7 \"EVERY PERSON HAS A RIGHT TO INSPECT\" \u00b7 WITH EXCEPTIONS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a second card the same size on printed stock slides up the rail and stops level beside the pencilled vellum card, the same height in the same light, a plate reads STATE LAW \u00b7 \"EVERY PERSON HAS A RIGHT TO INSPECT\" \u00b7 WITH EXCEPTIONS",
+        "reaction": "the card slides",
+        "ambient": "rain on a railing, a downpipe gurgle"
+      },
+      "t": "74.750-78.360",
+      "key": 27
+    },
+    {
+      "id": 30,
+      "shot": 11,
+      "at_s": 78.36,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The fair case for the draft? Staff hours are finite.",
+      "phrase": "The fair case for",
+      "shows": "the night clerk at a lamp-lit oak desk lifts the next request off a tall stack and glances once at a folded note still caught half in the door slot behind, beside a window onto Juneau's spruce hillside, a plate reads THE FAIR CASE FOR THE DRAFT",
+      "sfx": "page",
+      "means": "the fair case for the draft",
+      "rehook": "",
+      "draw": {
+        "subject": "the night clerk at a lamp-lit oak desk",
+        "action": "lifts the next request off a tall stack and glances once at a folded note still caught half in the door slot behind, beside a window onto Juneau's spruce hillside",
+        "emotion": "busy",
+        "annotation": "THE FAIR CASE FOR THE DRAFT"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the night clerk at a lamp-lit oak desk lifts the next request off a tall stack and glances once at a folded note still caught half in the door slot behind, beside a window onto Juneau's spruce hillside, a plate reads THE FAIR CASE FOR THE DRAFT",
+        "reaction": "the page lifts",
+        "ambient": "a warm room tone, rain on a window"
+      },
+      "t": "78.360-81.550",
+      "key": 28
+    },
+    {
+      "id": 31,
+      "shot": 11,
+      "at_s": 81.55,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "The fair case for the draft? Staff hours are finite.",
+      "phrase": "finite.",
+      "shows": "a candle on the clerk's desk burns down a notch as the clerk reaches for the next request, a plate reads STAFF HOURS ARE FINITE",
+      "sfx": "drip",
+      "means": "staff hours are finite",
+      "rehook": "",
+      "draw": {
+        "subject": "a candle on the clerk's desk",
+        "action": "burns down a notch as the clerk reaches for the next request",
+        "emotion": "weary",
+        "annotation": "STAFF HOURS ARE FINITE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a candle on the clerk's desk burns down a notch as the clerk reaches for the next request, a plate reads STAFF HOURS ARE FINITE",
+        "reaction": "the notch drops",
+        "ambient": "a warm room tone, rain on a window"
+      },
+      "t": "81.550-83.120",
+      "key": 29
+    },
+    {
+      "id": 32,
+      "shot": 11,
+      "at_s": 83.12,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Its filing, the Empire reports, says the aim is efficiency, at no added cost to carry out.",
+      "phrase": "Its filing, the Empire",
+      "shows": "a placard on its easel is turned toward us by the clerk's hand, a plate reads PER THE FILING, AS REPORTED",
+      "sfx": "page",
+      "means": "per the filing, as reported",
+      "rehook": "",
+      "draw": {
+        "subject": "a placard on its easel",
+        "action": "is turned toward us by the clerk's hand",
+        "emotion": "plain",
+        "annotation": "PER THE FILING, AS REPORTED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a placard on its easel is turned toward us by the clerk's hand, a plate reads PER THE FILING, AS REPORTED",
+        "reaction": "the placard turns",
+        "ambient": "a warm room tone, rain on a window"
+      },
+      "t": "83.120-85.990",
+      "key": 30
+    },
+    {
+      "id": 33,
+      "shot": 11,
+      "at_s": 85.99,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 2.87
+      },
+      "offset": 2.87,
+      "vo": "Its filing, the Empire reports, says the aim is efficiency, at no added cost to carry out.",
+      "phrase": "efficiency, at no added",
+      "shows": "the placard flips its card to the stated aim and settles, a plate reads STATED AIM \u00b7 EFFICIENCY \u00b7 NO ADDED COST",
+      "sfx": "flip",
+      "means": "stated aim \u00b7 efficiency \u00b7 no added cost",
+      "rehook": "",
+      "draw": {
+        "subject": "the placard",
+        "action": "flips its card to the stated aim and settles",
+        "emotion": "even",
+        "annotation": "STATED AIM \u00b7 EFFICIENCY \u00b7 NO ADDED COST"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "the placard flips its card to the stated aim and settles, a plate reads STATED AIM \u00b7 EFFICIENCY \u00b7 NO ADDED COST",
+        "reaction": "the card flips",
+        "ambient": "a warm room tone, rain on a window"
+      },
+      "t": "85.990-89.780",
+      "key": 31
+    },
+    {
+      "id": 34,
+      "shot": 12,
+      "at_s": 89.78,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Fees could still be waived in the public interest, and agencies keep ten working days to respond.",
+      "phrase": "Fees could still be",
+      "shows": "a waiver stamp lands on a page and leaves a soft round mark, a plate reads PROPOSED \u00b7 PUBLIC INTEREST WAIVER STAYS",
+      "sfx": "thunk",
+      "means": "proposed \u00b7 public interest waiver stays",
+      "rehook": "",
+      "draw": {
+        "subject": "a waiver stamp",
+        "action": "lands on a page and leaves a soft round mark",
+        "emotion": "kind",
+        "annotation": "PROPOSED \u00b7 PUBLIC INTEREST WAIVER STAYS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "a waiver stamp lands on a page and leaves a soft round mark, a plate reads PROPOSED \u00b7 PUBLIC INTEREST WAIVER STAYS",
+        "reaction": "the stamp lands",
+        "ambient": "a room tone, a stamp, a click"
+      },
+      "t": "89.780-93.450",
+      "key": 32
+    },
+    {
+      "id": 35,
+      "shot": 12,
+      "at_s": 93.45,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 3.67
+      },
+      "offset": 3.67,
+      "vo": "Fees could still be waived in the public interest, and agencies keep ten working days to respond.",
+      "phrase": "ten working days to",
+      "shows": "a desk calendar with the state letterhead flips to 10 WORKING DAYS and holds there, a plate reads 10 WORKING DAYS TO RESPOND \u00b7 UNCHANGED",
+      "sfx": "ding",
+      "means": "10 working days to respond \u00b7 unchanged",
+      "rehook": "",
+      "draw": {
+        "subject": "a desk calendar with the state letterhead",
+        "action": "flips to 10 WORKING DAYS and holds there",
+        "emotion": "steady",
+        "annotation": "10 WORKING DAYS TO RESPOND \u00b7 UNCHANGED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a desk calendar with the state letterhead flips to 10 WORKING DAYS and holds there, a plate reads 10 WORKING DAYS TO RESPOND \u00b7 UNCHANGED",
+        "reaction": "the card flips",
+        "ambient": "a room tone, a stamp, a click"
+      },
+      "t": "93.450-96.020",
+      "key": 33
+    },
+    {
+      "id": 36,
+      "shot": 12,
+      "at_s": 96.02,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A portal could put a known person behind each request. Agencies could refuse requests for commercial gain.",
+      "phrase": "A portal could put",
+      "shows": "the portal screen on the desk lights and a small portrait card snaps into its empty name field, a plate reads COULD \u00b7 A KNOWN PERSON BEHIND EACH REQUEST",
+      "sfx": "blip",
+      "means": "could \u00b7 a known person behind each request",
+      "rehook": "",
+      "draw": {
+        "subject": "the portal screen on the desk",
+        "action": "lights and a small portrait card snaps into its empty name field",
+        "emotion": "plain",
+        "annotation": "COULD \u00b7 A KNOWN PERSON BEHIND EACH REQUEST"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "the portal screen on the desk lights and a small portrait card snaps into its empty name field, a plate reads COULD \u00b7 A KNOWN PERSON BEHIND EACH REQUEST",
+        "reaction": "the card snaps",
+        "ambient": "a room tone, a stamp, a click"
+      },
+      "t": "96.020-100.190",
+      "key": 34
+    },
+    {
+      "id": 37,
+      "shot": 12,
+      "at_s": 100.19,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 4.17
+      },
+      "offset": 4.17,
+      "vo": "A portal could put a known person behind each request. Agencies could refuse requests for commercial gain.",
+      "phrase": "refuse requests for commercial",
+      "shows": "a request with a dollar sign on it slides across the desk toward an empty wire tray, a plate reads PROPOSED \u00b7 REJECT REQUESTS FOR COMMERCIAL GAIN",
+      "sfx": "slide",
+      "means": "proposed \u00b7 reject requests for commercial gain",
+      "rehook": "",
+      "draw": {
+        "subject": "a request with a dollar sign on it",
+        "action": "slides across the desk toward an empty wire tray",
+        "emotion": "plain",
+        "annotation": "PROPOSED \u00b7 REJECT REQUESTS FOR COMMERCIAL GAIN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a request with a dollar sign on it slides across the desk toward an empty wire tray, a plate reads PROPOSED \u00b7 REJECT REQUESTS FOR COMMERCIAL GAIN",
+        "reaction": "the request slides",
+        "ambient": "a room tone, a stamp, a click"
+      },
+      "t": "100.190-101.710",
+      "key": 43
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 101.71,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 5.69
+      },
+      "offset": 5.69,
+      "vo": "A portal could put a known person behind each request. Agencies could refuse requests for commercial gain.",
+      "phrase": "gain.",
+      "shows": "the dollar request drops into the wire tray and the tray rocks, a plate reads COULD, PER JUNEAU EMPIRE",
+      "sfx": "thud",
+      "means": "could, per juneau empire",
+      "rehook": "",
+      "draw": {
+        "subject": "the dollar request",
+        "action": "drops into the wire tray and the tray rocks",
+        "emotion": "plain",
+        "annotation": "COULD, PER JUNEAU EMPIRE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "the dollar request drops into the wire tray and the tray rocks, a plate reads COULD, PER JUNEAU EMPIRE",
+        "reaction": "the tray rocks",
+        "ambient": "a room tone, a stamp, a click"
+      },
+      "t": "101.710-102.940",
+      "key": 35
+    },
+    {
+      "id": 39,
+      "shot": 13,
+      "at_s": 102.94,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But those proposed caps would let agencies stop at 250 documents, whatever tool filed the request.",
+      "phrase": "But those proposed caps",
+      "shows": "the door in cross-section, rain outside on the left, the basket inside on the right opens up as the camera pulls back, a gloved hand's envelope of official forms and Tote's envelope arriving at the slot side by side, a plate reads PROPOSED CAPS",
+      "sfx": "whoosh",
+      "means": "proposed caps",
+      "rehook": "rehook: the door splits into a cross-section, outside and inside at once",
+      "draw": {
+        "subject": "the door in cross-section, rain outside on the left, the basket inside on the right",
+        "action": "opens up as the camera pulls back, a gloved hand's envelope of official forms and Tote's envelope arriving at the slot side by side",
+        "emotion": "even",
+        "annotation": "PROPOSED CAPS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "the door in cross-section, rain outside on the left, the basket inside on the right opens up as the camera pulls back, a gloved hand's envelope of official forms and Tote's envelope arriving at the slot side by side, a plate reads PROPOSED CAPS",
+        "reaction": "the door opens up",
+        "ambient": "rain outside, paper inside, a thud through the door"
+      },
+      "kick": true,
+      "t": "102.940-106.010",
+      "key": 36
+    },
+    {
+      "id": 40,
+      "shot": 13,
+      "at_s": 106.01,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 3.07
+      },
+      "offset": 3.07,
+      "vo": "But those proposed caps would let agencies stop at 250 documents, whatever tool filed the request.",
+      "phrase": "250 documents, whatever tool",
+      "shows": "a stack of hand-filled official forms with the state seal, posted by a gloved hand drops into the basket and stops at the 250 tape line, while beside it Tote's stack is only a dashed ghost outline labelled IF ALLOWED reaching the same line, a plate reads VOLUME \u00b7 250 DOCUMENTS, WHATEVER TOOL FILED IT",
+      "sfx": "thud",
+      "means": "volume \u00b7 250 documents, whatever tool filed it",
+      "rehook": "",
+      "draw": {
+        "subject": "a stack of hand-filled official forms with the state seal, posted by a gloved hand",
+        "action": "drops into the basket and stops at the 250 tape line, while beside it Tote's stack is only a dashed ghost outline labelled IF ALLOWED reaching the same line",
+        "emotion": "even",
+        "annotation": "VOLUME \u00b7 250 DOCUMENTS, WHATEVER TOOL FILED IT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a stack of hand-filled official forms with the state seal, posted by a gloved hand drops into the basket and stops at the 250 tape line, while beside it Tote's stack is only a dashed ghost outline labelled IF ALLOWED reaching the same line, a plate reads VOLUME \u00b7 250 DOCUMENTS, WHATEVER TOOL FILED IT",
+        "reaction": "the stack lands",
+        "ambient": "rain outside, paper inside, a thud through the door"
+      },
+      "t": "106.010-110.560",
+      "key": 37
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 110.56,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So what does the tool line add? Nothing reported says.",
+      "phrase": "So what does the",
+      "shows": "three labels on the cross-section light in turn, VOLUME on the tape line, A KNOWN PERSON IF A PORTAL IS REQUIRED on a card clipped to the real stack, and TOOL LINE on the blank tag, a plate reads WHAT DOES THE TOOL LINE ADD?",
+      "sfx": "tick",
+      "means": "what does the tool line add?",
+      "rehook": "",
+      "draw": {
+        "subject": "three labels on the cross-section",
+        "action": "light in turn, VOLUME on the tape line, A KNOWN PERSON IF A PORTAL IS REQUIRED on a card clipped to the real stack, and TOOL LINE on the blank tag",
+        "emotion": "puzzled",
+        "annotation": "WHAT DOES THE TOOL LINE ADD?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "three labels on the cross-section light in turn, VOLUME on the tape line, A KNOWN PERSON IF A PORTAL IS REQUIRED on a card clipped to the real stack, and TOOL LINE on the blank tag, a plate reads WHAT DOES THE TOOL LINE ADD?",
+        "reaction": "the labels light",
+        "ambient": "rain outside, paper inside, a thud through the door"
+      },
+      "t": "110.560-113.050",
+      "key": 44
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 113.05,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 2.49
+      },
+      "offset": 2.49,
+      "vo": "So what does the tool line add? Nothing reported says.",
+      "phrase": "Nothing reported says.",
+      "shows": "the blank hang tag swings into the middle of the cross-section, still blank, a plate reads NOTHING REPORTED SAYS",
+      "sfx": "clink",
+      "means": "nothing reported says",
+      "rehook": "",
+      "draw": {
+        "subject": "the blank hang tag",
+        "action": "swings into the middle of the cross-section, still blank",
+        "emotion": "waiting",
+        "annotation": "NOTHING REPORTED SAYS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the blank hang tag swings into the middle of the cross-section, still blank, a plate reads NOTHING REPORTED SAYS",
+        "reaction": "the tag swings",
+        "ambient": "rain outside, paper inside, a thud through the door"
+      },
+      "t": "113.050-115.380",
+      "key": 38
+    },
+    {
+      "id": 43,
+      "shot": 14,
+      "at_s": 115.38,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "If the final text defines a tool narrowly, the helper question is answered.",
+      "phrase": "If the final text",
+      "shows": "the dashed fourth edge on the vellum, seen over the person's shoulder from under the awning is traced by a sliding steel ruler whose pencil follows it solid from end to end, still pencil, a plate reads IF DEFINED NARROWLY",
+      "sfx": "scratch",
+      "means": "if defined narrowly",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed fourth edge on the vellum, seen over the person's shoulder from under the awning",
+        "action": "is traced by a sliding steel ruler whose pencil follows it solid from end to end, still pencil",
+        "emotion": "open",
+        "annotation": "IF DEFINED NARROWLY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the dashed fourth edge on the vellum, seen over the person's shoulder from under the awning is traced by a sliding steel ruler whose pencil follows it solid from end to end, still pencil, a plate reads IF DEFINED NARROWLY",
+        "reaction": "the edge draws",
+        "ambient": "rain on an awning, a pencil scratch, a soft hum"
+      },
+      "t": "115.380-118.630",
+      "key": 39
+    },
+    {
+      "id": 44,
+      "shot": 14,
+      "at_s": 118.63,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 3.25
+      },
+      "offset": 3.25,
+      "vo": "If the final text defines a tool narrowly, the helper question is answered.",
+      "phrase": "helper question is answered.",
+      "shows": "the phone in the person's hand swings up into frame beside the door, its ice-cyan helper face waking, a plate reads THE HELPER QUESTION",
+      "sfx": "chime",
+      "means": "the helper question",
+      "rehook": "",
+      "draw": {
+        "subject": "the phone in the person's hand",
+        "action": "swings up into frame beside the door, its ice-cyan helper face waking",
+        "emotion": "hopeful",
+        "annotation": "THE HELPER QUESTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the phone in the person's hand swings up into frame beside the door, its ice-cyan helper face waking, a plate reads THE HELPER QUESTION",
+        "reaction": "the screen lights",
+        "ambient": "rain on an awning, a pencil scratch, a soft hum"
+      },
+      "t": "118.630-120.820",
+      "key": 45
+    },
+    {
+      "id": 45,
+      "shot": 14,
+      "at_s": 120.82,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The draft can count documents. It still has to say where a tool ends. Where would you draw that line?",
+      "phrase": "The draft can count",
+      "shows": "the person under the awning rests a fingertip on the note still caught half in the slot and stops a finger's width short of pushing it past the dashed edge, the phone still lit, as the 250 tape line glows through the wired glass, a plate reads IT CAN COUNT DOCUMENTS",
+      "sfx": "rustle",
+      "means": "it can count documents",
+      "rehook": "",
+      "draw": {
+        "subject": "the person under the awning",
+        "action": "rests a fingertip on the note still caught half in the slot and stops a finger's width short of pushing it past the dashed edge, the phone still lit, as the 250 tape line glows through the wired glass",
+        "emotion": "plain",
+        "annotation": "IT CAN COUNT DOCUMENTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the person under the awning rests a fingertip on the note still caught half in the slot and stops a finger's width short of pushing it past the dashed edge, the phone still lit, as the 250 tape line glows through the wired glass, a plate reads IT CAN COUNT DOCUMENTS",
+        "reaction": "the hand stops",
+        "ambient": "rain on an awning, a pencil scratch, a soft hum"
+      },
+      "t": "120.820-123.910",
+      "key": 46
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "at_s": 123.91,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 3.09
+      },
+      "offset": 3.09,
+      "vo": "The draft can count documents. It still has to say where a tool ends. Where would you draw that line?",
+      "phrase": "where a tool ends.",
+      "shows": "the pencilled edge breaks back into glowing pencil dashes, a plate reads WHERE DOES A TOOL END?",
+      "sfx": "hum",
+      "means": "where does a tool end?",
+      "rehook": "",
+      "draw": {
+        "subject": "the pencilled edge",
+        "action": "breaks back into glowing pencil dashes",
+        "emotion": "open",
+        "annotation": "WHERE DOES A TOOL END?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the pencilled edge breaks back into glowing pencil dashes, a plate reads WHERE DOES A TOOL END?",
+        "reaction": "the dashes return",
+        "ambient": "rain on an awning, a pencil scratch, a soft hum"
+      },
+      "t": "123.910-126.070",
+      "key": 40
+    },
+    {
+      "id": 47,
+      "shot": 14,
+      "at_s": 126.07,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 5.25
+      },
+      "offset": 5.25,
+      "vo": "The draft can count documents. It still has to say where a tool ends. Where would you draw that line?",
+      "phrase": "Where would you draw",
+      "shows": "the cream question balloon drifts back out of the dark past the JUNEAU street sign and holds beside the caught note at the threshold, neither in nor out, a plate reads WHERE WOULD YOU DRAW THE LINE?",
+      "sfx": "bloom",
+      "means": "where would you draw the line?",
+      "rehook": "",
+      "draw": {
+        "subject": "the cream question balloon",
+        "action": "drifts back out of the dark past the JUNEAU street sign and holds beside the caught note at the threshold, neither in nor out",
+        "emotion": "open",
+        "annotation": "WHERE WOULD YOU DRAW THE LINE?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the cream question balloon drifts back out of the dark past the JUNEAU street sign and holds beside the caught note at the threshold, neither in nor out, a plate reads WHERE WOULD YOU DRAW THE LINE?",
+        "reaction": "the balloon hovers",
+        "ambient": "rain on an awning, a pencil scratch, a soft hum"
+      },
+      "t": "126.070-127.260",
+      "key": 41
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.998,
+    "heard": "Under Alaska's current rules, a records request can be as simple as asking out loud. An agency can't refuse you just for skipping its form. On November 11th, the State's Department of Administration posted proposed changes. Under the draft, the Juno Empire reports, nobody could file through third-party services or automated tools, including AI. Nothing reported says why. Hold on to that. Agencies could also require their own forms or portals. Picture someone asking an AI helper to trim a rambling question. They fix its mistake and send it in themselves. Is that an automated tool? The draft, as reported, doesn't say. AI isn't the whole draft. The Empire reports agencies could stop work after 250 documents or 15 staff hours. Past five hours a month, you'd pay for all of it. The first five included. The appeal window would drop from 60 working days to 30. Residents could get priority over non-residents. Though state law says every person has a right to inspect a public record. The fair case for the draft? Staff hours are finite. It's filing, the Empire reports, says the aim is efficiency, at no added cost to carry out. Fees could still be waived in the public interest, and agencies keep 10 working days to respond. A portal could put a known person behind each request. Agencies could refuse requests for commercial gain. But those proposed caps would let agencies stop at 250 documents, whatever tool filed the request. So what does the tool line add? Nothing reported says. If the final text defines a tool narrowly, the helper question is answered. The draft can count documents. It still has to say where a tool ends. Where would you draw that line?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.003,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 9.09,
+        "voiced_frac": 0.51,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 127.68,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 127.68,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.998,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.991,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}
