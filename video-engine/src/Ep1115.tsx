@@ -316,6 +316,10 @@ const Person: React.FC<{f: number; x: number; y: number; s?: number; hold?: 'pho
               {/* the rain shell */}
               <path d="M -96,-190 Q -104,-380 -60,-420 Q 0,-450 60,-420 Q 104,-380 96,-190 Z" fill="url(#shellG)" stroke={C.line} strokeWidth={7} strokeLinejoin="round" />
               <path d="M 0,-430 V -200" stroke={C.shellD} strokeWidth={5} />
+              {Array.from({length: 9}).map((_, i) => <line key={i} x1={-6} y1={-420 + i * 24} x2={6} y2={-420 + i * 24} stroke="#C9D2D9" strokeWidth={3} />)}
+              {[-1, 1].map((sd) => <path key={sd} d={`M ${sd * 50},-410 Q ${sd * 70},-300 ${sd * 60},-200`} stroke={C.shellD} strokeWidth={4} fill="none" opacity={0.7} />)}
+              <rect x={-70} y={-300} width={50} height={36} rx={6} fill="none" stroke={C.shellD} strokeWidth={4} />
+              <path d="M -96,-190 Q -104,-380 -60,-420" stroke="#FFE2A8" strokeWidth={5} fill="none" opacity={0.6} />
               <path d="M -86,-300 Q 0,-286 86,-300" stroke={C.shellD} strokeWidth={4} fill="none" opacity={0.6} />
               {/* far arm hangs */}
               <g transform={`rotate(${8 + pose.armL * 0.3} -86 -400)`}>
@@ -344,6 +348,8 @@ const Person: React.FC<{f: number; x: number; y: number; s?: number; hold?: 'pho
                 <circle cx={18} cy={-4} r={6} fill={C.ink} /><circle cx={-12} cy={-4} r={6} fill={C.ink} />
                 <path d="M -10,24 Q 4,32 18,22" stroke="#7A4E36" strokeWidth={4} fill="none" strokeLinecap="round" />
                 <path d="M -68,10 Q -72,-70 0,-74 Q 72,-70 68,10 Q 56,-46 0,-50 Q -56,-46 -68,10 Z" fill={C.shellD} stroke={C.line} strokeWidth={6} />
+                <path d="M -64,-6 Q -66,-64 0,-70" stroke="#FFE2A8" strokeWidth={5} fill="none" opacity={0.65} />
+                <path d="M -14,8 Q -8,12 -2,8" stroke="#7A4E36" strokeWidth={3} fill="none" />
               </g>
             </g>
           )}
@@ -417,7 +423,8 @@ const ClerkRoom: React.FC<{f: number; children?: React.ReactNode; desk?: number}
       {/* the desk */}
       <rect x={-200} y={desk} width={1480} height={60} fill={C.oakL} stroke={C.line} strokeWidth={7} data-band="ok" />
       <rect x={-200} y={desk + 60} width={1480} height={900} fill={C.oak} stroke={C.line} strokeWidth={7} data-band="ok" />
-      {Array.from({length: 6}).map((_, i) => <path key={i} d={`M -200,${desk + 140 + i * 110} Q 540,${desk + 120 + i * 110 + 20 * Math.sin(i)} 1280,${desk + 150 + i * 110}`} stroke="#5A3E24" strokeWidth={4} fill="none" data-band="ok" />)}
+      {[120, 560].map((dx) => <g key={dx} data-band="ok"><rect x={dx} y={desk + 120} width={380} height={150} rx={8} fill="#5A3E24" stroke={C.line} strokeWidth={5} /><rect x={dx + 150} y={desk + 180} width={80} height={18} rx={9} fill="#C9A24A" stroke={C.line} strokeWidth={3} /></g>)}
+      {Array.from({length: 6}).map((_, i) => <path key={i} d={`M -200,${desk + 300 + i * 110} Q 540,${desk + 120 + i * 110 + 20 * Math.sin(i)} 1280,${desk + 150 + i * 110}`} stroke="#5A3E24" strokeWidth={4} fill="none" data-band="ok" />)}
       {/* the green-shaded lamp */}
       <g transform={`translate(190 ${desk})`}>
         <rect x={-50} y={-14} width={100} height={14} rx={6} fill="#C9A24A" stroke={C.line} strokeWidth={4} />
@@ -460,7 +467,14 @@ const InsideDoor: React.FC<{f: number; stack?: number; children?: React.ReactNod
       {basket && <ContactShadow cx={540} cy={1290} rx={300} ry={26} opacity={0.4} />}
       <rect x={-200} y={1300} width={1480} height={800} fill="#15130F" data-band="ok" />
       <rect x={-200} y={1300} width={1480} height={16} fill="#3A3128" data-band="ok" />
-      {[[160, 1620], [820, 1700]].map(([x, y], i) => <rect key={i} x={x} y={y} width={170} height={110} fill={C.paper} stroke={C.line} strokeWidth={4} transform={`rotate(${i ? 8 : -6} ${x} ${y})`} data-band="ok" />)}
+      <ellipse cx={540} cy={1420} rx={320} ry={40} fill="#F6C46A" opacity={0.1} data-band="ok" />
+      {[[200, 1640, -8], [800, 1720, 10], [480, 1820, -3]].map(([x, y, r], i) => (
+        <g key={i} transform={`translate(${x} ${y}) rotate(${r})`} data-band="ok">
+          <rect x={-80} y={-46} width={170} height={110} fill="#000" opacity={0.3} />
+          <rect x={-90} y={-56} width={170} height={110} fill={C.paper} stroke={C.line} strokeWidth={4} />
+          {[0, 1, 2, 3].map((j) => <rect key={j} x={-70} y={-36 + j * 22} width={120 - j * 18} height={7} fill={C.paperD} />)}
+        </g>
+      ))}
     </g>
   );
 };
@@ -471,24 +485,24 @@ const LX = 420; // the letterbox x whenever the draft template is up, so letterb
 /** S1, out of the rain a question balloon drifts into the lamp cone and the letterbox gulps it while a pencil sketches a dashed outline beside it */
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const drift = ease(f, 0, 30);
-  const gulpAt = 30;
+  const drift = ease(f, 0, 16);
+  const gulpAt = 16;
   const open = f < gulpAt ? ease(f, 8, 12) : 1 - ease(f, gulpAt + 6, 8);
   const rattle = f > b(2) && f < b(2) + 14 ? Math.sin((f - b(2)) * 1.9) * (1 - (f - b(2)) / 14) : 0;
   const swallowed = f > gulpAt + 4;
-  const sketch = ease(f, 40, 120);
+  const sketch = ease(f, 0, 70);
   const cam = track([{t: 0, z: 1.45, fx: 560, fy: 940}, {t: p.dur, z: 1.56, fx: 580, fy: 950}]);
   return (
     <Frame p={p} cam={cam} overlay={<>
       <Plate text="ASK OUT LOUD · IT COUNTS" x={540} y={600} size={40} tone="dark" p={ease(f, 2, 6)} />
-      <Plate text="CURRENT RULE · ORAL REQUESTS COUNT" x={540} y={1240} size={34} tone="plate" p={ease(f, b(2) + 4, 6)} />
+      <Plate text="CURRENT RULE · ORAL REQUESTS COUNT" displayLines={['CURRENT RULE · ORAL REQUESTS COUNT', '2 AAC 96.310']} x={540} y={1220} size={34} tone="plate" p={ease(f, b(2) + 4, 6)} />
     </>}>
       <SVG>
         <DoorWorld f={f} sign={false}>
           <g transform={`translate(0 ${rattle * 3})`}>
             <Flap x={LX} y={960} scale={1.05} f={f} face={false} open={open} gulp={swallowed && f < gulpAt + 20 ? 0.6 : 0} faceplate={sketch > 0 ? 1 : 0} sketch={sketch} bolts={0} />
           </g>
-          {!swallowed && <Question x={lerp(1000, LX + 20, drift)} y={lerp(760, 990, drift)} s={lerp(0.9, 0.55, drift)} f={f} />}
+          {!swallowed && <Question x={lerp(900, LX + 20, drift)} y={lerp(800, 990, drift)} s={lerp(1.35, 0.8, drift)} f={f} />}
           {/* the pencil sketching the outline */}
           {sketch > 0 && sketch < 0.99 && <g transform={`translate(${LX + 300 + 140 * Math.sin(sketch * 6)} ${840 + 200 * sketch}) rotate(-35)`}>
             <rect x={0} y={-8} width={130} height={16} fill="#8C96A0" stroke={C.line} strokeWidth={3} />
@@ -529,7 +543,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} overlay={<>
       <Plate text="JUNEAU · A STATE OFFICE DOOR" x={540} y={600} size={34} tone="dark" p={ease(f, 6, 8)} />
-      <Plate displayLines={['CURRENT RULE ·', 'NO DENIAL FOR SKIPPING THE FORM']} text="CURRENT RULE · NO DENIAL FOR SKIPPING THE FORM" x={540} y={1220} size={34} tone="dark" p={ease(f, b(4), 6)} />
+      <Plate displayLines={['CURRENT RULE · 2 AAC 96.310 ·', 'NO DENIAL FOR SKIPPING THE FORM']} text="CURRENT RULE · NO DENIAL FOR SKIPPING THE FORM" x={540} y={1220} size={34} tone="dark" p={ease(f, b(4), 6)} />
     </>}>
       <SVG>
         <g transform="translate(205 260) scale(0.62)">
@@ -621,7 +635,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
             <rect x={-46} y={-26} width={52} height={22} rx={4} fill="#E3B23C" stroke={C.line} strokeWidth={3} />
             <path d="M -40,-14 h 18 m 4,0 h 14" stroke={C.line} strokeWidth={3} />
           </g>
-          <Tote x={toteX} y={1500} scale={1.15} f={f} facing={-1} roll={toteX} lean={roll > 0 && roll < 1 ? -0.4 : 0} emotion={raise > 0.5 ? 'puzzled' : 'eager'} satchelSwing={roll < 1 ? 1 : 0.3} envelope={raise} />
+          <Tote x={toteX} y={1420} scale={1.0} f={f} facing={-1} roll={toteX} lean={roll > 0 && roll < 1 ? -0.4 : 0} emotion={raise > 0.5 ? 'puzzled' : 'eager'} satchelSwing={roll < 1 ? 1 : 0.3} envelope={raise} />
         </DoorWorld>
         <Rain f={f} seed={4} />
         <HeldTravel f={f} x={LX - 220} y={829} w={441} h={262} seed={6} strength={0.34} rx={36} mode="sweep" />
@@ -727,7 +741,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const glow = ease(f, b(17), 16);
   const press = Math.max(0, Math.sin((f - b(17) - 10) / 9)) * (f > b(17) + 10 ? 1 : 0);
-  const cam = track([{t: 0, z: 2.0, fx: 780, fy: 930}, {t: p.dur, z: 2.2, fx: 800, fy: 935}]);
+  const cam = track([{t: 0, z: 2.6, fx: 840, fy: 950}, {t: p.dur, z: 3.0, fx: 850, fy: 950}]);
   const edgeX = LX + (236 + 52 + 146) * 1.05;
   return (
     <Frame p={p} cam={cam} overlay={<>
@@ -765,7 +779,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
       <Plate displayLines={['PROPOSED ·', 'STOP AT 250 DOCUMENTS OR 15 HOURS']} text="PROPOSED · STOP AT 250 DOCUMENTS OR 15 HOURS" x={540} y={680} size={34} tone="prop" p={ease(f, b(42) + 2, 6) * (1 - ease(f, b(22) - 6, 6))} />
       <Plate text="STAFF HOURS RUN DOWN" x={800} y={1000} size={30} tone="plate" p={ease(f, b(21), 6) * (1 - ease(f, b(22) - 6, 6))} />
       <Plate displayLines={['PROPOSED ·', 'PAST 5 HOURS, PAY FOR ALL OF IT']} text="PROPOSED · PAST 5 HOURS, PAY FOR ALL OF IT" x={540} y={780} size={34} tone="prop" p={ease(f, b(22) + 4, 6)} />
-      <Plate displayLines={['STATE LAW ·', 'FEES START PAST 5 HOURS A MONTH']} text="STATE LAW · FEES START PAST 5 HOURS A MONTH" x={540} y={1200} size={30} tone="dark" p={ease(f, b(23) + 4, 6)} />
+      <Plate displayLines={['STATE LAW · AS 40.25.110(C) ·', 'FEES START PAST 5 HOURS A MONTH']} text="STATE LAW · FEES START PAST 5 HOURS A MONTH" x={540} y={1200} size={30} tone="dark" p={ease(f, b(23) + 4, 6)} />
     </>}>
       <SVG>
         <InsideDoor f={f} stack={stack}>
@@ -784,7 +798,8 @@ const S8: React.FC<SceneProps> = ({p}) => {
           <g transform="translate(830 1130)">
             <rect x={-90} y={0} width={180} height={18} fill="#3A3128" stroke={C.line} strokeWidth={4} />
             <HeldProp f={f} px={0} py={0} w={60} h={200} seed={2} kind="rest">
-              <rect x={-24} y={lerp(-180, -150, candle)} width={48} height={lerp(180, 150, candle)} fill={C.paper} stroke={C.line} strokeWidth={4} />
+              <path d={`M -28,0 L -22,${lerp(-180, -150, candle)} Q 0,${lerp(-186, -156, candle)} 22,${lerp(-180, -150, candle)} L 28,0 Z`} fill="#EFE3C4" stroke={C.line} strokeWidth={4} />
+              <path d={`M -14,-10 L -10,${lerp(-170, -140, candle)}`} stroke="#FFF8E6" strokeWidth={5} opacity={0.7} />
               {[0, 1, 2].map((i) => <line key={i} x1={-24} y1={-140 + i * 45} x2={24} y2={-140 + i * 45} stroke={C.ink} strokeWidth={3} />)}
               <path d={`M 0,${lerp(-180, -150, candle) - 4} q ${10 * Math.sin(f / 3)},-18 0,-40 q -12,22 0,40`} fill={C.lamp} stroke="#C46A1A" strokeWidth={2} />
               <circle cx={0} cy={lerp(-210, -180, candle)} r={36} fill={C.lampL} opacity={0.25} />
@@ -810,7 +825,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   );
 };
 
-const Timer: React.FC<{h: number; label: string; sand: number}> = ({h, label, sand}) => (
+const Timer: React.FC<{h: number; label: string; sand: number; noLabel?: boolean}> = ({h, label, sand, noLabel = false}) => (
   <g>
     <rect x={-90} y={-h / 2 - 20} width={180} height={20} fill={C.oakL} stroke={C.line} strokeWidth={5} />
     <rect x={-90} y={h / 2} width={180} height={20} fill={C.oakL} stroke={C.line} strokeWidth={5} />
@@ -818,8 +833,8 @@ const Timer: React.FC<{h: number; label: string; sand: number}> = ({h, label, sa
     <path d={`M -60,${-h / 2 + 10 + (h / 2 - 20) * sand} H 60 L 8,-4 H -8 Z`} fill="#E3C27A" opacity={0.95} />
     <path d={`M -60,${h / 2} L -60,${h / 2 - (h / 2 - 20) * sand} Q 0,${h / 2 - (h / 2 - 20) * sand - 30} 60,${h / 2 - (h / 2 - 20) * sand} L 60,${h / 2} Z`} fill="#E3C27A" />
     <line x1={0} y1={0} x2={0} y2={h / 2 - 4} stroke="#E3C27A" strokeWidth={3} opacity={sand < 0.98 ? 1 : 0} />
-    <rect x={-50} y={-30} width={100} height={48} rx={6} fill={C.paper} stroke={C.line} strokeWidth={4} />
-    <text x={0} y={4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>{label}</text>
+    {!noLabel && <><rect x={-50} y={-30} width={100} height={48} rx={6} fill={C.paper} stroke={C.line} strokeWidth={4} />
+    <text x={0} y={4} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>{label}</text></>}
   </g>
 );
 
@@ -832,7 +847,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const cam = track([{t: 0, z: 1.1, fx: 540, fy: 960}, {t: p.dur, z: 1.16, fx: 540, fy: 950}]);
   return (
     <Frame p={p} cam={cam} bg="#1B1D20" overlay={<>
-      <Plate displayLines={['CURRENT RULE ·', '60 WORKING DAYS TO APPEAL']} text="CURRENT RULE · 60 WORKING DAYS TO APPEAL" x={540} y={600} size={34} tone="dark" p={ease(f, b(24) + 4, 6)} />
+      <Plate displayLines={['CURRENT RULE · 2 AAC 96.340 ·', '60 WORKING DAYS TO APPEAL']} text="CURRENT RULE · 60 WORKING DAYS TO APPEAL" x={540} y={600} size={34} tone="dark" p={ease(f, b(24) + 4, 6)} />
       <Plate displayLines={['PROPOSED ·', 'APPEAL WINDOW 60 TO 30 WORKING DAYS']} text="PROPOSED · APPEAL WINDOW 60 TO 30 WORKING DAYS" x={540} y={1210} size={34} tone="prop" p={ease(f, b(25) + 6, 6)} />
     </>}>
       <SVG>
@@ -841,15 +856,16 @@ const S9: React.FC<SceneProps> = ({p}) => {
           {[200, 880].map((x) => <path key={x} d={`M ${x},1090 l 0,60 l 40,0`} stroke="#5A4A30" strokeWidth={8} fill="none" />)}
           <ContactShadow cx={380} cy={1060} rx={120} ry={12} opacity={0.4} />
           <g transform={`translate(380 900) rotate(${180 * turn})`}>
-            <Timer h={280} label="60" sand={clamp01((f - b(24) - 20) / 400)} />
+            <Timer h={280} label="60" sand={clamp01((f - b(24) - 20) / 400)} noLabel />
           </g>
+          <g transform="translate(380 1120)"><rect x={-50} y={-4} width={100} height={48} rx={6} fill={C.paper} stroke={C.line} strokeWidth={4} /><text x={0} y={32} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={34} fill={C.ink}>60</text></g>
           <ContactShadow cx={720} cy={1060} rx={100 * land} ry={12} opacity={0.4} />
           <g transform={`translate(720 ${lerp(700, 960, land) + settle(f, b(25) + 14, 5)})`} opacity={land}>
             <Timer h={160} label="30" sand={0} />
             <g transform={`translate(96 -60) rotate(${8 * Math.sin(f / 13)})`}>
               <line x1={0} y1={0} x2={0} y2={30} stroke="#9AA4AC" strokeWidth={3} />
-              <rect x={-40} y={30} width={80} height={36} rx={3} fill={C.vellum} stroke={C.lead} strokeWidth={3} strokeDasharray="6 4" />
-              {[0, 1, 2, 3].map((i) => <line key={i} x1={-28 + i * 16} y1={58} x2={-20 + i * 16} y2={40} stroke={C.lead} strokeWidth={3} />)}
+              <rect x={-46} y={30} width={92} height={36} rx={3} fill={C.vellum} stroke={C.lead} strokeWidth={3} strokeDasharray="6 4" />
+              <text x={0} y={56} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.lead}>DRAFT</text>
             </g>
           </g>
           <g transform={`translate(560 ${lerp(700, 1046, slip)}) rotate(${lerp(-30, -6, slip)})`} opacity={slip}>
@@ -884,7 +900,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} overlay={<>
       <Plate text="PROPOSED · RESIDENTS GET PRIORITY" x={540} y={620} size={34} tone="prop" p={ease(f, b(26) + 8, 6)} />
-      <Plate displayLines={['STATE LAW ·', '"EVERY PERSON HAS A RIGHT TO INSPECT"', '· WITH EXCEPTIONS'] } text={'"EVERY PERSON HAS A RIGHT TO INSPECT"'} x={540} y={1200} size={30} tone="dark" p={ease(f, b(27) + 8, 6)} />
+      <Plate displayLines={['STATE LAW · AS 40.25.120 ·', '"EVERY PERSON HAS A RIGHT TO INSPECT"', '· WITH EXCEPTIONS'] } text={'"EVERY PERSON HAS A RIGHT TO INSPECT"'} x={540} y={1200} size={30} tone="dark" p={ease(f, b(27) + 8, 6)} />
     </>}>
       <SVG>
         {/* low on the steps beside the door: wet stone, the railing running across, a downpipe, rain */}
@@ -928,7 +944,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
       <Plate text="STATED AIM · EFFICIENCY · NO ADDED COST" x={540} y={1270} size={32} tone="warm" p={ease(f, b(31) + 6, 6)} />
     </>}>
       <SVG>
-        <ClerkRoom f={f}>
+        <ClerkRoom f={f} desk={1250}>
           <g transform="translate(330 330)">
             <circle r={80} fill={C.paper} stroke={C.line} strokeWidth={7} />
             {Array.from({length: 12}).map((_, i) => <line key={i} x1={0} y1={-66} x2={0} y2={-56} stroke={C.ink} strokeWidth={4} transform={`rotate(${i * 30})`} />)}
@@ -942,22 +958,22 @@ const S11: React.FC<SceneProps> = ({p}) => {
             <rect x={40} y={140} width={150} height={40} rx={8} fill={C.gun} stroke={C.line} strokeWidth={4} />
             <g transform={`translate(115 ${150 + 2 * Math.sin(f / 9)}) rotate(-5)`}><rect x={-40} y={-4} width={80} height={28} fill={C.paper} stroke={C.line} strokeWidth={3} /></g>
           </g>
-          <Clerk f={f} x={560} y={1160} s={1.25} look={f > b(28) + 6 && f < b(28) + 40 ? -1 : -0.2 + 0.2 * Math.sin(f / 30)} rub={0.35 * lift} cues={[b(28), b(29), b(30)]} />
+          <Clerk f={f} x={560} y={1260} s={1.25} look={f > b(28) + 6 && f < b(28) + 40 ? -1 : -0.2 + 0.2 * Math.sin(f / 30)} rub={0.22 * lift} cues={[b(28), b(29), b(30), b(31)]} />
         </ClerkRoom>
         {/* the stack with the question note on top, a page lifting off it each cycle */}
-        <g transform="translate(330 1150)">
+        <g transform="translate(330 1250)">
           {Array.from({length: 12}).map((_, i) => <rect key={i} x={-110 + 3 * Math.sin(i)} y={-12 - i * 8} width={220} height={8} fill={i % 2 ? C.paper : C.paperD} stroke={C.line} strokeWidth={1.5} />)}
           <g transform={`translate(${40 * lift} ${-110 - 60 * lift}) rotate(${-14 * lift})`}><rect x={-100} y={0} width={200} height={10} fill={C.paper} stroke={C.line} strokeWidth={2} /></g>
         </g>
         {/* the candle on the desk */}
-        <g transform="translate(140 1150)">
+        <g transform="translate(140 1250)">
           <rect x={-22} y={lerp(-160, -130, notch)} width={44} height={lerp(160, 130, notch)} fill={C.paper} stroke={C.line} strokeWidth={4} />
           {[0, 1, 2].map((i) => <line key={i} x1={-22} y1={-120 + i * 40} x2={22} y2={-120 + i * 40} stroke={C.ink} strokeWidth={3} />)}
           <path d={`M 0,${lerp(-160, -130, notch) - 4} q ${9 * Math.sin(f / 3)},-16 0,-36 q -11,20 0,36`} fill={C.lamp} stroke="#C46A1A" strokeWidth={2} />
           <ContactShadow cx={0} cy={0} rx={40} ry={6} opacity={0.4} />
         </g>
         {/* the placard on its easel, turned toward us, then flipped */}
-        <g transform="translate(780 1150)">
+        <g transform="translate(780 1250)">
           <path d="M -90,0 L -70,-140 M 90,0 L 70,-140" stroke={C.line} strokeWidth={6} />
           <g transform={`translate(0 -150) scale(${lerp(0.2, 1, turn)} 1)`}>
             <rect x={-120} y={0} width={240} height={130} rx={4} fill="#FFF4DC" stroke={C.line} strokeWidth={5} />
@@ -972,19 +988,43 @@ const S11: React.FC<SceneProps> = ({p}) => {
   );
 };
 
-/** S12, from above the desk: a waiver stamp lands, the calendar holds at 10, a portrait card snaps into the portal, a dollar request drops into a tray */
+/** the clerk's forearm and hand reaching into an overhead shot from the bottom edge to (tx, ty) */
+const ReachArm: React.FC<{tx: number; ty: number; k: number; from?: [number, number]}> = ({tx, ty, k, from = [540, 2000]}) => {
+  if (k <= 0.01) return null;
+  const x = lerp(from[0], tx, k), y = lerp(from[1], ty, k);
+  const ang = (Math.atan2(y - from[1], x - from[0]) * 180) / Math.PI;
+  const len = Math.hypot(x - from[0], y - from[1]);
+  return (
+    <g>
+      <g transform={`translate(${from[0]} ${from[1]}) rotate(${ang})`}>
+        <rect x={0} y={-38} width={len} height={76} rx={36} fill="#5E4A6A" stroke={C.line} strokeWidth={6} />
+        <path d={`M 20,-24 H ${len - 30}`} stroke="#7E6A8C" strokeWidth={6} opacity={0.7} />
+      </g>
+      <ellipse cx={x} cy={y} rx={42} ry={36} fill={C.skin} stroke={C.line} strokeWidth={5} />
+      <path d={`M ${x - 20},${y + 4} q 20,14 40,0`} stroke="#9A6A4E" strokeWidth={3} fill="none" />
+    </g>
+  );
+};
+
+/** S12, from above the desk the clerk's hand places each thing: a waiver stamp, the calendar at 10, a portrait card into the portal, a dollar request into the tray */
 const S12: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const cal = ease(f, b(33), 14);
   const portal = ease(f, b(34), 12);
   const card = ease(f, b(34) + 8, 12);
   const slide = easeIO(f, b(43), 26);
-  const drop = ease(f, b(35), 10);
-  const cam = track([{t: 0, z: 1.05, fx: 540, fy: 960}, {t: p.dur, z: 1.12, fx: 540, fy: 960}]);
+  const drop = ease(f, b(35) + 2, 12);
+  const rock = settle(f, b(35) + 14, 8, 26);
+  const cam = track([{t: 0, z: 1.05, fx: 540, fy: 900}, {t: p.dur, z: 1.18, fx: 520, fy: 1040}]);
+  // the hand's targets, beat by beat
+  const hand = f < b(33) - 10 ? {k: ease(f, b(32) - 6, 12) * (1 - ease(f, b(32) + 30, 12)), x: 600, y: 860}
+    : f < b(34) - 6 ? {k: ease(f, b(33) - 8, 10) * (1 - ease(f, b(33) + 24, 10)), x: 830, y: 560}
+    : f < b(43) - 4 ? {k: ease(f, b(34) - 4, 10) * (1 - ease(f, b(34) + 30, 10)), x: 720, y: 1040}
+    : {k: ease(f, b(43), 10) * (1 - ease(f, b(35) + 4, 12)), x: lerp(820, 380, slide), y: lerp(1010, 1110, slide)};
   return (
     <Frame p={p} cam={cam} bg={C.oak} warmth={0.08} overlay={<>
-      <Plate displayLines={['PROPOSED ·', 'PUBLIC INTEREST WAIVER STAYS']} text="PROPOSED · PUBLIC INTEREST WAIVER STAYS" x={540} y={600} size={34} tone="prop" p={ease(f, b(32) + 8, 6) * (1 - ease(f, b(34) - 6, 6))} />
-      <Plate displayLines={['10 WORKING DAYS TO RESPOND ·', 'UNCHANGED']} text="10 WORKING DAYS TO RESPOND · UNCHANGED" x={540} y={1180} size={34} tone="warm" p={ease(f, b(33) + 6, 6) * (1 - ease(f, b(34) - 6, 6))} />
+      <Plate displayLines={['PROPOSED ·', 'PUBLIC INTEREST WAIVER STAYS']} text="PROPOSED · PUBLIC INTEREST WAIVER STAYS" x={540} y={600} size={34} tone="prop" p={ease(f, b(32), 6) * (1 - ease(f, b(34) - 6, 6))} />
+      <Plate displayLines={['10 WORKING DAYS TO RESPOND ·', 'UNCHANGED, PER JUNEAU EMPIRE']} text="10 WORKING DAYS TO RESPOND · UNCHANGED" x={540} y={1180} size={34} tone="warm" p={ease(f, b(33) + 6, 6) * (1 - ease(f, b(34) - 6, 6))} />
       <Plate text="COULD · A KNOWN PERSON BEHIND EACH REQUEST" x={540} y={1270} size={30} tone="warm" p={ease(f, b(34) + 6, 6) * (1 - ease(f, b(43) - 6, 6))} />
       <Plate displayLines={['PROPOSED ·', 'REJECT REQUESTS FOR COMMERCIAL GAIN']} text="PROPOSED · REJECT REQUESTS FOR COMMERCIAL GAIN" x={540} y={700} size={34} tone="prop" p={ease(f, b(43) + 4, 6)} />
       <Plate text="COULD, PER JUNEAU EMPIRE" x={540} y={840} size={30} tone="warm" p={ease(f, b(35) + 4, 6)} />
@@ -992,119 +1032,152 @@ const S12: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2320} fill={C.oak} />
         {Array.from({length: 12}).map((_, i) => <path key={i} d={`M -200,${i * 180} Q 540,${i * 180 + 30 * Math.sin(i)} 1280,${i * 180 + 10}`} stroke="#5A3E24" strokeWidth={5} fill="none" />)}
-        <ellipse cx={360} cy={760} rx={460} ry={360} fill={C.warm} opacity={0.18} />
-        {/* the lamp shade rim at the top edge */}
+        {/* cool window light across the desk with rain running down it, the night carried indoors */}
+        <polygon points="620,-100 1280,-100 1280,900 820,700" fill="#9FB4C4" opacity={0.12} />
+        {Array.from({length: 7}).map((_, i) => <line key={i} x1={700 + i * 80} y1={((f * 3 + i * 90) % 800) - 100} x2={706 + i * 80} y2={((f * 3 + i * 90) % 800) - 40} stroke="#2A1A0E" strokeWidth={6} opacity={0.25} />)}
+        {/* the moving lamp pool */}
+        <ellipse cx={360 + 30 * Math.sin(f / 50)} cy={780} rx={460} ry={360} fill={C.warm} opacity={0.2} />
         <path d="M 60,-40 Q 260,160 460,-40 Z" fill={C.green} stroke={C.line} strokeWidth={6} />
+        {/* desk furniture in the bands: a blotter edge, a mug, pens, a pad */}
+        <rect x={60} y={1480} width={960} height={300} rx={10} fill="#3F2A18" stroke={C.line} strokeWidth={5} data-band="ok" />
+        <g data-band="ok" transform="translate(860 1640)"><circle r={70} fill="#E9E1CF" stroke={C.line} strokeWidth={6} /><circle r={50} fill="#3A2614" /><path d="M 68,-10 q 40,0 40,20 q 0,24 -40,24" fill="none" stroke={C.line} strokeWidth={8} /></g>
+        {[0, 1, 2].map((i) => <rect key={i} x={160 + i * 40} y={1560} width={14} height={180} rx={6} fill={['#2F5A44', '#3A4652', '#8C6440'][i]} stroke={C.line} strokeWidth={3} transform={`rotate(${-12 + i * 9} ${167 + i * 40} 1650)`} data-band="ok" />)}
         <g transform="translate(300 820) rotate(-8)"><rect x={-90} y={-60} width={180} height={120} fill={C.paperD} stroke={C.line} strokeWidth={4} />{[0, 1, 2].map((i) => <rect key={i} x={-70} y={-36 + i * 26} width={130 - i * 20} height={8} fill="#B9AA88" />)}</g>
+        <ContactShadow cx={560} cy={960} rx={140} ry={14} opacity={0.35} />
         <g transform="translate(560 880)">
           <rect x={-120} y={-80} width={240} height={160} fill={C.paper} stroke={C.line} strokeWidth={5} />
           {[0, 1, 2].map((i) => <rect key={i} x={-90} y={-50 + i * 30} width={180 - i * 30} height={10} fill={C.paperD} />)}
           <circle cx={40} cy={30} r={44} fill="none" stroke={C.green} strokeWidth={8} opacity={ease(f, b(32) + 12, 6) * 0.8} />
         </g>
         <StrikeProp f={f} at={b(32) + 12} px={600} py={910} lift={110}>
-          <g transform="translate(600 910)" opacity={1 - ease(f, b(32) + 30, 10)}>
+          <g transform="translate(600 910)" opacity={1 - ease(f, b(32) + 34, 10)}>
             <rect x={-40} y={-120} width={80} height={90} rx={10} fill="#5B3A28" stroke={C.line} strokeWidth={5} />
             <rect x={-56} y={-34} width={112} height={34} rx={6} fill="#2F2A26" stroke={C.line} strokeWidth={5} />
           </g>
         </StrikeProp>
-        <g transform="translate(830 470)">
+        <ContactShadow cx={830} cy={680} rx={110} ry={14} opacity={0.35} />
+        <g transform="translate(830 560)">
           <rect x={-110} y={-100} width={220} height={200} rx={10} fill="#FFF4DC" stroke={C.line} strokeWidth={5} />
           <rect x={-110} y={-100} width={220} height={46} rx={10} fill={C.green} stroke={C.line} strokeWidth={5} />
           <circle cx={-80} cy={-77} r={12} fill="none" stroke="#F3E9D2" strokeWidth={3} />
           <g transform={`translate(0 30) scale(1 ${lerp(0.2, 1, cal)}) translate(0 -30)`}><text x={0} y={56} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={80} fill={C.ink}>10</text></g>
         </g>
+        <ContactShadow cx={800} cy={1180} rx={160} ry={16} opacity={0.35} />
         <g transform="translate(800 1080)">
-          <rect x={-150} y={-100} width={300} height={200} rx={14} fill="#13202B" stroke={C.line} strokeWidth={6} />
-          <rect x={-120} y={-60} width={240} height={50} rx={6} fill={portal > 0.5 ? '#E9EEF0' : '#2A3A44'} />
-          {card > 0.01 && <g transform={`translate(-80 ${-35 + settle(f, b(34) + 14, 4)}) scale(${card})`}>
+          <rect x={-170} y={-110} width={340} height={220} rx={14} fill="#13202B" stroke={C.line} strokeWidth={6} />
+          <rect x={-150} y={-92} width={300} height={184} rx={8} fill={portal > 0.5 ? '#E9EEF0' : '#1A2830'} />
+          {portal > 0.5 && <g>
+            <circle cx={0} cy={-56} r={18} fill="none" stroke="#2F5A44" strokeWidth={4} />
+            <rect x={-110} y={-22} width={220} height={34} rx={6} fill="#FFFFFF" stroke="#9AA4AC" strokeWidth={3} />
+            <rect x={-110} y={22} width={220} height={34} rx={6} fill="#FFFFFF" stroke="#9AA4AC" strokeWidth={3} />
+            <rect x={-40} y={66} width={80} height={18} rx={6} fill="#2F5A44" />
+          </g>}
+          {card > 0.01 && <g transform={`translate(-80 ${-5 + settle(f, b(34) + 14, 4)}) scale(${card})`}>
             <rect x={-26} y={-22} width={52} height={44} rx={5} fill={C.paper} stroke={C.line} strokeWidth={3} />
             <circle cx={0} cy={-4} r={9} fill={C.skin} stroke={C.line} strokeWidth={2} />
             <path d="M -16,18 Q 0,4 16,18" fill="#5E4A6A" stroke={C.line} strokeWidth={2} />
           </g>}
-          <rect x={-40} y={-50} width={140 * portal} height={14} fill="#6E7C88" />
         </g>
-        {/* the dollar request sliding across and dropping into the tray */}
-        <g transform="translate(260 1170)">
-          <rect x={-130} y={-40} width={260} height={120} rx={8} fill="none" stroke="#9AA4AC" strokeWidth={7} />
-          {[0, 1, 2, 3].map((i) => <line key={i} x1={-130 + i * 86} y1={-40} x2={-130 + i * 86} y2={80} stroke="#9AA4AC" strokeWidth={3} />)}
-          <g transform={`translate(${lerp(500, 0, slide)} ${lerp(-260, -60, slide) + 50 * drop}) rotate(${lerp(-12, 2, slide) + settle(f, b(35) + 8, 3)})`} opacity={slide > 0 ? 1 : 0}>
+        {/* the tray and the dollar request sliding across, dropping in, the tray rocking */}
+        <g transform={`translate(380 1170) rotate(${rock})`}>
+          <ContactShadow cx={0} cy={86} rx={150} ry={14} opacity={0.4} />
+          <rect x={-140} y={-40} width={280} height={120} rx={8} fill="#2A2E34" opacity={0.2} stroke="#9AA4AC" strokeWidth={7} />
+          {[0, 1, 2, 3].map((i) => <line key={i} x1={-140 + i * 93} y1={-40} x2={-140 + i * 93} y2={80} stroke="#9AA4AC" strokeWidth={3} />)}
+          <g transform={`translate(${lerp(440, 0, slide)} ${lerp(-160, -60, slide) + 70 * drop}) rotate(${lerp(-12, 2, slide)})`} opacity={slide > 0 ? 1 : 0}>
             <rect x={-80} y={-46} width={160} height={92} fill={C.paper} stroke={C.line} strokeWidth={4} />
             <text x={0} y={20} textAnchor="middle" fontFamily="Fraunces, serif" fontWeight={900} fontSize={60} fill={C.ink}>$</text>
           </g>
         </g>
+        <ReachArm tx={hand.x} ty={hand.y} k={hand.k} from={[700, 2000]} />
         <HeldTravel f={f} x={180} y={720} w={260} h={200} seed={14} strength={0.34} rx={10} mode="shadow" />
       </SVG>
     </Frame>
   );
 };
 
-/** S13, the door in cross-section: outside in the rain on the left, the basket inside on the right; one real stack and one dashed ghost at the same 250 line */
+/** S13, the door in cross-section: outside, a person in a rain shell posts hand-filled forms with a gloved hand while Tote waits; inside, the forms stack to the 250 line beside a dashed ghost IF ALLOWED */
 const S13: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const open = easeIO(f, b(36), 28);
   const arrive = easeIO(f, b(36) + 4, 30);
-  const drop = ease(f, b(37) - 6, 16);
-  const L1 = ease(f, b(44), 10), L2 = ease(f, b(44) + 24, 10), L3 = ease(f, b(44) + 48, 10);
+  const post = ease(f, b(37) - 14, 12);
+  const sheets = Math.round(20 * clamp01((f - b(37) + 6) / 24));
+  const ghost = ease(f, b(37) + 10, 14);
+  const L1 = ease(f, b(44), 8) * (1 - ease(f, b(44) + 22, 6));
+  const L2 = ease(f, b(44) + 24, 8) * (1 - ease(f, b(44) + 46, 6));
+  const L3 = ease(f, b(44) + 48, 8);
   const tagIn = ease(f, b(38), 14);
-  const cam = track([{t: 0, z: 1.25, fx: 540, fy: 960}, {t: b(36) + 30, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.04, fx: 540, fy: 960}]);
-  const lineY = 1000;
+  const cam = track([{t: 0, z: 1.2, fx: 540, fy: 900}, {t: b(36) + 30, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 1.04, fx: 540, fy: 950}]);
+  const G = 1150; // outside ground line and inside basket floor
+  const lineY = G - 280;
   return (
     <Frame p={p} cam={cam} overlay={<>
-      <Plate text="PROPOSED CAPS" x={540} y={600} size={34} tone="prop" p={ease(f, b(36) + 4, 6) * (1 - ease(f, b(37) - 6, 6))} />
-      <Plate displayLines={['VOLUME · 250 DOCUMENTS,', 'WHATEVER TOOL FILED IT']} text="VOLUME · 250 DOCUMENTS, WHATEVER TOOL FILED IT" x={540} y={1200} size={34} tone="dark" p={ease(f, b(37) + 6, 6) * (1 - ease(f, b(44) - 4, 6))} />
-      <Plate text="WHAT DOES THE TOOL LINE ADD?" x={540} y={680} size={36} tone="dark" p={ease(f, b(44) + 4, 6)} />
-      <Plate text="NOTHING REPORTED SAYS" x={540} y={1100} size={34} tone="plate" p={ease(f, b(38) + 4, 6)} />
+      <Plate text="PROPOSED CAPS" x={540} y={700} size={34} tone="prop" p={ease(f, b(36) + 4, 6) * (1 - ease(f, b(37) - 6, 6))} />
+      <Plate displayLines={['VOLUME · 250 DOCUMENTS,', 'WHATEVER TOOL FILED IT']} text="VOLUME · 250 DOCUMENTS, WHATEVER TOOL FILED IT" x={540} y={1250} size={34} tone="dark" p={ease(f, b(37) + 6, 6) * (1 - ease(f, b(44) - 4, 6))} />
+      <Plate text="WHAT DOES THE TOOL LINE ADD?" x={540} y={530} size={36} tone="dark" p={ease(f, b(44) + 4, 6)} />
+      <Plate text="NOTHING REPORTED SAYS" x={540} y={620} size={34} tone="plate" p={ease(f, b(38) + 4, 6)} />
     </>}>
       <SVG>
-        {/* outside half */}
+        {/* outside half: night, hillside, lamp, the JUNEAU sign, rain, a step and a street with the lamp's reflection */}
         <rect data-band="ok" x={-200} y={-200} width={720} height={2320} fill={C.night} />
         <g transform="translate(-260 -40) scale(0.9)"><Hillside f={f} /></g>
-        <polygon points="40,360 -200,1500 520,1500 200,360" fill={C.lamp} opacity={0.12} />
+        <polygon points="40,360 -200,1300 520,1300 200,360" fill={C.lamp} opacity={0.12} />
         <g transform="translate(70 380)"><rect x={-10} y={-34} width={monoW('JUNEAU', 30) + 40} height={56} rx={6} fill={C.green} stroke={C.line} strokeWidth={5} /><text x={10} y={4} fontFamily={MONO} fontWeight={800} fontSize={30} letterSpacing={1.5} fill="#F3E9D2">JUNEAU</text></g>
-        <rect x={-200} y={1300} width={720} height={800} fill="#2A3440" data-band="ok" />
-        {/* the door in section: its thickness, the slot passing through */}
-        <rect x={500} y={380} width={80} height={920} fill={C.door} stroke={C.line} strokeWidth={8} />
+        <Rain f={f} seed={9} cone={false} dense={0.5} />
+        <rect data-band="ok" x={-200} y={G} width={720} height={130} fill="#2A3440" stroke={C.line} strokeWidth={6} />
+        <rect data-band="ok" x={-200} y={G + 130} width={720} height={900} fill="#141D1C" />
+        <ellipse data-band="ok" cx={200} cy={G + 300} rx={160} ry={22} fill={C.lamp} opacity={0.25 + 0.08 * Math.sin(f / 9)} />
+        {Array.from({length: 5}).map((_, i) => <rect data-band="ok" key={i} x={((i * 150 + f * 1.5) % 760) - 120} y={G + 420 + (i % 3) * 60} width={60} height={6} fill={C.lamp} opacity={0.3} />)}
+        {/* the door in section: its thickness, the slot passing through, a sill */}
+        <rect data-band="ok" x={500} y={300} width={80} height={G - 300} fill={C.door} stroke={C.line} strokeWidth={8} />
         <rect x={496} y={600} width={88} height={50} fill="#0B0E12" stroke={C.line} strokeWidth={5} />
-        {/* inside half */}
+        <rect data-band="ok" x={470} y={G - 10} width={140} height={30} fill="#4C5E70" stroke={C.line} strokeWidth={5} />
+        {/* inside half: warm spill, the tape line, the basket on the floor */}
         <rect data-band="ok" x={580} y={-200} width={700} height={2320} fill="#1E1C19" />
-        <polygon points="1280,400 760,560 760,1300 1280,1500" fill={C.warm} opacity={0.12} />
-        <rect x={580} y={1300} width={700} height={800} fill="#15130F" data-band="ok" />
-        {/* the 250 tape line across the inside wall */}
+        <polygon points="1280,300 760,460 760,1150 1280,1300" fill={C.warm} opacity={0.12} />
+        <rect data-band="ok" x={580} y={G} width={700} height={1000} fill="#15130F" />
+        <rect data-band="ok" x={580} y={G} width={700} height={14} fill="#3A3128" />
+        {[[700, G + 260, -8], [960, G + 420, 10]].map(([x, y, r], i) => <g data-band="ok" key={i} transform={`translate(${x} ${y}) rotate(${r})`}><rect x={-80} y={-50} width={160} height={100} fill={C.paperD} stroke={C.line} strokeWidth={3} />{[0, 1, 2].map((j) => <rect key={j} x={-60} y={-30 + j * 22} width={100 - j * 16} height={7} fill="#B9AA88" />)}</g>)}
         <rect x={600} y={lineY - 14} width={460} height={28} fill="#E8DDB5" opacity={0.92} stroke="#B8A979" strokeWidth={2} />
-        <text x={620} y={lineY - 24} textAnchor="start" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.lead}>250</text>
-        {/* the basket */}
-        <path d="M 620,1000 L 640,1290 H 1040 L 1060,1000" fill="none" stroke="#9AA4AC" strokeWidth={8} opacity={open} />
-        {/* the person's real stack and Tote's dashed ghost stack */}
-        <g transform={`translate(740 ${lerp(640, 1280, drop)})`} opacity={open}>
-          {Array.from({length: 20}).map((_, i) => <rect key={i} x={-80 + 2 * Math.sin(i * 1.3)} y={-i * 14} width={160} height={12} fill={i % 3 ? '#FFFFFF' : '#EEF2F4'} stroke={C.line} strokeWidth={1.5} />)}
-          <circle cx={-50} cy={-276} r={14} fill="none" stroke="#2F5A44" strokeWidth={4} />
+        <text x={620} y={lineY - 24} textAnchor="start" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.paper}>250</text>
+        <ContactShadow cx={840} cy={G} rx={230} ry={18} opacity={0.45} />
+        {/* the forms stack, rising sheet by sheet to the line */}
+        <g transform={`translate(730 ${G - 10})`} opacity={open}>
+          {Array.from({length: sheets}).map((_, i) => <rect key={i} x={-80 + 2 * Math.sin(i * 1.3)} y={-i * 13.4} width={160} height={11} fill={i % 3 ? '#FFFFFF' : '#EEF2F4'} stroke={C.line} strokeWidth={1.5} />)}
+          {sheets > 0 && <circle cx={-50} cy={-sheets * 13.4 + 4} r={10} fill="none" stroke="#2F5A44" strokeWidth={3} />}
         </g>
-        <g transform={`translate(940 1280)`} opacity={open * ease(f, b(37), 12)}>
-          <rect x={-80} y={-280} width={160} height={292} fill="none" stroke={C.sea} strokeWidth={5} strokeDasharray="16 12" />
-          <rect x={-84} y={-262} width={168} height={30} rx={3} fill="#13202B" />
-          <text x={0} y={-240} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.sea}>IF ALLOWED</text>
+        {/* Tote's stack only as a dashed ghost, IF ALLOWED */}
+        <g transform={`translate(950 ${G - 10})`} opacity={open * ghost}>
+          <rect x={-80} y={-268} width={160} height={268} fill="none" stroke={C.sea} strokeWidth={5} strokeDasharray="16 12" />
+          <rect x={-84} y={-250} width={168} height={30} rx={3} fill="#13202B" />
+          <text x={0} y={-228} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={C.sea}>IF ALLOWED</text>
         </g>
-        {/* the two senders outside, arriving at the slot side by side */}
-        <g transform={`translate(${lerp(-120, 360, arrive)} 640)`}>
-          <g transform="rotate(-4)"><rect x={-60} y={-40} width={120} height={80} fill="#FFFFFF" stroke={C.line} strokeWidth={4} /><circle cx={-36} cy={-20} r={10} fill="none" stroke="#2F5A44" strokeWidth={3} />{[0, 1, 2].map((i) => <rect key={i} x={-20} y={-24 + i * 18} width={70} height={7} fill="#9AA4AC" />)}</g>
-          <g transform="translate(-30 30)"><rect x={-130} y={-10} width={130} height={40} rx={18} fill="#5B3A28" stroke={C.line} strokeWidth={5} /><ellipse cx={0} cy={10} rx={22} ry={19} fill="#3E2A1E" stroke={C.line} strokeWidth={4} /></g>
+        <path d={`M 620,${G - 280} L 640,${G} H 1040 L 1060,${G - 280}`} fill="none" stroke="#9AA4AC" strokeWidth={8} opacity={open} />
+        {/* outside: the person in a rain shell posting the forms with a gloved hand, Tote waiting */}
+        <g transform={`translate(${lerp(-200, 290, arrive)} ${G}) scale(0.58)`}>
+          <Person f={f} x={0} y={0} s={1} hold="none" reach={post} cues={[b(37)]} look={0.4} />
         </g>
-        <Tote x={lerp(-160, 300, arrive)} y={1300} scale={0.9} f={f} facing={1} roll={lerp(-160, 300, arrive)} envelope={arrive} emotion="eager" />
-        {/* the three labels lighting in turn */}
-        {[[640, 930, 'VOLUME', L1], [610, 560, 'A KNOWN PERSON IF A PORTAL', L2], [640, 780, 'TOOL LINE', L3]].map(([x, y, t, k], i) => (
-          <g key={i} opacity={k as number} transform={`translate(${x} ${y})`}>
-            <rect x={-10} y={-30} width={monoW(t as string, 24) + 30} height={44} rx={4} fill="#101A17" stroke="#F3E9D2" strokeWidth={3} />
-            <text x={5} y={0} fontFamily={MONO} fontWeight={800} fontSize={24} letterSpacing={1.5} fill="#F3E9D2">{t}</text>
+        <g transform={`translate(${lerp(-200, 290, arrive) + 330 * 0.58 * Math.min(1, post * 1.2) + 70} ${lerp(G - 420, 625, post)}) rotate(-4)`} opacity={arrive > 0.9 ? 1 - ease(f, b(37) + 4, 6) : 0}>
+          <rect x={-56} y={-36} width={112} height={72} fill="#FFFFFF" stroke={C.line} strokeWidth={4} />
+          <circle cx={-32} cy={-18} r={9} fill="none" stroke="#2F5A44" strokeWidth={3} />
+          <ellipse cx={-62} cy={8} rx={26} ry={22} fill="#3E2A1E" stroke={C.line} strokeWidth={4} />
+          <path d="M -80,0 q 18,-10 36,0" stroke="#6B4A2E" strokeWidth={3} fill="none" />
+        </g>
+        <Tote x={lerp(-160, 110, arrive)} y={G} scale={0.78} f={f} facing={1} roll={lerp(-160, 110, arrive)} envelope={arrive} emotion="puzzled" />
+        {/* the three labels, one at a time, inside the wall above the line */}
+        {[['VOLUME', L1], ['A KNOWN PERSON IF A PORTAL', L2], ['TOOL LINE', L3]].map(([t, k], i) => (
+          <g key={i} opacity={k as number} transform={`translate(640 ${lineY - 90})`}>
+            <rect x={-10} y={-30} width={monoW(t as string, 20) + 30} height={42} rx={4} fill="#101A17" stroke="#F3E9D2" strokeWidth={3} />
+            <text x={5} y={-1} fontFamily={MONO} fontWeight={800} fontSize={20} letterSpacing={1.5} fill="#F3E9D2">{t}</text>
           </g>
         ))}
         {/* the blank tag swinging into the middle */}
-        <g transform={`translate(540 ${lerp(200, 470, tagIn)}) rotate(${Math.sin(f / 11) * 10})`} opacity={tagIn}>
+        <g transform={`translate(540 ${lerp(160, 420, tagIn)}) rotate(${Math.sin(f / 11) * 10})`} opacity={tagIn}>
           <line x1={0} y1={-90} x2={0} y2={-20} stroke="#9AA4AC" strokeWidth={3} />
           <rect x={-50} y={-20} width={100} height={90} fill={C.tagc} stroke={C.line} strokeWidth={5} />
           <circle cx={0} cy={-4} r={7} fill={C.ink} />
         </g>
-        <Rain f={f} seed={9} cone={false} dense={0.5} />
-        <HeldTravel f={f} x={620} y={720} w={420} h={560} seed={15} strength={0.34} rx={20} mode="shadow" />
+        <HeldTravel f={f} x={620} y={G - 300} w={440} h={300} seed={15} strength={0.34} rx={20} mode="shadow" />
       </SVG>
     </Frame>
   );
@@ -1134,7 +1207,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <DoorWorld f={f} sign={false}>
           <path d="M 200,440 L 880,440 L 940,520 L 140,520 Z" fill="#2F4A3E" stroke={C.line} strokeWidth={6} />
           {Array.from({length: 8}).map((_, i) => <path key={i} d={`M ${150 + i * 100},520 q 50,30 100,0`} fill="#3E5E50" stroke={C.line} strokeWidth={4} />)}
-          <Flap x={LX} y={960} scale={1.05} f={f} face={false} faceplate={1} sketch={1} bolts={4} tag={1} dashSolid={trace * (1 - back)} dashGlow={0.5 + 0.5 * back} cutoutGlow={0.2} open={drift > 0.6 ? 0.5 : 0} />
+          <Flap x={LX} y={960} scale={1.05} f={f} face={false} faceplate={1} sketch={1} bolts={4} tag={1} dashSolid={trace * (1 - back)} dashGlow={0.25 * (1 - back)} cutoutGlow={0.1} open={drift > 0.6 ? 0.5 : 0} />
           {trace > 0.01 && back < 0.99 && (
             <g transform={`translate(${edgeX + 10} ${rulerY})`} opacity={1 - back}>
               <rect x={0} y={-90} width={34} height={180} rx={4} fill="#C9D2D9" stroke={C.line} strokeWidth={4} />
@@ -1154,7 +1227,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
             <rect x={-150} y={-14} width={150} height={46} rx={20} fill={C.shell} stroke={C.line} strokeWidth={5} />
                         <ellipse cx={0} cy={6} rx={22} ry={19} fill={C.skin} stroke={C.line} strokeWidth={4} />
           </g>}
-          <Question x={lerp(930, edgeX + 40, drift)} y={lerp(700, 880, drift)} s={lerp(0.8, 0.45, drift)} f={f} seed={7} />
+          <Question x={lerp(930, LX + 120, drift)} y={lerp(700, 900, drift)} s={lerp(1.1, 0.8, drift)} f={f} seed={7} />
         </DoorWorld>
         {/* the person's shoulder and hood in the near foreground, the phone rising */}
         <g data-band="ok">
