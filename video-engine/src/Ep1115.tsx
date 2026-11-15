@@ -1018,7 +1018,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const cam = track([{t: 0, z: 1.05, fx: 540, fy: 900}, {t: p.dur, z: 1.18, fx: 520, fy: 1040}]);
   // the hand's targets, beat by beat
   const hand = f < b(33) - 10 ? {k: ease(f, b(32) - 6, 12) * (1 - ease(f, b(32) + 30, 12)), x: 600, y: 860}
-    : f < b(34) - 6 ? {k: ease(f, b(33) - 8, 10) * (1 - ease(f, b(33) + 24, 10)), x: 830, y: 560}
+    : f < b(34) - 6 ? {k: ease(f, b(33) - 8, 10) * (1 - ease(f, b(33) + 24, 10)), x: 960, y: 650}
     : f < b(43) - 4 ? {k: ease(f, b(34) - 4, 10) * (1 - ease(f, b(34) + 30, 10)), x: 720, y: 1040}
     : {k: ease(f, b(43), 10) * (1 - ease(f, b(35) + 4, 12)), x: lerp(820, 380, slide), y: lerp(1010, 1110, slide)};
   return (
