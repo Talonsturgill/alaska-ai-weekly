@@ -430,7 +430,7 @@ const ClerkRoom: React.FC<{f: number; children?: React.ReactNode; desk?: number}
 };
 
 /** the inside of the door: plank back, the slot's inner hood, a wire basket under it, a painted 250 line on the wall */
-const InsideDoor: React.FC<{f: number; stack?: number; children?: React.ReactNode}> = ({f, stack = 0, children}) => {
+const InsideDoor: React.FC<{f: number; stack?: number; children?: React.ReactNode; basket?: boolean}> = ({f, stack = 0, children, basket = true}) => {
   const lineY = 860;
   return (
     <g>
@@ -448,7 +448,7 @@ const InsideDoor: React.FC<{f: number; stack?: number; children?: React.ReactNod
       <line x1={140} y1={lineY} x2={940} y2={lineY} stroke={C.paper} strokeWidth={8} strokeDasharray="30 14" />
       {children}
       {/* the wire basket */}
-      <g transform="translate(540 1120)">
+      {basket && <g transform="translate(540 1120)">
         <path d="M -260,-220 L -230,140 H 230 L 260,-220" fill="none" stroke="#9AA4AC" strokeWidth={8} />
         {Array.from({length: 9}).map((_, i) => <line key={i} x1={-230 + i * 57.5} y1={140} x2={-260 + i * 65} y2={-220} stroke="#9AA4AC" strokeWidth={4} />)}
         {Array.from({length: 4}).map((_, i) => <line key={i} x1={-256 + i * 4} y1={-130 + i * 80} x2={256 - i * 4} y2={-130 + i * 80} stroke="#9AA4AC" strokeWidth={4} />)}
@@ -456,8 +456,8 @@ const InsideDoor: React.FC<{f: number; stack?: number; children?: React.ReactNod
         {Array.from({length: Math.round(28 * clamp01(stack))}).map((_, i) => (
           <rect key={i} x={-200 + 6 * Math.sin(i * 1.7)} y={120 - i * 9.6} width={400} height={8} fill={i % 3 ? C.paper : C.paperD} stroke={C.line} strokeWidth={1.5} />
         ))}
-      </g>
-      <ContactShadow cx={540} cy={1290} rx={300} ry={26} opacity={0.4} />
+      </g>}
+      {basket && <ContactShadow cx={540} cy={1290} rx={300} ry={26} opacity={0.4} />}
       <rect x={-200} y={1300} width={1480} height={800} fill="#15130F" data-band="ok" />
       <rect x={-200} y={1300} width={1480} height={16} fill="#3A3128" data-band="ok" />
       {[[160, 1620], [820, 1700]].map(([x, y], i) => <rect key={i} x={x} y={y} width={170} height={110} fill={C.paper} stroke={C.line} strokeWidth={4} transform={`rotate(${i ? 8 : -6} ${x} ${y})`} data-band="ok" />)}
@@ -836,7 +836,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
       <Plate displayLines={['PROPOSED ·', 'APPEAL WINDOW 60 TO 30 WORKING DAYS']} text="PROPOSED · APPEAL WINDOW 60 TO 30 WORKING DAYS" x={540} y={1210} size={34} tone="prop" p={ease(f, b(25) + 6, 6)} />
     </>}>
       <SVG>
-        <InsideDoor f={f} stack={1}>
+        <InsideDoor f={f} stack={1} basket={false}>
           <rect x={120} y={1060} width={840} height={30} fill={C.oakL} stroke={C.line} strokeWidth={6} />
           {[200, 880].map((x) => <path key={x} d={`M ${x},1090 l 0,60 l 40,0`} stroke="#5A4A30" strokeWidth={8} fill="none" />)}
           <ContactShadow cx={380} cy={1060} rx={120} ry={12} opacity={0.4} />
@@ -1053,7 +1053,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
       <Plate text="PROPOSED CAPS" x={540} y={600} size={34} tone="prop" p={ease(f, b(36) + 4, 6) * (1 - ease(f, b(37) - 6, 6))} />
       <Plate displayLines={['VOLUME · 250 DOCUMENTS,', 'WHATEVER TOOL FILED IT']} text="VOLUME · 250 DOCUMENTS, WHATEVER TOOL FILED IT" x={540} y={1200} size={34} tone="dark" p={ease(f, b(37) + 6, 6) * (1 - ease(f, b(44) - 4, 6))} />
       <Plate text="WHAT DOES THE TOOL LINE ADD?" x={540} y={680} size={36} tone="dark" p={ease(f, b(44) + 4, 6)} />
-      <Plate text="NOTHING REPORTED SAYS" x={540} y={770} size={34} tone="plate" p={ease(f, b(38) + 4, 6)} />
+      <Plate text="NOTHING REPORTED SAYS" x={540} y={1100} size={34} tone="plate" p={ease(f, b(38) + 4, 6)} />
     </>}>
       <SVG>
         {/* outside half */}
@@ -1071,7 +1071,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <rect x={580} y={1300} width={700} height={800} fill="#15130F" data-band="ok" />
         {/* the 250 tape line across the inside wall */}
         <rect x={600} y={lineY - 14} width={460} height={28} fill="#E8DDB5" opacity={0.92} stroke="#B8A979" strokeWidth={2} />
-        <text x={620} y={lineY + 9} textAnchor="start" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.lead}>250</text>
+        <text x={620} y={lineY - 24} textAnchor="start" fontFamily={MONO} fontWeight={800} fontSize={24} fill={C.lead}>250</text>
         {/* the basket */}
         <path d="M 620,1000 L 640,1290 H 1040 L 1060,1000" fill="none" stroke="#9AA4AC" strokeWidth={8} opacity={open} />
         {/* the person's real stack and Tote's dashed ghost stack */}
