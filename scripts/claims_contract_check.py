@@ -415,6 +415,31 @@ def imported_labels(engine_path, engine, props, root):
         return [], f"imported labels NOT RESOLVED (no helper credit): {exc}"
 
 
+# "label X" IN A PROSE `requires` IS A DRAWING INSTRUCTION, SO IT IS CHECKED (machine pass 2026-11-15;
+# queue: claim-cite-on-plate). 11-15's fact-checker wrote `"label CURRENT RULE, 2 AAC 96.310"` on five
+# current-law claims, and five plates went to the first panel without the citation, because a claim
+# that also carried a machine `contract` had its prose `requires` ignored outright, not even counted
+# as prose. Each comma-separated part after "label" must be drawn whenever the claim's own card is.
+_LABEL_RE = re.compile(r"^\s*label\s+(.+?)\s*$", re.I)
+
+
+def label_obligations(requires):
+    """([[part, ...] per "label ..." item], count of other prose items) from a prose `requires`."""
+    items = requires if isinstance(requires, list) else [requires] if isinstance(requires, str) else []
+    labels, rest = [], 0
+    for x in items:
+        x = str(x)
+        m = _LABEL_RE.match(x)
+        if m:
+            parts = [p.strip() for p in m.group(1).split(",") if _norm(p)]
+            if parts:
+                labels.append(parts)
+                continue
+        if x.strip():
+            rest += 1
+    return labels, rest
+
+
 def _report_prose(prose_only, total):
     """Never let a clean line imply coverage this gate did not provide."""
     if not prose_only:
@@ -477,7 +502,22 @@ def main():
         # gate outright with AttributeError, which BLOCKED the panel on a shape mismatch
         # rather than on a defect. Machine assertions now live in `contract`; a prose-only
         # claim is skipped here and still checked by vo_claims_check.py.  (2026-08-08)
+        labels, prose_rest = label_obligations(c.get("requires"))
+        if labels:
+            on = c.get("on_screen") or ""
+            if appears(on):
+                for parts in labels:
+                    for part in parts:
+                        checked += 1
+                        if not appears(part):
+                            problems.append(f"{c['id']}: its requires says \"label {', '.join(parts)}\" and its card "
+                                            f"{on!r} is drawn, but {part!r} is drawn nowhere. Put it on that plate "
+                                            f"(displayLines) or on a tag beside it.")
+        if isinstance(c.get("contract"), dict) and c.get("contract") and prose_rest:
+            prose_only.append((c["id"], prose_rest))
         req = c.get("contract") or c.get("requires") or {}
+        if isinstance(req, (list, str)) and labels:
+            req = [x for x in (req if isinstance(req, list) else [req]) if not _LABEL_RE.match(str(x))] or {}
         if isinstance(req, list):
             # PROSE OBLIGATIONS ARE STILL OBLIGATIONS, AND THIS GATE MUST SAY SO (2026-08-09).
             # Skipping them silently was the whole defect. On this run all 22 claims carried

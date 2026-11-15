@@ -58,6 +58,10 @@ STOP = {
     "association", "corporation", "consortium", "council", "commission", "bureau",
     # citation scaffolding
     "fr", "cfr", "usc", "doc", "no", "vol", "id",
+    # statute-name scaffolding (2026-11-15): "Public Records Act" refused the records-rule story as
+    # a DUP of the 10-21 walrus film, whose list carried "Marine Mammal Protection Act" and "Alaska
+    # Public Media". Neither word names a subject; "records" and the agency still vote.
+    "act", "public",
 }
 
 def _is_bare_number(w: str) -> bool:
@@ -113,11 +117,16 @@ def entity_key(e):
 DEDUPE_WINDOW_DAYS = 30
 
 
-def recent(d, days):
-    today = dt.date.today(); out = []
+def recent(d, days, asof=None):
+    """Entries within `days` of today. `asof` (an ISO date, for the self-test) replays the ledger as
+    it stood that day: the window ends on it and entries dated after it are left out, so a measured
+    case keeps meaning what it meant when it was measured instead of ageing out of the window."""
+    today = dt.date.fromisoformat(asof) if asof else dt.date.today(); out = []
     for e in d["dispatch_history"]:
         try: ed = dt.date.fromisoformat(str(e.get("date")))
         except Exception: ed = None
+        if asof and ed is not None and ed > today:
+            continue
         if ed is None or (today - ed).days <= days:
             out.append(e)
     return out
@@ -126,6 +135,7 @@ def main():
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(dest="cmd", required=True)
     pl = sub.add_parser("list");  pl.add_argument("--days", type=int, default=DEDUPE_WINDOW_DAYS)
     pc = sub.add_parser("check"); pc.add_argument("--entities", required=True); pc.add_argument("--days", type=int, default=DEDUPE_WINDOW_DAYS)
+    pc.add_argument("--asof", default="", help="replay the ledger as of this ISO date (dedupe_selftest)")
     pc.add_argument("--hero", default="",
                     help="the library asset cast as this run's HERO / AI-embodiment (e.g. ServerMachine, "
                          "Vale, Sourdough). HARD GATE (2026-07-21 owner rule): the same hero asset in "
@@ -159,7 +169,7 @@ def main():
 
     elif a.cmd == "check":
         cand = norm(a.entities)
-        for e in recent(d, a.days):
+        for e in recent(d, a.days, a.asof or None):
             if e.get("slug") and e.get("slug") in a.entities:
                 print(f"DUP: slug {e.get('slug')} ({e.get('date')})"); sys.exit(1)
             shared = cand & entity_key(e)

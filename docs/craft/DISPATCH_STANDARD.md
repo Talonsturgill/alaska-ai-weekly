@@ -86,6 +86,16 @@ document, not of the judge.
   18 to 26 held strips. On a scratch Ep1111 the default strength took held_plan from 18 to 12, and a
   shadow instead of a light sweep on the S6 whiteout took it to 10. A light sweep on snow or paper
   moves nothing; use mode="shadow" there.
+  WRAP THE PROP, DON'T TRACE IT (machine pass 2026-11-15, heldtravel-glare repeat 2). The standard
+  said both "give it the whole frame" (11-10) and "size it to the prop" (11-14), and each run that
+  followed one shipped the other's defect: frame-sized bands on 11-13, a quad over the gold plate on
+  11-14, pale quads over the letterbox on 11-15. Pass the held thing as children,
+  `<HeldTravel f={f} x y w h mode="sweep"><Prop /></HeldTravel>`, and the travel is masked to the
+  prop's own drawn pixels; the box then only sets where the band travels, so a box too big or a wrong
+  rx can't paint outside the drawing (`held_travel_look_check.py`: a box 1.9x the sheet changes 0.000
+  percent of pixels outside it wrapped, 8.7 percent bare). `held_beat_check.py --source` prints a NOTE
+  naming each bare-box sweep or shadow by line. For a passing shadow over a whole scene, wrap the
+  scene's ground group, never an empty frame box.
 - **A figure gets the same light as the props: `<FigureFinish>`** (`lib/figureidle.tsx`, machine pass
   2026-11-11, "figures plainer than props" on 11-06, 11-07, 11-10 and every round of 11-11). Wrap each
   hand-rolled figure, outside its IdleFigure, with its foot line, drawn size and ink width: a rim just
@@ -703,7 +713,7 @@ found on "The Net Comes First", with the measurement, and each was avoidable.
 - A lone figure needs a visible idle (breath, head turn, weight shift) on every held beat, three judges named it on every card.
 
 ## 2026-11-13 additions (knowable in advance, from the Ep1113 panel and source gates)
-- A HeldTravel box with a hard edge reads as a pale rectangle across the art in every frame (three judges named the seam). Give it the whole frame, x -60 y -100 w 1200 h 2120, so its edges sit off screen, and use mode "sweep" on mid-tone ground.
+- A HeldTravel box with a hard edge reads as a pale rectangle across the art in every frame (three judges named the seam). (Superseded 2026-11-15: wrap the prop, `<HeldTravel ...><Prop /></HeldTravel>`, so the travel has no box edge of its own; a whole-frame box painted the bands 11-13 and 11-14 shipped.)
 - Paint the sky from above the top edge of the frame (y -60) so no flat strip shows above the gradient, and keep clouds out of the box x under 280, y 400 to 530 where the ILLUSTRATION chip sits.
 - The floor is varied per shot (gravel, boardwalk planks, grass by act), because one repeated stone strip under every outdoor shot was named in every round as dead space.
 - Mountains and big background shapes go high enough to fill the top third, a flat empty sky was named on all three cards.
@@ -737,8 +747,8 @@ Whole-mix loudness is not a voice-to-background measurement.
   fact-check verdict says "no before-copy", the prop starts blank (or neutral) and the old wording
   lives only on the source that actually carries it.
 - **A HeldTravel box is a prop's box, never the frame's.** A 1080 px sweep or shadow paints a
-  visible band (white on violet, grey on ice); five shots of cut 0 carried one. Size the rig to the
-  held prop and round its corners.
+  visible band (white on violet, grey on ice); five shots of cut 0 carried one. Wrap the held prop
+  in the HeldTravel (children form, 2026-11-15) instead of typing its box and corners.
 - **A plate that grows must keep its top edge.** SurveyPod's plate scaled about its centre and rose
   over the lens labels when it swelled; the lib now pins the plate top (`84 + 14 * plateGrow`).
 - **A quoted fragment must survive being read alone.** "ANY PURPOSE OTHER THAN REBRANDING" in
@@ -748,7 +758,7 @@ Whole-mix loudness is not a voice-to-background measurement.
 - **A title in the VO is the source's title.** "A procurement law dean" promoted an associate dean.
 
 ## Things the 2026-11-15 gates, critics and panel found that were knowable in advance ("The Slot Without an Edge")
-- **A label on a part that rotates turns upside down.** The 60 sand timer flipped and read "09" under CURRENT RULE · 60 WORKING DAYS for 4.5 s, the editor's hard blocker. Put a number on the base or draw it outside the rotation (`Timer noLabel` plus an upright plate).
+- **A label on a part that rotates turns upside down.** The 60 sand timer flipped and read "09" under CURRENT RULE · 60 WORKING DAYS for 4.5 s, the editor's hard blocker. Put a number on the base or draw it outside the rotation (`Timer noLabel` plus an upright plate). Enforced since the machine pass of 2026-11-15: `label_footprint_check.py` reads each label's screen matrix and FAILS one turned past 100 degrees or mirrored for 0.5 s (it names the 11-15 timer, S9 65.6 to 70.7 s, on the pre-fix source).
 - **A current-law plate carries its citation.** Each claim that says "label CURRENT RULE, 2 AAC ..." or "label AS 40.25..." needs that cite on the plate, not only in the claim. Keep the plate's `text` equal to the claim's `on_screen` and add the cite as a `displayLines` row so claims_contract still finds the literal.
 - **A proposed rule is never drawn as hardware.** A faceplate bolted on bolt by bolt read as enacted to Gate 0B. Draw a draft as pencil on clipped tracing vellum, dashed, with pencilled bolt circles and a DRAFT tab (`Flap faceplate`, lib/recordslot.tsx).
 - **A picture that admits or refuses something is a ruling.** A note on the clerk's stack read as the AI-drafted request getting in; a robot's real stack beside a person's read as the tool being allowed. Keep the undecided thing undecided on screen (caught half in the slot), and draw a hypothetical as a dashed ghost labelled IF ALLOWED.

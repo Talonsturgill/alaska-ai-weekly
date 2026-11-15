@@ -129,8 +129,8 @@ def held_solved(strips, video, floor=HELD_FLOOR):
 
 REMEDY = ("give each held thing a TRAVELLING element, <HeldTravel> from lib/heldidle.tsx (a sweep "
           "across it, a runner along its cord or rail, a shadow drifting over it), at the lib's default "
-          "strength and mode=\"shadow\" on a white or pale ground, where a light sweep moves nothing; "
-          "not a camera move")
+          "strength and mode=\"shadow\" on a white or pale ground, where a light sweep moves nothing, "
+          "with the prop as its children so the travel is masked to the prop; not a camera move")
 
 
 def plan_windows(out_dir=os.path.join(REPO, "out", "dispatch")):
@@ -268,6 +268,39 @@ def rig_working(tag, attrs):
     return True
 
 
+def loose_travels(source_text):
+    """Line numbers of every self-closing sweep or shadow <HeldTravel .../> with no clipD: a travel
+    clipped to a hand-typed box instead of its prop's own pixels.
+
+    WHY (machine pass 2026-11-15; queue: heldtravel-glare, repeat 2). The box is a second copy of the
+    prop's outline and it drifts from the first: 11-14 shipped a translucent quad over the gold plate
+    and an ellipse over the seal, 11-15's first probe had pale quads over the letterbox. The wrap form,
+    <HeldTravel ...><Prop /></HeldTravel>, masks the travel to the prop's drawn pixels and
+    held_travel_look_check proves it paints nothing outside them. A runner is a bead on a path and is
+    left alone."""
+    out = []
+    for m in re.finditer(r"<HeldTravel\b", source_text):
+        i, depth = m.end(), 0
+        while i < len(source_text):
+            c = source_text[i]
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+            elif c == ">" and depth == 0:
+                break
+            i += 1
+        attrs = source_text[m.end():i]
+        if not attrs.rstrip().endswith("/"):
+            continue                          # the wrap form: children carry the mask
+        if re.search(r"\bclipD=", attrs) or re.search(r"\bmode=[\"{']*\s*['\"]?runner", attrs):
+            continue
+        if re.search(r"\bgain=\{\s*0\s*\}", attrs):
+            continue
+        out.append(source_text.count("\n", 0, m.start()) + 1)
+    return out
+
+
 def _has_working_rig(body, rigged_comps=()):
     if any(rig_working(t, a) for t, a in _rig_tags(body)):
         return True
@@ -376,6 +409,10 @@ def _self_test():
         os.remove(fh.name)
     assert rig == {1: True, 2: False, 3: True, 4: True, 5: False, 6: False, 7: True, 8: True}, \
         f"treated_shots read {rig}"
+    lt = loose_travels(ep + "<HeldTravel f={f} x={1} y={1} w={2} h={2} mode=\"sweep\"><Desk f={f} /></HeldTravel>\n"
+                       "<HeldTravel f={f} x={1} y={1} w={2} h={2} clipD=\"M0 0\" />\n"
+                       "<HeldTravel f={f} x={1} y={1} w={2} h={2} mode=\"runner\" path={[[0, 0], [1, 1]]} />\n")
+    assert lt == [1, 3, 7, 9], f"loose_travels read {lt}"
     print(f"held_beat_check self-test: PASS (push only {still:.2f}%, push plus prop {moving:.2f}%, "
           f"caption only {caption_only:.2f}%)")
     return 0
@@ -484,6 +521,14 @@ def main_source(argv):
             print(f"held beats (source): all {measured} planned strips move {a.held_floor:g} percent or "
                   "more with the camera solved out")
             continue
+        try:
+            loose = loose_travels(open(t).read())
+        except OSError:
+            loose = []
+        if loose:
+            print(f"  NOTE {len(loose)} HeldTravel sweep/shadow clipped to a hand-typed box, not its prop "
+                  f"(line {', '.join(map(str, loose[:12]))}): wrap the prop, <HeldTravel ...><Prop /></HeldTravel>, "
+                  "so the travel is masked to the prop's own pixels and can't paint a glare quad (heldtravel-glare)")
         try:
             rig = treated_shots(t)
         except (OSError, ValueError):

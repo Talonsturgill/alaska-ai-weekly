@@ -31,6 +31,10 @@ frame inclusive, so at the default step of 3 it takes six consecutive samples, a
 passing over a card for 13 frames is a NOTE, not a FAIL. A label covered 90 percent or more is
 not clipped text, it is not shown, so it is a NOTE too, and so is a label wholly off frame.
 
+It also FAILS a label that faces the reader wrong for 0.5 s or more: turned past 100 degrees, so
+upside down, or mirrored (machine pass 2026-11-15, after 11-15's turned-over timer read "60" as
+"09" for 4.5 s). See reads_wrong.
+
 WHAT IT CAN'T SEE: HTML text (only SVG <text>), text clipped by a clipPath or mask (the hit test
 honours the clip, so the clipped part is simply not on the text), type under about 10 px, and the
 4:5 square cut. caption_band_check owns the caption band.
@@ -136,6 +140,75 @@ def aggregate(data):
     return fails, notes, len(measured)
 
 
+# READS WRONG (machine pass 2026-11-15; queue: rotating-label-reads-wrong). 11-15 turned a sand timer
+# over and its 60 label read 09 for 4.5 s, the editor's only hard blocker; every geometry gate passed
+# it, because the label was inside the frame and nothing covered it. The probe now reads each label's
+# screen matrix: past TURN_MAX degrees either way it is upside down, a reflection reads backwards.
+# A quarter turn (a spine label, a sign on a post) reads, so 90 is allowed. A lone character that
+# reads the same turned over or mirrored is not flagged. Same 0.5 s rule as a cut label.
+TURN_MAX = 100
+SAME_TURNED = set("08HINOSXZosxz-+=|:")
+SAME_MIRRORED = set("08AHIMOTUVWXYilovwx-+=|:")
+
+
+def reads_wrong(label):
+    """'turned' or 'mirrored' when the label's glyphs face the reader wrong, else None."""
+    text = (label.get("text") or "").strip()
+    if label.get("mirror") and not (len(text) == 1 and text in SAME_MIRRORED):
+        return "mirrored"
+    turn = label.get("turn")
+    if isinstance(turn, (int, float)) and abs(turn) > TURN_MAX and not (len(text) == 1 and text in SAME_TURNED):
+        return "turned"
+    return None
+
+
+def aggregate_facing(data):
+    """[run] for every label that faces the reader wrong for MIN_FRAMES observed frames in a row,
+    within one shot; a run breaks on a missing sample, a change of state or a shot boundary."""
+    fails, open_runs, prev_shot = [], {}, None
+
+    def close(lid):
+        run = open_runs.pop(lid, None)
+        if run:
+            run["frames"] = run["last"] - run["first"] + 1
+            if run["frames"] >= MIN_FRAMES:
+                fails.append(run)
+
+    for s in sorted(data["samples"], key=lambda s: s["frame"]):
+        if s["shot"] != prev_shot:
+            for lid in list(open_runs):
+                close(lid)
+            prev_shot = s["shot"]
+        seen = set()
+        for lab in s["labels"]:
+            lid, why = lab["id"], reads_wrong(lab)
+            run = open_runs.get(lid)
+            if run and run["kind"] != why:
+                close(lid)
+                run = None
+            if not why:
+                continue
+            seen.add(lid)
+            if not run:
+                open_runs[lid] = run = {"id": lid, "shot": s["shot"], "text": lab["text"], "kind": why,
+                                        "first": s["frame"], "last": s["frame"], "turn": lab.get("turn"),
+                                        "box": lab.get("box")}
+            run["last"] = s["frame"]
+        for lid in list(open_runs):
+            if lid not in seen:
+                close(lid)
+    for lid in list(open_runs):
+        close(lid)
+    return fails
+
+
+def describe_facing(run):
+    t0, t1 = run["first"] / FPS, (run["last"] + 1) / FPS
+    how = (f"turned {run['turn']} degrees, so it reads upside down" if run["kind"] == "turned"
+           else "mirrored, so it reads backwards")
+    return f"S{run['shot']} {t0:.1f}-{t1:.1f}s ({run['frames']} frames) '{run['text'][:40]}': {how}"
+
+
 def top(d):
     return max(d.items(), key=lambda kv: kv[1])[0] if d else None
 
@@ -170,6 +243,8 @@ REMEDY = {
            "retire it before the push-in, or hang it in the Frame overlay",
     "clipped": "move the label or the art clear of each other for the shot, retire the label before "
                "the art arrives, or draw the art behind it; if the label has no job here, don't draw it",
+    "facing": "counter-rotate the <text> inside the turning group (rotate(-angle) about its own centre) so "
+              "it stays upright, or hide it while the prop is past a quarter turn; never let a turn carry a label",
 }
 
 
@@ -189,6 +264,7 @@ def probe(source, props, step, shots):
 
 def report(data, rel):
     fails, notes, n = aggregate(data)
+    facing = aggregate_facing(data)
     print(f"label_footprint_check: {rel}, {data['frames']} frames sampled every {data['step']}, "
           f"{n} label(s) seen")
     for run in fails:
@@ -201,13 +277,21 @@ def report(data, rel):
     if hidden:
         print(f"  NOTE {len(hidden)} run(s) where a label is fully covered, so not shown, e.g. "
               + "; ".join(describe(r) for r in hidden[:3]))
+    for run in facing:
+        print(f"  FAIL {describe_facing(run)}")
+        print(f"       fix: {REMEDY['facing']}")
     if n == 0:
         print("label_footprint_check: measured NOTHING, which is a failure and not a pass")
         return 1, fails, notes
+    if facing:
+        print(f"\nlabel_footprint_check: {len(facing)} label(s) upside down or mirrored for 0.5 s or more"
+              + (f", and {len(fails)} cut by art or the frame edge." if fails else "."))
+        return 1, fails + facing, notes
     if fails:
         print(f"\nlabel_footprint_check: {len(fails)} label(s) cut by art or by the frame edge for 0.5 s or more.")
         return 1, fails, notes
-    print("label_footprint_check: clean, no label is cut by art or the frame edge for 0.5 s or more")
+    print("label_footprint_check: clean, no label is cut by art or the frame edge, or faces the reader wrong, "
+          "for 0.5 s or more")
     return 0, fails, notes
 
 
@@ -257,6 +341,17 @@ def self_test():
     expect("a clipped fail prints the label's and the cover's screen y",
            len(f) == 1 and "label x 100-400 y 800-840" in describe(f[0]) and "cover x 80-600 y 780-900" in describe(f[0]))
 
+    d = {"samples": series(range(0, 30, 3), lambda f: [dict(lab(1), turn=180)]), "frames": 10, "step": 3}
+    expect("a label turned 180 degrees for 28 frames fails as turned", [r["kind"] for r in aggregate_facing(d)] == ["turned"])
+    d = {"samples": series(range(0, 30, 3), lambda f: [dict(lab(1), turn=-90)]), "frames": 10, "step": 3}
+    expect("a quarter-turn label reads and passes", not aggregate_facing(d))
+    d = {"samples": series(range(0, 12, 3), lambda f: [dict(lab(1), turn=170)]), "frames": 4, "step": 3}
+    expect("a label passing upside down for 10 frames in a flip is not a fail", not aggregate_facing(d))
+    d = {"samples": series(range(0, 30, 3), lambda f: [dict(lab(1, text="0"), turn=180)]), "frames": 10, "step": 3}
+    expect("a turned lone 0 reads the same and passes", not aggregate_facing(d))
+    d = {"samples": series(range(0, 30, 3), lambda f: [dict(lab(1, text="60"), mirror=True, turn=0)]), "frames": 10, "step": 3}
+    expect("a mirrored label fails as mirrored", [r["kind"] for r in aggregate_facing(d)] == ["mirrored"])
+
     # The browser half: a fixture episode with one defect of each kind and two controls.
     if not os.path.exists(FIXTURE):
         expect("fixture episode exists", False)
@@ -277,6 +372,9 @@ def self_test():
            any(r["text"] == "UNDER THE CARD" and r["kind"] == "hidden" for r in n))
     expect("fixture: the plate's own rect never counts against its text", not any(r["text"] == "ON ITS PLATE" for r in f + n))
     expect("fixture: exactly two fails", len(f) == 2)
+    turned = aggregate_facing(data)
+    expect("fixture: the turned-over timer label fails as turned",
+           [(r["text"], r["kind"]) for r in turned] == [("60 MIN", "turned")])
     expect("fixture: the clipped sign names where its cover sits on screen",
            any(r["text"] == "BOROUGH LAND" and "cover x" in describe(r) for r in f))
     print("label_footprint_check self-test: " + ("PASS" if ok else "FAIL"))

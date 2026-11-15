@@ -60,6 +60,13 @@ function measureLabels() {
     if (!(r.width > 0 && r.height > 12)) continue;                 // under ~10 px type nobody reads it as clipped
     if (r.right <= 0 || r.left >= W || r.bottom <= 0 || r.top >= H) continue;   // wholly off frame, not shown
     const cut = r.left < -1 || r.right > W + 1 || r.top < -1 || r.bottom > H + 1;
+    // Which way the glyphs face on screen (machine pass 2026-11-15, rotating-label-reads-wrong): the
+    // label's own matrix, carrying every ancestor transform, so a timer turned over or a card flipped
+    // in a parent group is read where it lands. turn is degrees, mirror is a reflection.
+    const m = t.getScreenCTM();
+    const turn = m ? Math.round(Math.atan2(m.b, m.a) * 180 / Math.PI) : 0;
+    const mirror = m ? (m.a * m.d - m.b * m.c) < 0 : false;
+    const face = {turn, mirror};
     const mine = own(t);
     const cols = Math.max(4, Math.min(48, Math.round(r.width / 7)));
     let onText = 0, covered = 0, left = 0, right = 0;
@@ -92,9 +99,9 @@ function measureLabels() {
       }
     }
     const frac = onText ? covered / onText : 0;
-    if (!cut && frac === 0) { out.push({id: idOf(t), text, frac: 0, cut: false, onText}); continue; }
+    if (!cut && frac === 0) { out.push({id: idOf(t), text, frac: 0, cut: false, onText, ...face}); continue; }
     const top = [...by.entries()].sort((a, b) => b[1] - a[1])[0];
-    out.push({id: idOf(t), text, frac, cut, onText, side: left >= right ? 'left' : 'right',
+    out.push({id: idOf(t), text, frac, cut, onText, ...face, side: left >= right ? 'left' : 'right',
       by: top ? top[0] : null, byBox: top ? byBox.get(top[0]) : null, box: [Math.round(r.left), Math.round(r.top), Math.round(r.right), Math.round(r.bottom)]});
   }
   return out;

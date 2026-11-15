@@ -1,7 +1,8 @@
 // Test fixture for scripts/label_footprint_check.py --self-test. Not a film and not registered in
 // Root.tsx. Shot 1 holds a sign with a character standing over its right end (must FAIL), a clean
 // label, a label whose own group draws a rivet over it (must pass), a label a ball crosses for
-// about 9 frames (a NOTE) and a label wholly under a card (hidden, a NOTE). Shot 2 pushes in 2x on
+// about 9 frames (a NOTE), a label wholly under a card (hidden, a NOTE) and a label turned upside
+// down (FAIL as turned), beside a quarter-turn spine label and a turned "0" (both pass). Shot 2 pushes in 2x on
 // a card that then runs past the right frame edge (must FAIL as cut).
 import React from 'react';
 import {AbsoluteFill, Sequence, useCurrentFrame} from 'remotion';
@@ -33,6 +34,11 @@ const ShotOne: React.FC = () => {
       {f >= 10 && f <= 18 && <circle cx={ballX} cy={988} r={44} fill="#C8553D" />}
       <T x={540} y={1200}>UNDER THE CARD</T>
       <rect x={300} y={1150} width={480} height={80} fill="#2B2B2B" />
+      {/* a timer turned over with its label (must FAIL as upside down, 11-15's "60" read "09"), a
+          spine label at a quarter turn (must pass) and a lone "0" turned over (reads the same, passes) */}
+      <g transform="translate(260,1440) rotate(180)"><T x={0} y={0}>60 MIN</T></g>
+      <g transform="translate(900,1500) rotate(-90)"><T x={0} y={0}>SPINE</T></g>
+      <g transform="translate(560,1460) rotate(180)"><T x={0} y={0}>0</T></g>
     </svg>
   );
 };

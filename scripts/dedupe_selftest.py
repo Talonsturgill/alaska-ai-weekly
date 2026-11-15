@@ -61,9 +61,30 @@ MUST_BE_FRESH = [
      "91 fr 47241, hhs-2026-acf-ana-nai-0035, alaska federation of natives, set-aside"),
 ]
 
+# Every case above was measured against the ledger as it stood on 2026-08-09. Replayed against
+# today's window they aged out (by 2026-11-15 two KEEP cases read FRESH and one DROP case DUP'd on
+# a November entry), so the test failed on the calendar, not on the code. Each case now replays the
+# ledger as of the day it was measured (dedupe.py check --asof). The DROP cases are the 08-09 run's
+# own story, so they replay the day before it shipped, when its own entry was not yet in the ledger.
+ASOF = "2026-08-09"
+ASOF_DROP = "2026-08-08"
 
-def verdict(entities: str) -> tuple[str, str]:
-    p = subprocess.run([sys.executable, str(DEDUPE), "check", "--entities", entities],
+# Measured 2026-11-15: the records-rule story was refused as a DUP of the 10-21 walrus film on
+# ['act', 'public'] (Public Records Act against Marine Mammal Protection Act and Alaska Public Media).
+# Replayed the day before it shipped, so its own ledger entry is not in the window.
+FRESH_ASOF = [
+    ("2026-11-14", "the DOA records-rule story, refused on ['act','public']",
+     "department of administration, records requests, automated tools, juneau empire, 2 aac 96, "
+     "as 40.25, resident priority, public records act"),
+]
+DUP_ASOF = [
+    ("2026-11-16", "the DOA records-rule story, pitched again the next day",
+     "department of administration, records requests, automated tools, public records act"),
+]
+
+
+def verdict(entities: str, asof: str = ASOF) -> tuple[str, str]:
+    p = subprocess.run([sys.executable, str(DEDUPE), "check", "--asof", asof, "--entities", entities],
                        capture_output=True, text=True, cwd=str(REPO))
     return ("DUP" if p.returncode else "FRESH"), (p.stdout or p.stderr).strip()
 
@@ -82,9 +103,23 @@ def main() -> int:
 
     print("DROP — measured false positives must now pass:")
     for name, ents in MUST_BE_FRESH:
-        got, msg = verdict(ents)
+        got, msg = verdict(ents, ASOF_DROP)
         ok = got == "FRESH"
         print(f"  [{'ok' if ok else 'FAIL'}] {name}: {got}")
+        if not ok:
+            failures.append(f"{name}: expected FRESH, got {msg.splitlines()[0] if msg else 'DUP'}")
+
+    print("DATED — later measurements, replayed on their own day:")
+    for asof, name, ents in DUP_ASOF:
+        got, msg = verdict(ents, asof)
+        ok = got == "DUP"
+        print(f"  [{'ok' if ok else 'FAIL'}] {name} (as of {asof}): {got}")
+        if not ok:
+            failures.append(f"{name}: expected DUP, got FRESH. The stopword list is now too wide.")
+    for asof, name, ents in FRESH_ASOF:
+        got, msg = verdict(ents, asof)
+        ok = got == "FRESH"
+        print(f"  [{'ok' if ok else 'FAIL'}] {name} (as of {asof}): {got}")
         if not ok:
             failures.append(f"{name}: expected FRESH, got {msg.splitlines()[0] if msg else 'DUP'}")
 
@@ -93,8 +128,8 @@ def main() -> int:
         for f in failures:
             print(f"  - {f}")
         return 1
-    print(f"\ndedupe_selftest: OK  ({len(MUST_DUP)} repeats still caught, "
-          f"{len(MUST_BE_FRESH)} false positives cleared)")
+    print(f"\ndedupe_selftest: OK  ({len(MUST_DUP) + len(DUP_ASOF)} repeats still caught, "
+          f"{len(MUST_BE_FRESH) + len(FRESH_ASOF)} false positives cleared)")
     return 0
 
 

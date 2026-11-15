@@ -196,6 +196,23 @@ export const HeldProp: React.FC<{
 // label, and its group opacity is capped under 0.4, the cover threshold that check uses anyway.
 // The sweep and the shadow are clipped to the box (or to `clipD`, the prop's own outline path, when
 // you have it), so nothing paints outside the held thing. Deterministic, no Math.random.
+//
+// WRAP THE PROP, DON'T TRACE IT (machine pass 2026-11-15; queue: heldtravel-glare, repeat 2 on 11-14
+// and 11-15). The self-closing form clips to a hand-typed box, and the box is a second copy of the
+// prop's outline that drifts from the first: 11-14 shipped a translucent quad over the gold SUPER
+// INTELLIGENCE plate at 39.8 and 114.1 s and a grey ellipse over the seal, and 11-15's S1 and S6
+// sweeps painted pale quads over the letterbox until the box was resized to the backplate and its
+// rx. Pass the prop as CHILDREN instead and the travel is masked to the children's own drawn pixels
+// (an alpha mask through <use>, so the art is painted once in the DOM and no <text> is duplicated for
+// the text gates). The box then only sets where the band travels; a box too big or a wrong rx can no
+// longer paint glare outside the drawing:
+//
+//   <HeldTravel f={f} x={LX - 220} y={829} w={441} h={262} mode="sweep">
+//     <Flap ... />
+//   </HeldTravel>
+//
+// scripts/held_travel_look_check.py proves both halves: the wrapped sweep keeps its lift, and with
+// a box 1.9x the prop it changes no pixel outside the prop where the bare box form paints a quad.
 // =============================================================================
 
 export type TravelMode = 'sweep' | 'shadow' | 'runner';
@@ -251,7 +268,38 @@ export const HeldTravel: React.FC<{
   from?: 'left' | 'right';
   /** 0 removes it, for a held-breath beat whose stillness is the point */
   gain?: number;
-}> = ({f, x, y, w, h, mode = 'sweep', period, seed = 0, color, strength, clipD, rx = 6, path, from = 'left', gain = 1}) => {
+  /** the held thing itself: drawn as is, and the sweep or shadow is masked to its drawn pixels */
+  children?: React.ReactNode;
+}> = ({f, x, y, w, h, mode = 'sweep', period, seed = 0, color, strength, clipD, rx = 6, path, from = 'left', gain = 1, children}) => {
+  const travel = <HeldTravelBands f={f} x={x} y={y} w={w} h={h} mode={mode} period={period} seed={seed}
+    color={color} strength={strength} clipD={clipD} rx={rx} path={path} from={from} gain={gain} />;
+  if (children === undefined || children === null || children === false) return travel;
+  const id = `heldtravel-src-${mode}-${Math.round(x)}-${Math.round(y)}-${Math.round(seed * 100)}`;
+  // The mask region is the drawing's neighbourhood, generous so a rocking prop never leaves it; the
+  // bands themselves never leave the box (or clipD), so the mask can only REMOVE paint, never add it.
+  return (
+    <>
+      <g id={id}>{children}</g>
+      {gain > 0 && (
+        <>
+          <defs>
+            <mask id={`${id}-m`} maskUnits="userSpaceOnUse" x={x - w - 200} y={y - h - 200}
+              width={3 * w + 400} height={3 * h + 400} style={{maskType: 'alpha'}}>
+              <use href={`#${id}`} />
+            </mask>
+          </defs>
+          <g mask={`url(#${id}-m)`} style={{pointerEvents: 'none'}}>{travel}</g>
+        </>
+      )}
+    </>
+  );
+};
+
+const HeldTravelBands: React.FC<{
+  f: number; x: number; y: number; w: number; h: number; mode: TravelMode; period?: number; seed: number;
+  color?: string; strength?: number; clipD?: string; rx: number; path?: [number, number][];
+  from: 'left' | 'right'; gain: number;
+}> = ({f, x, y, w, h, mode, period, seed, color, strength, clipD, rx, path, from, gain}) => {
   if (gain <= 0) return null;
   const per = period ?? (mode === 'shadow' ? 3.2 : mode === 'runner' ? 1.2 : 1.5);
   const u = travelPhase(f, per, seed);
