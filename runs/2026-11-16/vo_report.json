@@ -1,0 +1,75 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 5,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.997,
+    "heard": "A forest just dated the ice on almost 31,000 lakes on Alaska's North Slope. Not spruce, a random forest, a machine learning model of 100 decision trees. A new paper uses it to date each lake's freeze and thaw. It reads Sentinel 1, a radar satellite that sees through cloud and polar night. It looks again about every four days. On every look, the trees vote ice or open water. About 62% of its practice answers came from weather records. It agreed with clear sky satellite labels 94% of the time. Keep in mind who graded it. What did the lakes say? On average, ice went out around June 8th. It came back around September 30th, about 114 open days. Every degree farther north cut that season by about 23 days. Temperature led, shape and size explained only about 2% more. Why care? These lakes give off methane and open water lets it reach the air. The fair test, that 94% is agreement with another satellite, not anyone on the ice. The paper says no field validation was done. Weather supplied most of the practice answers, and temperature best explained the dates. Then again, the weather answers came only from long, deep cold or real worth, not the in between weeks. Fieldwork logged 80 to 110 open days on other lakes and years. The paper's simple temperature model matched the radar's ice out within two looks for 82% of lakes, and frees up for 75. The lakes that break that rule hold the next question. The paper suspects shorelines fooled the radar, or those lakes really differ. A field check would settle it. The forest can't stand on the ice. Someone will have to.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.007,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.81,
+        "voiced_frac": 0.5,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 125.48,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 125.48,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.993,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.992,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.997,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

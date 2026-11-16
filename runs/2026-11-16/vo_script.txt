@@ -1,0 +1,22 @@
+A forest just dated the ice on almost 31,000 lakes on Alaska's North Slope.
+Not spruce. A random forest, a machine learning model of 100 decision trees.
+A new paper uses it to date each lake's freeze and thaw.
+It reads Sentinel-1, a radar satellite that sees through cloud and polar night.
+It looks again about every four days.
+On every look, the trees vote, ice or open water.
+About 62 percent of its practice answers came from weather records.
+It agreed with another satellite's labels 94 percent of the time. Keep in mind who graded it.
+What did the lakes say? On average, ice went out around June 8th.
+It came back around September 30th, about 114 open days.
+Every degree farther north cut that season by about 23 days.
+Temperature led. Shape and size explained only about two percent more.
+Why care? These lakes give off methane, and open water lets it reach the air.
+The fair test. That 94 percent is agreement with another satellite, not anyone on the ice.
+The paper says no field validation was done.
+Weather supplied most of the practice answers, and temperature best explained the dates.
+Then again, the weather answers came only from long deep cold or real warmth, not the in-between weeks.
+Field work logged 80 to 110 open days, on other lakes and years.
+The paper's simple temperature model matched the radar's ice-out within two looks for 82 percent of lakes, and freeze-up for 75.
+The lakes that break that rule hold the next question.
+The paper suspects shorelines fooled the radar. Or those lakes really differ. A field check would settle it.
+The forest can't stand on the ice. Someone will have to.

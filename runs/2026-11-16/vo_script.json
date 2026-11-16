@@ -1,0 +1,189 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A forest just dated the ice on almost 31,000 lakes on Alaska's North Slope.",
+   "claims": [
+    "c1"
+   ],
+   "t": "A forest just dated the ice on almost 31,000 lakes on Alaska's North Slope."
+  },
+  {
+   "idx": 1,
+   "text": "Not spruce. A random forest, a machine learning model of 100 decision trees.",
+   "claims": [
+    "c8"
+   ],
+   "t": "Not spruce. A random forest, a machine learning model of 100 decision trees."
+  },
+  {
+   "idx": 2,
+   "text": "A new paper uses it to date each lake's freeze and thaw.",
+   "claims": [
+    "c1"
+   ],
+   "t": "A new paper uses it to date each lake's freeze and thaw."
+  },
+  {
+   "idx": 3,
+   "text": "It reads Sentinel-1, a radar satellite that sees through cloud and polar night.",
+   "claims": [
+    "c6"
+   ],
+   "t": "It reads Sentinel-1, a radar satellite that sees through cloud and polar night."
+  },
+  {
+   "idx": 4,
+   "text": "It looks again about every four days.",
+   "claims": [
+    "c7"
+   ],
+   "t": "It looks again about every four days."
+  },
+  {
+   "idx": 5,
+   "text": "On every look, the trees vote, ice or open water.",
+   "claims": [
+    "c8"
+   ],
+   "t": "On every look, the trees vote, ice or open water."
+  },
+  {
+   "idx": 6,
+   "text": "About 62 percent of its practice answers came from weather records.",
+   "claims": [
+    "c10"
+   ],
+   "t": "About 62 percent of its practice answers came from weather records."
+  },
+  {
+   "idx": 7,
+   "text": "It agreed with another satellite's labels 94 percent of the time. Keep in mind who graded it.",
+   "claims": [
+    "c13",
+    "c11"
+   ],
+   "t": "It agreed with another satellite's labels 94 percent of the time. Keep in mind who graded it."
+  },
+  {
+   "idx": 8,
+   "text": "What did the lakes say? On average, ice went out around June 8th.",
+   "claims": [
+    "c16"
+   ],
+   "t": "What did the lakes say? On average, ice went out around June 8th."
+  },
+  {
+   "idx": 9,
+   "text": "It came back around September 30th, about 114 open days.",
+   "claims": [
+    "c17",
+    "c18"
+   ],
+   "t": "It came back around September 30th, about 114 open days."
+  },
+  {
+   "idx": 10,
+   "text": "Every degree farther north cut that season by about 23 days.",
+   "claims": [
+    "c19"
+   ],
+   "t": "Every degree farther north cut that season by about 23 days."
+  },
+  {
+   "idx": 11,
+   "text": "Temperature led. Shape and size explained only about two percent more.",
+   "claims": [
+    "c21",
+    "c23"
+   ],
+   "t": "Temperature led. Shape and size explained only about two percent more."
+  },
+  {
+   "idx": 12,
+   "text": "Why care? These lakes give off methane, and open water lets it reach the air.",
+   "claims": [
+    "c25"
+   ],
+   "t": "Why care? These lakes give off methane, and open water lets it reach the air."
+  },
+  {
+   "idx": 13,
+   "text": "The fair test. That 94 percent is agreement with another satellite, not anyone on the ice.",
+   "claims": [
+    "c13"
+   ],
+   "t": "The fair test. That 94 percent is agreement with another satellite, not anyone on the ice."
+  },
+  {
+   "idx": 14,
+   "text": "The paper says no field validation was done.",
+   "claims": [
+    "c26"
+   ],
+   "t": "The paper says no field validation was done."
+  },
+  {
+   "idx": 15,
+   "text": "Weather supplied most of the practice answers, and temperature best explained the dates.",
+   "claims": [
+    "c10",
+    "c21"
+   ],
+   "t": "Weather supplied most of the practice answers, and temperature best explained the dates."
+  },
+  {
+   "idx": 16,
+   "text": "Then again, the weather answers came only from long deep cold or real warmth, not the in-between weeks.",
+   "claims": [
+    "c10"
+   ],
+   "t": "Then again, the weather answers came only from long deep cold or real warmth, not the in-between weeks."
+  },
+  {
+   "idx": 17,
+   "text": "Field work logged 80 to 110 open days, on other lakes and years.",
+   "claims": [
+    "c27"
+   ],
+   "t": "Field work logged 80 to 110 open days, on other lakes and years."
+  },
+  {
+   "idx": 18,
+   "text": "The paper's simple temperature model matched the radar's ice-out within two looks for 82 percent of lakes, and freeze-up for 75.",
+   "claims": [
+    "c23"
+   ],
+   "t": "The paper's simple temperature model matched the radar's ice-out within two looks for 82 percent of lakes, and freeze-up for 75."
+  },
+  {
+   "idx": 19,
+   "text": "The lakes that break that rule hold the next question.",
+   "claims": [
+    "narration"
+   ],
+   "t": "The lakes that break that rule hold the next question."
+  },
+  {
+   "idx": 20,
+   "text": "The paper suspects shorelines fooled the radar. Or those lakes really differ. A field check would settle it.",
+   "claims": [
+    "c28"
+   ],
+   "t": "The paper suspects shorelines fooled the radar. Or those lakes really differ. A field check would settle it."
+  },
+  {
+   "idx": 21,
+   "text": "The forest can't stand on the ice. Someone will have to.",
+   "claims": [
+    "c26"
+   ],
+   "t": "The forest can't stand on the ice. Someone will have to."
+  }
+ ],
+ "caption_fixups": {},
+ "caption_quotes": [],
+ "caption_split_after": [
+  "weather answers"
+ ]
+}

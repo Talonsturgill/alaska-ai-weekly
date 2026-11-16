@@ -1,0 +1,37 @@
+{
+ "run_date": "2026-11-16",
+ "title": "The Forest Can't Stand on the Ice",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Multi-sensor satellite analysis reveals latitudinal and morphometric controls on ice phenology across 31 000 lakes on the Alaska North Slope",
+   "outlet": "The Cryosphere 20, 6501 to 6519, Nguyen, Lopez, Melara-Valle, Ross, Bradley, Limbeck, Masteller and Michaelides, Washington University in St. Louis, published November 12th (peer-reviewed paper, full text read)",
+   "url": "https://tc.copernicus.org/articles/20/6501/2026/",
+   "claims": [
+    "c1",
+    "c4",
+    "c6",
+    "c7",
+    "c8",
+    "c10",
+    "c11",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c21",
+    "c22",
+    "c23",
+    "c25",
+    "c26",
+    "c28",
+    "c27"
+   ],
+   "used_in_film": true,
+   "note": "Random forest of 100 trees on six Sentinel-1 radar features dates ice-on and ice-off for 30,774 North Slope lakes, 2019 to 2023. 94 percent agreement with Sentinel-2 labels, no field validation. DOI 10.5194/tc-20-6501-2026."
+  }
+ ]
+}

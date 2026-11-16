@@ -3663,3 +3663,56 @@ dispatch_history:
     metaphor: a letterbox that has always swallowed any question gets a pencilled
       draft template clipped beside it whose fourth edge is a dashed line nobody has
       inked
+- date: '2026-11-16'
+  topic: 'Random forest reading Sentinel-1 radar dated ice-on and ice-off for 30,774
+    North Slope lakes (Nguyen et al., The Cryosphere, November 12th): 94 percent agreement
+    with Sentinel-2 labels, no field validation, about 23 fewer open days per degree
+    north, temperature led, the lakes that break the temperature rule hold the next
+    question'
+  slug: the-forest-cant-stand-on-the-ice
+  key_entities:
+  - The Cryosphere
+  - Washington University in St. Louis
+  - thermokarst lakes
+  - lake ice
+  - North Slope
+  - Sentinel-1
+  - Sentinel-2
+  - random forest
+  - Nguyen
+  - Michaelides
+  archetype: explainer-test
+  palette: 'indigo-plum polar winter #1C1A33 for the open and the button, golden midnight-sun
+    honey #F6C66B over a warm sunlit sky #9FC3D6 for the findings, apricot dusk #E89A7A
+    over heather #5C4A78 for the exam, rust sedge #8A4B2E and ochre tussock #A2603A
+    tundra, celadon frozen lakes #D8ECEF and warm teal open water #2D6E73, birch-bark
+    cream #E9DCC1 trunks with moss crowns #6E8B3D, radar lime #C6F04D reserved for
+    the model and the radar, fuchsia #F24FA0 reserved for lakes that break the temperature
+    rule'
+  voice: Gemini Sulafat
+  stance: curious
+  angle: A random forest reading Sentinel-1 radar gave 30,774 North Slope lakes their
+    first comprehensive ice calendar, through cloud and polar night, and that calendar
+    mostly follows air temperature, so the lakes that break from it are where the
+    next question lives, and a field check is what would settle it.
+  hero: VoteTree
+  cast:
+  - VoteTree
+  - Grove
+  - Thermometer
+  - KettleLake
+  - SatelliteEye
+  - Caribou
+  - Mosquito
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: multiplicity-swarm
+    layout: centered-hero-lowerthird
+    register: field-notebook-cartoon
+    camera_strategy: track-follow
+    light_story: a polar winter sky lit by a lime radar beam, then a warm golden midnight
+      sun low in the north, then an apricot dusk for the exam, then the winter sky
+      again with one fuchsia glow
+    metaphor: a random forest drawn as a troupe of faced decision trees that vote
+      with ballot paddles on a tundra where real trees don't grow

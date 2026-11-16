@@ -1,0 +1,51 @@
+{
+ "run_date": "2026-11-16",
+ "story_id": "north-slope-lake-ice-random-forest",
+ "treatment": "Dramatist winner 'The Forest Can't Stand on the Ice', restaged at Gate 0. A troupe of faced decision trees (VoteTree, net-new) punches up through the snow of the North Slope, votes ICE or WATER with ballot paddles on one flagged kettle lake (ONE OF 30,774) per radar look, and a pressed lime label stamp MOST TREES LEAN ICE ripples across thousands of lakes. A thermometer on a wooden board deals weather-record practice cards; a 94% card's GRADED BY line hides under a flap. Act 2 is the midnight-sun summer of the findings (June 8th, September 30th, 114 days, 23 days per degree, a 2 percent tin cup, methane cut open by season). Act 3 is THE EXAM ROOM ON THE SHORE at dusk: the forest at desks in the sedge, the flap lifts to another satellite in a sun visor that only sees clear days, one empty teacher's desk slides out alone onto the lake ice, NO FIELD CHECK. From above, a ribbon of days shows the weather cards only at the deep-cold and real-warmth ends, the shoulder weeks filled by clear-sky cards and lime radar ticks. A logger at an instrumented lake pays out 80 TO 110 beside 114, different lakes and years. The turn lines twenty lakes up behind the thermometer like ducklings, about four step out glowing fuchsia (flagged for a field check), the tagged lake first, and the crane up shows about one in five across the slope. The radar's pixel view splits between shorelines and a lake that really differs, and the button leaves the empty desk alone on the fuchsia lake in polar night while the forest sinks into the snow on the shore and a caribou crosses behind.",
+ "palette": {
+  "sky_night": "#1C1A33 indigo-plum polar night, used only for the open and the button",
+  "sky_day": "#F6C66B midnight-sun honey grading to #F2B38A peach over most of the sky, with a narrow #9FC3D6 band only at the very top, the Act 2 world",
+  "sky_dusk": "#E89A7A apricot dusk over #5C4A78 heather, the exam room",
+  "ground": "#8A4B2E rust sedge, #A2603A ochre tussock, #5F4A28 umber, the shelf TundraBG autumn bands, snow #EEF1F4 in the night shots",
+  "ice": "#D8ECEF pale celadon lake ice with #9CC7CE crack lines",
+  "water": "#2D6E73 deep teal open water with #7FC2BF ripple light",
+  "hero": "#E9DCC1 birch-bark cream trunks with #6E8B3D moss crowns and #3E5A24 shade, ink #1B1A22",
+  "ai_signal": "#C6F04D radar lime, ONLY on the radar beam, the ballot paddles and the model's stamp, never on the lakes' own colour",
+  "thermometer": "a glass tube on a #B07A48 wooden backing board with a #D9452F column and bulb (the column is physical, the film's one red), a dot-eye face on the board",
+  "accent_plate": "#FFF6E3 plate cream with ink type",
+  "mood": "curious and warm, a field notebook come alive",
+  "divergence": "11-15 was full rain-black night with one sodium lamp and gunmetal, 11-14 was high-noon white sea ice with cobalt leads. This film spends its middle in midnight-sun honey over rust tundra and teal lakes, keeps night to the first and last seconds, and its AI colour is lime, not cyan. 11-14 used a magenta inside its thermal heat ramp; here fuchsia is a flat flagging-tape colour on lake rims only, never a gradient, never next to the rising column.",
+  "field_flag": "#F24FA0 fuchsia, meaning FLAGGED FOR A FIELD CHECK, an open question, never hotter, never wrong; ONLY on lakes that break the temperature rule (no stake, no other object carries it)"
+ },
+ "light": {
+  "time": "polar night (open), midnight sun low in the north (Act 2), apricot dusk (Act 3), polar night (button)",
+  "night_key": "starlight and a faint cloud-lid glow from above, the pale snow ground (L* 85) as the bounce, so the cream trunks read against it, a cool violet #B9B4FF rim on the crowns; lime arrives only with the radar beam at 23 s",
+  "day_key": "low horizontal sun from screen right; every tree, the thermometer and the desks cast a long soft shadow to the LEFT (VoteTree and Thermometer take a `cast` prop), lakes keep a dark bank",
+  "dusk_key": "sun low at screen LEFT, apricot #F7B48A rim on the left edges facing it, shadows fall to the right",
+  "rim": "honey by day, violet at night, lime under the radar, apricot at dusk (VoteTree and Thermometer both take a rim prop)",
+  "depth": "three planes on every tundra shot (sky and far horizon, mid lakes and cast, near sedge in y 1470 to 1920), tones() and RimLight on trees, ContactShadow plus a cast shadow under every standing thing"
+ },
+ "shape_language": "The forest is ROUND and soft: lollipop moss crowns, stubby birch trunks with two dot eyes and a small mouth, wobbling as a crowd. The lakes are ANGULAR thermokarst polygons with faceted ice shards and crack lines. The thermometer is a tall upright capsule, the one vertical rule in a horizontal world. Rule-breaking lakes keep their polygon but their edge goes soft and glowing.",
+ "casting": {
+  "hero": "VoteTree (net-new, lib/forest.tsx): a small faced decision tree whose crown splits into a visible yes/no fork and whose hand-branch raises a ballot paddle ICE or WATER; a Grove helper lays out N of them as a troupe with per-tree seeds. Reason: the AI in this story IS a forest of decision trees, nothing on the shelf votes, and it is wood not metal, unlike the last two heroes.",
+  "supporting": "TundraBG-style world drawn in the episode, SatelliteEye (sensors.tsx) with a lime lens for Sentinel-1 and a cream lens plus sun visor for the clear-sky Sentinel-2 grader, Caribou (open and button), Mosquito (June 8th).",
+  "net_new": "VoteTree + Grove, Thermometer (glass tube on a wooden board, wood not enamel, never a centred portrait subject), KettleLake (ice, cracking, open water, soft fuchsia field-flag rim), plus SurveyStake on the shelf but NOT cast in this film. Shelf check: no tree character, sapling, plant character or ballot prop exists in video-engine/src/lib (grep tree|sapling|ballot|vote: only biome treelines, BallotBox in ballot.tsx is a box not a voter)."
+ },
+ "motion_language": "Trees never stand still: each sways on its own seed, blinks, and pops with squash and overshoot when it votes or punches up through snow. Lakes breathe: ice cracks travel, ripples run across open water, a fuchsia glow pulses slowly. Clouds drift in two planes, sedge shivers in the near plane. The radar beam sweeps with a travelling scan line. Hero moves earning motion blur: the 0.8 s pop-up, the ballot-paddle flips, the duckling line-up.",
+ "composition": {
+  "focal_hierarchy": "the kettle lake or the forest first, the plate second, supporting cast third",
+  "negative_space": "only the cold open's polar night above the horizon, and even there drifting snow and a faint star field",
+  "safe_area": "hero action and every plate inside y 420 to 1500; the forest stands on a ground line near y 1180 to 1260 so crowns reach into y 690 to 1000; the near plane of sedge, the shore and the desks fill y 1470 to 1920",
+  "bands": "top band carries cloud bands, the satellite's orbit arc, or the sun; bottom band carries tussocks, snow drifts, the shore and the exam desks",
+  "signature_shot": "THE DUCKLINGS: from a low angle across the tundra, lakes rise as polygon chips and fall into a long line behind the thermometer, and the rule-breakers step out of line one by one and glow fuchsia, the thermometer's column held static, while the forest turns its heads to follow them."
+ },
+ "practicals": "No vote tally is ever drawn, only MAJORITY VOTE. The kettle lake is ONE OF 30,774, never named or numbered. June 8th and September 30th carry ON AVERAGE. The 94 percent card always says WITH SENTINEL-2 LABELS once revealed. The thermometer never wins or scolds: it is a teacher, and its plate says ABOUT 62% OF LABELS. Shoreline is MAYBE and sits with A FIELD CHECK WOULD TELL. No boot prints, no people at the unchecked lake. 80 TO 110 vs 114 is never marked wrong. Fuchsia means flagged for a field check; a fuchsia lake is never staged next to a RISING red column, and no plate says WARMER, HOT or WRONG. Lime means the model said, never correct: no lime on the 94% card, the grader or the exam room except the trees' forks and their paddles. The stamp reads MOST TREES LEAN ICE, a pressed label with an ink spread, no check mark, star or seal. The forest never stands on the lake ice: only the empty desk does.",
+ "craft_advance": "none beyond the net-new forest family this film needs",
+ "value_check": {
+  "night_1C1A33": "L* 11, trees read by cream trunks L* 88",
+  "honey_F6C66B": "L* 82 sky behind moss crowns L* 54, so crowns read dark against the sun",
+  "teal_2D6E73": "L* 42 water inside a rust bank L* 38 with a dark ink rim",
+  "lime_C6F04D": "L* 90, reserved",
+  "fuchsia_F24FA0": "L* 60, reserved for rule-breakers"
+ }
+}

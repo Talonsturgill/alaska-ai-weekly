@@ -112,6 +112,16 @@ def sha(path):
 def mix_files(voice_path, background_path, output_path, report_path, sample_rate=44100, ffmpeg='ffmpeg'):
     Path(report_path).write_text(json.dumps({'pass': False, 'error': 'mix incomplete'}) + '\n')
     voice, background = decode(voice_path, sample_rate, ffmpeg), decode(background_path, sample_rate, ffmpeg)
+    # ffmpeg's -t can end the two stems a few samples apart (2026-11-16: background 15 samples short of
+    # 6,144,600). Pad or trim the background to the voice length when the difference is under 50 ms; a
+    # larger mismatch is a real fault and still fails protect().
+    short = len(voice) - len(background)
+    if 0 < abs(short) <= int(0.05 * sample_rate) and np.ndim(voice) == np.ndim(background):
+        if short > 0:
+            pad = np.zeros((short,) + np.shape(background)[1:], dtype=np.asarray(background).dtype)
+            background = np.concatenate([background, pad])
+        else:
+            background = background[:len(voice)]
     mixed, _, report = protect(voice, background, sample_rate)
     subprocess.run([ffmpeg, '-nostdin', '-v', 'error', '-y', '-f', 'f64le', '-ar', str(sample_rate),
                     '-ac', '2', '-i', '-', '-c:a', 'pcm_f32le', str(output_path)],

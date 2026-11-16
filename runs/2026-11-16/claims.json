@@ -1,0 +1,473 @@
+{
+ "run_date": "2026-11-16",
+ "fact_check_verdict": "PASS: single primary peer-reviewed source (The Cryosphere 20, 6501-6519, DOI 10.5194/tc-20-6501-2026), full text read; no second outlet covers it, so every figure is attributed to the paper.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "Researchers at Washington University in St. Louis tracked when ice formed and melted on almost 31,000 lakes on Alaska's North Slope.",
+   "on_screen": "30,774 LAKES · ALASKA NORTH SLOPE",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"We present the first comprehensive analysis of ice-on and ice-off timing across 30 774 lakes on the Alaska North Slope\"",
+   "requires": [
+    "say ALMOST 31,000 or 30,774, never over 31,000"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "The study covers five years, 2019 through 2023.",
+   "on_screen": "2019 TO 2023",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"for the period January 2019 through December 2023\"",
+   "requires": [
+    "five years is a baseline, never claim a trend"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "The main tool is Sentinel-1, a European radar satellite that sees through cloud and the dark of polar night.",
+   "on_screen": "SENTINEL-1 RADAR · NO SUN NEEDED",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"The Sentinel-1 synthetic aperture radar (SAR) operates independently of solar illumination and cloud cover\"",
+   "requires": [
+    "a sensor property, not a finding"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "With passes on both orbits, the radar gets a fresh look at each lake about every four days.",
+   "on_screen": "A LOOK ABOUT EVERY 4 DAYS",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"With both ascending and descending Sentinel-1 orbits providing a median observation gap of 4 d at this latitude\"",
+   "requires": [
+    "say ABOUT, median not fixed"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "A machine learning model called a random forest reads the radar and labels each lake as ice or open water.",
+   "on_screen": "RANDOM FOREST · 100 TREES",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"We implemented the RF model using scikit-learn (Pedregosa et al., 2011) with 100 trees\"",
+   "requires": [
+    "it classifies past images, never say it predicts the future"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "Most of the training labels came automatically from weather records, during long stretches of deep cold or real warmth.",
+   "on_screen": "ABOUT 62% OF LABELS · FROM WEATHER RECORDS",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"Sustained temperature periods (10+ consecutive days below −20 °C or above +10 °C)\"",
+   "requires": [
+    "say ABOUT 62 percent",
+    "10 or more days in a row below minus 20 C or above plus 10 C"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "The rest of the labels came from clear-sky optical pictures from Sentinel-2.",
+   "on_screen": "THE REST · CLEAR-SKY SENTINEL-2",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"Sentinel-2 NDSI classifications provided the remaining labels during cloud-free conditions (30 % cloud threshold)\"",
+   "requires": [
+    "never say 30 percent of labels, the 30 is a cloud threshold"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "It agreed with the optical satellite labels 94 percent of the time.",
+   "on_screen": "94% AGREEMENT · WITH SENTINEL-2 LABELS",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"The RF classifier achieved 94 % overall accuracy when evaluated against Sentinel-2 NDSI labels\"",
+   "requires": [
+    "say AGAINST SATELLITE LABELS, never against ground truth or field checked",
+    "never say ON HELD-OUT LAKES with the 94"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "It was better at spotting ice than open water.",
+   "on_screen": "ICE CALLS STRONGER THAN WATER CALLS",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"Performance was higher for the ice class (precision = 0.97 recall = 0.95)\"",
+   "requires": [
+    "water precision 0.86 recall 0.93"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "Earlier radar-only studies usually landed around 80 to 85 percent.",
+   "on_screen": "EARLIER RADAR-ONLY STUDIES · ABOUT 80 TO 85%",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"Previous single-sensor SAR studies typically achieved accuracies on the order of ∼ 80 %–85 %\"",
+   "requires": [
+    "say AROUND",
+    "never compare to MODIS"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "On average the ice went out around June 8th.",
+   "on_screen": "ICE OUT · AVERAGE JUNE 8TH",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"Across all lakes and years, mean ice-off occurred on day-of-year (DOY) 159 (8 June; standard deviation = 13 d)\"",
+   "requires": [
+    "say ON AVERAGE"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "And it came back around September 30th.",
+   "on_screen": "ICE ON · AVERAGE SEPT 30TH",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"Mean ice-on occurred on DOY 273 (30 September; standard deviation = 17 d)\"",
+   "requires": [
+    "say ON AVERAGE"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "That leaves about 114 days of open water a year.",
+   "on_screen": "ABOUT 114 DAYS OF OPEN WATER",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"The resulting ice-free period averaged 114 d (standard deviation = 25 d)\"",
+   "requires": [
+    "say ABOUT or ON AVERAGE"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "Every degree farther north cut the open water season by about 23 days.",
+   "on_screen": "ABOUT 23 FEWER DAYS PER DEGREE NORTH",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"with ice-free duration decreasing by 23 d per degree northward.\"",
+   "requires": [
+    "lead with 23",
+    "say ABOUT",
+    "a gradient across space, never a change over time"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-primary",
+   "spoken": "Lake shape and size added only about two percent of explanation beyond temperature.",
+   "on_screen": "SHAPE AND SIZE · ABOUT 2% MORE",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"morphometric parameters explained an additional 1.5 %–2 % of variance in ice phenology beyond temperature alone\"",
+   "requires": [
+    "say BEYOND TEMPERATURE",
+    "small effect, not no effect"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "Lakes that freeze to the bottom thawed about five days sooner, by median, than lakes with floating ice.",
+   "on_screen": "FROZEN TO THE BOTTOM · ABOUT 5 DAYS SOONER",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"we see a modest five-day difference in median values between bedfast and floating ice for ice off\"",
+   "requires": [
+    "say BY MEDIAN"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-primary",
+   "spoken": "A simple temperature model matched the satellite ice-out dates for 82 percent of lakes, and freeze-up for 75 percent.",
+   "on_screen": "TEMPERATURE MODEL · ICE OUT 82% · ICE ON 75%",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"82 % of lakes align with ADD estimates within twice the per-detection observation gap\"",
+   "requires": [
+    "say WITHIN A COUPLE OF RADAR LOOKS",
+    "percent of lakes"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-primary",
+   "spoken": "These lakes give off methane and carbon dioxide, and open water is when that gas trades with the air.",
+   "on_screen": "METHANE AND CO2 · OPEN-WATER SEASON",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"These lakes emit substantial quantities of methane (CH4) and carbon dioxide (CO2) to the atmosphere\"",
+   "requires": [
+    "cited background, the study measured no emissions"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-primary",
+   "spoken": "The paper says no field validation was done.",
+   "on_screen": "NO FIELD CHECK · PER THE PAPER",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"no independent validation against field observations was performed.\"",
+   "requires": [
+    "state as the paper's own limitation, never as a scandal"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-primary",
+   "spoken": "Maybe tricky shorelines fooled the radar. The paper says lakes with big misses likely reflect complex shorelines hurting its detection.",
+   "on_screen": "MAYBE SHORELINES · PER THE PAPER",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: high residuals \"likely reflective of complex shorelines negatively impacting our ice phenology detection\"",
+   "requires": [
+    "a possibility the paper raises, never a finding",
+    "pair with A FIELD CHECK WOULD SETTLE IT"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-primary",
+   "spoken": "Instrumented lakes in earlier field work were open 80 to 110 days, short of this study's 114 day average.",
+   "on_screen": "FIELD-INSTRUMENTED LAKES · 80 TO 110 DAYS",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"Arp et al. (2015) reported ice-free periods of 80–110 d for instrumented lakes\"",
+   "requires": [
+    "different lakes and years, never call it an error"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  {
+   "claim": "30 percent of labels from Sentinel-2",
+   "why": "30 is a cloud threshold"
+  },
+  {
+   "claim": "beats MODIS",
+   "why": "no MODIS comparison"
+  },
+  {
+   "claim": "30 days per degree as headline",
+   "why": "abstract says 23"
+  },
+  {
+   "claim": "field validated",
+   "why": "the paper says it was not"
+  },
+  {
+   "claim": "uses for roads, subsistence, aviation",
+   "why": "the paper names none"
+  }
+ ],
+ "reserve": [
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "They picked 31,108 lakes big enough to see from space, and got ice dates for 30,774 of them.",
+   "on_screen": "31,108 SELECTED · 30,774 MAPPED",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: lakes of 0.02 km2 or larger were selected (31 108), and phenology was retrieved for 30 774 (98.9%).",
+   "requires": [
+    "optional detail"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "The lakes had to be at least two hectares, about five acres.",
+   "on_screen": "LAKES 2 HECTARES OR LARGER",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"We selected all lakes ≥ 0.02 km2 (2 ha) to ensure each lake had a large enough number of pixels\"",
+   "requires": [
+    "small ponds are excluded, never say every lake"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "The study area runs from 69 to about 71 degrees north.",
+   "on_screen": "69° TO 71.36° N",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"The selected study region (69-71.36° N, 163.85–141.02° W) contains 128 197 ALPOD lakes.\"",
+   "requires": [
+    "say North Slope"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "It uses six radar measurements, from inside each lake and from a hundred meter ring of land around it.",
+   "on_screen": "6 RADAR FEATURES · LAKE + 100 M RING",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"We trained the RF model on six Sentinel-1-derived features: VV and VH backscatter (dB) measured over the lake interior\"",
+   "requires": [
+    "the ring is 100 m of land around the lake"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "About 274,000 more looks, from 6,222 lakes the model never trained on, were kept back for testing.",
+   "on_screen": "6,222 LAKES HELD BACK FOR TESTING",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"An additional 274 079 observations from 6222 held-out (validation) lakes were reserved for testing.\"",
+   "requires": [
+    "say ABOUT for the rounded figure"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "Counting every lake, the drop is closer to 30 days a degree, but outliers in the Brooks Range foothills push that up.",
+   "on_screen": "ALL LAKES ABOUT 30 · TRIMMED 23",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "\"ice-free period decreasing by roughly 30 d per degree northward across all lakes\"",
+   "requires": [
+    "optional"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-primary",
+   "spoken": "The authors say the timing can help methane emission models and help plan targeted high-resolution observations.",
+   "on_screen": "FOR METHANE MODELS · TARGETED OBSERVATIONS",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/tc-20-6501-2026.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: the dates \"provide critical timing constraints for methane emission models and for planning targeted high-resolution observation campaigns.\"",
+   "requires": [
+    "never add roads, subsistence or aviation as named uses"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "verified-primary",
+   "spoken": "The paper was published in The Cryosphere on November 12th.",
+   "on_screen": "THE CRYOSPHERE · NOV 12TH",
+   "source": "https://tc.copernicus.org/articles/20/6501/2026/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: article page lists Published 12 Nov 2026, received 27 Feb 2026, accepted 23 Oct 2026.",
+   "requires": [
+    "caption only"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}
