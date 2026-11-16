@@ -1,0 +1,2265 @@
+{
+  "run_date": "2026-11-16",
+  "slug": "the-forest-cant-stand-on-the-ice",
+  "title": "The Forest Can't Stand on the Ice",
+  "concept": "A random forest of 100 decision trees, reading Sentinel-1 radar that sees through cloud and polar night, dated the ice on 30,774 North Slope lakes (Nguyen et al., The Cryosphere). On average ice went out around June 8th and came back around September 30th, about 114 open days, about 23 fewer days per degree north, and temperature led while shape and size added about 2 percent. The fair test: the 94 percent is agreement with clear-sky Sentinel-2 labels, not anyone on the ice, the paper says no field validation was done, and weather supplied most of the practice answers, though only for long deep cold or real warmth. The paper's temperature model matched the radar's dates for 82 and 75 percent of lakes, so the lakes that break the rule hold the next question, and a field check would settle it. Drawn as a troupe of faced decision trees punching up through the snow of a land where trees don't grow, voting ICE or WATER with ballot paddles, a thermometer teacher, an exam room on the shore with one empty desk on the ice, ducklings, and that empty desk alone on a fuchsia lake.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 125.02,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "multiplicity-swarm",
+    "layout": "centered-hero-lowerthird",
+    "register": "field-notebook-cartoon",
+    "palette": "indigo-plum polar winter #1C1A33 for the open and the button, golden midnight-sun honey #F6C66B over a warm sunlit sky #9FC3D6 for the findings, apricot dusk #E89A7A over heather #5C4A78 for the exam, rust sedge #8A4B2E and ochre tussock #A2603A tundra, celadon frozen lakes #D8ECEF and warm teal open water #2D6E73, birch-bark cream #E9DCC1 trunks with moss crowns #6E8B3D, radar lime #C6F04D reserved for the model and the radar, fuchsia #F24FA0 reserved for lakes that break the temperature rule",
+    "camera_strategy": "track-follow",
+    "light_story": "a polar winter sky lit by a lime radar beam, then a warm golden midnight sun low in the north, then an apricot dusk for the exam, then the winter sky again with one fuchsia glow",
+    "metaphor": "a random forest drawn as a troupe of faced decision trees that vote with ballot paddles on a tundra where real trees don't grow"
+  },
+  "signature_shot": 12,
+  "palette": "indigo-plum polar winter #1C1A33 for the open and the button, golden midnight-sun honey #F6C66B over a warm sunlit sky #9FC3D6 for the findings, apricot dusk #E89A7A over heather #5C4A78 for the exam, rust sedge #8A4B2E and ochre tussock #A2603A tundra, celadon frozen lakes #D8ECEF and warm teal open water #2D6E73, birch-bark cream #E9DCC1 trunks with moss crowns #6E8B3D, radar lime #C6F04D reserved for the model and the radar, fuchsia #F24FA0 reserved for lakes that break the temperature rule",
+  "divergence_note": "The last films were full rain-black night at one Juneau door with a faceless gunmetal letterbox and pencilled vellum (11-15), high-noon white sea ice with cobalt leads, a ringed seal and a survey camera (11-14), and a brass faucet with a face on an overcast gravel lot (11-13). This film is open tundra in three lights (polar night, midnight-sun honey, apricot dusk), its hero is a CROWD of soft wooden trees, not a single metal fixture, its AI colour is radar lime instead of cyan, and its world is the ground itself and the lakes in it. Honest overlaps: 11-14 also had a satellite and Arctic ice, answered by tundra lakes from the side and a crowd hero. 11-15 also opened at night, answered by keeping night to the first eight and last four seconds.",
+  "treatment": {
+    "title": "The Forest Can't Stand on the Ice",
+    "summary": "Dramatist winner 'The Forest Can't Stand on the Ice', restaged at Gate 0. A troupe of faced decision trees (VoteTree, net-new) punches up through the snow of the North Slope, votes ICE or WATER with ballot paddles on one flagged kettle lake (ONE OF 30,774) per radar look, and a pressed lime label stamp MOST TREES LEAN ICE ripples across thousands of lakes. A thermometer on a wooden board deals weather-record practice cards; a 94% card's GRADED BY line hides under a flap. Act 2 is the midnight-sun summer of the findings (June 8th, September 30th, 114 days, 23 days per degree, a 2 percent tin cup, methane cut open by season). Act 3 is THE EXAM ROOM ON THE SHORE at dusk: the forest at desks in the sedge, the flap lifts to another satellite in a sun visor that only sees clear days, one empty teacher's desk slides out alone onto the lake ice, NO FIELD CHECK. From above, a ribbon of days shows the weather cards only at the deep-cold and real-warmth ends, the shoulder weeks filled by clear-sky cards and lime radar ticks. A logger at an instrumented lake pays out 80 TO 110 beside 114, different lakes and years. The turn lines twenty lakes up behind the thermometer like ducklings, about four step out glowing fuchsia (flagged for a field check), the tagged lake first, and the crane up shows about one in five across the slope. The radar's pixel view splits between shorelines and a lake that really differs, and the button leaves the empty desk alone on the fuchsia lake in polar night while the forest sinks into the snow on the shore and a caribou crosses behind.",
+    "judge_reasoning": "Dramatist pitch won (49 of 60): the only full act structure with dated rehooks, a throughline lake that changes at every act boundary, a why-care beat and an Act 3 that tests then honestly narrows. Grafts: the Comedian's whack-a-mole open, tin cup, empty desk and duckling turn, the Explainer's report-card flip and whispering thermometer, the Enthusiast's June 8th mosquitoes. Fixes: no vote tallies, no named lake, the grader is clear-sky Sentinel-2 labels, averages say AVERAGE, shoreline is the paper's possibility, no boot prints at the unchecked lake."
+  },
+  "angle": {
+    "thesis": "A random forest reading Sentinel-1 radar gave 30,774 North Slope lakes their first comprehensive ice calendar, through cloud and polar night, and that calendar mostly follows air temperature, so the lakes that break from it are where the next question lives, and a field check is what would settle it.",
+    "supporting_facts": [
+      "Scale and sight: almost 31,000 lakes of 2 hectares or more, dated by a radar that needs no sun and sees through cloud, a look about every four days, read by a 100-tree random forest (c1, c3, c6, c7, c8).",
+      "The finding: about 23 fewer open-water days per degree north, and lake shape and size add only about 2 percent beyond temperature (c19, c21).",
+      "A simple temperature model matched the satellite ice-out dates for 82 percent of lakes and freeze-up for 75 percent, so the rest break from the simple rule (c23)."
+    ],
+    "counterpoint_to_honor": "The 94 percent is agreement with clear-sky Sentinel-2 labels, not a field check, and the paper says no field validation was done (c13, c26). About 62 percent of the training labels came from weather records, so part of the temperature result leans on how the model was taught (c10), though those labels cover only long stretches of deep cold or real warmth. Earlier field work found 80 to 110 open days on instrumented lakes, short of this study's 114 average, different lakes and years, never called an error (c27, c18). The paper itself says some misfit lakes may reflect complex shorelines confusing the detector.",
+    "falsifier": "Field ice dates on instrumented North Slope lakes disagreeing with the radar dates by more than a couple of looks, or the lakes that break from the temperature rule turning out to be classifier errors rather than real outliers.",
+    "valence": "curious",
+    "stance": "curious",
+    "runners_up": [
+      {
+        "angle": "A capability win, Alaska can now see every lake through the dark",
+        "why_lost": "true but it celebrates the tool and never reports what the tool found; kept as the frame"
+      },
+      {
+        "angle": "The 94 percent is optical agreement, not field truth",
+        "why_lost": "right caveat, wrong headline; it is the Act 3 test"
+      }
+    ],
+    "who_it_serves": "methane modelers and planners of targeted observations (c24), and Alaskans deciding how far to trust a machine-made map of their own country"
+  },
+  "claim_map": {
+    "1": [
+      "narration"
+    ],
+    "2": [
+      "c1"
+    ],
+    "3": [
+      "narration"
+    ],
+    "4": [
+      "c8"
+    ],
+    "5": [
+      "narration"
+    ],
+    "6": [
+      "c1"
+    ],
+    "7": [
+      "c1"
+    ],
+    "8": [
+      "c6"
+    ],
+    "9": [
+      "c6"
+    ],
+    "10": [
+      "c7"
+    ],
+    "11": [
+      "c8"
+    ],
+    "12": [
+      "c8"
+    ],
+    "13": [
+      "c10"
+    ],
+    "14": [
+      "c10"
+    ],
+    "15": [
+      "c13"
+    ],
+    "16": [
+      "c13"
+    ],
+    "17": [
+      "narration"
+    ],
+    "18": [
+      "c16"
+    ],
+    "19": [
+      "c17"
+    ],
+    "20": [
+      "c18"
+    ],
+    "21": [
+      "c19"
+    ],
+    "22": [
+      "c19"
+    ],
+    "23": [
+      "c21"
+    ],
+    "24": [
+      "c21"
+    ],
+    "25": [
+      "narration"
+    ],
+    "26": [
+      "c25"
+    ],
+    "27": [
+      "narration"
+    ],
+    "28": [
+      "c13",
+      "c11"
+    ],
+    "29": [
+      "c13"
+    ],
+    "30": [
+      "c26"
+    ],
+    "31": [
+      "c10"
+    ],
+    "32": [
+      "c21"
+    ],
+    "33": [
+      "c10"
+    ],
+    "34": [
+      "c10"
+    ],
+    "35": [
+      "c27"
+    ],
+    "36": [
+      "c27"
+    ],
+    "37": [
+      "c23"
+    ],
+    "38": [
+      "c23"
+    ],
+    "39": [
+      "c23"
+    ],
+    "40": [
+      "c28"
+    ],
+    "41": [
+      "c28"
+    ],
+    "42": [
+      "c28"
+    ],
+    "43": [
+      "c26"
+    ],
+    "44": [
+      "c26"
+    ]
+  },
+  "hook": {
+    "pattern": "anomaly-question",
+    "frame1": "Polar-night tundra under a lid of cloud, a caribou chewing moss, and at 0.3 s the first faced decision trees punch up through the snow like whack-a-moles with a snow burst.",
+    "headline": "A FOREST? ON THE NORTH SLOPE",
+    "motion_by_s": 0.4,
+    "loopback": "Frame 1 is the trees punching up through the polar-night snow beside the caribou, the last image is the same night with the trees sinking back into the snow and the caribou crossing behind the empty desk alone on the one fuchsia lake."
+  },
+  "open_loop": {
+    "plant_t": 13.47,
+    "pay_t": 121.86,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "creak",
+    "what": "Who stands on the ice? Planted when one tree's root taps the kettle lake's ice, cracks it and curls back, kept as the empty teacher's desk alone on the ice in the exam room while the forest sits on the shore, paid when the forest sinks into the snow under THE FOREST CAN'T STAND ON THE ICE and the empty desk waits on the lake NOT YET CHECKED."
+  },
+  "open_loop_2": {
+    "plant_t": 44.61,
+    "pay_t": 75.35,
+    "what": "Who graded the 94 percent, and when can it see? Planted as a paper flap dropping over the card's GRADED BY line under WHO GRADED IT? while the voice says keep in mind who graded it, paid in the exam room on 'another satellite' when the flap lifts to a sun-visor satellite whose eye shuts each time a cloud drifts over, under SENTINEL-2 \u00b7 CLEAR DAYS ONLY."
+  },
+  "throughline": {
+    "object": "one kettle lake, ONE OF 30,774",
+    "lands_in_button": "the same tagged lake, glowing fuchsia in polar night with the empty teacher's desk alone on its ice, NOT YET CHECKED",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "K1 dark and unseen under polar night"
+      },
+      {
+        "at_s": 23.27,
+        "state": "K2 swept by the lime radar beam"
+      },
+      {
+        "at_s": 32.27,
+        "state": "K3 stamped ICE, most trees lean ice"
+      },
+      {
+        "at_s": 50.01,
+        "state": "K4 cracked open to teal water under the midnight sun"
+      },
+      {
+        "at_s": 55.25,
+        "state": "K5 frozen again with a 114-day ribbon on its shore"
+      },
+      {
+        "at_s": 78.97,
+        "state": "K6 one empty desk alone on its ice at dusk, the forest at desks on the shore"
+      },
+      {
+        "at_s": 110.62,
+        "state": "K7 first to step out of the duckling line, glowing fuchsia"
+      },
+      {
+        "at_s": 124.11,
+        "state": "K8 alone in polar night with the empty desk on its ice, NOT YET CHECKED"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 3.01,
+      "type": "scale-pullback",
+      "what": "the camera pulls back as thousands of lake polygons light up across the dark tundra",
+      "hold_s": 0.8
+    },
+    {
+      "t": 57.02,
+      "type": "morph-to-chart",
+      "what": "the tundra tilts up into a map with a ribbon beside each band of lakes",
+      "hold_s": 0.8
+    },
+    {
+      "t": 101.94,
+      "type": "build-on",
+      "what": "lake polygons rise and waddle into a long line behind the thermometer",
+      "hold_s": 0.8
+    },
+    {
+      "t": 110.62,
+      "type": "scale-pullback",
+      "what": "the camera cranes up from the line to the whole slope where about one lake in five glows fuchsia",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "line": 6,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 8,
+        "offset": 0.0,
+        "level": 1.7
+      },
+      {
+        "line": 13,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 18,
+        "offset": 0.0,
+        "level": 1.8
+      },
+      {
+        "at_s": 123.61,
+        "level": 0.12
+      },
+      {
+        "at_s": 124.61,
+        "level": 1.5
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 123.61,
+    "riser_at": 101.94,
+    "silence_at": 123.61,
+    "payoff_at": 124.11,
+    "button_pattern": "callback",
+    "interrupt_at": 73.56,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "A forest where none grows",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "high",
+      "stage": "night-tundra",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the troupe at x540 y1100",
+      "means": "Polar night tundra, a troupe of faced decision trees punches up through the snow, a caribou drops its moss, and thousands of lake polygons light up",
+      "ambient": "wind over snow, a low hum",
+      "hero": {
+        "name": "troupe of faced decision trees + caribou + lake polygons + polar night",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "45% trees, 30% lake field, 25% caribou and sky"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-7.920"
+    },
+    {
+      "title": "Not spruce",
+      "vo_line": 1,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "lake-edge-night",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the tree at x540 y1050",
+      "means": "One VoteTree shakes off snow, its crown forks, the troupe pops up behind it, a root tests the ice and recoils, a paper flutters down and the lake flickers",
+      "ambient": "wind, creaking wood",
+      "hero": {
+        "name": "VoteTree close + forking crown + troupe + kettle lake + paper",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "50% tree, 30% lake, 20% troupe"
+      },
+      "id": 2,
+      "start_s": 7.92,
+      "t": "7.920-19.860"
+    },
+    {
+      "title": "Radar in the dark",
+      "vo_line": 3,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "night-sky",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the satellite at x540 y700",
+      "means": "A lime-lensed radar satellite glides above the cloud lid and its beam punches down onto the kettle lake",
+      "ambient": "a high thin wind, a radio hiss",
+      "hero": {
+        "name": "radar satellite + cloud lid + lime beam + kettle lake",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% satellite, 30% beam, 30% lake"
+      },
+      "id": 3,
+      "start_s": 19.86,
+      "t": "19.860-25.580"
+    },
+    {
+      "title": "The vote",
+      "vo_line": 4,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "lake-edge-night",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "dollyThrough",
+      "transition_in": "match-action",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the lake at x540 y1000",
+      "means": "A four-tick ring clicks round the lake, the trees raise ICE and WATER paddles and a pressed lime label stamp reads where most trees lean, rippling across thousands of lakes",
+      "ambient": "wind, wooden paddles clacking",
+      "hero": {
+        "name": "trees with paddles + kettle lake + four-tick ring + stamp",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "45% trees, 35% lake, 20% ring and stamp"
+      },
+      "id": 4,
+      "start_s": 25.58,
+      "t": "25.580-34.200"
+    },
+    {
+      "title": "Practice answers",
+      "vo_line": 6,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "snow-classroom",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "match-action",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the thermometer at x420 y1000",
+      "means": "The thermometer deals weather-record flashcards to the trees, then a 94% report card drops onto an easel and a flap hides its GRADED BY line under WHO GRADED IT?",
+      "ambient": "wind, cards shuffling",
+      "hero": {
+        "name": "thermometer teacher + flashcards + front row of trees + report card easel",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% thermometer and cards, 35% trees, 25% easel"
+      },
+      "id": 5,
+      "start_s": 34.2,
+      "t": "34.200-46.220"
+    },
+    {
+      "title": "The open season",
+      "vo_line": 8,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "summer-tundra",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the lake at x540 y1050",
+      "means": "Under the midnight sun the lake's ice cracks open, mosquitoes clock in, the lake skins over again and a teal ribbon runs from June to September",
+      "ambient": "a soft summer breeze, mosquitoes whine far off",
+      "hero": {
+        "name": "kettle lake ice and water + midnight sun + mosquitoes + ribbon",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "45% lake, 25% sun and sky, 30% ribbon and shore"
+      },
+      "id": 6,
+      "start_s": 46.22,
+      "t": "46.220-57.020"
+    },
+    {
+      "title": "Farther north",
+      "vo_line": 10,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-tundra",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the map at x540 y900",
+      "means": "The tundra tilts up into a map, ribbons shrink band by band going north, the thermometer hops forward and shape and size rattle a tin cup",
+      "ambient": "paper map rustle, wind",
+      "hero": {
+        "name": "tilted map + lake bands + ribbons + thermometer + tin cup",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% map, 30% ribbons, 25% thermometer and cup"
+      },
+      "id": 7,
+      "start_s": 57.02,
+      "t": "57.020-67.300"
+    },
+    {
+      "title": "Why care",
+      "vo_line": 12,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "low",
+      "stage": "under-lake",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the bubbles rising and popping are the move",
+      "transition_in": "graphic-match",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the bubbles at x540 y900",
+      "means": "In cross-section the open lake burps bubbles to the air while a frozen lake beside it holds its bubbles under the ice",
+      "ambient": "underwater burble, bubbles",
+      "hero": {
+        "name": "lake cross-section + bubbles + frozen lake + air",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% open lake, 30% frozen lake, 20% air"
+      },
+      "id": 8,
+      "start_s": 67.3,
+      "t": "67.300-73.560"
+    },
+    {
+      "title": "The exam room",
+      "vo_line": 13,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "exam-shore-dusk",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the desks at x540 y1050",
+      "means": "At dusk the forest sits at desks on the shore, the report card's flap lifts to a sun-visor grader that only sees clear days, and one empty desk slides out alone onto the ice",
+      "ambient": "dusk wind, a school bell far off",
+      "hero": {
+        "name": "shore desks + forest + report card + sun-visor satellite + empty desk on the ice",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "40% forest at desks, 30% card and grader, 30% empty desk"
+      },
+      "id": 9,
+      "start_s": 73.56,
+      "t": "73.560-84.120"
+    },
+    {
+      "title": "The ribbon of days",
+      "vo_line": 15,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "year-ribbon-snow",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:a locked overhead of the ribbon of days while cards land and slide",
+      "transition_in": "carried-element",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the thermometer at x540 y1000",
+      "means": "From above, the thermometer deals frost and sun cards onto a ribbon of days across the snow, they slide to the two ends and the blank shoulder weeks fill with clear-sky cards and lime radar ticks",
+      "ambient": "a hush, wind",
+      "hero": {
+        "name": "ribbon of days + thermometer board + frost and sun cards + radar ticks",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "45% ribbon, 30% cards and ticks, 25% thermometer"
+      },
+      "id": 10,
+      "start_s": 84.12,
+      "t": "84.120-96.320"
+    },
+    {
+      "title": "Other lakes, other years",
+      "vo_line": 17,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "logger-lake-dusk",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the ribbons at x540 y950",
+      "means": "At an instrumented lake a logger on a stake pays out a ribbon marked 80 and 110 that slides under the 114 ribbon, and a DIFFERENT LAKES tag swings in between them",
+      "ambient": "breeze, ribbon flutter",
+      "hero": {
+        "name": "two ribbons + tag + instrumented lake",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "55% ribbons, 25% tag, 20% instrumented lake"
+      },
+      "id": 11,
+      "start_s": 96.32,
+      "t": "96.320-101.940"
+    },
+    {
+      "title": "The ducklings",
+      "vo_line": 18,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "dusk-tundra",
+      "pov": "eye-level-immersive",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross+riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the line at x540 y1050",
+      "means": "From a low angle lake polygons waddle into a line behind the thermometer, most fall into step and a few step out glowing fuchsia as the forest turns",
+      "ambient": "dusk wind, a waddle patter",
+      "hero": {
+        "name": "duckling line of lakes + thermometer + fuchsia lakes + whole slope",
+        "parts": 58,
+        "zones": 3,
+        "detail_note": "45% line, 25% thermometer, 30% fuchsia lakes and slope"
+      },
+      "id": 12,
+      "start_s": 101.94,
+      "t": "101.940-114.480"
+    },
+    {
+      "title": "The radar's own view",
+      "vo_line": 20,
+      "framing": "macro-closeup",
+      "scale": "close",
+      "height": "high",
+      "stage": "radar-pixels",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "static:a locked radar pixel view that splits in two",
+      "transition_in": "graphic-match",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the lake at x540 y950",
+      "means": "A top-down lime pixel grid of the tagged lake where shoreline pixels bleed, the frame splits against a clean drawing of a lake that really differs, then the empty desk slides onto the fuchsia lake",
+      "ambient": "a low hum, wind",
+      "hero": {
+        "name": "radar pixel grid + tagged lake + split clean lake + empty desk",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% pixel lake, 30% split frame, 25% desk"
+      },
+      "id": 13,
+      "start_s": 114.48,
+      "t": "114.480-121.860"
+    },
+    {
+      "title": "Someone will have to",
+      "vo_line": 21,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "night-tundra",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the desk at x700 y1150",
+      "means": "Back in polar night the forest sinks into the snow on the shore and the empty desk waits alone on the fuchsia lake's ice NOT YET CHECKED as the caribou crosses behind",
+      "ambient": "night wind, snow settling",
+      "hero": {
+        "name": "sinking forest + fuchsia lake + empty desk + caribou + polar night",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "35% lake and desk, 35% forest, 30% caribou and sky"
+      },
+      "id": 14,
+      "start_s": 121.86,
+      "t": "121.860-125.020"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A forest just dated the ice on almost 31,000 lakes on Alaska's North Slope.",
+      "phrase": "A forest just dated",
+      "shows": "a troupe of small faced decision trees punch up through the polar-night snow of the North Slope tundra like whack-a-moles while a caribou chewing moss drops it, a plate reads A FOREST? ON THE NORTH SLOPE",
+      "sfx": "pop",
+      "means": "a forest? on the north slope",
+      "rehook": "",
+      "draw": {
+        "subject": "a troupe of small faced decision trees",
+        "action": "punch up through the polar-night snow of the North Slope tundra like whack-a-moles while a caribou chewing moss drops it",
+        "emotion": "startled",
+        "annotation": "A FOREST? ON THE NORTH SLOPE"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a troupe of small faced decision trees punch up through the polar-night snow of the North Slope tundra like whack-a-moles while a caribou chewing moss drops it, a plate reads A FOREST? ON THE NORTH SLOPE",
+        "reaction": "the moss drops",
+        "ambient": "wind over snow, a low hum"
+      },
+      "kick": true,
+      "t": "0.000-3.010",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.01,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "A forest just dated the ice on almost 31,000 lakes on Alaska's North Slope.",
+      "phrase": "almost 31,000 lakes on",
+      "shows": "the dark tundra pulls back as thousands of small frozen lake polygons light up across it, a plate reads 30,774 LAKES \u00b7 ALASKA NORTH SLOPE",
+      "sfx": "whoosh",
+      "means": "30,774 lakes \u00b7 alaska north slope",
+      "rehook": "",
+      "draw": {
+        "subject": "the dark tundra",
+        "action": "pulls back as thousands of small frozen lake polygons light up across it",
+        "emotion": "awed",
+        "annotation": "30,774 LAKES \u00b7 ALASKA NORTH SLOPE"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the dark tundra pulls back as thousands of small frozen lake polygons light up across it, a plate reads 30,774 LAKES \u00b7 ALASKA NORTH SLOPE",
+        "reaction": "the lakes light",
+        "ambient": "wind over snow, a low hum"
+      },
+      "t": "3.010-7.920",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 2,
+      "at_s": 7.92,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Not spruce. A random forest, a machine learning model of 100 decision trees.",
+      "phrase": "Not spruce. A random",
+      "shows": "one VoteTree up close shakes snow off its crown, which splits into a glowing yes or no fork, a plate reads NOT SPRUCE",
+      "sfx": "snap",
+      "means": "not spruce",
+      "rehook": "",
+      "draw": {
+        "subject": "one VoteTree up close",
+        "action": "shakes snow off its crown, which splits into a glowing yes or no fork",
+        "emotion": "proud",
+        "annotation": "NOT SPRUCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "one VoteTree up close shakes snow off its crown, which splits into a glowing yes or no fork, a plate reads NOT SPRUCE",
+        "reaction": "the snow falls",
+        "ambient": "wind, creaking wood"
+      },
+      "t": "7.920-11.530",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 11.53,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.61
+      },
+      "offset": 3.61,
+      "vo": "Not spruce. A random forest, a machine learning model of 100 decision trees.",
+      "phrase": "machine learning model of",
+      "shows": "the troupe behind it bursts up out of the snow row by row, every crown splitting at its fork, a plate reads RANDOM FOREST \u00b7 100 TREES",
+      "sfx": "pop",
+      "means": "random forest \u00b7 100 trees",
+      "rehook": "",
+      "draw": {
+        "subject": "the troupe behind it",
+        "action": "bursts up out of the snow row by row, every crown splitting at its fork",
+        "emotion": "proud",
+        "annotation": "RANDOM FOREST \u00b7 100 TREES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "the troupe behind it bursts up out of the snow row by row, every crown splitting at its fork, a plate reads RANDOM FOREST \u00b7 100 TREES",
+        "reaction": "the rows pop",
+        "ambient": "wind, creaking wood"
+      },
+      "t": "11.530-13.470",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 13.47,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 5.55
+      },
+      "offset": 5.55,
+      "vo": "Not spruce. A random forest, a machine learning model of 100 decision trees.",
+      "phrase": "decision trees.",
+      "shows": "one tree's root reaches out to tap the kettle lake's ice, a hairline crack opens, and the root curls back as a tag ONE OF 30,774 pops up on a little flag on the lake's shore, a plate reads ONE OF 30,774",
+      "sfx": "creak",
+      "means": "one of 30,774",
+      "rehook": "",
+      "draw": {
+        "subject": "one tree's root",
+        "action": "reaches out to tap the kettle lake's ice, a hairline crack opens, and the root curls back as a tag ONE OF 30,774 pops up on a little flag on the lake's shore",
+        "emotion": "worried",
+        "annotation": "ONE OF 30,774"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "one tree's root reaches out to tap the kettle lake's ice, a hairline crack opens, and the root curls back as a tag ONE OF 30,774 pops up on a little flag on the lake's shore, a plate reads ONE OF 30,774",
+        "reaction": "the root recoils",
+        "ambient": "wind, creaking wood"
+      },
+      "t": "13.470-15.340",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 15.34,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A new paper uses it to date each lake's freeze and thaw.",
+      "phrase": "A new paper uses",
+      "shows": "a paper titled THE CRYOSPHERE flutters down onto the snow beside the kettle lake and falls open, a plate reads A NEW PAPER \u00b7 THE CRYOSPHERE",
+      "sfx": "page",
+      "means": "a new paper \u00b7 the cryosphere",
+      "rehook": "",
+      "draw": {
+        "subject": "a paper titled THE CRYOSPHERE",
+        "action": "flutters down onto the snow beside the kettle lake and falls open",
+        "emotion": "curious",
+        "annotation": "A NEW PAPER \u00b7 THE CRYOSPHERE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a paper titled THE CRYOSPHERE flutters down onto the snow beside the kettle lake and falls open, a plate reads A NEW PAPER \u00b7 THE CRYOSPHERE",
+        "reaction": "the paper opens",
+        "ambient": "wind, creaking wood"
+      },
+      "t": "15.340-17.930",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 17.93,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.59
+      },
+      "offset": 2.59,
+      "vo": "A new paper uses it to date each lake's freeze and thaw.",
+      "phrase": "freeze and thaw.",
+      "shows": "the kettle lake flickers between frozen celadon and open teal and the troupe leans in to read the paper, then flinches, a plate reads WHEN IT FREEZES \u00b7 WHEN IT THAWS",
+      "sfx": "crack",
+      "means": "when it freezes \u00b7 when it thaws",
+      "rehook": "",
+      "draw": {
+        "subject": "the kettle lake",
+        "action": "flickers between frozen celadon and open teal and the troupe leans in to read the paper, then flinches",
+        "emotion": "curious",
+        "annotation": "WHEN IT FREEZES \u00b7 WHEN IT THAWS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the kettle lake flickers between frozen celadon and open teal and the troupe leans in to read the paper, then flinches, a plate reads WHEN IT FREEZES \u00b7 WHEN IT THAWS",
+        "reaction": "the troupe flinches",
+        "ambient": "wind, creaking wood"
+      },
+      "t": "17.930-19.860",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 19.86,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It reads Sentinel-1, a radar satellite that sees through cloud and polar night.",
+      "phrase": "It reads Sentinel-1, a",
+      "shows": "a radar satellite with a lime lens glides along its orbit arc above a lid of cloud in the polar night, a plate reads SENTINEL-1 RADAR \u00b7 NO SUN NEEDED",
+      "sfx": "whoosh",
+      "means": "sentinel-1 radar \u00b7 no sun needed",
+      "rehook": "",
+      "draw": {
+        "subject": "a radar satellite with a lime lens",
+        "action": "glides along its orbit arc above a lid of cloud in the polar night",
+        "emotion": "eager",
+        "annotation": "SENTINEL-1 RADAR \u00b7 NO SUN NEEDED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a radar satellite with a lime lens glides along its orbit arc above a lid of cloud in the polar night, a plate reads SENTINEL-1 RADAR \u00b7 NO SUN NEEDED",
+        "reaction": "the satellite glides",
+        "ambient": "a high thin wind, a radio hiss"
+      },
+      "t": "19.860-23.270",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 23.27,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.41
+      },
+      "offset": 3.41,
+      "vo": "It reads Sentinel-1, a radar satellite that sees through cloud and polar night.",
+      "phrase": "cloud and polar night.",
+      "shows": "a lime radar beam punches down through the cloud lid onto the kettle lake and a scan line sweeps it, a plate reads SEES THROUGH CLOUD AND POLAR NIGHT",
+      "sfx": "sonar",
+      "means": "sees through cloud and polar night",
+      "rehook": "",
+      "draw": {
+        "subject": "a lime radar beam",
+        "action": "punches down through the cloud lid onto the kettle lake and a scan line sweeps it",
+        "emotion": "focused",
+        "annotation": "SEES THROUGH CLOUD AND POLAR NIGHT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a lime radar beam punches down through the cloud lid onto the kettle lake and a scan line sweeps it, a plate reads SEES THROUGH CLOUD AND POLAR NIGHT",
+        "reaction": "the scan sweeps",
+        "ambient": "a high thin wind, a radio hiss"
+      },
+      "t": "23.270-25.580",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 25.58,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It looks again about every four days.",
+      "phrase": "It looks again about",
+      "shows": "a ring of four tick marks around the lake sweeps round once and stops as the beam lands on the lake again, and the trees lift their paddles to half-mast, a plate reads A LOOK ABOUT EVERY 4 DAYS",
+      "sfx": "tick",
+      "means": "a look about every 4 days",
+      "rehook": "",
+      "draw": {
+        "subject": "a ring of four tick marks around the lake",
+        "action": "sweeps round once and stops as the beam lands on the lake again, and the trees lift their paddles to half-mast",
+        "emotion": "steady",
+        "annotation": "A LOOK ABOUT EVERY 4 DAYS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a ring of four tick marks around the lake sweeps round once and stops as the beam lands on the lake again, and the trees lift their paddles to half-mast, a plate reads A LOOK ABOUT EVERY 4 DAYS",
+        "reaction": "the ring ticks",
+        "ambient": "wind, wooden paddles clacking"
+      },
+      "t": "25.580-30.390",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 30.39,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 1.77
+      },
+      "offset": 1.77,
+      "vo": "On every look, the trees vote, ice or open water.",
+      "phrase": "vote, ice or open",
+      "shows": "the forest at the lake edge lift ballot paddles, most reading ICE and a few WATER, and their crown forks flicker lime, a plate reads EACH TREE VOTES",
+      "sfx": "flip",
+      "means": "each tree votes",
+      "rehook": "",
+      "draw": {
+        "subject": "the forest at the lake edge",
+        "action": "lift ballot paddles, most reading ICE and a few WATER, and their crown forks flicker lime",
+        "emotion": "eager",
+        "annotation": "EACH TREE VOTES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "the forest at the lake edge lift ballot paddles, most reading ICE and a few WATER, and their crown forks flicker lime, a plate reads EACH TREE VOTES",
+        "reaction": "the paddles flip",
+        "ambient": "wind, wooden paddles clacking"
+      },
+      "t": "30.390-32.270",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 32.27,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.65
+      },
+      "offset": 3.65,
+      "vo": "On every look, the trees vote, ice or open water.",
+      "phrase": "open water.",
+      "shows": "a lime label stamp presses ICE onto the lake's shore chip with an ink spread, then the camera pulls back as the same stamp ripples across thousands of lakes, a plate reads MOST TREES LEAN ICE",
+      "sfx": "stamp",
+      "means": "most trees lean ice",
+      "rehook": "rehook: one stamp becomes a ripple of stamps across thousands of lakes",
+      "draw": {
+        "subject": "a lime label stamp",
+        "action": "presses ICE onto the lake's shore chip with an ink spread, then the camera pulls back as the same stamp ripples across thousands of lakes",
+        "emotion": "proud",
+        "annotation": "MOST TREES LEAN ICE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "a lime label stamp presses ICE onto the lake's shore chip with an ink spread, then the camera pulls back as the same stamp ripples across thousands of lakes, a plate reads MOST TREES LEAN ICE",
+        "reaction": "the stamps ripple",
+        "ambient": "wind, wooden paddles clacking"
+      },
+      "t": "32.270-34.200",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 34.2,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "About 62 percent of its practice answers came from weather records.",
+      "phrase": "About 62 percent of",
+      "shows": "a faced thermometer in reading glasses drops flashcards from a weather-record deck onto the snow in front of the trees, a plate reads PRACTICE ANSWERS",
+      "sfx": "tap",
+      "means": "practice answers",
+      "rehook": "",
+      "draw": {
+        "subject": "a faced thermometer in reading glasses",
+        "action": "drops flashcards from a weather-record deck onto the snow in front of the trees",
+        "emotion": "calm",
+        "annotation": "PRACTICE ANSWERS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a faced thermometer in reading glasses drops flashcards from a weather-record deck onto the snow in front of the trees, a plate reads PRACTICE ANSWERS",
+        "reaction": "the cards deal",
+        "ambient": "wind, cards shuffling"
+      },
+      "t": "34.200-37.290",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 37.29,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 3.09
+      },
+      "offset": 3.09,
+      "vo": "About 62 percent of its practice answers came from weather records.",
+      "phrase": "weather records.",
+      "shows": "the flashcards fan out on the snow, most stamped with a small thermometer mark, a plate reads ABOUT 62% OF LABELS \u00b7 FROM WEATHER RECORDS",
+      "sfx": "scrape",
+      "means": "about 62% of labels \u00b7 from weather records",
+      "rehook": "",
+      "draw": {
+        "subject": "the flashcards",
+        "action": "fan out on the snow, most stamped with a small thermometer mark",
+        "emotion": "calm",
+        "annotation": "ABOUT 62% OF LABELS \u00b7 FROM WEATHER RECORDS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "the flashcards fan out on the snow, most stamped with a small thermometer mark, a plate reads ABOUT 62% OF LABELS \u00b7 FROM WEATHER RECORDS",
+        "reaction": "the cards fan",
+        "ambient": "wind, cards shuffling"
+      },
+      "t": "37.290-41.210",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 41.21,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.59
+      },
+      "offset": 2.59,
+      "vo": "It agreed with another satellite's labels 94 percent of the time. Keep in mind who graded it.",
+      "phrase": "94 percent of the",
+      "shows": "a report card drops onto an easel with a big 94% and the easel legs bounce as the trees shake their paddles, a plate reads 94% AGREEMENT",
+      "sfx": "stamp",
+      "means": "94% agreement",
+      "rehook": "",
+      "draw": {
+        "subject": "a report card",
+        "action": "drops onto an easel with a big 94% and the easel legs bounce as the trees shake their paddles",
+        "emotion": "proud",
+        "annotation": "94% AGREEMENT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a report card drops onto an easel with a big 94% and the easel legs bounce as the trees shake their paddles, a plate reads 94% AGREEMENT",
+        "reaction": "the card bounces",
+        "ambient": "wind, cards shuffling"
+      },
+      "t": "41.210-44.610",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 44.61,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 5.99
+      },
+      "offset": 5.99,
+      "vo": "It agreed with another satellite's labels 94 percent of the time. Keep in mind who graded it.",
+      "phrase": "graded it.",
+      "shows": "a paper flap drops over the card's GRADED BY line and hides it, and the trees glance at each other, a plate reads WHO GRADED IT?",
+      "sfx": "thock",
+      "means": "who graded it?",
+      "rehook": "",
+      "draw": {
+        "subject": "a paper flap",
+        "action": "drops over the card's GRADED BY line and hides it, and the trees glance at each other",
+        "emotion": "puzzled",
+        "annotation": "WHO GRADED IT?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a paper flap drops over the card's GRADED BY line and hides it, and the trees glance at each other, a plate reads WHO GRADED IT?",
+        "reaction": "the flap drops",
+        "ambient": "wind, cards shuffling"
+      },
+      "t": "44.610-46.220",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 46.22,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "What did the lakes say? On average, ice went out around June 8th.",
+      "phrase": "What did the lakes",
+      "shows": "the midnight sun rolls along the north horizon as the tundra warms to rust and gold, a snow bunting lifts off a tussock and the first mosquitoes drift in, a plate reads WHAT DID THE LAKES SAY?",
+      "sfx": "rustle",
+      "means": "what did the lakes say?",
+      "rehook": "",
+      "draw": {
+        "subject": "the midnight sun",
+        "action": "rolls along the north horizon as the tundra warms to rust and gold, a snow bunting lifts off a tussock and the first mosquitoes drift in",
+        "emotion": "curious",
+        "annotation": "WHAT DID THE LAKES SAY?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the midnight sun rolls along the north horizon as the tundra warms to rust and gold, a snow bunting lifts off a tussock and the first mosquitoes drift in, a plate reads WHAT DID THE LAKES SAY?",
+        "reaction": "the bird lifts",
+        "ambient": "a soft summer breeze, mosquitoes whine far off"
+      },
+      "t": "46.220-50.010",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 50.01,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.79
+      },
+      "offset": 3.79,
+      "vo": "What did the lakes say? On average, ice went out around June 8th.",
+      "phrase": "June 8th.",
+      "shows": "the kettle lake's ice cracks into shards that drift apart over teal water as the mosquitoes clock in on the shore, a plate reads ICE OUT \u00b7 AVERAGE JUNE 8TH",
+      "sfx": "crack",
+      "means": "ice out \u00b7 average june 8th",
+      "rehook": "",
+      "draw": {
+        "subject": "the kettle lake's ice",
+        "action": "cracks into shards that drift apart over teal water as the mosquitoes clock in on the shore",
+        "emotion": "startled",
+        "annotation": "ICE OUT \u00b7 AVERAGE JUNE 8TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the kettle lake's ice cracks into shards that drift apart over teal water as the mosquitoes clock in on the shore, a plate reads ICE OUT \u00b7 AVERAGE JUNE 8TH",
+        "reaction": "the ice breaks",
+        "ambient": "a soft summer breeze, mosquitoes whine far off"
+      },
+      "t": "50.010-51.300",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 51.3,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It came back around September 30th, about 114 open days.",
+      "phrase": "It came back around",
+      "shows": "the lake skins over with ice again as the sun dips and the mosquitoes leave, a plate reads ICE ON \u00b7 AVERAGE SEPT 30TH",
+      "sfx": "crunch",
+      "means": "ice on \u00b7 average sept 30th",
+      "rehook": "",
+      "draw": {
+        "subject": "the lake",
+        "action": "skins over with ice again as the sun dips and the mosquitoes leave",
+        "emotion": "calm",
+        "annotation": "ICE ON \u00b7 AVERAGE SEPT 30TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the lake skins over with ice again as the sun dips and the mosquitoes leave, a plate reads ICE ON \u00b7 AVERAGE SEPT 30TH",
+        "reaction": "the ice closes",
+        "ambient": "a soft summer breeze, mosquitoes whine far off"
+      },
+      "t": "51.300-55.250",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 55.25,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.95
+      },
+      "offset": 3.95,
+      "vo": "It came back around September 30th, about 114 open days.",
+      "phrase": "open days.",
+      "shows": "a teal ribbon unrolls along the shore from the June mark to the September mark, a plate reads ABOUT 114 DAYS OF OPEN WATER",
+      "sfx": "roll",
+      "means": "about 114 days of open water",
+      "rehook": "",
+      "draw": {
+        "subject": "a teal ribbon",
+        "action": "unrolls along the shore from the June mark to the September mark",
+        "emotion": "proud",
+        "annotation": "ABOUT 114 DAYS OF OPEN WATER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a teal ribbon unrolls along the shore from the June mark to the September mark, a plate reads ABOUT 114 DAYS OF OPEN WATER",
+        "reaction": "the ribbon unrolls",
+        "ambient": "a soft summer breeze, mosquitoes whine far off"
+      },
+      "t": "55.250-57.020",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 57.02,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Every degree farther north cut that season by about 23 days.",
+      "phrase": "Every degree farther north",
+      "shows": "a painted map of the North Slope tilts up out of the tundra with a teal ribbon beside each band of lakes and the kettle lake's tag pinned to its bottom band, a plate reads FARTHER NORTH",
+      "sfx": "rumble",
+      "means": "farther north",
+      "rehook": "rehook: the ground tilts up into a map and the ribbons start to shrink",
+      "draw": {
+        "subject": "a painted map of the North Slope",
+        "action": "tilts up out of the tundra with a teal ribbon beside each band of lakes and the kettle lake's tag pinned to its bottom band",
+        "emotion": "curious",
+        "annotation": "FARTHER NORTH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a painted map of the North Slope tilts up out of the tundra with a teal ribbon beside each band of lakes and the kettle lake's tag pinned to its bottom band, a plate reads FARTHER NORTH",
+        "reaction": "the map tilts",
+        "ambient": "paper map rustle, wind"
+      },
+      "t": "57.020-59.950",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 59.95,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "Every degree farther north cut that season by about 23 days.",
+      "phrase": "23 days.",
+      "shows": "the ribbons shrink band by band as they go north, a plate reads ABOUT 23 FEWER DAYS PER DEGREE NORTH",
+      "sfx": "scrape",
+      "means": "about 23 fewer days per degree north",
+      "rehook": "",
+      "draw": {
+        "subject": "the ribbons",
+        "action": "shrink band by band as they go north",
+        "emotion": "wincing",
+        "annotation": "ABOUT 23 FEWER DAYS PER DEGREE NORTH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "the ribbons shrink band by band as they go north, a plate reads ABOUT 23 FEWER DAYS PER DEGREE NORTH",
+        "reaction": "the ribbons shrink",
+        "ambient": "paper map rustle, wind"
+      },
+      "t": "59.950-61.960",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 61.96,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Temperature led. Shape and size explained only about two percent more.",
+      "phrase": "Temperature led. Shape and",
+      "shows": "the thermometer hops to the front of the map and its red column climbs, a plate reads TEMPERATURE LED",
+      "sfx": "boing",
+      "means": "temperature led",
+      "rehook": "",
+      "draw": {
+        "subject": "the thermometer",
+        "action": "hops to the front of the map and its red column climbs",
+        "emotion": "proud",
+        "annotation": "TEMPERATURE LED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "the thermometer hops to the front of the map and its red column climbs, a plate reads TEMPERATURE LED",
+        "reaction": "the column climbs",
+        "ambient": "paper map rustle, wind"
+      },
+      "t": "61.960-63.570",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 63.57,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 1.61
+      },
+      "offset": 1.61,
+      "vo": "Temperature led. Shape and size explained only about two percent more.",
+      "phrase": "Shape and size explained",
+      "shows": "two small lakes tagged SHAPE and SIZE shake a tiny tin cup that tips and spills two coins, a plate reads SHAPE AND SIZE \u00b7 ABOUT 2% MORE",
+      "sfx": "rattle",
+      "means": "shape and size \u00b7 about 2% more",
+      "rehook": "",
+      "draw": {
+        "subject": "two small lakes tagged SHAPE and SIZE",
+        "action": "shake a tiny tin cup that tips and spills two coins",
+        "emotion": "sheepish",
+        "annotation": "SHAPE AND SIZE \u00b7 ABOUT 2% MORE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "two small lakes tagged SHAPE and SIZE shake a tiny tin cup that tips and spills two coins, a plate reads SHAPE AND SIZE \u00b7 ABOUT 2% MORE",
+        "reaction": "the cup rattles",
+        "ambient": "paper map rustle, wind"
+      },
+      "t": "63.570-67.300",
+      "key": 24
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 67.3,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Why care? These lakes give off methane, and open water lets it reach the air.",
+      "phrase": "Why care? These lakes",
+      "shows": "the kettle lake cut open by season, June open on the left, October frozen on the right burps strings of bubbles from its bed on the June side, a plate reads WHY CARE?",
+      "sfx": "bubble",
+      "means": "why care?",
+      "rehook": "",
+      "draw": {
+        "subject": "the kettle lake cut open by season, June open on the left, October frozen on the right",
+        "action": "burps strings of bubbles from its bed on the June side",
+        "emotion": "curious",
+        "annotation": "WHY CARE?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the kettle lake cut open by season, June open on the left, October frozen on the right burps strings of bubbles from its bed on the June side, a plate reads WHY CARE?",
+        "reaction": "the bubbles rise",
+        "ambient": "underwater burble, bubbles"
+      },
+      "t": "67.300-70.830",
+      "key": 25
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 70.83,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "Why care? These lakes give off methane, and open water lets it reach the air.",
+      "phrase": "open water lets it",
+      "shows": "the bubbles pop at the June surface and drift up into the air while on the October side they press flat under the ice, a plate reads METHANE \u00b7 OPEN-WATER SEASON",
+      "sfx": "hiss",
+      "means": "methane \u00b7 open-water season",
+      "rehook": "",
+      "draw": {
+        "subject": "the bubbles",
+        "action": "pop at the June surface and drift up into the air while on the October side they press flat under the ice",
+        "emotion": "curious",
+        "annotation": "METHANE \u00b7 OPEN-WATER SEASON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "the bubbles pop at the June surface and drift up into the air while on the October side they press flat under the ice, a plate reads METHANE \u00b7 OPEN-WATER SEASON",
+        "reaction": "the bubbles pop",
+        "ambient": "underwater burble, bubbles"
+      },
+      "t": "70.830-73.560",
+      "key": 26
+    },
+    {
+      "id": 27,
+      "shot": 9,
+      "at_s": 73.56,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The fair test. That 94 percent is agreement with another satellite, not anyone on the ice.",
+      "phrase": "The fair test. That",
+      "shows": "a row of school desks on the tundra shore at dusk lands in the sedge with the forest seated at them, paddles raised like hands, the 94% card on its easel, and the lake ice empty beyond them, a plate reads THE FAIR TEST",
+      "sfx": "thunk",
+      "means": "the fair test",
+      "rehook": "",
+      "draw": {
+        "subject": "a row of school desks on the tundra shore at dusk",
+        "action": "lands in the sedge with the forest seated at them, paddles raised like hands, the 94% card on its easel, and the lake ice empty beyond them",
+        "emotion": "tense",
+        "annotation": "THE FAIR TEST"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a row of school desks on the tundra shore at dusk lands in the sedge with the forest seated at them, paddles raised like hands, the 94% card on its easel, and the lake ice empty beyond them, a plate reads THE FAIR TEST",
+        "reaction": "the desks land",
+        "ambient": "dusk wind, a school bell far off"
+      },
+      "kick": true,
+      "t": "73.560-75.350",
+      "key": 27
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 75.35,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 1.79
+      },
+      "offset": 1.79,
+      "vo": "The fair test. That 94 percent is agreement with another satellite, not anyone on the ice.",
+      "phrase": "That 94 percent is",
+      "shows": "the flap on the report card lifts to show a second satellite in a sun visor whose eye shuts every time a cloud drifts over and opens when it parts, as the trees look up, a plate reads SENTINEL-2 \u00b7 CLEAR DAYS ONLY",
+      "sfx": "flip",
+      "means": "sentinel-2 \u00b7 clear days only",
+      "rehook": "",
+      "draw": {
+        "subject": "the flap on the report card",
+        "action": "lifts to show a second satellite in a sun visor whose eye shuts every time a cloud drifts over and opens when it parts, as the trees look up",
+        "emotion": "puzzled",
+        "annotation": "SENTINEL-2 \u00b7 CLEAR DAYS ONLY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13",
+        "c11"
+      ],
+      "choreo": {
+        "primary": "the flap on the report card lifts to show a second satellite in a sun visor whose eye shuts every time a cloud drifts over and opens when it parts, as the trees look up, a plate reads SENTINEL-2 \u00b7 CLEAR DAYS ONLY",
+        "reaction": "the eye shuts",
+        "ambient": "dusk wind, a school bell far off"
+      },
+      "t": "75.350-78.970",
+      "key": 28
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 78.97,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 5.41
+      },
+      "offset": 5.41,
+      "vo": "The fair test. That 94 percent is agreement with another satellite, not anyone on the ice.",
+      "phrase": "anyone on the ice.",
+      "shows": "an empty teacher's desk slides out alone onto the lake ice with an unused red pen on it, and one tree stretches a root toward it and stops at the ice line, a plate reads NOT ANYONE ON THE ICE",
+      "sfx": "swish",
+      "means": "not anyone on the ice",
+      "rehook": "",
+      "draw": {
+        "subject": "an empty teacher's desk",
+        "action": "slides out alone onto the lake ice with an unused red pen on it, and one tree stretches a root toward it and stops at the ice line",
+        "emotion": "plain",
+        "annotation": "NOT ANYONE ON THE ICE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "an empty teacher's desk slides out alone onto the lake ice with an unused red pen on it, and one tree stretches a root toward it and stops at the ice line, a plate reads NOT ANYONE ON THE ICE",
+        "reaction": "the root stops",
+        "ambient": "dusk wind, a school bell far off"
+      },
+      "t": "78.970-80.720",
+      "key": 29
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 80.72,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The paper says no field validation was done.",
+      "phrase": "The paper says no",
+      "shows": "a small card pins to the front of the empty desk as the raised paddles on the shore lower row by row and the grader's eye blinks shut under a passing cloud, a plate reads NO FIELD CHECK \u00b7 PER THE PAPER",
+      "sfx": "pin",
+      "means": "no field check \u00b7 per the paper",
+      "rehook": "",
+      "draw": {
+        "subject": "a small card",
+        "action": "pins to the front of the empty desk as the raised paddles on the shore lower row by row and the grader's eye blinks shut under a passing cloud",
+        "emotion": "plain",
+        "annotation": "NO FIELD CHECK \u00b7 PER THE PAPER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a small card pins to the front of the empty desk as the raised paddles on the shore lower row by row and the grader's eye blinks shut under a passing cloud, a plate reads NO FIELD CHECK \u00b7 PER THE PAPER",
+        "reaction": "the paddles lower",
+        "ambient": "dusk wind, a school bell far off"
+      },
+      "t": "80.720-84.120",
+      "key": 30
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 84.12,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Weather supplied most of the practice answers, and temperature best explained the dates.",
+      "phrase": "Weather supplied most of",
+      "shows": "the thermometer on its wooden board deals frost cards and sun cards onto a long ribbon of days laid across the snow, a plate reads MOST ANSWERS FROM WEATHER",
+      "sfx": "tap",
+      "means": "most answers from weather",
+      "rehook": "",
+      "draw": {
+        "subject": "the thermometer on its wooden board",
+        "action": "deals frost cards and sun cards onto a long ribbon of days laid across the snow",
+        "emotion": "calm",
+        "annotation": "MOST ANSWERS FROM WEATHER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "the thermometer on its wooden board deals frost cards and sun cards onto a long ribbon of days laid across the snow, a plate reads MOST ANSWERS FROM WEATHER",
+        "reaction": "the cards land",
+        "ambient": "a hush, wind"
+      },
+      "t": "84.120-86.630",
+      "key": 31
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 86.63,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 2.51
+      },
+      "offset": 2.51,
+      "vo": "Weather supplied most of the practice answers, and temperature best explained the dates.",
+      "phrase": "temperature best explained the",
+      "shows": "a TEMPERATURE LED card is pulled from the same weather deck, carrying the same thermometer mark, and pins beside it, a plate reads AND TEMPERATURE LED",
+      "sfx": "pin",
+      "means": "and temperature led",
+      "rehook": "",
+      "draw": {
+        "subject": "a TEMPERATURE LED card",
+        "action": "is pulled from the same weather deck, carrying the same thermometer mark, and pins beside it",
+        "emotion": "plain",
+        "annotation": "AND TEMPERATURE LED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "a TEMPERATURE LED card is pulled from the same weather deck, carrying the same thermometer mark, and pins beside it, a plate reads AND TEMPERATURE LED",
+        "reaction": "the card pins",
+        "ambient": "a hush, wind"
+      },
+      "t": "86.630-89.000",
+      "key": 32
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 89.0,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then again, the weather answers came only from long deep cold or real warmth, not the in-between weeks.",
+      "phrase": "Then again, the weather",
+      "shows": "the dealt cards slide to the two ends of the ribbon, frost on deep winter and sun on high summer, and the shoulder weeks between them open up blank, a plate reads ONLY LONG DEEP COLD OR REAL WARMTH",
+      "sfx": "slide",
+      "means": "only long deep cold or real warmth",
+      "rehook": "rehook: the cards split to the two ends and the shoulder weeks open blank",
+      "draw": {
+        "subject": "the dealt cards",
+        "action": "slide to the two ends of the ribbon, frost on deep winter and sun on high summer, and the shoulder weeks between them open up blank",
+        "emotion": "even",
+        "annotation": "ONLY LONG DEEP COLD OR REAL WARMTH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "the dealt cards slide to the two ends of the ribbon, frost on deep winter and sun on high summer, and the shoulder weeks between them open up blank, a plate reads ONLY LONG DEEP COLD OR REAL WARMTH",
+        "reaction": "the cards slide",
+        "ambient": "a hush, wind"
+      },
+      "t": "89.000-93.250",
+      "key": 33
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 93.25,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 4.25
+      },
+      "offset": 4.25,
+      "vo": "Then again, the weather answers came only from long deep cold or real warmth, not the in-between weeks.",
+      "phrase": "warmth, not the in-between",
+      "shows": "the blank shoulder weeks fill with a few clear-sky cards and neutral question marks where no weather card reaches, a plate reads THE IN-BETWEEN WEEKS",
+      "sfx": "chime",
+      "means": "the in-between weeks",
+      "rehook": "",
+      "draw": {
+        "subject": "the blank shoulder weeks",
+        "action": "fill with a few clear-sky cards and neutral question marks where no weather card reaches",
+        "emotion": "even",
+        "annotation": "THE IN-BETWEEN WEEKS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "the blank shoulder weeks fill with a few clear-sky cards and neutral question marks where no weather card reaches, a plate reads THE IN-BETWEEN WEEKS",
+        "reaction": "the ticks land",
+        "ambient": "a hush, wind"
+      },
+      "t": "93.250-96.320",
+      "key": 34
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 96.32,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Field work logged 80 to 110 open days, on other lakes and years.",
+      "phrase": "Field work logged 80",
+      "shows": "a ribbon pulled off a logger on a stake at an instrumented lake's edge slides across under the 114 ribbon, its two ends marked 80 and 110, a plate reads FIELD-INSTRUMENTED LAKES \u00b7 80 TO 110 DAYS",
+      "sfx": "slide",
+      "means": "field-instrumented lakes \u00b7 80 to 110 days",
+      "rehook": "",
+      "draw": {
+        "subject": "a ribbon pulled off a logger on a stake at an instrumented lake's edge",
+        "action": "slides across under the 114 ribbon, its two ends marked 80 and 110",
+        "emotion": "plain",
+        "annotation": "FIELD-INSTRUMENTED LAKES \u00b7 80 TO 110 DAYS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "a ribbon pulled off a logger on a stake at an instrumented lake's edge slides across under the 114 ribbon, its two ends marked 80 and 110, a plate reads FIELD-INSTRUMENTED LAKES \u00b7 80 TO 110 DAYS",
+        "reaction": "the ribbon slides",
+        "ambient": "breeze, ribbon flutter"
+      },
+      "t": "96.320-99.930",
+      "key": 35
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 99.93,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 3.61
+      },
+      "offset": 3.61,
+      "vo": "Field work logged 80 to 110 open days, on other lakes and years.",
+      "phrase": "other lakes and years.",
+      "shows": "a tag swings in on a string and settles between the two ribbons, a plate reads DIFFERENT LAKES \u00b7 DIFFERENT YEARS",
+      "sfx": "click",
+      "means": "different lakes \u00b7 different years",
+      "rehook": "",
+      "draw": {
+        "subject": "a tag",
+        "action": "swings in on a string and settles between the two ribbons",
+        "emotion": "plain",
+        "annotation": "DIFFERENT LAKES \u00b7 DIFFERENT YEARS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "a tag swings in on a string and settles between the two ribbons, a plate reads DIFFERENT LAKES \u00b7 DIFFERENT YEARS",
+        "reaction": "the tag clips",
+        "ambient": "breeze, ribbon flutter"
+      },
+      "t": "99.930-101.940",
+      "key": 36
+    },
+    {
+      "id": 37,
+      "shot": 12,
+      "at_s": 101.94,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The paper's simple temperature model matched the radar's ice-out within two looks for 82 percent of lakes, and freeze-up for 75.",
+      "phrase": "The paper's simple temperature",
+      "shows": "twenty lake polygons rise out of the tundra and waddle into a long line behind the thermometer like ducklings, the tagged kettle lake hopping in last, a plate reads THE PAPER'S TEMPERATURE MODEL",
+      "sfx": "bloop",
+      "means": "the paper's temperature model",
+      "rehook": "",
+      "draw": {
+        "subject": "twenty lake polygons",
+        "action": "rise out of the tundra and waddle into a long line behind the thermometer like ducklings, the tagged kettle lake hopping in last",
+        "emotion": "curious",
+        "annotation": "THE PAPER'S TEMPERATURE MODEL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "twenty lake polygons rise out of the tundra and waddle into a long line behind the thermometer like ducklings, the tagged kettle lake hopping in last, a plate reads THE PAPER'S TEMPERATURE MODEL",
+        "reaction": "the lakes waddle",
+        "ambient": "dusk wind, a waddle patter"
+      },
+      "t": "101.940-106.630",
+      "key": 37
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 106.63,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 4.69
+      },
+      "offset": 4.69,
+      "vo": "The paper's simple temperature model matched the radar's ice-out within two looks for 82 percent of lakes, and freeze-up for 75.",
+      "phrase": "82 percent of lakes,",
+      "shows": "the line falls into step behind the thermometer, about four lakes in twenty out of step, a plate reads TEMPERATURE MODEL \u00b7 ICE OUT 82% \u00b7 ICE ON 75%",
+      "sfx": "tick",
+      "means": "temperature model \u00b7 ice out 82% \u00b7 ice on 75%",
+      "rehook": "",
+      "draw": {
+        "subject": "the line",
+        "action": "falls into step behind the thermometer, about four lakes in twenty out of step",
+        "emotion": "satisfied",
+        "annotation": "TEMPERATURE MODEL \u00b7 ICE OUT 82% \u00b7 ICE ON 75%"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "the line falls into step behind the thermometer, about four lakes in twenty out of step, a plate reads TEMPERATURE MODEL \u00b7 ICE OUT 82% \u00b7 ICE ON 75%",
+        "reaction": "the line steps",
+        "ambient": "dusk wind, a waddle patter"
+      },
+      "t": "106.630-110.620",
+      "key": 38
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 110.62,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The lakes that break that rule hold the next question.",
+      "phrase": "The lakes that break",
+      "shows": "the out-of-step lakes, the tagged kettle lake first step out of the line and glow fuchsia, and the camera cranes up to the whole slope where about one lake in five glows, a plate reads THE LAKES THAT BREAK THE RULE",
+      "sfx": "sting",
+      "means": "the lakes that break the rule",
+      "rehook": "",
+      "draw": {
+        "subject": "the out-of-step lakes, the tagged kettle lake first",
+        "action": "step out of the line and glow fuchsia, and the camera cranes up to the whole slope where about one lake in five glows",
+        "emotion": "startled",
+        "annotation": "THE LAKES THAT BREAK THE RULE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "the out-of-step lakes, the tagged kettle lake first step out of the line and glow fuchsia, and the camera cranes up to the whole slope where about one lake in five glows, a plate reads THE LAKES THAT BREAK THE RULE",
+        "reaction": "the lakes step out",
+        "ambient": "dusk wind, a waddle patter"
+      },
+      "t": "110.620-114.480",
+      "key": 39
+    },
+    {
+      "id": 40,
+      "shot": 13,
+      "at_s": 114.48,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The paper suspects shorelines fooled the radar. Or those lakes really differ. A field check would settle it.",
+      "phrase": "The paper suspects shorelines",
+      "shows": "the radar's own pixel view of the tagged lake snaps into a top-down lime pixel grid where the jagged shoreline's land pixels bleed into the water pixels, a plate reads MAYBE SHORELINES \u00b7 PER THE PAPER",
+      "sfx": "clank",
+      "means": "maybe shorelines \u00b7 per the paper",
+      "rehook": "",
+      "draw": {
+        "subject": "the radar's own pixel view of the tagged lake",
+        "action": "snaps into a top-down lime pixel grid where the jagged shoreline's land pixels bleed into the water pixels",
+        "emotion": "curious",
+        "annotation": "MAYBE SHORELINES \u00b7 PER THE PAPER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "the radar's own pixel view of the tagged lake snaps into a top-down lime pixel grid where the jagged shoreline's land pixels bleed into the water pixels, a plate reads MAYBE SHORELINES \u00b7 PER THE PAPER",
+        "reaction": "the pixels bleed",
+        "ambient": "a low hum, wind"
+      },
+      "t": "114.480-117.330",
+      "key": 40
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 117.33,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 2.85
+      },
+      "offset": 2.85,
+      "vo": "The paper suspects shorelines fooled the radar. Or those lakes really differ. A field check would settle it.",
+      "phrase": "Or those lakes really",
+      "shows": "the frame splits, the pixel-bleed reading on one side and the lake drawn clean with its own ribbon off-length on the other, both the same size, a plate reads OR THOSE LAKES REALLY DIFFER",
+      "sfx": "ping",
+      "means": "or those lakes really differ",
+      "rehook": "",
+      "draw": {
+        "subject": "the frame",
+        "action": "splits, the pixel-bleed reading on one side and the lake drawn clean with its own ribbon off-length on the other, both the same size",
+        "emotion": "open",
+        "annotation": "OR THOSE LAKES REALLY DIFFER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "the frame splits, the pixel-bleed reading on one side and the lake drawn clean with its own ribbon off-length on the other, both the same size, a plate reads OR THOSE LAKES REALLY DIFFER",
+        "reaction": "the frame splits",
+        "ambient": "a low hum, wind"
+      },
+      "t": "117.330-120.350",
+      "key": 41
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 120.35,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 5.87
+      },
+      "offset": 5.87,
+      "vo": "The paper suspects shorelines fooled the radar. Or those lakes really differ. A field check would settle it.",
+      "phrase": "settle it.",
+      "shows": "the clean half of the split widens to fill the frame and shows the empty desk already standing on the tagged lake, now fuchsia, the red pen untouched, a plate reads A FIELD CHECK WOULD SETTLE IT",
+      "sfx": "knock",
+      "means": "a field check would settle it",
+      "rehook": "",
+      "draw": {
+        "subject": "the clean half of the split",
+        "action": "widens to fill the frame and shows the empty desk already standing on the tagged lake, now fuchsia, the red pen untouched",
+        "emotion": "plain",
+        "annotation": "A FIELD CHECK WOULD SETTLE IT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "the clean half of the split widens to fill the frame and shows the empty desk already standing on the tagged lake, now fuchsia, the red pen untouched, a plate reads A FIELD CHECK WOULD SETTLE IT",
+        "reaction": "the frame widens",
+        "ambient": "a low hum, wind"
+      },
+      "kick": true,
+      "t": "120.350-121.860",
+      "key": 42
+    },
+    {
+      "id": 43,
+      "shot": 14,
+      "at_s": 121.86,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The forest can't stand on the ice. Someone will have to.",
+      "phrase": "The forest can't stand",
+      "shows": "the forest on the shore sinks back into the polar-night snow one tree at a time with soft thuds, a plate reads THE FOREST CAN'T STAND ON THE ICE",
+      "sfx": "thud",
+      "means": "the forest can't stand on the ice",
+      "rehook": "",
+      "draw": {
+        "subject": "the forest on the shore",
+        "action": "sinks back into the polar-night snow one tree at a time with soft thuds",
+        "emotion": "calm",
+        "annotation": "THE FOREST CAN'T STAND ON THE ICE"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "the forest on the shore sinks back into the polar-night snow one tree at a time with soft thuds, a plate reads THE FOREST CAN'T STAND ON THE ICE",
+        "reaction": "the trees sink",
+        "ambient": "night wind, snow settling"
+      },
+      "t": "121.860-124.110",
+      "key": 43
+    },
+    {
+      "id": 44,
+      "shot": 14,
+      "at_s": 124.11,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 2.25
+      },
+      "offset": 2.25,
+      "vo": "The forest can't stand on the ice. Someone will have to.",
+      "phrase": "Someone will have to.",
+      "shows": "the empty desk on the fuchsia lake creaks on the ice as the caribou crosses behind it and looks up, a plate reads NOT YET CHECKED",
+      "sfx": "creak",
+      "means": "not yet checked",
+      "rehook": "",
+      "draw": {
+        "subject": "the empty desk on the fuchsia lake",
+        "action": "creaks on the ice as the caribou crosses behind it and looks up",
+        "emotion": "open",
+        "annotation": "NOT YET CHECKED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "the empty desk on the fuchsia lake creaks on the ice as the caribou crosses behind it and looks up, a plate reads NOT YET CHECKED",
+        "reaction": "the caribou looks up",
+        "ambient": "night wind, snow settling"
+      },
+      "t": "124.110-125.020",
+      "key": 44
+    }
+  ]
+}

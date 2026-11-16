@@ -1,0 +1,67 @@
+{
+ "locked_story": {
+  "headline": "A Random Forest model reading Sentinel-1 radar mapped ice-on and ice-off for about 31,000 North Slope thermokarst lakes, 94% accurate on held-out lakes, and found temperature, not lake shape, sets the season (Nguyen et al., The Cryosphere, November 12th)",
+  "found_at_rung": "in_window_sweep"
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 15
+  },
+  {
+   "rung": "outlet_index_sweep",
+   "attempted": true,
+   "candidates_found": 6,
+   "note": "adn, alaskapublic, ktoo, newsminer, kfsk, alaskasnewssource, gi.alaska.edu, phys.org indexes read"
+  },
+  {
+   "rung": "primary_source_mining",
+   "attempted": true,
+   "candidates_found": 3,
+   "note": "NSF awards API AK 'artificial intelligence' since 08/01 (3 awards, out of window); Federal Register none; Online Public Notices unreachable"
+  }
+ ],
+ "candidates": [
+  {
+   "headline": "North Slope lake ice Random Forest (The Cryosphere, Nov 12th)",
+   "verdict": "LOCKED",
+   "why": "fresh subject, real ML with held-out validation, rotates away from 6 data center films"
+  },
+  {
+   "headline": "FNSB Planning Commission recommends 18-month data center moratorium (News-Miner Nov 13th)",
+   "verdict": "runner-up",
+   "why": "third municipal data center pause in 30 days (Sitka 10-25, Petersburg 11-07), single source"
+  },
+  {
+   "headline": "Kreiss-Tomkins elected governor, AI-safety donor money, moratorium pledge",
+   "verdict": "rejected",
+   "why": "no post-election AI statement, data center overlap, AI-lab donor conflict for this producer"
+  },
+  {
+   "headline": "Anchorage Assembly surveillance ordinance codifies AI case-work tools 11-1 (ADN Nov 6th)",
+   "verdict": "runner-up",
+   "why": "single source, AI tools undescribed, ordinance text unreachable"
+  },
+  {
+   "headline": "FAA ground stop, AI system link examined",
+   "verdict": "rejected",
+   "why": "AI link only 'examined', thin Alaska tie"
+  },
+  {
+   "headline": "STAK final lease approval; AIDEA spending spree; Petersburg second reading",
+   "verdict": "rejected",
+   "why": "follow-ups on stories inside 30 days"
+  },
+  {
+   "headline": "Cornell DAS bowheads on Quintillion cable",
+   "verdict": "rejected",
+   "why": "no ML used"
+  },
+  {
+   "headline": "Halibut epigenetic clock; NSF coal-waste RL twin; SEARHC Mayo; Storis",
+   "verdict": "rejected",
+   "why": "weak or no AI, or out of window"
+  }
+ ]
+}

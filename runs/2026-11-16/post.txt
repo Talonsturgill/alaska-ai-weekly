@@ -1,0 +1,26 @@
+30,774 Alaska lakes just got an ice calendar. The study never checked it on the ice.
+About one lake in five breaks the temperature rule at ice out, and that is where a field crew belongs.
+
+A random forest did the dating. That's a machine learning model made of 100 decision trees, built by researchers at Washington University in St. Louis and published in The Cryosphere on November 12th.
+
+The trees read Sentinel-1 radar. Radar needs no sunlight and sees through cloud. So each North Slope lake gets a fresh look about every four days, even in polar night.
+
+From 2019 through 2023, on average the ice went out around June 8th and came back around September 30th. That leaves about 114 days of open water.
+
+Each degree farther north cut about 23 days off the season. Lake shape and size explained only about two percent more than temperature alone.
+
+These lakes give off methane, and open water is when it reaches the air. The authors say better timing can help the models that estimate it.
+
+Now the fair test. The model's 94 percent is agreement with another satellite's labels on clear days. The paper says no field validation was done.
+
+Most training labels came from weather records, the same temperature the findings point to. The overlap is limited. Those labels only cover long stretches of deep cold or real warmth. It still means the temperature result needs a check from the ground.
+
+The paper's simple temperature model matched the radar's ice out dates within two radar looks for 82 percent of lakes and freeze up for 75 percent.
+
+The lakes that break that rule hold the next question. The paper suspects tricky shorelines fooled the radar. Or those lakes really differ. A field check would settle it.
+
+That is the right job for machine learning in the Arctic. It reads every lake through the dark, and it can tell a field crew which lakes are worth the trip.
+
+Which kind of lake would you send a field crew to first, and what would you measure there?
+
+#Alaska #MachineLearning #Arctic #Permafrost

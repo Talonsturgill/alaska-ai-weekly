@@ -1,0 +1,17 @@
+{
+ "thesis": "A random forest reading Sentinel-1 radar gave 30,774 North Slope lakes their first comprehensive ice calendar, through cloud and polar night, and that calendar mostly follows air temperature, so the lakes that break from it are where the next question lives, and a field check is what would settle it.",
+ "supporting_facts": [
+  "Scale and sight: almost 31,000 lakes of 2 hectares or more, dated by a radar that needs no sun and sees through cloud, a look about every four days, read by a 100-tree random forest (c1, c3, c6, c7, c8).",
+  "The finding: about 23 fewer open-water days per degree north, and lake shape and size add only about 2 percent beyond temperature (c19, c21).",
+  "A simple temperature model matched the satellite ice-out dates for 82 percent of lakes and freeze-up for 75 percent, so the rest break from the simple rule (c23)."
+ ],
+ "counterpoint_to_honor": "The 94 percent is agreement with clear-sky Sentinel-2 labels, not a field check, and the paper says no field validation was done (c13, c26). About 62 percent of the training labels came from weather records, so part of the temperature result leans on how the model was taught (c10), though those labels cover only long stretches of deep cold or real warmth. Earlier field work found 80 to 110 open days on instrumented lakes, short of this study's 114 average, different lakes and years, never called an error (c27, c18). The paper itself says some misfit lakes may reflect complex shorelines confusing the detector.",
+ "falsifier": "Field ice dates on instrumented North Slope lakes disagreeing with the radar dates by more than a couple of looks, or the lakes that break from the temperature rule turning out to be classifier errors rather than real outliers.",
+ "valence": "curious",
+ "stance": "curious",
+ "runners_up": [
+  {"angle": "A capability win, Alaska can now see every lake through the dark", "why_lost": "true but it celebrates the tool and never reports what the tool found; kept as the frame"},
+  {"angle": "The 94 percent is optical agreement, not field truth", "why_lost": "right caveat, wrong headline; it is the Act 3 test"}
+ ],
+ "who_it_serves": "methane modelers and planners of targeted observations (c24), and Alaskans deciding how far to trust a machine-made map of their own country"
+}
