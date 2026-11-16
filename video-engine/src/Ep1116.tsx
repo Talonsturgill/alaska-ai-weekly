@@ -901,7 +901,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
             <path d="M -78 0 h 180 M -78 18 h 120" stroke={C.ink} strokeWidth={4} />
           </g>
         )}
-        <HeldTravel f={f} x={150} y={970} w={130} h={330} mode="sweep" seed={19}><Thermometer x={210} y={1290} scale={1.0} f={f} level={0.55} glasses point={deal > 0 && deal < 1 ? 0.7 : 0} rim="#F7B48A" rimSide={-1} /></HeldTravel>
+        <HeldTravel f={f} x={45} y={980} w={120} h={320} mode="sweep" seed={19}><Thermometer x={105} y={1290} scale={0.95} f={f} level={0.55} glasses point={deal > 0 && deal < 1 ? 0.7 : 0} rim="#F7B48A" rimSide={-1} /></HeldTravel>
         <Grove x={760} y={1300} f={f} cols={3} rows={1} dx={150} scale={0.55} seed={71} lookAt={540} emotion={fill > 0.3 ? 'proud' : 'curious'} rim="#F7B48A" />
         <HeldTravel f={f} x={40} y={1560} w={1000} h={300} mode="shadow" seed={24}><Grove x={540} y={1840} f={f} cols={6} rows={1} dx={180} scale={0.85} seed={73} lookAt={540} snow={1} rim="#F7B48A" rimSide={-1} cast={0.4} /></HeldTravel>
         <g data-band="ok">{Array.from({length: 18}).map((_, i) => { const x = ((h01(i, 81) * 1300 + f * 6) % 1300) - 110; const y = 300 + h01(i, 82) * 1500; return <path key={i} d={`M ${x} ${y} q 40 -6 90 0`} stroke="#FFFFFF" strokeWidth={5} strokeLinecap="round" opacity={0.7} />; })}</g>
