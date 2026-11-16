@@ -115,7 +115,14 @@ def via_github(file, name):
             # DEPTH 1 (2026-11-11): the media branch carries every run's videos, and a full
             # fetch pulled tens of GB, filled the container disk and killed the upload.
             # A fast-forward push only needs the tip commit.
-            fetched = sh(["git", "-C", root, "fetch", "--depth=1", "origin",
+            # NO BLOBS (2026-11-16): even depth 1 pulls the tip TREE's blobs, which is every
+            # video ever uploaded; five attempts left 21 GB of half-written packs and filled the
+            # disk allowance. The commit we build needs only the tip's trees, so fetch them
+            # without blobs (a partial fetch, origin marked as the promisor) and push only the
+            # one new blob.
+            sh(["git", "-C", root, "config", "extensions.partialClone", "origin"])
+            sh(["git", "-C", root, "config", "remote.origin.promisor", "true"])
+            fetched = sh(["git", "-C", root, "fetch", "--depth=1", "--filter=blob:none", "origin",
                           f"+refs/heads/{branch}:refs/remotes/origin/{branch}"])
             if fetched.returncode != 0:
                 raise RuntimeError("git fetch media branch failed: " +
@@ -136,7 +143,7 @@ def via_github(file, name):
             if not blob: raise RuntimeError("git hash-object failed")
             if g("update-index", "--add", "--cacheinfo", f"100644,{blob},media/{name}").returncode != 0:
                 raise RuntimeError("git update-index failed")
-            tree = g("write-tree").stdout.strip()
+            tree = g("write-tree", "--missing-ok").stdout.strip()
             cenv = dict(os.environ, GIT_AUTHOR_NAME="Alaska.Ai routine", GIT_AUTHOR_EMAIL=media_email(),
                         GIT_COMMITTER_NAME="Alaska.Ai routine", GIT_COMMITTER_EMAIL=media_email())
             ct = subprocess.run(["git", "-C", root, "commit-tree", tree, "-p", tip, "-m", f"dispatch media: {name}"],
