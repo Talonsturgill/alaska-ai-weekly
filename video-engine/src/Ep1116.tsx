@@ -136,6 +136,34 @@ const GROUND: Record<Mode, string[]> = {
   dusk: ['#9A5A44', '#7E4634', '#6A4A36', '#533A2C'],
 };
 
+/** the Brooks Range far to the south: snow-capped peaks along the horizon, two parallax ridges */
+const Range: React.FC<{mode: Mode; horizon: number; f: number}> = ({mode, horizon, f}) => {
+  const far = mode === 'night' ? '#3A3566' : mode === 'day' ? '#B98C7A' : '#7A5A86';
+  const near = mode === 'night' ? '#2A2650' : mode === 'day' ? '#8E6450' : '#5E4470';
+  const ridge = (amp: number, seed: number, dx: number) => {
+    const pts: string[] = [];
+    for (let i = 0; i <= 14; i++) {
+      const x = -120 + i * 100 + dx;
+      const y = horizon - amp * (0.45 + 0.55 * h01(i, seed)) * (i % 2 ? 0.6 : 1);
+      pts.push(`${x} ${y.toFixed(1)}`);
+    }
+    return `M -120 ${horizon} L ${pts.join(' L ')} L 1300 ${horizon} Z`;
+  };
+  const drift = Math.sin(f / 90) * 10;
+  const peaks = [0, 2, 4, 6, 8, 10, 12, 14];
+  return (
+    <g data-band="ok">
+      <path d={ridge(230, 3, drift * 0.4)} fill={far} stroke={C.ink} strokeWidth={3} />
+      {peaks.map((i) => {
+        const x = -120 + i * 100 + drift * 0.4;
+        const y = horizon - 230 * (0.45 + 0.55 * h01(i, 3));
+        return <path key={i} d={`M ${x - 34} ${y + 40} L ${x} ${y} L ${x + 34} ${y + 40} L ${x + 16} ${y + 32} L ${x} ${y + 44} L ${x - 14} ${y + 30} Z`} fill={mode === 'night' ? '#C9C6E8' : '#FBF4EA'} stroke={C.ink} strokeWidth={2} />;
+      })}
+      <path d={ridge(120, 7, drift)} fill={near} stroke={C.ink} strokeWidth={3} />
+    </g>
+  );
+};
+
 /** sky from above the frame edge, clouds in two planes, stars or a low sun, a flat far horizon */
 const Sky: React.FC<{f: number; mode: Mode; horizon: number; sunX?: number}> = ({f, mode, horizon, sunX = 860}) => {
   const [a, m, b] = SKY[mode];
@@ -152,6 +180,7 @@ const Sky: React.FC<{f: number; mode: Mode; horizon: number; sunX?: number}> = (
         <circle key={i} cx={h01(i, 1) * 1180 - 50} cy={h01(i, 2) * (horizon - 60) - 40} r={1.2 + 1.8 * h01(i, 3)} fill={C.star}
           opacity={0.35 + 0.45 * (0.5 + 0.5 * Math.sin(f / (9 + i % 7) + i))} />
       ))}
+      <Range mode={mode} horizon={horizon} f={f} />
       {mode !== 'night' && (
         <g>
           <circle cx={sunX} cy={horizon - 70} r={mode === 'day' ? 120 : 150} fill={mode === 'day' ? '#FFE9B0' : '#F7B48A'} opacity={0.35} />
@@ -271,10 +300,10 @@ const S1: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="night" horizon={880} ponds={false} />
-        <LakeField f={f} at={b2} y0={900} y1={1300} n={70} ice={1} />
+        <World f={f} mode="night" horizon={740} ponds={false} />
+        <LakeField f={f} at={b2} y0={770} y1={1300} n={70} ice={1} />
         <KettleLake x={350} y={1230} rx={150} ry={46} f={f} seed={7} ice={1} dim={0.5 * (1 - clamp01((f - b2) / 30))} />
-        <Grove x={560} y={1200} f={f} cols={5} rows={3} dx={150} dy={74} scale={0.82} pop={pop} snow={1} emotion={pop < 0.9 ? 'startled' : 'proud'} rim="#B9B4FF" seed={2} />
+        <HeldTravel f={f} x={180} y={880} w={780} h={340} mode="shadow" seed={11}><Grove x={560} y={1200} f={f} cols={5} rows={3} dx={150} dy={74} scale={0.82} pop={pop} snow={1} emotion={pop < 0.9 ? 'startled' : 'proud'} rim="#B9B4FF" seed={2} /></HeldTravel>
         <g transform={`translate(0 ${settle(f, b1 + 8, 6)})`}>
           <Caribou x={900} y={1250} scale={1.05} f={f} facing={-1} emotion={pop > 0.2 ? 'wary' : 'calm'} />
         </g>
@@ -307,13 +336,13 @@ const S2: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="night" horizon={900} />
+        <World f={f} mode="night" horizon={760} />
         <Grove x={540} y={1080} f={f} cols={6} rows={2} dx={140} dy={60} scale={0.55} pop={troupe} snow={1} rim="#B9B4FF" seed={9} lookAt={f > b6 ? 820 : undefined} emotion={f > b7 && f < b7 + 30 ? 'startled' : 'calm'} />
         <KettleLake x={760} y={1250} rx={210} ry={62} f={f} seed={11} ice={flick} crack={f > b5 + 8 ? 0.15 + (f > b7 ? 0.2 : 0) : 0} />
         <LakeFlag x={960} y={1270} f={f} pop={ease(f, b5 + 8, 14)} />
         <g transform={`translate(${shake} 0)`}>
-          <VoteTree x={380} y={1270} scale={1.55} f={f} seed={1} emotion={f > b5 && f < b5 + 40 ? 'worried' : 'proud'} fork={clamp01((f - b3 - 6) / 10)} rim="#C6F04D"
-            snow={1 - clamp01((f - b3) / 14)} look={f > b5 ? 0.8 : 0.2} />
+          <HeldTravel f={f} x={260} y={880} w={260} h={400} mode="sweep" seed={12}><VoteTree x={380} y={1270} scale={1.55} f={f} seed={1} emotion={f > b5 && f < b5 + 40 ? 'worried' : 'proud'} fork={clamp01((f - b3 - 6) / 10)} rim="#C6F04D"
+            snow={1 - clamp01((f - b3) / 14)} look={f > b5 ? 0.8 : 0.2} /></HeldTravel>
         </g>
         {/* snow puffing off the crown */}
         {f > b3 && f < b3 + 24 && [0, 1, 2, 3, 4, 5].map((i) => {
@@ -324,7 +353,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <path d={`M 440 1262 C ${470 + 60 * root} 1268 ${500 + 90 * root} 1262 ${520 + 110 * root} ${1250 - 8 * root}`} stroke={C.ink} strokeWidth={10} fill="none" strokeLinecap="round" />
         <path d={`M 440 1262 C ${470 + 60 * root} 1268 ${500 + 90 * root} 1262 ${520 + 110 * root} ${1250 - 8 * root}`} stroke={FOREST.bark} strokeWidth={5} fill="none" strokeLinecap="round" />
         {/* the paper flutters down onto the snow */}
-        <g transform={`translate(${lerp(980, 820, paper) + 30 * Math.sin(f / 6) * (1 - paper)} ${lerp(500, 1150, paper)}) rotate(${lerp(-40, -6, paper)})`} opacity={paper > 0 ? 1 : 0}>
+        <g transform={`translate(${lerp(980, 600, paper) + 30 * Math.sin(f / 6) * (1 - paper)} ${lerp(500, 1110, paper)}) rotate(${lerp(-40, -6, paper)})`} opacity={paper > 0 ? 1 : 0}>
           <rect x={-90} y={-60} width={180} height={120} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={4} />
           <rect x={-90} y={-60} width={180} height={26} fill="#3D5A80" stroke={C.ink} strokeWidth={3} />
           <text x={0} y={-41} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} letterSpacing={1} fill="#FFF6E3">THE CRYOSPHERE</text>
@@ -349,13 +378,13 @@ const S3: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="night" horizon={1100} ponds={false} />
+        <World f={f} mode="night" horizon={1060} ponds={false} />
         {/* the orbit arc */}
-        <path d="M -100 520 Q 540 330 1180 520" stroke={C.lime} strokeWidth={3} strokeDasharray="10 14" fill="none" opacity={0.6} />
+        <path d="M -100 640 Q 540 470 1180 640" stroke={C.lime} strokeWidth={3} strokeDasharray="10 14" fill="none" opacity={0.6} />
         {/* the beam */}
         {beam > 0.01 && (
           <g opacity={beam}>
-            <polygon points={`${lerp(200, 540, glide)},620 ${lerp(200, 540, glide) - 30},620 470,1240 650,1240`} fill={C.lime} opacity={0.22} />
+            <polygon points={`${lerp(200, 540, glide) + 30},680 ${lerp(200, 540, glide) - 30},680 470,1240 650,1240`} fill={C.lime} opacity={0.22} />
             {[0, 1, 2, 3].map((i) => {
               const yy = 640 + ((f * 9 + i * 150) % 600);
               return <ellipse key={i} cx={lerp(lerp(200, 540, glide), 560, (yy - 620) / 620)} cy={yy} rx={20 + (yy - 620) * 0.12} ry={6} fill="none" stroke={C.lime} strokeWidth={3} opacity={0.7} />;
@@ -368,9 +397,9 @@ const S3: React.FC<SceneProps> = ({p}) => {
             <ellipse key={i} cx={((i * 150 + f * 0.8) % 1350) - 130} cy={860 + Math.sin(i) * 30} rx={150} ry={46} fill="#38335E" stroke={C.ink} strokeWidth={3} opacity={0.92} />
           ))}
         </g>
-        <KettleLake x={560} y={1240} rx={200} ry={56} f={f} seed={11} ice={1} radar={beam} />
+        <HeldTravel f={f} x={360} y={1180} w={400} h={120} mode="sweep" seed={13}><KettleLake x={560} y={1240} rx={200} ry={56} f={f} seed={11} ice={1} radar={beam} /></HeldTravel>
         <Grove x={540} y={1180} f={f} cols={6} rows={1} dx={150} scale={0.5} snow={1} rim="#C6F04D" seed={14} lookAt={560} />
-        <SatelliteEye x={lerp(200, 540, glide)} y={560} scale={1.2} f={f} scanCone={0} lensGlow={0.6 + 0.4 * beam} lensColor={C.lime} dishColor="#E6E0C8" coneColor={C.lime} telemetryColor={C.lime} />
+        <SatelliteEye x={lerp(200, 540, glide)} y={600} scale={2.2} f={f} scanCone={0} lensGlow={0.6 + 0.4 * beam} lensColor={C.lime} dishColor="#E6E0C8" coneColor={C.lime} telemetryColor={C.lime} />
       </SVG>
     </Frame>
   );
@@ -396,7 +425,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="night" horizon={880} />
+        <World f={f} mode="night" horizon={760} />
         {/* the stamps ripple out across thousands of lakes behind */}
         <g opacity={pull}>
           {Array.from({length: 40}).map((_, i) => {
@@ -421,10 +450,10 @@ const S4: React.FC<SceneProps> = ({p}) => {
         {ring > 0 && ring < 1 && (
           <line x1={540} y1={1060} x2={540 + Math.cos(-Math.PI / 2 + ring * Math.PI * 2) * 300} y2={1060 + Math.sin(-Math.PI / 2 + ring * Math.PI * 2) * 104} stroke={C.lime} strokeWidth={5} />
         )}
-        <Grove x={540} y={1290} f={f} cols={6} rows={2} dx={150} dy={70} scale={0.8} paddle="ice" paddleUp={up} fork={clamp01((f - b11) / 10)} rim="#C6F04D" snow={0.6} seed={21} lookAt={540}
-          emotion={press > 0.5 ? 'proud' : 'curious'} />
-        <VoteTree x={130} y={1300} scale={0.7} f={f} seed={77} paddle="water" paddleUp={up} fork={clamp01((f - b11) / 10)} rim="#C6F04D" snow={0.6} emotion="puzzled" look={1} />
-        <VoteTree x={960} y={1300} scale={0.7} f={f} seed={78} paddle="water" paddleUp={up} fork={clamp01((f - b11) / 10)} rim="#C6F04D" snow={0.6} emotion="puzzled" look={-1} facing={-1} />
+        <HeldTravel f={f} x={90} y={1000} w={900} h={300} mode="shadow" seed={14}><Grove x={540} y={1290} f={f} cols={5} rows={1} dx={165} dy={70} scale={0.8} paddle="ice" paddleUp={up} fork={clamp01((f - b11) / 10)} rim="#C6F04D" snow={0} seed={21} lookAt={540}
+          emotion={press > 0.5 ? 'proud' : 'curious'} /></HeldTravel>
+        <VoteTree x={110} y={1180} scale={0.6} f={f} seed={77} paddle="water" paddleUp={up} fork={clamp01((f - b11) / 10)} rim="#C6F04D" snow={0} emotion="puzzled" look={1} />
+        <VoteTree x={980} y={1180} scale={0.6} f={f} seed={78} paddle="water" paddleUp={up} fork={clamp01((f - b11) / 10)} rim="#C6F04D" snow={0} emotion="puzzled" look={-1} facing={-1} />
         {/* a pressed label stamp with an ink spread, never a check or a seal */}
         {f > b12 - 8 && (
           <g transform={`translate(540 ${1010 - 60 * (1 - press)}) scale(${1 + 0.08 * (1 - press)},${1 - 0.12 * Math.sin(press * Math.PI)})`}>
@@ -454,7 +483,7 @@ const Easel: React.FC<{x: number; y: number; f: number; land: number; flap: numb
         {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <line key={i} x1={Math.cos(i * 0.785) * 21} y1={Math.sin(i * 0.785) * 21} x2={Math.cos(i * 0.785) * 28} y2={Math.sin(i * 0.785) * 28} stroke={C.ink} strokeWidth={2.5} />)}
       </g>
       <text x={-110} y={-160} fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={1} fill={C.ink}>GRADED BY</text>
-      <text x={8} y={-160} fontFamily={MONO} fontWeight={800} fontSize={16} letterSpacing={1} fill={C.ink}>SENTINEL-2</text>
+      <text x={2} y={-160} fontFamily={MONO} fontWeight={800} fontSize={16} letterSpacing={1} fill={C.ink}>SENTINEL-2</text>
       {flap > 0.01 && (
         <g transform={`translate(6 -182) scale(1 ${clamp01(flap) * (1 - clamp01(lift))})`}>
           <rect x={0} y={0} width={124} height={34} fill="#E8C46A" stroke={C.ink} strokeWidth={3.5} />
@@ -476,9 +505,9 @@ const LakeFlag: React.FC<{x: number; y: number; f: number; s?: number; pop?: num
     <g transform={`translate(${x} ${y}) scale(${s * k})`}>
       <ContactShadow cx={0} cy={2} rx={14} ry={4} opacity={0.3} blur={3} />
       <line x1={0} y1={0} x2={0} y2={-90} stroke={C.ink} strokeWidth={4} />
-      <g transform={`translate(2 -90) rotate(${sway})`}>
-        <rect x={0} y={0} width={w} height={30} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={3} />
-        <text x={w / 2} y={21} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={1} fill={C.ink}>{label}</text>
+      <g transform={`translate(-2 -90) rotate(${sway})`}>
+        <rect x={-w} y={0} width={w} height={30} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={3} />
+        <text x={-w / 2} y={21} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} letterSpacing={1} fill={C.ink}>{label}</text>
       </g>
     </g>
   );
@@ -500,8 +529,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="night" horizon={860} />
-        <Thermometer x={250} y={1270} scale={1.25} f={f} glasses level={0.35} point={deal > 0 && deal < 1 ? 0.6 : 0} lean={0.2} />
+        <World f={f} mode="night" horizon={740} />
+        <HeldTravel f={f} x={180} y={880} w={150} h={400} mode="sweep" seed={15}><Thermometer x={250} y={1270} scale={1.25} f={f} glasses level={0.35} point={deal > 0 && deal < 1 ? 0.6 : 0} lean={0.2} /></HeldTravel>
         {/* flashcards dropping onto the snow, most stamped with a thermometer mark */}
         {Array.from({length: 10}).map((_, i) => {
           const t = clamp01(deal * 10 - i);
@@ -548,8 +577,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="day" horizon={900} sunX={sunX} />
-        <KettleLake x={540} y={1120} rx={320} ry={92} f={f} seed={11} ice={iceAmt} crack={f < b19 ? crack : 0} />
+        <World f={f} mode="day" horizon={780} sunX={sunX} />
+        <HeldTravel f={f} x={200} y={1010} w={680} h={220} mode="shadow" seed={16}><KettleLake x={540} y={1120} rx={320} ry={92} f={f} seed={11} ice={iceAmt} crack={f < b19 ? crack : 0} /></HeldTravel>
         {/* ice shards drifting apart at breakup */}
         {f > b18 && f < b19 && [0, 1, 2, 3, 4].map((i) => {
           const t = clamp01((f - b18) / 40);
@@ -567,7 +596,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
             </g>
           ))}
         </g>
-        <Grove x={540} y={1000} f={f} cols={6} rows={1} dx={170} scale={0.48} rim="#FFD98A" seed={41} emotion={mosq ? 'startled' : 'calm'} lookAt={540} cast={-0.7} />
+        <HeldTravel f={f} x={60} y={880} w={960} h={130} mode="shadow" seed={20}><Grove x={540} y={1000} f={f} cols={6} rows={1} dx={170} scale={0.48} rim="#FFD98A" seed={41} emotion={mosq ? 'startled' : 'calm'} lookAt={540} cast={-0.7} /></HeldTravel>
         {mosq && [0, 1, 2, 3, 4].map((i) => (
           <Mosquito key={i} x={260 + i * 120 + 20 * Math.sin(f / 5 + i)} y={1180 - (i % 2) * 40 + 14 * Math.cos(f / 4 + i)} scale={0.5} f={f + i * 7} facing={i % 2 ? -1 : 1} />
         ))}
@@ -595,9 +624,9 @@ const S7: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="day" horizon={760} sunX={900} near={true} />
+        <World f={f} mode="day" horizon={700} sunX={900} near={true} />
         {/* the tundra tilts up into a painted map: four latitude bands, north at the top */}
-        <g transform={`translate(540 1180) scale(1 ${lerp(0.35, 1, tilt)}) translate(-540 -1180)`}>
+        <HeldTravel f={f} x={110} y={860} w={860} h={420} mode="shadow" seed={21}><g transform={`translate(540 1180) scale(1 ${lerp(0.35, 1, tilt)}) translate(-540 -1180)`}>
           <rect x={110} y={860} width={860} height={420} rx={10} fill="#E8D6AE" stroke={C.ink} strokeWidth={5} />
           {bands.map((i) => {
             const yy = 900 + i * 96;
@@ -615,7 +644,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
               </g>
             );
           })}
-        </g>
+        </g></HeldTravel>
         <g transform={`translate(${lerp(1160, 900, hop)} 0)`}>
           <Thermometer x={0} y={1290 - 40 * Math.sin(Math.PI * clamp01((f - b23) / 18))} scale={1.15} f={f} level={0.4 + 0.45 * hop} emotion={hop > 0.5 ? 'proud' : 'calm'} cast={-0.6} />
         </g>
@@ -665,32 +694,34 @@ const S8: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <Sky f={f} mode="day" horizon={860} sunX={300} />
+        <Sky f={f} mode="day" horizon={660} sunX={300} />
+        <g transform="translate(0 -200)">
         {/* the right half of the sky is October dusk */}
-        <rect x={half} y={-80} width={700} height={940} fill="#5C4A78" opacity={0.55} data-band="ok" />
+        <rect x={half} y={-80} width={700} height={1040} fill="#5C4A78" opacity={0.55} data-band="ok" />
         <g data-band="ok">
-          <rect x={-100} y={860} width={1280} height={1100} fill="#6A4A30" />
+          <rect data-band="ok" x={-100} y={860} width={1280} height={1500} fill="#6A4A30" />
           <rect x={-100} y={860} width={1280} height={40} fill="#8A4B2E" stroke={C.ink} strokeWidth={4} />
           {Array.from({length: 26}).map((_, i) => <circle key={i} cx={h01(i, 31) * 1080} cy={1360 + h01(i, 32) * 540} r={6 + h01(i, 33) * 10} fill="#5A3E28" />)}
         </g>
         {/* the same kettle lake cut open: June on the left, October on the right */}
         <path d="M 120 890 Q 540 1420 960 890 Z" fill={C.water} stroke={C.ink} strokeWidth={5} />
-        <clipPath id="octHalf"><rect x={half} y={860} width={600} height={600} /></clipPath>
+        <clipPath id="octHalf"><rect data-band="ok" x={half} y={860} width={600} height={600} /></clipPath>
         <g clipPath="url(#octHalf)">
           <path d="M 120 890 Q 540 1420 960 890 Z" fill="#3E6E78" />
           <rect x={half} y={882} width={440} height={44} fill={C.ice} stroke={C.ink} strokeWidth={4} />
         </g>
         <line x1={half} y1={860} x2={half} y2={1180} stroke={C.ink} strokeWidth={4} strokeDasharray="12 10" />
         <g clipPath="url(#junHalf)">{bub(360, true)}</g>
-        <clipPath id="junHalf"><rect x={0} y={700} width={half} height={800} /></clipPath>
+        <clipPath id="junHalf"><rect data-band="ok" x={0} y={700} width={half} height={800} /></clipPath>
         <g clipPath="url(#octHalf2)">{bub(720, false)}</g>
-        <clipPath id="octHalf2"><rect x={half} y={700} width={600} height={800} /></clipPath>
+        <clipPath id="octHalf2"><rect data-band="ok" x={half} y={700} width={600} height={800} /></clipPath>
         <rect x={200} y={1220} width={120} height={44} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={3} />
         <text x={260} y={1251} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>JUNE</text>
         <rect x={760} y={1220} width={120} height={44} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={3} />
         <text x={820} y={1251} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>OCT</text>
-        <LakeFlag x={990} y={892} f={f} s={0.9} />
+        <LakeFlag x={1000} y={1020} f={f} s={0.9} />
         <VoteTree x={90} y={872} scale={0.55} f={f} seed={51} emotion="curious" look={0.8} cast={-0.6} />
+      </g>
       </SVG>
     </Frame>
   );
@@ -747,7 +778,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="dusk" horizon={840} sunX={180} />
+        <World f={f} mode="dusk" horizon={740} sunX={180} />
         {/* the lake ice beyond the shore, empty but for one desk */}
         <KettleLake x={600} y={1010} rx={470} ry={110} f={f} seed={11} ice={1} />
         <EmptyDesk x={lerp(1320, 700, slide)} y={1050} s={0.85} f={f} card={pin} cardAt={b30 + 10} />
@@ -801,11 +832,11 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         {/* overhead: snow with wind ripples, dusk light raking from the left */}
         <g data-band="ok">
-          <rect x={-100} y={-80} width={1280} height={2080} fill="#E9ECF3" />
+          <rect data-band="ok" x={-100} y={-80} width={1280} height={2080} fill="#E9ECF3" />
           {Array.from({length: 30}).map((_, i) => (
             <path key={i} d={`M ${-60 + (i % 5) * 260 + ((f * 0.4) % 60)} ${100 + Math.floor(i / 5) * 320} q 60 -14 120 0 t 120 0`} stroke="#C9D2DE" strokeWidth={4} fill="none" />
           ))}
-          <rect x={-100} y={-80} width={1280} height={2080} fill="#F7B48A" opacity={0.12} />
+          <rect data-band="ok" x={-100} y={-80} width={1280} height={2080} fill="#F7B48A" opacity={0.12} />
         </g>
         {/* the ribbon of days, deep winter at both ends, summer in the middle */}
         <defs>
@@ -815,7 +846,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           </linearGradient>
         </defs>
         <rect x={RX - 6} y={RY - 6} width={RW + 12} height={132} rx={14} fill="#000" opacity={0.15} />
-        <rect x={RX} y={RY} width={RW} height={120} rx={12} fill="url(#yearRib)" stroke={C.ink} strokeWidth={5} />
+        <HeldTravel f={f} x={RX} y={RY} w={RW} h={120} mode="shadow" seed={22}><rect x={RX} y={RY} width={RW} height={120} rx={12} fill="url(#yearRib)" stroke={C.ink} strokeWidth={5} /></HeldTravel>
         {Array.from({length: slots + 1}).map((_, i) => <line key={i} x1={RX + (i * RW) / slots} x2={RX + (i * RW) / slots} y1={RY} y2={RY + 120} stroke={C.ink} strokeWidth={1.5} opacity={0.35} />)}
         {/* the cards: dealt in a heap, then slid to deep winter (frost) and high summer (sun) */}
         {Array.from({length: 10}).map((_, i) => {
@@ -857,7 +888,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
             <path d="M -78 0 h 180 M -78 18 h 120" stroke={C.ink} strokeWidth={4} />
           </g>
         )}
-        <Thermometer x={210} y={1380} scale={1.0} f={f} level={0.55} glasses point={deal > 0 && deal < 1 ? 0.7 : 0} rim="#F7B48A" rimSide={-1} />
+        <HeldTravel f={f} x={150} y={1060} w={130} h={330} mode="sweep" seed={19}><Thermometer x={210} y={1380} scale={1.0} f={f} level={0.55} glasses point={deal > 0 && deal < 1 ? 0.7 : 0} rim="#F7B48A" rimSide={-1} /></HeldTravel>
         <Grove x={760} y={1400} f={f} cols={3} rows={1} dx={150} scale={0.55} seed={71} lookAt={540} emotion={fill > 0.3 ? 'proud' : 'curious'} rim="#F7B48A" />
       </SVG>
     </Frame>
@@ -878,7 +909,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="dusk" horizon={860} sunX={160} />
+        <World f={f} mode="dusk" horizon={740} sunX={160} />
         {/* the instrumented lake and its logger on a stake at the waterline */}
         <KettleLake x={300} y={1180} rx={240} ry={70} f={f} seed={95} ice={0} />
         <g transform="translate(470 1200)">
@@ -936,7 +967,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="dusk" horizon={840} sunX={140} />
+        <World f={f} mode="dusk" horizon={740} sunX={140} />
         {/* the crane up: the whole slope, about one lake in five flagged */}
         <g opacity={crane}>
           {Array.from({length: 50}).map((_, i) => {
@@ -944,7 +975,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             return <KettleLake key={i} x={h01(i, 72) * 1100 - 10} y={860 + t * t * 160} rx={14 + 16 * t} ry={5 + 5 * t} f={f} seed={400 + i} ice={0.5} detail={false} glow={i % 5 === 2 ? 1 : 0} />;
           })}
         </g>
-        <Thermometer x={130} y={1250} scale={1.0} f={f} level={0.6} emotion="proud" point={0.5} rim="#F7B48A" rimSide={-1} cast={0.4} />
+        <HeldTravel f={f} x={70} y={940} w={130} h={320} mode="sweep" seed={17}><Thermometer x={130} y={1250} scale={1.0} f={f} level={0.6} emotion="proud" point={0.5} rim="#F7B48A" rimSide={-1} cast={0.4} /></HeldTravel>
         {/* twenty lakes waddle into line behind the thermometer, the flagged kettle lake hopping in last */}
         {Array.from({length: 20}).map((_, i) => {
           const isRebel = rebels.includes(i);
@@ -970,7 +1001,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             </g>
           );
         })}
-        <Grove x={760} y={1000} f={f} cols={5} rows={1} dx={100} scale={0.4} seed={91} lookAt={f > b39 ? 640 : 160} emotion={f > b39 ? 'startled' : 'curious'} rim="#F7B48A" rimSide={-1} cast={0.3} />
+        <HeldTravel f={f} x={520} y={880} w={480} h={130} mode="shadow" seed={18}><Grove x={760} y={1000} f={f} cols={5} rows={1} dx={100} scale={0.4} seed={91} lookAt={f > b39 ? 640 : 160} emotion={f > b39 ? 'startled' : 'curious'} rim="#F7B48A" rimSide={-1} cast={0.3} /></HeldTravel>
       </SVG>
     </Frame>
   );
@@ -989,7 +1020,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
     const jag = 0.12 * Math.sin(cx * 1.7 + cy * 2.3);
     return dx * dx + dy * dy < 1 + jag;
   };
-  const splitX = lerp(1080, 540, split) + lerp(0, 540, widen);
+  const splitX = lerp(1080, 540, split) - 540 * widen;
   return (
     <Frame p={p} z0={1.0} z1={1.02} oy={960} bg="#10131A" warmth={0.0} overlay={
       <g>
@@ -1001,7 +1032,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
       <SVG>
         {/* the radar's pixel view: a lime grid, land pixels bleeding into water along the jagged shore */}
         <g data-band="ok"><rect x={-100} y={-80} width={1280} height={2080} fill="#10131A" /></g>
-        <g opacity={snapIn} transform={`translate(0 ${(1 - snapIn) * 40})`}>
+        <g opacity={snapIn * (1 - widen)} transform={`translate(0 ${(1 - snapIn) * 40})`}>
           {Array.from({length: N * N}).map((_, k) => {
             const cx = k % N, cy = Math.floor(k / N);
             const inLake = lakeF(cx, cy);
@@ -1014,11 +1045,11 @@ const S13: React.FC<SceneProps> = ({p}) => {
           <text x={ox} y={oy - 18} fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.lime}>RADAR VIEW · ILLUSTRATIVE</text>
         </g>
         {/* the clean drawing of a lake that really differs, with its own ribbon off-length */}
-        <clipPath id="cleanHalf"><rect x={splitX} y={-80} width={1300} height={2080} /></clipPath>
+        <clipPath id="cleanHalf"><rect data-band="ok" x={splitX} y={-80} width={1300} height={2080} /></clipPath>
         <g clipPath="url(#cleanHalf)">
           <g data-band="ok"><rect x={0} y={-80} width={1080} height={2080} fill="#3A2F5E" /></g>
-          <Sky f={f} mode="dusk" horizon={840} sunX={160} />
-          <Ground f={f} mode="dusk" horizon={840} ponds={false} />
+          <Sky f={f} mode="dusk" horizon={740} sunX={160} />
+          <Ground f={f} mode="dusk" horizon={740} ponds={false} />
           <KettleLake x={widen > 0.1 ? 540 : 810} y={1050} rx={widen > 0.1 ? 300 : 200} ry={widen > 0.1 ? 90 : 64} f={f} seed={11} ice={0.4} glow={widen > 0.1 ? 0.9 : 0.4} />
           {widen < 0.1 && <rect x={680} y={1160} width={200} height={26} rx={8} fill={C.water} stroke={C.ink} strokeWidth={3} />}
           {widen > 0.1 && <g opacity={widen}><EmptyDesk x={560} y={1060} s={0.75} f={f} card={1} cardAt={-100} /></g>}
@@ -1043,8 +1074,8 @@ const S14: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <World f={f} mode="night" horizon={860} ponds={false} />
-        <LakeField f={f} at={-40} y0={880} y1={1000} n={26} ice={1} seed={3} />
+        <World f={f} mode="night" horizon={740} ponds={false} />
+        <LakeField f={f} at={-40} y0={770} y1={1000} n={26} ice={1} seed={3} />
         {/* the caribou crosses behind the lake */}
         <Caribou x={lerp(1150, 840, walk)} y={1040} scale={0.6} f={f} facing={-1} trot={walk < 1 ? 0.5 : 0} emotion={f > b44 ? 'wary' : 'calm'} />
         <KettleLake x={680} y={1170} rx={260} ry={74} f={f} seed={11} ice={1} glow={0.9} />

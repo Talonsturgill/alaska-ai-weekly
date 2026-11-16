@@ -86,7 +86,7 @@ export const VoteTree: React.FC<{
       {shadow && <ContactShadow cx={0} cy={2} rx={58 * p} ry={12} opacity={0.32} blur={7} />}
       <clipPath id={`${id}_g`}><rect x={-200} y={-400} width={400} height={402} /></clipPath>
       <g clipPath={`url(#${id}_g)`}>
-        <g transform={`translate(0,${(1 - rise) * 240}) scale(${1 / Math.sqrt(sq)},${sq * breathe}) rotate(${sway * 0.25})`}>
+        <g transform={`translate(0,${(1 - rise) * 240}) scale(${1 / Math.sqrt(sq)},${sq * breathe}) rotate(${sway * 0.55})`}>
           <defs>
             <FormGradient id={`${id}_b`} t={bark} />
             <FormGradient id={`${id}_c`} t={crown} />
@@ -101,7 +101,7 @@ export const VoteTree: React.FC<{
           <path d="M 0 -116 L 0 -140 M 0 -140 L -40 -168 M 0 -140 L 40 -168" stroke={INK} strokeWidth={9} strokeLinecap="round" fill="none" />
           <path d="M 0 -116 L 0 -140 M 0 -140 L -40 -168 M 0 -140 L 40 -168" stroke={FOREST.bark} strokeWidth={4} strokeLinecap="round" fill="none" />
           {/* crown in two lobes, each split again (a tree of decisions) */}
-          <g transform={`rotate(${sway * 0.5} 0 -130)`}>
+          <g transform={`rotate(${sway * 1.3} 0 -130) translate(${sway * 1.5} 0)`}>
             <path d={crownPath} fill={`url(#${id}_c)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
             <path d="M 0 -128 L 0 -222" stroke={FOREST.crownD} strokeWidth={4} opacity={0.75} />
             <path d="M -40 -168 L -62 -196 M -40 -168 L -22 -204 M 40 -168 L 22 -204 M 40 -168 L 62 -196" stroke={FOREST.crownD} strokeWidth={3.5} strokeLinecap="round" opacity={0.7} />
@@ -145,7 +145,7 @@ export const VoteTree: React.FC<{
                 <line x1={0} y1={0} x2={0} y2={-34} stroke={INK} strokeWidth={6} />
                 <rect x={-44} y={-84} width={88} height={52} rx={10} fill={shown === 'water' ? FOREST.water : FOREST.ice} stroke={INK} strokeWidth={4.5} />
                 <rect x={-44} y={-84} width={88} height={52} rx={10} fill="none" stroke={FOREST.lime} strokeWidth={2.5} opacity={0.85} />
-                <text x={0} y={-50} textAnchor="middle" fontFamily={MONO_} fontWeight={800} fontSize={shown === 'water' ? 19 : 24} letterSpacing={1}
+                <text x={0} y={-50} transform={`scale(${facing},1)`} textAnchor="middle" fontFamily={MONO_} fontWeight={800} fontSize={shown === 'water' ? 19 : 24} letterSpacing={1}
                   fill={shown === 'water' ? '#F4FBFA' : '#1B3A40'}>{shown === 'water' ? 'WATER' : 'ICE'}</text>
               </g>
             </g>
