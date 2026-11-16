@@ -1,0 +1,91 @@
+{
+ "j1": {
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 6.9,
+   "Motion & animation craft": 6.4,
+   "Composition & staging": 6.6,
+   "Color & grade": 7.6,
+   "Typography & captions": 7.2,
+   "Sound design & mix": 7.0,
+   "VO–illustration sync & entertainment": 7.3,
+   "Accuracy & sourcing": 7.8,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8.3
+  },
+  "weighted_total": 7.13,
+  "hard_blockers": [],
+  "concrete_defects": [
+   "S9 lilac ellipse under the visor",
+   "S10 bottom floes over tree crowns, top half pale",
+   "S10 placeholder pinned card",
+   "S13 plain grid",
+   "S13 white slivers on the wipe seam",
+   "S14 caribou plainer than the desk",
+   "S12 thermometer and back troupe little breath"
+  ],
+  "would_ship": true
+ },
+ "j2": {
+  "axis_scores": {
+   "Hook & retention": 7.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.8,
+   "Composition & staging": 7.3,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO–illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8.0
+  },
+  "weighted_total": 7.39,
+  "hard_blockers": [],
+  "concrete_defects": [
+   "S4 ICE stamp translucent",
+   "S10 whiteout breaks the colour arc, floes on the tree crowns, empty top third",
+   "S8 bottom 40 percent plain soil, season tags float",
+   "S2 hero tree barely moves",
+   "S13 flat grid, empty lower third",
+   "repeated sedge band"
+  ],
+  "would_ship": true
+ },
+ "j3": {
+  "axis_scores": {
+   "Hook & retention": 7.8,
+   "Illustration craft & detail": 7.6,
+   "Motion & animation craft": 7.2,
+   "Composition & staging": 7.4,
+   "Color & grade": 8.0,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.2,
+   "VO–illustration sync & entertainment": 7.7,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 8.3
+  },
+  "weighted_total": 7.7,
+  "hard_blockers": [],
+  "concrete_defects": [
+   "S12 a walking lake over the thermometer bulb, lower-left lakes overlap",
+   "S13 FIELD CHECK plate over tree faces, repeats the caption",
+   "S9 placeholder card on the empty desk",
+   "S10 placeholder pinned card, lakes on crowns",
+   "S13 caption across the wipe seam",
+   "S9 visor blob",
+   "repeated sedge band",
+   "S5 easel bounce not visible"
+  ],
+  "would_ship": true
+ },
+ "named_open_defects": [
+  "S10 lakes on tree crowns and placeholder card",
+  "S13 flat radar grid and seam slivers",
+  "S9 visor blob and placeholder desk card",
+  "S12 lake over thermometer bulb",
+  "repeated foreground sedge band",
+  "held thermometer and troupe breath"
+ ]
+}
