@@ -1,6 +1,7 @@
 import React from 'react';
 import {INK} from './Character';
 import {tones, paleTones, FormGradient, RimLight, ContactShadow} from './lighting';
+import {figureIdle, type FigurePose} from './figureidle';
 
 // ============================================================================================
 // FOREST FAMILY (NET-NEW 2026-11-16, "The Forest Can't Stand on the Ice").
@@ -23,6 +24,24 @@ const h01 = (a: number, b = 0) => {
   return x - Math.floor(x);
 };
 const MONO_ = "'JetBrains Mono', monospace";
+
+// BEAT IDLE (machine pass 2026-11-16). The forest family shipped with sine idles only (sway 3.2 px,
+// a 2.2 px bob), and on its first film every panel seat named the hero tree, the thermometer and
+// the back troupe as near-static on the held strips ("S2 hero tree barely moves", "S12
+// thermometer and back troupe little breath"). Pass `cues` (frames, usually p.b(id) for the
+// beats the character is on screen for) and it PERFORMS on each one through lib/figureidle's
+// figureIdle: it commits its weight to the other side over its planted foot (5 frames early, so
+// the 8-frame evidence strip on the beat sees the move), the face answers late, the free arm
+// lifts. No cues (the default) draws exactly what it drew before. `idleGain` scales it, 0 freezes.
+type BeatPose = {skew: number; dip: number; breath: number; eye: number; tilt: number; armL: number; armR: number; on: boolean};
+const NO_POSE: BeatPose = {skew: 0, dip: 0, breath: 1, eye: 0, tilt: 0, armL: 0, armR: 0, on: false};
+function beatPose(f: number, seed: number, cues: number[] | undefined, gain: number, h: number): BeatPose {
+  if (!cues || !cues.length || gain <= 0) return NO_POSE;
+  const p: FigurePose = figureIdle(f, seed, gain, cues);
+  // a cartoon prop-character reads at a smaller size than a person, so its lean is pushed 1.8x
+  const skew = (Math.atan2(p.shift * 1.8 * (h / 300), h) * 180) / Math.PI + p.lean * 0.6;
+  return {skew, dip: p.dip, breath: p.breath, eye: p.headX * 0.45, tilt: p.headRot, armL: p.armL * 1.6, armR: p.armR * 1.6, on: true};
+}
 
 export const FOREST = {
   bark: '#E9DCC1', barkMark: '#2A2622', crown: '#6E8B3D', crownL: '#93AE58', crownD: '#3E5A24',
@@ -51,9 +70,14 @@ export const VoteTree: React.FC<{
   cast?: number;
   /** which edge the key light rims: 1 the right lobe (default), -1 the left lobe (a dusk sun at screen left) */
   rimSide?: 1 | -1;
+  /** beat idle (2026-11-16): frames it performs on, usually p.b(id); none draws the sine idle alone */
+  cues?: number[];
+  /** beat idle gain, 1 default, 0 freezes the performance */
+  idleGain?: number;
 }> = ({x, y, scale = 1, f, seed = 0, pop = 1, paddle = null, paddleUp = 0, flip = 0, look = 0, emotion = 'calm', fork = 0,
-       rim = '#FFD98A', snow = 0, facing = 1, shadow = true, cast = 0, rimSide = 1}) => {
+       rim = '#FFD98A', snow = 0, facing = 1, shadow = true, cast = 0, rimSide = 1, cues, idleGain = 1}) => {
   const id = uid(`vt${seed}`);
+  const bp = beatPose(f, seed, cues, idleGain, 240);
   const p = clamp01(pop);
   if (p <= 0.001) return null;
   // rise: below-ground to standing, overshoot then settle; squash on the way up
@@ -69,7 +93,7 @@ export const VoteTree: React.FC<{
   const fl = clamp01(flip);
   const edge = Math.abs(Math.cos(fl * Math.PI));
   const shown: Paddle = fl < 0.5 ? paddle : paddle === 'ice' ? 'water' : paddle === 'water' ? 'ice' : null;
-  const eyeX = look * 4;
+  const eyeX = look * 4 + bp.eye;
   const mouth = {
     calm: 'M -9 2 Q 0 7 9 2', curious: 'M -6 3 Q 0 8 6 3', puzzled: 'M -9 4 Q -2 1 9 5', proud: 'M -11 1 Q 0 11 11 1',
     worried: 'M -9 6 Q 0 0 9 6', startled: 'M -5 2 Q 0 12 5 2 Q 0 -2 -5 2',
@@ -86,7 +110,7 @@ export const VoteTree: React.FC<{
       {shadow && <ContactShadow cx={0} cy={2} rx={58 * p} ry={12} opacity={0.32} blur={7} />}
       <clipPath id={`${id}_g`}><rect x={-200} y={-400} width={400} height={402} /></clipPath>
       <g clipPath={`url(#${id}_g)`}>
-        <g transform={`translate(0,${(1 - rise) * 240}) scale(${1 / Math.sqrt(sq)},${sq * breathe}) rotate(${sway * 0.55})`}>
+        <g transform={`translate(0,${(1 - rise) * 240}) scale(${1 / Math.sqrt(sq)},${sq * breathe}) rotate(${sway * 0.55})${bp.on ? ` skewX(${bp.skew}) scale(1 ${bp.breath}) translate(0 ${bp.dip})` : ''}`}>
           <defs>
             <FormGradient id={`${id}_b`} t={bark} />
             <FormGradient id={`${id}_c`} t={crown} />
@@ -101,7 +125,7 @@ export const VoteTree: React.FC<{
           <path d="M 0 -116 L 0 -140 M 0 -140 L -40 -168 M 0 -140 L 40 -168" stroke={INK} strokeWidth={9} strokeLinecap="round" fill="none" />
           <path d="M 0 -116 L 0 -140 M 0 -140 L -40 -168 M 0 -140 L 40 -168" stroke={FOREST.bark} strokeWidth={4} strokeLinecap="round" fill="none" />
           {/* crown in two lobes, each split again (a tree of decisions) */}
-          <g transform={`rotate(${sway * 1.3} 0 -130) translate(${sway * 1.5} 0)`}>
+          <g transform={`rotate(${sway * 1.3 + bp.tilt} 0 -130) translate(${sway * 1.5} 0)`}>
             <path d={crownPath} fill={`url(#${id}_c)`} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
             <path d="M 0 -128 L 0 -222" stroke={FOREST.crownD} strokeWidth={4} opacity={0.75} />
             <path d="M -40 -168 L -62 -196 M -40 -168 L -22 -204 M 40 -168 L 22 -204 M 40 -168 L 62 -196" stroke={FOREST.crownD} strokeWidth={3.5} strokeLinecap="round" opacity={0.7} />
@@ -135,10 +159,12 @@ export const VoteTree: React.FC<{
             <path d={mouth} transform="translate(0,10)" stroke={INK} strokeWidth={3} fill={emotion === 'startled' ? INK : 'none'} strokeLinecap="round" />
           </g>
           {/* branch arms */}
-          <path d="M -15 -60 C -34 -66 -42 -76 -48 -88" stroke={INK} strokeWidth={8} strokeLinecap="round" fill="none" />
-          <path d="M -15 -60 C -34 -66 -42 -76 -48 -88" stroke={FOREST.bark} strokeWidth={3.5} strokeLinecap="round" fill="none" />
+          <g transform={bp.on ? `rotate(${bp.armL} -15 -60)` : undefined}>
+            <path d="M -15 -60 C -34 -66 -42 -76 -48 -88" stroke={INK} strokeWidth={8} strokeLinecap="round" fill="none" />
+            <path d="M -15 -60 C -34 -66 -42 -76 -48 -88" stroke={FOREST.bark} strokeWidth={3.5} strokeLinecap="round" fill="none" />
+          </g>
           {paddle ? (
-            <g transform={`translate(18,-60) rotate(${-48 * upE})`}>
+            <g transform={`translate(18,-60) rotate(${-48 * upE + bp.armR * 0.5})`}>
               <path d={`M 0 0 C 18 -4 30 -12 ${38} ${-40 - 30 * upE}`} stroke={INK} strokeWidth={8} strokeLinecap="round" fill="none" />
               <path d={`M 0 0 C 18 -4 30 -12 ${38} ${-40 - 30 * upE}`} stroke={FOREST.bark} strokeWidth={3.5} strokeLinecap="round" fill="none" />
               <g transform={`translate(38,${-40 - 30 * upE}) scale(${Math.max(0.06, edge)},1)`}>
@@ -150,7 +176,7 @@ export const VoteTree: React.FC<{
               </g>
             </g>
           ) : (
-            <g>
+            <g transform={bp.on ? `rotate(${bp.armR} 15 -60)` : undefined}>
               <path d="M 15 -60 C 34 -66 42 -76 48 -88" stroke={INK} strokeWidth={8} strokeLinecap="round" fill="none" />
               <path d="M 15 -60 C 34 -66 42 -76 48 -88" stroke={FOREST.bark} strokeWidth={3.5} strokeLinecap="round" fill="none" />
             </g>
@@ -178,8 +204,11 @@ export const Grove: React.FC<{
   x: number; y: number; f: number; cols?: number; rows?: number; dx?: number; dy?: number; scale?: number; pop?: number;
   paddle?: Paddle; paddleUp?: number; flipAt?: number; lookAt?: number; emotion?: TreeEmotion; fork?: number; rim?: string; snow?: number; seed?: number;
   cast?: number; rimSide?: 1 | -1;
+  /** beat idle (2026-11-16): every tree performs on these frames, each a seeded 0 to 3 frames late (a ripple, still inside the strip) */
+  cues?: number[];
+  idleGain?: number;
 }> = ({x, y, f, cols = 5, rows = 3, dx = 150, dy = 70, scale = 0.8, pop = 1, paddle = null, paddleUp = 0, flipAt = 0, lookAt, emotion = 'calm',
-       fork = 0, rim, snow = 0, seed = 0, cast = 0, rimSide = 1}) => {
+       fork = 0, rim, snow = 0, seed = 0, cast = 0, rimSide = 1, cues, idleGain = 1}) => {
   const trees: React.ReactNode[] = [];
   for (let r = rows - 1; r >= 0; r--) {
     const k = 1 - r * 0.16;
@@ -192,8 +221,10 @@ export const Grove: React.FC<{
       const tp = clamp01((pop - delay) / 0.55);
       const flipLocal = clamp01((flipAt - (c / Math.max(1, n - 1)) * 0.5) / 0.5);
       const look = lookAt === undefined ? Math.sin(f / 37 + s) * 0.5 : Math.max(-1, Math.min(1, (lookAt - tx) / 260));
+      const lag = Math.floor(h01(s, 5) * 4);
       trees.push(
         <VoteTree key={`${r}-${c}`} x={tx} y={ty} scale={scale * k} f={f} seed={s} pop={tp} paddle={paddle}
+          cues={cues && cues.map((q) => q + lag)} idleGain={idleGain}
           paddleUp={clamp01((paddleUp - delay * 0.4) / 0.8)} flip={flipLocal} look={look} emotion={emotion} fork={fork} rim={rim} snow={snow} cast={cast * k} rimSide={rimSide} />,
       );
     }
@@ -213,8 +244,12 @@ export const Grove: React.FC<{
 export const Thermometer: React.FC<{
   x: number; y: number; scale?: number; f: number; level?: number; lean?: number; glasses?: boolean; point?: number;
   emotion?: TreeEmotion; seed?: number; rim?: string; cast?: number; rimSide?: 1 | -1;
-}> = ({x, y, scale = 1, f, level = 0.6, lean = 0, glasses = false, point = 0, emotion = 'calm', seed = 3, rim = '#FFF4D8', cast = 0, rimSide = 1}) => {
+  /** beat idle (2026-11-16): frames it performs on, usually p.b(id); none draws the sine bob alone */
+  cues?: number[];
+  idleGain?: number;
+}> = ({x, y, scale = 1, f, level = 0.6, lean = 0, glasses = false, point = 0, emotion = 'calm', seed = 3, rim = '#FFF4D8', cast = 0, rimSide = 1, cues, idleGain = 1}) => {
   const id = uid(`th${seed}`);
+  const bp = beatPose(f, seed, cues, idleGain, 310);
   const wood = tones('#B07A48');
   const bob = Math.sin(f / 15 + seed) * 2.2;
   const blink = ((f + seed * 7) % 89) < 4;
@@ -227,7 +262,7 @@ export const Thermometer: React.FC<{
     <g transform={`translate(${x},${y}) scale(${scale})`}>
       {cast !== 0 && <path d={`M -40 0 L 40 0 L ${cast * 300 + 70} 22 L ${cast * 300 - 70} 22 Z`} fill={INK} opacity={0.24} style={{filter: 'blur(4px)'}} />}
       <ContactShadow cx={0} cy={4} rx={60} ry={12} opacity={0.34} blur={7} />
-      <g transform={`rotate(${lean * 9} 0 0) translate(0,${bob})`}>
+      <g transform={`rotate(${lean * 9} 0 0) translate(0,${bob})${bp.on ? ` skewX(${bp.skew}) scale(1 ${bp.breath}) translate(0 ${bp.dip})` : ''}`}>
         <defs><FormGradient id={`${id}_w`} t={wood} /></defs>
         <path d={board} fill={`url(#${id}_w)`} stroke={INK} strokeWidth={5} />
         {[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M -36 ${-40 - i * 52} q 18 ${6 + i % 2 * 4} 30 0 q 12 -6 34 2`} stroke="#7A5030" strokeWidth={2.2} fill="none" opacity={0.55} />)}
@@ -242,7 +277,7 @@ export const Thermometer: React.FC<{
         <path d="M -6 -244 L -6 -70" stroke="#FFFFFF" strokeWidth={3} opacity={0.7} />
         <RimLight d={rimSide > 0 ? "M 44 -282 L 44 -10" : "M -44 -282 L -44 -10"} color={rim} w={4} opacity={0.65} />
         {/* face on the board, above the tube */}
-        <g transform="translate(0,-276)">
+        <g transform={bp.on ? `translate(${bp.eye},-276) rotate(${bp.tilt * 0.6})` : 'translate(0,-276)'}>
           {blink ? (
             <g stroke={INK} strokeWidth={3} strokeLinecap="round"><path d="M -20 0 h 10" /><path d="M 10 0 h 10" /></g>
           ) : (
@@ -257,10 +292,14 @@ export const Thermometer: React.FC<{
           <path d={mouth} transform="translate(0,16) scale(0.8)" stroke={INK} strokeWidth={3} fill="none" strokeLinecap="round" />
         </g>
         {/* arms from the board's sides */}
-        <path d={`M -44 -160 C -62 -150 ${-70 - 20 * pt} ${-138 - 70 * pt} ${-76 - 30 * pt} ${-122 - 90 * pt}`} stroke={INK} strokeWidth={7} strokeLinecap="round" fill="none" />
-        <path d={`M -44 -160 C -62 -150 ${-70 - 20 * pt} ${-138 - 70 * pt} ${-76 - 30 * pt} ${-122 - 90 * pt}`} stroke="#D9B07A" strokeWidth={3} strokeLinecap="round" fill="none" />
-        <path d="M 44 -160 C 62 -150 70 -130 72 -114" stroke={INK} strokeWidth={7} strokeLinecap="round" fill="none" />
-        <path d="M 44 -160 C 62 -150 70 -130 72 -114" stroke="#D9B07A" strokeWidth={3} strokeLinecap="round" fill="none" />
+        <g transform={bp.on ? `rotate(${bp.armL} -44 -160)` : undefined}>
+          <path d={`M -44 -160 C -62 -150 ${-70 - 20 * pt} ${-138 - 70 * pt} ${-76 - 30 * pt} ${-122 - 90 * pt}`} stroke={INK} strokeWidth={7} strokeLinecap="round" fill="none" />
+          <path d={`M -44 -160 C -62 -150 ${-70 - 20 * pt} ${-138 - 70 * pt} ${-76 - 30 * pt} ${-122 - 90 * pt}`} stroke="#D9B07A" strokeWidth={3} strokeLinecap="round" fill="none" />
+        </g>
+        <g transform={bp.on ? `rotate(${bp.armR} 44 -160)` : undefined}>
+          <path d="M 44 -160 C 62 -150 70 -130 72 -114" stroke={INK} strokeWidth={7} strokeLinecap="round" fill="none" />
+          <path d="M 44 -160 C 62 -150 70 -130 72 -114" stroke="#D9B07A" strokeWidth={3} strokeLinecap="round" fill="none" />
+        </g>
       </g>
     </g>
   );

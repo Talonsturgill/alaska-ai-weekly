@@ -113,7 +113,14 @@ document, not of the judge.
   anticipation, squash on contact, one overshoot. On FigureLook the 11-09 Person moves 0.18 percent
   of the frame on its beat strips and 1.19 wrapped (`python3 scripts/figure_look_check.py`).
   `scripts/figure_rig_check.py` (a make_cut source gate) fails a component taking `skin`, or the
-  art-direction hero, that draws no lib rig.
+  art-direction hero, that draws no lib rig. Since the 2026-11-16 machine pass it also fails every
+  draw of a FACED LIB CHARACTER (any lib export taking `emotion`: VoteTree, Grove, Thermometer,
+  Caribou, RingedSeal ...) or a lib hero that is neither inside `<IdleFigure cues>` nor passed
+  `cues=` itself; a HeldTravel sweep around it is light, not a performance. The forest family takes
+  `cues` directly (a Grove ripples them across the troupe): on ForestLook the troupe moves 0.86
+  percent of the frame on its beat strips as 11-16 shipped and 3.67 cued, the thermometer 0.01 and
+  1.15 (`python3 scripts/forest_look_check.py`). When you build a new faced lib character, give it
+  `cues` the same way (`beatPose` in lib/forest.tsx is the pattern).
 - **The weight shift is applied ABOVE the feet.** Applying it at the character root slides
   the boots and their contact shadows along the ground, which reads as skating. Torso
   carries the full shift, legs about a third, boots stay planted.
@@ -769,7 +776,7 @@ Whole-mix loudness is not a voice-to-background measurement.
 - **A cross-section needs a person, a ground in the lower third and labels one at a time.** The first cut had a sausage for a gloved hand, a flat black lower third and six plates in one frame over the robot's face.
 
 ## Things the 2026-11-16 gates, critics and panel found that were knowable in advance ("The Forest Can't Stand on the Ice")
-- **A drawn count is a claim about a proportion.** Ten practice cards with eight weather marks read as 80 percent next to a claim of about 62; twenty ducklings with one out of step read as 95 percent next to a plate saying 82 and 75. When a picture shows a share, count the drawn items against the claim (6 of 10, 4 of 20) before the first cut.
+- **A drawn count is a claim about a proportion.** Ten practice cards with eight weather marks read as 80 percent next to a claim of about 62; twenty ducklings with one out of step read as 95 percent next to a plate saying 82 and 75. When a picture shows a share, count the drawn items against the claim (6 of 10, 4 of 20) before the first cut. Since the 2026-11-17 board the ratio is written in the beat's `shows` and Gate 0A checks it (`scripts/board_claims_check.py`: a ratio more than 10 points off the plate's percentage, "most", or a bare count beside a percentage fails); the scene then draws exactly that ratio.
 - **Two bars that compare share one axis from zero.** The 114-day bar ran to 814 px while 110 sat at 570 px on the field bar, so a four-day difference read as a 30 percent shortfall. Put both on one scale (here 5.5 px a day from x 160) and keep the second bar's entrance path clear of the first bar's label.
 - **A check mark is a verdict.** Lime ticks in the shoulder weeks read as "verified" under a line saying those weeks had no weather labels. Use a neutral grey question mark, and keep the model's colour off anything that could read as correct.
 - **A reveal hides its answer from the first frame it appears.** GRADED BY SENTINEL-2 was legible for three seconds before the flap dropped over it. Render the hidden word at the lift's opacity, and widen the flap past every glyph.

@@ -963,7 +963,10 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   Since 2026-11-11 it also runs `scripts/board_claims_check.py`: every beat with a plate carries
   `claims`, the claims.json ids it shows (`["narration"]` for a framing line that asserts nothing),
   and a status word on a plate (CLOSED, APPROVED, VALIDATED, NOW SERVING) must be said by a cited
-  claim. Read its `[board-claims-note]` lines before the critics do.
+  claim. Read its `[board-claims-note]` lines before the critics do. Since 2026-11-17 a beat whose
+  plate or phrase carries a percentage and whose `shows` draws a share states it as a ratio ("6 of
+  10 cards", "4 in 20 out of step") within 10 points of that percentage; "most" or a bare count
+  fails. The scene draws exactly that ratio.
   Since 2026-11-12 it also runs `scripts/template_slot_check.py` (3 or more shots whose framing,
   pov, layout, motion and hero treatment repeat 4 of 5 fields at the aligned slot of either of the
   last two shipped boards FAIL, the "relabel of the last film's template" read Gate 0B made of

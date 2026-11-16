@@ -141,6 +141,8 @@ step held_plan        2 python3 scripts/held_beat_check.py --source --gate
 # "held figures show no weight shift"). held_plan passed because a light sweep on a prop counted
 # while the hand-rolled Person and the hero only breathed. A figure taking `skin`, and the hero named
 # in art_direction.json, must draw a lib rig (lib/figureidle.tsx IdleFigure with the beat cues).
+# Machine pass 2026-11-16: so must every faced LIB character (a lib export taking `emotion`) and a lib
+# hero, which the gate never read: Ep1116's VoteTree, Grove and Thermometer passed in light sweeps.
 step figure_rig       2 python3 scripts/figure_rig_check.py
 # Machine pass 2026-11-06, a repeat offender (empty top of the square named by every seat on 10-31,
 # 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
