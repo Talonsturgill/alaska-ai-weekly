@@ -1043,7 +1043,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.02} oy={960} bg="#10131A" warmth={0.0} overlay={
       <g>
         <Plate text="MAYBE SHORELINES · PER THE PAPER" x={540} y={560} size={36} tone="plate" p={win(f, b40 + 8, b41)} />
-        <Plate text="OR THOSE LAKES REALLY DIFFER" x={810} y={1180} size={30} tone="dark" p={win(f, b41 + 14, b42)} />
+        <Plate text="OR THOSE LAKES REALLY DIFFER" x={740} y={1180} size={26} tone="dark" p={win(f, b41 + 14, b42)} />
         <Plate text="A FIELD CHECK WOULD SETTLE IT" x={540} y={1260} size={38} tone="plate" p={win(f, b42 + 6)} />
       </g>
     }>
