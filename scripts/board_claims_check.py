@@ -75,7 +75,7 @@ def claim_text(c):
     return " ".join(parts).lower()
 
 
-NUM_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+NUM_WORDS = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
              "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14,
              "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
              "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "hundred": 100}
@@ -105,7 +105,7 @@ def share_problems(b):
     d = b.get("draw") or {}
     pct_text = " ".join(str(x or "") for x in (d.get("annotation"), b.get("phrase")))
     pcts = [v for v in (NUM_WORDS.get(m.group(1).lower()) if m.group(1).isalpha() else float(m.group(1))
-                       for m in PCT_RE.finditer(pct_text)) if v is not None and 0 < v <= 100]
+                       for m in PCT_RE.finditer(pct_text)) if v is not None and 0 <= v <= 100]
     if not pcts:
         return []
     drawn = " ".join(str(x or "") for x in (b.get("shows"), d.get("subject"), d.get("action")))
@@ -253,6 +253,21 @@ def _self_test():
         ("word percent remains supported", sbeat("1 of 2 cards", "FIFTY percent"), 0),
         ("fraction preserved at tolerance edge", sbeat("1 of 2 cards", "60.1%"), 1),
         ("decimal printed label is not count", sbeat("a card with 62.5%", "62.5%"), 0),
+    ]
+    share_cases += [
+        ("zero percent incorrect drawing fails", sbeat("5 of 10 cards", "0%"), 1),
+        ("decimal zero incorrect drawing fails", sbeat("5 of 10 cards", "0.0%"), 1),
+        ("zero percent phrase is checked", sbeat("5 of 10 cards", "THE SHARE", "0 percent"), 1),
+        ("word zero percent is checked", sbeat("5 of 10 cards", "ZERO percent"), 1),
+        ("zero numerator passes", sbeat("0 of 10 cards", "0%"), 0),
+        ("word zero numerator passes", sbeat("zero of ten cards", "zero percent"), 0),
+        ("zero complement remains supported", sbeat("10 of 10 cards", "0%"), 0),
+        ("zero still rejects a quantifier", sbeat("most cards stamped", "0%"), 1),
+        ("zero still requires a count ratio", sbeat("ten cards", "0%"), 1),
+        ("hundred percent passes", sbeat("10 of 10 cards", "100%"), 0),
+        ("hundred percent incorrect drawing fails", sbeat("5 of 10 cards", "100%"), 1),
+        ("zero tolerance edge passes", sbeat("1 of 10 cards", "0%"), 0),
+        ("outside zero tolerance fails", sbeat("2 of 10 cards", "0%"), 1),
     ]
     for name, sb, want in share_cases:
         got = analyze(sb, claims)["problems"]
