@@ -40,6 +40,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from decimal import Decimal
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SB = ROOT / "out" / "dispatch" / "storyboard.json"
@@ -104,7 +105,7 @@ def share_problems(b):
     """FAIL lines for a beat whose drawing states a share its percentage doesn't support."""
     d = b.get("draw") or {}
     pct_text = " ".join(str(x or "") for x in (d.get("annotation"), b.get("phrase")))
-    pcts = [v for v in (NUM_WORDS.get(m.group(1).lower()) if m.group(1).isalpha() else float(m.group(1))
+    pcts = [v for v in (NUM_WORDS.get(m.group(1).lower()) if m.group(1).isalpha() else Decimal(m.group(1))
                        for m in PCT_RE.finditer(pct_text)) if v is not None and 0 <= v <= 100]
     if not pcts:
         return []
@@ -123,7 +124,11 @@ def share_problems(b):
     if ratios:
         for k, n, said in ratios:
             share_pct = 100.0 * k / n
-            if not any(min(abs(share_pct - p), abs(100 - share_pct - p)) <= SHARE_TOL for p in pcts):
+            # Cross-multiply exact decimals so an exact tolerance boundary cannot
+            # fail from binary rounding (201/1000 beside 10.1% is exactly 10 points).
+            dk, dn = Decimal(str(k)), Decimal(str(n))
+            if not any(min(abs(100 * dk - p * dn), abs(100 * (dn - dk) - p * dn))
+                       <= SHARE_TOL * dn for p in pcts):
                 out.append(f"beat {bid} draws {said!r} ({share_pct:.0f} percent) beside {want}: a drawn count is a "
                            f"claim about a proportion. Draw a share within {SHARE_TOL} points "
                            f"(DISPATCH_STANDARD: a drawn count is a claim about a proportion)")
@@ -268,6 +273,12 @@ def _self_test():
         ("hundred percent incorrect drawing fails", sbeat("5 of 10 cards", "100%"), 1),
         ("zero tolerance edge passes", sbeat("1 of 10 cards", "0%"), 0),
         ("outside zero tolerance fails", sbeat("2 of 10 cards", "0%"), 1),
+    ]
+    share_cases += [
+        ("exact fractional tolerance passes", sbeat("201 of 1000 cards", "10.1%"), 0),
+        ("exact fractional complement tolerance passes", sbeat("799 of 1000 cards", "10.1%"), 0),
+        ("fraction just outside tolerance fails", sbeat("201 of 1000 cards", "10.0999999999999%"), 1),
+        ("fraction just inside tolerance passes", sbeat("201 of 1000 cards", "10.1000000000001%"), 0),
     ]
     for name, sb, want in share_cases:
         got = analyze(sb, claims)["problems"]
