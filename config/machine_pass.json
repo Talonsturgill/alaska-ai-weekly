@@ -1,16 +1,15 @@
 {
   "last_pass": {
-    "date": "2026-11-15",
+    "date": "2026-11-16",
     "shipped": [
-      "heldtravel-glare: HeldTravel wrap form masks a held-prop sweep or shadow to the prop's own drawn pixels (outside the prop 0.000 percent against 8.666 bare, lift +2.48), held_beat_check --source NOTEs every bare-box rig, the contradictory standard lines superseded by one wrap rule (engine advance)",
-      "rotating-label-reads-wrong: label_footprint probe records each label's screen turn and mirror, the check FAILS a label turned past 100 degrees or mirrored for 0.5 s (names the 11-15 timer on pre-fix source, clean on the shipped film)",
-      "claim-cite-on-plate: claims_contract_check enforces 'label X, Y' prose requires whenever the claim's card is drawn, including claims with a contract (fails 4 of 5 named plates on pre-fix 11-15)",
-      "dedupe-token-collision: act and public are stop tokens; dedupe.py check --asof replays the ledger as of a date, and dedupe_selftest (failing on the calendar alone) pins each case to its measured day"
+      "raven-and-held-figure-idle: figure_rig_check reads the lib cast, so a faced lib character or lib hero with no IdleFigure, cues= or idleGain={0} fails the make_cut source gates (fails Ep1116, Ep1115 Flap and Tote, Ep1114 RingedSeal)",
+      "forest beat idle (engine advance): VoteTree, Grove and Thermometer take cues and idleGain and perform through figureIdle, proved on ForestLook by forest_look_check (troupe 0.86 to 3.67 percent, thermometer 0.01 to 1.15 on the beat; no cues draws as before)",
+      "drawn-proportion board check: board_claims_check fails a drawn share that misstates its claim's percentage by more than 10 points, 'most', or a bare count beside a percentage, from the 11-17 board on"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (owner decision, still open, repeat 6): whether the 8.5 caption bar stays for fact-bound captions",
-      "gate0-critic-rounds cap (owner decision, still open, repeat 4): may a Gate 0 critic be capped at one round plus the panel",
-      "held-figure idle on Motion (not reached, lowest axis on 33 of 48 cards): next step, measure held strips against IdleFigure cue windows on Ep1115 and add a seeded between-cue weight shift proved on FigureLook"
+      "caption-scorer-hair-under-bar (owner decision, still open, repeat 7)",
+      "gate0-critic-rounds cap (owner decision, still open, repeat 5); loop-leak grep prototype not shipped (15 false hits on six clean boards, missed the real leak), next step an author-written open_loop.answer_words field",
+      "not reached: repeated foreground band and skyline, comparison-bar scale gate, speech_priority stem-length root cause"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

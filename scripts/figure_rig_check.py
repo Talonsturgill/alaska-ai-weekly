@@ -17,6 +17,13 @@ So this reads the episode source and FAILS when
   * the hero component (the first word of art_direction.json casting.hero, when the episode
     defines a component of that name) does neither of those, nor a lib prop rig (propIdle(,
     <HeldProp, strike(, <StrikeProp).
+  * (machine pass 2026-11-16) a FACED LIB CHARACTER (a lib export whose props declare `emotion`:
+    VoteTree, Grove, Thermometer, Caribou, RingedSeal, SatelliteEye ...) or a hero imported from
+    lib is drawn without a beat rig: neither inside an open <IdleFigure> nor carrying `cues=` (the
+    forest family takes them) nor `idleGain={0}`. Until 11-16 this gate read only episode-local
+    components, so a lib hero passed unread: Ep1116 drew its hero VoteTree, the Grove troupe and
+    the Thermometer in HeldTravel light sweeps and nothing else, the gate printed "clean", and the
+    panel named "S2 hero tree barely moves" and "S12 thermometer and back troupe little breath".
 It NOTES (does not fail) a file that uses IdleFigure or figureIdle without passing any `cues`: the
 weight shift still happens on humanIdle's schedule, but only cues put it inside the strip a judge
 reads, which is built on the beat. `gain={0}` on a rig is an explicit decision and counts.
@@ -68,6 +75,68 @@ def wrapped_everywhere(src, name, defn_body):
     return True
 
 
+LIB_IMPORT = re.compile(r"import\s*\{([^}]*)\}\s*from\s*['\"](\./lib/[\w./-]+)['\"]")
+
+
+def faced_lib_exports(lib_src):
+    """Names of the lib file's exported components whose props declare `emotion` (it has a face)."""
+    out = set()
+    for m in re.finditer(r"^export const (\w+)\s*:\s*React\.FC<\{(.*?)\}>\s*=", lib_src, re.M | re.S):
+        if re.search(r"\bemotion\??\s*:", m.group(2)):
+            out.add(m.group(1))
+    return out
+
+
+def lib_cast(src, ep_dir, hero=None, reader=None):
+    """{local name: lib file} for every faced lib character (or the hero) the episode imports."""
+    reader = reader or (lambda path: open(path).read())
+    cast = {}
+    for m in LIB_IMPORT.finditer(src):
+        rel = m.group(2)
+        path = os.path.normpath(os.path.join(ep_dir, rel + ("" if rel.endswith(".tsx") else ".tsx")))
+        try:
+            faced = faced_lib_exports(reader(path))
+        except OSError:
+            continue
+        for item in m.group(1).split(","):
+            parts = item.replace("type ", "").split(" as ")
+            name = parts[0].strip()
+            local = (parts[1] if len(parts) > 1 else parts[0]).strip()
+            if name and (name in faced or (hero is not None and local == hero)):
+                cast[local] = os.path.basename(path)
+    return cast
+
+
+def tag_text(src, start):
+    """The JSX opening tag starting at `start` ("<Name ... >" or "/>"), braces respected."""
+    depth, i = 0, start + 1
+    while i < len(src):
+        c = src[i]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+        elif c == ">" and depth == 0:
+            return src[start:i + 1]
+        i += 1
+    return src[start:]
+
+
+def unrigged_lib_draws(src, cast):
+    """[(name, line)] for each draw of a faced lib character with no beat rig."""
+    out = []
+    for name in sorted(cast):
+        for m in re.finditer(r"<" + re.escape(name) + r"\b", src):
+            before = src[:m.start()]
+            if before.rfind("<IdleFigure") > before.rfind("</IdleFigure>"):
+                continue
+            tag = tag_text(src, m.start())
+            if re.search(r"\bcues=", tag) or re.search(r"\bidleGain=\{0\}", tag):
+                continue
+            out.append((name, before.count("\n") + 1))
+    return out
+
+
 def hero_name(art_path):
     try:
         hero = json.load(open(art_path)).get("casting", {}).get("hero", "")
@@ -77,9 +146,17 @@ def hero_name(art_path):
     return m.group(1) if m else None
 
 
-def analyze(src, hero=None):
+def analyze(src, hero=None, ep_dir=None, reader=None):
     """(problems, notes) for one episode source."""
     problems, notes = [], []
+    if ep_dir is not None or reader is not None:
+        cast = lib_cast(src, ep_dir or ".", hero, reader)
+        bad = unrigged_lib_draws(src, cast)
+        for name in sorted({n for n, _ in bad}):
+            lines = [str(ln) for n, ln in bad if n == name]
+            what = "the hero" if name == hero else "a faced lib character (takes `emotion`)"
+            problems.append(f"{name} ({cast[name]}) is {what} drawn with no beat rig at line(s) {', '.join(lines)}: "
+                            f"pass cues={{[p.b(id), ...]}} where it takes them, or wrap it in <IdleFigure cues>")
     for name, props, body in components(src):
         if re.match(r"S\d+$", name):
             continue
@@ -118,6 +195,22 @@ def _self_test():
         ("hero with a strike passes", analyze(hero_rig, "Reels")[0], 0),
         ("a plain prop is not a figure", analyze(prop, "Reels")[0], 0),
     ]
+    lib = {"lib/forest.tsx": "export const VoteTree: React.FC<{x: number; emotion?: string; cues?: number[]}> = () => null;\n"
+                             "export const KettleLake: React.FC<{x: number; ice?: number}> = () => null;\n"}
+    rd = lambda path: lib[os.path.relpath(path, "ep").replace(os.sep, "/")] if os.path.relpath(path, "ep").replace(os.sep, "/") in lib else (_ for _ in ()).throw(OSError(path))
+    imp = "import {VoteTree, KettleLake} from './lib/forest';\n"
+    lib_bare = imp + "const S1: React.FC<SceneProps> = ({p}) => <svg><HeldTravel f={f}><VoteTree x={1} emotion={f > 3 ? 'a' : 'b'} /></HeldTravel><KettleLake x={2} /></svg>;\n"
+    lib_cued = lib_bare.replace("<VoteTree x={1}", "<VoteTree x={1} cues={[p.b(2)]}")
+    lib_wrapped = lib_bare.replace("<VoteTree x={1} emotion={f > 3 ? 'a' : 'b'} />",
+                                   "<IdleFigure f={f} x={1} footY={2} cues={[p.b(2)]}><VoteTree x={1} /></IdleFigure>")
+    lib_frozen = lib_bare.replace("<VoteTree x={1}", "<VoteTree x={1} idleGain={0}")
+    cases += [
+        ("faced lib character in a light sweep only fails", analyze(lib_bare, None, "ep", rd)[0], 1),
+        ("faced lib character with cues passes", analyze(lib_cued, None, "ep", rd)[0], 0),
+        ("faced lib character in IdleFigure passes", analyze(lib_wrapped, None, "ep", rd)[0], 0),
+        ("idleGain={0} is a decision", analyze(lib_frozen, None, "ep", rd)[0], 0),
+        ("a faceless lib prop is not cast", analyze(lib_cued, "KettleLake", "ep", rd)[0], 1),
+    ]
     bad = [n for n, got, want in cases if len(got) != want]
     no_cues = analyze(wrapped.replace("cues={[p.b(3)]}", ""))[1]
     if not no_cues:
@@ -145,7 +238,7 @@ def main(argv=None):
     hero = hero_name(a.art)
     worst = 0
     for t in targets:
-        problems, notes = analyze(open(t).read(), hero)
+        problems, notes = analyze(open(t).read(), hero, os.path.dirname(os.path.abspath(t)))
         rel = os.path.relpath(t, REPO)
         for n in notes:
             print(f"  NOTE  {rel}: {n}")
@@ -156,7 +249,7 @@ def main(argv=None):
                   + ", ".join(p.split(' ')[0] for p in problems) + f". {REMEDY}")
             worst = 1
         else:
-            print(f"figure_rig_check: {rel} clean (hero {hero or 'not named'}; every human figure carries a lib rig)")
+            print(f"figure_rig_check: {rel} clean (hero {hero or 'not named'}; every human figure and faced lib character carries a lib rig)")
     return worst
 
 

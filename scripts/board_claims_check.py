@@ -17,6 +17,15 @@ mechanical, so they run before a critic is spent:
   FAIL  a STATUS word on a plate, outside a question, (CLOSED, APPROVED, BANNED, VALIDATED, NOW SERVING ...) whose stem
         appears in none of the beat's cited claims, or that cites only "narration". A status word is
         a statement about the world, never a framing device.
+  FAIL  (machine pass 2026-11-16) a DRAWN SHARE that misstates the beat's percentage. On a beat whose
+        plate or phrase carries a percentage, `shows`/`draw` stating a drawn ratio ("4 in 20 out of
+        step", "six of ten cards") must sit within 10 points of a percentage there (either the ratio
+        or its complement, since "out of step" draws the rest); a quantifier (most, nearly all, a
+        few, half) fails, because it leaves the count to the scene; and a drawn COUNT of things ("twenty lake polygons") with no ratio
+        must say how many carry the share. On 11-16 the editor's two hard blockers on cut 1 were
+        exactly this: 8 of 10 weather cards beside about 62 percent, 19 of 20 ducklings beside 82
+        and 75. A board that states the ratio hands the scene its count; DISPATCH_STANDARD "A drawn
+        count is a claim about a proportion" tells the scene to draw it.
   NOTE  the plate's content words found in none of its cited claims, for the author to read before
         the critics do. Advisory: framing words (ASKED, SAYS, POST) are legitimate.
 
@@ -24,6 +33,8 @@ mechanical, so they run before a critic is spent:
     python3 scripts/board_claims_check.py --self-test
 
 Boards dated before 2026-11-11 are not checked (no shipped board before then carried claim ids).
+The drawn-share check binds boards dated 2026-11-17 on; the shipped 11-16 board fails it at beat 14
+("most stamped" beside about 62 percent, the beat its cut 1 drew as 8 of 10) when read as a later board.
 """
 import json
 import re
@@ -64,6 +75,76 @@ def claim_text(c):
     return " ".join(parts).lower()
 
 
+NUM_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+             "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14,
+             "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+             "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "hundred": 100}
+_NUM = r"(\d+|" + "|".join(sorted(NUM_WORDS, key=len, reverse=True)) + r")"
+PCT_RE = re.compile(r"\b" + _NUM + r"\s*(?:%|percent\b)", re.I)
+# "4 in 20", "four lakes in twenty", "6 of 10 cards", "3 out of 10": up to three words between
+RATIO_RE = re.compile(r"\b" + _NUM + r"\b(?:\s+[a-z'-]+){0,3}?\s+(?:in|of|out of)\s+" + _NUM + r"\b", re.I)
+COUNT_RE = re.compile(r"\b" + _NUM + r"\s+(?:[a-z'-]+\s+){0,2}?([a-z'-]+s)\b", re.I)
+# quantifier -> the band of percentages it can honestly stand for
+QUANT = [(r"\b(?:nearly|almost) (?:all|every)\b|\ball but (?:one|a few)\b", 80, 99),
+         (r"\bmost\b|\bmajority\b|\bmore than half\b", 51, 95),
+         (r"\bhalf\b", 40, 60), (r"\ba few\b|\bfew\b|\bhandful\b", 1, 35),
+         (r"\bminority\b|\bless than half\b", 5, 49)]
+SHARE_TOL = 10
+FIRST_SHARE_DATE = "2026-11-17"
+
+
+def _num(tok):
+    tok = tok.lower()
+    return int(tok) if tok.isdigit() else NUM_WORDS.get(tok)
+
+
+def share_problems(b):
+    """FAIL lines for a beat whose drawing states a share its percentage doesn't support."""
+    d = b.get("draw") or {}
+    pct_text = " ".join(str(x or "") for x in (d.get("annotation"), b.get("phrase")))
+    pcts = [v for v in (_num(m.group(1)) for m in PCT_RE.finditer(pct_text)) if v is not None and 0 < v <= 100]
+    if not pcts:
+        return []
+    drawn = " ".join(str(x or "") for x in (b.get("shows"), d.get("subject"), d.get("action")))
+    drawn = PCT_RE.sub(" ", drawn)  # a printed percentage is a label, not a count
+    share = d.get("share") if isinstance(d.get("share"), dict) else None
+    ratios = []
+    if share and share.get("of"):
+        ratios.append((float(share.get("drawn") or 0), float(share["of"]), "draw.share"))
+    for m in RATIO_RE.finditer(drawn):
+        k, n = _num(m.group(1)), _num(m.group(2))
+        if k is not None and n and 0 <= k <= n and n > 1 and (k, n) not in [(r[0], r[1]) for r in ratios]:
+            ratios.append((k, n, m.group(0)))
+    bid, want = b.get("id"), ", ".join(f"{p}%" for p in pcts)
+    out = []
+    if ratios:
+        for k, n, said in ratios:
+            share_pct = 100.0 * k / n
+            if not any(min(abs(share_pct - p), abs(100 - share_pct - p)) <= SHARE_TOL for p in pcts):
+                out.append(f"beat {bid} draws {said!r} ({share_pct:.0f} percent) beside {want}: a drawn count is a "
+                           f"claim about a proportion. Draw a share within {SHARE_TOL} points "
+                           f"(DISPATCH_STANDARD: a drawn count is a claim about a proportion)")
+        return out
+    low = drawn.lower()
+    for pat, lo, hi in QUANT:
+        m = re.search(pat, low)
+        if m:
+            # Even a fitting word fails: "most stamped" beside about 62 percent was drawn as 8 of 10 on
+            # 11-16. A word leaves the count to the scene; the board names it.
+            fits = any(lo <= p <= hi or lo <= 100 - p <= hi for p in pcts)
+            out.append(f"beat {bid} draws {m.group(0).upper()!r} beside {want}"
+                       + ("" if fits else f", which that word can't stand for ({lo} to {hi} percent)")
+                       + ". A word leaves the count to the scene: state the drawn ratio in shows (e.g. '6 of 10')")
+            return out
+    for m in COUNT_RE.finditer(drawn):
+        n = _num(m.group(1))
+        if n and n >= 3:
+            out.append(f"beat {bid} draws {m.group(0)!r} beside {want} without saying how many carry the share. "
+                       f"Write it in shows as 'K of {n}' so the scene draws the claim's proportion")
+            break
+    return out
+
+
 def analyze(sb, claims):
     """{'problems': [...], 'notes': [...], 'checked': n, 'skipped': reason or ''}"""
     date = str(sb.get("run_date") or "")
@@ -72,6 +153,8 @@ def analyze(sb, claims):
     by_id = {c.get("id"): c for c in (claims.get("claims") if isinstance(claims, dict) else claims) or []}
     problems, notes, checked = [], [], 0
     for b in sb.get("beats") or []:
+        if not date or date >= FIRST_SHARE_DATE:
+            problems += share_problems(b)
         ann = str((b.get("draw") or {}).get("annotation") or "").strip()
         if not ann:
             continue
@@ -135,6 +218,32 @@ def _self_test():
         r = analyze(sb, claims)
         if len(r["problems"]) != want:
             bad.append(f"{name}: got {len(r['problems'])} problem(s) {r['problems']}")
+    def sbeat(shows, ann, phrase="", **draw):
+        return {"run_date": "2026-11-17", "beats": [
+            {"id": 1, "shows": shows, "phrase": phrase, "claims": ["narration"],
+             "draw": {"subject": "", "action": shows, "annotation": ann, **draw}}]}
+    share_cases = [
+        ("ten cards with no ratio beside 62 percent fails",
+         sbeat("the thermometer drops ten cards, eight stamped with a weather mark", "ABOUT 62% OF LABELS"), 1),
+        ("eight of ten cards beside 62 percent fails",
+         sbeat("eight of ten cards carry a weather mark", "ABOUT 62% OF LABELS"), 1),
+        ("6 of 10 beside 62 percent passes", sbeat("6 of 10 cards carry a weather mark", "ABOUT 62% OF LABELS"), 0),
+        ("19 of 20 beside 82 and 75 fails",
+         sbeat("nineteen of twenty lakes fall into step", "ICE OUT 82% · ICE ON 75%"), 1),
+        ("4 in 20 out of step beside 82 passes (complement)",
+         sbeat("the line falls into step, about four lakes in twenty out of step", "TEMPERATURE MODEL", "82 percent of lakes,"), 0),
+        ("nearly all beside 62 fails", sbeat("nearly all the cards carry a mark", "ABOUT 62% OF LABELS"), 1),
+        ("most beside 62 still owes a ratio", sbeat("most cards stamped with a mark", "ABOUT 62% OF LABELS"), 1),
+        ("a bare count beside a percentage fails", sbeat("twenty lake polygons waddle into a line", "82% OF LAKES"), 1),
+        ("no percentage, no check", sbeat("nineteen of twenty lakes fall into step", "THE LINE"), 0),
+        ("a printed 94% is a label, not a count", sbeat("a report card drops onto an easel with a big 94%", "94% AGREEMENT"), 0),
+        ("draw.share is checked", sbeat("the cards fan out", "ABOUT 62% OF LABELS", share={"drawn": 9, "of": 10}), 1),
+    ]
+    for name, sb, want in share_cases:
+        got = analyze(sb, claims)["problems"]
+        if len(got) != want:
+            bad.append(f"{name}: got {len(got)} {got}")
+    cases += share_cases
     r = analyze(board(("SENSORS VALIDATED IN ALASKA", ["c2"])), claims)
     if r["problems"] or not any("ALASKA" in n for n in r["notes"]):
         bad.append(f"loose word note: {r}")
@@ -157,7 +266,7 @@ def main(argv=None):
     for p in r["problems"]:
         print(f"FAIL [board_claims] {p}")
     if not r["problems"]:
-        print(f"PASS [board_claims] {r['checked']} plates cite a claim, every status word backed")
+        print(f"PASS [board_claims] {r['checked']} plates cite a claim, every status word backed, every drawn share fits its percentage")
     return 1 if r["problems"] else 0
 
 
