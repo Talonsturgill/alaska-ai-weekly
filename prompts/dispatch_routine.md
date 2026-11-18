@@ -333,6 +333,15 @@ this routine was measured on, because Opus 5.5 starts at `medium` when nothing s
 only after a side-by-side run shows the film keeps its quality. Record `$CLAUDE_EFFORT` in the run
 log at wake so every run says whether the setting took.
 
+THE SETTING DOES NOT TAKE ON THE HOSTED ROUTINE (measured 2026-11-18). The 11-18 run read
+`CLAUDE_EFFORT=medium` at wake, and the Phase 9 machine session the same day read `medium` too,
+with `effortLevel: xhigh` in the tracked settings and CLI 2.1.327, which accepts `xhigh`. The
+hosted session is launched by the routine host (`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST` is set) and
+so the level evidently comes from the launch, which outranks a project settings key. The repo cannot raise it:
+the level is set where the model is, on the trigger at claude.ai/code/routines. Until it is, a run
+records `EFFORT=medium (trigger-set)` in the worklog and the retro, and does not queue it again;
+the repo key stays, for a local or development session where it does apply.
+
 How to work on this model (each point written after a run that did the opposite):
 
 1. **The named gates are the verification budget.** `run_guard`, `story_gate`, `storyboard_check`,

@@ -699,6 +699,20 @@ CREDITS_S = CREDITS_MIN_S + CREDITS_TAIL_S
 CREDITS_SRC_MAX = 36          # source-line ceiling, px (historical default 22)
 CREDITS_MUSIC_MAX = 34        # licence-line ceiling, px (historical default 32)
 
+# AN OUTLET IS CREDITED BY ITS NAME, NOT ITS HOSTNAME (2026-11-18 machine pass). The 11-18
+# card read NEWSMINER.COM, ALASKASNEWSSOURCE.COM and ADN.COM, a list of domains rather than
+# the newsrooms that reported the story. These are the Alaska outlets the Dispatch cites
+# most; a host not listed here still falls back to its bare hostname. Keys are lowercase
+# hosts with any leading www. removed.
+_HOST_NAMES = {
+    "newsminer.com": "FAIRBANKS DAILY NEWS-MINER",
+    "alaskasnewssource.com": "ALASKA'S NEWS SOURCE",
+    "adn.com": "ANCHORAGE DAILY NEWS",
+    "alaskapublic.org": "ALASKA PUBLIC MEDIA",
+    "alaskabeacon.com": "ALASKA BEACON",
+}
+
+
 def _source_labels(srcs):
     """Group sources.json into lines a person can read off a phone in six seconds.
 
@@ -752,8 +766,8 @@ def _source_labels(srcs):
         elif "eos.org" in url:
             lab = "AGU EOS HIGHLIGHT"   # EOS.ORG defeats the rendered OCR at credit size (2026-11-08)
         else:
-            host = re.sub(r"^www\.", "", urlparse(url).netloc)
-            lab = host.upper()
+            host = re.sub(r"^www\.", "", urlparse(url).netloc).lower()
+            lab = _HOST_NAMES.get(host) or host.upper()
         if lab and lab not in seen:
             seen.add(lab)
             other.append(lab)

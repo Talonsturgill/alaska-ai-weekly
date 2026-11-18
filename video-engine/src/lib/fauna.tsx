@@ -25,85 +25,146 @@ const uid = (s: string) => {
 };
 
 // ---------------------------------------------------------------- MOOSE
-// The bull moose: heavy body, dropped muzzle, palmate antlers. Idle: slow head
-// bob + ear flick + tail swish. Emotion via ear/brow set.
-// `bumpKick` (0..1, e.g. from lib/motion accentKick at the gag's frame) drives the
-// NEW 2026-07-19 comic reaction pose: a sharp squash-and-recoil sideways stagger,
-// antlers wobbling, ears pinned back indignant, added for the recurring
-// bumped-from-the-ticket-line gag — the growth mandate's new-pose-on-an-existing-
-// asset requirement. 0 = no effect (normal idle), rises to 1 at the impact frame
-// then relaxes back per the caller's easing.
-export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; emotion?: 'calm' | 'wary'; bumpKick?: number; alert?: number}> = ({
-  x, y, scale = 1, f, facing = 1, emotion = 'calm', bumpKick = 0, alert = 0,
+// The bull moose, REDRAWN FROM REFERENCE 2026-11-18 (machine pass). The July shelf moose had a
+// barrel body on short posts, a short head and floppy antlers, and the panel read it as a bison
+// twice: J1 on 10-03 ("a bison or wildebeest: humped barrel body, floppy ear-like antlers, no
+// bell, no long drooping muzzle") and J1 and J3 on 11-18 ("moose silhouette reads as a bison",
+// "moose does not amble" while it slid across S7 on frozen legs). This one takes the anatomy of
+// Ep1003's BullMoose, the episode-local moose that was drawn from reference after the first
+// complaint: long pale stockinged legs, a body short against them, a HIGH SHOULDER HUMP falling
+// to a low rump, a long drooping head with a bulbous overhanging muzzle, the dewlap bell, and
+// broad palmate antlers with tines along the palm. It keeps the old footprint (about 370 x 260
+// local units, feet on y=0, facing right), so every caller's scale still fits.
+//
+// Motion, all deterministic in `f` and the caller's numbers:
+//   - idle: breath, head bob, ear flick, tail swish, a swinging bell;
+//   - `walk` (NEW 2026-11-18): the gait phase in FRAMES WALKED. Pass a value that advances
+//     while the moose travels (e.g. `f` during the move) and holds when it stops. Jointed legs
+//     step in the moose's lateral sequence (left hind, left fore, right hind, right fore), the
+//     knee folds on the forward swing, the body rises and dips twice a stride and the head
+//     nods. `stride` (0..1, default 1) scales it, so a stop can ease to 0 instead of freezing.
+//   - `graze` (NEW 2026-11-18, 0..1): the head swings down from the shoulder to browse, so a
+//     scene never has to hide the head behind a prop;
+//   - `emotion` calm/wary (ear set and brow), `bumpKick` 0..1 (squash-and-stagger comic recoil,
+//     2026-07-19) and `alert` 0..1 (ears up, head raised, nostril flare, 2026-07-20) as before.
+// A moose that travels across a shot should be given `walk`; sliding the same drawing on frozen
+// legs is what the 11-18 panel docked.
+export const Moose: React.FC<{x: number; y: number; scale?: number; f: number; facing?: 1 | -1; emotion?: 'calm' | 'wary'; bumpKick?: number; alert?: number; walk?: number; stride?: number; graze?: number}> = ({
+  x, y, scale = 1, f, facing = 1, emotion = 'calm', bumpKick = 0, alert = 0, walk, stride = 1, graze = 0,
 }) => {
   const id = uid(`moose${x}${y}`);
-  const t = tones('#5a4632');       // dark brown coat
-  const bumped = Math.max(0, Math.min(1, bumpKick));
-  // NEW 2026-07-20 pose `alert` (0..1): ears perk fully UP + forward, head/neck
-  // RAISES, a nostril-flare sniff, eyes track upward at the passing drone. The
-  // OPPOSITE motion from `bumpKick` (a lateral squash-recoil): no shove, an upward
-  // watching lift. Satisfies the existing-asset new-pose growth quota.
-  const al = Math.max(0, Math.min(1, alert));
+  const hid = uid(`mooseh${x}${y}`);
+  const fur = tones('#4A3326');       // dark brown coat
+  const leg = tones('#B8A587');       // pale grey-tan stockings
+  const ant = tones('#D9C9A2');       // antler bone
+  const clamp = (v: number) => Math.max(0, Math.min(1, v));
+  const bumped = clamp(bumpKick);
+  const al = clamp(alert);
+  const gz = clamp(graze);
+  const st = walk === undefined ? 0 : clamp(stride);
+  const ph = ((walk ?? 0) / 32) * Math.PI * 2;
+  const breathe = Math.sin(f / 18) * 2;
   const bob = 3 * Math.sin(f / 26) - bumped * 10;
   const earFlick = (emotion === 'wary' ? 8 * Math.sin(f / 5) : 3 * Math.sin(f / 18)) - bumped * 22 - al * 26;
   const tail = 6 * Math.sin(f / 9);
-  // squash-and-stagger: a lateral shove + a volume-preserving squash at the moment
-  // of impact, recoiling back upright as bumped relaxes to 0.
+  const rise = -st * 4 * Math.abs(Math.sin(ph));            // the body lifts over each planted leg
+  const nod = st * 4 * Math.sin(2 * ph + 0.8);
+  const headRot = 62 * gz + nod + bob * 0.4 - bumped * 16 - al * 14;
+  // squash-and-stagger: a lateral shove + a volume-preserving squash at the moment of impact
   const staggerX = -bumped * 68 * facing;
   const sx = 1 + bumped * 0.26;
   const sy = 1 - bumped * 0.2;
+  // one leg: hip at (hx, -160), thigh 98 to the knee, cannon 62 to the hoof. `off` is its phase
+  // in the lateral walk; it swings forward (negative rotation, the drawing faces right) and its
+  // knee folds while it travels forward.
+  const Leg = (hx: number, off: number, near: boolean, rear: boolean) => {
+    const q = ph + off * Math.PI * 2;
+    // a hind leg stands on an angled hock even at rest; a foreleg stands nearly plumb
+    const swing = -st * 20 * Math.sin(q) + (rear ? -7 : 0);
+    const fold = st * (rear ? 26 : 36) * Math.max(0, Math.cos(q)) + (rear ? 15 : 0);
+    const tone = near ? leg.base : leg.shade;
+    return (
+      <g key={`${hx}`} transform={`translate(${hx},-160) rotate(${swing})`}>
+        <g transform={`translate(0,98) rotate(${fold})`}>
+          <path d="M-10,0 L-8,50 L9,50 L10,0 Z" fill={tone} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+          <path d="M-12,48 L13,48 L15,62 L-12,62 Z" fill="#2A2018" stroke={INK} strokeWidth={3} strokeLinejoin="round" />
+        </g>
+        <path d={rear ? 'M-18,0 C-22,40 -8,70 -10,98 L10,98 C10,66 16,36 16,0 Z' : 'M-15,0 L-10,98 L10,98 L15,0 Z'}
+          fill={tone} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        {/* the knee knob: fill only, so it covers the seam and reads as a joint, not a bolt */}
+        <g transform={`translate(0,98) rotate(${fold})`}>
+          <ellipse cx={1} cy={2} rx={10} ry={12} fill={tone} />
+        </g>
+      </g>
+    );
+  };
   return (
     <g transform={`translate(${x + staggerX},${y}) scale(${scale * facing * sx},${scale * sy})`}>
-      <FormGradient id={id} t={t} />
-      <ContactShadow cx={0} cy={4} rx={132} ry={22} opacity={0.3} blur={12} />
-      {/* legs */}
-      {[-84, -50, 54, 90].map((lx, i) => (
-        <rect key={i} x={lx} y={-118} width={20} height={122} rx={7} fill={i < 2 ? t.core : t.shade} stroke={INK} strokeWidth={6} />
-      ))}
-      {/* body */}
-      <path d="M-108,-150 q40,-56 118,-48 q70,4 96,44 q14,44 -8,86 q-100,26 -210,4 q-16,-44 4,-86 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-      <path d="M96,-154 q14,44 -8,86 q-40,10 -84,10 q64,-40 40,-96 Z" fill={t.shade} opacity={0.55} />
-      <RimLight d="M-108,-150 q40,-56 118,-48" w={4} opacity={0.55} />
-      {/* shoulder hump */}
-      <path d="M-70,-150 q30,-30 74,-24 q-30,-2 -50,20 Z" fill={t.key} opacity={0.4} />
-      {/* neck + head — `alert` raises + tilts the head up to watch the sky */}
-      <g transform={`translate(120,${-150 + bob - al * 26}) rotate(${bob * 0.4 - bumped * 16 * facing - al * 12 * facing})`}>
-        <path d="M-40,10 q10,-46 46,-54 q40,-8 52,26 q6,44 -18,72 q-30,22 -52,4 q-26,-20 -28,-48 Z" fill={`url(#${id})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
-        {/* long muzzle */}
-        <path d="M44,20 q46,4 58,34 q4,20 -16,28 q-30,8 -50,-8 q-8,-40 8,-54 Z" fill={t.core} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-        <ellipse cx={92} cy={54} rx={11} ry={9} fill={INK} />
-        {/* dewlap (the bell) */}
-        <path d="M20,58 q8,44 -4,66 q-14,-6 -14,-40 q0,-22 18,-26 Z" fill={t.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-        {/* eye + brow: bumped adds a wide indignant take; alert tracks the pupil UP */}
-        <ellipse cx={40} cy={4} rx={8} ry={bumped > 0.3 || al > 0.3 ? 11 : emotion === 'wary' ? 10 : 8} fill="#fff" stroke={INK} strokeWidth={3} />
-        <circle cx={42 + (bumped > 0.3 ? -3 : 0)} cy={5 - al * 5} r={bumped > 0.3 ? 3.4 : 4.5} fill={INK} />
-        {/* alert: a nostril-flare sniff line at the muzzle tip */}
-        {al > 0.3 && <path d="M96,50 q10,-4 14,2" fill="none" stroke={INK} strokeWidth={3} strokeLinecap="round" opacity={Math.min(1, (al - 0.3) * 2)} />}
-        <path d={bumped > 0.3 ? 'M26,-16 q18,-10 32,-2' : emotion === 'wary' ? 'M28,-12 q16,-8 30,-2' : 'M28,-8 q16,-4 30,2'} fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
-        {/* ear, flicking (pinned back indignant when bumped) */}
-        <g transform={`translate(6,-28) rotate(${earFlick})`}>
-          <path d="M0,0 q-22,-10 -30,-30 q18,-4 34,10 Z" fill={t.core} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+      <g transform="scale(0.75)">
+        <FormGradient id={id} t={fur} />
+        <FormGradient id={hid} t={fur} softness={0.5} />
+        <ContactShadow cx={0} cy={4} rx={210} ry={20} opacity={0.36} blur={12} />
+        {/* the neck, drawn BEHIND the body so the hump covers its root (no collar seam) */}
+        <g transform={`translate(0,${breathe * 0.5 + rise}) rotate(${headRot} 120 -252)`}>
+          <path d="M70,-330 C120,-330 160,-300 176,-266 L168,-220 C140,-198 104,-196 80,-214 Z" fill={fur.base} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+          <path d="M120,-318 C150,-300 168,-282 174,-266" fill="none" stroke={fur.key} strokeWidth={6} opacity={0.5} strokeLinecap="round" />
         </g>
-        {/* palmate antlers — wobble on impact */}
-        {[1, -1].map((s, i) => (
-          <g key={i} transform={`translate(${8 + s * 2},-46) rotate(${bumped * 10 * s}) scale(${s},1)`}>
-            <path d="M0,0 q34,-22 78,-14 q22,4 30,-14 q6,26 -18,34 q10,-2 26,-16 q0,24 -22,30 q10,0 22,-10 q-4,22 -30,24 q-46,4 -84,-24 Z"
-              fill={t.key} stroke={INK} strokeWidth={6} strokeLinejoin="round" opacity={0.96} />
+        {/* far legs (right hind, right fore), darker */}
+        {Leg(-118, 0.5, false, true)}
+        {Leg(70, 0.75, false, false)}
+        <g transform={`translate(0,${breathe * 0.5 + rise})`}>
+          {/* body: short against the legs, high shoulder hump falling to a low rump */}
+          <path d="M-182,-196 C-196,-240 -150,-262 -80,-262 C-30,-270 10,-326 70,-342 C120,-344 150,-300 160,-250 C166,-214 150,-162 60,-150 L-120,-150 C-160,-152 -176,-170 -182,-196 Z"
+            fill={`url(#${id})`} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+          <path d="M-160,-200 C-150,-240 -90,-252 -40,-256 C0,-270 40,-322 80,-330 C40,-312 10,-268 -30,-246 C-90,-238 -140,-230 -160,-200 Z" fill={fur.key} opacity={0.5} />
+          <path d="M-150,-160 C-60,-150 40,-150 92,-158 L84,-151 C40,-145 -60,-143 -150,-151 Z" fill={fur.shade} />
+          <RimLight d="M-80,-262 C-30,-270 10,-326 70,-342" w={4} opacity={0.5} />
+          {/* tail */}
+          <g transform={`translate(-182,-200) rotate(${tail})`}>
+            <path d="M0,0 q-18,10 -10,40" fill="none" stroke={INK} strokeWidth={8} strokeLinecap="round" />
           </g>
-        ))}
-        {/* small impact stars when the bump lands, cheap comic punctuation */}
-        {bumped > 0.5 && (
-          <g transform="translate(70,-20)" opacity={Math.min(1, (bumped - 0.5) * 3)}>
-            {[0, 120, 240].map((rot, i) => (
-              <path key={i} d="M0,-14 L4,-3 L14,0 L4,3 L0,14 L-4,3 L-14,0 L-4,-3 Z" fill="#ffd23e" stroke={INK} strokeWidth={2.5}
-                transform={`rotate(${rot + f * 6}) translate(${18 + i * 6},0)`} />
-            ))}
+        </g>
+        {/* near legs (left hind, left fore) */}
+        {Leg(-150, 0, true, true)}
+        {Leg(104, 0.25, true, false)}
+        {/* neck and head, pivoting at the shoulder: graze swings it down, alert lifts it */}
+        <g transform={`translate(0,${breathe * 0.5 + rise}) rotate(${headRot} 120 -252)`}>
+          <g transform="translate(150,-262)">
+            {/* far antler */}
+            <g transform={`rotate(${bumped * 10} 30 -40)`}>
+              <path d="M18,-34 C0,-86 40,-118 92,-112 L100,-130 L108,-110 L120,-124 L124,-102 L138,-108 C130,-78 84,-58 36,-44 Z" fill={ant.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" transform="translate(-26,6) scale(0.92)" />
+            </g>
+            {/* head: long and drooping, with the bulbous overhanging muzzle */}
+            <path d="M-6,-26 C30,-44 84,-36 120,-6 C138,10 140,44 116,56 C96,64 70,48 50,44 C30,40 6,36 -6,26 Z" fill={`url(#${hid})`} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+            <path d="M60,-30 C90,-26 116,-10 124,8 C110,-2 84,-14 56,-18 Z" fill={fur.key} opacity={0.55} />
+            <ellipse cx={118} cy={26} rx={6} ry={4} fill="#1A120C" />
+            {al > 0.3 && <path d="M120,18 q10,-4 14,2" fill="none" stroke={INK} strokeWidth={3} strokeLinecap="round" opacity={Math.min(1, (al - 0.3) * 2)} />}
+            {/* the bell under the jaw */}
+            <path d={`M20,34 C26,64 18,96 28,${110 + Math.sin(f / 9) * 4 + nod} C40,96 38,62 40,38 Z`} fill={fur.shade} stroke={INK} strokeWidth={5} />
+            {/* ear: flicks; pinned back when bumped, pricked up when alert */}
+            <g transform={`rotate(${earFlick} 4 -14)`}>
+              <ellipse cx={4} cy={-30} rx={10} ry={20} fill={fur.base} stroke={INK} strokeWidth={5} transform="rotate(-30 4 -30)" />
+            </g>
+            {/* eye + brow: bumped widens it, alert tracks the pupil up, wary sets the brow */}
+            <ellipse cx={46} cy={-10} rx={5.5} ry={bumped > 0.3 || al > 0.3 ? 7.5 : emotion === 'wary' ? 6.5 : 5.5} fill="#F4EDE0" stroke={INK} strokeWidth={2.5} />
+            <circle cx={47 - (bumped > 0.3 ? 2 : 0)} cy={-9 - al * 3} r={bumped > 0.3 ? 2.4 : 3.2} fill="#1A120C" />
+            <path d={bumped > 0.3 ? 'M34,-24 q12,-8 24,-2' : emotion === 'wary' ? 'M36,-21 q10,-6 22,-1' : 'M36,-18 q10,-3 22,1'} fill="none" stroke={INK} strokeWidth={4} strokeLinecap="round" />
+            {/* near antler: a broad palm with tines along its edge; wobbles on impact */}
+            <g transform={`rotate(${-bumped * 10} 30 -40)`}>
+              <path d="M18,-34 C0,-86 40,-118 92,-112 L100,-130 L108,-110 L120,-124 L124,-102 L138,-108 C130,-78 84,-58 36,-44 Z" fill={ant.base} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+              <path d="M30,-48 C40,-80 70,-96 100,-96" fill="none" stroke={ant.shade} strokeWidth={5} />
+            </g>
+            {/* small impact stars when the bump lands, cheap comic punctuation */}
+            {bumped > 0.5 && (
+              <g transform="translate(70,-60)" opacity={Math.min(1, (bumped - 0.5) * 3)}>
+                {[0, 120, 240].map((r, i) => (
+                  <path key={i} d="M0,-14 L4,-3 L14,0 L4,3 L0,14 L-4,3 L-14,0 L-4,-3 Z" fill="#ffd23e" stroke={INK} strokeWidth={2.5}
+                    transform={`rotate(${r + f * 6}) translate(${18 + i * 6},0)`} />
+                ))}
+              </g>
+            )}
           </g>
-        )}
-      </g>
-      {/* tail */}
-      <g transform={`translate(-116,-96) rotate(${tail})`}>
-        <path d="M0,0 q-14,10 -10,30 q10,-4 14,-18 Z" fill={t.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+        </g>
       </g>
     </g>
   );
