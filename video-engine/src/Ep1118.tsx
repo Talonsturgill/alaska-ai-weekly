@@ -908,9 +908,9 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <HeldTravel f={f} x={-380} y={-300} w={760} h={600} mode="shadow" seed={13}>
             <g>
               <rect x={-380} y={-300} width={760} height={600} fill="#F2EEE4" stroke={C.ink} strokeWidth={5} />
-              <text x={0} y={-248} textAnchor="middle" fontFamily="Fraunces, serif" fontWeight={900} fontSize={36} fill={C.ink}>FAIRBANKS DAILY NEWS-MINER</text>
+              <text x={0} y={-248} textAnchor="middle" fontFamily="Fraunces, serif" fontWeight={900} fontSize={30} fill={C.ink}>FAIRBANKS DAILY NEWS-MINER</text>
               <path d="M -350 -228 L 350 -228" stroke={C.ink} strokeWidth={3} />
-              <text x={0} y={-180} textAnchor="middle" fontFamily="Fraunces, serif" fontWeight={900} fontSize={40} fill={C.ink}>AI DATA CENTERS AROUND THE NATION</text>
+              <text x={0} y={-180} textAnchor="middle" fontFamily="Fraunces, serif" fontWeight={900} fontSize={30} fill={C.ink}>AI DATA CENTERS AROUND THE NATION</text>
               {Array.from({length: 14}).map((_, i) => <path key={i} d={`M ${i % 2 ? 20 : -350} ${-120 + Math.floor(i / 2) * 50} L ${i % 2 ? 350 : -20} ${-120 + Math.floor(i / 2) * 50}`} stroke="#B9B2A4" strokeWidth={8} />)}
             </g>
           </HeldTravel>
@@ -1069,25 +1069,25 @@ const S15: React.FC<SceneProps> = ({p}) => {
         <SpruceRank f={f} y={990} n={8} s={1.0} seed={23} />
         <Spruce x={120} y={1060} s={2.4} f={f} seed={11} />
         <Spruce x={1000} y={1040} s={2.2} f={f} seed={12} />
-        <ChalkLine f={f} id="s15" x1={hk.x} y1={hk.y} x2={endX} y2={1190} width={13} dash={40} />
+        <ChalkLine f={f} id="s15" x1={hk.x} y1={hk.y} x2={endX} y2={1010} width={13} dash={40} />
         {/* the three tagged ropes ride the line onto the spool */}
         {[0, 1, 2].map((i) => {
           const along = clamp01(ropes * 1.4 - i * 0.2);
           const x = lerp(560 + i * 140, hk.x + 10, along);
           return along < 0.98 ? (
-            <g key={i} transform={`translate(${x},${lerp(hk.y + 20, 1180, 1 - along) - 20})`}>
+            <g key={i} transform={`translate(${x},${lerp(hk.y, 1010 + (hk.y - 1010) * (1 - (x - hk.x) / Math.max(1, endX - hk.x)), 1 - along) - 10})`}>
               <path d="M 0 0 L 0 -80" stroke="#B98A4A" strokeWidth={8} />
               <rect x={-30} y={-110} width={60} height={34} rx={4} fill="#EBD9B4" stroke={C.ink} strokeWidth={3} />
             </g>
           ) : null;
         })}
         {/* the bare frayed end */}
-        <g transform={`translate(${endX},1190)`} opacity={endOut}>
+        <g transform={`translate(${endX},1010)`} opacity={endOut}>
           {[-14, -6, 2, 10].map((a, i) => <path key={i} d={`M 0 0 q 18 ${a * 0.6} 30 ${a}`} stroke={C.line} strokeWidth={4} fill="none" />)}
         </g>
         <FogBank f={f} x={700} y={1000} w={600} h={340} op={fog * 0.9} seed={15} />
-        <ChalkMark f={f} x={420} y={1440} text="RULES A BUILDER CAN MEET" draw={ease(f, b42 + 6, 24)} size={26} />
-        <ChalkMark f={f} x={690} y={1560} text="AN ANSWER AT THE FENCE" draw={ease(f, b43, 24)} size={26} seed={2} />
+        <ChalkMark f={f} x={680} y={1120} text="RULES A BUILDER CAN MEET" draw={ease(f, b42 + 6, 24)} size={24} />
+        <ChalkMark f={f} x={700} y={1250} text="AN ANSWER AT THE FENCE" draw={ease(f, b43, 24)} size={24} seed={2} />
         <HeldTravel f={f} x={130} y={930} w={350} h={370} mode="sweep" seed={29}><Chalky f={f} x={300} y={1290} scale={1.25} emotion={f < b42 ? 'determined' : 'hopeful'} crank={reel * 9} skid={0.2} cues={[b40, b41, b42, b43]} seed={11} /></HeldTravel>
       </SVG>
     </Frame>
