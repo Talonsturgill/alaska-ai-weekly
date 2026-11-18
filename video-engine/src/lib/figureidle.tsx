@@ -259,6 +259,10 @@ export const StrikeProp: React.FC<{
 // keySide is the house key (left) unless the scene's light is on the right. rim and shade are
 // strengths 0..1 (defaults 0.7 and 0.42); contact 0 drops the floor shadow for a figure that is
 // already standing in one. Deterministic, no hooks, no Math.random.
+//
+// LABELS GO AFTER </FigureFinish>, NEVER INSIDE IT (2026-11-18). The filter region is the figure's
+// box plus a 20 percent pad, so a name tag wider than the figure is cut at that box (Ep1118 cut 2
+// read "OTHER COMMISSION") and rimmed like a body. scripts/figure_rig_check.py fails it.
 // =============================================================================
 
 export const FigureFinish: React.FC<{

@@ -24,6 +24,15 @@ So this reads the episode source and FAILS when
     components, so a lib hero passed unread: Ep1116 drew its hero VoteTree, the Grove troupe and
     the Thermometer in HeldTravel light sweeps and nothing else, the gate printed "clean", and the
     panel named "S2 hero tree barely moves" and "S12 thermometer and back troupe little breath".
+  * (machine pass 2026-11-18) a label is drawn INSIDE <FigureFinish>: a <text>, <tspan>, or a copy
+    component (Lab, Plate, Label, Note, Type, or any name ending in Tag, Label or Plate), either
+    written between <FigureFinish> and </FigureFinish> or drawn by an episode-local component used
+    there. FigureFinish lights its children through an SVG filter whose region is the figure's own
+    box plus a 20 percent pad, so a tag wider than the figure is CUT at that box and also picks up
+    the rim and core shade. Ep1118 drew Parka's name tag inside it at cut 2; the tag read "OTHER
+    COMMISSION" on screen, J1's and the editor's hard blocker, and text_fit and label_footprint
+    both passed it because they measure the text, not the filter region it is painted through.
+    Draw the tag after </FigureFinish>, as the shipped Parka does.
 It NOTES (does not fail) a file that uses IdleFigure or figureIdle without passing any `cues`: the
 weight shift still happens on humanIdle's schedule, but only cues put it inside the strip a judge
 reads, which is built on the beat. `gain={0}` on a rig is an explicit decision and counts.
@@ -137,6 +146,50 @@ def unrigged_lib_draws(src, cast):
     return out
 
 
+FINISH_OPEN = re.compile(r"<FigureFinish\b")
+FINISH_CLOSE = "</FigureFinish>"
+COPY_TAG = re.compile(r"<(text|tspan|Lab|Plate|Label|Note|Type|\w*(?:Tag|Label|Plate))\b")
+
+
+def finish_spans(src):
+    """[(start, end)] of each <FigureFinish ...> ... </FigureFinish> body (nesting respected)."""
+    spans, i = [], 0
+    while True:
+        m = FINISH_OPEN.search(src, i)
+        if not m:
+            return spans
+        depth, j = 1, m.end()
+        while depth and j < len(src):
+            o = FINISH_OPEN.search(src, j)
+            c = src.find(FINISH_CLOSE, j)
+            if c < 0:
+                c = len(src)
+            if o and o.start() < c:
+                depth, j = depth + 1, o.end()
+            else:
+                depth, j = depth - 1, c + len(FINISH_CLOSE)
+        spans.append((m.end(), j))
+        i = j
+
+
+def labels_in_finish(src):
+    """[(what, line)] for each label painted through a FigureFinish filter."""
+    texty = {name for name, _, body in components(src) if COPY_TAG.search(body.split("=>", 1)[-1])}
+    out = []
+    for a, b in finish_spans(src):
+        inner = src[a:b]
+        for m in re.finditer(r"<([A-Za-z]\w*)\b", inner):
+            name = m.group(1)
+            if COPY_TAG.match(m.group(0)) and name != "FigureFinish":
+                what = f"<{name}>"
+            elif name in texty:
+                what = f"<{name}> (draws a label in its body)"
+            else:
+                continue
+            out.append((what, src[:a + m.start()].count("\n") + 1))
+    return out
+
+
 def hero_name(art_path):
     try:
         hero = json.load(open(art_path)).get("casting", {}).get("hero", "")
@@ -169,6 +222,9 @@ def analyze(src, hero=None, ep_dir=None, reader=None):
             continue
         what = "the hero" if is_hero else "a human figure (takes `skin`)"
         problems.append(f"{name} is {what} and draws no lib idle rig, so it holds with breath only")
+    for what, line in labels_in_finish(src):
+        problems.append(f"{what} at line {line} is drawn inside <FigureFinish>, whose filter region cuts it at the "
+                        f"figure's box and rims it like a body: draw labels after </FigureFinish>")
     if ("<IdleFigure" in src or "figureIdle(" in src) and "cues" not in src:
         notes.append("IdleFigure/figureIdle used without `cues`: the shift lands on humanIdle's schedule, "
                      "not inside the beat strips; pass cues={[p.b(id), ...]} for the figure's beats")
@@ -211,6 +267,19 @@ def _self_test():
         ("idleGain={0} is a decision", analyze(lib_frozen, None, "ep", rd)[0], 0),
         ("a faceless lib prop is not cast", analyze(lib_cued, "KettleLake", "ep", rd)[0], 1),
     ]
+    fin = ("const Parka: React.FC<{f: number; x: number; tag?: string}> = ({f, x, tag}) => (\n  <>\n"
+           "  <FigureFinish x={x} footY={1} w={2} h={3}>\n    <IdleFigure f={f} x={x} footY={1} h={3} cues={[1]}><g /></IdleFigure>\n"
+           "    {tag && <Lab text={tag} x={x} y={0} size={20} />}\n  </FigureFinish>\n  </>\n);\n")
+    fin_ok = fin.replace("    {tag && <Lab text={tag} x={x} y={0} size={20} />}\n  </FigureFinish>\n",
+                         "  </FigureFinish>\n    {tag && <Lab text={tag} x={x} y={0} size={20} />}\n")
+    badge = ("const Badge: React.FC<{x: number}> = ({x}) => <g><text x={x}>A</text></g>;\n"
+             "const S1: React.FC<SceneProps> = ({p}) => <svg><FigureFinish x={1} footY={1} w={2} h={3}>"
+             "<IdleFigure f={p.f} x={1} footY={1} h={3} cues={[1]}><g /></IdleFigure><Badge x={1} /></FigureFinish></svg>;\n")
+    cases += [
+        ("a Lab inside FigureFinish fails", analyze(fin)[0], 1),
+        ("the same Lab after </FigureFinish> passes", analyze(fin_ok)[0], 0),
+        ("a local component that draws <text> inside FigureFinish fails", analyze(badge)[0], 1),
+    ]
     bad = [n for n, got, want in cases if len(got) != want]
     no_cues = analyze(wrapped.replace("cues={[p.b(3)]}", ""))[1]
     if not no_cues:
@@ -245,8 +314,13 @@ def main(argv=None):
         if problems:
             for p in problems:
                 print(f"  FAIL  {rel}: {p}")
-            print(f"figure_rig_check: {len(problems)} held figure(s) without a rig in {rel}: "
-                  + ", ".join(p.split(' ')[0] for p in problems) + f". {REMEDY}")
+            rigless = [p for p in problems if "inside <FigureFinish>" not in p]
+            if rigless:
+                print(f"figure_rig_check: {len(rigless)} held figure(s) without a rig in {rel}: "
+                      + ", ".join(p.split(' ')[0] for p in rigless) + f". {REMEDY}")
+            if len(rigless) < len(problems):
+                print(f"figure_rig_check: {len(problems) - len(rigless)} label(s) painted through a FigureFinish "
+                      f"filter in {rel}; move each after </FigureFinish>")
             worst = 1
         else:
             print(f"figure_rig_check: {rel} clean (hero {hero or 'not named'}; every human figure and faced lib character carries a lib rig)")
