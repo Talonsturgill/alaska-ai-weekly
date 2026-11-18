@@ -156,6 +156,10 @@ step top_band         2 python3 scripts/dead_space_check.py --plan
 # TOPS progress tracker, a row of state chips lit beat by beat, and the panel read it as app UI on
 # 11-04, 11-05, 11-06 and 11-11 (a lost round). Reads the episode source only.
 step ui_chrome        2 python3 scripts/ui_chrome_check.py
+# Machine pass 2026-11-18 (shared-near-band-stamp): the 11-18 flow critic counted one foreground
+# band on 24 of 26 stills; Ep1118 drew its local Near in 13 of 16 scenes. Advisory: names a local
+# set component (data-band="ok") drawn in more than six scenes and over half the film.
+step repeat_set       0 python3 scripts/repeat_set_check.py
 
 if [ ${#SOURCE_FAILS[@]} -gt 0 ]; then
   say "make_cut: STOPPED after the source gates, ${#SOURCE_FAILS[@]} failed: ${SOURCE_FAILS[*]}. Fix them all, then relaunch ($(( $(date +%s) - T0 ))s)."
