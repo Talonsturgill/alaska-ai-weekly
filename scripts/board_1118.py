@@ -28,9 +28,9 @@ B = [
  (7, 3, W("size"), "bloop", "Chalky's crank", "spins and a puff of chalk bursts into the dashed outline of a big block with a power plug", "earnest", "SIZE AND POWER", "the puff bursts", ""),
  (8, 4, 0.0, "clank", "Chalky's case", "swings open into a cutaway of three blank brass trip pins around the spool", "proud", "PROPOSED THRESHOLDS · ANY ONE OF THREE", "the case swings open", "rehook: the reel opens into its own machinery"),
  (9, 4, W("five"), "click", "a dashed hypothetical block outline", "drifts past and nudges the first pin, which swings and pops a dashed RECOMMENDED flag as its label engraves", "startled", "AT LEAST 5 MW OF POWER", "the first pin swings", ""),
- (10, 5, 0.0, "tick", "a wide flat dashed block outline", "slides up to the chalk line on the open snow and touches it, popping a dashed RECOMMENDED flag", "startled", "OR 40,000 SQ FT", "the second pin swings", ""),
- (11, 6, 0.0, "ping", "a dashed block outline with a little smokestack", "slides up beside it and touches the line, popping its own flag", "startled", "OR 5 MW MADE ON SITE", "the third pin swings", ""),
- (12, 6, W("site"), "chime", "a tall dashed outline", "slides in as the third and all three outlines pulse together at the line, three dashed flags up", "proud", "ANY ONE · PROPOSED · NOT LAW", "the pins glow", ""),
+ (10, 5, 0.0, "tick", "a wide flat dashed block outline", "slides up to the chalk line on the open snow and touches it, popping a dashed RECOMMENDED flag", "startled", "OR 40,000 SQ FT", "the outline touches the line", ""),
+ (11, 6, 0.0, "ping", "a dashed block outline with a little smokestack", "slides up beside it and touches the line, popping its own flag", "startled", "OR 5 MW MADE ON SITE", "its flag pops", ""),
+ (12, 6, W("site"), "chime", "the tall 5 MW outline from the cutaway", "slides back in so all three thresholds stand at the line, and they pulse together, three dashed flags up", "proud", "ANY ONE · PROPOSED · NOT LAW", "the pins glow", ""),
  (13, 7, 0.0, "hum", "one GVEA power line on wooden H-frame poles", "carries a spring-green pulse into a dashed 5 MW block outline on the snow", "focused", "5 MW · PER THE PLANNING DIRECTOR", "the pulse travels", ""),
  (14, 7, W("three"), "bell", "a valley of house windows along the frozen Chena", "light up row by row as the camera pulls back, while Earl the plugged-in pickup shivers and his cord sags", "awed", "5 MW · AT LEAST 3,000 HOMES", "the windows light", ""),
  (15, 8, 0.0, "roll", "the borough map", "floods sage across 97 of 100 grid squares, the chalk line now a thin stroke across it", "plain", "GENERAL USE ZONE · 97% OF THE BOROUGH · PER THE NEWS-MINER", "the flood spreads", "rehook: the whole map floods one colour and the line suddenly looks tiny"),
@@ -43,14 +43,14 @@ B = [
  (22, 11, 0.0, "clink", "the rust-brown Eielson chain-link fence", "rises across the whole frame out of the fog with only snow and spruce behind it, a sign on its outside face", "wary", "EIELSON AIR FORCE BASE", "the fence rises", "rehook: a hard cut and the chain-link fills the frame"),
  (23, 11, W("zone"), "hiss", "the chalk at the fence", "piles up gray on the outside face of the wire and the line drops slack there", "uneasy", "INSIDE THE FENCE · LIKELY NOT BOROUGH ZONING", "the line drops slack", ""),
  (24, 12, 0.0, "flap", "a pencilled board", "swings onto the outside of the wire on a string as pencil writes across it", "plain", "HOPKINS BELIEVES · PURELY GOVERNMENT PURPOSE", "the board swings in", ""),
- (25, 12, W("pause"), "creak", "the pencilled board", "turns on its string while slack gray chalk settles against the outside of the wire", "plain", "\"NOT SUBJECT\" TO THE PAUSE · NOT A RULING", "the stamp drops", ""),
+ (25, 12, W("pause"), "creak", "the pencilled board", "turns on its string while slack gray chalk settles against the outside of the wire", "plain", "\"NOT SUBJECT\" TO THE PAUSE · NOT A RULING", "the board turns", ""),
  (26, 13, 0.0, "flutter", "a second dotted board", "swings onto the wire below the first with a pencil question mark", "plain", "PRIVATE USE · \"MIGHT BE DIFFERENT\"", "the dotted board swings", ""),
  (27, 14, 0.0, "pin", "a gray swatch with blank black and white halves", "pins to the outside of the wire", "curious", "\"TURN THAT GRAY AREA BLACK AND WHITE\"", "the swatch pins up", "rehook: a gray swatch with empty black and white halves pins to the wire"),
  (28, 14, W("black"), "rattle", "the wire", "shakes in the wind and gray chalk dust sifts down and settles only on the swatch's gray middle, both halves staying blank", "uneasy", "RESEARCH UNDER WAY · NO ANSWER YET", "the dust sifts", ""),
- (29, 15, 0.0, "thump", "three blank rope coils with tags", "drop one after another into the snow beside Chalky as he grips the slack line", "braced", "THE FAIR TEST · REASONS FOR TIME", "the coils drop", ""),
- (46, 15, W("real"), "clunk", "a faceless figure tagged A COMMISSIONER", "walks in carrying the first coil while Chalky grips the slack line in both mittens", "braced", "REAL REASONS", "Chalky grips", ""),
+ (29, 15, 0.0, "thump", "Chalky", "lands on open snow and grips the slack line in both mittens, boots planted", "braced", "THE FAIR TEST · REASONS FOR TIME", "Chalky grips", ""),
+ (46, 15, W("real"), "clunk", "a faceless figure tagged A COMMISSIONER", "walks in carrying the first rope coil while Chalky holds the slack line", "braced", "REAL REASONS", "Chalky grips", ""),
  (30, 16, 0.0, "creak", "a faceless figure tagged A COMMISSIONER", "ties a rope whose tag carries a sooty genset icon and lifts the slack, Chalky pulling with", "worried", "DIESEL GENERATORS · A COMMISSIONER'S WORRY", "the slack lifts", ""),
- (31, 17, 0.0, "page", "a figure tagged ANOTHER COMMISSIONER", "steps onto a big newspaper page laid on the snow and pulls a second rope tight", "anxious", "ANOTHER COMMISSIONER · HEARING ANXIETY", "the rope tightens", ""),
+ (31, 17, 0.0, "page", "a figure tagged ANOTHER COMMISSIONER", "steps onto a big newspaper page laid on the snow, its printed headline AI DATA CENTERS AROUND THE NATION under a NEWS-MINER masthead, and pulls a second rope tight", "anxious", "ANOTHER COMMISSIONER · HEARING ANXIETY", "the rope tightens", ""),
  (32, 17, W("anxiety"), "swell", "a speech balloon over the figure", "inflates over the newspaper page", "anxious", "\"ANXIETY ... OVER AI IN GENERAL\"", "the balloon swells", "rehook: the anxiety balloon swells over the page"),
  (33, 18, 0.0, "knock", "a faceless resident in a parka", "ties a third rope and the line lifts taut", "calm", "\"IT'S SMART TO TAKE THE TIME\"", "the line lifts taut", ""),
  (34, 19, 0.0, "slide", "the line past the ropes", "runs on and drops onto the snow as a long unheld slack coil, and the parka builder walks in from the other side, lifts its end and looks along it", "even", "THE OPPOSITE VIEW IS FAIR TOO", "the builder lifts the end", "rehook: the line runs on into an unheld slack coil"),
@@ -60,7 +60,7 @@ B = [
  (38, 20, W("likely"), "thunk", "a sign", "drops onto the building's door bracket, the lit window behind clicks on and the two sealed can lids rattle", "plain", "ASSEMBLY VOTE · LIKELY JAN 14TH", "the sign drops", ""),
  (39, 20, W("clock"), "tock", "a dashed ghost hand", "sweeps one preview arc around the stopwatch and fades, the real hand staying at zero", "plain", "THE CLOCK WOULD START AT THE VOTE", "the ghost hand sweeps", ""),
  (40, 21, 0.0, "ratchet", "Chalky", "plants his feet and reels the line in through thinning fog, crank over crank", "determined", "READINESS, NOT REFUSAL, IF...", "the crank turns", ""),
- (41, 21, W("refusal"), "slide", "the three tagged ropes", "stay knotted and roll onto the spool one after another as the line pays in", "hopeful", "ONLY IF IT ENDS WITH", "the ropes lift free", ""),
+ (41, 21, W("refusal"), "slide", "the three tagged ropes", "stay knotted and roll onto the spool one after another as the line pays in", "hopeful", "ONLY IF IT ENDS WITH", "the ropes wind onto the spool", ""),
  (42, 21, W("builder"), "scratch", "the line's end", "slides out of the fog bare and frayed, and a dashed chalk mark on the snow waits to be struck", "hopeful", "RULES A BUILDER CAN MEET", "the frayed end slides out", ""),
  (43, 22, 0.0, "scribble", "a second dashed chalk mark", "presses into the snow beside the first", "hopeful", "AN ANSWER AT THE FENCE", "the mark draws in", ""),
  (44, 23, 0.0, "swoosh", "the camera", "cranes up and back from Chalky to the whole valley, the line crisp across the snow and slack and gray at the outside of the far chain-link, Earl still shivering in his lot", "calm", "CLEAR ON SIZE · STILL CHALK", "the valley opens", ""),
@@ -69,10 +69,10 @@ B = [
 
 PLATE_AT = {i: "on-object" for i in range(1, 47)}
 PLATE_AT.update({1: "lower-third", 15: "lower-third", 29: "lower-third", 44: "lower-third"})
-CLAIM_MAP = {1: ["c1"], 2: ["narration"], 3: ["c1", "c2"], 4: ["c3"], 5: ["c4"], 6: ["c21"], 7: ["c6"], 8: ["c6"], 9: ["c6"], 10: ["c7"],
-             11: ["c8"], 12: ["c6", "c7", "c8"], 13: ["c9"], 14: ["c9"], 15: ["c11"], 16: ["narration"], 17: ["c12"], 18: ["c11", "c12"], 19: ["c28"], 20: ["narration"],
+CLAIM_MAP = {1: ["c1"], 2: ["narration"], 3: ["c1", "c2"], 4: ["c3"], 5: ["c4"], 6: ["narration"], 7: ["c6"], 8: ["c6"], 9: ["c6"], 10: ["c7"],
+             11: ["c8"], 12: ["c6", "c7", "c8", "c28"], 13: ["c9"], 14: ["c9"], 15: ["c11"], 16: ["narration"], 17: ["c12"], 18: ["c11", "c12"], 19: ["c28"], 20: ["narration"],
              21: ["narration"], 22: ["c15"], 23: ["c15"], 24: ["c16"], 25: ["c16"], 26: ["c17"], 27: ["c18"], 28: ["c18"], 29: ["narration"], 30: ["c19"],
-             31: ["c20"], 32: ["c20"], 33: ["c23"], 34: ["narration"], 35: ["c5"], 36: ["c5", "c3"], 37: ["c28"], 38: ["c13"], 39: ["c13"], 40: ["narration"],
+             31: ["c20", "c21"], 32: ["c20"], 33: ["c23"], 34: ["narration"], 35: ["c5"], 36: ["c5", "c3", "c31"], 37: ["c28"], 38: ["c13"], 39: ["c13"], 40: ["narration"],
              41: ["narration"], 42: ["narration"], 43: ["c18"], 44: ["c28"], 45: ["narration"], 46: ["narration"]}
 
 # sid, line, framing, scale, height, stage, pov, layout, motion_vector, hero_treatment, transition, thread, title, means
@@ -85,14 +85,13 @@ S = [
  (6, 7, "wide-establish", "wide", "high", "valley-windows", "orbital-aerial", "map-territory", "radial-emanate", "landscape-as-subject", "carried-element", "carry", "At least 3,000 homes", "One GVEA power line carries a spring-green pulse into a dashed 5 MW block outline and the valley's windows light row by row while Earl the plugged-in pickup shivers in his lot"),
  (7, 8, "map-territory", "wide", "overhead", "borough-map", "top-down-map", "map-territory", "horizontal-traverse", "data-as-subject", "map-travel", "travel", "Anything goes", "The borough map floods sage across 97 of 100 squares, a moose ambles past an outhouse, and a parka builder reads the line, nods and wonders when it turns to paint"),
  (8, 10, "alt-vantage", "medium", "low", "spruce-wire-trail", "eye-level-immersive", "stacked-layers", "horizontal-traverse", "single-organic-hero", "carried-element", "carry", "Follow the line", "From a low angle Chalky walks his line under the GVEA wire past spruce until the ice fog swallows its far end"),
- (9, 11, "wide-establish", "wide", "eye", "eielson-fence", "eye-level-immersive", "fullbleed-split", "vertical-rise", "structure-as-subject", "hard-cut", "build", "The fence", "A hard cut and the umber Eielson chain-link rises across the frame out of the fog, the chalk piling gray on its outside face and the line dropping slack there"),
- (17, 12, "push-detail", "medium", "eye", "fence-board", "eye-level-immersive", "centered-hero-lowerthird", "push-in-only", "data-as-subject", "match-action", "match", "Hopkins believes", "Pushed in on the outside of the wire, a pencilled board swings on and is written HOPKINS BELIEVES, then turns on its string as slack gray chalk settles against the wire"),
+ (9, 11, "wide-establish", "wide", "eye", "eielson-fence", "eye-level-immersive", "fullbleed-split", "vertical-rise", "structure-as-subject", "hard-cut", "build", "The fence", "A hard cut and the umber Eielson chain-link rises across the frame out of the fog, the chalk piling gray on its outside face and the line dropping slack there, then a pencilled board swings onto the wire, is written HOPKINS BELIEVES and turns on its string"),
  (10, 13, "push-detail", "close", "ground", "fence-outside-low", "macro-closeup", "single-object-void", "push-in-only", "structure-as-subject", "match-action", "match", "The gray swatch", "Low from the snow looking along the slack gray line to the wire, a dotted board swings on and a gray swatch with blank black and white halves pins up while chalk dust sifts down"),
- (11, 15, "wide-establish", "wide", "low", "rope-field", "eye-level-immersive", "stacked-layers", "vertical-rise", "single-organic-hero", "hard-cut", "build", "The fair test", "On open snow three rope coils drop beside Chalky, and a commissioner figure with a genset icon on the rope tag lifts the slack line while Chalky pulls with"),
+ (11, 15, "wide-establish", "wide", "low", "rope-field", "eye-level-immersive", "stacked-layers", "vertical-rise", "single-organic-hero", "hard-cut", "build", "The fair test", "On open snow Chalky grips the slack line, a commissioner figure walks in carrying the first rope coil, ties it with a genset icon on its tag and lifts the slack while Chalky pulls with"),
  (12, 17, "alt-vantage", "medium", "high", "newspaper-page", "top-down-map", "grid-modular", "assemble-build", "multiplicity-swarm", "carried-element", "carry", "On the page", "From above, a second commissioner steps onto a big newspaper page laid on the snow and pulls a rope tight as an anxiety balloon swells, and a resident ties a third rope"),
  (13, 19, "data-panel", "wide", "eye", "timeline-strip", "exploded-diagram", "map-territory", "scroll-data", "data-as-subject", "carried-element", "carry", "The extra eight", "The line runs on into an unheld slack coil on the snow, the builder picks up its end, and flags snap up at month 10 and month 18 with a bracket over the coil"),
  (14, 20, "two-up", "medium", "eye", "borough-building-steps", "eye-level-immersive", "fullbleed-split", "push-in-only", "structure-as-subject", "mask-wipe", "build", "Not law yet", "Frost cracks off a copper stopwatch at zero outside the borough building, two sealed paint cans at its foot, a vote sign drops and a dashed ghost hand previews a sweep"),
- (15, 21, "push-detail", "close", "ground", "fog-line-end", "eye-level-immersive", "single-object-void", "horizontal-traverse", "single-organic-hero", "match-action", "match", "Reel it in", "From the ground Chalky reels the line in through thinning fog, the ropes lift free, the end slides out bare and frayed and two dashed chalk marks wait on the snow"),
+ (15, 21, "push-detail", "close", "ground", "fog-line-end", "eye-level-immersive", "single-object-void", "horizontal-traverse", "single-organic-hero", "match-action", "match", "Reel it in", "From the ground Chalky reels the line in through thinning fog, the three tagged ropes wind onto the spool with it, the end slides out bare and frayed and two dashed chalk marks wait on the snow"),
  (16, 23, "wide-establish", "extreme-wide", "high", "tanana-snowfield", "orbital-aerial", "map-territory", "vertical-rise", "instrument-as-subject", "match-cut", "match", "Clear on size", "The camera cranes up from Chalky to the whole valley, the line crisp across the snow and slack and gray at the outside of the far chain-link, Earl still shivering, and Chalky re-snaps it"),
 ]
 
@@ -112,9 +111,9 @@ HERO = {
  6: ("GVEA power line + dashed 5 MW outline + house windows + Earl", "40% windows, 30% line and outline, 30% Earl and lot"),
  7: ("borough map + sage flood + moose + outhouse + builder + bubble", "45% map, 30% moose and props, 25% builder"),
  8: ("Chalky walking + chalk line + GVEA wire + spruce + ice fog", "40% Chalky and line, 35% trail, 25% fog"),
- 9: ("umber chain-link fence + gray chalk + slack line", "50% fence, 30% chalk, 20% line"),
+ 9: ("umber chain-link fence + gray chalk + slack line + pencilled board", "45% fence, 25% chalk and line, 30% board"),
  10: ("slack gray line + wire + dotted board + gray swatch + dust", "40% line and wire, 30% board, 30% swatch"),
- 11: ("Chalky + slack line + rope coils + commissioner figure + genset icon", "40% Chalky and line, 35% figure and rope, 25% coils"),
+ 11: ("Chalky + slack line + rope coil + commissioner figure + genset icon", "40% Chalky and line, 35% figure and rope, 25% coils"),
  12: ("newspaper page + commissioner figure + speech balloon + resident", "40% page, 35% figures, 25% balloon"),
  13: ("unheld slack coil + builder + month flags + bracket", "45% coil, 30% flags and bracket, 25% builder"),
  14: ("copper stopwatch + sealed paint cans + vote sign + ghost hand + borough building", "40% stopwatch, 30% cans, 30% building"),
@@ -123,7 +122,7 @@ HERO = {
 }
 PARTS = {17: 44, 1: 52, 2: 46, 3: 56, 4: 50, 5: 46, 6: 54, 7: 48, 8: 50, 9: 46, 10: 44, 11: 52, 12: 46, 13: 42, 14: 46, 15: 48, 16: 54}
 KICKS = (1, 22, 40)
-CAMERA = {17: "dollyThrough", 1: "craneDown", 2: "dollyThrough", 3: "dollyThrough", 4: "dollyThrough", 5: "static:the cutaway rotates while the pins swing",
+CAMERA = {17: "dollyThrough", 1: "craneDown", 2: "dollyThrough", 3: "dollyThrough", 4: "dollyThrough", 5: "static:a locked ground-level frame on the chalk line while three outlines slide in",
           6: "craneDown", 7: "static:a locked overhead of the map while it floods", 8: "truckAcross", 9: "dollyThrough", 10: "truckAcross",
           11: "truckAcross", 12: "static:a locked overhead of the page while ropes tighten", 13: "truckAcross", 14: "dollyThrough", 15: "truckAcross+riseWith", 16: "riseWith"}
 
