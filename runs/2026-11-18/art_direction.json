@@ -1,0 +1,80 @@
+{
+ "run_date": "2026-11-18",
+ "story_id": "fairbanks-data-center-pause-18-months",
+ "treatment": "Dramatist winner with grafts, restaged at Gate 0. CHALKY, a dented safety-orange surveyor's chalk-line reel in an olive knit earflap hat, snaps a dashed ultramarine chalk line across the Tanana valley snow in the clear mint afterglow of a Fairbanks winter afternoon; its far end runs into a bank of ice fog (loop 1). A faceless figure tagged MAYOR GRIER HOPKINS pinches a chalk mark at 12 on the line, and the commission row pulls six more feet off the spool and marks 18 inside a dashed RECOMMENDED border. A cutaway inside the reel shows three trip pins under PROPOSED THRESHOLDS, each tripped by a dashed hypothetical block outline, a dashed RECOMMENDED flag popping, the line never clamping a building. One GVEA wire carries a spring-green pulse into a dashed 5 MW outline and the valley's windows light to AT LEAST 3,000 HOMES while Earl, a faceless plugged-in pickup, shivers in the lot (only here and at the button). The map floods sage across 97 of 100 squares; a parka figure tagged ANY BUILDER reads the line and wonders when it turns to paint (loop 2). Chalky walks the line under the wire into fog; hard cut to the Eielson chain-link (rust-brown wire, nothing behind it but snow and spruce): the chalk stops at the OUTSIDE of the wire, piles gray there and the line goes slack. Hedged cards hang on the wire; a gray swatch with blank black and white halves. Act 3, THE FAIR TEST: three named reasons for time each tie a rope that LIFTS the slack line, Chalky pulling with them (a commissioner with a diesel genset icon on the rope tag, another commissioner hearing anxiety over AI in general, a resident), then the opposite view gets the same physical language, the line past month 10 lying on the snow as a long unheld slack coil, THE EXTRA 8 MONTHS, NEITHER OUTLET SAYS WHY, and the builder picks up its end. At the borough building a frosted stopwatch hangs at zero by NOT LAW YET with two sealed paint cans at its foot; a dashed ghost hand previews the sweep the vote would start. Chalky reels in through the fog: the end comes out bare and frayed, and two dashed chalk marks wait on the snow to be struck, RULES A BUILDER CAN MEET and AN ANSWER AT THE FENCE. The camera cranes up for the signature: the line crisp across the valley, slack and gray at the outside of the far chain-link, Earl still shivering, and Chalky re-snaps it.",
+ "palette": {
+  "sky": "#BFE3D2 mint afterglow at the horizon rising through #7DB7AE sea-glass to #3E6E78 deep teal overhead; NO sun disc (the sun is already behind the Alaska Range at 2 p.m.), so light is skylight, soft and clear",
+  "ground": "#EEEAF4 lilac-white snow with #B9A9C9 mauve skylight shade (short, soft, under objects, not raking); the Chena a frozen pearl ribbon #E6E3EA with a dark spruce bank, never a blue stroke",
+  "fog": "#E4E2EA ice fog ONLY at the Eielson fence and the line's far end",
+  "spruce": "#22433A spruce with #4C6E5E lit tips and snow loads",
+  "hero": "#E8582A safety-orange reel, #9C3418 shade, #FFC9A8 rim on the key side; brass #C9A04A crank and hook; moss knit hat #5E7A3A with #EEEAF4 fleece",
+  "line": "#2F5FD0 surveyor's ultramarine chalk, the ONLY high-chroma blue in the film; nothing else (hat, river, outlines, plate borders, block outlines) is blue",
+  "gray_area": "#8F9096 neutral gray, the ONLY true neutral, on the chalk piled at the outside of the wire and the swatch",
+  "fence": "#6B4A36 weathered umber-brown wire and posts (L* 33), so the gray reads against it",
+  "flood": "#A9BE9A dusty sage for the general-use zone (L* 75), the ultramarine line (L* 42) reads on it at stroke width",
+  "grid": "#3FCB73 spring green, ONLY a travelling pulse on the GVEA wire, never an arrival flash or glow at the dashed 5 MW outline (it must read as power flowing, never as a green light); windows light a warm cream #FFE9B0 as ordinary houses do",
+  "cans": "#16181D charcoal and #F7F7F2 white, lids always sealed",
+  "metals": "stopwatch #B8743A copper case with a frosted face, genset icon #C98A2E ochre, H-frame poles #7A5A3C wood, Earl's pickup #7A2E3A maroon",
+  "plate": "#FFF6E3 cream plates with #1B1A22 type; RECOMMENDED borders dashed in ink, never chalk blue",
+  "mood": "clear, bright, cold air you can see, curious and a little comic, never doomy",
+  "divergence": "11-16 was indigo polar night and midnight-sun honey over rust tundra with radar lime; 11-15 rain-black night under a sodium lamp with gunmetal and pencilled vellum; 11-12 a rose-line dusk dome with a survey stake and a raven; 11-11 a pink-gold ice-fog noon in Fairbanks. This film is a clear mint-afterglow afternoon with NO sun, lilac snow, sage, rust-brown wire and one ultramarine chalk line; fog appears only at the fence. The hero's safety orange is pushed away from 11-16's thermometer red."
+ },
+ "light": {
+  "time": "Fairbanks mid-November about 3 p.m., minutes before sunset: the low sun is occluded by the Alaska Range to the south, the sky glows mint above the ridge, and the valley is lit by clear skylight",
+  "key": "broad soft skylight from above and slightly left (the bright horizon at screen left), so forms shade gently to the right and down; no long shadows, contact shadows under everything",
+  "rim": "a cool mint rim #DFF3EA on the left edges against the deep teal upper sky",
+  "arc": "Act 1 clear and bright; Act 2 the fog thickens and the key desaturates as the line nears the fence (S8, S9); Act 3 flat and even under the ropes (S10 to S13); Act 4 the fog thins and the clear afterglow returns for the reel-in and the crane-up (S15, S16)",
+  "per_shot": {
+   "S1": "clear afterglow, high oblique over the valley, fog bank at the far end of the line",
+   "S2": "ground-level close on the line, skylight, chalk sparkling",
+   "S3": "close portrait, mint horizon behind Chalky, cool rim on his left edge",
+   "S4": "inside the reel: a warm interior glow from the spool, pins catch it",
+   "S5": "inside the reel, rotated: same glow",
+   "S6": "high over the lit valley, cream windows and the green wire pulse, sky deepening",
+   "S7": "overhead map: flat even skylight, no horizon, fog edge creeping at the top",
+   "S8": "low trail under the wire, fog density rising, colours desaturating",
+   "S9": "at the fence: milky fog, the gray chalk the brightest neutral against umber wire",
+   "S10": "ground-level along the slack gray line, milky fog",
+   "S11": "open snow, even flat light, ropes and figures read by silhouette",
+   "S12": "newspaper page on the snow from above: paper bright, figures ink",
+   "S13": "the strip: even skylight, the slack coil's shadow",
+   "S14": "borough building steps: a warm lit window behind, frosted copper stopwatch",
+   "S15": "ground-level in thinning fog, afterglow returning",
+   "S16": "crane-up to a high oblique: clear afterglow; the fog pocket at the far fence kept thin so the umber wire stays at L* 45 or darker after atmosphere, the gray chalk pile drawn oversized against it, both inside the 1:1 crop"
+  },
+  "depth": "three planes: far Alaska Range silhouette under the mint glow, mid valley with spruce ranks and the line, near plane snow drifts, plug-in posts and spruce trunks in y 1480 to 1920; parallax on every exterior; fog density rises with distance only near the fence"
+ },
+ "shape_language": "Chalky is ROUND and compact (a fat disc case, stubby crank, mitten boots); this is the third rounded hero in a row (VoteTree, Flap, Chalky), and the contrast lives between him and the line, the one STRAIGHT taut vector in the film. The world is soft (drifts, spruce loads, fog); the fence is a rigid rust-brown diamond lattice; slack line is a sagging curve, so taut and slack read muted. Cans are squat sealed cylinders.",
+ "casting": {
+  "hero": "Chalky (NET-NEW, lib/chalkline.tsx): a faced surveyor's chalk-line reel with crank arm, moss knit earflap hat, brass hook, and `cues` beat poses. The ONLY face in the film.",
+  "net_new_supporting": "ChalkLine (dashed snapped string, ultramarine with a gray slack end, sag and fade), ChalkPuff, TripPinCutaway (labels engraved as each pin trips), PaintCan (sealed), ChalkMark (an unstruck dashed mark on the snow), Genset (faceless icon for a rope tag), ChainFence (rust-brown), all lib/chalkline.tsx.",
+  "shelf": "Pickup (lib/polecam.tsx) as Earl, faceless, a 2 px shiver and a sagging cord; Moose (fauna.tsx); Cable (lib/refinery.tsx) for the GVEA wire with a green pulse; Snowfall; IdleFigure + FigureFinish for every faceless parka figure.",
+  "people": "Mayor, commissioners, builder and resident are faceless parka figures with tags (MAYOR GRIER HOPKINS, PLANNING COMMISSION, A COMMISSIONER, ANY BUILDER, A RESIDENT); never faced, never caricatured.",
+  "props": "chalk marks on the line (episode), clothes peg and source slip (episode), dashed block outlines (episode), H-frame poles (Cable), hot dog cart and outhouse (episode), chain-link (ChainFence), newspaper page (episode), month strip and marker flags (episode), frosted stopwatch and borough building (episode), plug-in posts (episode)",
+  "shelf_check": "grep of video-engine/src/lib: no chain-link fence (10-23's fence was a rail fence inside an episode), no rope, no stopwatch on the shelf, so ChainFence is net-new; Cable (refinery) carries the wire pulse; Pickup (polecam) is Earl"
+ },
+ "motion_language": "The snap is the hero move: a whip of the string with a travelling wave, a chalk puff on contact, dashes landing left to right. Chalky anticipates every crank, squashes on landing, breathes, and his earflaps follow through; he performs on his beats (cues). Taut versus slack is the film's motion argument: ropes LIFT the slack line with an ease, never a spring. Fog drifts on two speeds near the fence; snow sifts; the green pulse travels the wire; Earl shivers 2 px under 0.4 rad a frame.",
+ "composition": {
+  "focal_hierarchy": "the line first, Chalky second, plates third",
+  "negative_space": "only the fog at the fence, and it moves",
+  "safe_area": "hero action between y 420 and 1440; plates between y 520 and 1300; Chalky stands on a ground line near y 1240 at scale 1.3 so his top reaches about y 820, crank and puffs stay above y 1300; nothing below y 1336 carries type except the caption bar",
+  "bands": {
+   "top_band_exterior": "the Alaska Range silhouette under the mint glow, drifting fog wisps near the fence shots, H-frame wire crossing the top on S6 and S8",
+   "top_band_overhead": "the fog bank's leading edge creeping in from frame top (S7, S12); S13 carries the frozen Chena drawn along the strip's far edge",
+   "top_band_interior": "the reel's rim and rivets (S4, S5), the newspaper masthead (S12), the borough building eaves and a lit window (S14)",
+   "lower_band": "Earl and his plug-in post appear only in S6 (his cord pulls taut and his shiver spikes as the green pulse runs) and S16 (still shivering, unresolved); other ground-level exteriors carry snow drifts, plug-in posts and spruce trunks"
+  },
+  "alaska_cues": "S1 Tanana valley and Alaska Range, S2 spruce and plug-in posts, S3 Alaska Range behind Chalky, S4 and S5 a FNSB stencil on the reel's inner rim, S6 frozen Chena and Fairbanks windows, S7 the borough map with the Chena, S8 GVEA H-frame line and spruce, S9 and S10 EIELSON AIR FORCE BASE sign on the fence's outside, S11 spruce and the range, S12 FAIRBANKS DAILY NEWS-MINER masthead, S13 the Chena drawn along the strip, S14 FAIRBANKS NORTH STAR BOROUGH on the building, S15 spruce in fog, S16 the whole valley",
+  "nine_sixteen_and_one_one": "the line, Chalky, the fence and the cans all stage inside y 420 to 1440",
+  "signature_shot": "S16, beats 45 and 46, 113.22 to 117.92 s: the camera cranes up and back from Chalky to a high oblique of the Tanana valley in clear mint afterglow, the ultramarine dashed line crisp across the snow, going slack and gray at the outside of the umber Eielson chain-link far off, Earl still shivering in his lot in the near plane, and Chalky re-snapping the line."
+ },
+ "practicals": "Nothing is drawn inside the Eielson fence except snow and spruce; the chalk stops at the outside face of the wire; no guard tower. The line is always dashed chalk; every pause label says RECOMMENDED, PROPOSED or NOT LAW YET; no tick, no stamp of any kind, no APPROVED. The cans never open. The stopwatch's real hand stays at zero; only a dashed ghost previews a sweep. The extra 8 months carries NEITHER OUTLET SAYS WHY only. Ropes lift the slack line and Chalky pulls with them; every rope has an owner; at the reel-in the ropes stay knotted and wind onto the spool with the line. The pins trip dashed hypothetical outlines and pop RECOMMENDED flags, never clamp a building. Earl keeps shivering at the end. AI appears only as NOT A VOTE ON AI and the commissioner's quote. Hopkins's cards carry BELIEVES and MIGHT. Chalky is the only face.",
+ "craft_advance": "none beyond the net-new chalkline family this film needs",
+ "value_check": {
+  "snow_EEEAF4": "L* 93, Chalky's orange L* 58 reads by mass and hue",
+  "line_2F5FD0": "L* 42 on snow L* 93 and on sage L* 75, reserved by chroma",
+  "gray_8F9096": "L* 60 on rust-brown wire L* 33, reserved",
+  "green_3FCB73": "L* 72 on wood poles L* 40 and teal sky L* 43, reserved",
+  "sky_BFE3D2": "L* 87 behind Chalky's left rim, the cool rim keeps his edge"
+ }
+}

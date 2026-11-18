@@ -1,0 +1,52 @@
+{
+  "cut": 5,
+  "j1": {
+    "weighted_total": 7.29,
+    "axis_scores": {"Hook & retention": 7.0, "Illustration craft & detail": 7.5, "Motion & animation craft": 7.0, "Composition & staging": 7.0, "Color & grade": 7.5, "Typography & captions": 7.0, "Sound design & mix": 7.0, "VO–illustration sync & entertainment": 7.5, "Accuracy & sourcing": 7.5, "Alaska authenticity & cultural respect": 8.0, "Writing & post quality": 7.5},
+    "hard_blockers": [],
+    "concrete_defects": [
+      {"t_s": 78.6, "shot": 11, "defect": "held commissioner body frozen across the strip", "fix": "apply the parka bob and a weight shift in S11, gesture on 'diesel generators'"},
+      {"t_s": 23.6, "shot": 4, "defect": "5 MW tag duplicates the 5 MW OF POWER flag", "fix": "remove the small tag"},
+      {"t_s": 30.8, "shot": 5, "defect": "outlines top-heavy, dead snow below; tag crosses the tall outline edge", "fix": "lower the group about 250 px, tag inside the outline"},
+      {"t_s": 89.7, "shot": 12, "defect": "balloon touches the end of the PUBLIC COMMENT label", "fix": "move the balloon 40 px right and up"},
+      {"t_s": 42.96, "shot": 7, "defect": "moose silhouette reads as a bison", "fix": "palmate antlers, long muzzle and dewlap, thin legs"},
+      {"t_s": 113.4, "shot": 16, "defect": "red truck cropped at the bottom-right edge", "fix": "bring it in frame or remove it"}
+    ]
+  },
+  "j2": {
+    "weighted_total": 7.12,
+    "axis_scores": {"Hook & retention": 6.8, "Illustration craft & detail": 7.1, "Motion & animation craft": 6.4, "Composition & staging": 7.1, "Color & grade": 7.3, "Typography & captions": 7.2, "Sound design & mix": 7.0, "VO–illustration sync & entertainment": 7.1, "Accuracy & sourcing": 7.8, "Alaska authenticity & cultural respect": 7.8, "Writing & post quality": 7.5},
+    "hard_blockers": [],
+    "concrete_defects": [
+      {"t_s": 96.1, "shot": 13, "defect": "no month-18 flag is drawn; a second plate stacked instead", "fix": "draw the 18 flag before the word eighteen, drop the RESEARCH DUE plate"},
+      {"t_s": 25.0, "shot": 5, "defect": "hero boom lands on a small upstage outline, 3.8 percent motion", "fix": "arrive at final size on the boom with a squash"},
+      {"t_s": 23.0, "shot": 4, "defect": "beat 9 window fell to 3.1 percent change, sheen sweep gone, flag pole floats", "fix": "visible pin swing with anticipation; anchor the flag to the ring"},
+      {"t_s": 9.7, "shot": 2, "defect": "commission lean barely readable", "fix": "10 to 15 degree back-tilt with staggered tugs, line dashes travel"},
+      {"t_s": 61.4, "shot": 9, "defect": "plate copy telegraphic; fence wide has no focal subject", "fix": "rewrite the plate, stage Chalky in the foreground"},
+      {"t_s": 102.4, "shot": 14, "defect": "ghost-hand arc not findable, stopwatch static", "fix": "full dashed arc with a trail, then one tick with a settle"}
+    ]
+  },
+  "j3": {
+    "weighted_total": 7.29,
+    "axis_scores": {"Hook & retention": 7.1, "Illustration craft & detail": 7.2, "Motion & animation craft": 6.7, "Composition & staging": 7.0, "Color & grade": 7.3, "Typography & captions": 7.1, "Sound design & mix": 7.0, "VO–illustration sync & entertainment": 7.1, "Accuracy & sourcing": 8.3, "Alaska authenticity & cultural respect": 8.2, "Writing & post quality": 8.0},
+    "hard_blockers": [],
+    "concrete_defects": [
+      {"t_s": 96.07, "shot": 13, "defect": "no month-18 flag; the bracket ends on nothing", "fix": "raise the 18 flag at the bracket end before 95.9 s"},
+      {"t_s": 42.96, "shot": 7, "defect": "moose does not amble", "fix": "translate it with a gait and head bob"},
+      {"t_s": 113.42, "shot": 16, "defect": "crane scale change still small", "fix": "Chalky to about half size over the move"},
+      {"t_s": 5.38, "shot": 2, "defect": "mayor shows no visible kneel or puff in the strip", "fix": "kneel with anticipation and a phone-size puff"},
+      {"t_s": 22.97, "shot": 4, "defect": "claimed sweep on Chalky not visible, 3.1 percent", "fix": "reaction to the pin nudge"},
+      {"t_s": 89.7, "shot": 12, "defect": "balloon covers the T of PUBLIC COMMENT", "fix": "move the balloon 40 px"},
+      {"t_s": 46.7, "shot": 7, "defect": "bubble crowds the ANY BUILDER tag and tucks under the plate", "fix": "shift the bubble left"},
+      {"t_s": 30.8, "shot": 5, "defect": "tall outline pokes into the tree line, lower 40 percent empty", "fix": "lower the group about 150 px"}
+    ]
+  },
+  "named_open_defects": [
+    "S13 month-18 flag never drawn (J2, J3)",
+    "S7 moose static and bison-like (J1, J3)",
+    "S5 lower half empty, boom lands small (J1, J2, J3)",
+    "S12 balloon touches PUBLIC COMMENT label (J1, J3)",
+    "S4 beat 9 motion regressed to 3.1 percent (J2, J3)",
+    "S11 commissioner held frozen (J1)"
+  ]
+}

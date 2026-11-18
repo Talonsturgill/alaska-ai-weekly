@@ -1,0 +1,512 @@
+{
+ "run_date": "2026-11-18",
+ "fact_check_verdict": "PASS with limits: two independent Alaska outlets read in full (Fairbanks Daily News-Miner, Jack Barnwell, November 13th; Alaska's News Source, Alex Bengel, November 16th) plus ADN for the governor-elect. No primary ordinance text was reachable (FNSB Legistar errors), so every figure is attributed to the outlet that reported it. The Air Force data center lease context could not be fetched and is cut. AI is named only in the News-Miner's framing and one commissioner's quote, so the AI angle is stated as that, never as an AI moratorium.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-sources",
+   "spoken": "Fairbanks North Star Borough Mayor Grier Hopkins proposed a pause on permits for large data centers.",
+   "on_screen": "MAYOR GRIER HOPKINS",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Alaska's News Source says the commission approved Mayor Grier Hopkins' proposed moratorium on permits for large-scale data centers, and the News-Miner says Hopkins sponsored the ordinance.",
+   "requires": [
+    "say PROPOSED",
+    "large data centers, never all data centers"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-two-sources",
+   "spoken": "The mayor asked for twelve months.",
+   "on_screen": "THE MAYOR ASKED FOR 12 MONTHS",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"extending the mayor's proposed 12-month timeframe to 18.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-two-sources",
+   "spoken": "The borough Planning Commission recommended eighteen months instead.",
+   "on_screen": "COMMISSION RECOMMENDS 18 MONTHS",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: the News-Miner says the administration requested 12 months and the commission recommended 18, and Alaska's News Source says the commission extended it from 12 months to 18.",
+   "requires": [
+    "say RECOMMENDED, never passed or adopted",
+    "nothing is in force"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "single-source",
+   "spoken": "The News-Miner reports the recommendation was unanimous.",
+   "on_screen": "UNANIMOUS \u00b7 PER THE NEWS-MINER",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"unanimously recommended approval\"",
+   "requires": [
+    "attribute to the News-Miner",
+    "never draw or say a tally"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-two-sources",
+   "spoken": "It also gave the borough ten months, not six, to come back with research and rules.",
+   "on_screen": "RESEARCH DUE IN 10 MONTHS, NOT 6",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Alaska's News Source says the timeline for the administration's research and recommendations went from six months to 10, and the News-Miner says the amendment has staff report back in 10 months.",
+   "requires": [
+    "a recommended change"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "single-source",
+   "spoken": "The pause covers a data center that draws at least five megawatts.",
+   "on_screen": "AT LEAST 5 MW OF POWER",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"data centers that require at least 5 megawatts of power, occupy at least 40,000 square feet of gross floor space, or have on-site power generation facilities of at least 5 megawatts.\"",
+   "requires": [
+    "attribute to the News-Miner",
+    "any ONE threshold triggers it, they are joined by OR"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "single-source",
+   "spoken": "Or one that takes up forty thousand square feet.",
+   "on_screen": "OR 40,000 SQ FT",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"occupy at least 40,000 square feet of gross floor space\"",
+   "requires": [
+    "OR, never AND"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "single-source",
+   "spoken": "Or one that makes five megawatts of its own power on site.",
+   "on_screen": "OR 5 MW MADE ON SITE",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"or have on-site power generation facilities of at least 5 megawatts.\"",
+   "requires": [
+    "OR, never AND"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "single-source",
+   "spoken": "The borough's planning director says five megawatts is enough for at least three thousand homes.",
+   "on_screen": "5 MW \u00b7 AT LEAST 3,000 HOMES",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"Five megawatts is enough to power at least 3,000 homes, Spillman said.\"",
+   "requires": [
+    "say AT LEAST",
+    "attribute to the planning director (Spillman), no first name"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "single-source",
+   "spoken": "The borough's most open zone, General Use One, covers ninety seven percent of the borough.",
+   "on_screen": "GENERAL USE ZONE \u00b7 97% OF THE BOROUGH",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"The GU-1 zoning applies to 97% of the borough.\"",
+   "requires": [
+    "attribute to the News-Miner"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "single-source",
+   "spoken": "In the planning director's words, anything goes in general use.",
+   "on_screen": "\"ANYTHING GOES IN GENERAL USE\"",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"Anything goes in general use.\"",
+   "requires": [
+    "a quote, keep straight quote marks",
+    "attribute to the planning director"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "single-source",
+   "spoken": "The Assembly's final vote is likely January 14th, and that's when the eighteen month clock would start.",
+   "on_screen": "ASSEMBLY VOTE \u00b7 LIKELY JANUARY 14TH",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"That's when the clock will start for the 18-month moratorium.\"",
+   "requires": [
+    "say LIKELY",
+    "the clock has NOT started"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-two-sources",
+   "spoken": "The borough likely can't zone land inside the fence at Eielson Air Force Base, but land outside the fence falls under borough zoning.",
+   "on_screen": "INSIDE THE FENCE \u00b7 LIKELY NOT BOROUGH ZONING",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: the News-Miner says the ordinance likely can't apply to military land on installations like Eielson but land outside the fence line is subject to borough zoning, and Alaska's News Source says Hopkins expects data centers outside the base fence to fall under borough jurisdiction.",
+   "requires": [
+    "say LIKELY",
+    "never claim any data center is planned at Eielson"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "single-source",
+   "spoken": "Hopkins said a data center built purely for a government purpose, he believes, would not be subject to the pause.",
+   "on_screen": "HOPKINS BELIEVES \u00b7 PURELY GOVERNMENT PURPOSE",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"If it comes in as purely for a government purpose, I believe that would be not subject to our moratorium and our regulations.\"",
+   "requires": [
+    "keep I BELIEVE, his opinion, never a legal ruling",
+    "attribute to Hopkins via Alaska's News Source"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "single-source",
+   "spoken": "For private use, he said, it might be different.",
+   "on_screen": "PRIVATE USE \u00b7 \"MIGHT BE DIFFERENT\"",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"If it's for private sector use it might be different\"",
+   "requires": [
+    "say MIGHT"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "single-source",
+   "spoken": "The borough is researching how to turn that gray area black and white.",
+   "on_screen": "\"TURN THAT GRAY AREA BLACK AND WHITE\"",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"We're doing some research into that and trying to figure out how to turn that gray area black and white.\"",
+   "requires": [
+    "attribute to Hopkins",
+    "research is ongoing, no answer yet"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "single-source",
+   "spoken": "One commissioner warned that most of these data centers come with diesel generators.",
+   "on_screen": "DIESEL GENERATORS \u00b7 A COMMISSIONER'S WORRY",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"Most of these data centers are coming with a diesel generator and that's just going to screw us over,\"",
+   "requires": [
+    "paraphrase, never quote the second half",
+    "attribute to commissioner Jennifer Campbell or 'a commissioner'"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "single-source",
+   "spoken": "Another commissioner said he's hearing anxiety from people over AI in general.",
+   "on_screen": "\"ANXIETY ... OVER AI IN GENERAL\"",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"I'm hearing anxiety from people over AI in general.\"",
+   "requires": [
+    "attribute to commissioner Eric Muehling or \"another commissioner\"",
+    "the only explicit AI quote, never say the ordinance targets AI"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "single-source",
+   "spoken": "The News-Miner ties the worry to the rise of A I data centers across the country.",
+   "on_screen": "AI DATA CENTERS AROUND THE NATION",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"The increase in artificial intelligence data centers around the nation,\"",
+   "requires": [
+    "the reporter's framing, not the ordinance's",
+    "never say AI moratorium"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "single-source",
+   "spoken": "A resident told the commission it's smart to take the time.",
+   "on_screen": "\"IT'S SMART TO TAKE THE TIME\"",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"It's smart to take the time, and if the borough staff needs more time, give it to them.\"",
+   "requires": [
+    "resident Diane Darnell, via the News-Miner"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-two-sources",
+   "spoken": "Next it goes to the Assembly for a public hearing and a final vote, so nothing is law yet.",
+   "on_screen": "NOT LAW YET",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: the News-Miner says the ordinance now goes to the Assembly for a public hearing and approval, and Alaska's News Source says the final vote will likely be January 14th.",
+   "requires": [],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c31",
+   "status": "verified-two-sources",
+   "spoken": "Neither outlet reports why the pause would run eight months past the research deadline.",
+   "on_screen": "THE EXTRA 8 MONTHS \u00b7 NEITHER OUTLET SAYS WHY",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: a checked absence. Both the News-Miner (November 13th) and Alaska's News Source (November 16th) were read in full by two validators, and neither gives a reason for an 18-month pause against a 10-month research deadline.",
+   "requires": [
+    "state it as an absence in the reporting, never imply a motive"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  {
+   "claim": "Air Force leases at Eielson, JBER and Clear for AI data centers (acreage, developer, power)",
+   "why": "no primary fetchable this run (af.mil 403), and no Fairbanks article mentions a lease"
+  },
+  {
+   "claim": "ordinance number or text",
+   "why": "Legistar unreachable, never invent one"
+  },
+  {
+   "claim": "commission vote tally",
+   "why": "neither outlet gives one"
+  },
+  {
+   "claim": "existing facilities exempt, crypto covered",
+   "why": "neither outlet says"
+  },
+  {
+   "claim": "GVEA peak load or capacity",
+   "why": "no total published on fetched GVEA pages"
+  },
+  {
+   "claim": "an AI moratorium",
+   "why": "thresholds are size and power, AI only in the reporter's framing and one quote"
+  },
+  {
+   "claim": "commission vote on November 10th",
+   "why": "inferred from 'Tuesday', not stated"
+  }
+ ],
+ "reserve": [
+  {
+   "id": "c10",
+   "status": "single-source",
+   "spoken": "Forty thousand square feet is about half a big box store, the planning director said.",
+   "on_screen": "ABOUT HALF A BOX STORE",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Spillman said 40,000 square feet is about half the size of a box store.",
+   "requires": [
+    "say ABOUT",
+    "attribute to the planning director"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "single-source",
+   "spoken": "On October 22nd the Assembly unanimously sent the ordinance to the commission, which had ninety days to answer.",
+   "on_screen": "SENT TO THE COMMISSION OCT 22ND",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"voted unanimously to send the ordinance to the Planning Commission as part of its consent agenda\"",
+   "requires": [
+    "a referral on the consent agenda, never a vote on the pause itself"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "single-source",
+   "spoken": "Hopkins pointed to the sheer scale of what other cities are seeing.",
+   "on_screen": "\"THE SHEER SCALE\" ELSEWHERE",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"The sheer scale of what you see happening in other cities\"",
+   "requires": [
+    "attribute to Hopkins"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "single-source",
+   "spoken": "Hopkins also wants to look at the small data centers already here.",
+   "on_screen": "SMALL DATA CENTERS ALREADY HERE",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"the small data centers that are already here\"",
+   "requires": [
+    "never say whether existing ones are exempt"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "single-source",
+   "spoken": "And he plans to ask Golden Valley Electric what its grid situation looks like.",
+   "on_screen": "NEXT QUESTION \u00b7 THE GRID \u00b7 GOLDEN VALLEY ELECTRIC",
+   "source": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "verbatim_source": "\"talk to [Golden Valley Electric Association] about what their grid situation looks like\"",
+   "requires": [
+    "a plan to ask, never a GVEA answer or capacity number"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-primary",
+   "spoken": "Governor-elect Jonathan Kreiss-Tomkins has said he'd support a statewide pause on data center construction.",
+   "on_screen": "GOVERNOR-ELECT \u00b7 WOULD SUPPORT A STATEWIDE PAUSE \u00b7 PER ADN",
+   "source": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "verbatim_source": "\"said he would support a moratorium on data center construction in Alaska\"",
+   "requires": [
+    "WOULD SUPPORT, never proposed or ordered",
+    "attribute to ADN"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "single-source",
+   "spoken": "He takes office December 7th.",
+   "on_screen": "TAKES OFFICE DEC 7TH",
+   "source": "https://www.adn.com/politics/2026/11/17/alaska-gov-elect-kreiss-tomkins-announces-transition-team-as-he-prepares-to-take-office/",
+   "verbatim_source": "\"Kreiss-Tomkins will begin his term on Dec. 7,\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "single-source",
+   "spoken": "Hopkins said the borough wants to be able to say hold on.",
+   "on_screen": "\"HOLD ON\"",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"We want to be able to say 'hold on'\"",
+   "requires": [
+    "attribute to Hopkins"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c30",
+   "status": "single-source",
+   "spoken": "There are many, many questions, Hopkins said.",
+   "on_screen": "\"MANY, MANY QUESTIONS\"",
+   "source": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "verbatim_source": "\"There are many, many questions.\"",
+   "requires": [
+    "attribute to Hopkins"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

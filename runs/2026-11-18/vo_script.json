@@ -1,0 +1,219 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "The Fairbanks borough may soon draw a line around big data centers.",
+   "claims": [
+    "c1"
+   ],
+   "t": "The Fairbanks borough may soon draw a line around big data centers."
+  },
+  {
+   "idx": 1,
+   "text": "Mayor Grier Hopkins proposed pausing their permits for twelve months.",
+   "claims": [
+    "c1",
+    "c2"
+   ],
+   "t": "Mayor Grier Hopkins proposed pausing their permits for twelve months."
+  },
+  {
+   "idx": 2,
+   "text": "Then the Planning Commission recommended eighteen.",
+   "claims": [
+    "c3",
+    "c4"
+   ],
+   "t": "Then the Planning Commission recommended eighteen."
+  },
+  {
+   "idx": 3,
+   "text": "It isn't a vote on A I. The line is size and power.",
+   "claims": [
+    "c6",
+    "c21"
+   ],
+   "t": "It isn't a vote on A I. The line is size and power."
+  },
+  {
+   "idx": 4,
+   "text": "Per the News-Miner, any one of three things would trip it. At least five megawatts of power.",
+   "claims": [
+    "c6"
+   ],
+   "t": "Per the News-Miner, any one of three things would trip it. At least five megawatts of power."
+  },
+  {
+   "idx": 5,
+   "text": "Or at least forty thousand square feet.",
+   "claims": [
+    "c7"
+   ],
+   "t": "Or at least forty thousand square feet."
+  },
+  {
+   "idx": 6,
+   "text": "Or at least five megawatts made on site.",
+   "claims": [
+    "c8"
+   ],
+   "t": "Or at least five megawatts made on site."
+  },
+  {
+   "idx": 7,
+   "text": "The planning director says five megawatts can power at least three thousand homes.",
+   "claims": [
+    "c9"
+   ],
+   "t": "The planning director says five megawatts can power at least three thousand homes."
+  },
+  {
+   "idx": 8,
+   "text": "For context, the general use zone covers ninety seven percent of the borough.",
+   "claims": [
+    "c11"
+   ],
+   "t": "For context, the general use zone covers ninety seven percent of the borough."
+  },
+  {
+   "idx": 9,
+   "text": "In the director's words, anything goes in general use.",
+   "claims": [
+    "c12"
+   ],
+   "t": "In the director's words, anything goes in general use."
+  },
+  {
+   "idx": 10,
+   "text": "So the line is clear on size. Where it reaches is another question.",
+   "claims": [
+    "c15"
+   ],
+   "t": "So the line is clear on size. Where it reaches is another question."
+  },
+  {
+   "idx": 11,
+   "text": "Follow it to Eielson Air Force Base. The borough likely can't zone inside that fence.",
+   "claims": [
+    "c15"
+   ],
+   "t": "Follow it to Eielson Air Force Base. The borough likely can't zone inside that fence."
+  },
+  {
+   "idx": 12,
+   "text": "Hopkins believes a data center built purely for a government purpose wouldn't be subject to the pause.",
+   "claims": [
+    "c16"
+   ],
+   "t": "Hopkins believes a data center built purely for a government purpose wouldn't be subject to the pause."
+  },
+  {
+   "idx": 13,
+   "text": "For private use, it might be different.",
+   "claims": [
+    "c17"
+   ],
+   "t": "For private use, it might be different."
+  },
+  {
+   "idx": 14,
+   "text": "Hopkins says the borough is researching how to turn that gray area black and white.",
+   "claims": [
+    "c18"
+   ],
+   "t": "Hopkins says the borough is researching how to turn that gray area black and white."
+  },
+  {
+   "idx": 15,
+   "text": "Now the test. Those asking for time have real reasons.",
+   "claims": [
+    "c19",
+    "c20"
+   ],
+   "t": "Now the test. Those asking for time have real reasons."
+  },
+  {
+   "idx": 16,
+   "text": "One commissioner warned that most of these come with diesel generators.",
+   "claims": [
+    "c19"
+   ],
+   "t": "One commissioner warned that most of these come with diesel generators."
+  },
+  {
+   "idx": 17,
+   "text": "Another is hearing anxiety from people over A I in general.",
+   "claims": [
+    "c20"
+   ],
+   "t": "Another is hearing anxiety from people over A I in general."
+  },
+  {
+   "idx": 18,
+   "text": "A resident told the commission it's smart to take the time.",
+   "claims": [
+    "c23"
+   ],
+   "t": "A resident told the commission it's smart to take the time."
+  },
+  {
+   "idx": 19,
+   "text": "The opposite view is fair. Research would be due in ten months, but the pause would run eighteen.",
+   "claims": [
+    "c5",
+    "c3"
+   ],
+   "t": "The opposite view is fair. Research would be due in ten months, but the pause would run eighteen."
+  },
+  {
+   "idx": 20,
+   "text": "Nothing is law yet. The Assembly votes, likely January 14th, and the clock would start then.",
+   "claims": [
+    "c28",
+    "c13"
+   ],
+   "t": "Nothing is law yet. The Assembly votes, likely January 14th, and the clock would start then."
+  },
+  {
+   "idx": 21,
+   "text": "An eighteen month pause is readiness, not refusal, only if it ends with rules a builder can meet.",
+   "claims": [
+    "c28",
+    "c3"
+   ],
+   "t": "An eighteen month pause is readiness, not refusal, only if it ends with rules a builder can meet."
+  },
+  {
+   "idx": 22,
+   "text": "And an answer at the fence.",
+   "claims": [
+    "c18"
+   ],
+   "t": "And an answer at the fence."
+  },
+  {
+   "idx": 23,
+   "text": "The line is clear on size. Now Fairbanks has to find out where it reaches.",
+   "claims": [
+    "c15"
+   ],
+   "t": "The line is clear on size. Now Fairbanks has to find out where it reaches."
+  }
+ ],
+ "caption_fixups": {
+  "A I": "AI",
+  "twelve months": "12 months",
+  "eighteen month": "18-month",
+  "recommended eighteen": "recommended 18",
+  "would run eighteen": "would run 18",
+  "five megawatts": "5 megawatts",
+  "forty thousand square feet": "40,000 square feet",
+  "three thousand homes": "3,000 homes",
+  "ninety seven percent": "97 percent",
+  "ten months": "10 months"
+ },
+ "caption_quotes": [
+  "anything goes in general use"
+ ],
+ "caption_split_after": []
+}

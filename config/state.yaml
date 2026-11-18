@@ -3716,3 +3716,64 @@ dispatch_history:
       again with one fuchsia glow
     metaphor: a random forest drawn as a troupe of faced decision trees that vote
       with ballot paddles on a tundra where real trees don't grow
+- date: '2026-11-18'
+  topic: Fairbanks North Star Borough Planning Commission unanimously recommends an
+    18-month pause on permits for large data centers (mayor proposed 12), research
+    due at month 10, triggers of 5 MW drawn, 40,000 sq ft or 5 MW generated, reach
+    at the Eielson fence still being researched, Assembly vote likely January 14th
+  slug: clear-on-size
+  key_entities:
+  - Fairbanks North Star Borough
+  - Planning Commission
+  - Grier Hopkins
+  - data center moratorium
+  - Eielson Air Force Base
+  - Fairbanks Daily News-Miner
+  - Alaska's News Source
+  - GVEA
+  archetype: policy-explainer
+  palette: 'clear mint afterglow #BFE3D2 at the horizon rising through sea-glass #7DB7AE
+    to deep lagoon #3E6E78, lilac-white snowfield #EEEAF4 with mauve skylight shade
+    #B9A9C9, ice fog #E4E2EA at the fence, spruce #22433A, a safety-orange reel #E8582A
+    with brass #C9A04A and an olive knit hat #5E7A3A, surveyor''s ultramarine chalk
+    #2F5FD0 kept to the line, neutral pewter #8F9096 kept to the chalk at the fence,
+    weathered umber-brown wire #6B4A36, a dusty sage flood #A9BE9A, spring-green grid
+    pulse #3FCB73, sealed charcoal and chalk-white cans'
+  voice: Gemini Sulafat
+  stance: mixed
+  angle: Fairbanks has drawn a clear line on size before it knows where that line
+    reaches, so the 18 months become readiness, not refusal, only if they end with
+    rules a builder can meet and an answer on the government-purpose gray area at
+    the Eielson fence.
+  hero: Chalky
+  cast:
+  - Chalky
+  - ChalkLine
+  - TripPinCutaway
+  - PaintCan
+  - ParcelSlip
+  - ChalkMark
+  - Genset
+  - ChainFence
+  - Moose
+  composition:
+    pov: eye-level-immersive
+    motion_vector: vertical-rise
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: editorial-schematic
+    palette: 'clear mint afterglow #BFE3D2 at the horizon rising through sea-glass
+      #7DB7AE to deep lagoon #3E6E78, lilac-white snowfield #EEEAF4 with mauve skylight
+      shade #B9A9C9, ice fog #E4E2EA at the fence, spruce #22433A, a safety-orange
+      reel #E8582A with brass #C9A04A and an olive knit hat #5E7A3A, surveyor''s ultramarine
+      chalk #2F5FD0 kept to the line, neutral pewter #8F9096 kept to the chalk at
+      the fence, weathered umber-brown wire #6B4A36, a dusty sage flood #A9BE9A, spring-green
+      grid pulse #3FCB73, sealed charcoal and chalk-white cans'
+    camera_strategy: rise-reveal
+    light_story: a clear bright afterglow afternoon with the sun already set, a mint
+      horizon and soft skylight over lilac snow, the light softening into milky fog
+      only at the Eielson fence and the clear afterglow returning for the reel-in
+      and the crane-up
+    metaphor: a surveyor's chalk-line reel that snaps a clear line on size, finds
+      it slack at a fence it can't cross, and reels it in to see what its end still
+      needs
