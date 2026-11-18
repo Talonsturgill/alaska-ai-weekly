@@ -492,7 +492,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
             tag={i === 1 ? 'PLANNING COMMISSION' : undefined} reach={pull} facing={-1} lean={Math.sin(clamp01((f - b4 - i * 4) / 40) * Math.PI) * 1.2} />
         ))}
         <g transform={`translate(${-off * 0.15},0)`}>
-          <g opacity={mark12} transform={`translate(470,1150)`}>
+          <g opacity={mark12} transform={`translate(505,1150)`}>
             <path d="M 0 -20 L 0 20" stroke={C.ink} strokeWidth={10} strokeLinecap="round" />
             <path d="M 0 -20 L 0 20" stroke={C.line} strokeWidth={6} strokeLinecap="round" />
             <path d="M 0 -24 L 0 -236" stroke={C.ink} strokeWidth={3} strokeDasharray="8 8" />
@@ -500,12 +500,10 @@ const S2: React.FC<SceneProps> = ({p}) => {
           </g>
         </g>
         <g opacity={mark18} transform={`translate(${780 - off * 0.15},1140)`}>
-          <path d="M 0 -20 L 0 20" stroke={C.line} strokeWidth={8} strokeLinecap="round" />
-          <path d="M 0 -24 L 0 -246" stroke={C.ink} strokeWidth={3} strokeDasharray="8 8" />
           <rect x={-60} y={-336} width={120} height={90} rx={10} fill={C.snow} stroke={C.ink} strokeWidth={4} strokeDasharray="14 9" />
           <text x={0} y={-204} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={58} fill={C.line} stroke={C.ink} strokeWidth={1.5} transform="translate(0,-66)">18</text>
         </g>
-        <ChalkPuff x={470} y={1150} t={(f - b3 - 16) / 24} f={f} r={40} seed={9} />
+        <ChalkPuff x={505} y={1150} t={(f - b3 - 16) / 24} f={f} r={40} seed={9} />
         {/* peg and source slip */}
         <g transform={`translate(560,${1138 - (1 - peg) * 200})`} opacity={peg}>
           <HeldProp f={f} px={0} py={0} w={60} h={90} seed={7} kind="hang">
