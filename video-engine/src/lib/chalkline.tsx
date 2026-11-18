@@ -355,7 +355,7 @@ export const Genset: React.FC<{f: number; x: number; y: number; scale?: number; 
 /** a chain-link fence run from x1 to x2 with posts; nothing is drawn behind it */
 export const ChainFence: React.FC<{f: number; x1: number; x2: number; top: number; bottom: number; post?: number; sway?: number}> =
 ({f, x1, x2, top, bottom, post = 220, sway = 0}) => {
-  const step = 26;
+  const step = 34;
   const wob = sway * Math.sin(f / 3) * 3;
   const lines: React.ReactNode[] = [];
   const h = bottom - top;
