@@ -36,6 +36,14 @@ pool:
     credit: '"The Descent" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
     mood: [dark, ominous, deep, ambient]
   # ---- mood-expansion 2026-07-18 (all URLs verified 200; pick BY THE ANGLE, see angle_to_mood) ----
+  # ADDED 2026-11-18: the curious/wonder branch was fully drained (every entry played inside 10 days). Downloaded and verified this run.
+  - title: "Wallpaper"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Wallpaper.mp3"
+    license: "CC BY 4.0"
+    credit: '"Wallpaper" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [curious, light, quirky, gentle]
   - title: "Monkeys Spinning Monkeys"
     composer: "Kevin MacLeod"
     source: "incompetech.com"
