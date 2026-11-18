@@ -1,0 +1,69 @@
+{
+ "run_date": "2026-11-18",
+ "title": "Clear on Size",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Borough Planning Commission weighs in on data center moratorium",
+   "outlet": "Fairbanks Daily News-Miner, Jack Barnwell, November 13th",
+   "url": "https://www.newsminer.com/news/local_news/borough-planning-commission-weighs-in-on-data-center-moratorium/article_13c587a1-d510-49fa-a9f5-8d8c10838d1e.html",
+   "claims": [
+    "c3",
+    "c4",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c15",
+    "c19",
+    "c20",
+    "c21",
+    "c23",
+    "c28",
+    "c29",
+    "c30",
+    "c31"
+   ]
+  },
+  {
+   "id": "s2",
+   "title": "FNSB Planning Commission recommends data center moratorium",
+   "outlet": "Alaska's News Source (KTUU/KTVF), Alex Bengel, November 16th",
+   "url": "https://www.alaskasnewssource.com/2026/11/17/fnsb-planning-commission-recommends-data-center-moratorium/",
+   "claims": [
+    "c1",
+    "c2",
+    "c5",
+    "c13",
+    "c14",
+    "c16",
+    "c17",
+    "c18",
+    "c22",
+    "c24",
+    "c25"
+   ]
+  },
+  {
+   "id": "s3",
+   "title": "Dunleavy pushes for data centers to come to Alaska as he prepares to leave office",
+   "outlet": "Anchorage Daily News, Iris Samuels, November 12th",
+   "url": "https://www.adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "claims": [
+    "c26"
+   ]
+  },
+  {
+   "id": "s4",
+   "title": "Alaska Gov.-elect Kreiss-Tomkins announces transition team",
+   "outlet": "Anchorage Daily News, Iris Samuels, November 17th",
+   "url": "https://www.adn.com/politics/2026/11/17/alaska-gov-elect-kreiss-tomkins-announces-transition-team-as-he-prepares-to-take-office/",
+   "claims": [
+    "c27"
+   ]
+  }
+ ]
+}

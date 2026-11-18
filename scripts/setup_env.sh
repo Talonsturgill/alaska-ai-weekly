@@ -147,11 +147,13 @@ fi
 # the owner's, so take the owner's identity from the last non-merge commit on origin/main (nothing is
 # hardcoded) whenever the configured one is empty or an Anthropic address. The auto-push hook publishes
 # every commit at once, so this has to be right before the first commit of the run.
+# Bot authors (dependabot and friends) are skipped (2026-11-18: four dependabot merges topped main and
+# the run was about to commit as dependabot[bot]).
 _email="$(git config user.email 2>/dev/null || true)"
 case "$_email" in
-  ""|*anthropic.com*)
-    _oe="$(git log origin/main --no-merges -1 --format=%ae 2>/dev/null || true)"
-    _on="$(git log origin/main --no-merges -1 --format=%an 2>/dev/null || true)"
+  ""|*anthropic.com*|*"[bot]"*)
+    _oe="$(git log origin/main --no-merges -50 --format='%ae' 2>/dev/null | grep -v -e '\[bot\]' -e 'anthropic.com' | head -1 || true)"
+    _on="$(git log origin/main --no-merges -50 --format='%an|%ae' 2>/dev/null | grep -v -e '\[bot\]' -e 'anthropic.com' | head -1 | cut -d'|' -f1 || true)"
     if [ -n "$_oe" ] && [ -n "$_on" ]; then
       git config user.email "$_oe"; git config user.name "$_on"
       echo "setup_env: git identity set to the owner's ($_on) for this run's commits"

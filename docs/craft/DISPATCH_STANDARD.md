@@ -785,3 +785,12 @@ Whole-mix loudness is not a voice-to-background measurement.
 - **One stamped foreground and one skyline across every set is a template.** Seed the sky, the range and the near sedge per shot (`World seed`), and vary the near plane per act (sastrugi at night, sedge with cotton grass by day).
 - **An overhead diagram shot still needs the world under it.** The ribbon of days on a blank pale void was the weakest frame on every card; lakes, drifts and a near row of the cast on the same snow fixed it.
 - **A metaphor that says "can't stand on the ice" can't seat the hero on the ice.** Gate 0B caught the forest at desks on the lake. Put the cast on the shore and the one empty desk on the ice.
+
+## Things the 2026-11-18 gates, critics and panel found that were knowable in advance ("Clear on Size")
+- **A tag inside `<FigureFinish>` is clipped to the figure.** FigureFinish masks its children to the drawing, so a name tag drawn inside it read "OTHER COMMISSION" on the first graded cut and was the hard blocker. Draw tags after FigureFinish closes.
+- **A real outlet's masthead over a paraphrase is an invented headline.** A page reading the outlet's name above "AI DATA CENTERS AROUND THE NATION" (the reporter's mid-sentence framing) put words in its mouth and made the film look like it was about AI. Quote framing on an attributed plate or leave it out.
+- **The throughline object is in frame in every shot.** The chalk line vanished for about 19 seconds across four shots and the plates had to carry the story. Lay it across the ground in shots whose subject is something else.
+- **A payoff drawn as words in a dashed box reads as UI.** Draw the mark as a mark (chalk ticks pressed into the snow) and put the words on a plate.
+- **One foreground band stamped into every shot is a template, and it does not belong inside a machine.** Seed and vary the near plane per shot and give interiors their own floor.
+- **A flag's label is a claim.** RECOMMENDED tags on hypothetical building outlines read as the commission recommending buildings; label the thresholds instead.
+- **Two films after a story in the same town, check its light, not only its palette.** The first board's pink-gold noon in ice fog was 11-11's Fairbanks light a week earlier.

@@ -1,0 +1,23 @@
+{
+ "locked_story": {
+  "headline": "Fairbanks North Star Borough Planning Commission recommends stretching the mayor's 12-month data center moratorium to 18 months, with a 5 MW / 40,000 sq ft line, while the mayor says a purely government-purpose data center would not be subject to it (News-Miner Nov 13th, Alaska's News Source Nov 16th)",
+  "found_at_rung": "in_window_sweep",
+  "note": "follow_up of 2026-10-15 (Assembly referral, 34 days ago, outside the 30-day window). Distinct from Sitka 10-25 (no size line) and Petersburg 11-07: this draft HAS a size line, and the open question is the government-purpose gap."
+ },
+ "rungs": [
+  {"rung": "in_window_sweep", "attempted": true, "candidates_found": 14, "note": "4 researchers (science, energy/policy, fisheries/health/rural, defense/aviation/wildcard), all 80 WebSearch calls spent"},
+  {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 6, "note": "adn, alaskapublic, ktoo, newsminer, mustreadalaska, alaskasnewssource, akbizmag, kdll, juneauempire, kyuk, kdlg, uaf, gi, avo, phys.org, eurekalert indexes read; alaskabeacon 403"},
+  {"rung": "primary_source_mining", "attempted": true, "candidates_found": 0, "note": "NSF awards API, AK + artificial intelligence / machine learning since 2026-09-01: 0 awards; Federal Register API: no result"}
+ ],
+ "candidates": [
+  {"headline": "FNSB Planning Commission 18-month data center moratorium, 5 MW line, government-purpose gray area", "verdict": "LOCKED", "why": "in window, two independent outlets, a new development (size line, 18 months, January 14th Assembly vote, Eielson gray area), the size line is the open question Sitka left"},
+  {"headline": "Waymo Fairbanks winter testing", "verdict": "rejected", "why": "covered 2026-11-11"},
+  {"headline": "UA AI Engaged postponed to February", "verdict": "rejected", "why": "covered 2026-11-05 and 11-06, and producer conflict (Claude)"},
+  {"headline": "Shishaldin GREEN plus EGU Random Forest tremor forecaster", "verdict": "runner-up", "why": "ML source is a May conference abstract with no skill numbers, AVO statement names no ML"},
+  {"headline": "Army CRREL anti-AI adaptive camouflage, planned Alaska ATV test", "verdict": "rejected", "why": "Alaska facts secondhand via an aggregator, test only planned"},
+  {"headline": "Alaska Data Corp / Plural meetings, $20M", "verdict": "rejected", "why": "InvestNorth covered 2026-11-13"},
+  {"headline": "UAA ISER AI-written code for rural grocery prices", "verdict": "rejected", "why": "same AJOC article as the 2026-10-18 film, single source, unpublished"},
+  {"headline": "Mat-Su asks to reverse AIDEA Houston transfer", "verdict": "rejected", "why": "Houston covered 10-20, data center use only one possible use"},
+  {"headline": "Aleutians 2020 tsunami source, GCI-Quintillion close, Red Dog solar, SEARHC Mayo, halibut epigenetic clock", "verdict": "rejected", "why": "no AI or ML"}
+ ]
+}

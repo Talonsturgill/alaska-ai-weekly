@@ -1,0 +1,19 @@
+{
+ "thesis": "Fairbanks has drawn a clear line on size before it knows where that line reaches, so the 18 months become readiness, not refusal, only if they end with rules a builder can meet and an answer on the government-purpose gray area at the Eielson fence.",
+ "supporting_facts": [
+  "The line is precise. Any one of at least 5 MW drawn, 40,000 square feet or 5 MW made on site, and 5 MW is enough for at least 3,000 homes per the planning director (c6, c7, c8, c9, c10).",
+  "The rules vacuum is real. General Use One covers 97 percent of the borough and anything goes in general use, so today a builder has no standard to meet either way (c11, c12).",
+  "The reach is not settled. The borough likely can't zone inside the Eielson fence, Hopkins believes a purely government-purpose data center would not be subject to the pause, private use might be different, and the borough is researching how to turn that gray area black and white (c15, c16, c17, c18)."
+ ],
+ "counterpoint_to_honor": "The people asking for time have real reasons and get a scene at full strength. A commissioner warned most of these data centers come with diesel generators, another is hearing anxiety over AI in general, Hopkins points to the sheer scale other cities are seeing, and a resident called it smart to take the time (c19, c20, c22, c23). The opposite fair case also stands, research is due at month 10 while the pause runs 18, neither outlet reports why, and a governor-elect would support a statewide pause (c3, c5, c26, c27). The film never hints at a motive and never says a project is coming.",
+ "falsifier": "The borough's research already shows a purely government-purpose data center falls under the pause, so the size line and its reach are the same line, or the 10-month report ends with no standards a builder could meet and only another extension.",
+ "valence": "curious",
+ "stance": "curious",
+ "not_an_ai_vote": "The thresholds are size and power. AI appears only as the News-Miner's national framing and one commissioner's quote (c20, c21). Say early, on screen, that it isn't a vote on AI.",
+ "runners_up": [
+  {"angle": "A pause with a size line is how Fairbanks gets ready to say yes (Alaska-win)", "why_lost": "too generous to call the line clear on reach, and speaks for a borough whose Assembly hasn't voted; its exit test (rules a builder can meet) is grafted in"},
+  {"angle": "Residents want time to answer grid, diesel and siting, not a verdict on AI (local concern)", "why_lost": "one resident on record, the diesel worry is a commissioner's, and it implies a project is coming; it becomes the Act 3 fair-test scene"},
+  {"angle": "The line only reaches private projects on borough land (structural, v1)", "why_lost": "turned Hopkins's belief into a ruling and read the grid as excluded when the borough plans to ask"}
+ ],
+ "who_it_serves": "Assembly members heading into the public hearing and the likely January 14th vote, Golden Valley Electric members whose grid answer isn't in yet, residents whose concerns are on the record, and builders who need a clear line more than a long one (c13, c25, c28)."
+}

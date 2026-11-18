@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.99,
+    "heard": "The Fairbanksboro may soon draw a line around big data centers. Mayor Greer Hopkins proposed pausing their permits for 12 months, then the Planning Commission recommended 18. It isn't a vote on AI. The line is size and power. Per the news minor, any one of three things would trip it, at least five megawatts of power, or at least 40,000 square feet, or at least five megawatts made on site. The Planning Director says five megawatts can power at least 3,000 homes. For context, the General Use Zone covers 97% of the borough. In the Director's words, anything goes in general use. So the line is clear on size, where it reaches is another question. Follow it to IELTS and Air Force Base. The borough likely can't zone inside that fence. Hopkins believes a data center built purely for a government purpose wouldn't be subject to the pause. For private use, it might be different. Hopkins says the borough is researching how to turn that gray area black and white. Now the test. Those asking for time have real reasons. One commissioner warned that most of these come with diesel generators. Another is hearing anxiety from people over AI in general. A resident told the commission it's smart to take the time. The opposite view is fair. Research would be due in 10 months, but the pause would run 18. Nothing is law yet. The assembly votes, likely January 14th, and the clock would start then. An 18-month pause is readiness, not refusal. Only if it ends with rules a builder can meet, and an answer at the fence. The line is clear on size. Now Fairbanks has to find out where it reaches.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.021,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 5.15,
+        "voiced_frac": 0.5,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 118.44,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 118.44,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}
