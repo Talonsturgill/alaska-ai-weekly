@@ -1,15 +1,17 @@
 {
   "last_pass": {
-    "date": "2026-11-16",
+    "date": "2026-11-18",
     "shipped": [
-      "raven-and-held-figure-idle: figure_rig_check reads the lib cast, so a faced lib character or lib hero with no IdleFigure, cues= or idleGain={0} fails the make_cut source gates (fails Ep1116, Ep1115 Flap and Tote, Ep1114 RingedSeal)",
-      "forest beat idle (engine advance): VoteTree, Grove and Thermometer take cues and idleGain and perform through figureIdle, proved on ForestLook by forest_look_check (troupe 0.86 to 3.67 percent, thermometer 0.01 to 1.15 on the beat; no cues draws as before)",
-      "drawn-proportion board check: board_claims_check fails a drawn share that misstates its claim's percentage by more than 10 points, 'most', or a bare count beside a percentage, from the 11-17 board on"
+      "figurefinish-clips-tags: figure_rig_check fails a label drawn inside FigureFinish, whose filter region cut Ep1118's Parka tag to 'OTHER COMMISSION' (fails Ep1118 at cdb4523, clean on the shipped episode)",
+      "moose redraw (engine advance): lib Moose from reference anatomy with a walking gait (walk, stride) and a graze pose, proved on the MooseLook probe strip",
+      "credits-host-names: the end card credits FAIRBANKS DAILY NEWS-MINER, ALASKA'S NEWS SOURCE and ANCHORAGE DAILY NEWS instead of their domains",
+      "shared-near-band-stamp: repeat_set_check advisory in make_cut names a set band drawn in more than six scenes and over half the film (Ep1118 Near 13 of 16)",
+      "effort-level-not-applied: runbook records that the hosted run's effort is set on the trigger (medium measured) and the repo key cannot raise it"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (owner decision, still open, repeat 7)",
-      "gate0-critic-rounds cap (owner decision, still open, repeat 5); loop-leak grep prototype not shipped (15 false hits on six clean boards, missed the real leak), next step an author-written open_loop.answer_words field",
-      "not reached: repeated foreground band and skyline, comparison-bar scale gate, speech_priority stem-length root cause"
+      "caption-scorer-hair-under-bar (owner decision, still open, repeat 8)",
+      "gate0-critic-rounds cap (owner decision, still open, repeat 6)",
+      "not reached: held-gesture-idle (11-18 S11 commissioner frozen), music-pool-drained"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
