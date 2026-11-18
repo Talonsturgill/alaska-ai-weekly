@@ -933,9 +933,13 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <path d={`M 170 ${lerp(1150, 1140, tight)} L 170 ${lerp(640, 580, tight)}`} stroke="#B98A4A" strokeWidth={9} opacity={step} />
         <path d={`M 940 1150 L 940 ${lerp(640, 570, res)}`} stroke="#B98A4A" strokeWidth={9} opacity={res} />
         <Parka f={f} x={170} y={lerp(1400, 1300, step)} s={0.75} seed={41} cues={[b31, b32]} coat="#6E3A5A" tag="ANOTHER COMMISSIONER" reach={tight} />
-        <g opacity={balloon} transform={`translate(330,${840 - balloon * 20}) scale(${0.5 + 0.5 * balloon})`}>
+        <g opacity={balloon * (1 - clamp01((f - b33) / 8))} transform={`translate(330,${840 - balloon * 20}) scale(${0.5 + 0.5 * balloon})`}>
           <path d="M -150 -50 Q -160 -140 0 -140 Q 160 -140 150 -50 Q 140 20 0 20 Q -30 20 -60 10 L -40 60 L -100 0 Q -150 -10 -150 -50 Z" fill={C.paper} stroke={C.ink} strokeWidth={5} />
           {Array.from({length: 5}).map((_, i) => <path key={i} d={`M ${-90 + i * 40} -70 q 10 -20 20 0 q 10 20 20 0`} stroke={C.ink} strokeWidth={4} fill="none" />)}
+        </g>
+        <g opacity={clamp01((f - b33 - 4) / 10)} transform={`translate(770,${880 - res * 10}) scale(${0.6 + 0.4 * res})`}>
+          <path d="M -150 -50 Q -160 -140 0 -140 Q 160 -140 150 -50 Q 140 20 40 20 L 130 120 L 0 20 Q -150 20 -150 -50 Z" fill={C.paper} stroke={C.ink} strokeWidth={5} />
+          {Array.from({length: 4}).map((_, i) => <path key={i} d={`M ${-80 + i * 44} -64 l 30 0`} stroke={C.ink} strokeWidth={5} strokeLinecap="round" />)}
         </g>
         <Parka f={f} x={940} y={lerp(1400, 1300, res)} s={0.75} seed={43} cues={[b33]} coat="#8A4A2E" tag="A RESIDENT" reach={res} />
         <FogBank f={f} x={-100} y={300} w={1300} h={160} op={0.6} seed={13} />
@@ -958,7 +962,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={(ff) => ({z: 1.02, fx: 520 + ff * 0.35, fy: 1000})} overlay={
       <g>
         <Plate text="THE OPPOSITE VIEW IS FAIR TOO" x={540} y={560} size={34} p={win(f, b34 + 6, b36)} /> {/* plate-overlap-ok */}
-        <Plate text="RESEARCH DUE · MONTH 10" x={540} y={640} size={34} p={win(f, b35 + 6, b36 + 4)} /> {/* plate-overlap-ok */}
+        <Plate text="RESEARCH DUE · MONTH 10" x={540} y={640} size={34} p={win(f, b35 + 6)} /> {/* plate-overlap-ok */}
         <Plate text="THE EXTRA 8 MONTHS · NEITHER OUTLET SAYS WHY" displayLines={['THE EXTRA 8 MONTHS', 'NEITHER OUTLET SAYS WHY']} x={540} y={740} size={32} p={win(f, b36 + 8)} />
       </g>
     }>
