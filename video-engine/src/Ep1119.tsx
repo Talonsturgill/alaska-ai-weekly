@@ -516,7 +516,7 @@ const MapOnBoard: React.FC<{f: number; x: number; y: number; s: number; freeze: 
       {towns.map(([n, tx, ty]) => (
         <g key={n}>
           <circle cx={tx} cy={ty} r={12} fill={n === 'ANCHORAGE' ? GS.persimmon : C.paper} stroke={C.ink} strokeWidth={4} />
-          <text x={tx} y={ty - 22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>{n}</text>
+          <text x={tx} y={ty - 30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink} stroke={C.paper} strokeWidth={6} paintOrder="stroke">{n}</text>
         </g>
       ))}
     </g>
@@ -728,7 +728,8 @@ const InvestigationBoard: React.FC<{f: number; pinned: number; quote1: number; q
   emotion?: 'scared' | 'worried' | 'hopeful' | 'sheepish'; tarpLift?: number; tarpBump?: number; tug?: number; fade?: number; tilt?: number; tarpTag?: boolean; envFade?: boolean; noLink?: number}> =
 ({f, pinned, quote1, quote2, maker = 1, fade = 0, tilt = 0, tarpTag = true, envFade = true, noLink = 0, fold = 0, sweat = 0, routerStr = 0, envelope = 0, snapshot = 0, snapCenter = 0, tags = 0, fog = 0, letters = 0, letterStr = 0, cues = [], emotion = 'scared', tarpLift = 0, tarpBump = 0, tug = 0}) => {
   const cxp = 460, cyp = 560;
-  const anchors: Array<[number, number]> = [[110, 160], [810, 160], [110, 760], [810, 760]];
+  // the fourth question pin sits on the board's right edge, well clear of the router photo and its string (editor, cut 3)
+  const anchors: Array<[number, number]> = [[110, 160], [810, 160], [110, 760], [890, 660]];
   const snapX = lerp(700, SNAP_C.x, snapCenter), snapY = lerp(600, SNAP_C.y + 380, snapCenter);
   return (
     <CorkBoard x={BOARD.x} y={BOARD.y} w={BOARD.w} h={BOARD.h} seed={6}>
@@ -771,8 +772,8 @@ const InvestigationBoard: React.FC<{f: number; pinned: number; quote1: number; q
       {quote1 > 0.01 && (
         <g transform="translate(110,300) rotate(-4)" opacity={quote1}>
           <rect x={0} y={0} width={230} height={120} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={4} />
-          <text x={115} y={52} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>"NOT A RESULT</text>
-          <text x={115} y={80} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>OF SMART"</text>
+          <text x={115} y={52} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>NOT A RESULT</text>
+          <text x={115} y={80} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={C.ink}>OF SMART, ASI SAYS</text>
           <PushPin x={115} y={10} />
           {tags > 0.01 && <g transform={`translate(115,120) rotate(${Math.sin(f / 10) * 6 * tags})`} opacity={tags}><path d="M 0 0 L 0 26" stroke={C.ink} strokeWidth={3} /><Lab text="THE MAKER" x={0} y={44} size={18} /></g>}
           <text x={115} y={108} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={14} fill={GS.brick}>A DENIAL</text>
@@ -1142,7 +1143,8 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(900,820)">
           <rect x={-90} y={-160} width={180} height={240} rx={8} fill="#5A5048" stroke={C.ink} strokeWidth={5} />
           <rect x={-76} y={-140} width={152} height={60} fill="#3A3430" stroke={C.ink} strokeWidth={3} />
-          <text x={0} y={-104} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill="#E8DCC2">OLDER SYSTEM</text>
+          <text x={0} y={-114} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={15} fill="#E8DCC2">OLDER SYSTEM</text>
+          <text x={0} y={-92} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={13} fill="#E8DCC2">MULLIN SAID</text>
           <rect x={-30} y={50} width={60} height={14} rx={3} fill="#14181C" stroke={C.ink} strokeWidth={3} />
           <g transform={`translate(${knock * 3},-20) scale(${1 + jam * 0.08 + settle(f, land, 0.05, 30)},${1 - jam * 0.04})`}>
             <rect x={-60} y={-60} width={120} height={110} rx={4} fill="#6E6258" stroke={C.ink} strokeWidth={4} />
@@ -1162,6 +1164,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={68} fill="#FFF6E3">{count.toLocaleString('en-US')}</text>
         </g>
         <Stopwatch f={f} x={780} y={1270} r={70} sweep={sweepT} accent={GS.persimmon} />
+        <Lab text="ONE SWEEP · ABOUT 4.5 SEC" x={760} y={1168} size={18} fill="#082F35" ink="#FFF6E3" />
         <NearSpools f={f} seed={11} />
       </SVG>
     </Frame>
