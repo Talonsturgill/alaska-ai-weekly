@@ -1,0 +1,19 @@
+{
+ "thesis": "Per the FAA and L3Harris, the stop that grounded every flight leaving Alaska started with a new router going in mid upgrade, not with the advisory AI that went nationwide three days earlier, so Alaska's upside from AI in the airspace rides on getting the cutover right and on blame that waits for the findings.",
+ "falsifiability": "False if the final determination (c22, not yet made) ties SMART or its data traffic to the router flood, or finds the failure began in legacy equipment unrelated to the new router at El Dorado (c18), which would make Duffy's first copper story right after all.",
+ "supporting_facts": [
+  "The traced mechanism is the upgrade. Per CBS citing the FAA and L3Harris, the outage started at the El Dorado, Arkansas site where a new router was being installed (c18), during a copper to fiber switch (c19), with devices trying to connect 1,000 times every 4 to 5 seconds per the FAA (c20). Mullin said the new equipment was overwhelming the older system (c21).",
+  "The first blame missed in both directions. SMART went to all 22 centers on November 10th (c7, c8) and drew suspicion, ASI and Duffy denied it (c13, c14), and Duffy first blamed 1980s little copper lines (c15) before the router finding (c18).",
+  "Alaska already runs the advise and a human decides model. Alaska Airlines has used ASI's Flyways since 2021 (c27), it suggests routes to dispatchers (c28), the dispatcher decides (c29, c30), and the airline says it saves about a million gallons a year, a company figure (c31). SMART is built the same way per the FAA (c10)."
+ ],
+ "counterpoint_to_honor": "The fair case against gets a full scene. SMART had been nationwide three days (c8), Mullin said you can't rule out anything (c23), the denials come from the vendor and from a Secretary whose first cause was wrong (c13, c14, c15), lawmakers had already asked for a SMART pause over transparency (c26), and the FAA is seeking a stake in ASI (c42). The film grants all of it and then lands on the only traced mechanism, the router (c18), with the cause still not final (c22). Alaska's Flyways numbers are the airline's own (c31, c32).",
+ "valence": "mixed",
+ "stance": "mixed",
+ "who_it_serves": "Alaskans who fly out of state, Alaska Airlines' dispatch model judged on its record, and Alaska's delegation watching the $12.5 billion overhaul (c44).",
+ "second_movement": "The old system got blamed and the trigger was the fix for it. And the fix is barely started, per Senate Commerce Democrats citing the contractor (c25), so the cutover risk is mostly ahead.",
+ "runner_up_angles": [
+  {"thesis": "Trust in AI in air traffic control should rest on investigation findings rather than whoever speaks first (analyst C).", "why_lost": "a scold about press timing with no Alaska stake and no upside, its accountability discipline folded into the winner as 'blame that waits for the findings'"},
+  {"thesis": "The advisory AI Alaska Airlines has used since 2021 wasn't what broke (analyst B).", "why_lost": "Flyways was never accused, so it cleared the wrong tool; its Alaska stake and Flyways as the human in the loop example were folded in"},
+  {"thesis": "The real risk in modernizing air traffic control lives in the cutover of old plumbing to new (analyst A).", "why_lost": "it won the mechanism but stated SMART's clearing as settled and said Alaska was cut off when in-state flights flew; folded in with attribution and the not final caveat"}
+ ]
+}

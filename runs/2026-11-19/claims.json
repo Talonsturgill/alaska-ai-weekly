@@ -1,0 +1,785 @@
+{
+ "run_date": "2026-11-19",
+ "fact_check_verdict": "PASS WITH MAJOR CORRECTIONS. Copper as cause is cut; keep only as Duffy's attributed Friday claim. CBS Nov 18: FAA and L3Harris concluded the Arkansas site where a NEW router was being deployed caused the outage, during a copper to fiber conversion. Mullin: new equipment was overwhelming the older system. Cause not final (Newsweek). SMART live status not verified either way. || PASS WITH CONDITIONS. SMART exists, ASI built it, about $875M over 12 years (covers FMDS and SMART), June 22nd. Limited ops September 21st DCA IAD BWI, all 22 en route centers November 10th. ASI denial verbatim (NBC, ABC, NPR). Mullin would not rule SMART out. Flyways numbers are company claims. No official ties SMART to the outage.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-sources",
+   "spoken": "On Friday November 13th the FAA halted departures at airports nationwide.",
+   "on_screen": "NOV 13 NATIONWIDE GROUND STOP",
+   "source": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+   "second_source": "https://news.alaskaair.com/on-the-record/alaska-airlines-statement-on-faa-issued-ground-stop/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: AP reports the FAA halted most U.S. flights in a nationwide ground stop on Friday, November 13, 2026. Alaska Airlines says the FAA issued a nationwide ground stop on Friday, Nov. 13, affecting departures at origin for all airlines.",
+   "requires": [],
+   "orig_id": "g1",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "Anchorage airport was part of the stop and every flight leaving the state was grounded.",
+   "on_screen": "FLIGHTS OUT OF ALASKA GROUNDED",
+   "source": "https://www.alaskasnewssource.com/2026/11/13/faa-issues-nationwide-ground-stop-anchorage-airport-included/",
+   "second_source": "",
+   "verbatim_source": "\"An official with Ted Stevens Anchorage International Airport said flights traveling within Alaska are not impacted, but all flights going outside the state are grounded.\"",
+   "requires": [
+    "attribute to an Anchorage airport official"
+   ],
+   "orig_id": "g3",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-two-sources",
+   "spoken": "Flights within Alaska kept flying.",
+   "on_screen": "IN STATE FLIGHTS NOT IMPACTED",
+   "source": "https://news.alaskaair.com/on-the-record/alaska-airlines-statement-on-faa-issued-ground-stop/",
+   "second_source": "https://www.alaskasnewssource.com/2026/11/13/faa-issues-nationwide-ground-stop-anchorage-airport-included/",
+   "verbatim_source": "\"Flights within the state of Alaska and Neighbor Island flights in Hawai’i are not impacted.\"",
+   "requires": [
+    "say PER ALASKA AIRLINES and the Anchorage airport"
+   ],
+   "orig_id": "g4",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "Alaska Air Group says it canceled nearly 600 flights, affecting more than 52,000 guests.",
+   "on_screen": "NEARLY 600 CANCELED 52000 GUESTS",
+   "source": "https://news.alaskaair.com/on-the-record/alaska-airlines-statement-on-faa-issued-ground-stop/",
+   "second_source": "",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: In its Saturday Nov. 14, 10 a.m. PT update, Alaska Air Group said it had canceled nearly 600 flights since the ground stop began, affecting more than 52,000 guests.",
+   "requires": [
+    "say PER ALASKA AIRLINES",
+    "say AS OF SATURDAY",
+    "covers all of Alaska Air Group including Hawaiian, not only Alaska flights"
+   ],
+   "orig_id": "g7",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-two-sources",
+   "spoken": "The stop lasted more than four hours.",
+   "on_screen": "MORE THAN 4 HOURS",
+   "source": "https://news.alaskaair.com/on-the-record/alaska-airlines-statement-on-faa-issued-ground-stop/",
+   "second_source": "https://www.wamc.org/2026-11-13/old-tech-blamed-for-the-ground-stop-that-caused-flight-chaos-it-got-overloaded",
+   "verbatim_source": "\"The FAA canceled the ground stop – which lasted more than four hours – around 5:30 p.m. Pacific on Friday, Nov. 13.\"",
+   "requires": [
+    "never say five hours"
+   ],
+   "orig_id": "g6",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-two-sources",
+   "spoken": "It was only the second nationwide ground stop since September 11th 2001.",
+   "on_screen": "2ND SINCE 9/11",
+   "source": "https://www.wamc.org/2026-11-13/old-tech-blamed-for-the-ground-stop-that-caused-flight-chaos-it-got-overloaded",
+   "second_source": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+   "verbatim_source": "\"This was only the second nationwide ground stop since September 11, 2001.\"",
+   "requires": [],
+   "orig_id": "g8",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-two-sources",
+   "spoken": "On November 10th the FAA expanded SMART to all 22 of its en route air traffic control centers.",
+   "on_screen": "NOV 10 · ALL 22 CENTERS",
+   "source": "https://www.flyingmag.com/faa-smart-ai-now-active-at-22-artccs-nationwide/",
+   "second_source": "https://www.latintimes.com/faa-smart-ai-tool-ground-stop-investigation-601324",
+   "verbatim_source": "\"all 22 of its Air Route Traffic Control Centers\"",
+   "requires": [],
+   "orig_id": "s7",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-two-sources",
+   "spoken": "That was three days before the nationwide ground stop.",
+   "on_screen": "3 DAYS LATER",
+   "source": "https://www.latintimes.com/faa-smart-ai-tool-ground-stop-investigation-601324",
+   "second_source": "https://ivn.us/did-new-ai-software-just-crash-the-faas-network/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Latin Times says the expansion came on November 10, three days before the ground stop.",
+   "requires": [
+    "the timing is a coincidence no official has linked to the outage"
+   ],
+   "orig_id": "s8",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-two-sources",
+   "spoken": "SMART is an AI tool that reads weather, flight schedules and other data to predict congestion in the sky.",
+   "on_screen": "AI THAT PREDICTS CONGESTION",
+   "source": "https://www.avweb.com/aviation-news/faa-seeks-ownership-in-air-traffic-ai/",
+   "second_source": "https://www.avweb.com/aviation-news/lawmakers-seek-pause-on-faa-ai-tool/",
+   "verbatim_source": "\"analyzes weather, flight schedules and other operational data to predict congestion\"",
+   "requires": [
+    "AVweb adds about 200 data streams"
+   ],
+   "orig_id": "s2",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-two-sources",
+   "spoken": "SMART only makes recommendations. FAA staff decide whether to act, and it does not fly or control aircraft.",
+   "on_screen": "IT ADVISES · PEOPLE DECIDE",
+   "source": "https://www.avweb.com/aviation-news/lawmakers-seek-pause-on-faa-ai-tool/",
+   "second_source": "https://ivn.us/did-new-ai-software-just-crash-the-faas-network/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: AVweb says SMART gives scheduling recommendations to FAA personnel, who decide whether to act, and does not control aircraft or replace controllers.",
+   "requires": [
+    "attribute the no-control point to the FAA"
+   ],
+   "orig_id": "s3",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "A startup called Air Space Intelligence, or ASI, built SMART.",
+   "on_screen": "BUILT BY AIR SPACE INTELLIGENCE",
+   "source": "https://finance.yahoo.com/technology/ai/articles/asi-selected-faa-modernize-national-204300657.html",
+   "second_source": "https://finance.yahoo.com/technology/ai/articles/faa-seeks-ownership-stake-air-213337324.html",
+   "verbatim_source": "\"ASI Selected by FAA to Modernize the National Airspace System\"",
+   "requires": [],
+   "orig_id": "s4",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-two-sources",
+   "spoken": "ASI said the ground stop was not caused by SMART.",
+   "on_screen": "\"NOT BASED ON OR A RESULT OF THE SMART SYSTEM\"",
+   "source": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+   "second_source": "https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848",
+   "verbatim_source": "\"The current ground stop is not based on or a result of the SMART system\"",
+   "requires": [
+    "say PER ASI"
+   ],
+   "orig_id": "s10",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-two-sources",
+   "spoken": "Transportation Secretary Sean Duffy said SMART was completely disconnected from the equipment that failed.",
+   "on_screen": "\"COMPLETELY DISCONNECTED\" · DUFFY",
+   "source": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+   "second_source": "https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848",
+   "verbatim_source": "\"completely disconnected\"",
+   "requires": [
+    "say PER DUFFY"
+   ],
+   "orig_id": "s11",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "attributed-only",
+   "spoken": "On Friday Duffy blamed old technology, saying the FAA uses 1980s little copper lines.",
+   "on_screen": "\"1980S LITTLE COPPER LINES\"",
+   "source": "https://www.wamc.org/2026-11-13/old-tech-blamed-for-the-ground-stop-that-caused-flight-chaos-it-got-overloaded",
+   "second_source": "https://www.commerce.senate.gov/press/dem/release/commerce-committee-democrats-demand-clear-fact-based-answers-from-dot-faa-on-root-cause-of-nov-13th-nationwide-ground-stop/",
+   "verbatim_source": "\"We use 1980s little copper lines.\"",
+   "requires": [
+    "say DUFFY SAID",
+    "must be followed by the router findings g15 g16, never present copper as the cause"
+   ],
+   "orig_id": "g12",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-two-sources",
+   "spoken": "The FAA and contractor L3Harris concluded the outage started at a site in Arkansas where a new router was being installed.",
+   "on_screen": "A NEW ROUTER · EL DORADO, ARKANSAS",
+   "source": "https://www.cbsnews.com/news/ground-stop-l3harris-system-outage/",
+   "second_source": "https://www.commerce.senate.gov/press/dem/release/commerce-committee-democrats-demand-clear-fact-based-answers-from-dot-faa-on-root-cause-of-nov-13th-nationwide-ground-stop/",
+   "verbatim_source": "\"the Arkansas site, where a new router was being deployed, had caused the outage.\"",
+   "requires": [
+    "say PER CBS NEWS citing the FAA and L3Harris",
+    "site El Dorado, Arkansas",
+    "why it failed is not final, g19"
+   ],
+   "orig_id": "g15",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-two-sources",
+   "spoken": "L3Harris was switching part of the FAA's network from copper wire to fiber when it failed.",
+   "on_screen": "COPPER TO FIBER UPGRADE",
+   "source": "https://www.nbcnews.com/politics/trump-administration/transportation-secretary-apologize-nationwide-ground-stop-airports-rcna609397",
+   "second_source": "https://www.newsweek.com/who-is-l3harris-faa-contract-flight-cancellations-12717073",
+   "verbatim_source": "\"working on replacing a copper line with a fiber line\"",
+   "requires": [
+    "Duffy's Saturday account per NBC"
+   ],
+   "orig_id": "g16",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-two-sources",
+   "spoken": "The FAA says devices flooded its telecom network, trying to connect 1,000 times every four to five seconds.",
+   "on_screen": "1,000 TRIES EVERY 4 TO 5 SECONDS",
+   "source": "https://www.cbsnews.com/news/ground-stop-l3harris-system-outage/",
+   "second_source": "https://www.newsweek.com/who-is-l3harris-faa-contract-flight-cancellations-12717073",
+   "verbatim_source": "\"attempting to connect 1,000 times every 4 to 5 seconds.\"",
+   "requires": [
+    "say PER THE FAA"
+   ],
+   "orig_id": "g17",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "attributed-only",
+   "spoken": "Homeland Security Secretary Markwayne Mullin said new equipment being added was overwhelming the older system.",
+   "on_screen": "\"OVERWHELMING THE OLDER SYSTEM\"",
+   "source": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+   "second_source": "",
+   "verbatim_source": "\"it was overwhelming the older system.\"",
+   "requires": [
+    "say MULLIN SAID",
+    "the thing overwhelming was the new equipment, per AP context"
+   ],
+   "orig_id": "g14",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "attributed-only",
+   "spoken": "Investigators have not made a final call on why the router failed.",
+   "on_screen": "WHY IT FAILED · NOT YET FINAL",
+   "source": "https://www.newsweek.com/who-is-l3harris-faa-contract-flight-cancellations-12717073",
+   "second_source": "https://www.nbcnews.com/politics/trump-administration/transportation-secretary-apologize-nationwide-ground-stop-airports-rcna609397",
+   "verbatim_source": "\"no final determination has been made about the exact cause of the failure.\"",
+   "requires": [
+    "NBC, Duffy said officials must decide whether it was a faulty installation or a fault in the router itself"
+   ],
+   "orig_id": "g19",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-two-sources",
+   "spoken": "Homeland Security Secretary Markwayne Mullin would not fully rule SMART out.",
+   "on_screen": "\"CAN'T RULE OUT ANYTHING\" · MULLIN",
+   "source": "https://www.latintimes.com/faa-smart-ai-tool-ground-stop-investigation-601324",
+   "second_source": "https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848",
+   "verbatim_source": "\"You can't rule out anything at this point.\"",
+   "requires": [
+    "do not imply SMART is suspected"
+   ],
+   "orig_id": "s13",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-primary",
+   "spoken": "Senate Commerce Democrats asked for an immediate pause on installing more of the new Juniper routers.",
+   "on_screen": "SENATORS ASK FOR A ROUTER PAUSE",
+   "source": "https://www.commerce.senate.gov/press/dem/release/commerce-committee-democrats-demand-clear-fact-based-answers-from-dot-faa-on-root-cause-of-nov-13th-nationwide-ground-stop/",
+   "second_source": "",
+   "verbatim_source": "\"We request an immediate pause on the deployment of additional Juniper devices,\"",
+   "requires": [
+    "say SENATE COMMERCE DEMOCRATS",
+    "optional, same page, the upgrade converts 3,648 routers, per the contractor 400 installed and 69 operational"
+   ],
+   "orig_id": "g18",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-two-sources",
+   "spoken": "In October more than two dozen lawmakers asked the FAA to pause SMART, citing a lack of transparency.",
+   "on_screen": "OCT · LAWMAKERS ASKED FOR A PAUSE",
+   "source": "https://finance.yahoo.com/technology/ai/articles/faa-seeks-ownership-stake-air-213337324.html",
+   "second_source": "https://www.avweb.com/aviation-news/lawmakers-seek-pause-on-faa-ai-tool/",
+   "verbatim_source": "\"egregious lack of transparency\"",
+   "requires": [
+    "letter dated October 9th"
+   ],
+   "orig_id": "s14",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "attributed-only",
+   "spoken": "Alaska Airlines has used ASI's Flyways tool since 2021.",
+   "on_screen": "ALASKA AIRLINES · SINCE 2021",
+   "source": "https://alaskapublic.org/news/national/2026-08-10/the-faa-wants-to-reboot-the-nations-airspace-this-airline-shows-how-it-might-work",
+   "second_source": "https://news.alaskaair.com/sustainability/how-ai-is-helping-alaska-airlines-plan-better-flight-routes-and-lower-emissions/",
+   "verbatim_source": "\"Alaska was the first airline to start using the Flyways system back in 2021\"",
+   "requires": [
+    "2021 from NPR"
+   ],
+   "orig_id": "s16",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-two-sources",
+   "spoken": "Flyways combines air traffic, weather and wind data and suggests more efficient routes to Alaska's dispatchers near Seattle.",
+   "on_screen": "IT SUGGESTS BETTER ROUTES",
+   "source": "https://alaskapublic.org/news/national/2026-08-10/the-faa-wants-to-reboot-the-nations-airspace-this-airline-shows-how-it-might-work",
+   "second_source": "https://news.alaskaair.com/sustainability/how-ai-is-helping-alaska-airlines-plan-better-flight-routes-and-lower-emissions/",
+   "verbatim_source": "\"Additionally, the Flyways Dispatch application offers real-time insights and decision-making support to our dispatchers,\"",
+   "requires": [],
+   "orig_id": "s17",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "verified-primary",
+   "spoken": "Alaska's operations chief says Flyways doesn't pick the route. The dispatcher does.",
+   "on_screen": "THE DISPATCHER DECIDES",
+   "source": "https://alaskapublic.org/news/national/2026-08-10/the-faa-wants-to-reboot-the-nations-airspace-this-airline-shows-how-it-might-work",
+   "second_source": "",
+   "verbatim_source": "\"It doesn't decide the route or waypoints that a dispatcher uses to get an airplane from A to B\"",
+   "requires": [
+    "attribute to Capt. Bret Peyton via NPR"
+   ],
+   "orig_id": "s18",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c31",
+   "status": "company-claim",
+   "spoken": "Alaska says Flyways saves roughly a million gallons of fuel and tens of thousands of flight hours a year.",
+   "on_screen": "ABOUT 1 MILLION GALLONS A YEAR · PER ALASKA",
+   "source": "https://alaskapublic.org/news/national/2026-08-10/the-faa-wants-to-reboot-the-nations-airspace-this-airline-shows-how-it-might-work",
+   "second_source": "https://news.alaskaair.com/sustainability/how-ai-is-helping-alaska-airlines-plan-better-flight-routes-and-lower-emissions/",
+   "verbatim_source": "\"Alaska says it's saving tens of thousands of hours in the air and roughly a million gallons of fuel per year\"",
+   "requires": [
+    "say PER ALASKA AIRLINES",
+    "company figure",
+    "do not merge with 1.2 million 2023 figure"
+   ],
+   "orig_id": "s20",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c33",
+   "status": "verified-primary",
+   "spoken": "Alaska Airlines describes Flyways as using advanced algorithms and machine learning.",
+   "on_screen": "MACHINE LEARNING · PER ALASKA",
+   "source": "https://news.alaskaair.com/sustainability/how-ai-is-helping-alaska-airlines-plan-better-flight-routes-and-lower-emissions/",
+   "second_source": "",
+   "verbatim_source": "\"ASI's Flyways AI Platform utilizes advanced algorithms and machine learning to analyze vast amounts of data,\"",
+   "requires": [
+    "the airline's own description"
+   ],
+   "orig_id": "s22",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c37",
+   "status": "attributed-only",
+   "spoken": "Air Space Intelligence, the company that makes the FAA's new AI tool SMART, said the ground stop was not caused by SMART.",
+   "on_screen": "SMART MAKER DENIES LINK",
+   "source": "https://www.wamc.org/2026-11-13/old-tech-blamed-for-the-ground-stop-that-caused-flight-chaos-it-got-overloaded",
+   "second_source": "",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: NPR reports the FAA recently began rolling out an AI-enhanced tool called SMART, and its maker, Air Space Intelligence, said the current ground stop is not based on or a result of the SMART system.",
+   "requires": [
+    "say PER THE COMPANY",
+    "a denial, not an independent finding"
+   ],
+   "orig_id": "g10",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c39",
+   "status": "verified-two-sources",
+   "spoken": "SMART stands for Strategic Management of Airspace, Routes and Trajectories.",
+   "on_screen": "SMART · AIRSPACE, ROUTES, TRAJECTORIES",
+   "source": "https://www.avweb.com/aviation-news/faa-seeks-ownership-in-air-traffic-ai/",
+   "second_source": "https://www.flyingmag.com/smart-faa-contract-asi-air-traffic-management/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: AVweb and FLYING both expand SMART as Strategic Management of Airspace, Routes and Trajectories.",
+   "requires": [],
+   "orig_id": "s1",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c42",
+   "status": "verified-two-sources",
+   "spoken": "An internal document shows the FAA is also trying to take an ownership stake in ASI.",
+   "on_screen": "FAA SEEKS A STAKE IN ASI",
+   "source": "https://finance.yahoo.com/technology/ai/articles/faa-seeks-ownership-stake-air-213337324.html",
+   "second_source": "https://www.avweb.com/aviation-news/faa-seeks-ownership-in-air-traffic-ai/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Politico reports an internal FAA document showing the agency is working to acquire an equity stake or warrant in ASI.",
+   "requires": [
+    "no deal confirmed"
+   ],
+   "orig_id": "s15",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c45",
+   "status": "attributed-only",
+   "spoken": "Per the contractor, the upgrade converts 3,648 routers, and 400 are installed with 69 operational.",
+   "on_screen": "3,648 ROUTERS · 400 IN · 69 RUNNING · PER THE CONTRACTOR",
+   "source": "https://www.commerce.senate.gov/press/dem/release/commerce-committee-democrats-demand-clear-fact-based-answers-from-dot-faa-on-root-cause-of-nov-13th-nationwide-ground-stop/",
+   "second_source": "",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: the Senate Commerce Democrats' release says the upgrade converts 3,648 routers and, per the contractor, 400 are installed and 69 are operational.",
+   "requires": [
+    "say PER THE CONTRACTOR via Senate Commerce Democrats"
+   ],
+   "orig_id": "g18b",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  "copper or legacy equipment as the established cause (contradicted by CBS: new router during copper to fiber conversion)",
+  "SMART caused or contributed (no official or outlet says so)",
+  "SMART not even plugged in (advocacy only)",
+  "five hours, longest in 25 years (AP only, conflicts)",
+  "46,000 or 12,000 flights (unsourced)",
+  "ASI donations (unverified, off topic)",
+  "ASI manages 40 percent of US traffic (vendor boast)"
+ ],
+ "reserve": [
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "In June the FAA gave ASI a 12 year contract worth about 875 million dollars.",
+   "on_screen": "ABOUT $875 MILLION · 12 YEARS",
+   "source": "https://finance.yahoo.com/technology/ai/articles/asi-selected-faa-modernize-national-204300657.html",
+   "second_source": "https://www.flyingmag.com/smart-faa-contract-asi-air-traffic-management/",
+   "verbatim_source": "\"a 12 year, $875 Million software and AI contract\"",
+   "requires": [
+    "say ABOUT",
+    "covers two systems, FMDS and SMART",
+    "announced June 22nd"
+   ],
+   "orig_id": "s5",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "attributed-only",
+   "spoken": "Duffy also said this is all the old legacy equipment.",
+   "on_screen": "\"ALL THE OLD LEGACY EQUIPMENT\"",
+   "source": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+   "second_source": "",
+   "verbatim_source": "\"This is all the old legacy equipment.\"",
+   "requires": [
+    "say DUFFY SAID"
+   ],
+   "orig_id": "g13",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-two-sources",
+   "spoken": "Officials blamed old equipment, saying routers were overloaded with data.",
+   "on_screen": "\"OVERLOADED WITH DATA\"",
+   "source": "https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848",
+   "second_source": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+   "verbatim_source": "\"Our switches, our routers, actually got overloaded with data\"",
+   "requires": [
+    "attribute to Duffy",
+    "preliminary"
+   ],
+   "orig_id": "s12",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-primary",
+   "spoken": "The FAA technicians' union says the problem was limited to two contractor-owned routers being updated in the middle of the day.",
+   "on_screen": "2 CONTRACTOR ROUTERS · PER THE UNION",
+   "source": "https://passnational.org/news/pass-on-the-nationwide-ground-stop/",
+   "second_source": "https://alaska-native-news.com/its-life-trump-disregards-faa-and-other-tech-outages-as-fury-toward-duffy-grows/87143/",
+   "verbatim_source": "\"The issue was isolated to two contractor owned and maintained routers that were being updated mid-day.\"",
+   "requires": [
+    "say PER PASS, an interested party"
+   ],
+   "orig_id": "g20",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c30",
+   "status": "verified-primary",
+   "spoken": "Peyton called it a decision making aid, not a tool that will run rogue.",
+   "on_screen": "\"NOT A TOOL THAT'S GOING TO RUN ROGUE\"",
+   "source": "https://alaskapublic.org/news/national/2026-08-10/the-faa-wants-to-reboot-the-nations-airspace-this-airline-shows-how-it-might-work",
+   "second_source": "",
+   "verbatim_source": "\"which is a decision-making aid, and not a tool that's going to run rogue and make weird decisions for the dispatcher,\" Peyton said.",
+   "requires": [
+    "attribute to Peyton via NPR"
+   ],
+   "orig_id": "s19",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c32",
+   "status": "company-claim",
+   "spoken": "Alaska says Flyways found a better option for 55 percent of its flights.",
+   "on_screen": "55% OF FLIGHTS GOT A SUGGESTION · PER ALASKA",
+   "source": "https://news.alaskaair.com/sustainability/how-ai-is-helping-alaska-airlines-plan-better-flight-routes-and-lower-emissions/",
+   "second_source": "",
+   "verbatim_source": "\"On average Flyways AI has presented optimization opportunities for 55 percent of Alaska's flights\"",
+   "requires": [
+    "say PER ALASKA AIRLINES",
+    "August 2024 figure",
+    "a suggestion, not a flown reroute"
+   ],
+   "orig_id": "s21",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c34",
+   "status": "verified-two-sources",
+   "spoken": "At least 827 flights were diverted, according to the data firm Cirium.",
+   "on_screen": "827 DIVERTED",
+   "source": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+   "second_source": "https://www.alaskasnewssource.com/2026/11/13/faa-issues-nationwide-ground-stop-anchorage-airport-included/",
+   "verbatim_source": "\"At least 827 flights had been diverted.\"",
+   "requires": [
+    "say PER CIRIUM"
+   ],
+   "orig_id": "g9",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c35",
+   "status": "attributed-only",
+   "spoken": "The order came out at 11:54 in the morning Alaska time.",
+   "on_screen": "ORDER 11 54 AM AKST",
+   "source": "https://www.alaskasnewssource.com/2026/11/13/faa-issues-nationwide-ground-stop-anchorage-airport-included/",
+   "second_source": "",
+   "verbatim_source": "\"The order came out at 11:54 a.m. AKST\"",
+   "requires": [
+    "say PER ALASKA'S NEWS SOURCE"
+   ],
+   "orig_id": "g2",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c36",
+   "status": "verified-primary",
+   "spoken": "The FAA lifted the stop around 5:30 Pacific time, which is 4:30 in Anchorage.",
+   "on_screen": "LIFTED 4 30 PM AKST",
+   "source": "https://news.alaskaair.com/on-the-record/alaska-airlines-statement-on-faa-issued-ground-stop/",
+   "second_source": "https://www.alaskasnewssource.com/2026/11/13/faa-issues-nationwide-ground-stop-anchorage-airport-included/",
+   "verbatim_source": "\"The Federal Aviation Administration (FAA) lifted its nationwide ground stop around 5:30 p.m. Pacific.\"",
+   "requires": [
+    "AKST conversion is arithmetic"
+   ],
+   "orig_id": "g5",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c38",
+   "status": "attributed-only",
+   "spoken": "Transportation Secretary Sean Duffy said the FAA's new AI system is not connected to what failed.",
+   "on_screen": "DUFFY AI SYSTEM NOT CONNECTED",
+   "source": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+   "second_source": "",
+   "verbatim_source": "\"that isn't connected to what failed on Friday.\"",
+   "requires": [
+    "say DUFFY SAID"
+   ],
+   "orig_id": "g11",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c40",
+   "status": "verified-two-sources",
+   "spoken": "SMART went live in a limited way on September 21st at the three Washington area airports.",
+   "on_screen": "SEPT 21 · 3 WASHINGTON AIRPORTS",
+   "source": "https://www.avweb.com/aviation-news/lawmakers-seek-pause-on-faa-ai-tool/",
+   "second_source": "https://finance.yahoo.com/technology/ai/articles/faa-seeks-ownership-stake-air-213337324.html",
+   "verbatim_source": "\"Reagan National, Dulles International and Baltimore/Washington International airports\"",
+   "requires": [],
+   "orig_id": "s6",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c41",
+   "status": "attributed-only",
+   "spoken": "The FAA said SMART had already helped reroute 180 flights, saving about 10 minutes and nearly 80 gallons of fuel each.",
+   "on_screen": "180 FLIGHTS REROUTED · PER THE FAA",
+   "source": "https://www.flyingmag.com/faa-smart-ai-now-active-at-22-artccs-nationwide/",
+   "second_source": "",
+   "verbatim_source": "\"Agency says system has helped reroute 180 flights, saving average of 10 minutes and almost 80 gallons of fuel per trip.\"",
+   "requires": [
+    "say PER THE FAA",
+    "optional"
+   ],
+   "orig_id": "s9",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c43",
+   "status": "verified-primary",
+   "spoken": "A September GAO report found the FAA's modernization ran on more than 11,000 project schedules that were not integrated.",
+   "on_screen": "11,000 SCHEDULES · NOT INTEGRATED · GAO",
+   "source": "https://files.gao.gov/reports/GAO-26-107992/index.html",
+   "second_source": "",
+   "verbatim_source": "\"BNATCS was comprised of over 11,000 individual project schedules that were not integrated or optimized.\"",
+   "requires": [
+    "project SCHEDULES, not projects",
+    "optional quote 'In essence, the FAA is buying delivery speed at the risk of cost uncertainty and potential disruptions.'"
+   ],
+   "orig_id": "g21",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c44",
+   "status": "attributed-only",
+   "spoken": "Congress has approved 12.5 billion dollars for the air traffic control overhaul.",
+   "on_screen": "$12.5 BILLION APPROVED",
+   "source": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+   "second_source": "",
+   "verbatim_source": "\"after Congress approved $12.5 billion of funding.\"",
+   "requires": [
+    "say PER AP"
+   ],
+   "orig_id": "g22",
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ]
+}

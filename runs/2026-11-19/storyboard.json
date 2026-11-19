@@ -1,0 +1,2479 @@
+{
+  "run_date": "2026-11-19",
+  "slug": "one-thousand-knocks",
+  "title": "One Thousand Knocks",
+  "concept": "On November 13th a nationwide ground stop held every flight leaving Alaska while flights inside Alaska kept flying. Two new things were going in that week. Three days earlier the FAA had expanded SMART, an advisory AI tool built by Air Space Intelligence that predicts congestion and only suggests, to all 22 en route centers. ASI said the stop wasn't a result of SMART, Duffy called SMART completely disconnected and blamed 1980s little copper lines, Mullin said you can't rule out anything at this point, lawmakers had asked in October to pause SMART over transparency and the FAA is seeking a stake in ASI. Then, per CBS citing the FAA and L3Harris, the trace pointed at the other new thing, a router going in at El Dorado, Arkansas during a copper to fiber cutover, devices trying to connect 1,000 times every 4 to 5 seconds. Why it failed isn't final, and per the contractor only 69 of 3,648 new routers were running. Alaska Airlines has used ASI's Flyways since 2021, it suggests and the dispatcher decides. Drawn as Slip, a faced paper route card with no hands, pinned to an evidence board under a question, beside a second tarp that comes off a faceless router in a night vault, and a 4.5 second counting hold.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 127.74,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "grid-modular",
+    "register": "case-file-cartoon",
+    "palette": "persimmon low daylight #E0662B above peach #F4B183 and brick zenith #9C3F2A above the Anchorage apron, bone ivory paper and drifts #F2E8D0 with buff #C9B48E, pine vault dark #0E5A63 down to #082F35, cork #B07A48 board, brick-red question string #B8323A, dull penny copper #8A5A3A, card stock #F7EFDC with graphite #4A4A52, fiber cyan #39F0FF held for the traced mechanism",
+    "camera_strategy": "push-reveal",
+    "light_story": "low persimmon November sun over the Anchorage apron, then an office board lit by a desk lamp spotlight, then a night cable vault under one caged work lamp with cyan pulses, then the screen glow of a dispatch desk, then the apron sun again",
+    "metaphor": "a detective's evidence board where a paper suggestion card stays pinned under a question while a second tarp comes off a router, a second string runs to it and the findings arrive sealed"
+  },
+  "signature_shot": 11,
+  "palette": "persimmon low daylight #E0662B above peach #F4B183 and brick zenith #9C3F2A above the Anchorage apron, bone ivory paper and drifts #F2E8D0 with buff #C9B48E, pine vault dark #0E5A63 down to #082F35, cork #B07A48 board, brick-red question string #B8323A, dull penny copper #8A5A3A, card stock #F7EFDC with graphite #4A4A52, fiber cyan #39F0FF held for the traced mechanism",
+  "divergence_note": "The last films were a sunless mint afterglow over lilac snow with a faced chalk-line reel and ultramarine chalk (11-18), polar night and midnight-sun honey with a troupe of faced decision trees and radar lime (11-16), a rain-black Juneau night at one gunmetal letterbox (11-15), and a rose-line dusk dome over a survey stake (11-12). This film is warm persimmon daylight and a night vault, its hero a soft folded PAPER card with no hands (honestly the third faced inanimate mascot in a row, varied by being paper that can only suggest, never a fixture or a crowd), its signal colour a fiber cyan reserved for the traced mechanism, and its spine an interior evidence board with real exteriors at the open and the close. Honest overlaps: 11-18 also had a line as a throughline that went slack, answered here by board strings that never change state and an additive payoff, a sealed envelope pinned beside them; the pine shadow sits in the teal family of 11-18 and 11-16, shifted greener; 11-15 also staged an interior, answered by a lamp-lit office board and a vault rather than a doorway in rain; 11-12 also had a fat arrow, kept to one beat.",
+  "treatment": {
+    "title": "One Thousand Knocks",
+    "summary": "One Thousand Knocks (Explainer winner with grafts, restaged at Gate 0). SLIP, SMART drawn as a chubby folded paper route card with a dashed pencil route across its belly, a worried face and no hands, is unwrapped from under a tarp on a cork evidence board and pinned at its center under red question strings and an IS IT THE AI? header, with a maker's tag, three days after SMART went to all 22 en route centers. The fair case gets full strength: two denial quotes with source tags and no checks, Duffy dropping a copper coil on a CLAIM card beside the board, Mullin in a hearing corridor holding a magnifying glass up to Slip's photo and never lowering it, lawmakers' letters with fog, an FAA hand stopping short of an uncut ASI pie, and a raven tugging a string whose far end ties to the letters. At 71 s the second tarp comes off and the camera dives down a cable run to a faceless new router in a night El Dorado vault mid copper to fiber swap, and a counter climbs to 1,000 over one 4.5 second stopwatch sweep. The payoff is additive: a sealed FINAL FINDINGS envelope with a pencilled NOT YET FINAL tag, Slip's strings unchanged. The open and the button are the split Anchorage apron, a Super Cub flying over the Chugach while a faced jet sits grounded, the cone pulled in the button and a cable crew's junction box at the apron edge.",
+    "judge_reasoning": "The Explainer is the only pitch whose structure passes the retention rules as written. The router stays under a tarp until after the strongest case for suspicion has been made, so Act 3 is a real test and not a replay of a known answer. Its 4.5 second counting hold makes the 1,000 tries every 4 to 5 seconds physical for a muted viewer, and no other pitch has a beat that strong. The Suggestion Slip hero is paper and has no hands, which shows 'it advises, people decide' without a word and varies the faced-mascot run as paper that can only suggest. Its faults can be fixed by grafting: a short test, re-pinned denials, copper too close to the suspect row, and a crammed button. The Dramatist's and Enthusiast's faults are structural, because their router lands at 50 to 55s."
+  },
+  "angle": {
+    "thesis": "Per the FAA and L3Harris, the stop that grounded every flight leaving Alaska started with a new router going in mid upgrade, not with the advisory AI that went nationwide three days earlier, so Alaska's upside from AI in the airspace rides on getting the cutover right and on blame that waits for the findings.",
+    "falsifiability": "False if the final determination (c22, not yet made) ties SMART or its data traffic to the router flood, or finds the failure began in legacy equipment unrelated to the new router at El Dorado (c18), which would make Duffy's first copper story right after all.",
+    "supporting_facts": [
+      "The traced mechanism is the upgrade. Per CBS citing the FAA and L3Harris, the outage started at the El Dorado, Arkansas site where a new router was being installed (c18), during a copper to fiber switch (c19), with devices trying to connect 1,000 times every 4 to 5 seconds per the FAA (c20). Mullin said the new equipment was overwhelming the older system (c21).",
+      "The first blame missed in both directions. SMART went to all 22 centers on November 10th (c7, c8) and drew suspicion, ASI and Duffy denied it (c13, c14), and Duffy first blamed 1980s little copper lines (c15) before the router finding (c18).",
+      "Alaska already runs the advise and a human decides model. Alaska Airlines has used ASI's Flyways since 2021 (c27), it suggests routes to dispatchers (c28), the dispatcher decides (c29, c30), and the airline says it saves about a million gallons a year, a company figure (c31). SMART is built the same way per the FAA (c10)."
+    ],
+    "counterpoint_to_honor": "The fair case against gets a full scene. SMART had been nationwide three days (c8), Mullin said you can't rule out anything (c23), the denials come from the vendor and from a Secretary whose first cause was wrong (c13, c14, c15), lawmakers had already asked for a SMART pause over transparency (c26), and the FAA is seeking a stake in ASI (c42). The film grants all of it and then lands on the only traced mechanism, the router (c18), with the cause still not final (c22). Alaska's Flyways numbers are the airline's own (c31, c32).",
+    "valence": "mixed",
+    "stance": "mixed",
+    "who_it_serves": "Alaskans who fly out of state, Alaska Airlines' dispatch model judged on its record, and Alaska's delegation watching the $12.5 billion overhaul (c44).",
+    "second_movement": "The old system got blamed and the trigger was the fix for it. And the fix is barely started, per Senate Commerce Democrats citing the contractor (c25), so the cutover risk is mostly ahead.",
+    "runner_up_angles": [
+      {
+        "thesis": "Trust in AI in air traffic control should rest on investigation findings rather than whoever speaks first (analyst C).",
+        "why_lost": "a scold about press timing with no Alaska stake and no upside, its accountability discipline folded into the winner as 'blame that waits for the findings'"
+      },
+      {
+        "thesis": "The advisory AI Alaska Airlines has used since 2021 wasn't what broke (analyst B).",
+        "why_lost": "Flyways was never accused, so it cleared the wrong tool; its Alaska stake and Flyways as the human in the loop example were folded in"
+      },
+      {
+        "thesis": "The real risk in modernizing air traffic control lives in the cutover of old plumbing to new (analyst A).",
+        "why_lost": "it won the mechanism but stated SMART's clearing as settled and said Alaska was cut off when in-state flights flew; folded in with attribution and the not final caveat"
+      }
+    ]
+  },
+  "claim_map": {
+    "1": [
+      "c1"
+    ],
+    "2": [
+      "c2"
+    ],
+    "3": [
+      "c3"
+    ],
+    "4": [
+      "c5",
+      "c6"
+    ],
+    "5": [
+      "c7",
+      "c18"
+    ],
+    "6": [
+      "c7"
+    ],
+    "7": [
+      "c7"
+    ],
+    "8": [
+      "c39",
+      "c11"
+    ],
+    "9": [
+      "c8"
+    ],
+    "10": [
+      "c9"
+    ],
+    "11": [
+      "c10"
+    ],
+    "12": [
+      "c11"
+    ],
+    "13": [
+      "c13"
+    ],
+    "14": [
+      "c14"
+    ],
+    "15": [
+      "c15"
+    ],
+    "16": [
+      "c23"
+    ],
+    "17": [
+      "c13",
+      "c14"
+    ],
+    "18": [
+      "c28"
+    ],
+    "19": [
+      "c26"
+    ],
+    "20": [
+      "c26"
+    ],
+    "21": [
+      "c42"
+    ],
+    "22": [
+      "c42"
+    ],
+    "23": [
+      "c8"
+    ],
+    "24": [
+      "c18"
+    ],
+    "25": [
+      "c18"
+    ],
+    "26": [
+      "c18"
+    ],
+    "27": [
+      "c19"
+    ],
+    "28": [
+      "c20"
+    ],
+    "29": [
+      "c20"
+    ],
+    "30": [
+      "c20"
+    ],
+    "31": [
+      "c15"
+    ],
+    "32": [
+      "c18",
+      "c19"
+    ],
+    "33": [
+      "c22"
+    ],
+    "34": [
+      "c45"
+    ],
+    "35": [
+      "c45"
+    ],
+    "36": [
+      "c27"
+    ],
+    "37": [
+      "c28"
+    ],
+    "38": [
+      "c29"
+    ],
+    "39": [
+      "c31"
+    ],
+    "40": [
+      "narration"
+    ],
+    "41": [
+      "narration"
+    ],
+    "42": [
+      "c14"
+    ],
+    "43": [
+      "c26"
+    ],
+    "44": [
+      "c18"
+    ],
+    "45": [
+      "c19"
+    ],
+    "46": [
+      "c20"
+    ],
+    "47": [
+      "c45"
+    ],
+    "48": [
+      "c27",
+      "c11"
+    ],
+    "49": [
+      "c2"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "Overhead on the Ted Stevens Anchorage apron in low persimmon sun, the Chugach behind, a wide-eyed jet at a gate on the right and a Super Cub on the left, and at 0.3 s a boxed plate slams down in front of the jet's nose while a cone slides under its wheel",
+    "headline": "NATIONWIDE GROUND STOP",
+    "motion_by_s": 0.3,
+    "loopback": "Frame 1 is the split apron with the jet grounded and the Cub flying; the last image pulls out of the office window onto the same split apron, the Cub banking, the jet at its gate with the cone pulled and the stamp faded, a cable crew's junction box at the apron edge, and Slip still pinned on the board in the window."
+  },
+  "open_loop": {
+    "plant_t": 16.61,
+    "pay_t": 98.42,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "swish",
+    "what": "Is it the AI? Planted when the spotlight lands on the left tarp under ONE OF THEM WAS AI and an IS IT THE AI? header card pins over the board, kept as Slip pinned to the board's center under red question strings through the denials, the magnifier, the fog and the raven, paid when a sealed, unopened FINAL FINDINGS envelope drops onto the center pin with a pencilled WHY IT FAILED \u00b7 NOT YET FINAL tag, a red string now also running to the other tarp's router, and Slip's strings unchanged."
+  },
+  "open_loop_2": {
+    "plant_t": 57.63,
+    "pay_t": 116.13,
+    "what": "Whose dark desk is that? Planted as a snapshot dropping into the lamp light at the board's center, a shadowed dispatch desk near Seattle where a hand twitches over a screen, kept in view as the fog spares it and in the top-down of the board, paid when the camera pushes into the snapshot and the desk lights up as Alaska Airlines' Flyways desk and the dispatcher's hand taps the second route, THE DISPATCHER DECIDES."
+  },
+  "throughline": {
+    "object": "the cork evidence board and its strings",
+    "lands_in_button": "the board small in the office window from the split apron, Slip still pinned under unchanged strings beside the sealed FINAL FINDINGS envelope",
+    "states": [
+      {
+        "at_s": 7.06,
+        "state": "T1 an Alaska map pinned on, in-state strings pulsing, out-of-state strings frozen, two tarps tagged NEW below"
+      },
+      {
+        "at_s": 33.08,
+        "state": "T2 Slip pinned to the center under red question strings and an IS IT THE AI? header, denial plates beside it, no checks"
+      },
+      {
+        "at_s": 62.68,
+        "state": "T3 seen side-on, crowded with exhibits, fog across half, the snapshot spared, the copper CLAIM card set aside"
+      },
+      {
+        "at_s": 78.59,
+        "state": "T4 the board photo's edge framing the vault, a red string running from it down to the router"
+      },
+      {
+        "at_s": 98.42,
+        "state": "T5 a sealed FINAL FINDINGS envelope on the center pin with NOT YET FINAL pencilled, Slip's strings unchanged, a red string to the router photo"
+      },
+      {
+        "at_s": 126.55,
+        "state": "T6 small in the office window from the apron, Slip still pinned"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 7.06,
+      "type": "morph-to-chart",
+      "what": "the board holds an Alaska map whose in-state strings pulse and border strings freeze",
+      "hold_s": 0.8
+    },
+    {
+      "t": 20.87,
+      "type": "scale-pullback",
+      "what": "22 control center domes light across a US map",
+      "hold_s": 0.8
+    },
+    {
+      "t": 26.12,
+      "type": "build-on",
+      "what": "a cutaway of Slip's folds soaking in the sky's data",
+      "hold_s": 0.6
+    },
+    {
+      "t": 71.12,
+      "type": "scale-pullback",
+      "what": "the tarp is yanked off and the camera dives through the photo down a long cable run to a night vault far away",
+      "hold_s": 0.8
+    },
+    {
+      "t": 87.77,
+      "type": "build-on",
+      "what": "a cross-section where a counter climbs to 1,000 over one 4.5 second sweep",
+      "hold_s": 0.8
+    },
+    {
+      "t": 106.45,
+      "type": "scale-pullback",
+      "what": "the camera rises out of one router photo to a field of 3,648 router outlines, nearly all dark",
+      "hold_s": 0.8
+    },
+    {
+      "t": 123.36,
+      "type": "scale-pullback",
+      "what": "the camera pulls out of the office window onto the split apron",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 1.5
+      },
+      {
+        "line": 16,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 18,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "at_s": 126.05,
+        "level": 0.12
+      },
+      {
+        "at_s": 127.05,
+        "level": 1.4
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 126.05,
+    "riser_at": 67.76,
+    "silence_at": 126.05,
+    "payoff_at": 126.55,
+    "button_pattern": "callback",
+    "interrupt_at": 71.12,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "The split apron",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "anchorage-apron",
+      "pov": "top-down-map",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the jet at x700 y1040",
+      "means": "Over the Ted Stevens Anchorage apron in low persimmon sun, a plate slams in front of a wide-eyed jet and a stamp grounds only its half while a Super Cub lifts off over the Chugach",
+      "ambient": "a jet idle whine, wind over the apron",
+      "hero": {
+        "name": "faced jet + plate + cone + Super Cub + Chugach + apron",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% jet and plate, 30% Cub and range, 30% apron"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-7.060"
+    },
+    {
+      "title": "The board",
+      "vo_line": 1,
+      "framing": "map-territory",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "evidence-board-wall",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the map at x540 y960",
+      "means": "A cork evidence board by an office window holds an Alaska map whose in-state strings pulse while the strings off its edge freeze, and a stopwatch sweeps past four hours",
+      "ambient": "an office hush, a wall clock",
+      "hero": {
+        "name": "cork board + Alaska map + pulsing strings + frozen strings + stopwatch + window",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "45% map, 30% board, 25% window and stopwatch"
+      },
+      "id": 2,
+      "start_s": 7.06,
+      "t": "7.060-18.200"
+    },
+    {
+      "title": "Twenty two centers",
+      "vo_line": 3,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "centers-map",
+      "pov": "orbital-aerial",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the domes at x540 y980",
+      "means": "A calendar flips back to NOV 10 and 22 control center domes light across a US map as a paper slip drops into each, then a fat arrow swings to NOV 13",
+      "ambient": "a soft radio crackle",
+      "hero": {
+        "name": "US map + 22 domes + paper slips + calendar + arrow",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% map and domes, 30% calendar, 25% arrow"
+      },
+      "id": 3,
+      "start_s": 18.2,
+      "t": "18.200-26.120"
+    },
+    {
+      "title": "It only suggests",
+      "vo_line": 4,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "slip-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "push-in",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "Slip at x540 y1000",
+      "means": "A cutaway of Slip's folds soaking in weather and schedule streams and drawing a dashed route it slides to a faceless controller's hand",
+      "ambient": "paper rustle, a data hum",
+      "hero": {
+        "name": "Slip cutaway + data streams + dashed route + controller hand",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% Slip, 30% streams, 20% hand"
+      },
+      "id": 4,
+      "start_s": 26.12,
+      "t": "26.120-33.080"
+    },
+    {
+      "title": "The denials",
+      "vo_line": 5,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "evidence-board-wall",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Slip at x540 y980",
+      "means": "Slip is pinned to the board's center under the spotlight, two quote plates clip on beside it with no check marks, and a copper coil drops beside the board on a CLAIM card",
+      "ambient": "an office hush, a wall clock",
+      "hero": {
+        "name": "Slip pinned + quote plates + Duffy figure + copper coil + CLAIM card",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% Slip and plates, 30% figure, 30% coil"
+      },
+      "id": 5,
+      "start_s": 33.08,
+      "t": "33.080-48.680"
+    },
+    {
+      "title": "The glass that never lowers",
+      "vo_line": 7,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "hearing-corridor",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the glass at x540 y960",
+      "means": "In a hearing-room corridor from a low angle, a faceless figure tagged MULLIN holds a big magnifying glass up to a photo of Slip and never lowers it, and two source tags swing under the denial quotes on the photo",
+      "ambient": "a corridor hum, far footsteps",
+      "hero": {
+        "name": "Mullin figure + magnifying glass + Slip photo + source tags + corridor",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% glass and photo, 30% figure, 25% corridor"
+      },
+      "id": 6,
+      "start_s": 48.68,
+      "t": "48.680-54.700"
+    },
+    {
+      "title": "Snapshot, fog and pie",
+      "vo_line": 8,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "board-sill-side",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the board at x500 y960",
+      "means": "Side-on to the board with the windowsill pie in the foreground, letters slide on, a snapshot of a dark dispatch desk drops into the lamp light, fog seeps in and spares it, and a faceless FAA hand reaches for the uncut pie and stops short",
+      "ambient": "wind at the window, paper",
+      "hero": {
+        "name": "board + snapshot + letters + fog + FAA hand + ASI pie + sill",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "40% board, 30% hand and pie, 30% fog"
+      },
+      "id": 7,
+      "start_s": 54.7,
+      "t": "54.700-67.760"
+    },
+    {
+      "title": "The raven tugs",
+      "vo_line": 10,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "ground",
+      "stage": "board-raven",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the Raven at x540 y1000",
+      "means": "From low against the board a Raven hops on, tugs the red string to Slip, finds its far end tied to the letter stack and turns to the twitching second tarp",
+      "ambient": "an office hush, a wing flap",
+      "hero": {
+        "name": "Raven + red string + letter stack + twitching tarp",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "45% Raven, 30% string, 25% tarp"
+      },
+      "id": 8,
+      "start_s": 67.76,
+      "t": "67.760-71.120"
+    },
+    {
+      "title": "The other new thing",
+      "vo_line": 11,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "el-dorado-vault",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "push-in",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the router at x540 y1000",
+      "means": "The second tarp is yanked off, the camera dives through the photo down a long cable run, the cork edge of the board photo kept at frame left, to a night El Dorado vault where a faceless new router with packing peanuts slides into a rack and a red string snaps from the photo edge to it",
+      "ambient": "a vault fan hum",
+      "hero": {
+        "name": "vault + router + peanuts + FRAGILE sticker + red string",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% router, 30% vault, 20% string"
+      },
+      "id": 9,
+      "start_s": 71.12,
+      "t": "71.120-79.700"
+    },
+    {
+      "title": "One thousand knocks",
+      "vo_line": 12,
+      "framing": "data-panel",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "vault-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "push-in",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the counter at x540 y980",
+      "means": "A cross-section of the vault, dull copper spliced into plain glass fiber, cyan pulses pouring only from the router to an older system's intake slot while a counter climbs to 1,000 over one 4.5 second stopwatch sweep",
+      "ambient": "a vault fan hum, a fast data buzz",
+      "hero": {
+        "name": "vault cross-section + copper splice + fiber + pulses + intake slot + counter + stopwatch",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "40% pulses and slot, 30% counter, 30% splice"
+      },
+      "id": 10,
+      "start_s": 79.7,
+      "t": "79.700-93.580"
+    },
+    {
+      "title": "Not yet final",
+      "vo_line": 14,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "high",
+      "stage": "evidence-board-wall",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "pull-out",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the center pin at x540 y980",
+      "means": "Back on the board from above, the copper coil's DUFFY SAID tag flutters off, a red string to the router photo settles beside Slip's unchanged red strings, a sealed FINAL FINDINGS envelope drops onto the center pin with NOT YET FINAL pencilled on its flap, and the camera cranes into the router photo",
+      "ambient": "an office hush",
+      "hero": {
+        "name": "board from above + sealed envelope + NOT YET FINAL tag + copper coil + router photo",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "45% board, 30% tag, 25% coil"
+      },
+      "id": 11,
+      "start_s": 93.58,
+      "t": "93.580-101.620"
+    },
+    {
+      "title": "Sixty nine of 3,648",
+      "vo_line": 16,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "router-field",
+      "pov": "orbital-aerial",
+      "layout": "grid-modular",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the field at x540 y1000",
+      "means": "The camera pulls back from one router to a field of 3,648 router outlines, nearly all dark, 69 glowing cyan",
+      "ambient": "a low wind",
+      "hero": {
+        "name": "router photo + 3,648 router outlines + 69 lit outlines",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "60% field, 25% lit, 15% photo"
+      },
+      "id": 12,
+      "start_s": 101.62,
+      "t": "101.620-108.480"
+    },
+    {
+      "title": "The dispatcher decides",
+      "vo_line": 17,
+      "framing": "two-up",
+      "scale": "close",
+      "height": "eye",
+      "stage": "seattle-desk",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the slip at x540 y1000",
+      "means": "A hard cut back onto the board: the camera pushes into the dispatch-desk snapshot beside the sealed envelope until it fills the frame and the desk lights up, where a sibling slip tagged FLYWAYS offers three routes and a faceless hand picks one",
+      "ambient": "a dispatch room murmur, keyboard",
+      "hero": {
+        "name": "board + snapshot frame + dispatch desk + FLYWAYS slip + dashed routes + dispatcher hand + fuel gauge",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% slip, 30% hand, 30% desk"
+      },
+      "id": 13,
+      "start_s": 108.48,
+      "t": "108.480-123.360"
+    },
+    {
+      "title": "Back to the apron",
+      "vo_line": 20,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "anchorage-apron",
+      "pov": "top-down-map",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "transition_in": "pull-out",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the jet at x700 y1040",
+      "means": "Out through the office window to the split apron, the Cub banking over the Chugach, the jet at its gate with the cone pulled and the stamp faded and no takeoff, a cable crew's lit junction box at the apron edge, Slip still pinned in the window",
+      "ambient": "a jet idle whine, wind over the apron",
+      "hero": {
+        "name": "split apron + Cub + jet + cone + office window + board",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% apron, 30% Cub and range, 30% window"
+      },
+      "id": 14,
+      "start_s": 123.36,
+      "t": "123.360-127.740"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A nationwide ground stop held every flight leaving Alaska, per an airport official.",
+      "phrase": "A nationwide ground stop",
+      "shows": "a wide-eyed faced jet airliner at a Ted Stevens Anchorage gate strains forward as a boxed plate slams down in front of its nose and a traffic cone slides under its nose wheel, a plate reads NOV 13 \u00b7 NATIONWIDE GROUND STOP",
+      "sfx": "slam",
+      "means": "nov 13 \u00b7 nationwide ground stop",
+      "rehook": "",
+      "draw": {
+        "subject": "a wide-eyed faced jet airliner at a Ted Stevens Anchorage gate",
+        "action": "strains forward as a boxed plate slams down in front of its nose and a traffic cone slides under its nose wheel",
+        "emotion": "shocked",
+        "annotation": "NOV 13 \u00b7 NATIONWIDE GROUND STOP"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a wide-eyed faced jet airliner at a Ted Stevens Anchorage gate strains forward as a boxed plate slams down in front of its nose and a traffic cone slides under its nose wheel, a plate reads NOV 13 \u00b7 NATIONWIDE GROUND STOP",
+        "reaction": "the jet winces",
+        "ambient": "a jet idle whine, wind over the apron"
+      },
+      "kick": true,
+      "t": "0.000-2.370",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.37,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.37
+      },
+      "offset": 2.37,
+      "vo": "A nationwide ground stop held every flight leaving Alaska, per an airport official.",
+      "phrase": "every flight leaving Alaska,",
+      "shows": "the wide-eyed jet leans forward against the cone as an apron beacon spins and the jet bridge swings in and latches, a plate reads TED STEVENS ANCHORAGE",
+      "sfx": "klaxon",
+      "means": "ted stevens anchorage",
+      "rehook": "",
+      "draw": {
+        "subject": "the wide-eyed jet",
+        "action": "leans forward against the cone as an apron beacon spins and the jet bridge swings in and latches",
+        "emotion": "anxious",
+        "annotation": "TED STEVENS ANCHORAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the wide-eyed jet leans forward against the cone as an apron beacon spins and the jet bridge swings in and latches, a plate reads TED STEVENS ANCHORAGE",
+        "reaction": "the jet strains",
+        "ambient": "a jet idle whine, wind over the apron"
+      },
+      "t": "2.370-5.570",
+      "key": 49
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 5.57,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 5.57
+      },
+      "offset": 5.57,
+      "vo": "A nationwide ground stop held every flight leaving Alaska, per an airport official.",
+      "phrase": "official.",
+      "shows": "a Super Cub bush plane on the other half of the apron blurs its prop and lifts off over the Chugach while a stamp lands across only the jet's half, a plate reads FLIGHTS OUT OF ALASKA GROUNDED \u00b7 PER AN AIRPORT OFFICIAL",
+      "sfx": "whirr",
+      "means": "flights out of alaska grounded \u00b7 per an airport official",
+      "rehook": "",
+      "draw": {
+        "subject": "a Super Cub bush plane on the other half of the apron",
+        "action": "blurs its prop and lifts off over the Chugach while a stamp lands across only the jet's half",
+        "emotion": "carefree",
+        "annotation": "FLIGHTS OUT OF ALASKA GROUNDED \u00b7 PER AN AIRPORT OFFICIAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a Super Cub bush plane on the other half of the apron blurs its prop and lifts off over the Chugach while a stamp lands across only the jet's half, a plate reads FLIGHTS OUT OF ALASKA GROUNDED \u00b7 PER AN AIRPORT OFFICIAL",
+        "reaction": "the Cub climbs",
+        "ambient": "a jet idle whine, wind over the apron"
+      },
+      "t": "5.570-7.060",
+      "key": 2
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 7.06,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Inside Alaska, flights kept flying, Alaska Airlines said.",
+      "phrase": "Inside Alaska, flights kept",
+      "shows": "a cork evidence board beside an office window onto the Chugach holds a pinned Alaska map whose in-state strings to Bethel, Nome and Juneau pulse while the strings off the map's edge freeze stiff, a plate reads IN STATE FLIGHTS NOT IMPACTED \u00b7 PER ALASKA AIRLINES",
+      "sfx": "pin",
+      "means": "in state flights not impacted \u00b7 per alaska airlines",
+      "rehook": "",
+      "draw": {
+        "subject": "a cork evidence board beside an office window onto the Chugach",
+        "action": "holds a pinned Alaska map whose in-state strings to Bethel, Nome and Juneau pulse while the strings off the map's edge freeze stiff",
+        "emotion": "steady",
+        "annotation": "IN STATE FLIGHTS NOT IMPACTED \u00b7 PER ALASKA AIRLINES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a cork evidence board beside an office window onto the Chugach holds a pinned Alaska map whose in-state strings to Bethel, Nome and Juneau pulse while the strings off the map's edge freeze stiff, a plate reads IN STATE FLIGHTS NOT IMPACTED \u00b7 PER ALASKA AIRLINES",
+        "reaction": "the in-state strings pulse",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "7.060-10.670",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 10.67,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.61
+      },
+      "offset": 3.61,
+      "vo": "Inside Alaska, flights kept flying, Alaska Airlines said.",
+      "phrase": "said.",
+      "shows": "a brass stopwatch pinned on the board sweeps past four hour marks and the frozen strings off the map's edge thaw and start to pulse again, a plate reads MORE THAN 4 HOURS \u00b7 2ND SINCE 9/11",
+      "sfx": "tick",
+      "means": "more than 4 hours \u00b7 2nd since 9/11",
+      "rehook": "",
+      "draw": {
+        "subject": "a brass stopwatch pinned on the board",
+        "action": "sweeps past four hour marks and the frozen strings off the map's edge thaw and start to pulse again",
+        "emotion": "tense",
+        "annotation": "MORE THAN 4 HOURS \u00b7 2ND SINCE 9/11"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5",
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a brass stopwatch pinned on the board sweeps past four hour marks and the frozen strings off the map's edge thaw and start to pulse again, a plate reads MORE THAN 4 HOURS \u00b7 2ND SINCE 9/11",
+        "reaction": "the strings thaw",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "10.670-12.600",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 12.6,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Two new things were going in that week. One was A I.",
+      "phrase": "Two new things were",
+      "shows": "two lumpy tarps pinned under the map, each tagged NEW swell and shake as something under each one pushes against the cork, a plate reads TWO NEW THINGS THAT WEEK",
+      "sfx": "rustle",
+      "means": "two new things that week",
+      "rehook": "",
+      "draw": {
+        "subject": "two lumpy tarps pinned under the map, each tagged NEW",
+        "action": "swell and shake as something under each one pushes against the cork",
+        "emotion": "curious",
+        "annotation": "TWO NEW THINGS THAT WEEK"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7",
+        "c18"
+      ],
+      "choreo": {
+        "primary": "two lumpy tarps pinned under the map, each tagged NEW swell and shake as something under each one pushes against the cork, a plate reads TWO NEW THINGS THAT WEEK",
+        "reaction": "the tarps ripple",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "12.600-16.610",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 16.61,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 4.01
+      },
+      "offset": 4.01,
+      "vo": "Two new things were going in that week. One was A I.",
+      "phrase": "A I.",
+      "shows": "a desk lamp spotlight swings across the board and lands on the left tarp, where a small AI tag dangles, and a cork header card reading IS IT THE AI? pins above it, a plate reads ONE OF THEM WAS AI",
+      "sfx": "swish",
+      "means": "one of them was ai",
+      "rehook": "",
+      "draw": {
+        "subject": "a desk lamp spotlight",
+        "action": "swings across the board and lands on the left tarp, where a small AI tag dangles, and a cork header card reading IS IT THE AI? pins above it",
+        "emotion": "suspicious",
+        "annotation": "ONE OF THEM WAS AI"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a desk lamp spotlight swings across the board and lands on the left tarp, where a small AI tag dangles, and a cork header card reading IS IT THE AI? pins above it, a plate reads ONE OF THEM WAS AI",
+        "reaction": "the tag swings",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "16.610-18.200",
+      "key": 6
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 18.2,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Three days earlier, the F A A expanded SMART, an A I tool, to all twenty two en route centers.",
+      "phrase": "Three days earlier, the",
+      "shows": "a desk calendar flips back three pages to NOV 10 as the left tarp slides off a map of control center domes, a plate reads NOV 10 \u00b7 ALL 22 CENTERS",
+      "sfx": "flip",
+      "means": "nov 10 \u00b7 all 22 centers",
+      "rehook": "",
+      "draw": {
+        "subject": "a desk calendar",
+        "action": "flips back three pages to NOV 10 as the left tarp slides off a map of control center domes",
+        "emotion": "brisk",
+        "annotation": "NOV 10 \u00b7 ALL 22 CENTERS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a desk calendar flips back three pages to NOV 10 as the left tarp slides off a map of control center domes, a plate reads NOV 10 \u00b7 ALL 22 CENTERS",
+        "reaction": "the pages flip",
+        "ambient": "a soft radio crackle"
+      },
+      "t": "18.200-20.870",
+      "key": 7
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 20.87,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.67
+      },
+      "offset": 2.67,
+      "vo": "Three days earlier, the F A A expanded SMART, an A I tool, to all twenty two en route centers.",
+      "phrase": "SMART, an A I",
+      "shows": "22 control center domes on a US map light up one by one as a little paper slip drops into each, a plate reads SMART \u00b7 BUILT BY AIR SPACE INTELLIGENCE",
+      "sfx": "chime",
+      "means": "smart \u00b7 built by air space intelligence",
+      "rehook": "",
+      "draw": {
+        "subject": "22 control center domes on a US map",
+        "action": "light up one by one as a little paper slip drops into each",
+        "emotion": "busy",
+        "annotation": "SMART \u00b7 BUILT BY AIR SPACE INTELLIGENCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c39",
+        "c11"
+      ],
+      "choreo": {
+        "primary": "22 control center domes on a US map light up one by one as a little paper slip drops into each, a plate reads SMART \u00b7 BUILT BY AIR SPACE INTELLIGENCE",
+        "reaction": "the domes light",
+        "ambient": "a soft radio crackle"
+      },
+      "t": "20.870-24.890",
+      "key": 8
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 24.89,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 6.69
+      },
+      "offset": 6.69,
+      "vo": "Three days earlier, the F A A expanded SMART, an A I tool, to all twenty two en route centers.",
+      "phrase": "centers.",
+      "shows": "a fat persimmon arrow swings from the NOV 10 page across to the NOV 13 page, a plate reads 3 DAYS LATER \u00b7 NO OFFICIAL LINK",
+      "sfx": "whoosh",
+      "means": "3 days later \u00b7 no official link",
+      "rehook": "",
+      "draw": {
+        "subject": "a fat persimmon arrow",
+        "action": "swings from the NOV 10 page across to the NOV 13 page",
+        "emotion": "pointed",
+        "annotation": "3 DAYS LATER \u00b7 NO OFFICIAL LINK"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "a fat persimmon arrow swings from the NOV 10 page across to the NOV 13 page, a plate reads 3 DAYS LATER \u00b7 NO OFFICIAL LINK",
+        "reaction": "the arrow lands",
+        "ambient": "a soft radio crackle"
+      },
+      "t": "24.890-26.120",
+      "key": 9
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 26.12,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It predicts where the sky jams. It only suggests. People decide.",
+      "phrase": "It predicts where the",
+      "shows": "Slip, a chubby folded paper route card with a worried face, no hands and a dashed pencil route on its belly soaks in streams of weather and schedule icons through a cutaway of its folds and draws a dashed route, a plate reads AI THAT PREDICTS CONGESTION",
+      "sfx": "bubble",
+      "means": "ai that predicts congestion",
+      "rehook": "",
+      "draw": {
+        "subject": "Slip, a chubby folded paper route card with a worried face, no hands and a dashed pencil route on its belly",
+        "action": "soaks in streams of weather and schedule icons through a cutaway of its folds and draws a dashed route",
+        "emotion": "focused",
+        "annotation": "AI THAT PREDICTS CONGESTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "Slip, a chubby folded paper route card with a worried face, no hands and a dashed pencil route on its belly soaks in streams of weather and schedule icons through a cutaway of its folds and draws a dashed route, a plate reads AI THAT PREDICTS CONGESTION",
+        "reaction": "the route draws",
+        "ambient": "paper rustle, a data hum"
+      },
+      "t": "26.120-29.450",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 29.45,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.33
+      },
+      "offset": 3.33,
+      "vo": "It predicts where the sky jams. It only suggests. People decide.",
+      "phrase": "suggests. People decide.",
+      "shows": "Slip slides its route across a desk to a faceless controller's hand, which picks it up and decides, a plate reads IT ADVISES \u00b7 PEOPLE DECIDE \u00b7 PER THE FAA",
+      "sfx": "slide",
+      "means": "it advises \u00b7 people decide \u00b7 per the faa",
+      "rehook": "",
+      "draw": {
+        "subject": "Slip",
+        "action": "slides its route across a desk to a faceless controller's hand, which picks it up and decides",
+        "emotion": "humble",
+        "annotation": "IT ADVISES \u00b7 PEOPLE DECIDE \u00b7 PER THE FAA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "Slip slides its route across a desk to a faceless controller's hand, which picks it up and decides, a plate reads IT ADVISES \u00b7 PEOPLE DECIDE \u00b7 PER THE FAA",
+        "reaction": "the hand picks it up",
+        "ambient": "paper rustle, a data hum"
+      },
+      "t": "29.450-33.080",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 33.08,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Its maker, Air Space Intelligence, said the stop wasn't a result of SMART.",
+      "phrase": "Its maker, Air Space",
+      "shows": "Slip, back on the board is pinned to the board's center under the IS IT THE AI? header card and the spotlight, with red question strings and a maker's tag swinging from its pin, while the second tarp twitches for the first time, a plate reads MADE BY AIR SPACE INTELLIGENCE",
+      "sfx": "pin",
+      "means": "made by air space intelligence",
+      "rehook": "rehook: Slip is pinned under red strings and the second tarp twitches",
+      "draw": {
+        "subject": "Slip, back on the board",
+        "action": "is pinned to the board's center under the IS IT THE AI? header card and the spotlight, with red question strings and a maker's tag swinging from its pin, while the second tarp twitches for the first time",
+        "emotion": "scared",
+        "annotation": "MADE BY AIR SPACE INTELLIGENCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "Slip, back on the board is pinned to the board's center under the IS IT THE AI? header card and the spotlight, with red question strings and a maker's tag swinging from its pin, while the second tarp twitches for the first time, a plate reads MADE BY AIR SPACE INTELLIGENCE",
+        "reaction": "the second tarp twitches",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "33.080-37.690",
+      "key": 12
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 37.69,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.61
+      },
+      "offset": 4.61,
+      "vo": "Its maker, Air Space Intelligence, said the stop wasn't a result of SMART.",
+      "phrase": "result of SMART.",
+      "shows": "a quote plate slams onto the board beside Slip and bounces once, no check mark on it, a plate reads \"NOT BASED ON OR A RESULT OF THE SMART SYSTEM\" \u00b7 PER ASI",
+      "sfx": "clip",
+      "means": "\"not based on or a result of the smart system\" \u00b7 per asi",
+      "rehook": "",
+      "draw": {
+        "subject": "a quote plate",
+        "action": "slams onto the board beside Slip and bounces once, no check mark on it",
+        "emotion": "plain",
+        "annotation": "\"NOT BASED ON OR A RESULT OF THE SMART SYSTEM\" \u00b7 PER ASI"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a quote plate slams onto the board beside Slip and bounces once, no check mark on it, a plate reads \"NOT BASED ON OR A RESULT OF THE SMART SYSTEM\" \u00b7 PER ASI",
+        "reaction": "the plate clips on",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "37.690-39.300",
+      "key": 13
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 39.3,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Transportation Secretary Sean Duffy called SMART completely disconnected, and blamed nineteen eighties little copper lines.",
+      "phrase": "Transportation Secretary Sean Duffy",
+      "shows": "a faceless figure tagged SEC. SEAN DUFFY walks in from the right carrying a second quote plate, a plate reads TRANSPORTATION SECRETARY SEAN DUFFY",
+      "sfx": "step",
+      "means": "transportation secretary sean duffy",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless figure tagged SEC. SEAN DUFFY",
+        "action": "walks in from the right carrying a second quote plate",
+        "emotion": "firm",
+        "annotation": "TRANSPORTATION SECRETARY SEAN DUFFY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "a faceless figure tagged SEC. SEAN DUFFY walks in from the right carrying a second quote plate, a plate reads TRANSPORTATION SECRETARY SEAN DUFFY",
+        "reaction": "the figure steps in",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "39.300-43.350",
+      "key": 14
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 43.35,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.05
+      },
+      "offset": 4.05,
+      "vo": "Transportation Secretary Sean Duffy called SMART completely disconnected, and blamed nineteen eighties little copper lines.",
+      "phrase": "disconnected, and blamed nineteen",
+      "shows": "the second quote plate slams onto the board beside the first and bounces, no check mark on it, a plate reads \"COMPLETELY DISCONNECTED\" \u00b7 DUFFY",
+      "sfx": "slam",
+      "means": "\"completely disconnected\" \u00b7 duffy",
+      "rehook": "",
+      "draw": {
+        "subject": "the second quote plate",
+        "action": "slams onto the board beside the first and bounces, no check mark on it",
+        "emotion": "firm",
+        "annotation": "\"COMPLETELY DISCONNECTED\" \u00b7 DUFFY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the second quote plate slams onto the board beside the first and bounces, no check mark on it, a plate reads \"COMPLETELY DISCONNECTED\" \u00b7 DUFFY",
+        "reaction": "the plate bounces",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "43.350-46.630",
+      "key": 42
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 46.63,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.33
+      },
+      "offset": 7.33,
+      "vo": "Transportation Secretary Sean Duffy called SMART completely disconnected, and blamed nineteen eighties little copper lines.",
+      "phrase": "copper lines.",
+      "shows": "a dull coil of old copper wire is dropped beside the board by the Duffy figure onto a CLAIM card, its oversized DUFFY SAID tag sliding down the wire, a plate reads \"1980S LITTLE COPPER LINES\" \u00b7 DUFFY SAID",
+      "sfx": "thunk",
+      "means": "\"1980s little copper lines\" \u00b7 duffy said",
+      "rehook": "",
+      "draw": {
+        "subject": "a dull coil of old copper wire",
+        "action": "is dropped beside the board by the Duffy figure onto a CLAIM card, its oversized DUFFY SAID tag sliding down the wire",
+        "emotion": "sheepish",
+        "annotation": "\"1980S LITTLE COPPER LINES\" \u00b7 DUFFY SAID"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a dull coil of old copper wire is dropped beside the board by the Duffy figure onto a CLAIM card, its oversized DUFFY SAID tag sliding down the wire, a plate reads \"1980S LITTLE COPPER LINES\" \u00b7 DUFFY SAID",
+        "reaction": "the tag slides",
+        "ambient": "an office hush, a wall clock"
+      },
+      "t": "46.630-48.680",
+      "key": 15
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 48.68,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Homeland Security Secretary Markwayne Mullin said you can't rule out anything at this point.",
+      "phrase": "Homeland Security Secretary Markwayne",
+      "shows": "a faceless figure tagged MULLIN in a hearing-room corridor holds a big magnifying glass up to a photo of the two denial cards and a question mark and never lowers it, a plate reads \"CAN'T RULE OUT ANYTHING AT THIS POINT\" \u00b7 MULLIN",
+      "sfx": "step",
+      "means": "\"can't rule out anything at this point\" \u00b7 mullin",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless figure tagged MULLIN in a hearing-room corridor",
+        "action": "holds a big magnifying glass up to a photo of the two denial cards and a question mark and never lowers it",
+        "emotion": "wary",
+        "annotation": "\"CAN'T RULE OUT ANYTHING AT THIS POINT\" \u00b7 MULLIN"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "a faceless figure tagged MULLIN in a hearing-room corridor holds a big magnifying glass up to a photo of the two denial cards and a question mark and never lowers it, a plate reads \"CAN'T RULE OUT ANYTHING AT THIS POINT\" \u00b7 MULLIN",
+        "reaction": "the glass hovers",
+        "ambient": "a corridor hum, far footsteps"
+      },
+      "t": "48.680-52.670",
+      "key": 16
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 52.67,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.99
+      },
+      "offset": 3.99,
+      "vo": "Homeland Security Secretary Markwayne Mullin said you can't rule out anything at this point.",
+      "phrase": "anything at this point.",
+      "shows": "two source tags on the photo's corner swing down under the two denial quotes, one tagged THE MAKER and one tagged DUFFY, a plate reads THE MAKER \u00b7 DUFFY",
+      "sfx": "tap",
+      "means": "the maker \u00b7 duffy",
+      "rehook": "",
+      "draw": {
+        "subject": "two source tags on the photo's corner",
+        "action": "swing down under the two denial quotes, one tagged THE MAKER and one tagged DUFFY",
+        "emotion": "pointed",
+        "annotation": "THE MAKER \u00b7 DUFFY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13",
+        "c14"
+      ],
+      "choreo": {
+        "primary": "two source tags on the photo's corner swing down under the two denial quotes, one tagged THE MAKER and one tagged DUFFY, a plate reads THE MAKER \u00b7 DUFFY",
+        "reaction": "the tags swing",
+        "ambient": "a corridor hum, far footsteps"
+      },
+      "t": "52.670-54.700",
+      "key": 17
+    },
+    {
+      "id": 20,
+      "shot": 7,
+      "at_s": 54.7,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In October, over two dozen lawmakers asked to pause SMART, citing a lack of transparency.",
+      "phrase": "In October, over two",
+      "shows": "a stack of letters slides onto the board, a wisp of gray fog curling at its edge, a plate reads OCT \u00b7 MORE THAN 2 DOZEN LAWMAKERS ASKED FOR A PAUSE",
+      "sfx": "page",
+      "means": "oct \u00b7 more than 2 dozen lawmakers asked for a pause",
+      "rehook": "",
+      "draw": {
+        "subject": "a stack of letters",
+        "action": "slides onto the board, a wisp of gray fog curling at its edge",
+        "emotion": "uneasy",
+        "annotation": "OCT \u00b7 MORE THAN 2 DOZEN LAWMAKERS ASKED FOR A PAUSE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a stack of letters slides onto the board, a wisp of gray fog curling at its edge, a plate reads OCT \u00b7 MORE THAN 2 DOZEN LAWMAKERS ASKED FOR A PAUSE",
+        "reaction": "the wisp curls",
+        "ambient": "wind at the window, paper"
+      },
+      "t": "54.700-57.630",
+      "key": 19
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 57.63,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "In October, over two dozen lawmakers asked to pause SMART, citing a lack of transparency.",
+      "phrase": "asked to pause SMART,",
+      "shows": "a small snapshot drops into the desk lamp's light at the center of the board, showing a shadowed dispatch desk where a hand twitches over a screen, a plate reads A DISPATCH DESK NEAR SEATTLE",
+      "sfx": "flutter",
+      "means": "a dispatch desk near seattle",
+      "rehook": "",
+      "draw": {
+        "subject": "a small snapshot",
+        "action": "drops into the desk lamp's light at the center of the board, showing a shadowed dispatch desk where a hand twitches over a screen",
+        "emotion": "quiet",
+        "annotation": "A DISPATCH DESK NEAR SEATTLE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "a small snapshot drops into the desk lamp's light at the center of the board, showing a shadowed dispatch desk where a hand twitches over a screen, a plate reads A DISPATCH DESK NEAR SEATTLE",
+        "reaction": "the hand twitches",
+        "ambient": "wind at the window, paper"
+      },
+      "t": "57.630-59.890",
+      "key": 18
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 59.89,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 5.19
+      },
+      "offset": 5.19,
+      "vo": "In October, over two dozen lawmakers asked to pause SMART, citing a lack of transparency.",
+      "phrase": "citing a lack of",
+      "shows": "a red string snaps from the stack of letters to Slip and twangs, a plate reads THE LETTER \u00b7 OCTOBER 9TH",
+      "sfx": "snap",
+      "means": "the letter \u00b7 october 9th",
+      "rehook": "",
+      "draw": {
+        "subject": "a red string",
+        "action": "snaps from the stack of letters to Slip and twangs",
+        "emotion": "uneasy",
+        "annotation": "THE LETTER \u00b7 OCTOBER 9TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a red string snaps from the stack of letters to Slip and twangs, a plate reads THE LETTER \u00b7 OCTOBER 9TH",
+        "reaction": "the string twangs",
+        "ambient": "wind at the window, paper"
+      },
+      "t": "59.890-60.930",
+      "key": 43
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 60.93,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 6.23
+      },
+      "offset": 6.23,
+      "vo": "In October, over two dozen lawmakers asked to pause SMART, citing a lack of transparency.",
+      "phrase": "transparency.",
+      "shows": "the fog seeps in from the window edge and rolls across half the board, sparing the snapshot, a plate reads \"EGREGIOUS LACK OF TRANSPARENCY\"",
+      "sfx": "hush",
+      "means": "\"egregious lack of transparency\"",
+      "rehook": "",
+      "draw": {
+        "subject": "the fog",
+        "action": "seeps in from the window edge and rolls across half the board, sparing the snapshot",
+        "emotion": "uneasy",
+        "annotation": "\"EGREGIOUS LACK OF TRANSPARENCY\""
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "the fog seeps in from the window edge and rolls across half the board, sparing the snapshot, a plate reads \"EGREGIOUS LACK OF TRANSPARENCY\"",
+        "reaction": "the fog rolls",
+        "ambient": "wind at the window, paper"
+      },
+      "t": "60.930-62.680",
+      "key": 20
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 62.68,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The F A A also seeks a stake in the maker, with no deal confirmed.",
+      "phrase": "The F A A",
+      "shows": "a faceless hand tagged FAA slides in through the window and reaches for an uncut pie tagged ASI on the sill, a plate reads FAA SEEKS A STAKE IN ASI",
+      "sfx": "creak",
+      "means": "faa seeks a stake in asi",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless hand tagged FAA",
+        "action": "slides in through the window and reaches for an uncut pie tagged ASI on the sill",
+        "emotion": "tempted",
+        "annotation": "FAA SEEKS A STAKE IN ASI"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c42"
+      ],
+      "choreo": {
+        "primary": "a faceless hand tagged FAA slides in through the window and reaches for an uncut pie tagged ASI on the sill, a plate reads FAA SEEKS A STAKE IN ASI",
+        "reaction": "the hand reaches",
+        "ambient": "wind at the window, paper"
+      },
+      "t": "62.680-66.030",
+      "key": 21
+    },
+    {
+      "id": 25,
+      "shot": 7,
+      "at_s": 66.03,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.35
+      },
+      "offset": 3.35,
+      "vo": "The F A A also seeks a stake in the maker, with no deal confirmed.",
+      "phrase": "confirmed.",
+      "shows": "the pie stays whole as the hand stops short and its tin rattles, a plate reads NO DEAL CONFIRMED",
+      "sfx": "clink",
+      "means": "no deal confirmed",
+      "rehook": "",
+      "draw": {
+        "subject": "the pie",
+        "action": "stays whole as the hand stops short and its tin rattles",
+        "emotion": "plain",
+        "annotation": "NO DEAL CONFIRMED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c42"
+      ],
+      "choreo": {
+        "primary": "the pie stays whole as the hand stops short and its tin rattles, a plate reads NO DEAL CONFIRMED",
+        "reaction": "the tin rattles",
+        "ambient": "wind at the window, paper"
+      },
+      "t": "66.030-67.760",
+      "key": 22
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 67.76,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "No official has linked SMART to the outage.",
+      "phrase": "No official has linked",
+      "shows": "a Raven hops onto the board, tugs the red string to Slip, finds its far end tied to the letter stack and turns its head to the twitching second tarp, a plate reads NO OFFICIAL HAS LINKED SMART TO THE OUTAGE",
+      "sfx": "caw",
+      "means": "no official has linked smart to the outage",
+      "rehook": "rehook: a raven tugs the string and turns to the twitching tarp",
+      "draw": {
+        "subject": "a Raven",
+        "action": "hops onto the board, tugs the red string to Slip, finds its far end tied to the letter stack and turns its head to the twitching second tarp",
+        "emotion": "curious",
+        "annotation": "NO OFFICIAL HAS LINKED SMART TO THE OUTAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "a Raven hops onto the board, tugs the red string to Slip, finds its far end tied to the letter stack and turns its head to the twitching second tarp, a plate reads NO OFFICIAL HAS LINKED SMART TO THE OUTAGE",
+        "reaction": "the Raven tugs",
+        "ambient": "an office hush, a wing flap"
+      },
+      "t": "67.760-71.120",
+      "key": 23
+    },
+    {
+      "id": 27,
+      "shot": 9,
+      "at_s": 71.12,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Per C B S, the F A A and contractor L3Harris traced it to the other new thing, a router at El Dorado, Arkansas.",
+      "phrase": "Per C B S,",
+      "shows": "the second tarp is yanked off the board and the camera dives through the photo under it down a long cable run toward a night vault, a plate reads PER CBS \u00b7 CITING THE FAA AND L3HARRIS",
+      "sfx": "tear",
+      "means": "per cbs \u00b7 citing the faa and l3harris",
+      "rehook": "",
+      "draw": {
+        "subject": "the second tarp",
+        "action": "is yanked off the board and the camera dives through the photo under it down a long cable run toward a night vault",
+        "emotion": "startled",
+        "annotation": "PER CBS \u00b7 CITING THE FAA AND L3HARRIS"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "the second tarp is yanked off the board and the camera dives through the photo under it down a long cable run toward a night vault, a plate reads PER CBS \u00b7 CITING THE FAA AND L3HARRIS",
+        "reaction": "the tarp flies off",
+        "ambient": "a vault fan hum"
+      },
+      "kick": true,
+      "t": "71.120-73.650",
+      "key": 24
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 73.65,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.53
+      },
+      "offset": 2.53,
+      "vo": "Per C B S, the F A A and contractor L3Harris traced it to the other new thing, a router at El Dorado, Arkansas.",
+      "phrase": "L3Harris traced it to",
+      "shows": "the yanked tarp lands crumpled on the vault floor as the lamp swings, a plate reads THE OTHER NEW THING",
+      "sfx": "thud",
+      "means": "the other new thing",
+      "rehook": "",
+      "draw": {
+        "subject": "the yanked tarp",
+        "action": "lands crumpled on the vault floor as the lamp swings",
+        "emotion": "startled",
+        "annotation": "THE OTHER NEW THING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "the yanked tarp lands crumpled on the vault floor as the lamp swings, a plate reads THE OTHER NEW THING",
+        "reaction": "the lamp swings",
+        "ambient": "a vault fan hum"
+      },
+      "t": "73.650-77.170",
+      "key": 44
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 77.17,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.05
+      },
+      "offset": 6.05,
+      "vo": "Per C B S, the F A A and contractor L3Harris traced it to the other new thing, a router at El Dorado, Arkansas.",
+      "phrase": "router at El Dorado,",
+      "shows": "a faceless new router with packing peanuts and a FRAGILE sticker slides into a rack, its LEDs flickering, a plate reads A NEW ROUTER \u00b7 EL DORADO, ARKANSAS",
+      "sfx": "clank",
+      "means": "a new router \u00b7 el dorado, arkansas",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless new router with packing peanuts and a FRAGILE sticker",
+        "action": "slides into a rack, its LEDs flickering",
+        "emotion": "jittery",
+        "annotation": "A NEW ROUTER \u00b7 EL DORADO, ARKANSAS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a faceless new router with packing peanuts and a FRAGILE sticker slides into a rack, its LEDs flickering, a plate reads A NEW ROUTER \u00b7 EL DORADO, ARKANSAS",
+        "reaction": "the LEDs flicker",
+        "ambient": "a vault fan hum"
+      },
+      "t": "77.170-78.590",
+      "key": 25
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 78.59,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 7.47
+      },
+      "offset": 7.47,
+      "vo": "Per C B S, the F A A and contractor L3Harris traced it to the other new thing, a router at El Dorado, Arkansas.",
+      "phrase": "Arkansas.",
+      "shows": "a red string snaps from the board photo's edge down to the router and twangs, a plate reads WHERE THE TRACE POINTS",
+      "sfx": "snap",
+      "means": "where the trace points",
+      "rehook": "",
+      "draw": {
+        "subject": "a red string",
+        "action": "snaps from the board photo's edge down to the router and twangs",
+        "emotion": "sharp",
+        "annotation": "WHERE THE TRACE POINTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a red string snaps from the board photo's edge down to the router and twangs, a plate reads WHERE THE TRACE POINTS",
+        "reaction": "the string twangs",
+        "ambient": "a vault fan hum"
+      },
+      "t": "78.590-79.700",
+      "key": 26
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 79.7,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Duffy said crews were mid cutover, swapping copper for fiber.",
+      "phrase": "Duffy said crews were",
+      "shows": "a dull copper line in the vault is cut and snapped into a plain glass fiber strand by faceless gloved hands, a plate reads COPPER TO FIBER UPGRADE \u00b7 DUFFY SAID",
+      "sfx": "scrape",
+      "means": "copper to fiber upgrade \u00b7 duffy said",
+      "rehook": "",
+      "draw": {
+        "subject": "a dull copper line in the vault",
+        "action": "is cut and snapped into a plain glass fiber strand by faceless gloved hands",
+        "emotion": "busy",
+        "annotation": "COPPER TO FIBER UPGRADE \u00b7 DUFFY SAID"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a dull copper line in the vault is cut and snapped into a plain glass fiber strand by faceless gloved hands, a plate reads COPPER TO FIBER UPGRADE \u00b7 DUFFY SAID",
+        "reaction": "the splice closes",
+        "ambient": "a vault fan hum, a fast data buzz"
+      },
+      "t": "79.700-83.630",
+      "key": 27
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 83.63,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.93
+      },
+      "offset": 3.93,
+      "vo": "Duffy said crews were mid cutover, swapping copper for fiber.",
+      "phrase": "fiber.",
+      "shows": "sparks burst from the splice as the copper end drops away, a plate reads DUFFY'S SATURDAY ACCOUNT \u00b7 PER NBC",
+      "sfx": "sizzle",
+      "means": "duffy's saturday account \u00b7 per nbc",
+      "rehook": "",
+      "draw": {
+        "subject": "sparks",
+        "action": "burst from the splice as the copper end drops away",
+        "emotion": "busy",
+        "annotation": "DUFFY'S SATURDAY ACCOUNT \u00b7 PER NBC"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "sparks burst from the splice as the copper end drops away, a plate reads DUFFY'S SATURDAY ACCOUNT \u00b7 PER NBC",
+        "reaction": "the sparks burst",
+        "ambient": "a vault fan hum, a fast data buzz"
+      },
+      "t": "83.630-84.860",
+      "key": 45
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 84.86,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Per the F A A, devices tried to connect a thousand times every four to five seconds. That's this long.",
+      "phrase": "Per the F A",
+      "shows": "a flood of cyan pulses pours out of the router down a cable toward an older system's single intake slot, a plate reads PER THE FAA",
+      "sfx": "buzz",
+      "means": "per the faa",
+      "rehook": "",
+      "draw": {
+        "subject": "a flood of cyan pulses",
+        "action": "pours out of the router down a cable toward an older system's single intake slot",
+        "emotion": "frantic",
+        "annotation": "PER THE FAA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a flood of cyan pulses pours out of the router down a cable toward an older system's single intake slot, a plate reads PER THE FAA",
+        "reaction": "the pulses pour",
+        "ambient": "a vault fan hum, a fast data buzz"
+      },
+      "t": "84.860-87.770",
+      "key": 28
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 87.77,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.91
+      },
+      "offset": 2.91,
+      "vo": "Per the F A A, devices tried to connect a thousand times every four to five seconds. That's this long.",
+      "phrase": "thousand times every four",
+      "shows": "the stopwatch clicks and its hand starts one sweep as the counter begins to climb, a plate reads 4 TO 5 SECONDS \u00b7 COUNT IT",
+      "sfx": "click",
+      "means": "4 to 5 seconds \u00b7 count it",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch",
+        "action": "clicks and its hand starts one sweep as the counter begins to climb",
+        "emotion": "tense",
+        "annotation": "4 TO 5 SECONDS \u00b7 COUNT IT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "the stopwatch clicks and its hand starts one sweep as the counter begins to climb, a plate reads 4 TO 5 SECONDS \u00b7 COUNT IT",
+        "reaction": "the hand starts",
+        "ambient": "a vault fan hum, a fast data buzz"
+      },
+      "t": "87.770-89.810",
+      "key": 46
+    },
+    {
+      "id": 35,
+      "shot": 10,
+      "at_s": 89.81,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.95
+      },
+      "offset": 4.95,
+      "vo": "Per the F A A, devices tried to connect a thousand times every four to five seconds. That's this long.",
+      "phrase": "five seconds. That's this",
+      "shows": "a counter beside a stopwatch climbs past 500 mid-sweep as the knocks speed up, a plate reads 1,000 TRIES EVERY 4 TO 5 SECONDS",
+      "sfx": "knock",
+      "means": "1,000 tries every 4 to 5 seconds",
+      "rehook": "rehook: a counter races to 1,000 over one stopwatch sweep",
+      "draw": {
+        "subject": "a counter beside a stopwatch",
+        "action": "climbs past 500 mid-sweep as the knocks speed up",
+        "emotion": "frantic",
+        "annotation": "1,000 TRIES EVERY 4 TO 5 SECONDS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a counter beside a stopwatch climbs past 500 mid-sweep as the knocks speed up, a plate reads 1,000 TRIES EVERY 4 TO 5 SECONDS",
+        "reaction": "the counter climbs",
+        "ambient": "a vault fan hum, a fast data buzz"
+      },
+      "t": "89.810-91.930",
+      "key": 29
+    },
+    {
+      "id": 36,
+      "shot": 10,
+      "at_s": 91.93,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 7.07
+      },
+      "offset": 7.07,
+      "vo": "Per the F A A, devices tried to connect a thousand times every four to five seconds. That's this long.",
+      "phrase": "long.",
+      "shows": "the counter lands on 1,000 as the sweep completes, and the older system's intake slot jams and its door bulges, a plate reads 1,000 TRIES EVERY 4 TO 5 SECONDS \u00b7 PER THE FAA",
+      "sfx": "clunk",
+      "means": "1,000 tries every 4 to 5 seconds \u00b7 per the faa",
+      "rehook": "",
+      "draw": {
+        "subject": "the counter",
+        "action": "lands on 1,000 as the sweep completes, and the older system's intake slot jams and its door bulges",
+        "emotion": "overwhelmed",
+        "annotation": "1,000 TRIES EVERY 4 TO 5 SECONDS \u00b7 PER THE FAA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "the counter lands on 1,000 as the sweep completes, and the older system's intake slot jams and its door bulges, a plate reads 1,000 TRIES EVERY 4 TO 5 SECONDS \u00b7 PER THE FAA",
+        "reaction": "the door bulges",
+        "ambient": "a vault fan hum, a fast data buzz"
+      },
+      "t": "91.930-93.580",
+      "key": 30
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 93.58,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Copper got blamed. The trace points at its replacement.",
+      "phrase": "Copper got blamed. The",
+      "shows": "the camera pulls back out of the vault onto the board, where the copper coil's DUFFY SAID tag flutters off its CLAIM card, a plate reads COPPER GOT BLAMED",
+      "sfx": "flutter",
+      "means": "copper got blamed",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back out of the vault onto the board, where the copper coil's DUFFY SAID tag flutters off its CLAIM card",
+        "emotion": "wry",
+        "annotation": "COPPER GOT BLAMED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "the camera pulls back out of the vault onto the board, where the copper coil's DUFFY SAID tag flutters off its CLAIM card, a plate reads COPPER GOT BLAMED",
+        "reaction": "the tag flutters off",
+        "ambient": "an office hush"
+      },
+      "t": "93.580-96.890",
+      "key": 31
+    },
+    {
+      "id": 38,
+      "shot": 11,
+      "at_s": 96.89,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.31
+      },
+      "offset": 3.31,
+      "vo": "Copper got blamed. The trace points at its replacement.",
+      "phrase": "replacement.",
+      "shows": "the red string to the router photo swings and settles beside the red strings to Slip, which stay exactly as they were, a plate reads THE TRACE POINTS AT ITS REPLACEMENT",
+      "sfx": "swing",
+      "means": "the trace points at its replacement",
+      "rehook": "",
+      "draw": {
+        "subject": "the red string to the router photo",
+        "action": "swings and settles beside the red strings to Slip, which stay exactly as they were",
+        "emotion": "uneasy",
+        "annotation": "THE TRACE POINTS AT ITS REPLACEMENT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18",
+        "c19"
+      ],
+      "choreo": {
+        "primary": "the red string to the router photo swings and settles beside the red strings to Slip, which stay exactly as they were, a plate reads THE TRACE POINTS AT ITS REPLACEMENT",
+        "reaction": "the string settles",
+        "ambient": "an office hush"
+      },
+      "t": "96.890-98.420",
+      "key": 32
+    },
+    {
+      "id": 39,
+      "shot": 11,
+      "at_s": 98.42,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Why it failed still isn't final.",
+      "phrase": "Why it failed still",
+      "shows": "a sealed, unopened envelope tagged FINAL FINDINGS drops onto the board's center pin with a pencilled tag swinging on its flap, a plate reads WHY IT FAILED \u00b7 NOT YET FINAL",
+      "sfx": "pin",
+      "means": "why it failed \u00b7 not yet final",
+      "rehook": "",
+      "draw": {
+        "subject": "a sealed, unopened envelope tagged FINAL FINDINGS",
+        "action": "drops onto the board's center pin with a pencilled tag swinging on its flap",
+        "emotion": "plain",
+        "annotation": "WHY IT FAILED \u00b7 NOT YET FINAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a sealed, unopened envelope tagged FINAL FINDINGS drops onto the board's center pin with a pencilled tag swinging on its flap, a plate reads WHY IT FAILED \u00b7 NOT YET FINAL",
+        "reaction": "the tag swings",
+        "ambient": "an office hush"
+      },
+      "t": "98.420-101.620",
+      "key": 33
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 101.62,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Per the contractor, just sixty nine of the four hundred new routers installed were running.",
+      "phrase": "Per the contractor, just",
+      "shows": "the camera cranes down along the red string into the router photo and rises out of it over a dark field of router outlines, a plate reads PER THE CONTRACTOR VIA SENATE COMMERCE DEMOCRATS",
+      "sfx": "paper",
+      "means": "per the contractor via senate commerce democrats",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "cranes down along the red string into the router photo and rises out of it over a dark field of router outlines",
+        "emotion": "awed",
+        "annotation": "PER THE CONTRACTOR VIA SENATE COMMERCE DEMOCRATS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c45"
+      ],
+      "choreo": {
+        "primary": "the camera cranes down along the red string into the router photo and rises out of it over a dark field of router outlines, a plate reads PER THE CONTRACTOR VIA SENATE COMMERCE DEMOCRATS",
+        "reaction": "the camera rises",
+        "ambient": "a low wind"
+      },
+      "t": "101.620-103.330",
+      "key": 34
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 103.33,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 1.71
+      },
+      "offset": 1.71,
+      "vo": "Per the contractor, just sixty nine of the four hundred new routers installed were running.",
+      "phrase": "sixty nine of the",
+      "shows": "69 router outlines flicker on cyan one after another as a small counter ticks to 69, a plate reads 69 RUNNING \u00b7 PER THE CONTRACTOR",
+      "sfx": "pulse",
+      "means": "69 running \u00b7 per the contractor",
+      "rehook": "",
+      "draw": {
+        "subject": "69 router outlines",
+        "action": "flicker on cyan one after another as a small counter ticks to 69",
+        "emotion": "small",
+        "annotation": "69 RUNNING \u00b7 PER THE CONTRACTOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c45"
+      ],
+      "choreo": {
+        "primary": "69 router outlines flicker on cyan one after another as a small counter ticks to 69, a plate reads 69 RUNNING \u00b7 PER THE CONTRACTOR",
+        "reaction": "the 69 flicker on",
+        "ambient": "a low wind"
+      },
+      "t": "103.330-106.450",
+      "key": 47
+    },
+    {
+      "id": 42,
+      "shot": 12,
+      "at_s": 106.45,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 4.83
+      },
+      "offset": 4.83,
+      "vo": "Per the contractor, just sixty nine of the four hundred new routers installed were running.",
+      "phrase": "installed were running.",
+      "shows": "the camera finishes its rise to reveal the whole field of 3,648 planned outlines, 400 of them installed, a plate reads OF 400 INSTALLED \u00b7 3,648 PLANNED",
+      "sfx": "cascade",
+      "means": "of 400 installed \u00b7 3,648 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "finishes its rise to reveal the whole field of 3,648 planned outlines, 400 of them installed",
+        "emotion": "awed",
+        "annotation": "OF 400 INSTALLED \u00b7 3,648 PLANNED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c45"
+      ],
+      "choreo": {
+        "primary": "the camera finishes its rise to reveal the whole field of 3,648 planned outlines, 400 of them installed, a plate reads OF 400 INSTALLED \u00b7 3,648 PLANNED",
+        "reaction": "the field opens",
+        "ambient": "a low wind"
+      },
+      "t": "106.450-108.480",
+      "key": 35
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "at_s": 108.48,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska Airlines has used the maker's Flyways A I since twenty twenty one.",
+      "phrase": "Alaska Airlines has used",
+      "shows": "the snapshot from the board fills the frame as the camera pushes into it and its dark desk lights up, a sibling paper slip tagged FLYWAYS on its screen, a plate reads ALASKA AIRLINES \u00b7 FLYWAYS \u00b7 SINCE 2021",
+      "sfx": "click",
+      "means": "alaska airlines \u00b7 flyways \u00b7 since 2021",
+      "rehook": "",
+      "draw": {
+        "subject": "the snapshot from the board",
+        "action": "fills the frame as the camera pushes into it and its dark desk lights up, a sibling paper slip tagged FLYWAYS on its screen",
+        "emotion": "warm",
+        "annotation": "ALASKA AIRLINES \u00b7 FLYWAYS \u00b7 SINCE 2021"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "the snapshot from the board fills the frame as the camera pushes into it and its dark desk lights up, a sibling paper slip tagged FLYWAYS on its screen, a plate reads ALASKA AIRLINES \u00b7 FLYWAYS \u00b7 SINCE 2021",
+        "reaction": "the lamp clicks on",
+        "ambient": "a dispatch room murmur, keyboard"
+      },
+      "t": "108.480-112.170",
+      "key": 36
+    },
+    {
+      "id": 44,
+      "shot": 13,
+      "at_s": 112.17,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 3.69
+      },
+      "offset": 3.69,
+      "vo": "Alaska Airlines has used the maker's Flyways A I since twenty twenty one.",
+      "phrase": "twenty twenty one.",
+      "shows": "the FLYWAYS slip rises from the corner of the screen and swings into a bow, a plate reads SAME MAKER \u00b7 AIR SPACE INTELLIGENCE",
+      "sfx": "swing",
+      "means": "same maker \u00b7 air space intelligence",
+      "rehook": "",
+      "draw": {
+        "subject": "the FLYWAYS slip",
+        "action": "rises from the corner of the screen and swings into a bow",
+        "emotion": "eager",
+        "annotation": "SAME MAKER \u00b7 AIR SPACE INTELLIGENCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27",
+        "c11"
+      ],
+      "choreo": {
+        "primary": "the FLYWAYS slip rises from the corner of the screen and swings into a bow, a plate reads SAME MAKER \u00b7 AIR SPACE INTELLIGENCE",
+        "reaction": "the slip bows",
+        "ambient": "a dispatch room murmur, keyboard"
+      },
+      "t": "112.170-113.860",
+      "key": 48
+    },
+    {
+      "id": 45,
+      "shot": 13,
+      "at_s": 113.86,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It suggests. The dispatcher decides, Alaska's operations chief says.",
+      "phrase": "It suggests. The dispatcher",
+      "shows": "the FLYWAYS slip unfolds and slides three dashed routes across the screen, a plate reads IT SUGGESTS BETTER ROUTES",
+      "sfx": "slide",
+      "means": "it suggests better routes",
+      "rehook": "",
+      "draw": {
+        "subject": "the FLYWAYS slip",
+        "action": "unfolds and slides three dashed routes across the screen",
+        "emotion": "eager",
+        "annotation": "IT SUGGESTS BETTER ROUTES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "the FLYWAYS slip unfolds and slides three dashed routes across the screen, a plate reads IT SUGGESTS BETTER ROUTES",
+        "reaction": "the routes fan out",
+        "ambient": "a dispatch room murmur, keyboard"
+      },
+      "t": "113.860-116.130",
+      "key": 37
+    },
+    {
+      "id": 46,
+      "shot": 13,
+      "at_s": 116.13,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 2.27
+      },
+      "offset": 2.27,
+      "vo": "It suggests. The dispatcher decides, Alaska's operations chief says.",
+      "phrase": "decides, Alaska's operations chief",
+      "shows": "a faceless dispatcher's hand drops onto the second route and taps it in, and the slip bounces a small nod, a plate reads THE DISPATCHER DECIDES \u00b7 PER ALASKA'S OPS CHIEF VIA NPR",
+      "sfx": "tap",
+      "means": "the dispatcher decides \u00b7 per alaska's ops chief via npr",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless dispatcher's hand",
+        "action": "drops onto the second route and taps it in, and the slip bounces a small nod",
+        "emotion": "content",
+        "annotation": "THE DISPATCHER DECIDES \u00b7 PER ALASKA'S OPS CHIEF VIA NPR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c29"
+      ],
+      "choreo": {
+        "primary": "a faceless dispatcher's hand drops onto the second route and taps it in, and the slip bounces a small nod, a plate reads THE DISPATCHER DECIDES \u00b7 PER ALASKA'S OPS CHIEF VIA NPR",
+        "reaction": "the slip nods",
+        "ambient": "a dispatch room murmur, keyboard"
+      },
+      "t": "116.130-119.300",
+      "key": 38
+    },
+    {
+      "id": 47,
+      "shot": 13,
+      "at_s": 119.3,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The airline says that saves about a million gallons yearly.",
+      "phrase": "The airline says that",
+      "shows": "a fuel gauge on the desk swings its needle up as a gallon counter rolls over, a plate reads ABOUT 1 MILLION GALLONS A YEAR \u00b7 PER ALASKA AIRLINES",
+      "sfx": "ching",
+      "means": "about 1 million gallons a year \u00b7 per alaska airlines",
+      "rehook": "",
+      "draw": {
+        "subject": "a fuel gauge on the desk",
+        "action": "swings its needle up as a gallon counter rolls over",
+        "emotion": "pleased",
+        "annotation": "ABOUT 1 MILLION GALLONS A YEAR \u00b7 PER ALASKA AIRLINES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c31"
+      ],
+      "choreo": {
+        "primary": "a fuel gauge on the desk swings its needle up as a gallon counter rolls over, a plate reads ABOUT 1 MILLION GALLONS A YEAR \u00b7 PER ALASKA AIRLINES",
+        "reaction": "the counter ticks",
+        "ambient": "a dispatch room murmur, keyboard"
+      },
+      "t": "119.300-123.360",
+      "key": 39
+    },
+    {
+      "id": 48,
+      "shot": 14,
+      "at_s": 123.36,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Blame can wait for the findings. Getting the cutover right can't.",
+      "phrase": "Blame can wait for",
+      "shows": "the camera pulls back out of the office window onto the split apron, the Cub banking over the Chugach, the jet at its gate with the cone pulled and the stamp faded, a plate reads BLAME CAN WAIT FOR THE FINDINGS",
+      "sfx": "whoosh",
+      "means": "blame can wait for the findings",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back out of the office window onto the split apron, the Cub banking over the Chugach, the jet at its gate with the cone pulled and the stamp faded",
+        "emotion": "calm",
+        "annotation": "BLAME CAN WAIT FOR THE FINDINGS"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the camera pulls back out of the office window onto the split apron, the Cub banking over the Chugach, the jet at its gate with the cone pulled and the stamp faded, a plate reads BLAME CAN WAIT FOR THE FINDINGS",
+        "reaction": "the apron opens",
+        "ambient": "a jet idle whine, wind over the apron"
+      },
+      "t": "123.360-126.550",
+      "key": 40
+    },
+    {
+      "id": 49,
+      "shot": 14,
+      "at_s": 126.55,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 3.19
+      },
+      "offset": 3.19,
+      "vo": "Blame can wait for the findings. Getting the cutover right can't.",
+      "phrase": "right can't.",
+      "shows": "Slip on the board in the office window still pinned beside the sealed envelope, turns and lifts its face toward a cable crew's lit junction box at the apron edge, a plate reads GETTING THE CUTOVER RIGHT CAN'T",
+      "sfx": "chime",
+      "means": "getting the cutover right can't",
+      "rehook": "",
+      "draw": {
+        "subject": "Slip on the board in the office window",
+        "action": "still pinned beside the sealed envelope, turns and lifts its face toward a cable crew's lit junction box at the apron edge",
+        "emotion": "hopeful",
+        "annotation": "GETTING THE CUTOVER RIGHT CAN'T"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Slip on the board in the office window still pinned beside the sealed envelope, turns and lifts its face toward a cable crew's lit junction box at the apron edge, a plate reads GETTING THE CUTOVER RIGHT CAN'T",
+        "reaction": "Slip looks out",
+        "ambient": "a jet idle whine, wind over the apron"
+      },
+      "t": "126.550-127.740",
+      "key": 41
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+A nationwide ground stop held every flight leaving Alaska, per an airport official.
+Inside Alaska, flights kept flying, Alaska Airlines said.
+Two new things were going in that week. One was A I.
+Three days earlier, the F A A expanded SMART, an A I tool, to all twenty two en route centers.
+It predicts where the sky jams. It only suggests. People decide.
+Its maker, Air Space Intelligence, said the stop wasn't a result of SMART.
+Transportation Secretary Sean Duffy called SMART completely disconnected, and blamed nineteen eighties little copper lines.
+Homeland Security Secretary Markwayne Mullin said you can't rule out anything at this point.
+In October, over two dozen lawmakers asked to pause SMART, citing a lack of transparency.
+The F A A also seeks a stake in the maker, with no deal confirmed.
+No official has linked SMART to the outage.
+Per C B S, the F A A and contractor L3Harris traced it to the other new thing, a router at El Dorado, Arkansas.
+Duffy said crews were mid cutover, swapping copper for fiber.
+Per the F A A, devices tried to connect a thousand times every four to five seconds. That's this long.
+Copper got blamed. The trace points at its replacement.
+Why it failed still isn't final.
+Per the contractor, just sixty nine of the four hundred new routers installed were running.
+Alaska Airlines has used the maker's Flyways A I since twenty twenty one.
+It suggests. The dispatcher decides, Alaska's operations chief says.
+The airline says that saves about a million gallons yearly.
+Blame can wait for the findings. Getting the cutover right can't.

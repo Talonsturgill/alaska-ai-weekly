@@ -1,0 +1,62 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.99,
+    "heard": "A nationwide ground stop held every flight leaving Alaska per an airport official. Inside Alaska, flights kept flying. Alaska Airlines said. Two new things were going in that week. One was AI. Three days earlier, the FAA expanded Smart, an AI tool to all 22 in-route centers. It predicts where the sky jams. It only suggests people decide. Its maker, Airspace Intelligence said the stop wasn't a result of Smart. Transportation Secretary Sean Duffy called Smart completely disconnected and blamed 1980s little copper lines. Homeland Security Secretary Mark Wayne Mullin said you can't rule out anything at this point. In October, over two dozen lawmakers asked to pause Smart, citing a lack of transparency. The FAA also seeks a stake in the maker, with no deal confirmed. No official has linked Smart to the outage. Per CBS, the FAA and contractor L3 Harris traced it to the other new thing, a router at El Dorado, Arkansas. Duffy said crews were mid-cut over, swapping copper for fiber. Per the FAA, devices tried to connect a thousand times every four to five seconds. That's this long. Copper got blamed. The trace points at its replacement. Why it failed, still isn't final. Per the contractor, just 69 of 3648 routers were running. Alaska Airlines has used the maker's flyways AI since 2021. It suggests the dispatcher decides Alaska's operations chief says. The airline says that saves about a million gallons yearly. Bleem can wait for the findings. Getting the cut over right, can't.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.019,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.87,
+        "voiced_frac": 0.45,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 128.12,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 128.12,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.984,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.986,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.99,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

@@ -1,0 +1,100 @@
+{
+ "j1": {
+  "seat": 1,
+  "cut": 4,
+  "total": 7.11,
+  "axis_scores": {
+   "Hook & retention": 7.1,
+   "Illustration craft & detail": 7.2,
+   "Motion & animation craft": 6.2,
+   "Composition & staging": 6.9,
+   "Color & grade": 7.6,
+   "Typography & captions": 7.3,
+   "Sound design & mix": 6.8,
+   "VO\u2013illustration sync & entertainment": 7.2,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.0,
+   "Writing & post quality": 7.3
+  },
+  "hard_blockers": [],
+  "concrete_defects": [
+   "101.1s S11 high-angle crop cuts header and Slip; lower 40% blank folders",
+   "108.0s near plane dark rack fronts, top 15% empty",
+   "126.8s second plate mid-fade ghost type",
+   "near-static vault opener 78.8-85s and Flyways slip 112-114s; Mullin little idle life",
+   "36 VO gaps >=0.5s totalling 32.1s",
+   "ambience synthesised only",
+   "32.6s hand-off not legible in pack"
+  ]
+ },
+ "j2": {
+  "seat": 2,
+  "cut": 4,
+  "total": 7.32,
+  "axis_scores": {
+   "Hook & retention": 7.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.5,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8.0
+  },
+  "hard_blockers": [],
+  "concrete_defects": [
+   "39-47s Duffy enters as a sliver at the frame edge",
+   "figures plainer than props",
+   "26-32s Slip barely moves on 'It only suggests'",
+   "78.8-86s splice and pulse flood near-static",
+   "112-115s Flyways slip holds still",
+   "33-71s board set from near-identical framings; small card labels illegible",
+   "65.9s stake plate lags VO",
+   "101.1s crane crops header",
+   "126.8s payoff plate trails VO",
+   "gap beds thin synthesised noise"
+  ]
+ },
+ "j3": {
+  "seat": 3,
+  "cut": 4,
+  "total": 7.2,
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.2,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 7.8,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 7.6
+  },
+  "hard_blockers": [],
+  "concrete_defects": [
+   "board suspect grammar: Slip pinned centre under IS IT THE AI? through the close; a string reads as wiring SMART to the router photo",
+   "54.2s glass over a ? in SMART's slot",
+   "long low-motion runs; peg-rig figures; dispatcher stick arm",
+   "figures plainer than props",
+   "0-6.6s open mostly static; GROUNDED at 6s",
+   "plates duplicate captions; no Fraunces",
+   "36 VO gaps totalling 32s; synthesised beds",
+   "post para 6 numeral sentence start; 'just' in VO"
+  ]
+ },
+ "named_open_defects": [
+  "a question string still passes behind the trace photo on its way to its pin (seat 3)",
+  "Slip stays pinned on the board in the closing window (seat 3)",
+  "S11 101.1s crop and blank folders in the lower frame (seat 1)",
+  "router field near plane dark (seat 1)",
+  "button plate fades in behind the caption (seats 1, 2)",
+  "figures plainer than props, peg-rig motion (seats 2, 3)",
+  "vault opener and Flyways slip low motion (all)",
+  "36 VO pauses totalling 32 s, synthesised beds only (all)"
+ ]
+}

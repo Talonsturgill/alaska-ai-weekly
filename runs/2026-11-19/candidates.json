@@ -1,0 +1,26 @@
+{
+ "locked_story": {
+  "headline": "The November 13th FAA nationwide ground stop: Alaska Airlines says flights within Alaska kept flying while nearly 600 were canceled, the vendor of the FAA's new AI-enhanced SMART tool says the stop was not a result of SMART, Duffy blames 1980s copper lines, and the same vendor's Flyways AI has guided Alaska Airlines dispatch since 2021",
+  "found_at_rung": "in_window_sweep",
+  "note": "No aviation or air traffic story in the last 30 days. Fresh subject, in window (event November 13th, Alaska Airlines statement November 15th)."
+ },
+ "rungs": [
+  {"rung": "in_window_sweep", "attempted": true, "candidates_found": 18, "note": "4 researchers (science, energy/policy, fisheries/health/rural, defense/aviation/wildcard), 78 of 80 WebSearch calls spent. All four called it a slow week for genuine AI results."}
+ ],
+ "candidates": [
+  {"headline": "FAA ground stop, SMART not the cause per ASI, Alaska Airlines Flyways since 2021, in-state flights unaffected", "verdict": "LOCKED", "why": "in window, primary airline statement plus AP and NPR, a real AI system at the center, an Alaska-specific frame (in-state flights flew, ~600 out-of-state canceled), fresh subject"},
+  {"headline": "Anchorage Assembly writes APD surveillance and AI case-work rules into code, 11 to 1", "verdict": "runner-up", "why": "ADN original November 6th, three days before the window; ordinance text 404; another cautionary governance story after many"},
+  {"headline": "UAF Wolken avalanche road model, 2,000+ crossings vs ~300 mapped", "verdict": "rejected", "why": "physics and terrain model, no ML per KTOO, not peer reviewed"},
+  {"headline": "Bering Strait sea ice breakup forecast with Indigenous verification", "verdict": "rejected", "why": "computer model, no ML described, single syndicated source"},
+  {"headline": "Cornell DAS bowhead calls on Quintillion fiber, Utqiagvik", "verdict": "rejected", "why": "no ML, review paper, Cornell page 403"},
+  {"headline": "2020 Aleutians tsunami source (UAF GI, Seismica)", "verdict": "rejected", "why": "no ML"},
+  {"headline": "Halibut epigenetic clock (Alaska Sea Grant)", "verdict": "rejected", "why": "no ML, no accuracy numbers"},
+  {"headline": "SEARHC joins Mayo Clinic Care Network", "verdict": "rejected", "why": "AI link indirect, press release only"},
+  {"headline": "USCG Storis 133-day Arctic deployment with DIU drone trials", "verdict": "rejected", "why": "no AI or autonomy described, single release"},
+  {"headline": "UA AI Engaged postponed to February", "verdict": "rejected", "why": "covered 2026-11-05 and 11-06, producer conflict"},
+  {"headline": "PWSC AI and cybersecurity endorsement certificate", "verdict": "rejected", "why": "thin, starts fall 2027"},
+  {"headline": "Red Dog solar farm AEA loan", "verdict": "rejected", "why": "no AI"},
+  {"headline": "11th Airborne JBER exercise", "verdict": "rejected", "why": "no AI"},
+  {"headline": "Kodiak AI crosswalk pilot / Anchorage pedestrian deaths", "verdict": "rejected", "why": "no results published, link speculative"}
+ ]
+}

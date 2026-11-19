@@ -1,0 +1,6 @@
+{
+ "status": "BLOCKED",
+ "reason": "Gmail connector needs re-authentication (sign-in refused at create time); draft not created",
+ "html": "out/dispatch/email.html (scratch, not committed)",
+ "date": "2026-11-19"
+}
