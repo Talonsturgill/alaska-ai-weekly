@@ -1,0 +1,86 @@
+{
+ "edition_id": "2026-11-19",
+ "profile": "alaska_ai",
+ "results": [
+  {
+   "platform": "linkedin",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "e1a0774b53b94e0394a3c56b4bed5cc3",
+   "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7529104751532220416/"
+  },
+  {
+   "platform": "facebook",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "53478f1123904f75a96973a682c107c0",
+   "link": "https://www.facebook.com/2003130316607965/videos/1660356109154683"
+  },
+  {
+   "platform": "instagram",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "4034abdb2420437e87f9021ceb86df97",
+   "link": "https://www.instagram.com/reel/Df6suY9jTtg/"
+  },
+  {
+   "platform": "tiktok",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "adb46a30da19427c97efe1e2c8840a05",
+   "link": "https://www.tiktok.com/@alaskaai_/video/7709802981075586318"
+  },
+  {
+   "platform": "youtube",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "f012efb011764340a09f80e28c59c0d9",
+   "link": "https://www.youtube.com/watch?v=Y1UTckuel24"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "segment": 0,
+   "status": "PUBLISHED",
+   "request_id": "b8a6783d872c4594abe2d9e67b48442b"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "segment": 1,
+   "status": "PUBLISHED",
+   "request_id": "459168aef04e42c58dd649710f49baa8"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "segment": 2,
+   "status": "PUBLISHED",
+   "request_id": "366caefd57474e9d9493deb0eaabfb56"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "segment": 0,
+   "status": "PUBLISHED",
+   "request_id": "d607a4edec844ee086c4c8d41d1323e1",
+   "post_id": "4777827102446144"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "segment": 1,
+   "status": "PUBLISHED",
+   "request_id": "686de3e1b69a4a4c9622fa04a9199262",
+   "post_id": "1280493574286536"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "segment": 2,
+   "status": "PUBLISHED",
+   "request_id": "2c6ac8471c79466783c05bfb5321d232",
+   "post_id": "1114793924666046"
+  }
+ ]
+}
