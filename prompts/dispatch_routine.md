@@ -533,7 +533,8 @@ DEDUPE_WINDOW_DAYS in scripts/dedupe.py.
    the sentence at the comma, never deleting it and leaving a run-on. Hard fail via caption_check
    COMMA_PER_100W.
 6. **NO-STALL.** (a) Anything that can exceed ~2 minutes (voice synth, npm install, renders,
-   encodes) runs in the BACKGROUND via `scripts/run_bg.sh <marker_dir> <name> -- <cmd...>`, which
+   encodes) runs in the BACKGROUND via `scripts/run_bg.sh <name> -- <cmd...>` (marker dir out/dispatch/bg;
+   `<marker_dir> <name> --` also works), which
    writes a heartbeat and a `.done` marker with the exit code. (b) Wait on it with
    `scripts/wait_for.py` inside one call (timeout 600000 ms), which reports wedged (stale heartbeat
    over 90s and no `.done`) as its own exit code. Never end a turn to wait. (c) While a job cooks,
