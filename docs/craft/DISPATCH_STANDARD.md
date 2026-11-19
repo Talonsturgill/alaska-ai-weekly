@@ -794,3 +794,12 @@ Whole-mix loudness is not a voice-to-background measurement.
 - **One foreground band stamped into every shot is a template, and it does not belong inside a machine.** Seed and vary the near plane per shot and give interiors their own floor.
 - **A flag's label is a claim.** RECOMMENDED tags on hypothetical building outlines read as the commission recommending buildings; label the thresholds instead.
 - **Two films after a story in the same town, check its light, not only its palette.** The first board's pink-gold noon in ice fog was 11-11's Fairbanks light a week earlier.
+
+## Things the 2026-11-19 gates, critics and panel found that were knowable in advance ("One Thousand Knocks")
+- **A count spoken against the wrong denominator is a hard blocker even when every number is in the claim.** "69 of 3,648 were running" made the network read as dark; the claim was 400 installed, 69 operational, 3,648 planned. Say the share against the installed count and put the plan on the plate.
+- **On an evidence board, a red string means connected.** A string from the AI card to the traced router read as a link no official made. Strings to the suspect stay question strings; the trace string starts at the reporting (a CBS·FAA·L3HARRIS tag) and never touches the suspect, and the record's answer so far (NO OFFICIAL LINK) gets pinned under the question once it is spoken.
+- **A held prop must sit in the hand that holds it.** Mullin's magnifier floated over a photo of the AI; place the lens from the figure's hand arithmetic, and point it at the open question, not at the suspect.
+- **Plates over a full-frame board collide with the board's own header.** Scale frontal board shots so the board top sits under the plate band (y 600), and stage side-on boards so the header lands below it.
+- **A "22 centers" map that drops Alaska and Hawaii is wrong for an Alaska film.** Draw the insets.
+- **The crane hand-off into a new set must already be moving.** The router photo held at 1 percent change for a second before the field resolved; grow the photo past the frame edges while the next world rises behind it.
+- **One desk foreground under five board shots is a template.** Vary the desk props per shot (letters, pins and string offcuts, files) and cool the window light as the case builds.
