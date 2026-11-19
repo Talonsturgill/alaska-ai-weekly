@@ -157,7 +157,6 @@ export const Airliner: React.FC<{f: number; x: number; y: number; scale?: number
         {/* tail fin */}
         <path d="M -240 -110 L -300 -230 L -250 -232 L -170 -112 Z" fill={T.base} stroke={INK} strokeWidth={6} strokeLinejoin="round" />
         <path d="M -282 -214 L -258 -216 L -200 -128" stroke={T.key} strokeWidth={5} fill="none" opacity={0.7} />
-        <circle cx={-246} cy={-172} r={14} fill={GS.jetStripe} stroke={INK} strokeWidth={3} />
         {/* far wing */}
         <path d="M -40 -96 L -130 -150 L -96 -152 L 30 -100 Z" fill={J.shade} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
         {/* fuselage */}
