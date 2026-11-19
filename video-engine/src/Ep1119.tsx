@@ -233,7 +233,7 @@ const NearApron: React.FC<{f: number; seed?: number; y?: number}> = ({f, seed = 
 );
 
 /** the investigation office: buff panelled wall, a window onto the Chugach and the apron, a desk lamp, and the desk edge below */
-const Office: React.FC<{f: number; seed?: number; lamp?: number; win?: {x: number; y: number; w: number; h: number}; jet?: boolean}> = ({f, seed = 0, lamp = 1, win: wn = {x: 760, y: 150, w: 300, h: 260}, jet = true}) => (
+const Office: React.FC<{f: number; seed?: number; lamp?: number; win?: {x: number; y: number; w: number; h: number}; jet?: boolean; cool?: number}> = ({f, seed = 0, lamp = 1, win: wn = {x: 760, y: 150, w: 300, h: 260}, jet = true, cool = 0}) => (
   <g data-band="ok">
     <rect data-band="ok" x={-300} y={-100} width={1680} height={2200} fill={C.wall} />
     {Array.from({length: 9}, (_, i) => <path key={i} d={`M ${-60 + i * 150} -100 L ${-60 + i * 150} 1520`} stroke={C.wallD} strokeWidth={4} opacity={0.6} />)}
@@ -248,6 +248,7 @@ const Office: React.FC<{f: number; seed?: number; lamp?: number; win?: {x: numbe
         <path d={`M 0 ${wn.h * 0.62} L ${wn.w * 0.15} ${wn.h * 0.36} L ${wn.w * 0.3} ${wn.h * 0.55} L ${wn.w * 0.5} ${wn.h * 0.3} L ${wn.w * 0.7} ${wn.h * 0.52} L ${wn.w * 0.86} ${wn.h * 0.34} L ${wn.w} ${wn.h * 0.5} L ${wn.w} ${wn.h * 0.66} L 0 ${wn.h * 0.66} Z`} fill={C.range} stroke={C.ink} strokeWidth={2} />
         <path d={`M ${wn.w * 0.42} ${wn.h * 0.34} L ${wn.w * 0.5} ${wn.h * 0.3} L ${wn.w * 0.58} ${wn.h * 0.36} Z M ${wn.w * 0.8} ${wn.h * 0.38} L ${wn.w * 0.86} ${wn.h * 0.34} L ${wn.w * 0.92} ${wn.h * 0.4} Z`} fill="#FFF0DE" />
         <rect x={0} y={wn.h * 0.66} width={wn.w} height={wn.h} fill={C.snow} />
+        <rect x={0} y={0} width={wn.w} height={wn.h} fill="#3A5A78" opacity={0.55 * cool} />
         {jet && <g transform={`translate(${wn.w * 0.55},${wn.h * 0.86}) scale(0.3)`}><path d="M -260 -40 Q -270 -70 -230 -74 L 200 -80 Q 290 -78 300 -40 Q 290 -6 200 -2 L -220 -2 Q -258 -4 -260 -40 Z" fill={GS.jet} stroke={C.ink} strokeWidth={8} /><path d="M -240 -60 L -300 -170 L -250 -172 L -170 -66 Z" fill={GS.jetTail} stroke={C.ink} strokeWidth={8} /><path d="M -250 -30 L 280 -36" stroke={GS.jetStripe} strokeWidth={10} /></g>}
       </svg>
       <path d={`M ${wn.w / 2} 0 L ${wn.w / 2} ${wn.h} M 0 ${wn.h / 2} L ${wn.w} ${wn.h / 2}`} stroke="#6B4A32" strokeWidth={8} />
@@ -255,15 +256,35 @@ const Office: React.FC<{f: number; seed?: number; lamp?: number; win?: {x: numbe
     </g>
     {/* lamp glow */}
     <ellipse cx={540} cy={820} rx={620} ry={520} fill={C.lamp} opacity={0.12 * lamp + 0.03 * Math.sin(f / 37 + seed)} />
+    <rect data-band="ok" x={-300} y={-100} width={1680} height={2200} fill="#2A4A66" opacity={0.16 * cool} />
   </g>
 );
 
 /** the desk edge in the near plane: wood with a mug, a pencil cup and paper, seeded per shot */
-const DeskEdge: React.FC<{f: number; seed?: number; y?: number}> = ({f, seed = 0, y = 1500}) => (
+const DeskEdge: React.FC<{f: number; seed?: number; y?: number; kind?: 'mug' | 'pins' | 'letters' | 'files' | 'bare'}> = ({f, seed = 0, y = 1500, kind = 'mug'}) => (
   <g data-band="ok">
     <rect x={-300} y={y} width={1680} height={600} fill={C.desk} stroke={C.ink} strokeWidth={4} />
     <rect x={-300} y={y} width={1680} height={22} fill={C.deskL} />
     {Array.from({length: 6}, (_, i) => <path key={i} d={`M -300 ${y + 60 + i * 50} q 400 ${-10 + h01(i, seed) * 20} 900 0 t 900 0`} stroke="#5A3A24" strokeWidth={3} fill="none" opacity={0.5} />)}
+    {kind === 'pins' && (
+      <g>
+        {Array.from({length: 14}, (_, i) => <g key={i} transform={`translate(${120 + h01(i, seed) * 840},${y + 70 + h01(i, seed + 1) * 160}) rotate(${h01(i, seed + 2) * 360})`}>
+          <circle r={9} fill={[GS.brick, '#E8E2D2', GS.persimmon][i % 3]} stroke={C.ink} strokeWidth={2.5} /><path d="M 0 0 L 16 0" stroke="#9A9AA0" strokeWidth={3} /></g>)}
+        {Array.from({length: 4}, (_, i) => <path key={`s${i}`} d={`M ${200 + i * 200} ${y + 120 + i * 20} q 40 -30 80 6 t 70 -10`} stroke={GS.string} strokeWidth={4} fill="none" />)}
+      </g>
+    )}
+    {kind === 'letters' && (
+      <g transform={`translate(${620},${y + 130}) rotate(-4)`}>
+        {[0, 1, 2, 3].map((i) => <g key={i} transform={`translate(${i * 26 - 60},${-i * 10}) rotate(${-6 + i * 5})`}><ContactShadow cx={90} cy={110} rx={90} ry={8} opacity={0.25} /><rect x={0} y={0} width={180} height={120} fill={C.paper} stroke={C.ink} strokeWidth={4} /><path d="M 20 30 L 150 30 M 20 54 L 130 54 M 20 78 L 140 78" stroke={C.ink} strokeWidth={3} opacity={0.45} /></g>)}
+        <text x={30} y={-26} fontFamily={MONO} fontWeight={800} fontSize={18} fill={C.ink}>OCT 9 LETTER</text>
+      </g>
+    )}
+    {kind === 'files' && (
+      <g>
+        {[0, 1, 2].map((i) => <g key={i} transform={`translate(${180 + i * 300},${y + 90 + i * 14}) rotate(${-5 + i * 4})`}><ContactShadow cx={110} cy={130} rx={110} ry={8} opacity={0.3} /><rect x={0} y={0} width={220} height={130} rx={6} fill={['#C9A46A', '#B88A52', '#D2B47C'][i]} stroke={C.ink} strokeWidth={4} /><rect x={20} y={-16} width={80} height={20} rx={4} fill={['#C9A46A', '#B88A52', '#D2B47C'][i]} stroke={C.ink} strokeWidth={4} /></g>)}
+      </g>
+    )}
+    {kind === 'mug' && (<>
     <g transform={`translate(${160 + h01(seed, 1) * 120},${y + 150})`}>
       <ContactShadow cx={0} cy={4} rx={56} ry={10} opacity={0.4} />
       <path d="M -40 0 L -36 -90 L 36 -90 L 40 0 Z" fill={GS.pine} stroke={C.ink} strokeWidth={4} />
@@ -275,6 +296,7 @@ const DeskEdge: React.FC<{f: number; seed?: number; y?: number}> = ({f, seed = 0
       <rect x={-120} y={-80} width={240} height={160} fill={C.paper} stroke={C.ink} strokeWidth={4} />
       {[0, 1, 2, 3].map((i) => <path key={i} d={`M -96 ${-50 + i * 30} L ${60 - i * 20} ${-50 + i * 30}`} stroke={C.ink} strokeWidth={3} opacity={0.4} />)}
     </g>
+    </>)}
   </g>
 );
 
@@ -382,7 +404,7 @@ const Hand: React.FC<{f: number; x0: number; y0: number; x1: number; y1: number;
         <path d="M 56 -10 L 82 -12 Q 88 -6 82 -2 L 56 0" fill="#C99A78" stroke={C.ink} strokeWidth={4} />
         <path d="M 30 18 Q 44 14 52 6" stroke="#9A6E52" strokeWidth={4} fill="none" />
       </g>
-      {tag && k > 0.5 && <Lab text={tag} x={Math.min(1080 - monoW(tag, 20) / 2 - 40, hx)} y={hy - 64} size={20} />}
+      {tag && k > 0.5 && <Lab text={tag} x={Math.min(1080 - monoW(tag, 20) / 2 - 110, hx)} y={hy - 64} size={20} />}
     </g>
   );
 };
@@ -440,7 +462,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
           <BushPlane f={f} x={220 + lift * 140} y={1180 - lift * 420} scale={1.05} mode={lift > 0.05 ? 'fly' : 'ground'} propSpeed={1.2} body={GS.persimmon} />
         </HeldTravel>
         <Beacon f={f} x={1050} y={1000} on={Math.max(lean, 1 - clamp01(f / 14))} />
-        <rect data-band="ok" x={-300} y={-100} width={1680} height={2200} fill="#FFB547" opacity={0.3 * (1 - clamp01(f / 12))} />
+        <rect data-band="ok" x={-300} y={-100} width={1680} height={2200} fill="#FFF1D2" opacity={0.75 * (1 - clamp01(f / 12))} />
         <Airliner f={f} x={790 + lean * 10} y={1240} scale={0.82} emotion={f < b1 + 10 ? 'calm' : 'wide'} strain={0.4 * slam + 0.5 * lean} look={f > b2 ? -1 : 0} cues={[b1, b49, b2]} seed={3} />
         <Cone x={1010 + settle(f, b1 + 19, 6)} y={1236} slide={slam} />
         <g opacity={stamp} transform={`translate(830,1080) rotate(-10) scale(${1.4 - stamp * 0.4})`}>
@@ -635,7 +657,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const b10 = p.b(10), b11 = p.b(11);
   const route = easeIO(f, b10 + 6, 40);
   const slide = easeIO(f, b11, 26);
-  const hand = easeIO(f, b11 + 18, 20);
+  const hand = easeIO(f, b11 + 6, 18);
   const take = easeIO(f, b11 + 40, 22);
   const over = settle(f, b11 + 26, 18, 24);
   const icons = ['cloud', 'clock', 'plane', 'snow', 'wind', 'list'];
@@ -703,8 +725,8 @@ const S4: React.FC<SceneProps> = ({p}) => {
 const SNAP_C = {x: 240, y: 300};
 const InvestigationBoard: React.FC<{f: number; pinned: number; quote1: number; quote2: number; maker?: number; fold?: number; sweat?: number;
   routerStr?: number; envelope?: number; snapshot?: number; snapCenter?: number; tags?: number; fog?: number; letters?: number; letterStr?: number; cues?: number[];
-  emotion?: 'scared' | 'worried' | 'hopeful' | 'sheepish'; tarpLift?: number; tarpBump?: number; tug?: number; fade?: number; tilt?: number; tarpTag?: boolean}> =
-({f, pinned, quote1, quote2, maker = 1, fade = 0, tilt = 0, tarpTag = true, fold = 0, sweat = 0, routerStr = 0, envelope = 0, snapshot = 0, snapCenter = 0, tags = 0, fog = 0, letters = 0, letterStr = 0, cues = [], emotion = 'scared', tarpLift = 0, tarpBump = 0, tug = 0}) => {
+  emotion?: 'scared' | 'worried' | 'hopeful' | 'sheepish'; tarpLift?: number; tarpBump?: number; tug?: number; fade?: number; tilt?: number; tarpTag?: boolean; envFade?: boolean; noLink?: number}> =
+({f, pinned, quote1, quote2, maker = 1, fade = 0, tilt = 0, tarpTag = true, envFade = true, noLink = 0, fold = 0, sweat = 0, routerStr = 0, envelope = 0, snapshot = 0, snapCenter = 0, tags = 0, fog = 0, letters = 0, letterStr = 0, cues = [], emotion = 'scared', tarpLift = 0, tarpBump = 0, tug = 0}) => {
   const cxp = 460, cyp = 560;
   const anchors: Array<[number, number]> = [[110, 160], [810, 160], [110, 760], [810, 760]];
   const snapX = lerp(700, SNAP_C.x, snapCenter), snapY = lerp(600, SNAP_C.y + 380, snapCenter);
@@ -717,6 +739,14 @@ const InvestigationBoard: React.FC<{f: number; pinned: number; quote1: number; q
         <text x={160} y={38} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={GS.brick}>IS IT THE AI?</text>
         <PushPin x={20} y={14} />{tilt < 0.5 && <PushPin x={300} y={14} />}
       </g>
+      {/* the answer the record gives so far, pinned under the question once it is spoken */}
+      {noLink > 0.01 && (
+        <g transform={`translate(640,${92 - (1 - noLink) * 40}) rotate(3)`} opacity={noLink}>
+          <rect x={0} y={0} width={240} height={50} rx={5} fill={GS.card} stroke={C.ink} strokeWidth={4} />
+          <text x={120} y={33} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={19} fill={C.ink}>NO OFFICIAL LINK</text>
+          <PushPin x={120} y={8} />
+        </g>
+      )}
       <g transform="translate(60,60) scale(0.2)">
         <rect x={-10} y={-10} width={1020} height={720} fill={C.paper} stroke={C.ink} strokeWidth={12} />
         <path d={AK_PATH} fill="#E9D7B4" stroke={C.ink} strokeWidth={12} />
@@ -798,7 +828,7 @@ const InvestigationBoard: React.FC<{f: number; pinned: number; quote1: number; q
         </g>
       )}
       {envelope > 0.01 && (
-        <g transform={`translate(${cxp - 110},${cyp + 150 + (1 - envelope) * -160})`} opacity={clamp01(envelope * 2) * (1 - fade)}>
+        <g transform={`translate(${cxp - 150},${cyp + 140 + (1 - envelope) * -160}) scale(1.3)`} opacity={clamp01(envelope * 2) * (envFade ? 1 - fade : 1)}>
           <ContactShadow cx={96} cy={110} rx={90} ry={8} opacity={0.3} />
           <rect x={0} y={0} width={190} height={110} rx={4} fill="#EBD9B4" stroke={C.ink} strokeWidth={4} />
           <path d="M 0 0 L 95 60 L 190 0" fill="#DCC69A" stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
@@ -839,7 +869,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <Office f={f} seed={6} win={{x: 760, y: 120, w: 280, h: 240}} />
+        <Office f={f} seed={6} win={{x: 760, y: 120, w: 280, h: 240}} cool={0.2} />
         <g transform={BOARD_T}><HeldTravel f={f} x={BOARD.x} y={BOARD.y} w={BOARD.w} h={BOARD.h} mode="shadow" seed={8}>
           <InvestigationBoard f={f} pinned={pinned} maker={maker} quote1={q1} quote2={q2} fold={0.2 + 0.2 * Math.sin(f / 30)} tarpBump={twitch} cues={[b12, b13, b14, b42, b15]} emotion={f < b14 ? 'scared' : 'worried'} />
         </HeldTravel></g>
@@ -854,7 +884,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             <CopperCoil f={f} x={200} y={1238} scale={0.75} slide={clamp01((f - b15 - 14) / 30)} />
           </g>
         )}
-        <DeskEdge f={f} seed={6} y={1330} />
+        <DeskEdge f={f} seed={6} y={1330} kind="bare" />
       </SVG>
     </Frame>
   );
@@ -948,11 +978,15 @@ const S7: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <Office f={f} seed={8} win={{x: 610, y: 400, w: 430, h: 300}} />
+        <Office f={f} seed={8} win={{x: 610, y: 400, w: 430, h: 300}} cool={0.45} />
         {/* the board seen side-on: skewed into depth on the left */}
         <g transform="translate(0,230) matrix(0.55,0.15,0,0.8,0,0)">
           <InvestigationBoard f={f} pinned={1} quote1={1} quote2={1} fold={0.3} tags={1} tarpTag={false} snapshot={snap} snapCenter={center} letters={letters} letterStr={lstr} fog={fog} cues={[b19, b18, b21]} emotion="worried" />
         </g>
+        {/* fog drifting off the letters across the board's lower left */}
+        {Array.from({length: 6}, (_, i) => (
+          <ellipse key={`fg${i}`} data-band="ok" cx={60 + i * 90 + Math.sin(f / 26 + i) * 30 + (1 - fog) * -300} cy={1190 + (i % 3) * 36 + Math.sin(f / 33 + i) * 10} rx={150} ry={50} fill="#EDE8DE" opacity={0.55 * fog} />
+        ))}
         {/* the windowsill in the foreground with the uncut pie */}
         <rect data-band="ok" x={600} y={1180} width={600} height={34} fill="#6B4A32" stroke={C.ink} strokeWidth={4} />
         <rect data-band="ok" x={600} y={1212} width={600} height={300} fill="#5A3A24" />
@@ -960,7 +994,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <g transform={`translate(${ease(f, b22, 6) * Math.sin(f / 2) * 2},0)`}><Pie f={f} x={820} y={1180} scale={1.7} tag="ASI" /></g>
         </HeldProp>
         <Hand f={f} x0={1240} y0={980} x1={lerp(1240, 1000, hand)} y1={lerp(980, 1060, hand)} t={hand} tag="FAA" />
-        <DeskEdge f={f} seed={8} y={1520} />
+        <DeskEdge f={f} seed={8} y={1520} kind="letters" />
       </SVG>
     </Frame>
   );
@@ -983,14 +1017,14 @@ const S8: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <Office f={f} seed={9} win={{x: 760, y: 120, w: 280, h: 240}} />
+        <Office f={f} seed={9} win={{x: 760, y: 120, w: 280, h: 240}} cool={0.7} />
         <g transform={BOARD_T}><HeldTravel f={f} x={BOARD.x} y={BOARD.y} w={BOARD.w} h={BOARD.h} mode="shadow" seed={19}>
-          <InvestigationBoard f={f} pinned={1} quote1={1} quote2={0} fold={0.3} tags={1} tarpTag={false} snapshot={1} letters={1} letterStr={1} fog={0.25} tarpBump={twitch} tug={tug} tilt={tilt} cues={[b23]} emotion="worried" />
+          <InvestigationBoard f={f} pinned={1} quote1={1} quote2={0} fold={0.3} tags={1} tarpTag={false} snapshot={1} letters={1} letterStr={1} fog={0.25} tarpBump={twitch} tug={tug} tilt={tilt} noLink={ease(f, b23 + 12, 14)} cues={[b23]} emotion="worried" />
         </HeldTravel></g>
         <g transform={`translate(${lerp(120, 262, hop)},${lerp(1320, 1240, hop) - Math.sin(hop * Math.PI) * 60})`}>
           <g transform={`translate(${tug * 14},0)`}><Raven f={f} x={0} y={0} scale={1.15} facing={turn as 1 | -1} mode="perch" /></g>
         </g>
-        <DeskEdge f={f} seed={9} y={1290} />
+        <DeskEdge f={f} seed={9} y={1290} kind="pins" />
       </SVG>
     </Frame>
   );
@@ -1042,7 +1076,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <g opacity={1 - dive}>
           <rect data-band="ok" x={-300} y={-100} width={1680} height={2200} fill={C.wall} />
           <g transform={`translate(${540 - 540 * (1 + dive * 2.5)},${960 - 960 * (1 + dive * 2.5)}) scale(${1 + dive * 2.5})`}>
-            <InvestigationBoard f={f} pinned={1} quote1={1} quote2={1} fold={0.3} tags={1} snapshot={1} letters={1} letterStr={1} fog={0.15} tarpLift={yank} tilt={1} emotion="worried" cues={[b24]} />
+            <InvestigationBoard f={f} pinned={1} quote1={1} quote2={1} fold={0.3} tags={1} snapshot={1} letters={1} letterStr={1} fog={0.15} tarpLift={yank} tilt={1} noLink={1} emotion="worried" cues={[b24]} />
           </g>
         </g>
         <NearSpools f={f} seed={10} />
@@ -1066,14 +1100,14 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const knock = sweepT > 0 && sweepT < 1 ? Math.abs(Math.sin(f * (0.6 + sweepT * 2.4))) : 0;
   const pulses = Array.from({length: 26}, (_, i) => i);
   return (
-    <Frame p={p} z0={1.0} z1={1.05} oy={960} bg={C.pineD} overlay={
+    <Frame p={p} cam={track([{t: 0, z: 1.1, fx: 470, fy: 900}, {t: 70, z: 1.04, fx: 520, fy: 960}, {t: p.dur, z: 1.06, fx: 560, fy: 960}])} bg={C.pineD} overlay={
       <g>
         <Plate text="COPPER TO FIBER UPGRADE · DUFFY SAID" x={540} y={560} size={34} p={win(f, b27 + 8, b45)} /> {/* plate-overlap-ok */}
         <Plate text="DUFFY'S SATURDAY ACCOUNT · PER NBC" x={540} y={560} size={34} p={win(f, b45 + 6, b28)} /> {/* plate-overlap-ok */}
         <Plate text="PER THE FAA" x={540} y={560} size={38} tone="dark" p={win(f, b28 + 6, b46)} /> {/* plate-overlap-ok */}
         <Plate text="4 TO 5 SECONDS · COUNT IT" x={540} y={560} size={38} tone="dark" p={win(f, b46 + 4, b29)} /> {/* plate-overlap-ok */}
         <Plate text="1,000 TRIES EVERY 4 TO 5 SECONDS" x={540} y={560} size={38} tone="dark" p={win(f, b29 + 4, b30)} /> {/* plate-overlap-ok */}
-        <Plate text={'"OVERWHELMING THE OLDER SYSTEM" · MULLIN SAID'} displayLines={['"OVERWHELMING THE OLDER SYSTEM"', 'MULLIN SAID']} x={540} y={600} size={32} p={win(f, b30 + 6)} />
+        <Plate text="1,000 TRIES EVERY 4 TO 5 SECONDS · PER THE FAA" displayLines={['1,000 TRIES EVERY 4 TO 5 SECONDS', 'PER THE FAA']} x={540} y={600} size={32} p={win(f, b30 + 6)} />
       </g>
     }>
       <SVG>
@@ -1143,7 +1177,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const env = ease(f, b33, 16);
   const crane = easeIO(f, p.dur - 40, 40);
   const cam = (fr: number): Cam => {
-    const base = track([{t: 0, z: 1.2, fx: 540, fy: 940}, {t: b32, z: 1.08, fx: 540, fy: 950}, {t: p.dur - 40, z: 1.12, fx: 600, fy: 960}])(fr);
+    // after the envelope drops the camera settles on it (about (528,1105) after the high-angle transform)
+    const base = track([{t: 0, z: 1.2, fx: 540, fy: 940}, {t: b32, z: 1.08, fx: 540, fy: 950}, {t: b33 + 10, z: 1.1, fx: 560, fy: 990}, {t: p.dur - 40, z: 1.4, fx: 560, fy: 1040}])(fr);
     const k = easeIO(fr, p.dur - 40, 40);
     // the router photo after the high-angle transform: (0.8*840+108, 0.66*1180+323)
     return {z: lerp(base.z, 2.4, k), fx: lerp(base.fx, 780, k), fy: lerp(base.fy, 1102, k)};
@@ -1157,11 +1192,11 @@ const S11: React.FC<SceneProps> = ({p}) => {
       </g>
     }>
       <SVG>
-        <Office f={f} seed={12} win={{x: 760, y: 120, w: 280, h: 240}} />
+        <Office f={f} seed={12} win={{x: 760, y: 120, w: 280, h: 240}} cool={1} />
         {/* seen from high above the desk: the board foreshortened, the desk filling the low frame */}
-        <DeskEdge f={f} seed={12} y={1160} />
+        <DeskEdge f={f} seed={12} y={1160} kind="files" />
         <g transform="translate(108,323) scale(0.8,0.66)"><HeldTravel f={f} x={BOARD.x} y={BOARD.y} w={BOARD.w} h={BOARD.h} mode="shadow" seed={21}>
-          <InvestigationBoard f={f} pinned={1} quote1={1} quote2={1} fold={lerp(0.3, 0.1, off)} tags={1} snapshot={1} letters={1} letterStr={1} routerStr={rstr} envelope={env} tarpLift={1} fade={crane} tilt={1} cues={[b31, b32, b33]} emotion={f < b33 ? 'worried' : 'hopeful'} />
+          <InvestigationBoard f={f} pinned={1} quote1={1} quote2={1} fold={lerp(0.3, 0.1, off)} tags={1} snapshot={1} letters={1} letterStr={1} routerStr={rstr} envelope={env} tarpLift={1} fade={clamp01(crane * 4)} noLink={1} tilt={1} cues={[b31, b32, b33]} emotion={f < b33 ? 'worried' : 'hopeful'} />
         </HeldTravel></g>
         <g transform="translate(220,1262)">
           <rect x={-110} y={-20} width={220} height={40} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={3} />
@@ -1179,41 +1214,58 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const b34 = p.b(34), b47 = p.b(47), b35 = p.b(35);
   const litT = clamp01((f - b47) / 40);
   const n69 = Math.round(69 * litT);
-  const photo = 1 - easeIO(f, 6, 30);
+  // the router photo from the board grows past the frame edges at once, and the field is already rising behind it
+  const grow = easeIO(f, 0, 26);
   const cam = (fr: number): Cam => {
     const k1 = easeIO(fr, 0, Math.max(20, b35 - 10));
     const k2 = easeIO(fr, b35 - 10, 30);
-    return {z: lerp(lerp(5.0, 2.2, k1), 1.0, k2), fx: 540, fy: 1000};
+    return {z: lerp(lerp(2.6, 1.5, k1), 1.0, k2), fx: 540, fy: lerp(1060, 960, k2)};
   };
   return (
     <Frame p={p} cam={cam} bg={C.pineD} overlay={
       <g>
         <Plate text="PER THE CONTRACTOR VIA SENATE COMMERCE DEMOCRATS" displayLines={['PER THE CONTRACTOR', 'VIA SENATE COMMERCE DEMOCRATS']} x={540} y={600} size={32} p={win(f, b34 + 16, b47)} /> {/* plate-overlap-ok */}
-        <Plate text="69 RUNNING" x={540} y={560} size={44} tone="dark" p={win(f, b47 + 6)} />
-        <Plate text="OF 400 INSTALLED · 3,648 PLANNED" displayLines={['OF 400 INSTALLED', '3,648 PLANNED']} x={540} y={700} size={34} p={win(f, b35 + 8)} />
+        <Plate text="69 RUNNING · PER THE CONTRACTOR" displayLines={['69 RUNNING', 'PER THE CONTRACTOR']} x={540} y={590} size={38} tone="dark" p={win(f, b47 + 6)} />
+        <Plate text="OF 400 INSTALLED · 3,648 PLANNED" displayLines={['OF 400 INSTALLED', '3,648 PLANNED']} x={540} y={760} size={34} p={win(f, b35 + 8)} />
+        <g transform="translate(900,1230)" opacity={win(f, b47)}>
+          <rect x={-90} y={-36} width={180} height={64} rx={8} fill="#082F35" stroke="#E8DCC2" strokeWidth={4} />
+          <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={40} fill="#FFF6E3">{n69}</text>
+        </g>
       </g>
     }>
       <SVG>
         <rect data-band="ok" x={-300} y={-100} width={1680} height={2200} fill={C.pineD} />
-        <ellipse data-band="ok" cx={540} cy={1000} rx={700} ry={600} fill={C.pine} opacity={0.6} />
-        <HeldTravel f={f} x={40} y={694} w={1000} h={634} mode="shadow" seed={23}>
-          <RouterField f={f} x={40} y={760} w={1000} h={560} persp cols={76} rows={48} installed={Math.round(400 * clamp01((f - b35 + 20) / 30))} lit={69} litT={litT} />
-        </HeldTravel>
-        <path data-band="ok" d="M 380 760 L 700 760 L 1080 1330 L 0 1330 Z" fill="none" stroke="#2C4448" strokeWidth={3} />
-        {/* the router photo from the board, which the camera rises out of */}
-        <g opacity={photo} transform="translate(540,1000)">
-          <rect x={-40} y={-30} width={80} height={60} fill="#F2EEE6" stroke={C.ink} strokeWidth={2} />
-          <rect x={-34} y={-24} width={68} height={42} fill={C.pine} />
-          <Router f={f} x={0} y={14} scale={0.18} leds={0.6} peanuts={false} fragile={false} glow={0.6} />
-        </g>
-        <g transform="translate(860,1250)" opacity={win(f, b47)}>
-          <rect x={-90} y={-36} width={180} height={64} rx={8} fill="#082F35" stroke="#E8DCC2" strokeWidth={4} />
-          <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={40} fill="#FFF6E3">{n69}</text>
-        </g>
+        {/* a far wall of rack silhouettes fading into pine haze at the horizon */}
         <g data-band="ok">
-          <rect x={-100} y={1520} width={1280} height={500} fill="#041C20" />
-          {Array.from({length: 12}, (_, i) => <rect key={i} x={i * 96} y={1560 + (i % 3) * 30} width={70} height={30} rx={3} fill="#0A2A2E" stroke="#1E4448" strokeWidth={2} />)}
+          {Array.from({length: 18}, (_, i) => <rect key={i} x={-40 + i * 64} y={300 + h01(i, 4) * 40} width={52} height={210} fill="#0A3A40" stroke="#123E44" strokeWidth={2} />)}
+          {Array.from({length: 18}, (_, i) => Array.from({length: 6}, (_, k) => <rect key={`${i}-${k}`} x={-34 + i * 64} y={320 + h01(i, 4) * 40 + k * 30} width={40} height={6} fill="#14464C" />))}
+          <rect x={-300} y={420} width={1680} height={160} fill={C.pineD} opacity={0.55} />
         </g>
+        <HeldTravel f={f} x={0} y={520} w={1080} h={810} mode="shadow" seed={23}>
+          <RouterField f={f} x={0} y={540} w={1080} h={790} persp cols={76} rows={48} installed={Math.round(400 * clamp01((f - b35 + 20) / 30))} lit={69} litT={litT} />
+        </HeldTravel>
+        {/* cyan light rising off the lit units into the haze */}
+        {Array.from({length: 12}, (_, i) => (
+          <ellipse key={`g${i}`} data-band="ok" cx={80 + h01(i, 9) * 920} cy={560 + h01(i, 10) * 600} rx={70} ry={180} fill={GS.cyan} opacity={0.06 * litT * (0.6 + 0.4 * Math.sin(f / 9 + i))} />
+        ))}
+        {/* rack tops in the near plane */}
+        <g data-band="ok">
+          {Array.from({length: 7}, (_, i) => (
+            <g key={i} transform={`translate(${-60 + i * 180},1360)`}>
+              <rect x={0} y={0} width={160} height={600} fill="#041C20" stroke="#0E3238" strokeWidth={3} />
+              <rect x={10} y={14} width={140} height={14} fill="#0A2A2E" />
+              <circle cx={140} cy={44} r={5} fill={GS.cyan} opacity={(i % 3 === 0 ? 0.8 : 0.2) * litT} />
+            </g>
+          ))}
+        </g>
+        {/* the router photo from the board, growing past the frame as the camera rises out of it */}
+        {grow < 0.999 && (
+          <g opacity={1 - grow} transform={`translate(540,1060) scale(${lerp(1, 9, grow)})`}>
+            <rect x={-40} y={-30} width={80} height={60} fill="#F2EEE6" stroke={C.ink} strokeWidth={2} />
+            <rect x={-34} y={-24} width={68} height={42} fill={C.pine} />
+            <Router f={f} x={0} y={14} scale={0.18} leds={0.6} peanuts={false} fragile={false} glow={0.6} />
+          </g>
+        )}
       </SVG>
     </Frame>
   );
@@ -1247,6 +1299,9 @@ const S13: React.FC<SceneProps> = ({p}) => {
         <g data-band="ok">
           <rect x={120} y={140} width={840} height={280} rx={6} fill="#1E3A40" stroke={C.ink} strokeWidth={5} />
           {Array.from({length: 18}, (_, i) => <path key={i} d={`M ${140 + h01(i, 3) * 800} ${150 + ((f * 3 + i * 40) % 260)} l -4 22`} stroke="#9FC3CC" strokeWidth={2} opacity={0.5} />)}
+          {/* runway lights and a dim city through the rain */}
+          {Array.from({length: 14}, (_, i) => <circle key={`bk${i}`} cx={160 + i * 56} cy={330 - (i % 4) * 6} r={9 + (i % 3) * 4} fill={i % 5 === 0 ? GS.persimmon : '#FFE7A8'} opacity={0.25 + 0.15 * Math.sin(f / 13 + i)} />)}
+          {Array.from({length: 9}, (_, i) => <rect key={`cy${i}`} x={150 + i * 90} y={230 + h01(i, 6) * 60} width={60} height={110 - h01(i, 6) * 60} fill="#16323A" opacity={0.8} />)}
           <path d="M 120 380 L 960 360" stroke="#0A2024" strokeWidth={30} />
           <circle cx={700} cy={330} r={6} fill={GS.persimmon} opacity={0.5 + 0.5 * Math.sin(f / 8)} />
         </g>
@@ -1264,7 +1319,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
               pathLength={1} style={{strokeDasharray: `${clamp01(fan * 1.6 - i * 0.3)} 1`}} opacity={lights * (tap > 0.5 && i !== 1 ? 0.35 : 0.75 + 0.25 * Math.sin(f / 5 + i * 2))} />
           ))}
           <HeldTravel f={f} x={180} y={900} w={300} h={200} mode="sweep" seed={14}>
-            <SuggestionSlip f={f} x={330} y={1080 + (1 - rise) * 60} scale={0.9} emotion={tap > 0.5 ? 'content' : 'eager'} nod={clamp01((f - b38 - 4) / 14)} rot={-8 * Math.sin(rise * Math.PI)} tag="FLYWAYS" cues={[b36, b48, b37, b38]} seed={11} />
+            <SuggestionSlip f={f} x={330 + Math.sin(f / 14) * 10 * (1 - tap)} y={1080 + (1 - rise) * 60 - Math.abs(Math.sin(f / 9)) * 8 * fan * (1 - tap)} scale={0.9} emotion={tap > 0.5 ? 'content' : 'eager'} nod={clamp01((f - b38 - 4) / 14)} rot={-8 * Math.sin(rise * Math.PI)} tag="FLYWAYS" cues={[b36, b48, b37, b38]} seed={11} />
           </HeldTravel>
         </g>
         <Hand f={f} x0={1150} y0={1250} x1={lerp(1150, 560, hand)} y1={lerp(1250, 850, hand)} t={hand} tap={tap} sleeve="#2E4A3A" tag="DISPATCHER" />
@@ -1278,7 +1333,11 @@ const S13: React.FC<SceneProps> = ({p}) => {
         </g>
         <g data-band="ok">
           <rect x={-100} y={1520} width={1280} height={500} fill="#4A3222" />
+          <ellipse cx={540} cy={1530} rx={520} ry={60} fill="#2E5A60" opacity={0.35 * lights} />
           <rect x={120} y={1560} width={420} height={60} rx={8} fill="#2A2A30" stroke={C.ink} strokeWidth={4} />
+          {Array.from({length: 2}, (_, r) => Array.from({length: 11}, (_, i) => <rect key={`kc${r}${i}`} x={132 + i * 37} y={1600 + r * 34} width={30} height={26} rx={4} fill="#5A5A62" stroke={C.ink} strokeWidth={2} />))}
+          <g transform="translate(720,1600) rotate(-6)"><rect x={0} y={0} width={200} height={130} fill={C.paper} stroke={C.ink} strokeWidth={4} /><path d="M 20 30 L 170 30 M 20 56 L 150 56 M 20 82 L 160 82" stroke={C.ink} strokeWidth={3} opacity={0.4} /><circle cx={160} cy={100} r={22} fill="none" stroke="#8E6646" strokeWidth={4} opacity={0.6} /></g>
+          <path d="M 960 1660 L 964 1580 L 1030 1580 L 1034 1660 Z" fill={GS.persimmon} stroke={C.ink} strokeWidth={4} />
           {Array.from({length: 12}, (_, i) => <rect key={i} x={132 + i * 34} y={1572} width={26} height={16} rx={3} fill="#4A4A52" />)}
         </g>
         {/* the shot opens on the board, then pushes into the corner snapshot until it fills the frame */}
@@ -1286,7 +1345,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
           <g opacity={1 - easeIO(f, 8, 16)}>
             <rect data-band="ok" x={-300} y={-100} width={1680} height={2200} fill={C.wall} />
             <g transform={`translate(${540 - 855 * lerp(1.0, 4.2, easeIO(f, 0, 22))},${960 - 1080 * lerp(1.0, 4.2, easeIO(f, 0, 22))}) scale(${lerp(1.0, 4.2, easeIO(f, 0, 22))})`}>
-              <InvestigationBoard f={f} pinned={1} quote1={1} quote2={1} fold={0.1} tags={1} snapshot={1} letters={1} letterStr={1} routerStr={1} envelope={1} tarpLift={1} emotion="hopeful" cues={[b36]} />
+              <InvestigationBoard f={f} pinned={1} quote1={1} quote2={1} fold={0.1} tags={1} snapshot={1} letters={1} letterStr={1} routerStr={1} envelope={1} tarpLift={1} tilt={1} noLink={1} emotion="hopeful" cues={[b36]} />
             </g>
           </g>
         )}
@@ -1334,7 +1393,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
           <SuggestionSlip f={f} x={0} y={20} scale={0.22} emotion="hopeful" look={-look} rot={-8 * look} cues={[b41]} seed={14} shadow={false} />
           <rect x={18} y={-2} width={40} height={24} fill="#EBD9B4" stroke={C.ink} strokeWidth={1.5} />
         </g>
-        <g transform={`translate(${470 + Math.sin(bank * Math.PI * 2) * 40},${640 + Math.cos(bank * Math.PI * 2) * 20}) rotate(${Math.sin(bank * Math.PI * 2) * 8})`}>
+        <g transform={`translate(${320 + Math.sin(bank * Math.PI * 2) * 60},${300 + Math.cos(bank * Math.PI * 2) * 30}) rotate(${Math.sin(bank * Math.PI * 2) * 8})`}>
           <BushPlane f={f} x={0} y={0} scale={0.8} mode="fly" propSpeed={1.2} body={GS.persimmon} />
         </g>
         <Airliner f={f} x={790} y={1240} scale={0.82} emotion="hopeful" look={-1} cues={[b40, b41]} seed={3} />

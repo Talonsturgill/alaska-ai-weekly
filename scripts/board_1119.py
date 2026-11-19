@@ -55,12 +55,12 @@ B = [
  (28, 13, 0.0, "buzz", "a flood of cyan pulses", "pours out of the router down a cable toward an older system's single intake slot", "frantic", "PER THE FAA", "the pulses pour", ""),
  (46, 13, W("thousand"), "click", "the stopwatch", "clicks and its hand starts one sweep as the counter begins to climb", "tense", "4 TO 5 SECONDS · COUNT IT", "the hand starts", ""),
  (29, 13, W("five"), "knock", "a counter beside a stopwatch", "climbs past 500 mid-sweep as the knocks speed up", "frantic", "1,000 TRIES EVERY 4 TO 5 SECONDS", "the counter climbs", "rehook: a counter races to 1,000 over one stopwatch sweep"),
- (30, 13, W("long"), "clunk", "the counter", "lands on 1,000 as the sweep completes, and the older system's intake slot jams and its door bulges", "overwhelmed", "\"OVERWHELMING THE OLDER SYSTEM\" · MULLIN SAID", "the door bulges", ""),
+ (30, 13, W("long"), "clunk", "the counter", "lands on 1,000 as the sweep completes, and the older system's intake slot jams and its door bulges", "overwhelmed", "1,000 TRIES EVERY 4 TO 5 SECONDS · PER THE FAA", "the door bulges", ""),
  (31, 14, 0.0, "flutter", "the camera", "pulls back out of the vault onto the board, where the copper coil's DUFFY SAID tag flutters off its CLAIM card", "wry", "COPPER GOT BLAMED", "the tag flutters off", ""),
  (32, 14, W("replacement"), "swing", "the red string to the router photo", "swings and settles beside the red strings to Slip, which stay exactly as they were", "uneasy", "THE TRACE POINTS AT ITS REPLACEMENT", "the string settles", ""),
  (33, 15, 0.0, "pin", "a sealed, unopened envelope tagged FINAL FINDINGS", "drops onto the board's center pin with a pencilled tag swinging on its flap", "plain", "WHY IT FAILED · NOT YET FINAL", "the tag swings", ""),
  (34, 16, 0.0, "paper", "the camera", "cranes down along the red string into the router photo and rises out of it over a dark field of router outlines", "awed", "PER THE CONTRACTOR VIA SENATE COMMERCE DEMOCRATS", "the camera rises", "rehook: the router photo opens into a dark field of outlines"),
- (47, 16, W("sixty"), "pulse", "69 router outlines", "flicker on cyan one after another as a small counter ticks to 69", "small", "69 RUNNING", "the 69 flicker on", ""),
+ (47, 16, W("sixty"), "pulse", "69 router outlines", "flicker on cyan one after another as a small counter ticks to 69", "small", "69 RUNNING · PER THE CONTRACTOR", "the 69 flicker on", ""),
  (35, 16, W("installed"), "cascade", "the camera", "finishes its rise to reveal the whole field of 3,648 planned outlines, 400 of them installed", "awed", "OF 400 INSTALLED · 3,648 PLANNED", "the field opens", ""),
  (36, 17, 0.0, "click", "the snapshot from the board", "fills the frame as the camera pushes into it and its dark desk lights up, a sibling paper slip tagged FLYWAYS on its screen", "warm", "ALASKA AIRLINES · FLYWAYS · SINCE 2021", "the lamp clicks on", ""),
  (48, 17, W("twenty"), "swing", "the FLYWAYS slip", "rises from the corner of the screen and swings into a bow", "eager", "SAME MAKER · AIR SPACE INTELLIGENCE", "the slip bows", ""),
@@ -75,7 +75,7 @@ PLATE_AT = {i: "on-object" for i in range(1, 50)}
 PLATE_AT.update({1: "lower-third", 16: "lower-third", 24: "lower-third", 40: "lower-third"})
 CLAIM_MAP = {1: ["c1"], 2: ["c2"], 3: ["c3"], 4: ["c5", "c6"], 5: ["c7", "c18"], 6: ["c7"], 7: ["c7"], 8: ["c39", "c11"], 9: ["c8"], 10: ["c9"],
              11: ["c10"], 12: ["c11"], 13: ["c13"], 14: ["c14"], 15: ["c15"], 16: ["c23"], 17: ["c13", "c14"], 18: ["c28"], 19: ["c26"], 20: ["c26"],
-             21: ["c42"], 22: ["c42"], 23: ["c8"], 24: ["c18"], 25: ["c18"], 26: ["c18"], 27: ["c19"], 28: ["c20"], 29: ["c20"], 30: ["c21"],
+             21: ["c42"], 22: ["c42"], 23: ["c8"], 24: ["c18"], 25: ["c18"], 26: ["c18"], 27: ["c19"], 28: ["c20"], 29: ["c20"], 30: ["c20"],
              31: ["c15"], 32: ["c18", "c19"], 33: ["c22"], 34: ["c45"], 35: ["c45"], 36: ["c27"], 37: ["c28"], 38: ["c29"], 39: ["c31"], 40: ["narration"],
              41: ["narration"], 42: ["c14"], 43: ["c26"], 44: ["c18"], 45: ["c19"], 46: ["c20"], 47: ["c45"], 48: ["c27", "c11"], 49: ["c2"]}
 
