@@ -98,8 +98,8 @@ export const SuggestionSlip: React.FC<{
           {!blink && <circle cx={27 + look * 4} cy={3} r={6.5} fill={INK} />}
           {!blink && <circle cx={-20 + look * 4} cy={0} r={2.2} fill="#fff" />}
           {!blink && <circle cx={30 + look * 4} cy={0} r={2.2} fill="#fff" />}
-          <path d={`M -40 ${-24 - brow} Q -26 ${-30 + brow * 0.4} -12 ${-22 + brow}`} stroke={INK} strokeWidth={5.5} fill="none" strokeLinecap="round" />
-          <path d={`M 10 ${-22 + brow} Q 24 ${-30 + brow * 0.4} 38 ${-24 - brow}`} stroke={INK} strokeWidth={5.5} fill="none" strokeLinecap="round" />
+          <path d={`M -40 ${-24 + brow * 0.5} Q -26 ${-30 - brow * 0.3} -12 ${-24 - brow}`} stroke={INK} strokeWidth={5.5} fill="none" strokeLinecap="round" />
+          <path d={`M 10 ${-24 - brow} Q 24 ${-30 - brow * 0.3} 38 ${-24 + brow * 0.5}`} stroke={INK} strokeWidth={5.5} fill="none" strokeLinecap="round" />
           <path d={mouth} fill={emotion === 'scared' ? '#5A1E16' : 'none'} stroke={INK} strokeWidth={5} strokeLinecap="round" strokeLinejoin="round" />
           <ellipse cx={-44} cy={22} rx={10} ry={6} fill={GS.cheek} opacity={0.55} />
           <ellipse cx={42} cy={22} rx={10} ry={6} fill={GS.cheek} opacity={0.55} />
@@ -465,8 +465,8 @@ export const DeskCalendar: React.FC<{f: number; x: number; y: number; scale?: nu
  * A field of router outlines in a grid. total cells drawn, the first `installed` outlined in ivory, the first `lit`
  * glowing cyan (lit pops on one after another as `litT` runs 0..1). (x, y) is the top-left; cell the pitch.
  */
-export const RouterField: React.FC<{f: number; x: number; y: number; cols: number; rows: number; cell?: number; installed?: number; lit?: number; litT?: number; seed?: number}> =
-({f, x, y, cols, rows, cell = 13, installed = 0, lit = 0, litT = 1, seed = 4}) => {
+export const RouterField: React.FC<{f: number; x: number; y: number; cols: number; rows: number; cell?: number; installed?: number; lit?: number; litT?: number; seed?: number; persp?: boolean; w?: number; h?: number}> =
+({f, x, y, cols, rows, cell = 13, installed = 0, lit = 0, litT = 1, seed = 4, persp = false, w = 1000, h = 634}) => {
   const n = cols * rows;
   const order = React.useMemo(() => Array.from({length: n}, (_, i) => i).sort((a, b) => h01(a, seed) - h01(b, seed)), [n, seed]);
   const rank = React.useMemo(() => {
@@ -476,13 +476,23 @@ export const RouterField: React.FC<{f: number; x: number; y: number; cols: numbe
   }, [order, n]);
   const litN = Math.round(lit * clamp01(litT));
   const cells: React.ReactNode[] = [];
+  const pools: React.ReactNode[] = [];
+  // perspective: far rows at the top are small and dim, near rows large; rows recede to a horizon
+  const rowY = (r: number) => persp ? y + h * Math.pow(r / Math.max(1, rows - 1), 1.7) : y + r * cell;
+  const rowS = (r: number) => persp ? 0.32 + 0.98 * (r / Math.max(1, rows - 1)) : 1;
   for (let i = 0; i < n; i++) {
-    const cx = x + (i % cols) * cell, cy = y + Math.floor(i / cols) * cell;
+    const r = Math.floor(i / cols), c = i % cols;
+    const sc = rowS(r);
+    const cw = persp ? (w / cols) * sc : cell;
+    const cx = persp ? x + w / 2 + (c - cols / 2) * cw : x + c * cell;
+    const cy = rowY(r);
     const k = rank[i];
     const isLit = k < litN, isIn = k < installed;
-    cells.push(<rect key={i} x={cx} y={cy} width={cell - 3} height={cell * 0.55} rx={1.5}
-      fill={isLit ? GS.cyan : isIn ? '#3B4A50' : '#14262A'} stroke={isLit ? '#E8FFFF' : isIn ? GS.ivory : '#2C4448'} strokeWidth={isLit ? 1.4 : isIn ? 1 : 0.8}
-      opacity={isLit ? 0.75 + 0.25 * Math.sin(f / 6 + i) : 1} />);
+    const ww = Math.max(1.5, cw - 3 * sc), hh = Math.max(1, cw * 0.55);
+    if (isLit && persp) pools.push(<ellipse key={`p${i}`} cx={cx + ww / 2} cy={cy + hh + 3 * sc} rx={ww * 1.6} ry={hh * 0.8} fill={GS.cyan} opacity={0.18} />);
+    cells.push(<rect key={i} x={cx} y={cy} width={ww} height={hh} rx={1.5 * sc}
+      fill={isLit ? GS.cyan : isIn ? '#3B4A50' : '#14262A'} stroke={isLit ? '#E8FFFF' : isIn ? GS.ivory : '#2C4448'} strokeWidth={(isLit ? 1.4 : isIn ? 1 : 0.8) * Math.max(0.6, sc)}
+      opacity={(isLit ? 0.75 + 0.25 * Math.sin(f / 6 + i) : 1) * (persp ? 0.45 + 0.55 * sc : 1)} />);
   }
-  return <g>{cells}</g>;
+  return <g>{pools}{cells}</g>;
 };
