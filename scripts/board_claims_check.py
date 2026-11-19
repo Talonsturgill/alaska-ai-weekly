@@ -26,6 +26,9 @@ mechanical, so they run before a critic is spent:
         exactly this: 8 of 10 weather cards beside about 62 percent, 19 of 20 ducklings beside 82
         and 75. A board that states the ratio hands the scene its count; DISPATCH_STANDARD "A drawn
         count is a claim about a proportion" tells the scene to draw it.
+  FAIL  (machine pass 2026-11-19) an "N of M" on a VO line's plates, read in order, or in its narration,
+        whose denominator skips a set the cited claims name between N and M (scripts/denominator_check.py;
+        the 11-19 cut-1 hard blocker, 69 RUNNING then OF 3,648 beside 400 installed, 69 operational).
   NOTE  the plate's content words found in none of its cited claims, for the author to read before
         the critics do. Advisory: framing words (ASKED, SAYS, POST) are legitimate.
 
@@ -40,6 +43,9 @@ import json
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import denominator_check  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SB = ROOT / "out" / "dispatch" / "storyboard.json"
@@ -185,7 +191,27 @@ def analyze(sb, claims):
             if loose:
                 notes.append(f"beat {bid} plate {ann!r}: {', '.join(w.upper() for w in loose)} in none of "
                              f"{', '.join(x for x in cited if x in by_id)}")
+    problems += denominator_problems(sb, by_id)
     return {"problems": problems, "notes": notes, "checked": checked, "skipped": ""}
+
+
+def denominator_problems(sb, by_id):
+    """FAIL lines for an 'N of M' a VO line's plates (in order) or its narration state with a denominator
+    that skips a set the beats' claims name between N and M (machine pass 2026-11-19, the 11-19 cut-1
+    hard blocker: 69 RUNNING then OF 3,648, while c45 pairs 69 with the 400 installed)."""
+    groups = {}
+    for b in sb.get("beats") or []:
+        groups.setdefault(b.get("vo_line", f"beat {b.get('id')}"), []).append(b)
+    out = []
+    for vl, bs in groups.items():
+        plates = [(b.get("draw") or {}).get("annotation") for b in bs]
+        said = denominator_check.plate_ratios(plates)
+        for v in dict.fromkeys(str(b.get("vo") or "") for b in bs):
+            said += denominator_check.ratios(v)
+        cids = list(dict.fromkeys(str(c) for b in bs for c in (b.get("claims") or []) if str(c) in by_id))
+        texts = [(c, denominator_check.claim_text(by_id[c])) for c in cids]
+        out += denominator_check.problems(said, texts, f"VO line {vl} (beats {', '.join(str(b.get('id')) for b in bs)})")
+    return list(dict.fromkeys(out))
 
 
 def _self_test():
@@ -244,6 +270,19 @@ def _self_test():
         if len(got) != want:
             bad.append(f"{name}: got {len(got)} {got}")
     cases += share_cases
+    c45 = {"claims": [{"id": "c45", "spoken": "Per the contractor, the upgrade converts 3,648 routers, and 400 "
+                       "are installed with 69 operational."}]}
+    def dboard(*anns):
+        return {"run_date": "2026-11-19", "beats": [
+            {"id": i + 1, "vo_line": 16, "claims": ["c45"], "draw": {"annotation": a}} for i, a in enumerate(anns)]}
+    for name, sb, want in [
+            ("69 RUNNING then OF 3,648 fails (11-19 cut 1)", dboard("69 RUNNING", "OF 3,648 · VIA SENATE COMMERCE DEMOCRATS"), 1),
+            ("69 RUNNING then OF 400 INSTALLED passes (11-19 shipped)",
+             dboard("69 RUNNING · PER THE CONTRACTOR", "OF 400 INSTALLED · 3,648 PLANNED"), 0)]:
+        got = analyze(sb, c45)["problems"]
+        cases.append((name, sb, want))
+        if len(got) != want:
+            bad.append(f"{name}: got {len(got)} {got}")
     r = analyze(board(("SENSORS VALIDATED IN ALASKA", ["c2"])), claims)
     if r["problems"] or not any("ALASKA" in n for n in r["notes"]):
         bad.append(f"loose word note: {r}")

@@ -171,7 +171,9 @@ export const IdleFigure: React.FC<{
   const k = h / 300;
   const skew = (Math.atan2(pose.shift * k, h) * 180) / Math.PI + pose.lean * 0.35;
   const tf = `translate(${x} ${footY}) skewX(${skew}) scale(1 ${pose.breath}) translate(0 ${pose.dip * k}) translate(${-x} ${-footY})`;
-  return <g transform={tf}>{typeof children === 'function' ? (children as (p: FigurePose) => React.ReactNode)(pose) : children}</g>;
+  // data-figure marks the held figure for the browser probes (held_beat_probe.cjs records its box on every
+  // strip frame, held_beat_check --source reports the figure's height). An attribute, so no pixel changes.
+  return <g transform={tf} data-figure={`idle-${seed}`}>{typeof children === 'function' ? (children as (p: FigurePose) => React.ReactNode)(pose) : children}</g>;
 };
 
 export interface StrikeState {

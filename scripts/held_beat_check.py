@@ -176,6 +176,10 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
     import tempfile
     from PIL import Image
     windows, props = plan_windows(out_dir)
+    try:
+        os.remove(os.path.join(out_dir, "figure_plan.json"))   # never report a previous source's figures
+    except OSError:
+        pass
     pairs = [(name, beat, t0, int(round(t0 * 30)), int(round(t0 * 30)) + 7) for name, beat, t0 in windows]
     with tempfile.TemporaryDirectory(prefix="held-beat-") as tmp:
         opts = os.path.join(tmp, "o.json")
@@ -207,6 +211,27 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
             measured += 1
             if pct < floor:
                 low.append((name, beat, shot_at(props, t0), t0, round(pct, 1)))
+        # HERO SCALE (machine pass 2026-11-19; queue: composition, small heroes, repeat 3). The probe
+        # records every <IdleFigure>'s projected box; keep the tallest visible figure on each strip.
+        try:
+            with open(os.path.join(frames_dir, "figures.json")) as fh:
+                boxes = json.load(fh)
+        except (OSError, ValueError):
+            boxes = None
+        if boxes is not None:
+            rows = []
+            for name, beat, t0, f0, _f1 in pairs:
+                figs = boxes.get(str(f0)) or []
+                if figs:
+                    top = max(figs, key=lambda b: b["h"])
+                    rows.append({"strip": name, "beat": beat, "shot": shot_at(props, t0), "t0": t0,
+                                 "figures": len(figs), "tallest_px": top["h"], "tallest_id": top["id"],
+                                 "foot_y": top["y"] + top["h"]})
+            with open(os.path.join(out_dir, "figure_plan.json"), "w") as fh:
+                json.dump({"source": os.path.relpath(os.path.abspath(source), REPO),
+                           "measure": "getBoundingClientRect of each visible [data-figure] (lib IdleFigure) on Chrome "
+                                      "frame 1 of each strip, frame pixels of 1920, camera included",
+                           "strips": rows}, fh, indent=1)
     with open(os.path.join(out_dir, "top_band_plan.json"), "w") as fh:
         json.dump({"source": os.path.relpath(os.path.abspath(source), REPO),
                    "measure": "dead_space_check.top_band_fraction and bottom_band_fraction on Chrome frame 1 of each strip",
@@ -418,6 +443,24 @@ def _self_test():
     return 0
 
 
+def figure_summary(path):
+    """One NOTE line on how tall the held figures are drawn, from figure_plan.json, or ''. Advisory: no
+    floor until two films have been read with it (queue line, 2026-11-09 escalation)."""
+    try:
+        rows = json.load(open(path)).get("strips") or []
+    except (OSError, ValueError):
+        return ""
+    if not rows:
+        return "NOTE figure scale: no <IdleFigure> drawn on any strip frame"
+    hs = sorted(r["tallest_px"] for r in rows)
+    med = hs[len(hs) // 2]
+    small = sorted(rows, key=lambda r: r["tallest_px"])[:3]
+    return (f"NOTE figure scale: a figure on {len(rows)} strip(s), tallest figure median {med} px "
+            f"({100 * med / 1920:.0f}% of frame height), smallest "
+            + ", ".join(f"S{r['shot']} {r['strip']} {r['tallest_px']} px" for r in small)
+            + " (out/dispatch/figure_plan.json)")
+
+
 def main(argv=None):
     args = argv if argv is not None else sys.argv[1:]
     if args[:1] == ["--self-test"]:
@@ -507,6 +550,9 @@ def main_source(argv):
             print(f"held beats (source): could not measure {os.path.relpath(t, REPO)}: {exc}")
             worst = max(worst, 2)
             continue
+        fs_line = figure_summary(os.path.join(REPO, "out", "dispatch", "figure_plan.json"))
+        if fs_line:
+            print("  " + fs_line)
         for name, beat, shot, t0, pct in low:
             b = beats.get(beat)
             shows = f" | {b.get('shows', '')[:80]}" if b else ""

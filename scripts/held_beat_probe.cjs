@@ -10,6 +10,8 @@
 //
 //   node scripts/held_beat_probe.cjs <options.json> <outdir>
 //   options: {source, props, frames: [int...], component?}
+// Also writes <outdir>/figures.json: {frame: [{id, x, y, w, h, opacity}]} for every visible element
+// carrying data-figure (lib <IdleFigure>), measured in frame pixels (machine pass 2026-11-19).
 const fs = require('fs'), path = require('path'), os = require('os'), http = require('http');
 const {createRequire} = require('module');
 const engine = path.resolve(__dirname, '../video-engine'), req = createRequire(path.join(engine, 'package.json'));
@@ -55,14 +57,29 @@ registerRoot(()=> <Composition id="HeldBeat" component={Film} width={1080} heigh
     const {seekToFrame} = require(path.join(dist, 'seek-to-frame.js'));
     const {screenshot} = require(path.join(dist, 'puppeteer-screenshot.js'));
     let n = 0;
+    const figures = {};
     for (const frame of frames) {
       await seekToFrame({frame, page, composition: 'HeldBeat', timeoutInMilliseconds: 30000, logLevel: 'error', indent: false, attempt: 0});
       await page.evaluate(() => document.fonts.ready.then(() => true));
       await screenshot({page, type: 'png', path: path.join(outdir, `f${String(frame).padStart(5, '0')}.png`),
         omitBackground: false, width: 1080, height: 1920, scale: 1});
+      // Every <IdleFigure> carries data-figure (machine pass 2026-11-19, queue: hero scale): record its
+      // projected box, which carries the Frame camera, so held_beat_check can report how tall the
+      // figures are drawn on each strip. The page renders the composition at 1080x1920, scale 1.
+      figures[frame] = await page.evaluate(() => Array.from(document.querySelectorAll('[data-figure]')).map((el) => {
+        const r = el.getBoundingClientRect();
+        let op = 1;
+        for (let e = el; e && e.nodeType === 1; e = e.parentElement) {
+          const cs = getComputedStyle(e);
+          if (cs.display === 'none' || cs.visibility === 'hidden') op = 0;
+          op *= parseFloat(cs.opacity || '1');
+        }
+        return {id: el.getAttribute('data-figure'), x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height), opacity: Math.round(op * 100) / 100};
+      }).filter((b) => b.w > 2 && b.h > 2 && b.opacity > 0.05 && b.x < 1080 && b.x + b.w > 0 && b.y < 1920 && b.y + b.h > 0));
       if (++n % 40 === 0) process.stderr.write(`held beat probe ${n}/${frames.length} frames\n`);
     }
     await closePage();
+    fs.writeFileSync(path.join(outdir, 'figures.json'), JSON.stringify(figures));
     return {version: 1, source, frames, total};
   } finally {
     if (browser) await browser.close({silent: true});

@@ -533,7 +533,8 @@ DEDUPE_WINDOW_DAYS in scripts/dedupe.py.
    the sentence at the comma, never deleting it and leaving a run-on. Hard fail via caption_check
    COMMA_PER_100W.
 6. **NO-STALL.** (a) Anything that can exceed ~2 minutes (voice synth, npm install, renders,
-   encodes) runs in the BACKGROUND via `scripts/run_bg.sh <marker_dir> <name> -- <cmd...>`, which
+   encodes) runs in the BACKGROUND via `scripts/run_bg.sh <name> -- <cmd...>` (marker dir out/dispatch/bg;
+   `<marker_dir> <name> --` also works), which
    writes a heartbeat and a `.done` marker with the exit code. (b) Wait on it with
    `scripts/wait_for.py` inside one call (timeout 600000 ms), which reports wedged (stale heartbeat
    over 90s and no `.done`) as its own exit code. Never end a turn to wait. (c) While a job cooks,
@@ -975,7 +976,9 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   claim. Read its `[board-claims-note]` lines before the critics do. Since 2026-11-17 a beat whose
   plate or phrase carries a percentage and whose `shows` draws a share states it as a ratio ("6 of
   10 cards", "4 in 20 out of step") within 10 points of that percentage; "most" or a bare count
-  fails. The scene draws exactly that ratio.
+  fails. The scene draws exactly that ratio. Since 2026-11-19 an "N of M" on a VO line's plates
+  (read in order, so 69 RUNNING then OF 3,648 is one ratio) or in its narration fails when a cited
+  claim names a set between N and M (`scripts/denominator_check.py`; vo_claims_check runs it too).
   Since 2026-11-12 it also runs `scripts/template_slot_check.py` (3 or more shots whose framing,
   pov, layout, motion and hero treatment repeat 4 of 5 fields at the aligned slot of either of the
   last two shipped boards FAIL, the "relabel of the last film's template" read Gate 0B made of

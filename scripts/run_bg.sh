@@ -18,7 +18,10 @@
 # in the harness task table.
 #
 # Usage:
+#   scripts/run_bg.sh <name> -- <command...>                (marker dir out/dispatch/bg)
 #   scripts/run_bg.sh <marker_dir> <name> -- <command...>
+# Any argument error prints both usage lines (machine pass 2026-11-19, queue: run-bg-usage: the
+# 11-19 run spent three calls on argument order before it found the right form).
 # Files written under <marker_dir>:
 #   <name>.pid        the detached job's PID
 #   <name>.log        combined stdout+stderr
@@ -33,16 +36,27 @@
 set -uo pipefail
 HEARTBEAT_S="${HEARTBEAT_S:-15}"
 
-if [ "$#" -lt 4 ]; then
-  echo "usage: run_bg.sh <marker_dir> <name> -- <command...>" >&2
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DEFAULT_MARKER_DIR="$REPO_ROOT/out/dispatch/bg"
+usage() {
+  [ -n "${1:-}" ] && echo "run_bg.sh: $1" >&2
+  echo "usage: run_bg.sh <name> -- <command...>                (marker dir out/dispatch/bg)" >&2
+  echo "       run_bg.sh <marker_dir> <name> -- <command...>" >&2
+  echo "e.g.   scripts/run_bg.sh cut -- scripts/make_cut.sh <Comp>" >&2
   exit 2
+}
+if [ "$#" -ge 2 ] && [ "$2" = "--" ]; then
+  MARKER_DIR="$DEFAULT_MARKER_DIR"; NAME="$1"; shift 2
+elif [ "$#" -ge 3 ] && [ "$3" = "--" ]; then
+  MARKER_DIR="$1"; NAME="$2"; shift 3
+else
+  usage "expected '--' after <name> (or after <marker_dir> <name>), got: $*"
 fi
-MARKER_DIR="$1"; NAME="$2"; shift 2
-if [ "$1" != "--" ]; then
-  echo "run_bg.sh: expected '--' before the command, got '$1'" >&2
-  exit 2
-fi
-shift
+[ "$#" -ge 1 ] || usage "no command after '--'"
+[ -n "$NAME" ] || usage "empty <name>"
+case "$NAME" in
+  */*|.*) usage "<name> '$NAME' looks like a path; the marker dir comes first, or omit it" ;;
+esac
 
 mkdir -p "$MARKER_DIR"
 LOG="$MARKER_DIR/$NAME.log"

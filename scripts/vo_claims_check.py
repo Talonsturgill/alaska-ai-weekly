@@ -37,11 +37,16 @@ Usage:
     python3 scripts/vo_claims_check.py --before-synth  # provisional density, no old timings
     python3 scripts/vo_claims_check.py --caption-rows-self-test  # the caption row prediction
 
+  3. (machine pass 2026-11-19) A SPOKEN RATIO whose denominator skips a set its claim names between
+     the two numbers ("69 of 3,648" when the claim says 400 installed, 69 operational): see
+     scripts/denominator_check.py.
+
 It reads the SCRIPT, so it runs BEFORE a second of TTS is spent, which is the whole point.
 """
 import json, re, sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import word_ban
+import denominator_check
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, ".."))
@@ -406,6 +411,11 @@ def main():
                     f"those claims' verbatim source says it. A citation is not a licence for a rate "
                     f"the record never states. Say what the record says, or drop the cadence.\n"
                     f"      {text[:150]}")
+        # A SOURCED NUMBER IS NOT A SOURCED RATIO (machine pass 2026-11-19, queue denominator-check):
+        # "69 of 3,648" cited c45, which pairs 69 with the 400 installed. Both numbers were in the claim.
+        problems += denominator_check.problems(
+            denominator_check.ratios(text),
+            [(c, denominator_check.claim_text(claims[c])) for c in cited], f"L{idx}")
         if QUANT.search(text) and not cited and not DATEISH.search(text):
             problems.append(
                 f"L{idx} states a quantity and cites NO claim id. Every number in the "

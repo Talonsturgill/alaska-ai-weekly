@@ -1,17 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "shipped": [
-      "figurefinish-clips-tags: figure_rig_check fails a label drawn inside FigureFinish, whose filter region cut Ep1118's Parka tag to 'OTHER COMMISSION' (fails Ep1118 at cdb4523, clean on the shipped episode)",
-      "moose redraw (engine advance): lib Moose from reference anatomy with a walking gait (walk, stride) and a graze pose, proved on the MooseLook probe strip",
-      "credits-host-names: the end card credits FAIRBANKS DAILY NEWS-MINER, ALASKA'S NEWS SOURCE and ANCHORAGE DAILY NEWS instead of their domains",
-      "shared-near-band-stamp: repeat_set_check advisory in make_cut names a set band drawn in more than six scenes and over half the film (Ep1118 Near 13 of 16)",
-      "effort-level-not-applied: runbook records that the hosted run's effort is set on the trigger (medium measured) and the repo key cannot raise it"
+      "run-bg-usage: run_bg.sh prints both usage lines on any argument error and takes run_bg.sh <name> -- cmd with out/dispatch/bg as the default marker dir",
+      "denominator-check: denominator_check.py fails an 'N of M' whose cited claim names a set between N and M (the 11-19 cut-1 hard blocker 69 of 3,648), run by vo_claims_check and Gate 0A board_claims_check",
+      "hero-scale measure: IdleFigure carries data-figure and held_beat_check --source writes figure_plan.json with each strip's tallest figure (Ep1119 median 335 px, 17 percent of frame height); advisory, floor to be set from two films"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (owner decision, still open, repeat 8)",
-      "gate0-critic-rounds cap (owner decision, still open, repeat 6)",
-      "not reached: held-gesture-idle (11-18 S11 commissioner frozen), music-pool-drained"
+      "caption-scorer-hair-under-bar (owner decision, still open, repeat 9)",
+      "gate0-critic-rounds cap (owner decision, still open, repeat 7)",
+      "string-touches-suspect: a radius lint can't separate the cut-2 trace string from the shipped question strings; next step a declared BoardString link kind",
+      "held-gesture-idle: measured, removing the pose dampers moves Mullin's strip 6.6 to 6.7 percent, so idle gain is not the lever; read figure scale next"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."
