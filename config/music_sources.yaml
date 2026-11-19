@@ -37,6 +37,14 @@ pool:
     mood: [dark, ominous, deep, ambient]
   # ---- mood-expansion 2026-07-18 (all URLs verified 200; pick BY THE ANGLE, see angle_to_mood) ----
   # ADDED 2026-11-18: the curious/wonder branch was fully drained (every entry played inside 10 days). Downloaded and verified this run.
+  # ADDED 2026-11-19: every reflective/newsy/driving/warm entry had played inside 30 days. Downloaded and verified this run.
+  - title: "Investigations"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Investigations.mp3"
+    license: "CC BY 4.0"
+    credit: '"Investigations" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [newsy, driving, pondering, mysterious]
   - title: "Wallpaper"
     composer: "Kevin MacLeod"
     source: "incompetech.com"

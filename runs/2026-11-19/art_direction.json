@@ -1,0 +1,90 @@
+{
+ "run_date": "2026-11-19",
+ "story_id": "faa-ground-stop-smart-router-cutover",
+ "treatment": "One Thousand Knocks (Explainer winner with grafts, restaged at Gate 0). SLIP, SMART drawn as a chubby folded paper route card with a dashed pencil route across its belly, a worried face and no hands, is unwrapped from under a tarp on a cork evidence board and pinned at its center under red question strings and an IS IT THE AI? header, with a maker's tag, three days after SMART went to all 22 en route centers. The fair case gets full strength: two denial quotes with source tags and no checks, Duffy dropping a copper coil on a CLAIM card beside the board, Mullin in a hearing corridor holding a magnifying glass up to Slip's photo and never lowering it, lawmakers' letters with fog, an FAA hand stopping short of an uncut ASI pie, and a raven tugging a string whose far end ties to the letters. At 71 s the second tarp comes off and the camera dives down a cable run to a faceless new router in a night El Dorado vault mid copper to fiber swap, and a counter climbs to 1,000 over one 4.5 second stopwatch sweep. The payoff is additive: a sealed FINAL FINDINGS envelope with a pencilled NOT YET FINAL tag, Slip's strings unchanged. The open and the button are the split Anchorage apron, a Super Cub flying over the Chugach while a faced jet sits grounded, the cone pulled in the button and a cable crew's junction box at the apron edge.",
+ "palette": {
+  "sky": "#F4B183 persimmon-peach low sun at the horizon rising to #E0662B persimmon and #9C3F2A brick overhead in the Anchorage shots, a short November day with the sun low in the south",
+  "ground": "#F2E8D0 bone ivory snow and paper, with #C9B48E warm shade and #8C7A5E deep shade",
+  "hero": "#F7EFDC cream card stock for the Slip, pencil graphite #4A4A52 for its dashed route, a persimmon cheek",
+  "accent": "#39F0FF fiber cyan, reserved ONLY for the router's LEDs and rim glow, its pulse stream and the pulses piling at the older system's intake. Never on a string, a tag, the fiber strand, SMART or Flyways.",
+  "shadow": "#0E5A63 pine for night, the vault and the GROUNDED plates, shifted greener to #0B4A45 in shadow planes and deepening to #082F35, honestly in the teal family of 11-18 and 11-16 but greener and darker",
+  "supporting": "board cork #B07A48, every board string brick-red #B8323A (to Slip, to the letters and to the router photo alike), copper coil dull #8A5A3A, fiber strand neutral glass #CFE3E0 with an ink outline at the same weight as the copper, the jet in a generic ivory livery with a persimmon cheat line and a plain pine tail with no mark",
+  "mood": "warm, low winter sun and paper, investigative, a detective's board in daylight then a vault at night",
+  "divergence": "No mint, lilac, ultramarine, sage or honey (11-18, 11-16). Warm persimmon daylight replaces the sunless afterglow, and the signal colour moves from ultramarine chalk to a fiber cyan that only the traced mechanism wears. Honest overlap: the persimmon sky #E0662B sits near 11-18's safety-orange hero #E8582A, here as sky mass rather than a hero."
+ },
+ "light": {
+  "apron (S1, S15)": {
+   "key": "low persimmon sun from screen left in the south-west",
+   "fill": "cool sky bounce on the snow",
+   "rim": "persimmon rim on the jet and the Cub",
+   "planes": "Chugach and sky far, terminal and jets mid, snow berms and cones fore"
+  },
+  "board office (S2, S6, S8, S9, S12)": {
+   "key": "low persimmon sun through the window from screen left, raking across the cork",
+   "fill": "pine bounce off the far wall",
+   "rim": "warm desk lamp from upper right",
+   "planes": "window onto the Chugach far, board mid, desk edge with mug and papers fore"
+  },
+  "centers map (S4)": {
+   "key": "overhead lamp pool on the radar-room table",
+   "fill": "pine room dark",
+   "rim": "dome glows",
+   "planes": "starry dark wall far, table and map mid, radio and table edge fore"
+  },
+  "slip cutaway (S5)": {
+   "key": "lamp from upper left",
+   "fill": "pine bounce",
+   "rim": "cream edge light on the card",
+   "planes": "dark wall far, desk and Slip mid, wood grain fore"
+  },
+  "hearing corridor (S7)": {
+   "key": "cool fluorescent strip overhead",
+   "fill": "warm spill from a door at the far end",
+   "rim": "door spill on the figure's shoulders",
+   "planes": "far door and benches far, Mullin figure and photo mid, a bench back fore"
+  },
+  "vault (S10, S11)": {
+   "key": "one caged work lamp overhead",
+   "fill": "pine dark",
+   "rim": "cyan from the router only",
+   "planes": "cable trays far, router and rack mid, cable spools fore"
+  },
+  "router field (S13)": {
+   "key": "the cyan of the 69 lit outlines",
+   "fill": "deep pine",
+   "rim": "none",
+   "planes": "field far to mid, rack tops fore"
+  },
+  "Seattle desk (S14)": {
+   "key": "monitor glow from below",
+   "fill": "dim teal room",
+   "rim": "rain-window light from behind",
+   "planes": "rain-flecked window far, screen and slip mid, keyboard and fuel gauge fore"
+  },
+  "arc": "apron sun, board daylight cooling as the case builds, a cool corridor, vault night with the only cyan, a monitor glow, then the apron sun for the button"
+ },
+ "shape_language": "SLIP is soft and folded, rounded paper corners, a creased belly, no hands, so it reads as harmless advice. The router is a hard rectilinear box with sharp corners and LED rows, faceless. The jet is a long sleek tube with a face. The thematic contrast is soft paper suggestion versus hard boxed hardware, and the hard box is the one under strain.",
+ "casting": {
+  "hero": "SuggestionSlip (NET-NEW, lib/groundstop.tsx), a faced folded paper route card with a dashed pencil route on its belly, worried and hopeful emotions, cues beat poses, no hands. The only face in the film besides the jet. Plays SMART and, in the button, a sibling slip labelled FLYWAYS.",
+  "net_new_supporting": "Airliner (faced jet, eyes in the cockpit windows, wince and wide states, reusable), Router (faceless rack box with LED rows, packing peanuts and FRAGILE sticker options, pulse output), CorkBoard with PushPin and BoardString (strings with a pin-in settle and a tug state, held in one state through this film), Tarp",
+  "from_the_shelf": "BushPlane (the Super Cub), Raven (the board gag), AK_PATH (the Alaska map), HeldProp, HeldTravel, IdleFigure and FigureFinish for the faceless Suit figures (Duffy, Mullin) and faceless reaching hands (controller, FAA, dispatcher), EndCredits, CaptionBar. The pulse line is the Router's own cyan stream, not a shelf Cable.",
+  "why": "The shelf has no airliner, router or evidence board; each is a reusable family for future aviation, infrastructure and investigation stories.",
+  "faces": "Slip and the jet are the only faced characters; the Raven is an animal; every person is faceless",
+  "shelf_check": "grep of video-engine/src/lib for airliner, jet, rack, router, corkboard, pin, string, tarp found only BushPlane, a fiber CableRun and a refinery Cable; none can play an airliner, a rack router or an evidence board, so the groundstop family is net-new and reusable"
+ },
+ "motion_language": "SLIP flinches, folds smaller under the spotlight, sweats ink, and slides (never grabs). Stamps and plates land with anticipation and squash. Question strings pin in with a small twang and a settle, then hold their state for the rest of the film; the only string motion is the raven's tug and the out-of-state strings thawing on the four-hour clock cue. The router's cyan pulses stream and pile at the older system's intake. The counter eases and lands on one 4.5 second stopwatch sweep. The Cub's prop blurs and it banks. The jet winces and strains against its cone. Hero moves that earn motion blur: the plate slam on the jet's nose at 1.6 s, the tarp yank at 71 s, the Cub's climb.",
+ "composition": {
+  "focal_hierarchy": "the Slip or the router first, the board strings second, plates third",
+  "negative_space": "the sky over the Chugach in the open, used for the Cub's climb",
+  "safe_area": "hero action between y 420 and 1440; plates between y 520 and 1300; ground lines near y 1250; the top 420 holds sky, the range and the board's header; the band under the caption holds the desk edge, snow berms or cable spools",
+  "signature_shot": "the El Dorado vault cross-section: dull copper spliced into a neutral glass fiber on the left at equal weight, the peanut-strewn router strobing cyan at the center, the older system's intake slot buried in cyan pulses on the right with its door bulging, the counter landing on 1,000 as the 4.5 second stopwatch sweep completes"
+ },
+ "practicals": "No green tick, no CLEARED, GUILTY or ACCUSED anywhere. Slip wears a question, never a verdict, and its strings never change state. Denials are quote plates with source tags, never verdicts. Copper is dropped beside the board on a CLAIM card with a DUFFY SAID tag, never in the suspect row and never on a string. The payoff is additive: a sealed FINAL FINDINGS envelope with a pencilled NOT YET FINAL tag. Out-of-state strings thaw on the four-hour clock cue, never on the dispatcher's press, and no jet takes off in the button. Real people (Duffy, Mullin, Peyton) are faceless figures with name tags. Cyan lives only on the router, its pulses and the intake pile. The jet's livery is generic with no tail mark.",
+ "craft_advance": "none beyond the net-new groundstop family this film needs",
+ "value_check": {
+  "ivory_F2E8D0": "L* 92, the Slip's cream F7EFDC separates by its ink outline and pencil route",
+  "teal_0E5A63": "L* 34, plates and night read against ivory",
+  "cyan_39F0FF": "L* 87 on teal L* 34, reserved by chroma",
+  "persimmon_E0662B": "L* 58, sky mass, never on a plate verdict"
+ }
+}

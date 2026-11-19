@@ -1,0 +1,220 @@
+{
+  "run_date": "2026-11-19",
+  "title": "One Thousand Knocks",
+  "sources": [
+    {
+      "id": "s15",
+      "title": "Ground stop traced to L3Harris system site",
+      "outlet": "CBS News, November 18th",
+      "url": "https://www.cbsnews.com/news/ground-stop-l3harris-system-outage/",
+      "claims": [
+        "c18",
+        "c20"
+      ]
+    },
+    {
+      "id": "s12",
+      "title": "FAA ground stop coverage",
+      "outlet": "NBC News, November 13th to 15th",
+      "url": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+      "claims": [
+        "c13",
+        "c14"
+      ]
+    },
+    {
+      "id": "s16",
+      "title": "FAA ground stop coverage",
+      "outlet": "NBC News, November 13th to 15th",
+      "url": "https://www.nbcnews.com/politics/trump-administration/transportation-secretary-apologize-nationwide-ground-stop-airports-rcna609397",
+      "claims": [
+        "c19",
+        "c22"
+      ]
+    },
+    {
+      "id": "s14",
+      "title": "Commerce Committee Democrats demand answers on the November 13th ground stop",
+      "outlet": "Senate Commerce Committee Democrats, November 17th",
+      "url": "https://www.commerce.senate.gov/press/dem/release/commerce-committee-democrats-demand-clear-fact-based-answers-from-dot-faa-on-root-cause-of-nov-13th-nationwide-ground-stop/",
+      "claims": [
+        "c15",
+        "c18",
+        "c25",
+        "c45"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Alaska Airlines statement on FAA-issued ground stop",
+      "outlet": "Alaska Airlines newsroom, November 15th",
+      "url": "https://news.alaskaair.com/on-the-record/alaska-airlines-statement-on-faa-issued-ground-stop/",
+      "claims": [
+        "c1",
+        "c3",
+        "c4",
+        "c5"
+      ]
+    },
+    {
+      "id": "s19",
+      "title": "Alaska Airlines statement on FAA-issued ground stop",
+      "outlet": "Alaska Airlines newsroom, November 15th",
+      "url": "https://news.alaskaair.com/sustainability/how-ai-is-helping-alaska-airlines-plan-better-flight-routes-and-lower-emissions/",
+      "claims": [
+        "c27",
+        "c28",
+        "c31",
+        "c33"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "FAA issues nationwide ground stop, Anchorage airport included",
+      "outlet": "Alaska's News Source, November 13th",
+      "url": "https://www.alaskasnewssource.com/2026/11/13/faa-issues-nationwide-ground-stop-anchorage-airport-included/",
+      "claims": [
+        "c2",
+        "c3"
+      ]
+    },
+    {
+      "id": "s1",
+      "title": "Trump administration blames overloaded systems for ground stop",
+      "outlet": "Associated Press via WGCU, November 14th",
+      "url": "https://www.wgcu.org/top-story/2026-11-14/trump-administration-blames-overloaded-systems-for-ground-stop-after-faa-lets-flights-resume",
+      "claims": [
+        "c1",
+        "c6",
+        "c21"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Old tech blamed for the ground stop",
+      "outlet": "NPR via WAMC, November 13th",
+      "url": "https://www.wamc.org/2026-11-13/old-tech-blamed-for-the-ground-stop-that-caused-flight-chaos-it-got-overloaded",
+      "claims": [
+        "c5",
+        "c6",
+        "c15",
+        "c37"
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "FAA SMART contract and rollout",
+      "outlet": "FLYING Magazine, June and November 10th",
+      "url": "https://www.flyingmag.com/faa-smart-ai-now-active-at-22-artccs-nationwide/",
+      "claims": [
+        "c7"
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "FAA SMART AI tool and the ground stop",
+      "outlet": "Latin Times, November",
+      "url": "https://www.latintimes.com/faa-smart-ai-tool-ground-stop-investigation-601324",
+      "claims": [
+        "c7",
+        "c8",
+        "c23"
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Did new AI software crash the FAA network",
+      "outlet": "IVN, November",
+      "url": "https://ivn.us/did-new-ai-software-just-crash-the-faas-network/",
+      "claims": [
+        "c8",
+        "c10"
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "FAA AI tool SMART coverage",
+      "outlet": "AVweb, October",
+      "url": "https://www.avweb.com/aviation-news/faa-seeks-ownership-in-air-traffic-ai/",
+      "claims": [
+        "c9",
+        "c39",
+        "c42"
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "FAA AI tool SMART coverage",
+      "outlet": "AVweb, October",
+      "url": "https://www.avweb.com/aviation-news/lawmakers-seek-pause-on-faa-ai-tool/",
+      "claims": [
+        "c9",
+        "c10",
+        "c26"
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "ASI selected by FAA / FAA seeks stake in ASI",
+      "outlet": "ASI release and Politico via Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/asi-selected-faa-modernize-national-204300657.html",
+      "claims": [
+        "c11"
+      ]
+    },
+    {
+      "id": "s11",
+      "title": "ASI selected by FAA / FAA seeks stake in ASI",
+      "outlet": "ASI release and Politico via Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/faa-seeks-ownership-stake-air-213337324.html",
+      "claims": [
+        "c11",
+        "c26",
+        "c42"
+      ]
+    },
+    {
+      "id": "s13",
+      "title": "Nationwide ground stop ordered",
+      "outlet": "ABC News, November 13th",
+      "url": "https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848",
+      "claims": [
+        "c13",
+        "c14",
+        "c23"
+      ]
+    },
+    {
+      "id": "s17",
+      "title": "Who is L3Harris",
+      "outlet": "Newsweek, November 16th",
+      "url": "https://www.newsweek.com/who-is-l3harris-faa-contract-flight-cancellations-12717073",
+      "claims": [
+        "c19",
+        "c20",
+        "c22"
+      ]
+    },
+    {
+      "id": "s18",
+      "title": "The FAA wants to reboot the nation's airspace. This airline shows how it might work",
+      "outlet": "NPR via Alaska Public Media, August 10th",
+      "url": "https://alaskapublic.org/news/national/2026-08-10/the-faa-wants-to-reboot-the-nations-airspace-this-airline-shows-how-it-might-work",
+      "claims": [
+        "c27",
+        "c28",
+        "c29",
+        "c31"
+      ]
+    },
+    {
+      "id": "s20",
+      "title": "FAA SMART contract and rollout",
+      "outlet": "FLYING Magazine, June and November 10th",
+      "url": "https://www.flyingmag.com/smart-faa-contract-asi-air-traffic-management/",
+      "claims": [
+        "c39"
+      ]
+    }
+  ]
+}

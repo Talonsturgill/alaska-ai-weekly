@@ -3777,3 +3777,64 @@ dispatch_history:
     metaphor: a surveyor's chalk-line reel that snaps a clear line on size, finds
       it slack at a fence it can't cross, and reels it in to see what its end still
       needs
+- date: '2026-11-19'
+  topic: FAA nationwide ground stop held every flight leaving Alaska three days after
+    SMART AI expanded; CBS reports FAA and L3Harris traced it to a new router at El
+    Dorado, Arkansas
+  slug: one-thousand-knocks
+  key_entities:
+  - FAA
+  - SMART
+  - Air Space Intelligence
+  - L3Harris
+  - Alaska Airlines
+  - Flyways
+  - Sean Duffy
+  - Markwayne Mullin
+  - El Dorado Arkansas
+  - ground stop
+  archetype: explainer
+  palette: 'persimmon low daylight #E0662B above peach #F4B183 and brick zenith #9C3F2A
+    above the Anchorage apron, bone ivory paper and drifts #F2E8D0 with buff #C9B48E,
+    pine vault dark #0E5A63 down to #082F35, cork #B07A48 board, brick-red question
+    string #B8323A, dull penny copper #8A5A3A, card stock #F7EFDC with graphite #4A4A52,
+    fiber cyan #39F0FF held for the traced mechanism'
+  voice: Gemini Sulafat
+  stance: mixed
+  angle: The advisory AI Alaska's airline has used since 2021 wasn't what broke and
+    a new router was, so Alaska's upside from airspace AI depends more on the FAA
+    getting its network rebuild right than on the AI itself
+  hero: SuggestionSlip
+  cast:
+  - SuggestionSlip
+  - Airliner
+  - Router
+  - CorkBoard
+  - BoardString
+  - Tarp
+  - Stopwatch
+  - Magnifier
+  - Pie
+  - CopperCoil
+  - RouterField
+  - Raven
+  - BushPlane
+  composition:
+    pov: eye-level-immersive
+    motion_vector: assemble-build
+    hero_treatment: instrument-as-subject
+    layout: grid-modular
+    register: case-file-cartoon
+    palette: 'persimmon low daylight #E0662B above peach #F4B183 and brick zenith
+      #9C3F2A above the Anchorage apron, bone ivory paper and drifts #F2E8D0 with
+      buff #C9B48E, pine vault dark #0E5A63 down to #082F35, cork #B07A48 board, brick-red
+      question string #B8323A, dull penny copper #8A5A3A, card stock #F7EFDC with
+      graphite #4A4A52, fiber cyan #39F0FF held for the traced mechanism'
+    camera_strategy: push-reveal
+    light_story: low persimmon November sun over the Anchorage apron, then an office
+      board lit by a desk lamp spotlight, then a night cable vault under one caged
+      work lamp with cyan pulses, then the screen glow of a dispatch desk, then the
+      apron sun again
+    metaphor: a detective's evidence board where a paper suggestion card stays pinned
+      under a question while a second tarp comes off a router, a second string runs
+      to it and the findings arrive sealed

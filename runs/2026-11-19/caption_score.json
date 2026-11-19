@@ -1,0 +1,26 @@
+{
+ "scores": {
+  "Hook / scroll-stop": 8.4,
+  "Point of view / take": 8.6,
+  "Substance & specificity": 8.5,
+  "Readability & restraint": 7.8,
+  "Engagement design (CTA + comment-bait)": 8.2,
+  "Brand voice & accuracy": 8.1,
+  "Hashtag craft": 7.5
+ },
+ "weighted_total": 8.23,
+ "hard_fails": [],
+ "weakest_criterion": "Hashtag craft",
+ "one_fix": "Replace #FAA with a niche tag that fits this story (for example #ATCModernization) for a broad/mid/niche mix. Also change line 2's 'the FAA's new routers' to 'a new FAA router', because c18 traces the outage to one new router at the El Dorado site, not to the routers as a group.",
+ "round": 5,
+ "rounds": [
+  7.25,
+  7.78,
+  7.81,
+  8.1,
+  8.23
+ ],
+ "below_bar": true,
+ "bar": 8.5,
+ "note": "STOP at the 5-round cap; ships below the 8.5 bar. After this card one accuracy correction from the scorer's own note was applied (line 2 'the FAA's new routers' -> 'a new FAA router', per c18); hashtags unchanged."
+}

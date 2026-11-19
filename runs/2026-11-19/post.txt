@@ -1,0 +1,20 @@
+Every flight leaving Alaska sat still for more than four hours on November 13th.
+The new AI got the first look. The trace points at a new router on the FAA's network, so the rollout Alaska should watch is the hardware, not the algorithm.
+
+An Anchorage airport official said departures out of Alaska were held in the nationwide ground stop. Per Alaska Airlines and the Anchorage airport, flights within Alaska weren't affected.
+
+Three days earlier the FAA had expanded SMART to all 22 of its en route centers. Air Space Intelligence built it. It predicts congestion and only makes recommendations. Per the FAA, staff decide whether to act.
+
+No official has linked SMART to the outage. ASI said the stop was not a result of SMART. Transportation Secretary Sean Duffy called SMART "completely disconnected" and blamed "1980s little copper lines." Homeland Security Secretary Markwayne Mullin said "You can't rule out anything at this point."
+
+Then CBS reported that the FAA and contractor L3Harris traced the outage to a new router going in at El Dorado, Arkansas. Duffy said crews were swapping copper for fiber. Per the FAA, devices tried to connect 1,000 times every four to five seconds. Why it failed isn't final.
+
+Per the contractor, via Senate Commerce Democrats, the upgrade covers 3,648 routers. Of those, 400 are installed and 69 are running. For a state where leaving almost always means flying, every one still to come carries an Alaska stake.
+
+Alaska already lives with the advisory model. Alaska Airlines has used Flyways, another ASI tool, to suggest routes to its dispatchers since 2021. Operations chief Capt. Bret Peyton says the dispatcher picks the route. The airline says it saves about a million gallons of fuel a year.
+
+By the airline's account, the AI that suggests has worked here for years. The wiring under it is the part still being proven.
+
+What should the FAA have to show before the next router goes in?
+
+#Alaska #ArtificialIntelligence #AirTrafficControl #FAA
