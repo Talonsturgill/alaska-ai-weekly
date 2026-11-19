@@ -13,8 +13,9 @@ GAPS RECOVER (machine pass 2026-11-14, queue: speech-priority-dead-air). The rel
 seven seconds to come back: the 11-14 film's gaps at 19.48, 29.82, 82.12 and 103.24 s sat
 under -55 dBFS delivered and every judge heard dead air. Across a window with no narration
 the gain now releases at GAP_RELEASE_DB_S, so the bed returns inside a half-second gap. The
-slow release still governs every window that holds narration, so music does not pump with
-syllables, and the release pass can only lower a knot, so the 18 dB margin is unchanged.
+speech release is still slower than gap recovery. Both ramps only lower knots, preserving
+the 18 dB margin. The shorter ramps follow the Nov 19 review: a quiet word or loud effect
+should not duck the score across the next several lines.
 """
 import hashlib
 import json
@@ -26,9 +27,9 @@ import numpy as np
 MARGIN_DB = 18.0
 WINDOW_SECONDS = .05
 VOICE_FLOOR = 10 ** (-60 / 20)
-ATTACK_DB_S = 60.0       # lookahead: reductions are anticipated at this slope
-RELEASE_DB_S = 10.0      # recovery across a window that holds narration
-GAP_RELEASE_DB_S = 60.0  # recovery across a window with no narration (a genuine gap)
+ATTACK_DB_S = 120.0       # lookahead: reductions are anticipated at this slope
+RELEASE_DB_S = 30.0      # recovery across a window that holds narration
+GAP_RELEASE_DB_S = 100.0  # recovery across a window with no narration (a genuine gap)
 
 
 def _rms(samples):

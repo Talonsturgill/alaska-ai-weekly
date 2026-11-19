@@ -6,7 +6,7 @@ import tempfile
 import unittest
 import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from speech_priority import protect, mix_files, sha
+from speech_priority import protect, mix_files, sha, RELEASE_DB_S
 
 
 class SpeechPriorityTests(unittest.TestCase):
@@ -83,7 +83,18 @@ class SpeechPriorityTests(unittest.TestCase):
         g = 20 * np.log10(np.maximum(np.abs(p[:, 0]) / np.abs(b), 1e-15))
         w = sr // 20
         knots = g[::w]
-        self.assertLessEqual(np.max(np.diff(knots)), 10 * .05 + 1e-6)
+        self.assertLessEqual(np.max(np.diff(knots)), RELEASE_DB_S * .05 + 1e-6)
+
+    def test_short_word_tail_does_not_hide_bed_across_following_sentence(self):
+        sr = self.sr
+        v = np.full(4 * sr, .12)
+        v[sr:sr + sr // 20] = .0013  # quiet syllable immediately before the normal read
+        b = np.full_like(v, .02)
+        _, p, r = protect(v, b, sr)
+        # The quiet syllable still meets the 18 dB margin, but the next phrase
+        # no longer carries multiple seconds of unnecessary background reduction.
+        self.assertGreaterEqual(r['minimum_mono_margin_db'], 18 - 1e-6)
+        self.assertGreaterEqual(p[12 * sr // 5, 0], .014)
 
     def test_empty_nonfinite_silent_and_mismatched_inputs_fail(self):
         for v, b in (([], []), ([0]*20, [1]*20), ([np.nan], [0]), ([1], [np.inf]), ([1,2],[1])):
