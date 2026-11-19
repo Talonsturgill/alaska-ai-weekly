@@ -829,7 +829,8 @@ def main():
                  if b["start"] - a["end"] >= 0.5]
         for a, b in _gaps:
             pk = 4.6 if b - a < 1.6 else 6.5  # a long breath (over 1.6s) carries the bed up so it can't read as a hole in the range
-            gap_lift += [(a + 0.05, 1.0), (a + 0.4, pk), (b - 0.4, pk), (b - 0.05, 1.0)]
+            ramp = min(0.4, (b - a) / 3)
+            gap_lift += [(a + 0.05, 1.0), (a + ramp, pk), (b - ramp, pk), (b - 0.05, 1.0)]
         print(f"bed opens into {len(_gaps)} gaps of 0.5s or longer "
               f"({sum(b - a for a, b in _gaps):.1f}s of room)")
     except Exception as e:
@@ -837,7 +838,7 @@ def main():
     gap_expr = pw_expr(sorted(gap_lift))
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
-        f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.30[bedraw]"
+        f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.36[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)
     # THE BED NEVER OPENED INTO GAPS THAT ALREADY EXISTED (2026-08-04). Two judges
@@ -853,7 +854,8 @@ def main():
     # gap over about 0.4s, which is 13 of them. Ratio eases 9 -> 6 so the duck is a lean
     # rather than a clamp, and the threshold rises slightly so quiet consonants stop
     # holding the bed down through the tail of a line.
-    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.055:ratio=6:attack=8:release=150:makeup=1[bedduck]")
+    # Speech-priority separately caps the full background bus; favor a light musical duck.
+    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.075:ratio=4:attack=8:release=100:makeup=1[bedduck]")
     # THE ARC GOES AFTER THE DUCK, NOT BEFORE IT. Placed upstream, the arc feeds a ratio-9
     # compressor: a quieter bed sits closer to the threshold, gets less gain reduction, and
     # comes out the far side pushed back toward where it started. The compressor was undoing
