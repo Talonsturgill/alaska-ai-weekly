@@ -415,6 +415,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 6}, (_, i) => <rect key={i} x={-80} y={640 + i * 140} width={1240} height={4} fill="#2A1E1A" opacity={0.6} data-band="ok" />)}
         <ellipse cx={540} cy={1060} rx={460} ry={300} fill="#8FB4C8" opacity={0.12 + 0.03 * Math.sin(f / 20)} />
         {/* the hand and the phone */}
+        <HeldTravel f={f} x={300} y={760} w={480} h={760} mode="sweep">
         <g transform={`translate(540,${1120 + Math.sin(f / 18) * 4}) rotate(-8)`}>
           <ContactShadow cx={20} cy={300} rx={240} ry={20} opacity={0.4} />
           <path d="M -150 120 Q -190 180 -170 320 L 120 340 Q 170 220 150 120 Z" fill="#B88A6A" stroke={C.ink} strokeWidth={5} />
@@ -431,12 +432,13 @@ const S2: React.FC<SceneProps> = ({p}) => {
             {Array.from({length: 4}, (_, k) => <rect key={k} x={-86} y={-92 + k * 24} width={k === 3 ? 90 : 170} height={8} rx={4} fill="#B9B0A0" />)}
             <StrikeProp f={f} at={b4 + 10} px={60} py={-120}>
               <g transform="translate(60,-120)">
-                <rect x={-52} y={-20} width={104} height={40} rx={6} fill={LOT.claretL} stroke={C.ink} strokeWidth={4} />
+                <rect x={-62} y={-20} width={124} height={40} rx={6} fill={LOT.claretL} stroke={C.ink} strokeWidth={4} />
                 <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={LOT.cream}>CH. 11</text>
               </g>
             </StrikeProp>
           </g>
         </g>
+        </HeldTravel>
         {/* the bubbles lifting off the screen */}
         <CharFace f={f} x={360} y={lerp(980, 640, lift(0))} kind={0} pop={ease(f, b3, 12)} dim={stall} s={0.7} />
         <CharFace f={f} x={740} y={lerp(1000, 720, lift(1))} kind={1} pop={ease(f, b3 + 8, 12)} dim={stall} s={0.7} />
@@ -452,9 +454,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <g data-band="ok"><circle cx={200} cy={1640} r={70} fill="#E9E2D6" stroke={C.ink} strokeWidth={5} /><circle cx={200} cy={1640} r={44} fill="#5A3A2A" /></g>
       </SVG>
       <SVG>
-        <Plate text="CHARACTER.AI · CHAT WITH AI CHARACTERS" x={540} y={560} p={win(f, b3)} /> {/* plate-overlap-ok */}
-        <Plate text="BANKRUPTCY · OCTOBER" x={540} y={640} p={win(f, b4)} /> {/* plate-overlap-ok */}
-        <Plate text="TO SELL ITSELF" x={540} y={720} p={win(f, b5)} /> {/* plate-overlap-ok */}
+        <Plate text="CHARACTER.AI · CHAT WITH AI CHARACTERS" displayLines={['CHARACTER.AI', 'CHAT WITH AI CHARACTERS']} x={540} y={560} p={win(f, b3)} /> {/* plate-overlap-ok */}
+        <Plate text="BANKRUPTCY · OCTOBER" x={540} y={690} p={win(f, b4)} /> {/* plate-overlap-ok */}
+        <Plate text="TO SELL ITSELF" x={540} y={770} p={win(f, b5)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
@@ -528,9 +530,11 @@ const S4: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${lerp(1300, 860, crate)},1260)`}>
           <LicenseCrate f={f} x={0} y={0} scale={0.5} spin={crate} sleeve="APP · MODELS" />
         </g>
+        <HeldTravel f={f} x={290} y={680} w={280} h={520} mode="sweep">
         <g transform={`translate(420,${lerp(1700, 1000, rise) + settle(f, b9 + 16, -16, 20)}) rotate(${lerp(8, -4, face)}) scale(${1 + face * 0.2})`}>
-          <Paddle f={f} x={0} y={0} label={f < b34 + 3 ? ' ' : '$10M'} sub="OPENING BID" sash="PER PPC LAND" sashFix={0.6} />
+          <Paddle f={f} x={0} y={0} label={f < b34 + 3 ? ' ' : '$10M'} sash="PER PPC LAND" sashFix={0.6} />
         </g>
+        </HeldTravel>
         {/* the frost and the curved glass between us and the hall */}
         <rect x={-80} y={-80} width={1240} height={2080} fill={LOT.frost} opacity={0.22} data-band="ok" />
         <path d="M -20 1920 L -20 400 Q 540 120 1100 400 L 1100 1920" fill="none" stroke="#FFFFFF" strokeWidth={14} opacity={0.35} />
@@ -586,6 +590,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             );
           })}
           {/* the case from above: plinth square, round dome, Bub as a soft silhouette */}
+          <HeldTravel f={f} x={360} y={780} w={360} h={360} mode="sweep">
           <rect x={360} y={780} width={360} height={360} rx={18} fill={LOT.claret} stroke={C.ink} strokeWidth={6} />
           <circle cx={540} cy={960} r={160} fill={LOT.velvet} stroke={C.ink} strokeWidth={6} />
           <g opacity={1 - frost * 0.5}><ellipse cx={540} cy={960} rx={90} ry={74} fill={LOT.cream} stroke={C.ink} strokeWidth={4} /><circle cx={512} cy={940} r={8} fill={C.ink} /><circle cx={568} cy={940} r={8} fill={C.ink} /></g>
@@ -598,6 +603,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
               <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={LOT.channel} opacity={etch[i]}>{l}</text>
             </g>
           ))}
+        </HeldTravel>
           {/* the empty referee chair beside it, seen from above, with its closed folder */}
           <g transform="translate(860,960)">
             <rect x={-70} y={-70} width={140} height={140} rx={10} fill={LOT.claret} stroke={C.ink} strokeWidth={5} />
@@ -612,8 +618,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
       </SVG>
       <SVG>
         <Plate text="PER ALASKA DEPT. OF LAW" x={540} y={600} p={win(f, b11, b12)} /> {/* plate-overlap-ok */}
-        <Plate text="OVER 2 MILLION ACCOUNTS · COMPANY FIGURES" x={540} y={680} p={win(f, b12, b43)} /> {/* plate-overlap-ok */}
-        <Plate text="OVER 2 MILLION MINORS' ACCOUNTS · COMPANY FIGURES" displayLines={["OVER 2 MILLION MINORS' ACCOUNTS", 'COMPANY FIGURES']} x={540} y={780} p={win(f, b43)} /> {/* plate-overlap-ok */}
+        <Plate text="OVER 2 MILLION ACCOUNTS · COMPANY FIGURES" displayLines={['OVER 2 MILLION ACCOUNTS', 'COMPANY FIGURES']} x={540} y={720} p={win(f, b12, b43)} /> {/* plate-overlap-ok */}
+        <Plate text="OVER 2 MILLION MINORS' ACCOUNTS · COMPANY FIGURES" displayLines={["OVER 2 MILLION MINORS' ACCOUNTS", 'COMPANY FIGURES']} x={540} y={860} p={win(f, b43)} /> {/* plate-overlap-ok */}
         <Plate text="WHO'S WATCHING?" x={540} y={1260} p={win(f, b13)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
@@ -656,6 +662,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <circle cx={-90} cy={-300} r={14} fill="#FFF0C8" opacity={lamp} />
           <ellipse cx={0} cy={6} rx={60} ry={14} fill={LOT.bronzeD} stroke={C.ink} strokeWidth={4} />
         </g>
+        <HeldTravel f={f} x={340} y={880} w={380} h={420} mode="shadow">
         {[0, 1, 2, 3, 4, 5].map((i) => {
           const isAK = i === 3;
           const k = isAK ? ak : 1;
@@ -670,6 +677,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
             </g>
           );
         })}
+        </HeldTravel>
         {square > 0.6 && <rect x={440} y={1050} width={160} height={22} rx={6} fill={LOT.bronzeL} stroke={C.ink} strokeWidth={3} opacity={clamp01((square - 0.6) * 2.5)} />}
         <rect x={-80} y={1500} width={1240} height={500} fill={LOT.walnutD} data-band="ok" />
         <rect x={120} y={1540} width={300} height={36} rx={4} fill={LOT.card} stroke={C.ink} strokeWidth={3} data-band="ok" />
@@ -677,7 +685,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Plate text="OCTOBER · STATE ATTORNEYS GENERAL" x={540} y={880} p={win(f, b14)} /> {/* plate-overlap-ok */}
         <Plate text="ALASKA JOINED · BIPARTISAN STATES" x={540} y={960} p={win(f, b15)} /> {/* plate-overlap-ok */}
-        <Plate text="PROTECTIONS IN ANY SALE" x={540} y={1300} p={win(f, b41)} /> {/* plate-overlap-ok */}
+        <Plate text="PROTECTIONS IN ANY SALE" x={540} y={1040} p={win(f, b41)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
@@ -698,6 +706,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <ellipse cx={420} cy={900} rx={620} ry={520} fill="#FFF3DE" opacity={0.16} />
         {/* the reading stand and the book */}
         <rect x={140} y={1180} width={800} height={60} rx={10} fill={LOT.timber} stroke={C.ink} strokeWidth={5} />
+        <HeldTravel f={f} x={140} y={600} w={800} h={620} mode="shadow">
         <g transform={`translate(540,1180)`}>
           <ContactShadow cx={0} cy={20} rx={420} ry={24} opacity={0.4} />
           <path d={`M 0 0 L ${-380 * open - 20} ${-30 - 20 * open} L ${-380 * open - 20} ${-560} L 0 -530 Z`} fill="#F3EBDA" stroke={C.ink} strokeWidth={5} />
@@ -727,6 +736,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
             </g>
           </g>
         </g>
+        </HeldTravel>
         <rect x={-80} y={1480} width={1240} height={520} fill={LOT.walnutD} data-band="ok" />
         <rect x={180} y={1560} width={140} height={14} rx={6} fill={LOT.bronze} stroke={C.ink} strokeWidth={3} data-band="ok" />
       </SVG>
@@ -802,9 +812,11 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <rect x={-80} y={1000} width={1240} height={24} fill={LOT.timberL} />
         <ellipse cx={520} cy={1120} rx={380} ry={130} fill="#F3E6CC" opacity={0.22} />
         <Suit f={f} x={330} y={1290} s={1.05} seed={23} cues={[b20, b37]} coat="#4A3A52" facing={1} reach={lift} />
+        <HeldTravel f={f} x={400} y={700} w={260} h={420} mode="shadow">
         <g transform={`translate(${lerp(560, 520, lift)},${lerp(1010, 780, lift) + Math.sin(clamp01((f - b20 - 40) / 18) * Math.PI) * 50})`}>
           {flip < 0.5 ? <ClipCard f={f} x={0} y={0} s={1.2} rot={-6} blank /> : <ClipCard f={f} x={0} y={0} s={1.2} rot={-6} blank />}
         </g>
+        </HeldTravel>
         <StrikeProp f={f} at={b37 + 3} px={760} py={1010}>
           <g transform="translate(760,1010)" opacity={win(f, b37)}>
             <rect x={-150} y={-30} width={300} height={60} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={4} />
@@ -816,8 +828,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
       </SVG>
       <SVG>
         <Lab text="CORI MILLS" x={330} y={920} size={20} />
-        <Plate text="CORI MILLS · ACTING ATTORNEY GENERAL" x={540} y={600} p={win(f, b20)} /> {/* plate-overlap-ok */}
-        <Plate text={'"SOLD TO THE HIGHEST BIDDER"'} x={540} y={680} p={win(f, b37)} /> {/* plate-overlap-ok */}
+        <Plate text="CORI MILLS · ACTING ATTORNEY GENERAL" displayLines={['CORI MILLS', 'ACTING ATTORNEY GENERAL']} x={540} y={600} p={win(f, b20)} /> {/* plate-overlap-ok */}
+        <Plate text={'"SOLD TO THE HIGHEST BIDDER"'} x={540} y={740} p={win(f, b37)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
@@ -833,8 +845,10 @@ const S10: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.05} ox={540} oy={960} bloom={0.06} bg={LOT.aubergine}>
       <SVG>
         <rect x={-80} y={-80} width={1240} height={2080} fill={LOT.aubergine} data-band="ok" />
+        <HeldTravel f={f} x={240} y={1100} w={700} h={420} mode="sweep">
         <GlassCase f={f} x={460} y={2300} scale={2.6} frost={0.4} bolt={1 - ease(f, b21, 6)} />
         <ClipCard f={f} x={700} y={1890 - 2.6 * 150 + 40} s={1.3} rot={4} ink={ease(f, b46, 14)} swing={clamp01((f - b21 - 4) / 40)} />
+        </HeldTravel>
         {/* the raking light along the ring */}
         <path d="M -80 1330 L 1160 1240" stroke="#FFFFFF" strokeWidth={6} opacity={0.15 + 0.1 * Math.sin(f / 12)} />
         {/* the dashed ghost paddle */}
@@ -849,7 +863,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Plate text="LIMITS ON MINORS" x={540} y={600} p={win(f, b21)} /> {/* plate-overlap-ok */}
         <Plate text="VOLUNTARY" x={540} y={680} p={win(f, b46)} /> {/* plate-overlap-ok */}
-        <Plate text={'"COULD BE ... REVERSED BY A FUTURE BUYER"'} x={540} y={760} p={win(f, b38)} /> {/* plate-overlap-ok */}
+        <Plate text={'"COULD BE ... REVERSED BY A FUTURE BUYER" · MILLS'} displayLines={['"COULD BE ... REVERSED', 'BY A FUTURE BUYER" · MILLS']} x={540} y={780} p={win(f, b38)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
@@ -893,7 +907,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <Lab text="THE COMPANY" x={880} y={940} size={20} />
         <Plate text="THE OTHER SIDE" x={540} y={600} p={win(f, b22)} /> {/* plate-overlap-ok */}
         <Plate text="STILL PROTECTED · PER THE COMPANY" x={540} y={680} p={win(f, b23)} /> {/* plate-overlap-ok */}
-        <Plate text="LEGAL COSTS · STRUGGLING TO PROFIT · PER THE CEO" x={540} y={760} p={win(f, b24)} /> {/* plate-overlap-ok */}
+        <Plate text="LEGAL COSTS · STRUGGLING TO PROFIT · PER THE CEO" displayLines={['LEGAL COSTS · STRUGGLING TO PROFIT', 'PER THE CEO']} x={540} y={780} p={win(f, b24)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
@@ -997,7 +1011,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Plate text="PRECEDENT · 2015" x={540} y={600} p={win(f, b28)} /> {/* plate-overlap-ok */}
         <Plate text="FTC · RADIOSHACK'S COURT" x={540} y={680} p={win(f, b40)} /> {/* plate-overlap-ok */}
-        <Plate text={'"PROMISES NOT TO SELL" · FTC, 2015'} x={540} y={760} p={win(f, b29)} /> {/* plate-overlap-ok */}
+        <Plate text={'"PROMISES NOT TO SELL" · FTC, 2015'} displayLines={['"PROMISES NOT TO SELL"', 'FTC, 2015']} x={540} y={780} p={win(f, b29)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
@@ -1044,7 +1058,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <Plate text="THE DISNEY BID SKIPPED THE CHATS" x={540} y={600} p={win(f, b30, b31)} /> {/* plate-overlap-ok */}
         <Plate text="THE REVIEW COVERS THE CHATS" x={540} y={680} p={win(f, b31)} /> {/* plate-overlap-ok */}
         <Plate text="SALE HEARING · DECEMBER 3RD AND 4TH" x={540} y={760} p={win(f, b32)} /> {/* plate-overlap-ok */}
-        <Plate text="WHICH SAFEGUARDS HOLD · UP TO THE JUDGE" x={540} y={840} p={win(f, b33)} /> {/* plate-overlap-ok */}
+        <Plate text="WHICH SAFEGUARDS HOLD · UP TO THE JUDGE" displayLines={['WHICH SAFEGUARDS HOLD', 'UP TO THE JUDGE']} x={540} y={860} p={win(f, b33)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );

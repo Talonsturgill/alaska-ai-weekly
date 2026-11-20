@@ -37,7 +37,7 @@ B = [
  (11, 6, 0.0, "crack", "the case seen from straight above in a dark void", "frosts over with a crackle as two blank labels rise through the frost", "quiet", "PER ALASKA DEPT. OF LAW", "the frost crackles", ""),
  (35, 6, W("mental"), "squeak", "the frosted labels", "etch in, MENTAL HEALTH on one word and RELATIONSHIPS on the next, while Bub's ellipsis freezes", "still", "MENTAL HEALTH · RELATIONSHIPS", "the ellipsis freezes", ""),
  (12, 7, 0.0, "bubble", "tiny child-sized porcelain bubbles", "pour out around the case and spread across the void as the camera rises", "overwhelmed", "OVER 2 MILLION ACCOUNTS · COMPANY FIGURES", "the field spreads", "rehook: tiny bubbles pour out until the case is one dot among them"),
- (43, 7, W("minors"), "tick", "the swarm of child-sized bubbles", "rolls outward and bumps to the frame edges with a soft glass tick until the case is one dot and Bub's frozen ellipsis is the only grown-up shape", "tender", "OVER 2 MILLION MINORS' ACCOUNTS · COMPANY FIGURES", "the swarm keeps spreading", ""),
+ (43, 7, W("minors"), "tick", "the swarm of child-sized bubbles", "rolls outward and bumps to the frame edges with a soft glass tick until the case is one dot in the field", "tender", "OVER 2 MILLION MINORS' ACCOUNTS · COMPANY FIGURES", "the swarm keeps spreading", ""),
  (13, 8, 0.0, "click", "a spotlight from above", "irises down onto the case and an empty tall referee's chair beside it with a closed marigold folder on its seat", "lonely", "WHO'S WATCHING?", "the folder sits closed", ""),
  (14, 9, 0.0, "chain", "a desk lamp in an Alaska Department of Law office in Juneau at blue hour, Mount Juneau in the window", "clicks on over a fan of state outline cards", "alert", "OCTOBER · STATE ATTORNEYS GENERAL", "the lamp warms the desk", ""),
  (15, 9, W("joined"), "slide", "Alaska's outline card", "slides into the fan of state cards", "hopeful", "ALASKA JOINED · BIPARTISAN STATES", "the fan shifts", ""),
@@ -52,12 +52,12 @@ B = [
  (37, 13, W("can"), "thud", "a quote plate", "drops onto the desk front as Mills holds the card up", "pointed", "\"SOLD TO THE HIGHEST BIDDER\"", "the desk lamp shakes", ""),
  (21, 14, 0.0, "clank", "the case's slide bolt", "shoots home and the same blank card swings on its one clip", "uneasy", "LIMITS ON MINORS", "the card swings", ""),
  (46, 14, W("voluntary"), "scratch", "the card on the bolt", "inks VOLUNTARY across itself as it swings", "uneasy", "VOLUNTARY", "the ink dries", ""),
- (38, 14, W("buyer"), "whirr", "a dashed ghost paddle tagged FUTURE BUYER", "rises beside the bolt and stops short, hovering without touching it", "uneasy", "\"COULD BE ... REVERSED BY A FUTURE BUYER\"", "the ghost hovers", ""),
+ (38, 14, W("buyer"), "whirr", "a dashed ghost paddle tagged FUTURE BUYER", "rises beside the bolt and stops short, hovering without touching it", "uneasy", "\"COULD BE ... REVERSED BY A FUTURE BUYER\" · MILLS", "the ghost hovers", ""),
  (22, 15, 0.0, "clunk", "the hall lights", "snap off the spotlight and flat white house lights slam on, the empty chair and its closed folder in view", "even", "THE OTHER SIDE", "the room goes flat", ""),
- (23, 16, 0.0, "chain", "a faceless figure tagged THE COMPANY", "hangs its own padlock on the dome's ring", "calm", "STILL PROTECTED · PER THE COMPANY", "the padlock swings", ""),
+ (23, 16, 0.0, "chain", "a faceless figure tagged THE COMPANY", "hangs its own padlock on the case's ring", "calm", "STILL PROTECTED · PER THE COMPANY", "the padlock swings", ""),
  (24, 17, 0.0, "creak", "the company figure", "hooks a declaration sheet onto the far end of the hammer's arm, which drops and dips toward the case under its weight", "tired", "LEGAL COSTS · STRUGGLING TO PROFIT · PER THE CEO", "the arm dips", ""),
  (25, 18, 0.0, "thump", "a faceless figure tagged JUDGE at a pale bench in a celadon courtroom", "sets a heavy bound rule book down", "neutral", "THE JUDGE · AUCTION RULES APPROVED", "the book lands", ""),
- (39, 18, W("objections"), "rustle", "a stack of state objection letters", "is slid aside under the rule book", "neutral", "OVER STATE AGS' OBJECTIONS", "the letters slide", ""),
+ (39, 18, W("objections"), "rustle", "a stack of state objection letters", "is slid aside by the judge's hand under the rule book", "neutral", "OVER STATE AGS' OBJECTIONS", "the letters slide", ""),
  (26, 19, 0.0, "ring", "the ombudsman", "walks to the bench and holds up the small key from its belt", "patient", "CAN'T BLOCK THE SALE", "the key glints", ""),
  (27, 19, W("advises"), "clink", "the small key", "rests in the judge's open hand, the fingers staying open and still", "open", "ADVISES · THE JUDGE DECIDES", "the hand stays open", "rehook: the key rests unturned in the judge's open hand"),
  (28, 20, 0.0, "creak", "a drawer stencilled 2015 under a cold strip light", "slides open", "curious", "PRECEDENT · 2015", "dust lifts", ""),
@@ -96,7 +96,7 @@ S = [
 
 AMBIENT = {1: "a hall hush, a radiator tick", 2: "a kitchen hush, a fridge hum", 3: "a hall hush, hand truck wheels", 4: "a muffled hall through glass",
            5: "a low void hum", 6: "a quiet office, harbor wind at the glass", 7: "paper and a page turn", 8: "a hall hush, footsteps",
-           9: "a committee room hush, a radiator", 10: "a glass ring, a faint whirr", 11: "fluorescent hum, a hall hush", 12: "a courtroom hush",
+           9: "a quiet office, a radiator", 10: "a glass ring, a faint whirr", 11: "fluorescent hum, a hall hush", 12: "a courtroom hush",
            13: "fluorescent hum, an archive hush", 14: "a hall hush, a radiator tick"}
 CENTER = {1: "the case at x500 y1000", 2: "the phone at x540 y980", 3: "the pane at x540 y980", 4: "the paddle at x560 y920", 5: "the case at x540 y960",
           6: "the cards at x540 y1080", 7: "the hammer at x540 y940", 8: "the ombudsman at x620 y1000", 9: "the card at x560 y900", 10: "the bolt at x560 y980",
@@ -115,14 +115,14 @@ HERO = {
  11: ("house lights + company figure + padlock + declaration sheet + hammer's arm", "40% padlock and case, 35% sheet, 25% hammer"),
  12: ("judge + pale bench + rule book + objection letters + ombudsman + small key + open hand", "40% key and hand, 35% bench, 25% figures"),
  13: ("drawer + FTC letter + RadioShack receipt + pencil + strip light", "50% drawer and receipt, 30% letter, 20% pencil"),
- 14: ("Disney's sleeved gear crate + pane + ombudsman + marigold folder + blank pages + court card + hammer's catch + camera + paddle shadow", "40% hammer, catch and court card, 35% case and folder, 25% crate behind the pane"),
+ 14: ("Disney's sleeved gear crate + pane + ombudsman + marigold folder + blank pages + court card + hammer's catch + paddle shadow", "40% hammer, catch and court card, 35% case and folder, 25% crate behind the pane"),
 }
 PARTS = {1: 54, 2: 46, 3: 52, 4: 46, 5: 44, 6: 50, 7: 42, 8: 48, 9: 42, 10: 40, 11: 48, 12: 46, 13: 42, 14: 56}
 KICKS = (1, 14, 22)
 CAMERA = {1: "dollyThrough", 2: "dollyThrough", 3: "craneDown", 4: "riseWith", 5: "riseWith", 6: "truckAcross", 7: "craneDown",
           8: "truckAcross", 9: "dollyThrough", 10: "riseWith", 11: "dollyThrough", 12: "riseWith", 13: "truckAcross", 14: "riseWith"}
 
-PALETTE = ("claret velvet #7A1F35 over dark walnut walls #5E3426 with cherry trim #9A5A3A, cool nickel fittings #8A8F7A, "
+PALETTE = ("claret velvet #7A1F35 over dark walnut walls #5E3426 with cherry trim #9A5A3A, cool nickel fittings #8E959B, "
            "a pale spotlight #FFF3DE, a porcelain bubble #EEF3F1 behind frost #DCE8EE on a velvet black interior #24152A, "
            "Juneau blue hour #5B6C8F over the Gastineau Channel #3D5566 in Alaska's rooms, celadon plaster #C9CFC0 for the courtroom, "
            "referee marigold #F2B632 reserved for the ombudsman's armband, its tag and its folder")
