@@ -1,0 +1,145 @@
+{
+ "run_date": "2026-11-10",
+ "title": "TAKE A NUMBER",
+ "note": "All project hardware is an editorial illustration of a proposal, not built infrastructure.",
+ "caption_fixups": {
+  "F E R C": "FERC",
+  "DeepGreen": "DeepGreen",
+  "one hundred megawatts": "100 MW",
+  "hundred megawatts": "100 MW",
+  "three and a half mile": "3.5 mile",
+  "p.m.": "PM",
+  "N O A A": "NOAA",
+  "three hundred thirty": "330",
+  "three hundred fifty": "350",
+  "thirteen hundred": "1,300",
+  "two thousand eight": "2008",
+  "three hundred thirty-one": "331",
+  "nineteen seventy-nine": "1979",
+  "November second": "November 2nd",
+  "sixty-six": "66",
+  "Sixty-six": "66"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Someone asked to take a number for Cook Inlet.",
+   "t": "Someone asked to take a number for Cook Inlet.",
+   "claims": [
+    "c2"
+   ]
+  },
+  {
+   "idx": 1,
+   "text": "A Needham, Massachusetts company asked federal regulators, FERC, to study an underwater data center.",
+   "t": "A Needham, Massachusetts company asked federal regulators, FERC, to study an underwater data center.",
+   "claims": [
+    "c1",
+    "c2"
+   ]
+  },
+  {
+   "idx": 2,
+   "text": "The plan calls for sixty-six seabed pods and about three hundred thirty to three hundred fifty tidal turbines.",
+   "t": "The plan calls for sixty-six seabed pods and about three hundred thirty to three hundred fifty tidal turbines.",
+   "claims": [
+    "c3",
+    "c4"
+   ]
+  },
+  {
+   "idx": 3,
+   "text": "About a hundred megawatts, mostly for the data center, and a proposed three and a half mile cable to Nikiski.",
+   "t": "About a hundred megawatts, mostly for the data center, and a proposed three and a half mile cable to Nikiski.",
+   "claims": [
+    "c5",
+    "c6"
+   ]
+  },
+  {
+   "idx": 4,
+   "text": "A preliminary permit only lets the holder study the site and claim first place in line to apply for a license.",
+   "t": "A preliminary permit only lets the holder study the site and claim first place in line to apply for a license.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 5,
+   "text": "As the company put it, a preliminary permit doesn't give us permission to build anything.",
+   "t": "As the company put it, a preliminary permit doesn't give us permission to build anything.",
+   "claims": [
+    "c9"
+   ]
+  },
+  {
+   "idx": 6,
+   "text": "The formal deadline for objections was five p.m. Eastern on November second.",
+   "t": "The formal deadline for objections was five p.m. Eastern on November second.",
+   "claims": [
+    "c7"
+   ]
+  },
+  {
+   "idx": 7,
+   "text": "Kenai Peninsula Borough Mayor Peter Micciche called the company's approach sloppy. He said he hadn't had an email, letter or call from it.",
+   "t": "Kenai Peninsula Borough Mayor Peter Micciche called the company's approach sloppy. He said he hadn't had an email, letter or call from it.",
+   "claims": [
+    "c10",
+    "c11"
+   ]
+  },
+  {
+   "idx": 8,
+   "text": "The company said it was too early to reach out, before the engineering and biology work was done on paper.",
+   "t": "The company said it was too early to reach out, before the engineering and biology work was done on paper.",
+   "claims": [
+    "c12"
+   ]
+  },
+  {
+   "idx": 9,
+   "text": "A commercial fisheries alliance says the proposal didn't assess effects on more than thirteen hundred active permits, and the Center for Biological Diversity filed to intervene.",
+   "t": "A commercial fisheries alliance says the proposal didn't assess effects on more than thirteen hundred active permits, and the Center for Biological Diversity filed to intervene.",
+   "claims": [
+    "c13",
+    "c18"
+   ]
+  },
+  {
+   "idx": 10,
+   "text": "In fairness to the company, a study is how anyone gets answers, and this permit wouldn't allow construction.",
+   "t": "In fairness to the company, a study is how anyone gets answers, and this permit wouldn't allow construction.",
+   "claims": [
+    "c8"
+   ]
+  },
+  {
+   "idx": 11,
+   "text": "Cook Inlet belugas have been listed as endangered since two thousand eight. NOAA's best estimate is three hundred thirty-one whales, down from about thirteen hundred in nineteen seventy-nine.",
+   "t": "Cook Inlet belugas have been listed as endangered since two thousand eight. NOAA's best estimate is three hundred thirty-one whales, down from about thirteen hundred in nineteen seventy-nine.",
+   "claims": [
+    "c14",
+    "c15",
+    "c16"
+   ]
+  },
+  {
+   "idx": 12,
+   "text": "With a population that small, the question isn't whether to study. It's who's in the room when the study is designed.",
+   "t": "With a population that small, the question isn't whether to study. It's who's in the room when the study is designed.",
+   "claims": [
+    "c15",
+    "c16"
+   ]
+  },
+  {
+   "idx": 13,
+   "text": "FERC hasn't ruled yet, so should the borough, the fleet and NOAA's beluga scientists help write the study terms?",
+   "t": "FERC hasn't ruled yet, so should the borough, the fleet and NOAA's beluga scientists help write the study terms?",
+   "claims": [
+    "c19"
+   ]
+  }
+ ]
+}

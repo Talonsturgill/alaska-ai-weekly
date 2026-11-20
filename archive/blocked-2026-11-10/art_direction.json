@@ -1,0 +1,42 @@
+{
+ "run_date": "2026-11-10",
+ "story_id": "deepgreen-cook-inlet-after-the-deadline",
+ "treatment": {
+  "winner": "TAKE A NUMBER (dramatist base)",
+  "grafts": ["explainer: permit mechanism panel with BUILD padlocked, 1,300 vs 331 dot field and the NOT THE SAME 1,300 stamp", "comedian: moose unmoved on the far shore, returns holding a number", "enthusiast: chairs sliding to the table, ticket split into STUDY and OUTREACH"],
+  "judge_reasoning": "All four pitches converged on the take-a-number ticket, which carries the angle (order, not whether) in one object any Alaskan has stood in line for. The dramatist's shore dispenser and loop back to an empty queue gives the cleanest bookend. The explainer's dot field is the hardest-landing number drawn physical. The comedian's gags stay off the whales and the named people. The enthusiast supplies the fair upside so the Test scene reads as a case and not a strawman."
+ },
+ "palette": {
+  "sky": "#1B2342 dusk indigo",
+  "ground": "#2C4A57 shingle slate",
+  "hero": "#D6372B ticket vermilion",
+  "accent": "#F2E8D0 paper cream",
+  "shadow": "#0B1226",
+  "test_light": "#F6EFC2 pale lemon daylight (the Test only)",
+  "fleet": "#2F6FB5 fleet blue (permit tags only)",
+  "whale": "#EAF2F4 beluga white (whale dots only)",
+  "mood": "cold dusk, one warm pale-lemon room for the applicant's best case, back to dusk",
+  "divergence": "11-09 oxblood and walnut, 11-08 permafrost, 11-07 transformer teal, 11-06 tangerine office, 11-02 midnight indigo cab with sodium amber. This film shares dusk indigo with 11-02 only as the sky, and never amber: its warm moment is a pale lemon daylight, its hero is a vermilion machine on slate shingle, and the cream paper is the only recurring neutral. No teal desk, no oxblood."
+ },
+ "light": {
+  "time_of_day": "blue-hour dusk on the Nikiski shore, then an interior daylight beat for the Test",
+  "direction": "low key light from camera-left off the water, cool rim from behind the machine",
+  "key_fill_rim": "key pale lemon only in the Test, otherwise cold indigo fill with a vermilion bounce from the machine onto the shingle",
+  "depth": "three stage3d planes: foreground rope and posts, midground machine and queue, far shore silhouettes and ridge, with a haze plane between"
+ },
+ "shape_language": "Rectilinear, perforated and stamped paper against round organic water and animal shapes. The machine is a fat vertical box, the whales are soft ovals, proposed hardware is dashed ghost outlines. The contrast is bureaucracy against tide.",
+ "casting": {
+  "hero": "TakeANumberMachine (net-new, lib/ticket.tsx), a face-less fat red deli-counter dispenser with a NOW SERVING flip sign, no face, posture and clack carry it",
+  "throughline": "the ticket P-15423 in five states",
+  "supporting": ["Character rig (parka mayor, suit applicant, worker fleet hand, field-jacket scientist) as silhouettes and stand-ins, never named real faces", "Moose (fauna.tsx) the unmoved far-shore witness", "Beluga (fauna.tsx) only as a calm silhouette and as dots, never a joke, never touched by hardware", "FishingBoat (vehicles.tsx) far in the water", "Stamp and BoxLabel kit"],
+  "reasons": "The shelf covers every actor. The machine is the one gap, a reusable prop that can serve future permit and queue stories. Heroes of the last two films (StampBot, Reels, Strand) are not used."
+ },
+ "motion_language": "The dispenser clacks and shudders with squash and overshoot on every ticket. Paper entrances anticipate, overshoot and settle. The dot field drains with eased cohorts. Held figures use IdleFigure cues, held props use HeldProp and HeldTravel.",
+ "composition": {
+  "focal_hierarchy": "ticket or machine first, then the label, then the world",
+  "negative_space": "the empty queue rope at the open and the close, held as the quiet beat",
+  "safe_area": "hero and plates within y 420 to 1500 of the 9:16 master, sky and water above and shingle below stage the vertical",
+  "signature_shot": "the 1979 field of 1,300 white dots draining down to a 331 block while the NOT THE SAME 1,300 stamp parts them from the fleet's permit tags"
+ },
+ "craft_advance": "none this film needs beyond the net-new TakeANumberMachine asset"
+}

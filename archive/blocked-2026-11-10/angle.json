@@ -1,0 +1,19 @@
+{
+ "run_date": "2026-11-10",
+ "story_id": "deepgreen-cook-inlet-after-the-deadline",
+ "thesis": "The Cook Inlet fight isn't yet about whether a subsea AI data center belongs there. It's about order: DeepGreen claimed a place in line at FERC before it talked to the people who share the water, so the neighbors first met the project as a federal deadline.",
+ "falsifier": "False if the record shows DeepGreen did contact the borough before filing (contradicts c11), or if the objections would read the same with or without outreach, meaning they rest only on physical effects.",
+ "supporting_facts": [
+  {"claims": ["c8", "c9"], "fact": "Both the FERC notice and DeepGreen agree the permit is study priority only, so the dispute can't be about what was filed."},
+  {"claims": ["c10", "c11", "c12"], "fact": "The borough mayor calls it sloppy and says he heard nothing, DeepGreen says it was too early to reach out."},
+  {"claims": ["c7", "c13", "c18"], "fact": "The first formal way to answer was a FERC window that closed November 2nd, and the fleet alliance and a conservation group used it."}
+ ],
+ "fair_counterpoint": "A study permit is exactly the stage meant to produce the biology and engineering. Blocking it could mean nobody gathers the data, and nothing in the claims links the project to harm to belugas. DeepGreen's 'too early' is a defensible reading of how the system is designed.",
+ "valence": "mixed, constructive. The fix is cheap and Alaska-first: study and outreach run together. The idea of Alaska tidal power feeding compute stays worth studying.",
+ "second_movement": {
+  "recontextualizing_fact": "c14 to c16: belugas endangered since 2008, 331 whales now (290 to 386) versus about 1,300 in 1979. With so little room for error, who sets the study questions is the stake, and it is a different thing from the fleet's 1,300 permits (never blur the two numbers).",
+  "test": "Draw DeepGreen's best case at full strength as its own scene (study first is how you get answers, nothing built, nothing linked to whale harm), and let the film narrow honestly: the neighbors aren't asking for no study, they're asking to be in the room when the study is scoped."
+ },
+ "runner_ups": ["process explainer alone (too procedural, no stakes)", "physical-stakes alone (risks implying harm the claims don't support)"],
+ "guardrails": ["no 'gap'/'matters'/'pattern'", "c11 and c12 never in quotation marks", "AI is the applicant's word", "everything PROPOSED, no installed hardware", "do not say Upper or narrowest", "FERC hasn't ruled yet only", "label 1,300 permits and 1,300 whales separately", "closing question seed: should the borough, the fleet and NOAA's beluga scientists help write the study terms before work starts"]
+}
