@@ -440,9 +440,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
         </g>
         </HeldTravel>
         {/* the bubbles lifting off the screen */}
-        <CharFace f={f} x={360} y={lerp(980, 640, lift(0))} kind={0} pop={ease(f, b3, 12)} dim={stall} s={0.7} />
-        <CharFace f={f} x={740} y={lerp(1000, 720, lift(1))} kind={1} pop={ease(f, b3 + 8, 12)} dim={stall} s={0.7} />
-        <CharFace f={f} x={420} y={lerp(1020, 820, lift(2))} kind={2} pop={ease(f, b3 + 16, 12)} dim={stall} s={0.7} />
+        <CharFace f={f} x={230} y={lerp(980, 640, lift(0))} kind={0} pop={ease(f, b3, 12)} dim={stall} s={0.7} />
+        <CharFace f={f} x={830} y={lerp(1000, 720, lift(1))} kind={1} pop={ease(f, b3 + 8, 12)} dim={stall} s={0.7} />
+        <CharFace f={f} x={240} y={lerp(1060, 1300, lift(2))} kind={2} pop={ease(f, b3 + 16, 12)} dim={stall} s={0.7} />
         {/* the FOR SALE tag swinging over the phone */}
         <g transform={`translate(780,${lerp(-200, 900, tag) + settle(f, b5 + 14, 14, 22)}) rotate(${Math.sin(f / 11) * 6})`}>
           <path d="M 0 -900 L 0 -40" stroke={C.ink} strokeWidth={4} />
@@ -488,7 +488,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <g opacity={sleeve} transform={`translate(0,${(1 - sleeve) * -120})`}>
           <rect x={185} y={1180 - 0.78 * 220} width={230} height={0.78 * 220} rx={6} fill={LOT.sleeve} opacity={0.35} stroke={C.ink} strokeWidth={3} />
         </g>
-        <Paddle f={f} x={300} y={lerp(1600, 1010, paddle) + settle(f, b6 + 16, -18, 20)} label={f < b7 + 4 ? '?' : '$20M'} sub="DISNEY" rot={-6} />
+        <Paddle f={f} x={150} y={lerp(1600, 1080, paddle) + settle(f, b6 + 16, -18, 20)} label={f < b7 + 4 ? '?' : '$20M'} sub="DISNEY" rot={-6} />
         <Turntable f={f} x={780} y={1290} w={380} />
         <GlassCase f={f} x={780} y={1290} scale={0.8} frost={0.3} glint={0.4}>
           <Bub f={f} x={0} y={-150} scale={0.9} emotion={f > b8 ? 'startled' : 'anxious'} pinch={pinch} ellipsis={0.8} cues={[b6, b8]} seed={6} look={-0.8} />
@@ -531,7 +531,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           <LicenseCrate f={f} x={0} y={0} scale={0.5} spin={crate} sleeve="APP · MODELS" />
         </g>
         <HeldTravel f={f} x={290} y={680} w={280} h={520} mode="sweep">
-        <g transform={`translate(420,${lerp(1700, 1000, rise) + settle(f, b9 + 16, -16, 20)}) rotate(${lerp(8, -4, face)}) scale(${1 + face * 0.2})`}>
+        <g transform={`translate(420,${lerp(1700, 1140, rise) + settle(f, b9 + 16, -16, 20)}) rotate(${lerp(8, -4, face)}) scale(${1 + face * 0.2})`}>
           <Paddle f={f} x={0} y={0} label={f < b34 + 3 ? ' ' : '$10M'} sash="PER PPC LAND" sashFix={0.6} />
         </g>
         </HeldTravel>
