@@ -17,98 +17,111 @@ OUT = ROOT / "out" / "dispatch"
 LINES = base.LINES
 
 W = lambda w, n=1: (w, n)
-BUB = "Bub, a cream speech bubble with two dot eyes and a typing ellipsis on its belly, inside a frosted glass case on a turntable"
+BUB = "Bub, a cream speech bubble with two dot eyes and a typing ellipsis on its belly, behind frost inside a glass case on a turntable"
 REF = "a tall faceless figure in a marigold armband tagged CONSUMER PRIVACY OMBUDSMAN"
+HAM = "the auctioneer's hammer raised on a nickel arm above the case"
 # key, line, anchor, sfx, subject, action, emotion, annotation (plate text), reaction, rehook
 B = [
- (1, 0, 0.0, "pop", BUB, "jolts awake as a square auction paddle snaps up into the spotlight and its shadow sweeps across the glass, a rain window onto Mount Juneau behind", "shocked", "AUCTION · DECEMBER 1ST", "Bub's dots scramble", ""),
- (2, 0, W("chats"), "roll", "the turntable", "swings the case toward camera, a round brass keyhole glinting on it with no key anywhere on the plinth", "anxious", "AN AI CHAT APP · AT AUCTION", "the keyhole glints", "rehook"),
- (3, 1, 0.0, "type", "Bub", "jumps out of the case and lands on a giant phone screen that slides up from the plinth, little character faces popping out in chat bubbles", "delighted", "AN APP FOR CHATTING WITH AI CHARACTERS", "the bubbles pop", ""),
- (4, 2, 0.0, "stamp", "a court notice", "slides across the screen and a CHAPTER 11 tab clamps onto its corner while the little chat bubbles deflate", "worried", "CHAPTER 11 · OCTOBER", "the bubbles deflate", ""),
- (5, 2, W("sell"), "slide", "the phone screen", "tips back down into the frosted case on the turntable as the hall lights come up around it", "uneasy", "U.S. BANKRUPTCY COURT · DELAWARE", "the hall lights rise", ""),
- (6, 3, 0.0, "thunk", "a birch crate of gears in a slate LICENSE sleeve", "rolls onto the LOT 1 pedestal on a hand truck and its gears turn behind the slats", "businesslike", "A LICENSE · SOME TECHNOLOGY", "the gears turn", ""),
- (7, 3, W("twenty"), "ching", "a Disney paddle over the crate", "snaps up and its number card flips to 20 million", "confident", "DISNEY · $20 MILLION · A LICENSE", "the card flips", ""),
- (8, 4, 0.0, "glass", "a tall glass pane", "drops between the two pedestals and pinches Bub's typing dots, which boing back to its belly", "startled", "NO CHATS IN THE DISNEY DEAL", "the dots boing back", ""),
- (9, 5, 0.0, "squeak", "a second paddle wearing a PER PPC LAND sash", "rises over Bub's case and keeps straightening its sash", "fussy", "$10 MILLION · APP, MODELS, USER DATA · PER PPC LAND", "the sash slips", ""),
- (10, 5, W("models"), "clank", "a brass two-pan scale", "drops onto the plinth to weigh the two paddles and both pans fly up and slam against its stops", "stubborn", "TWO SEPARATE BIDS", "the pans flip up", ""),
- (11, 6, 0.0, "shimmer", "frosted labels on the glass", "slide up through the frost one at a time while Bub pulls its tail over its belly", "shy", "MENTAL HEALTH · RELATIONSHIPS · PER ALASKA DEPT. OF LAW", "Bub curls its tail", "rehook: the labels rise through the frost"),
- (12, 7, 0.0, "bubble", "a stack of tiny cream bubbles", "climbs beside the case up past the window line, each one a dot, still rising", "overwhelmed", "OVER 2 MILLION MINORS' ACCOUNTS · COMPANY FIGURES", "the stack keeps climbing", "rehook: the stack of tiny bubbles climbs past the window line"),
- (13, 8, 0.0, "hush", "the spotlight", "narrows to the case and an empty tall referee's chair beside it with a blank marigold folder on its seat while the hall goes dark", "lonely", "WHO'S WATCHING THIS PART?", "the folder sits untouched", "rehook: an empty referee chair waits with a blank folder"),
- (14, 9, 0.0, "flap", "a Raven on a rain streaked window sill over Mount Juneau and the Gastineau Channel", "shakes off rain as a Department of Law envelope slides in under the sash", "alert", "ALASKA JOINED · OCTOBER · BIPARTISAN STATES", "the Raven shakes off rain", "rehook: an envelope slides in under the Juneau window"),
- (15, 9, W("protections"), "paper", "the envelope", "opens and a fan of state outline cards spreads across the sill with Alaska's outline among them", "hopeful", "PROTECTIONS IN ANY SALE", "the cards fan out", ""),
- (16, 10, 0.0, "clunk", "the camera", "pushes into the case's round keyhole and the brass lock opens into a cross section", "curious", "11 U.S.C. 363 · A PROMISE LIMITS THE SALE", "the lock opens", ""),
- (17, 10, W("ombudsman"), "click", "three brass tumblers in the lock", "lift one at a time under labels JUDGE, OMBUDSMAN and HEARING while the bolt stays put", "methodical", "JUDGE · OMBUDSMAN · HEARING", "the tumblers lift", ""),
- (18, 11, 0.0, "footstep", REF, "walks in past the tall Mount Juneau window and stops beside the empty chair, facing the bench and not Bub", "composed", "COURT ORDERS A PRIVACY OMBUDSMAN", "the figure settles", "rehook: the referee walks in"),
- (19, 12, 0.0, "blip", "the ombudsman", "lifts a marigold loupe toward the case, Bub hides its labels behind its tail, and the loupe settles on a sale terms sheet instead", "careful", "REVIEWS THE SALE · RECOMMENDS SAFEGUARDS", "Bub peeks out", "rehook: the loupe drifts toward Bub"),
- (20, 13, 0.0, "step", "a faceless figure tagged CORI MILLS at a lectern by a rain window over Juneau", "steps up as a quote plate drops onto the lectern front", "firm", "\"SOLD TO THE HIGHEST BIDDER\" · CORI MILLS", "the plate settles", "rehook: the Acting Attorney General's quote drops onto the lectern"),
- (21, 14, 0.0, "scrape", "a brass slide bolt on the case stamped VOLUNTARY", "is nudged back a notch by the edge of a bidder's paddle", "uneasy", "VOLUNTARY · \"COULD BE ... REVERSED BY A FUTURE BUYER\"", "the bolt slides", "rehook: a paddle nudges the VOLUNTARY bolt"),
- (22, 15, 0.0, "flutter", "a claret velvet curtain", "sweeps across and opens on a high walnut bench in a courtroom", "even", "THE OTHER SIDE", "the curtain sways", "rehook: the curtain opens on the other side"),
- (23, 16, 0.0, "clip", "a framed company notice", "is set on an easel before the bench and swings once", "calm", "\"CONTINUES TO BE PROTECTED\" · THE COMPANY", "the frame swings", ""),
- (24, 17, 0.0, "page", "a declaration sheet", "slides onto a second easel showing a long column of costs and an empty profit line", "tired", "LEGAL COSTS · NO PROFIT · PER THE CEO", "the sheet settles", ""),
- (25, 18, 0.0, "press", "a faceless figure tagged JUDGE at the bench", "sets a bound rule book down flat beside a stack of state objection letters", "neutral", "AUCTION RULES APPROVED · OVER STATE OBJECTIONS", "the book lands", ""),
- (26, 19, 0.0, "tap", "the ombudsman", "walks to the bench and holds a brass key up to it", "patient", "CAN'T BLOCK THE SALE", "the key glints", ""),
- (27, 19, W("decides"), "tick", "the brass key", "rests in the judge's open hand and nobody turns it", "open", "ADVISES · THE JUDGE DECIDES", "the hand stays open", "rehook: the key rests unturned in the judge's hand"),
- (28, 20, 0.0, "creak", "a dusty archive drawer stenciled 2015", "slides open and a paper receipt rises out of it", "curious", "2015 · RADIOSHACK · FTC STEPPED IN", "the receipt rises", "rehook: a 2015 drawer slides open on RadioShack"),
- (29, 20, W("promised"), "flip", "the receipt", "unfolds to show a mailing list held back behind a ruled promise line", "plain", "\"PROMISES NOT TO SELL\" · FTC, 2015", "the list stays back", "rehook: the 2015 receipt unfolds"),
- (30, 21, 0.0, "swing", "the velvet curtain", "splits the stage, Disney's crate spotlit on one side and Bub's case on the other with the ombudsman beside it", "resolved", "REVIEW OF THE SALE · PRIVATE CHATS", "the spotlights split", ""),
- (31, 21, W("didn't"), "bloom", "the blank marigold folder from the referee's chair", "unfolds in the ombudsman's hands and dashed latches project onto the case", "hopeful", "SAFEGUARDS · RECOMMENDED TO THE COURT", "the latches glow dashed", ""),
- (32, 22, 0.0, "bell", "a placard on the bench in the window's reflection", "turns to face the hall", "open", "SALE HEARING · DECEMBER 3RD AND 4TH", "the placard settles", ""),
- (33, 22, W("safeguards"), "ping", "Bub", "lets its ellipsis flicker into a question mark as the paddle's shadow crosses the glass again", "wondering", "WHICH SAFEGUARDS?", "the question mark flickers", ""),
+ (1, 0, 0.0, "pop", BUB, "jolts awake as a square auction paddle snaps up into the spotlight and its shadow sweeps the glass, the auctioneer's hammer raised high on its arm above", "shocked", "AUCTION · DECEMBER 1ST", "Bub's dots scramble", ""),
+ (2, 0, W("chats"), "roll", "the turntable", "swings the case toward camera, a round keyhole glinting with no key anywhere, Bub's ellipsis pressing at the frost", "anxious", "ITS CHATS MAY GO TOO", "the keyhole glints", ""),
+ (3, 1, 0.0, "type", "chat bubbles projected inside the glass around Bub", "slide up inside the glass one by one, little character faces popping out of them under a glowing CHARACTER.AI header", "busy", "CHARACTER.AI · CHAT WITH AI CHARACTERS", "the projected bubbles pop", ""),
+ (4, 2, 0.0, "stamp", "a court notice", "slides onto the plinth front and a CH. 11 tab clamps onto it while the projected chats dim", "worried", "CHAPTER 11 · OCTOBER", "the chats dim", ""),
+ (5, 2, W("sell"), "clip", "a FOR SALE tag on a string", "drops and loops over the dome's knob", "uneasy", "TO SELL ITSELF", "the tag swings", ""),
+ (6, 3, 0.0, "thunk", "a birch crate of gears", "rolls onto the left pedestal on a hand truck as a Disney paddle rises over it", "businesslike", "DISNEY OPENS", "the gears turn", ""),
+ (7, 3, W("twenty"), "flip", "the Disney paddle", "flips its card to $20M while a slate LICENSE sleeve slides over the crate", "confident", "$20 MILLION · A LICENSE", "the sleeve settles", ""),
+ (8, 4, 0.0, "glass", "a tall glass pane", "drops between the two pedestals and Bub's dots jolt apart then snap back", "startled", "NO CHATS IN THE DISNEY DEAL", "the dots snap back", ""),
+ (9, 5, 0.0, "swing", "a second paddle with a blank card and a PER PPC LAND sash", "rises over Bub's side of the pane", "watchful", "PER PPC LAND · ANOTHER OPENING BID", "the sash sways", ""),
+ (34, 5, W("ten"), "snap", "the second paddle's blank card", "flips to $10M", "sharp", "$10 MILLION", "the card settles", ""),
+ (10, 5, W("models"), "slide", "a small sleeved crate tagged APP · MODELS", "slides onto Bub's pedestal beside the case", "plain", "APP · MODELS · USER DATA", "the crate lands", ""),
+ (11, 6, 0.0, "crack", "blank frosted labels on the glass", "rise up through the frost with a crackle", "quiet", "ALASKA DEPT. OF LAW · THE DATA FOR SALE", "the frost crackles", ""),
+ (35, 6, W("mental"), "pop", "the frosted labels", "fill in, MENTAL HEALTH on one word and RELATIONSHIPS on the next, while Bub's ellipsis freezes", "still", "MENTAL HEALTH · RELATIONSHIPS", "the ellipsis freezes", ""),
+ (12, 7, 0.0, "bubble", "a stack of tiny cream bubbles", "climbs beside the case up past the gallery rail, each one a dot, still rising", "overwhelmed", "OVER 2 MILLION MINORS' ACCOUNTS · COMPANY FIGURES", "the stack keeps climbing", "rehook: the stack of tiny bubbles climbs past the gallery rail"),
+ (13, 8, 0.0, "click", "the spotlight", "irises down to the case and an empty tall referee's chair beside it with a closed marigold folder on its seat", "lonely", "WHO'S WATCHING?", "the folder sits closed", ""),
+ (14, 9, 0.0, "page", "a desk lamp in an Alaska Department of Law office in Juneau at blue hour, Mount Juneau in the window", "clicks on over a fan of state outline cards", "alert", "OCTOBER · STATE ATTORNEYS GENERAL", "the lamp warms the desk", ""),
+ (15, 9, W("joined"), "slide", "Alaska's outline card", "slides into the fan of state cards", "hopeful", "ALASKA JOINED · BIPARTISAN STATES", "the fan shifts", ""),
+ (41, 9, W("protections"), "paper", "the fan of state cards", "squares into one stack and a marigold band snaps around it", "resolved", "PROTECTIONS IN ANY SALE", "the band snaps", ""),
+ (16, 10, 0.0, "flip", "a law book on a reading stand", "falls open and a page starts to pop up", "curious", "11 U.S.C. 363 · A PROMISE LIMITS THE SALE", "the pages fan", ""),
+ (17, 10, W("judge"), "fold", "a paper auction hammer", "pops up out of the page, held up by three paper tabs labelled JUDGE, OMBUDSMAN and HEARING", "methodical", "JUDGE · OMBUDSMAN · HEARING", "the tabs stand", ""),
+ (18, 11, 0.0, "step", REF, "walks into the hall past the empty chair, facing the hammer and not Bub", "composed", "AT THE STATES' URGING · PER ALASKA DEPT. OF LAW", "the figure settles", ""),
+ (36, 11, W("court"), "snap", "a marigold cord", "shoots up from the ombudsman's hand and knots around the raised hammer's arm, pulling taut", "firm", "COURT ORDERS A PRIVACY OMBUDSMAN", "the cord goes taut", ""),
+ (19, 12, 0.0, "thud", "the ombudsman", "lays a hand on the turntable and it jolts to a stop for the first time, a small key at its belt glinting", "steady", "REVIEWS THE SALE", "the turntable stops", "rehook: the turntable stops under the watchdog's hand"),
+ (20, 13, 0.0, "step", "a faceless figure tagged CORI MILLS in a Juneau committee room with a plaster wall and a framed Alaska map", "walks up to a lectern and sets both hands down on it", "firm", "CORI MILLS · ACTING ATTORNEY GENERAL", "the figure squares up", ""),
+ (37, 13, W("worry"), "clip", "Mills", "lifts a card held by a single paper clip as a quote plate drops", "pointed", "\"SOLD TO THE HIGHEST BIDDER\"", "the paper clip wobbles", ""),
+ (21, 14, 0.0, "clank", "the case's slide bolt", "holds the same VOLUNTARY card by its one paper clip", "uneasy", "LIMITS ON MINORS · VOLUNTARY", "the clip trembles", ""),
+ (38, 14, W("buyer"), "whirr", "a dashed ghost paddle tagged FUTURE BUYER", "rises beside the bolt and stops short, hovering without touching it", "uneasy", "\"COULD BE ... REVERSED BY A FUTURE BUYER\"", "the ghost hovers", ""),
+ (22, 15, 0.0, "clunk", "the hall lights", "snap off the spotlight and flat white house lights slam on across the hall", "even", "THE OTHER SIDE", "the room goes flat", ""),
+ (23, 16, 0.0, "chain", "the company's own padlock", "is hung on the dome's ring with a tag", "calm", "\"CONTINUES TO BE PROTECTED\" · THE COMPANY", "the padlock swings", ""),
+ (24, 17, 0.0, "pin", "a declaration sheet with a long cost column and an empty profit line", "is pinned to the plinth", "tired", "LEGAL COSTS · STRUGGLING TO PROFIT · PER THE CEO", "the sheet flutters", ""),
+ (25, 18, 0.0, "press", "a faceless figure tagged JUDGE at a pale bench in a flat white courtroom", "sets a bound rule book down", "neutral", "THE JUDGE · AUCTION RULES APPROVED", "the book lands", ""),
+ (39, 18, W("objections"), "rustle", "a stack of state objection letters", "is slid aside under the rule book", "neutral", "OVER STATE AGS' OBJECTIONS", "the letters slide", ""),
+ (26, 19, 0.0, "tap", "the ombudsman", "walks to the bench and holds up the small key from its belt", "patient", "CAN'T BLOCK THE SALE", "the key glints", ""),
+ (27, 19, W("advises"), "clink", "the small key", "rests in the judge's open hand, the fingers staying open and still", "open", "ADVISES · THE JUDGE DECIDES", "the hand stays open", "rehook: the key rests unturned in the judge's open hand"),
+ (28, 20, 0.0, "creak", "a drawer stencilled 2015 under a cold strip light", "slides open", "curious", "PRECEDENT · 2015", "dust lifts", ""),
+ (40, 20, W("Federal"), "page", "an FTC letter", "lands on a RadioShack receipt in the drawer", "plain", "FTC · RADIOSHACK'S COURT", "the letter settles", ""),
+ (29, 20, W("promised"), "pencil", "a pencil", "underlines the promise line on the receipt", "plain", "\"PROMISES NOT TO SELL\" · FTC, 2015", "the line darkens", ""),
+ (30, 21, 0.0, "swish", "the Disney crate behind its pane", "dims while the case is lit, the hammer still raised above it", "resolved", "NOT IN THE DISNEY DEAL", "the light shifts", ""),
+ (31, 21, W("review"), "fold", "the ombudsman", "takes the marigold folder from the chair and opens it to blank pages headed SAFEGUARDS · DUE TO THE COURT", "hopeful", "WILL RECOMMEND SAFEGUARDS", "the blank pages flutter", ""),
+ (32, 22, 0.0, "snap", "a second marigold cord", "shoots up from the ombudsman's hand and knots around the raised hammer's arm beside the first, pulling taut", "open", "SALE HEARING · DECEMBER 3RD AND 4TH", "the cord goes taut", ""),
+ (33, 22, W("safeguards"), "ping", "a third marigold cord tagged THE JUDGE DECIDES", "ties on as Bub's ellipsis turns into a question mark and the paddle's shadow crosses the glass, the hammer still raised", "wondering", "WHICH SAFEGUARDS HOLD · UP TO THE JUDGE", "the question mark flickers", ""),
 ]
 
 PLATE_AT = {b[0]: "upper-third" for b in B}
-CLAIM_MAP = {1: ["c5"], 2: ["c5"], 3: ["c1"], 4: ["c2"], 5: ["c3"], 6: ["c6"], 7: ["c6"], 8: ["c7"], 9: ["c8"], 10: ["c6", "c8"],
-             11: ["c11"], 12: ["c9"], 13: ["narration"], 14: ["c12"], 15: ["c12"], 16: ["c17"], 17: ["c17"], 18: ["c13"], 19: ["c14"],
-             20: ["c18"], 21: ["c20"], 22: ["narration"], 23: ["c21"], 24: ["c4"], 25: ["c22"], 26: ["c16"], 27: ["c16"], 28: ["c24"],
-             29: ["c24"], 30: ["c14"], 31: ["c14", "c16"], 32: ["c23"], 33: ["c14"]}
+CLAIM_MAP = {1: ["c5"], 2: ["c11"], 3: ["c1"], 4: ["c2"], 5: ["c2"], 6: ["c6"], 7: ["c6"], 8: ["c7"], 9: ["c8"], 34: ["c8"], 10: ["c8"],
+             11: ["c11"], 35: ["c11"], 12: ["c9"], 13: ["narration"], 14: ["c12"], 15: ["c12"], 41: ["c12"], 16: ["c17"], 17: ["c17"],
+             18: ["c13"], 36: ["c13"], 19: ["c14"], 20: ["c18"], 37: ["c18"], 21: ["c20"], 38: ["c20"], 22: ["narration"], 23: ["c21"],
+             24: ["c4"], 25: ["c22"], 39: ["c22"], 26: ["c16"], 27: ["c16"], 28: ["c24"], 40: ["c24"], 29: ["c24"], 30: ["c7"],
+             31: ["c14"], 32: ["c23"], 33: ["c14", "c16"]}
 
 # sid, line, framing, scale, height, stage, pov, layout, motion_vector, hero_treatment, transition, thread, title, means
 S = [
- (1, 0, "subject-portrait", "medium", "low", "auction-hall", "macro-closeup", "centered-hero-lowerthird", "horizontal-traverse", "single-organic-hero", "", "", "This is for sale", "In a Juneau auction hall at dusk a frosted glass case turns into a brass spotlight, Bub jolts awake inside as a paddle snaps up and its shadow crosses the glass, a keyhole with no key"),
- (2, 1, "data-panel", "close", "eye", "app-screen", "instrument-screen", "single-object-void", "assemble-build", "data-as-subject", "push-in", "build", "The app", "Bub hops onto a giant phone screen of little character chats until a court notice and a CHAPTER 11 tab slide across and the screen tips back into the case"),
- (3, 3, "two-up", "wide", "high", "auction-hall", "eye-level-immersive", "fullbleed-split", "vertical-descent", "structure-as-subject", "pull-out", "carry", "Two lots", "From high in the gallery, a gear crate in a LICENSE sleeve takes the Lot 1 pedestal under Disney's paddle and a glass pane drops between it and Bub's case"),
- (4, 5, "push-detail", "medium", "low", "auction-hall", "eye-level-immersive", "centered-hero-lowerthird", "vertical-rise", "instrument-as-subject", "hard-cut", "build", "Lot 2", "From low by the plinth, a second paddle in a PER PPC LAND sash rises over the case and a brass scale refuses to weigh the two paddles"),
- (5, 6, "macro-closeup", "insert", "eye", "glass-macro", "macro-closeup", "stacked-layers", "vertical-rise", "multiplicity-swarm", "push-in", "build", "What's inside", "Pressed against the frosted glass, labels surface and a stack of tiny bubbles climbs past the window line"),
- (6, 8, "wide-establish", "extreme-wide", "high", "juneau-window", "eye-level-immersive", "stacked-layers", "horizontal-traverse", "landscape-as-subject", "pull-out", "travel", "Who's watching", "The spotlight narrows to the case and an empty referee's chair, then the camera crosses the dark hall to a tall rain window over Mount Juneau where a Raven watches a Department of Law envelope slide in"),
- (7, 10, "data-panel", "close", "eye", "lock-cutaway", "cross-section-cutaway", "single-object-void", "push-in-only", "instrument-as-subject", "push-in", "build", "The lock", "The camera pushes into the case's keyhole and the brass lock opens into a cross section of three tumblers marked JUDGE · OMBUDSMAN · HEARING"),
- (8, 11, "subject-portrait", "medium", "low", "auction-hall", "eye-level-immersive", "centered-hero-lowerthird", "horizontal-traverse", "single-organic-hero", "pull-out", "carry", "The referee", "A tall faceless figure in a marigold armband walks in, stops beside the empty chair facing the bench, and aims a loupe that settles on the sale terms"),
- (9, 13, "alt-vantage", "close", "eye", "juneau-office", "eye-level-immersive", "fullbleed-split", "push-in-only", "instrument-as-subject", "hard-cut", "match", "The voluntary bolt", "A faceless figure tagged CORI MILLS at a lectern by a Juneau rain window, then a VOLUNTARY slide bolt on the case nudged by a paddle's edge"),
- (10, 15, "wide-establish", "wide", "low", "courtroom", "eye-level-immersive", "grid-modular", "assemble-build", "structure-as-subject", "mask-wipe", "build", "The other side", "A velvet curtain sweeps open on a high walnut bench where the company's notice and the CEO's declaration go up on easels, lit flat and fair"),
- (11, 18, "alt-vantage", "medium", "ground", "courtroom", "eye-level-immersive", "centered-hero-lowerthird", "vertical-rise", "single-organic-hero", "hard-cut", "build", "The key", "From the floor looking up at the bench, the judge sets down the rule book and the ombudsman hands up a brass key that rests unturned in an open hand"),
- (12, 20, "push-detail", "insert", "high", "archive", "top-down-map", "single-object-void", "horizontal-traverse", "instrument-as-subject", "hard-cut", "travel", "2015", "From above, a dusty drawer stenciled 2015 slides open and a RadioShack receipt unfolds behind a ruled promise line"),
- (13, 21, "subject-portrait", "wide", "eye", "auction-hall", "macro-closeup", "centered-hero-lowerthird", "horizontal-traverse", "single-organic-hero", "match-action", "match", "Back on the turntable", "The curtain splits the stage, the referee's folder unfolds into dashed latches on the case, the hearing placard turns and the paddle's shadow crosses the glass again"),
+ (1, 0, "subject-portrait", "medium", "low", "auction-hall", "eye-level-immersive", "centered-hero-lowerthird", "horizontal-traverse", "structure-as-subject", "", "", "This is for sale", "In a placeless auction hall at dusk a frosted glass case turns in a spotlight under a raised auctioneer's hammer, Bub jolts awake as a paddle snaps up and its shadow crosses the glass, a keyhole with no key"),
+ (2, 1, "macro-closeup", "insert", "eye", "glass-interior", "macro-closeup", "single-object-void", "assemble-build", "data-as-subject", "push-in", "build", "The app", "Inside the glass, projected chat bubbles with little character faces light up around Bub under a CHARACTER.AI header until a court notice and a CH. 11 tab dim them and a FOR SALE tag drops over the dome"),
+ (3, 3, "two-up", "wide", "high", "auction-hall", "eye-level-immersive", "fullbleed-split", "vertical-descent", "structure-as-subject", "pull-out", "carry", "Two bids", "From high in the gallery, a gear crate takes the left pedestal under Disney's paddle and a LICENSE sleeve, and a glass pane drops between it and Bub's case"),
+ (4, 5, "push-detail", "medium", "low", "auction-hall", "eye-level-immersive", "centered-hero-lowerthird", "vertical-rise", "instrument-as-subject", "hard-cut", "build", "Another bid", "From low by the plinth, a second paddle in a PER PPC LAND sash rises over the case, flips to $10M, and an APP · MODELS crate slides in beside it"),
+ (5, 6, "alt-vantage", "close", "eye", "auction-hall", "macro-closeup", "stacked-layers", "vertical-rise", "multiplicity-swarm", "push-in", "build", "What's inside", "Close on the frost, labels fill in and a stack of tiny bubbles climbs past the gallery rail, then the spotlight irises down to the case and an empty referee chair"),
+ (6, 9, "wide-establish", "extreme-wide", "high", "juneau-office", "eye-level-immersive", "stacked-layers", "horizontal-traverse", "landscape-as-subject", "hard-cut", "travel", "Juneau", "A hard cut to an Alaska Department of Law office in Juneau at blue hour, Mount Juneau in the window, where Alaska's outline card slides into a fan of state cards"),
+ (7, 10, "data-panel", "close", "overhead", "law-book", "top-down-map", "single-object-void", "assemble-build", "instrument-as-subject", "hard-cut", "build", "The rule", "From above, a law book falls open and a paper auction hammer pops up held by three paper tabs"),
+ (8, 11, "subject-portrait", "medium", "low", "auction-hall", "eye-level-immersive", "centered-hero-lowerthird", "horizontal-traverse", "single-organic-hero", "hard-cut", "carry", "The watchdog", "A faceless ombudsman in a marigold armband walks in, ties the first marigold cord to the raised hammer, and lays a hand on the turntable so it stops"),
+ (9, 13, "alt-vantage", "close", "eye", "juneau-committee", "eye-level-immersive", "single-object-void", "push-in-only", "instrument-as-subject", "hard-cut", "match", "The paper clip", "In a Juneau committee room, a faceless Mills at a lectern lifts a VOLUNTARY card held by a single paper clip"),
+ (10, 14, "macro-closeup", "insert", "low", "bolt-macro", "macro-closeup", "stacked-layers", "vertical-rise", "instrument-as-subject", "match-action", "match", "The bolt", "Match on the paper clip to the same card clipped to the case's bolt, where a dashed ghost paddle tagged FUTURE BUYER hovers and never touches"),
+ (11, 15, "wide-establish", "wide", "eye", "auction-hall", "eye-level-immersive", "centered-hero-lowerthird", "assemble-build", "structure-as-subject", "hard-cut", "build", "The other side", "The hall goes to flat white house light and the company's case lands on the glass case itself, its own padlock and the CEO's declaration pinned to the plinth"),
+ (12, 18, "alt-vantage", "medium", "ground", "courtroom", "eye-level-immersive", "stacked-layers", "vertical-rise", "single-organic-hero", "hard-cut", "build", "The key", "From the floor of a flat white courtroom, the judge sets down the rule book over the objection letters and the ombudsman hands up a small key that rests unturned in an open hand"),
+ (13, 20, "push-detail", "insert", "overhead", "archive", "top-down-map", "single-object-void", "horizontal-traverse", "instrument-as-subject", "hard-cut", "travel", "2015", "From above under a cold strip light, a drawer stencilled 2015 slides open, an FTC letter lands on a RadioShack receipt and a pencil underlines the promise"),
+ (14, 21, "wide-establish", "wide", "high", "auction-hall", "eye-level-immersive", "centered-hero-lowerthird", "vertical-rise", "structure-as-subject", "hard-cut", "match", "Three cords", "Back in the hall from the gallery, the ombudsman opens the folder to blank pages, two more marigold cords tie to the raised hammer, and the paddle's shadow crosses the glass again"),
 ]
 
-AMBIENT = {1: "rain on tall windows, a hall hush", 2: "a soft device hum", 3: "a hall hush, the hand truck's wheels", 4: "a hall hush, brass creak",
-           5: "a glass ring, faint rain", 6: "rain on the window, wind", 7: "a brass mechanism tick", 8: "a hall hush, footsteps",
-           9: "rain on the window, a room hush", 10: "a courtroom hush", 11: "a courtroom hush", 12: "an archive room hush, paper", 13: "rain on tall windows, a hall hush"}
-CENTER = {1: "the case at x540 y980", 2: "the screen at x540 y960", 3: "the pane at x540 y980", 4: "the paddle at x560 y900", 5: "the glass at x540 y960",
-          6: "the window at x540 y940", 7: "the tumblers at x540 y980", 8: "the ombudsman at x600 y1000", 9: "the bolt at x540 y980", 10: "the bench at x540 y940",
-          11: "the key at x540 y960", 12: "the drawer at x540 y1000", 13: "the case at x540 y980"}
+AMBIENT = {1: "a hall hush, a radiator tick", 2: "a soft projector hum", 3: "a hall hush, hand truck wheels", 4: "a hall hush, nickel creak",
+           5: "a glass ring, a hall hush", 6: "a quiet office, harbor wind at the glass", 7: "paper and a page turn", 8: "a hall hush, footsteps",
+           9: "a committee room hush, a radiator", 10: "a glass ring, a faint whirr", 11: "fluorescent hum, a hall hush", 12: "a courtroom hush",
+           13: "fluorescent hum, an archive hush", 14: "a hall hush, a radiator tick"}
+CENTER = {1: "the case at x500 y1000", 2: "Bub at x540 y980", 3: "the pane at x540 y980", 4: "the paddle at x560 y920", 5: "the labels at x480 y960",
+          6: "the cards at x540 y1080", 7: "the hammer at x540 y940", 8: "the ombudsman at x620 y1000", 9: "the card at x560 y900", 10: "the bolt at x560 y980",
+          11: "the padlock at x540 y960", 12: "the key at x540 y960", 13: "the receipt at x540 y980", 14: "the hammer at x660 y760"}
 HERO = {
- 1: ("frosted glass case + Bub + turntable + spotlight + paddle + keyhole + rain window", "45% case and Bub, 30% spotlight and paddle, 25% hall"),
- 2: ("giant phone screen + Bub + character chat bubbles + court notice + CHAPTER 11 tab", "50% screen, 30% Bub, 20% notice"),
- 3: ("pedestals + gear crate in LICENSE sleeve + Disney paddle + glass pane + Bub's case", "40% crate and paddle, 35% pane, 25% case"),
- 4: ("PER PPC LAND paddle + sash + Bub's case + two-pan scale", "40% paddle, 35% case, 25% scale"),
- 5: ("frosted glass macro + labels + stack of tiny bubbles + window line", "45% glass and labels, 35% stack, 20% window"),
- 6: ("dark hall + spotlit case + empty referee chair + folder + rain window + Mount Juneau + channel + Raven + envelope", "35% window and range, 35% case and chair, 30% hall"),
- 7: ("brass lock cross section + three tumblers + bolt + keyhole ring", "60% tumblers, 25% bolt, 15% ring"),
- 8: ("ombudsman + marigold armband + loupe + empty chair + case + sale terms sheet", "40% referee, 35% case, 25% chair and sheet"),
- 9: ("Mills figure + lectern + Juneau rain window + VOLUNTARY bolt + paddle edge", "40% bolt, 35% figure, 25% window"),
- 10: ("curtain + walnut bench + easel + framed notice + declaration sheet", "40% bench, 35% easels, 25% curtain"),
- 11: ("bench + judge's open hand + brass key + rule book + objection letters + ombudsman", "40% key and hand, 35% bench, 25% figures"),
- 12: ("archive drawer + 2015 stencil + receipt + promise line + mailing list", "50% drawer, 35% receipt, 15% cabinet"),
- 13: ("curtain + Disney crate + case + Bub + dashed latches + ombudsman + placard + paddle shadow", "40% case and latches, 30% referee, 30% crate and curtain"),
+ 1: ("frosted glass case + Bub + turntable + spotlight + paddle + keyhole + auctioneer's hammer", "45% case and Bub, 30% paddle and hammer, 25% hall"),
+ 2: ("chat bubbles + character faces + CHARACTER.AI header + Bub + court notice + CH. 11 tab + FOR SALE tag", "50% projection, 30% Bub, 20% notice"),
+ 3: ("pedestals + birch crate + Disney paddle + LICENSE sleeve + glass pane + Bub's case", "40% crate and paddle, 35% pane, 25% case"),
+ 4: ("second paddle + PER PPC LAND sash + APP · MODELS crate + Bub's case", "40% paddle, 35% case, 25% crate"),
+ 5: ("frosted labels + stack of tiny bubbles + spotlight + referee's chair + marigold folder", "40% glass and labels, 35% stack, 25% chair"),
+ 6: ("desk lamp + state outline cards + Alaska's outline card + Mount Juneau window + marigold band", "40% cards, 35% window, 25% desk"),
+ 7: ("law book + reading stand + paper auction hammer + three paper tabs", "50% pop-up, 30% book, 20% stand"),
+ 8: ("ombudsman + marigold armband + marigold cord + raised hammer + turntable + empty chair", "40% ombudsman, 35% cord and hammer, 25% case"),
+ 9: ("Mills + lectern + VOLUNTARY card + paper clip + framed Alaska map + plaster wall", "40% card, 35% figure, 25% wall"),
+ 10: ("slide bolt + VOLUNTARY card + paper clip + dashed ghost paddle + glass ring", "45% bolt and card, 35% ghost paddle, 20% glass"),
+ 11: ("house lights + company's padlock + declaration sheet + plinth", "40% padlock and case, 35% sheet, 25% hammer"),
+ 12: ("judge + pale bench + rule book + objection letters + ombudsman + small key + open hand", "40% key and hand, 35% bench, 25% figures"),
+ 13: ("drawer + FTC letter + RadioShack receipt + pencil + strip light", "50% drawer and receipt, 30% letter, 20% pencil"),
+ 14: ("ombudsman + marigold folder + blank pages + three marigold cords + raised hammer + case + Disney crate + paddle shadow", "40% hammer and cords, 35% case and folder, 25% crate"),
 }
-PARTS = {1: 54, 2: 44, 3: 52, 4: 46, 5: 42, 6: 56, 7: 48, 8: 46, 9: 44, 10: 50, 11: 46, 12: 40, 13: 56}
-KICKS = (1, 16, 30)
-CAMERA = {1: "dollyThrough", 2: "dollyThrough", 3: "craneDown", 4: "riseWith", 5: "riseWith", 6: "truckAcross", 7: "dollyThrough",
-          8: "truckAcross", 9: "dollyThrough", 10: "craneDown", 11: "riseWith", 12: "truckAcross", 13: "dollyThrough"}
+PARTS = {1: 54, 2: 46, 3: 52, 4: 46, 5: 44, 6: 50, 7: 42, 8: 48, 9: 42, 10: 40, 11: 48, 12: 46, 13: 42, 14: 56}
+KICKS = (1, 14, 33)
+CAMERA = {1: "dollyThrough", 2: "dollyThrough", 3: "craneDown", 4: "riseWith", 5: "riseWith", 6: "truckAcross", 7: "craneDown",
+          8: "truckAcross", 9: "dollyThrough", 10: "riseWith", 11: "dollyThrough", 12: "riseWith", 13: "truckAcross", 14: "craneDown"}
 
-PALETTE = ("steel violet Juneau dusk #5B6C8F over wet slate cloud #8FA0B8 and the Gastineau Channel #3D5566, "
-           "honey timber hall #B9824A with walnut #6B3F2A, claret velvet #7A1F35, gilt bronze #C99A3A, "
-           "warm cream bubble #FFF4E0 in frosted glass #DCE8EE, aubergine corners #2B1B2E, "
-           "referee marigold #F2B632 reserved for the ombudsman and the safeguards")
+PALETTE = ("fumed cherry hall #9A5A3A with dark walnut #5E3426, claret velvet #7A1F35, cool nickel fittings #8A8F7A, "
+           "a pale spotlight #FFF3DE, cream bubble #FFF4E0 behind frost #DCE8EE on a velvet black interior #24152A, "
+           "Juneau blue hour #5B6C8F over the Gastineau Channel #3D5566 in Alaska's rooms, celadon plaster #C9CFC0 for the courtroom, "
+           "referee marigold #F2B632 reserved for the ombudsman, its cords and its folder")
 
 
 def build():
@@ -182,50 +195,48 @@ def build():
                     "Alaska's Department of Law says the chats include mental health and relationships, and over 2 million accounts belonged to minors by company figures. "
                     "Alaska joined a bipartisan group of states; federal law says a sale against a privacy promise needs a judge, an ombudsman and a hearing, and at the coalition's urging the court ordered a privacy ombudsman. "
                     "The company says the data is still protected, the CEO cited legal costs and no profit, the judge approved the auction rules over the states' objections, and the ombudsman advises while the judge decides. "
-                    "Drawn as Bub, a faced cream speech bubble in a frosted glass case on an auction turntable in a Juneau hall, Lot 2, with a referee in a marigold armband and a lock whose tumblers are the law."),
+                    "Drawn as Bub, a cream speech bubble with two dot eyes and a typing ellipsis that never leaves its frosted case on an auction turntable, under an auctioneer's hammer that marigold cords of fact hold up, with Juneau as Alaska's own rooms."),
         "derived_from": "scratch", "engine": "infographic-2.5d", "total_seconds": round(end, 2),
-        "fingerprint": {"pov": "macro-closeup", "motion_vector": "horizontal-traverse", "hero_treatment": "single-organic-hero", "layout": "centered-hero-lowerthird",
-                        "register": "tactile-collage", "palette": PALETTE, "camera_strategy": "orbit-reveal",
-                        "light_story": "a warm brass spotlight on a turning case in a dusk hall, the steel violet rain window taking over as Alaska enters, a flat fair bench light for the company's case, and marigold latches the warmest thing in the last frame",
-                        "metaphor": "an auction where the chats are their own lot in a frosted case, the law is a lock with three tumblers, and the referee's folder becomes dashed safeguards no one has fastened yet"},
-        "signature_shot": 7,
+        "fingerprint": {"pov": "eye-level-immersive", "motion_vector": "vertical-rise", "hero_treatment": "structure-as-subject", "layout": "centered-hero-lowerthird",
+                        "register": "tactile-collage", "palette": PALETTE, "camera_strategy": "locked-drift",
+                        "light_story": "a near-white spotlight on a turning case in a placeless auction hall, Juneau blue hour for Alaska's rooms, flat white house light when the company makes its case, a flat sage courtroom, and the hammer held up by marigold cords in the last frame",
+                        "metaphor": "an auction where the chats wait behind frost on a turntable under a raised hammer that the facts of the case tie up one marigold cord at a time"},
+        "signature_shot": 14,
         "palette": PALETTE,
-        "divergence_note": ("The last films were persimmon daylight over the Anchorage apron and a cork evidence board with red strings and a faced paper route card (11-19), a mint afterglow over lilac snow with a faced chalk-line reel in Fairbanks ice fog (11-18), "
-                            "polar night with a troupe of faced decision trees (11-16) and a rain-black Juneau night at one gunmetal letterbox (11-15). "
-                            "This film is a timber and claret velvet auction interior against a steel violet rain window, its hero a soft cream speech bubble in a frosted case on a turntable, its signal colour a marigold reserved for the referee, "
-                            "and its mechanism a brass lock cutaway. Honest overlaps: it is the fourth faced inanimate mascot in a row, varied by being round and soft, behind glass, and passive while people act around it; "
-                            "11-15 was also in Juneau and also in rain, answered here by an interior hall at dusk, warm light and the window only as a view; 11-19 also had a raven, kept to the sill and one beat."),
+        "divergence_note": ("The last films were persimmon daylight over the Anchorage apron, a cork evidence board with red strings, a faced paper route card and a sealed envelope (11-19), and a mint afterglow over lilac snow with a faced chalk-line reel, a three trip-pin cutaway and dashed chalk marks (11-18). "
+                            "This film is a fumed cherry and claret velvet auction interior with cool nickel fittings, its spine a raised auctioneer's hammer that marigold cords tie up one fact at a time, its hero a bubble that never leaves its frosted case and acts only with its eyes and ellipsis, and Juneau kept to Alaska's own rooms. "
+                            "Honest overlaps: it is still a faced inanimate hero, answered by keeping it passive and behind glass while people act; the final image is still an unresolved state, answered by a hammer that hasn't fallen rather than a token; 11-15 was Juneau in rain, answered by blue hour with the rain stopped and two interior offices."),
         "treatment": {"title": "Lot 2", "summary": ad["treatment"],
                       "judge_reasoning": json.loads((OUT / "treatment.json").read_text())["reasoning"]},
         "angle": json.loads((OUT / "angle.json").read_text()),
         "claim_map": {str(k): v for k, v in CLAIM_MAP.items()},
         "hook": {"pattern": "in-medias-res", "frame1": "Low and close on a frosted glass case turning into a brass spotlight in a timber hall, Bub asleep inside, and at 0.3 s a square auction paddle snaps up into the light and its shadow sweeps across the glass",
-                 "headline": "AN AI CHAT APP · AT AUCTION", "motion_by_s": 0.3,
-                 "loopback": "Frame 1 is the case in the spotlight with the paddle's shadow crossing it; the last image is the same case on the same turntable with dashed marigold latches projected on it, the referee beside it, and the paddle's shadow crossing the glass again as Bub's ellipsis flickers into a question mark."},
-        "open_loop": {"plant_t": b_at(2), "pay_t": b_at(27), "plant_glow_s": 0.4, "plant_sfx": "whoosh", "what": "Who holds the key? Planted as a round brass keyhole glinting on the case with no key anywhere on the plinth, kept in view on every turntable shot and opened in the lock cutaway, paid when the ombudsman hands a brass key up to the bench and it rests unturned in the judge's open hand."},
-        "open_loop_2": {"plant_t": b_at(13), "pay_t": b_at(31), "what": "What's in the blank folder? Planted as an empty tall referee's chair beside the case with a blank marigold folder on its seat when the narration asks who's watching, kept beside the case when the referee arrives, paid when the folder unfolds into dashed safeguard latches projected onto the case."},
-        "throughline": {"object": "the frosted glass case and its lock", "lands_in_button": "the case on the turntable with dashed marigold latches projected on it, recommended and not fastened",
+                 "headline": "AUCTION · DECEMBER 1ST", "motion_by_s": 0.3,
+                 "loopback": "Frame 1 is the case in the spotlight under the raised hammer with the paddle's shadow crossing it; the last image is the same case and the same raised hammer, now held up by three marigold cords, as the paddle's shadow crosses the glass again and Bub's ellipsis turns into a question mark."},
+        "open_loop": {"plant_t": b_at(2), "pay_t": b_at(27), "plant_glow_s": 0.4, "plant_sfx": "roll", "what": "Who holds the key? Planted as a round keyhole glinting on the case with no key anywhere, seeded again when a small key glints at the ombudsman's belt, paid when the ombudsman hands that key up to the bench and it rests unturned in the judge's open hand."},
+        "open_loop_2": {"plant_t": b_at(13), "pay_t": b_at(31), "what": "What's in the closed folder? Planted as an empty tall referee's chair beside the case with a closed marigold folder on its seat when the narration asks who's watching, kept closed beside the case, paid when the ombudsman opens it to blank pages headed SAFEGUARDS · DUE TO THE COURT."},
+        "throughline": {"object": "the auctioneer's hammer raised over the case", "lands_in_button": "the hammer still raised over the case, held up by three marigold cords tagged OMBUDSMAN ORDERED, SALE HEARING · DECEMBER 3RD AND 4TH and THE JUDGE DECIDES",
                         "states": [
-                            {"at_s": b_at(1), "state": "T1 sealed and turning in the spotlight, a keyhole with no key"},
-                            {"at_s": b_at(8), "state": "T2 divided from Lot 1 by a dropped glass pane"},
-                            {"at_s": b_at(11), "state": "T3 frosted labels surfacing on its glass"},
-                            {"at_s": b_at(16), "state": "T4 its lock opened into a cross section of three tumblers"},
-                            {"at_s": b_at(21), "state": "T5 its VOLUNTARY bolt nudged back by a paddle"},
-                            {"at_s": b_at(27), "state": "T6 its key held up to the bench, resting unturned in the judge's open hand"},
-                            {"at_s": b_at(31), "state": "T7 dashed marigold latches projected onto it, not fastened"}]},
+                            {"at_s": b_at(1), "state": "T1 raised free on its arm over the turning case"},
+                            {"at_s": b_at(8), "state": "T2 raised over the pane that splits the two bids"},
+                            {"at_s": b_at(17), "state": "T3 drawn as a paper pop-up held by three tabs in the law book"},
+                            {"at_s": b_at(36), "state": "T4 the first marigold cord tied on, OMBUDSMAN ORDERED"},
+                            {"at_s": b_at(23), "state": "T5 raised over the company's padlock in flat white light"},
+                            {"at_s": b_at(32), "state": "T6 a second cord, SALE HEARING · DECEMBER 3RD AND 4TH"},
+                            {"at_s": b_at(33), "state": "T7 three cords, still raised, not fallen"}]},
         "reveals": [
-            {"t": b_at(3), "type": "build-on", "what": "the case becomes a giant phone screen of character chats", "hold_s": 0.6},
-            {"t": b_at(12), "type": "scale-pullback", "what": "a stack of tiny bubbles climbs past the window line", "hold_s": 0.8},
-            {"t": b_at(16), "type": "build-on", "what": "the lock opens into a cross section of three tumblers", "hold_s": 0.8},
-            {"t": b_at(22), "type": "scale-pullback", "what": "the curtain sweeps open on the whole courtroom bench", "hold_s": 0.6},
-            {"t": b_at(30), "type": "scale-pullback", "what": "the curtain splits the whole stage into the two lots", "hold_s": 0.8}],
+            {"t": b_at(3), "type": "build-on", "what": "chat bubbles project inside the glass around Bub", "hold_s": 0.6},
+            {"t": b_at(12), "type": "scale-pullback", "what": "a stack of tiny bubbles climbs past the gallery rail", "hold_s": 0.8},
+            {"t": b_at(14), "type": "scale-pullback", "what": "a hard cut out to a Juneau office with Mount Juneau in the window", "hold_s": 0.6},
+            {"t": b_at(17), "type": "build-on", "what": "a paper hammer pops up out of the law book on three tabs", "hold_s": 0.8},
+            {"t": b_at(33), "type": "scale-pullback", "what": "the camera rises to the whole hall and the hammer held up by three cords", "hold_s": 0.8}],
         "tail_s": 2.0, "audio_arc": {"bed": [
             {"line": 0, "offset": 0.0, "level": 0.8}, {"line": 3, "offset": 0.0, "level": 1.2}, {"line": 8, "offset": 0.0, "level": 0.5},
             {"line": 10, "offset": 0.0, "level": 1.4}, {"line": 15, "offset": 0.0, "level": 0.6}, {"line": 20, "offset": 0.0, "level": 1.2},
-            {"at_s": round(b_at(30) - 0.5, 3), "level": 0.12}, {"at_s": round(b_at(30) + 0.5, 3), "level": 1.4},
+            {"at_s": round(b_at(31) - 0.5, 3), "level": 0.12}, {"at_s": round(b_at(31) + 0.5, 3), "level": 1.4},
             {"from_end": 0.4, "level": 0.0}],
-            "ambience": "rain",
-            "build_steps": 4, "dip_at": round(b_at(30) - 0.5, 3), "riser_at": round(b_at(16), 3), "silence_at": round(b_at(30) - 0.5, 3),
+            "ambience": "room",
+            "build_steps": 4, "dip_at": round(b_at(31) - 0.5, 3), "riser_at": round(b_at(36), 3), "silence_at": round(b_at(31) - 0.5, 3),
             "payoff_at": b_at(31), "button_pattern": "callback", "interrupt_at": b_at(8), "extra_dips": []},
         "shots": shots, "beats": beats,
     }
