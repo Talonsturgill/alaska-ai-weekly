@@ -1,0 +1,148 @@
+{
+  "verified_stories": [
+    {
+      "story_id": "A1_E1",
+      "story_title": "Air Force Puts June 29 Deadline on Alaska Military Base Data Center Lease Proposals, Fairbanks Neighbors Push Back",
+      "summary": "The Department of the Air Force issued a formal Request for Lease Proposals for commercial AI data centers across 4,700 acres at three Alaska installations — Eielson AFB, Clear SFS, and JBER — with bids due June 29. Fairbanks-area residents raised concerns about permafrost damage, continuous noise pollution from cooling systems, diesel generator air quality impacts, strain on GVEA's grid, and proximity to residential areas and schools including North Pole Middle School less than one mile away.",
+      "sources": [
+        {"url": "https://www.alaskasnewssource.com/2026/06/09/us-military-plans-lease-alaska-land-ai-data-centers-community-responds/", "outlet": "KTUU / Alaska's News Source", "author": "Alex Bengel", "pub_date": "2026-06-09", "resolved": true},
+        {"url": "https://www.newsminer.com/news/local_news/proposed-air-force-data-center-land-leases-raise-some-concerns/article_98cbed0c-6574-464a-8097-c054c46cb699.html", "outlet": "Fairbanks Daily News-Miner", "author": "Jack Barnwell", "pub_date": "2026-06-11", "resolved": true},
+        {"url": "https://sam.gov/workspace/contract/opp/c0dd2474a2114d93a5e8ff14d3884270/view", "outlet": "SAM.gov — solicitation AFCEC-26-R-0006", "pub_date": "2026-06-05", "resolved": false, "note": "SAM.gov page returned login wall; solicitation number confirmed via both news sources as AFCEC-26-R-0006, issued June 5, proposals due June 29"}
+      ],
+      "verified": true,
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": true,
+      "needs_softening": false,
+      "retained_quotes": ["Noise doesn't stop at property lines. Permafrost and sinkholes don't stop at property lines."],
+      "validator_notes": "Two independent local news sources resolve and confirm all key facts. SAM.gov URL is login-walled but solicitation number AFCEC-26-R-0006 and June 29 deadline are confirmed by both outlets. Resident quote confirmed verbatim on KTUU page. Story consolidated from beats A1 and E1."
+    },
+    {
+      "story_id": "A2_A4",
+      "story_title": "Alaska House Passes LNG Pipeline Tax Bill 34-5, Glenfarne Caps Gas at $16/MMBtu, Senate Skeptical Before June 19 Deadline",
+      "summary": "The Alaska House passed HB 381 on June 12 by a 34-5 vote, replacing a 2% annual statewide oil and gas property tax on the proposed Glenfarne Alaska LNG pipeline with a per-unit volumetric tax representing an 80-90% reduction. Glenfarne president announced statutory price caps of $16 per MMBtu to Cook Inlet utilities regardless of cost overruns. The bill now heads to a Senate with substantially more skepticism before the special session expires June 19. Glenfarne's Phase One pipeline would deliver North Slope gas to Cook Inlet utilities by 2029, potentially enabling large AI compute loads on the Railbelt grid.",
+      "sources": [
+        {"url": "https://alaskapublic.org/news/politics/alaska-legislature/2026-06-12/alaska-house-passes-tax-cut-for-north-slope-gas-pipeline-sending-bill-to-senate", "outlet": "Alaska Public Media", "author": "Eric Stone", "pub_date": "2026-06-12", "resolved": true},
+        {"url": "https://www.adn.com/business-economy/energy/2026/06/08/alaska-gas-pipeline-developer-offers-concession-proposes-to-cap-natural-gas-costs-for-alaskans/", "outlet": "Anchorage Daily News", "author": "James Brooks", "pub_date": "2026-06-08", "resolved": true},
+        {"url": "https://www.alaskasnewssource.com/2026/06/12/lng-special-session-house-passes-tax-exemption-bill-developer-says-can-produce-gas-line/", "outlet": "KTUU / Alaska's News Source", "pub_date": "2026-06-12", "resolved": true}
+      ],
+      "verified": true,
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": false,
+      "needs_softening": false,
+      "stripped_quotes": [{"original": "substantially more skepticism", "note": "Paraphrase confirmed in substance by Alaska Public Media but treated as editorial characterization, not a direct quote"}],
+      "validator_notes": "Three independent in-window sources confirm 34-5 vote, 80-90% tax reduction, $16/MMBtu cap, June 19 special session deadline."
+    },
+    {
+      "story_id": "B1",
+      "story_title": "UAF Machine-Learning Model Turns 13 Years of Salmon Tag Data into Bycatch Forecast Tool",
+      "summary": "UAF graduate student Marcel Gietzmann-Sanders applied machine learning to more than 700,000 data points from a 13-year Chinook salmon tagging program led by Professor Andrew Seitz, producing depth-distribution charts that commercial trawlers can use to reduce inadvertent salmon bycatch. The research was published in peer-reviewed journal Animal Biotelemetry and funded primarily by the U.S. Navy.",
+      "sources": [
+        {"url": "https://www.uaf.edu/news/salmon-tagging-data-could-help-trawlers-reduce-bycatch.php", "outlet": "UAF News", "author": "Jeff Richardson", "pub_date": "2026-06-08", "resolved": true},
+        {"url": "https://alaska-native-news.com/salmon-tagging-data-could-help-trawlers-reduce-bycatch/84483/", "outlet": "Alaska Native News", "pub_date": "2026-06-09", "resolved": true},
+        {"url": "https://www.juneauempire.com/2026/06/10/alaska-researchers-using-tagging-data-to-reduce-fishing-bycatch/", "outlet": "Juneau Empire", "pub_date": "2026-06-10", "resolved": true},
+        {"url": "https://link.springer.com/article/10.1186/s40317-026-00456-2", "outlet": "Animal Biotelemetry (Springer)", "pub_date": "2026-06-01", "resolved": false, "note": "Springer URL is behind authentication; journal and article confirmed by three independent news sources"}
+      ],
+      "verified": true,
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": true,
+      "needs_softening": false,
+      "retained_quotes": ["If I'm thinking of fishing here at a given time of year, what time of day should I be fishing to minimize my bycatch level?"],
+      "validator_notes": "UAF institutional PR is the primary source. Three independent outlets confirm. Marcel Gietzmann-Sanders confirmed as the ML researcher."
+    },
+    {
+      "story_id": "B2",
+      "story_title": "$272M Rural Health Transformation Race: 400+ Projects Advance, Technology and AI Proposals Prominent",
+      "summary": "Alaska's Department of Health advanced more than 400 of approximately 1,800 RHTP proposals for the state's $272 million Rural Health Transformation Program allocation. Projects advancing include Tanana Chiefs Conference drone vaccine delivery to Interior villages, wearable health monitoring, and telehealth expansion. State Rep. Genevieve Mina observed that federal program design restrictions effectively steer applicants toward AI-enabled care solutions.",
+      "sources": [
+        {"url": "https://www.adn.com/alaska-news/2026/06/07/alaska-health-officials-advance-over-400-projects-for-rural-health-transformation-funding/", "outlet": "Anchorage Daily News", "author": "Iris Samuels", "pub_date": "2026-06-07", "resolved": true},
+        {"url": "https://www.govtech.com/health/do-alaska-rural-health-transformation-funds-point-to-ai", "outlet": "Government Technology", "author": "Iris Samuels", "pub_date": "2026-06-09", "resolved": true},
+        {"url": "https://www.newsminer.com/news/local_news/advanced-proposals-for-rural-health-fund-includes-several-fairbanks-area-projects/article_2b1ce317-f712-4fc6-b9e4-4ac3438d4e82.html", "outlet": "Fairbanks Daily News-Miner", "author": "Jack Barnwell", "pub_date": "2026-06-09", "resolved": true}
+      ],
+      "verified": true,
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": false,
+      "needs_softening": true,
+      "needs_softening_note": "The '22% of proposals are categorized under data and technology' statistic was stripped — does not appear on any verified page. Rep. Mina quote confirmed verbatim. ADN and GovTech share the same author; News-Miner provides the independent second source.",
+      "retained_quotes": ["You name a program 'transformation,' but the way that the feds designed it is almost directing us to AI."],
+      "stripped_claims": ["22% of proposals are categorized under 'data and technology' — not present in any verified source"]
+    },
+    {
+      "story_id": "C1",
+      "story_title": "NSF Ocean Station Papa Shutdown: Alaska Coalition Raises Fisheries Blind-Spot Warning",
+      "summary": "Follow-up in-window coverage adds new angles to the Ocean Station Papa shutdown: the Alaska Marine Community Coalition issued a formal statement warning of a fisheries management blind spot; economic stakes quantified at $5.3 billion annually and nearly 42,000 jobs; climate specialist Rick Thoman warned China may fill the North Pacific monitoring vacuum; and the shutdown was connected to emergency forecasting failures during Typhoon Halong's impact on Kipnuk and Kwigillingok. These details were not in the June 4 Alaska Public Media report covered in Vol. 04.",
+      "sources": [
+        {"url": "https://www.nationalfisherman.com/alaska-coalition-warns-loss-of-ocean-monitoring-could-create-fisheries-blind-spot", "outlet": "National Fisherman", "pub_date": "2026-06-07", "resolved": true},
+        {"url": "https://insideclimatenews.org/news/09062026/alaska-ocean-monitoring-instruments-nsf-cuts/", "outlet": "Inside Climate News", "author": "Paula Dobbyn", "pub_date": "2026-06-09", "resolved": true}
+      ],
+      "verified": true,
+      "confidence": "high",
+      "is_in_window": true,
+      "primary_source": false,
+      "needs_softening": true,
+      "needs_softening_note": "Inside Climate News is advocacy-adjacent; Project 2025 framing is editorial characterization. Rick Thoman China vacuum claim is speculative — must be attributed. Note: story was covered in Vol. 04 (Jun 6 post) — these in-window articles add genuinely new angles per validator.",
+      "validator_notes": "Both in-window sources confirmed and add materially new information beyond Vol. 04 coverage."
+    },
+    {
+      "story_id": "C2",
+      "story_title": "$11M XPRIZE Autonomous Wildfire Finals Launch in Alaska's NANA Region, June 15-25",
+      "summary": "Beginning June 15-25, five finalist teams — Anduril, Data Blanket, Dryad, FireSwarm Solutions, and Wildfire Quest — compete in a 1,000-square-kilometer area in Alaska's NANA Region near Fairbanks, autonomously detecting and suppressing wildfires. The grand prize is $3.5 million. Total competition purse is $11 million.",
+      "sources": [
+        {"url": "https://www.xprize.org/competitions/wildfire", "outlet": "XPRIZE Foundation (official)", "pub_date": "2026-06-11", "resolved": true},
+        {"url": "https://www.prnewswire.com/news-releases/meet-the-future-of-autonomous-wildfire-response-xprize-wildfire-announces-finalist-teams-advancing-in-11m-competition-302673499.html", "outlet": "PR Newswire / XPRIZE Foundation", "pub_date": "2026-01-29", "resolved": true},
+        {"url": "https://dronelife.com/2026/05/18/students-compete-in-xprize-wildfire-finals-with-ai-drone-firefighting/", "outlet": "DroneLife", "pub_date": "2026-05-18", "resolved": true}
+      ],
+      "verified": true,
+      "confidence": "medium",
+      "is_in_window": true,
+      "primary_source": true,
+      "needs_softening": true,
+      "needs_softening_note": "Finals start June 15, after the window closes June 13. Forward-looking framing required. '$1M Lockheed Martin bonus' sponsor name stripped — not confirmed on any fetched page.",
+      "stripped_claims": ["'$1M Lockheed Martin bonus' — sponsor name not confirmed on any fetched page; bonus prize exists but sponsor unconfirmed"]
+    },
+    {
+      "story_id": "D2",
+      "story_title": "White House Relaunches Push to Block State AI Laws, Bundling 3-Year Preemption with Kids' Safety Legislation",
+      "summary": "During the week of June 8-12, the White House and Senate Republicans led by Sen. Marsha Blackburn relaunched efforts to bundle a three-year preemption of state AI development laws with the Kids Online Safety Act, the NO FAKES Act, and federal age verification requirements. Congress had previously rejected broad AI preemption 99-1. No final bill text or defined preemption scope exists publicly as of the window close date.",
+      "sources": [
+        {"url": "https://www.biometricupdate.com/202606/white-house-senate-revive-push-to-block-state-ai-walls-through-kids-safety-deal", "outlet": "Biometric Update", "pub_date": "2026-06-11", "resolved": true},
+        {"url": "https://thenextweb.com/news/white-house-ai-preemption-kosa-no-fakes-deal", "outlet": "The Next Web", "pub_date": "2026-06-10", "resolved": true},
+        {"url": "https://www.techtimes.com/articles/318316/20260612/federal-ai-preemption-talks-openai-subpoena-shows-what-states-could-lose.htm", "outlet": "TechTimes", "pub_date": "2026-06-12", "resolved": true}
+      ],
+      "verified": true,
+      "confidence": "medium",
+      "is_in_window": true,
+      "primary_source": false,
+      "needs_softening": true,
+      "needs_softening_note": "All sources are tech-news outlets; no primary government text available. Negotiations are ongoing — not a concluded legislative event. Alaska delegation has no public statement."
+    },
+    {
+      "story_id": "D3",
+      "story_title": "Great American AI Act Discussion Draft Draws Near-Universal Opposition",
+      "summary": "The 269-page Great American AI Act discussion draft drew swift opposition from the AFL-CIO, ACLU, Public Citizen, and the House Commission on AI, with critics calling its three-year state preemption provision a 'generational mistake.' No Senate companion bill exists and no markup has been scheduled.",
+      "sources": [
+        {"url": "https://www.techtimes.com/articles/317903/20260606/federal-ai-regulation-bill-freezes-state-consumer-protections-three-years-sparks-revolt.htm", "outlet": "TechTimes", "pub_date": "2026-06-06", "resolved": true},
+        {"url": "https://www.aclu.org/press-releases/aclu-reacts-to-draft-bipartisan-ai-bill-that-would-preempt-state-laws", "outlet": "ACLU", "pub_date": "2026-06-04", "resolved": true}
+      ],
+      "verified": true,
+      "confidence": "medium",
+      "is_in_window": true,
+      "primary_source": false,
+      "needs_softening": true,
+      "needs_softening_note": "News event (draft release) occurred June 4, one day before window opens. TechTimes June 6 is the in-window anchor. AFL-CIO and ACLU statements confirmed.",
+      "retained_quotes": ["a giveaway to the AI industry and a handful of trillion-dollar companies", "a generational mistake"]
+    }
+  ],
+  "dropped_stories": [
+    {"story_title": "Story A3 — Air Force Power Constraints (March Analysis)", "reason": "background_context: true"},
+    {"story_title": "Story B3 — Frontiers in AI Indigenous Data Sovereignty Framework", "reason": "background_context: true"},
+    {"story_title": "Story B4 — IJCH Symposium Paper on Alaska Native Tribal Health AI", "reason": "background_context: true, pub date May 23 outside window"},
+    {"story_title": "Story D1 — Air Force RFLP (Beat D duplicate)", "reason": "Duplicate of A1/E1 — consolidated"},
+    {"story_title": "Story D4 — Trump AI Executive Order June 2", "reason": "background_context: true, pub date June 2 outside window"},
+    {"story_title": "Story A4 — Glenfarne $16/MMBtu Gas Cap (standalone)", "reason": "Sub-story of A2, consolidated into A2_A4"}
+  ],
+  "validation_notes": "Seven stories verified. The '22% data/technology proposals' statistic from B2 stripped as unverifiable. '$1M Lockheed Martin bonus' sponsor stripped from C2. C1 Ocean Station Papa cleared for inclusion — in-window articles add materially new angles. SAM.gov for A1_E1 is login-walled but AFCEC-26-R-0006 confirmed by two independent outlets. D2 and D3 are needs_softening (tech-news only, no primary gov text, ongoing negotiations). The Post_001.md / Vol. 01 anchor and Vol. 04 (Jun 6) both covered the broader AI infrastructure vs. power gap — this week's frame must focus on the SPECIFIC and NEW: addresses on parcels, June 29 bid deadline, inverted sequencing relative to LNG June 19 vote."
+}
