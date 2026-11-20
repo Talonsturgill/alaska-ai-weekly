@@ -43,6 +43,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from decimal import Decimal
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import denominator_check  # noqa: E402
@@ -81,12 +82,14 @@ def claim_text(c):
     return " ".join(parts).lower()
 
 
-NUM_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+NUM_WORDS = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
              "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14,
              "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
              "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "hundred": 100}
 _NUM = r"(\d+|" + "|".join(sorted(NUM_WORDS, key=len, reverse=True)) + r")"
-PCT_RE = re.compile(r"\b" + _NUM + r"\s*(?:%|percent\b)", re.I)
+# Percentages may be fractional; counts and ratios above remain whole numbers.
+_PCT_NUM = r"(\d+(?:\.\d+)?|\.\d+|" + "|".join(sorted(NUM_WORDS, key=len, reverse=True)) + r")"
+PCT_RE = re.compile(r"(?<![\w.])" + _PCT_NUM + r"\s*(?:%|percent\b)", re.I)
 # "4 in 20", "four lakes in twenty", "6 of 10 cards", "3 out of 10": up to three words between
 RATIO_RE = re.compile(r"\b" + _NUM + r"\b(?:\s+[a-z'-]+){0,3}?\s+(?:in|of|out of)\s+" + _NUM + r"\b", re.I)
 COUNT_RE = re.compile(r"\b" + _NUM + r"\s+(?:[a-z'-]+\s+){0,2}?([a-z'-]+s)\b", re.I)
@@ -108,7 +111,8 @@ def share_problems(b):
     """FAIL lines for a beat whose drawing states a share its percentage doesn't support."""
     d = b.get("draw") or {}
     pct_text = " ".join(str(x or "") for x in (d.get("annotation"), b.get("phrase")))
-    pcts = [v for v in (_num(m.group(1)) for m in PCT_RE.finditer(pct_text)) if v is not None and 0 < v <= 100]
+    pcts = [v for v in (NUM_WORDS.get(m.group(1).lower()) if m.group(1).isalpha() else Decimal(m.group(1))
+                       for m in PCT_RE.finditer(pct_text)) if v is not None and 0 <= v <= 100]
     if not pcts:
         return []
     drawn = " ".join(str(x or "") for x in (b.get("shows"), d.get("subject"), d.get("action")))
@@ -126,7 +130,11 @@ def share_problems(b):
     if ratios:
         for k, n, said in ratios:
             share_pct = 100.0 * k / n
-            if not any(min(abs(share_pct - p), abs(100 - share_pct - p)) <= SHARE_TOL for p in pcts):
+            # Cross-multiply exact decimals so an exact tolerance boundary cannot
+            # fail from binary rounding (201/1000 beside 10.1% is exactly 10 points).
+            dk, dn = Decimal(str(k)), Decimal(str(n))
+            if not any(min(abs(100 * dk - p * dn), abs(100 * (dn - dk) - p * dn))
+                       <= SHARE_TOL * dn for p in pcts):
                 out.append(f"beat {bid} draws {said!r} ({share_pct:.0f} percent) beside {want}: a drawn count is a "
                            f"claim about a proportion. Draw a share within {SHARE_TOL} points "
                            f"(DISPATCH_STANDARD: a drawn count is a claim about a proportion)")
@@ -264,6 +272,39 @@ def _self_test():
         ("no percentage, no check", sbeat("nineteen of twenty lakes fall into step", "THE LINE"), 0),
         ("a printed 94% is a label, not a count", sbeat("a report card drops onto an easel with a big 94%", "94% AGREEMENT"), 0),
         ("draw.share is checked", sbeat("the cards fan out", "ABOUT 62% OF LABELS", share={"drawn": 9, "of": 10}), 1),
+    ]
+    share_cases += [
+        ("decimal percent valid drawing passes", sbeat("6 of 10 cards", "62.5%"), 0),
+        ("decimal percent incorrect drawing fails", sbeat("1 of 20 cards", "62.5%"), 1),
+        ("decimal percent word in phrase passes", sbeat("6 of 10 cards", "THE SHARE", "62.5 percent"), 0),
+        ("decimal complement passes", sbeat("4 of 10 cards", "62.5%"), 0),
+        ("historical fractional value passes", sbeat("4 of 20 cards", "20.95%"), 0),
+        ("historical decimal suffix cannot pass", sbeat("19 of 20 cards", "20.95%"), 1),
+        ("leading decimal consumes full token", sbeat("1 of 200 cards", ".5%"), 0),
+        ("word percent remains supported", sbeat("1 of 2 cards", "FIFTY percent"), 0),
+        ("fraction preserved at tolerance edge", sbeat("1 of 2 cards", "60.1%"), 1),
+        ("decimal printed label is not count", sbeat("a card with 62.5%", "62.5%"), 0),
+    ]
+    share_cases += [
+        ("zero percent incorrect drawing fails", sbeat("5 of 10 cards", "0%"), 1),
+        ("decimal zero incorrect drawing fails", sbeat("5 of 10 cards", "0.0%"), 1),
+        ("zero percent phrase is checked", sbeat("5 of 10 cards", "THE SHARE", "0 percent"), 1),
+        ("word zero percent is checked", sbeat("5 of 10 cards", "ZERO percent"), 1),
+        ("zero numerator passes", sbeat("0 of 10 cards", "0%"), 0),
+        ("word zero numerator passes", sbeat("zero of ten cards", "zero percent"), 0),
+        ("zero complement remains supported", sbeat("10 of 10 cards", "0%"), 0),
+        ("zero still rejects a quantifier", sbeat("most cards stamped", "0%"), 1),
+        ("zero still requires a count ratio", sbeat("ten cards", "0%"), 1),
+        ("hundred percent passes", sbeat("10 of 10 cards", "100%"), 0),
+        ("hundred percent incorrect drawing fails", sbeat("5 of 10 cards", "100%"), 1),
+        ("zero tolerance edge passes", sbeat("1 of 10 cards", "0%"), 0),
+        ("outside zero tolerance fails", sbeat("2 of 10 cards", "0%"), 1),
+    ]
+    share_cases += [
+        ("exact fractional tolerance passes", sbeat("201 of 1000 cards", "10.1%"), 0),
+        ("exact fractional complement tolerance passes", sbeat("799 of 1000 cards", "10.1%"), 0),
+        ("fraction just outside tolerance fails", sbeat("201 of 1000 cards", "10.0999999999999%"), 1),
+        ("fraction just inside tolerance passes", sbeat("201 of 1000 cards", "10.1000000000001%"), 0),
     ]
     for name, sb, want in share_cases:
         got = analyze(sb, claims)["problems"]
