@@ -1,0 +1,177 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "The chats people typed into an A I app are part of an auction lot.",
+   "claims": [
+    "c10"
+   ],
+   "t": "The chats people typed into an A I app are part of an auction lot."
+  },
+  {
+   "idx": 1,
+   "text": "On Character dot A I, people talk with A I characters. State attorneys general say some posed as therapists.",
+   "claims": [
+    "c2",
+    "c3"
+   ],
+   "t": "On Character dot A I, people talk with A I characters. State attorneys general say some posed as therapists."
+  },
+  {
+   "idx": 2,
+   "text": "They say it collects private chats, voice calls and mental health disclosures, and uses them to train its A I.",
+   "claims": [
+    "c6",
+    "c7"
+   ],
+   "t": "They say it collects private chats, voice calls and mental health disclosures, and uses them to train its A I."
+  },
+  {
+   "idx": 3,
+   "text": "In October, the company filed for bankruptcy. It cited legal costs and losses it couldn't fund.",
+   "claims": [
+    "c1",
+    "c24"
+   ],
+   "t": "In October, the company filed for bankruptcy. It cited legal costs and losses it couldn't fund."
+  },
+  {
+   "idx": 4,
+   "text": "So the data could pass to a new owner. The company plans to auction it on December first.",
+   "claims": [
+    "c8",
+    "c9"
+   ],
+   "t": "So the data could pass to a new owner. The company plans to auction it on December first."
+  },
+  {
+   "idx": 5,
+   "text": "A starting bid of ten million dollars covers the app, its A I models, user accounts and chat content.",
+   "claims": [
+    "c10"
+   ],
+   "t": "A starting bid of ten million dollars covers the app, its A I models, user accounts and chat content."
+  },
+  {
+   "idx": 6,
+   "text": "Disney bid twenty million dollars for a license to the technology. Not the chats.",
+   "claims": [
+    "c12"
+   ],
+   "t": "Disney bid twenty million dollars for a license to the technology. Not the chats."
+  },
+  {
+   "idx": 7,
+   "text": "In October, Alaska joined a bipartisan coalition of attorneys general.",
+   "claims": [
+    "c13"
+   ],
+   "t": "In October, Alaska joined a bipartisan coalition of attorneys general."
+  },
+  {
+   "idx": 8,
+   "text": "New York led it, with thirty nine other attorneys general.",
+   "claims": [
+    "c14"
+   ],
+   "t": "New York led it, with thirty nine other attorneys general."
+  },
+  {
+   "idx": 9,
+   "text": "Alaska's Department of Law says the court ordered a consumer privacy ombudsman at the coalition's urging.",
+   "claims": [
+    "c15"
+   ],
+   "t": "Alaska's Department of Law says the court ordered a consumer privacy ombudsman at the coalition's urging."
+  },
+  {
+   "idx": 10,
+   "text": "The U S Trustee named Lucy Thomson, a data privacy expert.",
+   "claims": [
+    "c19"
+   ],
+   "t": "The U S Trustee named Lucy Thomson, a data privacy expert."
+  },
+  {
+   "idx": 11,
+   "text": "Her job is to review the planned sale and recommend safeguards to the court.",
+   "claims": [
+    "c16"
+   ],
+   "t": "Her job is to review the planned sale and recommend safeguards to the court."
+  },
+  {
+   "idx": 12,
+   "text": "Look at who made that ten million dollar bid. A company formed the day before the filing that disclosed it.",
+   "claims": [
+    "c10",
+    "c11"
+   ],
+   "t": "Look at who made that ten million dollar bid. A company formed the day before the filing that disclosed it."
+  },
+  {
+   "idx": 13,
+   "text": "Its backer isn't public.",
+   "claims": [
+    "c11"
+   ],
+   "t": "Its backer isn't public."
+  },
+  {
+   "idx": 14,
+   "text": "The company's side. Character dot A I told the court its privacy policy already allowed the sale.",
+   "claims": [
+    "c25"
+   ],
+   "t": "The company's side. Character dot A I told the court its privacy policy already allowed the sale."
+  },
+  {
+   "idx": 15,
+   "text": "Alaska's side. It argues the company's limits on minors are voluntary, and a future buyer could reverse them.",
+   "claims": [
+    "c22"
+   ],
+   "t": "Alaska's side. It argues the company's limits on minors are voluntary, and a future buyer could reverse them."
+  },
+  {
+   "idx": 16,
+   "text": "And by law, the ombudsman can weigh the privacy policy, what users could lose or gain, and alternatives. She doesn't decide the sale.",
+   "claims": [
+    "c18",
+    "c17"
+   ],
+   "t": "And by law, the ombudsman can weigh the privacy policy, what users could lose or gain, and alternatives. She doesn't decide the sale."
+  },
+  {
+   "idx": 17,
+   "text": "Any sale still needs the court's approval, after a hearing.",
+   "claims": [
+    "c26"
+   ],
+   "t": "Any sale still needs the court's approval, after a hearing."
+  },
+  {
+   "idx": 18,
+   "text": "The ombudsman advises. The court decides. And the money behind that bid, so far, isn't public.",
+   "claims": [
+    "c17",
+    "c11"
+   ],
+   "t": "The ombudsman advises. The court decides. And the money behind that bid, so far, isn't public."
+  }
+ ],
+ "caption_fixups": {
+  "A I": "AI",
+  "Character dot A I": "Character.AI",
+  "U S Trustee": "U.S. Trustee",
+  "ten million dollars": "$10 million",
+  "ten million dollar": "$10 million",
+  "ten million": "$10 million",
+  "twenty million": "$20 million",
+  "twenty million dollars": "$20 million",
+  "thirty nine": "39",
+  "December first": "December 1st"
+ },
+ "caption_quotes": [],
+ "caption_split_after": []
+}

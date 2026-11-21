@@ -1,0 +1,464 @@
+{
+ "run_date": "2026-11-21",
+ "fact_check_verdict": "PASS WITH CONDITIONS. Alaska release November 19th verified verbatim (ordered at the urging of the coalition, auction planned December 1st, Mills quotes). NY AG October 14th: 40 AGs incl DC, 20M monthly users and 2M self-declared under 18 accounts (NY figures), data trains its AI. Docket facts secondary only (KSL/Reuters, Bloomberg Law, KQED, PPC Land, KIMT); no primary docket reachable. Do not say: Chapter 11 from the state release, ombudsman can block, sale halted, 40 states, 2 million children, Alaska led, Disney buying chats, 163 million users, backer's name.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-sources",
+   "spoken": "Character.AI filed for bankruptcy in October.",
+   "on_screen": "BANKRUPT \u00b7 OCTOBER 12TH",
+   "source": "https://www.ksl.com/article/51635619/characterai-files-for-bankruptcy-agrees-to-sell-some-assets-to-disney-for-20-million",
+   "second_source": "https://www.kqed.org/news/12104362/your-chatbot-just-went-bankrupt-what-happens-now-to-your-user-data",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Reuters via KSL reports Character.AI filed for bankruptcy late on Monday, October 12th, 2026, with first-day papers the next day.",
+   "requires": [
+    "say October or October 12th, never October 13th"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-two-sources",
+   "spoken": "Character.AI lets people talk with AI characters.",
+   "on_screen": "CHARACTER.AI \u00b7 CHAT WITH AI CHARACTERS",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "verbatim_source": "\"Character.AI allows users to interact with AI-generated characters, including fictional personalities and chatbots posing as therapists, psychologists, and other trusted professionals.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-two-sources",
+   "spoken": "Some of its chatbots posed as therapists.",
+   "on_screen": "CHATBOTS POSING AS THERAPISTS",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "verbatim_source": "\"chatbots posing as therapists, psychologists, and other trusted professionals.\"",
+   "requires": [
+    "attribute to the Alaska Department of Law or the state attorneys general"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "It has about twelve million monthly users, per its filings.",
+   "on_screen": "ABOUT 12 MILLION MONTHLY USERS",
+   "source": "https://www.kqed.org/news/12104362/your-chatbot-just-went-bankrupt-what-happens-now-to-your-user-data",
+   "second_source": "https://www.ksl.com/article/51635619/characterai-files-for-bankruptcy-agrees-to-sell-some-assets-to-disney-for-20-million",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: KQED reports roughly 12 million monthly users according to the company's legal filings; Reuters via KSL says about 12 million active users.",
+   "requires": [
+    "say per its filings or per the company"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "New York's attorney general put it above twenty million monthly users, including more than two million accounts self-declared as under eighteen.",
+   "on_screen": "2 MILLION+ ACCOUNTS SELF-DECLARED UNDER 18",
+   "source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "second_source": "",
+   "verbatim_source": "\"The platform has more than 20 million monthly users, including more than two million accounts registered to users self-declared as under 18.\"",
+   "requires": [
+    "say self-declared, never 2 million children",
+    "attribute to the New York attorney general"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "It collects private chats, voice calls and mental health disclosures.",
+   "on_screen": "PRIVATE CHATS \u00b7 VOICE CALLS \u00b7 MENTAL HEALTH",
+   "source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "second_source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "verbatim_source": "\"Character.AI collects sensitive user information, including private chats and voice calls, mental health disclosures, ages, and identifying device data.\"",
+   "requires": [
+    "attribute to the attorneys general"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "It uses that information to train its AI, the attorneys general said.",
+   "on_screen": "USED TO TRAIN ITS AI \u00b7 PER THE AGS",
+   "source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "second_source": "",
+   "verbatim_source": "\"The company uses this information to generate revenue and train its AI, and the data could be transferred to a new owner through bankruptcy.\"",
+   "requires": [
+    "attribute to the attorneys general"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-primary",
+   "spoken": "The data could pass to a new owner through bankruptcy.",
+   "on_screen": "COULD TRANSFER TO A NEW OWNER",
+   "source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "second_source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "verbatim_source": "\"the data could be transferred to a new owner through bankruptcy.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-two-sources",
+   "spoken": "The company plans to auction it on December 1st.",
+   "on_screen": "AUCTION \u00b7 DECEMBER 1ST",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://www.kimt.com/news/mn-ag-wins-watchdog-to-guard-kids-data-in-character-ai-bankruptcy/article_68007e28-be0d-4924-8f54-a3fac47bf9b6.html",
+   "verbatim_source": "\"...which the company plans to auction off on December 1, 2026.\"",
+   "requires": [
+    "say plans or scheduled, never will be sold"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-two-sources",
+   "spoken": "A starting bid of ten million dollars covers the app, its AI models, user accounts and chat content.",
+   "on_screen": "$10M STARTING BID \u00b7 APP \u00b7 MODELS \u00b7 ACCOUNTS \u00b7 CHATS",
+   "source": "https://news.bloomberglaw.com/bankruptcy-law/character-ai-gets-10-million-bid-to-buy-user-data-brand-assets",
+   "second_source": "https://ppc.land/character-ai-users-chats-face-a-10m-sale-to-smirks-and-pangs/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Bloomberg Law reports Smirks & Pangs Acquisition LLC is the starting bidder at $10 million for the website, mobile apps, finished and unfinished AI models, and user accounts and chat content.",
+   "requires": [
+    "never say Disney is buying the chats"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-two-sources",
+   "spoken": "The starting bidder is a company formed the day before the filing that disclosed its bid, and its backer isn't public.",
+   "on_screen": "FORMED NOV 13TH \u00b7 BID FILED NOV 14TH \u00b7 BACKER NOT PUBLIC",
+   "source": "https://news.bloomberglaw.com/bankruptcy-law/character-ai-gets-10-million-bid-to-buy-user-data-brand-assets",
+   "second_source": "https://ppc.land/character-ai-users-chats-face-a-10m-sale-to-smirks-and-pangs/",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Bloomberg Law says Smirks & Pangs was formed November 13th and the bid disclosed in a November 14th filing; the company asked the court to keep the backer confidential (Bloomberg Law and PPC Land, November 20th).",
+   "requires": [
+    "never name or guess the backer"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-two-sources",
+   "spoken": "Disney bid twenty million dollars for a license to the technology, not the chats.",
+   "on_screen": "DISNEY \u00b7 $20M \u00b7 TECH LICENSE \u00b7 NOT THE CHATS",
+   "source": "https://www.ksl.com/article/51635619/characterai-files-for-bankruptcy-agrees-to-sell-some-assets-to-disney-for-20-million",
+   "second_source": "https://news.bloomberglaw.com/bankruptcy-law/character-ai-gets-10-million-bid-to-buy-user-data-brand-assets",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: Reuters via KSL reports Disney is the stalking-horse bidder at $20 million for a nonexclusive, perpetual license to Character.AI's intellectual property; the user data sits in the separate $10 million bid.",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "In October Alaska joined a bipartisan coalition of attorneys general.",
+   "on_screen": "ALASKA JOINED \u00b7 BIPARTISAN AG COALITION",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "verbatim_source": "\"In October, Alaska joined a bipartisan coalition of state attorneys general in raising concerns about Character.AI's privacy and safety practices.\"",
+   "requires": [
+    "say joined, never led"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "New York led it, with thirty nine other attorneys general.",
+   "on_screen": "40 ATTORNEYS GENERAL \u00b7 NEW YORK LED",
+   "source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "second_source": "",
+   "verbatim_source": "\"New York Attorney General Letitia James and a bipartisan coalition of 39 other attorneys general today warned that Character.AI should not be sold without strong protections for the millions of people...\"",
+   "requires": [
+    "say attorneys general, never 40 states"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-two-sources",
+   "spoken": "At the coalition's urging, the court ordered a consumer privacy ombudsman.",
+   "on_screen": "COURT ORDERS A PRIVACY OMBUDSMAN",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://www.law360.com/bankruptcy-authority/articles/2551346/character-ai-gets-ch-11-ombudsman-to-protect-data-privacy",
+   "verbatim_source": "\"At the urging of the coalition, the bankruptcy court ordered the appointment of a Consumer Privacy Ombudsman to review the potential sale of users' private conversations and personal information and recommend safeguards to the court before the sale of the company's assets.\"",
+   "requires": [
+    "attribute the urging to the Alaska Department of Law"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "The ombudsman reviews the sale of users' private conversations and recommends safeguards to the court.",
+   "on_screen": "REVIEWS THE SALE \u00b7 RECOMMENDS SAFEGUARDS",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://www.law.cornell.edu/uscode/text/11/332",
+   "verbatim_source": "\"review the potential sale of users' private conversations and personal information and recommend safeguards to the court\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "The ombudsman advises. The court decides.",
+   "on_screen": "THE OMBUDSMAN ADVISES \u00b7 THE COURT DECIDES",
+   "source": "https://www.law.cornell.edu/uscode/text/11/332",
+   "second_source": "https://www.law.cornell.edu/uscode/text/11/363",
+   "verbatim_source": "11 U.S.C. 332(b): the ombudsman \"shall provide to the court information to assist the court in its consideration of the facts, circumstances, and conditions of the proposed sale\"; 363(b)(1)(B): the court approves such sale after appointment of the ombudsman and notice and a hearing.",
+   "requires": [
+    "never say the ombudsman can block or veto the sale"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "By law the ombudsman weighs the privacy policy, what users could lose or gain, and alternatives that would cut the losses.",
+   "on_screen": "PRIVACY POLICY \u00b7 LOSSES OR GAINS \u00b7 ALTERNATIVES",
+   "source": "https://www.law.cornell.edu/uscode/text/11/332",
+   "second_source": "",
+   "verbatim_source": "11 U.S.C. 332(b): information may include \"(1) the debtor's privacy policy; (2) the potential losses or gains of privacy to consumers ... (4) the potential alternatives that would mitigate potential privacy losses or potential costs to consumers.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-two-sources",
+   "spoken": "The U.S. Trustee named Lucy Thomson, a data privacy expert.",
+   "on_screen": "OMBUDSMAN \u00b7 LUCY L. THOMSON",
+   "source": "https://ppc.land/character-ais-planned-data-sale-gets-a-650-an-hour-privacy-ombudsman/",
+   "second_source": "https://www.kimt.com/news/mn-ag-wins-watchdog-to-guard-kids-data-in-character-ai-bankruptcy/article_68007e28-be0d-4924-8f54-a3fac47bf9b6.html",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: PPC Land reports the US Trustee appointed Lucy L. Thomson by a November 18th notice; KIMT: \"The United States Trustee selected data privacy expert Lucy Thompson to fill that role.\" (KIMT misspells the surname.)",
+   "requires": [
+    "spell Thomson",
+    "the Trustee appointed her, not the judge"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "Mills said children and families should not have to worry their private conversations can be sold to the highest bidder.",
+   "on_screen": "\"SOLD TO THE HIGHEST BIDDER\" \u00b7 ACTING AG CORI MILLS",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://alaska-native-news.com/acting-attorney-general-cori-mills-helps-secure-privacy-protections-in-character-ai-bankruptcy/87192/",
+   "verbatim_source": "\"Children and families should not have to worry that their private conversations can be sold to the highest bidder,\" said Acting Attorney General Mills.",
+   "requires": [
+    "attribute to Acting Attorney General Cori Mills"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-primary",
+   "spoken": "Mills said that responsibility does not disappear when a company files for bankruptcy.",
+   "on_screen": "\"DOES NOT DISAPPEAR\" IN BANKRUPTCY \u00b7 MILLS",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://alaska-native-news.com/acting-attorney-general-cori-mills-helps-secure-privacy-protections-in-character-ai-bankruptcy/87192/",
+   "verbatim_source": "\"Companies have a responsibility to protect the information they collect, and that responsibility does not disappear when they file for bankruptcy.\"",
+   "requires": [
+    "attribute to Mills"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "The state says the company's limits on minors are voluntary and incomplete, and a future buyer could reverse them.",
+   "on_screen": "LIMITS ON MINORS \u00b7 VOLUNTARY \u00b7 COULD BE REVERSED",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "",
+   "verbatim_source": "\"Although Character.AI has voluntarily restricted minors' access to certain chatbot features, ... these measures are voluntary, incomplete, and could be circumvented or reversed by a future buyer.\"",
+   "requires": [
+    "attribute to the state, it is an argument not a finding"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-two-sources",
+   "spoken": "The investigations followed a twenty twenty four wrongful death lawsuit.",
+   "on_screen": "AFTER A 2024 WRONGFUL DEATH LAWSUIT",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+   "verbatim_source": "Alaska: \"a 2024 wrongful death lawsuit alleging that the company's chatbots encouraged a child's suicidal thoughts\"; NY: \"Attorney General James and several other attorneys general began investigating Character.AI after a 2024 wrongful death lawsuit...\"",
+   "requires": [
+    "say alleging, never name the plaintiff",
+    "several attorneys general investigated, not every coalition state"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-two-sources",
+   "spoken": "The company cited legal costs and losses it couldn't fund.",
+   "on_screen": "LEGAL COSTS \u00b7 NO PROFIT",
+   "source": "https://www.kqed.org/news/12104362/your-chatbot-just-went-bankrupt-what-happens-now-to-your-user-data",
+   "second_source": "https://www.ksl.com/article/51635619/characterai-files-for-bankruptcy-agrees-to-sell-some-assets-to-disney-for-20-million",
+   "verbatim_source": "Paraphrase from fetch, not a quotation: KQED reports CEO Colin Adams' sworn declaration cited high legal costs, difficulty becoming profitable and investors' concern over litigation; Reuters via KSL says it has never been profitable.",
+   "requires": [
+    "lawsuits allege, never that harm happened"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-primary",
+   "spoken": "Character.AI told the court its privacy policy already allowed the sale.",
+   "on_screen": "\"POLICY ALREADY PERMITTED THE SALE\" \u00b7 PER THE COMPANY",
+   "source": "https://ppc.land/39-states-and-dc-say-character-ai-user-data-needs-a-privacy-ombudsman/",
+   "second_source": "",
+   "verbatim_source": "PPC Land reports the company told the court its policy as in force on the petition date \"already permitted the sale and transfer of user data.\"",
+   "requires": [
+    "attribute to the company's filing, single source PPC Land"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-two-sources",
+   "spoken": "Any sale still needs the court's approval after a hearing.",
+   "on_screen": "SALE NEEDS COURT APPROVAL",
+   "source": "https://www.law.cornell.edu/uscode/text/11/363",
+   "second_source": "https://ppc.land/character-ai-faces-a-privacy-ombudsman-before-its-users-data-can-be-sold/",
+   "verbatim_source": "11 U.S.C. 363(b)(1)(B): \"after notice and a hearing, the court approves such sale\"; PPC Land lists a sale hearing after the December 1st auction.",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-primary",
+   "spoken": "The ombudsman can't disclose the personal information it reviews.",
+   "on_screen": "CAN'T DISCLOSE WHAT IT READS",
+   "source": "https://www.law.cornell.edu/uscode/text/11/332",
+   "second_source": "",
+   "verbatim_source": "11 U.S.C. 332(c): an ombudsman \"may not disclose personally identifiable information obtained by the ombudsman under this title\" (statute text per validator; confirm before quoting on screen).",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-primary",
+   "spoken": "Mills said she's pleased the court took the step.",
+   "on_screen": "\"AN IMPORTANT STEP\" \u00b7 MILLS",
+   "source": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html",
+   "second_source": "",
+   "verbatim_source": "\"I'm pleased the court has taken this important step to protect consumers.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  {
+   "claim": "about 163 million current and past users",
+   "why": "single source PPC Land, soft"
+  },
+  {
+   "claim": "bid deadline November 24th, sale hearing December 3rd to 4th",
+   "why": "PPC only"
+  },
+  {
+   "claim": "ombudsman $650 an hour, report due November 26th",
+   "why": "PPC only, date is PPC calculation"
+  },
+  {
+   "claim": "Judge Brendan Shannon by name",
+   "why": "secondary only, not needed"
+  },
+  {
+   "claim": "Disney hiring staff $60M",
+   "why": "separate deal, confuses"
+  }
+ ],
+ "reserve": []
+}

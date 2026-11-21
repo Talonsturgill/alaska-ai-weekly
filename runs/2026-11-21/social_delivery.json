@@ -1,0 +1,90 @@
+{
+ "edition_id": "2026-11-21",
+ "profile": "alaska_ai",
+ "story_segments": "3 contiguous segments of 44.3 s from the released 9:16 master",
+ "results": [
+  {
+   "platform": "linkedin",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "a73b6c7e3a394e18bf6b63ebdf1b866d",
+   "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7529809629074145280/"
+  },
+  {
+   "platform": "facebook",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "2471dbbdd3574174a9ab00ec5d7d5e35",
+   "link": "https://www.facebook.com/2003130316607965/videos/1666065831921211"
+  },
+  {
+   "platform": "instagram",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "7ea26f387fa243d4a303edfa1e6a5453",
+   "link": "https://www.instagram.com/reel/Df_tX_eDfZ8/"
+  },
+  {
+   "platform": "tiktok",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "1d5ee786dfaf4de6a84802a12743b32e",
+   "link": "https://www.tiktok.com/@alaskaai_/video/7710525168438775054"
+  },
+  {
+   "platform": "youtube",
+   "placement": "feed",
+   "status": "FAILED",
+   "request_id": "8101ca20cf3f461aafe6d649a373d8b8",
+   "error": "youtube_rate_limited: YouTube rate limit exceeded (failure_stage platform_api, platform_post_id null). Receipt and remote claim retained, no retry tool by design."
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "segment": 0,
+   "status": "PUBLISHED",
+   "request_id": "29024e18b8ce4f558aeef58e53ff9149",
+   "post_id": "18144893776718054"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "segment": 1,
+   "status": "PUBLISHED",
+   "request_id": "8ecc0e9abb2346c4bad1153a5ddb8285",
+   "post_id": "18119486138025097"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "segment": 2,
+   "status": "PUBLISHED",
+   "request_id": "3e85fe86d4284b10b3580ee846bf8824",
+   "post_id": "18031043387869783"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "segment": 0,
+   "status": "PUBLISHED",
+   "request_id": "8fcd627145f14b7e87650a6566eebc13",
+   "post_id": "1439543528344856"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "segment": 1,
+   "status": "PUBLISHED",
+   "request_id": "f940de7f36e14841851c0c2b7949c385",
+   "post_id": "1637635887226789"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "segment": 2,
+   "status": "PUBLISHED",
+   "request_id": "cca56421a9d24c1d9a253353e6eef4a9",
+   "post_id": "2354042265390824"
+  }
+ ]
+}

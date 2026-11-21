@@ -3838,3 +3838,63 @@ dispatch_history:
     metaphor: a detective's evidence board where a paper suggestion card stays pinned
       under a question while a second tarp comes off a router, a second string runs
       to it and the findings arrive sealed
+- date: '2026-11-21'
+  topic: Character.AI bankruptcy plans a December 1st auction of its app, AI models,
+    user accounts and chat content; per Alaska's Department of Law the court ordered
+    a consumer privacy ombudsman (Lucy Thomson, named by the U.S. Trustee) at the
+    urging of the 40-AG coalition Alaska joined; the $10M bidder was formed the day
+    before its filing and its backer isn't public; the ombudsman advises, the court
+    decides (Alaska Department of Law, NY AG, Bloomberg Law, Reuters)
+  slug: lot-1-your-chats
+  key_entities:
+  - Character.AI
+  - Character Technologies
+  - Consumer Privacy Ombudsman
+  - Lucy Thomson
+  - U.S. Trustee
+  - Alaska Department of Law
+  - Cori Mills
+  - New York Attorney General
+  - Smirks and Pangs
+  - Disney
+  - Chapter 11
+  - chatbot data auction
+  - December 1st
+  archetype: auction lot of chat data, a privacy expert's scale, a gavel
+  palette: 'lamp-lit birch boards #B39A76, a walnut bench #6E4A2E, a seafoam-pale
+    talking stack #CFE6DA, theatre-red drapes #6B2232, auction mustard #E0A526 for
+    the money, a moonlit range #5B6B7A'
+  voice: Gemini Sulafat
+  stance: curious
+  angle: When an AI company fails, the chats people gave it become something to sell,
+    and the coalition Alaska joined got a privacy expert in front of the court before
+    that sale, which matters most because the money behind the bid for the chats has
+    no public name and the court, not the expert, decides.
+  hero: Scrollback
+  cast:
+  - Scrollback
+  - LotTag
+  - Gavel
+  - Crate
+  - ScalePans
+  - Phone
+  - Moose
+  - KitchenBG
+  - CourtBG
+  composition:
+    pov: orbital-aerial
+    motion_vector: vertical-descent
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: tactile-collage
+    palette: 'lamp-lit birch boards #B39A76, a walnut bench #6E4A2E, a seafoam-pale
+      talking stack #CFE6DA, theatre-red drapes #6B2232, auction mustard #E0A526 for
+      the money, a moonlit range #5B6B7A'
+    camera_strategy: track-follow
+    light_story: a moonlit night kitchen under a warm pendant lamp, a flat-lit map
+      table, then a walnut courtroom in high warm window light that dims behind a
+      warm-edged curtain, goes flat and even for the fair weighing, and narrows to
+      one raking shaft at the verdict, then the moonlit kitchen again
+    metaphor: 'a chat history becomes an auction lot: soft bubbles square off into
+      crates on a platform, a tag changes face, and a privacy expert fills an empty
+      scale and hands her binder up to the court'

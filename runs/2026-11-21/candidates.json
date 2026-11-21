@@ -1,0 +1,25 @@
+{
+ "locked_story": {
+  "headline": "Character.AI's Chapter 11: at the urging of a bipartisan coalition of attorneys general including Alaska, the bankruptcy court ordered a Consumer Privacy Ombudsman to review the sale of users' private conversations before a December 1st auction (Alaska Department of Law, November 19th)",
+  "found_at_rung": "in_window_sweep",
+  "note": "Picked independently by two of four researchers. Alaska primary source in window (Department of Law release November 19th), a live deadline, a genuine AI angle (chat logs as training data and a sellable asset). dedupe first returned DUP on the tokens cori, law, mills against 2026-11-02 GM Smart Driver; that film was a car driving-data settlement. This is AI chatbot conversations in a bankruptcy sale, a distinct subject; re-tested on subject entities, FRESH."
+ },
+ "rungs": [
+  {"rung": "in_window_sweep", "attempted": true, "candidates_found": 20, "note": "4 researchers (energy/policy, science, defense/rural/health, wildcard plus primary sources), about 68 of 80 WebSearch calls. All four called it a thin week for genuine ML results."}
+ ],
+ "candidates": [
+  {"headline": "Character.AI bankruptcy privacy ombudsman, Alaska in AG coalition, December 1st auction", "verdict": "LOCKED", "why": "in window, Alaska primary source, real AI at center, ticking clock, fresh subject"},
+  {"headline": "Anchorage grocers electronic shelf labels, possible personalized pricing, Tally shelf robot", "verdict": "runner-up", "why": "local and visual but commentary-sourced, no evidence AI sets Anchorage prices"},
+  {"headline": "Iliamna landslide precursor quakes caught by automatic detector", "verdict": "rejected", "why": "template matching, not ML; close to 11-01 landslide digital twin"},
+  {"headline": "UAA Briggs lab deep learning for rare earth bioreactors", "verdict": "rejected", "why": "award public since October, nothing built yet"},
+  {"headline": "Kenai digital tower operational vs testing", "verdict": "rejected", "why": "FAA announcement before window, AI depends on vendor brief, aviation covered 11-19"},
+  {"headline": "Kreiss-Tomkins asks AIDEA to pause spending", "verdict": "rejected", "why": "AI link thin, AIDEA subsidiaries covered 10-29, 10-31, 11-13"},
+  {"headline": "Mat-Su asks reversal of 6,800-acre AIDEA land transfer", "verdict": "rejected", "why": "data center siting covered repeatedly in last 30 days, no tenant"},
+  {"headline": "US Senate permitting bill, data centers pay grid upgrades", "verdict": "rejected", "why": "no Alaska specifics beyond delegation votes, single partisan source for votes"},
+  {"headline": "UAF avalanche road model 2,000+ crossings", "verdict": "rejected", "why": "no ML, not peer reviewed"},
+  {"headline": "Mat-Su hand count errors", "verdict": "rejected", "why": "no AI, single source"},
+  {"headline": "USCG Storis drone trials", "verdict": "rejected", "why": "no AI described"},
+  {"headline": "TU Graz AI glacial lakes", "verdict": "rejected", "why": "one Alaska line"},
+  {"headline": "Red Dog solar, ACUASI blood drone, SEARHC Mayo, JBER exercise, Sand Point tsunami", "verdict": "rejected", "why": "no AI or single source"}
+ ]
+}

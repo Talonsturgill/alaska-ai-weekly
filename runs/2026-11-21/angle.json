@@ -1,0 +1,29 @@
+{
+ "thesis": "When an AI company fails, the chats people gave it become something to sell, and the coalition Alaska joined got a privacy expert in front of the court before that sale, which matters most because the money behind the bid for the chats has no public name and the court, not the expert, decides.",
+ "falsifiability": "False if the chats are pulled from the sale before the hearing (then they were never really for sale, c10), or if the court approves the transfer without weighing any safeguard the ombudsman recommends (then the expert in the room changed nothing, c16, c17, c26), or if the bidder's backer turns out to be public and accountable already (c11).",
+ "supporting_facts": [
+  "Chats are an asset. Per the attorneys general the company collects private chats, voice calls and mental health disclosures and uses them to train its AI (c6, c7), the data could pass to a new owner through bankruptcy (c8), and the $10M starting bid covers the app, the AI models, user accounts and chat content (c10), with an auction planned December 1st (c9).",
+  "Alaska got a real procedural result. Alaska joined the coalition in October (c13), New York led with 39 others (c14), and at the coalition's urging the court ordered a consumer privacy ombudsman (c15), now Lucy Thomson, named by the U.S. Trustee (c19), who reviews the sale and recommends safeguards (c16) weighing the policy, what users could lose or gain, and alternatives that cut the losses (c18).",
+  "The open variable is the buyer. The starting bidder for the chats was formed the day before the filing that disclosed its bid and its backer isn't public (c11), while Disney's $20M bid is for a technology license, not the chats (c12)."
+ ],
+ "counterpoint_to_honor": "The company's fair case gets a full scene. Character.AI told the court its privacy policy already allowed the sale (c25, attributed, single source), the statute itself asks what users could GAIN as well as lose (c18), and the ombudsman can't block anything, she advises and the court decides (c17), after a hearing (c26). The state's own worry, that the limits on minors are voluntary and a buyer could reverse them (c22), is the state's argument, not a finding, and the appointment doesn't settle it.",
+ "valence": "curious",
+ "stance": "curious",
+ "who_it_serves": "Alaskans who use AI chat apps, families (c5, self-declared under 18 accounts per the NY AG), Alaska's Department of Law judged on what joining a coalition actually bought, and Alaska builders who need users to trust what happens to their data.",
+ "second_movement": "Act 2 turns the privacy win into a question: the expert is in the room, but the bidder for the chats is a shell formed two days before its bid and its backer has no name (c11). Act 3 is the test, the company's case drawn at full strength: users clicked yes to a policy the company says already allowed this (c25), and the law itself counts gains (c18). The film survives by narrowing: the expert doesn't stop the sale, she makes the terms visible to the one who decides.",
+ "button": "The ombudsman advises. The court decides. And the money behind the bid for the chats, so far, has no name.",
+ "runner_up_angles": [
+  {
+   "thesis": "Your chats are a transferable asset, so AI confidence needs privacy rules that bind the next owner (analyst A).",
+   "why_lost": "a policy prescription no claim states and it put the ombudsman in charge; its 'chats become inventory' mechanism is the winner's first act"
+  },
+  {
+   "thesis": "Alaska got a real result that is procedural, not final (analyst B).",
+   "why_lost": "implied Alaska led and assumed a counterfactual; its credit to the coalition and its naming of the expert are folded in"
+  },
+  {
+   "thesis": "The ombudsman is the price of entry, the question is who buys and on what terms (analyst C).",
+   "why_lost": "too close to the company's framing and dropped the coalition; its unnamed-buyer turn is the winner's second movement and button"
+  }
+ ]
+}

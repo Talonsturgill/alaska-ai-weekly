@@ -1,0 +1,102 @@
+{
+ "run_date": "2026-11-21",
+ "story_id": "character-ai-bankruptcy-privacy-ombudsman",
+ "treatment": "Lot 1, Your Chats (Explainer winner with grafts, restaged at Gate 0B). SCROLLBACK, a chat history drawn as an accordion of rounded chat bubbles with a worried face on its pale mint top bubble, pops out of a phone on an Anchorage kitchen table at night (snowy Chugach in the window, a moose squinting in) and a mustard lot tag THUNKs onto its foot. Inside the phone a flat chat window shows user and AI bubbles, one wearing a THERAPIST? badge; the bubbles extrude into Scrollback's scarf, which unspools and squares off into labelled crates, one sliding into a MODEL hopper. A dashed map line carries the tagged crates from Alaska to a tiny Delaware courtroom; on the auction floor a $10M starburst lands on the tag, a spotlight finds two bidder stands (DISNEY and a blank name card), and Disney's grey crate steps up to its own stand with only a tech license. Alaska's flag snaps up at the front of a row of attorneys general desks, New York's lamp lights and 39 follow, and the light runs out the doors to the court, where a gavel orders an ombudsman and a clerk sets an empty brass scale down. A faceless Lucy Thomson pins on her badge, opens her binder and seals the lot tag SAFEGUARDS?. The camera slides to the blank name card as the tag flips to FORMED NOV 13 \u00b7 BID FILED NOV 14. The company's case gets full strength (a lawyer unrolls the policy with both hands, TOLD THE COURT, a highlighted clause, a checked box, PER THE COMPANY), then Alaska's argument (a sticky note on a crate that a dashed outline shows could tear off). She sets each weight into the scale herself, the beam never settling, slides her blank-covered binder into the court's tray and steps back as a gavel twice the scale's size descends. Hard cut on the tag to the kitchen: COURT DECIDES over an empty signature line, a calendar with DEC 1 circled, and a rise to the Chugach.",
+ "palette": {
+  "night": "#13241E deep spruce-black night outside the kitchen window, #1F4D3A spruce on the window frame, the Chugach #5B6B7A frost slate with #DCE3EA snow faces lit by a pale moon from screen right",
+  "interior_kitchen": "#A68C68 oiled birch-plank walls with #C9B79A lit planks and #8E7A5C deep shade (NOT cream), a darker oiled birch table #8C6A44, warm #FFE3A8 pendant lamp pool, a #2A5A46 spruce oilcloth runner under the phone",
+  "courtroom": "#6E4A2E walnut bench and wainscot (Scrollback is always staged in front of walnut, never plaster), #9C6F45 lit walnut, #3A2A1E shadow, #EDE3CF plaster only high on the wall above the wainscot, frost slate #5B6B7A carpet",
+  "hero": "Scrollback's TOP bubble is pale spruce-mint #CFE6DA (a hero colour absent from the last two films), the stack below alternates #E6E8EE slate-tint (the AI's side) and #F6EEDD warm bubble (the user's side); ink #1B1A22 outlines; rose cheek #E7A69A for the blush",
+  "accent": "#E0A526 auction mustard, reserved ONLY for the lot tag, the starting-bid starburst and the bidder's paddle. Never on Scrollback, Alaska, the ombudsman or the court (the gavel band is neutral brass #B89A6A).",
+  "supporting": "crates #A57A4E pine with stencil ink; Disney's crate a neutral #B9C2CC grey with a plain gear icon and no brand marks; the attorneys general desks #7C8A96 slate with plain coloured flag rectangles, Alaska's a navy rectangle with eight gold dots; walnut bidder stands with paper name cards; the checked box ink on paper stock, labelled PER THE COMPANY",
+  "mood": "cosy night kitchen meets a warm old courtroom, curious and a little comic, never menacing; the money is the only gold",
+  "divergence": "11-19 was persimmon daylight over bone ivory with a cream paper hero and fiber cyan; 11-18 mint afterglow over lilac snow with safety orange and ultramarine. This film is spruce-black night, oiled birch planks and walnut with one auction mustard and a pale spruce-mint hero. HONEST OVERLAP: the warm cream of Scrollback's user-side bubbles (#F6EEDD) and the plaster high on the courtroom wall (#EDE3CF) sit near 11-19's bone ivory #F2E8D0; neither is a backdrop the hero stands against, and the hero's head is mint."
+ },
+ "light": {
+  "kitchen (S1, S3, S13)": {
+   "key": "warm pendant lamp from above centre-left pooling on the table",
+   "fill": "cool moonlight from the window screen right",
+   "rim": "moon rim on Scrollback's bubble edges",
+   "planes": "Chugach and night sky far, window frame and wall mid, table and phone fore, a near row of mug, salt shaker and mittens on the table edge"
+  },
+  "phone screen (S2)": {
+   "key": "screen glow from within",
+   "planes": "chat window, bubbles, bubbles bulging forward"
+  },
+  "map (S4)": {
+   "key": "flat top light on a painted map table",
+   "fill": "warm lamp bounce",
+   "rim": "cool moon rim from the window on the raised map line",
+   "planes": "map sheet, raised line and pins mid, a pencil and a mug ring fore"
+  },
+  "auction floor (S5)": {
+   "key": "high warm window light",
+   "rim": "cool from behind",
+   "planes": "platform, crates and stands mid, rail fore"
+  },
+  "AG hall (S6)": {
+   "key": "cool even skylight, then 40 warm desk lamps",
+   "planes": "far windows, desk rows receding, front desks fore"
+  },
+  "courtroom (S7 to S12)": {
+   "key": "high warm window light from screen left onto the bench",
+   "fill": "walnut bounce",
+   "rim": "cool rim from a tall window behind",
+   "planes": "plaster wall and tall window far, bench and witness stand mid, a rail and the gallery bench fore"
+  },
+  "arc": "courtroom opens in high warm window light (S7, S8); the bidder stands (S9) are under one spotlight with the room dimmed (something not public, not sinister); the fair test (S10, S11) is lit flat and even; the verdict (S12) is one raking shaft on the bench, the bobbing scale and her binder in the tray, the descending gavel's head half in shadow; the button (S13) returns to the moonlit kitchen",
+  "depth_approach": "Stage3D planes in every shot with a world; lib/lighting tones(), RimLight and ContactShadow on every grounded thing; ContactShadow under crates, scale, stands and the checked box"
+ },
+ "shape_language": "Scrollback is all ROUNDED soft bubbles against the courtroom's HARD rectilinear walnut. The argument is a CHANGE OF STATE in the hero: when the scarf unspools, its rounded bubbles visibly square off into stencilled square crates as they land (rounded = what people said, square = what it is sold as), and when the spotlight finds the blank name card Scrollback yanks its old messages back inside the accordion. The money (tag, paddle) is the only mustard.",
+ "casting": {
+  "hero": "Scrollback, NET-NEW reusable lib asset in lib/auction.tsx: an accordion of 4 to 7 rounded chat bubbles, face on the top bubble (emotions calm, worried, shy, startled, hopeful, wary), a trailing scarf of small bubbles that can unspool (unspool 0..1), blush 0..1, tag slot at the foot, cues for IdleFigure-style beat poses. Reason: the shelf has no conversation-history character; the story's thing is the chat log itself.",
+  "supporting_shelf": [
+   "ScalePans (fiber.tsx) the ombudsman's brass scale",
+   "Phone (fiber.tsx) the phone on the kitchen table",
+   "Moose (fauna.tsx) at the kitchen window, the film's Alaska-wildlife cue (it squints at the blank tag); kept because it is the Alaska thing drawn in the set",
+   "AK_PATH (akmap.ts) the Alaska shape on the map line",
+   "StrikeProp (figureidle.tsx) the gavel strikes",
+   "IdleFigure/FigureFinish (figureidle.tsx) every faceless person"
+  ],
+  "net_new_supporting": [
+   "LotTag: the throughline, a mustard auction tag on a string, faces swap (blank, $10M, FORMED NOV 13 \u00b7 BID FILED NOV 14, UNDER REVIEW, COURT DECIDES with a signature line); shelf has HangTag (prospect.tsx) but no auction face states",
+   "Gavel: walnut with a NEUTRAL brass band, landed through StrikeProp (which is motion, not a prop); shelf grep 'gavel' returns only StrikeProp's doc line",
+   "Crate: stencilled pine crate the bubbles square off into; shelf grep 'crate' returns no crate prop",
+   "BidPaddle: round mustard paddle with a BLANK name card on its stand (replaces the Raven's WHO? note as loop 1); shelf grep 'paddle' none",
+   "AGDeskRow: a row of 40 small slate desks with plain flag rectangles, drawn in-episode; shelf has no desk row",
+   "PolicyRunway: the policy unrolled as a paper runway to a checked box labelled PER THE COMPANY, drawn in-episode",
+   "PrivacySeal: a round wax-style seal Thomson presses onto crate lids (replaces the magnifier, native to review); in-episode",
+   "KitchenBG and CourtBG worlds in lib/auction.tsx; shelf grep 'kitchen|court' returns no interior of either kind",
+   "BidderStands: two walnut stands with name cards, DISNEY and one blank, in-episode",
+   "StickyNote: LIMITS ON MINORS \u00b7 VOLUNTARY on a crate lid with a dashed tear-off outline, in-episode"
+  ],
+  "people": "Lucy Thomson, the company's lawyer and a clerk's hand are faceless figures or hands with boxed name tags. No real person is a faced cartoon. No child is drawn. No user's hand is staged (Gate 0B decline: no claim says users agreed to a transfer).",
+  "dropped": "Cake (fairness), Magnifier and Raven (11-19's), Curtain (Gate 0B: a covered reveal at 71 s restaged 11-19's tarp), the dashed ghost hand (11-18's device, replaced by a dashed outline of a sticky note), the hand falling short of the gavel (11-19's FAA hand and pie, replaced by her binder going into the court's tray)."
+ },
+ "motion_language": "Scrollback bounces like an accordion (squash on landing, stretch on pop), its scarf follows through with lag. Hero moves with anticipation and overshoot: the pop from the phone, the tag THUNK, the bubbles squaring off into crates in a cascade, the gavel strike (StrikeProp), weights set into the pans by her hand with the beam bobbing and never settling, the spotlight snapping onto the blank name card. The camera never punctuates beats (kicks only on the two flagged beats); impacts land in objects.",
+ "composition": {
+  "focal_hierarchy": "Scrollback first, then the mustard object of the beat, then the plate",
+  "negative_space": "the night window above Scrollback in S1, the empty bench space before the scale arrives",
+  "safe_area": "hero action and plates inside y 420 to 1500 for the square; sky and Chugach above, table edge, gallery rail and floor below the caption bar on the master",
+  "signature_shot": "S12: under one raking shaft, Thomson's faceless figure slides her closed blank-covered binder into the court's brass tray beside a scale whose beam is still bobbing, then steps back hands at her sides as a walnut gavel twice the scale's size descends above and the camera pulls back so the binder looks small."
+ },
+ "craft_advance": "None beyond the net-new auction kit this film needs.",
+ "value_check": {
+  "rule": "at least 25 L* between Scrollback and any backdrop it stands on; mustard held apart by value",
+  "kitchen": "hero top bubble #CFE6DA L* ~89 against plank wall #A68C68 L* ~59 (30 L*), the dark window behind the head L* ~12; table #8C6A44 L* ~47 under the stack",
+  "court": "hero against walnut bench/wainscot #6E4A2E L* ~35 (54 L*)",
+  "mustard": "#E0A526 L* ~72 against walnut L* ~35 and slate carpet L* ~44; against birch planks L* ~65 it gets an ink outline and a dark contact shadow"
+ },
+ "practicals": [
+  "no SOLD stamp and no green tick anywhere; the lot tag never reads SOLD",
+  "the ombudsman ADVISES and never DECIDES; her figure never touches the gavel",
+  "Disney's crate walks past at an ordinary pace, label facing camera",
+  "mustard only on the tag, the starburst and the paddle",
+  "Thomson, the lawyer, the judge and the user are faceless with name tags; no child anywhere",
+  "no Disney or Character.AI brand marks; the app icon is a generic rounded square with a speech bubble",
+  "the bidder is undisclosed, never accused: no shadow figure, no money bags, no CROOK, SHELL or SHADY language; the blank name card is lit, never shadowed",
+  "the checked box is ink on paper, labelled PER THE COMPANY, never green",
+  "S7: the gavel strikes once to order the ombudsman. S12: the gavel descends to a hold high above the bench and stops, never touching it and never near her binder or hand",
+  "the calendar's DEC 1 circle is ink, not mustard"
+ ]
+}
