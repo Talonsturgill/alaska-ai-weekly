@@ -171,6 +171,95 @@ def check(path):
     return out
 
 
+# --- FEET: a figure standing behind the caption card (machine pass 2026-11-21) ---------------
+# Four 11-21 courtroom shots stood figures with their feet at y 1440 to 1470, behind the caption
+# card that starts at CAPTION_TOP 1336 (a judge and the flow critic, queue caption-band-feet). No
+# check above sees it: a figure is a component call, not a raw <rect>, and its y is the FOOT line.
+# A figure component is any component whose body draws the lib rig (IdleFigure, FigureFinish or
+# figureIdle), in the episode or in lib/; a call site with a literal y (or footY) is its foot line.
+# The World push is applied the same conservative way as above, downward this time. ADVISORY: it
+# prints and never changes the exit code, because a foot inside a scaled group is not in screen px.
+FOOT_TOL = 20        # px a shoe may sit under the card's top edge (the shipped 11-21 feet render at +10)
+FIG_RIG = re.compile(r"<IdleFigure\b|<FigureFinish\b|\bfigureIdle\(")
+COMP_DEF = re.compile(r"^(?:export\s+)?const\s+([A-Z]\w*)\s*:\s*React\.FC\b", re.M)
+
+
+def figure_components(srcs):
+    """Names of components whose body draws a lib figure rig, plus the rig components themselves."""
+    names = {"IdleFigure", "FigureFinish"}
+    for src in srcs:
+        defs = list(COMP_DEF.finditer(src))
+        for k, m in enumerate(defs):
+            body = src[m.end():defs[k + 1].start() if k + 1 < len(defs) else len(src)]
+            if FIG_RIG.search(body):
+                names.add(m.group(1))
+    return names
+
+
+def world_bottom(scene_y):
+    """Where a scene-space y BELOW the centre can render at worst, under World's push."""
+    return 960.0 + (scene_y - 960.0) * K_MAX + DY_MAX
+
+
+def feet(src, names, caption_top, path="<src>"):
+    out = []
+    lines = src.split("\n")
+    call = re.compile(r"<(" + "|".join(sorted(map(re.escape, names))) + r")\b")
+    for i, ln in enumerate(lines):
+        m = call.search(ln)
+        if not m or exempt(lines, i):
+            continue
+        tag = "\n".join(lines[i:i + 3])[m.start():]
+        end = tag.find("/>")
+        tag = tag[:end] if end >= 0 else tag
+        ym = re.search(r"\b(?:footY|y)=" + NUM, tag)
+        if not ym:
+            continue
+        y = float(ym.group(1))
+        bot = world_bottom(y)
+        if bot > caption_top + FOOT_TOL:
+            out.append((path, i + 1, "FEET",
+                        f"<{m.group(1)} y={y:g}> stands its feet at y {y:g}, rendering to {bot:.0f} under the "
+                        f"World push, {bot - caption_top:.0f}px behind the caption card (CAPTION_TOP "
+                        f"{caption_top}). Raise the foot line to y {(caption_top + FOOT_TOL - DY_MAX - 960) / K_MAX + 960:.0f} "
+                        f"or less and scale the figure up instead (advisory)"))
+    return out
+
+
+def feet_of_file(path):
+    src = open(path).read()
+    band = band_of(src, path)
+    if band is None:
+        return []
+    libs = []
+    for lp in glob.glob(os.path.join(REPO, "video-engine", "src", "lib", "*.tsx")):
+        try:
+            libs.append(open(lp).read())
+        except OSError:
+            pass
+    return feet(src, figure_components([src] + libs), band[0], path)
+
+
+def _self_test():
+    lib = ("export const Walker: React.FC<{f: number; x: number; y: number}> = ({f, x, y}) => (\n"
+           "  <IdleFigure f={f} x={x} footY={y}><g /></IdleFigure>);\n"
+           "export const Crate: React.FC<{x: number; y: number}> = ({x, y}) => <rect x={x} y={y} />;\n")
+    names = figure_components([lib])
+    assert names >= {"Walker", "IdleFigure"} and "Crate" not in names, names
+    ep = ("const S1 = () => <g>\n"
+          "  <Walker f={f} x={fx} y={1460} />\n"            # the 11-21 cut-1 courtroom foot line
+          "  <Walker f={f} x={fx} y={1310} />\n"            # the shipped one
+          "  <Crate x={1} y={1500} />\n"                    # not a figure
+          "  <IdleFigure f={f} x={2}\n    footY={1440} h={200}>\n"
+          "  <Walker f={f} x={3} y={1480} /> {/* caption-band-ok */}\n"
+          "</g>;\n")
+    got = [(ln, kind) for _p, ln, kind, _m in feet(ep, names, 1336)]
+    assert got == [(2, "FEET"), (5, "FEET")], got
+    print("caption_band_check self-test: PASS (feet at 1460 and footY 1440 flagged, 1310, a crate and an "
+          "exempt line clean)")
+    return 0
+
+
 def default_targets():
     """This run's episode only.
 
@@ -206,12 +295,22 @@ def default_targets():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("targets", nargs="*", default=default_targets())
+    ap.add_argument("targets", nargs="*", default=None)
+    ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
+    if a.self_test:
+        return _self_test()
+    a.targets = a.targets or default_targets()
 
     findings = []
     for t in a.targets:
         findings += check(t)
+
+    advisories = []
+    for t in a.targets:
+        advisories += feet_of_file(t)
+    for path, line, kind, msg in advisories:
+        print(f"{os.path.relpath(path, REPO)}:{line}  {kind}  {msg}")
 
     if not findings:
         print(f"caption_band_check: clean across {len(a.targets)} file(s)")
