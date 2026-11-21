@@ -234,7 +234,14 @@ def bed_arc(board, line_starts, video_secs):
                 raise SystemExit(f"dispatch_mix: audio_arc.bed node {n!r} is out of range "
                                  f"(level {BED_FLOOR} to {BED_CEIL}, time 0 to {video_secs:.1f}s)")
             pts.append((t, m))
-        return sorted(pts), "board audio_arc.bed"
+        # An authored bed OWNS the arc, so the derived arc's pockets never run (machine pass
+        # 2026-11-21, queue extra-dips-ignored-with-authored-bed: on 11-08 board extra_dips had no
+        # effect and it was found only by reading the audio report). Say so where the arc is printed.
+        ignored = [k for k in ("extra_dips",)
+                   if aa.get(k) not in (None, [], "")]
+        note = (f" (IGNORED with an authored bed: {', '.join(ignored)}; write those dips as bed nodes)"
+                if ignored else "")
+        return sorted(pts), "board audio_arc.bed" + note
 
     def num(key):
         try:
