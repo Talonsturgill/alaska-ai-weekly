@@ -98,9 +98,12 @@ PACE_MODES = {
     "brisk": ("Pace: BRISK and energetic, keep it moving like a sharp modern explainer. Short "
               "natural breaths only, no long pauses, do not drag. Vary the tone line to line so "
               "no two sentences sound the same."),
-    "anchored": ("Pace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and "
-                 "twenty seconds, and the read must FILL it, so give every sentence room to land "
-                 "and take a real breath at every period. Do not rush the numbers. Vary the tone "
+    # measured 2026-11-21 (Lot 1, Your Chats): 290 words, 118.7 s, 22.7 percent of runtime in gaps of
+    # 0.35 s or more; the 2026-08-05 "real breath at every period" line it replaces padded to 124.8 s
+    "anchored": ("Pace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one "
+                 "hundred and fifteen seconds, and the read must fill it, so let every sentence land "
+                 "and take an easy breath at each period, a natural beat rather than a long pause. "
+                 "Save real rests for the marked short pauses. Do not rush the numbers. Vary the tone "
                  "line to line so no two sentences sound the same."),
 }
 

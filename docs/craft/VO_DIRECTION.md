@@ -98,9 +98,10 @@ Read ONLY the transcript below aloud as speech. The lines above "Transcript:" ar
 # AUDIO PROFILE: <narrator name + one-line persona>
 ### DIRECTOR'S NOTES
 Style: <warm, natural, conversational, the angle's emotional register, dry wit where earned>
-Pace: MEASURED and unhurried. THIS IS A TWO MINUTE PIECE, about one hundred and twenty seconds, and
-the read must FILL it, so give every sentence room to land and take a real breath at every period.
-Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.
+Pace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one hundred and fifteen
+seconds, and the read must fill it, so let every sentence land and take an easy breath at each period,
+a natural beat rather than a long pause. Save real rests for the marked short pauses. Do not rush the
+numbers. Vary the tone line to line so no two sentences sound the same.
 Emphasis: lean on the key word in each line; let numbers land.
 Transcript:
 <the annotated script: the exact spoken words + the sparse vetted inline tags from Steps 4-6>

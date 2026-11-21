@@ -420,7 +420,7 @@ def _num_words(n):
         return str(int(n))
 
 
-def _pace_line(target):
+def _pace_line(target, lo=None):
     """THE REQUIRED PACE PARAGRAPH, built around the CURRENT target from config.
 
     docs/craft/VO_DIRECTION.md step 7 makes this required text, because it is the
@@ -428,14 +428,25 @@ def _pace_line(target):
     with a generic "BRISK and energetic" line and 120 with one that names the runtime.
     Generating it from config/state.yaml means the next format change moves it too,
     instead of leaving a sentence that names the old length.
+
+    NEVER PADDED, AND IT NAMES THE AIM (machine pass 2026-11-21, queue pace-line-pads). The
+    owner's 2026-11-19 review asked for 112 to 120 s with routine pauses of about 0.2 to 0.4 s,
+    and the old clause "take a real breath at every period" fought it: on 11-21 it read 290
+    words at 124.8 s with 25.8 percent of runtime in gaps of 0.35 s or more, a BRISK line
+    overshot to about 103 s, and this wording (the run's third synth, "the two marked short
+    pauses" generalized to "the marked short pauses") landed 118.7 s at 22.7 percent. The
+    unit still names the format (TWO MINUTE PIECE, so _pace_names_runtime holds); the seconds
+    name the aim, halfway from the band floor to the target, rounded to 5 (115 for 112 and 120).
     """
     mins = target / 60.0
     unit = (f"{_num_words(round(mins)).upper()} MINUTE PIECE" if abs(mins - round(mins)) < 0.05
             else f"{_num_words(round(target)).upper()} SECOND PIECE")
-    return (f"Pace: MEASURED and unhurried. THIS IS A {unit}, about {_num_words(round(target))} "
-            f"seconds, and the read must FILL it, so give every sentence room to land and take a "
-            f"real breath at every period. Do not rush the numbers. Vary the tone line to line so "
-            f"no two sentences sound the same.")
+    aim = target if lo is None else 5 * round((lo + target) / 2 / 5)
+    return (f"Pace: MEASURED and unhurried, never padded. THIS IS A {unit}, about "
+            f"{_num_words(round(aim))} seconds, and the read must fill it, so let every sentence "
+            f"land and take an easy breath at each period, a natural beat rather than a long "
+            f"pause. Save real rests for the marked short pauses. Do not rush the numbers. Vary "
+            f"the tone line to line so no two sentences sound the same.")
 
 
 def _pace_names_runtime(head, target):
@@ -537,12 +548,33 @@ def repair_prompt(prompt, plan):
         profile,
         "### DIRECTOR'S NOTES",
         style,
-        _pace_line(target),
+        _pace_line(target, lo),
         emphasis,
         "Transcript:",
         *[l["text"] for l in plan_lines],
     ])
     return rebuilt, notes
+
+
+GAP_MIN_S = 0.35      # the owner's 2026-11-19 measure: runtime spent in gaps of at least 0.35 s
+GAP_SHARE_AIM = 0.15  # ... aimed at no more than 15 percent of runtime
+
+
+def gap_share(words, total, min_gap=GAP_MIN_S, aim=GAP_SHARE_AIM):
+    """The vo_report.json `gap_share` row (machine pass 2026-11-21, queue pace-line-pads).
+
+    The owner's 2026-11-19 review set the pacing measure: no more than 15 percent of runtime in
+    gaps of 0.35 s or more. The 11-21 run measured it by hand on each of three synths (25.8, then
+    22.7 percent), because nothing wrote it down. It is the same gap rule audio_report.py uses,
+    from the aligned words. Report only: it never blocks a take, it says how padded the read is.
+    """
+    gaps = [round(float(b["s"]) - float(a["e"]), 3) for a, b in zip(words, words[1:])
+            if float(b["s"]) - float(a["e"]) >= min_gap]
+    secs = round(sum(gaps), 2)
+    share = round(secs / total, 4) if total else 0.0
+    return {"min_gap_s": min_gap, "gaps": len(gaps), "seconds": secs, "runtime_s": round(total, 2),
+            "share": share, "aim": aim, "over_aim": share > aim,
+            "longest_s": max(gaps) if gaps else 0.0}
 
 
 def _require_checked_transcript(lines, prompt):
@@ -731,9 +763,14 @@ def main():
     json.dump({"total": round(total, 3), "voice": VOICE, "model": best_model, "lines": line_spans},
               open(os.path.join(OUT, "vo_lines.json"), "w"), indent=2)
     json.dump(cues, open(os.path.join(OUT, "captions.json"), "w"), indent=2)
+    gaps_row = gap_share(words, total)
+    print(f"  gap share {100 * gaps_row['share']:.1f} percent of {total:.1f}s in {gaps_row['gaps']} gaps of "
+          f"{GAP_MIN_S}s or more (aim {100 * GAP_SHARE_AIM:.0f} percent"
+          + ("; OVER: tighten the script and anchors, never speed the read)" if gaps_row["over_aim"] else ")"))
     json.dump({"backend": "gemini-tts", "model": best_model, "voice": VOICE, "take": best_i,
                "takes": TAKES, "soundcheck": reports[best_i],
                "prompt_repairs": _fixes, "runtime_warning": runtime_note,
+               "gap_share": gaps_row,
                "all_reports": [{"pass": r["pass"], "score": r["score"], "diagnosis": r["diagnosis"]} for r in reports],
                "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
                "license": "Google Gemini API preset voice (per-use billing)"},
