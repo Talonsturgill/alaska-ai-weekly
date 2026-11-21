@@ -13,7 +13,7 @@ import {figureIdle} from './figureidle';
 
 export const AU = {
   night: '#13241E', spruce: '#1F4D3A', spruceL: '#2A5A46', slate: '#5B6B7A', slateL: '#7D8C9A', snow: '#DCE3EA',
-  birch: '#B39A76', birchD: '#8E7A5C', birchDD: '#8E7A5C', lamp: '#FFE3A8',
+  birch: '#A68C68', birchD: '#8E7A5C', birchDD: '#8E7A5C', lamp: '#FFE3A8',
   walnut: '#6E4A2E', walnutL: '#9C6F45', walnutD: '#3A2A1E', plaster: '#EDE3CF', plasterD: '#CDBFA4',
   bubble: '#CFE6DA', userTint: '#F6EEDD', aiTint: '#E6E8EE', cheek: '#E7A69A',
   mustard: '#E0A526', mustardD: '#A8761A', mustardL: '#F3C960',
