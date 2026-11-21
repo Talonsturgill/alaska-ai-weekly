@@ -96,6 +96,30 @@ class SpeechPriorityTests(unittest.TestCase):
         self.assertGreaterEqual(r['minimum_mono_margin_db'], 18 - 1e-6)
         self.assertGreaterEqual(p[12 * sr // 5, 0], .014)
 
+    def test_score_recovers_under_active_speech_without_raising_effects(self):
+        sr = self.sr
+        t = np.arange(sr * 18) / sr
+        v = (.12 * np.sin(2 * np.pi * 220 * t))[:, None]
+        v[np.mod(t, 1.0) < .05] *= .025   # repeat a quiet syllable, not silence
+        ms = (.04 * np.sin(2 * np.pi * 440 * t))[:, None]
+        fx = (.06 * np.sin(2 * np.pi * 630 * t))[:, None]
+        voice = np.repeat(v, 2, axis=1)
+        score = np.repeat(ms, 2, axis=1)
+        effects = np.column_stack([fx[:, 0], -fx[:, 0]])
+        background = score + effects
+        _, legacy, _ = protect(voice, background, sr)
+        mix, protected, report = protect(voice, background, sr, music=score)
+        self.assertGreaterEqual(report['minimum_stereo_margin_db'], 18 - 1e-6)
+        self.assertGreaterEqual(report['minimum_mono_margin_db'], 18 - 1e-6)
+        self.assertGreater(np.sqrt(np.mean(protected.mean(axis=1)**2)),
+                           1.15 * np.sqrt(np.mean(legacy.mean(axis=1)**2)))
+        # Here the stereo difference isolates effects; they cannot be boosted.
+        self.assertTrue(np.all(np.abs(protected[:, 0] - protected[:, 1]) <=
+                               np.abs(legacy[:, 0] - legacy[:, 1]) + 1e-12))
+        np.testing.assert_allclose(mix / report['shared_headroom_gain'] - protected, voice, atol=1e-15)
+        for region in ('opening', 'middle'):
+            self.assertGreater(report['music_under_speech_mono'][region]['windows'], 0)
+
     def test_empty_nonfinite_silent_and_mismatched_inputs_fail(self):
         for v, b in (([], []), ([0]*20, [1]*20), ([np.nan], [0]), ([1], [np.inf]), ([1,2],[1])):
             with self.assertRaises(ValueError): protect(v, b, self.sr)
@@ -103,13 +127,15 @@ class SpeechPriorityTests(unittest.TestCase):
     def test_actual_ffmpeg_float_stems_and_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for name, vol, hz in [('voice', .03, 220), ('background', .8, 880)]:
+            for name, vol, hz in [('voice', .03, 220), ('background', .8, 880), ('score', .02, 440)]:
                 subprocess.run(['ffmpeg','-nostdin','-v','error','-y','-f','lavfi','-i',
                                 f'sine=frequency={hz}:duration=1:sample_rate=8000',
                                 '-af',f'volume={vol*8}', '-ac','2','-c:a','pcm_f32le',str(root/f'{name}.wav')], check=True)
             out, report = root/'mixed.wav', root/'report.json'
-            r = mix_files(root/'voice.wav', root/'background.wav', out, report, self.sr)
+            r = mix_files(root/'voice.wav', root/'background.wav', out, report, self.sr,
+                          music_path=root/'score.wav')
             self.assertEqual(r['premix_sha256'], sha(out))
+            self.assertEqual(r['music_meter_sha256'], sha(root/'score.wav'))
             self.assertTrue(json.loads(report.read_text())['pass'])
 
 if __name__ == '__main__': unittest.main()
