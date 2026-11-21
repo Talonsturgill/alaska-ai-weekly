@@ -185,7 +185,8 @@ export const Gavel: React.FC<{x: number; y: number; s?: number; rot?: number; gl
   const B = tones('#B89A6A'); // neutral brass: the court never wears the money's mustard
   return (
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${s})`}>
-      <rect x={-12} y={-150} width={24} height={150} rx={10} fill={T.base} stroke={INK} strokeWidth={5} transform="rotate(-70 0 -75) translate(80 -40)" />
+      <rect x={-12} y={-290} width={24} height={200} rx={10} fill={T.base} stroke={INK} strokeWidth={5} />
+      <rect x={-8} y={-286} width={7} height={192} rx={3} fill={T.key} opacity={0.6} />
       <rect x={-90} y={-92} width={180} height={88} rx={20} fill={T.base} stroke={INK} strokeWidth={6} />
       <rect x={-90} y={-92} width={180} height={30} rx={14} fill={T.key} opacity={0.6} />
       <rect x={-84} y={-34} width={168} height={26} rx={10} fill={T.core} opacity={0.55} />

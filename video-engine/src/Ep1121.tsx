@@ -529,7 +529,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const flut = ease(f, b11, 18);
   const line = easeIO(f, b12, 40);
   const pin = ease(f, b13, 12);
-  const cam = track([{t: 0, z: 1.25, fx: 320, fy: 860}, {t: b12 - 6, z: 1.2, fx: 340, fy: 880}, {t: b12 + 40, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 0.98, fx: 560, fy: 960}]);
+  const cam = track([{t: 0, z: 1.12, fx: 420, fy: 880}, {t: b12 - 6, z: 1.1, fx: 430, fy: 890}, {t: b12 + 40, z: 1.0, fx: 540, fy: 960}, {t: p.dur, z: 0.98, fx: 560, fy: 960}]);
   const P0 = {x: 372, y: 757}, P1 = {x: 950, y: 980};
   const qx = 700, qy = 640;
   const bez = (t: number) => ({x: (1 - t) * (1 - t) * P0.x + 2 * (1 - t) * t * qx + t * t * P1.x, y: (1 - t) * (1 - t) * P0.y + 2 * (1 - t) * t * qy + t * t * P1.y});
@@ -538,7 +538,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={cam} bg="#8C6A44" overlay={
       <g>
         <Plate text="BANKRUPT · OCTOBER 12TH" x={540} y={560} size={36} p={win(f, b10 + 8, b11)} />
-        <Plate text="LEGAL COSTS · LOSSES IT COULDN'T FUND" displayLines={['LEGAL COSTS', "LOSSES IT COULDN'T FUND"]} x={540} y={580} size={32} tone="dark" p={win(f, b11 + 6, b12)} /> {/* plate-overlap-ok */}
+        <Plate text="LEGAL COSTS · LOSSES" x={540} y={560} size={34} tone="dark" p={win(f, b11 + 6, b12)} /> {/* plate-overlap-ok */}
         <Plate text="COULD TRANSFER TO A NEW OWNER" x={540} y={560} size={34} p={win(f, b12 + 10, b13)} /> {/* plate-overlap-ok */}
         <Plate text="AUCTION · DECEMBER 1ST" x={540} y={560} size={36} tone="dark" p={win(f, b13 + 6)} /> {/* plate-overlap-ok */}
       </g>
@@ -552,7 +552,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
             <rect x={96} y={496} width={908} height={728} rx={6} fill="#CFDCE0" />
             {Array.from({length: 9}).map((_, i) => <path key={i} d={`M 96 ${540 + i * 80} L 1004 ${540 + i * 80}`} stroke="#B8C8CE" strokeWidth={2} />)}
             {Array.from({length: 11}).map((_, i) => <path key={i} d={`M ${140 + i * 84} 496 L ${140 + i * 84} 1224`} stroke="#B8C8CE" strokeWidth={2} />)}
-            <path d="M 552 575 L 1004 520 L 1004 935 L 580 925 L 552 800 Z" fill="#DCD5C0" stroke={C.ink} strokeWidth={4} opacity={0.9} />
+            <path d="M 552 575 L 610 540 L 700 556 L 760 528 L 840 546 L 880 600 L 860 660 L 900 700 L 950 640 L 1004 620 L 1004 920 L 940 930 L 880 912 L 800 916 L 720 912 L 640 912 L 586 905 L 552 800 Z" fill="#DCD5C0" stroke={C.ink} strokeWidth={4} opacity={0.95} />
             <g transform="translate(110,560) scale(0.5)"><path d={AK_PATH} fill="#E8E0C8" stroke={C.ink} strokeWidth={10} /></g>
             <g transform="translate(560,900) scale(0.46)"><path d={OUTLINE48} fill="#E8E0C8" stroke={C.ink} strokeWidth={8} /></g>
             <text x={780} y={760} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill="#8E8670" letterSpacing={6}>CANADA</text>
@@ -634,11 +634,12 @@ const S5: React.FC<SceneProps> = ({p}) => {
             <Crate x={430} y={1060} s={0.62} label="VOICE CALLS" />
             <Crate x={345} y={955} s={0.62} label="MENTAL HEALTH" />
             <g transform={`translate(0,${-(1 - last) * 90})`} opacity={last}><Crate x={600} y={1060} s={0.62} label="ACCOUNTS" /></g>
-            <g transform={`translate(740,${1060 - (1 - box) * 120})`} opacity={box}>
+            <g transform={`translate(740,${1060 - (1 - box) * 700}) scale(${1 + 0.12 * Math.max(0, Math.sin(clamp01((f - b15) / 8) * Math.PI))},${1 - 0.12 * Math.max(0, Math.sin(clamp01((f - b15) / 8) * Math.PI))})`} opacity={box}>
               <rect x={-70} y={-120} width={140} height={120} rx={8} fill="#8B96A2" stroke={C.ink} strokeWidth={6} />
               <rect x={-60} y={-110} width={120} height={18} rx={5} fill="#B9C2CC" />
             </g>
             <g transform="translate(600,920)"><AppIcon x={0} y={0} s={0.42} f={f} /></g>
+            {f > b15 && f < b15 + 20 && [0, 1, 2, 3, 4].map((i) => <circle key={i} cx={740 + (i - 2) * (20 + (f - b15) * 3)} cy={1050 - (f - b15) * 1.5} r={10 + (f - b15) * 0.8} fill="#E9DFC4" opacity={0.6 * (1 - (f - b15) / 20)} />)}
           </g>
         </HeldTravel>
         <g transform={`translate(0,${duck * 40})`}>
@@ -649,8 +650,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
           <Burst x={0} y={0} s={0.6 + 0.1 * Math.sin(clamp01((f - b14) / 10) * Math.PI)} text="$10M" f={f} />
         </g>
         <GreyCrate f={f} x={gx} y={1290} s={0.62} walk={walk < 1 ? f : 0} />
-        {walk > 0.05 && <Lab text="$20M" x={gx} y={1100} size={24} fill={C.paper} />}
-        <g opacity={stamp} transform={`translate(${gx},1180) rotate(-10) scale(${1.3 - 0.3 * stamp})`}>
+        {walk > 0.05 && <Lab text="$20M" x={gx} y={1235} size={24} fill={C.paper} />}
+        <g opacity={stamp} transform={`translate(${gx},1180) rotate(-10) scale(${1.3 - 0.3 * stamp + 0.1 * Math.max(0, Math.sin(clamp01((f - b18 - 6) / 8) * Math.PI))},${1.3 - 0.3 * stamp - 0.1 * Math.max(0, Math.sin(clamp01((f - b18 - 6) / 8) * Math.PI))})`}>
           <rect x={-136} y={-28} width={272} height={56} rx={6} fill="none" stroke={C.brick} strokeWidth={7} />
           <text x={0} y={12} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.brick}>NOT THE CHATS</text>
         </g>
@@ -696,7 +697,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           const d = Math.hypot(r - NY.r, c - NY.c);
           const on = ease(f, b20 + d * 4, 8);
           const isAK = r === rows - 1 && c === 2;
-          const up = isAK ? flag : ease(f, b44 + (r * cols + c) * 0.6, 8);
+          const up = isAK ? flag + 0.25 * Math.max(0, Math.sin(clamp01((f - b19 - 8) / 12) * Math.PI)) : ease(f, b44 + (r * cols + c) * 0.6, 8);
           return (
             <g key={`${r}-${c}`} transform={`translate(${x},${y}) scale(${s})`}>
               <ContactShadow cx={0} cy={4} rx={90} ry={10} opacity={0.35} />
@@ -714,7 +715,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           );
         }))}
         <rect data-band="ok" x={-200} y={1480} width={1480} height={500} fill="#6A5A48" />
-        {Array.from({length: 7}).map((_, i) => <rect key={i} x={-120 + i * 190} y={1520} width={150} height={60} rx={8} fill={C.walnut} stroke={C.ink} strokeWidth={5} />)}
+        <g><rect x={360} y={1480} width={360} height={440} fill="#2A1E14" stroke={C.ink} strokeWidth={8} /><rect x={370} y={1490} width={170} height={430} fill={C.walnut} stroke={C.ink} strokeWidth={4} transform={`skewY(${-12 * ease(f, b20 + 30, 20)})`} style={{transformOrigin: '370px 1490px'}} /><path data-band="ok" d="M 380 1500 L 700 1500 L 900 1920 L 180 1920 Z" fill="#FFE3A8" opacity={0.45 * ease(f, b20 + 24, 30)} /></g>
         <Lab text="ALASKA" x={540 + (2 - 3.5) * 230} y={1300} size={22} />
         {ease(f, b20, 8) > 0.3 && <Lab text="NEW YORK" x={540 + (5 - 3.5) * lerp(118, 230, 0.25)} y={lerp(720, 1300, 0.25) + 30} size={20} />}
       </SVG>
@@ -744,6 +745,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
         <StrikeProp f={f} at={b22} px={760} py={900} lift={150} windup={11} squash={0.22}>
           <Gavel x={760} y={900} s={0.8} rot={-12} />
         </StrikeProp>
+        {f >= b22 && f < b22 + 10 && <g transform="translate(760,900)" opacity={1 - (f - b22) / 10}>{Array.from({length: 10}).map((_, i) => { const a = i / 10 * Math.PI * 2; const r0 = 40 + (f - b22) * 6, r1 = r0 + 40; return <path key={i} d={`M ${Math.cos(a) * r0} ${Math.sin(a) * r0 * 0.5} L ${Math.cos(a) * r1} ${Math.sin(a) * r1 * 0.5}`} stroke={C.ink} strokeWidth={6} strokeLinecap="round" />; })}<ellipse cx={0} cy={0} rx={90 + (f - b22) * 8} ry={20 + (f - b22) * 2} fill="#E9DFC4" opacity={0.5} /></g>}
         <g opacity={card} transform={`translate(${520 - (1 - card) * 60},${880 - Math.abs(settle(f, b22, 18, 16))})`}>
           <rect x={-150} y={-34} width={300} height={68} rx={6} fill={C.paper} stroke={C.ink} strokeWidth={5} />
           <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={C.ink}>COURT ORDERS</text>
@@ -776,8 +778,8 @@ const Peg: React.FC<{x: number; y: number}> = ({x, y}) => (
 const S8: React.FC<SceneProps> = ({p}) => {
   const {f} = p;
   const b24 = p.b(24), b25 = p.b(25), b26 = p.b(26), b27 = p.b(27);
-  const walk = clamp01((f + 10) / 46);
-  const pinB = ease(f, b24 + 16, 10);
+  const walk = clamp01((f - 4) / Math.max(30, b25 - 6));
+  const pinB = ease(f, b25 - 14, 10);
   const tagS = ease(f, b25, 12);
   const open = ease(f, b26, 14);
   const press = ease(f, b27 - 6, 8);
@@ -798,18 +800,18 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <HeldTravel f={f} x={540} y={640} w={320} h={260} mode="shadow" seed={25}>
           <ScalePans x={700} y={878} s={0.56} tilt={Math.sin(f / 9) * 0.1} f={f} />
         </HeldTravel>
-        <Peg x={860} y={700} />
-        <LotTag f={f} x={860} y={700} rows={['$10M']} len={40} s={0.9} seed={9} />
-        <g opacity={press} transform={`translate(${lerp(420, 920, press)},${lerp(1100, 832, press)}) scale(${sealOn ? 0.55 : 0.8})`}>
+
+        <g opacity={press} transform={`translate(${lerp(420, 930, press)},${lerp(1100, 1200, press)}) scale(${sealOn ? 0.55 : 0.8})`}>
           <Seal x={0} y={0} />
         </g>
         <Suit f={f} x={fx} y={1310} s={1.25} seed={6} cues={[b24, b25, b26, b27]} coat="#3E5A6E" tie={false} longHair walk={walk < 1 ? f : 0}
-          reach={Math.max(open * 0.5, press) * 0.9} reachL={pinB * (1 - ease(f, b24 + 34, 10))} />
+          reach={Math.max(open * 0.5, press) * 0.9} reachL={pinB * (1 - ease(f, b25 + 10, 10))} />
         <Binder x={fx + 100} y={1010} s={1.1} rot={-6} open={open} />
         <g opacity={pinB}><circle cx={fx - 22} cy={1310 - 300 * 1.25 * 0.74} r={13} fill={C.brass} stroke={C.ink} strokeWidth={3} /></g>
         <Scrollback f={f} x={930} y={1310} scale={0.62} emotion={sealOn ? 'hopeful' : 'wary'} cues={[b24, b26, b27]} seed={2} count={4} look={-0.8} />
+        <LotTag f={f} x={880} y={1120} rows={['$10M']} len={20} s={0.7} seed={9} />
         <g opacity={tagS}><Lab text="LUCY L. THOMSON" x={Math.max(150, fx)} y={1310 - 300 * 1.25 - 46} size={22} /></g>
-        {sealOn && <Lab text="SAFEGUARDS?" x={920} y={900} size={18} fill="#3E6E62" ink="#F6EEDD" />}
+        {sealOn && <Lab text="SAFEGUARDS?" x={880} y={1260} size={18} fill="#3E6E62" ink="#F6EEDD" />}
       </SVG>
     </Frame>
   );
@@ -821,10 +823,10 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const b28 = p.b(28), b29 = p.b(29), b30 = p.b(30);
   const swing = easeIO(f, b28, 36);
   const spot = ease(f, b28 + 30, 8);
-  const flipT = clamp01((f - b29) / 16);
+  const flipT = clamp01((f - b29) / 22);
   const spin = Math.sin(flipT * Math.PI * 2) * (1 - flipT);
-  const tuck = ease(f, b30, 14);
-  const snap = Math.sin(clamp01((f - b30 - 10) / 10) * Math.PI);
+  const tuck = ease(f, b30 - 6, 10);
+  const snap = Math.sin(clamp01((f - b30 + 2) / 10) * Math.PI);
   const peek = ease(f, b30 + 30, 20);
   const cam = track([{t: 0, z: 1.0, fx: 420, fy: 980}, {t: b28 + 40, z: 1.22, fx: 640, fy: 960}, {t: p.dur, z: 1.3, fx: 650, fy: 950}]);
   const beamX = lerp(300, 700, swing);
@@ -844,18 +846,19 @@ const S9: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 9}).map((_, i) => <path key={i} d={`M -200 ${1270 + i * 70} L 1280 ${1260 + i * 72}`} stroke="#3A2A1E" strokeWidth={5} opacity={0.6} />)}
         <path data-band="ok" d={`M ${beamX - 70} 380 L ${beamX + 70} 380 L ${beamX + 220} 1240 L ${beamX - 220} 1240 Z`} fill="#FFF0C8" opacity={0.2} />
         <ellipse data-band="ok" cx={beamX} cy={1240} rx={220} ry={40} fill="#FFE3A8" opacity={0.42} />
+        <path data-band="ok" d={`M ${beamX - 220} 1240 L ${beamX + 220} 1240 L ${beamX + 420} 1920 L ${beamX - 420} 1920 Z`} fill="#FFE3A8" opacity={0.16} />
         <g><rect x={beamX - 60} y={330} width={120} height={60} rx={8} fill="#2A2A30" stroke={C.ink} strokeWidth={5} /><path d={`M ${beamX - 50} 390 L ${beamX + 50} 390 L ${beamX + 90} 450 L ${beamX - 90} 450 Z`} fill="#3A3A42" stroke={C.ink} strokeWidth={5} /></g>
         <Stand x={300} y={1240} s={1} name="DISNEY" lit={1 - swing} />
         <HeldProp f={f} px={700} py={1240} w={240} h={330} kind="rest" seed={11}>
           <Stand x={700} y={1240} s={1.15} name="" lit={spot} />
         </HeldProp>
         <Peg x={800} y={560} />
-        <g transform={`rotate(${spin * 30} 800 560)`}>
+        <g transform={`rotate(${spin * 55} 800 560) translate(0,${-Math.abs(spin) * 20})`}>
           <LotTag f={f} x={800} y={560} rows={flipT >= 0.5 ? ['FORMED NOV 13TH', 'BID FILED NOV 14TH'] : ['$10M']} flip={flipT >= 1 ? 0 : flipT} len={200} s={0.8} seed={10} />
         </g>
         {flipT < 0.5 && <g transform="translate(840,880)"><Seal x={0} y={0} s={0.45} /></g>}
         <g transform={`translate(0,${-snap * 10})`}>
-          <Scrollback f={f} x={900} y={1310} scale={0.62} emotion="wary" unspool={1 - tuck} scarfTo={[-220, -40]} squash={0.35 * snap} cues={[b28, b29, b30]} seed={2} count={4} look={-0.6 + 0.4 * peek} />
+          <Scrollback f={f} x={900} y={1190} scale={0.62} emotion="wary" unspool={1 - tuck} scarfTo={[-220, -40]} squash={0.6 * snap - 0.2 * Math.sin(clamp01((f - b30 - 8) / 10) * Math.PI)} cues={[b28, b29, b30]} seed={2} count={4} look={-0.6 + 0.4 * peek} />
         </g>
       </SVG>
     </Frame>
@@ -892,7 +895,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <CourtBG f={f} benchY={1000} seed={4} benchX={640} />
-        <Runway x0={300} y0={1240} x1={900} y1={1120} t={roll} hi={hi} hiAt={0.62} />
+        <Runway x0={330} y0={1180} x1={900} y1={1080} t={roll} hi={hi} hiAt={0.62} />
         <g opacity={stamp} transform={`translate(560,1170) rotate(-8) scale(${1.3 - 0.3 * stamp})`}>
           <rect x={-140} y={-30} width={280} height={60} rx={6} fill="none" stroke={C.brick} strokeWidth={7} />
           <text x={0} y={11} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={28} fill={C.brick}>TOLD THE COURT</text>
@@ -900,8 +903,10 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <HeldTravel f={f} x={750} y={760} w={260} h={360} mode="shadow" seed={26}>
           <Filing x={870} y={1110} s={0.95} rock={rock} />
         </HeldTravel>
-        <Suit f={f} x={250} y={1310} s={1.3} seed={7} cues={[b31, b32, b33]} coat="#4A4048" reach={0.4 + 0.3 * roll + 0.3 * hi} reachL={0.3 + 0.4 * roll * (1 - hi)} />
-        <Lab text="COMPANY LAWYER" x={250} y={1310 - 300 * 1.3 - 46} size={22} />
+        <Suit f={f} x={250} y={1230} s={1.3} seed={7} cues={[b31, b32, b33]} coat="#4A4048" reach={0.2 + 0.5 * Math.sin(clamp01((f - b31) / 24) * Math.PI) + 0.4 * hi} reachL={0.2 + 0.6 * Math.sin(clamp01((f - b31) / 24) * Math.PI) * (1 - hi)} />
+        <Lab text="COMPANY LAWYER" x={250} y={1230 - 300 * 1.3 - 46} size={22} />
+        <Peg x={660} y={700} />
+        <LotTag f={f} x={660} y={700} rows={['$10M BID', 'BACKER NOT PUBLIC']} len={20} s={0.6} seed={12} />
         {hi > 0.3 && <Lab text="PER THE COMPANY" x={870} y={1150} size={20} />}
       </SVG>
     </Frame>
@@ -951,7 +956,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <HeldTravel f={f} x={200} y={720} w={680} h={520} mode="shadow" seed={13}>
             <BigCrate x={540} y={1240} w={680} h={500} />
           </HeldTravel>
-          <g opacity={ghost} transform={`translate(${540 + 250 + ghost * 40},${900 - 120 - ghost * 40}) rotate(${10 + ghost * 10})`}>
+          <g opacity={ghost} transform={`translate(${540 + 260 + ghost * 40},${1080 + ghost * 20}) rotate(${10 + ghost * 10})`}>
             <path d="M -110 -80 L 110 -80 L 110 80 L -110 80 Z" fill="none" stroke={C.ink} strokeWidth={5} strokeDasharray="16 12" />
           </g>
           <g transform={`translate(540,920) rotate(${-4 - lift * 0.4})`}>
@@ -961,7 +966,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
             <text x={0} y={36} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={30} fill={C.ink}>VOLUNTARY</text>
           </g>
           <circle cx={268} cy={800} r={10} fill={C.brass} stroke={C.ink} strokeWidth={3} />
-          <LotTag f={f} x={268} y={800} rows={['$10M']} len={40} s={0.75} seed={14} />
+          <LotTag f={f} x={268} y={800} rows={['$10M BID', 'BACKER NOT PUBLIC']} len={40} s={0.7} seed={14} />
         </g>
         <Lab text="PER ALASKA" x={760} y={1060} size={20} />
       </SVG>
@@ -990,14 +995,14 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Plate text="WHAT USERS COULD LOSE OR GAIN" x={540} y={560} size={32} tone="dark" p={win(f, b37 + 6, b38)} /> {/* plate-overlap-ok */}
         <Plate text="ALTERNATIVES" x={540} y={560} size={36} p={win(f, b38 + 4, b39)} /> {/* plate-overlap-ok */}
         <Plate text="SHE DOESN'T DECIDE THE SALE" x={540} y={560} size={34} tone="dark" p={win(f, b39 + 6, b40)} /> {/* plate-overlap-ok */}
-        <Plate text="SALE NEEDS COURT APPROVAL · AFTER A HEARING" displayLines={['SALE NEEDS COURT APPROVAL', 'AFTER A HEARING']} x={540} y={580} size={34} p={win(f, b40 + 10)} /> {/* plate-overlap-ok */}
+        <Plate text="COURT APPROVAL · AFTER A HEARING" x={540} y={560} size={34} p={win(f, b40 + 10)} /> {/* plate-overlap-ok */}
       </g>
     }>
       <SVG>
         <CourtBG f={f} benchY={1200} seed={6} benchX={240} />
         <path data-band="ok" d="M 220 -100 L 440 -100 L 960 1200 L 600 1200 Z" fill="#FFF0C8" opacity={0.14 + 0.18 * g} />
-        <HeldTravel f={f} x={430} y={640} w={440} h={340} mode="shadow" seed={27}>
-          <ScalePans x={640} y={910} s={0.7} tilt={tilt} f={f}
+        <HeldTravel f={f} x={430} y={740} w={440} h={340} mode="shadow" seed={27}>
+          <ScalePans x={640} y={1010} s={0.7} tilt={tilt} f={f}
             left={<g>{w1 > 0.01 && <g opacity={w1} transform={`translate(-50,${-(1 - w1) * 80}) scale(1.6)`}><Weight label="POLICY" /></g>}{w2 > 0.01 && <g opacity={w2} transform={`translate(40,${-74 - (1 - w2) * 80}) scale(1.6)`}><Weight label="LOSSES?" /></g>}</g>}
             right={<g>{w3 > 0.01 && <g opacity={w3} transform={`translate(-30,${-(1 - w3) * 80}) scale(1.6)`}><Weight label="GAINS?" /></g>}{w4 > 0.01 && <g opacity={w4} transform={`translate(30,${-74 - (1 - w4) * 80}) scale(1.6)`}><Weight label="ALTERNATIVES?" /></g>}</g>} />
         </HeldTravel>
@@ -1006,16 +1011,16 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <rect x={-90} y={-30} width={180} height={8} rx={3} fill="#E3C98A" />
         </g>
         <ellipse cx={820} cy={1180} rx={140} ry={20} fill="#000" opacity={0.25 * g} />
-        <g transform={`translate(${lerp(fx + 110, 880, tray)},${lerp(1010, 1180, tray)}) rotate(${lerp(-10, 80, tray)})`}>
+        <g transform={`translate(${lerp(fx + 110, 880, tray)},${lerp(1010, 1180, tray)}) rotate(${lerp(-10, 90, tray)})`}>
           <Binder x={0} y={0} s={0.9} />
         </g>
-        <Peg x={990} y={700} />
-        <LotTag f={f} x={990} y={700} rows={['$10M']} len={40} s={0.8} seed={15} />
+        <Peg x={920} y={960} />
+        <LotTag f={f} x={920} y={960} rows={['$10M BID', 'BACKER NOT PUBLIC']} len={20} s={0.55} seed={15} />
         <Suit f={f} x={fx} y={1310} s={1.25} seed={6} cues={[b45, b36, b37, b38, b39, b40]} coat="#3E5A6E" tie={false} longHair walk={walk < 1 ? f : 0} reach={reach} />
         <g transform={`translate(0,${lerp(-600, 0, g)})`}>
           <Gavel x={800} y={560} s={1.3} rot={-6 + Math.sin(f / 30) * 2} />
         </g>
-        <Lab text="LUCY L. THOMSON" x={Math.max(150, fx)} y={1310 - 300 * 1.25 - 46} size={22} />
+        <Lab text="LUCY L. THOMSON" x={Math.max(150, fx)} y={1310 - 300 * 1.25 * 0.42} size={22} />
       </SVG>
     </Frame>
   );
@@ -1050,7 +1055,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
             <Phone x={600} y={1300} s={0.7} f={f} glow={0.8 + turn} rot={-8} />
           </HeldTravel>
           <Scrollback f={f} x={400} y={1290} scale={0.8} emotion="wary" cues={[b41, b42, b43]} seed={2} look={-0.3 + turn * 1.2} />
-          <LotTag f={f} x={480} y={1110} rows={flip >= 0.5 ? ['COURT DECIDES'] : ['$10M']} sig={flip >= 0.5} flip={flip >= 1 ? 0 : flip} len={30} s={0.8} seed={16} />
+          <LotTag f={f} x={480} y={1110} rows={flip >= 0.5 ? ['COURT DECIDES'] : ['$10M BID', 'BACKER NOT PUBLIC']} sig={flip >= 0.5} flip={flip >= 1 ? 0 : flip} len={30} s={0.8} seed={16} />
           <TableNear f={f} seed={3} />
           <g opacity={turn} transform={`translate(604,1230) rotate(-8) scale(${0.7 + 0.3 * turn})`}>
             <rect x={-56} y={-50} width={112} height={92} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={4} />
