@@ -845,7 +845,7 @@ def main():
     gap_expr = pw_expr(sorted(gap_lift))
     fc.append(
         f"[1:a]aformat=sample_rates={SR}:channel_layouts=stereo,aloop=loop=-1:size={int(SR*200)},"
-        f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.36[bedraw]"
+        f"atrim=0:{VIDEO_SECS},equalizer=f=3000:t=q:w=1:g=-2.5,volume=0.46[bedraw]"
     )
     # sidechain duck the bed under the VO (uses the key copy)
     # THE BED NEVER OPENED INTO GAPS THAT ALREADY EXISTED (2026-08-04). Two judges
@@ -861,8 +861,9 @@ def main():
     # gap over about 0.4s, which is 13 of them. Ratio eases 9 -> 6 so the duck is a lean
     # rather than a clamp, and the threshold rises slightly so quiet consonants stop
     # holding the bed down through the tail of a line.
-    # Speech-priority separately caps the full background bus; favor a light musical duck.
-    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.075:ratio=4:attack=8:release=100:makeup=1[bedduck]")
+    # Avoid double-ducking the music under spoken lines. The downstream hard guard
+    # still enforces the original combined music/effects/ambience speech margin.
+    fc.append(f"[bedraw][vok]sidechaincompress=threshold=0.075:ratio=2:attack=8:release=100:makeup=1[bedduck]")
     # THE ARC GOES AFTER THE DUCK, NOT BEFORE IT. Placed upstream, the arc feeds a ratio-9
     # compressor: a quieter bed sits closer to the threshold, gets less gain reduction, and
     # comes out the far side pushed back toward where it started. The compressor was undoing
@@ -915,10 +916,12 @@ def main():
             fc.append(stem_filter(idx, "stem", AMB_STEM_LEVEL, VIDEO_SECS, AMB_IN, AMB_OUT))
         amb_labels += f"[{name}]"
 
-    # Keep the complete non-speech bus separate so music AND every SFX/ambient
-    # layer are protected together, after all creative automation, not before it.
-    mix_in = "[bed][amb]" + amb_labels + "".join(sfx_labels)
-    n = 2 + len(extra_amb) + len(sfx_labels)
+    # Output separate music and effects stems for score-specific recovery.
+    # The downstream combined speech margin still covers every non-voice layer.
+    fc.append(f"[bed]volume=volume={mix_arc}:eval=frame,"
+              f"volume=enable='between(t,{dip0},{dip1})':volume=0.15,apad=whole_dur={VIDEO_SECS}[musicmeter]")
+    mix_in = "[amb]" + amb_labels + "".join(sfx_labels)
+    n = 1 + len(extra_amb) + len(sfx_labels)
     fc.append(f"{mix_in}amix=inputs={n}:normalize=0:dropout_transition=0[background]")
     fc.append(f"[background]volume=volume={mix_arc}:eval=frame,"
               f"volume=enable='between(t,{dip0},{dip1})':volume=0.15[bg]")
@@ -926,14 +929,17 @@ def main():
     premix = os.path.join(AUD, "premix.wav")
     voice_stem = os.path.join(AUD, "voice_stem.wav")
     background_stem = os.path.join(AUD, "background_stem.wav")
+    music_stem = os.path.join(AUD, "music_meter_stem.wav")
     report_path = os.path.join(AUD, "speech_priority.json")
     run([FF, "-y", *inputs, "-filter_complex", ";".join(fc),
          "-map", "[vo]", "-ar", str(SR), "-ac", "2", "-t", str(VIDEO_SECS),
          "-c:a", "pcm_f32le", voice_stem,
          "-map", "[bg]", "-ar", str(SR), "-ac", "2", "-t", str(VIDEO_SECS),
-         "-c:a", "pcm_f32le", background_stem])
+         "-c:a", "pcm_f32le", background_stem,
+         "-map", "[musicmeter]", "-ar", str(SR), "-ac", "2", "-t", str(VIDEO_SECS),
+         "-c:a", "pcm_f32le", music_stem])
     from speech_priority import mix_files, sha as audio_sha
-    priority = mix_files(voice_stem, background_stem, premix, report_path, SR, FF)
+    priority = mix_files(voice_stem, background_stem, premix, report_path, SR, FF, music_path=music_stem)
     print(f"speech priority PASS: stereo {priority['minimum_stereo_margin_db']:.1f} dB; "
           f"mono {priority['minimum_mono_margin_db']:.1f} dB minimum")
     # Final normalization applies common gain; it never restores background independently.
@@ -977,6 +983,7 @@ def main():
     os.remove(premix)
     os.remove(voice_stem)
     os.remove(background_stem)
+    os.remove(music_stem)
     print("wrote", master)
 
     # Keep the legacy quality-gate aliases synchronized with the actual episode mix.  These
