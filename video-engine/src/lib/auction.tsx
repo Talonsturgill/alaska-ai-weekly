@@ -201,7 +201,7 @@ export const Gavel: React.FC<{x: number; y: number; s?: number; rot?: number; gl
 export const Crate: React.FC<{x: number; y: number; s?: number; label?: string; tint?: string; rot?: number; shadow?: boolean}> = ({x, y, s = 1, label, tint = AU.crate, rot = 0, shadow = true}) => {
   const T = tones(tint);
   const w = 240, h = 170;
-  const size = label ? Math.min(30, (w - 40) / Math.max(1, label.length * 0.62)) : 30;
+  const size = label ? Math.min(28, (w - 76) / Math.max(1, label.length * 0.64)) : 28;
   return (
     <g transform={`translate(${x},${y}) rotate(${rot}) scale(${s})`}>
       {shadow && <ContactShadow cx={0} cy={4} rx={w * 0.58} ry={12} opacity={0.38} />}
