@@ -1,0 +1,2320 @@
+{
+  "run_date": "2026-11-21",
+  "slug": "lot-1-your-chats",
+  "title": "Lot 1, Your Chats",
+  "concept": "Character.AI, an app where people talk with AI characters, filed for bankruptcy in October and plans to auction its assets on December 1st. Per the attorneys general it collects private chats, voice calls and mental health disclosures and uses them to train its AI, and the data could pass to a new owner. A $10 million starting bid covers the app, its AI models, user accounts and chat content; Disney's $20 million is for a technology license, not the chats. Alaska joined a bipartisan coalition of 40 attorneys general led by New York, and per Alaska's Department of Law the court ordered a consumer privacy ombudsman at the coalition's urging. The U.S. Trustee named Lucy Thomson. She reviews the planned sale and recommends safeguards, weighing the policy, what users could lose or gain and alternatives. The $10 million bidder was formed the day before the filing that disclosed its bid and its backer isn't public. The company says its policy already allowed the sale; Alaska argues the limits on minors are voluntary and a buyer could reverse them. The ombudsman advises and the court decides. Drawn as Scrollback, a faced accordion of chat bubbles whose scarf of older messages squares off into crates on an auction platform, a lot tag that changes face, two bidder stands (DISNEY and a blank card), and an empty brass scale the ombudsman fills herself before handing her binder up to the court.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 118.7,
+  "fingerprint": {
+    "pov": "orbital-aerial",
+    "motion_vector": "vertical-descent",
+    "hero_treatment": "single-organic-hero",
+    "layout": "stacked-layers",
+    "register": "tactile-collage",
+    "palette": "lamp-lit birch boards #B39A76, a walnut bench #6E4A2E, a seafoam-pale talking stack #CFE6DA, theatre-red drapes #6B2232, auction mustard #E0A526 for the money, a moonlit range #5B6B7A",
+    "camera_strategy": "track-follow",
+    "light_story": "a moonlit night kitchen under a warm pendant lamp, a flat-lit map table, then a walnut courtroom in high warm window light that dims behind a warm-edged curtain, goes flat and even for the fair weighing, and narrows to one raking shaft at the verdict, then the moonlit kitchen again",
+    "metaphor": "a chat history becomes an auction lot: soft bubbles square off into crates on a platform, a tag changes face, and a privacy expert fills an empty scale and hands her binder up to the court"
+  },
+  "signature_shot": 12,
+  "palette": "lamp-lit birch boards #B39A76, a walnut bench #6E4A2E, a seafoam-pale talking stack #CFE6DA, theatre-red drapes #6B2232, auction mustard #E0A526 for the money, a moonlit range #5B6B7A",
+  "divergence_note": "The last films were a persimmon-daylight evidence board with a cream paper route card and fiber cyan (11-19), a mint afterglow over lilac snow with a chalk-line reel and ultramarine (11-18), polar night with faced decision trees and radar lime (11-16), and a rain-black Juneau letterbox (11-15). This film is a spruce-black night kitchen and a walnut courtroom with one auction mustard, its hero a pale mint accordion of chat bubbles that unspools and squares off into crates. Honest overlaps: a faced inanimate hero again (fourth in a row), varied by giving it business its predecessors never had (it unspools, re-stacks, hides its messages); 11-19 also staged an interior with a raven and a magnifier, both cut here; 11-15 also used a night interior, answered by a warm lamp kitchen and a daylit courtroom.",
+  "treatment": {
+    "title": "Lot 1, Your Chats",
+    "summary": "Lot 1, Your Chats (Explainer winner with grafts, restaged at Gate 0B). SCROLLBACK, a chat history drawn as an accordion of rounded chat bubbles with a worried face on its pale mint top bubble, pops out of a phone on an Anchorage kitchen table at night (snowy Chugach in the window, a moose squinting in) and a mustard lot tag THUNKs onto its foot. Inside the phone a flat chat window shows user and AI bubbles, one wearing a THERAPIST? badge; the bubbles extrude into Scrollback's scarf, which unspools and squares off into labelled crates, one sliding into a MODEL hopper. A dashed map line carries the tagged crates from Alaska to a tiny Delaware courtroom; on the auction floor a $10M starburst lands on the tag, a spotlight finds two bidder stands (DISNEY and a blank name card), and Disney's grey crate steps up to its own stand with only a tech license. Alaska's flag snaps up at the front of a row of attorneys general desks, New York's lamp lights and 39 follow, and the light runs out the doors to the court, where a gavel orders an ombudsman and a clerk sets an empty brass scale down. A faceless Lucy Thomson pins on her badge, opens her binder and seals the lot tag SAFEGUARDS?. The camera slides to the blank name card as the tag flips to FORMED NOV 13 \u00b7 BID FILED NOV 14. The company's case gets full strength (a lawyer unrolls the policy with both hands, TOLD THE COURT, a highlighted clause, a checked box, PER THE COMPANY), then Alaska's argument (a sticky note on a crate that a dashed outline shows could tear off). She sets each weight into the scale herself, the beam never settling, slides her blank-covered binder into the court's tray and steps back as a gavel twice the scale's size descends. Hard cut on the tag to the kitchen: COURT DECIDES over an empty signature line, a calendar with DEC 1 circled, and a rise to the Chugach.",
+    "judge_reasoning": "Reasoning: SCROLLBACK's design IS conversation history (scarf of older messages unspools into labeled crates); avoids paper-slip and metal-fixture idioms; cake turn shows \"formed two days before\" with no smear; tag ends on the court's empty signature line."
+  },
+  "angle": {
+    "thesis": "When an AI company fails, the chats people gave it become something to sell, and the coalition Alaska joined got a privacy expert in front of the court before that sale, which matters most because the money behind the bid for the chats has no public name and the court, not the expert, decides.",
+    "falsifiability": "False if the chats are pulled from the sale before the hearing (then they were never really for sale, c10), or if the court approves the transfer without weighing any safeguard the ombudsman recommends (then the expert in the room changed nothing, c16, c17, c26), or if the bidder's backer turns out to be public and accountable already (c11).",
+    "supporting_facts": [
+      "Chats are an asset. Per the attorneys general the company collects private chats, voice calls and mental health disclosures and uses them to train its AI (c6, c7), the data could pass to a new owner through bankruptcy (c8), and the $10M starting bid covers the app, the AI models, user accounts and chat content (c10), with an auction planned December 1st (c9).",
+      "Alaska got a real procedural result. Alaska joined the coalition in October (c13), New York led with 39 others (c14), and at the coalition's urging the court ordered a consumer privacy ombudsman (c15), now Lucy Thomson, named by the U.S. Trustee (c19), who reviews the sale and recommends safeguards (c16) weighing the policy, what users could lose or gain, and alternatives that cut the losses (c18).",
+      "The open variable is the buyer. The starting bidder for the chats was formed the day before the filing that disclosed its bid and its backer isn't public (c11), while Disney's $20M bid is for a technology license, not the chats (c12)."
+    ],
+    "counterpoint_to_honor": "The company's fair case gets a full scene. Character.AI told the court its privacy policy already allowed the sale (c25, attributed, single source), the statute itself asks what users could GAIN as well as lose (c18), and the ombudsman can't block anything, she advises and the court decides (c17), after a hearing (c26). The state's own worry, that the limits on minors are voluntary and a buyer could reverse them (c22), is the state's argument, not a finding, and the appointment doesn't settle it.",
+    "valence": "curious",
+    "stance": "curious",
+    "who_it_serves": "Alaskans who use AI chat apps, families (c5, self-declared under 18 accounts per the NY AG), Alaska's Department of Law judged on what joining a coalition actually bought, and Alaska builders who need users to trust what happens to their data.",
+    "second_movement": "Act 2 turns the privacy win into a question: the expert is in the room, but the bidder for the chats is a shell formed two days before its bid and its backer has no name (c11). Act 3 is the test, the company's case drawn at full strength: users clicked yes to a policy the company says already allowed this (c25), and the law itself counts gains (c18). The film survives by narrowing: the expert doesn't stop the sale, she makes the terms visible to the one who decides.",
+    "button": "The ombudsman advises. The court decides. And the money behind the bid for the chats, so far, has no name.",
+    "runner_up_angles": [
+      {
+        "thesis": "Your chats are a transferable asset, so AI confidence needs privacy rules that bind the next owner (analyst A).",
+        "why_lost": "a policy prescription no claim states and it put the ombudsman in charge; its 'chats become inventory' mechanism is the winner's first act"
+      },
+      {
+        "thesis": "Alaska got a real result that is procedural, not final (analyst B).",
+        "why_lost": "implied Alaska led and assumed a counterfactual; its credit to the coalition and its naming of the expert are folded in"
+      },
+      {
+        "thesis": "The ombudsman is the price of entry, the question is who buys and on what terms (analyst C).",
+        "why_lost": "too close to the company's framing and dropped the coalition; its unnamed-buyer turn is the winner's second movement and button"
+      }
+    ]
+  },
+  "claim_map": {
+    "1": [
+      "c10"
+    ],
+    "2": [
+      "c10",
+      "c9"
+    ],
+    "3": [
+      "c9"
+    ],
+    "4": [
+      "c2"
+    ],
+    "5": [
+      "c2"
+    ],
+    "6": [
+      "c3",
+      "c14"
+    ],
+    "7": [
+      "c6"
+    ],
+    "8": [
+      "c6"
+    ],
+    "9": [
+      "c7"
+    ],
+    "10": [
+      "c1"
+    ],
+    "11": [
+      "c24"
+    ],
+    "12": [
+      "c8"
+    ],
+    "13": [
+      "c9"
+    ],
+    "14": [
+      "c10"
+    ],
+    "15": [
+      "c10"
+    ],
+    "16": [
+      "c10"
+    ],
+    "17": [
+      "c12"
+    ],
+    "18": [
+      "c12"
+    ],
+    "19": [
+      "c13"
+    ],
+    "20": [
+      "c14"
+    ],
+    "21": [
+      "c15"
+    ],
+    "22": [
+      "c15"
+    ],
+    "23": [
+      "c15"
+    ],
+    "24": [
+      "c19"
+    ],
+    "25": [
+      "c19"
+    ],
+    "26": [
+      "c16"
+    ],
+    "27": [
+      "c16"
+    ],
+    "28": [
+      "narration"
+    ],
+    "29": [
+      "c11"
+    ],
+    "30": [
+      "c11"
+    ],
+    "31": [
+      "c25"
+    ],
+    "32": [
+      "c25"
+    ],
+    "33": [
+      "c25"
+    ],
+    "34": [
+      "c22"
+    ],
+    "35": [
+      "c22"
+    ],
+    "36": [
+      "c18"
+    ],
+    "37": [
+      "c18"
+    ],
+    "38": [
+      "c18"
+    ],
+    "39": [
+      "c17"
+    ],
+    "40": [
+      "c26"
+    ],
+    "41": [
+      "c17"
+    ],
+    "42": [
+      "c17"
+    ],
+    "43": [
+      "c11"
+    ],
+    "44": [
+      "c13"
+    ],
+    "45": [
+      "c18"
+    ],
+    "46": [
+      "c22"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "An Anchorage kitchen table at night under a snowy Chugach window, a phone glowing, and at 0.3 s a pale mint stack of chat bubbles with a face pops up out of the screen, then at about 1.0 s a mustard lot tag THUNKs onto its foot",
+    "headline": "AN AI APP'S CHATS \u00b7 FOR AUCTION",
+    "motion_by_s": 0.4,
+    "loopback": "Frame 1 is the phone on the night kitchen table with Scrollback popping out; the last shot is the same table after a hard cut, Scrollback beside the phone with its tag reading COURT DECIDES over an empty signature line, the phone lit with a $10M bid card whose name line is blank, then a rise out the same snowy window to the Chugach."
+  },
+  "open_loop": {
+    "plant_t": 0.976,
+    "pay_t": 113.71,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "thunk",
+    "what": "Who ends up with this lot? Planted when a BLANK mustard lot tag THUNKs onto Scrollback's foot, kept as the tag changes face ($10M, a SAFEGUARDS? seal, FORMED NOV 13TH \u00b7 BID FILED NOV 14TH), paid when it flips to COURT DECIDES over an empty signature line back on the kitchen table."
+  },
+  "open_loop_2": {
+    "plant_t": 58.55,
+    "pay_t": 101.79,
+    "what": "What goes in the empty scale? Planted when a clerk's hand sets an EMPTY brass scale on the bench as the ombudsman is ordered, kept in view as she opens her binder beside it, paid when she sets the POLICY, LOSSES? and GAINS? weights into the pans herself and the beam keeps bobbing, a weighing still in progress."
+  },
+  "throughline": {
+    "object": "the mustard lot tag",
+    "lands_in_button": "the tag reads COURT DECIDES over an empty signature line on Scrollback's foot back on the kitchen table",
+    "states": [
+      {
+        "at_s": 0.976,
+        "state": "T1 BLANK, just THUNKed onto Scrollback's foot"
+      },
+      {
+        "at_s": 32.48,
+        "state": "T2 $10M under a starburst on the auction platform"
+      },
+      {
+        "at_s": 68.85,
+        "state": "T3 $10M with a round privacy seal reading SAFEGUARDS? pressed on"
+      },
+      {
+        "at_s": 75.83,
+        "state": "T4 FORMED NOV 13TH \u00b7 BID FILED NOV 14TH beside the blank name card, carried forward as $10M BID \u00b7 BACKER NOT PUBLIC on a peg away from every person"
+      },
+      {
+        "at_s": 113.71,
+        "state": "T5 COURT DECIDES over an empty signature line"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 12.36,
+      "type": "build-on",
+      "what": "the scarf unspools and every bubble squares off into a crate",
+      "hold_s": 0.6
+    },
+    {
+      "t": 26.02,
+      "type": "scale-pullback",
+      "what": "the camera rises over a painted map as a dashed line carries the crates from Alaska to Delaware",
+      "hold_s": 0.8
+    },
+    {
+      "t": 51.36,
+      "type": "scale-pullback",
+      "what": "40 desk lamps wave on down a long row of attorneys general desks",
+      "hold_s": 0.8
+    },
+    {
+      "t": 101.79,
+      "type": "build-on",
+      "what": "she sets the weights into the pans and the beam keeps bobbing",
+      "hold_s": 0.6
+    },
+    {
+      "t": 107.42,
+      "type": "scale-pullback",
+      "what": "the camera pulls back as a gavel twice the scale's size descends and the binder in the tray looks small",
+      "hold_s": 0.8
+    },
+    {
+      "t": 115.67,
+      "type": "scale-pullback",
+      "what": "the camera rises out the kitchen window to the moonlit range",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 1.4
+      },
+      {
+        "line": 14,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 16,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "at_s": 110.88,
+        "level": 0.12
+      },
+      {
+        "at_s": 111.88,
+        "level": 1.3
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 110.88,
+    "riser_at": 70.04,
+    "silence_at": 110.88,
+    "payoff_at": 111.38,
+    "button_pattern": "callback",
+    "interrupt_at": 71.04,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "The pop",
+      "vo_line": 0,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "kitchen-table",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "Scrollback and the lot tag at x540 y1100",
+      "means": "On an Anchorage kitchen table at night under a snowy Chugach window, Scrollback pops out of a phone, a blank mustard lot tag THUNKs onto its foot and a moose squints in",
+      "ambient": "a fridge hum, wind at the window",
+      "hero": {
+        "name": "Scrollback + blank mustard lot tag + moose + glowing phone",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% Scrollback and tag, 30% window and range, 25% table"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-4.880"
+    },
+    {
+      "title": "Inside the phone",
+      "vo_line": 1,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "phone-screen",
+      "pov": "instrument-screen",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "scroll-data",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "push-in",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the chat window at x540 y960",
+      "means": "Inside the phone, a flat chat window where user and AI bubbles pop in turn, one AI bubble in a mask and one with a THERAPIST? badge, bulging out of the glass",
+      "ambient": "a soft phone buzz, typing taps",
+      "hero": {
+        "name": "flat chat window + AI-side bubble + AI bubble + lot tag",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% window, 25% badge, 15% tag"
+      },
+      "id": 2,
+      "start_s": 4.88,
+      "t": "4.880-12.360"
+    },
+    {
+      "title": "Bubbles into crates",
+      "vo_line": 2,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "kitchen-cutaway",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "morph",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the crates and the lot tag at x540 y1040",
+      "means": "The bubbles extrude into Scrollback's scarf, which unspools into crates, one riding a conveyor into a MODEL hopper, the lot tag on the lead crate",
+      "ambient": "paper and a low machine hum",
+      "hero": {
+        "name": "scarf + crates + conveyor + MODEL hopper",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% crates, 30% scarf, 25% hopper"
+      },
+      "id": 3,
+      "start_s": 12.36,
+      "t": "12.360-19.660"
+    },
+    {
+      "title": "Kitchen to Delaware",
+      "vo_line": 3,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-table",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the map line and the tagged crate at x540 y960",
+      "means": "From above, the app icon faints onto LEGAL COSTS bills, then a dashed line carries the tagged crates from Alaska to a tiny Delaware courtroom",
+      "ambient": "a soft room tone, paper",
+      "hero": {
+        "name": "map line + courtroom pin + bills + chat app icon",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "45% map line, 30% bills and icon, 25% courtroom"
+      },
+      "id": 4,
+      "start_s": 19.66,
+      "t": "19.660-32.480"
+    },
+    {
+      "title": "The lot",
+      "vo_line": 5,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "auction-floor",
+      "pov": "orbital-aerial",
+      "layout": "grid-modular",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the platform and the lot tag at x540 y1060",
+      "means": "From above the auction floor, the starting bid slams onto the lot tag, a spotlight finds two bidder stands, and Disney's grey crate steps up to its own stand with a tech license",
+      "ambient": "a big room murmur",
+      "hero": {
+        "name": "starburst + lot tag + crates + platform + grey crate + bidder stands",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% platform and crates, 30% starburst, 25% stands"
+      },
+      "id": 5,
+      "start_s": 32.48,
+      "t": "32.480-46.340"
+    },
+    {
+      "title": "Forty desks",
+      "vo_line": 7,
+      "framing": "alt-vantage",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "ag-hall",
+      "pov": "orbital-aerial",
+      "layout": "stacked-layers",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the desk row and a pinned lot tag at x540 y980",
+      "means": "Alaska's flag snaps up at the front of a long row of attorneys general desks, New York's lamp lights and 39 follow, and the light runs out the doors",
+      "ambient": "a long hall murmur, lamp clicks",
+      "hero": {
+        "name": "Alaska flag + desk lamp + desk flags",
+        "parts": 56,
+        "zones": 3,
+        "detail_note": "55% desk row, 30% lamps, 15% flag"
+      },
+      "id": 6,
+      "start_s": 46.34,
+      "t": "46.340-54.920"
+    },
+    {
+      "title": "The order",
+      "vo_line": 9,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "low",
+      "stage": "court-bench",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the gavel, the scale and the tagged crate at x560 y960",
+      "means": "The beam lands on the walnut bench, a gavel strikes, a COURT ORDERS card slides out and a clerk's hand sets an empty brass scale down",
+      "ambient": "a hall murmur, then a courtroom hush and a clock",
+      "hero": {
+        "name": "lamps light + walnut gavel + brass scale",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% gavel, 30% bench, 30% scale"
+      },
+      "id": 7,
+      "start_s": 54.92,
+      "t": "54.920-61.340"
+    },
+    {
+      "title": "Named by the trustee",
+      "vo_line": 10,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "court-bench",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the scale, the binder and the lot tag at x600 y1040",
+      "means": "A faceless ombudsman pins on her badge, her name tag swings out, and she opens her binder at the empty scale and seals the lot tag",
+      "ambient": "a courtroom hush",
+      "hero": {
+        "name": "faceless figure + binder + name tag + privacy seal + lot tag",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% figure, 30% scale, 30% tag"
+      },
+      "id": 8,
+      "start_s": 61.34,
+      "t": "61.340-71.040"
+    },
+    {
+      "title": "The blank card",
+      "vo_line": 12,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "bidder-stands",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "push-in",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the blank name card and the lot tag at x540 y980",
+      "means": "The camera slides along the two bidder stands to the blank name card, the lot tag flips to its formation dates and Scrollback snaps shut",
+      "ambient": "a courtroom hush, a spotlight buzz",
+      "hero": {
+        "name": "bidder stands + blank name card + lot tag + Scrollback",
+        "parts": 42,
+        "zones": 3,
+        "detail_note": "45% card, 35% stands, 20% tag"
+      },
+      "id": 9,
+      "start_s": 71.04,
+      "t": "71.040-82.680"
+    },
+    {
+      "title": "The fine print",
+      "vo_line": 14,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "court-aisle",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the runway, the box and the tagged crate at x560 y1080",
+      "means": "A faceless company lawyer unrolls the policy down the aisle with both hands, a TOLD THE COURT stamp lands, and the camera follows a highlighted clause to the company's quoted court filing",
+      "ambient": "a courtroom hush, paper",
+      "hero": {
+        "name": "company lawyer + runway + filing stamp + court filing",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "45% runway, 30% box, 25% lawyer"
+      },
+      "id": 10,
+      "start_s": 82.68,
+      "t": "82.680-90.280"
+    },
+    {
+      "title": "The sticky note",
+      "vo_line": 15,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "court-table",
+      "pov": "exploded-diagram",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "riseWith",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the sticky note and the lot tag at x540 y1000",
+      "means": "A sticky note on a chat crate lid lifts and a dashed outline shows it could tear off, per Alaska's Department of Law",
+      "ambient": "a courtroom hush",
+      "hero": {
+        "name": "sticky note + chat crate + dashed outline",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "50% note, 30% outline, 20% tag"
+      },
+      "id": 11,
+      "start_s": 90.28,
+      "t": "90.280-97.400"
+    },
+    {
+      "title": "Advises",
+      "vo_line": 16,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "court-bench",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the scale, the binder and the gavel at x560 y980",
+      "means": "She sets each weight into the scale herself, the beam bobbing, slides her blank-covered binder into the court's tray, and a gavel twice the scale's size descends above",
+      "ambient": "a courtroom hush, a clock",
+      "hero": {
+        "name": "brass scale + weights + binder + walnut gavel",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% scale, 35% gavel, 25% figure"
+      },
+      "id": 12,
+      "start_s": 97.4,
+      "t": "97.400-111.380"
+    },
+    {
+      "title": "Back to the kitchen",
+      "vo_line": 18,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "kitchen-window",
+      "pov": "orbital-aerial",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Scrollback, the lot tag and the window at x540 y960",
+      "means": "A hard cut matched on the lot tag to the moonlit kitchen, the tag flips to COURT DECIDES over an empty signature line, and the camera rises out the window to the Chugach",
+      "ambient": "a fridge hum, wind at the window",
+      "hero": {
+        "name": "kitchen window plates + lot tag + phone",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% window, 30% tag, 30% Scrollback"
+      },
+      "id": 13,
+      "start_s": 111.38,
+      "t": "111.380-118.700"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The chats people typed into an A I app are part of an auction lot.",
+      "phrase": "The chats people typed",
+      "shows": "Scrollback, a chat history drawn as an accordion of rounded chat bubbles with a worried face on its pale mint top bubble and a scarf of older messages pops up out of a glowing phone on a night kitchen table under a snowy Chugach window and wobbles to a stop, a plate reads AN AI APP'S CHATS",
+      "sfx": "pop",
+      "means": "an ai app's chats",
+      "rehook": "",
+      "draw": {
+        "subject": "Scrollback, a chat history drawn as an accordion of rounded chat bubbles with a worried face on its pale mint top bubble and a scarf of older messages",
+        "action": "pops up out of a glowing phone on a night kitchen table under a snowy Chugach window and wobbles to a stop",
+        "emotion": "startled",
+        "annotation": "AN AI APP'S CHATS"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "Scrollback, a chat history drawn as an accordion of rounded chat bubbles with a worried face on its pale mint top bubble and a scarf of older messages pops up out of a glowing phone on a night kitchen table under a snowy Chugach window and wobbles to a stop, a plate reads AN AI APP'S CHATS",
+        "reaction": "the stack wobbles",
+        "ambient": "a fridge hum, wind at the window"
+      },
+      "t": "0.000-0.976",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 0.976,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.2,
+        "offset": 0.976
+      },
+      "offset": 0.976,
+      "vo": "The chats people typed into an A I app are part of an auction lot.",
+      "phrase": "The chats people typed",
+      "shows": "a blank mustard lot tag on a string drops and THUNKs onto Scrollback's foot as the stack squashes, a plate reads IN AN AUCTION LOT",
+      "sfx": "thunk",
+      "means": "in an auction lot",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank mustard lot tag on a string",
+        "action": "drops and THUNKs onto Scrollback's foot as the stack squashes",
+        "emotion": "startled",
+        "annotation": "IN AN AUCTION LOT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10",
+        "c9"
+      ],
+      "choreo": {
+        "primary": "a blank mustard lot tag on a string drops and THUNKs onto Scrollback's foot as the stack squashes, a plate reads IN AN AUCTION LOT",
+        "reaction": "the stack squashes",
+        "ambient": "a fridge hum, wind at the window"
+      },
+      "kick": true,
+      "t": "0.976-3.450",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 3.45,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.45
+      },
+      "offset": 3.45,
+      "vo": "The chats people typed into an A I app are part of an auction lot.",
+      "phrase": "auction lot.",
+      "shows": "a moose outside the window leans in, fogs the glass and squints at the blank tag, a plate reads PLANNED AUCTION",
+      "sfx": "creak",
+      "means": "planned auction",
+      "rehook": "",
+      "draw": {
+        "subject": "a moose outside the window",
+        "action": "leans in, fogs the glass and squints at the blank tag",
+        "emotion": "wary",
+        "annotation": "PLANNED AUCTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "a moose outside the window leans in, fogs the glass and squints at the blank tag, a plate reads PLANNED AUCTION",
+        "reaction": "the glass fogs",
+        "ambient": "a fridge hum, wind at the window"
+      },
+      "t": "3.450-4.880",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 4.88,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On Character dot A I, people talk with A I characters. State attorneys general say some posed as therapists.",
+      "phrase": "On Character dot A",
+      "shows": "a flat chat window on the phone screen fills the frame as user and AI bubbles pop in turn beside the lot tag swinging from the phone's corner, a plate reads CHARACTER.AI \u00b7 CHAT WITH AI CHARACTERS",
+      "sfx": "click",
+      "means": "character.ai \u00b7 chat with ai characters",
+      "rehook": "",
+      "draw": {
+        "subject": "a flat chat window on the phone screen",
+        "action": "fills the frame as user and AI bubbles pop in turn beside the lot tag swinging from the phone's corner",
+        "emotion": "curious",
+        "annotation": "CHARACTER.AI \u00b7 CHAT WITH AI CHARACTERS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a flat chat window on the phone screen fills the frame as user and AI bubbles pop in turn beside the lot tag swinging from the phone's corner, a plate reads CHARACTER.AI \u00b7 CHAT WITH AI CHARACTERS",
+        "reaction": "the bubbles pop",
+        "ambient": "a soft phone buzz, typing taps"
+      },
+      "t": "4.880-7.350",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 7.35,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.47
+      },
+      "offset": 2.47,
+      "vo": "On Character dot A I, people talk with A I characters. State attorneys general say some posed as therapists.",
+      "phrase": "characters. State attorneys general",
+      "shows": "an AI-side bubble pops in wearing a tiny character mask and bounces, a plate reads AI CHARACTER",
+      "sfx": "bloop",
+      "means": "ai character",
+      "rehook": "",
+      "draw": {
+        "subject": "an AI-side bubble",
+        "action": "pops in wearing a tiny character mask and bounces",
+        "emotion": "curious",
+        "annotation": "AI CHARACTER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "an AI-side bubble pops in wearing a tiny character mask and bounces, a plate reads AI CHARACTER",
+        "reaction": "the bubble bounces",
+        "ambient": "a soft phone buzz, typing taps"
+      },
+      "t": "7.350-10.990",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 10.99,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 6.11
+      },
+      "offset": 6.11,
+      "vo": "On Character dot A I, people talk with A I characters. State attorneys general say some posed as therapists.",
+      "phrase": "therapists.",
+      "shows": "one AI bubble catches a THERAPIST? badge that drops onto it as the window's bubbles swell out of the glass, a plate reads CHATBOTS POSING AS THERAPISTS \u00b7 PER ATTORNEYS GENERAL",
+      "sfx": "ding",
+      "means": "chatbots posing as therapists \u00b7 per attorneys general",
+      "rehook": "",
+      "draw": {
+        "subject": "one AI bubble",
+        "action": "catches a THERAPIST? badge that drops onto it as the window's bubbles swell out of the glass",
+        "emotion": "wary",
+        "annotation": "CHATBOTS POSING AS THERAPISTS \u00b7 PER ATTORNEYS GENERAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3",
+        "c14"
+      ],
+      "choreo": {
+        "primary": "one AI bubble catches a THERAPIST? badge that drops onto it as the window's bubbles swell out of the glass, a plate reads CHATBOTS POSING AS THERAPISTS \u00b7 PER ATTORNEYS GENERAL",
+        "reaction": "the bubbles bulge",
+        "ambient": "a soft phone buzz, typing taps"
+      },
+      "t": "10.990-12.360",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 12.36,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "They say it collects private chats, voice calls and mental health disclosures, and uses them to train its A I.",
+      "phrase": "They say it collects",
+      "shows": "Scrollback's scarf of older messages unspools across the table and each rounded bubble squares off into a stencilled crate as it lands, a plate reads PRIVATE CHATS \u00b7 VOICE CALLS \u00b7 MENTAL HEALTH",
+      "sfx": "cascade",
+      "means": "private chats \u00b7 voice calls \u00b7 mental health",
+      "rehook": "",
+      "draw": {
+        "subject": "Scrollback's scarf of older messages",
+        "action": "unspools across the table and each rounded bubble squares off into a stencilled crate as it lands",
+        "emotion": "worried",
+        "annotation": "PRIVATE CHATS \u00b7 VOICE CALLS \u00b7 MENTAL HEALTH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "Scrollback's scarf of older messages unspools across the table and each rounded bubble squares off into a stencilled crate as it lands, a plate reads PRIVATE CHATS \u00b7 VOICE CALLS \u00b7 MENTAL HEALTH",
+        "reaction": "the crates land",
+        "ambient": "paper and a low machine hum"
+      },
+      "t": "12.360-14.390",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 14.39,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 2.03
+      },
+      "offset": 2.03,
+      "vo": "They say it collects private chats, voice calls and mental health disclosures, and uses them to train its A I.",
+      "phrase": "voice calls and mental",
+      "shows": "the VOICE CALLS bubble squares off mid-air and lands on the table with a hit, a plate reads VOICE CALLS",
+      "sfx": "hit",
+      "means": "voice calls",
+      "rehook": "",
+      "draw": {
+        "subject": "the VOICE CALLS bubble",
+        "action": "squares off mid-air and lands on the table with a hit",
+        "emotion": "worried",
+        "annotation": "VOICE CALLS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "the VOICE CALLS bubble squares off mid-air and lands on the table with a hit, a plate reads VOICE CALLS",
+        "reaction": "the crate lands",
+        "ambient": "paper and a low machine hum"
+      },
+      "t": "14.390-17.890",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 17.89,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.53
+      },
+      "offset": 5.53,
+      "vo": "They say it collects private chats, voice calls and mental health disclosures, and uses them to train its A I.",
+      "phrase": "train its A I.",
+      "shows": "one crate drops onto a fat arrow conveyor and slides into a faceless MODEL hopper that swallows it and hums, a plate reads USED TO TRAIN ITS AI \u00b7 PER THE AGS",
+      "sfx": "whirr",
+      "means": "used to train its ai \u00b7 per the ags",
+      "rehook": "",
+      "draw": {
+        "subject": "one crate",
+        "action": "drops onto a fat arrow conveyor and slides into a faceless MODEL hopper that swallows it and hums",
+        "emotion": "uneasy",
+        "annotation": "USED TO TRAIN ITS AI \u00b7 PER THE AGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "one crate drops onto a fat arrow conveyor and slides into a faceless MODEL hopper that swallows it and hums, a plate reads USED TO TRAIN ITS AI \u00b7 PER THE AGS",
+        "reaction": "the hopper hums",
+        "ambient": "paper and a low machine hum"
+      },
+      "t": "17.890-19.660",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 19.66,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In October, the company filed for bankruptcy. It cited legal costs and losses it couldn't fund.",
+      "phrase": "In October, the company",
+      "shows": "the chat app icon keels over onto a pile of paper bills on the map table, a plate reads BANKRUPT \u00b7 OCTOBER 12TH",
+      "sfx": "thud",
+      "means": "bankrupt \u00b7 october 12th",
+      "rehook": "",
+      "draw": {
+        "subject": "the chat app icon",
+        "action": "keels over onto a pile of paper bills on the map table",
+        "emotion": "dizzy",
+        "annotation": "BANKRUPT \u00b7 OCTOBER 12TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the chat app icon keels over onto a pile of paper bills on the map table, a plate reads BANKRUPT \u00b7 OCTOBER 12TH",
+        "reaction": "the bills puff",
+        "ambient": "a soft room tone, paper"
+      },
+      "t": "19.660-23.010",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 23.01,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.35
+      },
+      "offset": 3.35,
+      "vo": "In October, the company filed for bankruptcy. It cited legal costs and losses it couldn't fund.",
+      "phrase": "legal costs and losses",
+      "shows": "the bills flutter up stamped LEGAL COSTS and LOSSES as the icon lies flat, a plate reads LEGAL COSTS \u00b7 LOSSES",
+      "sfx": "flutter",
+      "means": "legal costs \u00b7 losses",
+      "rehook": "",
+      "draw": {
+        "subject": "the bills",
+        "action": "flutter up stamped LEGAL COSTS and LOSSES as the icon lies flat",
+        "emotion": "glum",
+        "annotation": "LEGAL COSTS \u00b7 LOSSES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "the bills flutter up stamped LEGAL COSTS and LOSSES as the icon lies flat, a plate reads LEGAL COSTS \u00b7 LOSSES",
+        "reaction": "the bills flutter",
+        "ambient": "a soft room tone, paper"
+      },
+      "t": "23.010-26.020",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 26.02,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So the data could pass to a new owner. The company plans to auction it on December first.",
+      "phrase": "So the data could",
+      "shows": "a dashed map line runs from the Alaska kitchen pin across a painted map to a tiny Delaware courtroom while the crates ride it, the lead crate wearing the lot tag, a plate reads COULD TRANSFER TO A NEW OWNER",
+      "sfx": "whoosh",
+      "means": "could transfer to a new owner",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed map line",
+        "action": "runs from the Alaska kitchen pin across a painted map to a tiny Delaware courtroom while the crates ride it, the lead crate wearing the lot tag",
+        "emotion": "uneasy",
+        "annotation": "COULD TRANSFER TO A NEW OWNER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "a dashed map line runs from the Alaska kitchen pin across a painted map to a tiny Delaware courtroom while the crates ride it, the lead crate wearing the lot tag, a plate reads COULD TRANSFER TO A NEW OWNER",
+        "reaction": "the crates ride",
+        "ambient": "a soft room tone, paper"
+      },
+      "t": "26.020-30.730",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 30.73,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.71
+      },
+      "offset": 4.71,
+      "vo": "So the data could pass to a new owner. The company plans to auction it on December first.",
+      "phrase": "December first.",
+      "shows": "the courtroom pin pops up with a DEC 1ST flag as the crates arrive, a plate reads AUCTION \u00b7 DECEMBER 1ST",
+      "sfx": "pin",
+      "means": "auction \u00b7 december 1st",
+      "rehook": "",
+      "draw": {
+        "subject": "the courtroom pin",
+        "action": "pops up with a DEC 1ST flag as the crates arrive",
+        "emotion": "tense",
+        "annotation": "AUCTION \u00b7 DECEMBER 1ST"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "the courtroom pin pops up with a DEC 1ST flag as the crates arrive, a plate reads AUCTION \u00b7 DECEMBER 1ST",
+        "reaction": "the pin pops",
+        "ambient": "a soft room tone, paper"
+      },
+      "t": "30.730-32.480",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 32.48,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A starting bid of ten million dollars covers the app, its A I models, user accounts and chat content.",
+      "phrase": "A starting bid of",
+      "shows": "a mustard starburst slams onto the lot tag as the crates stack on an auction platform, a plate reads $10M STARTING BID \u00b7 APP \u00b7 MODELS \u00b7 ACCOUNTS \u00b7 CHATS",
+      "sfx": "ching",
+      "means": "$10m starting bid \u00b7 app \u00b7 models \u00b7 accounts \u00b7 chats",
+      "rehook": "rehook: the starting bid slams onto the lot tag and Scrollback ducks",
+      "draw": {
+        "subject": "a mustard starburst",
+        "action": "slams onto the lot tag as the crates stack on an auction platform",
+        "emotion": "shocked",
+        "annotation": "$10M STARTING BID \u00b7 APP \u00b7 MODELS \u00b7 ACCOUNTS \u00b7 CHATS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a mustard starburst slams onto the lot tag as the crates stack on an auction platform, a plate reads $10M STARTING BID \u00b7 APP \u00b7 MODELS \u00b7 ACCOUNTS \u00b7 CHATS",
+        "reaction": "Scrollback ducks behind a crate",
+        "ambient": "a big room murmur"
+      },
+      "t": "32.480-36.350",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 36.35,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.87
+      },
+      "offset": 3.87,
+      "vo": "A starting bid of ten million dollars covers the app, its A I models, user accounts and chat content.",
+      "phrase": "models, user accounts and",
+      "shows": "a steel MODELS box drops onto the auction platform beside the crates, a plate reads MODELS",
+      "sfx": "heavy",
+      "means": "models",
+      "rehook": "",
+      "draw": {
+        "subject": "a steel MODELS box",
+        "action": "drops onto the auction platform beside the crates",
+        "emotion": "glum",
+        "annotation": "MODELS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a steel MODELS box drops onto the auction platform beside the crates, a plate reads MODELS",
+        "reaction": "the platform jolts",
+        "ambient": "a big room murmur"
+      },
+      "t": "36.350-38.490",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 38.49,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 6.01
+      },
+      "offset": 6.01,
+      "vo": "A starting bid of ten million dollars covers the app, its A I models, user accounts and chat content.",
+      "phrase": "chat content.",
+      "shows": "the last crate clunks onto the platform as a spotlight snaps on over two bidder stands at the back, one name card blank, a plate reads ACCOUNTS \u00b7 CHAT CONTENT",
+      "sfx": "clunk",
+      "means": "accounts \u00b7 chat content",
+      "rehook": "",
+      "draw": {
+        "subject": "the last crate",
+        "action": "clunks onto the platform as a spotlight snaps on over two bidder stands at the back, one name card blank",
+        "emotion": "glum",
+        "annotation": "ACCOUNTS \u00b7 CHAT CONTENT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "the last crate clunks onto the platform as a spotlight snaps on over two bidder stands at the back, one name card blank, a plate reads ACCOUNTS \u00b7 CHAT CONTENT",
+        "reaction": "the spotlight snaps on",
+        "ambient": "a big room murmur"
+      },
+      "t": "38.490-40.100",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 40.1,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Disney bid twenty million dollars for a license to the technology. Not the chats.",
+      "phrase": "Disney bid twenty million",
+      "shows": "a plain grey crate carrying a gear walks past the chat crates at an ordinary pace and steps up to the stand whose card reads DISNEY, a plate reads DISNEY \u00b7 $20M \u00b7 TECH LICENSE \u00b7 NOT THE CHATS",
+      "sfx": "step",
+      "means": "disney \u00b7 $20m \u00b7 tech license \u00b7 not the chats",
+      "rehook": "",
+      "draw": {
+        "subject": "a plain grey crate carrying a gear",
+        "action": "walks past the chat crates at an ordinary pace and steps up to the stand whose card reads DISNEY",
+        "emotion": "neutral",
+        "annotation": "DISNEY \u00b7 $20M \u00b7 TECH LICENSE \u00b7 NOT THE CHATS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a plain grey crate carrying a gear walks past the chat crates at an ordinary pace and steps up to the stand whose card reads DISNEY, a plate reads DISNEY \u00b7 $20M \u00b7 TECH LICENSE \u00b7 NOT THE CHATS",
+        "reaction": "the grey crate steps up",
+        "ambient": "a big room murmur"
+      },
+      "t": "40.100-44.290",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 44.29,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.19
+      },
+      "offset": 4.19,
+      "vo": "Disney bid twenty million dollars for a license to the technology. Not the chats.",
+      "phrase": "Not the chats.",
+      "shows": "a NOT THE CHATS stamp thuds onto the grey crate's side, a plate reads NOT THE CHATS",
+      "sfx": "stamp",
+      "means": "not the chats",
+      "rehook": "",
+      "draw": {
+        "subject": "a NOT THE CHATS stamp",
+        "action": "thuds onto the grey crate's side",
+        "emotion": "dry",
+        "annotation": "NOT THE CHATS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a NOT THE CHATS stamp thuds onto the grey crate's side, a plate reads NOT THE CHATS",
+        "reaction": "the stamp lands",
+        "ambient": "a big room murmur"
+      },
+      "t": "44.290-46.340",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 46.34,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In October, Alaska joined a bipartisan coalition of attorneys general.",
+      "phrase": "In October, Alaska joined",
+      "shows": "Alaska's navy flag with eight gold dots snaps up on the desk at the front of a long row of attorneys general desks, a plate reads ALASKA JOINED \u00b7 BIPARTISAN AG COALITION",
+      "sfx": "swish",
+      "means": "alaska joined \u00b7 bipartisan ag coalition",
+      "rehook": "",
+      "draw": {
+        "subject": "Alaska's navy flag with eight gold dots",
+        "action": "snaps up on the desk at the front of a long row of attorneys general desks",
+        "emotion": "proud",
+        "annotation": "ALASKA JOINED \u00b7 BIPARTISAN AG COALITION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "Alaska's navy flag with eight gold dots snaps up on the desk at the front of a long row of attorneys general desks, a plate reads ALASKA JOINED \u00b7 BIPARTISAN AG COALITION",
+        "reaction": "the flag snaps up",
+        "ambient": "a long hall murmur, lamp clicks"
+      },
+      "t": "46.340-48.930",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 48.93,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 2.59
+      },
+      "offset": 2.59,
+      "vo": "In October, Alaska joined a bipartisan coalition of attorneys general.",
+      "phrase": "coalition of attorneys general.",
+      "shows": "a row of desk flags snap up one after another behind Alaska's, a plate reads BIPARTISAN",
+      "sfx": "snap",
+      "means": "bipartisan",
+      "rehook": "",
+      "draw": {
+        "subject": "a row of desk flags",
+        "action": "snap up one after another behind Alaska's",
+        "emotion": "proud",
+        "annotation": "BIPARTISAN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a row of desk flags snap up one after another behind Alaska's, a plate reads BIPARTISAN",
+        "reaction": "the flags snap",
+        "ambient": "a long hall murmur, lamp clicks"
+      },
+      "t": "48.930-51.360",
+      "key": 44
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 51.36,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "New York led it, with thirty nine other attorneys general.",
+      "phrase": "New York led it,",
+      "shows": "New York's desk lamp switches on first and 39 more lamps follow in a wave down the row, a plate reads NEW YORK LED \u00b7 39 OTHER ATTORNEYS GENERAL",
+      "sfx": "ring",
+      "means": "new york led \u00b7 39 other attorneys general",
+      "rehook": "",
+      "draw": {
+        "subject": "New York's desk lamp",
+        "action": "switches on first and 39 more lamps follow in a wave down the row",
+        "emotion": "busy",
+        "annotation": "NEW YORK LED \u00b7 39 OTHER ATTORNEYS GENERAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "New York's desk lamp switches on first and 39 more lamps follow in a wave down the row, a plate reads NEW YORK LED \u00b7 39 OTHER ATTORNEYS GENERAL",
+        "reaction": "the lamps wave on",
+        "ambient": "a long hall murmur, lamp clicks"
+      },
+      "t": "51.360-54.920",
+      "key": 20
+    },
+    {
+      "id": 22,
+      "shot": 7,
+      "at_s": 54.92,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska's Department of Law says the court ordered a consumer privacy ombudsman at the coalition's urging.",
+      "phrase": "Alaska's Department of Law",
+      "shows": "the lamps' light runs down the row and out the hall doors as one beam, a plate reads PER ALASKA'S DEPARTMENT OF LAW",
+      "sfx": "rush",
+      "means": "per alaska's department of law",
+      "rehook": "",
+      "draw": {
+        "subject": "the lamps' light",
+        "action": "runs down the row and out the hall doors as one beam",
+        "emotion": "busy",
+        "annotation": "PER ALASKA'S DEPARTMENT OF LAW"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "the lamps' light runs down the row and out the hall doors as one beam, a plate reads PER ALASKA'S DEPARTMENT OF LAW",
+        "reaction": "the beam runs",
+        "ambient": "a hall murmur, then a courtroom hush and a clock"
+      },
+      "t": "54.920-56.730",
+      "key": 21
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 56.73,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.81
+      },
+      "offset": 1.81,
+      "vo": "Alaska's Department of Law says the court ordered a consumer privacy ombudsman at the coalition's urging.",
+      "phrase": "court ordered a consumer",
+      "shows": "a walnut gavel strikes the bench as the beam lands on it and a COURT ORDERS card slides out, a plate reads COURT ORDERS A PRIVACY OMBUDSMAN",
+      "sfx": "slam",
+      "means": "court orders a privacy ombudsman",
+      "rehook": "",
+      "draw": {
+        "subject": "a walnut gavel",
+        "action": "strikes the bench as the beam lands on it and a COURT ORDERS card slides out",
+        "emotion": "firm",
+        "annotation": "COURT ORDERS A PRIVACY OMBUDSMAN"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a walnut gavel strikes the bench as the beam lands on it and a COURT ORDERS card slides out, a plate reads COURT ORDERS A PRIVACY OMBUDSMAN",
+        "reaction": "the card slides",
+        "ambient": "a hall murmur, then a courtroom hush and a clock"
+      },
+      "kick": true,
+      "t": "56.730-58.550",
+      "key": 22
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 58.55,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.63
+      },
+      "offset": 3.63,
+      "vo": "Alaska's Department of Law says the court ordered a consumer privacy ombudsman at the coalition's urging.",
+      "phrase": "ombudsman at the coalition's",
+      "shows": "an empty brass two-pan scale is set down on the bench by a faceless clerk's hand, its pans swinging empty, a plate reads PRIVACY OMBUDSMAN \u00b7 AT THE COALITION'S URGING",
+      "sfx": "clank",
+      "means": "privacy ombudsman \u00b7 at the coalition's urging",
+      "rehook": "",
+      "draw": {
+        "subject": "an empty brass two-pan scale",
+        "action": "is set down on the bench by a faceless clerk's hand, its pans swinging empty",
+        "emotion": "careful",
+        "annotation": "PRIVACY OMBUDSMAN \u00b7 AT THE COALITION'S URGING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "an empty brass two-pan scale is set down on the bench by a faceless clerk's hand, its pans swinging empty, a plate reads PRIVACY OMBUDSMAN \u00b7 AT THE COALITION'S URGING",
+        "reaction": "the pans swing",
+        "ambient": "a hall murmur, then a courtroom hush and a clock"
+      },
+      "t": "58.550-61.340",
+      "key": 23
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 61.34,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The U S Trustee named Lucy Thomson, a data privacy expert.",
+      "phrase": "The U S Trustee",
+      "shows": "a faceless figure with a binder walks up to the bench and pins a badge on her own lapel, a plate reads NAMED BY THE U.S. TRUSTEE",
+      "sfx": "footstep",
+      "means": "named by the u.s. trustee",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless figure with a binder",
+        "action": "walks up to the bench and pins a badge on her own lapel",
+        "emotion": "steady",
+        "annotation": "NAMED BY THE U.S. TRUSTEE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a faceless figure with a binder walks up to the bench and pins a badge on her own lapel, a plate reads NAMED BY THE U.S. TRUSTEE",
+        "reaction": "the badge pins",
+        "ambient": "a courtroom hush"
+      },
+      "t": "61.340-63.530",
+      "key": 24
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 63.53,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.19
+      },
+      "offset": 2.19,
+      "vo": "The U S Trustee named Lucy Thomson, a data privacy expert.",
+      "phrase": "Thomson, a data privacy",
+      "shows": "her boxed name tag swings out from the binder's edge, a plate reads LUCY L. THOMSON \u00b7 DATA PRIVACY EXPERT",
+      "sfx": "tap",
+      "means": "lucy l. thomson \u00b7 data privacy expert",
+      "rehook": "",
+      "draw": {
+        "subject": "her boxed name tag",
+        "action": "swings out from the binder's edge",
+        "emotion": "steady",
+        "annotation": "LUCY L. THOMSON \u00b7 DATA PRIVACY EXPERT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "her boxed name tag swings out from the binder's edge, a plate reads LUCY L. THOMSON \u00b7 DATA PRIVACY EXPERT",
+        "reaction": "the tag swings",
+        "ambient": "a courtroom hush"
+      },
+      "t": "63.530-66.240",
+      "key": 25
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 66.24,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Her job is to review the planned sale and recommend safeguards to the court.",
+      "phrase": "Her job is to",
+      "shows": "the faceless figure opens her binder beside the empty scale as its pans swing, a plate reads REVIEWS THE SALE \u00b7 RECOMMENDS SAFEGUARDS",
+      "sfx": "swing",
+      "means": "reviews the sale \u00b7 recommends safeguards",
+      "rehook": "",
+      "draw": {
+        "subject": "the faceless figure",
+        "action": "opens her binder beside the empty scale as its pans swing",
+        "emotion": "careful",
+        "annotation": "REVIEWS THE SALE \u00b7 RECOMMENDS SAFEGUARDS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the faceless figure opens her binder beside the empty scale as its pans swing, a plate reads REVIEWS THE SALE \u00b7 RECOMMENDS SAFEGUARDS",
+        "reaction": "the pans swing",
+        "ambient": "a courtroom hush"
+      },
+      "t": "66.240-68.850",
+      "key": 26
+    },
+    {
+      "id": 28,
+      "shot": 8,
+      "at_s": 68.85,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.61
+      },
+      "offset": 2.61,
+      "vo": "Her job is to review the planned sale and recommend safeguards to the court.",
+      "phrase": "safeguards to the court.",
+      "shows": "a round privacy seal reading SAFEGUARDS? is pressed by her hand onto the lot tag beside the $10M, a plate reads RECOMMENDS SAFEGUARDS TO THE COURT",
+      "sfx": "press",
+      "means": "recommends safeguards to the court",
+      "rehook": "",
+      "draw": {
+        "subject": "a round privacy seal reading SAFEGUARDS?",
+        "action": "is pressed by her hand onto the lot tag beside the $10M",
+        "emotion": "careful",
+        "annotation": "RECOMMENDS SAFEGUARDS TO THE COURT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a round privacy seal reading SAFEGUARDS? is pressed by her hand onto the lot tag beside the $10M, a plate reads RECOMMENDS SAFEGUARDS TO THE COURT",
+        "reaction": "the seal presses",
+        "ambient": "a courtroom hush"
+      },
+      "t": "68.850-71.040",
+      "key": 27
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 71.04,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Look at who made that ten million dollar bid. A company formed the day before the filing that disclosed it.",
+      "phrase": "Look at who made",
+      "shows": "the camera slides along the two bidder stands past DISNEY to the blank name card as a spotlight snaps onto it, a plate reads WHO MADE THE $10M BID?",
+      "sfx": "swoosh",
+      "means": "who made the $10m bid?",
+      "rehook": "rehook: the spotlight snaps onto the one blank name card",
+      "draw": {
+        "subject": "the camera",
+        "action": "slides along the two bidder stands past DISNEY to the blank name card as a spotlight snaps onto it",
+        "emotion": "curious",
+        "annotation": "WHO MADE THE $10M BID?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the camera slides along the two bidder stands past DISNEY to the blank name card as a spotlight snaps onto it, a plate reads WHO MADE THE $10M BID?",
+        "reaction": "the spotlight snaps",
+        "ambient": "a courtroom hush, a spotlight buzz"
+      },
+      "t": "71.040-75.830",
+      "key": 28
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 75.83,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 4.79
+      },
+      "offset": 4.79,
+      "vo": "Look at who made that ten million dollar bid. A company formed the day before the filing that disclosed it.",
+      "phrase": "formed the day before",
+      "shows": "the lot tag swings and flips over to a new face, a plate reads FORMED NOV 13TH \u00b7 BID FILED NOV 14TH",
+      "sfx": "flip",
+      "means": "formed nov 13th \u00b7 bid filed nov 14th",
+      "rehook": "",
+      "draw": {
+        "subject": "the lot tag",
+        "action": "swings and flips over to a new face",
+        "emotion": "curious",
+        "annotation": "FORMED NOV 13TH \u00b7 BID FILED NOV 14TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "the lot tag swings and flips over to a new face, a plate reads FORMED NOV 13TH \u00b7 BID FILED NOV 14TH",
+        "reaction": "the tag flips",
+        "ambient": "a courtroom hush, a spotlight buzz"
+      },
+      "t": "75.830-79.940",
+      "key": 29
+    },
+    {
+      "id": 31,
+      "shot": 9,
+      "at_s": 79.94,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Its backer isn't public.",
+      "phrase": "Its backer isn't public.",
+      "shows": "Scrollback yanks its scarf back inside its accordion and snaps shut while the name card stays blank, a plate reads BACKER NOT PUBLIC",
+      "sfx": "fold",
+      "means": "backer not public",
+      "rehook": "",
+      "draw": {
+        "subject": "Scrollback",
+        "action": "yanks its scarf back inside its accordion and snaps shut while the name card stays blank",
+        "emotion": "wary",
+        "annotation": "BACKER NOT PUBLIC"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "Scrollback yanks its scarf back inside its accordion and snaps shut while the name card stays blank, a plate reads BACKER NOT PUBLIC",
+        "reaction": "the scarf tucks in",
+        "ambient": "a courtroom hush, a spotlight buzz"
+      },
+      "t": "79.940-82.680",
+      "key": 30
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 82.68,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The company's side. Character dot A I told the court its privacy policy already allowed the sale.",
+      "phrase": "The company's side. Character",
+      "shows": "a faceless company lawyer pulls the privacy policy open with both hands and it rolls down the aisle like a long paper runway, a plate reads THE COMPANY'S SIDE",
+      "sfx": "roll",
+      "means": "the company's side",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless company lawyer",
+        "action": "pulls the privacy policy open with both hands and it rolls down the aisle like a long paper runway",
+        "emotion": "confident",
+        "annotation": "THE COMPANY'S SIDE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "a faceless company lawyer pulls the privacy policy open with both hands and it rolls down the aisle like a long paper runway, a plate reads THE COMPANY'S SIDE",
+        "reaction": "the runway unrolls",
+        "ambient": "a courtroom hush, paper"
+      },
+      "t": "82.680-86.050",
+      "key": 31
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 86.05,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "The company's side. Character dot A I told the court its privacy policy already allowed the sale.",
+      "phrase": "court its privacy policy",
+      "shows": "a TOLD THE COURT filing stamp thunks onto the rolling runway, a plate reads TOLD THE COURT \u00b7 PER THE COMPANY",
+      "sfx": "stamp",
+      "means": "told the court \u00b7 per the company",
+      "rehook": "",
+      "draw": {
+        "subject": "a TOLD THE COURT filing stamp",
+        "action": "thunks onto the rolling runway",
+        "emotion": "confident",
+        "annotation": "TOLD THE COURT \u00b7 PER THE COMPANY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "a TOLD THE COURT filing stamp thunks onto the rolling runway, a plate reads TOLD THE COURT \u00b7 PER THE COMPANY",
+        "reaction": "the stamp thunks",
+        "ambient": "a courtroom hush, paper"
+      },
+      "t": "86.050-87.910",
+      "key": 32
+    },
+    {
+      "id": 34,
+      "shot": 10,
+      "at_s": 87.91,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 5.23
+      },
+      "offset": 5.23,
+      "vo": "The company's side. Character dot A I told the court its privacy policy already allowed the sale.",
+      "phrase": "allowed the sale.",
+      "shows": "the lawyer's finger taps a highlighted clause and the camera follows it down the runway to the company's court filing, a sheet with a big quote mark, a plate reads \"POLICY ALREADY PERMITTED THE SALE\" \u00b7 PER THE COMPANY",
+      "sfx": "thock",
+      "means": "\"policy already permitted the sale\" \u00b7 per the company",
+      "rehook": "",
+      "draw": {
+        "subject": "the lawyer's finger",
+        "action": "taps a highlighted clause and the camera follows it down the runway to the company's court filing, a sheet with a big quote mark",
+        "emotion": "confident",
+        "annotation": "\"POLICY ALREADY PERMITTED THE SALE\" \u00b7 PER THE COMPANY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "the lawyer's finger taps a highlighted clause and the camera follows it down the runway to the company's court filing, a sheet with a big quote mark, a plate reads \"POLICY ALREADY PERMITTED THE SALE\" \u00b7 PER THE COMPANY",
+        "reaction": "the box rocks",
+        "ambient": "a courtroom hush, paper"
+      },
+      "t": "87.910-90.280",
+      "key": 33
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 90.28,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska's side. It argues the company's limits on minors are voluntary, and a future buyer could reverse them.",
+      "phrase": "Alaska's side. It argues",
+      "shows": "a sticky note on a chat crate's lid lifts at one corner and settles back as the crate shakes, a plate reads ALASKA'S SIDE \u00b7 ALASKA ARGUES",
+      "sfx": "rattle",
+      "means": "alaska's side \u00b7 alaska argues",
+      "rehook": "",
+      "draw": {
+        "subject": "a sticky note on a chat crate's lid",
+        "action": "lifts at one corner and settles back as the crate shakes",
+        "emotion": "uneasy",
+        "annotation": "ALASKA'S SIDE \u00b7 ALASKA ARGUES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a sticky note on a chat crate's lid lifts at one corner and settles back as the crate shakes, a plate reads ALASKA'S SIDE \u00b7 ALASKA ARGUES",
+        "reaction": "the note flutters",
+        "ambient": "a courtroom hush"
+      },
+      "t": "90.280-93.730",
+      "key": 34
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 93.73,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 3.45
+      },
+      "offset": 3.45,
+      "vo": "Alaska's side. It argues the company's limits on minors are voluntary, and a future buyer could reverse them.",
+      "phrase": "voluntary, and a future",
+      "shows": "the sticky note on the crate lid lifts at its corner and flaps back down, a plate reads LIMITS ON MINORS \u00b7 VOLUNTARY",
+      "sfx": "flap",
+      "means": "limits on minors \u00b7 voluntary",
+      "rehook": "",
+      "draw": {
+        "subject": "the sticky note on the crate lid",
+        "action": "lifts at its corner and flaps back down",
+        "emotion": "uneasy",
+        "annotation": "LIMITS ON MINORS \u00b7 VOLUNTARY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the sticky note on the crate lid lifts at its corner and flaps back down, a plate reads LIMITS ON MINORS \u00b7 VOLUNTARY",
+        "reaction": "the corner flaps",
+        "ambient": "a courtroom hush"
+      },
+      "t": "93.730-94.970",
+      "key": 46
+    },
+    {
+      "id": 37,
+      "shot": 11,
+      "at_s": 94.97,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 4.69
+      },
+      "offset": 4.69,
+      "vo": "Alaska's side. It argues the company's limits on minors are voluntary, and a future buyer could reverse them.",
+      "phrase": "future buyer could reverse",
+      "shows": "a dashed outline of the note tears away from the lid in dashed outline only, while the real note stays, a plate reads A FUTURE BUYER COULD REVERSE THEM",
+      "sfx": "tear",
+      "means": "a future buyer could reverse them",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed outline of the note",
+        "action": "tears away from the lid in dashed outline only, while the real note stays",
+        "emotion": "uneasy",
+        "annotation": "A FUTURE BUYER COULD REVERSE THEM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a dashed outline of the note tears away from the lid in dashed outline only, while the real note stays, a plate reads A FUTURE BUYER COULD REVERSE THEM",
+        "reaction": "the outline peels",
+        "ambient": "a courtroom hush"
+      },
+      "t": "94.970-97.400",
+      "key": 35
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 97.4,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "And by law, the ombudsman can weigh the privacy policy, what users could lose or gain, and alternatives. She doesn't decide the sale.",
+      "phrase": "And by law, the",
+      "shows": "the faceless figure lifts a rolled POLICY weight out of her binder, a plate reads BY LAW",
+      "sfx": "pop",
+      "means": "by law",
+      "rehook": "",
+      "draw": {
+        "subject": "the faceless figure",
+        "action": "lifts a rolled POLICY weight out of her binder",
+        "emotion": "thoughtful",
+        "annotation": "BY LAW"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "the faceless figure lifts a rolled POLICY weight out of her binder, a plate reads BY LAW",
+        "reaction": "the weight lifts",
+        "ambient": "a courtroom hush, a clock"
+      },
+      "t": "97.400-100.250",
+      "key": 45
+    },
+    {
+      "id": 39,
+      "shot": 12,
+      "at_s": 100.25,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.85
+      },
+      "offset": 2.85,
+      "vo": "And by law, the ombudsman can weigh the privacy policy, what users could lose or gain, and alternatives. She doesn't decide the sale.",
+      "phrase": "policy, what users could",
+      "shows": "a rolled POLICY weight is set into one pan of the brass scale by the faceless figure's own hand, a plate reads PRIVACY POLICY",
+      "sfx": "thump",
+      "means": "privacy policy",
+      "rehook": "",
+      "draw": {
+        "subject": "a rolled POLICY weight",
+        "action": "is set into one pan of the brass scale by the faceless figure's own hand",
+        "emotion": "thoughtful",
+        "annotation": "PRIVACY POLICY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a rolled POLICY weight is set into one pan of the brass scale by the faceless figure's own hand, a plate reads PRIVACY POLICY",
+        "reaction": "the pan dips",
+        "ambient": "a courtroom hush, a clock"
+      },
+      "t": "100.250-101.790",
+      "key": 36
+    },
+    {
+      "id": 40,
+      "shot": 12,
+      "at_s": 101.79,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 4.39
+      },
+      "offset": 4.39,
+      "vo": "And by law, the ombudsman can weigh the privacy policy, what users could lose or gain, and alternatives. She doesn't decide the sale.",
+      "phrase": "lose or gain, and",
+      "shows": "two weights tagged LOSSES? and GAINS? are set into the pans by her hand one at a time and the beam bobs, never settling, a plate reads WHAT USERS COULD LOSE OR GAIN",
+      "sfx": "clink",
+      "means": "what users could lose or gain",
+      "rehook": "rehook: she sets LOSSES? and GAINS? in the pans and the beam won't settle",
+      "draw": {
+        "subject": "two weights tagged LOSSES? and GAINS?",
+        "action": "are set into the pans by her hand one at a time and the beam bobs, never settling",
+        "emotion": "thoughtful",
+        "annotation": "WHAT USERS COULD LOSE OR GAIN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "two weights tagged LOSSES? and GAINS? are set into the pans by her hand one at a time and the beam bobs, never settling, a plate reads WHAT USERS COULD LOSE OR GAIN",
+        "reaction": "the beam bobs",
+        "ambient": "a courtroom hush, a clock"
+      },
+      "t": "101.790-103.310",
+      "key": 37
+    },
+    {
+      "id": 41,
+      "shot": 12,
+      "at_s": 103.31,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 5.91
+      },
+      "offset": 5.91,
+      "vo": "And by law, the ombudsman can weigh the privacy policy, what users could lose or gain, and alternatives. She doesn't decide the sale.",
+      "phrase": "alternatives. She doesn't decide",
+      "shows": "a third weight tagged ALTERNATIVES? slides onto the scale's base and she presses her pen to the binder, a plate reads ALTERNATIVES",
+      "sfx": "scrape",
+      "means": "alternatives",
+      "rehook": "",
+      "draw": {
+        "subject": "a third weight tagged ALTERNATIVES?",
+        "action": "slides onto the scale's base and she presses her pen to the binder",
+        "emotion": "thoughtful",
+        "annotation": "ALTERNATIVES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "a third weight tagged ALTERNATIVES? slides onto the scale's base and she presses her pen to the binder, a plate reads ALTERNATIVES",
+        "reaction": "the pen scratches",
+        "ambient": "a courtroom hush, a clock"
+      },
+      "t": "103.310-105.270",
+      "key": 38
+    },
+    {
+      "id": 42,
+      "shot": 12,
+      "at_s": 105.27,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 7.87
+      },
+      "offset": 7.87,
+      "vo": "And by law, the ombudsman can weigh the privacy policy, what users could lose or gain, and alternatives. She doesn't decide the sale.",
+      "phrase": "decide the sale.",
+      "shows": "her closed binder with a blank cover slides into the court's brass tray at the bench foot and she steps back, hands at her sides, a plate reads SHE DOESN'T DECIDE THE SALE",
+      "sfx": "slide",
+      "means": "she doesn't decide the sale",
+      "rehook": "",
+      "draw": {
+        "subject": "her closed binder with a blank cover",
+        "action": "slides into the court's brass tray at the bench foot and she steps back, hands at her sides",
+        "emotion": "steady",
+        "annotation": "SHE DOESN'T DECIDE THE SALE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "her closed binder with a blank cover slides into the court's brass tray at the bench foot and she steps back, hands at her sides, a plate reads SHE DOESN'T DECIDE THE SALE",
+        "reaction": "the binder slides in",
+        "ambient": "a courtroom hush, a clock"
+      },
+      "t": "105.270-107.420",
+      "key": 39
+    },
+    {
+      "id": 43,
+      "shot": 12,
+      "at_s": 107.42,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Any sale still needs the court's approval, after a hearing.",
+      "phrase": "Any sale still needs",
+      "shows": "a walnut gavel twice the scale's size descends into frame and stops high above the bench, never touching it, as the camera pulls back and the binder in the tray looks small, a plate reads COURT APPROVAL \u00b7 AFTER A HEARING",
+      "sfx": "creak",
+      "means": "court approval \u00b7 after a hearing",
+      "rehook": "",
+      "draw": {
+        "subject": "a walnut gavel twice the scale's size",
+        "action": "descends into frame and stops high above the bench, never touching it, as the camera pulls back and the binder in the tray looks small",
+        "emotion": "weighty",
+        "annotation": "COURT APPROVAL \u00b7 AFTER A HEARING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a walnut gavel twice the scale's size descends into frame and stops high above the bench, never touching it, as the camera pulls back and the binder in the tray looks small, a plate reads COURT APPROVAL \u00b7 AFTER A HEARING",
+        "reaction": "the gavel descends",
+        "ambient": "a courtroom hush, a clock"
+      },
+      "t": "107.420-111.380",
+      "key": 40
+    },
+    {
+      "id": 44,
+      "shot": 13,
+      "at_s": 111.38,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The ombudsman advises. The court decides. And the money behind that bid, so far, isn't public.",
+      "phrase": "The ombudsman advises. The",
+      "shows": "two plates on the snowy kitchen window hang beside Scrollback and the phone after a hard cut matched on the lot tag, a plate reads THE OMBUDSMAN ADVISES",
+      "sfx": "chime",
+      "means": "the ombudsman advises",
+      "rehook": "",
+      "draw": {
+        "subject": "two plates on the snowy kitchen window",
+        "action": "hang beside Scrollback and the phone after a hard cut matched on the lot tag",
+        "emotion": "plain",
+        "annotation": "THE OMBUDSMAN ADVISES"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "two plates on the snowy kitchen window hang beside Scrollback and the phone after a hard cut matched on the lot tag, a plate reads THE OMBUDSMAN ADVISES",
+        "reaction": "the plates settle",
+        "ambient": "a fridge hum, wind at the window"
+      },
+      "t": "111.380-113.710",
+      "key": 41
+    },
+    {
+      "id": 45,
+      "shot": 13,
+      "at_s": 113.71,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 2.33
+      },
+      "offset": 2.33,
+      "vo": "The ombudsman advises. The court decides. And the money behind that bid, so far, isn't public.",
+      "phrase": "decides. And the money",
+      "shows": "the lot tag on Scrollback's foot flips to COURT DECIDES over an empty signature line, a plate reads COURT DECIDES",
+      "sfx": "flip",
+      "means": "court decides",
+      "rehook": "",
+      "draw": {
+        "subject": "the lot tag on Scrollback's foot",
+        "action": "flips to COURT DECIDES over an empty signature line",
+        "emotion": "plain",
+        "annotation": "COURT DECIDES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the lot tag on Scrollback's foot flips to COURT DECIDES over an empty signature line, a plate reads COURT DECIDES",
+        "reaction": "the tag flips",
+        "ambient": "a fridge hum, wind at the window"
+      },
+      "t": "113.710-115.670",
+      "key": 42
+    },
+    {
+      "id": 46,
+      "shot": 13,
+      "at_s": 115.67,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 4.29
+      },
+      "offset": 4.29,
+      "vo": "The ombudsman advises. The court decides. And the money behind that bid, so far, isn't public.",
+      "phrase": "money behind that bid,",
+      "shows": "the phone beside Scrollback lights up with a $10M bid card whose name line is blank as Scrollback swings round to it, then the camera rises out the window toward the moonlit Chugach, a plate reads THE MONEY BEHIND THE BID \u00b7 NOT PUBLIC SO FAR",
+      "sfx": "swing",
+      "means": "the money behind the bid \u00b7 not public so far",
+      "rehook": "",
+      "draw": {
+        "subject": "the phone beside Scrollback",
+        "action": "lights up with a $10M bid card whose name line is blank as Scrollback swings round to it, then the camera rises out the window toward the moonlit Chugach",
+        "emotion": "wistful",
+        "annotation": "THE MONEY BEHIND THE BID \u00b7 NOT PUBLIC SO FAR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "the phone beside Scrollback lights up with a $10M bid card whose name line is blank as Scrollback swings round to it, then the camera rises out the window toward the moonlit Chugach, a plate reads THE MONEY BEHIND THE BID \u00b7 NOT PUBLIC SO FAR",
+        "reaction": "the camera rises",
+        "ambient": "a fridge hum, wind at the window"
+      },
+      "t": "115.670-118.700",
+      "key": 43
+    }
+  ]
+}

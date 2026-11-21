@@ -1,0 +1,16 @@
+{
+  "run_date": "2026-11-21",
+  "title": "Lot 1, Your Chats",
+  "sources": [
+    {"id": "s1", "title": "Acting Attorney General Cori Mills helps secure privacy protections in Character.AI bankruptcy", "outlet": "Alaska Department of Law, November 19th", "url": "https://www.law.alaska.gov/press/releases/2026/111926-CharacterAI.html", "claims": ["c2", "c3", "c9", "c13", "c15", "c16", "c20", "c21", "c22", "c23", "c28"]},
+    {"id": "s2", "title": "Attorney General James urges court to protect children and consumers in Character.AI sale", "outlet": "New York Attorney General, October 14th", "url": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai", "claims": ["c5", "c6", "c7", "c8", "c14", "c23"]},
+    {"id": "s3", "title": "Character.AI gets $10 million bid to buy user data, brand assets", "outlet": "Bloomberg Law, November 16th", "url": "https://news.bloomberglaw.com/bankruptcy-law/character-ai-gets-10-million-bid-to-buy-user-data-brand-assets", "claims": ["c10", "c11"]},
+    {"id": "s4", "title": "Character.AI files for bankruptcy, agrees to sell some assets to Disney for $20 million", "outlet": "Reuters via KSL, October", "url": "https://www.ksl.com/article/51635619/characterai-files-for-bankruptcy-agrees-to-sell-some-assets-to-disney-for-20-million", "claims": ["c1", "c4", "c12", "c24"]},
+    {"id": "s5", "title": "Your chatbot just went bankrupt. What happens now to your user data?", "outlet": "KQED", "url": "https://www.kqed.org/news/12104362/your-chatbot-just-went-bankrupt-what-happens-now-to-your-user-data", "claims": ["c1", "c4", "c24"]},
+    {"id": "s6", "title": "Character.AI's planned data sale gets a privacy ombudsman", "outlet": "PPC Land, November", "url": "https://ppc.land/character-ais-planned-data-sale-gets-a-650-an-hour-privacy-ombudsman/", "claims": ["c19", "c26"]},
+    {"id": "s7", "title": "39 states and DC say Character.AI user data needs a privacy ombudsman", "outlet": "PPC Land, October", "url": "https://ppc.land/39-states-and-dc-say-character-ai-user-data-needs-a-privacy-ombudsman/", "claims": ["c25"]},
+    {"id": "s8", "title": "MN AG wins watchdog to guard kids' data in Character.AI bankruptcy", "outlet": "KIMT", "url": "https://www.kimt.com/news/mn-ag-wins-watchdog-to-guard-kids-data-in-character-ai-bankruptcy/article_68007e28-be0d-4924-8f54-a3fac47bf9b6.html", "claims": ["c9", "c19"]},
+    {"id": "s9", "title": "11 U.S.C. 332, Consumer privacy ombudsman", "outlet": "U.S. Code via Cornell LII", "url": "https://www.law.cornell.edu/uscode/text/11/332", "claims": ["c17", "c18", "c27"]},
+    {"id": "s10", "title": "11 U.S.C. 363, Use, sale, or lease of property", "outlet": "U.S. Code via Cornell LII", "url": "https://www.law.cornell.edu/uscode/text/11/363", "claims": ["c17", "c26"]}
+  ]
+}
