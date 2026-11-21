@@ -136,15 +136,16 @@ def check_pace_line_matches_the_measurement():
 
     vo_synth_gemini._pace_line() builds this text from config/state.yaml so it tracks the
     format target, and vo_length_probe.PACE_MODES["anchored"] is the exact string that was
-    synthesized and timed at 121.3s and 119.9s. The entire word band rests on that
+    synthesized and timed (121.3s and 119.9s for the 2026-08-05 line; 118.7s at 22.7 percent
+    gap share for the 2026-11-21 never-padded line that replaced it). The entire word band rests on that
     measurement. If the two drift apart, the pipeline is shipping a pace instruction nobody
     ever timed, while the docs still quote the old numbers as evidence.
     """
     import vo_synth_gemini as vs
     import vo_length_probe as pr
     import vo_soundcheck as sc
-    _, _, target = sc._target_band()
-    gen, tested = vs._pace_line(target or 120.0), pr.PACE_MODES["anchored"]
+    lo, _, target = sc._target_band()
+    gen, tested = vs._pace_line(target or 120.0, lo), pr.PACE_MODES["anchored"]
     if gen == tested:
         print("PACE LINE: generated text is byte-identical to the measured probe prompt")
         return []
