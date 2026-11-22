@@ -4101,3 +4101,9 @@ Queued: gate0-critic-rounds (repeat 8), pace-line-pads, suit-rig-necktie-default
 - In-run fixes: Nix card and flag text counter-mirror when facing left; shot 14 VO re-voiced in slot to drop an unsourced 'at full size'; claims c35 and c36 added; caption accuracy edits after round 5.
 - Queued: 8 entries for 11-22, repeat offenders gate0-critic-rounds (9) and caption-scorer-hair-under-bar (10).
 - Gmail draft BLOCKED, connector sign-in refused (second day). Body kept at runs/2026-11-22/draft_body.html.
+
+## 2026-11-22 weekly machine pass
+- Shipped: vo_claims_check scale-qualifier rule (e5f971f); mirror_text_check source gate plus five lib labels counter-mirrored and MirrorLook (82e4a8b); held_beat_probe fails loudly on a render exception (329dfaa); engine advance, lib Suit head form-shaded with a blinking face (9e773b1); vo_patch_lines final-line tail slack (e97ff47); queue marked (52b0383).
+- Verified by the orchestrator: every listed self-test and check exit 0, tsc clean, runbook_check, SuitLook still read at frame 40.
+- Not reached: music-pool-drained, palette overlap, held-gesture-idle, string-touches-suspect, clipart ground. Owner-only: caption bar (repeat 10), Gate 0 round cap (repeat 9), same-project dedupe advisory.
+- Social delivery for the 11-22 edition: all 11 placements PUBLISHED (LinkedIn, Facebook, Instagram Reel, TikTok, YouTube, 3 IG and 3 FB story segments). Gmail draft BLOCKED, connector sign-in refused.
