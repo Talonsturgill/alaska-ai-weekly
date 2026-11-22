@@ -95,7 +95,7 @@ export const BallotBox: React.FC<{
       <rect x={-mw / 2 + 8} y={mY - mh / 2 + 3} width={mw - 16} height={3.4} rx={1.7} fill={BAL.steelHi} opacity={0.35} />
       {mood === 'worried' && <path d={`M ${-mw / 2 - 4},${mY + mh / 2 + 12} q 16,-12 32,0 t 32,0 t 32,0 t 32,0`} stroke={INK} strokeWidth={4} fill="none" opacity={0.5} />}
       <rect x={-52} y={top + Hh - 52} width={104} height={24} rx={5} fill={BAL.cream} stroke={INK} strokeWidth={3.6} />
-      <text x={0} y={top + Hh - 34} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} letterSpacing={2} fill={INK}>BALLOTS</text>
+      <text x={0} y={top + Hh - 34} transform={`scale(${facing} 1)`} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} letterSpacing={2} fill={INK}>BALLOTS</text>
     </g>
   );
 };

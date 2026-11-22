@@ -75,7 +75,7 @@ export const BushPlane: React.FC<{
         <path d="M114,-88 q22,2 26,20 q2,14 -10,22 q-14,8 -26,2 l2,-42 Z" fill={t.shade} stroke={INK} strokeWidth={5.5} strokeLinejoin="round" />
         {/* N-number panel + rivets (detail density) */}
         <rect x={-96} y={-72} width={64} height={20} rx={4} fill="#f2ead8" stroke={INK} strokeWidth={3.5} />
-        <text x={-64} y={-57} textAnchor="middle" fontFamily="Arial Black, sans-serif" fontWeight={900} fontSize={14} fill={INK}>N907AK</text>
+        <text x={-64} y={-57} transform={`translate(-64 0) scale(${facing} 1) translate(64 0)`} textAnchor="middle" fontFamily="Arial Black, sans-serif" fontWeight={900} fontSize={14} fill={INK}>N907AK</text>
         {[-120, -40, 20, 76].map((rx2, i) => <circle key={i} cx={rx2} cy={-46} r={2.5} fill={t.shade} opacity={0.8} />)}
         <RimLight d="M-150,-58 q-12,-4 -10,-16 q2,-10 16,-12 l44,-2 q30,-22 84,-24" w={3.5} opacity={0.55} />
         {/* the prop: blur disc at speed, visible blades slow */}

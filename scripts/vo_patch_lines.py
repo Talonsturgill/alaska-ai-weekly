@@ -38,6 +38,11 @@ Usage
 
 Then re-run scripts/vo_envelope.py and scripts/build_scenes.py (boundaries will be
 identical; the mouth track and captions will not be).
+
+The FINAL line (2026-11-22) may run up to --tail-slack seconds (default 2.5) past its old end:
+vo.wav grows by exactly what the new take needs and nothing before the line moves, but the film's
+end does, so re-run build_scenes and the mix. `--self-test` checks the slot and splice arithmetic
+without a synth.
 """
 import argparse, json, os, subprocess, sys, tempfile
 import numpy as np
@@ -54,6 +59,12 @@ SR = 44100
 MIN_GAP = 0.28      # seconds of room tone that must survive between this line and the next
 PACE_MAX = 1.06     # most time-compression allowed to fit the slot; beyond this it is audible
 WER_MAX = 0.10      # a replacement that is not what we asked for is not a fix
+# The FINAL line has no next line to collide with, so it may run past its old end into the tail
+# (machine pass 2026-11-22, queue patch-last-line-no-slack: the 11-22 final line got a 5.48 s budget,
+# exactly its old spoken length, and every take ran 6.6 to 8.0 s, twice). vo.wav then grows by what
+# the new take needs and nothing before the line moves; re-run build_scenes and the mix, which read
+# the new end (the post-VO hold and the credits follow vo_lines.json).
+TAIL_SLACK = 2.5
 
 
 def _load_wav(path):
@@ -161,7 +172,82 @@ def _room_tone(vo, lines, i):
         a, b = int(lines[i]["end"] * SR), int(nxt * SR)
         if b - a > int(0.12 * SR):
             return vo[a:b]
+    if i > 0:   # the final line: the air before it, not digital silence (2026-11-22)
+        a, b = int(lines[i - 1]["end"] * SR), int(lines[i]["start"] * SR)
+        if b - a > int(0.12 * SR):
+            return vo[a:b]
     return np.zeros(int(0.2 * SR), dtype=np.float32)
+
+
+def slot_for(L, nxt, vo_len_s, tail_slack):
+    """(slot_end, budget, is_final) for a line. A line with a next line fits [start, next start);
+    the final line may run up to `tail_slack` seconds past its old end."""
+    if nxt is not None:
+        return nxt, nxt - L["start"] - MIN_GAP, False
+    slot_end = max(L["end"] + MIN_GAP, vo_len_s)
+    return slot_end, (L["end"] - L["start"]) + max(0.0, tail_slack), True
+
+
+def splice(audio, s, fitted, tone, slot_end_s, is_final, tail_after_s):
+    """The audio with `fitted` laid in at sample s and room tone to the slot end. For the final
+    line the file grows only by what the take needs, keeping the take's own tail after it.
+    Returns (audio, slot_end_s); every sample before s is untouched."""
+    end = int(round(slot_end_s * SR))
+    if is_final:
+        need = s + len(fitted) + int(round(max(tail_after_s, MIN_GAP) * SR))
+        if need > len(audio):
+            audio = np.concatenate([audio, np.zeros(need - len(audio), dtype=audio.dtype)])
+        end = len(audio)
+    span = end - s
+    audio[s:s + span] = np.concatenate([fitted, _fill(tone, span - len(fitted))])[:span]
+    return audio, end / SR
+
+
+def outside_unchanged(vo, new_audio, slots, final_patched):
+    """Number of samples outside the patched slots that differ (0 is surgical). Only a final-line
+    patch may lengthen the file; anything else that changes the length is reported as -1."""
+    if len(new_audio) != len(vo) and not (final_patched and len(new_audio) > len(vo)):
+        return -1
+    keep = np.ones(len(vo), dtype=bool)
+    for s0, s1 in slots:
+        keep[max(0, s0):min(len(vo), s1)] = False
+    return int((vo[keep] != new_audio[:len(vo)][keep]).sum())
+
+
+def _self_test():
+    """Hermetic: no synth. A 10 s take with lines at 0-3, 3.5-6 and a final 6.5-9 (0.5 s tail)."""
+    rng = np.random.default_rng(1)
+    vo = (rng.standard_normal(int(9.5 * SR)) * 0.05).astype(np.float32)
+    lines = [{"idx": 0, "start": 0.0, "end": 3.0}, {"idx": 1, "start": 3.5, "end": 6.0},
+             {"idx": 2, "start": 6.5, "end": 9.0}]
+    bad = []
+    # a middle line keeps the 11-21 budget: next start - start - MIN_GAP
+    se, b, fin = slot_for(lines[1], 6.5, len(vo) / SR, TAIL_SLACK)
+    if fin or abs(b - (3.0 - MIN_GAP)) > 1e-9:
+        bad.append(f"middle slot budget {b}")
+    # the final line gets its old length plus the slack (the 11-22 case: 5.48 s became 7.98 s)
+    se, b, fin = slot_for(lines[2], None, len(vo) / SR, TAIL_SLACK)
+    if not fin or abs(b - (2.5 + TAIL_SLACK)) > 1e-9:
+        bad.append(f"final slot budget {b}")
+    fitted = np.ones(int(4.0 * SR), dtype=np.float32) * 0.1            # 1.5 s longer than the old line
+    s0 = int(round(6.5 * SR))
+    new, slot_end = splice(vo.copy(), s0, fitted, _room_tone(vo, lines, 2), se, True, len(vo) / SR - 9.0)
+    if len(new) != s0 + len(fitted) + int(round(0.5 * SR)):
+        bad.append(f"final splice length {len(new) / SR:.3f}s")
+    if outside_unchanged(vo, new, [(s0, int(round(slot_end * SR)))], True) != 0:
+        bad.append("samples before the final line moved")
+    if not np.any(new[s0 + len(fitted):]):
+        bad.append("the grown tail is digital silence, not room tone")
+    if outside_unchanged(vo, new, [(s0, int(round(slot_end * SR)))], False) != -1:
+        bad.append("a non-final patch was allowed to change the length")
+    short = np.ones(int(2.0 * SR), dtype=np.float32) * 0.1            # fits: the file keeps its length
+    new2, _ = splice(vo.copy(), s0, short, _room_tone(vo, lines, 2), se, True, len(vo) / SR - 9.0)
+    if len(new2) != len(vo):
+        bad.append("a final take that fits grew the file")
+    for x in bad:
+        print("  " + x)
+    print("vo_patch_lines self-test:", "FAIL" if bad else "PASS")
+    return 1 if bad else 0
 
 
 def _fill(tone, n):
@@ -264,10 +350,18 @@ def _recaption(y, text, offset, seg):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--line", type=int, action="append", required=True)
-    ap.add_argument("--text", type=str, action="append", required=True)
+    ap.add_argument("--line", type=int, action="append")
+    ap.add_argument("--text", type=str, action="append")
     ap.add_argument("--takes", type=int, default=4)
+    ap.add_argument("--tail-slack", type=float, default=TAIL_SLACK,
+                    help="seconds the FINAL line may run past its old end (default %(default)s); "
+                         "vo.wav grows by what the take needs, nothing before the line moves")
+    ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
+    if a.self_test:
+        return _self_test()
+    if not a.line or not a.text:
+        raise SystemExit("--line and --text are required")
     if len(a.line) != len(a.text):
         raise SystemExit("--line and --text must be given in matching pairs")
 
@@ -290,9 +384,9 @@ def main():
     for idx, text in sorted(zip(a.line, a.text)):
         L = next(l for l in lines if l["idx"] == idx)
         nxt = next((l["start"] for l in lines if l["idx"] == idx + 1), None)
-        slot_end = nxt if nxt is not None else L["end"] + MIN_GAP
-        budget = slot_end - L["start"] - MIN_GAP
-        print(f"\nline {idx}: slot {L['start']:.2f}..{slot_end:.2f}  budget {budget:.2f}s")
+        slot_end, budget, is_final = slot_for(L, nxt, len(vo) / SR, a.tail_slack)
+        print(f"\nline {idx}: slot {L['start']:.2f}..{slot_end:.2f}  budget {budget:.2f}s"
+              + (f" (final line: its old length plus {a.tail_slack:g}s of tail)" if is_final else ""))
         print(f"  was: {L['text']}")
         print(f"  now: {text}")
 
@@ -328,9 +422,11 @@ def main():
         fitted = _fade(fitted)
 
         tone = _room_tone(vo, lines, lines.index(L))
-        span = int(round(slot_end * SR)) - s
-        seg = np.concatenate([fitted, _fill(tone, span - len(fitted))])[:span]
-        new_audio[s:s + span] = seg
+        new_audio, slot_end = splice(new_audio, s, fitted, tone, slot_end, is_final,
+                                     len(vo) / SR - L["end"])
+        if is_final and len(new_audio) > len(vo):
+            print(f"  final line runs {len(new_audio) / SR - len(vo) / SR:.2f}s past the old take end; "
+                  f"re-run build_scenes and the mix so the hold and credits follow it")
 
         new_end = round(L["start"] + len(fitted) / SR, 3)
         cues, aligned_words = _recaption(fitted, text, L["start"], idx)
@@ -372,8 +468,8 @@ def main():
     # and which measured 0.000 to 0.095 consistently across every take.
     #
     # An exact invariant that holds is worth more than a fuzzy one that fires at random.
-    import numpy as _np
-    if len(new_audio) != len(vo):
+    final_patched = any(r["line"] == lines[-1]["idx"] for r in report)
+    if len(new_audio) != len(vo) and not (final_patched and len(new_audio) > len(vo)):
         raise SystemExit(f"patched vo.wav changed length ({len(vo)} -> {len(new_audio)}); "
                          f"NOTHING WAS WRITTEN.")
     patched = []
@@ -386,11 +482,11 @@ def main():
         s1 = int(round((lines[i + 1]["start"] if i + 1 < len(lines)
                         else r["slot_end"]) * sr))
         patched.append((s0, s1))
-    keep = _np.ones(len(vo), dtype=bool)
+    n = outside_unchanged(vo, new_audio, patched, final_patched)
+    keep = np.ones(len(vo), dtype=bool)
     for s0, s1 in patched:
         keep[max(0, s0):min(len(vo), s1)] = False
-    if not _np.array_equal(vo[keep], new_audio[keep]):
-        n = int((vo[keep] != new_audio[keep]).sum())
+    if n:
         raise SystemExit(f"{n} samples OUTSIDE the patched slots changed. The splice is not "
                          f"surgical and NOTHING WAS WRITTEN; vo.wav, vo_lines.json and "
                          f"captions.json are untouched.")
@@ -398,6 +494,8 @@ def main():
           f"{int(keep.sum())} samples outside them bit-identical")
 
     _save_wav(os.path.join(AUD, "vo.wav"), new_audio)
+    if "total" in meta:
+        meta["total"] = round(max(l["end"] for l in lines), 3)
     json.dump(meta, open(os.path.join(OUT, "vo_lines.json"), "w"), indent=1)
     json.dump(new_caps, open(os.path.join(OUT, "captions.json"), "w"), indent=1)
     word_doc["words"] = sorted(new_words, key=lambda w: w["s"])
@@ -449,7 +547,7 @@ def main():
         print(f"  vo_script.json: {changed} line(s) brought into line with the audio")
 
     # The invariant that makes this safe: nothing after a patch moved.
-    assert abs(len(new_audio) - len(vo)) < 2, "patched vo.wav changed length"
+    assert abs(len(new_audio) - len(vo)) < 2 or final_patched, "patched vo.wav changed length"
     print("\n" + "=" * 66)
     print("VO PATCH COMPLETE — no line after a patch moved, so no shot boundary,")
     print("sfx event or storyboard beat needs re-fitting.")

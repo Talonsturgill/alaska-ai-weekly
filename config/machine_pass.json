@@ -1,17 +1,18 @@
 {
   "last_pass": {
-    "date": "2026-11-21",
+    "date": "2026-11-22",
     "shipped": [
-      "suit-rig-necktie-default (engine advance): lib/people.tsx Suit, neutral by default, tie/longHair/reach/reachL/walk params, SuitLook look-dev (b2e5edb)",
-      "caption-band-feet: caption_band_check FEET advisory, flags the 11-21 cut-1 feet behind the caption card, exit code unchanged (a544e39)",
-      "pace-line-pads: generated Pace line uses the measured never-padded wording naming about 115 s, vo_report gap_share row (8270ffe)",
-      "extra-dips-ignored-with-authored-bed: dispatch_mix names extra_dips ignored under an authored bed (83343c2)"
+      "unsourced-scale-qualifier-late: vo_claims_check fails a scale qualifier its cited claims never carry, --scale-self-test with the 11-22 line (e5f971f)",
+      "mirrored-hero-card: mirror_text_check.py source gate in make_cut, five latent lib labels counter-mirrored, MirrorLook look-dev (82e4a8b)",
+      "crop-guard-crash-reads-as-empty: held_beat_probe.cjs error boundary fails naming frame and exception, --self-test (329dfaa)",
+      "faceless-suit-heads (engine advance): lib Suit head form-shaded with a blinking face by default, face={false} to omit (9e773b1)",
+      "patch-last-line-no-slack: vo_patch_lines gives the final line --tail-slack 2.5 s, hermetic --self-test (e97ff47)"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (owner decision, still open, repeat 9)",
-      "gate0-critic-rounds cap (owner decision, still open, repeat 8)",
-      "storyboard-palette-token-overlap: measured, hex distance over whole palettes can't separate films; next compare hero and accent hexes only",
-      "motion craft lowest axis on 32 of 40 week cards: the Suit two-handed reach is the one direct lever shipped; read figure_plan scale next film"
+      "caption-scorer-hair-under-bar (owner decision, still open, repeat 10)",
+      "gate0-critic-rounds cap (owner decision, still open, repeat 9)",
+      "motion craft lowest axis on 30 of 36 week cards: plate pops and Nix wing articulation not yet worked",
+      "same-project-repeat-not-surfaced: dedupe advisory needs an owner call, the brief keeps dedupe rules off limits"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

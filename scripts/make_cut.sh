@@ -144,6 +144,10 @@ step held_plan        2 python3 scripts/held_beat_check.py --source --gate
 # Machine pass 2026-11-16: so must every faced LIB character (a lib export taking `emotion`) and a lib
 # hero, which the gate never read: Ep1116's VoteTree, Grove and Thermometer passed in light sweeps.
 step figure_rig       2 python3 scripts/figure_rig_check.py
+# Machine pass 2026-11-22 (mirrored-hero-card): Ep1122's Nix at facing={-1} carried its NO card
+# backwards for 3.1 s until label_footprint caught it on cut 4. Fails any <text> in lib or the episode
+# drawn under an odd number of `facing` mirrors; five more lib characters had the same latent defect.
+step mirror_text      2 python3 scripts/mirror_text_check.py
 # Machine pass 2026-11-06, a repeat offender (empty top of the square named by every seat on 10-31,
 # 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
 # 420 to 690); this fails the source gates when the film mean is over the ceiling calibrated on eight
