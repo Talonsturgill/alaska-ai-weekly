@@ -120,7 +120,7 @@ HERO = {
  12: ("dashed beaker + dashed tank + LAB bar + PILOT bar", "60% bars, 40% vessels"),
  13: ("bassinet reactor + swinging bench lamp + frosted feeder + reference feeder + stamp", "40% bassinet, 35% feeders, 25% card"),
  14: ("cobalt wall + Nix silhouette + reticle card + flask at the wall foot + paper staircase on the Chugach behind + dashed GOAL stool + dashed column + Chugach dusk", "40% wall, 35% column and range, 25% Nix and flask"),
- 15: ("jar rim + Nix + edge-on card + falling lump", "50% Nix, 30% jar glass, 20% lump"),
+ 15: ("jar rim + Nix + edge-on card + flask with neck tag turning to AUGUST 2030 + falling lump", "45% Nix, 25% jar glass, 15% flask, 15% lump"),
 }
 PARTS = {1: 52, 2: 46, 3: 50, 4: 52, 5: 44, 6: 54, 7: 30, 8: 50, 9: 46, 10: 44, 11: 48, 12: 40, 13: 46, 14: 54, 15: 40}
 KICKS = (13, 35)
