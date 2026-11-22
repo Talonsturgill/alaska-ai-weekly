@@ -1,0 +1,90 @@
+{
+ "edition_id": "2026-11-22",
+ "profile": "alaska_ai",
+ "story_segments": "3 contiguous segments of 44.5 s from the released 9:16 master",
+ "results": [
+  {
+   "platform": "linkedin",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "6d907759d8974dfc865968eafdce67ab",
+   "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7530185324862275584/"
+  },
+  {
+   "platform": "facebook",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "8360b7f632c64d6983e68f1aadb6e937",
+   "link": "https://www.facebook.com/2003130316607965/videos/1457549536502803"
+  },
+  {
+   "platform": "instagram",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "dce198eb10534f16a706c0df4c0313e3",
+   "link": "https://www.instagram.com/reel/DgCYH6oAZQR/"
+  },
+  {
+   "platform": "tiktok",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "890a304dcc5942c19fbf8c05aea66ee3",
+   "link": "https://www.tiktok.com/@alaskaai_/video/7710909669711056141"
+  },
+  {
+   "platform": "youtube",
+   "placement": "feed",
+   "status": "PUBLISHED",
+   "request_id": "fefb84bface341bc9bccc540db58ed6d",
+   "link": "https://www.youtube.com/watch?v=0g_7Xm25P2w"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "status": "PUBLISHED",
+   "request_id": "2c571c56d9d74076aa9ab161cbac89b9",
+   "segment": 0,
+   "link": "https://www.instagram.com/stories/alaskaai_/"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "status": "PUBLISHED",
+   "request_id": "841c6b071d4d408daf5dc69bb6711e3a",
+   "segment": 1,
+   "post_id": "18084605039364475"
+  },
+  {
+   "platform": "instagram",
+   "placement": "story",
+   "status": "PUBLISHED",
+   "request_id": "ce8edb788cda442db2a42a2ff6466328",
+   "segment": 2,
+   "link": "https://www.instagram.com/stories/alaskaai_/"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "status": "PUBLISHED",
+   "request_id": "cad746788af54aeaa99c1fa8563f534f",
+   "segment": 0,
+   "post_id": "1368062221973657"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "status": "PUBLISHED",
+   "request_id": "36ba6e0cddd348378010391a9f13fd31",
+   "segment": 1,
+   "post_id": "1882249179452271"
+  },
+  {
+   "platform": "facebook",
+   "placement": "story",
+   "status": "PUBLISHED",
+   "request_id": "f6d568985d264946817d83738e0ad1df",
+   "segment": 2,
+   "post_id": "1867280951092932"
+  }
+ ]
+}
