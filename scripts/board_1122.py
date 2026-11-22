@@ -31,12 +31,12 @@ B = [
  (9, 3, 0.0, "paper", "a paper staircase", "unrolls out of the window and climbs the Chugach face as a step counter runs up the flights", "daunting", "TODAY'S ROUTE · PER BRIGGS", "the paper unrolls", ""),
  (10, 3, W("acids"), "hiss", "acid, heat and solvent drums", "shake on the bottom steps as steam pours over them", "ominous", "ACIDS · HEAT · SOLVENTS", "the drums steam", ""),
  (11, 3, W("hundred"), "thud", "a faceless worker in a hard hat with a drum on a hand truck", "drops onto a low step and mops his brow as the counter lands", "tired", "CAN TAKE 200 STEPS · PER BRIGGS", "the counter lands", ""),
- (12, 4, 0.0, "bloom", "the microbe crew in tiny hard hats", "lifts the empty flask off the bench and it blooms lilac", "proud", "WORKED BEFORE · IN THE LAB", "the flask blooms", ""),
+ (12, 4, 0.0, "bloom", "the microbe crew in tiny hard hats", "lifts the empty flask off the bench and carries it toward the jar", "proud", "WORKED BEFORE · IN THE LAB", "the flask blooms", ""),
  (13, 5, 0.0, "rumble", "a cobalt wall", "rises out of the floor behind the bench block by block until it blots out the window", "looming", "NOT YET SCALED · NOT YET VIABLE", "the wall rises", "rehook: a cobalt wall rises behind the glowing flask and blots out the window"),
  (14, 5, W("wall"), "thump", NIX, "tilts back to follow the wall up as the last block seats and its card tips down", "worried", "THE WALL", "the block seats", ""),
- (15, 6, 0.0, "swoosh", "a map table", "slides in with Alaska, Canada between it and the lower 48, as pins drop on Anchorage and Fairbanks", "bright", "NSF FUNDING", "the pins drop", ""),
- (16, 6, W("six"), "stamp", "a $6M stamp", "punches onto the Anchorage pin", "bright", "NSF · $6M PROJECT · LED BY BRIGGS, UAA", "the stamp punches", ""),
- (17, 6, W("Briggs"), "pin", "two more pins", "drop in Montana and Wyoming as a dashed line draws between all four", "bright", "UAF · MONTANA TECH · WYOMING", "the line draws", ""),
+ (15, 6, 0.0, "swoosh", "a map table", "slides in with Alaska, Canada between it and the lower 48, as four pins drop in Anchorage, Fairbanks, Montana and Wyoming and a dashed line draws between them, the glowing flask at the table's edge", "bright", "UAA · UAF · MONTANA TECH · WYOMING", "the pins drop", ""),
+ (16, 6, W("six"), "punch", "a $6M stamp", "punches down onto the middle of the dashed network, its ring spanning all four pins", "bright", "NSF · $6M · WHOLE PROJECT", "the stamp punches", ""),
+ (17, 6, W("Briggs"), "swing", "a small tag", "swings down off the Anchorage pin on a string", "bright", "LED BY BRIGGS, UAA", "the tag swings", ""),
  (18, 7, 0.0, "whoosh", "a cutaway into the glowing flask", "opens as crumbs of coal refuse sink and the microbe crew swims in", "busy", "MICROBES · RARE EARTHS FROM COAL REFUSE", "the crew swims in", ""),
  (19, 7, W("waste"), "pop", "the microbes", "grab scattered lilac specks and squeeze them into one bright cluster", "proud", "COAL REFUSE · WASTE FROM COAL PROCESSING", "the cluster pops", ""),
  (20, 8, 0.0, "slide", "a dashed step stool tagged GOAL", "slides in at the foot of the 200 paper steps, still only an outline", "hopeful", "GOAL · \"FOUR OR FIVE\" STEPS · A HOPE", "the outline slides in", ""),
@@ -47,35 +47,36 @@ B = [
  (25, 10, W("acidity"), "blip", "the ACIDITY and SALINITY dials", "tick alive one after the other as she connects them", "busy", "ACIDITY · SALINITY", "the needles swing", ""),
  (26, 10, W("oxygen"), "clink", NIX, "swings four tiny monocles down over its eyes as the OXYGEN needle swings alive and she presses the dial once", "focused", "OXYGEN", "the monocles clink", ""),
  (27, 11, 0.0, "buzz", "a row of bench reactors seen from above inside a dashed blueprint frame", "tilts into view as one reactor's oxygen needle turns toward the red and its foam starts to rise", "uneasy", "PLANNED · PER BRIGGS", "the needle drifts", "rehook: from above, one reactor's oxygen needle drifts toward the red inside a PLANNED blueprint frame"),
- (28, 11, W("fail"), "alarm", NIX, "on a rail above the bay raises its card as the foam swells, before it crests", "alert", "\"WHEN THAT REACTOR'S GOING TO FAIL\" · BRIGGS", "the card rises", ""),
+ (28, 11, W("fail"), "alarm", NIX, "on a rail above the bay raises its card as the foam swells, before it crests", "alert", "WHEN A REACTOR'S GOING TO FAIL · PER BRIGGS", "the card rises", ""),
  (29, 11, W("fix"), "click", "a crew microbe", "spins the reactor's valve as Nix's card turns to FIX and the foam settles below the rim", "relieved", "FLAG · THEN FIX · PER BRIGGS", "the foam settles", ""),
  (30, 12, 0.0, "page", "a wall planner in a corridor seen straight on", "tears off month pages one by one that fly toward camera", "frantic", "MONTHS, IF NOT YEARS · PER BRIGGS", "the pages fly", ""),
- (31, 12, W("feedstock"), "stamp", "a SKIPPED stamp", "slams across the stack of months as a feedstock jar slides past a NO card, and the torn pages fly back onto the planner", "smug", "COULD QUICKLY FLAG A BAD FEEDSTOCK · PER BRIGGS", "the pages fly back", ""),
+ (31, 12, W("flag"), "slam", "a SKIPPED stamp", "slams across the stack of months inside a dashed COULD corner frame as a feedstock jar slides past Nix's wing flipping a NO card at the frame edge, and the torn pages fly back onto the planner", "smug", "COULD QUICKLY FLAG A BAD FEEDSTOCK · PER BRIGGS", "the pages fly back", ""),
  (32, 13, 0.0, "swoosh", "a dashed arrow", "rises up a cobalt stripe on the corridor wall and halts a third of the way up", "hopeful", "SHOULD SPEED THE SCALE-UP · PER BRIGGS", "the arrow halts", ""),
- (33, 14, 0.0, "whoosh", "the camera", "pulls out of the corridor onto a cold street where Nix stands at the glass beside the flask, its glow dimming, looking across at another building", "uneasy", "OTHERS HIT THAT WALL", "the street opens", ""),
+ (33, 14, 0.0, "whoosh", "the camera", "pulls out of the corridor onto a cold street where Nix stands on the sidewalk outside another building, the flask beside it, its glow flickering and recovering in the cold", "uneasy", "OTHERS HIT THAT WALL", "the street opens", ""),
  (34, 14, W("pilot"), "hum", "the other building's window", "lights up on a ghost pilot tank in dashed cobalt as a sign swings over its door", "uneasy", "DOE-FUNDED PILOT · DIFFERENT METHOD · 2023", "the sign swings", ""),
- (35, 14, W("lost"), "stamp", "the pilot's ledger inside", "flips page after page, every row stamped red", "grim", "EVERY SCENARIO IN THE RED · DOE-FUNDED PILOT", "the stamps land", ""),
+ (35, 14, W("lost"), "stamp", "one red-stamped ledger page", "slaps flat against the inside of the far window as the camera trucks up to the glass, Nix's reflection small in the pane", "grim", "EVERY SCENARIO IN THE RED · DOE-FUNDED PILOT", "the stamps land", ""),
  (36, 15, 0.0, "slide", "a dashed lab beaker and the dashed pilot tank", "slide in side by side as their bars start to rise", "uneasy", "ONE FEEDSTOCK · THE PILOT'S OWN LAB AND PLANT", "the bars start", ""),
  (37, 15, W("thirty"), "hit", "the LAB bar", "rises 3 of 10 blocks taller than the PILOT bar's 10", "uneasy", "LAB RAN ABOUT 30% HIGHER THAN THE PILOT", "the blocks land", ""),
- (38, 16, 0.0, "rustle", "red ledger pages", "blow in across the dark bench and settle over a bassinet where a tiny reactor rolls over asleep", "sleepy", "\"STILL IN THEIR INFANCY\" · 2021 REVIEW", "the pages settle", "rehook: red ledger pages blow onto the bench and bury a bassinet where a tiny reactor rolls over asleep"),
- (39, 17, 0.0, "tick", "a small reference feeder for neural networks in general", "swings beside the frosted feeder as a dashed fill line, still to be gathered, draws on the frosted glass", "thoughtful", "DATA · THE USUAL LIMIT · 2021 REVIEW", "the line draws", ""),
- (40, 18, 0.0, "stamp", "a rubber stamp", "thuds onto a blank results card on the bench", "plain", "NO RESULTS YET · PLANNED WORK", "the stamp lands", ""),
- (41, 19, 0.0, "flap", NIX, "flies to the foot of the cobalt wall in dusk silhouette and lands facing it", "steady", "NOT OVER THE WALL", "the wings fold", ""),
+ (38, 16, 0.0, "creak", "the bench lamp", "swings in the draft over a bassinet tagged THE FIELD where a tiny reactor rolls over asleep", "sleepy", "\"STILL IN THEIR INFANCY\" · 2021 REVIEW", "the bassinet rocks", "rehook: a bassinet tagged THE FIELD rocks under a swinging lamp, the whole field still asleep"),
+ (39, 17, 0.0, "scratch", "a small reference feeder for neural networks in general", "swings beside the frosted feeder, its needle stopping hard at its own fill line, as a dashed fill line, still to be gathered, draws on the frosted glass and a dashed ? draws on the flask's fill line beside it", "thoughtful", "DATA · THE USUAL LIMIT · 2021 REVIEW", "the line draws", ""),
+ (40, 18, 0.0, "thud", "a rubber stamp", "thuds onto a blank results card on the bench", "plain", "NO RESULTS YET · PLANNED WORK", "the stamp lands", ""),
+ (41, 19, 0.0, "flap", NIX, "flies to the foot of the cobalt wall in dusk silhouette and lands facing it beside the flask set down there", "steady", "NOT OVER THE WALL", "the wings fold", ""),
  (42, 19, W("at"), "swing", NIX, "turns its card to show a sighting reticle and holds it up to the wall", "steady", "AIMED AT IT", "the card turns", ""),
  (43, 20, 0.0, "scribble", "a stick of chalk", "writes AUGUST 2030 on the wall above Nix", "plain", "AWARD RUNS TO AUGUST 2030", "the chalk scratches", ""),
  (44, 20, W("Four"), "slide", "the dashed GOAL stool", "slides out beside the still-towering 200 paper steps, an outline only", "hopeful", "GOAL · \"FOUR OR FIVE\" STEPS", "the outline slides", ""),
  (45, 20, W("full"), "swell", "the camera", "tilts from the flask at the wall's foot up a dashed cobalt plant-scale column to the Chugach ridge at dusk", "awed", "AT FULL SIZE", "the column climbs", ""),
- (46, 21, 0.0, "chime", "the view from inside the empty jar", "looks up through the glass at Nix holding its card edge-on, 2030? on its face", "wry", "AREN'T THE RARE PART · PER BRIGGS", "the card turns", ""),
+ (46, 21, 0.0, "chime", "the view from inside the empty jar", "looks up through the glass at Nix holding its card edge-on, 2030? on its face, the flask on the bench edge past its shoulder turning its neck tag to AUGUST 2030", "wry", "\"THE RARE EARTHS ARE NOT RARE\" · BRIGGS", "the card turns", ""),
  (47, 21, W("early"), "thunk", "a fresh lump of coal refuse", "drops into the jar toward camera, matching the open", "startled", "AN EARLY NO THAT HOLDS UP?", "the jar rings", ""),
+ (48, 4, W("coal"), "pebble", "the crew", "tips a crumb of refuse from the jar's lump into the flask and the flask blooms lilac", "proud", "MICROBES · COAL · IN THE LAB", "the flask blooms", ""),
 ]
 
 PLATE_AT = {i: "on-object" for i in range(1, 60)}
 PLATE_AT.update({1: "lower-third", 15: "lower-third", 33: "lower-third"})
 CLAIM_MAP = {1: ["narration"], 2: ["narration"], 3: ["narration"], 4: ["c1"], 5: ["c2"], 6: ["c2"], 7: ["c4"], 8: ["c3"], 9: ["c5"], 10: ["c5"],
-             11: ["c5"], 12: ["c32"], 13: ["c33"], 14: ["c33"], 15: ["c6"], 16: ["c6"], 17: ["c7"], 18: ["c8"], 19: ["c9"], 20: ["c12"],
+             11: ["c5"], 12: ["c32"], 13: ["c33"], 14: ["c33"], 15: ["c7"], 16: ["c6"], 17: ["c6"], 18: ["c8"], 19: ["c9"], 20: ["c12"],
              21: ["c15"], 22: ["c15"], 23: ["c14"], 24: ["c14"], 25: ["c14"], 26: ["c14"], 27: ["c16"], 28: ["c16"], 29: ["c17"], 30: ["c34"],
              31: ["c34"], 32: ["c25"], 33: ["c22"], 34: ["c22"], 35: ["c22"], 36: ["c23"], 37: ["c23"], 38: ["c24"], 39: ["c26"], 40: ["c28"],
-             41: ["narration"], 42: ["narration"], 43: ["c27"], 44: ["c12"], 45: ["c12"], 46: ["c2"], 47: ["narration"]}
+             41: ["narration"], 42: ["narration"], 43: ["c27"], 44: ["c12"], 45: ["c12"], 46: ["c2"], 47: ["narration"], 48: ["c32"]}
 
 # sid, line, framing, scale, height, stage, pov, layout, motion_vector, hero_treatment, transition, thread, title, means
 S = [
@@ -91,7 +92,7 @@ S = [
  (10, 12, "wide-establish", "wide", "eye", "corridor", "eye-level-immersive", "single-object-void", "radial-emanate", "data-as-subject", "whip-pan", "build", "The fast no", "A corridor planner sheds months, a SKIPPED stamp sends them flying back, and a dashed arrow halts a third of the way up a cobalt stripe"),
  (11, 14, "wide-establish", "extreme-wide", "eye", "street", "eye-level-immersive", "fullbleed-split", "horizontal-traverse", "structure-as-subject", "pull-out", "travel", "Across the street", "On a cold street Nix and the dimming flask look across at another building where a dashed ghost pilot's ledger goes red in every scenario"),
  (12, 15, "data-panel", "medium", "eye", "pilot-bars", "exploded-diagram", "fullbleed-split", "vertical-rise", "data-as-subject", "push-in", "carry", "Their lab and plant", "The pilot's own dashed beaker and tank, its LAB bar 3 of 10 blocks taller than its PILOT bar, one feedstock"),
- (13, 16, "subject-portrait", "close", "eye", "bench-night", "macro-closeup", "stacked-layers", "vertical-descent", "instrument-as-subject", "carried-element", "match", "Still early", "Red ledger pages blow onto the night bench over a sleeping bassinet reactor, a dashed TO BE GATHERED line draws on the frosted feeder, and NO RESULTS YET stamps a card"),
+ (13, 16, "subject-portrait", "close", "eye", "bench-night", "macro-closeup", "stacked-layers", "vertical-descent", "instrument-as-subject", "carried-element", "match", "Still early", "Under a swinging lamp a bassinet tagged THE FIELD rocks with a sleeping reactor, a dashed to-be-gathered line draws on the frosted feeder, and NO RESULTS YET stamps a card"),
  (14, 19, "wide-establish", "extreme-wide", "low", "wall-foot", "eye-level-immersive", "stacked-layers", "vertical-rise", "landscape-as-subject", "hard-cut", "carry", "Aimed at it", "In dusk silhouette at the wall's foot Nix aims a reticle card at the wall, chalk writes AUGUST 2030, a dashed GOAL stool and the camera tilts up a plant-scale column to the Chugach"),
  (15, 21, "push-detail", "close", "low", "jar-inside", "macro-closeup", "centered-hero-lowerthird", "vertical-rise", "single-organic-hero", "graphic-match", "match", "The next lump", "From inside the jar, Nix looks down holding its card edge-on, 2030? on its face, as a fresh lump drops in toward camera"),
 ]
@@ -117,8 +118,8 @@ HERO = {
  10: ("corridor planner + month pages + SKIPPED stamp + dashed arrow", "45% planner, 30% pages, 25% arrow"),
  11: ("street + Nix + dimming flask + other building + ghost tank + ledger", "40% far window, 35% Nix and flask, 25% street"),
  12: ("dashed beaker + dashed tank + LAB bar + PILOT bar", "60% bars, 40% vessels"),
- 13: ("bassinet reactor + red ledger pages + frosted feeder + reference feeder + stamp", "40% bassinet, 35% feeders, 25% card"),
- 14: ("cobalt wall + Nix silhouette + reticle card + dashed column + Chugach dusk", "40% wall, 35% column and range, 25% Nix"),
+ 13: ("bassinet reactor + swinging bench lamp + frosted feeder + reference feeder + stamp", "40% bassinet, 35% feeders, 25% card"),
+ 14: ("cobalt wall + Nix silhouette + reticle card + flask at the wall foot + paper staircase on the Chugach behind + dashed GOAL stool + dashed column + Chugach dusk", "40% wall, 35% column and range, 25% Nix and flask"),
  15: ("jar rim + Nix + edge-on card + falling lump", "50% Nix, 30% jar glass, 20% lump"),
 }
 PARTS = {1: 52, 2: 46, 3: 50, 4: 52, 5: 44, 6: 54, 7: 30, 8: 50, 9: 46, 10: 44, 11: 48, 12: 40, 13: 46, 14: 54, 15: 40}
@@ -135,10 +136,10 @@ def BOARD_HEAD(b_at, end, ad, tr):
     return {
         "run_date": "2026-11-22", "slug": "the-bird-that-says-no", "title": "The Bird That Says No",
         "concept": ("Brandon Briggs, a UAA biologist, says the rare earths are not rare; the hard part is concentrating them, which he says can take acids, heat, solvents and 200 steps. "
-                    "His lab already got microbes to pull rare earths from coal in the lab but it never scaled to commercial viability. The NSF is funding a $6M project led by UAA, with UAF, Montana Technological University and Wyoming, to use microbes on coal refuse, with a goal of four or five steps. "
-                    "A deep-learning model led by Masoumeh Heidari Kapourchali will read reactor temperature, acidity, salinity and oxygen, call a failing reactor and a fix, and could rule out a bad feedstock fast instead of months or years, which Briggs says should speed the scale-up. "
-                    "The test: a DOE-funded pilot (a different method) lost money on paper in every scenario, its lab recovery ran about 30 percent above the pilot for one feedstock, reviews call the field in its infancy, neural networks are limited by data, and no results are reported yet. "
-                    "Drawn as NIX, a felt canary with a NO card, on a blue-hour lab bench under the Chugach, a flask that glows and then meets a cobalt scale wall, and a 200-step paper staircase with a GOAL stool at its foot."),
+                    "His lab already got microbes to do it with coal in the lab but it never scaled to commercial viability. The NSF is funding a $6M project led by Briggs, with UAF, Montana Technological University and Wyoming, to use microbes on coal refuse, with a goal of four or five steps. "
+                    "A deep-learning model led by Masoumeh Heidari Kapourchali will read reactor temperature, acidity, salinity and oxygen, flag a reactor before it fails and a fix, and could quickly flag a bad feedstock instead of months or years, which Briggs says should speed the scale-up. "
+                    "The test: a federally funded pilot elsewhere, by a different method, lost money on paper in every scenario, its own lab recovery ran about 30 percent above its pilot plant for one feedstock, reviews call the field in its infancy, neural networks are usually limited by data, and no results are reported yet. "
+                    "Drawn as NIX, a felt canary holding a card that turns between NO and OK, through seven worlds: a blue-hour lab bench under the Chugach, a map table, a flask cutaway, a top-down reactor bay inside a PLANNED blueprint frame, a corridor planner, a cold street outside another building's pilot, and a dusk wall where Nix aims a reticle card AT the wall beside a dashed GOAL stool, closing from inside a jar."),
         "derived_from": "scratch", "engine": "infographic-2.5d", "total_seconds": round(end, 2),
         "fingerprint": {"pov": "eye-level-immersive", "motion_vector": "vertical-rise", "hero_treatment": "single-organic-hero", "layout": "centered-hero-lowerthird",
                         "register": "naturalistic-scene", "palette": PALETTE, "camera_strategy": "rise-reveal",
@@ -160,13 +161,13 @@ def BOARD_HEAD(b_at, end, ad, tr):
         "throughline": {"object": "the bench flask", "lands_in_button": "the flask in the jar-view button, seen past Nix on the bench edge, fill line unmarked, tagged AUGUST 2030",
                         "states": [
                             {"at_s": b_at(1), "state": "F1 EMPTY beside the jar with a blank neck tag"},
-                            {"at_s": b_at(12), "state": "F2 GLOWING LILAC, lifted by the crew, worked before in the lab"},
-                            {"at_s": b_at(15), "state": "F2b out of the wall's shadow on the map table, its Anchorage pin stamped"},
+                            {"at_s": b_at(48), "state": "F2 GLOWING LILAC, lifted by the crew, worked before in the lab"},
+                            {"at_s": b_at(15), "state": "F2b at the map table's edge, glowing, as the four pins drop"},
                             {"at_s": b_at(18), "state": "F3 OPEN IN CUTAWAY, microbes squeezing specks into a cluster"},
                             {"at_s": b_at(27), "state": "F4 one of a row of reactors inside a PLANNED blueprint frame, foam steadied below the rim"},
                             {"at_s": b_at(33), "state": "F5 OUTSIDE on a cold street beside Nix, glow dimming, never inside the other building, fill line blank"},
                             {"at_s": b_at(39), "state": "F6 BACK ON THE NIGHT BENCH with a dashed ? where a scale-up reading would go"},
-                            {"at_s": b_at(45), "state": "F7 AT THE WALL'S FOOT in dusk silhouette, fill line unmarked, AUGUST 2030 chalked above"},
+                            {"at_s": b_at(41), "state": "F7 AT THE WALL'S FOOT in dusk silhouette, fill line unmarked, AUGUST 2030 chalked above"},
                             {"at_s": b_at(46), "state": "F8 on the bench edge past Nix in the jar view, its neck tag now reading AUGUST 2030, fill line unmarked"}]},
         "reveals": [
             {"t": b_at(9), "type": "scale-pullback", "what": "the paper staircase unrolls out the window and climbs the whole Chugach face", "hold_s": 0.8},

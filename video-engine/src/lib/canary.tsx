@@ -54,8 +54,8 @@ export type NixMood = 'alert' | 'smug' | 'worried' | 'steady' | 'tired';
 export const Nix: React.FC<{
   f: number; x: number; y: number; scale?: number; facing?: 1 | -1; mood?: NixMood; card?: number; flip?: number;
   cardText?: string; cardBack?: string; snapAt?: number; look?: number; monocles?: boolean; flag?: number; flagText?: string;
-  cues?: number[]; seed?: number; hop?: number;
-}> = ({f, x, y, scale = 1, facing = 1, mood = 'alert', card = 0, flip = 0, cardText = 'NO', cardBack = 'NO', snapAt, look = 0, monocles = false, flag = 0, flagText, cues, seed = 3, hop = 0}) => {
+  cues?: number[]; seed?: number; hop?: number; reticle?: boolean; silhouette?: boolean;
+}> = ({f, x, y, scale = 1, facing = 1, mood = 'alert', card = 0, flip = 0, cardText = 'NO', cardBack = 'NO', snapAt, look = 0, monocles = false, flag = 0, flagText, cues, seed = 3, hop = 0, reticle = false, silhouette = false}) => {
   const id = uid(`nix${seed}`);
   const t = tones(CAN.felt);
   const bp = beatPose(f, seed, cues, 150);
@@ -79,9 +79,9 @@ export const Nix: React.FC<{
   const fg = clamp01(flag);
   const brow = mood === 'worried' ? 8 : mood === 'smug' ? -6 : mood === 'tired' ? 2 : 0;
   const lid = mood === 'tired' ? 0.5 : mood === 'smug' ? 0.35 : 0;
-  const cardW = Math.max(54, cardText.length * 15 + 24);
+  const cardW = Math.max(54, Math.max(cardText.length, cardBack.length) * 15 + 24);
   return (
-    <g transform={`translate(${x} ${y + hopY}) scale(${scale * facing} ${scale})`}>
+    <g transform={`translate(${x} ${y + hopY}) scale(${scale * facing} ${scale})`} style={silhouette ? {filter: 'brightness(0.32) saturate(0.6)'} : undefined}>
       <FormGradient id={id} t={t} />
       <ContactShadow cx={0} cy={2} rx={46} ry={8} opacity={0.32} blur={6} />
       {/* feet gripping the perch */}
@@ -141,8 +141,11 @@ export const Nix: React.FC<{
                 <rect x={-cardW / 2 + 4} y={-78 + 6} width={cardW} height={58} rx={6} fill="#000" opacity={0.25} />
                 <rect x={-cardW / 2} y={-78} width={cardW} height={58} rx={6} fill={CAN.card} stroke={INK} strokeWidth={4} />
                 <rect x={-cardW / 2 + 5} y={-73} width={cardW - 10} height={8} rx={3} fill={CAN.red} opacity={0.85} />
-                {edge > 0.25 && (
+                {edge > 0.25 && !reticle && (
                   <text x={0} y={-35} textAnchor="middle" fontFamily="JetBrains Mono" fontWeight={800} fontSize={26} fill={INK}>{shown}</text>
+                )}
+                {edge > 0.25 && reticle && (
+                  <g transform="translate(0 -45)"><circle r={16} fill="none" stroke={CAN.red} strokeWidth={4} /><path d="M-24,0 L-8,0 M8,0 L24,0 M0,-24 L0,-8 M0,8 L0,24" stroke={INK} strokeWidth={4} /></g>
                 )}
               </g>
               {/* the wingtip closes over the card foot */}
@@ -365,8 +368,8 @@ export const Staircase: React.FC<{f: number; x: number; y: number; x2: number; y
  * `seed` varies the ridge, the window props and the near-plane glassware so no two shots stamp alike.
  * Draws within 0..1080 x 0..1920; benchY is the bench top line.
  */
-export const BenchWorld: React.FC<{f: number; seed?: number; dusk?: number; benchY?: number; winTop?: number; winBottom?: number; lamp?: number; near?: boolean; children?: React.ReactNode}> =
-({f, seed = 1, dusk = 0, benchY = 1240, winTop = 160, winBottom = 980, lamp = 1, near = true, children}) => {
+export const BenchWorld: React.FC<{f: number; seed?: number; dusk?: number; benchY?: number; winTop?: number; winBottom?: number; lamp?: number; near?: boolean; behind?: React.ReactNode; wallUp?: number; children?: React.ReactNode}> =
+({f, seed = 1, dusk = 0, benchY = 1240, winTop = 160, winBottom = 980, lamp = 1, near = true, behind, wallUp = 0, children}) => {
   const id = uid(`bw${seed}`);
   const dk = clamp01(dusk);
   const mix = (a: string, b: string, k: number) => {
@@ -441,6 +444,8 @@ export const BenchWorld: React.FC<{f: number; seed?: number; dusk?: number; benc
           </g>
         );
       })}
+      {wallUp > 0 && <ScaleWall f={f} x={540} y={benchY} w={1000} h={benchY - winTop + 40} grow={wallUp} seed={seed + 40} />}
+      {behind}
       {/* bench */}
       <rect x={-60} y={benchY} width={1200} height={30} fill={CAN.benchTop} stroke={INK} strokeWidth={5} />
       <rect x={-60} y={benchY + 30} width={1200} height={760} fill={CAN.bench} />
@@ -711,6 +716,29 @@ export const AwardBoard: React.FC<{f: number; x: number; y: number; s?: number; 
           </g>
         );
       })}
+    </g>
+  );
+};
+
+/** The GOAL step stool: four or five chalk-white treads, round-cornered. outline (default true) draws it dashed: a goal, never a result. slide 0..1 slides it in from the right. */
+export const GoalStool: React.FC<{f: number; x: number; y: number; s?: number; treads?: number; outline?: boolean; slide?: number; label?: string}> =
+({f, x, y, s = 1, treads = 5, outline = true, slide = 1, label = 'GOAL'}) => {
+  const k = clamp01(slide);
+  if (k <= 0) return null;
+  const ox = (1 - k) * 260;
+  const tw = 30, th = 26;
+  let d = `M0,0`;
+  for (let i = 0; i < treads; i++) d += ` L${i * tw},${-(i + 1) * th} L${(i + 1) * tw},${-(i + 1) * th}`;
+  d += ` L${treads * tw},0 Z`;
+  return (
+    <g transform={`translate(${x + ox} ${y}) scale(${s})`} opacity={Math.min(1, k * 1.6)}>
+      {!outline && <ContactShadow cx={treads * tw / 2} cy={2} rx={treads * tw * 0.6} ry={7} opacity={0.3} blur={5} />}
+      <path d={d} fill={outline ? CAN.chalk : CAN.chalk} fillOpacity={outline ? 0.14 : 1} stroke={outline ? CAN.chalk : INK} strokeWidth={4}
+        strokeDasharray={outline ? '10 7' : undefined} strokeLinejoin="round" strokeDashoffset={-f * 0.4} />
+      <g transform={`translate(${treads * tw / 2} 26)`}>
+        <rect x={-tagW(label, 16) / 2} y={-14} width={tagW(label, 16)} height={26} rx={4} fill={CAN.card} stroke={INK} strokeWidth={2.5} />
+        <text x={0} y={5} textAnchor="middle" fontFamily={MONO_F} fontWeight={800} fontSize={16} fill={INK}>{label}</text>
+      </g>
     </g>
   );
 };
