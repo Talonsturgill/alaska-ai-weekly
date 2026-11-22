@@ -258,7 +258,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} overlay={
       <g>
-        <Plate text="AN AI BUILT TO SAY NO · FAST" x={540} y={600} size={34} p={win(f, b1 + 4, b2 + 8)} />
+        <Plate text="AN AI PLANNED TO SAY NO · FAST" x={540} y={600} size={34} p={win(f, b1 + 4, b2 + 8)} />
         <Plate text="ONE JOB" x={540} y={600} size={36} tone="dark" p={win(f, b2 + 10, b3)} /> {/* plate-overlap-ok */}
         <Plate text="NO? · OK?" x={540} y={600} size={38} p={win(f, b3 + 6)} /> {/* plate-overlap-ok */}
       </g>
@@ -306,7 +306,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <BenchWorld f={f} seed={2} dusk={0.08} behind={
-          <Suit f={f} x={230} y={1600} s={2.35} seed={4} cues={[b4, b6, b8]} coat="#5B6168" reach={0.7 + 0.3 * lift} facing={1} />
+          <Suit f={f} x={230} y={1600} s={2.35} seed={4} cues={[b4, b6, b8]} coat="#5B6168" reach={0.7 + 0.3 * lift - (f > b8 ? 0.25 * Math.max(0, Math.sin((f - b8) / 6)) : 0)} facing={1} />
         }>
           {/* specks across the range when the magnifier lifts */}
           {Array.from({length: 22}).map((_, i) => (
@@ -393,7 +393,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
         <Drum f={f} x={320} y={1340} label="HEAT" color="#8C7A80" shake={clamp01((f - b10 - 6) / 6)} steam={clamp01((f - b10 - 6) / 10)} seed={2} />
         <Drum f={f} x={440} y={1340} label="SOLVENT" color="#6E7E78" shake={clamp01((f - b10 - 12) / 6)} steam={clamp01((f - b10 - 12) / 10)} seed={3} />
         <g transform={`translate(0 ${sit * 30})`}>
-          <Suit f={f} x={640} y={1310} s={0.9} seed={7} cues={[b10, b11]} coat="#3E6A5A" gain={1 - sit * 0.5} />
+          <Suit f={f} x={640} y={1310} s={0.9} seed={7} cues={[b10, b11]} coat="#3E6A5A" gain={1 - sit * 0.5} reachL={sit * (0.75 + 0.2 * Math.sin((f - b11) / 5))} reach={0.2 * (1 - sit)} />
           <path d="M612,1052 q28,-30 56,0 Z" fill="#E0B23A" stroke={C.ink} strokeWidth={3} /><rect x={604} y={1048} width={72} height={8} rx={3} fill="#B98E14" stroke={C.ink} strokeWidth={2} />
         </g>
         <g transform={`translate(720 ${1300 + sit * 10})`}>
@@ -459,9 +459,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} bg="#3C3F43" overlay={
       <g>
-        <Plate text="UAA · UAF · MONTANA TECH · WYOMING" x={540} y={600} size={30} p={win(f, b15 + 10, b16)} />
-        <Plate text="NSF · $6M · WHOLE PROJECT" x={540} y={600} size={34} tone="dark" p={win(f, b16 + 4, b17 + 6)} /> {/* plate-overlap-ok */}
-        <Plate text="LED BY BRIGGS, UAA" x={540} y={600} size={34} p={win(f, b17 + 8)} /> {/* plate-overlap-ok */}
+        <Plate text="UAA · UAF · MONTANA TECH · WYOMING" x={540} y={1250} size={30} p={win(f, b15 + 10, b16)} />
+        <Plate text="NSF · $6M · WHOLE PROJECT" x={540} y={1250} size={34} tone="dark" p={win(f, b16 + 4, b17 + 6)} /> {/* plate-overlap-ok */}
+        <Plate text="LED BY BRIGGS, UAA" x={540} y={1250} size={34} p={win(f, b17 + 8)} /> {/* plate-overlap-ok */}
       </g>
     }>
       <SVG>
@@ -493,7 +493,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             );
           })}
           {stamp > 0 && (
-            <g transform={`translate(520 800) scale(${1.4 - 0.4 * stamp})`} opacity={stamp}>
+            <g transform={`translate(520 800) scale(${stamp < 0.7 ? 1.3 - 0.35 * (stamp / 0.7) : 0.95 + 0.05 * ((stamp - 0.7) / 0.3)})`}>
               <circle r={170} fill="none" stroke={C.loss} strokeWidth={12} />
               <circle r={154} fill="none" stroke={C.loss} strokeWidth={4} />
               <rect x={-96} y={-40} width={192} height={80} rx={8} fill={C.chalk} stroke={C.loss} strokeWidth={5} />
@@ -583,7 +583,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const land = ease(f, b21, 20);
   const nixY = lerp(700, 1240, land);
   const hang = ease(f, b22, 18);
-  const dials = [{x: 400, l: 'TEMPERATURE', on: b24}, {x: 530, l: 'ACIDITY', on: b25}, {x: 660, l: 'SALINITY', on: b25 + 10}, {x: 790, l: 'OXYGEN', on: b26}];
+  const dials = [{x: 365, l: 'TEMPERATURE', on: b24}, {x: 525, l: 'ACIDITY', on: b25}, {x: 665, l: 'SALINITY', on: b25 + 10}, {x: 800, l: 'OXYGEN', on: b26}];
   const wireK = (i: number) => clamp01((f - (i === 0 ? b23 : dials[i].on - 6)) / 10);
   const cam = track([{t: 0, z: 1.02, fx: 560, fy: 1000}, {t: b23, z: 1.06, fx: 600, fy: 1040}, {t: p.dur, z: 1.1, fx: 640, fy: 1060}]);
   return (
@@ -601,7 +601,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <BenchWorld f={f} seed={8} dusk={0.2} wallUp={1} near={false} behind={
           <Suit f={f} x={235} y={1600} s={2.1} seed={9} cues={[b22, b23, b24, b25, b26]} coat="#6C6A7A" longHair reach={0.35 + 0.45 * hang + 0.15 * Math.max(0, Math.sin((f - b23) / 7)) * (f > b23 ? 1 : 0)} facing={1} />
         }>
-          <g transform={`translate(430 ${lerp(560, 700, hang)})`} opacity={hang > 0 ? 1 : 0}>
+          <g transform={`translate(${lerp(300, 430, hang)} ${lerp(980, 700, hang)}) rotate(${(1 - hang) * 18 + 4 * Math.sin(f / 9) * (1 - clamp01((f - b22 - 20) / 30))})`} opacity={f >= b22 - 10 ? 1 : 0}>
             <DataFeeder f={f} x={0} y={0} s={0.9} seeds={0} frosted />
             <Lab text="HOW MUCH? NOT STATED" x={0} y={214} size={14} />
           </g>
@@ -610,11 +610,11 @@ const S8: React.FC<SceneProps> = ({p}) => {
             return (
               <g key={i}>
                 <path d={`M ${d.x} 1160 Q ${(d.x + 1000) / 2} ${1120 - i * 10} 980 1160`} stroke={C.ink} strokeWidth={3} fill="none" strokeDasharray="6 0" opacity={wireK(i)} pathLength={1} style={{strokeDasharray: `${wireK(i)} 1`}} />
-                <BenchDial f={f} x={d.x} y={1240} s={0.95} label={d.l} value={0.15 + on * (0.35 + 0.1 * i)} jitter={on * 3} seed={i + 1} />
+                <BenchDial f={f} x={d.x} y={1240} s={0.88} label={d.l} value={0.15 + on * (0.35 + 0.1 * i)} jitter={on * 3} seed={i + 1} />
               </g>
             );
           })}</g></HeldTravel>
-          <Nix f={f} x={985} y={nixY} scale={1.45} look={-0.7} card={0} monocles={f > b26 + 4} cues={[b21, b24, b26]} seed={8} mood="alert" />
+          <Nix f={f} x={965} y={nixY} scale={1.4} look={-0.7} card={0} monocles={f > b26 + 4} cues={[b21, b24, b26]} seed={8} mood="alert" />
           <Floor f={f} kind="cabinet" seed={8} y={1490} />
         </BenchWorld>
       </SVG>
@@ -669,8 +669,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Floor f={f} kind="pipes" seed={9} y={1420} />
         <Microbe f={f} x={830 + 10 * Math.sin(f / 5)} y={1250} scale={1.4} seed={9} rot={fix * 30} mood={fix > 0.5 ? 'proud' : 'worried'} cues={[b29]} />
         <g transform={`translate(780 1240) rotate(${f * 6 * fix})`}><circle r={22} fill="none" stroke={C.ink} strokeWidth={6} /><path d="M-22,0 L22,0 M0,-22 L0,22" stroke={C.ink} strokeWidth={4} /></g>
-        <rect x={60} y={640} width={960} height={14} rx={6} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
-        <Nix f={f} x={300} y={652} scale={1.45} look={0.6} card={card} flip={clamp01((f - b29) / 10)} cardText="NO" cardBack="FIX" cues={[b28, b29]} seed={9} mood={card > 0.5 && fix < 0.5 ? 'worried' : 'steady'} />
+        <rect x={760} y={700} width={320} height={14} rx={6} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
+        <Nix f={f} x={940} y={712} facing={-1} scale={1.3} look={0.6} card={card} flip={clamp01((f - b29) / 10)} cardText="NO" cardBack="FIX" hop={clamp01((f - b28 + 2) / 12)} cues={[b28, b29]} seed={9} mood={card > 0.5 && fix < 0.5 ? 'worried' : 'steady'} />
       </SVG>
     </Frame>
   );
@@ -716,13 +716,13 @@ const S10: React.FC<SceneProps> = ({p}) => {
             <g opacity={0.6}><Stamp cx={440} cy={1000} s={0.5 + 0.1 * (1 - skipped)} text="COULD SKIP" rot={-10} /></g>
           </g>
         )}
-        <g transform={`translate(${lerp(-120, 620, clamp01((f - b31 + 20) / 20))} 1370)`}>
+        <g transform={`translate(${lerp(-120, 620, clamp01((f - b31 + 20) / 20))} 1290)`}>
           <Jar x={0} y={0} s={0.6} />
           <RefuseLump f={f} x={0} y={-8} s={0.5} seed={7} />
         </g>
         <Floor f={f} kind="tiles" seed={10} />
         <g transform="translate(-30 0)">
-          <Nix f={f} x={150} y={1380} scale={1.5} look={0.6} card={ease(f, b31 - 4, 10)} cardText="NO" cues={[b31]} seed={10} mood="smug" />
+          <Nix f={f} x={300} y={1290} scale={1.4} look={0.6} card={ease(f, b31 - 4, 10)} cardText="NO" cues={[b31]} seed={10} mood="smug" />
         </g>
       </SVG>
     </Frame>
@@ -772,10 +772,11 @@ const S11: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 6}).map((_, i) => <rect data-band="ok" key={i} x={-100 + i * 240} y={1345} width={120} height={8} fill={C.chalk} opacity={0.5} />)}
         <rect data-band="ok" x={-200} y={1380} width={1480} height={600} fill="#4A4E52" stroke={C.ink} strokeWidth={4} />
         <Floor f={f} kind="curb" seed={11} />
-        <HeldTravel f={f} x={440} y={1180} w={240} h={200} mode="sweep" seed={111}>
-          <Flask f={f} x={560} y={1380} s={0.95} fill={0.6} glow={flick * 0.55} seed={11} />
+        <rect data-band="ok" x={300} y={1250} width={380} height={130} fill="#6E7378" stroke={C.ink} strokeWidth={4} /><rect x={300} y={1250} width={380} height={14} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
+        <HeldTravel f={f} x={460} y={1080} w={200} h={170} mode="sweep" seed={111}>
+          <Flask f={f} x={560} y={1250} s={0.85} fill={0.6} glow={flick * 0.55} seed={11} />
         </HeldTravel>
-        <Nix f={f} x={420} y={1380} scale={1.5} look={1} card={0.3} cardText="NO" cues={[b33, b35]} seed={11} mood="worried" />
+        <Nix f={f} x={420} y={1250} scale={1.4} look={1} card={0.3} cardText="NO" cues={[b33, b35]} seed={11} mood="worried" />
       </SVG>
     </Frame>
   );
@@ -788,7 +789,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const rise = easeIO(f, b36 + 6, 40);
   const extra = easeIO(f, b37, 20);
   return (
-    <Frame p={p} z0={1.0} z1={1.03} bg="#D9DDE0" overlay={
+    <Frame p={p} z0={1.1} z1={1.14} oy={900} bg="#D9DDE0" overlay={
       <g>
         <Plate text="ONE FEEDSTOCK · THE PILOT'S OWN LAB AND PLANT" displayLines={['ONE FEEDSTOCK', "THE PILOT'S OWN LAB AND PLANT"]} x={540} y={545} size={28} p={win(f, b36 + 4, b37)} />
         <Plate text="PILOT'S OWN LAB RAN ABOUT 30% HIGHER · ONE FEEDSTOCK" displayLines={["PILOT'S OWN LAB RAN ABOUT 30% HIGHER", 'ONE FEEDSTOCK']} x={540} y={545} size={28} tone="dark" p={win(f, b37 + 4)} /> {/* plate-overlap-ok */}
@@ -842,11 +843,11 @@ const S13: React.FC<SceneProps> = ({p}) => {
           </g>
           <HeldTravel f={f} x={200} y={1100} w={260} h={150} mode="shadow" seed={131}><Bassinet f={f} x={330} y={1240} s={1.0} rock={1} /></HeldTravel>
           <Lab text="THE FIELD" x={330} y={1200} size={18} />
-          <g transform="translate(700 600)"><DataFeeder f={f} x={0} y={0} s={0.85} seeds={0} /><rect x={-34} y={52} width={68} height={92} rx={5} fill="#E8EEF2" opacity={0.85} />
+          <g transform="translate(700 690)"><DataFeeder f={f} x={0} y={0} s={0.85} seeds={0} /><rect x={-34} y={52} width={68} height={92} rx={5} fill="#E8EEF2" opacity={0.85} />
             <path d={`M -34 ${140 - line * 50} L 34 ${140 - line * 50}`} stroke={C.ink} strokeWidth={3} strokeDasharray="8 6" opacity={line} />
             {line > 0.5 && <Lab text="HOW MUCH? NOT STATED" x={0} y={200} size={14} />}
           </g>
-          <g transform="translate(880 700)">
+          <g transform="translate(880 790)">
             <path d="M-10,0 q10,-14 20,0" fill="none" stroke={C.ink} strokeWidth={3} />
             <rect x={-40} y={10} width={80} height={110} rx={6} fill={CAN.glass} opacity={0.6} stroke={C.ink} strokeWidth={3} />
             <rect x={-40} y={60} width={80} height={60} fill="#C9A46A" opacity={0.7} />
@@ -858,7 +859,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
           {line > 0.3 && <g opacity={line}><line x1={520} x2={600} y1={1170} y2={1170} stroke={C.ink} strokeWidth={3} strokeDasharray="6 5" /><Lab text="?" x={630} y={1170} size={20} /></g>}
           <g transform="translate(820 1230)">
             <rect x={-80} y={-14} width={160} height={110} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={3} transform="rotate(-6)" />
-            {stamp > 0 && <Stamp cx={0} cy={40} s={0.16 + 0.04 * (1 - stamp)} text="NO RESULTS YET" rot={-6} />}
+            {stamp > 0 && <Stamp cx={0} cy={40} s={0.19 + 0.08 * (1 - stamp)} text="NO RESULTS YET" rot={-6} onPaper />}
           </g>
           <Floor f={f} kind="pipes" seed={13} y={1480} />
         </BenchWorld>
@@ -927,12 +928,12 @@ const S15: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill="url(#jarLamp)" />
         {/* the room seen up through the jar mouth */}
         <rect x={140} y={360} width={800} height={260} fill="#5C6064" opacity={0.6} />
-        <HeldTravel f={f} x={380} y={720} w={360} h={480} mode="sweep" seed={151}><Nix f={f} x={560} y={1200} scale={2.6} look={0.1} card={1} flip={0.04 * Math.abs(Math.sin(f / 30))} cardText="?" cardBack="?" cues={[b46, b47]} seed={15} mood="steady" /></HeldTravel>
+        <Nix f={f} x={560} y={1200} scale={2.6} look={0.1} card={1} flip={0.04 * Math.abs(Math.sin(f / 30))} cardText="?" cardBack="?" cues={[b46, b47]} seed={15} mood="steady" />
         <ellipse cx={540} cy={1560} rx={430} ry={90} fill="#3C3F43" stroke={CAN.glass} strokeWidth={6} opacity={0.9} />
         <ellipse cx={540} cy={1560} rx={330} ry={60} fill="none" stroke="#8C9196" strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
         <circle cx={360} cy={1555} r={10} fill={CAN.soot} stroke={C.ink} strokeWidth={2} />
         <g transform="translate(870 1240)">
-          <Flask f={f} x={0} y={0} s={0.8} fill={0.55} glow={0.35} seed={15} />
+          <HeldTravel f={f} x={-60} y={-150} w={120} h={150} mode="shadow" seed={152}><Flask f={f} x={0} y={0} s={0.8} fill={0.55} glow={0.35} seed={15} /></HeldTravel>
           <NeckTag x={18} y={-160} text={tagFlip > 0.5 ? '?' : ''} f={f} />
         </g>
         {fall > 0 && fall < 1 && <g transform={`translate(${lerp(300, 250, fall)} ${lerp(260, 1480, fall)}) scale(${lerp(0.5, 1.8, fall * fall)})`} opacity={1 - clamp01((fall - 0.92) / 0.08) * 0.0}><RefuseLump f={f} x={0} y={0} s={1} seed={9} /></g>}
