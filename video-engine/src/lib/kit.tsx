@@ -279,9 +279,9 @@ export const ServerMachine: React.FC<{
         <>
           {/* empty chip slot + empty customer port, labeled */}
           <rect x={-96} y={-250} width={190} height={70} rx={8} fill="none" stroke="#9fb2d6" strokeWidth={5} strokeDasharray="10 8" />
-          <text x={0} y={-208} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill="#9fb2d6">?</text>
+          <text x={0} y={-208} transform={`scale(${facing} 1)`} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={30} fill="#9fb2d6">?</text>
           <rect x={-96} y={-150} width={190} height={60} rx={8} fill="none" stroke="#9fb2d6" strokeWidth={5} strokeDasharray="10 8" />
-          <text x={0} y={-108} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill="#9fb2d6">?</text>
+          <text x={0} y={-108} transform={`scale(${facing} 1)`} textAnchor="middle" fontFamily={BOLD} fontWeight={900} fontSize={26} fill="#9fb2d6">?</text>
         </>
       )}
       {/* ---- FACE ---- */}

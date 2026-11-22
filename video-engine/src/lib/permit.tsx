@@ -119,7 +119,7 @@ export const Dotty: React.FC<{
         {/* her four boxes: a label, a white slot, typed ink as the form fills, a marigold tick when a box is complete */}
         {rows.map((r, i) => (
           <g key={r.lb}>
-            <text x={-116} y={r.y - 2} fontFamily={MONO} fontWeight={800} fontSize={14} letterSpacing={0.6} fill={PM.slateDeep}>{r.lb}</text>
+            <text x={-116} y={r.y - 2} transform={`scale(${facing} 1)`} fontFamily={MONO} fontWeight={800} fontSize={14} letterSpacing={0.6} fill={PM.slateDeep}>{r.lb}</text>
             <rect x={-116} y={r.y + 4} width={232} height={30} rx={5} fill="#FFFFFF" stroke={INK} strokeWidth={3.4} />
             {r.k > 0 && [0, 1, 2, 3].map((j) => {
               const w = [64, 44, 52, 30][(i + j) % 4];
@@ -137,7 +137,7 @@ export const Dotty: React.FC<{
         {sticker > 0.02 && (
           <g transform={`translate(-96,-76) rotate(-12) scale(${snap(f, 0, 1) * clamp01(sticker)})`} opacity={clamp01(sticker * 2)}>
             <circle r={26} fill={PM.marigoldHi} stroke={INK} strokeWidth={4} />
-            <text x={0} y={6} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={INK}>NEW</text>
+            <text x={0} y={6} transform={`scale(${facing} 1)`} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={17} fill={INK}>NEW</text>
           </g>
         )}
         {tack > 0.02 && (
