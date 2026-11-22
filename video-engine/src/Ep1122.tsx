@@ -476,7 +476,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
               <g transform="translate(110,500) scale(0.5)"><path d={AK_PATH} fill={C.chalk} stroke={C.ink} strokeWidth={10} /></g>
               <path transform="translate(0 -200)" d="M 552 735 L 610 700 L 700 716 L 760 688 L 840 706 L 880 760 L 860 820 L 900 860 L 950 800 L 984 780 L 984 1000 L 880 1012 L 800 1016 L 720 1012 L 640 1012 L 586 1005 L 552 900 Z" fill="#C9CDD2" stroke={C.ink} strokeWidth={4} />
               <g transform="translate(560,800) scale(0.46)"><path d={OUTLINE48} fill={C.chalk} stroke={C.ink} strokeWidth={8} /></g>
-              <text x={760} y={690} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill="#6E7378" letterSpacing={6}>CANADA</text>
+              <text x={870} y={720} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill="#6E7378" letterSpacing={6}>CANADA</text>
             </g>
           </HeldTravel>
           <path d={`M ${pins[0].x} ${pins[0].y} L ${pins[1].x} ${pins[1].y} Q 520 900 ${pins[2].x} ${pins[2].y} L ${pins[3].x} ${pins[3].y}`} stroke={C.ink} strokeWidth={6} fill="none"
@@ -488,14 +488,14 @@ const S5: React.FC<SceneProps> = ({p}) => {
                 <ContactShadow cx={0} cy={4} rx={14} ry={4} opacity={0.4} blur={3} />
                 <path d="M0,0 L-14,-30 A16,16 0 1 1 14,-30 Z" fill={C.chalk} stroke={CAN.soot} strokeWidth={5} />
                 <circle cx={0} cy={-36} r={6} fill={C.ink} />
-                <Lab text={pn.l} x={i < 2 ? -70 - pn.l.length * 4 : 70 + pn.l.length * 4} y={-30} size={16} />
+                <Lab text={pn.l} x={i < 2 ? -60 - pn.l.length * 5 : 120 + pn.l.length * 5} y={i === 0 ? 24 : -30} size={16} />
               </g>
             );
           })}
           {stamp > 0 && (
             <g transform={`translate(520 800) scale(${1.4 - 0.4 * stamp})`} opacity={stamp}>
-              <circle r={250} fill="none" stroke={C.loss} strokeWidth={12} />
-              <circle r={232} fill="none" stroke={C.loss} strokeWidth={4} />
+              <circle r={170} fill="none" stroke={C.loss} strokeWidth={12} />
+              <circle r={154} fill="none" stroke={C.loss} strokeWidth={4} />
               <rect x={-96} y={-40} width={192} height={80} rx={8} fill={C.chalk} stroke={C.loss} strokeWidth={5} />
               <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={60} fill={C.loss}>$6M</text>
             </g>
@@ -790,8 +790,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.03} bg="#D9DDE0" overlay={
       <g>
-        <Plate text="ONE FEEDSTOCK · THE PILOT'S OWN LAB AND PLANT" displayLines={['ONE FEEDSTOCK', "THE PILOT'S OWN LAB AND PLANT"]} x={540} y={470} size={28} p={win(f, b36 + 4, b37)} />
-        <Plate text="PILOT'S OWN LAB RAN ABOUT 30% HIGHER · ONE FEEDSTOCK" displayLines={["PILOT'S OWN LAB RAN ABOUT 30% HIGHER", 'ONE FEEDSTOCK']} x={540} y={470} size={28} tone="dark" p={win(f, b37 + 4)} /> {/* plate-overlap-ok */}
+        <Plate text="ONE FEEDSTOCK · THE PILOT'S OWN LAB AND PLANT" displayLines={['ONE FEEDSTOCK', "THE PILOT'S OWN LAB AND PLANT"]} x={540} y={545} size={28} p={win(f, b36 + 4, b37)} />
+        <Plate text="PILOT'S OWN LAB RAN ABOUT 30% HIGHER · ONE FEEDSTOCK" displayLines={["PILOT'S OWN LAB RAN ABOUT 30% HIGHER", 'ONE FEEDSTOCK']} x={540} y={545} size={28} tone="dark" p={win(f, b37 + 4)} /> {/* plate-overlap-ok */}
       </g>
     }>
       <SVG>
@@ -840,7 +840,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
             <path d="M-50,0 L50,0 L30,-40 L-30,-40 Z" fill="#8C9196" stroke={C.ink} strokeWidth={4} />
             <path d="M-50,0 L-240,560 L240,560 L50,0 Z" fill={C.lamp} opacity={0.14} />
           </g>
-          <Bassinet f={f} x={330} y={1240} s={1.0} rock={1} />
+          <HeldTravel f={f} x={200} y={1100} w={260} h={150} mode="shadow" seed={131}><Bassinet f={f} x={330} y={1240} s={1.0} rock={1} /></HeldTravel>
           <Lab text="THE FIELD" x={330} y={1200} size={18} />
           <g transform="translate(700 600)"><DataFeeder f={f} x={0} y={0} s={0.85} seeds={0} /><rect x={-34} y={52} width={68} height={92} rx={5} fill="#E8EEF2" opacity={0.85} />
             <path d={`M -34 ${140 - line * 50} L 34 ${140 - line * 50}`} stroke={C.ink} strokeWidth={3} strokeDasharray="8 6" opacity={line} />
