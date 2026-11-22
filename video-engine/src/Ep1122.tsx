@@ -546,7 +546,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const land = ease(f, b21, 20);
   const nixY = lerp(700, 1240, land);
   const hang = ease(f, b22, 18);
-  const dials = [{x: 420, l: 'TEMPERATURE', on: b24}, {x: 560, l: 'ACIDITY', on: b25}, {x: 700, l: 'SALINITY', on: b25 + 10}, {x: 840, l: 'OXYGEN', on: b26}];
+  const dials = [{x: 400, l: 'TEMPERATURE', on: b24}, {x: 530, l: 'ACIDITY', on: b25}, {x: 660, l: 'SALINITY', on: b25 + 10}, {x: 790, l: 'OXYGEN', on: b26}];
   const wireK = (i: number) => clamp01((f - (i === 0 ? b23 : dials[i].on - 6)) / 10);
   const cam = track([{t: 0, z: 1.02, fx: 560, fy: 1000}, {t: b23, z: 1.06, fx: 600, fy: 1040}, {t: p.dur, z: 1.1, fx: 640, fy: 1060}]);
   return (
@@ -577,7 +577,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
               </g>
             );
           })}</g></HeldTravel>
-          <Nix f={f} x={960} y={nixY} scale={1.5} look={-0.7} card={0} monocles={f > b26 + 4} cues={[b21, b24, b26]} seed={8} mood="alert" hop={land < 1 ? 0 : 0} />
+          <Nix f={f} x={985} y={nixY} scale={1.45} look={-0.7} card={0} monocles={f > b26 + 4} cues={[b21, b24, b26]} seed={8} mood="alert" hop={land < 1 ? 0 : 0} />
         </BenchWorld>
       </SVG>
     </Frame>
