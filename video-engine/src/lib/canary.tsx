@@ -516,7 +516,7 @@ export const BlowPage: React.FC<{f: number; x0: number; y0: number; x1: number; 
 };
 
 /** A hanging bird feeder with a DATA tag; seeds 0..n sit in its tray. Hangs from a hook at (x, y). */
-export const DataFeeder: React.FC<{f: number; x: number; y: number; s?: number; seeds?: number; drop?: number; seed?: number}> = ({f, x, y, s = 1, seeds = 0, drop = 1, seed = 2}) => {
+export const DataFeeder: React.FC<{f: number; x: number; y: number; s?: number; seeds?: number; drop?: number; seed?: number; frosted?: boolean; tag?: string}> = ({f, x, y, s = 1, seeds = 0, drop = 1, seed = 2, frosted = false, tag = 'DATA'}) => {
   const sway = 3 * Math.sin(f / 23 + seed);
   return (
     <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -524,14 +524,15 @@ export const DataFeeder: React.FC<{f: number; x: number; y: number; s?: number; 
       <g transform={`rotate(${sway})`}>
         <line x1={0} y1={0} x2={0} y2={60} stroke={INK} strokeWidth={3} />
         <path d="M-60,60 L0,30 L60,60 Z" fill={CAN.cobaltD} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
-        <rect x={-40} y={60} width={80} height={110} rx={6} fill={CAN.glass} opacity={0.6} stroke={INK} strokeWidth={4} />
+        <rect x={-40} y={60} width={80} height={110} rx={6} fill={frosted ? '#E3E9EE' : CAN.glass} opacity={frosted ? 0.95 : 0.6} stroke={INK} strokeWidth={4} />
+        {frosted && Array.from({length: 5}).map((_, i) => <path key={i} d={`M${-30 + i * 14},${70 + (i % 2) * 8} l8,90`} stroke="#fff" strokeWidth={3} opacity={0.5} />)}
         <rect x={-62} y={170} width={124} height={18} rx={5} fill={CAN.chalk} stroke={INK} strokeWidth={4} />
         {Array.from({length: Math.round(seeds)}).map((_, i) => {
           const sy = 168 - 160 * (1 - clamp01(drop * 3 - i * 0.6));
           return <ellipse key={i} cx={-22 + i * 22} cy={Math.min(168, sy)} rx={6} ry={4} fill="#C9A46A" stroke={INK} strokeWidth={2} />;
         })}
-        <rect x={-tagW('DATA', 22) / 2} y={96} width={tagW('DATA', 22)} height={34} rx={4} fill={CAN.card} stroke={INK} strokeWidth={3} />
-        <text x={0} y={121} textAnchor="middle" fontFamily={MONO_F} fontWeight={800} fontSize={22} fill={INK}>DATA</text>
+        <rect x={-tagW(tag, 22) / 2} y={96} width={tagW(tag, 22)} height={34} rx={4} fill={CAN.card} stroke={INK} strokeWidth={3} />
+        <text x={0} y={121} textAnchor="middle" fontFamily={MONO_F} fontWeight={800} fontSize={22} fill={INK}>{tag}</text>
       </g>
     </g>
   );

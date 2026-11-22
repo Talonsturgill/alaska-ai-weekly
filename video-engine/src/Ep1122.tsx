@@ -131,6 +131,59 @@ const track = (keys: Array<{t: number; z: number; fx: number; fy: number}>) => (
   return clampC(keys[keys.length - 1]);
 };
 
+/** THE FLOOR: a foreground plane under the caption bar with a job per world, varied by act. */
+const Floor: React.FC<{f: number; kind: 'rocks' | 'table' | 'tiles' | 'lab' | 'curb' | 'tape'; seed?: number; y?: number}> = ({f, kind, seed = 1, y = 1480}) => {
+  const items = Array.from({length: 7}).map((_, i) => ({x: 60 + i * 160 + h01(seed, i) * 60, s: 0.7 + h01(seed + 3, i) * 0.6}));
+  return (
+    <g data-band="ok">
+      {kind === 'rocks' && items.map((it, i) => (
+        <g key={i} transform={`translate(${it.x} ${y + 120 + (i % 3) * 90}) scale(${it.s})`}>
+          <ContactShadow cx={0} cy={4} rx={60} ry={10} opacity={0.35} blur={6} />
+          <path d="M-60,0 L-50,-40 L-10,-62 L40,-50 L62,-10 L50,0 Z" fill={i % 2 ? '#6B7076' : '#565B61'} stroke={C.ink} strokeWidth={4} strokeLinejoin="round" />
+          <path d="M-10,-62 L0,-20 L40,-50" fill="none" stroke="#8C9196" strokeWidth={3} />
+          {[0, 1, 2].map((k) => <path key={k} d={`M${70 + k * 10},0 q${4 + 3 * Math.sin(f / 20 + k + i)},-30 ${8},-46`} stroke="#6E7B5A" strokeWidth={4} fill="none" />)}
+        </g>
+      ))}
+      {kind === 'table' && (
+        <g>
+          <rect x={-200} y={y + 40} width={1480} height={500} fill="#5C6064" />
+          <rect x={-200} y={y + 40} width={1480} height={16} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
+          <g transform={`translate(240 ${y + 180}) rotate(-8)`}><rect x={-160} y={-14} width={320} height={28} rx={3} fill={C.chalk} stroke={C.ink} strokeWidth={3} />{Array.from({length: 15}).map((_, k) => <line key={k} x1={-150 + k * 20} x2={-150 + k * 20} y1={-14} y2={k % 5 ? -4 : 4} stroke={C.ink} strokeWidth={2} />)}</g>
+          <g transform={`translate(720 ${y + 230}) rotate(18)`}><rect x={-110} y={-8} width={220} height={16} rx={3} fill="#E8D9A0" stroke={C.ink} strokeWidth={3} /><path d="M110,-8 L136,0 L110,8 Z" fill="#2B2A30" stroke={C.ink} strokeWidth={2} /></g>
+          <g transform={`translate(920 ${y + 150})`}><ContactShadow cx={0} cy={60} rx={60} ry={10} opacity={0.4} blur={6} /><rect x={-46} y={-30} width={92} height={90} rx={10} fill="#EEF0F2" stroke={C.ink} strokeWidth={4} /><path d={`M-20,-40 q6,${-14 - 4 * Math.sin(f / 15)} 0,-28 M10,-40 q-6,${-14 - 4 * Math.cos(f / 15)} 0,-28`} stroke="#fff" strokeWidth={4} fill="none" opacity={0.6} /></g>
+        </g>
+      )}
+      {kind === 'tiles' && (
+        <g>
+          {Array.from({length: 6}).map((_, r) => Array.from({length: 9}).map((_, c) => (
+            <rect key={`${r}-${c}`} x={-200 + c * 170 + (r % 2) * 85} y={y + r * 80} width={160} height={74} fill={(r + c) % 2 ? '#5A5E62' : '#4E5256'} stroke={C.ink} strokeWidth={2} />
+          )))}
+          <g transform={`translate(860 ${y + 140})`}><ContactShadow cx={0} cy={70} rx={70} ry={10} opacity={0.4} blur={6} /><path d="M-60,0 L60,0 L48,70 L-48,70 Z" fill="#E0B23A" stroke={C.ink} strokeWidth={4} /><line x1={-20} y1={0} x2={30} y2={-180} stroke="#8C6A44" strokeWidth={8} /></g>
+        </g>
+      )}
+      {kind === 'lab' && items.map((it, i) => (
+        <g key={i} transform={`translate(${it.x} ${y + 300})`}>
+          <rect x={-18} y={-80 * it.s} width={36} height={80 * it.s} rx={14} fill={CAN.glass} opacity={0.5} stroke={C.ink} strokeWidth={3} />
+          <rect x={-14} y={-40 * it.s} width={28} height={36 * it.s} rx={10} fill={i % 3 === 0 ? C.lilac : '#8FB0B8'} opacity={0.6} />
+        </g>
+      ))}
+      {kind === 'curb' && (
+        <g>
+          <rect x={-200} y={y + 20} width={1480} height={30} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
+          {items.map((it, i) => <rect key={i} x={it.x - 50} y={y + 110 + (i % 2) * 120} width={100} height={60} rx={4} fill="#3E4246" stroke={C.ink} strokeWidth={3} />)}
+          <g transform={`translate(940 ${y + 200})`}><rect x={-14} y={-200} width={28} height={200} fill="#5C6064" stroke={C.ink} strokeWidth={3} /><rect x={-40} y={-260} width={80} height={60} rx={6} fill="#E8D9A0" opacity={0.6 + 0.2 * Math.sin(f / 9)} stroke={C.ink} strokeWidth={3} /></g>
+        </g>
+      )}
+      {kind === 'tape' && (
+        <g>
+          <path d={`M-200,${y + 60} L1280,${y + 60}`} stroke="#E0B23A" strokeWidth={18} strokeDasharray="60 40" />
+          <g transform={`translate(780 ${y + 240}) rotate(-6)`}><ContactShadow cx={0} cy={110} rx={130} ry={12} opacity={0.35} blur={6} /><rect x={-120} y={-100} width={240} height={200} rx={8} fill="#8C6A44" stroke={C.ink} strokeWidth={4} /><rect x={-104} y={-80} width={208} height={170} fill={C.paper} stroke={C.ink} strokeWidth={3} />{Array.from({length: 5}).map((_, k) => <line key={k} x1={-90} x2={90} y1={-50 + k * 30} y2={-50 + k * 30} stroke="#C9CED6" strokeWidth={3} />)}</g>
+        </g>
+      )}
+    </g>
+  );
+};
+
 /** a glass jar on the bench, origin at its base centre */
 const Jar: React.FC<{x: number; y: number; s?: number; ring?: number}> = ({x, y, s = 1, ring = 0}) => (
   <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -183,7 +236,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
             <Flask f={f} x={680} y={1240} s={0.95} fill={0} seed={1} bubbles={false} />
           </HeldTravel>
           <NeckTag x={700} y={1080} f={f} />
-          <Jar x={400} y={1240} ring={land ? ring : 0} />
+          <HeldTravel f={f} x={330} y={1080} w={140} h={170} mode="shadow" seed={12}><Jar x={400} y={1240} ring={land ? ring : 0} /></HeldTravel>
           <g transform={`translate(400 ${lumpY}) scale(${land ? 1 + 0.12 * Math.sin(clamp01((f - 10) / 8) * Math.PI) : 1} ${land ? 1 - 0.12 * Math.sin(clamp01((f - 10) / 8) * Math.PI) : 1})`}>
             <RefuseLump f={f} x={0} y={0} s={1.05} seed={3} />
           </g>
@@ -264,7 +317,7 @@ const Exterior: React.FC<{f: number; dusk?: number; seed?: number}> = ({f, dusk 
       <defs>
         <linearGradient id={`ext${seed}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={top} /><stop offset="1" stopColor={dusk > 0.5 ? C.rose : '#D9D2CC'} /></linearGradient>
       </defs>
-      <rect x={-200} y={-200} width={1480} height={2400} fill={`url(#ext${seed})`} />
+      <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill={`url(#ext${seed})`} />
       <path d={`M-200,900 L60,520 L220,640 L380,360 L540,560 L700,300 L860,520 L1000,420 L1280,760 L1280,2200 L-200,2200 Z`} fill={dusk > 0.5 ? '#3E5A60' : '#B7C3CB'} stroke={C.ink} strokeWidth={5} />
       <path d="M300,430 L380,360 L460,440 M640,360 L700,300 L760,370" fill="none" stroke={CAN.snow} strokeWidth={14} strokeLinecap="round" opacity={0.8} />
       <path d={`M-200,1200 L160,960 L420,1080 L700,900 L1000,1040 L1280,960 L1280,2200 L-200,2200 Z`} fill={dusk > 0.5 ? '#2E4A50' : '#7F949E'} stroke={C.ink} strokeWidth={4} />
@@ -272,7 +325,7 @@ const Exterior: React.FC<{f: number; dusk?: number; seed?: number}> = ({f, dusk 
         const tx = -60 + i * 70 + h01(seed, i) * 30, ty = 1150 + h01(seed + 2, i) * 70, th = 70 + h01(seed + 4, i) * 50;
         return <path key={i} d={`M${tx},${ty - th} L${tx + th * 0.28},${ty} L${tx - th * 0.28},${ty} Z`} fill={CAN.spruce} stroke={C.ink} strokeWidth={2.5} />;
       })}
-      <rect x={-200} y={1300} width={1480} height={900} fill={dusk > 0.5 ? '#2A2D31' : '#5C6064'} />
+      <rect data-band="ok" x={-200} y={1300} width={1480} height={900} fill={dusk > 0.5 ? '#2A2D31' : '#5C6064'} />
       {Array.from({length: 8}).map((_, i) => <line key={i} x1={-200} x2={1280} y1={1340 + i * 80} y2={1340 + i * 80} stroke={C.ink} strokeWidth={2} opacity={0.25} />)}
       <circle cx={980 + 6 * Math.sin(f / 90)} cy={dusk > 0.5 ? 380 : 260} r={dusk > 0.5 ? 0 : 0} fill="#fff" />
     </g>
@@ -315,6 +368,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
           <Drum f={f} x={30} y={-4} s={0.55} label="ACID" seed={8} />
         </g>
         <path d="M650,1000 q14,-20 34,-6" fill="none" stroke={C.ink} strokeWidth={4} opacity={sit} />
+        <Floor f={f} kind="rocks" seed={3} />
       </SVG>
     </Frame>
   );
@@ -346,9 +400,9 @@ const S4: React.FC<SceneProps> = ({p}) => {
             <HeldTravel f={f} x={430} y={880} w={220} h={250} mode="sweep" seed={41}>
               <Flask f={f} x={540} y={1120} s={1.1} fill={0.25 + glow * 0.5} glow={glow} seed={4} />
             </HeldTravel>
-            {[0, 1, 2, 3, 4].map((i) => (
+            <HeldTravel f={f} x={400} y={1120} w={300} h={70} mode="sweep" seed={42}><g>{[0, 1, 2, 3, 4].map((i) => (
               <Microbe key={i} f={f} x={430 + i * 55} y={1150 + (i % 2) * 14} scale={1.0} seed={i + 1} rot={(i % 2 ? -14 : 14)} mood="proud" cues={[b12, b48]} />
-            ))}
+            ))}</g></HeldTravel>
           </g>
           <Nix f={f} x={850} y={1240} scale={1.05} look={wall > 0.3 ? -0.2 : -0.6} snapAt={b13 + 8} card={1 - ease(f, b14, 12) * 0.6} cardText="NO" cues={[b13, b14]} seed={6} mood={f > b14 ? 'worried' : 'alert'} />
         </BenchWorld>
@@ -412,6 +466,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
           {tag > 0 && <g transform={`translate(${pins[0].x} ${pins[0].y - 36})`}><path d={`M0,0 L${-20 * tag},${50 * tag}`} stroke={C.ink} strokeWidth={2.5} /><g opacity={tag}><Lab text="BRIGGS" x={-20 * tag} y={70 * tag} size={18} /></g></g>}
           <Flask f={f} x={930} y={1330} s={0.6} fill={0.7} glow={0.8} seed={5} />
         </g>
+        <Floor f={f} kind="table" seed={5} />
       </SVG>
     </Frame>
   );
@@ -448,6 +503,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
           return <Speck key={i} f={f} x={lerp(sx, 540 + 26 * Math.cos(i), cl)} y={lerp(sy, 1100 + 26 * Math.sin(i), cl)} r={9} seed={i} glow={cl} />;
         })}
         {cl > 0.8 && <circle cx={540} cy={1100} r={60 + 6 * Math.sin(f / 4)} fill={C.lilac} opacity={0.25} />}
+        {Array.from({length: 9}).map((_, i) => {
+          const by = ((f * 2.2 + i * 41) % 260);
+          return <circle key={`b${i}`} cx={470 + (i % 3) * 60 + 10 * Math.sin(f / 9 + i)} cy={700 - by} r={8 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={0.55} />;
+        })}
+        <Floor f={f} kind="lab" seed={6} />
         {[0, 1, 2, 3, 4, 5].map((i) => {
           const a = i / 6 * Math.PI * 2 + f / 60;
           const rr = lerp(330, 120, cl);
@@ -464,7 +524,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const b20 = p.b(20);
   const sl = ease(f, b20, 18);
   return (
-    <Frame p={p} cam={() => ({z: 1.3, fx: 380, fy: 1080})} bg={C.aqua} overlay={
+    <Frame p={p} cam={(ff) => ({z: 1.12 + 0.02 * ff / Math.max(1, p.dur), fx: 430, fy: 980})} bg={C.aqua} overlay={
       <g><Plate text={'GOAL · "FOUR OR FIVE" STEPS · A HOPE'} x={540} y={600} size={32} p={win(f, b20 + 6)} /></g>
     }>
       <SVG>
@@ -473,6 +533,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <Staircase f={f} x={140} y={1330} x2={880} y2={330} reveal={1} steps={50} />
         </HeldTravel>
         <GoalStool f={f} x={300} y={1330} s={1.4} slide={sl} label="GOAL · A HOPE" />
+        <Floor f={f} kind="rocks" seed={7} />
       </SVG>
     </Frame>
   );
@@ -503,12 +564,11 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <BenchWorld f={f} seed={8} dusk={0.2} wallUp={1} behind={
           <Suit f={f} x={200} y={1560} s={1.5} seed={9} cues={[b22, b23, b25, b26]} coat="#6C6A7A" longHair reach={0.4 + 0.5 * hang} facing={1} />
         }>
-          <g transform={`translate(150 ${lerp(560, 760, hang)})`} opacity={hang > 0 ? 1 : 0}>
-            <DataFeeder f={f} x={0} y={0} s={0.9} seeds={0} />
-            <rect x={-36} y={58} width={72} height={100} rx={5} fill="#E8EEF2" opacity={0.85} />
-            <Lab text="HOW MUCH? NOT STATED" x={0} y={210} size={14} />
+          <g transform={`translate(330 ${lerp(560, 720, hang)})`} opacity={hang > 0 ? 1 : 0}>
+            <DataFeeder f={f} x={0} y={0} s={0.9} seeds={0} frosted />
+            <Lab text="HOW MUCH? NOT STATED" x={0} y={214} size={14} />
           </g>
-          {dials.map((d, i) => {
+          <HeldTravel f={f} x={360} y={1080} w={540} h={170} mode="shadow" seed={81}><g>{dials.map((d, i) => {
             const on = clamp01((f - d.on) / 8);
             return (
               <g key={i}>
@@ -516,7 +576,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
                 <BenchDial f={f} x={d.x} y={1240} s={0.95} label={d.l} value={0.15 + on * (0.35 + 0.1 * i)} jitter={on * 3} seed={i + 1} />
               </g>
             );
-          })}
+          })}</g></HeldTravel>
           <Nix f={f} x={980} y={nixY} scale={1.1} look={-0.7} card={0} monocles={f > b26 + 4} cues={[b21, b24, b26]} seed={8} mood="alert" hop={land < 1 ? 0 : 0} />
         </BenchWorld>
       </SVG>
@@ -545,10 +605,10 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill="#3C3F43" />
         {Array.from({length: 30}).map((_, i) => <line key={i} x1={-200} x2={1280} y1={i * 70} y2={i * 70} stroke="#45494E" strokeWidth={2} />)}
         {/* the whiteprint frame */}
-        <rect x={90} y={720} width={900} height={680} rx={8} fill="none" stroke={C.chalk} strokeWidth={5} strokeDasharray="20 12" strokeDashoffset={-f * 0.6} />
+        <rect x={90} y={720} width={900} height={610} rx={8} fill="none" stroke={C.chalk} strokeWidth={5} strokeDasharray="20 12" strokeDashoffset={-f * 0.6} />
         <Lab text="PLANNED" x={210} y={740} size={20} fill="#3C3F43" ink={C.chalk} />
-        {[0, 1, 2, 3, 4, 5].map((i) => {
-          const cx = 250 + (i % 3) * 290, cy = 900 + Math.floor(i / 3) * 300;
+        <HeldTravel f={f} x={130} y={760} w={820} h={540} mode="shadow" seed={91}><g>{[0, 1, 2, 3, 4, 5].map((i) => {
+          const cx = 250 + (i % 3) * 290, cy = 880 + Math.floor(i / 3) * 290;
           const hot = i === 4;
           const fr = hot ? foam : 0;
           return (
@@ -564,9 +624,10 @@ const S9: React.FC<SceneProps> = ({p}) => {
               </g>
             </g>
           );
-        })}
-        <Microbe f={f} x={830 + 10 * Math.sin(f / 5)} y={1300} scale={1.4} seed={9} rot={fix * 30} mood={fix > 0.5 ? 'proud' : 'worried'} cues={[b29]} />
-        <g transform={`translate(780 1290) rotate(${f * 6 * fix})`}><circle r={22} fill="none" stroke={C.ink} strokeWidth={6} /><path d="M-22,0 L22,0 M0,-22 L0,22" stroke={C.ink} strokeWidth={4} /></g>
+        })}</g></HeldTravel>
+        <Floor f={f} kind="lab" seed={9} />
+        <Microbe f={f} x={830 + 10 * Math.sin(f / 5)} y={1250} scale={1.4} seed={9} rot={fix * 30} mood={fix > 0.5 ? 'proud' : 'worried'} cues={[b29]} />
+        <g transform={`translate(780 1240) rotate(${f * 6 * fix})`}><circle r={22} fill="none" stroke={C.ink} strokeWidth={6} /><path d="M-22,0 L22,0 M0,-22 L0,22" stroke={C.ink} strokeWidth={4} /></g>
         <rect x={60} y={640} width={960} height={14} rx={6} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
         <Nix f={f} x={300} y={652} scale={1.0} look={0.6} card={card} flip={clamp01((f - b29) / 10)} cardText="NO" cardBack="FIX" cues={[b28, b29]} seed={9} mood={card > 0.5 && fix < 0.5 ? 'worried' : 'steady'} />
       </SVG>
@@ -591,20 +652,21 @@ const S10: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill="#7A7E82" />
-        <rect x={-200} y={1380} width={1480} height={800} fill="#4A4E52" />
+        <rect data-band="ok" x={-200} y={1380} width={1480} height={800} fill="#4A4E52" />
         {Array.from({length: 12}).map((_, i) => <line key={i} x1={-200 + i * 140} x2={-260 + i * 140} y1={1380} y2={2100} stroke={C.ink} strokeWidth={2} opacity={0.3} />)}
         {[0, 1, 2].map((i) => <rect key={i} x={120 + i * 360} y={250} width={200} height={26} rx={10} fill="#F4F6F8" opacity={0.85} stroke={C.ink} strokeWidth={3} />)}
         {/* the cobalt stripe, the wall's proxy */}
-        <rect x={880} y={300} width={120} height={1080} fill={C.cobalt} stroke={C.ink} strokeWidth={5} />
+        <rect x={880} y={300} width={120} height={1030} fill={C.cobalt} stroke={C.ink} strokeWidth={5} />
+        {[0, 1, 2].map((i) => <g key={`ps${i}`} transform={`translate(${120 + i * 240} 470) rotate(${(i - 1) * 2})`}><rect x={0} y={0} width={180} height={150} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={4} /><rect x={14} y={14} width={152} height={60} fill={i === 1 ? C.lilac : "#8FB0B8"} opacity={0.6} />{[0, 1, 2].map((k) => <line key={k} x1={14} x2={166} y1={92 + k * 18} y2={92 + k * 18} stroke="#C9CED6" strokeWidth={4} />)}</g>)}
         <path d={`M 940 1360 L 940 ${lerp(1360, 1000, arrow)}`} stroke={C.chalk} strokeWidth={14} strokeDasharray="22 14" />
         {arrow > 0.05 && <path d={`M 910 ${lerp(1360, 1000, arrow) + 10} L 940 ${lerp(1360, 1000, arrow) - 30} L 970 ${lerp(1360, 1000, arrow) + 10}`} fill="none" stroke={C.chalk} strokeWidth={10} />}
         <HeldTravel f={f} x={250} y={700} w={380} h={420} mode="shadow" seed={101}>
-          <TearCalendar f={f} x={440} y={720} s={1.9} top="MONTH" under={skipped > 0.5 ? 'SKIPPED' : 'MONTH'} torn={clamp01((f - b30) / 30) * (1 - skipped)} seed={2} />
+          <TearCalendar f={f} x={440} y={720} s={1.9} top="" under="" torn={clamp01((f - b30) / 30) * (1 - skipped)} seed={2} />
         </HeldTravel>
         {Array.from({length: 6}).map((_, i) => {
           const t = clamp01((f - b30 - i * 9) / 34) * (1 - skipped);
           const back = skipped;
-          return <BlowPage key={i} f={f} x0={440} y0={900} x1={lerp(100 + i * 160, 440, back)} y1={lerp(1500 - i * 40, 900, back)} t={back > 0 ? 1 - back * 0.98 : t} seed={i + 1} label="MONTH" />;
+          return <BlowPage key={i} f={f} x0={440} y0={900} x1={lerp(100 + i * 160, 440, back)} y1={lerp(1500 - i * 40, 900, back)} t={back > 0 ? 1 - back * 0.98 : t} seed={i + 1} />;
         })}
         {skipped > 0 && (
           <g>
@@ -617,6 +679,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <Jar x={0} y={0} s={0.6} />
           <RefuseLump f={f} x={0} y={-8} s={0.5} seed={7} />
         </g>
+        <Floor f={f} kind="tiles" seed={10} />
         <g transform="translate(-30 0)">
           <Nix f={f} x={110} y={1380} scale={1.0} look={0.6} card={ease(f, b31 - 4, 10)} cardText="NO" cues={[b31]} seed={10} mood="smug" />
         </g>
@@ -644,7 +707,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <Exterior f={f} dusk={1} seed={11} />
         {/* the other building */}
-        <rect x={420} y={560} width={560} height={760} fill="#3A3F44" stroke={C.ink} strokeWidth={6} />
+        <HeldTravel f={f} x={420} y={560} w={560} h={680} mode="shadow" seed={112}><rect x={420} y={560} width={560} height={760} fill="#3A3F44" stroke={C.ink} strokeWidth={6} /></HeldTravel>
         {Array.from({length: 4}).map((_, i) => <rect key={i} x={450 + i * 130} y={590} width={90} height={60} fill="#2A2E32" stroke={C.ink} strokeWidth={3} />)}
         <rect x={500} y={700} width={400} height={440} fill={lit > 0 ? '#E8ECEF' : '#2A2E32'} opacity={0.3 + 0.7 * lit} stroke={C.ink} strokeWidth={5} />
         <g opacity={lit}><GhostTank f={f} x={700} y={1130} s={0.6} k={lit} /></g>
@@ -664,9 +727,10 @@ const S11: React.FC<SceneProps> = ({p}) => {
         </g>
         <rect x={420} y={1240} width={560} height={80} fill="#2A2E32" stroke={C.ink} strokeWidth={4} />
         {/* the street and the near sidewalk */}
-        <rect x={-200} y={1320} width={1480} height={60} fill="#33373B" />
-        {Array.from({length: 6}).map((_, i) => <rect key={i} x={-100 + i * 240} y={1345} width={120} height={8} fill={C.chalk} opacity={0.5} />)}
-        <rect x={-200} y={1380} width={1480} height={600} fill="#4A4E52" stroke={C.ink} strokeWidth={4} />
+        <rect data-band="ok" x={-200} y={1320} width={1480} height={60} fill="#33373B" />
+        {Array.from({length: 6}).map((_, i) => <rect data-band="ok" key={i} x={-100 + i * 240} y={1345} width={120} height={8} fill={C.chalk} opacity={0.5} />)}
+        <rect data-band="ok" x={-200} y={1380} width={1480} height={600} fill="#4A4E52" stroke={C.ink} strokeWidth={4} />
+        <Floor f={f} kind="curb" seed={11} />
         <HeldTravel f={f} x={170} y={1180} w={140} h={200} mode="sweep" seed={111}>
           <Flask f={f} x={240} y={1380} s={0.75} fill={0.6} glow={flick * 0.7} seed={11} />
         </HeldTravel>
@@ -691,7 +755,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill="#D9DDE0" />
-        <rect x={-200} y={1300} width={1480} height={900} fill="#B9BEC3" />
+        <rect data-band="ok" x={-200} y={1300} width={1480} height={900} fill="#B9BEC3" />
         {Array.from({length: 10}).map((_, i) => <line key={i} x1={-200 + i * 160} x2={-300 + i * 160} y1={1300} y2={2100} stroke={C.ink} strokeWidth={2} opacity={0.2} />)}
         <g transform="translate(330 1290)">
           <path d="M-50,-130 L-50,-20 Q-50,0 -30,0 L30,0 Q50,0 50,-20 L50,-130" fill="none" stroke={CAN.cobaltL} strokeWidth={5} strokeDasharray="12 8" />
@@ -701,11 +765,12 @@ const S12: React.FC<SceneProps> = ({p}) => {
         <Lab text="THEIR PILOT" x={760} y={1330} size={18} />
         <HeldTravel f={f} x={300} y={620} w={480} h={640} mode="shadow" seed={121}>
           <g>
-            <BlockBar f={f} x={430} y={1240} n={10 + 3 * extra} rise={rise} label="LAB" color={C.lilac} bw={110} bh={46} />
-            <BlockBar f={f} x={650} y={1240} n={10} rise={rise} label="PILOT" color="#8FB0B8" bw={110} bh={46} />
+            <BlockBar f={f} x={430} y={1240} n={10 + 3 * extra} rise={rise} label="LAB" color={C.lilac} bw={120} bh={54} />
+            <BlockBar f={f} x={650} y={1240} n={10} rise={rise} label="PILOT" color="#8FB0B8" bw={120} bh={54} />
           </g>
         </HeldTravel>
-        {extra > 0.6 && <g opacity={(extra - 0.6) * 2.5}><path d="M500,780 L560,780 L560,700" fill="none" stroke={C.ink} strokeWidth={4} /><Lab text="+3 OF 10" x={600} y={680} size={20} /></g>}
+        {extra > 0.6 && <g opacity={(extra - 0.6) * 2.5}><path d="M500,560 L560,560 L560,520" fill="none" stroke={C.ink} strokeWidth={4} /><Lab text="+3 OF 10" x={640} y={500} size={20} /></g>}
+        <Floor f={f} kind="tape" seed={12} />
       </SVG>
     </Frame>
   );
@@ -750,7 +815,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
             <Lab text="NEURAL NETWORKS · GENERALLY" x={0} y={200} size={12} />
           </g>
           <Flask f={f} x={560} y={1240} s={0.7} fill={0.55} glow={0.4} seed={13} />
-          {line > 0.3 && <g opacity={line}><line x1={520} x2={600} y1={1170} y2={1170} stroke={C.ink} strokeWidth={3} strokeDasharray="6 5" /><text x={612} y={1176} fontFamily={MONO} fontWeight={800} fontSize={22} fill={C.chalk}>?</text></g>}
+          {line > 0.3 && <g opacity={line}><line x1={520} x2={600} y1={1170} y2={1170} stroke={C.ink} strokeWidth={3} strokeDasharray="6 5" /><Lab text="?" x={630} y={1170} size={20} /></g>}
           <g transform="translate(820 1230)">
             <rect x={-80} y={-14} width={160} height={110} rx={4} fill={C.paper} stroke={C.ink} strokeWidth={3} transform="rotate(-6)" />
             {stamp > 0 && <Stamp cx={0} cy={40} s={0.22 + 0.06 * (1 - stamp)} text="NO RESULTS YET" rot={-12} />}
@@ -784,13 +849,14 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <Exterior f={f} dusk={1} seed={14} />
         <g opacity={0.9}><Staircase f={f} x={820} y={1320} x2={1060} y2={700} reveal={1} steps={30} color="#CFD3D6" /></g>
         <ScaleWall f={f} x={260} y={1330} w={360} h={1500} grow={1} seed={14} dashed />
-        <ScaleWall f={f} x={480} y={1330} w={300} h={1000} grow={1} seed={15} />
+        <HeldTravel f={f} x={330} y={330} w={300} h={1000} mode="shadow" seed={142}><ScaleWall f={f} x={480} y={1330} w={300} h={1000} grow={1} seed={15} /></HeldTravel>
         <rect x={330} y={330} width={6} height={1000} fill={CAN.cobaltL} opacity={0.6} />
         {chalk > 0 && <text x={480} y={500} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.chalk}>{txt.slice(0, Math.ceil(txt.length * chalk))}</text>}
         <HeldTravel f={f} x={560} y={1190} w={120} h={150} mode="sweep" seed={141}>
           <Flask f={f} x={620} y={1330} s={0.6} fill={0.55} glow={0.5} seed={14} />
         </HeldTravel>
         <GoalStool f={f} x={800} y={1330} s={1.1} slide={stool} />
+        <Floor f={f} kind="rocks" seed={14} />
         <Nix f={f} x={lerp(900, 720, land)} y={lerp(900, 1330, land)} scale={1.0} facing={-1} look={-0.2} card={ease(f, b42 - 4, 12)} reticle cues={[b41, b42, b44]} seed={14} silhouette={f > b41 + 30} mood="steady" />
       </SVG>
     </Frame>
@@ -812,11 +878,15 @@ const S15: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill="#2A2D31" />
+        {/* the lamp and a shelf of jars above, seen up through the jar mouth */}
+        <g transform="translate(540 430)"><line x1={0} y1={-300} x2={0} y2={0} stroke={C.ink} strokeWidth={4} /><path d="M-70,0 L70,0 L44,-50 L-44,-50 Z" fill="#8C9196" stroke={C.ink} strokeWidth={4} /><ellipse cx={0} cy={4} rx={60} ry={10} fill={C.lamp} /></g>
+        <rect x={160} y={600} width={760} height={18} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
+        {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={200 + i * 150} y={520} width={60} height={80} rx={8} fill={CAN.glass} opacity={0.5} stroke={C.ink} strokeWidth={3} />)}
         <radialGradient id="jarLamp" cx="0.5" cy="0.35" r="0.6"><stop offset="0" stopColor={C.lamp} stopOpacity={0.55} /><stop offset="1" stopColor={C.lamp} stopOpacity={0} /></radialGradient>
-        <rect x={-200} y={-200} width={1480} height={2400} fill="url(#jarLamp)" />
+        <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill="url(#jarLamp)" />
         {/* the room seen up through the jar mouth */}
         <rect x={140} y={360} width={800} height={260} fill="#5C6064" opacity={0.6} />
-        <Nix f={f} x={560} y={1200} scale={2.6} look={0.1} card={1} flip={0.5 + 0.06 * Math.sin(f / 12)} cardText="2030?" cardBack="2030?" cues={[b46, b47]} seed={15} mood="steady" />
+        <HeldTravel f={f} x={380} y={720} w={360} h={480} mode="sweep" seed={151}><Nix f={f} x={560} y={1200} scale={2.6} look={0.1} card={1} flip={0.5 + 0.06 * Math.sin(f / 12)} cardText="2030?" cardBack="2030?" cues={[b46, b47]} seed={15} mood="steady" /></HeldTravel>
         <g transform="translate(870 1240)">
           <Flask f={f} x={0} y={0} s={0.8} fill={0.55} glow={0.35} seed={15} />
           <NeckTag x={18} y={-160} text={tagFlip > 0.5 ? 'AUGUST 2030' : ''} f={f} />
