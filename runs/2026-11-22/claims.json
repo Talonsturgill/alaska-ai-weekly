@@ -1,0 +1,613 @@
+{
+ "run_date": "2026-11-22",
+ "fact_check_verdict": "PASS WITH CONDITIONS. UAA News release November 20th read sentence by sentence (quotes exact). NSF award records 2614749 (UAA, $3,824,575) and 2614751 (UAF, $913,037) read via api.nsf.gov, both September 1st, 2026 to August 31st, 2030, EPSCoR RII Focused EPSCoR Collaborations. Alaska's News Source October 9th covers the UAF part. Context from DOE FECM, OSTI DOE-funded reports, 30 CFR 701.5, USGS NMIC, Alaska DNR and peer-reviewed reviews (PMC). Conditions: the $6M is the whole collaborative project, never UAA's own grant; 200 steps is Briggs's 'can take' characterization; four or five is his hope; every AI function is planned, so will or aims to; no Alaska coal source is named by the project; no USGS import percentage is usable (403).",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-sources",
+   "spoken": "Brandon Briggs is a biologist at the University of Alaska Anchorage.",
+   "on_screen": "BRANDON BRIGGS \u00b7 UAA BIOLOGIST",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "verbatim_source": "\"a project lead by UAA's Brandon Briggs, Ph.D., professor of biological sciences\"",
+   "requires": [
+    "write led by, never lead by"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-one-primary",
+   "spoken": "The rare earths are not rare, to be honest. They're found everywhere.",
+   "on_screen": "\"THE RARE EARTHS ARE NOT RARE\" \u00b7 BRIGGS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information",
+   "verbatim_source": "\"The rare earths are not rare, to be honest. They're found everywhere.\"",
+   "requires": [
+    "attribute to Briggs, a quote, never the narrator's own fact"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-one-primary",
+   "spoken": "The hard part is concentrating them from very dilute sources.",
+   "on_screen": "SPREAD THIN \u00b7 HARD TO CONCENTRATE",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"What we need is viable methods to concentrate them from very dilute sources.\"",
+   "requires": [
+    "attribute to Briggs"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-two-sources",
+   "spoken": "Rare earths go into magnets for electric motors and wind turbines.",
+   "on_screen": "MAGNETS \u00b7 MOTORS \u00b7 WIND TURBINES",
+   "source": "https://www.energy.gov/fecm/rare-earth-elements",
+   "second_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068686/",
+   "verbatim_source": "\"Many advanced technologies have components made from REEs such as magnets, batteries, phosphors, and catalysts.\"",
+   "requires": [
+    "motors and wind turbines come from the 2024 review, magnets from DOE"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-one-primary",
+   "spoken": "Today that can take strong acids, high temperatures and solvents, and two hundred steps, Briggs says.",
+   "on_screen": "ACIDS \u00b7 HEAT \u00b7 SOLVENTS \u00b7 CAN TAKE 200 STEPS \u00b7 PER BRIGGS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"Typically right now you have to use strong acids, high temperatures and solvent extraction processes that can take 200 steps\"",
+   "requires": [
+    "say can take, never up to or always",
+    "attribute 200 steps to Briggs"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-two-sources",
+   "spoken": "The National Science Foundation is funding a six million dollar project led by Briggs.",
+   "on_screen": "NSF \u00b7 $6M PROJECT \u00b7 LED BY UAA",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://www.alaskasnewssource.com/2026/10/10/uaf-researchers-join-6-million-effort-extract-critical-minerals-coal-waste/",
+   "verbatim_source": "\"Briggs Lab awarded $6M NSF grant for biomining, AI project\"",
+   "requires": [
+    "the $6M is the whole collaborative project, never UAA received $6 million"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-two-sources",
+   "spoken": "Partners are U A F, Montana Technological University and the University of Wyoming.",
+   "on_screen": "UAF \u00b7 MONTANA TECH \u00b7 WYOMING",
+   "source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "second_source": "https://www.alaskasnewssource.com/2026/10/10/uaf-researchers-join-6-million-effort-extract-critical-minerals-coal-waste/",
+   "verbatim_source": "field: \"Montana Technological University\"",
+   "requires": [
+    "never Montana Technical University"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-two-sources",
+   "spoken": "The plan is to use microbes to recover rare earths from coal refuse.",
+   "on_screen": "MICROBES \u00b7 RARE EARTHS FROM COAL REFUSE",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614751.json",
+   "verbatim_source": "\"Briggs aims to use microbes to recover rare-earth elements (REEs) from samples of coal refuse\"",
+   "requires": [
+    "aims to, a plan, never a result"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-two-sources",
+   "spoken": "Coal refuse is the waste left over from coal processing.",
+   "on_screen": "COAL REFUSE \u00b7 WASTE FROM COAL PROCESSING",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://www.law.cornell.edu/cfr/text/30/701.5",
+   "verbatim_source": "\"the leftover material from coal processing.\"",
+   "requires": [
+    "name no Alaska mine as the feedstock"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-two-sources",
+   "spoken": "Coal and coal byproducts can hold rare earths.",
+   "on_screen": "COAL WASTE CAN HOLD RARE EARTHS \u00b7 PER DOE",
+   "source": "https://www.energy.gov/fecm/rare-earth-elements",
+   "second_source": "https://www.osti.gov/biblio/2421961",
+   "verbatim_source": "\"There is continued identification of domestic sources of coal and coal byproducts containing high amounts of REEs.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-two-sources",
+   "spoken": "The U S relies heavily on foreign processing for rare earths.",
+   "on_screen": "RELIES ON FOREIGN PROCESSING \u00b7 PER UAA",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "verbatim_source": "\"The U.S. relies heavily on foreign processing for rare earth elements, even though REE-bearing coal refuse and ash sit untapped at home.\"",
+   "requires": [
+    "no percentage on screen"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-one-primary",
+   "spoken": "Briggs hopes to cut it to four or five steps.",
+   "on_screen": "GOAL \u00b7 \"FOUR OR FIVE\" STEPS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"Briggs believes his team can reduce the number of steps required to \"four or five\" with the funding available through the grant.\"",
+   "requires": [
+    "a hope or goal, never achieved"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-one-primary",
+   "spoken": "Microbes already recover copper and gold at industrial scale.",
+   "on_screen": "ALREADY INDUSTRIAL \u00b7 COPPER \u00b7 GOLD \u00b7 PER 2021 REVIEW",
+   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8538766/",
+   "second_source": null,
+   "verbatim_source": "\"Biohydrometallurgy has been successfully applied at the industrial level for the recovery of metals such as uranium, copper, and gold.\"",
+   "requires": [
+    "not rare earths, never heap"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-two-sources",
+   "spoken": "A deep learning model will read the reactor's temperature, acidity, salinity and oxygen.",
+   "on_screen": "TEMPERATURE \u00b7 ACIDITY \u00b7 SALINITY \u00b7 OXYGEN",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "verbatim_source": "\"including parameters like temperature, acidity, salinity, oxygen composition and more.\"",
+   "requires": [
+    "will, planned"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-two-sources",
+   "spoken": "Engineer Masoumeh Heidari Kapourchali leads the model.",
+   "on_screen": "MASOUMEH HEIDARI KAPOURCHALI \u00b7 UAA ENGINEERING",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "verbatim_source": "\"with Masoumeh Heidari Kapourchali leading the model's development.\"",
+   "requires": [
+    "no rank or professor title",
+    "never confuse with Mohammad Heidari Kapourchali"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-one-primary",
+   "spoken": "The machine learning process will identify when that reactor's going to fail.",
+   "on_screen": "\"WHEN THAT REACTOR'S GOING TO FAIL\" \u00b7 BRIGGS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"The machine learning process will identify when that reactor's going to fail and what sort of corrective processes we could do to make sure it doesn't fail.\"",
+   "requires": [
+    "attribute to Briggs, planned"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-one-primary",
+   "spoken": "And what corrections could keep it from failing.",
+   "on_screen": "FLAG \u00b7 THEN FIX \u00b7 PER BRIGGS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"The machine learning process will identify when that reactor's going to fail and what sort of corrective processes we could do to make sure it doesn't fail.\"",
+   "requires": [
+    "attribute to Briggs"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-two-sources",
+   "spoken": "The federal award adds a virtual assay to screen feedstocks.",
+   "on_screen": "VIRTUAL ASSAY \u00b7 SCREENS FEEDSTOCKS \u00b7 PER NSF",
+   "source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614751.json",
+   "verbatim_source": "\"utilizes a predictive Virtual Assay to screen feedstocks\"",
+   "requires": [
+    "NSF abstract, not Briggs"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-two-sources",
+   "spoken": "A federally funded pilot that pulled rare earths from coal material lost money on paper in every scenario.",
+   "on_screen": "EVERY SCENARIO IN THE RED \u00b7 DOE-FUNDED PILOT \u00b7 2023",
+   "source": "https://www.osti.gov/biblio/1971736",
+   "second_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068686/",
+   "verbatim_source": "\"All process scenarios resulted in a negative net present value (NPV).\"",
+   "requires": [
+    "a DOE-funded pilot, never DOE concluded",
+    "never say no microbes were involved (its abstract describes bio-oxidation reactors making bio-acid); never call it the same method as UAA's"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-one-primary",
+   "spoken": "For one feedstock, lab recovery ran about thirty percent higher than the pilot plant.",
+   "on_screen": "LAB RAN ABOUT 30% HIGHER THAN THE PILOT",
+   "source": "https://www.osti.gov/biblio/1971736",
+   "second_source": null,
+   "verbatim_source": "\"For the lignite feedstock, laboratory REE leach recovery values were about 30% higher than the pilot plant data.\"",
+   "requires": [
+    "one feedstock, lignite"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-two-sources",
+   "spoken": "Reviews call bioleaching rare earths from waste still in its infancy.",
+   "on_screen": "\"STILL IN THEIR INFANCY\" \u00b7 2021 REVIEW",
+   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8538766/",
+   "second_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068686/",
+   "verbatim_source": "\"Bioleaching studies of REE extraction from wastes are still in their infancy.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-one-primary",
+   "spoken": "Briggs says the model should help speed the scale up into something economically viable.",
+   "on_screen": "SPEED THE SCALE-UP \u00b7 PER BRIGGS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"That should help us quickly accelerate the scale-up into something that's economically viable.\"",
+   "requires": [
+    "attribute to Briggs, a hope"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-one-primary",
+   "spoken": "Neural network models are usually limited by how much data they have.",
+   "on_screen": "DATA \u00b7 THE USUAL LIMIT \u00b7 2021 REVIEW",
+   "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8231968/",
+   "second_source": null,
+   "verbatim_source": "\"Usually, data availability is the biggest limitation in designing neural network.\"",
+   "requires": [
+    "general bioprocess review, not about this project"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-two-sources",
+   "spoken": "The award runs through August of twenty thirty.",
+   "on_screen": "AWARD RUNS TO AUGUST 2030",
+   "source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614751.json",
+   "verbatim_source": "field: \"expDate\": \"08/31/2030\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-one-primary",
+   "spoken": "No results are reported yet. The work is planned.",
+   "on_screen": "NO RESULTS YET \u00b7 PLANNED WORK",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": "https://www.alaskasnewssource.com/2026/10/10/uaf-researchers-join-6-million-effort-extract-critical-minerals-coal-waste/",
+   "verbatim_source": "Labelled non-quotation: absence check. Neither the UAA release, the ANS story nor the NSF abstracts report any extraction result; ANS says researchers hope to turn the lab science into jobs over the next four years.",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c30",
+   "status": "verified-one-primary",
+   "spoken": "Briggs calls it a culmination of the last ten years of research.",
+   "on_screen": "10 YEARS OF RESEARCH \u00b7 PER BRIGGS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"I see this as a culmination of the last 10 years of research, of slowly building up, identifying different types of microbes that can do this, and building up this consortium.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c32",
+   "status": "verified-one-primary",
+   "spoken": "Briggs's lab has used microbes to pull rare earths from coal before, in the lab.",
+   "on_screen": "WORKED BEFORE \u00b7 IN THE LAB",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"While the Briggs Lab has had success before using microbes to extract REEs from coal,\"",
+   "requires": [
+    "lab only, never at scale"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c33",
+   "status": "verified-one-primary",
+   "spoken": "But the process hasn't been scaled up to be commercially viable.",
+   "on_screen": "NOT YET SCALED \u00b7 NOT YET VIABLE",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"the process has not been able to be scaled up to be commercially viable.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c34",
+   "status": "verified-one-primary",
+   "spoken": "Instead of months, if not years, of trial and error, Briggs says the model could quickly say a feedstock won't work.",
+   "on_screen": "\"NO, THIS FEEDSTOCK IS NOT GOING TO WORK\" \u00b7 BRIGGS",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"Instead of having to go through months, if not years, of research on trying to optimize the process,\"",
+   "requires": [
+    "attribute to Briggs, a hope"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c35",
+   "status": "verified-two-sources",
+   "spoken": null,
+   "on_screen": "HOW MUCH? NOT STATED",
+   "source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "second_source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "verbatim_source": "Labelled non-quotation: absence check. The NSF 2614749 abstractText and every machine-learning paragraph of the UAA release were searched for a training dataset, a data volume or a reactor count; neither states one (angle room analyst C, 2026-11-22).",
+   "requires": [
+    "say not stated, never none exist or empty or to be gathered"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c36",
+   "status": "verified-two-sources",
+   "spoken": "by a different method",
+   "on_screen": "DIFFERENT METHOD",
+   "source": "https://www.osti.gov/biblio/1971736",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "verbatim_source": "Labelled non-quotation: comparison of the two primary abstracts. The OSTI 1971736 pilot leached coal-based material with acid (bio-oxidation reactors made bio-acid from coal pyrite) at pilot pH setpoints; the NSF 2614749 project evaluates microbial extraction (Shewanella oneidensis) with a virtual assay and reinforcement-learning controllers in a bioprocess digital twin. The processes differ as described; neither is the other.",
+   "requires": [
+    "never say no microbes were involved in the pilot",
+    "never call the pilot UAA's"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  {
+   "claim": "US imported 80% of REEs from China in 2022",
+   "why": "review figure, USGS chapter unreachable (403), easily misread as net import reliance"
+  },
+  {
+   "claim": "200 ppm rare earths in coal refuse",
+   "why": "Appalachian fine refuse only, not Alaska or this feedstock"
+  },
+  {
+   "claim": "18-month sampling, benchtop to 2028, demo unit",
+   "why": "CASRAI aggregator only, no primary source"
+  },
+  {
+   "claim": "Shewanella oneidensis as an Alaska microbe",
+   "why": "NSF names the organism, no source ties it to the glacier microbes"
+  },
+  {
+   "claim": "$39.9M across 8 projects, 16 jurisdictions",
+   "why": "counts unsourced in primary"
+  }
+ ],
+ "reserve": [
+  {
+   "claim": "NSF announced $39.9 million in EPSCoR awards",
+   "source": "UAA release"
+  },
+  {
+   "claim": "Cerium is the 25th most abundant of 78 common elements in Earth's crust at 60 ppm",
+   "source": "USGS NMIC"
+  },
+  {
+   "claim": "nature's tiny chemical factories, Aggarwal",
+   "source": "Alaska's News Source"
+  },
+  {
+   "id": "c19",
+   "status": "verified-two-sources",
+   "spoken": "And reinforcement learning controllers inside a digital twin of the process, tied to microgrid simulators.",
+   "on_screen": "REINFORCEMENT LEARNING \u00b7 DIGITAL TWIN \u00b7 MICROGRID SIMULATORS",
+   "source": "https://api.nsf.gov/services/v1/awards/2614749.json",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614751.json",
+   "verbatim_source": "\"applies reinforcement-learning controllers within a bioprocess digital twin integrated with microgrid simulators\"",
+   "requires": [
+    "planned"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "why_reserved": "energy and microgrid framing is October 9th's thesis; angle room excluded it"
+  },
+  {
+   "id": "c20",
+   "status": "verified-one-primary",
+   "spoken": "U A F's part, led by Srijan Aggarwal, looks at how reactor conditions affect recovery, stability and energy demand.",
+   "on_screen": "UAF \u00b7 SRIJAN AGGARWAL \u00b7 RECOVERY \u00b7 STABILITY \u00b7 ENERGY",
+   "source": "https://www.alaskasnewssource.com/2026/10/10/uaf-researchers-join-6-million-effort-extract-critical-minerals-coal-waste/",
+   "second_source": "https://api.nsf.gov/services/v1/awards/2614751.json",
+   "verbatim_source": "\"determine how bioreactor operating conditions affect recovery, process stability and energy demand.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "why_reserved": "UAF energy-demand part, October 9th's thesis"
+  },
+  {
+   "id": "c21",
+   "status": "verified-one-primary",
+   "spoken": "Alaska's remote energy challenges make energy use a central part of that question.",
+   "on_screen": "\"REMOTE ENERGY CHALLENGES\" \u00b7 AGGARWAL",
+   "source": "https://www.alaskasnewssource.com/2026/10/10/uaf-researchers-join-6-million-effort-extract-critical-minerals-coal-waste/",
+   "second_source": null,
+   "verbatim_source": "\"Alaska's remote energy challenges make energy use a central part of that question.\"",
+   "requires": [
+    "attribute to Aggarwal via Alaska's News Source"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "why_reserved": "Aggarwal energy quote, October 9th's thesis"
+  },
+  {
+   "id": "c29",
+   "status": "verified-one-primary",
+   "spoken": "His lab has collected microbes from glacial meltwater, including Worthington Glacier.",
+   "on_screen": "MICROBES FROM GLACIAL MELTWATER \u00b7 WORTHINGTON GLACIER",
+   "source": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml",
+   "second_source": null,
+   "verbatim_source": "\"Recent excursions include the lab's 2022 trip to collect microbes at Worthington Glacier and a 2024 expedition to Grewingk Glacier.\"",
+   "requires": [
+    "never say these are the microbes that will do the extraction"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "why_reserved": "glacier sampling invites the false read that those microbes do the extraction"
+  },
+  {
+   "id": "c31",
+   "status": "verified-one-primary",
+   "spoken": "Alaska mines coal near Healy.",
+   "on_screen": "ALASKA MINES COAL NEAR HEALY",
+   "source": "https://dnr.alaska.gov/mlw/mining/coal/",
+   "second_source": null,
+   "verbatim_source": "\"Currently, Alaska's four operating coal mines are located in the Hoseanna and Marguerite Creek Valley east of Healy.\"",
+   "requires": [
+    "never tie the UAA feedstock to Healy or Usibelli"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "why_reserved": "Healy coal must never be tied to the feedstock"
+  }
+ ]
+}

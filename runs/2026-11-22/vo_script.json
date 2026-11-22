@@ -1,0 +1,201 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "This canary will have one job. Say no, fast.",
+   "claims": [
+    "narration"
+   ],
+   "t": "This canary will have one job. Say no, fast."
+  },
+  {
+   "idx": 1,
+   "text": "Brandon Briggs, a U A A biologist, says the rare earths are not rare. They're found everywhere.",
+   "claims": [
+    "c1",
+    "c2"
+   ],
+   "t": "Brandon Briggs, a U A A biologist, says the rare earths are not rare. They're found everywhere."
+  },
+  {
+   "idx": 2,
+   "text": "They're in magnets for motors and wind turbines. Concentrating them is the hard part, he says.",
+   "claims": [
+    "c4",
+    "c3"
+   ],
+   "t": "They're in magnets for motors and wind turbines. Concentrating them is the hard part, he says."
+  },
+  {
+   "idx": 3,
+   "text": "Today that can take acids, heat, solvents and two hundred steps, he says.",
+   "claims": [
+    "c5"
+   ],
+   "t": "Today that can take acids, heat, solvents and two hundred steps, he says."
+  },
+  {
+   "idx": 4,
+   "text": "His lab already got microbes to do that with coal, in the lab.",
+   "claims": [
+    "c32"
+   ],
+   "t": "His lab already got microbes to do that with coal, in the lab."
+  },
+  {
+   "idx": 5,
+   "text": "But it hasn't scaled up to be commercially viable. That's the wall.",
+   "claims": [
+    "c33"
+   ],
+   "t": "But it hasn't scaled up to be commercially viable. That's the wall."
+  },
+  {
+   "idx": 6,
+   "text": "The National Science Foundation is funding a six million dollar project led by Briggs.",
+   "claims": [
+    "c6"
+   ],
+   "t": "The National Science Foundation is funding a six million dollar project led by Briggs."
+  },
+  {
+   "idx": 7,
+   "text": "The plan is microbes pulling rare earths from coal refuse, the waste from processing coal.",
+   "claims": [
+    "c8",
+    "c9"
+   ],
+   "t": "The plan is microbes pulling rare earths from coal refuse, the waste from processing coal."
+  },
+  {
+   "idx": 8,
+   "text": "Briggs hopes for four or five steps.",
+   "claims": [
+    "c12"
+   ],
+   "t": "Briggs hopes for four or five steps."
+  },
+  {
+   "idx": 9,
+   "text": "This time, a canary. A deep learning model, led by engineer Masoumeh Heidari Kapourchali.",
+   "claims": [
+    "c15"
+   ],
+   "t": "This time, a canary. A deep learning model, led by engineer Masoumeh Heidari Kapourchali."
+  },
+  {
+   "idx": 10,
+   "text": "It will read each reactor's temperature, acidity, salinity and oxygen.",
+   "claims": [
+    "c14"
+   ],
+   "t": "It will read each reactor's temperature, acidity, salinity and oxygen."
+  },
+  {
+   "idx": 11,
+   "text": "Briggs says it will identify when a reactor's going to fail, and what fix could save it.",
+   "claims": [
+    "c16",
+    "c17"
+   ],
+   "t": "Briggs says it will identify when a reactor's going to fail, and what fix could save it."
+  },
+  {
+   "idx": 12,
+   "text": "Instead of months, if not years, he says it could quickly flag a bad feedstock.",
+   "claims": [
+    "c34"
+   ],
+   "t": "Instead of months, if not years, he says it could quickly flag a bad feedstock."
+  },
+  {
+   "idx": 13,
+   "text": "Briggs says that should speed the scale up.",
+   "claims": [
+    "c25"
+   ],
+   "t": "Briggs says that should speed the scale up."
+  },
+  {
+   "idx": 14,
+   "text": "Others hit that wall. A federally funded pilot that pulled rare earths from coal, by a different method, lost money on paper in every scenario.",
+   "claims": [
+    "c22"
+   ],
+   "t": "Others hit that wall. A federally funded pilot that pulled rare earths from coal, by a different method, lost money on paper in every scenario."
+  },
+  {
+   "idx": 15,
+   "text": "For one feedstock, its lab recovery ran about thirty percent higher than the pilot plant.",
+   "claims": [
+    "c23"
+   ],
+   "t": "For one feedstock, its lab recovery ran about thirty percent higher than the pilot plant."
+  },
+  {
+   "idx": 16,
+   "text": "Reviews call bioleaching rare earths from waste still in its infancy.",
+   "claims": [
+    "c24"
+   ],
+   "t": "Reviews call bioleaching rare earths from waste still in its infancy."
+  },
+  {
+   "idx": 17,
+   "text": "Neural networks are usually limited by their data.",
+   "claims": [
+    "c26"
+   ],
+   "t": "Neural networks are usually limited by their data."
+  },
+  {
+   "idx": 18,
+   "text": "No results are reported yet.",
+   "claims": [
+    "c28"
+   ],
+   "t": "No results are reported yet."
+  },
+  {
+   "idx": 19,
+   "text": "The canary isn't aimed over the wall. It's aimed at it.",
+   "claims": [
+    "narration"
+   ],
+   "t": "The canary isn't aimed over the wall. It's aimed at it."
+  },
+  {
+   "idx": 20,
+   "text": "The award runs through August of twenty thirty. Four or five steps is his hope.",
+   "claims": [
+    "c27",
+    "c12"
+   ],
+   "t": "The award runs through August of twenty thirty. Four or five steps is his hope."
+  },
+  {
+   "idx": 21,
+   "text": "The rare earths aren't the rare part, Briggs says. An early no that holds up might be.",
+   "claims": [
+    "c2",
+    "narration"
+   ],
+   "t": "The rare earths aren't the rare part, Briggs says. An early no that holds up might be."
+  }
+ ],
+ "caption_fixups": {
+  "U A A": "UAA",
+  "U A F": "UAF",
+  "A I": "AI",
+  "six million dollar": "$6M",
+  "two hundred": "200",
+  "thirty percent": "30 percent",
+  "twenty thirty": "2030",
+  "August of twenty thirty": "August of 2030",
+  "six million": "$6M"
+ },
+ "caption_quotes": [
+  "the rare earths are not rare"
+ ],
+ "caption_split_after": []
+}

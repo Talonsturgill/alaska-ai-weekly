@@ -1,0 +1,26 @@
+Extracting rare earths can take 200 steps, a UAA biologist says. His goal is four or five.
+The AI in the $6 million project he leads is meant to be the canary, not the miner.
+
+Brandon Briggs is blunt. "The rare earths are not rare," he says. "They're found everywhere."
+
+The hard part, he says, is concentrating them. Today that typically takes strong acids, heat and solvents.
+
+His lab has already used microbes to pull rare earths from coal, at lab scale only. It hasn't scaled to commercial viability. That's the real wall.
+
+The National Science Foundation funds the project, with UAF, Montana Technological University and the University of Wyoming as partners. Microbes are meant to work on coal refuse, the waste from processing coal.
+
+The new piece is a deep learning model led by engineer Masoumeh Heidari Kapourchali. It will read each reactor's temperature, acidity, salinity and oxygen.
+
+In Briggs's telling it will flag a reactor before it fails and suggest the fix. It could also rule out a bad feedstock quickly instead of after months or years of trials.
+
+Scale is the test. A federally funded pilot elsewhere tried a different method and lost money on paper in every scenario. On one feedstock, that pilot's own lab tests ran about 30 percent above its plant.
+
+Reviews call bioleaching rare earths from waste still in its infancy. The new project has reported no results yet.
+
+An early no can save time on dead ends. It can't make an unprofitable process pay.
+
+Four or five steps is his hope. It is not a result. The award runs to August 2030.
+
+What would it take for you to trust a model's early no enough to shut down a reactor run?
+
+#ArtificialIntelligence #Alaska #CriticalMinerals #Bioprocessing

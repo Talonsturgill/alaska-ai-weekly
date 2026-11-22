@@ -4094,3 +4094,10 @@ Queued: gate0-critic-rounds (repeat 8), pace-line-pads, suit-rig-necktie-default
 - Verified by the orchestrator: tsc, asset_index, SuitLook still rendered and read at frame 30, caption_band_check self-test plus shipped Ep1121 clean and cut-1 5 FEET hits, Ep1109 to Ep1119 exit codes unchanged, test_vo_pace_line and test_mix_bed_arc_ignored, format_gate_selftest, runbook_check, py_compile.
 - Measured and not shipped: storyboard palette overlap (hex distance can't separate two very different films; next compare hero and accent hexes only). Found already fixed: the bed-level cap message. Not reached: music-pool-drained, held-gesture-idle follow-up, string-touches-suspect, illustration-clipart-ground-and-clouds. Owner-only: the caption bar (repeat 9) and the Gate 0 critic round cap (repeat 8).
 - Social delivery for the 11-21 edition: LinkedIn, Facebook, Instagram, TikTok feed and all 6 story segments PUBLISHED; YouTube FAILED youtube_rate_limited (no retry tool by design). Gmail draft BLOCKED, the connector needs re-authentication.
+
+## 2026-11-22 The Bird That Says No
+- Shipped: UAA-led $6M NSF biomining project, AI as a canary aimed at the scale-up wall. Hero Nix (new lib/canary.tsx family), 15 shots, 119 s VO.
+- Panel cut 5 median 7.258 (7.258, 7.242, 7.262), no hard blockers; editor ship after the shot 14 VO patch. Caption card 8.23 at the five-round cap.
+- In-run fixes: Nix card and flag text counter-mirror when facing left; shot 14 VO re-voiced in slot to drop an unsourced 'at full size'; claims c35 and c36 added; caption accuracy edits after round 5.
+- Queued: 8 entries for 11-22, repeat offenders gate0-critic-rounds (9) and caption-scorer-hair-under-bar (10).
+- Gmail draft BLOCKED, connector sign-in refused (second day). Body kept at runs/2026-11-22/draft_body.html.

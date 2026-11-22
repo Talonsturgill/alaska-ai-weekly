@@ -38,6 +38,14 @@ pool:
   # ---- mood-expansion 2026-07-18 (all URLs verified 200; pick BY THE ANGLE, see angle_to_mood) ----
   # ADDED 2026-11-18: the curious/wonder branch was fully drained (every entry played inside 10 days). Downloaded and verified this run.
   # ADDED 2026-11-19: every reflective/newsy/driving/warm entry had played inside 30 days. Downloaded and verified this run.
+  # ADDED 2026-11-22: every curious/wonder entry had played inside 30 days again (Frost Waltz 11-11, Deep Haze 11-21). Downloaded and verified this run (HTTP 206 range probe, 180 s).
+  - title: "Floating Cities"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Floating%20Cities.mp3"
+    license: "CC BY 4.0"
+    credit: '"Floating Cities" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [wonder, curious, hopeful, inspiring]
   - title: "Investigations"
     composer: "Kevin MacLeod"
     source: "incompetech.com"

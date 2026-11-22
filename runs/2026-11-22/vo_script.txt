@@ -1,0 +1,22 @@
+This canary will have one job. Say no, fast.
+Brandon Briggs, a U A A biologist, says the rare earths are not rare. They're found everywhere.
+They're in magnets for motors and wind turbines. Concentrating them is the hard part, he says.
+Today that can take acids, heat, solvents and two hundred steps, he says.
+His lab already got microbes to do that with coal, in the lab.
+But it hasn't scaled up to be commercially viable. That's the wall.
+The National Science Foundation is funding a six million dollar project led by Briggs.
+The plan is microbes pulling rare earths from coal refuse, the waste from processing coal.
+Briggs hopes for four or five steps.
+This time, a canary. A deep learning model, led by engineer Masoumeh Heidari Kapourchali.
+It will read each reactor's temperature, acidity, salinity and oxygen.
+Briggs says it will identify when a reactor's going to fail, and what fix could save it.
+Instead of months, if not years, he says it could quickly flag a bad feedstock.
+Briggs says that should speed the scale up.
+Others hit that wall. A federally funded pilot that pulled rare earths from coal, by a different method, lost money on paper in every scenario.
+For one feedstock, its lab recovery ran about thirty percent higher than the pilot plant.
+Reviews call bioleaching rare earths from waste still in its infancy.
+Neural networks are usually limited by their data.
+No results are reported yet.
+The canary isn't aimed over the wall. It's aimed at it.
+The award runs through August of twenty thirty. Four or five steps is his hope.
+The rare earths aren't the rare part, Briggs says. An early no that holds up might be.
