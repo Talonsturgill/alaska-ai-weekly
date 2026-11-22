@@ -129,6 +129,16 @@ def build(manifest):
                 'LinkedIn organization does not match repository')
         options['target_linkedin_page_id'] = urn
         fixed('visibility', 'PUBLIC')
+        if repo == 'Talonsturgill/alaska-ai-weekly' and kind == 'video':
+            # Upload-Post can take the LinkedIn body from title or descriptions.
+            # Never fall back to a body link if LinkedIn does not post the comment.
+            for field, value in [('title', manifest['title']),
+                                 ('description', options.get('description')),
+                                 ('linkedin_description', options.get('linkedin_description'))]:
+                require(not re.search(r'https?://|www\.|alaskaaihq\.com', str(value), re.I),
+                        'Alaska LinkedIn video body must be link-free: ' + field)
+            fixed('first_comment', 'Visit https://alaskaaihq.com/')
+
     else:
         require('target_linkedin_page_id' not in options and 'visibility' not in options,
                 'LinkedIn options on another platform')
