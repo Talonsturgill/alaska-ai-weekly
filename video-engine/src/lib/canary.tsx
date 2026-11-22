@@ -107,7 +107,7 @@ export const Nix: React.FC<{
             <g transform="translate(-30 20) rotate(62)" opacity={Math.min(1, fg * 2)}>
               <line x1={0} y1={0} x2={0} y2={-70 * fg} stroke={INK} strokeWidth={4} strokeLinecap="round" />
               <path d={`M0,${-70 * fg} l${34 + 4 * Math.sin(f / 5)},8 l-34,10 Z`} fill={CAN.chalk} stroke={INK} strokeWidth={3} />
-              {flagText && fg > 0.8 && <text x={6} y={-70 * fg + 13} fontFamily="JetBrains Mono" fontWeight={800} fontSize={9} fill={INK}>{flagText}</text>}
+              {flagText && fg > 0.8 && <text x={6} y={-70 * fg + 13} transform={facing < 0 ? `translate(${12 + flagText.length * 6} 0) scale(-1 1)` : undefined} fontFamily="JetBrains Mono" fontWeight={800} fontSize={9} fill={INK}>{flagText}</text>}
             </g>
           )}
         </g>
@@ -140,7 +140,7 @@ export const Nix: React.FC<{
                 <rect x={-cardW / 2} y={-78} width={cardW} height={58} rx={6} fill={CAN.card} stroke={INK} strokeWidth={4} />
                 <rect x={-cardW / 2 + 5} y={-73} width={cardW - 10} height={8} rx={3} fill={CAN.red} opacity={0.85} />
                 {edge > 0.25 && !reticle && (
-                  <text x={0} y={-35} textAnchor="middle" fontFamily="JetBrains Mono" fontWeight={800} fontSize={26} fill={INK}>{shown}</text>
+                  <text x={0} y={-35} transform={`scale(${facing} 1)`} textAnchor="middle" fontFamily="JetBrains Mono" fontWeight={800} fontSize={26} fill={INK}>{shown}</text>
                 )}
                 {edge > 0.25 && reticle && (
                   <g transform="translate(0 -45)"><circle r={16} fill="none" stroke={CAN.red} strokeWidth={4} /><path d="M-24,0 L-8,0 M8,0 L24,0 M0,-24 L0,-8 M0,8 L0,24" stroke={INK} strokeWidth={4} /></g>
