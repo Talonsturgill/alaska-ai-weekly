@@ -500,7 +500,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
               <text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={60} fill={C.loss}>$6M</text>
             </g>
           )}
-          {tag > 0 && <g transform={`translate(${pins[0].x} ${pins[0].y})`}><path d={`M0,0 L${-10 * tag},${60 * tag}`} stroke={C.ink} strokeWidth={2.5} /><g opacity={tag}><Lab text="LED BY BRIGGS" x={-10 * tag} y={80 * tag} size={16} /></g></g>}
+          {tag > 0 && <g transform={`translate(${pins[0].x} ${pins[0].y})`}><path d={`M0,0 L${-10 * tag},${60 * tag}`} stroke={C.ink} strokeWidth={2.5} /><g opacity={tag * 0}></g></g>}
           <Flask f={f} x={930} y={1330} s={0.6} fill={0.7} glow={0.8} seed={5} />
         </g>
         <Floor f={f} kind="table" seed={5} />
@@ -800,7 +800,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
         {Array.from({length: 10}).map((_, i) => <line key={i} x1={-200 + i * 160} x2={-300 + i * 160} y1={1300} y2={2100} stroke={C.ink} strokeWidth={2} opacity={0.2} />)}
         <g transform="translate(170 760)">
           <path d="M-50,-130 L-50,-20 Q-50,0 -30,0 L30,0 Q50,0 50,-20 L50,-130" fill="none" stroke="#6E7378" strokeWidth={5} strokeDasharray="12 8" />
-          <rect x={-46} y={-60} width={92} height={56} fill={C.rose} opacity={0.35} />
+          <rect x={-46} y={-60} width={92} height={56} fill="#9AA0A5" opacity={0.4} />
         </g>
         <GhostTank f={f} x={910} y={790} s={0.3} k={1} />
         <HeldTravel f={f} x={300} y={620} w={480} h={640} mode="shadow" seed={121}>
@@ -882,8 +882,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <Plate text="NOT OVER THE WALL" x={540} y={600} size={36} p={win(f, b41 + 6, b42)} />
         <Plate text="AIMED AT IT" x={540} y={600} size={40} tone="dark" p={win(f, b42 + 2, b43)} /> {/* plate-overlap-ok */}
         <Plate text="AWARD RUNS TO AUGUST 2030" x={540} y={600} size={34} p={win(f, b43 + 4, b44)} /> {/* plate-overlap-ok */}
-        <Plate text={'GOAL · "FOUR OR FIVE" STEPS'} x={540} y={600} size={34} tone="dark" p={win(f, b44 + 4, b45)} /> {/* plate-overlap-ok */}
-        <Plate text="THE TEST · 4 OR 5 STEPS AT SCALE" x={540} y={600} size={32} p={win(f, b45 + 4)} /> {/* plate-overlap-ok */}
+        <Plate text={'GOAL · "FOUR OR FIVE" STEPS · A HOPE'} x={540} y={600} size={32} tone="dark" p={win(f, b44 + 4)} /> {/* plate-overlap-ok */}
       </g>
     }>
       <SVG>
@@ -892,7 +891,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         <ScaleWall f={f} x={260} y={1330} w={360} h={1500} grow={1} seed={14} dashed />
         <HeldTravel f={f} x={330} y={330} w={300} h={1000} mode="shadow" seed={142}><ScaleWall f={f} x={480} y={1330} w={300} h={1000} grow={1} seed={15} /></HeldTravel>
         <rect x={330} y={330} width={6} height={1000} fill={CAN.cobaltL} opacity={0.6} />
-        {chalk > 0 && <text x={480} y={500} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.chalk}>{txt.slice(0, Math.ceil(txt.length * chalk))}</text>}
+        {chalk > 0 && <text x={480} y={500} opacity={1 - clamp01((f - b44 + 14) / 12)} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={44} fill={C.chalk}>{txt.slice(0, Math.ceil(txt.length * chalk))}</text>}
         <HeldTravel f={f} x={560} y={1190} w={120} h={150} mode="sweep" seed={141}>
           <Flask f={f} x={620} y={1330} s={0.6} fill={0.55} glow={0.5} seed={14} />
         </HeldTravel>
@@ -928,13 +927,13 @@ const S15: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-200} y={-200} width={1480} height={2400} fill="url(#jarLamp)" />
         {/* the room seen up through the jar mouth */}
         <rect x={140} y={360} width={800} height={260} fill="#5C6064" opacity={0.6} />
-        <HeldTravel f={f} x={380} y={720} w={360} h={480} mode="sweep" seed={151}><Nix f={f} x={560} y={1200} scale={2.6} look={0.1} card={1} flip={0.04 * Math.abs(Math.sin(f / 30))} cardText="2030?" cardBack="2030?" cues={[b46, b47]} seed={15} mood="steady" /></HeldTravel>
+        <HeldTravel f={f} x={380} y={720} w={360} h={480} mode="sweep" seed={151}><Nix f={f} x={560} y={1200} scale={2.6} look={0.1} card={1} flip={0.04 * Math.abs(Math.sin(f / 30))} cardText="?" cardBack="?" cues={[b46, b47]} seed={15} mood="steady" /></HeldTravel>
         <ellipse cx={540} cy={1560} rx={430} ry={90} fill="#3C3F43" stroke={CAN.glass} strokeWidth={6} opacity={0.9} />
         <ellipse cx={540} cy={1560} rx={330} ry={60} fill="none" stroke="#8C9196" strokeWidth={3} strokeDasharray="6 10" opacity={0.6} />
         <circle cx={360} cy={1555} r={10} fill={CAN.soot} stroke={C.ink} strokeWidth={2} />
         <g transform="translate(870 1240)">
           <Flask f={f} x={0} y={0} s={0.8} fill={0.55} glow={0.35} seed={15} />
-          <NeckTag x={18} y={-160} text={tagFlip > 0.5 ? 'AUGUST 2030' : ''} f={f} />
+          <NeckTag x={18} y={-160} text={tagFlip > 0.5 ? '?' : ''} f={f} />
         </g>
         {fall > 0 && fall < 1 && <g transform={`translate(${lerp(300, 250, fall)} ${lerp(260, 1480, fall)}) scale(${lerp(0.5, 1.8, fall * fall)})`} opacity={1 - clamp01((fall - 0.92) / 0.08) * 0.0}><RefuseLump f={f} x={0} y={0} s={1} seed={9} /></g>}
         {/* the jar's glass rim around the whole frame */}
