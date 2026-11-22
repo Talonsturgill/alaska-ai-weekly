@@ -18,9 +18,9 @@ export const CAN = {
   lilac: '#B48CE0', lilacL: '#DCC6F4', lilacD: '#7A57A8',
   cobalt: '#2F5DB8', cobaltL: '#6D92DC', cobaltD: '#1C3A78',
   chalk: '#EEF0F2', chalkD: '#C9CED6', soot: '#2B2A30', sootL: '#4A4852',
-  sky: '#2C3566', skyLow: '#6A5A9A', glass: '#CFE3F2', bench: '#3B4250', benchTop: '#E3E7EC',
+  sky: '#9FB4C4', skyLow: '#B89A9A', teal: '#24474F', glass: '#CFE3F2', bench: '#4A4E52', benchTop: '#EEF0F2',
   card: '#FBF8F0', red: '#C8343C', spruce: '#1E3A3A', spruceL: '#2F5450', snow: '#E8EEF6',
-  lamp: '#FFE2A8', night: '#141826', hat: '#F2C230', hatD: '#B98E14',
+  lamp: '#FFE2A0', night: '#141826', hat: '#F2C230', hatD: '#B98E14',
 };
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
@@ -374,8 +374,8 @@ export const BenchWorld: React.FC<{f: number; seed?: number; dusk?: number; benc
     const ch = (sh: number) => Math.round(((pa >> sh) & 255) * (1 - k) + ((pb >> sh) & 255) * k);
     return `#${((1 << 24) + (ch(16) << 16) + (ch(8) << 8) + ch(0)).toString(16).slice(1)}`;
   };
-  const skyTop = mix('#3A4C86', CAN.night, dk);
-  const skyLow = mix('#9C8CC4', CAN.skyLow, dk);
+  const skyTop = mix('#9FB4C4', '#24474F', dk);
+  const skyLow = mix('#D9D2CC', '#B89A9A', dk);
   const drift = Math.sin(f / 200) * 10;
   const ridge = (base: number, amp: number, s: number) => {
     let d = `M-40,${base}`;
@@ -399,18 +399,18 @@ export const BenchWorld: React.FC<{f: number; seed?: number; dusk?: number; benc
         </radialGradient>
       </defs>
       {/* the room wall */}
-      <rect x={-60} y={-60} width={1200} height={2040} fill={mix('#4A5470', '#2A3048', dk)} />
+      <rect x={-60} y={-60} width={1200} height={2040} fill={mix('#5C6064', '#34373B', dk)} />
       {/* the window and the world outside */}
       <g clipPath={`url(#${id}w)`}>
         <rect x={60} y={winTop} width={960} height={wb - winTop} fill={`url(#${id}s)`} />
         {dk > 0.3 && Array.from({length: 14}).map((_, i) => <circle key={i} cx={80 + h01(seed + 9, i) * 920} cy={winTop + 20 + h01(seed + 3, i) * 200} r={1.6} fill="#fff" opacity={(dk - 0.3) * h01(i, seed)} />)}
         <g transform={`translate(${drift * 0.3} 0)`}>
-          <path d={ridge(wb - 300, 260, seed)} fill={mix('#7E86B4', '#3E4472', dk)} stroke={INK} strokeWidth={3} />
+          <path d={ridge(wb - 300, 260, seed)} fill={mix('#B7C3CB', '#4E6A70', dk)} stroke={INK} strokeWidth={3} />
           {/* snow caps on the far ridge */}
           <path d={ridge(wb - 300, 260, seed)} fill="none" stroke={CAN.snow} strokeWidth={10} opacity={0.6} strokeDasharray="60 140" />
         </g>
         <g transform={`translate(${drift * 0.7} 0)`}>
-          <path d={ridge(wb - 180, 150, seed + 5)} fill={mix('#56608E', '#2C3258', dk)} stroke={INK} strokeWidth={3} />
+          <path d={ridge(wb - 180, 150, seed + 5)} fill={mix('#7F949E', '#2E4A50', dk)} stroke={INK} strokeWidth={3} />
           {/* spruce on the near slope */}
           {Array.from({length: 16}).map((_, i) => {
             const tx = 70 + i * 62 + h01(seed, i) * 20, ty = wb - 70 - h01(seed + 2, i) * 60, th = 50 + h01(seed + 4, i) * 40;
@@ -419,7 +419,7 @@ export const BenchWorld: React.FC<{f: number; seed?: number; dusk?: number; benc
         </g>
         {/* the Anchorage grid of lights below */}
         <g transform={`translate(${drift} 0)`}>
-          <rect x={60} y={wb - 60} width={960} height={60} fill={mix('#3C4468', '#20253F', dk)} />
+          <rect x={60} y={wb - 60} width={960} height={60} fill={mix('#5E6E74', '#1E3034', dk)} />
           {Array.from({length: 40}).map((_, i) => (
             <rect key={i} x={70 + (i % 20) * 48 + h01(seed + 6, i) * 20} y={wb - 50 + Math.floor(i / 20) * 22} width={8} height={5} fill={CAN.lamp} opacity={0.35 + 0.6 * dk * h01(i, seed + 1)} />
           ))}
@@ -463,7 +463,7 @@ export const BenchWorld: React.FC<{f: number; seed?: number; dusk?: number; benc
             );
           })}
           <rect x={-60} y={1590} width={1200} height={22} fill={CAN.chalkD} stroke={INK} strokeWidth={4} />
-          <rect x={-60} y={1612} width={1200} height={360} fill={mix('#2E3444', '#1C2030', dk)} />
+          <rect x={-60} y={1612} width={1200} height={360} fill={mix('#3C3F43', '#232528', dk)} />
           {Array.from({length: 9}).map((_, i) => <line key={i} x1={-60 + i * 150} x2={-120 + i * 150} y1={1612} y2={1960} stroke={INK} strokeWidth={2} opacity={0.35} />)}
         </g>
       )}

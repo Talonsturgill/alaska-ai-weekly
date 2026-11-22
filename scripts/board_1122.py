@@ -116,8 +116,8 @@ KICKS = (12, 29)
 CAMERA = {1: "dollyThrough", 2: "truckAcross", 3: "riseWith", 4: "riseWith", 5: "dollyThrough", 6: "truckAcross", 7: "dollyThrough",
           8: "truckAcross", 9: "dollyThrough", 10: "craneDown", 11: "dollyThrough", 12: "riseWith", 13: "dollyThrough"}
 
-PALETTE = ("a warm amber desk glow #FFC870 against a violet blue-hour window #2C3566 onto the Chugach, neodymium lilac #B48CE0 held for every speck, "
-           "a bright lichen-chartreuse felt canary #B8D433, a cobalt scale wall #2F5DB8, chalk countertops #EEF0F2 and soot charcoal coal refuse #2B2A30")
+PALETTE = ("a warm honey-cream glow #FFE2A0 on chalk countertops #EEF0F2, a soft aqua blue-hour window #9FB4C4 deepening to deep teal #24474F over the Chugach, "
+           "neodymium lilac #B48CE0 kept for every speck, a bright lichen-chartreuse felt canary #B8D433, a cobalt scale wall #2F5DB8 and soot charcoal coal refuse #2B2A30")
 
 
 def BOARD_HEAD(b_at, end, ad, tr):
