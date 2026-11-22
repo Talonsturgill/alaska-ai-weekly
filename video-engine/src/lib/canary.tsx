@@ -81,7 +81,7 @@ export const Nix: React.FC<{
   const lid = mood === 'tired' ? 0.5 : mood === 'smug' ? 0.35 : 0;
   const cardW = Math.max(54, Math.max(cardText.length, cardBack.length) * 15 + 24);
   return (
-    <g transform={`translate(${x} ${y + hopY}) scale(${scale * facing} ${scale})`} style={silhouette ? {filter: 'brightness(0.32) saturate(0.6)'} : undefined}>
+    <g transform={`translate(${x} ${y + hopY}) scale(${scale * facing} ${scale})`} style={silhouette ? {filter: 'brightness(0.42) saturate(0.35) contrast(1.15)'} : undefined}>
       <FormGradient id={id} t={t} />
       <ContactShadow cx={0} cy={2} rx={46} ry={8} opacity={0.32} blur={6} />
       {/* feet gripping the perch */}
@@ -489,7 +489,8 @@ export const TearCalendar: React.FC<{f: number; x: number; y: number; s?: number
       <rect x={-90} y={0} width={180} height={190} rx={6} fill="#000" opacity={0.2} transform="translate(6 6)" />
       <rect x={-90} y={0} width={180} height={190} rx={6} fill={CAN.card} stroke={INK} strokeWidth={5} />
       <rect x={-90} y={0} width={180} height={40} rx={6} fill={CAN.red} stroke={INK} strokeWidth={5} />
-      <text x={0} y={120} textAnchor="middle" fontFamily={MONO_F} fontWeight={800} fontSize={30} fill={INK}>{under}</text>
+      {Array.from({length: 20}).map((_, i) => <rect key={`g${i}`} x={-76 + (i % 5) * 31} y={56 + Math.floor(i / 5) * 30} width={24} height={20} fill={CAN.chalkD} />)}
+      {under && <text x={0} y={120} textAnchor="middle" fontFamily={MONO_F} fontWeight={800} fontSize={30} fill={INK}>{under}</text>}
       {tr < 0.98 && (
         <g transform={`translate(${-90 + tr * 260} ${40 + tr * 120}) rotate(${tr * 70 + 6 * Math.sin(f / 3 + seed) * tr})`} opacity={1 - tr * 0.6}>
           <rect x={0} y={0} width={180} height={150} rx={4} fill={CAN.card} stroke={INK} strokeWidth={4} />

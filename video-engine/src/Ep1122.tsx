@@ -221,7 +221,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const ring = clamp01((f - 10) / 18);
   const card = ease(f, b3 - 4, 14);
   const turn = card > 0.5 ? 0.5 + 0.5 * Math.sin((f - b3) / 9) : 0;
-  const cam = track([{t: 0, z: 1.14, fx: 520, fy: 1060}, {t: p.dur, z: 1.22, fx: 540, fy: 1080}]);
+  const cam = track([{t: 0, z: 1.42, fx: 540, fy: 1090}, {t: p.dur, z: 1.5, fx: 545, fy: 1100}]);
   return (
     <Frame p={p} cam={cam} overlay={
       <g>
@@ -233,14 +233,14 @@ const S1: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <BenchWorld f={f} seed={1} dusk={0.05}>
           <HeldTravel f={f} x={560} y={1020} w={200} h={230} mode="sweep" seed={11}>
-            <Flask f={f} x={680} y={1240} s={0.95} fill={0} seed={1} bubbles={false} />
+            <Flask f={f} x={790} y={1240} s={1.25} fill={0} seed={1} bubbles={false} />
           </HeldTravel>
-          <NeckTag x={700} y={1080} f={f} />
-          <HeldTravel f={f} x={330} y={1080} w={140} h={170} mode="shadow" seed={12}><Jar x={400} y={1240} ring={land ? ring : 0} /></HeldTravel>
-          <g transform={`translate(400 ${lumpY}) scale(${land ? 1 + 0.12 * Math.sin(clamp01((f - 10) / 8) * Math.PI) : 1} ${land ? 1 - 0.12 * Math.sin(clamp01((f - 10) / 8) * Math.PI) : 1})`}>
-            <RefuseLump f={f} x={0} y={0} s={1.05} seed={3} />
+          <NeckTag x={815} y={1030} s={1.2} f={f} />
+          <HeldTravel f={f} x={240} y={1040} w={180} h={210} mode="shadow" seed={12}><Jar x={330} y={1240} s={1.25} ring={land ? ring : 0} /></HeldTravel>
+          <g transform={`translate(330 ${lumpY}) scale(${land ? 1 + 0.12 * Math.sin(clamp01((f - 10) / 8) * Math.PI) : 1} ${land ? 1 - 0.12 * Math.sin(clamp01((f - 10) / 8) * Math.PI) : 1})`}>
+            <RefuseLump f={f} x={0} y={0} s={1.35} seed={3} />
           </g>
-          <Nix f={f} x={560} y={1240} scale={1.25} snapAt={b2} look={f < b2 ? 0.2 : -0.8} card={card} flip={turn} cardText="NO" cardBack="OK" cues={[b1, b2, b3]} seed={2} mood="alert" />
+          <Nix f={f} x={560} y={1240} scale={1.9} snapAt={b2} look={f < b2 ? 0.2 : -0.8} card={card} flip={turn} cardText="NO" cardBack="OK" cues={[b1, b2, b3]} seed={2} mood="alert" />
         </BenchWorld>
       </SVG>
     </Frame>
@@ -273,7 +273,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <BenchWorld f={f} seed={2} dusk={0.08} behind={
-          <Suit f={f} x={260} y={1560} s={1.55} seed={4} cues={[b4, b6, b8]} coat="#5B6168" reach={0.7 + 0.3 * lift} facing={1} />
+          <Suit f={f} x={230} y={1600} s={2.35} seed={4} cues={[b4, b6, b8]} coat="#5B6168" reach={0.7 + 0.3 * lift} facing={1} />
         }>
           {/* specks across the range when the magnifier lifts */}
           {Array.from({length: 22}).map((_, i) => (
@@ -301,7 +301,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
             return <Speck key={k} f={f} x={lerp(620, 870, t)} y={lerp(1170, 960, t) - Math.sin(t * Math.PI) * 60} r={5} seed={k + 9} />;
           })}
           <Magnifier x={mx} y={my + 140} s={0.9} rot={-18 + 10 * lift} glint={clamp01((f - b5) / 8)} />
-          <Nix f={f} x={860} y={1240} scale={1.0} look={-0.6} card={0} cues={[b5, b8]} seed={5} mood={f > b8 ? 'worried' : 'alert'} />
+          <Nix f={f} x={880} y={1240} scale={1.5} look={-0.6} card={0} cues={[b5, b8]} seed={5} mood={f > b8 ? 'worried' : 'alert'} />
           {f > b5 && <Speck f={f} x={860 + 64} y={1240 - 108} r={4} seed={31} />}
         </BenchWorld>
       </SVG>
@@ -404,7 +404,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
               <Microbe key={i} f={f} x={430 + i * 55} y={1150 + (i % 2) * 14} scale={1.0} seed={i + 1} rot={(i % 2 ? -14 : 14)} mood="proud" cues={[b12, b48]} />
             ))}</g></HeldTravel>
           </g>
-          <Nix f={f} x={850} y={1240} scale={1.05} look={wall > 0.3 ? -0.2 : -0.6} snapAt={b13 + 8} card={1 - ease(f, b14, 12) * 0.6} cardText="NO" cues={[b13, b14]} seed={6} mood={f > b14 ? 'worried' : 'alert'} />
+          <Nix f={f} x={860} y={1240} scale={1.55} look={wall > 0.3 ? -0.2 : -0.6} snapAt={b13 + 8} card={1 - ease(f, b14, 12) * 0.6} cardText="NO" cues={[b13, b14]} seed={6} mood={f > b14 ? 'worried' : 'alert'} />
         </BenchWorld>
       </SVG>
     </Frame>
@@ -562,7 +562,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <BenchWorld f={f} seed={8} dusk={0.2} wallUp={1} behind={
-          <Suit f={f} x={200} y={1560} s={1.5} seed={9} cues={[b22, b23, b25, b26]} coat="#6C6A7A" longHair reach={0.4 + 0.5 * hang} facing={1} />
+          <Suit f={f} x={190} y={1600} s={2.25} seed={9} cues={[b22, b23, b25, b26]} coat="#6C6A7A" longHair reach={0.4 + 0.5 * hang} facing={1} />
         }>
           <g transform={`translate(330 ${lerp(560, 720, hang)})`} opacity={hang > 0 ? 1 : 0}>
             <DataFeeder f={f} x={0} y={0} s={0.9} seeds={0} frosted />
@@ -577,7 +577,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
               </g>
             );
           })}</g></HeldTravel>
-          <Nix f={f} x={980} y={nixY} scale={1.1} look={-0.7} card={0} monocles={f > b26 + 4} cues={[b21, b24, b26]} seed={8} mood="alert" hop={land < 1 ? 0 : 0} />
+          <Nix f={f} x={960} y={nixY} scale={1.5} look={-0.7} card={0} monocles={f > b26 + 4} cues={[b21, b24, b26]} seed={8} mood="alert" hop={land < 1 ? 0 : 0} />
         </BenchWorld>
       </SVG>
     </Frame>
@@ -629,7 +629,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <Microbe f={f} x={830 + 10 * Math.sin(f / 5)} y={1250} scale={1.4} seed={9} rot={fix * 30} mood={fix > 0.5 ? 'proud' : 'worried'} cues={[b29]} />
         <g transform={`translate(780 1240) rotate(${f * 6 * fix})`}><circle r={22} fill="none" stroke={C.ink} strokeWidth={6} /><path d="M-22,0 L22,0 M0,-22 L0,22" stroke={C.ink} strokeWidth={4} /></g>
         <rect x={60} y={640} width={960} height={14} rx={6} fill="#8C9196" stroke={C.ink} strokeWidth={3} />
-        <Nix f={f} x={300} y={652} scale={1.0} look={0.6} card={card} flip={clamp01((f - b29) / 10)} cardText="NO" cardBack="FIX" cues={[b28, b29]} seed={9} mood={card > 0.5 && fix < 0.5 ? 'worried' : 'steady'} />
+        <Nix f={f} x={300} y={652} scale={1.45} look={0.6} card={card} flip={clamp01((f - b29) / 10)} cardText="NO" cardBack="FIX" cues={[b28, b29]} seed={9} mood={card > 0.5 && fix < 0.5 ? 'worried' : 'steady'} />
       </SVG>
     </Frame>
   );
@@ -681,7 +681,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
         </g>
         <Floor f={f} kind="tiles" seed={10} />
         <g transform="translate(-30 0)">
-          <Nix f={f} x={110} y={1380} scale={1.0} look={0.6} card={ease(f, b31 - 4, 10)} cardText="NO" cues={[b31]} seed={10} mood="smug" />
+          <Nix f={f} x={150} y={1380} scale={1.5} look={0.6} card={ease(f, b31 - 4, 10)} cardText="NO" cues={[b31]} seed={10} mood="smug" />
         </g>
       </SVG>
     </Frame>
@@ -732,9 +732,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <rect data-band="ok" x={-200} y={1380} width={1480} height={600} fill="#4A4E52" stroke={C.ink} strokeWidth={4} />
         <Floor f={f} kind="curb" seed={11} />
         <HeldTravel f={f} x={170} y={1180} w={140} h={200} mode="sweep" seed={111}>
-          <Flask f={f} x={240} y={1380} s={0.75} fill={0.6} glow={flick * 0.7} seed={11} />
+          <Flask f={f} x={290} y={1380} s={0.95} fill={0.6} glow={flick * 0.7} seed={11} />
         </HeldTravel>
-        <Nix f={f} x={110} y={1380} scale={1.0} look={1} card={0.3} cardText="NO" cues={[b33, b35]} seed={11} mood="worried" />
+        <Nix f={f} x={140} y={1380} scale={1.5} look={1} card={0.3} cardText="NO" cues={[b33, b35]} seed={11} mood="worried" />
       </SVG>
     </Frame>
   );
@@ -857,7 +857,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
         </HeldTravel>
         <GoalStool f={f} x={800} y={1330} s={1.1} slide={stool} />
         <Floor f={f} kind="rocks" seed={14} />
-        <Nix f={f} x={lerp(900, 720, land)} y={lerp(900, 1330, land)} scale={1.0} facing={-1} look={-0.2} card={ease(f, b42 - 4, 12)} reticle cues={[b41, b42, b44]} seed={14} silhouette={f > b41 + 30} mood="steady" />
+        <Nix f={f} x={lerp(900, 720, land)} y={lerp(900, 1330, land)} scale={1.5} facing={-1} look={-0.2} card={ease(f, b42 - 4, 12)} reticle cues={[b41, b42, b44]} seed={14} silhouette={f > b41 + 30} mood="steady" />
       </SVG>
     </Frame>
   );
