@@ -109,6 +109,34 @@ class RestTests(unittest.TestCase):
         self.assertEqual(clean['request_id'], 'r1')
         self.assertEqual(clean['privacy_level'], 'PUBLIC_TO_EVERYONE')
 
+    def test_alaska_linkedin_video_routes_website_to_first_comment_only(self):
+        m = manifest('linkedin', repo='alaska-ai-weekly')
+        fields = rest.build(m)[1]
+        self.assertEqual(fields['title'], m['title'])
+        self.assertEqual(fields['first_comment'], 'Visit https://alaskaaihq.com/')
+        m['options']['first_comment'] = 'Wrong comment'
+        with self.assertRaisesRegex(ValueError, 'conflicting placement/account option: first_comment'):
+            rest.build(m)
+        for field in ('title', 'description', 'linkedin_description'):
+            for url in ('https://alaskaaihq.com/', 'AlaskaAIHQ.com', 'https://bit.ly/other'):
+                with self.subTest(field=field, url=url):
+                    m = manifest('linkedin', repo='alaska-ai-weekly')
+                    (m if field == 'title' else m['options'])[field] = 'More updates at ' + url
+                    with self.assertRaisesRegex(ValueError, 'body must be link-free'):
+                        rest.build(m)
+
+    def test_alaska_linkedin_video_rule_does_not_affect_other_destinations(self):
+        for platform, repo, kind in (
+            ('linkedin', 'TexasAIDispatch', 'video'),
+            ('linkedin', 'alaskaaicarousels', 'document'),
+            ('instagram', 'alaska-ai-weekly', 'video'),
+        ):
+            with self.subTest(platform=platform, repo=repo):
+                m = manifest(platform, kind, repo=repo)
+                m['title'] = 'More updates at https://alaskaaihq.com/'
+                self.assertNotIn('first_comment', rest.build(m)[1])
+                self.assertEqual(rest.build(m)[1]['title'], m['title'])
+
     def test_wrong_organization_refused(self):
         m = manifest('linkedin'); m['options']['target_linkedin_page_id'] = '117084989'
         with self.assertRaises(ValueError): rest.build(m)

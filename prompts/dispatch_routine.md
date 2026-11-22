@@ -78,9 +78,14 @@ in the released video. Do not copy the production source/credit block into the c
 comment by default. Verify the actual license: include an external credit/link only when its
 terms require that placement or the released media lacks required attribution. Keep source and
 license records in the existing production/archive evidence. For carousels, preserve attribution
-required by their media and licenses. This owner update controls over older caption templates. Add a short factual CTA to https://alaskaaihq.com/ in the
-platform caption/description or supported first comment, respecting that platform's length
-limit and the existing prose checks. Do not add claims, promises or endorsements. A bare URL in
+required by their media and licenses. For LinkedIn Alaska Dispatch videos, keep the post body
+link-free: use the approved post.txt without appending a website CTA to title, description, or
+linkedin_description. The transport sets the first comment to “Visit https://alaskaaihq.com/”.
+Verify the published comment separately from the post and record its outcome. If the comment
+fails or cannot be verified, leave the post intact and report it; never move the link back into
+the body or republish. For other platforms, use a short factual CTA to https://alaskaaihq.com/
+in the caption/description or supported first comment, within the platform and prose limits.
+Do not add claims, promises or endorsements. A bare URL in
 an Instagram/TikTok caption is not a clickable link: do not claim a link sticker, link-in-bio
 destination or clickable CTA unless it actually exists. Do not change profile bios in this run.
 
