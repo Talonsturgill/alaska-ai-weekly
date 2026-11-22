@@ -125,9 +125,7 @@ export const Nix: React.FC<{
             <path d={`M-10,${-14 - brow * 0.2} L10,${-14 + brow}`} stroke={INK} strokeWidth={4} strokeLinecap="round" />
             {monocles && <circle r={13} fill="none" stroke={CAN.hat} strokeWidth={3} />}
           </g>
-          {monocles && [[-16, 10], [-4, 20], [14, 18]].map(([mx, my], i) => (
-            <circle key={i} cx={mx} cy={my} r={7} fill="none" stroke={CAN.hat} strokeWidth={2.4} />
-          ))}
+
           {/* beak, opens a touch on the card beat */}
           <path d={`M26,${-2 - raise * 2} l18,6 -18,${6 + raise * 4} Z`} fill={CAN.beak} stroke={INK} strokeWidth={3.5} strokeLinejoin="round" />
           {mood === 'worried' && <path d="M-26,-30 q-6,8 -2,14 q6,-2 4,-10 Z" fill="#9BD3F0" stroke={INK} strokeWidth={2} />}
