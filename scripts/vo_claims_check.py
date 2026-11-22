@@ -36,6 +36,7 @@ Usage:
     python3 scripts/vo_claims_check.py --list     # print what it derived, exit 0
     python3 scripts/vo_claims_check.py --before-synth  # provisional density, no old timings
     python3 scripts/vo_claims_check.py --caption-rows-self-test  # the caption row prediction
+    python3 scripts/vo_claims_check.py --scale-self-test  # unsourced scale qualifiers (2026-11-22)
 
   3. (machine pass 2026-11-19) A SPOKEN RATIO whose denominator skips a set its claim names between
      the two numbers ("69 of 3,648" when the claim says 400 installed, 69 operational): see
@@ -128,6 +129,74 @@ CADENCE = re.compile(
     r"\b(any hour|every hour|each hour|hourly|per hour|a minute|per minute|every minute|"
     r"every day|each day|daily|per day|every second|per second|continuously|"
     r"in real time|round the clock|constantly|on demand|any time)\b", re.I)
+
+
+# 4. UNSOURCED SCALE QUALIFIER (machine pass 2026-11-22, queue unsourced-scale-qualifier-late). The
+# 11-22 VO "Four or five steps, at full size, is the score" cited c12, whose verbatim says only
+# "reduce the number of steps required to 'four or five'". It passed 0F, this gate and three panels;
+# the editor caught it on cut 4 and it cost a VO patch and a fifth cut. A scale qualifier turns a
+# lab goal into a plant claim, which is as load-bearing as a number, so like a CADENCE it must be
+# in the cited claim's own words. Each family lists the stems that back it (hyphens read as spaces).
+SCALE_FAMILIES = [
+    (re.compile(r"\b(full[- ]size[d]?|full[- ]scale|life[- ]size[d]?)\b", re.I),
+     ("full size", "full scale", "life size", "fullsize")),
+    (re.compile(r"\b(commercial(ly)?|commerciali[sz]\w*)\b", re.I), ("commercial",)),
+    (re.compile(r"\b(at scale|scal(e|ed|ing) up|scale[- ]up|scaled[- ]up)\b", re.I), ("scale",)),
+    (re.compile(r"\b(plant[- ]scale|industrial[- ]scale|industrial[- ]size[d]?|utility[- ]scale|"
+                r"grid[- ]scale)\b", re.I), ("plant", "industrial", "utility", "grid")),
+    (re.compile(r"\b(economically viable|cost[- ]competitive|mass[- ]produc\w*)\b", re.I),
+     ("economic", "cost", "mass produc")),
+    (re.compile(r"\b(statewide|nationwide|worldwide)\b", re.I), None),
+]
+
+
+def scale_problems(idx, text, backing_by_claim):
+    """One failure line per scale qualifier in `text` that no cited claim's own words carry.
+
+    `backing_by_claim` is [(claim_id, verbatim_source + spoken)] for the claims the line cites."""
+    out = []
+    backing = re.sub(r"[-\u2010-\u2015]", " ", " ".join(b for _, b in backing_by_claim).lower())
+    ids = ",".join(c for c, _ in backing_by_claim)
+    for pat, stems in SCALE_FAMILIES:
+        for m in pat.finditer(text):
+            word = m.group(0)
+            need = stems or (word.lower(),)
+            if not backing_by_claim:
+                out.append(f"L{idx}: asserts a SCALE ({word!r}) with no claim id. A scale qualifier "
+                           f"is a factual claim about how big the thing is and needs the record.\n"
+                           f"      {text[:150]}")
+            elif not any(n in backing for n in need):
+                out.append(f"L{idx}: says {word!r} and cites {ids}, but none of those claims' verbatim "
+                           f"source or spoken carries it ({' / '.join(need)}). A goal at lab scale is "
+                           f"not a goal at full size. Say what the record says, or drop the qualifier.\n"
+                           f"      {text[:150]}")
+    return out
+
+
+def _scale_self_test():
+    c12 = ("c12", "\"Briggs believes his team can reduce the number of steps required to \"four or "
+                  "five\" with the funding.\" Briggs hopes to cut it to four or five steps.")
+    c33 = ("c33", "\"the process has not been able to be scaled up to be commercially viable.\"")
+    c25 = ("c25", "\"accelerate the scale-up into something that's economically viable.\"")
+    cases = [
+        ("Four or five steps, at full size, is the score.", [c12], 1),   # the 11-22 cut-4 line
+        ("Briggs hopes for four or five steps.", [c12], 0),               # the shipped fix
+        ("But it hasn't scaled up to be commercially viable.", [c33], 0),
+        ("Briggs says that should speed the scale up.", [c25], 0),
+        ("It is economically viable at scale.", [c25], 0),
+        ("A commercial plant is next.", [c12], 1),
+        ("It runs statewide.", [], 1),
+        ("The award runs through August.", [], 0),
+    ]
+    bad = []
+    for text, cl, want in cases:
+        got = len(scale_problems(0, text, cl))
+        if got != want:
+            bad.append(f"{text!r}: {got} hits, want {want}")
+    for b in bad:
+        print("  " + b)
+    print("vo_claims_check scale self-test:", "FAIL" if bad else "PASS")
+    return 1 if bad else 0
 
 
 def _span_ids(lines, cid):
@@ -330,6 +399,8 @@ def main():
         return _caption_rows_self_test()
     if "--plan-self-test" in sys.argv:
         return _plan_self_test()
+    if "--scale-self-test" in sys.argv:
+        return _scale_self_test()
     if "--plan" in sys.argv:
         with open(os.path.join(OUT, "claims.json")) as stream:
             claims_list = json.load(stream)["claims"]
@@ -416,6 +487,9 @@ def main():
         problems += denominator_check.problems(
             denominator_check.ratios(text),
             [(c, denominator_check.claim_text(claims[c])) for c in cited], f"L{idx}")
+        problems += scale_problems(idx, text, [
+            (c, str(claims[c].get("verbatim_source") or "") + " " + str(claims[c].get("spoken") or ""))
+            for c in cited])
         if QUANT.search(text) and not cited and not DATEISH.search(text):
             problems.append(
                 f"L{idx} states a quantity and cites NO claim id. Every number in the "
@@ -522,7 +596,7 @@ def main():
         sys.exit(1)
 
     print(f"PASS [vo_claims_check] {len(script['lines'])} narration lines checked against "
-          f"{len(claims)} claims; no obligation violated, no unsourced quantity and no unsourced cadence.")
+          f"{len(claims)} claims; no obligation violated, no unsourced quantity, cadence or scale qualifier.")
     return 0
 
 
