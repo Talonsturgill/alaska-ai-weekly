@@ -19,6 +19,11 @@ import {IdleFigure, FigureFinish} from './figureidle';
 //
 // Keep the feet above the caption card: y + the World push must clear CAPTION_TOP, which
 // caption_band_check reports as FEET (2026-11-21, four courtroom shots stood figures behind the card).
+// Machine pass 2026-11-22 (all three seats on 11-22: "faceless human heads flat discs with no
+// key/fill/rim"; figures plainer than props on every film since 11-06): the head is modelled, a far-side
+// terminator crescent, a near-cheek key highlight, an ear and a neck with the jaw's cast shadow, and it
+// carries a face by default, brows, eyes that blink every 3.5 s on the seed's phase, a nose and a mouth.
+// face={false} keeps the modelled head without features.
 // Look-dev: `SuitLook` (scripts/probe_frames.sh SuitLook 0,0.5,1.0,1.5,2.0 or a remotion still).
 // =============================================================================
 
@@ -54,12 +59,15 @@ export interface SuitProps {
   rimColor?: string;
   /** idle gain, 0 freezes (default 1) */
   gain?: number;
+  /** eyes, brows, nose and mouth with a blink (default true, machine pass 2026-11-22); false keeps the
+   *  modelled head (crescent shade, ear, neck) but draws no features */
+  face?: boolean;
 }
 
 export const Suit: React.FC<SuitProps> = ({
   f, x, y, s = 1, seed = 1, cues = [], coat = '#3A4048', trousers = '#2A2E36', shirt = '#F2EEE6',
   skin = '#C99A78', hair = '#4A3A30', tie = false, longHair = false, reach = 0, reachL = 0, facing = 1,
-  walk = 0, keySide = 'left', rimColor = '#FFD7B0', gain = 1,
+  walk = 0, keySide = 'left', rimColor = '#FFD7B0', gain = 1, face = true,
 }) => {
   const hgt = 300 * s;
   const step = Math.sin(walk * 0.35) * 14;
@@ -104,8 +112,33 @@ export const Suit: React.FC<SuitProps> = ({
               })()}
               <g transform={`translate(${pose.headX * 0.4},0) rotate(${pose.headRot} 0 -250)`}>
                 {longHair && <path d="M -40 -282 Q -54 -232 -36 -206 L -20 -214 Q -30 -250 -26 -282 Z M 40 -282 Q 54 -232 36 -206 L 20 -214 Q 30 -250 26 -282 Z" fill={hair} stroke={INK} strokeWidth={3} />}
+                {/* neck, with the jaw's cast shadow across its top */}
+                <path d="M -12 -232 L -12 -216 Q 0 -210 12 -216 L 12 -232 Z" fill={skin} stroke={INK} strokeWidth={3} />
+                <path d="M -12 -230 Q 0 -222 12 -230 L 12 -224 Q 0 -217 -12 -224 Z" fill={shade} opacity={0.75} />
+                {/* ear on the near (lit) side; the face turns three quarters toward facing */}
+                <ellipse cx={-33} cy={-258} rx={7} ry={11} fill={skin} stroke={INK} strokeWidth={3} />
+                <path d="M -34 -264 Q -30 -258 -34 -252" stroke={shade} strokeWidth={2.5} fill="none" strokeLinecap="round" />
                 <ellipse cx={0} cy={-262} rx={36} ry={42} fill={skin} stroke={INK} strokeWidth={5} />
-                <ellipse cx={8} cy={-256} rx={20} ry={24} fill={shade} opacity={0.6} />
+                {/* form: a terminator crescent on the far side and a soft key highlight on the near cheek,
+                    in place of the 11-21 centre blob the 11-22 panel read as a flat disc */}
+                <path d="M 8 -301 Q 38 -292 34 -262 Q 32 -230 6 -222 Q 24 -242 24 -262 Q 24 -284 8 -301 Z" fill={shade} opacity={0.62} />
+                <ellipse cx={-14} cy={-276} rx={11} ry={14} fill="#FFFFFF" opacity={0.16} />
+                {face && (() => {
+                  // a blink every three and a half seconds, phase set by seed, so held faces live
+                  const blink = (f + seed * 37) % 105 < 4 ? 0.18 : 1;
+                  const ey = -264;
+                  return (
+                    <g>
+                      <path d={`M -15 ${ey - 11} Q -8 ${ey - 14} -2 ${ey - 11}`} stroke={hair} strokeWidth={3.4} fill="none" strokeLinecap="round" />
+                      <path d={`M 10 ${ey - 11} Q 16 ${ey - 14} 23 ${ey - 11}`} stroke={hair} strokeWidth={3.4} fill="none" strokeLinecap="round" />
+                      <ellipse cx={-8} cy={ey} rx={3.6} ry={4.6 * blink} fill={INK} />
+                      <ellipse cx={16} cy={ey} rx={3.4} ry={4.4 * blink} fill={INK} />
+                      <path d={`M 6 ${ey + 2} Q 12 ${ey + 14} 4 ${ey + 17}`} stroke={shade} strokeWidth={3} fill="none" strokeLinecap="round" />
+                      <path d={`M -4 ${ey + 27} Q 5 ${ey + 31} 14 ${ey + 27}`} stroke={INK} strokeWidth={2.6} fill="none" strokeLinecap="round" opacity={0.8} />
+                      <ellipse cx={-14} cy={ey + 16} rx={6} ry={4} fill="#E07A6A" opacity={0.22} />
+                    </g>
+                  );
+                })()}
                 <path d="M -34 -282 Q 0 -312 34 -282 Q 20 -296 0 -298 Q -20 -296 -34 -282 Z" fill={hair} stroke={INK} strokeWidth={3} />
                 {longHair && <path d="M -36 -284 Q -40 -304 -12 -306 Q 20 -308 36 -284 Q 20 -296 0 -298 Q -20 -296 -36 -284 Z" fill={hair} stroke={INK} strokeWidth={3} />}
               </g>
