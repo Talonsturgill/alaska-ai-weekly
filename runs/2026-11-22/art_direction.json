@@ -1,0 +1,68 @@
+{
+ "run_date": "2026-11-22",
+ "title": "The Bird That Says No",
+ "palette": {
+  "roles": {
+   "sky": "#9FB4C4 pale cyan-grey blue-hour window early, deepening to teal-slate #24474F by dusk; never indigo or violet",
+   "horizon": "#B89A9A dusty rose-grey warm-up at the ridge line, so lilac is the only violet in frame",
+   "lamp": "#FFE2A0 pale honey-cream lamp pool, lighting ONLY cold materials (chalk bench top, glass, steel, Nix's key side, the sill); never wood, never orange or ember",
+   "ground": "#4A4E52 neutral grey bench body and floor, #EEF0F2 chalk bench top, #2B2A30 soot charcoal coal refuse",
+   "hero": "#B8D433 lichen chartreuse canary felt, shade #7E9A1E, highlight #E4F27A",
+   "accent": "#B48CE0 neodymium lilac, ONLY rare-earth specks and a working flask's glow",
+   "wall": "#2F5DB8 cobalt, ONLY the scale wall and plant-scale dashed outlines; value target at least 25 L* darker than the cyan-grey sky behind it (wall L* about 40 vs sky L* about 72); against the dusk teal-slate the wall takes a pale cobalt rim #6D92DC so it separates; also the shot 10 corridor stripe as the wall's proxy",
+   "shadow": "#141826 night ink",
+   "whiteprint": "#EEF0F2 chalk-white linework on #4A4E52 neutral grey for the PLANNED blueprint frame and the COULD frame; never a blue ground",
+   "loss": "#C8464A muted alarm red, ONLY ledger cells, the ledger page at the glass and the dial danger arcs; never at drape scale",
+   "map": "chalk paper #EEF0F2 land, #8C9196 neutral grey water, Canada a lighter grey #C9CDD2, four chalk-white pins with soot-charcoal rims (chartreuse stays Nix's alone), the dashed route ink, the $6M stamp in loss-red stamp ink"
+  },
+  "mood": "a curious, hopeful lab at blue hour: soft cold light outside, a warm bench lamp inside, a small bright bird against a big cobalt problem",
+  "why": "Lilac because rare earths (neodymium) ARE the lilac thing; chartreuse because the canary must pop and is the one living colour; cobalt alone owns blue, and blue means the problem. The field colour is a pale cyan-grey to teal-slate sky, NOT October 9th's indigo frost dusk and not 11-21's moonlit night; the ground is neutral grey so no second blue competes. Warmth comes from a honey-cream lamp on cold materials (chalk, glass, steel), not from 11-21's lamp-lit birch and walnut, and never ember or orange (October 9th's electricity colour)."
+ },
+ "light": {
+  "S1_S2_S4_S8_bench": "key: honey-cream lamp upper left onto the chalk bench top and Nix's key side; fill: cool aqua window light from the right (from S4 on, the wall replaces the window and the fill comes off its lit edge); rim: a real backlight, pale aqua from the window on Nix, flask and crew.",
+  "S3_S7_staircase": "exterior blue hour, flat aqua sky key, the paper staircase catching a soft rose horizon edge.",
+  "S5_map": "overhead honey-cream lamp on paper, soft falloff to the table edge.",
+  "S6_cutaway": "the flask's own lilac glow as key inside the glass, a cool rim on the glass wall.",
+  "S9_reactor_bay": "flat cool top light, whiteprint frame; honey-cream lamp only on Nix's rail.",
+  "S10_corridor": "neutral grey fluorescent, the cobalt stripe the only saturated note.",
+  "S11_street": "exterior deep-teal dusk key, the other building's window a lit flat-white rectangle (its interior cold white), the flask's lilac flickering on the sidewalk.",
+  "S12_chart": "flat cold white, locked off.",
+  "S13_night_bench": "a small honey-cream pool from the swinging lamp, deep teal night at the window.",
+  "S14_wall_foot_signature": "the dusk sky as backlight and silhouette source (deep teal with the rose-grey horizon); the flask's lilac glow at half strength is the only low key; Nix rim-lit by the sky; the wall carries a pale cobalt rim #6D92DC.",
+  "S15_jar": "honey-cream lamp from above through the jar mouth as the key on Nix, cool glass refraction as the rim, so the last frame is the warm interior.",
+  "depth": "three planes on bench shots; S11 street is near sidewalk, street, far building; S14 tilts through wall, column and sky planes."
+ },
+ "shape_language": "SMALL ROUND SOFT vs BIG STRAIGHT HARD: the canary, microbes, specks and flask are round and soft-edged; the scale wall and the plant-scale column are tall, straight, ruled and cobalt; the 200-step staircase is chalk-white paper, straight and ruled but never cobalt. The thesis is the size contrast.",
+ "casting": {
+  "hero": "Nix, NET-NEW reusable library asset (lib/canary.tsx): a lichen-chartreuse felt canary holding a two-faced card (NO on one face, OK on the other, plus a reticle face and FIX), moods, head snap, card flip, monocles, silhouette. Gap: the shelf has Raven, Puffin and Ptarmigan, none small, warm, or able to hold a card; a canary is the warning-before-harm idea itself.",
+  "supporting_shelf": "Suit (lib/people.tsx) for faceless Briggs, Heidari Kapourchali and the hard-hat worker, tie off; Stamp and FatArrow (kit.tsx) where a stamp or arrow is a plain mark; MotionBlur, ContactShadow, GradeLayer, HeldTravel, IdleFigure and FigureFinish from lib. Nothing else from the shelf: Thermometer, AnchorageSkylineBG, Moose, SteelVessel, TankFace, PowerGauge, AshHeap and FrostYardDusk are not cast.",
+  "supporting_netnew_minor": "Tier 1, reusable library assets in lib/canary.tsx, each with a reason: Nix (the hero, a small warm bird that holds a card; the shelf has no such bird), Microbe (a faced worker cast that any biology story can reuse), Flask (the throughline, glass with fill line and glow; no glass vessel exists on the shelf), ScaleWall (a cobalt block wall that grows; reusable for any 'wall' metaphor), Staircase (a stepped climb drawn to any count), GoalStool (the dashed four-or-five step stool, the film's scoreboard, chalk-white, round-cornered, outline-only by default), BenchWorld (a lab interior with a window that varies by seed). Tier 2, one-off shot props kept in lib/canary.tsx only because two shots share them: DataFeeder (frosted), Bassinet, BlockBar, GhostTank, Magnifier, Drum, ToyTurbine, TearCalendar, BlowPage. Tier 3 is the shelf list above. The depot Calendar is a slam calendar with a frost layer and does not tear off, so TearCalendar stays; Stamp from kit.tsx is used for the SKIPPED and NO RESULTS YET stamps.",
+  "never": "no SteelVessel or TankFace, no PowerGauge, no AshHeap, no FrostYardDusk (October 9th's cast); no faced metal fixture; real people faceless",
+  "asset_table": {
+   "S1": "Nix, RefuseLump, Flask (lib/canary.tsx); the jar inline",
+   "S2": "Suit (lib/people.tsx) Briggs; Magnifier, Speck, ToyTurbine, BenchWorld (lib/canary.tsx); the tray and motor inline",
+   "S3": "Staircase, Drum x3 (lib/canary.tsx); Suit for the worker; the hand truck inline",
+   "S4": "Microbe, Flask, ScaleWall, Nix, BenchWorld",
+   "S5": "map table inline (AK outline from lib/akmap.ts, a lower-48 outline, Canada label), pins and stamp inline, Flask at the edge",
+   "S6": "Flask at large scale, Microbe, Speck, RefuseLump crumbs",
+   "S7": "Staircase, GoalStool",
+   "S8": "Nix, BenchDial x4, DataFeeder (frosted), Suit Heidari Kapourchali, wires inline, BenchWorld with wallUp",
+   "S9": "reactor row and whiteprint frame inline, Microbe, Nix",
+   "S10": "TearCalendar, BlowPage, Stamp (kit.tsx) for SKIPPED, a feedstock jar inline, the dashed arrow inline",
+   "S11": "street and far building inline, GhostTank, a ledger page inline, Nix, Flask",
+   "S12": "GhostTank small, a dashed beaker inline, BlockBar x2",
+   "S13": "Bassinet, DataFeeder (frosted) and a small reference feeder, Flask, Stamp (kit.tsx), BenchWorld at dusk",
+   "S14": "ScaleWall, ScaleWall dashed, Staircase, GoalStool, Nix silhouette with reticle, Flask, chalk text inline",
+   "S15": "jar rim vignette inline, Nix, Flask, RefuseLump"
+  }
+ },
+ "motion_language": "the world is quiet and cold, the bird is quick: Nix moves in snaps (head snap with overshoot, card flip with squash), microbes bustle in loops, specks drift and cluster on springs; the wall and the staircase GROW slowly and inexorably. 180-degree blur on the head snaps and the card flips; anticipation before each NO; specks overshoot into their cluster.",
+ "composition": {
+  "focal_hierarchy": "Nix or the flask is always the brightest, most saturated thing; plates sit high (y 560 to 690); the wall and staircase use the tall 9:16 frame",
+  "negative_space": "the dusk sky above the Chugach in the window is the breathing room after the test",
+  "safe_area": "hero action and plates inside y 420 to 1500 for the square crop; Nix's perch and the flask never below the caption top; the lower band is the bench front, glassware rack and floor",
+  "signature_shot": "Shot 14: in dusk silhouette Nix stands at the wall's foot beside the flask (lilac at half strength), aims a reticle card at the wall, chalk writes AUGUST 2030, the dashed GOAL stool slides out beside the chalk-white 200 paper steps on the Chugach behind, then a slow tilt up the dashed cobalt plant-scale column to the ridge against deep teal and a rose-grey horizon."
+ },
+ "craft_advance": "One reusable family, lib/canary.tsx, registered in ASSET_MANIFEST.md; no engine system advanced.",
+ "treatment": "The Bird That Says No (Dramatist winner with grafts, restaged at Gate 0B). NIX, a lichen-chartreuse felt canary holding a card that turns between NO and OK, is the deep-learning model, a warning before harm, never a miner. S1 blue-hour lab bench at a window onto the Chugach: a lump of coal refuse thunks into an empty jar beside an empty flask with a blank neck tag; Nix snaps round, its card turning between NO and OK. S2 a faceless Briggs's magnifier hops rock to rock and finds lilac specks in every rock and across the whole range (not rare, per Briggs); specks fly into a motor and a toy turbine; one slips through his fingers, spread thin. S3 a paper staircase unrolls out the window up the Chugach past acid, heat and solvent drums; a faceless hard-hat worker with a hand truck sits down as the counter lands on 200. S4 the microbe crew tips a crumb of refuse into the flask and it blooms lilac (worked before, in the lab), then a cobalt wall rises behind it until it blots out the window. S5 a map table, Canada between Alaska and the lower 48, four pins and a dashed line, a $6M stamp spanning all four, a LED BY BRIGGS tag on Anchorage. S6 a cutaway: microbes squeeze scattered specks into a cluster. S7 a dashed GOAL stool, A HOPE, at the staircase's foot. S8 Nix lands among four dials; a faceless Heidari Kapourchali hangs a frosted DATA feeder, fill hidden, and wires each dial alive. S9 from above, a reactor row inside a PLANNED blueprint frame; Nix raises its card before the foam crests; a microbe spins the valve; FIX. S10 a corridor planner sheds months, a SKIPPED stamp inside a dashed COULD frame sends them flying back, a dashed arrow halts a third of the way up a cobalt stripe (SHOULD, per Briggs). S11 THE TEST: a cold street; Nix and the flickering flask stay on the sidewalk outside another building; its window lights on a dashed ghost pilot tank (DOE-FUNDED PILOT, DIFFERENT METHOD, 2023) and one red-stamped ledger page slaps against the glass. S12 that pilot's own dashed beaker and tank, its LAB bar 3 of 10 blocks taller than its PILOT bar, one feedstock. S13 night bench: a bassinet tagged THE FIELD rocks under a swinging lamp (still in their infancy); a reference feeder for neural networks in general caps at its line while a dashed to-be-gathered line draws on the frosted feeder and a dashed ? on the flask; NO RESULTS YET. S14 dusk silhouette at the wall's foot beside the flask: Nix aims a reticle card AT the wall (not over it), chalk writes AUGUST 2030, the dashed GOAL stool slides out beside the 200 paper steps, and the camera tilts up a dashed plant-scale column to the Chugach. S15 from inside the jar, Nix holds its card edge-on with 2030?, the flask's neck tag turns to AUGUST 2030, and a fresh lump drops in toward camera."
+}

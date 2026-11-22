@@ -1,0 +1,72 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.976,
+    "heard": "This canary will have one bob, say no, fast. Brandon Briggs, a UAA biologist, says the rare earths aren't rare. They're found everywhere. They're in magnets for motors and wind turbines. Concentrating them is the hard part, he says. Today, that can take acids, heat, solvents, and 200 steps, he says. His lab already got microbes to do that with coal, in the lab, but it hasn't scaled up to be commercially viable. That's the wall. The National Science Foundation is funding a $6 million project led by Briggs. The plan is microbes pulling rare earths from coal refuse, the waste from processing coal. Briggs hopes for four or five steps. This time, a canary, a deep learning model led by engineer Masume Hyderi Kaporchali. It will read each reactor's temperature, acidity, salinity, and oxygen. Briggs says it will identify one reactor's going to fail and what fix could save it. Instead of months, if not years, he says it could quickly flag a bad feedstock. Briggs says that should speed the scale up. Others hit that wall. A federally funded pilot that pulled rare earths from coal by a different method lost money on paper in every scenario. For one feedstock, its lab recovery ran about 30% higher than the pilot plant. Reviews called bio-leaching rare earths from waste still in its infancy. Neural networks are usually limited by their data. No results are reported yet. The canary isn't aimed over the wall. It's aimed at it. The award runs through August of 2030. Four or five steps at full size is the score. The rare earths aren't the rare part of Briggs says and only know that holds up might be.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.049,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 6.55,
+        "voiced_frac": 0.47,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 119.56,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 119.56,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "gap_share": {
+    "min_gap_s": 0.35,
+    "gaps": 43,
+    "seconds": 27.66,
+    "runtime_s": 119.1,
+    "share": 0.2322,
+    "aim": 0.15,
+    "over_aim": true,
+    "longest_s": 0.94
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.976,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.983,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.972,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

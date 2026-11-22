@@ -3898,3 +3898,51 @@ dispatch_history:
     metaphor: 'a chat history becomes an auction lot: soft bubbles square off into
       crates on a platform, a tag changes face, and a privacy expert fills an empty
       scale and hands her binder up to the court'
+- date: '2026-11-22'
+  topic: UAA-led $6M NSF biomining project adds an AI to flag failing reactors and
+    bad feedstocks early
+  slug: dispatch-the-bird-that-says-no
+  key_entities:
+  - uaa
+  - brandon briggs
+  - nsf
+  - rare earths
+  - biomining
+  - coal refuse
+  - masoumeh heidari kapourchali
+  - uaf
+  - montana tech
+  - university of wyoming
+  archetype: honest-turn explainer
+  palette: 'a warm honey-cream glow #FFE2A0 on chalk countertops #EEF0F2, a soft aqua
+    blue-hour window #9FB4C4 deepening to deep teal #24474F over the Chugach, neodymium
+    lilac #B48CE0 kept for every speck, a bright lichen-chartreuse felt canary #B8D433,
+    a cobalt scale wall #2F5DB8 and soot charcoal coal refuse #2B2A30'
+  voice: gemini-tts Sulafat
+  stance: curious
+  angle: The AI is meant to be a canary that says no early, aimed at the scale-up
+    wall, not over it
+  hero: Nix
+  cast:
+  - Microbe
+  - Flask
+  - ScaleWall
+  - Staircase
+  - GoalStool
+  - BenchWorld
+  - Suit
+  composition:
+    pov: eye-level-immersive
+    motion_vector: vertical-rise
+    hero_treatment: single-organic-hero
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: 'a warm honey-cream glow #FFE2A0 on chalk countertops #EEF0F2, a soft
+      aqua blue-hour window #9FB4C4 deepening to deep teal #24474F over the Chugach,
+      neodymium lilac #B48CE0 kept for every speck, a bright lichen-chartreuse felt
+      canary #B8D433, a cobalt scale wall #2F5DB8 and soot charcoal coal refuse #2B2A30'
+    camera_strategy: rise-reveal
+    light_story: dusk-silhouette
+    metaphor: a coal-mine canary that says no early, a glowing lab flask facing a
+      cobalt scale wall, and 200 paper steps up a mountain with a small goal stool
+      at their foot

@@ -1,0 +1,16 @@
+{
+  "run_date": "2026-11-22",
+  "title": "The Bird That Says No",
+  "sources": [
+    {"id": "s1", "title": "Briggs Lab awarded $6M NSF grant for biomining, AI project", "outlet": "University of Alaska Anchorage News, November 20th", "url": "https://www.uaa.alaska.edu/news/archive/2026/11/briggs-lab-nsf-grant.cshtml", "claims": ["c1", "c2", "c3", "c5", "c6", "c8", "c9", "c11", "c12", "c14", "c15", "c16", "c17", "c25", "c28", "c30", "c32", "c33", "c34"]},
+    {"id": "s2", "title": "NSF Award 2614749, Collaborative Research FEC, Transformative Bioprocessing and AI-Driven Frameworks for Sustainable Critical Mineral Recovery (UAA)", "outlet": "National Science Foundation award record", "url": "https://api.nsf.gov/services/v1/awards/2614749.json", "claims": ["c1", "c3", "c7", "c11", "c14", "c15", "c18", "c27"]},
+    {"id": "s3", "title": "NSF Award 2614751 (University of Alaska Fairbanks)", "outlet": "National Science Foundation award record", "url": "https://api.nsf.gov/services/v1/awards/2614751.json", "claims": ["c8", "c18", "c27"]},
+    {"id": "s4", "title": "UAF researchers join $6 million effort to extract critical minerals from coal waste", "outlet": "Alaska's News Source, October 9th", "url": "https://www.alaskasnewssource.com/2026/10/10/uaf-researchers-join-6-million-effort-extract-critical-minerals-coal-waste/", "claims": ["c6", "c7", "c28"]},
+    {"id": "s5", "title": "Rare Earth Elements", "outlet": "U.S. Department of Energy, Office of Fossil Energy and Carbon Management", "url": "https://www.energy.gov/fecm/rare-earth-elements", "claims": ["c4", "c10"]},
+    {"id": "s6", "title": "Demonstration of Scaled-Production of Rare Earth Oxides and Critical Materials from U.S. Coal-Based Sources (Honaker et al., University of Kentucky, DOE FE0031827)", "outlet": "OSTI, DOE-funded final report, 2023", "url": "https://www.osti.gov/biblio/1971736", "claims": ["c22", "c23"]},
+    {"id": "s7", "title": "Biohydrometallurgy for Rare Earth Elements Recovery from Industrial Wastes (Castro et al., Molecules 2021)", "outlet": "Peer-reviewed review, 2021", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8538766/", "claims": ["c13", "c24"]},
+    {"id": "s8", "title": "Vitova and Mezricky, World Journal of Microbiology and Biotechnology, 2024", "outlet": "Peer-reviewed review, 2024", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068686/", "claims": ["c4", "c22", "c24"]},
+    {"id": "s9", "title": "Bioprocess Control, Current Progress and Future Perspectives (Rathore et al., Life 2021)", "outlet": "Peer-reviewed review, 2021", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8231968/", "claims": ["c26"]},
+    {"id": "s10", "title": "30 CFR 701.5, definitions (coal processing waste)", "outlet": "Code of Federal Regulations", "url": "https://www.law.cornell.edu/cfr/text/30/701.5", "claims": ["c9"]}
+  ]
+}

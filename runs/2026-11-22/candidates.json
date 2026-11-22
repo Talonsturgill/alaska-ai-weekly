@@ -1,0 +1,57 @@
+{
+ "locked_story": {
+  "headline": "UAA-led $6M NSF EPSCoR project pairs Alaska-collected microbes with a deep-learning model that watches bioreactors, to recover rare-earth elements from coal refuse (UAA News, November 20th; NSF awards 2614749 and 2614751)",
+  "found_at_rung": "in_window_sweep",
+  "note": "Picked independently by three of four researchers, the only in-window primary-sourced Alaska item with a real ML component. A funded plan, not a result, so the film says aims to and will. Stance rotation: the last 25 stances are all mixed or curious with one cautionary; this is a genuine upside story. dedupe check returned FRESH. OVERLAP NOTED: 2026-10-09 'The Design Brief' covered this same NSF project from the UAF side (thesis: the second AI is built around variable power). That is 44 days ago, outside the 30-day window where repeats are explicitly allowed. The November 20th UAA release is a genuine new development (the AI lead named, Briggs's failure-prediction and scale-up quotes, the lab success that never scaled), and the angle room was bound to a thesis distinct from October 9th's energy framing. Hero must differ from SteelVessel."
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 15,
+   "note": "4 researchers (science/fisheries/Native, energy/defense/maritime, wildcard/business/policy, primary-source mining incl. NSF API), 80 of 80 WebSearch calls used. All four called it a thin week for Alaska ML results."
+  }
+ ],
+ "candidates": [
+  {
+   "headline": "UAA $6M NSF grant, microbes plus deep learning to recover rare earths from coal refuse",
+   "verdict": "LOCKED",
+   "why": "in window (Nov 20), primary sources (UAA release, NSF award records), real ML function, Alaska-led win, fresh subject"
+  },
+  {
+   "headline": "Governor-elect asks AIDEA to pause spending incl. $20M data center platform",
+   "verdict": "REJECTED",
+   "why": "follow-up on three covered AIDEA subjects within 30 days, AI only indirect, Nov 24 meeting pending"
+  },
+  {
+   "headline": "Anchorage grocers adopt electronic shelf labels, dynamic pricing worry",
+   "verdict": "REJECTED",
+   "why": "single commentator source, AI not confirmed, no retailer response"
+  },
+  {
+   "headline": "UAF statewide avalanche road-crossing model, 2,000+ crossings",
+   "verdict": "REJECTED",
+   "why": "computational modeling, no machine learning in any source, not peer reviewed"
+  },
+  {
+   "headline": "USCGC Storis Bering Sea cold-weather drone tests",
+   "verdict": "REJECTED",
+   "why": "uncrewed aircraft, no AI, no aircraft or results disclosed"
+  },
+  {
+   "headline": "USGS Faster R-CNN polar bears from satellite",
+   "verdict": "REJECTED",
+   "why": "Oct 8, outside 30 days, adjacent to covered NOAA polar bear item"
+  },
+  {
+   "headline": "ACEP AURORA-AI microgrid forecasting, Cordova",
+   "verdict": "REJECTED",
+   "why": "August announcement, no new development"
+  },
+  {
+   "headline": "11th Airborne JBER drone training",
+   "verdict": "REJECTED",
+   "why": "drones only, no AI, single TV source"
+  }
+ ]
+}

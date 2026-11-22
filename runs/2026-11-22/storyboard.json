@@ -1,0 +1,2468 @@
+{
+  "run_date": "2026-11-22",
+  "slug": "the-bird-that-says-no",
+  "title": "The Bird That Says No",
+  "concept": "Brandon Briggs, a UAA biologist, says the rare earths are not rare; the hard part is concentrating them, which he says can take acids, heat, solvents and 200 steps. His lab already got microbes to do it with coal in the lab but it never scaled to commercial viability. The NSF is funding a $6M project led by Briggs, with UAF, Montana Technological University and Wyoming, to use microbes on coal refuse, with a goal of four or five steps. A deep-learning model led by Masoumeh Heidari Kapourchali will read reactor temperature, acidity, salinity and oxygen, flag a reactor before it fails and a fix, and could quickly flag a bad feedstock instead of months or years, which Briggs says should speed the scale-up. The test: a federally funded pilot elsewhere, by a different method, lost money on paper in every scenario, its own lab recovery ran about 30 percent above its pilot plant for one feedstock, reviews call the field in its infancy, neural networks are usually limited by data, and no results are reported yet. Drawn as NIX, a felt canary holding a card that turns between NO and OK, through seven worlds: a blue-hour lab bench under the Chugach, a map table, a flask cutaway, a top-down reactor bay inside a PLANNED blueprint frame, a corridor planner, a cold street outside another building's pilot, and a dusk wall where Nix aims a reticle card AT the wall beside a dashed GOAL stool, closing from inside a jar.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 119.1,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "vertical-rise",
+    "hero_treatment": "single-organic-hero",
+    "layout": "centered-hero-lowerthird",
+    "register": "naturalistic-scene",
+    "palette": "a warm honey-cream glow #FFE2A0 on chalk countertops #EEF0F2, a soft aqua blue-hour window #9FB4C4 deepening to deep teal #24474F over the Chugach, neodymium lilac #B48CE0 kept for every speck, a bright lichen-chartreuse felt canary #B8D433, a cobalt scale wall #2F5DB8 and soot charcoal coal refuse #2B2A30",
+    "camera_strategy": "rise-reveal",
+    "light_story": "dusk-silhouette",
+    "metaphor": "a coal-mine canary that says no early, a glowing lab flask facing a cobalt scale wall, and 200 paper steps up a mountain with a small goal stool at their foot"
+  },
+  "signature_shot": 14,
+  "palette": "a warm honey-cream glow #FFE2A0 on chalk countertops #EEF0F2, a soft aqua blue-hour window #9FB4C4 deepening to deep teal #24474F over the Chugach, neodymium lilac #B48CE0 kept for every speck, a bright lichen-chartreuse felt canary #B8D433, a cobalt scale wall #2F5DB8 and soot charcoal coal refuse #2B2A30",
+  "divergence_note": "The last two films were an orbital night kitchen and walnut courtroom with a faced chat-bubble accordion and an auction tag (11-21), and a persimmon-daylight evidence board with a faced suggestion slip (11-19). This film moves through seven worlds (a blue-hour lab bench under the Chugach, a map table, a flask cutaway, a top-down reactor bay in a blueprint frame, a corridor planner, a cold street outside another building's pilot, and a dusk wall exterior in silhouette) with a living hero, a felt canary; its motion is a rise (a wall grows, 200 steps climb, an arrow halts a third of the way, the signature tilt climbs a dashed column), and it closes looking up from inside a jar instead of returning to the window. Honest overlaps: October 9th covered this same NSF project with a faced steel tank, an ember power gauge and a coal ash heap at a dusk frost yard; none of that cast, palette or set returns here, and the thesis is the scale wall, not power. A window onto the Chugach also appeared on 11-21 (kitchen at night), answered by a lab at blue hour.",
+  "treatment": {
+    "title": "The Bird That Says No",
+    "summary": "The Bird That Says No (Dramatist winner with grafts, restaged at Gate 0B). NIX, a lichen-chartreuse felt canary holding a card that turns between NO and OK, is the deep-learning model, a warning before harm, never a miner. S1 blue-hour lab bench at a window onto the Chugach: a lump of coal refuse thunks into an empty jar beside an empty flask with a blank neck tag; Nix snaps round, its card turning between NO and OK. S2 a faceless Briggs's magnifier hops rock to rock and finds lilac specks in every rock and across the whole range (not rare, per Briggs); specks fly into a motor and a toy turbine; one slips through his fingers, spread thin. S3 a paper staircase unrolls out the window up the Chugach past acid, heat and solvent drums; a faceless hard-hat worker with a hand truck sits down as the counter lands on 200. S4 the microbe crew tips a crumb of refuse into the flask and it blooms lilac (worked before, in the lab), then a cobalt wall rises behind it until it blots out the window. S5 a map table, Canada between Alaska and the lower 48, four pins and a dashed line, a $6M stamp spanning all four, a LED BY BRIGGS tag on Anchorage. S6 a cutaway: microbes squeeze scattered specks into a cluster. S7 a dashed GOAL stool, A HOPE, at the staircase's foot. S8 Nix lands among four dials; a faceless Heidari Kapourchali hangs a frosted DATA feeder, fill hidden, and wires each dial alive. S9 from above, a reactor row inside a PLANNED blueprint frame; Nix raises its card before the foam crests; a microbe spins the valve; FIX. S10 a corridor planner sheds months, a SKIPPED stamp inside a dashed COULD frame sends them flying back, a dashed arrow halts a third of the way up a cobalt stripe (SHOULD, per Briggs). S11 THE TEST: a cold street; Nix and the flickering flask stay on the sidewalk outside another building; its window lights on a dashed ghost pilot tank (DOE-FUNDED PILOT, DIFFERENT METHOD, 2023) and one red-stamped ledger page slaps against the glass. S12 that pilot's own dashed beaker and tank, its LAB bar 3 of 10 blocks taller than its PILOT bar, one feedstock. S13 night bench: a bassinet tagged THE FIELD rocks under a swinging lamp (still in their infancy); a reference feeder for neural networks in general caps at its line while a dashed to-be-gathered line draws on the frosted feeder and a dashed ? on the flask; NO RESULTS YET. S14 dusk silhouette at the wall's foot beside the flask: Nix aims a reticle card AT the wall (not over it), chalk writes AUGUST 2030, the dashed GOAL stool slides out beside the 200 paper steps, and the camera tilts up a dashed plant-scale column to the Chugach. S15 from inside the jar, Nix holds its card edge-on with 2030?, the flask's neck tag turns to AUGUST 2030, and a fresh lump drops in toward camera.",
+    "judge_reasoning": "Judge: Dramatist won (cold open 9, arc 8, retention 8, fairness 9, feasibility 8, freshness 8). A coal-mine canary is the thesis in one object, a warning before harm, literally about coal, and it sidesteps the hourglass cliche three pitches reached for. The flask throughline puts the scale wall on screen. Nix never mines and never flies over the wall. Grafts: Explainer's moving microbe cutaway and 200 steps up the Chugach, Comedian's tattletale dials (as four bench dials), Enthusiast's 'aimed at the wall, not over it'. Fixes: Nix flags a reactor not a jar; glacier microbes (c29) cut entirely; can take 200 steps; $6M is the whole project."
+  },
+  "angle": {
+    "thesis": "Briggs's lab has already gotten microbes to pull rare earths out of coal in the lab and then hit the scale-up wall, so the AI in this $6M plan isn't a miner, it's a fast no: a model meant to call a failing reactor and a dead-end feedstock early instead of after months or years, which helps Alaska win only if that shortcut survives the jump from lab to plant.",
+    "falsifiability": "False if, by the award's end in August 2030 (c27), the model's early calls don't shorten the work: reactors it watched fail as often as before (c16, c17), feedstocks it would have ruled out turn out to work, or recovery still drops from lab to larger reactors the way a DOE-funded coal pilot's did (c23). Also false today if the sources gave the AI the extraction job; they don't, the microbes do it (c8, c14).",
+    "supporting_facts": [
+      "The problem is concentration, not scarcity. Per Briggs the rare earths are not rare (c2), the hard part is concentrating them from very dilute sources (c3), and today's route can take strong acids, high temperatures, solvents and 200 steps (c5). He hopes for four or five (c12).",
+      "The lab part already worked once and stopped there. His lab has used microbes to pull rare earths from coal before (c32), but the process hasn't been scaled up to be commercially viable (c33). Microbes already recover copper and gold at industrial scale (c13), so biology can scale.",
+      "The AI is aimed at time and stability. A deep-learning model led by Masoumeh Heidari Kapourchali (c15) will read temperature, acidity, salinity and oxygen (c14), say when a reactor's going to fail and what corrections could prevent it (c16, c17), and could quickly say a feedstock won't work instead of months if not years of trials (c34); NSF adds a virtual assay to screen feedstocks (c18). Briggs says it should speed the scale-up (c25)."
+    ],
+    "counterpoint_to_honor": "THE TEST, at full strength. Scale is where this field breaks. A DOE-funded pilot that pulled rare earths from coal material lost money on paper in every scenario (c22, a different, chemical-leach route, not UAA's), and for one feedstock its lab recovery ran about 30 percent higher than the pilot plant (c23). Reviews call bioleaching rare earths from waste still in its infancy (c24). And a neural network is usually limited by how much data it has (c26), while a new process starts with little, so the model may be weakest where it's needed most. Nothing is reported yet (c28). The film survives this by narrowing honestly: it claims the AI is aimed at the right wall, not that it gets over it.",
+    "valence": "curious",
+    "stance": "curious",
+    "who_it_serves": "Alaskans weighing whether coal waste can be a critical-minerals asset (legislators, UA, economic development staff) who get a concrete test for 2030 (did the early no save trials, did recovery hold at scale); UAA and UAF researchers; anyone reading AI in a grant headline who wants to know what the model actually does.",
+    "second_movement": "The reveal that recontextualises the hopeful open: UAA's own lab already did the hard-sounding part in the lab (c32) and stalled at scale (c33). So the grant is not a bet on new biology, it's a bet on a tool that says no faster. Then the test scene (c22, c23, c24, c26) and the turn: the four-or-five-step goal (c12) and the August 2030 end (c27) are the scoreboard.",
+    "runner_up_angles": [
+      {
+        "thesis": "A: the AI is aimed at the exact wall that stops microbial rare-earth recovery leaving the lab, the right bet not a buzzword",
+        "why_lost": "the right bet is a verdict on work with no results (c28); the room downgraded it to the right target, which the winner keeps"
+      },
+      {
+        "thesis": "B: the AI is UAA's bet on the stage where a federally funded attempt lost money",
+        "why_lost": "borrowed a different, chemical route's losses as if the same process failed; kept as the Act 3 test, not the thesis"
+      },
+      {
+        "thesis": "C: a shorter miner, the predictor must make a four-or-five-step living process dependable",
+        "why_lost": "treated the goal as the mechanism's job and wrote as many as 200, against c5; its time framing was grafted in"
+      },
+      {
+        "thesis": "October 9th's thesis, the second AI is built around variable power",
+        "why_lost": "already shipped 44 days ago; energy appears at most as a clause"
+      }
+    ],
+    "absence_checks": "NSF 2614749 abstractText and every ML paragraph of the UAA release searched for training data, data volume, reactor count and an Alaska coal feedstock: none stated (say not stated, never none exist). OSTI 1971736 abstract searched: no machine learning; describes bio-oxidation reactors making bio-acid, so never say no microbes were involved there."
+  },
+  "claim_map": {
+    "1": [
+      "narration"
+    ],
+    "2": [
+      "narration"
+    ],
+    "3": [
+      "narration"
+    ],
+    "4": [
+      "c1"
+    ],
+    "5": [
+      "c2"
+    ],
+    "6": [
+      "c2"
+    ],
+    "7": [
+      "c4"
+    ],
+    "8": [
+      "c3"
+    ],
+    "9": [
+      "c5"
+    ],
+    "10": [
+      "c5"
+    ],
+    "11": [
+      "c5"
+    ],
+    "12": [
+      "c32"
+    ],
+    "13": [
+      "c33"
+    ],
+    "14": [
+      "c33"
+    ],
+    "15": [
+      "c7"
+    ],
+    "16": [
+      "c6"
+    ],
+    "17": [
+      "c6"
+    ],
+    "18": [
+      "c8"
+    ],
+    "19": [
+      "c9"
+    ],
+    "20": [
+      "c12"
+    ],
+    "21": [
+      "c15"
+    ],
+    "22": [
+      "c15"
+    ],
+    "23": [
+      "c14"
+    ],
+    "24": [
+      "c14"
+    ],
+    "25": [
+      "c14"
+    ],
+    "26": [
+      "c14"
+    ],
+    "27": [
+      "c16"
+    ],
+    "28": [
+      "c16"
+    ],
+    "29": [
+      "c17"
+    ],
+    "30": [
+      "c34"
+    ],
+    "31": [
+      "c34"
+    ],
+    "32": [
+      "c25"
+    ],
+    "33": [
+      "c22"
+    ],
+    "34": [
+      "c22"
+    ],
+    "35": [
+      "c22"
+    ],
+    "36": [
+      "c23"
+    ],
+    "37": [
+      "c23"
+    ],
+    "38": [
+      "c24"
+    ],
+    "39": [
+      "c26"
+    ],
+    "40": [
+      "c28"
+    ],
+    "41": [
+      "narration"
+    ],
+    "42": [
+      "narration"
+    ],
+    "43": [
+      "c27"
+    ],
+    "44": [
+      "c12"
+    ],
+    "45": [
+      "c12"
+    ],
+    "46": [
+      "c2"
+    ],
+    "47": [
+      "narration"
+    ],
+    "48": [
+      "c32"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "A blue-hour lab bench at a big window onto the snowy Chugach, an empty glass jar and an empty flask with a blank neck tag under a honey-cream lamp, and at 0.3 s a soot-charcoal lump of coal refuse drops and thunks into the jar while a felt canary beside it snaps its head round",
+    "headline": "AN AI BUILT TO SAY NO \u00b7 FAST",
+    "motion_by_s": 0.3,
+    "loopback": "Frame 1 is a lump thunking into the empty jar as Nix snaps round with a card turning between NO and OK; the last shot looks up from inside that jar at Nix holding the card with a question mark, as a fresh lump drops in beside it."
+  },
+  "open_loop": {
+    "plant_t": 0.0,
+    "pay_t": 106.54,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "thunk",
+    "what": "Will this ever work at full size? Planted with the empty flask's BLANK neck tag beside the jar as the lump lands, carried as the flask glows, meets the wall, dims on the street outside another building's pilot and takes a dashed ? on its fill line, paid when chalk writes AUGUST 2030 on the wall above Nix, the date the award ends."
+  },
+  "open_loop_2": {
+    "plant_t": 54.27,
+    "pay_t": 96.82,
+    "what": "How much will it learn from? Planted when Heidari Kapourchali hangs a FROSTED feeder tagged DATA whose fill is hidden, paid when a small reference feeder labelled NEURAL NETWORKS GENERALLY swings beside it and a dashed TO BE GATHERED line draws on the frosted glass: how much the model learns depends on what goes in, and the amount isn't stated."
+  },
+  "throughline": {
+    "object": "the bench flask",
+    "lands_in_button": "the flask in the jar-view button, seen past Nix on the bench edge, fill line unmarked, its tag a question mark",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "F1 EMPTY beside the jar with a blank neck tag"
+      },
+      {
+        "at_s": 28.21,
+        "state": "F2 GLOWING LILAC, lifted by the crew, worked before in the lab"
+      },
+      {
+        "at_s": 35.76,
+        "state": "F2b at the map table's edge, glowing, as the four pins drop"
+      },
+      {
+        "at_s": 40.96,
+        "state": "F3 OPEN IN CUTAWAY, microbes squeezing specks into a cluster"
+      },
+      {
+        "at_s": 63.1,
+        "state": "F4 one of a row of reactors inside a PLANNED blueprint frame, foam steadied below the rim"
+      },
+      {
+        "at_s": 76.78,
+        "state": "F5 OUTSIDE on a cold street beside Nix, glow dimming, never inside the other building, fill line blank"
+      },
+      {
+        "at_s": 96.82,
+        "state": "F6 BACK ON THE NIGHT BENCH with a dashed ? where a scale-up reading would go"
+      },
+      {
+        "at_s": 102.16,
+        "state": "F7 AT THE WALL'S FOOT at dusk, fill line unmarked, the award date chalked above and wiped before the goal appears"
+      },
+      {
+        "at_s": 113.62,
+        "state": "F8 on the bench edge past Nix in the jar view, its neck tag now a question mark, fill line unmarked"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 19.84,
+      "type": "scale-pullback",
+      "what": "the paper staircase unrolls out the window and climbs the whole Chugach face",
+      "hold_s": 0.8
+    },
+    {
+      "t": 30.1,
+      "type": "build-on",
+      "what": "a cobalt wall rises block by block until it blots out the window",
+      "hold_s": 0.6
+    },
+    {
+      "t": 45.15,
+      "type": "build-on",
+      "what": "microbes squeeze scattered specks into one bright cluster",
+      "hold_s": 0.6
+    },
+    {
+      "t": 79.41,
+      "type": "scale-pullback",
+      "what": "the street opens onto another building where a ghost pilot tank lights up",
+      "hold_s": 0.8
+    },
+    {
+      "t": 89.11,
+      "type": "morph-to-chart",
+      "what": "the pilot's own LAB bar rises 3 of 10 blocks taller than its PILOT bar",
+      "hold_s": 0.6
+    },
+    {
+      "t": 110.73,
+      "type": "scale-pullback",
+      "what": "the camera tilts from the flask up a dashed column to the Chugach at dusk",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "line": 14,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 19,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "at_s": 113.12,
+        "level": 0.12
+      },
+      {
+        "at_s": 114.12,
+        "level": 1.3
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 113.12,
+    "riser_at": 109.73,
+    "silence_at": 113.12,
+    "payoff_at": 113.62,
+    "button_pattern": "callback",
+    "interrupt_at": 76.78,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "The jar",
+      "vo_line": 0,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "bench-jar",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the jar, the flask and Nix at x540 y1080",
+      "means": "A lump of coal refuse thunks into an empty jar beside an empty flask, Nix snaps round and holds up a card that turns between NO and OK",
+      "ambient": "a lab room hum, a fridge compressor",
+      "hero": {
+        "name": "Nix + refuse lump + jar + empty flask + window onto the Chugach",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% Nix, jar and flask, 30% window and range, 25% bench"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-5.440"
+    },
+    {
+      "title": "Not rare",
+      "vo_line": 1,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "window-bench",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-action",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the magnifier and the rock tray at x540 y1040",
+      "means": "A faceless Briggs's magnifier finds lilac specks in every rock and across the Chugach, the specks feed a motor and a turbine, and slip through his fingers, spread thin",
+      "ambient": "a lab room hum, wind at the window",
+      "hero": {
+        "name": "faceless Briggs + magnifier + rock tray + motor + turbine",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% magnifier and tray, 30% Briggs, 30% sill"
+      },
+      "id": 2,
+      "start_s": 5.44,
+      "t": "5.440-19.840"
+    },
+    {
+      "title": "Two hundred steps",
+      "vo_line": 3,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "low",
+      "stage": "window-range",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "transition_in": "push-in",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the staircase and the window at x540 y860",
+      "means": "A paper staircase unrolls out the window up the Chugach past acid, heat and solvent drums and a worker with a hand truck gives up",
+      "ambient": "wind on the range, paper flapping",
+      "hero": {
+        "name": "paper staircase + drums + worker with hand truck + Chugach",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "50% staircase, 30% range, 20% drums"
+      },
+      "id": 3,
+      "start_s": 19.84,
+      "t": "19.840-25.980"
+    },
+    {
+      "title": "The wall",
+      "vo_line": 4,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "bench",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the flask and the wall at x540 y1000",
+      "means": "The microbe crew lifts the flask glowing lilac and a cobalt wall rises behind it until it blots out the window",
+      "ambient": "a lab room hum, a low rumble",
+      "hero": {
+        "name": "microbe crew + glowing flask + cobalt wall + Nix",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "40% flask and crew, 40% wall, 20% Nix"
+      },
+      "id": 4,
+      "start_s": 25.98,
+      "t": "25.980-35.760"
+    },
+    {
+      "title": "Four pins",
+      "vo_line": 6,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-table",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the map and the four pins at x540 y960",
+      "means": "A map table with Canada between Alaska and the lower 48, a $6M stamp on Anchorage and a dashed line to Fairbanks, Montana and Wyoming",
+      "ambient": "a quiet room, paper",
+      "hero": {
+        "name": "map table + four pins + $6M stamp + dashed line",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% map, 25% pins, 15% stamp"
+      },
+      "id": 5,
+      "start_s": 35.76,
+      "t": "35.760-40.960"
+    },
+    {
+      "title": "Inside the flask",
+      "vo_line": 7,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "flask-cutaway",
+      "pov": "cross-section-cutaway",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "dollyThrough",
+      "transition_in": "morph",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the flask cutaway at x540 y980",
+      "means": "A cutaway shows refuse crumbs sinking and the microbes squeezing scattered specks into one bright cluster",
+      "ambient": "bubbling liquid, a lab hum",
+      "hero": {
+        "name": "flask cutaway + microbes + specks + refuse crumbs",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "60% cutaway, 25% crew, 15% cluster"
+      },
+      "id": 6,
+      "start_s": 40.96,
+      "t": "40.960-47.400"
+    },
+    {
+      "title": "The goal",
+      "vo_line": 8,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "window-range",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:a graphic-match insert holds the staircase still",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the staircase foot and the stool at x540 y1100",
+      "means": "Back at the staircase, a dashed GOAL step stool slides in at its foot, an outline only",
+      "ambient": "wind on the range",
+      "hero": {
+        "name": "staircase foot + dashed GOAL stool",
+        "parts": 30,
+        "zones": 3,
+        "detail_note": "50% stool, 50% steps"
+      },
+      "id": 7,
+      "start_s": 47.4,
+      "t": "47.400-50.580"
+    },
+    {
+      "title": "The canary",
+      "vo_line": 9,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "bench-dials",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Nix and the dials at x540 y1060",
+      "means": "Nix lands among four dark dials, a faceless Heidari Kapourchali hangs a frosted DATA feeder and wires each dial alive",
+      "ambient": "a lab room hum against the wall",
+      "hero": {
+        "name": "Nix + four dials + Heidari Kapourchali + frosted DATA feeder",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% Nix and dials, 35% figure, 25% feeder"
+      },
+      "id": 8,
+      "start_s": 50.58,
+      "t": "50.580-63.100"
+    },
+    {
+      "title": "Flag then fix",
+      "vo_line": 11,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "high",
+      "stage": "reactor-bay",
+      "pov": "top-down-map",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the reactor row at x540 y980",
+      "means": "From above, a row of reactors inside a PLANNED blueprint frame, one foams, Nix raises its card before it crests, a microbe spins the valve",
+      "ambient": "a fume-hood fan, bubbling",
+      "hero": {
+        "name": "reactor row + blueprint frame + Nix on a rail + valve microbe",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% reactors, 30% frame, 20% Nix"
+      },
+      "id": 9,
+      "start_s": 63.1,
+      "t": "63.100-68.500"
+    },
+    {
+      "title": "The fast no",
+      "vo_line": 12,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "corridor",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:a flat planner seen straight on",
+      "transition_in": "whip-pan",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the planner and the stripe at x540 y960",
+      "means": "A corridor planner sheds months, a SKIPPED stamp sends them flying back, and a dashed arrow halts a third of the way up a cobalt stripe",
+      "ambient": "a corridor hum, paper rustle",
+      "hero": {
+        "name": "corridor planner + month pages + SKIPPED stamp + dashed arrow",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% planner, 30% pages, 25% arrow"
+      },
+      "id": 10,
+      "start_s": 68.5,
+      "t": "68.500-76.780"
+    },
+    {
+      "title": "Across the street",
+      "vo_line": 14,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "eye",
+      "stage": "street",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "Nix, the flask and the far window at x540 y1000",
+      "means": "On a cold street Nix and the dimming flask look across at another building where a dashed ghost pilot's ledger goes red in every scenario",
+      "ambient": "a cold street, a far ventilation drone",
+      "hero": {
+        "name": "street + Nix + dimming flask + other building + ghost tank + ledger",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "40% far window, 35% Nix and flask, 25% street"
+      },
+      "id": 11,
+      "start_s": 76.78,
+      "t": "76.780-86.300"
+    },
+    {
+      "title": "Their lab and plant",
+      "vo_line": 15,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "pilot-bars",
+      "pov": "exploded-diagram",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the caveat chart is locked off",
+      "transition_in": "push-in",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the two bars at x540 y1000",
+      "means": "The pilot's own dashed beaker and tank, its LAB bar 3 of 10 blocks taller than its PILOT bar, one feedstock",
+      "ambient": "a big cold hall",
+      "hero": {
+        "name": "dashed beaker + dashed tank + LAB bar + PILOT bar",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "60% bars, 40% vessels"
+      },
+      "id": 12,
+      "start_s": 86.3,
+      "t": "86.300-92.040"
+    },
+    {
+      "title": "Still early",
+      "vo_line": 16,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "bench-night",
+      "pov": "macro-closeup",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the bassinet and the feeders at x540 y1040",
+      "means": "Under a swinging lamp a bassinet tagged THE FIELD rocks with a sleeping reactor, a dashed to-be-gathered line draws on the frosted feeder, and NO RESULTS YET stamps a card",
+      "ambient": "a quiet lab at night, a clock",
+      "hero": {
+        "name": "bassinet reactor + swinging bench lamp + frosted feeder + reference feeder + stamp",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "40% bassinet, 35% feeders, 25% card"
+      },
+      "id": 13,
+      "start_s": 92.04,
+      "t": "92.040-102.160"
+    },
+    {
+      "title": "Aimed at it",
+      "vo_line": 19,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "low",
+      "stage": "wall-foot",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the wall, Nix and the column at x540 y1120",
+      "means": "In dusk silhouette at the wall's foot Nix aims a reticle card at the wall, chalk writes AUGUST 2030, a dashed GOAL stool and the camera tilts up a dashed column to the Chugach",
+      "ambient": "wind at dusk, a far hum",
+      "hero": {
+        "name": "cobalt wall + Nix silhouette + reticle card + flask at the wall foot + paper staircase on the Chugach behind + dashed GOAL stool + dashed column + Chugach dusk",
+        "parts": 54,
+        "zones": 3,
+        "detail_note": "40% wall, 35% column and range, 25% Nix and flask"
+      },
+      "id": 14,
+      "start_s": 102.16,
+      "t": "102.160-113.620"
+    },
+    {
+      "title": "The next lump",
+      "vo_line": 21,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "low",
+      "stage": "jar-inside",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Nix through the jar mouth at x540 y900",
+      "means": "From inside the jar, Nix looks down holding its card edge-on, 2030? on its face, as a fresh lump drops in toward camera",
+      "ambient": "a glass hum, room tone",
+      "hero": {
+        "name": "jar rim + Nix + edge-on card + flask with neck tag turning to AUGUST 2030 + falling lump",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "45% Nix, 25% jar glass, 15% flask, 15% lump"
+      },
+      "id": 15,
+      "start_s": 113.62,
+      "t": "113.620-119.100"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "This canary will have one job. Say no, fast.",
+      "phrase": "This canary will have",
+      "shows": "a soot-charcoal lump of coal refuse drops and thunks into an empty glass jar on a lab bench beside an empty flask with a blank neck tag, a window onto the snowy Chugach behind, a plate reads AN AI BUILT TO SAY NO \u00b7 FAST",
+      "sfx": "thunk",
+      "means": "an ai built to say no \u00b7 fast",
+      "rehook": "",
+      "draw": {
+        "subject": "a soot-charcoal lump of coal refuse",
+        "action": "drops and thunks into an empty glass jar on a lab bench beside an empty flask with a blank neck tag, a window onto the snowy Chugach behind",
+        "emotion": "startled",
+        "annotation": "AN AI BUILT TO SAY NO \u00b7 FAST"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a soot-charcoal lump of coal refuse drops and thunks into an empty glass jar on a lab bench beside an empty flask with a blank neck tag, a window onto the snowy Chugach behind, a plate reads AN AI BUILT TO SAY NO \u00b7 FAST",
+        "reaction": "the jar rings",
+        "ambient": "a lab room hum, a fridge compressor"
+      },
+      "t": "0.000-0.490",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 0.49,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.49
+      },
+      "offset": 0.49,
+      "vo": "This canary will have one job. Say no, fast.",
+      "phrase": "canary will have one",
+      "shows": "Nix, a lichen-chartreuse felt canary holding a card in its wing snaps its head round to the jar with an overshoot and settles, a plate reads ONE JOB",
+      "sfx": "snap",
+      "means": "one job",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix, a lichen-chartreuse felt canary holding a card in its wing",
+        "action": "snaps its head round to the jar with an overshoot and settles",
+        "emotion": "alert",
+        "annotation": "ONE JOB"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Nix, a lichen-chartreuse felt canary holding a card in its wing snaps its head round to the jar with an overshoot and settles, a plate reads ONE JOB",
+        "reaction": "the head snaps",
+        "ambient": "a lab room hum, a fridge compressor"
+      },
+      "t": "0.490-2.970",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 2.97,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.97
+      },
+      "offset": 2.97,
+      "vo": "This canary will have one job. Say no, fast.",
+      "phrase": "Say no, fast.",
+      "shows": "Nix's card swings up edge-on in its wing, NO on one face and OK on the other, turning between them, a plate reads NO? \u00b7 OK?",
+      "sfx": "flip",
+      "means": "no? \u00b7 ok?",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix's card",
+        "action": "swings up edge-on in its wing, NO on one face and OK on the other, turning between them",
+        "emotion": "curious",
+        "annotation": "NO? \u00b7 OK?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Nix's card swings up edge-on in its wing, NO on one face and OK on the other, turning between them, a plate reads NO? \u00b7 OK?",
+        "reaction": "the card turns",
+        "ambient": "a lab room hum, a fridge compressor"
+      },
+      "t": "2.970-5.440",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 5.44,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Brandon Briggs, a U A A biologist, says the rare earths are not rare. They're found everywhere.",
+      "phrase": "Brandon Briggs, a U",
+      "shows": "a faceless Brandon Briggs with a boxed name tag steps in at the window bench and his brass magnifier hops rock to rock across a tray, three stops, a plate reads BRANDON BRIGGS \u00b7 UAA BIOLOGIST",
+      "sfx": "step",
+      "means": "brandon briggs \u00b7 uaa biologist",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless Brandon Briggs with a boxed name tag",
+        "action": "steps in at the window bench and his brass magnifier hops rock to rock across a tray, three stops",
+        "emotion": "curious",
+        "annotation": "BRANDON BRIGGS \u00b7 UAA BIOLOGIST"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a faceless Brandon Briggs with a boxed name tag steps in at the window bench and his brass magnifier hops rock to rock across a tray, three stops, a plate reads BRANDON BRIGGS \u00b7 UAA BIOLOGIST",
+        "reaction": "the magnifier hops",
+        "ambient": "a lab room hum, wind at the window"
+      },
+      "t": "5.440-9.720",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 9.72,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 4.28
+      },
+      "offset": 4.28,
+      "vo": "Brandon Briggs, a U A A biologist, says the rare earths are not rare. They're found everywhere.",
+      "phrase": "not rare. They're found",
+      "shows": "the magnifier lens sweeps the tray and lilac specks flicker in every rock, one landing on Nix's beak, a plate reads \"THE RARE EARTHS ARE NOT RARE\" \u00b7 BRIGGS",
+      "sfx": "tap",
+      "means": "\"the rare earths are not rare\" \u00b7 briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "the magnifier lens",
+        "action": "sweeps the tray and lilac specks flicker in every rock, one landing on Nix's beak",
+        "emotion": "surprised",
+        "annotation": "\"THE RARE EARTHS ARE NOT RARE\" \u00b7 BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the magnifier lens sweeps the tray and lilac specks flicker in every rock, one landing on Nix's beak, a plate reads \"THE RARE EARTHS ARE NOT RARE\" \u00b7 BRIGGS",
+        "reaction": "the specks flicker",
+        "ambient": "a lab room hum, wind at the window"
+      },
+      "t": "9.720-11.350",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 11.35,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 5.91
+      },
+      "offset": 5.91,
+      "vo": "Brandon Briggs, a U A A biologist, says the rare earths are not rare. They're found everywhere.",
+      "phrase": "everywhere.",
+      "shows": "Briggs lifts the magnifier to the window and lilac specks flicker across the whole Chugach face, a plate reads FOUND EVERYWHERE \u00b7 PER BRIGGS",
+      "sfx": "shimmer",
+      "means": "found everywhere \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "Briggs",
+        "action": "lifts the magnifier to the window and lilac specks flicker across the whole Chugach face",
+        "emotion": "awed",
+        "annotation": "FOUND EVERYWHERE \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "Briggs lifts the magnifier to the window and lilac specks flicker across the whole Chugach face, a plate reads FOUND EVERYWHERE \u00b7 PER BRIGGS",
+        "reaction": "the range glints",
+        "ambient": "a lab room hum, wind at the window"
+      },
+      "t": "11.350-13.270",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 13.27,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.33
+      },
+      "offset": 0.33,
+      "vo": "They're in magnets for motors and wind turbines. Concentrating them is the hard part, he says.",
+      "phrase": "magnets for motors and",
+      "shows": "a tiny motor and a toy wind turbine on the sill behind him spin up as lilac specks fly into their magnets, a plate reads MAGNETS \u00b7 MOTORS \u00b7 WIND TURBINES",
+      "sfx": "whirr",
+      "means": "magnets \u00b7 motors \u00b7 wind turbines",
+      "rehook": "",
+      "draw": {
+        "subject": "a tiny motor and a toy wind turbine on the sill behind him",
+        "action": "spin up as lilac specks fly into their magnets",
+        "emotion": "busy",
+        "annotation": "MAGNETS \u00b7 MOTORS \u00b7 WIND TURBINES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "a tiny motor and a toy wind turbine on the sill behind him spin up as lilac specks fly into their magnets, a plate reads MAGNETS \u00b7 MOTORS \u00b7 WIND TURBINES",
+        "reaction": "the rotor spins",
+        "ambient": "a lab room hum, wind at the window"
+      },
+      "t": "13.270-16.430",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 16.43,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.49
+      },
+      "offset": 3.49,
+      "vo": "They're in magnets for motors and wind turbines. Concentrating them is the hard part, he says.",
+      "phrase": "Concentrating them is the",
+      "shows": "Briggs pinches at one speck and it slips through his gloved fingers while the specks scatter thinner under the lens, a plate reads SPREAD THIN \u00b7 HARD TO CONCENTRATE \u00b7 PER BRIGGS",
+      "sfx": "rustle",
+      "means": "spread thin \u00b7 hard to concentrate \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "Briggs",
+        "action": "pinches at one speck and it slips through his gloved fingers while the specks scatter thinner under the lens",
+        "emotion": "frustrated",
+        "annotation": "SPREAD THIN \u00b7 HARD TO CONCENTRATE \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "Briggs pinches at one speck and it slips through his gloved fingers while the specks scatter thinner under the lens, a plate reads SPREAD THIN \u00b7 HARD TO CONCENTRATE \u00b7 PER BRIGGS",
+        "reaction": "the specks scatter",
+        "ambient": "a lab room hum, wind at the window"
+      },
+      "t": "16.430-19.840",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 19.84,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Today that can take acids, heat, solvents and two hundred steps, he says.",
+      "phrase": "Today that can take",
+      "shows": "a paper staircase unrolls out of the window and climbs the Chugach face as a step counter runs up the flights, a plate reads TODAY'S ROUTE \u00b7 PER BRIGGS",
+      "sfx": "paper",
+      "means": "today's route \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "a paper staircase",
+        "action": "unrolls out of the window and climbs the Chugach face as a step counter runs up the flights",
+        "emotion": "daunting",
+        "annotation": "TODAY'S ROUTE \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "a paper staircase unrolls out of the window and climbs the Chugach face as a step counter runs up the flights, a plate reads TODAY'S ROUTE \u00b7 PER BRIGGS",
+        "reaction": "the paper unrolls",
+        "ambient": "wind on the range, paper flapping"
+      },
+      "t": "19.840-20.810",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 20.81,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.97
+      },
+      "offset": 0.97,
+      "vo": "Today that can take acids, heat, solvents and two hundred steps, he says.",
+      "phrase": "acids, heat, solvents and",
+      "shows": "acid, heat and solvent drums shake on the bottom steps as steam pours over them, a plate reads ACIDS \u00b7 HEAT \u00b7 SOLVENTS",
+      "sfx": "hiss",
+      "means": "acids \u00b7 heat \u00b7 solvents",
+      "rehook": "",
+      "draw": {
+        "subject": "acid, heat and solvent drums",
+        "action": "shake on the bottom steps as steam pours over them",
+        "emotion": "ominous",
+        "annotation": "ACIDS \u00b7 HEAT \u00b7 SOLVENTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "acid, heat and solvent drums shake on the bottom steps as steam pours over them, a plate reads ACIDS \u00b7 HEAT \u00b7 SOLVENTS",
+        "reaction": "the drums steam",
+        "ambient": "wind on the range, paper flapping"
+      },
+      "t": "20.810-23.210",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 23.21,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "Today that can take acids, heat, solvents and two hundred steps, he says.",
+      "phrase": "hundred steps, he says.",
+      "shows": "a faceless worker in a hard hat with a drum on a hand truck drops onto a low step and mops his brow as the counter lands, a plate reads CAN TAKE 200 STEPS \u00b7 PER BRIGGS",
+      "sfx": "thud",
+      "means": "can take 200 steps \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless worker in a hard hat with a drum on a hand truck",
+        "action": "drops onto a low step and mops his brow as the counter lands",
+        "emotion": "tired",
+        "annotation": "CAN TAKE 200 STEPS \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "a faceless worker in a hard hat with a drum on a hand truck drops onto a low step and mops his brow as the counter lands, a plate reads CAN TAKE 200 STEPS \u00b7 PER BRIGGS",
+        "reaction": "the counter lands",
+        "ambient": "wind on the range, paper flapping"
+      },
+      "t": "23.210-25.980",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 25.98,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "His lab already got microbes to do that with coal, in the lab.",
+      "phrase": "His lab already got",
+      "shows": "the microbe crew in tiny hard hats lifts the empty flask off the bench and carries it toward the jar, a plate reads WORKED BEFORE \u00b7 IN THE LAB",
+      "sfx": "bloom",
+      "means": "worked before \u00b7 in the lab",
+      "rehook": "",
+      "draw": {
+        "subject": "the microbe crew in tiny hard hats",
+        "action": "lifts the empty flask off the bench and carries it toward the jar",
+        "emotion": "proud",
+        "annotation": "WORKED BEFORE \u00b7 IN THE LAB"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "the microbe crew in tiny hard hats lifts the empty flask off the bench and carries it toward the jar, a plate reads WORKED BEFORE \u00b7 IN THE LAB",
+        "reaction": "the flask blooms",
+        "ambient": "a lab room hum, a low rumble"
+      },
+      "t": "25.980-28.210",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 28.21,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.23
+      },
+      "offset": 2.23,
+      "vo": "His lab already got microbes to do that with coal, in the lab.",
+      "phrase": "coal, in the lab.",
+      "shows": "the crew tips a crumb of refuse from the jar's lump into the flask and the flask blooms lilac, a plate reads MICROBES \u00b7 COAL \u00b7 IN THE LAB",
+      "sfx": "pebble",
+      "means": "microbes \u00b7 coal \u00b7 in the lab",
+      "rehook": "",
+      "draw": {
+        "subject": "the crew",
+        "action": "tips a crumb of refuse from the jar's lump into the flask and the flask blooms lilac",
+        "emotion": "proud",
+        "annotation": "MICROBES \u00b7 COAL \u00b7 IN THE LAB"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "the crew tips a crumb of refuse from the jar's lump into the flask and the flask blooms lilac, a plate reads MICROBES \u00b7 COAL \u00b7 IN THE LAB",
+        "reaction": "the flask blooms",
+        "ambient": "a lab room hum, a low rumble"
+      },
+      "t": "28.210-30.100",
+      "key": 48
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 30.1,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "But it hasn't scaled up to be commercially viable. That's the wall.",
+      "phrase": "But it hasn't scaled",
+      "shows": "a cobalt wall rises out of the floor behind the bench block by block until it blots out the window, a plate reads NOT YET SCALED \u00b7 NOT YET VIABLE",
+      "sfx": "rumble",
+      "means": "not yet scaled \u00b7 not yet viable",
+      "rehook": "rehook: a cobalt wall rises behind the glowing flask and blots out the window",
+      "draw": {
+        "subject": "a cobalt wall",
+        "action": "rises out of the floor behind the bench block by block until it blots out the window",
+        "emotion": "looming",
+        "annotation": "NOT YET SCALED \u00b7 NOT YET VIABLE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c33"
+      ],
+      "choreo": {
+        "primary": "a cobalt wall rises out of the floor behind the bench block by block until it blots out the window, a plate reads NOT YET SCALED \u00b7 NOT YET VIABLE",
+        "reaction": "the wall rises",
+        "ambient": "a lab room hum, a low rumble"
+      },
+      "kick": true,
+      "t": "30.100-34.490",
+      "key": 13
+    },
+    {
+      "id": 15,
+      "shot": 4,
+      "at_s": 34.49,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.39
+      },
+      "offset": 4.39,
+      "vo": "But it hasn't scaled up to be commercially viable. That's the wall.",
+      "phrase": "wall.",
+      "shows": "Nix, a lichen-chartreuse felt canary holding a card in its wing tilts back to follow the wall up as the last block seats and its card tips down, a plate reads THE WALL",
+      "sfx": "thump",
+      "means": "the wall",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix, a lichen-chartreuse felt canary holding a card in its wing",
+        "action": "tilts back to follow the wall up as the last block seats and its card tips down",
+        "emotion": "worried",
+        "annotation": "THE WALL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c33"
+      ],
+      "choreo": {
+        "primary": "Nix, a lichen-chartreuse felt canary holding a card in its wing tilts back to follow the wall up as the last block seats and its card tips down, a plate reads THE WALL",
+        "reaction": "the block seats",
+        "ambient": "a lab room hum, a low rumble"
+      },
+      "t": "34.490-35.760",
+      "key": 14
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 35.76,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The National Science Foundation is funding a six million dollar project led by Briggs.",
+      "phrase": "The National Science Foundation",
+      "shows": "a map table slides in with Alaska, Canada between it and the lower 48, as four pins drop in Anchorage, Fairbanks, Montana and Wyoming and a dashed line draws between them, the glowing flask at the table's edge, a plate reads UAA \u00b7 UAF \u00b7 MONTANA TECH \u00b7 WYOMING",
+      "sfx": "swoosh",
+      "means": "uaa \u00b7 uaf \u00b7 montana tech \u00b7 wyoming",
+      "rehook": "",
+      "draw": {
+        "subject": "a map table",
+        "action": "slides in with Alaska, Canada between it and the lower 48, as four pins drop in Anchorage, Fairbanks, Montana and Wyoming and a dashed line draws between them, the glowing flask at the table's edge",
+        "emotion": "bright",
+        "annotation": "UAA \u00b7 UAF \u00b7 MONTANA TECH \u00b7 WYOMING"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a map table slides in with Alaska, Canada between it and the lower 48, as four pins drop in Anchorage, Fairbanks, Montana and Wyoming and a dashed line draws between them, the glowing flask at the table's edge, a plate reads UAA \u00b7 UAF \u00b7 MONTANA TECH \u00b7 WYOMING",
+        "reaction": "the pins drop",
+        "ambient": "a quiet room, paper"
+      },
+      "t": "35.760-37.890",
+      "key": 15
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 37.89,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.13
+      },
+      "offset": 2.13,
+      "vo": "The National Science Foundation is funding a six million dollar project led by Briggs.",
+      "phrase": "six million dollar project",
+      "shows": "a $6M stamp punches down onto the middle of the dashed network, its ring spanning all four pins, a plate reads NSF \u00b7 $6M \u00b7 WHOLE PROJECT",
+      "sfx": "punch",
+      "means": "nsf \u00b7 $6m \u00b7 whole project",
+      "rehook": "",
+      "draw": {
+        "subject": "a $6M stamp",
+        "action": "punches down onto the middle of the dashed network, its ring spanning all four pins",
+        "emotion": "bright",
+        "annotation": "NSF \u00b7 $6M \u00b7 WHOLE PROJECT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a $6M stamp punches down onto the middle of the dashed network, its ring spanning all four pins, a plate reads NSF \u00b7 $6M \u00b7 WHOLE PROJECT",
+        "reaction": "the stamp punches",
+        "ambient": "a quiet room, paper"
+      },
+      "t": "37.890-39.930",
+      "key": 16
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 39.93,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.17
+      },
+      "offset": 4.17,
+      "vo": "The National Science Foundation is funding a six million dollar project led by Briggs.",
+      "phrase": "Briggs.",
+      "shows": "a small tag swings down off the Anchorage pin on a string, a plate reads LED BY BRIGGS, UAA",
+      "sfx": "swing",
+      "means": "led by briggs, uaa",
+      "rehook": "",
+      "draw": {
+        "subject": "a small tag",
+        "action": "swings down off the Anchorage pin on a string",
+        "emotion": "bright",
+        "annotation": "LED BY BRIGGS, UAA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a small tag swings down off the Anchorage pin on a string, a plate reads LED BY BRIGGS, UAA",
+        "reaction": "the tag swings",
+        "ambient": "a quiet room, paper"
+      },
+      "t": "39.930-40.960",
+      "key": 17
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 40.96,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The plan is microbes pulling rare earths from coal refuse, the waste from processing coal.",
+      "phrase": "The plan is microbes",
+      "shows": "a cutaway into the glowing flask opens as crumbs of coal refuse sink and the microbe crew swims in, a plate reads MICROBES \u00b7 RARE EARTHS FROM COAL REFUSE",
+      "sfx": "whoosh",
+      "means": "microbes \u00b7 rare earths from coal refuse",
+      "rehook": "",
+      "draw": {
+        "subject": "a cutaway into the glowing flask",
+        "action": "opens as crumbs of coal refuse sink and the microbe crew swims in",
+        "emotion": "busy",
+        "annotation": "MICROBES \u00b7 RARE EARTHS FROM COAL REFUSE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "a cutaway into the glowing flask opens as crumbs of coal refuse sink and the microbe crew swims in, a plate reads MICROBES \u00b7 RARE EARTHS FROM COAL REFUSE",
+        "reaction": "the crew swims in",
+        "ambient": "bubbling liquid, a lab hum"
+      },
+      "t": "40.960-45.150",
+      "key": 18
+    },
+    {
+      "id": 20,
+      "shot": 6,
+      "at_s": 45.15,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.19
+      },
+      "offset": 4.19,
+      "vo": "The plan is microbes pulling rare earths from coal refuse, the waste from processing coal.",
+      "phrase": "waste from processing coal.",
+      "shows": "the microbes grab scattered lilac specks and squeeze them into one bright cluster, a plate reads COAL REFUSE \u00b7 WASTE FROM COAL PROCESSING",
+      "sfx": "pop",
+      "means": "coal refuse \u00b7 waste from coal processing",
+      "rehook": "",
+      "draw": {
+        "subject": "the microbes",
+        "action": "grab scattered lilac specks and squeeze them into one bright cluster",
+        "emotion": "proud",
+        "annotation": "COAL REFUSE \u00b7 WASTE FROM COAL PROCESSING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "the microbes grab scattered lilac specks and squeeze them into one bright cluster, a plate reads COAL REFUSE \u00b7 WASTE FROM COAL PROCESSING",
+        "reaction": "the cluster pops",
+        "ambient": "bubbling liquid, a lab hum"
+      },
+      "t": "45.150-47.400",
+      "key": 19
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 47.4,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Briggs hopes for four or five steps.",
+      "phrase": "Briggs hopes for four",
+      "shows": "a dashed step stool tagged GOAL slides in at the foot of the 200 paper steps, still only an outline, a plate reads GOAL \u00b7 \"FOUR OR FIVE\" STEPS \u00b7 A HOPE",
+      "sfx": "slide",
+      "means": "goal \u00b7 \"four or five\" steps \u00b7 a hope",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed step stool tagged GOAL",
+        "action": "slides in at the foot of the 200 paper steps, still only an outline",
+        "emotion": "hopeful",
+        "annotation": "GOAL \u00b7 \"FOUR OR FIVE\" STEPS \u00b7 A HOPE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a dashed step stool tagged GOAL slides in at the foot of the 200 paper steps, still only an outline, a plate reads GOAL \u00b7 \"FOUR OR FIVE\" STEPS \u00b7 A HOPE",
+        "reaction": "the outline slides in",
+        "ambient": "wind on the range"
+      },
+      "t": "47.400-50.580",
+      "key": 20
+    },
+    {
+      "id": 22,
+      "shot": 8,
+      "at_s": 50.58,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "This time, a canary. A deep learning model, led by engineer Masoumeh Heidari Kapourchali.",
+      "phrase": "This time, a canary.",
+      "shows": "Nix, a lichen-chartreuse felt canary holding a card in its wing glides down and lands on the bench among four dark dials in front of the cobalt wall, a plate reads A DEEP LEARNING MODEL \u00b7 PLANNED",
+      "sfx": "flap",
+      "means": "a deep learning model \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix, a lichen-chartreuse felt canary holding a card in its wing",
+        "action": "glides down and lands on the bench among four dark dials in front of the cobalt wall",
+        "emotion": "alert",
+        "annotation": "A DEEP LEARNING MODEL \u00b7 PLANNED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "Nix, a lichen-chartreuse felt canary holding a card in its wing glides down and lands on the bench among four dark dials in front of the cobalt wall, a plate reads A DEEP LEARNING MODEL \u00b7 PLANNED",
+        "reaction": "the wings flap",
+        "ambient": "a lab room hum against the wall"
+      },
+      "t": "50.580-54.270",
+      "key": 21
+    },
+    {
+      "id": 23,
+      "shot": 8,
+      "at_s": 54.27,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.69
+      },
+      "offset": 3.69,
+      "vo": "This time, a canary. A deep learning model, led by engineer Masoumeh Heidari Kapourchali.",
+      "phrase": "led by engineer Masoumeh",
+      "shows": "a faceless Masoumeh Heidari Kapourchali with a boxed name tag hangs a frosted feeder tagged DATA on the wall's edge, its fill hidden behind the frost, a plate reads MASOUMEH HEIDARI KAPOURCHALI \u00b7 UAA ENGINEERING",
+      "sfx": "swing",
+      "means": "masoumeh heidari kapourchali \u00b7 uaa engineering",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless Masoumeh Heidari Kapourchali with a boxed name tag",
+        "action": "hangs a frosted feeder tagged DATA on the wall's edge, its fill hidden behind the frost",
+        "emotion": "steady",
+        "annotation": "MASOUMEH HEIDARI KAPOURCHALI \u00b7 UAA ENGINEERING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a faceless Masoumeh Heidari Kapourchali with a boxed name tag hangs a frosted feeder tagged DATA on the wall's edge, its fill hidden behind the frost, a plate reads MASOUMEH HEIDARI KAPOURCHALI \u00b7 UAA ENGINEERING",
+        "reaction": "the feeder swings",
+        "ambient": "a lab room hum against the wall"
+      },
+      "t": "54.270-58.170",
+      "key": 22
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 58.17,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.91
+      },
+      "offset": 0.91,
+      "vo": "It will read each reactor's temperature, acidity, salinity and oxygen.",
+      "phrase": "read each reactor's temperature,",
+      "shows": "Heidari Kapourchali runs a wire from the first dial to Nix's perch, a plate reads WILL READ EACH REACTOR",
+      "sfx": "click",
+      "means": "will read each reactor",
+      "rehook": "",
+      "draw": {
+        "subject": "Heidari Kapourchali",
+        "action": "runs a wire from the first dial to Nix's perch",
+        "emotion": "focused",
+        "annotation": "WILL READ EACH REACTOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "Heidari Kapourchali runs a wire from the first dial to Nix's perch, a plate reads WILL READ EACH REACTOR",
+        "reaction": "the wire snaps in",
+        "ambient": "a lab room hum against the wall"
+      },
+      "t": "58.170-59.290",
+      "key": 23
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 59.29,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.03
+      },
+      "offset": 2.03,
+      "vo": "It will read each reactor's temperature, acidity, salinity and oxygen.",
+      "phrase": "temperature, acidity, salinity and",
+      "shows": "the TEMPERATURE dial ticks alive as its wire connects, a plate reads TEMPERATURE",
+      "sfx": "tick",
+      "means": "temperature",
+      "rehook": "",
+      "draw": {
+        "subject": "the TEMPERATURE dial",
+        "action": "ticks alive as its wire connects",
+        "emotion": "busy",
+        "annotation": "TEMPERATURE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the TEMPERATURE dial ticks alive as its wire connects, a plate reads TEMPERATURE",
+        "reaction": "the needle swings",
+        "ambient": "a lab room hum against the wall"
+      },
+      "t": "59.290-60.190",
+      "key": 24
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 60.19,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "It will read each reactor's temperature, acidity, salinity and oxygen.",
+      "phrase": "acidity, salinity and oxygen.",
+      "shows": "the ACIDITY and SALINITY dials tick alive one after the other as she connects them, a plate reads ACIDITY \u00b7 SALINITY",
+      "sfx": "blip",
+      "means": "acidity \u00b7 salinity",
+      "rehook": "",
+      "draw": {
+        "subject": "the ACIDITY and SALINITY dials",
+        "action": "tick alive one after the other as she connects them",
+        "emotion": "busy",
+        "annotation": "ACIDITY \u00b7 SALINITY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the ACIDITY and SALINITY dials tick alive one after the other as she connects them, a plate reads ACIDITY \u00b7 SALINITY",
+        "reaction": "the needles swing",
+        "ambient": "a lab room hum against the wall"
+      },
+      "t": "60.190-61.810",
+      "key": 25
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 61.81,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.55
+      },
+      "offset": 4.55,
+      "vo": "It will read each reactor's temperature, acidity, salinity and oxygen.",
+      "phrase": "oxygen.",
+      "shows": "Nix, a lichen-chartreuse felt canary holding a card in its wing swings four tiny monocles down over its eyes as the OXYGEN needle swings alive and she presses the dial once, a plate reads OXYGEN",
+      "sfx": "clink",
+      "means": "oxygen",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix, a lichen-chartreuse felt canary holding a card in its wing",
+        "action": "swings four tiny monocles down over its eyes as the OXYGEN needle swings alive and she presses the dial once",
+        "emotion": "focused",
+        "annotation": "OXYGEN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "Nix, a lichen-chartreuse felt canary holding a card in its wing swings four tiny monocles down over its eyes as the OXYGEN needle swings alive and she presses the dial once, a plate reads OXYGEN",
+        "reaction": "the monocles clink",
+        "ambient": "a lab room hum against the wall"
+      },
+      "t": "61.810-63.100",
+      "key": 26
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 63.1,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Briggs says it will identify when a reactor's going to fail, and what fix could save it.",
+      "phrase": "Briggs says it will",
+      "shows": "a row of bench reactors seen from above inside a dashed blueprint frame tilts into view as one reactor's oxygen needle turns toward the red and its foam starts to rise, a plate reads PLANNED \u00b7 PER BRIGGS",
+      "sfx": "buzz",
+      "means": "planned \u00b7 per briggs",
+      "rehook": "rehook: from above, one reactor's oxygen needle drifts toward the red inside a PLANNED blueprint frame",
+      "draw": {
+        "subject": "a row of bench reactors seen from above inside a dashed blueprint frame",
+        "action": "tilts into view as one reactor's oxygen needle turns toward the red and its foam starts to rise",
+        "emotion": "uneasy",
+        "annotation": "PLANNED \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a row of bench reactors seen from above inside a dashed blueprint frame tilts into view as one reactor's oxygen needle turns toward the red and its foam starts to rise, a plate reads PLANNED \u00b7 PER BRIGGS",
+        "reaction": "the needle drifts",
+        "ambient": "a fume-hood fan, bubbling"
+      },
+      "t": "63.100-65.670",
+      "key": 27
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 65.67,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.57
+      },
+      "offset": 2.57,
+      "vo": "Briggs says it will identify when a reactor's going to fail, and what fix could save it.",
+      "phrase": "fail, and what fix",
+      "shows": "Nix, a lichen-chartreuse felt canary holding a card in its wing on a rail above the bay raises its card as the foam swells, before it crests, a plate reads WHEN A REACTOR'S GOING TO FAIL \u00b7 PER BRIGGS",
+      "sfx": "alarm",
+      "means": "when a reactor's going to fail \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix, a lichen-chartreuse felt canary holding a card in its wing",
+        "action": "on a rail above the bay raises its card as the foam swells, before it crests",
+        "emotion": "alert",
+        "annotation": "WHEN A REACTOR'S GOING TO FAIL \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "Nix, a lichen-chartreuse felt canary holding a card in its wing on a rail above the bay raises its card as the foam swells, before it crests, a plate reads WHEN A REACTOR'S GOING TO FAIL \u00b7 PER BRIGGS",
+        "reaction": "the card rises",
+        "ambient": "a fume-hood fan, bubbling"
+      },
+      "t": "65.670-66.910",
+      "key": 28
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 66.91,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 3.81
+      },
+      "offset": 3.81,
+      "vo": "Briggs says it will identify when a reactor's going to fail, and what fix could save it.",
+      "phrase": "fix could save it.",
+      "shows": "a crew microbe spins the reactor's valve as Nix's card turns to FIX and the foam settles below the rim, a plate reads FLAG \u00b7 THEN FIX \u00b7 PER BRIGGS",
+      "sfx": "click",
+      "means": "flag \u00b7 then fix \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "a crew microbe",
+        "action": "spins the reactor's valve as Nix's card turns to FIX and the foam settles below the rim",
+        "emotion": "relieved",
+        "annotation": "FLAG \u00b7 THEN FIX \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "a crew microbe spins the reactor's valve as Nix's card turns to FIX and the foam settles below the rim, a plate reads FLAG \u00b7 THEN FIX \u00b7 PER BRIGGS",
+        "reaction": "the foam settles",
+        "ambient": "a fume-hood fan, bubbling"
+      },
+      "t": "66.910-68.500",
+      "key": 29
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 68.5,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Instead of months, if not years, he says it could quickly flag a bad feedstock.",
+      "phrase": "Instead of months, if",
+      "shows": "a wall planner in a corridor seen straight on tears off month pages one by one that fly toward camera, a plate reads MONTHS, IF NOT YEARS \u00b7 PER BRIGGS",
+      "sfx": "page",
+      "means": "months, if not years \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "a wall planner in a corridor seen straight on",
+        "action": "tears off month pages one by one that fly toward camera",
+        "emotion": "frantic",
+        "annotation": "MONTHS, IF NOT YEARS \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c34"
+      ],
+      "choreo": {
+        "primary": "a wall planner in a corridor seen straight on tears off month pages one by one that fly toward camera, a plate reads MONTHS, IF NOT YEARS \u00b7 PER BRIGGS",
+        "reaction": "the pages fly",
+        "ambient": "a corridor hum, paper rustle"
+      },
+      "t": "68.500-72.170",
+      "key": 30
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 72.17,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.67
+      },
+      "offset": 3.67,
+      "vo": "Instead of months, if not years, he says it could quickly flag a bad feedstock.",
+      "phrase": "flag a bad feedstock.",
+      "shows": "a ghosted COULD SKIP stamp presses across the stack of months inside a dashed corner frame as a feedstock jar slides past Nix's wing flipping a NO card at the frame edge, and the torn pages fly back onto the planner, a plate reads COULD QUICKLY FLAG A BAD FEEDSTOCK \u00b7 PER BRIGGS",
+      "sfx": "slam",
+      "means": "could quickly flag a bad feedstock \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "a ghosted COULD SKIP stamp",
+        "action": "presses across the stack of months inside a dashed corner frame as a feedstock jar slides past Nix's wing flipping a NO card at the frame edge, and the torn pages fly back onto the planner",
+        "emotion": "smug",
+        "annotation": "COULD QUICKLY FLAG A BAD FEEDSTOCK \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c34"
+      ],
+      "choreo": {
+        "primary": "a ghosted COULD SKIP stamp presses across the stack of months inside a dashed corner frame as a feedstock jar slides past Nix's wing flipping a NO card at the frame edge, and the torn pages fly back onto the planner, a plate reads COULD QUICKLY FLAG A BAD FEEDSTOCK \u00b7 PER BRIGGS",
+        "reaction": "the pages fly back",
+        "ambient": "a corridor hum, paper rustle"
+      },
+      "t": "72.170-73.940",
+      "key": 31
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 73.94,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Briggs says that should speed the scale up.",
+      "phrase": "Briggs says that should",
+      "shows": "a dashed arrow rises up a cobalt stripe on the corridor wall and halts a third of the way up, a plate reads SHOULD SPEED THE SCALE-UP \u00b7 PER BRIGGS",
+      "sfx": "swoosh",
+      "means": "should speed the scale-up \u00b7 per briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed arrow",
+        "action": "rises up a cobalt stripe on the corridor wall and halts a third of the way up",
+        "emotion": "hopeful",
+        "annotation": "SHOULD SPEED THE SCALE-UP \u00b7 PER BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "a dashed arrow rises up a cobalt stripe on the corridor wall and halts a third of the way up, a plate reads SHOULD SPEED THE SCALE-UP \u00b7 PER BRIGGS",
+        "reaction": "the arrow halts",
+        "ambient": "a corridor hum, paper rustle"
+      },
+      "t": "73.940-76.780",
+      "key": 32
+    },
+    {
+      "id": 34,
+      "shot": 11,
+      "at_s": 76.78,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Others hit that wall. A federally funded pilot that pulled rare earths from coal, by a different method, lost money on paper in every scenario.",
+      "phrase": "Others hit that wall.",
+      "shows": "the camera pulls out of the corridor onto a cold street where Nix stands on the sidewalk outside another building, the flask beside it, its glow flickering and recovering in the cold, a plate reads OTHERS HIT THAT WALL",
+      "sfx": "whoosh",
+      "means": "others hit that wall",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls out of the corridor onto a cold street where Nix stands on the sidewalk outside another building, the flask beside it, its glow flickering and recovering in the cold",
+        "emotion": "uneasy",
+        "annotation": "OTHERS HIT THAT WALL"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the camera pulls out of the corridor onto a cold street where Nix stands on the sidewalk outside another building, the flask beside it, its glow flickering and recovering in the cold, a plate reads OTHERS HIT THAT WALL",
+        "reaction": "the street opens",
+        "ambient": "a cold street, a far ventilation drone"
+      },
+      "t": "76.780-79.410",
+      "key": 33
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 79.41,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 2.63
+      },
+      "offset": 2.63,
+      "vo": "Others hit that wall. A federally funded pilot that pulled rare earths from coal, by a different method, lost money on paper in every scenario.",
+      "phrase": "pilot that pulled rare",
+      "shows": "the other building's window lights up on a ghost pilot tank in dashed cobalt as a sign swings over its door, a plate reads DOE-FUNDED PILOT \u00b7 DIFFERENT METHOD \u00b7 2023",
+      "sfx": "hum",
+      "means": "doe-funded pilot \u00b7 different method \u00b7 2023",
+      "rehook": "",
+      "draw": {
+        "subject": "the other building's window",
+        "action": "lights up on a ghost pilot tank in dashed cobalt as a sign swings over its door",
+        "emotion": "uneasy",
+        "annotation": "DOE-FUNDED PILOT \u00b7 DIFFERENT METHOD \u00b7 2023"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the other building's window lights up on a ghost pilot tank in dashed cobalt as a sign swings over its door, a plate reads DOE-FUNDED PILOT \u00b7 DIFFERENT METHOD \u00b7 2023",
+        "reaction": "the sign swings",
+        "ambient": "a cold street, a far ventilation drone"
+      },
+      "t": "79.410-82.670",
+      "key": 34
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 82.67,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 5.89
+      },
+      "offset": 5.89,
+      "vo": "Others hit that wall. A federally funded pilot that pulled rare earths from coal, by a different method, lost money on paper in every scenario.",
+      "phrase": "lost money on paper",
+      "shows": "one red-stamped ledger page slaps flat against the inside of the far window as the camera trucks up to the glass, Nix's reflection small in the pane, a plate reads EVERY SCENARIO IN THE RED \u00b7 DOE-FUNDED PILOT",
+      "sfx": "stamp",
+      "means": "every scenario in the red \u00b7 doe-funded pilot",
+      "rehook": "",
+      "draw": {
+        "subject": "one red-stamped ledger page",
+        "action": "slaps flat against the inside of the far window as the camera trucks up to the glass, Nix's reflection small in the pane",
+        "emotion": "grim",
+        "annotation": "EVERY SCENARIO IN THE RED \u00b7 DOE-FUNDED PILOT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "one red-stamped ledger page slaps flat against the inside of the far window as the camera trucks up to the glass, Nix's reflection small in the pane, a plate reads EVERY SCENARIO IN THE RED \u00b7 DOE-FUNDED PILOT",
+        "reaction": "the stamps land",
+        "ambient": "a cold street, a far ventilation drone"
+      },
+      "kick": true,
+      "t": "82.670-86.300",
+      "key": 35
+    },
+    {
+      "id": 37,
+      "shot": 12,
+      "at_s": 86.3,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "For one feedstock, its lab recovery ran about thirty percent higher than the pilot plant.",
+      "phrase": "For one feedstock, its",
+      "shows": "a dashed lab beaker and the dashed pilot tank slide in side by side as their bars start to rise, a plate reads ONE FEEDSTOCK \u00b7 THE PILOT'S OWN LAB AND PLANT",
+      "sfx": "slide",
+      "means": "one feedstock \u00b7 the pilot's own lab and plant",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed lab beaker and the dashed pilot tank",
+        "action": "slide in side by side as their bars start to rise",
+        "emotion": "uneasy",
+        "annotation": "ONE FEEDSTOCK \u00b7 THE PILOT'S OWN LAB AND PLANT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "a dashed lab beaker and the dashed pilot tank slide in side by side as their bars start to rise, a plate reads ONE FEEDSTOCK \u00b7 THE PILOT'S OWN LAB AND PLANT",
+        "reaction": "the bars start",
+        "ambient": "a big cold hall"
+      },
+      "t": "86.300-89.110",
+      "key": 36
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 89.11,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 2.81
+      },
+      "offset": 2.81,
+      "vo": "For one feedstock, its lab recovery ran about thirty percent higher than the pilot plant.",
+      "phrase": "thirty percent higher than",
+      "shows": "the pilot's own lab bar rises 3 of 10 blocks taller than its plant bar's 10, the extra three glowing under a bracket, a plate reads PILOT'S OWN LAB RAN ABOUT 30% HIGHER \u00b7 ONE FEEDSTOCK",
+      "sfx": "hit",
+      "means": "pilot's own lab ran about 30% higher \u00b7 one feedstock",
+      "rehook": "",
+      "draw": {
+        "subject": "the pilot's own lab bar",
+        "action": "rises 3 of 10 blocks taller than its plant bar's 10, the extra three glowing under a bracket",
+        "emotion": "uneasy",
+        "annotation": "PILOT'S OWN LAB RAN ABOUT 30% HIGHER \u00b7 ONE FEEDSTOCK"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "the pilot's own lab bar rises 3 of 10 blocks taller than its plant bar's 10, the extra three glowing under a bracket, a plate reads PILOT'S OWN LAB RAN ABOUT 30% HIGHER \u00b7 ONE FEEDSTOCK",
+        "reaction": "the blocks land",
+        "ambient": "a big cold hall"
+      },
+      "t": "89.110-92.040",
+      "key": 37
+    },
+    {
+      "id": 39,
+      "shot": 13,
+      "at_s": 92.04,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Reviews call bioleaching rare earths from waste still in its infancy.",
+      "phrase": "Reviews call bioleaching rare",
+      "shows": "the bench lamp swings in the draft over a bassinet tagged THE FIELD where a tiny reactor rolls over asleep, a plate reads \"STILL IN THEIR INFANCY\" \u00b7 2021 REVIEW",
+      "sfx": "creak",
+      "means": "\"still in their infancy\" \u00b7 2021 review",
+      "rehook": "rehook: a bassinet tagged THE FIELD rocks under a swinging lamp, the whole field still asleep",
+      "draw": {
+        "subject": "the bench lamp",
+        "action": "swings in the draft over a bassinet tagged THE FIELD where a tiny reactor rolls over asleep",
+        "emotion": "sleepy",
+        "annotation": "\"STILL IN THEIR INFANCY\" \u00b7 2021 REVIEW"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "the bench lamp swings in the draft over a bassinet tagged THE FIELD where a tiny reactor rolls over asleep, a plate reads \"STILL IN THEIR INFANCY\" \u00b7 2021 REVIEW",
+        "reaction": "the bassinet rocks",
+        "ambient": "a quiet lab at night, a clock"
+      },
+      "t": "92.040-96.820",
+      "key": 38
+    },
+    {
+      "id": 40,
+      "shot": 13,
+      "at_s": 96.82,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Neural networks are usually limited by their data.",
+      "phrase": "Neural networks are usually",
+      "shows": "a small reference feeder for neural networks in general swings beside the frosted feeder, its needle stopping hard at its own fill line, as a dashed line marked how much, not stated, draws on the frosted glass and a dashed ? draws on the flask's fill line beside it, a plate reads DATA \u00b7 THE USUAL LIMIT \u00b7 2021 REVIEW",
+      "sfx": "scratch",
+      "means": "data \u00b7 the usual limit \u00b7 2021 review",
+      "rehook": "",
+      "draw": {
+        "subject": "a small reference feeder for neural networks in general",
+        "action": "swings beside the frosted feeder, its needle stopping hard at its own fill line, as a dashed line marked how much, not stated, draws on the frosted glass and a dashed ? draws on the flask's fill line beside it",
+        "emotion": "thoughtful",
+        "annotation": "DATA \u00b7 THE USUAL LIMIT \u00b7 2021 REVIEW"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a small reference feeder for neural networks in general swings beside the frosted feeder, its needle stopping hard at its own fill line, as a dashed line marked how much, not stated, draws on the frosted glass and a dashed ? draws on the flask's fill line beside it, a plate reads DATA \u00b7 THE USUAL LIMIT \u00b7 2021 REVIEW",
+        "reaction": "the line draws",
+        "ambient": "a quiet lab at night, a clock"
+      },
+      "t": "96.820-99.920",
+      "key": 39
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 99.92,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "No results are reported yet.",
+      "phrase": "No results are reported",
+      "shows": "a rubber stamp thuds onto a blank results card on the bench, a plate reads NO RESULTS YET \u00b7 PLANNED WORK",
+      "sfx": "thud",
+      "means": "no results yet \u00b7 planned work",
+      "rehook": "",
+      "draw": {
+        "subject": "a rubber stamp",
+        "action": "thuds onto a blank results card on the bench",
+        "emotion": "plain",
+        "annotation": "NO RESULTS YET \u00b7 PLANNED WORK"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "a rubber stamp thuds onto a blank results card on the bench, a plate reads NO RESULTS YET \u00b7 PLANNED WORK",
+        "reaction": "the stamp lands",
+        "ambient": "a quiet lab at night, a clock"
+      },
+      "t": "99.920-102.160",
+      "key": 40
+    },
+    {
+      "id": 42,
+      "shot": 14,
+      "at_s": 102.16,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The canary isn't aimed over the wall. It's aimed at it.",
+      "phrase": "The canary isn't aimed",
+      "shows": "Nix, a lichen-chartreuse felt canary holding a card in its wing flies to the foot of the cobalt wall in dusk silhouette and lands facing it beside the flask set down there, a plate reads NOT OVER THE WALL",
+      "sfx": "flap",
+      "means": "not over the wall",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix, a lichen-chartreuse felt canary holding a card in its wing",
+        "action": "flies to the foot of the cobalt wall in dusk silhouette and lands facing it beside the flask set down there",
+        "emotion": "steady",
+        "annotation": "NOT OVER THE WALL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Nix, a lichen-chartreuse felt canary holding a card in its wing flies to the foot of the cobalt wall in dusk silhouette and lands facing it beside the flask set down there, a plate reads NOT OVER THE WALL",
+        "reaction": "the wings fold",
+        "ambient": "wind at dusk, a far hum"
+      },
+      "t": "102.160-105.170",
+      "key": 41
+    },
+    {
+      "id": 43,
+      "shot": 14,
+      "at_s": 105.17,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "The canary isn't aimed over the wall. It's aimed at it.",
+      "phrase": "at it.",
+      "shows": "Nix, a lichen-chartreuse felt canary holding a card in its wing turns its card to show a sighting reticle and holds it up to the wall, a plate reads AIMED AT IT",
+      "sfx": "swing",
+      "means": "aimed at it",
+      "rehook": "",
+      "draw": {
+        "subject": "Nix, a lichen-chartreuse felt canary holding a card in its wing",
+        "action": "turns its card to show a sighting reticle and holds it up to the wall",
+        "emotion": "steady",
+        "annotation": "AIMED AT IT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Nix, a lichen-chartreuse felt canary holding a card in its wing turns its card to show a sighting reticle and holds it up to the wall, a plate reads AIMED AT IT",
+        "reaction": "the card turns",
+        "ambient": "wind at dusk, a far hum"
+      },
+      "t": "105.170-106.540",
+      "key": 42
+    },
+    {
+      "id": 44,
+      "shot": 14,
+      "at_s": 106.54,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The award runs through August of twenty thirty. Four or five steps is his hope.",
+      "phrase": "The award runs through",
+      "shows": "a stick of chalk writes AUGUST 2030 on the wall above Nix, a plate reads AWARD RUNS TO AUGUST 2030",
+      "sfx": "scribble",
+      "means": "award runs to august 2030",
+      "rehook": "",
+      "draw": {
+        "subject": "a stick of chalk",
+        "action": "writes AUGUST 2030 on the wall above Nix",
+        "emotion": "plain",
+        "annotation": "AWARD RUNS TO AUGUST 2030"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "a stick of chalk writes AUGUST 2030 on the wall above Nix, a plate reads AWARD RUNS TO AUGUST 2030",
+        "reaction": "the chalk scratches",
+        "ambient": "wind at dusk, a far hum"
+      },
+      "t": "106.540-109.950",
+      "key": 43
+    },
+    {
+      "id": 45,
+      "shot": 14,
+      "at_s": 109.95,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 3.41
+      },
+      "offset": 3.41,
+      "vo": "The award runs through August of twenty thirty. Four or five steps is his hope.",
+      "phrase": "Four or five steps",
+      "shows": "the dashed GOAL stool slides out beside the still-towering 200 paper steps, an outline only, a plate reads GOAL \u00b7 \"FOUR OR FIVE\" STEPS",
+      "sfx": "slide",
+      "means": "goal \u00b7 \"four or five\" steps",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed GOAL stool",
+        "action": "slides out beside the still-towering 200 paper steps, an outline only",
+        "emotion": "hopeful",
+        "annotation": "GOAL \u00b7 \"FOUR OR FIVE\" STEPS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "the dashed GOAL stool slides out beside the still-towering 200 paper steps, an outline only, a plate reads GOAL \u00b7 \"FOUR OR FIVE\" STEPS",
+        "reaction": "the outline slides",
+        "ambient": "wind at dusk, a far hum"
+      },
+      "t": "109.950-110.730",
+      "key": 44
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "at_s": 110.73,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 4.19
+      },
+      "offset": 4.19,
+      "vo": "The award runs through August of twenty thirty. Four or five steps is his hope.",
+      "phrase": "steps is his hope.",
+      "shows": "the camera tilts from the flask at the wall's foot up a dashed cobalt column to the Chugach ridge at dusk, a plate reads GOAL \u00b7 \"FOUR OR FIVE\" STEPS \u00b7 A HOPE",
+      "sfx": "swell",
+      "means": "goal \u00b7 \"four or five\" steps \u00b7 a hope",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "tilts from the flask at the wall's foot up a dashed cobalt column to the Chugach ridge at dusk",
+        "emotion": "awed",
+        "annotation": "GOAL \u00b7 \"FOUR OR FIVE\" STEPS \u00b7 A HOPE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "the camera tilts from the flask at the wall's foot up a dashed cobalt column to the Chugach ridge at dusk, a plate reads GOAL \u00b7 \"FOUR OR FIVE\" STEPS \u00b7 A HOPE",
+        "reaction": "the column climbs",
+        "ambient": "wind at dusk, a far hum"
+      },
+      "t": "110.730-113.620",
+      "key": 45
+    },
+    {
+      "id": 47,
+      "shot": 15,
+      "at_s": 113.62,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The rare earths aren't the rare part, Briggs says. An early no that holds up might be.",
+      "phrase": "The rare earths aren't",
+      "shows": "the view from inside the empty jar looks up through the glass at Nix holding its card with a question mark on its face, the flask on the bench edge past its shoulder turning its blank neck tag to a question mark, a plate reads \"THE RARE EARTHS ARE NOT RARE\" \u00b7 BRIGGS",
+      "sfx": "chime",
+      "means": "\"the rare earths are not rare\" \u00b7 briggs",
+      "rehook": "",
+      "draw": {
+        "subject": "the view from inside the empty jar",
+        "action": "looks up through the glass at Nix holding its card with a question mark on its face, the flask on the bench edge past its shoulder turning its blank neck tag to a question mark",
+        "emotion": "wry",
+        "annotation": "\"THE RARE EARTHS ARE NOT RARE\" \u00b7 BRIGGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the view from inside the empty jar looks up through the glass at Nix holding its card with a question mark on its face, the flask on the bench edge past its shoulder turning its blank neck tag to a question mark, a plate reads \"THE RARE EARTHS ARE NOT RARE\" \u00b7 BRIGGS",
+        "reaction": "the card turns",
+        "ambient": "a glass hum, room tone"
+      },
+      "t": "113.620-116.850",
+      "key": 46
+    },
+    {
+      "id": 48,
+      "shot": 15,
+      "at_s": 116.85,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 3.23
+      },
+      "offset": 3.23,
+      "vo": "The rare earths aren't the rare part, Briggs says. An early no that holds up might be.",
+      "phrase": "early no that holds",
+      "shows": "a fresh lump of coal refuse drops into the jar toward camera, matching the open, a plate reads AN EARLY NO THAT HOLDS UP?",
+      "sfx": "thunk",
+      "means": "an early no that holds up?",
+      "rehook": "",
+      "draw": {
+        "subject": "a fresh lump of coal refuse",
+        "action": "drops into the jar toward camera, matching the open",
+        "emotion": "startled",
+        "annotation": "AN EARLY NO THAT HOLDS UP?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a fresh lump of coal refuse drops into the jar toward camera, matching the open, a plate reads AN EARLY NO THAT HOLDS UP?",
+        "reaction": "the jar rings",
+        "ambient": "a glass hum, room tone"
+      },
+      "t": "116.850-119.100",
+      "key": 47
+    }
+  ]
+}

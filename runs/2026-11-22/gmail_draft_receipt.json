@@ -1,0 +1,6 @@
+{
+ "status": "BLOCKED",
+ "reason": "Gmail connector needs re-authentication (sign-in refused twice on 2026-11-22, the second day running); draft not created",
+ "html": "runs/2026-11-22/draft_body.html (the full draft body, built and gate-checked by dispatch_email_from_file.py)",
+ "date": "2026-11-22"
+}
