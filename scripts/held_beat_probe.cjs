@@ -9,7 +9,9 @@
 // production source is not instrumented or changed.
 //
 //   node scripts/held_beat_probe.cjs <options.json> <outdir>
+//   node scripts/held_beat_probe.cjs --self-test
 //   options: {source, props, frames: [int...], component?}
+// Exits 1 naming the frame and the exception when the film throws while rendering (2026-11-22).
 // Also writes <outdir>/figures.json: {frame: [{id, x, y, w, h, opacity}]} for every visible element
 // carrying data-figure (lib <IdleFigure>), measured in frame pixels (machine pass 2026-11-19).
 const fs = require('fs'), path = require('path'), os = require('os'), http = require('http');
@@ -33,7 +35,14 @@ async function run(options, outdir) {
     fs.writeFileSync(entry, `import React from "react";
 import {registerRoot,Composition} from "remotion";
 import {${exported} as Film} from ${JSON.stringify(source)};
-registerRoot(()=> <Composition id="HeldBeat" component={Film} width={1080} height={1920} fps={30} durationInFrames={${total}} defaultProps={${JSON.stringify(props)}}/>);`);
+class Caught extends React.Component<any, {e: any}> {
+  state = {e: null};
+  static getDerivedStateFromError(e: any) { return {e}; }
+  componentDidCatch(e: any) { (window as any).__heldBeatError = String((e && (e.stack || e.message)) || e); }
+  render() { return this.state.e ? null : this.props.children; }
+}
+const Probed = (p: any) => <Caught><Film {...p}/></Caught>;
+registerRoot(()=> <Composition id="HeldBeat" component={Probed} width={1080} height={1920} fps={30} durationInFrames={${total}} defaultProps={${JSON.stringify(props)}}/>);`);
     const {bundle} = req('@remotion/bundler');
     const folder = await bundle({entryPoint: entry, rootDir: engine, outDir: path.join(temporary, 'bundle'), publicDir: path.join(engine, 'public')});
     server = http.createServer((request, response) => {
@@ -61,6 +70,13 @@ registerRoot(()=> <Composition id="HeldBeat" component={Film} width={1080} heigh
     for (const frame of frames) {
       await seekToFrame({frame, page, composition: 'HeldBeat', timeoutInMilliseconds: 30000, logLevel: 'error', indent: false, attempt: 0});
       await page.evaluate(() => document.fonts.ready.then(() => true));
+      // A render-time throw (lib/cropsafe's CROP-UNSAFE, a bad prop) unmounts the film, and every
+      // frame from there screenshots BLANK, so held_plan and top_band read 'empty' instead of the
+      // exception (machine pass 2026-11-22, queue crop-guard-crash-reads-as-empty: Ep1122 read 87 to
+      // 90 percent low-information after 89 s). The entry's error boundary records it; fail with it.
+      const thrown = await page.evaluate(() => window.__heldBeatError || null);
+      if (thrown) throw new Error(`the film threw while rendering frame ${frame} (${(frame / 30).toFixed(2)} s), so this ` +
+        `and every later frame would screenshot blank and read as empty. Fix the throw first: ${String(thrown).slice(0, 800)}`);
       await screenshot({page, type: 'png', path: path.join(outdir, `f${String(frame).padStart(5, '0')}.png`),
         omitBackground: false, width: 1080, height: 1920, scale: 1});
       // Every <IdleFigure> carries data-figure (machine pass 2026-11-19, queue: hero scale): record its
@@ -87,7 +103,29 @@ registerRoot(()=> <Composition id="HeldBeat" component={Film} width={1080} heigh
     fs.rmSync(temporary, {recursive: true, force: true});
   }
 }
-if (require.main === module) run(JSON.parse(fs.readFileSync(process.argv[2], 'utf8')), process.argv[3])
+async function selfTest() {
+  // A film that throws CROP-UNSAFE from frame 10 must fail at frame 20, not screenshot blank.
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'held-beat-selftest-'));
+  try {
+    fs.writeFileSync(path.join(dir, 'EpCrash.tsx'), `import React from 'react';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
+export const EpCrash: React.FC<{scenes: any[]}> = () => {
+  const f = useCurrentFrame();
+  if (f >= 10) throw new Error('CROP-UNSAFE: "TEST" is authored at y 470..520');
+  return <AbsoluteFill style={{backgroundColor: '#c33'}} />;
+};
+`);
+    fs.writeFileSync(path.join(dir, 'props.json'), JSON.stringify({scenes: [{from: 0, dur: 30}]}));
+    let message = '';
+    try { await run({source: path.join(dir, 'EpCrash.tsx'), props: path.join(dir, 'props.json'), frames: [2, 20]}, path.join(dir, 'out')); }
+    catch (error) { message = String(error.message); }
+    const ok = /frame 20/.test(message) && /CROP-UNSAFE/.test(message) && fs.existsSync(path.join(dir, 'out', 'f00002.png'));
+    process.stdout.write(`held_beat_probe self-test: ${ok ? 'PASS' : 'FAIL'}${ok ? '' : ' (' + (message || 'no error raised') + ')'}\n`);
+    return ok;
+  } finally { fs.rmSync(dir, {recursive: true, force: true}); }
+}
+if (require.main === module && process.argv[2] === '--self-test') selfTest().then((ok) => { process.exitCode = ok ? 0 : 1; });
+else if (require.main === module) run(JSON.parse(fs.readFileSync(process.argv[2], 'utf8')), process.argv[3])
   .then((data) => process.stdout.write(JSON.stringify(data) + '\n'))
   .catch((error) => { process.stderr.write(error.stack + '\n'); process.exitCode = 1; });
 module.exports = {run};
