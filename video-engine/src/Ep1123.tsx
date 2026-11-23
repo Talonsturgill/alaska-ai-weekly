@@ -543,8 +543,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} overlay={
       <g>
-        <Plate text="FLOWN BY UAF PILOTS · REMOTELY" x={540} y={560} size={34} p={win(f, b14 + 4, b15 + 4)} />
-        <Plate text="UAF DRONE CENTER" x={540} y={640} size={36} tone="dark" p={win(f, b15 + 6)} /> {/* plate-overlap-ok */}
+        <Plate text="FLOWN BY UAF PILOTS · REMOTELY" x={540} y={530} size={34} p={win(f, b14 + 4, b15 + 4)} />
+        <Plate text="UAF DRONE CENTER" x={540} y={600} size={36} tone="dark" p={win(f, b15 + 6)} /> {/* plate-overlap-ok */}
       </g>
     }>
       <SVG>
@@ -793,9 +793,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
           {/* R3: the ribbon coiled round both tube bases until it unwinds */}
           {f < b32 + 10 && (
             <g opacity={1 - clamp01((f - b32) / 10)}>
-              <ellipse cx={530} cy={1150 - 60 * liftK} rx={190} ry={30} fill="none" stroke={C.ink} strokeWidth={20} />
-              <ellipse cx={530} cy={1150 - 60 * liftK} rx={190} ry={30} fill="none" stroke={SER.ribbon} strokeWidth={13} />
-              <path d={`M ${340} ${1150 - 60 * liftK} Q 300 1180 280 1196`} stroke={SER.ribbon} strokeWidth={12} fill="none" strokeLinecap="round" />
+              <ellipse cx={530} cy={1182} rx={190} ry={14} fill="none" stroke={C.ink} strokeWidth={20} />
+              <ellipse cx={530} cy={1182} rx={190} ry={14} fill="none" stroke={SER.ribbon} strokeWidth={13} />
+              <path d={`M ${340} ${1182} Q 300 1190 280 1196`} stroke={SER.ribbon} strokeWidth={12} fill="none" strokeLinecap="round" />
             </g>
           )}
           {/* the ribbon slides out under the door */}
