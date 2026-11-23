@@ -477,22 +477,6 @@
    }
   },
   {
-   "id": "c31",
-   "status": "verified-one-primary",
-   "spoken": "The News-Miner calls that radar a critical step toward flying beyond the line of sight.",
-   "on_screen": "A CRITICAL STEP \u00b7 PER THE NEWS-MINER",
-   "source": "https://www.newsminer.com/news/local_news/acuasi-director-highlights-recent-updates-potential-for-drones/article_5b2a08b6-2024-4fad-af6b-5525b97f4acb.html",
-   "second_source": null,
-   "verbatim_source": "\"ACUASI plans to equip its two Windracer drones with a Detect and Avoid radar system, a critical step...\"",
-   "requires": [
-    "the reporter's framing"
-   ],
-   "contract": {
-    "must_ship": false,
-    "on_screen_verbatim": false
-   }
-  },
-  {
    "id": "c32",
    "status": "verified-one-primary",
    "spoken": "Cahill said if they ever lose link, the aircraft will automatically avoid other aircraft.",
@@ -577,103 +561,6 @@
    }
   },
   {
-   "id": "c37",
-   "status": "verified-one-primary",
-   "spoken": "Federal officials described that kind of money as building the regulatory, technical and community framework first.",
-   "on_screen": "A FRAMEWORK FIRST \u00b7 PER CMS",
-   "source": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription",
-   "second_source": null,
-   "verbatim_source": "\"A quarter million dollars to develop the regulatory, technical, and community engagement framework\"",
-   "requires": [
-    "CMS names no recipient; never say it is the TCC award as fact"
-   ],
-   "contract": {
-    "must_ship": false,
-    "on_screen_verbatim": false
-   }
-  },
-  {
-   "id": "c38",
-   "status": "verified-one-primary",
-   "spoken": "The money comes from the Rural Health Transformation Program, five years and about 1.3 billion dollars, per the News-Miner.",
-   "on_screen": "RURAL HEALTH TRANSFORMATION \u00b7 5 YEARS \u00b7 ABOUT $1.3B",
-   "source": "https://www.newsminer.com/news/local_news/acuasi-director-highlights-recent-updates-potential-for-drones/article_5b2a08b6-2024-4fad-af6b-5525b97f4acb.html",
-   "second_source": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription",
-   "verbatim_source": "\"TCC and Ryan Air both received grants from the first round of the five-year, $1.3 billion Rural Health Transformation...\"",
-   "requires": [
-    "only Years 1 and 2 awarded, never has received $1.3B",
-    "never say the TCC or Ryan Air grants were for drones on the News-Miner's authority"
-   ],
-   "contract": {
-    "must_ship": false,
-    "on_screen_verbatim": false
-   }
-  },
-  {
-   "id": "c39",
-   "status": "verified-one-primary",
-   "spoken": "On November 17th the state said its second-year award is about 272.7 million dollars.",
-   "on_screen": "YEAR 2 \u00b7 $272.7M \u00b7 NOVEMBER 17TH",
-   "source": "https://health.alaska.gov/media/1azmqhlb/press-release-alaska-department-of-health-announces-rural-health-transformation-program-year-2-award-amount.pdf",
-   "second_source": "https://health.alaska.gov/en/education/rural-health-transformation-program/",
-   "verbatim_source": "\"In total, Alaska's Year 2 award amount is $272,653,149.35, an increase of $478,293.63 from Year 1.\"",
-   "requires": [
-    "Alaska Department of Health"
-   ],
-   "contract": {
-    "must_ship": false,
-    "on_screen_verbatim": false
-   }
-  },
-  {
-   "id": "c40",
-   "status": "verified-two-sources",
-   "spoken": "Neil Robinson of the International Testing Agency said, I'm not saying we're ready today, but I think we'll be ready tomorrow.",
-   "on_screen": "\"READY TOMORROW\" \u00b7 ITA",
-   "source": "https://www.gi.alaska.edu/news/uaf-drone-program-tests-long-distance-blood-sample-delivery",
-   "second_source": "https://dronelife.com/2026/09/22/alaska-drone-program-flies-blood-samples-1000-kilometers-for-olympic-anti-doping-agency/",
-   "verbatim_source": "\"I'm not saying we're ready today, but I think we'll be ready tomorrow.\"",
-   "requires": [
-    "attribute to Neil Robinson, ITA; it is about sample transport for the agency"
-   ],
-   "contract": {
-    "must_ship": false,
-    "on_screen_verbatim": false
-   }
-  },
-  {
-   "id": "c41",
-   "status": "verified-two-sources",
-   "spoken": "The agency's first drone tests, in 2022, moved samples up to 20 kilometers.",
-   "on_screen": "2022 \u00b7 UP TO 20 KM",
-   "source": "https://www.gi.alaska.edu/news/uaf-drone-program-tests-long-distance-blood-sample-delivery",
-   "second_source": "https://dronelife.com/2026/09/22/alaska-drone-program-flies-blood-samples-1000-kilometers-for-olympic-anti-doping-agency/",
-   "verbatim_source": "\"to deliver samples over distances of up to 20 kilometers.\"",
-   "requires": [
-    "Doha, Qatar"
-   ],
-   "contract": {
-    "must_ship": false,
-    "on_screen_verbatim": false
-   }
-  },
-  {
-   "id": "c42",
-   "status": "verified-one-primary",
-   "spoken": "Cahill named surveys of the 800-mile trans-Alaska pipeline as another goal.",
-   "on_screen": "GOAL \u00b7 800 MILE PIPELINE SURVEYS",
-   "source": "https://www.newsminer.com/news/local_news/acuasi-director-highlights-recent-updates-potential-for-drones/article_5b2a08b6-2024-4fad-af6b-5525b97f4acb.html",
-   "second_source": null,
-   "verbatim_source": "\"...routine maintenance surveys of the 800-mile trans-Alaska pipeline...\"",
-   "requires": [
-    "a goal"
-   ],
-   "contract": {
-    "must_ship": false,
-    "on_screen_verbatim": false
-   }
-  },
-  {
    "id": "c43",
    "status": "verified-one-primary",
    "spoken": "A thousand kilometers is about 621 miles.",
@@ -724,5 +611,126 @@
    "why": "faa.gov 403, status unverified"
   }
  ],
- "reserve": []
+ "reserve": [
+  {
+   "id": "c31",
+   "status": "verified-one-primary",
+   "spoken": "The News-Miner calls that radar a critical step toward flying beyond the line of sight.",
+   "on_screen": "A CRITICAL STEP \u00b7 PER THE NEWS-MINER",
+   "source": "https://www.newsminer.com/news/local_news/acuasi-director-highlights-recent-updates-potential-for-drones/article_5b2a08b6-2024-4fad-af6b-5525b97f4acb.html",
+   "second_source": null,
+   "verbatim_source": "\"ACUASI plans to equip its two Windracer drones with a Detect and Avoid radar system, a critical step...\"",
+   "requires": [
+    "the reporter's framing"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c37",
+   "status": "verified-one-primary",
+   "spoken": "Federal officials described that kind of money as building the regulatory, technical and community framework first.",
+   "on_screen": "A FRAMEWORK FIRST \u00b7 PER CMS",
+   "source": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription",
+   "second_source": null,
+   "verbatim_source": "\"A quarter million dollars to develop the regulatory, technical, and community engagement framework\"",
+   "requires": [
+    "CMS names no recipient; never say it is the TCC award as fact"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c38",
+   "status": "verified-one-primary",
+   "spoken": "The money comes from the Rural Health Transformation Program, five years and about 1.3 billion dollars, per the News-Miner.",
+   "on_screen": "RURAL HEALTH TRANSFORMATION \u00b7 5 YEARS \u00b7 ABOUT $1.3B",
+   "source": "https://www.newsminer.com/news/local_news/acuasi-director-highlights-recent-updates-potential-for-drones/article_5b2a08b6-2024-4fad-af6b-5525b97f4acb.html",
+   "second_source": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription",
+   "verbatim_source": "\"TCC and Ryan Air both received grants from the first round of the five-year, $1.3 billion Rural Health Transformation...\"",
+   "requires": [
+    "only Years 1 and 2 awarded, never has received $1.3B",
+    "never say the TCC or Ryan Air grants were for drones on the News-Miner's authority"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c39",
+   "status": "verified-one-primary",
+   "spoken": "On November 17th the state said its second-year award is about 272.7 million dollars.",
+   "on_screen": "YEAR 2 \u00b7 $272.7M \u00b7 NOVEMBER 17TH",
+   "source": "https://health.alaska.gov/media/1azmqhlb/press-release-alaska-department-of-health-announces-rural-health-transformation-program-year-2-award-amount.pdf",
+   "second_source": "https://health.alaska.gov/en/education/rural-health-transformation-program/",
+   "verbatim_source": "\"In total, Alaska's Year 2 award amount is $272,653,149.35, an increase of $478,293.63 from Year 1.\"",
+   "requires": [
+    "Alaska Department of Health"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c40",
+   "status": "verified-two-sources",
+   "spoken": "Neil Robinson of the International Testing Agency said, I'm not saying we're ready today, but I think we'll be ready tomorrow.",
+   "on_screen": "\"READY TOMORROW\" \u00b7 ITA",
+   "source": "https://www.gi.alaska.edu/news/uaf-drone-program-tests-long-distance-blood-sample-delivery",
+   "second_source": "https://dronelife.com/2026/09/22/alaska-drone-program-flies-blood-samples-1000-kilometers-for-olympic-anti-doping-agency/",
+   "verbatim_source": "\"I'm not saying we're ready today, but I think we'll be ready tomorrow.\"",
+   "requires": [
+    "attribute to Neil Robinson, ITA; it is about sample transport for the agency"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c41",
+   "status": "verified-two-sources",
+   "spoken": "The agency's first drone tests, in 2022, moved samples up to 20 kilometers.",
+   "on_screen": "2022 \u00b7 UP TO 20 KM",
+   "source": "https://www.gi.alaska.edu/news/uaf-drone-program-tests-long-distance-blood-sample-delivery",
+   "second_source": "https://dronelife.com/2026/09/22/alaska-drone-program-flies-blood-samples-1000-kilometers-for-olympic-anti-doping-agency/",
+   "verbatim_source": "\"to deliver samples over distances of up to 20 kilometers.\"",
+   "requires": [
+    "Doha, Qatar"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c42",
+   "status": "verified-one-primary",
+   "spoken": "Cahill named surveys of the 800-mile trans-Alaska pipeline as another goal.",
+   "on_screen": "GOAL \u00b7 800 MILE PIPELINE SURVEYS",
+   "source": "https://www.newsminer.com/news/local_news/acuasi-director-highlights-recent-updates-potential-for-drones/article_5b2a08b6-2024-4fad-af6b-5525b97f4acb.html",
+   "second_source": null,
+   "verbatim_source": "\"...routine maintenance surveys of the 800-mile trans-Alaska pipeline...\"",
+   "requires": [
+    "a goal"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  }
+ ]
 }

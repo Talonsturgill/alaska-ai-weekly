@@ -1,0 +1,210 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Two runs left the same Alaska town, a century apart. The first went all the way. The second came home.",
+   "claims": [
+    "narration"
+   ],
+   "t": "Two runs left the same Alaska town, a century apart. The first went all the way. The second came home."
+  },
+  {
+   "idx": 1,
+   "text": "January, 1925. Diphtheria threatened Nome.",
+   "claims": [
+    "c20"
+   ],
+   "t": "January, 1925. Diphtheria threatened Nome."
+  },
+  {
+   "idx": 2,
+   "text": "Antitoxin came by train to Nenana, the railroad's closest point to Nome.",
+   "claims": [
+    "c21"
+   ],
+   "t": "Antitoxin came by train to Nenana, the railroad's closest point to Nome."
+  },
+  {
+   "idx": 3,
+   "text": "Twenty mushers ran it by dog team, six hundred seventy four miles.",
+   "claims": [
+    "c22",
+    "c23"
+   ],
+   "t": "Twenty mushers ran it by dog team, six hundred seventy four miles."
+  },
+  {
+   "idx": 4,
+   "text": "Why not a plane? Nobody knew how a small engine would take forty below.",
+   "claims": [
+    "c25"
+   ],
+   "t": "Why not a plane? Nobody knew how a small engine would take forty below."
+  },
+  {
+   "idx": 5,
+   "text": "August 19th. A drone takes off from Nenana.",
+   "claims": [
+    "c1"
+   ],
+   "t": "August 19th. A drone takes off from Nenana."
+  },
+  {
+   "idx": 6,
+   "text": "A Windracers ULTRA.",
+   "claims": [
+    "c8"
+   ],
+   "t": "A Windracers ULTRA."
+  },
+  {
+   "idx": 7,
+   "text": "Pilots at U A F's drone center fly it remotely.",
+   "claims": [
+    "c13",
+    "c12"
+   ],
+   "t": "Pilots at U A F's drone center fly it remotely."
+  },
+  {
+   "idx": 8,
+   "text": "On board, human blood samples, for a sports anti doping agency.",
+   "claims": [
+    "c4",
+    "c5"
+   ],
+   "t": "On board, human blood samples, for a sports anti doping agency."
+  },
+  {
+   "idx": 9,
+   "text": "Each volunteer gave two samples. One flew. One stayed behind, to compare.",
+   "claims": [
+    "c7"
+   ],
+   "t": "Each volunteer gave two samples. One flew. One stayed behind, to compare."
+  },
+  {
+   "idx": 10,
+   "text": "It stays up eight hours and forty seven minutes.",
+   "claims": [
+    "c3"
+   ],
+   "t": "It stays up eight hours and forty seven minutes."
+  },
+  {
+   "idx": 11,
+   "text": "It covers a thousand kilometers, about six hundred twenty one miles. Nearly the length of the serum trail.",
+   "claims": [
+    "c2",
+    "c43"
+   ],
+   "t": "It covers a thousand kilometers, about six hundred twenty one miles. Nearly the length of the serum trail."
+  },
+  {
+   "idx": 12,
+   "text": "Then it lands where it started.",
+   "claims": [
+    "c2"
+   ],
+   "t": "Then it lands where it started."
+  },
+  {
+   "idx": 13,
+   "text": "That forty below from 1925? U A F has flown small drones in it.",
+   "claims": [
+    "c26",
+    "c25"
+   ],
+   "t": "That forty below from 1925? U A F has flown small drones in it."
+  },
+  {
+   "idx": 14,
+   "text": "The center's director, Cathy Cahill, says this flight proves the blood could survive.",
+   "claims": [
+    "c14",
+    "c15"
+   ],
+   "t": "The center's director, Cathy Cahill, says this flight proves the blood could survive."
+  },
+  {
+   "idx": 15,
+   "text": "Here's the catch. No lab results have been published.",
+   "claims": [
+    "c16"
+   ],
+   "t": "Here's the catch. No lab results have been published."
+  },
+  {
+   "idx": 16,
+   "text": "Until they are, claim the trip, not the result.",
+   "claims": [
+    "c16"
+   ],
+   "t": "Until they are, claim the trip, not the result."
+  },
+  {
+   "idx": 17,
+   "text": "The state says eighty two percent of Alaska's communities are off the road system.",
+   "claims": [
+    "c19"
+   ],
+   "t": "The state says eighty two percent of Alaska's communities are off the road system."
+  },
+  {
+   "idx": 18,
+   "text": "A village run needs more than range. Federal rules regulate against flying beyond the operator's line of sight.",
+   "claims": [
+    "c29"
+   ],
+   "t": "A village run needs more than range. Federal rules regulate against flying beyond the operator's line of sight."
+  },
+  {
+   "idx": 19,
+   "text": "U A F plans detect and avoid radar. Cahill calls it a key step toward medical delivery.",
+   "claims": [
+    "c30",
+    "c33"
+   ],
+   "t": "U A F plans detect and avoid radar. Cahill calls it a key step toward medical delivery."
+  },
+  {
+   "idx": 20,
+   "text": "If the drone ever loses link, Cahill says, the radar would let it automatically avoid other aircraft.",
+   "claims": [
+    "c32"
+   ],
+   "t": "If the drone ever loses link, Cahill says, the radar would let it automatically avoid other aircraft."
+  },
+  {
+   "idx": 21,
+   "text": "U A F has partnered with Ryan Air and Tanana Chiefs Conference, an Alaska Native nonprofit, to develop or test medical delivery.",
+   "claims": [
+    "c34",
+    "c35"
+   ],
+   "t": "U A F has partnered with Ryan Air and Tanana Chiefs Conference, an Alaska Native nonprofit, to develop or test medical delivery."
+  },
+  {
+   "idx": 22,
+   "text": "The dogs ran the trail. The drone has the legs. Next it needs eyes of its own.",
+   "claims": [
+    "narration"
+   ],
+   "t": "The dogs ran the trail. The drone has the legs. Next it needs eyes of its own."
+  }
+ ],
+ "caption_fixups": {
+  "U A F's": "UAF's",
+  "U A F": "UAF",
+  "six hundred seventy four": "674",
+  "six hundred twenty one": "621",
+  "eight hours and forty seven minutes": "8 hours and 47 minutes",
+  "eighty two percent": "82 percent",
+  "forty below": "40 below",
+  "a thousand kilometers": "1,000 kilometers",
+  "Twenty mushers": "20 mushers",
+  "anti doping": "anti-doping"
+ },
+ "caption_quotes": [],
+ "caption_split_after": []
+}
