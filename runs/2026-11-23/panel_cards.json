@@ -1,0 +1,93 @@
+{
+ "j1": {
+  "total": 7.24,
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.8,
+   "Composition & staging": 7.2,
+   "Color & grade": 7.6,
+   "Typography & captions": 7.4,
+   "Sound design & mix": 6.8,
+   "VO\u2013illustration sync & entertainment": 7.4,
+   "Accuracy & sourcing": 7.8,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 7.6
+  },
+  "concrete_defects": [
+   "115.06s dead-air gap -56.6 dBFS",
+   "37.1-39.2s pilot held with no idle or stick push",
+   "71.3-76.1s Cahill flat fill, no shading or contact shadow",
+   "32.4-34.0s red ribbon reads as a slash across the hangar door",
+   "41.0-54.8s toolbox, cable and box stack repeated in shots 7 and 8",
+   "95.5-107.7s radar bowl clipped at the right frame edge",
+   "83.4-87.7s road reaching the village muddies the 82 percent point",
+   "0.0-2.0s dog team small at the open"
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Motion & animation craft"
+ },
+ "j2": {
+  "total": 7.48,
+  "axis_scores": {
+   "Hook & retention": 7.6,
+   "Illustration craft & detail": 7.3,
+   "Motion & animation craft": 6.9,
+   "Composition & staging": 7.4,
+   "Color & grade": 7.6,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.3,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 7.8
+  },
+  "concrete_defects": [
+   "115.06s dead-air gap -56.6 dBFS",
+   "95.5-107.7s radar against the right edge, arc crossing the nose",
+   "side-view engine still reads on top of the wing and single",
+   "37.3-40.3s pilot stiff, no stick",
+   "tubes read empty, no oxblood fill",
+   "121.3s NOME pin unlabelled on the closing map",
+   "34.0s stray red bar across the hangar door"
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Motion & animation craft"
+ },
+ "j3": {
+  "total": 7.476,
+  "axis_scores": {
+   "Hook & retention": 7.2,
+   "Illustration craft & detail": 7.2,
+   "Motion & animation craft": 7.0,
+   "Composition & staging": 7.4,
+   "Color & grade": 7.6,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 6.9,
+   "VO\u2013illustration sync & entertainment": 7.6,
+   "Accuracy & sourcing": 8.6,
+   "Alaska authenticity & cultural respect": 8.2,
+   "Writing & post quality": 8.0
+  },
+  "concrete_defects": [
+   "115.06s dead-air gap -56.6 dBFS",
+   "34.0s red bar across the hangar door, flat door",
+   "43.7s STAYED face distorts sliding in",
+   "40.3s and 72.8s figures ghost on slow moves, plain finish, pilot not operating",
+   "101.9-107.2s radar against the right edge over the nose",
+   "82.5s printer motion smear on a held frame"
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Sound design & mix"
+ },
+ "named_open_defects": [
+  "NOME unlabelled at close",
+  "STAYED face distortion 43.7s",
+  "dead air at 115.06s",
+  "pilot and Cahill stiff, flat finish",
+  "radar at the right frame edge (shot 14)",
+  "red ribbon slash on hangar (shot 4)",
+  "repeated floor props shots 7 and 8",
+  "tubes read empty"
+ ]
+}

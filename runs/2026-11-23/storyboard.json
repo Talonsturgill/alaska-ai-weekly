@@ -1,0 +1,2386 @@
+{
+  "run_date": "2026-11-23",
+  "slug": "two-runs-out-of-nenana",
+  "title": "Two Runs Out of Nenana",
+  "concept": "In January 1925 diphtheria threatened Nome; antitoxin came by train to Nenana, the railroad's closest point, and 20 mushers ran it 674 miles by dog team, because nobody knew how a small engine would take 40 below. On August 19th UAF's drone center flew a Windracers ULTRA out of Nenana, piloted remotely, with human blood samples for the International Testing Agency; each volunteer gave two samples so one flew and one stayed. It flew 8 hours 47 minutes and 1,000 km, about 621 miles, nearly the length of the serum trail, in a loop that landed where it started. UAF has flown small drones at 40 below, and director Cathy Cahill says the flight proves the blood could survive. The test: no lab results have been published, so the film claims the trip, not the result. The state says 82 percent of communities are off the road; federal rules regulate against flying beyond the operator's line of sight; UAF plans detect-and-avoid radar, which Cahill calls a key step, and has partnered with Ryan Air and Tanana Chiefs Conference to develop or test medical delivery. Drawn as two faced sample tubes, FLEW and STAYED, a plain cargo drone with no face, a dashed phosphor radar that stays PLANNED, and a scarlet ribbon that is a loop until it is laid along the 1925 paw trail on a map on the river ice, about nine tenths of the way.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 121.56,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "instrument-as-subject",
+    "layout": "fullbleed-split",
+    "register": "naturalistic-scene",
+    "palette": "apricot and golden civil twilight #F2A779 climbing through dusky mauve #8A6283 to plum dusk #3B2B4A above lavender river ice #D9D0E3, an ivory paper map #F1E6D2 laid on the ice, a vivid scarlet ribbon #E0303F as the only scarlet, oxblood #7E1626 in clear glass sample tubes #C8E3F0, sepia #B98A57 reserved to 1925, radar-phosphor green #2EE86B for anything planned",
+    "camera_strategy": "lateral-track-and-overhead",
+    "light_story": "warm-golden-dusk-glow",
+    "metaphor": "a scarlet ribbon that is a loop until it is laid along the 1925 dog trail about nine tenths of the way, two sample tubes that flew and stayed, and a dashed radar that is the drone's eyes of its own, still planned"
+  },
+  "signature_shot": 9,
+  "palette": "apricot and golden civil twilight #F2A779 climbing through dusky mauve #8A6283 to plum dusk #3B2B4A above lavender river ice #D9D0E3, an ivory paper map #F1E6D2 laid on the ice, a vivid scarlet ribbon #E0303F as the only scarlet, oxblood #7E1626 in clear glass sample tubes #C8E3F0, sepia #B98A57 reserved to 1925, radar-phosphor green #2EE86B for anything planned",
+  "divergence_note": "The last two films were a blue-hour lab bench under the Chugach with a felt canary, a cobalt wall and a corridor planner (11-22), and an orbital night kitchen and walnut courtroom with a faced chat-bubble accordion and an auction tag (11-21). This film moves through an apricot-to-plum Interior dusk on the river ice: a cream map laid on the ice seen from above, a sepia 1925 depot and trail, a Nenana runway and hangar, a ground station, a test table by a cold window, a village at dusk and a night runway. Its motion is lateral (dogs, a train, a drone, a ribbon laid along a trail) instead of 11-22's rise, its hero pair is two glass tubes instead of a bird, and its machine is drawn plain with no face. Honest overlaps: a quote plate and a faceless named person with a boxed tag (house grammar), and a dusk exterior (11-22 ended at a dusk wall; here the light is apricot and plum on ice, never cyan or teal).",
+  "treatment": {
+    "title": "Two Runs Out of Nenana",
+    "summary": "Two Runs Out of Nenana (Dramatist winner, grafted with the Comedian's string gag and the Explainer's sight bubble, restaged at Gate 0B). A cream map on the frozen Tanana at dusk: a sepia dog team inks a curving paw trail all the way to Nome, then a drone's shadow glances at an unlit village pin and closes ONE LOOP on NENANA. 1925 in sepia (diphtheria, train to Nenana, 20 mushers, 674 miles, a small airplane engine at 40 below). August 19th in summer green: the plain ULTRA rolls out at the Nenana runway, crosses the Tanana flats from above, a faceless pilot flies it from a screen, FLEW and STAYED split between a crate and a fridge, 8 HR 47 MIN. The signature: the ribbon lays itself along the trail and stops about nine tenths of the way, the lead dog sniffs the end, and it snaps back into A TEST LOOP. Small drones at 40 below. The Test by a cold window: Cahill lifts both clear tubes under her quote, steps away, the printer's tray stays empty (LAB RESULTS \u00b7 NOT PUBLISHED), the empty crate turns to NOT TESTED FOR DOPING. The village, 82 percent off the road. A new strand reaches for the village and snags on a sight bubble (federal rules). A dashed radar, PLANNED, ghosts through the wing, a link line breaks, the arc tracks a dashed ghost airplane. Partners as plates over a dark village runway. The button: ribbon solid inside the bubble, dashed phosphor to the clinic.",
+    "judge_reasoning": "D is the only pitch whose throughline object changes state at every act boundary, and its Test credits Cahill while separating small drones from the ULTRA and simulated blood from real blood. One map on the ice gives it a single fresh world for most of the film. The judge took the 621 against 674 gag from B and the sight bubble from C, and rewrote D's loop 1 because no source says why the drone flew a loop, so the film never suggests it came home because of FAA rules."
+  },
+  "angle": {
+    "thesis": "In 1925 the serum for Nome left Nenana behind dogs because nobody knew how a small engine would take forty below; in 2026 a drone out of the same town flew a loop nearly as long as that whole trail with human blood aboard, and the next gate UAF names isn't the cold or the distance, it's a radar that would let it fly beyond its pilot's sight, so the win is real and the delivery still waits on permission.",
+    "falsifiability": "False if the flown samples, once anyone publishes the comparison (c7, c16), turn out degraded against the ones kept on the ground, which would put the cargo, not permission, back as the gate. False if TCC or Ryan Air start delivering medicine beyond line of sight with no detect-and-avoid radar fitted (c29, c30). False if the ULTRA itself can't fly in deep cold, since the forty below record is for small drones (c26).",
+    "supporting_facts": [
+      "The flight happened. 1,000 km in a loop out of and back to Nenana, 8 hours 47 minutes, human blood samples aboard, flown remotely by UAF pilots (c1, c2, c3, c4, c13, c43). The agency's 2022 tests moved samples up to 20 km (c41).",
+      "The cold question of 1925 has an answer for small drones. Nobody knew how a small engine would handle forty below (c25). UAF has flown small drones at forty below and dropped a defibrillator, simulated blood and a rescue sled at 18 below (c26, c27, c28).",
+      "The next step UAF names is a radar. Detect-and-avoid is planned for both drones (c30), Cahill calls it a key step toward real-world medical delivery (c33), under rules that regulate against flying beyond the operator's sight (c29).",
+      "The need hasn't moved. 82 percent of communities are off the road system (c19), CMS says winter medicine delays of 5 to 14 days are common (c18), and TCC and Ryan Air are partnering with UAF on medical delivery operations (c34, c35)."
+    ],
+    "counterpoint_to_honor": "'The blood could survive' is Cahill's statement (c15). No lab results have been published (c16), the samples weren't tested for doping or medical conditions (c6), the January drop used simulated blood (c27), the loop landed where it started (c2), and the money is still building a framework first (c36, c37). Act 3 draws the two clear tubes side by side, a results printer whose tray stays empty, and the empty crate turned to NOT TESTED FOR DOPING, with the loop closing on Nenana instead of reaching a village.",
+    "valence": "celebratory, narrowed honestly. The analysts split (one celebratory, two curious or mixed). The synthesis credits the capability plainly because the record supports it (an 8 hour 47 minute flight with a ground control built in, cold work at forty below), and the counterpoint gets a full scene. It never says delivery is close, never says the blood was proven, never calls the flight autonomous.",
+    "stance": "celebratory",
+    "who_it_serves": "Interior villages TCC serves (c35), rural patients waiting on medicine (c17, c18), and the 82 percent of communities off the road (c19).",
+    "second_movement": {
+      "recontextualizing_fact": "c43 against c22. The dogs carried the serum 674 miles from Nenana to Nome, an actual delivery. The drone flew about 621 miles, nearly the whole trail's length, and landed back in Nenana. The first read ('drone beats dogs') becomes 'the drone has the legs for the trip and hasn't been cleared to take it'.",
+      "fair_case_against_scene": "The two tubes, one flown and one kept on the ground, sit side by side by a cold window; a results printer lands and its tray stays empty (LAB RESULTS NOT PUBLISHED), and the empty crate turns to show NOT TESTED FOR DOPING (c7, c16, c6). The film survives it by narrowing: it claims the trip, not the result."
+    },
+    "runner_up_angles": [
+      {
+        "angle": "Enthusiast: 'what's left is a radar and a rule, not whether the aircraft can do the job'",
+        "why_lost": "overclaims the machine (forty below is small drones, the loop wasn't a delivery, no lab results)"
+      },
+      {
+        "angle": "Skeptic: 'cold and range are no longer the constraint, permission is, and it hangs on a radar only planned'",
+        "why_lost": "structure kept, but it rushed past the win and leaned on the News-Miner's 'critical step' framing as if permission hung on the radar alone"
+      },
+      {
+        "angle": "Historian: 'the machine isn't what holds delivery back, and the geography hasn't moved'",
+        "why_lost": "its second movement said the drone flew farther than the dogs; 1,000 km is about 621 miles, shorter than 674, corrected in the synthesis"
+      }
+    ],
+    "absence_checks": "No lab results published: both validators read the UAF/GI release, DroneLife, KTUU and the News-Miner in full for laboratory figures; none report any. Stated as 'not published', never 'none exists'."
+  },
+  "claim_map": {
+    "1": [
+      "narration"
+    ],
+    "2": [
+      "c22"
+    ],
+    "3": [
+      "c2"
+    ],
+    "4": [
+      "c20"
+    ],
+    "5": [
+      "c21"
+    ],
+    "6": [
+      "c21"
+    ],
+    "7": [
+      "c23"
+    ],
+    "8": [
+      "c22"
+    ],
+    "9": [
+      "c25"
+    ],
+    "10": [
+      "c25"
+    ],
+    "11": [
+      "c1"
+    ],
+    "12": [
+      "c1"
+    ],
+    "13": [
+      "c8"
+    ],
+    "14": [
+      "c13"
+    ],
+    "15": [
+      "c12"
+    ],
+    "16": [
+      "c4"
+    ],
+    "17": [
+      "c5"
+    ],
+    "18": [
+      "c7"
+    ],
+    "19": [
+      "c7"
+    ],
+    "20": [
+      "c3"
+    ],
+    "21": [
+      "c3"
+    ],
+    "22": [
+      "c2"
+    ],
+    "23": [
+      "c43"
+    ],
+    "24": [
+      "c22"
+    ],
+    "25": [
+      "c2"
+    ],
+    "26": [
+      "c26"
+    ],
+    "27": [
+      "c26"
+    ],
+    "28": [
+      "c14"
+    ],
+    "29": [
+      "c15"
+    ],
+    "30": [
+      "c7"
+    ],
+    "31": [
+      "c16"
+    ],
+    "32": [
+      "c6"
+    ],
+    "33": [
+      "c19"
+    ],
+    "34": [
+      "narration"
+    ],
+    "35": [
+      "c29"
+    ],
+    "36": [
+      "c30"
+    ],
+    "37": [
+      "c33"
+    ],
+    "38": [
+      "c32"
+    ],
+    "39": [
+      "c34"
+    ],
+    "40": [
+      "c34"
+    ],
+    "41": [
+      "c22"
+    ],
+    "42": [
+      "c30"
+    ],
+    "43": [
+      "c32"
+    ],
+    "44": [
+      "c35"
+    ],
+    "45": [
+      "c43"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "Overhead, a cream map of Alaska laid on lavender river ice at dusk, a NENANA pin, and at 0.2 s a sepia dog team bursts off the pin inking a paw trail west while a grey drone shadow sweeps in",
+    "headline": "TWO RUNS \u00b7 ONE TOWN",
+    "motion_by_s": 0.2,
+    "loopback": "Frame 1 is the dog team bursting off NENANA as a drone shadow closes a scarlet loop on the pin; the last shot is the same map with the dogs back at NENANA, the drone parked, and the ribbon laid toward a clinic with its last stretch dashed."
+  },
+  "open_loop": {
+    "plant_t": 6.87,
+    "pay_t": 95.34,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "snap",
+    "what": "Could it reach a village? Planted as the drone shadow glances at an UNLIT VILLAGE PIN and closes ONE LOOP on NENANA, carried as the ribbon lays along the trail and snaps back to A TEST LOOP, paid when the dashed DETECT AND AVOID RADAR \u00b7 PLANNED pops up by the parked drone: UAF names the next step, a radar."
+  },
+  "open_loop_2": {
+    "plant_t": 49.49,
+    "pay_t": 77.57,
+    "what": "Did the blood make it? Planted as STAYED's fridge door swings shut and the two tubes look at each other (one flew, one stayed, to compare), paid when the printer's tray between them stays empty: LAB RESULTS \u00b7 NOT PUBLISHED."
+  },
+  "throughline": {
+    "object": "the scarlet ribbon",
+    "lands_in_button": "the ribbon laid across the map toward the village clinic, its last stretch dashed PLANNED beside the dashed radar",
+    "states": [
+      {
+        "at_s": 6.87,
+        "state": "R1 a LOOP closed on the NENANA pin after the paw trail reached Nome"
+      },
+      {
+        "at_s": 14.22,
+        "state": "R1b tied to the 1925 depot sign post, a knot at the start of the trail"
+      },
+      {
+        "at_s": 30.48,
+        "state": "R1c tied to the 2026 hangar door at the same town"
+      },
+      {
+        "at_s": 37.06,
+        "state": "R1d drawn as a loop trace on the pilot's screen"
+      },
+      {
+        "at_s": 54.78,
+        "state": "R2 LAID ALONG the curving paw trail, stopping about nine tenths of the way to NOME"
+      },
+      {
+        "at_s": 62.36,
+        "state": "R2b snapped back into a loop on NENANA"
+      },
+      {
+        "at_s": 71.28,
+        "state": "R3 COILED round FLEW and STAYED on the test table"
+      },
+      {
+        "at_s": 87.94,
+        "state": "R4a a NEW strand pulled off the coil, reaching for the unlit village pin"
+      },
+      {
+        "at_s": 90.95,
+        "state": "R4 SNAGGED on the edge of the sight bubble that rises after the strand is out"
+      },
+      {
+        "at_s": 119.45,
+        "state": "R5 SOLID inside a sight bubble round NENANA, then a dashed phosphor line to the clinic, PLANNED"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 4.61,
+      "type": "scale-pullback",
+      "what": "the paw trail crosses the whole map into Nome",
+      "hold_s": 0.6
+    },
+    {
+      "t": 22.03,
+      "type": "build-on",
+      "what": "the mileage counter rolls to 674 as the team passes",
+      "hold_s": 0.6
+    },
+    {
+      "t": 54.78,
+      "type": "morph-to-chart",
+      "what": "the ribbon un-loops and lays itself along the paw trail as a measure",
+      "hold_s": 0.8
+    },
+    {
+      "t": 62.36,
+      "type": "build-on",
+      "what": "the ribbon snaps back into a loop on NENANA",
+      "hold_s": 0.6
+    },
+    {
+      "t": 83.38,
+      "type": "scale-pullback",
+      "what": "the village opens with no road to 8 of 10 roofs",
+      "hold_s": 0.8
+    },
+    {
+      "t": 115.74,
+      "type": "scale-pullback",
+      "what": "the camera pulls wide on the whole map, dogs, drone and ribbon",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 1,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 1.3
+      },
+      {
+        "line": 15,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 19,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "at_s": 118.95,
+        "level": 0.15
+      },
+      {
+        "at_s": 119.85,
+        "level": 1.3
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 118.95,
+    "riser_at": 114.74,
+    "silence_at": 118.95,
+    "payoff_at": 119.45,
+    "button_pattern": "callback",
+    "interrupt_at": 76.12,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "Two runs",
+      "vo_line": 0,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-on-ice",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the map and the NENANA pin at x540 y980",
+      "means": "On a cream map laid on the river ice a sepia dog team inks a paw trail west to Nome while a drone's shadow closes a scarlet loop back on NENANA",
+      "ambient": "wind over river ice",
+      "hero": {
+        "name": "map on the ice + sepia dog team + drone shadow + scarlet ribbon loop",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "50% map, 30% ribbon and dogs, 20% ice"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-9.500"
+    },
+    {
+      "title": "1925",
+      "vo_line": 1,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "sepia-nome-depot",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "morph",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the depot sign and the train at x540 y1020",
+      "means": "A sepia print of Nome's roofs in January, then a sepia train steams into the Nenana depot, a scarlet ribbon tied to the sign post",
+      "ambient": "a steam whistle far off, wind",
+      "hero": {
+        "name": "sepia Nome roofs + sepia train + Nenana depot sign + ribbon",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% train, 30% depot, 25% town"
+      },
+      "id": 2,
+      "start_s": 9.5,
+      "t": "9.500-19.560"
+    },
+    {
+      "title": "The relay",
+      "vo_line": 3,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "sepia-trail",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "match-action",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the dog team at x540 y1080",
+      "means": "A sepia dog team gallops across the dusk ice past a mileage marker and a shivering little engine whose sweat drop freezes",
+      "ambient": "sled runners hiss, wind",
+      "hero": {
+        "name": "sepia dog team + faceless musher + mileage marker + 1925 engine",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "50% team, 25% engine, 25% ice"
+      },
+      "id": 3,
+      "start_s": 19.56,
+      "t": "19.560-30.480"
+    },
+    {
+      "title": "August 19th",
+      "vo_line": 5,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "low",
+      "stage": "runway",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the drone and the runway at x540 y1040",
+      "means": "The grey cargo drone rolls out of a Nenana hangar and lifts off in silhouette against the apricot dusk",
+      "ambient": "a runway at dusk, prop hum",
+      "hero": {
+        "name": "cargo drone + hangar + runway lights + apricot sky",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "45% drone, 30% runway, 25% sky"
+      },
+      "id": 4,
+      "start_s": 30.48,
+      "t": "30.480-34.660"
+    },
+    {
+      "title": "The aircraft",
+      "vo_line": 6,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "tanana-flats",
+      "pov": "top-down-map",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the drone in profile at x540 y900",
+      "means": "From above, the twin-engine high-wing cargo drone and its shadow glide across the green Tanana flats in August",
+      "ambient": "wind and engine drone",
+      "hero": {
+        "name": "the cargo drone seen from above + its shadow + green Tanana flats",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "50% drone and shadow, 50% flats"
+      },
+      "id": 5,
+      "start_s": 34.66,
+      "t": "34.660-37.060"
+    },
+    {
+      "title": "The pilots",
+      "vo_line": 7,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ground-station",
+      "pov": "eye-level-immersive",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the pilot and the screen at x540 y980",
+      "means": "A faceless pilot at a ground station flies the drone from the screen, a scarlet loop trace around NENANA",
+      "ambient": "a console room hum",
+      "hero": {
+        "name": "faceless pilot + ground station + screen loop",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "45% pilot, 55% console"
+      },
+      "id": 6,
+      "start_s": 37.06,
+      "t": "37.060-40.820"
+    },
+    {
+      "title": "Two samples",
+      "vo_line": 8,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "hangar-rack",
+      "pov": "macro-closeup",
+      "layout": "fullbleed-split",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "whip-pan",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "FLEW and the crate at x540 y1040",
+      "means": "FLEW buckles goggles and drops into the crate, STAYED slides onto a fridge shelf behind glass and waves",
+      "ambient": "a hangar room tone",
+      "hero": {
+        "name": "FLEW + crate + STAYED + fridge",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% FLEW and crate, 35% fridge, 20% rack"
+      },
+      "id": 7,
+      "start_s": 40.82,
+      "t": "40.820-51.420"
+    },
+    {
+      "title": "Eight forty seven",
+      "vo_line": 10,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ground-station-clock",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:a locked clock insert",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the clock and the mug at x540 y960",
+      "means": "The clock spins, the pilot's hand empties, refills and empties the mug, a raven passes the window and turns back",
+      "ambient": "a console room hum, a clock",
+      "hero": {
+        "name": "clock + mug + raven at the window",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% clock, 30% mug, 30% window"
+      },
+      "id": 8,
+      "start_s": 51.42,
+      "t": "51.420-54.780"
+    },
+    {
+      "title": "Laid along the trail",
+      "vo_line": 11,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-on-ice",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the ribbon and the paw trail at x540 y960",
+      "means": "The ribbon un-loops and slides along the curving paw trail, stops about nine tenths of the way with bare trail to NOME, the lead dog sniffs the frayed end, and it snaps back into A TEST LOOP on NENANA",
+      "ambient": "wind over river ice",
+      "hero": {
+        "name": "ribbon + paw trail + lead dog + map",
+        "parts": 46,
+        "zones": 3,
+        "detail_note": "45% ribbon and trail, 30% map, 25% dog"
+      },
+      "id": 9,
+      "start_s": 54.78,
+      "t": "54.780-65.760"
+    },
+    {
+      "title": "Forty below",
+      "vo_line": 13,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "low",
+      "stage": "snowfield",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the small drone at x540 y940",
+      "means": "A small quadcopter holds a hover in blowing snow beside the shivering ghost of the 1925 engine, a thermometer at 40 BELOW",
+      "ambient": "blowing snow, small rotors",
+      "hero": {
+        "name": "small quadcopter + ghost 1925 engine + thermometer",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "45% drone, 30% engine, 25% snow"
+      },
+      "id": 10,
+      "start_s": 65.76,
+      "t": "65.760-71.280"
+    },
+    {
+      "title": "The test",
+      "vo_line": 14,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "test-table",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "FLEW and STAYED on the table at x540 y1060",
+      "means": "A faceless Cahill lifts FLEW and STAYED level by a cold window, steps away, a printer lands and its tray stays empty, a crate tag flips to NOT TESTED FOR DOPING",
+      "ambient": "a quiet room, wind at a cold window",
+      "hero": {
+        "name": "FLEW + STAYED + faceless Cahill + results printer + crate tag",
+        "parts": 52,
+        "zones": 3,
+        "detail_note": "45% tubes, 30% printer, 25% Cahill"
+      },
+      "id": 11,
+      "start_s": 71.28,
+      "t": "71.280-83.380"
+    },
+    {
+      "title": "The villages",
+      "vo_line": 17,
+      "framing": "wide-establish",
+      "scale": "extreme-wide",
+      "height": "eye",
+      "stage": "village",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the clinic window at x540 y1040",
+      "means": "Ten snow roofs and a clinic with a warm window at dusk, no road to 8 of 10",
+      "ambient": "dusk wind over a village",
+      "hero": {
+        "name": "village roofs + clinic window + snow",
+        "parts": 48,
+        "zones": 3,
+        "detail_note": "45% clinic, 40% roofs, 15% sky"
+      },
+      "id": 12,
+      "start_s": 83.38,
+      "t": "83.380-87.940"
+    },
+    {
+      "title": "Keep it in sight",
+      "vo_line": 18,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-on-ice",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the ribbon tip at the bubble edge at x540 y960",
+      "means": "The ribbon reaches from NENANA toward a village pin and snags on the phosphor edge of the sight bubble",
+      "ambient": "wind over river ice",
+      "hero": {
+        "name": "ribbon + sight bubble + village pin + map",
+        "parts": 40,
+        "zones": 3,
+        "detail_note": "45% ribbon, 35% bubble, 20% map"
+      },
+      "id": 13,
+      "start_s": 87.94,
+      "t": "87.940-95.340"
+    },
+    {
+      "title": "Eyes of its own",
+      "vo_line": 19,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "runway-night",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the radar and the wing at x540 y1040",
+      "means": "A dashed phosphor radar marked PLANNED rises by the parked drone and ghosts through its wing, the link line breaks, the scan arc tracks a dashed ghost airplane",
+      "ambient": "a runway at night, wind",
+      "hero": {
+        "name": "dashed radar + parked drone + dashed ghost airplane + runway",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% radar, 35% drone, 20% runway"
+      },
+      "id": 14,
+      "start_s": 95.34,
+      "t": "95.340-107.740"
+    },
+    {
+      "title": "Partners",
+      "vo_line": 21,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "village-night",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the clinic window at x540 y1040",
+      "means": "A snow gust sweeps a dark village runway with unlit outlined markers, a clinic window brightens behind a closed door",
+      "ambient": "dusk wind over a village",
+      "hero": {
+        "name": "snow gust + dark village runway + clinic window",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% clinic, 35% runway, 20% snow"
+      },
+      "id": 15,
+      "start_s": 107.74,
+      "t": "107.740-115.740"
+    },
+    {
+      "title": "Next",
+      "vo_line": 22,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-on-ice",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the ribbon toward the clinic at x540 y980",
+      "means": "The map on the ice: the dogs at NENANA, the parked drone, the ribbon flicking to the nine tenths mark, then solid inside a sight bubble and dashed phosphor to the clinic",
+      "ambient": "wind over river ice",
+      "hero": {
+        "name": "sepia dog team + ribbon + parked drone + dashed radar + map",
+        "parts": 50,
+        "zones": 3,
+        "detail_note": "40% ribbon, 35% map, 25% dogs and drone"
+      },
+      "id": 16,
+      "start_s": 115.74,
+      "t": "115.740-121.560"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Two runs left one Alaska town a century apart. The first went all the way, the second came home.",
+      "phrase": "Two runs left one",
+      "shows": "a sepia dog team on a cream map of Alaska laid on the river ice runs off the NENANA pin and draws a curving paw trail west toward Nome, a plate reads TWO RUNS \u00b7 ONE TOWN",
+      "sfx": "pawstep",
+      "means": "two runs \u00b7 one town",
+      "rehook": "",
+      "draw": {
+        "subject": "a sepia dog team on a cream map of Alaska laid on the river ice",
+        "action": "runs off the NENANA pin and draws a curving paw trail west toward Nome",
+        "emotion": "eager",
+        "annotation": "TWO RUNS \u00b7 ONE TOWN"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a sepia dog team on a cream map of Alaska laid on the river ice runs off the NENANA pin and draws a curving paw trail west toward Nome, a plate reads TWO RUNS \u00b7 ONE TOWN",
+        "reaction": "the trail inks out",
+        "ambient": "wind over river ice"
+      },
+      "t": "0.000-4.610",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 4.61,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.61
+      },
+      "offset": 4.61,
+      "vo": "Two runs left one Alaska town a century apart. The first went all the way, the second came home.",
+      "phrase": "first went all the",
+      "shows": "the sepia paw trail runs on along the river country and crosses into the NOME pin, a plate reads ALL THE WAY \u00b7 NOME",
+      "sfx": "swish",
+      "means": "all the way \u00b7 nome",
+      "rehook": "",
+      "draw": {
+        "subject": "the sepia paw trail",
+        "action": "runs on along the river country and crosses into the NOME pin",
+        "emotion": "determined",
+        "annotation": "ALL THE WAY \u00b7 NOME"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the sepia paw trail runs on along the river country and crosses into the NOME pin, a plate reads ALL THE WAY \u00b7 NOME",
+        "reaction": "the trail reaches Nome",
+        "ambient": "wind over river ice"
+      },
+      "t": "4.610-6.870",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 6.87,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 6.87
+      },
+      "offset": 6.87,
+      "vo": "Two runs left one Alaska town a century apart. The first went all the way, the second came home.",
+      "phrase": "second came home.",
+      "shows": "a grey drone's shadow sweeps in, glances toward an unlit village pin, and closes a scarlet ribbon loop that snaps shut on NENANA, a plate reads 1,000 KM \u00b7 ONE LOOP",
+      "sfx": "snap",
+      "means": "1,000 km \u00b7 one loop",
+      "rehook": "",
+      "draw": {
+        "subject": "a grey drone's shadow",
+        "action": "sweeps in, glances toward an unlit village pin, and closes a scarlet ribbon loop that snaps shut on NENANA",
+        "emotion": "wistful",
+        "annotation": "1,000 KM \u00b7 ONE LOOP"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "a grey drone's shadow sweeps in, glances toward an unlit village pin, and closes a scarlet ribbon loop that snaps shut on NENANA, a plate reads 1,000 KM \u00b7 ONE LOOP",
+        "reaction": "the loop snaps shut",
+        "ambient": "wind over river ice"
+      },
+      "t": "6.870-9.500",
+      "key": 3
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 9.5,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "January 1925, diphtheria threatened Nome.",
+      "phrase": "January 1925, diphtheria threatened",
+      "shows": "a sepia print of Nome's roofs in a January night fades up with snow drifting across it and a lamp in one window, a plate reads NOME \u00b7 JANUARY 1925 \u00b7 DIPHTHERIA",
+      "sfx": "creak",
+      "means": "nome \u00b7 january 1925 \u00b7 diphtheria",
+      "rehook": "",
+      "draw": {
+        "subject": "a sepia print of Nome's roofs in a January night",
+        "action": "fades up with snow drifting across it and a lamp in one window",
+        "emotion": "worried",
+        "annotation": "NOME \u00b7 JANUARY 1925 \u00b7 DIPHTHERIA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a sepia print of Nome's roofs in a January night fades up with snow drifting across it and a lamp in one window, a plate reads NOME \u00b7 JANUARY 1925 \u00b7 DIPHTHERIA",
+        "reaction": "the snow drifts",
+        "ambient": "a steam whistle far off, wind"
+      },
+      "t": "9.500-14.220",
+      "key": 4
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 14.22,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Antitoxin came by train to Nenana, the railroad's closest point to Nome.",
+      "phrase": "Antitoxin came by train",
+      "shows": "a sepia locomotive steams in along the rail and stops at a depot sign reading NENANA, a scarlet ribbon tied to the sign post, a plate reads BY TRAIN TO NENANA",
+      "sfx": "rumble",
+      "means": "by train to nenana",
+      "rehook": "",
+      "draw": {
+        "subject": "a sepia locomotive",
+        "action": "steams in along the rail and stops at a depot sign reading NENANA, a scarlet ribbon tied to the sign post",
+        "emotion": "busy",
+        "annotation": "BY TRAIN TO NENANA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "a sepia locomotive steams in along the rail and stops at a depot sign reading NENANA, a scarlet ribbon tied to the sign post, a plate reads BY TRAIN TO NENANA",
+        "reaction": "the smoke rolls",
+        "ambient": "a steam whistle far off, wind"
+      },
+      "t": "14.220-17.450",
+      "key": 5
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 17.45,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.23
+      },
+      "offset": 3.23,
+      "vo": "Antitoxin came by train to Nenana, the railroad's closest point to Nome.",
+      "phrase": "closest point to Nome.",
+      "shows": "the depot sign swings as the brakes hiss, a dashed line drawn from NENANA toward Nome on a small inset map, a plate reads RAILROAD'S CLOSEST POINT TO NOME",
+      "sfx": "bell",
+      "means": "railroad's closest point to nome",
+      "rehook": "",
+      "draw": {
+        "subject": "the depot sign",
+        "action": "swings as the brakes hiss, a dashed line drawn from NENANA toward Nome on a small inset map",
+        "emotion": "steady",
+        "annotation": "RAILROAD'S CLOSEST POINT TO NOME"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "the depot sign swings as the brakes hiss, a dashed line drawn from NENANA toward Nome on a small inset map, a plate reads RAILROAD'S CLOSEST POINT TO NOME",
+        "reaction": "the sign swings",
+        "ambient": "a steam whistle far off, wind"
+      },
+      "t": "17.450-19.560",
+      "key": 6
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 19.56,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Twenty mushers ran it by dog team, six hundred seventy four miles.",
+      "phrase": "Twenty mushers ran it",
+      "shows": "a sepia dog team with a faceless musher in a plain parka runs across the river ice at dusk, the sled runners hissing, a plate reads 20 MUSHERS \u00b7 RELAY",
+      "sfx": "swish",
+      "means": "20 mushers \u00b7 relay",
+      "rehook": "",
+      "draw": {
+        "subject": "a sepia dog team with a faceless musher in a plain parka",
+        "action": "runs across the river ice at dusk, the sled runners hissing",
+        "emotion": "determined",
+        "annotation": "20 MUSHERS \u00b7 RELAY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c23"
+      ],
+      "choreo": {
+        "primary": "a sepia dog team with a faceless musher in a plain parka runs across the river ice at dusk, the sled runners hissing, a plate reads 20 MUSHERS \u00b7 RELAY",
+        "reaction": "the team gallops",
+        "ambient": "sled runners hiss, wind"
+      },
+      "t": "19.560-22.030",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 22.03,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.47
+      },
+      "offset": 2.47,
+      "vo": "Twenty mushers ran it by dog team, six hundred seventy four miles.",
+      "phrase": "six hundred seventy four",
+      "shows": "a mileage counter on a trail marker rolls up as the team passes it, a plate reads NENANA TO NOME \u00b7 674 MILES \u00b7 DOG TEAMS",
+      "sfx": "tick",
+      "means": "nenana to nome \u00b7 674 miles \u00b7 dog teams",
+      "rehook": "",
+      "draw": {
+        "subject": "a mileage counter on a trail marker",
+        "action": "rolls up as the team passes it",
+        "emotion": "determined",
+        "annotation": "NENANA TO NOME \u00b7 674 MILES \u00b7 DOG TEAMS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a mileage counter on a trail marker rolls up as the team passes it, a plate reads NENANA TO NOME \u00b7 674 MILES \u00b7 DOG TEAMS",
+        "reaction": "the counter rolls",
+        "ambient": "sled runners hiss, wind"
+      },
+      "t": "22.030-24.920",
+      "key": 8
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 24.92,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Why not a plane? Nobody knew how a small engine would take forty below.",
+      "phrase": "Why not a plane?",
+      "shows": "a little sepia airplane engine on a stand trembles under icicles as the musher glances at it and snaps the team forward past it, a plate reads 1925 \u00b7 AN ENGINE AT 40 BELOW?",
+      "sfx": "rattle",
+      "means": "1925 \u00b7 an engine at 40 below?",
+      "rehook": "",
+      "draw": {
+        "subject": "a little sepia airplane engine on a stand",
+        "action": "trembles under icicles as the musher glances at it and snaps the team forward past it",
+        "emotion": "nervous",
+        "annotation": "1925 \u00b7 AN ENGINE AT 40 BELOW?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "a little sepia airplane engine on a stand trembles under icicles as the musher glances at it and snaps the team forward past it, a plate reads 1925 \u00b7 AN ENGINE AT 40 BELOW?",
+        "reaction": "the engine coughs",
+        "ambient": "sled runners hiss, wind"
+      },
+      "t": "24.920-28.290",
+      "key": 9
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 28.29,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 3.37
+      },
+      "offset": 3.37,
+      "vo": "Why not a plane? Nobody knew how a small engine would take forty below.",
+      "phrase": "forty below.",
+      "shows": "a sweat drop on the engine falls and freezes into an icicle in mid air, a plate reads NOBODY KNEW \u00b7 PER UAF SCIENCE FORUM",
+      "sfx": "drip",
+      "means": "nobody knew \u00b7 per uaf science forum",
+      "rehook": "",
+      "draw": {
+        "subject": "a sweat drop on the engine",
+        "action": "falls and freezes into an icicle in mid air",
+        "emotion": "nervous",
+        "annotation": "NOBODY KNEW \u00b7 PER UAF SCIENCE FORUM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "a sweat drop on the engine falls and freezes into an icicle in mid air, a plate reads NOBODY KNEW \u00b7 PER UAF SCIENCE FORUM",
+        "reaction": "the drop freezes",
+        "ambient": "sled runners hiss, wind"
+      },
+      "t": "28.290-30.480",
+      "key": 10
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 30.48,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "August 19th, a drone takes off from Nenana.",
+      "phrase": "August 19th, a drone",
+      "shows": "the grey cargo drone at the Nenana runway on an August evening, green spruce and birch, no snow rolls out of a hangar as its twin props blur, a scarlet ribbon tied to the hangar door, a plate reads NENANA \u00b7 AUGUST 19TH",
+      "sfx": "hum",
+      "means": "nenana \u00b7 august 19th",
+      "rehook": "rehook: the props blur as a drone rolls out onto the same town's runway a century later",
+      "draw": {
+        "subject": "the grey cargo drone at the Nenana runway on an August evening, green spruce and birch, no snow",
+        "action": "rolls out of a hangar as its twin props blur, a scarlet ribbon tied to the hangar door",
+        "emotion": "steady",
+        "annotation": "NENANA \u00b7 AUGUST 19TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the grey cargo drone at the Nenana runway on an August evening, green spruce and birch, no snow rolls out of a hangar as its twin props blur, a scarlet ribbon tied to the hangar door, a plate reads NENANA \u00b7 AUGUST 19TH",
+        "reaction": "the props blur",
+        "ambient": "a runway at dusk, prop hum"
+      },
+      "t": "30.480-32.190",
+      "key": 11
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 32.19,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 1.71
+      },
+      "offset": 1.71,
+      "vo": "August 19th, a drone takes off from Nenana.",
+      "phrase": "drone takes off from",
+      "shows": "the cargo drone lifts off past the runway lights in silhouette against the apricot sky, a plate reads TAKES OFF",
+      "sfx": "rush",
+      "means": "takes off",
+      "rehook": "",
+      "draw": {
+        "subject": "the cargo drone",
+        "action": "lifts off past the runway lights in silhouette against the apricot sky",
+        "emotion": "steady",
+        "annotation": "TAKES OFF"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the cargo drone lifts off past the runway lights in silhouette against the apricot sky, a plate reads TAKES OFF",
+        "reaction": "the gear lifts",
+        "ambient": "a runway at dusk, prop hum"
+      },
+      "t": "32.190-34.660",
+      "key": 12
+    },
+    {
+      "id": 13,
+      "shot": 5,
+      "at_s": 34.66,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A Windracers ULTRA.",
+      "phrase": "A Windracers ULTRA.",
+      "shows": "the cargo drone seen from above, its twin-engine high-wing shadow glides across the green Tanana flats and its shadow crosses the river, a plate reads WINDRACERS ULTRA \u00b7 TWIN ENGINE",
+      "sfx": "drone",
+      "means": "windracers ultra \u00b7 twin engine",
+      "rehook": "",
+      "draw": {
+        "subject": "the cargo drone seen from above, its twin-engine high-wing shadow",
+        "action": "glides across the green Tanana flats and its shadow crosses the river",
+        "emotion": "steady",
+        "annotation": "WINDRACERS ULTRA \u00b7 TWIN ENGINE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "the cargo drone seen from above, its twin-engine high-wing shadow glides across the green Tanana flats and its shadow crosses the river, a plate reads WINDRACERS ULTRA \u00b7 TWIN ENGINE",
+        "reaction": "the shadow crosses",
+        "ambient": "wind and engine drone"
+      },
+      "t": "34.660-37.060",
+      "key": 13
+    },
+    {
+      "id": 14,
+      "shot": 6,
+      "at_s": 37.06,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Pilots at U A F's drone center fly it remotely.",
+      "phrase": "Pilots at U A",
+      "shows": "a faceless pilot with a boxed name tag at a ground station takes the stick as the screen draws a scarlet loop around the NENANA dot, a plate reads FLOWN BY UAF PILOTS \u00b7 REMOTELY",
+      "sfx": "click",
+      "means": "flown by uaf pilots \u00b7 remotely",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless pilot with a boxed name tag at a ground station",
+        "action": "takes the stick as the screen draws a scarlet loop around the NENANA dot",
+        "emotion": "focused",
+        "annotation": "FLOWN BY UAF PILOTS \u00b7 REMOTELY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a faceless pilot with a boxed name tag at a ground station takes the stick as the screen draws a scarlet loop around the NENANA dot, a plate reads FLOWN BY UAF PILOTS \u00b7 REMOTELY",
+        "reaction": "the stick tilts",
+        "ambient": "a console room hum"
+      },
+      "t": "37.060-39.010",
+      "key": 14
+    },
+    {
+      "id": 15,
+      "shot": 6,
+      "at_s": 39.01,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 1.95
+      },
+      "offset": 1.95,
+      "vo": "Pilots at U A F's drone center fly it remotely.",
+      "phrase": "fly it remotely.",
+      "shows": "the pilot's hand pushes the stick and the scarlet loop trace sweeps around the NENANA dot on the screen, a plate reads UAF DRONE CENTER",
+      "sfx": "type",
+      "means": "uaf drone center",
+      "rehook": "",
+      "draw": {
+        "subject": "the pilot's hand",
+        "action": "pushes the stick and the scarlet loop trace sweeps around the NENANA dot on the screen",
+        "emotion": "focused",
+        "annotation": "UAF DRONE CENTER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "the pilot's hand pushes the stick and the scarlet loop trace sweeps around the NENANA dot on the screen, a plate reads UAF DRONE CENTER",
+        "reaction": "the trace draws",
+        "ambient": "a console room hum"
+      },
+      "t": "39.010-40.820",
+      "key": 15
+    },
+    {
+      "id": 16,
+      "shot": 7,
+      "at_s": 40.82,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On board, human blood samples for a sports anti doping agency.",
+      "phrase": "On board, human blood",
+      "shows": "FLEW, a clear glass sample tube with an oxblood fill and a face on the glass pops up out of a rack, buckles on flight goggles and squeaks down into an insulated crate, a plate reads HUMAN BLOOD SAMPLES",
+      "sfx": "pop",
+      "means": "human blood samples",
+      "rehook": "",
+      "draw": {
+        "subject": "FLEW, a clear glass sample tube with an oxblood fill and a face on the glass",
+        "action": "pops up out of a rack, buckles on flight goggles and squeaks down into an insulated crate",
+        "emotion": "eager",
+        "annotation": "HUMAN BLOOD SAMPLES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "FLEW, a clear glass sample tube with an oxblood fill and a face on the glass pops up out of a rack, buckles on flight goggles and squeaks down into an insulated crate, a plate reads HUMAN BLOOD SAMPLES",
+        "reaction": "the goggles snap",
+        "ambient": "a hangar room tone"
+      },
+      "t": "40.820-44.390",
+      "key": 16
+    },
+    {
+      "id": 17,
+      "shot": 7,
+      "at_s": 44.39,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 3.57
+      },
+      "offset": 3.57,
+      "vo": "On board, human blood samples for a sports anti doping agency.",
+      "phrase": "agency.",
+      "shows": "the crate lid slams shut on FLEW as its latch clicks, a plate reads SPORTS ANTI-DOPING \u00b7 INTERNATIONAL TESTING AGENCY",
+      "sfx": "clunk",
+      "means": "sports anti-doping \u00b7 international testing agency",
+      "rehook": "",
+      "draw": {
+        "subject": "the crate lid",
+        "action": "slams shut on FLEW as its latch clicks",
+        "emotion": "eager",
+        "annotation": "SPORTS ANTI-DOPING \u00b7 INTERNATIONAL TESTING AGENCY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "the crate lid slams shut on FLEW as its latch clicks, a plate reads SPORTS ANTI-DOPING \u00b7 INTERNATIONAL TESTING AGENCY",
+        "reaction": "the lid slams",
+        "ambient": "a hangar room tone"
+      },
+      "t": "44.390-45.820",
+      "key": 17
+    },
+    {
+      "id": 18,
+      "shot": 7,
+      "at_s": 45.82,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Each volunteer gave two samples, one to fly, one to stay, to compare.",
+      "phrase": "Each volunteer gave two",
+      "shows": "STAYED, FLEW's twin sample tube slides onto a fridge shelf behind glass under a KEEP ON GROUND sign and waves a tiny handkerchief, a plate reads TWO SAMPLES EACH",
+      "sfx": "slide",
+      "means": "two samples each",
+      "rehook": "",
+      "draw": {
+        "subject": "STAYED, FLEW's twin sample tube",
+        "action": "slides onto a fridge shelf behind glass under a KEEP ON GROUND sign and waves a tiny handkerchief",
+        "emotion": "wistful",
+        "annotation": "TWO SAMPLES EACH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "STAYED, FLEW's twin sample tube slides onto a fridge shelf behind glass under a KEEP ON GROUND sign and waves a tiny handkerchief, a plate reads TWO SAMPLES EACH",
+        "reaction": "the shelf slides",
+        "ambient": "a hangar room tone"
+      },
+      "t": "45.820-49.490",
+      "key": 18
+    },
+    {
+      "id": 19,
+      "shot": 7,
+      "at_s": 49.49,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.67
+      },
+      "offset": 3.67,
+      "vo": "Each volunteer gave two samples, one to fly, one to stay, to compare.",
+      "phrase": "stay, to compare.",
+      "shows": "the fridge door swings shut on STAYED as the two tubes look at each other across the hangar, a plate reads ONE FLEW \u00b7 ONE STAYED \u00b7 TO COMPARE",
+      "sfx": "glass",
+      "means": "one flew \u00b7 one stayed \u00b7 to compare",
+      "rehook": "",
+      "draw": {
+        "subject": "the fridge door",
+        "action": "swings shut on STAYED as the two tubes look at each other across the hangar",
+        "emotion": "wistful",
+        "annotation": "ONE FLEW \u00b7 ONE STAYED \u00b7 TO COMPARE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "the fridge door swings shut on STAYED as the two tubes look at each other across the hangar, a plate reads ONE FLEW \u00b7 ONE STAYED \u00b7 TO COMPARE",
+        "reaction": "the door swings",
+        "ambient": "a hangar room tone"
+      },
+      "t": "49.490-51.420",
+      "key": 19
+    },
+    {
+      "id": 20,
+      "shot": 8,
+      "at_s": 51.42,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It stays up eight hours and forty seven minutes.",
+      "phrase": "It stays up eight",
+      "shows": "the ground station clock spins round as the pilot's hand empties the coffee mug, refills it and empties it again, a plate reads 8 HR 47 MIN",
+      "sfx": "tock",
+      "means": "8 hr 47 min",
+      "rehook": "",
+      "draw": {
+        "subject": "the ground station clock",
+        "action": "spins round as the pilot's hand empties the coffee mug, refills it and empties it again",
+        "emotion": "tired",
+        "annotation": "8 HR 47 MIN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "the ground station clock spins round as the pilot's hand empties the coffee mug, refills it and empties it again, a plate reads 8 HR 47 MIN",
+        "reaction": "the mug empties",
+        "ambient": "a console room hum, a clock"
+      },
+      "t": "51.420-53.510",
+      "key": 20
+    },
+    {
+      "id": 21,
+      "shot": 8,
+      "at_s": 53.51,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 2.09
+      },
+      "offset": 2.09,
+      "vo": "It stays up eight hours and forty seven minutes.",
+      "phrase": "forty seven minutes.",
+      "shows": "a raven outside the ground station window flies past the window and turns back round, a plate reads STILL UP",
+      "sfx": "caw",
+      "means": "still up",
+      "rehook": "",
+      "draw": {
+        "subject": "a raven outside the ground station window",
+        "action": "flies past the window and turns back round",
+        "emotion": "dizzy",
+        "annotation": "STILL UP"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a raven outside the ground station window flies past the window and turns back round, a plate reads STILL UP",
+        "reaction": "the raven circles",
+        "ambient": "a console room hum, a clock"
+      },
+      "t": "53.510-54.780",
+      "key": 21
+    },
+    {
+      "id": 22,
+      "shot": 9,
+      "at_s": 54.78,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It covers a thousand kilometers, about six hundred twenty one miles, nearly the serum trail's length.",
+      "phrase": "It covers a thousand",
+      "shows": "the scarlet ribbon on the map on the ice un-loops off NENANA and slides along the curving sepia paw trail, a plate reads 1,000 KM LOOP \u00b7 LAID ALONG THE TRAIL",
+      "sfx": "creak",
+      "means": "1,000 km loop \u00b7 laid along the trail",
+      "rehook": "rehook: the loop un-loops and lays itself along the 1925 trail",
+      "draw": {
+        "subject": "the scarlet ribbon on the map on the ice",
+        "action": "un-loops off NENANA and slides along the curving sepia paw trail",
+        "emotion": "tense",
+        "annotation": "1,000 KM LOOP \u00b7 LAID ALONG THE TRAIL"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the scarlet ribbon on the map on the ice un-loops off NENANA and slides along the curving sepia paw trail, a plate reads 1,000 KM LOOP \u00b7 LAID ALONG THE TRAIL",
+        "reaction": "the ribbon lays along",
+        "ambient": "wind over river ice"
+      },
+      "t": "54.780-57.590",
+      "key": 22
+    },
+    {
+      "id": 23,
+      "shot": 9,
+      "at_s": 57.59,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.81
+      },
+      "offset": 2.81,
+      "vo": "It covers a thousand kilometers, about six hundred twenty one miles, nearly the serum trail's length.",
+      "phrase": "twenty one miles, nearly",
+      "shows": "the ribbon's frayed end creeps a hair forward and stops about nine tenths of the way along, bare sepia trail ahead to NOME, a plate reads ABOUT 621 MILES",
+      "sfx": "tick",
+      "means": "about 621 miles",
+      "rehook": "",
+      "draw": {
+        "subject": "the ribbon's frayed end",
+        "action": "creeps a hair forward and stops about nine tenths of the way along, bare sepia trail ahead to NOME",
+        "emotion": "tense",
+        "annotation": "ABOUT 621 MILES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c43"
+      ],
+      "choreo": {
+        "primary": "the ribbon's frayed end creeps a hair forward and stops about nine tenths of the way along, bare sepia trail ahead to NOME, a plate reads ABOUT 621 MILES",
+        "reaction": "the end trembles",
+        "ambient": "wind over river ice"
+      },
+      "t": "57.590-61.110",
+      "key": 23
+    },
+    {
+      "id": 24,
+      "shot": 9,
+      "at_s": 61.11,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 6.33
+      },
+      "offset": 6.33,
+      "vo": "It covers a thousand kilometers, about six hundred twenty one miles, nearly the serum trail's length.",
+      "phrase": "length.",
+      "shows": "the lead sled dog runs up and stops nose down at the ribbon's frayed end, a plate reads NENANA TO NOME \u00b7 674 MILES",
+      "sfx": "pawstep",
+      "means": "nenana to nome \u00b7 674 miles",
+      "rehook": "",
+      "draw": {
+        "subject": "the lead sled dog",
+        "action": "runs up and stops nose down at the ribbon's frayed end",
+        "emotion": "curious",
+        "annotation": "NENANA TO NOME \u00b7 674 MILES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the lead sled dog runs up and stops nose down at the ribbon's frayed end, a plate reads NENANA TO NOME \u00b7 674 MILES",
+        "reaction": "the dog sniffs",
+        "ambient": "wind over river ice"
+      },
+      "t": "61.110-62.360",
+      "key": 24
+    },
+    {
+      "id": 25,
+      "shot": 9,
+      "at_s": 62.36,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Then it lands where it started.",
+      "phrase": "Then it lands where",
+      "shows": "the ribbon twangs and snaps back into a loop on NENANA with an overshoot, a plate reads LANDS WHERE IT STARTED \u00b7 A TEST LOOP",
+      "sfx": "crack",
+      "means": "lands where it started \u00b7 a test loop",
+      "rehook": "rehook: the ribbon snaps back into a loop on NENANA",
+      "draw": {
+        "subject": "the ribbon",
+        "action": "twangs and snaps back into a loop on NENANA with an overshoot",
+        "emotion": "wistful",
+        "annotation": "LANDS WHERE IT STARTED \u00b7 A TEST LOOP"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the ribbon twangs and snaps back into a loop on NENANA with an overshoot, a plate reads LANDS WHERE IT STARTED \u00b7 A TEST LOOP",
+        "reaction": "the ribbon snaps back",
+        "ambient": "wind over river ice"
+      },
+      "kick": true,
+      "t": "62.360-65.760",
+      "key": 25
+    },
+    {
+      "id": 26,
+      "shot": 10,
+      "at_s": 65.76,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That forty below from 1925? U A F has flown small drones in it.",
+      "phrase": "That forty below from",
+      "shows": "a small quadcopter drone hovers steady in blowing snow beside the shivering ghost of the 1925 engine, a plate reads SMALL DRONES FLOWN AT 40 BELOW \u00b7 PER CAHILL",
+      "sfx": "whirr",
+      "means": "small drones flown at 40 below \u00b7 per cahill",
+      "rehook": "",
+      "draw": {
+        "subject": "a small quadcopter drone",
+        "action": "hovers steady in blowing snow beside the shivering ghost of the 1925 engine",
+        "emotion": "proud",
+        "annotation": "SMALL DRONES FLOWN AT 40 BELOW \u00b7 PER CAHILL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a small quadcopter drone hovers steady in blowing snow beside the shivering ghost of the 1925 engine, a plate reads SMALL DRONES FLOWN AT 40 BELOW \u00b7 PER CAHILL",
+        "reaction": "the rotors spin",
+        "ambient": "blowing snow, small rotors"
+      },
+      "t": "65.760-69.790",
+      "key": 26
+    },
+    {
+      "id": 27,
+      "shot": 10,
+      "at_s": 69.79,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.03
+      },
+      "offset": 4.03,
+      "vo": "That forty below from 1925? U A F has flown small drones in it.",
+      "phrase": "drones in it.",
+      "shows": "a thermometer stake drops to 40 BELOW as the little drone holds its hover, a plate reads SMALL DRONES ONLY \u00b7 NOT THE ULTRA",
+      "sfx": "thock",
+      "means": "small drones only \u00b7 not the ultra",
+      "rehook": "",
+      "draw": {
+        "subject": "a thermometer stake",
+        "action": "drops to 40 BELOW as the little drone holds its hover",
+        "emotion": "steady",
+        "annotation": "SMALL DRONES ONLY \u00b7 NOT THE ULTRA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a thermometer stake drops to 40 BELOW as the little drone holds its hover, a plate reads SMALL DRONES ONLY \u00b7 NOT THE ULTRA",
+        "reaction": "the needle drops",
+        "ambient": "blowing snow, small rotors"
+      },
+      "t": "69.790-71.280",
+      "key": 27
+    },
+    {
+      "id": 28,
+      "shot": 11,
+      "at_s": 71.28,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The center's director, Cathy Cahill, says this flight proves the blood could survive.",
+      "phrase": "The center's director, Cathy",
+      "shows": "a faceless Cathy Cahill with a boxed name tag walks to a table by a cold window and sets FLEW down beside STAYED, both clear glass, a plate reads CATHY CAHILL \u00b7 UAF DRONE CENTER DIRECTOR",
+      "sfx": "boots",
+      "means": "cathy cahill \u00b7 uaf drone center director",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless Cathy Cahill with a boxed name tag",
+        "action": "walks to a table by a cold window and sets FLEW down beside STAYED, both clear glass",
+        "emotion": "steady",
+        "annotation": "CATHY CAHILL \u00b7 UAF DRONE CENTER DIRECTOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "a faceless Cathy Cahill with a boxed name tag walks to a table by a cold window and sets FLEW down beside STAYED, both clear glass, a plate reads CATHY CAHILL \u00b7 UAF DRONE CENTER DIRECTOR",
+        "reaction": "the tubes clink",
+        "ambient": "a quiet room, wind at a cold window"
+      },
+      "t": "71.280-73.090",
+      "key": 28
+    },
+    {
+      "id": 29,
+      "shot": 11,
+      "at_s": 73.09,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 1.81
+      },
+      "offset": 1.81,
+      "vo": "The center's director, Cathy Cahill, says this flight proves the blood could survive.",
+      "phrase": "says this flight proves",
+      "shows": "Cahill lifts both tubes level, one in each hand, as a quote plate hangs from her name, then sets them down, a plate reads \"THE BLOOD COULD SURVIVE\" \u00b7 CAHILL",
+      "sfx": "glass",
+      "means": "\"the blood could survive\" \u00b7 cahill",
+      "rehook": "rehook: Cahill lifts both tubes level by the cold window",
+      "draw": {
+        "subject": "Cahill",
+        "action": "lifts both tubes level, one in each hand, as a quote plate hangs from her name, then sets them down",
+        "emotion": "steady",
+        "annotation": "\"THE BLOOD COULD SURVIVE\" \u00b7 CAHILL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "Cahill lifts both tubes level, one in each hand, as a quote plate hangs from her name, then sets them down, a plate reads \"THE BLOOD COULD SURVIVE\" \u00b7 CAHILL",
+        "reaction": "the tubes lift",
+        "ambient": "a quiet room, wind at a cold window"
+      },
+      "t": "73.090-76.120",
+      "key": 29
+    },
+    {
+      "id": 30,
+      "shot": 11,
+      "at_s": 76.12,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the catch, no lab results have been published.",
+      "phrase": "Here's the catch, no",
+      "shows": "a small lab results printer thumps down on the table between the tubes after Cahill steps away, a plate reads THE COMPARISON",
+      "sfx": "thump",
+      "means": "the comparison",
+      "rehook": "",
+      "draw": {
+        "subject": "a small lab results printer",
+        "action": "thumps down on the table between the tubes after Cahill steps away",
+        "emotion": "uneasy",
+        "annotation": "THE COMPARISON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a small lab results printer thumps down on the table between the tubes after Cahill steps away, a plate reads THE COMPARISON",
+        "reaction": "the printer lands",
+        "ambient": "a quiet room, wind at a cold window"
+      },
+      "t": "76.120-77.570",
+      "key": 30
+    },
+    {
+      "id": 31,
+      "shot": 11,
+      "at_s": 77.57,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 1.45
+      },
+      "offset": 1.45,
+      "vo": "Here's the catch, no lab results have been published.",
+      "phrase": "no lab results have",
+      "shows": "the printer's output tray pushes out nothing while both tubes lean in and tilt toward it, a plate reads LAB RESULTS \u00b7 NOT PUBLISHED",
+      "sfx": "buzz",
+      "means": "lab results \u00b7 not published",
+      "rehook": "",
+      "draw": {
+        "subject": "the printer's output tray",
+        "action": "pushes out nothing while both tubes lean in and tilt toward it",
+        "emotion": "uneasy",
+        "annotation": "LAB RESULTS \u00b7 NOT PUBLISHED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the printer's output tray pushes out nothing while both tubes lean in and tilt toward it, a plate reads LAB RESULTS \u00b7 NOT PUBLISHED",
+        "reaction": "the tray stays empty",
+        "ambient": "a quiet room, wind at a cold window"
+      },
+      "t": "77.570-79.780",
+      "key": 31
+    },
+    {
+      "id": 32,
+      "shot": 11,
+      "at_s": 79.78,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Until they are, claim the trip, not the result.",
+      "phrase": "Until they are, claim",
+      "shows": "the empty sample crate beside the table turns to show NOT TESTED FOR DOPING stamped on its side and the ribbon slides out under the door, a plate reads NOT TESTED FOR DOPING \u00b7 CLAIM THE TRIP, NOT THE RESULT",
+      "sfx": "flip",
+      "means": "not tested for doping \u00b7 claim the trip, not the result",
+      "rehook": "",
+      "draw": {
+        "subject": "the empty sample crate beside the table",
+        "action": "turns to show NOT TESTED FOR DOPING stamped on its side and the ribbon slides out under the door",
+        "emotion": "steady",
+        "annotation": "NOT TESTED FOR DOPING \u00b7 CLAIM THE TRIP, NOT THE RESULT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "the empty sample crate beside the table turns to show NOT TESTED FOR DOPING stamped on its side and the ribbon slides out under the door, a plate reads NOT TESTED FOR DOPING \u00b7 CLAIM THE TRIP, NOT THE RESULT",
+        "reaction": "the tag flips",
+        "ambient": "a quiet room, wind at a cold window"
+      },
+      "t": "79.780-83.380",
+      "key": 32
+    },
+    {
+      "id": 33,
+      "shot": 12,
+      "at_s": 83.38,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The state says eighty two percent of communities are off the road system.",
+      "phrase": "The state says eighty",
+      "shows": "a village of ten snow roofs and a clinic with a warm window at dusk brightens window by window with no road leading to 8 of 10 roofs, a plate reads 82% OF COMMUNITIES OFF THE ROAD SYSTEM \u00b7 PER THE STATE",
+      "sfx": "door",
+      "means": "82% of communities off the road system \u00b7 per the state",
+      "rehook": "",
+      "draw": {
+        "subject": "a village of ten snow roofs and a clinic with a warm window at dusk",
+        "action": "brightens window by window with no road leading to 8 of 10 roofs",
+        "emotion": "steady",
+        "annotation": "82% OF COMMUNITIES OFF THE ROAD SYSTEM \u00b7 PER THE STATE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a village of ten snow roofs and a clinic with a warm window at dusk brightens window by window with no road leading to 8 of 10 roofs, a plate reads 82% OF COMMUNITIES OFF THE ROAD SYSTEM \u00b7 PER THE STATE",
+        "reaction": "the windows glow",
+        "ambient": "dusk wind over a village"
+      },
+      "t": "83.380-87.940",
+      "key": 33
+    },
+    {
+      "id": 34,
+      "shot": 13,
+      "at_s": 87.94,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A village run needs more than range. Federal rules regulate against flying beyond the operator's line of sight.",
+      "phrase": "A village run needs",
+      "shows": "a new strand of the scarlet ribbon on the map on the ice pulls off the coil at NENANA and reaches toward the unlit village pin, a plate reads A VILLAGE RUN",
+      "sfx": "swing",
+      "means": "a village run",
+      "rehook": "",
+      "draw": {
+        "subject": "a new strand of the scarlet ribbon on the map on the ice",
+        "action": "pulls off the coil at NENANA and reaches toward the unlit village pin",
+        "emotion": "hopeful",
+        "annotation": "A VILLAGE RUN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a new strand of the scarlet ribbon on the map on the ice pulls off the coil at NENANA and reaches toward the unlit village pin, a plate reads A VILLAGE RUN",
+        "reaction": "the strand reaches",
+        "ambient": "wind over river ice"
+      },
+      "t": "87.940-90.950",
+      "key": 34
+    },
+    {
+      "id": 35,
+      "shot": 13,
+      "at_s": 90.95,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "A village run needs more than range. Federal rules regulate against flying beyond the operator's line of sight.",
+      "phrase": "rules regulate against flying",
+      "shows": "the strand's tip snags on the phosphor edge of a sight bubble that rises round NENANA and strains against it, a plate reads FEDERAL RULES \u00b7 BEYOND LINE OF SIGHT",
+      "sfx": "clank",
+      "means": "federal rules \u00b7 beyond line of sight",
+      "rehook": "rehook: the ribbon strains against the edge of a sight bubble",
+      "draw": {
+        "subject": "the strand's tip",
+        "action": "snags on the phosphor edge of a sight bubble that rises round NENANA and strains against it",
+        "emotion": "frustrated",
+        "annotation": "FEDERAL RULES \u00b7 BEYOND LINE OF SIGHT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c29"
+      ],
+      "choreo": {
+        "primary": "the strand's tip snags on the phosphor edge of a sight bubble that rises round NENANA and strains against it, a plate reads FEDERAL RULES \u00b7 BEYOND LINE OF SIGHT",
+        "reaction": "the strand strains",
+        "ambient": "wind over river ice"
+      },
+      "kick": true,
+      "t": "90.950-95.340",
+      "key": 35
+    },
+    {
+      "id": 36,
+      "shot": 14,
+      "at_s": 95.34,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "U A F plans detect and avoid radar, which Cahill calls a key step toward medical delivery.",
+      "phrase": "U A F plans",
+      "shows": "a dashed phosphor radar dish with one eye, PLANNED hung on it rises beside the parked drone on the night runway, a plate reads DETECT AND AVOID RADAR \u00b7 PLANNED",
+      "sfx": "whirr",
+      "means": "detect and avoid radar \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed phosphor radar dish with one eye, PLANNED hung on it",
+        "action": "rises beside the parked drone on the night runway",
+        "emotion": "eager",
+        "annotation": "DETECT AND AVOID RADAR \u00b7 PLANNED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c30"
+      ],
+      "choreo": {
+        "primary": "a dashed phosphor radar dish with one eye, PLANNED hung on it rises beside the parked drone on the night runway, a plate reads DETECT AND AVOID RADAR \u00b7 PLANNED",
+        "reaction": "the dashes march",
+        "ambient": "a runway at night, wind"
+      },
+      "t": "95.340-99.310",
+      "key": 36
+    },
+    {
+      "id": 37,
+      "shot": 14,
+      "at_s": 99.31,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 3.97
+      },
+      "offset": 3.97,
+      "vo": "U A F plans detect and avoid radar, which Cahill calls a key step toward medical delivery.",
+      "phrase": "step toward medical delivery.",
+      "shows": "the dashed radar hops toward the drone's wing and passes straight through it like a ghost, still dashed, a plate reads \"A KEY STEP\" \u00b7 CAHILL",
+      "sfx": "sizzle",
+      "means": "\"a key step\" \u00b7 cahill",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed radar",
+        "action": "hops toward the drone's wing and passes straight through it like a ghost, still dashed",
+        "emotion": "shy",
+        "annotation": "\"A KEY STEP\" \u00b7 CAHILL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c33"
+      ],
+      "choreo": {
+        "primary": "the dashed radar hops toward the drone's wing and passes straight through it like a ghost, still dashed, a plate reads \"A KEY STEP\" \u00b7 CAHILL",
+        "reaction": "the radar ghosts through",
+        "ambient": "a runway at night, wind"
+      },
+      "t": "99.310-101.560",
+      "key": 37
+    },
+    {
+      "id": 38,
+      "shot": 14,
+      "at_s": 101.56,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "If the drone loses link, Cahill says, the radar would let it avoid other aircraft automatically.",
+      "phrase": "If the drone loses",
+      "shows": "a dashed link line from the ground station antenna to the drone flickers and breaks, and the dashed radar opens a scan arc, a plate reads IF THE DRONE LOSES LINK \u00b7 PER CAHILL \u00b7 PLANNED",
+      "sfx": "crunch",
+      "means": "if the drone loses link \u00b7 per cahill \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed link line from the ground station antenna to the drone",
+        "action": "flickers and breaks, and the dashed radar opens a scan arc",
+        "emotion": "steady",
+        "annotation": "IF THE DRONE LOSES LINK \u00b7 PER CAHILL \u00b7 PLANNED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "a dashed link line from the ground station antenna to the drone flickers and breaks, and the dashed radar opens a scan arc, a plate reads IF THE DRONE LOSES LINK \u00b7 PER CAHILL \u00b7 PLANNED",
+        "reaction": "the link breaks",
+        "ambient": "a runway at night, wind"
+      },
+      "t": "101.560-106.050",
+      "key": 38
+    },
+    {
+      "id": 39,
+      "shot": 14,
+      "at_s": 106.05,
+      "vo_line": 20,
+      "anchor": {
+        "vo_line": 20,
+        "fraction": 0.0,
+        "offset": 4.49
+      },
+      "offset": 4.49,
+      "vo": "If the drone loses link, Cahill says, the radar would let it avoid other aircraft automatically.",
+      "phrase": "automatically.",
+      "shows": "a dashed ghost airplane silhouette crosses the far sky and the scan arc swings to track it as a dashed arrow bends the drone's path away, a plate reads AVOID OTHER AIRCRAFT \u00b7 AUTOMATICALLY \u00b7 PLANNED",
+      "sfx": "sonar",
+      "means": "avoid other aircraft \u00b7 automatically \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed ghost airplane silhouette",
+        "action": "crosses the far sky and the scan arc swings to track it as a dashed arrow bends the drone's path away",
+        "emotion": "steady",
+        "annotation": "AVOID OTHER AIRCRAFT \u00b7 AUTOMATICALLY \u00b7 PLANNED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "a dashed ghost airplane silhouette crosses the far sky and the scan arc swings to track it as a dashed arrow bends the drone's path away, a plate reads AVOID OTHER AIRCRAFT \u00b7 AUTOMATICALLY \u00b7 PLANNED",
+        "reaction": "the arrow bends",
+        "ambient": "a runway at night, wind"
+      },
+      "t": "106.050-107.740",
+      "key": 43
+    },
+    {
+      "id": 40,
+      "shot": 15,
+      "at_s": 107.74,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "U A F has partnered with Ryan Air and Tanana Chiefs Conference, an Alaska Native nonprofit, to develop or test medical delivery.",
+      "phrase": "U A F has",
+      "shows": "a snow gust sweeps across a dark village runway with unlit edge markers under a clinic window, a plate reads PARTNERS \u00b7 RYAN AIR \u00b7 TANANA CHIEFS CONFERENCE",
+      "sfx": "rush",
+      "means": "partners \u00b7 ryan air \u00b7 tanana chiefs conference",
+      "rehook": "",
+      "draw": {
+        "subject": "a snow gust",
+        "action": "sweeps across a dark village runway with unlit edge markers under a clinic window",
+        "emotion": "hopeful",
+        "annotation": "PARTNERS \u00b7 RYAN AIR \u00b7 TANANA CHIEFS CONFERENCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c34"
+      ],
+      "choreo": {
+        "primary": "a snow gust sweeps across a dark village runway with unlit edge markers under a clinic window, a plate reads PARTNERS \u00b7 RYAN AIR \u00b7 TANANA CHIEFS CONFERENCE",
+        "reaction": "the snow sweeps",
+        "ambient": "dusk wind over a village"
+      },
+      "t": "107.740-109.930",
+      "key": 39
+    },
+    {
+      "id": 41,
+      "shot": 15,
+      "at_s": 109.93,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 2.19
+      },
+      "offset": 2.19,
+      "vo": "U A F has partnered with Ryan Air and Tanana Chiefs Conference, an Alaska Native nonprofit, to develop or test medical delivery.",
+      "phrase": "Tanana Chiefs Conference, an",
+      "shows": "the clinic window brightens behind a closed door, a plate reads AN ALASKA NATIVE NONPROFIT",
+      "sfx": "click",
+      "means": "an alaska native nonprofit",
+      "rehook": "",
+      "draw": {
+        "subject": "the clinic window",
+        "action": "brightens behind a closed door",
+        "emotion": "hopeful",
+        "annotation": "AN ALASKA NATIVE NONPROFIT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c35"
+      ],
+      "choreo": {
+        "primary": "the clinic window brightens behind a closed door, a plate reads AN ALASKA NATIVE NONPROFIT",
+        "reaction": "the window glows",
+        "ambient": "dusk wind over a village"
+      },
+      "t": "109.930-113.250",
+      "key": 44
+    },
+    {
+      "id": 42,
+      "shot": 15,
+      "at_s": 113.25,
+      "vo_line": 21,
+      "anchor": {
+        "vo_line": 21,
+        "fraction": 0.0,
+        "offset": 5.51
+      },
+      "offset": 5.51,
+      "vo": "U A F has partnered with Ryan Air and Tanana Chiefs Conference, an Alaska Native nonprofit, to develop or test medical delivery.",
+      "phrase": "develop or test medical",
+      "shows": "the dashed runway edge markers flicker in outline one after another, still unlit, as a dashed phosphor flight line arrives from the frame edge and stops short of them, a plate reads DEVELOP OR TEST \u00b7 MEDICAL DELIVERY",
+      "sfx": "tap",
+      "means": "develop or test \u00b7 medical delivery",
+      "rehook": "",
+      "draw": {
+        "subject": "the dashed runway edge markers",
+        "action": "flicker in outline one after another, still unlit, as a dashed phosphor flight line arrives from the frame edge and stops short of them",
+        "emotion": "hopeful",
+        "annotation": "DEVELOP OR TEST \u00b7 MEDICAL DELIVERY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c34"
+      ],
+      "choreo": {
+        "primary": "the dashed runway edge markers flicker in outline one after another, still unlit, as a dashed phosphor flight line arrives from the frame edge and stops short of them, a plate reads DEVELOP OR TEST \u00b7 MEDICAL DELIVERY",
+        "reaction": "the outlines flicker",
+        "ambient": "dusk wind over a village"
+      },
+      "t": "113.250-115.740",
+      "key": 40
+    },
+    {
+      "id": 43,
+      "shot": 16,
+      "at_s": 115.74,
+      "vo_line": 22,
+      "anchor": {
+        "vo_line": 22,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The dogs ran the trail. The drone has the legs. Next it needs eyes of its own.",
+      "phrase": "The dogs ran the",
+      "shows": "the sepia dog team on the map on the ice settles at the NENANA pin beside the parked drone as the camera pulls wide, a plate reads THE DOGS RAN THE TRAIL",
+      "sfx": "pawstep",
+      "means": "the dogs ran the trail",
+      "rehook": "",
+      "draw": {
+        "subject": "the sepia dog team on the map on the ice",
+        "action": "settles at the NENANA pin beside the parked drone as the camera pulls wide",
+        "emotion": "wistful",
+        "annotation": "THE DOGS RAN THE TRAIL"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the sepia dog team on the map on the ice settles at the NENANA pin beside the parked drone as the camera pulls wide, a plate reads THE DOGS RAN THE TRAIL",
+        "reaction": "the dogs settle",
+        "ambient": "wind over river ice"
+      },
+      "t": "115.740-117.770",
+      "key": 41
+    },
+    {
+      "id": 44,
+      "shot": 16,
+      "at_s": 117.77,
+      "vo_line": 22,
+      "anchor": {
+        "vo_line": 22,
+        "fraction": 0.0,
+        "offset": 2.03
+      },
+      "offset": 2.03,
+      "vo": "The dogs ran the trail. The drone has the legs. Next it needs eyes of its own.",
+      "phrase": "drone has the legs.",
+      "shows": "the scarlet ribbon snaps along the sepia trail to the nine tenths mark and swings back to a loop, a plate reads THE DRONE HAS THE LEGS",
+      "sfx": "clip",
+      "means": "the drone has the legs",
+      "rehook": "",
+      "draw": {
+        "subject": "the scarlet ribbon",
+        "action": "snaps along the sepia trail to the nine tenths mark and swings back to a loop",
+        "emotion": "proud",
+        "annotation": "THE DRONE HAS THE LEGS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c43"
+      ],
+      "choreo": {
+        "primary": "the scarlet ribbon snaps along the sepia trail to the nine tenths mark and swings back to a loop, a plate reads THE DRONE HAS THE LEGS",
+        "reaction": "the ribbon flicks",
+        "ambient": "wind over river ice"
+      },
+      "t": "117.770-119.450",
+      "key": 45
+    },
+    {
+      "id": 45,
+      "shot": 16,
+      "at_s": 119.45,
+      "vo_line": 22,
+      "anchor": {
+        "vo_line": 22,
+        "fraction": 0.0,
+        "offset": 3.71
+      },
+      "offset": 3.71,
+      "vo": "The dogs ran the trail. The drone has the legs. Next it needs eyes of its own.",
+      "phrase": "Next it needs eyes",
+      "shows": "the scarlet ribbon stretches solid inside a sight bubble round NENANA and continues as a dashed phosphor line to the clinic pin, the dashed radar beside it, a plate reads NEXT \u00b7 EYES OF ITS OWN \u00b7 PLANNED",
+      "sfx": "bloom",
+      "means": "next \u00b7 eyes of its own \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "the scarlet ribbon",
+        "action": "stretches solid inside a sight bubble round NENANA and continues as a dashed phosphor line to the clinic pin, the dashed radar beside it",
+        "emotion": "hopeful",
+        "annotation": "NEXT \u00b7 EYES OF ITS OWN \u00b7 PLANNED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c30"
+      ],
+      "choreo": {
+        "primary": "the scarlet ribbon stretches solid inside a sight bubble round NENANA and continues as a dashed phosphor line to the clinic pin, the dashed radar beside it, a plate reads NEXT \u00b7 EYES OF ITS OWN \u00b7 PLANNED",
+        "reaction": "the dashes lay out",
+        "ambient": "wind over river ice"
+      },
+      "t": "119.450-121.560",
+      "key": 42
+    }
+  ]
+}

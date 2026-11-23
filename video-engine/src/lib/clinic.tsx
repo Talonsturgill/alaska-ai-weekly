@@ -419,12 +419,14 @@ export interface FlightCrateProps {
   tag?: string;
   accent?: number;
   groundY?: number;
+  /** the legend under the gauge (default MEDS); pass '' for none, or SAMPLES for a sample run */
+  label?: string;
 }
 
 /** A reusable cold-chain proof object. Empty lamps are questions, never wins. */
 export const FlightCrate: React.FC<FlightCrateProps> = ({
   x, y, f, scale = 1, proposed = true, lights = 0, latchProgress = 1,
-  tag = '', accent = 0, groundY,
+  tag = '', accent = 0, groundY, label = 'MEDS',
 }) => {
   const v = vitals(f, 9, 0.35);
   const T = tones('#EAF0E8');
@@ -441,7 +443,7 @@ export const FlightCrate: React.FC<FlightCrateProps> = ({
     <path d="M-118-181Q-118-238-58-238H58Q118-238 118-181" fill="none" stroke={INK} strokeWidth={18}/>
     <path d="M-118-181Q-118-232-58-232H58Q118-232 118-181" fill="none" stroke={M.key} strokeWidth={8}/>
     {[-128,128].map((lx,i)=><g key={i} transform={`translate(${lx},-132)`}><rect x={-20} y={-18} width={40} height={48} rx={7} fill={`url(#${id}-metal)`} stroke={INK} strokeWidth={5}/><path d="M-10-8H10V17H-10Z" fill={proposed?'#8B2F58':M.core} stroke={INK} strokeWidth={3}/></g>)}
-    <g transform="translate(-92,-35)"><circle r={49} fill="#F8FBF8" stroke={INK} strokeWidth={7}/><path d="M0 0L22-25" stroke="#315F59" strokeWidth={7} strokeLinecap="round"/><circle r={8} fill="#315F59"/><text y={78} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize={20} fontWeight={800} fill={INK}>MEDS</text></g>
+    <g transform="translate(-92,-35)"><circle r={49} fill="#F8FBF8" stroke={INK} strokeWidth={7}/><path d="M0 0L22-25" stroke="#315F59" strokeWidth={7} strokeLinecap="round"/><circle r={8} fill="#315F59"/><text y={66} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize={20} fontWeight={800} fill={INK}>{label}</text></g>
     <g transform="translate(70,-45)"><rect x={-54} y={-40} width={108} height={80} rx={8} fill="#F6E7C8" stroke={INK} strokeWidth={5}/><path d="M-38-15H35M-38 4H22" stroke={INK} strokeWidth={4} opacity={.55}/><circle cx={38} cy={22} r={6} fill="#8B2F58"/>{tag&&<text y={66} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize={16} fontWeight={800} fill={INK}>{tag}</text>}</g>
     <g transform="translate(0,52)">{[0,1,2,3,4].map(i=>{const on=i<lights;const a=Math.max(0,Math.min(1,lp-i*.06));return <g key={i} transform={`translate(${-104+i*52},0) scale(${.76+.24*a})`} opacity={.25+.75*a}><circle r={16} fill={on?'#D7A83E':'#EAF0E8'} stroke={on?'#6F5420':'#596363'} strokeWidth={5}/>{!on&&<circle r={7} fill="none" stroke="#596363" strokeWidth={3}/>}</g>})}</g>
     {Array.from({length:12},(_,i)=><circle key={i} cx={-166+(i%6)*66} cy={i<6?-112:75} r={4} fill={M.shade} stroke={INK} strokeWidth={2}/>) }

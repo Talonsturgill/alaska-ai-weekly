@@ -3946,3 +3946,50 @@ dispatch_history:
     metaphor: a coal-mine canary that says no early, a glowing lab flask facing a
       cobalt scale wall, and 200 paper steps up a mountain with a small goal stool
       at their foot
+- date: '2026-11-23'
+  topic: UAF drone flies a 621-mile test loop out of Nenana with blood samples; detect-and-avoid
+    radar still planned
+  slug: two-runs-out-of-nenana
+  key_entities:
+  - Nenana
+  - UAF
+  - ACUASI
+  - Windracers ULTRA
+  - International Testing Agency
+  - Cathy Cahill
+  - serum run 1925
+  - Tanana Chiefs Conference
+  - Ryan Air
+  - detect and avoid
+  archetype: object-character fable
+  palette: apricot dusk, scarlet ribbon, sepia 1925, phosphor green planned
+  voice: Sulafat
+  stance: celebratory
+  angle: A drone out of Nenana has the range of the 1925 serum trail, and the next
+    gate is not cold or distance but a planned radar that would let it fly beyond
+    its pilot's sight.
+  hero: SampleTube
+  cast:
+  - SampleTube
+  - CargoDrone
+  - RadarEye
+  - Ribbon
+  - SledDogTeam
+  - Village
+  - GroundStation
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: instrument-as-subject
+    layout: fullbleed-split
+    register: naturalistic-scene
+    palette: 'apricot and golden civil twilight #F2A779 climbing through dusky mauve
+      #8A6283 to plum dusk #3B2B4A above lavender river ice #D9D0E3, an ivory paper
+      map #F1E6D2 laid on the ice, a vivid scarlet ribbon #E0303F as the only scarlet,
+      oxblood #7E1626 in clear glass sample tubes #C8E3F0, sepia #B98A57 reserved
+      to 1925, radar-phosphor green #2EE86B for anything planned'
+    camera_strategy: lateral-track-and-overhead
+    light_story: warm-golden-dusk-glow
+    metaphor: a scarlet ribbon that is a loop until it is laid along the 1925 dog
+      trail about nine tenths of the way, two sample tubes that flew and stayed, and
+      a dashed radar that is the drone's eyes of its own, still planned

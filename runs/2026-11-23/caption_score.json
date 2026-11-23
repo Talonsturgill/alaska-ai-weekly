@@ -1,0 +1,19 @@
+{
+ "source": "out/dispatch/post.txt",
+ "round": 2,
+ "hard_fails": [],
+ "scores": {
+  "hook_scroll_stop": 8.4,
+  "point_of_view_take": 8.3,
+  "substance_specificity": 9.0,
+  "readability_restraint": 8.1,
+  "engagement_design": 8.6,
+  "brand_voice_accuracy": 8.8,
+  "hashtag_craft": 8.6
+ },
+ "weighted_total": 8.53,
+ "ship_threshold": 8.5,
+ "ship": true,
+ "weakest_criterion": "readability_restraint",
+ "one_sentence_fix": "Fold 'remotely' into the previous sentence and split the permission paragraph after 'line of sight'."
+}

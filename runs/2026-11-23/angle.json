@@ -1,0 +1,33 @@
+{
+ "thesis": "In 1925 the serum for Nome left Nenana behind dogs because nobody knew how a small engine would take forty below; in 2026 a drone out of the same town flew a loop nearly as long as that whole trail with human blood aboard, and the next gate UAF names isn't the cold or the distance, it's a radar that would let it fly beyond its pilot's sight, so the win is real and the delivery still waits on permission.",
+ "falsifiability": "False if the flown samples, once anyone publishes the comparison (c7, c16), turn out degraded against the ones kept on the ground, which would put the cargo, not permission, back as the gate. False if TCC or Ryan Air start delivering medicine beyond line of sight with no detect-and-avoid radar fitted (c29, c30). False if the ULTRA itself can't fly in deep cold, since the forty below record is for small drones (c26).",
+ "supporting_facts": [
+  "The flight happened. 1,000 km in a loop out of and back to Nenana, 8 hours 47 minutes, human blood samples aboard, flown remotely by UAF pilots (c1, c2, c3, c4, c13, c43). The agency's 2022 tests moved samples up to 20 km (c41).",
+  "The cold question of 1925 has an answer for small drones. Nobody knew how a small engine would handle forty below (c25). UAF has flown small drones at forty below and dropped a defibrillator, simulated blood and a rescue sled at 18 below (c26, c27, c28).",
+  "The next step UAF names is a radar. Detect-and-avoid is planned for both drones (c30), Cahill calls it a key step toward real-world medical delivery (c33), under rules that regulate against flying beyond the operator's sight (c29).",
+  "The need hasn't moved. 82 percent of communities are off the road system (c19), CMS says winter medicine delays of 5 to 14 days are common (c18), and TCC and Ryan Air are partnering with UAF on medical delivery operations (c34, c35)."
+ ],
+ "counterpoint_to_honor": "'The blood could survive' is Cahill's statement (c15). No lab results have been published (c16), the samples weren't tested for doping or medical conditions (c6), the January drop used simulated blood (c27), the loop landed where it started (c2), and the money is still building a framework first (c36, c37). Act 3 draws the two clear tubes side by side, a results printer whose tray stays empty, and the empty crate turned to NOT TESTED FOR DOPING, with the loop closing on Nenana instead of reaching a village.",
+ "valence": "celebratory, narrowed honestly. The analysts split (one celebratory, two curious or mixed). The synthesis credits the capability plainly because the record supports it (an 8 hour 47 minute flight with a ground control built in, cold work at forty below), and the counterpoint gets a full scene. It never says delivery is close, never says the blood was proven, never calls the flight autonomous.",
+ "stance": "celebratory",
+ "who_it_serves": "Interior villages TCC serves (c35), rural patients waiting on medicine (c17, c18), and the 82 percent of communities off the road (c19).",
+ "second_movement": {
+  "recontextualizing_fact": "c43 against c22. The dogs carried the serum 674 miles from Nenana to Nome, an actual delivery. The drone flew about 621 miles, nearly the whole trail's length, and landed back in Nenana. The first read ('drone beats dogs') becomes 'the drone has the legs for the trip and hasn't been cleared to take it'.",
+  "fair_case_against_scene": "The two tubes, one flown and one kept on the ground, sit side by side by a cold window; a results printer lands and its tray stays empty (LAB RESULTS NOT PUBLISHED), and the empty crate turns to show NOT TESTED FOR DOPING (c7, c16, c6). The film survives it by narrowing: it claims the trip, not the result."
+ },
+ "runner_up_angles": [
+  {
+   "angle": "Enthusiast: 'what's left is a radar and a rule, not whether the aircraft can do the job'",
+   "why_lost": "overclaims the machine (forty below is small drones, the loop wasn't a delivery, no lab results)"
+  },
+  {
+   "angle": "Skeptic: 'cold and range are no longer the constraint, permission is, and it hangs on a radar only planned'",
+   "why_lost": "structure kept, but it rushed past the win and leaned on the News-Miner's 'critical step' framing as if permission hung on the radar alone"
+  },
+  {
+   "angle": "Historian: 'the machine isn't what holds delivery back, and the geography hasn't moved'",
+   "why_lost": "its second movement said the drone flew farther than the dogs; 1,000 km is about 621 miles, shorter than 674, corrected in the synthesis"
+  }
+ ],
+ "absence_checks": "No lab results published: both validators read the UAF/GI release, DroneLife, KTUU and the News-Miner in full for laboratory figures; none report any. Stated as 'not published', never 'none exists'."
+}
