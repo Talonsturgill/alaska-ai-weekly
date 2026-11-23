@@ -75,7 +75,7 @@ export const Suit: React.FC<SuitProps> = ({
   const shade = '#9A6E52';
   const rx = 58 + reach * 70, ry = -128 - reach * 70;
   return (
-    <FigureFinish x={x} footY={y} w={140 * s} h={hgt} keySide={keySide} rimColor={rimColor}>
+    <FigureFinish x={x} footY={y} w={140 * s} h={hgt} keySide={keySide} rimColor={rimColor} outline={3.5 * s} rimWidth={3.2 * s} rim={0.62} shade={0.5}>
       <IdleFigure f={f} x={x} footY={y} h={hgt} seed={seed} cues={cues} gain={gain}>
         {(pose) => (
           <g transform={`translate(${x},${y}) scale(${s * facing},${s})`}>
@@ -116,8 +116,10 @@ export const Suit: React.FC<SuitProps> = ({
                 <path d="M -12 -232 L -12 -216 Q 0 -210 12 -216 L 12 -232 Z" fill={skin} stroke={INK} strokeWidth={3} />
                 <path d="M -12 -230 Q 0 -222 12 -230 L 12 -224 Q 0 -217 -12 -224 Z" fill={shade} opacity={0.75} />
                 {/* ear on the near (lit) side; the face turns three quarters toward facing */}
-                <ellipse cx={-33} cy={-258} rx={7} ry={11} fill={skin} stroke={INK} strokeWidth={3} />
-                <path d="M -34 -264 Q -30 -258 -34 -252" stroke={shade} strokeWidth={2.5} fill="none" strokeLinecap="round" />
+                {/* the ear stands clear of the skull (cx -38): at cx -33 it peeked 3 px past the outline and read
+                    as a second, ghosted contour on the 11-23 pilot and Cahill (machine pass 2026-11-23) */}
+                <ellipse cx={-38} cy={-258} rx={8.5} ry={12} fill={skin} stroke={INK} strokeWidth={3} />
+                <path d="M -40 -265 Q -35 -258 -40 -251" stroke={shade} strokeWidth={2.5} fill="none" strokeLinecap="round" />
                 <ellipse cx={0} cy={-262} rx={36} ry={42} fill={skin} stroke={INK} strokeWidth={5} />
                 {/* form: a terminator crescent on the far side and a soft key highlight on the near cheek,
                     in place of the 11-21 centre blob the 11-22 panel read as a flat disc */}
@@ -139,7 +141,11 @@ export const Suit: React.FC<SuitProps> = ({
                     </g>
                   );
                 })()}
-                <path d="M -34 -282 Q 0 -312 34 -282 Q 20 -296 0 -298 Q -20 -296 -34 -282 Z" fill={hair} stroke={INK} strokeWidth={3} />
+                {/* a crown of hair that covers the top of the skull. The 11-22 cap's outer edge peaked at -297 against
+                    an inner edge at -298, a zero-width sliver drawn inside the head's top, so it read as a second
+                    outline on every Suit (11-23, all seats: "onion-skin double outlines") */}
+                <path d="M -37 -268 C -41 -306 -20 -316 0 -316 C 20 -316 41 -306 37 -268 Q 22 -289 0 -290 Q -22 -289 -37 -268 Z" fill={hair} stroke={INK} strokeWidth={3} strokeLinejoin="round" />
+                <path d="M -24 -300 Q -8 -309 10 -306" stroke="#FFFFFF" strokeWidth={3} fill="none" opacity={0.18} strokeLinecap="round" />
                 {longHair && <path d="M -36 -284 Q -40 -304 -12 -306 Q 20 -308 36 -284 Q 20 -296 0 -298 Q -20 -296 -36 -284 Z" fill={hair} stroke={INK} strokeWidth={3} />}
               </g>
             </g>
