@@ -1,0 +1,77 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 3,
+  "takes": 4,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.988,
+    "heard": "Two runs left one Alaska town a century apart. The first went all the way. The second came home. January 1925, diphtheria threatened Nome. Antitoxin came by train to Ninana, the railroad's closest point to Nome. Twenty muskers ran it by dog team, 674 miles. Why not a plane? Nobody knew how a small engine would take 40 below. August 19th, a drone takes off from Ninana, a wind racer's ultra. Pilots at UAF's drone center fly it remotely. On board, human blood samples for a sports anti-doping agency. Each volunteer gave two samples, one to fly, one to stay, to compare. It stays up eight hours and 47 minutes. It covers 1,000 kilometers, about 621 miles. Nearly the serum trails length. Then, it lands where it started. That 40 below from 1925, UAF has flown small drones in it. The center's director, Kathy Cahill, says this flight proves the blood could survive. Here's the catch, no lab results have been published. Until they are, claim the trip, not the result. The state says 82% of communities are off the road system. A village run needs more than range. Federal rules regulate against flying beyond the operator's line of sight. UAF plans to detect and avoid radar, which Cahill calls a key step toward medical delivery. If the drone loses link, Cahill says the radar would let it avoid other aircraft automatically. UAF has partnered with Ryan Air and Tannenau Chiefs Conference, an Alaska native non-profit to develop or test medical delivery. The dogs ran the trail. The drone has the legs. Next, it needs eyes of its own.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.025,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 7.36,
+        "voiced_frac": 0.55,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 121.96,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 121.96,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (1 entries)"
+  ],
+  "runtime_warning": null,
+  "gap_share": {
+    "min_gap_s": 0.35,
+    "gaps": 40,
+    "seconds": 27.86,
+    "runtime_s": 121.56,
+    "share": 0.2292,
+    "aim": 0.15,
+    "over_aim": true,
+    "longest_s": 1.36
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.972,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.971,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.984,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.988,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

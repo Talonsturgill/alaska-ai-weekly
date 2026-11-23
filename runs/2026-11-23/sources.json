@@ -1,0 +1,16 @@
+{
+  "run_date": "2026-11-23",
+  "title": "Two Runs Out of Nenana",
+  "sources": [
+    {"id": "s1", "title": "UAF drone program tests long-distance blood sample delivery", "outlet": "UAF Geophysical Institute, September 17th", "url": "https://www.gi.alaska.edu/news/uaf-drone-program-tests-long-distance-blood-sample-delivery", "claims": ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11", "c12", "c13", "c16", "c43"]},
+    {"id": "s2", "title": "ACUASI director highlights recent updates, potential for drones", "outlet": "Fairbanks Daily News-Miner, November 19th", "url": "https://www.newsminer.com/news/local_news/acuasi-director-highlights-recent-updates-potential-for-drones/article_5b2a08b6-2024-4fad-af6b-5525b97f4acb.html", "claims": ["c12", "c14", "c15", "c17", "c26", "c27", "c28", "c29", "c30", "c33", "c34"]},
+    {"id": "s3", "title": "'This could be life-saving': UAF drone program tests long-distance blood transport", "outlet": "Alaska's News Source (KTUU), September 23rd", "url": "https://www.alaskasnewssource.com/2026/09/24/this-could-be-life-saving-uaf-drone-program-tests-long-distance-blood-transport/", "claims": ["c2", "c3", "c7", "c13", "c14", "c15", "c29", "c30", "c32"]},
+    {"id": "s4", "title": "Alaska drone program flies blood samples 1,000 kilometers for Olympic anti-doping agency", "outlet": "DroneLife, September 22nd", "url": "https://dronelife.com/2026/09/22/alaska-drone-program-flies-blood-samples-1000-kilometers-for-olympic-anti-doping-agency/", "claims": ["c1", "c4", "c5", "c6", "c8", "c9", "c10", "c11", "c43"]},
+    {"id": "s5", "title": "Serum Run of 1925", "outlet": "Alaska State Archives", "url": "https://archives.alaska.gov/education/serum.html", "claims": ["c20", "c21", "c22", "c24"]},
+    {"id": "s6", "title": "Sled dogs were lifesavers in serum run", "outlet": "UAF Alaska Science Forum", "url": "https://www.gi.alaska.edu/alaska-science-forum/sled-dogs-were-lifesavers-serum-run", "claims": ["c20", "c21", "c22", "c23", "c24", "c25"]},
+    {"id": "s7", "title": "Statewide Drone Program (82% of communities off the road system)", "outlet": "Alaska DOT&PF", "url": "https://dot.alaska.gov/stwdav/", "claims": ["c19"]},
+    {"id": "s8", "title": "Alaska Rural Health Transformation awards", "outlet": "CMS, August 25th", "url": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription", "claims": ["c18"]},
+    {"id": "s9", "title": "Alaska awards millions in rural health care funding", "outlet": "Anchorage Daily News, August 17th", "url": "https://www.adn.com/alaska-news/rural-alaska/2026/08/17/alaska-awards-millions-in-rural-healthcare-funding-including-to-restart-presidential-fitness-test/", "claims": ["c36"]},
+    {"id": "s10", "title": "About TCC", "outlet": "Tanana Chiefs Conference", "url": "https://www.tananachiefs.org/about/", "claims": ["c35"]}
+  ]
+}

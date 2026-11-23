@@ -2,19 +2,19 @@
  "lines": [
   {
    "idx": 0,
-   "text": "Two runs left the same Alaska town, a century apart. The first went all the way. The second came home.",
+   "text": "Two runs left one Alaska town a century apart. The first went all the way, the second came home.",
    "claims": [
     "narration"
    ],
-   "t": "Two runs left the same Alaska town, a century apart. The first went all the way. The second came home."
+   "t": "Two runs left one Alaska town a century apart. The first went all the way, the second came home."
   },
   {
    "idx": 1,
-   "text": "January, 1925. Diphtheria threatened Nome.",
+   "text": "January 1925, diphtheria threatened Nome.",
    "claims": [
     "c20"
    ],
-   "t": "January, 1925. Diphtheria threatened Nome."
+   "t": "January 1925, diphtheria threatened Nome."
   },
   {
    "idx": 2,
@@ -43,11 +43,11 @@
   },
   {
    "idx": 5,
-   "text": "August 19th. A drone takes off from Nenana.",
+   "text": "August 19th, a drone takes off from Nenana.",
    "claims": [
     "c1"
    ],
-   "t": "August 19th. A drone takes off from Nenana."
+   "t": "August 19th, a drone takes off from Nenana."
   },
   {
    "idx": 6,
@@ -68,20 +68,20 @@
   },
   {
    "idx": 8,
-   "text": "On board, human blood samples, for a sports anti doping agency.",
+   "text": "On board, human blood samples for a sports anti doping agency.",
    "claims": [
     "c4",
     "c5"
    ],
-   "t": "On board, human blood samples, for a sports anti doping agency."
+   "t": "On board, human blood samples for a sports anti doping agency."
   },
   {
    "idx": 9,
-   "text": "Each volunteer gave two samples. One flew. One stayed behind, to compare.",
+   "text": "Each volunteer gave two samples, one to fly, one to stay, to compare.",
    "claims": [
     "c7"
    ],
-   "t": "Each volunteer gave two samples. One flew. One stayed behind, to compare."
+   "t": "Each volunteer gave two samples, one to fly, one to stay, to compare."
   },
   {
    "idx": 10,
@@ -93,12 +93,12 @@
   },
   {
    "idx": 11,
-   "text": "It covers a thousand kilometers, about six hundred twenty one miles. Nearly the length of the serum trail.",
+   "text": "It covers a thousand kilometers, about six hundred twenty one miles, nearly the serum trail's length.",
    "claims": [
     "c2",
     "c43"
    ],
-   "t": "It covers a thousand kilometers, about six hundred twenty one miles. Nearly the length of the serum trail."
+   "t": "It covers a thousand kilometers, about six hundred twenty one miles, nearly the serum trail's length."
   },
   {
    "idx": 12,
@@ -128,11 +128,11 @@
   },
   {
    "idx": 15,
-   "text": "Here's the catch. No lab results have been published.",
+   "text": "Here's the catch, no lab results have been published.",
    "claims": [
     "c16"
    ],
-   "t": "Here's the catch. No lab results have been published."
+   "t": "Here's the catch, no lab results have been published."
   },
   {
    "idx": 16,
@@ -144,11 +144,11 @@
   },
   {
    "idx": 17,
-   "text": "The state says eighty two percent of Alaska's communities are off the road system.",
+   "text": "The state says eighty two percent of communities are off the road system.",
    "claims": [
     "c19"
    ],
-   "t": "The state says eighty two percent of Alaska's communities are off the road system."
+   "t": "The state says eighty two percent of communities are off the road system."
   },
   {
    "idx": 18,
@@ -160,20 +160,20 @@
   },
   {
    "idx": 19,
-   "text": "U A F plans detect and avoid radar. Cahill calls it a key step toward medical delivery.",
+   "text": "U A F plans detect and avoid radar, which Cahill calls a key step toward medical delivery.",
    "claims": [
     "c30",
     "c33"
    ],
-   "t": "U A F plans detect and avoid radar. Cahill calls it a key step toward medical delivery."
+   "t": "U A F plans detect and avoid radar, which Cahill calls a key step toward medical delivery."
   },
   {
    "idx": 20,
-   "text": "If the drone ever loses link, Cahill says, the radar would let it automatically avoid other aircraft.",
+   "text": "If the drone loses link, Cahill says, the radar would let it avoid other aircraft automatically.",
    "claims": [
     "c32"
    ],
-   "t": "If the drone ever loses link, Cahill says, the radar would let it automatically avoid other aircraft."
+   "t": "If the drone loses link, Cahill says, the radar would let it avoid other aircraft automatically."
   },
   {
    "idx": 21,

@@ -7,7 +7,7 @@ import {MONO, monoW} from './prospect';
 /**
  * THE SERUM FAMILY (2026-11-23, "Two Runs Out of Nenana").
  *
- * A pair of faced blood sample tubes (FLEW and STAYED), a plain cargo drone with NO face, a dashed
+ * A pair of faced CLEAR-glass blood sample tubes (FLEW and STAYED, never frosted), a plain cargo drone with NO face, a dashed
  * detect-and-avoid radar that is always PLANNED, a scarlet ribbon that morphs from a loop to a line,
  * a ground station, a sight bubble, a results printer whose tray stays empty, a village with a clinic,
  * a small sample fridge, a 1925 train and a shivering 1925 engine, a dusk world on the river ice and
@@ -58,12 +58,11 @@ export const Tag: React.FC<{x: number; y: number; text: string; size?: number; f
   );
 };
 
-export type TubeEmotion = 'eager' | 'nervous' | 'frosty' | 'calm' | 'wistful' | 'worried' | 'proud';
+export type TubeEmotion = 'eager' | 'nervous' | 'calm' | 'wistful' | 'worried' | 'proud';
 
 /**
  * SampleTube. Origin (x, y) is the bottom of the tube. At scale 1 it is about 84 wide and 300 tall.
  *  - fill 0..1      oxblood level
- *  - frost 0..1     frost rim on the OUTER glass only (never ice in the fill)
  *  - goggles        flight goggles over the eyes
  *  - glow 0..1      a cool fridge glow on the glass
  *  - look -1..1     pupils
@@ -71,9 +70,9 @@ export type TubeEmotion = 'eager' | 'nervous' | 'frosty' | 'calm' | 'wistful' | 
  *  - squash 0..1    a landing squash
  */
 export const SampleTube: React.FC<{
-  f: number; x: number; y: number; scale?: number; emotion?: TubeEmotion; fill?: number; frost?: number; goggles?: boolean;
+  f: number; x: number; y: number; scale?: number; emotion?: TubeEmotion; fill?: number; goggles?: boolean;
   glow?: number; look?: number; label?: string; cues?: number[]; seed?: number; squash?: number; tilt?: number; shadow?: boolean;
-}> = ({f, x, y, scale = 1, emotion = 'calm', fill = 0.62, frost = 0, goggles = false, glow = 0, look = 0, label, cues, seed = 1, squash = 0, tilt = 0, shadow = true}) => {
+}> = ({f, x, y, scale = 1, emotion = 'calm', fill = 0.62, goggles = false, glow = 0, look = 0, label, cues, seed = 1, squash = 0, tilt = 0, shadow = true}) => {
   const id = uid(`tube${seed}`);
   const bp = beatPose(f, seed, cues, 300);
   const breathe = 1 + 0.012 * Math.sin(f / 13 + seed);
@@ -89,7 +88,7 @@ export const SampleTube: React.FC<{
   const eyeY = -H * 0.52;
   const mouth = {eager: 'M -16 0 Q 0 16 16 0', proud: 'M -16 0 Q 0 14 16 0', calm: 'M -12 2 Q 0 8 12 2', wistful: 'M -12 4 Q 0 0 12 4',
     nervous: 'M -14 4 q 7 -6 14 0 q 7 6 14 0', worried: 'M -12 6 Q 0 -4 12 6', frosty: 'M -12 3 L 12 3'}[emotion];
-  const brow = {eager: -6, proud: -4, calm: 0, wistful: 6, nervous: 9, worried: 10, frosty: 3}[emotion];
+  const brow = {eager: -6, proud: -4, calm: 0, wistful: 6, nervous: 9, worried: 10}[emotion];
   return (
     <g transform={`translate(${x} ${y}) scale(${scale * (1 + 0.06 * squash)} ${scale * sq * breathe}) rotate(${tilt + sway * 0.4}) translate(0 ${-bp.dip})`}>
       <defs>
@@ -108,15 +107,8 @@ export const SampleTube: React.FC<{
         <path d={`M ${-r - 4} ${lvl} Q ${-r / 2} ${lvl - 6 + wob} 0 ${lvl} T ${r + 4} ${lvl} L ${r + 4} 10 L ${-r - 4} 10 Z`} fill={`url(#${id}-b)`} />
         <path d={`M ${-r + 10} ${lvl + 16} L ${-r + 10} ${-r}`} stroke={SER.bloodL} strokeWidth={6} opacity={0.6} strokeLinecap="round" />
         <ellipse cx={-r * 0.45} cy={-H * 0.55} rx={7} ry={H * 0.3} fill="#fff" opacity={0.55} />
-        {frost > 0 && [0, 1, 2, 3, 4, 5, 6].map((i) => (
-          <path key={i} d={`M ${-r} ${-H + 60 + i * 34} l ${8 + 6 * h01(i, seed)} ${-6} l ${-4} ${-8}`} stroke="#fff" strokeWidth={3} fill="none" opacity={0.85 * frost} />
-        ))}
-        {frost > 0 && [0, 1, 2, 3, 4, 5, 6].map((i) => (
-          <path key={`r${i}`} d={`M ${r} ${-H + 70 + i * 32} l ${-(8 + 6 * h01(i + 9, seed))} ${-6} l ${4} ${-8}`} stroke="#fff" strokeWidth={3} fill="none" opacity={0.85 * frost} />
-        ))}
       </g>
       <path d={`M ${-r} ${-H + 40} L ${-r} ${-r} A ${r} ${r} 0 0 0 ${r} ${-r} L ${r} ${-H + 40}`} fill="none" stroke={SER.ink} strokeWidth={7} strokeLinejoin="round" />
-      {frost > 0 && <path d={`M ${-r - 3} ${-H + 44} L ${-r - 3} ${-r}`} stroke="#fff" strokeWidth={4} opacity={0.7 * frost} strokeDasharray="10 7" />}
       {/* cap */}
       <rect x={-r - 8} y={-H} width={W + 16} height={52} rx={10} fill={tones(SER.cap).base} stroke={SER.ink} strokeWidth={6} />
       {[0, 1, 2, 3, 4].map((i) => <line key={i} x1={-r + 2 + i * 20} x2={-r + 2 + i * 20} y1={-H + 8} y2={-H + 44} stroke={tones(SER.cap).core} strokeWidth={4} />)}
@@ -399,12 +391,13 @@ export const GroundStation: React.FC<{f: number; x: number; y: number; s?: numbe
       ))}
       {/* mug */}
       <g transform="translate(220 -260)">
-        <path d="M -24 0 L -20 -52 L 20 -52 L 24 0 Z" fill={mug > 0.5 ? '#D8EEF8' : '#C85A3A'} stroke={SER.ink} strokeWidth={5} />
+        <path d="M -24 0 L -20 -52 L 20 -52 L 24 0 Z" fill="#C85A3A" stroke={SER.ink} strokeWidth={5} />
+        {mug < 0.5 && <ellipse cx={0} cy={-48} rx={18} ry={4} fill="#4A2416" />}
         <path d="M 22 -40 q 18 0 16 16 q -2 12 -18 10" fill="none" stroke={SER.ink} strokeWidth={5} />
         {mug < 0.5 && [0, 1, 2].map((k) => (
           <path key={k} d={`M ${-10 + k * 10} -58 q ${6 * Math.sin(f / 8 + k)} -16 0 -32`} stroke="#fff" strokeWidth={4} fill="none" opacity={0.6 * (1 - mug * 2)} />
         ))}
-        {mug >= 0.5 && [0, 1, 2].map((k) => <path key={k} d={`M ${-14 + k * 12} -52 l 3 14 l 3 -14`} fill="#EAF7FF" stroke={SER.ink} strokeWidth={2} />)}
+        {mug >= 0.5 && <path d="M -18 -8 L 18 -8" stroke="#5A2E1E" strokeWidth={4} opacity={0.6} />}
       </g>
       <RimLight d="M -300 -260 L 300 -260" w={4} opacity={0.5} color={SER.apricot} />
     </g>
@@ -412,7 +405,7 @@ export const GroundStation: React.FC<{f: number; x: number; y: number; s?: numbe
 };
 
 /** Village: a row of snow roofs, a clinic with a warm window and a CLINIC sign, a short runway with edge markers. Origin at ground centre. */
-export const Village: React.FC<{f: number; x: number; y: number; s?: number; glow?: number; seed?: number; runway?: boolean}> = ({f, x, y, s = 1, glow = 1, seed = 7, runway = true}) => {
+export const Village: React.FC<{f: number; x: number; y: number; s?: number; glow?: number; seed?: number; runway?: boolean; sign?: boolean; lit?: boolean}> = ({f, x, y, s = 1, glow = 1, seed = 7, runway = true, sign = true, lit = true}) => {
   const houses = [-420, -300, -170, 190, 320, 440];
   const cols = ['#6E4A55', '#4F5A6A', '#7A5A3E', '#5A4A6A', '#6A5048', '#4E5E58'];
   const flick = 0.9 + 0.1 * Math.sin(f / 7 + seed);
@@ -421,7 +414,7 @@ export const Village: React.FC<{f: number; x: number; y: number; s?: number; glo
       {runway && (
         <g>
           <path d="M -520 40 L 520 40 L 600 120 L -600 120 Z" fill="#B8A9C4" stroke={SER.ink} strokeWidth={5} />
-          {[-480, -320, -160, 0, 160, 320, 480].map((dx) => <circle key={dx} cx={dx} cy={56} r={6} fill={SER.warm} opacity={0.6 + 0.4 * Math.sin(f / 6 + dx)} stroke={SER.ink} strokeWidth={2} />)}
+          {[-480, -320, -160, 0, 160, 320, 480].map((dx) => <circle key={dx} cx={dx} cy={56} r={6} fill={lit ? SER.warm : 'none'} opacity={lit ? 0.6 + 0.4 * Math.sin(f / 6 + dx) : 0.9} stroke={lit ? SER.ink : SER.phosD} strokeWidth={lit ? 2 : 3} strokeDasharray={lit ? undefined : '4 3'} />)}
         </g>
       )}
       {houses.map((hx, i) => {
@@ -446,7 +439,7 @@ export const Village: React.FC<{f: number; x: number; y: number; s?: number; glo
         <rect x={-84} y={-104} width={70} height={56} fill="#FFF3C0" opacity={0.35 * glow * flick} />
         <ellipse cx={-49} cy={-76} rx={120 * glow} ry={70 * glow} fill={SER.warm} opacity={0.14 * glow} />
         <rect x={20} y={-90} width={56} height={90} fill="#6E5A4A" stroke={SER.ink} strokeWidth={4} />
-        <Tag x={0} y={-166} text="CLINIC" size={18} />
+        {sign && <Tag x={0} y={-166} text="CLINIC" size={18} />}
       </g>
     </g>
   );
@@ -517,6 +510,11 @@ export const Engine1925: React.FC<{f: number; x: number; y: number; s?: number; 
         return <rect key={k} x={-14} y={-150 - 112} width={28} height={50} rx={6} fill={SER.sepiaL} stroke={SER.ink} strokeWidth={4} transform={`rotate(${(a * 180) / Math.PI} 0 -150)`} />;
       })}
       <circle cx={0} cy={-150} r={30} fill={SER.sepiaD} stroke={SER.ink} strokeWidth={5} />
+      <g transform={`rotate(${shiver * 4 * Math.sin(f / 3)} 0 -150)`}>
+        <path d="M -10 -150 Q -18 -270 0 -300 Q 18 -270 10 -150 Z" fill={SER.sepiaL} stroke={SER.ink} strokeWidth={5} />
+        <path d="M -10 -150 Q -18 -30 0 0 Q 18 -30 10 -150 Z" fill={SER.sepiaL} stroke={SER.ink} strokeWidth={5} />
+      </g>
+      <circle cx={0} cy={-150} r={12} fill={SER.ink} />
       {[-40, -10, 22, 50].map((ix, k) => <path key={k} d={`M ${ix} -66 l 6 ${18 + 10 * h01(k)} l 6 ${-18 - 10 * h01(k)}`} fill="#EAF2F8" stroke={SER.ink} strokeWidth={2.5} />)}
       {drop > 0 && (frozen ? (
         <path d={`M 60 ${-120 + dy} l 8 0 l -4 26 Z`} fill="#DFF2FF" stroke={SER.ink} strokeWidth={2.5} />
@@ -531,8 +529,8 @@ export const Engine1925: React.FC<{f: number; x: number; y: number; s?: number; 
  * DuskWorld: the long Interior dusk on the river ice. Sky apricot low to plum high, the Alaska Range,
  * a spruce line, ice to the bottom of the frame with drifts. `horizon` is the ice line in frame px.
  */
-export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; sun?: number; stars?: number; drifts?: boolean; children?: React.ReactNode}> =
-({f, seed = 1, horizon = 1060, sun = 1, stars = 0.6, drifts = true, children}) => {
+export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; sun?: number; stars?: number; drifts?: boolean; summer?: boolean; children?: React.ReactNode}> =
+({f, seed = 1, horizon = 1060, sun = 1, stars = 0.6, drifts = true, summer = false, children}) => {
   const id = uid(`dusk${seed}`);
   const range = Array.from({length: 13}, (_, i) => {
     const x = -60 + i * 100;
@@ -548,7 +546,7 @@ export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; su
           <stop offset="0.86" stopColor={SER.apricot} /><stop offset="1" stopColor={SER.apricotL} />
         </linearGradient>
         <linearGradient id={`${id}-ice`} x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor={SER.peach} /><stop offset="0.35" stopColor={SER.snow} /><stop offset="1" stopColor={SER.snowD} />
+          <stop offset="0" stopColor={summer ? '#C9B07A' : SER.peach} /><stop offset="0.35" stopColor={summer ? '#8FA36A' : SER.snow} /><stop offset="1" stopColor={summer ? '#5E7A48' : SER.snowD} />
         </linearGradient>
       </defs>
       <rect x={-60} y={-60} width={1200} height={horizon + 60} fill={`url(#${id}-sky)`} data-band="ok" />
@@ -561,25 +559,27 @@ export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; su
         <path key={k} d={`M ${-100 + ((f * (0.3 + k * 0.15) + k * 400) % 1300)} ${horizon * (0.28 + k * 0.12)} q 90 -24 180 0 q 60 -14 120 4`} fill="none" stroke={SER.apricotL} strokeWidth={10 - k * 2} opacity={0.25} strokeLinecap="round" />
       ))}
       <path d={`M -60 ${horizon - 40} ${range} L 1140 ${horizon - 40} Z`} fill="#6E5B80" stroke={SER.ink} strokeWidth={4} opacity={0.95} transform={`translate(${drift * 0.3} 0)`} />
-      <path d={`M -60 ${horizon - 40} ${range} L 1140 ${horizon - 40} Z`} fill="#F6E6F0" opacity={0.35} transform={`translate(${drift * 0.3} 0) scale(1 1)`} clipPath={`inset(0 0 60% 0)`} />
+      {!summer && <path d={`M -60 ${horizon - 40} ${range} L 1140 ${horizon - 40} Z`} fill="#F6E6F0" opacity={0.35} transform={`translate(${drift * 0.3} 0) scale(1 1)`} clipPath={`inset(0 0 60% 0)`} />}
       {Array.from({length: 34}, (_, i) => {
         const x = -40 + i * 34 + 10 * h01(i, seed);
         const h = 40 + 46 * h01(i + 20, seed);
-        return <path key={i} d={`M ${x} ${horizon} L ${x + 14} ${horizon - h} L ${x + 28} ${horizon} Z`} fill={SER.spruce} stroke={SER.ink} strokeWidth={2} transform={`translate(${drift * 0.6} 0)`} />;
+        return <path key={i} d={`M ${x} ${horizon} L ${x + 14} ${horizon - h} L ${x + 28} ${horizon} Z`} fill={summer ? (i % 4 === 0 ? '#6E8A3A' : '#2F5A3A') : SER.spruce} stroke={SER.ink} strokeWidth={2} transform={`translate(${drift * 0.6} 0)`} />;
       })}
       <rect x={-60} y={horizon} width={1200} height={1920 - horizon + 60} fill={`url(#${id}-ice)`} data-band="ok" />
       {Array.from({length: 7}, (_, i) => (
         <path key={i} d={`M ${-40 + i * 170} ${horizon + 60 + i * 37 % 120} q 90 -8 180 0`} stroke="#fff" strokeWidth={3} opacity={0.35} fill="none" />
       ))}
       {children}
-      {drifts && Array.from({length: 6}, (_, i) => {
-        const x = -60 + i * 210 + 30 * h01(i, seed + 3);
-        const yy = 1620 + 60 * h01(i + 4, seed);
+      {drifts && Array.from({length: 9}, (_, i) => {
+        const x = -80 + i * 140 + 50 * h01(i, seed + 3);
+        const w = 140 + 160 * h01(i + 2, seed);
+        const yy = 1640 + 150 * h01(i + 4, seed);
+        const fill = summer ? (i % 2 ? '#4E6A3A' : '#5E7A48') : (i % 2 ? '#E7E0EE' : '#D9D0E3');
         return (
           <g key={i} data-band="ok">
-            <path d={`M ${x} 1940 Q ${x + 60} ${yy} ${x + 170} ${yy + 20} Q ${x + 240} ${yy + 30} ${x + 300} 1940 Z`} fill="#E7E0EE" stroke={SER.ink} strokeWidth={4} />
-            <path d={`M ${x + 70} ${yy + 22} q 50 -16 120 -2`} stroke="#fff" strokeWidth={4} opacity={0.7} fill="none" />
-            <path d={`M ${x + 130} ${yy + 14} l 4 -26 m 6 26 l 6 -20`} stroke={SER.spruceL} strokeWidth={3} />
+            <path d={`M ${x} 1960 Q ${x + w * 0.25} ${yy} ${x + w * 0.55} ${yy + 14} Q ${x + w * 0.8} ${yy + 24} ${x + w} 1960 Z`} fill={fill} stroke={SER.ink} strokeWidth={4} />
+            {!summer && <path d={`M ${x + w * 0.2} ${yy + 18} q ${w * 0.25} -12 ${w * 0.5} -2`} stroke="#fff" strokeWidth={4} opacity={0.7} fill="none" />}
+            {[0, 1, 2].map((k) => <path key={k} d={`M ${x + w * (0.3 + k * 0.15)} ${yy + 16 + k * 6} q ${3 + 2 * Math.sin(f / 20 + k + i)} -22 ${6} -${summer ? 40 : 24}`} stroke={summer ? '#8FA36A' : SER.spruceL} strokeWidth={3} fill="none" />)}
           </g>
         );
       })}
