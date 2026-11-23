@@ -316,6 +316,10 @@ print(f"dispatch_mix: bed arc {len(BED_ARC)} nodes, {BED_ARC_SOURCE}")
 # subordinate to the voice and fades before the final frame.
 AMB_IN, AMB_OUT = 0.0, max(0.0, VIDEO_SECS - 2.6)
 AMB_LEVEL = 0.045
+# In the pre-payoff silence dip the music drops to 0.015 and the effects to 0.15, but the
+# ambience bus keeps this gain (unity: the room goes on), so the breath is never digital quiet (the
+# post-mix DIP FLOOR check below fails a dip window under audio_report's dead-air floor).
+AMB_DIP_GAIN = 1.0
 
 # THE BED HAS TO BE THE WORLD ON SCREEN (machine pass 2026-10-25; queue: no-ambient-bed-in-mix,
 # location-ambience-beds). On 10-25 all three seats capped Sound at 7.0 to 7.3 for "no continuous
@@ -920,11 +924,23 @@ def main():
     # The downstream combined speech margin still covers every non-voice layer.
     fc.append(f"[bed]volume=volume={mix_arc}:eval=frame,"
               f"volume=enable='between(t,{dip0},{dip1})':volume=0.15,apad=whole_dur={VIDEO_SECS}[musicmeter]")
-    mix_in = "[amb]" + amb_labels + "".join(sfx_labels)
-    n = 1 + len(extra_amb) + len(sfx_labels)
-    fc.append(f"{mix_in}amix=inputs={n}:normalize=0:dropout_transition=0[background]")
-    fc.append(f"[background]volume=volume={mix_arc}:eval=frame,"
-              f"volume=enable='between(t,{dip0},{dip1})':volume=0.15[bg]")
+    # THE BREATH KEEPS ITS AIR (machine pass 2026-11-23; queue: pre-payoff-silence-reads-dead-air).
+    # The dip used to pull the whole background bus to 0.15 with the music already at 0.015, so
+    # the ambience went down with everything else and the pre-payoff window measured -59.9 dBFS
+    # on 11-23, under audio_report's -55 dBFS dead-air floor, and all three seats wrote "dead air"
+    # (the board's bed point was raised 0.15 to 0.35 in the run and changed nothing, because it
+    # scales a bed that is near zero there). A breath is the music stopping while the room goes
+    # on. So the effects still dip to 0.15, and the ambience bus holds AMB_DIP_GAIN (unity).
+    amb_n = 1 + len(extra_amb)
+    fc.append(f"[amb]{amb_labels}amix=inputs={amb_n}:normalize=0:dropout_transition=0,"
+              f"volume=enable='between(t,{dip0},{dip1})':volume={AMB_DIP_GAIN}[ambbus]")
+    if sfx_labels:
+        fc.append(f"{''.join(sfx_labels)}amix=inputs={len(sfx_labels)}:normalize=0:dropout_transition=0,"
+                  f"volume=enable='between(t,{dip0},{dip1})':volume=0.15[sfxbus]")
+        fc.append("[ambbus][sfxbus]amix=inputs=2:normalize=0:dropout_transition=0[background]")
+    else:
+        fc.append("[ambbus]anull[background]")
+    fc.append(f"[background]volume=volume={mix_arc}:eval=frame[bg]")
     master = os.path.join(AUD, "master.wav")
     premix = os.path.join(AUD, "premix.wav")
     voice_stem = os.path.join(AUD, "voice_stem.wav")
@@ -978,6 +994,21 @@ def main():
         print(f"restore {_restore} dB -> {_chk.stdout.strip().splitlines()[-1] if _chk.stdout.strip() else _chk.returncode}")
         if _chk.returncode == 0:
             break
+    # DIP FLOOR (machine pass 2026-11-23): measure the performed breath in the master, the way
+    # audio_report measures every gap, and fail here rather than in front of the panel.
+    if DIP_LEN > 0:
+        from audio_report import decode_mono, DEAD_AIR_DBFS, EDGE_S
+        import numpy as _np
+        _mono = decode_mono(master)
+        _seg = _mono[int((dip0 + EDGE_S) * 16000):int((dip1 - EDGE_S) * 16000)] if _mono is not None else []
+        if len(_seg):
+            _db = 20 * math.log10(max(float(_np.sqrt(_np.mean(_np.square(_seg, dtype=_np.float64)))), 1e-9))
+            print(f"dispatch_mix: DIP FLOOR silence dip window {dip0:.2f}-{dip1:.2f}s measures {_db:.1f} dBFS "
+                  f"(dead-air floor {DEAD_AIR_DBFS:g})")
+            if _db < DEAD_AIR_DBFS:
+                raise SystemExit(f"dispatch_mix: DIP FLOOR FAIL, the pre-payoff breath is digital quiet "
+                                 f"({_db:.1f} dBFS < {DEAD_AIR_DBFS:g}); raise AMB_DIP_GAIN or the board's "
+                                 f"audio_arc.ambience / ambience_level so the room plays through it")
     priority["master_sha256"] = audio_sha(master)
     json.dump(priority, open(report_path, "w"), indent=2, allow_nan=False)
     os.remove(premix)

@@ -105,6 +105,7 @@ import {FigureLook} from './FigureLook';
 import {ForestLook} from './ForestLook';
 import {MooseLook} from './MooseLook';
 import {SuitLook} from './SuitLook';
+import {OperatorLook} from './OperatorLook';
 import {MirrorLook} from './MirrorLook';
 import {EyeLook} from './EyeLook';
 
@@ -133,6 +134,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="ForestLook" component={ForestLook} durationInFrames={240} fps={30} width={1080} height={1920} defaultProps={{mode: 'rig' as const}}/>
       <Composition id="MooseLook" component={MooseLook} durationInFrames={120} fps={30} width={1080} height={1920} defaultProps={{mode: 'walk' as const}}/>
       <Composition id="SuitLook" component={SuitLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
+      <Composition id="OperatorLook" component={OperatorLook} durationInFrames={90} fps={30} width={1080} height={1920}/>
       <Composition id="MirrorLook" component={MirrorLook} durationInFrames={60} fps={30} width={1080} height={1920}/>
       <Composition id="EyeLook" component={EyeLook} durationInFrames={600} fps={30} width={1080} height={1920}/>
       <Composition id="FlightCrateLook" component={FlightCrateLook} durationInFrames={90} fps={30} width={1080} height={1920}/>

@@ -225,6 +225,16 @@ def analyze(src, hero=None, ep_dir=None, reader=None):
     for what, line in labels_in_finish(src):
         problems.append(f"{what} at line {line} is drawn inside <FigureFinish>, whose filter region cuts it at the "
                         f"figure's box and rims it like a body: draw labels after </FigureFinish>")
+    # machine pass 2026-11-23 (figure-finish-parity): without `outline` the rim inset is w * 0.05, which on a
+    # 210 px figure drawn with a 6 px ink line floats the rim 4 px inside it and every limb reads as a second,
+    # ghosted outline. A note, not a fail: shipped figures without it are unchanged.
+    for m in FINISH_OPEN.finditer(src):
+        tag_end = src.find(">", m.end())
+        if tag_end > 0 and "outline=" not in src[m.end():tag_end]:
+            line = src.count("\n", 0, m.start()) + 1
+            notes.append(f"<FigureFinish> at line {line} has no `outline`: pass the figure's ink line width in the "
+                         f"parent's px (the lib Suit passes outline={{3.5 * s}} rimWidth={{3.2 * s}}) so the rim hugs "
+                         f"the outline instead of drawing a ghost contour inside each limb")
     if ("<IdleFigure" in src or "figureIdle(" in src) and "cues" not in src:
         notes.append("IdleFigure/figureIdle used without `cues`: the shift lands on humanIdle's schedule, "
                      "not inside the beat strips; pass cues={[p.b(id), ...]} for the figure's beats")
@@ -284,7 +294,11 @@ def _self_test():
     no_cues = analyze(wrapped.replace("cues={[p.b(3)]}", ""))[1]
     if not no_cues:
         bad.append("IdleFigure without cues should note")
-    print("figure_rig_check self-test:", "FAIL " + "; ".join(bad) if bad else f"PASS ({len(cases) + 1} cases)")
+    if not any("no `outline`" in n for n in analyze(fin_ok)[1]):
+        bad.append("FigureFinish without outline should note")
+    if any("no `outline`" in n for n in analyze(fin_ok.replace("w={2} h={3}>", "w={2} h={3} outline={4}>"))[1]):
+        bad.append("FigureFinish with outline should not note")
+    print("figure_rig_check self-test:", "FAIL " + "; ".join(bad) if bad else f"PASS ({len(cases) + 3} cases)")
     return 1 if bad else 0
 
 

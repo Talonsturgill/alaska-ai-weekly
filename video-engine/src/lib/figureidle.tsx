@@ -279,13 +279,18 @@ export const FigureFinish: React.FC<{
   contact?: number;
   rimColor?: string;
   shadeColor?: string;
-  /** the figure's outline width in the parent's px; the rim sits just inside it (default w * 0.05) */
+  /** the figure's outline width in the parent's px; the rim sits just inside it (default w * 0.05).
+   *  PASS IT for any figure drawn with a fixed ink stroke: the default grows with the figure, and on the
+   *  11-23 pilot (w 210) it put the rim 10.5 px inside a 6 px ink line, so a coat-coloured strip sat
+   *  between them and every limb read as a second, ghosted outline (all three seats). */
   outline?: number;
+  /** width of the rim band in the parent's px (default w * 0.03, clamped 3 to 9) */
+  rimWidth?: number;
   children: React.ReactNode;
-}> = ({x, footY, w, h, keySide = 'left', rim = 0.7, shade = 0.42, contact = 0.5, rimColor = '#FFE7B8', shadeColor = '#0E0A16', outline, children}) => {
+}> = ({x, footY, w, h, keySide = 'left', rim = 0.7, shade = 0.42, contact = 0.5, rimColor = '#FFE7B8', shadeColor = '#0E0A16', outline, rimWidth, children}) => {
   const dir = keySide === 'left' ? 1 : -1;
   const inset = outline ?? Math.max(2, w * 0.05);
-  const rimW = Math.max(3, Math.min(9, w * 0.03));
+  const rimW = rimWidth ?? Math.max(3, Math.min(9, w * 0.03));
   const coreW = Math.max(12, w * 0.32);
   const id = `figfinish-${Math.round(x)}-${Math.round(footY)}-${Math.round(w)}`;
   const pad = Math.max(w, h) * 0.2;
