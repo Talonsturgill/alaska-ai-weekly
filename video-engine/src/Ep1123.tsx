@@ -253,7 +253,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
           </g>
           <MapPin f={f} x={NEN[0]} y={NEN[1]} color={SER.warm} />
           <Tag x={NEN[0] + 70} y={NEN[1] + 40} text="NENANA" size={22} />
-          <MapDogs f={f} x={dogAt[0]} y={dogAt[1] + 6} s={lerp(0.5, 0.32, clamp01(f / 40))} />
+          <MapDogs f={f} x={dogAt[0]} y={dogAt[1] + 6} s={lerp(0.8, 0.32, clamp01(f / 50))} />
           {loopK > 0 && loopK < 1 && <CargoDrone f={f} x={sh[0]} y={sh[1]} view="top" scale={0.12} rot={ang} shadowOnly />}
         </IceFromAbove>
       </SVG>
@@ -337,8 +337,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
 const S3: React.FC<SceneProps> = ({p}) => {
   const {f} = p;
   const b7 = p.b(7), b8 = p.b(8), b9 = p.b(9), b10 = p.b(10);
-  const teamX = lerp(1300, 140, clamp01(f / Math.max(1, b9 + 20)));
-  const count = Math.round(674 * easeIO(f, b8, 40));
+  const teamX = lerp(560, 140, clamp01(f / Math.max(1, b9 + 20)));
+  const count = Math.round(674 * easeIO(f, b7, Math.max(40, b8 - b7 + 30)));
   const drop = clamp01((f - b10) / 26);
   const cam = track([{t: 0, z: 1.04, fx: 600, fy: 1000}, {t: b9, z: 1.04, fx: 480, fy: 1000}, {t: p.dur, z: 1.09, fx: 640, fy: 1020}]);
   return (
@@ -436,7 +436,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
           {Array.from({length: 9}, (_, i) => <rect key={i} x={-20 + i * 140 - ((f * 6 * roll) % 140)} y={1250} width={70} height={10} fill="#F3EEF6" opacity={0.7} />)}
           <RunwayLights f={f} y={1206} />
           <RunwayLights f={f} y={1306} />
-          <Hangar f={f} x={60} y={1200} door={door} />
+          <Hangar f={f} x={140} y={1200} door={door} />
           <HeldTravel f={f} x={dx - 300} y={dy - 160} w={600} h={180} mode="sweep" seed={41}>
             <CargoDrone f={f} x={dx} y={dy} scale={1.0} prop={0.5 + 0.5 * roll} rot={-10 * lift} gear groundY={lift < 0.05 ? 1252 : undefined} />
           </HeldTravel>
@@ -485,7 +485,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
 };
 
 // ---- S6 the pilots (L7) ------------------------------------------------------------------------------------------------------------------------
-const Room: React.FC<{f: number; seed?: number; lamp?: number; kind?: 'plank' | 'hangar' | 'frosted'; night?: number; props?: boolean; children?: React.ReactNode}> = ({f, seed = 1, lamp = 0, kind = 'plank', night = 0, props = true, children}) => (
+const Room: React.FC<{f: number; seed?: number; lamp?: number; kind?: 'plank' | 'hangar' | 'blinds'; night?: number; props?: boolean; children?: React.ReactNode}> = ({f, seed = 1, lamp = 0, kind = 'plank', night = 0, props = true, children}) => (
   <g>
     <rect data-band="ok" x={-120} y={-120} width={1320} height={1400} fill={kind === 'hangar' ? '#4E5260' : '#3A2E48'} />
     {Array.from({length: kind === 'hangar' ? 30 : 12}, (_, i) => <line key={i} x1={-120 + i * (kind === 'hangar' ? 46 : 110)} x2={-120 + i * (kind === 'hangar' ? 46 : 110)} y1={-120} y2={1280} stroke={kind === 'hangar' ? '#3E4250' : '#2E2440'} strokeWidth={kind === 'hangar' ? 4 : 6} />)}
@@ -506,9 +506,8 @@ const Room: React.FC<{f: number; seed?: number; lamp?: number; kind?: 'plank' | 
       <rect x={-286} y={40} width={572} height={26} fill="#8E8099" />
       {Array.from({length: 8}, (_, i) => <circle key={i} cx={-260 + i * 74} cy={50} r={4} fill={SER.warm} opacity={0.6 + 0.4 * Math.sin(f / 6 + i)} />)}
       <rect x={-286} y={-206} width={572} height={272} fill={SER.night} opacity={night} />
-      {kind === 'frosted' && <rect x={-286} y={-206} width={572} height={272} fill="#E8F0F6" opacity={0.55} />}
-      {kind === 'frosted' && Array.from({length: 14}, (_, i) => <path key={i} d={`M ${-280 + h01(i, 3) * 560} ${-200 + h01(i, 4) * 260} l 10 -12 m -10 12 l 14 6 m -14 -6 l -6 14`} stroke="#FFFFFF" strokeWidth={3} />)}
-      {kind === 'frosted' && <g transform="translate(330 -40)"><rect x={-10} y={-90} width={20} height={150} rx={8} fill={C.paper} stroke={C.ink} strokeWidth={4} /><rect x={-4} y={10} width={8} height={40} fill="#3E7FD0" /><circle cx={0} cy={56} r={12} fill="#3E7FD0" stroke={C.ink} strokeWidth={4} /></g>}
+      {kind === 'blinds' && Array.from({length: 12}, (_, i) => <rect key={i} x={-286} y={-206 + i * 22} width={572} height={12} fill="#C9B8A4" stroke={C.ink} strokeWidth={2} opacity={0.92} transform={`rotate(${2 * Math.sin(f / 40)} 0 ${-200 + i * 22})`} />)}
+      {kind === 'blinds' && <path d="M 250 -206 L 250 70" stroke={C.ink} strokeWidth={3} />}
       <line x1={0} y1={-206} x2={0} y2={66} stroke={C.ink} strokeWidth={8} />
       <line x1={-286} y1={-80} x2={286} y2={-80} stroke={C.ink} strokeWidth={6} />
     </g>}
@@ -748,13 +747,13 @@ const S11: React.FC<SceneProps> = ({p}) => {
       <g>
         <Plate text="CATHY CAHILL · UAF DRONE CENTER DIRECTOR" displayLines={['CATHY CAHILL', 'UAF DRONE CENTER DIRECTOR']} x={540} y={570} size={32} p={win(f, b28 + 4, b29)} />
         <Plate text={'"THE BLOOD COULD SURVIVE" · CAHILL'} displayLines={['"THE BLOOD COULD SURVIVE" · CAHILL', 'PER THE NEWS-MINER · NOVEMBER 19TH']} x={540} y={580} size={30} tone="dark" p={win(f, b29 + 4, b30)} /> {/* plate-overlap-ok */}
-        <Plate text="THE COMPARISON" x={540} y={660} size={36} p={win(f, b30 + 4, b31)} /> {/* plate-overlap-ok */}
-        <Plate text="LAB RESULTS · NOT PUBLISHED" x={540} y={720} size={36} tone="dark" p={win(f, b31 + 2) * (f > b32 + 20 ? 0.75 : 1)} /> {/* plate-overlap-ok */}
-        <Plate text="CLAIM THE TRIP · NOT THE RESULT" x={540} y={780} size={34} p={win(f, b32 + 12)} /> {/* plate-overlap-ok */}
+        <Plate text="THE COMPARISON" x={540} y={600} size={36} p={win(f, b30 + 4, b31)} /> {/* plate-overlap-ok */}
+        <Plate text="LAB RESULTS · NOT PUBLISHED" x={540} y={600} size={36} tone="dark" p={win(f, b31 + 2, b32 + 10)} /> {/* plate-overlap-ok */}
+        <Plate text="CLAIM THE TRIP · NOT THE RESULT" x={540} y={600} size={34} p={win(f, b32 + 12)} /> {/* plate-overlap-ok */}
       </g>
     }>
       <SVG>
-        <Room f={f} seed={11} kind="frosted" props={false}>
+        <Room f={f} seed={11} kind="blinds" props={false}>
           {/* a wall shelf of sample racks and binders, the top of the square */}
           <g>
             <rect x={80} y={660} width={360} height={16} fill="#7A6E86" stroke={C.ink} strokeWidth={4} />
@@ -826,12 +825,12 @@ const S12: React.FC<SceneProps> = ({p}) => {
             </g>
           ))}
           {/* the only road: a short track reaching 2 of 10 roofs */}
-          <path d="M 1140 1240 Q 1000 1150 900 1040" stroke="#8E8099" strokeWidth={26} fill="none" />
+          <path d="M 1140 1240 Q 1010 1120 920 1000" stroke={C.ink} strokeWidth={34} fill="none" strokeLinecap="round" />
+          <path d="M 1140 1240 Q 1010 1120 920 1000" stroke="#B9AFC4" strokeWidth={24} fill="none" strokeLinecap="round" />
           <HeldTravel f={f} x={60} y={1000} w={960} h={280} mode="shadow" seed={121}>
             <Village f={f} x={540} y={1260} s={1.25} glow={clamp01((f - b33) / 20)} seed={12} runway={false} />
           </HeldTravel>
-          <g transform="translate(900 950)"><Tag x={0} y={0} text="ROAD" size={16} /></g>
-          <g transform="translate(1000 970)"><Tag x={0} y={0} text="ROAD" size={16} /></g>
+          <g transform="translate(1000 1080)"><Tag x={0} y={0} text="ROAD" size={18} /></g>
         </DuskWorld>
       </SVG>
     </Frame>
@@ -902,7 +901,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const b36 = p.b(36), b37 = p.b(37), b38 = p.b(38), b43 = p.b(43);
   const up = ease(f, b36, 16);
   const hop = easeIO(f, b37 - 4, 30);
-  const rx = lerp(250, 760, hop);
+  const rx = lerp(330, 975, hop);
   const ry = 1260 - 140 * Math.sin(hop * Math.PI);
   const sweep = easeIO(f, b38 + 12, 30);
   const linkBreak = f > b38 + 6;
@@ -965,9 +964,9 @@ const S15: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={cam} overlay={
       <g>
-        <Plate text="PARTNERS · RYAN AIR · TANANA CHIEFS CONFERENCE" displayLines={['PARTNERS · RYAN AIR', 'TANANA CHIEFS CONFERENCE']} x={540} y={590} size={32} p={win(f, b39 + 4)} />
-        <Plate text="AN ALASKA NATIVE NONPROFIT" x={540} y={690} size={32} tone="dark" p={win(f, b44 + 4)} />
-        <Plate text="DEVELOP OR TEST · MEDICAL DELIVERY" x={540} y={770} size={32} p={win(f, b40 + 4)} />
+        <Plate text="PARTNERS · RYAN AIR · TANANA CHIEFS CONFERENCE" displayLines={['PARTNERS · RYAN AIR', 'TANANA CHIEFS CONFERENCE']} x={540} y={590} size={32} p={win(f, b39 + 4, b44)} />
+        <Plate text="AN ALASKA NATIVE NONPROFIT" x={540} y={590} size={32} tone="dark" p={win(f, b44 + 4, b40)} /> {/* plate-overlap-ok */}
+        <Plate text="DEVELOP OR TEST · MEDICAL DELIVERY" x={540} y={590} size={32} p={win(f, b40 + 4)} /> {/* plate-overlap-ok */}
       </g>
     }>
       <SVG>
@@ -1030,8 +1029,8 @@ const S16: React.FC<SceneProps> = ({p}) => {
               <Ribbon f={f} pts={solid} w={14} seed={17} wobble={0.8} />
               {lay > 0.3 && (
                 <g>
-                  <path d={`M ${NEN[0] + dx * lim} ${NEN[1] + dy * lim} L ${dashEnd[0]} ${dashEnd[1]}`} stroke={C.ink} strokeWidth={14} strokeDasharray="18 14" strokeLinecap="round" />
-                  <path d={`M ${NEN[0] + dx * lim} ${NEN[1] + dy * lim} L ${dashEnd[0]} ${dashEnd[1]}`} stroke={SER.phosD} strokeWidth={8} strokeDasharray="18 14" strokeLinecap="round" />
+                  <path d={`M ${NEN[0] + dx * lim} ${NEN[1] + dy * lim} L ${dashEnd[0]} ${dashEnd[1]}`} stroke={C.ink} strokeWidth={14} strokeDasharray="12 22" strokeLinecap="butt" />
+                  <path d={`M ${NEN[0] + dx * lim} ${NEN[1] + dy * lim} L ${dashEnd[0]} ${dashEnd[1]}`} stroke={SER.phosD} strokeWidth={8} strokeDasharray="12 22" strokeLinecap="butt" />
                 </g>
               )}
             </g>

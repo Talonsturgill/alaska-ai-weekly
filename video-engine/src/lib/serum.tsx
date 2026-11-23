@@ -183,24 +183,23 @@ export const CargoDrone: React.FC<{
       <path d="M -270 -96 L -232 -96 L -208 -40 L -250 -40 Z" fill={t.core} stroke={SER.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d="M -286 -52 L -196 -52 L -196 -42 L -286 -42 Z" fill={t.shade} stroke={SER.ink} strokeWidth={5} />
       {/* the far engine, behind the fuselage */}
-      <rect x={44} y={-124} width={96} height={28} rx={13} fill={t.shade} stroke={SER.ink} strokeWidth={5} />
-      <ellipse cx={150} cy={-110} rx={7} ry={36} fill="#fff" opacity={0.18 + 0.15 * prop} />
+      <rect x={50} y={-92} width={92} height={26} rx={12} fill={t.shade} stroke={SER.ink} strokeWidth={5} />
+      <ellipse cx={152} cy={-79} rx={7} ry={34} fill="#fff" opacity={0.18 + 0.15 * prop} />
       {/* fuselage pod: a windowless cargo body with a sensor ball at the nose */}
       <path d="M -250 -60 L 150 -78 Q 236 -72 250 -36 Q 246 -6 200 0 L -60 0 L -250 -40 Z" fill={`url(#${id}-b)`} stroke={SER.ink} strokeWidth={7} strokeLinejoin="round" />
-      <circle cx={236} cy={-14} r={13} fill="#3E4A5E" stroke={SER.ink} strokeWidth={4} />
-      <circle cx={232} cy={-18} r={4} fill="#9FD0E0" />
+      <path d="M 226 -24 L 246 -24 L 246 -6 L 226 -6 Z" fill={t.shade} stroke={SER.ink} strokeWidth={3} />
       {[-170, -90, -10, 70].map((dx) => <path key={dx} d={`M ${dx} ${-70 + (dx + 250) * 0.02} L ${dx + 6} ${-4}`} stroke={t.core} strokeWidth={3} />)}
       <path d={`M -150 -6 L -10 -6`} stroke={SER.ink} strokeWidth={4} />
       <rect x={-140} y={-10 + doors * 10} width={120} height={10} rx={3} fill={t.core} stroke={SER.ink} strokeWidth={3} />
       {[-200, -120, -40, 40, 120].map((dx) => <circle key={`r${dx}`} cx={dx} cy={-58 + (dx + 250) * 0.02} r={2.6} fill={SER.ink} opacity={0.5} />)}
       {/* high wing, seen edge on, with struts */}
-      <path d="M -70 -96 L 150 -100 L 160 -84 L -70 -80 Z" fill={t.key} stroke={SER.ink} strokeWidth={6} strokeLinejoin="round" />
-      <path d="M -40 -80 L 10 -60 M 120 -84 L 60 -62" stroke={SER.ink} strokeWidth={5} />
-      {/* the near engine nacelle hanging off the wing, prop disc */}
-      <rect x={20} y={-118} width={110} height={34} rx={16} fill={t.core} stroke={SER.ink} strokeWidth={6} />
-      <ellipse cx={140} cy={-101} rx={9} ry={44} fill="#fff" opacity={0.28 + 0.2 * prop} stroke={SER.ink} strokeWidth={2} strokeOpacity={0.5} />
-      <line x1={140} y1={-101 - 40 * Math.cos((spin * Math.PI) / 180)} x2={140} y2={-101 + 40 * Math.cos((spin * Math.PI) / 180)} stroke={SER.ink} strokeWidth={5} opacity={prop > 0.6 ? 0.25 : 0.9} />
-      <circle cx={140} cy={-101} r={7} fill={SER.steel} stroke={SER.ink} strokeWidth={3} />
+      <path d="M -80 -112 L 160 -116 L 170 -94 L -80 -90 Z" fill={t.key} stroke={SER.ink} strokeWidth={6} strokeLinejoin="round" />
+      <path d="M -60 -90 L -60 -76 M 140 -94 L 140 -78" stroke={SER.ink} strokeWidth={5} />
+      {/* the near engine nacelle slung UNDER the high wing, prop disc */}
+      <rect x={20} y={-96} width={110} height={32} rx={15} fill={t.core} stroke={SER.ink} strokeWidth={6} />
+      <ellipse cx={140} cy={-80} rx={9} ry={42} fill="#fff" opacity={0.28 + 0.2 * prop} stroke={SER.ink} strokeWidth={2} strokeOpacity={0.5} />
+      <line x1={140} y1={-80 - 38 * Math.cos((spin * Math.PI) / 180)} x2={140} y2={-80 + 38 * Math.cos((spin * Math.PI) / 180)} stroke={SER.ink} strokeWidth={5} opacity={prop > 0.6 ? 0.25 : 0.9} />
+      <circle cx={140} cy={-80} r={7} fill={SER.steel} stroke={SER.ink} strokeWidth={3} />
       {/* gear */}
       {gear && (
         <g>
@@ -211,7 +210,7 @@ export const CargoDrone: React.FC<{
         </g>
       )}
       <RimLight d="M -250 -60 L 150 -78 Q 236 -72 250 -36" w={4} opacity={0.6} color={rim} />
-      <RimLight d="M -70 -96 L 150 -100" w={3} opacity={0.6} color={rim} />
+      <RimLight d="M -80 -112 L 160 -116" w={3} opacity={0.6} color={rim} />
     </g>
   );
 };
@@ -238,25 +237,23 @@ export const RadarEye: React.FC<{f: number; x: number; y: number; scale?: number
   const blink = ((f + seed * 29) % 96) < 4 ? 0.2 : 1;
   return (
     <g transform={`translate(${x} ${y - bp.dip}) scale(${scale}) rotate(${bp.skew * 0.5})`} opacity={ghost}>
-      {dash('M -34 0 L 34 0', 6)}
-      {dash('M 0 0 L 0 -62', 7)}
-      <g transform={`translate(0 -70) rotate(${tilt})`}>
-        <path d="M -70 -10 Q 0 50 70 -10 Q 0 -6 -70 -10 Z" fill={g} opacity={0.22} />
-        {dash('M -70 -10 Q 0 50 70 -10', 7)}
-        {dash('M -70 -10 Q 0 -6 70 -10', 4)}
-        {dash('M 0 14 L 0 -46', 4)}
-        <circle cx={0} cy={-52} r={7} fill={g} stroke={SER.ink} strokeWidth={3} />
+      {dash('M -40 0 L 40 0', 7)}
+      {dash('M 0 0 L 0 -70', 8)}
+      <g transform={`translate(0 -78) rotate(${tilt})`}>
+        <path d="M -80 -20 Q 0 70 80 -20 Z" fill={g} opacity={0.28} />
+        <path d="M -80 -20 Q 0 70 80 -20 Z" fill="none" stroke={SER.ink} strokeWidth={12} strokeDasharray="14 9" strokeDashoffset={off} strokeLinejoin="round" />
+        <path d="M -80 -20 Q 0 70 80 -20 Z" fill="none" stroke={g} strokeWidth={6} strokeDasharray="14 9" strokeDashoffset={off} strokeLinejoin="round" />
         <g transform={`translate(${look * 6} 14)`}>
-          <ellipse cx={0} cy={0} rx={18} ry={16 * blink} fill="none" stroke={SER.ink} strokeWidth={8} strokeDasharray="8 6" />
-          <ellipse cx={0} cy={0} rx={18} ry={16 * blink} fill="none" stroke={g} strokeWidth={4} strokeDasharray="8 6" />
-          <circle cx={look * 4} cy={1} r={6 * blink} fill={g} stroke={SER.ink} strokeWidth={2.5} />
-          {emotion === 'eager' && <path d="M -12 -24 L 12 -26" stroke={g} strokeWidth={4} strokeLinecap="round" />}
-          {emotion === 'shy' && <path d="M -12 -26 L 12 -22" stroke={g} strokeWidth={4} strokeLinecap="round" />}
+          <circle cx={0} cy={0} r={15} fill={SER.paper} opacity={0.9} />
+          <circle cx={0} cy={0} r={15} fill="none" stroke={SER.ink} strokeWidth={5} />
+          <circle cx={look * 4} cy={1} r={7 * blink} fill={SER.ink} />
+          {emotion === 'eager' && <path d="M -12 -22 L 12 -24" stroke={SER.ink} strokeWidth={4} strokeLinecap="round" />}
+          {emotion === 'shy' && <path d="M -12 -24 L 12 -20" stroke={SER.ink} strokeWidth={4} strokeLinecap="round" />}
         </g>
         {sweep > 0 && (
           <g>
-            <path d={`M 0 -46 L ${-110 * sweep} ${-46 - 220 * sweep} A ${245 * sweep} ${245 * sweep} 0 0 1 ${110 * sweep} ${-46 - 220 * sweep} Z`} fill={g} opacity={0.14} />
-            {dash(`M ${-110 * sweep} ${-46 - 220 * sweep} A ${245 * sweep} ${245 * sweep} 0 0 1 ${110 * sweep} ${-46 - 220 * sweep}`, 4)}
+            <path d={`M 0 -20 L ${-120 * sweep} ${-20 - 230 * sweep} A ${260 * sweep} ${260 * sweep} 0 0 1 ${120 * sweep} ${-20 - 230 * sweep} Z`} fill={g} opacity={0.16} />
+            {dash(`M ${-120 * sweep} ${-20 - 230 * sweep} A ${260 * sweep} ${260 * sweep} 0 0 1 ${120 * sweep} ${-20 - 230 * sweep}`, 4)}
           </g>
         )}
       </g>

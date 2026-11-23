@@ -178,7 +178,7 @@ def BOARD_HEAD(b_at, end, ad, tr):
         "tail_s": 2.0, "audio_arc": {"bed": [
             {"line": 0, "offset": 0.0, "level": 1.0}, {"line": 1, "offset": 0.0, "level": 0.7}, {"line": 5, "offset": 0.0, "level": 1.2},
             {"line": 11, "offset": 0.0, "level": 1.3}, {"line": 15, "offset": 0.0, "level": 0.6}, {"line": 19, "offset": 0.0, "level": 1.2},
-            {"at_s": round(b_at(42) - 0.5, 3), "level": 0.15}, {"at_s": round(b_at(42) + 0.4, 3), "level": 1.3},
+            {"at_s": round(b_at(42) - 0.5, 3), "level": 0.35}, {"at_s": round(b_at(42) + 0.4, 3), "level": 1.3},
             {"from_end": 0.4, "level": 0.0}],
             "ambience": "wind",
             "build_steps": 4, "dip_at": round(b_at(42) - 0.5, 3), "riser_at": round(b_at(41) - 1.0, 3), "silence_at": round(b_at(42) - 0.5, 3),
