@@ -830,7 +830,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <HeldTravel f={f} x={60} y={1000} w={960} h={280} mode="shadow" seed={121}>
             <Village f={f} x={540} y={1260} s={1.25} glow={clamp01((f - b33) / 20)} seed={12} runway={false} />
           </HeldTravel>
-          <g transform="translate(1000 1080)"><Tag x={0} y={0} text="ROAD" size={18} /></g>
+          <g transform="translate(925 1065)"><Tag x={0} y={0} text="ROAD" size={18} /></g>
         </DuskWorld>
       </SVG>
     </Frame>
