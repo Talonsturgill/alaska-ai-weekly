@@ -161,7 +161,7 @@ export const CargoDrone: React.FC<{
     const op = shadowOnly ? 0.35 : 1;
     return (
       <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${scale})`} opacity={op}>
-        <path d="M -40 -20 L 230 -16 Q 262 0 230 16 L -40 20 L -200 12 L -200 -12 Z" fill={c} stroke={shadowOnly ? 'none' : SER.ink} strokeWidth={6} strokeLinejoin="round" />
+        <path d="M -40 -20 L 230 -16 Q 262 0 230 16 L -40 20 L -236 10 L -236 -10 Z" fill={c} stroke={shadowOnly ? 'none' : SER.ink} strokeWidth={6} strokeLinejoin="round" />
         <rect x={-10} y={-310} width={86} height={620} rx={18} fill={c} stroke={shadowOnly ? 'none' : SER.ink} strokeWidth={6} />
         <path d="M -230 -90 L -170 -90 L -170 90 L -230 90 Z" fill={c} stroke={shadowOnly ? 'none' : SER.ink} strokeWidth={5} />
         {[-130, 130].map((s) => (
@@ -182,15 +182,21 @@ export const CargoDrone: React.FC<{
       {/* tail */}
       <path d="M -270 -96 L -232 -96 L -208 -40 L -250 -40 Z" fill={t.core} stroke={SER.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d="M -286 -52 L -196 -52 L -196 -42 L -286 -42 Z" fill={t.shade} stroke={SER.ink} strokeWidth={5} />
-      {/* fuselage pod */}
+      {/* the far engine, behind the fuselage */}
+      <rect x={44} y={-124} width={96} height={28} rx={13} fill={t.shade} stroke={SER.ink} strokeWidth={5} />
+      <ellipse cx={150} cy={-110} rx={7} ry={36} fill="#fff" opacity={0.18 + 0.15 * prop} />
+      {/* fuselage pod: a windowless cargo body with a sensor ball at the nose */}
       <path d="M -250 -60 L 150 -78 Q 236 -72 250 -36 Q 246 -6 200 0 L -60 0 L -250 -40 Z" fill={`url(#${id}-b)`} stroke={SER.ink} strokeWidth={7} strokeLinejoin="round" />
-      <path d="M 150 -70 Q 210 -66 232 -44 L 186 -44 Z" fill="#3E4A5E" stroke={SER.ink} strokeWidth={4} />
-      {[-150, -90, -30].map((dx) => <rect key={dx} x={dx} y={-48 + doors * 10} width={46} height={30} rx={4} fill={t.core} stroke={SER.ink} strokeWidth={3.5} />)}
+      <circle cx={236} cy={-14} r={13} fill="#3E4A5E" stroke={SER.ink} strokeWidth={4} />
+      <circle cx={232} cy={-18} r={4} fill="#9FD0E0" />
+      {[-170, -90, -10, 70].map((dx) => <path key={dx} d={`M ${dx} ${-70 + (dx + 250) * 0.02} L ${dx + 6} ${-4}`} stroke={t.core} strokeWidth={3} />)}
+      <path d={`M -150 -6 L -10 -6`} stroke={SER.ink} strokeWidth={4} />
+      <rect x={-140} y={-10 + doors * 10} width={120} height={10} rx={3} fill={t.core} stroke={SER.ink} strokeWidth={3} />
       {[-200, -120, -40, 40, 120].map((dx) => <circle key={`r${dx}`} cx={dx} cy={-58 + (dx + 250) * 0.02} r={2.6} fill={SER.ink} opacity={0.5} />)}
-      {/* high wing, seen edge on */}
+      {/* high wing, seen edge on, with struts */}
       <path d="M -70 -96 L 150 -100 L 160 -84 L -70 -80 Z" fill={t.key} stroke={SER.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d="M -40 -80 L 10 -60 M 120 -84 L 60 -62" stroke={SER.ink} strokeWidth={5} />
-      {/* engine nacelle hanging off the wing, prop disc */}
+      {/* the near engine nacelle hanging off the wing, prop disc */}
       <rect x={20} y={-118} width={110} height={34} rx={16} fill={t.core} stroke={SER.ink} strokeWidth={6} />
       <ellipse cx={140} cy={-101} rx={9} ry={44} fill="#fff" opacity={0.28 + 0.2 * prop} stroke={SER.ink} strokeWidth={2} strokeOpacity={0.5} />
       <line x1={140} y1={-101 - 40 * Math.cos((spin * Math.PI) / 180)} x2={140} y2={-101 + 40 * Math.cos((spin * Math.PI) / 180)} stroke={SER.ink} strokeWidth={5} opacity={prop > 0.6 ? 0.25 : 0.9} />
@@ -232,10 +238,11 @@ export const RadarEye: React.FC<{f: number; x: number; y: number; scale?: number
   const blink = ((f + seed * 29) % 96) < 4 ? 0.2 : 1;
   return (
     <g transform={`translate(${x} ${y - bp.dip}) scale(${scale}) rotate(${bp.skew * 0.5})`} opacity={ghost}>
-      {dash('M -34 0 L 34 0')}
-      {dash('M 0 0 L 0 -62')}
+      {dash('M -34 0 L 34 0', 6)}
+      {dash('M 0 0 L 0 -62', 7)}
       <g transform={`translate(0 -70) rotate(${tilt})`}>
-        {dash('M -70 -10 Q 0 50 70 -10')}
+        <path d="M -70 -10 Q 0 50 70 -10 Q 0 -6 -70 -10 Z" fill={g} opacity={0.22} />
+        {dash('M -70 -10 Q 0 50 70 -10', 7)}
         {dash('M -70 -10 Q 0 -6 70 -10', 4)}
         {dash('M 0 14 L 0 -46', 4)}
         <circle cx={0} cy={-52} r={7} fill={g} stroke={SER.ink} strokeWidth={3} />
@@ -246,7 +253,12 @@ export const RadarEye: React.FC<{f: number; x: number; y: number; scale?: number
           {emotion === 'eager' && <path d="M -12 -24 L 12 -26" stroke={g} strokeWidth={4} strokeLinecap="round" />}
           {emotion === 'shy' && <path d="M -12 -26 L 12 -22" stroke={g} strokeWidth={4} strokeLinecap="round" />}
         </g>
-        {sweep > 0 && [1, 2, 3].map((k) => dash(`M ${-40 * k * sweep} ${-60 - 34 * k * sweep} Q 0 ${-90 - 50 * k * sweep} ${40 * k * sweep} ${-60 - 34 * k * sweep}`, 3))}
+        {sweep > 0 && (
+          <g>
+            <path d={`M 0 -46 L ${-110 * sweep} ${-46 - 220 * sweep} A ${245 * sweep} ${245 * sweep} 0 0 1 ${110 * sweep} ${-46 - 220 * sweep} Z`} fill={g} opacity={0.14} />
+            {dash(`M ${-110 * sweep} ${-46 - 220 * sweep} A ${245 * sweep} ${245 * sweep} 0 0 1 ${110 * sweep} ${-46 - 220 * sweep}`, 4)}
+          </g>
+        )}
       </g>
       {tag && <Tag x={0} y={36} text="PLANNED" size={20} fill={SER.paper} />}
     </g>
@@ -346,7 +358,7 @@ export const ResultTray: React.FC<{f: number; x: number; y: number; s?: number; 
       <rect x={-96} y={-146} width={192} height={6} fill="#000" />
       <circle cx={118} cy={-104} r={9} fill={lamp > 0.5 ? SER.warm : '#6B5A3A'} stroke={SER.ink} strokeWidth={3} />
       <rect x={-120} y={-96} width={150} height={40} rx={6} fill="#3E4A5E" stroke={SER.ink} strokeWidth={4} />
-      <text x={-45} y={-70} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill="#BFE8FF" opacity={0.6 + 0.4 * lamp}>WAITING</text>
+      {[0, 1, 2].map((k) => <rect key={k} x={-108 + k * 46} y={-82} width={34} height={12} rx={3} fill="#BFE8FF" opacity={0.25 + 0.15 * lamp} />)}
       {/* the empty tray */}
       <path d="M -120 -12 L 120 -12 L 150 30 L -150 30 Z" fill={t.core} stroke={SER.ink} strokeWidth={6} strokeLinejoin="round" />
       <path d="M -112 -4 L 112 -4" stroke="#fff" strokeWidth={4} opacity={0.6} />
@@ -377,7 +389,7 @@ export const GroundStation: React.FC<{f: number; x: number; y: number; s?: numbe
           <rect x={-10} y={80} width={20} height={40} fill={d.core} stroke={SER.ink} strokeWidth={4} />
           {i === 0 ? (
             <g>
-              <path d={lp.map((p, k) => `${k ? 'L' : 'M'} ${p[0]} ${p[1]}`).join(' ')} fill="none" stroke={SER.ribbon} strokeWidth={5} />
+              <path d={lp.map((p, k) => `${k ? 'L' : 'M'} ${p[0]} ${p[1]}`).join(' ')} fill="none" stroke={SER.ribbon} strokeWidth={10} strokeLinecap="round" />
               <circle cx={0} cy={46} r={7} fill={SER.warm} stroke={SER.ink} strokeWidth={2} />
               <text x={0} y={-60} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={15} fill="#CFE8D6">NENANA</text>
             </g>
@@ -531,8 +543,9 @@ export const Engine1925: React.FC<{f: number; x: number; y: number; s?: number; 
  * DuskWorld: the long Interior dusk on the river ice. Sky apricot low to plum high, the Alaska Range,
  * a spruce line, ice to the bottom of the frame with drifts. `horizon` is the ice line in frame px.
  */
-export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; sun?: number; stars?: number; drifts?: boolean; summer?: boolean; children?: React.ReactNode}> =
-({f, seed = 1, horizon = 1060, sun = 1, stars = 0.6, drifts = true, summer = false, children}) => {
+export type NearKind = 'stakes' | 'rails' | 'ruts' | 'gravel' | 'sastrugi' | 'lights' | 'berm' | 'none';
+export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; sun?: number; stars?: number; drifts?: boolean; summer?: boolean; near?: NearKind; children?: React.ReactNode}> =
+({f, seed = 1, horizon = 1060, sun = 1, stars = 0.6, drifts = true, summer = false, near = 'stakes', children}) => {
   const id = uid(`dusk${seed}`);
   const range = Array.from({length: 13}, (_, i) => {
     const x = -60 + i * 100;
@@ -584,26 +597,52 @@ export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; su
           </g>
         );
       })}
-      {drifts && (
+      {drifts && near !== 'none' && (
         <g data-band="ok">
-          {/* near plane: a line of trail stakes and a fallen spruce, varied by seed */}
-          {Array.from({length: 5}, (_, i) => {
-            const x = 80 + i * 230 + 40 * h01(i, seed + 7);
-            const y0 = 1560 + 30 * h01(i + 1, seed + 7);
-            return (
-              <g key={`st${i}`}>
-                <path d={`M ${x} ${y0} L ${x + 4} ${y0 - 120 + 20 * h01(i, seed)}`} stroke={SER.ink} strokeWidth={9} strokeLinecap="round" />
-                <path d={`M ${x} ${y0} L ${x + 4} ${y0 - 120 + 20 * h01(i, seed)}`} stroke={summer ? '#8A6A44' : '#6E5A4A'} strokeWidth={5} strokeLinecap="round" />
-                <path d={`M ${x + 4} ${y0 - 112} q 18 ${-4 + 4 * Math.sin(f / 9 + i)} 34 ${2}`} stroke={SER.ribbon} strokeWidth={4} fill="none" opacity={0.0} />
-                <ellipse cx={x + 2} cy={y0 + 4} rx={26} ry={6} fill={SER.ink} opacity={0.25} />
-              </g>
-            );
+          {near === 'stakes' && Array.from({length: 4}, (_, i) => {
+            const x = 120 + i * 280 + 40 * h01(i, seed + 7), y0 = 1570 + 30 * h01(i + 1, seed + 7);
+            return <g key={i}><path d={`M ${x} ${y0} L ${x + 4} ${y0 - 110}`} stroke={SER.ink} strokeWidth={9} strokeLinecap="round" /><path d={`M ${x} ${y0} L ${x + 4} ${y0 - 110}`} stroke="#6E5A4A" strokeWidth={5} /></g>;
           })}
-          <g transform={`translate(${200 + 500 * h01(seed, 11)} 1690) rotate(${-8 + 6 * h01(seed, 12)})`}>
-            <path d="M -150 0 L 150 -10" stroke={SER.ink} strokeWidth={16} strokeLinecap="round" />
-            <path d="M -150 0 L 150 -10" stroke="#5A4636" strokeWidth={10} strokeLinecap="round" />
-            {[-100, -40, 20, 80].map((dx) => <path key={dx} d={`M ${dx} ${-dx * 0.03} l -22 -30 m 22 30 l 26 -26`} stroke={summer ? '#2F5A3A' : SER.spruce} strokeWidth={6} />)}
-          </g>
+          {near === 'rails' && (
+            <g>
+              {Array.from({length: 12}, (_, i) => <rect key={i} x={-60 + i * 100} y={1580 + (i % 2) * 4} width={70} height={22} rx={3} fill="#6A4A2C" stroke={SER.ink} strokeWidth={3} transform={`skewX(-20)`} />)}
+              <path d="M -60 1585 L 1140 1585 M -60 1610 L 1140 1610" stroke={SER.ink} strokeWidth={8} />
+              <path d="M -60 1585 L 1140 1585 M -60 1610 L 1140 1610" stroke="#9A8A7A" strokeWidth={4} />
+            </g>
+          )}
+          {near === 'ruts' && (
+            <g>
+              {[0, 1].map((k) => <path key={k} d={`M -60 ${1560 + k * 34} C 300 ${1530 + k * 30}, 700 ${1610 + k * 30}, 1140 ${1570 + k * 34}`} stroke={SER.snowD} strokeWidth={12} fill="none" />)}
+              {Array.from({length: 5}, (_, i) => <path key={i} d={`M ${-40 + i * 260} 1700 l 60 -50 l 50 30 l 70 -40 l 40 60 Z`} fill="#E9E2F0" stroke={SER.ink} strokeWidth={3} />)}
+            </g>
+          )}
+          {near === 'gravel' && (
+            <g>
+              <path d="M -60 1520 L 1140 1520 L 1140 1600 L -60 1600 Z" fill="#9A8E86" stroke={SER.ink} strokeWidth={3} />
+              {Array.from({length: 40}, (_, i) => <circle key={i} cx={h01(i, seed) * 1100} cy={1530 + h01(i + 3, seed) * 60} r={3 + 3 * h01(i + 6, seed)} fill={i % 2 ? '#7A6E68' : '#B8ACA4'} stroke={SER.ink} strokeWidth={1.5} />)}
+              {Array.from({length: 9}, (_, i) => {
+                const x = 40 + i * 120 + 30 * h01(i, seed + 2), y0 = 1660 + 40 * h01(i + 1, seed + 2), sw = 3 * Math.sin(f / 18 + i);
+                return <g key={`fw${i}`}><path d={`M ${x} ${y0} q ${sw} -50 ${sw * 2} -96`} stroke="#3E6A3A" strokeWidth={4} fill="none" />{[0, 1, 2, 3].map((k) => <circle key={k} cx={x + sw * 2 * (k / 4 + 0.6)} cy={y0 - 60 - k * 10} r={6} fill="#D0508A" stroke={SER.ink} strokeWidth={1.5} />)}</g>;
+              })}
+            </g>
+          )}
+          {near === 'sastrugi' && (
+            <g>
+              {Array.from({length: 7}, (_, i) => <path key={i} d={`M ${-80 + i * 180} 1640 q 60 -40 140 -10 q 40 14 80 -4 l 0 40 Z`} fill="#E6E0EE" stroke={SER.ink} strokeWidth={3} />)}
+              {Array.from({length: 24}, (_, i) => <path key={`sp${i}`} d={`M ${(h01(i, seed) * 1300 + f * 9) % 1300 - 100} ${1560 + h01(i + 2, seed) * 160} q 30 -6 70 0`} stroke="#FFFFFF" strokeWidth={3} opacity={0.7} fill="none" />)}
+            </g>
+          )}
+          {near === 'lights' && (
+            <g>
+              {Array.from({length: 6}, (_, i) => <g key={i}><ellipse cx={60 + i * 200} cy={1600} rx={80} ry={20} fill={SER.warm} opacity={0.22 + 0.06 * Math.sin(f / 7 + i)} /><rect x={52 + i * 200} y={1560} width={16} height={36} rx={4} fill="#3A3040" stroke={SER.ink} strokeWidth={3} /><circle cx={60 + i * 200} cy={1556} r={9} fill={SER.warm} stroke={SER.ink} strokeWidth={2} /></g>)}
+            </g>
+          )}
+          {near === 'berm' && (
+            <g>
+              <path d="M -60 1600 Q 300 1520 640 1560 T 1140 1540 L 1140 1700 L -60 1700 Z" fill="#E4DDEC" stroke={SER.ink} strokeWidth={4} />
+              {Array.from({length: 10}, (_, i) => <ellipse key={i} cx={420 + i * 46} cy={1640 + (i % 2) * 10} rx={10} ry={5} fill={SER.snowD} />)}
+            </g>
+          )}
         </g>
       )}
     </g>
