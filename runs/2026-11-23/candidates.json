@@ -1,0 +1,24 @@
+{
+ "locked_story": {
+  "headline": "UAF's drone program flew human blood samples 1,000 km out of Nenana on a Windracers ULTRA (8 hours 47 minutes, August 19th), and on November 19th director Cathy Cahill told the Fairbanks chamber rural medical drone delivery is next, with detect-and-avoid radar the key step; Tanana Chiefs Conference and Ryan Air hold first-round Rural Health Transformation grants for drone delivery, and the state's Year 2 award landed November 17th (News-Miner, UAF, Alaska DOH, CMS, ADN)",
+  "found_at_rung": "in_window_sweep",
+  "note": "Picked independently by three of four researchers, and the fourth surfaced the RHTP funding peg. In-window pegs: News-Miner November 19th, Alaska DOH Year 2 release November 17th. Stance rotation: the last 25 stances are curious or mixed with one cautionary; this is a genuine celebratory story (a thing that works), honestly framed as a test before deployment. The AI angle is robotics and autonomy (an uncrewed aircraft and planned detect-and-avoid), not machine learning, and the film says so. dedupe check FRESH on distinctive entities (first pass collided on the generic tokens air and flight with the 11-19 FAA ground stop, a different subject). Archive overlap noted: 07-03 and 07-20 covered the XPRIZE wildfire finals ACUASI hosted at Nenana, a different subject."
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 17,
+   "note": "4 researchers (science/fisheries, energy/defense/UAS, rural/Native/health, wildcard plus primary-source mining incl. NSF API), 76 of 80 WebSearch calls used. All four called it a slow week for Alaska AI news."
+  }
+ ],
+ "candidates": [
+  {"headline": "UAF ACUASI 1,000 km blood-sample drone flight and rural medical drone delivery next", "verdict": "LOCKED", "why": "celebratory, primary-sourced, real people, strong pictures, honest test (FAA rules, DAA radar planned, no lab results published)"},
+  {"headline": "NOAA confirms cruise ship killed a pregnant fin whale in Seward; Matson tests the WhaleSpotter neural-network camera on an Alaska route", "verdict": "runner-up", "why": "strong news event and a real neural network, but company-only performance figures and a mixed register on a run that needs rotation"},
+  {"headline": "Alaska RHTP Year 2 award $272.7M; Year 1 AI imaging network, robotic surgery, Maniilaq AI paperwork", "verdict": "folded in as context", "why": "AI items are funded pilots with no results; the drone grant joins the locked story"},
+  {"headline": "UAF/DGGS automated avalanche modeling of every Alaska road", "verdict": "rejected", "why": "physics model, not AI; geohazard model family covered recently"},
+  {"headline": "Bering Strait sea-ice forecast reworked with hunters' knowledge (KNOM)", "verdict": "rejected", "why": "single source, not AI"},
+  {"headline": "Halibut epigenetic age clock (Alaska Sea Grant)", "verdict": "rejected", "why": "out of window, not described as AI, near the 11-14 otolith film"},
+  {"headline": "Fort Wainwright Skydio relay innovation contest", "verdict": "rejected", "why": "out of window, no AI in source"}
+ ]
+}
