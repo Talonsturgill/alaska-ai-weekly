@@ -62,13 +62,35 @@ export interface SuitProps {
   /** eyes, brows, nose and mouth with a blink (default true, machine pass 2026-11-22); false keeps the
    *  modelled head (crescent shade, ear, neck) but draws no features */
   face?: boolean;
+  /** 0..1 the figure OPERATES a handheld two-stick controller held at the waist in both hands (a drone
+   *  pilot, a crane or ROV operator). The sticks work continuously and throw hard on each cue. Overrides
+   *  reach/reachL. Default 0 (machine pass 2026-11-23: the 11-23 UAF pilot "stands rather than operating") */
+  operate?: number;
+  /** sit on a stool: hips drop 62 units, thighs come toward the viewer, the stool is drawn under the hips */
+  seated?: boolean;
+  /** stool colour when seated */
+  stool?: string;
+}
+
+/** Stick throw in degrees for an operating figure: a continuous working wobble on two incommensurate
+ *  periods, plus a hard throw that lands on each cue and settles. Exported for the look-dev and tests. */
+export function stickThrow(f: number, seed: number, cues: number[], side: -1 | 1): number {
+  const work = 7 * Math.sin(f / 6.3 + seed * 1.7 + side) + 4 * Math.sin(f / 2.9 + seed * 0.6 - side * 2);
+  let hit = 0;
+  for (const c of cues) {
+    const u = (f - (c - 4)) / 12;
+    if (u > 0 && u < 2.2) hit += (u < 1 ? Math.sin((Math.PI / 2) * u) : Math.max(0, 1 - (u - 1) / 1.2)) * (side > 0 ? 24 : -16);
+  }
+  return work + hit;
 }
 
 export const Suit: React.FC<SuitProps> = ({
   f, x, y, s = 1, seed = 1, cues = [], coat = '#3A4048', trousers = '#2A2E36', shirt = '#F2EEE6',
   skin = '#C99A78', hair = '#4A3A30', tie = false, longHair = false, reach = 0, reachL = 0, facing = 1,
-  walk = 0, keySide = 'left', rimColor = '#FFD7B0', gain = 1, face = true,
+  walk = 0, keySide = 'left', rimColor = '#FFD7B0', gain = 1, face = true, operate = 0, seated = false, stool = '#4A4250',
 }) => {
+  const op = Math.max(0, Math.min(1, operate));
+  const drop = seated ? 62 : 0;
   const hgt = 300 * s;
   const step = Math.sin(walk * 0.35) * 14;
   const tieColor = typeof tie === 'string' ? tie : tie ? '#9C3F2A' : null;
@@ -80,9 +102,27 @@ export const Suit: React.FC<SuitProps> = ({
         {(pose) => (
           <g transform={`translate(${x},${y}) scale(${s * facing},${s})`}>
             <ContactShadow cx={0} cy={2} rx={62} ry={9} opacity={0.38} />
+            {seated && (
+              <g>
+                {/* splayed stool legs and a foot ring, wider than the body so the stool reads past the knees */}
+                {[-1, 1].map((sd) => (
+                  <g key={sd}>
+                    <path d={`M ${sd * 60} -38 L ${sd * 80} -4`} stroke={INK} strokeWidth={11} strokeLinecap="round" />
+                    <path d={`M ${sd * 60} -38 L ${sd * 80} -4`} stroke={stool} strokeWidth={5} strokeLinecap="round" />
+                  </g>
+                ))}
+                <path d="M -70 -20 L 70 -20" stroke={INK} strokeWidth={8} strokeLinecap="round" />
+                <path d="M -70 -20 L 70 -20" stroke={stool} strokeWidth={3} strokeLinecap="round" />
+                <rect x={-78} y={-52} width={156} height={18} rx={8} fill={stool} stroke={INK} strokeWidth={5} />
+                <rect x={-70} y={-49} width={80} height={5} rx={2} fill="#FFFFFF" opacity={0.18} />
+              </g>
+            )}
             {[-1, 1].map((side) => {
-              const fx = side * (22 - step);
-              const d = `M ${side * 18} -110 L ${fx} -6`;
+              const fx = side * (22 - (seated ? 0 : step)) + (seated ? side * 8 : 0);
+              // seated, the thigh comes toward the viewer (short, foreshortened, a knee a little wider and lower)
+              const d = seated
+                ? `M ${side * 18} -52 L ${side * 32} -40 L ${fx} -6`
+                : `M ${side * 18} -110 L ${fx} -6`;
               return (
                 <g key={side}>
                   <path d={d} stroke={INK} strokeWidth={22} strokeLinecap="round" />
@@ -91,12 +131,42 @@ export const Suit: React.FC<SuitProps> = ({
                 </g>
               );
             })}
-            <g transform={`translate(${pose.shift * 0.4},${pose.dip + Math.sin(f / 11 + seed) * 2.5}) rotate(${pose.lean} 0 -110)`}>
+            <g transform={`translate(${pose.shift * 0.4},${pose.dip + Math.sin(f / 11 + seed) * 2.5 + drop}) rotate(${pose.lean} 0 -110)`}>
               <path d="M -50 -100 Q -56 -200 -30 -228 L 30 -228 Q 56 -200 50 -100 Q 0 -90 -50 -100 Z" fill={coat} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
               <path d="M -16 -226 L 0 -170 L 16 -226 Z" fill={shirt} stroke={INK} strokeWidth={3} />
               {tieColor && <path d="M -4 -200 L 4 -200 L 6 -150 L 0 -140 L -6 -150 Z" fill={tieColor} stroke={INK} strokeWidth={2} />}
               <path d="M -36 -222 Q -48 -190 -44 -110" stroke="#FFFFFF" strokeWidth={5} fill="none" opacity={0.25} strokeLinecap="round" />
-              {(() => {
+              {op > 0 && (() => {
+                // the controller at the waist, both hands on it, thumbs working the sticks
+                const tl = stickThrow(f, seed, cues, -1) * op, tr = stickThrow(f, seed, cues, 1) * op;
+                const lean = 2 * Math.sin(f / 17 + seed);
+                const l = `M -40 -214 Q -66 -184 -50 -150`;
+                const r = `M 40 -214 Q 66 -184 50 -150`;
+                return (
+                  <>
+                    <path d={l} stroke={INK} strokeWidth={22} fill="none" strokeLinecap="round" />
+                    <path d={l} stroke={coat} strokeWidth={14} fill="none" strokeLinecap="round" />
+                    <path d={r} stroke={INK} strokeWidth={22} fill="none" strokeLinecap="round" />
+                    <path d={r} stroke={coat} strokeWidth={14} fill="none" strokeLinecap="round" />
+                    <g transform={`rotate(${lean} 0 -150)`}>
+                      <path d="M 40 -172 L 46 -206" stroke={INK} strokeWidth={4} strokeLinecap="round" />
+                      <circle cx={46} cy={-207} r={3.5} fill="#E2563E" stroke={INK} strokeWidth={1.5} />
+                      {[-1, 1].map((sd) => (
+                        <g key={sd} transform={`rotate(${sd < 0 ? tl : tr} ${sd * 20} -170)`}>
+                          <path d={`M ${sd * 20} -170 L ${sd * 20} -186`} stroke={INK} strokeWidth={5} strokeLinecap="round" />
+                          <circle cx={sd * 20} cy={-188} r={6} fill="#3A3640" stroke={INK} strokeWidth={2.5} />
+                        </g>
+                      ))}
+                      <rect x={-46} y={-172} width={92} height={40} rx={10} fill="#5E5A66" stroke={INK} strokeWidth={4} />
+                      <rect x={-40} y={-168} width={58} height={6} rx={3} fill="#FFFFFF" opacity={0.2} />
+                      <rect x={-12} y={-162} width={24} height={14} rx={2} fill="#7FD0C8" stroke={INK} strokeWidth={2} opacity={0.9} />
+                    </g>
+                    <circle cx={-50} cy={-150} r={11} fill={skin} stroke={INK} strokeWidth={3} />
+                    <circle cx={50} cy={-150} r={11} fill={skin} stroke={INK} strokeWidth={3} />
+                  </>
+                );
+              })()}
+              {op === 0 && (() => {
                 const l = `M -40 -214 Q ${-64 + pose.armL * 10 - reachL * 20} ${-170 - reachL * 30} ${-52 + pose.armL * 6 - reachL * 40} ${-128 - reachL * 80}`;
                 const r = `M 40 -214 Q ${70 + reach * 30} ${-190 + reach * 10} ${rx} ${ry + pose.armR * 6}`;
                 return (
@@ -149,6 +219,13 @@ export const Suit: React.FC<SuitProps> = ({
                 {longHair && <path d="M -36 -284 Q -40 -304 -12 -306 Q 20 -308 36 -284 Q 20 -296 0 -298 Q -20 -296 -36 -284 Z" fill={hair} stroke={INK} strokeWidth={3} />}
               </g>
             </g>
+            {seated && [-1, 1].map((side) => (
+              // the knees come toward the viewer, in front of the coat hem: what makes a front view read seated
+              <g key={`knee${side}`} transform={`translate(${pose.shift * 0.2},0)`}>
+                <ellipse cx={side * 30} cy={-38} rx={19} ry={14} fill={trousers} stroke={INK} strokeWidth={4} />
+                <path d={`M ${side * 30 - 10} -46 Q ${side * 30} -50 ${side * 30 + 10} -46`} stroke="#FFFFFF" strokeWidth={3} fill="none" opacity={0.2} strokeLinecap="round" />
+              </g>
+            ))}
           </g>
         )}
       </IdleFigure>
