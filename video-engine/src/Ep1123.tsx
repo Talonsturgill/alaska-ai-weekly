@@ -252,8 +252,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
             {loopK > 0 && <Ribbon f={f} pts={LOOP} reveal={loopK} w={14} seed={1} />}
           </g>
           <MapPin f={f} x={NEN[0]} y={NEN[1]} color={SER.warm} />
-          <Tag x={NEN[0] + 70} y={NEN[1] + 40} text="NENANA" size={22} />
           <MapDogs f={f} x={dogAt[0]} y={dogAt[1] + 6} s={lerp(0.8, 0.32, clamp01(f / 50))} />
+          <Tag x={NEN[0] + 70} y={NEN[1] + 40} text="NENANA" size={22} />
           {loopK > 0 && loopK < 1 && <CargoDrone f={f} x={sh[0]} y={sh[1]} view="top" scale={0.12} rot={ang} shadowOnly />}
         </IceFromAbove>
       </SVG>
