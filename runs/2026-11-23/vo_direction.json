@@ -1,0 +1,243 @@
+{
+ "narrator": "Nora, a documentary narrator with a bright, forward-leaning storyteller's energy: warm, quick, quietly witty",
+ "notes": "Style: warm, natural, conversational documentary storytelling with forward momentum; celebratory but honest, a quiet sense of wonder at the century-apart rhyme of dogs and a drone leaving the same town, dry wit where earned, never sour and never hype. Pace: the required runtime-naming paragraph, verbatim (about one hundred and fifteen seconds, easy breath at each period, a natural beat rather than a long pause); routine pauses short, real rests only before 'Then it lands where it started.' and 'Here's the catch.'",
+ "style_prompt": "Style: warm, natural and conversational, a storyteller who can't wait to tell you this one. Celebratory but honest, with a quiet sense of wonder at two runs leaving the same town a century apart, and dry wit where it is earned. Let 'A Windracers ULTRA.' be a short, pleased reveal. Let 'Then it lands where it started.' be a quiet, gentle turn. Say 'Here's the catch.' plainly and fairly, never ominous. Land the final line with quiet resolve, warm and certain. Keep real momentum, a storyteller leaning forward: the commas and line ends carry straight on, every routine pause is short, about a quarter second, and nothing lingers.\nPace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one hundred and fifteen seconds, and the read must fill it, so let every sentence land and take an easy breath at each period, a natural beat rather than a long pause. Save real rests for the marked short pauses. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.",
+ "pronunciations": {
+  "Nenana": "nee-NAN-uh"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Two runs left one Alaska town a century apart. The first went all the way, the second came home.",
+   "intent": "hook",
+   "emphasis": "century",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Forward-leaning, bright opener that plants the rhyme; the two short sentences after it set up the whole film's shape."
+  },
+  {
+   "idx": 1,
+   "text": "January 1925, diphtheria threatened Nome.",
+   "intent": "setup",
+   "emphasis": "Diphtheria",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Drop down into the past, grounded and serious, so the history reads as stakes, not trivia."
+  },
+  {
+   "idx": 2,
+   "text": "Antitoxin came by train to Nenana, the railroad's closest point to Nome.",
+   "intent": "setup",
+   "emphasis": "train",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Even and informative, a small lift to keep the story moving toward the dogs."
+  },
+  {
+   "idx": 3,
+   "text": "Twenty mushers ran it by dog team, six hundred seventy four miles.",
+   "intent": "stat",
+   "emphasis": "Twenty",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Admiring stat beat; slow slightly on the mileage so the trail length registers for the later callback."
+  },
+  {
+   "idx": 4,
+   "text": "Why not a plane? Nobody knew how a small engine would take forty below.",
+   "intent": "wry",
+   "emphasis": "forty",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Half-smile question then a dry answer; plants 'forty below' for line 13's payoff."
+  },
+  {
+   "idx": 5,
+   "text": "August 19th, a drone takes off from Nenana.",
+   "intent": "hook",
+   "emphasis": "drone",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "The jump a century forward; brighten so the viewer feels the rhyme click."
+  },
+  {
+   "idx": 6,
+   "text": "A Windracers ULTRA.",
+   "intent": "reveal",
+   "emphasis": "ULTRA",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Short reveal beat, introduced with a pleased little lift, not a shout."
+  },
+  {
+   "idx": 7,
+   "text": "Pilots at U A F's drone center fly it remotely.",
+   "intent": "setup",
+   "emphasis": "remotely",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Plain and precise; the honest word 'remotely' gets the weight so nobody hears autonomy."
+  },
+  {
+   "idx": 8,
+   "text": "On board, human blood samples for a sports anti doping agency.",
+   "intent": "setup",
+   "emphasis": "blood",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "A little curiosity in the cargo detail; lifts off the flat line before it."
+  },
+  {
+   "idx": 9,
+   "text": "Each volunteer gave two samples, one to fly, one to stay, to compare.",
+   "intent": "setup",
+   "emphasis": "stayed",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Measured and clear; the two-tube setup has to be understood for the catch later."
+  },
+  {
+   "idx": 10,
+   "text": "It stays up eight hours and forty seven minutes.",
+   "intent": "stat",
+   "emphasis": "eight",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Rising wonder; let the duration land without rushing it."
+  },
+  {
+   "idx": 11,
+   "text": "It covers a thousand kilometers, about six hundred twenty one miles, nearly the serum trail's length.",
+   "intent": "stat",
+   "emphasis": "trail",
+   "energy": 5,
+   "tags": [],
+   "pause_before": false,
+   "why": "The energy peak: the century rhyme pays off; the trailing pause buys the one long rest before the quiet turn."
+  },
+  {
+   "idx": 12,
+   "text": "Then it lands where it started.",
+   "intent": "reveal",
+   "emphasis": "started",
+   "energy": 2,
+   "tags": [],
+   "pause_before": true,
+   "why": "The quiet turn after the peak; a soft drop in energy makes the honest narrowing felt, not announced."
+  },
+  {
+   "idx": 13,
+   "text": "That forty below from 1925? [wry] U A F has flown small drones in it.",
+   "intent": "wry",
+   "emphasis": "flown",
+   "energy": 3,
+   "tags": [
+    "[wry]"
+   ],
+   "pause_before": false,
+   "why": "The earned dry callback to line 4; half-smile on the answer."
+  },
+  {
+   "idx": 14,
+   "text": "The center's director, Cathy Cahill, says this flight proves the blood could survive.",
+   "intent": "setup",
+   "emphasis": "could",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Even attribution, weight on the hedge word; the trailing pause sets up the fair pivot."
+  },
+  {
+   "idx": 15,
+   "text": "Here's the catch, no lab results have been published.",
+   "intent": "reveal",
+   "emphasis": "published",
+   "energy": 3,
+   "tags": [],
+   "pause_before": true,
+   "why": "Plain, fair pivot, a straight look at camera, never ominous."
+  },
+  {
+   "idx": 16,
+   "text": "Until they are, claim the trip, not the result.",
+   "intent": "stakes",
+   "emphasis": "trip",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Grounded and firm, the film's honest narrowing said once and cleanly."
+  },
+  {
+   "idx": 17,
+   "text": "The state says eighty two percent of communities are off the road system.",
+   "intent": "stat",
+   "emphasis": "eighty",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Lift back into why this is worth doing; let the figure land."
+  },
+  {
+   "idx": 18,
+   "text": "A village run needs more than range. Federal rules regulate against flying beyond the operator's line of sight.",
+   "intent": "stakes",
+   "emphasis": "sight",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Settled and matter-of-fact; the real gate named without complaint."
+  },
+  {
+   "idx": 19,
+   "text": "U A F plans detect and avoid radar, which Cahill calls a key step toward medical delivery.",
+   "intent": "setup",
+   "emphasis": "radar",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Forward motion, a touch of optimism on the named next step."
+  },
+  {
+   "idx": 20,
+   "text": "If the drone loses link, Cahill says, the radar would let it avoid other aircraft automatically.",
+   "intent": "setup",
+   "emphasis": "avoid",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Careful, attributed explanation; keep it even so it informs rather than sells."
+  },
+  {
+   "idx": 21,
+   "text": "U A F has partnered with Ryan Air and Tanana Chiefs Conference, an Alaska Native nonprofit, to develop or test medical delivery.",
+   "intent": "stakes",
+   "emphasis": "medical",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Warm lift on who it serves, building toward the close."
+  },
+  {
+   "idx": 22,
+   "text": "The dogs ran the trail. The drone has the legs. Next it needs eyes of its own.",
+   "intent": "button",
+   "emphasis": "eyes",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Quiet resolve; three even beats, the last one landed warm and certain, closing the rhyme."
+  }
+ ],
+ "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, a documentary narrator with a bright, forward-leaning storyteller's energy: warm, quick, quietly witty. Neutral American accent, natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, natural and conversational, a storyteller who can't wait to tell you this one. Celebratory but honest, with a quiet sense of wonder at two runs leaving the same town a century apart, and dry wit where it is earned. Let 'A Windracers ULTRA.' be a short, pleased reveal. Let 'Then it lands where it started.' be a quiet, gentle turn. Say 'Here's the catch.' plainly and fairly, never ominous. Land the final line with quiet resolve, warm and certain. Keep real momentum, a storyteller leaning forward: the commas and line ends carry straight on, every routine pause is short, about a quarter second, and nothing lingers.\nPace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one hundred and fifteen seconds, and the read must fill it, so let every sentence land and take an easy breath at each period, a natural beat rather than a long pause. Save real rests for the marked short pauses. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nTranscript:\nTwo runs left one Alaska town a century apart. The first went all the way, the second came home.\nJanuary 1925, diphtheria threatened Nome.\nAntitoxin came by train to Nenana, the railroad's closest point to Nome.\nTwenty mushers ran it by dog team, six hundred seventy four miles.\nWhy not a plane? Nobody knew how a small engine would take forty below.\nAugust 19th, a drone takes off from Nenana.\nA Windracers ULTRA.\nPilots at U A F's drone center fly it remotely.\nOn board, human blood samples for a sports anti doping agency.\nEach volunteer gave two samples, one to fly, one to stay, to compare.\nIt stays up eight hours and forty seven minutes.\nIt covers a thousand kilometers, about six hundred twenty one miles, nearly the serum trail's length.\nThen it lands where it started.\nThat forty below from 1925? [wry] U A F has flown small drones in it.\nThe center's director, Cathy Cahill, says this flight proves the blood could survive.\nHere's the catch, no lab results have been published.\nUntil they are, claim the trip, not the result.\nThe state says eighty two percent of communities are off the road system.\nA village run needs more than range. Federal rules regulate against flying beyond the operator's line of sight.\nU A F plans detect and avoid radar, which Cahill calls a key step toward medical delivery.\nIf the drone loses link, Cahill says, the radar would let it avoid other aircraft automatically.\nU A F has partnered with Ryan Air and Tanana Chiefs Conference, an Alaska Native nonprofit, to develop or test medical delivery.\nThe dogs ran the trail. The drone has the legs. Next it needs eyes of its own."
+}

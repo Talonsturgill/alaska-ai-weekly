@@ -1,0 +1,42 @@
+{
+ "ship": true,
+ "findings": [
+  {
+   "line": 11,
+   "risk": "'nearly the whole serum trail' named the route as covered ground",
+   "fix": "Nearly the length of the serum trail. (applied)"
+  },
+  {
+   "line": 16,
+   "risk": "'So' made the doping screen the reason not to claim the result",
+   "fix": "doping line removed; 'Until they are, claim the trip, not the result.' follows the no-lab-results line (applied)"
+  },
+  {
+   "line": 20,
+   "risk": "antecedent and tense of the lose-link line",
+   "fix": "With that radar, Cahill says, the drone will automatically avoid other aircraft if it ever loses link. (applied)"
+  },
+  {
+   "line": 21,
+   "risk": "c34 wording develop or test",
+   "fix": "partnered ... to develop or test medical delivery (applied)"
+  },
+  {
+   "line": 18,
+   "risk": "possible inference that the FAA rule explains the loop",
+   "fix": "A village run needs more than range. (applied)"
+  },
+  {
+   "line": 8,
+   "risk": "'hold' unsupported",
+   "fix": "On board (applied)"
+  },
+  {
+   "line": 6,
+   "risk": "stale caption fixup",
+   "fix": "removed (applied)"
+  }
+ ],
+ "script_sha256": "2ce05e99330da2a57cd2fa753e45eb2119d7d622dd5bdc07084231995f7aef94",
+ "claims_sha256": "4a9d862f343cab0159e6a56655d6491f21e7636b1b67142439dca5c925a7a87d"
+}
