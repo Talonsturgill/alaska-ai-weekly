@@ -15,7 +15,7 @@ import {FlightCrate} from './lib/clinic';
 import {Drone} from './lib/polecam';
 import {
   SER, Tag, SampleTube, CargoDrone, RadarEye, Ribbon, SightBubble, ResultTray, GroundStation, Village, SampleFridge,
-  Train1925, Engine1925, DuskWorld, MapBoard, MapPin, MAP_PT, trailPts, loopPts, linePts, morphPts,
+  Train1925, Engine1925, DuskWorld, MapBoard, MapPin, MAP_PT, trailPts, loopPts, linePts, morphPts, Poles,
 } from './lib/serum';
 import {IDS} from './Ep1123Ids';
 
@@ -174,8 +174,8 @@ const IceFromAbove: React.FC<{f: number; seed?: number; night?: number; children
       <path d="M -60 1600 Q 400 1540 1140 1630" stroke={SER.snowD} strokeWidth={8} fill="none" />
       {Array.from({length: 5}, (_, i) => {
         const x = -40 + i * 250 + 40 * h01(i, seed + 9);
-        const yy = 1700 + 50 * h01(i + 4, seed);
-        return <path key={i} d={`M ${x} 1960 Q ${x + 70} ${yy} ${x + 180} ${yy + 16} Q ${x + 250} ${yy + 26} ${x + 320} 1960 Z`} fill="#E7E0EE" stroke={C.ink} strokeWidth={4} />;
+        const yy = 1790 + 50 * h01(i + 4, seed);
+        return <path key={i} d={`M ${x} 1960 Q ${x + 70} ${yy} ${x + 160} ${yy + 12} Q ${x + 220} ${yy + 20} ${x + 280} 1960 Z`} fill={i % 2 ? '#E7E0EE' : '#D9D0E3'} stroke={C.ink} strokeWidth={3} />;
       })}
       <g transform={`translate(880 1660)`}>
         <ContactShadow cx={0} cy={6} rx={50} ry={10} opacity={0.4} />
@@ -229,7 +229,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const ang = (Math.atan2(sh2[1] - sh[1], sh2[0] - sh[0]) * 180) / Math.PI;
   const shut = f > b3 + 12 ? 1 - 0.1 * Math.sin(clamp01((f - b3 - 12) / 10) * Math.PI) : 1;
   const glance = clamp01((f - b3 + 20) / 10) * (1 - clamp01((f - b3 + 4) / 8));
-  const cam = track([{t: 0, z: 1.08, fx: 520, fy: 900}, {t: b2 + 10, z: 1.02, fx: 520, fy: 920}, {t: p.dur, z: 1.05, fx: 540, fy: 930}]);
+  const cam = track([{t: 0, z: 1.2, fx: 520, fy: 900}, {t: b2 + 10, z: 1.12, fx: 520, fy: 910}, {t: p.dur, z: 1.15, fx: 540, fy: 920}]);
   return (
     <Frame p={p} cam={cam} overlay={
       <g>
@@ -302,8 +302,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
         <DuskWorld f={f} seed={2} horizon={1140} sun={0.3} stars={0.9}>
           {nome > 0.01 && (
             <g opacity={nome}>
+              <Poles f={f} y={1120} top={480} n={5} x0={60} gapX={250} sepia birds={false} />
               <HeldTravel f={f} x={80} y={900} w={920} h={260} mode="shadow" seed={21}>
-                <Village f={f} x={540} y={1200} s={0.95} glow={0.6} seed={2} runway={false} sign={false} />
+                <Village f={f} x={540} y={1200} s={1.15} glow={0.6} seed={2} runway={false} sign={false} />
               </HeldTravel>
               {Array.from({length: 40}, (_, i) => (
                 <circle key={i} cx={(h01(i, 4) * 1200 + f * (1.5 + h01(i, 5))) % 1180 - 50} cy={(h01(i, 6) * 900 + f * 3) % 900 + 400} r={3} fill="#fff" opacity={0.7} />
@@ -312,8 +313,9 @@ const S2: React.FC<SceneProps> = ({p}) => {
           )}
           {nome < 0.99 && (
             <g opacity={1 - nome}>
-              <Depot f={f} x={300} y={1260} swing={clamp01((f - b6) / 30)} />
-              <Train1925 f={f} x={trainX} y={1290} s={1.0} speed={f > b6 ? 0.1 : 1} />
+              <Poles f={f} y={1160} top={470} n={5} x0={100} gapX={260} sepia />
+              <Train1925 f={f} x={trainX} y={1300} s={1.3} speed={f > b6 ? 0.1 : 1} />
+              <g transform="translate(300 1270) scale(1.3) translate(-300 -1270)"><Depot f={f} x={300} y={1270} swing={clamp01((f - b6) / 30)} /></g>
               <g transform="translate(820 860)">
                 <rect x={-150} y={-100} width={300} height={200} rx={8} fill="#EAD7B4" stroke={C.ink} strokeWidth={5} opacity={clamp01((f - b6) / 12)} />
                 <g opacity={clamp01((f - b6) / 12)}>
@@ -350,6 +352,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <DuskWorld f={f} seed={3} horizon={1080} sun={0.5}>
+          <Poles f={f} y={1090} top={480} n={5} x0={40} gapX={270} sepia />
           {/* mileage marker */}
           <g transform="translate(300 1250)">
             <ContactShadow cx={0} cy={4} rx={60} ry={10} opacity={0.4} />
@@ -362,11 +365,11 @@ const S3: React.FC<SceneProps> = ({p}) => {
             </HeldTravel>
             <Tag x={0} y={-150} text="MILES" size={18} />
           </g>
-          <Engine1925 f={f} x={830} y={1250} s={1.15} drop={drop} shiver={f > b9 - 10 ? 1 : 0.3} />
+          <Engine1925 f={f} x={820} y={1270} s={1.45} drop={drop} shiver={f > b9 - 10 ? 1 : 0.3} />
           {/* the team, a faceless musher on the sled */}
           <g transform={`translate(${teamX} 0)`}>
-            <SledDogTeam f={f} x={0} y={1290} scale={1.25} facing={-1} dogs={6} vx={8} />
-            <g transform="translate(560 1290)">
+            <SledDogTeam f={f} x={0} y={1300} scale={1.7} facing={-1} dogs={6} vx={3} />
+            <g transform="translate(760 1300) scale(1.3)">
               <ContactShadow cx={0} cy={4} rx={120} ry={12} opacity={0.4} />
               <path d="M -110 0 L 110 0 Q 130 -4 136 -20" stroke={C.ink} strokeWidth={7} fill="none" />
               <rect x={-90} y={-60} width={170} height={50} rx={6} fill={SER.sepiaD} stroke={C.ink} strokeWidth={5} />
@@ -425,6 +428,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <DuskWorld f={f} seed={4} horizon={1160} sun={1} stars={0.2} summer>
+          <Poles f={f} y={1170} top={500} n={5} x0={200} gapX={250} />
           <rect data-band="ok" x={-60} y={1200} width={1200} height={110} fill="#77727E" stroke={C.ink} strokeWidth={4} />
           {Array.from({length: 9}, (_, i) => <rect key={i} x={-20 + i * 140 - ((f * 6 * roll) % 140)} y={1250} width={70} height={10} fill="#F3EEF6" opacity={0.7} />)}
           <RunwayLights f={f} y={1206} />
@@ -496,6 +500,22 @@ const Room: React.FC<{f: number; seed?: number; lamp?: number; children?: React.
     {children}
     <rect data-band="ok" x={-120} y={1280} width={1320} height={760} fill="#4A3C58" />
     {Array.from({length: 8}, (_, i) => <line key={i} x1={-120} x2={1200} y1={1300 + i * 80} y2={1300 + i * 80} stroke="#3A2E48" strokeWidth={4} />)}
+    <g data-band="ok">
+      {/* the floor: a cable run, a tool case and a stack of sample boxes, varied by seed */}
+      <path d={`M -60 ${1640 + 30 * h01(seed, 1)} C 200 ${1600 + 40 * h01(seed, 2)}, 500 ${1720}, 1140 ${1660 + 30 * h01(seed, 3)}`} stroke={C.ink} strokeWidth={14} fill="none" />
+      <path d={`M -60 ${1640 + 30 * h01(seed, 1)} C 200 ${1600 + 40 * h01(seed, 2)}, 500 ${1720}, 1140 ${1660 + 30 * h01(seed, 3)}`} stroke="#2A2630" strokeWidth={8} fill="none" />
+      <g transform={`translate(${160 + 140 * h01(seed, 4)} 1760)`}>
+        <ellipse cx={0} cy={4} rx={120} ry={14} fill={C.ink} opacity={0.35} />
+        <rect x={-110} y={-90} width={220} height={90} rx={10} fill="#8A3A3A" stroke={C.ink} strokeWidth={5} />
+        <rect x={-40} y={-108} width={80} height={22} rx={8} fill="none" stroke={C.ink} strokeWidth={6} />
+        <rect x={-100} y={-56} width={200} height={10} fill="#6E2A2A" />
+      </g>
+      <g transform={`translate(${760 + 120 * h01(seed, 5)} 1800)`}>
+        <ellipse cx={0} cy={4} rx={110} ry={12} fill={C.ink} opacity={0.35} />
+        {[0, 1, 2].map((k) => <rect key={k} x={-90 + k * 8} y={-70 - k * 66} width={180 - k * 16} height={64} rx={4} fill={k % 2 ? '#B89A6A' : '#A4865A'} stroke={C.ink} strokeWidth={4} />)}
+        <rect x={-30} y={-60} width={60} height={22} fill={SER.paper} stroke={C.ink} strokeWidth={2} />
+      </g>
+    </g>
     {lamp > 0 && <ellipse cx={540} cy={1100} rx={460} ry={300} fill={SER.warm} opacity={0.08 * lamp} />}
   </g>
 );
@@ -516,7 +536,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <HeldTravel f={f} x={240} y={760} w={600} h={540} mode="shadow" seed={61}>
             <GroundStation f={f} x={540} y={1290} s={1.0} loopK={clamp01((f - b14) / 60)} clock="" />
           </HeldTravel>
-          <Suit f={f} x={540} y={1310} s={1.25} seed={3} cues={[b14, b15]} face={false} coat="#5A4E66" trousers="#2E2440" reach={0.55 + 0.1 * Math.sin(f / 9)} facing={1} />
+          <Suit f={f} x={540} y={1310} s={1.5} seed={3} cues={[b14, b15]} face={false} coat="#5A4E66" trousers="#2E2440" reach={0.55 + 0.1 * Math.sin(f / 9)} facing={1} />
           <g transform="translate(640 1050)"><Tag x={0} y={0} text="UAF PILOT" size={20} /></g>
         </Room>
       </SVG>
@@ -534,7 +554,7 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const slide = ease(f, b18, 20);
   const door = easeIO(f, b19, 18);
   const latch = easeIO(f, b17, 10);
-  const cam = track([{t: 0, z: 1.12, fx: 380, fy: 1000}, {t: b18 - 10, z: 1.1, fx: 420, fy: 1000}, {t: b18 + 20, z: 1.06, fx: 600, fy: 1010}, {t: p.dur, z: 1.04, fx: 540, fy: 1010}]);
+  const cam = track([{t: 0, z: 1.1, fx: 420, fy: 1000}, {t: b18 - 10, z: 1.08, fx: 460, fy: 1000}, {t: b18 + 20, z: 1.04, fx: 560, fy: 1010}, {t: p.dur, z: 1.03, fx: 540, fy: 1010}]);
   return (
     <Frame p={p} cam={cam} overlay={
       <g>
@@ -550,13 +570,13 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <rect x={60} y={1180} width={960} height={40} fill="#6E5E7E" stroke={C.ink} strokeWidth={6} />
           <rect x={80} y={1220} width={30} height={80} fill="#4A3C58" stroke={C.ink} strokeWidth={4} />
           <rect x={970} y={1220} width={30} height={80} fill="#4A3C58" stroke={C.ink} strokeWidth={4} />
-          <SampleTube f={f} x={300} y={flewY} scale={0.9} emotion={pop > 0.5 ? 'eager' : 'calm'} goggles={f > b16 + 10} label="FLEW" cues={[b16, b17]} seed={1} look={0.3} shadow={false} />
+          <SampleTube f={f} x={300} y={flewY} scale={1.2} emotion={pop > 0.5 ? 'eager' : 'calm'} goggles={f > b16 + 10} label="FLEW" cues={[b16, b17]} seed={1} look={0.3} shadow={false} />
           <HeldTravel f={f} x={130} y={980} w={340} h={260} mode="sweep" seed={71}>
-            <FlightCrate x={300} y={1180} f={f} scale={0.82} proposed={false} latchProgress={latch} lights={0} tag="" groundY={1180} />
+            <FlightCrate x={300} y={1180} f={f} scale={1.0} proposed={false} latchProgress={latch} lights={0} tag="" groundY={1180} />
           </HeldTravel>
-          <SampleFridge f={f} x={790} y={1180} s={0.95} open={1 - door}>
-            <SampleTube f={f} x={lerp(160, 0, slide)} y={-158} scale={0.62} emotion="wistful" glow={1} label="STAYED" cues={[b18, b19]} seed={2} look={-0.6} shadow={false} />
-            <g transform={`translate(${lerp(160, 0, slide) + 40} -300) rotate(${-20 + 25 * Math.sin(f / 4)})`}>
+          <SampleFridge f={f} x={770} y={1180} s={1.1} open={1 - door}>
+            <SampleTube f={f} x={lerp(90, 0, slide)} y={-158} scale={0.66} emotion="wistful" glow={1} label="STAYED" cues={[b18, b19]} seed={2} look={-0.6} shadow={false} />
+            <g transform={`translate(${lerp(90, 0, slide) + 40} -300) rotate(${-20 + 25 * Math.sin(f / 4)})`}>
               <path d="M 0 0 L 0 -40" stroke={C.ink} strokeWidth={3} />
               <path d="M 0 -40 l 26 6 l -4 22 l -22 -8 Z" fill="#FFFFFF" stroke={C.ink} strokeWidth={2.5} />
             </g>
@@ -582,7 +602,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   const mug = f > b20 && mugPh % 2 === 1 ? 1 : 0;
   const ra = (f / 40) * Math.PI * 2;
   return (
-    <Frame p={p} z0={1.04} z1={1.04} overlay={
+    <Frame p={p} z0={1.02} z1={1.12} overlay={
       <g>
         <Plate text="8 HR 47 MIN" x={540} y={600} size={44} p={win(f, b20 + 4)} />
         <Plate text="STILL UP" x={540} y={700} size={34} tone="dark" p={win(f, b21 + 4)} />
@@ -621,8 +641,8 @@ const S9: React.FC<SceneProps> = ({p}) => {
   const tip = LINE[47];
   const dogX = lerp(tip[0] - 170, tip[0] - 46, easeIO(f, b23 + 20, 26));
   const sniff = f > b24 && f < b25 ? Math.sin(f / 2.5) * 3 : 0;
-  const cam = track([{t: 0, z: 1.04, fx: 540, fy: 930}, {t: b24 - 12, z: 1.05, fx: 500, fy: 930}, {t: b24 + 6, z: 1.8, fx: tip[0] + 20, fy: tip[1] - 20},
-    {t: b25 + 2, z: 1.8, fx: tip[0] + 20, fy: tip[1] - 20}, {t: b25 + 22, z: 1.06, fx: 540, fy: 940}, {t: p.dur, z: 1.04, fx: 540, fy: 940}]);
+  const cam = track([{t: 0, z: 1.14, fx: 540, fy: 920}, {t: b24 - 12, z: 1.15, fx: 500, fy: 920}, {t: b24 + 6, z: 1.8, fx: tip[0] + 20, fy: tip[1] - 20},
+    {t: b25 + 2, z: 1.8, fx: tip[0] + 20, fy: tip[1] - 20}, {t: b25 + 22, z: 1.16, fx: 540, fy: 920}, {t: p.dur, z: 1.14, fx: 540, fy: 920}]);
   return (
     <Frame p={p} cam={cam} overlay={
       <g>
@@ -643,7 +663,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
           <Tag x={NOME[0] - 10} y={NOME[1] - 44} text="NOME" size={22} />
           <Ribbon f={f} pts={pts} w={16} fray={k > 0.85} seed={2} wobble={k > 0.9 ? 0.6 : 2} />
           <MapPin f={f} x={NEN[0]} y={NEN[1]} color={SER.warm} />
-          <Tag x={NEN[0] + 70} y={NEN[1] + 40} text="NENANA" size={22} />
+          {(f < b24 - 14 || f > b25 + 24) && <Tag x={NEN[0] + 70} y={NEN[1] + 40} text="NENANA" size={22} />}
           {f > b23 + 14 && f < b25 + 30 && (
             <g transform={`translate(${sniff} 0)`}><MapDogs f={f} x={dogX} y={tip[1] + 6} s={0.26} dogs={1} facing={1} vx={f < b24 ? 3 : 0} /></g>
           )}
@@ -717,6 +737,13 @@ const S11: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <Room f={f} seed={11}>
+          {/* a wall shelf of sample racks and binders, the top of the square */}
+          <g>
+            <rect x={80} y={660} width={360} height={16} fill="#7A6E86" stroke={C.ink} strokeWidth={4} />
+            {Array.from({length: 7}, (_, i) => <rect key={i} x={96 + i * 46} y={560 + (i % 3) * 8} width={36} height={100 - (i % 3) * 8} rx={4} fill={['#B0303F', '#5E7A88', '#C9A65A', '#6A5A7A'][i % 4]} stroke={C.ink} strokeWidth={3} />)}
+            <rect x={640} y={660} width={240} height={16} fill="#7A6E86" stroke={C.ink} strokeWidth={4} />
+            {Array.from({length: 6}, (_, i) => <g key={i}><rect x={660 + i * 36} y={600} width={18} height={60} rx={9} fill="#C8E3F0" opacity={0.8} stroke={C.ink} strokeWidth={3} /><rect x={660 + i * 36} y={590} width={18} height={14} rx={3} fill="#F3EBDD" stroke={C.ink} strokeWidth={2} /></g>)}
+          </g>
           {/* cold side window light */}
           <path d="M 240 360 L 840 360 L 1080 1200 L 0 1200 Z" fill="#BFD6EE" opacity={0.1} />
           <rect x={80} y={1190} width={920} height={30} fill="#7A6E86" stroke={C.ink} strokeWidth={6} />
@@ -726,11 +753,11 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <circle cx={920} cy={1010} r={8} fill={SER.steel} stroke={C.ink} strokeWidth={3} />
           <Suit f={f} x={cx} y={1310} s={1.3} seed={9} cues={[b28, b29]} face={false} coat="#6A4E5E" trousers="#2E2440" walk={walkIn < 1 || walkOut > 0 ? f : 0} reach={0.3 + 0.7 * liftK} reachL={0.7 * liftK} facing={walkOut > 0.05 ? -1 : 1} />
           {walkIn > 0.6 && walkOut < 0.5 && <g transform={`translate(${cx + 10} 900)`}><Tag x={0} y={0} text="CAHILL" size={20} /></g>}
-          <SampleTube f={f} x={430} y={1190 - 60 * liftK} scale={0.85} emotion={f > b31 ? 'worried' : 'calm'} label="FLEW" cues={[b29, b31]} seed={3} tilt={lean} look={0.4} />
-          <SampleTube f={f} x={650} y={1190 - 60 * liftK} scale={0.85} emotion={f > b31 ? 'worried' : 'calm'} label="STAYED" cues={[b30, b31]} seed={4} tilt={-lean} look={-0.4} />
+          <SampleTube f={f} x={420} y={1190 - 60 * liftK} scale={1.15} emotion={f > b31 ? 'worried' : 'calm'} label="FLEW" cues={[b29, b31]} seed={3} tilt={lean} look={0.4} />
+          <SampleTube f={f} x={640} y={1190 - 60 * liftK} scale={1.15} emotion={f > b31 ? 'worried' : 'calm'} label="STAYED" cues={[b30, b31]} seed={4} tilt={-lean} look={-0.4} />
           {tray > 0 && (
             <HeldTravel f={f} x={680} y={trayY - 180} w={320} h={190} mode="sweep" seed={111}>
-              <ResultTray f={f} x={840} y={trayY} s={0.9} />
+              <ResultTray f={f} x={830} y={trayY} s={1.0} />
             </HeldTravel>
           )}
           {/* the empty crate beside the table turns to show its stamp */}
@@ -774,7 +801,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
           {/* the only road: a short track reaching 2 of 10 roofs */}
           <path d="M 1140 1240 Q 1000 1210 930 1180" stroke="#8E8099" strokeWidth={26} fill="none" />
           <HeldTravel f={f} x={60} y={1000} w={960} h={280} mode="shadow" seed={121}>
-            <Village f={f} x={540} y={1240} s={0.95} glow={clamp01((f - b33) / 20)} seed={12} runway={false} />
+            <Village f={f} x={540} y={1260} s={1.25} glow={clamp01((f - b33) / 20)} seed={12} runway={false} />
           </HeldTravel>
           <g transform="translate(980 1110)"><Tag x={0} y={0} text="ROAD" size={18} /></g>
         </DuskWorld>
@@ -866,6 +893,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
     }>
       <SVG>
         <DuskWorld f={f} seed={14} horizon={1140} sun={0.2} stars={1}>
+          <Poles f={f} y={1150} top={480} n={4} x0={380} gapX={240} birds={false} />
           <rect data-band="ok" x={-60} y={1190} width={1200} height={110} fill="#6E6280" stroke={C.ink} strokeWidth={4} />
           <RunwayLights f={f} y={1196} />
           {/* the ground station hut and its antenna */}
@@ -885,13 +913,13 @@ const S14: React.FC<SceneProps> = ({p}) => {
             </g>
           )}
           <HeldTravel f={f} x={300} y={1080} w={640} h={180} mode="sweep" seed={141}>
-            <CargoDrone f={f} x={640} y={1250} scale={0.95} prop={0} gear groundY={1252} />
+            <CargoDrone f={f} x={660} y={1250} scale={1.15} prop={0} gear groundY={1252} />
           </HeldTravel>
-          {f > b43 - 4 && <GhostPlane x={ghostX} y={760 + 20 * Math.sin(f / 10)} s={0.9} f={f} />}
+          {f > b43 - 4 && <GhostPlane x={ghostX} y={620 + 20 * Math.sin(f / 10)} s={0.9} f={f} />}
           {f > b43 + 4 && (
-            <path d={`M 640 1060 Q 760 ${1000 - 120 * bend} ${900 + 60 * bend} ${980 - 200 * bend}`} fill="none" stroke={SER.phos} strokeWidth={6} strokeDasharray="14 10" markerEnd="" />
+            <path d={`M 640 1060 Q 760 ${1000 - 160 * bend} ${900 + 60 * bend} ${980 - 300 * bend}`} fill="none" stroke={SER.phos} strokeWidth={6} strokeDasharray="14 10" markerEnd="" />
           )}
-          <RadarEye f={f} x={rx} y={ry} scale={1.2 * up} emotion={f > b37 ? 'shy' : 'eager'} cues={[b36, b37, b38, b43]} seed={6} sweep={sweep} ghost={f > b37 && f < b37 + 30 ? 0.55 : 1}
+          <RadarEye f={f} x={rx} y={ry} scale={1.55 * up} emotion={f > b37 ? 'shy' : 'eager'} cues={[b36, b37, b38, b43]} seed={6} sweep={sweep} ghost={f > b37 && f < b37 + 30 ? 0.55 : 1}
             look={f > b43 ? lerp(0.8, -0.8, clamp01((f - b43) / 60)) : 0} />
         </DuskWorld>
       </SVG>
@@ -917,7 +945,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <DuskWorld f={f} seed={15} horizon={1040} sun={0.5} stars={0.8}>
           <HeldTravel f={f} x={60} y={980} w={960} h={280} mode="shadow" seed={151}>
-            <Village f={f} x={540} y={1180} s={0.9} glow={0.4 + 0.8 * clamp01((f - b44) / 12)} seed={15} runway lit={false} />
+            <Village f={f} x={540} y={1200} s={1.2} glow={0.4 + 0.8 * clamp01((f - b44) / 12)} seed={15} runway lit={false} />
           </HeldTravel>
           {Array.from({length: 26}, (_, i) => (
             <path key={i} d={`M ${lerp(-200, 1300, (gust * 1.4 + h01(i, 3)) % 1)} ${1100 + h01(i, 4) * 200} q 40 -10 90 0`} stroke="#F4F0FA" strokeWidth={3} opacity={0.7 * Math.sin(Math.PI * clamp01(gust * 1.2))} fill="none" />

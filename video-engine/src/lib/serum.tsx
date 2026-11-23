@@ -504,15 +504,17 @@ export const Engine1925: React.FC<{f: number; x: number; y: number; s?: number; 
     <g transform={`translate(${x + jx} ${y}) scale(${s})`}>
       <ContactShadow cx={0} cy={0} rx={130} ry={12} opacity={0.4} />
       <path d="M -90 0 L -70 -60 L 70 -60 L 90 0 Z" fill={SER.sepiaD} stroke={SER.ink} strokeWidth={6} />
-      <circle cx={0} cy={-150} r={86} fill={SER.sepia} stroke={SER.ink} strokeWidth={7} />
+      <circle cx={0} cy={-150} r={96} fill={SER.sepiaD} stroke={SER.ink} strokeWidth={7} />
+      <circle cx={0} cy={-150} r={86} fill={SER.sepia} stroke={SER.ink} strokeWidth={5} />
       {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((k) => {
         const a = (k / 9) * Math.PI * 2;
-        return <rect key={k} x={-14} y={-150 - 112} width={28} height={50} rx={6} fill={SER.sepiaL} stroke={SER.ink} strokeWidth={4} transform={`rotate(${(a * 180) / Math.PI} 0 -150)`} />;
+        return <g key={k} transform={`rotate(${(a * 180) / Math.PI} 0 -150)`}><rect x={-18} y={-150 - 116} width={36} height={46} rx={16} fill={SER.sepiaL} stroke={SER.ink} strokeWidth={4} />{[0, 1, 2].map((q) => <line key={q} x1={-16} x2={16} y1={-150 - 106 + q * 12} y2={-150 - 106 + q * 12} stroke={SER.sepiaD} strokeWidth={3} />)}</g>;
       })}
       <circle cx={0} cy={-150} r={30} fill={SER.sepiaD} stroke={SER.ink} strokeWidth={5} />
       <g transform={`rotate(${shiver * 4 * Math.sin(f / 3)} 0 -150)`}>
-        <path d="M -10 -150 Q -18 -270 0 -300 Q 18 -270 10 -150 Z" fill={SER.sepiaL} stroke={SER.ink} strokeWidth={5} />
-        <path d="M -10 -150 Q -18 -30 0 0 Q 18 -30 10 -150 Z" fill={SER.sepiaL} stroke={SER.ink} strokeWidth={5} />
+        <path d="M -14 -150 Q -34 -290 0 -330 Q 30 -290 14 -150 Z" fill="#6A4A2C" stroke={SER.ink} strokeWidth={6} />
+        <path d="M -14 -150 Q -34 -10 0 30 Q 30 -10 14 -150 Z" fill="#6A4A2C" stroke={SER.ink} strokeWidth={6} />
+        <path d="M -6 -300 Q -12 -230 -6 -170" stroke={SER.sepiaL} strokeWidth={4} fill="none" />
       </g>
       <circle cx={0} cy={-150} r={12} fill={SER.ink} />
       {[-40, -10, 22, 50].map((ix, k) => <path key={k} d={`M ${ix} -66 l 6 ${18 + 10 * h01(k)} l 6 ${-18 - 10 * h01(k)}`} fill="#EAF2F8" stroke={SER.ink} strokeWidth={2.5} />)}
@@ -570,19 +572,40 @@ export const DuskWorld: React.FC<{f: number; seed?: number; horizon?: number; su
         <path key={i} d={`M ${-40 + i * 170} ${horizon + 60 + i * 37 % 120} q 90 -8 180 0`} stroke="#fff" strokeWidth={3} opacity={0.35} fill="none" />
       ))}
       {children}
-      {drifts && Array.from({length: 9}, (_, i) => {
-        const x = -80 + i * 140 + 50 * h01(i, seed + 3);
-        const w = 140 + 160 * h01(i + 2, seed);
-        const yy = 1640 + 150 * h01(i + 4, seed);
+      {drifts && Array.from({length: 6}, (_, i) => {
+        const x = -60 + i * 190 + 70 * h01(i, seed + 3);
+        const w = 150 + 120 * h01(i + 2, seed);
+        const yy = 1770 + 70 * h01(i + 4, seed);
         const fill = summer ? (i % 2 ? '#4E6A3A' : '#5E7A48') : (i % 2 ? '#E7E0EE' : '#D9D0E3');
         return (
           <g key={i} data-band="ok">
-            <path d={`M ${x} 1960 Q ${x + w * 0.25} ${yy} ${x + w * 0.55} ${yy + 14} Q ${x + w * 0.8} ${yy + 24} ${x + w} 1960 Z`} fill={fill} stroke={SER.ink} strokeWidth={4} />
-            {!summer && <path d={`M ${x + w * 0.2} ${yy + 18} q ${w * 0.25} -12 ${w * 0.5} -2`} stroke="#fff" strokeWidth={4} opacity={0.7} fill="none" />}
-            {[0, 1, 2].map((k) => <path key={k} d={`M ${x + w * (0.3 + k * 0.15)} ${yy + 16 + k * 6} q ${3 + 2 * Math.sin(f / 20 + k + i)} -22 ${6} -${summer ? 40 : 24}`} stroke={summer ? '#8FA36A' : SER.spruceL} strokeWidth={3} fill="none" />)}
+            <path d={`M ${x} 1960 Q ${x + w * 0.3} ${yy} ${x + w * 0.6} ${yy + 10} Q ${x + w * 0.85} ${yy + 18} ${x + w} 1960 Z`} fill={fill} stroke={SER.ink} strokeWidth={3} />
+            {[0, 1].map((k) => <path key={k} d={`M ${x + w * (0.35 + k * 0.2)} ${yy + 14} q ${3 + 2 * Math.sin(f / 20 + k + i)} -18 ${5} -${summer ? 30 : 20}`} stroke={summer ? '#8FA36A' : SER.spruceL} strokeWidth={3} fill="none" />)}
           </g>
         );
       })}
+      {drifts && (
+        <g data-band="ok">
+          {/* near plane: a line of trail stakes and a fallen spruce, varied by seed */}
+          {Array.from({length: 5}, (_, i) => {
+            const x = 80 + i * 230 + 40 * h01(i, seed + 7);
+            const y0 = 1560 + 30 * h01(i + 1, seed + 7);
+            return (
+              <g key={`st${i}`}>
+                <path d={`M ${x} ${y0} L ${x + 4} ${y0 - 120 + 20 * h01(i, seed)}`} stroke={SER.ink} strokeWidth={9} strokeLinecap="round" />
+                <path d={`M ${x} ${y0} L ${x + 4} ${y0 - 120 + 20 * h01(i, seed)}`} stroke={summer ? '#8A6A44' : '#6E5A4A'} strokeWidth={5} strokeLinecap="round" />
+                <path d={`M ${x + 4} ${y0 - 112} q 18 ${-4 + 4 * Math.sin(f / 9 + i)} 34 ${2}`} stroke={SER.ribbon} strokeWidth={4} fill="none" opacity={0.0} />
+                <ellipse cx={x + 2} cy={y0 + 4} rx={26} ry={6} fill={SER.ink} opacity={0.25} />
+              </g>
+            );
+          })}
+          <g transform={`translate(${200 + 500 * h01(seed, 11)} 1690) rotate(${-8 + 6 * h01(seed, 12)})`}>
+            <path d="M -150 0 L 150 -10" stroke={SER.ink} strokeWidth={16} strokeLinecap="round" />
+            <path d="M -150 0 L 150 -10" stroke="#5A4636" strokeWidth={10} strokeLinecap="round" />
+            {[-100, -40, 20, 80].map((dx) => <path key={dx} d={`M ${dx} ${-dx * 0.03} l -22 -30 m 22 30 l 26 -26`} stroke={summer ? '#2F5A3A' : SER.spruce} strokeWidth={6} />)}
+          </g>
+        </g>
+      )}
     </g>
   );
 };
@@ -641,6 +664,38 @@ export const MapPin: React.FC<{f: number; x: number; y: number; s?: number; colo
       <circle r={22 * k} fill="none" stroke={SER.ink} strokeWidth={3} opacity={pulse * (1 - (f % 40) / 40)} />
       <circle r={12} fill={color} stroke={SER.ink} strokeWidth={5} />
       <circle r={4} fill={SER.ink} />
+    </g>
+  );
+};
+
+/**
+ * Poles: a line of telegraph or power poles with sagging wires across the top of an exterior, so the
+ * top of the 1:1 square (master y 420 to 690) carries the set. `sepia` draws the 1925 line.
+ */
+export const Poles: React.FC<{f: number; y?: number; top?: number; n?: number; x0?: number; gapX?: number; sepia?: boolean; birds?: boolean}> = ({f, y = 1150, top = 470, n = 5, x0 = 60, gapX = 260, sepia = false, birds = true}) => {
+  const wood = sepia ? SER.sepiaD : '#4A3C3A';
+  const xs = Array.from({length: n}, (_, i) => x0 + i * gapX);
+  const sway = 3 * Math.sin(f / 40);
+  return (
+    <g>
+      {[0, 1, 2].map((w) => (
+        <path key={w} d={xs.map((x, i) => (i ? `Q ${x - gapX / 2} ${top + 36 + w * 16 + 40 + sway} ${x} ${top + 30 + w * 16}` : `M ${x - gapX} ${top + 30 + w * 16 + 6} Q ${x - gapX / 2} ${top + 76 + w * 16 + sway} ${x} ${top + 30 + w * 16}`)).join(' ')}
+          fill="none" stroke={SER.ink} strokeWidth={3} opacity={0.85} />
+      ))}
+      {xs.map((x, i) => (
+        <g key={i}>
+          <ellipse cx={x} cy={y} rx={22} ry={6} fill={SER.ink} opacity={0.3} />
+          <path d={`M ${x} ${y} L ${x + 3} ${top}`} stroke={SER.ink} strokeWidth={14} strokeLinecap="round" />
+          <path d={`M ${x} ${y} L ${x + 3} ${top}`} stroke={wood} strokeWidth={8} strokeLinecap="round" />
+          <rect x={x - 46} y={top + 22} width={96} height={12} rx={3} fill={wood} stroke={SER.ink} strokeWidth={3} />
+          <rect x={x - 34} y={top + 40} width={72} height={10} rx={3} fill={wood} stroke={SER.ink} strokeWidth={3} />
+          {[-38, -12, 14, 40].map((dx) => <circle key={dx} cx={x + dx} cy={top + 20} r={4} fill={sepia ? SER.sepiaL : '#9FB8C0'} stroke={SER.ink} strokeWidth={2} />)}
+        </g>
+      ))}
+      {birds && [0, 1, 2].map((k) => {
+        const bx = xs[1] + 40 + k * 26, by = top + 54 + 26 + 4 * Math.sin(f / 20 + k);
+        return <path key={`b${k}`} d={`M ${bx - 8} ${by} q 8 ${-8 - 3 * Math.sin(f / 4 + k)} 16 0`} fill={SER.ink} stroke={SER.ink} strokeWidth={2} />;
+      })}
     </g>
   );
 };
