@@ -296,7 +296,7 @@ export const SearchGrid: React.FC<{f: number; x: number; y: number; w?: number; 
         {Array.from({length: Math.floor(h / 40) + 1}, (_, i) => <path key={`h${i}`} d={`M ${-w / 2} ${-h / 2 + 50 + i * 40} H ${w / 2}`} stroke={SCN.rule} strokeWidth={2} />)}
         {Array.from({length: Math.floor(w / 40) + 1}, (_, i) => <path key={`v${i}`} d={`M ${-w / 2 + i * 40} ${-h / 2 + 50} V ${h / 2}`} stroke={SCN.rule} strokeWidth={2} />)}
         {stripes > 0 && Array.from({length: Math.floor((h - 50) / 14 * stripes)}, (_, i) => (
-          <rect key={`s${i}`} x={-w / 2} y={-h / 2 + 50 + i * 14} width={w} height={14} fill={specColor(h01(i, seed))} opacity={0.22} />
+          <rect key={`s${i}`} x={-w / 2} y={-h / 2 + 50 + i * 14} width={w} height={14} fill={specColor(h01(i, seed))} opacity={0.13} />
         ))}
         {fog.map((g, i) => (
           <g key={`f${i}`} opacity={clamp01(g.p)}>
@@ -486,23 +486,42 @@ export const Gear: React.FC<{x: number; y: number; kind: GearKind; scale?: numbe
   );
 };
 
-/** Coin. Two faces, spin 0..1 turns it (0 front, 0.5 edge, 1 back). Origin is the centre, r at scale 1 is 170. */
-export const Coin: React.FC<{x: number; y: number; scale?: number; spin?: number; front: string[]; back: string[]; rot?: number}> =
-({x, y, scale = 1, spin = 0, front, back, rot = 0}) => {
-  const c = Math.cos(spin * Math.PI);
-  const face = c >= 0 ? front : back;
-  const g = tones(c >= 0 ? '#E9C46A' : '#C9CDD3');
-  const sx = Math.max(0.06, Math.abs(c));
+/**
+ * Coin. A struck brass coin with a milled rim and visible edge thickness, two faces. spin 0..1 turns it half a revolution
+ * (0 front toward camera, 0.5 on edge, 1 back). Origin is the centre, r 170 at scale 1. Casts a shadow on whatever is under it.
+ */
+export const Coin: React.FC<{x: number; y: number; scale?: number; spin?: number; front: string[]; back: string[]; rot?: number; shadowY?: number}> =
+({x, y, scale = 1, spin = 0, front, back, rot = 0, shadowY = 230}) => {
+  const a = clamp01(spin) * Math.PI;
+  const c = Math.cos(a);
+  const showFront = c >= 0;
+  const face = showFront ? front : back;
+  const g = tones(showFront ? '#E2B653' : '#C9CDD3');
+  const sx = Math.max(0.05, Math.abs(c));
+  const R = 170, T = 34;
+  const edgeW = T * Math.abs(Math.sin(a));
+  const side = showFront ? 1 : -1;
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${scale})`}>
-      <ellipse cx={8} cy={12} rx={172 * sx} ry={172} fill="#000" opacity={0.22} />
-      <ellipse cx={0} cy={0} rx={176 * sx} ry={176} fill={g.shade} stroke={SCN.ink} strokeWidth={7} />
-      <ellipse cx={0} cy={0} rx={160 * sx} ry={160} fill={g.base} stroke={SCN.ink} strokeWidth={4} />
-      <ellipse cx={-40 * sx} cy={-50} rx={60 * sx} ry={40} fill={g.key} opacity={0.6} />
+      <ellipse cx={20} cy={shadowY} rx={R * (0.55 + 0.45 * sx)} ry={26} fill="#000" opacity={0.3} />
+      {/* edge band, seen as the coin turns */}
+      <rect x={side * R * sx - (side > 0 ? 0 : edgeW)} y={-R} width={Math.max(0.1, edgeW)} height={R * 2} rx={Math.min(edgeW, 12)} fill="#9C7A2E" stroke={SCN.ink} strokeWidth={6} />
+      {Array.from({length: 22}, (_, i) => (
+        <path key={i} d={`M ${side * R * sx + (side > 0 ? 2 : -edgeW + 2)} ${-R + 14 + i * 15} h ${Math.max(0, edgeW - 4)}`} stroke="#6E5420" strokeWidth={3} opacity={edgeW > 6 ? 0.7 : 0} />
+      ))}
+      <ellipse cx={0} cy={0} rx={R * sx} ry={R} fill={g.shade} stroke={SCN.ink} strokeWidth={7} />
+      {/* milled rim */}
+      {Array.from({length: 48}, (_, i) => {
+        const t = (i / 48) * Math.PI * 2;
+        return <path key={`m${i}`} d={`M ${Math.cos(t) * R * 0.94 * sx} ${Math.sin(t) * R * 0.94} L ${Math.cos(t) * R * 0.99 * sx} ${Math.sin(t) * R * 0.99}`} stroke={SCN.ink} strokeWidth={2.5} opacity={0.6} />;
+      })}
+      <ellipse cx={0} cy={0} rx={R * 0.86 * sx} ry={R * 0.86} fill={g.base} stroke={SCN.ink} strokeWidth={4} />
+      <ellipse cx={-R * 0.25 * sx} cy={-R * 0.3} rx={R * 0.38 * sx} ry={R * 0.26} fill={g.key} opacity={0.7} />
+      <ellipse cx={R * 0.3 * sx} cy={R * 0.35} rx={R * 0.4 * sx} ry={R * 0.3} fill={g.core} opacity={0.35} />
       <g transform={`scale(${sx} 1)`}>
         {face.map((l, i) => (
           <text key={i} x={0} y={-10 + (i - (face.length - 1) / 2) * 62 + (i === 0 ? 10 : 0)} textAnchor="middle" fontFamily={MONO} fontWeight={900}
-            fontSize={i === 0 ? 74 : 26} letterSpacing={i === 0 ? 0 : 2} fill={SCN.ink}>{l}</text>
+            fontSize={i === 0 ? 74 : 24} letterSpacing={i === 0 ? 0 : 1.5} fill={SCN.ink}>{l}</text>
         ))}
       </g>
     </g>
@@ -542,9 +561,11 @@ export const TundraWorld: React.FC<{f: number; kind?: 'tundra' | 'mudflat' | 'gr
         const y = top + ((r + 0.5) / 26) ** (topDown ? 1 : 1.7) * (1920 - top);
         const s = topDown ? 1 : 0.3 + 0.9 * ((y - top) / (1920 - top));
         return Array.from({length: 7}, (_, c) => {
-          const x = ((c + h01(r, c) * 0.9) / 7) * 1180 - 60 + (drift * s * 40) % 160;
+          const x = ((c + h01(r, c) * 0.95) / 7) * 1180 - 60 + (drift * s * 40) % 160;
+          const yj = y + (h01(c, r + 9) - 0.5) * 60 * s;
+          const sz = 0.5 + 1.1 * h01(r * 3 + c, 17);
           if (kind === 'mudflat') return <path key={`${r}-${c}`} d={`M ${x - 60 * s} ${y} q ${30 * s} ${-8 * s} ${60 * s} 0 t ${60 * s} 0`} fill="none" stroke={c % 2 ? SCN.mudL : SCN.mudD} strokeWidth={3 * s} opacity={0.6} />;
-          return <ellipse key={`${r}-${c}`} cx={x} cy={y} rx={34 * s} ry={13 * s} fill={c % 3 ? SCN.shade : groundL} opacity={kind === 'grass' ? 0.45 : 0.35} />;
+          return <ellipse key={`${r}-${c}`} cx={x} cy={yj} rx={34 * s * sz} ry={13 * s * (0.7 + 0.6 * h01(c, r))} fill={h01(r, c + 5) > 0.55 ? SCN.shade : h01(r, c + 6) > 0.5 ? groundL : '#6E6A4A'} opacity={(kind === 'grass' ? 0.4 : 0.3) * (0.6 + 0.5 * h01(c + 2, r))} />;
         });
       })}
       {kind === 'grass' && Array.from({length: 60}, (_, i) => {
