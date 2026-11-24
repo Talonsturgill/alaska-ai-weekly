@@ -9,7 +9,7 @@ import {MONO, monoW} from './prospect';
  * Specs (a faced Raspberry Pi 4B board, the hero), a small quadrotor that carries a push-broom camera pod (NO face, never a
  * cargo drone), the rainbow push-broom scanline and its spectrum cards (the machine's view ONLY), red GPS pin flags, a
  * clipboard search grid with pins and fog, an inked CLEARED rubber stamp that can flip to NOT CLEARED, the DBSCAN bouncer
- * (a faced velvet-rope post with a clipboard, an OBJECT, never a person), a mute faced stopwatch, staged search gear with NO
+ * (a faced brass rope post with a deep-teal rope and a clipboard, an OBJECT, never a person), a mute faced stopwatch, staged search gear with NO
  * faces (waders, buoy, life jacket, net, bucket, tarp, jacket) that can blend toward the grass, a two-faced coin, and an
  * overcast July tundra world (tundra, mudflat, swamp grass) with near tussocks for the master's floor.
  *
@@ -21,8 +21,8 @@ export const SCN = {
   sedge: '#7E8A4A', sedgeL: '#A4AE68', khaki: '#A08A54', khakiL: '#C4AE76', shade: '#3F4B2E',
   mud: '#6F6A62', mudL: '#9A948A', mudD: '#4E4A44',
   board: '#2F8F5B', boardL: '#56B47F', boardD: '#1D6440', gold: '#E9C46A', chip: '#2B2B30', led: '#7CF0FF',
-  red: '#E63B2E', redL: '#FF7A6B', redD: '#A3231A', paper: '#F3EDE0', rule: '#C9C0AE', fog: '#C9CFCB',
-  drone: '#4A4F57', droneL: '#7B828C', pod: '#D9D4C7', brass: '#C79A3B', velvet: '#8E2340',
+  red: '#EE4A24', redL: '#FF8A66', redD: '#A82E14', paper: '#F3EDE0', rule: '#C9C0AE', fog: '#CFCFC6',
+  drone: '#4A4F57', droneL: '#7B828C', pod: '#D9D4C7', brass: '#C79A3B', velvet: '#2F6E6A',
 };
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
@@ -42,9 +42,9 @@ function beatPose(f: number, seed: number, cues: number[] | undefined, h: number
   return {skew, dip: p.dip * 1.4, tilt: p.headRot * 1.6, on: true};
 }
 
-/** the 150-band spectrum as a colour at t 0..1 (violet to deep red, past the visible edge) */
+/** the 150-band spectrum as a colour at t 0..1: violet to amber-gold, then a low-chroma brown-grey to a hatched-dark NIR end, never red */
 export const specColor = (t: number) => {
-  const stops = ['#6A3FD0', '#3D6BE0', '#2BB3C9', '#3FBF6A', '#C9D23A', '#F2A13A', '#E5502E', '#B3122E'];
+  const stops = ['#6A3FD0', '#3D6BE0', '#2BB3C9', '#3FBF6A', '#C9D23A', '#E8C24A', '#A89870', '#3A3346'];
   const x = clamp01(t) * (stops.length - 1);
   const i = Math.min(stops.length - 2, Math.floor(x));
   const k = x - i;
@@ -69,7 +69,7 @@ export const Specs: React.FC<{f: number; x: number; y: number; scale?: number; e
   const id = uid(`specs${seed}`);
   const bp = beatPose(f, seed, cues, 170);
   const W = 250, H = 170;
-  const t = tones(SCN.board);
+  const t = tones(SCN.boardL);
   const breathe = 1 + 0.014 * Math.sin(f / 12 + seed);
   const blinkPh = (f + seed * 41) % 96;
   const blink = blinkPh < 4 ? 1 - Math.abs(blinkPh - 2) / 2 : 0;
@@ -257,10 +257,11 @@ export const PinFlag: React.FC<{f: number; x: number; y: number; scale?: number;
         {glow > 0 && <circle cx={30} cy={-118} r={60} fill={SCN.redL} opacity={0.22 * glow} />}
         <path d="M 0 0 V -150" stroke={SCN.ink} strokeWidth={9} strokeLinecap="round" />
         <path d="M 0 0 V -150" stroke="#D8C9A8" strokeWidth={4} strokeLinecap="round" />
+        <path d={`M 2 -150 L 74 ${-128 + 3 * Math.sin(f / 4 + seed)} L 2 -104 Z`} fill="none" stroke={SCN.paper} strokeWidth={11} strokeLinejoin="round" opacity={0.85} />
         <path d={`M 2 -150 L 74 ${-128 + 3 * Math.sin(f / 4 + seed)} L 2 -104 Z`} fill={r.base} stroke={SCN.ink} strokeWidth={5} strokeLinejoin="round" />
         <path d="M 6 -142 L 46 -130" stroke={SCN.redL} strokeWidth={4} strokeLinecap="round" opacity={0.8} />
         <path d="M 6 -110 L 50 -122" stroke={r.shade} strokeWidth={4} strokeLinecap="round" opacity={0.6} />
-        <circle cx={0} cy={-154} r={7} fill={SCN.gold} stroke={SCN.ink} strokeWidth={3} />
+        <circle cx={0} cy={-156} r={10} fill={SCN.paper} stroke={SCN.ink} strokeWidth={3.5} />
       </g>
       {gps && s > 0.9 && (
         <g transform="translate(0 30)">
@@ -378,7 +379,7 @@ export const Bouncer: React.FC<{f: number; x: number; y: number; scale?: number;
       {/* rope + second post */}
       <path d={`M 26 -210 Q ${rope / 2} ${-140 + 6 * Math.sin(f / 15)} ${rope - 16} -170`} fill="none" stroke={SCN.ink} strokeWidth={20} strokeLinecap="round" />
       <path d={`M 26 -210 Q ${rope / 2} ${-140 + 6 * Math.sin(f / 15)} ${rope - 16} -170`} fill="none" stroke={SCN.velvet} strokeWidth={13} strokeLinecap="round" />
-      <path d={`M 26 -214 Q ${rope / 2} ${-146 + 6 * Math.sin(f / 15)} ${rope - 16} -176`} fill="none" stroke="#C4566F" strokeWidth={4} strokeLinecap="round" opacity={0.7} />
+      <path d={`M 26 -214 Q ${rope / 2} ${-146 + 6 * Math.sin(f / 15)} ${rope - 16} -176`} fill="none" stroke="#5FA39D" strokeWidth={4} strokeLinecap="round" opacity={0.7} />
       <g transform={`translate(${rope} 0)`}>
         <ellipse cx={0} cy={-10} rx={46} ry={14} fill={b.shade} stroke={SCN.ink} strokeWidth={5} />
         <rect x={-12} y={-180} width={24} height={170} fill={b.base} stroke={SCN.ink} strokeWidth={5} />
@@ -458,7 +459,7 @@ export type GearKind = 'waders' | 'buoy' | 'lifejacket' | 'net' | 'bucket' | 'ta
  */
 export const Gear: React.FC<{x: number; y: number; kind: GearKind; scale?: number; rot?: number; camo?: number; ground?: string; ghost?: number; glint?: number}> =
 ({x, y, kind, scale = 1, rot = 0, camo = 0, ground = SCN.sedge, ghost = 0, glint = 0}) => {
-  const base = {waders: '#4D5A3A', buoy: '#F07A2E', lifejacket: '#F2A23A', net: '#5C7A86', bucket: '#E3E0D6', tarp: '#4F6B4A', jacket: '#6B6A3E', boots: '#3F3A36'}[kind];
+  const base = {waders: '#4E5A3A', buoy: '#B89A5A', lifejacket: '#B89A5A', net: '#7A746A', bucket: '#CFCAC0', tarp: '#6E7F8C', jacket: '#A08A54', boots: '#3F3A36'}[kind];
   const mix = (a: string, b: string, k: number) => {
     const ch = (s: string, o: number) => parseInt(s.slice(o, o + 2), 16);
     const m = (o: number) => Math.round(ch(a, o) + (ch(b, o) - ch(a, o)) * k).toString(16).padStart(2, '0');
