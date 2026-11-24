@@ -1,0 +1,72 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.986,
+    "heard": "A drone asks every strip of Tundra one question. Is that made of something the ground isn't? Crews often fly regular and infrared cameras which can miss camouflaged or insulated people. This hyper spectral camera sees 150 bands of light revealing material differences. The catch is the flood of data, one line at a time. On a Raspberry Pi riding the drone, the anomaly detector by itself took 21 milliseconds a line. A new line comes every 10. So researchers built Sable, a faster pipeline for the same detector. It scores pixels for anomalies than clusters the standouts. Now, a line takes under 6 milliseconds, right on the drone. Each cluster becomes a flag, a GPS point to go check. The test ran with Quinigok search and rescue, a volunteer non-profit in a UPIC village off the road system. Researchers simulated a search with waiters, nets, and buoys, mostly donated by the community. On the mud flat, about 56% of flags were planted items, and it caught 55% of the items. In swamp grass, at a different threshold, about 99% were planted items, but it caught just 29%. It keeps up. The question now is what it misses. Here's the strongest case against it. The paper's pitch for hyperspectral is camouflage. The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflage objects. So it can go quiet in the very case it's pitched for. They call recall still limited in just 200 scenes, an unreviewed preprint not yet used in a real search. They pitch it as augmenting search methods, not replacing them. A flag means go look. Silence means keep looking.",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.028,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.08,
+        "voiced_frac": 0.45,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 118.88,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 118.88,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "gap_share": {
+    "min_gap_s": 0.35,
+    "gaps": 32,
+    "seconds": 21.92,
+    "runtime_s": 118.4,
+    "share": 0.1851,
+    "aim": 0.15,
+    "over_aim": true,
+    "longest_s": 1.1
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.986,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.981,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.986,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

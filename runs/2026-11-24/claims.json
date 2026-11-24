@@ -1,0 +1,616 @@
+{
+ "run_date": "2026-11-24",
+ "fact_check_verdict": "PASS WITH CUTS. One adversarial validator read arXiv 2611.27017 (abstract and full HTML, Table II, limitations, future work, acknowledgments) and the Nalaquq site. Conditions: (1) a preprint posted November 20th, 2026, not peer reviewed; (2) never used in a real search, the scenario was simulated, real human-in-the-loop integration is future work, nobody was found or rescued; (3) researchers arranged the items, mostly donated by the community, the paper calls them QSAR-selected search indicators, say nothing more about the community's role; (4) each number stays with its scene and its own threshold, mudflat about 56% precision and 55% recall, swamp grass about 99% precision and 29% recall, never one setting; low recall explained only in the paper's words (filtering can suppress true detections, higher thresholds can suppress camouflaged objects); (5) never claim the reason for onboard processing is missing internet, the paper says it removes dependence on data offloading; (6) never call SABL unsupervised; (7) SABL augments existing search methods, two scenes of subarctic tundra only; (8) affiliations as printed; (9) Quinhagak described only with sourced facts, never speak for residents or QSAR members, no quotes from the community.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-one-primary",
+   "spoken": "This comes from a preprint posted to arXiv on November 20th. It hasn't been peer reviewed yet.",
+   "on_screen": "ARXIV PREPRINT · NOVEMBER 20TH",
+   "source": "https://arxiv.org/abs/2611.27017",
+   "second_source": null,
+   "verbatim_source": "\"[Submitted on 20 Nov 2026]",
+   "requires": [
+    "a preprint, not peer reviewed"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-one-primary",
+   "spoken": "The authors call their system SABL, short for Spectral Anomaly Based Localization.",
+   "on_screen": "SABL · SPECTRAL ANOMALY-BASED LOCALIZATION",
+   "source": "https://arxiv.org/abs/2611.27017",
+   "second_source": null,
+   "verbatim_source": "\"We present SABL, an edge-computing pipeline for on-drone Spectral Anomaly-Based Localization.",
+   "requires": [
+    "a preprint, not peer reviewed"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-one-primary",
+   "spoken": "The authors are from Binghamton University, Hampden Sydney College and Nalaquq, a company based in Quinhagak.",
+   "on_screen": "BINGHAMTON · HAMPDEN-SYDNEY · NALAQUQ, LLC",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Nalaquq, LLC, Quinhagak, AK 99655 USA",
+   "requires": [
+    "Gyabaah Kyere is Hampden-Sydney only, Sean Gleason is listed at both",
+    "write Nalaquq, LLC exactly"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-one-primary",
+   "spoken": "Search crews usually fly aircraft with regular cameras and infrared cameras.",
+   "on_screen": "STANDARD KIT · VISIBLE + INFRARED",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"WSAR teams commonly use crewed and uncrewed aircraft to collect conventional visible (EO/RGB) and infrared (IR) imagery",
+   "requires": [
+    "say infrared as the paper does, add no outside thermal claims"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-one-primary",
+   "spoken": "Those cameras can miss people who are camouflaged, wearing insulated clothing, or not giving off a usual heat signature.",
+   "on_screen": "CAMOUFLAGED · INSULATED · NO HEAT SIGNATURE",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"deliberately camouflaged, insulated, or lacking a conventional thermal signature",
+   "requires": [
+    "the paper's motivation, not a measured result"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-one-primary",
+   "spoken": "Hyperspectral cameras can pick up differences in what things are made of that ordinary images don't show.",
+   "on_screen": "HYPERSPECTRAL · SEES MATERIAL DIFFERENCES",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"These measurements can expose material-composition differences that are not apparent in conventional imagery",
+   "requires": [
+    "no claim that it sees through objects"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-one-primary",
+   "spoken": "The catch is that they produce so much data that processing it on the drone in real time is hard.",
+   "on_screen": "THE CATCH · HUGE DATA VOLUME",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"but its high data volume challenges real-time on-drone processing",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-one-primary",
+   "spoken": "Processing on the drone means the data doesn't have to be offloaded first.",
+   "on_screen": "ON-BOARD · NO DATA OFFLOADING",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Onboard processing removes dependence on data offloading, thereby allowing potential indicators",
+   "requires": [
+    "never say the reason was a lack of internet or cell service"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-one-primary",
+   "spoken": "The camera records 150 bands of light between 400 and 1000 nanometers.",
+   "on_screen": "150 BANDS · 400 TO 1000 NM",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"captures 150 bands in VNIR (400-1000 nm)",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-one-primary",
+   "spoken": "It scans like a push broom, capturing the ground one line at a time.",
+   "on_screen": "PUSH-BROOM · ONE LINE AT A TIME",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"many UAS-compatible systems use push-broom sensors that acquire imagery one line at a time",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-one-primary",
+   "spoken": "The computer doing all the work was a Raspberry Pi 4B.",
+   "on_screen": "RASPBERRY PI 4B · ON THE DRONE",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"We executed this system on a Raspberry Pi 4B connected to the camera via a Cat6 Ethernet cable",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-one-primary",
+   "spoken": "It scores every line with a Reed Xiaoli anomaly detector, then groups the flagged pixels using a method called DBSCAN.",
+   "on_screen": "ERX DETECTOR · DBSCAN CLUSTERING",
+   "source": "https://arxiv.org/abs/2611.27017",
+   "second_source": null,
+   "verbatim_source": "\"exponentially moving Reed-Xiaoli (ERX) anomaly detection and DBSCAN spatial filtering",
+   "requires": [
+    "never call it unsupervised"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-one-primary",
+   "spoken": "For each cluster, it reports a GPS position searchers can go and check.",
+   "on_screen": "OUTPUT · GPS POINT PER CLUSTER",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"SABL also reports the GPS position of the center-most point in the cluster",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-one-primary",
+   "spoken": "It handles each scanline in about 5.7 milliseconds, faster than the camera's 10 millisecond interval.",
+   "on_screen": "5.67 TO 5.73 MS · UNDER 10 MS",
+   "source": "https://arxiv.org/abs/2611.27017",
+   "second_source": null,
+   "verbatim_source": "\"It processes hyperspectral scanlines at 5.67-5.73 ms per line, meeting the camera's 10-ms acquisition interval",
+   "requires": [
+    "a preprint, not peer reviewed"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-one-primary",
+   "spoken": "Without the full pipeline, the detector alone took about 21 milliseconds per line on the Pi, too slow for real time.",
+   "on_screen": "ERX ALONE · 21.34 MS · TOO SLOW",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"On the embedded device, ERX achieves average line processing times of 21.34 ms",
+   "requires": [
+    "optional detail"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-one-primary",
+   "spoken": "The data comes from a 10 day deployment with Quinhagak Search and Rescue in Alaska.",
+   "on_screen": "10 DAYS · QUINHAGAK SEARCH AND RESCUE",
+   "source": "https://arxiv.org/abs/2611.27017",
+   "second_source": null,
+   "verbatim_source": "\"10-day deployment with Quinhagak Search and Rescue (QSAR)",
+   "requires": [
+    "name the organization exactly",
+    "data collection, not a real search"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-one-primary",
+   "spoken": "Quinhagak Search and Rescue is a nonprofit that trains and organizes volunteer responders.",
+   "on_screen": "QSAR · VOLUNTEER NONPROFIT",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Quinhagak Search and Rescue (QSAR), is a non-profit organization which trains and organizes volunteer responders",
+   "requires": [
+    "never speak for QSAR members"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-two-sources",
+   "spoken": "Quinhagak is a Yup'ik village in western Alaska, off the road system.",
+   "on_screen": "QUINHAGAK · YUP'IK VILLAGE · NO ROADS IN",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": "https://www.nalaquq.com/",
+   "verbatim_source": "\"one of 56 Yup’ik villages off the road system in western Alaska",
+   "requires": [
+    "describe it with these facts only, never speak for residents"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-one-primary",
+   "spoken": "It sits on the Bering Sea coast in the Yukon Kuskokwim Delta.",
+   "on_screen": "BERING SEA COAST · YUKON-KUSKOKWIM DELTA",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Quinhagak, Alaska, lies along the Bering Sea coast in the Yukon–Kuskokwim Delta",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-one-primary",
+   "spoken": "The local team already uses small drones with regular and infrared cameras.",
+   "on_screen": "QSAR ALREADY FLIES EO/IR DRONES",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"QSAR operators also use small quadrotor UASs equipped with EO/IR sensors",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-one-primary",
+   "spoken": "The flights took place on July 17th and 18th under overcast skies.",
+   "on_screen": "JULY 17TH AND 18TH · OVERCAST",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Flights were conducted on July 17–18, 2026, under overcast conditions",
+   "requires": [
+    "summer season on screen, green tundra, no snow"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-one-primary",
+   "spoken": "They flew over a mudflat on the Bering Sea coast and a patch of swamp grass near the Arolik River.",
+   "on_screen": "MUDFLAT · SWAMP GRASS · AROLIK RIVER",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"a patch of swamp grass near the Arolik river",
+   "requires": [
+    "companion excerpt reads \"a mudflat on the coast of the Bering sea\"",
+    "only two scenes were tested"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-one-primary",
+   "spoken": "It was a simulation. The researchers laid out items to stage a search scenario.",
+   "on_screen": "A STAGED SEARCH · NOT A REAL RESCUE",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"To simulate a QSAR mission scenario, we arranged relevant items.",
+   "requires": [
+    "objects laid out by researchers, never a real search",
+    "no claim that anyone was found"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-one-primary",
+   "spoken": "The items included waders, jackets, boots, nets, life jackets, buckets and buoys.",
+   "on_screen": "WADERS · NETS · LIFE JACKETS · BUOYS",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"fishing and marine equipment (nets, life jackets, buckets, buoys)",
+   "requires": [
+    "companion excerpts read \"clothing (waders, jackets, boots)\" and \"outdoor recreation gear (tarps, backpacks, storage canisters)\""
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-one-primary",
+   "spoken": "Most of the items were donated by the community.",
+   "on_screen": "ITEMS MOSTLY DONATED BY THE COMMUNITY",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"mostly donated by the community",
+   "requires": [
+    "say mostly",
+    "researchers arranged the items",
+    "no motive or sentiment for the community"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-one-primary",
+   "spoken": "On the mudflat, about 56% of the system's flags were real objects, and it found 55% of them.",
+   "on_screen": "MUDFLAT · 56% PRECISION · 55% RECALL",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": "https://arxiv.org/abs/2611.27017",
+   "verbatim_source": "\"SABL detects 55.08% of annotated objects in Mudflat and 29.20% in Swamp Grass",
+   "requires": [
+    "mudflat precision 56.01 in Table II, the abstract gives approximately 56% and 99%",
+    "a preprint, not peer reviewed"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "verified-one-primary",
+   "spoken": "In the swamp grass, about 99% of flags were real objects, but it found only 29% of them.",
+   "on_screen": "SWAMP GRASS · 99% PRECISION · 29% RECALL",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": "https://arxiv.org/abs/2611.27017",
+   "verbatim_source": "\"SABL detects 55.08% of annotated objects in Mudflat and 29.20% in Swamp Grass",
+   "requires": [
+    "swamp grass precision 98.64 in Table II, the abstract says approximately 99%",
+    "each scene's figures come from its own threshold"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c30",
+   "status": "verified-one-primary",
+   "spoken": "The authors say recall is still limited.",
+   "on_screen": "RECALL · STILL LIMITED",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"First, object-level recall remains limited: at the reported operating points, SABL detects 55.08% of annotated objects",
+   "requires": [
+    "the authors' own admission"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c31",
+   "status": "verified-one-primary",
+   "spoken": "Part of the reason is that the filtering that cuts false alarms can also throw away real detections.",
+   "on_screen": "FILTERING CAN DROP TRUE HITS",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Spatial filtering can suppress true detections alongside false-positives",
+   "requires": [
+    "companion excerpt reads \"higher τ can suppress detections of camouflaged objects\""
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c32",
+   "status": "verified-one-primary",
+   "spoken": "Testing covered just two scenes, both in subarctic tundra.",
+   "on_screen": "ONLY TWO SCENES · SUBARCTIC TUNDRA",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Second, our evaluation is limited to two scenes in the subarctic tundra",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c33",
+   "status": "verified-one-primary",
+   "spoken": "The authors say SABL should help existing search methods, not replace them.",
+   "on_screen": "AUGMENT · NOT REPLACE",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"should, for this reason, be viewed as a tool for augmenting existing WSAR methods through identifying candidate search",
+   "requires": [
+    "the paper's framing"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c35",
+   "status": "verified-one-primary",
+   "spoken": "They also want to build it into real search workflows with people in the loop.",
+   "on_screen": "NEXT · HUMAN-IN-THE-LOOP SEARCHES",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"integrating SABL into real human-in-the-loop WSAR workflows",
+   "requires": [
+    "not used in a real search yet"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  {
+   "claim": "The method is unsupervised anomaly detection",
+   "why": "the paper never uses the word for SABL"
+  },
+  {
+   "claim": "Onboard processing matters because the field lacks internet or cell service",
+   "why": "never stated, the paper says it removes dependence on data offloading"
+  },
+  {
+   "claim": "Thermal cameras are the standard on search and rescue drones",
+   "why": "the paper says crews commonly use visible and infrared imagery, use c5"
+  },
+  {
+   "claim": "Quinhagak population 776",
+   "why": "Wikipedia only, state and Census pages 403"
+  },
+  {
+   "claim": "Gyabaah Kyere is affiliated with Nalaquq LLC",
+   "why": "listed at Hampden-Sydney only"
+  },
+  {
+   "claim": "SABL was used in or helped a real search",
+   "why": "simulated scenario, real integration is future work"
+  },
+  {
+   "claim": "QSAR members chose the objects themselves",
+   "why": "the paper says mostly donated by the community and arranged by the authors"
+  },
+  {
+   "claim": "Any quote or view of Quinhagak residents or QSAR members",
+   "why": "no source contains one"
+  },
+  {
+   "claim": "56% and 99% precision at one setting",
+   "why": "different thresholds per scene in Table II"
+  }
+ ],
+ "reserve": [
+  {
+   "id": "c2",
+   "status": "verified-one-primary",
+   "spoken": "The paper is called Real Time On Drone Hyperspectral Anomaly Detection for Wilderness Search and Rescue.",
+   "on_screen": "REAL-TIME ON-DRONE HYPERSPECTRAL DETECTION",
+   "source": "https://arxiv.org/abs/2611.27017",
+   "second_source": null,
+   "verbatim_source": "\"Real-Time On-Drone Hyperspectral Anomaly Detection for Wilderness Search and Rescue",
+   "requires": [
+    "exact title when shown in full"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c10",
+   "status": "verified-one-primary",
+   "spoken": "The rig was a DJI M350 RTK drone carrying a Corning microHSI 410 SHARK camera.",
+   "on_screen": "DJI M350 RTK · CORNING MICROHSI 410 SHARK",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"a DJI M350 RTK equipped with a Corning microHSI 410 SHARK",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c36",
+   "status": "verified-one-primary",
+   "spoken": "The dataset is openly available on Zenodo.",
+   "on_screen": "OPEN DATA · ZENODO",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"This dataset is openly available: https://zenodo.org/records/24382506.",
+   "requires": [
+    "optional"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, peripheral to the film (not voiced or painted); kept for the caption and first comment context"
+  },
+  {
+   "id": "c34",
+   "status": "verified-one-primary",
+   "spoken": "Next, they plan to try other onboard computers, such as NVIDIA Jetson devices.",
+   "on_screen": "NEXT · NVIDIA JETSON · MORE TERRAIN",
+   "source": "https://arxiv.org/html/2611.27017v1",
+   "second_source": null,
+   "verbatim_source": "\"Future work will investigate additional embedded platforms, such as the NVIDIA Jetson devices",
+   "requires": [
+    "future work, not done yet"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   },
+   "reserve_reason": "verified, future work the film paints only as a brief card at most; kept for the caption"
+  }
+ ]
+}

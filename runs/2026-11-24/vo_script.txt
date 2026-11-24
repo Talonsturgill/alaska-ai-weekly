@@ -1,0 +1,20 @@
+A drone asks every strip of tundra one question. Is that made of something the ground isn't?
+Crews often fly regular and infrared cameras, which can miss camouflaged or insulated people.
+This hyperspectral camera sees a hundred and fifty bands of light, revealing material differences.
+The catch is the flood of data, one line at a time.
+On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. A new line comes every ten.
+So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.
+Now a line takes under six milliseconds, right on the drone.
+Each cluster becomes a flag, a G P S point to go check.
+The test ran with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system.
+Researchers simulated a search with waders, nets and buoys, mostly donated by the community.
+On the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items.
+In swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent.
+It keeps up. The question now is what it misses.
+Here's the strongest case against it. The paper's pitch for hyperspectral is camouflage.
+The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects.
+So it can go quiet in the very case it's pitched for.
+They call recall still limited, in just two tundra scenes.
+An unreviewed preprint, not yet used in a real search.
+They pitch it as augmenting search methods, not replacing them.
+A flag means go look. Silence means keep looking.

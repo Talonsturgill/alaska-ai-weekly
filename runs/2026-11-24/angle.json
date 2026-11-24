@@ -1,0 +1,34 @@
+{
+ "thesis": "A Raspberry Pi riding a drone can now read a 150-band camera faster than the camera scans, so the open question has moved from whether it keeps up to what it misses, and in Quinhagak's staged test the answer reads like a searcher's rule: trust the flag, not the silence.",
+ "falsifiability": "False if the full pipeline didn't keep pace (per-line time at or above the camera's 10 ms interval; c16 reports 5.67 to 5.73 ms against 21.34 ms for the detector alone, c17). False if recall at the reported operating points had come close to precision in the swamp grass (c29 reports 29% against 99%), because then silence WOULD be informative. False if the authors framed SABL as a replacement that clears ground rather than an augmentation that adds candidate search points (c33).",
+ "supporting_facts": [
+  "Speed is solved, and solved by the pipeline, not the board. A Raspberry Pi 4B (c13) handles each push-broom line of a 150-band camera (c11, c12) in about 5.7 ms against a 10 ms interval (c16), where the detector alone took 21.34 ms (c17). Output is one GPS point per cluster (c15), no offloading first (c9).",
+  "A flag is a strong lead. In the swamp grass about 99% of flags were real objects (c29). That suits the paper's own framing, a tool that augments existing search methods with candidate search locations (c33), on top of the visible and infrared drones QSAR already flies (c22).",
+  "Silence is not cleared ground. The same swamp grass run found only 29% of the laid-out items (c29), the mudflat 55% at about 56% precision at its own threshold (c28), and the authors say recall is still limited (c30)."
+ ],
+ "counterpoint_to_honor": "The camouflage case. The whole reason for hyperspectral is people who are camouflaged, insulated or lack a usual heat signature (c6, the paper's motivation, not a measured result), and the authors say the filtering that cuts false alarms can drop true detections and higher thresholds can suppress camouflaged objects (c31). So at the reported operating point the tool may be quietest in the very case that justifies it. Add: staged items, not a real search (c25), two summer tundra scenes only (c23, c32), a preprint (c1). The film gives this its own scene at full strength and lands on the paper's next steps (c34, c35) as future work.",
+ "valence": "mixed: a genuine engineering win the film lets land (real time on a Pi, built with a Quinhagak company, c4, on a local search group's data, c18), and an honest gate in the authors' own words (recall). Celebratory would bury the number a searcher cares about; cautionary would invent a downside the authors already bound.",
+ "stance": "mixed",
+ "who_it_serves": "Volunteer search crews like Quinhagak Search and Rescue (c19, c22), who would need to know what a flag means and what no flag means before adding a layer; Alaska edge-computing and drone builders; researchers improving recall on real tundra scenes. Not served yet: anyone in a real search today (c25, c35).",
+ "second_movement": "The 99% and the 29% are one result seen from two sides: the setting that makes almost every flag real is the setting the paper says can suppress camouflaged objects (c29, c31), the very target hyperspectral was brought in for (c6). The fair case against gets its own scene (Act 3 THE TEST): a crew with 99% precision and 29% recall gains leads and loses nothing, as long as nobody reads an empty map as cleared ground (c33).",
+ "runner_up_angles": [
+  {"angle": "The bottleneck moved from compute to detection (analyst C, enthusiast).", "why_lost": "Folded in as Act 1's mechanism and Act 2's turn; on its own it ends at 'recall isn't yes yet' with no rule a viewer keeps."},
+  {"angle": "Speed is the footnote, recall is the test (analyst B, honest test).", "why_lost": "Sharper on the numbers but undersells the real-time win the worldview says to let land; its 'lead generator, not a sweep' line is kept as the button."},
+  {"angle": "A different question than eye or infrared, 'is that made of something the ground isn't' (analyst A, mechanism).", "why_lost": "Kept as the cold open and Act 1 picture; the thesis needs the searcher's rule to carry two minutes."}
+ ],
+ "cross_challenge": [
+  "B to C: 'the bottleneck moved' is credulous if it implies recall is a short engineering hop; c31 says the trade is structural. Accepted: the film never promises recall will rise.",
+  "C to B: 'speed is the footnote' is sour; 21.34 ms to 5.7 ms on a Pi (c16, c17) is the result that made the test possible. Accepted: speed gets a full scene in Act 1.",
+  "A to both: never present 56% and 99% as one machine turned between two settings; they are two scenes at two thresholds (verdict condition 4). Accepted as a hard staging rule.",
+  "All: no community voice exists in any source; Quinhagak is drawn as place and organization only (verdict condition 9)."
+ ],
+ "absence_checks": [
+  "Nobody was found or rescued and SABL wasn't used in a real search: verdict condition 2, c25, c35, cut list.",
+  "No cost figure for the Pi: don't say cheap.",
+  "Onboard processing isn't about missing internet: verdict condition 5, c9.",
+  "Never 'unsupervised': verdict condition 6, c14.",
+  "No head-to-head against infrared is claimed either way: c6 is motivation, not result.",
+  "Two scenes, July, summer only: c23, c32."
+ ],
+ "distinct_from_2026_07_24": "July 24th was about people (local pilots over autonomy). This film is about reading a detector's metrics the way a searcher would; pilots never come into it."
+}

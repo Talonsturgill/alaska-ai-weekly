@@ -1,0 +1,104 @@
+{
+ "j1": {
+  "total": 7.44,
+  "axis_scores": {
+   "Hook & retention": 6.8,
+   "Illustration craft & detail": 7.4,
+   "Motion & animation craft": 7.1,
+   "Composition & staging": 7.3,
+   "Color & grade": 7.3,
+   "Typography & captions": 7.3,
+   "Sound design & mix": 7.1,
+   "VO\u2013illustration sync & entertainment": 7.4,
+   "Accuracy & sourcing": 8.6,
+   "Alaska authenticity & cultural respect": 8.2,
+   "Writing & post quality": 8.3
+  },
+  "concrete_defects": [
+   "0.0-4.0s open is a waders silhouette and a thin scanline, the flag springs at about 3.5s",
+   "14.2s S2 ground tile leaves a grey canvas strip at the bottom edge",
+   "83.3-84.9s coin turn not caught in either filmstrip, reads as a face swap",
+   "118.5s a pin stands in the fog beside NOT CLEARED with the scanline through its flag",
+   "71.1-73.0s 55% badge covers the top-right flag",
+   "90.8s top 25% empty wall, cards crowded under the plate",
+   "85.2s sedge stalks cross the SWAMP GRASS label",
+   "23.7s THE FLOOD plate butts the caption box",
+   "105.6s and 109.5s gap beds level with the voice median",
+   "42.9-44.9s S5 bouncer nearly held",
+   "101.5s CAMOUFLAGED card over the rope",
+   "32.9s caption 'every 10' has no unit"
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Hook & retention"
+ },
+ "j2": {
+  "total": 7.43,
+  "axis_scores": {
+   "Hook & retention": 6.8,
+   "Illustration craft & detail": 7.4,
+   "Motion & animation craft": 6.8,
+   "Composition & staging": 7.3,
+   "Color & grade": 7.4,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.3,
+   "VO\u2013illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.6,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 8.0
+  },
+  "concrete_defects": [
+   "0.0-4.7s no scroll-stopping event in the first two seconds, waders don't read at phone size",
+   "8.1-11.9s S2 low motion (4.4 to 7.1 percent), crayons 4.7 percent at 14.96s",
+   "71.1s and 80.6s badges cover pins",
+   "42.87s / 99.5s bouncer and Specs lag the props in motion",
+   "90.0s top 40% empty wall, page plainest surface",
+   "118.5s scanbar crosses the central pennant, fog reads as a smudge",
+   "113.0s layer cake reads as one clipboard on a diamond",
+   "59.9s map flat-filled, bottom 20% empty",
+   "21.1s ILLUSTRATION tag butts the 150 BANDS plate",
+   "118.4-131s about 12.5s of credits"
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Hook & retention"
+ },
+ "j3": {
+  "total": 7.5,
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 7.5,
+   "Motion & animation craft": 7.2,
+   "Composition & staging": 7.3,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.4,
+   "Sound design & mix": 7.3,
+   "VO\u2013illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 8.0,
+   "Writing & post quality": 7.8
+  },
+  "concrete_defects": [
+   "0.45s opening scanline over a static khaki field",
+   "0.0-14s opening tundra reads tan, not July green",
+   "118.5s scanbar runs through the hero pin's pennant",
+   "85.2s coin covers the flagged buoy and the clip",
+   "71.1s and 80.6s badges cover pins",
+   "115.77s pin under the stamp mostly glow with little travel",
+   "105.58s / 109.48s gap beds level with voice",
+   "32.88s 'every 10' has no unit",
+   "101.5s right rope post renders half faded",
+   "4.7s GPS POINT tag overlaps the waders",
+   "85.2s grass blades nick the SWAMP GRASS placard"
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Hook & retention"
+ },
+ "named_open_defects": [
+  "hook first second",
+  "coin turn legibility",
+  "badges cover pins at 71.1 and 80.6",
+  "scanbar across the hero pin at 118.5",
+  "gap beds level with voice at 105.6 and 109.5",
+  "caption 'every 10' unit",
+  "credits tail"
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "run_date": "2026-11-24",
+ "title": "Trust the Flag",
+ "treatment": "Winner B (the Dramatist) with grafts from C and D. A Raspberry Pi with LED eyes (Specs) rides a quadcopter over overcast July tundra near Quinhagak and reads a 150-band push-broom camera faster than it scans; every cluster becomes a red pin on a clipboard search grid. Two dioramas, two thresholds: wobbling pins on the mudflat, solid pins in the swamp grass with most of the gear unpinned. The 99 and 29 badges fuse into one coin. Act 3 weighs the camouflage case. The CLEARED stamp that waited all film is stopped by a pin and flips to NOT CLEARED, KEEP LOOKING.",
+ "palette": {
+  "roles": {
+   "sky": "#B9C3C6 flat overcast pewter-sage, a lighter #D8DED9 band at the horizon, darker #8E9A9C at the top of frame; a July Bering Sea overcast, never blue, never dusk, never snow",
+   "ground": "#7E8A4A sedge olive and #A08A54 tussock khaki for tundra and swamp grass, #6F6A62 wet grey mudflat with #9A948A silt sheen, #3F4B2E shade, #2A2620 ink",
+   "hero": "#2F8F5B circuit-board green for Specs with #E9C46A gold pin header, #F4F1E8 white chip labels and two #7CF0FF LED eyes; staged against the pewter sky or the paper grid, never on green tundra without a rim",
+   "flag": "#EE4A24 vermilion signal red (pushed off 11-23's #E0303F), ONLY the GPS pin flags and the CLEARED stamp's ink; every pin has a 3 px #2A2620 keyline, a #F3EDE0 pin head and an ink stake with a contact shadow so it reads by VALUE as well as hue (greyscale and red-green colour-blind safe). Rule: no hue within 25 degrees of #EE4A24 above 40 percent chroma anywhere else",
+   "spectrum": "a violet #6A3FD0 to amber-gold #E8C24A band (hue about 46 degrees, clear of the flag red's 25-degree reservation), then a low-chroma brown-grey #A89870 to a dark #3A3346 hatched near-infrared end, never orange or red; used ONLY for the scanline, the scan bands and the spectrum cards (the machine's view)",
+   "paper": "#F3EDE0 clipboard grid paper with #C9C0AE rules, #3A332B ink",
+   "fog": "#CFCFC6 at 70 percent, slightly warm, kept low in the mid plane with a soft visible top edge and drifting texture; the far haze stays cooler #D8DED9 and above the horizon, so the silence fog is a separate object",
+   "shadow": "#2A2620 at 35 percent for contact shadows",
+   "gear": "staged items in dull field colours, never safety orange or red: waders #4E5A3A, tarp faded slate-blue #6E7F8C, jacket khaki #A08A54, buoy and life jacket sun-faded ochre #B89A5A, net and bucket mud greys #7A746A and #CFCAC0; the Act 3 camo swatch blends toward sedge #7E8A4A by value and hue, never toward red",
+   "rope": "the DBSCAN bouncer's rope is deep teal #2F6E6A on a brass #C79A3B post, not velvet red"
+  },
+  "mood": "cool, damp, honest daylight; a field notebook rather than a lab",
+  "divergence": "11-23 was an apricot-to-plum dusk on lavender ice with scarlet and sepia; 11-22 a blue-hour lab bench with cobalt and a felt canary. This film is flat overcast daylight in olive, khaki and wet grey, with signal red reserved to the flags and a spectral rainbow reserved to the machine's view. No dusk, no blue hour, no snow."
+ },
+ "light": {
+  "time_of_day": "midday under a July overcast (c23)",
+  "direction": "soft top light, key from upper left, almost no hard shadow; contact shadows are soft pools",
+  "key_fill_rim": "low-contrast overcast key from upper left, high sky-dome fill; the rim on Specs and the drone is overcast sky bounce on upward-facing edges, at least 4 px at master scale",
+  "depth": "three planes on every tundra shot: near tussocks and sedge, the mid ground where the gear lies, a far low horizon line with the grey Bering Sea strip; aerial haze lifts the far plane toward #D8DED9",
+  "value_plan": "each tundra shot has ONE darkest dark (the near tussock band #3F4B2E to #2A2620, which is also the dark base under the caption bar), the mid ground at L* 50 to 60, the far plane and sky at L* 75 to 85; pins, Specs and plates must separate from the ground in greyscale"
+ },
+ "shape_language": "Specs and the machine are rectilinear (a board, chips, a square camera, a ruled grid, a stamp); the land is soft and lumpy (tussocks, mud ripples, grass clumps). Flags are sharp little triangles. The silence is a soft rounded fog. Square machine over round land, sharp flag over soft fog.",
+ "casting": {
+  "hero": "Specs, NET-NEW reusable library asset (lib/scanline.tsx `Specs`): a Raspberry Pi 4B board with a face (two LED eyes, a gold pin-header brow, an Ethernet-port mouth), moods (squint, smug, buried, doubtful, resolved), cues. Gap: the shelf has no faced single-board computer; StampBot and Clicky are props, not a compute board, and this story's AI presence is literally the Pi. Specs over the ground always sits on the dark drone body #4A4F57 with an ink outline and a contact shadow; the board's top face lifts to #56B47F.",
+  "ai_presence": "the push-broom scanline and its spectrum cards (NET-NEW `Scanline`, `SpectrumCard`), drawn as the machine's view only",
+  "supporting": "the quadcopter carrying the camera (NET-NEW `ScanDrone`, a small quadrotor with a boxy camera pod, no face, never a cargo drone); red `PinFlag`; the clipboard `SearchGrid`; the `ClearedStamp`; the DBSCAN bouncer `Bouncer` (a small faced brass rope post with a deep-teal rope with a clipboard, an object, never a person); a mute faced `Stopwatch`; staged gear props (`Waders`, `Buoy`, `LifeJacket`, `Net`, `Bucket`, `Tarp`) with NO faces so nothing reads as a person; SearchReticle (lib/vision.tsx) for the GPS lock; TundraBG-style ground drawn local",
+  "quinhagak": "a map card (Bering Sea coast, a pin) and boxed org cards only (QUINHAGAK SEARCH AND RESCUE, NALAQUQ, LLC); no Native iconography, no faces, no community voice",
+  "reuse": "Petrel and any cargo drone are excluded; Raven from fauna.tsx may cross the far sky once as ambient life",
+  "shelf_check": "grep of ASSET_INDEX.md and lib/: polecam.tsx `Drone` is a small quadcopter with no camera pod or scanline mount (ScanDrone adds a push-broom pod, a Cat6 lead to Specs and a beam); kit `Stamp` has no two-state flip (ClearedStamp flips CLEARED to NOT CLEARED, the button); no shelf asset is a faced single-board computer, a clipboard search grid with pins and fog, a two-faced coin, a mute stopwatch with a ms dial, or a faced rope post. vision.tsx SearchReticle is reused for the GPS lock."
+ },
+ "motion_language": "The scanline sweeps at a steady metronome (one stripe per beat of a 10 MS tick) and never stops on a tundra shot. Specs is springy: anticipation and overshoot on every emotion change, a squash when he is buried, a lean back with feet up. Pins spring out of the ground with overshoot and a wobble settle (wobbling longer on the mudflat). The stamp has weight: wind-up, a stopped swing, a flip. Fog drifts slowly. Hero moves that earn motion blur: the scanline sweep, the pin spring, the stamp swing, the badge fuse (the coin then turns slowly on its edge with no blur).",
+ "composition": {
+  "focal_hierarchy": "Specs or the pin first, the gear second, the land third",
+  "negative_space": "the fog over the swamp grass is the one deliberate empty area, and it is textured, never flat",
+  "safe_area": "hero action and plates inside y 420 to 1500 for the 1:1 square; the near tussock plane fills y 1470 to 1920 under the caption on the master; the overcast sky and horizon fill above y 420",
+  "signature_shot": "the coin turn (S11): the 99% and 29% badges fuse into one coin centred at y 820 to 900 that turns slowly on its edge (never tossed) over the swamp grass sheet and stands; labels inside y 560 to 1400; solid pins and the fogged blank cells stay inside the square",
+  "focal_colour_rule": "exactly one focal colour leads each shot: the red pins where pins exist; Specs' cyan LED eyes and gold header where none do; the spectrum band only inside the machine's-view frame; the bone paper #F3EDE0 for clipboard shots; on scan shots the spectrum band leads and Specs' LED glow drops to about 0.3, otherwise the LEDs lead and the band stays inside its machine's-view frame at reduced opacity",
+  "floor": "y 1470 to 1920 is the darkest value band (caption legibility) and the fastest parallax plane; no pin, gear or plate below y 1470"
+ },
+ "craft_advance": "none required beyond the net-new lib/scanline.tsx family; engine advances go to the weekly machine pass"
+}

@@ -1,0 +1,12 @@
+{
+ "ship": true,
+ "findings": [
+  {
+   "line": 5,
+   "risk": "metadata only: add c16 to the line's claims for the faster-pipeline comparison",
+   "fix": "applied (claims c3, c14, c16)"
+  }
+ ],
+ "script_sha256": "877f6e1a97354961f1dbc3c0f9eb8cbd45060fb08d35b0ae071512143ee1c798",
+ "claims_sha256": "27f5d698e5406c5146e4791af40925e0766cc330321d1352ee4a8748757d195c"
+}
