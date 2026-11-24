@@ -1,0 +1,2605 @@
+{
+  "run_date": "2026-11-24",
+  "slug": "trust-the-flag",
+  "title": "Trust the Flag",
+  "concept": "An arXiv preprint posted November 20th, not peer reviewed, describes SABL: a Raspberry Pi 4B riding a DJI quadcopter reads a 150-band push-broom hyperspectral camera line by line, scores pixels with an anomaly detector and clusters the standouts into GPS points, in about 5.7 ms a line against a 10 ms camera interval, where the detector alone took 21.34 ms. The data come from a 10-day deployment with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system, on a staged search: researchers laid out waders, nets, buoys and life jackets, mostly donated by the community. Mudflat about 56 percent precision and 55 percent recall; swamp grass, at a different threshold, about 99 percent precision and 29 percent recall. The test: the paper's pitch for hyperspectral is camouflage, and the authors say cutting false alarms can drop real hits and stricter settings can hide camouflaged objects. Drawn as Specs, a faced Pi board, a mute stopwatch, a DBSCAN bouncer at a velvet rope, red GPS pins on a clipboard search grid, two dioramas with their own thresholds, a coin with 99 and 29 on its faces, and an inked CLEARED stamp that a pin stops and flips to NOT CLEARED.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 118.4,
+  "fingerprint": {
+    "pov": "top-down-map",
+    "motion_vector": "assemble-build",
+    "hero_treatment": "data-as-subject",
+    "layout": "map-territory",
+    "register": "editorial-schematic",
+    "palette": "pewter-sage overcast #B9C3C6, sedge olive #7E8A4A, tussock khaki #A08A54, wet slate mudflat #6F6A62, circuit green #2F8F5B with brass #E9C46A pins and cyan LED eyes #7CF0FF, signal red #E63B2E on GPS flags and the stamp alone, violet-to-crimson spectrum stripes for the machine view, clipboard bone #F3EDE0, drifting fog #C9CFCB",
+    "camera_strategy": "aerial-descent",
+    "light_story": "overcast-diffuse",
+    "metaphor": "red pins that a searcher can trust on a clipboard grid, fog over the ground they never flagged, and a CLEARED stamp that a pin stops mid-air and flips to NOT CLEARED"
+  },
+  "signature_shot": 11,
+  "palette": "pewter-sage overcast #B9C3C6, sedge olive #7E8A4A, tussock khaki #A08A54, wet slate mudflat #6F6A62, circuit green #2F8F5B with brass #E9C46A pins and cyan LED eyes #7CF0FF, signal red #E63B2E on GPS flags and the stamp alone, violet-to-crimson spectrum stripes for the machine view, clipboard bone #F3EDE0, drifting fog #C9CFCB",
+  "divergence_note": "The last two films were an apricot-to-plum dusk on lavender river ice with sample tubes, a cargo drone and a scarlet ribbon (11-23), and a blue-hour lab bench under the Chugach with a felt canary and a cobalt wall (11-22). This film is flat overcast July daylight over olive and khaki tundra and a grey mudflat, seen mostly from above as a survey: a clipboard search grid, two dioramas, a coin, survey stakes. Its motion assembles (pins accumulate, layers stack) instead of 11-23's lateral traverse or 11-22's rise, its hero is a faced circuit board and its colour story is signal red for flags alone against a spectral rainbow for the machine's view. Honest overlaps: a small quadcopter (11-23 had a big cargo drone; here the aircraft has no face and is only the carrier), a stamp (house grammar), and boxed org cards.",
+  "treatment": {
+    "title": "Trust the Flag",
+    "summary": "Winner B (the Dramatist) with grafts from C and D. A Raspberry Pi with LED eyes (Specs) rides a quadcopter over overcast July tundra near Quinhagak and reads a 150-band push-broom camera faster than it scans; every cluster becomes a red pin on a clipboard search grid. Two dioramas, two thresholds: wobbling pins on the mudflat, solid pins in the swamp grass with most of the gear unpinned. The 99 and 29 badges fuse into one coin. Act 3 weighs the camouflage case. The CLEARED stamp that waited all film is stopped by a pin and flips to NOT CLEARED, KEEP LOOKING.",
+    "judge_reasoning": "B wins because its turn picture, one coin with 99% and 29% on two faces, is the angle's second movement drawn literally, and its CLEARED stamp loop pays off the button line, so the retention plan carries the argument. B is also the cleanest on fairness: two scenes, nothing found, a general c31 warning, and an augment-not-replace reply. A and D both draw a threshold moving inside one scene and lean on faced gear that edges toward 'found' language, and D's speaking cast is the hardest to build in a day. C has the best explanatory pictures (the crayon box, spectrum card, DBSCAN bouncer and split dioramas), so those are grafted into B's structure along with D's layer cake fair reply and its mute stopwatch."
+  },
+  "angle": {
+    "thesis": "A Raspberry Pi riding a drone can now read a 150-band camera faster than the camera scans, so the open question has moved from whether it keeps up to what it misses, and in Quinhagak's staged test the answer reads like a searcher's rule: trust the flag, not the silence.",
+    "falsifiability": "False if the full pipeline didn't keep pace (per-line time at or above the camera's 10 ms interval; c16 reports 5.67 to 5.73 ms against 21.34 ms for the detector alone, c17). False if recall at the reported operating points had come close to precision in the swamp grass (c29 reports 29% against 99%), because then silence WOULD be informative. False if the authors framed SABL as a replacement that clears ground rather than an augmentation that adds candidate search points (c33).",
+    "supporting_facts": [
+      "Speed is solved, and solved by the pipeline, not the board. A Raspberry Pi 4B (c13) handles each push-broom line of a 150-band camera (c11, c12) in about 5.7 ms against a 10 ms interval (c16), where the detector alone took 21.34 ms (c17). Output is one GPS point per cluster (c15), no offloading first (c9).",
+      "A flag is a strong lead. In the swamp grass about 99% of flags were real objects (c29). That suits the paper's own framing, a tool that augments existing search methods with candidate search locations (c33), on top of the visible and infrared drones QSAR already flies (c22).",
+      "Silence is not cleared ground. The same swamp grass run found only 29% of the laid-out items (c29), the mudflat 55% at about 56% precision at its own threshold (c28), and the authors say recall is still limited (c30)."
+    ],
+    "counterpoint_to_honor": "The camouflage case. The whole reason for hyperspectral is people who are camouflaged, insulated or lack a usual heat signature (c6, the paper's motivation, not a measured result), and the authors say the filtering that cuts false alarms can drop true detections and higher thresholds can suppress camouflaged objects (c31). So at the reported operating point the tool may be quietest in the very case that justifies it. Add: staged items, not a real search (c25), two summer tundra scenes only (c23, c32), a preprint (c1). The film gives this its own scene at full strength and lands on the paper's next steps (c34, c35) as future work.",
+    "valence": "mixed: a genuine engineering win the film lets land (real time on a Pi, built with a Quinhagak company, c4, on a local search group's data, c18), and an honest gate in the authors' own words (recall). Celebratory would bury the number a searcher cares about; cautionary would invent a downside the authors already bound.",
+    "stance": "mixed",
+    "who_it_serves": "Volunteer search crews like Quinhagak Search and Rescue (c19, c22), who would need to know what a flag means and what no flag means before adding a layer; Alaska edge-computing and drone builders; researchers improving recall on real tundra scenes. Not served yet: anyone in a real search today (c25, c35).",
+    "second_movement": "The 99% and the 29% are one result seen from two sides: the setting that makes almost every flag real is the setting the paper says can suppress camouflaged objects (c29, c31), the very target hyperspectral was brought in for (c6). The fair case against gets its own scene (Act 3 THE TEST): a crew with 99% precision and 29% recall gains leads and loses nothing, as long as nobody reads an empty map as cleared ground (c33).",
+    "runner_up_angles": [
+      {
+        "angle": "The bottleneck moved from compute to detection (analyst C, enthusiast).",
+        "why_lost": "Folded in as Act 1's mechanism and Act 2's turn; on its own it ends at 'recall isn't yes yet' with no rule a viewer keeps."
+      },
+      {
+        "angle": "Speed is the footnote, recall is the test (analyst B, honest test).",
+        "why_lost": "Sharper on the numbers but undersells the real-time win the worldview says to let land; its 'lead generator, not a sweep' line is kept as the button."
+      },
+      {
+        "angle": "A different question than eye or infrared, 'is that made of something the ground isn't' (analyst A, mechanism).",
+        "why_lost": "Kept as the cold open and Act 1 picture; the thesis needs the searcher's rule to carry two minutes."
+      }
+    ],
+    "cross_challenge": [
+      "B to C: 'the bottleneck moved' is credulous if it implies recall is a short engineering hop; c31 says the trade is structural. Accepted: the film never promises recall will rise.",
+      "C to B: 'speed is the footnote' is sour; 21.34 ms to 5.7 ms on a Pi (c16, c17) is the result that made the test possible. Accepted: speed gets a full scene in Act 1.",
+      "A to both: never present 56% and 99% as one machine turned between two settings; they are two scenes at two thresholds (verdict condition 4). Accepted as a hard staging rule.",
+      "All: no community voice exists in any source; Quinhagak is drawn as place and organization only (verdict condition 9)."
+    ],
+    "absence_checks": [
+      "Nobody was found or rescued and SABL wasn't used in a real search: verdict condition 2, c25, c35, cut list.",
+      "No cost figure for the Pi: don't say cheap.",
+      "Onboard processing isn't about missing internet: verdict condition 5, c9.",
+      "Never 'unsupervised': verdict condition 6, c14.",
+      "No head-to-head against infrared is claimed either way: c6 is motivation, not result.",
+      "Two scenes, July, summer only: c23, c32."
+    ],
+    "distinct_from_2026_07_24": "July 24th was about people (local pilots over autonomy). This film is about reading a detector's metrics the way a searcher would; pilots never come into it."
+  },
+  "claim_map": {
+    "1": [
+      "c12"
+    ],
+    "2": [
+      "c7"
+    ],
+    "36": [
+      "c15"
+    ],
+    "3": [
+      "c5"
+    ],
+    "4": [
+      "c6"
+    ],
+    "5": [
+      "c11"
+    ],
+    "6": [
+      "c7"
+    ],
+    "7": [
+      "c8",
+      "c12"
+    ],
+    "8": [
+      "c13"
+    ],
+    "9": [
+      "c16"
+    ],
+    "10": [
+      "c3",
+      "c16"
+    ],
+    "11": [
+      "c14"
+    ],
+    "12": [
+      "c16"
+    ],
+    "13": [
+      "c15"
+    ],
+    "14": [
+      "c15"
+    ],
+    "15": [
+      "c18",
+      "c19"
+    ],
+    "16": [
+      "c20"
+    ],
+    "17": [
+      "c25"
+    ],
+    "18": [
+      "c27"
+    ],
+    "19": [
+      "c24"
+    ],
+    "20": [
+      "c28"
+    ],
+    "21": [
+      "c24",
+      "c29"
+    ],
+    "22": [
+      "c29"
+    ],
+    "23": [
+      "c29"
+    ],
+    "24": [
+      "c29"
+    ],
+    "25": [
+      "narration"
+    ],
+    "26": [
+      "c6"
+    ],
+    "27": [
+      "c31"
+    ],
+    "28": [
+      "c31"
+    ],
+    "29": [
+      "c31",
+      "c6"
+    ],
+    "30": [
+      "c30",
+      "c32"
+    ],
+    "31": [
+      "c1",
+      "c35"
+    ],
+    "32": [
+      "c33",
+      "c22"
+    ],
+    "33": [
+      "narration"
+    ],
+    "34": [
+      "c15"
+    ],
+    "35": [
+      "c30",
+      "c33"
+    ],
+    "37": [
+      "c17"
+    ],
+    "38": [
+      "c14"
+    ],
+    "39": [
+      "c6"
+    ],
+    "40": [
+      "c17"
+    ],
+    "41": [
+      "c14"
+    ],
+    "42": [
+      "c32",
+      "c23"
+    ],
+    "43": [
+      "c9"
+    ],
+    "44": [
+      "c26"
+    ],
+    "45": [
+      "c28"
+    ],
+    "46": [
+      "c16"
+    ],
+    "47": [
+      "c31"
+    ],
+    "48": [
+      "c17",
+      "c3"
+    ],
+    "49": [
+      "c6"
+    ],
+    "50": [
+      "c5"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "Overhead, overcast July tundra by a grey Bering Sea strip, and at 0.2 s a rainbow scanline with cyan glints on its leading edge sweeps down across a pair of olive waders in the grass",
+    "headline": "ONE LINE AT A TIME",
+    "motion_by_s": 0.2,
+    "loopback": "Frame 1 is the scanline sweeping the tundra toward the waders; the last shot is the scanline sweeping the clipboard grid again over the fog stamped NOT CLEARED."
+  },
+  "open_loop": {
+    "plant_t": 5.93,
+    "pay_t": 116.45,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "slide",
+    "what": "Will anyone stamp the empty ground CLEARED? Planted as the inked CLEARED stamp rocks beside the blank clipboard grid in the opening, carried as Specs side-eyes it at the first pin, paid when it swings at the fog, a pin stops it and it flips to NOT CLEARED, KEEP LOOKING."
+  },
+  "open_loop_2": {
+    "plant_t": 43.39,
+    "pay_t": 95.03,
+    "what": "Is the bouncer always right? Planted as the DBSCAN bouncer waves a lone stray pixel off the velvet rope and Specs approves, paid when the same bouncer, same clipboard, same shrug turns away one faint hatched pixel from the generic camo swatch, tagged ILLUSTRATION, with the false alarms, the authors' general warning that cutting false alarms can drop real hits."
+  },
+  "throughline": {
+    "object": "the clipboard search grid",
+    "lands_in_button": "the grid with red pins glowing GO LOOK and the fogged swamp grass stamped NOT CLEARED, KEEP LOOKING",
+    "states": [
+      {
+        "at_s": 5.93,
+        "state": "G1 BLANK, one pin copied on, the CLEARED stamp waiting"
+      },
+      {
+        "at_s": 25.88,
+        "state": "G1b clipped beside Specs, striped with rainbow scan bands as the lines pour in faster than he can read, the stamp still waiting"
+      },
+      {
+        "at_s": 49.4,
+        "state": "G2 a GPS reticle collapses into the first solid pin"
+      },
+      {
+        "at_s": 66.42,
+        "state": "G3 the mudflat sheet CROWDED with tilting pins"
+      },
+      {
+        "at_s": 84.13,
+        "state": "G4 the swamp grass sheet, 2 solid pins and blank cells fogging over, NOT THE SILENCE"
+      },
+      {
+        "at_s": 102.02,
+        "state": "G4b both sheets fenced inside a dashed survey ring"
+      },
+      {
+        "at_s": 110.26,
+        "state": "G5 the swamp grass sheet becomes the top layer of the cake, nothing erased"
+      },
+      {
+        "at_s": 116.45,
+        "state": "G6 pins glowing, the fog stamped NOT CLEARED, KEEP LOOKING"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 14.76,
+      "type": "build-on",
+      "what": "the crayon box unfolds into 150 spectrum crayons",
+      "hold_s": 0.6
+    },
+    {
+      "t": 44.72,
+      "type": "build-on",
+      "what": "the stopwatch settles under its 10 MS mark",
+      "hold_s": 0.6
+    },
+    {
+      "t": 66.42,
+      "type": "build-on",
+      "what": "9 pins pop across the mudflat sheet",
+      "hold_s": 0.6
+    },
+    {
+      "t": 82.99,
+      "type": "morph-to-chart",
+      "what": "the 99 and 29 badges fuse into one coin",
+      "hold_s": 0.8
+    },
+    {
+      "t": 102.02,
+      "type": "scale-pullback",
+      "what": "the camera pulls wide as the ring closes round both sheets",
+      "hold_s": 0.6
+    },
+    {
+      "t": 110.26,
+      "type": "build-on",
+      "what": "the pin layer stacks onto QSAR's layer",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 10,
+        "offset": 0.0,
+        "level": 1.1
+      },
+      {
+        "line": 13,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 16,
+        "offset": 0.0,
+        "level": 0.5
+      },
+      {
+        "line": 18,
+        "offset": 0.0,
+        "level": 0.8
+      },
+      {
+        "at_s": 115.85,
+        "level": 0.35
+      },
+      {
+        "at_s": 116.85,
+        "level": 1.3
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 115.95,
+    "riser_at": 112.52,
+    "silence_at": 115.95,
+    "payoff_at": 116.45,
+    "button_pattern": "callback",
+    "interrupt_at": 82.99,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "One question",
+      "vo_line": 0,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "tundra-above",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the waders and the pin at x540 y960",
+      "means": "From above, a rainbow scanline sweeps overcast July tundra, a stripe flips over waders, a red pin springs, and the clipboard grid with a waiting CLEARED stamp slides in",
+      "ambient": "wind over open tundra, a far surf",
+      "hero": {
+        "name": "rainbow scanline + waders + red pin + clipboard grid + CLEARED stamp",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% tundra and scanline, 30% pin and waders, 25% grid"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-7.920"
+    },
+    {
+      "title": "Standard kit",
+      "vo_line": 1,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "high",
+      "stage": "tundra-footprints",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "instrument-as-subject",
+      "camera": "craneDown",
+      "transition_in": "pull-out",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the two footprints and the cards at x540 y900",
+      "means": "From above, two camera footprints marked VISIBLE and INFRARED slide across the tundra showing ordinary footage while three cards rise into a list",
+      "ambient": "wind, small rotors",
+      "hero": {
+        "name": "two camera footprints + ordinary footage + three cards",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% footprints, 30% tundra, 25% cards"
+      },
+      "id": 2,
+      "start_s": 7.92,
+      "t": "7.920-14.760"
+    },
+    {
+      "title": "150 bands",
+      "vo_line": 2,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "desk-crayons",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the crayon boxes at x540 y980",
+      "means": "Three crayons against a box that unfolds into 150 spectrum crayons, then two spectrum cards whose curves split",
+      "ambient": "a quiet desk room",
+      "hero": {
+        "name": "crayon boxes + spectrum cards",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% crayons, 50% cards"
+      },
+      "id": 3,
+      "start_s": 14.76,
+      "t": "14.760-21.600"
+    },
+    {
+      "title": "The flood",
+      "vo_line": 3,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "under-drone",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "whip-pan",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Specs at x540 y960",
+      "means": "Under the quadcopter Specs takes a flood of scan lines, the stopwatch sweats past 10 MS and Specs is buried",
+      "ambient": "rotors overhead, wind",
+      "hero": {
+        "name": "Specs + quadcopter + camera pod + stopwatch + scan line pile",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% Specs, 30% drone, 25% stopwatch and pile"
+      },
+      "id": 4,
+      "start_s": 21.6,
+      "t": "21.600-35.940"
+    },
+    {
+      "title": "The pipeline",
+      "vo_line": 5,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "sabl-box",
+      "pov": "eye-level-immersive",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the bouncer and the rope at x540 y1000",
+      "means": "A SABL box slams round the pod output, the ERX gauge scores a pixel, the DBSCAN bouncer clusters the standouts and waves off a stray, the stopwatch settles at 5.7 and Specs puts his feet up, then the drone pulls back with no cable",
+      "ambient": "rotors, a velvet rope creak",
+      "hero": {
+        "name": "SABL box + ERX gauge + DBSCAN bouncer + pixels + stopwatch + Specs + quadcopter",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% box and bouncer, 30% pixels, 30% Specs"
+      },
+      "id": 5,
+      "start_s": 35.94,
+      "t": "35.940-49.400"
+    },
+    {
+      "title": "One pin",
+      "vo_line": 7,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "high",
+      "stage": "clipboard",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the pin on the grid at x540 y960",
+      "means": "On the clipboard grid a cluster collapses into a GPS reticle and a red pin, the CLEARED stamp rocks closer",
+      "ambient": "a quiet desk room, wind at a window",
+      "hero": {
+        "name": "clipboard grid + GPS reticle + red pin + CLEARED stamp + Specs",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% grid, 30% pin, 20% stamp"
+      },
+      "id": 6,
+      "start_s": 49.4,
+      "t": "49.400-53.660"
+    },
+    {
+      "title": "Quinhagak",
+      "vo_line": 8,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "map-delta",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "map-travel",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the Quinhagak pin at x540 y900",
+      "means": "A paper map of the Bering Sea coast and the Yukon-Kuskokwim Delta, a pin on Quinhagak and an org card on a stake",
+      "ambient": "a quiet desk room, paper",
+      "hero": {
+        "name": "paper map of the Bering Sea coast + pin + org card",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% map, 40% card"
+      },
+      "id": 7,
+      "start_s": 53.66,
+      "t": "53.660-60.360"
+    },
+    {
+      "title": "Staged",
+      "vo_line": 9,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "high",
+      "stage": "staging-sheet",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the gear row at x540 y1040",
+      "means": "From above a SIMULATED SCENARIO tag snaps onto a fresh grid sheet, a dashed layout plan draws on and gear drops into its outlines one by one",
+      "ambient": "wind over tundra, a far surf",
+      "hero": {
+        "name": "SIMULATED SCENARIO tag + dashed layout plan + gear + grid sheet",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% gear, 30% plan, 25% tag"
+      },
+      "id": 8,
+      "start_s": 60.36,
+      "t": "60.360-66.420"
+    },
+    {
+      "title": "Mudflat",
+      "vo_line": 10,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "high",
+      "stage": "mudflat-sheet",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the mudflat diorama at x540 y960",
+      "means": "A grey mudflat clipboard sheet with its own threshold placard, 9 pins tilting on gear and bare mud, a 56 then a 55 half-badge",
+      "ambient": "wind over a mudflat, a far surf",
+      "hero": {
+        "name": "mudflat clipboard sheet + red pins + placard + badge",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% sheet, 25% pins, 20% badge"
+      },
+      "id": 9,
+      "start_s": 66.42,
+      "t": "66.420-73.500"
+    },
+    {
+      "title": "Swamp grass",
+      "vo_line": 11,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "high",
+      "stage": "swamp-sheet",
+      "pov": "top-down-map",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the swamp grass diorama at x540 y960",
+      "means": "A khaki swamp grass clipboard sheet alone with its own placard, 2 pins on 2 items and 5 of 7 items bare as the scanline passes, 99 and 29",
+      "ambient": "wind in grass",
+      "hero": {
+        "name": "swamp grass clipboard sheet + red pins + planted items + scanline",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% sheet, 25% pins, 20% items"
+      },
+      "id": 10,
+      "start_s": 73.5,
+      "t": "73.500-81.140"
+    },
+    {
+      "title": "One coin",
+      "vo_line": 12,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "eye",
+      "stage": "coin",
+      "pov": "macro-closeup",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "carried-element",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the coin at x540 y900",
+      "means": "The 5.7 stopwatch holds in the corner, then the 99 and 29 badges fuse into one coin that turns slowly on its edge over the swamp sheet and stands as the blank cells fog",
+      "ambient": "wind in grass",
+      "hero": {
+        "name": "stopwatch + two-faced coin + swamp grass sheet + fog",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% coin, 30% sheet, 20% stopwatch"
+      },
+      "id": 11,
+      "start_s": 81.14,
+      "t": "81.140-85.740"
+    },
+    {
+      "title": "The camouflage case",
+      "vo_line": 13,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "high",
+      "stage": "field-guide-desk",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the three cards at x540 y880",
+      "means": "On the desk a field-guide page flips open, three cards rise off it and a generic camo swatch tagged ILLUSTRATION darkens to the grass colour",
+      "ambient": "a quiet desk room, paper",
+      "hero": {
+        "name": "field-guide page + three cards + camo swatch",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% page, 35% cards, 25% swatch"
+      },
+      "id": 12,
+      "start_s": 85.74,
+      "t": "85.740-91.260"
+    },
+    {
+      "title": "Turned away",
+      "vo_line": 14,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "velvet-rope-fog",
+      "pov": "eye-level-immersive",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the bouncer and the jacket at x540 y1000",
+      "means": "Low at the velvet rope the bouncer waves off false alarms, one hatched swatch pixel goes with them, the rope rises a notch and the rest fade, Specs dims",
+      "ambient": "rotors, wind in grass",
+      "hero": {
+        "name": "bouncer + velvet rope + hatched swatch pixels + Specs",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% bouncer, 35% pixels and fog, 25% Specs"
+      },
+      "id": 13,
+      "start_s": 91.26,
+      "t": "91.260-102.020"
+    },
+    {
+      "title": "The fence",
+      "vo_line": 16,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "fence-sheet",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "craneDown",
+      "transition_in": "pull-out",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the ring and the two sheets at x540 y980",
+      "means": "From above a dashed survey ring closes round two small clipboard sheets, a 2 SCENES tag and a PREPRINT tag clip on and a dashed line strikes an empty REAL SEARCH box",
+      "ambient": "wind over tundra",
+      "hero": {
+        "name": "dashed survey ring + two small clipboard sheets + tags + REAL SEARCH box",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% ring and sheets, 35% tags, 20% box"
+      },
+      "id": 14,
+      "start_s": 102.02,
+      "t": "102.020-110.260"
+    },
+    {
+      "title": "Augment",
+      "vo_line": 18,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "high",
+      "stage": "layer-cake",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "riseWith",
+      "transition_in": "graphic-match",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the layer cake at x540 y960",
+      "means": "A layer cake of maps, QSAR's visible and infrared layer below, the swamp grass sheet with its red pins slides on top",
+      "ambient": "a quiet desk room",
+      "hero": {
+        "name": "layer cake of maps + swamp grass sheet + red pins",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% layers, 40% pins"
+      },
+      "id": 15,
+      "start_s": 110.26,
+      "t": "110.260-113.520"
+    },
+    {
+      "title": "Keep looking",
+      "vo_line": 19,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "high",
+      "stage": "clipboard-fog",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the stamp and the fog at x540 y960",
+      "means": "The CLEARED stamp swings at the fog, a pin stops it, it flips to NOT CLEARED, Specs re-lights and the scanline sweeps again",
+      "ambient": "wind over open tundra, a far surf",
+      "hero": {
+        "name": "CLEARED stamp + red pin + fog + clipboard grid + scanline",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% stamp, 35% grid and fog, 25% pin"
+      },
+      "id": 16,
+      "start_s": 113.52,
+      "t": "113.520-118.400"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A drone asks every strip of tundra one question. Is that made of something the ground isn't?",
+      "phrase": "A drone asks every",
+      "shows": "a rainbow push-broom scanline with cyan glints on its leading edge, over overcast July tundra by the Bering Sea sweeps down the frame stripe by stripe and crosses a pair of olive waders lying in the grass, a plate reads ONE LINE AT A TIME",
+      "sfx": "whoosh",
+      "means": "one line at a time",
+      "rehook": "",
+      "draw": {
+        "subject": "a rainbow push-broom scanline with cyan glints on its leading edge, over overcast July tundra by the Bering Sea",
+        "action": "sweeps down the frame stripe by stripe and crosses a pair of olive waders lying in the grass",
+        "emotion": "curious",
+        "annotation": "ONE LINE AT A TIME"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a rainbow push-broom scanline with cyan glints on its leading edge, over overcast July tundra by the Bering Sea sweeps down the frame stripe by stripe and crosses a pair of olive waders lying in the grass, a plate reads ONE LINE AT A TIME",
+        "reaction": "the stripe over the waders flips colour",
+        "ambient": "wind over open tundra, a far surf"
+      },
+      "t": "0.000-3.470",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.47,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.47
+      },
+      "offset": 3.47,
+      "vo": "A drone asks every strip of tundra one question. Is that made of something the ground isn't?",
+      "phrase": "question. Is that made",
+      "shows": "a red GPS pin flag springs out of the grass beside the waders with an overshoot, a plate reads DIFFERENT MATERIAL",
+      "sfx": "pop",
+      "means": "different material",
+      "rehook": "",
+      "draw": {
+        "subject": "a red GPS pin flag",
+        "action": "springs out of the grass beside the waders with an overshoot",
+        "emotion": "eager",
+        "annotation": "DIFFERENT MATERIAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a red GPS pin flag springs out of the grass beside the waders with an overshoot, a plate reads DIFFERENT MATERIAL",
+        "reaction": "the pin wobbles",
+        "ambient": "wind over open tundra, a far surf"
+      },
+      "t": "3.470-5.930",
+      "key": 2
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 5.93,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 5.93
+      },
+      "offset": 5.93,
+      "vo": "A drone asks every strip of tundra one question. Is that made of something the ground isn't?",
+      "phrase": "ground isn't?",
+      "shows": "the blank clipboard search grid with an inked CLEARED rubber stamp beside it slides in at the frame corner, the first pin copies onto the paper and the stamp rocks on its handle, waiting, a plate reads SEARCH GRID",
+      "sfx": "slide",
+      "means": "search grid",
+      "rehook": "",
+      "draw": {
+        "subject": "the blank clipboard search grid with an inked CLEARED rubber stamp beside it",
+        "action": "slides in at the frame corner, the first pin copies onto the paper and the stamp rocks on its handle, waiting",
+        "emotion": "tempted",
+        "annotation": "SEARCH GRID"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "the blank clipboard search grid with an inked CLEARED rubber stamp beside it slides in at the frame corner, the first pin copies onto the paper and the stamp rocks on its handle, waiting, a plate reads SEARCH GRID",
+        "reaction": "the stamp rocks",
+        "ambient": "wind over open tundra, a far surf"
+      },
+      "t": "5.930-7.920",
+      "key": 36
+    },
+    {
+      "id": 4,
+      "shot": 2,
+      "at_s": 7.92,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Crews often fly regular and infrared cameras, which can miss camouflaged or insulated people.",
+      "phrase": "Crews often fly regular",
+      "shows": "two camera footprints marked VISIBLE and INFRARED, seen from above slide across the tundra showing ordinary footage of grass and ponds, a plate reads STANDARD KIT \u00b7 VISIBLE + INFRARED",
+      "sfx": "click",
+      "means": "standard kit \u00b7 visible + infrared",
+      "rehook": "",
+      "draw": {
+        "subject": "two camera footprints marked VISIBLE and INFRARED, seen from above",
+        "action": "slide across the tundra showing ordinary footage of grass and ponds",
+        "emotion": "steady",
+        "annotation": "STANDARD KIT \u00b7 VISIBLE + INFRARED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "two camera footprints marked VISIBLE and INFRARED, seen from above slide across the tundra showing ordinary footage of grass and ponds, a plate reads STANDARD KIT \u00b7 VISIBLE + INFRARED",
+        "reaction": "the footprints slide",
+        "ambient": "wind, small rotors"
+      },
+      "t": "7.920-10.430",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 10.43,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 2.51
+      },
+      "offset": 2.51,
+      "vo": "Crews often fly regular and infrared cameras, which can miss camouflaged or insulated people.",
+      "phrase": "cameras, which can miss",
+      "shows": "a raven flies across the VISIBLE footprint and its shadow crosses the ordinary footage, a plate reads ORDINARY FOOTAGE",
+      "sfx": "caw",
+      "means": "ordinary footage",
+      "rehook": "",
+      "draw": {
+        "subject": "a raven",
+        "action": "flies across the VISIBLE footprint and its shadow crosses the ordinary footage",
+        "emotion": "curious",
+        "annotation": "ORDINARY FOOTAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "a raven flies across the VISIBLE footprint and its shadow crosses the ordinary footage, a plate reads ORDINARY FOOTAGE",
+        "reaction": "the raven crosses",
+        "ambient": "wind, small rotors"
+      },
+      "t": "10.430-11.570",
+      "key": 50
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 11.57,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.65
+      },
+      "offset": 3.65,
+      "vo": "Crews often fly regular and infrared cameras, which can miss camouflaged or insulated people.",
+      "phrase": "miss camouflaged or insulated",
+      "shows": "three cards reading CAMOUFLAGED, INSULATED and NO HEAT SIGNATURE rise one after another into a list in the top band, a plate reads CAMOUFLAGED \u00b7 INSULATED \u00b7 NO HEAT SIGNATURE",
+      "sfx": "thud",
+      "means": "camouflaged \u00b7 insulated \u00b7 no heat signature",
+      "rehook": "",
+      "draw": {
+        "subject": "three cards reading CAMOUFLAGED, INSULATED and NO HEAT SIGNATURE",
+        "action": "rise one after another into a list in the top band",
+        "emotion": "uneasy",
+        "annotation": "CAMOUFLAGED \u00b7 INSULATED \u00b7 NO HEAT SIGNATURE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "three cards reading CAMOUFLAGED, INSULATED and NO HEAT SIGNATURE rise one after another into a list in the top band, a plate reads CAMOUFLAGED \u00b7 INSULATED \u00b7 NO HEAT SIGNATURE",
+        "reaction": "the cards rise",
+        "ambient": "wind, small rotors"
+      },
+      "t": "11.570-14.760",
+      "key": 4
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 14.76,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "This hyperspectral camera sees a hundred and fifty bands of light, revealing material differences.",
+      "phrase": "This hyperspectral camera sees",
+      "shows": "a box of 3 crayons marked R G B sits while a second box unfolds like an accordion into 150 spectrum crayons, a plate reads 150 BANDS \u00b7 400 TO 1000 NM",
+      "sfx": "snap",
+      "means": "150 bands \u00b7 400 to 1000 nm",
+      "rehook": "",
+      "draw": {
+        "subject": "a box of 3 crayons marked R G B",
+        "action": "sits while a second box unfolds like an accordion into 150 spectrum crayons",
+        "emotion": "surprised",
+        "annotation": "150 BANDS \u00b7 400 TO 1000 NM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a box of 3 crayons marked R G B sits while a second box unfolds like an accordion into 150 spectrum crayons, a plate reads 150 BANDS \u00b7 400 TO 1000 NM",
+        "reaction": "the box unfolds",
+        "ambient": "a quiet desk room"
+      },
+      "t": "14.760-19.030",
+      "key": 5
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 19.03,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 4.27
+      },
+      "offset": 4.27,
+      "vo": "This hyperspectral camera sees a hundred and fifty bands of light, revealing material differences.",
+      "phrase": "revealing material differences.",
+      "shows": "two spectrum cards, one for grass and one for a jacket fan open bar by bar and their curves split apart, a plate reads SEES MATERIAL DIFFERENCES",
+      "sfx": "flap",
+      "means": "sees material differences",
+      "rehook": "",
+      "draw": {
+        "subject": "two spectrum cards, one for grass and one for a jacket",
+        "action": "fan open bar by bar and their curves split apart",
+        "emotion": "curious",
+        "annotation": "SEES MATERIAL DIFFERENCES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "two spectrum cards, one for grass and one for a jacket fan open bar by bar and their curves split apart, a plate reads SEES MATERIAL DIFFERENCES",
+        "reaction": "the curves split",
+        "ambient": "a quiet desk room"
+      },
+      "t": "19.030-21.600",
+      "key": 6
+    },
+    {
+      "id": 9,
+      "shot": 4,
+      "at_s": 21.6,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The catch is the flood of data, one line at a time.",
+      "phrase": "The catch is the",
+      "shows": "a flood of striped scan lines pours out of the quadcopter's camera pod into the dark gap under it, a plate reads THE FLOOD \u00b7 ONE LINE AT A TIME",
+      "sfx": "rush",
+      "means": "the flood \u00b7 one line at a time",
+      "rehook": "",
+      "draw": {
+        "subject": "a flood of striped scan lines",
+        "action": "pours out of the quadcopter's camera pod into the dark gap under it",
+        "emotion": "tense",
+        "annotation": "THE FLOOD \u00b7 ONE LINE AT A TIME"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8",
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a flood of striped scan lines pours out of the quadcopter's camera pod into the dark gap under it, a plate reads THE FLOOD \u00b7 ONE LINE AT A TIME",
+        "reaction": "the lines pour",
+        "ambient": "rotors overhead, wind"
+      },
+      "t": "21.600-25.880",
+      "key": 7
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 25.88,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. A new line comes every ten.",
+      "phrase": "On a Raspberry Pi",
+      "shows": "Specs, a Raspberry Pi board with LED eyes riding under the quadcopter drops into view under the pod as the lines pour onto him, the clipboard grid clipped beside him striping with scan bands, a plate reads RASPBERRY PI 4B \u00b7 ON THE DRONE",
+      "sfx": "rattle",
+      "means": "raspberry pi 4b \u00b7 on the drone",
+      "rehook": "",
+      "draw": {
+        "subject": "Specs, a Raspberry Pi board with LED eyes riding under the quadcopter",
+        "action": "drops into view under the pod as the lines pour onto him, the clipboard grid clipped beside him striping with scan bands",
+        "emotion": "squint",
+        "annotation": "RASPBERRY PI 4B \u00b7 ON THE DRONE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "Specs, a Raspberry Pi board with LED eyes riding under the quadcopter drops into view under the pod as the lines pour onto him, the clipboard grid clipped beside him striping with scan bands, a plate reads RASPBERRY PI 4B \u00b7 ON THE DRONE",
+        "reaction": "the grid stripes",
+        "ambient": "rotors overhead, wind"
+      },
+      "t": "25.880-28.730",
+      "key": 8
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 28.73,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.85
+      },
+      "offset": 2.85,
+      "vo": "On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. A new line comes every ten.",
+      "phrase": "detector by itself took",
+      "shows": "the pile of unread scan lines stacks higher than the quadcopter's rotor arms and tips over Specs, a plate reads LINES PILE UP",
+      "sfx": "creak",
+      "means": "lines pile up",
+      "rehook": "rehook: the pile of unread lines stacks past the rotor arms and buries Specs",
+      "draw": {
+        "subject": "the pile of unread scan lines",
+        "action": "stacks higher than the quadcopter's rotor arms and tips over Specs",
+        "emotion": "buried",
+        "annotation": "LINES PILE UP"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the pile of unread scan lines stacks higher than the quadcopter's rotor arms and tips over Specs, a plate reads LINES PILE UP",
+        "reaction": "the pile tips",
+        "ambient": "rotors overhead, wind"
+      },
+      "t": "28.730-31.090",
+      "key": 37
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 31.09,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 5.21
+      },
+      "offset": 5.21,
+      "vo": "On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. A new line comes every ten.",
+      "phrase": "milliseconds a line. A",
+      "shows": "the stopwatch needle sweeps for the first time past its red mark and on round to 21 while Specs strains, a plate reads DETECTOR ALONE \u00b7 21.34 MS \u00b7 TOO SLOW",
+      "sfx": "whirr",
+      "means": "detector alone \u00b7 21.34 ms \u00b7 too slow",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch needle",
+        "action": "sweeps for the first time past its red mark and on round to 21 while Specs strains",
+        "emotion": "nervous",
+        "annotation": "DETECTOR ALONE \u00b7 21.34 MS \u00b7 TOO SLOW"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the stopwatch needle sweeps for the first time past its red mark and on round to 21 while Specs strains, a plate reads DETECTOR ALONE \u00b7 21.34 MS \u00b7 TOO SLOW",
+        "reaction": "the needle sweeps",
+        "ambient": "rotors overhead, wind"
+      },
+      "t": "31.090-34.470",
+      "key": 40
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 34.47,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 8.59
+      },
+      "offset": 8.59,
+      "vo": "On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. A new line comes every ten.",
+      "phrase": "ten.",
+      "shows": "the stopwatch's red 10 mark flickers as the pile buries Specs up to his LED eyes, a plate reads A NEW LINE EVERY 10 MS",
+      "sfx": "tick",
+      "means": "a new line every 10 ms",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch's red 10 mark",
+        "action": "flickers as the pile buries Specs up to his LED eyes",
+        "emotion": "buried",
+        "annotation": "A NEW LINE EVERY 10 MS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the stopwatch's red 10 mark flickers as the pile buries Specs up to his LED eyes, a plate reads A NEW LINE EVERY 10 MS",
+        "reaction": "the mark flickers",
+        "ambient": "rotors overhead, wind"
+      },
+      "t": "34.470-35.940",
+      "key": 9
+    },
+    {
+      "id": 14,
+      "shot": 5,
+      "at_s": 35.94,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.",
+      "phrase": "So researchers built SABL,",
+      "shows": "a SABL nameplate box slams around the pod's output, framing an ERX gauge and a velvet rope post, a plate reads SABL \u00b7 A FASTER PIPELINE",
+      "sfx": "clank",
+      "means": "sabl \u00b7 a faster pipeline",
+      "rehook": "",
+      "draw": {
+        "subject": "a SABL nameplate box",
+        "action": "slams around the pod's output, framing an ERX gauge and a velvet rope post",
+        "emotion": "steady",
+        "annotation": "SABL \u00b7 A FASTER PIPELINE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3",
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a SABL nameplate box slams around the pod's output, framing an ERX gauge and a velvet rope post, a plate reads SABL \u00b7 A FASTER PIPELINE",
+        "reaction": "the box slams",
+        "ambient": "rotors, a velvet rope creak"
+      },
+      "t": "35.940-39.110",
+      "key": 10
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 39.11,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 3.17
+      },
+      "offset": 3.17,
+      "vo": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.",
+      "phrase": "same detector. It scores",
+      "shows": "the ERX gauge from the slow scene drops into the SABL box beside the idling bouncer post, a plate reads SAME DETECTOR",
+      "sfx": "clunk",
+      "means": "same detector",
+      "rehook": "",
+      "draw": {
+        "subject": "the ERX gauge from the slow scene",
+        "action": "drops into the SABL box beside the idling bouncer post",
+        "emotion": "steady",
+        "annotation": "SAME DETECTOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17",
+        "c3"
+      ],
+      "choreo": {
+        "primary": "the ERX gauge from the slow scene drops into the SABL box beside the idling bouncer post, a plate reads SAME DETECTOR",
+        "reaction": "the gauge lands",
+        "ambient": "rotors, a velvet rope creak"
+      },
+      "t": "39.110-40.650",
+      "key": 48
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 40.65,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.71
+      },
+      "offset": 4.71,
+      "vo": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.",
+      "phrase": "scores pixels for anomalies,",
+      "shows": "the ERX gauge inside the box swings and one pixel brightens as it scores high, a plate reads SCORES EACH PIXEL",
+      "sfx": "blip",
+      "means": "scores each pixel",
+      "rehook": "",
+      "draw": {
+        "subject": "the ERX gauge inside the box",
+        "action": "swings and one pixel brightens as it scores high",
+        "emotion": "focused",
+        "annotation": "SCORES EACH PIXEL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the ERX gauge inside the box swings and one pixel brightens as it scores high, a plate reads SCORES EACH PIXEL",
+        "reaction": "the pixel brightens",
+        "ambient": "rotors, a velvet rope creak"
+      },
+      "t": "40.650-42.670",
+      "key": 41
+    },
+    {
+      "id": 17,
+      "shot": 5,
+      "at_s": 42.67,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 6.73
+      },
+      "offset": 6.73,
+      "vo": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.",
+      "phrase": "clusters the standouts.",
+      "shows": "the DBSCAN bouncer, a brass rope post with a face and a clipboard swings its clipboard and groups the bright pixels into one tight cluster, a plate reads DBSCAN \u00b7 CLUSTERS THE STANDOUTS",
+      "sfx": "snap",
+      "means": "dbscan \u00b7 clusters the standouts",
+      "rehook": "",
+      "draw": {
+        "subject": "the DBSCAN bouncer, a brass rope post with a face and a clipboard",
+        "action": "swings its clipboard and groups the bright pixels into one tight cluster",
+        "emotion": "stern",
+        "annotation": "DBSCAN \u00b7 CLUSTERS THE STANDOUTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the DBSCAN bouncer, a brass rope post with a face and a clipboard swings its clipboard and groups the bright pixels into one tight cluster, a plate reads DBSCAN \u00b7 CLUSTERS THE STANDOUTS",
+        "reaction": "the rope snaps taut",
+        "ambient": "rotors, a velvet rope creak"
+      },
+      "t": "42.670-43.390",
+      "key": 38
+    },
+    {
+      "id": 18,
+      "shot": 5,
+      "at_s": 43.39,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 7.45
+      },
+      "offset": 7.45,
+      "vo": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.",
+      "phrase": "standouts.",
+      "shows": "a lone sparkly stray pixel is pushed off the rope and tumbles away while Specs' LED eyes blink approval, a plate reads STRAY PIXELS OUT",
+      "sfx": "pop",
+      "means": "stray pixels out",
+      "rehook": "",
+      "draw": {
+        "subject": "a lone sparkly stray pixel",
+        "action": "is pushed off the rope and tumbles away while Specs' LED eyes blink approval",
+        "emotion": "shrug",
+        "annotation": "STRAY PIXELS OUT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "a lone sparkly stray pixel is pushed off the rope and tumbles away while Specs' LED eyes blink approval, a plate reads STRAY PIXELS OUT",
+        "reaction": "Specs blinks",
+        "ambient": "rotors, a velvet rope creak"
+      },
+      "t": "43.390-44.720",
+      "key": 11
+    },
+    {
+      "id": 19,
+      "shot": 5,
+      "at_s": 44.72,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now a line takes under six milliseconds, right on the drone.",
+      "phrase": "Now a line takes",
+      "shows": "the stopwatch settles at 5.7 as the whole SABL box lights and Specs leans back with his cable feet up, a plate reads 5.67 TO 5.73 MS \u00b7 UNDER 10 MS",
+      "sfx": "ding",
+      "means": "5.67 to 5.73 ms \u00b7 under 10 ms",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch",
+        "action": "settles at 5.7 as the whole SABL box lights and Specs leans back with his cable feet up",
+        "emotion": "smug",
+        "annotation": "5.67 TO 5.73 MS \u00b7 UNDER 10 MS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the stopwatch settles at 5.7 as the whole SABL box lights and Specs leans back with his cable feet up, a plate reads 5.67 TO 5.73 MS \u00b7 UNDER 10 MS",
+        "reaction": "the feet go up",
+        "ambient": "rotors, a velvet rope creak"
+      },
+      "t": "44.720-48.250",
+      "key": 12
+    },
+    {
+      "id": 20,
+      "shot": 5,
+      "at_s": 48.25,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 3.53
+      },
+      "offset": 3.53,
+      "vo": "Now a line takes under six milliseconds, right on the drone.",
+      "phrase": "drone.",
+      "shows": "the quadcopter pulls back into frame with the pile draining away line by line and no cable leaving the pod, a plate reads ON THE DRONE \u00b7 NO OFFLOADING",
+      "sfx": "hum",
+      "means": "on the drone \u00b7 no offloading",
+      "rehook": "",
+      "draw": {
+        "subject": "the quadcopter",
+        "action": "pulls back into frame with the pile draining away line by line and no cable leaving the pod",
+        "emotion": "steady",
+        "annotation": "ON THE DRONE \u00b7 NO OFFLOADING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "the quadcopter pulls back into frame with the pile draining away line by line and no cable leaving the pod, a plate reads ON THE DRONE \u00b7 NO OFFLOADING",
+        "reaction": "the pile drains",
+        "ambient": "rotors, a velvet rope creak"
+      },
+      "t": "48.250-49.400",
+      "key": 43
+    },
+    {
+      "id": 21,
+      "shot": 6,
+      "at_s": 49.4,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Each cluster becomes a flag, a G P S point to go check.",
+      "phrase": "Each cluster becomes a",
+      "shows": "a cluster on the clipboard search grid collapses into a GPS reticle and a red pin springs up on the paper, a plate reads GPS POINT PER CLUSTER",
+      "sfx": "snap",
+      "means": "gps point per cluster",
+      "rehook": "",
+      "draw": {
+        "subject": "a cluster on the clipboard search grid",
+        "action": "collapses into a GPS reticle and a red pin springs up on the paper",
+        "emotion": "proud",
+        "annotation": "GPS POINT PER CLUSTER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a cluster on the clipboard search grid collapses into a GPS reticle and a red pin springs up on the paper, a plate reads GPS POINT PER CLUSTER",
+        "reaction": "the pin springs",
+        "ambient": "a quiet desk room, wind at a window"
+      },
+      "t": "49.400-52.550",
+      "key": 13
+    },
+    {
+      "id": 22,
+      "shot": 6,
+      "at_s": 52.55,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 3.15
+      },
+      "offset": 3.15,
+      "vo": "Each cluster becomes a flag, a G P S point to go check.",
+      "phrase": "check.",
+      "shows": "Specs at the clipboard's top edge tracks his LED eyes from the new pin to the CLEARED stamp rocking closer on its handle and back, and does not reach, a plate reads ONE PIN \u00b7 GO CHECK",
+      "sfx": "creak",
+      "means": "one pin \u00b7 go check",
+      "rehook": "",
+      "draw": {
+        "subject": "Specs at the clipboard's top edge",
+        "action": "tracks his LED eyes from the new pin to the CLEARED stamp rocking closer on its handle and back, and does not reach",
+        "emotion": "tempted",
+        "annotation": "ONE PIN \u00b7 GO CHECK"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "Specs at the clipboard's top edge tracks his LED eyes from the new pin to the CLEARED stamp rocking closer on its handle and back, and does not reach, a plate reads ONE PIN \u00b7 GO CHECK",
+        "reaction": "the stamp rocks",
+        "ambient": "a quiet desk room, wind at a window"
+      },
+      "t": "52.550-53.660",
+      "key": 14
+    },
+    {
+      "id": 23,
+      "shot": 7,
+      "at_s": 53.66,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The test ran with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system.",
+      "phrase": "The test ran with",
+      "shows": "a paper map of the Bering Sea coast and the Yukon-Kuskokwim Delta flies in, a pin drops on Quinhagak and a boxed org card swings up on its stake, a plate reads QUINHAGAK SEARCH AND RESCUE \u00b7 VOLUNTEER NONPROFIT",
+      "sfx": "whoosh",
+      "means": "quinhagak search and rescue \u00b7 volunteer nonprofit",
+      "rehook": "",
+      "draw": {
+        "subject": "a paper map of the Bering Sea coast and the Yukon-Kuskokwim Delta",
+        "action": "flies in, a pin drops on Quinhagak and a boxed org card swings up on its stake",
+        "emotion": "steady",
+        "annotation": "QUINHAGAK SEARCH AND RESCUE \u00b7 VOLUNTEER NONPROFIT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18",
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a paper map of the Bering Sea coast and the Yukon-Kuskokwim Delta flies in, a pin drops on Quinhagak and a boxed org card swings up on its stake, a plate reads QUINHAGAK SEARCH AND RESCUE \u00b7 VOLUNTEER NONPROFIT",
+        "reaction": "the card swings up",
+        "ambient": "a quiet desk room, paper"
+      },
+      "t": "53.660-58.170",
+      "key": 15
+    },
+    {
+      "id": 24,
+      "shot": 7,
+      "at_s": 58.17,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.51
+      },
+      "offset": 4.51,
+      "vo": "The test ran with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system.",
+      "phrase": "village off the road",
+      "shows": "the map's road lines draw in from the edge and stop short of the village pin, a plate reads YUP'IK VILLAGE \u00b7 NO ROADS IN",
+      "sfx": "pencil",
+      "means": "yup'ik village \u00b7 no roads in",
+      "rehook": "",
+      "draw": {
+        "subject": "the map's road lines",
+        "action": "draw in from the edge and stop short of the village pin",
+        "emotion": "steady",
+        "annotation": "YUP'IK VILLAGE \u00b7 NO ROADS IN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "the map's road lines draw in from the edge and stop short of the village pin, a plate reads YUP'IK VILLAGE \u00b7 NO ROADS IN",
+        "reaction": "the roads stop",
+        "ambient": "a quiet desk room, paper"
+      },
+      "t": "58.170-60.360",
+      "key": 16
+    },
+    {
+      "id": 25,
+      "shot": 8,
+      "at_s": 60.36,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Researchers simulated a search with waders, nets and buoys, mostly donated by the community.",
+      "phrase": "Researchers simulated a search",
+      "shows": "a SIMULATED SCENARIO survey tag snaps onto a stake at the corner of a fresh grid sheet as a dashed layout plan draws on, a plate reads A STAGED SEARCH \u00b7 NOT A REAL RESCUE",
+      "sfx": "snap",
+      "means": "a staged search \u00b7 not a real rescue",
+      "rehook": "rehook: a SIMULATED SCENARIO tag snaps on and a dashed layout plan draws across a fresh sheet",
+      "draw": {
+        "subject": "a SIMULATED SCENARIO survey tag",
+        "action": "snaps onto a stake at the corner of a fresh grid sheet as a dashed layout plan draws on",
+        "emotion": "steady",
+        "annotation": "A STAGED SEARCH \u00b7 NOT A REAL RESCUE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "a SIMULATED SCENARIO survey tag snaps onto a stake at the corner of a fresh grid sheet as a dashed layout plan draws on, a plate reads A STAGED SEARCH \u00b7 NOT A REAL RESCUE",
+        "reaction": "the plan draws on",
+        "ambient": "wind over tundra, a far surf"
+      },
+      "t": "60.360-62.010",
+      "key": 17
+    },
+    {
+      "id": 26,
+      "shot": 8,
+      "at_s": 62.01,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 1.65
+      },
+      "offset": 1.65,
+      "vo": "Researchers simulated a search with waders, nets and buoys, mostly donated by the community.",
+      "phrase": "waders, nets and buoys,",
+      "shows": "waders, a net and buoys drop onto their dashed outlines one by one from above, a plate reads WADERS \u00b7 NETS \u00b7 BUOYS",
+      "sfx": "rustle",
+      "means": "waders \u00b7 nets \u00b7 buoys",
+      "rehook": "",
+      "draw": {
+        "subject": "waders, a net and buoys",
+        "action": "drop onto their dashed outlines one by one from above",
+        "emotion": "calm",
+        "annotation": "WADERS \u00b7 NETS \u00b7 BUOYS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "waders, a net and buoys drop onto their dashed outlines one by one from above, a plate reads WADERS \u00b7 NETS \u00b7 BUOYS",
+        "reaction": "the gear drops in",
+        "ambient": "wind over tundra, a far surf"
+      },
+      "t": "62.010-65.190",
+      "key": 44
+    },
+    {
+      "id": 27,
+      "shot": 8,
+      "at_s": 65.19,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 4.83
+      },
+      "offset": 4.83,
+      "vo": "Researchers simulated a search with waders, nets and buoys, mostly donated by the community.",
+      "phrase": "community.",
+      "shows": "a life jacket and a bucket settle into the last outlines on the sheet, a plate reads ITEMS MOSTLY DONATED BY THE COMMUNITY",
+      "sfx": "thud",
+      "means": "items mostly donated by the community",
+      "rehook": "",
+      "draw": {
+        "subject": "a life jacket and a bucket",
+        "action": "settle into the last outlines on the sheet",
+        "emotion": "calm",
+        "annotation": "ITEMS MOSTLY DONATED BY THE COMMUNITY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c27"
+      ],
+      "choreo": {
+        "primary": "a life jacket and a bucket settle into the last outlines on the sheet, a plate reads ITEMS MOSTLY DONATED BY THE COMMUNITY",
+        "reaction": "the outlines fill",
+        "ambient": "wind over tundra, a far surf"
+      },
+      "t": "65.190-66.420",
+      "key": 18
+    },
+    {
+      "id": 28,
+      "shot": 9,
+      "at_s": 66.42,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items.",
+      "phrase": "On the mudflat, about",
+      "shows": "red pins on a grey Bering Sea mudflat clipboard sheet with its own threshold placard pop up across the mud and tilt, 5 of 9 pins on gear and 4 on bare mud, 5 of 9 items pinned, a plate reads MUDFLAT \u00b7 ITS OWN THRESHOLD",
+      "sfx": "pop",
+      "means": "mudflat \u00b7 its own threshold",
+      "rehook": "",
+      "draw": {
+        "subject": "red pins on a grey Bering Sea mudflat clipboard sheet with its own threshold placard",
+        "action": "pop up across the mud and tilt, 5 of 9 pins on gear and 4 on bare mud, 5 of 9 items pinned",
+        "emotion": "sheepish",
+        "annotation": "MUDFLAT \u00b7 ITS OWN THRESHOLD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "red pins on a grey Bering Sea mudflat clipboard sheet with its own threshold placard pop up across the mud and tilt, 5 of 9 pins on gear and 4 on bare mud, 5 of 9 items pinned, a plate reads MUDFLAT \u00b7 ITS OWN THRESHOLD",
+        "reaction": "the bare-mud pins wobble",
+        "ambient": "wind over a mudflat, a far surf"
+      },
+      "t": "66.420-67.890",
+      "key": 19
+    },
+    {
+      "id": 29,
+      "shot": 9,
+      "at_s": 67.89,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.47
+      },
+      "offset": 1.47,
+      "vo": "On the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items.",
+      "phrase": "fifty six percent of",
+      "shows": "a badge reading 56% slams onto the mudflat sheet's corner as 5 of 9 pins glow on gear, a plate reads 56% OF FLAGS ON ITEMS",
+      "sfx": "thump",
+      "means": "56% of flags on items",
+      "rehook": "",
+      "draw": {
+        "subject": "a badge reading 56%",
+        "action": "slams onto the mudflat sheet's corner as 5 of 9 pins glow on gear",
+        "emotion": "steady",
+        "annotation": "56% OF FLAGS ON ITEMS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "a badge reading 56% slams onto the mudflat sheet's corner as 5 of 9 pins glow on gear, a plate reads 56% OF FLAGS ON ITEMS",
+        "reaction": "the badge lands",
+        "ambient": "wind over a mudflat, a far surf"
+      },
+      "t": "67.890-70.910",
+      "key": 45
+    },
+    {
+      "id": 30,
+      "shot": 9,
+      "at_s": 70.91,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.49
+      },
+      "offset": 4.49,
+      "vo": "On the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items.",
+      "phrase": "caught fifty five percent",
+      "shows": "a second badge reading 55% slams on beside it as 5 of 9 items glow pinned, a plate reads 55% OF ITEMS FLAGGED",
+      "sfx": "thump",
+      "means": "55% of items flagged",
+      "rehook": "",
+      "draw": {
+        "subject": "a second badge reading 55%",
+        "action": "slams on beside it as 5 of 9 items glow pinned",
+        "emotion": "steady",
+        "annotation": "55% OF ITEMS FLAGGED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "a second badge reading 55% slams on beside it as 5 of 9 items glow pinned, a plate reads 55% OF ITEMS FLAGGED",
+        "reaction": "the badge joins",
+        "ambient": "wind over a mudflat, a far surf"
+      },
+      "t": "70.910-73.500",
+      "key": 20
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 73.5,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent.",
+      "phrase": "In swamp grass, at",
+      "shows": "a fresh clipboard sheet of khaki swamp grass by the Arolik River drops and lands on its own with its own placard, no other sheet in frame, a plate reads SWAMP GRASS \u00b7 ITS OWN THRESHOLD",
+      "sfx": "slam",
+      "means": "swamp grass \u00b7 its own threshold",
+      "rehook": "",
+      "draw": {
+        "subject": "a fresh clipboard sheet of khaki swamp grass by the Arolik River",
+        "action": "drops and lands on its own with its own placard, no other sheet in frame",
+        "emotion": "steady",
+        "annotation": "SWAMP GRASS \u00b7 ITS OWN THRESHOLD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24",
+        "c29"
+      ],
+      "choreo": {
+        "primary": "a fresh clipboard sheet of khaki swamp grass by the Arolik River drops and lands on its own with its own placard, no other sheet in frame, a plate reads SWAMP GRASS \u00b7 ITS OWN THRESHOLD",
+        "reaction": "the sheet slaps down",
+        "ambient": "wind in grass"
+      },
+      "t": "73.500-76.170",
+      "key": 21
+    },
+    {
+      "id": 32,
+      "shot": 10,
+      "at_s": 76.17,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 2.67
+      },
+      "offset": 2.67,
+      "vo": "In swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent.",
+      "phrase": "ninety nine percent were",
+      "shows": "2 red pins in the swamp grass rise and 2 of 2 land on planted items, a plate reads 99% OF FLAGS ON ITEMS",
+      "sfx": "ding",
+      "means": "99% of flags on items",
+      "rehook": "",
+      "draw": {
+        "subject": "2 red pins in the swamp grass",
+        "action": "rise and 2 of 2 land on planted items",
+        "emotion": "proud",
+        "annotation": "99% OF FLAGS ON ITEMS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c29"
+      ],
+      "choreo": {
+        "primary": "2 red pins in the swamp grass rise and 2 of 2 land on planted items, a plate reads 99% OF FLAGS ON ITEMS",
+        "reaction": "the pins stand",
+        "ambient": "wind in grass"
+      },
+      "t": "76.170-79.330",
+      "key": 22
+    },
+    {
+      "id": 33,
+      "shot": 10,
+      "at_s": 79.33,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.83
+      },
+      "offset": 5.83,
+      "vo": "In swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent.",
+      "phrase": "twenty nine percent.",
+      "shows": "the 7 planted items in the swamp grass lie as the scanline passes, 2 of 7 pinned and 5 of 7 bare, the CLEARED stamp's handle rocking at the sheet edge toward the bare ones, a plate reads 29% OF ITEMS FLAGGED",
+      "sfx": "thump",
+      "means": "29% of items flagged",
+      "rehook": "",
+      "draw": {
+        "subject": "the 7 planted items in the swamp grass",
+        "action": "lie as the scanline passes, 2 of 7 pinned and 5 of 7 bare, the CLEARED stamp's handle rocking at the sheet edge toward the bare ones",
+        "emotion": "uneasy",
+        "annotation": "29% OF ITEMS FLAGGED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c29"
+      ],
+      "choreo": {
+        "primary": "the 7 planted items in the swamp grass lie as the scanline passes, 2 of 7 pinned and 5 of 7 bare, the CLEARED stamp's handle rocking at the sheet edge toward the bare ones, a plate reads 29% OF ITEMS FLAGGED",
+        "reaction": "the gear stays bare",
+        "ambient": "wind in grass"
+      },
+      "t": "79.330-81.140",
+      "key": 23
+    },
+    {
+      "id": 34,
+      "shot": 11,
+      "at_s": 81.14,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It keeps up. The question now is what it misses.",
+      "phrase": "It keeps up. The",
+      "shows": "the stopwatch in the corner ticks steady at 5.7 under its red 10 mark, a plate reads IT KEEPS UP",
+      "sfx": "tick",
+      "means": "it keeps up",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch in the corner",
+        "action": "ticks steady at 5.7 under its red 10 mark",
+        "emotion": "calm",
+        "annotation": "IT KEEPS UP"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the stopwatch in the corner ticks steady at 5.7 under its red 10 mark, a plate reads IT KEEPS UP",
+        "reaction": "the needle holds",
+        "ambient": "wind in grass"
+      },
+      "t": "81.140-82.990",
+      "key": 46
+    },
+    {
+      "id": 35,
+      "shot": 11,
+      "at_s": 82.99,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 1.85
+      },
+      "offset": 1.85,
+      "vo": "It keeps up. The question now is what it misses.",
+      "phrase": "now is what it",
+      "shows": "the 99% badge and the 29% badge slam together into one coin that turns slowly on its edge over the swamp grass sheet, a plate reads SWAMP GRASS \u00b7 ITS OWN THRESHOLD",
+      "sfx": "boom",
+      "means": "swamp grass \u00b7 its own threshold",
+      "rehook": "",
+      "draw": {
+        "subject": "the 99% badge and the 29% badge",
+        "action": "slam together into one coin that turns slowly on its edge over the swamp grass sheet",
+        "emotion": "alarmed",
+        "annotation": "SWAMP GRASS \u00b7 ITS OWN THRESHOLD"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c29"
+      ],
+      "choreo": {
+        "primary": "the 99% badge and the 29% badge slam together into one coin that turns slowly on its edge over the swamp grass sheet, a plate reads SWAMP GRASS \u00b7 ITS OWN THRESHOLD",
+        "reaction": "the coin turns",
+        "ambient": "wind in grass"
+      },
+      "kick": true,
+      "t": "82.990-84.130",
+      "key": 24
+    },
+    {
+      "id": 36,
+      "shot": 11,
+      "at_s": 84.13,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 2.99
+      },
+      "offset": 2.99,
+      "vo": "It keeps up. The question now is what it misses.",
+      "phrase": "misses.",
+      "shows": "the coin settles standing on its edge as the pins glow and the blank cells fog over, a plate reads TRUST THE FLAG \u00b7 NOT THE SILENCE",
+      "sfx": "clink",
+      "means": "trust the flag \u00b7 not the silence",
+      "rehook": "",
+      "draw": {
+        "subject": "the coin",
+        "action": "settles standing on its edge as the pins glow and the blank cells fog over",
+        "emotion": "doubtful",
+        "annotation": "TRUST THE FLAG \u00b7 NOT THE SILENCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the coin settles standing on its edge as the pins glow and the blank cells fog over, a plate reads TRUST THE FLAG \u00b7 NOT THE SILENCE",
+        "reaction": "the fog rolls in",
+        "ambient": "wind in grass"
+      },
+      "t": "84.130-85.740",
+      "key": 25
+    },
+    {
+      "id": 37,
+      "shot": 12,
+      "at_s": 85.74,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the strongest case against it. The paper's pitch for hyperspectral is camouflage.",
+      "phrase": "Here's the strongest case",
+      "shows": "a field-guide page on the desk flips open and three cards CAMOUFLAGED, INSULATED and NO HEAT SIGNATURE rise off it, a plate reads THE CAMOUFLAGE CASE \u00b7 THE PAPER'S PITCH",
+      "sfx": "thud",
+      "means": "the camouflage case \u00b7 the paper's pitch",
+      "rehook": "",
+      "draw": {
+        "subject": "a field-guide page on the desk",
+        "action": "flips open and three cards CAMOUFLAGED, INSULATED and NO HEAT SIGNATURE rise off it",
+        "emotion": "serious",
+        "annotation": "THE CAMOUFLAGE CASE \u00b7 THE PAPER'S PITCH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a field-guide page on the desk flips open and three cards CAMOUFLAGED, INSULATED and NO HEAT SIGNATURE rise off it, a plate reads THE CAMOUFLAGE CASE \u00b7 THE PAPER'S PITCH",
+        "reaction": "the cards rise",
+        "ambient": "a quiet desk room, paper"
+      },
+      "t": "85.740-89.850",
+      "key": 26
+    },
+    {
+      "id": 38,
+      "shot": 12,
+      "at_s": 89.85,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 4.11
+      },
+      "offset": 4.11,
+      "vo": "Here's the strongest case against it. The paper's pitch for hyperspectral is camouflage.",
+      "phrase": "camouflage.",
+      "shows": "a generic camo swatch tagged ILLUSTRATION slides onto the page and darkens to the colour of the grass beside it, a plate reads CAMO SWATCH \u00b7 ILLUSTRATION",
+      "sfx": "hush",
+      "means": "camo swatch \u00b7 illustration",
+      "rehook": "",
+      "draw": {
+        "subject": "a generic camo swatch tagged ILLUSTRATION",
+        "action": "slides onto the page and darkens to the colour of the grass beside it",
+        "emotion": "uneasy",
+        "annotation": "CAMO SWATCH \u00b7 ILLUSTRATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "a generic camo swatch tagged ILLUSTRATION slides onto the page and darkens to the colour of the grass beside it, a plate reads CAMO SWATCH \u00b7 ILLUSTRATION",
+        "reaction": "the swatch darkens",
+        "ambient": "a quiet desk room, paper"
+      },
+      "t": "89.850-91.260",
+      "key": 39
+    },
+    {
+      "id": 39,
+      "shot": 13,
+      "at_s": 91.26,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects.",
+      "phrase": "The authors say cutting",
+      "shows": "the bouncer at the velvet rope waves off a crowd of stray false-alarm pixels, a plate reads CUTTING FALSE ALARMS",
+      "sfx": "clank",
+      "means": "cutting false alarms",
+      "rehook": "",
+      "draw": {
+        "subject": "the bouncer at the velvet rope",
+        "action": "waves off a crowd of stray false-alarm pixels",
+        "emotion": "stern",
+        "annotation": "CUTTING FALSE ALARMS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c31"
+      ],
+      "choreo": {
+        "primary": "the bouncer at the velvet rope waves off a crowd of stray false-alarm pixels, a plate reads CUTTING FALSE ALARMS",
+        "reaction": "the crowd scatters",
+        "ambient": "rotors, wind in grass"
+      },
+      "t": "91.260-93.390",
+      "key": 27
+    },
+    {
+      "id": 40,
+      "shot": 13,
+      "at_s": 93.39,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 2.13
+      },
+      "offset": 2.13,
+      "vo": "The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects.",
+      "phrase": "drop real hits, and",
+      "shows": "one faint hatched swatch pixel gets swept off the rope with the false alarms, a plate reads CAN DROP REAL HITS \u00b7 ILLUSTRATION",
+      "sfx": "pop",
+      "means": "can drop real hits \u00b7 illustration",
+      "rehook": "",
+      "draw": {
+        "subject": "one faint hatched swatch pixel",
+        "action": "gets swept off the rope with the false alarms",
+        "emotion": "shrug",
+        "annotation": "CAN DROP REAL HITS \u00b7 ILLUSTRATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c31"
+      ],
+      "choreo": {
+        "primary": "one faint hatched swatch pixel gets swept off the rope with the false alarms, a plate reads CAN DROP REAL HITS \u00b7 ILLUSTRATION",
+        "reaction": "the hatched pixel tumbles",
+        "ambient": "rotors, wind in grass"
+      },
+      "t": "93.390-95.030",
+      "key": 47
+    },
+    {
+      "id": 41,
+      "shot": 13,
+      "at_s": 95.03,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.77
+      },
+      "offset": 3.77,
+      "vo": "The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects.",
+      "phrase": "stricter settings can hide",
+      "shows": "the bouncer raises the velvet rope a notch and the rest of the swatch's hatched pixels fade under it, a plate reads STRICTER CAN HIDE CAMOUFLAGE \u00b7 ILLUSTRATION",
+      "sfx": "creak",
+      "means": "stricter can hide camouflage \u00b7 illustration",
+      "rehook": "rehook: the bouncer raises the rope and the camo swatch's pixels fade",
+      "draw": {
+        "subject": "the bouncer",
+        "action": "raises the velvet rope a notch and the rest of the swatch's hatched pixels fade under it",
+        "emotion": "shrug",
+        "annotation": "STRICTER CAN HIDE CAMOUFLAGE \u00b7 ILLUSTRATION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c31"
+      ],
+      "choreo": {
+        "primary": "the bouncer raises the velvet rope a notch and the rest of the swatch's hatched pixels fade under it, a plate reads STRICTER CAN HIDE CAMOUFLAGE \u00b7 ILLUSTRATION",
+        "reaction": "the rope rises",
+        "ambient": "rotors, wind in grass"
+      },
+      "t": "95.030-97.780",
+      "key": 28
+    },
+    {
+      "id": 42,
+      "shot": 13,
+      "at_s": 97.78,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "So it can go quiet in the very case it's pitched for.",
+      "phrase": "So it can go",
+      "shows": "Specs dims his LED eyes as the swatch's pixels are gone, a plate reads QUIET IN THE CASE IT'S PITCHED FOR",
+      "sfx": "fade",
+      "means": "quiet in the case it's pitched for",
+      "rehook": "",
+      "draw": {
+        "subject": "Specs",
+        "action": "dims his LED eyes as the swatch's pixels are gone",
+        "emotion": "doubtful",
+        "annotation": "QUIET IN THE CASE IT'S PITCHED FOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c31",
+        "c6"
+      ],
+      "choreo": {
+        "primary": "Specs dims his LED eyes as the swatch's pixels are gone, a plate reads QUIET IN THE CASE IT'S PITCHED FOR",
+        "reaction": "the eyes dim",
+        "ambient": "rotors, wind in grass"
+      },
+      "t": "97.780-100.650",
+      "key": 29
+    },
+    {
+      "id": 43,
+      "shot": 13,
+      "at_s": 100.65,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 2.87
+      },
+      "offset": 2.87,
+      "vo": "So it can go quiet in the very case it's pitched for.",
+      "phrase": "pitched for.",
+      "shows": "the CAMOUFLAGED card drifts back in over the empty rope and fades to the fog colour as Specs' eyes go dark, a plate reads HIGHER THRESHOLD CAN HIDE CAMOUFLAGE",
+      "sfx": "hush",
+      "means": "higher threshold can hide camouflage",
+      "rehook": "",
+      "draw": {
+        "subject": "the CAMOUFLAGED card",
+        "action": "drifts back in over the empty rope and fades to the fog colour as Specs' eyes go dark",
+        "emotion": "uneasy",
+        "annotation": "HIGHER THRESHOLD CAN HIDE CAMOUFLAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "the CAMOUFLAGED card drifts back in over the empty rope and fades to the fog colour as Specs' eyes go dark, a plate reads HIGHER THRESHOLD CAN HIDE CAMOUFLAGE",
+        "reaction": "the card fades",
+        "ambient": "rotors, wind in grass"
+      },
+      "t": "100.650-102.020",
+      "key": 49
+    },
+    {
+      "id": 44,
+      "shot": 14,
+      "at_s": 102.02,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "They call recall still limited, in just two tundra scenes.",
+      "phrase": "They call recall still",
+      "shows": "a dashed survey ring closes around two small clipboard sheets, mudflat and swamp grass, and nothing else, a plate reads RECALL \u00b7 STILL LIMITED",
+      "sfx": "pencil",
+      "means": "recall \u00b7 still limited",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed survey ring",
+        "action": "closes around two small clipboard sheets, mudflat and swamp grass, and nothing else",
+        "emotion": "steady",
+        "annotation": "RECALL \u00b7 STILL LIMITED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c30",
+        "c32"
+      ],
+      "choreo": {
+        "primary": "a dashed survey ring closes around two small clipboard sheets, mudflat and swamp grass, and nothing else, a plate reads RECALL \u00b7 STILL LIMITED",
+        "reaction": "the ring closes",
+        "ambient": "wind over tundra"
+      },
+      "t": "102.020-104.890",
+      "key": 30
+    },
+    {
+      "id": 45,
+      "shot": 14,
+      "at_s": 104.89,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.87
+      },
+      "offset": 2.87,
+      "vo": "They call recall still limited, in just two tundra scenes.",
+      "phrase": "tundra scenes.",
+      "shows": "a tag reading 2 SCENES \u00b7 TUNDRA \u00b7 JULY clips onto the ring with a snap, a plate reads 2 SCENES \u00b7 TUNDRA \u00b7 JULY",
+      "sfx": "clip",
+      "means": "2 scenes \u00b7 tundra \u00b7 july",
+      "rehook": "",
+      "draw": {
+        "subject": "a tag reading 2 SCENES \u00b7 TUNDRA \u00b7 JULY",
+        "action": "clips onto the ring with a snap",
+        "emotion": "steady",
+        "annotation": "2 SCENES \u00b7 TUNDRA \u00b7 JULY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32",
+        "c23"
+      ],
+      "choreo": {
+        "primary": "a tag reading 2 SCENES \u00b7 TUNDRA \u00b7 JULY clips onto the ring with a snap, a plate reads 2 SCENES \u00b7 TUNDRA \u00b7 JULY",
+        "reaction": "the tag clips on",
+        "ambient": "wind over tundra"
+      },
+      "t": "104.890-106.280",
+      "key": 42
+    },
+    {
+      "id": 46,
+      "shot": 14,
+      "at_s": 106.28,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "An unreviewed preprint, not yet used in a real search.",
+      "phrase": "An unreviewed preprint, not",
+      "shows": "a PREPRINT tag clips on beside it and a dashed line strikes through an empty REAL SEARCH box, a plate reads UNREVIEWED PREPRINT \u00b7 NOT A REAL SEARCH",
+      "sfx": "press",
+      "means": "unreviewed preprint \u00b7 not a real search",
+      "rehook": "",
+      "draw": {
+        "subject": "a PREPRINT tag",
+        "action": "clips on beside it and a dashed line strikes through an empty REAL SEARCH box",
+        "emotion": "steady",
+        "annotation": "UNREVIEWED PREPRINT \u00b7 NOT A REAL SEARCH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1",
+        "c35"
+      ],
+      "choreo": {
+        "primary": "a PREPRINT tag clips on beside it and a dashed line strikes through an empty REAL SEARCH box, a plate reads UNREVIEWED PREPRINT \u00b7 NOT A REAL SEARCH",
+        "reaction": "the line strikes",
+        "ambient": "wind over tundra"
+      },
+      "t": "106.280-110.260",
+      "key": 31
+    },
+    {
+      "id": 47,
+      "shot": 15,
+      "at_s": 110.26,
+      "vo_line": 18,
+      "anchor": {
+        "vo_line": 18,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "They pitch it as augmenting search methods, not replacing them.",
+      "phrase": "They pitch it as",
+      "shows": "a layer cake of maps with QSAR's visible and infrared drone layer at the bottom takes the swamp grass clipboard sheet with its red pins sliding on top, nothing erased, a plate reads AUGMENT \u00b7 NOT REPLACE",
+      "sfx": "slide",
+      "means": "augment \u00b7 not replace",
+      "rehook": "",
+      "draw": {
+        "subject": "a layer cake of maps with QSAR's visible and infrared drone layer at the bottom",
+        "action": "takes the swamp grass clipboard sheet with its red pins sliding on top, nothing erased",
+        "emotion": "steady",
+        "annotation": "AUGMENT \u00b7 NOT REPLACE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c33",
+        "c22"
+      ],
+      "choreo": {
+        "primary": "a layer cake of maps with QSAR's visible and infrared drone layer at the bottom takes the swamp grass clipboard sheet with its red pins sliding on top, nothing erased, a plate reads AUGMENT \u00b7 NOT REPLACE",
+        "reaction": "the layer settles",
+        "ambient": "a quiet desk room"
+      },
+      "t": "110.260-113.520",
+      "key": 32
+    },
+    {
+      "id": 48,
+      "shot": 16,
+      "at_s": 113.52,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A flag means go look. Silence means keep looking.",
+      "phrase": "A flag means go",
+      "shows": "the CLEARED stamp swings down at the fogged swamp grass on the clipboard grid, a plate reads CLEARED?",
+      "sfx": "whoosh",
+      "means": "cleared?",
+      "rehook": "",
+      "draw": {
+        "subject": "the CLEARED stamp",
+        "action": "swings down at the fogged swamp grass on the clipboard grid",
+        "emotion": "tense",
+        "annotation": "CLEARED?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the CLEARED stamp swings down at the fogged swamp grass on the clipboard grid, a plate reads CLEARED?",
+        "reaction": "the stamp swings",
+        "ambient": "wind over open tundra, a far surf"
+      },
+      "t": "113.520-115.570",
+      "key": 33
+    },
+    {
+      "id": 49,
+      "shot": 16,
+      "at_s": 115.57,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 2.05
+      },
+      "offset": 2.05,
+      "vo": "A flag means go look. Silence means keep looking.",
+      "phrase": "look. Silence means keep",
+      "shows": "a red pin springs up under the stamp and stops it mid-air, a plate reads A FLAG MEANS GO LOOK",
+      "sfx": "snap",
+      "means": "a flag means go look",
+      "rehook": "",
+      "draw": {
+        "subject": "a red pin",
+        "action": "springs up under the stamp and stops it mid-air",
+        "emotion": "resolved",
+        "annotation": "A FLAG MEANS GO LOOK"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a red pin springs up under the stamp and stops it mid-air, a plate reads A FLAG MEANS GO LOOK",
+        "reaction": "the stamp jolts",
+        "ambient": "wind over open tundra, a far surf"
+      },
+      "kick": true,
+      "t": "115.570-116.450",
+      "key": 34
+    },
+    {
+      "id": 50,
+      "shot": 16,
+      "at_s": 116.45,
+      "vo_line": 19,
+      "anchor": {
+        "vo_line": 19,
+        "fraction": 0.0,
+        "offset": 2.93
+      },
+      "offset": 2.93,
+      "vo": "A flag means go look. Silence means keep looking.",
+      "phrase": "Silence means keep looking.",
+      "shows": "the stamp flips over to NOT CLEARED and presses onto the fog as Specs' LED eyes re-light and the scanline starts sweeping again, a plate reads SILENCE \u00b7 KEEP LOOKING",
+      "sfx": "flip",
+      "means": "silence \u00b7 keep looking",
+      "rehook": "",
+      "draw": {
+        "subject": "the stamp",
+        "action": "flips over to NOT CLEARED and presses onto the fog as Specs' LED eyes re-light and the scanline starts sweeping again",
+        "emotion": "resolved",
+        "annotation": "SILENCE \u00b7 KEEP LOOKING"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c30",
+        "c33"
+      ],
+      "choreo": {
+        "primary": "the stamp flips over to NOT CLEARED and presses onto the fog as Specs' LED eyes re-light and the scanline starts sweeping again, a plate reads SILENCE \u00b7 KEEP LOOKING",
+        "reaction": "the scanline restarts",
+        "ambient": "wind over open tundra, a far surf"
+      },
+      "t": "116.450-118.400",
+      "key": 35
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+About 99% of the drone's swamp grass flags were real. It caught only 29% of the items.
+Trust the flag. Not the silence.
+
+A preprint posted November 20th tests SABL, a pipeline that runs on a Raspberry Pi riding a drone. It reads a hyperspectral camera with 150 bands of light, one line of ground at a time. Clusters of odd pixels become GPS points for searchers to check.
+
+Speed was the old wall. The anomaly detector by itself took 21 milliseconds a line on the Pi. The camera hands over a new line every 10. The full pipeline takes about 5.7 milliseconds. It keeps up right on the drone.
+
+The data comes from a 10 day deployment with Quinhagak Search and Rescue, a nonprofit that trains volunteer responders in a Yup'ik village off the road system. Researchers staged the search with waders, nets, buoys and life jackets, mostly donated by the community. One author affiliation is Nalaquq, LLC, a company based in Quinhagak.
+
+On a Bering Sea mudflat about 56% of flags were planted items. It caught 55% of the items. In swamp grass near the Arolik River, at a different threshold, about 99% of flags were real. It caught 29%.
+
+The hard part is the camouflage case. The paper's pitch for hyperspectral is the person a regular or infrared camera can miss. The authors also write that cutting false alarms can drop real hits, and that stricter settings can hide camouflaged objects. So the tool may go quiet exactly where it's meant to help.
+
+The authors say recall remains limited. They tested two tundra scenes. It's an unreviewed preprint and hasn't been used in a real search. They frame it as a way to augment search methods, not replace them.
+
+That framing is the useful one. A flag is a lead worth walking to. A blank stretch of map isn't cleared ground.
+
+If you plan searches in rural Alaska, what would this tool have to show before you trusted a blank patch of its map?
+
+#ArtificialIntelligence #Alaska #SearchAndRescue #HyperspectralImaging

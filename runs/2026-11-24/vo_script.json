@@ -1,0 +1,193 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A drone asks every strip of tundra one question. Is that made of something the ground isn't?",
+   "claims": [
+    "c12",
+    "c7"
+   ],
+   "t": "A drone asks every strip of tundra one question. Is that made of something the ground isn't?"
+  },
+  {
+   "idx": 1,
+   "text": "Crews often fly regular and infrared cameras, which can miss camouflaged or insulated people.",
+   "claims": [
+    "c5",
+    "c6"
+   ],
+   "t": "Crews often fly regular and infrared cameras, which can miss camouflaged or insulated people."
+  },
+  {
+   "idx": 2,
+   "text": "This hyperspectral camera sees a hundred and fifty bands of light, revealing material differences.",
+   "claims": [
+    "c11",
+    "c7"
+   ],
+   "t": "This hyperspectral camera sees a hundred and fifty bands of light, revealing material differences."
+  },
+  {
+   "idx": 3,
+   "text": "The catch is the flood of data, one line at a time.",
+   "claims": [
+    "c8",
+    "c12"
+   ],
+   "t": "The catch is the flood of data, one line at a time."
+  },
+  {
+   "idx": 4,
+   "text": "On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. A new line comes every ten.",
+   "claims": [
+    "c13",
+    "c17",
+    "c16"
+   ],
+   "t": "On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. A new line comes every ten."
+  },
+  {
+   "idx": 5,
+   "text": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.",
+   "claims": [
+    "c3",
+    "c14",
+    "c16"
+   ],
+   "t": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts."
+  },
+  {
+   "idx": 6,
+   "text": "Now a line takes under six milliseconds, right on the drone.",
+   "claims": [
+    "c16",
+    "c9"
+   ],
+   "t": "Now a line takes under six milliseconds, right on the drone."
+  },
+  {
+   "idx": 7,
+   "text": "Each cluster becomes a flag, a G P S point to go check.",
+   "claims": [
+    "c15"
+   ],
+   "t": "Each cluster becomes a flag, a G P S point to go check."
+  },
+  {
+   "idx": 8,
+   "text": "The test ran with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system.",
+   "claims": [
+    "c18",
+    "c19",
+    "c20"
+   ],
+   "t": "The test ran with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system."
+  },
+  {
+   "idx": 9,
+   "text": "Researchers simulated a search with waders, nets and buoys, mostly donated by the community.",
+   "claims": [
+    "c25",
+    "c26",
+    "c27"
+   ],
+   "t": "Researchers simulated a search with waders, nets and buoys, mostly donated by the community."
+  },
+  {
+   "idx": 10,
+   "text": "On the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items.",
+   "claims": [
+    "c28"
+   ],
+   "t": "On the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items."
+  },
+  {
+   "idx": 11,
+   "text": "In swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent.",
+   "claims": [
+    "c29"
+   ],
+   "t": "In swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent."
+  },
+  {
+   "idx": 12,
+   "text": "It keeps up. The question now is what it misses.",
+   "claims": [
+    "narration"
+   ],
+   "t": "It keeps up. The question now is what it misses."
+  },
+  {
+   "idx": 13,
+   "text": "Here's the strongest case against it. The paper's pitch for hyperspectral is camouflage.",
+   "claims": [
+    "c6"
+   ],
+   "t": "Here's the strongest case against it. The paper's pitch for hyperspectral is camouflage."
+  },
+  {
+   "idx": 14,
+   "text": "The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects.",
+   "claims": [
+    "c31"
+   ],
+   "t": "The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects."
+  },
+  {
+   "idx": 15,
+   "text": "So it can go quiet in the very case it's pitched for.",
+   "claims": [
+    "c31",
+    "c6"
+   ],
+   "t": "So it can go quiet in the very case it's pitched for."
+  },
+  {
+   "idx": 16,
+   "text": "They call recall still limited, in just two tundra scenes.",
+   "claims": [
+    "c30",
+    "c32"
+   ],
+   "t": "They call recall still limited, in just two tundra scenes."
+  },
+  {
+   "idx": 17,
+   "text": "An unreviewed preprint, not yet used in a real search.",
+   "claims": [
+    "c1",
+    "c35"
+   ],
+   "t": "An unreviewed preprint, not yet used in a real search."
+  },
+  {
+   "idx": 18,
+   "text": "They pitch it as augmenting search methods, not replacing them.",
+   "claims": [
+    "c33"
+   ],
+   "t": "They pitch it as augmenting search methods, not replacing them."
+  },
+  {
+   "idx": 19,
+   "text": "A flag means go look. Silence means keep looking.",
+   "claims": [
+    "narration"
+   ],
+   "t": "A flag means go look. Silence means keep looking."
+  }
+ ],
+ "caption_fixups": {
+  "a hundred and fifty": "150",
+  "twenty one milliseconds": "21 milliseconds",
+  "every ten": "every 10",
+  "six milliseconds": "6 milliseconds",
+  "G P S": "GPS",
+  "fifty six percent": "56 percent",
+  "fifty five percent": "55 percent",
+  "ninety nine percent": "99 percent",
+  "twenty nine percent": "29 percent"
+ },
+ "caption_quotes": [],
+ "caption_split_after": []
+}

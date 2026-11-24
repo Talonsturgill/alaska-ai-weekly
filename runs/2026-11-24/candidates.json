@@ -1,0 +1,26 @@
+{
+ "locked_story": {
+  "headline": "A drone with an onboard Raspberry Pi scans the tundra line by line for things that don't belong, tested on a 10-day deployment with Quinhagak Search and Rescue (arXiv 2611.27017, Binghamton University, Hampden-Sydney College, Nalaquq LLC, posted November 20th): fast enough to keep up with the camera, precise in one scene, but it missed most planted objects in the other",
+  "found_at_rung": "in_window_sweep",
+  "note": "Only in-window Alaska story this week where machine learning is the actual subject (four researchers called it a slow week). Primary source is the preprint itself. Archive overlap: 2026-07-24 'box-that-waits' covered Quinhagak's local drone pilots (127 days ago, outside the 30-day window, allowed); this film's subject is the onboard detector and its test numbers, and the thesis must stay distinct from 'local pilots over autonomy'. Back-to-back drone object class with 11-23 (delivery, Windracers ULTRA): the hero changes, no cargo drone, a quadcopter scanner over a mudflat, and the subject is the detector, not the aircraft. dedupe check FRESH."
+ },
+ "rungs": [
+  {
+   "rung": "in_window_sweep",
+   "attempted": true,
+   "candidates_found": 19,
+   "note": "4 researchers (science/fisheries, energy/defense/UAS/business, rural/Native/health/gov, wildcard plus primary-source mining incl. NSF API, arXiv, Federal Register), 73 of 80 WebSearch calls used. All four called it a slow week for Alaska AI news."
+  }
+ ],
+ "candidates": [
+  {"headline": "Quinhagak SAR hyperspectral onboard anomaly detection preprint", "verdict": "LOCKED", "why": "genuine ML subject, primary source, named Alaska partner, honest mixed numbers, strong pictures"},
+  {"headline": "Rural Health Transformation Year 2 award and the plan's 'appropriate AI' paperwork line", "verdict": "runner-up", "why": "November 17th release doesn't mention AI; AI link is a 2025 initiatives document and an August Maniilaq award"},
+  {"headline": "UAF/DGGS statewide avalanche model, 2,000+ road crossings", "verdict": "rejected", "why": "physics simulation, explicitly not ML"},
+  {"headline": "Seward fin whale cruise ship strike, Royal Caribbean 'technology solutions'", "verdict": "rejected", "why": "no AI or detection tech named in any source"},
+  {"headline": "Coast Guard cutter Storis drone sorties", "verdict": "rejected", "why": "drones, no AI, Seattle-based patrol"},
+  {"headline": "Governor-elect asks AIDEA to pause", "verdict": "rejected", "why": "freeze not tied to data centers in the reporting, overlaps excluded subjects"},
+  {"headline": "Anchorage digital shelf tags", "verdict": "rejected", "why": "no source shows AI or personalized pricing in Anchorage"},
+  {"headline": "ACUASI detect-and-avoid radar plan", "verdict": "rejected", "why": "covered yesterday"},
+  {"headline": "Halibut epigenetic clock / pollock otolith ML", "verdict": "rejected", "why": "out of window, ML framing is ours"}
+ ]
+}

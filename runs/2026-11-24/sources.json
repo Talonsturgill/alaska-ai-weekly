@@ -1,0 +1,63 @@
+{
+ "run_date": "2026-11-24",
+ "title": "Trust the Flag",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Real-Time On-Drone Hyperspectral Anomaly Detection for Wilderness Search and Rescue (abstract)",
+   "outlet": "arXiv preprint 2611.27017, November 20th, not peer reviewed",
+   "url": "https://arxiv.org/abs/2611.27017",
+   "claims": [
+    "c1",
+    "c3",
+    "c14",
+    "c16",
+    "c18"
+   ]
+  },
+  {
+   "id": "s2",
+   "title": "Real-Time On-Drone Hyperspectral Anomaly Detection for Wilderness Search and Rescue (full text)",
+   "outlet": "arXiv preprint 2611.27017v1 HTML",
+   "url": "https://arxiv.org/html/2611.27017v1",
+   "claims": [
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c11",
+    "c12",
+    "c13",
+    "c15",
+    "c17",
+    "c19",
+    "c20",
+    "c21",
+    "c22",
+    "c23",
+    "c24",
+    "c25",
+    "c26",
+    "c27",
+    "c28",
+    "c29",
+    "c30",
+    "c31",
+    "c32",
+    "c33",
+    "c35"
+   ]
+  },
+  {
+   "id": "s3",
+   "title": "Nalaquq, LLC",
+   "outlet": "Nalaquq, LLC, Quinhagak",
+   "url": "https://www.nalaquq.com/",
+   "claims": [
+    "c20"
+   ]
+  }
+ ]
+}

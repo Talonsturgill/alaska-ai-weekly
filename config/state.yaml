@@ -3993,3 +3993,64 @@ dispatch_history:
     metaphor: a scarlet ribbon that is a loop until it is laid along the 1925 dog
       trail about nine tenths of the way, two sample tubes that flew and stayed, and
       a dashed radar that is the drone's eyes of its own, still planned
+- date: '2026-11-24'
+  topic: 'SABL preprint (arXiv 2611.27017, November 20th, not peer reviewed): a Raspberry
+    Pi on a drone reads a 150-band hyperspectral camera in about 5.7 ms a line against
+    a 10 ms interval, tested on a staged search with Quinhagak Search and Rescue;
+    mudflat about 56 percent precision and 55 percent recall, swamp grass about 99
+    percent and 29 percent at its own threshold; the camouflage case; trust the flag,
+    not the silence'
+  slug: trust-the-flag
+  key_entities:
+  - Quinhagak Search and Rescue
+  - Nalaquq LLC
+  - Binghamton University
+  - Hampden-Sydney College
+  - SABL
+  - hyperspectral
+  - Reed-Xiaoli
+  - DBSCAN
+  - Raspberry Pi
+  - Arolik River
+  - Bering Sea mudflat
+  - arXiv 2611.27017
+  archetype: ''
+  palette: 'pewter-sage overcast #B9C3C6, sedge olive #7E8A4A, tussock khaki #A08A54,
+    wet slate mudflat #6F6A62, circuit green #2F8F5B with brass #E9C46A pins and cyan
+    LED eyes #7CF0FF, signal red #E63B2E on GPS flags and the stamp alone, violet-to-crimson
+    spectrum stripes for the machine view, clipboard bone #F3EDE0, drifting fog #C9CFCB'
+  voice: Sulafat, documentary narrator, bright and forward-leaning
+  stance: mixed
+  angle: 'A Raspberry Pi riding a drone can now read a 150-band camera faster than
+    the camera scans, so the open question has moved from whether it keeps up to what
+    it misses, and in Quinhagak''s staged test the answer reads like a searcher''s
+    rule: trust the flag, not the silence.'
+  hero: Specs
+  cast:
+  - Specs
+  - ScanDrone
+  - Scanline
+  - PinFlag
+  - SearchGrid
+  - ClearedStamp
+  - Bouncer
+  - Stopwatch
+  - Coin
+  - Gear
+  - Raven
+  composition:
+    pov: top-down-map
+    motion_vector: assemble-build
+    hero_treatment: data-as-subject
+    layout: map-territory
+    register: editorial-schematic
+    palette: 'pewter-sage overcast #B9C3C6, sedge olive #7E8A4A, tussock khaki #A08A54,
+      wet slate mudflat #6F6A62, circuit green #2F8F5B with brass #E9C46A pins and
+      cyan LED eyes #7CF0FF, signal red #E63B2E on GPS flags and the stamp alone,
+      violet-to-crimson spectrum stripes for the machine view, clipboard bone #F3EDE0,
+      drifting fog #C9CFCB'
+    camera_strategy: aerial-descent
+    light_story: overcast-diffuse
+    metaphor: red pins that a searcher can trust on a clipboard grid, fog over the
+      ground they never flagged, and a CLEARED stamp that a pin stops mid-air and
+      flips to NOT CLEARED

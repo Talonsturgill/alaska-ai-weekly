@@ -40,6 +40,14 @@ pool:
   # ADDED 2026-11-19: every reflective/newsy/driving/warm entry had played inside 30 days. Downloaded and verified this run.
   # ADDED 2026-11-22: every curious/wonder entry had played inside 30 days again (Frost Waltz 11-11, Deep Haze 11-21). Downloaded and verified this run (HTTP 206 range probe, 180 s).
   # ADDED 2026-11-23: every uplifting/hopeful/warm/celebratory entry had played inside 30 days. Downloaded and verified this run (HTTP 206 range probe, 143.9 s).
+  # ADDED 2026-11-24: every reflective/newsy/driving/warm entry had played inside 30 days (Echoes of Time v2 11-10). Downloaded and verified this run (HTTP 206 range probe, 180 s).
+  - title: "Dreamer"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Dreamer.mp3"
+    license: "CC BY 4.0"
+    credit: '"Dreamer" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [reflective, warm, gentle, pondering]
   - title: "Lasting Hope"
     composer: "Kevin MacLeod"
     source: "incompetech.com"

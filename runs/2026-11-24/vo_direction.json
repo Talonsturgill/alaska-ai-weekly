@@ -1,0 +1,213 @@
+{
+ "narrator": "Nora, a documentary narrator with a bright, forward-leaning storyteller's energy: warm, quick, quietly witty",
+ "notes": "Style: warm, natural, conversational documentary storytelling with forward momentum; mixed register, real pleasure in the speed win (twenty one milliseconds down to under six, on the drone), then a fair, plain-spoken turn to what it misses, landing on a usable searcher's rule; dry wit only where earned, never sour, never hype. Pace: the required runtime-naming paragraph, verbatim (about one hundred and fifteen seconds); bright persona chosen over the public-radio host because that persona ran 132 to 145 s and this one landed 122 s, target 112 to 120 s; routine pauses short, real rests only at the four marked short pauses and before 'Now a line takes under six', 'It keeps up.' and 'So it can go quiet'. Pronunciation is data (pronunciations map), never respelled in the transcript, per VO_DIRECTION.md.",
+ "style_prompt": "Style: warm, natural and conversational, a storyteller who can't wait to tell you this one. The register is mixed and honest: let the engineering win land with real pleasure, then turn fairly to what the tool misses, and finish on a rule a searcher can keep. Dry wit only where it is earned, never sour and never hype. Open curious, leaning in on 'one question'. Let 'twenty one' against 'ten' sound like a real problem, then let 'under six milliseconds' land as a bright, pleased payoff. Say 'Quinhagak Search and Rescue' with warmth and respect. Let 'ninety nine' rise and 'twenty nine' drop, the same result seen from two sides. Say 'It keeps up.' simply, then lean on 'misses'. Give 'Here's the strongest case against it.' a fair, steady voice, never ominous. Let 'go quiet' be the quietest moment in the piece. Land the last line clean and warm: 'go look' bright and direct, 'keep looking' settled and certain. Keep real momentum: the commas and line ends carry straight on, every routine pause is short, about a quarter second, and nothing lingers.\nPace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one hundred and fifteen seconds, and the read must fill it, so let every sentence land and take an easy breath at each period, a natural beat rather than a long pause. Save real rests for the marked short pauses. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.",
+ "pronunciations": {
+  "Quinhagak": "KWIN-uh-hawk",
+  "SABL": "sable",
+  "Yup'ik": "YOOP-ik"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A drone asks every strip of tundra one question. [curious] Is that made of something the ground isn't?",
+   "intent": "hook",
+   "emphasis": "one question",
+   "energy": 4,
+   "tags": ["[curious]"],
+   "pause_before": false,
+   "why": "Forward-leaning opener that plants the film's idea; the vetted [curious] sits mid-line so the question itself carries the lift."
+  },
+  {
+   "idx": 1,
+   "text": "Crews often fly regular and infrared cameras, which can miss camouflaged or insulated people.",
+   "intent": "setup",
+   "emphasis": "miss",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Drop to even context so the problem reads as plain fact; weight on 'miss' plants the word the film turns on later."
+  },
+  {
+   "idx": 2,
+   "text": "This hyperspectral camera sees a hundred and fifty bands of light, revealing material differences.",
+   "intent": "reveal",
+   "emphasis": "fifty",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "A small wonder beat; lift and let 'a hundred and fifty' land unhurried."
+  },
+  {
+   "idx": 3,
+   "text": "The catch is the flood of data, one line at a time.",
+   "intent": "wry",
+   "emphasis": "flood",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Half-smile settle after the lift; a light throwaway that sets up the speed problem."
+  },
+  {
+   "idx": 4,
+   "text": "On a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. [short pause] A new line comes every ten.",
+   "intent": "stat",
+   "emphasis": "ten",
+   "energy": 4,
+   "tags": ["[short pause]"],
+   "pause_before": false,
+   "why": "The problem in two numbers; slow on 'twenty one', a beat, then 'ten' lands so the viewer does the math themselves."
+  },
+  {
+   "idx": 5,
+   "text": "So researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.",
+   "intent": "setup",
+   "emphasis": "faster",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Even, explanatory middle gear; moving toward the payoff without spending it."
+  },
+  {
+   "idx": 6,
+   "text": "Now a line takes under six milliseconds, right on the drone.",
+   "intent": "reveal",
+   "emphasis": "six",
+   "energy": 5,
+   "tags": [],
+   "pause_before": true,
+   "why": "The engineering win and the first energy peak; a beat before, then a bright, pleased 'under six' the angle says to let land."
+  },
+  {
+   "idx": 7,
+   "text": "Each cluster becomes a flag, a G P S point to go check.",
+   "intent": "setup",
+   "emphasis": "flag",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Settle off the peak; 'flag' gets weight because the button depends on it."
+  },
+  {
+   "idx": 8,
+   "text": "The test ran with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system.",
+   "intent": "setup",
+   "emphasis": "volunteer",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Warm and respectful, a little lower; place and organization named cleanly (pronunciations carried in the map)."
+  },
+  {
+   "idx": 9,
+   "text": "Researchers simulated a search with waders, nets and buoys, mostly donated by the community.",
+   "intent": "setup",
+   "emphasis": "donated",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "A touch of warmth and lift on the community detail; keeps the list moving."
+  },
+  {
+   "idx": 10,
+   "text": "On the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items.",
+   "intent": "stat",
+   "emphasis": "caught",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Measured, even baseline stat; slow enough that both numbers register before the contrast line."
+  },
+  {
+   "idx": 11,
+   "text": "In swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent.",
+   "intent": "stat",
+   "emphasis": "twenty nine",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Rise on 'ninety nine', then drop on 'twenty nine'; one line carrying both sides of the result."
+  },
+  {
+   "idx": 12,
+   "text": "It keeps up. [short pause] The question now is what it misses.",
+   "intent": "reveal",
+   "emphasis": "misses",
+   "energy": 2,
+   "tags": ["[short pause]"],
+   "pause_before": true,
+   "why": "The thesis turn; quiet and simple after the stat peak, a beat, then lean on 'misses'."
+  },
+  {
+   "idx": 13,
+   "text": "Here's the strongest case against it. The paper's pitch for hyperspectral is camouflage.",
+   "intent": "stakes",
+   "emphasis": "camouflage",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Fair, steady lift into the counterpoint; straight to camera, never ominous."
+  },
+  {
+   "idx": 14,
+   "text": "The authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects.",
+   "intent": "stakes",
+   "emphasis": "hide",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Careful, attributed, in the authors' own terms; weight on 'hide' sets up the next line."
+  },
+  {
+   "idx": 15,
+   "text": "So it can go quiet in the very case it's pitched for.",
+   "intent": "reveal",
+   "emphasis": "quiet",
+   "energy": 1,
+   "tags": [],
+   "pause_before": true,
+   "why": "The quietest moment of the read; the word 'quiet' performed, not announced, so the honest limit is felt."
+  },
+  {
+   "idx": 16,
+   "text": "They call recall still limited, in just two tundra scenes.",
+   "intent": "stakes",
+   "emphasis": "limited",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Lift back to matter-of-fact; the authors' own word gets the weight."
+  },
+  {
+   "idx": 17,
+   "text": "An unreviewed preprint, not yet used in a real search.",
+   "intent": "stakes",
+   "emphasis": "real",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Plain, quick caveat, said once without apology."
+  },
+  {
+   "idx": 18,
+   "text": "They pitch it as augmenting search methods, not replacing them.",
+   "intent": "setup",
+   "emphasis": "augmenting",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Warm forward motion toward the rule; the framing that makes the button usable."
+  },
+  {
+   "idx": 19,
+   "text": "A flag means go look. [short pause] Silence means keep looking.",
+   "intent": "button",
+   "emphasis": "keep looking",
+   "energy": 4,
+   "tags": ["[short pause]"],
+   "pause_before": false,
+   "why": "The rule a viewer keeps: 'go look' bright and direct, a beat, then 'keep looking' settled and certain."
+  }
+ ],
+ "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, a documentary narrator with a bright, forward-leaning storyteller's energy: warm, quick, quietly witty. Neutral American accent, natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, natural and conversational, a storyteller who can't wait to tell you this one. The register is mixed and honest: let the engineering win land with real pleasure, then turn fairly to what the tool misses, and finish on a rule a searcher can keep. Dry wit only where it is earned, never sour and never hype. Open curious, leaning in on 'one question'. Let 'twenty one' against 'ten' sound like a real problem, then let 'under six milliseconds' land as a bright, pleased payoff. Say 'Quinhagak Search and Rescue' with warmth and respect. Let 'ninety nine' rise and 'twenty nine' drop, the same result seen from two sides. Say 'It keeps up.' simply, then lean on 'misses'. Give 'Here's the strongest case against it.' a fair, steady voice, never ominous. Let 'go quiet' be the quietest moment in the piece. Land the last line clean and warm: 'go look' bright and direct, 'keep looking' settled and certain. Keep real momentum: the commas and line ends carry straight on, every routine pause is short, about a quarter second, and nothing lingers.\nPace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one hundred and fifteen seconds, and the read must fill it, so let every sentence land and take an easy breath at each period, a natural beat rather than a long pause. Save real rests for the marked short pauses. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nTranscript:\nA drone asks every strip of tundra one question. [curious] Is that made of something the ground isn't?\nCrews often fly regular and infrared cameras, which can miss camouflaged or insulated people.\nThis hyperspectral camera sees a hundred and fifty bands of light, revealing material differences.\nThe catch is the flood of data, one line at a time.\nOn a Raspberry Pi riding the drone, the anomaly detector by itself took twenty one milliseconds a line. [short pause] A new line comes every ten.\nSo researchers built SABL, a faster pipeline for the same detector. It scores pixels for anomalies, then clusters the standouts.\nNow a line takes under six milliseconds, right on the drone.\nEach cluster becomes a flag, a G P S point to go check.\nThe test ran with Quinhagak Search and Rescue, a volunteer nonprofit in a Yup'ik village off the road system.\nResearchers simulated a search with waders, nets and buoys, mostly donated by the community.\nOn the mudflat, about fifty six percent of flags were planted items, and it caught fifty five percent of the items.\nIn swamp grass, at a different threshold, about ninety nine percent were planted items, but it caught just twenty nine percent.\nIt keeps up. [short pause] The question now is what it misses.\nHere's the strongest case against it. The paper's pitch for hyperspectral is camouflage.\nThe authors say cutting false alarms can drop real hits, and stricter settings can hide camouflaged objects.\nSo it can go quiet in the very case it's pitched for.\nThey call recall still limited, in just two tundra scenes.\nAn unreviewed preprint, not yet used in a real search.\nThey pitch it as augmenting search methods, not replacing them.\nA flag means go look. [short pause] Silence means keep looking."
+}

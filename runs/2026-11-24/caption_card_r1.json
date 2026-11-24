@@ -1,0 +1,6 @@
+{"source": "out/dispatch/post.txt", "rubric": "config/linkedin_caption_rubric.yaml", "hard_fails": [],
+ "scores": {"hook_scroll_stop": 8.0, "point_of_view_take": 8.5, "substance_specificity": 9.0, "readability_restraint": 8.0, "engagement_design": 8.5, "brand_voice_accuracy": 9.0, "hashtag_craft": 9.0},
+ "calculation": "(8.0x0.20)+(8.5x0.18)+(9.0x0.16)+(8.0x0.12)+(8.5x0.12)+(9.0x0.12)+(9.0x0.10) = 8.53",
+ "weighted_total": 8.53, "ship_threshold": 8.5, "ship": true, "weakest_criterion": "Hook / scroll-stop",
+ "one_sentence_fix": "Put the stake into line 1 so a cold reader knows it's an Alaska search-and-rescue drone, then keep 'Trust the flag. Not the silence.' as line 2.",
+ "editor_notes": "Clears the 8.5 bar by 0.03, borderline. Cutting the repeated swamp grass figures in paragraph 5 would also lift readability."}
