@@ -295,8 +295,8 @@ export const SearchGrid: React.FC<{f: number; x: number; y: number; w?: number; 
       <g clipPath={`url(#${id}-c)`}>
         {Array.from({length: Math.floor(h / 40) + 1}, (_, i) => <path key={`h${i}`} d={`M ${-w / 2} ${-h / 2 + 50 + i * 40} H ${w / 2}`} stroke={SCN.rule} strokeWidth={2} />)}
         {Array.from({length: Math.floor(w / 40) + 1}, (_, i) => <path key={`v${i}`} d={`M ${-w / 2 + i * 40} ${-h / 2 + 50} V ${h / 2}`} stroke={SCN.rule} strokeWidth={2} />)}
-        {stripes > 0 && Array.from({length: Math.floor((h - 50) / 14 * stripes)}, (_, i) => (
-          <rect key={`s${i}`} x={-w / 2} y={-h / 2 + 50 + i * 14} width={w} height={14} fill={specColor(h01(i, seed))} opacity={0.13} />
+        {stripes > 0 && Array.from({length: Math.floor((h - 50) / 19 * stripes)}, (_, i) => (
+          <rect key={`s${i}`} x={-w / 2} y={-h / 2 + 50 + i * 19} width={w} height={19} fill={specColor(h01(i, seed))} opacity={0.11} />
         ))}
         {fog.map((g, i) => (
           <g key={`f${i}`} opacity={clamp01(g.p)}>
@@ -385,7 +385,7 @@ export const Bouncer: React.FC<{f: number; x: number; y: number; scale?: number;
         <rect x={-12} y={-180} width={24} height={170} fill={b.base} stroke={SCN.ink} strokeWidth={5} />
         <circle cx={0} cy={-188} r={18} fill={b.key} stroke={SCN.ink} strokeWidth={5} />
       </g>
-      <g transform={`rotate(${bp.skew * 0.8}) translate(0 ${-bp.dip})`}>
+      <g transform={`rotate(${bp.skew * 0.8 + 1.6 * Math.sin(f / 19 + seed)}) translate(0 ${-bp.dip - 3 * Math.sin(f / 13 + seed)})`}>
         <ellipse cx={0} cy={-12} rx={64} ry={18} fill={b.shade} stroke={SCN.ink} strokeWidth={6} />
         <rect x={-34} y={-250} width={68} height={238} rx={20} fill={b.base} stroke={SCN.ink} strokeWidth={6} />
         <rect x={-22} y={-240} width={14} height={220} rx={7} fill={b.key} opacity={0.6} />
@@ -402,7 +402,7 @@ export const Bouncer: React.FC<{f: number; x: number; y: number; scale?: number;
           <path d={mouth} transform="translate(0 26)" stroke={SCN.ink} strokeWidth={4.5} fill="none" strokeLinecap="round" />
         </g>
         {/* clipboard arm */}
-        <g transform={`translate(-30 -150) rotate(${-30 - 60 * arm})`}>
+        <g transform={`translate(-30 -150) rotate(${-30 - 60 * arm + 8 * Math.sin(f / 11 + seed)})`}>
           <path d="M 0 0 L -70 0" stroke={SCN.ink} strokeWidth={14} strokeLinecap="round" />
           <path d="M 0 0 L -70 0" stroke={b.base} strokeWidth={8} strokeLinecap="round" />
           <g transform="translate(-92 0) rotate(20)">
@@ -496,7 +496,7 @@ export const Coin: React.FC<{x: number; y: number; scale?: number; spin?: number
   const c = Math.cos(a);
   const showFront = c >= 0;
   const face = showFront ? front : back;
-  const g = tones(showFront ? '#E2B653' : '#C9CDD3');
+  const g = tones(showFront ? '#E2B653' : '#D4A84A');
   const sx = Math.max(0.05, Math.abs(c));
   const R = 170, T = 34;
   const edgeW = T * Math.abs(Math.sin(a));
@@ -505,7 +505,7 @@ export const Coin: React.FC<{x: number; y: number; scale?: number; spin?: number
     <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${scale})`}>
       <ellipse cx={20} cy={shadowY} rx={R * (0.55 + 0.45 * sx)} ry={26} fill="#000" opacity={0.3} />
       {/* edge band, seen as the coin turns */}
-      <rect x={side * R * sx - (side > 0 ? 0 : edgeW)} y={-R} width={Math.max(0.1, edgeW)} height={R * 2} rx={Math.min(edgeW, 12)} fill="#9C7A2E" stroke={SCN.ink} strokeWidth={6} />
+      {edgeW > 6 && <rect x={side * R * sx - (side > 0 ? 0 : edgeW)} y={-R * 0.98} width={edgeW} height={R * 1.96} rx={Math.min(edgeW / 2, 12)} fill="#9C7A2E" stroke={SCN.ink} strokeWidth={5} />}
       {Array.from({length: 22}, (_, i) => (
         <path key={i} d={`M ${side * R * sx + (side > 0 ? 2 : -edgeW + 2)} ${-R + 14 + i * 15} h ${Math.max(0, edgeW - 4)}`} stroke="#6E5420" strokeWidth={3} opacity={edgeW > 6 ? 0.7 : 0} />
       ))}

@@ -69,7 +69,7 @@ B = [
  (32, 18, 0.0, "slide", "a layer cake of maps with QSAR's visible and infrared drone layer at the bottom", "takes the swamp grass clipboard sheet with its red pins sliding on top, nothing erased", "steady", "AUGMENT · NOT REPLACE", "the layer settles", ""),
  (33, 19, 0.0, "whoosh", "the CLEARED stamp", "swings down at the fogged swamp grass on the clipboard grid", "tense", "CLEARED?", "the stamp swings", ""),
  (34, 19, W("look"), "snap", "a red pin", "springs up under the stamp and stops it mid-air", "resolved", "A FLAG MEANS GO LOOK", "the stamp jolts", ""),
- (35, 19, W("Silence"), "flip", "the stamp", "flips over to NOT CLEARED and presses onto the fog as Specs' LED eyes re-light and the scanline starts sweeping again", "resolved", "NO FLAG · KEEP LOOKING", "the scanline restarts", ""),
+ (35, 19, W("Silence"), "flip", "the stamp", "flips over to NOT CLEARED and presses onto the fog as Specs' LED eyes re-light and the scanline starts sweeping again", "resolved", "SILENCE · KEEP LOOKING", "the scanline restarts", ""),
 ]
 
 PLATE_AT = {i: "on-object" for i in range(1, 60)}
@@ -178,7 +178,7 @@ def BOARD_HEAD(b_at, end, ad, tr):
             {"t": b_at(32), "type": "build-on", "what": "the pin layer stacks onto QSAR's layer", "hold_s": 0.8}],
         "tail_s": 2.0, "audio_arc": {"bed": [
             {"line": 0, "offset": 0.0, "level": 1.0}, {"line": 3, "offset": 0.0, "level": 1.2}, {"line": 7, "offset": 0.0, "level": 0.9},
-            {"line": 10, "offset": 0.0, "level": 1.1}, {"line": 13, "offset": 0.0, "level": 0.6}, {"line": 18, "offset": 0.0, "level": 1.1},
+            {"line": 10, "offset": 0.0, "level": 1.1}, {"line": 13, "offset": 0.0, "level": 0.6}, {"line": 16, "offset": 0.0, "level": 0.5}, {"line": 18, "offset": 0.0, "level": 0.8},
             {"at_s": round(b_at(35) - 0.6, 3), "level": 0.35}, {"at_s": round(b_at(35) + 0.4, 3), "level": 1.3},
             {"from_end": 0.4, "level": 0.0}],
             "ambience": "wind",

@@ -226,6 +226,25 @@ const HatchPix: React.FC<{x: number; y: number; o?: number; s?: number}> = ({x, 
   </g>
 );
 
+/** a sedge-tuft floor band, distinct from the tussock row */
+const SedgeRow: React.FC<{f: number; y?: number; seed?: number}> = ({f, y = 1500, seed = 2}) => (
+  <g>
+    <rect data-band="ok" x={0} y={y + 30} width={1080} height={1920 - y} fill="#4A5230" />
+    {Array.from({length: 26}, (_, i) => {
+      const x = (i / 26) * 1120 - 20 + 12 * h01(i, seed);
+      const yy = y + 60 + 260 * h01(i, seed + 1);
+      const hgt = 120 + 140 * h01(i, seed + 2);
+      return (
+        <g key={i}>
+          {Array.from({length: 6}, (_, k) => (
+            <path key={k} d={`M ${x + k * 6} ${yy} q ${8 * Math.sin(f / 16 + i + k)} ${-hgt * 0.5} ${-20 + k * 9 + 10 * Math.sin(f / 20 + i)} ${-hgt}`} stroke={k % 2 ? '#C4AE76' : SCN.ink} strokeWidth={k % 2 ? 4 : 5} fill="none" strokeLinecap="round" />
+          ))}
+        </g>
+      );
+    })}
+  </g>
+);
+
 // ---- S1: ONE QUESTION (top-down tundra, the scanline with cyan glints, the first pin, the grid and the waiting stamp) -----------------------
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
@@ -245,7 +264,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         {crossed && <rect x={420} y={860} width={240} height={120} fill={specColor(0.6)} opacity={0.4 * clamp01((scanY - 900) / 60)} />}
         <Scanline f={f} x0={40} x1={1040} y0={420} y1={1460} p={scanP} wake={0.22} face={false} />
         {scanP < 1 && [0, 1, 2, 3].map((i) => <circle key={i} cx={160 + i * 250 + 30 * Math.sin(f / 4 + i)} cy={scanY} r={9} fill={SCN.led} stroke={SCN.ink} strokeWidth={2} />)}
-        <PinFlag f={f} x={640} y={900} scale={1.25} spring={spr(f, Math.min(b(2), 34), 18)} wobble={2.5} seed={1} gps="GPS POINT" />
+        <PinFlag f={f} x={640} y={900} scale={1.25} spring={spr(f, Math.min(b(2), 22), 18)} wobble={2.5} seed={1} gps="GPS POINT" />
         <g transform={`translate(${lerp(1300, 860, gridIn)} 680) rotate(${-6})`}>
           <SearchGrid f={f} x={0} y={0} w={260} h={320} pins={[{u: 0.62, v: 0.5, p: spr(f, b(36) + 14, 16)}]} title="SEARCH GRID" />
         </g>
@@ -298,7 +317,6 @@ const S2: React.FC<SceneProps> = ({p}) => {
             </g>
           );
         })}
-        <Tussocks f={f} y={1500} drift={f / 80} />
         <Plate x={540} text="STANDARD KIT · VISIBLE + INFRARED" y={1250} size={28} p={ease(f, b(3) + 6) * (1 - ease(f, b(50), 8))} /> {/* plate-overlap-ok */}
         <Plate x={540} text="WHAT EO/IR CAN MISS · THE PAPER'S MOTIVATION" y={520} size={24} p={ease(f, b(4) + 4)} tone="dark" /> {/* plate-overlap-ok */}
         <Plate x={540} text="ORDINARY FOOTAGE" y={1250} p={ease(f, b(50) + 4) * (1 - ease(f, b(4), 8))} /> {/* plate-overlap-ok */}
@@ -318,7 +336,7 @@ const Desk: React.FC = () => (
 );
 const S3: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const open = easeIO(f, b(5) + 4, Math.max(40, b(6) - b(5)));
+  const open = 0.12 + 0.88 * easeIO(f, b(5), Math.max(40, b(6) - b(5)));
   const cards = easeIO(f, b(6), 30);
   return (
     <Frame p={p} bg="#C9C3B2" cam={(fr) => ({z: lerp(1.0, 1.06, easeIO(fr, 0, p.dur)), fx: 540, fy: 980})}>
@@ -399,7 +417,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} preprint cam={(fr) => ({z: lerp(1.0, 1.05, easeIO(fr, 0, p.dur)), fx: 540, fy: 980})}>
       <SVG>
         <TundraWorld f={f} kind="tundra" hz={820} drift={f / 90} seed={7} />
-        <ScanDrone f={f} x={540} y={560} scale={0.75} />
+        <ScanDrone f={f} x={540} y={650} scale={0.7} cableTo={[(lerp(lerp(1260, 860, easeIO(f, b(41), 18)), 540, pull) - 540) / 0.7, (lerp(860, 800, pull) - 50 * lerp(1, 1.2, pull) - 650) / 0.7]} />
         {/* the SABL box */}
         {box > 0 && (
           <g opacity={Math.min(1, box)}>
@@ -429,19 +447,16 @@ const S5: React.FC<SceneProps> = ({p}) => {
             glow={i === 1 ? ease(f, b(41), 10) : 0} s={40} />;
         })}
         <Bouncer f={f} x={640} y={1250} scale={0.95} mood={f > b(11) ? 'pleased' : 'stern'} arm={Math.max(wave, 0.6 * ease(f, b(38), 10) * (1 - ease(f, b(38) + 20, 10)))} rope={260} cues={[b(38), b(11)]} />
-        <g transform={`translate(${lerp(lerp(1260, 860, easeIO(f, b(41), 18)), 540, pull)} ${lerp(860, 700, pull)}) scale(${lerp(1, 1.2, pull)})`}>
-          {pull < 0.5 && <ScanDrone f={f} x={0} y={-110} scale={0.42} />}
-          <path d="M 0 -80 V -40" stroke={SCN.ink} strokeWidth={8} />
-          <path d="M 0 -80 V -40" stroke="#3A6FD8" strokeWidth={4} />
+        <g transform={`translate(${lerp(lerp(1260, 860, easeIO(f, b(41), 18)), 540, pull)} ${lerp(860, 800, pull)}) scale(${lerp(1, 1.2, pull)})`}>
           <Specs f={f} x={0} y={0} scale={0.52} emotion={f > b(12) ? 'smug' : 'squint'} feetUp={feet} glow={0.4 + 0.6 * ease(f, b(11) + 10, 4) * (1 - ease(f, b(11) + 16, 4))} cues={[b(11), b(12)]} />
           <Stopwatch f={f} x={-190} y={0} scale={0.5} value={lerp(21.3, 5.7, easeIO(f, b(12), 20))} calm={feet} cues={[b(12)]} />
         </g>
-        <Plate x={540} text="SABL · A FASTER PIPELINE" y={530} p={ease(f, b(10) + 8) * (1 - ease(f, b(48), 8))} /> {/* plate-overlap-ok */}
-        <Plate x={540} text="SAME DETECTOR" y={530} p={ease(f, b(48) + 4) * (1 - ease(f, b(41), 8))} /> {/* plate-overlap-ok */}
-        <Plate x={540} text="SCORES EACH PIXEL" y={530} p={ease(f, b(41) + 4) * (1 - ease(f, b(38), 8))} /> {/* plate-overlap-ok */}
-        <Plate x={540} text="DBSCAN · CLUSTERS THE STANDOUTS" y={530} size={28} p={ease(f, b(38) + 4) * (1 - ease(f, b(11), 8))} /> {/* plate-overlap-ok */}
-        <Plate x={540} text="STRAY PIXELS OUT" y={530} p={ease(f, b(11) + 6) * (1 - ease(f, b(12), 8))} /> {/* plate-overlap-ok */}
-        <Plate x={540} text="5.67 TO 5.73 MS · UNDER 10 MS" y={530} p={ease(f, b(12) + 10) * (1 - ease(f, b(43), 8))} tone="red" /> {/* plate-overlap-ok */}
+        <Plate x={540} text="SABL · A FASTER PIPELINE" y={520} p={ease(f, b(10) + 8) * (1 - ease(f, b(48), 8))} /> {/* plate-overlap-ok */}
+        <Plate x={540} text="SAME DETECTOR" y={520} p={ease(f, b(48) + 4) * (1 - ease(f, b(41), 8))} /> {/* plate-overlap-ok */}
+        <Plate x={540} text="SCORES EACH PIXEL" y={520} p={ease(f, b(41) + 4) * (1 - ease(f, b(38), 8))} /> {/* plate-overlap-ok */}
+        <Plate x={540} text="DBSCAN · CLUSTERS THE STANDOUTS" y={520} size={28} p={ease(f, b(38) + 4) * (1 - ease(f, b(11), 8))} /> {/* plate-overlap-ok */}
+        <Plate x={540} text="STRAY PIXELS OUT" y={520} p={ease(f, b(11) + 6) * (1 - ease(f, b(12), 8))} /> {/* plate-overlap-ok */}
+        <Plate x={540} text="5.67 TO 5.73 MS · UNDER 10 MS" y={520} p={ease(f, b(12) + 10) * (1 - ease(f, b(43), 8))} tone="red" /> {/* plate-overlap-ok */}
         <Plate x={540} text="ON THE DRONE · NO OFFLOADING" y={1240} size={28} p={ease(f, b(43) + 14)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
@@ -609,12 +624,12 @@ const S9: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <TundraWorld f={f} kind="mudflat" topDown seed={9} />
         <HeldTravel f={f} x={100} y={580} w={880} h={760} mode="shadow" seed={9}>
-          <Sheet f={f} x={540} y={1000} w={760} h={600} kind="mudflat" seed={1} label="MUDFLAT · ITS OWN THRESHOLD">
+          <Sheet f={f} x={540} y={950} w={760} h={600} kind="mudflat" seed={1} label="MUDFLAT · ITS OWN THRESHOLD">
             <MudContents f={f} a={b(19) + 6} s={0.88} />
           </Sheet>
         </HeldTravel>
-        <Burst x={300} y={560} lines={['56%', '5 OF 9 FLAGS ON ITEMS']} p={spr(f, b(45), 14)} size={28} rot={-5} />
-        <Burst x={790} y={560} lines={['55%', '5 OF 9 ITEMS FLAGGED']} p={spr(f, b(20), 14)} size={28} fill="#D8DDE0" rot={4} />
+        <Burst x={300} y={580} lines={['56%', 'FLAGS ON ITEMS']} p={spr(f, b(45), 14)} size={28} rot={-5} />
+        <Burst x={780} y={580} lines={['55%', 'ITEMS FLAGGED']} p={spr(f, b(20), 14)} size={28} fill="#D8DDE0" rot={4} />
         <Tussocks f={f} y={1500} tone="mud" drift={f / 100} />
       </SVG>
     </Frame>
@@ -638,9 +653,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
           </Sheet>
           </HeldTravel>
         </g>
-        <Burst x={300} y={560} lines={['99%', '2 OF 2 FLAGS ON ITEMS']} p={spr(f, b(22) + 10, 14)} size={28} rot={-4} />
-        <Burst x={790} y={560} lines={['29%', '2 OF 7 ITEMS FLAGGED']} p={spr(f, b(23) + 6, 14)} size={28} fill="#D8DDE0" rot={4} />
-        <Tussocks f={f} y={1500} drift={f / 100} />
+        <Burst x={300} y={580} lines={['99%', 'FLAGS ON ITEMS']} p={spr(f, b(22) + 10, 14)} size={28} rot={-4} />
+        <Burst x={780} y={580} lines={['29%', 'ITEMS FLAGGED']} p={spr(f, b(23) + 6, 14)} size={28} fill="#D8DDE0" rot={4} />
+        <SedgeRow f={f} seed={3} />
         <g transform={`translate(${lerp(1200, 960, ease(f, b(23), 20))} 1160) rotate(${-20 + 10 * Math.sin(f / 8)})`}><ClearedStamp x={0} y={0} scale={0.6} f={f} /></g>
       </SVG>
     </Frame>
@@ -651,7 +666,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
 const S11: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const slam = easeIO(f, b(24) - 12, 14);
-  const turn = f < b(24) ? 0 : clamp01((f - b(24)) / Math.max(1, b(25) - b(24) + 20));
+  const turn = easeIO(f, b(24) + 14, 20);
   const fog = easeIO(f, b(25) - 6, 30);
   const sw = ease(f, b(46), 10) * (1 - ease(f, b(24), 10));
   return (
@@ -666,9 +681,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
         <g opacity={sw}><Stopwatch f={f} x={250} y={700} scale={0.9} value={5.7} calm={1} cues={[b(46)]} /></g>
         {slam < 1 && <Burst x={lerp(-100, 720, slam)} y={760} lines={['99%']} p={1} size={60} />}
         {slam < 1 && <Burst x={lerp(1180, 720, slam)} y={760} lines={['29%']} p={1} size={60} fill="#D8DDE0" />}
-        {slam >= 1 && <Coin x={720} y={760} scale={0.8} spin={turn} rot={-6} shadowY={330} front={['99%', 'FLAGS ON ITEMS']} back={['29%', 'ITEMS FLAGGED']} />}
+        {slam >= 1 && <Coin x={720} y={760} scale={0.8} spin={turn} rot={-4} shadowY={185} front={['99%', 'FLAGS ON ITEMS']} back={['29%', 'ITEMS FLAGGED']} />}
         {slam >= 1 && f < b(24) + 10 && <circle cx={720} cy={760} r={120 + 200 * ((f - b(24)) / 10)} fill="none" stroke="#F2D15C" strokeWidth={10} opacity={1 - (f - b(24)) / 10} />}
-        <Tussocks f={f} y={1500} drift={f / 90} />
+        <SedgeRow f={f} seed={5} />
         <Plate x={540} text="IT KEEPS UP" y={520} p={ease(f, b(46) + 4) * (1 - ease(f, b(24), 8))} /> {/* plate-overlap-ok */}
         <Plate x={540} text="SWAMP GRASS · ITS OWN THRESHOLD" y={520} size={26} p={ease(f, b(24) + 6) * (1 - ease(f, b(25), 8))} /> {/* plate-overlap-ok */}
         <Plate x={540} text="TRUST THE FLAG · NOT THE SILENCE" displayLines={['TRUST THE FLAG', 'NOT THE SILENCE']} y={540} size={34} p={ease(f, b(25) + 4)} tone="dark" /> {/* plate-overlap-ok */}
@@ -699,11 +714,11 @@ const S12: React.FC<SceneProps> = ({p}) => {
           <g opacity={open}>{Array.from({length: 12}, (_, i) => <rect key={i} x={60 + i * 24} y={-150 - i * 1.8} width={22} height={40} fill={specColor(i / 11)} stroke={SCN.ink} strokeWidth={1.5} />)}</g>
         </g>
         {['CAMOUFLAGED', 'INSULATED', 'NO HEAT SIGNATURE'].map((t, i) => (
-          <g key={t} transform={`translate(${230 + i * 310} ${lerp(1150, 760 - (i === 1 ? 50 : 0), rise(i))}) rotate(${(i - 1) * 4})`} opacity={rise(i)}>
-            <rect x={-160} y={-70} width={320} height={140} rx={10} fill="#000" opacity={0.25} transform="translate(8 10)" />
-            <rect x={-160} y={-70} width={320} height={140} rx={10} fill={SCN.paper} stroke={SCN.ink} strokeWidth={7} />
-            <text x={0} y={i === 2 ? -6 : 12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={i === 2 ? 26 : 30} fill={SCN.ink}>{i === 2 ? 'NO HEAT' : t}</text>
-            {i === 2 && <text x={0} y={28} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={26} fill={SCN.ink}>SIGNATURE</text>}
+          <g key={t} transform={`translate(${270 + i * 270} ${lerp(1150, 800 - (i === 1 ? 50 : 0), rise(i))}) rotate(${(i - 1) * 4})`} opacity={rise(i)}>
+            <rect x={-125} y={-60} width={250} height={120} rx={10} fill="#000" opacity={0.25} transform="translate(8 10)" />
+            <rect x={-125} y={-60} width={250} height={120} rx={10} fill={SCN.paper} stroke={SCN.ink} strokeWidth={7} />
+            <text x={0} y={i === 2 ? -6 : 12} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={i === 2 ? 24 : 24} fill={SCN.ink}>{i === 2 ? 'NO HEAT' : t}</text>
+            {i === 2 && <text x={0} y={28} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={SCN.ink}>SIGNATURE</text>}
           </g>
         ))}
         {sw > 0 && (
@@ -715,7 +730,9 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <IllTag x={0} y={-80} />
           </g>
         )}
-        <Plate x={540} text="THE CAMOUFLAGE CASE · THE PAPER'S PITCH" y={640} size={28} p={ease(f, b(26) + 16)} tone="red" /> {/* plate-overlap-ok */}
+        <Plate x={540} text="THE CAMOUFLAGE CASE · THE PAPER'S PITCH" y={690} size={28} p={ease(f, b(26) + 16)} tone="red" /> {/* plate-overlap-ok */}
+        <g transform="translate(860 1560) rotate(10)"><rect x={-110} y={-50} width={220} height={100} rx={14} fill="#2E3436" stroke={SCN.ink} strokeWidth={6} /><rect x={-90} y={-32} width={180} height={64} rx={8} fill="#4E5A3A" /></g>
+        <g transform="translate(330 1640) rotate(-10)"><rect x={-180} y={-12} width={340} height={24} rx={4} fill="#E9C46A" stroke={SCN.ink} strokeWidth={5} /><path d="M 160 -12 L 200 0 L 160 12 Z" fill="#D9B48A" stroke={SCN.ink} strokeWidth={4} /></g>
         <Plate x={540} text="GENERIC CAMO SWATCH" y={1270} size={26} p={ease(f, b(39) + 16)} /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
@@ -850,7 +867,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
 const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const PIN = {x: 520, y: 1060};
-  const FOG = {x: 790, y: 950};
+  const FOG = {x: 700, y: 1000};
   const swing = easeIO(f, b(33), 22);
   const hit = f >= b(34);
   const hitK = hit ? Math.max(0, 1 - (f - b(34)) / 10) : 0;
@@ -876,25 +893,25 @@ const S16: React.FC<SceneProps> = ({p}) => {
         <HeldTravel f={f} x={160} y={570} w={760} h={820} mode="shadow" seed={16}>
           <SearchGrid f={f} x={540} y={980} w={760} h={820} stripes={1}
             pins={[{u: 0.22, v: 0.28, p: 1}, {u: 0.36, v: 0.74, p: 1}]}
-            fog={[{u: 0.6, v: 0.58, r: 0.28, p: 1}, {u: 0.8, v: 0.46, r: 0.15, p: 1}]} title="SEARCH GRID" />
+            fog={[{u: 0.6, v: 0.58, r: 0.28, p: 1}, {u: 0.8, v: 0.46, r: 0.15, p: 1}]} title="" />
         </HeldTravel>
         <PinFlag f={f} x={PIN.x} y={PIN.y} scale={0.75 * (hit ? 1 - 0.1 * hitK : 1)} spring={spr(f, b(34) - 6, 8)} wobble={1} seed={31} glow={hit ? 1 : 0} />
         {hit && hitK > 0 && Array.from({length: 8}, (_, i) => {
           const a = (i / 8) * Math.PI * 2;
-          return <path key={i} d={`M ${PIN.x + Math.cos(a) * 20} ${stampY + 40 + Math.sin(a) * 20} l ${Math.cos(a) * 50 * (1 - hitK)} ${Math.sin(a) * 50 * (1 - hitK)}`} stroke={SCN.redL} strokeWidth={6} strokeLinecap="round" opacity={hitK} />;
+          return <path key={i} d={`M ${PIN.x + Math.cos(a) * 24} ${stampY + 40 + Math.sin(a) * 24} l ${Math.cos(a) * 100 * (1 - hitK)} ${Math.sin(a) * 100 * (1 - hitK)}`} stroke={SCN.redL} strokeWidth={9} strokeLinecap="round" opacity={hitK} />;
         })}
-        <StampMark x={FOG.x} y={FOG.y + 30} text="NOT CLEARED" p={press} size={34} rot={-7} />
         <g transform={`translate(${sx} ${sy}) rotate(${hit ? -4 : lerp(28, -4, swing)}) scale(1 ${squash})`}>
           <ClearedStamp x={0} y={0} scale={0.85} flip={flip} f={f} />
         </g>
         {scanP > 0 && <Scanline f={f} x0={170} x1={910} y0={620} y1={1380} p={scanP} wake={0.15} face={false} thick={14} />}
         {scanP > 0 && scanP < 1 && [0, 1, 2].map((i) => <circle key={i} cx={260 + i * 260 + 20 * Math.sin(f / 4 + i)} cy={620 + 760 * scanP} r={8} fill={SCN.led} stroke={SCN.ink} strokeWidth={2} />)}
-        <ScanDrone f={f} x={200} y={560} scale={0.36} />
-        <path d="M 200 590 V 620" stroke={SCN.ink} strokeWidth={6} />
-        <Specs f={f} x={200} y={680} scale={0.45} emotion={relight > 0.5 ? 'resolved' : 'doubtful'} glow={0.15 + 0.85 * relight} look={0.8} cues={[b(33), b(34), b(35)]} />
-        <Plate x={540} text="CLEARED?" y={560} p={f >= b(33) + 4 && f < b(34) ? 1 : 0} /> {/* plate-overlap-ok */}
-        <Plate x={540} text="A FLAG MEANS GO LOOK" y={560} p={f >= b(34) && f < b(35) ? 1 : 0} tone="red" /> {/* plate-overlap-ok */}
-        <Plate x={540} text="NO FLAG · KEEP LOOKING" y={560} p={f >= b(35) + 4 ? 1 : 0} tone="dark" /> {/* plate-overlap-ok */}
+        <StampMark x={FOG.x} y={FOG.y + 30} text="NOT CLEARED" p={press} size={34} rot={-7} />
+        <ScanDrone f={f} x={200} y={640} scale={0.36} />
+        <path d="M 200 670 V 700" stroke={SCN.ink} strokeWidth={6} />
+        <Specs f={f} x={200} y={760} scale={0.45} emotion={relight > 0.5 ? 'resolved' : 'doubtful'} glow={0.15 + 0.85 * relight} look={0.8} cues={[b(33), b(34), b(35)]} />
+        <Plate x={540} text="CLEARED?" y={575} p={f >= b(33) + 4 && f < b(34) ? 1 : 0} /> {/* plate-overlap-ok */}
+        <Plate x={540} text="A FLAG MEANS GO LOOK" y={575} p={f >= b(34) && f < b(35) ? 1 : 0} tone="red" /> {/* plate-overlap-ok */}
+        <Plate x={540} text="SILENCE · KEEP LOOKING" size={28} y={575} p={f >= b(35) + 4 ? 1 : 0} tone="dark" /> {/* plate-overlap-ok */}
       </SVG>
     </Frame>
   );
