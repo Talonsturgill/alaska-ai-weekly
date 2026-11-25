@@ -1,0 +1,72 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 0,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.963,
+    "heard": "12 days before Alaska changes governors, all eyes are on a board room. The data center clock sits elsewhere. Governor-elect Jonathan Christopkins takes office December 7th. He asked idea, a public corporation of the state, to postpone action until then. The board met behind closed doors from 10 a.m. to 3. Took no action and resumes Friday. Since agenda lists the Arctic Refuge and Ampler, no data center item. Data center pieces moved earlier. Ideas Alaska Data Corp got a $20 million boardvert. The chief executive of plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation. On November 10th, the Department of Natural Resources approved giving idea about 6,800 acres near Houston, free. In July, ideas said the land could host logistics, manufacturing, and scalable data centers. Here's the clock that counts. Re-consideration requests are due November 30th, then the department has 30 days. Count the ties. 30 days runs past December 7th. The answer could land under the next governor. He said he'd support a data center moratorium until the state adopts rules. His team hasn't said whether he'd reverse this transfer. Ideas executive director, Randy Warrow, said they're not rapidly moving through projects without due diligence. The land was cut from nearly 20,000 acres, and reverts to the state if idea fails to develop it. Against that, more than 2,300 comments, mostly opposed, and a Matsubaro request to reconsider. In July, idea wrote it had no committed tenant, power source, cooling, or schedule. Here, rules first would stall no project idea has named. The board's clock says Friday. The lands says November 30th. What should Alaska lay down first, rules, or a tenant?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.075,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 7.63,
+        "voiced_frac": 0.56,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 129.16,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 129.16,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 2 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "gap_share": {
+    "min_gap_s": 0.35,
+    "gaps": 41,
+    "seconds": 26.45,
+    "runtime_s": 128.64,
+    "share": 0.2056,
+    "aim": 0.15,
+    "over_aim": true,
+    "longest_s": 1.0
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.963,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.963,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": false,
+      "score": 0.953,
+      "diagnosis": "WORDS: WER 0.095 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll. If the misses are directed names, run `python3 scripts/vo_soundcheck.py --suggest-heard` first, add its `heard` map to vo_direction.json and re-score the same takes with VO_REUSE_TAKES=1."
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

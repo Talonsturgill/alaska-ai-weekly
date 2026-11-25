@@ -1,0 +1,706 @@
+{
+ "run_date": "2026-11-25",
+ "fact_check_verdict": "PASS WITH CONDITIONS. Two adversarial validators read ADN (Samuels, Nov 19/20 and Nov 11/12), KTOO/Alaska Beacon (Brooks, Nov 23), Must Read Alaska (Nov 19), the AIDEA homepage recess notice, the Nov 24 continued agenda and board schedule, ADN/Mat-Su Sentinel (Bushatz, Nov 17), ADN/Alaska Beacon (Brooks, Nov 10/11) and AIDEA's July Houston op-ed. Conditions: (1) the $200M and $150M figures are the governor-elect's own statement and never 'already committed'; (2) the ANWR $175M is proposed; ADN-only figures carry PER ADN; (3) Alaska Data Corp formed in March, announced in November; (4) Ruaro rejected the idea AIDEA is rushing, never 'refused to pause'; (5) Dunleavy's 'do it right' line is from November 11th, before the pause request, never a rebuttal; (6) neither the governor-elect's statement nor the Nov 24 agenda mentions data centers, so data centers are context, never the target of the pause or a pending vote; (7) the borough letter is dated 'last week' (mid-November), never November 17th, and asks the state to reconsider; (8) more than 2,300 comments, mostly opposed; (9) 'scalable data centers' is AIDEA's July wording as reported by the Alaska Beacon, the op-ed says 'potentially, data centers'; op-ed lines are dated July; (10) 'near Houston' for the 6,800 acres; (11) lawsuit by an unnamed former state legislator, no legal theory; (12) the reassess quote is an earlier general statement, his team hasn't said whether he'd reverse the transfer; (13) a DNR answer after December 7th is our inference and is said as 'could'; (14) no source in this set says AI except the Plural CEO line in the InvestNorth launch release (the pitch, not a project); never say AIDEA's moves are AI projects; (15) no resident quotes exist, none invented.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-two-sources",
+   "spoken": "Alaska's next governor, Jonathan Kreiss-Tomkins, takes office December 7th.",
+   "on_screen": "TAKES OFFICE DECEMBER 7TH",
+   "source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+   "second_source": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+   "verbatim_source": "\"to halt decisions until after he takes office Dec. 7.",
+   "requires": [
+    "never 'noon'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-two-sources",
+   "spoken": "He asked AIDEA's board to postpone further action until his administration takes office.",
+   "on_screen": "\"POSTPONE FURTHER ACTION\"",
+   "source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+   "second_source": "https://mustreadalaska.com/governor-elect-asks-aidea-to-pause-decision-making/",
+   "verbatim_source": "\"postpone further action until after the new administration has taken office.\"",
+   "requires": [
+    "a written statement, a request, not an order"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-one-primary",
+   "spoken": "AIDEA is a public corporation of the State of Alaska, the state's investment bank.",
+   "on_screen": "AIDEA \u00b7 A PUBLIC CORPORATION OF THE STATE",
+   "source": "https://www.aidea.org/",
+   "second_source": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+   "verbatim_source": "\"public corporation of the State of Alaska, created in 1967 by the Alaska Legislature",
+   "requires": [
+    "never 'state-owned development corporation'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-one-outlet",
+   "spoken": "On ADN's list, a proposed hundred and seventy-five million for oil exploration in the Arctic refuge.",
+   "on_screen": "$175M \u00b7 ANWR OIL EXPLORATION \u00b7 PROPOSED \u00b7 PER ADN",
+   "source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+   "second_source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/111926/11.24.26%20AIDEA-Agenda%20Public%20Linked%20Agenda%2011192026.pdf",
+   "verbatim_source": "\"a $175 million expenditure on oil exploration in the Arctic National Wildlife Refuge\"",
+   "requires": [
+    "proposed",
+    "per ADN"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-two-sources",
+   "spoken": "And a company AIDEA owns outright, Alaska Data Corp, formed in March to bring data centers to Alaska.",
+   "on_screen": "ALASKA DATA CORP \u00b7 AIDEA-OWNED \u00b7 FORMED IN MARCH",
+   "source": "https://adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "second_source": "https://mustreadalaska.com/governor-elect-asks-aidea-to-pause-decision-making/",
+   "verbatim_source": "\"AIDEA is the sole owner of Alaska Data Corp. LLC, a corporation that formed in March.\"",
+   "requires": [
+    "formed in March, announced in November",
+    "ADN 11/19: a subsidiary to advance data centers in Alaska"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-one-outlet",
+   "spoken": "AIDEA's board voted earlier this year to send it twenty million dollars.",
+   "on_screen": "$20M \u00b7 BOARD VOTE \u00b7 PER ADN",
+   "source": "https://adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "second_source": null,
+   "verbatim_source": "\"AIDEA board members voted earlier this year to send $20 million to the newly formed Alaska Data Corp.\"",
+   "requires": [
+    "per ADN, first reported by the Anchorage Press"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-one-outlet",
+   "spoken": "Kreiss-Tomkins has said he'd support a moratorium on data center construction until the state adopts a regulatory package.",
+   "on_screen": "MORATORIUM UNTIL RULES \u00b7 PER ADN",
+   "source": "https://adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "second_source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+   "verbatim_source": "\"said he would support a moratorium on data center construction in Alaska\" \"until the state adopts a comprehensive regulatory package\"",
+   "requires": [
+    "would support, a position, not a policy in force",
+    "per ADN"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-two-sources",
+   "spoken": "The board went into a closed session at ten that morning and adjourned at three without taking action.",
+   "on_screen": "NOVEMBER 19TH \u00b7 CLOSED SESSION \u00b7 10 A.M. TO 3 P.M. \u00b7 NO ACTION",
+   "source": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+   "second_source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+   "verbatim_source": "\"At 3 p.m., the board adjourned for the day without taking action.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-one-primary",
+   "spoken": "The continued meeting is now in recess, and resumes at ten a.m. on Friday, November 27th, the day after Thanksgiving.",
+   "on_screen": "SET TO RESUME FRIDAY \u00b7 NOVEMBER 27TH \u00b7 10 A.M.",
+   "source": "https://www.aidea.org/",
+   "second_source": "https://www.aidea.org/About/Board-Members/Board-Meeting-Schedule",
+   "verbatim_source": "\"The November 24, 2026 AIDEA Board Meeting is now in recess and will resume at 10:00 AM on Friday, November 27, 2026.\"",
+   "requires": [
+    "schedule subject to change"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-one-primary",
+   "spoken": "The next regular meeting is December 4th, three days before the handoff.",
+   "on_screen": "NEXT MEETING \u00b7 DECEMBER 4TH",
+   "source": "https://www.aidea.org/About/Board-Members/Board-Meeting-Schedule",
+   "second_source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/111926/11.24.26%20AIDEA-Agenda%20Public%20Linked%20Agenda%2011192026.pdf",
+   "verbatim_source": "\"Next regularly scheduled AIDEA Board Meeting: Friday, December 4, 2026.\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-two-sources",
+   "spoken": "Executive director Randy Ruaro rejected the idea that AIDEA is rushing. \"We're not rapidly moving through projects without due diligence.\"",
+   "on_screen": "\"NOT RAPIDLY MOVING THROUGH PROJECTS WITHOUT DUE DILIGENCE\" \u00b7 RANDY RUARO",
+   "source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+   "second_source": "https://mustreadalaska.com/governor-elect-asks-aidea-to-pause-decision-making/",
+   "verbatim_source": "\"We're not rapidly moving through projects without due diligence, and we're seeing the results of years of work\"",
+   "requires": [
+    "never 'refused to pause'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-two-sources",
+   "spoken": "On November 10th the Department of Natural Resources approved giving AIDEA about sixty-eight hundred acres near Houston, at no cost.",
+   "on_screen": "6,800 ACRES \u00b7 NEAR HOUSTON \u00b7 NO COST \u00b7 DNR, NOVEMBER 10TH",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "second_source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "verbatim_source": "\"reduce the conveyance acreage from 19,500 to approximately 6,800 acres\"",
+   "requires": [
+    "near Houston, never a direction or mileage"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-two-sources",
+   "spoken": "The July plan was nearly twenty thousand acres.",
+   "on_screen": "JULY PLAN \u00b7 NEARLY 20,000 ACRES",
+   "source": "https://www.aidea.org/Portals/0/AIDEA%20Houston%20Op-Ed%20by%20AIDEA.pdf",
+   "second_source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "verbatim_source": "\"The Department of Natural Resources' preliminary decision concerning approximately 19,950 acres north of Houston has prompted understandable questions.\"",
+   "requires": [
+    "nearly 20,000"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-one-outlet",
+   "spoken": "In July AIDEA said the land could host a logistics hub, advanced manufacturing and scalable data centers.",
+   "on_screen": "LOGISTICS \u00b7 MANUFACTURING \u00b7 \"SCALABLE DATA CENTERS\" \u00b7 AIDEA, JULY \u00b7 PER ALASKA BEACON",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "second_source": "https://www.aidea.org/Portals/0/AIDEA%20Houston%20Op-Ed%20by%20AIDEA.pdf",
+   "verbatim_source": "the land could be used for a logistics hub, advanced manufacturing and \"scalable data centers,\"",
+   "requires": [
+    "AIDEA's July wording as reported by the Alaska Beacon",
+    "could, possibilities"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-one-primary",
+   "spoken": "In July AIDEA wrote there's no committed data center tenant, no site plan, no power source, no cooling system, no water supply plan and no construction schedule.",
+   "on_screen": "NO TENANT \u00b7 NO POWER SOURCE \u00b7 NO COOLING \u00b7 NO SCHEDULE \u00b7 AIDEA, JULY",
+   "source": "https://www.aidea.org/Portals/0/AIDEA%20Houston%20Op-Ed%20by%20AIDEA.pdf",
+   "second_source": null,
+   "verbatim_source": "\"There is no committed data-center tenant, industrial developer, site plan, power source, cooling system, water-supply plan or construction schedule.\"",
+   "requires": [
+    "dated July, before the decision"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-one-outlet",
+   "spoken": "In November, AIDEA's spokesperson said it still hasn't identified a project for the land.",
+   "on_screen": "\"HAS NOT IDENTIFIED A SPECIFIC PROJECT\" \u00b7 AIDEA SPOKESPERSON, NOVEMBER \u00b7 PER ALASKA BEACON",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "second_source": null,
+   "verbatim_source": "\"As stated previously, AIDEA has not identified a specific project or projects for this land,\"",
+   "requires": [
+    "spokesperson Andrew Jensen, per the Alaska Beacon"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-one-outlet",
+   "spoken": "The decision carries a reversion clause. The land returns to the state if AIDEA fails to develop it.",
+   "on_screen": "REVERSION CLAUSE \u00b7 BACK TO THE STATE IF NOT DEVELOPED",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "second_source": null,
+   "verbatim_source": "\"The department will also include a reversion clause that returns the land to the state if AIDEA fails to develop it.\"",
+   "requires": [
+    "no deadline stated, never 'by' a date"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-one-outlet",
+   "spoken": "It also protects salmon streams and keeps public access to roads and trails.",
+   "on_screen": "SALMON STREAMS PROTECTED \u00b7 TRAILS STAY OPEN",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "second_source": null,
+   "verbatim_source": "\"require the protection of salmon streams and mandate public access to roads and trails in the area\"",
+   "requires": [],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c28",
+   "status": "verified-two-sources",
+   "spoken": "DNR received more than twenty-three hundred public comments, mostly opposed.",
+   "on_screen": "2,300+ COMMENTS \u00b7 MOSTLY OPPOSED",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "second_source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "verbatim_source": "\"The Department of Natural Resources received more than 2,300 public comments on the transfer, mostly in opposition.\"",
+   "requires": [
+    "mostly, never all"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c29",
+   "status": "verified-one-outlet",
+   "spoken": "The Mat-Su Borough Assembly voted unanimously in September to oppose it.",
+   "on_screen": "MAT-SU ASSEMBLY \u00b7 UNANIMOUS \u00b7 SEPTEMBER",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "second_source": null,
+   "verbatim_source": "\"the project that was unanimously approved in September\" (Sentinel: the Assembly resolution opposing the project)",
+   "requires": [
+    "per the Mat-Su Sentinel"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c30",
+   "status": "verified-one-outlet",
+   "spoken": "Last week the borough asked the state to reconsider, and pointed to Point MacKenzie and parts of West Susitna instead.",
+   "on_screen": "MAT-SU BOROUGH \u00b7 REQUEST TO RECONSIDER",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "second_source": null,
+   "verbatim_source": "\"The Borough believes that Point Mackenzie and portions of West Susitna offer more appropriate locations for these uses.\"",
+   "requires": [
+    "last week / mid-November, never November 17th",
+    "reconsider"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c32",
+   "status": "verified-two-sources",
+   "spoken": "Requests to reconsider are due November 30th, and DNR then has thirty days to answer.",
+   "on_screen": "RECONSIDERATION DUE NOVEMBER 30TH \u00b7 DNR HAS 30 DAYS",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "second_source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "verbatim_source": "\"can request reconsideration by Nov. 30. DNR has 30 days to address those requests.\"",
+   "requires": [
+    "an answer after December 7th is our inference, said as 'could'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c33",
+   "status": "verified-two-sources",
+   "spoken": "A former state legislator has also sued to block the transfer. The case is pending.",
+   "on_screen": "LAWSUIT PENDING",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "second_source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "verbatim_source": "\"That suit is still pending.\"",
+   "requires": [
+    "plaintiff unnamed, no legal theory"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c34",
+   "status": "verified-one-outlet",
+   "spoken": "Kreiss-Tomkins has said he'd completely reassess everything AIDEA is looking at. His team hasn't said whether he'd reverse this transfer.",
+   "on_screen": "REVERSE THE TRANSFER? HIS TEAM HASN'T SAID",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "second_source": null,
+   "verbatim_source": "\"Kreiss-Tomkins previously said he would 'completely reassess everything that AIDEA is looking at.'\"",
+   "requires": [
+    "an earlier general statement, never a pledge on Houston",
+    "his team hasn't said whether he'd reverse it"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c36",
+   "status": "verified-one-primary",
+   "spoken": "The agenda for the recessed meeting lists the Arctic refuge, Ambler and Port MacKenzie. It lists no data center item.",
+   "on_screen": "ANWR \u00b7 AMBLER \u00b7 PORT MACKENZIE",
+   "source": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/111926/11.24.26%20AIDEA-Agenda%20Public%20Linked%20Agenda%2011192026.pdf",
+   "second_source": null,
+   "verbatim_source": "Labelled non-quotation, agenda contents: executive session on ANWR, Ambler, Real Estate, AIDEA Owned Assets, West Susitna and AIDEA Finances; Resolution G26-05 Section 1002 Area Development Budget; Amended Second Resolution G26-07 Port Mackenzie Infrastructure and Real Estate; Amended Resolution G26-01; no data center or Alaska Data Corp item.",
+   "requires": [
+    "the November 24th continued agenda"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c37",
+   "status": "verified-primary",
+   "spoken": "When the state launched a platform to finance Alaska Data Corp's projects, its partner's chief executive called the infrastructure behind AI one of the largest capital needs in a generation.",
+   "on_screen": "\"ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION\" \u00b7 PLURAL CEO, ON AI",
+   "source": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "second_source": null,
+   "verbatim_source": "\"The infrastructure behind AI is one of the largest capital needs in a generation.\" (Adam Silver, Plural, PR Newswire, November 9th)",
+   "requires": [
+    "the pitch, not a project",
+    "never say AIDEA's moves are AI projects"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c35",
+   "status": "verified-one-outlet",
+   "spoken": "DNR says its decision covers the transfer itself, not how the land is ultimately used.",
+   "on_screen": "THE TRANSFER \u00b7 NOT THE USE \u00b7 PER DNR",
+   "source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "second_source": null,
+   "verbatim_source": "DNR says its decision \"applies only to the transfer itself, not how the land will ultimately be used.\"",
+   "requires": [
+    "per the Mat-Su Sentinel"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-one-outlet",
+   "spoken": "On November 19th AIDEA's board held a meeting.",
+   "on_screen": "NOVEMBER 19TH",
+   "source": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+   "second_source": null,
+   "verbatim_source": "\"One hour before a scheduled board meeting of the Alaska Industrial Development and Export Authority on Thursday,\" (KTOO, Thursday November 19th; ADN dated the request November 19th)",
+   "requires": [
+    "per the Alaska Beacon"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "cut": [
+  {
+   "id": "x1",
+   "why": "resident quotes: none exist in the sources"
+  },
+  {
+   "id": "x2",
+   "why": "Ruaro 'refused to pause': not in any source"
+  },
+  {
+   "id": "x3",
+   "why": "borough letter dated November 17th: wrong, that is the article date"
+  },
+  {
+   "id": "x4",
+   "why": "governor-elect statement mentions data centers: it doesn't (MRA)"
+  },
+  {
+   "id": "x5",
+   "why": "Waymo DOT permit: covered 11-11"
+  }
+ ],
+ "reserve": [
+  {
+   "id": "r1",
+   "text": "AIDEA's dividend to the state last year was about $15.5 million (ADN)",
+   "why": "peripheral"
+  },
+  {
+   "id": "r2",
+   "text": "Brandon Brefczynski, AIDEA deputy director, listed as president of Alaska Data Corp (ADN)",
+   "why": "peripheral named person"
+  },
+  {
+   "id": "r3",
+   "text": "AIDEA op-ed: These are not blank spaces on a map (trails, RS 2477, mushing, wetlands)",
+   "why": "blank-fields motif used 10-29, 10-31"
+  },
+  {
+   "id": "c5",
+   "text": "His statement cites more than two hundred million dollars in spending, with authority for a hundred and fifty million more.",
+   "why": "the governor-elect's dollar framing, cut for length and its framing conflict",
+   "record": {
+    "id": "c5",
+    "status": "verified-one-outlet",
+    "spoken": "His statement cites more than two hundred million dollars in spending, with authority for a hundred and fifty million more.",
+    "on_screen": "$200M+ \u00b7 $150M MORE \u00b7 PER HIS STATEMENT",
+    "source": "https://mustreadalaska.com/governor-elect-asks-aidea-to-pause-decision-making/",
+    "second_source": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+    "verbatim_source": "\"to consider unspecified changes to a proposed expenditure of more than $200,000,000 in public funds\"",
+    "requires": [
+     "attributed to his statement",
+     "never 'already committed'"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c7",
+   "text": "Twenty-five million in a nuclear energy startup.",
+   "why": "peripheral AIDEA move",
+   "record": {
+    "id": "c7",
+    "status": "verified-one-outlet",
+    "spoken": "Twenty-five million in a nuclear energy startup.",
+    "on_screen": "$25M \u00b7 NUCLEAR STARTUP \u00b7 PER ADN",
+    "source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+    "second_source": null,
+    "verbatim_source": "ADN text: \"a $25 million investment in a nuclear energy startup\"",
+    "requires": [
+     "per ADN"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c8",
+   "text": "Up to seventy-five million for a broadband subsidiary.",
+   "why": "peripheral AIDEA move",
+   "record": {
+    "id": "c8",
+    "status": "verified-one-outlet",
+    "spoken": "Up to seventy-five million for a broadband subsidiary.",
+    "on_screen": "UP TO $75M \u00b7 BROADBAND \u00b7 PER ADN",
+    "source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+    "second_source": null,
+    "verbatim_source": "ADN text: \"up to $75 million for a new broadband subsidiary\"",
+    "requires": [
+     "up to",
+     "per ADN"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c16",
+   "text": "\"We've accomplished record revenue three years in a row.\"",
+   "why": "second Ruaro quote, cut for length",
+   "record": {
+    "id": "c16",
+    "status": "verified-two-sources",
+    "spoken": "\"We've accomplished record revenue three years in a row.\"",
+    "on_screen": "\"RECORD REVENUE THREE YEARS IN A ROW\" \u00b7 RUARO",
+    "source": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+    "second_source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+    "verbatim_source": "\"We've accomplished record revenue three years in a row.\"",
+    "requires": [],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c17",
+   "text": "Governor Dunleavy's answer, per ADN, is that Alaskans elected him for a full term.",
+   "why": "Dunleavy full-term line, cut for length",
+   "record": {
+    "id": "c17",
+    "status": "verified-one-outlet",
+    "spoken": "Governor Dunleavy's answer, per ADN, is that Alaskans elected him for a full term.",
+    "on_screen": "\"ELECTED ME FOR A FULL TERM\" \u00b7 DUNLEAVY \u00b7 PER ADN",
+    "source": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+    "second_source": null,
+    "verbatim_source": "\"the people of Alaska elected me for a full term and expect their governor to keep working on behalf of the people\"",
+    "requires": [
+     "per ADN"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c18",
+   "text": "The incoming team's AIDEA specialist, Becky Windt Pearson, told the Alaska Beacon it's an extraordinary amount of activity, scheduled in a rushed manner.",
+   "why": "Windt Pearson quote, cut for length",
+   "record": {
+    "id": "c18",
+    "status": "verified-one-outlet",
+    "spoken": "The incoming team's AIDEA specialist, Becky Windt Pearson, told the Alaska Beacon it's an extraordinary amount of activity, scheduled in a rushed manner.",
+    "on_screen": "\"AN EXTRAORDINARY AMOUNT OF ACTIVITY\" \u00b7 WINDT PEARSON \u00b7 PER ALASKA BEACON",
+    "source": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+    "second_source": null,
+    "verbatim_source": "\"It's just an extraordinary amount of activity that appears to be being scheduled in a rushed manner.\"",
+    "requires": [
+     "AIDEA specialist on the incoming team, per the Alaska Beacon",
+     "her words say 'appears to be'"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c19",
+   "text": "Dunleavy, on November 11th, on data centers. If there's an opportunity here, let's do it right.",
+   "why": "Dunleavy Nov 11 line, cut for length",
+   "record": {
+    "id": "c19",
+    "status": "verified-one-outlet",
+    "spoken": "Dunleavy, on November 11th, on data centers. If there's an opportunity here, let's do it right.",
+    "on_screen": "\"LET'S DO IT RIGHT\" \u00b7 DUNLEAVY \u00b7 NOVEMBER 11TH",
+    "source": "https://adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+    "second_source": null,
+    "verbatim_source": "\"If there is an opportunity for data centers here in Alaska, let's do it right.\"",
+    "requires": [
+     "dated November 11th, before the pause request, never a rebuttal"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c23",
+   "text": "Its own op-ed calls them possibilities, not commitments.",
+   "why": "op-ed framing duplicated by c22/c24",
+   "record": {
+    "id": "c23",
+    "status": "verified-one-primary",
+    "spoken": "Its own op-ed calls them possibilities, not commitments.",
+    "on_screen": "\"POSSIBILITIES, NOT COMMITMENTS\" \u00b7 AIDEA OP-ED, JULY",
+    "source": "https://www.aidea.org/Portals/0/AIDEA%20Houston%20Op-Ed%20by%20AIDEA.pdf",
+    "second_source": null,
+    "verbatim_source": "\"AIDEA's development plan identifies possibilities, not commitments: rail-served logistics, shared utility corridors, advanced manufacturing, local material production, energy infrastructure, workforce housing and, potentially, data centers.\"",
+    "requires": [
+     "dated July"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c31",
+   "text": "The borough points to a hundred and eighty million dollars already spent on a rail bed there.",
+   "why": "borough $180M figure, cut after 0F attribution finding",
+   "record": {
+    "id": "c31",
+    "status": "verified-one-outlet",
+    "spoken": "The borough points to a hundred and eighty million dollars already spent on a rail bed there.",
+    "on_screen": "$180M RAIL BED \u00b7 PER THE BOROUGH",
+    "source": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+    "second_source": null,
+    "verbatim_source": "\"$180 million spent on a rail bed that is slated to receive about $249 million in new federal funding for completion.\"",
+    "requires": [
+     "attributed to the borough"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  },
+  {
+   "id": "c38",
+   "text": "In October, Alaska Public Media reported AIDEA's director called a data center on the Houston site implausible.",
+   "why": "implausible quote, cut for length",
+   "record": {
+    "id": "c38",
+    "status": "verified_with_hedge",
+    "spoken": "In October, Alaska Public Media reported AIDEA's director called a data center on the Houston site implausible.",
+    "on_screen": "\"IMPLAUSIBLE\" \u00b7 AIDEA DIRECTOR \u00b7 PER ALASKA PUBLIC MEDIA, OCTOBER",
+    "source": "https://alaskapublic.org/news/politics/alaska-legislature/2026-10-15/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena",
+    "second_source": "https://www.ktoo.org/2026/10/16/dnr-commissioner-will-appear-at-hearing-on-land-transfer-after-state-senate-subpoena/",
+    "verbatim_source": "\"AIDEA's executive director later called hosting a data center on the site 'implausible' at a hearing earlier this month.\"",
+    "requires": [
+     "only the single word implausible is quoted",
+     "re-verified from the 2026-10-20 run's fact check"
+    ],
+    "contract": {
+     "must_ship": false,
+     "on_screen_verbatim": false
+    }
+   }
+  }
+ ]
+}

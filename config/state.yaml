@@ -4054,3 +4054,51 @@ dispatch_history:
     metaphor: red pins that a searcher can trust on a clipboard grid, fog over the
       ground they never flagged, and a CLEARED stamp that a pin stops mid-air and
       flips to NOT CLEARED
+- date: '2026-11-25'
+  topic: 'AIDEA handoff: board takes no action as DNR Houston land reconsideration
+    window could run past December 7th'
+  slug: the-other-track
+  key_entities:
+  - AIDEA
+  - Kreiss-Tomkins
+  - DNR
+  - Houston
+  - Mat-Su Borough
+  - Alaska Data Corp
+  archetype: explainer
+  palette: bleached linen, snowfield, rail rust, signal amber
+  voice: Sulafat
+  stance: curious
+  angle: Friday's AIDEA meeting isn't where Alaska's data center question gets decided.
+    Nothing data center is on the board's agenda, the live data center clock is DNR's
+    Houston reconsideration window that opens November 30th and could close after
+    the handoff, and the version of this that helps Alaska win is rules before tenants.
+  hero: SwitchStand
+  cast:
+  - SwitchStand
+  - RailLine
+  - TrackFork
+  - Boxcar
+  - Diesel
+  - FreightScale
+  - MailSack
+  - BufferStop
+  - SusitnaBG
+  - Suit
+  composition:
+    pov: low-angle-heroic
+    motion_vector: radial-emanate
+    hero_treatment: structure-as-subject
+    layout: centered-hero-lowerthird
+    register: naturalistic-scene
+    palette: 'bleached-linen haze #D9D6C8 over sun-washed cream #EFE8D6, a crusted
+      snowfield #F3F1EA with oatmeal snow shade #CFC6B4, long honey-lit snow with
+      lake-blue cast shadows #9FB6CC, birch bark #F2EFE6, spruce black-teal #1E2B24,
+      rail rust #8A4B2E over creosote ties #5B4636, a cast-iron #3B3F44 switch with
+      a linen disc, railway lamp amber #F2A93B for the land''s dates, a grey-brown
+      walnut boardroom #4A4740 and #C9B48A'
+    camera_strategy: low-wide-rise
+    light_story: bright-hard-low-noon-sun
+    metaphor: a faceless switch stand at a fork where the short closed branch is the
+      board's calendar and the long open branch is the land's clock, ties counted
+      as days, and a lever caught mid-throw between rules and a tenant

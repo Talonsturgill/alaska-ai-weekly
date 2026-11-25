@@ -1,0 +1,26 @@
+{
+ "locked_story": {
+  "headline": "Twelve days before the handoff: Governor-elect Kreiss-Tomkins asks AIDEA to pause until he takes office December 7th, AIDEA's director signals no pause and the recessed board meeting resumes November 27th, while the state's data center push (the AIDEA-owned Alaska Data Corp and the 6,800-acre Houston parcel AIDEA lists for possible scalable data centers) runs into a Mat-Su Borough reconsideration request due November 30th whose 30-day DNR answer would land under the new governor",
+  "found_at_rung": "follow_up",
+  "note": "Four researchers called it a slow week. No in-window Alaska story had ML as its subject and was not already covered or in the archive (USGS tephra ML is in dispatch_history; Waymo Fairbanks covered 11-11). Follow-up rung: a genuinely new development (the pause request, AIDEA's answer, DNR's November 10th final decision cut to about 6,800 acres, the borough's November 17th reversal request) on covered subjects (10-20 Houston preliminary decision, 36 days ago; 11-13 Alaska Data Corp tokenization; 10-26 candidates on data centers). dedupe.py flagged token overlaps (kreiss/tomkins with 10-26; aidea/december with 10-31). Judged distinct subject: the transition's control of the state data center push, not any one AIDEA deal. Thesis must not repeat the blank-fields angle of 10-29, 10-31 and 10-20."
+ },
+ "rungs": [
+  {"rung": "in_window_sweep", "attempted": true, "candidates_found": 16, "note": "4 researchers (science/agencies, energy/policy, fisheries/health/rural, defense/wildcard), 78 of 80 WebSearch calls used, about 150 uncapped WebFetches. All four called it a slow week."},
+  {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 0, "note": "Covered inside round one: ADN, Alaska Beacon, Alaska Public, KTOO, KDLL, News-Miner, KTUU, KYUK, KNOM, KUCB, Arctic Today, Must Read Alaska indexes read."},
+  {"rung": "follow_up", "attempted": true, "candidates_found": 2, "note": "AIDEA pause request plus Houston reconsideration; Waymo DOT permit (rejected, 11-11 inside 30 days)."}
+ ],
+ "candidates": [
+  {"headline": "Kreiss-Tomkins asks AIDEA to pause; Alaska Data Corp; Houston land reconsideration", "verdict": "LOCKED", "why": "live, deadlines this week, data center push is the AI link, even-handed sources on both sides"},
+  {"headline": "Mat-Su asks DNR to reverse 6,800-acre Houston transfer", "verdict": "MERGED into locked story"},
+  {"headline": "Waymo DOT permit Fairbanks airport road $4,811", "verdict": "REJECTED", "why": "Waymo Fairbanks shipped 11-11, inside 30 days"},
+  {"headline": "Alaska RHTP Year 2 $272.65M award", "verdict": "REJECTED", "why": "November release never mentions AI; AI imaging grantee unnamed"},
+  {"headline": "USGS ML tephra sourcing Gulf of Alaska", "verdict": "REJECTED", "why": "already in dispatch_history"},
+  {"headline": "USCGC Storis drone tests Bering Sea", "verdict": "REJECTED", "why": "autonomy only, no AI, 9 flight hours"},
+  {"headline": "npj Natural Hazards 239 landslides InSAR", "verdict": "REJECTED", "why": "no ML, hand-drawn outlines"},
+  {"headline": "CIGLR Bering Strait sea ice forecast with Indigenous knowledge", "verdict": "REJECTED", "why": "physics model, no AI"},
+  {"headline": "UAF avalanche road model", "verdict": "REJECTED", "why": "not AI, single outlet"},
+  {"headline": "NSF I-Corps explainable AI bathymetry UAF $50k", "verdict": "REJECTED", "why": "August award, customer-discovery grant"},
+  {"headline": "CRREL permafrost tunnel drone mapping", "verdict": "REJECTED", "why": "no AI"},
+  {"headline": "Alaska LNG right-of-way rush and Enstar gas swap", "verdict": "REJECTED as lead", "why": "no AI link"}
+ ]
+}

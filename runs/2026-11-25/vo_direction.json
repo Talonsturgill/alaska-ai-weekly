@@ -1,0 +1,200 @@
+{
+ "narrator": "Nora, a documentary narrator with a bright, forward-leaning storyteller's energy: warm, quick, quietly witty",
+ "notes": "Style: curious, constructive, even-handed civic storytelling with forward momentum and a little dry wit (the agenda with no data center item, 'Count the ties'); never a scold, never a booster. Plural's capital pitch, Ruaro's due diligence line and the 2,300 comments each get a fair, unslanted voice; the film ends on a genuine question of order. Pace: the required runtime-naming paragraph, verbatim (about one hundred and fifteen seconds). The length estimator predicts 127.6 s at a neutral read against a 112 to 130 s band, so the bright documentary persona is used (per DISPATCH_STANDARD 2026-11-21 and 2026-11-23 it landed near target where the public-radio host ran long) and the Style line asks for short routine pauses, about a quarter second, with the only real rests at 'Count the ties.' (line 10) and before the closing question (line 17). Energy contrast: no two adjacent lines share a level. Pronunciation is data: AIDEA, Kreiss-Tomkins, Ruaro and Mat-Su respellings live in the pronunciations map, not in the transcript, because VO_DIRECTION.md says the reconciler reverts a respelled transcript line and the soundcheck and captions need the locked words.",
+ "style_prompt": "Style: warm, natural and conversational, a storyteller walking a friend through which clock really counts. Curious and constructive, even-handed, a little wry; never a scold and never a booster. Open bright and leaning in, then let 'elsewhere' land with a knowing half-smile. Give 'No data center item.' a light, dry throwaway. Let 'twenty million dollar' and 'free' land plainly, as facts, not accusations. Give the Plural chief executive's 'one of the largest capital needs in a generation' a fair, interested voice; the pitch is real. 'Here's the clock that counts.' leans forward. 'Count the ties.' is the turn of the piece: a beat, then say it with a quiet spark of discovery, and let 'under the next governor' settle. Say Randy Ruaro's line evenly and fairly. Let 'mostly opposed' land with weight but no edge. 'Here, rules first would stall no project AIDEA has named.' is bright and constructive, leaning on 'no'. Close warm and direct: Friday, then November 30th, a real beat, then ask the last question as a genuine question, open, curious, landing on 'a tenant'. Keep real momentum: commas and line ends carry straight on, every routine pause is short, about a fifth of a second, sentences flow straight into each other like a quick story told to a friend, and nothing lingers except the two marked rests.\nPace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one hundred and ten seconds, and the read must fill it, so let every sentence land and take an easy breath at each period, a natural beat rather than a long pause. Save real rests for the marked short pauses. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.",
+ "pronunciations": {
+  "AIDEA": "eye-DEE-uh",
+  "Kreiss-Tomkins": "KRICE TOMkins",
+  "Ruaro": "roo-AR-oh",
+  "Mat-Su": "mat-SOO"
+ },
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Twelve days before Alaska changes governors, all eyes are on a boardroom. The data center clock sits elsewhere.",
+   "intent": "hook",
+   "emphasis": "elsewhere",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Bright, forward opener that sets up the film's misdirection; 'elsewhere' gets the knowing lift, and the period does the work so no tag opens the read."
+  },
+  {
+   "idx": 1,
+   "text": "Governor-elect Jonathan Kreiss-Tomkins takes office December 7th.",
+   "intent": "setup",
+   "emphasis": "December",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Drop to even context; the handoff date is the anchor the reveal in line 10 counts against."
+  },
+  {
+   "idx": 2,
+   "text": "He asked AIDEA, a public corporation of the state, to postpone action until then.",
+   "intent": "setup",
+   "emphasis": "postpone",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "A step up in momentum; a request, not an order, said plainly with weight on 'postpone'."
+  },
+  {
+   "idx": 3,
+   "text": "The board met behind closed doors from ten a.m. to three, took no action, and resumes Friday.",
+   "intent": "stat",
+   "emphasis": "no action",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Matter-of-fact reporting, no intrigue in the voice; 'no action' lands so the next line's wry beat has room."
+  },
+  {
+   "idx": 4,
+   "text": "Its agenda lists the Arctic refuge and Ambler. [wry] No data center item.",
+   "intent": "wry",
+   "emphasis": "No",
+   "energy": 3,
+   "tags": [
+    "[wry]"
+   ],
+   "pause_before": false,
+   "why": "The first half-smile; vetted [wry] sits mid-line after a period so the absence reads as a dry observation, not a gotcha."
+  },
+  {
+   "idx": 5,
+   "text": "Data center pieces moved earlier. AIDEA's Alaska Data Corp got a twenty million dollar board vote.",
+   "intent": "stat",
+   "emphasis": "twenty million",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Lift into the where-it-actually-moved thread; the figure lands clean, as fact."
+  },
+  {
+   "idx": 6,
+   "text": "The chief executive of Plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation.",
+   "intent": "setup",
+   "emphasis": "generation",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Fair, interested voice for the opportunity case; the pitch is real and the read honors it without hype."
+  },
+  {
+   "idx": 7,
+   "text": "On November 10th, the Department of Natural Resources approved giving AIDEA about sixty-eight hundred acres near Houston, free.",
+   "intent": "stat",
+   "emphasis": "free",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Let 'sixty-eight hundred acres' register, then 'free' land plainly with a small lift, never an accusation."
+  },
+  {
+   "idx": 8,
+   "text": "In July, AIDEA said the land could host logistics, manufacturing and scalable data centers.",
+   "intent": "setup",
+   "emphasis": "scalable",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Settle back to even; the list moves quickly and 'scalable data centers' carries the light weight."
+  },
+  {
+   "idx": 9,
+   "text": "Here's the clock that counts. Reconsideration requests are due November 30th, then the department has thirty days.",
+   "intent": "stakes",
+   "emphasis": "counts",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "Lean forward into the real clock; dates said deliberately, building toward the reveal without spending it."
+  },
+  {
+   "idx": 10,
+   "text": "Count the ties. [short pause] Thirty days runs past December 7th. The answer could land under the next governor.",
+   "intent": "reveal",
+   "emphasis": "past",
+   "energy": 5,
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": true,
+   "why": "The turn of the piece and the energy peak; one of the two reserved rests, a spark of discovery on 'past', then 'next governor' settles."
+  },
+  {
+   "idx": 11,
+   "text": "He's said he'd support a data center moratorium until the state adopts rules. His team hasn't said whether he'd reverse this transfer.",
+   "intent": "stakes",
+   "emphasis": "hasn't",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Drop well below the peak; careful, attributed, with honest weight on what is not known."
+  },
+  {
+   "idx": 12,
+   "text": "AIDEA's executive director, Randy Ruaro, said they're not rapidly moving through projects without due diligence.",
+   "intent": "setup",
+   "emphasis": "diligence",
+   "energy": 3,
+   "tags": [],
+   "pause_before": false,
+   "why": "AIDEA's case in a fair, even voice; no skepticism layered onto the quote."
+  },
+  {
+   "idx": 13,
+   "text": "The land was cut from nearly twenty thousand acres, and reverts to the state if AIDEA fails to develop it.",
+   "intent": "stat",
+   "emphasis": "reverts",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Measured and plain; the safeguards stated as facts in AIDEA's favor."
+  },
+  {
+   "idx": 14,
+   "text": "Against that, more than twenty-three hundred comments, mostly opposed, and a Mat-Su Borough request to reconsider.",
+   "intent": "stat",
+   "emphasis": "twenty-three hundred",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "The community's side gets its own lift; the number lands with weight, 'mostly opposed' firm but without edge."
+  },
+  {
+   "idx": 15,
+   "text": "In July, AIDEA wrote it had no committed tenant, power source, cooling or schedule.",
+   "intent": "reveal",
+   "emphasis": "no",
+   "energy": 2,
+   "tags": [],
+   "pause_before": false,
+   "why": "Quiet and even; AIDEA's own list read plainly so it sets up the constructive button."
+  },
+  {
+   "idx": 16,
+   "text": "Here, rules first would stall no project AIDEA has named.",
+   "intent": "stakes",
+   "emphasis": "no",
+   "energy": 4,
+   "tags": [],
+   "pause_before": false,
+   "why": "Bright and constructive, the enthusiast's point grafted as the payoff; rules first loses nothing that exists."
+  },
+  {
+   "idx": 17,
+   "text": "The board's clock says Friday. The land's says November 30th. [short pause] What should Alaska lay down first, rules or a tenant?",
+   "intent": "button",
+   "emphasis": "first",
+   "energy": 3,
+   "tags": [
+    "[short pause]"
+   ],
+   "pause_before": false,
+   "why": "Warm and direct; the two clocks side by side, the second reserved rest, then a genuine, open question, never rhetorical."
+  }
+ ],
+ "assembled_prompt": "Read ONLY the transcript below aloud as speech. The lines above \"Transcript:\" are direction; never speak them.\n# AUDIO PROFILE: Nora, a documentary narrator with a bright, forward-leaning storyteller's energy: warm, quick, quietly witty. Neutral American accent, natural, not announcer-y.\n### DIRECTOR'S NOTES\nStyle: warm, natural and conversational, a storyteller walking a friend through which clock really counts. Curious and constructive, even-handed, a little wry; never a scold and never a booster. Open bright and leaning in, then let 'elsewhere' land with a knowing half-smile. Give 'No data center item.' a light, dry throwaway. Let 'twenty million dollar' and 'free' land plainly, as facts, not accusations. Give the Plural chief executive's 'one of the largest capital needs in a generation' a fair, interested voice; the pitch is real. 'Here's the clock that counts.' leans forward. 'Count the ties.' is the turn of the piece: a beat, then say it with a quiet spark of discovery, and let 'under the next governor' settle. Say Randy Ruaro's line evenly and fairly. Let 'mostly opposed' land with weight but no edge. 'Here, rules first would stall no project AIDEA has named.' is bright and constructive, leaning on 'no'. Close warm and direct: Friday, then November 30th, a real beat, then ask the last question as a genuine question, open, curious, landing on 'a tenant'. Keep real momentum: commas and line ends carry straight on, every routine pause is short, about a fifth of a second, sentences flow straight into each other like a quick story told to a friend, and nothing lingers except the two marked rests.\nPace: MEASURED and unhurried, never padded. THIS IS A TWO MINUTE PIECE, about one hundred and ten seconds, and the read must fill it, so let every sentence land and take an easy breath at each period, a natural beat rather than a long pause. Save real rests for the marked short pauses. Do not rush the numbers. Vary the tone line to line so no two sentences sound the same.\nEmphasis: lean on the key word in each line; let numbers land.\nTranscript:\nTwelve days before Alaska changes governors, all eyes are on a boardroom. The data center clock sits elsewhere.\nGovernor-elect Jonathan Kreiss-Tomkins takes office December 7th.\nHe asked AIDEA, a public corporation of the state, to postpone action until then.\nThe board met behind closed doors from ten a.m. to three, took no action, and resumes Friday.\nIts agenda lists the Arctic refuge and Ambler. [wry] No data center item.\nData center pieces moved earlier. AIDEA's Alaska Data Corp got a twenty million dollar board vote.\nThe chief executive of Plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation.\nOn November 10th, the Department of Natural Resources approved giving AIDEA about sixty-eight hundred acres near Houston, free.\nIn July, AIDEA said the land could host logistics, manufacturing and scalable data centers.\nHere's the clock that counts. Reconsideration requests are due November 30th, then the department has thirty days.\nCount the ties. [short pause] Thirty days runs past December 7th. The answer could land under the next governor.\nHe's said he'd support a data center moratorium until the state adopts rules. His team hasn't said whether he'd reverse this transfer.\nAIDEA's executive director, Randy Ruaro, said they're not rapidly moving through projects without due diligence.\nThe land was cut from nearly twenty thousand acres, and reverts to the state if AIDEA fails to develop it.\nAgainst that, more than twenty-three hundred comments, mostly opposed, and a Mat-Su Borough request to reconsider.\nIn July, AIDEA wrote it had no committed tenant, power source, cooling or schedule.\nHere, rules first would stall no project AIDEA has named.\nThe board's clock says Friday. The land's says November 30th. [short pause] What should Alaska lay down first, rules or a tenant?"
+}

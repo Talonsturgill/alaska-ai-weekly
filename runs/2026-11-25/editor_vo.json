@@ -1,0 +1,13 @@
+{
+ "ship": true,
+ "findings": [
+  {
+   "line": 3,
+   "risk": "c13's verified spoken form already says 'resumes at ten a.m. on Friday, November 27th', and the AIDEA primary source says 'will resume at 10:00 AM on Friday, November 27'. Friday is November 27th as of today, Wednesday November 25th, so 'It resumes Friday' is supported. The 'schedule subject to change' hedge is dropped from the voice, but the on-screen card still carries it as SET TO RESUME. Two other points are within tolerance. First, 'It' (the board) resumes the recessed November 24th continued meeting, not the November 19th session. The previous read compressed that the same way. Second, c12 supports 'took no action' (adjourned without taking action) and 'behind closed doors' (closed session). The line has no colons, semicolons or dashes, the date is month-first ordinal, and it uses none of the banned words. Optional, only if the audio slot allows three more syllables.",
+   "material": false,
+   "fix": "On November 19th its board met behind closed doors and took no action. It's set to resume Friday."
+  }
+ ],
+ "script_sha256": "f0ad72d2511028e9b8b5a7049d283583911da08bec4451b2ace0bf51dd28a143",
+ "claims_sha256": "5a5c2062ec438aa2873f27479e7e2f331d427d59c9d2a9dd1253314def845bb4"
+}

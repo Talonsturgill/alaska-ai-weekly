@@ -1,0 +1,173 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "Twelve days before Alaska changes governors, all eyes are on a boardroom. The land's clock sits elsewhere.",
+   "claims": [
+    "narration"
+   ],
+   "t": "Twelve days before Alaska changes governors, all eyes are on a boardroom. The land's clock sits elsewhere."
+  },
+  {
+   "idx": 1,
+   "text": "Governor-elect Jonathan Kreiss-Tomkins takes office December 7th.",
+   "claims": [
+    "c1"
+   ],
+   "t": "Governor-elect Jonathan Kreiss-Tomkins takes office December 7th."
+  },
+  {
+   "idx": 2,
+   "text": "He asked AIDEA, a public corporation of the state, to postpone action until then.",
+   "claims": [
+    "c2",
+    "c4"
+   ],
+   "t": "He asked AIDEA, a public corporation of the state, to postpone action until then."
+  },
+  {
+   "idx": 3,
+   "text": "On November 19th its board met behind closed doors and took no action. It resumes Friday.",
+   "claims": [
+    "c3",
+    "c12",
+    "c13"
+   ],
+   "t": "On November 19th its board met behind closed doors and took no action. It resumes Friday."
+  },
+  {
+   "idx": 4,
+   "text": "Its agenda lists the Arctic refuge and Ambler. No data center item.",
+   "claims": [
+    "c36"
+   ],
+   "t": "Its agenda lists the Arctic refuge and Ambler. No data center item."
+  },
+  {
+   "idx": 5,
+   "text": "Data center pieces moved earlier. AIDEA's Alaska Data Corp got a twenty million dollar board vote.",
+   "claims": [
+    "c9",
+    "c10"
+   ],
+   "t": "Data center pieces moved earlier. AIDEA's Alaska Data Corp got a twenty million dollar board vote."
+  },
+  {
+   "idx": 6,
+   "text": "The chief executive of Plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation.",
+   "claims": [
+    "c37"
+   ],
+   "t": "The chief executive of Plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation."
+  },
+  {
+   "idx": 7,
+   "text": "On November 10th, the Department of Natural Resources approved giving AIDEA about sixty-eight hundred acres near Houston, free.",
+   "claims": [
+    "c20"
+   ],
+   "t": "On November 10th, the Department of Natural Resources approved giving AIDEA about sixty-eight hundred acres near Houston, free."
+  },
+  {
+   "idx": 8,
+   "text": "In July, AIDEA said the land could host logistics, manufacturing and scalable data centers.",
+   "claims": [
+    "c22"
+   ],
+   "t": "In July, AIDEA said the land could host logistics, manufacturing and scalable data centers."
+  },
+  {
+   "idx": 9,
+   "text": "Here's the clock that counts. Reconsideration requests are due November 30th, then the department has thirty days.",
+   "claims": [
+    "c32"
+   ],
+   "t": "Here's the clock that counts. Reconsideration requests are due November 30th, then the department has thirty days."
+  },
+  {
+   "idx": 10,
+   "text": "Count the ties. Thirty days runs past December 7th. The answer could land under the next governor.",
+   "claims": [
+    "c32",
+    "c1"
+   ],
+   "t": "Count the ties. Thirty days runs past December 7th. The answer could land under the next governor."
+  },
+  {
+   "idx": 11,
+   "text": "He's said he'd support a data center moratorium until the state adopts rules. His team hasn't said whether he'd reverse this transfer.",
+   "claims": [
+    "c11",
+    "c34"
+   ],
+   "t": "He's said he'd support a data center moratorium until the state adopts rules. His team hasn't said whether he'd reverse this transfer."
+  },
+  {
+   "idx": 12,
+   "text": "AIDEA's executive director, Randy Ruaro, said they're not rapidly moving through projects without due diligence.",
+   "claims": [
+    "c15"
+   ],
+   "t": "AIDEA's executive director, Randy Ruaro, said they're not rapidly moving through projects without due diligence."
+  },
+  {
+   "idx": 13,
+   "text": "The land was cut from nearly twenty thousand acres, and reverts to the state if AIDEA fails to develop it.",
+   "claims": [
+    "c21",
+    "c26"
+   ],
+   "t": "The land was cut from nearly twenty thousand acres, and reverts to the state if AIDEA fails to develop it."
+  },
+  {
+   "idx": 14,
+   "text": "Against that, more than twenty-three hundred comments, mostly opposed, and a Mat-Su Borough request to reconsider.",
+   "claims": [
+    "c28",
+    "c30"
+   ],
+   "t": "Against that, more than twenty-three hundred comments, mostly opposed, and a Mat-Su Borough request to reconsider."
+  },
+  {
+   "idx": 15,
+   "text": "In July, AIDEA wrote it had no committed tenant, power source, cooling or schedule.",
+   "claims": [
+    "c24"
+   ],
+   "t": "In July, AIDEA wrote it had no committed tenant, power source, cooling or schedule."
+  },
+  {
+   "idx": 16,
+   "text": "Here, rules first would stall no project AIDEA has named.",
+   "claims": [
+    "c24",
+    "c25"
+   ],
+   "t": "Here, rules first would stall no project AIDEA has named."
+  },
+  {
+   "idx": 17,
+   "text": "The board's clock says Friday. The land's says November 30th. What should Alaska lay down first, rules or a tenant?",
+   "claims": [
+    "c13",
+    "c32"
+   ],
+   "t": "The board's clock says Friday. The land's says November 30th. What should Alaska lay down first, rules or a tenant?"
+  }
+ ],
+ "caption_fixups": {
+  "twenty million dollar": "$20 million",
+  "ten a.m. to three": "10 a.m. to 3",
+  "sixty-eight hundred": "6,800",
+  "nearly twenty thousand": "nearly 20,000",
+  "twenty-three hundred": "2,300",
+  "a hundred and eighty million dollars": "$180 million",
+  "thirty days": "30 days",
+  "Twelve days": "12 days"
+ },
+ "caption_quotes": [],
+ "caption_split_after": [
+  "the infrastructure behind AI",
+  "Randy Ruaro,"
+ ]
+}

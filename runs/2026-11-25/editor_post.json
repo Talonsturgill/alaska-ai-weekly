@@ -1,0 +1,61 @@
+{
+ "ship": false,
+ "hard_blockers": [
+  "post.txt line 18 has four hashtags (#ArtificialIntelligence #Alaska #DataCenters #MatSu), and the editor pass criteria forbid hashtags outright. Delete the line. This is the only hard blocker. The video cut itself clears: all three cut-2 blockers are fixed and no material on-screen or caption defect remains."
+ ],
+ "findings": [
+  {
+   "time": "117 to 130 s (f127.6, f130.1)",
+   "risk": "Cut-2 blocker 1 check. The two dates now sit on separate cards: an amber 'RECONSIDERATION DUE / NOVEMBER 30TH' card on the left at the far stand, and a cream 'BOARD \u00b7 FRIDAY' card on the right above 'TENANT FIRST'. The captions split them too ('The board's clock says Friday.' at 120.32, 'The land's says November 30th.' at 122.76). Nobody can read them as one date now.",
+   "material": false,
+   "fix": "None needed."
+  },
+  {
+   "time": "19.5 to 26 s (f025.5)",
+   "risk": "Cut-2 blocker 2 check. The VO now has the November 19th closed session and the resumption as separate sentences and separate caption cues. The card reads 'NOVEMBER 19TH \u00b7 10 A.M. TO 3 P.M. \u00b7 NO ACTION' and, on its own card, 'SET TO RESUME FRIDAY / NOVEMBER 27TH \u00b7 10 A.M.', which carries the c13 'subject to change' hedge. 'It resumes Friday' is defensible: the November 24th agenda is the continued agenda filed under the 11/19 meeting, so the meeting that resumes Friday is that same continued meeting. The VO still skips the November 24th session and says 'resumes' with no hedge.",
+   "material": false,
+   "fix": "Optional: VO and caption 'The continued meeting is set to resume Friday.' to match the card and c13."
+  },
+  {
+   "time": "25.5 s (f025.5)",
+   "risk": "A stray 'NOV 27TH' stub is clipped under the SET TO RESUME card, just above the caption bar. It is a duplicate, half-hidden date label and reads as a render artifact.",
+   "material": false,
+   "fix": "Remove the stub, or move it clear of the card stack."
+  },
+  {
+   "time": "117.4 to 119.8 s (f117.4)",
+   "risk": "Cut-2 blocker 3 check. The c25 plate now reads '\"HAS NOT IDENTIFIED A SPECIFIC PROJECT\" / AIDEA SPOKESPERSON, NOVEMBER \u00b7 PER ALASKA BEACON'. That matches the claims.json on_screen line exactly. The c24 plate beside it is dated 'AIDEA, JULY'.",
+   "material": false,
+   "fix": "None needed."
+  },
+  {
+   "time": "97 to 101.5 s (f101.1)",
+   "risk": "The card attributes 'THE TRANSFER \u00b7 NOT THE USE / DNR, PER MAT-SU SENTINEL', which is correct under c35. But the Mat-Su Sentinel does not appear in the credits source list (ADN, Alaska Beacon, Must Read Alaska, AIDEA, PR Newswire). The Anchorage Press attribution at 38.4 s is in the same position.",
+   "material": false,
+   "fix": "Add MAT-SU SENTINEL to the credits list (and optionally ANCHORAGE PRESS), or write ADN/MAT-SU SENTINEL on the card."
+  },
+  {
+   "time": "full cut, captions and plates",
+   "risk": "Accuracy and house-rule sweep. Every visible string and all 43 caption cues match claims.json. Hedges required by the conditions are present: 'could' on the post-December-7th answer (c32, the COULD lamp plus 'COULD LAND UNDER THE NEXT GOVERNOR'); 'near Houston' with no direction or mileage; the Plural line carries 'THE PITCH \u00b7 NOT A PROJECT'; ANWR is shown only as an agenda item; 'mostly opposed'; the borough asks to 'reconsider' with no November 17th date; Ruaro is quoted, never 'refused to pause'; the moratorium is 'would support' per ADN; 'HIS TEAM HASN'T SAID'; the reversion clause has no deadline; Alaska Data Corp is shown as 'FORMED IN MARCH'; no resident quotes. No dashes, all dates are ordinal month-first, none of the banned words (gap, matters, pattern), no 'cannot', straight quotes throughout. '12 days' (November 25th to December 7th) is correct.",
+   "material": false,
+   "fix": "None."
+  },
+  {
+   "time": "post.txt line 2",
+   "risk": "'Rules first would stall no project anyone has named there' goes beyond the sources. They support only that AIDEA has identified no project (c24, c25), not 'anyone'. The video correctly says 'no project AIDEA has named'.",
+   "material": true,
+   "fix": "Change to 'Rules first would stall no project AIDEA has named there.'"
+  },
+  {
+   "time": "post.txt line 18",
+   "risk": "Hashtags. The editor pass criteria forbid them.",
+   "material": true,
+   "fix": "Delete the hashtag line."
+  }
+ ],
+ "blockers_resolved": {
+  "1": true,
+  "2": true,
+  "3": true
+ }
+}

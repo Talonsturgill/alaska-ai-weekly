@@ -1,0 +1,2372 @@
+{
+  "run_date": "2026-11-25",
+  "slug": "the-other-track",
+  "title": "The Other Track",
+  "concept": "Twelve days before Alaska changes governors, Governor-elect Jonathan Kreiss-Tomkins asked AIDEA, a public corporation of the state, to postpone action until he takes office December 7th. The board met behind closed doors from 10 a.m. to 3 p.m., took no action and resumes Friday, November 27th; its pending agenda lists ANWR, Ambler and Port MacKenzie and no data center item. The data center pieces moved earlier: AIDEA's Alaska Data Corp got a $20 million board vote, and on November 10th DNR approved giving AIDEA about 6,800 acres near Houston at no cost, land AIDEA said in July could host logistics, manufacturing and scalable data centers. Reconsideration requests are due November 30th and DNR then has 30 days, so the answer could land under the next governor, who has said he'd support a moratorium until rules exist. The test gives AIDEA's case (due diligence, the land cut from nearly 20,000 acres, a reversion clause) and the other side's (2,300+ comments, mostly opposed, a Mat-Su Borough request to reconsider) full scenes, then AIDEA's own July words: no committed tenant, power source, cooling or schedule. Drawn as a faceless switch stand at a rail fork near Houston in noon snow: a short closed AIDEA BOARD branch ending at a buffer stop, a long open DNR branch running off the frame, ties as days, and a lever caught mid-throw between RULES and a TENANT.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 128.64,
+  "fingerprint": {
+    "pov": "low-angle-heroic",
+    "motion_vector": "radial-emanate",
+    "hero_treatment": "structure-as-subject",
+    "layout": "centered-hero-lowerthird",
+    "register": "naturalistic-scene",
+    "palette": "bleached-linen haze #D9D6C8 over sun-washed cream #EFE8D6, a crusted snowfield #F3F1EA with oatmeal snow shade #CFC6B4, long honey-lit snow with lake-blue cast shadows #9FB6CC, birch bark #F2EFE6, spruce black-teal #1E2B24, rail rust #8A4B2E over creosote ties #5B4636, a cast-iron #3B3F44 switch with a linen disc, railway lamp amber #F2A93B for the land's dates, a grey-brown walnut boardroom #4A4740 and #C9B48A",
+    "camera_strategy": "low-wide-rise",
+    "light_story": "bright-hard-low-noon-sun",
+    "metaphor": "a faceless switch stand at a fork where the short closed branch is the board's calendar and the long open branch is the land's clock, ties counted as days, and a lever caught mid-throw between rules and a tenant"
+  },
+  "signature_shot": 9,
+  "palette": "bleached-linen haze #D9D6C8 over sun-washed cream #EFE8D6, a crusted snowfield #F3F1EA with oatmeal snow shade #CFC6B4, long honey-lit snow with lake-blue cast shadows #9FB6CC, birch bark #F2EFE6, spruce black-teal #1E2B24, rail rust #8A4B2E over creosote ties #5B4636, a cast-iron #3B3F44 switch with a linen disc, railway lamp amber #F2A93B for the land's dates, a grey-brown walnut boardroom #4A4740 and #C9B48A",
+  "divergence_note": "The last two films were flat July overcast over olive tundra seen from above with a faced Pi board, red GPS pins and a clipboard grid (11-24), and an apricot-plum civil twilight over lavender river ice with a scarlet ribbon, sample tubes and a cargo drone (11-23). This film is a hard low noon sun on bone haze and crusted snow, seen low and wide at a rail fork; its hero is a faceless cast-iron switch stand that acts through its lever, lamp and disc; its accent is signal amber; its shape language is divergence, a closed branch against an open one. Honest overlaps: rail appears two films after 11-23's 1925 trail (no steam, no sepia, no long single track to a vanishing point here), faceless Suits (house rig), and a tie count from above as one explainer beat.",
+  "treatment": {
+    "title": "The Other Track",
+    "summary": "Winner C (the Explainer) with grafts from B (the Dramatist: the lever caught mid-throw between RULES and TENANT as the button, comments as mail sacks on a freight scale, the hearing at the water stop) and D (the Enthusiast: RULES ties laid ahead of an empty boxcar with its doors open that waits on the open siding). A rail junction near Houston in late-November Mat-Su snow. One track splits at a faceless switch stand: the AIDEA BOARD branch is short and closed, ending at a buffer stop with a lit window card; the Anchorage boardroom is a separate interior reached by a cut; the DNR branch is open and runs off frame into the birch. The switch stand is the protagonist and acts only through mechanism: its lever, its lamp and its target disc. Revised after Gate 0D round 1: no faced hero, no ribbon, no tag flip, no raven, no salmon, no red-family accent.",
+    "judge_reasoning": "Judge reasoning: the Explainer's rail ties as days turns the thesis (the land's clock runs on DNR's reconsideration window, past the December 7th handoff) into a physical, countable picture, and the switch is the plainest image of \"which track decides\". The Dramatist's lever caught mid-throw between RULES and TENANT is the strongest button and the mail sacks keep residents undrawn; the Enthusiast's RULES ties laid ahead of an empty boxcar that waits lands the brand's \"how could this help Alaska win\" honestly. The Comedian's split frame and pie gag were funnier but carried less of the argument; the pie survives as a background gag in the boardroom. Gate 0D replaced the pitched faced survey stake with a faceless switch stand protagonist, dropped the raven and salmon, and moved the accent to signal amber. The showrunner judged the four pitches directly instead of spawning a separate scorer."
+  },
+  "angle": {
+    "thesis": "Friday's AIDEA meeting isn't where Alaska's data center question gets decided. Nothing data center is on the board's agenda, the live data center clock is DNR's Houston reconsideration window that opens November 30th and could close after the handoff, and the version of this that helps Alaska win is rules before tenants.",
+    "falsifiability": "False if the November 27th or December 4th agenda adds a data center or Alaska Data Corp item (c13, c14, c36), or if DNR rules on the Houston reconsideration requests before December 7th (c32, c1), which would put the land question back on the outgoing clock.",
+    "supporting_facts": [
+      "The pause request targets board action (c2) and the pending agenda lists ANWR, Ambler and Port MacKenzie with no data center item (c36); the board met behind closed doors and took no action (c12) and resumes November 27th (c13).",
+      "The data center pieces already moved through other doors: the $20M board vote to the AIDEA-owned Alaska Data Corp (c9, c10) and DNR's November 10th transfer of about 6,800 acres near Houston at no cost (c20), land AIDEA said in July could host scalable data centers among other uses (c22).",
+      "The land has its own clock: reconsideration due November 30th, then 30 days for DNR (c32), so an answer could land under a governor who supports a moratorium until rules exist (c11) and has said he'd completely reassess AIDEA's work (c34)."
+    ],
+    "counterpoint_to_honor": "Two fair cases, each given a scene. AIDEA's: Ruaro says this is due diligence, not a rush (c15), with record revenue three years running (c16); Dunleavy says Alaskans elected him for a full term (c17); and the transfer was cut from nearly 20,000 acres (c21) with salmon streams and trails protected (c27) and a reversion clause (c26). The community's: more than 2,300 comments mostly opposed (c28), a unanimous Assembly (c29), the borough pointing to Point MacKenzie and its $180M rail bed (c30, c31), and a pending lawsuit (c33). And DNR says it approved a transfer, not a use (c35), while AIDEA's director called a data center there implausible in October (c38).",
+    "valence": "curious and constructive. The capital pitch behind AI infrastructure is real (c37, the pitch not a project) and Alaska has a funded vehicle (c10). Rules first loses nothing that exists today, because AIDEA itself listed no tenant, power source, cooling or schedule (c24). Neither side is a villain; the film ends on a question of order.",
+    "stance": "curious",
+    "who_it_serves": "Mat-Su residents and the borough, who have a live way to be heard by November 30th (c30, c32); legislators and the incoming team watching the handoff; and anyone who wants Alaska to land AI infrastructure capital (c37) on a site that won't be fought in court (c33).",
+    "second_movement": "DNR says its decision covers the transfer, not the use (c35), and the borough isn't refusing industry, it names other sites (c30, c31). So even the land clock doesn't decide what gets built. What decides it is whether rules arrive before a tenant does (c11, c24).",
+    "runner_up_angles": [
+      {
+        "angle": "The lame-duck rush is a power grab",
+        "lost_because": "claims a motive the record doesn't show: closed session, no action (c12), a request not an order (c2), Ruaro rejects rushing (c15)"
+      },
+      {
+        "angle": "A pause throws away Alaska's head start in the AI data center race",
+        "lost_because": "no data center vote is pending (c36), no tenant, power or schedule (c24), no project identified (c25); the head start is a pitch (c37)"
+      },
+      {
+        "angle": "Nothing data center is moving, so the fight is theatre",
+        "lost_because": "the $20M vote is done (c10), the land moved November 10th (c20), the reconsideration clock runs past the handoff (c32), 2,300+ comments (c28)"
+      }
+    ],
+    "cross_challenge": "Three analysts (structural, enthusiast, dramatist) each red-teamed two of the three rivals above; all three converged on the separate-clock reading. The enthusiast's 'rules first loses nothing that exists today' is grafted as the button; the dramatist's community-as-civic-process is the Act 3 scene; the structural reading's 'transfer, not use' is the second movement.",
+    "absence_checks": "No data center item: read the November 24th continued agenda in full (executive session topics, Resolutions G26-05, G26-07, G26-01, directors comment). The governor-elect's statement doesn't mention data centers (Must Read Alaska quotes it at length). Neither ADN November 11th nor the pause coverage mentions AI; the only AI line is the Plural CEO in the InvestNorth launch release.",
+    "distinct_from_recent": "10-20 asked whether the land should pass before anyone can say what will be built (preliminary decision); 11-13 asked rules first or money first for tokenized stakes; this film is about which clock decides, after the transfer and the pause request."
+  },
+  "claim_map": {
+    "1": [
+      "c1"
+    ],
+    "2": [
+      "c4"
+    ],
+    "3": [
+      "c20"
+    ],
+    "4": [
+      "c1"
+    ],
+    "5": [
+      "c1"
+    ],
+    "6": [
+      "c2"
+    ],
+    "7": [
+      "c4"
+    ],
+    "8": [
+      "c12"
+    ],
+    "9": [
+      "c12"
+    ],
+    "10": [
+      "c13"
+    ],
+    "11": [
+      "c36"
+    ],
+    "12": [
+      "c36"
+    ],
+    "13": [
+      "c36"
+    ],
+    "14": [
+      "c9"
+    ],
+    "15": [
+      "c10"
+    ],
+    "16": [
+      "c37"
+    ],
+    "17": [
+      "c37"
+    ],
+    "18": [
+      "c20"
+    ],
+    "19": [
+      "c20"
+    ],
+    "20": [
+      "c22"
+    ],
+    "21": [
+      "c22"
+    ],
+    "22": [
+      "c32"
+    ],
+    "23": [
+      "c32"
+    ],
+    "24": [
+      "c1"
+    ],
+    "25": [
+      "c32"
+    ],
+    "26": [
+      "c32",
+      "c1"
+    ],
+    "27": [
+      "c11"
+    ],
+    "28": [
+      "c34"
+    ],
+    "29": [
+      "c15"
+    ],
+    "31": [
+      "c21",
+      "c20"
+    ],
+    "32": [
+      "c26"
+    ],
+    "33": [
+      "c28"
+    ],
+    "34": [
+      "c30"
+    ],
+    "35": [
+      "c24"
+    ],
+    "36": [
+      "c25"
+    ],
+    "37": [
+      "c13"
+    ],
+    "38": [
+      "narration"
+    ],
+    "39": [
+      "narration"
+    ],
+    "40": [
+      "c20"
+    ],
+    "41": [
+      "c37"
+    ],
+    "42": [
+      "c15"
+    ],
+    "43": [
+      "c28"
+    ],
+    "44": [
+      "c24"
+    ],
+    "45": [
+      "c32"
+    ],
+    "46": [
+      "c35"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "Low and wide at a rail fork in noon snow near Houston, and at 0.2 s the faceless switch stand throws its lever hard over with a clank as powder jumps off the rail",
+    "headline": "12 DAYS TO THE HANDOFF",
+    "motion_by_s": 0.2,
+    "loopback": "Frame 1 is the main lever thrown hard toward the short closed branch; the last shot keeps the main lever on DNR, small behind, while a second switch past the siding points is caught mid-throw between a RULES FIRST leg and a TENANT FIRST leg."
+  },
+  "open_loop": {
+    "plant_t": 7.79,
+    "pay_t": 109.28,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "clunk",
+    "what": "What is down the other track? Planted as the lamp flares and the stand's long shadow stretches down the open DNR branch past a milepost reading DNR, STATE LAND NEAR HOUSTON, running off the frame; carried as the land's clock is set on that branch; paid when an empty boxcar on that branch rolls its doors open on nothing inside: no committed tenant, power source, cooling or schedule."
+  },
+  "open_loop_2": {
+    "plant_t": 56.86,
+    "pay_t": 98.13,
+    "what": "Does the land decide what gets built? Planted as three use cards spring up on the parcel, COULD HOST, and the points slide toward a siding that curves out of sight; paid when a DNR stamp lands on the ACRES car: THE TRANSFER, NOT THE USE."
+  },
+  "throughline": {
+    "object": "the switch lever",
+    "lands_in_button": "the lever caught mid-throw between a stack of RULES ties and an empty boxcar, the amber lamp glowing",
+    "states": [
+      {
+        "at_s": 0.0,
+        "state": "L1 thrown hard toward the short closed AIDEA BOARD branch"
+      },
+      {
+        "at_s": 28.63,
+        "state": "L2 still set to AIDEA BOARD, rattling in its keeper as the agenda passes"
+      },
+      {
+        "at_s": 63.5,
+        "state": "L3 thrown to the open DNR branch, the disc shadow settling on it"
+      },
+      {
+        "at_s": 79.5,
+        "state": "L3b small beyond the DECEMBER 7TH post, still set to DNR, its amber lamp now blinking steady"
+      },
+      {
+        "at_s": 106.78,
+        "state": "L4 at mid-ground beside the freight scale, still set to DNR, shivering in its notch as the borough letter unfolds"
+      },
+      {
+        "at_s": 126.61,
+        "state": "L5 the main lever still on DNR; the second switch where the open branch splits caught mid-throw between the RULES leg and the empty boxcar leg"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 7.79,
+      "type": "scale-pullback",
+      "what": "the stand's long shadow stretches down an open branch that runs far beyond the frame",
+      "hold_s": 0.6
+    },
+    {
+      "t": 26.34,
+      "type": "build-on",
+      "what": "the agenda cut rolls in car by car",
+      "hold_s": 0.6
+    },
+    {
+      "t": 73.43,
+      "type": "scale-pullback",
+      "what": "the view pulls wide as 30 ties run past the DECEMBER 7TH mark and off the frame",
+      "hold_s": 0.8
+    },
+    {
+      "t": 94.98,
+      "type": "build-on",
+      "what": "three ACRES cars uncouple to one, nearly 20,000 to 6,800",
+      "hold_s": 0.6
+    },
+    {
+      "t": 101.56,
+      "type": "scale-pullback",
+      "what": "the view rises from the scale to show mail sacks stacked down the whole platform",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 3,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 5,
+        "offset": 0.0,
+        "level": 1.1
+      },
+      {
+        "line": 9,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 15,
+        "offset": 0.0,
+        "level": 0.6
+      },
+      {
+        "line": 17,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "at_s": 126.01,
+        "level": 0.35
+      },
+      {
+        "at_s": 127.01,
+        "level": 1.2
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "wind",
+    "build_steps": 4,
+    "dip_at": 126.11,
+    "riser_at": 62.5,
+    "silence_at": 126.11,
+    "payoff_at": 126.61,
+    "button_pattern": "callback",
+    "interrupt_at": 63.5,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "The fork",
+      "vo_line": 0,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "fork-noon",
+      "pov": "low-angle-heroic",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:a locked tableau of the fork",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "the switch stand at x540 y1060",
+      "means": "Low and wide at a rail fork in noon snow near Houston, a faceless switch stand throws its lever toward the short closed AIDEA BOARD branch, a window card glows at its buffer, and the lamp flares as the disc's shadow points down the open DNR branch",
+      "ambient": "light wind over snow, wire hum",
+      "hero": {
+        "name": "switch stand + track fork + buffer stop window card + open branch",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% switch, 35% fork, 20% far world"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-9.020"
+    },
+    {
+      "title": "The request",
+      "vo_line": 1,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "platform",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "whip-pan",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the Suit and the hoop at x520 y980",
+      "means": "On the station platform the KREISS-TOMKINS Suit walks to a slat date board that clacks to DEC 7TH and clips a POSTPONE order onto the train-order hoop by the AIDEA BOARD track",
+      "ambient": "platform wind, a far horn",
+      "hero": {
+        "name": "Suit + slat date board + train-order hoop + brass plate",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% Suit, 30% hoop, 25% board"
+      },
+      "id": 2,
+      "start_s": 9.02,
+      "t": "9.020-19.500"
+    },
+    {
+      "title": "Closed session",
+      "vo_line": 3,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "boardroom",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the clock and the door at x600 y860",
+      "means": "In the Anchorage boardroom the door shuts on CLOSED SESSION, the wall clock spins 10 to 3 and a RESUMES FRIDAY card slaps down beside a pie",
+      "ambient": "a quiet room, a clock tick",
+      "hero": {
+        "name": "boardroom door + wall clock + table card + pie",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% clock, 35% door, 25% table"
+      },
+      "id": 3,
+      "start_s": 19.5,
+      "t": "19.500-26.340"
+    },
+    {
+      "title": "The agenda",
+      "vo_line": 4,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "agenda-cut",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the agenda cut at x540 y1000",
+      "means": "A grey diesel pulls ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE boxcars along the closed branch while the switch lever rattles, then the train clears and leaves the branch bare to the buffer stop, NO DATA CENTER ITEM",
+      "ambient": "a passing train, wind",
+      "hero": {
+        "name": "diesel + boxcars + free coupler + buffer stop + switch lever",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% train, 30% switch, 20% world"
+      },
+      "id": 4,
+      "start_s": 26.34,
+      "t": "26.340-31.540"
+    },
+    {
+      "title": "Already voted",
+      "vo_line": 5,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "aidea-yard",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "structure-as-subject",
+      "camera": "craneDown",
+      "transition_in": "hard-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the boxcar on the yard spur at x600 y1000",
+      "means": "From above, in the AIDEA yard, the ALASKA DATA CORP boxcar rolls out along its own spur and a $20M coin sack thumps onto its tail platform",
+      "ambient": "wind over snow, a far train",
+      "hero": {
+        "name": "yard spur + boxcar + coin sack",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% track, 35% car, 20% world"
+      },
+      "id": 5,
+      "start_s": 31.54,
+      "t": "31.540-38.940"
+    },
+    {
+      "title": "The pitch",
+      "vo_line": 6,
+      "framing": "alt-vantage",
+      "scale": "medium",
+      "height": "low",
+      "stage": "billboard",
+      "pov": "low-angle-heroic",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "data-as-subject",
+      "camera": "riseWith",
+      "transition_in": "graphic-match",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the billboard at x540 y880",
+      "means": "Low on the station platform a billboard facing the yard swings up, the Plural CEO quote rolls on word by word and an amber THE PITCH stamp slams on",
+      "ambient": "wind over snow",
+      "hero": {
+        "name": "billboard + painted quote + stamp + platform",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% billboard, 25% stamp, 15% track"
+      },
+      "id": 6,
+      "start_s": 38.94,
+      "t": "38.940-48.460"
+    },
+    {
+      "title": "The land",
+      "vo_line": 7,
+      "framing": "data-panel",
+      "scale": "close",
+      "height": "eye",
+      "stage": "plat-board",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the plat at x540 y960",
+      "means": "A land plat of the Mat-Su by the tracks unrolls the pencilled 6,800 acre parcel near Houston and pins press into its corners",
+      "ambient": "wind, paper",
+      "hero": {
+        "name": "land plat + parcel + push pins",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% plat, 25% outline, 15% board"
+      },
+      "id": 7,
+      "start_s": 48.46,
+      "t": "48.460-56.860"
+    },
+    {
+      "title": "Could host",
+      "vo_line": 8,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "high",
+      "stage": "parcel-siding",
+      "pov": "exploded-diagram",
+      "layout": "stacked-layers",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the parcel and siding at x540 y980",
+      "means": "Three use cards spring up on the parcel and the switch points slide toward a siding that curves out of sight behind the birch",
+      "ambient": "wind over snow",
+      "hero": {
+        "name": "parcel + use cards + switch points + empty siding",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "40% parcel, 35% cards, 25% siding"
+      },
+      "id": 8,
+      "start_s": 56.86,
+      "t": "56.860-63.500"
+    },
+    {
+      "title": "The land's clock",
+      "vo_line": 9,
+      "framing": "subject-portrait",
+      "scale": "wide",
+      "height": "low",
+      "stage": "fork-signature",
+      "pov": "low-angle-heroic",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:locked so the shadow sweep is the only move",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the switch stand at x540 y1040",
+      "means": "Low and wide at noon the switch throws, the disc's long shadow sweeps across both branches and settles on the open DNR track, the amber lamp flares and the reconsideration sign swings down",
+      "ambient": "wind, wire hum",
+      "hero": {
+        "name": "switch stand + disc shadow + both branches + amber sign",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% switch, 35% shadow, 20% sign"
+      },
+      "id": 9,
+      "start_s": 63.5,
+      "t": "63.500-72.000"
+    },
+    {
+      "title": "Count the ties",
+      "vo_line": 10,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "high",
+      "stage": "tie-count",
+      "pov": "top-down-map",
+      "layout": "grid-modular",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "data-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "graphic-match",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the two branches at x540 y960",
+      "means": "From above 12 ties lay to the AIDEA buffer at DECEMBER 7TH, then 5 bare and 30 laid ties run the DNR branch past the mark, and an amber lamp lights COULD",
+      "ambient": "wind over snow",
+      "hero": {
+        "name": "two branches + ties + buffer + amber lamp",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% ties, 30% branches, 20% lamp"
+      },
+      "id": 10,
+      "start_s": 72.0,
+      "t": "72.000-79.500"
+    },
+    {
+      "title": "Moratorium",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "past-the-mark",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the Suit and the stake at x540 y1000",
+      "means": "The KREISS-TOMKINS Suit steps past the DECEMBER 7TH post, the switch stand blinking amber far behind, with a MORATORIUM UNTIL RULES card and looks to a parcel stake whose blank question tag spins, and does not reach",
+      "ambient": "wind over snow, a far horn",
+      "hero": {
+        "name": "Suit + card + parcel stake + question tag",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% Suit, 30% stake, 25% mark"
+      },
+      "id": 11,
+      "start_s": 79.5,
+      "t": "79.500-87.760"
+    },
+    {
+      "title": "Due diligence",
+      "vo_line": 12,
+      "framing": "subject-portrait",
+      "scale": "close",
+      "height": "low",
+      "stage": "aidea-buffer",
+      "pov": "low-angle-heroic",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "whip-pan",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the Suit and the binder stack at x600 y1100",
+      "means": "At the AIDEA buffer stop under the lit window card the RANDY RUARO Suit sets a binder stack down, squares it and rests a hand on it as his quote holds",
+      "ambient": "wind, a dripping tower",
+      "hero": {
+        "name": "Suit + binder stack + buffer stop + window card",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% Suit, 30% binders, 25% buffer"
+      },
+      "id": 12,
+      "start_s": 87.76,
+      "t": "87.760-94.980"
+    },
+    {
+      "title": "Cut and tied back",
+      "vo_line": 13,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "acres-cars",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the ACRES cars at x540 y1040",
+      "means": "Three ACRES flatcars uncouple to one, its REVERSION CLAUSE chain to a STATE OF ALASKA post draws taut without pulling, and a DNR stamp lands on the plat card",
+      "ambient": "couplers, wind",
+      "hero": {
+        "name": "ACRES flatcars + coupler chain + state post",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% cars, 30% chain, 20% post"
+      },
+      "id": 13,
+      "start_s": 94.98,
+      "t": "94.980-101.560"
+    },
+    {
+      "title": "The other side",
+      "vo_line": 14,
+      "framing": "data-panel",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "freight-scale",
+      "pov": "eye-level-immersive",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the scale at x540 y1040",
+      "means": "Mail sacks drop onto a freight scale as the camera rises to sacks stacked down the platform, the needle bounces to MOSTLY OPPOSED and a MAT-SU BOROUGH request to reconsider lands on top while the switch stand at mid-ground shivers in its DNR notch",
+      "ambient": "wind, canvas",
+      "hero": {
+        "name": "freight scale + mail sacks + envelope + switch stand far behind",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% sacks, 35% scale, 20% letter and switch"
+      },
+      "id": 14,
+      "start_s": 101.56,
+      "t": "101.560-109.280"
+    },
+    {
+      "title": "Nothing inside",
+      "vo_line": 15,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "empty-car",
+      "pov": "eye-level-immersive",
+      "layout": "single-object-void",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "structure-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the empty boxcar at x540 y1020",
+      "means": "An empty boxcar with the ACRES car behind it on the open siding rolls its doors open on nothing, then RULES ties lay ahead of it as it waits",
+      "ambient": "wind in an empty car",
+      "hero": {
+        "name": "empty boxcar + RULES ties + open siding",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% car, 35% ties, 15% siding"
+      },
+      "id": 15,
+      "start_s": 109.28,
+      "t": "109.280-120.320"
+    },
+    {
+      "title": "Which first",
+      "vo_line": 17,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "low",
+      "stage": "fork-button",
+      "pov": "low-angle-heroic",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "structure-as-subject",
+      "camera": "static:a locked hold on the lever caught mid-throw",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the second switch stand at x540 y1180",
+      "means": "Low where the open branch splits again past the siding points, a second switch in the foreground swings slowly between a RULES FIRST leg laid with ties and a TENANT FIRST leg where the empty boxcar waits on bare roadbed with no ties under it and stops caught mid-throw, the main stand small behind still on DNR, the FRIDAY window card and the amber NOVEMBER 30TH sign glowing far off",
+      "ambient": "light wind over snow, wire hum",
+      "hero": {
+        "name": "second switch stand + RULES FIRST leg + TENANT FIRST leg + empty boxcar + main stand behind + two signs",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% second switch, 30% legs and car, 25% signs and main stand"
+      },
+      "id": 16,
+      "start_s": 120.32,
+      "t": "120.320-128.640"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Twelve days before Alaska changes governors, all eyes are on a boardroom. The land's clock sits elsewhere.",
+      "phrase": "Twelve days before Alaska",
+      "shows": "the faceless cast-iron switch stand at the fork near Houston, spruce and birch under the Talkeetna Mountains throws its lever hard over toward the short closed AIDEA BOARD branch and powder jumps off the rail, a plate reads 12 DAYS TO THE HANDOFF",
+      "sfx": "clank",
+      "means": "12 days to the handoff",
+      "rehook": "",
+      "draw": {
+        "subject": "the faceless cast-iron switch stand at the fork near Houston, spruce and birch under the Talkeetna Mountains",
+        "action": "throws its lever hard over toward the short closed AIDEA BOARD branch and powder jumps off the rail",
+        "emotion": "steady",
+        "annotation": "12 DAYS TO THE HANDOFF"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the faceless cast-iron switch stand at the fork near Houston, spruce and birch under the Talkeetna Mountains throws its lever hard over toward the short closed AIDEA BOARD branch and powder jumps off the rail, a plate reads 12 DAYS TO THE HANDOFF",
+        "reaction": "powder jumps off the rail",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "t": "0.000-2.030",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 2.03,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 2.03
+      },
+      "offset": 2.03,
+      "vo": "Twelve days before Alaska changes governors, all eyes are on a boardroom. The land's clock sits elsewhere.",
+      "phrase": "governors, all eyes are",
+      "shows": "a gust of powder rolls across both branches and settles in the ties, a plate reads NEAR HOUSTON \u00b7 MAT-SU",
+      "sfx": "whoosh",
+      "means": "near houston \u00b7 mat-su",
+      "rehook": "",
+      "draw": {
+        "subject": "a gust of powder",
+        "action": "rolls across both branches and settles in the ties",
+        "emotion": "curious",
+        "annotation": "NEAR HOUSTON \u00b7 MAT-SU"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a gust of powder rolls across both branches and settles in the ties, a plate reads NEAR HOUSTON \u00b7 MAT-SU",
+        "reaction": "the powder settles",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "t": "2.030-4.270",
+      "key": 40
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 4.27,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 4.27
+      },
+      "offset": 4.27,
+      "vo": "Twelve days before Alaska changes governors, all eyes are on a boardroom. The land's clock sits elsewhere.",
+      "phrase": "boardroom. The land's clock",
+      "shows": "a lit window card on the buffer stop at the end of the short AIDEA BOARD branch flicks on warm and its glow lands on the snow, a plate reads AIDEA BOARD",
+      "sfx": "tick",
+      "means": "aidea board",
+      "rehook": "",
+      "draw": {
+        "subject": "a lit window card on the buffer stop at the end of the short AIDEA BOARD branch",
+        "action": "flicks on warm and its glow lands on the snow",
+        "emotion": "curious",
+        "annotation": "AIDEA BOARD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "a lit window card on the buffer stop at the end of the short AIDEA BOARD branch flicks on warm and its glow lands on the snow, a plate reads AIDEA BOARD",
+        "reaction": "the window card glows",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "t": "4.270-7.790",
+      "key": 2
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 7.79,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 7.79
+      },
+      "offset": 7.79,
+      "vo": "Twelve days before Alaska changes governors, all eyes are on a boardroom. The land's clock sits elsewhere.",
+      "phrase": "elsewhere.",
+      "shows": "the switch stand's amber lamp flares while its long low-sun shadow stretches down the open branch past a milepost sign that swings out, a plate reads DNR \u00b7 STATE LAND NEAR HOUSTON",
+      "sfx": "clunk",
+      "means": "dnr \u00b7 state land near houston",
+      "rehook": "",
+      "draw": {
+        "subject": "the switch stand's amber lamp",
+        "action": "flares while its long low-sun shadow stretches down the open branch past a milepost sign that swings out",
+        "emotion": "alert",
+        "annotation": "DNR \u00b7 STATE LAND NEAR HOUSTON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "the switch stand's amber lamp flares while its long low-sun shadow stretches down the open branch past a milepost sign that swings out, a plate reads DNR \u00b7 STATE LAND NEAR HOUSTON",
+        "reaction": "the milepost sign swings",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "t": "7.790-9.020",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 9.02,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Governor-elect Jonathan Kreiss-Tomkins takes office December 7th.",
+      "phrase": "Governor-elect Jonathan Kreiss-Tomkins takes",
+      "shows": "a faceless Suit with a boxed name card KREISS-TOMKINS on the station platform walks in from frame left and stops by a slat date board, a plate reads GOVERNOR-ELECT \u00b7 JONATHAN KREISS-TOMKINS",
+      "sfx": "footstep",
+      "means": "governor-elect \u00b7 jonathan kreiss-tomkins",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless Suit with a boxed name card KREISS-TOMKINS on the station platform",
+        "action": "walks in from frame left and stops by a slat date board",
+        "emotion": "steady",
+        "annotation": "GOVERNOR-ELECT \u00b7 JONATHAN KREISS-TOMKINS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a faceless Suit with a boxed name card KREISS-TOMKINS on the station platform walks in from frame left and stops by a slat date board, a plate reads GOVERNOR-ELECT \u00b7 JONATHAN KREISS-TOMKINS",
+        "reaction": "the coat sways as he stops",
+        "ambient": "platform wind, a far horn"
+      },
+      "t": "9.020-12.030",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 12.03,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.01
+      },
+      "offset": 3.01,
+      "vo": "Governor-elect Jonathan Kreiss-Tomkins takes office December 7th.",
+      "phrase": "December 7th.",
+      "shows": "the slat date board on the platform post slams its slats over one by one to DEC 7TH and the post shudders, a plate reads TAKES OFFICE DECEMBER 7TH",
+      "sfx": "clack",
+      "means": "takes office december 7th",
+      "rehook": "",
+      "draw": {
+        "subject": "the slat date board on the platform post",
+        "action": "slams its slats over one by one to DEC 7TH and the post shudders",
+        "emotion": "steady",
+        "annotation": "TAKES OFFICE DECEMBER 7TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "the slat date board on the platform post slams its slats over one by one to DEC 7TH and the post shudders, a plate reads TAKES OFFICE DECEMBER 7TH",
+        "reaction": "the post shudders",
+        "ambient": "platform wind, a far horn"
+      },
+      "t": "12.030-13.720",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 2,
+      "at_s": 13.72,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "He asked AIDEA, a public corporation of the state, to postpone action until then.",
+      "phrase": "He asked AIDEA, a",
+      "shows": "a brass plate on the platform post swings out on its bracket, a plate reads AIDEA \u00b7 A PUBLIC CORPORATION OF THE STATE",
+      "sfx": "clink",
+      "means": "aidea \u00b7 a public corporation of the state",
+      "rehook": "",
+      "draw": {
+        "subject": "a brass plate on the platform post",
+        "action": "swings out on its bracket",
+        "emotion": "steady",
+        "annotation": "AIDEA \u00b7 A PUBLIC CORPORATION OF THE STATE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "a brass plate on the platform post swings out on its bracket, a plate reads AIDEA \u00b7 A PUBLIC CORPORATION OF THE STATE",
+        "reaction": "the plate swings",
+        "ambient": "platform wind, a far horn"
+      },
+      "t": "13.720-16.970",
+      "key": 7
+    },
+    {
+      "id": 8,
+      "shot": 2,
+      "at_s": 16.97,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 3.25
+      },
+      "offset": 3.25,
+      "vo": "He asked AIDEA, a public corporation of the state, to postpone action until then.",
+      "phrase": "postpone action until then.",
+      "shows": "the KREISS-TOMKINS Suit clips a paper order onto the tall train-order hoop beside the AIDEA BOARD track and steps back to wait, a plate reads \"POSTPONE FURTHER ACTION\"",
+      "sfx": "paper",
+      "means": "\"postpone further action\"",
+      "rehook": "",
+      "draw": {
+        "subject": "the KREISS-TOMKINS Suit",
+        "action": "clips a paper order onto the tall train-order hoop beside the AIDEA BOARD track and steps back to wait",
+        "emotion": "steady",
+        "annotation": "\"POSTPONE FURTHER ACTION\""
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the KREISS-TOMKINS Suit clips a paper order onto the tall train-order hoop beside the AIDEA BOARD track and steps back to wait, a plate reads \"POSTPONE FURTHER ACTION\"",
+        "reaction": "the order flutters in the hoop",
+        "ambient": "platform wind, a far horn"
+      },
+      "t": "16.970-19.500",
+      "key": 6
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 19.5,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On November 19th its board met behind closed doors and took no action. It resumes Friday.",
+      "phrase": "On November 19th its",
+      "shows": "the walnut boardroom door swings shut and its sign flips to CLOSED SESSION, a plate reads CLOSED SESSION",
+      "sfx": "door",
+      "means": "closed session",
+      "rehook": "",
+      "draw": {
+        "subject": "the walnut boardroom door",
+        "action": "swings shut and its sign flips to CLOSED SESSION",
+        "emotion": "uneasy",
+        "annotation": "CLOSED SESSION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "the walnut boardroom door swings shut and its sign flips to CLOSED SESSION, a plate reads CLOSED SESSION",
+        "reaction": "the sign swings",
+        "ambient": "a quiet room, a clock tick"
+      },
+      "t": "19.500-20.868",
+      "key": 8
+    },
+    {
+      "id": 10,
+      "shot": 3,
+      "at_s": 20.868,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.2,
+        "offset": 1.368
+      },
+      "offset": 1.368,
+      "vo": "On November 19th its board met behind closed doors and took no action. It resumes Friday.",
+      "phrase": "On November 19th its",
+      "shows": "the faceless wall clock spins its hands from 10 round to 3, a plate reads 10 A.M. TO 3 P.M. \u00b7 NO ACTION",
+      "sfx": "whirr",
+      "means": "10 a.m. to 3 p.m. \u00b7 no action",
+      "rehook": "",
+      "draw": {
+        "subject": "the faceless wall clock",
+        "action": "spins its hands from 10 round to 3",
+        "emotion": "tense",
+        "annotation": "10 A.M. TO 3 P.M. \u00b7 NO ACTION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "the faceless wall clock spins its hands from 10 round to 3, a plate reads 10 A.M. TO 3 P.M. \u00b7 NO ACTION",
+        "reaction": "the hands blur",
+        "ambient": "a quiet room, a clock tick"
+      },
+      "kick": true,
+      "t": "20.868-25.090",
+      "key": 9
+    },
+    {
+      "id": 11,
+      "shot": 3,
+      "at_s": 25.09,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 5.59
+      },
+      "offset": 5.59,
+      "vo": "On November 19th its board met behind closed doors and took no action. It resumes Friday.",
+      "phrase": "Friday.",
+      "shows": "a card on the walnut table drops onto the walnut table and lands beside a foil-covered pie, which jumps, a plate reads RESUMES FRIDAY \u00b7 NOVEMBER 27TH \u00b7 10 A.M.",
+      "sfx": "thunk",
+      "means": "resumes friday \u00b7 november 27th \u00b7 10 a.m.",
+      "rehook": "",
+      "draw": {
+        "subject": "a card on the walnut table",
+        "action": "drops onto the walnut table and lands beside a foil-covered pie, which jumps",
+        "emotion": "wry",
+        "annotation": "RESUMES FRIDAY \u00b7 NOVEMBER 27TH \u00b7 10 A.M."
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "a card on the walnut table drops onto the walnut table and lands beside a foil-covered pie, which jumps, a plate reads RESUMES FRIDAY \u00b7 NOVEMBER 27TH \u00b7 10 A.M.",
+        "reaction": "the foil crinkles",
+        "ambient": "a quiet room, a clock tick"
+      },
+      "t": "25.090-26.340",
+      "key": 10
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 26.34,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Its agenda lists the Arctic refuge and Ambler. No data center item.",
+      "phrase": "Its agenda lists the",
+      "shows": "a plain faceless grey diesel pulling boxcars stencilled ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE rolls along the closed AIDEA BOARD branch and out of frame, a plate reads PENDING AGENDA",
+      "sfx": "rumble",
+      "means": "pending agenda",
+      "rehook": "",
+      "draw": {
+        "subject": "a plain faceless grey diesel pulling boxcars stencilled ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE",
+        "action": "rolls along the closed AIDEA BOARD branch and out of frame",
+        "emotion": "steady",
+        "annotation": "PENDING AGENDA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c36"
+      ],
+      "choreo": {
+        "primary": "a plain faceless grey diesel pulling boxcars stencilled ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE rolls along the closed AIDEA BOARD branch and out of frame, a plate reads PENDING AGENDA",
+        "reaction": "the cars sway",
+        "ambient": "a passing train, wind"
+      },
+      "t": "26.340-28.630",
+      "key": 11
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 28.63,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 2.29
+      },
+      "offset": 2.29,
+      "vo": "Its agenda lists the Arctic refuge and Ambler. No data center item.",
+      "phrase": "Ambler. No data center",
+      "shows": "the switch stand's lever rattles in its keeper, still set to AIDEA BOARD, as the cars pass, a plate reads ANWR \u00b7 AMBLER \u00b7 PORT MACKENZIE",
+      "sfx": "rattle",
+      "means": "anwr \u00b7 ambler \u00b7 port mackenzie",
+      "rehook": "",
+      "draw": {
+        "subject": "the switch stand's lever",
+        "action": "rattles in its keeper, still set to AIDEA BOARD, as the cars pass",
+        "emotion": "uneasy",
+        "annotation": "ANWR \u00b7 AMBLER \u00b7 PORT MACKENZIE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c36"
+      ],
+      "choreo": {
+        "primary": "the switch stand's lever rattles in its keeper, still set to AIDEA BOARD, as the cars pass, a plate reads ANWR \u00b7 AMBLER \u00b7 PORT MACKENZIE",
+        "reaction": "the lever shivers",
+        "ambient": "a passing train, wind"
+      },
+      "t": "28.630-30.410",
+      "key": 12
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 30.41,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 4.07
+      },
+      "offset": 4.07,
+      "vo": "Its agenda lists the Arctic refuge and Ambler. No data center item.",
+      "phrase": "item.",
+      "shows": "the last car's free coupler swings loose as the train clears and the AIDEA BOARD branch behind it lies bare to the buffer stop, a plate reads NO DATA CENTER ITEM",
+      "sfx": "squeak",
+      "means": "no data center item",
+      "rehook": "rehook: the agenda train clears and the closed branch behind it lies bare to the buffer stop, NO DATA CENTER ITEM",
+      "draw": {
+        "subject": "the last car's free coupler",
+        "action": "swings loose as the train clears and the AIDEA BOARD branch behind it lies bare to the buffer stop",
+        "emotion": "puzzled",
+        "annotation": "NO DATA CENTER ITEM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c36"
+      ],
+      "choreo": {
+        "primary": "the last car's free coupler swings loose as the train clears and the AIDEA BOARD branch behind it lies bare to the buffer stop, a plate reads NO DATA CENTER ITEM",
+        "reaction": "the coupler swings",
+        "ambient": "a passing train, wind"
+      },
+      "t": "30.410-31.540",
+      "key": 13
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 31.54,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Data center pieces moved earlier. AIDEA's Alaska Data Corp got a twenty million dollar board vote.",
+      "phrase": "Data center pieces moved",
+      "shows": "a boxcar stencilled ALASKA DATA CORP on a yard spur on the AIDEA side is already rolling out of the yard, its taillight shrinking, a plate reads ALASKA DATA CORP \u00b7 AIDEA-OWNED \u00b7 FORMED IN MARCH",
+      "sfx": "clack",
+      "means": "alaska data corp \u00b7 aidea-owned \u00b7 formed in march",
+      "rehook": "",
+      "draw": {
+        "subject": "a boxcar stencilled ALASKA DATA CORP on a yard spur on the AIDEA side",
+        "action": "is already rolling out of the yard, its taillight shrinking",
+        "emotion": "steady",
+        "annotation": "ALASKA DATA CORP \u00b7 AIDEA-OWNED \u00b7 FORMED IN MARCH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c9"
+      ],
+      "choreo": {
+        "primary": "a boxcar stencilled ALASKA DATA CORP on a yard spur on the AIDEA side is already rolling out of the yard, its taillight shrinking, a plate reads ALASKA DATA CORP \u00b7 AIDEA-OWNED \u00b7 FORMED IN MARCH",
+        "reaction": "the taillight blinks and powder kicks off the wheels",
+        "ambient": "wind over snow, a far train"
+      },
+      "t": "31.540-36.330",
+      "key": 14
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 36.33,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 4.79
+      },
+      "offset": 4.79,
+      "vo": "Data center pieces moved earlier. AIDEA's Alaska Data Corp got a twenty million dollar board vote.",
+      "phrase": "twenty million dollar board",
+      "shows": "a coin sack tagged $20M thumps onto the boxcar's tail platform as it rolls, a plate reads $20M \u00b7 BOARD VOTE \u00b7 PER ADN",
+      "sfx": "coins",
+      "means": "$20m \u00b7 board vote \u00b7 per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "a coin sack tagged $20M",
+        "action": "thumps onto the boxcar's tail platform as it rolls",
+        "emotion": "steady",
+        "annotation": "$20M \u00b7 BOARD VOTE \u00b7 PER ADN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a coin sack tagged $20M thumps onto the boxcar's tail platform as it rolls, a plate reads $20M \u00b7 BOARD VOTE \u00b7 PER ADN",
+        "reaction": "the car dips on its springs",
+        "ambient": "wind over snow, a far train"
+      },
+      "t": "36.330-38.940",
+      "key": 15
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 38.94,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The chief executive of Plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation.",
+      "phrase": "The chief executive of",
+      "shows": "a painted billboard on the station platform facing the yard swings up into view on its two posts, a plate reads PLURAL CEO \u00b7 STATE'S PLATFORM PARTNER",
+      "sfx": "slide",
+      "means": "plural ceo \u00b7 state's platform partner",
+      "rehook": "",
+      "draw": {
+        "subject": "a painted billboard on the station platform facing the yard",
+        "action": "swings up into view on its two posts",
+        "emotion": "curious",
+        "annotation": "PLURAL CEO \u00b7 STATE'S PLATFORM PARTNER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c37"
+      ],
+      "choreo": {
+        "primary": "a painted billboard on the station platform facing the yard swings up into view on its two posts, a plate reads PLURAL CEO \u00b7 STATE'S PLATFORM PARTNER",
+        "reaction": "the board settles on its posts",
+        "ambient": "wind over snow"
+      },
+      "t": "38.940-42.970",
+      "key": 16
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 42.97,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 4.03
+      },
+      "offset": 4.03,
+      "vo": "The chief executive of Plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation.",
+      "phrase": "infrastructure behind AI one",
+      "shows": "the painted quote rolls onto the billboard word by word, a plate reads \"ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION\" \u00b7 PLURAL CEO, ON AI",
+      "sfx": "scratch",
+      "means": "\"one of the largest capital needs in a generation\" \u00b7 plural ceo, on ai",
+      "rehook": "",
+      "draw": {
+        "subject": "the painted quote",
+        "action": "rolls onto the billboard word by word",
+        "emotion": "curious",
+        "annotation": "\"ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION\" \u00b7 PLURAL CEO, ON AI"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c37"
+      ],
+      "choreo": {
+        "primary": "the painted quote rolls onto the billboard word by word, a plate reads \"ONE OF THE LARGEST CAPITAL NEEDS IN A GENERATION\" \u00b7 PLURAL CEO, ON AI",
+        "reaction": "paint glints",
+        "ambient": "wind over snow"
+      },
+      "t": "42.970-46.930",
+      "key": 41
+    },
+    {
+      "id": 19,
+      "shot": 6,
+      "at_s": 46.93,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 7.99
+      },
+      "offset": 7.99,
+      "vo": "The chief executive of Plural, the state's platform partner, calls the infrastructure behind AI one of the largest capital needs in a generation.",
+      "phrase": "generation.",
+      "shows": "an amber THE PITCH stamp slams onto the billboard corner, a plate reads THE PITCH \u00b7 NOT A PROJECT",
+      "sfx": "stamp",
+      "means": "the pitch \u00b7 not a project",
+      "rehook": "",
+      "draw": {
+        "subject": "an amber THE PITCH stamp",
+        "action": "slams onto the billboard corner",
+        "emotion": "wry",
+        "annotation": "THE PITCH \u00b7 NOT A PROJECT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c37"
+      ],
+      "choreo": {
+        "primary": "an amber THE PITCH stamp slams onto the billboard corner, a plate reads THE PITCH \u00b7 NOT A PROJECT",
+        "reaction": "the board shudders",
+        "ambient": "wind over snow"
+      },
+      "t": "46.930-48.460",
+      "key": 17
+    },
+    {
+      "id": 20,
+      "shot": 7,
+      "at_s": 48.46,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "On November 10th, the Department of Natural Resources approved giving AIDEA about sixty-eight hundred acres near Houston, free.",
+      "phrase": "On November 10th, the",
+      "shows": "a land plat of the Mat-Su with the Susitna River, pinned to a board by the tracks unrolls showing the pencilled 6,800 acre parcel near Houston, a plate reads DNR \u00b7 NOVEMBER 10TH",
+      "sfx": "page",
+      "means": "dnr \u00b7 november 10th",
+      "rehook": "",
+      "draw": {
+        "subject": "a land plat of the Mat-Su with the Susitna River, pinned to a board by the tracks",
+        "action": "unrolls showing the pencilled 6,800 acre parcel near Houston",
+        "emotion": "steady",
+        "annotation": "DNR \u00b7 NOVEMBER 10TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a land plat of the Mat-Su with the Susitna River, pinned to a board by the tracks unrolls showing the pencilled 6,800 acre parcel near Houston, a plate reads DNR \u00b7 NOVEMBER 10TH",
+        "reaction": "the paper curls",
+        "ambient": "wind, paper"
+      },
+      "t": "48.460-53.230",
+      "key": 18
+    },
+    {
+      "id": 21,
+      "shot": 7,
+      "at_s": 53.23,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.77
+      },
+      "offset": 4.77,
+      "vo": "On November 10th, the Department of Natural Resources approved giving AIDEA about sixty-eight hundred acres near Houston, free.",
+      "phrase": "hundred acres near Houston,",
+      "shows": "four push pins press into the plat's corners one after another as the parcel shades in, a plate reads 6,800 ACRES \u00b7 NEAR HOUSTON \u00b7 NO COST \u00b7 DNR, NOVEMBER 10TH",
+      "sfx": "pin",
+      "means": "6,800 acres \u00b7 near houston \u00b7 no cost \u00b7 dnr, november 10th",
+      "rehook": "",
+      "draw": {
+        "subject": "four push pins",
+        "action": "press into the plat's corners one after another as the parcel shades in",
+        "emotion": "steady",
+        "annotation": "6,800 ACRES \u00b7 NEAR HOUSTON \u00b7 NO COST \u00b7 DNR, NOVEMBER 10TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "four push pins press into the plat's corners one after another as the parcel shades in, a plate reads 6,800 ACRES \u00b7 NEAR HOUSTON \u00b7 NO COST \u00b7 DNR, NOVEMBER 10TH",
+        "reaction": "the paper flattens",
+        "ambient": "wind, paper"
+      },
+      "t": "53.230-56.860",
+      "key": 19
+    },
+    {
+      "id": 22,
+      "shot": 8,
+      "at_s": 56.86,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In July, AIDEA said the land could host logistics, manufacturing and scalable data centers.",
+      "phrase": "In July, AIDEA said",
+      "shows": "three small use cards spring up out of the snow on stakes one by one and land upright, a plate reads LOGISTICS \u00b7 MANUFACTURING \u00b7 \"SCALABLE DATA CENTERS\" \u00b7 AIDEA, JULY \u00b7 PER ALASKA BEACON",
+      "sfx": "pop",
+      "means": "logistics \u00b7 manufacturing \u00b7 \"scalable data centers\" \u00b7 aidea, july \u00b7 per alaska beacon",
+      "rehook": "",
+      "draw": {
+        "subject": "three small use cards",
+        "action": "spring up out of the snow on stakes one by one and land upright",
+        "emotion": "curious",
+        "annotation": "LOGISTICS \u00b7 MANUFACTURING \u00b7 \"SCALABLE DATA CENTERS\" \u00b7 AIDEA, JULY \u00b7 PER ALASKA BEACON"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "three small use cards spring up out of the snow on stakes one by one and land upright, a plate reads LOGISTICS \u00b7 MANUFACTURING \u00b7 \"SCALABLE DATA CENTERS\" \u00b7 AIDEA, JULY \u00b7 PER ALASKA BEACON",
+        "reaction": "the cards wobble",
+        "ambient": "wind over snow"
+      },
+      "t": "56.860-61.450",
+      "key": 20
+    },
+    {
+      "id": 23,
+      "shot": 8,
+      "at_s": 61.45,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.59
+      },
+      "offset": 4.59,
+      "vo": "In July, AIDEA said the land could host logistics, manufacturing and scalable data centers.",
+      "phrase": "scalable data centers.",
+      "shows": "the switch points beside the parcel slide over toward a siding that curves out of sight behind the birch, a plate reads COULD HOST",
+      "sfx": "swing",
+      "means": "could host",
+      "rehook": "",
+      "draw": {
+        "subject": "the switch points beside the parcel",
+        "action": "slide over toward a siding that curves out of sight behind the birch",
+        "emotion": "puzzled",
+        "annotation": "COULD HOST"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c22"
+      ],
+      "choreo": {
+        "primary": "the switch points beside the parcel slide over toward a siding that curves out of sight behind the birch, a plate reads COULD HOST",
+        "reaction": "the points clunk home",
+        "ambient": "wind over snow"
+      },
+      "t": "61.450-63.500",
+      "key": 21
+    },
+    {
+      "id": 24,
+      "shot": 9,
+      "at_s": 63.5,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here's the clock that counts. Reconsideration requests are due November 30th, then the department has thirty days.",
+      "phrase": "Here's the clock that",
+      "shows": "the faceless cast-iron switch stand at the fork near Houston, spruce and birch under the Talkeetna Mountains throws its lever with an overshoot and the target disc turns so its long shadow sweeps across both branches and settles on the open DNR track, a plate reads THE LAND'S CLOCK",
+      "sfx": "clank",
+      "means": "the land's clock",
+      "rehook": "rehook: the switch throws and the disc's long shadow swings onto the open track as the lamp flares",
+      "draw": {
+        "subject": "the faceless cast-iron switch stand at the fork near Houston, spruce and birch under the Talkeetna Mountains",
+        "action": "throws its lever with an overshoot and the target disc turns so its long shadow sweeps across both branches and settles on the open DNR track",
+        "emotion": "resolved",
+        "annotation": "THE LAND'S CLOCK"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "the faceless cast-iron switch stand at the fork near Houston, spruce and birch under the Talkeetna Mountains throws its lever with an overshoot and the target disc turns so its long shadow sweeps across both branches and settles on the open DNR track, a plate reads THE LAND'S CLOCK",
+        "reaction": "the lamp flares amber",
+        "ambient": "wind, wire hum"
+      },
+      "kick": true,
+      "t": "63.500-67.490",
+      "key": 22
+    },
+    {
+      "id": 25,
+      "shot": 9,
+      "at_s": 67.49,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 3.99
+      },
+      "offset": 3.99,
+      "vo": "Here's the clock that counts. Reconsideration requests are due November 30th, then the department has thirty days.",
+      "phrase": "November 30th, then the",
+      "shows": "an amber station sign on the DNR branch swings down on its chains as the lamp glows, a plate reads RECONSIDERATION DUE NOVEMBER 30TH \u00b7 DNR HAS 30 DAYS",
+      "sfx": "clink",
+      "means": "reconsideration due november 30th \u00b7 dnr has 30 days",
+      "rehook": "",
+      "draw": {
+        "subject": "an amber station sign on the DNR branch",
+        "action": "swings down on its chains as the lamp glows",
+        "emotion": "alert",
+        "annotation": "RECONSIDERATION DUE NOVEMBER 30TH \u00b7 DNR HAS 30 DAYS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "an amber station sign on the DNR branch swings down on its chains as the lamp glows, a plate reads RECONSIDERATION DUE NOVEMBER 30TH \u00b7 DNR HAS 30 DAYS",
+        "reaction": "the chains sway",
+        "ambient": "wind, wire hum"
+      },
+      "t": "67.490-72.000",
+      "key": 23
+    },
+    {
+      "id": 26,
+      "shot": 10,
+      "at_s": 72.0,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Count the ties. Thirty days runs past December 7th. The answer could land under the next governor.",
+      "phrase": "Count the ties. Thirty",
+      "shows": "12 ties on the short AIDEA BOARD branch lay on one by one to the buffer stop marked DECEMBER 7TH, a plate reads 12 DAYS TO DECEMBER 7TH",
+      "sfx": "thud",
+      "means": "12 days to december 7th",
+      "rehook": "",
+      "draw": {
+        "subject": "12 ties on the short AIDEA BOARD branch",
+        "action": "lay on one by one to the buffer stop marked DECEMBER 7TH",
+        "emotion": "steady",
+        "annotation": "12 DAYS TO DECEMBER 7TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "12 ties on the short AIDEA BOARD branch lay on one by one to the buffer stop marked DECEMBER 7TH, a plate reads 12 DAYS TO DECEMBER 7TH",
+        "reaction": "each tie thuds into the snow",
+        "ambient": "wind over snow"
+      },
+      "t": "72.000-73.430",
+      "key": 24
+    },
+    {
+      "id": 27,
+      "shot": 10,
+      "at_s": 73.43,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.43
+      },
+      "offset": 1.43,
+      "vo": "Count the ties. Thirty days runs past December 7th. The answer could land under the next governor.",
+      "phrase": "Thirty days runs past",
+      "shows": "5 bare ties then 30 laid ties on the open DNR branch lay one by one past the DECEMBER 7TH mark and off the frame edge as the view pulls wide, a plate reads 30 DAYS FROM NOVEMBER 30TH",
+      "sfx": "thump",
+      "means": "30 days from november 30th",
+      "rehook": "",
+      "draw": {
+        "subject": "5 bare ties then 30 laid ties on the open DNR branch",
+        "action": "lay one by one past the DECEMBER 7TH mark and off the frame edge as the view pulls wide",
+        "emotion": "tense",
+        "annotation": "30 DAYS FROM NOVEMBER 30TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "5 bare ties then 30 laid ties on the open DNR branch lay one by one past the DECEMBER 7TH mark and off the frame edge as the view pulls wide, a plate reads 30 DAYS FROM NOVEMBER 30TH",
+        "reaction": "the rails run off the edge",
+        "ambient": "wind over snow"
+      },
+      "t": "73.430-76.890",
+      "key": 25
+    },
+    {
+      "id": 28,
+      "shot": 10,
+      "at_s": 76.89,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.89
+      },
+      "offset": 4.89,
+      "vo": "Count the ties. Thirty days runs past December 7th. The answer could land under the next governor.",
+      "phrase": "could land under the",
+      "shows": "an amber signal lamp at the DECEMBER 7TH mark lights the word COULD, a plate reads COULD LAND UNDER THE NEXT GOVERNOR",
+      "sfx": "ding",
+      "means": "could land under the next governor",
+      "rehook": "",
+      "draw": {
+        "subject": "an amber signal lamp at the DECEMBER 7TH mark",
+        "action": "lights the word COULD",
+        "emotion": "uneasy",
+        "annotation": "COULD LAND UNDER THE NEXT GOVERNOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32",
+        "c1"
+      ],
+      "choreo": {
+        "primary": "an amber signal lamp at the DECEMBER 7TH mark lights the word COULD, a plate reads COULD LAND UNDER THE NEXT GOVERNOR",
+        "reaction": "the lamp pulses",
+        "ambient": "wind over snow"
+      },
+      "t": "76.890-79.500",
+      "key": 26
+    },
+    {
+      "id": 29,
+      "shot": 11,
+      "at_s": 79.5,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "He's said he'd support a data center moratorium until the state adopts rules. His team hasn't said whether he'd reverse this transfer.",
+      "phrase": "He's said he'd support",
+      "shows": "the faceless KREISS-TOMKINS Suit, the switch stand small far behind with its lever still on DNR and its amber lamp blinking steps past the DECEMBER 7TH post and lifts a card, a plate reads MORATORIUM UNTIL RULES \u00b7 PER ADN",
+      "sfx": "footstep",
+      "means": "moratorium until rules \u00b7 per adn",
+      "rehook": "",
+      "draw": {
+        "subject": "the faceless KREISS-TOMKINS Suit, the switch stand small far behind with its lever still on DNR and its amber lamp blinking",
+        "action": "steps past the DECEMBER 7TH post and lifts a card",
+        "emotion": "steady",
+        "annotation": "MORATORIUM UNTIL RULES \u00b7 PER ADN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "the faceless KREISS-TOMKINS Suit, the switch stand small far behind with its lever still on DNR and its amber lamp blinking steps past the DECEMBER 7TH post and lifts a card, a plate reads MORATORIUM UNTIL RULES \u00b7 PER ADN",
+        "reaction": "the card catches the sun",
+        "ambient": "wind over snow, a far horn"
+      },
+      "t": "79.500-84.490",
+      "key": 27
+    },
+    {
+      "id": 30,
+      "shot": 11,
+      "at_s": 84.49,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 4.99
+      },
+      "offset": 4.99,
+      "vo": "He's said he'd support a data center moratorium until the state adopts rules. His team hasn't said whether he'd reverse this transfer.",
+      "phrase": "team hasn't said whether",
+      "shows": "a blank question tag on the parcel stake swings on its nail and spins while the Suit looks from his card to it and does not reach, a plate reads REVERSE THE TRANSFER? HIS TEAM HASN'T SAID",
+      "sfx": "flutter",
+      "means": "reverse the transfer? his team hasn't said",
+      "rehook": "",
+      "draw": {
+        "subject": "a blank question tag on the parcel stake",
+        "action": "swings on its nail and spins while the Suit looks from his card to it and does not reach",
+        "emotion": "unsure",
+        "annotation": "REVERSE THE TRANSFER? HIS TEAM HASN'T SAID"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c34"
+      ],
+      "choreo": {
+        "primary": "a blank question tag on the parcel stake swings on its nail and spins while the Suit looks from his card to it and does not reach, a plate reads REVERSE THE TRANSFER? HIS TEAM HASN'T SAID",
+        "reaction": "the tag twists",
+        "ambient": "wind over snow, a far horn"
+      },
+      "t": "84.490-87.760",
+      "key": 28
+    },
+    {
+      "id": 31,
+      "shot": 12,
+      "at_s": 87.76,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "AIDEA's executive director, Randy Ruaro, said they're not rapidly moving through projects without due diligence.",
+      "phrase": "AIDEA's executive director, Randy",
+      "shows": "a faceless Suit with a name card RANDY RUARO at the AIDEA buffer stop under the lit window card sets a thick binder stack on the buffer and squares its edges, a plate reads RANDY RUARO \u00b7 AIDEA EXECUTIVE DIRECTOR",
+      "sfx": "thock",
+      "means": "randy ruaro \u00b7 aidea executive director",
+      "rehook": "",
+      "draw": {
+        "subject": "a faceless Suit with a name card RANDY RUARO at the AIDEA buffer stop under the lit window card",
+        "action": "sets a thick binder stack on the buffer and squares its edges",
+        "emotion": "steady",
+        "annotation": "RANDY RUARO \u00b7 AIDEA EXECUTIVE DIRECTOR"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "a faceless Suit with a name card RANDY RUARO at the AIDEA buffer stop under the lit window card sets a thick binder stack on the buffer and squares its edges, a plate reads RANDY RUARO \u00b7 AIDEA EXECUTIVE DIRECTOR",
+        "reaction": "the binders thump down",
+        "ambient": "wind, a dripping tower"
+      },
+      "t": "87.760-91.450",
+      "key": 29
+    },
+    {
+      "id": 32,
+      "shot": 12,
+      "at_s": 91.45,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 3.69
+      },
+      "offset": 3.69,
+      "vo": "AIDEA's executive director, Randy Ruaro, said they're not rapidly moving through projects without due diligence.",
+      "phrase": "rapidly moving through projects",
+      "shows": "the binder stack's page tabs flutter as the RUARO Suit taps the stack square, a plate reads \"NOT RAPIDLY MOVING THROUGH PROJECTS WITHOUT DUE DILIGENCE\" \u00b7 RANDY RUARO",
+      "sfx": "page",
+      "means": "\"not rapidly moving through projects without due diligence\" \u00b7 randy ruaro",
+      "rehook": "",
+      "draw": {
+        "subject": "the binder stack's page tabs",
+        "action": "flutter as the RUARO Suit taps the stack square",
+        "emotion": "steady",
+        "annotation": "\"NOT RAPIDLY MOVING THROUGH PROJECTS WITHOUT DUE DILIGENCE\" \u00b7 RANDY RUARO"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "the binder stack's page tabs flutter as the RUARO Suit taps the stack square, a plate reads \"NOT RAPIDLY MOVING THROUGH PROJECTS WITHOUT DUE DILIGENCE\" \u00b7 RANDY RUARO",
+        "reaction": "the tabs settle",
+        "ambient": "wind, a dripping tower"
+      },
+      "t": "91.450-94.980",
+      "key": 42
+    },
+    {
+      "id": 33,
+      "shot": 13,
+      "at_s": 94.98,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The land was cut from nearly twenty thousand acres, and reverts to the state if AIDEA fails to develop it.",
+      "phrase": "The land was cut",
+      "shows": "three flatcars stencilled ACRES on the open siding uncouple, two rolling away and one staying, a plate reads NEARLY 20,000 TO 6,800 ACRES",
+      "sfx": "clank",
+      "means": "nearly 20,000 to 6,800 acres",
+      "rehook": "",
+      "draw": {
+        "subject": "three flatcars stencilled ACRES on the open siding",
+        "action": "uncouple, two rolling away and one staying",
+        "emotion": "steady",
+        "annotation": "NEARLY 20,000 TO 6,800 ACRES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21",
+        "c20"
+      ],
+      "choreo": {
+        "primary": "three flatcars stencilled ACRES on the open siding uncouple, two rolling away and one staying, a plate reads NEARLY 20,000 TO 6,800 ACRES",
+        "reaction": "the couplers clank",
+        "ambient": "couplers, wind"
+      },
+      "t": "94.980-97.150",
+      "key": 31
+    },
+    {
+      "id": 34,
+      "shot": 13,
+      "at_s": 97.15,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 2.17
+      },
+      "offset": 2.17,
+      "vo": "The land was cut from nearly twenty thousand acres, and reverts to the state if AIDEA fails to develop it.",
+      "phrase": "acres, and reverts to",
+      "shows": "a coupler chain tagged REVERSION CLAUSE from the one ACRES car to a STATE OF ALASKA post draws taut but does not pull, a plate reads REVERSION CLAUSE \u00b7 BACK TO THE STATE IF NOT DEVELOPED",
+      "sfx": "chain",
+      "means": "reversion clause \u00b7 back to the state if not developed",
+      "rehook": "",
+      "draw": {
+        "subject": "a coupler chain tagged REVERSION CLAUSE from the one ACRES car to a STATE OF ALASKA post",
+        "action": "draws taut but does not pull",
+        "emotion": "steady",
+        "annotation": "REVERSION CLAUSE \u00b7 BACK TO THE STATE IF NOT DEVELOPED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c26"
+      ],
+      "choreo": {
+        "primary": "a coupler chain tagged REVERSION CLAUSE from the one ACRES car to a STATE OF ALASKA post draws taut but does not pull, a plate reads REVERSION CLAUSE \u00b7 BACK TO THE STATE IF NOT DEVELOPED",
+        "reaction": "the chain hums taut",
+        "ambient": "couplers, wind"
+      },
+      "t": "97.150-98.130",
+      "key": 32
+    },
+    {
+      "id": 35,
+      "shot": 13,
+      "at_s": 98.13,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 3.15
+      },
+      "offset": 3.15,
+      "vo": "The land was cut from nearly twenty thousand acres, and reverts to the state if AIDEA fails to develop it.",
+      "phrase": "reverts to the state",
+      "shows": "a DNR stamp lands on the ACRES car's plat card, a plate reads THE TRANSFER \u00b7 NOT THE USE \u00b7 DNR, PER MAT-SU SENTINEL",
+      "sfx": "stamp",
+      "means": "the transfer \u00b7 not the use \u00b7 dnr, per mat-su sentinel",
+      "rehook": "",
+      "draw": {
+        "subject": "a DNR stamp",
+        "action": "lands on the ACRES car's plat card",
+        "emotion": "steady",
+        "annotation": "THE TRANSFER \u00b7 NOT THE USE \u00b7 DNR, PER MAT-SU SENTINEL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c35"
+      ],
+      "choreo": {
+        "primary": "a DNR stamp lands on the ACRES car's plat card, a plate reads THE TRANSFER \u00b7 NOT THE USE \u00b7 DNR, PER MAT-SU SENTINEL",
+        "reaction": "the card jumps",
+        "ambient": "couplers, wind"
+      },
+      "t": "98.130-101.560",
+      "key": 46
+    },
+    {
+      "id": 36,
+      "shot": 14,
+      "at_s": 101.56,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Against that, more than twenty-three hundred comments, mostly opposed, and a Mat-Su Borough request to reconsider.",
+      "phrase": "Against that, more than",
+      "shows": "canvas mail sacks drop one after another onto a freight scale and the view rises to show sacks stacked down the whole platform, a plate reads 2,300+ COMMENTS",
+      "sfx": "thump",
+      "means": "2,300+ comments",
+      "rehook": "rehook: canvas mail sacks drop one after another onto a freight scale",
+      "draw": {
+        "subject": "canvas mail sacks",
+        "action": "drop one after another onto a freight scale and the view rises to show sacks stacked down the whole platform",
+        "emotion": "steady",
+        "annotation": "2,300+ COMMENTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "canvas mail sacks drop one after another onto a freight scale and the view rises to show sacks stacked down the whole platform, a plate reads 2,300+ COMMENTS",
+        "reaction": "the scale needle swings",
+        "ambient": "wind, canvas"
+      },
+      "t": "101.560-105.250",
+      "key": 33
+    },
+    {
+      "id": 37,
+      "shot": 14,
+      "at_s": 105.25,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 3.69
+      },
+      "offset": 3.69,
+      "vo": "Against that, more than twenty-three hundred comments, mostly opposed, and a Mat-Su Borough request to reconsider.",
+      "phrase": "opposed, and a Mat-Su",
+      "shows": "the freight scale needle swings hard toward MOSTLY OPPOSED and bounces, a plate reads MOSTLY OPPOSED",
+      "sfx": "ratchet",
+      "means": "mostly opposed",
+      "rehook": "",
+      "draw": {
+        "subject": "the freight scale needle",
+        "action": "swings hard toward MOSTLY OPPOSED and bounces",
+        "emotion": "steady",
+        "annotation": "MOSTLY OPPOSED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c28"
+      ],
+      "choreo": {
+        "primary": "the freight scale needle swings hard toward MOSTLY OPPOSED and bounces, a plate reads MOSTLY OPPOSED",
+        "reaction": "the needle bounces",
+        "ambient": "wind, canvas"
+      },
+      "t": "105.250-106.780",
+      "key": 43
+    },
+    {
+      "id": 38,
+      "shot": 14,
+      "at_s": 106.78,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 5.22
+      },
+      "offset": 5.22,
+      "vo": "Against that, more than twenty-three hundred comments, mostly opposed, and a Mat-Su Borough request to reconsider.",
+      "phrase": "Borough request to reconsider.",
+      "shows": "an envelope stamped MAT-SU BOROUGH slides onto the pile and its letter unfolds with a hand-drawn arrow to POINT MACKENZIE INSTEAD while the switch stand at mid-ground shivers in its DNR notch, a plate reads MAT-SU BOROUGH \u00b7 REQUEST TO RECONSIDER",
+      "sfx": "paper",
+      "means": "mat-su borough \u00b7 request to reconsider",
+      "rehook": "",
+      "draw": {
+        "subject": "an envelope stamped MAT-SU BOROUGH",
+        "action": "slides onto the pile and its letter unfolds with a hand-drawn arrow to POINT MACKENZIE INSTEAD while the switch stand at mid-ground shivers in its DNR notch",
+        "emotion": "steady",
+        "annotation": "MAT-SU BOROUGH \u00b7 REQUEST TO RECONSIDER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c30"
+      ],
+      "choreo": {
+        "primary": "an envelope stamped MAT-SU BOROUGH slides onto the pile and its letter unfolds with a hand-drawn arrow to POINT MACKENZIE INSTEAD while the switch stand at mid-ground shivers in its DNR notch, a plate reads MAT-SU BOROUGH \u00b7 REQUEST TO RECONSIDER",
+        "reaction": "the letter flaps",
+        "ambient": "wind, canvas"
+      },
+      "t": "106.780-109.280",
+      "key": 34
+    },
+    {
+      "id": 39,
+      "shot": 15,
+      "at_s": 109.28,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In July, AIDEA wrote it had no committed tenant, power source, cooling or schedule.",
+      "phrase": "In July, AIDEA wrote",
+      "shows": "an empty boxcar coupled ahead of the one ACRES car on the open siding rolls its doors open on nothing inside, a plate reads NO TENANT \u00b7 NO POWER SOURCE \u00b7 NO COOLING \u00b7 NO SCHEDULE \u00b7 AIDEA, JULY",
+      "sfx": "slide",
+      "means": "no tenant \u00b7 no power source \u00b7 no cooling \u00b7 no schedule \u00b7 aidea, july",
+      "rehook": "",
+      "draw": {
+        "subject": "an empty boxcar coupled ahead of the one ACRES car on the open siding",
+        "action": "rolls its doors open on nothing inside",
+        "emotion": "puzzled",
+        "annotation": "NO TENANT \u00b7 NO POWER SOURCE \u00b7 NO COOLING \u00b7 NO SCHEDULE \u00b7 AIDEA, JULY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "an empty boxcar coupled ahead of the one ACRES car on the open siding rolls its doors open on nothing inside, a plate reads NO TENANT \u00b7 NO POWER SOURCE \u00b7 NO COOLING \u00b7 NO SCHEDULE \u00b7 AIDEA, JULY",
+        "reaction": "dust drifts in the empty car",
+        "ambient": "wind in an empty car"
+      },
+      "t": "109.280-113.750",
+      "key": 35
+    },
+    {
+      "id": 40,
+      "shot": 15,
+      "at_s": 113.75,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 4.47
+      },
+      "offset": 4.47,
+      "vo": "In July, AIDEA wrote it had no committed tenant, power source, cooling or schedule.",
+      "phrase": "cooling or schedule.",
+      "shows": "a puff of air-brake exhaust blows through the empty car and out the far door, a plate reads NO COOLING \u00b7 NO SCHEDULE",
+      "sfx": "hiss",
+      "means": "no cooling \u00b7 no schedule",
+      "rehook": "",
+      "draw": {
+        "subject": "a puff of air-brake exhaust",
+        "action": "blows through the empty car and out the far door",
+        "emotion": "puzzled",
+        "annotation": "NO COOLING \u00b7 NO SCHEDULE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "a puff of air-brake exhaust blows through the empty car and out the far door, a plate reads NO COOLING \u00b7 NO SCHEDULE",
+        "reaction": "dust swirls",
+        "ambient": "wind in an empty car"
+      },
+      "t": "113.750-115.860",
+      "key": 44
+    },
+    {
+      "id": 41,
+      "shot": 15,
+      "at_s": 115.86,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Here, rules first would stall no project AIDEA has named.",
+      "phrase": "Here, rules first would",
+      "shows": "new ties stencilled RULES lay themselves ahead of the empty boxcar, which waits, a plate reads \"HAS NOT IDENTIFIED A SPECIFIC PROJECT\" \u00b7 AIDEA",
+      "sfx": "thunk",
+      "means": "\"has not identified a specific project\" \u00b7 aidea",
+      "rehook": "",
+      "draw": {
+        "subject": "new ties stencilled RULES",
+        "action": "lay themselves ahead of the empty boxcar, which waits",
+        "emotion": "hopeful",
+        "annotation": "\"HAS NOT IDENTIFIED A SPECIFIC PROJECT\" \u00b7 AIDEA"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c25"
+      ],
+      "choreo": {
+        "primary": "new ties stencilled RULES lay themselves ahead of the empty boxcar, which waits, a plate reads \"HAS NOT IDENTIFIED A SPECIFIC PROJECT\" \u00b7 AIDEA",
+        "reaction": "frost breath at the coupling",
+        "ambient": "wind in an empty car"
+      },
+      "t": "115.860-120.320",
+      "key": 36
+    },
+    {
+      "id": 42,
+      "shot": 16,
+      "at_s": 120.32,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The board's clock says Friday. The land's says November 30th. What should Alaska lay down first, rules or a tenant?",
+      "phrase": "The board's clock says",
+      "shows": "the boardroom window card at the buffer stop flicks on bright with FRIDAY in ivory, a plate reads FRIDAY",
+      "sfx": "click",
+      "means": "friday",
+      "rehook": "",
+      "draw": {
+        "subject": "the boardroom window card at the buffer stop",
+        "action": "flicks on bright with FRIDAY in ivory",
+        "emotion": "steady",
+        "annotation": "FRIDAY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "the boardroom window card at the buffer stop flicks on bright with FRIDAY in ivory, a plate reads FRIDAY",
+        "reaction": "the card glows",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "t": "120.320-123.550",
+      "key": 37
+    },
+    {
+      "id": 43,
+      "shot": 16,
+      "at_s": 123.55,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 3.23
+      },
+      "offset": 3.23,
+      "vo": "The board's clock says Friday. The land's says November 30th. What should Alaska lay down first, rules or a tenant?",
+      "phrase": "November 30th. What should",
+      "shows": "the second switch's lever begins a slow lean toward RULES FIRST as its lamp lights, a plate reads NOVEMBER 30TH",
+      "sfx": "clink",
+      "means": "november 30th",
+      "rehook": "",
+      "draw": {
+        "subject": "the second switch's lever",
+        "action": "begins a slow lean toward RULES FIRST as its lamp lights",
+        "emotion": "steady",
+        "annotation": "NOVEMBER 30TH"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c32"
+      ],
+      "choreo": {
+        "primary": "the second switch's lever begins a slow lean toward RULES FIRST as its lamp lights, a plate reads NOVEMBER 30TH",
+        "reaction": "far off, the amber NOVEMBER 30TH sign swings on its chains and glows",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "t": "123.550-126.610",
+      "key": 45
+    },
+    {
+      "id": 44,
+      "shot": 16,
+      "at_s": 126.61,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 6.29
+      },
+      "offset": 6.29,
+      "vo": "The board's clock says Friday. The land's says November 30th. What should Alaska lay down first, rules or a tenant?",
+      "phrase": "first, rules or a",
+      "shows": "a second switch stand where the open branch splits again past the siding points, one leg laid with RULES ties and the other holding the empty boxcar stops its slow swing caught mid-throw between the RULES FIRST leg and the TENANT FIRST leg, a plate reads RULES OR A TENANT?",
+      "sfx": "creak",
+      "means": "rules or a tenant?",
+      "rehook": "",
+      "draw": {
+        "subject": "a second switch stand where the open branch splits again past the siding points, one leg laid with RULES ties and the other holding the empty boxcar",
+        "action": "stops its slow swing caught mid-throw between the RULES FIRST leg and the TENANT FIRST leg",
+        "emotion": "unsure",
+        "annotation": "RULES OR A TENANT?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a second switch stand where the open branch splits again past the siding points, one leg laid with RULES ties and the other holding the empty boxcar stops its slow swing caught mid-throw between the RULES FIRST leg and the TENANT FIRST leg, a plate reads RULES OR A TENANT?",
+        "reaction": "the lever trembles",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "kick": true,
+      "t": "126.610-127.610",
+      "key": 38
+    },
+    {
+      "id": 45,
+      "shot": 16,
+      "at_s": 127.61,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 7.29
+      },
+      "offset": 7.29,
+      "vo": "The board's clock says Friday. The land's says November 30th. What should Alaska lay down first, rules or a tenant?",
+      "phrase": "rules or a tenant?",
+      "shows": "the second switch's lever, holding mid-throw, with the main stand small behind still on DNR and its lamp flaring trembles as a gust of powder rolls across both legs and lands on it, a plate reads WHICH FIRST?",
+      "sfx": "hiss",
+      "means": "which first?",
+      "rehook": "",
+      "draw": {
+        "subject": "the second switch's lever, holding mid-throw, with the main stand small behind still on DNR and its lamp flaring",
+        "action": "trembles as a gust of powder rolls across both legs and lands on it",
+        "emotion": "steady",
+        "annotation": "WHICH FIRST?"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the second switch's lever, holding mid-throw, with the main stand small behind still on DNR and its lamp flaring trembles as a gust of powder rolls across both legs and lands on it, a plate reads WHICH FIRST?",
+        "reaction": "powder lands on the lever",
+        "ambient": "light wind over snow, wire hum"
+      },
+      "t": "127.610-128.640",
+      "key": 39
+    }
+  ]
+}
