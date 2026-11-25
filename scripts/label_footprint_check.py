@@ -29,7 +29,14 @@ A label FAILS when, for 15 or more observed frames (0.5 s) in a row, it is eithe
 the 1080x1920 frame or between 6 and 90 percent covered. Observed means first to last sampled
 frame inclusive, so at the default step of 3 it takes six consecutive samples, and a stamp head
 passing over a card for 13 frames is a NOTE, not a FAIL. A label covered 90 percent or more is
-not clipped text, it is not shown, so it is a NOTE too, and so is a label wholly off frame.
+not clipped text, it is not shown, and a label wholly off frame is a NOTE.
+
+A label fully covered for 0.5 s or more FAILS as hidden (machine pass 2026-11-25, queue item
+covered-label-only-a-note). 11-25 drew 'BOARD · FRIDAY' and then parked the TENANT FIRST card on
+it for 10.3 s; this gate printed that as a NOTE beside the clean verdict, and it was the very label
+the editor's hard blocker required, found a cut later. A label nobody can read is either a defect
+or ink with no job. When the cover is the point (a card stacked on a card, a notice replaced) mark
+the label or its group `data-hidden="ok"` in source and the run stays a NOTE.
 
 It also FAILS a label that faces the reader wrong for 0.5 s or more: turned past 100 degrees, so
 upside down, or mirrored (machine pass 2026-11-15, after 11-15's turned-over timer read "60" as
@@ -88,7 +95,8 @@ def aggregate(data):
             return
         frames = run["last"] - run["first"] + 1
         run["frames"] = frames
-        if run["kind"] in ("cut", "clipped") and frames >= MIN_FRAMES:
+        if frames >= MIN_FRAMES and (run["kind"] in ("cut", "clipped")
+                                     or (run["kind"] == "hidden" and not run.get("hidden_ok"))):
             fails.append(run)
         else:
             notes.append(run)
@@ -116,7 +124,7 @@ def aggregate(data):
                 run = {"id": lid, "shot": s["shot"], "text": lab["text"], "first": s["frame"],
                        "last": s["frame"], "kind": st, "kind_class": "hide" if st == "hidden" else "defect",
                        "max_frac": 0.0, "by": {}, "side": {}, "box": lab.get("box"), "samples": 0,
-                       "by_box": {}}
+                       "by_box": {}, "hidden_ok": bool(lab.get("hiddenOk"))}
                 open_runs[lid] = run
             run["last"] = s["frame"]
             run["samples"] += 1
@@ -243,6 +251,8 @@ REMEDY = {
            "retire it before the push-in, or hang it in the Frame overlay",
     "clipped": "move the label or the art clear of each other for the shot, retire the label before "
                "the art arrives, or draw the art behind it; if the label has no job here, don't draw it",
+    "hidden": "move the covering card or prop off the label, retire the label before the cover arrives, "
+              "or, when the cover is the point, mark the label's group data-hidden=\"ok\"",
     "facing": "counter-rotate the <text> inside the turning group (rotate(-angle) about its own centre) so "
               "it stays upright, or hide it while the prop is past a quarter turn; never let a turn carry a label",
 }
@@ -288,7 +298,8 @@ def report(data, rel):
               + (f", and {len(fails)} cut by art or the frame edge." if fails else "."))
         return 1, fails + facing, notes
     if fails:
-        print(f"\nlabel_footprint_check: {len(fails)} label(s) cut by art or by the frame edge for 0.5 s or more.")
+        print(f"\nlabel_footprint_check: {len(fails)} label(s) cut or fully covered by art, or cut by the frame edge, "
+              "for 0.5 s or more.")
         return 1, fails, notes
     print("label_footprint_check: clean, no label is cut by art or the frame edge, or faces the reader wrong, "
           "for 0.5 s or more")
@@ -318,7 +329,13 @@ def self_test():
     expect("five samples observe 13 frames, a note and not a fail", not f and n and n[0]["frames"] == 13)
     d = {"samples": series(range(0, 30, 3), lambda f: [lab(1, 1.0)]), "frames": 10, "step": 3}
     f, n, _ = aggregate(d)
-    expect("a fully covered label is not shown, so it is a note", not f and n[0]["kind"] == "hidden")
+    expect("a label fully covered for 28 observed frames fails as hidden", len(f) == 1 and f[0]["kind"] == "hidden")
+    d = {"samples": series(range(0, 30, 3), lambda f: [dict(lab(1, 1.0), hiddenOk=True)]), "frames": 10, "step": 3}
+    f, n, _ = aggregate(d)
+    expect("a fully covered label marked data-hidden=ok is a note", not f and n[0]["kind"] == "hidden")
+    d = {"samples": series(range(0, 12, 3), lambda f: [lab(1, 1.0)]), "frames": 4, "step": 3}
+    f, n, _ = aggregate(d)
+    expect("a label fully covered for 10 frames is a note", not f and n[0]["kind"] == "hidden")
     d = {"samples": series(range(0, 30, 3), lambda f: [lab(1, 0.03)]), "frames": 10, "step": 3}
     f, n, _ = aggregate(d)
     expect("a speck over 3 percent of a label is not a defect", not f and not n)
@@ -368,10 +385,13 @@ def self_test():
     expect("fixture: the clean label is not flagged", not any(r["text"] == "CLEAR LABEL" for r in f + n))
     expect("fixture: the label a ball crosses for 9 frames is a note, not a fail",
            not any(r["text"] == "BRIEF PASS" for r in f) and any(r["text"] == "BRIEF PASS" for r in n))
-    expect("fixture: the fully covered label is a hidden note",
-           any(r["text"] == "UNDER THE CARD" and r["kind"] == "hidden" for r in n))
+    expect("fixture: the label fully covered all shot fails as hidden",
+           any(r["text"] == "UNDER THE CARD" and r["kind"] == "hidden" for r in f))
+    expect("fixture: the covered label marked data-hidden=ok is a hidden note",
+           any(r["text"] == "STACKED ON PURPOSE" and r["kind"] == "hidden" for r in n)
+           and not any(r["text"] == "STACKED ON PURPOSE" for r in f))
     expect("fixture: the plate's own rect never counts against its text", not any(r["text"] == "ON ITS PLATE" for r in f + n))
-    expect("fixture: exactly two fails", len(f) == 2)
+    expect("fixture: exactly three fails", len(f) == 3)
     turned = aggregate_facing(data)
     expect("fixture: the turned-over timer label fails as turned",
            [(r["text"], r["kind"]) for r in turned] == [("60 MIN", "turned")])
