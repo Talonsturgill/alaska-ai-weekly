@@ -86,8 +86,8 @@ export const SwitchStand: React.FC<{x: number; y: number; scale?: number; f: num
       {shadow !== null && (
         <g transform={`rotate(${shadow}) scale(1 ${shadowLen})`}>
           <path d={`M 0 4 L ${-dr * 0.6} 6 L ${-dr * 0.9} 520 L ${dr * 0.9} 520 L ${dr * 0.6} 6 Z`} fill={RAIL.snowShade} opacity={0.0} />
-          <rect x={-8} y={0} width={16} height={560} fill={RAIL.snowShade} opacity={0.45} />
-          <ellipse cx={0} cy={620} rx={dr * 1.1 * Math.max(0.15, Math.abs(a))} ry={dr * 0.5} fill={RAIL.snowShade} opacity={0.5} />
+          <rect x={-22} y={0} width={44} height={560} fill={RAIL.snowShade} opacity={0.62} />
+          <ellipse cx={0} cy={620} rx={dr * 1.3 * Math.max(0.2, Math.abs(a))} ry={dr * 0.7} fill={RAIL.snowShade} opacity={0.65} />
         </g>
       )}
       <ContactShadow cx={0} cy={4} rx={80} ry={12} opacity={0.4} />
@@ -173,7 +173,7 @@ export const RailLine: React.FC<{x0: number; y0: number; x1: number; y1: number;
       continue;
     }
     tiesEl.push(
-      <g key={i} opacity={frac}>
+      <g key={i} opacity={Math.min(1, frac * 2)} transform={`translate(0 ${-34 * (1 - frac) * (1 - frac)})`}>
         <path d={`M ${cx - nx * tl / 2 + 3} ${cy - ny * tl / 2 + 5} L ${cx + nx * tl / 2 + 3} ${cy + ny * tl / 2 + 5}`} stroke="#000" strokeOpacity={0.18} strokeWidth={step * 0.42} />
         <path d={`M ${cx - nx * tl / 2} ${cy - ny * tl / 2} L ${cx + nx * tl / 2} ${cy + ny * tl / 2}`} stroke={i === glowTie ? RAIL.amber : dashed ? 'none' : RAIL.tie} strokeWidth={step * 0.42} strokeLinecap="butt" />
         {dashed && <path d={`M ${cx - nx * tl / 2} ${cy - ny * tl / 2} L ${cx + nx * tl / 2} ${cy + ny * tl / 2}`} stroke={RAIL.tie} strokeWidth={step * 0.42} strokeDasharray="10 8" opacity={0.65} />}
@@ -407,6 +407,8 @@ export const SusitnaBG: React.FC<{f: number; ground?: number; seed?: number; dri
       {[0, 1, 2].map((i) => (
         <ellipse key={i} cx={((i * 420 + f * (0.25 + i * 0.1) + seed * 90) % 1500) - 200} cy={ground - 620 - i * 160} rx={170 + i * 30} ry={26} fill="#FFFFFF" opacity={0.35} data-band="ok" />
       ))}
+      {!range && <path d={`M ${-100 + f * 1.2} ${ground - 640} q 300 -40 ${700 + f * 0.5} -90`} stroke="#FFFFFF" strokeWidth={6} fill="none" opacity={0.7} data-band="ok" />}
+      {!range && Array.from({length: 18}, (_, i) => <Spruce key={`w${i}`} x={-60 + i * 66} y={ground + 10} h={220 + h01(i, seed + 30) * 140} seed={i + 40} tone={i % 2 ? RAIL.spruce : RAIL.spruceL} />)}
       {range && (
         <g transform={`translate(${drift * 0.2} 0)`} data-band="ok">
           <path d={range1} fill="#9DB3C4" stroke={INK} strokeWidth={3} strokeLinejoin="round" opacity={0.95} />

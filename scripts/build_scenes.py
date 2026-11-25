@@ -710,6 +710,11 @@ _HOST_NAMES = {
     "adn.com": "ANCHORAGE DAILY NEWS",
     "alaskapublic.org": "ALASKA PUBLIC MEDIA",
     "alaskabeacon.com": "ALASKA BEACON",
+    # KTOO republishes Alaska Beacon stories; credit the newsroom that reported it (2026-11-25, OCR also misread KTOO.ORG).
+    "ktoo.org": "ALASKA BEACON",
+    "mustreadalaska.com": "MUST READ ALASKA",
+    "prnewswire.com": "PR NEWSWIRE",
+    "aidea.org": "AIDEA",
 }
 
 

@@ -29,7 +29,7 @@ B = [
  (6, 2, W("postpone"), "paper", "the KREISS-TOMKINS Suit", "clips a paper order onto the tall train-order hoop beside the AIDEA BOARD track and steps back to wait", "steady", "\"POSTPONE FURTHER ACTION\"", "the order flutters in the hoop", ""),
  (7, 2, 0.0, "clink", "a brass plate on the platform post", "swings out on its bracket", "steady", "AIDEA · A PUBLIC CORPORATION OF THE STATE", "the plate swings", ""),
  (8, 3, 0.0, "door", "the walnut boardroom door", "swings shut and its sign flips to CLOSED SESSION", "uneasy", "CLOSED SESSION", "the sign swings", ""),
- (9, 3, W("three"), "whirr", "the faceless wall clock", "spins its hands from 10 round to 3", "tense", "10 A.M. TO 3 P.M. · NO ACTION", "the hands blur", ""),
+ (9, 3, 0.2, "whirr", "the faceless wall clock", "spins its hands from 10 round to 3", "tense", "10 A.M. TO 3 P.M. · NO ACTION", "the hands blur", ""),
  (10, 3, W("Friday"), "thunk", "a card on the walnut table", "drops onto the walnut table and lands beside a foil-covered pie, which jumps", "wry", "RESUMES FRIDAY · NOVEMBER 27TH · 10 A.M.", "the foil crinkles", ""),
  (11, 4, 0.0, "rumble", "a plain faceless grey diesel pulling boxcars stencilled ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE", "rolls along the closed AIDEA BOARD branch and out of frame", "steady", "PENDING AGENDA", "the cars sway", ""),
  (12, 4, W("Ambler"), "rattle", "the switch stand's lever", "rattles in its keeper, still set to AIDEA BOARD, as the cars pass", "uneasy", "ANWR · AMBLER · PORT MACKENZIE", "the lever shivers", ""),

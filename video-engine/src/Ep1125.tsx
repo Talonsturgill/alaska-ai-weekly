@@ -360,7 +360,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <SusitnaBG f={f} ground={1150} seed={3} drift={-f * 0.25} birches={[60, 150, 980]} />
         <Fork f={f} windowLit={ease(f, b(2), 8) + (f > b(40) && f < b(40) + 20 && Math.sin(f) > 0 ? 0.6 : 0)} />
         <HeldTravel f={f} x={300} y={880} w={280} h={460} mode="sweep" seed={1}>
-          <SwitchStand x={430} y={1300} scale={1.3} f={f} throw={throwV} turn={0} lamp={0.2 + 0.8 * flare} cues={[b(1) + 6, b(2), b(3)]} shadow={84} shadowLen={lerp(0.7, 1.35, easeIO(f, b(3), 26))} />
+          <SwitchStand x={430} y={1300} scale={1.3} f={f} throw={throwV} turn={0} lamp={0.2 + 0.8 * flare} cues={[b(1) + 6, b(2), b(3)]} shadow={104} shadowLen={lerp(0.7, 1.4, easeIO(f, b(3), 26))} />
         </HeldTravel>
         {puff > 0 && puff < 1 && [0, 1, 2, 3, 4, 5].map((i) => (
           <circle key={i} cx={560 + (i - 2.5) * 40 * (1 + puff)} cy={1250 - 60 * puff * (1 - puff) * 3 - i % 2 * 10} r={10 * (1 - puff) + 4} fill="#FFFFFF" stroke={INK} strokeWidth={1.5} opacity={1 - puff} />
@@ -378,7 +378,6 @@ const S1: React.FC<SceneProps> = ({p}) => {
         </g>
         <Plate x={540} text="12 DAYS TO THE HANDOFF" y={580} p={ease(f, 6, 10)} />
         <Plate x={540} text="NEAR HOUSTON · MAT-SU" y={650} size={28} p={ease(f, b(40) + 4, 10) * (1 - ease(f, b(3), 8))} />
-        <Plate x={760} text="AIDEA BOARD" y={720} size={28} p={ease(f, b(2) + 2, 10) * (1 - ease(f, b(3), 8))} />
         <Plate x={420} text="DNR · STATE LAND NEAR HOUSTON" y={790} size={30} tone="amber" p={ease(f, b(3) + 6, 10)} />
       </SVG>
     </Frame>
@@ -427,7 +426,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
 const S3: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const shut = ease(f, b(8), 14);
-  const hours = lerp(10, 15, easeIO(f, b(9) - 18, 26)) + 0.004 * f;
+  const hours = lerp(10, 15, easeIO(f, b(9) - 18, 26));
   return (
     <Frame p={p} warmth={0.05} cam={(fr) => ({z: lerp(1.02, 1.08, easeIO(fr, 0, p.dur)), fx: lerp(560, 600, easeIO(fr, 0, p.dur)), fy: 920})}>
       <SVG>
@@ -445,10 +444,10 @@ const S3: React.FC<SceneProps> = ({p}) => {
           ))}
           <g transform="translate(420 1760)"><ellipse cx={0} cy={40} rx={60} ry={12} fill="#000" opacity={0.25} /><rect x={-44} y={-50} width={88} height={92} rx={10} fill="#F2EFE6" stroke={INK} strokeWidth={4} /><path d="M 44 -24 q 34 0 34 26 q 0 26 -34 26" stroke={INK} strokeWidth={6} fill="none" /><ellipse cx={0} cy={-50} rx={44} ry={10} fill="#6B4A32" stroke={INK} strokeWidth={3} />{[0, 1].map((k) => <path key={k} d={`M ${-10 + k * 18} -64 q 8 -20 0 -40`} stroke="#FFFFFF" strokeWidth={3} fill="none" opacity={0.5 + 0.3 * Math.sin(f / 9 + k)} />)}</g>
         </g>
-        <TableCard x={420} y={1262} lines={['RESUMES', 'FRIDAY']} k={spr(f, b(10), 14)} />
+        <TableCard x={420} y={1262} lines={['NOV 27TH']} k={spr(f, b(10), 14)} />
         <Plate x={540} text="CLOSED SESSION" y={960} p={ease(f, b(8) + 6, 10)} />
-        <Plate x={540} text="10 A.M. TO 3 P.M. · NO ACTION" y={1040} p={ease(f, b(9) + 4, 10)} />
-        <Plate x={540} text="RESUMES FRIDAY · NOVEMBER 27TH · 10 A.M." y={1120} size={30} p={ease(f, b(10) + 6, 10)} />
+        <Plate x={540} text="NOVEMBER 19TH · CLOSED SESSION · 10 A.M. TO 3 P.M. · NO ACTION" displayLines={['NOVEMBER 19TH · 10 A.M. TO 3 P.M.', 'NO ACTION']} y={1050} size={30} p={ease(f, b(9) + 4, 10)} />
+        <Plate x={540} text="SET TO RESUME FRIDAY · NOVEMBER 27TH · 10 A.M." displayLines={['SET TO RESUME FRIDAY', 'NOVEMBER 27TH · 10 A.M.']} y={1170} size={30} p={ease(f, b(10) + 6, 10)} />
       </SVG>
     </Frame>
   );
@@ -463,7 +462,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: 1.03 + 0.03 * easeIO(fr, 0, p.dur), fx: 540, fy: 1000})}>
       <SVG>
-        <SusitnaBG f={f} ground={1110} seed={7} drift={-f * 0.4} birches={[40, 1040]} />
+        <SusitnaBG f={f} ground={1110} seed={7} drift={-f * 0.4} birches={[40, 1040]}  range={false}/>
         <RailLine x0={-200} y0={1300} x1={1300} y1={1300} ties={30} gauge={36} />
         <BufferStop x={960} y={1300} scale={0.6} f={f} plate={f > b(13) ? 'NO DATA CENTER ITEM' : ''} plateSize={22} />
         <g transform={`translate(${lastX + 210} 1240) rotate(${Math.sin(f / 4) * 18 * clamp01((f - b(13) + 20) / 20)})`}>
@@ -494,7 +493,10 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const rot = (Math.atan2(y1 - y0, x1 - x0) * 180) / Math.PI;
   const sack = spr(f, b(15), 16);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.12, 1.02, easeIO(fr, 0, p.dur)), fx: lerp(560, 520, easeIO(fr, 0, p.dur)), fy: lerp(1000, 960, easeIO(fr, 0, p.dur))})}>
+    <Frame p={p} cam={(fr) => ({z: lerp(1.25, 1.12, easeIO(fr, 0, p.dur)), fx: lerp(600, 640, easeIO(fr, 0, p.dur)), fy: lerp(1020, 960, easeIO(fr, 0, p.dur))})} overlay={<>
+        <Plate x={540} text="ALASKA DATA CORP · AIDEA-OWNED · FORMED IN MARCH" y={600} size={28} p={ease(f, b(14) + 4, 10)} />
+        <Plate x={540} text="$20M · BOARD VOTE · PER ADN" displayLines={['$20M · BOARD VOTE · PER ADN', 'FIRST REPORTED BY THE ANCHORAGE PRESS']} y={700} size={28} p={ease(f, b(15) + 8, 10)} />
+      </>}>
       <SVG>
         <rect x={-100} y={-60} width={1280} height={2040} fill={RAIL.snow} data-band="ok" />
         {Array.from({length: 40}, (_, i) => <path key={i} d={`M ${h01(i, 1) * 1100} ${h01(i, 2) * 1900} q 40 -8 90 0`} stroke="#CFC6B4" strokeWidth={5} fill="none" opacity={0.6} data-band="ok" />)}
@@ -503,7 +505,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
             <ellipse cx={-40} cy={26} rx={52} ry={14} fill={RAIL.snowShade} opacity={0.55} />
             {[1, 0.66, 0.36].map((k, j) => (
               <polygon key={j} points={Array.from({length: 16}, (_, q) => { const r = (q % 2 ? 0.55 : 1) * (30 + h01(i, 6) * 14) * k; const an = (q / 16) * Math.PI * 2 + i; return `${(Math.cos(an) * r).toFixed(1)},${(Math.sin(an) * r).toFixed(1)}`; }).join(' ')}
-                fill={j === 1 ? RAIL.spruceL : RAIL.spruce} stroke={INK} strokeWidth={j === 0 ? 3 : 1.5} />
+                fill={j === 1 ? '#5E8A6A' : j === 2 ? '#7FA889' : '#3C6B50'} stroke={INK} strokeWidth={j === 0 ? 3 : 1.5} />
             ))}
             <circle r={5} fill={RAIL.snow} opacity={0.8} />
           </g>
@@ -511,16 +513,14 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <RailLine x0={x0} y0={y0} x1={x1} y1={y1} ties={34} gauge={56} />
         <RailLine x0={-200} y0={1500} x1={420} y1={1200} ties={10} gauge={56} />
         <RailLine x0={-200} y0={1650} x1={300} y1={1400} ties={8} gauge={56} />
-        <g transform="translate(150 1080)"><rect x={-90} y={-24} width={180} height={44} rx={5} fill={RAIL.paper} stroke={INK} strokeWidth={3} /><text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>AIDEA YARD</text></g>
+        <g transform="translate(420 1180)"><rect x={-90} y={-24} width={180} height={44} rx={5} fill={RAIL.paper} stroke={INK} strokeWidth={3} /><text x={0} y={7} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>AIDEA YARD</text></g>
         <HeldTravel f={f} x={cx - 240} y={cy - 160} w={480} h={320} mode="shadow" seed={21}>
-        <TopCar x={cx} y={cy} rot={rot} label="ALASKA DATA CORP" f={f} tail={sack > 0.01 ? (
+        <TopCar x={cx} y={cy} rot={rot} w={420} label="ALASKA DATA CORP" f={f} tail={sack > 0.01 ? (
           <g transform={`translate(${170} ${lerp(-260, 0, Math.min(1, sack))}) scale(${0.8 + 0.2 * Math.min(1, sack)})`}>
             <circle r={40} fill="#CDB98E" stroke={INK} strokeWidth={4} />
             <text x={0} y={9} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={INK}>$20M</text>
           </g>) : null} />
         </HeldTravel>
-        <Plate x={540} text="ALASKA DATA CORP · AIDEA-OWNED · FORMED IN MARCH" y={600} size={28} p={ease(f, b(14) + 4, 10)} />
-        <Plate x={540} text="$20M · BOARD VOTE · PER ADN" y={680} p={ease(f, b(15) + 8, 10)} />
       </SVG>
     </Frame>
   );
@@ -535,7 +535,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.06, easeIO(fr, 0, p.dur)), fx: 540, fy: lerp(1000, 960, easeIO(fr, 0, p.dur))})}>
       <SVG>
-        <SusitnaBG f={f} ground={1160} seed={9} drift={-f * 0.2} birches={[70, 1010]} />
+        <SusitnaBG f={f} ground={1160} seed={9} drift={-f * 0.2} birches={[70, 1010]}  range={false}/>
         <g data-band="ok">
           <rect x={-100} y={1290} width={1300} height={70} fill="#7A604A" stroke={INK} strokeWidth={5} /> {/* caption-band-ok */}
           {Array.from({length: 18}, (_, i) => <path key={i} d={`M ${-100 + i * 76} 1292 V 1358`} stroke="#5B4636" strokeWidth={3} />)}
@@ -666,11 +666,11 @@ const S8: React.FC<SceneProps> = ({p}) => {
 const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const th = spr(f, b(22) + 2, 18);
-  const shadowA = lerp(-20, 92, easeIO(f, b(22) + 2, 26));
+  const shadowA = lerp(-10, 106, easeIO(f, b(22) + 2, 26));
   const flare = ease(f, b(22) + 10, 10);
   const sign = spr(f, b(23), 20);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.05, easeIO(fr, 0, p.dur)), fx: 540, fy: 1020})}>
+    <Frame p={p} warmth={0.06} cam={(fr) => ({z: lerp(1.0, 1.05, easeIO(fr, 0, p.dur)), fx: 540, fy: 1020})}>
       <SVG>
         <SusitnaBG f={f} ground={1140} seed={14} drift={-f * 0.2} birches={[40, 130, 1020]} />
         <Fork f={f} windowLit={1} />
@@ -703,7 +703,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const lamp = ease(f, b(26), 10);
   const pan = easeIO(f, b(25) + 20, 80);
   return (
-    <Frame p={p} cam={(fr) => ({z: 1.08, fx: lerp(560, 760, pan) + 0 * fr, fy: 960})}>
+    <Frame p={p} warmth={0.06} cam={(fr) => ({z: 1.08, fx: lerp(560, 760, pan) + 0 * fr, fy: 960})}>
       <SVG>
         <rect x={-200} y={-60} width={2600} height={2040} fill={RAIL.snow} data-band="ok" />
         {Array.from({length: 40}, (_, i) => <path key={i} d={`M ${h01(i, 7) * 2200 - 100} ${h01(i, 8) * 1900} q 50 -8 110 0`} stroke="#CFC6B4" strokeWidth={5} fill="none" opacity={0.55} data-band="ok" />)}
@@ -711,7 +711,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
           <rect x={x0 - 20} y={436 + 60} width={36 * step + 40} height={76} rx={6} fill={RAIL.paper} stroke={INK} strokeWidth={4} />
           {Array.from({length: 36}, (_, i) => {
             const dx = x0 + (i + 0.5) * step;
-            const lab = i === 0 ? 'NOV 25' : i === 5 ? 'NOV 30' : i === 12 ? 'DEC 7' : i === 35 ? 'DEC 30' : '';
+            const lab = i === 0 ? 'NOV 25TH' : i === 5 ? 'NOV 30TH' : i === 12 ? 'DEC 7TH' : i === 35 ? 'DEC 30TH' : '';
             const am = i >= 5;
             return (
               <g key={i}>
@@ -750,9 +750,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const sx = lerp(80, 560, walkK);
   const lift = ease(f, b(27) + 4, 16);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.02, 1.07, easeIO(fr, 0, p.dur)), fx: lerp(500, 580, easeIO(fr, 0, p.dur)), fy: 980})}>
+    <Frame p={p} warmth={0.06} cam={(fr) => ({z: lerp(1.02, 1.07, easeIO(fr, 0, p.dur)), fx: lerp(500, 580, easeIO(fr, 0, p.dur)), fy: 980})}>
       <SVG>
-        <SusitnaBG f={f} ground={1150} seed={16} drift={-f * 0.25} birches={[120, 990]} />
+        <SusitnaBG f={f} ground={1150} seed={16} drift={-f * 0.25} birches={[120, 990]}  range={false}/>
         <RailLine x0={-200} y0={1340} x1={1300} y1={1330} ties={28} gauge={34} />
         <SwitchStand x={110} y={1180} scale={0.45} f={f} throw={1} turn={1} lamp={1} blink cues={[b(27)]} />
         <g transform="translate(330 1300)">
@@ -765,7 +765,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
           <SurveyStake x={880} y={1300} scale={1.2} f={f} tag="?" tagSize={30} />
         </HeldTravel>
         <Suit f={f} x={sx} y={1300} s={1.2} seed={7} cues={[b(27), b(28)]} coat="#3E4A58" face={false} walk={walkK < 1 ? f : 0} reach={lift} facing={f > b(28) ? 1 : 1} />
-        <g transform={`translate(${sx + 90} ${1300 - 300 - 80 * lift}) rotate(${Math.sin(f / 15) * 2})`} opacity={lift > 0.05 ? 1 : 0}>
+        <g transform={`translate(${Math.max(sx + 90, 560)} ${1300 - 300 - 80 * lift}) rotate(${Math.sin(f / 15) * 2})`} opacity={lift > 0.05 && sx > 430 ? 1 : 0}>
           <rect x={-120} y={-44} width={240} height={88} rx={6} fill={RAIL.paper} stroke={INK} strokeWidth={4} />
           <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={INK}>MORATORIUM</text>
           <text x={0} y={26} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={INK}>UNTIL RULES</text>
@@ -804,7 +804,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
   const tabs = clamp01((f - b(42)) / 10) * (1 - clamp01((f - b(42) - 30) / 14));
   const square = Math.sin(clamp01((f - b(42)) / 30) * Math.PI);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.06, easeIO(fr, 0, p.dur)), fx: 560, fy: lerp(1000, 980, easeIO(fr, 0, p.dur))})}>
+    <Frame p={p} warmth={0.07} cam={(fr) => ({z: lerp(1.0, 1.06, easeIO(fr, 0, p.dur)), fx: 560, fy: lerp(1000, 980, easeIO(fr, 0, p.dur))})}>
       <SVG>
         <SusitnaBG f={f} ground={1160} seed={18} drift={-f * 0.2} birches={[60, 1020]} />
         <RailLine x0={-200} y0={1300} x1={760} y1={1300} ties={22} gauge={36} />
@@ -837,9 +837,9 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const carX = 640;
   const stampK = spr(f, b(46), 10);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.03, 1.07, easeIO(fr, 0, p.dur)), fx: 560, fy: 1000})}>
+    <Frame p={p} warmth={0.02} cam={(fr) => ({z: lerp(1.03, 1.07, easeIO(fr, 0, p.dur)), fx: 560, fy: 1000})}>
       <SVG>
-        <SusitnaBG f={f} ground={1120} seed={20} drift={-f * 0.25} birches={[90, 1040]} />
+        <SusitnaBG f={f} ground={1120} seed={20} drift={-f * 0.25} birches={[90, 1040]}  range={false}/>
         <RailLine x0={-200} y0={1300} x1={1300} y1={1300} ties={30} gauge={36} />
         <Boxcar x={carX - 420 - 900 * away} y={1290} w={380} f={f} lines={['ACRES']} flat travel={-900 * away} />
         <Boxcar x={carX - 820 - 900 * away} y={1290} w={380} f={f} lines={['ACRES']} flat travel={-900 * away} />
@@ -889,7 +889,7 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const needle = clamp01((f - k0) / 70) * 0.82 + (f > b(43) ? 0.12 * Math.exp(-(f - b(43)) / 10) * Math.sin((f - b(43)) / 2) : 0);
   const env = spr(f, b(34), 16);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.25, 1.0, easeIO(fr, k0 + 10, 70)), fx: lerp(480, 540, easeIO(fr, k0 + 10, 70)), fy: lerp(1150, 980, easeIO(fr, k0 + 10, 70))})}>
+    <Frame p={p} warmth={0.02} cam={(fr) => ({z: lerp(1.25, 1.0, easeIO(fr, k0 + 10, 70)), fx: lerp(480, 540, easeIO(fr, k0 + 10, 70)), fy: lerp(1150, 980, easeIO(fr, k0 + 10, 70))})}>
       <SVG>
         <SusitnaBG f={f} ground={1120} seed={22} drift={-f * 0.15} birches={[60, 1030]} />
         <g data-band="ok">
@@ -932,9 +932,9 @@ const S15: React.FC<SceneProps> = ({p}) => {
   const rules = clamp01((f - b(36)) / 50) * 6;
   const puffK = clamp01((f - b(44)) / 30);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.02, 1.08, easeIO(fr, 0, p.dur)), fx: lerp(600, 520, easeIO(fr, b(36), 40)), fy: 1000})}>
+    <Frame p={p} warmth={0.07} cam={(fr) => ({z: lerp(1.02, 1.08, easeIO(fr, 0, p.dur)), fx: lerp(600, 520, easeIO(fr, b(36), 40)), fy: 1000})}>
       <SVG>
-        <SusitnaBG f={f} ground={1110} seed={24} drift={-f * 0.2} birches={[80, 1020]} />
+        <SusitnaBG f={f} ground={1110} seed={24} drift={-f * 0.2} birches={[80, 1020]}  range={false}/>
         <RailLine x0={-200} y0={1300} x1={1300} y1={1300} ties={26} gauge={36} />
         <Boxcar x={1180} y={1290} w={380} f={f} lines={['ACRES']} flat />
         <HeldTravel f={f} x={430} y={1050} w={560} h={250} mode="shadow" seed={10}>
@@ -959,7 +959,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
         <SnowBank f={f} y={1560} seed={25} drift={-f * 0.1} />
         <NearProps f={f} seed={11} />
         <Plate x={540} text="NO TENANT · NO POWER SOURCE · NO COOLING · NO SCHEDULE · AIDEA, JULY" displayLines={['NO COMMITTED TENANT · NO POWER SOURCE', 'NO COOLING · NO SCHEDULE · AIDEA, JULY']} y={600} size={28} p={ease(f, b(35) + 16, 10)} />
-        <Plate x={540} text={'"HAS NOT IDENTIFIED A SPECIFIC PROJECT" · AIDEA'} y={720} size={28} p={ease(f, b(36) + 10, 10)} />
+        <Plate x={540} text={'"HAS NOT IDENTIFIED A SPECIFIC PROJECT" · AIDEA SPOKESPERSON, NOVEMBER · PER ALASKA BEACON'} displayLines={['"HAS NOT IDENTIFIED A SPECIFIC PROJECT"', 'AIDEA SPOKESPERSON, NOVEMBER · PER ALASKA BEACON']} y={730} size={28} p={ease(f, b(36) + 10, 10)} />
       </SVG>
     </Frame>
   );
@@ -970,25 +970,26 @@ const S16: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
   const t0 = b(45), t1 = b(38);
   const lean = clamp01((f - t0) / Math.max(1, t1 - t0));
-  const sw = f < t0 ? 0.5 : f < t1 ? 0.5 - 0.42 * Math.sin(lean * Math.PI * 0.9) : 0.5 + 0.06 * Math.exp(-(f - t1) / 12) * Math.sin((f - t1) / 2);
+  const sw = f < t0 ? 0.62 : f < t1 ? 0.62 - 0.5 * Math.sin(lean * Math.PI * 0.9) + 0.25 * lean * lean : 0.66 + 0.05 * Math.exp(-(f - t1) / 12) * Math.sin((f - t1) / 2);
   const fri = ease(f, b(37), 6);
   const nov = spr(f, b(45), 16);
   return (
-    <Frame p={p} cam={() => ({z: 1.0, fx: 540, fy: 960})}>
+    <Frame p={p} warmth={0.1} cam={() => ({z: 1.0, fx: 540, fy: 960})}>
       <SVG>
         <SusitnaBG f={f} ground={1080} seed={26} drift={-f * 0.2} birches={[40, 1040]} />
         {/* far off: the main stand, still on DNR, and the FRIDAY window card on the closed branch */}
         <SwitchStand x={330} y={1100} scale={0.42} f={f} throw={1} turn={1} lamp={1} cues={[b(37)]} />
         <g transform="translate(900 1040)">
-          <rect x={-70} y={-26} width={140} height={40} rx={5} fill={fri > 0.5 ? '#F6E7C8' : '#C9C3B4'} stroke={INK} strokeWidth={3} />
-          {fri > 0.5 && <rect x={-84} y={-36} width={168} height={60} rx={8} fill="#F6E7C8" opacity={0.3} />}
-          <text x={0} y={2} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>FRIDAY</text>
+          <rect x={-110} y={-26} width={220} height={40} rx={5} fill={fri > 0.5 ? '#F6E7C8' : '#C9C3B4'} stroke={INK} strokeWidth={3} />
+          {fri > 0.5 && <rect x={-124} y={-36} width={248} height={60} rx={8} fill="#F6E7C8" opacity={0.3} />}
+          <text x={0} y={2} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>BOARD · FRIDAY</text>
           <path d="M 0 14 V 60" stroke={INK} strokeWidth={4} />
         </g>
-        <g transform={`translate(150 1020) rotate(${f > b(45) ? 7 * Math.sin((f - b(45)) / 5) * Math.exp(-(f - b(45)) / 20) : 0})`}>
+        <g transform={`translate(190 1000) rotate(${f > b(45) ? 7 * Math.sin((f - b(45)) / 5) * Math.exp(-(f - b(45)) / 20) : 0})`}>
           <path d="M 0 -60 V 80" stroke={INK} strokeWidth={4} />
-          <rect x={-110} y={-40} width={220} height={48} rx={6} fill={nov > 0.3 ? RAIL.amber : '#C9C3B4'} stroke={INK} strokeWidth={4} />
-          <text x={0} y={-8} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>NOVEMBER 30TH</text>
+          <rect x={-150} y={-56} width={300} height={68} rx={6} fill={nov > 0.3 ? RAIL.amber : '#C9C3B4'} stroke={INK} strokeWidth={4} />
+          <text x={0} y={-30} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={INK}>RECONSIDERATION DUE</text>
+          <text x={0} y={-6} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>NOVEMBER 30TH</text>
         </g>
         {/* the open branch comes in from far left and splits at the near frog */}
         <PTrack xn={540} yn={1300} wn={150} xf={-120} yf={1110} wf={50} ties={14} />
@@ -1004,14 +1005,12 @@ const S16: React.FC<SceneProps> = ({p}) => {
             </g>
           );
         })}
-        <g transform="translate(900 1560) scale(0.85)"><Boxcar x={0} y={0} w={420} f={f} doors={1} /></g>
+        <g transform="translate(880 1300) scale(0.7)"><Boxcar x={0} y={0} w={420} f={f} doors={1} /></g>
         <g transform="translate(250 1270)"><rect x={-100} y={-26} width={200} height={40} rx={5} fill={RAIL.paper} stroke={INK} strokeWidth={3} /><text x={0} y={2} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>RULES FIRST</text></g>
-        <g transform="translate(860 1290)"><rect x={-110} y={-26} width={220} height={40} rx={5} fill={RAIL.paper} stroke={INK} strokeWidth={3} /><text x={0} y={2} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>TENANT FIRST</text></g>
+        <g transform="translate(860 1060)"><rect x={-110} y={-26} width={220} height={40} rx={5} fill={RAIL.paper} stroke={INK} strokeWidth={3} /><text x={0} y={2} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>TENANT FIRST</text></g>
         <HeldTravel f={f} x={440} y={830} w={260} h={470} mode="sweep" seed={12}>
           <SwitchStand x={560} y={1290} scale={1.25} f={f} throw={sw} turn={0.5} lamp={0.7} tremble={f > t1 ? 0.5 : 0} cues={[b(45), b(38), b(39)]} seed={5} shadow={88} />
         </HeldTravel>
-        <Plate x={540} text="FRIDAY" y={580} p={ease(f, b(37) + 8, 10)} />
-        <Plate x={540} text="NOVEMBER 30TH" y={660} tone="amber" p={ease(f, b(45) + 8, 10)} />
         <Plate x={540} text="RULES OR A TENANT?" y={750} size={36} tone="amber" p={ease(f, b(38) + 6, 10)} />
         <Plate x={540} text="WHICH FIRST?" y={840} p={ease(f, b(39) + 2, 10)} />
       </SVG>
