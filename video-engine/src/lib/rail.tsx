@@ -569,7 +569,6 @@ export const Billboard: React.FC<{x: number; y: number; scale?: number; f: numbe
       <g transform={`translate(0 ${-240 - h / 2}) rotate(${Math.sin(f / 37) * 0.5})`}>
         <rect x={-w / 2 + 8} y={-h / 2 + 10} width={w} height={h} rx={6} fill="#000" opacity={0.25} />
         <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={6} fill={RAIL.paper} stroke={INK} strokeWidth={6} />
-        <text x={-w / 2 + 24} y={-h / 2 + 58} fontFamily="Fraunces, serif" fontWeight={900} fontSize={64} fill={RAIL.amber}>"</text>
         {lines.map((l, i) => (
           <text key={i} x={0} y={-h / 2 + 30 + (i + 0.5) * (size + 14) + size * 0.36} textAnchor="middle" fontFamily={RMONO} fontWeight={900} fontSize={size} letterSpacing={1.5} fill={INK}>{l}</text>
         ))}

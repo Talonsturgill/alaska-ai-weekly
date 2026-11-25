@@ -26,13 +26,13 @@ B = [
  (3, 0, W("elsewhere"), "clunk", "the switch stand's amber lamp", "flares while its long low-sun shadow stretches down the open branch past a milepost sign that swings out", "alert", "DNR · STATE LAND NEAR HOUSTON", "the milepost sign swings", ""),
  (4, 1, 0.0, "footstep", "a faceless Suit with a boxed name card KREISS-TOMKINS on the station platform", "walks in from frame left and stops by a slat date board", "steady", "GOVERNOR-ELECT · JONATHAN KREISS-TOMKINS", "the coat sways as he stops", ""),
  (5, 1, W("December"), "clack", "the slat date board on the platform post", "slams its slats over one by one to DEC 7TH and the post shudders", "steady", "TAKES OFFICE DECEMBER 7TH", "the post shudders", ""),
- (6, 2, 0.0, "paper", "the KREISS-TOMKINS Suit", "clips a paper order onto the tall train-order hoop beside the AIDEA BOARD track and steps back to wait", "steady", "\"POSTPONE FURTHER ACTION\"", "the order flutters in the hoop", ""),
- (7, 2, W("public"), "clink", "a brass plate on the platform post", "swings out on its bracket", "steady", "AIDEA · A PUBLIC CORPORATION OF THE STATE", "the plate swings", ""),
+ (6, 2, W("postpone"), "paper", "the KREISS-TOMKINS Suit", "clips a paper order onto the tall train-order hoop beside the AIDEA BOARD track and steps back to wait", "steady", "\"POSTPONE FURTHER ACTION\"", "the order flutters in the hoop", ""),
+ (7, 2, 0.0, "clink", "a brass plate on the platform post", "swings out on its bracket", "steady", "AIDEA · A PUBLIC CORPORATION OF THE STATE", "the plate swings", ""),
  (8, 3, 0.0, "door", "the walnut boardroom door", "swings shut and its sign flips to CLOSED SESSION", "uneasy", "CLOSED SESSION", "the sign swings", ""),
  (9, 3, W("three"), "whirr", "the faceless wall clock", "spins its hands from 10 round to 3", "tense", "10 A.M. TO 3 P.M. · NO ACTION", "the hands blur", ""),
  (10, 3, W("Friday"), "thunk", "a card on the walnut table", "drops onto the walnut table and lands beside a foil-covered pie, which jumps", "wry", "RESUMES FRIDAY · NOVEMBER 27TH · 10 A.M.", "the foil crinkles", ""),
- (11, 4, 0.0, "rumble", "a plain faceless grey diesel pulling boxcars stencilled ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE", "rolls along the closed AIDEA BOARD branch toward the buffer stop", "steady", "PENDING AGENDA", "the cars sway", ""),
- (12, 4, W("Ambler"), "rattle", "the switch stand's lever", "trembles at the centre of its quadrant as the cars pass", "uneasy", "ANWR · AMBLER · PORT MACKENZIE", "the lever shivers", ""),
+ (11, 4, 0.0, "rumble", "a plain faceless grey diesel pulling boxcars stencilled ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE", "rolls along the closed AIDEA BOARD branch and out of frame", "steady", "PENDING AGENDA", "the cars sway", ""),
+ (12, 4, W("Ambler"), "rattle", "the switch stand's lever", "rattles in its keeper, still set to AIDEA BOARD, as the cars pass", "uneasy", "ANWR · AMBLER · PORT MACKENZIE", "the lever shivers", ""),
  (13, 4, W("item"), "squeak", "the last car's free coupler", "swings loose as the train clears and the AIDEA BOARD branch behind it lies bare to the buffer stop", "puzzled", "NO DATA CENTER ITEM", "the coupler swings", "rehook: the agenda train clears and the closed branch behind it lies bare to the buffer stop, NO DATA CENTER ITEM"),
  (14, 5, 0.0, "clack", "a boxcar stencilled ALASKA DATA CORP on a yard spur on the AIDEA side", "is already rolling out of the yard, its taillight shrinking", "steady", "ALASKA DATA CORP · AIDEA-OWNED · FORMED IN MARCH", "the taillight blinks and powder kicks off the wheels", ""),
  (15, 5, W("twenty"), "coins", "a coin sack tagged $20M", "thumps onto the boxcar's tail platform as it rolls", "steady", "$20M · BOARD VOTE · PER ADN", "the car dips on its springs", ""),
@@ -48,31 +48,30 @@ B = [
  (24, 10, 0.0, "thud", "12 ties on the short AIDEA BOARD branch", "lay on one by one to the buffer stop marked DECEMBER 7TH", "steady", "12 DAYS TO DECEMBER 7TH", "each tie thuds into the snow", ""),
  (25, 10, W("Thirty"), "thump", "5 bare ties then 30 laid ties on the open DNR branch", "lay one by one past the DECEMBER 7TH mark and off the frame edge as the view pulls wide", "tense", "30 DAYS FROM NOVEMBER 30TH", "the rails run off the edge", ""),
  (26, 10, W("could"), "ding", "an amber signal lamp at the DECEMBER 7TH mark", "lights the word COULD", "uneasy", "COULD LAND UNDER THE NEXT GOVERNOR", "the lamp pulses", ""),
- (27, 11, 0.0, "footstep", "the faceless KREISS-TOMKINS Suit", "steps past the DECEMBER 7TH post and lifts a card", "steady", "MORATORIUM UNTIL RULES · PER ADN", "the card catches the sun", ""),
+ (27, 11, 0.0, "footstep", "the faceless KREISS-TOMKINS Suit, the switch stand small far behind with its lever still on DNR and its amber lamp blinking", "steps past the DECEMBER 7TH post and lifts a card", "steady", "MORATORIUM UNTIL RULES · PER ADN", "the card catches the sun", ""),
  (28, 11, W("team"), "flutter", "a blank question tag on the parcel stake", "swings on its nail and spins while the Suit looks from his card to it and does not reach", "unsure", "REVERSE THE TRANSFER? HIS TEAM HASN'T SAID", "the tag twists", ""),
  (29, 12, 0.0, "thock", "a faceless Suit with a name card RANDY RUARO at the AIDEA buffer stop under the lit window card", "sets a thick binder stack on the buffer and squares its edges", "steady", "RANDY RUARO · AIDEA EXECUTIVE DIRECTOR", "the binders thump down", ""),
  (42, 12, W("rapidly"), "page", "the binder stack's page tabs", "flutter as the RUARO Suit taps the stack square", "steady", "\"NOT RAPIDLY MOVING THROUGH PROJECTS WITHOUT DUE DILIGENCE\" · RANDY RUARO", "the tabs settle", ""),
- (30, 12, W("diligence"), "press", "the RUARO Suit's hand", "settles flat on top of the binders", "steady", "\"NOT RAPIDLY MOVING THROUGH PROJECTS WITHOUT DUE DILIGENCE\" · RANDY RUARO", "the stack holds", ""),
- (31, 13, 0.0, "chain", "three flatcars stencilled ACRES on the open siding", "uncouple, two rolling away and one staying", "steady", "NEARLY 20,000 TO 6,800 ACRES", "the couplers clank", ""),
- (32, 13, W("reverts"), "roll", "a coupler chain tagged REVERSION CLAUSE from the one ACRES car to a STATE OF ALASKA post", "draws taut but does not pull", "steady", "REVERSION CLAUSE · BACK TO THE STATE IF NOT DEVELOPED", "the chain hums taut", ""),
- (46, 13, W("develop"), "stamp", "a DNR stamp", "lands on the ACRES car's plat card", "steady", "THE TRANSFER · NOT THE USE · PER DNR", "the card jumps", ""),
- (33, 14, 0.0, "thump", "canvas mail sacks", "drop one after another onto a freight scale", "steady", "2,300+ COMMENTS · MOSTLY OPPOSED", "the scale needle swings", "rehook: canvas mail sacks drop one after another onto a freight scale"),
+ (31, 13, 0.0, "clank", "three flatcars stencilled ACRES on the open siding", "uncouple, two rolling away and one staying", "steady", "NEARLY 20,000 TO 6,800 ACRES", "the couplers clank", ""),
+ (32, 13, W("acres"), "chain", "a coupler chain tagged REVERSION CLAUSE from the one ACRES car to a STATE OF ALASKA post", "draws taut but does not pull", "steady", "REVERSION CLAUSE · BACK TO THE STATE IF NOT DEVELOPED", "the chain hums taut", ""),
+ (46, 13, W("reverts"), "stamp", "a DNR stamp", "lands on the ACRES car's plat card", "steady", "THE TRANSFER · NOT THE USE · DNR, PER MAT-SU SENTINEL", "the card jumps", ""),
+ (33, 14, 0.0, "thump", "canvas mail sacks", "drop one after another onto a freight scale and the view rises to show sacks stacked down the whole platform", "steady", "2,300+ COMMENTS", "the scale needle swings", "rehook: canvas mail sacks drop one after another onto a freight scale"),
  (43, 14, W("opposed"), "ratchet", "the freight scale needle", "swings hard toward MOSTLY OPPOSED and bounces", "steady", "MOSTLY OPPOSED", "the needle bounces", ""),
- (34, 14, W("Borough"), "paper", "an envelope stamped MAT-SU BOROUGH", "slides onto the pile and its letter unfolds while the switch lever far behind creeps a few degrees toward centre", "steady", "MAT-SU BOROUGH · REQUEST TO RECONSIDER", "the letter flaps", ""),
+ (34, 14, W("Borough"), "paper", "an envelope stamped MAT-SU BOROUGH", "slides onto the pile and its letter unfolds with a hand-drawn arrow to POINT MACKENZIE INSTEAD while the switch stand at mid-ground shivers in its DNR notch", "steady", "MAT-SU BOROUGH · REQUEST TO RECONSIDER", "the letter flaps", ""),
  (35, 15, 0.0, "slide", "an empty boxcar coupled ahead of the one ACRES car on the open siding", "rolls its doors open on nothing inside", "puzzled", "NO TENANT · NO POWER SOURCE · NO COOLING · NO SCHEDULE · AIDEA, JULY", "dust drifts in the empty car", ""),
  (44, 15, W("cooling"), "hiss", "a puff of air-brake exhaust", "blows through the empty car and out the far door", "puzzled", "NO COOLING · NO SCHEDULE", "dust swirls", ""),
  (36, 16, 0.0, "thunk", "new ties stencilled RULES", "lay themselves ahead of the empty boxcar, which waits", "hopeful", "\"HAS NOT IDENTIFIED A SPECIFIC PROJECT\" · AIDEA", "frost breath at the coupling", ""),
  (37, 17, 0.0, "click", "the boardroom window card at the buffer stop", "flicks on bright with FRIDAY in ivory", "steady", "FRIDAY", "the card glows", ""),
- (45, 17, W("November"), "chain", "the amber land sign on the open branch", "swings down on its post and lands", "steady", "NOVEMBER 30TH", "the post shudders", ""),
- (38, 17, W("first"), "creak", SW, "swings its lever toward a stack of RULES ties, then back toward the empty boxcar, and stops caught mid-throw", "unsure", "RULES OR A TENANT?", "the lever trembles", ""),
- (39, 17, W("rules"), "hiss", "the switch stand's amber lamp", "flares and a gust of powder rolls across both branches and lands on the lever as it holds mid-throw", "steady", "WHICH FIRST?", "powder lands on the lever", ""),
+ (45, 17, W("November"), "clink", "the second switch's lever", "begins a slow lean toward RULES FIRST as its lamp lights", "steady", "NOVEMBER 30TH", "far off, the amber NOVEMBER 30TH sign swings on its chains and glows", ""),
+ (38, 17, W("first"), "creak", "a second switch stand where the open branch splits again past the siding points, one leg laid with RULES ties and the other holding the empty boxcar", "stops its slow swing caught mid-throw between the RULES FIRST leg and the TENANT FIRST leg", "unsure", "RULES OR A TENANT?", "the lever trembles", ""),
+ (39, 17, W("rules"), "hiss", "the second switch's lever, holding mid-throw, with the main stand small behind still on DNR and its lamp flaring", "trembles as a gust of powder rolls across both legs and lands on it", "steady", "WHICH FIRST?", "powder lands on the lever", ""),
 ]
 
 PLATE_AT = {i: "on-object" for i in range(1, 60)}
 PLATE_AT.update({1: "lower-third", 22: "lower-third", 38: "lower-third"})
 CLAIM_MAP = {1: ["c1"], 2: ["c4"], 3: ["c20"], 4: ["c1"], 5: ["c1"], 6: ["c2"], 7: ["c4"], 8: ["c12"], 9: ["c12"], 10: ["c13"],
-             11: ["c36"], 12: ["c36"], 13: ["c36"], 14: ["c9"], 15: ["c10"], 16: ["c37"], 17: ["c37"], 18: ["c21"], 19: ["c20"], 20: ["c22"],
-             21: ["c22"], 22: ["c32"], 23: ["c32"], 24: ["c1"], 25: ["c32"], 26: ["c32", "c1"], 27: ["c11"], 28: ["c34"], 29: ["c15"], 30: ["c15"],
+             11: ["c36"], 12: ["c36"], 13: ["c36"], 14: ["c9"], 15: ["c10"], 16: ["c37"], 17: ["c37"], 18: ["c20"], 19: ["c20"], 20: ["c22"],
+             21: ["c22"], 22: ["c32"], 23: ["c32"], 24: ["c1"], 25: ["c32"], 26: ["c32", "c1"], 27: ["c11"], 28: ["c34"], 29: ["c15"], 
              31: ["c21", "c20"], 32: ["c26"], 33: ["c28"], 34: ["c30"], 35: ["c24"], 36: ["c25"], 37: ["c13"], 38: ["narration"], 39: ["narration"], 40: ["c20"], 41: ["c37"], 42: ["c15"], 43: ["c28"], 44: ["c24"], 45: ["c32"], 46: ["c35"]}
 
 # sid, line, framing, scale, height, stage, pov, layout, motion_vector, hero_treatment, transition, thread, title, means
@@ -80,7 +79,7 @@ S = [
  (1, 0, "alt-vantage", "wide", "low", "fork-noon", "low-angle-heroic", "centered-hero-lowerthird", "radial-emanate", "structure-as-subject", "", "", "The fork", "Low and wide at a rail fork in noon snow near Houston, a faceless switch stand throws its lever toward the short closed AIDEA BOARD branch, a window card glows at its buffer, and the lamp flares as the disc's shadow points down the open DNR branch"),
  (2, 1, "subject-portrait", "medium", "eye", "platform", "eye-level-immersive", "centered-hero-lowerthird", "horizontal-traverse", "single-organic-hero", "whip-pan", "carry", "The request", "On the station platform the KREISS-TOMKINS Suit walks to a slat date board that clacks to DEC 7TH and clips a POSTPONE order onto the train-order hoop by the AIDEA BOARD track"),
  (3, 3, "push-detail", "medium", "eye", "boardroom", "eye-level-immersive", "stacked-layers", "push-in-only", "structure-as-subject", "hard-cut", "build", "Closed session", "In the Anchorage boardroom the door shuts on CLOSED SESSION, the wall clock spins 10 to 3 and a RESUMES FRIDAY card slaps down beside a pie"),
- (4, 4, "two-up", "wide", "eye", "agenda-cut", "eye-level-immersive", "fullbleed-split", "horizontal-traverse", "multiplicity-swarm", "hard-cut", "travel", "The agenda", "A grey diesel pulls ANWR, AMBLER and PORT MACKENZIE boxcars along the closed branch while the switch lever trembles, then an empty NO DATA CENTER ITEM flatcar rolls past"),
+ (4, 4, "two-up", "wide", "eye", "agenda-cut", "eye-level-immersive", "fullbleed-split", "horizontal-traverse", "multiplicity-swarm", "hard-cut", "travel", "The agenda", "A grey diesel pulls ARCTIC REFUGE (ANWR), AMBLER and PORT MACKENZIE boxcars along the closed branch while the switch lever rattles, then the train clears and leaves the branch bare to the buffer stop, NO DATA CENTER ITEM"),
  (5, 5, "map-territory", "extreme-wide", "high", "aidea-yard", "top-down-map", "map-territory", "vertical-descent", "structure-as-subject", "hard-cut", "travel", "Already voted", "From above, in the AIDEA yard, the ALASKA DATA CORP boxcar rolls out along its own spur and a $20M coin sack thumps onto its tail platform"),
  (6, 6, "alt-vantage", "medium", "low", "billboard", "low-angle-heroic", "single-object-void", "vertical-rise", "data-as-subject", "graphic-match", "carry", "The pitch", "Low on the station platform a billboard facing the yard swings up, the Plural CEO quote rolls on word by word and an amber THE PITCH stamp slams on"),
  (7, 7, "data-panel", "close", "eye", "plat-board", "macro-closeup", "single-object-void", "assemble-build", "data-as-subject", "hard-cut", "build", "The land", "A land plat of the Mat-Su by the tracks unrolls the pencilled 6,800 acre parcel near Houston and pins press into its corners"),
@@ -89,10 +88,10 @@ S = [
  (10, 10, "map-territory", "extreme-wide", "high", "tie-count", "top-down-map", "grid-modular", "horizontal-traverse", "data-as-subject", "graphic-match", "build", "Count the ties", "From above 12 ties lay to the AIDEA buffer at DECEMBER 7TH, then 5 bare and 30 laid ties run the DNR branch past the mark, and an amber lamp lights COULD"),
  (11, 11, "two-up", "medium", "eye", "past-the-mark", "eye-level-immersive", "fullbleed-split", "horizontal-traverse", "single-organic-hero", "hard-cut", "carry", "Moratorium", "The KREISS-TOMKINS Suit steps past the DECEMBER 7TH post, the switch stand blinking amber far behind, with a MORATORIUM UNTIL RULES card and looks to a parcel stake whose blank question tag spins, and does not reach"),
  (12, 12, "subject-portrait", "close", "low", "aidea-buffer", "low-angle-heroic", "centered-hero-lowerthird", "vertical-rise", "single-organic-hero", "whip-pan", "carry", "Due diligence", "At the AIDEA buffer stop under the lit window card the RANDY RUARO Suit sets a binder stack down, squares it and rests a hand on it as his quote holds"),
- (13, 13, "push-detail", "medium", "eye", "acres-cars", "eye-level-immersive", "stacked-layers", "horizontal-traverse", "multiplicity-swarm", "hard-cut", "build", "Cut and tied back", "Three ACRES flatcars uncouple to one, its REVERSION CLAUSE chain to a STATE OF ALASKA post draws taut without pulling, and a DNR stamp lands THE TRANSFER · NOT THE USE"),
- (14, 14, "data-panel", "medium", "eye", "freight-scale", "eye-level-immersive", "hud-instrument-frame", "vertical-descent", "multiplicity-swarm", "hard-cut", "build", "The other side", "Mail sacks drop onto a freight scale, the needle bounces to MOSTLY OPPOSED and a MAT-SU BOROUGH request to reconsider lands on top while the switch lever far behind creeps toward centre"),
+ (13, 13, "push-detail", "medium", "eye", "acres-cars", "eye-level-immersive", "stacked-layers", "horizontal-traverse", "multiplicity-swarm", "hard-cut", "build", "Cut and tied back", "Three ACRES flatcars uncouple to one, its REVERSION CLAUSE chain to a STATE OF ALASKA post draws taut without pulling, and a DNR stamp lands on the plat card"),
+ (14, 14, "data-panel", "medium", "eye", "freight-scale", "eye-level-immersive", "hud-instrument-frame", "vertical-descent", "multiplicity-swarm", "hard-cut", "build", "The other side", "Mail sacks drop onto a freight scale as the camera rises to sacks stacked down the platform, the needle bounces to MOSTLY OPPOSED and a MAT-SU BOROUGH request to reconsider lands on top while the switch stand at mid-ground shivers in its DNR notch"),
  (15, 15, "push-detail", "close", "eye", "empty-car", "eye-level-immersive", "single-object-void", "assemble-build", "structure-as-subject", "graphic-match", "match", "Nothing inside", "An empty boxcar with the ACRES car behind it on the open siding rolls its doors open on nothing, then RULES ties lay ahead of it as it waits"),
- (16, 17, "alt-vantage", "wide", "low", "fork-button", "low-angle-heroic", "centered-hero-lowerthird", "radial-emanate", "structure-as-subject", "match-cut", "carry", "Which first", "Back at the fork the FRIDAY window card and the amber NOVEMBER 30TH sign glow, and the switch lever swings between RULES ties and the empty boxcar and stops caught mid-throw"),
+ (16, 17, "alt-vantage", "wide", "low", "fork-button", "low-angle-heroic", "centered-hero-lowerthird", "radial-emanate", "structure-as-subject", "match-cut", "carry", "Which first", "Low where the open branch splits again past the siding points, a second switch in the foreground swings slowly between a RULES FIRST leg laid with ties and a TENANT FIRST leg where the empty boxcar waits on bare roadbed with no ties under it and stops caught mid-throw, the main stand small behind still on DNR, the FRIDAY window card and the amber NOVEMBER 30TH sign glowing far off"),
 ]
 
 AMBIENT = {1: "light wind over snow, wire hum", 2: "platform wind, a far horn", 3: "a quiet room, a clock tick", 4: "a passing train, wind", 5: "wind over snow, a far train",
@@ -101,7 +100,7 @@ AMBIENT = {1: "light wind over snow, wire hum", 2: "platform wind, a far horn", 
 CENTER = {1: "the switch stand at x540 y1060", 2: "the Suit and the hoop at x520 y980", 3: "the clock and the door at x600 y860", 4: "the agenda cut at x540 y1000",
           5: "the boxcar on the yard spur at x600 y1000", 6: "the billboard at x540 y880", 7: "the plat at x540 y960", 8: "the parcel and siding at x540 y980",
           9: "the switch stand at x540 y1040", 10: "the two branches at x540 y960", 11: "the Suit and the stake at x540 y1000", 12: "the Suit and the binder stack at x600 y1100",
-          13: "the ACRES cars at x540 y1040", 14: "the scale at x540 y1040", 15: "the empty boxcar at x540 y1020", 16: "the switch stand at x540 y1060"}
+          13: "the ACRES cars at x540 y1040", 14: "the scale at x540 y1040", 15: "the empty boxcar at x540 y1020", 16: "the second switch stand at x540 y1180"}
 HERO = {
  1: ("switch stand + track fork + buffer stop window card + open branch", "45% switch, 35% fork, 20% far world"),
  2: ("Suit + slat date board + train-order hoop + brass plate", "45% Suit, 30% hoop, 25% board"),
@@ -118,12 +117,12 @@ HERO = {
  13: ("ACRES flatcars + coupler chain + state post", "50% cars, 30% chain, 20% post"),
  14: ("freight scale + mail sacks + envelope + switch stand far behind", "45% sacks, 35% scale, 20% letter and switch"),
  15: ("empty boxcar + RULES ties + open siding", "50% car, 35% ties, 15% siding"),
- 16: ("switch stand + RULES ties + empty boxcar + two signs", "45% switch, 30% ties and car, 25% signs"),
+ 16: ("second switch stand + RULES FIRST leg + TENANT FIRST leg + empty boxcar + main stand behind + two signs", "45% second switch, 30% legs and car, 25% signs and main stand"),
 }
 PARTS = {i: 44 for i in range(1, 17)}
 KICKS = (9, 22, 38)
 CAMERA = {1: "static:a locked tableau of the fork", 2: "truckAcross", 3: "dollyThrough", 4: "truckAcross", 5: "craneDown", 6: "riseWith", 7: "dollyThrough", 8: "craneDown",
-          9: "static:locked so the shadow sweep is the only move", 10: "truckAcross", 11: "dollyThrough", 12: "riseWith", 13: "craneDown", 14: "craneDown", 15: "dollyThrough", 16: "static:a locked hold on the lever caught mid-throw"}
+          9: "static:locked so the shadow sweep is the only move", 10: "truckAcross", 11: "dollyThrough", 12: "riseWith", 13: "truckAcross", 14: "riseWith", 15: "dollyThrough", 16: "static:a locked hold on the lever caught mid-throw"}
 
 PALETTE = ("bleached-linen haze #D9D6C8 over sun-washed cream #EFE8D6, a crusted snowfield #F3F1EA with oatmeal snow shade #CFC6B4, "
            "long honey-lit snow with lake-blue cast shadows #9FB6CC, birch bark #F2EFE6, spruce black-teal #1E2B24, rail rust #8A4B2E over creosote ties #5B4636, "
@@ -154,23 +153,23 @@ def BOARD_HEAD(b_at, end, ad, tr):
         "claim_map": {str(k): v for k, v in CLAIM_MAP.items()},
         "hook": {"pattern": "in-medias-res", "frame1": "Low and wide at a rail fork in noon snow near Houston, and at 0.2 s the faceless switch stand throws its lever hard over with a clank as powder jumps off the rail",
                  "headline": "12 DAYS TO THE HANDOFF", "motion_by_s": 0.2,
-                 "loopback": "Frame 1 is the lever thrown hard toward the short closed branch; the last shot is the same fork with the lever caught mid-throw between RULES ties and an empty boxcar."},
+                 "loopback": "Frame 1 is the main lever thrown hard toward the short closed branch; the last shot keeps the main lever on DNR, small behind, while a second switch past the siding points is caught mid-throw between a RULES FIRST leg and a TENANT FIRST leg."},
         "open_loop": {"plant_t": b_at(3), "pay_t": b_at(35), "plant_glow_s": 0.4, "plant_sfx": "clunk", "what": "What is down the other track? Planted as the lamp flares and the stand's long shadow stretches down the open DNR branch past a milepost reading DNR, STATE LAND NEAR HOUSTON, running off the frame; carried as the land's clock is set on that branch; paid when an empty boxcar on that branch rolls its doors open on nothing inside: no committed tenant, power source, cooling or schedule."},
         "open_loop_2": {"plant_t": b_at(20), "pay_t": b_at(46), "what": "Does the land decide what gets built? Planted as three use cards spring up on the parcel, COULD HOST, and the points slide toward a siding that curves out of sight; paid when a DNR stamp lands on the ACRES car: THE TRANSFER, NOT THE USE."},
         "throughline": {"object": "the switch lever", "lands_in_button": "the lever caught mid-throw between a stack of RULES ties and an empty boxcar, the amber lamp glowing",
                         "states": [
                             {"at_s": b_at(1), "state": "L1 thrown hard toward the short closed AIDEA BOARD branch"},
-                            {"at_s": b_at(12), "state": "L2 trembling at the centre of its quadrant as the agenda passes"},
+                            {"at_s": b_at(12), "state": "L2 still set to AIDEA BOARD, rattling in its keeper as the agenda passes"},
                             {"at_s": b_at(22), "state": "L3 thrown to the open DNR branch, the disc shadow settling on it"},
                             {"at_s": b_at(27), "state": "L3b small beyond the DECEMBER 7TH post, still set to DNR, its amber lamp now blinking steady"},
-                            {"at_s": b_at(34), "state": "L4 far behind the freight scale, lamp lit, the lever creeping a few degrees off DNR toward centre as the borough letter unfolds"},
-                            {"at_s": b_at(38), "state": "L5 caught mid-throw between RULES and a TENANT"}]},
+                            {"at_s": b_at(34), "state": "L4 at mid-ground beside the freight scale, still set to DNR, shivering in its notch as the borough letter unfolds"},
+                            {"at_s": b_at(38), "state": "L5 the main lever still on DNR; the second switch where the open branch splits caught mid-throw between the RULES leg and the empty boxcar leg"}]},
         "reveals": [
             {"t": b_at(3), "type": "scale-pullback", "what": "the stand's long shadow stretches down an open branch that runs far beyond the frame", "hold_s": 0.6},
             {"t": b_at(11), "type": "build-on", "what": "the agenda cut rolls in car by car", "hold_s": 0.6},
             {"t": b_at(25), "type": "scale-pullback", "what": "the view pulls wide as 30 ties run past the DECEMBER 7TH mark and off the frame", "hold_s": 0.8},
             {"t": b_at(31), "type": "build-on", "what": "three ACRES cars uncouple to one, nearly 20,000 to 6,800", "hold_s": 0.6},
-            {"t": b_at(38), "type": "scale-pullback", "what": "the closing wide shows the whole fork, the buffer's short branch against the open one", "hold_s": 0.8}],
+            {"t": b_at(33), "type": "scale-pullback", "what": "the view rises from the scale to show mail sacks stacked down the whole platform", "hold_s": 0.8}],
         "tail_s": 2.0, "audio_arc": {"bed": [
             {"line": 0, "offset": 0.0, "level": 1.0}, {"line": 3, "offset": 0.0, "level": 0.9}, {"line": 5, "offset": 0.0, "level": 1.1},
             {"line": 9, "offset": 0.0, "level": 1.2}, {"line": 12, "offset": 0.0, "level": 0.7}, {"line": 15, "offset": 0.0, "level": 0.6}, {"line": 17, "offset": 0.0, "level": 0.9},
