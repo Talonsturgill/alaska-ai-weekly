@@ -846,3 +846,12 @@ Whole-mix loudness is not a voice-to-background measurement.
 - **A count plate can't cover the things it counts.** 5 OF 9 sat on two of the nine items. Put the count inside the stat badge above the sheet.
 - **One foreground band in most shots is a template.** The same tussock row carried 11 of 16 shots; vary the floor by world (mud bank, sedge, desk props) and drop it from interior shots.
 - **Gates run on the board text, so stale words come back.** hook.frame1 still said "a squinting face" after the scanline lost its face, and an open-loop text still named a staged item after Act 3 moved to a generic swatch. After a restage, grep the board for the old noun.
+
+## Things the 2026-11-25 gates, critics and panel found that were knowable in advance ("The Other Track")
+- Two clocks in one frame each get their own label, the date it belongs to, and their own place. Stacking "FRIDAY" and "NOVEMBER 30TH" on one card read as one wrong date to the editor (hard blocker). Label each clock where it stands ("BOARD · FRIDAY", "RECONSIDERATION DUE / NOVEMBER 30TH"), and check that no later card is drawn on top of it. label_footprint reports a fully covered label only as a NOTE.
+- A VO line must not join two separate meetings into one event. "Met behind closed doors, took no action and resumes Friday" ran the November 19th session together with the continued meeting. Date-scope the no-action point ("On November 19th ...") and give the resumption its own sentence.
+- A spoken quote from a spokesperson carries the month and the outlet on screen ("AIDEA SPOKESPERSON, NOVEMBER · PER ALASKA BEACON"). An unattributed quote plate is an editor hard blocker.
+- Credits OCR reads a bare host ("KTOO.ORG") badly. Every outlet a film cites needs a display name in build_scenes._HOST_NAMES before the first render.
+- A ruler label on the first tick sits at the frame edge. A camera pan that drifts away from it cuts the label off for the whole shot. Start-anchor the end labels, then retire them before the pan or keep the pan inside fx +- 540/z.
+- A VO patch has to fit its existing slot (PACE_MAX). Shorten the line before asking for a 0F read, not after four failed takes. About 2.4 words per second of slot is the ceiling.
+- A long VO (128.6 s against the 112 to 120 s aim) leaves the panel more time to call shots that are held too long. Trim the script toward 270 words before synthesis, not after.

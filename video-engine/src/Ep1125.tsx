@@ -703,7 +703,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const lamp = ease(f, b(26), 10);
   const pan = easeIO(f, b(25) + 20, 80);
   return (
-    <Frame p={p} warmth={0.06} cam={(fr) => ({z: 1.08, fx: lerp(560, 760, pan) + 0 * fr, fy: 960})}>
+    <Frame p={p} warmth={0.06} cam={(fr) => ({z: 1.08, fx: lerp(560, 720, pan) + 0 * fr, fy: 960})}>
       <SVG>
         <rect x={-200} y={-60} width={2600} height={2040} fill={RAIL.snow} data-band="ok" />
         {Array.from({length: 40}, (_, i) => <path key={i} d={`M ${h01(i, 7) * 2200 - 100} ${h01(i, 8) * 1900} q 50 -8 110 0`} stroke="#CFC6B4" strokeWidth={5} fill="none" opacity={0.55} data-band="ok" />)}
@@ -716,7 +716,7 @@ const S10: React.FC<SceneProps> = ({p}) => {
             return (
               <g key={i}>
                 <path d={`M ${dx} ${500} V ${lab ? 530 : 516}`} stroke={am ? RAIL.amberD : INK} strokeWidth={lab ? 4 : 2} />
-                {lab && <text x={dx} y={560} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={i === 12 ? INK : am ? RAIL.amberD : INK}>{lab}</text>}
+                {lab && (i > 0 || pan < 0.3) && <text x={i === 0 ? dx - 8 : dx} y={560} textAnchor={i === 0 ? 'start' : 'middle'} opacity={i === 0 ? Math.max(0, 1 - pan / 0.3) : 1} fontFamily={MONO} fontWeight={900} fontSize={20} fill={i === 12 ? INK : am ? RAIL.amberD : INK}>{lab}</text>}
               </g>
             );
           })}
@@ -979,11 +979,11 @@ const S16: React.FC<SceneProps> = ({p}) => {
         <SusitnaBG f={f} ground={1080} seed={26} drift={-f * 0.2} birches={[40, 1040]} />
         {/* far off: the main stand, still on DNR, and the FRIDAY window card on the closed branch */}
         <SwitchStand x={330} y={1100} scale={0.42} f={f} throw={1} turn={1} lamp={1} cues={[b(37)]} />
-        <g transform="translate(900 1040)">
+        <g transform="translate(860 930)">
           <rect x={-110} y={-26} width={220} height={40} rx={5} fill={fri > 0.5 ? '#F6E7C8' : '#C9C3B4'} stroke={INK} strokeWidth={3} />
           {fri > 0.5 && <rect x={-124} y={-36} width={248} height={60} rx={8} fill="#F6E7C8" opacity={0.3} />}
           <text x={0} y={2} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>BOARD · FRIDAY</text>
-          <path d="M 0 14 V 60" stroke={INK} strokeWidth={4} />
+          <path d="M 0 14 V 120" stroke={INK} strokeWidth={4} />
         </g>
         <g transform={`translate(190 1000) rotate(${f > b(45) ? 7 * Math.sin((f - b(45)) / 5) * Math.exp(-(f - b(45)) / 20) : 0})`}>
           <path d="M 0 -60 V 80" stroke={INK} strokeWidth={4} />
