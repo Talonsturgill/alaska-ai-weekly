@@ -1,0 +1,37 @@
+{
+ "ship": false,
+ "craft_score": 7.0,
+ "weakest_frames": [
+  {
+   "time": "76.6s (shot 10, beat 27/28, the 'Count the ties' payoff)",
+   "cause": "b+c: this is the film's thesis frame and the least modelled one in it. It is a flat orthographic diagram on bare cream. The top 23% above the ruler and the bottom 22% below the caption are empty except for stray snow dashes. Only about 12 of the 30 laid DNR ties are on screen, so a viewer told 'Count the ties' can't count to 30. The landscape, light and depth of the scene frames vanish here, and it reads as if pasted from a different deck.",
+   "fix": "Stage it in the scene world: a low 3/4 view down the open DNR branch, receding to the mountains, with the 5 bare ties in the foreground and the 30 laid ties diminishing in perspective. Put the DECEMBER 7TH amber lamp lit at tie 7, with its glow and cast shadow, and fill the lower third with the near rail and ties. Keep the ruler as a thin overlay."
+  },
+  {
+   "time": "35.7-38.4s (shot 5, ALASKA DATA CORP boxcar, overhead)",
+   "cause": "c+a: the camera goes top-down onto a flat cream field. The spruce are identical star-shaped stamps with the same blue oval shadow, repeated about 14 times. Roughly 60% of the frame is eventless white, the lower quarter below the caption is bare, and the overhead camera breaks the eye-level physics every other frame keeps.",
+   "fix": "Either drop to the house eye-level camera on the yard spur, with the boxcar on its siding against the tree line and the mountains, or keep the overhead but vary the tree crowns and sizes, add tie and ballast texture and snow drift modelling, and put a $20M coin sack or yard detail in the empty lower third."
+  },
+  {
+   "time": "63.0s (shot 8, the plat and use cards)",
+   "cause": "b: the largest object, the parcel polygon, is a flat beige fill with one outline, the least modelled thing in the frame. Below the caption is a bare track on white.",
+   "fix": "Give the parcel ground: snow-covered terrain with birch and stumps, a surveyor's stake line, a soft cast shadow and a snow-texture gradient, so the land being argued over reads as land rather than a sticky note."
+  },
+  {
+   "time": "107.2-108.8s and 117.4-119.8s (shots 14 and 15)",
+   "cause": "c: each composition holds about 2.5 s with only 5-7% frame change, and the same stock foreground (tie stack, rail, signal post) fills the lower third. The comments and RULES beats lose energy right before the close.",
+   "fix": "Shot 15: animate the RULES ties being laid tie by tie toward the camera, so the lower third carries the event instead of the stock prop stack."
+  }
+ ],
+ "sequence_findings": [
+  "Arc: the cold open sets up two clocks, the board's and the land's, and the film pays that off and lands on the question at 127.6s, where the second switch stand and its mid-throw lever end on an honest open choice. But the promise ('the land's clock sits elsewhere') isn't paid until 66s ('Here's the clock that counts'). The middle run from 31s to 63s (ADC boxcar, Plural billboard, THE PITCH stamp, plat, use cards) is exposition with no clock on screen, and the film sags there.",
+  "Predicted bail point is about 39-48s, the painted Plural quote. It is a static billboard of text, it comes third in a row after two exposition beats, and the switch stand and the ties are absent. Fix: put the switch stand and a tie count in frame behind the billboard, or move a one-line clock tease ('the land's deadline is November 30th') up to about 40s as a rehook.",
+  "Junction pulls: 0-8.5s strong (the lamp lights); 8.5 to 9.2 strong (the date board); 25.5 to 26.5 strong (the boardroom cuts to the diesel at the switch, and the lever throws); 31 to 31.7 weak (cut to an overhead camera with no shared element); 48 to 48.7 weak (the stamp has no visual bridge to the plat); 61.6 to 63.8 strong (the switch points take us to the stand); 77 to 79.7 strong (the Suit, with the stand blinking behind him); 101 to 101.8 weak; 119.8 to 120.5 strong (back to the buffer stop and the second switch).",
+  "Continuity devices hold. The switch stand recurs at 0, 8.5, 28.8, 63.9, 66.4, 71.5, 79.7 and 127.6s, and its lever stays on DNR after it is thrown. The signal-amber accent is used consistently, for lamps, THE LAND'S CLOCK, the stamps and the final question. Ties-as-days is arithmetically right at 76.6s: 12 AIDEA ties end at the Dec 7th line, 5 bare ties run from today to Nov 30th, and the Dec 7th line crosses the DNR branch at the 7th laid tie, matching the ruler at about 63 px a day. The device under-delivers visually because 30 ties are never countable on screen (see weakest frame 76.6s).",
+  "Cross-frame cause a, the same drawing on more than three frames: one stock lower-third foreground (stacked tie bundle, loose rail, bucket or picket fence, amber signal post) is drawn identically on at least 15 stills: 5.1, 8.5, 15.3, 19.0, 46.9, 48.0, 56.1, 66.4, 71.5, 86.8, 94.5, 97.0, 101.1, 107.2, 117.4s. The spruce band with its wavy snow stripes and the birch pair also carry about 20 frames unchanged. On the contact sheet the lower thirds read as one pasted strip. Fix: vary or retire the foreground per shot so each lower third carries that beat's object (coin sacks, mail sacks, the ACRES chain, RULES ties).",
+  "Cross-frame cause e, no tonal arc: I was handed no tonal-arc census, so these are judgements by eye, not quoted numbers. Every frame except the boardroom (25.5s) and the credits sits at the same pale cream and snow lightness. The film doesn't darken or warm as the clock tightens, and it doesn't resolve at the close. The lit amber lamps are the only tonal events. Fix: grade the sky from morning cream (0-30s) to a lower amber dusk across the clock act (66-80s), into blue-hour for the close at 120-128s, so the final lit lamp is the brightest point of the film.",
+  "Rhythm: the density alternation mostly works. The boardroom at 25.5s is the one tonal breather, and the clock act from 66s to 80s escalates well. The 101-120s run is four similar mid-density frames in a row, held long, and it softens the run-up to the question.",
+  "Consistency: the ILLUSTRATION tag sits at the same position every frame, and the caption box and type voice hold. Light direction is soft overhead throughout, with a lamp glow on stands. The physics breaks at 35.7-38.4s (overhead camera, sticker trees) and at 76.6s (flat diagram)."
+ ],
+ "signed_off": false
+}

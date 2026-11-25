@@ -1,0 +1,136 @@
+{
+ "run_date": "2026-11-25",
+ "title": "The Other Track",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Kreiss-Tomkins urges AIDEA to pause decisions until he takes office",
+   "outlet": "Anchorage Daily News, Iris Samuels, November 19th",
+   "url": "https://www.adn.com/politics/2026/11/19/kreiss-tomkins-urges-aidea-to-pause-decisions-until-he-takes-office/",
+   "claims": [
+    "c1",
+    "c2",
+    "c6",
+    "c12",
+    "c15",
+    "c17"
+   ]
+  },
+  {
+   "id": "s2",
+   "title": "Gov.-elect Kreiss-Tomkins calls for pause on additional AIDEA action after multimillion-dollar moves",
+   "outlet": "Alaska Beacon via KTOO, James Brooks, November 23rd",
+   "url": "https://www.ktoo.org/2026/11/23/gov-elect-kreiss-tomkins-calls-for-pause-on-additional-aidea-action-after-multimillion-dollar-moves/",
+   "claims": [
+    "c1",
+    "c3",
+    "c4",
+    "c5",
+    "c12",
+    "c16",
+    "c18"
+   ]
+  },
+  {
+   "id": "s3",
+   "title": "Governor-elect asks AIDEA to pause decision-making",
+   "outlet": "Must Read Alaska, November 19th",
+   "url": "https://mustreadalaska.com/governor-elect-asks-aidea-to-pause-decision-making/",
+   "claims": [
+    "c2",
+    "c5",
+    "c9",
+    "c15"
+   ]
+  },
+  {
+   "id": "s4",
+   "title": "AIDEA board meeting recess notice and schedule",
+   "outlet": "AIDEA",
+   "url": "https://www.aidea.org/About/Board-Members/Board-Meeting-Schedule",
+   "claims": [
+    "c4",
+    "c13",
+    "c14"
+   ]
+  },
+  {
+   "id": "s5",
+   "title": "AIDEA continued board meeting agenda, November 24th",
+   "outlet": "AIDEA",
+   "url": "https://www.aidea.org/Portals/0/Meeting%20Docs/2026BoardMeetings/111926/11.24.26%20AIDEA-Agenda%20Public%20Linked%20Agenda%2011192026.pdf",
+   "claims": [
+    "c6",
+    "c14",
+    "c36"
+   ]
+  },
+  {
+   "id": "s6",
+   "title": "Dunleavy pushes for data centers to come to Alaska as he prepares to leave office",
+   "outlet": "Anchorage Daily News, Iris Samuels, November 11th",
+   "url": "https://adn.com/politics/2026/11/11/dunleavy-pushes-for-data-centers-to-come-to-alaska-as-he-prepares-to-leave-office/",
+   "claims": [
+    "c9",
+    "c10",
+    "c11",
+    "c19"
+   ]
+  },
+  {
+   "id": "s7",
+   "title": "Alaska DNR approves scaled-down land transfer to AIDEA for industrial park near Houston",
+   "outlet": "Alaska Beacon via ADN, James Brooks, November 10th",
+   "url": "https://www.adn.com/alaska-news/mat-su/2026/11/10/alaska-dnr-approves-scaled-down-land-transfer-to-aidea-for-industrial-park-near-houston/",
+   "claims": [
+    "c20",
+    "c22",
+    "c25",
+    "c26",
+    "c27",
+    "c28",
+    "c32",
+    "c33"
+   ]
+  },
+  {
+   "id": "s8",
+   "title": "Mat-Su Borough asks state to reverse AIDEA land transfer, consider Point MacKenzie instead",
+   "outlet": "Mat-Su Sentinel via ADN, Amy Bushatz, November 17th",
+   "url": "https://www.adn.com/alaska-news/mat-su/2026/11/17/mat-su-borough-asks-state-to-reverse-aidea-land-transfer-consider-point-mackenzie-instead/",
+   "claims": [
+    "c20",
+    "c21",
+    "c28",
+    "c29",
+    "c30",
+    "c31",
+    "c32",
+    "c33",
+    "c34",
+    "c35"
+   ]
+  },
+  {
+   "id": "s9",
+   "title": "A Rare Opportunity to Plan with the Mat-Su (op-ed)",
+   "outlet": "AIDEA, July",
+   "url": "https://www.aidea.org/Portals/0/AIDEA%20Houston%20Op-Ed%20by%20AIDEA.pdf",
+   "claims": [
+    "c21",
+    "c22",
+    "c23",
+    "c24"
+   ]
+  },
+  {
+   "id": "s10",
+   "title": "State of Alaska launches InvestNorth",
+   "outlet": "PR Newswire, November 9th",
+   "url": "https://www.prnewswire.com/news-releases/state-of-alaska-launches-investnorth-an-online-platform-to-finance-infrastructure-and-open-the-door-to-citizen-participation-302933435.html",
+   "claims": [
+    "c37"
+   ]
+  }
+ ]
+}
