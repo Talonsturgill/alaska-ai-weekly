@@ -718,7 +718,65 @@ _HOST_NAMES = {
 }
 
 
-def _source_labels(srcs):
+# AN OUTLET NAMED ON SCREEN IS AN OUTLET THE CREDITS NAME (machine pass 2026-11-25). The 11-25
+# film attributed a plate "DNR, PER MAT-SU SENTINEL" while its end card read ANCHORAGE DAILY NEWS
+# for that source, because the URL was adn.com and the label came from the host. sources.json
+# already said whose reporting it was ("Mat-Su Sentinel via ADN, Amy Bushatz"). So the credit
+# reads the film's own "PER <OUTLET>" attributions, and a source whose outlet names one of them
+# before any " via " is credited under that name. A source may also carry `credit`, an explicit
+# label, which wins over both. credits_check fails an on-screen outlet the card still omits.
+_PER_RE = re.compile(r"(?<![A-Za-z])PER\s+((?:[A-Z][A-Z0-9'\u2019&.\-]*)(?:[ ]+[A-Z][A-Z0-9'\u2019&.\-]*){0,5})")
+
+
+def per_outlets(src_text):
+    """The names a film attributes on screen with "PER <NAME>", upper case, a leading THE and
+    any " VIA ..." relay dropped, in first-seen order. Units ("PER ACRE") come back too; the
+    callers only act on names that match a source's outlet."""
+    body = re.sub(r"/\*.*?\*/", " ", src_text or "", flags=re.S)
+    body = re.sub(r"^\s*//.*$", " ", body, flags=re.M)
+    out = []
+    for m in _PER_RE.finditer(body):
+        name = re.split(r"\s+VIA\s+", m.group(1))[0].strip(" '\u2019.-")
+        name = re.sub(r"^THE\s+", "", name)
+        if len(name) >= 2 and name not in out:
+            out.append(name)
+    return out
+
+
+def outlet_credited(name, labels):
+    """True when a credit label carries the on-screen name: equal, contained, or its initials
+    (PER ADN against ANCHORAGE DAILY NEWS, PER THE NEWS-MINER against FAIRBANKS DAILY NEWS-MINER)."""
+    n = name.upper()
+    for lab in labels:
+        u = lab.upper()
+        words = [w for w in re.split(r"[\s\-]+", re.sub(r"'S\b", "", u)) if w]
+        if n == u or re.search(r"(?<![A-Z0-9])" + re.escape(n) + r"(?![A-Z0-9])", u) \
+                or n == "".join(w[0] for w in words):
+            return True
+    return False
+
+
+def outlet_names(name, outlet):
+    """True when a sources.json `outlet` string LEADS with this on-screen outlet as its reporter:
+    the text before any " via ", split on "/" and ";", each part's opening words ("Mat-Su Sentinel
+    via ADN", "KTOO / Alaska Public Media"). A name inside the prose ("peer-reviewed paper",
+    "Yahoo News (ADN copy)") is not the reporter."""
+    reporter = re.split(r"\s+via\s+", outlet or "", flags=re.I)[0].lower()
+    n = re.escape(name.lower())
+    return any(re.match(r"(?:the\s+)?" + n + r"(?![a-z0-9])", part.strip())
+               for part in re.split(r"[/;]", reporter))
+
+
+def _episode_text():
+    try:
+        from caption_band_check import default_targets
+        targets = default_targets()
+        return open(targets[0]).read() if targets else ""
+    except Exception:
+        return ""
+
+
+def _source_labels(srcs, on_screen=()):
     """Group sources.json into lines a person can read off a phone in six seconds.
 
     One label per URL produced junk: the aggregate award query rendered as "API.NSF.GOV",
@@ -727,6 +785,7 @@ def _source_labels(srcs):
     credit roll actually wants: every NSF award on one line, every indexed paper on the next.
     """
     awards, papers, dois, other, seen = [], [], [], [], set()
+    hosts = [_host_label((e.get("url") or "").strip()) for e in srcs]
     for e in srcs:
         url = (e.get("url") or "").strip()
         m = re.search(r"/awards/(\d+)\.json", url) or re.search(r"AWD_ID=(\d+)", url)
@@ -754,10 +813,17 @@ def _source_labels(srcs):
             if m.group(1) not in dois:
                 dois.append(m.group(1))
             continue
-        if "eutils.ncbi" in url or "esearch.fcgi" in url:
-            lab = "PUBMED QUERY"
+        named = next((n for n in on_screen if outlet_names(n, e.get("outlet"))), None)
+        if named and outlet_credited(named, hosts):
+            named = None          # already on the card under its full name (PER ADN, adn.com)
+        if (e.get("credit") or "").strip():
+            lab = e["credit"].strip().upper()
         elif "awards.json?keyword" in url:
             continue          # the aggregate query behind the total, already implied by the ids
+        elif named:
+            lab = named
+        elif "eutils.ncbi" in url or "esearch.fcgi" in url:
+            lab = "PUBMED QUERY"
         elif "dggs.alaska.gov" in url:
             lab = "ALASKA DGGS"
         elif "epscor" in url:
@@ -771,8 +837,7 @@ def _source_labels(srcs):
         elif "eos.org" in url:
             lab = "AGU EOS HIGHLIGHT"   # EOS.ORG defeats the rendered OCR at credit size (2026-11-08)
         else:
-            host = re.sub(r"^www\.", "", urlparse(url).netloc).lower()
-            lab = _HOST_NAMES.get(host) or host.upper()
+            lab = _host_label(url)
         if lab and lab not in seen:
             seen.add(lab)
             other.append(lab)
@@ -786,6 +851,11 @@ def _source_labels(srcs):
         labels.append("DOI " + ", ".join(d.upper() for d in dois))
     labels.extend(other)
     return labels
+
+
+def _host_label(url):
+    host = re.sub(r"^www\.", "", urlparse(url).netloc).lower()
+    return _HOST_NAMES.get(host) or host.upper()
 
 
 def _credits():
@@ -808,7 +878,15 @@ def _credits():
     # and the card reads the subset. Absent means true, so an entry cannot vanish from the
     # card by omission.
     srcs = [s for s in srcs if s.get("used_in_film", True)]
-    labels = _source_labels(srcs)
+    labels = _source_labels(srcs, per_outlets(_episode_text()))
+    # A BARE HOSTNAME ON THE CARD IS A WARNING BEFORE THE RENDER (machine pass 2026-11-25, queue
+    # credits-host-ocr): 11-25's KTOO.ORG failed credits_check's rendered OCR after the mux, a
+    # render too late. Name the outlet in _HOST_NAMES or give the source a `credit` label.
+    for lab in labels:
+        if re.fullmatch(r"[A-Z0-9\-]+(\.[A-Z0-9\-]+)+", lab):
+            print(f"build_scenes: WARN the credits name {lab} by its hostname. Add it to _HOST_NAMES "
+                  f"or set `credit` on its sources.json entry, so the card names the newsroom and "
+                  f"the rendered OCR reads a word, not a URL.")
     if not music:
         print("build_scenes: NO MUSIC CREDIT. out/dispatch/music_credit.json has no `credit`.")
         return None

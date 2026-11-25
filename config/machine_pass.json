@@ -1,16 +1,16 @@
 {
   "last_pass": {
-    "date": "2026-11-23",
+    "date": "2026-11-25",
     "shipped": [
-      "pre-payoff-silence-reads-dead-air: the silence dip keeps the ambience playing and the mixer fails a breath in digital quiet, the 11-23 window went from -59.9 to -41.0 dBFS (91a1fe9)",
-      "figure-finish-parity: Suit rim follows the ink line, full hair crown and ear, no ghost contours, figure_rig_check flags a FigureFinish with no outline width (4c171de)",
-      "engine advance: Suit operate (two-stick controller with stickThrow on cues) and seated (stool), OperatorLook look-dev (0a63ed1)"
+      "covered-label-only-a-note: label_footprint FAILs a label 90 percent or more covered for 0.5 s or more unless marked data-hidden=\"ok\"; reproduces the 11-25 cut-2 BOARD \u00b7 FRIDAY case (6f6ed91)",
+      "vo-patch-slot-preflight: vo_patch_lines refuses before synthesis when the text cannot fit the slot at 1.1x the take's own pace, and prints a word budget (6f6ed91)",
+      "credits-omit-on-screen-outlet + credits-host-ocr: build_scenes credits on-screen PER <OUTLET> sources, warns on bare hostnames, and credits_check fails an omission (6 earlier films affected) (6f6ed91)"
     ],
     "escalated": [
-      "caption-scorer-hair-under-bar (owner decision, still open, repeat 10)",
-      "gate0-critic-rounds cap (owner decision, still open, repeat 10)",
-      "dispatch_mix --ambience-self-test already fails on main (room -30.7, wind -30.6 dBFS against older bands), cause unidentified, recalibrate next pass",
-      "music-pool-drained (repeat 1): not reached, needs network sourcing and a rights check"
+      "caption-scorer-hair-under-bar (owner decision, still open, repeat 11)",
+      "gate0-critic-rounds cap (owner decision, still open, repeat 11)",
+      "held-action-beat-excused-by-rig queued for a week of advisory measurement (Motion lowest on 32 of 39 cards)",
+      "showrunner-judged-pitches needs a runbook wording decision on which agent judges the four pitches"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

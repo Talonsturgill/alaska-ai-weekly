@@ -188,6 +188,33 @@ def slot_for(L, nxt, vo_len_s, tail_slack):
     return slot_end, (L["end"] - L["start"]) + max(0.0, tail_slack), True
 
 
+# A replacement that can't fit is knowable before the synth (machine pass 2026-11-25, queue item
+# vo-patch-slot-preflight): 11-25's line 3 spent four takes, 7.6 to 7.8 s each, on a 20 word text
+# for a 6.56 s slot before refusing. The film's own take read 288 words in 115.7 s of speech, 2.49
+# words a second, and a patch take reads at about that rate (those four ran 2.6). So the text is
+# estimated at FAST_READ times the measured rate, an optimistic read, and refused before any
+# synthesis only when even that can't fit the slot at PACE_MAX. The 16 word text that shipped
+# estimates 5.8 s and passes; the 20 word one estimates 7.3 s against 6.95 s and is refused.
+FAST_READ = 1.10
+
+
+def spoken_rate(lines):
+    """Words a second the existing take actually read, over every line's spoken span."""
+    words = sum(len(str(l.get("text", "")).split()) for l in lines)
+    secs = sum(max(0.0, l["end"] - l["start"]) for l in lines)
+    return words / secs if words and secs > 0 else None
+
+
+def preflight(text, budget, wps, pace_max=PACE_MAX):
+    """(fits, estimated seconds, word budget). The word budget is what the slot holds at the
+    take's plain rate, the length to write to; the refusal uses the optimistic FAST_READ rate."""
+    if not wps:
+        return True, None, None
+    n = len(text.split())
+    est = n / (wps * FAST_READ)
+    return est <= budget * pace_max, est, int(budget * pace_max * wps)
+
+
 def splice(audio, s, fitted, tone, slot_end_s, is_final, tail_after_s):
     """The audio with `fitted` laid in at sample s and room tone to the slot end. For the final
     line the file grows only by what the take needs, keeping the take's own tail after it.
@@ -244,6 +271,17 @@ def _self_test():
     new2, _ = splice(vo.copy(), s0, short, _room_tone(vo, lines, 2), se, True, len(vo) / SR - 9.0)
     if len(new2) != len(vo):
         bad.append("a final take that fits grew the file")
+    # the 11-25 line 3 case: 288 words in 115.7 s, a 6.56 s slot
+    wps = spoken_rate([{"text": " ".join(["w"] * 288), "start": 0.0, "end": 115.7}])
+    long20 = "On November 19th its board met behind closed doors, took no action, and said it would resume again this Friday."
+    ok20, est20, wb = preflight(" ".join(long20.split()[:20]), 6.56, wps)
+    ok16, est16, _ = preflight("On November 19th its board met behind closed doors and took no action. It resumes Friday.", 6.56, wps)
+    if ok20 or not (7.0 < est20 < 7.6) or wb != 17:
+        bad.append(f"preflight let a 20 word text into a 6.56 s slot (est {est20:.2f}s, word budget {wb})")
+    if not ok16:
+        bad.append(f"preflight refused the 16 word text that shipped (est {est16:.2f}s)")
+    if preflight("anything", 6.56, None)[0] is not True:
+        bad.append("preflight refused with no measured rate")
     for x in bad:
         print("  " + x)
     print("vo_patch_lines self-test:", "FAIL" if bad else "PASS")
@@ -356,6 +394,9 @@ def main():
     ap.add_argument("--tail-slack", type=float, default=TAIL_SLACK,
                     help="seconds the FINAL line may run past its old end (default %(default)s); "
                          "vo.wav grows by what the take needs, nothing before the line moves")
+    ap.add_argument("--skip-preflight", action="store_true",
+                    help="synthesize even when the word count estimates over the slot (the estimate "
+                         "is the take's measured pace; use only when the text reads unusually fast)")
     ap.add_argument("--self-test", action="store_true")
     a = ap.parse_args()
     if a.self_test:
@@ -389,6 +430,15 @@ def main():
               + (f" (final line: its old length plus {a.tail_slack:g}s of tail)" if is_final else ""))
         print(f"  was: {L['text']}")
         print(f"  now: {text}")
+        fits, est, word_budget = preflight(text, budget, spoken_rate(lines))
+        if est is not None:
+            print(f"  preflight: {len(text.split())} words read in about {est:.2f}s at this take's own pace; "
+                  f"the slot holds about {word_budget} words")
+        if not fits and not a.skip_preflight:
+            raise SystemExit(
+                f"line {idx}: {len(text.split())} words can't fit the {budget:.2f}s slot even read fast "
+                f"(about {est:.2f}s against {budget * PACE_MAX:.2f}s at {PACE_MAX}x). Write it in "
+                f"{word_budget} words or fewer and retry; no take was synthesized.")
 
         takes = _synth_takes(text, a.takes)
         if not takes:

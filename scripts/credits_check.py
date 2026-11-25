@@ -34,6 +34,7 @@ Exit 1 on any failure. There is no flag to skip it; a run that cannot credit its
 nothing to ship.
 
     python3 scripts/credits_check.py
+    python3 scripts/credits_check.py --self-test    # the on-screen outlet rule (2026-11-25), hermetic
 """
 import glob
 import hashlib
@@ -81,6 +82,56 @@ try:
 except Exception:
     CREDITS_MIN_S = 10.0
     CREDITS_TAIL_S = 2.3
+
+
+def uncredited_outlets(src_text, sources, labels):
+    """Outlets the film attributes on screen ("PER <OUTLET>") that a used source's `outlet` names
+    but the end card does not credit (machine pass 2026-11-25: 11-25 showed "DNR, PER MAT-SU
+    SENTINEL" over a card that credited only ANCHORAGE DAILY NEWS for that report). A name no
+    source's outlet carries ("PER ACRE", "PER BRIGGS") is not an outlet and is not judged here."""
+    used = [e for e in sources if e.get("used_in_film", True)]
+    return [n for n in _bs.per_outlets(src_text)
+            if any(_bs.outlet_names(n, e.get("outlet")) for e in used)
+            and not _bs.outlet_credited(n, labels)]
+
+
+def _self_test():
+    ok = True
+
+    def expect(name, cond):
+        nonlocal ok
+        print(("  ok   " if cond else "  FAIL ") + name)
+        ok = ok and cond
+
+    plates = ("<Plate text=\"MORATORIUM UNTIL RULES · PER ADN\" />\n"
+              "<Plate text=\"THE TRANSFER · NOT THE USE · DNR, PER MAT-SU SENTINEL\" />\n"
+              "<Plate displayLines={['AIDEA SPOKESPERSON · PER ALASKA BEACON']} />\n"
+              "<Plate text=\"$4 PER ACRE · PER THE NEWS-MINER\" />\n"
+              "// a comment: PER COMMENT OUTLET is not on screen\n")
+    sources = [
+        {"outlet": "Anchorage Daily News, Iris Samuels", "url": "https://www.adn.com/a"},
+        {"outlet": "Alaska Beacon via KTOO, James Brooks", "url": "https://www.ktoo.org/b"},
+        {"outlet": "Mat-Su Sentinel via ADN, Amy Bushatz", "url": "https://www.adn.com/c"},
+        {"outlet": "Fairbanks Daily News-Miner", "url": "https://www.newsminer.com/d"},
+        {"outlet": "Comment Outlet", "url": "https://example.org/e"},
+    ]
+    names = _bs.per_outlets(plates)
+    expect("per_outlets reads the plates and drops THE, units stay, comments do not",
+           names == ["ADN", "MAT-SU SENTINEL", "ALASKA BEACON", "ACRE", "NEWS-MINER"])
+    old_card = ["ANCHORAGE DAILY NEWS", "ALASKA BEACON", "FAIRBANKS DAILY NEWS-MINER", "EXAMPLE.ORG"]
+    expect("the 11-25 card that omitted the Mat-Su Sentinel fails on exactly that outlet",
+           uncredited_outlets(plates, sources, old_card) == ["MAT-SU SENTINEL"])
+    new_card = _bs._source_labels(sources, names)
+    expect("build_scenes credits the on-screen outlet a source's reporter field names",
+           "MAT-SU SENTINEL" in new_card and not uncredited_outlets(plates, sources, new_card))
+    expect("ADN is credited by ANCHORAGE DAILY NEWS's initials", _bs.outlet_credited("ADN", new_card))
+    expect("an explicit `credit` label wins",
+           _bs._source_labels([dict(sources[2], credit="Mat-Su Sentinel")]) == ["MAT-SU SENTINEL"])
+    expect("with no on-screen names the labels are unchanged",
+           _bs._source_labels(sources) == ["ANCHORAGE DAILY NEWS", "ALASKA BEACON",
+                                            "FAIRBANKS DAILY NEWS-MINER", "EXAMPLE.ORG"])
+    print("credits_check self-test: " + ("PASS" if ok else "FAIL"))
+    return 0 if ok else 1
 
 
 def _probe_duration(path):
@@ -329,6 +380,8 @@ def check_rendered_credits(video, props, renderer_source):
 
 
 def main() -> int:
+    if "--self-test" in sys.argv[1:]:
+        return _self_test()
     problems = []
 
     # A source/layout failure must never leave yesterday's passing pixel report
@@ -388,6 +441,15 @@ def main() -> int:
                 if ident not in raw:
                     problems.append(f"source label {lab!r} names {ident}, which appears "
                                     f"nowhere in sources.json.")
+
+        # an outlet the film names on screen is an outlet the card names (2026-11-25)
+        ep_now = newest_episode()
+        if ep_now:
+            missing = uncredited_outlets(open(ep_now).read(), json.load(open(src_p)).get("sources", []), labels)
+            for n in missing:
+                problems.append(f"the film attributes {n!r} on screen (\"PER {n}\") and sources.json names it "
+                                f"as an outlet, but the end card does not credit it. Re-run build_scenes.py, "
+                                f"which credits on-screen outlets, or set `credit` on that source.")
 
     site = (cred.get("site") or "").strip()
     if "alaskaaihq.com" not in site.lower():

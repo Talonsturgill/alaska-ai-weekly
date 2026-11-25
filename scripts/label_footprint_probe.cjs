@@ -99,6 +99,10 @@ function measureLabels() {
       }
     }
     const frac = onText ? covered / onText : 0;
+    // A label drawn to sit under a later card on purpose (a stack, a replaced notice) says so in source
+    // with data-hidden="ok" on itself or a parent, and its fully covered run stays a NOTE
+    // (machine pass 2026-11-25, covered-label-only-a-note).
+    if (t.closest('[data-hidden="ok"]')) face.hiddenOk = true;
     if (!cut && frac === 0) { out.push({id: idOf(t), text, frac: 0, cut: false, onText, ...face}); continue; }
     const top = [...by.entries()].sort((a, b) => b[1] - a[1])[0];
     out.push({id: idOf(t), text, frac, cut, onText, ...face, side: left >= right ? 'left' : 'right',
