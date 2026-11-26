@@ -1022,7 +1022,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} overlay={<>
           <Plate x={540} text="THE TIMES ARE ON THE BOARD" y={1262} size={28} p={ease(f, 4, 10) * (1 - ease(f, b(38) - 7, 6))} />
           <Plate x={540} text="WHAT SHOULD ALASKA MEASURE?" y={1192} size={34} tone="coral" p={ease(f, b(38) + 2, 10)} />
-        </>} cam={(fr) => ({z: lerp(1.45, 1.0, pull), fx: lerp(320, 540, pull), fy: lerp(900, 960, pull)})}>
+        </>} cam={(fr) => ({z: lerp(1.3, 1.0, pull), fx: lerp(400, 540, pull), fy: lerp(900, 960, pull)})}>
       <SVG>
         <WardWorld f={f} seed={1} windowX={250} windowW={360} floorY={1320} near="cart" />
         <HeldTravel f={f} x={470} y={650} w={540} h={640} mode="sweep" seed={26}>
