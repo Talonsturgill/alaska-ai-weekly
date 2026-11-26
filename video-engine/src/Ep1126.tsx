@@ -1022,23 +1022,23 @@ const S16: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} overlay={<>
           <Plate x={540} text="THE TIMES ARE ON THE BOARD" y={1262} size={28} p={ease(f, 4, 10) * (1 - ease(f, b(38) - 7, 6))} />
           <Plate x={540} text="WHAT SHOULD ALASKA MEASURE?" y={1192} size={34} tone="coral" p={ease(f, b(38) + 2, 10)} />
-        </>} cam={(fr) => ({z: lerp(1.45, 1.0, pull), fx: lerp(330, 540, pull), fy: lerp(980, 960, pull)})}>
+        </>} cam={(fr) => ({z: lerp(1.45, 1.0, pull), fx: lerp(320, 540, pull), fy: lerp(900, 960, pull)})}>
       <SVG>
         <WardWorld f={f} seed={1} windowX={250} windowW={360} floorY={1320} near="cart" />
-        <HeldTravel f={f} x={340} y={610} w={640} h={720} mode="sweep" seed={26}>
-          <CTRing f={f} x={660} y={930} s={1.0} table={0.7} glow={0.7} spin={0.4}>
+        <HeldTravel f={f} x={470} y={650} w={540} h={640} mode="sweep" seed={26}>
+          <CTRing f={f} x={740} y={930} s={0.88} table={0.7} glow={0.7} spin={0.4}>
             <BrainSlice x={0} y={-6} r={124} clot={0} seed={2} />
           </CTRing>
         </HeldTravel>
-        <g transform="translate(300 600)">
-          <Scoreboard f={f} x={0} y={0} s={0.5} rows={ROWS(tug < 0.5)} />
+        <g transform="translate(290 560)">
+          <Scoreboard f={f} x={0} y={0} s={0.72} rows={ROWS(tug < 0.5)} />
         </g>
         {tug > 0.4 && tug < 1 && (
-          <g transform={`translate(${300 + 80 * tug} ${720 + 500 * (tug - 0.4) * (tug - 0.4) * 6}) rotate(${tug * 80})`}>
+          <g transform={`translate(${290 + 80 * tug} ${790 + 500 * (tug - 0.4) * (tug - 0.4) * 6}) rotate(${tug * 80})`}>
             <rect x={-120} y={-20} width={240} height={42} fill={PING.paper} stroke={INK} strokeWidth={3} />
           </g>
         )}
-        <g transform={`translate(${lerp(620, 330, carry)} 1240)`}>
+        <g transform={`translate(${lerp(620, 300, carry)} 1110)`}>
           <Ping f={f} x={0} y={0} s={0.8} emotion={tug >= 1 ? 'curious' : 'hopeful'} arm={1} cues={[b(37), b(38)]} seed={17} look={-1} />
           <g transform="translate(-70 -260)"><Stopwatch f={f} x={0} y={0} r={40} sweep={4.38} accent={PING.brass} /></g>
         </g>
