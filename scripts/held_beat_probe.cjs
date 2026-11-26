@@ -10,7 +10,8 @@
 //
 //   node scripts/held_beat_probe.cjs <options.json> <outdir>
 //   node scripts/held_beat_probe.cjs --self-test
-//   options: {source, props, frames: [int...], component?}
+//   options: {source, props, frames: [int...], component?, maskType?}
+// maskType also writes m<frame>.png, the frame with text and its plates hidden (2026-11-26).
 // Exits 1 naming the frame and the exception when the film throws while rendering (2026-11-22).
 // Also writes <outdir>/figures.json: {frame: [{id, x, y, w, h, opacity}]} for every visible element
 // carrying data-figure (lib <IdleFigure>), measured in frame pixels (machine pass 2026-11-19).
@@ -79,6 +80,32 @@ registerRoot(()=> <Composition id="HeldBeat" component={Probed} width={1080} hei
         `and every later frame would screenshot blank and read as empty. Fix the throw first: ${String(thrown).slice(0, 800)}`);
       await screenshot({page, type: 'png', path: path.join(outdir, `f${String(frame).padStart(5, '0')}.png`),
         omitBackground: false, width: 1080, height: 1920, scale: 1});
+      // TYPE-MASKED twin (machine pass 2026-11-26, queue board-action-carried-by-plate): the same frame with
+      // every <text> hidden, and the plate it sits on (its nearest <g> holding a <rect> child, under a quarter
+      // of the frame). A plate fading in repaints 30 percent of a strip (Ep1126 S7, 41.8 s) while the doors
+      // the board promises never swing, so held_beat_check measures the masked pair too. Restored after.
+      if (options.maskType) {
+        const hidden = await page.evaluate(() => {
+          const els = new Set();
+          for (const t of Array.from(document.querySelectorAll('svg text'))) {
+            els.add(t);
+            for (let g = t.parentElement, d = 0; g && d < 4 && g.tagName.toLowerCase() !== 'svg'; g = g.parentElement, d++) {
+              if (g.tagName.toLowerCase() !== 'g') continue;
+              const r = g.getBoundingClientRect();
+              if (r.width * r.height > 0.25 * 1080 * 1920) break;
+              if (Array.from(g.children).some((c) => c.tagName.toLowerCase() === 'rect')) { els.add(g); break; }
+            }
+          }
+          const list = Array.from(els);
+          window.__typeMask = list.map((el) => [el, el.style.visibility]);
+          list.forEach((el) => { el.style.visibility = 'hidden'; });
+          return list.length;
+        });
+        await screenshot({page, type: 'png', path: path.join(outdir, `m${String(frame).padStart(5, '0')}.png`),
+          omitBackground: false, width: 1080, height: 1920, scale: 1});
+        await page.evaluate(() => { (window.__typeMask || []).forEach(([el, v]) => { el.style.visibility = v; }); window.__typeMask = null; });
+        if (!hidden) fs.writeFileSync(path.join(outdir, `m${String(frame).padStart(5, '0')}.none`), '');
+      }
       // Every <IdleFigure> carries data-figure (machine pass 2026-11-19, queue: hero scale): record its
       // projected box, which carries the Frame camera, so held_beat_check can report how tall the
       // figures are drawn on each strip. The page renders the composition at 1080x1920, scale 1.

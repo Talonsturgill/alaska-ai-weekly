@@ -185,13 +185,14 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
         opts = os.path.join(tmp, "o.json")
         with open(opts, "w") as fh:
             json.dump({"source": os.path.abspath(source), "props": os.path.abspath(props_path),
-                       "frames": sorted({f for p in pairs for f in p[3:]})}, fh)
+                       "frames": sorted({f for p in pairs for f in p[3:]}), "maskType": True}, fh)
         frames_dir = os.path.join(tmp, "frames")
         r = subprocess.run(["node", os.path.join(REPO, "scripts", "held_beat_probe.cjs"), opts, frames_dir],
                            cwd=REPO, capture_output=True, text=True, timeout=1800)
         if r.returncode:
             raise RuntimeError("held_beat_probe failed:\n" + (r.stderr or r.stdout)[-3000:])
         low, measured, straddled = [], 0, []
+        masked = []
         # The same Chrome frames also measure the TOP OF THE SQUARE (machine pass 2026-11-06), so
         # dead_space_check --plan can fail an empty top band before the full render is spent.
         import dead_space_check as dsc
@@ -211,6 +212,10 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
             measured += 1
             if pct < floor:
                 low.append((name, beat, shot_at(props, t0), t0, round(pct, 1)))
+            ma, mb = (os.path.join(frames_dir, f"m{f:05d}.png") for f in (f0, f1))
+            if os.path.exists(ma) and os.path.exists(mb):
+                mpct, _k = solved_change(Image.open(ma).convert("RGB"), Image.open(mb).convert("RGB"))
+                masked.append((name, beat, shot_at(props, t0), t0, round(pct, 1), round(mpct, 1)))
         # HERO SCALE (machine pass 2026-11-19; queue: composition, small heroes, repeat 3). The probe
         # records every <IdleFigure>'s projected box; keep the tallest visible figure on each strip.
         try:
@@ -236,7 +241,40 @@ def source_held(source, props_path, floor=HELD_FLOOR, out_dir=os.path.join(REPO,
         json.dump({"source": os.path.relpath(os.path.abspath(source), REPO),
                    "measure": "dead_space_check.top_band_fraction and bottom_band_fraction on Chrome frame 1 of each strip",
                    "samples": tops}, fh, indent=1)
+    with open(os.path.join(out_dir, "type_masked_plan.json"), "w") as fh:
+        json.dump({"source": os.path.relpath(os.path.abspath(source), REPO),
+                   "measure": "held_beat_check.solved_change on Chrome frames 1 and 8 of each strip, as drawn and "
+                              "with every <text> and its plate hidden (held_beat_probe maskType)",
+                   "strips": [{"strip": n, "beat": bt, "shot": sh, "t0": t, "pct": p, "masked_pct": mp}
+                              for n, bt, sh, t, p, mp in masked]}, fh, indent=1)
+    source_held.masked = masked
     return sorted(low, key=lambda x: (x[4], x[0])), measured, straddled
+
+
+# ACTION-NOT-DRAWN (machine pass 2026-11-26; queue held-action-beat-excused-by-rig 11-25 and
+# board-action-carried-by-plate 11-26, repeat 1). On 11-25 the freight-scale needle that "swings hard"
+# read 4.3 percent and shipped because its shot carried a HeldTravel; on 11-26 the S7 doors "never swing"
+# (seat 3) while the strip read 30.5 percent, all of it the MID-60s plate arriving. A rig moves light over a
+# prop and a plate fade repaints the frame; neither draws the action. So every strip is measured a second
+# time with type and plates hidden, and a strip whose board draw.action names a TRAVEL verb but whose
+# masked change is under the held floor is listed, rig or no rig. ADVISORY for a week of films, to be
+# compared with the beats the judges name before anything is promoted (the 11-25 escalation's next step).
+TRAVEL = re.compile(r"\b(swing|swings|swung|slam|slams|throw|throws|drop|drops|roll|rolls|slide|slides|lay|lays|"
+                    r"tip|tips|fall|falls|peel|peels|knock|knocks|flip|flips|jam|jams|bounce|bounces|"
+                    r"open|opens|shut|shuts|bang|bangs|spin|spins|sweep|sweeps|press|presses|stamp|stamps)\b", re.I)
+
+
+def action_not_drawn(masked, beats, floor=HELD_FLOOR):
+    """[(name, beat, shot, t0, pct, masked_pct, verb, action)] for strips whose board action names travel
+    and whose type-masked change is under `floor`, stillest first."""
+    out = []
+    for name, beat, shot, t0, pct, mpct in masked:
+        b = beats.get(beat) or {}
+        action = ((b.get("draw") or {}).get("action") or "").strip()
+        m = TRAVEL.search(action)
+        if m and mpct < floor:
+            out.append((name, beat, shot, t0, pct, mpct, m.group(1).lower(), action))
+    return sorted(out, key=lambda x: (x[5], x[0]))
 
 
 TREATMENTS = ("HeldTravel", "HeldProp")
@@ -438,6 +476,11 @@ def _self_test():
                        "<HeldTravel f={f} x={1} y={1} w={2} h={2} clipD=\"M0 0\" />\n"
                        "<HeldTravel f={f} x={1} y={1} w={2} h={2} mode=\"runner\" path={[[0, 0], [1, 1]]} />\n")
     assert lt == [1, 3, 7, 9], f"loose_travels read {lt}"
+    beats_t = {7: {"draw": {"action": "swing open on the MID-60s line"}}, 8: {"draw": {"action": "stands at the desk"}},
+               9: {"draw": {"action": "swings hard toward MOSTLY OPPOSED and bounces"}}}
+    nd = action_not_drawn([("doors_7", 7, 7, 41.8, 30.5, 2.1), ("desk_8", 8, 7, 44.0, 2.0, 1.5),
+                           ("needle_9", 9, 8, 50.0, 4.3, 7.0)], beats_t)
+    assert [(n, v) for n, _b, _s, _t, _p, _m, v, _a in nd] == [("doors_7", "swing")], nd
     print(f"held_beat_check self-test: PASS (push only {still:.2f}%, push plus prop {moving:.2f}%, "
           f"caption only {caption_only:.2f}%)")
     return 0
@@ -553,6 +596,14 @@ def main_source(argv):
         fs_line = figure_summary(os.path.join(REPO, "out", "dispatch", "figure_plan.json"))
         if fs_line:
             print("  " + fs_line)
+        nd = action_not_drawn(getattr(source_held, "masked", []), beats, a.held_floor)
+        for name, beat, shot, t0, pct, mpct, verb, action in nd:
+            print(f"  ACTION-NOT-DRAWN {mpct:4.1f}% with type and plates hidden ({pct:.1f}% as drawn)  S{shot} "
+                  f"{t0:6.2f}s beat {beat}  board action ({verb}): {action[:70]}")
+        if nd:
+            print(f"  NOTE {len(nd)} board action(s) name a travel the strip does not draw once plates are hidden "
+                  f"(out/dispatch/type_masked_plan.json): draw the object moving on the beat (a strike() or a "
+                  f"rotation on the named prop), a rig or a plate fade is not the action (advisory)")
         for name, beat, shot, t0, pct in low:
             b = beats.get(beat)
             shows = f" | {b.get('shows', '')[:80]}" if b else ""
