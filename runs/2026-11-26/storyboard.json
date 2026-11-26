@@ -589,13 +589,13 @@
       "thread": "carry",
       "stage3d": "planes",
       "centered": "the stopwatch at x540 y920",
-      "means": "The stopwatch on the intake board sweeps hard and slams to a stop as the clot comes out, and the nurse's hand presses it flat against the board",
+      "means": "The stopwatch on the intake board sweeps hard and slams to a stop as the clot comes out, and a FROM ARRIVAL tag swings down beside it",
       "ambient": "room tone, a clock",
       "hero": {
-        "name": "stopwatch on the intake board + nurse's hand",
+        "name": "stopwatch on the intake board + FROM ARRIVAL tag",
         "parts": 44,
         "zones": 3,
-        "detail_note": "70% stopwatch, 20% hand, 10% board"
+        "detail_note": "70% stopwatch, 20% tag, 10% board"
       },
       "id": 9,
       "start_s": 56.76,
@@ -882,22 +882,22 @@
       "offset": 5.57,
       "vo": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die.",
       "phrase": "two million brain cells",
-      "shows": "the brass counter lands its wheels on 2,000,000 with a clack, a plate reads 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE",
+      "shows": "the brass counter lands its wheels on 2,000,000 with a clack, a plate reads ABOUT 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE",
       "sfx": "clack",
-      "means": "2 million brain cells \u00b7 every minute",
+      "means": "about 2 million brain cells \u00b7 every minute",
       "rehook": "",
       "draw": {
         "subject": "the brass counter",
         "action": "lands its wheels on 2,000,000 with a clack",
         "emotion": "worried",
-        "annotation": "2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE"
+        "annotation": "ABOUT 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE"
       },
       "plate_at": "on-object",
       "claims": [
         "c5"
       ],
       "choreo": {
-        "primary": "the brass counter lands its wheels on 2,000,000 with a clack, a plate reads 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE",
+        "primary": "the brass counter lands its wheels on 2,000,000 with a clack, a plate reads ABOUT 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE",
         "reaction": "the bezel shudders",
         "ambient": "room tone, the scanner hum"
       },
@@ -1303,22 +1303,22 @@
       "offset": 0.0,
       "vo": "The results reached the local team and the clot specialists at once.",
       "phrase": "The results reached the",
-      "shows": "Ping, the round orchid alert pulse with a face stretches and splits like a cell into two identical copies over the map board, a plate reads ONE ALERT",
+      "shows": "Ping, the round orchid alert pulse with a face stretches and splits like a cell into two identical copies over the map board, a plate reads THE ALERT SPLITS",
       "sfx": "swish",
-      "means": "one alert",
+      "means": "the alert splits",
       "rehook": "",
       "draw": {
         "subject": "Ping, the round orchid alert pulse with a face",
         "action": "stretches and splits like a cell into two identical copies over the map board",
         "emotion": "determined",
-        "annotation": "ONE ALERT"
+        "annotation": "THE ALERT SPLITS"
       },
       "plate_at": "on-object",
       "claims": [
         "c4"
       ],
       "choreo": {
-        "primary": "Ping, the round orchid alert pulse with a face stretches and splits like a cell into two identical copies over the map board, a plate reads ONE ALERT",
+        "primary": "Ping, the round orchid alert pulse with a face stretches and splits like a cell into two identical copies over the map board, a plate reads THE ALERT SPLITS",
         "reaction": "the neck snaps",
         "ambient": "room tone, paper"
       },
@@ -1723,13 +1723,13 @@
       "offset": 4.13,
       "vo": "Four hours and twenty-three minutes after he arrived, the clot was out.",
       "phrase": "out.",
-      "shows": "the local nurse's hand presses the stopped stopwatch flat against the intake board, a plate reads CLOT OUT",
+      "shows": "a paper tag reading FROM ARRIVAL swings down on a pin beside the stopped stopwatch, a plate reads CLOT OUT",
       "sfx": "pop",
       "means": "clot out",
       "rehook": "",
       "draw": {
-        "subject": "the local nurse's hand",
-        "action": "presses the stopped stopwatch flat against the intake board",
+        "subject": "a paper tag reading FROM ARRIVAL",
+        "action": "swings down on a pin beside the stopped stopwatch",
         "emotion": "steady",
         "annotation": "CLOT OUT"
       },
@@ -1738,8 +1738,8 @@
         "c16"
       ],
       "choreo": {
-        "primary": "the local nurse's hand presses the stopped stopwatch flat against the intake board, a plate reads CLOT OUT",
-        "reaction": "the board jumps",
+        "primary": "a paper tag reading FROM ARRIVAL swings down on a pin beside the stopped stopwatch, a plate reads CLOT OUT",
+        "reaction": "the tag swings",
         "ambient": "room tone, a clock"
       },
       "t": "60.890-62.460",
