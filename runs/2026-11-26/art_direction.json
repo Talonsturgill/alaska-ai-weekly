@@ -1,0 +1,39 @@
+{
+ "run_date": "2026-11-26",
+ "title": "Ahead of the Patient",
+ "treatment": "Winner A (the Comedian, Ping) with grafts from C (the Explainer: the split-screen of a gurney token still on the dashed line while Anchorage's room is already lit, the brass brain-cell counter), B (the Dramatist: the button pulls back through the CT ring so the last frame rhymes with the first) and D (the Enthusiast: the dashed OUTCOMES row, six clinic windows lighting for keep and pay). One small hospital in Alaska's interior before dawn, a CT room, a reading room with a slow report printer, a stylised Alaska map board, and the Anchorage stroke room. Ping, a faced coral alert card born in the CT ring, is the protagonist: it reads, flags, splits into two identical copies, races ahead of the patient, gets checked by a doctor's pen, and ends trying to hang its stopwatch on a RESULTS nail where an empty dashed scoreboard waits.",
+ "palette": {
+  "roles": {
+   "room": "#CFE3D8 CT-room celadon tile with #9DBFB2 grout shade and #E9F1EC lit tile, a #1F3438 graphite-teal ink for the dark room and outlines, #2D4660 steel-blue winter dark through windows with two warm sodium points far off",
+   "lightbox": "#F4F1E6 bone-white lightbox and scanner glow is the KEY light, cool, never blue-white",
+   "hero": "Ping is the ONLY coral #FF6F59 in the film, with a #FFB4A3 lit face, #C9412F shade and a #FFE3D9 rim; its slice thumbnail is bone and grey",
+   "brain": "CT slices are greyscale bone #E8E4D8 to #6E7470 with ONE crimson #C2273A clot dot; crimson belongs only to the clot",
+   "anchorage": "the Anchorage stroke room is warm rose-white #F7E3DA under a #FFE9D6 lamp so the far end reads warm against the cold interior hospital",
+   "paper": "#EFE7D2 report paper and map board, #3A3A36 mono print",
+   "accent_rule": "coral is Ping and its copies ONLY; crimson is the clot ONLY; the printer, stopwatch, Suits and plates are value-led (ink, bone, brass #B8924A for the stopwatch only)"
+  },
+  "mood": "a quiet hospital at 7 a.m. in the dark, clean, warm-hearted and a little funny; the joke is that the news always beats the paperwork",
+  "divergence": "11-25 was a hard low noon sun on bone snow with signal amber and a faceless cast-iron hero outdoors; 11-24 was flat July overcast on olive tundra with red pins; 11-23 was apricot-plum dusk on river ice with scarlet. This is the first screen-lit hospital INTERIOR in four films: celadon and graphite-teal under a bone lightbox key, with coral (pink-orange, clear of amber and scarlet) reserved for one faced character."
+ },
+ "light": {
+  "time_of_day": "before dawn on a November morning, about 7 a.m., still dark outside",
+  "direction": "the CT ring and lightbox key from frame left, cool bone; a teal bounce fill from the tile floor; Ping carries its own coral glow that rims whatever it is near (a 60 px coral spill), which is how the eye finds it in every frame",
+  "key_fill_rim": "key bone from the left, fill teal from below, rim coral from Ping or rose from the Anchorage lamp; Suits get FigureFinish keySide left",
+  "depth": "three planes in every interior: the window wall with the winter dark and far sodium lights, the room and its machine in the middle, a near counter edge or cart in the lower third; the map board shots are top-down with the board, its pins and a near desk edge with a mug and a pen"
+ },
+ "shape_language": "Ping is soft: a rounded squircle card with a bulging face that squashes and stretches. The hospital is hard: square tiles, a rectilinear printer, the grid of the map board, the strict rows of the scoreboard. The CT ring's circle is the recurring shape, it opens the film, the stopwatch rhymes with it, and the button pulls back through it.",
+ "casting": {
+  "hero": "Ping (NET-NEW, lib/ping.tsx): a faced coral notification card the size of a playing card with a greyscale slice thumbnail on its belly, eyes, a small mouth, stubby arms; emotion sleepy/alert/proud/determined/sheepish/deflated/hopeful; split 0..1 draws two identical copies pulling apart; a coral glow; cues. Why: the AI here is software that reads a scan and sends an alert, so the alert is the character, not a robot or a server box. Not SwitchStand, not Specs.",
+  "net_new_supporting": "CTRing (the scanner gantry seen dead on with a sliding table and a slice stack inside), SliceStack (thousands of slices as a ream, optional crawl along a cable), ReportPrinter (a faceless beige printer with a page that creeps out, the running gag), Scoreboard (a wall board with labelled rows, lit or dashed blank), GurneyToken (a small faceless gurney marker that rides a dashed line; no vehicle ever), all in lib/ping.tsx because the shelf has no CT scanner, no report printer and no outcomes board",
+  "shelf": "Stopwatch (lib/groundstop.tsx) the throughline; MapBoard + AK_PATH (lib/serum.tsx) for the Alaska map, Utqiagvik to Juneau; Village (lib/serum.tsx) clinic windows for the six hospitals that will keep paying; Suit (lib/people.tsx) faceless for Kelly Isaacs and Kevin Myrick with boxed name cards; Odometer (lib/sonar) for the brain-cell counter; StrikeProp, IdleFigure, FigureFinish, HeldTravel, HeldProp from the house kit",
+  "never": "no face on any real person, no ambulance, plane or helicopter (nobody is said to be flown), no specialists placed on the map, no hospital named as a grantee, no logo"
+ },
+ "motion_language": "Ping moves with springs: it is born with a squash-and-pop, flags with an anticipation lean, splits like a cell (stretch, neck, snap, two copies overshoot apart), slumps when the doctor's pen turns a false positive to CLEAR. The printer is the opposite: one page creeping out at a constant crawl under every reading-room shot, so the contrast is the joke. The stopwatch sweep runs continuously while the man's clock runs. Earned motion blur on the two copies streaking across the map and on the stopwatch hand at the 4 HR 23 MIN freeze. Camera kicks only on 3 board-flagged beats.",
+ "composition": {
+  "focal_hierarchy": "Ping first, then the number it carries, then the room",
+  "negative_space": "the dark window wall above the CT ring and the blank scoreboard rows are deliberate quiet",
+  "safe_area": "heroes and plates inside y 420 to 1500 of the 9:16 for the square crop; the top band holds the window wall and the stopwatch, the band under the caption bar holds the near counter, the cart or the desk edge, varied by act; feet and labels above y 1290",
+  "signature_shot": "THE SPLIT RACE: a split frame with a hard center seam. Left, the gurney token is still a third of the way along a dashed line across the map board, the stopwatch running. Right, Ping's copy is already on the Anchorage door and the room's lights snap on one by one and the team's gowns are already on their hooks. The information visibly racing ahead of the patient."
+ },
+ "craft_advance": "none required beyond the net-new Ping family; engine advances go to the weekly machine pass"
+}

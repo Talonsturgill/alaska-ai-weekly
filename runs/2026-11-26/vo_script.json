@@ -1,0 +1,166 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die.",
+   "claims": [
+    "c5"
+   ],
+   "t": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die."
+  },
+  {
+   "idx": 1,
+   "text": "Before, just sending those images to Anchorage could take forty-five minutes.",
+   "claims": [
+    "c7"
+   ],
+   "t": "Before, just sending those images to Anchorage could take forty-five minutes."
+  },
+  {
+   "idx": 2,
+   "text": "Now a volunteer group, the Alaska Stroke Coalition, has hospitals using A I software called RapidAI.",
+   "claims": [
+    "c24",
+    "c1"
+   ],
+   "t": "Now a volunteer group, the Alaska Stroke Coalition, has hospitals using A I software called RapidAI."
+  },
+  {
+   "idx": 3,
+   "text": "It looks for a large vessel occlusion, a clot blocking a big brain artery.",
+   "claims": [
+    "c2"
+   ],
+   "t": "It looks for a large vessel occlusion, a clot blocking a big brain artery."
+  },
+  {
+   "idx": 4,
+   "text": "In one case, it alerted the doctor seconds after the scan.",
+   "claims": [
+    "c3"
+   ],
+   "t": "In one case, it alerted the doctor seconds after the scan."
+  },
+  {
+   "idx": 5,
+   "text": "The results reached the local team and the clot specialists at once.",
+   "claims": [
+    "c4"
+   ],
+   "t": "The results reached the local team and the clot specialists at once."
+  },
+  {
+   "idx": 6,
+   "text": "That speed counts. The whole state has five doctors who can pull out those clots.",
+   "claims": [
+    "c6"
+   ],
+   "t": "That speed counts. The whole state has five doctors who can pull out those clots."
+  },
+  {
+   "idx": 7,
+   "text": "In another case, a man in his sixties fell and came into a hospital in Alaska's interior.",
+   "claims": [
+    "c13"
+   ],
+   "t": "In another case, a man in his sixties fell and came into a hospital in Alaska's interior."
+  },
+  {
+   "idx": 8,
+   "text": "Less than half an hour after he arrived, his team called Providence in Anchorage for a transfer.",
+   "claims": [
+    "c14"
+   ],
+   "t": "Less than half an hour after he arrived, his team called Providence in Anchorage for a transfer."
+  },
+  {
+   "idx": 9,
+   "text": "That call came two minutes before the official scan report.",
+   "claims": [
+    "c15"
+   ],
+   "t": "That call came two minutes before the official scan report."
+  },
+  {
+   "idx": 10,
+   "text": "Four hours and twenty-three minutes after he arrived, the clot was out.",
+   "claims": [
+    "c16"
+   ],
+   "t": "Four hours and twenty-three minutes after he arrived, the clot was out."
+  },
+  {
+   "idx": 11,
+   "text": "The information moves ahead of the patient. Early, unpublished data shows about a thirty percent faster start on clot removal once patients reach Anchorage.",
+   "claims": [
+    "c17"
+   ],
+   "t": "The information moves ahead of the patient. Early, unpublished data shows about a thirty percent faster start on clot removal once patients reach Anchorage."
+  },
+  {
+   "idx": 12,
+   "text": "Now the hard part. Kelly Isaacs, who manages Providence's stroke program, says she can't really show statistically significant proof it's made a big difference.",
+   "claims": [
+    "c21"
+   ],
+   "t": "Now the hard part. Kelly Isaacs, who manages Providence's stroke program, says she can't really show statistically significant proof it's made a big difference."
+  },
+  {
+   "idx": 13,
+   "text": "Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives.",
+   "claims": [
+    "c20",
+    "c18"
+   ],
+   "t": "Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives."
+  },
+  {
+   "idx": 14,
+   "text": "The clinicians answer that a doctor reviews every output, and that read decides the transfer.",
+   "claims": [
+    "c19"
+   ],
+   "t": "The clinicians answer that a doctor reviews every output, and that read decides the transfer."
+  },
+  {
+   "idx": 15,
+   "text": "Six hospitals that got it free all say they want to keep it and pay for it.",
+   "claims": [
+    "c10"
+   ],
+   "t": "Six hospitals that got it free all say they want to keep it and pay for it."
+  },
+  {
+   "idx": 16,
+   "text": "Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau.",
+   "claims": [
+    "c11",
+    "c12",
+    "c8"
+   ],
+   "t": "Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau."
+  },
+  {
+   "idx": 17,
+   "text": "The alert can already beat the paperwork. What should Alaska measure to know it's working?",
+   "claims": [
+    "narration"
+   ],
+   "t": "The alert can already beat the paperwork. What should Alaska measure to know it's working?"
+  }
+ ],
+ "caption_fixups": {
+  "about two million": "about 2 million",
+  "two million": "2 million",
+  "forty-five minutes": "45 minutes",
+  "A I": "AI",
+  "two minutes": "2 minutes",
+  "Four hours and twenty-three minutes": "4 hours and 23 minutes",
+  "thirty percent": "30 percent",
+  "three point one million dollars": "$3.1 million",
+  "twenty-one hospitals": "21 hospitals",
+  "in his sixties": "in his 60s"
+ },
+ "caption_quotes": [],
+ "caption_split_after": []
+}
