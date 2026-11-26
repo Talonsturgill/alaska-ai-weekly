@@ -1,16 +1,18 @@
 {
   "last_pass": {
-    "date": "2026-11-25",
+    "date": "2026-11-26",
     "shipped": [
-      "covered-label-only-a-note: label_footprint FAILs a label 90 percent or more covered for 0.5 s or more unless marked data-hidden=\"ok\"; reproduces the 11-25 cut-2 BOARD \u00b7 FRIDAY case (6f6ed91)",
-      "vo-patch-slot-preflight: vo_patch_lines refuses before synthesis when the text cannot fit the slot at 1.1x the take's own pace, and prints a word budget (6f6ed91)",
-      "credits-omit-on-screen-outlet + credits-host-ocr: build_scenes credits on-screen PER <OUTLET> sources, warns on bare hostnames, and credits_check fails an omission (6 earlier films affected) (6f6ed91)"
+      "held-figure-no-idle: lib Suit holdLife keeps a held reach, torso and head alive between cues, gain 0 stays a statue; suit_hold_check (acaa3ac)",
+      "eased-readout-wrong-value: readout_check source gate in make_cut fails a painted count derived from raw progress beside an eased instrument (6a9741a)",
+      "inset-under-caption: caption_band_check reads children of a literal translate group at their rendered y (5a407ab)",
+      "board-action-carried-by-plate (partial): held_beat_check prints type-masked ACTION-NOT-DRAWN beats, advisory (566af14)",
+      "engine advance: lib/akgeo.tsx AlaskaOutline + akProject, true Natural Earth coastline with the Aleutians (4f95015)"
     ],
     "escalated": [
       "caption-scorer-hair-under-bar (owner decision, still open, repeat 11)",
-      "gate0-critic-rounds cap (owner decision, still open, repeat 11)",
-      "held-action-beat-excused-by-rig queued for a week of advisory measurement (Motion lowest on 32 of 39 cards)",
-      "showrunner-judged-pitches needs a runbook wording decision on which agent judges the four pitches"
+      "gate0-critic-rounds cap (owner decision, still open, repeat 12)",
+      "lib Hand asset with sleeve, shading and contact shadow not built (next pass)",
+      "ACTION-NOT-DRAWN stays advisory until a week is compared with judge-named beats"
     ]
   },
   "note": "Written by Phase 9 of prompts/dispatch_routine.md when a weekly machine pass ships. Read by scripts/machine_due.py."

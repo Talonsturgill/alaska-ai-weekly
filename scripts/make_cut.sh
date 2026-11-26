@@ -104,6 +104,11 @@ step caption_spelling  2 python3 scripts/caption_spelling_check.py
 # label (visible_copy_check) and three claims whose approved on_screen string existed only as split
 # plate lines (claims_contract_check). Both run in under a second, from claims.json, vo_script.txt,
 # the episode source and episode_props.json. Preflight still runs them on the shipped cut.
+# Machine pass 2026-11-26 (queue eased-readout-wrong-value): Ep1126 S9 painted `${hrs} HR` from the raw
+# progress while the stopwatch hand ran on an eased copy of it, so "0 HR" sat under a swept dial. A
+# painted count must read the value its instrument draws. Source only, under a second; scanned clean
+# on every Ep10xx and Ep11xx before Ep1126.
+step readout           2 python3 scripts/readout_check.py
 step visible_copy      2 python3 scripts/visible_copy_check.py
 step claims_contract   2 python3 scripts/claims_contract_check.py
 # Machine pass 2026-10-23, a repeat offender (10-02, 10-23 four cuts running). A label behind a

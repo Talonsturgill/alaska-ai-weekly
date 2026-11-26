@@ -103,6 +103,49 @@ def exempt(lines, i):
     return i > 0 and OK in lines[i - 1]
 
 
+# --- a LITERAL translate group carries its children into the band (machine pass 2026-11-26) ---------
+# Ep1126 S12 drew its pager inset as `<g transform="translate(900 1420)">` around a <rect y={-90}> and a
+# <text y={70}>, so the card sat under the caption band from 47.3 to 50.0 s and its loop payoff never
+# read (queue inset-under-caption). The RAW rule read y -90 and y 70, local numbers, and passed it. A
+# group whose transform is a pure literal translate now shifts every child by its y, so the rule reads
+# the y the element renders at. Under any other transform (a template, a scale, a rotate) anywhere in the
+# open stack the position is unknown, and the child keeps its old, local reading, so nothing that passed
+# before for that reason starts failing (Ep1126 S10's template-translated card inside a literal 1300
+# group read 1248 with the outer offset alone, a false finding, until this rule). A
+# `data-band="ok"` on the group exempts everything inside it.
+G_OPEN = re.compile(r"<g\b([^>]*?)(/?)>")
+G_TRANSLATE = re.compile(r"""^\s*transform=["']translate\(\s*(-?\d+(?:\.\d+)?)[\s,]+(-?\d+(?:\.\d+)?)\s*\)["']\s*""")
+
+
+def group_offsets(lines):
+    """[(dy, exempt)] per line: the summed literal-translate y of the <g> groups open at the start of the
+    line's first element, and whether one of them carries data-band="ok". Lines are scanned in order and
+    every <g ...> / </g> on a line is applied after the line's own reading, except that a group opened on
+    a line is in force for the rest of that line's children (none, in practice: one element a line)."""
+    stack, out = [], []
+    for ln in lines:
+        known = all(k for _d, _e, k in stack)
+        out.append((sum(d for d, _e, _k in stack) if known else 0.0, any(e for _d, e, _k in stack)))
+        events = [(m.start(), "open", m) for m in G_OPEN.finditer(ln)] + \
+                 [(m.start(), "close", None) for m in re.finditer(r"</g>", ln)]
+        for _pos, kind, m in sorted(events, key=lambda e: e[0]):
+            if kind == "open":
+                if m.group(2) == "/":
+                    continue
+                attrs = m.group(1)
+                tm = re.search(r"""transform=["'][^"']*["']""", attrs)
+                dy, known = 0.0, True
+                if tm:
+                    pm = G_TRANSLATE.match(tm.group(0))
+                    dy, known = (float(pm.group(2)), True) if pm else (0.0, False)
+                elif re.search(r"\btransform=", attrs):
+                    known = False             # transform={...}: a template or an expression
+                stack.append((dy, 'data-band="ok"' in attrs, known))
+            elif stack:
+                stack.pop()
+    return out
+
+
 def check(path):
     src = open(path).read()
     band = band_of(src, path)
@@ -112,10 +155,12 @@ def check(path):
     guard = guard_of(src)
     lines = src.split("\n")
     out = []
+    offsets = group_offsets(lines)
 
     for i, ln in enumerate(lines):
         if exempt(lines, i):
             continue
+        gdy, gex = offsets[i]
 
         # --- raw geometry authored into the band -----------------------------
         for tag in ("rect", "text", "ellipse", "circle", "image"):
@@ -124,12 +169,15 @@ def check(path):
             ym = re.search(r"\by=" + NUM, ln)
             if not ym:
                 continue
-            y = float(ym.group(1))
+            if gex:
+                break
+            y = float(ym.group(1)) + gdy
             hm = re.search(r"\bheight=" + NUM, ln)
             y1 = y + (float(hm.group(1)) if hm else 0.0)
             if y1 >= lo and y <= hi:
+                where = f" (local y {float(ym.group(1)):g} inside a translate group at y {gdy:g})" if gdy else ""
                 out.append((path, i + 1, "RAW",
-                            f"<{tag}> spans y {y:g}..{y1:g}, inside the caption band {lo}..{hi}"))
+                            f"<{tag}> spans y {y:g}..{y1:g}{where}, inside the caption band {lo}..{hi}"))
             break
 
         # --- a Plate whose authored y is not the y it renders at -------------
@@ -255,8 +303,40 @@ def _self_test():
           "</g>;\n")
     got = [(ln, kind) for _p, ln, kind, _m in feet(ep, names, 1336)]
     assert got == [(2, "FEET"), (5, "FEET")], got
+    # the Ep1126 S12 pager inset: children at local y inside a literal translate group (2026-11-26)
+    import tempfile
+    inset = ("const CAPTION_TOP = 1336;\n"
+             "const S12 = () => <g>\n"
+             "  <g transform=\"translate(900 1420)\">\n"
+             "    <rect x={-110} y={-90} width={220} height={180} rx={8} />\n"
+             "    <text x={0} y={30}>SPECIALIST PAGER</text>\n"
+             "  </g>\n"
+             "  <g transform=\"translate(870 790)\">\n"
+             "    <rect x={-110} y={-90} width={220} height={180} rx={8} />\n"
+             "  </g>\n"
+             "  <g transform={`translate(0 ${dy})`}>\n"
+             "    <rect x={0} y={-90} width={9} height={9} />\n"
+             "  </g>\n"
+             "  <g data-band=\"ok\" transform=\"translate(0 1400)\">\n"
+             "    <rect x={0} y={0} width={1080} height={200} />\n"
+             "  </g>\n"
+             "  <rect x={0} y={1350} width={9} height={9} />\n"
+             "  <g transform=\"translate(470 1300)\">\n"
+             "    <g transform={`translate(0 -170) rotate(${r})`}>\n"
+             "      <rect x={-118} y={-52} width={236} height={104} />\n"
+             "    </g>\n"
+             "  </g>\n"
+             "</g>;\n")
+    with tempfile.NamedTemporaryFile("w", suffix=".tsx", delete=False) as fh:
+        fh.write(inset)
+    try:
+        raw = [(ln, kind) for _p, ln, kind, _m in check(fh.name)]
+    finally:
+        os.remove(fh.name)
+    assert raw == [(4, "RAW"), (5, "RAW"), (16, "RAW")], raw
     print("caption_band_check self-test: PASS (feet at 1460 and footY 1440 flagged, 1310, a crate and an "
-          "exempt line clean)")
+          "exempt line clean; an inset group at translate y 1420 flagged, one at 790, a template group and "
+          "an exempt group clean)")
     return 0
 
 
