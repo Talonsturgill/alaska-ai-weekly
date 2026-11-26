@@ -673,10 +673,10 @@
       "thread": "build",
       "stage3d": "planes",
       "centered": "the binder and slice at x540 y980",
-      "means": "A fat binder of stroke outcome forms falls open on mismatched pages, then the focus pulls to Ping yelling at a clear slice while an inset shows the specialists' pager blinking, and Ping deflates",
+      "means": "A fat binder of stroke outcome forms falls open on mismatched pages, then the focus pulls to Ping yelling at a clear slice while an inset FLAGGED lamp blinks, and Ping deflates",
       "ambient": "room tone, paper",
       "hero": {
-        "name": "outcomes binder + clear slice + Ping + pager",
+        "name": "outcomes binder + clear slice + Ping + FLAGGED lamp",
         "parts": 44,
         "zones": 3,
         "detail_note": "50% binder, 35% Ping, 15% slice"
@@ -701,13 +701,13 @@
       "thread": "match",
       "stage3d": "planes",
       "centered": "Ping under the hand at x540 y980",
-      "means": "From above a doctor's hand turns the over-eager Ping over so it goes grey, then turns a desk slip over to its clear side and the pager goes dark",
+      "means": "From above a doctor's hand turns the over-eager Ping over so it goes grey, then turns a desk slip over to its clear side and the FLAGGED lamp goes dark",
       "ambient": "room tone",
       "hero": {
-        "name": "doctor's hand + Ping + desk slip + pager",
+        "name": "doctor's hand + Ping + desk slip + FLAGGED lamp",
         "parts": 44,
         "zones": 3,
-        "detail_note": "55% hand and Ping, 30% slip, 15% pager"
+        "detail_note": "55% hand and Ping, 30% slip, 15% lamp"
       },
       "id": 13,
       "start_s": 88.68,
@@ -2040,13 +2040,13 @@
       "offset": 3.75,
       "vo": "Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives.",
       "phrase": "software throws false positives.",
-      "shows": "Ping, the round orchid alert pulse with a face swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset card shows the specialists' pager blinking, then Ping deflates, a plate reads FALSE POSITIVES",
+      "shows": "Ping, the round orchid alert pulse with a face swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset FLAGGED lamp blinks, then Ping deflates, a plate reads FALSE POSITIVES",
       "sfx": "buzz",
       "means": "false positives",
       "rehook": "",
       "draw": {
         "subject": "Ping, the round orchid alert pulse with a face",
-        "action": "swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset card shows the specialists' pager blinking, then Ping deflates",
+        "action": "swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset FLAGGED lamp blinks, then Ping deflates",
         "emotion": "sheepish",
         "annotation": "FALSE POSITIVES"
       },
@@ -2055,7 +2055,7 @@
         "c18"
       ],
       "choreo": {
-        "primary": "Ping, the round orchid alert pulse with a face swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset card shows the specialists' pager blinking, then Ping deflates, a plate reads FALSE POSITIVES",
+        "primary": "Ping, the round orchid alert pulse with a face swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset FLAGGED lamp blinks, then Ping deflates, a plate reads FALSE POSITIVES",
         "reaction": "a bead of sweat pops off Ping",
         "ambient": "room tone, paper"
       },
@@ -2110,13 +2110,13 @@
       "offset": 4.07,
       "vo": "The clinicians answer that a doctor reviews every output, and that read decides the transfer.",
       "phrase": "transfer.",
-      "shows": "the doctor's hand turns a small desk slip over from ALERT to the clear side and the pager inset goes dark by itself, a plate reads THAT READ DECIDES THE TRANSFER",
+      "shows": "the doctor's hand turns a small desk slip over from ALERT to the clear side and the FLAGGED lamp goes dark by itself, a plate reads THAT READ DECIDES THE TRANSFER",
       "sfx": "slide",
       "means": "that read decides the transfer",
       "rehook": "",
       "draw": {
         "subject": "the doctor's hand",
-        "action": "turns a small desk slip over from ALERT to the clear side and the pager inset goes dark by itself",
+        "action": "turns a small desk slip over from ALERT to the clear side and the FLAGGED lamp goes dark by itself",
         "emotion": "steady",
         "annotation": "THAT READ DECIDES THE TRANSFER"
       },
@@ -2125,7 +2125,7 @@
         "c19"
       ],
       "choreo": {
-        "primary": "the doctor's hand turns a small desk slip over from ALERT to the clear side and the pager inset goes dark by itself, a plate reads THAT READ DECIDES THE TRANSFER",
+        "primary": "the doctor's hand turns a small desk slip over from ALERT to the clear side and the FLAGGED lamp goes dark by itself, a plate reads THAT READ DECIDES THE TRANSFER",
         "reaction": "the pager goes dark",
         "ambient": "room tone"
       },

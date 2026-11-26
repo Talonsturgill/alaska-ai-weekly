@@ -117,7 +117,7 @@ export const BrainSlice: React.FC<{x: number; y: number; r?: number; clot?: numb
   );
 };
 
-export type PingEmotion = 'sleepy' | 'alert' | 'proud' | 'determined' | 'sheepish' | 'deflated' | 'hopeful' | 'curious';
+export type PingEmotion = 'sleepy' | 'alert' | 'proud' | 'determined' | 'sheepish' | 'deflated' | 'hopeful' | 'curious' | 'yell';
 
 /**
  * Ping. A faced coral alert card. Origin (x, y) is the bottom centre of the card. At s=1 it is 150 wide and 190 tall.
@@ -162,9 +162,9 @@ export const Ping: React.FC<{
   const sq = 1 - 0.16 * squash;
   const mouth: Record<PingEmotion, string> = {
     sleepy: 'M -10 2 Q 0 6 10 2', alert: 'M -12 0 Q 0 14 12 0', proud: 'M -18 -2 Q 0 18 18 -2', determined: 'M -14 4 L 14 2',
-    sheepish: 'M -14 6 q 7 -6 14 0 q 7 6 14 0', deflated: 'M -12 8 Q 0 -2 12 8', hopeful: 'M -12 0 Q 0 10 12 0', curious: 'M -6 4 a 6 6 0 1 0 12 0 a 6 6 0 1 0 -12 0',
+    sheepish: 'M -14 6 q 7 -6 14 0 q 7 6 14 0', deflated: 'M -12 8 Q 0 -2 12 8', hopeful: 'M -12 0 Q 0 10 12 0', curious: 'M -6 4 a 6 6 0 1 0 12 0 a 6 6 0 1 0 -12 0', yell: 'M -20 -6 Q 0 -14 20 -6 Q 22 26 0 30 Q -22 26 -20 -6 Z',
   };
-  const brow: Record<PingEmotion, number> = {sleepy: 2, alert: -8, proud: -5, determined: 9, sheepish: -9, deflated: -10, hopeful: -6, curious: -10};
+  const brow: Record<PingEmotion, number> = {sleepy: 2, alert: -8, proud: -5, determined: 9, sheepish: -9, deflated: -10, hopeful: -6, curious: -10, yell: 12};
   const armA = 30 + 60 * arm + 10 * Math.sin(f / 9 + seed) + bp.arm * 8;
   return (
     <g transform={`translate(${x} ${y + bob * 0.4}) rotate(${tilt + bp.skew}) scale(${s * pScale * (1 + 0.1 * squash)} ${s * pScale * sq * breathe}) translate(0 ${-bp.dip})`}>
@@ -209,7 +209,7 @@ export const Ping: React.FC<{
             <path d={`M ${sd * 24 - 13} ${-25 + (sd < 0 ? brow[emotion] : -brow[emotion]) * 0.35} L ${sd * 24 + 13} ${-25 + (sd < 0 ? -brow[emotion] : brow[emotion]) * 0.35}`} stroke={PING.ink} strokeWidth={5} strokeLinecap="round" />
           </g>
         ))}
-        <path d={mouth[emotion]} transform="translate(0 34)" stroke={PING.ink} strokeWidth={5} fill={emotion === 'proud' || emotion === 'alert' ? '#7A1F14' : 'none'} strokeLinecap="round" strokeLinejoin="round" />
+        <path d={mouth[emotion]} transform="translate(0 34)" stroke={PING.ink} strokeWidth={5} fill={emotion === 'proud' || emotion === 'alert' || emotion === 'yell' ? '#7A1F14' : 'none'} strokeLinecap="round" strokeLinejoin="round" />
         {(emotion === 'proud' || emotion === 'hopeful') && [-1, 1].map((sd) => <ellipse key={sd} cx={sd * 44} cy={24} rx={9} ry={5} fill="#FF8F80" opacity={0.7} />)}
         {emotion === 'sheepish' && <path d="M 44 -24 q 6 10 0 16 q -6 -6 0 -16 Z" fill="#BFE8FF" stroke={PING.ink} strokeWidth={2.5} />}
         {emotion === 'sleepy' && <text x={52} y={-28} fontFamily={MONO} fontWeight={800} fontSize={22} fill={PING.ink} opacity={0.6 + 0.4 * Math.sin(f / 10)}>z</text>}
