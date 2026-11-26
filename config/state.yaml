@@ -4102,3 +4102,51 @@ dispatch_history:
     metaphor: a faceless switch stand at a fork where the short closed branch is the
       board's calendar and the long open branch is the land's clock, ties counted
       as days, and a lever caught mid-throw between rules and a tenant
+- date: '2026-11-26'
+  topic: Alaska Stroke Coalition RapidAI stroke alerts and the planned 21-hospital
+    AI imaging network
+  slug: ahead-of-the-patient
+  key_entities:
+  - Alaska Stroke Coalition
+  - RapidAI
+  - Providence Alaska Medical Center
+  - CMS
+  - STAT
+  archetype: ''
+  palette: 'celadon CT tile #CFE3D8, graphite ink #1F3438, navy winter windows #2D4660
+    with warm sodium dots, ivory lightbox key #F4F1E6, greyscale scans with one ruby
+    marker #B3223A at a vessel cutoff, a warm orchid glow #D94FB0 for Ping alone,
+    a buttercream Anchorage room #EBDDBF under a warm bulb'
+  voice: Sulafat
+  stance: celebratory
+  angle: 'Alaska''s stroke software moves the information, not the patient: the local
+    team and the state''s specialists learn at the same moment, so Anchorage is ready
+    before the patient arrives, and that is a real Alaska win in speed that becomes
+    a proven one only if the planned 21-hospital network comes with the stroke outcome
+    reporting Alaska doesn''t have today.'
+  hero: Ping
+  cast:
+  - Ping
+  - BrainSlice
+  - CTRing
+  - Scoreboard
+  - ReportPrinter
+  - GurneyToken
+  - WallPhone
+  - WardWorld
+  - Suit
+  composition:
+    pov: eye-level-immersive
+    motion_vector: horizontal-traverse
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: cartoon-interior
+    palette: 'celadon CT tile #CFE3D8, graphite ink #1F3438, navy winter windows #2D4660
+      with warm sodium dots, ivory lightbox key #F4F1E6, greyscale scans with one
+      ruby marker #B3223A at a vessel cutoff, a warm orchid glow #D94FB0 for Ping
+      alone, a buttercream Anchorage room #EBDDBF under a warm bulb'
+    camera_strategy: interior-push-and-overhead-map
+    light_story: warm-glow-interior-before-sunrise
+    metaphor: a round orchid alert pulse with a face that splits so the news reaches
+      the local team and the specialists at once, races ahead of the patient, and
+      ends at a scoreboard with one blank row

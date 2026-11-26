@@ -1,0 +1,72 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.995,
+    "heard": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about 2 million brain cells die. Before just sending those images to Anchorage could take 45 minutes. Now a volunteer group, the Alaska Stroke Coalition, has hospitals using AI software called RapidAI. It looks for a large vessel occlusion, a clot blocking a big brain artery. In one case, it alerted the doctor seconds after the scan. The results reached the local team and the clot specialists at once. That speed counts. The whole state has five doctors who can pull out those clots. In another case, a man in his 60s fell and came into a hospital in Alaska's interior. Less than half an hour after he arrived, his team called Providence in Anchorage for a transfer. That call came two minutes before the official scan report. Four hours and 23 minutes after he arrived, the clot was out. The information moves ahead of the patient. Early unpublished data shows about a 30% faster start on clot removal once patients reach Anchorage. Now the hard part. Kelly Isaacs, who manages Providence's Stroke Program, says she can't really show statistically significant proof it's made a big difference. Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives. The clinician's answer that a doctor reviews every output and that read decides the transfer. Six hospitals that got it free all say they want to keep it and pay for it. Over $3.1 million in federal rural health money is set to build an AI imaging network across 21 hospitals. Woot Giangvik to Juneau. The alert can already beat the paperwork. What should Alaska measure to know it's working?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.01,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 4.89,
+        "voiced_frac": 0.47,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 113.48,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 113.48,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 1 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (4 entries)"
+  ],
+  "runtime_warning": null,
+  "gap_share": {
+    "min_gap_s": 0.35,
+    "gaps": 30,
+    "seconds": 22.08,
+    "runtime_s": 113.08,
+    "share": 0.1953,
+    "aim": 0.15,
+    "over_aim": true,
+    "longest_s": 1.16
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.997,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": false,
+      "score": 0.698,
+      "diagnosis": "WORDS: WER 0.599 too high (dropped/garbled or a 500 text-fallback) \u2014 re-roll. If the misses are directed names, run `python3 scripts/vo_soundcheck.py --suggest-heard` first, add its `heard` map to vo_direction.json and re-score the same takes with VO_REUSE_TAKES=1."
+    },
+    {
+      "pass": true,
+      "score": 0.995,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}
