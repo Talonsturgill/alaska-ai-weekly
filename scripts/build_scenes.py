@@ -715,6 +715,9 @@ _HOST_NAMES = {
     "mustreadalaska.com": "MUST READ ALASKA",
     "prnewswire.com": "PR NEWSWIRE",
     "aidea.org": "AIDEA",
+    "statnews.com": "STAT",
+    "cms.gov": "CMS",
+    "rapidai.com": "RAPIDAI",
 }
 
 

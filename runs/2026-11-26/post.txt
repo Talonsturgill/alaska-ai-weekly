@@ -1,0 +1,18 @@
+Five doctors can pull a stroke clot in all of Alaska. Just sending the scan could take 45 minutes.
+AI can now shorten that wait. Alaska can't yet show it saves brains.
+
+Hospitals working with the volunteer Alaska Stroke Coalition use RapidAI to read stroke scans. It flags a suspected large vessel occlusion and sends the result to the local team and the clot specialists at the same time.
+
+Before the software, those images had to travel to Anchorage first. In one case reported by STAT, the alert reached the doctor seconds after the scan.
+
+In another case, a man in his 60s fell and came into a hospital in Alaska's interior. His team called Providence in Anchorage less than half an hour after he arrived. That call came two minutes before the official scan report. The clot was out 4 hours and 23 minutes after he arrived.
+
+Early, unpublished data reported by STAT shows about a 30 percent faster start on clot removal once patients reach Anchorage. The software moves the information ahead of the patient.
+
+Kelly Isaacs, who manages Providence's stroke program, told STAT she can't really show statistically significant proof it has made a big difference. Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives, and a doctor still reviews every output.
+
+Federal rural health money, over $3.1 million, is set to build an AI imaging network across a planned 21 hospitals. If that build doesn't come with outcome tracking, Alaska will have paid for speed with no proof it helps patients.
+
+Should outcome reporting be a condition of the money, and what should it measure first?
+
+#ArtificialIntelligence #Alaska #StrokeCare #RuralHealth

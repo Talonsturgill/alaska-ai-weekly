@@ -1,0 +1,20 @@
+{
+ "thesis": "Alaska's stroke software moves the information, not the patient: the local team and the state's specialists learn at the same moment, so Anchorage is ready before the patient arrives, and that is a real Alaska win in speed that becomes a proven one only if the planned 21-hospital network comes with the stroke outcome reporting Alaska doesn't have today.",
+ "falsifiability": "False if the timing gains don't hold: transfer calls still wait on the official report (c15 shows one that didn't), image delivery to specialists still takes tens of minutes (c7 is the before), or the early, unpublished faster start in Anchorage (c17) disappears once published. Also false, in its second half, if Alaska can already judge the network without new reporting (contradicting c20, c21).",
+ "supporting_facts": [
+  "The mechanism is information: just sending images to Anchorage could take 45 minutes (c7); in one case the app alerted the doctor seconds after the scan (c3) and the results reached the local team and the faraway specialists at once (c4).",
+  "One real chain: a man in his mid-60s after a morning fall at an interior hospital (c13), the transfer call under 30 minutes after arrival (c14), two minutes before the official report (c15), the clot out 4 hours 23 minutes after he arrived (c16).",
+  "The payoff lands in Anchorage: early, unpublished data shows about a 30 percent faster start on clot removal once patients get there (c17), with five clot specialists in the entire state (c6) and about two million brain cells lost a minute without blood flow (c5)."
+ ],
+ "counterpoint_to_honor": "Two fair cases, each a scene. The skeptic's: no one can show it changes outcomes yet; Isaacs says she can't really give statistically significant proof (c21), the state has no consistent outcome reporting (c20), the software throws false positives (c18). The clinicians' answer, shown straight as the best reason the bet is sound: a doctor still reviews every output and that read decides the transfer (c19), they didn't put it in to send every patient to Anchorage (c22), and all six hospitals that got it free say they'll keep and pay for it (c10).",
+ "valence": "celebratory",
+ "valence_defense": "The capability is measured in minutes and it's Alaska-built (a volunteer coalition c24, foundation money c9, now federal money c11 toward a planned 21 hospitals c12). The film lets that land as a win and names exactly one honest limit, the missing outcome scoreboard, as the condition for calling it proven. No invented downside.",
+ "who_it_serves": "Rural and interior Alaskans who have a stroke far from a cath lab, their local ER teams, the five specialists, and the officials deciding how federal rural health money is judged.",
+ "second_movement": "c17 recontextualises the case: the gain the data sees shows up in Anchorage, because the information got there first. Then the test: Isaacs's own question (c21) and c20, met by c19, c22 and c10.",
+ "runner_ups": [
+  {"angle": "A: AI lets five specialists cover a whole state", "why_lost": "no claim says coverage changed, only when specialists find out; 'the moment a scan finishes' turned one case into a spec"},
+  {"angle": "B: a $3.1M bet on a volunteer coalition's software that needs a scoreboard", "why_lost": "tied the CMS money to the product (cut x5) and placed the open question at faster removal, which c17 already suggests, instead of at outcomes; its stakes framing grafted into the close"},
+  {"angle": "C: information, not patients", "why_lost": "won the mechanism (grafted as the spine) but alone made no stake claim and dropped the outcome test; its 45 minutes to seconds splice and 'not a shorter trip' rejected"}
+ ],
+ "constraints_carried": ["'in one case' stays on c3 and is never merged into the mid-60s timeline", "45 minutes is sending, could take", "planned 21", "CMS money vendor-neutral", "no 'flown'", "no outcome claims", "a doctor, not a radiologist", "five in the entire state, never all in Anchorage"]
+}

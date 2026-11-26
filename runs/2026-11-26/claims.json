@@ -1,0 +1,421 @@
+{
+ "run_date": "2026-11-26",
+ "fact_check_verdict": "PASS WITH CONDITIONS. One adversarial validator read STAT (Katie Palmer, November 24th) by targeted verbatim extraction, the CMS Rural Health Transformation release (August 25th), the RapidAI / Alaska Stroke Coalition release (September 4th, 2024) and two Alaska DOH RHTP releases. Conditions: (1) two STAT cases are separate, the under-30-minute call, the two-minutes-before-the-report and the 4 hours 23 minutes belong to a man in his mid-60s at an interior hospital about 300 miles from Anchorage, and nobody is said to be flown; (2) the 45 minutes was the time to SEND images to Anchorage, could take, before the software; (3) 21 hospitals plus 2 clinics is PLANNED (will have); (4) the 30 percent is early unpublished data per STAT, arrival in Anchorage to the start of the device; (5) five neurointerventionalists in the entire state, never 'all in Anchorage'; (6) CMS 'over $3.1 million' names no recipient and no vendor, STAT says $3.2 million to the coalition, use CMS wording; (7) a doctor (not 'a radiologist') still reviews every output; (8) no outcome claims, the coalition says it can't show statistically significant benefit; (9) RapidAI named once as the product, not promoted.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-one-outlet",
+   "spoken": "Alaska hospitals are using A I software called RapidAI to read stroke scans.",
+   "on_screen": "RAPIDAI \u00b7 STROKE SCAN SOFTWARE",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "https://www.rapidai.com/press-release/rapidai-asc-join-forces-to-overcome-distance-and-deliver-equitable-care",
+   "verbatim_source": "\"21 acute care hospitals and two CT scan-enabled clinics with RapidAI's stroke system in place.\"",
+   "requires": [
+    "name the product once, never promote it",
+    "per STAT"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-one-outlet",
+   "spoken": "It looks for a large vessel occlusion, a clot blocking a big artery in the brain.",
+   "on_screen": "SUSPECTED LARGE VESSEL OCCLUSION",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "https://www.rapidai.com/press-release/rapidai-asc-join-forces-to-overcome-distance-and-deliver-equitable-care",
+   "verbatim_source": "\"there are false positives \u2014 scans that the app will say show a large vessel occlusion that actually don't\"",
+   "requires": [
+    "suspected, a flag, not a diagnosis"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-one-outlet",
+   "spoken": "In one case the app alerted the doctor seconds after the scan was complete.",
+   "on_screen": "ALERT \u00b7 SECONDS AFTER THE SCAN",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"The app alerted the doctor with the results just seconds after the scan was complete\"",
+   "requires": [
+    "one case, per STAT, not a spec",
+    "seconds, never minutes"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-one-outlet",
+   "spoken": "The results went to the local team and to the faraway clot specialists at the same time.",
+   "on_screen": "LOCAL TEAM + SPECIALISTS AT ONCE",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"the results went out to his local team of doctors and the faraway network of neurointerventionalists.\"",
+   "requires": [
+    "per STAT"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-one-outlet",
+   "spoken": "Every minute without blood flow, about two million brain cells die.",
+   "on_screen": "2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"Every minute without blood flow, 2 million brain cells die.\"",
+   "requires": [
+    "about, a clinical estimate"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-one-outlet",
+   "spoken": "Alaska has five doctors who can pull out those clots, in the entire state.",
+   "on_screen": "5 CLOT-REMOVAL SPECIALISTS \u00b7 WHOLE STATE",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"one of the five neurointerventionalists in the entire state who can extract clots\"",
+   "requires": [
+    "never 'all in Anchorage'",
+    "per STAT"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-one-outlet",
+   "spoken": "Before the software, just sending the images to Anchorage could take forty-five minutes.",
+   "on_screen": "COULD TAKE 45 MIN",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"it could take 45 precious minutes just to send those thousands of two-dimensional brain snapshots\"",
+   "requires": [
+    "sending, never reading",
+    "could take"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-one-outlet",
+   "spoken": "The network runs from Utqiagvik in the far north to Juneau in the south.",
+   "on_screen": "UTQIAGVIK TO JUNEAU",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"from Alaska's very northernmost tip in Utqiagvik, all the way south to the state's capital of Juneau\"",
+   "requires": [
+    "the ends of the network, not named grantee sites"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-one-outlet",
+   "spoken": "Each of those six hospitals says it wants to keep it and pay for it.",
+   "on_screen": "ALL 6 SAY THEY'LL KEEP AND PAY",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"Each one of the six hospitals that got free access to RapidAI has said it wants to keep and pay for it.\"",
+   "requires": [
+    "stated intent, not a contract"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-one-primary",
+   "spoken": "Federal Rural Health Transformation money, over three point one million dollars, goes to a statewide A I imaging network.",
+   "on_screen": "OVER $3.1M \u00b7 FEDERAL RURAL HEALTH MONEY \u00b7 CMS",
+   "source": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription",
+   "second_source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "verbatim_source": "\"Over $3.1 million to establish a statewide AI imaging network across 21 acute care hospitals.\"",
+   "requires": [
+    "CMS wording, over $3.1 million",
+    "never 'RapidAI money'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-two-sources",
+   "spoken": "The plan is twenty-one acute care hospitals, plus two clinics with scanners.",
+   "on_screen": "PLANNED \u00b7 21 HOSPITALS",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription",
+   "verbatim_source": "\"21 acute care hospitals and two CT scan-enabled clinics with RapidAI's stroke system in place.\"",
+   "requires": [
+    "planned, will have, never current"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-one-outlet",
+   "spoken": "One morning, a man in his sixties fell and came into a hospital in Alaska's interior.",
+   "on_screen": "MID-60s \u00b7 A MORNING FALL \u00b7 INTERIOR HOSPITAL",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"had arrived at a nearby emergency room after a morning fall\"",
+   "requires": [
+    "per STAT",
+    "never flown",
+    "about 300 miles from Anchorage if a distance is drawn"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-one-outlet",
+   "spoken": "Less than half an hour after he arrived, the team called Anchorage for a transfer.",
+   "on_screen": "UNDER 30 MIN AFTER HE ARRIVED",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"Less than a half hour after the patient arrived at his local ER, the team had called Providence for a transfer.\"",
+   "requires": [
+    "the call is to Providence in Anchorage"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-one-outlet",
+   "spoken": "That call came two minutes before the official scan report.",
+   "on_screen": "2 MIN BEFORE THE OFFICIAL REPORT",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"two minutes before their on-call radiologist even delivered their official CT report\"",
+   "requires": [
+    "two minutes, not more"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-one-outlet",
+   "spoken": "Four hours and twenty-three minutes after he arrived, the clot was out.",
+   "on_screen": "4 HR 23 MIN \u00b7 CLOT OUT",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"Four hours and 23 minutes later, the clot was out.\"",
+   "requires": [
+    "measured from his arrival at the local ER",
+    "no outcome claim"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-one-outlet",
+   "spoken": "Early data shows about a thirty percent faster start on clot removal once patients reach Anchorage.",
+   "on_screen": "ABOUT 30% FASTER START \u00b7 EARLY DATA \u00b7 PER STAT",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"hospitals with cath labs saw about a 30% improvement in the time it takes to start threading a device\"",
+   "requires": [
+    "early data, unpublished",
+    "after arrival in Anchorage",
+    "never outcomes"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-one-outlet",
+   "spoken": "The software throws false positives, scans it flags that turn out clear.",
+   "on_screen": "FALSE POSITIVES",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"there are false positives \u2014 scans that the app will say show a large vessel occlusion that actually don't\"",
+   "requires": [],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-one-outlet",
+   "spoken": "A doctor still reviews every output, and that read decides the transfer.",
+   "on_screen": "A DOCTOR REVIEWS EVERY OUTPUT",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"A doctor still reviews every output, and that official read is what drives the call to transfer or not.\"",
+   "requires": [
+    "a doctor, never 'a radiologist'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-one-outlet",
+   "spoken": "Alaska doesn't have consistent reporting of stroke outcomes.",
+   "on_screen": "NO CONSISTENT STROKE OUTCOME REPORTING",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"The state doesn't have consistent reporting of stroke outcomes.\"",
+   "requires": [
+    "per STAT"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-one-outlet",
+   "spoken": "Kelly Isaacs, who runs Providence's stroke program, says she can't really show statistically significant proof it's made a big difference.",
+   "on_screen": "KELLY ISAACS \u00b7 PER STAT",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "",
+   "verbatim_source": "\"Can I give you statistically significant information that RapidAI has made a big difference in the state of Alaska?\" said Isaacs. \"I can't, really.\"",
+   "requires": [
+    "Providence's stroke program manager",
+    "PER STAT on the plate",
+    "full question or paraphrase, never a fragment that flips meaning"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-one-outlet",
+   "spoken": "The coalition behind it is a volunteer group, the Alaska Stroke Coalition.",
+   "on_screen": "ALASKA STROKE COALITION",
+   "source": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "second_source": "https://www.rapidai.com/press-release/rapidai-asc-join-forces-to-overcome-distance-and-deliver-equitable-care",
+   "verbatim_source": "Labelled paraphrase, not a quotation: STAT describes the Alaska Stroke Coalition as a volunteer group of clinicians; RapidAI's release says it was founded in 2023.",
+   "requires": [
+    "per STAT"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "reserve": [
+  {
+   "id": "r1",
+   "text": "A man in his 80s with a large vessel occlusion traveled 750 miles to Providence Anchorage (STAT); never 'flown'",
+   "why": "a second case; keep the film on one patient"
+  },
+  {
+   "id": "r2",
+   "text": "Stroke ranked fifth leading cause of death in Alaska",
+   "why": "vendor source only, no state data reached"
+  },
+  {
+   "id": "r3",
+   "text": "Ryan Wilson, ANMC neurologist: \"They're gaining their brain back.\"",
+   "why": "context unconfirmed; risks reading as an outcome claim"
+  },
+  {
+   "id": "r4",
+   "text": "Lucy He: \"the Skynet of stroke in Alaska\"",
+   "why": "dystopian connotation would mislead a muted viewer about tone"
+  },
+  {
+   "id": "r5",
+   "text": "Alaska's year-one Rural Health Transformation award was $272,174,856 (Alaska DOH)",
+   "why": "program context, not this project"
+  },
+  {
+   "id": "r6",
+   "text": "Alaska enacted a law in June setting statewide stroke and heart attack standards (STAT, paraphrase)",
+   "why": "bill unnamed, unverified wording"
+  },
+  {
+   "id": "c9",
+   "text": "A family foundation's money, about four hundred fifty thousand dollars, bought it for six more hospitals.",
+   "why": "cut from the VO for length; the film will not voice or paint it"
+  },
+  {
+   "id": "c22",
+   "text": "Her colleague Kevin Myrick says they did not put it in to transfer every patient to Anchorage.",
+   "why": "cut from the VO for length; the film will not voice or paint it"
+  },
+  {
+   "id": "c23",
+   "text": "Isaacs says the distances are enormous and the weather is awful.",
+   "why": "cut from the VO for length; the film will not voice or paint it"
+  }
+ ],
+ "cut": [
+  {
+   "id": "x1",
+   "why": "'all five specialists in Anchorage': not stated"
+  },
+  {
+   "id": "x2",
+   "why": "anyone 'flown' in either case: not stated"
+  },
+  {
+   "id": "x3",
+   "why": "45 minutes to READ a scan: it was the time to send images"
+  },
+  {
+   "id": "x4",
+   "why": "any claim the software saved lives or improved outcomes: no published data"
+  },
+  {
+   "id": "x5",
+   "why": "the $3.1M as RapidAI money: CMS names no vendor"
+  }
+ ]
+}

@@ -1,0 +1,331 @@
+{
+ "transcript_usd": 59.98,
+ "cli_total_usd": null,
+ "outside_transcripts_usd": null,
+ "price_rows_to_check": [],
+ "unpriced_models": [],
+ "calls": 528,
+ "main_context": {
+  "peak": 783495,
+  "mean": 449308,
+  "compactions": [
+   {
+    "at": "2026-11-26T08:01:39.958Z",
+    "pre_tokens": 786266,
+    "post_tokens": 19611,
+    "trigger": "auto"
+   }
+  ]
+ },
+ "by_phase": {
+  "before first phase": {
+   "calls": 6,
+   "usd": 0.85,
+   "input": 12,
+   "write_5m": 0,
+   "write_1h": 91560,
+   "read": 485702,
+   "output": 1029,
+   "thinking": 103,
+   "web_search": 0
+  },
+  "preflight": {
+   "calls": 6,
+   "usd": 0.22,
+   "input": 11,
+   "write_5m": 0,
+   "write_1h": 5335,
+   "read": 748258,
+   "output": 1289,
+   "thinking": 122,
+   "web_search": 0
+  },
+  "research": {
+   "calls": 129,
+   "usd": 7.62,
+   "input": 279,
+   "write_5m": 441289,
+   "write_1h": 121681,
+   "read": 11881710,
+   "output": 103148,
+   "thinking": 17648,
+   "web_search": 0
+  },
+  "angle": {
+   "calls": 23,
+   "usd": 2.03,
+   "input": 54,
+   "write_5m": 113809,
+   "write_1h": 33767,
+   "read": 3846901,
+   "output": 20946,
+   "thinking": 4595,
+   "web_search": 0
+  },
+  "directors": {
+   "calls": 71,
+   "usd": 6.65,
+   "input": 147,
+   "write_5m": 334289,
+   "write_1h": 99779,
+   "read": 12279221,
+   "output": 86316,
+   "thinking": 27137,
+   "web_search": 0
+  },
+  "voice": {
+   "calls": 22,
+   "usd": 2.49,
+   "input": 40,
+   "write_5m": 0,
+   "write_1h": 39532,
+   "read": 8640321,
+   "output": 22279,
+   "thinking": 4930,
+   "web_search": 0
+  },
+  "gate0": {
+   "calls": 80,
+   "usd": 13.3,
+   "input": 167,
+   "write_5m": 537261,
+   "write_1h": 194155,
+   "read": 27052829,
+   "output": 182459,
+   "thinking": 46016,
+   "web_search": 0
+  },
+  "build": {
+   "calls": 29,
+   "usd": 4.61,
+   "input": 58,
+   "write_5m": 0,
+   "write_1h": 47899,
+   "read": 18553068,
+   "output": 25716,
+   "thinking": 6607,
+   "web_search": 0
+  },
+  "panel": {
+   "calls": 1,
+   "usd": 0.17,
+   "input": 2,
+   "write_5m": 0,
+   "write_1h": 907,
+   "read": 664392,
+   "output": 1514,
+   "thinking": 740,
+   "web_search": 0
+  },
+  "caption": {
+   "calls": 80,
+   "usd": 10.61,
+   "input": 180,
+   "write_5m": 464008,
+   "write_1h": 76472,
+   "read": 31145348,
+   "output": 72186,
+   "thinking": 24751,
+   "web_search": 0
+  },
+  "retro": {
+   "calls": 76,
+   "usd": 11.29,
+   "input": 191,
+   "write_5m": 938986,
+   "write_1h": 109693,
+   "read": 22539675,
+   "output": 60542,
+   "thinking": 15714,
+   "web_search": 0
+  },
+  "deliver": {
+   "calls": 5,
+   "usd": 0.15,
+   "input": 10,
+   "write_5m": 0,
+   "write_1h": 3030,
+   "read": 486528,
+   "output": 1331,
+   "thinking": 32,
+   "web_search": 0
+  }
+ },
+ "by_agent": {
+  "main": {
+   "calls": 277,
+   "usd": 37.52,
+   "input": 560,
+   "write_5m": 0,
+   "write_1h": 823810,
+   "read": 123633990,
+   "output": 309913,
+   "thinking": 54916,
+   "web_search": 0
+  },
+  "researcher": {
+   "calls": 87,
+   "usd": 4.47,
+   "input": 174,
+   "write_5m": 394979,
+   "write_1h": 0,
+   "read": 5583552,
+   "output": 68862,
+   "thinking": 13683,
+   "web_search": 0,
+   "spawns": 4
+  },
+  "validator": {
+   "calls": 10,
+   "usd": 0.51,
+   "input": 37,
+   "write_5m": 46310,
+   "write_1h": 0,
+   "read": 281425,
+   "output": 10945,
+   "thinking": 561,
+   "web_search": 0,
+   "spawns": 1
+  },
+  "editor": {
+   "calls": 73,
+   "usd": 7.53,
+   "input": 164,
+   "write_5m": 1043524,
+   "write_1h": 0,
+   "read": 3224058,
+   "output": 83565,
+   "thinking": 34427,
+   "web_search": 0,
+   "spawns": 12
+  },
+  "vo-director": {
+   "calls": 3,
+   "usd": 0.42,
+   "input": 6,
+   "write_5m": 46206,
+   "write_1h": 0,
+   "read": 61542,
+   "output": 8988,
+   "thinking": 2766,
+   "web_search": 0,
+   "spawns": 1
+  },
+  "storyboard-critic": {
+   "calls": 17,
+   "usd": 1.93,
+   "input": 40,
+   "write_5m": 225670,
+   "write_1h": 0,
+   "read": 1423284,
+   "output": 26029,
+   "thinking": 13944,
+   "web_search": 0,
+   "spawns": 1
+  },
+  "flow-critic": {
+   "calls": 11,
+   "usd": 1.74,
+   "input": 28,
+   "write_5m": 238685,
+   "write_1h": 0,
+   "read": 391560,
+   "output": 23390,
+   "thinking": 11555,
+   "web_search": 0,
+   "spawns": 2
+  },
+  "scorer": {
+   "calls": 50,
+   "usd": 5.86,
+   "input": 142,
+   "write_5m": 834268,
+   "write_1h": 0,
+   "read": 3724542,
+   "output": 47063,
+   "thinking": 16543,
+   "web_search": 0,
+   "spawns": 4
+  }
+ },
+ "by_model": {
+  "claude-opus-5-5": {
+   "calls": 528,
+   "usd": 59.98,
+   "input": 1151,
+   "write_5m": 2829642,
+   "write_1h": 823810,
+   "read": 138323953,
+   "output": 578755,
+   "thinking": 148395,
+   "web_search": 0
+  }
+ },
+ "phase_marks": [
+  {
+   "phase": "preflight",
+   "t": 1795669379.498013,
+   "at": "2026-11-26T05:02:59+00:00"
+  },
+  {
+   "phase": "research",
+   "t": 1795669415.016786,
+   "at": "2026-11-26T05:03:35+00:00"
+  },
+  {
+   "phase": "angle",
+   "t": 1795670203.187959,
+   "at": "2026-11-26T05:16:43+00:00"
+  },
+  {
+   "phase": "directors",
+   "t": 1795670334.339618,
+   "at": "2026-11-26T05:18:54+00:00"
+  },
+  {
+   "phase": "voice",
+   "t": 1795670879.791634,
+   "at": "2026-11-26T05:27:59+00:00"
+  },
+  {
+   "phase": "gate0",
+   "t": 1795671442.037299,
+   "at": "2026-11-26T05:37:22+00:00"
+  },
+  {
+   "phase": "build",
+   "t": 1795672659.498562,
+   "at": "2026-11-26T05:57:39+00:00"
+  },
+  {
+   "phase": "panel",
+   "t": 1795673733.806109,
+   "at": "2026-11-26T06:15:33+00:00"
+  },
+  {
+   "phase": "caption",
+   "t": 1795673749.457854,
+   "at": "2026-11-26T06:15:49+00:00"
+  },
+  {
+   "phase": "retro",
+   "t": 1795676897.791186,
+   "at": "2026-11-26T07:08:17+00:00"
+  },
+  {
+   "phase": "deliver",
+   "t": 1795680181.152003,
+   "at": "2026-11-26T08:03:01+00:00"
+  },
+  {
+   "phase": "retro",
+   "t": 1795680387.408515,
+   "at": "2026-11-26T08:06:27+00:00"
+  }
+ ],
+ "run_id": "2026-11-26",
+ "session": "f76194e7-ae46-5188-a6c1-dd6319553af7",
+ "remote_session": "session_0169DKhj3dXWxkVjX1TUfqf6",
+ "generated_at": "2026-11-26T08:06:50+00:00",
+ "line": "The calls in this run's transcripts cost $59.98 up to this report, $37.52 in the main loop and $22.46 in subagents. Claude Code's own compaction and permission calls are not in them and are counted in the session total. Costliest phases were gate0 at $13.30, retro at $11.29, caption at $10.61. The main context peaked at 783K tokens with 1 compaction."
+}

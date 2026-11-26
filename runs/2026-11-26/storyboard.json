@@ -1,0 +1,2453 @@
+{
+  "run_date": "2026-11-26",
+  "slug": "ahead-of-the-patient",
+  "title": "Ahead of the Patient",
+  "concept": "Alaska hospitals in the volunteer Alaska Stroke Coalition use RapidAI to read stroke scans. It flags a suspected large vessel occlusion, and in one case it alerted the doctor seconds after the scan, with the results reaching the local team and the clot specialists at once, in a state with five doctors who can pull out those clots. Before, just sending the images to Anchorage could take 45 minutes. In another case a man in his sixties came into an interior hospital after a fall; his team called Providence in Anchorage under 30 minutes after he arrived, two minutes before the official scan report, and the clot was out 4 hours 23 minutes after he arrived. Early, unpublished data shows about a 30 percent faster start on clot removal once patients reach Anchorage. The test: Providence's Kelly Isaacs says she can't really show statistically significant proof, Alaska has no consistent stroke outcome reporting, the software throws false positives; the clinicians' answer is that a doctor reviews every output and decides the transfer, and the six hospitals that got it free say they'll keep and pay. Federal rural health money, over $3.1 million, is set to build an AI imaging network across a planned 21 hospitals. Drawn as Ping, a round orchid alert pulse with a face born in a CT ring, that splits so the news reaches two places at once; in the second case a slow faceless report printer loses to a phone call; the film ends on a scoreboard whose outcomes row is a dashed blank.",
+  "derived_from": "scratch",
+  "engine": "infographic-2.5d",
+  "total_seconds": 113.08,
+  "fingerprint": {
+    "pov": "eye-level-immersive",
+    "motion_vector": "horizontal-traverse",
+    "hero_treatment": "single-organic-hero",
+    "layout": "stacked-layers",
+    "register": "cartoon-interior",
+    "palette": "celadon CT tile #CFE3D8, graphite ink #1F3438, navy winter windows #2D4660 with warm sodium dots, ivory lightbox key #F4F1E6, greyscale scans with one ruby marker #B3223A at a vessel cutoff, a warm orchid glow #D94FB0 for Ping alone, a buttercream Anchorage room #EBDDBF under a warm bulb",
+    "camera_strategy": "interior-push-and-overhead-map",
+    "light_story": "warm-glow-interior-before-sunrise",
+    "metaphor": "a round orchid alert pulse with a face that splits so the news reaches the local team and the specialists at once, races ahead of the patient, and ends at a scoreboard with one blank row"
+  },
+  "signature_shot": 10,
+  "palette": "celadon CT tile #CFE3D8, graphite ink #1F3438, navy winter windows #2D4660 with warm sodium dots, ivory lightbox key #F4F1E6, greyscale scans with one ruby marker #B3223A at a vessel cutoff, a warm orchid glow #D94FB0 for Ping alone, a buttercream Anchorage room #EBDDBF under a warm bulb",
+  "divergence_note": "The last three films were outdoors: a hard low noon sun on bone snow at a rail fork with a faceless cast-iron switch stand and signal amber (11-25), flat July overcast on olive tundra seen from above with a faced Pi board and red pins (11-24), and apricot-plum dusk on river ice with scarlet and sample tubes (11-23). This film is a screen-lit hospital interior before dawn, celadon tile and graphite-teal under a bone lightbox key; its hero is a round faced orchid pulse that splits (no card or document silhouette); its accent is orchid at about 318 degrees, about 50 degrees from 11-24's vermilion and 11-23's scarlet and far from 11-25's amber. Honest overlaps: a stylised Alaska map board seen from above in two shots (11-23 and 11-24 used top-down maps), a faceless Suit (house rig), and a brass stopwatch from the 11-19 shelf.",
+  "treatment": {
+    "title": "Ahead of the Patient",
+    "summary": "Winner A (the Comedian, Ping) with grafts from C (the Explainer: the split-screen of a gurney token still on the dashed line while Anchorage's room is already lit, the brass brain-cell counter), B (the Dramatist: the button pulls back through the CT ring so the last frame rhymes with the first) and D (the Enthusiast: the dashed OUTCOMES row, six separate hospital vignettes lighting for keep and pay). Case one is an unplaced Alaska hospital (a CT room, a reading room, a lightbox, a wall phone). Case two is a DIFFERENT hospital in the interior (its own exterior doors in the blue before sunrise, its own intake board, desk phone and slow faceless report printer). Then a records shelf, a doctor's desk, six separate hospital vignettes, a long dusk horizon of Alaska, and the Anchorage stroke room. Ping, a round faced orchid alert pulse born in the CT ring, is the protagonist: it reads, flags, splits into two identical copies, races ahead of the patient, gets checked by a doctor's pen, and ends trying to hang its stopwatch on a RESULTS nail where an empty dashed scoreboard waits. Revised after Gate 0B/0C/0D round 1: Ping is a round pulse, not a card; orchid replaces coral; the clot is drawn as a vessel cutoff with a tiny ruby marker; the second case has its own world and its own printer and phone with no orchid on them; the specialists never sit on the map; the split race is a general diagram after the case; the network is a horizon, not a third map; the six hospitals are six separate vignettes.",
+    "judge_reasoning": "Judge reasoning: all four pitches converged on the same physics (one alert that splits so the local team and the specialists learn at once, a stopwatch, a report that arrives second, a blank outcomes scoreboard), so the judgment is about who makes it a show. The Comedian's Ping is the only pitch whose AI presence is a character with a face that FEELS each beat (born, proud, splitting, sheepish at a false positive, deflated at the empty nail), and its slow faceless report printer is a running background gag that pays off on c15 at the exact beat. Grafts: from the Explainer, the split-screen signature shot (a gurney token still crawling the dashed line on the left, Anchorage's room already lighting on the right: the information racing ahead of the patient) and the brass brain-cell counter; from the Dramatist, the button pulling back through the scanner ring so the last frame rhymes with the first; from the Enthusiast, the dashed OUTCOMES row and six clinic windows lighting for \"keep and pay\". Rejected: five specialist pins or chairs placed on the map (no claim locates them; they sit together on one WHOLE STATE card off the map), any vehicle for the patient (never flown), a 45-minutes-to-seconds before-and-after splice (c7 and c3 stay separate, \"in one case\" stays on c3). The showrunner judged the four pitches directly instead of spawning a separate scorer."
+  },
+  "angle": {
+    "thesis": "Alaska's stroke software moves the information, not the patient: the local team and the state's specialists learn at the same moment, so Anchorage is ready before the patient arrives, and that is a real Alaska win in speed that becomes a proven one only if the planned 21-hospital network comes with the stroke outcome reporting Alaska doesn't have today.",
+    "falsifiability": "False if the timing gains don't hold: transfer calls still wait on the official report (c15 shows one that didn't), image delivery to specialists still takes tens of minutes (c7 is the before), or the early, unpublished faster start in Anchorage (c17) disappears once published. Also false, in its second half, if Alaska can already judge the network without new reporting (contradicting c20, c21).",
+    "supporting_facts": [
+      "The mechanism is information: just sending images to Anchorage could take 45 minutes (c7); in one case the app alerted the doctor seconds after the scan (c3) and the results reached the local team and the faraway specialists at once (c4).",
+      "One real chain: a man in his mid-60s after a morning fall at an interior hospital (c13), the transfer call under 30 minutes after arrival (c14), two minutes before the official report (c15), the clot out 4 hours 23 minutes after he arrived (c16).",
+      "The payoff lands in Anchorage: early, unpublished data shows about a 30 percent faster start on clot removal once patients get there (c17), with five clot specialists in the entire state (c6) and about two million brain cells lost a minute without blood flow (c5)."
+    ],
+    "counterpoint_to_honor": "Two fair cases, each a scene. The skeptic's: no one can show it changes outcomes yet; Isaacs says she can't really give statistically significant proof (c21), the state has no consistent outcome reporting (c20), the software throws false positives (c18). The clinicians' answer, shown straight as the best reason the bet is sound: a doctor still reviews every output and that read decides the transfer (c19), they didn't put it in to send every patient to Anchorage (c22), and all six hospitals that got it free say they'll keep and pay for it (c10).",
+    "valence": "celebratory",
+    "valence_defense": "The capability is measured in minutes and it's Alaska-built (a volunteer coalition c24, foundation money c9, now federal money c11 toward a planned 21 hospitals c12). The film lets that land as a win and names exactly one honest limit, the missing outcome scoreboard, as the condition for calling it proven. No invented downside.",
+    "who_it_serves": "Rural and interior Alaskans who have a stroke far from a cath lab, their local ER teams, the five specialists, and the officials deciding how federal rural health money is judged.",
+    "second_movement": "c17 recontextualises the case: the gain the data sees shows up in Anchorage, because the information got there first. Then the test: Isaacs's own question (c21) and c20, met by c19, c22 and c10.",
+    "runner_ups": [
+      {
+        "angle": "A: AI lets five specialists cover a whole state",
+        "why_lost": "no claim says coverage changed, only when specialists find out; 'the moment a scan finishes' turned one case into a spec"
+      },
+      {
+        "angle": "B: a $3.1M bet on a volunteer coalition's software that needs a scoreboard",
+        "why_lost": "tied the CMS money to the product (cut x5) and placed the open question at faster removal, which c17 already suggests, instead of at outcomes; its stakes framing grafted into the close"
+      },
+      {
+        "angle": "C: information, not patients",
+        "why_lost": "won the mechanism (grafted as the spine) but alone made no stake claim and dropped the outcome test; its 45 minutes to seconds splice and 'not a shorter trip' rejected"
+      }
+    ],
+    "constraints_carried": [
+      "'in one case' stays on c3 and is never merged into the mid-60s timeline",
+      "45 minutes is sending, could take",
+      "planned 21",
+      "CMS money vendor-neutral",
+      "no 'flown'",
+      "no outcome claims",
+      "a doctor, not a radiologist",
+      "five in the entire state, never all in Anchorage"
+    ]
+  },
+  "claim_map": {
+    "1": [
+      "narration"
+    ],
+    "46": [
+      "c5"
+    ],
+    "2": [
+      "c5"
+    ],
+    "3": [
+      "narration"
+    ],
+    "4": [
+      "c7"
+    ],
+    "5": [
+      "c7"
+    ],
+    "6": [
+      "c24"
+    ],
+    "39": [
+      "c24"
+    ],
+    "7": [
+      "c1"
+    ],
+    "8": [
+      "c1"
+    ],
+    "9": [
+      "c2"
+    ],
+    "42": [
+      "c2"
+    ],
+    "10": [
+      "c3"
+    ],
+    "11": [
+      "c3"
+    ],
+    "12": [
+      "c4"
+    ],
+    "13": [
+      "c4"
+    ],
+    "14": [
+      "c6"
+    ],
+    "15": [
+      "c6"
+    ],
+    "16": [
+      "c13"
+    ],
+    "17": [
+      "narration"
+    ],
+    "18": [
+      "c14"
+    ],
+    "43": [
+      "c14"
+    ],
+    "19": [
+      "c14"
+    ],
+    "20": [
+      "c15"
+    ],
+    "44": [
+      "c16"
+    ],
+    "21": [
+      "c16"
+    ],
+    "22": [
+      "c16"
+    ],
+    "23": [
+      "narration"
+    ],
+    "24": [
+      "narration"
+    ],
+    "25": [
+      "c17"
+    ],
+    "45": [
+      "c17"
+    ],
+    "26": [
+      "c21"
+    ],
+    "40": [
+      "c14",
+      "c17"
+    ],
+    "27": [
+      "c21"
+    ],
+    "28": [
+      "c20"
+    ],
+    "29": [
+      "c18"
+    ],
+    "30": [
+      "c19"
+    ],
+    "31": [
+      "c19"
+    ],
+    "32": [
+      "c10"
+    ],
+    "33": [
+      "c10"
+    ],
+    "35": [
+      "c11"
+    ],
+    "41": [
+      "c11",
+      "c12"
+    ],
+    "47": [
+      "c11"
+    ],
+    "34": [
+      "c12"
+    ],
+    "36": [
+      "c8"
+    ],
+    "37": [
+      "narration"
+    ],
+    "38": [
+      "narration"
+    ]
+  },
+  "hook": {
+    "pattern": "in-medias-res",
+    "frame1": "A cold CT room, a greyscale slice in the bore whose bright vessel already stops at a cutoff, and at 0.2 s Ping pops awake in front of it with a squash and a PING while the ring's lamps chase round",
+    "headline": "A BRAIN SCAN \u00b7 AN ALASKA HOSPITAL",
+    "motion_by_s": 0.2,
+    "loopback": "Frame 1 is Ping waking in the CT bore beside a bare RESULTS nail; the last shot pulls back out through the same bore to frame Ping beside the scoreboard now hung on that nail, its third row a dashed blank."
+  },
+  "open_loop": {
+    "plant_t": 7.35,
+    "pay_t": 108.36,
+    "plant_glow_s": 0.4,
+    "plant_sfx": "clink",
+    "what": "What hangs on the RESULTS nail? Planted as a bare brass nail labelled RESULTS beside a cold stopwatch in the CT room; paid when the Anchorage scoreboard hangs on the nail and Ping tugs the taped paper off its OUTCOMES row on camera to show a dashed blank under the lit TIME rows."
+  },
+  "open_loop_2": {
+    "plant_t": 38.57,
+    "pay_t": 86.21,
+    "what": "Will the five get called for nothing? Planted as one of the five figures' pagers twitches on its belt while Ping counts them; paid when Ping yells at a clear slice and that pager blinks, then the doctor's read flips a slip to CLEAR \u00b7 NO TRANSFER CALL and the pager goes dark: false positives, and a doctor's read decides the transfer."
+  },
+  "throughline": {
+    "object": "the brass stopwatch",
+    "lands_in_button": "Ping holding the stopwatch at the RESULTS nail under a scoreboard whose OUTCOMES row is a dashed blank",
+    "states": [
+      {
+        "at_s": 7.35,
+        "state": "T1 cold at 0:00 on the CT console beside the bare RESULTS nail"
+      },
+      {
+        "at_s": 13.9,
+        "state": "T1b cold at 0:00 on the reading desk beside Ping"
+      },
+      {
+        "at_s": 46.19,
+        "state": "T2 running on the second hospital's intake board from the man's arrival"
+      },
+      {
+        "at_s": 47.42,
+        "state": "T3 sweeping past UNDER 30 as the transfer call goes"
+      },
+      {
+        "at_s": 58.37,
+        "state": "T4 slammed to a stop at 4 HR 23 MIN"
+      },
+      {
+        "at_s": 72.48,
+        "state": "T5 carried by Ping as a courier into Anchorage and slid across the desk to the scoreboard"
+      },
+      {
+        "at_s": 108.36,
+        "state": "T7 held up at the RESULTS nail under the scoreboard's blank row"
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "t": 8.58,
+      "type": "scale-pullback",
+      "what": "the view pulls wide over the whole map as the sweating ream crawls toward Anchorage",
+      "hold_s": 0.6
+    },
+    {
+      "t": 35.86,
+      "type": "scale-pullback",
+      "what": "the view pulls back until five figures are dwarfed by the whole outline of Alaska",
+      "hold_s": 0.8
+    },
+    {
+      "t": 64.41,
+      "type": "build-on",
+      "what": "the Anchorage room lights snap on one by one before the gurney arrives",
+      "hold_s": 0.7
+    },
+    {
+      "t": 104.45,
+      "type": "scale-pullback",
+      "what": "the view pulls back from one dashed outline until 21 stand along the horizon, Utqiagvik to Juneau",
+      "hold_s": 0.8
+    }
+  ],
+  "tail_s": 2.0,
+  "audio_arc": {
+    "bed": [
+      {
+        "line": 0,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 4,
+        "offset": 0.0,
+        "level": 1.1
+      },
+      {
+        "line": 7,
+        "offset": 0.0,
+        "level": 0.9
+      },
+      {
+        "line": 11,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "line": 12,
+        "offset": 0.0,
+        "level": 0.7
+      },
+      {
+        "line": 15,
+        "offset": 0.0,
+        "level": 1.0
+      },
+      {
+        "line": 16,
+        "offset": 0.0,
+        "level": 1.2
+      },
+      {
+        "at_s": 107.76,
+        "level": 0.35
+      },
+      {
+        "at_s": 108.76,
+        "level": 1.1
+      },
+      {
+        "from_end": 0.4,
+        "level": 0.0
+      }
+    ],
+    "ambience": "room",
+    "build_steps": 4,
+    "dip_at": 107.86,
+    "riser_at": 61.46,
+    "silence_at": 107.86,
+    "payoff_at": 108.36,
+    "button_pattern": "callback",
+    "interrupt_at": 52.74,
+    "extra_dips": []
+  },
+  "shots": [
+    {
+      "title": "Born in the ring",
+      "vo_line": 0,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "ct-room",
+      "pov": "eye-level-immersive",
+      "layout": "stacked-layers",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "single-organic-hero",
+      "camera": "dollyThrough",
+      "transition_in": "",
+      "thread": "",
+      "stage3d": "planes",
+      "centered": "Ping in the CT bore at x600 y900",
+      "means": "In a cold CT room Ping pops awake in the bore beside a slice whose vessel stops at a cutoff, a brass counter lands on 2 million brain cells a minute, and a bare RESULTS nail waits beside a cold stopwatch",
+      "ambient": "room tone, the scanner hum",
+      "hero": {
+        "name": "Ping + CT ring + brain slice + counter + RESULTS nail",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% ring and Ping, 25% counter, 15% nail"
+      },
+      "id": 1,
+      "start_s": 0.0,
+      "t": "0.000-8.580"
+    },
+    {
+      "title": "The old way",
+      "vo_line": 1,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "overhead",
+      "stage": "map-board",
+      "pov": "top-down-map",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown",
+      "transition_in": "whip-pan",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the ream on the map at x540 y960",
+      "means": "From above, a sweating ream of slices crawls a dashed wire across the map of Alaska toward Anchorage and jams, just sending the images could take 45 minutes",
+      "ambient": "a far wind, paper",
+      "hero": {
+        "name": "map board + slice ream + dashed wire + Anchorage dot",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% ream on route, 30% map, 10% desk"
+      },
+      "id": 2,
+      "start_s": 8.58,
+      "t": "8.580-13.900"
+    },
+    {
+      "title": "The coalition",
+      "vo_line": 2,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "reading-room",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Ping on the desk at x540 y1060",
+      "means": "In the reading room Ping lands on the desk beside a cold stopwatch, the volunteer ALASKA STROKE COALITION sheet unrolls and Ping spins to show RAPIDAI",
+      "ambient": "room tone, lightbox buzz",
+      "hero": {
+        "name": "Ping + desk + coalition sheet + lightbox + cold stopwatch",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% Ping, 30% sheet, 15% lightbox"
+      },
+      "id": 3,
+      "start_s": 13.9,
+      "t": "13.900-21.500"
+    },
+    {
+      "title": "The flag",
+      "vo_line": 3,
+      "framing": "macro-closeup",
+      "scale": "insert",
+      "height": "eye",
+      "stage": "slice-macro",
+      "pov": "macro-closeup",
+      "layout": "single-object-void",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "push-in",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the slice at x540 y900",
+      "means": "A giant slice fills the lightbox, a bone reticle snaps on the vessel cutoff, the branch beyond dims, and Ping launches its alert at the wall phone, seconds after the scan in one case",
+      "ambient": "room tone, lightbox buzz",
+      "hero": {
+        "name": "brain slice + reticle + cutoff + Ping + wall phone",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "65% slice, 25% Ping, 10% phone"
+      },
+      "id": 4,
+      "start_s": 21.5,
+      "t": "21.500-31.100"
+    },
+    {
+      "title": "At once",
+      "vo_line": 5,
+      "framing": "map-territory",
+      "scale": "wide",
+      "height": "overhead",
+      "stage": "map-board",
+      "pov": "top-down-map",
+      "layout": "fullbleed-split",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "craneDown",
+      "transition_in": "graphic-match",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "the split copies at x540 y960",
+      "means": "Over the map Ping splits into two copies, one to the LOCAL TEAM tag and one off the map onto a WHOLE STATE card, landing on the same frame",
+      "ambient": "room tone, paper",
+      "hero": {
+        "name": "map board + two Ping copies + LOCAL TEAM tag + WHOLE STATE card edge",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% copies, 30% map, 15% card"
+      },
+      "id": 5,
+      "start_s": 31.1,
+      "t": "31.100-35.860"
+    },
+    {
+      "title": "Five",
+      "vo_line": 6,
+      "framing": "alt-vantage",
+      "scale": "extreme-wide",
+      "height": "low",
+      "stage": "whole-state",
+      "pov": "low-angle-heroic",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "orbitReveal",
+      "transition_in": "pull-out",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the five figures at x540 y1000",
+      "means": "Low behind the WHOLE STATE card the view pulls back until five faceless figures are dwarfed by the whole outline of Alaska, and Ping points at each as one figure's pager twitches",
+      "ambient": "room tone, a far wind",
+      "hero": {
+        "name": "WHOLE STATE card + five figures + Alaska outline + Ping",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% figures, 35% outline, 15% Ping"
+      },
+      "id": 6,
+      "start_s": 35.86,
+      "t": "35.860-41.640"
+    },
+    {
+      "title": "Another case",
+      "vo_line": 7,
+      "framing": "wide-establish",
+      "scale": "wide",
+      "height": "low",
+      "stage": "er-doors",
+      "pov": "low-angle-heroic",
+      "layout": "stacked-layers",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "structure-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "hard-cut",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the doors and gurney at x540 y1060",
+      "means": "At a different hospital's doors in the blue before sunrise a gurney token rolls in, the intake stopwatch clicks into motion and a beige printer starts one slow page",
+      "ambient": "wind at the doors, a far heater",
+      "hero": {
+        "name": "hospital doors + gurney token + intake board + stopwatch + printer",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% doors and gurney, 30% board, 20% printer"
+      },
+      "id": 7,
+      "start_s": 41.64,
+      "t": "41.640-47.420"
+    },
+    {
+      "title": "The call beats the report",
+      "vo_line": 8,
+      "framing": "two-up",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "er-desk",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "structure-as-subject",
+      "camera": "riseWith",
+      "transition_in": "match-action",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the phone and printer at x540 y980",
+      "means": "A local nurse's hand lifts the desk phone as the stopwatch passes UNDER 30, a pulse runs down the cord to the Providence tag, the receiver drops back, and the slow printer finally drops OFFICIAL REPORT",
+      "ambient": "room tone, printer grind",
+      "hero": {
+        "name": "desk phone + nurse's hand + stopwatch + printer + report page",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "45% phone and hand, 35% printer, 20% stopwatch"
+      },
+      "id": 8,
+      "start_s": 47.42,
+      "t": "47.420-56.760"
+    },
+    {
+      "title": "Clot out",
+      "vo_line": 10,
+      "framing": "push-detail",
+      "scale": "medium",
+      "height": "eye",
+      "stage": "intake-board",
+      "pov": "exploded-diagram",
+      "layout": "single-object-void",
+      "motion_vector": "radial-emanate",
+      "hero_treatment": "data-as-subject",
+      "camera": "static:the stopwatch hand is the only move",
+      "transition_in": "graphic-match",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "the stopwatch at x540 y920",
+      "means": "The stopwatch on the intake board sweeps hard and slams to a stop as the clot comes out, and a FROM ARRIVAL tag swings down beside it",
+      "ambient": "room tone, a clock",
+      "hero": {
+        "name": "stopwatch on the intake board + FROM ARRIVAL tag",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "70% stopwatch, 20% tag, 10% board"
+      },
+      "id": 9,
+      "start_s": 56.76,
+      "t": "56.760-62.460"
+    },
+    {
+      "title": "Information first",
+      "vo_line": 11,
+      "framing": "two-up",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "split-race",
+      "pov": "eye-level-immersive",
+      "layout": "fullbleed-split",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "static:a locked split so the two halves race",
+      "transition_in": "mask-wipe",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the seam at x540 y960",
+      "means": "A split frame: left, three outlined gurney tokens crawl converging dashed distance lines; right, the warm Anchorage room already has the call on its door, lights snap on, gowns drop, an early 30 percent plate swings, and the gurney crosses into a ready room",
+      "ambient": "room tone, a far wind",
+      "hero": {
+        "name": "split seam + three dashed distance lines + three gurney tokens + Anchorage room + gowns + door plate",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% room, 30% line, 10% seam"
+      },
+      "id": 10,
+      "start_s": 62.46,
+      "t": "62.460-72.480"
+    },
+    {
+      "title": "The proof desk",
+      "vo_line": 12,
+      "framing": "subject-portrait",
+      "scale": "medium",
+      "height": "low",
+      "stage": "anchorage-room",
+      "pov": "low-angle-heroic",
+      "layout": "stacked-layers",
+      "motion_vector": "vertical-rise",
+      "hero_treatment": "single-organic-hero",
+      "camera": "riseWith",
+      "transition_in": "hard-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Ping and the Suit at x540 y1060",
+      "means": "In the warm Anchorage room Ping slides its stopwatch to the faceless Kelly Isaacs, who knocks on the two lit TIME rows of a scoreboard whose third row is taped over, then turns with an open hand while her quote holds",
+      "ambient": "warm room tone",
+      "hero": {
+        "name": "Ping + desk + faceless Suit + wall scoreboard",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% Suit and board, 35% Ping, 15% desk"
+      },
+      "id": 11,
+      "start_s": 72.48,
+      "t": "72.480-82.460"
+    },
+    {
+      "title": "The binder and the false alarm",
+      "vo_line": 13,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "eye",
+      "stage": "records",
+      "pov": "macro-closeup",
+      "layout": "hud-instrument-frame",
+      "motion_vector": "push-in-only",
+      "hero_treatment": "data-as-subject",
+      "camera": "dollyThrough",
+      "transition_in": "focus-pull",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the binder and slice at x540 y980",
+      "means": "A fat binder of stroke outcome forms falls open on mismatched pages, then the focus pulls to Ping yelling at a clear slice while an inset FLAGGED lamp blinks, and Ping deflates",
+      "ambient": "room tone, paper",
+      "hero": {
+        "name": "outcomes binder + clear slice + Ping + FLAGGED lamp",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "50% binder, 35% Ping, 15% slice"
+      },
+      "id": 12,
+      "start_s": 82.46,
+      "t": "82.460-88.680"
+    },
+    {
+      "title": "The doctor's read",
+      "vo_line": 14,
+      "framing": "push-detail",
+      "scale": "close",
+      "height": "high",
+      "stage": "doctor-desk",
+      "pov": "exploded-diagram",
+      "layout": "single-object-void",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "craneDown",
+      "transition_in": "match-cut",
+      "thread": "match",
+      "stage3d": "planes",
+      "centered": "Ping under the hand at x540 y980",
+      "means": "From above a doctor's hand turns the over-eager Ping over so it goes grey, then turns a desk slip over to its clear side and the FLAGGED lamp goes dark",
+      "ambient": "room tone",
+      "hero": {
+        "name": "doctor's hand + Ping + desk slip + FLAGGED lamp",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "55% hand and Ping, 30% slip, 15% lamp"
+      },
+      "id": 13,
+      "start_s": 88.68,
+      "t": "88.680-93.960"
+    },
+    {
+      "title": "Keep and pay",
+      "vo_line": 15,
+      "framing": "data-panel",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "hospital-grid",
+      "pov": "eye-level-immersive",
+      "layout": "grid-modular",
+      "motion_vector": "assemble-build",
+      "hero_treatment": "multiplicity-swarm",
+      "camera": "static:a locked grid so the windows carry the motion",
+      "transition_in": "whip-pan",
+      "thread": "build",
+      "stage3d": "planes",
+      "centered": "the six vignettes at x540 y960",
+      "means": "Six separate framed hospital vignettes brighten their windows one after another and their tags flip to KEEP + PAY",
+      "ambient": "wind over snow",
+      "hero": {
+        "name": "six framed hospital vignettes + tags",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "70% windows, 30% tags"
+      },
+      "id": 14,
+      "start_s": 93.96,
+      "t": "93.960-98.420"
+    },
+    {
+      "title": "The planned network",
+      "vo_line": 16,
+      "framing": "map-territory",
+      "scale": "extreme-wide",
+      "height": "ground",
+      "stage": "horizon",
+      "pov": "low-angle-heroic",
+      "layout": "map-territory",
+      "motion_vector": "horizontal-traverse",
+      "hero_treatment": "landscape-as-subject",
+      "camera": "truckAcross",
+      "transition_in": "pull-out",
+      "thread": "travel",
+      "stage3d": "planes",
+      "centered": "the horizon at x540 y1000",
+      "means": "On a long dusk horizon of Alaska a CMS plate drops on a post at one dashed outline, the view pulls back, a dashed line strings along the horizon and 21 dashed hospital outlines pop up, Utqiagvik to Juneau",
+      "ambient": "dusk wind",
+      "hero": {
+        "name": "horizon + 21 dashed outlines + CMS plate post + end tags",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% outlines, 25% horizon, 15% plate"
+      },
+      "id": 15,
+      "start_s": 98.42,
+      "t": "98.420-108.360"
+    },
+    {
+      "title": "Keep score",
+      "vo_line": 17,
+      "framing": "alt-vantage",
+      "scale": "wide",
+      "height": "eye",
+      "stage": "ct-room",
+      "pov": "eye-level-immersive",
+      "layout": "centered-hero-lowerthird",
+      "motion_vector": "vertical-descent",
+      "hero_treatment": "single-organic-hero",
+      "camera": "orbitReveal",
+      "transition_in": "match-cut",
+      "thread": "carry",
+      "stage3d": "planes",
+      "centered": "Ping and the board at x540 y1000",
+      "means": "Back in the CT room Ping carries the stopwatch to the RESULTS nail, the Anchorage scoreboard hangs on it, Ping tugs the paper off the OUTCOMES row to show a dashed blank, and the camera pulls back out through the ring",
+      "ambient": "room tone, the scanner hum",
+      "hero": {
+        "name": "Ping + stopwatch + RESULTS nail + scoreboard + CT ring",
+        "parts": 44,
+        "zones": 3,
+        "detail_note": "60% ring and Ping, 25% scoreboard, 15% nail"
+      },
+      "id": 16,
+      "start_s": 108.36,
+      "t": "108.360-113.080"
+    }
+  ],
+  "beats": [
+    {
+      "id": 1,
+      "shot": 1,
+      "at_s": 0.0,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die.",
+      "phrase": "A brain scan finishes",
+      "shows": "Ping, the round orchid alert pulse with a face pops awake inside the bore of a bone-white CT ring with a squash and a PING, reacting to a greyscale brain slice whose bright vessel tree already stops at one cutoff, a plate reads A BRAIN SCAN \u00b7 AN ALASKA HOSPITAL",
+      "sfx": "ping",
+      "means": "a brain scan \u00b7 an alaska hospital",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "pops awake inside the bore of a bone-white CT ring with a squash and a PING, reacting to a greyscale brain slice whose bright vessel tree already stops at one cutoff",
+        "emotion": "alert",
+        "annotation": "A BRAIN SCAN \u00b7 AN ALASKA HOSPITAL"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face pops awake inside the bore of a bone-white CT ring with a squash and a PING, reacting to a greyscale brain slice whose bright vessel tree already stops at one cutoff, a plate reads A BRAIN SCAN \u00b7 AN ALASKA HOSPITAL",
+        "reaction": "the ring's lamps chase round",
+        "ambient": "room tone, the scanner hum"
+      },
+      "t": "0.000-3.610",
+      "key": 1
+    },
+    {
+      "id": 2,
+      "shot": 1,
+      "at_s": 3.61,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 3.61
+      },
+      "offset": 3.61,
+      "vo": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die.",
+      "phrase": "Every minute without blood",
+      "shows": "a brass counter on the CT room wall starts rolling its wheels as Ping's eyes go wide, a plate reads EVERY MINUTE",
+      "sfx": "tick",
+      "means": "every minute",
+      "rehook": "",
+      "draw": {
+        "subject": "a brass counter on the CT room wall",
+        "action": "starts rolling its wheels as Ping's eyes go wide",
+        "emotion": "worried",
+        "annotation": "EVERY MINUTE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "a brass counter on the CT room wall starts rolling its wheels as Ping's eyes go wide, a plate reads EVERY MINUTE",
+        "reaction": "the wheels blur",
+        "ambient": "room tone, the scanner hum"
+      },
+      "t": "3.610-5.570",
+      "key": 46
+    },
+    {
+      "id": 3,
+      "shot": 1,
+      "at_s": 5.57,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 5.57
+      },
+      "offset": 5.57,
+      "vo": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die.",
+      "phrase": "two million brain cells",
+      "shows": "the brass counter lands its wheels on 2,000,000 with a clack, a plate reads ABOUT 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE",
+      "sfx": "clack",
+      "means": "about 2 million brain cells \u00b7 every minute",
+      "rehook": "",
+      "draw": {
+        "subject": "the brass counter",
+        "action": "lands its wheels on 2,000,000 with a clack",
+        "emotion": "worried",
+        "annotation": "ABOUT 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c5"
+      ],
+      "choreo": {
+        "primary": "the brass counter lands its wheels on 2,000,000 with a clack, a plate reads ABOUT 2 MILLION BRAIN CELLS \u00b7 EVERY MINUTE",
+        "reaction": "the bezel shudders",
+        "ambient": "room tone, the scanner hum"
+      },
+      "t": "5.570-7.350",
+      "key": 2
+    },
+    {
+      "id": 4,
+      "shot": 1,
+      "at_s": 7.35,
+      "vo_line": 0,
+      "anchor": {
+        "vo_line": 0,
+        "fraction": 0.0,
+        "offset": 7.35
+      },
+      "offset": 7.35,
+      "vo": "A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die.",
+      "phrase": "die.",
+      "shows": "the bare brass nail labelled RESULTS beside the cold 0:00 stopwatch on the console catches the ring light in a glint as Ping glances at it, a plate reads RESULTS",
+      "sfx": "clink",
+      "means": "results",
+      "rehook": "",
+      "draw": {
+        "subject": "the bare brass nail labelled RESULTS beside the cold 0:00 stopwatch on the console",
+        "action": "catches the ring light in a glint as Ping glances at it",
+        "emotion": "curious",
+        "annotation": "RESULTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the bare brass nail labelled RESULTS beside the cold 0:00 stopwatch on the console catches the ring light in a glint as Ping glances at it, a plate reads RESULTS",
+        "reaction": "the nail glints",
+        "ambient": "room tone, the scanner hum"
+      },
+      "t": "7.350-8.580",
+      "key": 3
+    },
+    {
+      "id": 5,
+      "shot": 2,
+      "at_s": 8.58,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Before, just sending those images to Anchorage could take forty-five minutes.",
+      "phrase": "Before, just sending those",
+      "shows": "a ream of thousands of brain slices on a stylised Alaska map board crawls along a dashed wire toward an ANCHORAGE dot, sweating, as the view pulls wide over the whole map, a plate reads JUST SENDING THE IMAGES TO ANCHORAGE",
+      "sfx": "whoosh",
+      "means": "just sending the images to anchorage",
+      "rehook": "",
+      "draw": {
+        "subject": "a ream of thousands of brain slices on a stylised Alaska map board",
+        "action": "crawls along a dashed wire toward an ANCHORAGE dot, sweating, as the view pulls wide over the whole map",
+        "emotion": "weary",
+        "annotation": "JUST SENDING THE IMAGES TO ANCHORAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "a ream of thousands of brain slices on a stylised Alaska map board crawls along a dashed wire toward an ANCHORAGE dot, sweating, as the view pulls wide over the whole map, a plate reads JUST SENDING THE IMAGES TO ANCHORAGE",
+        "reaction": "a sweat drop falls off the ream",
+        "ambient": "a far wind, paper"
+      },
+      "t": "8.580-11.730",
+      "key": 4
+    },
+    {
+      "id": 6,
+      "shot": 2,
+      "at_s": 11.73,
+      "vo_line": 1,
+      "anchor": {
+        "vo_line": 1,
+        "fraction": 0.0,
+        "offset": 3.15
+      },
+      "offset": 3.15,
+      "vo": "Before, just sending those images to Anchorage could take forty-five minutes.",
+      "phrase": "forty-five minutes.",
+      "shows": "the slice ream jams a hair from the start and a single sheet peels off and drops back to the start line, a plate reads COULD TAKE 45 MIN",
+      "sfx": "creak",
+      "means": "could take 45 min",
+      "rehook": "",
+      "draw": {
+        "subject": "the slice ream",
+        "action": "jams a hair from the start and a single sheet peels off and drops back to the start line",
+        "emotion": "weary",
+        "annotation": "COULD TAKE 45 MIN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c7"
+      ],
+      "choreo": {
+        "primary": "the slice ream jams a hair from the start and a single sheet peels off and drops back to the start line, a plate reads COULD TAKE 45 MIN",
+        "reaction": "the sheet flutters",
+        "ambient": "a far wind, paper"
+      },
+      "t": "11.730-13.900",
+      "key": 5
+    },
+    {
+      "id": 7,
+      "shot": 3,
+      "at_s": 13.9,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now a volunteer group, the Alaska Stroke Coalition, has hospitals using A I software called RapidAI.",
+      "phrase": "Now a volunteer group,",
+      "shows": "Ping, the round orchid alert pulse with a face jumps off a lightbox and lands on a reading-room desk with a bounce beside a cold 0:00 stopwatch, a plate reads VOLUNTEER GROUP",
+      "sfx": "swoosh",
+      "means": "volunteer group",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "jumps off a lightbox and lands on a reading-room desk with a bounce beside a cold 0:00 stopwatch",
+        "emotion": "proud",
+        "annotation": "VOLUNTEER GROUP"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face jumps off a lightbox and lands on a reading-room desk with a bounce beside a cold 0:00 stopwatch, a plate reads VOLUNTEER GROUP",
+        "reaction": "the desk lamp sways",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "t": "13.900-15.670",
+      "key": 6
+    },
+    {
+      "id": 8,
+      "shot": 3,
+      "at_s": 15.67,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 1.77
+      },
+      "offset": 1.77,
+      "vo": "Now a volunteer group, the Alaska Stroke Coalition, has hospitals using A I software called RapidAI.",
+      "phrase": "Alaska Stroke Coalition, has",
+      "shows": "a hand-lettered sheet reading ALASKA STROKE COALITION unrolls down the reading-room wall and swings, a plate reads ALASKA STROKE COALITION",
+      "sfx": "rustle",
+      "means": "alaska stroke coalition",
+      "rehook": "",
+      "draw": {
+        "subject": "a hand-lettered sheet reading ALASKA STROKE COALITION",
+        "action": "unrolls down the reading-room wall and swings",
+        "emotion": "proud",
+        "annotation": "ALASKA STROKE COALITION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c24"
+      ],
+      "choreo": {
+        "primary": "a hand-lettered sheet reading ALASKA STROKE COALITION unrolls down the reading-room wall and swings, a plate reads ALASKA STROKE COALITION",
+        "reaction": "the sheet swings",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "t": "15.670-19.830",
+      "key": 39
+    },
+    {
+      "id": 9,
+      "shot": 3,
+      "at_s": 19.83,
+      "vo_line": 2,
+      "anchor": {
+        "vo_line": 2,
+        "fraction": 0.0,
+        "offset": 5.93
+      },
+      "offset": 5.93,
+      "vo": "Now a volunteer group, the Alaska Stroke Coalition, has hospitals using A I software called RapidAI.",
+      "phrase": "RapidAI.",
+      "shows": "Ping, the round orchid alert pulse with a face spins round to show the word RAPIDAI on a little hanging plate, a plate reads RAPIDAI \u00b7 STROKE SCAN SOFTWARE",
+      "sfx": "pop",
+      "means": "rapidai \u00b7 stroke scan software",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "spins round to show the word RAPIDAI on a little hanging plate",
+        "emotion": "proud",
+        "annotation": "RAPIDAI \u00b7 STROKE SCAN SOFTWARE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face spins round to show the word RAPIDAI on a little hanging plate, a plate reads RAPIDAI \u00b7 STROKE SCAN SOFTWARE",
+        "reaction": "the plate swings",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "t": "19.830-21.500",
+      "key": 7
+    },
+    {
+      "id": 10,
+      "shot": 4,
+      "at_s": 21.5,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "It looks for a large vessel occlusion, a clot blocking a big brain artery.",
+      "phrase": "It looks for a",
+      "shows": "a giant brain slice filling the lightbox slides up into place as Ping leans in and a bone-white reticle sweeps across the bright vessel tree, a plate reads READING THE SCAN",
+      "sfx": "scratch",
+      "means": "reading the scan",
+      "rehook": "",
+      "draw": {
+        "subject": "a giant brain slice filling the lightbox",
+        "action": "slides up into place as Ping leans in and a bone-white reticle sweeps across the bright vessel tree",
+        "emotion": "determined",
+        "annotation": "READING THE SCAN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c1"
+      ],
+      "choreo": {
+        "primary": "a giant brain slice filling the lightbox slides up into place as Ping leans in and a bone-white reticle sweeps across the bright vessel tree, a plate reads READING THE SCAN",
+        "reaction": "the reticle sweeps",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "t": "21.500-22.150",
+      "key": 8
+    },
+    {
+      "id": 11,
+      "shot": 4,
+      "at_s": 22.15,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 0.65
+      },
+      "offset": 0.65,
+      "vo": "It looks for a large vessel occlusion, a clot blocking a big brain artery.",
+      "phrase": "large vessel occlusion, a",
+      "shows": "the bone-white reticle snaps shut on the point where one bright vessel stops, a plate reads SUSPECTED LARGE VESSEL OCCLUSION",
+      "sfx": "snap",
+      "means": "suspected large vessel occlusion",
+      "rehook": "",
+      "draw": {
+        "subject": "the bone-white reticle",
+        "action": "snaps shut on the point where one bright vessel stops",
+        "emotion": "alert",
+        "annotation": "SUSPECTED LARGE VESSEL OCCLUSION"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the bone-white reticle snaps shut on the point where one bright vessel stops, a plate reads SUSPECTED LARGE VESSEL OCCLUSION",
+        "reaction": "the cutoff pulses",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "t": "22.150-24.150",
+      "key": 9
+    },
+    {
+      "id": 12,
+      "shot": 4,
+      "at_s": 24.15,
+      "vo_line": 3,
+      "anchor": {
+        "vo_line": 3,
+        "fraction": 0.0,
+        "offset": 2.65
+      },
+      "offset": 2.65,
+      "vo": "It looks for a large vessel occlusion, a clot blocking a big brain artery.",
+      "phrase": "clot blocking a big",
+      "shows": "the vessel branch beyond the cutoff dims to grey as a tiny ruby marker presses onto the cutoff point, a plate reads A CLOT IN A BIG BRAIN ARTERY",
+      "sfx": "thud",
+      "means": "a clot in a big brain artery",
+      "rehook": "",
+      "draw": {
+        "subject": "the vessel branch beyond the cutoff",
+        "action": "dims to grey as a tiny ruby marker presses onto the cutoff point",
+        "emotion": "worried",
+        "annotation": "A CLOT IN A BIG BRAIN ARTERY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c2"
+      ],
+      "choreo": {
+        "primary": "the vessel branch beyond the cutoff dims to grey as a tiny ruby marker presses onto the cutoff point, a plate reads A CLOT IN A BIG BRAIN ARTERY",
+        "reaction": "Ping winces",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "t": "24.150-26.820",
+      "key": 42
+    },
+    {
+      "id": 13,
+      "shot": 4,
+      "at_s": 26.82,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In one case, it alerted the doctor seconds after the scan.",
+      "phrase": "In one case, it",
+      "shows": "Ping, the round orchid alert pulse with a face swells and launches an orchid alert straight at the doctor's wall phone, which shakes and jumps on its hook, a plate reads IN ONE CASE \u00b7 PER STAT",
+      "sfx": "ding",
+      "means": "in one case \u00b7 per stat",
+      "rehook": "rehook: Ping launches an orchid alert at the wall phone, which shakes and jumps on its hook",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "swells and launches an orchid alert straight at the doctor's wall phone, which shakes and jumps on its hook",
+        "emotion": "alert",
+        "annotation": "IN ONE CASE \u00b7 PER STAT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face swells and launches an orchid alert straight at the doctor's wall phone, which shakes and jumps on its hook, a plate reads IN ONE CASE \u00b7 PER STAT",
+        "reaction": "the phone jumps",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "kick": true,
+      "t": "26.820-28.730",
+      "key": 10
+    },
+    {
+      "id": 14,
+      "shot": 4,
+      "at_s": 28.73,
+      "vo_line": 4,
+      "anchor": {
+        "vo_line": 4,
+        "fraction": 0.0,
+        "offset": 1.91
+      },
+      "offset": 1.91,
+      "vo": "In one case, it alerted the doctor seconds after the scan.",
+      "phrase": "seconds after the scan.",
+      "shows": "a small clock tag on the alert flips to SECONDS as Ping grins, a plate reads ALERT \u00b7 SECONDS AFTER THE SCAN",
+      "sfx": "chime",
+      "means": "alert \u00b7 seconds after the scan",
+      "rehook": "",
+      "draw": {
+        "subject": "a small clock tag on the alert",
+        "action": "flips to SECONDS as Ping grins",
+        "emotion": "proud",
+        "annotation": "ALERT \u00b7 SECONDS AFTER THE SCAN"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c3"
+      ],
+      "choreo": {
+        "primary": "a small clock tag on the alert flips to SECONDS as Ping grins, a plate reads ALERT \u00b7 SECONDS AFTER THE SCAN",
+        "reaction": "the tag spins once",
+        "ambient": "room tone, lightbox buzz"
+      },
+      "t": "28.730-31.100",
+      "key": 11
+    },
+    {
+      "id": 15,
+      "shot": 5,
+      "at_s": 31.1,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The results reached the local team and the clot specialists at once.",
+      "phrase": "The results reached the",
+      "shows": "Ping, the round orchid alert pulse with a face stretches and splits like a cell into two identical copies over the map board, a plate reads THE ALERT SPLITS",
+      "sfx": "swish",
+      "means": "the alert splits",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "stretches and splits like a cell into two identical copies over the map board",
+        "emotion": "determined",
+        "annotation": "THE ALERT SPLITS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face stretches and splits like a cell into two identical copies over the map board, a plate reads THE ALERT SPLITS",
+        "reaction": "the neck snaps",
+        "ambient": "room tone, paper"
+      },
+      "t": "31.100-32.090",
+      "key": 12
+    },
+    {
+      "id": 16,
+      "shot": 5,
+      "at_s": 32.09,
+      "vo_line": 5,
+      "anchor": {
+        "vo_line": 5,
+        "fraction": 0.0,
+        "offset": 0.99
+      },
+      "offset": 0.99,
+      "vo": "The results reached the local team and the clot specialists at once.",
+      "phrase": "local team and the",
+      "shows": "the two orchid copies streak apart, one to the LOCAL TEAM tag beside a small hospital dot and one off the edge of the map onto a WHOLE STATE card, landing on the same frame and bowing, a plate reads LOCAL TEAM + SPECIALISTS AT ONCE",
+      "sfx": "whoosh",
+      "means": "local team + specialists at once",
+      "rehook": "",
+      "draw": {
+        "subject": "the two orchid copies",
+        "action": "streak apart, one to the LOCAL TEAM tag beside a small hospital dot and one off the edge of the map onto a WHOLE STATE card, landing on the same frame and bowing",
+        "emotion": "proud",
+        "annotation": "LOCAL TEAM + SPECIALISTS AT ONCE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c4"
+      ],
+      "choreo": {
+        "primary": "the two orchid copies streak apart, one to the LOCAL TEAM tag beside a small hospital dot and one off the edge of the map onto a WHOLE STATE card, landing on the same frame and bowing, a plate reads LOCAL TEAM + SPECIALISTS AT ONCE",
+        "reaction": "both copies bow",
+        "ambient": "room tone, paper"
+      },
+      "t": "32.090-35.860",
+      "key": 13
+    },
+    {
+      "id": 17,
+      "shot": 6,
+      "at_s": 35.86,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That speed counts. The whole state has five doctors who can pull out those clots.",
+      "phrase": "That speed counts. The",
+      "shows": "the WHOLE STATE card with five small faceless figures standing on it rises as the view pulls back until the five figures are dwarfed by the whole outline of Alaska behind them, a plate reads WHOLE STATE",
+      "sfx": "thump",
+      "means": "whole state",
+      "rehook": "",
+      "draw": {
+        "subject": "the WHOLE STATE card with five small faceless figures standing on it",
+        "action": "rises as the view pulls back until the five figures are dwarfed by the whole outline of Alaska behind them",
+        "emotion": "steady",
+        "annotation": "WHOLE STATE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "the WHOLE STATE card with five small faceless figures standing on it rises as the view pulls back until the five figures are dwarfed by the whole outline of Alaska behind them, a plate reads WHOLE STATE",
+        "reaction": "the card wobbles",
+        "ambient": "room tone, a far wind"
+      },
+      "t": "35.860-38.570",
+      "key": 14
+    },
+    {
+      "id": 18,
+      "shot": 6,
+      "at_s": 38.57,
+      "vo_line": 6,
+      "anchor": {
+        "vo_line": 6,
+        "fraction": 0.0,
+        "offset": 2.71
+      },
+      "offset": 2.71,
+      "vo": "That speed counts. The whole state has five doctors who can pull out those clots.",
+      "phrase": "five doctors who can",
+      "shows": "Ping, the round orchid alert pulse with a face points at the five figures one by one with a stubby arm and each tips its head in a nod while the nearest figure's pager twitches on its belt with a bone-white blink, a plate reads 5 CLOT-REMOVAL SPECIALISTS \u00b7 WHOLE STATE",
+      "sfx": "tap",
+      "means": "5 clot-removal specialists \u00b7 whole state",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "points at the five figures one by one with a stubby arm and each tips its head in a nod while the nearest figure's pager twitches on its belt with a bone-white blink",
+        "emotion": "earnest",
+        "annotation": "5 CLOT-REMOVAL SPECIALISTS \u00b7 WHOLE STATE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c6"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face points at the five figures one by one with a stubby arm and each tips its head in a nod while the nearest figure's pager twitches on its belt with a bone-white blink, a plate reads 5 CLOT-REMOVAL SPECIALISTS \u00b7 WHOLE STATE",
+        "reaction": "the pager twitches",
+        "ambient": "room tone, a far wind"
+      },
+      "t": "38.570-41.640",
+      "key": 15
+    },
+    {
+      "id": 19,
+      "shot": 7,
+      "at_s": 41.64,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "In another case, a man in his sixties fell and came into a hospital in Alaska's interior.",
+      "phrase": "In another case, a",
+      "shows": "the swinging doors of a different hospital, an exterior in the blue before sunrise bang open as a small faceless gurney token rolls in, the intake board and its stopwatch visible through the door glass, a plate reads MID-60s \u00b7 A MORNING FALL \u00b7 INTERIOR HOSPITAL",
+      "sfx": "door",
+      "means": "mid-60s \u00b7 a morning fall \u00b7 interior hospital",
+      "rehook": "",
+      "draw": {
+        "subject": "the swinging doors of a different hospital, an exterior in the blue before sunrise",
+        "action": "bang open as a small faceless gurney token rolls in, the intake board and its stopwatch visible through the door glass",
+        "emotion": "uneasy",
+        "annotation": "MID-60s \u00b7 A MORNING FALL \u00b7 INTERIOR HOSPITAL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c13"
+      ],
+      "choreo": {
+        "primary": "the swinging doors of a different hospital, an exterior in the blue before sunrise bang open as a small faceless gurney token rolls in, the intake board and its stopwatch visible through the door glass, a plate reads MID-60s \u00b7 A MORNING FALL \u00b7 INTERIOR HOSPITAL",
+        "reaction": "the doors swing",
+        "ambient": "wind at the doors, a far heater"
+      },
+      "t": "41.640-46.190",
+      "key": 16
+    },
+    {
+      "id": 20,
+      "shot": 7,
+      "at_s": 46.19,
+      "vo_line": 7,
+      "anchor": {
+        "vo_line": 7,
+        "fraction": 0.0,
+        "offset": 4.55
+      },
+      "offset": 4.55,
+      "vo": "In another case, a man in his sixties fell and came into a hospital in Alaska's interior.",
+      "phrase": "interior.",
+      "shows": "the brass stopwatch hanging on that hospital's intake board clicks into motion while a beige printer beside it starts to print one slow page, a plate reads THE CLOCK STARTS",
+      "sfx": "click",
+      "means": "the clock starts",
+      "rehook": "",
+      "draw": {
+        "subject": "the brass stopwatch hanging on that hospital's intake board",
+        "action": "clicks into motion while a beige printer beside it starts to print one slow page",
+        "emotion": "tense",
+        "annotation": "THE CLOCK STARTS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the brass stopwatch hanging on that hospital's intake board clicks into motion while a beige printer beside it starts to print one slow page, a plate reads THE CLOCK STARTS",
+        "reaction": "the hand starts to sweep",
+        "ambient": "wind at the doors, a far heater"
+      },
+      "t": "46.190-47.420",
+      "key": 17
+    },
+    {
+      "id": 21,
+      "shot": 8,
+      "at_s": 47.42,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Less than half an hour after he arrived, his team called Providence in Anchorage for a transfer.",
+      "phrase": "Less than half an",
+      "shows": "the stopwatch sweeps past a marked UNDER 30 tick as a local nurse's hand lifts the desk phone, a plate reads UNDER 30 MIN AFTER HE ARRIVED",
+      "sfx": "tick",
+      "means": "under 30 min after he arrived",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch",
+        "action": "sweeps past a marked UNDER 30 tick as a local nurse's hand lifts the desk phone",
+        "emotion": "determined",
+        "annotation": "UNDER 30 MIN AFTER HE ARRIVED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the stopwatch sweeps past a marked UNDER 30 tick as a local nurse's hand lifts the desk phone, a plate reads UNDER 30 MIN AFTER HE ARRIVED",
+        "reaction": "the cord swings",
+        "ambient": "room tone, printer grind"
+      },
+      "t": "47.420-50.190",
+      "key": 18
+    },
+    {
+      "id": 22,
+      "shot": 8,
+      "at_s": 50.19,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 2.77
+      },
+      "offset": 2.77,
+      "vo": "Less than half an hour after he arrived, his team called Providence in Anchorage for a transfer.",
+      "phrase": "Providence in Anchorage for",
+      "shows": "a bone-white pulse runs down the phone cord to a tag reading PROVIDENCE \u00b7 ANCHORAGE, a plate reads PROVIDENCE \u00b7 ANCHORAGE",
+      "sfx": "whirr",
+      "means": "providence \u00b7 anchorage",
+      "rehook": "",
+      "draw": {
+        "subject": "a bone-white pulse",
+        "action": "runs down the phone cord to a tag reading PROVIDENCE \u00b7 ANCHORAGE",
+        "emotion": "determined",
+        "annotation": "PROVIDENCE \u00b7 ANCHORAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "a bone-white pulse runs down the phone cord to a tag reading PROVIDENCE \u00b7 ANCHORAGE, a plate reads PROVIDENCE \u00b7 ANCHORAGE",
+        "reaction": "the tag swings",
+        "ambient": "room tone, printer grind"
+      },
+      "t": "50.190-51.710",
+      "key": 43
+    },
+    {
+      "id": 23,
+      "shot": 8,
+      "at_s": 51.71,
+      "vo_line": 8,
+      "anchor": {
+        "vo_line": 8,
+        "fraction": 0.0,
+        "offset": 4.29
+      },
+      "offset": 4.29,
+      "vo": "Less than half an hour after he arrived, his team called Providence in Anchorage for a transfer.",
+      "phrase": "transfer.",
+      "shows": "the receiver drops back onto its hook and swings on its cord, a plate reads TRANSFER CALL",
+      "sfx": "clunk",
+      "means": "transfer call",
+      "rehook": "",
+      "draw": {
+        "subject": "the receiver",
+        "action": "drops back onto its hook and swings on its cord",
+        "emotion": "determined",
+        "annotation": "TRANSFER CALL"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14"
+      ],
+      "choreo": {
+        "primary": "the receiver drops back onto its hook and swings on its cord, a plate reads TRANSFER CALL",
+        "reaction": "the cord sways",
+        "ambient": "room tone, printer grind"
+      },
+      "t": "51.710-52.740",
+      "key": 19
+    },
+    {
+      "id": 24,
+      "shot": 8,
+      "at_s": 52.74,
+      "vo_line": 9,
+      "anchor": {
+        "vo_line": 9,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "That call came two minutes before the official scan report.",
+      "phrase": "That call came two",
+      "shows": "the beige faceless printer finally drops its one page OFFICIAL REPORT into the tray beside the phone that is already back on the hook and still swinging, a plate reads 2 MIN BEFORE THE OFFICIAL REPORT",
+      "sfx": "slam",
+      "means": "2 min before the official report",
+      "rehook": "",
+      "draw": {
+        "subject": "the beige faceless printer",
+        "action": "finally drops its one page OFFICIAL REPORT into the tray beside the phone that is already back on the hook and still swinging",
+        "emotion": "wry",
+        "annotation": "2 MIN BEFORE THE OFFICIAL REPORT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c15"
+      ],
+      "choreo": {
+        "primary": "the beige faceless printer finally drops its one page OFFICIAL REPORT into the tray beside the phone that is already back on the hook and still swinging, a plate reads 2 MIN BEFORE THE OFFICIAL REPORT",
+        "reaction": "the page skids and stops",
+        "ambient": "room tone, printer grind"
+      },
+      "t": "52.740-56.760",
+      "key": 20
+    },
+    {
+      "id": 25,
+      "shot": 9,
+      "at_s": 56.76,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Four hours and twenty-three minutes after he arrived, the clot was out.",
+      "phrase": "Four hours and twenty-three",
+      "shows": "the stopwatch, medium in frame on the intake board sweeps hard, its hours ring spinning, a plate reads AFTER HE ARRIVED",
+      "sfx": "whirr",
+      "means": "after he arrived",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch, medium in frame on the intake board",
+        "action": "sweeps hard, its hours ring spinning",
+        "emotion": "tense",
+        "annotation": "AFTER HE ARRIVED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the stopwatch, medium in frame on the intake board sweeps hard, its hours ring spinning, a plate reads AFTER HE ARRIVED",
+        "reaction": "the hand blurs",
+        "ambient": "room tone, a clock"
+      },
+      "t": "56.760-58.370",
+      "key": 44
+    },
+    {
+      "id": 26,
+      "shot": 9,
+      "at_s": 58.37,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 1.61
+      },
+      "offset": 1.61,
+      "vo": "Four hours and twenty-three minutes after he arrived, the clot was out.",
+      "phrase": "minutes after he arrived,",
+      "shows": "the stopwatch slams to a stop at 4 HR 23 MIN and the board jumps, a plate reads 4 HR 23 MIN \u00b7 CLOT OUT",
+      "sfx": "tock",
+      "means": "4 hr 23 min \u00b7 clot out",
+      "rehook": "",
+      "draw": {
+        "subject": "the stopwatch",
+        "action": "slams to a stop at 4 HR 23 MIN and the board jumps",
+        "emotion": "steady",
+        "annotation": "4 HR 23 MIN \u00b7 CLOT OUT"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "the stopwatch slams to a stop at 4 HR 23 MIN and the board jumps, a plate reads 4 HR 23 MIN \u00b7 CLOT OUT",
+        "reaction": "the bezel shudders",
+        "ambient": "room tone, a clock"
+      },
+      "t": "58.370-60.890",
+      "key": 21
+    },
+    {
+      "id": 27,
+      "shot": 9,
+      "at_s": 60.89,
+      "vo_line": 10,
+      "anchor": {
+        "vo_line": 10,
+        "fraction": 0.0,
+        "offset": 4.13
+      },
+      "offset": 4.13,
+      "vo": "Four hours and twenty-three minutes after he arrived, the clot was out.",
+      "phrase": "out.",
+      "shows": "a paper tag reading FROM ARRIVAL swings down on a pin beside the stopped stopwatch, a plate reads CLOT OUT",
+      "sfx": "pop",
+      "means": "clot out",
+      "rehook": "",
+      "draw": {
+        "subject": "a paper tag reading FROM ARRIVAL",
+        "action": "swings down on a pin beside the stopped stopwatch",
+        "emotion": "steady",
+        "annotation": "CLOT OUT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c16"
+      ],
+      "choreo": {
+        "primary": "a paper tag reading FROM ARRIVAL swings down on a pin beside the stopped stopwatch, a plate reads CLOT OUT",
+        "reaction": "the tag swings",
+        "ambient": "room tone, a clock"
+      },
+      "t": "60.890-62.460",
+      "key": 22
+    },
+    {
+      "id": 28,
+      "shot": 10,
+      "at_s": 62.46,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The information moves ahead of the patient. Early, unpublished data shows about a thirty percent faster start on clot removal once patients reach Anchorage.",
+      "phrase": "The information moves ahead",
+      "shows": "a split frame with a hard center seam shows on the left three outlined gurney tokens crawling three abstract dashed distance lines that converge on the seam, and on the right a warm Anchorage room with a TRANSFER CALL note already pinned to its door, a plate reads INFORMATION FIRST \u00b7 ANY TRANSFER",
+      "sfx": "whoosh",
+      "means": "information first \u00b7 any transfer",
+      "rehook": "rehook: a hard seam splits the frame, three gurney tokens still on their lines while the Anchorage room already has the call on its door",
+      "draw": {
+        "subject": "a split frame with a hard center seam",
+        "action": "shows on the left three outlined gurney tokens crawling three abstract dashed distance lines that converge on the seam, and on the right a warm Anchorage room with a TRANSFER CALL note already pinned to its door",
+        "emotion": "determined",
+        "annotation": "INFORMATION FIRST \u00b7 ANY TRANSFER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "a split frame with a hard center seam shows on the left three outlined gurney tokens crawling three abstract dashed distance lines that converge on the seam, and on the right a warm Anchorage room with a TRANSFER CALL note already pinned to its door, a plate reads INFORMATION FIRST \u00b7 ANY TRANSFER",
+        "reaction": "the seam flickers",
+        "ambient": "room tone, a far wind"
+      },
+      "kick": true,
+      "t": "62.460-64.410",
+      "key": 23
+    },
+    {
+      "id": 29,
+      "shot": 10,
+      "at_s": 64.41,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 1.95
+      },
+      "offset": 1.95,
+      "vo": "The information moves ahead of the patient. Early, unpublished data shows about a thirty percent faster start on clot removal once patients reach Anchorage.",
+      "phrase": "patient. Early, unpublished data",
+      "shows": "the Anchorage room's ceiling lights snap on one by one and gowns drop onto a hook rail before the gurney arrives, a plate reads THE ROOM GETS READY",
+      "sfx": "click",
+      "means": "the room gets ready",
+      "rehook": "",
+      "draw": {
+        "subject": "the Anchorage room's ceiling lights",
+        "action": "snap on one by one and gowns drop onto a hook rail before the gurney arrives",
+        "emotion": "hopeful",
+        "annotation": "THE ROOM GETS READY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the Anchorage room's ceiling lights snap on one by one and gowns drop onto a hook rail before the gurney arrives, a plate reads THE ROOM GETS READY",
+        "reaction": "the gowns sway",
+        "ambient": "room tone, a far wind"
+      },
+      "t": "64.410-67.650",
+      "key": 24
+    },
+    {
+      "id": 30,
+      "shot": 10,
+      "at_s": 67.65,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 5.19
+      },
+      "offset": 5.19,
+      "vo": "The information moves ahead of the patient. Early, unpublished data shows about a thirty percent faster start on clot removal once patients reach Anchorage.",
+      "phrase": "thirty percent faster start",
+      "shows": "a plate on the Anchorage door swings out on its bracket, a plate reads ABOUT 30% FASTER START \u00b7 EARLY DATA \u00b7 PER STAT",
+      "sfx": "chime",
+      "means": "about 30% faster start \u00b7 early data \u00b7 per stat",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate on the Anchorage door",
+        "action": "swings out on its bracket",
+        "emotion": "hopeful",
+        "annotation": "ABOUT 30% FASTER START \u00b7 EARLY DATA \u00b7 PER STAT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "a plate on the Anchorage door swings out on its bracket, a plate reads ABOUT 30% FASTER START \u00b7 EARLY DATA \u00b7 PER STAT",
+        "reaction": "the plate swings",
+        "ambient": "room tone, a far wind"
+      },
+      "t": "67.650-70.910",
+      "key": 25
+    },
+    {
+      "id": 31,
+      "shot": 10,
+      "at_s": 70.91,
+      "vo_line": 11,
+      "anchor": {
+        "vo_line": 11,
+        "fraction": 0.0,
+        "offset": 8.45
+      },
+      "offset": 8.45,
+      "vo": "The information moves ahead of the patient. Early, unpublished data shows about a thirty percent faster start on clot removal once patients reach Anchorage.",
+      "phrase": "reach Anchorage.",
+      "shows": "the lead gurney token rolls across the seam into the lit room and the doors swing behind it, a plate reads ONCE PATIENTS REACH ANCHORAGE",
+      "sfx": "swing",
+      "means": "once patients reach anchorage",
+      "rehook": "",
+      "draw": {
+        "subject": "the lead gurney token",
+        "action": "rolls across the seam into the lit room and the doors swing behind it",
+        "emotion": "hopeful",
+        "annotation": "ONCE PATIENTS REACH ANCHORAGE"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the lead gurney token rolls across the seam into the lit room and the doors swing behind it, a plate reads ONCE PATIENTS REACH ANCHORAGE",
+        "reaction": "the doors swing",
+        "ambient": "room tone, a far wind"
+      },
+      "t": "70.910-72.480",
+      "key": 45
+    },
+    {
+      "id": 32,
+      "shot": 11,
+      "at_s": 72.48,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Now the hard part. Kelly Isaacs, who manages Providence's stroke program, says she can't really show statistically significant proof it's made a big difference.",
+      "phrase": "Now the hard part.",
+      "shows": "Ping, the round orchid alert pulse with a face slides a frozen stopwatch across a desk in the warm Anchorage room toward a faceless Suit with a boxed name card, a plate reads KELLY ISAACS \u00b7 PROVIDENCE STROKE PROGRAM",
+      "sfx": "slide",
+      "means": "kelly isaacs \u00b7 providence stroke program",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "slides a frozen stopwatch across a desk in the warm Anchorage room toward a faceless Suit with a boxed name card",
+        "emotion": "proud",
+        "annotation": "KELLY ISAACS \u00b7 PROVIDENCE STROKE PROGRAM"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face slides a frozen stopwatch across a desk in the warm Anchorage room toward a faceless Suit with a boxed name card, a plate reads KELLY ISAACS \u00b7 PROVIDENCE STROKE PROGRAM",
+        "reaction": "the stopwatch skids",
+        "ambient": "warm room tone"
+      },
+      "t": "72.480-74.910",
+      "key": 26
+    },
+    {
+      "id": 33,
+      "shot": 11,
+      "at_s": 74.91,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 2.43
+      },
+      "offset": 2.43,
+      "vo": "Now the hard part. Kelly Isaacs, who manages Providence's stroke program, says she can't really show statistically significant proof it's made a big difference.",
+      "phrase": "Isaacs, who manages Providence's",
+      "shows": "the faceless Suit hits two lit rows on the wall scoreboard with a knuckle while the third row, labelled OUTCOMES, has its value cells taped over with paper, a plate reads TIME TO CALL \u00b7 TIME TO START \u00b7 OUTCOMES",
+      "sfx": "knock",
+      "means": "time to call \u00b7 time to start \u00b7 outcomes",
+      "rehook": "",
+      "draw": {
+        "subject": "the faceless Suit",
+        "action": "hits two lit rows on the wall scoreboard with a knuckle while the third row, labelled OUTCOMES, has its value cells taped over with paper",
+        "emotion": "steady",
+        "annotation": "TIME TO CALL \u00b7 TIME TO START \u00b7 OUTCOMES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c14",
+        "c17"
+      ],
+      "choreo": {
+        "primary": "the faceless Suit hits two lit rows on the wall scoreboard with a knuckle while the third row, labelled OUTCOMES, has its value cells taped over with paper, a plate reads TIME TO CALL \u00b7 TIME TO START \u00b7 OUTCOMES",
+        "reaction": "the board rattles",
+        "ambient": "warm room tone"
+      },
+      "t": "74.910-78.950",
+      "key": 40
+    },
+    {
+      "id": 34,
+      "shot": 11,
+      "at_s": 78.95,
+      "vo_line": 12,
+      "anchor": {
+        "vo_line": 12,
+        "fraction": 0.0,
+        "offset": 6.47
+      },
+      "offset": 6.47,
+      "vo": "Now the hard part. Kelly Isaacs, who manages Providence's stroke program, says she can't really show statistically significant proof it's made a big difference.",
+      "phrase": "statistically significant proof it's",
+      "shows": "the faceless Suit turns from the board and opens one empty hand toward Ping, a plate reads \"CAN I GIVE YOU STATISTICALLY SIGNIFICANT INFORMATION ...? I CAN'T, REALLY.\" \u00b7 KELLY ISAACS \u00b7 PER STAT",
+      "sfx": "flip",
+      "means": "\"can i give you statistically significant information ...? i can't, really.\" \u00b7 kelly isaacs \u00b7 per stat",
+      "rehook": "",
+      "draw": {
+        "subject": "the faceless Suit",
+        "action": "turns from the board and opens one empty hand toward Ping",
+        "emotion": "steady",
+        "annotation": "\"CAN I GIVE YOU STATISTICALLY SIGNIFICANT INFORMATION ...? I CAN'T, REALLY.\" \u00b7 KELLY ISAACS \u00b7 PER STAT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c21"
+      ],
+      "choreo": {
+        "primary": "the faceless Suit turns from the board and opens one empty hand toward Ping, a plate reads \"CAN I GIVE YOU STATISTICALLY SIGNIFICANT INFORMATION ...? I CAN'T, REALLY.\" \u00b7 KELLY ISAACS \u00b7 PER STAT",
+        "reaction": "Ping's grin falters",
+        "ambient": "warm room tone"
+      },
+      "t": "78.950-82.460",
+      "key": 27
+    },
+    {
+      "id": 35,
+      "shot": 12,
+      "at_s": 82.46,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives.",
+      "phrase": "Alaska doesn't have consistent",
+      "shows": "a fat binder of stroke outcome forms on a records shelf falls open and its mismatched pages flutter, some forms filled, some blank, no two alike, a plate reads NO CONSISTENT STROKE OUTCOME REPORTING",
+      "sfx": "rustle",
+      "means": "no consistent stroke outcome reporting",
+      "rehook": "",
+      "draw": {
+        "subject": "a fat binder of stroke outcome forms on a records shelf",
+        "action": "falls open and its mismatched pages flutter, some forms filled, some blank, no two alike",
+        "emotion": "uneasy",
+        "annotation": "NO CONSISTENT STROKE OUTCOME REPORTING"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c20"
+      ],
+      "choreo": {
+        "primary": "a fat binder of stroke outcome forms on a records shelf falls open and its mismatched pages flutter, some forms filled, some blank, no two alike, a plate reads NO CONSISTENT STROKE OUTCOME REPORTING",
+        "reaction": "loose pages drift down",
+        "ambient": "room tone, paper"
+      },
+      "t": "82.460-86.210",
+      "key": 28
+    },
+    {
+      "id": 36,
+      "shot": 12,
+      "at_s": 86.21,
+      "vo_line": 13,
+      "anchor": {
+        "vo_line": 13,
+        "fraction": 0.0,
+        "offset": 3.75
+      },
+      "offset": 3.75,
+      "vo": "Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives.",
+      "phrase": "software throws false positives.",
+      "shows": "Ping, the round orchid alert pulse with a face swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset FLAGGED lamp blinks, then Ping deflates, a plate reads FALSE POSITIVES",
+      "sfx": "buzz",
+      "means": "false positives",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset FLAGGED lamp blinks, then Ping deflates",
+        "emotion": "sheepish",
+        "annotation": "FALSE POSITIVES"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c18"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face swells and yells at a perfectly clear slice on a small viewer behind the binder as the focus pulls to it, and an inset FLAGGED lamp blinks, then Ping deflates, a plate reads FALSE POSITIVES",
+        "reaction": "a bead of sweat pops off Ping",
+        "ambient": "room tone, paper"
+      },
+      "t": "86.210-88.680",
+      "key": 29
+    },
+    {
+      "id": 37,
+      "shot": 13,
+      "at_s": 88.68,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The clinicians answer that a doctor reviews every output, and that read decides the transfer.",
+      "phrase": "The clinicians answer that",
+      "shows": "a doctor's hand comes in and turns the over-eager Ping over so it goes grey and settles, a plate reads A DOCTOR REVIEWS EVERY OUTPUT",
+      "sfx": "flip",
+      "means": "a doctor reviews every output",
+      "rehook": "rehook: a doctor's hand turns the over-eager Ping over and it goes grey",
+      "draw": {
+        "subject": "a doctor's hand",
+        "action": "comes in and turns the over-eager Ping over so it goes grey and settles",
+        "emotion": "steady",
+        "annotation": "A DOCTOR REVIEWS EVERY OUTPUT"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "a doctor's hand comes in and turns the over-eager Ping over so it goes grey and settles, a plate reads A DOCTOR REVIEWS EVERY OUTPUT",
+        "reaction": "Ping settles grey",
+        "ambient": "room tone"
+      },
+      "t": "88.680-92.750",
+      "key": 30
+    },
+    {
+      "id": 38,
+      "shot": 13,
+      "at_s": 92.75,
+      "vo_line": 14,
+      "anchor": {
+        "vo_line": 14,
+        "fraction": 0.0,
+        "offset": 4.07
+      },
+      "offset": 4.07,
+      "vo": "The clinicians answer that a doctor reviews every output, and that read decides the transfer.",
+      "phrase": "transfer.",
+      "shows": "the doctor's hand turns a small desk slip over from ALERT to the clear side and the FLAGGED lamp goes dark by itself, a plate reads THAT READ DECIDES THE TRANSFER",
+      "sfx": "slide",
+      "means": "that read decides the transfer",
+      "rehook": "",
+      "draw": {
+        "subject": "the doctor's hand",
+        "action": "turns a small desk slip over from ALERT to the clear side and the FLAGGED lamp goes dark by itself",
+        "emotion": "steady",
+        "annotation": "THAT READ DECIDES THE TRANSFER"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c19"
+      ],
+      "choreo": {
+        "primary": "the doctor's hand turns a small desk slip over from ALERT to the clear side and the FLAGGED lamp goes dark by itself, a plate reads THAT READ DECIDES THE TRANSFER",
+        "reaction": "the pager goes dark",
+        "ambient": "room tone"
+      },
+      "t": "92.750-93.960",
+      "key": 31
+    },
+    {
+      "id": 39,
+      "shot": 14,
+      "at_s": 93.96,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Six hospitals that got it free all say they want to keep it and pay for it.",
+      "phrase": "Six hospitals that got",
+      "shows": "six separate small hospital buildings, each in its own framed vignette brighten their windows one after another, a plate reads 6 HOSPITALS \u00b7 FREE ACCESS",
+      "sfx": "pop",
+      "means": "6 hospitals \u00b7 free access",
+      "rehook": "",
+      "draw": {
+        "subject": "six separate small hospital buildings, each in its own framed vignette",
+        "action": "brighten their windows one after another",
+        "emotion": "hopeful",
+        "annotation": "6 HOSPITALS \u00b7 FREE ACCESS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "six separate small hospital buildings, each in its own framed vignette brighten their windows one after another, a plate reads 6 HOSPITALS \u00b7 FREE ACCESS",
+        "reaction": "snow falls in each frame",
+        "ambient": "wind over snow"
+      },
+      "t": "93.960-97.030",
+      "key": 32
+    },
+    {
+      "id": 40,
+      "shot": 14,
+      "at_s": 97.03,
+      "vo_line": 15,
+      "anchor": {
+        "vo_line": 15,
+        "fraction": 0.0,
+        "offset": 3.07
+      },
+      "offset": 3.07,
+      "vo": "Six hospitals that got it free all say they want to keep it and pay for it.",
+      "phrase": "pay for it.",
+      "shows": "a tag on each lit hospital flips over to KEEP + PAY, a plate reads ALL 6 SAY THEY'LL KEEP AND PAY",
+      "sfx": "coins",
+      "means": "all 6 say they'll keep and pay",
+      "rehook": "",
+      "draw": {
+        "subject": "a tag on each lit hospital",
+        "action": "flips over to KEEP + PAY",
+        "emotion": "hopeful",
+        "annotation": "ALL 6 SAY THEY'LL KEEP AND PAY"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c10"
+      ],
+      "choreo": {
+        "primary": "a tag on each lit hospital flips over to KEEP + PAY, a plate reads ALL 6 SAY THEY'LL KEEP AND PAY",
+        "reaction": "the tags swing",
+        "ambient": "wind over snow"
+      },
+      "t": "97.030-98.420",
+      "key": 33
+    },
+    {
+      "id": 41,
+      "shot": 15,
+      "at_s": 98.42,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau.",
+      "phrase": "Over three point one",
+      "shows": "a plate on a post at one dashed hospital outline on a long dusk horizon of Alaska drops into place and the post shudders, a plate reads OVER $3.1M \u00b7 FEDERAL RURAL HEALTH MONEY \u00b7 CMS",
+      "sfx": "knock",
+      "means": "over $3.1m \u00b7 federal rural health money \u00b7 cms",
+      "rehook": "",
+      "draw": {
+        "subject": "a plate on a post at one dashed hospital outline on a long dusk horizon of Alaska",
+        "action": "drops into place and the post shudders",
+        "emotion": "steady",
+        "annotation": "OVER $3.1M \u00b7 FEDERAL RURAL HEALTH MONEY \u00b7 CMS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a plate on a post at one dashed hospital outline on a long dusk horizon of Alaska drops into place and the post shudders, a plate reads OVER $3.1M \u00b7 FEDERAL RURAL HEALTH MONEY \u00b7 CMS",
+        "reaction": "snow lifts off the plate",
+        "ambient": "dusk wind"
+      },
+      "kick": true,
+      "t": "98.420-101.010",
+      "key": 35
+    },
+    {
+      "id": 42,
+      "shot": 15,
+      "at_s": 101.01,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 2.59
+      },
+      "offset": 2.59,
+      "vo": "Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau.",
+      "phrase": "federal rural health money",
+      "shows": "a row of survey stakes knock into the snow along the horizon line where the network will run, a plate reads IS SET TO BUILD",
+      "sfx": "tock",
+      "means": "is set to build",
+      "rehook": "",
+      "draw": {
+        "subject": "a row of survey stakes",
+        "action": "knock into the snow along the horizon line where the network will run",
+        "emotion": "steady",
+        "annotation": "IS SET TO BUILD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11"
+      ],
+      "choreo": {
+        "primary": "a row of survey stakes knock into the snow along the horizon line where the network will run, a plate reads IS SET TO BUILD",
+        "reaction": "each stake shivers",
+        "ambient": "dusk wind"
+      },
+      "t": "101.010-103.730",
+      "key": 47
+    },
+    {
+      "id": 43,
+      "shot": 15,
+      "at_s": 103.73,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 5.31
+      },
+      "offset": 5.31,
+      "vo": "Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau.",
+      "phrase": "network across twenty-one hospitals,",
+      "shows": "a dashed line strings itself along the horizon from left to right, a plate reads AI IMAGING NETWORK \u00b7 PLANNED",
+      "sfx": "scrape",
+      "means": "ai imaging network \u00b7 planned",
+      "rehook": "",
+      "draw": {
+        "subject": "a dashed line",
+        "action": "strings itself along the horizon from left to right",
+        "emotion": "hopeful",
+        "annotation": "AI IMAGING NETWORK \u00b7 PLANNED"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c11",
+        "c12"
+      ],
+      "choreo": {
+        "primary": "a dashed line strings itself along the horizon from left to right, a plate reads AI IMAGING NETWORK \u00b7 PLANNED",
+        "reaction": "the dashes settle",
+        "ambient": "dusk wind"
+      },
+      "t": "103.730-104.450",
+      "key": 41
+    },
+    {
+      "id": 44,
+      "shot": 15,
+      "at_s": 104.45,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 6.03
+      },
+      "offset": 6.03,
+      "vo": "Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau.",
+      "phrase": "twenty-one hospitals, Utqiagvik to",
+      "shows": "21 dashed hospital outlines pop up one by one along the horizon as the view pulls back from the first outline to the whole line, a plate reads PLANNED \u00b7 21 HOSPITALS",
+      "sfx": "clack",
+      "means": "planned \u00b7 21 hospitals",
+      "rehook": "",
+      "draw": {
+        "subject": "21 dashed hospital outlines",
+        "action": "pop up one by one along the horizon as the view pulls back from the first outline to the whole line",
+        "emotion": "hopeful",
+        "annotation": "PLANNED \u00b7 21 HOSPITALS"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c12"
+      ],
+      "choreo": {
+        "primary": "21 dashed hospital outlines pop up one by one along the horizon as the view pulls back from the first outline to the whole line, a plate reads PLANNED \u00b7 21 HOSPITALS",
+        "reaction": "each outline settles",
+        "ambient": "dusk wind"
+      },
+      "t": "104.450-106.170",
+      "key": 34
+    },
+    {
+      "id": 45,
+      "shot": 15,
+      "at_s": 106.17,
+      "vo_line": 16,
+      "anchor": {
+        "vo_line": 16,
+        "fraction": 0.0,
+        "offset": 7.75
+      },
+      "offset": 7.75,
+      "vo": "Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau.",
+      "phrase": "Utqiagvik to Juneau.",
+      "shows": "two end tags at the left and right ends of the horizon swing out on their pins, a plate reads UTQIAGVIK TO JUNEAU",
+      "sfx": "clink",
+      "means": "utqiagvik to juneau",
+      "rehook": "",
+      "draw": {
+        "subject": "two end tags at the left and right ends of the horizon",
+        "action": "swing out on their pins",
+        "emotion": "hopeful",
+        "annotation": "UTQIAGVIK TO JUNEAU"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "c8"
+      ],
+      "choreo": {
+        "primary": "two end tags at the left and right ends of the horizon swing out on their pins, a plate reads UTQIAGVIK TO JUNEAU",
+        "reaction": "the tags swing",
+        "ambient": "dusk wind"
+      },
+      "t": "106.170-108.360",
+      "key": 36
+    },
+    {
+      "id": 46,
+      "shot": 16,
+      "at_s": 108.36,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 0.0
+      },
+      "offset": 0.0,
+      "vo": "The alert can already beat the paperwork. What should Alaska measure to know it's working?",
+      "phrase": "The alert can already",
+      "shows": "Ping, the round orchid alert pulse with a face carries the stopwatch back into the CT room to the RESULTS nail where the Anchorage scoreboard now hangs, and tugs the taped paper off its OUTCOMES row, which falls away to show a dashed blank, a plate reads THE TIMES ARE ON THE BOARD",
+      "sfx": "snap",
+      "means": "the times are on the board",
+      "rehook": "",
+      "draw": {
+        "subject": "Ping, the round orchid alert pulse with a face",
+        "action": "carries the stopwatch back into the CT room to the RESULTS nail where the Anchorage scoreboard now hangs, and tugs the taped paper off its OUTCOMES row, which falls away to show a dashed blank",
+        "emotion": "hopeful",
+        "annotation": "THE TIMES ARE ON THE BOARD"
+      },
+      "plate_at": "on-object",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "Ping, the round orchid alert pulse with a face carries the stopwatch back into the CT room to the RESULTS nail where the Anchorage scoreboard now hangs, and tugs the taped paper off its OUTCOMES row, which falls away to show a dashed blank, a plate reads THE TIMES ARE ON THE BOARD",
+        "reaction": "the scoreboard swings",
+        "ambient": "room tone, the scanner hum"
+      },
+      "t": "108.360-111.830",
+      "key": 37
+    },
+    {
+      "id": 47,
+      "shot": 16,
+      "at_s": 111.83,
+      "vo_line": 17,
+      "anchor": {
+        "vo_line": 17,
+        "fraction": 0.0,
+        "offset": 3.47
+      },
+      "offset": 3.47,
+      "vo": "The alert can already beat the paperwork. What should Alaska measure to know it's working?",
+      "phrase": "measure to know it's",
+      "shows": "the camera pulls back out through the CT ring so the bore frames Ping beside the scoreboard on the nail, matching the first shot, a plate reads WHAT SHOULD ALASKA MEASURE?",
+      "sfx": "hum",
+      "means": "what should alaska measure?",
+      "rehook": "",
+      "draw": {
+        "subject": "the camera",
+        "action": "pulls back out through the CT ring so the bore frames Ping beside the scoreboard on the nail, matching the first shot",
+        "emotion": "curious",
+        "annotation": "WHAT SHOULD ALASKA MEASURE?"
+      },
+      "plate_at": "lower-third",
+      "claims": [
+        "narration"
+      ],
+      "choreo": {
+        "primary": "the camera pulls back out through the CT ring so the bore frames Ping beside the scoreboard on the nail, matching the first shot, a plate reads WHAT SHOULD ALASKA MEASURE?",
+        "reaction": "Ping looks up at the blank row",
+        "ambient": "room tone, the scanner hum"
+      },
+      "t": "111.830-113.080",
+      "key": 38
+    }
+  ]
+}

@@ -42,6 +42,14 @@ pool:
   # ADDED 2026-11-23: every uplifting/hopeful/warm/celebratory entry had played inside 30 days. Downloaded and verified this run (HTTP 206 range probe, 143.9 s).
   # ADDED 2026-11-24: every reflective/newsy/driving/warm entry had played inside 30 days (Echoes of Time v2 11-10). Downloaded and verified this run (HTTP 206 range probe, 180 s).
   # ADDED 2026-11-25: curious/wonder pool fell back to Deep Haze (11-21) and Light Thought var 1 (11-15). Downloaded and verified this run (126.4 s).
+  # ADDED 2026-11-26: celebratory branch fell back to Wholesome (11-08). Downloaded and verified this run (180 s).
+  - title: "Life of Riley"
+    composer: "Kevin MacLeod"
+    source: "incompetech.com"
+    url: "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Life%20of%20Riley.mp3"
+    license: "CC BY 4.0"
+    credit: '"Life of Riley" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0'
+    mood: [uplifting, hopeful, warm, celebratory, playful]
   - title: "Easy Lemon"
     composer: "Kevin MacLeod"
     source: "incompetech.com"

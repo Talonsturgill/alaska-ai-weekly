@@ -1,0 +1,18 @@
+A brain scan finishes at an Alaska hospital. Every minute without blood flow, about two million brain cells die.
+Before, just sending those images to Anchorage could take forty-five minutes.
+Now a volunteer group, the Alaska Stroke Coalition, has hospitals using A I software called RapidAI.
+It looks for a large vessel occlusion, a clot blocking a big brain artery.
+In one case, it alerted the doctor seconds after the scan.
+The results reached the local team and the clot specialists at once.
+That speed counts. The whole state has five doctors who can pull out those clots.
+In another case, a man in his sixties fell and came into a hospital in Alaska's interior.
+Less than half an hour after he arrived, his team called Providence in Anchorage for a transfer.
+That call came two minutes before the official scan report.
+Four hours and twenty-three minutes after he arrived, the clot was out.
+The information moves ahead of the patient. Early, unpublished data shows about a thirty percent faster start on clot removal once patients reach Anchorage.
+Now the hard part. Kelly Isaacs, who manages Providence's stroke program, says she can't really show statistically significant proof it's made a big difference.
+Alaska doesn't have consistent reporting of stroke outcomes. The software throws false positives.
+The clinicians answer that a doctor reviews every output, and that read decides the transfer.
+Six hospitals that got it free all say they want to keep it and pay for it.
+Over three point one million dollars in federal rural health money is set to build an A I imaging network across twenty-one hospitals, Utqiagvik to Juneau.
+The alert can already beat the paperwork. What should Alaska measure to know it's working?

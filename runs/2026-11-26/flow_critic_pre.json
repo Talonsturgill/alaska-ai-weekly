@@ -1,0 +1,8 @@
+{"ship": true, "round": 2, "findings": [
+ {"beat_or_shot": "S10 left half", "problem": "a road names a transport mode", "fix": "abstract dashed route, no road"},
+ {"beat_or_shot": "S13 beat 38", "problem": "nothing on screen stops the pager", "fix": "the doctor's read closes the pager thread"},
+ {"beat_or_shot": "S16 / S11 loop 1", "problem": "flap gone off screen; hidden row unlabeled", "fix": "OUTCOMES label readable in S11; Ping tugs the flap on camera in S16"},
+ {"beat_or_shot": "S6 beat 18", "problem": "pager plant may go unread", "fix": "glint and the nearest figure"},
+ {"beat_or_shot": "S15 beat 42", "problem": "filler plate", "fix": "stakes knock in, IS SET TO BUILD"},
+ {"beat_or_shot": "S7 open", "problem": "stopwatch first appears at 46 s", "fix": "show the intake board through the door glass"}],
+ "applied": "all six, before render (board round 3 and 4)"}
