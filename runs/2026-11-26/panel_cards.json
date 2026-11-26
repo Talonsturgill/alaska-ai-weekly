@@ -1,0 +1,168 @@
+{
+ "j1": {
+  "total": 7.22,
+  "axis_scores": {
+   "Hook & retention": 7.0,
+   "Illustration craft & detail": 6.8,
+   "Motion & animation craft": 6.8,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.2,
+   "Typography & captions": 7.2,
+   "Sound design & mix": 7.2,
+   "VO\u2013illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.6,
+   "Writing & post quality": 8.0
+  },
+  "calculation": "(7.0x0.12)+(6.8x0.16)+(6.8x0.12)+(7.0x0.08)+(7.2x0.08)+(7.2x0.06)+(7.2x0.10)+(7.0x0.08)+(8.5x0.10)+(7.6x0.06)+(8.0x0.04) = 0.840+1.088+0.816+0.560+0.576+0.432+0.720+0.560+0.850+0.456+0.320 = 7.218, reported as 7.22. That clears the 7.0 ship_threshold, with no hard blocker. No axis moved more than 1.0 from my cut-5 card (7.14). Illustration +0.2, Motion +0.2, Composition +0.2 and Alaska +0.1 all move because the film moved, not my standard: the hospital vignettes now have distinct silhouettes, the ream sheet now arcs, Ping now has a yell pose, and the horizon has a mid-snow foreground.",
+  "concrete_defects": [
+   "56.96s, shot 9, beat 25 (filmstrip_the_stopwatch_medium_in_frame_on_the_25, 4.0% changed): the hand sweeps, but the readout still reads '0 HR' in all 8 frames, so the claimed 1-to-4 HR roll does not appear in this window. It reads '4 HR 23 MIN' by beat 26. The fix: roll the readout during the visible sweep (frames 3 to 8), not after it.",
+   "46.9s, shot 7, beat 20 (f046.9.jpg): THE CLOCK STARTS plate has moved right, but it still clips the foot of the gurney. The patient is still an unshaded white blob with no contact shadow, the stopwatch and printer still sit on a pasted dark panel, and the lower 30% of the frame is still empty grey. The fix: put the plate on the open wall above the doors, shade the patient and gurney, and draw floor and threshold into the lower frame.",
+   "86.41s, shot 12, beat 36 (filmstrip_ping_the_round_orchid_alert_pulse_wi_36, 7.1% changed): the yell pose now reads (open mouth, wide eyes), but it is held almost unchanged for all 8 frames. The only change is the FLAGGED lamp flickering. The fix: add a swell and anticipation into the yell and a wobble while it is held.",
+   "94.16s, shot 14, beat 39 (filmstrip_six_separate_small_hospital_building_39, 7.5% changed): the silhouettes are now distinct, but the in-sequence lighting is faint. Only the top-left vignette visibly warms in this window, and the roof puff in frame 8 is tiny. The fix: give each lighting step a stronger window bloom and a readable roof-snow puff, staggered across the six.",
+   "104.6s, shot 15, beat 44 (f104.6.jpg): at the beat titled '21 dashed hospital outlines', only one outline fragment is visible, clipped at the left frame edge. The 21 outlines read clearly only by 107.9s. The fix: start the outline pop-in before 104.6s, or hold the stake row back so the outlines own this beat.",
+   "4.5s, shot 1, beat 2 (f004.5.jpg, carried from cut 5 and not on this round's change list): the small ghost label under the counter still renders at near-zero contrast. The fix: raise it to cream or cut it, since the 8.1s plate carries ABOUT."
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Illustration craft & detail",
+  "fix_verification": [
+   {
+    "previous_defect": "ream sheet peel (11.93s)",
+    "status": "fixed",
+    "evidence": "In filmstrip_the_slice_ream_6 a cream sheet with a slice image rises off the stack in a visible arc across frames 1 to 7 and drops back by frame 8. The motion figure stays low (4.1%) only because the object is small."
+   },
+   {
+    "previous_defect": "six varied vignettes lit in sequence with roof puffs (94.16s)",
+    "status": "partial",
+    "evidence": "f095.5 and the filmstrip show six distinct silhouettes: tall narrow, long low, quonset dome, gabled, flat block and twin-gable. The sequential lighting is weak in this window, and only one small roof puff shows, in frame 8."
+   },
+   {
+    "previous_defect": "Ping yell before 'false positives' (86.41s)",
+    "status": "fixed",
+    "evidence": "In filmstrip 36 Ping holds an open-mouth, wide-eyed yell pose in every frame. It is held rather than performed (see defects)."
+   },
+   {
+    "previous_defect": "ER plate off the gurney (46.9s)",
+    "status": "partial",
+    "evidence": "In f046.9.jpg the plate now sits right of the patient and clears his body, but it still overlaps the right end of the gurney."
+   },
+   {
+    "previous_defect": "readout rolls 1 to 4 HR (56.96s)",
+    "status": "not verified",
+    "evidence": "The readout shows '0 HR' in all 8 frames of filmstrip 25. Beat 26 and f059.1 show '4 HR 23 MIN'. No intermediate 1-3 HR state appears anywhere in the pack."
+   },
+   {
+    "previous_defect": "horizon mid-snow foreground (98-108s)",
+    "status": "fixed",
+    "evidence": "f104.6.jpg and f107.9.jpg now carry drift arcs and a dashed footprint trail across the middle snow. With the fence, the lower half carries texture instead of a blank field."
+   },
+   {
+    "previous_defect": "money sign clear of the tag (editor)",
+    "status": "fixed",
+    "evidence": "In f104.6.jpg the 'OVER $3.1M \u00b7 CMS' sign stands well above the 'PLANNED \u00b7 21 HOSPITALS' tag, with no overlap. In f107.9 the sign sits apart from the UTQIAGVIK tag."
+   },
+   {
+    "previous_defect": "SPECIALIST PAGER replaced by FLAGGED lamp that goes CLEARED (editor)",
+    "status": "fixed",
+    "evidence": "filmstrip 36 shows a 'FLAGGED' lamp card blinking dark and light. f093.5.jpg shows the same card reading 'CLEARED' with the lamp dark, beside the CLEAR / NO TRANSFER CALL slip."
+   }
+  ],
+  "editor_notes_for_email": "Seat 1 scores cut 6 at 7.22, above the 7.0 bar, with no hard blocker. Every axis moved by 0.2 or less, and only because the film improved. The facts are unchanged and clean. Every spoken line is inside the fact-check-safe set, and the plates carry OVER $3.1M, PLANNED, EARLY DATA and PER STAT. The Isaacs quote is the full question, and the credits read RAPIDAI RELEASE with the Kevin MacLeod CC BY 4.0 music credit. Audio passes (I -14.23, TP -2.71, speech priority passing). Captions are unchanged and in sync. Still open, none of it blocking: the stopwatch readout never shows the 1-to-4 HR roll in the evidence, the ER patient is still unshaded with a plate clipping the gurney, the Ping yell is a held pose rather than a performance, and the 21-outline beat at 104.6s shows almost no outlines until 107.9s."
+ },
+ "j2": {
+  "total": 7.33,
+  "axis_scores": {
+   "Hook & retention": 7.5,
+   "Illustration craft & detail": 7.0,
+   "Motion & animation craft": 6.5,
+   "Composition & staging": 7.0,
+   "Color & grade": 7.5,
+   "Typography & captions": 7.5,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.5,
+   "Accuracy & sourcing": 8.5,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8.0
+  },
+  "calculation": "(7.5x0.12)+(7.0x0.16)+(6.5x0.12)+(7.0x0.08)+(7.5x0.08)+(7.5x0.06)+(7.0x0.10)+(7.5x0.08)+(8.5x0.10)+(7.5x0.06)+(8.0x0.04) = 0.90+1.12+0.78+0.56+0.60+0.45+0.70+0.60+0.85+0.45+0.32 = 7.33. No hard blocker found, so no cap. Clears the 7.0 ship_threshold by 0.33.",
+  "concrete_defects": [
+   "56.96s, shot 9 beat 25 (filmstrip_the_stopwatch_medium_in_frame_on_the_25): the stopwatch readout says '0 HR' through all 8 frames while the caption reads '4 hours and 23 minutes after he arrived'. For about a second the number on screen contradicts the number being spoken. Fix: make the readout count up with the hours ring (0, 1, 2, 3, 4 HR) so it lands on 4 HR 23 MIN at 58.36, or hide it until it stops.",
+   "75.11s and 79.15s, shot 11 beats 33-34 (filmstrip_the_faceless_suit_33/_34): the Kelly Isaacs figure holds one rigid pose in every frame of both strips (raised arm in 33, extended arm in 34). Almost all the measured 32-44% change comes from the light shafts and the quote plate fading in. This is a held figure with no breath or weight shift, and the knuckle-hit and turn-and-open-hand beats in the board don't show. Fix: add an idle breath and weight-shift cycle, and an arm arc with anticipation and settle on the knuckle hit and the turn.",
+   "88.88s-93.5s, shot 13 beats 37-38 (filmstrip_a_doctor_s_hand_37/_38, f093.5): the doctor's hand is a flat tan rectangle with three curve strokes and a white sleeve block. It is plainer than the props around it (no form shading or knuckle structure), it barely moves across the strip, and the sleeve covers the bottom of the greyed Ping so its face is cut off at the mouth. Fix: give the hand a shaded rig with fingers and a cuff seam, animate the turn-over as a wrist rotation, and lift Ping clear of the sleeve so its full face reads.",
+   "46.9s, shot 7 beat 20 (f046.9): the patient on the gurney is a white circle on a white wedge with no shading. Its finish lags the stopwatch and printer in the same frame, and the gurney is cut by the caption band. Fix: add form shading and a contact shadow to the patient and gurney, and raise them clear of the caption band.",
+   "72.0s, shot 10 beat 31 (f072.0): the gurney tokens on the dark left half are the same unshaded blobs. The left half is about 50% empty dark field, with a faint 'DISTANCE' label that is near-illegible at phone size. Fix: raise the DISTANCE label's contrast and add a contact glow or shadow under the tokens.",
+   "104.6s, shot 15 beat 44 (f104.6): the beat is '21 dashed hospital outlines', but the frame shows five stakes and a single half outline cut off at the left edge. The top 30% is empty sky and the bottom 35% is empty snow. Fix: start the outline pop-up before the still point or push the horizon up, so the network reads while 'across 21 hospitals' is spoken.",
+   "40.9s, shot 6 beat 18 (f040.9): the Alaska silhouette is a coarse polygon that only loosely reads as the state, and the five specialists are identical unshaded pegs. Fix: use the true-coordinate Alaska outline the engine already has, and vary the five figures (posture, hair, a scrub-cap cue).",
+   "0.2s, shot 1 beat 1 (filmstrip_ping_the_round_orchid_alert_pulse_wi_1): the counter shows a leading zero ('0,296,18x', '0,327,159') and is already near 300k on frame 0, so the opening tally reads odd. Fix: drop the zero padding and start from 0 or from the frame where it becomes legible.",
+   "4.5s, shot 1 beat 2 (f004.5): a ghosted, half-faded 'ABOUT' label sits under the counter at low opacity and reads as a render artifact. Fix: fade it in fully or remove it until the 5.57s land.",
+   "62.0s, shot 9 beat 27 (f062.0): the FROM ARRIVAL tag overlaps the clock bezel and the window frame. Minor crowding. Fix: hang the tag clear of the bezel."
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Motion & animation craft",
+  "fix_verification": [],
+  "editor_notes_for_email": "Seat 2 scores the film 7.33, which clears the 7.0 ship_threshold by 0.33. I found no hard blocker. Audio passes: integrated loudness -14.23 LUFS against a -14 target, true peak -2.71, speech priority margin 18.0 dB, and no dead-air gaps. The music credit (Kevin MacLeod, 'Life of Riley', CC BY 4.0) and the STAT / CMS / RapidAI release sources are on the end card. I checked all 35 caption cues against vo_script.txt and the conditions in claims.json. The 45 minutes is the time to send images ('could take'), the five specialists are 'whole state', nobody is said to be flown, and the 30% is labelled early and unpublished, measured from arrival in Anchorage. '21 hospitals' is plated PLANNED, CMS 'over $3.1M' names no vendor, the reviewer is 'a doctor', and the Isaacs quote is shown in full with PER STAT. None of the cut-list claims (x1-x5) appear on screen, in the VO or in the post. Post copy has no em or en dashes, none of the banned words, uses 'can't', straight quotes, and ends on a real question. Its closing line ('Alaska will have paid for speed with no proof it helps patients') is editorial framing, not a sourced claim; the editor should be comfortable owning it. Before posting, look at 56.96s: the stopwatch readout says '0 HR' while the caption says 4 hours 23 minutes. I judged it an in-progress wind-up rather than a wrong number, but another judge could read it as one, and it is the cheapest fix in the list. Motion is the weakest axis. The Suit and the doctor's hand are held figures with no idle life, and several human and patient figures are finished more plainly than the props around them."
+ },
+ "j3": {
+  "total": 6.87,
+  "axis_scores": {
+   "Hook & retention": 6.5,
+   "Illustration craft & detail": 6.5,
+   "Motion & animation craft": 6.0,
+   "Composition & staging": 6.5,
+   "Color & grade": 7.0,
+   "Typography & captions": 7.0,
+   "Sound design & mix": 7.0,
+   "VO\u2013illustration sync & entertainment": 7.0,
+   "Accuracy & sourcing": 8.0,
+   "Alaska authenticity & cultural respect": 7.5,
+   "Writing & post quality": 8.0
+  },
+  "calculation": "(6.5x0.12)+(6.5x0.16)+(6.0x0.12)+(6.5x0.08)+(7.0x0.08)+(7.0x0.06)+(7.0x0.10)+(7.0x0.08)+(8.0x0.10)+(7.5x0.06)+(8.0x0.04) = 0.78+1.04+0.72+0.52+0.56+0.42+0.70+0.56+0.80+0.45+0.32 = 6.87. No hard blocker, so no cap applies. 6.87 is below the 7.0 ship_threshold.",
+  "concrete_defects": [
+   "79.15s, shot 11 (Kelly Isaacs figure), filmstrip_the_faceless_suit_34: the 43.6% change is the quote plate fading in. The figure holds the same outstretched-arm pose on all 8 frames, with no weight shift, breath or gesture. The same frozen hold appears at 75.11s and in stills f077.3/f082.0. Fix: add an idle cycle (weight shift plus breath) and one real gesture, the open empty hand promised in beat 34, landing on 'can't really'.",
+   "41.84s, shot 7 (swinging doors), filmstrip_the_swinging_doors_of_a_different_ho_19: the doors never visibly swing. The 30.5% change is the MID-60s plate arriving, so the board's 'bang open' beat is missing. Fix: animate the door leaves opening with anticipation and an overshoot settle, synced to the 41.65s thud SFX.",
+   "46.9s, shot 7, f046.9: the stopwatch and printer from the interior intake board float in a dark panel pasted over the exterior ER doors, and the gurney is a flat outlined token with no shading. This is confused interior/exterior staging. Fix: cut inside to the intake board before introducing the stopwatch, or mount the board visibly behind the open doors, and shade the gurney and patient to match the stopwatch.",
+   "93.5s, shot 13 (doctor's hand), f093.5 + filmstrip_a_doctor_s_hand_37: the hand is a disembodied mitten on a flat white rectangle cuff with no arm, shading or contact shadow. It is the plainest asset in a frame that also holds the glossy Ping. Fix: give it a sleeve and forearm entering from frame edge, key/fill shading on skin and cuff, and a contact shadow on Ping and the slip.",
+   "35.4s, shot 5, f035.4: the LOCAL TEAM tag sits on top of the first Ping copy's face, and no SPECIALISTS destination tag is visible for the second copy, so the 'at once' split reads as one destination. Fix: offset the LOCAL TEAM tag clear of the copy and add a labelled specialists destination for the second copy.",
+   "4.5s and 8.1s, shot 1, f004.5/f008.1: a ghost 'ABOUT' label under the brass counter is near-invisible (cream on mint) and illegible at phone size. Fix: raise its contrast to plate spec or remove it, since the 8.1s plate already says ABOUT.",
+   "68.2s, shot 10, f068.2: the three gurney tokens on the left half overlap into one tangle, and ABOUT 30% FASTER START appears twice (header plate and door sign) in the same frame. Fix: stagger the gurneys in depth with clear spacing and drop the redundant door sign.",
+   "13.7s, 35.4s and 40.9s, shots 2/5/6: the Alaska map silhouette is a crude polygon with no Aleutian chain and a lumpy Southcentral coast. It reads as hand-guessed on a film about Alaska. Fix: trace the outline from the committed true lon/lat geodata.",
+   "0.2s to 12.9s, shots 1-2, filmstrip_ping_1/filmstrip_the_slice_ream_6 (4.1% change): the open is a static CT room with a rolling counter, and the ream beat barely moves (the 'jam and peel' sheet is not legible). Fix: open on a stronger 0-1s interrupt (Ping's pop-awake with a squash/stretch and the counter clacking into frame) and make the ream jam and sheet peel read.",
+   "Most stills (f013.7, f022.7, f040.9, f088.2, f097.9): the top roughly 25% of the 9:16 frame is empty wall above the ILLUSTRATION tag, so the action sits low. Fix: lift hero groups or extend set dressing (shelving, lights) into the upper band.",
+   "56.96s, shot 9, filmstrip_the_stopwatch_medium_in_frame_on_the_25 (4.0%): the readout shows '0 HR' through most of 'four hours and twenty-three minutes' while only the hand sweeps. Fix: roll the HR readout during the sweep so the number climbs with the VO."
+  ],
+  "hard_blockers": [],
+  "weakest_axis": "Motion & animation craft",
+  "fix_verification": [],
+  "editor_notes_for_email": "Seat 3 scores this cut at 6.87, below the 7.0 bar. I found no hard blocker. Accuracy holds: every on-screen number matches claims.json (2 million, 45 min sending, 5 specialists whole state, under 30 min, 2 min before report, 4 hr 23 min, about 30% early data per STAT, over $3.1M CMS, PLANNED 21 hospitals, all 6 keep and pay). The Isaacs plate is her full question verbatim, labelled PER STAT. Nobody is said to be flown, there are no outcome claims, and the cut-list items x1 to x5 are absent. The audio gate passes on the numbers (I -14.23 LUFS, TP -2.71 dBTP, speech priority passes, no dead-air gaps), and the end card credits 'Life of Riley' by Kevin MacLeod under CC BY 4.0. Captions are present in all 35 cues and match the VO script word for word. The score is held down by craft. Held figures sit frozen (Kelly Isaacs). Several board beats are carried by plates appearing rather than objects moving (the doors, the ream, Ping's spin). Some assets are noticeably plainer than the props beside them (the doctor's hand, the ER exterior, the gurneys, the map outline). Judgement notes for the human: the cheerful MacLeod track under a stroke story is worth a listen for tone, which I can't judge from the evidence pack. 'Utqiagvik' appears without the official diacritic (Utqia\u0121vik), consistent with the STAT source spelling. The post's first line, 'Just sending the scan could take 45 minutes', is present tense and reads better as 'used to take up to' or similar. The evidence I graded from is in /home/user/alaska-ai-weekly/out/evidence/ (INDEX.txt, stills, filmstrips, audio_report.json, caption_cues.json, motion.json)."
+ },
+ "named_open_defects": [
+  "j1: 56.96s, shot 9, beat 25 (filmstrip_the_stopwatch_medium_in_frame_on_the_25, 4.0% changed): the hand sweeps, but the readout still reads '0 HR' in all 8 frames, so the claimed 1-to-4 HR roll does not appear in this window. It reads '4 HR 23 MIN' by beat 26. The fix: roll the readout during the visible sweep (frames 3 to 8), not after it.",
+  "j1: 46.9s, shot 7, beat 20 (f046.9.jpg): THE CLOCK STARTS plate has moved right, but it still clips the foot of the gurney. The patient is still an unshaded white blob with no contact shadow, the stopwatch and printer still sit on a pasted dark panel, and the lower 30% of the frame is still empty grey. The fix: put the plate on the open wall above the doors, shade the patient and gurney, and draw floor and threshold into the lower frame.",
+  "j1: 86.41s, shot 12, beat 36 (filmstrip_ping_the_round_orchid_alert_pulse_wi_36, 7.1% changed): the yell pose now reads (open mouth, wide eyes), but it is held almost unchanged for all 8 frames. The only change is the FLAGGED lamp flickering. The fix: add a swell and anticipation into the yell and a wobble while it is held.",
+  "j1: 94.16s, shot 14, beat 39 (filmstrip_six_separate_small_hospital_building_39, 7.5% changed): the silhouettes are now distinct, but the in-sequence lighting is faint. Only the top-left vignette visibly warms in this window, and the roof puff in frame 8 is tiny. The fix: give each lighting step a stronger window bloom and a readable roof-snow puff, staggered across the six.",
+  "j1: 104.6s, shot 15, beat 44 (f104.6.jpg): at the beat titled '21 dashed hospital outlines', only one outline fragment is visible, clipped at the left frame edge. The 21 outlines read clearly only by 107.9s. The fix: start the outline pop-in before 104.6s, or hold the stake row back so the outlines own this beat.",
+  "j1: 4.5s, shot 1, beat 2 (f004.5.jpg, carried from cut 5 and not on this round's change list): the small ghost label under the counter still renders at near-zero contrast. The fix: raise it to cream or cut it, since the 8.1s plate carries ABOUT.",
+  "j2: 56.96s, shot 9 beat 25 (filmstrip_the_stopwatch_medium_in_frame_on_the_25): the stopwatch readout says '0 HR' through all 8 frames while the caption reads '4 hours and 23 minutes after he arrived'. For about a second the number on screen contradicts the number being spoken. Fix: make the readout count up with the hours ring (0, 1, 2, 3, 4 HR) so it lands on 4 HR 23 MIN at 58.36, or hide it until it stops.",
+  "j2: 75.11s and 79.15s, shot 11 beats 33-34 (filmstrip_the_faceless_suit_33/_34): the Kelly Isaacs figure holds one rigid pose in every frame of both strips (raised arm in 33, extended arm in 34). Almost all the measured 32-44% change comes from the light shafts and the quote plate fading in. This is a held figure with no breath or weight shift, and the knuckle-hit and turn-and-open-hand beats in the board don't show. Fix: add an idle breath and weight-shift cycle, and an arm arc with anticipation and settle on the knuckle hit and the turn.",
+  "j2: 88.88s-93.5s, shot 13 beats 37-38 (filmstrip_a_doctor_s_hand_37/_38, f093.5): the doctor's hand is a flat tan rectangle with three curve strokes and a white sleeve block. It is plainer than the props around it (no form shading or knuckle structure), it barely moves across the strip, and the sleeve covers the bottom of the greyed Ping so its face is cut off at the mouth. Fix: give the hand a shaded rig with fingers and a cuff seam, animate the turn-over as a wrist rotation, and lift Ping clear of the sleeve so its full face reads.",
+  "j2: 46.9s, shot 7 beat 20 (f046.9): the patient on the gurney is a white circle on a white wedge with no shading. Its finish lags the stopwatch and printer in the same frame, and the gurney is cut by the caption band. Fix: add form shading and a contact shadow to the patient and gurney, and raise them clear of the caption band.",
+  "j2: 72.0s, shot 10 beat 31 (f072.0): the gurney tokens on the dark left half are the same unshaded blobs. The left half is about 50% empty dark field, with a faint 'DISTANCE' label that is near-illegible at phone size. Fix: raise the DISTANCE label's contrast and add a contact glow or shadow under the tokens.",
+  "j2: 104.6s, shot 15 beat 44 (f104.6): the beat is '21 dashed hospital outlines', but the frame shows five stakes and a single half outline cut off at the left edge. The top 30% is empty sky and the bottom 35% is empty snow. Fix: start the outline pop-up before the still point or push the horizon up, so the network reads while 'across 21 hospitals' is spoken.",
+  "j2: 40.9s, shot 6 beat 18 (f040.9): the Alaska silhouette is a coarse polygon that only loosely reads as the state, and the five specialists are identical unshaded pegs. Fix: use the true-coordinate Alaska outline the engine already has, and vary the five figures (posture, hair, a scrub-cap cue).",
+  "j2: 0.2s, shot 1 beat 1 (filmstrip_ping_the_round_orchid_alert_pulse_wi_1): the counter shows a leading zero ('0,296,18x', '0,327,159') and is already near 300k on frame 0, so the opening tally reads odd. Fix: drop the zero padding and start from 0 or from the frame where it becomes legible.",
+  "j2: 4.5s, shot 1 beat 2 (f004.5): a ghosted, half-faded 'ABOUT' label sits under the counter at low opacity and reads as a render artifact. Fix: fade it in fully or remove it until the 5.57s land.",
+  "j2: 62.0s, shot 9 beat 27 (f062.0): the FROM ARRIVAL tag overlaps the clock bezel and the window frame. Minor crowding. Fix: hang the tag clear of the bezel.",
+  "j3: 79.15s, shot 11 (Kelly Isaacs figure), filmstrip_the_faceless_suit_34: the 43.6% change is the quote plate fading in. The figure holds the same outstretched-arm pose on all 8 frames, with no weight shift, breath or gesture. The same frozen hold appears at 75.11s and in stills f077.3/f082.0. Fix: add an idle cycle (weight shift plus breath) and one real gesture, the open empty hand promised in beat 34, landing on 'can't really'.",
+  "j3: 41.84s, shot 7 (swinging doors), filmstrip_the_swinging_doors_of_a_different_ho_19: the doors never visibly swing. The 30.5% change is the MID-60s plate arriving, so the board's 'bang open' beat is missing. Fix: animate the door leaves opening with anticipation and an overshoot settle, synced to the 41.65s thud SFX.",
+  "j3: 46.9s, shot 7, f046.9: the stopwatch and printer from the interior intake board float in a dark panel pasted over the exterior ER doors, and the gurney is a flat outlined token with no shading. This is confused interior/exterior staging. Fix: cut inside to the intake board before introducing the stopwatch, or mount the board visibly behind the open doors, and shade the gurney and patient to match the stopwatch.",
+  "j3: 93.5s, shot 13 (doctor's hand), f093.5 + filmstrip_a_doctor_s_hand_37: the hand is a disembodied mitten on a flat white rectangle cuff with no arm, shading or contact shadow. It is the plainest asset in a frame that also holds the glossy Ping. Fix: give it a sleeve and forearm entering from frame edge, key/fill shading on skin and cuff, and a contact shadow on Ping and the slip.",
+  "j3: 35.4s, shot 5, f035.4: the LOCAL TEAM tag sits on top of the first Ping copy's face, and no SPECIALISTS destination tag is visible for the second copy, so the 'at once' split reads as one destination. Fix: offset the LOCAL TEAM tag clear of the copy and add a labelled specialists destination for the second copy.",
+  "j3: 4.5s and 8.1s, shot 1, f004.5/f008.1: a ghost 'ABOUT' label under the brass counter is near-invisible (cream on mint) and illegible at phone size. Fix: raise its contrast to plate spec or remove it, since the 8.1s plate already says ABOUT.",
+  "j3: 68.2s, shot 10, f068.2: the three gurney tokens on the left half overlap into one tangle, and ABOUT 30% FASTER START appears twice (header plate and door sign) in the same frame. Fix: stagger the gurneys in depth with clear spacing and drop the redundant door sign.",
+  "j3: 13.7s, 35.4s and 40.9s, shots 2/5/6: the Alaska map silhouette is a crude polygon with no Aleutian chain and a lumpy Southcentral coast. It reads as hand-guessed on a film about Alaska. Fix: trace the outline from the committed true lon/lat geodata.",
+  "j3: 0.2s to 12.9s, shots 1-2, filmstrip_ping_1/filmstrip_the_slice_ream_6 (4.1% change): the open is a static CT room with a rolling counter, and the ream beat barely moves (the 'jam and peel' sheet is not legible). Fix: open on a stronger 0-1s interrupt (Ping's pop-awake with a squash/stretch and the counter clacking into frame) and make the ream jam and sheet peel read.",
+  "j3: Most stills (f013.7, f022.7, f040.9, f088.2, f097.9): the top roughly 25% of the 9:16 frame is empty wall above the ILLUSTRATION tag, so the action sits low. Fix: lift hero groups or extend set dressing (shelving, lights) into the upper band.",
+  "j3: 56.96s, shot 9, filmstrip_the_stopwatch_medium_in_frame_on_the_25 (4.0%): the readout shows '0 HR' through most of 'four hours and twenty-three minutes' while only the hand sweeps. Fix: roll the HR readout during the sweep so the number climbs with the VO."
+ ]
+}
