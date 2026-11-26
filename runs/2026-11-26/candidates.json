@@ -1,0 +1,26 @@
+{
+ "locked_story": {
+  "headline": "Alaska's stroke network bets on AI: RapidAI software that flags suspected large vessel occlusion strokes on CT scans is spreading across Alaska hospitals through the volunteer Alaska Stroke Coalition, with federal Rural Health Transformation money extending an AI imaging network to 21 acute care hospitals, in a state with five clot-removal specialists; the coalition says it can't yet prove statistically better outcomes (STAT, November 24th; CMS)",
+  "found_at_rung": "in_window_sweep",
+  "note": "Two of four researchers independently surfaced it. In window (STAT November 24th). dedupe.py check FRESH; no stroke or RapidAI story in config/state.yaml dispatch_history. Genuine deployed ML (imaging triage) on Alaska patients, with an honest built-in limit (no outcome proof yet)."
+ },
+ "rungs": [
+  {"rung": "in_window_sweep", "attempted": true, "candidates_found": 18, "note": "4 researchers (energy/policy/business, science/fisheries, defense/rural/health, wildcard/primary-source mining), about 75 of 80 WebSearch calls, about 120 uncapped WebFetches. All four called it a slow Thanksgiving week."},
+  {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 0, "note": "Covered inside round one: ADN, Alaska Public, Alaska Beacon, KTOO, Alaska's News Source, News-Miner, Must Read Alaska, Juneau Empire, KDLL, KYUK, KUCB, KNOM, Alaska Native News indexes read."}
+ ],
+ "candidates": [
+  {"headline": "Alaska hospitals use RapidAI to flag stroke clots; 21-hospital AI imaging network; can't yet prove outcomes", "verdict": "LOCKED", "why": "in window, deployed ML on Alaska patients, named Alaska clinicians, honest limits, celebratory-to-curious register the ledger has used least"},
+  {"headline": "ML model projects Alaska could get 116% to 594% more ground-striking lightning by 2100 (AGU Earth's Future, November 24th)", "verdict": "RUNNER-UP", "why": "real ML, in window, but a projection with no Alaska actor and a wide range"},
+  {"headline": "AI-mapped glacier lakes growing fastest in Alaska and southern Andes (Nature Climate Change)", "verdict": "rejected", "why": "regional only, no Alaska site or actor"},
+  {"headline": "Coast Guard cutter Storis drone sorties in Bering Sea cold", "verdict": "rejected", "why": "release names no AI and no results, 9 flight hours"},
+  {"headline": "UAF statewide avalanche road screening model", "verdict": "rejected", "why": "automated physical model, not AI"},
+  {"headline": "Bering Strait sea ice forecast with Indigenous observers", "verdict": "rejected", "why": "not AI; single source"},
+  {"headline": "Kreiss-Tomkins asks AIDEA to pause", "verdict": "rejected", "why": "covered 11-25"},
+  {"headline": "Waymo FAI airport land use permit", "verdict": "rejected", "why": "Waymo Fairbanks covered 11-11, inside 30 days; permit a minor development"},
+  {"headline": "Alaska's News Source used AI to compile legislative records", "verdict": "rejected", "why": "methods-box mention only"},
+  {"headline": "Anchorage Assembly surveillance tech oversight", "verdict": "rejected", "why": "November 6th, single source"},
+  {"headline": "Character.AI auction", "verdict": "rejected", "why": "covered 11-21, no new Alaska action"},
+  {"headline": "USGS polar bear satellite deep learning", "verdict": "rejected", "why": "October 8th, outside 30 days"},
+  {"headline": "Cornell bowhead calls on Quintillion fiber", "verdict": "rejected", "why": "no ML in the work"}
+ ]
+}
