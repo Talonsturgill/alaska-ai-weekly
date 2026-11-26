@@ -21,8 +21,8 @@ import {MONO, monoW} from './prospect';
  */
 export const PING = {
   ink: '#1F3438', inkL: '#35504F', tile: '#CFE3D8', tileL: '#E9F1EC', grout: '#9DBFB2', night: '#2D4660', nightD: '#1B2C40',
-  sodium: '#FFC98A', bone: '#F4F1E6', boneD: '#D9D3C0', coral: '#FF6F59', coralL: '#FFB4A3', coralD: '#C9412F', coralRim: '#FFE3D9',
-  clot: '#C2273A', slice: '#E8E4D8', sliceD: '#6E7470', rose: '#F7E3DA', roseD: '#E2BFB2', lamp: '#FFE9D6', paper: '#EFE7D2',
+  sodium: '#FFC98A', bone: '#F4F1E6', boneD: '#D9D3C0', coral: '#D94FB0', coralL: '#F3A6DC', coralD: '#9C2C7E', coralRim: '#FCE3F3',
+  clot: '#B3223A', slice: '#E8E4D8', sliceD: '#6E7470', rose: '#EBDDBF', roseD: '#C9B48E', lamp: '#FFE9D6', paper: '#EFE7D2',
   print: '#3A3A36', brass: '#B8924A', steel: '#8C9A9A', steelD: '#5E6C6C', floor: '#B7CBC2', floorD: '#8FA79D', beige: '#D8CDB4',
 };
 
@@ -60,7 +60,7 @@ export const PTag: React.FC<{x: number; y: number; text: string; size?: number; 
  * BrainSlice. An axial CT slice: skull ring, grey matter, ventricles, a midline, optional crimson clot dot.
  * Origin is the centre; r is the outer radius. `clot` 0..1 grows the dot; `flag` 0..1 draws a reticle round it.
  */
-export const BrainSlice: React.FC<{x: number; y: number; r?: number; clot?: number; flag?: number; seed?: number; dim?: number; clotAt?: [number, number]}> = ({x, y, r = 60, clot = 0, flag = 0, seed = 1, dim = 0, clotAt = [0.32, -0.18]}) => {
+export const BrainSlice: React.FC<{x: number; y: number; r?: number; clot?: number; flag?: number; seed?: number; dim?: number; clotAt?: [number, number]}> = ({x, y, r = 60, clot = 0, flag = 0, seed = 1, dim = 0, clotAt = [0.5, -0.45]}) => {
   const id = uid(`slice${seed}`);
   const wob = (k: number) => 1 + 0.035 * Math.sin(k * 3.1 + seed);
   const pts = Array.from({length: 24}, (_, i) => {
@@ -88,16 +88,23 @@ export const BrainSlice: React.FC<{x: number; y: number; r?: number; clot?: numb
         </g>
       ))}
       <line x1={0} y1={-r * 0.92} x2={0} y2={r * 0.92} stroke="#5F6460" strokeWidth={r * 0.025} />
+      {/* the bright contrast-filled vessel tree; one branch stops at the cutoff (cx, cy) and the vessel beyond it goes grey */}
+      {(() => {
+        const vs: [number, number, number, number][] = [[0, r * 0.2, -r * 0.42, -r * 0.3], [0, r * 0.2, r * 0.42, -r * 0.3], [-r * 0.42, -r * 0.3, -r * 0.6, -r * 0.62], [-r * 0.42, -r * 0.3, -r * 0.66, 0.0],
+          [0, r * 0.2, 0, r * 0.62], [-r * 0.1, r * 0.4, -r * 0.48, r * 0.5], [r * 0.1, r * 0.4, r * 0.48, r * 0.5]];
+        return vs.map(([x1, y1, x2, y2], i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#F6F3EA" strokeWidth={Math.max(1.5, r * 0.035)} strokeLinecap="round" opacity={0.92} />);
+      })()}
+      <line x1={r * 0.42} y1={-r * 0.3} x2={cx} y2={cy} stroke="#F6F3EA" strokeWidth={Math.max(1.5, r * 0.035)} strokeLinecap="round" />
+      <line x1={cx} y1={cy} x2={cx + r * 0.1} y2={cy - r * 0.17} stroke={clot > 0 ? '#6F746F' : '#F6F3EA'} strokeWidth={Math.max(1.5, r * 0.03)} strokeLinecap="round" strokeDasharray={clot > 0 ? `${r * 0.03} ${r * 0.03}` : undefined} />
       {clot > 0 && (
         <g transform={`translate(${cx} ${cy})`}>
-          <circle r={r * 0.1 * clot + 2} fill={PING.clot} stroke="#5A0E18" strokeWidth={Math.max(1.5, r * 0.02)} />
-          <circle r={r * 0.04 * clot} cx={-r * 0.02} cy={-r * 0.03} fill="#FF8A93" opacity={0.7} />
+          <circle r={(r * 0.045 + 1.5) * clot} fill={PING.clot} stroke={PING.ink} strokeWidth={Math.max(1.5, r * 0.012 + 1.5)} />
         </g>
       )}
       {flag > 0 && (
         <g transform={`translate(${cx} ${cy}) rotate(${45 * (1 - flag)}) scale(${1.8 - 0.8 * clamp01(flag)})`} opacity={clamp01(flag * 1.5)}>
-          <circle r={r * 0.24} fill="none" stroke={PING.coral} strokeWidth={r * 0.045} />
-          {[0, 90, 180, 270].map((a) => <line key={a} x1={0} y1={-r * 0.3} x2={0} y2={-r * 0.18} stroke={PING.coral} strokeWidth={r * 0.045} transform={`rotate(${a})`} strokeLinecap="round" />)}
+          <circle r={r * 0.24} fill="none" stroke={PING.bone} strokeWidth={r * 0.045} />
+          {[0, 90, 180, 270].map((a) => <line key={a} x1={0} y1={-r * 0.3} x2={0} y2={-r * 0.18} stroke={PING.bone} strokeWidth={r * 0.045} transform={`rotate(${a})`} strokeLinecap="round" />)}
         </g>
       )}
       <ellipse cx={0} cy={0} rx={r * 0.92} ry={r * 1.04} fill="none" stroke={PING.ink} strokeWidth={Math.max(2.5, r * 0.05)} />
@@ -165,7 +172,7 @@ export const Ping: React.FC<{
       {glow > 0 && grey < 0.9 && <ellipse cx={0} cy={-H / 2} rx={W * 1.25} ry={H * 1.05} fill={`url(#${id}-glow)`} opacity={glow * (0.85 + 0.15 * Math.sin(f / 6 + seed)) * (1 - grey)} />}
       {shadow && <ContactShadow cx={0} cy={4} rx={70} ry={11} opacity={0.4} />}
       {/* arms behind the card */}
-      <g transform={`translate(${-W / 2 + 6} ${-H * 0.42}) rotate(${-armA})`}>
+      <g transform={`translate(${-W / 2 + 4} ${-H * 0.42}) rotate(${-armA})`}>
         <path d="M 0 0 Q -26 4 -42 -6" stroke={PING.ink} strokeWidth={15} strokeLinecap="round" fill="none" />
         <path d="M 0 0 Q -26 4 -42 -6" stroke={shade} strokeWidth={8} strokeLinecap="round" fill="none" />
         <circle cx={-44} cy={-7} r={10} fill={lit} stroke={PING.ink} strokeWidth={4} />
@@ -176,13 +183,17 @@ export const Ping: React.FC<{
         <circle cx={44} cy={-7} r={10} fill={lit} stroke={PING.ink} strokeWidth={4} />
       </g>
       {/* card body, a soft squircle with a folded tab corner */}
-      <path d={`M ${-W / 2 + 26} ${-H} H ${W / 2 - 34} L ${W / 2} ${-H + 34} V -26 Q ${W / 2} 0 ${W / 2 - 26} 0 H ${-W / 2 + 26} Q ${-W / 2} 0 ${-W / 2} -26 V ${-H + 26} Q ${-W / 2} ${-H} ${-W / 2 + 26} ${-H} Z`}
-        fill={`url(#${id}-b)`} stroke={PING.ink} strokeWidth={7} strokeLinejoin="round" />
-      <path d={`M ${W / 2 - 34} ${-H} V ${-H + 34} H ${W / 2}`} fill={shade} stroke={PING.ink} strokeWidth={5} strokeLinejoin="round" />
-      <path d={`M ${-W / 2 + 14} ${-H + 30} Q ${-W / 2 + 14} ${-H + 12} ${-W / 2 + 34} ${-H + 12}`} stroke={mix(PING.coralRim, '#F0F2F0', grey)} strokeWidth={6} fill="none" strokeLinecap="round" opacity={0.85} />
-      <path d={`M ${W / 2 - 8} -40 Q ${W / 2 - 8} -10 ${W / 2 - 30} -8`} stroke={shade} strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.6} />
-      {/* rivet dots along the top, a little UI texture */}
-      {[0, 1, 2].map((i) => <circle key={i} cx={-W / 2 + 30 + i * 16} cy={-H + 22} r={4} fill={PING.ink} opacity={0.55} />)}
+      {/* the ripple halo: two rings travelling outward */}
+      {grey < 0.9 && [0, 1].map((k) => {
+        const ph = ((f / 40 + k * 0.5 + seed * 0.13) % 1);
+        return <circle key={k} cx={0} cy={-H / 2} r={H * 0.5 + ph * 46} fill="none" stroke={PING.coral} strokeWidth={5 * (1 - ph)} opacity={0.55 * (1 - ph) * (1 - grey)} />;
+      })}
+      {/* a round pulse body: a bead with a soft squash */}
+      <ellipse cx={0} cy={-H / 2} rx={W / 2 + 6} ry={H / 2} fill={`url(#${id}-b)`} stroke={PING.ink} strokeWidth={7} />
+      <ellipse cx={0} cy={-H / 2} rx={W / 2 - 14} ry={H / 2 - 18} fill="none" stroke={mix(PING.coralRim, '#F0F2F0', grey)} strokeWidth={3} opacity={0.35} />
+      <path d={`M ${-W / 2 + 4} ${-H * 0.62} A ${W / 2} ${H / 2} 0 0 1 ${-W * 0.12} ${-H + 8}`} stroke={mix(PING.coralRim, '#F0F2F0', grey)} strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.85} />
+      <path d={`M ${W / 2 - 2} ${-H * 0.4} A ${W / 2} ${H / 2} 0 0 1 ${W * 0.1} ${-6}`} stroke={shade} strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.55} />
+      <ellipse cx={-W * 0.2} cy={-H * 0.82} rx={14} ry={8} fill="#fff" opacity={0.55 * (1 - grey * 0.5)} transform={`rotate(-30 ${-W * 0.2} ${-H * 0.82})`} />
       {/* face */}
       <g transform={`translate(${look * 5} ${-H * 0.66}) rotate(${bp.tilt})`}>
         {[-1, 1].map((sd) => (
@@ -198,9 +209,8 @@ export const Ping: React.FC<{
         {emotion === 'sheepish' && <path d="M 44 -24 q 6 10 0 16 q -6 -6 0 -16 Z" fill="#BFE8FF" stroke={PING.ink} strokeWidth={2.5} />}
         {emotion === 'sleepy' && <text x={52} y={-28} fontFamily={MONO} fontWeight={800} fontSize={22} fill={PING.ink} opacity={0.6 + 0.4 * Math.sin(f / 10)}>z</text>}
       </g>
-      {/* belly window with the slice thumbnail */}
-      <rect x={-34} y={-62} width={68} height={50} rx={8} fill="#111A1C" stroke={PING.ink} strokeWidth={4} />
-      <BrainSlice x={0} y={-37} r={22} clot={clot ? 1 : 0} seed={seed + 9} />
+      {/* a small pulse mark low on the body (the heartbeat it sends), not a document */}
+      {clot && <path d={`M -34 -36 h 18 l 8 -16 l 10 30 l 8 -14 h 24`} stroke={PING.ink} strokeWidth={4} fill="none" strokeLinejoin="round" strokeLinecap="round" opacity={0.55} />}
       {label && (
         <g transform={`translate(0 ${-H - 26})`}>
           <PTag x={0} y={0} text={label} size={20} />
@@ -318,7 +328,7 @@ export const ReportPrinter: React.FC<{f: number; x: number; y: number; s?: numbe
 
 /** Scoreboard. A wall board with labelled rows; each row lit (with a value) or dashed blank. Origin is the top centre. */
 export const Scoreboard: React.FC<{
-  f: number; x: number; y: number; s?: number; title?: string; rows: {label: string; value?: string; lit?: number}[]; w?: number; glowRow?: number; seed?: number; nail?: boolean;
+  f: number; x: number; y: number; s?: number; title?: string; rows: {label: string; value?: string; lit?: number; flap?: boolean}[]; w?: number; glowRow?: number; seed?: number; nail?: boolean;
 }> = ({f, x, y, s = 1, title = 'STROKE SCOREBOARD', rows, w = 640, glowRow = -1, seed = 4, nail = true}) => {
   const rowH = 96;
   const h = 110 + rows.length * rowH;
@@ -341,7 +351,14 @@ export const Scoreboard: React.FC<{
             <rect x={-w / 2 + 40} y={yy + 52} width={w - 80} height={30} rx={5} fill={lit > 0 ? '#F9F6EC' : 'none'} stroke={PING.ink} strokeWidth={3.5}
               strokeDasharray={lit > 0 ? undefined : '12 8'} opacity={lit > 0 ? 1 : 0.85 + 0.15 * pulse} />
             {lit > 0 && r.value && <text x={-w / 2 + 52} y={yy + 75} fontFamily={MONO} fontWeight={800} fontSize={20} fill={PING.ink} opacity={lit}>{r.value}</text>}
-            {glowRow === i && <rect x={-w / 2 + 34} y={yy + 46} width={w - 68} height={42} rx={8} fill="none" stroke={PING.coral} strokeWidth={4} opacity={0.3 + 0.5 * pulse} />}
+            {glowRow === i && <rect x={-w / 2 + 34} y={yy + 46} width={w - 68} height={42} rx={8} fill="none" stroke={PING.ink} strokeWidth={3} strokeDasharray="4 6" opacity={0.3 + 0.4 * pulse} />}
+            {r.flap && (
+              <g transform={`rotate(${-1.5 + Math.sin(f / 23 + i) * 0.8} 0 ${yy + 50})`}>
+                <rect x={-w / 2 + 30} y={yy + 6} width={w - 60} height={84} rx={2} fill={PING.paper} stroke={PING.ink} strokeWidth={3} />
+                <rect x={-w / 2 + 20} y={yy} width={60} height={22} fill="#E9D9A6" opacity={0.85} transform={`rotate(-12 ${-w / 2 + 50} ${yy + 11})`} />
+                <rect x={w / 2 - 80} y={yy} width={60} height={22} fill="#E9D9A6" opacity={0.85} transform={`rotate(12 ${w / 2 - 50} ${yy + 11})`} />
+              </g>
+            )}
           </g>
         );
       })}
