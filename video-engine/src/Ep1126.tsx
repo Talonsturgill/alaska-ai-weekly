@@ -143,7 +143,7 @@ const PegTag: React.FC<{x: number; y: number; text: string; size?: number; f: nu
 /** the stylised Alaska map board on a graphite desk, seen from above; children draw in the 1000x700 map box. */
 const MapDesk: React.FC<{f: number; ox?: number; oy?: number; s?: number; seed?: number; children?: React.ReactNode; near?: boolean}> = ({f, ox = 40, oy = 620, s = 1, seed = 1, children, near = true}) => (
   <g>
-    <rect x={-40} y={-40} width={1160} height={2000} fill="#3E4C4A" />
+    <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#3E4C4A" />
     {Array.from({length: 26}, (_, i) => <path key={i} d={`M -40 ${i * 80 + (seed * 17) % 80} H 1120`} stroke="#33403E" strokeWidth={3} opacity={0.6} />)}
     <rect x={ox - 30} y={oy - 30} width={1000 * s + 60} height={700 * s + 60} rx={8} fill="#000" opacity={0.3} transform="translate(12 16)" />
     <rect x={ox - 30} y={oy - 30} width={1000 * s + 60} height={700 * s + 60} rx={8} fill={PING.paper} stroke={INK} strokeWidth={7} />
@@ -197,6 +197,39 @@ const MapDot: React.FC<{at: [number, number]; label: string; f: number; size?: n
 
 // ================================================================== SCENES ==================================================================
 
+/** the floor under the caption bar gets a job: a desk edge with the day's working props, varied by seed */
+const NearDesk: React.FC<{f: number; seed?: number; tone?: string}> = ({f, seed = 1, tone = '#6E5A48'}) => {
+  const left = seed % 2 === 0;
+  return (
+    <g data-band="ok">
+      <rect x={-40} y={1560} width={1160} height={400} fill={tone} stroke={INK} strokeWidth={6} />
+      <path d="M -40 1574 H 1120" stroke="#fff" strokeWidth={5} opacity={0.18} />
+      <g transform={`translate(${left ? 200 : 860} 1690)`}><ellipse cx={0} cy={50} rx={60} ry={12} fill="#000" opacity={0.3} /><rect x={-42} y={-44} width={84} height={92} rx={8} fill="#E9E2D0" stroke={INK} strokeWidth={5} />
+        <path d="M 42 -24 q 30 0 30 26 q 0 26 -30 26" stroke={INK} strokeWidth={6} fill="none" />
+        {[0, 1].map((i) => <path key={i} d={`M ${-12 + i * 22} -56 q 9 -16 0 -32`} stroke="#fff" strokeWidth={4} fill="none" opacity={0.35 + 0.3 * Math.sin(f / 8 + i)} />)}</g>
+      <g transform={`translate(${left ? 620 : 380} 1720) rotate(${left ? 4 : -5})`}><rect x={-150} y={-46} width={300} height={92} rx={4} fill={PING.paper} stroke={INK} strokeWidth={4} />{[0, 1, 2].map((i) => <rect key={i} x={-128} y={-30 + i * 24} width={200 - i * 40} height={8} fill="#B7AE97" />)}</g>
+      <g transform={`translate(${left ? 900 : 160} 1700) rotate(${left ? -22 : 18})`}><rect x={-100} y={-9} width={200} height={18} rx={9} fill="#2E4A5A" stroke={INK} strokeWidth={4} /><path d="M 100 -9 L 124 0 L 100 9 Z" fill={PING.bone} stroke={INK} strokeWidth={3} /></g>
+      <g transform={`translate(${left ? 420 : 640} 1850)`}><rect x={-60} y={-20} width={120} height={40} rx={6} fill="#8FA3A3" stroke={INK} strokeWidth={4} /><rect x={-48} y={-10} width={70} height={8} fill={PING.bone} opacity={0.7} /></g>
+    </g>
+  );
+};
+/** the floor of an exterior: trampled snow with a fence line, footprints and a stake, varied by seed */
+const NearSnow: React.FC<{f: number; seed?: number}> = ({f, seed = 1}) => (
+  <g data-band="ok">
+    <path d={`M -40 1560 Q 300 ${1530 + 10 * (seed % 3)} 620 1570 T 1120 1550 V 1960 H -40 Z`} fill="#E6EDF0" stroke={INK} strokeWidth={5} />
+    {Array.from({length: 7}, (_, i) => (
+      <g key={i} transform={`translate(${80 + i * 150 + (seed * 37) % 60} ${1620 + (i % 2) * 18})`}>
+        <ContactShadow cx={0} cy={70} rx={20} ry={5} opacity={0.35} />
+        <rect x={-7} y={-40} width={14} height={110} fill="#6B4A32" stroke={INK} strokeWidth={3} transform={`rotate(${i % 2 ? 4 : -3})`} />
+      </g>
+    ))}
+    <path d={`M 40 1610 L 1100 ${1620 + 8 * Math.sin(f / 50)}`} stroke="#8A6A4A" strokeWidth={6} />
+    {Array.from({length: 9}, (_, i) => <ellipse key={`fp${i}`} cx={200 + i * 70} cy={1780 + (i % 2) * 22} rx={14} ry={7} fill="#C5D2D8" />)}
+    <path d="M -40 1880 Q 400 1840 800 1890 T 1120 1870" stroke="#C5D2D8" strokeWidth={22} fill="none" />
+  </g>
+);
+
+
 /** the cold 0:00 stopwatch on a little console stand (case 1: it never runs) */
 const ColdWatch: React.FC<{f: number; x: number; y: number; r?: number}> = ({f, x, y, r = 54}) => (
   <g transform={`translate(${x} ${y})`}>
@@ -215,11 +248,13 @@ const S1: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.07, easeIO(fr, 0, p.dur)), fx: lerp(560, 600, easeIO(fr, 0, p.dur)), fy: 980})}>
       <SVG>
         <WardWorld f={f} seed={1} windowX={250} windowW={360} floorY={1320} near="cart" />
-        <CTRing f={f} x={620} y={930} s={1.0} table={0.7} glow={1} spin={1}>
-          <BrainSlice x={0} y={-6} r={124} clot={1} seed={2} />
-        </CTRing>
-        <g transform="translate(620 1160)">
-          <Ping f={f} x={0} y={0} s={0.9} emotion={f < 8 ? 'sleepy' : f < b(3) - 6 ? 'alert' : 'curious'} pop={pop} glow={0.9} cues={[b(1) + 6, b(46), b(2), b(3)]} seed={1} look={f > b(3) - 6 ? -1 : 0} />
+        <HeldTravel f={f} x={300} y={610} w={640} h={720} mode="sweep" seed={11}>
+          <CTRing f={f} x={620} y={930} s={1.0} table={0.7} glow={1} spin={1}>
+            <BrainSlice x={0} y={-6} r={124} clot={1} seed={2} />
+          </CTRing>
+        </HeldTravel>
+        <g transform="translate(620 1062)">
+          <Ping f={f} x={0} y={0} s={0.8} emotion={f < 8 ? 'sleepy' : f < b(3) - 6 ? 'alert' : 'curious'} pop={pop} glow={0.9} cues={[b(1) + 6, b(46), b(2), b(3)]} seed={1} look={f > b(3) - 6 ? -1 : 0} />
         </g>
         <g transform="translate(170 760)">
           <circle cx={0} cy={0} r={10} fill={PING.steel} stroke={INK} strokeWidth={4} />
@@ -232,8 +267,8 @@ const S1: React.FC<SceneProps> = ({p}) => {
           <Odometer x={0} y={0} value={cells} digits={7} size={30} id="cells1126" commas label="BRAIN CELLS" fg={PING.bone} bg="#16262A" />
         </g>
         <Plate x={540} text="A BRAIN SCAN · AN ALASKA HOSPITAL" y={1250} size={30} p={ease(f, 4, 8) * (1 - ease(f, b(46) - 4, 8))} />
-        <Plate x={540} text="EVERY MINUTE" y={1250} size={30} tone="dark" p={ease(f, b(46) + 2, 8) * (1 - ease(f, b(2) - 3, 6))} />
-        <Plate x={540} text="2 MILLION BRAIN CELLS · EVERY MINUTE" y={1250} size={30} p={ease(f, b(2) + 2, 10)} />
+        <Plate x={540} text="EVERY MINUTE" y={1180} size={30} tone="dark" p={ease(f, b(46) + 2, 8) * (1 - ease(f, b(2) - 7, 6))} />
+        <Plate x={540} text="2 MILLION BRAIN CELLS · EVERY MINUTE" y={1110} size={30} p={ease(f, b(2) + 2, 10)} />
       </SVG>
     </Frame>
   );
@@ -251,7 +286,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
       <SVG>
         <MapDesk f={f} seed={2}>
           <Route a={A} b={B} />
-          <MapDot at={A} label="A HOSPITAL" f={f} dy={-48} />
+          <MapDot at={A} label="A HOSPITAL" f={f} dx={-150} dy={-20} />
           <MapDot at={B} label="ANCHORAGE" f={f} dx={-40} dy={50} pulse />
           <HeldTravel f={f} x={rx - 90} y={ry - 220} w={180} h={230} mode="shadow" seed={2}>
             <g transform={`translate(${rx} ${ry}) scale(0.5)`}>
@@ -264,8 +299,8 @@ const S2: React.FC<SceneProps> = ({p}) => {
             </g>
           )}
         </MapDesk>
-        <Plate x={540} text="JUST SENDING THE IMAGES TO ANCHORAGE" y={560} size={28} p={ease(f, b(4) + 4, 10) * (1 - ease(f, b(5) - 3, 6))} />
-        <Plate x={540} text="COULD TAKE 45 MIN" y={560} size={34} tone="dark" p={ease(f, b(5) + 2, 10)} />
+        <Plate x={540} text="JUST SENDING THE IMAGES TO ANCHORAGE" y={560} size={28} p={ease(f, b(4) + 4, 10) * (1 - ease(f, b(5) - 7, 6))} />
+        <Plate x={540} text="COULD TAKE 45 MIN" y={630} size={34} tone="dark" p={ease(f, b(5) + 2, 10)} />
       </SVG>
     </Frame>
   );
@@ -283,7 +318,9 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.02, 1.08, easeIO(fr, 0, p.dur)), fx: lerp(500, 580, easeIO(fr, 0, p.dur)), fy: 1000})}>
       <SVG>
-        <WardWorld f={f} seed={3} windowX={850} windowW={280} floorY={1240} near="desk" />
+        <HeldTravel f={f} x={0} y={0} w={1080} h={1920} mode="shadow" seed={13}>
+          <WardWorld f={f} seed={3} windowX={850} windowW={280} floorY={1240} near="desk" />
+        </HeldTravel>
         <g transform="translate(250 780)">
           <rect x={-150} y={-120} width={300} height={240} rx={10} fill={PING.bone} stroke={INK} strokeWidth={7} />
           <rect x={-134} y={-104} width={268} height={208} fill="#FFFDF4" opacity={0.9} />
@@ -317,9 +354,9 @@ const S3: React.FC<SceneProps> = ({p}) => {
             </g>
           )}
         </g>
-        <Plate x={540} text="VOLUNTEER GROUP" y={1270} size={28} p={ease(f, b(6) + 6, 10) * (1 - ease(f, b(39) - 2, 6))} />
-        <Plate x={540} text="ALASKA STROKE COALITION" y={1270} size={28} p={ease(f, b(39) + 4, 10) * (1 - ease(f, b(7) - 2, 6))} />
-        <Plate x={540} text="RAPIDAI · STROKE SCAN SOFTWARE" y={1270} size={28} p={ease(f, b(7) + 4, 10)} />
+        <Plate x={540} text="VOLUNTEER GROUP" y={1262} size={28} p={ease(f, b(6) + 6, 10) * (1 - ease(f, b(39) - 7, 6))} />
+        <Plate x={540} text="ALASKA STROKE COALITION" y={1192} size={28} p={ease(f, b(39) + 4, 10) * (1 - ease(f, b(7) - 7, 6))} />
+        <Plate x={540} text="RAPIDAI · STROKE SCAN SOFTWARE" y={1122} size={28} p={ease(f, b(7) + 4, 10)} />
       </SVG>
     </Frame>
   );
@@ -338,14 +375,17 @@ const S4: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.06, 1.0, easeIO(fr, 0, p.dur)), fx: lerp(580, 520, easeIO(fr, 0, p.dur)), fy: lerp(900, 960, easeIO(fr, 0, p.dur))})} bg="#16262A">
       <SVG>
-        <rect x={-40} y={-40} width={1160} height={2000} fill="#16262A" />
+        <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#16262A" />
         <rect x={60} y={560 + 80 * (1 - rise)} width={960} height={820} rx={18} fill={PING.bone} stroke={INK} strokeWidth={8} />
         <rect x={86} y={586 + 80 * (1 - rise)} width={908} height={768} fill="#FFFDF4" />
         <g transform={`translate(0 ${80 * (1 - rise)})`}>
-          <BrainSlice x={500} y={960} r={330} clot={dimmed} seed={3} />
+          <HeldTravel f={f} x={170} y={610} w={660} h={700} mode="sweep" seed={14}>
+            <BrainSlice x={500} y={960} r={330} clot={dimmed} seed={3} />
+          </HeldTravel>
           <SearchReticle x={cx} y={cy} f={f} lock={flag} seed={3} r={90} color={PING.bone} ghosts={3} />
         </g>
         <WallPhone f={f} x={950} y={1190} s={0.8} lift={ring * 0.3} swing={ring} />
+        <NearDesk f={f} seed={4} tone="#2E3A39" />
         {fire > 0 && fire < 1 && (
           <circle cx={lerp(800, 950, fire)} cy={lerp(1240, 1140, fire)} r={22} fill={PING.coral} stroke={INK} strokeWidth={4} />
         )}
@@ -358,11 +398,11 @@ const S4: React.FC<SceneProps> = ({p}) => {
             <text x={0} y={8} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>SECONDS</text>
           </g>
         )}
-        <Plate x={540} text="READING THE SCAN" y={500} size={28} tone="dark" p={ease(f, b(8) + 2, 8) * (1 - ease(f, b(9) - 2, 6))} />
-        <Plate x={540} text="SUSPECTED LARGE VESSEL OCCLUSION" y={500} size={30} p={ease(f, b(9) + 2, 8) * (1 - ease(f, b(42) - 2, 6))} />
-        <Plate x={540} text="A CLOT IN A BIG BRAIN ARTERY" y={500} size={30} p={ease(f, b(42) + 2, 8) * (1 - ease(f, b(10) - 2, 6))} />
-        <Plate x={540} text="IN ONE CASE · PER STAT" y={500} size={28} tone="dark" p={ease(f, b(10) + 2, 8) * (1 - ease(f, b(11) - 2, 6))} />
-        <Plate x={540} text="ALERT · SECONDS AFTER THE SCAN" y={500} size={30} tone="coral" p={ease(f, b(11) + 4, 10)} />
+        <Plate x={540} text="READING THE SCAN" y={500} size={28} tone="dark" p={ease(f, b(8) + 2, 8) * (1 - ease(f, b(9) - 7, 6))} />
+        <Plate x={540} text="SUSPECTED LARGE VESSEL OCCLUSION" y={570} size={30} p={ease(f, b(9) + 2, 8) * (1 - ease(f, b(42) - 7, 6))} />
+        <Plate x={540} text="A CLOT IN A BIG BRAIN ARTERY" y={640} size={30} p={ease(f, b(42) + 2, 8) * (1 - ease(f, b(10) - 7, 6))} />
+        <Plate x={540} text="IN ONE CASE · PER STAT" y={710} size={28} tone="dark" p={ease(f, b(10) + 2, 8) * (1 - ease(f, b(11) - 7, 6))} />
+        <Plate x={540} text="ALERT · SECONDS AFTER THE SCAN" y={780} size={30} tone="coral" p={ease(f, b(11) + 4, 10)} />
       </SVG>
     </Frame>
   );
@@ -376,12 +416,12 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const race = easeIO(f, b(13) - 2, 24);
   const lx = lerp(A[0], A[0] + 120, race), ly = lerp(A[1], A[1] - 30, race);
   const ox = 40, oy = 620;
-  const tx = lerp(ox + A[0], 900, race), ty = lerp(oy + A[1], 1420, race);
+  const tx = lerp(ox + A[0], 900, race), ty = lerp(oy + A[1], 1290, race);
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.05, easeIO(fr, 0, p.dur)), fx: 540, fy: lerp(960, 1000, easeIO(fr, 0, p.dur))})}>
       <SVG>
+        <HeldTravel f={f} x={0} y={560} w={1080} h={820} mode="shadow" seed={15}>
         <MapDesk f={f} seed={5} near={false}>
-          <MapDot at={A} label="LOCAL TEAM" f={f} dx={130} dy={-70} />
           {race <= 0 && (
             <g transform={`translate(${A[0]} ${A[1] - 10}) scale(0.62)`}>
               <Ping f={f} x={0} y={0} s={1} emotion="determined" split={split * 0.98} spread={170} cues={[b(12)]} seed={5} />
@@ -390,7 +430,9 @@ const S5: React.FC<SceneProps> = ({p}) => {
           {race > 0 && (
             <g transform={`translate(${lx} ${ly - 10}) scale(0.62)`}><Ping f={f} x={0} y={0} s={1} emotion={race >= 1 ? 'proud' : 'determined'} cues={[b(13)]} seed={5} tilt={race >= 1 ? 10 * Math.sin(Math.min(1, (f - b(13) - 22) / 10) * Math.PI) : 0} /></g>
           )}
+          <MapDot at={A} label="LOCAL TEAM" f={f} dx={150} dy={-118} />
         </MapDesk>
+        </HeldTravel>
         {/* the WHOLE STATE card at the board's edge, off the map */}
         <g transform="translate(900 1520)">
           <ContactShadow cx={0} cy={6} rx={170} ry={12} opacity={0.4} />
@@ -409,8 +451,8 @@ const S5: React.FC<SceneProps> = ({p}) => {
           </g>
         )}
         {race > 0 && race < 1 && [0, 1, 2].map((i) => <line key={i} x1={tx} y1={ty - 50 + i * 16} x2={tx - 70 * (900 - ox - A[0]) / 600} y2={ty - 50 + i * 16 - 70} stroke={PING.coral} strokeWidth={5} opacity={0.6} strokeLinecap="round" />)}
-        <Plate x={540} text="ONE ALERT" y={560} size={30} tone="coral" p={ease(f, b(12) + 2, 10) * (1 - ease(f, b(13) - 2, 6))} />
-        <Plate x={540} text="LOCAL TEAM + SPECIALISTS AT ONCE" y={560} size={30} p={ease(f, b(13) + 6, 10)} />
+        <Plate x={540} text="ONE ALERT" y={560} size={30} tone="coral" p={ease(f, b(12) + 2, 10) * (1 - ease(f, b(13) - 7, 6))} />
+        <Plate x={540} text="LOCAL TEAM + SPECIALISTS AT ONCE" y={630} size={30} p={ease(f, b(13) + 6, 10)} />
       </SVG>
     </Frame>
   );
@@ -425,15 +467,18 @@ const S6: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.6, 1.0, easeIO(fr, 0, 50)), fx: lerp(540, 540, pull), fy: lerp(1150, 980, easeIO(fr, 0, 50))})}>
       <SVG>
-        <rect x={-40} y={-40} width={1160} height={2000} fill="#3E4C4A" />
+        <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#3E4C4A" />
+        <HeldTravel f={f} x={40} y={470} w={1000} h={700} mode="shadow" seed={16}>
         <g transform="translate(40 470) scale(1.0)">
           <path d={AK_PATH} fill="#E9E2CB" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
           <path d={AK_PATH} fill="none" stroke="#C9BE9C" strokeWidth={16} opacity={0.35} transform="translate(5 8)" />
         </g>
+        </HeldTravel>
         <g data-band="ok">
-          <rect x={-40} y={1290} width={1160} height={700} fill="#2E3A39" />
+          <rect data-band="ok" x={-40} y={1290} width={1160} height={700} fill="#2E3A39" />
           <path d="M -40 1290 H 1120" stroke={INK} strokeWidth={6} />
         </g>
+        <NearDesk f={f} seed={6} tone="#3B4A48" />
         <g transform="translate(540 1290)">
           <ContactShadow cx={0} cy={6} rx={330} ry={18} opacity={0.45} />
           <rect x={-320} y={-250} width={640} height={256} rx={10} fill={PING.paper} stroke={INK} strokeWidth={6} />
@@ -463,8 +508,8 @@ const S6: React.FC<SceneProps> = ({p}) => {
           })}
         </g>
         <g transform="translate(870 1250)"><Ping f={f} x={0} y={0} s={0.55} emotion="hopeful" arm={tap > 0 && tap < 5 ? 1 : 0} cues={[b(15)]} seed={6} look={-1} /></g>
-        <Plate x={540} text="WHOLE STATE" y={560} size={34} p={ease(f, b(14) + 6, 10) * (1 - ease(f, b(15) - 3, 6))} />
-        <Plate x={540} text="5 CLOT-REMOVAL SPECIALISTS · WHOLE STATE" y={560} size={28} p={ease(f, b(15) + 2, 10)} />
+        <Plate x={540} text="WHOLE STATE" y={560} size={34} p={ease(f, b(14) + 6, 10) * (1 - ease(f, b(15) - 7, 6))} />
+        <Plate x={540} text="5 CLOT-REMOVAL SPECIALISTS · WHOLE STATE" y={630} size={28} p={ease(f, b(15) + 2, 10)} />
       </SVG>
     </Frame>
   );
@@ -478,7 +523,7 @@ const ERExterior: React.FC<{f: number; doors: number}> = ({f, doors}) => (
     {Array.from({length: 30}, (_, i) => <circle key={i} cx={(i * 71) % 1100} cy={(i * 37) % 420} r={1.6} fill="#E8F0F4" opacity={0.5 + 0.3 * Math.sin(f / 20 + i)} />)}
     <path d="M -40 760 L 160 620 L 300 700 L 520 560 L 760 690 L 960 600 L 1120 660 V 900 H -40 Z" fill="#2E4462" />
     {Array.from({length: 18}, (_, i) => <path key={i} d={`M ${i * 64} 860 l -18 50 h 36 Z`} fill="#1B2C40" />)}
-    <rect x={-40} y={880} width={1160} height={480} fill="#B9C2CA" />
+    <rect data-band="ok" x={-40} y={880} width={1160} height={480} fill="#B9C2CA" />
     <rect x={60} y={560} width={960} height={720} fill="#8FA3A3" stroke={INK} strokeWidth={7} />
     {[0, 1, 2, 3].map((i) => <rect key={i} x={120 + i * 230} y={620} width={150} height={110} rx={6} fill={i === 1 ? '#FFD9A0' : '#304660'} stroke={INK} strokeWidth={5} />)}
     <path d="M 120 840 L 960 840 L 1000 900 L 80 900 Z" fill="#5E6C6C" stroke={INK} strokeWidth={6} />
@@ -512,9 +557,14 @@ const S7: React.FC<SceneProps> = ({p}) => {
   const into = easeIO(f, b(17) - 18, 24);
   const sweep = f > b(17) ? (f - b(17)) / 1800 : 0;
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.9, into), fx: lerp(540, 540, into), fy: lerp(1000, 1080, into)})}>
+    <Frame p={p} overlay={<>
+          <Plate x={540} text="MID-60s · A MORNING FALL · INTERIOR HOSPITAL" y={560} size={28} p={ease(f, b(16) + 6, 10) * (1 - ease(f, b(17) - 7, 6))} />
+          <Plate x={540} text="THE CLOCK STARTS" y={630} size={30} tone="dark" p={ease(f, b(17) + 4, 10)} />
+        </>} cam={(fr) => ({z: lerp(1.0, 1.9, into), fx: lerp(540, 540, into), fy: lerp(1000, 1080, into)})}>
       <SVG>
-        <ERExterior f={f} doors={doors} />
+        <HeldTravel f={f} x={0} y={0} w={1080} h={1920} mode="shadow" seed={17}>
+          <ERExterior f={f} doors={doors} />
+        </HeldTravel>
         {/* through the door glass: the intake board with the stopwatch and the printer */}
         <g transform="translate(540 1080) scale(0.32)">
           <rect x={-300} y={-260} width={600} height={520} rx={12} fill="#3B4A48" stroke={INK} strokeWidth={10} />
@@ -522,8 +572,6 @@ const S7: React.FC<SceneProps> = ({p}) => {
           <ReportPrinter f={f} x={140} y={200} s={0.8} page={f > b(17) ? (f - b(17)) / 900 : 0} seed={9} />
         </g>
         <GurneyToken f={f} x={lerp(-120, 520, roll)} y={1320} s={2.0} />
-        <Plate x={540} text="MID-60s · A MORNING FALL · INTERIOR HOSPITAL" y={560} size={28} p={ease(f, b(16) + 6, 10) * (1 - ease(f, b(17) - 3, 6))} />
-        <Plate x={540} text="THE CLOCK STARTS" y={560} size={30} tone="dark" p={ease(f, b(17) + 4, 10)} />
       </SVG>
     </Frame>
   );
@@ -576,10 +624,10 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <HeldTravel f={f} x={700} y={800} w={330} h={430} mode="sweep" seed={8}>
           <ReportPrinter f={f} x={860} y={1180} s={0.8} page={page} drop={drop} seed={9} />
         </HeldTravel>
-        <Plate x={540} text="UNDER 30 MIN AFTER HE ARRIVED" y={560} size={30} p={ease(f, b(18) + 2, 8) * (1 - ease(f, b(43) - 3, 6))} />
-        <Plate x={540} text="PROVIDENCE · ANCHORAGE" y={560} size={30} p={ease(f, b(43) + 2, 8) * (1 - ease(f, b(19) - 3, 6))} />
-        <Plate x={540} text="TRANSFER CALL" y={560} size={30} tone="dark" p={ease(f, b(19) + 2, 8) * (1 - ease(f, b(20) - 3, 6))} />
-        <Plate x={540} text="2 MIN BEFORE THE OFFICIAL REPORT" y={560} size={30} tone="dark" p={ease(f, b(20) + 4, 10)} />
+        <Plate x={540} text="UNDER 30 MIN AFTER HE ARRIVED" y={560} size={30} p={ease(f, b(18) + 2, 8) * (1 - ease(f, b(43) - 7, 6))} />
+        <Plate x={540} text="PROVIDENCE · ANCHORAGE" y={630} size={30} p={ease(f, b(43) + 2, 8) * (1 - ease(f, b(19) - 7, 6))} />
+        <Plate x={540} text="TRANSFER CALL" y={700} size={30} tone="dark" p={ease(f, b(19) + 2, 8) * (1 - ease(f, b(20) - 7, 6))} />
+        <Plate x={540} text="2 MIN BEFORE THE OFFICIAL REPORT" y={770} size={30} tone="dark" p={ease(f, b(20) + 4, 10)} />
       </SVG>
     </Frame>
   );
@@ -597,6 +645,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.04, easeIO(fr, 0, p.dur)), fx: 540, fy: 960})}>
       <SVG>
         <WardWorld f={f} seed={8} windowX={860} windowW={260} floorY={1300} near="counter" />
+        <HeldTravel f={f} x={240} y={600} w={600} h={620} mode="sweep" seed={19}>
+          <rect x={240} y={600} width={600} height={620} rx={14} fill="#3B4A48" />
+        </HeldTravel>
         <g transform={`translate(540 ${900 + slam * 4})`}>
           <rect x={-300} y={-300} width={600} height={620} rx={14} fill="#3B4A48" stroke={INK} strokeWidth={8} />
           <rect x={-276} y={-276} width={552} height={572} rx={8} fill="#E7E2D2" stroke={INK} strokeWidth={4} />
@@ -614,9 +665,9 @@ const S9: React.FC<SceneProps> = ({p}) => {
             {[0, 1, 2].map((i) => <path key={i} d={`M ${12 + i * 26} ${6 + i * 6} q -26 10 -16 34`} stroke={INK} strokeWidth={5} fill="#C99A78" />)}
           </g>
         )}
-        <Plate x={540} text="AFTER HE ARRIVED" y={540} size={30} tone="dark" p={ease(f, b(44) + 2, 8) * (1 - ease(f, b(21) - 2, 6))} />
-        <Plate x={540} text="4 HR 23 MIN · CLOT OUT" y={540} size={34} p={ease(f, b(21) + 2, 8) * (1 - ease(f, b(22) - 2, 6))} />
-        <Plate x={540} text="CLOT OUT" y={540} size={34} tone="dark" p={ease(f, b(22) + 2, 8)} />
+        <Plate x={540} text="AFTER HE ARRIVED" y={540} size={30} tone="dark" p={ease(f, b(44) + 2, 8) * (1 - ease(f, b(21) - 7, 6))} />
+        <Plate x={540} text="4 HR 23 MIN · CLOT OUT" y={610} size={34} p={ease(f, b(21) + 2, 8) * (1 - ease(f, b(22) - 7, 6))} />
+        <Plate x={540} text="CLOT OUT" y={680} size={34} tone="dark" p={ease(f, b(22) + 2, 8)} />
       </SVG>
     </Frame>
   );
@@ -634,9 +685,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: 1.0, fx: 540, fy: 960})}>
       <SVG>
-        <defs><clipPath id="s10l"><rect x={0} y={0} width={538} height={1920} /></clipPath><clipPath id="s10r"><rect x={542} y={0} width={538} height={1920} /></clipPath></defs>
+        <defs><clipPath id="s10l"><rect data-band="ok" x={0} y={0} width={538} height={1920} /></clipPath><clipPath id="s10r"><rect data-band="ok" x={542} y={0} width={538} height={1920} /></clipPath></defs>
         <g clipPath="url(#s10l)">
-          <rect x={0} y={0} width={540} height={1920} fill="#2A4044" />
+          <rect data-band="ok" x={0} y={0} width={540} height={1920} fill="#2A4044" />
           {Array.from({length: 24}, (_, i) => <circle key={i} cx={(i * 47 + f * 0.6) % 540} cy={(i * 131 + f * (1.6 + (i % 3) * 0.5)) % 1920} r={2.5} fill="#DDE7EA" opacity={0.5} />)}
           {lines.map(([y0, i]) => {
             const y1 = 1000;
@@ -658,7 +709,9 @@ const S10: React.FC<SceneProps> = ({p}) => {
         </g>
         <g clipPath="url(#s10r)">
           <g transform="translate(270 0)">
-            <WardWorld f={f} warm={1} seed={10} windowX={700} windowW={220} floorY={1300} near="none" />
+            <HeldTravel f={f} x={0} y={0} w={1080} h={1920} mode="shadow" seed={20}>
+              <WardWorld f={f} warm={1} seed={10} windowX={700} windowW={220} floorY={1300} near="desk" />
+            </HeldTravel>
             {[0, 1, 2].map((i) => (
               <g key={i} transform={`translate(${430 + i * 190} 300)`}>
                 <rect x={-70} y={-14} width={140} height={28} rx={8} fill="#E8DCC0" stroke={INK} strokeWidth={4} />
@@ -683,11 +736,11 @@ const S10: React.FC<SceneProps> = ({p}) => {
             {cross >= 1 && <GurneyToken f={f} x={470} y={1290} s={1.4} />}
           </g>
         </g>
-        <rect x={536} y={0} width={8} height={1920} fill={INK} />
-        <Plate x={540} text="INFORMATION FIRST · ANY TRANSFER" y={560} size={30} tone="coral" p={ease(f, 4, 10) * (1 - ease(f, b(24) - 3, 6))} />
-        <Plate x={540} text="THE ROOM GETS READY" y={560} size={30} p={ease(f, b(24) + 2, 8) * (1 - ease(f, b(25) - 3, 6))} />
-        <Plate x={540} text="ABOUT 30% FASTER START · EARLY DATA · PER STAT" y={560} size={26} p={ease(f, b(25) + 4, 10) * (1 - ease(f, b(45) - 3, 6))} />
-        <Plate x={540} text="ONCE PATIENTS REACH ANCHORAGE" y={560} size={30} tone="dark" p={ease(f, b(45) + 2, 10)} />
+        <rect data-band="ok" x={536} y={0} width={8} height={1920} fill={INK} />
+        <Plate x={540} text="INFORMATION FIRST · ANY TRANSFER" y={560} size={30} tone="coral" p={ease(f, 4, 10) * (1 - ease(f, b(24) - 7, 6))} />
+        <Plate x={540} text="THE ROOM GETS READY" y={630} size={30} p={ease(f, b(24) + 2, 8) * (1 - ease(f, b(25) - 7, 6))} />
+        <Plate x={540} text="ABOUT 30% FASTER START · EARLY DATA · PER STAT" y={700} size={26} p={ease(f, b(25) + 4, 10) * (1 - ease(f, b(45) - 7, 6))} />
+        <Plate x={540} text="ONCE PATIENTS REACH ANCHORAGE" y={770} size={30} tone="dark" p={ease(f, b(45) + 2, 10)} />
       </SVG>
     </Frame>
   );
@@ -707,7 +760,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.05, easeIO(fr, 0, p.dur)), fx: 540, fy: lerp(1020, 980, easeIO(fr, 0, p.dur))})} warmth={0.06}>
       <SVG>
-        <WardWorld f={f} warm={1} seed={11} windowX={180} windowW={240} floorY={1290} near="none" />
+        <HeldTravel f={f} x={0} y={0} w={1080} h={1920} mode="shadow" seed={21}>
+          <WardWorld f={f} warm={1} seed={11} windowX={180} windowW={240} floorY={1290} near="desk" />
+        </HeldTravel>
         <Scoreboard f={f} x={640} y={560} s={0.82} rows={ROWS(true)} />
         <g data-band="ok">
           <rect x={40} y={1170} width={640} height={40} rx={6} fill="#8C6B4E" stroke={INK} strokeWidth={6} />
@@ -724,9 +779,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
           </IdleFigure>
         </FigureFinish>
         <NameCard x={960} y={1300} text="KELLY ISAACS" f={f} />
-        <Plate x={540} text="KELLY ISAACS · PROVIDENCE STROKE PROGRAM" y={1440} size={26} p={ease(f, b(26) + 4, 10) * (1 - ease(f, b(40) - 3, 6))} />
-        <Plate x={540} text="TIME TO CALL · TIME TO START · OUTCOMES" y={1440} size={26} p={ease(f, b(40) + 2, 8) * (1 - ease(f, b(27) - 3, 6))} />
-        <Plate displayLines={['"CAN I GIVE YOU STATISTICALLY SIGNIFICANT', 'INFORMATION ...? I CAN\'T, REALLY."', 'KELLY ISAACS · PER STAT']} y={1440} size={22} p={ease(f, b(27) + 4, 10)} />
+        <Plate x={470} text="KELLY ISAACS · PROVIDENCE STROKE PROGRAM" y={1262} size={26} p={ease(f, b(26) + 4, 10) * (1 - ease(f, b(40) - 7, 6))} />
+        <Plate x={470} text="TIME TO CALL · TIME TO START · OUTCOMES" y={1192} size={26} p={ease(f, b(40) + 2, 8) * (1 - ease(f, b(27) - 7, 6))} />
+        <Plate x={470} text="KELLY ISAACS · PER STAT" displayLines={['"CAN I GIVE YOU STATISTICALLY SIGNIFICANT', 'INFORMATION ...? I CAN\'T, REALLY."', 'KELLY ISAACS · PER STAT']} y={1060} size={22} p={ease(f, b(27) + 4, 10)} />
       </SVG>
     </Frame>
   );
@@ -743,14 +798,17 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.05, 1.0, easeIO(fr, 0, p.dur)), fx: lerp(420, 640, pullF), fy: 1000})}>
       <SVG>
-        <rect x={-40} y={-40} width={1160} height={2000} fill="#2E3A39" />
+        <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#2E3A39" />
+        <HeldTravel f={f} x={0} y={420} w={1080} h={900} mode="shadow" seed={22}>
         {[0, 1, 2].map((r) => (
           <g key={r} transform={`translate(0 ${420 + r * 300})`}>
             <rect x={-40} y={240} width={1160} height={26} fill="#6E5A48" stroke={INK} strokeWidth={5} />
             {Array.from({length: 16}, (_, i) => <rect key={i} x={i * 70 + (r * 23) % 40} y={240 - 150 - (i % 3) * 18} width={56} height={150 + (i % 3) * 18} rx={3} fill={['#4E6E66', '#7A6A54', '#5A6A7A'][(i + r) % 3]} stroke={INK} strokeWidth={3} opacity={0.75 - 0.25 * pullF} />)}
           </g>
         ))}
+        </HeldTravel>
         <ellipse cx={300} cy={1150} rx={420} ry={260} fill="#FFE9B8" opacity={0.18} />
+        <NearDesk f={f} seed={12} />
         {/* the binder, foreground left */}
         <g transform="translate(330 1180)" opacity={1 - 0.45 * pullF}>
           <ContactShadow cx={0} cy={60} rx={260} ry={18} opacity={0.45} />
@@ -783,8 +841,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <circle cx={0} cy={-18} r={10} fill={PING.bone} opacity={blink ? 1 : 0.3} />
           </g>
         )}
-        <Plate x={540} text="NO CONSISTENT STROKE OUTCOME REPORTING" y={560} size={26} tone="dark" p={ease(f, b(28) + 4, 10) * (1 - ease(f, b(29) - 3, 6))} />
-        <Plate x={540} text="FALSE POSITIVES" y={560} size={34} p={ease(f, b(29) + 2, 10)} />
+        <Plate x={540} text="NO CONSISTENT STROKE OUTCOME REPORTING" y={560} size={26} tone="dark" p={ease(f, b(28) + 4, 10) * (1 - ease(f, b(29) - 7, 6))} />
+        <Plate x={540} text="FALSE POSITIVES" y={630} size={34} p={ease(f, b(29) + 2, 10)} />
       </SVG>
     </Frame>
   );
@@ -804,8 +862,16 @@ const S13: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.04, 1.0, easeIO(fr, 0, p.dur)), fx: 540, fy: 980})}>
       <SVG>
-        <rect x={-40} y={-40} width={1160} height={2000} fill="#7E6A56" />
-        {Array.from({length: 14}, (_, i) => <path key={i} d={`M -40 ${i * 150 + 40} Q 540 ${i * 150 + 60} 1120 ${i * 150 + 30}`} stroke="#6E5A48" strokeWidth={4} fill="none" />)}
+        <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#7E6A56" />
+        <HeldTravel f={f} x={0} y={0} w={1080} h={1920} mode="shadow" seed={23}>
+          <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#7E6A56" />
+          {Array.from({length: 14}, (_, i) => <path key={i} d={`M -40 ${i * 150 + 40} Q 540 ${i * 150 + 60} 1120 ${i * 150 + 30}`} stroke="#6E5A48" strokeWidth={4} fill="none" />)}
+        </HeldTravel>
+        <g data-band="ok">
+          <g transform="translate(860 1720) rotate(-12)"><rect x={-130} y={-60} width={260} height={120} rx={4} fill="#C9B48E" stroke={INK} strokeWidth={4} /><rect x={-110} y={-80} width={150} height={30} rx={3} fill="#E9D9A6" stroke={INK} strokeWidth={3} /></g>
+          <g transform="translate(200 1780)"><ellipse cx={0} cy={0} rx={70} ry={26} fill="none" stroke="#5E4A38" strokeWidth={6} opacity={0.6} /></g>
+          <g transform="translate(520 1830) rotate(8)"><rect x={-110} y={-9} width={220} height={18} rx={9} fill="#2E4A5A" stroke={INK} strokeWidth={4} /><path d="M 110 -9 L 134 0 L 110 9 Z" fill={PING.bone} stroke={INK} strokeWidth={3} /></g>
+        </g>
         {/* the desk slip, turned over by the doctor's read */}
         <g transform={`translate(330 1180) rotate(-5) scale(1 ${flipT < 0.5 ? 1 - flipT * 2 : (flipT - 0.5) * 2})`}>
           <ContactShadow cx={0} cy={70} rx={220} ry={12} opacity={0.4} />
@@ -832,8 +898,8 @@ const S13: React.FC<SceneProps> = ({p}) => {
             {[0, 1, 2].map((i) => <path key={i} d={`M ${10 + i * 26} ${4 + i * 6} q -26 10 -16 34`} stroke={INK} strokeWidth={5} fill="#C99A78" />)}
           </StrikeProp>
         </g>
-        <Plate x={540} text="A DOCTOR REVIEWS EVERY OUTPUT" y={560} size={30} p={ease(f, b(30) + 4, 10) * (1 - ease(f, b(31) - 3, 6))} />
-        <Plate x={540} text="THAT READ DECIDES THE TRANSFER" y={560} size={30} tone="dark" p={ease(f, b(31) + 2, 10)} />
+        <Plate x={540} text="A DOCTOR REVIEWS EVERY OUTPUT" y={560} size={30} p={ease(f, b(30) + 4, 10) * (1 - ease(f, b(31) - 7, 6))} />
+        <Plate x={540} text="THAT READ DECIDES THE TRANSFER" y={630} size={30} tone="dark" p={ease(f, b(31) + 2, 10)} />
       </SVG>
     </Frame>
   );
@@ -848,7 +914,15 @@ const S14: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.04, easeIO(fr, 0, p.dur)), fx: 540, fy: 960})} bg="#22383B">
       <SVG>
-        <rect x={-40} y={-40} width={1160} height={2000} fill="#22383B" />
+        <rect data-band="ok" x={-40} y={-40} width={1160} height={2000} fill="#22383B" />
+        <HeldTravel f={f} x={50} y={540} w={980} h={780} mode="sweep" seed={24}>
+          <rect x={50} y={540} width={980} height={780} fill="#22383B" />
+        </HeldTravel>
+        <g data-band="ok">
+          <rect x={-40} y={1560} width={1160} height={400} fill="#3B4A48" stroke={INK} strokeWidth={6} />
+          {Array.from({length: 6}, (_, i) => <g key={i} transform={`translate(${110 + i * 172} 1700)`}><rect x={-40} y={-30} width={80} height={60} rx={6} fill="#2E3A39" stroke={INK} strokeWidth={4} /><circle cx={0} cy={0} r={14} fill="#FFD9A0" opacity={clamp01(lit * 6 - i) > 0.5 ? 0.9 : 0.15} /></g>)}
+          <path d="M -40 1820 H 1120" stroke="#2A3634" strokeWidth={8} />
+        </g>
         {cols.map((c, i) => {
           const cx = 200 + (i % 3) * 340, cy = 720 + Math.floor(i / 3) * 420;
           const on = clamp01(lit * 6 - i);
@@ -875,8 +949,8 @@ const S14: React.FC<SceneProps> = ({p}) => {
             </g>
           );
         })}
-        <Plate x={540} text="6 HOSPITALS · FREE ACCESS" y={480} size={30} p={ease(f, b(32) + 4, 10) * (1 - ease(f, b(33) - 3, 6))} />
-        <Plate x={540} text="ALL 6 SAY THEY'LL KEEP AND PAY" y={480} size={30} p={ease(f, b(33) + 4, 10)} />
+        <Plate x={540} text="6 HOSPITALS · FREE ACCESS" y={500} size={30} p={ease(f, b(32) + 4, 10) * (1 - ease(f, b(33) - 7, 6))} />
+        <Plate x={540} text="ALL 6 SAY THEY'LL KEEP AND PAY" y={570} size={30} p={ease(f, b(33) + 4, 10)} />
       </SVG>
     </Frame>
   );
@@ -894,12 +968,20 @@ const S15: React.FC<SceneProps> = ({p}) => {
   const xs = Array.from({length: 21}, (_, i) => 70 + i * 47);
   const hy = (x: number) => 1060 - 30 * Math.sin(x / 170) - 18 * Math.sin(x / 61);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(2.2, 1.0, pull), fx: lerp(150, 540, pull), fy: lerp(1040, 980, pull)})}>
+    <Frame p={p} overlay={<>
+          <Plate x={540} text="OVER $3.1M · FEDERAL RURAL HEALTH MONEY · CMS" y={780} size={26} p={ease(f, 4, 10) * (1 - ease(f, b(47) - 7, 6))} />
+          <Plate x={540} text="IS SET TO BUILD" y={850} size={30} tone="dark" p={ease(f, b(47) + 2, 8) * (1 - ease(f, b(41) - 7, 6))} />
+          <Plate x={540} text="AI IMAGING NETWORK · PLANNED" y={920} size={30} p={ease(f, b(41) + 2, 8) * (1 - ease(f, b(34) - 7, 6))} />
+          <Plate x={540} text="PLANNED · 21 HOSPITALS" y={990} size={30} p={ease(f, b(34) + 2, 8) * (1 - ease(f, b(36) - 7, 6))} />
+          <Plate x={540} text="UTQIAGVIK TO JUNEAU" y={1060} size={30} p={ease(f, b(36) + 2, 10)} />
+        </>} cam={(fr) => ({z: lerp(2.2, 1.0, pull), fx: lerp(150, 540, pull), fy: lerp(1040, 980, pull)})}>
       <SVG>
         <defs><linearGradient id="dusk" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#22344E" /><stop offset="0.7" stopColor="#4E6A88" /><stop offset="1" stopColor="#E8B98A" /></linearGradient></defs>
         <rect x={-40} y={-40} width={1160} height={1140} fill="url(#dusk)" />
         <path d="M -40 980 L 120 900 L 260 960 L 430 860 L 600 950 L 760 880 L 940 950 L 1120 900 V 1080 H -40 Z" fill="#3A4E66" opacity={0.7} />
-        <path d={`M -40 ${hy(-40)} ${xs.concat([1120]).map((x) => `L ${x} ${hy(x)}`).join(' ')} V 1960 H -40 Z`} fill="#DDE6EA" stroke={INK} strokeWidth={5} />
+        <HeldTravel f={f} x={0} y={900} w={1080} h={1060} mode="shadow" seed={25}>
+          <path d={`M -40 ${hy(-40)} ${xs.concat([1120]).map((x) => `L ${x} ${hy(x)}`).join(' ')} V 1960 H -40 Z`} fill="#DDE6EA" stroke={INK} strokeWidth={5} />
+        </HeldTravel>
         {net > 0 && <path d={`M 70 ${hy(70) - 30} ${xs.filter((_, i) => i / 20 <= net).map((x) => `L ${x} ${hy(x) - 30}`).join(' ')}`} stroke={INK} strokeWidth={3} strokeDasharray="6 8" fill="none" opacity={0.7} />}
         {stakes > 0 && xs.map((x, i) => (i % 2 === 1 && i / 20 <= stakes ? <g key={`s${i}`}><rect x={x - 3} y={hy(x) - 40} width={6} height={40} fill="#B8924A" stroke={INK} strokeWidth={2} /><rect x={x - 3} y={hy(x) - 40} width={6} height={8} fill="#E8487F" /></g> : null))}
         {xs.map((x, i) => {
@@ -916,7 +998,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(150 ${hy(150)})`}>
           <rect x={-4} y={-150} width={8} height={150} fill="#6E5A48" stroke={INK} strokeWidth={3} />
           <ContactShadow cx={0} cy={2} rx={20} ry={5} opacity={0.4} />
-          {cms > 0.02 && <g transform={`translate(0 ${lerp(-300, -150, Math.min(1, cms))})`}><rect x={-64} y={-26} width={128} height={44} rx={4} fill={PING.paper} stroke={INK} strokeWidth={3} /><text x={0} y={4} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={16} fill={INK}>$3.1M · CMS</text></g>}
+          {cms > 0.02 && <g transform={`translate(0 ${lerp(-300, -150, Math.min(1, cms))})`}><rect x={-(monoW('$3.1M · CMS', 16) + 28) / 2} y={-26} width={monoW('$3.1M · CMS', 16) + 28} height={44} rx={4} fill={PING.paper} stroke={INK} strokeWidth={3} /><text x={0} y={4} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={16} fill={INK}>$3.1M · CMS</text></g>}
         </g>
         {ends > 0.02 && (
           <g>
@@ -924,12 +1006,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
             <PegTag x={1000} y={hy(1010) - 120} text="JUNEAU" f={f} k={ends} size={18} />
           </g>
         )}
-        <g data-band="ok">{[160, 420, 760, 980].map((x, i) => <path key={i} d={`M ${x - 140} ${1640 + i * 30} Q ${x} ${1600 + i * 30} ${x + 140} ${1640 + i * 30}`} stroke="#C5D2D8" strokeWidth={18} fill="none" />)}</g>
-        <Plate x={540} text="OVER $3.1M · FEDERAL RURAL HEALTH MONEY · CMS" y={540} size={26} p={ease(f, 4, 10) * (1 - ease(f, b(47) - 3, 6))} />
-        <Plate x={540} text="IS SET TO BUILD" y={540} size={30} tone="dark" p={ease(f, b(47) + 2, 8) * (1 - ease(f, b(41) - 3, 6))} />
-        <Plate x={540} text="AI IMAGING NETWORK · PLANNED" y={540} size={30} p={ease(f, b(41) + 2, 8) * (1 - ease(f, b(34) - 3, 6))} />
-        <Plate x={540} text="PLANNED · 21 HOSPITALS" y={540} size={30} p={ease(f, b(34) + 2, 8) * (1 - ease(f, b(36) - 3, 6))} />
-        <Plate x={540} text="UTQIAGVIK TO JUNEAU" y={540} size={30} p={ease(f, b(36) + 2, 10)} />
+        <NearSnow f={f} seed={15} />
       </SVG>
     </Frame>
   );
@@ -942,12 +1019,17 @@ const S16: React.FC<SceneProps> = ({p}) => {
   const tug = clamp01((f - 14) / 14);
   const pull = easeIO(f, b(38) - 10, 50);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.45, 1.0, pull), fx: lerp(330, 540, pull), fy: lerp(980, 960, pull)})}>
+    <Frame p={p} overlay={<>
+          <Plate x={540} text="THE TIMES ARE ON THE BOARD" y={1262} size={28} p={ease(f, 4, 10) * (1 - ease(f, b(38) - 7, 6))} />
+          <Plate x={540} text="WHAT SHOULD ALASKA MEASURE?" y={1192} size={34} tone="coral" p={ease(f, b(38) + 2, 10)} />
+        </>} cam={(fr) => ({z: lerp(1.45, 1.0, pull), fx: lerp(330, 540, pull), fy: lerp(980, 960, pull)})}>
       <SVG>
         <WardWorld f={f} seed={1} windowX={250} windowW={360} floorY={1320} near="cart" />
-        <CTRing f={f} x={660} y={930} s={1.0} table={0.7} glow={0.7} spin={0.4}>
-          <BrainSlice x={0} y={-6} r={124} clot={0} seed={2} />
-        </CTRing>
+        <HeldTravel f={f} x={340} y={610} w={640} h={720} mode="sweep" seed={26}>
+          <CTRing f={f} x={660} y={930} s={1.0} table={0.7} glow={0.7} spin={0.4}>
+            <BrainSlice x={0} y={-6} r={124} clot={0} seed={2} />
+          </CTRing>
+        </HeldTravel>
         <g transform="translate(300 600)">
           <Scoreboard f={f} x={0} y={0} s={0.5} rows={ROWS(tug < 0.5)} />
         </g>
@@ -960,8 +1042,6 @@ const S16: React.FC<SceneProps> = ({p}) => {
           <Ping f={f} x={0} y={0} s={0.8} emotion={tug >= 1 ? 'curious' : 'hopeful'} arm={1} cues={[b(37), b(38)]} seed={17} look={-1} />
           <g transform="translate(-70 -260)"><Stopwatch f={f} x={0} y={0} r={40} sweep={4.38} accent={PING.brass} /></g>
         </g>
-        <Plate x={540} text="THE TIMES ARE ON THE BOARD" y={1440} size={28} p={ease(f, 4, 10) * (1 - ease(f, b(38) - 3, 6))} />
-        <Plate x={540} text="WHAT SHOULD ALASKA MEASURE?" y={1440} size={34} tone="coral" p={ease(f, b(38) + 2, 10)} />
       </SVG>
     </Frame>
   );

@@ -354,9 +354,9 @@ export const Scoreboard: React.FC<{
             {glowRow === i && <rect x={-w / 2 + 34} y={yy + 46} width={w - 68} height={42} rx={8} fill="none" stroke={PING.ink} strokeWidth={3} strokeDasharray="4 6" opacity={0.3 + 0.4 * pulse} />}
             {r.flap && (
               <g transform={`rotate(${-1.5 + Math.sin(f / 23 + i) * 0.8} 0 ${yy + 50})`}>
-                <rect x={-w / 2 + 30} y={yy + 6} width={w - 60} height={84} rx={2} fill={PING.paper} stroke={PING.ink} strokeWidth={3} />
-                <rect x={-w / 2 + 20} y={yy} width={60} height={22} fill="#E9D9A6" opacity={0.85} transform={`rotate(-12 ${-w / 2 + 50} ${yy + 11})`} />
-                <rect x={w / 2 - 80} y={yy} width={60} height={22} fill="#E9D9A6" opacity={0.85} transform={`rotate(12 ${w / 2 - 50} ${yy + 11})`} />
+                <rect x={-w / 2 + 34} y={yy + 48} width={w - 68} height={38} rx={2} fill={PING.paper} stroke={PING.ink} strokeWidth={3} />
+                <rect x={-w / 2 + 24} y={yy + 44} width={60} height={20} fill="#E9D9A6" opacity={0.85} transform={`rotate(-12 ${-w / 2 + 54} ${yy + 54})`} />
+                <rect x={w / 2 - 84} y={yy + 44} width={60} height={20} fill="#E9D9A6" opacity={0.85} transform={`rotate(12 ${w / 2 - 54} ${yy + 54})`} />
               </g>
             )}
           </g>
