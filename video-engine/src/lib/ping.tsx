@@ -60,7 +60,7 @@ export const PTag: React.FC<{x: number; y: number; text: string; size?: number; 
  * BrainSlice. An axial CT slice: skull ring, grey matter, ventricles, a midline, optional crimson clot dot.
  * Origin is the centre; r is the outer radius. `clot` 0..1 grows the dot; `flag` 0..1 draws a reticle round it.
  */
-export const BrainSlice: React.FC<{x: number; y: number; r?: number; clot?: number; flag?: number; seed?: number; dim?: number; clotAt?: [number, number]}> = ({x, y, r = 60, clot = 0, flag = 0, seed = 1, dim = 0, clotAt = [0.5, -0.45]}) => {
+export const BrainSlice: React.FC<{x: number; y: number; r?: number; clot?: number; flag?: number; seed?: number; dim?: number; clotAt?: [number, number]}> = ({x, y, r = 60, clot = 0, flag = 0, seed = 1, dim = 0, clotAt = [0.42, -0.02]}) => {
   const id = uid(`slice${seed}`);
   const wob = (k: number) => 1 + 0.035 * Math.sin(k * 3.1 + seed);
   const pts = Array.from({length: 24}, (_, i) => {
@@ -79,23 +79,28 @@ export const BrainSlice: React.FC<{x: number; y: number; r?: number; clot?: numb
       <ellipse cx={0} cy={0} rx={r * 0.92} ry={r * 1.04} fill="#111A1C" />
       <ellipse cx={0} cy={0} rx={r * 0.86} ry={r * 0.98} fill="none" stroke={PING.slice} strokeWidth={r * 0.08} />
       <polygon points={pts} fill={`url(#${id}-g)`} />
-      {[-1, 1].map((s) => (
-        <g key={s}>
-          <path d={`M ${s * r * 0.12} ${-r * 0.22} q ${s * r * 0.18} ${r * 0.05} ${s * r * 0.14} ${r * 0.32} q ${-s * r * 0.08} ${r * 0.06} ${-s * r * 0.12} ${-r * 0.02} Z`} fill="#3E4442" />
-          {[0, 1, 2, 3].map((k) => (
-            <path key={k} d={`M ${s * r * (0.42 + k * 0.08)} ${-r * (0.6 - k * 0.32)} q ${s * r * 0.1} ${r * 0.08} ${s * r * 0.02} ${r * 0.18}`} stroke="#6A6E68" strokeWidth={r * 0.025} fill="none" />
-          ))}
-        </g>
-      ))}
-      <line x1={0} y1={-r * 0.92} x2={0} y2={r * 0.92} stroke="#5F6460" strokeWidth={r * 0.025} />
+      {/* gyri: soft folds round the cortex */}
+      {Array.from({length: 14}, (_, k) => {
+        const an = (k / 14) * Math.PI * 2 + 0.2;
+        const rr = r * 0.72;
+        return <path key={k} d={`M ${Math.cos(an) * rr * 0.86} ${Math.sin(an) * rr} q ${Math.cos(an + 1.6) * r * 0.08} ${Math.sin(an + 1.6) * r * 0.08} ${Math.cos(an) * r * 0.1} ${Math.sin(an) * r * 0.12}`} stroke="#6A6E68" strokeWidth={Math.max(1, r * 0.022)} fill="none" />;
+      })}
+      {/* a small central butterfly ventricle, low and narrow so it never reads as eyes */}
+      <path d={`M 0 ${r * 0.02} C ${-r * 0.1} ${-r * 0.06} ${-r * 0.16} ${r * 0.04} ${-r * 0.06} ${r * 0.16} L 0 ${r * 0.1} L ${r * 0.06} ${r * 0.16} C ${r * 0.16} ${r * 0.04} ${r * 0.1} ${-r * 0.06} 0 ${r * 0.02} Z`} fill="#3E4442" />
       {/* the bright contrast-filled vessel tree; one branch stops at the cutoff (cx, cy) and the vessel beyond it goes grey */}
       {(() => {
-        const vs: [number, number, number, number][] = [[0, r * 0.2, -r * 0.42, -r * 0.3], [0, r * 0.2, r * 0.42, -r * 0.3], [-r * 0.42, -r * 0.3, -r * 0.6, -r * 0.62], [-r * 0.42, -r * 0.3, -r * 0.66, 0.0],
-          [0, r * 0.2, 0, r * 0.62], [-r * 0.1, r * 0.4, -r * 0.48, r * 0.5], [r * 0.1, r * 0.4, r * 0.48, r * 0.5]];
-        return vs.map(([x1, y1, x2, y2], i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#F6F3EA" strokeWidth={Math.max(1.5, r * 0.035)} strokeLinecap="round" opacity={0.92} />);
+        const vw = Math.max(1.5, r * 0.035);
+        const arts = [
+          `M 0 ${r * 0.3} Q ${-r * 0.3} ${r * 0.28} ${-r * 0.56} ${r * 0.02}`,
+          `M 0 ${r * 0.3} Q ${-r * 0.12} ${-r * 0.2} ${-r * 0.1} ${-r * 0.7}`,
+          `M 0 ${r * 0.3} Q ${r * 0.12} ${-r * 0.2} ${r * 0.1} ${-r * 0.7}`,
+          `M 0 ${r * 0.3} Q ${-r * 0.2} ${r * 0.5} ${-r * 0.32} ${r * 0.72}`,
+          `M 0 ${r * 0.3} Q ${r * 0.2} ${r * 0.5} ${r * 0.32} ${r * 0.72}`,
+        ];
+        return arts.map((d, i) => <path key={i} d={d} stroke="#F6F3EA" strokeWidth={vw} strokeLinecap="round" fill="none" opacity={0.92} />);
       })()}
-      <line x1={r * 0.42} y1={-r * 0.3} x2={cx} y2={cy} stroke="#F6F3EA" strokeWidth={Math.max(1.5, r * 0.035)} strokeLinecap="round" />
-      <line x1={cx} y1={cy} x2={cx + r * 0.1} y2={cy - r * 0.17} stroke={clot > 0 ? '#6F746F' : '#F6F3EA'} strokeWidth={Math.max(1.5, r * 0.03)} strokeLinecap="round" strokeDasharray={clot > 0 ? `${r * 0.03} ${r * 0.03}` : undefined} />
+      <path d={`M 0 ${r * 0.3} Q ${r * 0.26} ${r * 0.26} ${cx} ${cy}`} stroke="#F6F3EA" strokeWidth={Math.max(1.5, r * 0.035)} strokeLinecap="round" fill="none" />
+      <path d={`M ${cx} ${cy} Q ${cx + r * 0.08} ${cy - r * 0.12} ${cx + r * 0.06} ${cy - r * 0.3}`} stroke={clot > 0 ? '#6F746F' : '#F6F3EA'} strokeWidth={Math.max(1.5, r * 0.03)} strokeLinecap="round" fill="none" strokeDasharray={clot > 0 ? `${r * 0.03} ${r * 0.03}` : undefined} />
       {clot > 0 && (
         <g transform={`translate(${cx} ${cy})`}>
           <circle r={(r * 0.045 + 1.5) * clot} fill={PING.clot} stroke={PING.ink} strokeWidth={Math.max(1.5, r * 0.012 + 1.5)} />

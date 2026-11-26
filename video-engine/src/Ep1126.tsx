@@ -253,16 +253,16 @@ const S1: React.FC<SceneProps> = ({p}) => {
             <BrainSlice x={0} y={-6} r={124} clot={1} seed={2} />
           </CTRing>
         </HeldTravel>
-        <g transform="translate(620 1062)">
-          <Ping f={f} x={0} y={0} s={0.8} emotion={f < 8 ? 'sleepy' : f < b(3) - 6 ? 'alert' : 'curious'} pop={pop} glow={0.9} cues={[b(1) + 6, b(46), b(2), b(3)]} seed={1} look={f > b(3) - 6 ? -1 : 0} />
+        <g transform="translate(830 1000)">
+          <Ping f={f} x={0} y={0} s={0.62} emotion={f < 8 ? 'sleepy' : f < b(3) - 6 ? 'alert' : 'curious'} pop={pop} glow={0.9} cues={[b(1) + 6, b(46), b(2), b(3)]} seed={1} look={f > b(3) - 6 ? -1 : 0} />
         </g>
-        <g transform="translate(170 760)">
+        <g transform="translate(170 700)">
           <circle cx={0} cy={0} r={10} fill={PING.steel} stroke={INK} strokeWidth={4} />
           <circle cx={-3} cy={-3} r={4} fill="#fff" opacity={0.3 + 0.7 * nailGlint} />
           <rect x={-70} y={24} width={140} height={40} rx={5} fill={PING.paper} stroke={INK} strokeWidth={3.5} />
           <text x={0} y={52} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={22} fill={INK}>RESULTS</text>
         </g>
-        <ColdWatch f={f} x={170} y={1080} />
+        <ColdWatch f={f} x={170} y={880} r={46} />
         <g data-band="ok" transform="translate(800 560)">
           <Odometer x={0} y={0} value={cells} digits={7} size={30} id="cells1126" commas label="BRAIN CELLS" fg={PING.bone} bg="#16262A" />
         </g>
@@ -371,7 +371,7 @@ const S4: React.FC<SceneProps> = ({p}) => {
   const fire = clamp01((f - b(10)) / 12);
   const ring = f > b(10) + 10 ? Math.max(0, 1 - (f - b(10) - 10) / 40) : 0;
   const tag = spr(f, b(11), 14);
-  const cx = 500 + 0.5 * 330, cy = 960 - 0.45 * 330;
+  const cx = 500 + 0.42 * 330, cy = 960 - 0.02 * 330;
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.06, 1.0, easeIO(fr, 0, p.dur)), fx: lerp(580, 520, easeIO(fr, 0, p.dur)), fy: lerp(900, 960, easeIO(fr, 0, p.dur))})} bg="#16262A">
       <SVG>
