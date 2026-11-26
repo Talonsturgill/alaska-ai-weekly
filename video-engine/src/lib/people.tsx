@@ -25,6 +25,13 @@ import {IdleFigure, FigureFinish} from './figureidle';
 // carries a face by default, brows, eyes that blink every 3.5 s on the seed's phase, a nose and a mouth.
 // face={false} keeps the modelled head without features.
 // Look-dev: `SuitLook` (scripts/probe_frames.sh SuitLook 0,0.5,1.0,1.5,2.0 or a remotion still).
+// Machine pass 2026-11-26 (queue held-figure-no-idle, repeat 2; Ep1126 seats 1 and 3: Kelly Isaacs "holds one
+// outstretched pose for all 8 filmstrip frames" at 75.1 s and 79.2 s). The cue performance runs about 1.7 s
+// around each cue, and between cues a held reach was pinned to one point (pose.armR moved it a fraction of a
+// pixel a frame), so a long gesture was a statue in every strip that missed a cue. holdLife() gives the held
+// figure a continuous life between cues: a reaching hand works (it talks, on two incommensurate periods, and
+// the elbow follows), the torso sways and the head nods. All of it scales by gain, so gain={0} is now a true
+// statue (the torso bob used to ignore it). scripts/suit_hold_check.py measures it on SuitHoldLook.
 // =============================================================================
 
 const INK = '#1B1A22';
@@ -84,6 +91,27 @@ export function stickThrow(f: number, seed: number, cues: number[], side: -1 | 1
   return work + hit;
 }
 
+/** The held figure's life BETWEEN cues, in figure units (h = 300): a reaching hand that works (hx, hy), the
+ *  elbow's share of it (ex, ey), a torso sway (sway) and bob (bob), and a head nod (nod, degrees; ny, units).
+ *  Two incommensurate periods per channel, the fastest about 0.55 s, so it never repeats inside a shot and
+ *  never trembles. Exported for the look-dev and suit_hold_check. */
+export function holdLife(f: number, seed: number, gain = 1) {
+  const g = Math.max(0, gain);
+  const a = seed * 1.37;
+  return {
+    hx: g * (18 * Math.sin(f / 8.7 + a) + 6 * Math.sin(f / 3.7 + a * 2.1)),
+    hy: g * (14 * Math.sin(f / 6.1 + a * 0.7) + 5 * Math.sin(f / 2.6 + a * 1.3)),
+    ex: g * 8 * Math.sin(f / 8.7 + a - 0.6),
+    ey: g * 6 * Math.sin(f / 6.1 + a * 0.7 - 0.5),
+    sway: g * (4.5 * Math.sin(f / 23 + a) + 1.8 * Math.sin(f / 9.1 + a * 1.9)),
+    bob: g * 2.5 * Math.sin(f / 11 + seed),
+    nod: g * (3.5 * Math.sin(f / 13.3 + a * 0.4) + 1.6 * Math.sin(f / 5.3 + a)),
+    ny: g * 2 * Math.sin(f / 7.9 + a * 1.6),
+    // the hanging arms swing a little with the sway, in the units the pose's armL/armR use
+    arm: g * 2 * Math.sin(f / 10.3 + a * 0.9),
+  };
+}
+
 export const Suit: React.FC<SuitProps> = ({
   f, x, y, s = 1, seed = 1, cues = [], coat = '#3A4048', trousers = '#2A2E36', shirt = '#F2EEE6',
   skin = '#C99A78', hair = '#4A3A30', tie = false, longHair = false, reach = 0, reachL = 0, facing = 1,
@@ -95,7 +123,10 @@ export const Suit: React.FC<SuitProps> = ({
   const step = Math.sin(walk * 0.35) * 14;
   const tieColor = typeof tie === 'string' ? tie : tie ? '#9C3F2A' : null;
   const shade = '#9A6E52';
-  const rx = 58 + reach * 70, ry = -128 - reach * 70;
+  const life = holdLife(f, seed, gain);
+  // a held reach works between cues: the hand travels with holdLife, scaled by how far the arm is out
+  const rx = 58 + reach * 70 + reach * life.hx, ry = -128 - reach * 70 + reach * life.hy;
+  const lx = -52 - reachL * 40 - reachL * life.hx * 0.8, ly = -128 - reachL * 80 + reachL * life.hy * 0.9;
   return (
     <FigureFinish x={x} footY={y} w={140 * s} h={hgt} keySide={keySide} rimColor={rimColor} outline={3.5 * s} rimWidth={3.2 * s} rim={0.62} shade={0.5}>
       <IdleFigure f={f} x={x} footY={y} h={hgt} seed={seed} cues={cues} gain={gain}>
@@ -131,7 +162,7 @@ export const Suit: React.FC<SuitProps> = ({
                 </g>
               );
             })}
-            <g transform={`translate(${pose.shift * 0.4},${pose.dip + Math.sin(f / 11 + seed) * 2.5 + drop}) rotate(${pose.lean} 0 -110)`}>
+            <g transform={`translate(${pose.shift * 0.4 + life.sway},${pose.dip + life.bob + drop}) rotate(${pose.lean + life.sway * 0.25} 0 -110)`}>
               <path d="M -50 -100 Q -56 -200 -30 -228 L 30 -228 Q 56 -200 50 -100 Q 0 -90 -50 -100 Z" fill={coat} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
               <path d="M -16 -226 L 0 -170 L 16 -226 Z" fill={shirt} stroke={INK} strokeWidth={3} />
               {tieColor && <path d="M -4 -200 L 4 -200 L 6 -150 L 0 -140 L -6 -150 Z" fill={tieColor} stroke={INK} strokeWidth={2} />}
@@ -167,20 +198,23 @@ export const Suit: React.FC<SuitProps> = ({
                 );
               })()}
               {op === 0 && (() => {
-                const l = `M -40 -214 Q ${-64 + pose.armL * 10 - reachL * 20} ${-170 - reachL * 30} ${-52 + pose.armL * 6 - reachL * 40} ${-128 - reachL * 80}`;
-                const r = `M 40 -214 Q ${70 + reach * 30} ${-190 + reach * 10} ${rx} ${ry + pose.armR * 6}`;
+                const aL = pose.armL + life.arm * (1 - reachL), aR = pose.armR - life.arm * (1 - reach);
+                const hlx = lx + aL * 6, hly = ly;
+                const hrx = rx, hry = ry + aR * 6;
+                const l = `M -40 -214 Q ${-64 + aL * 10 - reachL * 20 - reachL * life.ex} ${-170 - reachL * 30 + reachL * life.ey} ${hlx} ${hly}`;
+                const r = `M 40 -214 Q ${70 + reach * 30 + reach * life.ex} ${-190 + reach * 10 + reach * life.ey} ${hrx} ${hry}`;
                 return (
                   <>
                     <path d={l} stroke={INK} strokeWidth={22} fill="none" strokeLinecap="round" />
                     <path d={l} stroke={coat} strokeWidth={14} fill="none" strokeLinecap="round" />
-                    <circle cx={-52 + pose.armL * 6 - reachL * 40} cy={-128 - reachL * 80} r={11} fill={skin} stroke={INK} strokeWidth={3} />
+                    <circle cx={hlx} cy={hly} r={11} fill={skin} stroke={INK} strokeWidth={3} />
                     <path d={r} stroke={INK} strokeWidth={22} fill="none" strokeLinecap="round" />
                     <path d={r} stroke={coat} strokeWidth={14} fill="none" strokeLinecap="round" />
-                    <circle cx={rx} cy={ry + pose.armR * 6} r={11} fill={skin} stroke={INK} strokeWidth={3} />
+                    <circle cx={hrx} cy={hry} r={11} fill={skin} stroke={INK} strokeWidth={3} />
                   </>
                 );
               })()}
-              <g transform={`translate(${pose.headX * 0.4},0) rotate(${pose.headRot} 0 -250)`}>
+              <g transform={`translate(${pose.headX * 0.4},${life.ny}) rotate(${pose.headRot + life.nod} 0 -250)`}>
                 {longHair && <path d="M -40 -282 Q -54 -232 -36 -206 L -20 -214 Q -30 -250 -26 -282 Z M 40 -282 Q 54 -232 36 -206 L 20 -214 Q 30 -250 26 -282 Z" fill={hair} stroke={INK} strokeWidth={3} />}
                 {/* neck, with the jaw's cast shadow across its top */}
                 <path d="M -12 -232 L -12 -216 Q 0 -210 12 -216 L 12 -232 Z" fill={skin} stroke={INK} strokeWidth={3} />
