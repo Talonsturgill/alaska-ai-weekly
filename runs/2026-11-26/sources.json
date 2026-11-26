@@ -1,0 +1,56 @@
+{
+ "run_date": "2026-11-26",
+ "title": "Ahead of the Patient",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Alaskan hospitals are betting on AI to improve stroke care",
+   "outlet": "STAT, Katie Palmer, November 24th",
+   "url": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/",
+   "claims": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c10",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21",
+    "c24"
+   ]
+  },
+  {
+   "id": "s2",
+   "title": "Rural Health Transformation awards (Alaska section)",
+   "outlet": "Centers for Medicare & Medicaid Services, August 25th",
+   "url": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-160-million-bring-cutting-edge-technology-drones-prescription",
+   "claims": [
+    "c11",
+    "c12"
+   ]
+  },
+  {
+   "id": "s3",
+   "title": "RapidAI and Alaska Stroke Coalition join forces",
+   "outlet": "RapidAI press release, September 4th, 2024",
+   "url": "https://www.rapidai.com/press-release/rapidai-asc-join-forces-to-overcome-distance-and-deliver-equitable-care",
+   "claims": [
+    "c1",
+    "c2",
+    "c24"
+   ],
+   "credit": "RAPID AI RELEASE"
+  }
+ ]
+}
