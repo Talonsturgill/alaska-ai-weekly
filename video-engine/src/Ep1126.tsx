@@ -409,7 +409,7 @@ const S5: React.FC<SceneProps> = ({p}) => {
   const race = easeIO(f, b(13) - 2, 24);
   const lx = lerp(A[0], A[0] + 120, race), ly = lerp(A[1], A[1] - 30, race);
   const ox = 40, oy = 620;
-  const tx = lerp(ox + A[0], 900, race), ty = lerp(oy + A[1], 1120, race);
+  const tx = lerp(ox + A[0], 900, race), ty = lerp(oy + A[1], 1060, race);
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.05, easeIO(fr, 0, p.dur)), fx: 540, fy: lerp(960, 1000, easeIO(fr, 0, p.dur))})}>
       <SVG>
@@ -998,8 +998,8 @@ const S15: React.FC<SceneProps> = ({p}) => {
         </g>
         {ends > 0.02 && (
           <g>
-            <PegTag x={90} y={hy(70) - 120} text="UTQIAGVIK" f={f} k={ends} size={18} />
-            <PegTag x={1000} y={hy(1010) - 120} text="JUNEAU" f={f} k={ends} size={18} />
+            <PegTag x={190} y={hy(190) - 130} text="UTQIAGVIK" f={f} k={ends} size={18} />
+            <PegTag x={900} y={hy(900) - 130} text="JUNEAU" f={f} k={ends} size={18} />
           </g>
         )}
         <NearSnow f={f} seed={15} />
