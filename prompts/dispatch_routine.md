@@ -962,12 +962,14 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   hook block (pattern, frame1, headline 3 to 8 words, motion_by_s <= 1.3, loopback), audio_arc
   (build_steps, dip_at, riser_at, silence_at, payoff_at, button_pattern, optional `bed` nodes
   `{line, offset, level}`; dispatch_mix derives the bed arc and the riser beat from this block;
-  `ambience` from `"rain"`, `"room"` (an interior at rest) and `"wind"` (dusk wind and wire hum),
+  `ambience` from `"rain"`, `"room"` (an interior at rest), `"wind"` (dusk wind and wire hum) and
+  `"storm"` (a low rumble with thunder rolls the mix places in the VO's breaths),
   and/or `ambience_stem` (a repo WAV), put the world's continuous bed under the film, so an
   interior or dusk film asks for room or wind, and Gate 0A fails a board whose shot ambient lines
-  name rain without one),
+  name rain, or thunder and a storm, without one),
   divergence_note. Plus
-  storyboard.md for humans. A per-run board script (copy `scripts/board_1015.py`) resolves word
+  storyboard.md for the critics, rendered from the JSON by `python3 scripts/board_md.py` after
+  every gen and conform (it stamps the JSON's hash, and Gate 0A fails a stale or unstamped one). A per-run board script (copy `scripts/board_1015.py`) resolves word
   anchors through `scripts/board_anchor.py`, so after a VO edit its `conform` refuses to write and
   names every beat anchored to a word the new read no longer says.
 - ENGAGEMENT (docs/craft/ENGAGEMENT.md, read in the directors room): `reveals` [{t, type, what,

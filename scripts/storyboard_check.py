@@ -586,6 +586,22 @@ def main():
                             f"banned cookie-cutter shortcut. Set derived_from: scratch and mean it "
                             f"(shared HELPERS are imported from dispatch_core, not copied).")
 
+    # ---- 13. THE CRITICS' PROSE IS THIS BOARD (machine pass 2026-11-27) ----
+    # scripts/board_md.py. On 11-27 storyboard.md was regenerated from an earlier JSON and three
+    # Gate 0 critics reviewed the stale prose in round 2. storyboard.md now carries the sha256 of
+    # the JSON it was rendered from; a stamp naming another JSON always fails, and from 11-28 a
+    # missing or unstamped storyboard.md fails too (earlier runs wrote it by hand).
+    try:
+        import board_md as _bm
+        _why = _bm.stale(sb_path)
+        _md = Path(sb_path).with_name("storyboard.md")
+        _named_other = bool(_why) and "another storyboard.json" in _why
+        if _why and (_named_other or str(sb.get("run_date") or "") >= _bm.FIRST_DATE):
+            problems.append(f"board-md: {_why}")
+        print(f"  [board-md] " + (_why or f"{_md.name} rendered from this storyboard.json"))
+    except Exception as _e:
+        print(f"  [board-md] could not run ({_e}); storyboard.md not compared with the JSON")
+
     if problems:
         for p in problems:
             print(f"FAIL [storyboard_check] {p}")

@@ -175,6 +175,43 @@ def conformed_moves(board, start, film_end):
     return result
 
 
+# A PHYSICAL ACTION GETS A STRIP ACROSS ITS WHOLE BEAT (machine pass 2026-11-27; queue:
+# action-outside-strip-window). Every motion strip above is 8 CONSECUTIVE frames, 0.27 s, placed
+# 0.2 to 0.45 s into its beat, and the engine stages a physical action later and longer than
+# that. On 11-27 the S6 WORLD column slides for 20 frames and is shoved at +0.67 s, its strip
+# covered +0.07 to +0.34 s, and seat 1 graded the shove absent on cuts 3 and 4 while it played
+# in the film. So every beat whose draw.action names a physical verb, and runs ACTION_MIN_S or
+# longer, ALSO gets an action strip: 8 frames spread evenly from its onset to its end (at most
+# ACTION_MAX_S), named filmstrip_action_<slug>_<beat id>.jpg. The consecutive strips stay exactly
+# as held_beat_check, figure_look_check and forest_look_check model them.
+PHYSICAL = re.compile(
+    r"\b(slid(?:e|es|ing)|shov(?:e|es|ed|ing)|push(?:es|ed|ing)?|pull(?:s|ed|ing)?|clack(?:s|ed)?|"
+    r"slam(?:s|med)?|knock(?:s|ed)?|drop(?:s|ped)?|fall(?:s)?|tip(?:s|ped)?|topple(?:s|d)?|"
+    r"rock(?:s|ed)?|sway(?:s|ed)?|swing(?:s)?|roll(?:s|ed)?|lift(?:s|ed)?|lean(?:s|ed)?|"
+    r"wobble(?:s|d)?|bounce(?:s|d)?|stamp(?:s|ed)?|strike(?:s)?|struck|snap(?:s|ped)?|"
+    r"pour(?:s|ed)?|rack(?:s|ed)?|hammer(?:s|ed)?|thump(?:s|ed)?|jolt(?:s|ed)?|shake(?:s)?|"
+    r"spin(?:s)?|flip(?:s|ped)?|hop(?:s|ped)?|jump(?:s|ed)?|land(?:s|ed)?|touch(?:es|ed)?|"
+    r"grab(?:s|bed)?|throw(?:s)?|toss(?:es|ed)?|kick(?:s|ed)?|crash(?:es|ed)?)\b", re.I)
+ACTION_MIN_S = 0.9
+ACTION_MAX_S = 2.4
+
+
+def action_windows(board, film_end):
+    """[(name, beat_id, t0, t1)] for every beat whose draw.action names a physical verb and runs
+    ACTION_MIN_S or longer: the window an 8-frame action strip spreads across, inside the beat."""
+    span = _spans(board["beats"], film_end)
+    out = []
+    for beat in board["beats"]:
+        action = str((beat.get("draw") or {}).get("action") or "")
+        lo, hi = span[beat["id"]]
+        if not PHYSICAL.search(action) or hi - lo < ACTION_MIN_S:
+            continue
+        t0, t1 = lo + 2 / 30.0, min(hi - 2 / 30.0, lo + ACTION_MAX_S)
+        out.append((f"action_{_slug(beat['draw'].get('subject', ''))}_{beat['id']}", beat["id"],
+                    round(t0, 3), round(t1, 3)))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--video", default=os.path.join(OUT, "dispatch_master.mp4"))
@@ -431,6 +468,41 @@ def main():
         print(f"  filmstrip {name}: vo line {line} +{off}s -> centred {centre:.2f}s, "
               f"strip starts {t0:.2f}s, motion {changed:.1f}% peak {peak}")
 
+    for name, bid, t0, t1 in action_windows(_board, end):
+        step = max(1, int(round((t1 - t0) * 30 / 7)))
+        subprocess.run(["ffmpeg", "-y", "-ss", f"{t0:.3f}", "-i", a.video, "-t", f"{t1 - t0 + 0.1:.3f}",
+                        "-vf", f"select='not(mod(n\\,{step}))'", "-fps_mode", "passthrough",
+                        "-frames:v", "8", "-q:v", "3", os.path.join(EV, f"s_{name}_%d.jpg"), "-v", "error"],
+                       check=True)
+        g = sorted(glob.glob(os.path.join(EV, f"s_{name}_*.jpg")),
+                   key=lambda q: int(q.rsplit("_", 1)[1].split(".")[0]))
+        if len(g) < 2:
+            for q in g:
+                os.remove(q)
+            print(f"  action strip {name}: under two frames decoded in {t0:.2f}-{t1:.2f}s, skipped")
+            continue
+        xs = [Image.open(q).convert("RGB") for q in g]
+        d = ImageChops.difference(xs[0].convert("L"), xs[-1].convert("L"))
+        hist = d.histogram()
+        changed = 100.0 * sum(hist[12:]) / (xs[0].size[0] * xs[0].size[1])
+        peak = max((i for i, c in enumerate(hist) if c), default=0)
+        span_s = (len(xs) - 1) * step / 30.0
+        motion[name] = {"centre_s": round(t0 + span_s / 2, 2), "changed_pct": round(changed, 1),
+                        "peak_delta": peak, "window_start_s": round(t0, 2),
+                        "window_end_s": round(t0 + span_s, 2), "frame_step": step,
+                        "action_strip": True, "straddled_cut": False, "within_shot": True}
+        t2, h2 = int(w * 0.34), int(h * 0.34)
+        st = Image.new("RGB", (len(xs) * t2, h2 + 34), "white")
+        for i, im in enumerate(xs):
+            st.paste(im.resize((t2, h2)), (i * t2, 34))
+        ImageDraw.Draw(st).text(
+            (8, 9), f"{name}  ACTION STRIP {t0:.2f}s to {t0 + span_s:.2f}s, every {step} frames, the "
+                    f"whole beat  frame 1 vs last: {changed:.1f}% changed (peak {peak}/255)", fill="black")
+        st.save(os.path.join(EV, f"filmstrip_{name}.jpg"), quality=92)
+        for q in g:
+            os.remove(q)
+        print(f"  action strip {name}: {t0:.2f}-{t0 + span_s:.2f}s every {step} frames, motion {changed:.1f}%")
+
     json.dump({"note": "frame 1 vs frame 8 of each filmstrip window, measured on the "
                        "delivered cut. changed_pct is the share of pixels differing by "
                        "more than 12/255. A judge who cannot SEE motion in a strip should "
@@ -578,6 +650,18 @@ def _self_test():
         ("after the last shot (credits)" in txt, "a still past the board is the credits"),
         ("centre   2.20s  shot 1  beat 2 (frame)  changed 4.1%" in txt, "a strip carries centre, beat and motion"),
         ("_p_tmp" not in txt, "probe scratch is not listed"),
+    ]
+    ab = {"beats": [{"id": 1, "t": "0.000-1.500", "draw": {"subject": "WORLD column", "action": "slides in beside Alaska's"}},
+                    {"id": 2, "t": "1.500-2.000", "draw": {"subject": "plank", "action": "drops"}},
+                    {"id": 3, "t": "2.000-6.000", "draw": {"subject": "seal", "action": "glows amber"}},
+                    {"id": 4, "t": "6.000-9.500", "draw": {"subject": "two columns", "action": "touch shoulders and rock"}}]}
+    aw = action_windows(ab, 10.0)
+    checks += [
+        ([x[1] for x in aw] == [1, 4], "action strips go to physical beats of 0.9 s or more only"),
+        (aw and aw[0][0] == "action_world_column_1", "an action strip is named for its beat id"),
+        (aw and abs(aw[0][2] - 2 / 30.0) < 1e-3 and abs(aw[0][3] - (1.5 - 2 / 30.0)) < 1e-3,
+         "an action window spans its beat, inset two frames"),
+        (len(aw) == 2 and abs(aw[1][3] - (6.0 + ACTION_MAX_S)) < 1e-3, "a long beat's window stops at ACTION_MAX_S"),
     ]
     for ok, what in checks:
         print(f"  [{'x' if ok else ' '}] {what}")
