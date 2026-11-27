@@ -153,6 +153,11 @@ step figure_rig       2 python3 scripts/figure_rig_check.py
 # backwards for 3.1 s until label_footprint caught it on cut 4. Fails any <text> in lib or the episode
 # drawn under an odd number of `facing` mirrors; five more lib characters had the same latent defect.
 step mirror_text      2 python3 scripts/mirror_text_check.py
+# Machine pass 2026-11-27 (quote-slip-char-wrap): Ep1127 S9 wrapped a typed quote with fixed
+# 22-character slices, split WERE into W / ERE, and a judge called it a hard blocker while text_fit
+# measured every row as fitting. Fails a literal slice bound that cuts a word of a spaced string
+# constant. Clean on every shipped Ep1xxx; catches the cut-1 Ep1127 source.
+step typed_wrap       2 python3 scripts/typed_wrap_check.py
 # Machine pass 2026-11-06, a repeat offender (empty top of the square named by every seat on 10-31,
 # 11-02 and 11-06). held_plan's Chrome frames also measure the top quarter of the square (master y
 # 420 to 690); this fails the source gates when the film mean is over the ceiling calibrated on eight
