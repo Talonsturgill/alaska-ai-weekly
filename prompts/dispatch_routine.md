@@ -968,7 +968,8 @@ no mood backgrounds, no 3D worlds, no flat single-tone fills, no glyphs that rea
   interior or dusk film asks for room or wind, and Gate 0A fails a board whose shot ambient lines
   name rain, or thunder and a storm, without one),
   divergence_note. Plus
-  storyboard.md for humans. A per-run board script (copy `scripts/board_1015.py`) resolves word
+  storyboard.md for the critics, rendered from the JSON by `python3 scripts/board_md.py` after
+  every gen and conform (it stamps the JSON's hash, and Gate 0A fails a stale or unstamped one). A per-run board script (copy `scripts/board_1015.py`) resolves word
   anchors through `scripts/board_anchor.py`, so after a VO edit its `conform` refuses to write and
   names every beat anchored to a word the new read no longer says.
 - ENGAGEMENT (docs/craft/ENGAGEMENT.md, read in the directors room): `reveals` [{t, type, what,
