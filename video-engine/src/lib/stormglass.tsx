@@ -137,7 +137,7 @@ export const StormGlass: React.FC<{
   const sealText = seal === '2019' ? '2019' : seal === 'test' ? 'TEST' : '';
   const sealText2 = seal === 'test' ? 'OUTSIDE' : '';
   return (
-    <g transform={`translate(${x} ${y}) scale(${s * facing} ${s}) translate(0 ${-bp.dip * 6})`}>
+    <g transform={`translate(${x} ${y}) scale(${s * facing} ${s}) translate(0 ${-bp.dip * 9 + 2.5 * Math.sin(f / 17 + seed)}) rotate(${0.5 * Math.sin(f / 23 + seed) + bp.skew * 0.2} 0 0)`}>
       <defs>
         <FormGradient id={`${id}b`} t={tb} />
         <linearGradient id={`${id}g`} x1="0" x2="1" y1="0" y2="0">
@@ -403,13 +403,13 @@ export const SensDial: React.FC<{f: number; x: number; y: number; r?: number; va
     const [ax, ay] = pt(v, r * 0.86), [bx, by] = pt(v, r * (v % 10 === 0 ? 0.72 : 0.79));
     ticks.push(<path key={v} d={`M ${ax} ${ay} L ${bx} ${by}`} stroke={SG.ink} strokeWidth={v % 10 === 0 ? 5 : 2.5} />);
     if (v % 10 === 0) {
-      const [lx, ly] = pt(v, r + 50);
+      const [lx, ly] = pt(v, r * 0.64);
       ticks.push(<text key={`l${v}`} x={lx} y={ly + 9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={SG.ink}>{v}</text>);
     }
   }
   const bk = clamp01(bandK);
   const [b0x, b0y] = pt(band[0], r * 0.88), [b1x, b1y] = pt(band[1], r * 0.88), [c1x, c1y] = pt(band[1], r * 0.66), [c0x, c0y] = pt(band[0], r * 0.66);
-  const [nx, ny] = pt(value, r * 0.8);
+  const [nx, ny] = pt(value, r * 0.5);
   const j = clamp01(jump);
   return (
     <g transform={`translate(${x} ${y - j * 14})`}>
@@ -424,7 +424,7 @@ export const SensDial: React.FC<{f: number; x: number; y: number; r?: number; va
       <path d={`M 0 0 L ${nx} ${ny}`} stroke={SG.inkL} strokeWidth={7} strokeLinecap="round" />
       <circle cx={nx} cy={ny} r={9} fill={SG.brassL} stroke={SG.ink} strokeWidth={3} />
       <circle cx={0} cy={0} r={22} fill={tb.key} stroke={SG.ink} strokeWidth={5} />
-      <text x={0} y={-r * 0.3} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={SG.ink}>% PER °C</text>
+      <text x={0} y={30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={SG.ink}>% PER °C</text>
     </g>
   );
 };

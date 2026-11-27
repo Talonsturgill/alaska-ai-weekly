@@ -530,7 +530,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <RangeColumn f={f} x={300} y={GROUND} w={150} unit={56} lo={2.16} hi={6.94} floorK={floor} grow={grow} seed={3} label="ALASKA" />
         </HeldProp>
         {world > 0.01 && (
-          <g transform={`translate(${lerp(400, 0, world)} 0)`}>
+          <g transform={`translate(${lerp(400, 0, world) + (f >= b(41) ? 26 * Math.exp(-(f - b(41)) / 8) * Math.cos((f - b(41)) / 2.4) : 0)} 0)`}>
             <RangeColumn f={f} x={500} y={GROUND} w={110} unit={56} lo={1.76} hi={2.4} grow={1} seed={4} label="WORLD" />
           </g>
         )}
@@ -589,7 +589,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
           {stampOn && <g transform={`translate(0 -330) rotate(-6) scale(${1 + 0.3 * Math.exp(-st / 4)})`}><rect x={-120} y={-34} width={240} height={68} rx={8} fill={SG.paper} stroke={INK} strokeWidth={5} /><text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={24} fill={INK}>NO FIRE</text></g>}
         </Easel>
         <HeldTravel f={f} x={160} y={620} w={300} h={660} mode="sweep" seed={8}>
-          <StormGlass f={f} x={300} y={GROUND} s={0.9} emotion="calm" seal="2019" look={lerp(-0.8, 0.8, easeIO(f, 0, 30))} cues={[b(18), b(19)]} seed={12} />
+          <StormGlass f={f} x={300} y={GROUND} s={0.9} squash={st >= 0 && st < 10 ? Math.sin((st / 10) * Math.PI) * 0.6 : 0} emotion="calm" seal="2019" look={lerp(-0.8, 0.8, easeIO(f, 0, 30))} cues={[b(18), b(19)]} seed={12} />
         </HeldTravel>
         <Envelope f={f} x={150} y={GROUND + 70} scale={0.4} lines={['ML LIGHTNING MODELS']} rot={-6} />
       </SVG>
@@ -616,7 +616,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <rect x={-80} y={-80} width={1240} height={500} fill={SG.mauve} />
         <path d="M -80 420 Q 300 380 600 410 Q 860 430 1160 400 L 1160 520 L -80 520 Z" fill={SG.plumL} stroke={INK} strokeWidth={4} />
         <StormGlass f={f} x={880} y={760} s={0.45} emotion="calm" seal="2019" sealGlow={0.3} qtag={ease(f, b(21), 14)} grow={1} cues={[b(20), b(21)]} seed={13} label={false} />
-        <Thunderhead f={f} x={480} y={330} w={1000} seed={9} />
+        {Array.from({length: 5}, (_, i) => <ellipse key={i} cx={(i * 260 + f * 0.6) % 1300 - 100} cy={200 + 60 * (i % 2)} rx={200} ry={60} fill={SG.mauveL} opacity={0.5} />)}
         <TopTussock f={f} seed={62} y0={560} y1={1900} n={46} />
         <HeldTravel f={f} x={240} y={640} w={600} h={460} mode="shadow" seed={52}>
         <g transform={`translate(540 900) rotate(${-4 + 1.5 * Math.sin(f / 13)})`}>
@@ -662,13 +662,13 @@ const S10: React.FC<SceneProps> = ({p}) => {
         <g transform={`translate(${f >= b(22) && f < b(22) + 24 ? Math.sin(f * 1.7) * 5 : 0} 0)`}><Envelope f={f} x={150} y={1200} scale={0.34} lines={['ML LIGHTNING MODELS']} rot={-8} /></g>
         {strip > 0.01 && (
           <g>
-            <rect x={540 - 420 * strip} y={1284} width={840 * strip} height={40} fill={SG.sepia} stroke={INK} strokeWidth={4} />
-            {Array.from({length: Math.floor(14 * strip)}, (_, i) => <path key={i} d={`M ${540 - 400 * strip + i * 60} 1304 q 15 -12 30 0 q 15 12 30 0`} stroke={SG.peat} strokeWidth={3} fill="none" />)}
-            <text x={150} y={1312} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK} opacity={strip * (1 - easeIO(f, b(25) - 6, 8))}>1900S</text>
+            <rect x={540 - 420 * strip} y={1262} width={840 * strip} height={36} fill={SG.sepia} stroke={INK} strokeWidth={4} />
+            {Array.from({length: Math.floor(14 * strip)}, (_, i) => <path key={i} d={`M ${540 - 400 * strip + i * 60} 1280 q 15 -12 30 0 q 15 12 30 0`} stroke={SG.peat} strokeWidth={3} fill="none" />)}
+            <text x={150} y={1288} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK} opacity={strip * (1 - easeIO(f, b(25) - 16, 8))}>1900S</text>
           </g>
         )}
         <HeldTravel f={f} x={230} y={920} w={540} h={360} mode="sweep" seed={53}><SensDial f={f} x={500} y={1230} r={240} value={v} band={[8, 17]} bandK={band} jump={f >= b(25) + 10 && f < b(25) + 20 ? 1 : 0} /></HeldTravel>
-        <StormGlass f={f} x={940} y={1216} s={0.55} emotion={swing > 0.5 ? 'worried' : 'curious'} seal="2019" qtag={1} sealGlow={lerp(0.2, 1, easeIO(f, b(26), 20))} grow={lerp(0.6, 1, easeIO(f, b(26), 30))} cues={[b(22), b(25), b(26)]} seed={14} label={false} />
+        <StormGlass f={f} x={962} y={1216} s={0.55} emotion={swing > 0.5 ? 'worried' : 'curious'} seal="2019" qtag={1} sealGlow={lerp(0.2, 1, easeIO(f, b(26), 20))} grow={lerp(0.6, 1, easeIO(f, b(26), 30))} cues={[b(22), b(25), b(26)]} seed={14} label={false} />
       </SVG>
     </Frame>
   );
@@ -788,7 +788,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
             <TestCard x={card.x} y={lerp(GROUND, card.y, rise)} rot={(1 - rise) * 180 + 2 * Math.sin(f / 11)} />
           </g>
         )}
-        {cord > 0.01 && <path d={`M ${card.x - 150} ${card.y - 60} L ${card.x + 150} ${card.y - 60} L ${lerp(card.x, 360, cord) + 40} ${GROUND - 520} L ${lerp(card.x, 360, cord) - 120} ${GROUND - 520} Z`} fill={SG.plum} opacity={0.32 * cord} />}
+        {cord > 0.01 && <path d={`M ${card.x - 20} ${GROUND + 8} L ${card.x + 20} ${GROUND + 8} L ${lerp(card.x, 960, cord) + 60} ${GROUND + 40} L ${lerp(card.x, 960, cord) - 40} ${GROUND + 40} Z`} fill={SG.plum} opacity={0.4 * cord} data-band="ok" />}
       </SVG>
     </Frame>
   );
@@ -885,7 +885,7 @@ const S16: React.FC<SceneProps> = ({p}) => {
           <rect x={714} y={GROUND - 360} width={12} height={370} fill={SG.woodD} stroke={INK} strokeWidth={3} />
           <ContactShadow cx={720} cy={GROUND + 4} rx={20} ry={5} opacity={0.4} />
           <TestCard x={720} y={GROUND - 420} rot={2 * Math.sin(f / 11)} />
-          <path d={`M 570 ${GROUND - 490} L 870 ${GROUND - 490} L 400 ${GROUND - 520} L 240 ${GROUND - 520} Z`} fill={SG.plum} opacity={0.3} />
+          <path d={`M 700 ${GROUND + 8} L 740 ${GROUND + 8} L 1000 ${GROUND + 40} L 900 ${GROUND + 40} Z`} fill={SG.plum} opacity={0.4} data-band="ok" />
         </g>
       </SVG>
     </Frame>
