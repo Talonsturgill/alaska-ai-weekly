@@ -1,0 +1,20 @@
+By twenty-one hundred, under high emissions, Alaska could get more than double, up to nearly seven times, today's ground strikes.
+That's from a new study in Earth's Future.
+Andreas Krause's team built it with a machine learning model.
+It learned from six everyday weather readings, and where ground strikes landed.
+Remember this. It trained on one year of data, twenty nineteen.
+On today's climate, most of Alaska got under one strike per square kilometer a year.
+That future could bring a hundred sixteen to five hundred ninety-four percent more.
+For the world's land, seventy-six to a hundred forty percent more.
+Lightning fires burned at least ninety-three percent of Alaska's wildfire acres every year for a decade.
+The study didn't model fire, only lightning, the spark behind those acres.
+Krause, the lead author, said, I was quite surprised that the projections were so high.
+Run backward on the nineteen hundreds, the model estimated about twelve percent more lightning per degree.
+Earlier studies projected eight to seventeen percent per degree. Run forward, its own twelve could nearly triple, to thirty percent.
+Per the press release, earlier studies differ from this one mostly in math. Krause calls lightning's response quite a large uncertainty.
+A month earlier, Krause and Anja Rammig posted a preprint testing lightning models. A simple average beat the machine learning ones.
+Their advice, test models outside their training conditions.
+In fairness, this paper says its model beat a regression and three existing formulas.
+Read it as a range. Even its low end could more than double Alaska's lightning.
+The whole range waits on a test outside its training data.
+One June Sunday in twenty twenty-four put nearly seven thousand strikes on Alaska. Who should run that test?

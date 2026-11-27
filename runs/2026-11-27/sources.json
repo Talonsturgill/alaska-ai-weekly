@@ -1,0 +1,13 @@
+{
+ "run_date": "2026-11-27",
+ "title": "Trained on 2019",
+ "sources": [
+  {"id": "s1", "title": "Lightning could strike over twice as often in a warming world (press release)", "outlet": "AGU, November 24th", "credit": "AGU", "url": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/", "claims": ["c2", "c3", "c5", "c7", "c8", "c9", "c11", "c12", "c13", "c14", "c15", "c16", "c17", "c18", "c25"]},
+  {"id": "s2", "title": "Large Projected Increase in Cloud-to-Ground Lightning Under Future Climate (Krause, Gregor, Qu, Veraverbeke, Rammig), Earth's Future, doi 10.1029/2026EF008820", "outlet": "Earth's Future (AGU journal), November 24th", "credit": "EARTH'S FUTURE", "url": "https://doi.org/10.1029/2026EF008820", "claims": ["c1", "c2", "c4", "c5", "c6", "c10", "c11", "c13", "c22"]},
+  {"id": "s3", "title": "Cloud-to-ground lightning could more than double by 2100, new study projects", "outlet": "Nature World News, Elias Reed, November 25th", "credit": "NATURE WORLD NEWS", "url": "https://www.natureworldnews.com/articles/74051/20261125/cloud-ground-lightning-could-more-double-2100-new-study-projects.htm", "claims": ["c3", "c8", "c15", "c25"]},
+  {"id": "s4", "title": "A Simple Climatology Benchmark Outperforms Machine-Learning Lightning Parameterizations (Krause, Rammig), preprint, doi 10.22541/essoar.15010630/v1", "outlet": "ESS Open Archive preprint, October 17th, not peer reviewed", "credit": "ESSOAR PREPRINT", "url": "https://doi.org/10.22541/essoar.15010630/v1", "claims": ["c19", "c20", "c21"]},
+  {"id": "s5", "title": "Alaska Wildfires 2024 handout, historical table", "outlet": "Alaska Division of Forestry and Fire Protection", "credit": "AK DIVISION OF FORESTRY", "url": "https://forestry.alaska.gov/forestry/Assets/pdfs/firestats/2024%20Alaska%20Wildfires%20HO.pdf", "claims": ["c23", "c24"]},
+  {"id": "s6", "title": "Thousands of lightning strikes were recorded in Southwest Alaska Sunday", "outlet": "Alaska Division of Forestry and Fire Protection (akfireinfo.com), June 24th, 2024", "credit": "AK DIVISION OF FORESTRY", "url": "https://akfireinfo.com/2024/06/24/thousands-of-lightning-strikes-were-recorded-in-southwest-alaska-sunday-leading-to-possible-new-fires/", "claims": ["c26"]},
+  {"id": "s7", "title": "Lightning as a major driver of recent large fire years in North American boreal forests (Veraverbeke et al.), Nature Climate Change", "outlet": "Nature Climate Change, 2017", "credit": "NATURE CLIMATE CHANGE", "url": "https://www.nature.com/articles/nclimate3329", "claims": ["c27"]}
+ ]
+}

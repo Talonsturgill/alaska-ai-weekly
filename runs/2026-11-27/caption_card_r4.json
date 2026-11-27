@@ -1,0 +1,19 @@
+{
+ "source": "out/dispatch/post.txt",
+ "rubric": "config/linkedin_caption_rubric.yaml",
+ "hard_fails": [],
+ "scores": {
+  "hook_scroll_stop": 8,
+  "point_of_view_take": 8.5,
+  "substance_specificity": 8.5,
+  "readability_restraint": 8,
+  "engagement_design": 8.5,
+  "brand_voice_accuracy": 8.5,
+  "hashtag_craft": 8
+ },
+ "weighted_total": 8.29,
+ "ship_threshold": 8.5,
+ "ship": false,
+ "weakest_criterion": "hook_scroll_stop",
+ "one_sentence_fix": "Open line 1 on the number with the qualifier at its end, and lead line 2 with the fire stake."
+}

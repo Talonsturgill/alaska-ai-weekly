@@ -1,0 +1,8 @@
+{
+ "ship": true,
+ "findings": [],
+ "rounds": 4,
+ "note": "Round 1 found 7 accuracy risks (dropped hedges on lines 6, 7, 12; the math difference attached to the wrong comparison; Krause's uncertainty quote re-aimed; a floor/ceiling trust split the record doesn't make; no 2100 horizon). Round 2 found 2 (a backward run framed as a check; 'three times' read against earlier studies). Round 3 clean. Round 4 (after cut 1's editor): lines 12, 13, 17, 18 re-read, clean.",
+ "script_sha256": "f42d2a4b1d8259087221337f1256efd2b9768c61c1d36e938973f9d3d8a495be",
+ "claims_sha256": "13e02385c1cdee32f40634921731252f43ea719bebee504fc56f4afe795fc58f"
+}

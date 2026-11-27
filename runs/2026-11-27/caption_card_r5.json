@@ -1,0 +1,19 @@
+{
+ "source": "out/dispatch/post.txt",
+ "rubric": "config/linkedin_caption_rubric.yaml",
+ "hard_fails": [],
+ "scores": {
+  "hook_scroll_stop": 8.5,
+  "point_of_view_take": 8.5,
+  "substance_specificity": 8.5,
+  "readability_restraint": 7.5,
+  "engagement_design": 8.5,
+  "brand_voice_accuracy": 8.5,
+  "hashtag_craft": 8
+ },
+ "weighted_total": 8.33,
+ "ship_threshold": 8.5,
+ "ship": false,
+ "weakest_criterion": "readability_restraint",
+ "one_sentence_fix": "Remove the duplicate 93 percent figure and the budget echo."
+}

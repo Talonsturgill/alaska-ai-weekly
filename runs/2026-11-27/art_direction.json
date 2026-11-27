@@ -1,0 +1,126 @@
+{
+  "run_date": "2026-11-27",
+  "title": "Trained on 2019",
+  "treatment": "Winner B (the Dramatist) with grafts from the Explainer (a paper TODAY token and a hatched lemon range band, the sensitivity dial against an EARLIER STUDIES band), the Comedian (the AVERAGE ruler that lies there and wins, a raven that ducks the bolts) and the Enthusiast (the June 23rd, 2024 storm day on the map). Hero recast from a faced fork tree (11-16's VoteTree idiom) to a teardrop glass instrument labelled THE MODEL.",
+  "palette": {
+    "roles": {
+      "sky": "#2F3A3A green-slate storm sky at the top of frame to #55606A pewter at the anvil (#AEB8BC on the anvil's lit crown), with #F2A65A golden apricot ONLY as a band of low midnight light below the anvil on the right; the band thins act by act (wide in Act 1, a sliver by S15) and the storm wall arrives in S15 to S16",
+      "ground": "#6B6A3A tussock khaki with #8A9A4C lit tufts, #1D2A22 taiga conifers, #3E3226 peat, a few muted #A65A7E fireweed BUDS only (late June Interior), never a flower field",
+      "hero": "the glass is smoke-lilac #DCD6E6 with #A79FB8 shade and a dark #3E3654 lens behind its face, crystals #F6F1E2, in a #B98A3A brass bracket with #E9C46A highlights",
+      "lightning": "#FFE45C lemon = bolts, the hatched range columns, strike marks, and the glass's inner charge for about 6 frames after a bolt; NOTHING ELSE (tap flows are clear glass, rosettes are brass and parchment)",
+      "seal": "#7E2630 oxblood = the wax seal ALONE (the dial needle is aubergine ink with a brass tip)",
+      "shadow": "#1A1424 aubergine ink for outlines and cast shadows",
+      "paper": "#EFE6D2 parchment for plates, the envelope, the test card, the name slip"
+    },
+    "mood": "the charged hush before an Interior thunderstorm on a June night that never gets dark",
+    "divergence": "See the storyboard divergence_note: green-slate (hue about 180) plus a lemon accent (about 52) against 11-26 celadon and orchid (318), 11-25 bone and amber (38), 11-24 olive and vermilion (8), 11-23 apricot-plum and scarlet (355). The glass is smoke-lilac, not celadon; fireweed is muted buds."
+  },
+  "light": {
+    "time_of_day": "about 9 to 10 p.m. in late June in the Interior, sun low in the north under a thunderhead (evening is when Interior storms peak)",
+    "direction": "key from frame right, low golden apricot in Act 1, at half strength with pewter rising in Act 2 and 3, and in S15 to S16 a pewter key with lemon flashes and a sliver of apricot rim; cool pewter fill from the anvil; each bolt is a one- to three-frame lemon flash that lights the glass from inside",
+    "key_fill_rim": "key from frame right tracking the band (apricot in Act 1, half apricot with pewter rising in Acts 2 and 3, pewter with an apricot sliver in S15 and S16), pewter fill from the anvil, lemon rim on the glass after a bolt",
+    "depth": "four planes everywhere: anvil and sky, a far ridge with an old burn scar, taiga conifers, near tussock and fireweed buds; tones(), RimLight and ContactShadow on every grounded object; the world is drawn by hand in the episode (a Ridge component), not DuskWorld, so its palette is this film's"
+  },
+  "shape_language": "The glass is a soft TEARDROP (wide bulb low, drawn neck high) sealed with wax, held by two brass straps on a bracket: soft-and-fragile. The world is jagged: zigzag bolts, spiky conifers, the hard hatched column, the stiff ruler, the toothed gears. Silhouette rule vs 11-23 SampleTube (a stoppered upright cylinder in a lab rack): teardrop vs cylinder, wax-sealed neck vs stopper, field bracket vs rack. It is labelled THE MODEL only; the words 'storm glass' never appear on screen.",
+  "casting": {
+    "hero": "StormGlass (NET-NEW, lib/stormglass.tsx): a teardrop flask (wide bulb low, drawn neck high) with an oxblood wax seal over the neck tip on a slim brass collar, two brass straps on a brass bracket backplate with a small finial clear above the seal, eyes in a dark lens in the bulb, crystals growing from the bottom only, six brass taps on the bracket foot (clear glint), lemon charge only for a few frames after a bolt, seal 'plain' or '2019' (the 2019 stays crisp in every state; a parchment question-mark tag on the collar carries the 60 s state), `cues` for the beat idle. Labelled THE MODEL by the scene plates; the foot label is texture.",
+    "supporting_net_new": "Thunderhead, Bolt, StrikeToken (the paper TODAY token), RangeColumn (the hatched lemon range band on a thin mast, one treatment floor to ceiling), SensDial, AverageRuler, ModelRacer (faceless blocks), all in lib/stormglass.tsx",
+    "shelf": "AlaskaOutline + akProject (lib/akgeo.tsx) for the chalked true outline, the survey-sheet outline and the storm map; Spruce (lib/rail.tsx) as taiga conifers; Raven (lib/fauna.tsx) as the ducking background gag; Envelope (lib/refinery.tsx) for the preprint; HeldTravel/HeldProp; ContactShadow/RimLight/GradeLayer; CaptionBar; EndCredits. The ground world is the episode-local Ridge, not DuskWorld.",
+    "why": "the AI presence is what this tool is: a sealed instrument that learned a pattern from one year of sky and reads weather into strikes. No people are drawn; Krause and Rammig appear as boxed name cards only.",
+    "shelf_check": "grep of ASSET_INDEX.md and lib/ for cloud, storm, bolt, lightning, easel, stamp, caliper, gauge, dial, ruler, ribbon, rosette, post, ledger, chart, instrument, windsock, thermometer, card, plate: hits were Thermometer (forest.tsx, faced, not used: the six instruments are tiny faceless icons), Stamp (kit.tsx HUD stamp, not a hand stamp), Odometer (sonar.tsx, not a needle dial), Envelope (refinery.tsx, USED), NameCard pattern (episode-local in 11-26, re-authored), Raven (fauna.tsx, USED), AlaskaOutline/akProject (akgeo.tsx, USED), Spruce (rail.tsx, USED as taiga conifers). No cloud, bolt, caliper, needle dial, gear train or ruler asset exists.",
+    "net_new": {
+      "StormGlass": "the hero (lib/stormglass.tsx)",
+      "Thunderhead": "no cloud on the shelf",
+      "Bolt": "no lightning on the shelf",
+      "SensDial": "a percent-per-degree needle dial with a band (Odometer is a digit counter)",
+      "AverageRuler": "the preprint's simple benchmark as a sleepy ruler",
+      "ModelRacer": "faceless unlabelled block racers for the satellite race",
+      "episode-local": "the field plank, brass easel and spring clip, journal sheet, six tiny instrument icons, brass hand stamp, ledger posts, survey sheet swatch, gear trains, caliper, card stake and cord, rosette pins, storm wall; each appears in one or two shots",
+      "StrikeToken": "the paper TODAY token",
+      "RangeColumn": "the hatched lemon range band, one treatment floor to ceiling (StrikeStack stays on the shelf, unused)"
+    },
+    "raven": "the raven ducks every bolt, a physical reaction to the hazard; it appears only in S1, S2, S3, S8, S12 and S16 and is never the last action or the answer to the question"
+  },
+  "motion_language": "The world never stops: the anvil boils, the conifers sway, fireweed buds tremble, cloud shadows cross the ground. Bolts are instant (3-frame strike, 6-frame afterglow) and the glass reacts with anticipation and a squash on its bracket. Crystals grow with eased branching. The range band clicks in and clacks up section by section and sways; the caliper ratchets. The dial needle swings with anticipation and a long settle (S10), the gear trains turn at two speeds (S11), and the ruler lies there and wins (S12). The raven ducks on bolts with a 4-frame anticipation.",
+  "composition": {
+    "focal_hierarchy": "the glass instrument first, then the range column or the dial, then the land",
+    "negative_space": "the green-slate sky above the anvil, held still for one beat before each bolt",
+    "safe_area": "hero and columns inside y 420 to 1500; the anvil and its bolts or the glass's neck and finial reach into y 420 to 690 in every shot; tussock and fireweed buds fill y 1470 to 1920 in every exterior",
+    "signature_shot": "S1 b1 at 0.0 s, low and wide on the ridge: the green-slate sky held still for 8 frames, then a lemon bolt drops onto the glass's wax-sealed neck, the glass squashes and its crystals flare lemon from the bottom up, staged against the dark taiga plane. S16 b46 at 123.71 s returns to the S1 b1 framing: the glass still sealed with 2019, the cord running to the test card on its empty stake, the dashed band of unfamiliar sky behind, and no bolt."
+  },
+  "craft_advance": "none beyond the net-new storm-glass family; engine advances go to the weekly machine pass",
+  "per_set": {
+    "glass macro (S3, S4, S13)": {
+      "key": "apricot from the right",
+      "fill": "pewter",
+      "rim": "apricot on the neck",
+      "darkest": "the lens behind the face",
+      "top_band": "the sealed neck, collar and finial",
+      "floor": "the field plank's grain and the tap row"
+    },
+    "oblique map (S5) and range columns (S6, S15)": {
+      "key": "apricot raking across the chalk line",
+      "fill": "pewter",
+      "rim": "lemon on the column's hatch",
+      "darkest": "the chalk cut's shadow",
+      "top_band": "the anvil's shadow edge and the top of the column",
+      "floor": "tussock tufts at the frame edge"
+    },
+    "taiga ledger (S7)": {
+      "key": "apricot through the conifers",
+      "fill": "pewter",
+      "rim": "apricot on the posts",
+      "darkest": "the conifer trunks",
+      "top_band": "the anvil and the far ridge with the small glass",
+      "floor": "peat and fireweed buds"
+    },
+    "name stake from above (S9)": {
+      "key": "apricot from the right",
+      "fill": "pewter",
+      "rim": "none",
+      "darkest": "the stake's cast shadow",
+      "top_band": "the far ridge with the still glass",
+      "floor": "tussock seen from above"
+    },
+    "dial on the field plank (S10) and open housing from above (S11)": {
+      "key": "apricot from the right",
+      "fill": "pewter",
+      "rim": "brass highlights",
+      "darkest": "the gear train cavity",
+      "top_band": "the anvil (S10) or the open lid and chains (S11)",
+      "floor": "the plank's front edge and the 1900s strip"
+    },
+    "satellite race track (S12)": {
+      "key": "apricot",
+      "fill": "pewter",
+      "rim": "apricot on the racers",
+      "darkest": "the rail posts",
+      "top_band": "the anvil and the far ridge",
+      "floor": "the track's near lane and tussock"
+    },
+    "storm map from above (S16 start)": {
+      "key": "lemon flashes",
+      "fill": "pewter cloud shadow",
+      "rim": "none",
+      "darkest": "the cloud shadows racing across the map",
+      "top_band": "cloud shadow edge and bolt entry points",
+      "floor": "the Aleutian chain trailing off and tundra texture"
+    },
+    "ridge-wide (S1, S2, S8, S14)": {
+      "key": "low golden apricot from frame right",
+      "fill": "cool pewter from the anvil",
+      "rim": "apricot on the brass and the glass's right edge; lemon on the glass after a bolt",
+      "darkest": "the taiga plane #1D2A22 behind the glass",
+      "top_band": "the anvil and its bolts",
+      "floor": "tussock clumps, fireweed buds, a stake with the raven in S1, S2, S8"
+    },
+    "closer (S16 end)": {
+      "key": "pewter with a sliver of apricot rim",
+      "fill": "pewter",
+      "rim": "apricot sliver on the brass",
+      "darkest": "the taiga plane",
+      "top_band": "the dashed band of unfamiliar sky and the storm wall",
+      "floor": "tussock clumps and fireweed buds; the raven still on its far stake"
+    }
+  }
+}

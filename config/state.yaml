@@ -4150,3 +4150,54 @@ dispatch_history:
     metaphor: a round orchid alert pulse with a face that splits so the news reaches
       the local team and the specialists at once, races ahead of the patient, and
       ends at a scoreboard with one blank row
+- date: '2026-11-27'
+  topic: 'Earth''s Future (Krause et al., TU Munich, November 24th): a machine learning
+    model trained on 2019 lightning projects Alaska 116% to 594% more ground strikes
+    by 2100 under high emissions; the authors'' own preprint says such models should
+    be tested outside their training data'
+  slug: lightning-ml-projection
+  key_entities:
+  - Earth's Future
+  - AGU
+  - Andreas Krause
+  - Anja Rammig
+  - Technical University of Munich
+  - lightning
+  - XGBoost
+  - ESS Open Archive
+  - Alaska Division of Forestry
+  - wildfire
+  archetype: 2.5D infographic, faced glass instrument hero
+  palette: green-slate storm sky, apricot banding, lemon lightning, oxblood seal
+  voice: Sulafat
+  stance: curious
+  angle: A model trained on 2019 says Alaska could get two to seven times today's
+    ground strikes, and the honest read is a range whose ceiling waits on a test outside
+    its training data.
+  hero: StormGlass
+  cast:
+  - StormGlass
+  - SensDial
+  - RangeColumn
+  - TestCard
+  - AverageRuler
+  - ChainHang
+  - MapTile
+  - StrikeToken
+  - Thunderhead
+  composition:
+    pov: low-angle-heroic
+    motion_vector: vertical-rise
+    hero_treatment: single-organic-hero
+    layout: stacked-layers
+    register: cartoon-exterior-storm
+    palette: 'green-slate #2F3A3A storm sky to a pewter #55606A anvil, golden apricot
+      #F2A65A midnight light banding below the anvil that thins act by act, tussock
+      khaki #6B6A3A, taiga conifers #1D2A22, muted fireweed buds #A65A7E, a smoke-lilac
+      #DCD6E6 teardrop vial in a brass #B98A3A bracket, lemon #FFE45C reserved for
+      lightning, oxblood #7E2630 reserved for the wax seal, aubergine outlines #1A1424'
+    camera_strategy: ridge-low-and-craned-map
+    light_story: warm golden midnight sun under an anvil
+    metaphor: a sealed glass instrument that learned the sky from one year, a hatched
+      range column of strikes, a dial whose two gear trains differ, and a test card
+      that waits on a stake

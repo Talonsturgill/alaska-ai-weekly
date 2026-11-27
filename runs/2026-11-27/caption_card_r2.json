@@ -1,0 +1,19 @@
+{
+ "source": "out/dispatch/post.txt",
+ "rubric": "config/linkedin_caption_rubric.yaml",
+ "hard_fails": [],
+ "scores": {
+  "hook_scroll_stop": 8,
+  "point_of_view_take": 8,
+  "substance_specificity": 8.5,
+  "readability_restraint": 7,
+  "engagement_design": 8,
+  "brand_voice_accuracy": 8,
+  "hashtag_craft": 8
+ },
+ "weighted_total": 7.96,
+ "ship_threshold": 8.5,
+ "ship": false,
+ "weakest_criterion": "readability_restraint",
+ "one_sentence_fix": "Cut about 250 chars, split the preprint paragraph, reduce the sensitivity paragraph to two sentences, trim provenance to one sentence."
+}

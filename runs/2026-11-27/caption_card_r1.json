@@ -1,0 +1,19 @@
+{
+ "source": "out/dispatch/post.txt",
+ "rubric": "config/linkedin_caption_rubric.yaml",
+ "hard_fails": [],
+ "scores": {
+  "hook_scroll_stop": 7.5,
+  "point_of_view_take": 7,
+  "substance_specificity": 8,
+  "readability_restraint": 7.5,
+  "engagement_design": 8,
+  "brand_voice_accuracy": 7,
+  "hashtag_craft": 7
+ },
+ "weighted_total": 7.44,
+ "ship_threshold": 8.5,
+ "ship": false,
+ "weakest_criterion": "Point of view / take",
+ "one_sentence_fix": "State one flat claim about what it means for Alaska, echo it in line 2, add lightning and the high-emissions qualifier to line 1."
+}

@@ -1,0 +1,26 @@
+Alaska could get 116% to 594% more lightning strikes by 2100, under high emissions.
+Lightning fires already burn at least 93% of Alaska's wildfire acres. A range that wide should be tested here before anyone budgets on it.
+
+The study, in Earth's Future on November 24th, is from Andreas Krause's team at the Technical University of Munich.
+
+They trained a machine learning model on one year of lightning and weather observations, from 2019. Six everyday weather readings go in. Ground strikes over land come out, on a half-degree grid.
+
+In the 1995 to 2014 baseline, most of Alaska got under one strike per square kilometer a year. The model projects 116% to 594% more under high emissions, per the AGU release. The world's land gets 76% to 140%.
+
+That lands on fire country. Lightning fires burned at least 93 percent of Alaska's wildfire acres every year from 2015 to 2024, per the Alaska Division of Forestry. The study didn't model fire.
+
+Krause said in the AGU release, "I was quite surprised that the projections were so high."
+
+Run back over the 1900s, the model estimates about 12 percent more lightning per degree of warming. Earlier studies projected 8 to 17 percent per degree. Its future runs could nearly triple that, to 30 percent.
+
+A month earlier, Krause and Anja Rammig posted a preprint, not yet peer reviewed.
+
+On satellite data, a simple training average beat the machine learning lightning models it tested. Their advice is to test models in conditions unlike their training data.
+
+The new paper says its model beat a regression and three existing formulas.
+
+Even the low end could more than double lightning where lightning lights the fires. Run the test its own authors describe on Alaska's summers before anyone budgets fire crews on the number.
+
+Which Alaska summers would you put that test through first?
+
+#MachineLearning #Alaska #Wildfire #Lightning #BorealForest
