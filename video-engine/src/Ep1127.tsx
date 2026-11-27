@@ -423,7 +423,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} overlay={<>
           <Plate x={540} text="TEMPERATURE · RAIN · HUMIDITY · PRESSURE · WIND · SUN" displayLines={['TEMPERATURE · RAIN · HUMIDITY', 'PRESSURE · WIND · SUN']} y={600} size={28} p={win(f, b(7) + 4, b(10) + 30)} />
-          <Plate x={300} text="ML LIGHTNING MODELS · IN GENERAL" y={1200} size={22} p={win(f, b(10) + 4)} />
+          <Plate x={360} text="ML LIGHTNING MODELS · IN GENERAL" y={1200} size={22} p={win(f, b(10) + 4)} />
           <Plate x={760} text="CLOUD-TO-GROUND LIGHTNING · HALF-DEGREE GRID" displayLines={['CLOUD-TO-GROUND LIGHTNING', 'HALF-DEGREE GRID']} y={710} size={26} tone="dark" p={win(f, b(8) + 4)} />
         </>}>
       <SVG>
@@ -520,7 +520,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <Plate x={560} text="PROJECTION · HIGH EMISSIONS · PER AGU" y={1230} size={28} p={win(f, b(13) + 4, b(14))} />
           <Plate x={760} text="ALASKA · +116% TO +594% · PROJECTION · HIGH EMISSIONS · PER AGU" displayLines={['ALASKA · +116% TO +594%', 'PROJECTION · HIGH EMISSIONS', 'PER AGU']} y={600} size={26} tone="lemon" p={win(f, b(14) + 6, b(15))} />
           <Plate x={760} text="WORLD · +76% TO +140% · HIGH EMISSIONS" displayLines={['WORLD · +76% TO +140%', 'HIGH EMISSIONS']} y={760} size={26} p={win(f, b(15) + 4, b(41))} />
-          <Plate x={760} text="BOTH · PROJECTION · HIGH EMISSIONS" y={880} size={24} tone="dark" p={win(f, b(41) + 4)} />
+          <Plate x={700} text="BOTH · PROJECTION · HIGH EMISSIONS" y={880} size={24} tone="dark" p={win(f, b(41) + 4)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={6} band={0.8} />
@@ -649,11 +649,11 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const band = easeIO(f, b(24), 16);
   const strip = easeIO(f, b(22), 24);
   return (
-    <Frame p={p} cam={(fr) => ({z: fr < b(24) ? lerp(1.0, 1.04, easeIO(fr, 0, b(24))) : lerp(1.04, 1.22, easeIO(fr, b(24), 24)), fx: fr < b(24) ? 540 : lerp(540, 520, easeIO(fr, b(24), 24)), fy: fr < b(24) ? 960 : lerp(960, 1080, easeIO(fr, b(24), 24))})} overlay={<>
-          <Plate x={540} text="1900S · MODEL ESTIMATE · ABOUT +11%" y={600} size={30} p={win(f, b(22) + 6, b(23))} />
-          <Plate x={540} text="ABOUT 12% PER °C" y={680} size={34} tone="dark" p={win(f, b(23) + 4, b(24) + 50)} />
-          <Plate x={540} text="EARLIER STUDIES · 8% TO 17% PER °C" y={760} size={28} p={win(f, b(24) + 6, b(25))} />
-          <Plate x={540} text="RUN FORWARD · NEARLY 3X ITS OWN 12 · ABOUT 30% PER °C · COULD" displayLines={['RUN FORWARD · NEARLY 3X ITS OWN 12', 'ABOUT 30% PER °C · COULD']} y={850} size={30} tone="lemon" p={win(f, b(25) + 4)} />
+    <Frame p={p} cam={(fr) => ({z: fr < b(24) ? lerp(1.0, 1.04, easeIO(fr, 0, b(24))) : 1.04 + 0.02 * easeIO(fr, b(24), 60), fx: fr < b(24) ? 540 : lerp(540, 560, easeIO(fr, b(24), 24)), fy: fr < b(24) ? 960 : lerp(960, 1080, easeIO(fr, b(24), 24))})} overlay={<>
+          <Plate x={540} text="1900S · MODEL ESTIMATE · ABOUT +11%" y={580} size={30} p={win(f, b(22) + 6, b(23))} />
+          <Plate x={540} text="ABOUT 12% PER °C" y={650} size={34} tone="dark" p={win(f, b(23) + 4, b(24) + 50)} />
+          <Plate x={540} text="EARLIER STUDIES · 8% TO 17% PER °C" y={720} size={28} p={win(f, b(24) + 6, b(25))} />
+          <Plate x={540} text="RUN FORWARD · NEARLY 3X ITS OWN 12 · ABOUT 30% PER °C · COULD" displayLines={['RUN FORWARD · NEARLY 3X ITS OWN 12', 'ABOUT 30% PER °C · COULD']} y={810} size={30} tone="lemon" p={win(f, b(25) + 4)} />
           <Plate x={800} text="FUTURE RUNS · PER AGU" y={1110} size={22} p={win(f, b(26) + 2)} />
         </>}>
       <SVG>
@@ -686,7 +686,7 @@ const S11: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.08, 1.0, easeIO(fr, 0, p.dur)), fx: 540, fy: 960})} overlay={<>
           <Plate x={540} text="EARLIER STUDIES' MATH · THIS STUDY'S MATH" y={530} size={22} p={win(f, b(39) + 10, b(27))} />
-          <Plate x={540} text="EARLIER STUDIES DIFFER MOSTLY IN MATH · PER AGU" displayLines={['EARLIER STUDIES DIFFER', 'MOSTLY IN MATH · PER AGU']} y={1440} size={26} tone="dark" p={win(f, b(27) + 4, b(28))} />
+          <Plate x={540} text="EARLIER STUDIES DIFFER MOSTLY IN MATH · PER AGU" displayLines={['EARLIER STUDIES DIFFER', 'MOSTLY IN MATH · PER AGU']} y={630} size={24} tone="dark" p={win(f, b(27) + 4, b(28))} />
           <Plate x={540} text={'"QUITE A LARGE UNCERTAINTY" · ANDREAS KRAUSE · PER AGU'} displayLines={['"QUITE A LARGE UNCERTAINTY"', 'ANDREAS KRAUSE · PER AGU']} y={1250} size={30} p={win(f, b(28) + 6)} />
         </>}>
       <SVG>
@@ -759,8 +759,8 @@ const S12: React.FC<SceneProps> = ({p}) => {
           const xr = 220 + 520 * Math.min(race * 1.4, 0.55 + i * 0.05);
           return unroll > 0.5 ? <ModelRacer key={i} f={f} x={xr} y={1175 + i * 30} s={1.0} run={1 - stall} stall={stall} seed={i + 1} tint={[SG.mauveL, SG.lilac, SG.glassD][i]} /> : null;
         })}
-        {unroll > 0.5 && <AverageRuler f={f} x={lerp(380, 820, clamp01((f - b(30) + 30) / 50))} y={1236} s={0.75} emotion={won ? 'smug' : 'sleepy'} cues={[b(43), b(30)]} seed={21} />}
-        <g transform={`translate(${trem} 0)`}><Envelope f={f} x={170} y={GROUND + 20} scale={0.38} lines={['ML LIGHTNING MODELS']} open={f >= b(29) ? 0.08 : 0} rot={-6} /></g>
+        {unroll > 0.5 && <HeldTravel f={f} x={300} y={1180} w={700} h={110} mode="sweep" seed={59}><AverageRuler f={f} x={lerp(380, 820, clamp01((f - b(30) + 30) / 50))} y={1236} s={0.75} emotion={won ? 'smug' : 'sleepy'} cues={[b(43), b(30)]} seed={21} /></HeldTravel>}
+        <HeldTravel f={f} x={60} y={GROUND - 60} w={220} h={160} mode="shadow" seed={60}><g transform={`translate(${trem} 0)`}><Envelope f={f} x={170} y={GROUND + 20} scale={0.38} lines={['ML LIGHTNING MODELS']} open={f >= b(29) ? 0.08 : 0} rot={-6} /></g></HeldTravel>
       </SVG>
     </Frame>
   );
@@ -830,7 +830,7 @@ const S15: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} overlay={<>
           <Plate x={540} text="ALASKA · +116% TO +594% · PROJECTION · PER AGU" displayLines={['ALASKA · +116% TO +594%', 'PROJECTION · PER AGU']} y={560} size={28} tone="lemon" p={win(f, b(34) + 6, b(35))} />
-          <Plate x={540} text="LOW END · MORE THAN 2X · PROJECTION · PER AGU" displayLines={['LOW END · MORE THAN 2X', 'PROJECTION · PER AGU']} y={680} size={28} p={win(f, b(35) + 4, b(36))} />
+          <Plate x={540} text="LOW END · MORE THAN 2X · PROJECTION · HIGH EMISSIONS · PER AGU" displayLines={['LOW END · MORE THAN 2X', 'PROJECTION · HIGH EMISSIONS · PER AGU']} y={680} size={28} p={win(f, b(35) + 4, b(36))} />
           <Plate x={540} text="OUR READ · THE WHOLE RANGE AWAITS AN OUT-OF-SAMPLE TEST" displayLines={['OUR READ · THE WHOLE RANGE', 'AWAITS AN OUT-OF-SAMPLE TEST']} y={800} size={26} tone="dark" p={win(f, b(36) + 6)} />
         </>}>
       <SVG>
@@ -860,8 +860,8 @@ const S16: React.FC<SceneProps> = ({p}) => {
   if (!cut) {
     return (
       <Frame p={p} cam={(fr) => ({z: lerp(1.12, 1.0, easeIO(fr, 0, p.dur)), fx: 520, fy: 980})} overlay={<>
-            <Plate x={540} text="JUNE 23RD, 2024 · AK DIV. OF FORESTRY" y={600} size={30} p={win(f, b(37) + 6, b(45))} />
-            <Plate x={540} text="ONE DAY · NEARLY 7,000 STRIKES · AK DIV. OF FORESTRY" displayLines={['ONE DAY · NEARLY 7,000 STRIKES', 'AK DIV. OF FORESTRY']} y={720} size={30} tone="lemon" p={win(f, b(45) + 4, b(38) - 12)} />
+            <Plate x={540} text="JUNE 23RD, 2024 · AK DIV. OF FORESTRY" y={660} size={30} p={win(f, b(37) + 6, b(45))} />
+            <Plate x={540} text="ONE DAY · NEARLY 7,000 STRIKES · AK DIV. OF FORESTRY" displayLines={['ONE DAY · NEARLY 7,000 STRIKES', 'AK DIV. OF FORESTRY']} y={780} size={30} tone="lemon" p={win(f, b(45) + 4, b(38) - 12)} />
           </>}>
         <SVG>
           <rect x={-80} y={-80} width={1240} height={2080} fill="#33463F" data-band="ok" />
