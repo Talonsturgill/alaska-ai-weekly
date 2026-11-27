@@ -339,7 +339,7 @@ AMB_DIP_GAIN = 1.0
 #      missing ends the mix, because a bed the board promised and the mix dropped is the defect.
 # A board with neither (every board from 10-20 to 10-25) mixes exactly as before. The mix
 # writes what it performed into sfx_events.json under "ambience", so a judge can see the bed.
-AMBIENCE_KINDS = ("rain", "room", "wind")
+AMBIENCE_KINDS = ("rain", "room", "wind", "storm")
 RAIN_LEVEL = 0.28      # about -36 dBFS RMS: 18 to 20 dB under the VO, 12 under the music bed
 
 # ROOM TONE AND DUSK WIND (machine pass 2026-10-28, queue "No room-tone stems", repeat 2). The mix
@@ -369,7 +369,62 @@ AMBIENCE_SPEC = {
              "drift": "0.55+0.35*sin(2*PI*t/13.1)+0.10*sin(2*PI*t/4.3)",
              "chain": "highpass=f=180,lowpass=f=2200,equalizer=f=410:t=q:w=12:g=9,equalizer=f=3000:t=q:w=1:g=-4",
              "note": "dusk wind and wire hum (synthesised brown noise, 180 Hz to 2.2 kHz, gusting, audio_arc.ambience)"},
+    "storm": {"color": "brown", "seed": 1127, "level": 0.32, "floor": 0.15,
+              "chain": "highpass=f=38,lowpass=f=900,equalizer=f=85:t=q:w=1.2:g=6,equalizer=f=420:t=q:w=1.5:g=3",
+              "note": "storm, distant thunder rolls placed in VO gaps over a low rumble (synthesised brown noise, 38 to 900 Hz, audio_arc.ambience)"},
 }
+
+# THUNDER THE FILM CAN HEAR (machine pass 2026-11-27; queue: ambience-synth-only, repeat 2). On
+# 11-27, a lightning film, every seat capped Sound because the mix could only perform air, wind,
+# rain and room, so the storm on screen was silent. "storm" is synthesised like the others
+# (deterministic, no network, no attribution owed): a low brown-noise rumble held at a floor, and
+# THUNDER ROLLS whose onsets sit in the VO's own breaths, read from vo_lines.json, so a roll
+# answers a line rather than landing on a word. Each roll swells over about 0.3 s, decays over
+# 1.3 to 2.3 s with a second, later hump (the roll), and speech_priority still ducks any tail that
+# runs under the next line. Rolls keep STORM_SPACING_S apart, never enter the pre-payoff breath,
+# and are written into sfx_events.json so a judge can see where the thunder is.
+STORM_MIN_GAP_S = 0.6     # a breath this long or longer can take a roll onset
+STORM_SPACING_S = 13.0    # rolls are events, not a texture, so they stay apart
+STORM_EVERY_S = 17.0      # at most one roll per this many seconds of film
+
+
+def storm_rolls(lines, video_secs, dip=(0.0, 0.0), salt="storm"):
+    """[(onset_s, decay_s, gain)] for the thunder rolls, longest breaths first, then by time.
+
+    Pure and deterministic: the same lines and the same run id give the same rolls."""
+    gaps = sorted(((b["start"] - a["end"], a["end"]) for a, b in zip(lines, lines[1:])
+                   if b["start"] - a["end"] >= STORM_MIN_GAP_S), key=lambda g: (-g[0], g[1]))
+    d0, d1 = dip[0], dip[0] + dip[1]
+    cap = max(1, int(video_secs // STORM_EVERY_S))
+    picked = []
+    for _, at in gaps:
+        onset = round(at + 0.08, 3)
+        if onset < 2.0 or onset > video_secs - 6.0:
+            continue
+        if dip[1] > 0 and d0 - 4.0 <= onset <= d1:
+            continue
+        if any(abs(onset - p) < STORM_SPACING_S for p in picked):
+            continue
+        picked.append(onset)
+        if len(picked) >= cap:
+            break
+    return [(t, round(jit(i, salt + "-decay", 1.3, 2.3), 3), round(jit(i, salt + "-gain", 0.7, 1.0), 3))
+            for i, t in enumerate(sorted(picked))]
+
+
+def storm_envelope(rolls, floor):
+    """The volume expression of the storm layer: the rumble floor plus each roll's two humps."""
+    terms = [f"{floor}"]
+    for a, tau, g in rolls:
+        end = a + 6 * tau
+        terms.append(f"between(t,{a},{end:.3f})*{g}*(1-exp(-(t-{a})/0.3))*exp(-(t-{a})/{tau})")
+        b = a + 0.9 * tau
+        terms.append(f"between(t,{b:.3f},{end:.3f})*{g * 0.55:.3f}*(1-exp(-(t-{b:.3f})/0.45))"
+                     f"*exp(-(t-{b:.3f})/{tau * 1.3:.3f})")
+    return "+".join(terms)
+
+
+STORM_ROLLS = []          # set by main() / the preview before the storm filter is built
 
 
 def ambience_input(name, secs):
@@ -384,6 +439,8 @@ def ambience_filter(name, idx, amb_in, amb_out):
     if name == "rain":
         return rain_filter(idx, "rain", amb_in, amb_out)
     sp = AMBIENCE_SPEC[name]
+    if name == "storm":
+        sp = dict(sp, drift=storm_envelope(STORM_ROLLS, sp["floor"]))
     return (f"[{idx}:a]aformat=sample_rates={SR}:channel_layouts=stereo,{sp['chain']},"
             f"volume=volume={sp['drift'].replace(',', chr(92) + ',')}:eval=frame,"
             f"volume={sp['level']},"
@@ -449,6 +506,9 @@ def ambience_preview(path, secs=12.0):
           f"equalizer=f=3000:t=q:w=1:g=-2.5,volume=volume={gust.replace(',', chr(92) + ',')}:eval=frame,"
           f"volume={AMB_LEVEL}[amb]"]
     labels = ["[amb]"]
+    if "storm" in AMB_LAYERS:
+        # two fixed rolls inside the preview, so a listen and the self-test hear the thunder
+        STORM_ROLLS[:] = [(2.4, 1.8, 0.9), (7.2, 1.6, 0.8)]
     for name in AMB_LAYERS:
         inputs += ambience_input(name, secs)
         fc.append(ambience_filter(name, len(labels), 0.0, secs - 2.6))
@@ -662,12 +722,57 @@ def check_schedule(events):
           f"heaviest {kinds.most_common(1)[0][1]}/{n}, no consecutive family repeats")
 
 
+def storm_self_test():
+    """The thunder rolls land in VO breaths, keep apart, stay out of the pre-payoff breath, are
+    deterministic, and swell well clear of the rumble floor."""
+    import math as _m
+    bad = []
+    lines, t = [], 0.0
+    for i, gap in enumerate([0.7, 0.3, 1.0, 0.65, 0.9, 0.2, 0.8, 1.1, 0.75, 0.4, 0.95]):
+        lines.append({"idx": i, "start": t, "end": t + 6.0})
+        t += 6.0 + gap
+    lines.append({"idx": len(lines), "start": t, "end": t + 5.0})
+    secs = t + 8.0
+    gaps = [(a["end"], b["start"]) for a, b in zip(lines, lines[1:])]
+    dip = (lines[-1]["start"] - 0.9, 0.7)
+    rolls = storm_rolls(lines, secs, dip)
+    if not rolls:
+        bad.append("storm_rolls placed no roll in a film with eight breaths over 0.6 s")
+    for on, tau, g in rolls:
+        if not any(a <= on < b and b - a >= STORM_MIN_GAP_S for a, b in gaps):
+            bad.append(f"thunder roll at {on}s is not inside a VO breath of {STORM_MIN_GAP_S}s or more")
+        if dip[0] - 4.0 <= on <= dip[0] + dip[1]:
+            bad.append(f"thunder roll at {on}s sits in the pre-payoff breath")
+        if not (1.3 <= tau <= 2.3 and 0.7 <= g <= 1.0):
+            bad.append(f"thunder roll at {on}s has decay {tau} or gain {g} outside its range")
+    ons = [r[0] for r in rolls]
+    if any(b - a < STORM_SPACING_S for a, b in zip(ons, ons[1:])):
+        bad.append(f"thunder rolls {ons} are closer than {STORM_SPACING_S}s")
+    if len(rolls) > max(1, int(secs // STORM_EVERY_S)):
+        bad.append(f"{len(rolls)} thunder rolls in {secs:.0f}s, over one per {STORM_EVERY_S}s")
+    if storm_rolls(lines, secs, dip) != rolls:
+        bad.append("storm_rolls is not deterministic")
+    if storm_rolls([{"idx": 0, "start": 0.0, "end": 9.0}, {"idx": 1, "start": 9.3, "end": 20.0}], 25.0):
+        bad.append("a roll was placed with no breath of 0.6 s in the read")
+    expr = storm_envelope([(2.0, 1.8, 1.0)], AMBIENCE_SPEC["storm"]["floor"])
+    env = lambda tt: eval(expr, {"t": tt, "exp": _m.exp,
+                                 "between": lambda x, a, b: 1.0 if a <= x <= b else 0.0})
+    peak = max(env(2.0 + k * 0.05) for k in range(80))
+    if peak < 4 * env(1.0) or abs(env(30.0) - env(1.0)) > 1e-9:
+        bad.append(f"the roll envelope peaks at {peak:.2f} against a floor of {env(1.0):.2f}, under 12 dB "
+                   f"clear, or does not return to the floor")
+    print(f"  storm: rolls {ons} in a {secs:.0f}s test read")
+    return bad
+
+
 def ambience_self_test():
     """Each synthesised layer renders, sits in its measured band under the voice, and a board that
     asks for none adds no input (machine pass 2026-10-28). Measured on 7 s of a 12 s preview with
     the air under it, which alone measures about -50.6 dBFS RMS."""
     import tempfile
-    band = {"rain": (-42.0, -37.0), "room": (-33.5, -28.0), "wind": (-33.5, -28.0)}
+    # storm is measured across its two preview rolls, so its band is the thunder's, not a bed's
+    band = {"rain": (-42.0, -37.0), "room": (-33.5, -28.0), "wind": (-33.5, -28.0),
+            "storm": (-33.5, -28.0)}
     bad = []
     saved = dict(AMB_LAYERS)
     with tempfile.TemporaryDirectory() as td:
@@ -695,6 +800,7 @@ def ambience_self_test():
             bad.append(f"ambience {want} was accepted")
         except SystemExit:
             pass
+    bad += storm_self_test()
     for b in bad:
         print("  FAIL " + b)
     print("dispatch_mix ambience self-test: " + ("FAIL" if bad else "PASS"))
@@ -705,7 +811,7 @@ def main():
     if sys.argv[1:2] == ["--ambience-self-test"]:
         sys.exit(ambience_self_test())
     if len(sys.argv) > 2 and sys.argv[1] == "--ambience-preview":
-        # `--ambience-preview OUT.wav [rain] [room] [wind]`: render the ambience alone, named
+        # `--ambience-preview OUT.wav [rain] [room] [wind] [storm]`: render the ambience alone, named
         # layers forced on (machine pass 2026-10-28 added room and wind).
         named = [w for w in AMBIENCE_KINDS if w in sys.argv[3:]]
         if named:
@@ -724,6 +830,13 @@ def main():
         print(f"dispatch_mix: NOTE beat {bid} names the animal sound '{nm}' but declares sfx_class object, "
               f"so it plays an object kind (scripts/sfx_names.py KIND_CLASS).")
     check_schedule(EVENTS)
+    if "storm" in AMB_LAYERS:
+        _dip = (SILENCE_DIP_AT, DIP_LEN)
+        if not DIP_LEN and (_board.get("audio_arc") or {}).get("dip_at") is not None:
+            _dip = (float(_board["audio_arc"]["dip_at"]), 1.0)   # the board's authored breath
+        STORM_ROLLS[:] = storm_rolls(_lines, VIDEO_SECS, _dip)
+        print(f"dispatch_mix: storm, {len(STORM_ROLLS)} thunder roll(s) in VO breaths at "
+              f"{', '.join(f'{t:.2f}s' for t, _, _ in STORM_ROLLS) or 'none (no breath of 0.6 s)'}")
 
     # THE SOUND DESIGN HAS TO BE VISIBLE, NOT JUST AUDIBLE (2026-08-13).
     # EVENTS has always lived inline here and was never written anywhere a reader could find
@@ -756,6 +869,8 @@ def main():
                            + [AMBIENCE_SPEC[w]["note"] for w in AMB_LAYERS]
                            + ([f"stem {os.path.relpath(AMB_STEM, REPO)} at {AMB_STEM_LEVEL}"]
                               if AMB_STEM else [])),
+                **({"thunder_rolls": [{"t": t, "decay_s": d, "gain": g} for t, d, g in STORM_ROLLS]}
+                   if "storm" in AMB_LAYERS else {}),
             },
         }, open(_sfx_out, "w"), indent=1)
         print(f"sfx_events.json written: {len(EVENTS)} events, {len(set(k for _, k, _, _ in EVENTS))} kinds")

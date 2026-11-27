@@ -20,6 +20,7 @@ What it checks, per shot (a shot is the set of beats whose `shot` equals its id)
     - a shot's first beat starts before the shot does (by more than 0.25 s)
     - the shots' ambient lines name rain in a quarter of the shots but audio_arc asks the mix for
       no rain (audio_arc.ambience: ["rain"] or an ambience_stem); 10-25 capped Sound for it
+    - the same for thunder or a storm (STORM_WORDS) without audio_arc.ambience: ["storm"]; 11-27
     - a prop in the shot's `hero` name or its `centered` subject that none of its beats draws, the
       stale field a restage leaves (machine pass 2026-11-06, see stale_cast)
 
@@ -88,6 +89,11 @@ def _quoted(shows):
 
 
 RAIN_WORDS = ("rain", "drizzle", "downpour", "raindrop", "rainy")
+# A storm the board hears and the mix does not (machine pass 2026-11-27; queue: ambience-synth-only).
+# The 11-27 board named a far rumble, an anvil grumbling or storm wind in 6 of 16 shots' ambient
+# lines and the mix played wind only, and every seat capped Sound. "rumble" alone is a train or an
+# engine, so only the far or distant rumble counts. No board from 10-01 to 11-26 names any of these.
+STORM_WORDS = ("thunder", "lightning", "storm", "far rumble", "distant rumble", "anvil")
 
 
 GENERIC = {"hero", "figure", "figures", "prop", "props", "object", "objects", "thing", "scene",
@@ -122,6 +128,15 @@ def stale_cast(shot, beats):
         if w and not (w & bw) and not (w & _prop_words(name)):
             out.append(("centered", m.group(1).strip()))
     return out
+
+
+def storm_shots(board):
+    """How many shots' ambient lines name thunder or a storm, and whether that makes the storm a
+    world of the film (a quarter of the shots, at least two), so the board must ask the mix for
+    audio_arc.ambience: ["storm"], the thunder rolls dispatch_mix.py places in the VO's breaths."""
+    shots = board.get("shots") or []
+    n = sum(1 for s in shots if any(w in str(s.get("ambient", "")).lower() for w in STORM_WORDS))
+    return n, bool(shots) and n >= max(2, len(shots) / 4.0)
 
 
 def rain_shots(board):
@@ -194,6 +209,12 @@ def analyze(sb):
         problems.append(f"{n_rain} of {len(shots)} shots' ambient lines name rain, but audio_arc has no "
                         f"ambience: [\"rain\"] and no ambience_stem, so the mix plays no rain under it "
                         f"(10-25: Sound capped 7.0 to 7.3 for exactly this). Add audio_arc.ambience")
+    n_storm, storm_world = storm_shots(sb)
+    if storm_world and "storm" not in want and not (sb.get("audio_arc") or {}).get("ambience_stem"):
+        problems.append(f"{n_storm} of {len(shots)} shots' ambient lines name thunder or a storm, but "
+                        f"audio_arc has no ambience: [\"storm\"] and no ambience_stem, so the mix plays "
+                        f"no thunder under it (11-27: every seat capped Sound for exactly this). Add "
+                        f"\"storm\" to audio_arc.ambience")
     return {"problems": problems, "warnings": warnings, "shots": len(shots)}
 
 
@@ -227,6 +248,16 @@ def _self_test():
     assert any("name rain" in p for p in analyze(wet)["problems"]), analyze(wet)
     wet["audio_arc"] = {"ambience": ["rain"]}
     assert not analyze(wet)["problems"], analyze(wet)
+    storm = json.loads(json.dumps(wet))
+    for x in storm["shots"] + [b["choreo"] for b in storm["beats"]]:
+        x["ambient"] = "wind, a far rumble"
+    assert any("thunder or a storm" in p for p in analyze(storm)["problems"]), analyze(storm)
+    storm["audio_arc"] = {"ambience": ["wind", "storm"]}
+    assert not analyze(storm)["problems"], analyze(storm)
+    for x in storm["shots"] + [b["choreo"] for b in storm["beats"]]:
+        x["ambient"] = "the engine's rumble"
+    storm["audio_arc"] = {"ambience": ["wind"]}
+    assert not analyze(storm)["problems"], analyze(storm)
     cast = json.loads(json.dumps(good))
     cast["shots"][0]["hero"] = {"name": "Plate + Cubby door + brass token"}
     cast["shots"][0]["centered"] = "the bench at x540 y1000"
