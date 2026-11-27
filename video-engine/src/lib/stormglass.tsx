@@ -223,19 +223,19 @@ export const StormGlass: React.FC<{
               <path d="M 0 0 L 0 46" stroke={SG.ink} strokeWidth={3} />
               <rect x={-24} y={46} width={48} height={58} rx={6} fill={SG.paper} stroke={SG.ink} strokeWidth={4} />
               <circle cx={0} cy={54} r={4} fill={SG.ink} />
-              <text x={0} y={96} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={SG.ink}>?</text>
+              <text x={0} y={96} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={34} fill={SG.ink} transform={`scale(${facing} 1)`}>?</text>
             </g>
           )}
           {/* collar and wax seal over the neck tip */}
           <g transform={`translate(0 ${-capLift * 54}) rotate(${capLift * -12} 0 -545)`}>
             <rect x={-24} y={-562} width={48} height={22} rx={6} fill={`url(#${id}b)`} stroke={SG.ink} strokeWidth={4} />
             <g transform={`translate(0 -594) scale(${1 + 0.14 * clamp01(bulge)})`}>
-              {sealGlow > 0.02 && <circle cx={0} cy={0} r={50} fill={SG.oxbloodL} opacity={0.35 * clamp01(sealGlow) * (0.8 + 0.2 * Math.sin(f / 5))} />}
+              {sealGlow > 0.02 && <circle cx={0} cy={0} r={50 + 30 * clamp01(sealGlow)} fill={SG.oxbloodL} opacity={0.55 * clamp01(sealGlow) * (0.8 + 0.2 * Math.sin(f / 5))} />}
               <path d="M -38 4 C -44 -20 -26 -38 -2 -38 C 24 -40 44 -22 40 2 C 42 22 22 34 0 32 C -22 34 -40 22 -38 4 Z" fill={SG.oxblood} stroke={SG.ink} strokeWidth={4} />
               <ellipse cx={-10} cy={-16} rx={14} ry={7} fill={SG.oxbloodL} opacity={0.7} />
               <circle cx={0} cy={0} r={24} fill="none" stroke={SG.oxbloodD} strokeWidth={3} />
-              {sealText && <text x={0} y={(sealText2 ? -2 : 7) + 5 * clamp01(slump)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={sealText2 ? 13 : 19} fill={SG.paper} transform={`skewX(${-14 * clamp01(slump)}) scale(1 ${1 - 0.28 * clamp01(slump)})`}>{sealText}</text>}
-              {sealText2 && <text x={0} y={13} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={9} fill={SG.paper}>{sealText2}</text>}
+              {sealText && <text x={0} y={(sealText2 ? -2 : 7) + 5 * clamp01(slump)} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={sealText2 ? 13 : 19} fill={SG.paper} transform={`scale(${facing} 1) skewX(${-14 * clamp01(slump)}) scale(1 ${1 - 0.28 * clamp01(slump)})`}>{sealText}</text>}
+              {sealText2 && <text x={0} y={13} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={9} fill={SG.paper} transform={`scale(${facing} 1)`}>{sealText2}</text>}
               {bulge > 0.1 && <path d={`M 26 22 q 4 ${10 + 26 * clamp01(bulge)} 0 ${18 + 30 * clamp01(bulge)} q -6 -4 -2 -${18 + 30 * clamp01(bulge)}`} fill={SG.oxblood} stroke={SG.ink} strokeWidth={2.5} />}
             </g>
           </g>
@@ -267,12 +267,12 @@ export const Thunderhead: React.FC<{f: number; x: number; y: number; w?: number;
           <stop offset="1" stopColor={SG.mauve} />
         </linearGradient>
       </defs>
-      {anvil && <path d={`M -560 -330 Q -300 -420 0 -430 Q 320 -420 600 -360 Q 420 -330 200 -320 Q 0 -300 -260 -320 Z`} fill={SG.mauveL} stroke={SG.ink} strokeWidth={5} opacity={0.95} />}
+      {anvil && <g opacity={0.9}>{Array.from({length: 9}, (_, i) => <ellipse key={i} cx={-380 + i * 95} cy={-300 - 40 * Math.sin((i / 8) * Math.PI)} rx={120} ry={46} fill={SG.mauveL} />)}<path d="M -480 -270 Q 0 -250 480 -270" stroke={SG.lilac} strokeWidth={8} fill="none" opacity={0.6} /></g>}
       <g fill={`url(#${id}g)`} stroke={SG.ink} strokeWidth={5}>{puffs}</g>
       <g fill={`url(#${id}g)`}>{puffs}</g>
       <path d="M -440 -20 Q 0 30 440 -20 L 440 10 Q 0 60 -440 10 Z" fill={SG.mauve} stroke={SG.ink} strokeWidth={5} />
       {Array.from({length: 7}, (_, i) => <path key={i} d={`M ${-360 + i * 120} 20 q ${10 + 8 * Math.sin(f / 20 + i)} 90 -6 ${160 + 40 * h01(seed, i)}`} stroke={SG.mauveL} strokeWidth={14} strokeLinecap="round" opacity={0.35} />)}
-      {fl > 0.02 && <ellipse cx={-60 + 140 * h01(seed, Math.floor(f / 6))} cy={-140} rx={260} ry={150} fill={SG.lemonL} opacity={0.55 * fl} />}
+      {fl > 0.02 && <g style={{mixBlendMode: 'screen'}}>{Array.from({length: 6}, (_, i) => <circle key={i} cx={-260 + i * 100} cy={-120 - 80 * Math.sin((i / 5) * Math.PI)} r={90} fill={SG.lemonL} opacity={0.4 * fl} />)}</g>}
       <path d="M -300 -200 Q -200 -250 -120 -220" stroke={SG.apricotL} strokeWidth={6} fill="none" opacity={0.6} />
     </g>
   );
@@ -403,7 +403,7 @@ export const SensDial: React.FC<{f: number; x: number; y: number; r?: number; va
     const [ax, ay] = pt(v, r * 0.86), [bx, by] = pt(v, r * (v % 10 === 0 ? 0.72 : 0.79));
     ticks.push(<path key={v} d={`M ${ax} ${ay} L ${bx} ${by}`} stroke={SG.ink} strokeWidth={v % 10 === 0 ? 5 : 2.5} />);
     if (v % 10 === 0) {
-      const [lx, ly] = pt(v, r * 0.6);
+      const [lx, ly] = pt(v, r + 50);
       ticks.push(<text key={`l${v}`} x={lx} y={ly + 9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={SG.ink}>{v}</text>);
     }
   }
@@ -518,3 +518,21 @@ export const RangeColumn: React.FC<{f: number; x: number; y: number; w?: number;
     </g>
   );
 };
+
+/** TestCard: the preprint's advice card (three mono rows on parchment); origin at its centre. */
+export const TestCard: React.FC<{x: number; y: number; rot?: number; scale?: number}> = ({x, y, rot = 0, scale = 1}) => (
+  <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${scale})`}>
+    <rect x={-150} y={-70} width={300} height={130} rx={8} fill={SG.paper} stroke={SG.ink} strokeWidth={5} />
+    {['TEST OUTSIDE', 'THE TRAINING', 'DATA'].map((t, i) => (
+      <text key={t} x={0} y={-20 + i * 34} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={SG.ink}>{t}</text>
+    ))}
+  </g>
+);
+
+/** ChainHang: two chains and a brass bar that a quote plate hangs from; origin at the bar's centre. */
+export const ChainHang: React.FC<{x: number; y: number; rot?: number}> = ({x, y, rot = 0}) => (
+  <g transform={`translate(${x} ${y}) rotate(${rot})`}>
+    <path d="M -330 -420 L -330 0 M 330 -420 L 330 0" stroke={SG.ink} strokeWidth={8} strokeDasharray="14 6" />
+    <rect x={-360} y={0} width={720} height={20} rx={6} fill={SG.brass} stroke={SG.ink} strokeWidth={4} />
+  </g>
+);

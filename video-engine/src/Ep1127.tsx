@@ -13,7 +13,7 @@ import {Raven} from './lib/fauna';
 import {Spruce} from './lib/rail';
 import {Envelope} from './lib/refinery';
 import {AlaskaOutline, akProject, akHeight} from './lib/akgeo';
-import {SG, StormGlass, Thunderhead, Bolt, StrikeToken, SensDial, AverageRuler, ModelRacer, RangeColumn, Lab} from './lib/stormglass';
+import {SG, StormGlass, Thunderhead, Bolt, StrikeToken, SensDial, AverageRuler, ModelRacer, RangeColumn, Lab, TestCard, ChainHang} from './lib/stormglass';
 import {IDS} from './Ep1127Ids';
 
 // Trained on 2019, 2026-11-27. Palette roles are art_direction.json: green-slate storm sky to a pewter anvil with a golden
@@ -113,6 +113,7 @@ const Frame: React.FC<{p: SP; cam?: (f: number) => Cam; z0?: number; z1?: number
  *  a taiga plane, the sedge ridge and a near plane of tussocks and fireweed buds under the caption card. */
 const Ridge: React.FC<{f: number; seed?: number; band?: number; flash?: number; cloud?: boolean; wall?: number; raven?: number; ravenDuck?: number; ground?: number; trees?: number}> =
 ({f, seed = 1, band = 1, flash = 0, cloud = true, wall = 0, raven = -1, ravenDuck = -1, ground = GROUND, trees = 1}) => {
+  const dim = 0.32 * (1 - clamp01(band));
   const id = `rg${seed}`;
   const bw = 40 + 120 * clamp01(band);
   const conifers = [] as React.ReactNode[];
@@ -167,6 +168,7 @@ const Ridge: React.FC<{f: number; seed?: number; band?: number; flash?: number; 
       <path d={`M -80 ${ground - 20} Q 300 ${ground - 44} 600 ${ground - 26} Q 900 ${ground - 12} 1160 ${ground - 30}`} stroke={SG.sedgeL} strokeWidth={8} fill="none" />
       {Array.from({length: 14}, (_, i) => <ellipse key={`g${i}`} cx={30 + i * 78} cy={ground + 40 + 30 * h01(seed + 12, i)} rx={30} ry={8} fill={SG.sedgeD} opacity={0.5} data-band="ok" />)}
       <g data-band="ok">{tufts}</g>
+      {dim > 0.01 && <rect x={-80} y={-80} width={1240} height={2080} fill={SG.plum} opacity={dim} data-band="ok" />}
       {rv && (
         <g>
           <rect x={raven - 5} y={ground - 150} width={10} height={150} fill={SG.woodD} stroke={INK} strokeWidth={3} />
@@ -334,6 +336,24 @@ const Rosette: React.FC<{x: number; y: number; k: number; f: number; tails?: num
   );
 };
 
+/** tussock mounds seen from above, with cast shadows and fireweed buds: the ridge's ground in overhead shots */
+const TopTussock: React.FC<{f: number; seed: number; y0: number; y1: number; n?: number}> = ({f, seed, y0, y1, n = 34}) => (
+  <g data-band="ok">
+    {Array.from({length: n}, (_, i) => {
+      const x = h01(seed, i) * 1100 - 10, y = y0 + h01(seed + 1, i) * (y1 - y0), r = 24 + 22 * h01(seed + 2, i);
+      return (
+        <g key={i} transform={`translate(${x} ${y})`}>
+          <ellipse cx={r * 0.35} cy={r * 0.3} rx={r * 1.05} ry={r * 0.8} fill={SG.peat} opacity={0.45} />
+          <circle cx={0} cy={0} r={r} fill={i % 3 ? SG.sedge : SG.sedgeD} stroke={INK} strokeWidth={2.5} />
+          {Array.from({length: 7}, (_, k) => <path key={k} d={`M 0 0 L ${Math.cos(k * 0.9 + i + Math.sin(f / 30) * 0.1) * r * 0.95} ${Math.sin(k * 0.9 + i) * r * 0.95}`} stroke={SG.sedgeL} strokeWidth={2.5} />)}
+          <ellipse cx={-r * 0.3} cy={-r * 0.3} rx={r * 0.35} ry={r * 0.25} fill={SG.sedgeL} opacity={0.7} />
+          {i % 5 === 2 && <circle cx={r * 0.5} cy={-r * 0.5} r={6} fill={SG.fireweed} stroke={INK} strokeWidth={2} />}
+        </g>
+      );
+    })}
+  </g>
+);
+
 // ---- S1: THE STRIKE (bolt on the sealed neck; a TODAY token; a hatched ghost column with a question mark)
 const S1: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
@@ -341,7 +361,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
   const ghost = easeIO(f, b(2), 30);
   return (
     <Frame p={p} z0={1.04} z1={1.0} overlay={<>
-          <Plate x={540} text="BY 2100 · HIGH EMISSIONS" y={1236} size={30} tone="dark" p={win(f, 10, b(2) - 4)} />
+          <Plate x={600} text="BY 2100 · HIGH EMISSIONS · PROJECTION · PER AGU" displayLines={['BY 2100 · HIGH EMISSIONS', 'PROJECTION · PER AGU']} y={840} size={28} tone="dark" p={win(f, 10, b(2) - 4)} />
           <Plate x={700} text="ALASKA · TODAY" y={1160} size={24} p={win(f, b(40) + 4, b(2))} />
           <Plate x={600} text="MORE THAN 2X TO NEARLY 7X · PROJECTION · PER AGU" displayLines={['MORE THAN 2X TO NEARLY 7X', 'PROJECTION · PER AGU']} y={600} size={30} tone="lemon" p={win(f, b(2) + 6, b(3))} />
           <Plate x={600} text="UPPER ESTIMATE · NEARLY 7X · PER AGU" displayLines={['UPPER ESTIMATE', 'NEARLY 7X · PER AGU']} y={720} size={30} p={win(f, b(3) + 2)} />
@@ -351,7 +371,7 @@ const S1: React.FC<SceneProps> = ({p}) => {
         <Bolt x1={420} y1={640} x2={340} y2={GROUND - 640} p={boltP(f, 6, 24)} seed={3} width={16} />
         <HeldTravel f={f} x={190} y={560} w={300} h={720} mode="sweep" seed={1}>
           <StormGlass f={f} x={340} y={GROUND} s={1.0} emotion={f < 40 ? 'startled' : 'curious'} grow={0.4 + 0.6 * ease(f, 8, 20)} charge={charge(f, 8)}
-            squash={f >= 8 && f < 20 ? Math.sin(((f - 8) / 12) * Math.PI) : 0} look={f > b(2) ? 0.6 : 0} cues={[b(1), b(40), b(2), b(3)]} seed={5} />
+            squash={f >= 8 && f < 20 ? Math.sin(((f - 8) / 12) * Math.PI) : 0} look={f > b(2) ? 0.6 : f < 30 ? 0.9 : 0} cues={[b(1), b(40), b(2), b(3)]} seed={5} />
         </HeldTravel>
         {tok > 0.01 && (
           <g transform={`translate(0 ${(1 - tok) * -300})`}>
@@ -373,7 +393,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
     <Frame p={p} z0={1.0} z1={1.06} overlay={<>
           <Plate x={700} text="EARTH'S FUTURE · NOVEMBER 24TH" y={600} size={30} p={win(f, b(4) + 4, b(5))} />
           <Plate x={600} text="ANDREAS KRAUSE · TECHNICAL UNIVERSITY OF MUNICH" displayLines={['ANDREAS KRAUSE', 'TECHNICAL UNIVERSITY OF MUNICH']} y={690} size={28} p={win(f, b(5) + 4, b(6))} />
-          <Plate x={540} text="A MACHINE LEARNING MODEL · XGBOOST" y={800} size={30} tone="dark" p={win(f, b(6) + 4)} />
+          <Plate x={540} text="A MACHINE LEARNING MODEL · XGBOOST" y={920} size={30} tone="dark" p={win(f, b(6) + 4)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={2} band={0.95} raven={70} ravenDuck={b(5) - 4} />
@@ -387,11 +407,7 @@ const S2: React.FC<SceneProps> = ({p}) => {
           <StormGlass f={f} x={320} y={GROUND} s={0.95} emotion={turn > 0.5 ? 'curious' : 'calm'} look={lerp(0.2, 1, turn)} cues={[b(4), b(5), b(6)]} seed={6} />
         </HeldTravel>
         {turn > 0.02 && (
-          <g transform={`translate(380 ${GROUND - 560}) rotate(${10 * Math.sin(f / 7) * (1 - turn * 0.5)})`}>
-            <path d="M 0 0 L 0 40" stroke={INK} strokeWidth={3} />
-            <rect x={-60} y={40} width={120} height={46} rx={6} fill={SG.brassL} stroke={INK} strokeWidth={4} />
-            <text x={0} y={70} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={16} fill={INK}>ML MODEL</text>
-          </g>
+          <Lab x={380} y={GROUND - 497} rot={10 * Math.sin(f / 7) * (1 - turn * 0.5)} text="ML MODEL" size={16} fill={SG.brassL} />
         )}
       </SVG>
     </Frame>
@@ -407,7 +423,7 @@ const S3: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} overlay={<>
           <Plate x={540} text="TEMPERATURE · RAIN · HUMIDITY · PRESSURE · WIND · SUN" displayLines={['TEMPERATURE · RAIN · HUMIDITY', 'PRESSURE · WIND · SUN']} y={600} size={28} p={win(f, b(7) + 4, b(10) + 30)} />
-          <Plate x={300} text="PREPRINT · OCTOBER 17TH" y={1200} size={26} p={win(f, b(10) + 4)} />
+          <Plate x={300} text="ML LIGHTNING MODELS · IN GENERAL" y={1200} size={22} p={win(f, b(10) + 4)} />
           <Plate x={760} text="CLOUD-TO-GROUND LIGHTNING · HALF-DEGREE GRID" displayLines={['CLOUD-TO-GROUND LIGHTNING', 'HALF-DEGREE GRID']} y={710} size={26} tone="dark" p={win(f, b(8) + 4)} />
         </>}>
       <SVG>
@@ -418,10 +434,10 @@ const S3: React.FC<SceneProps> = ({p}) => {
           <StormGlass f={f} x={540} y={1216} s={1.45} emotion="curious" grow={0.45 + 0.4 * tap} taps={tap} cues={[b(7), b(10), b(8)]} seed={7} label={false} />
         </HeldTravel>
         <g transform={`translate(${lerp(-300, 0, env)} 0)`}>
-          <Envelope f={f} x={170} y={1290} scale={0.55} lines={['ML LIGHTNING MODELS']} stamp="OCT 17TH" rot={-4 + 6 * (1 - env)} />
+          <Envelope f={f} x={170} y={1290} scale={0.55} lines={['ML LIGHTNING MODELS']} rot={-4 + 6 * (1 - env)} />
         </g>
         <g transform="translate(860 1180)">
-          <rect x={-120} y={-60} width={240} height={110} fill={SG.sedge} stroke={INK} strokeWidth={4} transform="skewX(-12)" />
+          <path d="M -108 -60 L 132 -60 L 108 50 L -132 50 Z" fill={SG.sedge} stroke={INK} strokeWidth={4} />
           {Array.from({length: 3}, (_, i) => <path key={i} d={`M ${-60 + i * 60} -60 L ${-80 + i * 60} 50`} stroke={INK} strokeWidth={1.6} opacity={0.6} />)}
           <path d="M -130 -5 L 110 -5" stroke={INK} strokeWidth={1.6} opacity={0.6} />
           {Array.from({length: Math.floor(marks * 9)}, (_, i) => {
@@ -477,9 +493,10 @@ const S5: React.FC<SceneProps> = ({p}) => {
         <g transform="translate(540 960) scale(1 0.62) translate(-540 -960)">
           {Array.from({length: 60}, (_, i) => <ellipse key={i} cx={h01(11, i) * 1080} cy={500 + h01(12, i) * 1000} rx={20 + 20 * h01(13, i)} ry={10} fill={SG.sedgeL} opacity={0.5} />)}
           <g opacity={cut}>
-            <AlaskaOutline x={fit.x} y={fit.y} w={fit.w} fill={SG.sedgeD} stroke={SG.paper} strokeWidth={8} shadow={10} shadowColor={SG.peat} />
+            <HeldTravel f={f} x={110} y={640} w={860} h={520} mode="sweep" seed={51}><g><AlaskaOutline x={fit.x} y={fit.y} w={fit.w} fill={SG.sedgeD} stroke={SG.paperD} strokeWidth={14} shadow={14} shadowColor={SG.peat} /><AlaskaOutline x={fit.x} y={fit.y} w={fit.w} fill="none" stroke={SG.paper} strokeWidth={6} shadow={0} opacity={0.9} /></g></HeldTravel>
           </g>
         </g>
+        <TopTussock f={f} seed={61} y0={1480} y1={1900} n={22} />
         <StormGlass f={f} x={130} y={1300} s={0.5} emotion="curious" look={1} cues={[b(11), b(12)]} seed={9} label={false} seal="2019" />
         {tok > 0.01 && (
           <g transform={`translate(${cx} ${960 + (cy - 960) * 0.62 + (1 - tok) * -400})`}>
@@ -503,11 +520,11 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <Plate x={560} text="PROJECTION · HIGH EMISSIONS · PER AGU" y={1230} size={28} p={win(f, b(13) + 4, b(14))} />
           <Plate x={760} text="ALASKA · +116% TO +594% · PROJECTION · HIGH EMISSIONS · PER AGU" displayLines={['ALASKA · +116% TO +594%', 'PROJECTION · HIGH EMISSIONS', 'PER AGU']} y={600} size={26} tone="lemon" p={win(f, b(14) + 6, b(15))} />
           <Plate x={760} text="WORLD · +76% TO +140% · HIGH EMISSIONS" displayLines={['WORLD · +76% TO +140%', 'HIGH EMISSIONS']} y={760} size={26} p={win(f, b(15) + 4, b(41))} />
-          <Plate x={760} text="BOTH · HIGH EMISSIONS" y={880} size={28} tone="dark" p={win(f, b(41) + 4)} />
+          <Plate x={760} text="BOTH · PROJECTION · HIGH EMISSIONS" y={880} size={24} tone="dark" p={win(f, b(41) + 4)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={6} band={0.8} />
-        <Envelope f={f} x={1000} y={GROUND + 40} scale={0.3} lines={['ML LIGHTNING MODELS']} stamp="OCT 17TH" rot={-6} />
+        <Envelope f={f} x={1000} y={GROUND + 40} scale={0.3} lines={['ML LIGHTNING MODELS']} rot={-6} />
         <StormGlass f={f} x={930} y={GROUND - 30} s={0.6} emotion="surprised" seal="2019" sealGlow={0.3 + 0.7 * grow} look={-1} cues={[b(13), b(14), b(15)]} seed={10} label={false} />
         <HeldProp f={f} px={300} py={GROUND} w={160} h={420} seed={2} kind="rest" gain={2}>
           <RangeColumn f={f} x={300} y={GROUND} w={150} unit={56} lo={2.16} hi={6.94} floorK={floor} grow={grow} seed={3} label="ALASKA" />
@@ -562,7 +579,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.07} overlay={<>
           <Plate x={540} text="THE STUDY DIDN'T MODEL FIRE" y={600} size={34} tone="dark" p={win(f, b(18) + 6, b(19) + 40)} />
-          <Plate x={540} text="THE STUDY · LIGHTNING ONLY" y={700} size={30} p={win(f, b(19) + 6)} />
+          <Plate x={680} text="THE STUDY · LIGHTNING ONLY" y={700} size={30} p={win(f, b(19) + 6)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={8} band={0.7} raven={1000} ravenDuck={b(19)} flash={charge(f, b(19))} />
@@ -574,7 +591,7 @@ const S8: React.FC<SceneProps> = ({p}) => {
         <HeldTravel f={f} x={160} y={620} w={300} h={660} mode="sweep" seed={8}>
           <StormGlass f={f} x={300} y={GROUND} s={0.9} emotion="calm" seal="2019" look={lerp(-0.8, 0.8, easeIO(f, 0, 30))} cues={[b(18), b(19)]} seed={12} />
         </HeldTravel>
-        <Envelope f={f} x={150} y={GROUND + 70} scale={0.4} lines={['ML LIGHTNING MODELS']} stamp="OCT 17TH" rot={-6} />
+        <Envelope f={f} x={150} y={GROUND + 70} scale={0.4} lines={['ML LIGHTNING MODELS']} rot={-6} />
       </SVG>
     </Frame>
   );
@@ -583,13 +600,15 @@ const S8: React.FC<SceneProps> = ({p}) => {
 // ---- S9: SURPRISED (from above: a slip on Krause's name card types out the quote; the glass far behind goes still)
 const S9: React.FC<SceneProps> = ({p}) => {
   const {f, b} = p;
-  const type = clamp01((f - b(20)) / 70);
-  const QUOTE = 'I WAS QUITE SURPRISED THAT THE PROJECTIONS WERE SO HIGH.';
+  const type = clamp01((f - b(20)) / 40);
+  const QUOTE = '"QUITE SURPRISED"';
   const shown = QUOTE.slice(0, Math.floor(type * QUOTE.length));
-  const rows = [shown.slice(0, 22), shown.slice(22, 44), shown.slice(44)];
+  const ROWS = ['"QUITE', 'SURPRISED"'];
+  let left = shown.length;
+  const rows = ROWS.map((r) => { const k = Math.max(0, Math.min(r.length, left)); left -= r.length + 1; return r.slice(0, k); });
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.08, easeIO(fr, 0, p.dur)), fx: 540, fy: 960})} overlay={<>
-          <Plate x={540} text="&quot;I WAS QUITE SURPRISED THAT THE PROJECTIONS WERE SO HIGH.&quot; · ANDREAS KRAUSE · PER AGU" displayLines={['"I WAS QUITE SURPRISED THAT', 'THE PROJECTIONS WERE SO HIGH."', 'ANDREAS KRAUSE · PER AGU']} y={1190} size={26} p={win(f, b(20) + 74)} />
+          <Plate x={540} text={'"I WAS QUITE SURPRISED THAT THE PROJECTIONS WERE SO HIGH." · ANDREAS KRAUSE · PER AGU'} displayLines={['"I WAS QUITE SURPRISED THAT', 'THE PROJECTIONS WERE SO HIGH."', 'ANDREAS KRAUSE · PER AGU']} y={1190} size={26} p={win(f, b(20) + 74)} />
           <Plate x={540} text="ANDREAS KRAUSE · LEAD AUTHOR" y={600} size={30} tone="dark" p={win(f, b(21) + 4)} />
         </>}>
       <SVG>
@@ -597,23 +616,20 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <rect x={-80} y={-80} width={1240} height={500} fill={SG.mauve} />
         <path d="M -80 420 Q 300 380 600 410 Q 860 430 1160 400 L 1160 520 L -80 520 Z" fill={SG.plumL} stroke={INK} strokeWidth={4} />
         <StormGlass f={f} x={880} y={760} s={0.45} emotion="calm" seal="2019" sealGlow={0.3} qtag={ease(f, b(21), 14)} grow={1} cues={[b(20), b(21)]} seed={13} label={false} />
-        {Array.from({length: 40}, (_, i) => (
-          <g key={i} transform={`translate(${h01(21, i) * 1080} ${560 + h01(22, i) * 1360})`}>
-            <circle cx={0} cy={0} r={22 + 20 * h01(23, i)} fill={i % 3 ? SG.sedgeL : SG.sedgeD} stroke={INK} strokeWidth={2.5} opacity={0.85} />
-            <circle cx={-6} cy={-6} r={8} fill={SG.sedgeL} opacity={0.6} />
-          </g>
-        ))}
+        <Thunderhead f={f} x={480} y={330} w={1000} seed={9} />
+        <TopTussock f={f} seed={62} y0={560} y1={1900} n={46} />
+        <HeldTravel f={f} x={240} y={640} w={600} h={460} mode="shadow" seed={52}>
         <g transform={`translate(540 900) rotate(${-4 + 1.5 * Math.sin(f / 13)})`}>
           <ContactShadow cx={20} cy={30} rx={300} ry={40} opacity={0.35} />
           <rect x={-10} y={-40} width={20} height={240} fill={SG.woodD} stroke={INK} strokeWidth={4} />
           <rect x={-200} y={-200} width={400} height={64} rx={6} fill={SG.paper} stroke={INK} strokeWidth={5} />
           <text x={0} y={-158} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={30} fill={INK}>KRAUSE</text>
-          {f >= b(21) && <g transform={`translate(0 ${-136 + 26 * ease(f, b(21), 10)})`}><rect x={-140} y={-4} width={280} height={36} rx={5} fill={SG.paperD} stroke={INK} strokeWidth={4} /><text x={0} y={22} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK}>LEAD AUTHOR</text></g>}
           <rect x={-280} y={-120} width={560} height={200} rx={6} fill={SG.paper} stroke={INK} strokeWidth={5} />
           <rect x={-30} y={-134} width={60} height={26} rx={5} fill={SG.brass} stroke={INK} strokeWidth={4} />
-          {rows.map((r, i) => <text key={i} x={-256} y={-66 + i * 52} fontFamily={MONO} fontWeight={800} fontSize={34} fill={INK}>{r}</text>)}
-          {type < 1 && <rect x={-256 + (rows[Math.min(2, Math.floor((shown.length) / 22))].length) * 20.5} y={-96 + Math.min(2, Math.floor(shown.length / 22)) * 52} width={16} height={36} fill={INK} opacity={Math.floor(f / 6) % 2} />}
+          {rows.map((r, i) => <text key={i} x={-240} y={-34 + i * 76} fontFamily={MONO} fontWeight={900} fontSize={64} fill={INK}>{r}</text>)}
+          
         </g>
+        </HeldTravel>
       </SVG>
     </Frame>
   );
@@ -633,24 +649,25 @@ const S10: React.FC<SceneProps> = ({p}) => {
   const band = easeIO(f, b(24), 16);
   const strip = easeIO(f, b(22), 24);
   return (
-    <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.05, easeIO(fr, 0, p.dur)), fx: 540, fy: 960})} overlay={<>
-          <Plate x={540} text="1900S · MODEL ESTIMATE" y={600} size={30} p={win(f, b(22) + 6, b(23))} />
+    <Frame p={p} cam={(fr) => ({z: fr < b(24) ? lerp(1.0, 1.04, easeIO(fr, 0, b(24))) : lerp(1.04, 1.22, easeIO(fr, b(24), 24)), fx: fr < b(24) ? 540 : lerp(540, 520, easeIO(fr, b(24), 24)), fy: fr < b(24) ? 960 : lerp(960, 1080, easeIO(fr, b(24), 24))})} overlay={<>
+          <Plate x={540} text="1900S · MODEL ESTIMATE · ABOUT +11%" y={600} size={30} p={win(f, b(22) + 6, b(23))} />
           <Plate x={540} text="ABOUT 12% PER °C" y={680} size={34} tone="dark" p={win(f, b(23) + 4, b(24) + 50)} />
           <Plate x={540} text="EARLIER STUDIES · 8% TO 17% PER °C" y={760} size={28} p={win(f, b(24) + 6, b(25))} />
-          <Plate x={540} text="RUN FORWARD · NEARLY 3X ITS OWN 12 · ABOUT 30% PER °C · COULD" displayLines={['RUN FORWARD · NEARLY 3X ITS OWN 12', 'ABOUT 30% PER °C · COULD']} y={840} size={30} tone="lemon" p={win(f, b(25) + 4)} />
-          <Plate x={540} text="FUTURE RUNS · PER AGU" y={960} size={28} p={win(f, b(26) + 2)} />
+          <Plate x={540} text="RUN FORWARD · NEARLY 3X ITS OWN 12 · ABOUT 30% PER °C · COULD" displayLines={['RUN FORWARD · NEARLY 3X ITS OWN 12', 'ABOUT 30% PER °C · COULD']} y={850} size={30} tone="lemon" p={win(f, b(25) + 4)} />
+          <Plate x={800} text="FUTURE RUNS · PER AGU" y={1110} size={22} p={win(f, b(26) + 2)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={10} band={0.6} />
         <Plank x={540} y={1250} w={1000} />
+        <g transform={`translate(${f >= b(22) && f < b(22) + 24 ? Math.sin(f * 1.7) * 5 : 0} 0)`}><Envelope f={f} x={150} y={1200} scale={0.34} lines={['ML LIGHTNING MODELS']} rot={-8} /></g>
         {strip > 0.01 && (
           <g>
-            <rect x={540 - 420 * strip} y={1170} width={840 * strip} height={40} fill={SG.sepia} stroke={INK} strokeWidth={4} />
-            {Array.from({length: Math.floor(14 * strip)}, (_, i) => <path key={i} d={`M ${540 - 400 * strip + i * 60} 1190 q 15 -12 30 0 q 15 12 30 0`} stroke={SG.peat} strokeWidth={3} fill="none" />)}
-            <text x={540} y={1200} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK} opacity={strip}>1900S</text>
+            <rect x={540 - 420 * strip} y={1284} width={840 * strip} height={40} fill={SG.sepia} stroke={INK} strokeWidth={4} />
+            {Array.from({length: Math.floor(14 * strip)}, (_, i) => <path key={i} d={`M ${540 - 400 * strip + i * 60} 1304 q 15 -12 30 0 q 15 12 30 0`} stroke={SG.peat} strokeWidth={3} fill="none" />)}
+            <text x={150} y={1312} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={20} fill={INK} opacity={strip * (1 - easeIO(f, b(25) - 6, 8))}>1900S</text>
           </g>
         )}
-        <SensDial f={f} x={520} y={1150} r={300} value={v} band={[8, 17]} bandK={band} jump={f >= b(25) + 10 && f < b(25) + 20 ? 1 : 0} />
+        <HeldTravel f={f} x={230} y={920} w={540} h={360} mode="sweep" seed={53}><SensDial f={f} x={500} y={1230} r={240} value={v} band={[8, 17]} bandK={band} jump={f >= b(25) + 10 && f < b(25) + 20 ? 1 : 0} /></HeldTravel>
         <StormGlass f={f} x={940} y={1216} s={0.55} emotion={swing > 0.5 ? 'worried' : 'curious'} seal="2019" qtag={1} sealGlow={lerp(0.2, 1, easeIO(f, b(26), 20))} grow={lerp(0.6, 1, easeIO(f, b(26), 30))} cues={[b(22), b(25), b(26)]} seed={14} label={false} />
       </SVG>
     </Frame>
@@ -663,26 +680,28 @@ const S11: React.FC<SceneProps> = ({p}) => {
   const open = easeIO(f, b(39), 24);
   const spinA = f * 2.2, spinB = f * 6.4;
   const fan = easeIO(f, b(28), 30);
-  const cntA = Math.min(17, Math.floor(8 + 9 * clamp01((f - b(27)) / 30)));
-  const cntB = Math.min(30, Math.floor(30 * clamp01((f - b(27)) / 30)));
+  const cntA = Math.min(17, Math.floor(8 + 9 * clamp01((f - b(27)) / 10)));
+  const cntB = Math.min(30, Math.floor(30 * clamp01((f - b(27)) / 10)));
   const chain = ease(f, b(28) - 4, 16);
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.08, 1.0, easeIO(fr, 0, p.dur)), fx: 540, fy: 960})} overlay={<>
-          <Plate x={540} text="EARLIER STUDIES' MATH · THIS STUDY'S MATH" displayLines={["EARLIER STUDIES' MATH", "THIS STUDY'S MATH"]} y={600} size={28} p={win(f, b(39) + 10, b(27))} />
-          <Plate x={540} text="EARLIER STUDIES DIFFER MOSTLY IN MATH · PER AGU" displayLines={['EARLIER STUDIES DIFFER', 'MOSTLY IN MATH · PER AGU']} y={720} size={30} tone="dark" p={win(f, b(27) + 4, b(28))} />
+          <Plate x={540} text="EARLIER STUDIES' MATH · THIS STUDY'S MATH" y={530} size={22} p={win(f, b(39) + 10, b(27))} />
+          <Plate x={540} text="EARLIER STUDIES DIFFER MOSTLY IN MATH · PER AGU" displayLines={['EARLIER STUDIES DIFFER', 'MOSTLY IN MATH · PER AGU']} y={1440} size={26} tone="dark" p={win(f, b(27) + 4, b(28))} />
+          <Plate x={540} text={'"QUITE A LARGE UNCERTAINTY" · ANDREAS KRAUSE · PER AGU'} displayLines={['"QUITE A LARGE UNCERTAINTY"', 'ANDREAS KRAUSE · PER AGU']} y={1250} size={30} p={win(f, b(28) + 6)} />
         </>}>
       <SVG>
         <rect x={-80} y={-80} width={1240} height={2080} fill="#8A6A44" data-band="ok" />
         {Array.from({length: 12}, (_, i) => <path key={i} d={`M -80 ${i * 170} Q 540 ${i * 170 + 30} 1160 ${i * 170}`} stroke="#6E5236" strokeWidth={4} fill="none" data-band="ok" />)}
-        <rect x={-80} y={1460} width={1240} height={500} fill={SG.sedge} data-band="ok" />
+        <rect x={-80} y={1460} width={1240} height={500} fill="#7A5C3A" data-band="ok" />
         <g transform="translate(990 1150) rotate(90)"><StormGlass f={f} x={0} y={0} s={0.4} emotion="curious" seal="2019" sealGlow={0.6} qtag={f < b(27) + 10 ? 1 : 0} cues={[b(39), b(27)]} seed={19} label={false} /></g>
-        {Array.from({length: 18}, (_, i) => <circle key={i} cx={h01(31, i) * 1080} cy={1520 + h01(32, i) * 380} r={26 + 16 * h01(33, i)} fill={SG.sedgeL} stroke={INK} strokeWidth={2.5} data-band="ok" />)}
+        {Array.from({length: 8}, (_, i) => <path key={i} d={`M -80 ${1500 + i * 56} Q 540 ${1520 + i * 56} 1160 ${1500 + i * 56}`} stroke="#5E452B" strokeWidth={4} fill="none" data-band="ok" />)}
+        <HeldTravel f={f} x={140} y={580} w={800} h={740} mode="sweep" seed={54}>
         <g transform="translate(540 960)">
           <ContactShadow cx={14} cy={20} rx={420} ry={80} opacity={0.35} />
           <rect x={-400} y={-380} width={800} height={740} rx={40} fill={SG.brassD} stroke={INK} strokeWidth={8} />
           <rect x={-370} y={-350} width={740} height={680} rx={30} fill="#2A2230" stroke={INK} strokeWidth={5} />
           <path d="M -360 0 L 360 0" stroke={SG.sepia} strokeWidth={30} opacity={0.9} />
-          <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={INK}>SAME WEATHER</text>
+          <text x={0} y={10} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={18} fill={INK}>DIFFERENT MATH · PER AGU</text>
           <g>
             <Gear x={-200} y={-160} r={90} rot={spinA} />
             <Gear x={-80} y={-210} r={50} rot={-spinA * 1.8} />
@@ -691,8 +710,8 @@ const S11: React.FC<SceneProps> = ({p}) => {
             <Gear x={280} y={-110} r={44} rot={-spinB * 1.8} fill={SG.brassL} />
             <Gear x={110} y={-60} r={36} rot={-spinB * 2.2} fill={SG.brassL} />
           </g>
-          <Lab x={-200} y={-310} text="EARLIER STUDIES" size={20} />
-          <Lab x={190} y={-310} text="THIS STUDY" size={20} />
+          {open > 0.9 && <Lab x={-200} y={-50} text="EARLIER STUDIES" size={20} />}
+          {open > 0.9 && <Lab x={190} y={-50} text="THIS STUDY" size={20} />}
           <g transform="translate(-200 170)"><rect x={-110} y={-44} width={220} height={88} rx={10} fill={SG.paper} stroke={INK} strokeWidth={5} /><text x={0} y={16} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={40} fill={INK}>{f >= b(27) ? `8 TO ${cntA}` : '--'}</text></g>
           <g transform="translate(190 170)"><rect x={-110} y={-44} width={220} height={88} rx={10} fill={SG.paper} stroke={INK} strokeWidth={5} /><text x={0} y={16} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={44} fill={INK}>{f >= b(27) ? `${cntB}` : '--'}</text></g>
           {fan > 0.01 && <path d={`M 0 300 L ${-320 * fan} 360 L ${320 * fan} 360 Z`} fill={INK} opacity={0.3 * fan} />}
@@ -701,11 +720,9 @@ const S11: React.FC<SceneProps> = ({p}) => {
             {open < 0.6 && <text x={0} y={0} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={40} fill={INK}>% PER °C</text>}
           </g>
         </g>
+        </HeldTravel>
         {chain > 0.01 && (
-          <g transform={`translate(540 ${lerp(300, 1150, chain)}) rotate(${6 * Math.sin(f / 7) * chain})`}>
-            <path d="M -200 -360 L -200 0 M 200 -360 L 200 0" stroke={INK} strokeWidth={8} strokeDasharray="14 6" />
-            <Plate x={0} text="&quot;QUITE A LARGE UNCERTAINTY&quot; · ANDREAS KRAUSE · PER AGU" displayLines={['"QUITE A LARGE UNCERTAINTY"', 'ANDREAS KRAUSE · PER AGU']} y={40} size={30} p={1} />
-          </g>
+          <ChainHang x={540} y={lerp(300, 1020, chain)} rot={6 * Math.sin(f / 7) * chain} />
         )}
       </SVG>
     </Frame>
@@ -722,7 +739,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
   return (
     <Frame p={p} z0={1.0} z1={1.05} overlay={<>
           <Plate x={540} text="PREPRINT · OCTOBER 17TH · KRAUSE AND RAMMIG" displayLines={['PREPRINT · OCTOBER 17TH', 'KRAUSE AND RAMMIG']} y={600} size={28} p={win(f, b(29) + 4, b(43))} />
-          <Plate x={540} text="LIGHTNING MODELS · TESTED" y={700} size={30} p={win(f, b(43) + 6, b(30))} />
+          <Plate x={540} text="ML LIGHTNING MODELS IN GENERAL · PREPRINT" y={700} size={26} p={win(f, b(43) + 6, b(30))} />
           <Plate x={540} text="SIMPLE AVERAGE · BEAT THE ML MODELS · PREPRINT · ON SATELLITE DATA" displayLines={['SIMPLE AVERAGE · BEAT THE ML MODELS', 'PREPRINT · ON SATELLITE DATA']} y={800} size={28} tone="dark" p={win(f, b(30) + 6)} />
         </>}>
       <SVG>
@@ -732,7 +749,7 @@ const S12: React.FC<SceneProps> = ({p}) => {
             <path d={`M ${900 - 900 * unroll} 1120 L 1000 1120 L 1060 1250 L ${840 - 900 * unroll} 1250 Z`} fill="#3E4A52" stroke={INK} strokeWidth={5} />
             {[1150, 1185, 1220].map((yy) => <path key={yy} d={`M ${900 - 900 * unroll} ${yy} L 1020 ${yy}`} stroke={SG.paper} strokeWidth={2.5} strokeDasharray="16 12" />)}
             <rect x={980} y={1110} width={14} height={150} fill={SG.paper} stroke={INK} strokeWidth={3} />
-            <text x={560} y={1140} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={SG.paper} opacity={unroll}>SATELLITE DATA</text>
+            <g opacity={unroll}><rect x={826} y={1050} width={148} height={34} rx={4} fill="#22302F" stroke={INK} strokeWidth={3} /><rect x={896} y={1084} width={8} height={36} fill={SG.woodD} /><text x={900} y={1073} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={16} fill={SG.paper}>SATELLITE DATA</text></g>
             {Array.from({length: 9}, (_, i) => <rect key={i} x={140 + i * 100} y={1270} width={8} height={40} fill={SG.woodD} stroke={INK} strokeWidth={2} />)}
             <path d="M 120 1280 L 1060 1280" stroke={SG.woodD} strokeWidth={6} />
           </g>
@@ -740,13 +757,10 @@ const S12: React.FC<SceneProps> = ({p}) => {
         {[0, 1, 2].map((i) => {
           const stall = clamp01((race - 0.35 - i * 0.12) * 4);
           const xr = 220 + 520 * Math.min(race * 1.4, 0.55 + i * 0.05);
-          return unroll > 0.5 ? <ModelRacer key={i} f={f} x={xr} y={1175 + i * 30} s={0.7} run={1 - stall} stall={stall} seed={i + 1} tint={[SG.mauveL, SG.lilac, SG.glassD][i]} /> : null;
+          return unroll > 0.5 ? <ModelRacer key={i} f={f} x={xr} y={1175 + i * 30} s={1.0} run={1 - stall} stall={stall} seed={i + 1} tint={[SG.mauveL, SG.lilac, SG.glassD][i]} /> : null;
         })}
-        {unroll > 0.5 && <AverageRuler f={f} x={lerp(380, 860, clamp01((f - b(30) + 30) / 50))} y={1236} s={0.55} emotion={won ? 'smug' : 'sleepy'} cues={[b(43), b(30)]} seed={21} />}
-        <HeldTravel f={f} x={20} y={760} w={220} h={520} mode="sweep" seed={12}>
-          <StormGlass f={f} x={120} y={GROUND + 30} s={0.62} emotion="curious" seal="2019" look={1} cues={[b(29), b(43), b(30)]} seed={15} label={false} />
-        </HeldTravel>
-        <g transform={`translate(${trem} 0)`}><Envelope f={f} x={150} y={GROUND + 120} scale={0.38} lines={['ML LIGHTNING MODELS']} stamp="OCT 17TH" open={f >= b(29) ? 0.08 : 0} rot={-6} /></g>
+        {unroll > 0.5 && <AverageRuler f={f} x={lerp(380, 820, clamp01((f - b(30) + 30) / 50))} y={1236} s={0.75} emotion={won ? 'smug' : 'sleepy'} cues={[b(43), b(30)]} seed={21} />}
+        <g transform={`translate(${trem} 0)`}><Envelope f={f} x={170} y={GROUND + 20} scale={0.38} lines={['ML LIGHTNING MODELS']} open={f >= b(29) ? 0.08 : 0} rot={-6} /></g>
       </SVG>
     </Frame>
   );
@@ -761,25 +775,20 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const card = {x: 760, y: 1000};
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.08, easeIO(fr, 0, p.dur)), fx: 560, fy: 940})} overlay={<>
-          <Plate x={600} text="TEST OUTSIDE THE TRAINING DATA · PREPRINT · NOT PEER REVIEWED" displayLines={['TEST OUTSIDE THE TRAINING DATA', 'PREPRINT · NOT PEER REVIEWED']} y={600} size={30} tone="dark" p={win(f, b(31) + 14)} />
-          <Plate x={600} text="OUR READ · THE RANGE WAITS ON A TEST" y={730} size={28} p={win(f, b(32) + 4)} />
+          <Plate x={660} text="TEST OUTSIDE THE TRAINING DATA · PREPRINT · NOT PEER REVIEWED" displayLines={['TEST OUTSIDE THE TRAINING DATA', 'PREPRINT · NOT PEER REVIEWED']} y={600} size={26} tone="dark" p={win(f, b(31) + 14)} />
+          <Plate x={660} text="OUR READ · THE RANGE WAITS ON A TEST" y={730} size={24} p={win(f, b(32) + 4)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={13} band={0.45} />
-        <StormGlass f={f} x={300} y={GROUND} s={1.0} emotion="determined" seal="2019" sealGlow={0.4} look={1} cues={[b(31), b(32)]} seed={16} />
-        <Envelope f={f} x={660} y={GROUND + 40} scale={0.6} lines={['ML LIGHTNING MODELS']} stamp="OCT 17TH" open={tear} rot={-3} />
+        <HeldTravel f={f} x={170} y={560} w={260} h={700} mode="sweep" seed={55}><StormGlass f={f} x={300} y={GROUND} s={1.0} emotion="determined" seal="2019" sealGlow={0.4} look={1} cues={[b(31), b(32)]} seed={16} /></HeldTravel>
+        <Envelope f={f} x={660} y={GROUND + 40} scale={0.6} lines={['ML LIGHTNING MODELS']} open={tear} rot={-3} />
         {rise > 0.01 && (
           <g>
             <rect x={card.x - 6} y={lerp(GROUND, card.y + 60, rise)} width={12} height={GROUND - lerp(GROUND, card.y + 60, rise) + 10} fill={SG.woodD} stroke={INK} strokeWidth={3} />
-            <g transform={`translate(${card.x} ${lerp(GROUND, card.y, rise)}) rotate(${(1 - rise) * 180 + 2 * Math.sin(f / 11)})`}>
-              <rect x={-150} y={-70} width={300} height={130} rx={8} fill={SG.paper} stroke={INK} strokeWidth={5} />
-              <text x={0} y={-20} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>TEST OUTSIDE</text>
-              <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>THE TRAINING</text>
-              <text x={0} y={46} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>DATA</text>
-            </g>
+            <TestCard x={card.x} y={lerp(GROUND, card.y, rise)} rot={(1 - rise) * 180 + 2 * Math.sin(f / 11)} />
           </g>
         )}
-        {cord > 0.01 && <path d={`M ${card.x - 6} ${card.y + 80} Q ${lerp(card.x, 420, 0.5)} ${card.y - 40 + 60 * (1 - cord)} ${lerp(card.x - 6, 300, cord)} ${lerp(card.y + 80, GROUND - 590, cord)}`} stroke={SG.paperD} strokeWidth={6} fill="none" />}
+        {cord > 0.01 && <path d={`M ${card.x - 150} ${card.y - 60} L ${card.x + 150} ${card.y - 60} L ${lerp(card.x, 360, cord) + 40} ${GROUND - 520} L ${lerp(card.x, 360, cord) - 120} ${GROUND - 520} Z`} fill={SG.plum} opacity={0.32 * cord} />}
       </SVG>
     </Frame>
   );
@@ -791,14 +800,14 @@ const S14: React.FC<SceneProps> = ({p}) => {
   const pins = ease(f, b(33), 14);
   return (
     <Frame p={p} z0={1.0} z1={1.06} overlay={<>
-          <Plate x={540} text="BEAT A REGRESSION + 3 EXISTING FORMULAS · PER THE PAPER" displayLines={['BEAT A REGRESSION', '+ 3 EXISTING FORMULAS · PER THE PAPER']} y={600} size={28} p={win(f, b(33) + 6, b(47))} />
-          <Plate x={540} text="1 REGRESSION" y={710} size={30} tone="dark" p={win(f, b(47) + 4, b(44))} />
-          <Plate x={540} text="3 EXISTING FORMULAS · PER THE PAPER" y={800} size={28} tone="dark" p={win(f, b(44) + 4)} />
+          <Plate x={680} text="BEAT A REGRESSION + 3 EXISTING FORMULAS · PER THE PAPER" displayLines={['BEAT A REGRESSION', '+ 3 EXISTING FORMULAS · PER THE PAPER']} y={600} size={24} p={win(f, b(33) + 6, b(47))} />
+          <Plate x={680} text="1 REGRESSION" y={710} size={30} tone="dark" p={win(f, b(47) + 4, b(44))} />
+          <Plate x={680} text="3 EXISTING FORMULAS · PER THE PAPER" y={800} size={24} tone="dark" p={win(f, b(44) + 4)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={14} band={0.4} />
-        <HeldTravel f={f} x={340} y={560} w={400} h={720} mode="sweep" seed={14}>
-          <StormGlass f={f} x={540} y={GROUND - 40} s={1.05} emotion="calm" seal="2019" look={0} cues={[b(33), b(47), b(44)]} seed={17} />
+        <HeldTravel f={f} x={100} y={560} w={400} h={720} mode="sweep" seed={14}>
+          <StormGlass f={f} x={300} y={GROUND - 40} s={1.05} emotion="calm" seal="2019" look={0} cues={[b(33), b(47), b(44)]} seed={17} />
         </HeldTravel>
         <Plank x={540} y={1290} w={900} />
         {[0, 1, 2, 3].map((i) => (
@@ -820,14 +829,14 @@ const S15: React.FC<SceneProps> = ({p}) => {
   const unit = 56, base = GROUND;
   return (
     <Frame p={p} z0={1.0} z1={1.05} overlay={<>
-          <Plate x={540} text="ALASKA · +116% TO +594% · PROJECTION · PER AGU" displayLines={['ALASKA · +116% TO +594%', 'PROJECTION · PER AGU']} y={600} size={28} tone="lemon" p={win(f, b(34) + 6, b(35))} />
-          <Plate x={540} text="LOW END · MORE THAN 2X · PROJECTION · PER AGU" displayLines={['LOW END · MORE THAN 2X', 'PROJECTION · PER AGU']} y={720} size={28} p={win(f, b(35) + 4, b(36))} />
-          <Plate x={540} text="CONDITIONS UNLIKE THE TRAINING DATA · PREPRINT" displayLines={['CONDITIONS UNLIKE THE TRAINING DATA', 'PREPRINT']} y={840} size={28} tone="dark" p={win(f, b(36) + 6)} />
+          <Plate x={540} text="ALASKA · +116% TO +594% · PROJECTION · PER AGU" displayLines={['ALASKA · +116% TO +594%', 'PROJECTION · PER AGU']} y={560} size={28} tone="lemon" p={win(f, b(34) + 6, b(35))} />
+          <Plate x={540} text="LOW END · MORE THAN 2X · PROJECTION · PER AGU" displayLines={['LOW END · MORE THAN 2X', 'PROJECTION · PER AGU']} y={680} size={28} p={win(f, b(35) + 4, b(36))} />
+          <Plate x={540} text="OUR READ · THE WHOLE RANGE AWAITS AN OUT-OF-SAMPLE TEST" displayLines={['OUR READ · THE WHOLE RANGE', 'AWAITS AN OUT-OF-SAMPLE TEST']} y={800} size={26} tone="dark" p={win(f, b(36) + 6)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={15} band={0.25} wall={wall} />
         <StormGlass f={f} x={150} y={GROUND} s={0.55} emotion="curious" seal="2019" look={wall > 0.3 ? 1 : -1} cues={[b(34), b(36)]} seed={18} label={false} />
-        <RangeColumn f={f} x={500} y={base} w={150} unit={unit} lo={2.16} hi={6.94} seed={6} label="ALASKA" />
+        <HeldTravel f={f} x={420} y={860} w={160} h={400} mode="sweep" seed={56}><RangeColumn f={f} x={500} y={base} w={150} unit={unit} lo={2.16} hi={6.94} seed={6} label="ALASKA" /></HeldTravel>
         <Caliper x={720} yTop={base - unit * 6.94} yBot={base - unit * 2.16} k={cal} tick={tick} />
       </SVG>
     </Frame>
@@ -852,36 +861,31 @@ const S16: React.FC<SceneProps> = ({p}) => {
     return (
       <Frame p={p} cam={(fr) => ({z: lerp(1.12, 1.0, easeIO(fr, 0, p.dur)), fx: 520, fy: 980})} overlay={<>
             <Plate x={540} text="JUNE 23RD, 2024 · AK DIV. OF FORESTRY" y={600} size={30} p={win(f, b(37) + 6, b(45))} />
-            <Plate x={540} text="ONE DAY · NEARLY 7,000 STRIKES" y={700} size={34} tone="lemon" p={win(f, b(45) + 4, b(38) - 12)} />
+            <Plate x={540} text="ONE DAY · NEARLY 7,000 STRIKES · AK DIV. OF FORESTRY" displayLines={['ONE DAY · NEARLY 7,000 STRIKES', 'AK DIV. OF FORESTRY']} y={720} size={30} tone="lemon" p={win(f, b(45) + 4, b(38) - 12)} />
           </>}>
         <SVG>
           <rect x={-80} y={-80} width={1240} height={2080} fill="#33463F" data-band="ok" />
           {Array.from({length: 40}, (_, i) => <ellipse key={i} cx={h01(51, i) * 1080} cy={h01(52, i) * 1920} rx={40} ry={14} fill="#2B3B35" data-band="ok" />)}
-          <AlaskaOutline x={fit.x} y={fit.y} w={fit.w} fill={SG.sedge} stroke={INK} strokeWidth={4} shadow={10} />
+          <HeldTravel f={f} x={90} y={640} w={900} h={560} mode="sweep" seed={57}><AlaskaOutline x={fit.x} y={fit.y} w={fit.w} fill={SG.sedge} stroke={INK} strokeWidth={4} shadow={10} /></HeldTravel>
           {marks}
           {Array.from({length: 4}, (_, i) => <ellipse key={`c${i}`} cx={(h01(61, i) * 1300 + f * 3) % 1300 - 100} cy={560 + i * 260} rx={260} ry={90} fill={SG.plum} opacity={0.35} />)}
-          {f >= b(45) && f < b(45) + 8 && <rect x={-80} y={-80} width={1240} height={2080} fill={SG.lemonL} opacity={0.25 * (1 - (f - b(45)) / 8)} />}
+          {f >= b(45) && f < b(45) + 8 && <rect x={-80} y={-80} width={1240} height={2080} fill={SG.lemonL} opacity={0.25 * (1 - (f - b(45)) / 8)} data-band="ok" />}
         </SVG>
       </Frame>
     );
   }
   return (
     <Frame p={p} z0={1.0} z1={1.03} overlay={<>
-          <Plate x={540} text="WHO SHOULD RUN THE TEST?" y={1236} size={36} tone="dark" p={win(f, b(38) + 4)} />
+          <Plate x={700} text="WHO SHOULD RUN THAT TEST?" y={560} size={30} tone="dark" p={win(f, b(38) + 4)} />
         </>}>
       <SVG>
         <Ridge f={f} seed={1} band={0.15} wall={1} raven={940} />
-        <StormGlass f={f} x={340} y={GROUND} s={1.0} emotion="curious" seal="2019" sealGlow={0.3} look={0.8} cues={[b(38)]} seed={5} />
+        <HeldTravel f={f} x={210} y={560} w={260} h={700} mode="sweep" seed={58}><StormGlass f={f} x={340} y={GROUND} s={1.0} emotion="curious" seal="2019" sealGlow={0.3} look={0.8} cues={[b(38)]} seed={5} /></HeldTravel>
         <g>
           <rect x={714} y={GROUND - 360} width={12} height={370} fill={SG.woodD} stroke={INK} strokeWidth={3} />
           <ContactShadow cx={720} cy={GROUND + 4} rx={20} ry={5} opacity={0.4} />
-          <g transform={`translate(720 ${GROUND - 420}) rotate(${2 * Math.sin(f / 11)})`}>
-            <rect x={-150} y={-70} width={300} height={130} rx={8} fill={SG.paper} stroke={INK} strokeWidth={5} />
-            <text x={0} y={-20} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>TEST OUTSIDE</text>
-            <text x={0} y={14} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>THE TRAINING</text>
-            <text x={0} y={46} textAnchor="middle" fontFamily={MONO} fontWeight={900} fontSize={22} fill={INK}>DATA</text>
-          </g>
-          <path d={`M 714 ${GROUND - 300} Q 520 ${GROUND - 380} 340 ${GROUND - 590}`} stroke={SG.paperD} strokeWidth={6} fill="none" />
+          <TestCard x={720} y={GROUND - 420} rot={2 * Math.sin(f / 11)} />
+          <path d={`M 570 ${GROUND - 490} L 870 ${GROUND - 490} L 400 ${GROUND - 520} L 240 ${GROUND - 520} Z`} fill={SG.plum} opacity={0.3} />
         </g>
       </SVG>
     </Frame>
