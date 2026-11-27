@@ -1,0 +1,507 @@
+{
+ "run_date": "2026-11-27",
+ "fact_check_verdict": "PASS WITH CONDITIONS. Two adversarial validators plus a showrunner fetch. Read: the AGU release (November 24th) and its EurekAlert copy (not independent), the Crossref record and abstract of Krause et al., Earth's Future 10.1029/2026EF008820 (CC BY 4.0, online November 24th), Nature World News (November 25th, independent second source for the Alaska range), the Crossref record and abstract of the Krause and Rammig ESSOAr preprint 10.22541/essoar.15010630/v1 (posted October 17th, not peer reviewed), the Alaska Division of Forestry 2024 wildfire handout historical table, akfireinfo.com, and Veraverbeke et al. 2017 (Nature Climate Change). The Wiley full text returned 403 every time, so nothing is claimed from the paper's body. Conditions: (1) every Alaska figure, the bolt baseline, the 2019 training year and 'nearly sevenfold' come from the AGU release only, so they carry PER AGU and the word PROJECTION, and the scenario is HIGH EMISSIONS; (2) the range is the result, never a single number, and never 'will'; (3) the study did not model fire, so fire is Alaska context from the Division of Forestry, never a projection of the paper; (4) the preprint tests ML lightning models in general against LIS/OTD satellite data and does not name the Earth's Future model, so the film never says it tested or refuted this paper; (5) the convection and ice-crystal explanation is the release's narration, not a Krause quote; (6) the 11 percent is a model reconstruction, not a measured trend; (7) no contiguous US or Germany figures exist, none drawn; (8) Krause is never gendered, use the surname.",
+ "claims": [
+  {
+   "id": "c1",
+   "status": "verified-primary",
+   "spoken": "A new study in the journal Earth's Future came out November 24th.",
+   "on_screen": "EARTH'S FUTURE \u00b7 NOVEMBER 24TH",
+   "source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "second_source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "verbatim_source": "Crossref record, labelled non-quotation: published online 24 November 2026, Earth's Future vol. 14 no. 11, e2026EF008820",
+   "requires": [
+    "ordinal date, no year on screen"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c2",
+   "status": "verified-primary",
+   "spoken": "Researchers led by Andreas Krause at the Technical University of Munich.",
+   "on_screen": "ANDREAS KRAUSE \u00b7 TECHNICAL UNIVERSITY OF MUNICH",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "verbatim_source": "\"Andreas Krause, an Earth system scientist at the Technical University of Munich and the study's lead author\"",
+   "requires": [
+    "never gender Krause, use the surname"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c3",
+   "status": "verified-primary",
+   "spoken": "The team trained a machine learning model on lightning and weather observations from one year, 2019.",
+   "on_screen": "TRAINED ON 2019 \u00b7 PER AGU",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://www.natureworldnews.com/articles/74051/20261125/cloud-ground-lightning-could-more-double-2100-new-study-projects.htm",
+   "verbatim_source": "\"the team trained a machine learning model with lightning and climate observations from 2019\"",
+   "requires": [
+    "per AGU release",
+    "observations from 2019, never 'one storm season'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c4",
+   "status": "verified-primary",
+   "spoken": "It's a type of model called X G Boost.",
+   "on_screen": "A MACHINE LEARNING MODEL \u00b7 XGBOOST",
+   "source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "second_source": "",
+   "verbatim_source": "\"using an XGBoost machine learning model\"",
+   "requires": [
+    "from the abstract"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c5",
+   "status": "verified-primary",
+   "spoken": "It learned from six everyday weather readings, temperature, rain, humidity, air pressure, wind and sunlight.",
+   "on_screen": "TEMPERATURE \u00b7 RAIN \u00b7 HUMIDITY \u00b7 PRESSURE \u00b7 WIND \u00b7 SUN",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "verbatim_source": "\"that included temperature, rainfall, humidity, air pressure, wind speed, and incoming radiation from the sun.\"",
+   "requires": [
+    "six inputs, the abstract confirms six daily surface variables"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c6",
+   "status": "verified-primary",
+   "spoken": "It learned where ground-striking lightning lands, at half-degree squares of the map.",
+   "on_screen": "CLOUD-TO-GROUND LIGHTNING \u00b7 HALF-DEGREE GRID",
+   "source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "second_source": "",
+   "verbatim_source": "\"to predict CG lightning density over land at 0.5\u00b0 resolution\"",
+   "requires": [
+    "over land"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c7",
+   "status": "verified-primary",
+   "spoken": "Run on today's climate, most of Alaska got less than one ground strike per square kilometer a year.",
+   "on_screen": "MOST OF ALASKA \u00b7 UNDER 1 STRIKE PER SQ KM A YEAR \u00b7 1995 TO 2014 \u00b7 PER AGU",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "",
+   "verbatim_source": "\"when most of the state's total ground area received, on average, less than one bolt per square kilometer per year.\"",
+   "requires": [
+    "baseline 1995 to 2014",
+    "most of the state, not all",
+    "per AGU release"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c8",
+   "status": "verified-two-sources",
+   "spoken": "Under a high-emissions future, Alaska could get 116 to 594 percent more ground-striking lightning by the end of the century.",
+   "on_screen": "ALASKA \u00b7 +116% TO +594% \u00b7 PROJECTION \u00b7 HIGH EMISSIONS",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://www.natureworldnews.com/articles/74051/20261125/cloud-ground-lightning-could-more-double-2100-new-study-projects.htm",
+   "verbatim_source": "\"Alaska, for instance, could get 116% to 594% more ground-striking lightning than during the baseline period\"",
+   "requires": [
+    "could, never will",
+    "projection, high-emissions scenario",
+    "the whole range, never one end alone",
+    "per AGU release"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c9",
+   "status": "verified-primary",
+   "spoken": "At the top of the range, that's nearly seven times today's lightning.",
+   "on_screen": "UPPER ESTIMATE \u00b7 NEARLY 7X \u00b7 PER AGU",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "",
+   "verbatim_source": "\"upper estimates reaching nearly sevenfold the current lightning frequency by 2100\"",
+   "requires": [
+    "upper estimate, never the central estimate",
+    "per AGU release"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c10",
+   "status": "verified-primary",
+   "spoken": "Across the world's land, the projection is 76 to 140 percent more ground strikes than in 1995 to 2014.",
+   "on_screen": "WORLD \u00b7 +76% TO +140% \u00b7 HIGH EMISSIONS",
+   "source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "second_source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "verbatim_source": "\"reveal large increases of 76%\u2013140% under a high-emission scenario (SSP3-7.0)\"",
+   "requires": [
+    "high emissions",
+    "projection"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c11",
+   "status": "verified-primary",
+   "spoken": "Run backward on the climate of the 1900s, the model estimates lightning rose about 11 percent over the century.",
+   "on_screen": "1900S \u00b7 MODEL ESTIMATE \u00b7 ABOUT +11%",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "verbatim_source": "\"the frequency of cloud-to-ground lightning rose 11% over the 20th century\"",
+   "requires": [
+    "model estimate, never a measured trend"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c12",
+   "status": "verified-primary",
+   "spoken": "That's about 12 percent for every degree Celsius of warming.",
+   "on_screen": "ABOUT 12% PER \u00b0C",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "",
+   "verbatim_source": "\"equivalent to about 12% for every degree Celsius of warming\"",
+   "requires": [
+    "the 1900s reconstruction"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c13",
+   "status": "verified-primary",
+   "spoken": "In the future runs it gets nearly three times as sensitive, about 30 percent more lightning per degree.",
+   "on_screen": "RUN FORWARD \u00b7 NEARLY 3X ITS OWN 12 \u00b7 ABOUT 30% PER \u00b0C \u00b7 COULD",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "verbatim_source": "\"that relationship could become nearly three times as sensitive, bumping up lightning frequency by 30% for each degree of warming.\"",
+   "requires": [
+    "could",
+    "projection"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c14",
+   "status": "verified-primary",
+   "spoken": "Earlier studies projected about 8 to 17 percent per degree, and the release says the gap comes mostly from different math.",
+   "on_screen": "EARLIER STUDIES \u00b7 8% TO 17% PER \u00b0C",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "",
+   "verbatim_source": "\"project cloud-to-ground lightning frequency rising between 8% and 17% per degree of warming\"",
+   "requires": [
+    "the discrepancy stems mostly from different mathematical approaches, per AGU release"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c15",
+   "status": "verified-primary",
+   "spoken": "Krause said, I was quite surprised that the projections were so high.",
+   "on_screen": "\"I WAS QUITE SURPRISED THAT THE PROJECTIONS WERE SO HIGH.\" \u00b7 ANDREAS KRAUSE \u00b7 PER AGU",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://www.natureworldnews.com/articles/74051/20261125/cloud-ground-lightning-could-more-double-2100-new-study-projects.htm",
+   "verbatim_source": "\"I was quite surprised that the projections were so high,\" Krause said.",
+   "requires": [
+    "the whole sentence, quoted",
+    "attributed on screen"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c16",
+   "status": "verified-primary",
+   "spoken": "Krause also said there is actually quite a large uncertainty about how lightning will respond to climate change.",
+   "on_screen": "\"QUITE A LARGE UNCERTAINTY\" \u00b7 ANDREAS KRAUSE \u00b7 PER AGU",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://www.eurekalert.org/news-releases/1153293",
+   "verbatim_source": "\"There is actually quite a large uncertainty about how lightning will respond to climate change,\"",
+   "requires": [
+    "a quoted fragment must survive being read alone"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c17",
+   "status": "verified-primary",
+   "spoken": "Warmer air stirs up more convection in the clouds, but it could also mean fewer ice crystals high up.",
+   "on_screen": "MORE CONVECTION \u00b7 FEWER ICE CRYSTALS? \u00b7 PER AGU",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "",
+   "verbatim_source": "\"As climate change raises air temperatures around the globe, more convection stirs up the clouds\" and \"But warmer air could also mean fewer ice crystals high up in the atmosphere\"",
+   "requires": [
+    "release narration, never in Krause's mouth",
+    "per AGU release"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c18",
+   "status": "verified-primary",
+   "spoken": "The researchers say the Amazon is the least certain, because its future climate may look vastly different from what the model trained on.",
+   "on_screen": "LEAST CERTAIN \u00b7 FAR FROM THE TRAINING DATA \u00b7 PER AGU",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "",
+   "verbatim_source": "\"projections for the Amazon carry the most uncertainty since future climate conditions there may look vastly different\"",
+   "requires": [
+    "the researchers, not Krause alone",
+    "about the Amazon, never said of Alaska"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c19",
+   "status": "verified-primary",
+   "spoken": "A month earlier, Krause and co-author Anja Rammig posted a preprint arguing that lightning model test scores can overstate how well they project.",
+   "on_screen": "PREPRINT \u00b7 OCTOBER 17TH \u00b7 KRAUSE AND RAMMIG",
+   "source": "https://api.crossref.org/works/10.22541/essoar.15010630/v1",
+   "second_source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "verbatim_source": "\"common lightning-model evaluations can overstate projection skill\"",
+   "requires": [
+    "preprint, not peer reviewed",
+    "about lightning models in general, never says it tested this paper's model",
+    "Rammig is a co-author on both, per Crossref"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c20",
+   "status": "verified-primary",
+   "spoken": "In that preprint, a simple benchmark that just predicts the average from the training data beat the machine learning models it tested.",
+   "on_screen": "SIMPLE AVERAGE \u00b7 BEAT THE ML MODELS \u00b7 PREPRINT \u00b7 ON SATELLITE DATA",
+   "source": "https://api.crossref.org/works/10.22541/essoar.15010630/v1",
+   "second_source": "",
+   "verbatim_source": "\"We introduce a simple benchmark predicting the training-data mean lightning density\" and \"outperforms machine-learning models and traditional parameterizations\"",
+   "requires": [
+    "on satellite lightning data (LIS/OTD), per the preprint",
+    "the ML models it tested, never 'this model'",
+    "preprint"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c21",
+   "status": "verified-primary",
+   "spoken": "Their advice is to test models in conditions that differ from the ones they trained on.",
+   "on_screen": "PREPRINT \u00b7 NOT PEER REVIEWED",
+   "source": "https://api.crossref.org/works/10.22541/essoar.15010630/v1",
+   "second_source": "",
+   "verbatim_source": "\"test models under conditions differing from the training distribution\"",
+   "requires": [
+    "preprint"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c22",
+   "status": "verified-primary",
+   "spoken": "The Earth's Future paper says its model beat a simpler regression and three existing lightning formulas.",
+   "on_screen": "BEAT A REGRESSION + 3 EXISTING FORMULAS \u00b7 PER THE PAPER",
+   "source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "second_source": "",
+   "verbatim_source": "\"outperforms an alternative multiple linear regression model as well as three existing parameterizations\"",
+   "requires": [
+    "from the abstract",
+    "never 'validated' or 'accurate'"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c23",
+   "status": "verified-primary",
+   "spoken": "In Alaska, lightning fires burned at least 93 percent of the wildfire acres every year from 2015 to 2024.",
+   "on_screen": "LIGHTNING FIRES \u00b7 93% TO 100% OF ACRES BURNED \u00b7 2015 TO 2024 \u00b7 AK DIV. OF FORESTRY",
+   "source": "https://forestry.alaska.gov/forestry/Assets/pdfs/firestats/2024%20Alaska%20Wildfires%20HO.pdf",
+   "second_source": "",
+   "verbatim_source": "Labelled non-quotation, table row 'Statewide % Acres, Lightning': 2015 99%, 2016 98%, 2017 99%, 2018 93%, 2019 98%, 2020 100%, 2021 96%, 2022 99%, 2023 99%, 2024 99%",
+   "requires": [
+    "Alaska Division of Forestry",
+    "context, never a projection of the study"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c24",
+   "status": "verified-primary",
+   "spoken": "In 2022 that was about 3.1 million acres, 99 percent from lightning fires.",
+   "on_screen": "2022 \u00b7 ABOUT 3.1 MILLION ACRES \u00b7 99% LIGHTNING",
+   "source": "https://forestry.alaska.gov/forestry/Assets/pdfs/firestats/2024%20Alaska%20Wildfires%20HO.pdf",
+   "second_source": "",
+   "verbatim_source": "Labelled non-quotation, 2022 column: Fires 594, Acres 3,111,316, Natural Acres 3,099,465, % Acres Lightning 99%",
+   "requires": [
+    "about"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c25",
+   "status": "verified-primary",
+   "spoken": "The study didn't look at fire or how forests would handle more lightning.",
+   "on_screen": "THE STUDY DIDN'T MODEL FIRE",
+   "source": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+   "second_source": "https://www.natureworldnews.com/articles/74051/20261125/cloud-ground-lightning-could-more-double-2100-new-study-projects.htm",
+   "verbatim_source": "\"the study didn't delve into how forests would handle a rise in lightning.\"",
+   "requires": [
+    "Nature World News also: this study did not model fire directly"
+   ],
+   "contract": {
+    "must_ship": true,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c26",
+   "status": "verified-primary",
+   "spoken": "One stormy Sunday in June 2024 put nearly 7,000 strikes on Alaska.",
+   "on_screen": "ONE DAY \u00b7 NEARLY 7,000 STRIKES \u00b7 AK DIV. OF FORESTRY",
+   "source": "https://akfireinfo.com/2024/06/24/thousands-of-lightning-strikes-were-recorded-in-southwest-alaska-sunday-leading-to-possible-new-fires/",
+   "second_source": "",
+   "verbatim_source": "\"Thunderstorms on Sunday produced nearly 7,000 lighting strikes statewide, with a heavy concentration in Southwest Alaska.\"",
+   "requires": [
+    "one day, never a season",
+    "AK Division of Forestry"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  },
+  {
+   "id": "c27",
+   "status": "verified-primary",
+   "spoken": "Co-author Sander Veraverbeke's earlier work found lightning ignitions in North America's boreal forests had increased since 1975.",
+   "on_screen": "LIGHTNING IGNITIONS UP SINCE 1975 \u00b7 VERAVERBEKE ET AL. 2017",
+   "source": "https://www.nature.com/articles/nclimate3329",
+   "second_source": "https://api.crossref.org/works/10.1029/2026EF008820",
+   "verbatim_source": "\"We find that lightning ignitions have increased since 1975\"",
+   "requires": [
+    "boreal North America (Alaska and Northwest Territories)",
+    "a separate earlier study"
+   ],
+   "contract": {
+    "must_ship": false,
+    "on_screen_verbatim": false
+   }
+  }
+ ],
+ "reserve": [
+  {
+   "id": "r1",
+   "fact": "Bieniek et al. 2020: two downscaled projections estimate a doubling of interior Alaska lightning",
+   "reason": "a second projection would muddy the range; hold"
+  },
+  {
+   "id": "r2",
+   "fact": "Chen et al. 2021: Arctic permafrost summer lightning +112 +- 38% by 2081 to 2100 under RCP8.5",
+   "reason": "different region and scenario"
+  },
+  {
+   "id": "r3",
+   "fact": "2004 about 6.5 million acres (Alaska DOF)",
+   "reason": "2022 is closer to today"
+  },
+  {
+   "id": "r4",
+   "fact": "Krause: 'Trees basically evolved to adapt to the local lightning frequency.'",
+   "reason": "forest framing the study did not model"
+  }
+ ],
+ "cut": [
+  {
+   "id": "x1",
+   "fact": "contiguous US and Germany percentages",
+   "reason": "not in any fetched source"
+  },
+  {
+   "id": "x2",
+   "fact": "97.5% of Alaska area burned by lightning 2004 to 2023",
+   "reason": "no primary found"
+  },
+  {
+   "id": "x3",
+   "fact": "Nature World News quote 'The next step is for other research groups...'",
+   "reason": "unattributed, not in the AGU release"
+  },
+  {
+   "id": "x4",
+   "fact": "Krause explaining convection vs ice crystals",
+   "reason": "release narration, not a quote"
+  },
+  {
+   "id": "x5",
+   "fact": "the preprint tested the Earth's Future model",
+   "reason": "nothing says so"
+  }
+ ]
+}

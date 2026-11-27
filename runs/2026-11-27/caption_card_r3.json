@@ -1,0 +1,19 @@
+{
+ "source": "out/dispatch/post.txt",
+ "rubric": "config/linkedin_caption_rubric.yaml",
+ "hard_fails": [],
+ "scores": {
+  "hook_scroll_stop": 8,
+  "point_of_view_take": 8.5,
+  "substance_specificity": 8,
+  "readability_restraint": 8,
+  "engagement_design": 8,
+  "brand_voice_accuracy": 7.5,
+  "hashtag_craft": 8
+ },
+ "weighted_total": 8.03,
+ "ship_threshold": 8.5,
+ "ship": false,
+ "weakest_criterion": "brand_voice_accuracy",
+ "one_sentence_fix": "Rewrite paragraph 14 with the 1900s figure as a model estimate and the per-degree units restored."
+}

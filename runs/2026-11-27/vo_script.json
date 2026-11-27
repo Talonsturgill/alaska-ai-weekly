@@ -1,0 +1,196 @@
+{
+ "lines": [
+  {
+   "idx": 0,
+   "text": "By twenty-one hundred, under high emissions, Alaska could get more than double, up to nearly seven times, today's ground strikes.",
+   "claims": [
+    "c8",
+    "c9"
+   ],
+   "t": "By twenty-one hundred, under high emissions, Alaska could get more than double, up to nearly seven times, today's ground strikes."
+  },
+  {
+   "idx": 1,
+   "text": "That's from a new study in Earth's Future.",
+   "claims": [
+    "c1"
+   ],
+   "t": "That's from a new study in Earth's Future."
+  },
+  {
+   "idx": 2,
+   "text": "Andreas Krause's team built it with a machine learning model.",
+   "claims": [
+    "c2"
+   ],
+   "t": "Andreas Krause's team built it with a machine learning model."
+  },
+  {
+   "idx": 3,
+   "text": "It learned from six everyday weather readings, and where ground strikes landed.",
+   "claims": [
+    "c5",
+    "c6"
+   ],
+   "t": "It learned from six everyday weather readings, and where ground strikes landed."
+  },
+  {
+   "idx": 4,
+   "text": "Remember this. It trained on one year of data, twenty nineteen.",
+   "claims": [
+    "c3"
+   ],
+   "t": "Remember this. It trained on one year of data, twenty nineteen."
+  },
+  {
+   "idx": 5,
+   "text": "On today's climate, most of Alaska got under one strike per square kilometer a year.",
+   "claims": [
+    "c7"
+   ],
+   "t": "On today's climate, most of Alaska got under one strike per square kilometer a year."
+  },
+  {
+   "idx": 6,
+   "text": "That future could bring a hundred sixteen to five hundred ninety-four percent more.",
+   "claims": [
+    "c8"
+   ],
+   "t": "That future could bring a hundred sixteen to five hundred ninety-four percent more."
+  },
+  {
+   "idx": 7,
+   "text": "For the world's land, seventy-six to a hundred forty percent more.",
+   "claims": [
+    "c10"
+   ],
+   "t": "For the world's land, seventy-six to a hundred forty percent more."
+  },
+  {
+   "idx": 8,
+   "text": "Lightning fires burned at least ninety-three percent of Alaska's wildfire acres every year for a decade.",
+   "claims": [
+    "c23"
+   ],
+   "t": "Lightning fires burned at least ninety-three percent of Alaska's wildfire acres every year for a decade."
+  },
+  {
+   "idx": 9,
+   "text": "The study didn't model fire, only lightning, the spark behind those acres.",
+   "claims": [
+    "c25"
+   ],
+   "t": "The study didn't model fire, only lightning, the spark behind those acres."
+  },
+  {
+   "idx": 10,
+   "text": "Krause, the lead author, said, I was quite surprised that the projections were so high.",
+   "claims": [
+    "c15"
+   ],
+   "t": "Krause, the lead author, said, I was quite surprised that the projections were so high."
+  },
+  {
+   "idx": 11,
+   "text": "Run backward on the nineteen hundreds, the model estimated about twelve percent more lightning per degree.",
+   "claims": [
+    "c11",
+    "c12"
+   ],
+   "t": "Run backward on the nineteen hundreds, the model estimated about twelve percent more lightning per degree."
+  },
+  {
+   "idx": 12,
+   "text": "Earlier studies projected eight to seventeen percent per degree. Run forward, its own twelve could nearly triple, to thirty percent.",
+   "claims": [
+    "c14",
+    "c13"
+   ],
+   "t": "Earlier studies projected eight to seventeen percent per degree. Run forward, its own twelve could nearly triple, to thirty percent."
+  },
+  {
+   "idx": 13,
+   "text": "Per the press release, earlier studies differ from this one mostly in math. Krause calls lightning's response quite a large uncertainty.",
+   "claims": [
+    "c14",
+    "c16"
+   ],
+   "t": "Per the press release, earlier studies differ from this one mostly in math. Krause calls lightning's response quite a large uncertainty."
+  },
+  {
+   "idx": 14,
+   "text": "A month earlier, Krause and Anja Rammig posted a preprint testing lightning models. A simple average beat the machine learning ones.",
+   "claims": [
+    "c19",
+    "c20"
+   ],
+   "t": "A month earlier, Krause and Anja Rammig posted a preprint testing lightning models. A simple average beat the machine learning ones."
+  },
+  {
+   "idx": 15,
+   "text": "Their advice, test models outside their training conditions.",
+   "claims": [
+    "c21"
+   ],
+   "t": "Their advice, test models outside their training conditions."
+  },
+  {
+   "idx": 16,
+   "text": "In fairness, this paper says its model beat a regression and three existing formulas.",
+   "claims": [
+    "c22"
+   ],
+   "t": "In fairness, this paper says its model beat a regression and three existing formulas."
+  },
+  {
+   "idx": 17,
+   "text": "Read it as a range. Even its low end could more than double Alaska's lightning.",
+   "claims": [
+    "c8",
+    "c23"
+   ],
+   "t": "Read it as a range. Even its low end could more than double Alaska's lightning."
+  },
+  {
+   "idx": 18,
+   "text": "The whole range waits on a test outside its training data.",
+   "claims": [
+    "c21"
+   ],
+   "t": "The whole range waits on a test outside its training data."
+  },
+  {
+   "idx": 19,
+   "text": "One June Sunday in twenty twenty-four put nearly seven thousand strikes on Alaska. Who should run that test?",
+   "claims": [
+    "c26"
+   ],
+   "t": "One June Sunday in twenty twenty-four put nearly seven thousand strikes on Alaska. Who should run that test?"
+  }
+ ],
+ "caption_fixups": {
+  "November twenty-fourth": "November 24th",
+  "twenty nineteen": "2019",
+  "a hundred sixteen to five hundred ninety-four percent": "116% to 594%",
+  "ninety-three percent": "93%",
+  "nineteen hundreds": "1900s",
+  "about twelve percent": "about 12%",
+  "nearly seven thousand": "nearly 7,000",
+  "twenty-one hundred": "2100",
+  "twenty twenty-four": "2024",
+  "seventy-six to a hundred forty percent": "76% to 140%",
+  "eight to seventeen percent": "8% to 17%",
+  "its own twelve": "its own 12",
+  "thirty percent per degree": "30% per degree",
+  "eight to seventeen": "8 to 17",
+  "thirty percent": "30%"
+ },
+ "caption_quotes": [
+  "I was quite surprised that the projections were so high.",
+  "quite a large uncertainty"
+ ],
+ "caption_split_after": [
+  "most of Alaska",
+  "Lightning fires burned"
+ ]
+}

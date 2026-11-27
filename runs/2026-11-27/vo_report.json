@@ -1,0 +1,72 @@
+{
+  "backend": "gemini-tts",
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Sulafat",
+  "take": 2,
+  "takes": 3,
+  "soundcheck": {
+    "pass": true,
+    "score": 0.981,
+    "heard": "By 2100, under high emissions, Alaska could get more than double, up to nearly seven times today's ground strikes. That's from a new study in Earth's future. Andreas Krauss' team built it with a machine learning model. It learned from six everyday weather readings and where ground strikes landed. Remember this, it trained on one year of data, 2019. On today's climate, most of Alaska got under one strike per square kilometer a year. That future could bring 116 to 594 percent more. For the world's land, 76 to 140 percent more. Lightning fires burned at least 93 percent of Alaska's wildfire acres every year for a decade. The study didn't model fire, only lightning, the spark behind those acres. Krauss, the lead author, said, I was quite surprised that the projections were so high. Run backward on the 1900s, the model estimated about 12 percent more lightning per degree. Earlier studies projected 8 to 17 percent per degree. Run forward, its own 12 could nearly triple to 30 percent. Per the press release, earlier studies differ from this one mostly in math. Krauss calls lightning's response quite a large uncertainty. A month earlier, Krauss and Anya Raemig posted a pre-print testing lightning models. A simple average beat the machine learning ones. Their advice? Test models outside their training conditions. In fairness, this paper says its model beat a regression and three existing formulas. Read it as a range. Even the low end would more than double lightning in fire country. The whole range waits on a test in whether it never saw. One June Sunday in 2024 put nearly 7,000 strikes on Alaska. Who should run that test?",
+    "checks": {
+      "word_accuracy": {
+        "wer": 0.037,
+        "pass": true
+      },
+      "no_leak": {
+        "leaked": [],
+        "pass": true
+      },
+      "expressive": {
+        "pitch_std_semitones": 6.03,
+        "voiced_frac": 0.52,
+        "pass": true
+      },
+      "duration": {
+        "seconds": 125.16,
+        "pass": true
+      },
+      "loudness": {
+        "lufs": null,
+        "pass": true
+      }
+    },
+    "diagnosis": "clean",
+    "seconds": 125.16,
+    "in_target_band": true,
+    "selection": "in the 112-130s band, best quality of 3 in-band take(s)"
+  },
+  "prompt_repairs": [
+    "pronunciation guide injected into the notes (3 entries)"
+  ],
+  "runtime_warning": null,
+  "gap_share": {
+    "min_gap_s": 0.35,
+    "gaps": 36,
+    "seconds": 24.34,
+    "runtime_s": 124.72,
+    "share": 0.1952,
+    "aim": 0.15,
+    "over_aim": true,
+    "longest_s": 1.02
+  },
+  "all_reports": [
+    {
+      "pass": true,
+      "score": 0.965,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.976,
+      "diagnosis": "clean"
+    },
+    {
+      "pass": true,
+      "score": 0.981,
+      "diagnosis": "clean"
+    }
+  ],
+  "watermark": "SynthID (Google) embedded in all Gemini TTS audio",
+  "license": "Google Gemini API preset voice (per-use billing)"
+}

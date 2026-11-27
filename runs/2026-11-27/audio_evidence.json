@@ -1,0 +1,1120 @@
+{
+  "schema": 1,
+  "edition_date": "2026-11-27",
+  "scope": "Measured audio and hash-bound delivery provenance; not a listening review or publication receipt.",
+  "delivery_sha256": {
+    "dispatch_master.mp4": "9e27b6fb8d1ea0065df95964b961073509e1fa471cc259b8d03b3acb22500f71",
+    "dispatch_square.mp4": "103b68b7953ba50743327f710b2e1493352d6a84198d4afd0ac90fa175f0f9ba",
+    "dispatch_master_720.mp4": "b4ce02eea247d0b1ab8dba17cfba4a0497ded39464fb99f6506bd9471a2598c8",
+    "dispatch_master_hosted.mp4": "2944eb390ac187a9c8947c6a5761d07c466c15ccc5c012369f631790230ce374",
+    "poster.png": "b319d9848accc9ec3175772013f9a45ad5d35bdb704be737dfada29fb2166efb",
+    "poster_thumb.jpg": "65837f0915b9d740f380fb684da5fd006de6c8e25ec41561f63b04b345749f79"
+  },
+  "audio_report": {
+    "measured_on": "dispatch_square.mp4",
+    "measured_sha256": "103b68b7953ba50743327f710b2e1493352d6a84198d4afd0ac90fa175f0f9ba",
+    "also_covers_master": true,
+    "master_measured": {
+      "i": -13.75,
+      "tp": -1.62,
+      "lra": 5.1
+    },
+    "master_identity": "the 9:16 master measures I=-13.75 TP=-1.62 LRA=5.1 against the delivered square's I=-13.75 TP=-1.62 LRA=5.1. The square is a video-only crop of the master, so the two carry the same mix and every figure below describes both.",
+    "tool": "ffmpeg loudnorm + forced-alignment word timings",
+    "delivered_i": -13.75,
+    "delivered_tp": -1.62,
+    "delivered_lra": 5.1,
+    "targets": {
+      "i": -14.0,
+      "tp_max": -1.0
+    },
+    "lra_advisory_only": true,
+    "pass": {
+      "loudness": true,
+      "true_peak": true,
+      "speech_priority": true
+    },
+    "vo_gaps_ge_0_35s": 36,
+    "vo_gaps_ge_0_50s": 25,
+    "vo_silence_in_gaps_s": 23.96,
+    "last_word_ends_s": 124.72,
+    "longest_gaps": [
+      {
+        "at": 43.8,
+        "len": 1.02
+      },
+      {
+        "at": 25.82,
+        "len": 1.0
+      },
+      {
+        "at": 55.9,
+        "len": 1.0
+      },
+      {
+        "at": 122.84,
+        "len": 0.92
+      },
+      {
+        "at": 62.44,
+        "len": 0.9
+      },
+      {
+        "at": 12.1,
+        "len": 0.86
+      },
+      {
+        "at": 38.66,
+        "len": 0.86
+      },
+      {
+        "at": 69.4,
+        "len": 0.86
+      }
+    ],
+    "diagnosis": "LRA is 5.1 LU, reported as descriptive evidence only. Never attenuate narration or increase background through speech to chase LRA. Use the measured speech-priority report for narration/background balance.",
+    "speech_priority": {
+      "schema": 1,
+      "pass": true,
+      "scope": "pre-master stems, not perceptual intelligibility",
+      "margin_target_db": 18.0,
+      "window_seconds": 0.05,
+      "voice_activity_floor_dbfs": -60,
+      "speech_windows": 2084,
+      "minimum_stereo_margin_db": 17.999999999999996,
+      "minimum_mono_margin_db": 18.0,
+      "maximum_background_reduction_db": 57.68564457046483,
+      "shared_headroom_gain": 1.0,
+      "attack_db_per_s": 120.0,
+      "release_db_per_s": 30.0,
+      "gap_release_db_per_s": 100.0,
+      "score_attack_db_per_s": 200.0,
+      "score_release_db_per_s": 90.0,
+      "music_under_speech_mono": {
+        "opening": {
+          "windows": 202,
+          "median_music_relative_to_voice_db": -35.813400556146746
+        },
+        "middle": {
+          "windows": 1273,
+          "median_music_relative_to_voice_db": -34.74410918343494
+        }
+      },
+      "music_meter_sha256": "6d1c275b23a6f249c98309593543602b1b101eda26dfa484093aa837e125e48f",
+      "voice_sha256": "641c073327ea5fadf1512e2dca389a34158ee5c8f030414284f0444b81fc2e86",
+      "background_sha256": "47466aa915541bd80cadc3e2792ed8d8264c5915d10cf32e0c22a8fe1b34843d",
+      "premix_sha256": "531fe572bd46958e1ed92b924ccec200a93a38e729b05030d2d38ccad71bb37b",
+      "master_sha256": "cac6ccbceb958a39f89b8ee5d2fd387b92105d465892b2298c8dd36d466a0def"
+    },
+    "sfx_hits": [
+      {
+        "t": 0.01,
+        "kind": "snap",
+        "class": "standard",
+        "beat": "the glass instrument labelled THE MODEL, a teardrop flask with a wax-sealed neck held in a"
+      },
+      {
+        "t": 3.54,
+        "kind": "boom",
+        "class": "hero",
+        "beat": "the anvil cloud over the ridge flickers inside and rolls a low rumble across the sedge as "
+      },
+      {
+        "t": 5.21,
+        "kind": "chime",
+        "class": "standard",
+        "beat": "a ghost column of hatched lemon outlines rises above the TODAY token from a floor at about"
+      },
+      {
+        "t": 6.67,
+        "kind": "paper",
+        "class": "texture",
+        "beat": "the question mark on the ghost column spins once and the whole column sways in the wind, a"
+      },
+      {
+        "t": 9.48,
+        "kind": "chain",
+        "class": "texture",
+        "beat": "a journal sheet blown along the ridge by a gust slaps against a brass easel beside the gla"
+      },
+      {
+        "t": 12.97,
+        "kind": "ding",
+        "class": "standard",
+        "beat": "a boxed name card on a short stake drives into the tussock beside the easel like a thrown "
+      },
+      {
+        "t": 15.1,
+        "kind": "whoosh",
+        "class": "texture",
+        "beat": "the glass instrument labelled THE MODEL, a teardrop flask with a wax-sealed neck held in a"
+      },
+      {
+        "t": 16.95,
+        "kind": "clank",
+        "class": "standard",
+        "beat": "six little weather instruments on posts around the glass's foot (a thermometer, a rain cup"
+      },
+      {
+        "t": 19.7,
+        "kind": "creak",
+        "class": "texture",
+        "beat": "a sealed parchment envelope addressed ML LIGHTNING MODELS skids in along the ridge and sto"
+      },
+      {
+        "t": 20.36,
+        "kind": "tick",
+        "class": "standard",
+        "beat": "a gridded square tile on the field plank under the glass gets lemon strike marks tapped in"
+      },
+      {
+        "t": 21.87,
+        "kind": "whoosh",
+        "class": "texture",
+        "beat": "a brass hand stamp lowers out of the anvil's shadow and hovers over the wax seal while the"
+      },
+      {
+        "t": 25.35,
+        "kind": "stamp",
+        "class": "hero",
+        "beat": "the brass hand stamp presses down into the oxblood wax on the neck and lifts away leaving "
+      },
+      {
+        "t": 26.8,
+        "kind": "creak",
+        "class": "texture",
+        "beat": "the true outline of Alaska drawn across the tundra like a giant chalked map seen low and o"
+      },
+      {
+        "t": 30.38,
+        "kind": "tick",
+        "class": "standard",
+        "beat": "the paper TODAY token drops onto the middle of the chalked outline and stands alone, a pla"
+      },
+      {
+        "t": 33.17,
+        "kind": "chain",
+        "class": "texture",
+        "beat": "a hatched lemon range column on the chalked map clicks in as a hatched lemon band floating"
+      },
+      {
+        "t": 34.66,
+        "kind": "tick",
+        "class": "standard",
+        "beat": "the hatched range column clacks up section by section to its ceiling at about seven units,"
+      },
+      {
+        "t": 39.52,
+        "kind": "paper",
+        "class": "texture",
+        "beat": "a second, slimmer hatched range column labelled WORLD slides in beside Alaska's, its top s"
+      },
+      {
+        "t": 43.44,
+        "kind": "ding",
+        "class": "standard",
+        "beat": "the two range columns touch shoulders where the WORLD top overlaps Alaska's floor and both"
+      },
+      {
+        "t": 44.82,
+        "kind": "thud",
+        "class": "standard",
+        "beat": "a row of wooden ledger posts in taiga country under the anvil, 10 of 10 for 2015 to 2024 k"
+      },
+      {
+        "t": 47.13,
+        "kind": "pop",
+        "class": "standard",
+        "beat": "a true-scale swatch of 2022's burned area unrolls beside a small true outline of Alaska on"
+      },
+      {
+        "t": 50.74,
+        "kind": "stamp",
+        "class": "hero",
+        "beat": "the glass instrument labelled THE MODEL, a teardrop flask with a wax-sealed neck held in a"
+      },
+      {
+        "t": 54.66,
+        "kind": "paper",
+        "class": "texture",
+        "beat": "a lemon bolt from the anvil touches one far conifer tip and stops there as a single spark,"
+      },
+      {
+        "t": 56.89,
+        "kind": "tick",
+        "class": "standard",
+        "beat": "a parchment slip clipped to Krause's name card staked low in the tussock, seen from above "
+      },
+      {
+        "t": 60.12,
+        "kind": "boom",
+        "class": "hero",
+        "beat": "Krause's name card on its stake drops a second line, LEAD AUTHOR, under the name with a cl"
+      },
+      {
+        "t": 63.35,
+        "kind": "chain",
+        "class": "texture",
+        "beat": "a brass sensitivity dial on a weathered field plank on the ridge, its scale in percent per"
+      },
+      {
+        "t": 66.98,
+        "kind": "tick",
+        "class": "standard",
+        "beat": "the dial's needle settles at 12 with a small overshoot, a plate reads ABOUT 12% PER \u00b0C"
+      },
+      {
+        "t": 70.26,
+        "kind": "whoosh",
+        "class": "texture",
+        "beat": "a shaded band on the dial face slides in around the needle from 8 to 17, a plate reads EAR"
+      },
+      {
+        "t": 74.57,
+        "kind": "chime",
+        "class": "standard",
+        "beat": "the dial's needle winds back for an anticipation and swings hard right, past the shaded ba"
+      },
+      {
+        "t": 77.93,
+        "kind": "paper",
+        "class": "texture",
+        "beat": "the oxblood wax seal on the storm glass beside the dial glows hot, its 2019 crisp and inta"
+      },
+      {
+        "t": 78.88,
+        "kind": "clank",
+        "class": "standard",
+        "beat": "the dial's brass housing, seen from straight above swings open on a hinge to show two gear"
+      },
+      {
+        "t": 83.8,
+        "kind": "pop",
+        "class": "standard",
+        "beat": "the two gear trains turn at different speeds, one ticking a counter to 8 TO 17, the other "
+      },
+      {
+        "t": 87.36,
+        "kind": "chain",
+        "class": "texture",
+        "beat": "a quote plate on two chains drops from the open housing lid and swings while the needle's "
+      },
+      {
+        "t": 88.9,
+        "kind": "paper",
+        "class": "texture",
+        "beat": "the sealed envelope a pace from the glass trembles and its flap lifts a finger's width, a "
+      },
+      {
+        "t": 92.89,
+        "kind": "whoosh",
+        "class": "texture",
+        "beat": "a satellite-data race track unrolls across the ridge and a lineup of unlabelled block race"
+      },
+      {
+        "t": 95.28,
+        "kind": "chain",
+        "class": "texture",
+        "beat": "a plain pine ruler with a sleepy face lies across the track and simply wins as the block r"
+      },
+      {
+        "t": 98.4,
+        "kind": "riser",
+        "class": "texture",
+        "beat": "the envelope tears open and a parchment card rises out of it onto a stake between the glas"
+      },
+      {
+        "t": 101.2,
+        "kind": "creak",
+        "class": "texture",
+        "beat": "the test card's shadow falls across the glass's sealed neck as the light lowers, the 2019 "
+      },
+      {
+        "t": 102.55,
+        "kind": "thud",
+        "class": "standard",
+        "beat": "a weathered field plank in front of the storm glass has four empty brass pins knocked into"
+      },
+      {
+        "t": 105.56,
+        "kind": "snap",
+        "class": "standard",
+        "beat": "a brass-and-parchment rosette punches onto the first pin with a snap and springs out, a pl"
+      },
+      {
+        "t": 107.12,
+        "kind": "pop",
+        "class": "standard",
+        "beat": "three more rosettes punch onto the other three pins one after another and flutter, a plate"
+      },
+      {
+        "t": 108.29,
+        "kind": "chain",
+        "class": "texture",
+        "beat": "a brass caliper racks its two jaws onto the hatched range column, one jaw at its floor and"
+      },
+      {
+        "t": 111.96,
+        "kind": "tick",
+        "class": "standard",
+        "beat": "a labelled tick on the caliper's lower jaw slides out and clicks against the floor of the "
+      },
+      {
+        "t": 114.19,
+        "kind": "boom",
+        "class": "hero",
+        "beat": "a storm wall rises on the far horizon behind the ridge for the first time, a dashed band o"
+      },
+      {
+        "t": 118.3,
+        "kind": "chime",
+        "class": "standard",
+        "beat": "the true map of Alaska seen from above under a storm takes lemon strike marks statewide, d"
+      },
+      {
+        "t": 121.91,
+        "kind": "snap",
+        "class": "standard",
+        "beat": "the strike marks on the map keep landing until the Southwest is thick with them, a plate r"
+      },
+      {
+        "t": 123.7,
+        "kind": "paper",
+        "class": "texture",
+        "beat": "the glass instrument labelled THE MODEL, a teardrop flask with a wax-sealed neck held in a"
+      }
+    ],
+    "sfx_note": "The mix's performed schedule, from out/dispatch/sfx_events.json: class gain tiers hero about -11 dBFS, standard about -15, texture about -19, ducked under the VO.",
+    "gap_beds_summary": {
+      "voice_median_dbfs": -14.2,
+      "gaps_measured": 25,
+      "gap_median_dbfs": -31.7,
+      "gap_quietest_dbfs": -48.0,
+      "dead_air_gaps": 0,
+      "dead_air_floor_dbfs": -55.0,
+      "note": "every one of the 25 gaps of 0.5 s or more carries sound: what plays in them (music, effects, ambience) measures -31.7 dBFS median (quietest -48.0) against the voice's -14.2, so no gap is dead air",
+      "layers_played": [
+        "air (synthesised brown noise, lowpassed)",
+        "dusk wind and wire hum (synthesised brown noise, 180 Hz to 2.2 kHz, gusting, audio_arc.ambience)"
+      ],
+      "ambience_alone_dbfs": -30.6,
+      "ambience_under_gap_db": -1.1,
+      "ambience_note": "the ambience layers alone measure -30.6 dBFS RMS, -1.1 dB under the gap median of -31.7 dBFS, close enough to be heard in the gaps"
+    },
+    "gap_beds": [
+      {
+        "at": 3.04,
+        "len": 0.56,
+        "gap_dbfs": -20.8,
+        "under_voice_db": 6.6
+      },
+      {
+        "at": 8.78,
+        "len": 0.7,
+        "gap_dbfs": -23.4,
+        "under_voice_db": 9.2
+      },
+      {
+        "at": 12.1,
+        "len": 0.86,
+        "gap_dbfs": -35.0,
+        "under_voice_db": 20.8
+      },
+      {
+        "at": 16.3,
+        "len": 0.64,
+        "gap_dbfs": -41.7,
+        "under_voice_db": 27.5
+      },
+      {
+        "at": 21.06,
+        "len": 0.82,
+        "gap_dbfs": -37.7,
+        "under_voice_db": 23.5
+      },
+      {
+        "at": 22.52,
+        "len": 0.6,
+        "gap_dbfs": -28.6,
+        "under_voice_db": 14.4
+      },
+      {
+        "at": 25.82,
+        "len": 1.0,
+        "gap_dbfs": -24.4,
+        "under_voice_db": 10.2
+      },
+      {
+        "at": 32.5,
+        "len": 0.66,
+        "gap_dbfs": -41.7,
+        "under_voice_db": 27.5
+      },
+      {
+        "at": 38.66,
+        "len": 0.86,
+        "gap_dbfs": -39.2,
+        "under_voice_db": 25.0
+      },
+      {
+        "at": 43.8,
+        "len": 1.02,
+        "gap_dbfs": -26.6,
+        "under_voice_db": 12.4
+      },
+      {
+        "at": 55.9,
+        "len": 1.0,
+        "gap_dbfs": -25.2,
+        "under_voice_db": 11.0
+      },
+      {
+        "at": 58.78,
+        "len": 0.76,
+        "gap_dbfs": -29.0,
+        "under_voice_db": 14.8
+      },
+      {
+        "at": 62.44,
+        "len": 0.9,
+        "gap_dbfs": -35.5,
+        "under_voice_db": 21.3
+      },
+      {
+        "at": 69.4,
+        "len": 0.86,
+        "gap_dbfs": -33.5,
+        "under_voice_db": 19.3
+      },
+      {
+        "at": 73.56,
+        "len": 0.68,
+        "gap_dbfs": -48.0,
+        "under_voice_db": 33.8
+      },
+      {
+        "at": 84.1,
+        "len": 0.7,
+        "gap_dbfs": -35.0,
+        "under_voice_db": 20.8
+      },
+      {
+        "at": 88.1,
+        "len": 0.8,
+        "gap_dbfs": -46.3,
+        "under_voice_db": 32.1
+      },
+      {
+        "at": 94.06,
+        "len": 0.74,
+        "gap_dbfs": -26.7,
+        "under_voice_db": 12.5
+      },
+      {
+        "at": 97.54,
+        "len": 0.86,
+        "gap_dbfs": -26.3,
+        "under_voice_db": 12.1
+      },
+      {
+        "at": 98.88,
+        "len": 0.52,
+        "gap_dbfs": -23.0,
+        "under_voice_db": 8.8
+      },
+      {
+        "at": 101.7,
+        "len": 0.84,
+        "gap_dbfs": -26.3,
+        "under_voice_db": 12.1
+      },
+      {
+        "at": 107.64,
+        "len": 0.66,
+        "gap_dbfs": -31.7,
+        "under_voice_db": 17.5
+      },
+      {
+        "at": 109.52,
+        "len": 0.54,
+        "gap_dbfs": -27.8,
+        "under_voice_db": 13.6
+      },
+      {
+        "at": 113.38,
+        "len": 0.82,
+        "gap_dbfs": -40.9,
+        "under_voice_db": 26.7
+      },
+      {
+        "at": 122.84,
+        "len": 0.92,
+        "gap_dbfs": -35.5,
+        "under_voice_db": 21.3
+      }
+    ]
+  },
+  "speech_priority": {
+    "schema": 1,
+    "pass": true,
+    "scope": "pre-master stems, not perceptual intelligibility",
+    "margin_target_db": 18.0,
+    "window_seconds": 0.05,
+    "voice_activity_floor_dbfs": -60,
+    "speech_windows": 2084,
+    "minimum_stereo_margin_db": 17.999999999999996,
+    "minimum_mono_margin_db": 18.0,
+    "maximum_background_reduction_db": 57.68564457046483,
+    "shared_headroom_gain": 1.0,
+    "attack_db_per_s": 120.0,
+    "release_db_per_s": 30.0,
+    "gap_release_db_per_s": 100.0,
+    "score_attack_db_per_s": 200.0,
+    "score_release_db_per_s": 90.0,
+    "music_under_speech_mono": {
+      "opening": {
+        "windows": 202,
+        "median_music_relative_to_voice_db": -35.813400556146746
+      },
+      "middle": {
+        "windows": 1273,
+        "median_music_relative_to_voice_db": -34.74410918343494
+      }
+    },
+    "music_meter_sha256": "6d1c275b23a6f249c98309593543602b1b101eda26dfa484093aa837e125e48f",
+    "voice_sha256": "641c073327ea5fadf1512e2dca389a34158ee5c8f030414284f0444b81fc2e86",
+    "background_sha256": "47466aa915541bd80cadc3e2792ed8d8264c5915d10cf32e0c22a8fe1b34843d",
+    "premix_sha256": "531fe572bd46958e1ed92b924ccec200a93a38e729b05030d2d38ccad71bb37b",
+    "master_sha256": "cac6ccbceb958a39f89b8ee5d2fd387b92105d465892b2298c8dd36d466a0def"
+  },
+  "provenance": {
+    "schema": 2,
+    "kind": "encode",
+    "state": "complete",
+    "render": {
+      "schema": 2,
+      "kind": "render",
+      "state": "complete",
+      "manifest": {
+        "sources": {
+          "out/dispatch/captions.json": "ec53b75b62ffcbdfa0cf409f6a8ee7b5d23523413b0d92c855e4483b0f40a37f",
+          "scripts/build_scenes.py": "800caa89160247f7890fa7e6da4bcd5c1a891a67a41f83048d94f5dd4a98343c",
+          "scripts/parse_engine.cjs": "a668989b16cbf173a46e200d41a5da830588ea5761b17ac8ae665b1e6d26697d",
+          "scripts/render_parallel.sh": "c9919c8fcf3a2766df39de5ff63f1876525af2e9c4ad84179a73d5f0968b8767",
+          "scripts/render_provenance.py": "2d8d71d1f176463ab5a6b7e70f6ea96f7d965c57b15ec1c2bfacd972a2dc8778",
+          "video-engine/node_modules/.package-lock.json": "4e57476d50d63942ce8bf7d5c62f6d3c64d9760b3fe8d34f242a1291ba0c336a",
+          "video-engine/package-lock.json": "faa7fe934415a6477f28edf783fd322e5abbcc8f5f92dcfb7b73ee1a30778a7a",
+          "video-engine/package.json": "4d4b9daf0791719f5c638a0bde733aae2e66aac4029924a88677e39ca284aa68",
+          "video-engine/public/fonts/Fraunces-OFL.txt": "6732d6cc72c5d09292ff754dc1f39d9ea14918f74e87a17afa3f00a5120c3d48",
+          "video-engine/public/fonts/Fraunces-Var.ttf": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+          "video-engine/public/fonts/JetBrainsMono-Bold.ttf": "d22c4f3821d725eb01210d278d95dfcfcaadc34699a06658d47c8a5cc5830ada",
+          "video-engine/public/fonts/JetBrainsMono-OFL.txt": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+          "video-engine/remotion.config.ts": "b68f30ff8167a0c4cc8703922e074270bd414dd1f9ec5a3d9a36a6ae89f23eb7",
+          "video-engine/src/AkGeoLook.tsx": "fa5ae9fed54c867f368330743b9caf09758fc7f0c7cfd355ed8c1a85a4ce0186",
+          "video-engine/src/BenchLook.tsx": "fa6eda15cd2e25b0f9ed118d92a89d6e7b8e04288f1495de5ae8d4fd6eea1320",
+          "video-engine/src/BiomeShowcase.tsx": "a4cbc1a6be1cbcff3e505c5151889d932719348cf5a12e679be521fdcc3b96a4",
+          "video-engine/src/BiomeShowcase2.tsx": "35b383e5c9ace4a9dde0993689d21ef9de52c5c723c6e537e4784b417ef4b9bb",
+          "video-engine/src/BiomeShowcase3.tsx": "c5937992c5250aa2e21f26a0a6787e8dd3f8398b3902939f2d874b9fea23a03d",
+          "video-engine/src/CalfLook.tsx": "a7401f905039f52399e75afa2588ed182196401d720d98190818b7f39c72676e",
+          "video-engine/src/CityShowcase.tsx": "eccf6303556389ab004263a0c03221dcd0e389d6671094dd58718ab09d65e952",
+          "video-engine/src/CraftShowcase.tsx": "bd69bf7e7ec93aae477299182a18ae724c4174ea87cbd07273e8a5b605d9f31c",
+          "video-engine/src/Dispatch.tsx": "e56560bc0d2cd9b47ec588f17a7a55816602c61b2378ff36da61e9a2f759127a",
+          "video-engine/src/EEGDemo0912.tsx": "c8a5ea0b159fc5e81da328c596ef41d1be15719b9b3b741c984dc1f364bff945",
+          "video-engine/src/Ep0729.tsx": "3a50650e050b4e6de01e791b36c1400b3387bae32a23c7b3bc61323490a50d06",
+          "video-engine/src/Ep0730.tsx": "204f6732e4ff330fb015429ae951b11c9baf924af6bc47617e7311ce9b35f2d5",
+          "video-engine/src/Ep0731.tsx": "4ce52711763d23c79c8e1be8befa7b0249eda0f51c272f5c352a368acee58e5e",
+          "video-engine/src/Ep0802.tsx": "584146ac24efd8b0ce0cf46aaebf04ea3328895b7084cffba7d42f2d9a1b5858",
+          "video-engine/src/Ep0803.tsx": "01c545e6edc07470728681c7029966dfa4c3c1a4edc940ea892b6679c033471b",
+          "video-engine/src/Ep0805.tsx": "0ffef3b756e2146c187bc34a9e0425512d223a87c27a6c3398e973e3880c01ce",
+          "video-engine/src/Ep0806.tsx": "6818ffac34419da05f02bb63f4f952d12ae1c42ed1dfc95d9a6546473e02c100",
+          "video-engine/src/Ep0807.tsx": "5d3a1e40ae77a32a77cabc66f345dc49dd97d874644c2fa273806a5216720bbc",
+          "video-engine/src/Ep0808.tsx": "1747f25f8a6f18e40f33394c7bfd2eea051a2f57d23f207c96c9688d37113240",
+          "video-engine/src/Ep0809.tsx": "0a997fd61b1b7b16874247aefa78ac06fd6d03b84675a967ae9fda3c978a3818",
+          "video-engine/src/Ep0812.tsx": "f384c7f406e76b5e3b3f2f434ada90f3f7e629a96499fb58409c7c5a5eb2d112",
+          "video-engine/src/Ep0813.tsx": "9a08278ecd02222ec215e3d19e833ef0be76d38827791d50615d3f53856beb9b",
+          "video-engine/src/Ep0830.tsx": "1d2e9cbe6d5581731ced19224d02916e2be1575bf188d16734faea09d3098176",
+          "video-engine/src/Ep0901.tsx": "fb9de1b38cb2bb8111376d0afeef8cdfedce10a617ab567bfbafcfecc2eede9f",
+          "video-engine/src/Ep0902.tsx": "650442af46fdebd24f7202d6566ab39938244642b601f6cde451babbb047bf99",
+          "video-engine/src/Ep0903.tsx": "b15510f15190b8079d633b32986241eb62efecbd91e13333329c5eec37c4a036",
+          "video-engine/src/Ep0906.tsx": "f4ca1b8ca08bb34bcd1332d0057e4ce791001b172ae2c4e058ec3f46b83c6b41",
+          "video-engine/src/Ep0910.tsx": "21dfbfd778e88e02b0c8743f85e52c72a88120cf3edaa8f6f04fb5d02f43d7ec",
+          "video-engine/src/Ep0911.tsx": "7d24695c736a8e555cb1561ae7a47e95d4f86354c3e91479cc00781ce25bc608",
+          "video-engine/src/Ep0912.tsx": "2c3f82ea4d80f437de5abc7796a044392f8874edc68c94536ee8085a2bef9331",
+          "video-engine/src/Ep0913.tsx": "16a12b24c5e3ca56a3505673389075288d10b061590412cce6534803edf04d81",
+          "video-engine/src/Ep0914.tsx": "6e4646b70a93c3f60ec35e30c2a9721e4bc4ec3850aadb6f818b537ca5407803",
+          "video-engine/src/Ep0919.tsx": "ef9a9007726f37d8a13bc6669fe62ef0beb48c44a0cbbede80e4b4a08edce12b",
+          "video-engine/src/Ep0923.tsx": "39399b6feda141218a4a22e1217fd4277cdce2b6d54853924cc379d8c0e0cbfb",
+          "video-engine/src/Ep0930.tsx": "00831aa2df551660dbdcf39d83e3b7e1a25638dc8b8798201b32106d35b88e95",
+          "video-engine/src/Ep1002.tsx": "a50701905aa01d0d2459d52fe1a50eea1a1fbb02348726ca8dcce7f38705ec8e",
+          "video-engine/src/Ep1003.tsx": "9a66440b87b752ffe00700bcc06fb699a621193f6b096615e46f1775948395be",
+          "video-engine/src/Ep1005.tsx": "44de041290dfff1b181a6a5ee142f368edea3f605ada60b74d464ff95c739f1f",
+          "video-engine/src/Ep1006.tsx": "5a847e5f0c4ed7ee92574778a00f6ee7b43802857c6302ca888e3499da129e20",
+          "video-engine/src/Ep1007.tsx": "c1dfaf4e92c5a57163dfdb9cefd1f691cfb14af1d39d7d8fcb7dc45e45c0a40b",
+          "video-engine/src/Ep1008.tsx": "108e7afae6a8e4dc2fe60f362192cef25c9900c6e4a6147bfe971cd3f7e51c47",
+          "video-engine/src/Ep1009.tsx": "0cb690892793f3cae03e09bf8db4d52d80048ba832f40fc62f68416f4227b50f",
+          "video-engine/src/Ep1010.tsx": "184d145f3abb739f380a493ffa6e1d045a09d2d7f4b0a35be696f933e9d644f6",
+          "video-engine/src/Ep1011.tsx": "16ddc7467fb7c21ab79c247519a03a6b111ca5b003d66f2aae94e2628dcedcf3",
+          "video-engine/src/Ep1011Ids.ts": "63f3be2c40293871de7e357f33cf6b565286051294c06ae338ca8d03f3a7ef58",
+          "video-engine/src/Ep1015.tsx": "f473181bd83a9c649f7ea2f031f6f20f0e1c5c680305d1e04bb7ea947f6d0abe",
+          "video-engine/src/Ep1015Ids.ts": "28912b865127c5c28cea978d221310f2399f992f4b4c799789705f3acd9310c7",
+          "video-engine/src/Ep1016.tsx": "5315afc093c00c2eec79c65c7c2dbe0e85b7cbcf088680edcece1b659f6eb57b",
+          "video-engine/src/Ep1016Ids.ts": "ded5bfc4b5ef2072473c3fd1dfeb53bea9f256d6e0598b7b611b73951cb5c45b",
+          "video-engine/src/Ep1017.tsx": "e8981578f1bc9717a27c824f5f3d98436c53988f396fdd5f5dba2a28518edf8a",
+          "video-engine/src/Ep1017Ids.ts": "2dcb4226e6e0d30a8146469fe2a7e5253c4a17ac8fb06390c2d6cb7b176e55cd",
+          "video-engine/src/Ep1018.tsx": "15e384d1e73cd5fe746a8cf2e6e76bd48dd2ec2054dab7e94b7664eb725cf08f",
+          "video-engine/src/Ep1018Ids.ts": "75ea5ce19cf17ed49c65989ce7849e24730a988d30c5dcece913c8f61303d89f",
+          "video-engine/src/Ep1020.tsx": "1bfc35bd6fdaade731799c37db49dcc6e8881582d45ee5a58e0d447eb2976fd4",
+          "video-engine/src/Ep1020Ids.ts": "39a757062118a391f14c2d7c8c29dfa8593a74f37c8b9a9373d166b8359f14ac",
+          "video-engine/src/Ep1021.tsx": "fd03ecb2570010f95d00fe75faf180be580c7d77c6fb43c29f75ad24d09efcc5",
+          "video-engine/src/Ep1021Ids.ts": "754c74c7c4d3c8939b3ee37172da9206d4c8f0add5c6b7467f0f01a677420453",
+          "video-engine/src/Ep1022.tsx": "863b21eaeac56bbfd966395a951e1597c0b24bd69758b951e39d73076f05269d",
+          "video-engine/src/Ep1022Ids.ts": "63cdabc27a258a96f9f26867ed6038ef48b488c3e7c82e5656da87a59f7d3922",
+          "video-engine/src/Ep1023.tsx": "a52c693f677126bb8419dafe6290bfdc3fbd44b6132d6ea41488ec45424b94aa",
+          "video-engine/src/Ep1023Ids.ts": "600aa13f13dbed286e0a52b1250a03e39c3cb1f25989047838eacfc90ecf5485",
+          "video-engine/src/Ep1024.tsx": "291a3889e3bd777846b58287e50e7de848f3616add36dab440fa0d7c95e630d6",
+          "video-engine/src/Ep1024Ids.ts": "e31c284fb09774c71740ef5a615d6a88596fb91a9541e246369c987081d3d115",
+          "video-engine/src/Ep1025.tsx": "4d5ba9f2c02b259c8bb756cd835d0fc5a737b0a1e7170e0fab6c1db1d39ff209",
+          "video-engine/src/Ep1025Ids.ts": "ce612cf02dad7cdc878201d730813b2393100988e9aa838cf642828ba65bebac",
+          "video-engine/src/Ep1026.tsx": "2cd0e19ae5e7bf03e46778e9999e60dc327acc30d7a9ec7f01c31f853c080c21",
+          "video-engine/src/Ep1026Ids.ts": "78d239292daabcb73a7172c95f5b530449cefa274cdf433fe2080da17576e557",
+          "video-engine/src/Ep1028.tsx": "d27bdda80de35936b5c3ac44d22ee84987a13d3a675acb917eb0c68bc81771cd",
+          "video-engine/src/Ep1028Ids.ts": "218fd4c4a439f98dfd7d37159d57c6024e0f23d2cb5883aafd6f0f54f4854ac1",
+          "video-engine/src/Ep1029.tsx": "10858a7c209935c3194629ce30641f6dea788fd2bbdb73252305b0edf13cf06c",
+          "video-engine/src/Ep1029Ids.ts": "bbed285fd8d4df7c9d56926423a3de5bdeb8b139132485ef2e04aa295060eb77",
+          "video-engine/src/Ep1031.tsx": "0d60201992d6a8d0670d18ed0880ef866aa2af5eb854ccf9befeeb0b0a27785b",
+          "video-engine/src/Ep1031Ids.ts": "20b63dddbe1c072e4efd26081fe0863032ea8bd65a9dbe0139bed5c60438b710",
+          "video-engine/src/Ep1101.tsx": "9a0b3b08b2f157f414185ec4a111cc823e7e365a7e05147fcd8eac48b12ddf12",
+          "video-engine/src/Ep1101Ids.ts": "afc098bf9f4329e35bfa338f299ac8e0110159ba4f607076ade0bea31e5c9753",
+          "video-engine/src/Ep1102.tsx": "77ffa6a6f37d9011f6544453995fa81730ca440e7a2c090818ab06f8b029fa52",
+          "video-engine/src/Ep1102Ids.ts": "86652803b0b49216f9e9def87dc53f65411726d20596c769b45f8bbcc8e1bb74",
+          "video-engine/src/Ep1104.tsx": "e842576303d19b832293216e54e2210bf877083089364f0472f6294f992d0d64",
+          "video-engine/src/Ep1104Ids.ts": "a30fc31f02981c6fc4dc8772280a6bbdba3129d67a2102161910ab74b79fd155",
+          "video-engine/src/Ep1105.tsx": "c9ea06c7dba67aa30a251f730a9eed798c85c076c855ac21d1aa8052f7622905",
+          "video-engine/src/Ep1105Ids.ts": "089c26d6c6b3977a1f005cea840f2c7830a01a9ac849e647411650e6cb814b64",
+          "video-engine/src/Ep1106.tsx": "b96c790c32a4c2d22cd9110f79320355e205c97416f27ffbcdc2c396857d6453",
+          "video-engine/src/Ep1106Ids.ts": "50a9000c8b6cdaa029e2acd5935e88b6d3e33a5f66af8d0ec3f472b77f1cd6a6",
+          "video-engine/src/Ep1106_body.txt": "5986349c074a345ba84469312f6b09ee8ccaa676dade9e648f9846621bbc9bf0",
+          "video-engine/src/Ep1106_head.txt": "3948bab9d0d841938b382f9d1f7edaf8be31a412b5769fdf569430f0f8cc4fc0",
+          "video-engine/src/Ep1106_post.txt": "9f7b51e846454a16b906ec231a9495a5755cb02f3542b0b96ade2938e248dd5f",
+          "video-engine/src/Ep1106_pre.txt": "66b356bfb2f5a124ced30a104df3e4a220f9e15187fae738909827e5c181fec9",
+          "video-engine/src/Ep1106_scenes.txt": "9ac3d69eea1cea196cca0f0b51fc2f2ae858ecb44a910f7d2740c9c4d52311b2",
+          "video-engine/src/Ep1107.tsx": "7a0e90a990bccaf32bb51a11b6235078fd6f75bc25ee83bb0f910e32f815ce64",
+          "video-engine/src/Ep1107Ids.ts": "2b42ea012ba204e44948cc7df91b442d4a3f3d6b53d627b1a1cec3d884bd3aba",
+          "video-engine/src/Ep1107_comps.txt": "40fcc5327ce7afd50be33f00fbee46083b75bfca922036fe397d713e1326c1a1",
+          "video-engine/src/Ep1107_head.txt": "a61686f7f29ea89826f23bc1be44c1d98b2d02d57fb3537024e2045bd72b1979",
+          "video-engine/src/Ep1107_post.txt": "dd2be79bc8e2b9526d4493584b10e66094e623fce1c3f38cdea7ed3225097163",
+          "video-engine/src/Ep1107_scenes.txt": "5d1d677d638499790d72b881d66da45d174c767d4d507b04696df1d74d1c439c",
+          "video-engine/src/Ep1108.tsx": "8edd9ccbcbd12afd59420e07c9276909c814b76394ada98ad30b6ca1afc4fce2",
+          "video-engine/src/Ep1108Ids.ts": "d0cd4f7950f35b882932dd69aaf9cedebc06227f5da9c3d56b5478cca37429a5",
+          "video-engine/src/Ep1109.tsx": "2721d2395d00948f32d21724d0cea0cbdd49d35029337823a7817a7d1fc55380",
+          "video-engine/src/Ep1109Ids.ts": "3f673abf462dfabf1aff393a8e771801c5208d5c968999fb18bcabe390db9455",
+          "video-engine/src/Ep1110.tsx": "c6e5dd54d8f940eefcdac78481ac5681622cd3f9796f5b1759f5cd41798e33f9",
+          "video-engine/src/Ep1110Ids.ts": "770885afa63380bc6c3d7cbb77b9dfe3f5591fd0998e0472c9cc8e16f285a04d",
+          "video-engine/src/Ep1111.tsx": "4b4cd869e47f58035374673ad2e4bee7909ec051b267e6d65a08e77bf80164c3",
+          "video-engine/src/Ep1111Ids.ts": "d6a45ff7d92cf72ffb2e63b0e33c63419dc80f0e7e3448308edb1de25961a6b8",
+          "video-engine/src/Ep1112.tsx": "9dd68083c0b7cbef7aeab58d68ce0bf19eeb1195bb9dbde28ebfbd42198932db",
+          "video-engine/src/Ep1112Ids.ts": "ebf7135846a304e58a844e53550414f4060b22ef2153481a5dd5b714bcc6541a",
+          "video-engine/src/Ep1113.tsx": "d38c1c0e3f5723f4a75f7f2dd6f20f1c1a4e1eb55f2bf4805debff01bafe8208",
+          "video-engine/src/Ep1113Ids.ts": "5d8d483e272444bbdd3e1af3df1474d76ad43ca3d04ff523c35deb4121c11d41",
+          "video-engine/src/Ep1114.tsx": "5a0103a41d713db6ff003749d9bbd13764c0b7582f66c2589858b33ab5f7f6f8",
+          "video-engine/src/Ep1114Ids.ts": "fc3a2b61eae2902eede2863c024790d9da2ec72a246722e77bc8f15889666465",
+          "video-engine/src/Ep1115.tsx": "50144685c944110c6ec03e4146e90670b408b033feb710854e07ae2041a974b2",
+          "video-engine/src/Ep1115Ids.ts": "4170eef9deabed111f08923c9d04400aadb77a5ecbd46c0e3d51c9da994263dd",
+          "video-engine/src/Ep1116.tsx": "e815008e5e69714fb5c7acb09e0253047f3ae2cf2a41137152d1fcbf6cc36fbd",
+          "video-engine/src/Ep1116Ids.ts": "12ac2f224acfa67ff9a9e7321fee654731356830106d65906b9f81ef9c1a2efc",
+          "video-engine/src/Ep1118.tsx": "f99b8829215d0eb4749cb517f0bbb74dbee3ddea946797d33c1d97206c31a921",
+          "video-engine/src/Ep1118Ids.ts": "8fb8e7ce489dd7e39563ea804463a67c06471aff7318888cc4a4bf26a52df2d4",
+          "video-engine/src/Ep1119.tsx": "7b7c7c8459efc2b5834f9f863d3a9dd70375145c14381a94377b8e8cc4fe66dc",
+          "video-engine/src/Ep1119Ids.ts": "7f28752ee0a17d7cf911dbbefe66e9d1d20aad97ed50c7c1c68b7585d1517057",
+          "video-engine/src/Ep1121.tsx": "bc169b7ee637d3425282076204ed6f621e6e70d93c2b5b125faed48b760173a8",
+          "video-engine/src/Ep1121Ids.ts": "cc0bbb1b4a4c29c47789d66b52927389e5010fcef0147db8f718a298fb441aa9",
+          "video-engine/src/Ep1122.tsx": "b1f0ef8f56a7b6234a71a78751466e8944917e608e00db5a3214c57877854daa",
+          "video-engine/src/Ep1122Ids.ts": "d93c4c392996345c854fc990523b569a676fff7a527021442709f0ad9519bda7",
+          "video-engine/src/Ep1123.tsx": "3b969c0ef85367a53a73cb254cc5838f0c21a0c1ba2fb81421c51d7a2e946b2b",
+          "video-engine/src/Ep1123Ids.ts": "39bc75f9942f6e45998750b2a326037507c2af8fe69d116d953cd386d377f2ad",
+          "video-engine/src/Ep1124.tsx": "cea19efc420782288238d6b1c6513a81faee9be287a67d702faa435631bd9076",
+          "video-engine/src/Ep1124Ids.ts": "5d11eb07c4251e8a338ce3fef005eb99864abc6c89ad369c2cffa50f70f91f18",
+          "video-engine/src/Ep1125.tsx": "f63dfee399fd67992a03338ac3fbfcf9fc658cea7c751acd9094360c9d8277b8",
+          "video-engine/src/Ep1125Ids.ts": "95898dbc50b80bd911dee0472a864df4a56632fc869cbae4c3d07a77453b1cc4",
+          "video-engine/src/Ep1126.tsx": "efdd5dc7e4028a2faca9f7828529922df7401631f949d83f3722e569ae36c057",
+          "video-engine/src/Ep1126Ids.ts": "0d4624dcf10528650e76f026a0b9e61b04865ea6bc8c65211717d6114041ed74",
+          "video-engine/src/Ep1127.tsx": "0ecd05f272f32c6bbbe3da330f00945dd2e5ca49ae40454b1e0aad23e59326bc",
+          "video-engine/src/Ep1127Ids.ts": "a5d0e8a658838bd7a02dd459999c7515b9195b999a2f207b399dc3f3d3a29057",
+          "video-engine/src/Episode.tsx": "259d7a2c6876c1a0254cab5689212cb1bd660a8d84e0bfaf113a5d2399a896bf",
+          "video-engine/src/EvidenceLook.tsx": "3a490ed9dd6329793a0d383890de79d2279b49cf438a45d7c83e7883a7d08fc2",
+          "video-engine/src/EyeLook.tsx": "a7754449190a17bce102ed593164cd774b47a8774e3fd053c0698384d0c3383f",
+          "video-engine/src/FaunaShowcase.tsx": "3eabbe52a17bd56eb41103b554ade5f47017e047e8e35b339c7da2342a423c78",
+          "video-engine/src/FaunaShowcase2.tsx": "082b6464626906b52a293a2b84df7ddde4c4bc82e54423bbd466e33a6e747377",
+          "video-engine/src/FaunaShowcase3.tsx": "b9a771432f530ebf0b08738a7c69be00cf75804e18601a70ef7f375c5c11bac6",
+          "video-engine/src/FaunaShowcase4.tsx": "2ea7b7c536c64880e889635a737dd89a626262c8d5d3644d8bcc350ee2fc32b5",
+          "video-engine/src/FaunaShowcase5.tsx": "5bdd588e87fc245b1d7f287039bb88171a603887b84d050d65c856e20b66b980",
+          "video-engine/src/FigureLook.tsx": "5b5a613540361a533ae1b73a5c070a0e2bd51b5b180a2414128e932ba57b2d66",
+          "video-engine/src/FishShowcase.tsx": "e42287bf589074b9ad2adc1972e854aad0af70ef1b2ef5234269f7b3b8e0386c",
+          "video-engine/src/FlightCrateLook.tsx": "02b50821bd414584daff2a695a8a92b8d5d249c407c6974128717b5c3ab7bf8a",
+          "video-engine/src/ForestLook.tsx": "62c1a2262353aea636cb81c469080fb3874f99f69868bd450505556a75acdeed",
+          "video-engine/src/GateLook.tsx": "403c719b1981a15c739795a0364f5a6575635a5ca797828c9578c2e856d8fc09",
+          "video-engine/src/GrocerLook.tsx": "7b5c5a4307f39985e27c40a4b08022c0ece11caa886db117e82106f4a3f80209",
+          "video-engine/src/HeldPropLook.tsx": "6ecc3498a42493b582aed642c54a894a9a3c518bb31dbe8d2c0855d8576d6a7f",
+          "video-engine/src/HeldTravelLook.tsx": "7a9e5534610912b84df4962dfc3a23c0107fba82eb9a5ef942d0d3adee96c20d",
+          "video-engine/src/IGSHook.tsx": "e4fe5c44944f066e4a001193b4fb663e765051a57a8f4292778ad2494252f9ba",
+          "video-engine/src/MaterialShowcase.tsx": "e19217f0dda325268264c0091ff9b6ff7ca59ddabd3e73375a2ccedddef426c3",
+          "video-engine/src/MirrorLook.tsx": "b70d5c66061f23b44a15f245b3d6303a70f9803a5a9cab14dc83a490fe28fb74",
+          "video-engine/src/MooseLook.tsx": "80a5b8124fd3ce65053ebbcb3638c43c08159c0428c23c64cf3f8d64c3d5c67a",
+          "video-engine/src/Nenana3D.tsx": "b82940a198f8b66835571772885182b3a47abb8ede57490adc4ad54bd66f6b39",
+          "video-engine/src/OperatorLook.tsx": "55c7d649b4e49642cad86d852bf902a26f07a240a4b0e6d842e9901393e5451c",
+          "video-engine/src/PropsShowcase.tsx": "5018af91bd0034ea2a5d86a52d739a33a5cf30a9a3fe6293c7f262e80d36f908",
+          "video-engine/src/ProspectLook.tsx": "6488a2159dd6feb61f72dd1e91332155b8de53352fa82d9c744653cf8fcfde6e",
+          "video-engine/src/ResearchAssetLook0912.tsx": "b694b86a50b8bfeb13d4fb8d55e9cd173835e0381fc39cb7b4f327f88b655ddf",
+          "video-engine/src/RigLook.tsx": "14287effe552b0f435d5b4b0eb0dd475828baff32a4fc1db2eb60773149459c3",
+          "video-engine/src/Root.tsx": "fa7c4f8f4a0e72338d137a90c9cb285e492eec6cfa58b395c5dc744a4266f6aa",
+          "video-engine/src/SealLook.tsx": "53182eef9947715eeb80580e066e53c6ea6dc0a36dad675579a55072f94c9aa4",
+          "video-engine/src/Standoff.tsx": "e3ec30fb309eccc2571ec3f2c419de0e611c88dea04dad47c4987dd7f78dee2d",
+          "video-engine/src/StationLook.tsx": "1e35c67692671aec8bab76709b3902510f66dfccf752678d0e33dc046950b68e",
+          "video-engine/src/SuitHoldLook.tsx": "14030ecb3a8ecd9db4b3d1dd5f4c67e1d18780813dba659ffbf8344fbd9d5f19",
+          "video-engine/src/SuitLook.tsx": "82127e93cdaebd28a966d48377fe2ee15c2ec0882566df3721e86db21a832d8b",
+          "video-engine/src/TariffLook.tsx": "cda673158d45e0aa2f807c7f35c0da14bd168367fd4df076ad55a7e12044e08d",
+          "video-engine/src/TwentyFiveD.tsx": "b0b2efb063fb2274fab25d21bfa5a0c40c8e7fd476912349063e1a6fcc3a250e",
+          "video-engine/src/UnderIceLook.tsx": "308446f44f4d0f1d78f9a598e1fbcd1c6dc30171f8c882696f8596c8604e6520",
+          "video-engine/src/fixtures/LabelFootprintFixture.tsx": "7577d77a7d170103eb235d5add48e432ac1742fa66fc3596c1c0c23d04e16d99",
+          "video-engine/src/index.ts": "8ad7cfb50e32546485a1a2ef5e468e5b6bdee2bc5c9b92d08882f96e3750b4a3",
+          "video-engine/src/lib/Character.tsx": "2e0caa13eb8f44cf19de0962328ffdb2d78ca4137e5715da3322049d8a1855a4",
+          "video-engine/src/lib/EndCredits.tsx": "3fce68fb9f19b07831e1e6507cc83b72c5a038b3bdbb8713900398d65046daa3",
+          "video-engine/src/lib/FX.tsx": "e49a6656dda36cd59104226a1fd4a79d0ba531dd04bf61fcbfbc022eaa9b10c4",
+          "video-engine/src/lib/absence.tsx": "42383bfde2847af7b58b8972eeeb5c62cf56652b73663e25e39db21a9b4bda3f",
+          "video-engine/src/lib/akgeo.tsx": "bd040a6877b806c933e96f0a283d637dfce2613366a1c33c0975b79b9c3f833e",
+          "video-engine/src/lib/akgeo_data.ts": "11a1e9b195026f3b42591ca2a79d59512964a448e17b22c62e4647a52915b3ab",
+          "video-engine/src/lib/akmap.ts": "679ae8e41a3bc5006c7224d05d57670b9b930822d0946597e68a238ccb2f75c6",
+          "video-engine/src/lib/auction.tsx": "8b6448ba572dafc88fbc828e1c6fa3a99df31261c6218ef9c3e82854f9c17df1",
+          "video-engine/src/lib/ballot.tsx": "880b6cc457c329b694d446b88b22c5d9633f11c173c22faf008b0bf91f3beeb7",
+          "video-engine/src/lib/bench.tsx": "91056755e2871adb96a60dc106dbfd982e5fbffbc22813a03fb7ee720bc19e96",
+          "video-engine/src/lib/biomes.tsx": "558e75bb27caf80a0108a2f0f96e47646a6ed32ee299e6e83afcf9c55e33e62f",
+          "video-engine/src/lib/bioprocess.tsx": "539f32cc98360e2c4deb3c596939bc43c73ec63014d920a77d8582e3ff73de28",
+          "video-engine/src/lib/bugs.tsx": "99fd4b2303fd1338196eb31105d31c63ce49597017af62aef534da01e3ec2746",
+          "video-engine/src/lib/calf.tsx": "ee1dcc996b4675ef125af0f0fe052846b6a11d2a8df38e8cc849bb330d9abb4f",
+          "video-engine/src/lib/camera.ts": "ba1c8e867ad705b92909be81baeb274444131da7aba4994b08453e1e7732dbdb",
+          "video-engine/src/lib/canary.tsx": "472c8dfbe01e6abf036289f7bd461e0804d90b10efabbdbd51895e4f7421d759",
+          "video-engine/src/lib/captionrows.ts": "b276966da7350629d53d2c294e70821b9c753173ace169c35a1940f1fff4c224",
+          "video-engine/src/lib/captions.tsx": "9ac987a4e257e369a076098201cd6968f2b831cd63fda7e5eb128cf878239ae4",
+          "video-engine/src/lib/chalkline.tsx": "67265961ac415f1076b27924455ec0877771051b7c12210f9868dfe9725dbf0a",
+          "video-engine/src/lib/civics.tsx": "f5c13c7fb097da738b6750be06d37e5ff6ef90c6d2ba047589266c658c3d7656",
+          "video-engine/src/lib/clinic.tsx": "40e054a2e8aba02a7e7ebb5d46bae4624e0df27b381324492cfdc460dec2ba3b",
+          "video-engine/src/lib/corridor.tsx": "153575240c68daf36ad411cfacf1076008982fd38f6e9ed69cd15015cb065ddf",
+          "video-engine/src/lib/credentials.tsx": "980908d1d94cac06a1f4c38e8b6b8036d6792a9bee95b0f50f68ffa4ed40558c",
+          "video-engine/src/lib/cropsafe.ts": "a373145ab7f23bf5c5513deb160c8faf27b0f3ae59178641f804307ebda66059",
+          "video-engine/src/lib/cryosphere.tsx": "154d006dc9e1cba9ee82b7128026bab90f9ee16be2263efffb5c4da8868d0204",
+          "video-engine/src/lib/depot.tsx": "22178647ad32994db19a6b0f3e9a664af3c4cc18cdd503c7acafc19bfb298c53",
+          "video-engine/src/lib/evidence.tsx": "8df7516bf145a5c2220ee4dc4d41d5fe1c05fa28e09a5292c9bbb64e3c550808",
+          "video-engine/src/lib/evidence_state.tsx": "f72bf9e66f1bc8b1f2b266fd6c939a20d124f68ecad1610ea02a58f819c7b247",
+          "video-engine/src/lib/fauna.tsx": "735e4462a0f1695193cb9c28156014be6a228a956c4c1935388e8d99c92cb196",
+          "video-engine/src/lib/fiber.tsx": "0dfe932fc4d66f6922277b71a4d7894bff032b8d1fb38014e9e3965eed5edf14",
+          "video-engine/src/lib/figureidle.tsx": "5cb5bee832fc5b07dbe1ba9bda48a7e985e3a9d01508b1ceb3f2b3a4bb604c12",
+          "video-engine/src/lib/firecraft.tsx": "48c1e30aa2d78982cd06d6dd66001c0f22a9616be38f03455489fc159f35bc94",
+          "video-engine/src/lib/fishcraft.tsx": "19b36ef7a5f7ae10c455b641fdb48e2af00026f7b788f4a52942f5bb280c006c",
+          "video-engine/src/lib/focus.ts": "89bf60f208fb72ce4b4d8e681e5d449f78ca0dc0e816a7f95b6373f7d54c5af7",
+          "video-engine/src/lib/folio.tsx": "f60069431b85fa890c814e04ffd23105420649604e2719d506e2abed2cb0d287",
+          "video-engine/src/lib/forecast.tsx": "7e91a88649174ec0117324b664dfec0cf980bf55a2ad3cdf55dbb90d6608dda5",
+          "video-engine/src/lib/forest.tsx": "bdbdbdf9531fea8d2941c01cf822f4ed52e7b6d63ab5c311c38602ab7ad53ecb",
+          "video-engine/src/lib/fortune.tsx": "55f588cd40c249d8bbf77e6259dee05228d3b34a0def263fb6186a5a7c32443f",
+          "video-engine/src/lib/frontdesk.tsx": "0987ae0e7333521f259bfcd6b24e6a817baa1863f6561103797c322518a0199c",
+          "video-engine/src/lib/grid.tsx": "b03bd046091af8e3794353fadfe324148afc8b5d7722333418f3c6b7fd8295c8",
+          "video-engine/src/lib/grocer.tsx": "7bf8f324ec1a33a05cf9f05aec280b94c5b101721664f360c27e14097ce6e5c2",
+          "video-engine/src/lib/groundstop.tsx": "02598768431cff746630418a7dc3ec70497db2e398fd86de2ba36f19a77942c6",
+          "video-engine/src/lib/heldidle.tsx": "3514ee2364dc8dcb7bb47efc55f920b9cb894fde12380612896e12a68ff2468e",
+          "video-engine/src/lib/iceseal.tsx": "ab0c4c4eed87d042ac33eced02847cd427f1af9533a29adc0ccd0448c46a44a3",
+          "video-engine/src/lib/identify.tsx": "85132ac1eecc032763defc5f4e5fb66da367ddd5797154a5a10698019298b6cb",
+          "video-engine/src/lib/kit.tsx": "655e4e436c01369510f7721250fa764b2e2a2531aca49dbb3f332ff488a9c234",
+          "video-engine/src/lib/lighting.tsx": "bed24c3ad8bb49bb0ce583bb59ac99e8e2c91cb3fb278ced4a64cbdd540a2c2c",
+          "video-engine/src/lib/materials.tsx": "747cc9bf557470038bc3614fdccc8143c42a026eda0eb9b79d63ca9aedefdf44",
+          "video-engine/src/lib/motion.tsx": "3e043c34fe714c246d68f6d4b2d4c60195d87603663f35848d0a56d9b0d4a0ae",
+          "video-engine/src/lib/nameengine.tsx": "2e8c1f111bb06fa3a152a61fc019afc494fb414f0e39a1e53783571c159a1561",
+          "video-engine/src/lib/newsroom.tsx": "a84e3ff1c228844a8cd6273329c89ed2b2451beab38b3e7fe1155946e46d08ee",
+          "video-engine/src/lib/norm.tsx": "51995dc1123f174e06b7da54e4d1c42b68fcbe25a6513cfd4475393a7f07b9ca",
+          "video-engine/src/lib/odds.tsx": "fd55f1aa7a2d4df7ea66c12decf6466971ef041f0309b43ec0dbed1b139a1a7f",
+          "video-engine/src/lib/otolith.tsx": "a9748cfa84fed2d0ea40a3fea84e73b89da7db58eb00ce95789408dbf29d884f",
+          "video-engine/src/lib/paper.tsx": "95b74d849e5a9a82b2d908d7e5aa79232ff0c7dc14a6d401bb051e8cc11e1d46",
+          "video-engine/src/lib/people.tsx": "91b1fe3be412ad7c1689a19d68c8faef1a2bc8988fda4418cf52a9b6f28d48ad",
+          "video-engine/src/lib/permit.tsx": "640c48e55cb081d0a64c49b49c294ad9a70dee9873399c9ad7c0659fa65f078d",
+          "video-engine/src/lib/pier.tsx": "78e343f2ae5fa2bd6e83e960bdd79d4d2e771bae26206d48746063e0f474dc53",
+          "video-engine/src/lib/ping.tsx": "94578e9594848e6539352ee3830a67eec2fe0576dbd8ef5996699bf408fa64c3",
+          "video-engine/src/lib/polecam.tsx": "dc455bbcc302a791ba354370a4ab390a8997fd7e877846f9ffc4b7777db9d562",
+          "video-engine/src/lib/props.tsx": "061920bf80ce28910d7c8bb4db6009863df44adb4b9292f73873696113ad98d8",
+          "video-engine/src/lib/prospect.tsx": "575c9c9c90a21e1dd11a79aa6d891d8676a325a6b4d6d5100403536795a7db1c",
+          "video-engine/src/lib/rail.tsx": "d37bb07a3b6c397c13349ca43d83ad87764f7268a97be1bd3bf0368b01d5abcb",
+          "video-engine/src/lib/records.tsx": "525bb3e367ea2dfdbba0070e211699a175b89a5d779b25c127c114eaa1e8556c",
+          "video-engine/src/lib/recordslot.tsx": "ce3c378417a65c2f1c61a9ba7b0343d4a5835b66626155a72f4fff20e15d8bd9",
+          "video-engine/src/lib/refinery.tsx": "eb5037467c8335d20cb1f075e11d5940eae9b3181add75fdfbfa1364a233cadd",
+          "video-engine/src/lib/research.tsx": "c39159c5431b697b32d38fbda4c7f132637ac0f5da31b478b03d10dae17fe7c3",
+          "video-engine/src/lib/runofriver.tsx": "917474cb6419257d6daff9087bd581facb6677f787dd2b02111c07abeb179c92",
+          "video-engine/src/lib/scanline.tsx": "65f20c569c8226c7d4913220216e088cd2082696e7ba2cd31efed9872430da00",
+          "video-engine/src/lib/scope.tsx": "5368a77194e537312329669c3487220632e1df6690ea3446aed490bc010b4fca",
+          "video-engine/src/lib/screenlight.tsx": "8ee18edbc3e0b4c2495353afa7ad19c339a4b70bacffbfe3922f13ed82ee5b26",
+          "video-engine/src/lib/sensors.tsx": "5a0100e9162265c20f3d31e9758fe7559990fa6331251ffd9b06dcab177b7220",
+          "video-engine/src/lib/serum.tsx": "8bf105ab91bfe304616ebfb73697f8bbaaba38c8281fe0146ec0eaf3cf797b0b",
+          "video-engine/src/lib/sign.tsx": "fef189b7bc8496e75baf83c4fc40904f5abf11cdd48faff78493f351d555d725",
+          "video-engine/src/lib/simulation.tsx": "877d44f85b638b9612f927bb887afba41989dd180731e3aab7b063200997c351",
+          "video-engine/src/lib/sonar.tsx": "ba118b420f9f85459a98380eb71ec54efcbab46de20564195435692f10141c6f",
+          "video-engine/src/lib/spaceweather.tsx": "f7169e943906cc27b8de43e063d63a3388302029704c4297330055dd64849727",
+          "video-engine/src/lib/stack.tsx": "f72383ca881a452ceb0bcf0047ded679aa66fac3a1ea7f0f7ec063875e8a9d45",
+          "video-engine/src/lib/stage3d.tsx": "84541e923e398dcd8e4518dad8703aa68d60e6a3ad526d9dcbbeec5307ca351e",
+          "video-engine/src/lib/stormglass.tsx": "a470f9180b17d7cc95a2a5d5bc598daa22c31bba79c8133db255f2cee7b92564",
+          "video-engine/src/lib/strand.tsx": "4de15793a364c2c34f1869dae8ebc6fc88fa227755b6f64d97f41c26885f4857",
+          "video-engine/src/lib/subsea.tsx": "cde5add1f04c0461d51ea1910d5ec2e62df67d52a340c436ccf79adb347c6c48",
+          "video-engine/src/lib/tariff.tsx": "5ac72849cddf1efad35fe4e37781194aba4024d106ac99185786fe0f2e9b8271",
+          "video-engine/src/lib/thaw.tsx": "78deb13d67d6062dab4d6742c357d52dc25bba95557e9b8ee1bfadcbb5ec8656",
+          "video-engine/src/lib/threshold.tsx": "99858ca9a37e0474e52b079c645fe41eee95dbca8f7d20eb7f3a9f9fbdcb74d2",
+          "video-engine/src/lib/ticket.tsx": "7f56e205f5a092965a536fefbe5508164ab835af8ced836c4d1572562f0eca8c",
+          "video-engine/src/lib/underice.tsx": "1a7784825ec9053dfeada706d598ab30db5339e55e4fb51c623329bc523b491b",
+          "video-engine/src/lib/vehicles.tsx": "bc449602101822349d863ab10468e7185b2cae1334b1f692dde78a04df975e32",
+          "video-engine/src/lib/vision.tsx": "bf7d2569ceffb4aee5ad7a6911c8906234c1f28508dde11ba19485ac1a426a04",
+          "video-engine/src/lib/voice.tsx": "a1258ae84549ace9a592cb3afe7795f8d2610ef310217c5484bf38cd29617cc7",
+          "video-engine/tsconfig.json": "590eb5b7f16d4ca29d32397a17b3d75c3c1c1e8653c63d5a6d478ad45b5f3678"
+        },
+        "props": {
+          "path": "out/dispatch/episode_props.json",
+          "sha256": "2aaf6a5ebb3e2e9cebea7c63f0416f2ae288312fac5d6c03c6cf309682e1eea0"
+        },
+        "composition": "Dispatch1127",
+        "total": 4171,
+        "chunks": 12,
+        "browser_override": null
+      },
+      "cache_key": "316d8c98d08a1ca24ad856d8b1ce0dc589e8fe36702ca99e4ee32986e31809f2",
+      "output": {
+        "path": "out/dispatch/render_mute.mp4",
+        "sha256": "4f99d8986a8a3de10d12d9eadaac51a1a7eacfe24fe8275e075cfaa550c16a40"
+      }
+    },
+    "mix": {
+      "schema": 2,
+      "kind": "mix",
+      "state": "complete",
+      "sources": {
+        "out/dispatch/episode_props.json": "2aaf6a5ebb3e2e9cebea7c63f0416f2ae288312fac5d6c03c6cf309682e1eea0",
+        "out/dispatch/music_credit.json": "7a3a2fecb715b3ae31e6d89af3db704464e889238c2e461f1ad3adceae8615a3",
+        "out/dispatch/storyboard.json": "board-audio:ffca22aa7928b0c2ea395fa083808ed0583a33a40058826bf161d6b7499b3df4",
+        "out/dispatch/vo_lines.json": "0b832a2aafe574c5a970c2636876a0f5dbde83f9d6f245bb2bcb09d321aa8e12",
+        "scripts/dispatch_mix.py": "1e70ea7fdd134eba01c3c4216a94113921cea2ff78081b02769376a528e4cded",
+        "scripts/mix_aac_check.py": "c1b524ac1b38d77001754a162b9791ec9f9a91c387c50b3d00517cc71b5fdbe9",
+        "scripts/render_provenance.py": "2d8d71d1f176463ab5a6b7e70f6ea96f7d965c57b15ec1c2bfacd972a2dc8778",
+        "scripts/sfx_bank.py": "2fb66a30970e6f948b5c62c388af4e1eaa2051d1582796f093a811f08e783ea1",
+        "scripts/sfx_names.py": "d7528006140a103aa6942f1f83b486f5dfe57807ce66e307719c47ef5cff2c9d",
+        "scripts/speech_priority.py": "d09f680868ee5c6c59b2bdfdd65677bd694281bc14dd4093a715308dce4c10d2"
+      },
+      "vo": {
+        "path": "out/dispatch/audio/vo.wav",
+        "sha256": "753dce6f20ac9e263b1a6e7989c396fd4c6b0f62183282b7ef0eb6dc723cbf9c"
+      },
+      "inputs": [
+        {
+          "path": "assets/sfx/boom_v1.wav",
+          "sha256": "4836a1cce1eef549343c313ab0b1a8f91778b5d8fa87cc2b38c7cb234f72e3c3"
+        },
+        {
+          "path": "assets/sfx/boom_v3.wav",
+          "sha256": "76075ed7d2c082f246feddb7ae869ef991a6608dfa5f28057bd6d2ddfd454519"
+        },
+        {
+          "path": "assets/sfx/boom_v4.wav",
+          "sha256": "5180d8b6bdfd18d07c83f1b06ee12dee86f4dbe3f0ad085d001cb30a4dd1f443"
+        },
+        {
+          "path": "assets/sfx/chain_v1.wav",
+          "sha256": "33c26d28a910a3df41c220ce549d69a4e753b49194c5d74b0749eafd78f2a827"
+        },
+        {
+          "path": "assets/sfx/chain_v2.wav",
+          "sha256": "74e140e57c910d2451d921d6126d6ee5057ffb30fa910d49195aa62b68db879b"
+        },
+        {
+          "path": "assets/sfx/chain_v3.wav",
+          "sha256": "4f83640687bee60df5e8bcaffd1b0ff18d11dab7f47968e6d120c7266ce06d9d"
+        },
+        {
+          "path": "assets/sfx/chain_v4.wav",
+          "sha256": "9fb620c3ee96739a9af662f0cd930abeaf84e337a76da56c3615a11b072ea827"
+        },
+        {
+          "path": "assets/sfx/chain_v5.wav",
+          "sha256": "8204cc9d6ef0bf5b964da8e28e8e37c8c07725d0a5a627ead777c9a1fc2f1e1d"
+        },
+        {
+          "path": "assets/sfx/chain_v6.wav",
+          "sha256": "42890fab2be0ec88cd0f00fc9b987976204c7cd99334a0a7bc9ea5077c4ef14c"
+        },
+        {
+          "path": "assets/sfx/creak_v3.wav",
+          "sha256": "a3193287a0b6e8513a1083ff1b23a00379eae6d697c2985ced77424d34e037fa"
+        },
+        {
+          "path": "assets/sfx/creak_v5.wav",
+          "sha256": "984db4cdd74d61370eb991e3cbc645b7527f893e621c33d4fb5b9ce3782ae344"
+        },
+        {
+          "path": "assets/sfx/creak_v6.wav",
+          "sha256": "1e6a710f5eaa9bdd1bb8335a8d74d07bd1cc9df5900fa9a67b5ad18d64cb1927"
+        },
+        {
+          "path": "assets/sfx/paper_v1.wav",
+          "sha256": "4a0874f179da3adb09208de30df4e0631fbc45769f6468ff2b7f6870099d3360"
+        },
+        {
+          "path": "assets/sfx/paper_v2.wav",
+          "sha256": "be9496d9746d0aaa211bfbea82d2c2f4ecff9237bec82ecbd0e2f91156e91463"
+        },
+        {
+          "path": "assets/sfx/paper_v3.wav",
+          "sha256": "76f7f26a6b5db818f9cf65cb65b4cb4eca7493d76a21760869ee75a453c6500d"
+        },
+        {
+          "path": "assets/sfx/paper_v4.wav",
+          "sha256": "4094b8dcf77e711e3a43ebf6787260fca21c5516f28780c9782f2bdc0b118e47"
+        },
+        {
+          "path": "assets/sfx/paper_v5.wav",
+          "sha256": "746999675c3b444be876f96928c9e94a4867cecc571d4fd061e9b522e55776ec"
+        },
+        {
+          "path": "assets/sfx/paper_v6.wav",
+          "sha256": "c5dc948ebe9c6e45bc56c267abe3697f2244a24c2411b8d7465b89cda2f83c04"
+        },
+        {
+          "path": "assets/sfx/real/chime_kenney_confirmation_001.wav",
+          "sha256": "b2722d0ba4680e1787b37d63808ddbbd5f9b6e4e12414e05c333b6c803efc6f2"
+        },
+        {
+          "path": "assets/sfx/real/chime_kenney_confirmation_003.wav",
+          "sha256": "1a7bed37bdc12c873ebf9c0ea61423c7c09dca39fbbf537ec186fc2ee81ad4ad"
+        },
+        {
+          "path": "assets/sfx/real/chime_kenney_confirmation_004.wav",
+          "sha256": "8c5b35842dcca22383a8281569f372c1390e6fd6ec785377dcc3d11f4d56a835"
+        },
+        {
+          "path": "assets/sfx/real/clank_kenney_impactMetal_heavy_004.wav",
+          "sha256": "a517963cf7843dc53256a58185d7332265ce5d5e40f22e403d214be26442a96c"
+        },
+        {
+          "path": "assets/sfx/real/clank_kenney_impactMetal_medium_000.wav",
+          "sha256": "d7c6874b1498dea963b9708b86c28760fb923483b7459ee5020b224a8c4506b4"
+        },
+        {
+          "path": "assets/sfx/real/ding_kenney_impactBell_heavy_001.wav",
+          "sha256": "7a4f640497918471f746b73e66f322eb01fc96a9f9a85c90d004fdd730d7aacc"
+        },
+        {
+          "path": "assets/sfx/real/ding_kenney_impactBell_heavy_003.wav",
+          "sha256": "944bb609076e546e82ffbe08821dda55dfe3bd2ad0ea403bb734b7d39209efc1"
+        },
+        {
+          "path": "assets/sfx/real/pop_kenney_drop_001.wav",
+          "sha256": "895d8da98bd25dd5a13e9f6a477467d58bb8a16856513e8a2edebc990c412b72"
+        },
+        {
+          "path": "assets/sfx/real/pop_kenney_drop_002.wav",
+          "sha256": "15e82aed7aa290cc4fd6bf9011b4ed9fc5ef2cb562f63d687f8c06ae36c83ed9"
+        },
+        {
+          "path": "assets/sfx/real/pop_kenney_drop_003.wav",
+          "sha256": "2ee716de8eb9a1aa2ede29a683200a920e55f8739a0b5bcd3147d8729b6046dd"
+        },
+        {
+          "path": "assets/sfx/real/thud_kenney_impactWood_heavy_000.wav",
+          "sha256": "c27a33a4e5dd32d6e9f7e28788df46776f4bb38ce834ab760abf2c65c3e110bd"
+        },
+        {
+          "path": "assets/sfx/real/thud_kenney_impactWood_heavy_002.wav",
+          "sha256": "0edc935dd1d9f8c2104efa68b42e62481be8426a00c53cd53b8c59567c90acfe"
+        },
+        {
+          "path": "assets/sfx/riser_v6.wav",
+          "sha256": "46a936a5e1d324c545e0f5484709e955adbdf1e45db9155eb068de3645405baf"
+        },
+        {
+          "path": "assets/sfx/snap_v1.wav",
+          "sha256": "b6eaed1634346dfb2e68fc228f6d3fb183934a690120d8b45ea82c6b19a050ff"
+        },
+        {
+          "path": "assets/sfx/snap_v5.wav",
+          "sha256": "7284aeac1de6d5b7e561590c6fe88eeb51189f822a0e61608a5210477150f0a5"
+        },
+        {
+          "path": "assets/sfx/snap_v6.wav",
+          "sha256": "94246297e210a7e2f08a9f78827fcdd37faf331b7cf8540a06dfdd8b671824df"
+        },
+        {
+          "path": "assets/sfx/stamp_v4.wav",
+          "sha256": "ca96c5984e0da216306ef5df861f6351c19088cd1718aeb37a89c5afe14ee0e7"
+        },
+        {
+          "path": "assets/sfx/stamp_v5.wav",
+          "sha256": "359a0a31c9c1867da3b212de1c9294343313aabab0d099fff697e5a5fca90cef"
+        },
+        {
+          "path": "assets/sfx/tick_v1.wav",
+          "sha256": "8bf23a892cfca917749629c29dde957e8b2ddb40bbae00619c1115f1ea3bc474"
+        },
+        {
+          "path": "assets/sfx/tick_v2.wav",
+          "sha256": "8c2c9adab149949aeb7ca068cb61b4e82802cec526b2ebc9ca1728e4cd3a05d1"
+        },
+        {
+          "path": "assets/sfx/tick_v3.wav",
+          "sha256": "da251b2134f3fb67f2f1bddd71b1f5423ca6230d83ce74dbd0f4c8cfc9d8d821"
+        },
+        {
+          "path": "assets/sfx/tick_v4.wav",
+          "sha256": "8df14d736325d7f901b9c07d34975f1be3c222f2ee4232f07ddd148d848d6d2a"
+        },
+        {
+          "path": "assets/sfx/tick_v5.wav",
+          "sha256": "a359ddce666b7f696cc5b2a5f7d6f57ba6a895863ff9375ac91ed33db62d20f7"
+        },
+        {
+          "path": "assets/sfx/tick_v6.wav",
+          "sha256": "1a3668de7f0a96d2c75946e3b87d3069b844795670748f192c6e832382d5aa25"
+        },
+        {
+          "path": "assets/sfx/whoosh_v1.wav",
+          "sha256": "5fb5852d43f7d2cc690cfbfa7ef71e3618b0500e29300ce44b8d2d218d1ed46e"
+        },
+        {
+          "path": "assets/sfx/whoosh_v2.wav",
+          "sha256": "23624949413b12ec3408600fe352be2adcd1ca5999bc0f33e0b87c22a06ec281"
+        },
+        {
+          "path": "assets/sfx/whoosh_v3.wav",
+          "sha256": "c530e83b5f572474c97fa06a4a9a169266ba72b2f512d37d5001913cbc2abe6b"
+        },
+        {
+          "path": "assets/sfx/whoosh_v5.wav",
+          "sha256": "8253eb58e637756677adde28af4e59c360300dba1c1539401c5148fb5971d917"
+        },
+        {
+          "path": "out/dispatch/music_bed.wav",
+          "sha256": "4f7b6565417e7260bbb0fd1b9ce8c7b721c65430a305054671eb85621818faf2"
+        }
+      ],
+      "output": {
+        "path": "out/dispatch/audio/master.wav",
+        "sha256": "cac6ccbceb958a39f89b8ee5d2fd387b92105d465892b2298c8dd36d466a0def"
+      },
+      "speech_priority": {
+        "path": "out/dispatch/audio/speech_priority.json",
+        "sha256": "8fe387f40e6d980b9c71cf586081a0cc908f253d2ab4a442a2459d13e7ff0eed"
+      }
+    },
+    "sources": {
+      "scripts/encode_deliverables.sh": "c737bf454b4c07539b291316ad19f9d813880e3808d8f21bc68a0c85e20eaddf",
+      "scripts/mux_and_verify.sh": "e79443a47798e3326d4a865ee17c8ba4409e33dc8a5b9c27f240186e378f1219",
+      "scripts/render_provenance.py": "2d8d71d1f176463ab5a6b7e70f6ea96f7d965c57b15ec1c2bfacd972a2dc8778"
+    },
+    "outputs": {
+      "dispatch_master.mp4": "9e27b6fb8d1ea0065df95964b961073509e1fa471cc259b8d03b3acb22500f71",
+      "dispatch_square.mp4": "103b68b7953ba50743327f710b2e1493352d6a84198d4afd0ac90fa175f0f9ba",
+      "dispatch_master_720.mp4": "b4ce02eea247d0b1ab8dba17cfba4a0497ded39464fb99f6506bd9471a2598c8",
+      "dispatch_master_hosted.mp4": "2944eb390ac187a9c8947c6a5761d07c466c15ccc5c012369f631790230ce374",
+      "poster.png": "b319d9848accc9ec3175772013f9a45ad5d35bdb704be737dfada29fb2166efb",
+      "poster_thumb.jpg": "65837f0915b9d740f380fb684da5fd006de6c8e25ec41561f63b04b345749f79"
+    }
+  }
+}

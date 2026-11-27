@@ -1,0 +1,27 @@
+{
+  "locked_story": {
+    "headline": "A machine-learning model trained on 2019 lightning and weather projects Alaska could see 116% to 594% more ground-striking lightning by 2100, in a state where lightning starts most of the wildfire acreage (Earth's Future, Krause et al., AGU release November 24th)",
+    "found_at_rung": "carried_leads",
+    "note": "Surfaced 2026-11-26 as a runner-up, verified in window today (AGU release and EurekAlert November 24th, NatureWorldNews November 25th). ML is load-bearing: the projection is the model. Honest tension: one training year asked about the 2090s, a 2x to 7x range on a low base. dedupe FRESH."
+  },
+  "rungs": [
+    {"rung": "in_window_sweep", "attempted": true, "candidates_found": 13, "note": "3 researchers (fresh news sweep, science lead deep dig, policy/infrastructure/defense), about 47 WebSearch calls, many uncapped WebFetches. All three called it a slow Thanksgiving week."},
+    {"rung": "outlet_index_sweep", "attempted": true, "candidates_found": 0, "note": "Covered in round one: ADN, Alaska Public, Alaska Beacon (partly 403), KTOO, Alaska's News Source, News-Miner, Must Read Alaska, UAF, UAA, KYUK, KDLL, KUCB, KTNA, Alaska Business, Alaska Native News, Arctic Today, DVIDS indexes read."},
+    {"rung": "carried_leads", "attempted": true, "candidates_found": 6, "note": "Runner-up leads from runs/2026-11-24 to 11-26 candidates.json re-verified: lightning (strong), glacier lakes (usable), avalanche roads (no ML), bowhead fiber (no ML in sources), USGS polar bears (October 8th, out of window), Bering Strait ice forecast (model type unverified)."}
+  ],
+  "candidates": [
+    {"headline": "ML lightning projection, Alaska +116% to +594% by 2100 (Earth's Future, November 24th)", "verdict": "LOCKED", "why": "in window, genuine load-bearing ML, explicit Alaska number, ties to Alaska's lightning-driven fire season, built-in honest test (one training year, wide range), no Alaska outlet has covered it"},
+    {"headline": "AI-mapped glacier lakes up 35%, growth most pronounced in Alaska and southern Andes (Nature Climate Change, November 20th)", "verdict": "runner-up", "why": "usable but paper unread, Alaska detail mostly from one secondary outlet, data end 2020"},
+    {"headline": "Coast Guard cutter Storis five drone sorties, nine flight hours in Bering Sea cold (DVIDS November 17th)", "verdict": "rejected", "why": "autonomy angle thin, no drone named, no results beyond hours"},
+    {"headline": "Governor-elect asks AIDEA to pause (November 19th)", "verdict": "rejected", "why": "AIDEA thread covered 10-29, 10-31, 11-13, 11-25; dispatch fatigue"},
+    {"headline": "Senate permitting bill makes data centers pay their costs (Sullivan release November 25th)", "verdict": "rejected", "why": "advocacy release, no bill number, Alaska tie indirect"},
+    {"headline": "Mat-Su asks DNR to reverse Houston transfer, reconsideration November 30th", "verdict": "rejected", "why": "overlaps 11-25 dispatch"},
+    {"headline": "Alaska's News Source used AI to compile pre-1993 legislative records", "verdict": "rejected", "why": "AI is a methodology footnote"},
+    {"headline": "UAF/DGGS avalanche screening of 2,000+ road crossings", "verdict": "rejected", "why": "physics-based, no ML"},
+    {"headline": "Cornell bowhead calls on Quintillion fiber at Utqiagvik", "verdict": "rejected", "why": "no ML in any source; November 10th"},
+    {"headline": "USGS polar bear deep learning detection", "verdict": "rejected", "why": "published October 8th, outside window"},
+    {"headline": "Bering Strait sea ice forecast with Indigenous observers", "verdict": "rejected", "why": "model type unverified, no ML evidence"},
+    {"headline": "Anchorage traffic signals Curious Alaska", "verdict": "rejected", "why": "rule-based, not AI"},
+    {"headline": "UA AI Engaged vote pushed to February", "verdict": "rejected", "why": "covered 11-05 and 11-06"}
+  ]
+}
