@@ -94,6 +94,7 @@ RAIN_WORDS = ("rain", "drizzle", "downpour", "raindrop", "rainy")
 # lines and the mix played wind only, and every seat capped Sound. "rumble" alone is a train or an
 # engine, so only the far or distant rumble counts. No board from 10-01 to 11-26 names any of these.
 STORM_WORDS = ("thunder", "lightning", "storm", "far rumble", "distant rumble", "anvil")
+STORM_FIRST_DATE = "2026-11-28"   # the shipped 11-27 board predates the kind and is not failed
 
 
 GENERIC = {"hero", "figure", "figures", "prop", "props", "object", "objects", "thing", "scene",
@@ -210,7 +211,8 @@ def analyze(sb):
                         f"ambience: [\"rain\"] and no ambience_stem, so the mix plays no rain under it "
                         f"(10-25: Sound capped 7.0 to 7.3 for exactly this). Add audio_arc.ambience")
     n_storm, storm_world = storm_shots(sb)
-    if storm_world and "storm" not in want and not (sb.get("audio_arc") or {}).get("ambience_stem"):
+    if (storm_world and "storm" not in want and not (sb.get("audio_arc") or {}).get("ambience_stem")
+            and str(sb.get("run_date") or "9999") >= STORM_FIRST_DATE):
         problems.append(f"{n_storm} of {len(shots)} shots' ambient lines name thunder or a storm, but "
                         f"audio_arc has no ambience: [\"storm\"] and no ambience_stem, so the mix plays "
                         f"no thunder under it (11-27: every seat capped Sound for exactly this). Add "
@@ -251,6 +253,10 @@ def _self_test():
     storm = json.loads(json.dumps(wet))
     for x in storm["shots"] + [b["choreo"] for b in storm["beats"]]:
         x["ambient"] = "wind, a far rumble"
+    assert any("thunder or a storm" in p for p in analyze(storm)["problems"]), analyze(storm)
+    storm["run_date"] = "2026-11-27"
+    assert not analyze(storm)["problems"], "a board shipped before the storm kind is not failed"
+    storm["run_date"] = "2026-11-28"
     assert any("thunder or a storm" in p for p in analyze(storm)["problems"]), analyze(storm)
     storm["audio_arc"] = {"ambience": ["wind", "storm"]}
     assert not analyze(storm)["problems"], analyze(storm)
