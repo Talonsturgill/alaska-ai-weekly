@@ -530,7 +530,7 @@ const S6: React.FC<SceneProps> = ({p}) => {
           <RangeColumn f={f} x={300} y={GROUND} w={150} unit={56} lo={2.16} hi={6.94} floorK={floor} grow={grow} seed={3} label="ALASKA" />
         </HeldProp>
         {world > 0.01 && (
-          <g transform={`translate(${lerp(400, 0, world) + (f >= b(41) ? 26 * Math.exp(-(f - b(41)) / 8) * Math.cos((f - b(41)) / 2.4) : 0)} 0)`}>
+          <g transform={`translate(${lerp(400, 0, world) + (f >= b(15) + 20 ? 34 * Math.exp(-(f - b(15) - 20) / 12) * Math.cos((f - b(15) - 20) / 2.6) : 0) + (f >= b(41) ? 30 * Math.exp(-(f - b(41)) / 12) * Math.cos((f - b(41)) / 2.6) : 0)} 0)`}>
             <RangeColumn f={f} x={500} y={GROUND} w={110} unit={56} lo={1.76} hi={2.4} grow={1} seed={4} label="WORLD" />
           </g>
         )}
@@ -616,7 +616,7 @@ const S9: React.FC<SceneProps> = ({p}) => {
         <rect x={-80} y={-80} width={1240} height={500} fill={SG.mauve} />
         <path d="M -80 420 Q 300 380 600 410 Q 860 430 1160 400 L 1160 520 L -80 520 Z" fill={SG.plumL} stroke={INK} strokeWidth={4} />
         <StormGlass f={f} x={880} y={760} s={0.45} emotion="calm" seal="2019" sealGlow={0.3} qtag={ease(f, b(21), 14)} grow={1} cues={[b(20), b(21)]} seed={13} label={false} />
-        {Array.from({length: 5}, (_, i) => <ellipse key={i} cx={(i * 260 + f * 0.6) % 1300 - 100} cy={200 + 60 * (i % 2)} rx={200} ry={60} fill={SG.mauveL} opacity={0.5} />)}
+        {Array.from({length: 5}, (_, i) => <g key={i}><ellipse cx={(i * 260 + f * 0.6) % 1300 - 100} cy={214 + 60 * (i % 2)} rx={196} ry={52} fill={SG.plum} opacity={0.35} /><ellipse cx={(i * 260 + f * 0.6) % 1300 - 100} cy={200 + 60 * (i % 2)} rx={200} ry={60} fill={SG.mauveL} stroke={INK} strokeWidth={5} /><ellipse cx={(i * 260 + f * 0.6) % 1300 - 130} cy={186 + 60 * (i % 2)} rx={110} ry={26} fill={SG.paper} opacity={0.45} /></g>)}
         <TopTussock f={f} seed={62} y0={560} y1={1900} n={46} />
         <HeldTravel f={f} x={240} y={640} w={600} h={460} mode="shadow" seed={52}>
         <g transform={`translate(540 900) rotate(${-4 + 1.5 * Math.sin(f / 13)})`}>
@@ -775,7 +775,7 @@ const S13: React.FC<SceneProps> = ({p}) => {
   const card = {x: 760, y: 1000};
   return (
     <Frame p={p} cam={(fr) => ({z: lerp(1.0, 1.08, easeIO(fr, 0, p.dur)), fx: 560, fy: 940})} overlay={<>
-          <Plate x={660} text="TEST OUTSIDE THE TRAINING DATA · PREPRINT · NOT PEER REVIEWED" displayLines={['TEST OUTSIDE THE TRAINING DATA', 'PREPRINT · NOT PEER REVIEWED']} y={600} size={26} tone="dark" p={win(f, b(31) + 14)} />
+          <Plate x={660} text="PREPRINT · NOT PEER REVIEWED" y={600} size={26} tone="dark" p={win(f, b(31) + 14)} />
           <Plate x={660} text="OUR READ · THE RANGE WAITS ON A TEST" y={730} size={24} p={win(f, b(32) + 4)} />
         </>}>
       <SVG>

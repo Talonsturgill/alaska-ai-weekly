@@ -404,7 +404,7 @@ export const SensDial: React.FC<{f: number; x: number; y: number; r?: number; va
     ticks.push(<path key={v} d={`M ${ax} ${ay} L ${bx} ${by}`} stroke={SG.ink} strokeWidth={v % 10 === 0 ? 5 : 2.5} />);
     if (v % 10 === 0) {
       const [lx, ly] = pt(v, r * 0.64);
-      ticks.push(<text key={`l${v}`} x={lx} y={ly + 9} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={SG.ink}>{v}</text>);
+      ticks.push(<text key={`l${v}`} x={lx} y={ly + 9 - (v === 0 || v === 40 ? 34 : 0)} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={26} fill={SG.ink}>{v}</text>);
     }
   }
   const bk = clamp01(bandK);
@@ -424,7 +424,7 @@ export const SensDial: React.FC<{f: number; x: number; y: number; r?: number; va
       <path d={`M 0 0 L ${nx} ${ny}`} stroke={SG.inkL} strokeWidth={7} strokeLinecap="round" />
       <circle cx={nx} cy={ny} r={9} fill={SG.brassL} stroke={SG.ink} strokeWidth={3} />
       <circle cx={0} cy={0} r={22} fill={tb.key} stroke={SG.ink} strokeWidth={5} />
-      <text x={0} y={30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={SG.ink}>% PER °C</text>
+      <text x={r * 0.5} y={30} textAnchor="middle" fontFamily={MONO} fontWeight={800} fontSize={20} fill={SG.ink}>% PER °C</text>
     </g>
   );
 };
