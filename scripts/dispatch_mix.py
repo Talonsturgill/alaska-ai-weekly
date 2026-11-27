@@ -352,8 +352,12 @@ RAIN_LEVEL = 0.28      # about -36 dBFS RMS: 18 to 20 dB under the VO, 12 under 
 #   wind  dusk wind and wire hum, brown noise from 180 Hz to 2.2 kHz gusting on a 13.1 s cycle,
 #         with a narrow resonance at 410 Hz that sings like a line in the wind.
 # Each has its own noise seed so two layers never phase. Levels are measured by --ambience-preview
-# with the air under them, room -41.5 and wind -38.7 dBFS RMS against the rain's -39.7, so the
-# voice keeps its 18 dB or more (dispatch_mix.py --ambience-self-test holds each to its band).
+# with the air under them. The 11-08 run raised room 0.33 to 0.45 and wind 0.38 to 0.5 (b673a1b,
+# after judges heard no bed) without moving the self-test bands, so --ambience-self-test FAILED on
+# main from then until the 2026-11-27 machine pass re-measured them on this container's ffmpeg
+# 6.1.1, room -30.7 and wind -30.6 dBFS RMS against the rain's -39.3. The voice keeps its 18 dB
+# because speech_priority.py ducks every background layer to that margin under narration, and
+# --ambience-self-test holds each layer to its band so the next silent retune fails loudly.
 AMBIENCE_SPEC = {
     "rain": {"color": "pink", "seed": 1025,
              "note": "rain (synthesised pink noise, 900 Hz to 7 kHz, audio_arc.ambience)"},
@@ -663,7 +667,7 @@ def ambience_self_test():
     asks for none adds no input (machine pass 2026-10-28). Measured on 7 s of a 12 s preview with
     the air under it, which alone measures about -50.6 dBFS RMS."""
     import tempfile
-    band = {"rain": (-42.0, -37.0), "room": (-44.0, -39.0), "wind": (-41.0, -36.0)}
+    band = {"rain": (-42.0, -37.0), "room": (-33.5, -28.0), "wind": (-33.5, -28.0)}
     bad = []
     saved = dict(AMB_LAYERS)
     with tempfile.TemporaryDirectory() as td:
